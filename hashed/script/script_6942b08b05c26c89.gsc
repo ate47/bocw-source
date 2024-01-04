@@ -1,0 +1,109 @@
+// Atian COD Tools GSC CW decompiler test
+#using script_19c6c147c637b960;
+#using scripts\core_common\system_shared.csc;
+#using scripts\core_common\struct.csc;
+#using scripts\core_common\clientfield_shared.csc;
+#using scripts\core_common\callbacks_shared.csc;
+
+#namespace namespace_9a8780d8;
+
+// Namespace namespace_9a8780d8/namespace_9a8780d8
+// Params 0, eflags: 0x5
+// Checksum 0xf1f9f335, Offset: 0x158
+// Size: 0x3c
+function private autoexec __init__system__() {
+    system::register(#"hash_60ed86b180c0e829", &function_70a657d8, undefined, undefined, undefined);
+}
+
+// Namespace namespace_9a8780d8/namespace_9a8780d8
+// Params 0, eflags: 0x6 linked
+// Checksum 0xe49cec03, Offset: 0x1a0
+// Size: 0xda
+function private function_70a657d8() {
+    clientfield::register("world", "territory_id", 1, 4, "int", &function_59941838, 1, 0);
+    level.var_9a8780d8 = {#name:""};
+    var_e9308982 = struct::get_array("territory", "variantName");
+    for (index = 1; index <= var_e9308982.size; index++) {
+        var_e9308982[index - 1].id = index;
+    }
+}
+
+// Namespace namespace_9a8780d8/namespace_9a8780d8
+// Params 7, eflags: 0x6 linked
+// Checksum 0xf575d133, Offset: 0x288
+// Size: 0x30c
+function private function_59941838(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+    if (bwastimejump) {
+        level.var_9a8780d8 = {#name:""};
+        var_e9308982 = struct::get_array("territory", "variantName");
+        foreach (var_9a8780d8 in var_e9308982) {
+            if (var_9a8780d8.id == bwastimejump) {
+                level.var_9a8780d8 = var_9a8780d8;
+                level.var_9a8780d8.name = isdefined(level.var_9a8780d8.target) ? level.var_9a8780d8.target : isdefined(level.var_9a8780d8.targetname) ? level.var_9a8780d8.targetname : "";
+                if (isdefined(var_9a8780d8.target)) {
+                    triggers = getentarray(fieldname, var_9a8780d8.target, "targetname");
+                    if (!isdefined(var_9a8780d8.circle)) {
+                        structs = struct::get_array(var_9a8780d8.target, "targetname");
+                        foreach (struct in structs) {
+                            if (isdefined(struct.variantname) && struct.variantname == "territory_circle") {
+                                var_9a8780d8.circle.var_9a8780d8 = function_36a1028e(fieldname, struct.origin, struct.radius);
+                                break;
+                            }
+                        }
+                    }
+                }
+                break;
+            }
+        }
+        callback::callback(#"hash_60ed86b180c0e829", fieldname, {#newval:bwastimejump});
+    }
+}
+
+// Namespace namespace_9a8780d8/namespace_9a8780d8
+// Params 3, eflags: 0x0
+// Checksum 0x8a69d7f4, Offset: 0x5a0
+// Size: 0x122
+function function_1deaf019(name, key, var_9a8780d8 = level.var_9a8780d8) {
+    var_3e8b00df = [];
+    entities = getentarray(0, name, key);
+    foreach (entity in entities) {
+        if (!is_valid(entity, var_9a8780d8)) {
+            continue;
+        }
+        if (function_83ad4d2b(entity.origin, undefined, var_9a8780d8)) {
+            var_3e8b00df[var_3e8b00df.size] = entity;
+        }
+    }
+    return var_3e8b00df;
+}
+
+// Namespace namespace_9a8780d8/namespace_9a8780d8
+// Params 3, eflags: 0x0
+// Checksum 0x8e571c6f, Offset: 0x6d0
+// Size: 0x6a
+function function_1f583d2e(name, key, var_9a8780d8 = level.var_9a8780d8) {
+    entities = getentarray(0, name, key);
+    return function_39dd704c(entities, var_9a8780d8);
+}
+
+// Namespace namespace_9a8780d8/namespace_9a8780d8
+// Params 3, eflags: 0x6 linked
+// Checksum 0x683ef3a, Offset: 0x748
+// Size: 0x1c4
+function private function_36a1028e(localclientnum, origin, radius) {
+    circle = spawn(localclientnum, origin, "script_model");
+    circle = spawn(localclientnum, origin, "script_model");
+    circle setmodel("p9_territory_cylinder");
+    circle playrenderoverridebundle(#"hash_43d22d2a5ec27460");
+    modelscale = radius / 150000;
+    circle function_78233d29(#"hash_43d22d2a5ec27460", "", "Scale", modelscale);
+    circle setcompassicon("minimap_collapse_ring");
+    circle function_a5edb367(#"death_ring");
+    circle function_811196d1(0);
+    circle function_95bc465d(1);
+    circle function_5e00861(0, 1);
+    circle function_60212003(1);
+    compassscale = radius * 2;
+    circle function_5e00861(compassscale, 1);
+}
+

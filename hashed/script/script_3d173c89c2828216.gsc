@@ -1,0 +1,157 @@
+// Atian COD Tools GSC CW decompiler test
+#using script_1a9763988299e68d;
+#using script_2a5bf5b4a00cee0d;
+#using script_40f967ad5d18ea74;
+#using script_47851dbeea22fe66;
+#using script_164a456ce05c3483;
+#using script_4d748e58ce25b60c;
+#using script_5f20d3b434d24884;
+#using script_1b0b07ff57d1dde3;
+#using script_1ee011cd0961afd7;
+#using script_350cffecd05ef6cf;
+#using script_5701633066d199f2;
+#using script_1b01e95a6b5270fd;
+#using script_17dcb1172e441bf6;
+#using script_74a56359b7d02ab6;
+#using scripts\core_common\animation_shared.gsc;
+#using scripts\core_common\struct.gsc;
+#using scripts\core_common\spawning_shared.gsc;
+#using scripts\core_common\spawner_shared.gsc;
+#using scripts\core_common\system_shared.gsc;
+#using scripts\core_common\flag_shared.gsc;
+#using scripts\core_common\clientfield_shared.gsc;
+#using scripts\core_common\callbacks_shared.gsc;
+#using scripts\core_common\util_shared.gsc;
+#using scripts\core_common\math_shared.gsc;
+#using scripts\core_common\array_shared.gsc;
+
+#namespace namespace_5f74ac47;
+
+// Namespace namespace_5f74ac47/namespace_5bb43837
+// Params 0, eflags: 0x2 linked
+// Checksum 0x83a3fe18, Offset: 0x290
+// Size: 0x174
+function function_f44fbe7c() {
+    if (!isdefined(self.var_8cff5775.var_121de807)) {
+        self.var_8cff5775.var_121de807 = namespace_ec06fe4a::function_b5731057("trigger_radius", self.origin, 1 & 512 & 8, 130, 50);
+        if (isdefined(self.var_8cff5775.var_121de807)) {
+            self.var_8cff5775.var_121de807.targetname = "stunBear";
+            self.var_8cff5775.var_121de807 enablelinkto();
+            self.var_8cff5775.var_121de807 linkto(self);
+            self.var_8cff5775.var_121de807 thread function_510ce803(self);
+            self namespace_e32bb68::function_3a59ec34("evt_doa_pickup_teddybear_active_lp");
+            self namespace_83eb6304::function_3ecfde67("stunbear");
+        }
+    }
+    self thread function_6a9ffef0();
+    self thread function_7343529d(self.var_8cff5775.var_121de807);
+}
+
+// Namespace namespace_5f74ac47/namespace_5bb43837
+// Params 0, eflags: 0x6 linked
+// Checksum 0x26d3512b, Offset: 0x410
+// Size: 0x204
+function private function_79cb4037() {
+    self notify("36c490e4e613efc0");
+    self endon("36c490e4e613efc0");
+    self endon(#"death");
+    self.var_8cff5775.stunned = 1;
+    self namespace_83eb6304::function_3ecfde67("stunbear_affected");
+    if (!is_true(self.var_8cff5775.var_74e4ded8)) {
+        self.var_8cff5775.var_db417b61 = self.var_8cff5775.original_origin;
+        self.var_8cff5775.var_33b29baf = 1;
+    } else {
+        self.var_8cff5775.var_db417b61 = self.origin;
+        self.var_8cff5775.var_33b29baf = 2;
+    }
+    self namespace_250e9486::function_41354e51(self.var_8cff5775.var_db417b61, 1, self.var_8cff5775.var_33b29baf);
+    wait(20);
+    if (self.zombie_move_speed == "walk") {
+        self.zombie_move_speed = "run";
+    }
+    self.var_8cff5775.stunned = 0;
+    self namespace_83eb6304::turnofffx("stunbear_affected");
+    self.ignoreall = 0;
+    self clearenemy();
+    self.favoriteenemy = undefined;
+    self namespace_250e9486::function_4b49bf0d();
+    if (isdefined(self.favoriteenemy)) {
+        self namespace_250e9486::function_41354e51(self namespace_250e9486::function_bd5a9fa6());
+    } else {
+        self thread namespace_ec06fe4a::function_570729f0(1);
+    }
+}
+
+// Namespace namespace_5f74ac47/namespace_5bb43837
+// Params 1, eflags: 0x6 linked
+// Checksum 0x3a8756f1, Offset: 0x620
+// Size: 0x1b0
+function private function_510ce803(player) {
+    self notify("38569382751b81b1");
+    self endon("38569382751b81b1");
+    player endon(#"hash_26b5087b9dec0906");
+    if (isplayer(player)) {
+        player endon(#"disconnect");
+    }
+    self endon(#"death");
+    while (1) {
+        result = undefined;
+        result = self waittill(#"trigger");
+        guy = result.activator;
+        if (!isdefined(guy) || !isdefined(guy.var_8cff5775)) {
+            continue;
+        }
+        if (is_true(guy.var_bbdaef90) || is_true(guy.boss)) {
+            continue;
+        }
+        if (guy.var_8cff5775.stunned === 0) {
+            guy namespace_e32bb68::function_3a59ec34("evt_doa_pickup_teddybear_repulse");
+            guy namespace_83eb6304::function_3ecfde67("stunbear_contact");
+            player playrumbleonentity("slide_rumble");
+            guy thread function_79cb4037();
+        }
+    }
+}
+
+// Namespace namespace_5f74ac47/namespace_5bb43837
+// Params 0, eflags: 0x6 linked
+// Checksum 0x8fcecfa8, Offset: 0x7d8
+// Size: 0xd6
+function private function_6a9ffef0() {
+    self notify("4f772c13159aefb3");
+    self endon("4f772c13159aefb3");
+    self endon(#"hash_26b5087b9dec0906");
+    if (isplayer(self)) {
+        self endon(#"disconnect");
+    }
+    timeout = self namespace_1c2a96f9::function_4808b985(20);
+    self waittilltimeout(timeout, #"entering_last_stand", #"hash_658e10e65ed524c0", #"player_died", #"death");
+    self notify(#"hash_26b5087b9dec0906");
+}
+
+// Namespace namespace_5f74ac47/namespace_5bb43837
+// Params 1, eflags: 0x6 linked
+// Checksum 0x6517ddb4, Offset: 0x8b8
+// Size: 0x17c
+function private function_7343529d(trigger) {
+    self notify("38070fbe679eeaab");
+    self endon("38070fbe679eeaab");
+    self waittill(#"hash_26b5087b9dec0906", #"disconnect", #"hash_658e10e65ed524c0", #"clone_shutdown");
+    if (isdefined(self)) {
+        self notify(#"hash_26b5087b9dec0906");
+        self namespace_83eb6304::turnofffx("stunbear");
+        self namespace_83eb6304::function_3ecfde67("stunbear_fade");
+        self stoploopsound(2);
+    }
+    wait(0.5);
+    util::wait_network_frame();
+    if (isdefined(self)) {
+        self namespace_e32bb68::function_ae271c0b("evt_doa_pickup_teddybear_active_lp");
+        self namespace_e32bb68::function_3a59ec34("evt_doa_pickup_teddybear_active_end");
+        self namespace_83eb6304::turnofffx("stunbear_fade");
+    }
+    if (isdefined(trigger)) {
+        trigger delete();
+    }
+}
+

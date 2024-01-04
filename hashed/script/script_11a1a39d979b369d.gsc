@@ -1,0 +1,33 @@
+// Atian COD Tools GSC CW decompiler test
+#using script_309ce7f5a9a023de;
+#using script_644007a8c3885fc;
+
+#namespace namespace_9be0edfa;
+
+// Namespace namespace_9be0edfa/namespace_9be0edfa
+// Params 0, eflags: 0x1
+// Checksum 0x17f9e12b, Offset: 0xa0
+// Size: 0x14
+function autoexec __init__() {
+    function_a1302aca();
+}
+
+// Namespace namespace_9be0edfa/namespace_9be0edfa
+// Params 0, eflags: 0x2 linked
+// Checksum 0xd8caeee6, Offset: 0xc0
+// Size: 0x1b4
+function function_a1302aca() {
+    var_87d0eef8 = &item_world_fixup::remove_item;
+    var_74257310 = &item_world_fixup::add_item_replacement;
+    var_f8a4c541 = &item_world_fixup::function_6991057;
+    var_edfbccd0 = &item_world_fixup::function_e70fa91c;
+    namespace_1c7b37c6::item_replacer(var_f8a4c541, #"hash_218c23f79bec44e2", #"hash_76f3a790ba92b7db");
+    namespace_1c7b37c6::item_replacer(var_f8a4c541, #"hash_63e44c0150bb5992", #"hash_fc5403fae8e99f2");
+    namespace_1c7b37c6::item_replacer(var_f8a4c541, #"hash_45a2c2712690bd0", #"hash_28b82ccb71cfa6a0");
+    namespace_1c7b37c6::item_replacer(var_f8a4c541, #"hash_3ec8c7d720778d76", #"hash_5077f30cee923efa");
+    namespace_1c7b37c6::item_replacer(var_74257310, #"hash_55c0a68941dcc80b", #"hash_79d7d5e206eaf770");
+    if (getdvarstring(#"g_gametype") === "zcranked") {
+        namespace_1c7b37c6::item_replacer(var_f8a4c541, #"hash_4a5ba547feb80628", #"hash_74ff81f976594bff");
+    }
+}
+
