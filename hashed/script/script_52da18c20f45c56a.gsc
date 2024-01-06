@@ -1163,7 +1163,7 @@ function function_a06867b0(weapon) {
     if (isdefined(level.var_42db149f) && weapon === level.var_42db149f) {
         return 1;
     }
-    if (weapon.name == #"hash_23d9723a892eeaa2" || weapon.name == #"hash_1e25706a023b5e09" || weapon.name == #"hash_1a377db5bfa579f3") {
+    if (weapon.name == #"launcher_freefire_t9" || weapon.name == #"hash_1e25706a023b5e09" || weapon.name == #"hash_1a377db5bfa579f3") {
         return 1;
     }
     return 0;

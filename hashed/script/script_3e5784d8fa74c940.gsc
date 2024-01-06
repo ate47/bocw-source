@@ -28,7 +28,7 @@ function private autoexec __init__system__() {
 // Checksum 0x15d55cea, Offset: 0x240
 // Size: 0xc4c
 function private function_70a657d8() {
-    level.var_db785e13 = getweapon(#"hash_5bd48d860ebd5a41");
+    level.var_db785e13 = getweapon(#"ww_ray_rifle_t9");
     level.var_a467bdbc = getweapon(#"hash_ac86d29509a8939");
     level.var_76fe888f = getweapon(#"hash_426d7c850c7f1d2");
     level.var_3415bf61 = getweapon(#"hash_493fc891e20b4f8a");
@@ -37,9 +37,9 @@ function private function_70a657d8() {
     } else if (!isarray(level.var_3afb1303)) {
         level.var_3afb1303 = array(level.var_3afb1303);
     }
-    aiutility::function_254912d7(#"hash_5bd48d860ebd5a41", "MOD_PROJECTILE");
+    aiutility::function_254912d7(#"ww_ray_rifle_t9", "MOD_PROJECTILE");
     aiutility::function_254912d7(#"hash_426d7c850c7f1d2", "MOD_PROJECTILE");
-    weaponobjects::function_e6400478(#"hash_5bd48d860ebd5a41", &function_5acf1bb9, 1);
+    weaponobjects::function_e6400478(#"ww_ray_rifle_t9", &function_5acf1bb9, 1);
     weaponobjects::function_e6400478(#"hash_426d7c850c7f1d2", &function_5acf1bb9, 1);
     zombie_utility::add_zombie_gib_weapon_callback(#"hash_ac86d29509a8939", &function_81027f3e, &function_81027f3e);
     callback::add_weapon_fired(level.var_db785e13, &function_a70ad564);
@@ -85,9 +85,9 @@ function private function_70a657d8() {
 // Checksum 0xfd26f274, Offset: 0xe98
 // Size: 0x94
 function postinit() {
-    zm_weapons::function_8389c033(#"hash_5bd48d860ebd5a41", #"hash_5bd48d860ebd5a41");
-    zm_weapons::function_8389c033(#"hash_5bd48d860ebd5a41", #"ray_gun");
-    zm_weapons::function_8389c033(#"ray_gun", #"hash_5bd48d860ebd5a41");
+    zm_weapons::function_8389c033(#"ww_ray_rifle_t9", #"ww_ray_rifle_t9");
+    zm_weapons::function_8389c033(#"ww_ray_rifle_t9", #"ray_gun");
+    zm_weapons::function_8389c033(#"ray_gun", #"ww_ray_rifle_t9");
 }
 
 // Namespace namespace_a5ef5769/reload
@@ -187,7 +187,7 @@ function function_cbd0f11(weapon) {
         var_1236db9d = zm_weapons::function_386dacbc(weapon).name;
         switch (var_1236db9d) {
         case #"hash_426d7c850c7f1d2":
-        case #"hash_5bd48d860ebd5a41":
+        case #"ww_ray_rifle_t9":
             return 1;
         case #"hash_defdefdefdefdef0":
             return 0;

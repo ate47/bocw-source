@@ -553,9 +553,9 @@ function function_f0ba2044(player) {
 function function_68461db2() {
     player = getplayers()[0];
     weapon = spawnstruct();
-    weapon.var_15803bcb.weapon = getweapon(#"hash_5bf4dc6dcf1d2340", "steadyaim", "elo2");
-    weapon.var_c5932593.weapon = getweapon(#"hash_7a3989475f8af314", "steadyaim", "reflex", "grip");
-    weapon.var_50cb17be.weapon = getweapon(#"hash_6251778e2d3b9a64", "acog");
+    weapon.var_15803bcb.weapon = getweapon(#"smg_standard_t9", "steadyaim", "elo2");
+    weapon.var_c5932593.weapon = getweapon(#"smg_handling_t9", "steadyaim", "reflex", "grip");
+    weapon.var_50cb17be.weapon = getweapon(#"smg_heavy_t9", "acog");
     weapon.var_e035b3c3.weapon = getentarray("trunk_smg1", "targetname");
     weapon.var_5dc45345.weapon = getentarray("trunk_smg2", "targetname");
     weapon.var_ccbb5ad1.weapon = getentarray("trunk_smg3", "targetname");
@@ -595,7 +595,7 @@ function function_3f2fe2a4(var_9f43fd46, var_5526621d, var_e3fbbf0d, var_f672334
             foreach (model in var_5526621d) {
                 model hide();
             }
-            pistol = getweapon(#"hash_33ed9170805d825c", "steadyaim", "fastreload", "reflex_pistol");
+            pistol = getweapon(#"pistol_semiauto_t9", "steadyaim", "fastreload", "reflex_pistol");
             player hms_util::function_2e7c81f6(var_9f43fd46, pistol, #"frag_grenade");
             player initialweaponraise(var_9f43fd46);
             player switchtoweapon(var_9f43fd46);

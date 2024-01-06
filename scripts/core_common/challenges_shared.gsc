@@ -99,7 +99,7 @@ function destroyedequipment(weapon) {
     }
     self stats::function_dad108fa(#"destroy_equipment", 1);
     if (isdefined(weapon)) {
-        if (weapon.statname !== #"hash_18a2b66939a974a1") {
+        if (weapon.statname !== #"special_crossbow_t9") {
             self stats::function_e24eec31(weapon, #"hash_114572b44a79e990", 1);
         }
         self stats::function_e24eec31(weapon, #"hash_497df827743010c3", 1);
@@ -1046,7 +1046,7 @@ function destroyscorestreak(weapon, playercontrolled, groundbased, countaskillst
         self stats::function_e24eec31(weapon, #"destroy_5_killstreak", 1);
         self stats::function_e24eec31(weapon, #"destroy_5_killstreak_vehicle", 1);
     }
-    if (weapon.statname !== #"hash_18a2b66939a974a1") {
+    if (weapon.statname !== #"special_crossbow_t9") {
         self stats::function_e24eec31(weapon, #"hash_114572b44a79e990", 1);
     }
     self stats::function_e24eec31(weapon, #"hash_497df827743010c3", 1);
@@ -2628,7 +2628,7 @@ function function_7f86a7b8(attacker, attackerweapon, meansofdeath) {
     attacker stats::function_a47092b5(#"hash_10b266bec758c000", 1, #"hash_5de4e8563e882e42");
     if (isdefined(attackerweapon) && attackerweapon != level.weaponnone) {
         attacker stats::function_e24eec31(attackerweapon, #"hash_6759c0df02e8aa9d", 1);
-        if (attackerweapon.statname === #"hash_18a2b66939a974a1" && !weapons::ismeleemod(meansofdeath)) {
+        if (attackerweapon.statname === #"special_crossbow_t9" && !weapons::ismeleemod(meansofdeath)) {
             attacker stats::function_e24eec31(attackerweapon, #"hash_6a9ef93d619f4bcc", 1);
         }
         weaponclass = util::getweaponclass(attackerweapon);

@@ -21,7 +21,7 @@
             "var_4c0d0c4b": -1,
             "customclassname": "#hash_79fb37771b897822",
             "var_26b5c8ef": -1,
-            "primary": "#hash_5bf4dc6dcf1d2340",
+            "primary": "#smg_standard_t9",
             "specialgrenade": "#hash_41adc0ca9daf6e9d"
         },
         {
@@ -45,7 +45,7 @@
             "var_4c0d0c4b": -1,
             "customclassname": "#hash_79fb35771b8974bc",
             "var_26b5c8ef": -1,
-            "primary": "#hash_33ed9170805d825c",
+            "primary": "#pistol_semiauto_t9",
             "specialgrenade": "#hash_2d88b4c5217c7e7c"
         },
         {
@@ -69,7 +69,7 @@
             "var_4c0d0c4b": -1,
             "customclassname": "#hash_79fb38771b8979d5",
             "var_26b5c8ef": -1,
-            "primary": "#hash_5243375728e388f6",
+            "primary": "#shotgun_pump_t9",
             "specialgrenade": "#frost_blast"
         },
         {
@@ -93,7 +93,7 @@
             "var_4c0d0c4b": -1,
             "customclassname": "#hash_79fb32771b896fa3",
             "var_26b5c8ef": -1,
-            "primary": "#hash_5b3e3aae603f948e",
+            "primary": "#tr_longburst_t9",
             "specialgrenade": "#hash_7b5a77a85b0ffab7"
         },
         {
@@ -117,7 +117,7 @@
             "var_4c0d0c4b": -1,
             "customclassname": "#hash_79fb31771b896df0",
             "var_26b5c8ef": -1,
-            "primary": "#hash_70f8f2d92031f544",
+            "primary": "#ar_standard_t9",
             "specialgrenade": "#hash_1d9cb9dbd298acba"
         }
     ],
@@ -126,7 +126,7 @@
             "var_4c0d0c4b": -1,
             "customclassname": "#class/slot1",
             "var_26b5c8ef": -1,
-            "primary": "#hash_70f8f2d92031f544",
+            "primary": "#ar_standard_t9",
             "specialgrenade": "#frost_blast"
         }
     ],
@@ -135,70 +135,70 @@
             "var_4c0d0c4b": -1,
             "customclassname": "#class/slot1",
             "var_26b5c8ef": -1,
-            "primary": "#hash_70f8f2d92031f544",
+            "primary": "#ar_standard_t9",
             "specialgrenade": "#frost_blast"
         },
         {
             "var_4c0d0c4b": -1,
             "customclassname": "#class/slot2",
             "var_26b5c8ef": -1,
-            "primary": "#hash_5bf4dc6dcf1d2340",
+            "primary": "#smg_standard_t9",
             "specialgrenade": "#frost_blast"
         },
         {
             "var_4c0d0c4b": -1,
             "customclassname": "#class/slot3",
             "var_26b5c8ef": -1,
-            "primary": "#hash_8ff6b682d43c59c",
+            "primary": "#lmg_accurate_t9",
             "specialgrenade": "#frost_blast"
         },
         {
             "var_4c0d0c4b": -1,
             "customclassname": "#class/slot4",
             "var_26b5c8ef": -1,
-            "primary": "#hash_485d0c5e33d67e78",
+            "primary": "#sniper_quickscope_t9",
             "specialgrenade": "#frost_blast"
         },
         {
             "var_4c0d0c4b": -1,
             "customclassname": "#class/slot5",
             "var_26b5c8ef": -1,
-            "primary": "#hash_51114f6fd577519b",
+            "primary": "#tr_damagesemi_t9",
             "specialgrenade": "#frost_blast"
         },
         {
             "var_4c0d0c4b": -1,
             "customclassname": "#class/slot6",
             "var_26b5c8ef": -1,
-            "primary": "#hash_1039f56708e1d3e4",
+            "primary": "#ar_damage_t9",
             "specialgrenade": "#frost_blast"
         },
         {
             "var_4c0d0c4b": -1,
             "customclassname": "#class/slot7",
             "var_26b5c8ef": -1,
-            "primary": "#hash_7a3989475f8af314",
+            "primary": "#smg_handling_t9",
             "specialgrenade": "#hash_41adc0ca9daf6e9d"
         },
         {
             "var_4c0d0c4b": -1,
             "customclassname": "#class/slot8",
             "var_26b5c8ef": -1,
-            "primary": "#hash_6251778e2d3b9a64",
+            "primary": "#smg_heavy_t9",
             "specialgrenade": "#hash_2d88b4c5217c7e7c"
         },
         {
             "var_4c0d0c4b": -1,
             "customclassname": "#class/slot9",
             "var_26b5c8ef": -1,
-            "primary": "#hash_696069d98ed3f228",
+            "primary": "#sniper_standard_t9",
             "specialgrenade": "#hash_7b5a77a85b0ffab7"
         },
         {
             "var_4c0d0c4b": -1,
             "customclassname": "#class/slot10",
             "var_26b5c8ef": -1,
-            "primary": "#hash_6cb1c7e45075a0a4",
+            "primary": "#ar_mobility_t9",
             "specialgrenade": "#hash_1d9cb9dbd298acba"
         }
     ],

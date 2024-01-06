@@ -519,43 +519,43 @@ function function_a79ea08b(*einflictor, victim, *idamage, weapon) {
         }
         var_30f88120 = scoreevents::function_c28e2c05(idamage.origin, var_6af452fc.sensordarts, 0);
         switch (weapon.statname) {
-        case #"hash_6cb1c7e45075a0a4":
-        case #"hash_7a3989475f8af314":
+        case #"ar_mobility_t9":
+        case #"smg_handling_t9":
             self stats::function_42277145(#"hash_76bf58f08a08d598", 1);
             break;
-        case #"hash_1039f56708e1d3e4":
-        case #"hash_349be5cb35ef5f77":
-        case #"hash_5243375728e388f6":
+        case #"ar_damage_t9":
+        case #"smg_burst_t9":
+        case #"shotgun_pump_t9":
             self stats::function_42277145(#"hash_734f1d49f5395c1", 1);
             break;
-        case #"hash_6251778e2d3b9a64":
-        case #"hash_70f8f2d92031f544":
+        case #"smg_heavy_t9":
+        case #"ar_standard_t9":
             self stats::function_42277145(#"hash_777767b99c350232", 1);
             break;
         case #"hash_defdefdefdefdef0":
             break;
         }
         switch (weapon.statname) {
-        case #"hash_349be5cb35ef5f77":
-        case #"hash_67116924005b2bf8":
+        case #"smg_burst_t9":
+        case #"ar_british_t9":
             self stats::function_42277145(#"hash_24abaa59aafa466b", 1);
             break;
-        case #"hash_4d8b07efde79fb03":
-        case #"hash_6251778e2d3b9a64":
-        case #"hash_64e4e829150d8882":
+        case #"ar_slowhandling_t9":
+        case #"smg_heavy_t9":
+        case #"lmg_light_t9":
             self stats::function_42277145(#"hash_3d9159bfdb045054", 1);
             break;
-        case #"hash_227fd691c2da0969":
-        case #"hash_5bf4dc6dcf1d2340":
+        case #"special_grenadelauncher_t9":
+        case #"smg_standard_t9":
             self stats::function_42277145(#"hash_3a26c6202d86ed8d", 1);
             break;
         case #"hash_defdefdefdefdef0":
             break;
         }
         switch (weapon.statname) {
-        case #"hash_1f48092b20589001":
-        case #"hash_67116924005b2bf8":
-        case #"hash_7a3989475f8af314":
+        case #"pistol_fullauto_t9":
+        case #"ar_british_t9":
+        case #"smg_handling_t9":
             self stats::function_42277145(#"hash_7208e21496453ace", 1);
             break;
         case #"hash_defdefdefdefdef0":
@@ -789,7 +789,7 @@ function function_a79ea08b(*einflictor, victim, *idamage, weapon) {
         if (isdefined(weaponclass)) {
             switch (weaponclass) {
             case #"weapon_tactical":
-                jumpiffalse(weapon.name === #"hash_5818a5515e931441") LOC_00001d82;
+                jumpiffalse(weapon.name === #"tr_powerburst_t9") LOC_00001d82;
                 break;
             case #"weapon_pistol":
             case #"weapon_shotgun":
@@ -847,17 +847,17 @@ function function_a79ea08b(*einflictor, victim, *idamage, weapon) {
             if (self weaponhasattachmentandunlocked(weapon, "extclip") || self weaponhasattachmentandunlocked(weapon, "extclip2")) {
                 var_8a4dd851 = 1;
                 switch (weapon.name) {
-                case #"hash_36830b3ab9fbdde":
-                case #"hash_349be5cb35ef5f77":
+                case #"tr_fastburst_t9":
+                case #"smg_burst_t9":
                 case #"ar_slowfire_t9":
-                case #"hash_5818a5515e931441":
-                case #"hash_5bf4dc6dcf1d2340":
-                case #"hash_6251778e2d3b9a64":
-                case #"hash_6436cdb615a2bb79":
-                case #"hash_69868331b3d3cec2":
-                case #"hash_6cb1c7e45075a0a4":
-                case #"hash_7a3989475f8af314":
-                case #"hash_7a7bd99ab5e9bd82":
+                case #"tr_powerburst_t9":
+                case #"smg_standard_t9":
+                case #"smg_heavy_t9":
+                case #"smg_fastfire_t9":
+                case #"smg_spray_t9":
+                case #"ar_mobility_t9":
+                case #"smg_handling_t9":
+                case #"shotgun_fullauto_t9":
                     self contracts::increment_contract(#"hash_6a3f7e63a5f3991f");
                     if (weaponclass === #"weapon_smg") {
                         self stats::function_dad108fa(#"hash_37ca29310542d08e", 1);
@@ -868,8 +868,8 @@ function function_a79ea08b(*einflictor, victim, *idamage, weapon) {
             if (self weaponhasattachmentandunlocked(weapon, "mixclip") || self weaponhasattachmentandunlocked(weapon, "mixclip2")) {
                 var_8a4dd851 = 1;
                 switch (weapon.name) {
-                case #"hash_8ff6b682d43c59c":
-                case #"hash_64e4e829150d8882":
+                case #"lmg_accurate_t9":
+                case #"lmg_light_t9":
                     self contracts::increment_contract(#"hash_6a3f7e63a5f3991f");
                     break;
                 }
@@ -884,7 +884,7 @@ function function_a79ea08b(*einflictor, victim, *idamage, weapon) {
             if (self weaponhasattachmentandunlocked(weapon, "sprintout")) {
                 if (weaponclass === #"weapon_cqb") {
                     switch (weapon.name) {
-                    case #"hash_5243375728e388f6":
+                    case #"shotgun_pump_t9":
                         break;
                     case #"hash_defdefdefdefdef0":
                         self stats::function_dad108fa(#"hash_71804c7bbbaad1f6", 1);
@@ -894,20 +894,20 @@ function function_a79ea08b(*einflictor, victim, *idamage, weapon) {
             }
             if (self weaponhasattachmentandunlocked(weapon, "sprintout2")) {
                 switch (weapon.name) {
-                case #"hash_36830b3ab9fbdde":
-                case #"hash_b75a549c0e857d0":
-                case #"hash_44214d17f349989d":
-                case #"hash_485d0c5e33d67e78":
+                case #"tr_fastburst_t9":
+                case #"sniper_powersemi_t9":
+                case #"ar_fastfire_t9":
+                case #"sniper_quickscope_t9":
                 case #"ar_slowfire_t9":
-                case #"hash_5818a5515e931441":
-                case #"hash_5b3e3aae603f948e":
-                case #"hash_696069d98ed3f228":
-                case #"hash_69868331b3d3cec2":
-                case #"hash_6be9615b6d0ec416":
-                case #"hash_6cb1c7e45075a0a4":
-                case #"hash_6d4147003a863d04":
-                case #"hash_70f8f2d92031f544":
-                case #"hash_7a3989475f8af314":
+                case #"tr_powerburst_t9":
+                case #"tr_longburst_t9":
+                case #"sniper_standard_t9":
+                case #"smg_spray_t9":
+                case #"ar_fasthandling_t9":
+                case #"ar_mobility_t9":
+                case #"sniper_cannon_t9":
+                case #"ar_standard_t9":
+                case #"smg_handling_t9":
                     break;
                 case #"hash_defdefdefdefdef0":
                     self contracts::increment_contract(#"hash_73b57ed83e48a782");
@@ -1589,11 +1589,11 @@ function challengekills(data) {
                 player stats::function_dad108fa(#"hash_31d5721ee9793424", 1);
                 player stats::function_dad108fa(#"hash_5dd25904c990744e", 1);
                 if (!isdefined(player.pers[#"hash_36a7b702420af0b8"]) && player function_c9e4f73f(2, #"hash_36a7b702420af0b8", #"hash_4f4e25cbf5c7ea7f")) {
-                    player stats::function_841e4896(#"hash_21a7824cfc151de4", 1, #"hash_a5417e397f372f2", #"hash_4d8b07efde79fb03");
+                    player stats::function_841e4896(#"hash_21a7824cfc151de4", 1, #"hash_a5417e397f372f2", #"ar_slowhandling_t9");
                 }
             } else if (weaponclass === #"weapon_sniper") {
                 if (!isdefined(player.pers[#"hash_3b986cd66018f097"]) && player function_c9e4f73f(2, #"hash_3b986cd66018f097", #"hash_7bd70a9b560ddb9a")) {
-                    player stats::function_841e4896(#"hash_45c809e6fc999f3a", 1, #"hash_34403f1f2912461f", #"hash_43f69996d6cbbd89");
+                    player stats::function_841e4896(#"hash_45c809e6fc999f3a", 1, #"hash_34403f1f2912461f", #"sniper_accurate_t9");
                 }
             } else if (weaponclass === #"weapon_pistol") {
                 if (!isdefined(player.pers[#"hash_3722a14b880f6468"])) {
@@ -1602,7 +1602,7 @@ function challengekills(data) {
                 }
             } else if (weaponclass === #"weapon_smg") {
                 if (!isdefined(player.pers[#"hash_283f99725567f269"]) && player function_c9e4f73f(2, #"hash_283f99725567f269", #"hash_1ddb2360e194a87c")) {
-                    player stats::function_841e4896(#"hash_2fb4d0164593f277", 1, #"hash_6d5c2b4b0c5834bc", #"hash_773a513fbaa45fb4");
+                    player stats::function_841e4896(#"hash_2fb4d0164593f277", 1, #"hash_6d5c2b4b0c5834bc", #"smg_semiauto_t9");
                 }
             } else if (weaponclass === #"weapon_grenade") {
                 if (weapon.statname === #"hatchet") {
@@ -1717,7 +1717,7 @@ function challengekills(data) {
         if (weaponclass === #"weapon_lmg") {
             if (data.var_63a3295e >= 3) {
                 if (!isdefined(player.pers[#"hash_445aea675719f5f6"])) {
-                    player stats::function_841e4896(#"hash_603615ffae21f65f", 1, #"hash_329170867acd33e9", #"hash_70cb1c2da27e0190");
+                    player stats::function_841e4896(#"hash_603615ffae21f65f", 1, #"hash_329170867acd33e9", #"lmg_fastfire_t9");
                     player.pers[#"hash_445aea675719f5f6"] = 1;
                 }
             }
@@ -2264,7 +2264,7 @@ function challengekills(data) {
             player stats::function_dad108fa(#"hash_57f979618206b04", 1);
             if (weaponclass === #"weapon_smg") {
                 if (!isdefined(player.pers[#"hash_503fd807bb4d25ff"]) && player function_c9e4f73f(3, #"hash_503fd807bb4d25ff", #"hash_2a044617f955e702")) {
-                    player stats::function_841e4896(#"hash_19a15fdb3f31884a", 1, #"hash_7483a7699470a94c", #"hash_69868331b3d3cec2");
+                    player stats::function_841e4896(#"hash_19a15fdb3f31884a", 1, #"hash_7483a7699470a94c", #"smg_spray_t9");
                 }
             }
         }
@@ -2288,7 +2288,7 @@ function challengekills(data) {
         if (weaponclass === #"weapon_knife") {
             if (!isdefined(var_1452c652) || !(isdefined(var_1452c652.lasttimedamaged) && var_1452c652.lasttimedamaged + 10000 > time)) {
                 if (!isdefined(player.pers[#"hash_500a79b8d2f15f27"])) {
-                    player stats::function_841e4896(#"hash_1468ae1763b44910", 1, #"hash_f9572f1792a7862", #"hash_3bb2c573b2dfc889");
+                    player stats::function_841e4896(#"hash_1468ae1763b44910", 1, #"hash_f9572f1792a7862", #"melee_sai_t9_dw");
                     player.pers[#"hash_500a79b8d2f15f27"] = 1;
                 }
             }
@@ -2526,7 +2526,7 @@ function challengekills(data) {
             attacker stats::function_dad108fa(#"hash_421ceddf01cb65c6", 1);
             if (weaponclass === #"weapon_assault") {
                 if (!isdefined(player.pers[#"hash_5822ec5bf1b282eb"])) {
-                    player stats::function_841e4896(#"hash_7bc34d1910ad008", 1, #"hash_564ac287fb7075d8", #"hash_6146c46771b21a2");
+                    player stats::function_841e4896(#"hash_7bc34d1910ad008", 1, #"hash_564ac287fb7075d8", #"ar_season6_t9");
                     player.pers[#"hash_5822ec5bf1b282eb"] = 1;
                 }
             }
@@ -2952,11 +2952,11 @@ function function_7fd1799f(baseweapon, player, weaponclass, meansofdeath) {
                 player stats::function_dad108fa(#"hash_18fc969186722670", 1);
                 player stats::function_dad108fa(#"hash_50513027398440db", 1);
                 if (!isdefined(player.pers[#"hash_19bc4812e186371a"])) {
-                    player stats::function_841e4896(#"hash_4749db0b7b2d6e3", 1, #"hash_51465116c1efc9be", #"hash_6be9615b6d0ec416");
+                    player stats::function_841e4896(#"hash_4749db0b7b2d6e3", 1, #"hash_51465116c1efc9be", #"ar_fasthandling_t9");
                     player.pers[#"hash_19bc4812e186371a"] = 1;
                 }
             } else if (weaponclass === #"weapon_smg" && !isdefined(player.pers[#"hash_1e0b27804513787"])) {
-                player stats::function_841e4896(#"hash_6b9dbfd78454d618", 1, #"hash_3142d28c7a02bdf7", #"hash_5f1d39574585b511");
+                player stats::function_841e4896(#"hash_6b9dbfd78454d618", 1, #"hash_3142d28c7a02bdf7", #"smg_accurate_t9");
                 player.pers[#"hash_1e0b27804513787"] = 1;
             }
         }
@@ -3984,7 +3984,7 @@ function function_8e9b2d44(data, *time) {
             }
         }
         if (!isdefined(vehicle.killstreak_id)) {
-            if (weapon.statname !== #"hash_18a2b66939a974a1") {
+            if (weapon.statname !== #"special_crossbow_t9") {
                 attacker stats::function_e24eec31(weapon, #"hash_114572b44a79e990", 1);
             }
             attacker stats::function_e24eec31(weapon, #"hash_497df827743010c3", 1);
@@ -4022,7 +4022,7 @@ function function_8e9b2d44(data, *time) {
 // Checksum 0x5754a04e, Offset: 0x12cc8
 // Size: 0xcc
 function function_6c21a4de(weapon) {
-    if (weapon.statname === #"hash_18a2b66939a974a1") {
+    if (weapon.statname === #"special_crossbow_t9") {
         return;
     }
     if (!isdefined(self.pers[#"hash_47e7ebe61b42a76e"])) {

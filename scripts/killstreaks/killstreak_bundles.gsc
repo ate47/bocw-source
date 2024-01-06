@@ -226,7 +226,7 @@ function get_shots_to_kill(weapon, meansofdeath, bundle) {
     case #"hash_180035d2349984a1":
         shotstokill = bundle.var_1a2b2555;
         break;
-    case #"hash_6d4147003a863d04":
+    case #"sniper_cannon_t9":
         shotstokill = bundle.var_1b1effa1;
         if (weaponhasattachment(weapon, "heavy")) {
             if (isdefined(bundle.var_f525f6a8) && bundle.var_f525f6a8 > 0) {

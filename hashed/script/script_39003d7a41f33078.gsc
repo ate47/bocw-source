@@ -194,10 +194,10 @@ function function_5a1fa1a2(player) {
     }
     if (isarray(level.var_b6405fbf) && isinarray(level.var_b6405fbf, var_2506506a.name) || weapon == level.weaponnone || !weapon.isprimary) {
         if (var_23624e62 === weapon) {
-            weapon = getweapon(#"hash_2580580083c87b0d");
+            weapon = getweapon(#"ar_accurate_t9");
             self animation::attach_weapon(weapon);
         } else if (isarray(level.var_b6405fbf) && isinarray(level.var_b6405fbf, var_7bd31de8.name)) {
-            weapon = getweapon(#"hash_2580580083c87b0d");
+            weapon = getweapon(#"ar_accurate_t9");
             self animation::attach_weapon(weapon);
         } else {
             weapon = var_23624e62;

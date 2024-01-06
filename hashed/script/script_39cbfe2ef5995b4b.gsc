@@ -319,7 +319,7 @@ function private function_c3f4d281(item, *player, *var_bd027dd9, *itemid, *itemc
     self hud::function_4a4de0de();
     var_a9bb683c = getweapon(#"none");
     var_f945fa92 = getweapon(#"bare_hands");
-    var_f934814c = getweapon(#"hash_5dd5741f21fd680d");
+    var_f934814c = getweapon(#"ww_ieu_electric_t9");
     var_92587dd3 = getweapon(#"hash_4ee16eb0581e4646");
     foreach (weaponslot in namespace_a0d533d1::function_4905dddf()) {
         inventoryweapon = self namespace_a0d533d1::function_2b83d3ff(self item_inventory::function_2e711614(weaponslot));

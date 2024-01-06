@@ -43,7 +43,7 @@ function createspecialcrossbowwatchertypes(watcher) {
 // Checksum 0x6bb7d7a0, Offset: 0x308
 // Size: 0x8c
 function function_f297d773() {
-    function_e6400478(#"hash_18a2b66939a974a1", &createspecialcrossbowwatchertypes, 1);
+    function_e6400478(#"special_crossbow_t9", &createspecialcrossbowwatchertypes, 1);
     if (is_true(level.b_create_upgraded_crossbow_watchers)) {
         function_e6400478(#"hash_c6535e906c2c072", &createspecialcrossbowwatchertypes, 1);
     }

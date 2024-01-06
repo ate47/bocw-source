@@ -807,7 +807,7 @@ function function_cd56635f(b_skipped) {
 // Size: 0xfc
 function function_63eefce1(b_skipped, var_19e802fa) {
     if (b_skipped || var_19e802fa) {
-        ww_weapon = getweapon(#"hash_5bd48d860ebd5a41");
+        ww_weapon = getweapon(#"ww_ray_rifle_t9");
         foreach (player in getplayers()) {
             player zm_weapons::weapon_give(ww_weapon);
         }
@@ -960,7 +960,7 @@ function function_eeecf07f(params) {
             case #"item_zmintel_gold_requiem_artifact_4":
                 array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"zmintel_gold_requiem_artifact_4");
                 level notify(#"ww_pickup");
-                ww_weapon = getweapon(#"hash_5bd48d860ebd5a41");
+                ww_weapon = getweapon(#"ww_ray_rifle_t9");
                 self zm_weapons::weapon_give(ww_weapon, 1);
                 self zm_vo::function_d342796e(#"hash_62aba8e16a728e4");
                 wait(1);

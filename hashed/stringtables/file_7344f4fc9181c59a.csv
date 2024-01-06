@@ -17,7 +17,7 @@
 12,,#hash_7bb2d755872a5be5,#currency,#legendary,0,0,#,#,0
 13,19262075,#weapon_xp_token_legendary,#hash_7c692b8eb31f67eb,#legendary,0,0,#,#,0
 14,23111756,#reticle_86,#reticle,#rare,0,0,#,#,0
-15,32959692,#hash_69868331b3d3cec2,#weapon,#base,0,1,#hash_206fb5c51f589e02,#hash_2c00d7d5f116330f,0
+15,32959692,#smg_spray_t9,#weapon,#base,0,1,#hash_206fb5c51f589e02,#hash_2c00d7d5f116330f,0
 16,19746222,#loot_ges_mtx_t9_snap,#gesture,#epic,0,0,#,#,0
 17,,#hash_7bb2d755872a5be5,#currency,#legendary,0,0,#,#,0
 18,26464392,#hash_42a47c25e2096556,#blueprint,#epic,0,0,#,#hash_2c00d7d5f116330f,0
@@ -34,7 +34,7 @@
 28,30636766,#reticle_73,#reticle,#rare,0,1,#,#,0
 29,30886333,#player_xp_token_common,#hash_7c692b8eb31f67eb,#common,0,0,#,#,0
 30,26638417,#hash_108554e5529a21fa,#character_outfit,#rare,0,0,#,#hash_2c00d7d5f116330f,0
-31,19029071,#hash_43f69996d6cbbd89,#weapon,#base,0,1,#hash_206fb5c51f589e02,#hash_2c00d7d5f116330f,0
+31,19029071,#sniper_accurate_t9,#weapon,#base,0,1,#hash_206fb5c51f589e02,#hash_2c00d7d5f116330f,0
 32,,#hash_7bb2d755872a5be5,#currency,#legendary,0,0,#,#,0
 33,21939939,#hash_311ae5e62954054a,#calling_card,#legendary,0,0,#,#,0
 34,28164056,#wristaccessory_t9_s3_digital_rank_winter_fallout,#hash_c70e59dba98cf81,#legendary,0,1,#,#,0

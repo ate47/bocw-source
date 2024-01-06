@@ -4930,7 +4930,7 @@ function function_73ae3380(item, var_a8bccf69) {
             self function_d92c6b5b(currentweapon, undefined, var_a8bccf69, var_ec0c35ac);
             if (isdefined(aat_name) && isdefined(var_ec0c35ac)) {
                 var_ec0c35ac.aat = aat_name;
-                if (currentweapon.weapclass != "melee" && currentweapon.name != #"hash_3e13285248686f27" && currentweapon.name != #"hash_4650af6ac5c9ce80") {
+                if (currentweapon.weapclass != "melee" && currentweapon.name != #"special_ballisticknife_t9_dw" && currentweapon.name != #"hash_4650af6ac5c9ce80") {
                     self function_bf3044dc(currentweapon, 1);
                 }
                 self aat::acquire(currentweapon, aat_name);

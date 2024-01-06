@@ -24,36 +24,36 @@ function function_70a657d8() {
 // Checksum 0x2538b615, Offset: 0x298
 // Size: 0x784
 function private function_ce850bf4() {
-    bot_action::register_weapon(#"hash_2580580083c87b0d", &function_319dfab4, &use_ar);
-    bot_action::register_weapon(#"hash_1039f56708e1d3e4", &function_319dfab4, &use_ar);
-    bot_action::register_weapon(#"hash_44214d17f349989d", &function_319dfab4, &use_ar);
-    bot_action::register_weapon(#"hash_6be9615b6d0ec416", &function_319dfab4, &use_ar);
-    bot_action::register_weapon(#"hash_6cb1c7e45075a0a4", &function_319dfab4, &use_ar);
+    bot_action::register_weapon(#"ar_accurate_t9", &function_319dfab4, &use_ar);
+    bot_action::register_weapon(#"ar_damage_t9", &function_319dfab4, &use_ar);
+    bot_action::register_weapon(#"ar_fastfire_t9", &function_319dfab4, &use_ar);
+    bot_action::register_weapon(#"ar_fasthandling_t9", &function_319dfab4, &use_ar);
+    bot_action::register_weapon(#"ar_mobility_t9", &function_319dfab4, &use_ar);
     bot_action::register_weapon(#"ar_slowfire_t9", &function_319dfab4, &use_ar);
-    bot_action::register_weapon(#"hash_4d8b07efde79fb03", &function_319dfab4, &use_ar);
-    bot_action::register_weapon(#"hash_70f8f2d92031f544", &function_319dfab4, &use_ar);
-    bot_action::register_weapon(#"hash_8ff6b682d43c59c", &function_aadbe8c, &function_82ebbce);
-    bot_action::register_weapon(#"hash_70cb1c2da27e0190", &function_aadbe8c, &function_82ebbce);
-    bot_action::register_weapon(#"hash_64e4e829150d8882", &function_aadbe8c, &function_82ebbce);
-    bot_action::register_weapon(#"hash_7fff139e10965561", &function_aadbe8c, &function_82ebbce);
-    bot_action::register_weapon(#"hash_5f1d39574585b511", &function_b9557a8a, &function_b3992b0);
-    bot_action::register_weapon(#"hash_349be5cb35ef5f77", &function_b9557a8a, &function_b3992b0);
-    bot_action::register_weapon(#"hash_2f42bc0a766b6567", &function_b9557a8a, &function_b3992b0);
-    bot_action::register_weapon(#"hash_6436cdb615a2bb79", &function_b9557a8a, &function_b3992b0);
-    bot_action::register_weapon(#"hash_7a3989475f8af314", &function_b9557a8a, &function_b3992b0);
-    bot_action::register_weapon(#"hash_6251778e2d3b9a64", &function_b9557a8a, &function_b3992b0);
-    bot_action::register_weapon(#"hash_69868331b3d3cec2", &function_b9557a8a, &function_b3992b0);
-    bot_action::register_weapon(#"hash_5bf4dc6dcf1d2340", &function_b9557a8a, &function_b3992b0);
-    bot_action::register_weapon(#"hash_43f69996d6cbbd89", &function_c75d81ab, &function_d6921803);
-    bot_action::register_weapon(#"hash_6d4147003a863d04", &function_c75d81ab, &function_d6921803);
-    bot_action::register_weapon(#"hash_b75a549c0e857d0", &function_c75d81ab, &function_d6921803);
-    bot_action::register_weapon(#"hash_485d0c5e33d67e78", &function_c75d81ab, &function_d6921803);
-    bot_action::register_weapon(#"hash_696069d98ed3f228", &function_c75d81ab, &function_d6921803);
-    bot_action::register_weapon(#"hash_51114f6fd577519b", &function_183e848d, &use_tr);
-    bot_action::register_weapon(#"hash_36830b3ab9fbdde", &function_183e848d, &use_tr);
-    bot_action::register_weapon(#"hash_5b3e3aae603f948e", &function_183e848d, &use_tr);
-    bot_action::register_weapon(#"hash_5818a5515e931441", &function_183e848d, &use_tr);
-    bot_action::register_weapon(#"hash_503338a31adadb4c", &function_183e848d, &use_tr);
+    bot_action::register_weapon(#"ar_slowhandling_t9", &function_319dfab4, &use_ar);
+    bot_action::register_weapon(#"ar_standard_t9", &function_319dfab4, &use_ar);
+    bot_action::register_weapon(#"lmg_accurate_t9", &function_aadbe8c, &function_82ebbce);
+    bot_action::register_weapon(#"lmg_fastfire_t9", &function_aadbe8c, &function_82ebbce);
+    bot_action::register_weapon(#"lmg_light_t9", &function_aadbe8c, &function_82ebbce);
+    bot_action::register_weapon(#"lmg_slowfire_t9", &function_aadbe8c, &function_82ebbce);
+    bot_action::register_weapon(#"smg_accurate_t9", &function_b9557a8a, &function_b3992b0);
+    bot_action::register_weapon(#"smg_burst_t9", &function_b9557a8a, &function_b3992b0);
+    bot_action::register_weapon(#"smg_capacity_t9", &function_b9557a8a, &function_b3992b0);
+    bot_action::register_weapon(#"smg_fastfire_t9", &function_b9557a8a, &function_b3992b0);
+    bot_action::register_weapon(#"smg_handling_t9", &function_b9557a8a, &function_b3992b0);
+    bot_action::register_weapon(#"smg_heavy_t9", &function_b9557a8a, &function_b3992b0);
+    bot_action::register_weapon(#"smg_spray_t9", &function_b9557a8a, &function_b3992b0);
+    bot_action::register_weapon(#"smg_standard_t9", &function_b9557a8a, &function_b3992b0);
+    bot_action::register_weapon(#"sniper_accurate_t9", &function_c75d81ab, &function_d6921803);
+    bot_action::register_weapon(#"sniper_cannon_t9", &function_c75d81ab, &function_d6921803);
+    bot_action::register_weapon(#"sniper_powersemi_t9", &function_c75d81ab, &function_d6921803);
+    bot_action::register_weapon(#"sniper_quickscope_t9", &function_c75d81ab, &function_d6921803);
+    bot_action::register_weapon(#"sniper_standard_t9", &function_c75d81ab, &function_d6921803);
+    bot_action::register_weapon(#"tr_damagesemi_t9", &function_183e848d, &use_tr);
+    bot_action::register_weapon(#"tr_fastburst_t9", &function_183e848d, &use_tr);
+    bot_action::register_weapon(#"tr_longburst_t9", &function_183e848d, &use_tr);
+    bot_action::register_weapon(#"tr_powerburst_t9", &function_183e848d, &use_tr);
+    bot_action::register_weapon(#"tr_precisionsemi_t9", &function_183e848d, &use_tr);
 }
 
 // Namespace namespace_d9f3dd47/namespace_d9f3dd47
@@ -62,17 +62,17 @@ function private function_ce850bf4() {
 // Size: 0x31c
 function private function_c50262c4() {
     bot_action::register_weapon(#"knife_loadout", &function_97bc2873, &function_5f7cac29);
-    bot_action::register_weapon(#"hash_23d9723a892eeaa2", &function_3929fa65, &use_launcher);
-    bot_action::register_weapon(#"hash_3b0e54f5881972d3", &function_3929fa65, &use_launcher);
-    bot_action::register_weapon(#"hash_42f6b5f6dd85875f", &function_6aa40bb4, &function_3f4d56d1);
-    bot_action::register_weapon(#"hash_42f6b5f6dd85875f" + "_dw", &function_6aa40bb4, &function_3f4d56d1);
-    bot_action::register_weapon(#"hash_35a57459d3bdbfa6", &function_6aa40bb4, &function_3f4d56d1);
-    bot_action::register_weapon(#"hash_35a57459d3bdbfa6" + "_dw", &function_6aa40bb4, &function_3f4d56d1);
-    bot_action::register_weapon(#"hash_33ed9170805d825c", &function_6aa40bb4, &function_3f4d56d1);
-    bot_action::register_weapon(#"hash_33ed9170805d825c" + "_dw", &function_6aa40bb4, &function_3f4d56d1);
-    bot_action::register_weapon(#"hash_7a7bd99ab5e9bd82", &function_408f0f07, &function_78135f4c);
-    bot_action::register_weapon(#"hash_5243375728e388f6", &function_408f0f07, &function_78135f4c);
-    bot_action::register_weapon(#"hash_6f8ae26433fba2cf", &function_408f0f07, &function_78135f4c);
+    bot_action::register_weapon(#"launcher_freefire_t9", &function_3929fa65, &use_launcher);
+    bot_action::register_weapon(#"launcher_standard_t9", &function_3929fa65, &use_launcher);
+    bot_action::register_weapon(#"pistol_burst_t9", &function_6aa40bb4, &function_3f4d56d1);
+    bot_action::register_weapon(#"pistol_burst_t9" + "_dw", &function_6aa40bb4, &function_3f4d56d1);
+    bot_action::register_weapon(#"pistol_revolver_t9", &function_6aa40bb4, &function_3f4d56d1);
+    bot_action::register_weapon(#"pistol_revolver_t9" + "_dw", &function_6aa40bb4, &function_3f4d56d1);
+    bot_action::register_weapon(#"pistol_semiauto_t9", &function_6aa40bb4, &function_3f4d56d1);
+    bot_action::register_weapon(#"pistol_semiauto_t9" + "_dw", &function_6aa40bb4, &function_3f4d56d1);
+    bot_action::register_weapon(#"shotgun_fullauto_t9", &function_408f0f07, &function_78135f4c);
+    bot_action::register_weapon(#"shotgun_pump_t9", &function_408f0f07, &function_78135f4c);
+    bot_action::register_weapon(#"shotgun_semiauto_t9", &function_408f0f07, &function_78135f4c);
 }
 
 // Namespace namespace_d9f3dd47/namespace_d9f3dd47

@@ -2207,7 +2207,7 @@ function update_weapon_script_model(localclientnum, newweaponstring, var_f020955
             assert(isdefined(should_update_weapon_options), "<unknown string>");
         #/
     #/
-    level.last_weapon_name[newweaponstring] = isdefined(var_f020955) ? var_f020955 : #"hash_2580580083c87b0d";
+    level.last_weapon_name[newweaponstring] = isdefined(var_f020955) ? var_f020955 : #"ar_accurate_t9";
     level.var_8ad413c[newweaponstring] = isdefined(should_update_weapon_options) ? should_update_weapon_options : "";
     var_571f2574 = function_52145a0d(newweaponstring, var_8a4ba442);
     var_3831d409 = strtok(level.var_8ad413c[newweaponstring], "+");

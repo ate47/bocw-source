@@ -49,7 +49,7 @@
             "var_4c0d0c4b": -1,
             "customclassname": "#hash_1da4b72876d2f887",
             "var_26b5c8ef": -1,
-            "primary": "#hash_696069d98ed3f228",
+            "primary": "#sniper_standard_t9",
             "specialgrenade": "#hash_320a8d55b915b9e5",
             "secondary": "#bare_hands"
         },
@@ -110,9 +110,9 @@
             "var_4c0d0c4b": -1,
             "customclassname": "#hash_1da4b82876d2fa3a",
             "var_26b5c8ef": -1,
-            "primary": "#hash_b75a549c0e857d0",
+            "primary": "#sniper_powersemi_t9",
             "specialgrenade": "#gadget_jammer",
-            "secondary": "#hash_485d0c5e33d67e78"
+            "secondary": "#sniper_quickscope_t9"
         },
         {
             "talents": [
@@ -160,7 +160,7 @@
             "var_4c0d0c4b": -1,
             "customclassname": "#hash_1da4b92876d2fbed",
             "var_26b5c8ef": -1,
-            "primary": "#hash_485d0c5e33d67e78",
+            "primary": "#sniper_quickscope_t9",
             "specialgrenade": "#missile_turret",
             "secondary": "#bare_hands"
         },
@@ -210,7 +210,7 @@
             "var_4c0d0c4b": -1,
             "customclassname": "#hash_1da4b22876d2f008",
             "var_26b5c8ef": -1,
-            "primary": "#hash_696069d98ed3f228",
+            "primary": "#sniper_standard_t9",
             "specialgrenade": "#tear_gas",
             "secondary": "#bare_hands"
         },
@@ -260,7 +260,7 @@
             "var_4c0d0c4b": -1,
             "customclassname": "#hash_1da4b32876d2f1bb",
             "var_26b5c8ef": -1,
-            "primary": "#hash_485d0c5e33d67e78",
+            "primary": "#sniper_quickscope_t9",
             "specialgrenade": "#gadget_supplypod",
             "secondary": "#bare_hands"
         }

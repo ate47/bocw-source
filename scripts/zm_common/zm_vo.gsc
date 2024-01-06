@@ -177,14 +177,14 @@ function private function_d773f2e(params) {
     case #"ray_gun":
         var_64edfc97 = #"hash_47911e56b3253861";
         break;
-    case #"hash_5bd48d860ebd5a41":
+    case #"ww_ray_rifle_t9":
         var_64edfc97 = #"hash_6d5b8296c64bfe35";
         break;
-    case #"hash_3fa91d1674123e09":
-    case #"hash_5dd5741f21fd680d":
-    case #"hash_655d944e437c3d5b":
-    case #"hash_6e0b27b854e591a3":
-    case #"hash_72796957033e2e4a":
+    case #"ww_ieu_shockwave_t9":
+    case #"ww_ieu_electric_t9":
+    case #"ww_ieu_acid_t9":
+    case #"ww_ieu_gas_t9":
+    case #"ww_ieu_plasma_t9":
         var_64edfc97 = #"hash_763fd19c812336";
         break;
     case #"sig_bow_flame":
@@ -285,7 +285,7 @@ function private on_item_pickup(params) {
             if (is_true(item.var_5b4ae99d)) {
                 goto LOC_000005c4;
             }
-            if (function_5fef4201(weapon) || weapon.name === #"hash_5bd48d860ebd5a41" || weapon.name === #"hash_ac86d29509a8939") {
+            if (function_5fef4201(weapon) || weapon.name === #"ww_ray_rifle_t9" || weapon.name === #"hash_ac86d29509a8939") {
                 if (self function_2d3f319c()) {
                     var_64edfc97 = #"hash_62aba8e16a728e4";
                     self.var_f502715d = gettime();
@@ -321,7 +321,7 @@ function private on_item_pickup(params) {
                             var_64edfc97 = #"hash_6f77ec873d50a5a3";
                         } else if (zm_weapons::is_tactical_rifle(weapon)) {
                             var_64edfc97 = #"hash_65a5f39e9b407c79";
-                        } else if (weapon.name === #"hash_18a2b66939a974a1") {
+                        } else if (weapon.name === #"special_crossbow_t9") {
                             var_64edfc97 = #"hash_54d519e96ca368ad";
                         } else {
                             var_64edfc97 = #"hash_17608d93085cc567";
@@ -356,11 +356,11 @@ function function_5fef4201(weapon) {
     if (isdefined(weapon)) {
         w_root = zm_weapons::function_386dacbc(weapon);
         switch (w_root.name) {
-        case #"hash_3fa91d1674123e09":
-        case #"hash_5dd5741f21fd680d":
-        case #"hash_655d944e437c3d5b":
-        case #"hash_6e0b27b854e591a3":
-        case #"hash_72796957033e2e4a":
+        case #"ww_ieu_shockwave_t9":
+        case #"ww_ieu_electric_t9":
+        case #"ww_ieu_acid_t9":
+        case #"ww_ieu_gas_t9":
+        case #"ww_ieu_plasma_t9":
             return 1;
             break;
         }

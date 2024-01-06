@@ -47,7 +47,7 @@ function private function_70a657d8() {
     namespace_1b527536::function_dbd391bf(#"hash_164c63cbd0eecbe", &function_84c43da8);
     namespace_1b527536::function_dbd391bf(#"hash_164c93cbd0ef1d7", &function_84c43da8);
     namespace_1b527536::function_dbd391bf(#"hash_164c83cbd0ef024", &function_84c43da8);
-    level.var_e163165b = [0:#"hash_5dd5741f21fd680d"];
+    level.var_e163165b = [0:#"ww_ieu_electric_t9"];
     /#
         level thread function_e41cc86b();
     #/

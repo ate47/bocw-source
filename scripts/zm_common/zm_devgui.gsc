@@ -4789,7 +4789,7 @@ function function_8d799ebd() {
         self endon("<unknown string>");
         level.devcheater = 1;
         if (!self player_is_in_laststand()) {
-            var_d4073f30 = randomize(array(#"hash_7a7bd99ab5e9bd82", #"hash_36830b3ab9fbdde", #"hash_b75a549c0e857d0", #"hash_70cb1c2da27e0190", #"hash_2580580083c87b0d"));
+            var_d4073f30 = randomize(array(#"shotgun_fullauto_t9", #"tr_fastburst_t9", #"sniper_powersemi_t9", #"lmg_fastfire_t9", #"ar_accurate_t9"));
             foreach (w_primary in self getweaponslistprimaries()) {
                 self weapon_take(w_primary);
             }

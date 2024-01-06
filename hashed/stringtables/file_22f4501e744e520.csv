@@ -17,7 +17,7 @@
 12,,#hash_7bb2d755872a5be5,#currency,#legendary,0,0,#,#,0
 13,19262075,#weapon_xp_token_legendary,#hash_7c692b8eb31f67eb,#legendary,0,0,#,#,0
 14,31745367,#reticle_32,#reticle,#epic,0,0,#,#,0
-15,32224192,#hash_6436cdb615a2bb79,#weapon,#base,0,1,#lightning,#hash_2c00d7d5f116330f,0
+15,32224192,#smg_fastfire_t9,#weapon,#base,0,1,#lightning,#hash_2c00d7d5f116330f,0
 16,26848170,#hash_3f011202a9a77730,#calling_card,#epic,0,0,#,#,0
 17,,#hash_7bb2d755872a5be5,#currency,#legendary,0,0,#,#,0
 18,25366229,#hash_a04454f1ba66e68,#blueprint,#epic,0,0,#,#hash_2c00d7d5f116330f,0
@@ -34,7 +34,7 @@
 28,19812637,#reticle_24,#reticle,#rare,0,1,#,#,0
 29,30886333,#player_xp_token_common,#hash_7c692b8eb31f67eb,#common,0,0,#,#,0
 30,22394513,#hash_28c745b078b9733,#character_outfit,#rare,0,0,#,#hash_2c00d7d5f116330f,0
-31,32571167,#hash_6be9615b6d0ec416,#weapon,#base,0,1,#lightning,#hash_2c00d7d5f116330f,0
+31,32571167,#ar_fasthandling_t9,#weapon,#base,0,1,#lightning,#hash_2c00d7d5f116330f,0
 32,,#hash_7bb2d755872a5be5,#currency,#legendary,0,0,#,#,0
 33,21143094,#hash_7bb85c11d876f6ad,#calling_card,#epic,0,0,#,#,0
 34,23087142,#wristaccessory_t9_s1_digital_rank_01,#hash_c70e59dba98cf81,#legendary,0,1,#,#,0

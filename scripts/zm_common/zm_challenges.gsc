@@ -477,7 +477,7 @@ function function_f807c679(e_attacker, e_inflictor) {
         e_attacker zm_stats::increment_challenge_stat(#"hash_526aeb1ca606fe59");
     }
     if (is_true(var_a0345f37.archetype === #"abom") && var_a0345f37.str_damagemod === "MOD_MELEE") {
-        e_attacker zm_stats::function_51c1448(#"hash_492732555967d2a2", 1, #"hash_2b2b28f1d1323b99", #"hash_68a1c3aa7e98d10c");
+        e_attacker zm_stats::function_51c1448(#"hash_492732555967d2a2", 1, #"hash_2b2b28f1d1323b99", #"melee_battleaxe_t9");
     }
     if (is_true(var_a0345f37.var_85e14c33) && (var_a0345f37.var_6f84b820 === #"special" || var_a0345f37.var_6f84b820 === #"hash_72d4f2ad2e333eb4")) {
         e_attacker zm_stats::increment_challenge_stat(#"hash_617a35610ee3f4c1");
@@ -524,7 +524,7 @@ function function_f807c679(e_attacker, e_inflictor) {
             e_attacker stats::function_dad108fa(#"hash_5d5cac785e5018aa", 1);
             if (var_a0345f37.var_6f84b820 === #"hash_72d4f2ad2e333eb4" || var_a0345f37.var_6f84b820 === #"special") {
                 if (var_947d01ee === "smg") {
-                    e_attacker zm_stats::function_51c1448(#"hash_510817c4cd9369ef", 1, #"hash_7483a7699470a94c", #"hash_69868331b3d3cec2");
+                    e_attacker zm_stats::function_51c1448(#"hash_510817c4cd9369ef", 1, #"hash_7483a7699470a94c", #"smg_spray_t9");
                 }
             }
         }
@@ -913,7 +913,7 @@ function function_f807c679(e_attacker, e_inflictor) {
                     e_attacker.var_4dd3d657[w_damage.name].var_6dac8bc5 = 0;
                 }
             } else if (var_947d01ee === "ar" && e_attacker.var_4dd3d657[w_damage.name].var_6dac8bc5 === 30) {
-                e_attacker zm_stats::function_51c1448(#"hash_4975a47f10046ed", 1, #"hash_a5417e397f372f2", #"hash_4d8b07efde79fb03");
+                e_attacker zm_stats::function_51c1448(#"hash_4975a47f10046ed", 1, #"hash_a5417e397f372f2", #"ar_slowhandling_t9");
                 e_attacker.var_4dd3d657[w_damage.name].var_6dac8bc5 = 0;
             }
         }
@@ -1152,7 +1152,7 @@ function function_f807c679(e_attacker, e_inflictor) {
             }
             e_attacker zm_stats::increment_challenge_stat(#"hash_1a01afd3f720adef");
             if (var_947d01ee === "smg") {
-                e_attacker zm_stats::function_51c1448(#"hash_1cd482b5aaa76a63", 1, #"hash_3142d28c7a02bdf7", #"hash_5f1d39574585b511");
+                e_attacker zm_stats::function_51c1448(#"hash_1cd482b5aaa76a63", 1, #"hash_3142d28c7a02bdf7", #"smg_accurate_t9");
             }
         }
         if (isdefined(var_a0345f37.var_cbf4894c) && var_a0345f37.var_cbf4894c > 1 || isdefined(var_a0345f37.var_d70e35fb) && var_a0345f37.var_d70e35fb > 1 || is_true(var_a0345f37.var_958cf9c5) || var_a0345f37.var_8126f3c8 === #"hash_bd108911963a54f") {
@@ -1367,18 +1367,18 @@ function function_575c37e0(weapon, enemy) {
     if (isdefined(w_stat.name)) {
         switch (w_stat.name) {
         case #"hash_ac86d29509a8939":
-        case #"hash_5bd48d860ebd5a41":
+        case #"ww_ray_rifle_t9":
             self zm_stats::increment_challenge_stat(#"hash_2b7368bb97d41c4f");
             break;
         case #"ww_ieu_acid_t9_upgraded_item_sr":
         case #"ww_ieu_gas_t9_upgraded_item_sr":
         case #"ww_ieu_shockwave_t9_upgraded_item_sr":
-        case #"hash_3fa91d1674123e09":
-        case #"hash_5dd5741f21fd680d":
-        case #"hash_655d944e437c3d5b":
+        case #"ww_ieu_shockwave_t9":
+        case #"ww_ieu_electric_t9":
+        case #"ww_ieu_acid_t9":
         case #"ww_ieu_electric_t9_upgraded_item_sr":
-        case #"hash_6e0b27b854e591a3":
-        case #"hash_72796957033e2e4a":
+        case #"ww_ieu_gas_t9":
+        case #"ww_ieu_plasma_t9":
         case #"ww_ieu_plasma_t9_upgraded_item_sr":
             self zm_stats::increment_challenge_stat(#"hash_31e51e924e57c83a");
             break;
@@ -1426,7 +1426,7 @@ function function_575c37e0(weapon, enemy) {
             self contracts::increment_zm_contract(#"hash_2df3c0a3d246a317");
             var_74ca2ca1 = zm_weapons::function_137f88c6(var_76436ceb.var_a6762160.rarity);
             if (var_74ca2ca1 == "purple" || var_74ca2ca1 == "orange") {
-                self zm_stats::function_51c1448(#"hash_9d8677f2b8f6e88", 1, #"hash_a64dff1bf2a2551", #"hash_67116924005b2bf8");
+                self zm_stats::function_51c1448(#"hash_9d8677f2b8f6e88", 1, #"hash_a64dff1bf2a2551", #"ar_british_t9");
             }
             if (isdefined(var_5638aaf2) && var_5638aaf2 > 2) {
                 self zm_stats::function_51c1448(#"hash_153b001a46288fe6", 1, #"hash_a2304f8a8f31a95", #"hash_25ff17bb722aaaf5");
@@ -1457,10 +1457,10 @@ function function_575c37e0(weapon, enemy) {
             #/
             self contracts::increment_zm_contract(#"hash_286a3c0a06a25f63");
             if (isarray(self.var_7341f980) && self.var_7341f980.size >= 5) {
-                self zm_stats::function_51c1448(#"hash_23fe7ee198149ca7", 1, #"hash_321f62b43e5e631b", #"hash_6436cdb615a2bb79");
+                self zm_stats::function_51c1448(#"hash_23fe7ee198149ca7", 1, #"hash_321f62b43e5e631b", #"smg_fastfire_t9");
             }
             if (enemy.var_6f84b820 === #"hash_72d4f2ad2e333eb4") {
-                self zm_stats::function_51c1448(#"hash_4633cd5d032f64ee", 1, #"hash_6d5c2b4b0c5834bc", #"hash_773a513fbaa45fb4");
+                self zm_stats::function_51c1448(#"hash_4633cd5d032f64ee", 1, #"hash_6d5c2b4b0c5834bc", #"smg_semiauto_t9");
             }
             if (var_74ca2ca1 === "purple" || var_74ca2ca1 === "orange") {
                 self zm_stats::function_51c1448(#"hash_49ee01ddb38e868e", 1, #"hash_2b4649f1d1493b64", #"hash_7a9d35a0f888b881");
@@ -1517,7 +1517,7 @@ function function_575c37e0(weapon, enemy) {
             self contracts::increment_zm_contract(#"hash_7482a2b3f02b97af");
         }
     }
-    if (isdefined(weapon) && (enemy.var_6f84b820 === #"special" || enemy.var_6f84b820 === #"hash_72d4f2ad2e333eb4") && (weapon.statname === #"hash_6251778e2d3b9a64" || weapon.statname === #"hash_4d8b07efde79fb03" || weapon.statname === #"hash_64e4e829150d8882")) {
+    if (isdefined(weapon) && (enemy.var_6f84b820 === #"special" || enemy.var_6f84b820 === #"hash_72d4f2ad2e333eb4") && (weapon.statname === #"smg_heavy_t9" || weapon.statname === #"ar_slowhandling_t9" || weapon.statname === #"lmg_light_t9")) {
         self zm_stats::function_fbce465a(#"hash_3d9159bfdb045054");
     }
 }
@@ -2524,8 +2524,8 @@ function function_1dd9fc03() {
     if (var_845ac04e != 1) {
         self stats::set_stat_global("t9_tu5_zm_dark_matter_fixedup", 1);
         weapon_names = [];
-        weapon_names[#"weapon_tactical"] = [3:#"hash_503338a31adadb4c", 2:#"hash_5818a5515e931441", 1:#"hash_5b3e3aae603f948e", 0:#"hash_51114f6fd577519b"];
-        weapon_names[#"weapon_smg"] = [5:#"hash_349be5cb35ef5f77", 4:#"hash_2f42bc0a766b6567", 3:#"hash_6436cdb615a2bb79", 2:#"hash_7a3989475f8af314", 1:#"hash_6251778e2d3b9a64", 0:#"hash_5bf4dc6dcf1d2340"];
+        weapon_names[#"weapon_tactical"] = [3:#"tr_precisionsemi_t9", 2:#"tr_powerburst_t9", 1:#"tr_longburst_t9", 0:#"tr_damagesemi_t9"];
+        weapon_names[#"weapon_smg"] = [5:#"smg_burst_t9", 4:#"smg_capacity_t9", 3:#"smg_fastfire_t9", 2:#"smg_handling_t9", 1:#"smg_heavy_t9", 0:#"smg_standard_t9"];
         foreach (weapon in weapon_names[#"weapon_tactical"]) {
             var_79aea5cb = 0;
             var_d33334c3 = 0;

@@ -1424,25 +1424,25 @@ function function_8d9ddc22(var_e7772c37) {
     level endon(#"end_game");
     switch (var_e7772c37) {
     case #"hash_40a6ba36859f14a3":
-        var_6bdde8a3 = getweapon(#"hash_655d944e437c3d5b");
+        var_6bdde8a3 = getweapon(#"ww_ieu_acid_t9");
         var_39023436 = getweapon(#"hash_189ef2dafffe1f4c");
         var_339168c3 = self zm_unitrigger::create(&function_91807eb1, vectorscale((1, 1, 1), 128));
         self.var_37023f0e = "cryo";
         break;
     case #"gas":
-        var_6bdde8a3 = getweapon(#"hash_6e0b27b854e591a3");
+        var_6bdde8a3 = getweapon(#"ww_ieu_gas_t9");
         var_39023436 = getweapon(#"hash_941005e056449b4");
         var_339168c3 = self zm_unitrigger::create(&function_4d97eda3, vectorscale((1, 1, 1), 128));
         self.var_37023f0e = "gas";
         break;
     case #"plasma":
-        var_6bdde8a3 = getweapon(#"hash_72796957033e2e4a");
+        var_6bdde8a3 = getweapon(#"ww_ieu_plasma_t9");
         var_39023436 = getweapon(#"hash_11363c24185fecdb");
         var_339168c3 = self zm_unitrigger::create(&function_b75d50b5, vectorscale((1, 1, 1), 128));
         self.var_37023f0e = "rust";
         break;
     case #"beam":
-        var_6bdde8a3 = getweapon(#"hash_5dd5741f21fd680d");
+        var_6bdde8a3 = getweapon(#"ww_ieu_electric_t9");
         var_39023436 = getweapon(#"hash_4ee16eb0581e4646");
         var_339168c3 = self zm_unitrigger::create(&function_8a172c28, vectorscale((1, 1, 1), 128));
         self.var_37023f0e = "electric";
@@ -1503,7 +1503,7 @@ function function_8d9ddc22(var_e7772c37) {
                 var_963f7bc9 = target_weapon;
             } else {
                 var_b0e35c50 = 1;
-                var_963f7bc9 = var_1edbaf3 ? getweapon(#"hash_294926d598e011fa") : getweapon(#"hash_3fa91d1674123e09");
+                var_963f7bc9 = var_1edbaf3 ? getweapon(#"hash_294926d598e011fa") : getweapon(#"ww_ieu_shockwave_t9");
             }
             var_963f7bc9 = function_eeddea9a(var_963f7bc9, function_9f1cc9a9(var_d5c2e187));
             if (player getcurrentweapon() != var_d5c2e187) {
@@ -1692,10 +1692,10 @@ function function_217a625a(a_ents) {
 // Size: 0x3cc
 function function_b8a1fcc2(*s_params) {
     if (isdefined(level.var_bdd5969a) && isinarray(level.var_bdd5969a, self)) {
-        if (!self function_505c0acb(#"hash_3fa91d1674123e09")) {
+        if (!self function_505c0acb(#"ww_ieu_shockwave_t9")) {
             arrayremovevalue(level.var_bdd5969a, self);
         }
-    } else if (self function_505c0acb(#"hash_3fa91d1674123e09")) {
+    } else if (self function_505c0acb(#"ww_ieu_shockwave_t9")) {
         if (!isdefined(level.var_bdd5969a)) {
             level.var_bdd5969a = [];
         } else if (!isarray(level.var_bdd5969a)) {
@@ -1704,34 +1704,34 @@ function function_b8a1fcc2(*s_params) {
         level.var_bdd5969a[level.var_bdd5969a.size] = self;
     }
     if (level.var_c3accf46 === self) {
-        if (!self function_505c0acb(#"hash_655d944e437c3d5b")) {
+        if (!self function_505c0acb(#"ww_ieu_acid_t9")) {
             level.var_c3accf46 = undefined;
         }
-    } else if (self function_505c0acb(#"hash_655d944e437c3d5b")) {
+    } else if (self function_505c0acb(#"ww_ieu_acid_t9")) {
         level.var_c3accf46 = self;
         level notify(#"hash_e1a9539b07e72be");
     }
     if (level.var_ae002b60 === self) {
-        if (!self function_505c0acb(#"hash_6e0b27b854e591a3")) {
+        if (!self function_505c0acb(#"ww_ieu_gas_t9")) {
             level.var_ae002b60 = undefined;
         }
-    } else if (self function_505c0acb(#"hash_6e0b27b854e591a3")) {
+    } else if (self function_505c0acb(#"ww_ieu_gas_t9")) {
         level.var_ae002b60 = self;
         level notify(#"hash_6eada88f109e645");
     }
     if (level.var_42000fd0 === self) {
-        if (!self function_505c0acb(#"hash_72796957033e2e4a")) {
+        if (!self function_505c0acb(#"ww_ieu_plasma_t9")) {
             level.var_42000fd0 = undefined;
         }
-    } else if (self function_505c0acb(#"hash_72796957033e2e4a")) {
+    } else if (self function_505c0acb(#"ww_ieu_plasma_t9")) {
         level.var_42000fd0 = self;
         level notify(#"hash_120dd64bcb70e566");
     }
     if (level.var_c8a2dc28 === self) {
-        if (!self function_505c0acb(#"hash_5dd5741f21fd680d")) {
+        if (!self function_505c0acb(#"ww_ieu_electric_t9")) {
             level.var_c8a2dc28 = undefined;
         }
-    } else if (self function_505c0acb(#"hash_5dd5741f21fd680d")) {
+    } else if (self function_505c0acb(#"ww_ieu_electric_t9")) {
         level.var_c8a2dc28 = self;
         level notify(#"hash_5e2064095a103269");
     }
@@ -1888,15 +1888,15 @@ function on_item_pickup(params) {
 function function_505c0acb(var_13167ed3) {
     if (isdefined(var_13167ed3)) {
         switch (var_13167ed3) {
-        case #"hash_3fa91d1674123e09":
+        case #"ww_ieu_shockwave_t9":
             return (self hasweapon(level.var_652bc5ed, 1) || self hasweapon(level.var_b6956429, 1));
-        case #"hash_655d944e437c3d5b":
+        case #"ww_ieu_acid_t9":
             return (self hasweapon(level.var_810eda2b, 1) || self hasweapon(level.var_a7de843a, 1));
-        case #"hash_6e0b27b854e591a3":
+        case #"ww_ieu_gas_t9":
             return (self hasweapon(level.var_fb37bf51, 1) || self hasweapon(level.var_970f9313, 1));
-        case #"hash_72796957033e2e4a":
+        case #"ww_ieu_plasma_t9":
             return (self hasweapon(level.var_12b450dc, 1) || self hasweapon(level.var_6b41a8a1, 1));
-        case #"hash_5dd5741f21fd680d":
+        case #"ww_ieu_electric_t9":
             return (self hasweapon(level.var_e0be56c0, 1) || self hasweapon(level.var_e80744aa, 1));
         case #"hash_defdefdefdefdef0":
             return 0;
@@ -1911,7 +1911,7 @@ function function_505c0acb(var_13167ed3) {
 // Checksum 0x31243c12, Offset: 0xa320
 // Size: 0xbc
 function function_1d89280c() {
-    return self function_505c0acb(#"hash_3fa91d1674123e09") || self function_505c0acb(#"hash_655d944e437c3d5b") || self function_505c0acb(#"hash_6e0b27b854e591a3") || self function_505c0acb(#"hash_72796957033e2e4a") || self function_505c0acb(#"hash_5dd5741f21fd680d");
+    return self function_505c0acb(#"ww_ieu_shockwave_t9") || self function_505c0acb(#"ww_ieu_acid_t9") || self function_505c0acb(#"ww_ieu_gas_t9") || self function_505c0acb(#"ww_ieu_plasma_t9") || self function_505c0acb(#"ww_ieu_electric_t9");
 }
 
 // Namespace zm_silver_ww_quest/zm_silver_ww_quest

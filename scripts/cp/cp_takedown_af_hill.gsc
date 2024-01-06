@@ -293,7 +293,7 @@ function function_5dd4ff85() {
 // Checksum 0x1162b368, Offset: 0x21e8
 // Size: 0xe4
 function function_31afa2db() {
-    primary_weapon = getweapon(#"hash_70f8f2d92031f544");
+    primary_weapon = getweapon(#"ar_standard_t9");
     if (level.player hasweapon(primary_weapon)) {
         level.player switchtoweaponimmediate(primary_weapon, 1);
     } else {
@@ -357,7 +357,7 @@ function function_7a77e3be(player) {
 function function_4bc0b384(player) {
     player waittill(#"end_binocs");
     player val::reset(#"hash_50cb2a8c58c8ad4", "disable_weapon_cycling");
-    sniper = getweapon(#"hash_485d0c5e33d67e78");
+    sniper = getweapon(#"sniper_quickscope_t9");
     player seteverhadweaponall(1);
     player initialweaponraise(sniper);
     player switchtoweapon(sniper);
@@ -722,7 +722,7 @@ function function_a2015343(var_d3440450) {
     level.var_fdc6062e = spawners[0] spawner::spawn(1);
     level.var_fdc6062e val::set(#"hash_5d61277bd86a16a9", "ignoreall", 1);
     level thread util::magic_bullet_shield(level.var_fdc6062e);
-    a_ar = getweapon(#"hash_2580580083c87b0d");
+    a_ar = getweapon(#"ar_accurate_t9");
     level.var_fdc6062e hms_util::function_65d14a19(a_ar);
     spawners = getspawnerarray("af_woods", "targetname");
     level.woods = spawners[0] spawner::spawn(1);

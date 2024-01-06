@@ -443,155 +443,155 @@ function function_d77fb9ee(s_instance) {
                 return;
             }
             break;
-        case #"hash_2580580083c87b0d":
+        case #"ar_accurate_t9":
             if (!is_true(getgametypesetting(#"hash_9574295c8d1417e"))) {
                 return;
             }
             break;
-        case #"hash_70f8f2d92031f544":
+        case #"ar_standard_t9":
             if (!is_true(getgametypesetting(#"hash_21138fb9940856ed"))) {
                 return;
             }
             break;
-        case #"hash_1039f56708e1d3e4":
+        case #"ar_damage_t9":
             if (!is_true(getgametypesetting(#"hash_197b8b458c4577b9"))) {
                 return;
             }
             break;
-        case #"hash_3b0e54f5881972d3":
+        case #"launcher_standard_t9":
             if (!is_true(getgametypesetting(#"hash_325ba7c748b18956"))) {
                 return;
             }
             break;
-        case #"hash_42f6b5f6dd85875f":
+        case #"pistol_burst_t9":
             if (!is_true(getgametypesetting(#"hash_7d458c697d0c4966"))) {
                 return;
             }
             break;
-        case #"hash_35a57459d3bdbfa6":
+        case #"pistol_revolver_t9":
             if (!is_true(getgametypesetting(#"hash_1456b26ab6d295ef"))) {
                 return;
             }
             break;
-        case #"hash_33ed9170805d825c":
+        case #"pistol_semiauto_t9":
             if (!is_true(getgametypesetting(#"hash_7fd1ff1f0b2dc779"))) {
                 return;
             }
             break;
-        case #"hash_7a7bd99ab5e9bd82":
+        case #"shotgun_fullauto_t9":
             if (!is_true(getgametypesetting(#"hash_61b10205e83c5849"))) {
                 return;
             }
             break;
-        case #"hash_5243375728e388f6":
+        case #"shotgun_pump_t9":
             if (!is_true(getgametypesetting(#"hash_36996ba5b37104c9"))) {
                 return;
             }
             break;
-        case #"hash_6f8ae26433fba2cf":
+        case #"shotgun_semiauto_t9":
             if (!is_true(getgametypesetting(#"hash_1b556d0ef1bd7a36"))) {
                 return;
             }
             break;
-        case #"hash_349be5cb35ef5f77":
+        case #"smg_burst_t9":
             if (!is_true(getgametypesetting(#"hash_4e946885bf06df52"))) {
                 return;
             }
             break;
-        case #"hash_6436cdb615a2bb79":
+        case #"smg_fastfire_t9":
             if (!is_true(getgametypesetting(#"hash_634569782c55f196"))) {
                 return;
             }
             break;
-        case #"hash_7a3989475f8af314":
+        case #"smg_handling_t9":
             if (!is_true(getgametypesetting(#"hash_46d3411097467f2d"))) {
                 return;
             }
             break;
-        case #"hash_5bf4dc6dcf1d2340":
+        case #"smg_standard_t9":
             if (!is_true(getgametypesetting(#"hash_7e967deb0d6b9649"))) {
                 return;
             }
             var_492e21a0 = -0.1;
             break;
-        case #"hash_6251778e2d3b9a64":
+        case #"smg_heavy_t9":
             if (!is_true(getgametypesetting(#"hash_7880919be865d57b"))) {
                 return;
             }
             break;
-        case #"hash_51114f6fd577519b":
+        case #"tr_damagesemi_t9":
             if (!is_true(getgametypesetting(#"hash_10756ba8dff36e5a"))) {
                 return;
             }
             var_492e21a0 = -0.2;
             break;
-        case #"hash_5b3e3aae603f948e":
+        case #"tr_longburst_t9":
             if (!is_true(getgametypesetting(#"hash_fb69584de9657e3"))) {
                 return;
             }
             var_492e21a0 = -0.13;
             break;
-        case #"hash_5818a5515e931441":
+        case #"tr_powerburst_t9":
             if (!is_true(getgametypesetting(#"hash_1a5305df17fdcc40"))) {
                 return;
             }
             break;
-        case #"hash_503338a31adadb4c":
+        case #"tr_precisionsemi_t9":
             if (!is_true(getgametypesetting(#"hash_4cbfbe5e677ce735"))) {
                 return;
             }
             break;
-        case #"hash_696069d98ed3f228":
+        case #"sniper_standard_t9":
             if (!is_true(getgametypesetting(#"hash_f75e8d54b6ad799"))) {
                 return;
             }
             break;
-        case #"hash_b75a549c0e857d0":
+        case #"sniper_powersemi_t9":
             if (!is_true(getgametypesetting(#"hash_430002f66a3fd19b"))) {
                 return;
             }
             break;
-        case #"hash_485d0c5e33d67e78":
+        case #"sniper_quickscope_t9":
             if (!is_true(getgametypesetting(#"hash_7db8d2ae05b98ba1"))) {
                 return;
             }
             break;
-        case #"hash_35a57459d3bdbfa6":
+        case #"pistol_revolver_t9":
             if (!is_true(getgametypesetting(#"hash_1456b26ab6d295ef"))) {
                 return;
             }
             break;
-        case #"hash_8ff6b682d43c59c":
+        case #"lmg_accurate_t9":
             if (!is_true(getgametypesetting(#"hash_276c762aa3f9fb83"))) {
                 return;
             }
             break;
-        case #"hash_349be5cb35ef5f77":
+        case #"smg_burst_t9":
             if (!is_true(getgametypesetting(#"hash_4e946885bf06df52"))) {
                 return;
             }
             break;
-        case #"hash_7a3989475f8af314":
+        case #"smg_handling_t9":
             if (!is_true(getgametypesetting(#"hash_46d3411097467f2d"))) {
                 return;
             }
             break;
-        case #"hash_6436cdb615a2bb79":
+        case #"smg_fastfire_t9":
             if (!is_true(getgametypesetting(#"hash_634569782c55f196"))) {
                 return;
             }
             break;
-        case #"hash_b75a549c0e857d0":
+        case #"sniper_powersemi_t9":
             if (!is_true(getgametypesetting(#"hash_430002f66a3fd19b"))) {
                 return;
             }
             break;
-        case #"hash_6cb1c7e45075a0a4":
+        case #"ar_mobility_t9":
             if (!is_true(getgametypesetting(#"hash_5428069c26ac7a85"))) {
                 return;
             }
             break;
-        case #"hash_44214d17f349989d":
+        case #"ar_fastfire_t9":
             if (!is_true(getgametypesetting(#"hash_3cd4e4f070668ada"))) {
                 return;
             }
@@ -1519,85 +1519,85 @@ function function_d26435e4(wallbuy, rarity = undefined, weapon_name = undefined)
         weapon_name = wallbuy.script_noteworthy;
     }
     switch (weapon_name) {
-    case #"hash_2580580083c87b0d":
+    case #"ar_accurate_t9":
         str_model = #"hash_b18f20cb6f2d3ee" + function_db435e40(rarity);
         break;
-    case #"hash_1039f56708e1d3e4":
+    case #"ar_damage_t9":
         str_model = #"hash_6d658fd7592db043" + function_db435e40(rarity);
         break;
-    case #"hash_44214d17f349989d":
+    case #"ar_fastfire_t9":
         str_model = #"hash_3c95f8ce2c0fbdfe" + function_db435e40(rarity);
         break;
-    case #"hash_6cb1c7e45075a0a4":
+    case #"ar_mobility_t9":
         str_model = #"hash_32fb24c0c5d102d3" + function_db435e40(rarity);
         break;
-    case #"hash_70f8f2d92031f544":
+    case #"ar_standard_t9":
         str_model = #"hash_4d1f14fc6af93fdf" + function_db435e40(rarity);
         break;
-    case #"hash_8ff6b682d43c59c":
+    case #"lmg_accurate_t9":
         str_model = #"hash_4773313d864ae5ed" + function_db435e40(rarity);
         break;
-    case #"hash_64e4e829150d8882":
+    case #"lmg_light_t9":
         str_model = #"hash_16391617b28fbdb1" + function_db435e40(rarity);
         break;
-    case #"hash_7fff139e10965561":
+    case #"lmg_slowfire_t9":
         str_model = #"hash_75fc409d6903b2d8" + function_db435e40(rarity);
         break;
-    case #"hash_42f6b5f6dd85875f":
+    case #"pistol_burst_t9":
         str_model = #"hash_430e069dea3f037a" + function_db435e40(rarity);
         break;
-    case #"hash_35a57459d3bdbfa6":
+    case #"pistol_revolver_t9":
         str_model = #"hash_78d9d44a7f144889" + function_db435e40(rarity);
         break;
-    case #"hash_33ed9170805d825c":
+    case #"pistol_semiauto_t9":
         str_model = #"hash_539f03e2e452a63f" + function_db435e40(rarity);
         break;
-    case #"hash_7a7bd99ab5e9bd82":
+    case #"shotgun_fullauto_t9":
         str_model = #"hash_2a19f21a12cde617" + function_db435e40(rarity);
         break;
-    case #"hash_5243375728e388f6":
+    case #"shotgun_pump_t9":
         str_model = #"hash_40883cceb6c55cdf" + function_db435e40(rarity);
         break;
-    case #"hash_6f8ae26433fba2cf":
+    case #"shotgun_semiauto_t9":
         str_model = #"hash_2683df0426369c92" + function_db435e40(rarity);
         break;
-    case #"hash_349be5cb35ef5f77":
+    case #"smg_burst_t9":
         str_model = #"hash_23eb3df35de8a3b0" + function_db435e40(rarity);
         break;
-    case #"hash_2f42bc0a766b6567":
+    case #"smg_capacity_t9":
         str_model = #"hash_3d694269a762a916" + function_db435e40(rarity);
         break;
-    case #"hash_6436cdb615a2bb79":
+    case #"smg_fastfire_t9":
         str_model = #"hash_6367b1f6911d804c" + function_db435e40(rarity);
         break;
-    case #"hash_7a3989475f8af314":
+    case #"smg_handling_t9":
         str_model = #"hash_23ce74f320b45a3d" + function_db435e40(rarity);
         break;
-    case #"hash_6251778e2d3b9a64":
+    case #"smg_heavy_t9":
         str_model = #"hash_65daac53d155f273" + function_db435e40(rarity);
         break;
-    case #"hash_5bf4dc6dcf1d2340":
+    case #"smg_standard_t9":
         str_model = #"hash_14739c03c7098011" + function_db435e40(rarity);
         break;
-    case #"hash_b75a549c0e857d0":
+    case #"sniper_powersemi_t9":
         str_model = #"hash_134924d394746989" + function_db435e40(rarity);
         break;
-    case #"hash_696069d98ed3f228":
+    case #"sniper_standard_t9":
         str_model = #"hash_37cf1b0c57f3c6f7" + function_db435e40(rarity);
         break;
-    case #"hash_51114f6fd577519b":
+    case #"tr_damagesemi_t9":
         str_model = #"hash_47467fcd21ac00b8" + function_db435e40(rarity);
         break;
-    case #"hash_5b3e3aae603f948e":
+    case #"tr_longburst_t9":
         str_model = #"hash_3736072ca55132fb" + function_db435e40(rarity);
         break;
-    case #"hash_5818a5515e931441":
+    case #"tr_powerburst_t9":
         str_model = #"hash_34775ab64087e586" + function_db435e40(rarity);
         break;
-    case #"hash_503338a31adadb4c":
+    case #"tr_precisionsemi_t9":
         str_model = #"hash_76be15429ec12365" + function_db435e40(rarity);
         break;
-    case #"hash_485d0c5e33d67e78":
+    case #"sniper_quickscope_t9":
         str_model = #"hash_3cf732953f907c47" + function_db435e40(rarity);
         break;
     case #"hash_defdefdefdefdef0":

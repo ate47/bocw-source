@@ -1335,7 +1335,7 @@ function private function_abbc84ad(attacker, weapon, smeansofdeath, inflictor) {
         }
         if (smeansofdeath == "MOD_HEAD_SHOT") {
             attacker stats::function_eec52333(weapon, #"headshots", 1, attacker.class_num, attackerweaponpickedup);
-            if (weapon.statname === #"hash_18a2b66939a974a1") {
+            if (weapon.statname === #"special_crossbow_t9") {
                 attacker stats::function_e24eec31(weapon, #"hash_114572b44a79e990", 1);
             }
             level thread namespace_341c57b3::function_18135b72(#"hash_b88b6d2e0028e13", {#weaponpickedup:attackerweaponpickedup, #value:1, #statname:#"headshots", #weapon:weapon, #player:attacker});

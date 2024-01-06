@@ -1307,7 +1307,7 @@ function updatemultikills(weapon, weaponclass, killstreak, victim, time, *meanso
     }
     if (self.var_26249c54 >= 2) {
         if (!isdefined(self.pers[#"hash_4612b3db7f75297e"])) {
-            self stats::function_841e4896(#"hash_4d6b858ad789777", 1, #"hash_321f62b43e5e631b", #"hash_6436cdb615a2bb79");
+            self stats::function_841e4896(#"hash_4d6b858ad789777", 1, #"hash_321f62b43e5e631b", #"smg_fastfire_t9");
             self.pers[#"hash_4612b3db7f75297e"] = 1;
         }
         self stats::function_dad108fa(#"hash_5bfd15fb1c1fb736", 1);
@@ -1317,7 +1317,7 @@ function updatemultikills(weapon, weaponclass, killstreak, victim, time, *meanso
         self stats::function_dad108fa(#"hash_447f0767a3441ea1", 1);
         self stats::function_dad108fa(#"hash_479a90d3f970186d", 1);
         if (!isdefined(self.pers[#"hash_44c4403158365433"])) {
-            self stats::function_841e4896(#"hash_6ccc99527a5a05e2", 1, #"hash_a64dff1bf2a2551", #"hash_67116924005b2bf8");
+            self stats::function_841e4896(#"hash_6ccc99527a5a05e2", 1, #"hash_a64dff1bf2a2551", #"ar_british_t9");
             self.pers[#"hash_44c4403158365433"] = 1;
         }
     }
@@ -1559,7 +1559,7 @@ function get_distance_for_weapon(weapon, weaponclass) {
     if (!isdefined(weaponclass)) {
         return 0;
     }
-    if (weapon.statname === #"hash_31cbf6c78af231e7") {
+    if (weapon.statname === #"pistol_shotgun_t9") {
         return 187489;
     }
     switch (weaponclass) {

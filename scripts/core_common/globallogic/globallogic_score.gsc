@@ -759,7 +759,7 @@ function function_84088ec3(var_f801f37e) {
             case #"satchel_charge":
                 self stats::function_622feb0d(var_f801f37e.name, #"hash_7bf29fa438d54aad", 1);
                 break;
-            case #"hash_227fd691c2da0969":
+            case #"special_grenadelauncher_t9":
                 self stats::function_561716e6(var_f801f37e.name, #"hash_66ab89e31cfd2a9c", 1);
                 break;
             case #"hash_defdefdefdefdef0":

@@ -304,7 +304,7 @@ function function_aeaba0c9(pos, dest, delay) {
     }
     var_b84b1bf9 = struct::get(pos, "targetname");
     var_c19f5c0 = struct::get(dest, "targetname");
-    magicbullet(getweapon(#"hash_70f8f2d92031f544"), var_b84b1bf9.origin, var_c19f5c0.origin);
+    magicbullet(getweapon(#"ar_standard_t9"), var_b84b1bf9.origin, var_c19f5c0.origin);
 }
 
 // Namespace tkdn_raid_apt/namespace_8c930e93

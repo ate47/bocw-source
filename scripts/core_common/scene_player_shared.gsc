@@ -298,7 +298,7 @@ class csceneplayer : csceneobject {
                 return;
             }
             if (!function_53c151a4(params.weapon.rootweapon)) {
-                var_9cb7f1a6 = getweapon(#"hash_2580580083c87b0d");
+                var_9cb7f1a6 = getweapon(#"ar_accurate_t9");
                 if (!player hasweapon(var_9cb7f1a6, 1)) {
                     player giveweapon(var_9cb7f1a6);
                     player.var_777951c = var_9cb7f1a6;
@@ -1605,7 +1605,7 @@ class csceneplayer : csceneobject {
             w_current = player getcurrentweapon();
             var_951894cb = w_current.rootweapon;
             if (!function_53c151a4(var_951894cb)) {
-                var_9cb7f1a6 = getweapon(#"hash_2580580083c87b0d");
+                var_9cb7f1a6 = getweapon(#"ar_accurate_t9");
                 if (!player hasweapon(var_9cb7f1a6, 1)) {
                     player giveweapon(var_9cb7f1a6);
                     player.var_777951c = var_9cb7f1a6;
@@ -1721,7 +1721,7 @@ class csceneplayer : csceneobject {
                     current_weapon = player getcurrentweapon();
                     var_2506506a = current_weapon.rootweapon;
                     if (!function_53c151a4(var_2506506a) || current_weapon == level.weaponnone) {
-                        current_weapon = getweapon(#"hash_2580580083c87b0d");
+                        current_weapon = getweapon(#"ar_accurate_t9");
                         self._e animation::attach_weapon(current_weapon);
                         self._e.weapon = current_weapon;
                     } else if (current_weapon == level.weaponnone && isdefined(player.class_num)) {

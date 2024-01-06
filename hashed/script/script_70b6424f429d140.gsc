@@ -166,8 +166,8 @@ function function_3b697267() {
     wait(0.1);
     player setlowready(1);
     level flag::wait_till("heli_player_gets_weapon");
-    var_5ca6956f = getweapon(#"hash_5bf4dc6dcf1d2340", array("reflex", "fastreload"));
-    var_2105d8b1 = getweapon(#"hash_485d0c5e33d67e78");
+    var_5ca6956f = getweapon(#"smg_standard_t9", array("reflex", "fastreload"));
+    var_2105d8b1 = getweapon(#"sniper_quickscope_t9");
     player giveweapon(var_5ca6956f);
     player giveweapon(var_2105d8b1);
     player switchtoweapon(var_5ca6956f);

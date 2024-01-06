@@ -259,7 +259,7 @@ function function_e3871553(var_4d2ad93e) {
     }
     if (isdefined(self.currentweapon)) {
         weapon = zm_weapons::get_base_weapon(self.currentweapon);
-        if ((weapon.weapclass === "melee" || is_true(weapon.issniperweapon) || weapon.weapclass === #"pistol") && (level.var_50c8366e % 3 == 0 || level.var_50c8366e >= 6) || is_true(weapon.islauncher) && var_27751b99 == 0 || weapon.name === #"hash_18a2b66939a974a1" && level.var_50c8366e >= 3) {
+        if ((weapon.weapclass === "melee" || is_true(weapon.issniperweapon) || weapon.weapclass === #"pistol") && (level.var_50c8366e % 3 == 0 || level.var_50c8366e >= 6) || is_true(weapon.islauncher) && var_27751b99 == 0 || weapon.name === #"special_crossbow_t9" && level.var_50c8366e >= 3) {
             self thread zm_vo::function_8abe0568(#"game_over");
         }
     }
@@ -286,7 +286,7 @@ function function_e3871553(var_4d2ad93e) {
         }
         if (!zm_weapons::is_wonder_weapon(weapon)) {
             if (isdefined(var_a781b3e1.aat)) {
-                if (weapon.weapclass != "melee" && weapon.name != #"hash_3e13285248686f27" && weapon.name != #"hash_4650af6ac5c9ce80") {
+                if (weapon.weapclass != "melee" && weapon.name != #"special_ballisticknife_t9_dw" && weapon.name != #"hash_4650af6ac5c9ce80") {
                     self function_bf3044dc(weapon, 1);
                 }
             } else {

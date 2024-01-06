@@ -446,7 +446,7 @@ function function_6de827b0() {
 // Size: 0x116
 function function_a651f85() {
     a_weapons = self getweaponslistprimaries();
-    var_57ac2916 = getweapon(#"hash_68a1c3aa7e98d10c");
+    var_57ac2916 = getweapon(#"melee_battleaxe_t9");
     foreach (weapon in a_weapons) {
         if (zm_weapons::get_base_weapon(weapon) === var_57ac2916 && (self meleebuttonpressed() || self attackbuttonpressed())) {
             return 1;

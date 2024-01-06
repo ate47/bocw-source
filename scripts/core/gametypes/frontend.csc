@@ -1215,7 +1215,7 @@ function function_8d53d5b6(localclientnum, var_302876c9, xuid) {
     if (isdefined(var_bba3d6af.weapon) && var_bba3d6af.weapon !== level.weaponnone) {
         return var_bba3d6af;
     } else {
-        return {#weapon:getweapon(#"hash_2580580083c87b0d")};
+        return {#weapon:getweapon(#"ar_accurate_t9")};
     }
 }
 

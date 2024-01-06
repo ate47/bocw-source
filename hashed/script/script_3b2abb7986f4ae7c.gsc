@@ -330,9 +330,9 @@ function function_be51796c(einflictor, eattacker, idamage, idflags, smeansofdeat
                 if (shitloc === "MOD_PROJECTILE_SPLASH") {
                     damage = 0;
                 } else {
-                    if (vdamageorigin.name === #"hash_72796957033e2e4a" || vdamageorigin.name === #"hash_11363c24185fecdb") {
+                    if (vdamageorigin.name === #"ww_ieu_plasma_t9" || vdamageorigin.name === #"hash_11363c24185fecdb") {
                         damage = self namespace_b376a999::function_fd195372(weapon, var_fd90b0bb, damage, vdir, shitloc, vdamageorigin, psoffsettime, damagefromunderneath, modelindex, partname, vsurfacenormal);
-                    } else if (vdamageorigin.name === #"hash_6e0b27b854e591a3" || vdamageorigin.name === #"hash_941005e056449b4") {
+                    } else if (vdamageorigin.name === #"ww_ieu_gas_t9" || vdamageorigin.name === #"hash_941005e056449b4") {
                         damage = damage * 0.1;
                     }
                     damage = damage * 0.3;

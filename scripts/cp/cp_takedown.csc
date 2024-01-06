@@ -459,17 +459,17 @@ function function_d126379e(localclientnum, *oldval, newval, *bnewent, *binitials
     weapons = [];
     switch (bwasdemojump) {
     case 1:
-        weapons[weapons.size] = getweapon(#"hash_5bf4dc6dcf1d2340", "steadyaim", "elo2");
-        weapons[weapons.size] = getweapon(#"hash_7a3989475f8af314", "steadyaim", "reflex", "grip");
-        weapons[weapons.size] = getweapon(#"hash_6251778e2d3b9a64", "acog");
+        weapons[weapons.size] = getweapon(#"smg_standard_t9", "steadyaim", "elo2");
+        weapons[weapons.size] = getweapon(#"smg_handling_t9", "steadyaim", "reflex", "grip");
+        weapons[weapons.size] = getweapon(#"smg_heavy_t9", "acog");
         break;
     case 2:
-        weapons[weapons.size] = getweapon(#"hash_70f8f2d92031f544", array("holo", "steadyaim", "grip", "extclip"));
-        weapons[weapons.size] = getweapon(#"hash_485d0c5e33d67e78");
+        weapons[weapons.size] = getweapon(#"ar_standard_t9", array("holo", "steadyaim", "grip", "extclip"));
+        weapons[weapons.size] = getweapon(#"sniper_quickscope_t9");
     case #"hash_defdefdefdefdef0":
-        weapons[weapons.size] = getweapon(#"hash_5bf4dc6dcf1d2340", "steadyaim", "elo2");
-        weapons[weapons.size] = getweapon(#"hash_7a3989475f8af314", "steadyaim", "reflex", "grip");
-        weapons[weapons.size] = getweapon(#"hash_6251778e2d3b9a64", "acog");
+        weapons[weapons.size] = getweapon(#"smg_standard_t9", "steadyaim", "elo2");
+        weapons[weapons.size] = getweapon(#"smg_handling_t9", "steadyaim", "reflex", "grip");
+        weapons[weapons.size] = getweapon(#"smg_heavy_t9", "acog");
         break;
     }
     self thread util::function_d126379e(fieldname, weapons);

@@ -32,9 +32,9 @@ function private function_70a657d8() {
 // Checksum 0xc3855332, Offset: 0x3d0
 // Size: 0x94
 function postinit() {
-    zm_weapons::function_8389c033(#"hash_5bd48d860ebd5a41", #"hash_5bd48d860ebd5a41");
-    zm_weapons::function_8389c033(#"hash_5bd48d860ebd5a41", #"ray_gun");
-    zm_weapons::function_8389c033(#"ray_gun", #"hash_5bd48d860ebd5a41");
+    zm_weapons::function_8389c033(#"ww_ray_rifle_t9", #"ww_ray_rifle_t9");
+    zm_weapons::function_8389c033(#"ww_ray_rifle_t9", #"ray_gun");
+    zm_weapons::function_8389c033(#"ray_gun", #"ww_ray_rifle_t9");
 }
 
 // Namespace namespace_a5ef5769/namespace_a5ef5769

@@ -42,7 +42,7 @@ function function_9109a1fe() {
     self function_854b5376(1);
     self.radius = 32;
     level thread util::magic_bullet_shield(self);
-    a_ar = getweapon(#"hash_2580580083c87b0d", "steadyaim", "reflex");
+    a_ar = getweapon(#"ar_accurate_t9", "steadyaim", "reflex");
     self hms_util::function_65d14a19(a_ar);
     self ai::set_behavior_attribute("useGrenades", 0);
     self.script_forcecolor = "o";
@@ -58,7 +58,7 @@ function function_87d56d50() {
     self.radius = 32;
     self ai::set_behavior_attribute("useGrenades", 0);
     level thread util::magic_bullet_shield(self);
-    a_ar = getweapon(#"hash_70f8f2d92031f544", "steadyaim", "reflex");
+    a_ar = getweapon(#"ar_standard_t9", "steadyaim", "reflex");
     self hms_util::function_65d14a19(a_ar);
     self.script_forcecolor = "c";
 }
@@ -153,7 +153,7 @@ function function_6578b894() {
     self disableaimassist();
     self function_854b5376(1);
     self function_2ce879d2(260);
-    lmg = getweapon(#"hash_64e4e829150d8882");
+    lmg = getweapon(#"lmg_light_t9");
     self setweapon(lmg);
     self thread function_8f7f7a0();
     self thread function_b1518d0e();

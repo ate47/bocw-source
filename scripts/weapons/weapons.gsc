@@ -32,10 +32,10 @@ function init_shared() {
     level.var_60fa96d6 = getweapon(#"bare_hands");
     level.weaponbasemelee = getweapon(#"knife");
     level.weaponbasemeleeheld = getweapon(#"knife_held");
-    level.weaponballisticknife = getweapon(#"hash_3e13285248686f27");
-    level.var_38b456aa = getweapon(#"hash_5eb76916b647273d");
-    level.weaponspecialcrossbow = getweapon(#"hash_18a2b66939a974a1");
-    level.var_91199825 = getweapon(#"hash_227fd691c2da0969");
+    level.weaponballisticknife = getweapon(#"special_ballisticknife_t9_dw");
+    level.var_38b456aa = getweapon(#"special_nailgun_t9");
+    level.weaponspecialcrossbow = getweapon(#"special_crossbow_t9");
+    level.var_91199825 = getweapon(#"special_grenadelauncher_t9");
     level.weaponflechette = getweapon(#"tr_flechette_t8");
     level.weaponriotshield = getweapon(#"riotshield");
     level.weaponflashgrenade = getweapon(#"flash_grenade");

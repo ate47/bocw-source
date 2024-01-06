@@ -16,7 +16,7 @@
 12,,#hash_7bb2d755872a5be5,#currency,#legendary,0,0,#,#,0
 13,19262075,#weapon_xp_token_legendary,#hash_7c692b8eb31f67eb,#legendary,0,0,#,#,0
 14,22383904,#reticle_109,#reticle,#rare,0,0,#,#,0
-15,30107283,#hash_67116924005b2bf8,#weapon,#base,0,1,#hash_206fafc51f5893d0,#hash_2c00d7d5f116330f,0
+15,30107283,#ar_british_t9,#weapon,#base,0,1,#hash_206fafc51f5893d0,#hash_2c00d7d5f116330f,0
 16,24693824,#loot_ges_mtx_t9_chefs_kiss,#gesture,#epic,0,0,#,#,0
 17,,#hash_7bb2d755872a5be5,#currency,#legendary,0,0,#,#,0
 18,31884481,#hash_2254c574168e279,#blueprint,#legendary,0,0,#,#hash_2c00d7d5f116330f,0
@@ -33,7 +33,7 @@
 28,18582948,#reticle_110,#reticle,#rare,0,1,#,#,0
 29,30886333,#player_xp_token_common,#hash_7c692b8eb31f67eb,#common,0,0,#,#,0
 30,29985441,#hash_50503ede666ede57,#character_outfit,#rare,0,0,#,#hash_2c00d7d5f116330f,0
-31,19175979,#hash_773a513fbaa45fb4,#weapon,#base,0,1,#hash_206fafc51f5893d0,#hash_2c00d7d5f116330f,0
+31,19175979,#smg_semiauto_t9,#weapon,#base,0,1,#hash_206fafc51f5893d0,#hash_2c00d7d5f116330f,0
 32,,#hash_7bb2d755872a5be5,#currency,#legendary,0,0,#,#,0
 33,19767032,#hash_65efc336eb235eb7,#calling_card,#legendary,0,0,#,#,0
 34,20695559,#wristaccessory_t9_s5_digital_ghosted,#hash_c70e59dba98cf81,#legendary,0,1,#,#,0

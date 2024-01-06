@@ -941,9 +941,9 @@ function init_sounds() {
 // Size: 0x9cc
 function init_levelvars() {
     level.is_zombie_level = 1;
-    level.default_laststandpistol = getweapon(#"hash_33ed9170805d825c");
+    level.default_laststandpistol = getweapon(#"pistol_semiauto_t9");
     level.default_solo_laststandpistol = getweapon(#"hash_e58e352069bc0a5");
-    level.super_ee_weapon = getweapon(#"hash_42f6b5f6dd85875f");
+    level.super_ee_weapon = getweapon(#"pistol_burst_t9");
     level.laststandpistol = level.default_laststandpistol;
     level.start_weapon = level.default_laststandpistol;
     level.first_round = 1;

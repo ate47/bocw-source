@@ -428,12 +428,12 @@ function private function_7532a0ff(weapon_name) {
         case #"hash_11363c24185fecdb":
         case #"hash_189ef2dafffe1f4c":
         case #"hash_294926d598e011fa":
-        case #"hash_3fa91d1674123e09":
+        case #"ww_ieu_shockwave_t9":
         case #"hash_4ee16eb0581e4646":
-        case #"hash_5dd5741f21fd680d":
-        case #"hash_655d944e437c3d5b":
-        case #"hash_6e0b27b854e591a3":
-        case #"hash_72796957033e2e4a":
+        case #"ww_ieu_electric_t9":
+        case #"ww_ieu_acid_t9":
+        case #"ww_ieu_gas_t9":
+        case #"ww_ieu_plasma_t9":
             return 1;
         case #"hash_defdefdefdefdef0":
             return 0;

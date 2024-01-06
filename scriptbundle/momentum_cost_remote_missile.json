@@ -55,7 +55,7 @@
     "type": "gamesettings",
     "label": "#hash_20c241a708fe0457",
     "name": "momentum_cost_remote_missile",
-    "displayname": "#hash_16e3073852684125",
+    "displayname": "#killstreak/remote_missile",
     "var_9600a8ab": "#menu/default",
     "var_54e336e4": 1,
     "var_9de86f42": 51,

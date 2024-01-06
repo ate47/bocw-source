@@ -20,7 +20,7 @@
 12,,#hash_7bb2d755872a5be5,#currency,#legendary,0,0,#,#,0
 13,19262075,#weapon_xp_token_legendary,#hash_7c692b8eb31f67eb,#legendary,0,0,#,#,0
 14,26601427,#reticle_127,#reticle,#rare,0,0,#,#,0
-15,32505630,#hash_11d566ca27a342b2,#weapon,#base,0,1,#hash_206fb2c51f5898e9,#hash_2c00d7d5f116330f,23
+15,32505630,#shotgun_leveraction_t9,#weapon,#base,0,1,#hash_206fb2c51f5898e9,#hash_2c00d7d5f116330f,23
 15,,#hash_4b5aeffeb304e89b,#hash_5c4342abb0ab9b66,#rare,0,1,#,#,23
 16,24241868,#loot_ges_mtx_t9_coin_trick,#gesture,#epic,0,0,#,#,0
 17,,#hash_7bb2d755872a5be5,#currency,#legendary,0,0,#,#,0
@@ -41,7 +41,7 @@
 28,,#hash_34820684fec4a43c,#hash_5c4342abb0ab9b66,#rare,0,1,#,#,27
 29,30886333,#player_xp_token_common,#hash_7c692b8eb31f67eb,#common,0,0,#,#,0
 30,24233494,#hash_392b805cbb625b04,#character_outfit,#rare,0,0,#,#hash_2c00d7d5f116330f,0
-31,28682315,#hash_6146c46771b21a2,#weapon,#base,0,1,#hash_206fb2c51f5898e9,#hash_2c00d7d5f116330f,28
+31,28682315,#ar_season6_t9,#weapon,#base,0,1,#hash_206fb2c51f5898e9,#hash_2c00d7d5f116330f,28
 31,,#hash_1b0b7f1e564236a7,#hash_5c4342abb0ab9b66,#epic,0,1,#,#,28
 32,,#hash_7bb2d755872a5be5,#currency,#legendary,0,0,#,#,0
 33,17888966,#hash_46ac830866c0b4fa,#calling_card,#legendary,0,0,#,#,0

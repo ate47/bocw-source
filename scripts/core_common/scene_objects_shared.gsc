@@ -1274,7 +1274,7 @@ class csceneobject {
                 self._e makefakeai();
             }
             if (!is_true(self._s.removeweapon) && !is_true(self._s.var_4251c9c6)) {
-                self._e animation::attach_weapon(getweapon(#"hash_2580580083c87b0d"));
+                self._e animation::attach_weapon(getweapon(#"ar_accurate_t9"));
             }
         }
         set_objective();

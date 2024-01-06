@@ -117,7 +117,7 @@ function event_handler[level_init] main(*eventstruct) {
     level.var_baed3b8e = 1750;
     level.var_ac94c2b8 = 2;
     namespace_591b4396::function_fa5bd408(array("zone_burnt_forest_defend", "zone_burnt_forest_defend_outside"));
-    level.var_fc439a95 = #"hash_5bd48d860ebd5a41";
+    level.var_fc439a95 = #"ww_ray_rifle_t9";
     level.var_f454f2b5 = 0;
     level.var_8abe919a = 0;
     callback::on_round_end(&function_1688adb7);

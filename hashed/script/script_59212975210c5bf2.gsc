@@ -152,7 +152,7 @@ function private function_cc775529(s_instance) {
                         var_d6cf3f65 = 0;
                         if (!isdefined(var_1b519b48)) {
                             if (s_result.mod === "MOD_MELEE") {
-                                s_result.attacker zm_stats::function_51c1448(#"hash_4945dccf0e8c820a", 1, #"hash_4e7e61b2bbe2f0e1", #"hash_3af942ef08dcbd4a");
+                                s_result.attacker zm_stats::function_51c1448(#"hash_4945dccf0e8c820a", 1, #"hash_4e7e61b2bbe2f0e1", #"melee_coldwar_t9_dw");
                             }
                             var_206de304 = int(min(getplayers().size, 2));
                             var_2858caa2 = {#var_738dfc81:var_206de304, #angles:var_b7eee573.angles, #origin:var_b7eee573.origin};

@@ -193,11 +193,11 @@ function function_4b29f610() {
 // Checksum 0x192bb326, Offset: 0x16c8
 // Size: 0x3cc
 function function_c260f7a1(var_e9ea5e13) {
-    var_a02789e0 = getweapon(#"hash_655d944e437c3d5b");
-    var_f934814c = getweapon(#"hash_5dd5741f21fd680d");
-    var_fb0c0b60 = getweapon(#"hash_6e0b27b854e591a3");
-    var_95254da2 = getweapon(#"hash_72796957033e2e4a");
-    var_7de2a5d9 = getweapon(#"hash_3fa91d1674123e09");
+    var_a02789e0 = getweapon(#"ww_ieu_acid_t9");
+    var_f934814c = getweapon(#"ww_ieu_electric_t9");
+    var_fb0c0b60 = getweapon(#"ww_ieu_gas_t9");
+    var_95254da2 = getweapon(#"ww_ieu_plasma_t9");
+    var_7de2a5d9 = getweapon(#"ww_ieu_shockwave_t9");
     if (isplayer(var_e9ea5e13)) {
         if (var_e9ea5e13 hasweapon(var_a02789e0) || var_e9ea5e13 hasweapon(var_f934814c) || var_e9ea5e13 hasweapon(var_fb0c0b60) || var_e9ea5e13 hasweapon(var_95254da2) || var_e9ea5e13 hasweapon(var_7de2a5d9)) {
             return 0;

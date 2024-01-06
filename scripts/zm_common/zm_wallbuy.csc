@@ -414,15 +414,15 @@ function function_8f12abec(localclientnum) {
         }
     }
     switch (weapon_type) {
-    case #"hash_1039f56708e1d3e4":
+    case #"ar_damage_t9":
         var_254469d1 = #"hash_60d3a1f7d422e966";
         name_hash = #"hash_4d8398888735db8";
         break;
-    case #"hash_44214d17f349989d":
+    case #"ar_fastfire_t9":
         var_254469d1 = #"hash_9e1422a498a153";
         name_hash = #"hash_717baccca4cf03d1";
         break;
-    case #"hash_6cb1c7e45075a0a4":
+    case #"ar_mobility_t9":
         var_254469d1 = #"hash_13c954f44eee4616";
         name_hash = #"hash_7bd4f5716e446b78";
         break;
@@ -430,102 +430,102 @@ function function_8f12abec(localclientnum) {
         var_254469d1 = #"hash_43891455ac15b7be";
         name_hash = #"hash_63e8969bae8c6414";
         break;
-    case #"hash_70f8f2d92031f544":
+    case #"ar_standard_t9":
         var_254469d1 = #"hash_51976978ad5a7a0a";
         name_hash = #"hash_67e1bb4dbdf802d8";
         break;
-    case #"hash_2580580083c87b0d":
+    case #"ar_accurate_t9":
         var_254469d1 = #"hash_5465e97890027a63";
         name_hash = #"hash_4ea07dc5c94ab7f9";
         break;
-    case #"hash_42f6b5f6dd85875f":
+    case #"pistol_burst_t9":
         var_254469d1 = #"hash_380cbbb95bef9a97";
         name_hash = #"hash_703b41f88b42f343";
         break;
-    case #"hash_35a57459d3bdbfa6":
+    case #"pistol_revolver_t9":
         var_254469d1 = #"hash_1551c0e06f65b6e8";
         name_hash = #"hash_5091c4707ec6b942";
         break;
-    case #"hash_33ed9170805d825c":
+    case #"pistol_semiauto_t9":
         var_254469d1 = #"hash_1d6b5a3162315d2a";
         name_hash = #"hash_2439a2ff4beb86b0";
         break;
-    case #"hash_7a7bd99ab5e9bd82":
+    case #"shotgun_fullauto_t9":
         var_254469d1 = #"hash_543883d02a25c8f2";
         name_hash = #"hash_6df0ff702b2613be";
         break;
-    case #"hash_6f8ae26433fba2cf":
+    case #"shotgun_semiauto_t9":
         var_254469d1 = #"hash_5fb436cc685858bf";
         name_hash = #"hash_6dcf0445e7c7257b";
         break;
-    case #"hash_5243375728e388f6":
+    case #"shotgun_pump_t9":
         var_254469d1 = #"hash_2142923f8242e70a";
         name_hash = #"hash_1631ac670b00dbfa";
         break;
-    case #"hash_349be5cb35ef5f77":
+    case #"smg_burst_t9":
         var_254469d1 = #"hash_3de7cc85209151f9";
         name_hash = #"hash_2c75287d04644bcb";
         break;
-    case #"hash_2f42bc0a766b6567":
+    case #"smg_capacity_t9":
         var_254469d1 = #"hash_269644599df154db";
         name_hash = #"hash_423632bb711a406b";
         break;
-    case #"hash_6436cdb615a2bb79":
+    case #"smg_fastfire_t9":
         var_254469d1 = #"hash_4ea0b0f3291897dd";
         name_hash = #"hash_6def002686374645";
         break;
-    case #"hash_7a3989475f8af314":
+    case #"smg_handling_t9":
         var_254469d1 = #"hash_552da77f6dd268f4";
         name_hash = #"hash_410c31e1c403b298";
         break;
-    case #"hash_6251778e2d3b9a64":
+    case #"smg_heavy_t9":
         var_254469d1 = #"hash_3de4a3ba0c0c6176";
         name_hash = #"hash_42c7bf7c8a2eaad8";
         break;
-    case #"hash_5bf4dc6dcf1d2340":
+    case #"smg_standard_t9":
         var_254469d1 = #"hash_1be663d24baec560";
         name_hash = #"hash_1895010b5180880c";
         break;
-    case #"hash_b75a549c0e857d0":
+    case #"sniper_powersemi_t9":
         var_254469d1 = #"hash_23fca34f81467e8";
         name_hash = #"hash_1fed797b830c9f74";
         break;
-    case #"hash_485d0c5e33d67e78":
+    case #"sniper_quickscope_t9":
         var_254469d1 = #"hash_5afdcf904fe36502";
         name_hash = #"hash_4cf07e30456d6a24";
         break;
-    case #"hash_696069d98ed3f228":
+    case #"sniper_standard_t9":
         var_254469d1 = #"hash_2dc0ad079e877d92";
         name_hash = #"hash_755d23459c2344cc";
         break;
-    case #"hash_51114f6fd577519b":
+    case #"tr_damagesemi_t9":
         var_254469d1 = #"hash_4412650e08944071";
         name_hash = #"hash_14e7b988f9459207";
         break;
     case #"tr_fullauto_t9":
         var_254469d1 = #"hash_759d98b15bc6f572";
         break;
-    case #"hash_5b3e3aae603f948e":
+    case #"tr_longburst_t9":
         var_254469d1 = #"hash_26d132a48416630e";
         name_hash = #"hash_696d8b6b3a595612";
         break;
-    case #"hash_5818a5515e931441":
+    case #"tr_powerburst_t9":
         var_254469d1 = #"hash_6bae63c0650c5b6b";
         name_hash = #"hash_7e1fb00fccc464b5";
         break;
-    case #"hash_503338a31adadb4c":
+    case #"tr_precisionsemi_t9":
         var_254469d1 = #"hash_7f13eff55abcf1ec";
         name_hash = #"hash_1a652a02b8f8208";
         break;
-    case #"hash_7fff139e10965561":
+    case #"lmg_slowfire_t9":
         var_254469d1 = #"hash_13c6573ab08b92d1";
         name_hash = #"hash_5eca49abef9d89ed";
         break;
-    case #"hash_64e4e829150d8882":
+    case #"lmg_light_t9":
         var_254469d1 = #"hash_373cf28c1cd363c0";
         name_hash = #"hash_115345b891f63176";
         break;
-    case #"hash_8ff6b682d43c59c":
+    case #"lmg_accurate_t9":
         var_254469d1 = #"hash_7c2e5b18f3e46c4";
         name_hash = #"hash_7eb1b81fdce9b908";
         break;

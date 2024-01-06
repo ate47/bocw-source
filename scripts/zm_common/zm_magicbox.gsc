@@ -2312,7 +2312,7 @@ function treasure_chest_give_weapon(item, *var_75c86f89, e_chest) {
             self notify(#"zm_bgb_crate_power_used");
         }
     }
-    if (weapon.name == #"hash_5bd48d860ebd5a41" || weapon.name == #"ray_gun" || weapon.name == #"ray_gun_mk2") {
+    if (weapon.name == #"ww_ray_rifle_t9" || weapon.name == #"ray_gun" || weapon.name == #"ray_gun_mk2") {
         playsoundatposition(#"mus_raygun_stinger", (0, 0, 0));
     }
     if (zm_loadout::is_offhand_weapon(weapon)) {

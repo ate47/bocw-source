@@ -91,8 +91,8 @@ function main(var_d3440450, var_50cc0d4f) {
     player util::function_3b6593e4(0.87, 1);
     level.var_fdc6062e ai::set_behavior_attribute("demeanor", "combat");
     level.woods ai::set_behavior_attribute("demeanor", "combat");
-    var_5ca6956f = getweapon(#"hash_2580580083c87b0d");
-    w_pistol = getweapon(#"hash_33ed9170805d825c", "steadyaim", "fastreload", "reflex_pistol");
+    var_5ca6956f = getweapon(#"ar_accurate_t9");
+    w_pistol = getweapon(#"pistol_semiauto_t9", "steadyaim", "fastreload", "reflex_pistol");
     thread function_1f6d0353();
     level flag::wait_till("flag_qasim_roof_run3");
     player thread function_e99afe47();
@@ -122,7 +122,7 @@ function main(var_d3440450, var_50cc0d4f) {
     level function_bc2abab3();
     player thread function_624525f();
     thread namespace_a052577e::function_fd7139f4();
-    weapon = getweapon(#"hash_33ed9170805d825c");
+    weapon = getweapon(#"pistol_semiauto_t9");
     level.var_fdc6062e aiutility::setprimaryweapon(weapon);
     level.var_fdc6062e ai::gun_switchto(weapon, "right");
     var_38ac20b2 = util::spawn_player_clone(player);
@@ -242,7 +242,7 @@ function function_624525f() {
     var_b84b1bf9 = getent("mb_slide_enemy1", "targetname");
     level waittill(#"hash_3dd2c779be3b07c8");
     if (isalive(level.var_c2f99c79) && !isdefined(level.var_c2f99c79.var_b481f04a)) {
-        magicbullet(getweapon(#"hash_70f8f2d92031f544"), var_b84b1bf9.origin, level.var_c2f99c79.origin + vectorscale((0, 0, 1), 50));
+        magicbullet(getweapon(#"ar_standard_t9"), var_b84b1bf9.origin, level.var_c2f99c79.origin + vectorscale((0, 0, 1), 50));
     }
 }
 
@@ -303,7 +303,7 @@ function function_f9dfbac1() {
 // Size: 0xbc
 function function_6178ec8f() {
     level flag::wait_till("flag_ak74_hack");
-    var_2397b823 = getweapon(#"hash_6251778e2d3b9a64", "steadyaim", "reflex");
+    var_2397b823 = getweapon(#"smg_heavy_t9", "steadyaim", "reflex");
     self giveweapon(var_2397b823);
     self switchtoweapon(var_2397b823);
     self val::set(#"hash_5ac5827ce61e8e00", "disable_weapon_cycling", 1);

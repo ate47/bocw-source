@@ -17,7 +17,7 @@
 12,,#hash_7bb2d755872a5be5,#currency,#legendary,0,0,#,#,0
 13,19262075,#weapon_xp_token_legendary,#hash_7c692b8eb31f67eb,#legendary,0,0,#,#,0
 14,32045060,#reticle_56,#reticle,#rare,0,0,#,#,0
-15,27012354,#hash_4d8b07efde79fb03,#weapon,#base,0,1,#nova_gas,#hash_2c00d7d5f116330f,0
+15,27012354,#ar_slowhandling_t9,#weapon,#base,0,1,#nova_gas,#hash_2c00d7d5f116330f,0
 16,20479602,#hash_6237905b01fe3c66,#calling_card,#legendary,0,0,#,#,0
 17,,#hash_7bb2d755872a5be5,#currency,#legendary,0,0,#,#,0
 18,26673104,#hash_7185d623c0cc9b38,#blueprint,#epic,0,0,#,#hash_2c00d7d5f116330f,0
@@ -34,7 +34,7 @@
 28,28101802,#reticle_55,#reticle,#rare,0,1,#,#,0
 29,30886333,#player_xp_token_common,#hash_7c692b8eb31f67eb,#common,0,0,#,#,0
 30,26992398,#hash_7e7d89200ffb7819,#character_outfit,#rare,0,0,#,#hash_2c00d7d5f116330f,0
-31,25273531,#hash_5f1d39574585b511,#weapon,#base,0,1,#nova_gas,#hash_2c00d7d5f116330f,0
+31,25273531,#smg_accurate_t9,#weapon,#base,0,1,#nova_gas,#hash_2c00d7d5f116330f,0
 32,,#hash_7bb2d755872a5be5,#currency,#legendary,0,0,#,#,0
 33,25434274,#hash_6d68308fcb923cf8,#calling_card,#legendary,0,0,#,#,0
 34,25981618,#wristaccessory_t9_s2_digital_mayan,#hash_c70e59dba98cf81,#legendary,0,1,#,#,0

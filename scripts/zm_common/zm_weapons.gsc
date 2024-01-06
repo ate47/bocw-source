@@ -118,10 +118,10 @@ function private postinit() {
     init();
     function_8389c033(#"ray_gun", #"ray_gun");
     function_8389c033(#"ray_gun", #"ray_gun_upgraded");
-    function_8389c033(#"hash_5bd48d860ebd5a41", #"hash_426d7c850c7f1d2");
+    function_8389c033(#"ww_ray_rifle_t9", #"hash_426d7c850c7f1d2");
     function_8389c033(#"ray_gun_upgraded", #"hash_426d7c850c7f1d2");
-    function_8389c033(#"hash_5bd48d860ebd5a41", #"ray_gun");
-    function_8389c033(#"hash_5bd48d860ebd5a41", #"ray_gun_upgraded");
+    function_8389c033(#"ww_ray_rifle_t9", #"ray_gun");
+    function_8389c033(#"ww_ray_rifle_t9", #"ray_gun_upgraded");
     function_8389c033(#"hash_386308ed987052a4", #"hash_386308ed987052a4");
     function_8389c033(#"hash_386308ed987052a4", #"hash_226d0ad69d9efa1");
     function_8389c033(#"hash_386308ed987052a4", #"hash_131a672d67787b26");
@@ -140,33 +140,33 @@ function private postinit() {
     function_8389c033(#"hash_7bf7797b85b0089c", #"hash_7bf7797b85b0089c");
     function_dd02fe13(#"knife_loadout");
     function_dd02fe13(#"hash_7a910d220f3767fa");
-    function_dd02fe13(#"hash_40a7572272724186");
+    function_dd02fe13(#"melee_sledgehammer_t9");
     function_dd02fe13(#"hash_537b94a09bd1867f");
-    function_dd02fe13(#"hash_460bc598f95372f5");
+    function_dd02fe13(#"melee_wakizashi_t9");
     function_dd02fe13(#"hash_34a3d5e05d7acdee");
-    function_dd02fe13(#"hash_94d57d930b7b0f5");
+    function_dd02fe13(#"melee_etool_t9");
     function_dd02fe13(#"hash_63b33204197f67ee");
-    function_dd02fe13(#"hash_22ae60246b483a43");
+    function_dd02fe13(#"melee_machete_t9");
     function_dd02fe13(#"hash_61b3e2efa78ea114");
-    function_dd02fe13(#"hash_3e13285248686f27");
+    function_dd02fe13(#"special_ballisticknife_t9_dw");
     function_dd02fe13(#"hash_3df82d524851afee");
     function_dd02fe13(#"hash_4650af6ac5c9ce80");
     function_dd02fe13(#"hash_30d658a39c0dc9e7");
-    function_dd02fe13(#"hash_2fd630b6c3f38193");
+    function_dd02fe13(#"melee_baseballbat_t9");
     function_dd02fe13(#"hash_4aa507ecfabf584");
-    function_dd02fe13(#"hash_34589063d8a49594");
+    function_dd02fe13(#"melee_mace_t9");
     function_dd02fe13(#"hash_7a0ceabf0b80dfbd");
-    function_dd02fe13(#"hash_69793892571149b9");
+    function_dd02fe13(#"melee_cane_t9");
     function_dd02fe13(#"hash_44cec6cd46d6990a");
-    function_dd02fe13(#"hash_3bb2c573b2dfc889");
+    function_dd02fe13(#"melee_sai_t9_dw");
     function_dd02fe13(#"hash_3ed8ac521638597a");
-    function_dd02fe13(#"hash_3af942ef08dcbd4a");
+    function_dd02fe13(#"melee_coldwar_t9_dw");
     function_dd02fe13(#"hash_7c9376e0e68e89db");
-    function_dd02fe13(#"hash_68a1c3aa7e98d10c");
+    function_dd02fe13(#"melee_battleaxe_t9");
     function_dd02fe13(#"hash_4f60c436c17984b5");
     function_dd02fe13(#"hash_6518b25ee10d7f7e");
     function_dd02fe13(#"hash_3e4e4f6831a18917");
-    function_90953640(getweapon(#"hash_5243375728e388f6"), 4, float(function_60d95f53()) / 1000, 1);
+    function_90953640(getweapon(#"shotgun_pump_t9"), 4, float(function_60d95f53()) / 1000, 1);
     function_e2bcbf46(#"hero_flamethrower");
     function_283a8d38(#"hash_25ff17bb722aaaf5");
     function_283a8d38(#"hash_7008465d543f5ee");
@@ -2984,12 +2984,12 @@ function is_wonder_weapon(w_to_check) {
         case #"hash_294926d598e011fa":
         case #"hash_2d0c14dce5a6ebed":
         case #"hash_386308ed987052a4":
-        case #"hash_3fa91d1674123e09":
+        case #"ww_ieu_shockwave_t9":
         case #"hash_4ee16eb0581e4646":
-        case #"hash_5dd5741f21fd680d":
-        case #"hash_655d944e437c3d5b":
-        case #"hash_6e0b27b854e591a3":
-        case #"hash_72796957033e2e4a":
+        case #"ww_ieu_electric_t9":
+        case #"ww_ieu_acid_t9":
+        case #"ww_ieu_gas_t9":
+        case #"ww_ieu_plasma_t9":
         case #"hash_7bf7797b85b0089c":
             return 1;
             break;
@@ -3003,7 +3003,7 @@ function is_wonder_weapon(w_to_check) {
 // Checksum 0x5b58e79a, Offset: 0xb3e8
 // Size: 0xfe
 function is_tactical_rifle(w_to_check) {
-    var_6351a511 = array(getweapon(#"hash_5b3e3aae603f948e"), getweapon(#"hash_51114f6fd577519b"), getweapon(#"hash_36830b3ab9fbdde"), getweapon(#"hash_5818a5515e931441"), getweapon(#"hash_503338a31adadb4c"));
+    var_6351a511 = array(getweapon(#"tr_longburst_t9"), getweapon(#"tr_damagesemi_t9"), getweapon(#"tr_fastburst_t9"), getweapon(#"tr_powerburst_t9"), getweapon(#"tr_precisionsemi_t9"));
     w_to_check = get_base_weapon(w_to_check);
     if (isinarray(var_6351a511, w_to_check)) {
         return 1;
@@ -4033,16 +4033,16 @@ function function_404c3ad5(weapon, callback) {
 // Size: 0xda
 function function_c69910e2(weapon_name, rarity) {
     switch (weapon_name) {
-    case #"hash_42f6b5f6dd85875f":
-        item_name = level.var_29d88fe5[#"hash_58befc4946435f61"][rarity];
+    case #"pistol_burst_t9":
+        item_name = level.var_29d88fe5[#"pistol_burst_t9_dw"][rarity];
         return item_name;
         break;
-    case #"hash_35a57459d3bdbfa6":
-        item_name = level.var_29d88fe5[#"hash_1344474ed307e50e"][rarity];
+    case #"pistol_revolver_t9":
+        item_name = level.var_29d88fe5[#"pistol_revolver_t9_dw"][rarity];
         return item_name;
         break;
-    case #"hash_33ed9170805d825c":
-        item_name = level.var_29d88fe5[#"hash_3f4901eae349fa30"][rarity];
+    case #"pistol_semiauto_t9":
+        item_name = level.var_29d88fe5[#"pistol_semiauto_t9_dw"][rarity];
         return item_name;
         break;
     }

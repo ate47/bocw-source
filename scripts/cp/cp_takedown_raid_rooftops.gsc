@@ -51,8 +51,8 @@ function function_f9f06983(*var_d3440450) {
     level.var_fdc6062e forceteleport(var_fcbd93e0.origin, var_fcbd93e0.angles);
     level.woods forceteleport(var_1100faeb.origin, var_1100faeb.angles);
     player = getplayers()[0];
-    var_5ca6956f = getweapon(#"hash_2580580083c87b0d", "steadyaim", "reflex");
-    var_a3379ef0 = getweapon(#"hash_70f8f2d92031f544", "steadyaim", "reflex");
+    var_5ca6956f = getweapon(#"ar_accurate_t9", "steadyaim", "reflex");
+    var_a3379ef0 = getweapon(#"ar_standard_t9", "steadyaim", "reflex");
     level.woods setweapon(var_a3379ef0);
     level.var_fdc6062e setweapon(var_5ca6956f);
     player giveweapon(var_5ca6956f);
@@ -352,7 +352,7 @@ function function_a1d9cae0() {
     self val::set(#"hash_97fd9bb5b75dbc6", "ignoreme", 1);
     self.forcesprint = 1;
     self disableaimassist();
-    lmg = getweapon(#"hash_64e4e829150d8882");
+    lmg = getweapon(#"lmg_light_t9");
     self setweapon(lmg);
     self val::function_e681e68e(#"hash_97fd9bb5b75dbc6");
     self.script_accuracy = 0.2;

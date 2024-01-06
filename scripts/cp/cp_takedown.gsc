@@ -241,8 +241,8 @@ function function_95b5afc9() {
     foreach (var_5f48185 in var_4f2ba130) {
         self takeweapon(var_5f48185);
     }
-    var_9f43fd46 = getweapon(#"hash_5bf4dc6dcf1d2340", "steadyaim", "elo2", "grip");
-    pistol = getweapon(#"hash_33ed9170805d825c", "steadyaim", "fastreload", "reflex_pistol");
+    var_9f43fd46 = getweapon(#"smg_standard_t9", "steadyaim", "elo2", "grip");
+    pistol = getweapon(#"pistol_semiauto_t9", "steadyaim", "fastreload", "reflex_pistol");
     self hms_util::function_2e7c81f6(var_9f43fd46, pistol, #"frag_grenade");
     self switchtoweapon(var_9f43fd46);
     self initialweaponraise(var_9f43fd46);
@@ -257,10 +257,10 @@ function function_6154e4c2() {
     foreach (var_5f48185 in var_4f2ba130) {
         self takeweapon(var_5f48185);
     }
-    primary_weapon = getweapon(#"hash_5bf4dc6dcf1d2340", array("reflex", "fastreload"));
+    primary_weapon = getweapon(#"smg_standard_t9", array("reflex", "fastreload"));
     primaryoffhand = getweapon(#"frag_grenade");
-    secondary_weapon = getweapon(#"hash_485d0c5e33d67e78");
-    w_pistol = getweapon(#"hash_33ed9170805d825c", "steadyaim", "fastreload", "reflex_pistol");
+    secondary_weapon = getweapon(#"sniper_quickscope_t9");
+    w_pistol = getweapon(#"pistol_semiauto_t9", "steadyaim", "fastreload", "reflex_pistol");
     self giveweapon(primary_weapon);
     self giveweapon(secondary_weapon);
     self switchtoweapon(primary_weapon);
@@ -296,9 +296,9 @@ function function_43593d7d() {
             self takeweapon(var_5f48185);
         }
     }
-    primary_weapon = getweapon(#"hash_70f8f2d92031f544", array("holo", "steadyaim", "grip", "extclip"));
-    secondary_weapon = getweapon(#"hash_485d0c5e33d67e78");
-    w_pistol = getweapon(#"hash_33ed9170805d825c", "steadyaim", "fastreload", "reflex_pistol");
+    primary_weapon = getweapon(#"ar_standard_t9", array("holo", "steadyaim", "grip", "extclip"));
+    secondary_weapon = getweapon(#"sniper_quickscope_t9");
+    w_pistol = getweapon(#"pistol_semiauto_t9", "steadyaim", "fastreload", "reflex_pistol");
     self giveweapon(primary_weapon);
     player setweaponammoclip(primary_weapon, primary_weapon.clipsize);
     player givemaxammo(primary_weapon);
@@ -320,10 +320,10 @@ function function_acddd8f1() {
     }
     level waittill(#"hash_47b9f42b49b80814");
     wait(1);
-    primary_weapon = getweapon(#"hash_70f8f2d92031f544", "steadyaim", "reflex");
+    primary_weapon = getweapon(#"ar_standard_t9", "steadyaim", "reflex");
     primaryoffhand = getweapon(#"frag_grenade");
-    secondary_weapon = getweapon(#"hash_485d0c5e33d67e78");
-    w_pistol = getweapon(#"hash_33ed9170805d825c", "steadyaim", "fastreload", "reflex_pistol");
+    secondary_weapon = getweapon(#"sniper_quickscope_t9");
+    w_pistol = getweapon(#"pistol_semiauto_t9", "steadyaim", "fastreload", "reflex_pistol");
     self giveweapon(primary_weapon);
     self giveweapon(secondary_weapon);
     self switchtoweapon(primary_weapon);

@@ -39,7 +39,7 @@ function function_f9f06983(*var_d3440450) {
     level.var_49a5d2a4 vehicle::toggle_force_driver_taillights(1);
     level.var_49a5d2a4 namespace_db2381c4::function_4c265dee();
     tkdn_af_hill::function_a2015343();
-    a_ar = getweapon(#"hash_2580580083c87b0d");
+    a_ar = getweapon(#"ar_accurate_t9");
     level.var_fdc6062e setweapon(a_ar);
     level flag::set("af_start_enemy_crash_vehs");
     setdvar(#"hash_76c0d7e6385ee6de", 0.05);

@@ -235,7 +235,7 @@ class cscenefakeactor : csceneobject, csceneactor {
                 if (isdefined(weapon)) {
                     self._e animation::attach_weapon(weapon);
                 } else {
-                    self._e animation::attach_weapon(getweapon(#"hash_2580580083c87b0d"));
+                    self._e animation::attach_weapon(getweapon(#"ar_accurate_t9"));
                 }
             }
         }

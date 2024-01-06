@@ -570,16 +570,16 @@ function function_cbfcda16() {
 function function_5ff83684() {
     level.pistol_values = [];
     level.pistol_values[level.pistol_values.size] = level.default_laststandpistol;
-    level.pistol_values[level.pistol_values.size] = getweapon(#"hash_33ed9170805d825c");
-    level.pistol_values[level.pistol_values.size] = getweapon(#"hash_42f6b5f6dd85875f");
-    level.pistol_values[level.pistol_values.size] = getweapon(#"hash_35a57459d3bdbfa6");
-    level.pistol_values[level.pistol_values.size] = getweapon(#"hash_1f48092b20589001");
-    level.pistol_values[level.pistol_values.size] = getweapon(#"hash_31cbf6c78af231e7");
-    level.pistol_values[level.pistol_values.size] = getweapon(#"hash_3f4901eae349fa30");
-    level.pistol_values[level.pistol_values.size] = getweapon(#"hash_58befc4946435f61");
-    level.pistol_values[level.pistol_values.size] = getweapon(#"hash_1344474ed307e50e");
-    level.pistol_values[level.pistol_values.size] = getweapon(#"hash_1c881112379fc4d7");
-    level.pistol_values[level.pistol_values.size] = getweapon(#"hash_5f27eb77da8c0789");
+    level.pistol_values[level.pistol_values.size] = getweapon(#"pistol_semiauto_t9");
+    level.pistol_values[level.pistol_values.size] = getweapon(#"pistol_burst_t9");
+    level.pistol_values[level.pistol_values.size] = getweapon(#"pistol_revolver_t9");
+    level.pistol_values[level.pistol_values.size] = getweapon(#"pistol_fullauto_t9");
+    level.pistol_values[level.pistol_values.size] = getweapon(#"pistol_shotgun_t9");
+    level.pistol_values[level.pistol_values.size] = getweapon(#"pistol_semiauto_t9_dw");
+    level.pistol_values[level.pistol_values.size] = getweapon(#"pistol_burst_t9_dw");
+    level.pistol_values[level.pistol_values.size] = getweapon(#"pistol_revolver_t9_dw");
+    level.pistol_values[level.pistol_values.size] = getweapon(#"pistol_fullauto_t9_dw");
+    level.pistol_values[level.pistol_values.size] = getweapon(#"pistol_shotgun_t9_dw");
     level.pistol_value_solo_replace_below = level.pistol_values.size - 1;
     level.pistol_values[level.pistol_values.size] = level.default_solo_laststandpistol;
     level.pistol_values[level.pistol_values.size] = getweapon(#"hash_e58e352069bc0a5");

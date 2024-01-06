@@ -52,7 +52,7 @@ function function_f9f06983(*var_d3440450) {
     var_fcbd93e0 = struct::get("raid_capture_adler", "targetname");
     level.var_fdc6062e forceteleport(var_fcbd93e0.origin, var_fcbd93e0.angles);
     level.var_fdc6062e.ignoreall = 1;
-    weapon = getweapon(#"hash_33ed9170805d825c");
+    weapon = getweapon(#"pistol_semiauto_t9");
     level.var_fdc6062e aiutility::setprimaryweapon(weapon);
     level.var_fdc6062e ai::gun_switchto(weapon, "right");
     level.woods = var_6534f716[0] spawner::spawn(1);
