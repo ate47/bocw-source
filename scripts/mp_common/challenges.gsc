@@ -390,19 +390,19 @@ function event_handler[event_50ce9aa8] function_e51b8b9d(*eventstruct) {
     self.var_21b1a39 = gettime();
 }
 
-// Namespace challenges/event_a44f0d3e
+// Namespace challenges/ladder_begin
 // Params 1, eflags: 0x20
 // Checksum 0x3799d341, Offset: 0x1768
 // Size: 0xc
-function event_handler[event_a44f0d3e] function_e4a87edd(*eventstruct) {
+function event_handler[ladder_begin] function_e4a87edd(*eventstruct) {
     
 }
 
-// Namespace challenges/event_a95b7295
+// Namespace challenges/ladder_end
 // Params 1, eflags: 0x20
 // Checksum 0xba7a9eac, Offset: 0x1780
 // Size: 0x16
-function event_handler[event_a95b7295] function_ffe73fe3(*eventstruct) {
+function event_handler[ladder_end] function_ffe73fe3(*eventstruct) {
     self.var_d8783e02 = gettime();
 }
 
@@ -575,9 +575,9 @@ function function_a79ea08b(*einflictor, victim, *idamage, weapon) {
     var_7ca8dd34 = 0;
     if (!var_4e8a56b1 && isdefined(killstreak)) {
         switch (killstreak) {
-        case #"hash_1b2bdd347dcfc0dc":
+        case #"hoverjet":
         case #"inventory_chopper_gunner":
-        case #"hash_2f648e335983677a":
+        case #"chopper_gunner":
         case #"inventory_ac130":
         case #"ac130":
         case #"inventory_hoverjet":
@@ -939,9 +939,9 @@ function function_a79ea08b(*einflictor, victim, *idamage, weapon) {
                     self contracts::increment_contract(#"hash_24754d0ed68133e3");
                     self stats::function_dad108fa(#"hash_4aec80d782b89cf5", 1);
                     break;
-                case #"hash_14425248b25574e6":
+                case #"smoothzoom2":
                 case #"dualoptic":
-                case #"hash_7bdc3beafb1d08b0":
+                case #"smoothzoom":
                     self contracts::increment_contract(#"hash_445fb44209fddf36");
                     break;
                 }
@@ -2553,15 +2553,15 @@ function challengekills(data) {
     if (isdefined(baseweapon.statname)) {
         switch (baseweapon.statname) {
         case #"hash_ed62df533816471":
-        case #"hash_438fafe881cdd097":
-        case #"hash_5ceaf52285031501":
+        case #"napalm_strike":
+        case #"sig_bow_flame":
         case #"eq_molotov":
         case #"hero_flamethrower":
             attacker stats::function_dad108fa(#"hash_5f4d95085e8f9a1c", 1);
             attacker stats::function_bcf9602(#"hash_513bc9963a91d4b5", 1, #"hash_735ace6b22542a65");
             break;
         case #"hash_2b9efbad11308e02":
-        case #"hash_63826b4a80215cd3":
+        case #"tear_gas":
         case #"satchel_charge":
             if (data.var_b4e7eecb || data.var_fb4d11c6 || data.var_c496a910 || isdefined(data.var_7c5ded5a) && data.var_7c5ded5a + 3000 > time || isdefined(data.var_4a01f856) && data.var_4a01f856 + 3000 > time || isdefined(data.var_a1c9eb28) && data.var_a1c9eb28 + 3000 > time) {
                 attacker stats::function_dad108fa(#"hash_9d7fba655e34b0a", 1);
@@ -3277,7 +3277,7 @@ function function_ea966b4a(killstreak, var_18db7a57, weapon) {
     self stats::function_dad108fa(#"hash_2d62481543a7209", 1);
     self stats::function_dad108fa(#"hash_139b997bc49d4b16", 1);
     if (self.var_311d1335 !== 1 && self stats::get_stat_global(#"hash_2d62481543a7209") >= 50) {
-        self giveachievement(#"hash_4ab5f04a4e88fd55");
+        self giveachievement(#"mp_achievement_scorestreak_kills");
         self.var_311d1335 = 1;
     }
     self stats::function_dad108fa(#"hash_4693318a66e8a0b7", 1);
@@ -3294,15 +3294,15 @@ function function_ea966b4a(killstreak, var_18db7a57, weapon) {
     switch (killstreak) {
     case #"remote_missile":
     case #"inventory_planemortar":
-    case #"hash_438fafe881cdd097":
+    case #"napalm_strike":
     case #"inventory_remote_missile":
     case #"hash_67f88dbc909e85f8":
     case #"planemortar":
         var_6616c2ea = 1;
     case #"dart":
-    case #"hash_1b2bdd347dcfc0dc":
+    case #"hoverjet":
     case #"inventory_chopper_gunner":
-    case #"hash_2f648e335983677a":
+    case #"chopper_gunner":
     case #"inventory_dart":
     case #"inventory_straferun":
     case #"inventory_ac130":

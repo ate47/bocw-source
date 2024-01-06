@@ -67,7 +67,7 @@ function event_handler[gametype_init] main(*eventstruct) {
     level.var_6c10f162 = 1;
     level.var_26342339 = 1;
     level.var_a9ebf2c6 = getweapon(#"knife_loadout");
-    level.var_cc8ad9fe = #"hash_6b07c24817b7820f";
+    level.str_magicbox_weapon_itemspawnlist = #"hash_6b07c24817b7820f";
     level.var_e2f02558 = #"hash_3dd30890ce81cf71";
     level.var_430d4cfe = #"hash_32e3a7aed2bd9ea7";
     level.var_3d802d78 = #"hash_4192cf85cfcd19d9";
@@ -99,7 +99,7 @@ function event_handler[gametype_init] main(*eventstruct) {
     zm_vo::function_2cf4b07f(#"hash_33e242de9ff79fce", #"hash_566a2e8557ec05e");
     spawner::add_ai_spawn_function(&function_a143f9d1);
     namespace_58949729::function_5a12541e();
-    level thread function_cc18cf64();
+    level thread intro_cinematic();
     level thread function_8e58680e();
     callback::function_74872db6(&function_74872db6);
     callback::on_round_end(&on_round_end);
@@ -271,7 +271,7 @@ function private function_54e7be9c() {
 // Params 0, eflags: 0x4
 // Checksum 0xfa5b3989, Offset: 0x11e8
 // Size: 0x2fc
-function private function_cc18cf64() {
+function private intro_cinematic() {
     level flag::wait_till("initial_blackscreen_passed");
     music::setmusicstate("cranked_intro");
     if (isdefined(level.var_dfee7fc2) && !getdvarint(#"hash_39af51993585a73e", 0)) {

@@ -1,0 +1,20 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#bundle_blueprint_1041_ar_damage_kalashnikov_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_33a32e7329c2a557",
+    "var_e9d9a8d0": 1,
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 1,
+    "var_46300498": 1,
+    "name": "callingcards_russiansteel_mtxitem",
+    "calling_card": "#hash_33a32e7329c2a557",
+    "category": "#calling_card",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 3,
+    "itemid": "24539871"
+}

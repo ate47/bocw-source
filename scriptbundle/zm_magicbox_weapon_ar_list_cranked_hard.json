@@ -1,0 +1,35 @@
+{
+    "itemlist": [
+        {
+            "minweight": 1,
+            "var_a6762160": "#hash_1bd0d7bdeb8f9bf4",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#hash_12b66a60d0a014a5",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#hash_3cadc5d30bbf9ab",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#hash_a0c7d2cbefa5fe7",
+            "maxweight": 1,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "zm_magicbox_weapon_ar_list_cranked_hard",
+    "var_fde72c94": 100
+}

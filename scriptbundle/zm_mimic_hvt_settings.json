@@ -1,0 +1,62 @@
+{
+    "var_5c3586f3": [
+        {
+            "dropid": "#bonus_points_player"
+        }
+    ],
+    "var_15c336d1": [
+        {
+            "start_round": 1,
+            "var_928e93a0": 3120
+        },
+        {
+            "start_round": 11,
+            "var_928e93a0": 5525
+        },
+        {
+            "start_round": 16,
+            "var_928e93a0": 15275
+        },
+        {
+            "start_round": 21,
+            "var_928e93a0": 39000
+        },
+        {
+            "start_round": 26,
+            "var_928e93a0": 50000
+        },
+        {
+            "start_round": 31,
+            "var_928e93a0": 70000
+        },
+        {
+            "start_round": 36,
+            "var_928e93a0": 40000
+        }
+    ],
+    "var_349be1e8": [
+        {
+            "type": "#hash_16b5c37d8feae38c",
+            "var_4d90aaec": 1
+        }
+    ],
+    "var_604a84a1": 1.75,
+    "var_10460f1e": 1,
+    "scoreevent": "#hash_1a4b4be2356231a7",
+    "var_3e5bacce": "#hash_150ac8d4f9914a83",
+    "var_922067c4": "scriptbundle",
+    "maxhealth": 1716000,
+    "var_a3160086": 500,
+    "var_7b22b800": 1,
+    "var_fc420d71": 1,
+    "name": "zm_mimic_hvt_settings",
+    "var_628192b0": 1,
+    "var_97b22faa": 1,
+    "damagescale": 1,
+    "category": "#hash_72d4f2ad2e333eb4",
+    "var_854eebd": 0.3,
+    "var_366e280d": 1,
+    "stunduration": 1,
+    "var_dc706c6c": "#hash_d241bda09ae83a",
+    "var_450edb3b": 1
+}

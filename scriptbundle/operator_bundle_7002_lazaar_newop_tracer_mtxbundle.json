@@ -1,0 +1,59 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_isr_pl_lazar_idf_mtxitem",
+            "itemid": "27307294"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_isr_lazar_mtxitem",
+            "itemid": "22263625"
+        },
+        {
+            "var_4a4bc969": "#loot_smg_flechette_bp_ilazar_mtxitem",
+            "itemid": "28746427"
+        },
+        {
+            "var_4a4bc969": "#ar_accurate_bp_ilazar_mtxitem",
+            "itemid": "28869544"
+        },
+        {
+            "var_4a4bc969": "#execution_166_mtxitem",
+            "itemid": "32298507"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s6_analog_bog_ops_mtxitem",
+            "itemid": "33455556"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_fish_skeleton_mtxitem",
+            "itemid": "32419740"
+        },
+        {
+            "var_4a4bc969": "#callingcards_bundle7002_mtxitem",
+            "itemid": "20516992"
+        },
+        {
+            "var_4a4bc969": "#emblems_bundle7002_mtxitem",
+            "itemid": "21508219"
+        },
+        {
+            "var_4a4bc969": "#reticle_142_mtxitem",
+            "itemid": "31505612"
+        },
+        {
+            "var_4a4bc969": "#loot_ges_mtx_t9_vodka_mtxitem",
+            "itemid": "27890130"
+        }
+    ],
+    "itemname": "#hash_621e8ec72605e674",
+    "var_375a1747": "#hash_3a74ed56322daf42",
+    "name": "operator_bundle_7002_lazaar_newop_tracer_mtxbundle",
+    "var_a788fada": "#hash_2841f66689eb1f67",
+    "var_22f91505": "#hash_714b1245343b2ebc",
+    "var_566825be": "#hash_7085ad74c3ca2daf",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_2787a65504b21c2c",
+    "var_db3e02ab": 2000,
+    "itemid": "19399346"
+}

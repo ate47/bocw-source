@@ -91,7 +91,7 @@ function function_fcfd6064(localclientnum, var_a6762160, clientdata, var_bd027dd
             case #"resource":
                 var_8ad7f92f = "rob_sr_item_white_dp";
                 break;
-            case #"hash_3a98cc868af9b743":
+            case #"uncommon":
                 var_8ad7f92f = "rob_sr_item_green_dp";
                 break;
             case #"rare":
@@ -135,14 +135,14 @@ function function_fcfd6064(localclientnum, var_a6762160, clientdata, var_bd027dd
             case #"resource":
                 var_8ad7f92f = #"hash_312ceb838675b80";
                 break;
-            case #"hash_3a98cc868af9b743":
+            case #"uncommon":
                 var_8ad7f92f = #"hash_70c807782a37573e";
                 break;
             case #"rare":
                 var_8ad7f92f = #"hash_5b08235c0b55a003";
                 break;
             case #"epic":
-                var_8ad7f92f = #"hash_646d58f646eba5ed";
+                var_8ad7f92f = #"rob_sr_item_purple";
                 break;
             case #"legendary":
                 var_8ad7f92f = #"hash_64261dabb4df88cd";

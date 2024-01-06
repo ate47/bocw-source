@@ -1,0 +1,29 @@
+{
+    "options": [
+        {
+            "label": "#hash_30a2b6e833105400",
+            "value": "0"
+        },
+        {
+            "label": "#hash_529b5f4917f86fb9",
+            "value": "1"
+        }
+    ],
+    "var_dfedf08e": 1,
+    "description": "#hash_a2788ad4dc210bf",
+    "var_60fcfffa": "#hash_94eb0e3329edf5f",
+    "var_9bc3be7": 1,
+    "var_4ced19ab": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "maxvalue": 1,
+    "name": "pc_danger_ping_behavior",
+    "displayname": "#hash_1a942ede92963615",
+    "var_500458ac": 10,
+    "var_66faec87": 10,
+    "statname": "ping_double_tap_danger",
+    "var_6f00a61a": 1.1,
+    "var_b7401319": "#menu/enabled"
+}

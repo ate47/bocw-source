@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#blueprint_bundle_6002_lapa_new_weapon_smg_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_120e10f73db4e208",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_5758b9dcb41f7e1e",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 6,
+    "var_46300498": 1,
+    "baseweapon": "#hash_77396efff4e79686",
+    "name": "loot_smg_season6_horror_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "20196791",
+    "blueprint": "#hash_120e10f73db4e208"
+}

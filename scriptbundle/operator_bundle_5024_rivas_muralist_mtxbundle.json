@@ -1,0 +1,44 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_nic_pl_smuggler_mural_mtxitem",
+            "itemid": "21603236"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_nic_mtxitem",
+            "itemid": "22017161"
+        },
+        {
+            "var_4a4bc969": "#smg_heavy_bp_tagger3_mtxitem",
+            "itemid": "30497098"
+        },
+        {
+            "var_4a4bc969": "#ar_accurate_bp_tagger3_mtxitem",
+            "itemid": "18453991"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s5_digital_tagger_mtxitem",
+            "itemid": "27647362"
+        },
+        {
+            "var_4a4bc969": "#reticle_123_mtxitem",
+            "itemid": "33296169"
+        },
+        {
+            "var_4a4bc969": "#emblems_tagger3_s5_mtxitem",
+            "itemid": "26402711"
+        }
+    ],
+    "itemname": "#hash_20168a7dcf866108",
+    "var_375a1747": "#hash_4578dfa7c09066",
+    "var_579fd6c3": 27,
+    "name": "operator_bundle_5024_rivas_muralist_mtxbundle",
+    "var_a788fada": "#hash_2cc51431782d725",
+    "var_22f91505": "#hash_25122739a986c58e",
+    "var_566825be": "#hash_5f762b2d089045bd",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_1b046b4b788d0c02",
+    "var_db3e02ab": 2000,
+    "itemid": "32075714"
+}

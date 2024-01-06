@@ -1,0 +1,30 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_59139260351f8bbc",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "flail"
+                }
+            ],
+            "model": "#hash_223f38609fe72722",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "claw",
+            "aligntarget": "hh_hand_loc"
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "aib_t9_cust_zm_silver_easter_egg_helping_hand_flail",
+    "dontsync": 1,
+    "aligntarget": "hh_hand_loc",
+    "team": "any"
+}

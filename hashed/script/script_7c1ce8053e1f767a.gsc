@@ -68,7 +68,7 @@ function function_c01b356c(localclientnum, *oldval, newval, *bnewent, *binitials
         self thread function_6192b162();
     } else {
         playfx(fieldname, #"hash_326df840230b71d6", self.origin);
-        playsound(fieldname, #"hash_52277036a18a5157", self.origin);
+        playsound(fieldname, #"zmb_powerup_resource_large_pickup", self.origin);
     }
 }
 

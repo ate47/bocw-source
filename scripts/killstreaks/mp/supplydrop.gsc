@@ -83,9 +83,9 @@ function private function_70a657d8() {
         level thread supply_drop_dev_gui();
     #/
     callback::on_game_playing(&on_game_playing);
-    scene::add_scene_func(#"hash_23fe21c363168ac5", &function_4bf116ab, "init");
-    scene::add_scene_func(#"hash_23fe21c363168ac5", &function_2842c984, "done");
-    scene::add_scene_func(#"hash_211993854fb33604", &function_76b49bd8, "open");
+    scene::add_scene_func(#"p9_fxanim_wz_parachute_supplydrop_01_harness_bundle", &function_4bf116ab, "init");
+    scene::add_scene_func(#"p9_fxanim_wz_parachute_supplydrop_01_harness_bundle", &function_2842c984, "done");
+    scene::add_scene_func(#"p9_fxanim_wz_parachute_supplydrop_01_bundle", &function_76b49bd8, "open");
 }
 
 // Namespace supplydrop/supplydrop
@@ -133,9 +133,9 @@ function function_25ac512() {
     var_8cf55682 = {#var_136d64b6:0, #absmaxs:[], #absmins:[]};
     absmins = var_8cf55682.absmins;
     absmaxs = var_8cf55682.absmaxs;
-    if (isstruct(level.var_9a8780d8) && isarray(level.var_9a8780d8.bounds)) {
-        var_8cf55682.bounds.var_8cf55682 = level.var_9a8780d8.bounds;
-        foreach (var_cdb05658 in level.var_9a8780d8.bounds) {
+    if (isstruct(level.territory) && isarray(level.territory.bounds)) {
+        var_8cf55682.bounds.var_8cf55682 = level.territory.bounds;
+        foreach (var_cdb05658 in level.territory.bounds) {
             var_f3ba0cb3 = var_cdb05658.origin + var_cdb05658.mins;
             var_cd8bd6d = var_cdb05658.origin + var_cdb05658.maxs;
             for (i = 0; i < 3; i++) {
@@ -259,7 +259,7 @@ function function_1c601b99() {
         [[ level.var_1b900c1d ]](getweapon(#"supplydrop"), &function_bff5c062);
     }
     function_d57719b8();
-    foreach (category in level.cratetypes) {
+    foreach (categorykey, category in level.cratetypes) {
         finalizecratecategory(categorykey);
     }
 }
@@ -1716,7 +1716,7 @@ function watch_explosive_crate(killcament) {
     if (waitresult._notify == #"captured") {
         if (isdefined(self)) {
             if (!player hasperk(#"specialty_showenemyequipment") && !remote_hack) {
-                self thread scene::play(#"hash_d3de086d9682a24", self);
+                self thread scene::play(#"p9_fxanim_mp_care_package_bundle", self);
                 if (getdvarint(#"hash_3f663d1e38d10d99", 0) == 1 || is_true(self.var_e8a59c52)) {
                     playsoundatposition(#"hash_2dec6d8e4271a0e0", self.origin);
                 }
@@ -1749,7 +1749,7 @@ function watch_explosive_crate(killcament) {
 function function_960ea519(var_da089436, killcament) {
     self notify(#"hash_4229b0dbf67e8dd6");
     self.killcament = killcament;
-    self thread scene::play(#"hash_d3de086d9682a24", self);
+    self thread scene::play(#"p9_fxanim_mp_care_package_bundle", self);
     if (getdvarint(#"hash_3f663d1e38d10d99", 0) == 1 || is_true(self.var_e8a59c52)) {
         if (isplayer(var_da089436)) {
             var_da089436 stats::function_bcf9602(#"hash_513bca963a91d668", 1, #"hash_735ace6b22542a65");
@@ -3003,7 +3003,7 @@ function helidelivercrate(origin, weapon, owner, team, killstreak_id, package_co
     while (level.droplocations.size > 1 && waitforonlyonedroplocation) {
         arrayremovevalue(level.droplocations, undefined);
         wait_for_drop = 0;
-        foreach (droplocation in level.droplocations) {
+        foreach (id, droplocation in level.droplocations) {
             if (id < killstreak_id) {
                 wait_for_drop = 1;
                 break;
@@ -3101,8 +3101,8 @@ function helidelivercrate(origin, weapon, owner, team, killstreak_id, package_co
             iprintln("<unknown string>" + distance2d(chopper_drop_point, heli_drop_goal));
         }
     #/
-    chopper scene::play(#"hash_23fe21c363168ac5", "arrive");
-    chopper thread scene::play(#"hash_23fe21c363168ac5", "retract");
+    chopper scene::play(#"p9_fxanim_wz_parachute_supplydrop_01_harness_bundle", "arrive");
+    chopper thread scene::play(#"p9_fxanim_wz_parachute_supplydrop_01_harness_bundle", "retract");
     chopper notify(#"drop_crate", {#owner:chopper.owner, #direction:chopper.angles, #position:chopper.origin});
     chopper.droptime.chopper = gettime();
     chopper playsound(#"veh_supply_drop");
@@ -3164,7 +3164,7 @@ function helidropcrate(killstreak, originalowner, offset, killcament, killstreak
         self playsound(#"hash_2548935de6c0af");
     }
     if (killstreak == "inventory_supply_drop" || killstreak == "supply_drop") {
-        self thread scene::play(#"hash_23fe21c363168ac5", "fly_in");
+        self thread scene::play(#"p9_fxanim_wz_parachute_supplydrop_01_harness_bundle", "fly_in");
         helicopter clientfield::set("supplydrop_care_package_state", 1);
     } else if (killstreak == "inventory_tank_robot" || killstreak == "tank_robot" || killstreak == "ai_tank_marker") {
         crate linkto(helicopter, isdefined(context.droptag) ? context.droptag : "tag_origin", isdefined(context.droptagoffset) ? context.droptagoffset : (0, 0, 0));
@@ -3265,7 +3265,7 @@ function refcountdecchopper(team, killstreak_id, killstreaktype, var_9e10e827) {
 // Checksum 0x3400c1, Offset: 0xdb08
 // Size: 0x44
 function function_4bf116ab(ents) {
-    self.crate linkto(ents[#"hash_211fcbbafe5331ab"], "tag_care_package", (0, 0, 0), (0, 0, 0));
+    self.crate linkto(ents[#"harness"], "tag_care_package", (0, 0, 0), (0, 0, 0));
 }
 
 // Namespace supplydrop/supplydrop
@@ -3293,11 +3293,11 @@ function function_76b49bd8(ents) {
 // Size: 0x114
 function function_2defd397() {
     self endon(#"death");
-    self scene::play(#"hash_211993854fb33604", "open");
-    self thread scene::play(#"hash_211993854fb33604", "idle");
+    self scene::play(#"p9_fxanim_wz_parachute_supplydrop_01_bundle", "open");
+    self thread scene::play(#"p9_fxanim_wz_parachute_supplydrop_01_bundle", "idle");
     self waittill(#"movedone");
-    self scene::stop(#"hash_211993854fb33604");
-    self.parachute thread scene::play(#"hash_211993854fb33604", "detach", self.parachute);
+    self scene::stop(#"p9_fxanim_wz_parachute_supplydrop_01_bundle");
+    self.parachute thread scene::play(#"p9_fxanim_wz_parachute_supplydrop_01_bundle", "detach", self.parachute);
     wait(1);
     if (isdefined(self.parachute)) {
         self.parachute clientfield::set("supply_drop_parachute_rob", 0);

@@ -1,0 +1,51 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_53420f0008664015"
+        },
+        {
+            "var_fe10649e": "#hash_53420c0008663afc"
+        },
+        {
+            "var_fe10649e": "#hash_53420d0008663caf"
+        },
+        {
+            "var_fe10649e": "#hash_53420a0008663796"
+        }
+    ],
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#smg_accurate_bp_jet_mtxitem",
+            "itemid": "29578950"
+        },
+        {
+            "var_4a4bc969": "#ar_fastfire_bp_jet_mtxitem",
+            "itemid": "27704871"
+        },
+        {
+            "var_4a4bc969": "#loot_ges_mtx_t9_slow_clap_mtxitem",
+            "itemid": "29731756"
+        },
+        {
+            "var_4a4bc969": "#emblems_dogfight_animated_mtxitem",
+            "itemid": "31465207"
+        },
+        {
+            "var_4a4bc969": "#callingcards_dogfight_animated_mtxitem",
+            "itemid": "30051352"
+        }
+    ],
+    "itemname": "#hash_64f167cae3192ddf",
+    "var_375a1747": "#hash_53420f0008664015",
+    "var_3040f0d1": "#hash_53420f0008664015",
+    "var_8ee7db29": 1,
+    "name": "blueprint_bundle_3012_smg_accurate_cartoon_dogfight_mtxbundle",
+    "var_a788fada": "#hash_244c3f025759faa2",
+    "var_22f91505": "#hash_25f1fe49aadaba81",
+    "var_566825be": "#hash_6b29d6b80d2235ee",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_665b8b333c8fb741",
+    "var_db3e02ab": 550,
+    "itemid": "21530694"
+}

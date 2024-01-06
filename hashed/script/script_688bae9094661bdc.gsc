@@ -126,24 +126,24 @@ function function_3c3f1684(statename) {
     switch (statename) {
     case #"hash_5689f41e8c0ad00":
     case #"investigate":
-        self.var_4984851a = 0.6 * var_8c0a9bbb;
-        self.var_b2a072f0 = 0.5 * var_8c0a9bbb;
+        self.threatsightratemin = 0.6 * var_8c0a9bbb;
+        self.threatsightratemax = 0.5 * var_8c0a9bbb;
         break;
     case #"investigate_grace_period":
-        self.var_4984851a = 1 * var_8c0a9bbb;
-        self.var_b2a072f0 = 0.8 * var_8c0a9bbb;
+        self.threatsightratemin = 1 * var_8c0a9bbb;
+        self.threatsightratemax = 0.8 * var_8c0a9bbb;
         break;
     case #"combat_hunt":
-        self.var_4984851a = 1 * var_8c0a9bbb;
-        self.var_b2a072f0 = 0.8 * var_8c0a9bbb;
+        self.threatsightratemin = 1 * var_8c0a9bbb;
+        self.threatsightratemax = 0.8 * var_8c0a9bbb;
         break;
     case #"hash_defdefdefdefdef0":
-        self.var_4984851a = 0.6 * var_8c0a9bbb;
-        self.var_b2a072f0 = 0.4 * var_8c0a9bbb;
+        self.threatsightratemin = 0.6 * var_8c0a9bbb;
+        self.threatsightratemax = 0.4 * var_8c0a9bbb;
         break;
     }
-    self.var_4bf25e8 = min(var_bb0a10d2, var_218126c3) * var_f0ed2edb;
-    self.var_291f2cd4 = max(self.var_4bf25e8, var_218126c3 * var_f0ed2edb);
+    self.threatsightdistmin = min(var_bb0a10d2, var_218126c3) * var_f0ed2edb;
+    self.threatsightdistmax = max(self.threatsightdistmin, var_218126c3 * var_f0ed2edb);
 }
 
 // Namespace namespace_393f6012/manager
@@ -219,7 +219,7 @@ function function_7f381bc5(var_56a7a731, var_dee4cb7d, var_2107b994) {
                 debug2dtext((32, 524, 0), "<unknown string>" + self.stealth.var_1ae70b7f, (1, 1, 1), 1.5);
             }
         #/
-        foreach (snd_ent in self.stealth.var_728ac6b1) {
+        foreach (alias, snd_ent in self.stealth.var_728ac6b1) {
             coef = 1;
             switch (index) {
             case 0:
@@ -264,7 +264,7 @@ function function_7f381bc5(var_56a7a731, var_dee4cb7d, var_2107b994) {
             index++;
         }
         if (!var_7fe1c557) {
-            foreach (snd_ent in self.stealth.var_728ac6b1) {
+            foreach (alias, snd_ent in self.stealth.var_728ac6b1) {
                 snd_ent stoploopsound();
                 snd_ent delete();
             }

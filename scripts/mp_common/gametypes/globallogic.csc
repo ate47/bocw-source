@@ -197,9 +197,9 @@ function play_plant_sound(*param1, *param2) {
 // Checksum 0xba41fb5f, Offset: 0x1738
 // Size: 0x194
 function updateenemyequipment(local_client_num, *newval) {
-    if (namespace_56e70a4a::function_b8fe9b52(newval)) {
-        var_7eda7144 = self namespace_56e70a4a::is_friendly(newval) ? #"friendly" : #"enemy";
-        robkey = self namespace_56e70a4a::is_friendly(newval) ? #"hash_2476e7ae62469f70" : #"hash_2476eaae6246a489";
+    if (codcaster::function_b8fe9b52(newval)) {
+        var_7eda7144 = self codcaster::is_friendly(newval) ? #"friendly" : #"enemy";
+        robkey = self codcaster::is_friendly(newval) ? #"hash_2476e7ae62469f70" : #"hash_2476eaae6246a489";
         self renderoverridebundle::function_c8d97b8e(newval, var_7eda7144, robkey);
         return;
     }

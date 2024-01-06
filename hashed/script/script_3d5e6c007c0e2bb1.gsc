@@ -49,48 +49,48 @@ function function_52e9d773(model_name = "zombietron_barrel") {
     } else {
         return;
     }
-    var_b9264d0e = namespace_ec06fe4a::function_e22ae9b3(self.origin + vectorscale((0, 1, 0), 90), model_name);
-    if (isdefined(var_b9264d0e)) {
-        var_b9264d0e.targetname.var_b9264d0e = "barrel1";
-        var_b9264d0e setplayercollision(0);
-        var_b9264d0e linkto(org, "tag_origin", vectorscale((0, 1, 0), 90));
+    barrel = namespace_ec06fe4a::function_e22ae9b3(self.origin + vectorscale((0, 1, 0), 90), model_name);
+    if (isdefined(barrel)) {
+        barrel.targetname.barrel = "barrel1";
+        barrel setplayercollision(0);
+        barrel linkto(org, "tag_origin", vectorscale((0, 1, 0), 90));
         if (isplayer(self)) {
-            var_b9264d0e thread namespace_ec06fe4a::function_ae010bb4(self);
+            barrel thread namespace_ec06fe4a::function_ae010bb4(self);
         }
-        trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", var_b9264d0e.origin, 1 & 512 & 8, 40, 50);
+        trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", barrel.origin, 1 & 512 & 8, 40, 50);
         if (isdefined(trigger)) {
             if (isplayer(self)) {
                 trigger thread namespace_ec06fe4a::function_ae010bb4(self);
             }
             trigger.targetname.trigger = "barrel1";
             trigger enablelinkto();
-            trigger linkto(var_b9264d0e);
+            trigger linkto(barrel);
             trigger thread function_7c757878(self);
         }
     }
-    org.var_6763b7eb = var_b9264d0e;
+    org.barrel1 = barrel;
     org.trigger1 = trigger;
-    var_b9264d0e = namespace_ec06fe4a::function_e22ae9b3(self.origin + vectorscale((0, -1, 0), 90), model_name);
-    if (isdefined(var_b9264d0e)) {
+    barrel = namespace_ec06fe4a::function_e22ae9b3(self.origin + vectorscale((0, -1, 0), 90), model_name);
+    if (isdefined(barrel)) {
         if (isplayer(self)) {
-            var_b9264d0e thread namespace_ec06fe4a::function_ae010bb4(self);
+            barrel thread namespace_ec06fe4a::function_ae010bb4(self);
         }
-        var_b9264d0e.targetname.var_b9264d0e = "barrel2";
-        var_b9264d0e setmodel(model_name);
-        var_b9264d0e setplayercollision(0);
-        var_b9264d0e linkto(org, "tag_origin", vectorscale((0, -1, 0), 90));
-        trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", var_b9264d0e.origin, 1 & 512 & 8, 40, 50);
+        barrel.targetname.barrel = "barrel2";
+        barrel setmodel(model_name);
+        barrel setplayercollision(0);
+        barrel linkto(org, "tag_origin", vectorscale((0, -1, 0), 90));
+        trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", barrel.origin, 1 & 512 & 8, 40, 50);
         if (isdefined(trigger)) {
             if (isplayer(self)) {
                 trigger thread namespace_ec06fe4a::function_ae010bb4(self);
             }
             trigger.targetname.trigger = "barrel2";
             trigger enablelinkto();
-            trigger linkto(var_b9264d0e);
+            trigger linkto(barrel);
             trigger thread function_7c757878(self);
         }
     }
-    org.var_55291376 = var_b9264d0e;
+    org.barrel2 = barrel;
     org.trigger2 = trigger;
     org linkto(self, "", vectorscale((0, 0, 1), 10), (0, 0, 0));
     self namespace_e32bb68::function_3a59ec34("evt_doa_pickup_barrel_active_lp");
@@ -190,11 +190,11 @@ function private function_6ad92846(player) {
     if (isdefined(self.trigger2)) {
         self.trigger2 delete();
     }
-    if (isdefined(self.var_6763b7eb)) {
-        self.var_6763b7eb delete();
+    if (isdefined(self.barrel1)) {
+        self.barrel1 delete();
     }
-    if (isdefined(self.var_55291376)) {
-        self.var_55291376 delete();
+    if (isdefined(self.barrel2)) {
+        self.barrel2 delete();
     }
     if (isdefined(self)) {
         self delete();
@@ -219,31 +219,31 @@ function private function_f0855523(org) {
     if (isdefined(org) && isdefined(org.trigger2)) {
         org.trigger2 delete();
     }
-    if (isdefined(org) && isdefined(org.var_6763b7eb)) {
-        org.var_6763b7eb unlink();
+    if (isdefined(org) && isdefined(org.barrel1)) {
+        org.barrel1 unlink();
     }
-    if (isdefined(org) && isdefined(org.var_55291376)) {
-        org.var_55291376 unlink();
+    if (isdefined(org) && isdefined(org.barrel2)) {
+        org.barrel2 unlink();
     }
     if (isdefined(self)) {
-        if (isdefined(org) && isdefined(org.var_6763b7eb)) {
-            vel = org.var_6763b7eb.origin - self.origin;
-            org.var_6763b7eb physicslaunch(org.var_6763b7eb.origin, vel);
+        if (isdefined(org) && isdefined(org.barrel1)) {
+            vel = org.barrel1.origin - self.origin;
+            org.barrel1 physicslaunch(org.barrel1.origin, vel);
         }
-        if (isdefined(org) && isdefined(org.var_55291376)) {
-            vel = org.var_55291376.origin - self.origin;
-            org.var_55291376 physicslaunch(org.var_55291376.origin, vel);
+        if (isdefined(org) && isdefined(org.barrel2)) {
+            vel = org.barrel2.origin - self.origin;
+            org.barrel2 physicslaunch(org.barrel2.origin, vel);
         }
         self.var_8cff5775.var_ba83e9 = undefined;
         self namespace_e32bb68::function_ae271c0b("evt_doa_pickup_barrel_active_lp");
         self namespace_e32bb68::function_3a59ec34("evt_doa_pickup_barrel_active_end");
     }
     wait(5);
-    if (isdefined(org) && isdefined(org.var_6763b7eb)) {
-        org.var_6763b7eb delete();
+    if (isdefined(org) && isdefined(org.barrel1)) {
+        org.barrel1 delete();
     }
-    if (isdefined(org) && isdefined(org.var_55291376)) {
-        org.var_55291376 delete();
+    if (isdefined(org) && isdefined(org.barrel2)) {
+        org.barrel2 delete();
     }
     if (isdefined(org)) {
         org delete();

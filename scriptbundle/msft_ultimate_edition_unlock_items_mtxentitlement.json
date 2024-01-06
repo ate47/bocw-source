@@ -1,0 +1,74 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#po_c_t9_usa_pl_navyseal_land_ms_mtxitem",
+            "itemid": "30071943"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_navy_seal_mtxitem",
+            "itemid": "20822559"
+        },
+        {
+            "var_4a4bc969": "#po_c_t9_usa_pl_navyseal_sea_ms_mtxitem",
+            "itemid": "32282483"
+        },
+        {
+            "var_4a4bc969": "#po_c_t9_usa_pl_navyseal_air_ms_mtxitem",
+            "itemid": "27370828"
+        },
+        {
+            "var_4a4bc969": "#shotgun_pump_bp_land_ms_mtxitem",
+            "itemid": "25555619"
+        },
+        {
+            "var_4a4bc969": "#ar_mercenary_bp_sea_ms_mtxitem",
+            "itemid": "31803064"
+        },
+        {
+            "var_4a4bc969": "#pistol_semiauto_bp_air_ms_mtxitem",
+            "itemid": "26486755"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_ru_tank_t72_mpx_lsa_ms_mtxitem",
+            "itemid": "31815836"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_us_boat_pgb_mpx_lsa_ms_mtxitem",
+            "itemid": "30074497"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_ru_heli_gunship_hind_mpx_lsa_ms_mtxitem",
+            "itemid": "27522460"
+        },
+        {
+            "var_4a4bc969": "#tr_longburst_bp_confront_ms_mtxitem",
+            "itemid": "18522686"
+        },
+        {
+            "var_4a4bc969": "#ar_damage_bp_confront_ms_mtxitem",
+            "itemid": "23401683"
+        },
+        {
+            "var_4a4bc969": "#battle_pass_token_mtxitem",
+            "itemid": "24926821"
+        },
+        {
+            "var_4a4bc969": "#tier_skip_20_mtxitem"
+        }
+    ],
+    "itemname": "#hash_7eeb6ae1e17a6c40",
+    "description": "#hash_312cf5ab30b0c83d",
+    "var_30a1c72c": "#hash_3f992ba598bffc15",
+    "var_87756eb4": 1,
+    "var_375a1747": "#hash_20e519177cad0b16",
+    "var_70f66e54": "#hash_6aa7dfdca3000750",
+    "name": "msft_ultimate_edition_unlock_items_mtxentitlement",
+    "var_90708fcf": "#hash_42f4bbf132ea176e",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "var_4e46b1b3": "#durango",
+    "itemid": "31148804",
+    "var_a592ce5": 1,
+    "var_7c846082": "#hash_39bc24db0771eb04"
+}

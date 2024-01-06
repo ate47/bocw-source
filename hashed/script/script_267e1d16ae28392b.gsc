@@ -114,10 +114,10 @@ function function_cc2216e2(var_7607ad3) {
     }
     var_7a34e971 = var_cf1f3586.size - 1;
     if (var_d8222c25 == var_7a34e971) {
-        var_7607ad3 function_659819fa(#"hash_12bde4bff49c66ca");
+        var_7607ad3 function_659819fa(#"cp_achievement_combat_recruit");
     }
     if (var_b0abc67b[3] + var_b0abc67b[4] == var_7a34e971) {
-        var_7607ad3 function_659819fa(#"hash_53a13cdbd8cdf8d7");
+        var_7607ad3 function_659819fa(#"cp_achievement_combat_hardened");
     }
 }
 
@@ -314,7 +314,7 @@ function function_533e57d6(player, count) {
     player stats::function_dad108fa("cp_body_shield_count", count);
     var_69fa8154 = isdefined(player stats::get_stat_global("cp_body_shield_count")) ? player stats::get_stat_global("cp_body_shield_count") : 0;
     if (var_69fa8154 >= 5) {
-        player function_659819fa(#"hash_7cfe4a58cd11b4f5");
+        player function_659819fa(#"cp_achievement_body_shield");
     }
 }
 
@@ -339,10 +339,10 @@ function function_1d62fbfa(count, weapclass, firetype) {
     var_25a65495 = isdefined(self stats::get_stat_global(#"hash_8a649c465b85e5a")) ? self stats::get_stat_global(#"hash_8a649c465b85e5a") : 0;
     var_2f070c99 = isdefined(self stats::get_stat_global(#"hash_8e326c465ebd0ff")) ? self stats::get_stat_global(#"hash_8e326c465ebd0ff") : 0;
     if (var_9f75c0be >= 5 && var_49ad0f61 >= 5 && var_25a65495 >= 5 && var_2f070c99 >= 5) {
-        self function_659819fa(#"hash_779bbce9266d0ae6");
+        self function_659819fa(#"cp_achievement_jack_all_trades");
     }
     if (var_25a65495 >= 200) {
-        self function_659819fa(#"hash_2e8492b0fa87ecf6");
+        self function_659819fa(#"cp_achievement_old_faithful");
     }
 }
 

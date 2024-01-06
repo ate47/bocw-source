@@ -1,0 +1,12 @@
+{
+    "destroyedalias": "eq_trophy_dstr",
+    "var_2bb73e97": 1,
+    "var_922067c4": "scriptbundle",
+    "type": "battlechatter",
+    "vmtype": "both",
+    "usealias": "eq_trophy_use",
+    "name": "trophy_system_battlechatter",
+    "var_fd232d7e": 1,
+    "var_ff5e0d8e": "eq_trophy_threat",
+    "var_382f662": 1
+}

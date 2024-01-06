@@ -188,11 +188,11 @@ function function_e41a11bf(var_40e28ba, tier) {
     if (!isdefined(var_50846129)) {
         return #"weapon_null";
     }
-    var_4aaf769 = var_50846129[tier];
-    if (!isdefined(var_4aaf769)) {
+    field_upgrade = var_50846129[tier];
+    if (!isdefined(field_upgrade)) {
         return #"weapon_null";
     }
-    return var_4aaf769;
+    return field_upgrade;
 }
 
 // Namespace namespace_1b527536/namespace_1b527536
@@ -363,7 +363,7 @@ function private event_handler[grenade_fire] function_4776caf4(eventstruct) {
 // Size: 0xf4
 function function_5f81a103(weapon, b_killed = 0) {
     if (isplayer(self)) {
-        var_49058ab = {#var_c9995ddd:b_killed, #var_4aaf769:weapon.name, #var_d8fb195f:zm_utility::get_round_number(), #var_8335e8a8:zm_utility::function_e3025ca5(), #var_4b738e64:function_f8d53445()};
+        var_49058ab = {#var_c9995ddd:b_killed, #field_upgrade:weapon.name, #var_d8fb195f:zm_utility::get_round_number(), #var_8335e8a8:zm_utility::function_e3025ca5(), #var_4b738e64:function_f8d53445()};
         self function_678f57c8(#"hash_7f3eae86c535c88", var_49058ab);
     }
 }
@@ -535,82 +535,82 @@ function private function_fe8d21ed(var_7df0eb27 = 0) {
 // Size: 0x524
 function function_4f8cb6fd(item_name) {
     switch (item_name) {
-    case #"hash_3bd4cc38a87cb01a":
-    case #"hash_1861691554fc2cc7":
-    case #"hash_1c2f9e21d217363e":
-    case #"hash_2d1d30d6501c27b8":
-    case #"hash_4db7b686fa404bbd":
-    case #"hash_75d26439b950f336":
+    case #"field_upgrade_aether_shroud_1_item_sr":
+    case #"field_upgrade_aether_shroud_2_item_sr":
+    case #"field_upgrade_aether_shroud_item_sr":
+    case #"field_upgrade_aether_shroud_3_item_sr":
+    case #"field_upgrade_aether_shroud_4_item_sr":
+    case #"field_upgrade_aether_shroud_5_item_sr":
         if (!is_true(getgametypesetting(#"hash_26dc68686741b223"))) {
             return 1;
         }
         break;
-    case #"hash_649e3a841620150f":
-    case #"hash_681471b56324b3e":
-    case #"hash_12f4d7321d9c5005":
-    case #"hash_47954c9090e3f900":
-    case #"hash_1f9a001790297282":
-    case #"hash_7ea42360bdf2de16":
+    case #"field_upgrade_frost_blast_2_item_sr":
+    case #"field_upgrade_frost_blast_5_item_sr":
+    case #"field_upgrade_frost_blast_4_item_sr":
+    case #"field_upgrade_frost_blast_3_item_sr":
+    case #"field_upgrade_frost_blast_1_item_sr":
+    case #"field_upgrade_frost_blast_item_sr":
         if (!is_true(getgametypesetting(#"hash_af8083f7ea1c28b"))) {
             return 1;
         }
         break;
-    case #"hash_4feb54f5041d1609":
-    case #"hash_1fc30bedac3b39a5":
-    case #"hash_35d8042aa3ab475e":
-    case #"hash_37b9ba3f40fc1ba5":
-    case #"hash_4554f3c03465642f":
-    case #"hash_76ed099fde5ea820":
+    case #"field_upgrade_heal_aoe_1_item_sr":
+    case #"field_upgrade_heal_aoe_5_item_sr":
+    case #"field_upgrade_heal_aoe_4_item_sr":
+    case #"field_upgrade_heal_aoe_item_sr":
+    case #"field_upgrade_heal_aoe_3_item_sr":
+    case #"field_upgrade_heal_aoe_2_item_sr":
         if (!is_true(getgametypesetting(#"hash_77e5bcb82c95cf00"))) {
             return 1;
         }
         break;
-    case #"hash_4853caf9446ea8fb":
-    case #"hash_12ddd4176bc6b3ff":
-    case #"hash_63afb5e0755e566e":
-    case #"hash_5554d5a0537b9c35":
-    case #"hash_39d05e10ee7a034b":
-    case #"hash_7c824d94ac0e19b0":
+    case #"field_upgrade_energy_mine_item_sr":
+    case #"field_upgrade_energy_mine_5_item_sr":
+    case #"field_upgrade_energy_mine_2_item_sr":
+    case #"field_upgrade_energy_mine_3_item_sr":
+    case #"field_upgrade_energy_mine_1_item_sr":
+    case #"field_upgrade_energy_mine_4_item_sr":
         if (!is_true(getgametypesetting(#"hash_4230e2ce569b5e48"))) {
             return 1;
         }
         break;
-    case #"hash_7012993088ba305f":
-    case #"hash_5f9e11ac0a40c615":
-    case #"hash_a3289a065b81f90":
-    case #"hash_12bf49342660c92c":
-    case #"hash_1871319d751852f4":
-    case #"hash_413f00c37a8047ce":
+    case #"field_upgrade_ring_of_fire_4_item_sr":
+    case #"field_upgrade_ring_of_fire_2_item_sr":
+    case #"field_upgrade_ring_of_fire_5_item_sr":
+    case #"field_upgrade_ring_of_fire_1_item_sr":
+    case #"field_upgrade_ring_of_fire_item_sr":
+    case #"field_upgrade_ring_of_fire_3_item_sr":
         if (!is_true(getgametypesetting(#"hash_2015355bc530a7e8"))) {
             return 1;
         }
         break;
-    case #"hash_276a89fd0875409a":
-    case #"hash_56f5e5578534069b":
-    case #"hash_5addc54d5927cc29":
-    case #"hash_45a15df330b74adc":
-    case #"hash_32d3740bf1d93fe":
-    case #"hash_7fecb687adf7f042":
+    case #"field_upgrade_frenzied_guard_item_sr":
+    case #"field_upgrade_frenzied_guard_2_item_sr":
+    case #"field_upgrade_frenzied_guard_4_item_sr":
+    case #"field_upgrade_frenzied_guard_3_item_sr":
+    case #"field_upgrade_frenzied_guard_1_item_sr":
+    case #"field_upgrade_frenzied_guard_5_item_sr":
         if (!is_true(getgametypesetting(#"hash_6e7905f68c5d7bdd"))) {
             return 1;
         }
         break;
-    case #"hash_243ded3e58e01788":
-    case #"hash_624a4e2962f2f71c":
-    case #"hash_6594698409ce0c8d":
-    case #"hash_6fd62be296b8fb57":
-    case #"hash_49368251a6665ba4":
-    case #"hash_3a47f4190c28fec6":
+    case #"field_upgrade_toxic_growth_5_item_sr":
+    case #"field_upgrade_toxic_growth_item_sr":
+    case #"field_upgrade_toxic_growth_2_item_sr":
+    case #"field_upgrade_toxic_growth_4_item_sr":
+    case #"field_upgrade_toxic_growth_1_item_sr":
+    case #"field_upgrade_toxic_growth_3_item_sr":
         if (!is_true(getgametypesetting(#"hash_5cedd3fe49a8b4e1"))) {
             return 1;
         }
         break;
-    case #"hash_5321b5f240c2937f":
-    case #"hash_23f397bb4a5a35ee":
-    case #"hash_1598b77b28777bb5":
-    case #"hash_4164e3a7de7df719":
-    case #"hash_3cc62f6f8109f930":
-    case #"hash_7bf08605b9c71df5":
+    case #"field_upgrade_lightning_links_3_item_sr":
+    case #"field_upgrade_lightning_links_4_item_sr":
+    case #"field_upgrade_lightning_links_5_item_sr":
+    case #"field_upgrade_lightning_links_1_item_sr":
+    case #"field_upgrade_lightning_links_2_item_sr":
+    case #"field_upgrade_lightning_links_item_sr":
         if (!is_true(getgametypesetting(#"hash_1fc262f0136c2814"))) {
             return 1;
         }
@@ -775,7 +775,7 @@ function function_841bae20(var_dc307ae2) {
     if (!isdefined(level.var_d98fc25e)) {
         return undefined;
     }
-    foreach (array in level.var_d98fc25e) {
+    foreach (upgrade, array in level.var_d98fc25e) {
         if (isinarray(array, var_dc307ae2)) {
             return upgrade;
         }
@@ -795,18 +795,18 @@ function function_f793af68() {
         setdvar(#"hash_78ea4420d95a6213", "<unknown string>");
         setdvar(#"hash_3ce5890428b398f1", "<unknown string>");
         add_debug_command("<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_7ea42360bdf2de16") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_1f9a001790297282") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_649e3a841620150f") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_47954c9090e3f900") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_12f4d7321d9c5005") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_681471b56324b3e") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_37b9ba3f40fc1ba5") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_4feb54f5041d1609") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_76ed099fde5ea820") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_4554f3c03465642f") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_35d8042aa3ab475e") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_1fc30bedac3b39a5") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frost_blast_item_sr") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frost_blast_1_item_sr") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frost_blast_2_item_sr") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frost_blast_3_item_sr") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frost_blast_4_item_sr") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frost_blast_5_item_sr") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_heal_aoe_item_sr") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_heal_aoe_1_item_sr") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_heal_aoe_2_item_sr") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_heal_aoe_3_item_sr") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_heal_aoe_4_item_sr") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_heal_aoe_5_item_sr") + "<unknown string>");
         add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
         add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
         add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
@@ -825,24 +825,24 @@ function function_f793af68() {
         add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
         add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
         add_debug_command("<unknown string>" + function_9e72a96("<unknown string>") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_276a89fd0875409a") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_32d3740bf1d93fe") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_56f5e5578534069b") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_45a15df330b74adc") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_5addc54d5927cc29") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_7fecb687adf7f042") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_624a4e2962f2f71c") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_49368251a6665ba4") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_6594698409ce0c8d") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_3a47f4190c28fec6") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_6fd62be296b8fb57") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_243ded3e58e01788") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_7bf08605b9c71df5") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_4164e3a7de7df719") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_3cc62f6f8109f930") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_5321b5f240c2937f") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_23f397bb4a5a35ee") + "<unknown string>");
-        add_debug_command("<unknown string>" + function_9e72a96(#"hash_1598b77b28777bb5") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frenzied_guard_item_sr") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frenzied_guard_1_item_sr") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frenzied_guard_2_item_sr") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frenzied_guard_3_item_sr") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frenzied_guard_4_item_sr") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_frenzied_guard_5_item_sr") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_toxic_growth_item_sr") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_toxic_growth_1_item_sr") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_toxic_growth_2_item_sr") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_toxic_growth_3_item_sr") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_toxic_growth_4_item_sr") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_toxic_growth_5_item_sr") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_lightning_links_item_sr") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_lightning_links_1_item_sr") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_lightning_links_2_item_sr") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_lightning_links_3_item_sr") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_lightning_links_4_item_sr") + "<unknown string>");
+        add_debug_command("<unknown string>" + function_9e72a96(#"field_upgrade_lightning_links_5_item_sr") + "<unknown string>");
         add_debug_command("<unknown string>");
         add_debug_command("<unknown string>");
         add_debug_command("<unknown string>");

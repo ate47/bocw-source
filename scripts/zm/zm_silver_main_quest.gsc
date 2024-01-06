@@ -1949,7 +1949,7 @@ function function_41e8018f() {
     #/
     var_465f425d clientfield::set("" + #"hash_6dc2bf4e960f0495", 1);
     namespace_88795f45::function_67a0e9a2(level.var_24de243e);
-    level waittill(#"hash_4ba8914384a227e0");
+    level waittill(#"fuse_fade_out");
     var_465f425d clientfield::set("" + #"hash_17ea9211637fa6cf", 0);
     level flag::wait_till(#"hash_438e59a435d72bb");
     music::setmusicstate("mq_6_emotional");
@@ -3785,19 +3785,19 @@ function on_item_pickup(params) {
                 level notify(#"hash_6d8aa1730f7f63ac", {#player:self});
                 self clientfield::increment_to_player("" + #"hash_6696d96a08b9701d");
                 break;
-            case #"hash_5f8ecc7ec4304fe":
+            case #"item_zmintel_silver_darkaether_artifact_4":
                 level flag::set("wrench_collected");
                 level zm_ui_inventory::function_7df6bb60(#"hash_1b836a89598ddaa4", 1);
                 array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, "zmintel_silver_darkaether_artifact_4");
                 self clientfield::increment_to_player("" + #"hash_6696d96a08b9701d");
                 break;
-            case #"hash_2f24395908d9fa02":
+            case #"item_zmintel_silver_requiem_artifact_3":
                 level flag::set(#"hash_1e2c6b7b99b8706b");
                 level flag::set("aetherscope_collected");
                 array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, "zmintel_silver_requiem_artifact_3");
                 self clientfield::increment_to_player("" + #"hash_6696d96a08b9701d");
                 break;
-            case #"hash_2f24345908d9f183":
+            case #"item_zmintel_silver_requiem_artifact_4":
                 level flag::set("someone_has_notebook");
                 level zm_ui_inventory::function_7df6bb60(#"hash_6df578dd42812c70", 1);
                 array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, "zmintel_silver_requiem_artifact_4");
@@ -3806,13 +3806,13 @@ function on_item_pickup(params) {
                     iprintlnbold("<unknown string>");
                 #/
                 break;
-            case #"hash_4ee9566a918884b1":
+            case #"item_zmintel_silver_omega_artifact_1":
                 level flag::set(#"hash_16f2a408c50fab14");
                 level zm_ui_inventory::function_7df6bb60(#"hash_2d5b26565a3e1ea1", 1);
                 array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, "zmintel_silver_omega_artifact_1");
                 self clientfield::increment_to_player("" + #"hash_6696d96a08b9701d");
                 break;
-            case #"hash_2f24335908d9efd0":
+            case #"item_zmintel_silver_requiem_artifact_5":
                 level notify(#"hash_1f20be24ebb9923c");
                 if (!level flag::get(#"hash_626c3cc90d7a0cdb")) {
                     self thread namespace_4abf1500::function_3ad8805e("zmintel_silver_requiem_artifact_5");

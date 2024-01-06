@@ -1,0 +1,20 @@
+{
+    "itemlist": [
+        {
+            "minweight": 1,
+            "var_a6762160": "#vehicle_list_motorcycle_sr",
+            "maxweight": 1,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_7fb0967b": 16000,
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "vehiclespawner": 1,
+    "var_9b009839": -1,
+    "var_dc7ffbef": 1,
+    "name": "wz_sanatorium_motorcycle_sr",
+    "var_fde72c94": 100
+}

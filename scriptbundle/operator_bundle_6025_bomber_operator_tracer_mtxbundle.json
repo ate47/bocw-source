@@ -1,0 +1,53 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_esp_pl_goe_bomber_mtxitem",
+            "itemid": "31522235"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_esp_goe_bomber_mtxitem",
+            "itemid": "22183508"
+        },
+        {
+            "var_4a4bc969": "#operator_mission_6025_mtxitem",
+            "itemid": "28670533"
+        },
+        {
+            "var_4a4bc969": "#operator_mission_6025_unlock_mtxitem",
+            "itemid": "30631871"
+        },
+        {
+            "var_4a4bc969": "#smg_standard_cb_bp_bomber_mtxitem",
+            "itemid": "27639866"
+        },
+        {
+            "var_4a4bc969": "#special_grenade_launcher_bp_bomber_mtxitem",
+            "itemid": "29049456"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_multitool_steel_mtxitem",
+            "itemid": "19087573"
+        },
+        {
+            "var_4a4bc969": "#emblems_bomber_s6_animated_mtxitem",
+            "itemid": "20237726"
+        },
+        {
+            "var_4a4bc969": "#callingcards_bomber_s6_animated_mtxitem",
+            "itemid": "23322000"
+        }
+    ],
+    "itemname": "#hash_3baec55566312899",
+    "var_375a1747": "#hash_6e8f943816979397",
+    "var_3040f0d1": "#hash_34a56784f3b4d6c9",
+    "var_fc891f35": "30631871",
+    "name": "operator_bundle_6025_bomber_operator_tracer_mtxbundle",
+    "var_a788fada": "#hash_5687bc8862218e94",
+    "var_22f91505": "#hash_74695355e64c548e",
+    "var_566825be": "#hash_6496e997642f9160",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_30d51df46c23e302",
+    "var_db3e02ab": 2000,
+    "itemid": "18836108"
+}

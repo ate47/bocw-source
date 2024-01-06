@@ -1,0 +1,56 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_navyseal_sniper_mtxitem",
+            "itemid": "26471961"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_navy_seal_mtxitem",
+            "itemid": "20822559"
+        },
+        {
+            "var_4a4bc969": "#sniper_quickscope_bp_wrap_mtxitem",
+            "itemid": "29170177"
+        },
+        {
+            "var_4a4bc969": "#pistol_revolver_bp_hvt_mtxitem",
+            "itemid": "21186058"
+        },
+        {
+            "var_4a4bc969": "#execution_021_mtxitem",
+            "itemid": "20595594"
+        },
+        {
+            "var_4a4bc969": "#reticle_67_mtxitem",
+            "itemid": "25649345"
+        },
+        {
+            "var_4a4bc969": "#callingcards_quickscope_animated_mtxitem",
+            "itemid": "23121411"
+        },
+        {
+            "var_4a4bc969": "#emblem_marquee_08_animated_mtxitem",
+            "itemid": "30593957"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_sniper_tent_mtxitem",
+            "itemid": "27978473"
+        },
+        {
+            "var_4a4bc969": "#paintjob_sticker_marquee_08_mtxitem",
+            "itemid": "24826557"
+        }
+    ],
+    "itemname": "#hash_573fa4ba0bf3a7a6",
+    "var_375a1747": "#hash_6265e369d46087f4",
+    "var_579fd6c3": 25,
+    "name": "bundle_fantasy_2052_baker_quickscope_mtxbundle",
+    "var_a788fada": "#hash_2c7bf2de0f95d8c9",
+    "var_22f91505": "#hash_3bb6e1d1d6bde044",
+    "var_566825be": "#hash_4a27b2eb935f15c1",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_1d44ed94a9846a74",
+    "var_db3e02ab": 2000,
+    "itemid": "22583966"
+}

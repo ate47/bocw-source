@@ -1,0 +1,19 @@
+{
+    "description": "#hash_6900122e8b831fab",
+    "itemspawnentry": "#item_zmintel_survival_maxis_artifact_7",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#exploration",
+    "model": "#hash_6e49b56c789439d1",
+    "var_824079e7": "#survival",
+    "uimodel": "#hash_444f74c4ecc0f16e",
+    "type": "zmintel",
+    "season": 3,
+    "var_ad4ad686": "#hash_5ad2dea4c296de59",
+    "var_217aec15": "#hash_6026236a2d78321c",
+    "name": "zmintel_survival_maxis_artifact_7",
+    "var_9be0526e": "#artifact",
+    "var_83e219de": "#hash_55af78a255e77597",
+    "var_53be913a": 5,
+    "title": "#hash_556a14007f485391",
+    "mapname": "#wz_forest"
+}

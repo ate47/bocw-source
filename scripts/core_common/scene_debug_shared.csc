@@ -539,7 +539,7 @@ function debug_display() {
                 debug_time = debug_frames / 60;
                 sphere(self.origin, 1, (0, 1, 1), 1, 1, 8, debug_frames);
                 if (isdefined(self.scenes)) {
-                    foreach (o_scene in self.scenes) {
+                    foreach (i, o_scene in self.scenes) {
                         n_offset = 15 * (i + 1);
                         print3d(self.origin - (0, 0, n_offset), o_scene._str_name, (0.8, 0.2, 0.8), 1, 0.3, debug_frames);
                         print3d(self.origin - (0, 0, n_offset + 5), "<unknown string>" + (isdefined([[ o_scene ]]->function_2ba44cd0()) ? "<unknown string>" + [[ o_scene ]]->function_2ba44cd0() : "<unknown string>") + "<unknown string>", (0.8, 0.2, 0.8), 1, 0.15, debug_frames);

@@ -217,7 +217,7 @@ function function_743996c0() {
     level.var_6a086277 thread function_58b582cc();
     level flag::wait_till(#"hash_358a79602429d556");
     var_222825ae = struct::get("wonder_weapon_position", "targetname");
-    point = function_4ba8fde(#"hash_33417f4ad8761c42");
+    point = function_4ba8fde(#"ww_mega_barrel_fullauto_copycat_t9_item_sr");
     var_2cf93673 = getweapon(#"hash_386308ed987052a4");
     var_4d1c70f5 = item_drop::drop_item(0, var_2cf93673, 1, 0, point.id, var_222825ae.origin, var_222825ae.angles, 0);
     var_4d1c70f5.var_dd21aec2.var_4d1c70f5 = 1 & 16;
@@ -397,11 +397,11 @@ function function_b0952594(params) {
     if (isplayer(self)) {
         if (isdefined(item.var_a6762160)) {
             switch (item.var_a6762160.name) {
-            case #"hash_33417f4ad8761c42":
+            case #"ww_mega_barrel_fullauto_copycat_t9_item_sr":
                 /#
                     iprintlnbold("<unknown string>");
                 #/
-                array::thread_all(getplayers(), &namespace_4abf1500::function_3ad8805e, #"hash_655fe4af693fcaa0");
+                array::thread_all(getplayers(), &namespace_4abf1500::function_3ad8805e, #"zmintel_platinum_requiem_artifact_02");
                 level notify(#"ww_pickup", {#player:self});
                 callback::remove_callback(#"on_item_pickup", &function_b0952594);
                 break;

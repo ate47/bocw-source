@@ -1,0 +1,72 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_8c055aae093a22",
+            "var_5d4b5964": 6.61,
+            "var_36bf8e05": "#hash_5c57bac664c0ae35"
+        },
+        {
+            "var_46bd7973": "#hash_12db2e2ca0ea76ea",
+            "var_5d4b5964": 8.04,
+            "var_36bf8e05": "#hash_13895af5dc68ca5b"
+        },
+        {
+            "var_46bd7973": "#hash_8c035aae0936bc",
+            "var_5d4b5964": 2.71,
+            "var_36bf8e05": "#hash_4c647be24e40858f"
+        },
+        {
+            "var_46bd7973": "#hash_12db2c2ca0ea7384",
+            "var_5d4b5964": 12.48,
+            "var_36bf8e05": "#hash_720c2d59c9fcbfc1"
+        },
+        {
+            "var_46bd7973": "#hash_8c015aae093356",
+            "var_5d4b5964": 9.39,
+            "var_36bf8e05": "#hash_55919892cf69c71"
+        },
+        {
+            "var_46bd7973": "#hash_12db2a2ca0ea701e",
+            "var_5d4b5964": 11.16,
+            "var_36bf8e05": "#hash_7b78e6d1aef005b7"
+        },
+        {
+            "var_46bd7973": "#hash_8bff5aae092ff0",
+            "var_5d4b5964": 7.83,
+            "var_36bf8e05": "#hash_2363224b6cc799cb"
+        },
+        {
+            "var_46bd7973": "#hash_12db282ca0ea6cb8",
+            "var_f35c5951": 0.4,
+            "var_5d4b5964": 17.43,
+            "var_36bf8e05": "#hash_871e3b2eb918c3d"
+        },
+        {
+            "var_46bd7973": "#hash_8c0d5aae0947ba",
+            "var_5d4b5964": 3.16,
+            "var_36bf8e05": "#hash_e2c0038c68c092d"
+        },
+        {
+            "var_46bd7973": "#hash_8c0e5aae09496d",
+            "var_5d4b5964": 1.05,
+            "var_36bf8e05": "#hash_3771a45bd0794dbc"
+        }
+    ],
+    "description": "#hash_d8aac63a5201dd5",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#exploration",
+    "model": "#hash_58228068154ebd8c",
+    "var_824079e7": "#survival",
+    "uimodel": "#hash_b967b1b400fed9b",
+    "type": "zmintel",
+    "season": 3,
+    "var_ad4ad686": "#hash_1303dcb8d0e80e33",
+    "soundloop": "#hash_2e77024e1f0a29f1",
+    "name": "zmintel_survival_requiem_audiolog_9",
+    "var_9be0526e": "#audiolog",
+    "var_83e219de": "#hash_55af78a255e77597",
+    "var_53be913a": 5,
+    "var_348b91fd": "#tape",
+    "title": "#hash_3758ca5d74669543",
+    "var_3bb3493d": "#hash_11213fd65d1db61f"
+}

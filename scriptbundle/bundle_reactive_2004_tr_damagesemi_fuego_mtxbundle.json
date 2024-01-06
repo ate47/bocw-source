@@ -1,0 +1,35 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#tr_damagesemi_bp_fuego_mtxitem",
+            "itemid": "18819935"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_metalpeace_mtxitem",
+            "itemid": "32113793"
+        },
+        {
+            "var_4a4bc969": "#emblem_fuego_01_animated_mtxitem",
+            "itemid": "18581302"
+        },
+        {
+            "var_4a4bc969": "#callingcards_fuego_animated_mtxitem",
+            "itemid": "22944397"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_fuego_02_mtxitem",
+            "itemid": "27015473"
+        }
+    ],
+    "itemname": "#hash_7480cadf2956dd02",
+    "var_375a1747": "#hash_5a31ca613f0d7de8",
+    "name": "bundle_reactive_2004_tr_damagesemi_fuego_mtxbundle",
+    "var_a788fada": "#hash_77fdf309544d9af5",
+    "var_22f91505": "#hash_477b4b86dbb33807",
+    "var_566825be": "#hash_40d3388663f89d4d",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_317cd7d4be511c63",
+    "var_db3e02ab": 2000,
+    "itemid": "28186563"
+}

@@ -1,0 +1,202 @@
+{
+    "var_2be3941a": [
+        {
+            "unlockdescription": "#hash_7295e89e5fb6c8e4",
+            "var_5f79ee71": "#craftbackground",
+            "image": "#hash_591cb8065a9e3572",
+            "var_e5119d1b": "#hash_591cb8065a9e3572",
+            "var_b4ab831a": "#hash_7e8b3d3c7514b77b",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_5677d9133114a8ac"
+        },
+        {
+            "unlockdescription": "#hash_2198a5c6f1b54287",
+            "var_5f79ee71": "#arcadegame",
+            "var_b4ab831a": "#robot_tank_game",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_4941bc4d64a8e38"
+        },
+        {
+            "unlockdescription": "#hash_3d73f59eff86458b",
+            "var_5f79ee71": "#wristaccessory",
+            "var_b4ab831a": "#wristaccessory_t9_s2_analog_caiman",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_47351685227336cc"
+        },
+        {
+            "unlockdescription": "#hash_5db07e990fde08dd",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_62c8eeffccb660f6",
+            "var_e5119d1b": "#hash_62c8eeffccb660f6",
+            "var_b4ab831a": "#hash_7345a613f023b561",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_3d48d424c78e2c71"
+        },
+        {
+            "unlockdescription": "#hash_38c5dc73687dcf32",
+            "var_5f79ee71": "#craftbackground",
+            "image": "#hash_4755f933db7024b7",
+            "var_e5119d1b": "#hash_4755f933db7024b7",
+            "var_b4ab831a": "#hash_400a70921348d4c0",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_6c9bd8c5ae1a5496"
+        },
+        {
+            "unlockdescription": "#hash_8dc01bad048b16a",
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_fun_palm",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_122768477016f4e5"
+        },
+        {
+            "unlockdescription": "#hash_1dfab14e6672ab8e",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_31ed9eba44f1c656",
+            "var_e5119d1b": "#hash_31ed9eba44f1c656",
+            "var_b4ab831a": "#hash_4c84cb10dba8b0b7",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_5135a4983fb81980"
+        },
+        {
+            "unlockdescription": "#hash_57d080dd239b538a",
+            "var_5f79ee71": "#crafticon",
+            "image": "#hash_2161a99b7f96792",
+            "var_e5119d1b": "#hash_2161a99b7f96792",
+            "var_b4ab831a": "#hash_344a80fdcfb0e30f",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_7e82640bedc5ea04"
+        },
+        {
+            "unlockdescription": "#hash_156503849daddc9a",
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_mullet",
+            "stattype": "#common",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_725adb52613ffb99"
+        },
+        {
+            "unlockdescription": "#hash_4d6863ed27ddff70",
+            "var_5f79ee71": "#craftbackground",
+            "image": "#hash_36a3128935e98941",
+            "var_e5119d1b": "#hash_36a3128935e98941",
+            "var_b4ab831a": "#hash_60b8cc5663e4f450",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_386bc6b7cd50a202"
+        },
+        {
+            "unlockdescription": "#hash_73887a8bd128e8b2",
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_round_bomb",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_48509be6907f6897"
+        },
+        {
+            "unlockdescription": "#hash_25a8f6a2ce27c4be",
+            "var_5f79ee71": "#crafticon",
+            "image": "#hash_4fe061fd769051a4",
+            "var_e5119d1b": "#hash_4fe061fd769051a4",
+            "var_b4ab831a": "#hash_4f8fa25f46d5bba9",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_9ec015959184d80"
+        },
+        {
+            "unlockdescription": "#hash_146751620157a43",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_830e865d74f9822",
+            "var_e5119d1b": "#hash_830e865d74f9822",
+            "var_b4ab831a": "#hash_98de9351c7bb7f7",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_14a4a5b2685c0bfc"
+        },
+        {
+            "unlockdescription": "#hash_6da9b78a27f0242c",
+            "var_5f79ee71": "#craftbackground",
+            "image": "#hash_6795a4450b4eb3af",
+            "var_e5119d1b": "#hash_6795a4450b4eb3af",
+            "var_b4ab831a": "#hash_58a6f15e8a32a058",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_3ee4e98fc8943aa1"
+        },
+        {
+            "unlockdescription": "#hash_3e4d3a1e80e28a07",
+            "var_5f79ee71": "#crafticon",
+            "image": "#hash_884d4f48a87253",
+            "var_e5119d1b": "#hash_884d4f48a87253",
+            "var_b4ab831a": "#hash_4bd1fa798377921a",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_2071b9ab532d8ab"
+        },
+        {
+            "unlockdescription": "#hash_80a90dd7a0a089f",
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_payphone",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_38bfa4a737627909"
+        },
+        {
+            "unlockdescription": "#hash_764b1d4067aea03b",
+            "var_5f79ee71": "#craftbackground",
+            "image": "#hash_42ba01890ea46f6",
+            "var_e5119d1b": "#hash_42ba01890ea46f6",
+            "var_b4ab831a": "#hash_7700c2b9376b0d15",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_341d75738a58c294"
+        },
+        {
+            "unlockdescription": "#hash_4808e4fc4276a90b",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_8346a65d752aadf",
+            "var_e5119d1b": "#hash_8346a65d752aadf",
+            "var_b4ab831a": "#hash_997d7351c83ede6",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_17b5e73b9a9626e3"
+        },
+        {
+            "unlockdescription": "#hash_4c8aec02eacb2506",
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "var_b4ab831a": "#hash_1c7cbe3acf0c1e8f",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_5eed955767f06002"
+        },
+        {
+            "unlockdescription": "#hash_2f925f36ca028b4b",
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "var_b4ab831a": "#hash_59ef3a4416aa203a",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_1b42c1080de59066"
+        }
+    ],
+    "var_922067c4": "SCRIPTBUNDLE",
+    "type": "challengerewards",
+    "var_5f0dd656": 2,
+    "var_4e39981b": 2,
+    "name": "challengerewards_s3_5_summer_event",
+    "sessionmode": "1"
+}

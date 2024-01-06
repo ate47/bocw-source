@@ -35,7 +35,7 @@ function __init__() {
     zm_powerups::register_powerup("small_ammo", &function_81558cdf);
     if (zm_powerups::function_cc33adc8()) {
         zm_powerups::add_zombie_powerup("small_ammo", "p8_wz_ammo_pickup_45acp", #"hash_69256172c78db147", &zm_powerups::func_should_never_drop, 1, 0, 0);
-        zm_powerups::function_59f7f2c6("small_ammo", #"hash_1146b48f827e8523", #"hash_5d462ab6dd09efb0", #"hash_6c4a383f92f64600");
+        zm_powerups::function_59f7f2c6("small_ammo", #"zmb_powerup_smallammo_spawn", #"hash_5d462ab6dd09efb0", #"zmb_powerup_smallammo_pickup");
     }
 }
 

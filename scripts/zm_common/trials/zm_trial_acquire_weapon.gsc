@@ -225,7 +225,7 @@ function setup_objective(str_weapon, s_challenge) {
         } else if (!isarray(var_fda63ae3)) {
             var_fda63ae3 = array(var_fda63ae3);
         }
-        foreach (var_6bb4a364 in var_fda63ae3) {
+        foreach (var_b35c3e47, var_6bb4a364 in var_fda63ae3) {
             n_obj_id = gameobjects::get_next_obj_id();
             s_challenge.a_n_objective_ids[var_b35c3e47] = n_obj_id;
             objective_add(n_obj_id, "active", var_6bb4a364, var_6cc77d4e);

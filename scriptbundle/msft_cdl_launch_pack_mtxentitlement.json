@@ -1,0 +1,72 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#po_c_t9_gen_pl_esports_male_cdl_home_ms_mtxitem",
+            "itemid": "22055946"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_pl_esports_male_mtxitem",
+            "itemid": "31358670"
+        },
+        {
+            "var_4a4bc969": "#po_c_t9_gen_pl_esports_male_cdl_away_ms_mtxitem",
+            "itemid": "26295881"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_pl_esports_male_warsaw_mtxitem",
+            "itemid": "24054907"
+        },
+        {
+            "var_4a4bc969": "#callingcards_egochall_ms_base_mtxitem",
+            "itemid": "22058230"
+        },
+        {
+            "var_4a4bc969": "#callingcards_itsmyyear_ms_base_mtxitem",
+            "itemid": "19336709"
+        },
+        {
+            "var_4a4bc969": "#emblems_fa_ms_base_mtxitem",
+            "itemid": "32802535"
+        },
+        {
+            "var_4a4bc969": "#emblems_getthatbag_ms_base_mtxitem",
+            "itemid": "28317685"
+        },
+        {
+            "var_4a4bc969": "#emblems_runitback_ms_base_mtxitem",
+            "itemid": "28628411"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_camper_ms_base_mtxitem",
+            "itemid": "32751911"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_flex_ms_base_mtxitem",
+            "itemid": "28456538"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_main_ms_base_mtxitem",
+            "itemid": "26455133"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_slayer_ms_base_mtxitem",
+            "itemid": "31710701"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_sub_ms_base_mtxitem",
+            "itemid": "19210272"
+        }
+    ],
+    "itemname": "#hash_61a7812b8ae60d73",
+    "var_247d9ed7": "cdl_launch_pack",
+    "var_208d76b5": "#hash_af73b676817bf12",
+    "var_70f66e54": "#hash_5e2f25a77bfab5d3",
+    "name": "msft_cdl_launch_pack_mtxentitlement",
+    "var_566825be": "#hash_308a2c47e3953232",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "var_4e46b1b3": "#durango",
+    "itemid": "31057508",
+    "var_a592ce5": 1
+}

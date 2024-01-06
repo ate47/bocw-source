@@ -74,7 +74,7 @@ function function_959bac94() {
 // Checksum 0x61ab7c92, Offset: 0x358
 // Size: 0xac
 function function_712e3ba6(score) {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (game.stat[#"teamscores"][team] >= score) {
             return 1;
         }

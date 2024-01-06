@@ -1,0 +1,37 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#operator_bundle_6031_baker_special_op_6_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_6020_special_op_5_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_6014_weaver_chaos_disciple_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_6006_naga_war_ghost_mtxbundle"
+        }
+    ],
+    "var_ce1f5e1c": "#hash_490254b51778f981",
+    "var_3156ffbf": "#hash_1a3a3332aeba03a1",
+    "var_355a0570": 1,
+    "var_851fe2c2": "#hash_6c00e8285dc1d52a",
+    "var_922067c4": "SCRIPTBUNDLE",
+    "eventname": "#hash_2e44c1449f680fa4",
+    "type": "seasonaleventinfo",
+    "challengecategory": "#hash_3d55b67873f376bf",
+    "var_a373b2c8": "#hash_2e44c1449f680fa4",
+    "var_1bd269bd": "#hash_7c2434b9e52af4f8",
+    "var_2f5e10ee": "#smg_season6_t9_mtxitem",
+    "var_9bee6459": "#hash_7e749952a8f94109",
+    "var_30bfecd6": "#hash_22689be6a495670c",
+    "var_2a3cc8a0": "#challengerewards_s6_ghosts_event",
+    "var_9fa2c78d": "#hash_10340e87da238168",
+    "name": "seasonaleventinfo_season_6",
+    "var_3ee5fb5b": "#hash_178ab01368762c8b",
+    "var_39f9cee5": "#hash_178ab01368762c8b",
+    "var_eec51cef": "#hash_4564a352c2cb5855",
+    "var_a0a0d1e2": "#hash_359d28a01a8a6dfe",
+    "var_24311425": "#smg_season6_t9_mtxitem"
+}

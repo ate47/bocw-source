@@ -93,7 +93,7 @@ function on_player_connect() {
 // Size: 0x2a8
 function updatehardpoints() {
     /#
-        foreach (streak in level.killstreaks) {
+        foreach (key, streak in level.killstreaks) {
             dvar = streak.devdvar;
             enemydvar = streak.devenemydvar;
             host = gethostplayer();
@@ -874,7 +874,7 @@ function showstartspawnpoints() {
         team_colors[#"team6"] = (1, 0.7, 0);
         team_colors[#"team7"] = (0.25, 0.25, 1);
         team_colors[#"team8"] = (0.88, 0, 1);
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             color = team_colors[team];
             foreach (spawnpoint in level.spawn_start[team]) {
                 showonespawnpoint(spawnpoint, color, "<unknown string>");

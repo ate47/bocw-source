@@ -205,7 +205,7 @@ function get_death_vox(weapon, playerbundle, meansofdeath) {
                 } else {
                     var_1f2bdb96 = playerbundle.var_f8b4bcc1;
                 }
-            } else if (weapon == getweapon(#"hash_63826b4a80215cd3")) {
+            } else if (weapon == getweapon(#"tear_gas")) {
                 var_1f2bdb96 = playerbundle.var_7a45f37b;
             }
             if (weapon.doesfiredamage) {

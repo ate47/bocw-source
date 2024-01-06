@@ -225,10 +225,10 @@ function function_afa6ac4b(attacker, weapon, var_5d738b56, seed) {
         return;
     }
     var_5c238c21 = function_cdd81094(weapon);
-    if (!isdefined(var_5c238c21.var_3f2ad94c)) {
+    if (!isdefined(var_5c238c21.destroyedalias)) {
         return;
     }
-    var_9c00ad8b = var_9f84e4a9 + var_5c238c21.var_3f2ad94c;
+    var_9c00ad8b = var_9f84e4a9 + var_5c238c21.destroyedalias;
     if (!isdefined(attacker) || !isplayer(attacker)) {
         return;
     }
@@ -383,7 +383,7 @@ function function_c8663dbc(weapon, player) {
         taacomdialog = "ac130Hacked";
         break;
     case #"inventory_chopper_gunner":
-    case #"hash_2f648e335983677a":
+    case #"chopper_gunner":
         taacomdialog = "chopperGunnerHacked";
         break;
     case #"inventory_tank_robot":
@@ -411,7 +411,7 @@ function function_c8663dbc(weapon, player) {
     case #"drone_squadron":
         taacomdialog = "droneSquadHacked";
         break;
-    case #"hash_1b2bdd347dcfc0dc":
+    case #"hoverjet":
     case #"inventory_hoverjet":
         taacomdialog = "hoverJetHacked";
         break;
@@ -419,7 +419,7 @@ function function_c8663dbc(weapon, player) {
     case #"inventory_recon_car":
         taacomdialog = "reconCarHacked";
         break;
-    case #"hash_165bcc9977521521":
+    case #"recon_plane":
     case #"inventory_recon_plane":
         taacomdialog = "reconPlaneHacked";
         break;

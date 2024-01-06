@@ -58,7 +58,7 @@ function private function_70a657d8() {
     level.play_pilot_dialog_on_owner = &function_9716fce9;
     level.play_pilot_dialog = &function_f6370f75;
     function_318f41b6();
-    level.a_speakers = getscriptbundle(#"hash_3a33b384e9a87b15");
+    level.a_speakers = getscriptbundle(#"zm_commanders_speakers");
     clientfield::register_clientuimodel("zm_hud.commander_speaking", 1, 5, "int", 0);
     /#
     #/
@@ -187,7 +187,7 @@ function private function_d773f2e(params) {
     case #"hash_72796957033e2e4a":
         var_64edfc97 = #"hash_763fd19c812336";
         break;
-    case #"hash_5ceaf52285031501":
+    case #"sig_bow_flame":
         
     case #"hero_flamethrower":
         
@@ -256,13 +256,13 @@ function private on_item_pickup(params) {
         return;
     }
     weapon = namespace_a0d533d1::function_2b83d3ff(item);
-    if (item.var_a6762160.name === #"hash_2cdb76a587cf7a3b" && is_true(item.var_14948fd)) {
+    if (item.var_a6762160.name === #"self_revive_sr_item" && is_true(item.var_14948fd)) {
         var_64edfc97 = #"hash_761fd0a07d2e04f";
     } else if (isdefined(item) && isdefined(weapon)) {
         switch (item.var_a6762160.itemtype) {
         case #"scorestreak":
             if (is_true(item.var_14948fd)) {
-                if (weapon.name == #"hash_2f648e335983677a" || weapon.name == #"inventory_napalm_strike_zm") {
+                if (weapon.name == #"chopper_gunner" || weapon.name == #"inventory_napalm_strike_zm") {
                     var_64edfc97 = #"hash_1451a78cbf91a4e3";
                 } else if (weapon.name == #"ultimate_turret") {
                     var_64edfc97 = #"hash_61917b06ef391bae";
@@ -1394,7 +1394,7 @@ function function_7622cb70(var_b58a6345, n_delay, b_wait_if_busy = 1, var_54c38d
                 }
                 self function_f2efbd1c(var_73a92203.var_46bd7973, var_73a92203.var_aebcb4b1, var_73a92203.var_f35c5951, undefined, var_ce5964ab, var_73a92203.var_5d4b5964);
             } else if (var_d8d8b84c.var_824bf975 === #"timeline") {
-                foreach (var_73a92203 in var_d8d8b84c.var_aa02f35a) {
+                foreach (index, var_73a92203 in var_d8d8b84c.var_aa02f35a) {
                     if (index == var_d8d8b84c.var_aa02f35a.size - 1) {
                         level.var_f6ea0657 = 1;
                         if (isdefined(level.var_a43447e4)) {
@@ -1938,7 +1938,7 @@ function private function_7bed52a(killstreaktype, team, killstreakid) {
     if (!isdefined(scriptbundle.var_e23aed46) || scriptbundle.var_e23aed46 <= 0) {
         globallogic_audio::leader_dialog_for_other_teams(dialogkey, team, undefined, killstreakid);
     } else {
-        foreach (_ in level.teams) {
+        foreach (currentteam, _ in level.teams) {
             if (currentteam != team) {
                 players = getplayers(currentteam, self.origin, scriptbundle.var_e23aed46);
                 globallogic_audio::function_61e17de0(dialogkey, players, undefined, killstreakid);

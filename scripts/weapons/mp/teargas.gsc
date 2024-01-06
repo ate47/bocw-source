@@ -20,7 +20,7 @@ function private autoexec __init__system__() {
 // Size: 0x9c
 function private function_70a657d8() {
     init_shared();
-    level.var_c7b2d0ab = getweapon(#"hash_63826b4a80215cd3");
+    level.var_c7b2d0ab = getweapon(#"tear_gas");
     globallogic_score::register_kill_callback(level.var_c7b2d0ab, &function_8f5e1a77, 1);
     globallogic_score::function_c1e9b86b(level.var_c7b2d0ab, &function_6703177e);
 }

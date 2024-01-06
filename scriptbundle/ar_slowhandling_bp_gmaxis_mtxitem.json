@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#operator_bundle_5019_samantha_zombie_defense_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_f3b2e6691c106fe",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_50a4735003d124a4",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 5,
+    "var_46300498": 1,
+    "baseweapon": "#hash_4d8b07efde79fb03",
+    "name": "ar_slowhandling_bp_gmaxis_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "32985740",
+    "blueprint": "#hash_f3b2e6691c106fe"
+}

@@ -1,0 +1,14 @@
+{
+    "killcambackdist": 24,
+    "killcamtype": 4,
+    "type": "killcam",
+    "var_5022638e": 0.1,
+    "vmtype": "none",
+    "killcamgroundupdist": 240,
+    "name": "killcam_satchel_charge",
+    "var_7f018185": 0.001,
+    "killcamwallsidedist": 30,
+    "var_e7bad890": "explosive",
+    "killcamwalloutdist": 10,
+    "killcamgroundbackdist": 240
+}

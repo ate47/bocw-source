@@ -157,7 +157,7 @@ function function_67c434(local_client_num, localplayer, var_53227942) {
     if (localplayer.team == var_53227942.team) {
         return 0;
     }
-    if (self hasperk(local_client_num, #"hash_715f7855e0ed19f8")) {
+    if (self hasperk(local_client_num, #"specialty_spycraft")) {
         return 0;
     }
     return 1;

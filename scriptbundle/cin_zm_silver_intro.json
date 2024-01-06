@@ -1,0 +1,594 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_3f401209baafdac3",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_cin_zm_silver_intro_sh010",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "hidestowedweapon": 1,
+                    "name": "sh010"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_3f401509baafdfdc",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_cin_zm_silver_intro_sh015",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "var_51c09589": "#hash_6c27263fb5c05125",
+                    "var_a190f06e": "#hash_7e555880d410cb15",
+                    "hidestowedweapon": 1,
+                    "name": "sh015",
+                    "var_389b3f9b": "#hash_3d010f9d2d23a052",
+                    "var_bb64ee8c": "#hash_54909785016ba31e"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_3f35a009baa6c488",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_cin_zm_silver_intro_sh020",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "var_51c09589": "#hash_673cdc9894e48401",
+                    "var_a190f06e": "#hash_36e81d2c8c3a77b1",
+                    "var_91ecd04": "#hash_573c2ec012e07e31",
+                    "hidestowedweapon": 1,
+                    "name": "sh020",
+                    "var_389b3f9b": "#hash_5d915e2919d27a26",
+                    "var_bb64ee8c": "#hash_379181b1185603ca"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_3f392609baa9de11",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_cin_zm_silver_intro_sh030",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "var_51c09589": "#hash_46e0eb905ca5ef1e",
+                    "hidestowedweapon": 1,
+                    "name": "sh030"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_3f4a2409bab84dde",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_cin_zm_silver_intro_sh040",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "var_51c09589": "#hash_50ee9f14cde0a36b",
+                    "var_91ecd04": "#hash_4e7d4985fd28517f",
+                    "var_dee605a0": "#hash_64a124ee30172ff4",
+                    "hidestowedweapon": 1,
+                    "name": "sh040",
+                    "var_389b3f9b": "#hash_577cce8ac0282f0c",
+                    "var_bb64ee8c": "#hash_6601ed3bd57e72e0"
+                }
+            ],
+            "var_6d72caf2": 1,
+            "model": "#hash_225b7a1c33079fb1",
+            "type": "player",
+            "var_1af33af1": 1,
+            "var_db255011": 1,
+            "name": "player1",
+            "var_1a95895f": 1
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_70bb532f697330ea",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_cin_zm_silver_intro_sh010",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "hidestowedweapon": 1,
+                    "name": "sh010"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_70bb502f69732bd1",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_cin_zm_silver_intro_sh015",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "var_51c09589": "#hash_25c1d090d1fbb9de",
+                    "var_a190f06e": "#hash_78058d6109ad7bd4",
+                    "hidestowedweapon": 1,
+                    "name": "sh015",
+                    "var_389b3f9b": "#hash_4238b4977cd72821",
+                    "var_bb64ee8c": "#hash_3028643bf08c2d13"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_70b7cd2f69701761",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_cin_zm_silver_intro_sh020",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "var_51c09589": "#hash_3444f6c6c42b86e",
+                    "var_a190f06e": "#hash_55af2b77b8dd2c4",
+                    "var_91ecd04": "#hash_41b1e31356d7c05a",
+                    "hidestowedweapon": 1,
+                    "name": "sh020",
+                    "var_389b3f9b": "#hash_2f05c194377de491",
+                    "var_bb64ee8c": "#hash_4b7320ba43408e03"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_70b4472f696cfdd8",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_cin_zm_silver_intro_sh030",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "hidestowedweapon": 1,
+                    "name": "sh030"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_70cc512f6981a0b7",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_cin_zm_silver_intro_sh040",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "var_51c09589": "#hash_6e16792908962178",
+                    "var_91ecd04": "#hash_16fdae01d1447558",
+                    "var_dee605a0": "#hash_4e6536fb6c98be1b",
+                    "hidestowedweapon": 1,
+                    "name": "sh040",
+                    "var_389b3f9b": "#hash_fb74c059c1226cf",
+                    "var_bb64ee8c": "#hash_6ea19004dc3b3739"
+                }
+            ],
+            "var_6d72caf2": 1,
+            "model": "#hash_225b7a1c33079fb1",
+            "type": "player",
+            "var_db255011": 1,
+            "name": "player2",
+            "var_1a95895f": 1
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_33df95eb2bb93781",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_cin_zm_silver_intro_sh010",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "hidestowedweapon": 1,
+                    "name": "sh010"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_33df98eb2bb93c9a",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_cin_zm_silver_intro_sh015",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "var_51c09589": "#hash_6a143b26b937377",
+                    "var_a190f06e": "#hash_17255b33830705df",
+                    "hidestowedweapon": 1,
+                    "name": "sh015",
+                    "var_389b3f9b": "#hash_166208c489cbb980",
+                    "var_bb64ee8c": "#hash_7b2f1e7fd80d2adc"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_33e29beb2bbb778a",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_cin_zm_silver_intro_sh020",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "var_51c09589": "#hash_3cffd776fab11427",
+                    "var_a190f06e": "#hash_fb2b08e13fb4a2f",
+                    "var_91ecd04": "#hash_204d4b7c2b0babd3",
+                    "hidestowedweapon": 1,
+                    "name": "sh020",
+                    "var_389b3f9b": "#hash_7d9a6f39962c410",
+                    "var_bb64ee8c": "#hash_6410e14c5b4c72c"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_33e601eb2bbe5ab3",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_cin_zm_silver_intro_sh030",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "hidestowedweapon": 1,
+                    "name": "sh030"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_33e987eb2bc1743c",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_cin_zm_silver_intro_sh040",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "var_51c09589": "#hash_290a1fdb940c94c5",
+                    "var_91ecd04": "#hash_1bdb9c885365e6d",
+                    "var_dee605a0": "#hash_43ce286f176566be",
+                    "hidestowedweapon": 1,
+                    "name": "sh040",
+                    "var_389b3f9b": "#hash_32e5c0f3d4a082f2",
+                    "var_bb64ee8c": "#hash_1248889532586a3e"
+                }
+            ],
+            "var_6d72caf2": 1,
+            "model": "#hash_225b7a1c33079fb1",
+            "type": "player",
+            "var_db255011": 1,
+            "name": "player3",
+            "var_1a95895f": 1
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_5367d09ff399abf0",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_cin_zm_silver_intro_sh010",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "hidestowedweapon": 1,
+                    "name": "sh010"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_5367d59ff399b46f",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_cin_zm_silver_intro_sh015",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "var_51c09589": "#hash_28e37ecc209c5dc0",
+                    "var_a190f06e": "#hash_600834194423fa86",
+                    "hidestowedweapon": 1,
+                    "name": "sh015",
+                    "var_389b3f9b": "#hash_b93747fdc4e4cb7",
+                    "var_bb64ee8c": "#hash_1a0d44246f57611"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_5371e29ff3a21f0b",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_cin_zm_silver_intro_sh020",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "var_51c09589": "#hash_7841dee41a1d060c",
+                    "var_a190f06e": "#hash_60ac2f611300e482",
+                    "hidestowedweapon": 1,
+                    "name": "sh020",
+                    "var_389b3f9b": "#hash_c772fd66cb24ceb",
+                    "var_bb64ee8c": "#hash_4920cfb6dfa6adad"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_536edc9ff39fdf02",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_cin_zm_silver_intro_sh030",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "hidestowedweapon": 1,
+                    "name": "sh030"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_5378ee9ff3a8521d",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_cin_zm_silver_intro_sh040",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "var_51c09589": "#hash_960a572e43b952a",
+                    "var_91ecd04": "#hash_3fc441e2518d6dce",
+                    "var_dee605a0": "#hash_238baee18cb07285",
+                    "hidestowedweapon": 1,
+                    "name": "sh040",
+                    "var_389b3f9b": "#hash_71c081c7e59dd935",
+                    "var_bb64ee8c": "#hash_641727102cba6bef"
+                }
+            ],
+            "var_6d72caf2": 1,
+            "model": "#hash_225b7a1c33079fb1",
+            "type": "player",
+            "var_db255011": 1,
+            "name": "player4",
+            "var_1a95895f": 1
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_56821fe6c7144ed7",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_cin_zm_silver_intro_sh010",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "hidestowedweapon": 1,
+                    "name": "sh010"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_56821ae6c7144658",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_cin_zm_silver_intro_sh015",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "var_51c09589": "#hash_7d4a45ad6a3bcb91",
+                    "var_a190f06e": "#hash_9f2127b71743861",
+                    "hidestowedweapon": 1,
+                    "name": "sh015",
+                    "var_389b3f9b": "#hash_112f869819f5e356",
+                    "var_bb64ee8c": "#hash_100d8f7824008ba"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_56780de6c70bdbbc",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_cin_zm_silver_intro_sh020",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "var_51c09589": "#hash_36e560d9dd074345",
+                    "var_a190f06e": "#hash_2e33a1d9d878feb5",
+                    "hidestowedweapon": 1,
+                    "name": "sh020",
+                    "var_389b3f9b": "#hash_541498a784ae0d72",
+                    "var_bb64ee8c": "#hash_1a3c4193417675be"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_567b93e6c70ef545",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_cin_zm_silver_intro_sh030",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "hidestowedweapon": 1,
+                    "name": "sh030"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_567121e6c705df0a",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_cin_zm_silver_intro_sh040",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "var_51c09589": "#hash_4adb187543abc2a7",
+                    "var_91ecd04": "#hash_320fc0e180ed1e53",
+                    "var_dee605a0": "#hash_27ad38ea6af1c490",
+                    "hidestowedweapon": 1,
+                    "name": "sh040",
+                    "var_389b3f9b": "#hash_29087ea749704e90",
+                    "var_bb64ee8c": "#hash_e34c712d4d2d2ac"
+                }
+            ],
+            "var_6d72caf2": 1,
+            "model": "#hash_225b7a1c33079fb1",
+            "type": "player",
+            "var_db255011": 1,
+            "name": "player5",
+            "var_1a95895f": 1
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_73d6b08b5ec1a9e1",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "sh010"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_73d6b38b5ec1aefa",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "sh015"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_73da368b5ec4c36a",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "sh020"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_73dd9c8b5ec7a693",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "sh030"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_73e1228b5ecac01c",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "sh040"
+                }
+            ],
+            "model": 0,
+            "type": "vehicle",
+            "var_e2360d85": 1,
+            "var_db255011": 1,
+            "deletewhenfinished": 1,
+            "name": "helicopter"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_2ac22239546ffe2c",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "sh010"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_2ac21f39546ff913",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "sh015"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_2acc343954787147",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "sh020"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_2ac8ae39547557be",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "sh030"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_2ab7b0395466e7f1",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "sh040"
+                }
+            ],
+            "model": "#hash_3ca1ea9d84ee22b4",
+            "type": "prop",
+            "var_db255011": 1,
+            "deletewhenfinished": 1,
+            "name": "helicopter_pilot"
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "cin_zm_silver_intro",
+    "dontsync": 1,
+    "disablesceneskipping": 1,
+    "var_a6da2039": "cin_zm_silver_intro",
+    "aligntarget": "tag_align_intro_start",
+    "ignorestreamer": 1,
+    "team": "allies"
+}

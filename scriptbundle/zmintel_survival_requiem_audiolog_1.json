@@ -1,0 +1,51 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_63d9d3a935b0c9ae",
+            "var_f35c5951": 0.7,
+            "var_5d4b5964": 14.53,
+            "var_36bf8e05": "#hash_748d703dd1ce8455"
+        },
+        {
+            "var_46bd7973": "#hash_63d9d4a935b0cb61",
+            "var_f35c5951": 1,
+            "var_5d4b5964": 22.27,
+            "var_36bf8e05": "#hash_46879da9327d0244"
+        },
+        {
+            "var_46bd7973": "#hash_63d9d1a935b0c648",
+            "var_f35c5951": 0.5,
+            "var_5d4b5964": 14.72,
+            "var_36bf8e05": "#hash_6f7ede01019b3537"
+        },
+        {
+            "var_46bd7973": "#hash_63d9d2a935b0c7fb",
+            "var_f35c5951": 0.7,
+            "var_5d4b5964": 16.98,
+            "var_36bf8e05": "#hash_518fcdb04106d966"
+        },
+        {
+            "var_46bd7973": "#hash_63d9d7a935b0d07a",
+            "var_f35c5951": 0.5,
+            "var_5d4b5964": 15.66,
+            "var_36bf8e05": "#hash_36f76c1a68943691"
+        }
+    ],
+    "description": "#hash_43e3c5a8cbcd896",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#exploration",
+    "model": "#hash_58228068154ebd8c",
+    "var_824079e7": "#survival",
+    "uimodel": "#hash_b967b1b400fed9b",
+    "type": "zmintel",
+    "season": 2,
+    "var_ad4ad686": "#hash_1303dcb8d0e80e33",
+    "soundloop": "#hash_2e77024e1f0a29f1",
+    "name": "zmintel_survival_requiem_audiolog_1",
+    "var_9be0526e": "#audiolog",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "var_348b91fd": "#tape",
+    "title": "#hash_e78b6eb39de0d66",
+    "var_3bb3493d": "#hash_6b3c3d803cc7808e"
+}

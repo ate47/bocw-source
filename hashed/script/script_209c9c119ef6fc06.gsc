@@ -329,7 +329,7 @@ function function_3adc69b0(localclientnum = 0) {
     level endon(#"disconnect");
     while (1) {
         waitresult = undefined;
-        waitresult = level waittill("CollectibleInspect" + localclientnum, #"hash_75c7d1b212499a1b");
+        waitresult = level waittill("CollectibleInspect" + localclientnum, #"collectibleinspect");
         switch (waitresult.event_name) {
         case #"start":
             if (isdefined(waitresult.origin) && isstring(waitresult.origin)) {

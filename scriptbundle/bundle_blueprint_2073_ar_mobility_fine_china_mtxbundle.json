@@ -1,0 +1,31 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_mobility_bp_finec2_mtxitem",
+            "itemid": "26831267"
+        },
+        {
+            "var_4a4bc969": "#smg_standard_cb_bp_finec1_mtxitem",
+            "itemid": "25839695"
+        },
+        {
+            "var_4a4bc969": "#pistol_semiauto_bp_finechina_mtxitem",
+            "itemid": "26018791"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_bcjar_mtxitem",
+            "itemid": "19964482"
+        }
+    ],
+    "itemname": "#hash_602a10ef72c1d2e1",
+    "var_375a1747": "#hash_6eb88cbef2a6ac77",
+    "name": "bundle_blueprint_2073_ar_mobility_fine_china_mtxbundle",
+    "var_a788fada": "#hash_1a628f1cd3fce5aa",
+    "var_22f91505": "#hash_1484388491500ee9",
+    "var_566825be": "#hash_20faf8fb91c0f636",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_1bb14a8ed08ff9e9",
+    "var_db3e02ab": 2000,
+    "itemid": "17894677"
+}

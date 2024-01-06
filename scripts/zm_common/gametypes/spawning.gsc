@@ -16,7 +16,7 @@
 function private function_70a657d8() {
     level init_spawn_system();
     level.recently_deceased = [];
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         level.recently_deceased[team] = util::spawn_array_struct();
     }
     callback::on_connecting(&on_player_connecting);
@@ -48,7 +48,7 @@ function init_spawn_system() {
     spawnsystem.ispawn_teammask[#"none"] = spawnsystem.ispawn_teammask_free;
     all = spawnsystem.ispawn_teammask_free;
     count = 1;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         spawnsystem.ispawn_teammask[team] = 1 << count;
         all = all & spawnsystem.ispawn_teammask[team];
         count++;
@@ -400,11 +400,11 @@ function updateallspawnpoints() {
     }
     spawnlogic::clearspawnpoints();
     if (level.teambased) {
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             spawnlogic::addspawnpoints(team, level.unified_spawn_points[team].a);
         }
     } else {
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             spawnlogic::addspawnpoints(#"none", level.unified_spawn_points[team].a);
         }
     }
@@ -484,7 +484,7 @@ function get_debug_spawnpoint(player) {
             level.test_spawn_point_index = 0;
         }
         count = 0;
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             size = level.unified_spawn_points[team].a.size;
             if (level.test_spawn_point_index < count + size) {
                 return level.unified_spawn_points[team].a[level.test_spawn_point_index - count];

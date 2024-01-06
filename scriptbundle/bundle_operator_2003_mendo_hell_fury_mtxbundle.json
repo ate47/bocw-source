@@ -1,0 +1,44 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_cub_pl_dgi_general_mtxitem",
+            "itemid": "19260647"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_cub_dgi_mtxitem",
+            "itemid": "21801561"
+        },
+        {
+            "var_4a4bc969": "#lmg_accurate_bp_bsilver_mtxitem",
+            "itemid": "21765468"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s2_analog_black_silver_mtxitem",
+            "itemid": "18632357"
+        },
+        {
+            "var_4a4bc969": "#execution_003_mtxitem",
+            "itemid": "21675608"
+        },
+        {
+            "var_4a4bc969": "#paintjob_sticker_marquee_05_mtxitem",
+            "itemid": "17823703"
+        },
+        {
+            "var_4a4bc969": "#callingcards_hellsfury_mtxitem",
+            "itemid": "30298487"
+        }
+    ],
+    "itemname": "#hash_2438edb54ce924d5",
+    "var_375a1747": "#hash_2b2c19fca74e3fbb",
+    "var_579fd6c3": 50,
+    "name": "bundle_operator_2003_mendo_hell_fury_mtxbundle",
+    "var_a788fada": "#hash_5555315dec3ef1a2",
+    "var_22f91505": "#hash_7221c0fb61c88afa",
+    "var_566825be": "#hash_4a421f11eea6e4ee",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_306d3cda99cb0df6",
+    "var_db3e02ab": 2000,
+    "itemid": "21005256"
+}

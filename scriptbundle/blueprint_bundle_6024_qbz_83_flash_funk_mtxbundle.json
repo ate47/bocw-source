@@ -1,0 +1,39 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_mobility_bp_flashf_mtxitem",
+            "itemid": "24664572"
+        },
+        {
+            "var_4a4bc969": "#tr_damagesemi_bp_flashf_mtxitem",
+            "itemid": "26551677"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_boss_chalice_mtxitem",
+            "itemid": "27491871"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_ru_tank_t72_assembly_mpx_flash_funk_mtxitem",
+            "itemid": "32460981"
+        },
+        {
+            "var_4a4bc969": "#emblems_tacticalfunk_s6_animated_mtxitem",
+            "itemid": "24407201"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_tacticalfunk_s6_mtxitem",
+            "itemid": "29072443"
+        }
+    ],
+    "itemname": "#hash_2d5f5ddd08b99d76",
+    "var_375a1747": "#hash_4e54cbcd5e157c58",
+    "name": "blueprint_bundle_6024_qbz_83_flash_funk_mtxbundle",
+    "var_a788fada": "#hash_7d88c92f16413427",
+    "var_22f91505": "#hash_709db52489c0dffd",
+    "var_566825be": "#hash_1c44a9b0a1930a6f",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_c0083641aa4cb5",
+    "var_db3e02ab": 2000,
+    "itemid": "22176078"
+}

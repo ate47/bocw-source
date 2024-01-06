@@ -1,0 +1,19 @@
+{
+    "description": "#hash_4f37c1712e6a505d",
+    "itemspawnentry": "#item_zmintel_survival_omega_artifact_11",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#exploration",
+    "model": "#hash_28555c0b46fc44ca",
+    "var_824079e7": "#survival",
+    "uimodel": "#hash_3fed1624f89d7509",
+    "type": "zmintel",
+    "season": 4,
+    "var_ad4ad686": "#omega",
+    "var_217aec15": "#hash_1ca5af245c61b089",
+    "name": "zmintel_survival_omega_artifact_11",
+    "var_9be0526e": "#artifact",
+    "var_83e219de": "#hash_55af78a255e77597",
+    "var_53be913a": 5,
+    "title": "#hash_2448bfb3dda3d64b",
+    "mapname": "#hash_b0bee9e471b19df"
+}

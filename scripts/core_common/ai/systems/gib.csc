@@ -43,7 +43,7 @@ function private function_3aa023f1(name) {
     gibpiecelookup[128] = "rightleg";
     gibpiecelookup[256] = "leftleg";
     gibpieces = [];
-    foreach (gibpiece in gibpiecelookup) {
+    foreach (gibflag, gibpiece in gibpiecelookup) {
         if (!isdefined(gibpiece)) {
             /#
                 assertmsg("<unknown string>" + gibflag);
@@ -102,7 +102,7 @@ function private function_9fe14ca3(entity, gibflag, var_c3317960) {
     gibpiecelookup[0] = "left";
     gibpiecelookup[1] = "right";
     gibpieces = [];
-    foreach (gibpiece in gibpiecelookup) {
+    foreach (side, gibpiece in gibpiecelookup) {
         if (!isdefined(gibpiece)) {
             continue;
         }

@@ -1,0 +1,47 @@
+{
+    "var_f2454da1": [
+        {
+            "var_9e589ff4": 1,
+            "var_75f09f03": "#hash_579fd21d2eccbe32",
+            "var_81294378": "#==",
+            "var_88ff5fc3": "#none"
+        },
+        {
+            "var_9e589ff4": 1,
+            "var_75f09f03": "#hash_2a94d100c6704289",
+            "var_81294378": "#==",
+            "var_88ff5fc3": "#none"
+        },
+        {
+            "var_9e589ff4": 1,
+            "var_75f09f03": "#hash_1fddfb4d13ade0ed",
+            "var_81294378": "#==",
+            "var_88ff5fc3": "#none"
+        },
+        {
+            "var_9e589ff4": 1,
+            "var_75f09f03": "#hash_91457ec9b21cffa",
+            "var_81294378": "#==",
+            "var_88ff5fc3": "#none"
+        },
+        {
+            "var_9e589ff4": 1,
+            "var_75f09f03": "#hash_5591ceaf15795efc",
+            "var_81294378": "#==",
+            "var_88ff5fc3": "#none"
+        },
+        {
+            "var_9e589ff4": 1,
+            "var_75f09f03": "#hash_3ae5c2de2c67a71e",
+            "var_81294378": "#==",
+            "var_88ff5fc3": "#none"
+        }
+    ],
+    "var_922067c4": "SCRIPTBUNDLE",
+    "type": "didyouknowentry",
+    "var_9e589ff4": 1,
+    "name": "tips_warzone_groundwar",
+    "var_81294378": "#==",
+    "var_88ff5fc3": "#wzbigteambattle",
+    "var_b96cb18c": 1
+}

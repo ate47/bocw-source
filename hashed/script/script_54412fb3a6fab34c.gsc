@@ -117,7 +117,7 @@ function private function_77a1c8ae(*userdata) {
             }
         }
         if (isdefined(level.player.var_404d1644) == 1) {
-            foreach (var_f9695b5f in level.player.var_404d1644) {
+            foreach (var_9fa1f8fb, var_f9695b5f in level.player.var_404d1644) {
                 if (var_f828a846 == var_9fa1f8fb && isdefined(level.var_28778381[var_f828a846]) == 0) {
                     level.player.var_404d1644[var_f828a846] = undefined;
                 }
@@ -1002,9 +1002,9 @@ function function_c9ebfa2(xanim, *notetrack, *var_596cbb65) {
 // Checksum 0x7860334e, Offset: 0x3da8
 // Size: 0x196
 function private function_643b5581(xanim) {
-    foreach (var_d74d7402 in level.scr_anim) {
+    foreach (var_7cd1f30b, var_d74d7402 in level.scr_anim) {
         if (isstring(var_7cd1f30b) && isarray(var_d74d7402)) {
-            foreach (var_42203061 in var_d74d7402) {
+            foreach (var_ba93f88, var_42203061 in var_d74d7402) {
                 if (isstring(var_ba93f88) && !isarray(var_42203061)) {
                     if (xanim == var_42203061) {
                         result = [];

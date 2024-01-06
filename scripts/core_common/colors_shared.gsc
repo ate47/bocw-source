@@ -290,7 +290,7 @@ function debug_colornodes() {
 // Size: 0x2c0
 function draw_colornodes(array, team) {
     /#
-        foreach (v in array[team]) {
+        foreach (k, v in array[team]) {
             color = _get_debug_color(function_9e72a96(k)[0]);
             if (isdefined(level.colornodes_debug_array[team][k])) {
                 a_team_nodes = level.colornodes_debug_array[team][k];
@@ -1758,7 +1758,7 @@ function update_debug_friendlycolor_on_death() {
     self endon(#"debug_color_update");
     self waittill(#"death");
     /#
-        foreach (v in level.debug_color_friendlies) {
+        foreach (n_key, v in level.debug_color_friendlies) {
             ai = getentbynum(n_key);
             if (!isalive(ai)) {
                 arrayremoveindex(level.debug_color_friendlies, n_key, 1);

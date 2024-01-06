@@ -1,0 +1,40 @@
+{
+    "worldfx": [
+        {
+            "worldfx": "#hash_6c7840c9ca34f2a3"
+        }
+    ],
+    "var_a6616b9c": 1,
+    "amount": 1,
+    "var_fa988b4b": 60,
+    "var_922067c4": "scriptbundle",
+    "var_5dc4470b": 14,
+    "model": "#hash_23a5f9a86747c06e",
+    "var_16e34ef4": 64,
+    "var_e9898330": "pingitemscorestreakcontrolledmissile",
+    "weapon": "#hash_3de3d523512f7cbc",
+    "var_ac75b59f": -1,
+    "var_c2de1e75": "zm_item_pickup_rumble",
+    "type": "itemspawnentry",
+    "hintstring": "#hash_2be61f2bd839dd5b",
+    "spawnsound": "zmb_powerup_kls_spawn",
+    "var_6b5d0aaa": 1,
+    "killstreak": "killstreak_remote_missile_zm",
+    "var_4a1a4613": "armor_swap",
+    "var_22d128f2": 6,
+    "name": "item_survival_scorestreak_remote_missile",
+    "displayname": "#hash_2be61f2bd839dd5b",
+    "var_9e569978": 1,
+    "stackcount": 1,
+    "icon": "#hash_5d25c10cd673d74a",
+    "modelscale": 1,
+    "rarity": "Epic",
+    "var_1b0b57d1": "evt_item_despawn",
+    "var_bbdaa6b7": 13,
+    "handler": "#hash_1f0d729dc6dd1202",
+    "var_3af59a99": 1,
+    "pickupicon": "#hash_5d25c10cd673d74a",
+    "var_50773731": 3,
+    "itemtype": "scorestreak",
+    "pickupsound": "zmb_powerup_kls_pickup"
+}

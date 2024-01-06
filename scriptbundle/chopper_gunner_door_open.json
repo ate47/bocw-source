@@ -1,0 +1,66 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_3a21a26184f65391",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "firstframe": 1,
+            "model": "#hash_5a75d00b12f75574",
+            "type": "fakeplayer",
+            "var_db255011": 1,
+            "deletewhenfinished": 1,
+            "name": "fakearms"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_3a21a26184f65391",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "firstframe": 1,
+            "model": "#hash_1918a027c5c6ec0c",
+            "type": "fakeplayer",
+            "var_db255011": 1,
+            "name": "gunner"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_7483c325182bab52",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "disabled": 1,
+            "model": 0,
+            "type": "vehicle",
+            "var_db255011": 1,
+            "name": "vehicle 1"
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "chopper_gunner_door_open",
+    "dontsync": 1,
+    "team": "any"
+}

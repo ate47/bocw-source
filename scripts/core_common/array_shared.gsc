@@ -11,7 +11,7 @@
 // Size: 0x190
 function filter(&array, b_keep_keys, func_filter, ...) {
     a_new = [];
-    foreach (val in array) {
+    foreach (key, val in array) {
         a_args = arraycombine(array(val), vararg, 1, 0);
         if (util::single_func_argarray(undefined, func_filter, a_args)) {
             if (isstring(key) || isweapon(key)) {
@@ -71,7 +71,7 @@ function get_touching(a_ents, e_volume) {
 // Size: 0xe0
 function remove_index(array, index, b_keep_keys) {
     a_new = [];
-    foreach (val in array) {
+    foreach (key, val in array) {
         if (key == index) {
             continue;
         } else if (is_true(b_keep_keys)) {
@@ -95,7 +95,7 @@ function function_b1d17853(&array) {
             add(remove, key);
         } else {
             var_2c64587b[key] = 1;
-            foreach (var_cc6c9b0a in array) {
+            foreach (var_279de89e, var_cc6c9b0a in array) {
                 if (var_279de89e != key && var_cc6c9b0a == item && !isdefined(var_2c64587b[var_279de89e])) {
                     add(remove, key);
                     break;
@@ -574,7 +574,7 @@ function push_front(&array, val) {
 // Checksum 0xb070a75b, Offset: 0x1e00
 // Size: 0xa0
 function replace(array, value, replacement) {
-    foreach (val in array) {
+    foreach (i, val in array) {
         if (val === value) {
             array[i] = replacement;
         }
@@ -846,7 +846,7 @@ function function_460f3c24(array1, array2) {
     if (array1.size != array2.size) {
         return 0;
     }
-    foreach (v in array1) {
+    foreach (key, v in array1) {
         if (v !== array2[key]) {
             return 0;
         }

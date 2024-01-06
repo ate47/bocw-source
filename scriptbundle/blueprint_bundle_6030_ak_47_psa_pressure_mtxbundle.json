@@ -1,0 +1,43 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_damage_bp_psa_mtxitem",
+            "itemid": "18510110"
+        },
+        {
+            "var_4a4bc969": "#sniper_quickscope_bp_psa_mtxitem",
+            "itemid": "21731778"
+        },
+        {
+            "var_4a4bc969": "#smg_accurate_bp_bod_mtxitem",
+            "itemid": "20764905"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_frying_pan_mtxitem",
+            "itemid": "27196477"
+        },
+        {
+            "var_4a4bc969": "#emblems_flamingskullheadgrid_mtxitem",
+            "itemid": "27921944"
+        },
+        {
+            "var_4a4bc969": "#callingcards_public_service_announcement_s6_mtxitem",
+            "itemid": "19954926"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_flamingskullheadgrid_s6_mtxitem",
+            "itemid": "25863991"
+        }
+    ],
+    "itemname": "#hash_781989a81722e8db",
+    "var_375a1747": "#hash_671d168bab973e5d",
+    "name": "blueprint_bundle_6030_ak_47_psa_pressure_mtxbundle",
+    "var_a788fada": "#hash_630ddc3b470ee178",
+    "var_22f91505": "#hash_730cd20d682be07c",
+    "var_566825be": "#hash_61b14dc82d64b1a4",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_68bad899a382d3ec",
+    "var_db3e02ab": 2000,
+    "itemid": "28321525"
+}

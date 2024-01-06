@@ -1,0 +1,87 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_13d6cd6871f66125",
+            "var_f35c5951": 0.8,
+            "var_5d4b5964": 6.21,
+            "var_36bf8e05": "#hash_6ed134b7ef0e7b14"
+        },
+        {
+            "var_46bd7973": "#hash_13d6cc6871f65f72",
+            "var_f35c5951": 0.8,
+            "var_5d4b5964": 7.21,
+            "var_36bf8e05": "#hash_6ec18a23b27a899d"
+        },
+        {
+            "var_46bd7973": "#hash_13d6cb6871f65dbf",
+            "var_f35c5951": 0.8,
+            "var_5d4b5964": 7.62,
+            "var_36bf8e05": "#hash_2950f0f25359400e"
+        },
+        {
+            "var_46bd7973": "#hash_13d6ca6871f65c0c",
+            "var_f35c5951": 1.3,
+            "var_5d4b5964": 8.85,
+            "var_36bf8e05": "#hash_95098daf1567ccf"
+        },
+        {
+            "var_46bd7973": "#hash_13d6c96871f65a59",
+            "var_f35c5951": 1.5,
+            "var_5d4b5964": 13.8,
+            "var_36bf8e05": "#hash_2e262a27a67f8070"
+        },
+        {
+            "var_46bd7973": "#hash_13d6c86871f658a6",
+            "var_f35c5951": 1.2,
+            "var_5d4b5964": 10.5,
+            "var_36bf8e05": "#hash_5a80481d2fcaef29"
+        },
+        {
+            "var_46bd7973": "#hash_13d6c76871f656f3",
+            "var_f35c5951": 1,
+            "var_5d4b5964": 8.7,
+            "var_36bf8e05": "#hash_eabd575adf68da"
+        },
+        {
+            "var_46bd7973": "#hash_13d6c66871f65540",
+            "var_f35c5951": 1.1,
+            "var_5d4b5964": 12.03,
+            "var_36bf8e05": "#hash_31d02ac2a942e4fb"
+        },
+        {
+            "var_46bd7973": "#hash_13d6d56871f66ebd",
+            "var_f35c5951": 0.8,
+            "var_5d4b5964": 3.5,
+            "var_36bf8e05": "#hash_7239e3b9c697c19c"
+        },
+        {
+            "var_46bd7973": "#hash_13d6d46871f66d0a",
+            "var_f35c5951": 1.2,
+            "var_5d4b5964": 13.5,
+            "var_36bf8e05": "#hash_5f4545ba3ddab7c5"
+        },
+        {
+            "var_46bd7973": "#hash_2c5c9779a5a3dd26",
+            "var_f35c5951": 0.5,
+            "var_5d4b5964": 10.71,
+            "var_36bf8e05": "#hash_73fa54b784a16597"
+        }
+    ],
+    "description": "#hash_3219e63db9d4e117",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#radio",
+    "model": "#hash_4fe1a0b748461f0f",
+    "var_824079e7": "#survival",
+    "uimodel": "#hash_7ea108a0c0ac5fa4",
+    "type": "zmintel",
+    "season": 4,
+    "var_ad4ad686": "#hash_1303dcb8d0e80e33",
+    "soundloop": "#hash_5db0167d85d70c82",
+    "name": "zmintel_survival_requiem_radio_9",
+    "var_9be0526e": "#hash_20ea75a25d912949",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "var_348b91fd": "#radio",
+    "title": "#hash_1e3a7af5708319ad",
+    "var_3bb3493d": "#hash_2f678d2a7fbb8df"
+}

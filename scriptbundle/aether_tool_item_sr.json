@@ -1,0 +1,31 @@
+{
+    "worldfx": [
+        {
+            "worldfx": "#hash_3dad79ca7ca879b5"
+        }
+    ],
+    "var_a6616b9c": 1,
+    "var_fa988b4b": 60,
+    "var_922067c4": "scriptbundle",
+    "var_3e688854": 16,
+    "model": "#hash_4d42f402f7b6780f",
+    "var_16e34ef4": 64,
+    "var_ac75b59f": -1,
+    "var_c2de1e75": "zm_item_pickup_rumble",
+    "type": "itemspawnentry",
+    "hintstring": "#hash_568d486fcd1332fc",
+    "spawnsound": "zmb_powerup_aethertool_spawn",
+    "var_4a1a4613": "armor_swap",
+    "name": "aether_tool_item_sr",
+    "displayname": "#hash_568d486fcd1332fc",
+    "var_9e569978": 1,
+    "icon": "#hash_5f878cd7f454a00b",
+    "modelscale": 2,
+    "rarity": "Legendary",
+    "var_1b0b57d1": "evt_item_despawn",
+    "handler": "#hash_1002a9af0882010e",
+    "var_3af59a99": 1,
+    "pickupicon": "#hash_5f878cd7f454a00b",
+    "itemtype": "survival_upgrade_item",
+    "pickupsound": "zmb_powerup_aethertool_pickup"
+}

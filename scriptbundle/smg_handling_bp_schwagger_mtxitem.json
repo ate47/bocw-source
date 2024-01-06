@@ -1,0 +1,23 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#bundle_fantasy_1001_sims_blackkklansman_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_6aef8afd5855955d",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_60b4703683d776fb",
+    "weapon": "#hash_7a3989475f8af314",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_31d192e70e00f9df",
+    "season": 1,
+    "var_46300498": 1,
+    "baseweapon": "#hash_7a3989475f8af314",
+    "name": "smg_handling_bp_schwagger_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "27680333",
+    "blueprint": "#hash_6aef8afd5855955d"
+}

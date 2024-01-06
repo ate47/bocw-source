@@ -105,7 +105,7 @@ function onscoreclosemusic() {
         scorelimitcheck = scorelimit - 10;
         topscore = 0;
         runnerupscore = 0;
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             score = [[ level._getteamscore ]](team);
             if (score > topscore) {
                 runnerupscore = topscore;

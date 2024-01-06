@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#blueprint_bundle_3040_crossbow_gothic_pirate_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_3d590cffd8be5697",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_71c6b28581d43e8d",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 3,
+    "var_46300498": 1,
+    "baseweapon": "#hash_18a2b66939a974a1",
+    "name": "special_crossbow_bp_goth_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "30506921",
+    "blueprint": "#hash_3d590cffd8be5697"
+}

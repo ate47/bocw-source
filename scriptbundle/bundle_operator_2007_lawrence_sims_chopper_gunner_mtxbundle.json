@@ -1,0 +1,47 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_cia_commando_mtxitem",
+            "itemid": "31743198"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_cia_mtxitem",
+            "itemid": "20084886"
+        },
+        {
+            "var_4a4bc969": "#lmg_slowfire_bp_pigs_mtxitem",
+            "itemid": "22667484"
+        },
+        {
+            "var_4a4bc969": "#shotgun_pump_bp_great_mtxitem",
+            "itemid": "32108797"
+        },
+        {
+            "var_4a4bc969": "#reticle_59_mtxitem",
+            "itemid": "18955021"
+        },
+        {
+            "var_4a4bc969": "#emblems_choppershield_animated_mtxitem",
+            "itemid": "26378596"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_ru_heli_gunship_hind_mpx_vietnam_mtxitem",
+            "itemid": "20506732"
+        },
+        {
+            "var_4a4bc969": "#callingcards_planespinup4_018_mtxitem",
+            "itemid": "32871999"
+        }
+    ],
+    "itemname": "#hash_2d924135c6d13df1",
+    "var_375a1747": "#hash_3c4cbeadb0f65703",
+    "name": "bundle_operator_2007_lawrence_sims_chopper_gunner_mtxbundle",
+    "var_a788fada": "#hash_503988eae9a9a6dc",
+    "var_22f91505": "#hash_6cf3698b947ceb9e",
+    "var_566825be": "#hash_6144127d90155a8",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_1952367a4143ad52",
+    "var_db3e02ab": 2000,
+    "itemid": "18070060"
+}

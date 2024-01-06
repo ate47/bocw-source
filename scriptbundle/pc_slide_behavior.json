@@ -1,0 +1,45 @@
+{
+    "option_dependencies": [
+        {
+            "var_1643d946": "1",
+            "var_6825bdb": "#crouch_behavior",
+            "operator": "=="
+        }
+    ],
+    "options": [
+        {
+            "label": "#hash_4e6b05eba4bbb43f",
+            "value": "0"
+        },
+        {
+            "label": "#menu/legacy",
+            "value": "2"
+        },
+        {
+            "label": "#hash_48de991870a51d27",
+            "value": "1"
+        }
+    ],
+    "var_dfedf08e": 2,
+    "var_d260763": "#hash_5d3f403f78e8597f",
+    "description": "#hash_50998f02bd65fa6e",
+    "var_60fcfffa": "#hash_57f3f21157ef659b",
+    "var_9bc3be7": 1,
+    "var_4ced19ab": 1,
+    "var_10e01ad5": 1,
+    "var_71620d66": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "name": "pc_slide_behavior",
+    "displayname": "#hash_52b3c9ef51955a71",
+    "var_4a4760c0": 60,
+    "var_500458ac": 10,
+    "var_926d1be9": 1,
+    "var_66faec87": 120,
+    "statname": "tap_to_slide_kbm",
+    "var_6f00a61a": 1.1,
+    "minvalue": 1,
+    "var_d4e288e": 90,
+    "var_b7401319": "#hash_6a489abface20fd6"
+}

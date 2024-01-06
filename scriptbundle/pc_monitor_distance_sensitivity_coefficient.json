@@ -1,0 +1,54 @@
+{
+    "option_dependencies": [
+        {
+            "var_1643d946": "1",
+            "var_6825bdb": "#pc_monitor_distance_sensitivity_scaling",
+            "operator": "=="
+        }
+    ],
+    "options": [
+        {
+            "label": "#hash_774df961990d1bcf",
+            "value": "0"
+        },
+        {
+            "label": "#hash_774df861990d1a1c",
+            "value": "0.36"
+        },
+        {
+            "label": "#hash_774dfb61990d1f35",
+            "value": "0.71"
+        },
+        {
+            "label": "#hash_774dfa61990d1d82",
+            "value": "1.07"
+        },
+        {
+            "label": "#hash_774df561990d1503",
+            "value": "1.33"
+        },
+        {
+            "label": "#hash_774df461990d1350",
+            "value": "1.78"
+        }
+    ],
+    "description": "#hash_6dc71248d00be956",
+    "var_60fcfffa": "#hash_7cdc6df793f97d8c",
+    "var_9bc3be7": 1,
+    "var_4ced19ab": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 0.01,
+    "maxvalue": 1,
+    "name": "pc_monitor_distance_sensitivity_coefficient",
+    "displayname": "#hash_3abe0ef5ed72cd26",
+    "var_d6897f56": 1,
+    "var_500458ac": 10,
+    "var_926d1be9": 0.01,
+    "var_66faec87": 5,
+    "statname": "mouse_ads_monitor_distance_coefficient",
+    "var_6f00a61a": 1.1,
+    "var_d4e288e": 1.33,
+    "var_b7401319": "#hash_4cb3e74e686b536d"
+}

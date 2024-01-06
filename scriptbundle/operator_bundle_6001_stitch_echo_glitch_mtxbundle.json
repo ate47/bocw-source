@@ -1,0 +1,71 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_69509059b1e79a90"
+        },
+        {
+            "var_fe10649e": "#hash_6125f4d58d8c4c12"
+        },
+        {
+            "var_fe10649e": "#hash_6125f3d58d8c4a5f"
+        },
+        {
+            "var_fe10649e": "#hash_6125f2d58d8c48ac"
+        }
+    ],
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_rus_pl_stitch_echo_mtxitem",
+            "itemid": "29296928"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_rus_stitch_mtxitem",
+            "itemid": "30156871"
+        },
+        {
+            "var_4a4bc969": "#ar_accurate_bp_glitch_mtxitem",
+            "itemid": "26150490"
+        },
+        {
+            "var_4a4bc969": "#shotgun_pump_bp_glitch_mtxitem",
+            "itemid": "25561090"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_echo_helmet_mtxitem",
+            "itemid": "30016301"
+        },
+        {
+            "var_4a4bc969": "#execution_143_mtxitem",
+            "itemid": "24175132"
+        },
+        {
+            "var_4a4bc969": "#reticle_136_mtxitem",
+            "itemid": "24326952"
+        },
+        {
+            "var_4a4bc969": "#loot_ges_mtx_t9_fortune_cookie_mtxitem",
+            "itemid": "31629863"
+        },
+        {
+            "var_4a4bc969": "#callingcards_operator_bundle_s6_animated_mtxitem",
+            "itemid": "21848958"
+        },
+        {
+            "var_4a4bc969": "#emblems_operator_bundle_s6_animated_mtxitem",
+            "itemid": "28878159"
+        }
+    ],
+    "itemname": "#hash_77c4b893bea64cb2",
+    "var_375a1747": "#hash_69509059b1e79a90",
+    "var_3040f0d1": "#hash_69509059b1e79a90",
+    "var_8ee7db29": 1,
+    "name": "operator_bundle_6001_stitch_echo_glitch_mtxbundle",
+    "var_a788fada": "#hash_21fc369a14455313",
+    "var_22f91505": "#hash_19b35feb45f89de0",
+    "var_566825be": "#hash_44e13a6ffe7bc23b",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_fc1f0b5c7823668",
+    "var_db3e02ab": 750,
+    "itemid": "30735283"
+}

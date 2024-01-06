@@ -1,0 +1,37 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#po_c_t9_usa_pl_adler_detective_juice_pc_mtxitem",
+            "itemid": "23209643"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_hero_adler_mtxitem",
+            "itemid": "31112941"
+        },
+        {
+            "var_4a4bc969": "#callingcards_starterpack_pc_base_mtxitem",
+            "itemid": "32192954"
+        },
+        {
+            "var_4a4bc969": "#emblems_starterpack_pc_base_mtxitem",
+            "itemid": "27297102"
+        },
+        {
+            "var_4a4bc969": "#cod_points_500_mtxitem"
+        }
+    ],
+    "itemname": "#hash_4f41f57c3c600cc3",
+    "var_247d9ed7": "s1_starterpack",
+    "var_208d76b5": "#hash_1811191315ed64fc",
+    "var_70f66e54": "#hash_2511a7186437ce13",
+    "name": "steam_starter_pack_season_01_mtxentitlement",
+    "var_22f91505": "#hash_6eb3cc31268dacf4",
+    "var_566825be": "#hash_4a8754aaa729ac75",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_f3c937a9": "#hash_6966d0e0bf583ef3",
+    "var_db3e02ab": 2000,
+    "var_4e46b1b3": "#steam",
+    "itemid": "18636494",
+    "var_a592ce5": 1
+}

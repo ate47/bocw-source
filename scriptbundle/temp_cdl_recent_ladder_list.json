@@ -1,0 +1,40 @@
+{
+    "var_bb7dcd09": [
+        {
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "#hash_65cafd5895497199",
+            "var_a4f2dd9e": "#none",
+            "identifier": "Ladder1"
+        },
+        {
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "#hash_65cafd5895497199",
+            "var_a4f2dd9e": "#none",
+            "identifier": "Ladder2"
+        },
+        {
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "#hash_65cafd5895497199",
+            "var_a4f2dd9e": "#none",
+            "identifier": "Ladder3"
+        },
+        {
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "#hash_65cafd5895497199",
+            "var_a4f2dd9e": "#none",
+            "identifier": "Ladder4"
+        },
+        {
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "#hash_65cafd5895497199",
+            "var_a4f2dd9e": "#none",
+            "identifier": "Ladder5"
+        }
+    ],
+    "var_72ef398b": 1,
+    "var_922067c4": "SCRIPTBUNDLE",
+    "var_62a68a39": 1,
+    "var_a77ed948": "#none",
+    "type": "datasourcelist",
+    "name": "temp_cdl_recent_ladder_list"
+}

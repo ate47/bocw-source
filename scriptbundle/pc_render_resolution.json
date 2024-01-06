@@ -1,0 +1,34 @@
+{
+    "option_dependencies": [
+        {
+            "var_1643d946": "0",
+            "var_6825bdb": "#pc_nvidia_dlss",
+            "operator": "~="
+        }
+    ],
+    "var_d260763": "#hash_2c363b43d01cf73e",
+    "description": "#hash_3a2302383d4a250d",
+    "var_ebe98576": 1,
+    "var_60fcfffa": "#menu/on",
+    "var_9bc3be7": 1,
+    "var_10e01ad5": 1,
+    "var_71620d66": 1,
+    "var_491e9867": "high",
+    "var_799f4f7": 1,
+    "var_140d0a67": 1,
+    "var_77c0bdd6": 1,
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "maxvalue": 1,
+    "name": "pc_render_resolution",
+    "displayname": "#hash_d0dc1945a1a5c5b",
+    "var_4a4760c0": 20,
+    "var_d6897f56": 1,
+    "var_500458ac": 10,
+    "var_66faec87": 200,
+    "statname": "r_sceneResolutionMultiplier",
+    "var_8b80386": 1,
+    "var_6f00a61a": 1.1,
+    "var_d4e288e": 50,
+    "var_b7401319": "#menu/off"
+}

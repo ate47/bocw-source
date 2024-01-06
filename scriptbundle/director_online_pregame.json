@@ -1,0 +1,57 @@
+{
+    "var_16c83fbf": [
+        {
+            "overrides": [
+                {
+                    "key": "#maxclients",
+                    "value": "4"
+                },
+                {
+                    "key": "#hash_24a523f3ae5c68d6",
+                    "value": "4"
+                },
+                {
+                    "key": "#hash_62bf14968131be83",
+                    "value": "0"
+                }
+            ]
+        },
+        {
+            "overrides": [
+                {
+                    "key": "#maxclients",
+                    "value": "4"
+                },
+                {
+                    "key": "#hash_24a523f3ae5c68d6",
+                    "value": "4"
+                },
+                {
+                    "key": "#hash_62bf14968131be83",
+                    "value": "0"
+                }
+            ],
+            "mainmode": 3
+        }
+    ],
+    "var_b2458101": 1,
+    "lobbymode": 1,
+    "id": 21,
+    "var_45f67af4": "director_online",
+    "maxlocalclientsnetwork": 1,
+    "mainmode": 4,
+    "var_d16ccae8": 1,
+    "isprivate": 1,
+    "var_3cd09ce7": 1,
+    "var_1d4ea5bd": "lobby_mp",
+    "room": "#private_lobby_pose",
+    "var_7f60c82f": 6,
+    "var_9ff63d1b": "#hash_5dd231fd15db7531",
+    "maxclients": 6,
+    "name": "director_online_pregame",
+    "networkmode": 2,
+    "var_80a68682": "director_online_pregame",
+    "egamemodes": 2,
+    "title": "#hash_27307830087a401",
+    "maxlocalclients": 2
+}

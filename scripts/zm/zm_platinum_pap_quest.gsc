@@ -226,7 +226,7 @@ function function_904d21fd() {
     var_808239f1 = getaiarchetypearray(#"zombie");
     max_dist = 0;
     var_202d087b = undefined;
-    foreach (actor in var_808239f1) {
+    foreach (i, actor in var_808239f1) {
         if (is_true(actor.var_921627ad) || is_true(actor.var_a950813d) || is_true(actor.var_4df707f6)) {
             var_808239f1[i] = -1;
         }

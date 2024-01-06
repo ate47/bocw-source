@@ -1,0 +1,14 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#weapon_xp_token_legendary_mtxitem",
+            "itemid": "19262075"
+        }
+    ],
+    "itemname": "#hash_121ae091e7830544",
+    "name": "atvi_weapon_xp_token_60_mins_mtxentitlement",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "itemid": "31280783"
+}

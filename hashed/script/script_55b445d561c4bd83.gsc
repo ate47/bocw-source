@@ -52,7 +52,7 @@ function private function_d46cc4f5() {
 // Size: 0xda
 function private function_c0e2f147(team) {
     if (is_true(getgametypesetting(#"hash_c6a2e6c3e86125a"))) {
-        return getgametypesetting(#"hash_7e8c70dc225f354f");
+        return getgametypesetting(#"bot_difficulty_vs_bots");
     }
     if (!level.teambased) {
         team = #"allies";

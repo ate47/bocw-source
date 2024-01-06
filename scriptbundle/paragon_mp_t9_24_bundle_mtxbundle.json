@@ -1,0 +1,27 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#prestige24_mp_mtxitem",
+            "itemid": "30925640"
+        },
+        {
+            "var_4a4bc969": "#ranks_prestige_24_large_mtxitem",
+            "itemid": "31597895"
+        },
+        {
+            "var_4a4bc969": "#paintjob_ranks_prestige_24_large_mtxitem",
+            "itemid": "21259714"
+        }
+    ],
+    "itemname": "#hash_2f8cb6048f5cbed7",
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "var_637c8edf": 1,
+    "name": "paragon_mp_t9_24_bundle_mtxbundle",
+    "var_22f91505": "#hash_314c839c7470fc00",
+    "var_566825be": "#hash_7d5c1b47ea94922f",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_7d7ec5899f818d22",
+    "var_db3e02ab": 2000,
+    "itemid": "21601537"
+}

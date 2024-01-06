@@ -1,0 +1,23 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#bundle_blueprint_2009_tr_damagesemi_serpent_striker_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_6ff6f11b1ea0f569",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_165629961fb6086f",
+    "weapon": "#hash_51114f6fd577519b",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_3991d18e6c7d3963",
+    "season": 3,
+    "var_46300498": 1,
+    "baseweapon": "#hash_51114f6fd577519b",
+    "name": "tr_damagesemi_bp_adder_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 3,
+    "itemid": "28504135",
+    "blueprint": "#hash_6ff6f11b1ea0f569"
+}

@@ -41,7 +41,7 @@ function private function_72b9b674() {
     case #"control_hc":
     case #"hash_2e55eac851a6d21b":
     case #"hash_594c4ab1d31aa150":
-        return &function_750b5743;
+        return &control_start;
     case #"dm":
     case #"dm_hc":
     case #"hash_768858163b52fe75":
@@ -49,7 +49,7 @@ function private function_72b9b674() {
     case #"dom_hc":
     case #"dom":
     case #"hash_5e13d8428d20cfa6":
-        return &function_755bc541;
+        return &dom_start;
     case #"hash_527f2aa95e2f400a":
         return &function_35d61d4;
     case #"gun":
@@ -61,7 +61,7 @@ function private function_72b9b674() {
     case #"hash_156594d96f8a6568":
     case #"hash_35a6541d081acef5":
     case #"koth_hc":
-        return &function_f375934b;
+        return &koth_start;
     case #"hash_ce0d2a7056f9c17":
     case #"tdm_hc":
     case #"tdm":
@@ -75,7 +75,7 @@ function private function_72b9b674() {
 // Params 0, eflags: 0x6 linked
 // Checksum 0x3a2d2d8e, Offset: 0x398
 // Size: 0x4c2
-function private function_750b5743() {
+function private control_start() {
     level endon(#"game_ended");
     foreach (team in level.teams) {
         level function_8f96464(team, undefined, #"chase_enemy", #"patrol");
@@ -141,7 +141,7 @@ function private function_1fb784fb(*objective) {
 // Params 0, eflags: 0x6 linked
 // Checksum 0xd06d8e85, Offset: 0x898
 // Size: 0x4ac
-function private function_755bc541() {
+function private dom_start() {
     level endon(#"game_ended");
     foreach (team in level.teams) {
         level function_8f96464(team, undefined, #"chase_enemy", #"patrol", undefined);
@@ -348,7 +348,7 @@ function private function_a6535861(*objective) {
 // Params 0, eflags: 0x6 linked
 // Checksum 0x5a52396e, Offset: 0x1748
 // Size: 0x540
-function private function_f375934b() {
+function private koth_start() {
     level endon(#"game_ended");
     foreach (team in level.teams) {
         level function_8f96464(team, undefined, #"chase_enemy", #"patrol", undefined);
@@ -538,7 +538,7 @@ function private function_323a3bdf(regions) {
 // Size: 0x96
 function private function_8d2aa32e(regions) {
     ids = [];
-    foreach (region in regions) {
+    foreach (id, region in regions) {
         ids[ids.size] = id;
     }
     return ids;

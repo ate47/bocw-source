@@ -982,7 +982,7 @@ function private function_479389f3() {
     var_b0e8278f = (0, 0, 0);
     var_683999d6 = (0, 0, 0);
     var_4c962569 = 0;
-    foreach (trace in var_df47b913) {
+    foreach (tag, trace in var_df47b913) {
         if (isdefined(trace[#"entity"])) {
             var_d643c4fc = 1;
         } else if (trace[#"fraction"] < 1) {
@@ -993,7 +993,7 @@ function private function_479389f3() {
         }
     }
     var_d3532cfe = [];
-    foreach (trace in var_dc8469e2) {
+    foreach (tag, trace in var_dc8469e2) {
         if (isdefined(trace[#"entity"])) {
             var_d643c4fc = 1;
         } else if (trace[#"fraction"] < 1) {

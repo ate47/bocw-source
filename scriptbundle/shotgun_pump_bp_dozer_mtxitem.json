@@ -1,0 +1,23 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#bundle_operator_1031_bulldozer_bulldozer_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_16f1dcc095302aaa",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_41176143ca910aa8",
+    "weapon": "#hash_5243375728e388f6",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_5b6973e07491fcc4",
+    "season": 1,
+    "var_46300498": 1,
+    "baseweapon": "#hash_5243375728e388f6",
+    "name": "shotgun_pump_bp_dozer_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "19927201",
+    "blueprint": "#hash_16f1dcc095302aaa"
+}

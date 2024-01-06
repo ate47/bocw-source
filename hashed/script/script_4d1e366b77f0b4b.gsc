@@ -1797,7 +1797,7 @@ function private function_fac064dc() {
     var_6f13bbe0 = gettime() + int(10000);
     origin = self.origin;
     owner = self.owner;
-    weapon = getweapon(#"hash_63826b4a80215cd3");
+    weapon = getweapon(#"tear_gas");
     params = getstatuseffect("dot_steiner_radiation_bomb");
     while (gettime() < var_6f13bbe0) {
         alive_players = function_a1ef346b(undefined, origin, 128);

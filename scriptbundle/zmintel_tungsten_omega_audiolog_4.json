@@ -1,0 +1,127 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_2420371b8592c215",
+            "var_f35c5951": 0.5,
+            "var_5d4b5964": 3.01,
+            "var_36bf8e05": "#hash_1852ea63b1aad40c"
+        },
+        {
+            "var_46bd7973": "#hash_563ac9ccfce10714",
+            "var_f35c5951": 0.9,
+            "var_5d4b5964": 4.82,
+            "var_36bf8e05": "#hash_796e7da047329abb"
+        },
+        {
+            "var_46bd7973": "#hash_2420351b8592beaf",
+            "var_f35c5951": 0.4,
+            "var_5d4b5964": 4.69,
+            "var_36bf8e05": "#hash_a39d3f24927cfee"
+        },
+        {
+            "var_46bd7973": "#hash_563acbccfce10a7a",
+            "var_f35c5951": 1.3,
+            "var_5d4b5964": 3.07,
+            "var_36bf8e05": "#hash_5c44a9b717168749"
+        },
+        {
+            "var_46bd7973": "#hash_2420331b8592bb49",
+            "var_f35c5951": 0.5,
+            "var_5d4b5964": 9.58,
+            "var_36bf8e05": "#hash_5d7e3f8448e4b8"
+        },
+        {
+            "var_46bd7973": "#hash_563ac5ccfce10048",
+            "var_f35c5951": 0.3,
+            "var_5d4b5964": 6.76,
+            "var_36bf8e05": "#hash_74eab5411f645637"
+        },
+        {
+            "var_46bd7973": "#hash_2420311b8592b7e3",
+            "var_f35c5951": 0.8,
+            "var_5d4b5964": 6.87,
+            "var_36bf8e05": "#hash_7639b1c87bd2c02a"
+        },
+        {
+            "var_46bd7973": "#hash_2420301b8592b630",
+            "var_f35c5951": 0.8,
+            "var_5d4b5964": 6.4,
+            "var_36bf8e05": "#hash_62b36ecc2de37c3b"
+        },
+        {
+            "var_46bd7973": "#hash_563ac2ccfce0fb2f",
+            "var_f35c5951": 1,
+            "var_5d4b5964": 3.31,
+            "var_36bf8e05": "#hash_5235cd3caa05e316"
+        },
+        {
+            "var_46bd7973": "#hash_24203e1b8592cdfa",
+            "var_f35c5951": 1.2,
+            "var_5d4b5964": 1.88,
+            "var_36bf8e05": "#hash_3bb1f016623b6dd"
+        },
+        {
+            "var_46bd7973": "#hash_66ec0b51b25f222c",
+            "var_f35c5951": 0.8,
+            "var_5d4b5964": 3.8,
+            "var_36bf8e05": "#hash_4919630108c266c3"
+        },
+        {
+            "var_46bd7973": "#hash_757c43c3f85ccd09",
+            "var_5d4b5964": 19.31,
+            "var_36bf8e05": "#hash_40cc028429847eb4"
+        },
+        {
+            "var_46bd7973": "#hash_66ec0d51b25f2592",
+            "var_f35c5951": 0.4,
+            "var_5d4b5964": 2.86,
+            "var_36bf8e05": "#hash_7280537ad15e3051"
+        },
+        {
+            "var_46bd7973": "#hash_757c41c3f85cc9a3",
+            "var_f35c5951": 0.8,
+            "var_5d4b5964": 6.25,
+            "var_36bf8e05": "#hash_3bc29a0387226f96"
+        },
+        {
+            "var_46bd7973": "#hash_757c46c3f85cd222",
+            "var_f35c5951": 0.6,
+            "var_5d4b5964": 5.65,
+            "var_36bf8e05": "#hash_1ef85c7ec66ecdc9"
+        },
+        {
+            "var_46bd7973": "#hash_66ec0851b25f1d13",
+            "var_f35c5951": 0.5,
+            "var_5d4b5964": 2.92,
+            "var_36bf8e05": "#hash_29bcce83f75924e2"
+        },
+        {
+            "var_46bd7973": "#hash_757c44c3f85ccebc",
+            "var_f35c5951": 0.8,
+            "var_5d4b5964": 1.32,
+            "var_36bf8e05": "#hash_40c9f2c919284623"
+        },
+        {
+            "var_46bd7973": "#hash_757c45c3f85cd06f",
+            "var_5d4b5964": 2.39,
+            "var_36bf8e05": "#hash_78ba7f23eed320b2"
+        }
+    ],
+    "description": "#hash_ae339e73fa115e0",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#exploration",
+    "model": "#hash_20f9a15d3e077602",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_7af8f043b1133323",
+    "type": "zmintel",
+    "season": 6,
+    "var_ad4ad686": "#omega",
+    "soundloop": "#hash_2e77024e1f0a29f1",
+    "name": "zmintel_tungsten_omega_audiolog_4",
+    "var_9be0526e": "#audiolog",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "var_348b91fd": "#tape",
+    "title": "#hash_4a52038b951a9fb8",
+    "mapname": "#zm_tungsten"
+}

@@ -1,0 +1,34 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_53280f982d8678a0",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "anim": "#hash_b96ecdeb5c174c1",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "model": "#hash_7c7c2fb9affc10dd",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "prop 1"
+        }
+    ],
+    "scenetype": "fxanim",
+    "var_922067c4": "scriptbundle",
+    "looping": 1,
+    "devstate": "placeholder",
+    "type": "scene",
+    "vmtype": "server",
+    "name": "p9_fxanim_sv_payload_atv_extend_bundle",
+    "dontsync": 1,
+    "team": "any"
+}

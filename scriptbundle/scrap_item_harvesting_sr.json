@@ -1,0 +1,35 @@
+{
+    "worldfx": [
+        {
+            "worldfx": "#hash_1c62f1903d03705a"
+        }
+    ],
+    "var_a6616b9c": 1,
+    "amount": 1,
+    "var_922067c4": "scriptbundle",
+    "model": "#hash_59df1d88923ee134",
+    "var_16e34ef4": 64,
+    "var_e9898330": "zmpingitemsalvage",
+    "var_ac75b59f": -1,
+    "var_c2de1e75": "zm_item_pickup_rumble",
+    "type": "itemspawnentry",
+    "hintstring": "#hash_2bbec956cfce9af",
+    "spawnsound": "zmb_powerup_resource_small_spawn",
+    "var_4a1a4613": "armor_swap",
+    "name": "scrap_item_harvesting_sr",
+    "displayname": "#hash_2bbec956cfce9af",
+    "var_9507cf45": "#hash_7bc7a0650101e5d0",
+    "var_9e569978": 1,
+    "stackcount": 500,
+    "icon": "#hash_7bc7a0650101e5d0",
+    "modelscale": 2,
+    "rarity": "Uncommon",
+    "var_1b0b57d1": "evt_item_despawn",
+    "handler": "#hash_292f5be0001274a4",
+    "var_b362e309": 1,
+    "var_3af59a99": 1,
+    "pickupicon": "#hash_7bc7a0650101e5d0",
+    "stackable": 1,
+    "itemtype": "survival_scrap",
+    "pickupsound": "fly_pickup_armor_repair_plate"
+}

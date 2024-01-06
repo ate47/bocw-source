@@ -1,0 +1,43 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#loot_smg_fastfire_bp_mummycat_mtxitem",
+            "itemid": "19757422"
+        },
+        {
+            "var_4a4bc969": "#lmg_accurate_bp_mummy_mtxitem",
+            "itemid": "24354099"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_mummy_cat_mtxitem",
+            "itemid": "32204011"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s5_digital_mummy_cat_mtxitem",
+            "itemid": "30738149"
+        },
+        {
+            "var_4a4bc969": "#emblems_r8g_1014_s5_animated_mtxitem",
+            "itemid": "31320509"
+        },
+        {
+            "var_4a4bc969": "#callingcards_mummycat_s5_animated_mtxitem",
+            "itemid": "21138899"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_r8g_1014_s5_mtxitem",
+            "itemid": "29630283"
+        }
+    ],
+    "itemname": "#hash_3ada01c885466f69",
+    "var_375a1747": "#hash_32ea4bf4d18ca95f",
+    "name": "blueprint_bundle_5010_mac_10_mastercraft_mummy_mtxbundle",
+    "var_a788fada": "#hash_7f505bdee848d28e",
+    "var_22f91505": "#hash_41eae4a8596aae41",
+    "var_566825be": "#hash_3130a6aadc31b37a",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_1e63f180b92d7201",
+    "var_db3e02ab": 2000,
+    "itemid": "32012063"
+}

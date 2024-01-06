@@ -1,0 +1,29 @@
+{
+    "var_bb7dcd09": [
+        {
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "#hash_e3fcc35aace209c",
+            "var_1a50db25": "#hash_49b4b6354046a23b",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "#hash_6298751da29038de",
+            "var_1a50db25": "#hash_5d627df397cce40b",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "#hash_78e0599989330ee4",
+            "var_1a50db25": "#hash_29686865fb25d961",
+            "var_a4f2dd9e": "#none"
+        }
+    ],
+    "var_72ef398b": 1,
+    "var_2f050ffa": 1,
+    "var_922067c4": "SCRIPTBUNDLE",
+    "var_62a68a39": 1,
+    "var_a77ed948": "#none",
+    "type": "datasourcelist",
+    "name": "leagueplay_rewards_tab_list"
+}

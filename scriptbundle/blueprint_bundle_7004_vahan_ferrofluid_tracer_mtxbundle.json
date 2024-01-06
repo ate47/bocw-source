@@ -1,0 +1,62 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_12521235775943e9"
+        },
+        {
+            "var_fe10649e": "#hash_3650afbc3b931665"
+        },
+        {
+            "var_fe10649e": "#hash_3650acbc3b93114c"
+        },
+        {
+            "var_fe10649e": "#hash_3650adbc3b9312ff"
+        }
+    ],
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_soviet_bp_ferrofluid_mtxitem",
+            "itemid": "23595328"
+        },
+        {
+            "var_4a4bc969": "#lmg_light_bp_ferfluid_mtxitem",
+            "itemid": "25365626"
+        },
+        {
+            "var_4a4bc969": "#loot_smg_spray_bp_ferfluid_mtxitem",
+            "itemid": "30443059"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_magnet_w_bullets_mtxitem",
+            "itemid": "24307724"
+        },
+        {
+            "var_4a4bc969": "#callingcards_ferroskull_animated_mtxitem",
+            "itemid": "29503759"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_ferroskull_mtxitem",
+            "itemid": "30363405"
+        },
+        {
+            "var_4a4bc969": "#reticle_140_mtxitem",
+            "itemid": "21060846"
+        },
+        {
+            "var_4a4bc969": "#loot_ges_mtx_t9_ferrofluid_mtxitem",
+            "itemid": "27977729"
+        }
+    ],
+    "itemname": "#hash_46303e0a03d2f2d7",
+    "var_375a1747": "#hash_12521235775943e9",
+    "var_8ee7db29": 1,
+    "name": "blueprint_bundle_7004_vahan_ferrofluid_tracer_mtxbundle",
+    "var_a788fada": "#hash_88b6d4f73c2aa5a",
+    "var_22f91505": "#hash_34fa0edf4da85e1e",
+    "var_566825be": "#hash_431cc478de88be66",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_2720af3d60ff2bd2",
+    "var_db3e02ab": 750,
+    "itemid": "27805770"
+}

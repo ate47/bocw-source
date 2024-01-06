@@ -1,0 +1,30 @@
+{
+    "itemlist": [
+        {
+            "minweight": 5,
+            "var_a6762160": "#sr_world_list_tier_3",
+            "maxweight": 5,
+            "available": -1
+        },
+        {
+            "minweight": 15,
+            "var_a6762160": "#sr_world_list_tier_2",
+            "maxweight": 15,
+            "available": -1
+        },
+        {
+            "minweight": 80,
+            "var_a6762160": "#sr_world_list_tier_1",
+            "maxweight": 80,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_7fb0967b": 512,
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "sr_world_list_items_zoo",
+    "var_fde72c94": 100
+}

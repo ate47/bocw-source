@@ -307,7 +307,7 @@ function function_b55ab4b3(comingfrommenu, var_4c542e39) {
     }
     clientnum = self getentitynumber();
     count = 0;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         count++;
         if (count == clientnum + 1) {
             return team;
@@ -369,7 +369,7 @@ function function_d22a4fbb(comingfrommenu, var_4c542e39, var_432c77c2) {
 // Size: 0xcc
 function teamscoresequal() {
     score = undefined;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (!isdefined(score)) {
             score = getteamscore(team);
         } else if (score != getteamscore(team)) {
@@ -386,7 +386,7 @@ function teamscoresequal() {
 function function_4818e9af() {
     score = 99999999;
     lowest_team = undefined;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (score > getteamscore(team)) {
             lowest_team = team;
         }
@@ -437,7 +437,7 @@ function get_splitscreen_team() {
 // Size: 0xb6
 function teamplayercountsequal(playercounts) {
     count = undefined;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (!isdefined(count)) {
             count = playercounts[team];
         } else if (count != playercounts[team]) {
@@ -454,7 +454,7 @@ function teamplayercountsequal(playercounts) {
 function function_d078493a(playercounts) {
     count = 9999;
     lowest_team = undefined;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (count > playercounts[team]) {
             count = playercounts[team];
             lowest_team = team;
@@ -568,7 +568,7 @@ function private function_a119c7ef(distribution) {
         if (!isdefined(var_2def7656[team])) {
             var_2def7656[team] = [];
         }
-        foreach (var_74578e76 in var_e08edbde) {
+        foreach (squad, var_74578e76 in var_e08edbde) {
             if (var_74578e76.size < level.var_704bcca1) {
                 var_a787dfe7 = function_46edfa55(var_74578e76);
                 if (var_a787dfe7 > 0) {
@@ -590,7 +590,7 @@ function private function_a119c7ef(distribution) {
 // Checksum 0x3dedc6b5, Offset: 0x1eb8
 // Size: 0x15a
 function function_569914e8(var_e439f5d6, var_a9ab69de, *var_d9438b7, var_f36ce5dd) {
-    foreach (var_2a80e9e0 in var_f36ce5dd) {
+    foreach (var_a787dfe7, var_2a80e9e0 in var_f36ce5dd) {
         if (level.var_704bcca1 - var_a787dfe7 > var_d9438b7) {
             continue;
         }
@@ -661,12 +661,12 @@ function function_344e464d() {
             println("<unknown string>" + "<unknown string>");
         }
     #/
-    foreach (var_e08edbde in var_f36ce5dd) {
+    foreach (team, var_e08edbde in var_f36ce5dd) {
         /#
             println("<unknown string>" + team);
         #/
-        foreach (var_2a80e9e0 in var_e08edbde) {
-            foreach (squad in var_2a80e9e0) {
+        foreach (var_a787dfe7, var_2a80e9e0 in var_e08edbde) {
+            foreach (index, squad in var_2a80e9e0) {
                 if (squad == #"none") {
                     continue;
                 }
@@ -688,7 +688,7 @@ function function_344e464d() {
                         /#
                             println("<unknown string>" + var_1e066fba.size);
                         #/
-                        foreach (var_16ba986d in var_1e066fba) {
+                        foreach (remove_index, var_16ba986d in var_1e066fba) {
                             if (var_16ba986d == var_d28e4159) {
                                 var_1e066fba[remove_index] = #"none";
                             }

@@ -1,0 +1,28 @@
+{
+    "itemlist": [
+        {
+            "minweight": 10,
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 45,
+            "var_a6762160": "#zombie_armor_level5_resource_list",
+            "maxweight": 45,
+            "available": -1
+        },
+        {
+            "minweight": 45,
+            "var_a6762160": "#zm_equipment_list",
+            "maxweight": 45,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "special_zombie_level5_drop_list",
+    "var_fde72c94": 100
+}

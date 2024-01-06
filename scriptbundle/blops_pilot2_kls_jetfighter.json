@@ -1,0 +1,15 @@
+{
+    "var_ba4feba3": "#hash_2ea42100fa47bc61",
+    "var_922067c4": "scriptbundle",
+    "type": "mpdialog_scorestreak",
+    "killmultiple": "#hash_3836c5795d6bcb39",
+    "var_a0f53e83": "#hash_14ea720a55571340",
+    "vmtype": "both",
+    "name": "blops_pilot2_kls_jetfighter",
+    "arrive": "#hash_4986ac05dff2f27e",
+    "activatecounter": "#hash_7672fbe9f2bef28e",
+    "kill1": "#hash_6e4da38fd80843f5",
+    "kill3": "#hash_668e87d039af9735",
+    "kill2": "#hash_36952c8f6f752abf",
+    "killnone": "#hash_4123ca731a46d129"
+}

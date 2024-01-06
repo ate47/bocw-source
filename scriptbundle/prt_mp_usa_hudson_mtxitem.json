@@ -1,0 +1,36 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#operator_bundle_5002_hudson_newop_tracer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_7014_hudson_rock_cold_tracer_mtxbundle"
+        }
+    ],
+    "var_941096a8": [
+        {
+            "var_386af035": "#firstparty_bundle_6022_hudson_chemical_response_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_6022_hudson_chemical_response_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_6022_hudson_chemical_response_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_6022_hudson_chemical_response_steam_mtxentitlement"
+        }
+    ],
+    "itemname": "#hash_45ab587a7a64e42f",
+    "var_e9d9a8d0": 1,
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "var_46300498": 1,
+    "bodytype": "#hash_45ab587a7a64e42f",
+    "name": "prt_mp_usa_hudson_mtxitem",
+    "category": "#operator",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 9,
+    "itemid": "22860165"
+}

@@ -22,23 +22,23 @@
 #using scripts\core_common\battlechatter.gsc;
 #using scripts\core_common\array_shared.gsc;
 
-#namespace namespace_64636ce0;
+#namespace recon_plane;
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 0, eflags: 0x5
 // Checksum 0x62c199c0, Offset: 0x288
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_165bcc9977521521", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"recon_plane", &function_70a657d8, undefined, undefined, #"killstreaks");
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 0, eflags: 0x6 linked
 // Checksum 0xa7f9bdae, Offset: 0x2d8
 // Size: 0x2d4
 function private function_70a657d8() {
     if (level.teambased) {
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             level.var_eb10c6a7[team] = 0;
         }
     } else {
@@ -66,7 +66,7 @@ function private function_70a657d8() {
     level thread function_bde85071();
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 0, eflags: 0x2 linked
 // Checksum 0x85198149, Offset: 0x5b8
 // Size: 0x54
@@ -78,7 +78,7 @@ function onplayerconnect() {
     level.var_42ce45d5[self.entnum] = 0;
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 1, eflags: 0x2 linked
 // Checksum 0x10d249a9, Offset: 0x618
 // Size: 0x2c
@@ -88,7 +88,7 @@ function onplayerspawned(*local_client_num) {
     }
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 1, eflags: 0x2 linked
 // Checksum 0x898c116a, Offset: 0x650
 // Size: 0xc8
@@ -101,7 +101,7 @@ function function_769ed4e8(ent) {
     return distance2dsquared(ent.origin, self.var_23cd2a2f.origin) <= var_b2231ba3;
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 0, eflags: 0x2 linked
 // Checksum 0x1ef2ceda, Offset: 0x720
 // Size: 0x32
@@ -109,7 +109,7 @@ function function_e7ed088a() {
     return isdefined(level.var_42ce45d5[self.entnum]) && level.var_42ce45d5[self.entnum] > 0;
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 1, eflags: 0x2 linked
 // Checksum 0x249aa05d, Offset: 0x760
 // Size: 0x11c
@@ -119,8 +119,8 @@ function function_5604e453(enemy) {
             return 1;
         }
         arrayremovevalue(level.var_d952ba86, undefined);
-        foreach (var_64636ce0 in level.var_d952ba86) {
-            if (self === var_64636ce0.owner && var_64636ce0 function_769ed4e8(enemy)) {
+        foreach (recon_plane in level.var_d952ba86) {
+            if (self === recon_plane.owner && recon_plane function_769ed4e8(enemy)) {
                 return 1;
             }
         }
@@ -128,7 +128,7 @@ function function_5604e453(enemy) {
     return 0;
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 5, eflags: 0x2 linked
 // Checksum 0xebc178a0, Offset: 0x888
 // Size: 0xa6
@@ -141,7 +141,7 @@ function function_ed29480b(attacker, victim, *weapon, *attackerweapon, *meansofd
     return 0;
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 0, eflags: 0x2 linked
 // Checksum 0x80c08e3b, Offset: 0x938
 // Size: 0xda
@@ -161,7 +161,7 @@ function function_4dc67281() {
     return 0;
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 1, eflags: 0x2 linked
 // Checksum 0xb47186a8, Offset: 0xa20
 // Size: 0x34
@@ -169,7 +169,7 @@ function function_c131324d(params) {
     challenges::function_7f86a7b8(params.attacker, params.attackerweapon, params.meansofdeath);
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 1, eflags: 0x2 linked
 // Checksum 0xe7e79f53, Offset: 0xa60
 // Size: 0x194
@@ -190,7 +190,7 @@ function fx_flesh_hit_neck_fatal(params) {
     }
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 1, eflags: 0x2 linked
 // Checksum 0x567efc7c, Offset: 0xc00
 // Size: 0x750
@@ -207,65 +207,65 @@ function function_732dcb56(killstreaktype) {
     startposition = adjustedpath[#"startposition"];
     endposition = adjustedpath[#"endposition"];
     angles = adjustedpath[#"angles"];
-    var_64636ce0 = spawn("script_model", startposition);
+    recon_plane = spawn("script_model", startposition);
     if (!isdefined(level.var_d952ba86)) {
         level.var_d952ba86 = [];
     } else if (!isarray(level.var_d952ba86)) {
         level.var_d952ba86 = array(level.var_d952ba86);
     }
-    level.var_d952ba86[level.var_d952ba86.size] = var_64636ce0;
+    level.var_d952ba86[level.var_d952ba86.size] = recon_plane;
     var_e4467d10 = spawn("script_model", self.origin);
     var_e4467d10 setmodel(#"tag_origin");
     var_e4467d10 setteam(self.team);
     var_e4467d10 clientfield::set("recon_plane_reveal", 1);
-    var_64636ce0.var_23cd2a2f = var_e4467d10;
+    recon_plane.var_23cd2a2f = var_e4467d10;
     weapon = getweapon("recon_plane");
-    var_64636ce0 setmodel(bundle.var_c6eab8b5);
-    var_64636ce0 setenemymodel(bundle.var_aa0b97e1);
-    var_64636ce0 function_619a5c20();
-    var_64636ce0 setweapon(weapon);
-    var_64636ce0 setforcenocull();
-    var_64636ce0.killstreak_id = killstreak_id;
-    var_64636ce0.owner.var_64636ce0 = self;
-    var_64636ce0.ownerentnum.var_64636ce0 = self getentitynumber();
-    var_64636ce0.team.var_64636ce0 = self.team;
-    var_64636ce0 setteam(self.team);
-    var_64636ce0 setowner(self);
-    var_64636ce0 killstreaks::configure_team(killstreaktype, killstreak_id, self, undefined, undefined, &configureteampost);
-    var_64636ce0 killstreak_hacking::enable_hacking("recon_plane", &hackedprefunction, undefined);
-    var_64636ce0.targetname.var_64636ce0 = "recon_plane";
-    var_64636ce0.leaving.var_64636ce0 = 0;
-    var_64636ce0 util::make_sentient();
-    var_64636ce0.var_c31213a5.var_64636ce0 = 1;
-    var_64636ce0 thread killstreaks::function_2b6aa9e8("recon_plane", &function_e55922df, &onlowhealth);
-    var_64636ce0 thread function_f724cfe4(100000);
-    var_64636ce0 thread killstreaks::waittillemp(&function_b16d07ad);
-    var_64636ce0.killstreakdamagemodifier.var_64636ce0 = &killstreakdamagemodifier;
+    recon_plane setmodel(bundle.var_c6eab8b5);
+    recon_plane setenemymodel(bundle.var_aa0b97e1);
+    recon_plane function_619a5c20();
+    recon_plane setweapon(weapon);
+    recon_plane setforcenocull();
+    recon_plane.killstreak_id = killstreak_id;
+    recon_plane.owner.recon_plane = self;
+    recon_plane.ownerentnum.recon_plane = self getentitynumber();
+    recon_plane.team.recon_plane = self.team;
+    recon_plane setteam(self.team);
+    recon_plane setowner(self);
+    recon_plane killstreaks::configure_team(killstreaktype, killstreak_id, self, undefined, undefined, &configureteampost);
+    recon_plane killstreak_hacking::enable_hacking("recon_plane", &hackedprefunction, undefined);
+    recon_plane.targetname.recon_plane = "recon_plane";
+    recon_plane.leaving.recon_plane = 0;
+    recon_plane util::make_sentient();
+    recon_plane.var_c31213a5.recon_plane = 1;
+    recon_plane thread killstreaks::function_2b6aa9e8("recon_plane", &function_e55922df, &onlowhealth);
+    recon_plane thread function_f724cfe4(100000);
+    recon_plane thread killstreaks::waittillemp(&function_b16d07ad);
+    recon_plane.killstreakdamagemodifier.recon_plane = &killstreakdamagemodifier;
     if (isdefined(bundle.var_6dfc61a2) && bundle.var_6dfc61a2 > 0) {
-        var_64636ce0.extra_low_health.var_64636ce0 = bundle.var_6dfc61a2;
-        var_64636ce0.extra_low_health_callback.var_64636ce0 = &function_71ad74a1;
+        recon_plane.extra_low_health.recon_plane = bundle.var_6dfc61a2;
+        recon_plane.extra_low_health_callback.recon_plane = &function_71ad74a1;
     }
-    var_64636ce0.numflares.var_64636ce0 = 1;
-    var_64636ce0 helicopter::create_flare_ent(vectorscale((0, 0, -1), 25));
-    var_64636ce0.rocketdamage.var_64636ce0 = var_64636ce0.maxhealth / 3 + 1;
-    var_64636ce0 moveto(endposition, 40000 * 0.002);
-    var_64636ce0.angles = angles;
-    target_set(var_64636ce0);
-    var_64636ce0 clientfield::set("enemyvehicle", 1);
-    var_64636ce0 clientfield::set("recon_plane", 1);
-    var_64636ce0 killstreaks::function_a781e8d2();
-    var_64636ce0 thread killstreaks::waitfortimeout("recon_plane", 40000, &ontimeout, "death", "crashing");
-    var_64636ce0 thread killstreaks::waitfortimecheck(40000 / 2, &ontimecheck, "death", "crashing");
-    var_64636ce0 thread heatseekingmissile::missiletarget_proximitydetonateincomingmissile(bundle, "death", undefined, 1);
+    recon_plane.numflares.recon_plane = 1;
+    recon_plane helicopter::create_flare_ent(vectorscale((0, 0, -1), 25));
+    recon_plane.rocketdamage.recon_plane = recon_plane.maxhealth / 3 + 1;
+    recon_plane moveto(endposition, 40000 * 0.002);
+    recon_plane.angles = angles;
+    target_set(recon_plane);
+    recon_plane clientfield::set("enemyvehicle", 1);
+    recon_plane clientfield::set("recon_plane", 1);
+    recon_plane killstreaks::function_a781e8d2();
+    recon_plane thread killstreaks::waitfortimeout("recon_plane", 40000, &ontimeout, "death", "crashing");
+    recon_plane thread killstreaks::waitfortimecheck(40000 / 2, &ontimecheck, "death", "crashing");
+    recon_plane thread heatseekingmissile::missiletarget_proximitydetonateincomingmissile(bundle, "death", undefined, 1);
     self namespace_f9b02f80::play_killstreak_start_dialog("recon_plane", self.team, killstreak_id);
-    var_64636ce0 namespace_f9b02f80::play_pilot_dialog_on_owner("arrive", "recon_plane", killstreak_id);
-    var_64636ce0 thread killstreaks::player_killstreak_threat_tracking("recon_plane", 0.984808);
+    recon_plane namespace_f9b02f80::play_pilot_dialog_on_owner("arrive", "recon_plane", killstreak_id);
+    recon_plane thread killstreaks::player_killstreak_threat_tracking("recon_plane", 0.984808);
     self stats::function_e24eec31(getweapon("recon_plane"), #"used", 1);
-    var_64636ce0 thread killstreaks::function_5a7ecb6b();
+    recon_plane thread killstreaks::function_5a7ecb6b();
     return 1;
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 2, eflags: 0x2 linked
 // Checksum 0xbab989c5, Offset: 0x1358
 // Size: 0x56c
@@ -336,7 +336,7 @@ function function_98e60435(var_d44b8c3e, bundle) {
     return adjustedpath;
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 1, eflags: 0x2 linked
 // Checksum 0xd4efdb3d, Offset: 0x18d0
 // Size: 0x1e
@@ -345,27 +345,27 @@ function function_f724cfe4(health) {
     self.health = health;
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 1, eflags: 0x2 linked
 // Checksum 0x59065123, Offset: 0x18f8
 // Size: 0x2c
 function hackedprefunction(*hacker) {
-    var_64636ce0 = self;
-    var_64636ce0 function_cf33d294();
+    recon_plane = self;
+    recon_plane function_cf33d294();
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 2, eflags: 0x2 linked
 // Checksum 0x2f9a6234, Offset: 0x1930
 // Size: 0xb4
 function configureteampost(owner, *ishacked) {
-    var_64636ce0 = self;
-    var_64636ce0 thread teams::waituntilteamchangesingleton(ishacked, "ReconPlane_watch_team_change_" + var_64636ce0 getentitynumber(), &onteamchange, self.entnum, "delete", "death", "leaving");
-    var_64636ce0 setvisibletoall();
-    var_64636ce0 function_e6689aef();
+    recon_plane = self;
+    recon_plane thread teams::waituntilteamchangesingleton(ishacked, "ReconPlane_watch_team_change_" + recon_plane getentitynumber(), &onteamchange, self.entnum, "delete", "death", "leaving");
+    recon_plane setvisibletoall();
+    recon_plane function_e6689aef();
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 2, eflags: 0x2 linked
 // Checksum 0xb3086498, Offset: 0x19f0
 // Size: 0x64
@@ -376,7 +376,7 @@ function onlowhealth(*attacker, *weapon) {
     }
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 2, eflags: 0x2 linked
 // Checksum 0xa1cd441d, Offset: 0x1a60
 // Size: 0x64
@@ -387,7 +387,7 @@ function function_71ad74a1(*attacker, *weapon) {
     }
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 2, eflags: 0x2 linked
 // Checksum 0x231ee1c, Offset: 0x1ad0
 // Size: 0x24
@@ -395,7 +395,7 @@ function onteamchange(*entnum, *event) {
     function_e55922df();
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 0, eflags: 0x2 linked
 // Checksum 0x4bbf1681, Offset: 0x1b00
 // Size: 0x18c
@@ -427,7 +427,7 @@ function ontimeout() {
     }
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 0, eflags: 0x2 linked
 // Checksum 0x1e4ba8aa, Offset: 0x1c98
 // Size: 0x34
@@ -435,7 +435,7 @@ function ontimecheck() {
     self namespace_f9b02f80::play_pilot_dialog_on_owner("timecheck", "recon_plane", self.killstreak_id);
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 2, eflags: 0x2 linked
 // Checksum 0x37198f08, Offset: 0x1cd8
 // Size: 0x44
@@ -443,7 +443,7 @@ function function_b16d07ad(attacker, *arg) {
     function_e55922df(arg, getweapon(#"emp"));
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 2, eflags: 0x2 linked
 // Checksum 0x48268dcd, Offset: 0x1d28
 // Size: 0x2e6
@@ -486,7 +486,7 @@ function function_e55922df(attacker, weapon) {
     profilestop();
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 0, eflags: 0x2 linked
 // Checksum 0x2d206158, Offset: 0x2018
 // Size: 0x68
@@ -500,7 +500,7 @@ function function_e6689aef() {
     level notify(#"hash_25b529a667fde073");
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 0, eflags: 0x2 linked
 // Checksum 0x6a0ed743, Offset: 0x2088
 // Size: 0x44
@@ -509,7 +509,7 @@ function function_171f5ed8() {
     killstreakrules::killstreakstop(self.killstreaktype, self.originalteam, self.killstreak_id);
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 0, eflags: 0x2 linked
 // Checksum 0xdc4bbf45, Offset: 0x20d8
 // Size: 0x168
@@ -541,7 +541,7 @@ function function_cf33d294() {
     level notify(#"hash_25b529a667fde073");
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 0, eflags: 0x2 linked
 // Checksum 0x84af18a6, Offset: 0x2248
 // Size: 0x1b0
@@ -564,7 +564,7 @@ function function_bde85071() {
     }
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 1, eflags: 0x2 linked
 // Checksum 0xeb0111ee, Offset: 0x2400
 // Size: 0xe6
@@ -578,7 +578,7 @@ function function_65f48f1a(player) {
     player.var_83266838.player = var_eb10c6a7 > 0;
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 12, eflags: 0x2 linked
 // Checksum 0x3edcce68, Offset: 0x24f0
 // Size: 0x7c

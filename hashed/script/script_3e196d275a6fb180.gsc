@@ -101,7 +101,7 @@ function function_d400d613(targetname, typesarray) {
             if (!function_82ca1565(spawn, supportedspawntype)) {
                 continue;
             }
-            if (oob::chr_party(spawn.origin) && namespace_9a8780d8::function_83ad4d2b(spawn.origin)) {
+            if (oob::chr_party(spawn.origin) && territory::function_83ad4d2b(spawn.origin)) {
                 break;
             }
             if (!isdefined(returnarray[supportedspawntype])) {

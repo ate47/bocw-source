@@ -28,12 +28,12 @@ function private function_70a657d8() {
     clientfield::register("actor", "fx_frost_blast_clientfield", 1, 3, "int");
     clientfield::register("toplayer", "fx_frost_blast_1p_lv1_clientfield", 1, 1, "counter");
     clientfield::register("toplayer", "fx_frost_blast_1p_lv3_clientfield", 1, 1, "counter");
-    namespace_1b527536::function_36e0540e(#"frost_blast", 1, 25, #"hash_7ea42360bdf2de16");
-    namespace_1b527536::function_36e0540e(#"frost_blast_1", 1, 25, #"hash_1f9a001790297282");
-    namespace_1b527536::function_36e0540e(#"frost_blast_2", 2, 25, #"hash_649e3a841620150f");
-    namespace_1b527536::function_36e0540e(#"frost_blast_3", 2, 25, #"hash_47954c9090e3f900");
-    namespace_1b527536::function_36e0540e(#"frost_blast_4", 3, 25, #"hash_12f4d7321d9c5005");
-    namespace_1b527536::function_36e0540e(#"hash_2f14933f9c381974", 3, 25, #"hash_681471b56324b3e");
+    namespace_1b527536::function_36e0540e(#"frost_blast", 1, 25, #"field_upgrade_frost_blast_item_sr");
+    namespace_1b527536::function_36e0540e(#"frost_blast_1", 1, 25, #"field_upgrade_frost_blast_1_item_sr");
+    namespace_1b527536::function_36e0540e(#"frost_blast_2", 2, 25, #"field_upgrade_frost_blast_2_item_sr");
+    namespace_1b527536::function_36e0540e(#"frost_blast_3", 2, 25, #"field_upgrade_frost_blast_3_item_sr");
+    namespace_1b527536::function_36e0540e(#"frost_blast_4", 3, 25, #"field_upgrade_frost_blast_4_item_sr");
+    namespace_1b527536::function_36e0540e(#"hash_2f14933f9c381974", 3, 25, #"field_upgrade_frost_blast_5_item_sr");
     namespace_1b527536::function_dbd391bf(#"frost_blast", &function_d7d09902);
     namespace_1b527536::function_dbd391bf(#"frost_blast_1", &function_de15a58c);
     namespace_1b527536::function_dbd391bf(#"frost_blast_2", &function_3542d3e9);

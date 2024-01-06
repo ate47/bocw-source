@@ -1,0 +1,39 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_3fb06fd15eb4fc72",
+            "var_f35c5951": 1,
+            "var_5d4b5964": 9.47,
+            "var_36bf8e05": "#hash_464e4285a746722f"
+        },
+        {
+            "var_46bd7973": "#hash_3fb070d15eb4fe25",
+            "var_f35c5951": 11.5,
+            "var_5d4b5964": 10.62,
+            "var_36bf8e05": "#hash_664f9a9d094ae86e"
+        },
+        {
+            "var_46bd7973": "#hash_3fb06dd15eb4f90c",
+            "var_f35c5951": 23,
+            "var_5d4b5964": 9.9,
+            "var_36bf8e05": "#hash_330c90d101fb07d"
+        }
+    ],
+    "description": "#hash_717fa674aff0b10",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#radio",
+    "model": "#hash_4fe1a0b748461f0f",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_7ea108a0c0ac5fa4",
+    "var_2a12d36": 1,
+    "type": "zmintel",
+    "var_ad4ad686": "#hash_1303dcb8d0e80e33",
+    "soundloop": "#hash_5db0167d85d70c82",
+    "name": "zmintel_silver_requiem_radio_3",
+    "var_9be0526e": "#hash_20ea75a25d912949",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "var_348b91fd": "#radio",
+    "title": "#hash_23cf5d60f46e0108",
+    "mapname": "#zm_silver"
+}

@@ -1,0 +1,43 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_fin_pl_wraith_freya_mtxitem",
+            "itemid": "26131376"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_fin_wraith_mtxitem",
+            "itemid": "21568824"
+        },
+        {
+            "var_4a4bc969": "#loot_shotgun_leveraction_bp_freya_mtxitem",
+            "itemid": "31666576"
+        },
+        {
+            "var_4a4bc969": "#tr_longburst_bp_freya_mtxitem",
+            "itemid": "27147951"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_drinking_horn_mtxitem",
+            "itemid": "31057219"
+        },
+        {
+            "var_4a4bc969": "#callingcards_vikings_s6_mtxitem",
+            "itemid": "31711932"
+        },
+        {
+            "var_4a4bc969": "#reticle_141_mtxitem",
+            "itemid": "22362435"
+        }
+    ],
+    "itemname": "#hash_3c838188bd86b5bf",
+    "var_375a1747": "#hash_f7d43a8bf21079",
+    "name": "operator_bundle_7010_wraith_freya_mtxbundle",
+    "var_a788fada": "#hash_10b88eae8d689eba",
+    "var_22f91505": "#hash_76b7b684b45cef0f",
+    "var_566825be": "#hash_b9ab7f1aee03186",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_6bc81d881eb025cb",
+    "var_db3e02ab": 2000,
+    "itemid": "23475296"
+}

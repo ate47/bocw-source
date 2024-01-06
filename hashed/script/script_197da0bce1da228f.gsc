@@ -20,7 +20,7 @@ function private autoexec __init__system__() {
 // Checksum 0x29931df4, Offset: 0x198
 // Size: 0xb4
 function private function_70a657d8() {
-    if (!isarchetypeloaded(#"hash_be2e962be17d10e")) {
+    if (!isarchetypeloaded(#"mimic")) {
         return;
     }
     clientfield::register("scriptmover", "mimic_prop_rob", 6000, 3, "int", &function_62708cfa, 0, 0);

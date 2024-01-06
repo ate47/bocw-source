@@ -1,0 +1,24 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_7a604f110b32858b"
+        }
+    ],
+    "description": "#hash_1bcaa6b157c079f7",
+    "itemspawnentry": "#item_zmintel_silver_requiem_artifact_1",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#ww_quest",
+    "model": "#hash_2363f109ef931e51",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_782a3ddb452965ee",
+    "type": "zmintel",
+    "var_ad4ad686": "#hash_1303dcb8d0e80e33",
+    "soundloop": "#hash_6098b72d515f39d5",
+    "name": "zmintel_silver_requiem_artifact_1",
+    "var_9be0526e": "#artifact",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "title": "#hash_d2dc22eb7a741cd",
+    "var_265ab5cb": "#hash_2de1e7a326a9e6db",
+    "mapname": "#zm_silver"
+}

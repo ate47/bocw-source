@@ -1,0 +1,39 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_54181bbb34c159dd",
+            "var_f35c5951": 0.71,
+            "var_5d4b5964": 10.35,
+            "var_36bf8e05": "#hash_5c0d990aa6376e60"
+        },
+        {
+            "var_46bd7973": "#hash_54181abb34c1582a",
+            "var_f35c5951": 11.71,
+            "var_5d4b5964": 8.85,
+            "var_36bf8e05": "#hash_470c3de6ff273891"
+        },
+        {
+            "var_46bd7973": "#null",
+            "var_f35c5951": 21.07
+        }
+    ],
+    "description": "#hash_6ccad828f4c4f87f",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#radio",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_483fb768867494d5",
+    "var_2a12d36": 1,
+    "type": "zmintel",
+    "season": 1,
+    "var_ad4ad686": "#hash_70ce1650358c0923",
+    "soundloop": "#hash_5db0167d85d70c82",
+    "name": "zmintel_silver_darkaether_radio_3",
+    "var_9be0526e": "#hash_20ea75a25d912949",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "var_348b91fd": "#radio",
+    "title": "#hash_6caf1c8c150cc6d5",
+    "var_3bb3493d": "#hash_1a8a4c538e43032c",
+    "mapname": "#zm_silver",
+    "var_6073bf8f": "#hash_30acea553928ba42"
+}

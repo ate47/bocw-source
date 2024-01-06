@@ -1,0 +1,66 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_2e2e406e13d58363",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "model": "#hash_2664dbb2e66c7fec",
+            "type": "prop",
+            "var_db255011": 1,
+            "deletewhenfinished": 1,
+            "name": "prop 1"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_326e6512c63da09c",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "model": "#hash_2664deb2e66c8505",
+            "type": "prop",
+            "var_db255011": 1,
+            "deletewhenfinished": 1,
+            "name": "prop 2"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_54174e85f4f1c51e",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "model": "#hash_12c68756b5493b03",
+            "type": "prop",
+            "var_db255011": 1,
+            "deletewhenfinished": 1,
+            "name": "prop 3"
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "aib_t9_zm_silver_echo_4_dmitriyev_kalashnik_01",
+    "dontsync": 1,
+    "aligntarget": "tag_align_dmit_kalash_1",
+    "team": "any"
+}

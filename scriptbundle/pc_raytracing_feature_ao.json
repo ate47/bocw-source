@@ -1,0 +1,42 @@
+{
+    "options": [
+        {
+            "label": "#hash_6a489abface20fd6",
+            "value": "0"
+        },
+        {
+            "label": "#hash_135c6499d56b0013",
+            "value": "1"
+        },
+        {
+            "label": "#hash_4f3a6276121adf90",
+            "value": "2"
+        },
+        {
+            "label": "#hash_2e061a48b9d82d65",
+            "value": "3"
+        }
+    ],
+    "var_dfedf08e": 1,
+    "var_d260763": "#hash_6850139c51ceced1",
+    "description": "#hash_b26be702b06f5ff",
+    "var_ebe98576": 1,
+    "var_60fcfffa": "#menu/on",
+    "var_9bc3be7": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_799f4f7": 1,
+    "var_77c0bdd6": 1,
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "maxvalue": 1,
+    "name": "pc_raytracing_feature_ao",
+    "displayname": "#hash_717e1f5cb6608b55",
+    "var_2d7a664e": 1,
+    "var_500458ac": 10,
+    "var_66faec87": 10,
+    "statname": "rtx_feature_ao",
+    "var_8b80386": 1,
+    "var_6f00a61a": 1.1,
+    "var_b7401319": "#menu/off"
+}

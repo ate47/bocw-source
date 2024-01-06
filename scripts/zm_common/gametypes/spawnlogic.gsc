@@ -156,7 +156,7 @@ function addspawnpointsinternal(team, spawnpointname) {
 // Checksum 0x7cd0b82d, Offset: 0x838
 // Size: 0x9e
 function clearspawnpoints() {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         level.teamspawnpoints[team] = [];
     }
     level.spawnpoints = [];
@@ -887,7 +887,7 @@ function spawnpointupdate_zm(spawnpoint) {
         LOC_0000018c:
             dist = distance(spawnpoint.origin, player.origin);
             spawnpoint.distsum[player.team] = spawnpoint.distsum[player.team] + dist;
-            foreach (_ in level.teams) {
+            foreach (team, _ in level.teams) {
                 if (team != player.team) {
                     spawnpoint.enemydistsum[team] = spawnpoint.enemydistsum[team] + dist;
                 }
@@ -1616,7 +1616,7 @@ function spawnperframeupdate() {
 // Size: 0xb2
 function getnonteamsum(skip_team, sums) {
     value = 0;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (team == skip_team) {
             continue;
         }
@@ -1631,7 +1631,7 @@ function getnonteamsum(skip_team, sums) {
 // Size: 0xbe
 function getnonteammindist(skip_team, mindists) {
     dist = 9999999;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (team == skip_team) {
             continue;
         }

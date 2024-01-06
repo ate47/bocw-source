@@ -1,0 +1,250 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_771004a23125c218",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "dragonhead_static"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_57544636413e009b",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "dragonhead_intro"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_301e9c7b41b9831c",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "dragonhead_idle",
+                    "blend": 0.2
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_6b472780ca03bc1",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "dragonhead_idle_b",
+                    "blend": 0.2
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_4446f7e48d95ed1f",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "dragonhead_idle_twitch_roar",
+                    "blend": 0.2
+                },
+                {
+                    "name": "dragonhead_zombie_impact"
+                },
+                {
+                    "name": "dragonhead_zombie_rise"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_281278c453eb1896",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "dragonhead_pre_eat_f",
+                    "blend": 0.2
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_28127ec453eb22c8",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "dragonhead_pre_eat_l",
+                    "blend": 0.2
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_28126cc453eb0432",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "dragonhead_pre_eat_r",
+                    "blend": 0.2
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_40cd92d970ac89d4",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "dragonhead_pre_eat_l_2_r",
+                    "blend": 0.2
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_c8c475fb18bf564",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "dragonhead_pre_eat_r_2_l",
+                    "blend": 0.2
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_1b277ae0eea63feb",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "dragonhead_consume_zombie_fwd",
+                    "blend": 0.2
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_1b2774e0eea635b9",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "dragonhead_consume_zombie_left",
+                    "blend": 0.2
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_1b278ee0eea661e7",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "dragonhead_consume_zombie_right",
+                    "blend": 0.2
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_6916577e099ae898",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "dragonhead_outro",
+                    "blend": 0.2
+                }
+            ],
+            "firstframe": 1,
+            "model": "#hash_2cc98ec29f9d2d1d",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "dragon_head"
+        },
+        {
+            "shots": [
+                {
+                    "name": "dragonhead_static"
+                },
+                {
+                    "name": "dragonhead_intro"
+                },
+                {
+                    "name": "dragonhead_idle"
+                },
+                {
+                    "name": "dragonhead_idle_b"
+                },
+                {
+                    "name": "dragonhead_idle_twitch_roar"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_32b4a2c4bb824a80",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "dragonhead_zombie_impact"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_1a3dca14869242ff",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "dragonhead_zombie_rise"
+                },
+                {
+                    "name": "dragonhead_pre_eat_f"
+                },
+                {
+                    "name": "dragonhead_pre_eat_l"
+                },
+                {
+                    "name": "dragonhead_pre_eat_r"
+                },
+                {
+                    "name": "dragonhead_pre_eat_l_2_r"
+                },
+                {
+                    "name": "dragonhead_pre_eat_r_2_l"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_68be52dfd8f07549",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "dragonhead_consume_zombie_fwd"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_68be58dfd8f07f7b",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "dragonhead_consume_zombie_left"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_68be46dfd8f060e5",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "dragonhead_consume_zombie_right"
+                },
+                {
+                    "name": "dragonhead_outro"
+                }
+            ],
+            "model": "#hash_414c0633fed9455d",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "prop 2"
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "aib_t9_zm_dragonhead",
+    "dontsync": 1,
+    "team": "any"
+}

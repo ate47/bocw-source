@@ -1,0 +1,17 @@
+{
+    "itemlist": [
+        {
+            "minweight": 1,
+            "var_a6762160": "#item_zmintel_survival_maxis_artifact_7",
+            "maxweight": 1,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "sr_hulk_amplify_list",
+    "var_fde72c94": 100
+}

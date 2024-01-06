@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#bundle_operator_2014_lawrence_sims_tag_collector_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_2a1a456c2ec3b9b4",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_3c1319e7f2dfce8a",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 2,
+    "var_46300498": 1,
+    "baseweapon": "#hash_33ed9170805d825c",
+    "name": "pistol_semiauto_bp_muerte_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "23096639",
+    "blueprint": "#hash_2a1a456c2ec3b9b4"
+}

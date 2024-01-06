@@ -297,7 +297,7 @@ function function_6247981b(localclientnum, var_a6762160) {
         }
     }
     if (isdefined(var_b84949d0)) {
-        if (var_a6762160.name === #"hash_7ee7b21a68b25ce6") {
+        if (var_a6762160.name === #"axe_gun_energetic_shard_item_t9") {
             if (isdefined(self.var_c926b4fc) && self.var_c926b4fc >= 5) {
                 return 4194304;
             } else {

@@ -5,17 +5,17 @@
 #using scripts\core_common\clientfield_shared.csc;
 #using scripts\core_common\callbacks_shared.csc;
 
-#namespace namespace_64636ce0;
+#namespace recon_plane;
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 0, eflags: 0x5
 // Checksum 0xb0e45c56, Offset: 0x150
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_165bcc9977521521", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"recon_plane", &function_70a657d8, undefined, undefined, #"killstreaks");
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 0, eflags: 0x6 linked
 // Checksum 0x7eba145a, Offset: 0x1a0
 // Size: 0x160
@@ -32,7 +32,7 @@ function private function_70a657d8() {
     level.var_d84f0c02 = [];
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 1, eflags: 0x2 linked
 // Checksum 0x53be41fe, Offset: 0x308
 // Size: 0x24
@@ -40,7 +40,7 @@ function player_init(localclientnum) {
     self thread on_game_ended(localclientnum);
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 0, eflags: 0x2 linked
 // Checksum 0x1af578c5, Offset: 0x338
 // Size: 0x4c
@@ -52,7 +52,7 @@ function function_6a7f9809() {
     }
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 7, eflags: 0x2 linked
 // Checksum 0x89304e42, Offset: 0x390
 // Size: 0x1fc
@@ -84,7 +84,7 @@ function function_1f842f91(localclientnum, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 1, eflags: 0x6 linked
 // Checksum 0x558c4ee5, Offset: 0x598
 // Size: 0x84
@@ -97,7 +97,7 @@ function private function_4ee8c344(localclientnum) {
     disablevisioncirclebyentnum(localclientnum, entnum);
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 1, eflags: 0x6 linked
 // Checksum 0x22e2578f, Offset: 0x628
 // Size: 0x3c
@@ -106,7 +106,7 @@ function private on_game_ended(localclientnum) {
     disableallvisioncircles(localclientnum);
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 7, eflags: 0x2 linked
 // Checksum 0xcdb20d4f, Offset: 0x670
 // Size: 0xec
@@ -123,7 +123,7 @@ function function_bf2187ea(localclientnum, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 1, eflags: 0x6 linked
 // Checksum 0x679afe4c, Offset: 0x768
 // Size: 0x28e
@@ -161,7 +161,7 @@ function private function_6f689c85(localclientnum) {
     }
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 2, eflags: 0x6 linked
 // Checksum 0xa634ba18, Offset: 0xa00
 // Size: 0x44
@@ -170,7 +170,7 @@ function private function_af19a98(localclientnum, entnum) {
     function_1e5c5bb9(localclientnum, entnum);
 }
 
-// Namespace namespace_64636ce0/namespace_64636ce0
+// Namespace recon_plane/recon_plane
 // Params 7, eflags: 0x2 linked
 // Checksum 0x6379f8c1, Offset: 0xa50
 // Size: 0xbc

@@ -1,0 +1,35 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_soviet_bp_bw_mtxitem",
+            "itemid": "19193072"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_film_projector_mtxitem",
+            "itemid": "19602082"
+        },
+        {
+            "var_4a4bc969": "#callingcards_noir_cell_shaded_animated_mtxitem",
+            "itemid": "30064355"
+        },
+        {
+            "var_4a4bc969": "#emblems_noir_cell_shaded_animation_mtxitem",
+            "itemid": "22123566"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_noir_cell_shaded_s6_mtxitem",
+            "itemid": "21450263"
+        }
+    ],
+    "itemname": "#hash_132e3e143929fb25",
+    "var_375a1747": "#hash_1696ed923b642d13",
+    "name": "blueprint_bundle_7001_vahan_new_weapon_ar_mtxbundle",
+    "var_a788fada": "#hash_26fd9ba8d8c2ee8c",
+    "var_22f91505": "#hash_3cc33c8fd2fbc6e9",
+    "var_566825be": "#hash_2e8805a3ccce6898",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_40a8a1db781bf1e9",
+    "var_db3e02ab": 2000,
+    "itemid": "30115868"
+}

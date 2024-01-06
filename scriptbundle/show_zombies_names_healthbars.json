@@ -1,0 +1,39 @@
+{
+    "options": [
+        {
+            "label": "#hash_47b1d47fbc3bd50f",
+            "value": "0"
+        },
+        {
+            "label": "#hash_1a50fb018d17f47c",
+            "value": "1"
+        },
+        {
+            "label": "#hash_386c51bbafb9dc6c",
+            "value": "2"
+        },
+        {
+            "label": "#hash_6afbd1657407cc0a",
+            "value": "3"
+        }
+    ],
+    "description": "#hash_2314304d21eee015",
+    "var_60fcfffa": "#hash_4f445f7612232efc",
+    "var_9bc3be7": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 0.1,
+    "name": "show_zombies_names_healthbars",
+    "displayname": "#hash_3d68f8fd5f7fa883",
+    "var_500458ac": 10,
+    "var_926d1be9": 0.01,
+    "var_66faec87": 2,
+    "statname": "zm_names_health_bars",
+    "var_5d7c916": 1,
+    "var_6f00a61a": 1.1,
+    "var_624e2965": 1,
+    "minvalue": 1,
+    "var_d4e288e": 1,
+    "var_b7401319": "#hash_26907a4c5e0f4d75"
+}

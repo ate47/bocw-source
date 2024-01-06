@@ -264,7 +264,7 @@ function private debug_think() {
                         }
                     }
                     if (isdefined(var_dcd6c23.var_419edb9f)) {
-                        foreach (v in var_dcd6c23.var_419edb9f) {
+                        foreach (var_c082553f, v in var_dcd6c23.var_419edb9f) {
                             foreach (ai in v) {
                                 if (isdefined(ai)) {
                                     /#
@@ -1323,7 +1323,7 @@ function private function_5b3b889f(var_ac1d69cd) {
 function private function_bf55c711(n_wave, var_bced2a83) {
     s_bundle = getscriptbundle(self.scriptbundlename);
     n_ai_count = 0;
-    foreach (var_65782f79 in s_bundle.waves) {
+    foreach (n_index, var_65782f79 in s_bundle.waves) {
         if (isdefined(n_wave)) {
             if (n_index < n_wave - 1) {
                 continue;

@@ -1,0 +1,36 @@
+{
+    "worldfx": [
+        {
+            "worldfx": "#hash_3e3f86ff3fc6055"
+        }
+    ],
+    "var_a6616b9c": 1,
+    "amount": 1,
+    "var_fa988b4b": 60,
+    "var_922067c4": "scriptbundle",
+    "model": "#wpn_t9_eqp_medical_injection_sml_view",
+    "var_16e34ef4": 64,
+    "var_e9898330": "pingitemtacticalstimshot",
+    "weapon": "#hash_364914e1708cb629",
+    "var_ac75b59f": -1,
+    "var_c2de1e75": "zm_item_pickup_rumble",
+    "type": "itemspawnentry",
+    "hintstring": "#hash_42fc1afb27e33043",
+    "spawnsound": "zmb_powerup_eqp_spawn",
+    "var_4a1a4613": "armor_swap",
+    "name": "stimshot_t9_item_sr",
+    "displayname": "#hash_42fc1afb27e33043",
+    "var_9e569978": 1,
+    "stackcount": 5,
+    "icon": "#hash_7be9bd7ecf677ef9",
+    "modelscale": 3,
+    "rarity": "Rare",
+    "var_1b0b57d1": "evt_item_despawn",
+    "handler": "#hash_2cbf15cbb314c93e",
+    "var_3af59a99": 1,
+    "pickupicon": "#hash_7be9bd7ecf677ef9",
+    "var_ef039d3d": 1,
+    "stackable": 1,
+    "itemtype": "tactical",
+    "pickupsound": "zmb_powerup_eqp_pickup"
+}

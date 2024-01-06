@@ -1,0 +1,29 @@
+{
+    "itemlist": [
+        {
+            "minweight": 85,
+            "var_a6762160": "#epic_gun_list",
+            "maxweight": 85,
+            "available": -1
+        },
+        {
+            "minweight": 450,
+            "var_a6762160": "#uncommon_gun_list",
+            "maxweight": 450,
+            "available": -1
+        },
+        {
+            "minweight": 350,
+            "var_a6762160": "#rare_gun_list",
+            "maxweight": 350,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "gold_chest_guns_level_3_food",
+    "var_fde72c94": 100
+}

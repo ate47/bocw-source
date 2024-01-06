@@ -53,7 +53,7 @@ function get_loadout_slot(slot_index) {
 // Size: 0xcc
 function function_8435f729(weapon) {
     if (isdefined(self.pers[#"loadout"])) {
-        foreach (slot in self.pers[#"loadout"].slots) {
+        foreach (slot_index, slot in self.pers[#"loadout"].slots) {
             if (slot.weapon == weapon) {
                 return slot_index;
             }

@@ -1,0 +1,28 @@
+{
+    "var_f2454da1": [
+        {
+            "var_9e589ff4": 1,
+            "var_75f09f03": "#hash_79c0c10afdf6bb55",
+            "var_81294378": "#==",
+            "var_88ff5fc3": "#none"
+        },
+        {
+            "var_9e589ff4": 1,
+            "var_75f09f03": "#hash_2492696e7544169d",
+            "var_81294378": "#==",
+            "var_88ff5fc3": "#none"
+        },
+        {
+            "var_9e589ff4": 1,
+            "var_75f09f03": "#hash_7c48691df8af4a2a",
+            "var_81294378": "#==",
+            "var_88ff5fc3": "#none"
+        }
+    ],
+    "var_922067c4": "SCRIPTBUNDLE",
+    "type": "didyouknowentry",
+    "var_9e589ff4": 1,
+    "name": "tips_multiplayer_koth",
+    "var_81294378": "#==",
+    "var_88ff5fc3": "#none"
+}

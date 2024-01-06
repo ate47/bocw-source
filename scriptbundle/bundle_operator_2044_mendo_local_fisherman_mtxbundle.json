@@ -1,0 +1,43 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_cub_pl_dgi_bongo_mtxitem",
+            "itemid": "21755527"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_cub_dgi_mtxitem",
+            "itemid": "21801561"
+        },
+        {
+            "var_4a4bc969": "#smg_handling_bp_afish_mtxitem",
+            "itemid": "20748199"
+        },
+        {
+            "var_4a4bc969": "#reticle_66_mtxitem",
+            "itemid": "19782977"
+        },
+        {
+            "var_4a4bc969": "#execution_009_mtxitem",
+            "itemid": "21279296"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_fishbag_mtxitem",
+            "itemid": "31733409"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s2_bracelet_lure_mtxitem",
+            "itemid": "17993113"
+        }
+    ],
+    "itemname": "#hash_5377b6402670b3e3",
+    "var_375a1747": "#hash_7a2b0a25a8e0b12d",
+    "name": "bundle_operator_2044_mendo_local_fisherman_mtxbundle",
+    "var_a788fada": "#hash_627590fd216c859c",
+    "var_22f91505": "#hash_3014f01d4fd990b3",
+    "var_566825be": "#hash_580a05b4d82bf068",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_77a34fe3ad6b0057",
+    "var_db3e02ab": 2000,
+    "itemid": "30906707"
+}

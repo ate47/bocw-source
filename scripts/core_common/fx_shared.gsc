@@ -136,41 +136,41 @@ function function_70ba68f1(target, var_486f31cd, var_bef008a5, var_e9f7aace, var
         return;
     }
     if (isvec(target)) {
-        setdvar(#"hash_bc41fa458ae92e7", -999);
-        setdvar(#"hash_392d9d32234cbdcc", -1);
+        setdvar(#"_internal_dof_i_target_entnum", -999);
+        setdvar(#"_internal_dof_i_target_type", -1);
         setdvar(#"hash_7c405920e0b200ee", target);
     } else {
         var_3ed74fac = target getentitynumber();
         var_dc3df1b8 = target getentitytype();
-        setdvar(#"hash_bc41fa458ae92e7", var_3ed74fac);
-        setdvar(#"hash_392d9d32234cbdcc", var_dc3df1b8);
-        setdvar(#"hash_7861ab2e5848a513", (-1, -1, -1));
+        setdvar(#"_internal_dof_i_target_entnum", var_3ed74fac);
+        setdvar(#"_internal_dof_i_target_type", var_dc3df1b8);
+        setdvar(#"_internal_dof_v_target_origin", (-1, -1, -1));
         if (isdefined(var_1436aa92)) {
-            setdvar(#"hash_41dce9c0c166c79e", var_1436aa92);
+            setdvar(#"_internal_dof_s_target_tag", var_1436aa92);
         } else {
-            setdvar(#"hash_41dce9c0c166c79e", "-1");
+            setdvar(#"_internal_dof_s_target_tag", "-1");
         }
     }
     if (isdefined(var_486f31cd)) {
-        setdvar(#"hash_5c3fe2ea8a7f72a5", float(var_486f31cd));
+        setdvar(#"_internal_dof_f_fstop", float(var_486f31cd));
     } else {
-        setdvar(#"hash_5c3fe2ea8a7f72a5", -1);
+        setdvar(#"_internal_dof_f_fstop", -1);
     }
     if (isdefined(var_bef008a5)) {
-        setdvar(#"hash_3a0d8b2cf7ba0639", float(var_bef008a5));
+        setdvar(#"_internal_dof_f_focus_time", float(var_bef008a5));
     } else {
-        setdvar(#"hash_3a0d8b2cf7ba0639", -1);
+        setdvar(#"_internal_dof_f_focus_time", -1);
     }
     if (isdefined(var_e9f7aace)) {
-        setdvar(#"hash_4b1a4ae3db9de087", float(var_e9f7aace));
+        setdvar(#"_internal_dof_f_fstop_time", float(var_e9f7aace));
     } else {
-        setdvar(#"hash_4b1a4ae3db9de087", -1);
+        setdvar(#"_internal_dof_f_fstop_time", -1);
     }
     entnum = self getentitynumber();
-    setdvar(#"hash_52cad1c182620ca9", entnum);
-    var_d4c23ff = getdvarint(#"hash_106a12e8fdbe475d", 0);
+    setdvar(#"_internal_dof_i_playernum", entnum);
+    var_d4c23ff = getdvarint(#"_internal_dof_i_refcounter", 0);
     var_d4c23ff++;
-    setdvar(#"hash_106a12e8fdbe475d", var_d4c23ff);
+    setdvar(#"_internal_dof_i_refcounter", var_d4c23ff);
     self thread function_13fa0731();
 }
 
@@ -186,20 +186,20 @@ function function_82104e32(var_486f31cd, var_e9f7aace) {
     function_5ac4dc99("_internal_fob_or_dof_i_refcounter", 0);
     function_5ac4dc99("_internal_debug_dof", 0);
     if (isdefined(var_486f31cd)) {
-        setdvar(#"hash_3fc2053e5e3e9257", float(var_486f31cd));
+        setdvar(#"_internal_fob_f_fstop", float(var_486f31cd));
     } else {
-        setdvar(#"hash_3fc2053e5e3e9257", -1);
+        setdvar(#"_internal_fob_f_fstop", -1);
     }
     if (isdefined(var_e9f7aace)) {
-        setdvar(#"hash_2fe2fecfa04f8331", float(var_e9f7aace));
+        setdvar(#"_internal_fob_f_fstop_time", float(var_e9f7aace));
     } else {
-        setdvar(#"hash_2fe2fecfa04f8331", -1);
+        setdvar(#"_internal_fob_f_fstop_time", -1);
     }
     entnum = self getentitynumber();
-    setdvar(#"hash_2ae1e45cacd34543", entnum);
-    var_d4c23ff = getdvarint(#"hash_5a61bb3125c6608b", 0);
+    setdvar(#"_internal_fob_i_playernum", entnum);
+    var_d4c23ff = getdvarint(#"_internal_fob_i_refcounter", 0);
     var_d4c23ff++;
-    setdvar(#"hash_5a61bb3125c6608b", var_d4c23ff);
+    setdvar(#"_internal_fob_i_refcounter", var_d4c23ff);
     self thread function_13fa0731();
 }
 
@@ -223,15 +223,15 @@ function private function_13fa0731() {
 // Checksum 0x546ef3fc, Offset: 0x10b8
 // Size: 0x19c
 function private function_e592b635(*eventstruct) {
-    setdvar(#"hash_52cad1c182620ca9", -1);
-    setdvar(#"hash_392d9d32234cbdcc", -1);
-    setdvar(#"hash_bc41fa458ae92e7", -1);
-    setdvar(#"hash_7861ab2e5848a513", (-1, -1, -1));
-    setdvar(#"hash_41dce9c0c166c79e", "-1");
-    setdvar(#"hash_5c3fe2ea8a7f72a5", -1);
-    setdvar(#"hash_3a0d8b2cf7ba0639", -1);
-    setdvar(#"hash_4b1a4ae3db9de087", -1);
-    setdvar(#"hash_2ae1e45cacd34543", -1);
-    setdvar(#"hash_3fc2053e5e3e9257", -1);
+    setdvar(#"_internal_dof_i_playernum", -1);
+    setdvar(#"_internal_dof_i_target_type", -1);
+    setdvar(#"_internal_dof_i_target_entnum", -1);
+    setdvar(#"_internal_dof_v_target_origin", (-1, -1, -1));
+    setdvar(#"_internal_dof_s_target_tag", "-1");
+    setdvar(#"_internal_dof_f_fstop", -1);
+    setdvar(#"_internal_dof_f_focus_time", -1);
+    setdvar(#"_internal_dof_f_fstop_time", -1);
+    setdvar(#"_internal_fob_i_playernum", -1);
+    setdvar(#"_internal_fob_f_fstop", -1);
 }
 

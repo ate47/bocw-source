@@ -1,0 +1,33 @@
+{
+    "options": [
+        {
+            "label": "#hash_6c5ab75f18f669e9",
+            "value": "0"
+        },
+        {
+            "label": "#hash_21ff945f37d1cf3e",
+            "value": "1"
+        }
+    ],
+    "var_d260763": "#hash_3aac51bdba2ad12f",
+    "var_a34b0960": 1,
+    "description": "#hash_dd52e584d8615e6",
+    "var_60fcfffa": "#hash_57f3f21157ef659b",
+    "var_9bc3be7": 1,
+    "var_4ced19ab": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "name": "armor_plate_behavior_kbm",
+    "displayname": "#hash_767205c180b09d4d",
+    "var_4a4760c0": 60,
+    "var_500458ac": 10,
+    "var_926d1be9": 1,
+    "var_66faec87": 120,
+    "statname": "armor_plate_behavior_kbm",
+    "var_6f00a61a": 1.1,
+    "minvalue": 1,
+    "var_d4e288e": 90,
+    "var_b7401319": "#hash_6a489abface20fd6"
+}

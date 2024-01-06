@@ -1,0 +1,41 @@
+{
+    "talents": [
+        {
+            "talent": "#hash_7a71dcca83b381ae"
+        }
+    ],
+    "var_a6616b9c": 1,
+    "amount": 500,
+    "var_19f48bbe": "loc_armor_medium",
+    "var_fa988b4b": 180,
+    "var_99c0cb08": 0.65,
+    "description": "#hash_552c7ed252ae74a2",
+    "var_a3aa1ca2": 100,
+    "armorshards": 5,
+    "var_922067c4": "scriptbundle",
+    "var_22c3ab38": 1,
+    "model": "#p8_mp_spe_armor_medium",
+    "var_16e34ef4": 64,
+    "var_e9898330": "pingitemarmor",
+    "var_ac75b59f": -1,
+    "type": "itemspawnentry",
+    "hintstring": "#hash_60aeeec1490ce332",
+    "spawnsound": "zmb_powerup_resource_small_spawn",
+    "var_7a80f06e": 1,
+    "var_4a1a4613": "armor_swap",
+    "var_b5b2485b": 1,
+    "name": "armor_item_medium_t9",
+    "displayname": "#hash_60aeeec1490ce332",
+    "var_9e569978": 1,
+    "icon": "#hash_4a3fa1a1c48735cb",
+    "modelscale": 1,
+    "rarity": "None",
+    "var_c690c73d": 0.65,
+    "handler": "#hash_76a324a4d6073913",
+    "armortier": 2,
+    "var_3af59a99": 1,
+    "pickupicon": "#hash_2d7ca591b43301db",
+    "var_9f307988": 1,
+    "itemtype": "armor",
+    "pickupsound": "fly_pickup_armor_medium"
+}

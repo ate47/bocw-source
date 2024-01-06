@@ -1,0 +1,42 @@
+{
+    "var_bb7dcd09": [
+        {
+            "type": "#hash_798212a6fd4ab166",
+            "image": "#hash_11c97e575565563d",
+            "displayname": "#hash_1f9bc5593dca6179",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "type": "#hash_798212a6fd4ab166",
+            "image": "#hash_433d3e0dbca6a770",
+            "displayname": "#hash_68e7615c0ca01bdc",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "type": "#hash_798212a6fd4ab166",
+            "image": "#hash_1388b5ebcc96f9ee",
+            "displayname": "#hash_42813b2356e26cf9",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "type": "#hash_798212a6fd4ab166",
+            "image": "#hash_67a8929383e82681",
+            "displayname": "#hash_7198c584b9be2680",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "type": "#hash_798212a6fd4ab166",
+            "image": "#hash_2032cf07dae502d8",
+            "displayname": "#hash_56161d4902b44c3",
+            "var_a4f2dd9e": "#none"
+        }
+    ],
+    "var_72ef398b": 1,
+    "var_922067c4": "SCRIPTBUNDLE",
+    "var_abba0658": 1,
+    "var_a77ed948": "#none",
+    "type": "datasourcelist",
+    "name": "leagueplay_skill_reward_stream",
+    "var_6ff29b97": 1,
+    "var_748e79a5": "#hash_4131675d96a3aac8"
+}

@@ -1,0 +1,23 @@
+{
+    "hinttext": "#hash_289a80d5aab959f7",
+    "var_922067c4": "scriptbundle",
+    "var_f2038d90": "160",
+    "var_fc4aa21e": "170",
+    "value2": "100",
+    "var_6006e991": "110",
+    "var_43883094": "0",
+    "var_7c9022a3": "140",
+    "var_8e4ec620": "150",
+    "var_dfed6968": "120",
+    "var_71ce0d1f": "130",
+    "var_9b4871a2": "190",
+    "var_8d1ed54f": "180",
+    "var_d606e712": "200",
+    "type": "gamesettings",
+    "label": "#hash_49fba92264d6ddf7",
+    "name": "scream_slasher_move_speed",
+    "displayname": "#hash_5d6903e40ef68a61",
+    "var_9600a8ab": "#menu/default",
+    "var_9de86f42": 12,
+    "setting": "screamSlasherMoveSpeedOverride"
+}

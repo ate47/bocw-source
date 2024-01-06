@@ -259,97 +259,97 @@ function function_3c3d4f17(var_1a988176) {
         return 0;
     }
     switch (var_1a988176) {
-    case #"hash_7ab18956a0660839":
+    case #"decoy_t9_item_sr":
         if (!is_true(getgametypesetting(#"hash_22e96504754e8375"))) {
             return 0;
         }
         break;
-    case #"hash_689c84ba4e75b1c8":
+    case #"stimshot_t9_item_sr":
         if (!is_true(getgametypesetting(#"hash_52f19cd89938e56a"))) {
             return 0;
         }
         break;
-    case #"hash_6ab225c69027e657":
+    case #"concussion_t9_item_sr":
         if (!is_true(getgametypesetting(#"hash_6a5453075de4b0b3"))) {
             return 0;
         }
         break;
-    case #"hash_7f37566c7dd7ecb":
+    case #"cymbal_monkey_t9_item_sr":
         if (!is_true(getgametypesetting(#"hash_240adf6a97ca2bdc"))) {
             return 0;
         }
         break;
-    case #"hash_49b7001ce02a0797":
+    case #"frag_t9_item_sr":
         if (!is_true(getgametypesetting(#"hash_55a58334a47dd0cb"))) {
             return 0;
         }
         break;
-    case #"hash_49c0448e11cb523c":
+    case #"hatchet_t9_item_sr":
         if (!is_true(getgametypesetting(#"hash_76986c7749f63b9a"))) {
             return 0;
         }
         break;
-    case #"hash_6174ad2674c82ec3":
+    case #"semtex_t9_item_sr":
         if (!is_true(getgametypesetting(#"hash_5d8dd9151ffe3c3f"))) {
             return 0;
         }
         break;
-    case #"hash_1223df8e913d431b":
+    case #"molotov_t9_item_sr":
         if (!is_true(getgametypesetting(#"hash_f8c884a70b46f1f"))) {
             return 0;
         }
         break;
-    case #"hash_61247be669e9b732":
+    case #"satchel_charge_t9_item_sr":
         if (!is_true(getgametypesetting(#"hash_1ab1a89d032f7080"))) {
             return 0;
         }
         break;
-    case #"hash_2cdb76a587cf7a3b":
+    case #"self_revive_sr_item":
         if (!is_true(getgametypesetting(#"hash_3e70ce2c501807dc"))) {
             return 0;
         }
         break;
-    case #"hash_cefb3af28fb800b":
+    case #"item_survival_scorestreak_ultimate_turret":
         if (!is_true(getgametypesetting(#"hash_7edbf65b1ef09118"))) {
             return 0;
         }
         break;
-    case #"hash_541f29266c6b7df8":
+    case #"item_survival_scorestreak_chopper_gunner":
         if (!is_true(getgametypesetting(#"hash_6a0b096c6bbfd5eb"))) {
             return 0;
         }
         break;
-    case #"hash_ba416827a85877c":
+    case #"item_survival_scorestreak_deathmachine":
         if (!is_true(getgametypesetting(#"hash_58c821bc828f5ebe"))) {
             return 0;
         }
         break;
-    case #"hash_24a1df9928527c11":
+    case #"item_survival_scorestreak_flamethrower":
         if (!is_true(getgametypesetting(#"hash_72ad1c2b51381a57"))) {
             return 0;
         }
         break;
-    case #"hash_18ed63a25d0c43d1":
+    case #"item_survival_scorestreak_bow":
         if (!is_true(getgametypesetting(#"hash_115a6ae50a238213"))) {
             return 0;
         }
         break;
-    case #"hash_54877da1f10e40b5":
+    case #"item_survival_scorestreak_napalm_strike":
         if (!is_true(getgametypesetting(#"hash_3ab300fc07c95c32"))) {
             return 0;
         }
         break;
-    case #"hash_5f6d7361258230a":
+    case #"item_survival_scorestreak_pineapple_gun":
         if (!is_true(getgametypesetting(#"hash_3c47218eb5aa98c9"))) {
             return 0;
         }
         break;
-    case #"hash_2294e52d4ac78b9a":
+    case #"item_survival_scorestreak_hand_cannon":
         if (!is_true(getgametypesetting(#"hash_4cec0e29a8901e65"))) {
             return 0;
         }
         break;
-    case #"hash_5150714678b3f409":
+    case #"item_survival_scorestreak_arcxd":
         if (!is_true(getgametypesetting(#"hash_45aec06707484fef"))) {
             return 0;
         }
@@ -405,7 +405,7 @@ function function_4b23ad31(machine, trigger) {
                     if (!isdefined(var_1d1d4a2a)) {
                         var_1d1d4a2a = 0;
                     }
-                    var_d53eef6c = var_1a988176 == #"hash_2cdb76a587cf7a3b";
+                    var_d53eef6c = var_1a988176 == #"self_revive_sr_item";
                     if (var_d53eef6c) {
                         if (var_1f514c83) {
                             var_1d1d4a2a = var_1d1d4a2a + self.var_ac1e78a5 * 50;
@@ -440,31 +440,31 @@ function function_4b23ad31(machine, trigger) {
                             }
                         }
                         switch (var_1a988176) {
-                        case #"hash_7f37566c7dd7ecb":
-                        case #"hash_bd1d07994783ddc":
-                        case #"hash_1223df8e913d431b":
-                        case #"hash_49b7001ce02a0797":
-                        case #"hash_49c0448e11cb523c":
-                        case #"hash_61247be669e9b732":
-                        case #"hash_6174ad2674c82ec3":
-                        case #"hash_689c84ba4e75b1c8":
-                        case #"hash_6ab225c69027e657":
-                        case #"hash_7ab18956a0660839":
+                        case #"cymbal_monkey_t9_item_sr":
+                        case #"black_hole_bomb_item_t9_sr":
+                        case #"molotov_t9_item_sr":
+                        case #"frag_t9_item_sr":
+                        case #"hatchet_t9_item_sr":
+                        case #"satchel_charge_t9_item_sr":
+                        case #"semtex_t9_item_sr":
+                        case #"stimshot_t9_item_sr":
+                        case #"concussion_t9_item_sr":
+                        case #"decoy_t9_item_sr":
                             self stats::function_622feb0d(var_82e23366.namehash, #"crafted", 1);
                             self contracts::increment_zm_contract(#"hash_5db7e053c5f4765f");
                             break;
-                        case #"hash_5f6d7361258230a":
-                        case #"hash_ba416827a85877c":
-                        case #"hash_cefb3af28fb800b":
-                        case #"hash_18ed63a25d0c43d1":
-                        case #"hash_2294e52d4ac78b9a":
-                        case #"hash_24a1df9928527c11":
-                        case #"hash_2cdb76a587cf7a3b":
-                        case #"hash_3e1160ae9d1b5446":
-                        case #"hash_5150714678b3f409":
-                        case #"hash_541f29266c6b7df8":
-                        case #"hash_54877da1f10e40b5":
-                        case #"hash_7ca6014caa35ad1e":
+                        case #"item_survival_scorestreak_pineapple_gun":
+                        case #"item_survival_scorestreak_deathmachine":
+                        case #"item_survival_scorestreak_ultimate_turret":
+                        case #"item_survival_scorestreak_bow":
+                        case #"item_survival_scorestreak_hand_cannon":
+                        case #"item_survival_scorestreak_flamethrower":
+                        case #"self_revive_sr_item":
+                        case #"item_survival_scorestreak_remote_missile":
+                        case #"item_survival_scorestreak_arcxd":
+                        case #"item_survival_scorestreak_chopper_gunner":
+                        case #"item_survival_scorestreak_napalm_strike":
+                        case #"item_survival_scorestreak_artillery_strike":
                             self contracts::increment_zm_contract(#"hash_2ee6ab7ed0517a10");
                             self stats::function_8fb23f94(var_82e23366.namehash, #"crafted", 1);
                             break;
@@ -516,7 +516,7 @@ function give_item(itemname, amount = 1, var_75766173 = 0, var_d2468501 = 0) {
     item = function_4ba8fde(itemname);
     currentweapon = self getcurrentweapon();
     if (isdefined(item)) {
-        if (itemname === #"hash_60aa710d24ffed78" && !var_d2468501) {
+        if (itemname === #"grapple_t9_item_sr" && !var_d2468501) {
             if (amount == 1) {
                 item.count.item = 5;
             } else if (amount == 2) {
@@ -634,30 +634,30 @@ function function_18dfa93a(destination) {
 // Size: 0x62c
 function function_633b283d() {
     /#
-        adddebugcommand("<unknown string>" + function_9e72a96(#"hash_6ab225c69027e657") + "<unknown string>");
-        adddebugcommand("<unknown string>" + function_9e72a96(#"hash_7f37566c7dd7ecb") + "<unknown string>");
-        adddebugcommand("<unknown string>" + function_9e72a96(#"hash_ba416827a85877c") + "<unknown string>");
-        adddebugcommand("<unknown string>" + function_9e72a96(#"hash_24a1df9928527c11") + "<unknown string>");
-        adddebugcommand("<unknown string>" + function_9e72a96(#"hash_49b7001ce02a0797") + "<unknown string>");
-        adddebugcommand("<unknown string>" + function_9e72a96(#"hash_5f6d7361258230a") + "<unknown string>");
-        adddebugcommand("<unknown string>" + function_9e72a96(#"hash_1223df8e913d431b") + "<unknown string>");
-        adddebugcommand("<unknown string>" + function_9e72a96(#"hash_61247be669e9b732") + "<unknown string>");
-        adddebugcommand("<unknown string>" + function_9e72a96(#"hash_689c84ba4e75b1c8") + "<unknown string>");
-        adddebugcommand("<unknown string>" + function_9e72a96(#"hash_2cdb76a587cf7a3b") + "<unknown string>");
-        adddebugcommand("<unknown string>" + function_9e72a96(#"hash_6174ad2674c82ec3") + "<unknown string>");
-        adddebugcommand("<unknown string>" + function_9e72a96(#"hash_cefb3af28fb800b") + "<unknown string>");
-        adddebugcommand("<unknown string>" + function_9e72a96(#"hash_49c0448e11cb523c") + "<unknown string>");
-        adddebugcommand("<unknown string>" + function_9e72a96(#"hash_541f29266c6b7df8") + "<unknown string>");
-        adddebugcommand("<unknown string>" + function_9e72a96(#"hash_18ed63a25d0c43d1") + "<unknown string>");
-        adddebugcommand("<unknown string>" + function_9e72a96(#"hash_2294e52d4ac78b9a") + "<unknown string>");
-        adddebugcommand("<unknown string>" + function_9e72a96(#"hash_7ab18956a0660839") + "<unknown string>");
-        adddebugcommand("<unknown string>" + function_9e72a96(#"hash_54877da1f10e40b5") + "<unknown string>");
-        adddebugcommand("<unknown string>" + function_9e72a96(#"hash_3e1160ae9d1b5446") + "<unknown string>");
-        adddebugcommand("<unknown string>" + function_9e72a96(#"hash_7ca6014caa35ad1e") + "<unknown string>");
-        adddebugcommand("<unknown string>" + function_9e72a96(#"hash_bd1d07994783ddc") + "<unknown string>");
-        adddebugcommand("<unknown string>" + function_9e72a96(#"hash_60aa710d24ffed78") + "<unknown string>");
-        adddebugcommand("<unknown string>" + function_9e72a96(#"hash_5150714678b3f409") + "<unknown string>");
-        adddebugcommand("<unknown string>" + function_9e72a96(#"hash_2294e52d4ac78b9a") + "<unknown string>");
+        adddebugcommand("<unknown string>" + function_9e72a96(#"concussion_t9_item_sr") + "<unknown string>");
+        adddebugcommand("<unknown string>" + function_9e72a96(#"cymbal_monkey_t9_item_sr") + "<unknown string>");
+        adddebugcommand("<unknown string>" + function_9e72a96(#"item_survival_scorestreak_deathmachine") + "<unknown string>");
+        adddebugcommand("<unknown string>" + function_9e72a96(#"item_survival_scorestreak_flamethrower") + "<unknown string>");
+        adddebugcommand("<unknown string>" + function_9e72a96(#"frag_t9_item_sr") + "<unknown string>");
+        adddebugcommand("<unknown string>" + function_9e72a96(#"item_survival_scorestreak_pineapple_gun") + "<unknown string>");
+        adddebugcommand("<unknown string>" + function_9e72a96(#"molotov_t9_item_sr") + "<unknown string>");
+        adddebugcommand("<unknown string>" + function_9e72a96(#"satchel_charge_t9_item_sr") + "<unknown string>");
+        adddebugcommand("<unknown string>" + function_9e72a96(#"stimshot_t9_item_sr") + "<unknown string>");
+        adddebugcommand("<unknown string>" + function_9e72a96(#"self_revive_sr_item") + "<unknown string>");
+        adddebugcommand("<unknown string>" + function_9e72a96(#"semtex_t9_item_sr") + "<unknown string>");
+        adddebugcommand("<unknown string>" + function_9e72a96(#"item_survival_scorestreak_ultimate_turret") + "<unknown string>");
+        adddebugcommand("<unknown string>" + function_9e72a96(#"hatchet_t9_item_sr") + "<unknown string>");
+        adddebugcommand("<unknown string>" + function_9e72a96(#"item_survival_scorestreak_chopper_gunner") + "<unknown string>");
+        adddebugcommand("<unknown string>" + function_9e72a96(#"item_survival_scorestreak_bow") + "<unknown string>");
+        adddebugcommand("<unknown string>" + function_9e72a96(#"item_survival_scorestreak_hand_cannon") + "<unknown string>");
+        adddebugcommand("<unknown string>" + function_9e72a96(#"decoy_t9_item_sr") + "<unknown string>");
+        adddebugcommand("<unknown string>" + function_9e72a96(#"item_survival_scorestreak_napalm_strike") + "<unknown string>");
+        adddebugcommand("<unknown string>" + function_9e72a96(#"item_survival_scorestreak_remote_missile") + "<unknown string>");
+        adddebugcommand("<unknown string>" + function_9e72a96(#"item_survival_scorestreak_artillery_strike") + "<unknown string>");
+        adddebugcommand("<unknown string>" + function_9e72a96(#"black_hole_bomb_item_t9_sr") + "<unknown string>");
+        adddebugcommand("<unknown string>" + function_9e72a96(#"grapple_t9_item_sr") + "<unknown string>");
+        adddebugcommand("<unknown string>" + function_9e72a96(#"item_survival_scorestreak_arcxd") + "<unknown string>");
+        adddebugcommand("<unknown string>" + function_9e72a96(#"item_survival_scorestreak_hand_cannon") + "<unknown string>");
         function_d8ef0f00(&function_7a1fc37c);
     #/
 }

@@ -1,0 +1,40 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_damage_bp_batts_mtxitem",
+            "itemid": "25771811"
+        },
+        {
+            "var_4a4bc969": "#smg_heavy_bp_batts_mtxitem",
+            "itemid": "30812200"
+        },
+        {
+            "var_4a4bc969": "#callingcards_blacksmith2_mtxitem",
+            "itemid": "28719376"
+        },
+        {
+            "var_4a4bc969": "#emblems_blacksmith2_mtxitem",
+            "itemid": "19317759"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_steelskull_mtxitem",
+            "itemid": "20230731"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_blacksmith2_mtxitem",
+            "itemid": "30116372"
+        }
+    ],
+    "itemname": "#hash_488299085a0ac6db",
+    "var_375a1747": "#hash_608ccd1b093e29e9",
+    "var_579fd6c3": 26,
+    "name": "bundle_blueprint_2902_blacksmith_battery_2_mtxbundle",
+    "var_a788fada": "#hash_5726805e8ef2cf5c",
+    "var_22f91505": "#hash_dd3e16f4c81db5a",
+    "var_566825be": "#hash_400014af9bf7c228",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_1a5335a2c9dfee56",
+    "var_db3e02ab": 2000,
+    "itemid": "25085444"
+}

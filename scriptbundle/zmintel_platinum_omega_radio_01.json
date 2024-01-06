@@ -1,0 +1,56 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_54467229c2450fb5",
+            "var_f35c5951": 0.8,
+            "var_5d4b5964": 17.08,
+            "var_36bf8e05": "#hash_279844ae4a734ec3"
+        },
+        {
+            "var_46bd7973": "#hash_54467129c2450e02",
+            "var_f35c5951": 0.8,
+            "var_5d4b5964": 7.27,
+            "var_36bf8e05": "#hash_1e46f15a7adb026"
+        },
+        {
+            "var_46bd7973": "#hash_54467029c2450c4f",
+            "var_f35c5951": 0.6,
+            "var_5d4b5964": 15.25,
+            "var_36bf8e05": "#hash_2dc9e4883143360d"
+        },
+        {
+            "var_46bd7973": "#hash_54466f29c2450a9c",
+            "var_f35c5951": 1,
+            "var_5d4b5964": 13.57,
+            "var_36bf8e05": "#hash_7796812ed24a68e0"
+        },
+        {
+            "var_46bd7973": "#hash_54466e29c24508e9",
+            "var_f35c5951": 0.8,
+            "var_5d4b5964": 23.4,
+            "var_36bf8e05": "#hash_754f0252b4e27cef"
+        },
+        {
+            "var_46bd7973": "#hash_54466d29c2450736",
+            "var_5d4b5964": 8.81,
+            "var_36bf8e05": "#hash_2cd8a47af53154a2"
+        }
+    ],
+    "description": "#hash_77b5c6ebd5d56ea1",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#radio",
+    "model": "#hash_4fe193b7484608f8",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_10f65ca45f134f57",
+    "type": "zmintel",
+    "season": 4,
+    "var_ad4ad686": "#omega",
+    "soundloop": "#hash_5db0167d85d70c82",
+    "name": "zmintel_platinum_omega_radio_01",
+    "var_9be0526e": "#hash_20ea75a25d912949",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "var_348b91fd": "#radio",
+    "title": "#hash_52eb8c3981bae5ef",
+    "mapname": "#zm_platinum"
+}

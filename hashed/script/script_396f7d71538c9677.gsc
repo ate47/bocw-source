@@ -249,7 +249,7 @@ function get_friendly_players() {
 function get_enemy_players() {
     players = [];
     if (level.teambased) {
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             if (team == self.team) {
                 continue;
             }

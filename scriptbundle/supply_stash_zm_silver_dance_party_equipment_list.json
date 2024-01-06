@@ -1,0 +1,65 @@
+{
+    "itemlist": [
+        {
+            "minweight": 15,
+            "var_a6762160": "#frag_t9_item_sr",
+            "maxweight": 15,
+            "available": -1
+        },
+        {
+            "minweight": 15,
+            "var_a6762160": "#semtex_t9_item_sr",
+            "maxweight": 15,
+            "available": -1
+        },
+        {
+            "minweight": 15,
+            "var_a6762160": "#hatchet_t9_item_sr",
+            "maxweight": 15,
+            "available": -1
+        },
+        {
+            "minweight": 15,
+            "var_a6762160": "#concussion_t9_item_sr",
+            "maxweight": 15,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#stimshot_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#satchel_charge_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 5,
+            "var_a6762160": "#molotov_t9_item_sr",
+            "maxweight": 5,
+            "available": -1
+        },
+        {
+            "minweight": 5,
+            "var_a6762160": "#cymbal_monkey_t9_item_sr",
+            "maxweight": 5,
+            "available": -1
+        },
+        {
+            "minweight": 5,
+            "var_a6762160": "#self_revive_sr_item",
+            "maxweight": 5,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "supply_stash_zm_silver_dance_party_equipment_list",
+    "var_fde72c94": 100
+}

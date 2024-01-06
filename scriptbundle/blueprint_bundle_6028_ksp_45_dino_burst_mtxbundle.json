@@ -1,0 +1,43 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#smg_burst_bp_dino_mtxitem",
+            "itemid": "26307832"
+        },
+        {
+            "var_4a4bc969": "#sniper_standard_bp_dino_mtxitem",
+            "itemid": "25513425"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_plastic_dinosaur_mtxitem",
+            "itemid": "26139449"
+        },
+        {
+            "var_4a4bc969": "#reticle_139_mtxitem",
+            "itemid": "31693495"
+        },
+        {
+            "var_4a4bc969": "#emblems_dinocomic_s6_mtxitem",
+            "itemid": "23087806"
+        },
+        {
+            "var_4a4bc969": "#callingcards_dinocomic_s6_mtxitem",
+            "itemid": "25429915"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_r82_20_s6_mtxitem",
+            "itemid": "22756545"
+        }
+    ],
+    "itemname": "#hash_7372179cd0705f79",
+    "var_375a1747": "#hash_7855954556f1fc0f",
+    "name": "blueprint_bundle_6028_ksp_45_dino_burst_mtxbundle",
+    "var_a788fada": "#hash_3ea9926f045de96c",
+    "var_22f91505": "#hash_934b1c3b5de79b1",
+    "var_566825be": "#hash_4a34b4934b12a5b8",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_645cf4426f7e89b1",
+    "var_db3e02ab": 2000,
+    "itemid": "31937994"
+}

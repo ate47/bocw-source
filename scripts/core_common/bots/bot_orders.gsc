@@ -93,7 +93,7 @@ function private function_79241feb() {
     }
     var_e8351662 = randomfloat(totalweight);
     objective = undefined;
-    foreach (weight in weights) {
+    foreach (i, weight in weights) {
         if (var_e8351662 < weight) {
             return var_271aef88[i];
         }
@@ -360,7 +360,7 @@ function private function_caf65526(objective) {
 // Checksum 0x4a04687, Offset: 0x1378
 // Size: 0x24
 function private function_423ecbc1(objective) {
-    self function_a8b0567a(objective);
+    self update_threat(objective);
 }
 
 // Namespace bot_orders/bot_orders
@@ -417,7 +417,7 @@ function private function_72084729(objective) {
             self.bot.var_6b695775 = undefined;
         }
     }
-    self function_a8b0567a(objective);
+    self update_threat(objective);
 }
 
 // Namespace bot_orders/bot_orders
@@ -486,7 +486,7 @@ function private function_17d77980(objective) {
     if (self function_28557cd1()) {
         return;
     }
-    self function_a8b0567a(objective);
+    self update_threat(objective);
     if (!isdefined(self.bot.var_f0015c1)) {
         self.bot.var_f0015c1 = gettime() + int(randomintrange(20, 60) * 1000);
     } else if (!isdefined(self.bot.var_f0015c1) || self.bot.var_f0015c1 <= gettime()) {
@@ -693,7 +693,7 @@ function private function_b6e6a59b() {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x3996d191, Offset: 0x2658
 // Size: 0x29c
-function private function_a8b0567a(objective) {
+function private update_threat(objective) {
     if (self.bot.var_e8c84f98) {
         self.bot.var_3d1abfb9 = undefined;
         return;
@@ -768,7 +768,7 @@ function private function_7a7ab1a2() {
             zoffset = 0;
             var_dd2331cb = [];
             var_23f1621e = [];
-            foreach (var_271aef88 in level.var_774ed7e9) {
+            foreach (team, var_271aef88 in level.var_774ed7e9) {
                 foreach (objective in var_271aef88) {
                     if (!isdefined(objective.info) || !isdefined(objective.info.target)) {
                         continue;
@@ -836,7 +836,7 @@ function private function_d966fb1c() {
         }
         var_e923c16d = self.bot.var_e923c16d;
         var_b5a2be68 = undefined;
-        foreach (id in var_24e30bb8) {
+        foreach (i, id in var_24e30bb8) {
             info = function_b507a336(id);
             color = (0, 1, 0);
             if (i > var_e923c16d) {

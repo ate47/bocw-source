@@ -1,0 +1,16 @@
+{
+    "description": "#hash_371d3437175be0e2",
+    "var_60fcfffa": "#menu/on",
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "maxvalue": 1,
+    "name": "sprint_cancel_reload_kbm",
+    "displayname": "#hash_2a292ebb55b5f25f",
+    "var_500458ac": 10,
+    "var_66faec87": 10,
+    "statname": "sprint_cancel_reload_toggle_kbm",
+    "var_82c732a7": 1,
+    "var_6f00a61a": 1.1,
+    "var_b7401319": "#menu/off"
+}

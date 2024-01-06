@@ -1,0 +1,20 @@
+{
+    "description": "#hash_7d04ad939e0c5402",
+    "itemspawnentry": "#item_zmintel_moscow_omega_document_1",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#hash_54f6484895bebf79",
+    "model": "#hash_f9672b83021e3f0",
+    "var_824079e7": "#onslaught",
+    "uimodel": "#hash_7efbee7411353e3d",
+    "type": "zmintel",
+    "season": 1,
+    "var_ad4ad686": "#hash_1303dcb8d0e80e33",
+    "var_217aec15": "#hash_2676edd6da36f94d",
+    "name": "zmintel_moscow_omega_document_1",
+    "var_9be0526e": "#hash_daeb8129dc8e394",
+    "var_83e219de": "#exclusive",
+    "var_53be913a": 5,
+    "title": "#hash_2fc4b9b5487e4ed2",
+    "var_c664d393": "requiem_document_07",
+    "mapname": "#mp_moscow"
+}

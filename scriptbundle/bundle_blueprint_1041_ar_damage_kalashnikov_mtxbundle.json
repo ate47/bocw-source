@@ -1,0 +1,26 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_damage_bp_ole_mtxitem",
+            "itemid": "30126017"
+        },
+        {
+            "var_4a4bc969": "#callingcards_russiansteel_mtxitem",
+            "itemid": "24539871"
+        },
+        {
+            "var_4a4bc969": "#emblems_russiansteel_mtxitem",
+            "itemid": "19199211"
+        }
+    ],
+    "itemname": "#hash_38d040a7bcef439e",
+    "var_375a1747": "#hash_34c4d1d59d8cf6e4",
+    "name": "bundle_blueprint_1041_ar_damage_kalashnikov_mtxbundle",
+    "var_22f91505": "#hash_788725b13c906a0b",
+    "var_566825be": "#hash_409b720ec7c4eb87",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_51c5a87898e58c8f",
+    "var_db3e02ab": 2000,
+    "itemid": "32409406"
+}

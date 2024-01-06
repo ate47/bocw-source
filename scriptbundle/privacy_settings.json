@@ -1,0 +1,35 @@
+{
+    "var_bb7dcd09": [
+        {
+            "var_5ed80a9c": "#ccpa",
+            "description": "#hash_3800b92ff4e8ebfb",
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "#hash_6e4cfa49f1645aa0",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "description": "#hash_2c79ea24ab1a2ba",
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "#hash_2c79ea24ab1a2ba",
+            "var_a4f2dd9e": "#none",
+            "var_e1c44b36": "#hash_1b282d4928263311"
+        },
+        {
+            "var_5ed80a9c": "#update",
+            "description": "#hash_2c79ea24ab1a2ba",
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "#hash_12f3b87297f26fa7",
+            "var_a4f2dd9e": "#none",
+            "var_e1c44b36": "#hash_5fc22d40016c6911"
+        }
+    ],
+    "var_88c0037d": 1,
+    "var_72ef398b": 1,
+    "var_d7f79634": 1,
+    "var_922067c4": "SCRIPTBUNDLE",
+    "var_1af796": 1,
+    "var_a77ed948": "#none",
+    "type": "datasourcelist",
+    "name": "privacy_settings",
+    "var_f8c3715": 1
+}

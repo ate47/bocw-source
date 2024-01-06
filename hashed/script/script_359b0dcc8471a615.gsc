@@ -47,7 +47,7 @@ function function_5089875d() {
         var_8091ece = 28;
     }
     setdvar(#"hash_21da43870d56a220", var_8091ece);
-    foreach (mannequin in mannequins) {
+    foreach (i, mannequin in mannequins) {
         var_4c9b75d1 = arraygetclosest(mannequin.origin, var_ecf867b5);
         if (i < 28) {
             if (isdefined(var_4c9b75d1)) {

@@ -1,0 +1,331 @@
+{
+    "var_2be3941a": [
+        {
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "var_b4ab831a": "#hash_20271d535e70f127",
+            "var_ac26b920": 1,
+            "var_7a2c1108": "#hash_4a2b94537cdcbc59"
+        },
+        {
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_magnificent",
+            "var_ac26b920": 1,
+            "var_923b9c3c": 1,
+            "var_7a2c1108": "#hash_2bf32dea02751a2f"
+        },
+        {
+            "var_5f79ee71": "#craftbackground",
+            "var_b4ab831a": "#hash_40ff21eb99b9da4a",
+            "var_ac26b920": 1,
+            "var_923b9c3c": 2,
+            "var_7a2c1108": "#hash_4c987915eabe4699"
+        },
+        {
+            "var_5f79ee71": "#crafticon",
+            "var_b4ab831a": "#hash_2c5b2312cb0e2277",
+            "var_ac26b920": 1,
+            "var_923b9c3c": 3,
+            "var_7a2c1108": "#hash_6f81ec23e6dea56"
+        },
+        {
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "var_b4ab831a": "#hash_153718a9fb6088be",
+            "var_ac26b920": 2,
+            "var_7a2c1108": "#hash_4a2b94537cdcbc59"
+        },
+        {
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_fun_fish",
+            "var_ac26b920": 2,
+            "var_923b9c3c": 1,
+            "var_7a2c1108": "#hash_2bf32dea02751a2f"
+        },
+        {
+            "var_5f79ee71": "#craftbackground",
+            "var_b4ab831a": "#hash_51800744b8af799b",
+            "var_ac26b920": 2,
+            "var_923b9c3c": 2,
+            "var_7a2c1108": "#hash_4c987915eabe4699"
+        },
+        {
+            "var_5f79ee71": "#crafticon",
+            "var_b4ab831a": "#hash_337307606e7d85b5",
+            "var_ac26b920": 2,
+            "var_923b9c3c": 3,
+            "var_7a2c1108": "#hash_6f81ec23e6dea56"
+        },
+        {
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "var_b4ab831a": "#hash_336f2de213e568cc",
+            "var_ac26b920": 3,
+            "var_7a2c1108": "#hash_4a2b94537cdcbc59"
+        },
+        {
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_hotel_room_key",
+            "var_ac26b920": 3,
+            "var_923b9c3c": 1,
+            "var_7a2c1108": "#hash_2bf32dea02751a2f"
+        },
+        {
+            "var_5f79ee71": "#craftbackground",
+            "var_b4ab831a": "#hash_1e6edf6c67843e72",
+            "var_ac26b920": 3,
+            "var_923b9c3c": 2,
+            "var_7a2c1108": "#hash_4c987915eabe4699"
+        },
+        {
+            "var_5f79ee71": "#crafticon",
+            "var_b4ab831a": "#hash_9c26d145e3c8550",
+            "var_ac26b920": 3,
+            "var_923b9c3c": 3,
+            "var_7a2c1108": "#hash_6f81ec23e6dea56"
+        },
+        {
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "var_b4ab831a": "#hash_57e58780cf01aa1a",
+            "var_ac26b920": 4,
+            "var_7a2c1108": "#hash_4a2b94537cdcbc59"
+        },
+        {
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_caesar_ring",
+            "var_ac26b920": 4,
+            "var_923b9c3c": 1,
+            "var_7a2c1108": "#hash_2bf32dea02751a2f"
+        },
+        {
+            "var_5f79ee71": "#craftbackground",
+            "var_b4ab831a": "#hash_6b41748e3d1c73be",
+            "var_ac26b920": 4,
+            "var_923b9c3c": 2,
+            "var_7a2c1108": "#hash_4c987915eabe4699"
+        },
+        {
+            "var_5f79ee71": "#crafticon",
+            "var_b4ab831a": "#hash_61029105d45488b9",
+            "var_ac26b920": 4,
+            "var_923b9c3c": 3,
+            "var_7a2c1108": "#hash_6f81ec23e6dea56"
+        },
+        {
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "var_b4ab831a": "#hash_76aae268296eeb4d",
+            "var_ac26b920": 5,
+            "var_7a2c1108": "#hash_4a2b94537cdcbc59"
+        },
+        {
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_claw_cash",
+            "var_ac26b920": 5,
+            "var_923b9c3c": 1,
+            "var_7a2c1108": "#hash_2bf32dea02751a2f"
+        },
+        {
+            "var_5f79ee71": "#craftbackground",
+            "var_b4ab831a": "#hash_6fdf3ce15eb8175c",
+            "var_ac26b920": 5,
+            "var_923b9c3c": 2,
+            "var_7a2c1108": "#hash_4c987915eabe4699"
+        },
+        {
+            "var_5f79ee71": "#crafticon",
+            "var_b4ab831a": "#hash_553afc8af35a328e",
+            "var_ac26b920": 5,
+            "var_923b9c3c": 3,
+            "var_7a2c1108": "#hash_6f81ec23e6dea56"
+        },
+        {
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "var_b4ab831a": "#hash_52e1690167215eb",
+            "var_ac26b920": 6,
+            "var_7a2c1108": "#hash_4a2b94537cdcbc59"
+        },
+        {
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_cobra_head",
+            "var_ac26b920": 6,
+            "var_923b9c3c": 1,
+            "var_7a2c1108": "#hash_2bf32dea02751a2f"
+        },
+        {
+            "var_5f79ee71": "#craftbackground",
+            "var_b4ab831a": "#hash_5765288703c2c18d",
+            "var_ac26b920": 6,
+            "var_923b9c3c": 2,
+            "var_7a2c1108": "#hash_4c987915eabe4699"
+        },
+        {
+            "var_5f79ee71": "#crafticon",
+            "var_b4ab831a": "#hash_76f3f5394f479f7b",
+            "var_ac26b920": 6,
+            "var_923b9c3c": 3,
+            "var_7a2c1108": "#hash_6f81ec23e6dea56"
+        },
+        {
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "var_b4ab831a": "#hash_6361b30063109cc6",
+            "var_ac26b920": 7,
+            "var_7a2c1108": "#hash_4a2b94537cdcbc59"
+        },
+        {
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_sand_timer",
+            "var_ac26b920": 7,
+            "var_923b9c3c": 1,
+            "var_7a2c1108": "#hash_2bf32dea02751a2f"
+        },
+        {
+            "var_5f79ee71": "#craftbackground",
+            "var_b4ab831a": "#hash_2b90e63d637353c9",
+            "var_ac26b920": 7,
+            "var_923b9c3c": 2,
+            "var_7a2c1108": "#hash_4c987915eabe4699"
+        },
+        {
+            "var_5f79ee71": "#crafticon",
+            "var_b4ab831a": "#hash_4eea643525683490",
+            "var_ac26b920": 7,
+            "var_923b9c3c": 3,
+            "var_7a2c1108": "#hash_6f81ec23e6dea56"
+        },
+        {
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "var_b4ab831a": "#hash_628bac9a92de6c7d",
+            "var_ac26b920": 8,
+            "var_7a2c1108": "#hash_4a2b94537cdcbc59"
+        },
+        {
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_soul_jar",
+            "var_ac26b920": 8,
+            "var_923b9c3c": 1,
+            "var_7a2c1108": "#hash_2bf32dea02751a2f"
+        },
+        {
+            "var_5f79ee71": "#craftbackground",
+            "var_b4ab831a": "#hash_4b162873d21016d6",
+            "var_ac26b920": 8,
+            "var_923b9c3c": 2,
+            "var_7a2c1108": "#hash_4c987915eabe4699"
+        },
+        {
+            "var_5f79ee71": "#crafticon",
+            "var_b4ab831a": "#hash_7f60818719d3ecc0",
+            "var_ac26b920": 8,
+            "var_923b9c3c": 3,
+            "var_7a2c1108": "#hash_6f81ec23e6dea56"
+        },
+        {
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "var_b4ab831a": "#hash_c1bf1418b77aed",
+            "var_ac26b920": 9,
+            "var_7a2c1108": "#hash_4a2b94537cdcbc59"
+        },
+        {
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_voodoo_doll",
+            "var_ac26b920": 9,
+            "var_923b9c3c": 1,
+            "var_7a2c1108": "#hash_2bf32dea02751a2f"
+        },
+        {
+            "var_5f79ee71": "#craftbackground",
+            "var_b4ab831a": "#hash_ec6a4bedc68c1a2",
+            "var_ac26b920": 9,
+            "var_923b9c3c": 2,
+            "var_7a2c1108": "#hash_4c987915eabe4699"
+        },
+        {
+            "var_5f79ee71": "#crafticon",
+            "var_b4ab831a": "#hash_41fa22ef3747bc5c",
+            "var_ac26b920": 9,
+            "var_923b9c3c": 3,
+            "var_7a2c1108": "#hash_6f81ec23e6dea56"
+        },
+        {
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "var_b4ab831a": "#hash_786981ab3257d4ec",
+            "var_ac26b920": 10,
+            "var_7a2c1108": "#hash_4a2b94537cdcbc59"
+        },
+        {
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_dragon_jade",
+            "var_ac26b920": 10,
+            "var_923b9c3c": 1,
+            "var_7a2c1108": "#hash_2bf32dea02751a2f"
+        },
+        {
+            "var_5f79ee71": "#craftbackground",
+            "var_b4ab831a": "#hash_57ea99557f68b837",
+            "var_ac26b920": 10,
+            "var_923b9c3c": 2,
+            "var_7a2c1108": "#hash_4c987915eabe4699"
+        },
+        {
+            "var_5f79ee71": "#crafticon",
+            "var_b4ab831a": "#hash_61b563e29e697a68",
+            "var_ac26b920": 10,
+            "var_923b9c3c": 3,
+            "var_7a2c1108": "#hash_6f81ec23e6dea56"
+        },
+        {
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "var_b4ab831a": "#hash_69c9cfbf14c8e946",
+            "var_ac26b920": 11,
+            "var_7a2c1108": "#hash_4a2b94537cdcbc59"
+        },
+        {
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_beetle",
+            "var_ac26b920": 11,
+            "var_923b9c3c": 1,
+            "var_7a2c1108": "#hash_2bf32dea02751a2f"
+        },
+        {
+            "var_5f79ee71": "#craftbackground",
+            "var_b4ab831a": "#hash_3f6301229afa7a77",
+            "var_ac26b920": 11,
+            "var_923b9c3c": 2,
+            "var_7a2c1108": "#hash_4c987915eabe4699"
+        },
+        {
+            "var_5f79ee71": "#crafticon",
+            "var_b4ab831a": "#hash_48ced5f23525da0b",
+            "var_ac26b920": 11,
+            "var_923b9c3c": 3,
+            "var_7a2c1108": "#hash_6f81ec23e6dea56"
+        },
+        {
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "var_b4ab831a": "#hash_1f715b58a1bdc4a2",
+            "var_ac26b920": 12,
+            "var_7a2c1108": "#hash_4a2b94537cdcbc59"
+        },
+        {
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_trophy",
+            "var_ac26b920": 12,
+            "var_923b9c3c": 1,
+            "var_7a2c1108": "#hash_2bf32dea02751a2f"
+        },
+        {
+            "var_5f79ee71": "#craftbackground",
+            "var_b4ab831a": "#hash_19b2642d573366e9",
+            "var_ac26b920": 12,
+            "var_923b9c3c": 2,
+            "var_7a2c1108": "#hash_4c987915eabe4699"
+        },
+        {
+            "var_5f79ee71": "#crafticon",
+            "var_b4ab831a": "#hash_4ff9466f90a8a193",
+            "var_ac26b920": 12,
+            "var_923b9c3c": 3,
+            "var_7a2c1108": "#hash_6f81ec23e6dea56"
+        }
+    ],
+    "var_922067c4": "SCRIPTBUNDLE",
+    "type": "tournamentrewards",
+    "name": "tournamentrewards_gunfight"
+}

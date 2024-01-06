@@ -1,0 +1,35 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#melee_axe_bp_berserker_mtxitem",
+            "itemid": "18712985"
+        },
+        {
+            "var_4a4bc969": "#execution_042_mtxitem",
+            "itemid": "22911242"
+        },
+        {
+            "var_4a4bc969": "#emblems_vts_29_s6_mtxitem",
+            "itemid": "23285835"
+        },
+        {
+            "var_4a4bc969": "#callingcards_zombie_skull_s6_mtxitem",
+            "itemid": "31930179"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_turkey_leg_mtxitem",
+            "itemid": "32543587"
+        }
+    ],
+    "itemname": "#hash_6e0e09ebbf958617",
+    "var_375a1747": "#hash_52bbe5893887fd45",
+    "name": "blueprint_bundle_6003_double_bladed_axe_berserker_mtxbundle",
+    "var_a788fada": "#hash_43b0e631e09fe5ba",
+    "var_22f91505": "#hash_4092f761b7a5b02e",
+    "var_566825be": "#hash_4eef637467c9b086",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_460ddbd8b0b1a7a2",
+    "var_db3e02ab": 2000,
+    "itemid": "21702073"
+}

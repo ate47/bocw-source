@@ -10,19 +10,19 @@
 // Size: 0x234
 function autoexec registerastscriptfunctions() {
     animationselectortable::registeranimationselectortableevaluator("testFunction", &testfunction);
-    animationselectortable::registeranimationselectortableevaluator("evaluateMoveToCQBAnimations", &function_ce1d8542);
+    animationselectortable::registeranimationselectortableevaluator("evaluateMoveToCQBAnimations", &evaluatemovetocqbanimations);
     animationselectortable::registeranimationselectortableevaluator("evaluateBlockedAnimations", &evaluateblockedanimations);
-    animationselectortable::registeranimationselectortableevaluator("evaluateBlockedCoverArrivalAnimations", &function_463be840);
-    animationselectortable::registeranimationselectortableevaluator("evaluateBlockedCoverExitAnimations", &function_bf5789ed);
-    animationselectortable::registeranimationselectortableevaluator("evaluateBlockedNoStairsAnimations", &function_a9f105c0);
+    animationselectortable::registeranimationselectortableevaluator("evaluateBlockedCoverArrivalAnimations", &evaluateblockedcoverarrivalanimations);
+    animationselectortable::registeranimationselectortableevaluator("evaluateBlockedCoverExitAnimations", &evaluateblockedcoverexitanimations);
+    animationselectortable::registeranimationselectortableevaluator("evaluateBlockedNoStairsAnimations", &evaluateblockednostairsanimations);
     animationselectortable::registeranimationselectortableevaluator("evaluateBlockedAnimationsRelaxed", &evaluateblockedanimationsrelaxed);
     animationselectortable::registeranimationselectortableevaluator("evaluateBlockedAnimationsOffNavmesh", &evaluateblockedanimationsoffnavmesh);
     animationselectortable::registeranimationselectortableevaluator("evaluateHumanTurnAnimations", &evaluatehumanturnanimations);
-    animationselectortable::registeranimationselectortableevaluator("matchPrePlannedTurn", &function_b214c827);
-    animationselectortable::registeranimationselectortableevaluator("planHumanTurnAnimations", &function_d500b59);
+    animationselectortable::registeranimationselectortableevaluator("matchPrePlannedTurn", &matchpreplannedturn);
+    animationselectortable::registeranimationselectortableevaluator("planHumanTurnAnimations", &planhumanturnanimations);
     animationselectortable::registeranimationselectortableevaluator("evaluateHumanExposedArrivalAnimations", &evaluatehumanexposedarrivalanimations);
     animationselectortable::registeranimationselectortableevaluator("evaluateJukeBlockedAnimations", &evaluatejukeblockedanimations);
-    animationselectortable::registeranimationselectortableevaluator("humanDeathEvaluation", &function_b1eca2eb);
+    animationselectortable::registeranimationselectortableevaluator("humanDeathEvaluation", &humandeathevaluation);
 }
 
 // Namespace animation_selector_table_evaluators/animation_selector_table_evaluators
@@ -352,7 +352,7 @@ function evaluator_findfirstvalidanimation(entity, animations, tests) {
 // Params 2, eflags: 0x6 linked
 // Checksum 0x4d51ef4f, Offset: 0x19a8
 // Size: 0x108
-function private function_ce1d8542(entity, animations) {
+function private evaluatemovetocqbanimations(entity, animations) {
     if (is_true(entity.var_81238017)) {
         return undefined;
     }
@@ -391,7 +391,7 @@ function private evaluateblockedanimations(entity, animations) {
 // Params 2, eflags: 0x6 linked
 // Checksum 0x5d6e4c81, Offset: 0x1be8
 // Size: 0x116
-function private function_463be840(entity, animations) {
+function private evaluateblockedcoverarrivalanimations(entity, animations) {
     if (animations.size > 0) {
         anim = evaluator_findfirstvalidanimation(entity, animations, array(&function_da29fa63));
         if (isdefined(anim)) {
@@ -411,7 +411,7 @@ function private function_463be840(entity, animations) {
 // Params 2, eflags: 0x6 linked
 // Checksum 0x6738c9f4, Offset: 0x1d08
 // Size: 0x146
-function private function_bf5789ed(entity, animations) {
+function private evaluateblockedcoverexitanimations(entity, animations) {
     if (animations.size > 0) {
         anim = evaluator_findfirstvalidanimation(entity, animations, array(&evaluator_checkanimationagainstnavmesh, &function_3c7d2020, &function_89b21ba9, &function_8bd6d54d));
         if (isdefined(anim)) {
@@ -431,7 +431,7 @@ function private function_bf5789ed(entity, animations) {
 // Params 2, eflags: 0x6 linked
 // Checksum 0x20f0877a, Offset: 0x1e58
 // Size: 0x136
-function private function_a9f105c0(entity, animations) {
+function private evaluateblockednostairsanimations(entity, animations) {
     if (animations.size > 0) {
         anim = evaluator_findfirstvalidanimation(entity, animations, array(&evaluator_checkanimationagainstnavmesh, &evaluator_checkanimationforovershootinggoal, &function_89b21ba9));
         if (isdefined(anim)) {
@@ -588,7 +588,7 @@ function private function_382b0cfb(animation) {
 // Params 2, eflags: 0x6 linked
 // Checksum 0x9168e37a, Offset: 0x27e8
 // Size: 0x7a
-function private function_b214c827(entity, animations) {
+function private matchpreplannedturn(entity, animations) {
     if (isdefined(entity.var_7b1f015a.animation)) {
         for (i = 0; i < animations.size; i++) {
             if (animations[i][0] == entity.var_7b1f015a.animation) {
@@ -603,7 +603,7 @@ function private function_b214c827(entity, animations) {
 // Params 2, eflags: 0x6 linked
 // Checksum 0x7bc6bd55, Offset: 0x2870
 // Size: 0x2b4
-function private function_d500b59(entity, animations) {
+function private planhumanturnanimations(entity, animations) {
     if (!isdefined(entity.var_7b1f015a)) {
         entity.var_7b1f015a.entity = {};
     }
@@ -702,7 +702,7 @@ function private function_147224(entity, animation) {
 // Params 2, eflags: 0x6 linked
 // Checksum 0x72896e4e, Offset: 0x2f78
 // Size: 0x184
-function private function_b1eca2eb(*entity, animations) {
+function private humandeathevaluation(*entity, animations) {
     var_bec12c3d = 0;
     if ((isdefined(self.var_697c35e6) ? self.var_697c35e6 : 1) == 0 || (isdefined(level.var_d03f21c6) ? level.var_d03f21c6 : 0) > gettime()) {
         var_bec12c3d = 1;

@@ -1,0 +1,26 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#ar_mercenary_bp_leagueplay_mtxitem",
+            "itemid": "20459603"
+        },
+        {
+            "var_4a4bc969": "#callingcards_codtiming_mtxitem",
+            "itemid": "31097373"
+        },
+        {
+            "var_4a4bc969": "#callingcards_thunderclap_mtxitem",
+            "itemid": "33356260"
+        },
+        {
+            "var_4a4bc969": "#emblems_sweep_mtxitem",
+            "itemid": "27762413"
+        }
+    ],
+    "itemname": "#hash_2e3ef5ed6eeae881",
+    "name": "firstparty_bundle_5604_cdl_viewership_mtxentitlement",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "itemid": "21608358"
+}

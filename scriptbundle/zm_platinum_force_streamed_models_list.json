@@ -1,0 +1,13 @@
+{
+    "var_616a2f60": [
+        {
+            "mip": 1,
+            "lod": 4,
+            "type": "#xmodel",
+            "asset": "#hash_5abd729f7a45fe9a"
+        }
+    ],
+    "var_922067c4": "SCRIPTBUNDLE",
+    "type": "mimicproplist",
+    "name": "zm_platinum_force_streamed_models_list"
+}

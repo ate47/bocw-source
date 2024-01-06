@@ -1,0 +1,36 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#hash_3717c0909b3eb955"
+        }
+    ],
+    "var_941096a8": [
+        {
+            "var_386af035": "#xb1_currency_pack_21000_mtxentitlement"
+        },
+        {
+            "var_386af035": "#ps4_currency_pack_21000_mtxentitlement"
+        },
+        {
+            "var_386af035": "#bnet_currency_pack_21000_mtxentitlement"
+        },
+        {
+            "var_386af035": "#steam_currency_pack_21000_mtxentitlement"
+        }
+    ],
+    "itemname": "#hash_410153776997d2d5",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_7c834f6286721268",
+    "var_728341a": 1,
+    "quantity": 21000,
+    "var_375a1747": "#hash_4d49baa22352c914",
+    "season": 7,
+    "var_46300498": 1,
+    "name": "cod_points_21000_mtxitem",
+    "var_c89f0785": "#hash_293582834683fcc5",
+    "category": "#currency",
+    "var_f3c937a9": "#hash_391258b83253c47f",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4
+}

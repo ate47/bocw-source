@@ -1356,8 +1356,8 @@ function function_654ec86b() {
     }
     index = zm_characters::function_dc232a80();
     prefix = "plr_" + index;
-    foreach (a_category in level.sndplayervox) {
-        foreach (vox in a_category) {
+    foreach (category, a_category in level.sndplayervox) {
+        foreach (subcategory, vox in a_category) {
             var_a1effcd = get_number_variants(vox.suffix + "_" + prefix);
             self.sound_dialog[vox.suffix] = [];
             self.sound_dialog_available[vox.suffix] = [];

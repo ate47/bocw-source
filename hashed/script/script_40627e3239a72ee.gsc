@@ -285,7 +285,7 @@ function function_47a1b8() {
         var_b89b8f42 = item_drop::drop_item(0, undefined, 1, 0, point.id, self.origin, self.angles, 2);
         var_b89b8f42.var_dd21aec2.var_b89b8f42 = 1 & 16;
     } else {
-        namespace_58949729::function_f82f361c(self, #"hash_3284bf8ca3a6f00b", 2, 1);
+        namespace_58949729::function_f82f361c(self, #"small_chest_level_1", 2, 1);
     }
     wait(5);
     if (isdefined(self.scriptmodel)) {

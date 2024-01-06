@@ -1,0 +1,35 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s2_analog_naval_warfare_mtxitem",
+            "itemid": "19915573"
+        },
+        {
+            "var_4a4bc969": "#callingcards_aviation_103_mtxitem",
+            "itemid": "27065945"
+        },
+        {
+            "var_4a4bc969": "#emblems_15b_mtxitem",
+            "itemid": "32110218"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_navalwings_mtxitem",
+            "itemid": "20923009"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_planes3_mtxitem",
+            "itemid": "27137281"
+        }
+    ],
+    "itemname": "#hash_149c862570769cb0",
+    "var_375a1747": "#hash_4b451b0a2c532e2",
+    "name": "bundle_vanity_2008_wrist_accessory_aviator_mtxbundle",
+    "var_a788fada": "#hash_74e181055a980217",
+    "var_22f91505": "#hash_752b6c3fce5315bb",
+    "var_566825be": "#hash_2e0e0a8cfcadcd5f",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_693cff57998c1b7f",
+    "var_db3e02ab": 2000,
+    "itemid": "23043677"
+}

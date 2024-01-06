@@ -1,0 +1,51 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_cub_pl_dgi_hitman_mtxitem",
+            "itemid": "26020966"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_cub_dgi_mtxitem",
+            "itemid": "21801561"
+        },
+        {
+            "var_4a4bc969": "#smg_handling_bp_blowrunner_mtxitem",
+            "itemid": "30279364"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s1_analog_fancy_mtxitem",
+            "itemid": "24932080"
+        },
+        {
+            "var_4a4bc969": "#execution_024_mtxitem",
+            "itemid": "23579633"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_contractkiller_mtxitem",
+            "itemid": "26475679"
+        },
+        {
+            "var_4a4bc969": "#reticle_27_mtxitem",
+            "itemid": "28554845"
+        },
+        {
+            "var_4a4bc969": "#emblems_contractkiller_mtxitem",
+            "itemid": "25351144"
+        },
+        {
+            "var_4a4bc969": "#callingcards_contractkiller_mtxitem",
+            "itemid": "25005906"
+        }
+    ],
+    "itemname": "#hash_782e04b377c9643a",
+    "var_375a1747": "#hash_52d7d1c8666edd3c",
+    "var_579fd6c3": 50,
+    "name": "bundle_operator_1004_mendo_contractor_mtxbundle",
+    "var_22f91505": "#hash_5a519e3db528f24c",
+    "var_566825be": "#hash_284d88a263cee08b",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_542d18a27ad3bc",
+    "var_db3e02ab": 2000,
+    "itemid": "26676666"
+}

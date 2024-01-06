@@ -1,0 +1,23 @@
+{
+    "itemlist": [
+        {
+            "minweight": 60,
+            "var_a6762160": "#scrap_item_sr",
+            "maxweight": 60,
+            "available": -1
+        },
+        {
+            "minweight": 40,
+            "var_a6762160": "#scrap_rare_item_sr",
+            "maxweight": 40,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "zombie_level4_scrap_list",
+    "var_fde72c94": 100
+}

@@ -1,0 +1,48 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_770f46ba71e975e9",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "hit"
+                },
+                {
+                    "name": "hit"
+                }
+            ],
+            "model": "#hash_5c9199197def76e7",
+            "type": "player",
+            "var_db255011": 1,
+            "name": "player 1"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_318ef3b5409e6403",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "hit"
+                }
+            ],
+            "model": "#spawner_bo5_mimic",
+            "type": "actor",
+            "var_db255011": 1,
+            "name": "actor 1"
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "aib_t9_ai_zm_mimic_com_stn_atk_grab_01",
+    "dontsync": 1,
+    "team": "any"
+}

@@ -585,7 +585,7 @@ function private function_a6c9ee49() {
 // Checksum 0x117429ab, Offset: 0x25c8
 // Size: 0x13c
 function private on_actor_killed(*params) {
-    if (self.archetype === #"hash_be2e962be17d10e" && self.team === level.zombie_team) {
+    if (self.archetype === #"mimic" && self.team === level.zombie_team) {
         switch (level.var_85422c0e) {
         case #"strauss":
             var_b3b54a4 = #"hash_74270a8581b4849a";
@@ -612,7 +612,7 @@ function private on_actor_killed(*params) {
 function on_ai_spawned() {
     self endon(#"death");
     level endon(#"end_game");
-    if (self.archetype === #"hash_9f6bc1960ff4912" && self.team === level.zombie_team) {
+    if (self.archetype === #"raz" && self.team === level.zombie_team) {
         switch (level.var_85422c0e) {
         case #"strauss":
             var_b3b54a4 = #"hash_62001c8ac133172a";

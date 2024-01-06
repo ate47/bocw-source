@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#bundle_fantasy_2071_stitch_sentinel_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_187c1c6afeafb61f",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_65826641eb35d0de",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 2,
+    "var_46300498": 1,
+    "baseweapon": "#hash_6436cdb615a2bb79",
+    "name": "loot_smg_fastfire_bp_overrun_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "26998213",
+    "blueprint": "#hash_187c1c6afeafb61f"
+}

@@ -124,7 +124,7 @@ function function_1a4228a5(localclientnum, *oldval, newval, *bnewent, *binitials
             level.var_18a959b stoprenderoverridebundle(level.var_74017fd2);
         }
         level.var_18a959b playrenderoverridebundle(level.var_34ac1fa);
-        while (player.var_1bee6f4b === 1 || player.weapon.name === #"hash_2f648e335983677a") {
+        while (player.var_1bee6f4b === 1 || player.weapon.name === #"chopper_gunner") {
             waitframe(1);
         }
         if (isdefined(level.var_18a959b)) {

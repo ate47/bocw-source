@@ -29,13 +29,13 @@ function private autoexec __init__system__() {
 // Checksum 0xa043ff30, Offset: 0x188
 // Size: 0x10c
 function function_70a657d8() {
-    spawner::add_archetype_spawn_function(#"hash_be2e962be17d10e", &function_76433e31);
-    spawner::function_89a2cd87(#"hash_be2e962be17d10e", &function_820e5ac3);
+    spawner::add_archetype_spawn_function(#"mimic", &function_76433e31);
+    spawner::function_89a2cd87(#"mimic", &function_820e5ac3);
     level.var_f8d5dd16 = &function_bc29cf28;
     level.var_64aa9d51 = &function_64aa9d51;
     level.var_f29dd47 = &function_f29dd47;
     callback::add_callback(#"hash_7cdee03c16eb684a", &zm_ai_mimic::function_218c4ce8);
-    namespace_ce1f29cc::add_archetype_spawn_function(#"hash_be2e962be17d10e", &function_21de8113);
+    namespace_ce1f29cc::add_archetype_spawn_function(#"mimic", &function_21de8113);
 }
 
 // Namespace namespace_3d98def3/namespace_3d98def3
@@ -147,7 +147,7 @@ function function_7c29f2ef(entity) {
 function function_9853eadb(entity) {
     if (is_true(entity.aat_turned)) {
         if (is_true(entity.var_2ca2d270) && isdefined(entity.var_1386d828)) {
-            namespace_be0f9d50::function_f021ef67(entity.var_1386d828, []);
+            mimic_prop_spawn::function_f021ef67(entity.var_1386d828, []);
         }
         awareness::set_state(entity, #"chase");
     }

@@ -1,0 +1,68 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_136148a27700152b"
+        },
+        {
+            "var_fe10649e": "#hash_136149a2770016de"
+        },
+        {
+            "var_fe10649e": "#hash_13614aa277001891"
+        },
+        {
+            "var_fe10649e": "#hash_13614ba277001a44"
+        }
+    ],
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#sniper_quickscope_bp_gasoline_mtxitem",
+            "itemid": "17998522"
+        },
+        {
+            "var_4a4bc969": "#smg_heavy_bp_gasoline_mtxitem",
+            "itemid": "23250716"
+        },
+        {
+            "var_4a4bc969": "#c_t9_rus_pl_stitch_brute_mtxitem",
+            "itemid": "31393418"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_rus_stitch_mtxitem",
+            "itemid": "30156871"
+        },
+        {
+            "var_4a4bc969": "#fav_light_wz_assembly_mpx_apoc_mtxitem",
+            "itemid": "24131575"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_stick_shift_mtxitem",
+            "itemid": "26509202"
+        },
+        {
+            "var_4a4bc969": "#loot_ges_mtx_t9_tiniest_violin_mtxitem",
+            "itemid": "26319171"
+        },
+        {
+            "var_4a4bc969": "#emblems_s3_vts_final_38_animated_mtxitem",
+            "itemid": "20201592"
+        },
+        {
+            "var_4a4bc969": "#callingcards_motorjunkie_animated_mtxitem",
+            "itemid": "30060709"
+        }
+    ],
+    "itemname": "#hash_593201eb61086475",
+    "var_375a1747": "#hash_136148a27700152b",
+    "var_3040f0d1": "#hash_136148a27700152b",
+    "var_8ee7db29": 1,
+    "var_579fd6c3": 50,
+    "name": "blueprint_bundle_3008_pelington_703_road_grime_mtxbundle",
+    "var_a788fada": "#hash_234cbb6b82becc02",
+    "var_22f91505": "#hash_4c5a132ecabf812e",
+    "var_566825be": "#hash_7b3c0ba9da3c160e",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_32505d12aa1730a2",
+    "var_db3e02ab": 750,
+    "itemid": "23485194"
+}

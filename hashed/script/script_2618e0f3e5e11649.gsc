@@ -1109,7 +1109,7 @@ function function_527d149a(*params) {
 // Size: 0xe2
 function function_e923faaf(var_d194d219) {
     var_be320827 = [1:#"idle", 0:#"wander"];
-    foreach (var_7c18218b in var_d194d219.instance.var_ac7b2365) {
+    foreach (key, var_7c18218b in var_d194d219.instance.var_ac7b2365) {
         if (!isinarray(var_be320827, key)) {
             return 1;
         }
@@ -1482,7 +1482,7 @@ function function_3de1c8ac(var_2da12984) {
                 }
                 level.var_70da9652.var_c5d20e33 = undefined;
             }
-            foreach (var_d194d219 in level.var_f804b293) {
+            foreach (index, var_d194d219 in level.var_f804b293) {
                 scale = 0.7;
                 distance = distance(var_d194d219.origin, origin);
                 if (distance > 400) {
@@ -1596,7 +1596,7 @@ function function_af798ce8(index, scale, alpha, color, var_5ab1a705, var_d194d21
         }
         print3d(var_d194d219.origin + (0, 0, index), "<unknown string>" + var_d194d219.instance.priority, color, alpha, scale * 1, 1);
         index = index + 17 * scale * 1;
-        foreach (value in var_d194d219.instance.var_b4e1804a) {
+        foreach (key, value in var_d194d219.instance.var_b4e1804a) {
             print3d(var_d194d219.origin + (0, 0, index), function_9e72a96(key) + "<unknown string>" + value, color, alpha, scale * 1, 1);
             index = index + 17 * scale * 1;
         }
@@ -1652,7 +1652,7 @@ function function_d937ea12(index, scale, alpha, color, var_d194d219, options) {
 // Size: 0x268
 function function_11ba669e(index, scale, alpha, var_a7c842b3, var_d194d219, *options) {
     /#
-        foreach (var_687dacb8 in options.instance.var_ee69e628) {
+        foreach (var_4b6c578e, var_687dacb8 in options.instance.var_ee69e628) {
             print3d(options.origin + (0, 0, scale), "<unknown string>" + var_4b6c578e + "<unknown string>" + var_687dacb8.count, var_d194d219, var_a7c842b3, alpha * 0.75, 1);
             scale = scale + 17 * alpha * 0.75;
             foreach (ai in var_687dacb8.entities) {
@@ -1675,7 +1675,7 @@ function function_11ba669e(index, scale, alpha, var_a7c842b3, var_d194d219, *opt
 function function_22dd41d8(index, scale, alpha, var_a7c842b3, var_d194d219, *options) {
     /#
         scale = scale + 17 * alpha * 0.75;
-        foreach (count in options.instance.var_ac7b2365) {
+        foreach (state_name, count in options.instance.var_ac7b2365) {
             print3d(options.origin + (0, 0, scale), "<unknown string>" + function_9e72a96(state_name) + "<unknown string>" + count, var_d194d219, var_a7c842b3, alpha * 0.75, 1);
             scale = scale + 17 * alpha * 0.75;
         }

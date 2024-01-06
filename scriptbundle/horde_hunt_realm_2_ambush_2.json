@@ -1,0 +1,13 @@
+{
+    "var_210a8489": [
+        {
+            "var_37d9fb07": "default_zombies_realm_2",
+            "var_a949845f": 8,
+            "var_857deb66": 100
+        }
+    ],
+    "var_d961aeb3": 0.35,
+    "var_922067c4": "scriptbundle",
+    "type": "survivalailist",
+    "name": "horde_hunt_realm_2_ambush_2"
+}

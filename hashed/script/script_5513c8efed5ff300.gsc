@@ -248,7 +248,7 @@ function private function_af62abd5() {
     if (!player function_d4a8b603()) {
         player function_ba2aba1();
     }
-    player namespace_d5fbaef7::function_56266435();
+    player profile_traits::function_56266435();
     /#
         var_27a3190b = getdvarint(#"hash_562b6e46f7c0d74", 0);
         if (var_27a3190b) {
@@ -358,8 +358,8 @@ function private function_7f5a55bb() {
 // Size: 0x274
 function private function_a2fd5d34() {
     player = self;
-    var_8b8c95bd = namespace_d5fbaef7::function_979631fd();
-    var_8651d525 = namespace_d5fbaef7::function_3937b542();
+    var_8b8c95bd = profile_traits::function_979631fd();
+    var_8651d525 = profile_traits::function_3937b542();
     var_75177bd7 = [1:player function_a24493b0(), 0:player function_c005cf32()];
     for (var_f368f4c7 = 0; var_f368f4c7 < var_75177bd7.size; var_f368f4c7++) {
         var_fb7d23d9 = var_8651d525;
@@ -410,7 +410,7 @@ function private function_ba2aba1() {
     player stats::set_stat(#"hash_5a9ce7cd1e0428d8", 0);
     player stats::set_stat(#"hash_74b91965f8d9ed72", 0);
     uploadstats(player);
-    player namespace_d5fbaef7::function_56266435();
+    player profile_traits::function_56266435();
 }
 
 // Namespace namespace_70eba6e6/namespace_70eba6e6
@@ -495,7 +495,7 @@ function private function_c7410540(var_8f977acb, var_24b30db0) {
         namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "militaryBackgroundChoice", var_11a94e50);
         namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "psychProfile1Choice", var_27c3f84b);
         namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "psychProfile2Choice", var_2ec808b9);
-        var_8651d525 = namespace_d5fbaef7::function_3937b542();
+        var_8651d525 = profile_traits::function_3937b542();
         namespace_61e6d095::function_f2a9266(#"hash_7f07ebed7e062c01", 0, "Identifier", 0);
         namespace_61e6d095::function_f2a9266(#"hash_7f07ebed7e062c01", 0, "reference", "");
         namespace_61e6d095::function_f2a9266(#"hash_7f07ebed7e062c01", 0, "displayName", var_8651d525.display_name);
@@ -504,7 +504,7 @@ function private function_c7410540(var_8f977acb, var_24b30db0) {
         namespace_61e6d095::function_f2a9266(#"hash_7f07ebed7e062c01", 0, "type", 1);
         namespace_61e6d095::function_f2a9266(#"hash_7f07ebed7e062c01", 0, "displayIcon", var_8651d525.var_55c1d6d9);
         namespace_61e6d095::function_f2a9266(#"hash_7f07ebed7e062c01", 0, "displayIconBorder", #"");
-        var_8b8c95bd = namespace_d5fbaef7::function_979631fd();
+        var_8b8c95bd = profile_traits::function_979631fd();
         for (i = 0; i < var_8b8c95bd.size; i++) {
             var_78eb7d08 = i + 1;
             namespace_61e6d095::function_f2a9266(#"hash_7f07ebed7e062c01", var_78eb7d08, "Identifier", i + 1);
@@ -722,16 +722,16 @@ function function_516d14be() {
         assert(isplayer(self));
     #/
     player = self;
-    player namespace_d5fbaef7::function_56266435();
+    player profile_traits::function_56266435();
     var_dbbfc950 = player function_c005cf32();
     if (var_dbbfc950 != "" && var_dbbfc950 != "classified") {
-        var_6976a186 = namespace_d5fbaef7::function_d9b59414(var_dbbfc950);
-        player namespace_d5fbaef7::function_18198dfb(var_6976a186);
+        var_6976a186 = profile_traits::function_d9b59414(var_dbbfc950);
+        player profile_traits::function_18198dfb(var_6976a186);
     }
     var_b22f761b = player function_a24493b0();
     if (var_b22f761b != "" && var_b22f761b != "classified") {
-        var_6976a186 = namespace_d5fbaef7::function_d9b59414(var_b22f761b);
-        player namespace_d5fbaef7::function_18198dfb(var_6976a186);
+        var_6976a186 = profile_traits::function_d9b59414(var_b22f761b);
+        player profile_traits::function_18198dfb(var_6976a186);
     }
     level flag::set("cp_profile_perks_activated");
     player thread function_a2fd5d34();

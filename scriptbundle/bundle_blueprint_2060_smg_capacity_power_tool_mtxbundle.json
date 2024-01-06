@@ -1,0 +1,31 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#smg_capacity_bp_hipower_mtxitem",
+            "itemid": "25316084"
+        },
+        {
+            "var_4a4bc969": "#callingcards_powertool_mtxitem",
+            "itemid": "22213355"
+        },
+        {
+            "var_4a4bc969": "#emblems_hipower_20_mtxitem",
+            "itemid": "17897802"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_marr_male_mtxitem",
+            "itemid": "24590023"
+        }
+    ],
+    "itemname": "#hash_7f917c225c91c1c6",
+    "var_375a1747": "#hash_7816839433c12264",
+    "name": "bundle_blueprint_2060_smg_capacity_power_tool_mtxbundle",
+    "var_a788fada": "#hash_18debdf7452b6857",
+    "var_22f91505": "#hash_55977d32f8e60fd9",
+    "var_566825be": "#hash_8c8d948e50851df",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_11e6e957d2d31919",
+    "var_db3e02ab": 2000,
+    "itemid": "32367570"
+}

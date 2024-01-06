@@ -1415,9 +1415,9 @@ function function_6ad98c9c() {
     level.blood.var_d2257418 = 1;
     if (!isdefined(level.blood.var_286fcc75)) {
         level.blood.var_286fcc75 = [];
-        level.blood.var_286fcc75[0] = getscriptbundle(#"hash_6a1b31fa13fd3cf7");
-        level.blood.var_286fcc75[1] = getscriptbundle(#"hash_23dab6ae22f7bc8d");
-        level.blood.var_286fcc75[2] = getscriptbundle(#"hash_3f360ae2bc478e34");
+        level.blood.var_286fcc75[0] = getscriptbundle(#"gamedifficulty_recruit");
+        level.blood.var_286fcc75[1] = getscriptbundle(#"gamedifficulty_regular");
+        level.blood.var_286fcc75[2] = getscriptbundle(#"gamedifficulty_hardened");
         level.blood.var_286fcc75[3] = getscriptbundle(#"gamedifficulty_veteran");
         level.blood.var_286fcc75[4] = getscriptbundle(#"gamedifficulty_realistic");
     }
@@ -1458,7 +1458,7 @@ function private function_17323bb3(localclientnum) {
 // Size: 0xd4
 function function_100ac98f(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump) {
-        function_dd830dee(#"hash_f19428e2f92114f");
+        function_dd830dee(#"injured_blood_settings");
         level.var_99aec053 = 1;
     } else {
         function_dd830dee();

@@ -1,0 +1,35 @@
+{
+    "itemlist": [
+        {
+            "minweight": 1,
+            "var_a6762160": "#hash_1906c05d38326ed5",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#hash_4c9b68f805898cb6",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#hash_7404f8cf53136d00",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#hash_6741d65372f16fc4",
+            "maxweight": 1,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "zm_magicbox_weapon_lmg_list_cranked_hard",
+    "var_fde72c94": 100
+}

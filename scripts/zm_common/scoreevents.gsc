@@ -34,7 +34,7 @@ function private autoexec __init__system__() {
 // Checksum 0x84486b2d, Offset: 0x1bf8
 // Size: 0xd40
 function private function_70a657d8() {
-    registerscoreeventcallback("scoreEventZM", &function_caa6c105);
+    registerscoreeventcallback("scoreEventZM", &scoreeventzm);
     registerscoreeventcallback("killingBlow", &function_970a97b2);
     level.var_c90fb58a = [];
     for (i = 0; i < 4; i++) {
@@ -100,12 +100,12 @@ function function_af57ad40() {
     function_9451b95c(#"remote_missile", "cruise_missile_kill_zm", "cruise_missile_kill_special_zm", "cruise_missile_kill_elite_zm");
     function_9451b95c(#"remote_missile_missile", "cruise_missile_kill_zm", "cruise_missile_kill_special_zm", "cruise_missile_kill_elite_zm");
     function_9451b95c(#"remote_missile_bomblet", "cruise_missile_kill_zm", "cruise_missile_kill_special_zm", "cruise_missile_kill_elite_zm");
-    function_9451b95c(#"hash_5ceaf52285031501", "combat_bow_kill_zm", "combat_bow_special_kill_zm", "combat_bow_elite_kill_zm");
+    function_9451b95c(#"sig_bow_flame", "combat_bow_kill_zm", "combat_bow_special_kill_zm", "combat_bow_elite_kill_zm");
     function_9451b95c(#"hash_1734871fef9c0549", "chopper_gunner_kill_zm", "chopper_gunner_kill_special_zm", "chopper_gunner_kill_elite_zm");
     function_9451b95c(#"hero_annihilator", "hand_cannon_kill_zm", "hand_cannon_special_kill_zm", "hand_cannon_elite_kill_zm");
     function_9451b95c(#"hash_3c8b385a76cbfe83", "arcxd_kill_zm", "arcxd_special_kill_zm", "arcxd_elite_kill_zm");
     function_9451b95c(#"planemortar", "artillery_strike_kill_zm", "artillery_strike_kill_special_zm", "artillery_strike_kill_elite_zm");
-    function_9451b95c(#"hash_438fafe881cdd097", "napalm_strike_kill_zm", "napalm_strike_kill_special_zm", "napalm_strike_kill_elite_zm");
+    function_9451b95c(#"napalm_strike", "napalm_strike_kill_zm", "napalm_strike_kill_special_zm", "napalm_strike_kill_elite_zm");
     function_9451b95c(#"hash_6a4dd5ed56f6e3f6", "lt53_kazimir_portal_kill_zm", "lt53_kazimir_portal_kill_special_zm", "lt53_kazimir_portal_kill_elite_zm");
     function_9451b95c(#"hash_41adc0ca9daf6e9d", "energy_mine_kill_zm", "energy_mine_kill_special_zm", "energy_mine_kill_elite_zm");
     function_9451b95c(#"energy_mine_1", "energy_mine_kill_zm", "energy_mine_kill_special_zm", "energy_mine_kill_elite_zm");
@@ -157,7 +157,7 @@ function function_9451b95c(equipment_name, var_92746e82, var_f3af4e17, var_5ef88
 // Params 1, eflags: 0x0
 // Checksum 0xcc68ec89, Offset: 0x3708
 // Size: 0x13c
-function function_caa6c105(params) {
+function scoreeventzm(params) {
     if (isdefined(params.scoreevent) && zm_utility::is_player_valid(params.attacker, 0, 0)) {
         processscoreevent(params.scoreevent, params.attacker, params.enemy, params.weapon);
         if (params.scoreevent === #"hash_180b636d7be578f8") {
@@ -451,7 +451,7 @@ function function_970a97b2(params) {
             } else if (var_a0345f37.var_6f84b820 === #"special") {
                 processscoreevent("brain_rot_turned_kill_special_zm", params.eattacker, var_a0345f37, params.weapon, undefined, params);
                 params.eattacker.var_9c448324 = 1;
-                if (var_a0345f37.archetype === #"hash_9f6bc1960ff4912") {
+                if (var_a0345f37.archetype === #"raz") {
                     params.eattacker zm_stats::increment_challenge_stat(#"hash_3eed494910a05bbc");
                 }
             } else {
@@ -857,7 +857,7 @@ function function_f2ce8b86(params) {
                         case 2:
                         case 3:
                         case 4:
-                            if (var_c2dcab66.weapon.statname !== #"hash_2f648e335983677a") {
+                            if (var_c2dcab66.weapon.statname !== #"chopper_gunner") {
                                 if (params.enemy.var_6f84b820 === #"hash_72d4f2ad2e333eb4") {
                                     processscoreevent("gunner_kia_elite_zm", var_c2dcab66.player, params.enemy, var_c2dcab66.weapon);
                                     var_c2dcab66.player.var_9c448324 = 1;
@@ -984,7 +984,7 @@ function function_f2ce8b86(params) {
                 if (params.enemy.archetype === #"avogadro" && gettime() - (isdefined(params.enemy.var_7fde19e8) ? params.enemy.var_7fde19e8 : 0) <= 2000) {
                     processscoreevent("avogadro_teleport_kia_zm", var_c2dcab66.player, params.enemy, var_c2dcab66.weapon);
                 }
-                if (!isdefined(params.enemy.var_9624a42c) && params.enemy.archetype === #"hash_be2e962be17d10e") {
+                if (!isdefined(params.enemy.var_9624a42c) && params.enemy.archetype === #"mimic") {
                     processscoreevent("mimic_killed_without_getting_hit_zm", var_c2dcab66.player, params.enemy, var_c2dcab66.weapon);
                 }
                 if ((params.enemy.var_6f84b820 === #"hash_72d4f2ad2e333eb4" || params.enemy.var_6f84b820 === #"special") && isdefined(var_c2dcab66.weapon) && (!isdefined(params.enemy.var_e293f8ac) || isdefined(params.enemy.var_e293f8ac) && params.enemy.var_e293f8ac.size === 0)) {
@@ -1532,11 +1532,11 @@ function updatemultikill(params) {
                             var_da42dc1e = 1;
                         }
                         break;
-                    case #"hash_5ceaf52285031501":
+                    case #"sig_bow_flame":
                         if (params.eattacker.var_4927d3d[params.weapon.name].multikills === 3) {
                             processscoreevent("combat_bow_multikill_zm", params.eattacker, undefined, params.weapon);
                             params.eattacker contracts::increment_zm_contract(#"hash_1bdaa70759b87110");
-                            params.eattacker stats::function_8fb23f94(#"hash_5ceaf52285031501", #"hash_7bf29fa438d54aad", 1);
+                            params.eattacker stats::function_8fb23f94(#"sig_bow_flame", #"hash_7bf29fa438d54aad", 1);
                             params.eattacker zm_stats::function_17ee4529(#"hash_513bc9963a91d4b5", 1, #"hash_735ace6b22542a65");
                             params.eattacker function_529d54aa();
                             var_da42dc1e = 1;
@@ -1552,12 +1552,12 @@ function updatemultikill(params) {
                             var_da42dc1e = 1;
                         }
                         break;
-                    case #"hash_438fafe881cdd097":
+                    case #"napalm_strike":
                         if (params.eattacker.var_4927d3d[params.weapon.name].multikills === 5) {
                             params.eattacker contracts::increment_zm_contract(#"hash_fc717066caec57c");
                             processscoreevent("napalm_strike_multikill_zm", params.eattacker, undefined, params.weapon);
                             params.eattacker zm_stats::increment_challenge_stat(#"hash_4a546c8840434f5b");
-                            params.eattacker stats::function_8fb23f94(#"hash_438fafe881cdd097", #"hash_7bf29fa438d54aad", 1);
+                            params.eattacker stats::function_8fb23f94(#"napalm_strike", #"hash_7bf29fa438d54aad", 1);
                             params.eattacker zm_stats::function_17ee4529(#"hash_513bc9963a91d4b5", 1, #"hash_735ace6b22542a65");
                             params.eattacker function_529d54aa();
                             var_da42dc1e = 1;
@@ -1566,7 +1566,7 @@ function updatemultikill(params) {
                     case #"hash_1734871fef9c0549":
                         if (params.eattacker.var_4927d3d[params.weapon.name].multikills === 5) {
                             processscoreevent("chopper_gunner_multikill_zm", params.eattacker, undefined, params.weapon);
-                            params.eattacker stats::function_8fb23f94(#"hash_2f648e335983677a", #"hash_7bf29fa438d54aad", 1);
+                            params.eattacker stats::function_8fb23f94(#"chopper_gunner", #"hash_7bf29fa438d54aad", 1);
                             params.eattacker function_529d54aa();
                             var_da42dc1e = 1;
                         }

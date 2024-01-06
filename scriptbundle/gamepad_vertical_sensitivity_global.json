@@ -1,0 +1,99 @@
+{
+    "options": [
+        {
+            "label": "#hash_435925a4315b747",
+            "value": "0.1"
+        },
+        {
+            "label": "#hash_25c5a9b286556e0d",
+            "value": "0.2"
+        },
+        {
+            "label": "#hash_26c50207596b46e6",
+            "value": "0.4"
+        },
+        {
+            "label": "#hash_753e1b44a3b75161",
+            "value": "0.6"
+        },
+        {
+            "label": "#hash_56e52fc07ccb3464",
+            "value": "0.8"
+        },
+        {
+            "label": "#hash_a6b61f01403e770",
+            "value": "1.0"
+        },
+        {
+            "label": "#hash_56e52dc07ccb30fe",
+            "value": "1.2"
+        },
+        {
+            "label": "#hash_56e52cc07ccb2f4b",
+            "value": "1.4"
+        },
+        {
+            "label": "#hash_56e52bc07ccb2d98",
+            "value": "1.6"
+        },
+        {
+            "label": "#hash_75959ded37137625",
+            "value": "1.8"
+        },
+        {
+            "label": "#hash_56e529c07ccb2a32",
+            "value": "2.0"
+        },
+        {
+            "label": "#hash_72ab84140d501dce",
+            "value": "2.25"
+        },
+        {
+            "label": "#hash_5fd99285f8b522b8",
+            "value": "2.5"
+        },
+        {
+            "label": "#hash_66fb245114e62b49",
+            "value": "2.75"
+        },
+        {
+            "label": "#hash_72ab82140d501a68",
+            "value": "3.0"
+        },
+        {
+            "label": "#hash_4da8a55106be977c",
+            "value": "3.25"
+        },
+        {
+            "label": "#hash_72ab83140d501c1b",
+            "value": "3.5"
+        },
+        {
+            "label": "#hash_55d0de510b38ab17",
+            "value": "3.75"
+        },
+        {
+            "label": "#hash_2a345fb6f6a947d3",
+            "value": "4.0"
+        }
+    ],
+    "var_dfedf08e": 5,
+    "description": "#hash_3ae3cab4b7c455d8",
+    "var_60fcfffa": "#hash_33f7784385593061",
+    "var_9bc3be7": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 0.01,
+    "maxvalue": 1,
+    "name": "gamepad_vertical_sensitivity_global",
+    "displayname": "#hash_680b6a59cd464770",
+    "var_4a4760c0": 0.01,
+    "var_500458ac": 10,
+    "var_926d1be9": 0.01,
+    "var_66faec87": 4,
+    "statname": "input_viewSensitivityVertical",
+    "var_6f00a61a": 1.1,
+    "var_d4e288e": 1,
+    "var_b7401319": "#hash_62ed1ce9b3cdba91"
+}

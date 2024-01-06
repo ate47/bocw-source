@@ -1,0 +1,12 @@
+{
+    "var_210a8489": [
+        {
+            "var_37d9fb07": "survival_ai_dog_plague",
+            "var_a949845f": -1,
+            "var_857deb66": 100
+        }
+    ],
+    "var_922067c4": "scriptbundle",
+    "type": "survivalailist",
+    "name": "objective_dog_plague_ailist"
+}

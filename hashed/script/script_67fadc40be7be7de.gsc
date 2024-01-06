@@ -4,9 +4,9 @@
 #using scripts\core_common\postfx_shared.csc;
 #using scripts\core_common\callbacks_shared.csc;
 
-#namespace namespace_3d0310e8;
+#namespace mp_cartel;
 
-// Namespace namespace_3d0310e8/level_init
+// Namespace mp_cartel/level_init
 // Params 1, eflags: 0x20
 // Checksum 0x7c91a4b3, Offset: 0xb0
 // Size: 0x12c
@@ -22,7 +22,7 @@ function event_handler[level_init] main(*eventstruct) {
     util::waitforclient(0);
 }
 
-// Namespace namespace_3d0310e8/namespace_3d0310e8
+// Namespace mp_cartel/mp_cartel
 // Params 1, eflags: 0x2 linked
 // Checksum 0x3ec57d5b, Offset: 0x1e8
 // Size: 0x40
@@ -32,7 +32,7 @@ function on_gameplay_started(*localclientnum) {
     level notify(#"hash_4db7288228e005");
 }
 
-// Namespace namespace_3d0310e8/namespace_3d0310e8
+// Namespace mp_cartel/mp_cartel
 // Params 0, eflags: 0x2 linked
 // Checksum 0x2372a91c, Offset: 0x230
 // Size: 0x1b4

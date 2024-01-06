@@ -1273,7 +1273,7 @@ class csceneplayer : csceneobject {
                                 player setcharacteroutfit(var_6e0e2531);
                                 if (isdefined(self._s.var_a5617859) && isarray(var_322595c6.presets)) {
                                     var_a919ac81 = strtok(self._s.var_a5617859, "<unknown string>");
-                                    foreach (s_preset in var_322595c6.presets) {
+                                    foreach (var_a343b02b, s_preset in var_322595c6.presets) {
                                         if (!is_true(s_preset.isvalid)) {
                                             continue;
                                         }

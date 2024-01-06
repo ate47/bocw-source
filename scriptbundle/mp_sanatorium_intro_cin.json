@@ -1,0 +1,22 @@
+{
+    "var_c4ec5a3c": "cin_hpc_intro_allies",
+    "var_922067c4": "SCRIPTBUNDLE",
+    "var_30a9de1": "cin_hpc_intro_allies",
+    "var_704cf864": "cin_hpc_intro_axis",
+    "var_e39afb68": "cin_hpc_intro_team10",
+    "type": "mp_intro_cinematic",
+    "vmtype": "Both",
+    "var_3545b69a": 2,
+    "name": "mp_sanatorium_intro_cin",
+    "var_a3282882": "mainscene_01",
+    "var_70e6c400": "mainscene_00",
+    "var_73a4076": 5,
+    "var_d74b6b9c": "cin_hpc_intro",
+    "var_de866a34": "cin_hpc_intro_team8",
+    "var_b1448fb1": "cin_hpc_intro_team9",
+    "var_5f68ebf7": "cin_hpc_intro_team3",
+    "var_93e854f5": "cin_hpc_intro_team6",
+    "var_a5aa7879": "cin_hpc_intro_team7",
+    "var_78449dae": "cin_hpc_intro_team4",
+    "var_79fda120": "cin_hpc_intro_team5"
+}

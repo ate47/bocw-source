@@ -25,7 +25,7 @@
 // Checksum 0x39d72a81, Offset: 0x6e8
 // Size: 0x23c
 function private event_handler[createstruct] function_e0a8e4ba(struct) {
-    foreach (k in [1:"scriptgroup_playscenes", 0:"scriptgroup_initscenes"]) {
+    foreach (var_2f758e99, k in [1:"scriptgroup_playscenes", 0:"scriptgroup_initscenes"]) {
         if (!isdefined(level.var_41204f29)) {
             level.var_41204f29 = [];
         } else if (!isarray(level.var_41204f29)) {
@@ -1283,7 +1283,7 @@ function function_7c6c9843(str_scene, str_shot, a_ents, n_rate = 1) {
             a_ents = array(a_ents);
         }
         var_773f6e2a = 0;
-        foreach (obj in s_bundle.objects) {
+        foreach (index, obj in s_bundle.objects) {
             foreach (s_shot in obj.shots) {
                 if (s_shot.name === str_shot) {
                     str_anim = s_shot.entry[0].anim;
@@ -2106,7 +2106,7 @@ function get_active_scenes(str_scenedef) {
         return (isdefined(level.active_scenes[str_scenedef]) ? level.active_scenes[str_scenedef] : []);
     } else {
         a_scenes = [];
-        foreach (_ in level.active_scenes) {
+        foreach (str_scenedef, _ in level.active_scenes) {
             a_scenes = arraycombine(a_scenes, level.active_scenes[str_scenedef], 0, 0);
         }
         return a_scenes;
@@ -2125,7 +2125,7 @@ function get_inactive_scenes(str_scenedef) {
         return (isdefined(level.inactive_scenes[str_scenedef]) ? level.inactive_scenes[str_scenedef] : []);
     } else {
         a_scenes = [];
-        foreach (_ in level.inactive_scenes) {
+        foreach (str_scenedef, _ in level.inactive_scenes) {
             a_scenes = arraycombine(a_scenes, level.inactive_scenes[str_scenedef], 0, 0);
         }
         return a_scenes;
@@ -3181,10 +3181,10 @@ function private function_8fc96d1b(*var_cfeeef61, var_2f3f4731, a_ents, *n_blend
                     s_tracker thread function_100bb0ad(var_db087283, ent);
                 }
                 break;
-            case #"hash_4f30e9de1a2237f1":
-            case #"hash_4f30f3de1a2248ef":
-            case #"hash_4f30f9de1a225321":
-            case #"hash_4f30fdde1a2259ed":
+            case #"react_r":
+            case #"react_l":
+            case #"react_b":
+            case #"react_f":
                 foreach (ent in self.scene_ents) {
                     s_tracker thread function_ac41a9e4(var_db087283, ent);
                 }

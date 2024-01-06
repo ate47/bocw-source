@@ -1,0 +1,59 @@
+{
+    "var_9aa52b6d": [
+        {
+            "itemname": "#hash_31ebb92a81782a59",
+            "var_5ec2d292": 71
+        },
+        {
+            "itemname": "#hash_56daec144be712ba",
+            "var_5ec2d292": 21
+        },
+        {
+            "itemname": "#hash_6a3327c796e8bf48",
+            "var_5ec2d292": 100
+        },
+        {
+            "itemname": "#hash_522c8c2a1e8406dc",
+            "var_5ec2d292": 85
+        },
+        {
+            "itemname": "#hash_32924b7f77fbc2c7",
+            "var_5ec2d292": 89
+        },
+        {
+            "itemname": "#hash_67d40c065ee7426",
+            "var_5ec2d292": 59
+        },
+        {
+            "itemname": "#hash_64f31a71d38fec90",
+            "var_5ec2d292": 95
+        },
+        {
+            "itemname": "#hash_2f86f1bf41264ed9",
+            "var_5ec2d292": 35
+        },
+        {
+            "itemname": "#hash_73837e20e5ea2177",
+            "var_5ec2d292": 100
+        }
+    ],
+    "var_5393a4bb": "#hash_6721e41479cb2505",
+    "var_99594ca4": "#hash_6721e41479cb2505",
+    "var_35ad2f6d": "#hash_1f0cc706f9a4b4f7",
+    "var_8322c847": "#hash_52de7182ff57e87c",
+    "var_b24ffe02": "#hash_344fe87211cb4f0",
+    "var_9e8da4c6": "#hash_44edf108092d3340",
+    "var_e4771b8b": "mtx_global_purchase_confirmed_S4",
+    "name": "mtx_battle_pass_data_season_4",
+    "var_42c48b92": "#hash_16cd8f9054c5c762",
+    "var_21e49ac6": "mtx_global_battlepass_purchase_S4",
+    "var_6e830db8": "#hash_6af06eda2675c4a5",
+    "var_af1b928d": "#hash_7a1906658e528928",
+    "var_261476a2": "#hash_4907f0f4b48f107",
+    "var_d580508b": "#hash_3587b882f1752d39",
+    "var_e4ec2ee1": "#hash_1f0cc706f9a4b4f7",
+    "var_419b5c0b": "#hash_11e560f6212eb694",
+    "var_22155959": "mtx_global_tier_purchase_S4",
+    "var_a7d281c0": "#hash_698a602671681f2c",
+    "var_a43221e0": "#hash_6721e41479cb2505"
+}

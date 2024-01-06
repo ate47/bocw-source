@@ -1,0 +1,45 @@
+{
+    "weakpoints": [
+        {
+            "var_60790e23": [
+                {
+                    "hitloc": "helmet"
+                },
+                {
+                    "hitloc": "head"
+                },
+                {
+                    "hitloc": "neck"
+                }
+            ],
+            "var_3765e777": 1,
+            "var_641ce20e": 1,
+            "type": "#weakpoint",
+            "health": 1
+        },
+        {
+            "var_60790e23": [
+                {
+                    "hitloc": "helmet"
+                },
+                {
+                    "hitloc": "head"
+                },
+                {
+                    "hitloc": "neck"
+                }
+            ],
+            "var_8b732142": 1,
+            "var_641ce20e": 1,
+            "type": "#armor",
+            "var_b98c4585": 1,
+            "var_f371ebb0": "helmet",
+            "activebydefault": 1,
+            "health": 0.05
+        }
+    ],
+    "var_922067c4": "scriptbundle",
+    "model": "#hash_28773e96cb142220",
+    "type": "characterweakpointsettings",
+    "name": "c_t9_soa_weakpoint_def"
+}

@@ -599,7 +599,7 @@ function function_555d960b(entity) {
         if (isdefined(entity.var_1267fdea)) {
             record3dtext("<unknown string>" + int(entity.var_1267fdea * 1000), entity.origin, (0, 1, 0), "<unknown string>", entity);
         }
-        foreach (var_1d3d7802 in entity.var_eb5eeb0f) {
+        foreach (index, var_1d3d7802 in entity.var_eb5eeb0f) {
             record3dtext("<unknown string>" + index + "<unknown string>" + gettime() - var_1d3d7802, entity.origin, (0, 1, 0), "<unknown string>", entity);
         }
     #/
@@ -916,7 +916,7 @@ function function_a360dd00(entity) {
         if (isdefined(entity.var_1267fdea)) {
             record3dtext("<unknown string>" + int(entity.var_1267fdea * 1000), entity.origin, (0, 1, 0), "<unknown string>", entity);
         }
-        foreach (var_1d3d7802 in entity.var_eb5eeb0f) {
+        foreach (index, var_1d3d7802 in entity.var_eb5eeb0f) {
             record3dtext("<unknown string>" + index + "<unknown string>" + gettime() - var_1d3d7802, entity.origin, (0, 1, 0), "<unknown string>", entity);
         }
     #/

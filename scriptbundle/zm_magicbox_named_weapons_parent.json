@@ -1,0 +1,17 @@
+{
+    "itemlist": [
+        {
+            "minweight": 1,
+            "var_a6762160": "#zm_magicbox_weapon_named_weapons",
+            "maxweight": 1,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "zm_magicbox_named_weapons_parent",
+    "var_fde72c94": 100
+}

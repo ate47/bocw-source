@@ -1,0 +1,31 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#smg_burst_bp_sunkissed_mtxitem",
+            "itemid": "30269214"
+        },
+        {
+            "var_4a4bc969": "#callingcards_heatwave_mtxitem",
+            "itemid": "31040440"
+        },
+        {
+            "var_4a4bc969": "#emblem_sunkissed_19_mtxitem",
+            "itemid": "17961354"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_heatwave_locs_mtxitem",
+            "itemid": "18277725"
+        }
+    ],
+    "itemname": "#hash_4bf04f3724ef644d",
+    "var_375a1747": "#hash_31d983e255da375b",
+    "name": "bundle_blueprint_2070_smg_burst_heat_wave_mtxbundle",
+    "var_a788fada": "#hash_6d7ceef042707fc8",
+    "var_22f91505": "#hash_490c0e39f28f76bc",
+    "var_566825be": "#hash_79d3a5ffc62847b4",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_2904f085d26242c",
+    "var_db3e02ab": 2000,
+    "itemid": "20992834"
+}

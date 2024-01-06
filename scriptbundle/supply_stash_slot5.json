@@ -1,0 +1,19 @@
+{
+    "itemlist": [
+        {
+            "minweight": 100,
+            "var_a6762160": "#health_item_small",
+            "maxweight": 100,
+            "available": 1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_7fb0967b": 12000,
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "supply_stash_slot5",
+    "var_fde72c94": 100,
+    "supplystash": 1
+}

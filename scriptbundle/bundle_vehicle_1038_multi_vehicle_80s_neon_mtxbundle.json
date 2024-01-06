@@ -1,0 +1,50 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#veh_t9_mil_boat_tactical_raft_mpx_m80s_mtxitem",
+            "itemid": "18343445"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_ru_heli_gunship_hind_mpx_m80s_mtxitem",
+            "itemid": "32970951"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_fav_light_mpx_m80s_mtxitem",
+            "itemid": "20558406"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_us_motorcycle_offroad_mpx_m80s_mtxitem",
+            "itemid": "27306374"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_boat_jetski_mpx_m80s_mtxitem",
+            "itemid": "26657464"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_snowmobile_mpx_m80s_mtxitem",
+            "itemid": "23783210"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_ru_tank_t72_mpx_m80s_mtxitem",
+            "itemid": "24527356"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_us_boat_pgb_mpx_m80s_mtxitem",
+            "itemid": "30014560"
+        },
+        {
+            "var_4a4bc969": "#vehiclehorn_countdown_mtxitem",
+            "itemid": "22713391"
+        }
+    ],
+    "itemname": "#hash_43c21d746952bed3",
+    "var_375a1747": "#hash_2bc0a783d0f1c619",
+    "name": "bundle_vehicle_1038_multi_vehicle_80s_neon_mtxbundle",
+    "var_22f91505": "#hash_3b601e31ffc02df3",
+    "var_566825be": "#hash_73e547a613154b84",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_f4bbce4efa81a97",
+    "var_db3e02ab": 2000,
+    "itemid": "29290447"
+}

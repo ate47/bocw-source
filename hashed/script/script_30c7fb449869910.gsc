@@ -102,9 +102,9 @@ function function_3c872f01() {
 // Checksum 0xd4a12417, Offset: 0x640
 // Size: 0x1ec
 function function_d1da8f8f(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    self.var_7266499a = bwastimejump & (1 << 6) - 1;
+    self.pickuptype = bwastimejump & (1 << 6) - 1;
     self.variant = bwastimejump >> 6;
-    def = function_c9502d74(self.var_7266499a, self.variant);
+    def = function_c9502d74(self.pickuptype, self.variant);
     /#
         assert(isdefined(def), "<unknown string>");
     #/

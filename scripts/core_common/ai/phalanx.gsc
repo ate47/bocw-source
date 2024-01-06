@@ -95,7 +95,7 @@ class phalanx {
         /#
             assert(sentients.size <= positions.size, "<unknown string>");
         #/
-        foreach (sentient in sentients) {
+        foreach (index, sentient in sentients) {
             if (isdefined(sentient) && isalive(sentient)) {
                 /#
                     assert(isvec(positions[index]), "<unknown string>" + index + "<unknown string>" + tier + "<unknown string>" + phalanxtype);
@@ -142,7 +142,7 @@ class phalanx {
         }
         positions = _getphalanxpositions(phalanxtype, tier);
         angles = vectortoangles(forward);
-        foreach (position in positions) {
+        foreach (index, position in positions) {
             if (index >= maxtiersize) {
                 break;
             }
@@ -187,7 +187,7 @@ class phalanx {
             self.startsentientcount_ = self.startsentientcount_ + self.sentienttiers_[tiername].size;
         }
         _assignphalanxstance(self.sentienttiers_[#"phalanx_tier1"], "crouch");
-        foreach (tier in self.sentienttiers_) {
+        foreach (name, tier in self.sentienttiers_) {
             _movephalanxtier(self.sentienttiers_[name], phalanxtype, name, destination, forward);
         }
         self.breakingpoint_ = breakingpoint;
@@ -394,7 +394,7 @@ class phalanx {
             return 0;
         }
         self.currentsentientcount_ = 0;
-        foreach (tier in self.sentienttiers_) {
+        foreach (name, tier in self.sentienttiers_) {
             self.sentienttiers_[name] = _prunedead(tier);
             self.currentsentientcount_ = self.currentsentientcount_ + self.sentienttiers_[name].size;
         }
@@ -421,7 +421,7 @@ class phalanx {
     // Size: 0xb2
     function private _prunedead(sentients) {
         livesentients = [];
-        foreach (sentient in sentients) {
+        foreach (index, sentient in sentients) {
             if (isdefined(sentient) && isalive(sentient)) {
                 livesentients[index] = sentient;
             }

@@ -14,12 +14,12 @@ function function_ab6c8a0b() {
     if (!is_true(level.aat_in_use)) {
         return;
     }
-    aat::register("ammomod_cryofreeze", #"hash_209580b9c85739f2", "ui_icon_zombie_ammomod_cryofreeze_stacked");
-    aat::register("ammomod_cryofreeze_1", #"hash_209580b9c85739f2", "ui_icon_zombie_ammomod_cryofreeze_stacked");
-    aat::register("ammomod_cryofreeze_2", #"hash_209580b9c85739f2", "ui_icon_zombie_ammomod_cryofreeze_stacked");
-    aat::register("ammomod_cryofreeze_3", #"hash_209580b9c85739f2", "ui_icon_zombie_ammomod_cryofreeze_stacked");
-    aat::register("ammomod_cryofreeze_4", #"hash_209580b9c85739f2", "ui_icon_zombie_ammomod_cryofreeze_stacked");
-    aat::register("ammomod_cryofreeze_5", #"hash_209580b9c85739f2", "ui_icon_zombie_ammomod_cryofreeze_stacked");
+    aat::register("ammomod_cryofreeze", #"zmui/zm_ammomod_cryofreeze", "ui_icon_zombie_ammomod_cryofreeze_stacked");
+    aat::register("ammomod_cryofreeze_1", #"zmui/zm_ammomod_cryofreeze", "ui_icon_zombie_ammomod_cryofreeze_stacked");
+    aat::register("ammomod_cryofreeze_2", #"zmui/zm_ammomod_cryofreeze", "ui_icon_zombie_ammomod_cryofreeze_stacked");
+    aat::register("ammomod_cryofreeze_3", #"zmui/zm_ammomod_cryofreeze", "ui_icon_zombie_ammomod_cryofreeze_stacked");
+    aat::register("ammomod_cryofreeze_4", #"zmui/zm_ammomod_cryofreeze", "ui_icon_zombie_ammomod_cryofreeze_stacked");
+    aat::register("ammomod_cryofreeze_5", #"zmui/zm_ammomod_cryofreeze", "ui_icon_zombie_ammomod_cryofreeze_stacked");
     clientfield::register("actor", "zm_ammomod_cryofreeze_trail_clientfield", 1, 1, "int", &function_a7a5e842, 1, 0);
     clientfield::register("vehicle", "zm_ammomod_cryofreeze_trail_clientfield", 1, 1, "int", &function_a7a5e842, 1, 0);
     clientfield::register("actor", "zm_ammomod_cryofreeze_explosion_clientfield", 1, 1, "counter", &function_de7bde57, 1, 0);
@@ -50,7 +50,7 @@ function function_a7a5e842(localclientnum, *oldval, newval, *bnewent, *binitials
         }
         if (self.archetype === #"zombie_dog") {
             self.var_feabd9ee = util::playfxontag(fieldname, "zm_weapons/fx9_aat_cryofreeze_lvl1_slow_hound", self, "j_spine2");
-        } else if (self.archetype === #"hash_9f6bc1960ff4912") {
+        } else if (self.archetype === #"raz") {
             self.var_feabd9ee = util::playfxontag(fieldname, "zm_weapons/fx9_aat_cryofreeze_lvl1_slow_raz", self, "j_spine4");
         } else if (self.archetype === #"hash_7c0d83ac1e845ac2") {
             self.var_feabd9ee = util::playfxontag(fieldname, "zm_weapons/fx9_aat_cryofreeze_lvl1_slow_steiner", self, "j_spine4");

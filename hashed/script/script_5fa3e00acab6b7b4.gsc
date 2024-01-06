@@ -114,7 +114,7 @@ function function_d519e318() {
         matchend.var_d21c921d.matchend = isdefined(game.stat[#"teamscores"]) ? game.stat[#"teamscores"] : [];
         matchend.var_ffa674c.matchend = gamemodeisarena();
         teams = [];
-        foreach (var_4c905113 in level.teams) {
+        foreach (var_3ac79a83, var_4c905113 in level.teams) {
             teams[teams.size] = var_3ac79a83;
         }
         matchend.teams = teams;
@@ -470,7 +470,7 @@ function function_607901f4(data) {
     var_37d8e38f.var_5b58152b.var_37d8e38f = isdefined(data.victim.var_6fd69072) ? data.victim.var_6fd69072 : 0;
     var_37d8e38f.var_41d1b088.var_37d8e38f = isdefined(data.victim.var_8cb03411) ? data.victim.var_8cb03411 : 0;
     var_37d8e38f.var_f079a94e.var_37d8e38f = 0;
-    if (namespace_1332002f::function_d072f205()) {
+    if (squad_spawn::function_d072f205()) {
         var_37d8e38f.var_f079a94e.var_37d8e38f = 1;
     }
     var_37d8e38f.var_816b59c6.var_37d8e38f = isdefined(data.victim.spawn.var_a9914487) ? data.victim.spawn.var_a9914487 : 0;
@@ -523,11 +523,11 @@ function function_607901f4(data) {
         }
         if (isdefined(data.weapon)) {
             var_37d8e38f.var_ff979809.var_37d8e38f = data.weapon.name;
-            var_3a1a7fda = data.weapon.attachments;
-            if (var_3a1a7fda.size > 0) {
+            weapon_attachments = data.weapon.attachments;
+            if (weapon_attachments.size > 0) {
                 var_4e00795d = [];
-                for (i = 0; i < var_3a1a7fda.size; i++) {
-                    var_4e00795d[i] = hash(var_3a1a7fda[i]);
+                for (i = 0; i < weapon_attachments.size; i++) {
+                    var_4e00795d[i] = hash(weapon_attachments[i]);
                 }
                 var_37d8e38f.var_f5205237 = var_4e00795d;
             }
@@ -623,9 +623,9 @@ function function_6d57b52a(player, var_6165a2d8, var_cc4bc1dd) {
     if (isdefined(secondarygrenade)) {
         var_2153b0fe.var_68f5c0ed.var_2153b0fe = secondarygrenade.name;
     }
-    var_eef5c70e = player loadout::function_18a77b37("specialgrenade");
-    if (isdefined(var_eef5c70e)) {
-        var_2153b0fe.var_4aaf769.var_2153b0fe = var_eef5c70e.name;
+    fieldupgrade = player loadout::function_18a77b37("specialgrenade");
+    if (isdefined(fieldupgrade)) {
+        var_2153b0fe.field_upgrade.var_2153b0fe = fieldupgrade.name;
     }
     if (isdefined(var_cc4bc1dd)) {
         var_2153b0fe.perks.var_2153b0fe = [];

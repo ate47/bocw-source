@@ -1,0 +1,23 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#bundle_blueprint_1040_ar_accurate_fighting_chance_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_51357e2e8b27e81",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_7298af27060a49b7",
+    "weapon": "#hash_2580580083c87b0d",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_6745b45701abf92b",
+    "season": 1,
+    "var_46300498": 1,
+    "baseweapon": "#hash_2580580083c87b0d",
+    "name": "ar_accurate_bp_fchance_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 3,
+    "itemid": "25599208",
+    "blueprint": "#hash_51357e2e8b27e81"
+}

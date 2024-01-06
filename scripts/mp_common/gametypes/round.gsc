@@ -44,7 +44,7 @@ function round_stats_init() {
     if (!isdefined(game.stat[#"roundswon"][#"tie"])) {
         game.stat[#"roundswon"][#"tie"] = 0;
     }
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (!isdefined(game.stat[#"roundswon"][team])) {
             game.stat[#"roundswon"][team] = 0;
         }

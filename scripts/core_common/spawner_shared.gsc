@@ -611,10 +611,10 @@ function private go_to_node_using_funcs(node, optional_arrived_at_node_func, req
             }
             self flag::clear(node.script_ent_flag_clear);
         }
-        if (namespace_7b4b2b57::function_1631909f(node) || isdefined(node.scriptbundlename)) {
-            if (namespace_7b4b2b57::function_1631909f(node)) {
-                if (namespace_7b4b2b57::can_use(node)) {
-                    node namespace_7b4b2b57::play(self);
+        if (smart_object::function_1631909f(node) || isdefined(node.scriptbundlename)) {
+            if (smart_object::function_1631909f(node)) {
+                if (smart_object::can_use(node)) {
+                    node smart_object::play(self);
                 }
             } else if (isdefined(node.scriptbundlename)) {
                 if (4 < self.goalradius) {
@@ -687,7 +687,7 @@ function private function_eb7a5643(node, startnode = node) {
         nextnode_array = array(nextnode_array);
     }
     for (i = nextnode_array.size - 1; i >= 0; i--) {
-        if (namespace_7b4b2b57::function_1631909f(nextnode_array[i]) && !namespace_7b4b2b57::can_use(nextnode_array[i])) {
+        if (smart_object::function_1631909f(nextnode_array[i]) && !smart_object::can_use(nextnode_array[i])) {
             if (nextnode_array.size == 1) {
                 if (nextnode_array[0] == startnode) {
                     return nextnode_array;
@@ -706,9 +706,9 @@ function private function_eb7a5643(node, startnode = node) {
 // Checksum 0x8676ffc3, Offset: 0x26c0
 // Size: 0x86
 function private function_d0bfad14(ent) {
-    if (namespace_7b4b2b57::function_1631909f(self)) {
-        ent thread namespace_7b4b2b57::function_2677ed08(self);
-        return self namespace_7b4b2b57::get_goal();
+    if (smart_object::function_1631909f(self)) {
+        ent thread smart_object::function_2677ed08(self);
+        return self smart_object::get_goal();
     } else if (isdefined(self.scriptbundlename)) {
         return self scene::function_15be7db9(self.scriptbundlename);
     }

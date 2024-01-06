@@ -1,0 +1,39 @@
+{
+    "options": [
+        {
+            "label": "#hash_5547a696ffd55f7f",
+            "value": "0"
+        },
+        {
+            "label": "#hash_4dc3bb772cc1514c",
+            "value": "1"
+        },
+        {
+            "label": "#hash_3d44793f41bec1ed",
+            "value": "2"
+        },
+        {
+            "label": "#hash_d0346971c931ace",
+            "value": "3"
+        }
+    ],
+    "description": "#hash_3d40a8c23fe2d30d",
+    "var_60fcfffa": "#menu/on",
+    "var_9bc3be7": 1,
+    "var_4ced19ab": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "maxvalue": 1,
+    "name": "gamepad_interact_reload_behavior",
+    "displayname": "#hash_3940bdc0f6d7565b",
+    "var_2d7a664e": 1,
+    "var_500458ac": 10,
+    "var_66faec87": 10,
+    "statname": "INTERACT_RELOAD_BEHAVIOR",
+    "var_6f00a61a": 1.1,
+    "var_a89ae821": 1,
+    "var_624e2965": 1,
+    "var_b7401319": "#menu/off"
+}

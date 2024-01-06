@@ -1,0 +1,51 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_52f3fba1ecd26be5"
+        },
+        {
+            "var_fe10649e": "#hash_329205925aad7cf4"
+        },
+        {
+            "var_fe10649e": "#hash_329206925aad7ea7"
+        },
+        {
+            "var_fe10649e": "#hash_329203925aad798e"
+        }
+    ],
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#shotgun_semiauto_bp_tuningf_mtxitem",
+            "itemid": "31728993"
+        },
+        {
+            "var_4a4bc969": "#loot_smg_spray_bp_tuningf_mtxitem",
+            "itemid": "29305537"
+        },
+        {
+            "var_4a4bc969": "#loot_ges_mtx_t9_zombie_mtxitem",
+            "itemid": "23430358"
+        },
+        {
+            "var_4a4bc969": "#callingcards_darkaether_s4_sheet_mtxitem",
+            "itemid": "26631478"
+        },
+        {
+            "var_4a4bc969": "#emblems_darkaether_s4_sheet_mtxitem",
+            "itemid": "30643455"
+        }
+    ],
+    "itemname": "#hash_44cc96b734d8ed3f",
+    "var_375a1747": "#hash_52f3fba1ecd26be5",
+    "var_3040f0d1": "#hash_52f3fba1ecd26be5",
+    "var_8ee7db29": 1,
+    "name": "blueprint_bundle_4013_gallo_sa12_reactive_three_mtxbundle",
+    "var_a788fada": "#hash_3bfaeca43b9aea1e",
+    "var_22f91505": "#hash_8da6ec5a69056b9",
+    "var_566825be": "#hash_7e1de81d05ab384a",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_69e8f76de1e24df9",
+    "var_db3e02ab": 750,
+    "itemid": "23390535"
+}

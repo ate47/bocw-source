@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#bundle_operator_2033_bulldozer_zombie_dozer_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_26be2b3d8478eab2",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_41402e9dfbdc339c",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 1,
+    "var_46300498": 1,
+    "baseweapon": "#hash_6436cdb615a2bb79",
+    "name": "smg_fastfire_bp_cshinobi_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "26630605",
+    "blueprint": "#hash_26be2b3d8478eab2"
+}

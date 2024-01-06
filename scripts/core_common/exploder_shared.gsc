@@ -489,7 +489,7 @@ function reportexploderids() {
             return;
         }
         println("<unknown string>");
-        foreach (v in level._exploder_ids) {
+        foreach (k, v in level._exploder_ids) {
             println(k + "<unknown string>" + v);
         }
     #/

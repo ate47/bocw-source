@@ -1,0 +1,37 @@
+{
+    "options": [
+        {
+            "label": "#hash_6a489abface20fd6",
+            "value": "0"
+        },
+        {
+            "label": "#menu/low",
+            "value": "1"
+        },
+        {
+            "label": "#menu/high",
+            "value": "2"
+        }
+    ],
+    "var_d260763": "#hash_52360a8eb26b02ea",
+    "description": "#hash_6e38baf3418bdcf0",
+    "var_ebe98576": 1,
+    "var_60fcfffa": "#menu/off",
+    "var_9bc3be7": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "low",
+    "var_799f4f7": 1,
+    "var_140d0a67": 1,
+    "var_77c0bdd6": 1,
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "name": "pc_screen_space_reflection",
+    "displayname": "#hash_202603da82c8dea8",
+    "var_500458ac": 10,
+    "var_66faec87": 10,
+    "statname": "r_ssr_enabled",
+    "var_8b80386": 1,
+    "var_6f00a61a": 1.1,
+    "minvalue": 1,
+    "var_b7401319": "#menu/on"
+}

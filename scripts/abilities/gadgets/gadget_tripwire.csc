@@ -325,7 +325,7 @@ function update_previs(localclientnum) {
     }
     if (isdefined(player.var_61df85ff) && !gamepadusedlast(localclientnum)) {
         obj_id = player.var_61df85ff;
-        if (function_a8cb5322(localclientnum) && !namespace_56e70a4a::function_b8fe9b52(localclientnum)) {
+        if (function_a8cb5322(localclientnum) && !codcaster::function_b8fe9b52(localclientnum)) {
             objective_add(localclientnum, obj_id, "active", #"tripwire_placement", trace1[#"position"]);
             objective_setgamemodeflags(localclientnum, obj_id, 0);
         } else if (objective_state(localclientnum, obj_id) != "invisible") {

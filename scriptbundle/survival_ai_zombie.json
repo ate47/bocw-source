@@ -1,0 +1,19 @@
+{
+    "var_5fa96b51": [
+        {
+            "var_1b48d0fc": "#hash_7cba8a05511ceedf"
+        },
+        {
+            "var_1b48d0fc": "#hash_124b582ce08d78c0"
+        },
+        {
+            "var_1b48d0fc": "#hash_29771ab26cb78d9b"
+        },
+        {
+            "var_1b48d0fc": "#hash_30e4941b102093c4"
+        }
+    ],
+    "var_922067c4": "scriptbundle",
+    "type": "survivalailistentry",
+    "name": "survival_ai_zombie"
+}

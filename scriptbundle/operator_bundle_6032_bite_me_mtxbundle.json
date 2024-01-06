@@ -1,0 +1,51 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_jpn_pl_kitsune_biteme_mtxitem",
+            "itemid": "32799206"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_jps_kitsune_mtxitem",
+            "itemid": "32530210"
+        },
+        {
+            "var_4a4bc969": "#lmg_accurate_bp_bite_mtxitem",
+            "itemid": "30921088"
+        },
+        {
+            "var_4a4bc969": "#pistol_revolver_bp_bite_mtxitem",
+            "itemid": "18556977"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_snake_twoheads_mtxitem",
+            "itemid": "21131821"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s6_analog_bite_me_mtxitem",
+            "itemid": "21106897"
+        },
+        {
+            "var_4a4bc969": "#execution_096_mtxitem",
+            "itemid": "22793242"
+        },
+        {
+            "var_4a4bc969": "#emblem_kitsunemask_s6_mtxitem",
+            "itemid": "20431342"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_koifish_s6_mtxitem",
+            "itemid": "30954419"
+        }
+    ],
+    "itemname": "#hash_3e86cbdefefb0dbe",
+    "var_375a1747": "#hash_2c89ec67da0c8008",
+    "name": "operator_bundle_6032_bite_me_mtxbundle",
+    "var_a788fada": "#hash_731f56b4366c6ed1",
+    "var_22f91505": "#hash_49adfb847adb653a",
+    "var_566825be": "#hash_59a888b96c5947a9",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_296156bf85d0fb36",
+    "var_db3e02ab": 2000,
+    "itemid": "19068165"
+}

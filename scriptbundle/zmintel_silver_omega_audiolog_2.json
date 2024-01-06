@@ -1,0 +1,65 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_1344fd845e8df4de",
+            "var_5d4b5964": 10.58,
+            "var_36bf8e05": "#hash_2a905040941d1b93"
+        },
+        {
+            "var_46bd7973": "#hash_1d1e161df41bac57",
+            "var_5d4b5964": 6.61,
+            "var_36bf8e05": "#hash_173e534a02dd2924"
+        },
+        {
+            "var_46bd7973": "#hash_1344fb845e8df178",
+            "var_5d4b5964": 4.74,
+            "var_36bf8e05": "#hash_382a550309a4b3ad"
+        },
+        {
+            "var_46bd7973": "#hash_1d1e181df41bafbd",
+            "var_5d4b5964": 8.58,
+            "var_36bf8e05": "#hash_4f6db190bc95687e"
+        },
+        {
+            "var_46bd7973": "#hash_134501845e8dfbaa",
+            "var_5d4b5964": 15.96,
+            "var_36bf8e05": "#hash_753d36588bca2b97"
+        },
+        {
+            "var_46bd7973": "#hash_1d1e121df41ba58b",
+            "var_5d4b5964": 4.99,
+            "var_36bf8e05": "#hash_6b84ef218aef6840"
+        },
+        {
+            "var_46bd7973": "#hash_1344ff845e8df844",
+            "var_5d4b5964": 8.47,
+            "var_36bf8e05": "#hash_631abb16671ac111"
+        },
+        {
+            "var_46bd7973": "#hash_1d1e141df41ba8f1",
+            "var_5d4b5964": 0.73,
+            "var_36bf8e05": "#hash_62ab2bb19c1a5c9a"
+        },
+        {
+            "var_46bd7973": "#hash_1344f5845e8de746",
+            "var_5d4b5964": 4.78,
+            "var_36bf8e05": "#hash_fd3aa42f6c12ccb"
+        }
+    ],
+    "description": "#hash_21cbf525d3b7c983",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#exploration",
+    "model": "#hash_20f9a15d3e077602",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_7af8f043b1133323",
+    "type": "zmintel",
+    "var_ad4ad686": "#omega",
+    "soundloop": "#hash_2e77024e1f0a29f1",
+    "name": "zmintel_silver_omega_audiolog_2",
+    "var_9be0526e": "#audiolog",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "var_348b91fd": "#tape",
+    "title": "#hash_33ca4658cff254c9",
+    "mapname": "#zm_silver"
+}

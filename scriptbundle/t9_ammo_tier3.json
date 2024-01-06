@@ -1,0 +1,23 @@
+{
+    "itemlist": [
+        {
+            "minweight": 200,
+            "var_a6762160": "#ammo_sniper_item_t9",
+            "maxweight": 200,
+            "available": -1
+        },
+        {
+            "minweight": 20,
+            "var_a6762160": "#ammo_special_item_t9",
+            "maxweight": 30,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "t9_ammo_tier3",
+    "var_fde72c94": 100
+}

@@ -1,0 +1,121 @@
+{
+    "var_a37441f7": [
+        {
+            "overrides": [
+                {
+                    "key": "#maxclients",
+                    "value": "26"
+                },
+                {
+                    "key": "#hash_24a523f3ae5c68d6",
+                    "value": "8"
+                },
+                {
+                    "key": "#hash_62bf14968131be83",
+                    "value": "18"
+                },
+                {
+                    "key": "#maxlocalclients",
+                    "value": "1"
+                }
+            ],
+            "var_7cad6f74": 1
+        }
+    ],
+    "var_4c669af1": [
+        {
+            "overrides": [
+                {
+                    "key": "#lobbytype",
+                    "value": "1"
+                },
+                {
+                    "key": "#egamemodes",
+                    "value": "1"
+                },
+                {
+                    "key": "#maxclients",
+                    "value": "26"
+                },
+                {
+                    "key": "#hash_24a523f3ae5c68d6",
+                    "value": "8"
+                },
+                {
+                    "key": "#hash_62bf14968131be83",
+                    "value": "18"
+                },
+                {
+                    "key": "#maxlocalclients",
+                    "value": "1"
+                },
+                {
+                    "key": "#title",
+                    "value": "MENU/CUSTOM_DEDICATED_GAMES_CAPS"
+                }
+            ],
+            "var_c24965c": 1
+        }
+    ],
+    "var_16c83fbf": [
+        {
+            "overrides": [
+                {
+                    "key": "#maxclients",
+                    "value": "4"
+                },
+                {
+                    "key": "#hash_24a523f3ae5c68d6",
+                    "value": "4"
+                },
+                {
+                    "key": "#hash_62bf14968131be83",
+                    "value": "0"
+                }
+            ]
+        },
+        {
+            "overrides": [
+                {
+                    "key": "#maxclients",
+                    "value": "1"
+                },
+                {
+                    "key": "#hash_24a523f3ae5c68d6",
+                    "value": "1"
+                },
+                {
+                    "key": "#hash_62bf14968131be83",
+                    "value": "0"
+                },
+                {
+                    "key": "#maxlocalclients",
+                    "value": "1"
+                }
+            ],
+            "mainmode": 2
+        }
+    ],
+    "var_b2458101": 1,
+    "lobbymode": 1,
+    "id": 23,
+    "var_45f67af4": "director_online",
+    "maxlocalclientsnetwork": 1,
+    "mainmode": 4,
+    "var_d16ccae8": 1,
+    "isprivate": 1,
+    "var_3cd09ce7": 1,
+    "var_1d4ea5bd": "lobby_mp",
+    "room": "#lobby_pose",
+    "var_7f60c82f": 24,
+    "var_9ff63d1b": "#hash_5dd231fd15db7531",
+    "maxclients": 26,
+    "name": "director_online_custom",
+    "networkmode": 2,
+    "var_80a68682": "director_online_custom",
+    "egamemodes": 1,
+    "var_ec76767d": 1,
+    "title": "#hash_27307830087a401",
+    "var_f68d7d0": 4,
+    "maxlocalclients": 2
+}

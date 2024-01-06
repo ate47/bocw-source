@@ -1,0 +1,119 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#callingcards_codepartner_1_mtxitem",
+            "itemid": "20459192"
+        },
+        {
+            "var_4a4bc969": "#callingcards_codepartner_2_mtxitem",
+            "itemid": "23796221"
+        },
+        {
+            "var_4a4bc969": "#callingcards_codepartner_3_mtxitem",
+            "itemid": "19468486"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_frog_mtxitem",
+            "itemid": "19067419"
+        },
+        {
+            "var_4a4bc969": "#callingcards_companion_s1_mtxitem",
+            "itemid": "23871057"
+        },
+        {
+            "var_4a4bc969": "#emblems_companion_s1a_mtxitem",
+            "itemid": "29740501"
+        },
+        {
+            "var_4a4bc969": "#emblems_companion_s1b_mtxitem",
+            "itemid": "30745800"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_companion_s1_mtxitem",
+            "itemid": "25824044"
+        },
+        {
+            "var_4a4bc969": "#callingcards_crm_s1_mtxitem",
+            "itemid": "30812650"
+        },
+        {
+            "var_4a4bc969": "#emblems_crm_s1_mtxitem",
+            "itemid": "24998534"
+        },
+        {
+            "var_4a4bc969": "#callingcards_loyalty5_mtxitem",
+            "itemid": "30364756"
+        },
+        {
+            "var_4a4bc969": "#callingcards_loyalty3_mtxitem",
+            "itemid": "30459007"
+        },
+        {
+            "var_4a4bc969": "#callingcards_loyalty4_mtxitem",
+            "itemid": "25702885"
+        },
+        {
+            "var_4a4bc969": "#callingcards_loyalty2_mtxitem",
+            "itemid": "24748352"
+        },
+        {
+            "var_4a4bc969": "#callingcards_loyalty1_mtxitem",
+            "itemid": "28086263"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_powercoil_mtxitem",
+            "itemid": "32942553"
+        },
+        {
+            "var_4a4bc969": "#callingcards_nvidia_mtxitem",
+            "itemid": "24724633"
+        },
+        {
+            "var_4a4bc969": "#emblems_nvidia_mtxitem",
+            "itemid": "27627757"
+        },
+        {
+            "var_4a4bc969": "#c_t9_ger_pl_west_racer_sky_incentive_mtxitem",
+            "itemid": "24373477"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_ger_west_mtxitem",
+            "itemid": "31131649"
+        },
+        {
+            "var_4a4bc969": "#emblems_twitch_s1_mtxitem",
+            "itemid": "20468852"
+        },
+        {
+            "var_4a4bc969": "#c_t9_ger_pl_west_racer_xfinity_incentive_mtxitem",
+            "itemid": "33323298"
+        },
+        {
+            "var_4a4bc969": "#callingcards_xfinity_mtxitem",
+            "itemid": "20531334"
+        },
+        {
+            "var_4a4bc969": "#emblems_xfinity_mtxitem",
+            "itemid": "30335616"
+        },
+        {
+            "var_4a4bc969": "#callingcards_2_decadesinthemaking_mtxitem",
+            "itemid": "27965330"
+        },
+        {
+            "var_4a4bc969": "#callingcards_twitch_s1_mtxitem",
+            "itemid": "22235793"
+        }
+    ],
+    "itemname": "#hash_5ffd8386b9e99671",
+    "description": "#hash_7f2525803c959169",
+    "var_87756eb4": 1,
+    "var_375a1747": "#hash_1324c908aa106cf3",
+    "name": "studio_s01_incentives_mtxentitlement",
+    "var_90708fcf": "#hash_1b839dd312ed813e",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "itemid": "23556098",
+    "var_7c846082": "#hash_f00c770b923deb6"
+}

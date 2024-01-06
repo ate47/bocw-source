@@ -1280,7 +1280,7 @@ function function_db1c9b86() {
             iprintlnbold("<unknown string>");
         #/
         level flag::set(#"hash_3dff248b4edaface");
-        e_player function_bc82f900(#"hash_3937704286348bfa");
+        e_player function_bc82f900(#"zm_gold_interact_rumble_small");
         zm_unitrigger::unregister_unitrigger(self.stub);
     }
 }
@@ -1311,7 +1311,7 @@ function function_bc81184(e_player) {
 // Size: 0x1d4
 function function_27867437() {
     level endon(#"end_game");
-    self function_bc82f900(#"hash_3937704286348bfa");
+    self function_bc82f900(#"zm_gold_interact_rumble_small");
     self namespace_e0966e1e::function_43cd5eff();
     var_12672e82 = util::spawn_model(#"hash_f93e1bf903e219b", level.var_e59aeca1.origin + (13, 0, 1.3), vectorscale((0, 1, 0), 180));
     var_12672e82 thread function_a8c498e3();
@@ -1538,9 +1538,9 @@ function function_3c81b8d8(e_player) {
     level thread scene::play(#"hash_5a121f0591383986");
     e_player function_ec80a97();
     level flag::set(#"hash_25df5b0937fda015");
-    e_player function_bc82f900(#"hash_3937704286348bfa");
+    e_player function_bc82f900(#"zm_gold_interact_rumble_small");
     var_3c6ce622 = struct::get("intel_document_04", "targetname");
-    zm_gold_ww_quest::function_ade87eb5(#"hash_51d66d8e659b2f0d", var_3c6ce622, 0);
+    zm_gold_ww_quest::function_ade87eb5(#"item_zmintel_gold_requiem_document_4", var_3c6ce622, 0);
 }
 
 // Namespace namespace_36ebd7e4/namespace_36ebd7e4

@@ -211,12 +211,12 @@ function function_61297264(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0x10c
 function function_6b66a9a3(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
-        forcestreamxmodel(#"hash_4ba274dbca0d6fd4");
-        forcestreamxmodel(#"hash_1d76083752295368");
+        forcestreamxmodel(#"p9_fxp_zm_teleport_tunnel");
+        forcestreamxmodel(#"p9_fxp_zm_teleport_tunnel_edge");
         function_3385d776(#"hash_2f112a3ab3cf120a");
     } else {
-        stopforcestreamingxmodel(#"hash_4ba274dbca0d6fd4");
-        stopforcestreamingxmodel(#"hash_1d76083752295368");
+        stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel");
+        stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel_edge");
         function_c22a1ca2(#"hash_2f112a3ab3cf120a");
     }
 }
@@ -431,12 +431,12 @@ function function_44dc8dc9(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0x10c
 function function_167fc35(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
-        forcestreamxmodel(#"hash_4ba274dbca0d6fd4");
-        forcestreamxmodel(#"hash_1d76083752295368");
+        forcestreamxmodel(#"p9_fxp_zm_teleport_tunnel");
+        forcestreamxmodel(#"p9_fxp_zm_teleport_tunnel_edge");
         function_3385d776(#"hash_2f112a3ab3cf120a");
     } else {
-        stopforcestreamingxmodel(#"hash_4ba274dbca0d6fd4");
-        stopforcestreamingxmodel(#"hash_1d76083752295368");
+        stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel");
+        stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel_edge");
         function_c22a1ca2(#"hash_2f112a3ab3cf120a");
     }
 }
@@ -537,7 +537,7 @@ function function_5bc9772e(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwasdemojump) {
         self.var_cdd8bedf = playfx(fieldname, #"hash_240b951190d035ec", self.origin);
     } else {
-        self playsound(fieldname, #"hash_5ca9fc80b368b993");
+        self playsound(fieldname, #"zmb_powerup_resource_small_pickup");
         if (isdefined(self.var_cdd8bedf)) {
             killfx(fieldname, self.var_cdd8bedf);
         }

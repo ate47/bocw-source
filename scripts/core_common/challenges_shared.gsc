@@ -1393,7 +1393,7 @@ function endedearly(winner, tie) {
 // Size: 0xbc
 function getlosersteamscores(winner) {
     teamscores = 0;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (team == winner) {
             continue;
         }
@@ -1407,7 +1407,7 @@ function getlosersteamscores(winner) {
 // Checksum 0xbc8a8751, Offset: 0x5b60
 // Size: 0xb2
 function didloserfailchallenge(winner, challenge) {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (team == winner) {
             continue;
         }
@@ -2090,7 +2090,7 @@ function playerkilled(einflictor, attacker, idamage, smeansofdeath, weapon, shit
                 var_5e93fb70 = level.var_578f7c6d.radiussqr;
                 var_f09a5f22 = 1;
                 break;
-            case #"hash_f1b44dbfb6fccde":
+            case #"missile_turret":
                 var_5e93fb70 = function_a3f6cdac(512);
                 var_f09a5f22 = 1;
                 break;
@@ -2108,9 +2108,9 @@ function playerkilled(einflictor, attacker, idamage, smeansofdeath, weapon, shit
             if (var_f09a5f22) {
                 watcher = attacker weaponobjects::getweaponobjectwatcherbyweapon(data.var_525172df);
                 if (isdefined(watcher.objectarray)) {
-                    foreach (var_4aaf769 in watcher.objectarray) {
-                        if (var_4aaf769.owner === attacker) {
-                            if (isdefined(var_4aaf769.origin) && distancesquared(var_4aaf769.origin, attacker.origin) <= (isdefined(var_5e93fb70) ? var_5e93fb70 : function_a3f6cdac(512))) {
+                    foreach (field_upgrade in watcher.objectarray) {
+                        if (field_upgrade.owner === attacker) {
+                            if (isdefined(field_upgrade.origin) && distancesquared(field_upgrade.origin, attacker.origin) <= (isdefined(var_5e93fb70) ? var_5e93fb70 : function_a3f6cdac(512))) {
                                 data.var_2e1b3ac1.data = 1;
                                 break;
                             }
@@ -2226,7 +2226,7 @@ function playerkilled(einflictor, attacker, idamage, smeansofdeath, weapon, shit
         data.var_9e818622.data = 0;
     }
     if (smeansofdeath == "MOD_GRENADE_SPLASH" || smeansofdeath == "MOD_GRENADE" || smeansofdeath == "MOD_EXPLOSIVE" || smeansofdeath == "MOD_PROJECTILE_SPLASH") {
-        if (weapon.name == #"hash_438fafe881cdd097") {
+        if (weapon.name == #"napalm_strike") {
             data.var_254ce896.data = einflictor.var_813987b5;
         } else {
             data.var_254ce896.data = einflictor.birthtime;
@@ -2658,7 +2658,7 @@ function function_a66bed3e() {
     if (!isarray(self.pers[#"hash_58ebc906abf2fa00"])) {
         return;
     }
-    foreach (value in self.pers[#"hash_58ebc906abf2fa00"]) {
+    foreach (var_9ef04ef9, value in self.pers[#"hash_58ebc906abf2fa00"]) {
         self stats::function_dad108fa(var_9ef04ef9, value);
     }
     self.pers[#"hash_58ebc906abf2fa00"] = undefined;

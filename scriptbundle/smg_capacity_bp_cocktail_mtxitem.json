@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#blueprint_bundle_7506_vault_smg_pack_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_573726b078e62eed",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_294ff37d786fd72b",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_1ce09b1ca774881f",
+    "season": 3,
+    "var_46300498": 1,
+    "baseweapon": "#hash_2f42bc0a766b6567",
+    "name": "smg_capacity_bp_cocktail_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "26692408",
+    "blueprint": "#hash_573726b078e62eed"
+}

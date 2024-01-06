@@ -66,8 +66,8 @@ function function_f75dd8e0(name, min_height, fx) {
 // Checksum 0xabc91936, Offset: 0x340
 // Size: 0x32
 function private function_59a04cbf() {
-    if (isdefined(level.var_427d6976.var_7c0863e6)) {
-        return level.var_427d6976.var_7c0863e6;
+    if (isdefined(level.var_427d6976.altimeterseaheight)) {
+        return level.var_427d6976.altimeterseaheight;
     }
     return 0;
 }
@@ -102,7 +102,7 @@ function update(localclientnum) {
     self endon(#"death", #"hash_44d009a3793f7389");
     var_3c752058 = function_59a04cbf();
     while (1) {
-        foreach (fx in self.var_1ff088cf) {
+        foreach (name, fx in self.var_1ff088cf) {
             if (self.origin[2] < level.var_1ff088cf.var_8ca84e59[name].min_height - var_3c752058) {
                 self function_2baaca3c(localclientnum, name);
             }
@@ -123,7 +123,7 @@ function cleanup(localclientnum) {
     if (!isdefined(self.var_1ff088cf)) {
         self.var_1ff088cf = [];
     }
-    foreach (fx in self.var_1ff088cf) {
+    foreach (name, fx in self.var_1ff088cf) {
         stopfx(localclientnum, self.var_1ff088cf[name]);
     }
     self.var_1ff088cf = [];

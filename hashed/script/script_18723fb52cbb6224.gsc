@@ -182,9 +182,9 @@ function function_ba971eed(instance) {
     instance.var_628c4a3a playsound(var_84152d93);
     wait(1);
     var_2858caa2 = {#var_738dfc81:8, #angles:instance.s_start.angles + vectorscale((0, -1, 0), 45), #origin:instance.s_start.origin};
-    var_2858caa2 namespace_65181344::function_fd87c780(#"hash_bd0d579ff12f6d", 8, 3);
+    var_2858caa2 namespace_65181344::function_fd87c780(#"survival_resource_list", 8, 3);
     if (!is_true(instance.var_8ba71ca4)) {
-        var_4d16dab7 = var_2858caa2 namespace_65181344::function_fd87c780(#"hash_66c9f76a0a28f990", 1, 3);
+        var_4d16dab7 = var_2858caa2 namespace_65181344::function_fd87c780(#"sr_radio_tuning_music_drop", 1, 3);
         if (isdefined(var_4d16dab7) && isdefined(var_4d16dab7[0])) {
             var_976623c6 = var_4d16dab7[0].var_a6762160.name;
             level thread function_b1aee549(instance, var_976623c6);
@@ -379,28 +379,28 @@ function function_b1aee549(instance, var_976623c6) {
     case #"hash_4b7cca6fc84ad664":
         str_soundalias = #"hash_78c7fa9c089c9381";
         break;
-    case #"hash_4b7ccd6fc84adb7d":
+    case #"item_zmquest_sr_cassette_tape_06":
         str_soundalias = #"hash_5e33c483e58b6702";
         break;
-    case #"hash_4b7ccc6fc84ad9ca":
+    case #"item_zmquest_sr_cassette_tape_07":
         str_soundalias = #"hash_170ba2307aac7c2d";
         break;
-    case #"hash_4b7cbf6fc84ac3b3":
+    case #"item_zmquest_sr_cassette_tape_08":
         str_soundalias = #"hash_45de3a102350938d";
         break;
-    case #"hash_4b7cbe6fc84ac200":
+    case #"item_zmquest_sr_cassette_tape_09":
         str_soundalias = #"hash_35287d8d56302388";
         break;
-    case #"hash_4b79c16fc8489142":
+    case #"item_zmquest_sr_cassette_tape_10":
         str_soundalias = #"hash_3eb6b923f3a43bff";
         break;
-    case #"hash_4b79c26fc84892f5":
+    case #"item_zmquest_sr_cassette_tape_11":
         str_soundalias = #"hash_302e3a9e4c319483";
         break;
-    case #"hash_4b79bf6fc8488ddc":
+    case #"item_zmquest_sr_cassette_tape_12":
         str_soundalias = #"hash_60495857d8fa7605";
         break;
-    case #"hash_4b79c06fc8488f8f":
+    case #"item_zmquest_sr_cassette_tape_13":
         str_soundalias = #"hash_7cf9b86388acf946";
         break;
     }
@@ -439,28 +439,28 @@ function function_97d03d85(s_params) {
     case #"hash_4b7cca6fc84ad664":
         str_notify = "unlockSRmus_05";
         break;
-    case #"hash_4b7ccd6fc84adb7d":
+    case #"item_zmquest_sr_cassette_tape_06":
         str_notify = "unlockSRmus_06";
         break;
-    case #"hash_4b7ccc6fc84ad9ca":
+    case #"item_zmquest_sr_cassette_tape_07":
         str_notify = "unlockSRmus_07";
         break;
-    case #"hash_4b7cbf6fc84ac3b3":
+    case #"item_zmquest_sr_cassette_tape_08":
         str_notify = "unlockSRmus_08";
         break;
-    case #"hash_4b7cbe6fc84ac200":
+    case #"item_zmquest_sr_cassette_tape_09":
         str_notify = "unlockSRmus_09";
         break;
-    case #"hash_4b79c16fc8489142":
+    case #"item_zmquest_sr_cassette_tape_10":
         str_notify = "unlockSRmus_10";
         break;
-    case #"hash_4b79c26fc84892f5":
+    case #"item_zmquest_sr_cassette_tape_11":
         str_notify = "unlockSRmus_11";
         break;
-    case #"hash_4b79bf6fc8488ddc":
+    case #"item_zmquest_sr_cassette_tape_12":
         str_notify = "unlockSRmus_12";
         break;
-    case #"hash_4b79c06fc8488f8f":
+    case #"item_zmquest_sr_cassette_tape_13":
         str_notify = "unlockSRmus_13";
         break;
     case #"hash_defdefdefdefdef0":

@@ -588,7 +588,7 @@ function function_73730269(var_f3c8eb3) {
     if (result._notify == #"hash_256fe407ad94d83f" && result.pickup === var_f3c8eb3) {
         namespace_7f5aeb59::function_f8645db3(getdvarint(#"hash_2a014ab8179901f4", 500));
         foreach (player in namespace_7f5aeb59::function_23e1f90f()) {
-            player giveachievement(#"hash_134e3e238f070bf6");
+            player giveachievement(#"doa_achievement_dungeondiver");
             player namespace_d2efac9a::function_cb7b5503();
             if (isdefined(player.var_8cff5775.var_fe639705)) {
                 player [[ player.var_8cff5775.var_fe639705 ]](level.var_8cff5775.var_4bd98f7c[level.var_8cff5775.var_182fb75a].type);

@@ -1,0 +1,30 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_4ba8d56414922d9b",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "play"
+                }
+            ],
+            "model": "#p9_gold_surcrystal_medium_01",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "prop 1",
+            "allowdeath": 1,
+            "takedamage": 1
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "p9_zm_gold_sur_crystal_medium_01_bundle",
+    "dontsync": 1,
+    "team": "any"
+}

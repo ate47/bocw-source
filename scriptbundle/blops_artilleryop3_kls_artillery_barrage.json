@@ -1,0 +1,12 @@
+{
+    "var_922067c4": "scriptbundle",
+    "type": "mpdialog_scorestreak",
+    "killmultiple": "#hash_3c002bdfb8cf9362",
+    "var_93906c09": "#hash_55c28d107427a124",
+    "vmtype": "both",
+    "name": "blops_artilleryop3_kls_artillery_barrage",
+    "kill1": "#hash_7608728043e8918f",
+    "kill3": "#hash_7608748043e894f5",
+    "kill2": "#hash_7608738043e89342",
+    "killnone": "#hash_48a432eb2257f4d6"
+}

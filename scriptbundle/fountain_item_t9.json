@@ -1,0 +1,17 @@
+{
+    "var_a6616b9c": 1,
+    "var_922067c4": "scriptbundle",
+    "model": "#hash_13b75bdda9a6a398",
+    "var_16e34ef4": 64,
+    "var_e9898330": "pingitemgeneric",
+    "var_ac75b59f": -1,
+    "type": "itemspawnentry",
+    "var_4a1a4613": "armor_swap",
+    "name": "fountain_item_t9",
+    "var_9e569978": 1,
+    "modelscale": 1,
+    "rarity": "None",
+    "handler": "#generic_pickup",
+    "var_3af59a99": 1,
+    "itemtype": "generic"
+}

@@ -1,0 +1,17 @@
+{
+    "durations": [
+        {
+            "duration": 3,
+            "archetype": "mp_dog",
+            "effecttype": "fire"
+        },
+        {
+            "duration": 3,
+            "archetype": "human",
+            "effecttype": "fire"
+        }
+    ],
+    "var_922067c4": "scriptbundle",
+    "type": "weapondamageeffectype",
+    "name": "damageeffecttype_fire"
+}

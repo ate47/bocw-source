@@ -1,0 +1,27 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#smg_heavy_bp_smooth_destructo_mtxitem",
+            "itemid": "19334029"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_rabbit_foot_mtxitem",
+            "itemid": "31860364"
+        },
+        {
+            "var_4a4bc969": "#emblems_qrf_mtxitem",
+            "itemid": "21263721"
+        }
+    ],
+    "itemname": "#hash_35ece337435a854b",
+    "var_375a1747": "#hash_796d83bb04222fc5",
+    "var_579fd6c3": 12,
+    "name": "bundle_blueprint_1019_smg_heavy_qrf_mtxbundle",
+    "var_22f91505": "#hash_403870c0e81ce7b6",
+    "var_566825be": "#hash_3cff2f165400f65a",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_d9c9c63d8a5ceca",
+    "var_db3e02ab": 2000,
+    "itemid": "22739033"
+}

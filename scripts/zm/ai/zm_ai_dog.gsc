@@ -2230,7 +2230,7 @@ function function_2b82dc3c() {
 // Checksum 0xd9561c74, Offset: 0x8c28
 // Size: 0xe4
 function function_5b561e92(player) {
-    var_7e6e7f9f = getweapon(#"hash_63826b4a80215cd3");
+    var_7e6e7f9f = getweapon(#"tear_gas");
     params = getstatuseffect("dot_toxic_claw");
     if (player namespace_e86ffa8::function_3623f9d1(1)) {
         params = getstatuseffect("dot_toxic_claw_staminup");

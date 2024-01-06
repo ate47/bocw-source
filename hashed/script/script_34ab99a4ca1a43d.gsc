@@ -55,150 +55,150 @@ function function_70a657d8() {
     namespace_8b6a9d79::function_b3464a7c("loot_pods", &function_3e953077);
     clientfield::register("scriptmover", "reward_chest_fx", 1, 2, "int");
     level.var_a332ae5f = [];
-    function_dabc4d71(#"hash_fb02b41b0d01f39", &function_cff40da3);
-    function_dabc4d71(#"hash_2cdb76a587cf7a3b", &function_e15f0669);
-    function_6ac967bf(#"black", 1, #"hash_27d0f95ebae2fe83");
-    function_6ac967bf(#"black", 2, #"hash_27d0fa5ebae30036");
-    function_6ac967bf(#"black", 3, #"hash_27d0fb5ebae301e9");
-    function_6ac967bf(#"black", 4, #"hash_27d0fc5ebae3039c");
-    function_6ac967bf(#"black", 5, #"hash_27d0fd5ebae3054f");
-    function_6ac967bf(#"black", 6, #"hash_27d0fe5ebae30702");
-    function_6ac967bf(#"gold", 1, #"hash_681934df8ead92cc");
-    function_6ac967bf(#"gold", 2, #"hash_681937df8ead97e5");
-    function_6ac967bf(#"gold", 3, #"hash_681936df8ead9632");
-    function_6ac967bf(#"gold", 4, #"hash_681931df8ead8db3");
-    function_6ac967bf(#"gold", 5, #"hash_681930df8ead8c00");
-    function_6ac967bf(#"gold", 6, #"hash_681933df8ead9119");
-    function_6ac967bf(#"large", 1, #"hash_4651e5abf3256c53");
-    function_6ac967bf(#"large", 2, #"hash_4651e6abf3256e06");
-    function_6ac967bf(#"large", 3, #"hash_4651e7abf3256fb9");
-    function_6ac967bf(#"large", 4, #"hash_4651e8abf325716c");
+    function_dabc4d71(#"armor_shard_item_sr", &function_cff40da3);
+    function_dabc4d71(#"self_revive_sr_item", &function_e15f0669);
+    function_6ac967bf(#"black", 1, #"black_chest_level_1");
+    function_6ac967bf(#"black", 2, #"black_chest_level_2");
+    function_6ac967bf(#"black", 3, #"black_chest_level_3");
+    function_6ac967bf(#"black", 4, #"black_chest_level_4");
+    function_6ac967bf(#"black", 5, #"black_chest_level_5");
+    function_6ac967bf(#"black", 6, #"black_chest_level_6");
+    function_6ac967bf(#"gold", 1, #"gold_chest_level_1");
+    function_6ac967bf(#"gold", 2, #"gold_chest_level_2");
+    function_6ac967bf(#"gold", 3, #"gold_chest_level_3");
+    function_6ac967bf(#"gold", 4, #"gold_chest_level_4");
+    function_6ac967bf(#"gold", 5, #"gold_chest_level_5");
+    function_6ac967bf(#"gold", 6, #"gold_chest_level_6");
+    function_6ac967bf(#"large", 1, #"large_chest_level_1");
+    function_6ac967bf(#"large", 2, #"large_chest_level_2");
+    function_6ac967bf(#"large", 3, #"large_chest_level_3");
+    function_6ac967bf(#"large", 4, #"large_chest_level_4");
     function_6ac967bf(#"large", 5, #"large_chest_level_5");
-    function_6ac967bf(#"large", 6, #"hash_4651eaabf32574d2");
-    function_6ac967bf(#"medium", 1, #"hash_570210f86dd830fd");
-    function_6ac967bf(#"medium", 2, #"hash_57020df86dd82be4");
-    function_6ac967bf(#"medium", 3, #"hash_57020ef86dd82d97");
-    function_6ac967bf(#"medium", 4, #"hash_57020bf86dd8287e");
-    function_6ac967bf(#"medium", 5, #"hash_57020cf86dd82a31");
-    function_6ac967bf(#"medium", 6, #"hash_570209f86dd82518");
-    function_6ac967bf(#"small", 1, #"hash_3284bf8ca3a6f00b");
-    function_6ac967bf(#"small", 2, #"hash_3284c08ca3a6f1be");
-    function_6ac967bf(#"small", 3, #"hash_3284c18ca3a6f371");
-    function_6ac967bf(#"small", 4, #"hash_3284c28ca3a6f524");
-    function_6ac967bf(#"small", 5, #"hash_3284c38ca3a6f6d7");
-    function_6ac967bf(#"small", 6, #"hash_3284c48ca3a6f88a");
-    function_6ac967bf(#"hash_24af9f98f7899474", 1, #"hash_23a5557263861cff");
-    function_6ac967bf(#"hash_24af9f98f7899474", 2, #"hash_23a5567263861eb2");
-    function_6ac967bf(#"hash_24af9f98f7899474", 3, #"hash_23a5577263862065");
-    function_6ac967bf(#"hash_24af9f98f7899474", 4, #"hash_23a5507263861480");
-    function_6ac967bf(#"hash_24af9f98f7899474", 5, #"hash_23a5517263861633");
-    function_6ac967bf(#"hash_24af9f98f7899474", 6, #"hash_23a55272638617e6");
+    function_6ac967bf(#"large", 6, #"large_chest_level_6");
+    function_6ac967bf(#"medium", 1, #"medium_chest_level_1");
+    function_6ac967bf(#"medium", 2, #"medium_chest_level_2");
+    function_6ac967bf(#"medium", 3, #"medium_chest_level_3");
+    function_6ac967bf(#"medium", 4, #"medium_chest_level_4");
+    function_6ac967bf(#"medium", 5, #"medium_chest_level_5");
+    function_6ac967bf(#"medium", 6, #"medium_chest_level_6");
+    function_6ac967bf(#"small", 1, #"small_chest_level_1");
+    function_6ac967bf(#"small", 2, #"small_chest_level_2");
+    function_6ac967bf(#"small", 3, #"small_chest_level_3");
+    function_6ac967bf(#"small", 4, #"small_chest_level_4");
+    function_6ac967bf(#"small", 5, #"small_chest_level_5");
+    function_6ac967bf(#"small", 6, #"small_chest_level_6");
+    function_6ac967bf(#"hash_24af9f98f7899474", 1, #"ltm_chest_level_1");
+    function_6ac967bf(#"hash_24af9f98f7899474", 2, #"ltm_chest_level_2");
+    function_6ac967bf(#"hash_24af9f98f7899474", 3, #"ltm_chest_level_3");
+    function_6ac967bf(#"hash_24af9f98f7899474", 4, #"ltm_chest_level_4");
+    function_6ac967bf(#"hash_24af9f98f7899474", 5, #"ltm_chest_level_5");
+    function_6ac967bf(#"hash_24af9f98f7899474", 6, #"ltm_chest_level_6");
     if (is_true(getgametypesetting(#"hash_4751990deae37e66"))) {
-        function_6ac967bf(#"hash_716f17fde963d0ae", 1, #"hash_4966ea29f0c2d297");
-        function_6ac967bf(#"hash_716f17fde963d0ae", 2, #"hash_4966eb29f0c2d44a");
-        function_6ac967bf(#"hash_716f17fde963d0ae", 3, #"hash_4966ec29f0c2d5fd");
-        function_6ac967bf(#"hash_716f17fde963d0ae", 4, #"hash_4966e529f0c2ca18");
-        function_6ac967bf(#"hash_716f17fde963d0ae", 5, #"hash_4966e629f0c2cbcb");
-        function_6ac967bf(#"hash_716f17fde963d0ae", 6, #"hash_4966e729f0c2cd7e");
-        function_8e7c24bc(#"hash_716f17fde963d0ae", 1, #"hash_4966ea29f0c2d297");
-        function_8e7c24bc(#"hash_716f17fde963d0ae", 2, #"hash_4966eb29f0c2d44a");
-        function_8e7c24bc(#"hash_716f17fde963d0ae", 3, #"hash_4966ec29f0c2d5fd");
-        function_8e7c24bc(#"hash_716f17fde963d0ae", 4, #"hash_4966e529f0c2ca18");
-        function_8e7c24bc(#"hash_716f17fde963d0ae", 5, #"hash_4966e629f0c2cbcb");
-        function_8e7c24bc(#"hash_716f17fde963d0ae", 6, #"hash_4966e729f0c2cd7e");
+        function_6ac967bf(#"hash_716f17fde963d0ae", 1, #"ltm_halloween_chest_level_1");
+        function_6ac967bf(#"hash_716f17fde963d0ae", 2, #"ltm_halloween_chest_level_2");
+        function_6ac967bf(#"hash_716f17fde963d0ae", 3, #"ltm_halloween_chest_level_3");
+        function_6ac967bf(#"hash_716f17fde963d0ae", 4, #"ltm_halloween_chest_level_4");
+        function_6ac967bf(#"hash_716f17fde963d0ae", 5, #"ltm_halloween_chest_level_5");
+        function_6ac967bf(#"hash_716f17fde963d0ae", 6, #"ltm_halloween_chest_level_6");
+        function_8e7c24bc(#"hash_716f17fde963d0ae", 1, #"ltm_halloween_chest_level_1");
+        function_8e7c24bc(#"hash_716f17fde963d0ae", 2, #"ltm_halloween_chest_level_2");
+        function_8e7c24bc(#"hash_716f17fde963d0ae", 3, #"ltm_halloween_chest_level_3");
+        function_8e7c24bc(#"hash_716f17fde963d0ae", 4, #"ltm_halloween_chest_level_4");
+        function_8e7c24bc(#"hash_716f17fde963d0ae", 5, #"ltm_halloween_chest_level_5");
+        function_8e7c24bc(#"hash_716f17fde963d0ae", 6, #"ltm_halloween_chest_level_6");
     }
-    function_6ac967bf(#"pod", 1, #"hash_69f376be088d343a");
-    function_6ac967bf(#"pod", 2, #"hash_69f375be088d3287");
-    function_6ac967bf(#"pod", 3, #"hash_69f374be088d30d4");
-    function_6ac967bf(#"pod", 4, #"hash_69f373be088d2f21");
-    function_6ac967bf(#"pod", 5, #"hash_69f372be088d2d6e");
-    function_6ac967bf(#"pod", 6, #"hash_69f371be088d2bbb");
+    function_6ac967bf(#"pod", 1, #"loot_pod_level_1");
+    function_6ac967bf(#"pod", 2, #"loot_pod_level_2");
+    function_6ac967bf(#"pod", 3, #"loot_pod_level_3");
+    function_6ac967bf(#"pod", 4, #"loot_pod_level_4");
+    function_6ac967bf(#"pod", 5, #"loot_pod_level_5");
+    function_6ac967bf(#"pod", 6, #"loot_pod_level_6");
     if (zm_utility::function_c200446c()) {
-        function_8e7c24bc(#"normal", 1, #"hash_71d760081148ecb6");
-        function_8e7c24bc(#"normal", 2, #"hash_4f2e124a4b2b0bc3");
-        function_8e7c24bc(#"normal", 3, #"hash_2b8bf3ab711529a8");
-        function_8e7c24bc(#"normal", 4, #"hash_3e6f1def958c4b3d");
-        function_8e7c24bc(#"normal", 5, #"hash_3a70ee29a1b9f032");
-        function_8e7c24bc(#"normal", 6, #"hash_5e9c9f88842d805f");
-        function_8e7c24bc(#"normal", 7, #"hash_5e9c9f88842d805f");
-        function_8e7c24bc(#"normal", 8, #"hash_5e9c9f88842d805f");
+        function_8e7c24bc(#"normal", 1, #"normal_os_zombie_level1_parent_list");
+        function_8e7c24bc(#"normal", 2, #"normal_os_zombie_level2_parent_list");
+        function_8e7c24bc(#"normal", 3, #"normal_os_zombie_level3_parent_list");
+        function_8e7c24bc(#"normal", 4, #"normal_os_zombie_level4_parent_list");
+        function_8e7c24bc(#"normal", 5, #"normal_os_zombie_level5_parent_list");
+        function_8e7c24bc(#"normal", 6, #"normal_os_zombie_level6_parent_list");
+        function_8e7c24bc(#"normal", 7, #"normal_os_zombie_level6_parent_list");
+        function_8e7c24bc(#"normal", 8, #"normal_os_zombie_level6_parent_list");
     } else {
-        function_8e7c24bc(#"normal", 1, #"hash_3970bd17d0c80ee9");
-        function_8e7c24bc(#"normal", 2, #"hash_5f54a3c5729c5e20");
-        function_8e7c24bc(#"normal", 3, #"hash_7961d52f46f8bdb");
-        function_8e7c24bc(#"normal", 4, #"hash_47abf4722829700a");
-        function_8e7c24bc(#"normal", 5, #"hash_4cee343a76feb1d5");
-        function_8e7c24bc(#"normal", 6, #"hash_37f8ec422b2d0d8c");
+        function_8e7c24bc(#"normal", 1, #"normal_zombie_level1_parent_list");
+        function_8e7c24bc(#"normal", 2, #"normal_zombie_level2_parent_list");
+        function_8e7c24bc(#"normal", 3, #"normal_zombie_level3_parent_list");
+        function_8e7c24bc(#"normal", 4, #"normal_zombie_level4_parent_list");
+        function_8e7c24bc(#"normal", 5, #"normal_zombie_level5_parent_list");
+        function_8e7c24bc(#"normal", 6, #"normal_zombie_level6_parent_list");
     }
-    function_8e7c24bc(#"hash_622e7c9cc7c06c7", 1, #"hash_521478a4982eef4f");
-    function_8e7c24bc(#"hash_622e7c9cc7c06c7", 2, #"hash_6ed29fafec506ea2");
-    function_8e7c24bc(#"hash_622e7c9cc7c06c7", 3, #"hash_5cb2f5bb1fc58cad");
-    function_8e7c24bc(#"hash_622e7c9cc7c06c7", 4, #"hash_37382e7f41973358");
-    function_8e7c24bc(#"hash_622e7c9cc7c06c7", 5, #"hash_11f28a428bde6973");
-    function_8e7c24bc(#"hash_622e7c9cc7c06c7", 6, #"hash_56beeef12ed96266");
-    function_8e7c24bc(#"hash_7a778318514578f7", 1, #"hash_521478a4982eef4f");
-    function_8e7c24bc(#"hash_7a778318514578f7", 2, #"hash_6ed29fafec506ea2");
-    function_8e7c24bc(#"hash_7a778318514578f7", 3, #"hash_5cb2f5bb1fc58cad");
-    function_8e7c24bc(#"hash_7a778318514578f7", 4, #"hash_37382e7f41973358");
-    function_8e7c24bc(#"hash_7a778318514578f7", 5, #"hash_11f28a428bde6973");
-    function_8e7c24bc(#"hash_7a778318514578f7", 6, #"hash_56beeef12ed96266");
-    function_8e7c24bc(#"special", 1, #"hash_7434c3ef3763f293");
-    function_8e7c24bc(#"special", 2, #"hash_1207617b628e6706");
-    function_8e7c24bc(#"special", 3, #"hash_6540961a1860ac81");
-    function_8e7c24bc(#"special", 4, #"hash_69c0e3418ae7ea04");
-    function_8e7c24bc(#"special", 5, #"hash_4ec3117b737f48ef");
-    function_8e7c24bc(#"special", 6, #"hash_668d0d63986b95c2");
+    function_8e7c24bc(#"hash_622e7c9cc7c06c7", 1, #"armor_zombie_level1_parent_list");
+    function_8e7c24bc(#"hash_622e7c9cc7c06c7", 2, #"armor_zombie_level2_parent_list");
+    function_8e7c24bc(#"hash_622e7c9cc7c06c7", 3, #"armor_zombie_level3_parent_list");
+    function_8e7c24bc(#"hash_622e7c9cc7c06c7", 4, #"armor_zombie_level4_parent_list");
+    function_8e7c24bc(#"hash_622e7c9cc7c06c7", 5, #"armor_zombie_level5_parent_list");
+    function_8e7c24bc(#"hash_622e7c9cc7c06c7", 6, #"armor_zombie_level6_parent_list");
+    function_8e7c24bc(#"hash_7a778318514578f7", 1, #"armor_zombie_level1_parent_list");
+    function_8e7c24bc(#"hash_7a778318514578f7", 2, #"armor_zombie_level2_parent_list");
+    function_8e7c24bc(#"hash_7a778318514578f7", 3, #"armor_zombie_level3_parent_list");
+    function_8e7c24bc(#"hash_7a778318514578f7", 4, #"armor_zombie_level4_parent_list");
+    function_8e7c24bc(#"hash_7a778318514578f7", 5, #"armor_zombie_level5_parent_list");
+    function_8e7c24bc(#"hash_7a778318514578f7", 6, #"armor_zombie_level6_parent_list");
+    function_8e7c24bc(#"special", 1, #"special_zombie_level1_parent_list");
+    function_8e7c24bc(#"special", 2, #"special_zombie_level2_parent_list");
+    function_8e7c24bc(#"special", 3, #"special_zombie_level3_parent_list");
+    function_8e7c24bc(#"special", 4, #"special_zombie_level4_parent_list");
+    function_8e7c24bc(#"special", 5, #"special_zombie_level5_parent_list");
+    function_8e7c24bc(#"special", 6, #"special_zombie_level6_parent_list");
     if (zm_utility::is_classic()) {
-        function_8e7c24bc(#"hash_3adefdb432d5b064", 1, #"hash_20cf9bd43847f62c");
-        function_8e7c24bc(#"hash_3adefdb432d5b064", 2, #"hash_508f8ce04a76e2f7");
-        function_8e7c24bc(#"hash_3adefdb432d5b064", 3, #"hash_7b448e951364c86a");
-        function_8e7c24bc(#"hash_3adefdb432d5b064", 4, #"hash_47d7f8f865b59665");
-        function_8e7c24bc(#"hash_3adefdb432d5b064", 5, #"hash_40ee1ad229707a00");
-        function_8e7c24bc(#"hash_3adefdb432d5b064", 6, #"hash_3d970199ba5ddf6b");
-        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 1, #"hash_3640ffa1f26c43d6");
-        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 2, #"hash_46551e87693166e3");
-        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 3, #"hash_6de5a324f87a8cc8");
-        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 4, #"hash_7559767c98007f5d");
-        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 5, #"hash_28f0bc6a023675d2");
-        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 6, #"hash_3cefdd5aa8a9967f");
+        function_8e7c24bc(#"hash_3adefdb432d5b064", 1, #"ltm_level1_weapon_drop_list");
+        function_8e7c24bc(#"hash_3adefdb432d5b064", 2, #"ltm_level2_weapon_drop_list");
+        function_8e7c24bc(#"hash_3adefdb432d5b064", 3, #"ltm_level3_weapon_drop_list");
+        function_8e7c24bc(#"hash_3adefdb432d5b064", 4, #"ltm_level4_weapon_drop_list");
+        function_8e7c24bc(#"hash_3adefdb432d5b064", 5, #"ltm_level5_weapon_drop_list");
+        function_8e7c24bc(#"hash_3adefdb432d5b064", 6, #"ltm_level6_weapon_drop_list");
+        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 1, #"elite_rbz_zombie_level1_parent_list");
+        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 2, #"elite_rbz_zombie_level2_parent_list");
+        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 3, #"elite_rbz_zombie_level3_parent_list");
+        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 4, #"elite_rbz_zombie_level4_parent_list");
+        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 5, #"elite_rbz_zombie_level5_parent_list");
+        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 6, #"elite_rbz_zombie_level6_parent_list");
     } else if (zm_utility::function_c200446c()) {
-        function_8e7c24bc(#"hash_3adefdb432d5b064", 1, #"hash_5760b26e51ad9737");
-        function_8e7c24bc(#"hash_3adefdb432d5b064", 2, #"hash_3f27259a0a216c6c");
-        function_8e7c24bc(#"hash_3adefdb432d5b064", 3, #"hash_1e5db0734c456c81");
-        function_8e7c24bc(#"hash_3adefdb432d5b064", 4, #"hash_790ef3cf334997ce");
-        function_8e7c24bc(#"hash_3adefdb432d5b064", 5, #"hash_5e4ceabbcf01a5ab");
-        function_8e7c24bc(#"hash_3adefdb432d5b064", 6, #"hash_4757c1d167e87940");
-        function_8e7c24bc(#"hash_3adefdb432d5b064", 7, #"hash_4757c1d167e87940");
-        function_8e7c24bc(#"hash_3adefdb432d5b064", 8, #"hash_4757c1d167e87940");
-        function_8e7c24bc(#"special", 1, #"hash_7c73206328c135f4");
-        function_8e7c24bc(#"special", 2, #"hash_4859e9f5bf0aefbd");
-        function_8e7c24bc(#"special", 3, #"hash_445bba2fcb3894b2");
-        function_8e7c24bc(#"special", 4, #"hash_5918de5074a9b043");
-        function_8e7c24bc(#"special", 5, #"hash_3576bfb19a93ce28");
-        function_8e7c24bc(#"special", 6, #"hash_5eb06ead237dae71");
-        function_8e7c24bc(#"special", 7, #"hash_7bc22c0e3ac79136");
-        function_8e7c24bc(#"special", 8, #"hash_5cbff870c828c497");
-        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 1, #"hash_7c73206328c135f4");
-        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 2, #"hash_4859e9f5bf0aefbd");
-        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 3, #"hash_445bba2fcb3894b2");
-        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 4, #"hash_5918de5074a9b043");
-        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 5, #"hash_3576bfb19a93ce28");
-        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 6, #"hash_5eb06ead237dae71");
-        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 7, #"hash_7bc22c0e3ac79136");
-        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 8, #"hash_5cbff870c828c497");
+        function_8e7c24bc(#"hash_3adefdb432d5b064", 1, #"ltm_os_level1_weapon_drop_list");
+        function_8e7c24bc(#"hash_3adefdb432d5b064", 2, #"ltm_os_level2_weapon_drop_list");
+        function_8e7c24bc(#"hash_3adefdb432d5b064", 3, #"ltm_os_level3_weapon_drop_list");
+        function_8e7c24bc(#"hash_3adefdb432d5b064", 4, #"ltm_os_level4_weapon_drop_list");
+        function_8e7c24bc(#"hash_3adefdb432d5b064", 5, #"ltm_os_level5_weapon_drop_list");
+        function_8e7c24bc(#"hash_3adefdb432d5b064", 6, #"ltm_os_level6_weapon_drop_list");
+        function_8e7c24bc(#"hash_3adefdb432d5b064", 7, #"ltm_os_level6_weapon_drop_list");
+        function_8e7c24bc(#"hash_3adefdb432d5b064", 8, #"ltm_os_level6_weapon_drop_list");
+        function_8e7c24bc(#"special", 1, #"elite_os_zombie_level1_parent_list");
+        function_8e7c24bc(#"special", 2, #"elite_os_zombie_level2_parent_list");
+        function_8e7c24bc(#"special", 3, #"elite_os_zombie_level3_parent_list");
+        function_8e7c24bc(#"special", 4, #"elite_os_zombie_level4_parent_list");
+        function_8e7c24bc(#"special", 5, #"elite_os_zombie_level5_parent_list");
+        function_8e7c24bc(#"special", 6, #"elite_os_zombie_level6_parent_list");
+        function_8e7c24bc(#"special", 7, #"elite_os_zombie_level7_parent_list");
+        function_8e7c24bc(#"special", 8, #"elite_os_zombie_level8_parent_list");
+        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 1, #"elite_os_zombie_level1_parent_list");
+        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 2, #"elite_os_zombie_level2_parent_list");
+        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 3, #"elite_os_zombie_level3_parent_list");
+        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 4, #"elite_os_zombie_level4_parent_list");
+        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 5, #"elite_os_zombie_level5_parent_list");
+        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 6, #"elite_os_zombie_level6_parent_list");
+        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 7, #"elite_os_zombie_level7_parent_list");
+        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 8, #"elite_os_zombie_level8_parent_list");
     } else {
-        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 1, #"hash_3ce7e905227cc6ef");
-        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 2, #"hash_54b1e4ed476913c2");
-        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 3, #"hash_5321fc866b5674cd");
-        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 4, #"hash_10b87793678eb878");
-        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 5, #"hash_62599b78e6617093");
-        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 6, #"hash_2c3905118be506");
-        function_8e7c24bc(#"boss", 1, #"hash_48d69eb72dfddbb7");
-        function_8e7c24bc(#"boss", 2, #"hash_3649cad009d3c86a");
-        function_8e7c24bc(#"boss", 3, #"hash_74a936e7a16a68b5");
-        function_8e7c24bc(#"boss", 4, #"hash_2aa70647216eda00");
-        function_8e7c24bc(#"boss", 5, #"hash_17fd2b1c427b993b");
-        function_8e7c24bc(#"boss", 6, #"hash_463cdfe3e707f1ae");
+        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 1, #"elite_zombie_level1_parent_list");
+        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 2, #"elite_zombie_level2_parent_list");
+        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 3, #"elite_zombie_level3_parent_list");
+        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 4, #"elite_zombie_level4_parent_list");
+        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 5, #"elite_zombie_level5_parent_list");
+        function_8e7c24bc(#"hash_72d4f2ad2e333eb4", 6, #"elite_zombie_level6_parent_list");
+        function_8e7c24bc(#"boss", 1, #"boss_zombie_level1_parent_list");
+        function_8e7c24bc(#"boss", 2, #"boss_zombie_level2_parent_list");
+        function_8e7c24bc(#"boss", 3, #"boss_zombie_level3_parent_list");
+        function_8e7c24bc(#"boss", 4, #"boss_zombie_level4_parent_list");
+        function_8e7c24bc(#"boss", 5, #"boss_zombie_level5_parent_list");
+        function_8e7c24bc(#"boss", 6, #"boss_zombie_level6_parent_list");
     }
 }
 
@@ -252,13 +252,13 @@ function function_b764d7c6(attachment) {
     case #"suppressed":
         return 8;
         break;
-    case #"hash_63ce25ae5624b81f":
+    case #"suppressed2":
         return 10;
         break;
-    case #"hash_6cb337a8f1814a78":
+    case #"mixmuzzle":
         return 8;
         break;
-    case #"hash_35d1de125eb13bbe":
+    case #"mixmuzzle2":
         return 10;
         break;
     }
@@ -274,13 +274,13 @@ function function_339b84ba(attachment) {
     case #"light":
         return 5;
         break;
-    case #"hash_3a894c8a64d248a7":
+    case #"light2":
         return 8;
         break;
-    case #"hash_574e57ebbb1fab71":
+    case #"mixbody":
         return 3;
         break;
-    case #"hash_79caa88ef6d002d9":
+    case #"mixbody2":
         return 10;
         break;
     }
@@ -294,28 +294,28 @@ function function_339b84ba(attachment) {
 function function_7ff60ccf(star_level = 1) {
     switch (star_level) {
     case 1:
-        return #"hash_2042e77c3ce99563";
+        return #"level_1_resource_list";
         break;
     case 2:
-        return #"hash_494c1bde3ba73e1e";
+        return #"level_2_resource_list";
         break;
     case 3:
-        return #"hash_16ce6d2a3a080ed";
+        return #"level_3_resource_list";
         break;
     case 4:
-        return #"hash_2e7dcdf753359010";
+        return #"level_4_resource_list";
         break;
     case 5:
-        return #"hash_2486a89180da5df7";
+        return #"level_5_resource_list";
         break;
     case 6:
-        return #"hash_4d1c224a3067c3b2";
+        return #"level_6_resource_list";
         break;
     case #"hash_defdefdefdefdef0":
-        return #"hash_4d1c224a3067c3b2";
+        return #"level_6_resource_list";
         break;
     }
-    return #"hash_2042e77c3ce99563";
+    return #"level_1_resource_list";
 }
 
 // Namespace namespace_58949729/namespace_58949729
@@ -362,7 +362,7 @@ function function_2394df30(s_params) {
     [[ level.var_86a1e8b6 ]]->waitinqueue(var_cb46b9ea);
     var_9bbfe6c2 = 1;
     if (var_2e6f77db === #"hash_729b116cf9d044") {
-        var_ec6368f9 = #"hash_7f63a2510da93252";
+        var_ec6368f9 = #"ronnie_raygun_drop_list";
     } else if (var_408fcfcb === #"hash_622e7c9cc7c06c7" || var_408fcfcb === #"hash_7a778318514578f7") {
         var_ec6368f9 = function_257d7203(var_408fcfcb);
     } else {
@@ -386,11 +386,11 @@ function function_2394df30(s_params) {
         if (isarray(weapon.attachments)) {
             attachments = weapon.attachments;
             foreach (attachment in weapon.attachments) {
-                if (attachment == #"suppressed" || attachment == #"hash_63ce25ae5624b81f" || attachment == #"hash_6cb337a8f1814a78" || attachment == #"hash_35d1de125eb13bbe") {
+                if (attachment == #"suppressed" || attachment == #"suppressed2" || attachment == #"mixmuzzle" || attachment == #"mixmuzzle2") {
                     var_8be3ada4 = 1;
                     var_d6525c75 = attachment;
                 }
-                if (attachment == #"light" || attachment == #"hash_3a894c8a64d248a7" || attachment == #"hash_574e57ebbb1fab71" || attachment == #"hash_79caa88ef6d002d9") {
+                if (attachment == #"light" || attachment == #"light2" || attachment == #"mixbody" || attachment == #"mixbody2") {
                     var_311d223d = 1;
                     var_544f5f81 = attachment;
                 }
@@ -401,7 +401,7 @@ function function_2394df30(s_params) {
             var_515ea3b6 = function_339b84ba(var_544f5f81);
             if (math::cointoss(var_e6d210b6)) {
                 var_2858caa2 = {#var_738dfc81:10, #angles:var_3ecf13fe, #origin:var_4aeae769};
-                var_5bb8af3f = var_2858caa2 namespace_65181344::function_fd87c780(#"hash_2cdfcdfd6191b1a9", 1, 2);
+                var_5bb8af3f = var_2858caa2 namespace_65181344::function_fd87c780(#"zm_equipment_parent_list", 1, 2);
             }
             if (var_5bb8af3f.size <= 0) {
                 if (math::cointoss(var_515ea3b6)) {
@@ -414,7 +414,7 @@ function function_2394df30(s_params) {
             var_e6d210b6 = function_b764d7c6(var_d6525c75);
             if (math::cointoss(var_e6d210b6)) {
                 var_2858caa2 = {#var_738dfc81:10, #angles:var_3ecf13fe, #origin:var_4aeae769};
-                var_5bb8af3f = var_2858caa2 namespace_65181344::function_fd87c780(#"hash_2cdfcdfd6191b1a9", 1, 2);
+                var_5bb8af3f = var_2858caa2 namespace_65181344::function_fd87c780(#"zm_equipment_parent_list", 1, 2);
             }
         } else if (var_311d223d) {
             var_515ea3b6 = function_339b84ba(var_544f5f81);
@@ -430,19 +430,19 @@ function function_2394df30(s_params) {
     }
     wait(0.2);
     if (isdefined(var_2e6f77db) && issubstr(var_2e6f77db, "hvt")) {
-        a_items = var_2858caa2 namespace_65181344::function_fd87c780(#"hash_7a046d913a142a88", 1, 2);
+        a_items = var_2858caa2 namespace_65181344::function_fd87c780(#"hvt_bonus_drop_list", 1, 2);
         if (isarray(a_items)) {
             var_5bb8af3f = arraycombine(var_5bb8af3f, a_items, 0, 0);
         }
     }
     if (var_ed185014 === "hulk_zombie" && math::cointoss(33)) {
-        a_items = var_2858caa2 namespace_65181344::function_fd87c780(#"hash_756674c183176048", 1, 2);
+        a_items = var_2858caa2 namespace_65181344::function_fd87c780(#"sr_zombie_drop_ammo", 1, 2);
         if (isarray(a_items)) {
             var_5bb8af3f = arraycombine(var_5bb8af3f, a_items, 0, 0);
         }
     }
     if (isplayer(s_params.eattacker) && s_params.eattacker namespace_e86ffa8::function_30a8ed81(2) && math::cointoss(5)) {
-        a_items = var_2858caa2 namespace_65181344::function_fd87c780(#"hash_756674c183176048", 1, 2);
+        a_items = var_2858caa2 namespace_65181344::function_fd87c780(#"sr_zombie_drop_ammo", 1, 2);
         if (isarray(a_items)) {
             var_5bb8af3f = arraycombine(var_5bb8af3f, a_items, 0, 0);
         }
@@ -484,7 +484,7 @@ function function_257d7203(type = #"normal", var_59364773) {
     if (isdefined(level.var_b048b7e[type][var_b48509f9])) {
         return level.var_b048b7e[type][var_b48509f9];
     }
-    return #"hash_3970bd17d0c80ee9";
+    return #"normal_zombie_level1_parent_list";
 }
 
 // Namespace namespace_58949729/namespace_58949729
@@ -501,7 +501,7 @@ function function_fd5e77fa(type = #"small") {
     if (isdefined(level.var_6fff281a[type][var_b48509f9])) {
         return level.var_6fff281a[type][var_b48509f9];
     }
-    return #"hash_3284bf8ca3a6f00b";
+    return #"small_chest_level_1";
 }
 
 // Namespace namespace_58949729/namespace_58949729
@@ -611,7 +611,7 @@ function function_c3e93273(instance) {
     if (getplayers().size > 3) {
         var_c6e3f0a = var_c6e3f0a + 1;
     }
-    function_34c59c2c(instance, var_c6e3f0a, var_cc1fb2d0, var_3a053962, #"hash_473df02427c669ff", 3, str_dvar);
+    function_34c59c2c(instance, var_c6e3f0a, var_cc1fb2d0, var_3a053962, #"p9_fxanim_zm_gp_chest_01_lrg_bundle", 3, str_dvar);
 }
 
 // Namespace namespace_58949729/namespace_58949729
@@ -628,7 +628,7 @@ function function_50855654(instance) {
     if (getplayers().size > 2) {
         var_c6e3f0a = var_c6e3f0a + 1;
     }
-    function_34c59c2c(instance, var_c6e3f0a, var_cc1fb2d0, var_3a053962, #"hash_7d3c5ac38ba069f0", 2, str_dvar);
+    function_34c59c2c(instance, var_c6e3f0a, var_cc1fb2d0, var_3a053962, #"p9_fxanim_zm_gp_chest_01_med_bundle", 2, str_dvar);
 }
 
 // Namespace namespace_58949729/namespace_58949729
@@ -645,7 +645,7 @@ function function_61f1a62e(instance) {
     if (getplayers().size > 1) {
         var_c6e3f0a = var_c6e3f0a + 1;
     }
-    function_34c59c2c(instance, var_c6e3f0a, var_cc1fb2d0, var_3a053962, #"hash_5815cc7ba68d56e", 1, str_dvar);
+    function_34c59c2c(instance, var_c6e3f0a, var_cc1fb2d0, var_3a053962, #"p9_fxanim_zm_gp_chest_01_sml_bundle", 1, str_dvar);
 }
 
 // Namespace namespace_58949729/namespace_58949729
@@ -780,7 +780,7 @@ function function_25979f32(struct, var_93fe96a6, s_instance) {
         return;
     }
     if (!isdefined(struct.var_422ae63e)) {
-        struct.var_422ae63e.struct = #"hash_473df02427c669ff";
+        struct.var_422ae63e.struct = #"p9_fxanim_zm_gp_chest_01_lrg_bundle";
     }
     if (!isdefined(struct.var_cc1fb2d0)) {
         struct.var_cc1fb2d0.struct = function_fd5e77fa(#"gold");
@@ -874,11 +874,11 @@ function function_a5d57202(struct) {
 // Size: 0x124
 function function_7e02195f(s_spawn_point, var_3a053962 = "p9_fxanim_zm_gp_chest_01_med_low_xmodel", var_dae71351 = 2) {
     if (var_3a053962 === "p9_fxanim_zm_gp_chest_01_lrg_low_xmodel") {
-        var_68455141 = #"hash_e492c531718b7e2";
+        var_68455141 = #"sr_large_chest";
     } else {
-        var_68455141 = #"hash_4c4e28d400b974a8";
+        var_68455141 = #"sr_medium_chest";
     }
-    var_c590f74 = namespace_be0f9d50::function_b309db61([0:s_spawn_point], undefined, undefined, var_68455141);
+    var_c590f74 = mimic_prop_spawn::function_b309db61([0:s_spawn_point], undefined, undefined, var_68455141);
     var_c590f74 clientfield::set("reward_chest_fx", var_dae71351);
     /#
         if (getdvarint(#"hash_6e805904860dca0d", 0)) {
@@ -945,9 +945,9 @@ function function_8665f666(eventstruct) {
     }
     var_2fab6c8d = #"hash_3c26138474513c5c";
     if (isdefined(self.var_cc1fb2d0)) {
-        if (self.var_cc1fb2d0 === #"hash_1aa6f1facd821300") {
+        if (self.var_cc1fb2d0 === #"sr_explore_chest_medium") {
             var_2fab6c8d = #"hash_2f094f31f2dbf8f4";
-        } else if (self.var_cc1fb2d0 === #"hash_4d5713fd0d76f4a") {
+        } else if (self.var_cc1fb2d0 === #"sr_explore_chest_large") {
             var_2fab6c8d = #"hash_6f32121c959e02d0";
         }
     }
@@ -1027,9 +1027,9 @@ function function_f82f361c(struct, var_cc1fb2d0, var_98d110e6 = 1, var_5b57dd9 =
     dropangles = isdefined(scriptmodel.angles) ? scriptmodel.angles : (0, 0, 0);
     var_2858caa2 = {#var_738dfc81:n_count, #angles:dropangles + var_e784014f, #origin:var_a28d0d8c};
     a_items = var_2858caa2 namespace_65181344::function_fd87c780(var_cc1fb2d0, n_count, var_98d110e6);
-    if (var_cc1fb2d0 === #"hash_69f376be088d343a" || var_cc1fb2d0 === #"hash_69f375be088d3287" || var_cc1fb2d0 === #"hash_69f374be088d30d4" || var_cc1fb2d0 === #"hash_69f373be088d2f21" || var_cc1fb2d0 === #"hash_69f372be088d2d6e" || var_cc1fb2d0 === #"hash_69f371be088d2bbb") {
+    if (var_cc1fb2d0 === #"loot_pod_level_1" || var_cc1fb2d0 === #"loot_pod_level_2" || var_cc1fb2d0 === #"loot_pod_level_3" || var_cc1fb2d0 === #"loot_pod_level_4" || var_cc1fb2d0 === #"loot_pod_level_5" || var_cc1fb2d0 === #"loot_pod_level_6") {
         foreach (item in a_items) {
-            if (item.var_a6762160.name === #"hash_5a5d63f61e6770f9" || item.var_a6762160.name === #"hash_58951f692bf35608") {
+            if (item.var_a6762160.name === #"scrap_rare_item_sr" || item.var_a6762160.name === #"scrap_item_sr") {
                 item.var_569199b9.item = 1;
             }
         }
@@ -1234,7 +1234,7 @@ function function_8ef626e3(var_cc1fb2d0) {
         }
     }
     if (isdefined(self.instance.var_eb3bf4b1) && self.instance.var_eb3bf4b1.size <= 1) {
-        var_cc1fb2d0 = #"hash_73b3255c9fe09eff";
+        var_cc1fb2d0 = #"survival_aether_tool_item_list";
     }
     if (!isdefined(var_cc1fb2d0)) {
         if (is_true(self.var_defc3cee)) {
@@ -1265,14 +1265,14 @@ function function_cff40da3() {
         if ((isdefined(player.maxarmor) ? player.maxarmor : 0) != 0) {
             level.var_20b35e7a = 1;
             var_add423b7 = 1;
-            return #"hash_fb02b41b0d01f39";
+            return #"armor_shard_item_sr";
         }
     }
     if (!var_add423b7 && !is_true(level.var_20b35e7a)) {
         level.var_20b35e7a = 1;
-        return #"hash_35675bbd363f934a";
+        return #"armor_item_lv1_t9_sr";
     }
-    return #"hash_fb02b41b0d01f39";
+    return #"armor_shard_item_sr";
 }
 
 // Namespace namespace_58949729/namespace_58949729
@@ -1296,10 +1296,10 @@ function function_e15f0669() {
         }
     }
     if (var_eceee3fa == players.size || level.var_a68449d2 > level.var_102e4ee5) {
-        return #"hash_5a5d63f61e6770f9";
+        return #"scrap_rare_item_sr";
     }
     level.var_a68449d2++;
-    return #"hash_2cdb76a587cf7a3b";
+    return #"self_revive_sr_item";
 }
 
 // Namespace namespace_58949729/namespace_58949729
@@ -1439,19 +1439,19 @@ function function_e4314d0e(struct) {
 function function_6f0024c1(struct) {
     /#
         if (struct.parent.var_b588b063 === "<unknown string>") {
-            var_cc1fb2d0 = #"hash_4d5713fd0d76f4a";
+            var_cc1fb2d0 = #"sr_explore_chest_large";
             var_3a053962 = "<unknown string>";
-            str_scene = #"hash_473df02427c669ff";
+            str_scene = #"p9_fxanim_zm_gp_chest_01_lrg_bundle";
             var_dae71351 = 3;
         } else if (struct.parent.var_b588b063 === "<unknown string>") {
-            var_cc1fb2d0 = #"hash_1aa6f1facd821300";
+            var_cc1fb2d0 = #"sr_explore_chest_medium";
             var_3a053962 = "<unknown string>";
-            str_scene = #"hash_7d3c5ac38ba069f0";
+            str_scene = #"p9_fxanim_zm_gp_chest_01_med_bundle";
             var_dae71351 = 2;
         } else {
-            var_cc1fb2d0 = #"hash_31e5fe967ad787be";
+            var_cc1fb2d0 = #"sr_explore_chest_small";
             var_3a053962 = "<unknown string>";
-            str_scene = #"hash_5815cc7ba68d56e";
+            str_scene = #"p9_fxanim_zm_gp_chest_01_sml_bundle";
             var_dae71351 = 1;
         }
         function_4ec9fc99(struct, var_cc1fb2d0, var_3a053962, str_scene, var_dae71351);

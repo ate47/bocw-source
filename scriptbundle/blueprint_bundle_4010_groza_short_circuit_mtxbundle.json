@@ -1,0 +1,55 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_49fab4067af94ff0"
+        },
+        {
+            "var_fe10649e": "#hash_53a2560762f40e9d"
+        },
+        {
+            "var_fe10649e": "#hash_53a2550762f40cea"
+        },
+        {
+            "var_fe10649e": "#hash_53a2500762f4046b"
+        }
+    ],
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_fasthandling_bp_circuit_mtxitem",
+            "itemid": "27434443"
+        },
+        {
+            "var_4a4bc969": "#sniper_powersemi_bp_circuit_mtxitem",
+            "itemid": "19475013"
+        },
+        {
+            "var_4a4bc969": "#emblems_shortcircuit_animated_mtxitem",
+            "itemid": "29380134"
+        },
+        {
+            "var_4a4bc969": "#callingcards_shortcircuit_animated_mtxitem",
+            "itemid": "21082977"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_old_computer_mtxitem",
+            "itemid": "17849072"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_r82_4_mtxitem",
+            "itemid": "21323976"
+        }
+    ],
+    "itemname": "#hash_34e95b7ad9703ec2",
+    "var_375a1747": "#hash_49fab4067af94ff0",
+    "var_3040f0d1": "#hash_49fab4067af94ff0",
+    "var_8ee7db29": 1,
+    "name": "blueprint_bundle_4010_groza_short_circuit_mtxbundle",
+    "var_a788fada": "#hash_7d0d502f64c0e40b",
+    "var_22f91505": "#hash_6e743a0ccfebe98c",
+    "var_566825be": "#hash_c19df274c5b5373",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_4cffcd4e867218fc",
+    "var_db3e02ab": 750,
+    "itemid": "31992958"
+}

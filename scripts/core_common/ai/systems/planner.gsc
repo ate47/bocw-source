@@ -14,7 +14,7 @@ function private _blackboardsapplyundostate(planner, state) {
     /#
         assert(isarray(planner.blackboards));
     #/
-    foreach (blackboard in planner.blackboards) {
+    foreach (key, blackboard in planner.blackboards) {
         if (isdefined(state[key])) {
             plannerblackboard::undo(blackboard, state[key]);
         } else {
@@ -35,7 +35,7 @@ function private _blackboardscalculateundostate(planner) {
         assert(isarray(planner.blackboards));
     #/
     state = [];
-    foreach (blackboard in planner.blackboards) {
+    foreach (key, blackboard in planner.blackboards) {
         state[key] = plannerblackboard::getundostacksize(blackboard) - 1;
     }
     return state;
@@ -710,7 +710,7 @@ function private function_3af5bab0(node) {
         if (isdefined(node.constants)) {
             text = text + "<unknown string>";
             first = 1;
-            foreach (value in node.constants) {
+            foreach (key, value in node.constants) {
                 if (!first) {
                     text = text + "<unknown string>";
                 }

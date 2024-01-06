@@ -1,0 +1,28 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_6bca69a18874a804",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "dance"
+                }
+            ],
+            "model": "#hash_7f311e8d38b7d936",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "bunny"
+        }
+    ],
+    "scenetype": "fxanim",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "p9_sr_mq4_magic_box_bunny_bundle",
+    "dontsync": 1,
+    "team": "any"
+}

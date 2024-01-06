@@ -1,0 +1,37 @@
+{
+    "worldfx": [
+        {
+            "worldfx": "#hash_1c2f33d581b291d2"
+        }
+    ],
+    "attachments": [
+        {
+            "var_6be1bec7": "speedgrip"
+        }
+    ],
+    "var_a6616b9c": 1,
+    "var_fa988b4b": 180,
+    "description": "#hash_6affd4008639df9b",
+    "var_922067c4": "scriptbundle",
+    "model": "#attach_t8_wz_pickup_foregrip",
+    "var_16e34ef4": 64,
+    "var_e9898330": "pingitemattachmentgeneric",
+    "var_ac75b59f": -1,
+    "type": "itemspawnentry",
+    "hintstring": "#hash_3528c1f5b8cfdb61",
+    "var_e6ac0592": 90,
+    "var_4a1a4613": "armor_swap",
+    "name": "speedgrip_t9_item_sr",
+    "displayname": "#hash_3528c1f5b8cfdb61",
+    "var_9e569978": 1,
+    "icon": "#ui_icon_attachment_grip2",
+    "attachslotunderbarrel": 1,
+    "modelscale": 1.5,
+    "rarity": "Rare",
+    "equipsound": "uin_wz_attach_grip",
+    "handler": "#hash_788c59214ead02af",
+    "var_3af59a99": 1,
+    "pickupicon": "#ui_icon_attachment_grip2",
+    "var_50773731": 0.5,
+    "itemtype": "attachment"
+}

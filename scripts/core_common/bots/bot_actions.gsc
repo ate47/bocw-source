@@ -84,7 +84,7 @@ function private function_bebdaa6b(actionparams) {
     if (stockammo <= 0) {
         return undefined;
     }
-    if (clipammo > 0 && self.combatstate != #"hash_25a4754a6175a242") {
+    if (clipammo > 0 && self.combatstate != #"combat_state_idle") {
         if (self bot_action::in_combat(actionparams) || !var_7b03547c) {
             return undefined;
         }

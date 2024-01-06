@@ -1,0 +1,95 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_14fbc2a7ac8d57e8",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "init"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_14fbc2a7ac8d57e8",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "anim": "#hash_1383bf968177a194",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "intro"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_7f3678607093810b",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "cleanupdelete": 1,
+                    "name": "end",
+                    "blend": 0.25
+                }
+            ],
+            "model": "#hash_704343ed031af26f",
+            "type": "actor",
+            "var_db255011": 1,
+            "var_f9a5853f": 1,
+            "name": "panzer_tank_zombie",
+            "takedamage": 1
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_607a65712f15db9d",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "init"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_607a65712f15db9d",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "anim": "#hash_44f038514a8d6e3c",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "intro"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_4a9ae019f1d2f4e3",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "end"
+                }
+            ],
+            "firstframe": 1,
+            "model": "#hash_329a3eeb989e26e6",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "panzer_tank"
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "aib_t9_zm_silver_tank_zombie_f",
+    "dontsync": 1,
+    "aligntarget": "tag_align_yard_tank",
+    "team": "any"
+}

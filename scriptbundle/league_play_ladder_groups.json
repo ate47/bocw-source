@@ -1,0 +1,25 @@
+{
+    "var_bb7dcd09": [
+        {
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "#hash_7402487066a1de0a",
+            "var_1a50db25": "#hash_30c98abde5096cf5",
+            "var_a4f2dd9e": "#none",
+            "identifier": "current_ladder"
+        },
+        {
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "#hash_1a3d93464696ea6d",
+            "var_1a50db25": "#hash_72c5976d973b835b",
+            "var_a4f2dd9e": "#none",
+            "identifier": "recent_ladder"
+        }
+    ],
+    "var_72ef398b": 1,
+    "var_2f050ffa": 1,
+    "var_922067c4": "SCRIPTBUNDLE",
+    "var_62a68a39": 1,
+    "var_a77ed948": "#none",
+    "type": "datasourcelist",
+    "name": "league_play_ladder_groups"
+}

@@ -1,0 +1,47 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_330441df0a4659c2"
+        },
+        {
+            "var_fe10649e": "#hash_a612461b9f4e102"
+        },
+        {
+            "var_fe10649e": "#hash_a612361b9f4df4f"
+        },
+        {
+            "var_fe10649e": "#hash_a612261b9f4dd9c"
+        }
+    ],
+    "var_c1b2a9f": [
+        {
+            "var_fe10649e": "#hash_3c8ff1e17507e5d6"
+        },
+        {
+            "var_fe10649e": "#hash_105b56f189de8dce"
+        },
+        {
+            "var_fe10649e": "#hash_105b55f189de8c1b"
+        },
+        {
+            "var_fe10649e": "#hash_105b54f189de8a68"
+        }
+    ],
+    "itemname": "#hash_264acbab902ee3c",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_3c8ff1e17507e5d6",
+    "var_4f3108ff": 1,
+    "var_728341a": 1,
+    "var_375a1747": "#hash_330441df0a4659c2",
+    "season": 5,
+    "var_46300498": 1,
+    "var_8ee7db29": 1,
+    "baseweapon": "#hash_67116924005b2bf8",
+    "name": "loot_ar_british_bp_eclipse_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 750,
+    "var_700702e5": 750,
+    "rarity": 5,
+    "itemid": "21375660",
+    "blueprint": "#hash_264acbab902ee3c"
+}

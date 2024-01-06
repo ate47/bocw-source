@@ -1,0 +1,16 @@
+{
+    "finishers": [
+        {
+            "finisherbundle": "finisher_default"
+        },
+        {
+            "finisherbundle": "finisher_stomp"
+        },
+        {
+            "finisherbundle": "finisher_spectre"
+        }
+    ],
+    "var_922067c4": "scriptbundle",
+    "type": "finisherlist",
+    "name": "finishers"
+}

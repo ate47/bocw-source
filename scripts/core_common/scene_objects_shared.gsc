@@ -1565,7 +1565,7 @@ class csceneobject {
     // Checksum 0x4f6ee7dd, Offset: 0x2220
     // Size: 0x9c
     function get_shot(str_shot) {
-        foreach (s_shot in self._s.shots) {
+        foreach (n_shot, s_shot in self._s.shots) {
             if (str_shot === s_shot.name) {
                 return n_shot;
             }
@@ -2485,7 +2485,7 @@ class cscene {
         if (str_current_shot === "init") {
             return 0;
         }
-        foreach (str_shot in self.var_5a2219f0) {
+        foreach (i, str_shot in self.var_5a2219f0) {
             if (str_shot === str_current_shot && isdefined(self.var_5a2219f0[i + 1]) && self.var_5a2219f0[i + 1] !== "init") {
                 return 1;
             }
@@ -2587,7 +2587,7 @@ class cscene {
                 arrayremoveindex(a_objects, index, 1);
             }
             /#
-                foreach (ent in a_ents) {
+                foreach (i, ent in a_ents) {
                     error(isstring(i) || ishash(i), "<unknown string>" + i + "<unknown string>");
                 }
             #/
@@ -2958,7 +2958,7 @@ class cscene {
                 a_objects_of_type = get_objects(str_type, str_team);
                 if (a_objects_of_type.size) {
                     var_aa70ce62 = [];
-                    foreach (ent in a_ents) {
+                    foreach (str_name, ent in a_ents) {
                         if ([[ func_test ]](ent, str_team)) {
                             index = getfirstarraykey(a_objects_of_type);
                             obj = array::pop_front(a_objects_of_type);
@@ -3315,7 +3315,7 @@ class cscene {
     function get_objects(type, str_team) {
         a_ret = [];
         if (isarray(type)) {
-            foreach (obj in self._a_objects) {
+            foreach (idx, obj in self._a_objects) {
                 if (isinarray(type, obj._s.type)) {
                     if (scene::check_team(obj._s.team, str_team)) {
                         a_ret[idx] = obj;
@@ -3323,7 +3323,7 @@ class cscene {
                 }
             }
         } else {
-            foreach (obj in self._a_objects) {
+            foreach (idx, obj in self._a_objects) {
                 if (obj._s.type == type) {
                     if (scene::check_team(obj._s.team, str_team)) {
                         a_ret[idx] = obj;
@@ -3408,7 +3408,7 @@ class cscene {
             self.var_2e9fdf35 = undefined;
             return var_1a15e649;
         }
-        foreach (str_shot in self.var_5a2219f0) {
+        foreach (i, str_shot in self.var_5a2219f0) {
             if (str_shot === str_current_shot && isdefined(self.var_5a2219f0[i + 1])) {
                 return self.var_5a2219f0[i + 1];
             }

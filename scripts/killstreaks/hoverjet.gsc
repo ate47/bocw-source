@@ -17,17 +17,17 @@
 #using scripts\core_common\challenges_shared.gsc;
 #using scripts\core_common\callbacks_shared.gsc;
 
-#namespace namespace_ec4c33b0;
+#namespace hoverjet;
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 0, eflags: 0x5
 // Checksum 0xd17d5c49, Offset: 0x2b8
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_1b2bdd347dcfc0dc", &init_shared, undefined, undefined, #"killstreaks");
+    system::register(#"hoverjet", &init_shared, undefined, undefined, #"killstreaks");
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 0, eflags: 0x6 linked
 // Checksum 0x3877fff6, Offset: 0x308
 // Size: 0x24c
@@ -44,7 +44,7 @@ function private init_shared() {
     clientfield::register("vehicle", "" + #"hash_3a74d4ba3c54d57b", 1, 1, "int");
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 1, eflags: 0x2 linked
 // Checksum 0x8b24bae4, Offset: 0x560
 // Size: 0xb8
@@ -60,7 +60,7 @@ function function_6bbdb500(killstreaktype) {
     return 1;
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 4, eflags: 0x2 linked
 // Checksum 0xdc399cc2, Offset: 0x620
 // Size: 0x2ca
@@ -94,7 +94,7 @@ function function_747544ed(var_6ecb961c, var_46cd15af, var_f3828812, var_2a587e8
     return output;
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 5, eflags: 0x2 linked
 // Checksum 0xf9b8a5a1, Offset: 0x8f8
 // Size: 0x50c
@@ -154,7 +154,7 @@ function function_5398ca85(position, yaw, *team, killstreak_id, killstreaktype) 
     player remote_weapons::useremoteweapon(var_ea5d6a42, "hoverjet", 1, 1, 1);
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 0, eflags: 0x2 linked
 // Checksum 0x5b665230, Offset: 0xe10
 // Size: 0xd4
@@ -171,7 +171,7 @@ function function_f3dff78b() {
     }
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 15, eflags: 0x2 linked
 // Checksum 0x23dca20a, Offset: 0xef0
 // Size: 0x5fc
@@ -227,7 +227,7 @@ function function_3588c7d8(einflictor, eattacker, idamage, idflags, smeansofdeat
     return smeansofdeath;
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 3, eflags: 0x2 linked
 // Checksum 0xb05dac11, Offset: 0x14f8
 // Size: 0x1cc
@@ -261,7 +261,7 @@ function function_830d6b7(point, dir, smeansofdeath) {
     function_c85eb0a9();
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 2, eflags: 0x2 linked
 // Checksum 0xf7ff8c23, Offset: 0x16d0
 // Size: 0x2c
@@ -269,7 +269,7 @@ function stop_remote_weapon(*attacker, *weapon) {
     self thread remote_weapons::endremotecontrolweaponuse(0);
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 0, eflags: 0x2 linked
 // Checksum 0xe054b2e2, Offset: 0x1708
 // Size: 0x34
@@ -277,7 +277,7 @@ function ontimecheck() {
     self.owner namespace_f9b02f80::play_taacom_dialog("timecheck", "hoverjet", self.killstreak_id);
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 1, eflags: 0x2 linked
 // Checksum 0x49280a9f, Offset: 0x1748
 // Size: 0x46
@@ -288,7 +288,7 @@ function function_51a4b25a(target) {
     return 1;
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 2, eflags: 0x2 linked
 // Checksum 0x5def8956, Offset: 0x1798
 // Size: 0xa6
@@ -308,7 +308,7 @@ function function_bde5e05f(target, weapon) {
     return 1;
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 1, eflags: 0x2 linked
 // Checksum 0x6eeb3562, Offset: 0x1848
 // Size: 0xcc
@@ -328,7 +328,7 @@ function function_c077f369(weapon) {
     }
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 1, eflags: 0x2 linked
 // Checksum 0x9e769ae6, Offset: 0x1920
 // Size: 0x6e
@@ -342,7 +342,7 @@ function function_5c4dbcb4(var_ea5d6a42) {
     }
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 0, eflags: 0x2 linked
 // Checksum 0x587bc97c, Offset: 0x1998
 // Size: 0x5c
@@ -352,7 +352,7 @@ function function_e6b2dc3e() {
     self playsound(#"hash_12ddb7dd3e5716e2");
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 1, eflags: 0x2 linked
 // Checksum 0x49895704, Offset: 0x1a00
 // Size: 0xcc
@@ -365,7 +365,7 @@ function function_8a865fc8(var_ea5d6a42) {
     self clientfield::set_to_player("" + #"hash_1a4b729551097abf", 1);
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 1, eflags: 0x2 linked
 // Checksum 0xf3bcfca, Offset: 0x1ad8
 // Size: 0xcc
@@ -382,7 +382,7 @@ function function_746680dc(var_ea5d6a42) {
     }
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 2, eflags: 0x2 linked
 // Checksum 0x601503df, Offset: 0x1bb0
 // Size: 0x5c
@@ -392,7 +392,7 @@ function function_f40c9e73(var_ea5d6a42, startnode) {
     function_746680dc(var_ea5d6a42);
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 1, eflags: 0x2 linked
 // Checksum 0xab9874a3, Offset: 0x1c18
 // Size: 0x17c
@@ -415,7 +415,7 @@ function function_58b50fe4(var_ea5d6a42) {
     }
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 0, eflags: 0x2 linked
 // Checksum 0xdceb2bf, Offset: 0x1da0
 // Size: 0x74c
@@ -518,7 +518,7 @@ function function_7725894b() {
     }
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 1, eflags: 0x2 linked
 // Checksum 0x27ec5d32, Offset: 0x24f8
 // Size: 0x3e4
@@ -569,7 +569,7 @@ function function_80586c75(var_ea5d6a42) {
     }
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 2, eflags: 0x2 linked
 // Checksum 0xf3ec5ad, Offset: 0x28e8
 // Size: 0x2c
@@ -577,7 +577,7 @@ function function_cb79fdd4(var_ea5d6a42, *exitrequestedbyowner) {
     exitrequestedbyowner thread function_c85eb0a9();
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 0, eflags: 0x2 linked
 // Checksum 0x47199812, Offset: 0x2920
 // Size: 0x224
@@ -614,7 +614,7 @@ function function_c85eb0a9() {
     }
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 0, eflags: 0x2 linked
 // Checksum 0x3c5e1cc6, Offset: 0x2b50
 // Size: 0x7e
@@ -627,7 +627,7 @@ function function_e441d7fa() {
     }
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 1, eflags: 0x2 linked
 // Checksum 0x5ebe9dc, Offset: 0x2bd8
 // Size: 0x64
@@ -638,7 +638,7 @@ function waitthendelete(waittime) {
     self delete();
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 1, eflags: 0x2 linked
 // Checksum 0x677d6cee, Offset: 0x2c48
 // Size: 0xc4
@@ -655,7 +655,7 @@ function function_8ae60573(*var_7adf0b0a) {
     }
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 2, eflags: 0x2 linked
 // Checksum 0x5f8c8d3e, Offset: 0x2d18
 // Size: 0x6e
@@ -672,7 +672,7 @@ function function_61c4894(ent, *weapon) {
     return 1;
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 0, eflags: 0x2 linked
 // Checksum 0xfe8379fe, Offset: 0x2d90
 // Size: 0x74
@@ -683,7 +683,7 @@ function function_e9a13002() {
     }
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 0, eflags: 0x2 linked
 // Checksum 0xab34279b, Offset: 0x2e10
 // Size: 0x74
@@ -694,7 +694,7 @@ function function_bb75386c() {
     }
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 0, eflags: 0x2 linked
 // Checksum 0x62f4ad01, Offset: 0x2e90
 // Size: 0x34
@@ -702,7 +702,7 @@ function function_fa687280() {
     self clientfield::set("" + #"hash_228ec5a218e1d2f1", 1);
 }
 
-// Namespace namespace_ec4c33b0/namespace_ec4c33b0
+// Namespace hoverjet/hoverjet
 // Params 0, eflags: 0x2 linked
 // Checksum 0xf05c30d2, Offset: 0x2ed0
 // Size: 0x2c

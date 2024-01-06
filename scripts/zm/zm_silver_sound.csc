@@ -181,6 +181,6 @@ function function_21fee83f(var_c4f44e2) {
 // Size: 0x3c
 function function_1493eabf() {
     level waittill(#"hash_2ccb1e2f5d9ce793");
-    function_2cca7b47(0, #"hash_5051ce8d9655aa52");
+    function_2cca7b47(0, #"musictrack_zm_silver_ee");
 }
 

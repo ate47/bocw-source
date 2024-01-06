@@ -1,0 +1,69 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_8eac072553c903a",
+            "var_f35c5951": 0.6,
+            "var_5d4b5964": 8.6,
+            "var_36bf8e05": "#hash_48af8be157c6549f"
+        },
+        {
+            "var_46bd7973": "#hash_8eac172553c91ed",
+            "var_f35c5951": 0.6,
+            "var_5d4b5964": 12.71,
+            "var_36bf8e05": "#hash_47a779de2a9bc806"
+        },
+        {
+            "var_46bd7973": "#hash_8eabe72553c8cd4",
+            "var_f35c5951": 0.8,
+            "var_5d4b5964": 20.25,
+            "var_36bf8e05": "#hash_2a43f59707f00545"
+        },
+        {
+            "var_46bd7973": "#hash_8eabf72553c8e87",
+            "var_f35c5951": 0.6,
+            "var_5d4b5964": 5.74,
+            "var_36bf8e05": "#hash_253c1b0efbfbdd4c"
+        },
+        {
+            "var_46bd7973": "#hash_8eabc72553c896e",
+            "var_f35c5951": 1,
+            "var_5d4b5964": 13.78,
+            "var_36bf8e05": "#hash_ccd0218a07c74e3"
+        },
+        {
+            "var_46bd7973": "#hash_8eabd72553c8b21",
+            "var_f35c5951": 0.6,
+            "var_5d4b5964": 12.71,
+            "var_36bf8e05": "#hash_8299383d01d081a"
+        },
+        {
+            "var_46bd7973": "#hash_8eaba72553c8608",
+            "var_f35c5951": 0.8,
+            "var_5d4b5964": 10.5,
+            "var_36bf8e05": "#hash_425569bb356a7ce9"
+        },
+        {
+            "var_46bd7973": "#hash_8eabb72553c87bb",
+            "var_f35c5951": 0.5,
+            "var_5d4b5964": 1.88,
+            "var_36bf8e05": "#hash_3db0eb26650941f0"
+        }
+    ],
+    "description": "#hash_69cab753995c64ce",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#exploration",
+    "model": "#hash_58228068154ebd8c",
+    "var_824079e7": "#survival",
+    "uimodel": "#hash_b967b1b400fed9b",
+    "type": "zmintel",
+    "season": 3,
+    "var_ad4ad686": "#hash_1303dcb8d0e80e33",
+    "soundloop": "#hash_2e77024e1f0a29f1",
+    "name": "zmintel_survival_requiem_audiolog_11",
+    "var_9be0526e": "#audiolog",
+    "var_83e219de": "#hash_55af78a255e77597",
+    "var_53be913a": 5,
+    "var_348b91fd": "#tape",
+    "title": "#hash_375bd65d7468df7e",
+    "var_3bb3493d": "#hash_66757677d1faf3e5"
+}

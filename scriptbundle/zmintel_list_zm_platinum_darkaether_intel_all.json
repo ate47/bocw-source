@@ -1,0 +1,51 @@
+{
+    "var_572513bb": [
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_platinum_darkaether_document_01"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_platinum_darkaether_document_02"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_platinum_darkaether_document_03"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_platinum_darkaether_audiolog_01"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_platinum_darkaether_audiolog_02"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_platinum_darkaether_audiolog_03"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_platinum_darkaether_radio_01"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_platinum_darkaether_radio_02"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_platinum_darkaether_artifact_01"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_platinum_darkaether_artifact_02"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_platinum_darkaether_artifact_03"
+        }
+    ],
+    "var_922067c4": "scriptbundle",
+    "type": "zmintel_list",
+    "name": "zmintel_list_zm_platinum_darkaether_intel_all"
+}

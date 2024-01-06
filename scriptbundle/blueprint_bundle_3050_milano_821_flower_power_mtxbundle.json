@@ -1,0 +1,39 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#smg_handling_bp_cell_mtxitem",
+            "itemid": "22324307"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_roller_skate_mtxitem",
+            "itemid": "27851634"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_r82_10_mtxitem",
+            "itemid": "33339206"
+        },
+        {
+            "var_4a4bc969": "#emblems_rollerderby_mtxitem",
+            "itemid": "32731157"
+        },
+        {
+            "var_4a4bc969": "#callingcards_wm_rollerderby_mtxitem",
+            "itemid": "22522395"
+        },
+        {
+            "var_4a4bc969": "#loot_ges_mtx_t9_blow_kiss_mtxitem",
+            "itemid": "29839324"
+        }
+    ],
+    "itemname": "#hash_4fdc16b149a6a5c3",
+    "var_375a1747": "#hash_4d6ae6b4b4b96fc9",
+    "name": "blueprint_bundle_3050_milano_821_flower_power_mtxbundle",
+    "var_a788fada": "#hash_797dc89a75b69e76",
+    "var_22f91505": "#hash_43e89bcb46cf786f",
+    "var_566825be": "#hash_21216b2b318d4b42",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_512cfe304aa8652b",
+    "var_db3e02ab": 2000,
+    "itemid": "18228772"
+}

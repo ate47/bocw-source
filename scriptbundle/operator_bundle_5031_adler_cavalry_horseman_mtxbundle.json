@@ -1,0 +1,47 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#tr_fastburst_bp_metamorph_mtxitem",
+            "itemid": "23339150"
+        },
+        {
+            "var_4a4bc969": "#smg_burst_bp_metamorph_mtxitem",
+            "itemid": "21964629"
+        },
+        {
+            "var_4a4bc969": "#melee_wakizashi_bp_metamorph_mtxitem",
+            "itemid": "18493490"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_spider_eye_mtxitem",
+            "itemid": "24173589"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_us_boat_pgb_assembly_mpx_organic_mtxitem",
+            "itemid": "20795030"
+        },
+        {
+            "var_4a4bc969": "#execution_182_mtxitem",
+            "itemid": "20675216"
+        },
+        {
+            "var_4a4bc969": "#callingcards_osmosis_s5_animated_mtxitem",
+            "itemid": "21775970"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_r82_16_s5_mtxitem",
+            "itemid": "32216620"
+        }
+    ],
+    "itemname": "#hash_705c30cd0d08c9ca",
+    "var_375a1747": "#hash_25bfda1b9a821ab8",
+    "name": "operator_bundle_5031_adler_cavalry_horseman_mtxbundle",
+    "var_a788fada": "#hash_148f4e28ef5f7097",
+    "var_22f91505": "#hash_702ad126c0093f08",
+    "var_566825be": "#hash_44fc65a42ec4afdf",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_2294a8cb6b0aac50",
+    "var_db3e02ab": 2000,
+    "itemid": "18888552"
+}

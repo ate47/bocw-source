@@ -1,0 +1,34 @@
+{
+    "itemlist": [
+        {
+            "minweight": 14,
+            "var_a6762160": "#sr_explore_chest_scorestreaks",
+            "maxweight": 14,
+            "available": -1
+        },
+        {
+            "minweight": 13,
+            "var_a6762160": "#sr_explore_chest_perk_bottles",
+            "maxweight": 13,
+            "available": -1
+        },
+        {
+            "minweight": 13,
+            "var_a6762160": "#sr_explore_chest_ammo_mods",
+            "maxweight": 13,
+            "available": -1
+        },
+        {
+            "minweight": 60,
+            "maxweight": 60,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "level_4_bonus_item_list",
+    "var_fde72c94": 100
+}

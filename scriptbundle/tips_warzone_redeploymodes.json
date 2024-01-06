@@ -1,0 +1,41 @@
+{
+    "var_f2454da1": [
+        {
+            "var_9e589ff4": 1,
+            "var_75f09f03": "#hash_4fee8544ba64deaa",
+            "var_81294378": "#==",
+            "var_88ff5fc3": "#none"
+        },
+        {
+            "var_9e589ff4": 1,
+            "var_75f09f03": "#hash_6cd6c8b7d0d3d70b",
+            "var_81294378": "#==",
+            "var_88ff5fc3": "#none"
+        },
+        {
+            "var_9e589ff4": 1,
+            "var_75f09f03": "#hash_285a2e07f7f100d4",
+            "var_81294378": "#==",
+            "var_88ff5fc3": "#none"
+        },
+        {
+            "var_9e589ff4": 1,
+            "var_75f09f03": "#hash_15063eb52163aeb3",
+            "var_81294378": "#==",
+            "var_88ff5fc3": "#none"
+        },
+        {
+            "var_9e589ff4": 1,
+            "var_75f09f03": "#hash_1e1a836bf9bb2b8c",
+            "var_81294378": "#==",
+            "var_88ff5fc3": "#none"
+        }
+    ],
+    "var_922067c4": "SCRIPTBUNDLE",
+    "type": "didyouknowentry",
+    "var_9e589ff4": 1,
+    "name": "tips_warzone_redeploymodes",
+    "var_81294378": "#==",
+    "var_88ff5fc3": "#deathcirclerespawn",
+    "var_b96cb18c": 1
+}

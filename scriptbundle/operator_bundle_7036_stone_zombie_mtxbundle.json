@@ -1,0 +1,71 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_7a45e18c6b851a9c"
+        },
+        {
+            "var_fe10649e": "#hash_70a7150014996fee"
+        },
+        {
+            "var_fe10649e": "#hash_70a7140014996e3b"
+        },
+        {
+            "var_fe10649e": "#hash_70a7130014996c88"
+        }
+    ],
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#po_c_t9_gen_pl_starter3_stone_infestation_mtxitem",
+            "itemid": "31699177"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_starter3_mtxitem",
+            "itemid": "21293402"
+        },
+        {
+            "var_4a4bc969": "#lmg_fastfire_bp_nightf_mtxitem",
+            "itemid": "24705397"
+        },
+        {
+            "var_4a4bc969": "#ar_damage_bp_nightf_mtxitem",
+            "itemid": "18383488"
+        },
+        {
+            "var_4a4bc969": "#reticle_145_mtxitem",
+            "itemid": "25067136"
+        },
+        {
+            "var_4a4bc969": "#execution_152_mtxitem",
+            "itemid": "24244533"
+        },
+        {
+            "var_4a4bc969": "#emblems_stone_reactive_animated_mtxitem",
+            "itemid": "22271268"
+        },
+        {
+            "var_4a4bc969": "#callingcards_stone_reactive_animated_mtxitem",
+            "itemid": "29851140"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_stone_reactive_mtxitem",
+            "itemid": "28282588"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s6_digital_nightmare_fuel_mtxitem",
+            "itemid": "27168045"
+        }
+    ],
+    "itemname": "#hash_761b85a890480f5a",
+    "var_375a1747": "#hash_7a45e18c6b851a9c",
+    "var_3040f0d1": "#hash_7a45e18c6b851a9c",
+    "var_8ee7db29": 1,
+    "name": "operator_bundle_7036_stone_zombie_mtxbundle",
+    "var_a788fada": "#hash_6fe58a60f3c9458f",
+    "var_22f91505": "#hash_7dea4d4ff636fcef",
+    "var_566825be": "#hash_2db8b462597a7557",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_541ffb83a5afe5ab",
+    "var_db3e02ab": 750,
+    "itemid": "22188198"
+}

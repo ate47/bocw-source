@@ -1,0 +1,61 @@
+{
+    "var_4e59fd84": [
+        {
+            "nvidiahighlight": "#nvidia_highlight_triple_kill"
+        },
+        {
+            "nvidiahighlight": "#nvidia_highlight_quad_kill"
+        },
+        {
+            "nvidiahighlight": "#nvidia_highlight_frenzy_kill"
+        },
+        {
+            "nvidiahighlight": "#nvidia_highlight_mega_kill"
+        },
+        {
+            "nvidiahighlight": "#nvidia_highlight_ultra_kill"
+        },
+        {
+            "nvidiahighlight": "#nvidia_highlight_kill_chain"
+        },
+        {
+            "nvidiahighlight": "#nvidia_highlight_merciless"
+        },
+        {
+            "nvidiahighlight": "#nvidia_highlight_relentless"
+        },
+        {
+            "nvidiahighlight": "#nvidia_highlight_nuclear"
+        },
+        {
+            "nvidiahighlight": "#nvidia_highlight_collateral"
+        },
+        {
+            "nvidiahighlight": "#nvidia_highlight_totaled"
+        },
+        {
+            "nvidiahighlight": "#nvidia_highlight_afterlife"
+        },
+        {
+            "nvidiahighlight": "#nvidia_highlight_assisted_suicide"
+        },
+        {
+            "nvidiahighlight": "#nvidia_highlight_quad_feed"
+        },
+        {
+            "nvidiahighlight": "#nvidia_highlight_pancake"
+        },
+        {
+            "nvidiahighlight": "#nvidia_highlight_bank_shot"
+        },
+        {
+            "nvidiahighlight": "#nvidia_highlight_death_tracking"
+        },
+        {
+            "nvidiahighlight": "#nvidia_highlight_kill_tracking"
+        }
+    ],
+    "var_922067c4": "SCRIPTBUNDLE",
+    "type": "nvidiahighlightlist",
+    "name": "nvidia_highlights_list"
+}

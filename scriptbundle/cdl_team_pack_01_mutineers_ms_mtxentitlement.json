@@ -1,0 +1,58 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#po_c_t9_gen_pl_esports_male_mutineers_home_ms_mtxitem",
+            "itemid": "30639018"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_pl_esports_male_mtxitem",
+            "itemid": "31358670"
+        },
+        {
+            "var_4a4bc969": "#po_c_t9_gen_pl_esports_male_mutineers_away_ms_mtxitem",
+            "itemid": "24944838"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_pl_esports_male_warsaw_mtxitem",
+            "itemid": "24054907"
+        },
+        {
+            "var_4a4bc969": "#camo_t9_cdl_fl_ms_mtxitem",
+            "itemid": "27271576"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_esports_mutineers_ms_mtxitem",
+            "itemid": "29871142"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_sneaker_mutineers_ms_mtxitem",
+            "itemid": "28783540"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_cdl_teamsticker_fl_1_ms_base_mtxitem",
+            "itemid": "33348711"
+        },
+        {
+            "var_4a4bc969": "#callingcards_cdl_teamcallingcards_fl_1_ms_base_mtxitem",
+            "itemid": "22297622"
+        },
+        {
+            "var_4a4bc969": "#emblems_cdl_teamemblem_010_fl_1_ms_base_mtxitem",
+            "itemid": "22357084"
+        }
+    ],
+    "itemname": "#hash_7949a468e6bb58d4",
+    "var_247d9ed7": "cdl_team_pack_01_mutineers",
+    "var_208d76b5": "#hash_1a66717b9d3be739",
+    "var_70f66e54": "#hash_1fc253322e4896f2",
+    "name": "cdl_team_pack_01_mutineers_ms_mtxentitlement",
+    "var_a788fada": "#hash_391200b2a179fe3b",
+    "var_22f91505": "#hash_22d48b9bda61e887",
+    "var_566825be": "#hash_72f31cceb4baf63",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "var_4e46b1b3": "#durango",
+    "itemid": "22842164",
+    "var_a592ce5": 1
+}

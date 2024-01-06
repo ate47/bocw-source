@@ -179,7 +179,7 @@ function function_61d01718(transitions, lui_event) {
     }
     player = self;
     player endon(#"disconnect");
-    foreach (transition in transitions) {
+    foreach (index, transition in transitions) {
         player function_b797319e(lui_event, index + 1);
         if ((isdefined(transition.time) ? transition.time : 0) != 0) {
             round_end_wait(float(transition.time) / 1000);
@@ -502,7 +502,7 @@ function private function_6b33e951() {
         client_num = isdefined(var_5986770f[i]) ? var_5986770f[i].entnum : -1;
         array::add(var_860af94a, client_num);
     }
-    luinotifyevent(#"hash_22f6d1d44887e60d", var_9a829482, var_860af94a[0], var_860af94a[1], var_860af94a[2], var_860af94a[3], var_860af94a[4], var_860af94a[5]);
+    luinotifyevent(#"top_squad", var_9a829482, var_860af94a[0], var_860af94a[1], var_860af94a[2], var_860af94a[3], var_860af94a[4], var_860af94a[5]);
 }
 
 // Namespace display_transition/display_transition
@@ -573,10 +573,10 @@ function function_7e74281() {
     level.var_3a309902[#"play_of_the_match"] = &function_e3442abc;
     level.var_3a309902[#"hash_7367d8ab0bb7068b"] = &function_4029edc0;
     level.var_3a309902[#"high_value_operatives"] = &function_26bbb839;
-    level.var_3a309902[#"hash_22f6d1d44887e60d"] = &function_721d8d6e;
-    level.var_3a309902[#"hash_7ba484a070f75877"] = &function_e794b637;
-    level.var_3a309902[#"hash_628d1ccbd224e3fb"] = &function_51bb7ed5;
-    level.var_7e74281[#"hash_628d1ccbd224e3fb"] = &function_8d0112e9;
+    level.var_3a309902[#"top_squad"] = &function_721d8d6e;
+    level.var_3a309902[#"hero_pose"] = &function_e794b637;
+    level.var_3a309902[#"exit_cinematic"] = &function_51bb7ed5;
+    level.var_7e74281[#"exit_cinematic"] = &function_8d0112e9;
 }
 
 // Namespace display_transition/display_transition
@@ -703,7 +703,7 @@ function function_7e8f8c47(transitions, outcome, lui_event) {
         }
         function_2125bc4b(transition, index, outcome);
     }
-    foreach (transition in transitions) {
+    foreach (index, transition in transitions) {
         if (function_40a46b5b(transition, outcome)) {
             continue;
         }

@@ -23,8 +23,8 @@ function private function_70a657d8() {
     callback::on_localplayer_spawned(&on_localplayer_spawned);
     callback::on_localclient_connect(&function_9147a2d6);
     callback::add_weapon_type(#"hash_320a8d55b915b9e5", &function_9eeebbfd);
-    level.var_8ddf6d3d = getscriptbundle(#"hash_445365893677ac81");
-    level.var_96492769 = getscriptbundle(#"hash_42834c37faf165eb");
+    level.var_8ddf6d3d = getscriptbundle(#"listeningdevicesettings");
+    level.var_96492769 = getscriptbundle(#"listeningdevicesettings_deadsilence");
     clientfield::register("missile", "listening_device_hacked", 1, 1, "counter", &function_a7c5eafc, 0, 0);
 }
 
@@ -344,9 +344,9 @@ function monitor_detectnearbyenemies(localclientnum) {
     while (1) {
         /#
             if (getdvarint(#"hash_3a4c39a1452c5f36", 0) > 0) {
-                level.var_8ddf6d3d = getscriptbundle(#"hash_445365893677ac81");
+                level.var_8ddf6d3d = getscriptbundle(#"listeningdevicesettings");
                 var_55336d8d = level.var_8ddf6d3d;
-                level.var_96492769 = getscriptbundle(#"hash_42834c37faf165eb");
+                level.var_96492769 = getscriptbundle(#"listeningdevicesettings_deadsilence");
                 var_c394e130 = level.var_96492769;
             }
         #/

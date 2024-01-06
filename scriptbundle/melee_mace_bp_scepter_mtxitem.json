@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#operator_bundle_4004_mace_melee_one_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_3fc0d601095522e8",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_4b7fc0c45faf18d2",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 4,
+    "var_46300498": 1,
+    "baseweapon": "#hash_34589063d8a49594",
+    "name": "melee_mace_bp_scepter_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "27248047",
+    "blueprint": "#hash_3fc0d601095522e8"
+}

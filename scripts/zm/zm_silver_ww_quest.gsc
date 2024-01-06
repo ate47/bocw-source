@@ -169,7 +169,7 @@ function function_5adab0a2() {
     var_493bf9de playsound(#"hash_25944d8316921ce3");
     var_493bf9de waittill(#"movedone");
     var_4fe610e9 = struct::get("zm_dw_re");
-    point = function_4ba8fde(#"hash_2f24375908d9f69c");
+    point = function_4ba8fde(#"item_zmintel_silver_requiem_artifact_1");
     var_c4667a11 = item_drop::drop_item(0, undefined, 1, 0, point.id, var_4fe610e9.origin, var_4fe610e9.angles, 0);
     var_c4667a11.var_dd21aec2.var_c4667a11 = 1 & 16;
     var_c4667a11 linkto(var_dae3aab3);
@@ -408,7 +408,7 @@ function function_67144513() {
     var_ed63dcf1 setvisibletoall();
     var_ed63dcf1 sethintstring(#"hash_7c3dc5c3150a3e79");
     var_ed63dcf1 waittill(#"trigger");
-    point = function_4ba8fde(#"hash_2f243a5908d9fbb5");
+    point = function_4ba8fde(#"item_zmintel_silver_requiem_artifact_2");
     if (isdefined(point)) {
         var_87cced30 = item_drop::drop_item(0, undefined, 1, 0, point.id, var_7b1f83bc.origin, var_7b1f83bc.angles, 0);
         var_87cced30.var_dd21aec2.var_87cced30 = 1 & 16;
@@ -482,8 +482,8 @@ function function_2bb91770(var_479e219c) {
 // Size: 0x82c
 function function_c436fc75() {
     level thread function_8fa801ac();
-    scene::add_scene_func(#"hash_1ad915d17cdbbfd4", &function_ad61157, "init");
-    level scene::init(#"hash_1ad915d17cdbbfd4");
+    scene::add_scene_func(#"p9_fxanim_zm_ndu_contain_crate_cryo_bundle", &function_ad61157, "init");
+    level scene::init(#"p9_fxanim_zm_ndu_contain_crate_cryo_bundle");
     level.var_a1b709cb = getent("zm_sw_nit_left", "script_noteworthy");
     level.var_a1b709cb.var_14bfe1d6 = getent(level.var_a1b709cb.script_string, "targetname");
     level.var_a1b709cb.var_14bfe1d6 notsolid();
@@ -548,7 +548,7 @@ function function_c436fc75() {
     playsoundatposition(#"hash_7d25502411a9cd58", var_1a3ee7c1.origin);
     level notify(#"hash_1fd19e3d2e214e5");
     wait(3);
-    level scene::play(#"hash_1ad915d17cdbbfd4", "chain");
+    level scene::play(#"p9_fxanim_zm_ndu_contain_crate_cryo_bundle", "chain");
     /#
         iprintlnbold("<unknown string>");
     #/
@@ -560,7 +560,7 @@ function function_c436fc75() {
 // Checksum 0xfe6c3cd8, Offset: 0x3b98
 // Size: 0x7c
 function function_ad61157(a_ents) {
-    var_bf71a40b = a_ents[#"hash_2540d6ca31410881"];
+    var_bf71a40b = a_ents[#"weapon_crate"];
     level waittill(#"hash_1fd19e3d2e214e5");
     var_bf71a40b clientfield::set("" + #"hash_5020565243fa510a", 1);
 }
@@ -674,7 +674,7 @@ function private function_beb0f79f() {
 // Size: 0x73c
 function function_17329c15() {
     level thread function_dc2acb90();
-    level scene::init(#"hash_52fd2682092127fc");
+    level scene::init(#"p9_fxanim_zm_ndu_contain_crate_gas_bundle");
     level.var_74ec088f = getent("zm_sw_gas_crash", "script_noteworthy");
     level.var_74ec088f.var_14bfe1d6 = getent(level.var_74ec088f.script_string, "targetname");
     level.var_74ec088f.var_14bfe1d6 notsolid();
@@ -705,7 +705,7 @@ function function_17329c15() {
     wait(3);
     level notify(#"hash_20690d1d96df7c03");
     var_5ac7d534 delete();
-    point = function_4ba8fde(#"hash_5f8eec7ec430864");
+    point = function_4ba8fde(#"item_zmintel_silver_darkaether_artifact_2");
     var_457b303e = item_drop::drop_item(0, undefined, 1, 0, point.id, struct::get("zm_can_arm").origin, undefined, 0);
     var_457b303e.var_dd21aec2.var_457b303e = 1 & 16;
     level flag::wait_till("full_canister_picked_up");
@@ -731,7 +731,7 @@ function function_17329c15() {
         var_b04e724c delete();
     }
     level.var_74ec088f clientfield::set("" + #"hash_7862b1e62306df36", 1);
-    level scene::play(#"hash_52fd2682092127fc", "roots");
+    level scene::play(#"p9_fxanim_zm_ndu_contain_crate_gas_bundle", "roots");
     level.var_74ec088f thread function_8d9ddc22("GAS");
     waittillframeend();
     if (isdefined(t_damage)) {
@@ -935,7 +935,7 @@ function function_a5ae82b0() {
                 }
             }
         } else {
-            foreach (var_f2484ed9 in level.var_8dc29179) {
+            foreach (var_fd6475b5, var_f2484ed9 in level.var_8dc29179) {
                 if (!isdefined(var_f2484ed9)) {
                     arrayremoveindex(level.var_8dc29179, var_fd6475b5);
                     continue;
@@ -991,7 +991,7 @@ function function_78d3b53b() {
     scene::add_scene_func(#"hash_6e29beca7d26695", &function_59642e27, "init");
     level thread function_f308268d();
     level scene::init(#"hash_6e29beca7d26695");
-    level scene::init(#"hash_687f8b39643bcd0d");
+    level scene::init(#"p9_fxanim_zm_ndu_contain_crate_rust_bundle");
     level.var_267fe17e = getent("zm_sw_pla_tr", "script_noteworthy");
     level.var_267fe17e.var_14bfe1d6 = getent(level.var_267fe17e.script_string, "targetname");
     level.var_267fe17e.var_14bfe1d6 notsolid();
@@ -1107,13 +1107,13 @@ function function_d4647e9c() {
         level flag::wait_till(#"hash_5c4e5d3571f5e1f6");
         if (!level flag::get("ww_plasma_dark_crate_unfolded")) {
             self hide();
-            level scene::delete_scene_spawned_ents(#"hash_687f8b39643bcd0d");
+            level scene::delete_scene_spawned_ents(#"p9_fxanim_zm_ndu_contain_crate_rust_bundle");
             var_64b5a257 notsolid();
             var_64b5a257 connectpaths();
         }
         level flag::wait_till_clear(#"hash_5c4e5d3571f5e1f6");
         self show();
-        level scene::init(#"hash_687f8b39643bcd0d");
+        level scene::init(#"p9_fxanim_zm_ndu_contain_crate_rust_bundle");
         var_64b5a257 solid();
         var_64b5a257 disconnectpaths();
         if (level flag::get("ww_plasma_dark_crate_unfolded")) {
@@ -1132,8 +1132,8 @@ function function_d4647e9c() {
 function function_77fdf8f3() {
     level thread function_3ca2b2c1("zm_por_par", "ww_beam_crate_unfolded", "ww_beam_dark_aether_active");
     callback::on_disconnect(&function_196740ae);
-    scene::add_scene_func(#"hash_291cb9c9bbca6a36", &function_b39ee43f, "init");
-    level scene::init(#"hash_291cb9c9bbca6a36");
+    scene::add_scene_func(#"p9_fxanim_zm_ndu_contain_crate_electric_bundle", &function_b39ee43f, "init");
+    level scene::init(#"p9_fxanim_zm_ndu_contain_crate_electric_bundle");
     level.var_a6639798 = getent("zm_sw_par_pa", "script_noteworthy");
     level.var_a6639798.var_14bfe1d6 = getent(level.var_a6639798.script_string, "targetname");
     level.var_a6639798.var_14bfe1d6 notsolid();
@@ -1381,7 +1381,7 @@ function function_ef55bb22(var_53f12789, num) {
         }
     }
     if (num == 1) {
-        waitresult.attacker thread namespace_4abf1500::function_3ad8805e(#"hash_45d2926504ac78a1");
+        waitresult.attacker thread namespace_4abf1500::function_3ad8805e(#"zmintel_silver_darkaether_artifact_3");
     }
     level flag::set("receptacle_" + num + "_powered");
     /#
@@ -1394,7 +1394,7 @@ function function_ef55bb22(var_53f12789, num) {
 // Checksum 0x518c14fd, Offset: 0x7ac0
 // Size: 0x1c4
 function function_b39ee43f(a_ents) {
-    var_bf71a40b = a_ents[#"hash_2540d6ca31410881"];
+    var_bf71a40b = a_ents[#"weapon_crate"];
     while (1) {
         flag_return = undefined;
         flag_return = level waittill(#"hash_45f7c4893f6f5868", #"hash_1ee2531a4c0f00e1", #"hash_8589a8c07095616");
@@ -1634,7 +1634,7 @@ function function_6d4e1f71(var_d5c2e187, var_e7772c37, var_b0e35c50) {
 // Checksum 0x1e9394e6, Offset: 0x8d38
 // Size: 0x634
 function function_217a625a(a_ents) {
-    var_bf71a40b = a_ents[#"hash_2540d6ca31410881"];
+    var_bf71a40b = a_ents[#"weapon_crate"];
     switch (var_bf71a40b.model) {
     case #"hash_32859e73dd365b9e":
         if (level flag::get("exchange_base_back")) {
@@ -1815,7 +1815,7 @@ function on_item_pickup(params) {
     if (isplayer(self)) {
         if (isdefined(item.var_a6762160)) {
             switch (item.var_a6762160.name) {
-            case #"hash_2f243a5908d9fbb5":
+            case #"item_zmintel_silver_requiem_artifact_2":
                 if (self function_1d89280c()) {
                     var_4e4f65c9 = self item_inventory::function_2e711614(17 + 1);
                     primary_weapon = self namespace_a0d533d1::function_2b83d3ff(var_4e4f65c9);
@@ -1838,7 +1838,7 @@ function on_item_pickup(params) {
                     }
                 }
                 self zm_weapons::weapon_give(level.var_652bc5ed, 1);
-                self thread namespace_4abf1500::function_3ad8805e(#"hash_4a8a42661e63e2a3");
+                self thread namespace_4abf1500::function_3ad8805e(#"zmintel_silver_requiem_artifact_2");
                 level.var_516c02a2 = self;
                 level flag::set(#"hash_15f3e07d50195cb9");
                 break;
@@ -1846,9 +1846,9 @@ function on_item_pickup(params) {
                 level flag::set("player_got_card");
                 level zm_ui_inventory::function_7df6bb60(#"hash_6de5cab1fba28d40", 1);
                 break;
-            case #"hash_2f24375908d9f69c":
+            case #"item_zmintel_silver_requiem_artifact_1":
                 level flag::set("player_got_remote");
-                array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"hash_4a8a43661e63e456");
+                array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"zmintel_silver_requiem_artifact_1");
                 level zm_ui_inventory::function_7df6bb60(#"hash_1ec8e7f21f81afb0", 1);
                 break;
             case #"hash_16ea992ec682d37":
@@ -1857,7 +1857,7 @@ function on_item_pickup(params) {
                 break;
             case #"hash_22d1a49f2c1d1c80":
                 level flag::set("player_got_the_filled_flask");
-                array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"hash_45d2906504ac753b");
+                array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"zmintel_silver_darkaether_artifact_1");
                 level zm_ui_inventory::function_7df6bb60(#"hash_2e341f321b2ab3da", 2);
                 break;
             case #"hash_70dc74e571a35a75":
@@ -1868,9 +1868,9 @@ function on_item_pickup(params) {
                 level flag::set("player_got_the_canister");
                 level zm_ui_inventory::function_7df6bb60(#"hash_240dcac486ef946a", 1);
                 break;
-            case #"hash_5f8eec7ec430864":
+            case #"item_zmintel_silver_darkaether_artifact_2":
                 level flag::set("full_canister_picked_up");
-                array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"hash_45d2916504ac76ee");
+                array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"zmintel_silver_darkaether_artifact_2");
                 level zm_ui_inventory::function_7df6bb60(#"hash_240dcac486ef946a", 2);
                 break;
             case #"hash_defdefdefdefdef0":

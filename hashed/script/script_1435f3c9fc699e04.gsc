@@ -88,10 +88,10 @@ function function_98aae7cf() {
 // Size: 0x14c
 function function_bd47b0c7() {
     function_98aae7cf();
-    foreach (user in self.var_bac5b0cf) {
+    foreach (user_name, user in self.var_bac5b0cf) {
         if (user.touching.num > 0) {
             function_136c2270(user_name);
-            foreach (player in user.touching.players) {
+            foreach (var_5717fa0c, player in user.touching.players) {
                 function_a1839d6b(user_name, player.player, var_5717fa0c);
             }
         }
@@ -126,7 +126,7 @@ function function_339d0e91() {
 // Size: 0xb4
 function function_3a7a2963(var_77efb18) {
     total = 0;
-    foreach (var_b2dad138 in self.var_bac5b0cf) {
+    foreach (user_name, var_b2dad138 in self.var_bac5b0cf) {
         if (user_name == var_77efb18) {
             continue;
         }
@@ -140,7 +140,7 @@ function function_3a7a2963(var_77efb18) {
 // Checksum 0x767beebf, Offset: 0x730
 // Size: 0xa8
 function function_3a29539b(var_77efb18) {
-    foreach (var_b2dad138 in self.var_bac5b0cf) {
+    foreach (user_name, var_b2dad138 in self.var_bac5b0cf) {
         if (user_name == var_77efb18) {
             continue;
         }
@@ -168,7 +168,7 @@ function get_num_touching(user) {
 // Size: 0xea
 function function_e4cad37() {
     var_95e19dc6 = [];
-    foreach (var_c4f3dc93 in self.var_bac5b0cf) {
+    foreach (user, var_c4f3dc93 in self.var_bac5b0cf) {
         if (var_c4f3dc93.touching.num > 0) {
             if (!isdefined(var_95e19dc6)) {
                 var_95e19dc6 = [];
@@ -308,7 +308,7 @@ function function_9f894584(user) {
 // Size: 0xb8
 function function_a7dbb00b(var_77efb18) {
     rate = 0;
-    foreach (_ in self.var_bac5b0cf) {
+    foreach (user_name, _ in self.var_bac5b0cf) {
         if (user_name == var_77efb18) {
             continue;
         }

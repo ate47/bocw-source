@@ -53,7 +53,7 @@ function function_78f4a9dc(localclientnum, *oldval, newval, *bnewent, *binitials
         }
         if (self.archetype === #"zombie_dog") {
             self.var_feabd9ee = util::playfxontag(fieldname, "zm_weapons/fx9_aat_cryofreeze_lvl1_slow_hound", self, "j_spine2");
-        } else if (self.archetype === #"hash_9f6bc1960ff4912") {
+        } else if (self.archetype === #"raz") {
             self.var_feabd9ee = util::playfxontag(fieldname, "zm_weapons/fx9_aat_cryofreeze_lvl1_slow_raz", self, "j_spine4");
         } else if (self.archetype === #"hash_7c0d83ac1e845ac2") {
             self.var_feabd9ee = util::playfxontag(fieldname, "zm_weapons/fx9_aat_cryofreeze_lvl1_slow_steiner", self, "j_spine4");

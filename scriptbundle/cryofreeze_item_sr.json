@@ -1,0 +1,31 @@
+{
+    "worldfx": [
+        {
+            "worldfx": "#hash_6c7840c9ca34f2a3"
+        }
+    ],
+    "var_a6616b9c": 1,
+    "var_fa988b4b": 60,
+    "var_922067c4": "scriptbundle",
+    "var_3e688854": 12,
+    "model": "#hash_5fc7ee5c69212e50",
+    "var_16e34ef4": 64,
+    "var_ac75b59f": -1,
+    "var_c2de1e75": "zm_item_pickup_rumble",
+    "type": "itemspawnentry",
+    "hintstring": "#hash_2bdf098ef2373e07",
+    "spawnsound": "zmb_powerup_ammomod_cryofreeze_spawn",
+    "var_4a1a4613": "armor_swap",
+    "name": "cryofreeze_item_sr",
+    "displayname": "#hash_2bdf098ef2373e07",
+    "var_9e569978": 1,
+    "icon": "#hash_7f3dae8881683e37",
+    "modelscale": 3,
+    "rarity": "Epic",
+    "var_1b0b57d1": "evt_item_despawn",
+    "handler": "#hash_1002a9af0882010e",
+    "var_3af59a99": 1,
+    "pickupicon": "#hash_7f3dae8881683e37",
+    "itemtype": "survival_upgrade_item",
+    "pickupsound": "zmb_powerup_ammomod_cryofreeze_pickup"
+}

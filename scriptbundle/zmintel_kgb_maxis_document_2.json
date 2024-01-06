@@ -1,0 +1,18 @@
+{
+    "description": "#hash_195fdaab5872d30e",
+    "itemspawnentry": "#item_zmintel_kgb_maxis_document_2",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#hash_54f6484895bebf79",
+    "model": "#hash_6054204bb124c1c1",
+    "var_824079e7": "#onslaught",
+    "uimodel": "#hash_6feda7e9c778658",
+    "type": "zmintel",
+    "var_ad4ad686": "#hash_5ad2dea4c296de59",
+    "var_217aec15": "#hash_1b43f41606087749",
+    "name": "zmintel_kgb_maxis_document_2",
+    "var_9be0526e": "#hash_daeb8129dc8e394",
+    "var_83e219de": "#exclusive",
+    "var_53be913a": 5,
+    "title": "#hash_3c4539663d126cbe",
+    "mapname": "#mp_kgb"
+}

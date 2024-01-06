@@ -1,0 +1,51 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#ar_damage_bp_champs_pc_mtxitem",
+            "itemid": "26120912"
+        },
+        {
+            "var_4a4bc969": "#sniper_standard_bp_viewer_pc_mtxitem",
+            "itemid": "21771671"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_league_cdl_champs_pc_mtxitem",
+            "itemid": "29325787"
+        },
+        {
+            "var_4a4bc969": "#emblems_betteronlan_base_pc_mtxitem",
+            "itemid": "20228857"
+        },
+        {
+            "var_4a4bc969": "#emblems_onlinewarrior_base_pc_mtxitem",
+            "itemid": "19495298"
+        },
+        {
+            "var_4a4bc969": "#callingcards_cdlchampionship2021_base_pc_mtxitem",
+            "itemid": "28857442"
+        },
+        {
+            "var_4a4bc969": "#callingcards_onlychamps_base_pc_mtxitem",
+            "itemid": "17900845"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_2021ring_base_pc_mtxitem",
+            "itemid": "33303047"
+        }
+    ],
+    "itemname": "#hash_3ab692312f76df0d",
+    "var_247d9ed7": "firstparty_bundle_5602_cdl_champs",
+    "var_208d76b5": "#hash_330193fdf4fbc7f5",
+    "var_70f66e54": "#hash_1d8508069f3c833a",
+    "name": "firstparty_bundle_5602_cdl_champs_pc_mtxentitlement",
+    "var_a788fada": "#hash_1778e0378752b82a",
+    "var_22f91505": "#hash_357ed461b1862d28",
+    "var_566825be": "#hash_1168ab05e2f95cb6",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_f3c937a9": "#hash_3b4300a7eecca070",
+    "var_db3e02ab": 2000,
+    "var_4e46b1b3": "#pc",
+    "itemid": "20030121",
+    "var_a592ce5": 1
+}

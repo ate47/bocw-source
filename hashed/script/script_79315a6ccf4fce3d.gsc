@@ -68,28 +68,28 @@ function function_dcb0d632(damaged = 0, var_3463bd5c) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xd459bc0f, Offset: 0x5a8
 // Size: 0x1a4
-function function_db4a8bad(damaged = 0, var_b9264d0e) {
+function function_db4a8bad(damaged = 0, barrel) {
     /#
-        assert(isdefined(var_b9264d0e));
+        assert(isdefined(barrel));
     #/
     self notify("56fe998691e89973");
     self endon("56fe998691e89973");
-    var_b9264d0e endon(#"death");
-    var_b9264d0e thread function_dcb0d632(damaged, self);
-    var_b9264d0e thread function_7e0f72a5();
-    var_b9264d0e thread function_ed0bfdae();
+    barrel endon(#"death");
+    barrel thread function_dcb0d632(damaged, self);
+    barrel thread function_7e0f72a5();
+    barrel thread function_ed0bfdae();
     if (!damaged) {
         waitresult = undefined;
-        waitresult = var_b9264d0e waittill(#"damage");
-        var_b9264d0e connectpaths();
+        waitresult = barrel waittill(#"damage");
+        barrel connectpaths();
     }
-    var_b9264d0e thread function_dcb0d632(1, self);
+    barrel thread function_dcb0d632(1, self);
     if (isdefined(waitresult) && isdefined(waitresult.direction)) {
         impulse = waitresult.direction + vectorscale((0, 0, 1), 5);
         impulse = vectorscale(impulse, 3);
-        var_b9264d0e physicslaunch(var_b9264d0e.origin, impulse);
+        barrel physicslaunch(barrel.origin, impulse);
     }
-    var_b9264d0e thread function_d971ecbd(12);
+    barrel thread function_d971ecbd(12);
 }
 
 // Namespace namespace_fb2125f/namespace_fb2125f

@@ -315,7 +315,7 @@ function private function_914f5e7(*params) {
         }
     }
     if (isdefined(self.var_f7c25ec3)) {
-        foreach (struct in self.var_f7c25ec3) {
+        foreach (number, struct in self.var_f7c25ec3) {
             entity = getentbynum(number);
             if (isdefined(entity)) {
                 self function_5e2d225(entity);
@@ -562,7 +562,7 @@ function function_da3fbd96() {
             }
         }
         var_be960b4 = [];
-        foreach (struct in self.var_f7c25ec3) {
+        foreach (number, struct in self.var_f7c25ec3) {
             var_57487ea4 = getentbynum(number);
             if (!isentity(var_57487ea4)) {
                 self.var_f7c25ec3[number] = -1;
@@ -1349,7 +1349,7 @@ function private function_6d1fdca6(entity) {
 // Checksum 0x8c94bf9a, Offset: 0x5de8
 // Size: 0xac
 function private function_eee297ff(entity) {
-    entity val::set(#"hash_3cf188693af8cb18", "can_zombie_summon", 0);
+    entity val::set(#"melee_smash", "can_zombie_summon", 0);
     entity.var_aa7351f4 = undefined;
     entity.var_e1c6baf9.entity = 2;
     entity.var_bebf395.entity = gettime();
@@ -1363,7 +1363,7 @@ function private function_eee297ff(entity) {
 // Checksum 0x31846c73, Offset: 0x5ea0
 // Size: 0x54
 function private function_f554cbb0(entity) {
-    entity val::reset(#"hash_3cf188693af8cb18", "can_zombie_summon");
+    entity val::reset(#"melee_smash", "can_zombie_summon");
     entity pathmode("move allowed");
 }
 
@@ -1372,7 +1372,7 @@ function private function_f554cbb0(entity) {
 // Checksum 0x4077aa7d, Offset: 0x5f00
 // Size: 0x9c
 function private function_84259878(entity) {
-    var_e8f6f317 = 1;
+    stomp = 1;
     var_45487755 = entity gettagorigin("j_ball_ri");
     entity clientfield::increment("hs_stomp_cf", 1);
     entity thread function_59e78833(var_45487755, 125, 30, 100, 500, 300, #"hash_2277d6cf8d0c2cf0");
@@ -1562,7 +1562,7 @@ function private function_ee80ec78(entity) {
     }
     var_6fd88ddd = 2147483647;
     var_deb5b9cb = undefined;
-    foreach (struct in entity.var_f7c25ec3) {
+    foreach (var_61c538de, struct in entity.var_f7c25ec3) {
         player = getentbynum(var_61c538de);
         if (!isdefined(player) || distance2dsquared(player.origin, entity.origin) > function_a3f6cdac(3000)) {
             continue;
@@ -1705,7 +1705,7 @@ function private function_5f9f594(entity) {
 // Checksum 0xbd373138, Offset: 0x7560
 // Size: 0x98
 function private function_3962293(entity, *animname) {
-    animname val::set(#"hash_6e59f8c5a975c3d1", "can_zombie_summon", 0);
+    animname val::set(#"hound_toss", "can_zombie_summon", 0);
     animname clientfield::set("hs_hound_actor_cf", 1);
     animname.var_6512ae03.animname = 0;
     animname.var_9b3f95fc.animname = 0;
@@ -1719,7 +1719,7 @@ function private function_3962293(entity, *animname) {
 // Checksum 0xb18ddac8, Offset: 0x7600
 // Size: 0xbe
 function private function_2821f047(entity) {
-    entity val::reset(#"hash_6e59f8c5a975c3d1", "can_zombie_summon");
+    entity val::reset(#"hound_toss", "can_zombie_summon");
     self function_231f9a1b("hs_phase_melee_wander");
     entity.var_fa4cbfee.entity = entity.var_fa4cbfee + 2;
     function_b12bd2af(self);

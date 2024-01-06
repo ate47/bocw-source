@@ -4,9 +4,9 @@
 #using scripts\core_common\postfx_shared.csc;
 #using scripts\core_common\flag_shared.csc;
 
-#namespace namespace_56e70a4a;
+#namespace codcaster;
 
-// Namespace namespace_56e70a4a/namespace_56e70a4a
+// Namespace codcaster/codcaster
 // Params 1, eflags: 0x2 linked
 // Checksum 0x7b201eed, Offset: 0x1f0
 // Size: 0x22
@@ -14,7 +14,7 @@ function function_b8fe9b52(localclientnum) {
     return function_4e3684f2(localclientnum);
 }
 
-// Namespace namespace_56e70a4a/namespace_56e70a4a
+// Namespace codcaster/codcaster
 // Params 1, eflags: 0x0
 // Checksum 0xc4ae7b84, Offset: 0x220
 // Size: 0x3c
@@ -22,7 +22,7 @@ function function_45a5c04c(localclientnum) {
     return function_b8fe9b52(localclientnum) && function_21dc7cf(localclientnum);
 }
 
-// Namespace namespace_56e70a4a/namespace_56e70a4a
+// Namespace codcaster/codcaster
 // Params 1, eflags: 0x0
 // Checksum 0xa12c9518, Offset: 0x268
 // Size: 0x3c
@@ -30,7 +30,7 @@ function function_936862dc(localclientnum) {
     return function_b8fe9b52(localclientnum) && function_4af9029c(localclientnum);
 }
 
-// Namespace namespace_56e70a4a/namespace_56e70a4a
+// Namespace codcaster/codcaster
 // Params 1, eflags: 0x2 linked
 // Checksum 0x5a3d84f5, Offset: 0x2b0
 // Size: 0x3c
@@ -38,7 +38,7 @@ function function_c955fbd1(localclientnum) {
     return function_b8fe9b52(localclientnum) && function_cd753154(localclientnum);
 }
 
-// Namespace namespace_56e70a4a/namespace_56e70a4a
+// Namespace codcaster/codcaster
 // Params 1, eflags: 0x2 linked
 // Checksum 0x1fe959c3, Offset: 0x2f8
 // Size: 0x3c
@@ -46,7 +46,7 @@ function function_9e39e246(localclientnum) {
     return function_b8fe9b52(localclientnum) && function_9bfd9a04(localclientnum);
 }
 
-// Namespace namespace_56e70a4a/namespace_56e70a4a
+// Namespace codcaster/codcaster
 // Params 1, eflags: 0x2 linked
 // Checksum 0x5a1962dd, Offset: 0x340
 // Size: 0x44
@@ -54,7 +54,7 @@ function function_39bce377(localclientnum) {
     return function_b8fe9b52(localclientnum) && function_aa0b7b86(localclientnum, "codcaster_team_identity");
 }
 
-// Namespace namespace_56e70a4a/namespace_56e70a4a
+// Namespace codcaster/codcaster
 // Params 3, eflags: 0x2 linked
 // Checksum 0xc7961100, Offset: 0x390
 // Size: 0x7a
@@ -65,7 +65,7 @@ function function_f47e494a(localclientnum, team, colorindex) {
     return function_aa0b7b86(localclientnum, "codcaster_team2_color" + colorindex);
 }
 
-// Namespace namespace_56e70a4a/namespace_56e70a4a
+// Namespace codcaster/codcaster
 // Params 3, eflags: 0x2 linked
 // Checksum 0x402f0724, Offset: 0x418
 // Size: 0xd2
@@ -82,7 +82,7 @@ function function_1f84bb65(localclientnum, team, colorindex) {
     return teamcolor;
 }
 
-// Namespace namespace_56e70a4a/namespace_56e70a4a
+// Namespace codcaster/codcaster
 // Params 2, eflags: 0x2 linked
 // Checksum 0xe7812c27, Offset: 0x4f8
 // Size: 0x94
@@ -99,7 +99,7 @@ function is_friendly(localclientnum, team) {
     return friendly;
 }
 
-// Namespace namespace_56e70a4a/namespace_56e70a4a
+// Namespace codcaster/codcaster
 // Params 1, eflags: 0x0
 // Checksum 0x29ede6d1, Offset: 0x598
 // Size: 0xc4
@@ -112,13 +112,13 @@ function function_57a6b7b0(localclientnum) {
     waitframe(1);
     util::waitforclient(localclientnum);
     if (function_b8fe9b52(localclientnum)) {
-        thread function_17442c65(localclientnum);
-        thread function_e94bbb29(localclientnum);
+        thread codcaster_monitor_xray_change(localclientnum);
+        thread codcaster_monitor_player_pucks(localclientnum);
         thread function_914ef81b(localclientnum);
     }
 }
 
-// Namespace namespace_56e70a4a/namespace_56e70a4a
+// Namespace codcaster/codcaster
 // Params 1, eflags: 0x6 linked
 // Checksum 0x4a32020a, Offset: 0x668
 // Size: 0x6c
@@ -129,7 +129,7 @@ function private function_914ef81b(localclientnum) {
     function_d0863a11(localclientnum, 0);
 }
 
-// Namespace namespace_56e70a4a/namespace_56e70a4a
+// Namespace codcaster/codcaster
 // Params 0, eflags: 0x0
 // Checksum 0x37bb839e, Offset: 0x6e0
 // Size: 0x14
@@ -137,11 +137,11 @@ function function_12acfa84() {
     level.var_6a64742e = 1;
 }
 
-// Namespace namespace_56e70a4a/namespace_56e70a4a
+// Namespace codcaster/codcaster
 // Params 1, eflags: 0x6 linked
 // Checksum 0xaf1f8be9, Offset: 0x700
 // Size: 0x3f0
-function private function_17442c65(localclientnum) {
+function private codcaster_monitor_xray_change(localclientnum) {
     level notify("codcaster_monitor_xray_change" + localclientnum);
     level endon("codcaster_monitor_xray_change" + localclientnum);
     level.var_6a64742e = 1;
@@ -188,7 +188,7 @@ function private function_17442c65(localclientnum) {
     }
 }
 
-// Namespace namespace_56e70a4a/namespace_56e70a4a
+// Namespace codcaster/codcaster
 // Params 2, eflags: 0x6 linked
 // Checksum 0x61433adf, Offset: 0xaf8
 // Size: 0x5e0
@@ -244,7 +244,7 @@ function private function_1cc61419(localclientnum, settings) {
     }
 }
 
-// Namespace namespace_56e70a4a/namespace_56e70a4a
+// Namespace codcaster/codcaster
 // Params 4, eflags: 0x2 linked
 // Checksum 0xede06d7f, Offset: 0x10e0
 // Size: 0x2c0
@@ -286,7 +286,7 @@ function function_471909d9(localclientnum, entity, settings, localplayerteam) {
     return 0;
 }
 
-// Namespace namespace_56e70a4a/namespace_56e70a4a
+// Namespace codcaster/codcaster
 // Params 5, eflags: 0x2 linked
 // Checksum 0x8082479b, Offset: 0x13a8
 // Size: 0x244
@@ -319,7 +319,7 @@ function function_89106df8(localclientnum, robkey, rob, var_4724c867, settings) 
     }
 }
 
-// Namespace namespace_56e70a4a/namespace_56e70a4a
+// Namespace codcaster/codcaster
 // Params 1, eflags: 0x0
 // Checksum 0xec44236a, Offset: 0x15f8
 // Size: 0x54
@@ -329,7 +329,7 @@ function function_6d9b84d9(rob) {
     }
 }
 
-// Namespace namespace_56e70a4a/namespace_56e70a4a
+// Namespace codcaster/codcaster
 // Params 1, eflags: 0x6 linked
 // Checksum 0x628ed5c5, Offset: 0x1658
 // Size: 0x7a
@@ -346,7 +346,7 @@ function private function_7ed4edd3(playername) {
     return level.var_f5a7b6e9[playername] function_d2503806(level.var_f5a7b6e9[playername].rob);
 }
 
-// Namespace namespace_56e70a4a/namespace_56e70a4a
+// Namespace codcaster/codcaster
 // Params 2, eflags: 0x2 linked
 // Checksum 0xd08f5089, Offset: 0x16e0
 // Size: 0x27e
@@ -372,7 +372,7 @@ function function_995e01b6(localclientnum, player) {
     level.var_f5a7b6e9[player.name].rob = rob;
 }
 
-// Namespace namespace_56e70a4a/namespace_56e70a4a
+// Namespace codcaster/codcaster
 // Params 1, eflags: 0x6 linked
 // Checksum 0xb8127ef, Offset: 0x1968
 // Size: 0x64
@@ -383,7 +383,7 @@ function private function_425a51a2(var_5854d8e) {
     var_5854d8e delete();
 }
 
-// Namespace namespace_56e70a4a/namespace_56e70a4a
+// Namespace codcaster/codcaster
 // Params 1, eflags: 0x6 linked
 // Checksum 0x3666cf85, Offset: 0x19d8
 // Size: 0x6c
@@ -395,11 +395,11 @@ function private function_35248a94(playername) {
     level.var_f5a7b6e9[playername] = undefined;
 }
 
-// Namespace namespace_56e70a4a/namespace_56e70a4a
+// Namespace codcaster/codcaster
 // Params 1, eflags: 0x6 linked
 // Checksum 0x5f415d2f, Offset: 0x1a50
 // Size: 0x466
-function private function_e94bbb29(localclientnum) {
+function private codcaster_monitor_player_pucks(localclientnum) {
     level notify("codcaster_monitor_player_pucks" + localclientnum);
     level endon("codcaster_monitor_player_pucks" + localclientnum);
     while (1) {
@@ -442,7 +442,7 @@ function private function_e94bbb29(localclientnum) {
     }
 }
 
-// Namespace namespace_56e70a4a/namespace_56e70a4a
+// Namespace codcaster/codcaster
 // Params 4, eflags: 0x0
 // Checksum 0xd3605be1, Offset: 0x1ec0
 // Size: 0x2cc

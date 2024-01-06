@@ -1,0 +1,78 @@
+{
+    "itemlist": [
+        {
+            "minweight": 100,
+            "var_a6762160": "#item_survival_scorestreak_pineapple_gun",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#item_survival_scorestreak_ultimate_turret",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#item_survival_scorestreak_bow",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 40,
+            "var_a6762160": "#item_survival_scorestreak_chopper_gunner",
+            "maxweight": 40,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#item_survival_scorestreak_remote_missile",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#item_survival_scorestreak_napalm_strike",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#item_survival_scorestreak_artillery_strike",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#item_survival_scorestreak_deathmachine",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#item_survival_scorestreak_flamethrower",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#item_survival_scorestreak_hand_cannon",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#item_survival_scorestreak_arcxd",
+            "maxweight": 100,
+            "available": 1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_7fb0967b": 1024,
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "sr_loot_scorestreaks",
+    "var_fde72c94": 100
+}

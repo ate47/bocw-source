@@ -1,0 +1,52 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_2b3c8d320fec39d6"
+        },
+        {
+            "var_fe10649e": "#hash_2b3c8e320fec3b89"
+        },
+        {
+            "var_fe10649e": "#hash_2b3c8b320fec3670"
+        },
+        {
+            "var_fe10649e": "#hash_2b3c8c320fec3823"
+        }
+    ],
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#smg_cqb_bp_mind_mtxitem",
+            "itemid": "26700036"
+        },
+        {
+            "var_4a4bc969": "#tr_longburst_bp_mind_mtxitem",
+            "itemid": "29863379"
+        },
+        {
+            "var_4a4bc969": "#loot_ges_mtx_t9_mic_drop_mtxitem",
+            "itemid": "29529264"
+        },
+        {
+            "var_4a4bc969": "#emblems_s5_mindwipe_animation_mtxitem",
+            "itemid": "28282224"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s5_mindwipe_animation_mtxitem",
+            "itemid": "32228322"
+        }
+    ],
+    "itemname": "#hash_4ee1d742a34154af",
+    "var_375a1747": "#hash_2b3c8d320fec39d6",
+    "var_3040f0d1": "#hash_2b3c8d320fec39d6",
+    "var_8ee7db29": 1,
+    "var_579fd6c3": 31,
+    "name": "blueprint_bundle_5017_kiparis_reactive_mtxbundle",
+    "var_a788fada": "#hash_119f82ad56cd7fbc",
+    "var_22f91505": "#hash_532192743c2f83e8",
+    "var_566825be": "#hash_96f4b9aa3856148",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_6d3308804e916430",
+    "var_db3e02ab": 750,
+    "itemid": "24874987"
+}

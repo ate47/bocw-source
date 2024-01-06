@@ -211,7 +211,7 @@ function function_594bb7bd(player) {
     if (!isdefined(level.var_1029f68)) {
         return;
     }
-    foreach (callback_array in level.var_1029f68) {
+    foreach (archetype, callback_array in level.var_1029f68) {
         ai_array = getaiarchetypearray(archetype);
         foreach (ai in ai_array) {
             foreach (callback in callback_array) {

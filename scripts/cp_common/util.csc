@@ -32,7 +32,7 @@ function private function_70a657d8() {
         level.var_54ce800f = [];
     }
     function_3969639b(&namespace_86402e7e::register, "cp_hint_text");
-    namespace_b0163ca8::register();
+    pip_menu::register();
     clientfield::register("toplayer", "cinematicmotion_blend", 1, 1, "int", &function_e6d37e3b, 0, 0);
     serverfield::register("cinematicmotion_blend", 1, 1, "int");
 }

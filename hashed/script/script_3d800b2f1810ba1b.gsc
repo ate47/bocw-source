@@ -99,7 +99,7 @@ function private function_7d76b3ac() {
         var_4edf0398.var_5fabbca1.var_4edf0398 = (0, 0, 0);
         level.var_8a1c2b55.var_35043dcc[self.var_9a3478b5] = var_4edf0398;
         waitframe(1);
-        foreach (ent in var_4edf0398.var_1e4697f4) {
+        foreach (index, ent in var_4edf0398.var_1e4697f4) {
             if (ent.model !== #"") {
                 var_4edf0398.var_4ecc769d.var_4edf0398 = ent.origin;
                 var_4edf0398.var_5fabbca1.var_4edf0398 = ent.angles;

@@ -1,0 +1,121 @@
+{
+    "var_156fdc30": [
+        {
+            "intellist": "#zmintel_list_silver_requiem_intel_all"
+        },
+        {
+            "intellist": "#zmintel_list_mp_satellite_document_drops"
+        },
+        {
+            "intellist": "#zmintel_list_mp_miami_document_drops"
+        },
+        {
+            "intellist": "#zmintel_list_silver_darkaether_intel_all"
+        },
+        {
+            "intellist": "#zmintel_list_mp_kgb_document_drops"
+        },
+        {
+            "intellist": "#zmintel_list_mp_tank_document_drops"
+        },
+        {
+            "intellist": "#zmintel_list_silver_maxis_intel_all"
+        },
+        {
+            "intellist": "#zmintel_list_mp_cartel_document_drops"
+        },
+        {
+            "intellist": "#zmintel_list_mp_moscow_document_drops"
+        },
+        {
+            "intellist": "#zmintel_list_mp_nuketown_document_drops"
+        },
+        {
+            "intellist": "#zmintel_list_mp_tundra_document_drops"
+        },
+        {
+            "intellist": "#zmintel_list_silver_omega_intel_all"
+        },
+        {
+            "intellist": "#zmintel_list_mp_s1_m_document_drops"
+        },
+        {
+            "intellist": "#zmintel_list_mp_s1_r_document_drops"
+        },
+        {
+            "intellist": "#zmintel_list_gold_darkaether_intel_all"
+        },
+        {
+            "intellist": "#zmintel_list_gold_maxis_intel_all"
+        },
+        {
+            "intellist": "#zmintel_list_gold_omega_intel_all"
+        },
+        {
+            "intellist": "#zmintel_list_gold_requiem_intel_all"
+        },
+        {
+            "intellist": "#zmintel_list_mp_express_rm_document_drops"
+        },
+        {
+            "intellist": "#zmintel_list_mp_apocalypse_document_drops"
+        },
+        {
+            "intellist": "#zmintel_list_survival_darkaether_intel_all"
+        },
+        {
+            "intellist": "#zmintel_list_survival_maxis_intel_all"
+        },
+        {
+            "intellist": "#zmintel_list_survival_omega_intel_all"
+        },
+        {
+            "intellist": "#zmintel_list_survival_requiem_intel_all"
+        },
+        {
+            "intellist": "#zmintel_list_mp_cliffhanger_document_drops"
+        },
+        {
+            "intellist": "#zmintel_list_mp_village_rm_document_drops"
+        },
+        {
+            "intellist": "#zmintel_list_mp_dune_document_drops"
+        },
+        {
+            "intellist": "#zmintel_list_mp_paintball_document_drops"
+        },
+        {
+            "intellist": "#zmintel_list_zm_platinum_darkaether_intel_all"
+        },
+        {
+            "intellist": "#zmintel_list_zm_platinum_omega_intel_all"
+        },
+        {
+            "intellist": "#zmintel_list_zm_platinum_requiem_intel_all"
+        },
+        {
+            "intellist": "#zmintel_list_mp_echelon_document_drops"
+        },
+        {
+            "intellist": "#zmintel_list_mp_drivein_rm_document_drops"
+        },
+        {
+            "intellist": "#zmintel_list_mp_firebase_document_drops"
+        },
+        {
+            "intellist": "#zmintel_list_zm_tungsten_darkaether_intel_all"
+        },
+        {
+            "intellist": "#zmintel_list_zm_tungsten_maxis_intel_all"
+        },
+        {
+            "intellist": "#zmintel_list_zm_tungsten_omega_intel_all"
+        },
+        {
+            "intellist": "#zmintel_list_zm_tungsten_requiem_intel_all"
+        }
+    ],
+    "var_922067c4": "scriptbundle",
+    "type": "zmintel_group",
+    "name": "zmintel_group_allfactions"
+}

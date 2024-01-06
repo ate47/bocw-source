@@ -1,0 +1,21 @@
+{
+    "var_b2458101": 1,
+    "lobbymode": 3,
+    "id": 27,
+    "var_45f67af4": "director_online",
+    "maxlocalclientsnetwork": 1,
+    "mainmode": 4,
+    "var_d16ccae8": 1,
+    "isprivate": 1,
+    "var_3cd09ce7": 1,
+    "var_1d4ea5bd": "lobby_mp",
+    "room": "#private_lobby_pose",
+    "var_7f60c82f": 4,
+    "var_9ff63d1b": "#hash_5dd231fd15db7531",
+    "maxclients": 4,
+    "name": "director_online_pregame_arena",
+    "networkmode": 2,
+    "var_80a68682": "director_online_pregame_arena",
+    "title": "#hash_27307830087a401",
+    "maxlocalclients": 1
+}

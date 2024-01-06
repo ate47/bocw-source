@@ -590,17 +590,17 @@ function can_player_purchase(n_cost, var_1c65f833 = 0) {
 // Size: 0x1b2
 function on_item_pickup(s_params) {
     var_a6762160 = s_params.item.var_a6762160;
-    if (var_a6762160.itemtype === #"hash_910bf9605abbcea") {
+    if (var_a6762160.itemtype === #"survival_essence") {
         if (isplayer(self)) {
             e_player = self;
         } else {
             e_player = s_params.player;
         }
         switch (var_a6762160.name) {
-        case #"hash_6ac270ce2416deb3":
+        case #"resource_item_medium_harvesting_sr":
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"essence_pickup_medium", #attacker:e_player});
             break;
-        case #"hash_682698368e3a043":
+        case #"resource_item_harvesting_sr":
         case #"hash_69a628368f8263f":
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"essence_pickup_large", #attacker:e_player});
             break;

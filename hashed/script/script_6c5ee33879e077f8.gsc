@@ -292,7 +292,7 @@ function function_f880882d() {
     while (1) {
         level flag::wait_till("stealth_enabled");
         if (isdefined(level.stealth.var_ebbdef7a) && level.stealth.var_ebbdef7a.size != 0) {
-            foreach (var_462028a0 in level.stealth.var_ebbdef7a) {
+            foreach (group, var_462028a0 in level.stealth.var_ebbdef7a) {
                 namespace_5cd4acd8::function_4ec3af07(group, var_462028a0);
                 wait(0.2);
             }

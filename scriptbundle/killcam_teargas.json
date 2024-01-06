@@ -1,0 +1,16 @@
+{
+    "killcambackdist": 24,
+    "killcamtype": 4,
+    "var_922067c4": "scriptbundle",
+    "type": "killcam",
+    "var_5022638e": 0.1,
+    "vmtype": "none",
+    "killcamgroundupdist": 100,
+    "name": "killcam_teargas",
+    "killcamupdist": 8,
+    "var_7f018185": 0.001,
+    "killcamwallsidedist": 30,
+    "var_e7bad890": "explosive",
+    "killcamwalloutdist": 10,
+    "killcamgroundbackdist": 500
+}

@@ -100,14 +100,14 @@ function gadget_health_regen_on_take(*slot, *weapon) {
 function on_player_spawned() {
     self function_d91a057d();
     if (isdefined(level.var_c018953f)) {
-        if (!level.var_c018953f namespace_907d9fc::is_open(self)) {
-            level.var_c018953f namespace_907d9fc::open(self, 1);
+        if (!level.var_c018953f stim_count::is_open(self)) {
+            level.var_c018953f stim_count::open(self, 1);
         }
     }
     /#
         if (getdvarint(#"hash_4a424b02130fa0c0", 0) > 0) {
-            var_907d9fc = getdvarint(#"hash_4a424b02130fa0c0", 0);
-            self function_6eef7f4f(var_907d9fc);
+            stim_count = getdvarint(#"hash_4a424b02130fa0c0", 0);
+            self function_6eef7f4f(stim_count);
         }
     #/
 }
@@ -116,11 +116,11 @@ function on_player_spawned() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x9fb07ec1, Offset: 0x660
 // Size: 0x64
-function function_6eef7f4f(var_907d9fc) {
-    var_907d9fc = math::clamp(var_907d9fc, 0, 9);
-    self.var_f2a5bd01 = var_907d9fc;
+function function_6eef7f4f(stim_count) {
+    stim_count = math::clamp(stim_count, 0, 9);
+    self.var_f2a5bd01 = stim_count;
     if (isdefined(level.var_c018953f)) {
-        level.var_c018953f namespace_907d9fc::function_6eef7f4f(self, var_907d9fc);
+        level.var_c018953f stim_count::function_6eef7f4f(self, stim_count);
     }
 }
 

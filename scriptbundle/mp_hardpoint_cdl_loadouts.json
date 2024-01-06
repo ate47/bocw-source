@@ -1,0 +1,1763 @@
+{
+    "defaultloadouts": [
+        {
+            "talents": [
+                {
+                    "talent": "#talent_resistance"
+                },
+                {
+                    "talent": "#talent_scavenger"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#quickdraw"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#reflex"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#bonuscard_primary_gunfighter"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#hash_191d895a77b41a3",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_2580580083c87b0d",
+            "specialgrenade": "#trophy_system",
+            "secondary": "#hash_42f6b5f6dd85875f",
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#hash_5453c9b880261bcb"
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                },
+                {
+                    "talent": "#talent_scavenger"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#quickdraw"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#reflex"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#compensator2"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#bonuscard_primary_gunfighter"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#hash_191d995a77b4356",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_2580580083c87b0d",
+            "specialgrenade": "#trophy_system",
+            "secondary": "#hash_42f6b5f6dd85875f",
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#hash_5453c9b880261bcb"
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                },
+                {
+                    "talent": "#talent_resistance"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#quickdraw"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#reflex"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#weapon_null"
+                },
+                {
+                    "attachment": "#weapon_null"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#hash_639ebbcda56447e7"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#hash_191da95a77b4509",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_2580580083c87b0d",
+            "specialgrenade": "#trophy_system",
+            "secondary": "#hash_42f6b5f6dd85875f",
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#hash_5453c9b880261bcb"
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_resistance"
+                },
+                {
+                    "talent": "#talent_scavenger"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#quickdraw"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#elo2"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#bonuscard_primary_gunfighter"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#hash_191db95a77b46bc",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_2580580083c87b0d",
+            "specialgrenade": "#trophy_system",
+            "secondary": "#hash_42f6b5f6dd85875f",
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#hash_5453c9b880261bcb"
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                },
+                {
+                    "talent": "#talent_scavenger"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                },
+                {}
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#quickdraw"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#elo2"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#extclip"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#bonuscard_primary_gunfighter"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#hash_191dc95a77b486f",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_2580580083c87b0d",
+            "specialgrenade": "#trophy_system",
+            "secondary": "#hash_42f6b5f6dd85875f",
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#hash_5453c9b880261bcb"
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                },
+                {
+                    "talent": "#talent_resistance"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                },
+                {},
+                {},
+                {}
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#quickdraw"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#elo2"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#weapon_null"
+                },
+                {
+                    "attachment": "#weapon_null"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#hash_639ebbcda56447e7"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#hash_191dd95a77b4a22",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_2580580083c87b0d",
+            "specialgrenade": "#trophy_system",
+            "secondary": "#hash_42f6b5f6dd85875f",
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#hash_5453c9b880261bcb"
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_engineer"
+                },
+                {
+                    "talent": "#talent_resistance"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#quickdraw"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#elo2"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#weapon_null"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#hash_639ebbcda56447e7"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#hash_191de95a77b4bd5",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_2580580083c87b0d",
+            "specialgrenade": "#trophy_system",
+            "secondary": "#hash_42f6b5f6dd85875f",
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#hash_5453c9b880261bcb"
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                },
+                {
+                    "talent": "#talent_resistance"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#quickdraw"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#barrel"
+                },
+                {
+                    "attachment": "#mixunder2"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#weapon_null"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#hash_639ebbcda56447e7"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#hash_191df95a77b4d88",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_6251778e2d3b9a64",
+            "specialgrenade": "#trophy_system",
+            "secondary": "#hash_42f6b5f6dd85875f",
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#hash_5453c9b880261bcb"
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_engineer"
+                },
+                {
+                    "talent": "#talent_resistance"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#quickdraw"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#barrel"
+                },
+                {
+                    "attachment": "#mixunder2"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#weapon_null"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#hash_639ebbcda56447e7"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#hash_191e095a77b4f3b",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_6251778e2d3b9a64",
+            "specialgrenade": "#trophy_system",
+            "secondary": "#hash_42f6b5f6dd85875f",
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#hash_5453c9b880261bcb"
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_engineer"
+                },
+                {
+                    "talent": "#talent_flakjacket"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#quickdraw"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#barrel"
+                },
+                {
+                    "attachment": "#mixunder2"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#weapon_null"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#hash_639ebbcda56447e7"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#hash_2614994b96706cc9",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_6251778e2d3b9a64",
+            "specialgrenade": "#trophy_system",
+            "secondary": "#hash_42f6b5f6dd85875f",
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#hash_5453c9b880261bcb"
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                },
+                {
+                    "talent": "#talent_resistance"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#quickdraw"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#barrel"
+                },
+                {
+                    "attachment": "#mixunder2"
+                },
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#weapon_null"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#hash_639ebbcda56447e7"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#hash_2614984b96706b16",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_6251778e2d3b9a64",
+            "specialgrenade": "#trophy_system",
+            "secondary": "#hash_42f6b5f6dd85875f",
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#hash_5453c9b880261bcb"
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                },
+                {
+                    "talent": "#talent_engineer"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#quickdraw"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#barrel"
+                },
+                {
+                    "attachment": "#mixunder2"
+                },
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#weapon_null"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#hash_639ebbcda56447e7"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#hash_2614974b96706963",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_6251778e2d3b9a64",
+            "specialgrenade": "#trophy_system",
+            "secondary": "#hash_42f6b5f6dd85875f",
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#hash_5453c9b880261bcb"
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_resistance"
+                },
+                {
+                    "talent": "#talent_engineer"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#quickdraw"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#barrel"
+                },
+                {
+                    "attachment": "#mixunder2"
+                },
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#weapon_null"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#hash_639ebbcda56447e7"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#hash_2614964b967067b0",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_6251778e2d3b9a64",
+            "specialgrenade": "#trophy_system",
+            "secondary": "#hash_42f6b5f6dd85875f",
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#hash_5453c9b880261bcb"
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                },
+                {
+                    "talent": "#talent_scavenger"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#quickdraw"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#elo2"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#extclip"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#bonuscard_primary_gunfighter"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#hash_26149d4b96707395",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_70f8f2d92031f544",
+            "specialgrenade": "#trophy_system",
+            "secondary": "#hash_42f6b5f6dd85875f",
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#hash_5453c9b880261bcb"
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_resistance"
+                },
+                {
+                    "talent": "#talent_scavenger"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#quickdraw"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#elo2"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#extclip"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#bonuscard_primary_gunfighter"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#hash_26149c4b967071e2",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_70f8f2d92031f544",
+            "specialgrenade": "#trophy_system",
+            "secondary": "#hash_42f6b5f6dd85875f",
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#hash_5453c9b880261bcb"
+        }
+    ],
+    "var_2f9f5375": [
+        {
+            "talents": [
+                {
+                    "talent": "#talent_engineer"
+                },
+                {
+                    "talent": "#talent_scavenger"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                },
+                {
+                    "talent": "#talent_resistance"
+                },
+                {
+                    "talent": "#hash_311283e3107dec74"
+                },
+                {
+                    "talent": "#talent_coldblooded"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#reflex"
+                },
+                {
+                    "attachment": "#barrel"
+                },
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#steadyaim"
+                },
+                {
+                    "attachment": "#extclip"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#reflex"
+                },
+                {
+                    "attachment": "#mixmuzzle"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#mixunder2"
+                },
+                {
+                    "attachment": "#steadyaim"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#mixclip2"
+                },
+                {
+                    "attachment": "#mixhandle"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#class/slot1",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_2580580083c87b0d",
+            "specialgrenade": "#missile_turret",
+            "secondary": "#hash_33ed9170805d825c",
+            "primarygrenade": "#frag_grenade",
+            "secondarygrenade": "#willy_pete"
+        }
+    ],
+    "defaultcustomloadouts": [
+        {
+            "talents": [
+                {
+                    "talent": "#talent_resistance"
+                },
+                {
+                    "talent": "#talent_scavenger"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#quickdraw"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#reflex"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#bonuscard_primary_gunfighter"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#class/slot1",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_2580580083c87b0d",
+            "specialgrenade": "#trophy_system",
+            "secondary": "#hash_42f6b5f6dd85875f",
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#hash_5453c9b880261bcb"
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                },
+                {
+                    "talent": "#talent_resistance"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#quickdraw"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#elo2"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#hash_639ebbcda56447e7"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#class/slot2",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_2580580083c87b0d",
+            "specialgrenade": "#trophy_system",
+            "secondary": "#hash_42f6b5f6dd85875f",
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#hash_5453c9b880261bcb"
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_engineer"
+                },
+                {
+                    "talent": "#talent_flakjacket"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#quickdraw"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#reflex"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#weapon_null"
+                },
+                {
+                    "attachment": "#weapon_null"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#hash_639ebbcda56447e7"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#class/slot3",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_2580580083c87b0d",
+            "specialgrenade": "#trophy_system",
+            "secondary": "#hash_42f6b5f6dd85875f",
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#hash_5453c9b880261bcb"
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_resistance"
+                },
+                {
+                    "talent": "#talent_scavenger"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                },
+                {
+                    "talent": "#weapon_null"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#quickdraw"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#elo2"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#bonuscard_primary_gunfighter"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#class/slot4",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_2580580083c87b0d",
+            "specialgrenade": "#trophy_system",
+            "secondary": "#hash_42f6b5f6dd85875f",
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#hash_5453c9b880261bcb"
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                },
+                {
+                    "talent": "#talent_engineer"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#quickdraw"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#mixunder2"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#weapon_null"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#hash_639ebbcda56447e7"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#class/slot5",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_6251778e2d3b9a64",
+            "specialgrenade": "#trophy_system",
+            "secondary": "#hash_42f6b5f6dd85875f",
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#hash_5453c9b880261bcb"
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                },
+                {
+                    "talent": "#talent_resistance"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#quickdraw"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#mixunder2"
+                },
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#weapon_null"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#hash_639ebbcda56447e7"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#class/slot6",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_6251778e2d3b9a64",
+            "specialgrenade": "#trophy_system",
+            "secondary": "#hash_42f6b5f6dd85875f",
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#hash_5453c9b880261bcb"
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                },
+                {
+                    "talent": "#talent_engineer"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#quickdraw"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#mixunder2"
+                },
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#weapon_null"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#hash_639ebbcda56447e7"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#class/slot7",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_6251778e2d3b9a64",
+            "specialgrenade": "#trophy_system",
+            "secondary": "#hash_42f6b5f6dd85875f",
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#hash_5453c9b880261bcb"
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_resistance"
+                },
+                {
+                    "talent": "#talent_engineer"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#quickdraw"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#mixunder2"
+                },
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#weapon_null"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#hash_639ebbcda56447e7"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#class/slot8",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_6251778e2d3b9a64",
+            "specialgrenade": "#trophy_system",
+            "secondary": "#hash_42f6b5f6dd85875f",
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#hash_5453c9b880261bcb"
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                },
+                {
+                    "talent": "#talent_scavenger"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#quickdraw"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#elo2"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#extclip"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#bonuscard_primary_gunfighter"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#class/slot9",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_70f8f2d92031f544",
+            "specialgrenade": "#trophy_system",
+            "secondary": "#hash_42f6b5f6dd85875f",
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#hash_5453c9b880261bcb"
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_resistance"
+                },
+                {
+                    "talent": "#talent_scavenger"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#barrel2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#quickdraw"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#elo2"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#extclip"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#bonuscard_primary_gunfighter"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#class/slot10",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_70f8f2d92031f544",
+            "specialgrenade": "#trophy_system",
+            "secondary": "#hash_42f6b5f6dd85875f",
+            "primarygrenade": "#eq_sticky_grenade",
+            "secondarygrenade": "#hash_5453c9b880261bcb"
+        }
+    ],
+    "killstreaks": [
+        {
+            "killstreak": "#recon_car"
+        },
+        {
+            "killstreak": "#planemortar"
+        },
+        {
+            "killstreak": "#helicopter_comlink"
+        }
+    ],
+    "name": "mp_hardpoint_cdl_loadouts",
+    "sessionmode": "mp"
+}

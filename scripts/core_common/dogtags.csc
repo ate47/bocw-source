@@ -43,7 +43,7 @@ function function_319c73b1(localclientnum, *oldval, newval, *bnewent, *binitials
         self function_79c2b094(fieldname);
         return;
     }
-    if (!isdefined(self.objectiveid) && util::get_game_type() !== #"hash_26096195d0143dd") {
+    if (!isdefined(self.objectiveid) && util::get_game_type() !== #"spy") {
         objectivename = isdefined(level.var_febab1ea) ? level.var_febab1ea : #"conf_dogtags";
         self.objectiveid = util::getnextobjid(fieldname);
         objective_add(fieldname, self.objectiveid, "active", objectivename, self.origin, self.team);

@@ -1,0 +1,31 @@
+{
+    "var_572513bb": [
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_silver_maxis_radio_1"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_silver_maxis_radio_2"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_silver_maxis_radio_3"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_silver_maxis_radio_4"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_silver_maxis_radio_5"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_silver_maxis_radio_6"
+        }
+    ],
+    "var_922067c4": "scriptbundle",
+    "type": "zmintel_list",
+    "name": "zmintel_list_silver_radio_transmissions_maxis"
+}

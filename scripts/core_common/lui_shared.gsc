@@ -227,8 +227,8 @@ function private refresh_menu_values() {
     if (!isdefined(level.lui_script_globals)) {
         return;
     }
-    foreach (v in level.lui_script_globals) {
-        foreach (v2 in v) {
+    foreach (k, v in level.lui_script_globals) {
+        foreach (k2, v2 in v) {
             self set_value_for_player(k, k2, v2);
         }
     }

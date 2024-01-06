@@ -1,0 +1,82 @@
+{
+    "var_2be3941a": [
+        {
+            "unlockdescription": "#hash_708f8d0f3b0a4cd0",
+            "var_5f79ee71": "#arcadegame",
+            "var_b4ab831a": "#cosmic_commuter_game",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_5d76de366ce52bb3"
+        },
+        {
+            "unlockdescription": "#hash_c86b1a07ad34235",
+            "var_5f79ee71": "#crafticon",
+            "image": "#hash_4cdd998fd79d455f",
+            "var_e5119d1b": "#hash_4cdd998fd79d455f",
+            "var_b4ab831a": "#hash_5adbd8f3d47e7fe8",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_4d854a6b2d8ad76a"
+        },
+        {
+            "unlockdescription": "#hash_7400bd6a0c9d4499",
+            "var_5f79ee71": "#craftbackground",
+            "image": "#hash_4f22c2c07659059e",
+            "var_e5119d1b": "#hash_4f22c2c07659059e",
+            "var_b4ab831a": "#hash_584732f643a57edd",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_10090ce1490926e"
+        },
+        {
+            "unlockdescription": "#hash_3d4dc553fda4ef41",
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_satellite",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_8f34b5961bffd48"
+        },
+        {
+            "unlockdescription": "#hash_78187fc154324cbd",
+            "var_5f79ee71": "#craftbackground",
+            "image": "#hash_7872a61ccc3531af",
+            "var_e5119d1b": "#hash_7872a61ccc3531af",
+            "var_b4ab831a": "#hash_2eca7dd29ecd04ea",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_33f9252e23c8b29b"
+        },
+        {
+            "unlockdescription": "#hash_286e9b4cd51cf36e",
+            "var_5f79ee71": "#crafticon",
+            "image": "#hash_328c225056f1793f",
+            "var_e5119d1b": "#hash_328c225056f1793f",
+            "var_b4ab831a": "#hash_734628f3e6ed862e",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_5cef349da6997d78"
+        },
+        {
+            "unlockdescription": "#hash_5cd126f96517666e",
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "var_b4ab831a": "#hash_3884ff20b9d9b8cd",
+            "var_7a2c1108": "#hash_835f663dcce8ae6",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_f40631461a61b36"
+        },
+        {
+            "unlockdescription": "#hash_5cd126f96517666e",
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "var_b4ab831a": "#hash_3884ff20b9d9b8cd",
+            "var_7a2c1108": "#hash_835f663dcce8ae6",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_5f4c94fd6506e731"
+        }
+    ],
+    "var_922067c4": "SCRIPTBUNDLE",
+    "type": "challengerewards",
+    "var_5f0dd656": 2,
+    "var_4e39981b": 2,
+    "name": "challengerewards_s4_satellite_event",
+    "sessionmode": "1"
+}

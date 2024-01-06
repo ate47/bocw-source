@@ -48,16 +48,16 @@ function function_596f8772() {
     } else {
         switch (currentsessionmode()) {
         case 0:
-            faction = #"hash_4c048298ead49860";
+            faction = #"factions_zm";
             break;
         case 1:
-            faction = #"hash_4bb69598ea929758";
+            faction = #"factions_mp";
             break;
         case 2:
-            faction = #"hash_4baf8998ea8c6446";
+            faction = #"factions_cp";
             break;
         case 3:
-            faction = #"hash_4bd89798eaaf8124";
+            faction = #"factions_wz";
             break;
         }
         factionlist = getscriptbundle(faction);

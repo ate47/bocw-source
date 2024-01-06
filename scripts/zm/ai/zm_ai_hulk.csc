@@ -217,9 +217,9 @@ function private function_7622c629(localclientnum) {
     self endon(#"death");
     while (1) {
         waitresult = undefined;
-        waitresult = self waittill(#"hash_1ed4441450d599d3");
+        waitresult = self waittill(#"hs_turn_off_fx");
         switch (waitresult._notify) {
-        case #"hash_1ed4441450d599d3":
+        case #"hs_turn_off_fx":
             if (isdefined(self.fxdef)) {
                 fxclientutils::stopfxbundle(localclientnum, self, self.fxdef);
             }

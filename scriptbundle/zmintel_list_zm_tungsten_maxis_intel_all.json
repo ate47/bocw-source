@@ -1,0 +1,23 @@
+{
+    "var_572513bb": [
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_tungsten_maxis_audiolog_1"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_tungsten_maxis_audiolog_2"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_tungsten_maxis_audiolog_3"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_tungsten_maxis_document_1"
+        }
+    ],
+    "var_922067c4": "scriptbundle",
+    "type": "zmintel_list",
+    "name": "zmintel_list_zm_tungsten_maxis_intel_all"
+}

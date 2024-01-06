@@ -1,0 +1,71 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_4da0f3914591143a"
+        },
+        {
+            "var_fe10649e": "#hash_6d08d54a65762184"
+        },
+        {
+            "var_fe10649e": "#hash_6d08d84a6576269d"
+        },
+        {
+            "var_fe10649e": "#hash_6d08d74a657624ea"
+        }
+    ],
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_lao_pl_serpent_hollow_mtxitem",
+            "itemid": "29904131"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_lao_mtxitem",
+            "itemid": "30933020"
+        },
+        {
+            "var_4a4bc969": "#ar_accurate_bp_undead_mtxitem",
+            "itemid": "32725972"
+        },
+        {
+            "var_4a4bc969": "#smg_capacity_bp_undead_mtxitem",
+            "itemid": "28080856"
+        },
+        {
+            "var_4a4bc969": "#loot_shotgun_fullauto_bp_bronze_mtxitem",
+            "itemid": "32954817"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s6_digital_undead_warrior_mtxitem",
+            "itemid": "24778231"
+        },
+        {
+            "var_4a4bc969": "#fav_light_wz_assembly_mpx_uw_mtxitem",
+            "itemid": "29325870"
+        },
+        {
+            "var_4a4bc969": "#vehiclehorn_shockwave_mtxitem",
+            "itemid": "20581083"
+        },
+        {
+            "var_4a4bc969": "#execution_145_mtxitem",
+            "itemid": "30510081"
+        },
+        {
+            "var_4a4bc969": "#emblems_zombie_skull_s6_mtxitem",
+            "itemid": "31432213"
+        }
+    ],
+    "itemname": "#hash_42e154c165a9406c",
+    "var_375a1747": "#hash_4da0f3914591143a",
+    "var_3040f0d1": "#hash_4da0f3914591143a",
+    "var_8ee7db29": 1,
+    "name": "operator_bundle_6006_naga_war_ghost_mtxbundle",
+    "var_a788fada": "#hash_41f63be8523b02dd",
+    "var_22f91505": "#hash_466eed68759a1939",
+    "var_566825be": "#hash_63a61faca4e8e255",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_21be041021fd9c79",
+    "var_db3e02ab": 750,
+    "itemid": "33151247"
+}

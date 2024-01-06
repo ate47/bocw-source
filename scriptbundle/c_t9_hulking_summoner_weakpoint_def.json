@@ -1,0 +1,17 @@
+{
+    "weakpoints": [
+        {
+            "var_3765e777": 1,
+            "var_8223b0cf": 2,
+            "type": "#weakpoint",
+            "var_51e8b151": "j_weakpoint",
+            "activebydefault": 1,
+            "var_b7fbe51b": 40,
+            "health": 1
+        }
+    ],
+    "var_922067c4": "scriptbundle",
+    "model": "#hash_2f15fd665e457ed5",
+    "type": "characterweakpointsettings",
+    "name": "c_t9_hulking_summoner_weakpoint_def"
+}

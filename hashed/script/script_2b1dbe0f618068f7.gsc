@@ -59,7 +59,7 @@ function private function_321bb79b(localclientnum, value) {
         return;
     }
     if (!isdefined(value)) {
-        setting = gamepadusedlast(localclientnum) ? #"hash_682672bd6f1c579d" : #"hash_528fda2b50f86795";
+        setting = gamepadusedlast(localclientnum) ? #"armor_plate_behavior_gpad" : #"armor_plate_behavior_kbm";
         value = isdefined(function_ab88dbd2(localclientnum, setting)) ? function_ab88dbd2(localclientnum, setting) : 0;
     }
     if (player.var_8d801ee2 !== value) {
@@ -145,7 +145,7 @@ function private function_86b9a404() {
 // Checksum 0xf953e2c1, Offset: 0x808
 // Size: 0x7c
 function event_handler[event_647adea6] function_465c8646(eventstruct) {
-    if (eventstruct.name === #"hash_682672bd6f1c579d" || eventstruct.name === #"hash_528fda2b50f86795") {
+    if (eventstruct.name === #"armor_plate_behavior_gpad" || eventstruct.name === #"armor_plate_behavior_kbm") {
         function_321bb79b(eventstruct.localclientnum, int(eventstruct.value));
     }
 }

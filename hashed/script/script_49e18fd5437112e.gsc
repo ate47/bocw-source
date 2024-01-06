@@ -11,7 +11,7 @@
 // Checksum 0xa1fdab78, Offset: 0xe0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_380b7703a79220e8", &function_70a657d8, undefined, undefined, #"hash_3c57623e9dc82608");
+    system::register(#"hash_380b7703a79220e8", &function_70a657d8, undefined, undefined, #"radiation");
 }
 
 // Namespace namespace_2b1568cc/namespace_2b1568cc

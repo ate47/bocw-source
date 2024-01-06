@@ -51,10 +51,10 @@ function function_70a657d8() {
 // Size: 0xaf4
 function init() {
     if ((is_true(getgametypesetting(#"hash_7e8e34cc69a77e0b")) || getdvarint(#"hash_40bd34b35079cf2e", 0) > 0) && (zm_utility::is_classic() || util::get_game_type() === #"hash_1f847b868c4199a3")) {
-        namespace_679a22ba::function_3ba2f5dd(#"hash_9c00f9e4e4bd95a", #"hash_1f5172eae85cac38");
-        namespace_679a22ba::function_3ba2f5dd(#"hash_539facc2c096b82", #"hash_54a098edabd7a240");
-        namespace_679a22ba::function_3ba2f5dd(#"hash_208e2483f559ccd2", #"hash_77437f3742463d90");
-        namespace_679a22ba::function_3ba2f5dd(#"hash_47bae14a2b1b4511", #"hash_1e2cf3f92b05eea9");
+        namespace_679a22ba::function_3ba2f5dd(#"hash_9c00f9e4e4bd95a", #"silver_ai_zombie_xmas");
+        namespace_679a22ba::function_3ba2f5dd(#"hash_539facc2c096b82", #"silver_ai_zombie_heavy_xmas");
+        namespace_679a22ba::function_3ba2f5dd(#"hash_208e2483f559ccd2", #"silver_ai_dog_xmas");
+        namespace_679a22ba::function_3ba2f5dd(#"hash_47bae14a2b1b4511", #"silver_ai_zombie_mega_xmas");
         level.var_8f576c00 = [#"hash_12db1a8b34aa7918":#"hash_16d309f1ce9e015a", #"hash_6904f5c7bef64405":#"hash_1d599c94a087ca05", #"hash_5471f6916965b2d2":#"hash_2c0da7720a1c2f90", #"hash_7f957e36b4f6160f":#"hash_5e24e4aa952bb1bb", #"hash_455ec8cc0d1ed4a4":#"hash_43b8d4f24851653e", #"hash_53f4e0daa341a161":#"hash_156c697af81feaf9", #"hash_12a17ab3df5889eb":#"hash_2792674ef4fce09f", #"hash_19ef16d1ba01a5":#"hash_7725a0435b44b1e5", #"hash_5214ebcccbd95a36":#"hash_796dff2ea842c1ac"];
         level.overridezombiespawn = &function_767a6a84;
         level.var_9d098364 = #"hash_43b8d4f24851653e";

@@ -1,0 +1,23 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_7a604f110b32858b"
+        }
+    ],
+    "description": "#hash_2bd5b92ccc33d0da",
+    "itemspawnentry": "#item_zmintel_silver_darkaether_artifact_3",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#ww_quest",
+    "model": "#hash_3fc9c93f558f206b",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_a1c88c70c46d5b0",
+    "type": "zmintel",
+    "var_ad4ad686": "#hash_70ce1650358c0923",
+    "soundloop": "#hash_6098b72d515f39d5",
+    "name": "zmintel_silver_darkaether_artifact_3",
+    "var_9be0526e": "#artifact",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "title": "#hash_69364657a8e13bea",
+    "mapname": "#zm_silver"
+}

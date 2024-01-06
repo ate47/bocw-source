@@ -201,7 +201,7 @@ function function_b1c6ca30(var_d13d4980) {
         break;
     }
     var_2858caa2 = {#var_738dfc81:n_count, #angles:scriptmodel.angles, #origin:var_a28d0d8c};
-    a_items = var_2858caa2 namespace_65181344::function_fd87c780(#"hash_6fc406cb725710ed", n_count, 2);
+    a_items = var_2858caa2 namespace_65181344::function_fd87c780(#"zm_ltm1_powerup_drop_list", n_count, 2);
     if (a_items.size > 1) {
         var_b7d0c0a8 = randomint(a_items.size);
     } else {

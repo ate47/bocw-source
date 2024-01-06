@@ -1,0 +1,38 @@
+{
+    "var_941096a8": [
+        {
+            "var_386af035": "#firstparty_winback_10_tiers_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_winback_10_tiers_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_winback_10_tiers_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#atvi_tier_skip_10_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2021_cw_tierskips_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2021_cw_tierskips_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2021_cw_tierskips_pc_mtxentitlement"
+        }
+    ],
+    "itemname": "#hash_1859c7605ff8c7fb",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_1d4a2b8c8738c41b",
+    "var_728341a": 1,
+    "quantity": 10,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "var_46300498": 1,
+    "name": "tier_skip_10_mtxitem",
+    "var_c89f0785": "#hash_5d57911e317775f8",
+    "category": "#tier_skip",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4
+}

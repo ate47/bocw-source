@@ -31,8 +31,8 @@ function init_shared() {
     level.var_5be42934 = &function_f38fc2a8;
     callback::on_game_playing(&on_game_playing);
     callback::on_weapon_fired(&on_weapon_fired);
-    level.var_8ddf6d3d = getscriptbundle(#"hash_445365893677ac81");
-    level.var_96492769 = getscriptbundle(#"hash_42834c37faf165eb");
+    level.var_8ddf6d3d = getscriptbundle(#"listeningdevicesettings");
+    level.var_96492769 = getscriptbundle(#"listeningdevicesettings_deadsilence");
     callback::on_finalize_initialization(&function_1c601b99);
     deployable::register_deployable(getweapon("listening_device"));
     clientfield::register("missile", "listening_device_hacked", 1, 1, "counter");

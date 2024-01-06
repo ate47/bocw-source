@@ -1,0 +1,67 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_rus_pl_stitch_prisoner_mtxitem",
+            "itemid": "31699051"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_rus_stitch_mtxitem",
+            "itemid": "30156871"
+        },
+        {
+            "var_4a4bc969": "#c_t9_fin_pl_wraith_white_queen_mtxitem",
+            "itemid": "29842205"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_fin_wraith_mtxitem",
+            "itemid": "21568824"
+        },
+        {
+            "var_4a4bc969": "#c_t9_lao_pl_serpent_warlord_mtxitem",
+            "itemid": "25341936"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_lao_mtxitem",
+            "itemid": "30933020"
+        },
+        {
+            "var_4a4bc969": "#ar_slowhandling_bp_xray_mtxitem",
+            "itemid": "22415806"
+        },
+        {
+            "var_4a4bc969": "#loot_smg_spray_bp_jetfighter_mtxitem",
+            "itemid": "24273430"
+        },
+        {
+            "var_4a4bc969": "#smg_standard_cb_roman_mtxitem",
+            "itemid": "27959425"
+        },
+        {
+            "var_4a4bc969": "#loot_ar_fasthandling_bp_bbear_mtxitem",
+            "itemid": "31774619"
+        },
+        {
+            "var_4a4bc969": "#loot_smg_fastfire_bp_gknight_mtxitem",
+            "itemid": "26765529"
+        },
+        {
+            "var_4a4bc969": "#smg_accurate_bp_poison_mtxitem",
+            "itemid": "32277672"
+        },
+        {
+            "var_4a4bc969": "#sniper_accurate_bp_roman_mtxitem",
+            "itemid": "29151384"
+        }
+    ],
+    "itemname": "#hash_609098fd5beebca",
+    "var_375a1747": "#hash_4d233c46d193648",
+    "name": "operator_bundle_7501_vault_greatest_hits_mtxbundle",
+    "var_a788fada": "#hash_3aca09c808199d05",
+    "var_22f91505": "#hash_4c593f66f7ab7116",
+    "var_566825be": "#hash_33e353a87b5c215d",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_4f284c15eb994d2a",
+    "var_db3e02ab": 2000,
+    "itemid": "26006141"
+}

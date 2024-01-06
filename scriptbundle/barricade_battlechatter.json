@@ -1,0 +1,12 @@
+{
+    "destroyedalias": "eq_cover_dstr",
+    "var_922067c4": "scriptbundle",
+    "type": "battlechatter",
+    "vmtype": "both",
+    "usealias": "eq_cover_use",
+    "name": "barricade_battlechatter",
+    "var_931a4bf8": "eq_cover_fail",
+    "var_fd232d7e": 1,
+    "var_ff5e0d8e": "eq_cover_threat",
+    "var_382f662": 1
+}

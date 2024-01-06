@@ -1,0 +1,39 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#pistol_fullauto_bp_poison_mtxitem",
+            "itemid": "26139238"
+        },
+        {
+            "var_4a4bc969": "#ar_mercenary_bp_poison_mtxitem",
+            "itemid": "21117607"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_glowworm_mtxitem",
+            "itemid": "28023961"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_us_boat_pgb_assembly_mpx_poison_frog_mtxitem",
+            "itemid": "24191876"
+        },
+        {
+            "var_4a4bc969": "#emblems_dartfrog_mtxitem",
+            "itemid": "24307451"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_dartfrog_mtxitem",
+            "itemid": "28326089"
+        }
+    ],
+    "itemname": "#hash_171835bd544de879",
+    "var_375a1747": "#hash_5935fc8c6f3d758b",
+    "name": "blueprint_bundle_3037_pistol_fullauto_dart_frog_mtxbundle",
+    "var_a788fada": "#hash_4fcfd4ed7814cb8",
+    "var_22f91505": "#hash_6f4cbccde32583ac",
+    "var_566825be": "#hash_134521af923e4e4",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_3c2ae95f2de8901c",
+    "var_db3e02ab": 2000,
+    "itemid": "28876863"
+}

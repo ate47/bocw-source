@@ -347,7 +347,7 @@ function function_38184bf8() {
             var_c635168c = getdvarint(#"hash_67d19b13a4ab8b94", 0);
             if (var_c635168c >= 0 && isdefined(level.zone_paths[var_c635168c])) {
                 zone_paths = level.zone_paths[var_c635168c];
-                foreach (zone_path in zone_paths) {
+                foreach (var_375627f0, zone_path in zone_paths) {
                     zone = level.zones[var_375627f0];
                     print_origin = undefined;
                     if (isdefined(zone.nodes[0])) {
@@ -376,7 +376,7 @@ function function_38184bf8() {
                         line(print_origin, var_fbe06d06, color, 0, 0);
                     }
                 }
-                foreach (zone in level.zones) {
+                foreach (zone_name, zone in level.zones) {
                     if (!isdefined(zone_paths[zone_name])) {
                         print_origin = undefined;
                         if (isdefined(zone.nodes[0])) {
@@ -905,7 +905,7 @@ function function_f4669d7b(zones, zone) {
         if (!isdefined(origin)) {
             origin = zone.volumes[0].origin;
         }
-        foreach (adjacent in zone.adjacent_zones) {
+        foreach (var_4c973d00, adjacent in zone.adjacent_zones) {
             adjacent_zone = zones[var_4c973d00];
             if (adjacent_zone.nodes.size && isdefined(adjacent_zone.nodes[0].origin)) {
                 var_16c82636 = adjacent_zone.nodes[0].origin;
@@ -4816,7 +4816,7 @@ function function_8d799ebd() {
                 }
             }
             self reset("<unknown string>", "<unknown string>");
-            self give_armor(#"hash_7bc70addda19ca00");
+            self give_armor(#"armor_item_lv3_t9_sr");
             self function_3fecad82(#"hash_7f98b3dd3cce95aa");
             self function_3fecad82(#"hash_5930cf0eb070e35a");
             self function_3fecad82(#"hash_4110e6372aa77f7e");
@@ -5271,7 +5271,7 @@ function private function_62e3e0a() {
             player = getplayers()[0];
             player_vec = vectornormalize(anglestoforward(player getplayerangles()));
             player_vec_2d = (player_vec[0], player_vec[1], 0);
-            foreach (array in level.zm_loc_types) {
+            foreach (key, array in level.zm_loc_types) {
                 color = (1, 1, 1);
                 var_10623ec8 = function_9e72a96(key);
                 if (key == #"zombie_location") {

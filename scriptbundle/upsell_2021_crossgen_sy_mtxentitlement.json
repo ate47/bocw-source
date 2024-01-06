@@ -1,0 +1,32 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#loot_smg_spray_bp_betty_sy_mtxitem",
+            "itemid": "18405251"
+        },
+        {
+            "var_4a4bc969": "#c_t9_uk_pl_kingsley_mtxitem",
+            "itemid": "18406709"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_uk_kingsley_mtxitem",
+            "itemid": "27515815"
+        }
+    ],
+    "itemname": "#hash_5833660586decf2e",
+    "var_247d9ed7": "upsell_2021_crossgen",
+    "var_208d76b5": "#hash_70688c50f4206853",
+    "var_637c8edf": 1,
+    "name": "upsell_2021_crossgen_sy_mtxentitlement",
+    "var_a788fada": "#hash_27f96a62b0aa2ca6",
+    "var_22f91505": "#hash_53c5af43a5d26f30",
+    "var_566825be": "#hash_71b0b8ba13dad832",
+    "var_f6dfb67d": "#hash_1748d88519b6ba9b",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_f3c937a9": "#hash_75585e7ea6dc96f8",
+    "var_db3e02ab": 2000,
+    "var_4e46b1b3": "#orbis",
+    "itemid": "29042378",
+    "var_a592ce5": 1
+}

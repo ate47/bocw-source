@@ -1,0 +1,50 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#c_t9_sa_pl_deathstalker_bearclaw_ms_mtxitem",
+            "itemid": "27809991"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_sa_deathstalker_mtxitem",
+            "itemid": "23499344"
+        },
+        {
+            "var_4a4bc969": "#tr_longburst_bp_boar_ms_mtxitem",
+            "itemid": "23358006"
+        },
+        {
+            "var_4a4bc969": "#ar_accurate_bp_boar_ms_mtxitem",
+            "itemid": "28840838"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_deer_skull_ms_mtxitem",
+            "itemid": "26832087"
+        },
+        {
+            "var_4a4bc969": "#callingcards_bearclaw_s5_base_ms_mtxitem",
+            "itemid": "19461904"
+        },
+        {
+            "var_4a4bc969": "#emblems_deathstalkerzombie_s5_base_ms_mtxitem",
+            "itemid": "29746033"
+        },
+        {
+            "var_4a4bc969": "#cod_points_1100_mtxitem"
+        }
+    ],
+    "itemname": "#hash_15d6b7b548224ce1",
+    "var_247d9ed7": "firstparty_bundle_5101_elite_pro_pack",
+    "var_208d76b5": "#hash_2b69d3613ff63eb2",
+    "var_70f66e54": "#hash_7856ae81e4914d4c",
+    "name": "firstparty_bundle_5101_elite_pro_pack_ms_mtxentitlement",
+    "var_a788fada": "#hash_70a3f0fb9584bb01",
+    "var_22f91505": "#hash_1aa0728255e41abc",
+    "var_566825be": "#hash_1117d642da2a8f59",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_f3c937a9": "#hash_6cdd867c55d6a82c",
+    "var_db3e02ab": 2000,
+    "var_4e46b1b3": "#durango",
+    "itemid": "28666973",
+    "var_a592ce5": 1
+}

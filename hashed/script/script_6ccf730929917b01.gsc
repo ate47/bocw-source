@@ -40,14 +40,14 @@ function preload() {
 function on_player_spawned() {
     var_7edfa20f = struct::get_array("obj_desc_rect", "variantname");
     circles = struct::get_array("obj_desc_circle", "variantname");
-    foreach (var_a2eed8c5 in var_7edfa20f) {
+    foreach (index, var_a2eed8c5 in var_7edfa20f) {
         var_206eca0c = undefined;
         if (isdefined(var_a2eed8c5.target)) {
             var_206eca0c = getent(var_a2eed8c5.target, "targetname");
         }
         function_23e7a30a("rect" + index, var_a2eed8c5.origin, var_a2eed8c5.angles, var_a2eed8c5.script_width, var_a2eed8c5.script_height, hash(var_a2eed8c5.script_string), var_a2eed8c5.script_maxdist, var_206eca0c);
     }
-    foreach (circle in circles) {
+    foreach (index, circle in circles) {
         var_206eca0c = undefined;
         if (isdefined(circle.target)) {
             var_206eca0c = getent(circle.target, "targetname");

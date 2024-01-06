@@ -1,0 +1,26 @@
+{
+    "var_941096a8": [
+        {
+            "var_386af035": "#bnet_test_code_pack_mtxentitlement"
+        },
+        {
+            "var_386af035": "#bnet_code_pack_mtxentitlement"
+        },
+        {
+            "var_386af035": "#steam_code_pack_mtxentitlement"
+        }
+    ],
+    "itemname": "#hash_21d17709c92f0fab",
+    "var_e9d9a8d0": 1,
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "sticker": "#hash_21d17709c92f0fab",
+    "var_46300498": 1,
+    "name": "paintjob_stickers_code_pack_pc_base_mtxitem",
+    "category": "#sticker",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 3,
+    "itemid": "19227673",
+    "var_326b2570": "#hash_71357abd9021d85d"
+}

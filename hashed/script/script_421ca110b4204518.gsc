@@ -352,7 +352,7 @@ function function_da2298bc() {
                 }
                 var_1bc24030 = int(1 / float(function_60d95f53()) / 1000);
                 if (getdvarint(#"hash_3ce5890428b398f1", 0)) {
-                    foreach (var_3889eb68 in level.var_686c81d7) {
+                    foreach (n_index, var_3889eb68 in level.var_686c81d7) {
                         v_color = (1, 1, 1);
                         if (function_baaff75b(var_3889eb68, var_3889eb68.owner)) {
                             v_color = (1, 0.5, 0);

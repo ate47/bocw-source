@@ -1,0 +1,31 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#bundle_operator_2065_zeyna_cold_hearted_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1063_awa_punk_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4018_zeyna_power_bolt_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_6005_zeyna_arc_armor_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_7503_vault_nato_warsaw_02_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_2038d53f1f435f6d",
+    "var_e9d9a8d0": 1,
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "var_46300498": 1,
+    "bodytype": "#hash_2038d53f1f435f6d",
+    "name": "prt_mp_fra_dgse_mtxitem",
+    "category": "#operator",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 9,
+    "itemid": "18057790"
+}

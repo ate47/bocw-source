@@ -1,0 +1,47 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_lao_pl_serpent_shadow_mtxitem",
+            "itemid": "33096928"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_lao_mtxitem",
+            "itemid": "30933020"
+        },
+        {
+            "var_4a4bc969": "#sniper_accurate_bp_deaths_mtxitem",
+            "itemid": "33211782"
+        },
+        {
+            "var_4a4bc969": "#smg_capacity_bp_deaths_mtxitem",
+            "itemid": "24687346"
+        },
+        {
+            "var_4a4bc969": "#reticle_126_mtxitem",
+            "itemid": "27651292"
+        },
+        {
+            "var_4a4bc969": "#emblems_vts_33_s5_animated_mtxitem",
+            "itemid": "22475687"
+        },
+        {
+            "var_4a4bc969": "#callingcards_shadow_s5_animated_mtxitem",
+            "itemid": "22602630"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_shadow_s5_mtxitem",
+            "itemid": "24977787"
+        }
+    ],
+    "itemname": "#hash_3e39f4c749eda43",
+    "var_375a1747": "#hash_47fe432e0e60200d",
+    "name": "operator_bundle_5044_naga_urban_tactical_mtxbundle",
+    "var_a788fada": "#hash_45d1f14fee2cbfcc",
+    "var_22f91505": "#hash_5cb18c9362301d0c",
+    "var_566825be": "#hash_1d77215714577cd8",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_6f042747d2f6907c",
+    "var_db3e02ab": 2000,
+    "itemid": "23672854"
+}

@@ -1,0 +1,29 @@
+{
+    "options": [
+        {
+            "label": "#hash_6a489abface20fd6",
+            "value": "0"
+        },
+        {
+            "label": "#hash_57f3f21157ef659b",
+            "value": "1"
+        }
+    ],
+    "var_dfedf08e": 1,
+    "var_d260763": "#hash_715d0f6258f204ab",
+    "description": "#hash_23e4af4a003ebf26",
+    "var_60fcfffa": "#menu/on",
+    "var_9bc3be7": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "maxvalue": 1,
+    "name": "ingame_alert_icon",
+    "displayname": "#hash_216f86b7116dff87",
+    "var_500458ac": 10,
+    "var_66faec87": 10,
+    "statname": "display_ingame_alert_icons",
+    "var_6f00a61a": 1.1,
+    "var_b7401319": "#menu/off"
+}

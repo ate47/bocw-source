@@ -1,0 +1,37 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_6312f4d57cf5050a",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "bite"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_5159f597c9e8e80e",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "disappear"
+                }
+            ],
+            "model": "#hash_4a9d39fb0da98fb7",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "zombie_bite"
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "p9_fxanim_zm_grab_attack",
+    "dontsync": 1,
+    "team": "any"
+}

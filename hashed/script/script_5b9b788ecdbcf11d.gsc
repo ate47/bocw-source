@@ -26,7 +26,7 @@ function private function_70a657d8() {
     }
     callback::add_weapon_type(#"nightingale", &function_85f37224);
     level.var_4977c64a = getweapon(#"nightingale");
-    level.var_81b5d1c9 = getscriptbundle(level.var_4977c64a.customsettings);
+    level.nightingale_custom_settings = getscriptbundle(level.var_4977c64a.customsettings);
 }
 
 // Namespace nightingale/nightingale
@@ -61,9 +61,9 @@ function function_17982c67(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0x106
 function function_52240d18(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
-        fx = level.var_81b5d1c9.activefx;
+        fx = level.nightingale_custom_settings.activefx;
         if (isdefined(fx)) {
-            tag = isdefined(level.var_81b5d1c9.var_8751c5bd) ? level.var_81b5d1c9.var_8751c5bd : "tag_origin";
+            tag = isdefined(level.nightingale_custom_settings.var_8751c5bd) ? level.nightingale_custom_settings.var_8751c5bd : "tag_origin";
             self.activefx = util::playfxontag(fieldname, fx, self, tag);
         }
     } else if (isdefined(self.activefx)) {

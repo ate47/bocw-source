@@ -23,7 +23,7 @@ function event_handler[gametype_init] main(*eventstruct) {
     level._zombie_gamemodeprecache = &onprecachegametype;
     level._zombie_gamemodemain = &onstartgametype;
     if (util::get_map_name() === #"zm_gold") {
-        level.var_cc8ad9fe = #"hash_6b07c24817b7820f";
+        level.str_magicbox_weapon_itemspawnlist = #"hash_6b07c24817b7820f";
     }
     if (!isdefined(level.var_352498c6)) {
         prototype_hud::register();

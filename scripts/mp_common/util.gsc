@@ -282,7 +282,7 @@ function getteammask(team) {
 // Size: 0xb8
 function getotherteamsmask(skip_team) {
     mask = 0;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (team == skip_team) {
             continue;
         }
@@ -448,7 +448,7 @@ function function_e17a230f(team) {
         setobjectivetext(team, "");
         return;
     }
-    foreach (var_53c9b682 in objective_strings) {
+    foreach (index, var_53c9b682 in objective_strings) {
         if (is_true(var_53c9b682.attacker) && team != game.attackers) {
             continue;
         }
@@ -482,7 +482,7 @@ function function_9540d9b6() {
     if (!isdefined(level.var_d1455682)) {
         return;
     }
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         function_e17a230f(team);
     }
 }

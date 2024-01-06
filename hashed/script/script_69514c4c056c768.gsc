@@ -79,7 +79,7 @@ function function_f0297225(var_2ab9d3bd, var_f532cd9f, var_3afaa57b) {
 // Checksum 0x7e54b02c, Offset: 0x3d0
 // Size: 0x28
 function function_d0178153(var_2ab9d3bd) {
-    level.var_ef5dbc90[var_2ab9d3bd] = #"hash_77212104c58adc03";
+    level.var_ef5dbc90[var_2ab9d3bd] = #"t9_supply_drop_stash_parent";
 }
 
 // Namespace namespace_3d2704b3/namespace_3d2704b3
@@ -99,7 +99,7 @@ function start(supplydrops = 1, minwaittime = 20, var_fe6b2eab = 20) {
         minwaittime = minwaittime * level.deathcircle.timescale;
     }
     if (isarray(var_fe6b2eab)) {
-        foreach (value in var_fe6b2eab) {
+        foreach (key, value in var_fe6b2eab) {
             var_fe6b2eab[key] = var_fe6b2eab[key] * level.deathcircle.timescale;
         }
     } else {
@@ -235,7 +235,7 @@ function start_vehicle(vehicletype, supplydrops = 1, minwaittime = 20, var_fe6b2
         minwaittime = minwaittime * level.deathcircle.timescale;
     }
     if (isarray(var_fe6b2eab)) {
-        foreach (value in var_fe6b2eab) {
+        foreach (key, value in var_fe6b2eab) {
             var_fe6b2eab[key] = var_fe6b2eab[key] * level.deathcircle.timescale;
         }
     } else {
@@ -306,8 +306,8 @@ function function_7fc18ad5(var_2c229170, drops = 1, var_e72444ee = 30, minwaitti
             droppoint = [[ level.var_b7821ed9 ]](var_b77770ba);
         }
         if (!isdefined(droppoint)) {
-            if (namespace_9a8780d8::function_c0de0601()) {
-                droppoint = namespace_9a8780d8::function_b3791221();
+            if (territory::function_c0de0601()) {
+                droppoint = territory::function_b3791221();
             } else {
                 droppoint = item_supply_drop::function_186f5ca3();
             }
@@ -378,8 +378,8 @@ function function_add63876(vehicletypes, var_4b43f3d = 1, var_e72444ee = 30, min
                 dropangles = droppoint.angles;
                 droppoint = droppoint.origin;
             }
-        } else if (namespace_9a8780d8::function_c0de0601()) {
-            droppoint = namespace_9a8780d8::function_b3791221();
+        } else if (territory::function_c0de0601()) {
+            droppoint = territory::function_b3791221();
         } else {
             droppoint = item_supply_drop::function_186f5ca3();
         }

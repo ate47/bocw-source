@@ -1,0 +1,13 @@
+{
+    "hinttext": "#hash_54f30a041f0b7281",
+    "var_922067c4": "scriptbundle",
+    "value2": "0",
+    "var_43883094": "1",
+    "type": "gamesettings",
+    "name": "disable_tactical",
+    "displayname": "#hash_6e47b8cf961e6ad7",
+    "var_9600a8ab": "#hash_94eb0e3329edf5f",
+    "var_bd2ff709": "#menu/enabled",
+    "var_9de86f42": 2,
+    "setting": "disableTactical"
+}

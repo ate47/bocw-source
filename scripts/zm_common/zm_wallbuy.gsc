@@ -292,7 +292,7 @@ function function_6e93c5b2(var_13f9dee7) {
         return #"hash_673212f5cf031080";
         break;
     case #"green":
-    case #"hash_3a98cc868af9b743":
+    case #"uncommon":
         return #"hash_478525848719f211";
         break;
     case #"blue":

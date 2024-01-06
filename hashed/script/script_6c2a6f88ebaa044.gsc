@@ -2,17 +2,17 @@
 #using scripts\core_common\system_shared.gsc;
 #using scripts\core_common\clientfield_shared.gsc;
 
-#namespace namespace_37638b11;
+#namespace cinematicmotion;
 
-// Namespace namespace_37638b11/namespace_345fff71
+// Namespace cinematicmotion/namespace_345fff71
 // Params 0, eflags: 0x5
 // Checksum 0x8e0289cd, Offset: 0xc0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_3404c1bca0899d7c", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"cinematicmotion", &function_70a657d8, undefined, undefined, undefined);
 }
 
-// Namespace namespace_37638b11/namespace_345fff71
+// Namespace cinematicmotion/namespace_345fff71
 // Params 0, eflags: 0x2 linked
 // Checksum 0x3d1d7efd, Offset: 0x108
 // Size: 0x54
@@ -21,7 +21,7 @@ function function_70a657d8() {
     clientfield::register("toplayer", "cinematicMotion", 1, n_bits, "int");
 }
 
-// Namespace namespace_37638b11/namespace_345fff71
+// Namespace cinematicmotion/namespace_345fff71
 // Params 1, eflags: 0x2 linked
 // Checksum 0xafc99488, Offset: 0x168
 // Size: 0x2ea
@@ -71,7 +71,7 @@ function function_92dd9a20(param) {
     }
 }
 
-// Namespace namespace_37638b11/namespace_345fff71
+// Namespace cinematicmotion/namespace_345fff71
 // Params 1, eflags: 0x2 linked
 // Checksum 0xc2291672, Offset: 0x460
 // Size: 0x64

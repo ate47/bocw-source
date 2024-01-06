@@ -1,0 +1,77 @@
+{
+    "weakpoints": [
+        {
+            "var_60790e23": [
+                {
+                    "hitloc": "helmet"
+                }
+            ],
+            "var_8b732142": 4,
+            "var_641ce20e": 1,
+            "type": "#armor",
+            "var_51e8b151": "j_helmet",
+            "var_b98c4585": 1,
+            "var_f371ebb0": "helmet",
+            "activebydefault": 1,
+            "health": 0.25
+        },
+        {
+            "var_60790e23": [
+                {
+                    "hitloc": "torso_upper"
+                },
+                {
+                    "hitloc": "torso_mid"
+                },
+                {
+                    "hitloc": "torso_lower"
+                },
+                {
+                    "hitloc": "neck"
+                }
+            ],
+            "var_8b732142": 5,
+            "var_641ce20e": 1,
+            "type": "#armor",
+            "var_b98c4585": 1,
+            "var_f371ebb0": "body_armor",
+            "activebydefault": 1,
+            "health": 1
+        },
+        {
+            "var_60790e23": [
+                {
+                    "hitloc": "head"
+                }
+            ],
+            "var_3765e777": 1,
+            "type": "#weakpoint",
+            "activebydefault": 1,
+            "health": 1
+        },
+        {
+            "var_60790e23": [
+                {
+                    "hitloc": "helmet"
+                }
+            ],
+            "var_3765e777": 1,
+            "type": "#weakpoint",
+            "health": 1
+        },
+        {
+            "var_60790e23": [
+                {
+                    "hitloc": "neck"
+                }
+            ],
+            "var_3765e777": 1,
+            "type": "#weakpoint",
+            "health": 1
+        }
+    ],
+    "var_922067c4": "scriptbundle",
+    "model": "#hash_28773e96cb142220",
+    "type": "characterweakpointsettings",
+    "name": "c_t9_sr_zombie_medium_weakpoint_def"
+}

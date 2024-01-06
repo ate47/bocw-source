@@ -208,7 +208,7 @@ function private function_db765b94() {
     foreach (weapon in watcherweapons) {
         function_e6400478(weapon.name);
     }
-    foreach (struct in level.retrievableweapons) {
+    foreach (name, struct in level.retrievableweapons) {
         function_e6400478(name);
     }
 }
@@ -2874,7 +2874,7 @@ function getwatcherforweapon(weapon) {
 // Size: 0xf4
 function destroy_other_teams_supplemental_watcher_objects(attacker, weapon, radius) {
     if (level.teambased) {
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             if (!attacker util::isenemyteam(team)) {
                 continue;
             }

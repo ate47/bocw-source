@@ -1,0 +1,51 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#melee_scythe_bp_rbunny_mtxitem",
+            "itemid": "25102261"
+        },
+        {
+            "var_4a4bc969": "#sniper_quickscope_bp_rbunny_mtxitem",
+            "itemid": "23775314"
+        },
+        {
+            "var_4a4bc969": "#smg_heavy_bp_rbunny_mtxitem",
+            "itemid": "32855997"
+        },
+        {
+            "var_4a4bc969": "#execution_211_mtxitem",
+            "itemid": "19849164"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s6_digital_reaper_bunny_mtxitem",
+            "itemid": "20445454"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_ski_mask_mtxitem",
+            "itemid": "26063154"
+        },
+        {
+            "var_4a4bc969": "#callingcards_zm_bunny_animated_mtxitem",
+            "itemid": "23024116"
+        },
+        {
+            "var_4a4bc969": "#emblems_smrabbit_animated_mtxitem",
+            "itemid": "23538859"
+        },
+        {
+            "var_4a4bc969": "#loot_ges_mtx_t9_pull_rabbit_mtxitem",
+            "itemid": "25188925"
+        }
+    ],
+    "itemname": "#hash_6c4953a9346796ee",
+    "var_375a1747": "#hash_253fd85c4856dbc4",
+    "name": "bundle_7003_scythe_melee_mtxbundle",
+    "var_a788fada": "#hash_170dce792b9dbead",
+    "var_22f91505": "#hash_77f80b734377c023",
+    "var_566825be": "#hash_691913f6b4fbbae5",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_536196ffdf50a2c7",
+    "var_db3e02ab": 2000,
+    "itemid": "27041594"
+}

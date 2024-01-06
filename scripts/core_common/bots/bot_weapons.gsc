@@ -109,8 +109,8 @@ function private function_1f3281d9() {
     bot_action::register_weapon(#"gadget_supplypod", &function_86ce2c, &function_de73a533);
     bot_action::register_weapon(#"hash_2b9efbad11308e02", &function_66e1fe37, &function_de73a533);
     bot_action::register_weapon(#"hash_320a8d55b915b9e5", &function_d6e71e28, &function_de73a533);
-    bot_action::register_weapon(#"hash_f1b44dbfb6fccde", &function_5c276034, &function_de73a533);
-    bot_action::register_weapon(#"hash_63826b4a80215cd3", &function_126a6787, &function_de73a533);
+    bot_action::register_weapon(#"missile_turret", &function_5c276034, &function_de73a533);
+    bot_action::register_weapon(#"tear_gas", &function_126a6787, &function_de73a533);
     bot_action::register_weapon(#"trophy_system", &function_69624ba2, &function_de73a533);
     bot_action::register_weapon(#"frost_blast", &function_66e1fe37, &function_de73a533);
     bot_action::register_weapon(#"frost_blast_1", &function_66e1fe37, &function_de73a533);
@@ -171,7 +171,7 @@ function private function_d4db3361() {
     bot_action::register_weapon(#"inventory_" + "ac130", &function_66e1fe37, &function_778e2491);
     bot_action::register_weapon(#"counteruav", &function_f023f6f9, &counteruav);
     bot_action::register_weapon(#"inventory_" + "counteruav", &function_f023f6f9, &counteruav);
-    bot_action::register_weapon(#"hash_2f648e335983677a", &function_66e1fe37, &function_10b07ab6);
+    bot_action::register_weapon(#"chopper_gunner", &function_66e1fe37, &function_10b07ab6);
     bot_action::register_weapon(#"inventory_" + "chopper_gunner", &function_66e1fe37, &function_10b07ab6);
     bot_action::register_weapon(#"helicopter_comlink", &function_5f352eb0, &function_7943cde5);
     bot_action::register_weapon(#"inventory_" + "helicopter_comlink", &function_5f352eb0, &function_7943cde5);
@@ -183,21 +183,21 @@ function private function_d4db3361() {
     bot_action::register_weapon(#"inventory_" + "hero_flamethrower", &function_66e1fe37, &function_2bbdd2b4);
     bot_action::register_weapon(#"hero_pineapplegun", &function_43395ff9, &function_27ae97ef);
     bot_action::register_weapon(#"inventory_" + "hero_pineapplegun", &function_43395ff9, &function_27ae97ef);
-    bot_action::register_weapon(#"hash_1b2bdd347dcfc0dc", &function_66e1fe37, &function_d0cdb00e);
+    bot_action::register_weapon(#"hoverjet", &function_66e1fe37, &function_d0cdb00e);
     bot_action::register_weapon(#"inventory_" + "hoverjet", &function_66e1fe37, &function_d0cdb00e);
-    bot_action::register_weapon(#"hash_60c23248e5923f35", &function_8d7445b8, &function_9839161a);
+    bot_action::register_weapon(#"jetfighter", &function_8d7445b8, &function_9839161a);
     bot_action::register_weapon(#"inventory_" + "jetfighter", &function_8d7445b8, &function_9839161a);
-    bot_action::register_weapon(#"hash_438fafe881cdd097", &function_f70eb03b, &function_c6058970);
-    bot_action::register_weapon(#"inventory_" + "napalm_strike", &function_f70eb03b, &function_c6058970);
+    bot_action::register_weapon(#"napalm_strike", &function_f70eb03b, &napalm_strike);
+    bot_action::register_weapon(#"inventory_" + "napalm_strike", &function_f70eb03b, &napalm_strike);
     bot_action::register_weapon(#"planemortar", &function_eb23222e, &planemortar);
     bot_action::register_weapon(#"inventory_" + "planemortar", &function_eb23222e, &planemortar);
     bot_action::register_weapon(#"recon_car", &function_66e1fe37, &function_84a16b0);
     bot_action::register_weapon(#"inventory_" + "recon_car", &function_66e1fe37, &function_84a16b0);
-    bot_action::register_weapon(#"hash_165bcc9977521521", &function_14ccb855, &function_bdf61e8f);
+    bot_action::register_weapon(#"recon_plane", &function_14ccb855, &function_bdf61e8f);
     bot_action::register_weapon(#"inventory_" + "recon_plane", &function_14ccb855, &function_bdf61e8f);
     bot_action::register_weapon(#"remote_missile", &function_f1fb9968, &remote_missile);
     bot_action::register_weapon(#"inventory_" + "remote_missile", &function_f1fb9968, &remote_missile);
-    bot_action::register_weapon(#"hash_5ceaf52285031501", &function_184e01c, &function_5d035c24);
+    bot_action::register_weapon(#"sig_bow_flame", &function_184e01c, &function_5d035c24);
     bot_action::register_weapon(#"inventory_" + "sig_bow_flame", &function_184e01c, &function_5d035c24);
     bot_action::register_weapon(#"sig_lmg", &function_fee832f, &function_397a1c0a);
     bot_action::register_weapon(#"inventory_" + "sig_lmg", &function_fee832f, &function_397a1c0a);
@@ -209,8 +209,8 @@ function private function_d4db3361() {
     bot_action::register_weapon(#"inventory_" + "uav", &function_c5a0aa09, &uav);
     bot_action::register_weapon(#"ultimate_turret", &function_66e1fe37, &function_12b05f25);
     bot_action::register_weapon(#"inventory_" + "ultimate_turret", &function_66e1fe37, &function_12b05f25);
-    bot_action::register_weapon(#"hash_18d1b94b35c3b851", &function_784440a3, &function_7776d72f);
-    bot_action::register_weapon(#"inventory_" + "weapon_armor", &function_784440a3, &function_7776d72f);
+    bot_action::register_weapon(#"weapon_armor", &function_784440a3, &weapon_armor);
+    bot_action::register_weapon(#"inventory_" + "weapon_armor", &function_784440a3, &weapon_armor);
 }
 
 // Namespace namespace_d9f3dd47/namespace_d9f3dd47
@@ -1184,7 +1184,7 @@ function private function_f70eb03b(actionparams) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0xd95bf003, Offset: 0x5d90
 // Size: 0x1be
-function private function_c6058970(actionparams) {
+function private napalm_strike(actionparams) {
     self endon(#"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
     self.bot.var_6bea1d82 = 1;
     weapon = actionparams.weapon;
@@ -1553,7 +1553,7 @@ function private function_784440a3(actionparams) {
     if (!self function_303bbccf(actionparams)) {
         return undefined;
     }
-    if (self.combatstate != #"hash_25a4754a6175a242") {
+    if (self.combatstate != #"combat_state_idle") {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_5ff27b6b0a6d2c08";
         #/
@@ -1569,7 +1569,7 @@ function private function_784440a3(actionparams) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x15556a08, Offset: 0x7420
 // Size: 0x84
-function private function_7776d72f(actionparams) {
+function private weapon_armor(actionparams) {
     self endon(#"hash_1ae115949cd752c8", #"death", #"hash_3525e39d3694d0a9");
     weapon = actionparams.weapon;
     self function_185a3c39(weapon);
@@ -1864,7 +1864,7 @@ function private function_808ca6bb(actionparams) {
     }
     weapon = actionparams.weapon;
     registered = 0;
-    foreach (killstreak in level.killstreaks) {
+    foreach (type, killstreak in level.killstreaks) {
         if (killstreak.weapon == weapon) {
             registered = 1;
             break;

@@ -1,0 +1,28 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_fastfire_bp_medical_mtxitem",
+            "itemid": "21758740"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_bullet_med_mtxitem",
+            "itemid": "29396587"
+        },
+        {
+            "var_4a4bc969": "#emblems_mutagen_001_mtxitem",
+            "itemid": "30764907"
+        }
+    ],
+    "itemname": "#hash_4983145c52476118",
+    "var_375a1747": "#hash_6edb80476c5bbe46",
+    "var_579fd6c3": 50,
+    "name": "blueprint_bundle_3069_ffar_1_mutagen_mtxbundle",
+    "var_a788fada": "#hash_3d8e43366509737",
+    "var_22f91505": "#hash_5e88883b7a7e3a63",
+    "var_566825be": "#hash_65514c8fcc84cabf",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_6984df8183fb6d07",
+    "var_db3e02ab": 2000,
+    "itemid": "18938918"
+}

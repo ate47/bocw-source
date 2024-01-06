@@ -143,7 +143,7 @@ function init() {
     level.waswinning = [];
     level.lastslowprocessframe = 0;
     level.placement = [];
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         level.placement[team] = [];
     }
     level.placement[#"all"] = [];
@@ -410,7 +410,7 @@ function killserverpc() {
 // Checksum 0xb8467b63, Offset: 0x1c00
 // Size: 0x94
 function someoneoneachteam() {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (level.playercount[team] == 0) {
             return 0;
         }
@@ -437,7 +437,7 @@ function checkifteamforfeits(team) {
 // Checksum 0xec1c8655, Offset: 0x1d10
 // Size: 0xa4
 function checkforanyteamforfeit() {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (checkifteamforfeits(team)) {
             thread [[ level.onforfeit ]](team);
             return 1;
@@ -451,7 +451,7 @@ function checkforanyteamforfeit() {
 // Checksum 0xddbf82c3, Offset: 0x1dc0
 // Size: 0x9c
 function dospawnqueueupdates() {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (level.spawnqueuemodified[team]) {
             [[ level.onalivecountchange ]](team);
         }
@@ -471,7 +471,7 @@ function isteamalldead(team) {
 // Checksum 0x986b9358, Offset: 0x1ec0
 // Size: 0x92
 function areallteamsdead() {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (!isteamalldead(team)) {
             return 0;
         }
@@ -485,7 +485,7 @@ function areallteamsdead() {
 // Size: 0xa2
 function alldeadteamcount() {
     count = 0;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (isteamalldead(team)) {
             count++;
         }
@@ -513,7 +513,7 @@ function dodeadeventupdates() {
                 }
             }
         } else {
-            foreach (_ in level.teams) {
+            foreach (team, _ in level.teams) {
                 if (isteamalldead(team)) {
                     [[ level.ondeadevent ]](team);
                     return 1;
@@ -541,7 +541,7 @@ function isonlyoneleftaliveonteam(team) {
 // Size: 0x120
 function doonelefteventupdates() {
     if (level.teambased) {
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             if (isonlyoneleftaliveonteam(team)) {
                 [[ level.ononeleftevent ]](team);
                 return 1;
@@ -697,7 +697,7 @@ function wavespawntimer() {
     level endon(#"game_ended");
     while (game.state == "playing") {
         time = gettime();
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             notifyteamwavespawn(team, time);
         }
         waitframe(1);
@@ -918,7 +918,7 @@ function checktimelimit() {
 // Checksum 0xf1c35da0, Offset: 0x3578
 // Size: 0xa8
 function allteamsunderscorelimit() {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (game.stat[#"teamscores"][team] >= level.scorelimit) {
             return 0;
         }
@@ -1083,7 +1083,7 @@ function updateteamplacement() {
             placement[team][placement[team].size] = player;
         }
     }
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         level.placement[team] = placement[team];
     }
 }
@@ -1134,7 +1134,7 @@ function sortdeadplayers(team) {
 // Size: 0xa2
 function totalalivecount() {
     count = 0;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         count = count + function_a1ef346b(team).size;
     }
     return count;
@@ -1146,7 +1146,7 @@ function totalalivecount() {
 // Size: 0x9a
 function totalplayerlives() {
     count = 0;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         count = count + level.playerlives[team];
     }
     return count;
@@ -1393,7 +1393,7 @@ function assertteamvariables() {
 // Checksum 0xac96b5b4, Offset: 0x4f50
 // Size: 0x90
 function anyteamhaswavedelay() {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (level.wavedelay[team]) {
             return 1;
         }
@@ -1489,7 +1489,7 @@ function callback_startgametype() {
     if (!isdefined(game.stat[#"roundswon"][#"tie"])) {
         game.stat[#"roundswon"][#"tie"] = 0;
     }
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (!isdefined(game.stat[#"roundswon"][team])) {
             game.stat[#"roundswon"][team] = 0;
         }
@@ -1523,7 +1523,7 @@ function callback_startgametype() {
     level.perksenabled = getgametypesetting(#"perksenabled");
     level.disableattachments = getgametypesetting(#"disableattachments");
     level.disabletacinsert = getgametypesetting(#"disabletacinsert");
-    level.var_3691c4b7 = getgametypesetting(#"hash_72977d6f997d7e81");
+    level.disablecustomcac = getgametypesetting(#"disablecustomcac");
     level.disableweapondrop = getgametypesetting(#"disableweapondrop");
     level.onlyheadshots = getgametypesetting(#"onlyheadshots");
     level.minimumallowedteamkills = getgametypesetting(#"teamkillpunishcount") - 1;
@@ -1537,7 +1537,7 @@ function callback_startgametype() {
     level.bulletdamagescalar = getgametypesetting(#"bulletdamagescalar");
     level.playermaxhealth = getgametypesetting(#"playermaxhealth");
     level.playerhealthregentime = getgametypesetting(#"playerhealthregentime");
-    level.var_b1e41c9b = getgametypesetting(#"hash_430ea04f2dccef18");
+    level.autoheal = getgametypesetting(#"autoheal");
     level.playerrespawndelay = getgametypesetting(#"playerrespawndelay");
     level.playerobjectiveheldrespawndelay = getgametypesetting(#"playerobjectiveheldrespawndelay");
     level.waverespawndelay = getgametypesetting(#"waverespawndelay");
@@ -1556,7 +1556,7 @@ function callback_startgametype() {
     level.maxhitlocations = 19;
     level.globalshotsfired = 0;
     thread hud_message::init();
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         initteamvariables(team);
     }
     level.maxplayercount = 0;
@@ -1576,7 +1576,7 @@ function callback_startgametype() {
     globallogic_utils::registerpostroundevent(&potm::post_round_potm);
     wavedelay = level.waverespawndelay;
     if (wavedelay) {
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             level.wavedelay[team] = wavedelay;
             level.lastwave[team] = 0;
         }
@@ -1705,7 +1705,7 @@ function getkillstreaks(player) {
     for (killstreaknum = 0; killstreaknum < level.maxkillstreaks; killstreaknum++) {
         killstreak[killstreaknum] = "killstreak_null";
     }
-    if (isplayer(player) && !level.oldschool && level.var_3691c4b7 != 1 && !isbot(player) && isdefined(player.killstreak)) {
+    if (isplayer(player) && !level.oldschool && level.disablecustomcac != 1 && !isbot(player) && isdefined(player.killstreak)) {
         currentkillstreak = 0;
         for (killstreaknum = 0; killstreaknum < level.maxkillstreaks; killstreaknum++) {
             if (isdefined(player.killstreak[killstreaknum])) {

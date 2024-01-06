@@ -1,0 +1,35 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_rus_pl_kgb_gunshow_mtxitem",
+            "itemid": "33143179"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_rus_kgb_mtxitem",
+            "itemid": "29488041"
+        },
+        {
+            "var_4a4bc969": "#callingcards_vts_dirtybomb_02_mtxitem",
+            "itemid": "23306972"
+        },
+        {
+            "var_4a4bc969": "#emblems_r82_5_mtxitem",
+            "itemid": "20058320"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_cymbalbomb_mtxitem",
+            "itemid": "20652577"
+        }
+    ],
+    "itemname": "#hash_5055996081e9508a",
+    "var_375a1747": "#hash_54cbeecdad595698",
+    "name": "bundle_operator_2035_kgb_bomb_squad_mtxbundle",
+    "var_a788fada": "#hash_27ad2996c14d0907",
+    "var_22f91505": "#hash_39cd08b36691c12b",
+    "var_566825be": "#hash_303d08cf8c38dd0f",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_2e39a113bdb4d5af",
+    "var_db3e02ab": 2000,
+    "itemid": "25615787"
+}

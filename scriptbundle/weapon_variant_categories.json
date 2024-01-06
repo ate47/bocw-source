@@ -1,0 +1,37 @@
+{
+    "var_bb7dcd09": [
+        {
+            "var_5ed80a9c": "#blueprint",
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "#menu/armory",
+            "var_1a50db25": "#hash_22427c6a5c97d563",
+            "var_a4f2dd9e": "#none",
+            "var_4e4109db": "#weapon_blueprint_variant_list"
+        },
+        {
+            "var_5ed80a9c": "#hash_459f07655973a973",
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "#hash_5b7c9ff5b1f9056c",
+            "var_1a50db25": "#hash_5784c66ebc5e11a5",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "var_5ed80a9c": "#hash_46dc5e18e28e2409",
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "#hash_63f20259c07a0c43",
+            "var_1a50db25": "#hash_22427c6a5c97d563",
+            "var_a4f2dd9e": "#none",
+            "var_4e4109db": "#weapon_blueprint_shop_variant_list"
+        }
+    ],
+    "var_72ef398b": 1,
+    "var_2f050ffa": 1,
+    "var_d7f79634": 1,
+    "var_922067c4": "SCRIPTBUNDLE",
+    "var_abba0658": 1,
+    "var_a77ed948": "#none",
+    "type": "datasourcelist",
+    "var_5497949f": 1,
+    "name": "weapon_variant_categories",
+    "var_748e79a5": "#hash_2c02c844fdafddc5"
+}

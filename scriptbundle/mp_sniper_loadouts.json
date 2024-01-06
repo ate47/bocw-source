@@ -1,0 +1,281 @@
+{
+    "defaultloadouts": [
+        {
+            "talents": [
+                {
+                    "talent": "#hash_7321f9058ee65217"
+                },
+                {
+                    "talent": "#hash_311283e3107dec74"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                },
+                {
+                    "talent": "#talent_flakjacket"
+                },
+                {
+                    "talent": "#talent_tracker"
+                },
+                {
+                    "talent": "#hash_72c04b85952128e4"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#scope4x"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#speedgrip2"
+                },
+                {
+                    "attachment": "#handle"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#bonuscard_perk_1_greed"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#hash_1da4b72876d2f887",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_696069d98ed3f228",
+            "specialgrenade": "#hash_320a8d55b915b9e5",
+            "secondary": "#bare_hands"
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_gungho"
+                },
+                {
+                    "talent": "#talent_ghost"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                }
+            ],
+            "secondaryattachments": [
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#mixclip"
+                },
+                {
+                    "attachment": "#mixhandle2"
+                },
+                {
+                    "attachment": "#stalker"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#acog"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#mixbarrel2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                },
+                {
+                    "attachment": "#quickdraw2"
+                },
+                {
+                    "attachment": "#weapon_null"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#hash_639ebbcda56447e7"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#hash_1da4b82876d2fa3a",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_b75a549c0e857d0",
+            "specialgrenade": "#gadget_jammer",
+            "secondary": "#hash_485d0c5e33d67e78"
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_engineer"
+                },
+                {
+                    "talent": "#talent_scavenger"
+                },
+                {
+                    "talent": "#talent_ghost"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#reddot"
+                },
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#mixbarrel2"
+                },
+                {
+                    "attachment": "#steadyaim"
+                },
+                {
+                    "attachment": "#speedgrip2"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#quickdraw2"
+                },
+                {
+                    "attachment": "#mixstock2"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#bonuscard_primary_gunfighter"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#hash_1da4b92876d2fbed",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_485d0c5e33d67e78",
+            "specialgrenade": "#missile_turret",
+            "secondary": "#bare_hands"
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#hash_5c80935e7a319f21"
+                },
+                {
+                    "talent": "#hash_311283e3107dec74"
+                },
+                {
+                    "talent": "#talent_coldblooded"
+                },
+                {
+                    "talent": "#hash_7321f9058ee65217"
+                },
+                {
+                    "talent": "#hash_1942ae235ffc270f"
+                },
+                {
+                    "talent": "#talent_gungho"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#tactical"
+                },
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#mixbarrel2"
+                },
+                {
+                    "attachment": "#mixbody"
+                },
+                {
+                    "attachment": "#grip2"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#bonuscard_perk_1_greed"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#hash_1da4b22876d2f008",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_696069d98ed3f228",
+            "specialgrenade": "#tear_gas",
+            "secondary": "#bare_hands"
+        },
+        {
+            "talents": [
+                {
+                    "talent": "#talent_flakjacket"
+                },
+                {
+                    "talent": "#talent_tracker"
+                },
+                {
+                    "talent": "#talent_deadsilence"
+                }
+            ],
+            "primaryattachments": [
+                {
+                    "attachment": "#elo"
+                },
+                {
+                    "attachment": "#mixmuzzle"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#steadyaim2"
+                },
+                {
+                    "attachment": "#speedgrip2"
+                },
+                {
+                    "attachment": "#mixclip2"
+                },
+                {
+                    "attachment": "#quickdraw"
+                },
+                {
+                    "attachment": "#sprintout2"
+                }
+            ],
+            "bonuscards": [
+                {
+                    "bonuscard": "#bonuscard_primary_gunfighter"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#hash_1da4b32876d2f1bb",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_485d0c5e33d67e78",
+            "specialgrenade": "#gadget_supplypod",
+            "secondary": "#bare_hands"
+        }
+    ],
+    "killstreaks": [
+        {
+            "killstreak": "#uav"
+        },
+        {
+            "killstreak": "#planemortar"
+        },
+        {
+            "killstreak": "#helicopter_comlink"
+        }
+    ],
+    "name": "mp_sniper_loadouts",
+    "sessionmode": "mp"
+}

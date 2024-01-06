@@ -460,8 +460,8 @@ function private function_f59fad45(entity) {
         if (is_true(entity.isarriving)) {
             return 1;
         } else {
-            var_98d926fd = !function_51074ea9(entity);
-            return var_98d926fd;
+            run_n_gun = !function_51074ea9(entity);
+            return run_n_gun;
         }
     }
     return 0;

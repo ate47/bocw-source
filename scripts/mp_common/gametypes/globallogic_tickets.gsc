@@ -31,7 +31,7 @@ function reset_match_start(total_stages) {
 // Size: 0xf4
 function reset_stages(total_stages) {
     game.stat[#"stagetickets"] = [];
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         game.stat[#"stagetickets"][team] = [];
         for (stage = 0; stage < total_stages; stage++) {
             game.stat[#"stagetickets"][team][stage] = 0;
@@ -45,7 +45,7 @@ function reset_stages(total_stages) {
 // Size: 0xaa
 function reset_tickets() {
     game.stat[#"tickets"] = [];
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         game.stat[#"tickets"][team] = 0;
     }
 }

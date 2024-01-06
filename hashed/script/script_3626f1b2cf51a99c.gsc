@@ -32,7 +32,7 @@ function private function_70a657d8() {
     animation::add_global_notetrack_handler("release", &function_303a7a74, 0);
     animation::add_global_notetrack_handler("chain", &function_3af7d065, 0);
     animation::add_global_notetrack_handler("event", &function_ebc59735, 0);
-    animation::add_global_notetrack_handler("become_corpse", &namespace_594b67e::function_5a0ffefa, 0);
+    animation::add_global_notetrack_handler("become_corpse", &namespace_594b67e::become_corpse, 0);
     function_9ddfe2d("root");
     callback::on_spawned(&on_player_spawned);
 }
@@ -45,7 +45,7 @@ function on_player_spawned() {
     self.var_f467e5b0 = spawnstruct();
     self.var_f467e5b0.enabled = [];
     self.var_f467e5b0.var_13a66c62 = [];
-    foreach (action in level.var_f467e5b0.actions) {
+    foreach (var_116dfc70, action in level.var_f467e5b0.actions) {
         self function_b0868791(var_116dfc70, 1);
     }
 }
@@ -156,7 +156,7 @@ function function_b1543a9d(anim_name, animset) {
         assert(isdefined(level.var_f467e5b0));
     #/
     foreach (group in var_4f3681cc.animset) {
-        foreach (var_d2d4d426 in group.var_dc27586e) {
+        foreach (index, var_d2d4d426 in group.var_dc27586e) {
             var_37d9fb07 = anim_name + "_" + group.name;
             if (group.var_dc27586e.size > 1) {
                 var_37d9fb07 = var_37d9fb07 + "_" + index + 1;

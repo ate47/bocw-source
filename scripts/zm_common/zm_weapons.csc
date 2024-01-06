@@ -382,29 +382,29 @@ function private function_350ee41() {
     if (!isdefined(level.var_af500dbd)) {
         level.var_af500dbd = [];
     }
-    if (!isdefined(level.var_cc8ad9fe)) {
-        level.var_cc8ad9fe = "zm_magicbox_weapons_list";
+    if (!isdefined(level.str_magicbox_weapon_itemspawnlist)) {
+        level.str_magicbox_weapon_itemspawnlist = "zm_magicbox_weapons_list";
     }
-    if (!isdefined(level.var_f063e70)) {
-        level.var_f063e70 = "zm_magicbox_scorestreak_list";
+    if (!isdefined(level.str_magicbox_support_itemspawnlist)) {
+        level.str_magicbox_support_itemspawnlist = "zm_magicbox_scorestreak_list";
     }
-    if (!isdefined(level.var_721c22fc)) {
-        level.var_721c22fc = "zm_magicbox_named_weapons_parent";
+    if (!isdefined(level.str_magicbox_named_itemspawnlist)) {
+        level.str_magicbox_named_itemspawnlist = "zm_magicbox_named_weapons_parent";
     }
     resetzombieboxweapons();
-    if (isdefined(level.var_ee110db8[#"hash_35f1f5ea4667e252"])) {
-        level.var_721c22fc = level.var_ee110db8[#"hash_35f1f5ea4667e252"];
+    if (isdefined(level.var_ee110db8[#"zm_magicbox_named_weapons_parent"])) {
+        level.str_magicbox_named_itemspawnlist = level.var_ee110db8[#"zm_magicbox_named_weapons_parent"];
     }
-    function_bd6fcf62(level.var_cc8ad9fe, "str_magicbox_weapon_itemspawnlist");
-    function_bd6fcf62(level.var_f063e70, "str_magicbox_support_itemspawnlist");
-    function_bd6fcf62(level.var_721c22fc, "str_magicbox_named_itemspawnlist");
+    function_bd6fcf62(level.str_magicbox_weapon_itemspawnlist, "str_magicbox_weapon_itemspawnlist");
+    function_bd6fcf62(level.str_magicbox_support_itemspawnlist, "str_magicbox_support_itemspawnlist");
+    function_bd6fcf62(level.str_magicbox_named_itemspawnlist, "str_magicbox_named_itemspawnlist");
     level.var_af500dbd = array::randomize(level.var_af500dbd);
     if (isinarray(level.var_af500dbd, #"ray_gun")) {
         arrayremovevalue(level.var_af500dbd, #"ray_gun");
         arrayinsert(level.var_af500dbd, #"ray_gun", 0);
     }
     arrayremovevalue(level.var_af500dbd, #"ultimate_turret");
-    foreach (var_ff8843d4 in level.var_af500dbd) {
+    foreach (index, var_ff8843d4 in level.var_af500dbd) {
         weapon = getweapon(var_ff8843d4);
         if (isweapon(weapon)) {
             if (!isdefined(level.var_c8b5248e)) {

@@ -1,0 +1,39 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_mercenary_bp_carolina_mtxitem",
+            "itemid": "18106196"
+        },
+        {
+            "var_4a4bc969": "#tr_powerburst_cb_carolina_mtxitem",
+            "itemid": "33354818"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_carolina_reaper_mtxitem",
+            "itemid": "29781452"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_us_motorcycle_offroad_assembly_mpx_carolina_reaper_mtxitem",
+            "itemid": "26508591"
+        },
+        {
+            "var_4a4bc969": "#callingcards_chilireaper_s6_animated_mtxitem",
+            "itemid": "27839746"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_chilireaper_s6_mtxitem",
+            "itemid": "28783550"
+        }
+    ],
+    "itemname": "#hash_744220041a5d416b",
+    "var_375a1747": "#hash_6edbab42266f273d",
+    "name": "blueprint_bundle_6035_xm4_hot_pepper_mtxbundle",
+    "var_a788fada": "#hash_20b0d12733a64a88",
+    "var_22f91505": "#hash_2108b088594cee47",
+    "var_566825be": "#hash_64136579e8a34274",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_7f9f47412dcb05a3",
+    "var_db3e02ab": 2000,
+    "itemid": "20491919"
+}

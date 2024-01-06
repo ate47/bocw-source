@@ -1,0 +1,52 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_hudson_mtxitem",
+            "itemid": "26372379"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_hudson_mtxitem",
+            "itemid": "22860165"
+        },
+        {
+            "var_4a4bc969": "#tr_longburst_bp_fallenh_mtxitem",
+            "itemid": "31319603"
+        },
+        {
+            "var_4a4bc969": "#smg_standard_cb_bp_cia_mtxitem",
+            "itemid": "22162097"
+        },
+        {
+            "var_4a4bc969": "#lmg_slowfire_bp_cia_mtxitem",
+            "itemid": "21498726"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s5_digital_rank_countdwn_mtxitem",
+            "itemid": "30936150"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_hudson_sunglasses_mtxitem",
+            "itemid": "21728974"
+        },
+        {
+            "var_4a4bc969": "#emblems_double_agent_final_s5_animated_mtxitem",
+            "itemid": "27329916"
+        },
+        {
+            "var_4a4bc969": "#callingcards_007a_s5_animated_mtxitem",
+            "itemid": "32307746"
+        }
+    ],
+    "itemname": "#hash_3c3cf595167a7a6c",
+    "var_375a1747": "#hash_33b1f11fc810278a",
+    "var_579fd6c3": 25,
+    "name": "operator_bundle_5002_hudson_newop_tracer_mtxbundle",
+    "var_a788fada": "#hash_5ae9a3fd26adf4ef",
+    "var_22f91505": "#hash_56c64ad23de04662",
+    "var_566825be": "#hash_7359f5982aaf85f7",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_293e19ff3f13aade",
+    "var_db3e02ab": 2000,
+    "itemid": "21568161"
+}

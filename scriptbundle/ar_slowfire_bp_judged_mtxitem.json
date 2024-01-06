@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#blueprint_bundle_5902_special_op_4_jd_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_54083c6936eb9e0f",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_f6bf13fe59bfda1",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 5,
+    "var_46300498": 1,
+    "baseweapon": "#ar_slowfire_t9",
+    "name": "ar_slowfire_bp_judged_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "19067224",
+    "blueprint": "#hash_54083c6936eb9e0f"
+}

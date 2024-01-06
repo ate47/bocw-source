@@ -125,7 +125,7 @@ function function_b6e83a42(localclientnum, ent) {
     if (!isalive(ent)) {
         return 0;
     }
-    if (ent hasperk(localclientnum, #"hash_7086fb93c78bfd6b")) {
+    if (ent hasperk(localclientnum, #"specialty_immunetrackerspotting")) {
         return 0;
     }
     if (!isdefined(ent.team) || self.team == ent.team) {

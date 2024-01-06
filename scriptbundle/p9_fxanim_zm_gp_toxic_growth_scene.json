@@ -1,0 +1,46 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_45230ee5fef4615f",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "expand"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_119f4fb6082a98a5",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "idle_wide"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_6d9a802914624a1e",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "collapse"
+                }
+            ],
+            "model": "#hash_7e4c5f737499a7b7",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "prop 1"
+        }
+    ],
+    "scenetype": "fxanim",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "p9_fxanim_zm_gp_toxic_growth_scene",
+    "dontsync": 1,
+    "team": "any"
+}

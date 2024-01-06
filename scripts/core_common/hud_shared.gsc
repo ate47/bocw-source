@@ -20,7 +20,7 @@
 // Checksum 0x7d8776ea, Offset: 0x368
 // Size: 0x22c
 function private event_handler[createstruct] function_e0a8e4ba(struct) {
-    foreach (k in [0:"script_main_objective_src"]) {
+    foreach (var_2f758e99, k in [0:"script_main_objective_src"]) {
         if (!isdefined(level.var_41204f29)) {
             level.var_41204f29 = [];
         } else if (!isarray(level.var_41204f29)) {
@@ -399,7 +399,7 @@ function private function_323820d9(var_fd92dd8f, var_776f69c5) {
     s_radiant = var_fd92dd8f.s_radiant;
     if (!is_true(s_radiant.var_7ed82df7)) {
         var_24955a61 = var_776f69c5.var_f6fd19fc.size && (!isinarray(var_776f69c5.var_f6fd19fc, s_radiant) || is_true(s_radiant.var_4b2ab62));
-        foreach (s_objective in var_776f69c5.var_ba87ac95) {
+        foreach (n_index, s_objective in var_776f69c5.var_ba87ac95) {
             if (var_24955a61 && isinarray(var_776f69c5.var_f6fd19fc, s_objective.s_radiant)) {
                 break;
             } else if (is_true(s_objective.s_radiant.var_7ed82df7)) {

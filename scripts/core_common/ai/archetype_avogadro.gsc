@@ -737,7 +737,7 @@ function function_5ca95b95() {
 // Checksum 0xe369c7e8, Offset: 0x3360
 // Size: 0x152
 function function_205c9932(entity) {
-    foreach (array in level.var_be622b90) {
+    foreach (index, array in level.var_be622b90) {
         if (isdefined(array[0].owner) || isdefined(array[1].owner)) {
             continue;
         }

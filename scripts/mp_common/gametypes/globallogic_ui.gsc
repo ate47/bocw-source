@@ -340,9 +340,9 @@ function menuclass(response, forcedclass, *updatecharacterindex, var_632376a3) {
     if (!isdefined(playerclass)) {
         return 0;
     }
-    if (is_true(level.var_3691c4b7) && issubstr(playerclass, "CLASS_CUSTOM") && isarray(level.classtoclassnum) && level.classtoclassnum.size > 0) {
+    if (is_true(level.disablecustomcac) && issubstr(playerclass, "CLASS_CUSTOM") && isarray(level.classtoclassnum) && level.classtoclassnum.size > 0) {
         defaultclasses = [];
-        foreach (classname in level.var_8e1db8ee) {
+        foreach (classnum, classname in level.var_8e1db8ee) {
             if (issubstr(classname, "CLASS_")) {
                 defaultclasses[classnum] = classname;
             }

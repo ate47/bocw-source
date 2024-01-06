@@ -219,7 +219,7 @@ function private function_8a9ecf71(instance, var_842cdacd, var_aa19ae, spawn_fun
             ai callback::function_d8abfc3d(#"on_ai_killed", &function_9974f649);
             ai thread [[ spawn_func ]](instance, spawn);
             ai thread function_f0abbc8b();
-            if (ai.archetype === #"hash_3d92e2c7bea1eee2") {
+            if (ai.archetype === #"mechz") {
                 ai thread function_c7db899f();
             } else if (ai.archetype === #"zombie_dog") {
                 ai clientfield::set("sr_dog_fx", 1);
@@ -714,13 +714,13 @@ function private function_4cb6cdb8() {
     case #"zombie_dog":
         return #"hash_16fb83823caa867c";
         break;
-    case #"hash_3d92e2c7bea1eee2":
+    case #"mechz":
         return #"hash_72102974314fff02";
         break;
     case #"hash_7c0d83ac1e845ac2":
         return #"hash_502ed36a2535b270";
         break;
-    case #"hash_9f6bc1960ff4912":
+    case #"raz":
         return #"hash_351d7331f52be032";
         break;
     case #"avogadro":

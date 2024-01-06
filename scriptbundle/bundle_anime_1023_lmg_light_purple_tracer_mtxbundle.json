@@ -1,0 +1,32 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#lmg_light_bp_animetankg_mtxitem",
+            "itemid": "27038522"
+        },
+        {
+            "var_4a4bc969": "#smg_heavy_bp_animetankg_mtxitem",
+            "itemid": "23762886"
+        },
+        {
+            "var_4a4bc969": "#pistol_burst_bp_animetankg_mtxitem",
+            "itemid": "29799530"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_soviet_tank_mtxitem",
+            "itemid": "29776705"
+        }
+    ],
+    "itemname": "#hash_4acc0b22aae3a270",
+    "var_375a1747": "#hash_51238c2d4f9eb722",
+    "var_579fd6c3": 38,
+    "name": "bundle_anime_1023_lmg_light_purple_tracer_mtxbundle",
+    "var_a788fada": "#hash_6fd9e72f2e3b6c25",
+    "var_22f91505": "#hash_265ebe7287a3683f",
+    "var_566825be": "#hash_438918657ef582bd",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_4d8e92c495e61afb",
+    "var_db3e02ab": 2000,
+    "itemid": "23376835"
+}

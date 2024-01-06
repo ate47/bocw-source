@@ -1,0 +1,70 @@
+{
+    "var_73aa0673": [
+        {
+            "speaker": "#zmdialog_speaker_grey"
+        },
+        {
+            "speaker": "#zmdialog_speaker_carver"
+        },
+        {
+            "speaker": "#zmdialog_speaker_strauss"
+        },
+        {
+            "speaker": "#zmdialog_speaker_weaver"
+        },
+        {
+            "speaker": "#zmdialog_speaker_raptor_one_pilot"
+        },
+        {
+            "speaker": "#zmdialog_speaker_maxis"
+        },
+        {
+            "speaker": "#zmdialog_speaker_ravenov"
+        },
+        {
+            "speaker": "#zmdialog_speaker_peck"
+        },
+        {
+            "speaker": "#zmdialog_speaker_pyotr"
+        },
+        {
+            "speaker": "#zmdialog_speaker_maxis_sr"
+        },
+        {
+            "speaker": "#zmdialog_speaker_ravenov_sr"
+        },
+        {
+            "speaker": "#zmdialog_speaker_ravenov_sr_mq4"
+        },
+        {
+            "speaker": "#zmdialog_speaker_kravchenko"
+        },
+        {
+            "speaker": "#zmdialog_speaker_klaus"
+        },
+        {
+            "speaker": "#zmdialog_speaker_peck_platinum_eye_patch"
+        },
+        {
+            "speaker": "#zmdialog_speaker_valentina"
+        },
+        {
+            "speaker": "#zmdialog_speaker_valentina_corrupted"
+        },
+        {
+            "speaker": "#zmdialog_speaker_gorev"
+        },
+        {
+            "speaker": "#zmdialog_speaker_jager"
+        },
+        {
+            "speaker": "#zmdialog_speaker_kravchenko_s6"
+        },
+        {
+            "speaker": "#zmdialog_speaker_ravenov_s6"
+        }
+    ],
+    "var_922067c4": "SCRIPTBUNDLE",
+    "type": "zmdialog_commanderspeakerlist",
+    "name": "zm_commanders_speakers"
+}

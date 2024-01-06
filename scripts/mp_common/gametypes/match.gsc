@@ -289,7 +289,7 @@ function function_10cd0ad() {
                 var_4d92ee18 = deathcount;
             }
         }
-        foreach (team in var_578c6319) {
+        foreach (i, team in var_578c6319) {
             if (totaldeaths[team] != var_4d92ee18) {
                 var_578c6319[i] = #"hash_14ed42bb8a61e1e2";
             }

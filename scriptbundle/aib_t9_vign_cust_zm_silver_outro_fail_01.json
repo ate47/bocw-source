@@ -1,0 +1,67 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "cameraswitcher": "c_t9_vign_cust_zm_silver_outro_fail_02_cam",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "model": "#hash_225b7a1c33079fb1",
+            "type": "sharedplayer",
+            "var_db255011": 1,
+            "name": "sharedplayer 1"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_1f47daaea7725279",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "model": 0,
+            "type": "vehicle",
+            "var_db255011": 1,
+            "deletewhenfinished": 1,
+            "name": "helicopter"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_20dfc2e6f087340c",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "model": "#hash_3ca1ea9d84ee22b4",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "helicopter_pilot"
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "aib_t9_vign_cust_zm_silver_outro_fail_01",
+    "dontsync": 1,
+    "disablesceneskipping": 1,
+    "var_a6da2039": "aib_t9_vign_cust_zm_silver_outro_fail_01",
+    "aligntarget": "tag_align_outro_ee",
+    "ignorestreamer": 1,
+    "team": "any"
+}

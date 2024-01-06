@@ -392,8 +392,8 @@ function registerbehaviorscriptfunctions() {
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_6fc7ddb1aba362eb", &function_4d225f59);
     animationstatenetwork::registeranimationmocomp("mocomp_abom_slide_outro", &function_d6971904, undefined, undefined);
     animationstatenetwork::registernotetrackhandlerfunction("abom_death_hide", &function_844fe7cb);
-    animationstatenetwork::registernotetrackhandlerfunction("abom_death_dissolve", &function_18370f62);
-    animationstatenetwork::registernotetrackhandlerfunction("abom_head_impact", &function_a67b1c39);
+    animationstatenetwork::registernotetrackhandlerfunction("abom_death_dissolve", &abom_death_dissolve);
+    animationstatenetwork::registernotetrackhandlerfunction("abom_head_impact", &abom_head_impact);
 }
 
 // Namespace namespace_361e505d/namespace_361e505d
@@ -456,7 +456,7 @@ function function_844fe7cb(entity) {
 // Params 1, eflags: 0x0
 // Checksum 0x899a6268, Offset: 0x31f0
 // Size: 0x2c
-function function_18370f62(entity) {
+function abom_death_dissolve(entity) {
     entity clientfield::set("abomDissolveCF", 2);
 }
 
@@ -1334,7 +1334,7 @@ function function_25b49d18(entity, *asmstatename) {
 // Params 1, eflags: 0x4
 // Checksum 0xacb48507, Offset: 0x6350
 // Size: 0x106
-function private function_a67b1c39(entity) {
+function private abom_head_impact(entity) {
     if (isdefined(entity.var_d86b94b3)) {
         entity.var_d86b94b3.normal = (entity.var_d86b94b3.normal[0], 0, entity.var_d86b94b3.normal[2]);
         if (lengthsquared(entity.var_d86b94b3.normal) <= 0) {

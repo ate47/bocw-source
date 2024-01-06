@@ -1,0 +1,77 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_2216bcebd33b5779",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_79f7c6405bc5958e",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 2"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_3f5deb4729726f2c",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 3"
+                }
+            ],
+            "model": "#hash_508e38dfaf48d104",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "prop 1"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_2bf79afeff76c7d3",
+                            "var_71bac06": "anim"
+                        }
+                    ]
+                }
+            ],
+            "model": 0,
+            "type": "vehicle",
+            "var_db255011": 1,
+            "name": "vehicle 1"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_2021a3a93fd63eef",
+                            "var_71bac06": "anim"
+                        }
+                    ]
+                }
+            ],
+            "type": "player",
+            "var_db255011": 1,
+            "name": "player 1"
+        }
+    ],
+    "scenetype": "fxanim",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "p9_fxanim_gp_vehicle_heli_lrg_vip_rope_bundle",
+    "dontsync": 1,
+    "team": "any"
+}

@@ -43,7 +43,7 @@ function private function_70a657d8() {
         level.var_59a2c772 = 0;
         level.var_acfca739 = 0;
         var_df014f39 = [];
-        foreach (s_instance in level.var_2fb0636f) {
+        foreach (n_index, s_instance in level.var_2fb0636f) {
             str_name = isdefined(s_instance.targetname) ? s_instance.targetname : "<unknown string>" + n_index;
             s_instance.targetname = str_name;
             var_df014f39[str_name] = s_instance;
@@ -51,7 +51,7 @@ function private function_70a657d8() {
         level.var_2fb0636f = arraycopy(var_df014f39);
         var_91562d8c = get_array("<unknown string>", "<unknown string>");
         level.var_4aca3c1 = [];
-        foreach (var_d7eff26a in var_91562d8c) {
+        foreach (n_index, var_d7eff26a in var_91562d8c) {
             str_name = isdefined(var_d7eff26a.targetname) ? var_d7eff26a.targetname : "<unknown string>" + n_index;
             level.var_4aca3c1[str_name] = var_d7eff26a;
         }
@@ -98,7 +98,7 @@ function function_51acf127() {
         adddebugcommand("<unknown string>");
         adddebugcommand("<unknown string>");
         waittill_can_add_debug_command();
-        foreach (s_teleport in level.var_4aca3c1) {
+        foreach (str_name, s_teleport in level.var_4aca3c1) {
             adddebugcommand("<unknown string>" + function_9e72a96(str_name) + "<unknown string>" + function_9e72a96(str_name) + "<unknown string>");
         }
         foreach (var_80b4780d, s_instance in level.var_2fb0636f) {
@@ -812,7 +812,7 @@ function function_ff217e96(var_5a86a1c2, v_pos, v_ang, s_instance, var_2ceba174)
                     player setcharacterbodytype(var_2074c3ff);
                     player setcharacteroutfit(var_6e0e2531);
                     if (isdefined(var_2ceba174) && isarray(var_322595c6.presets)) {
-                        foreach (s_preset in var_322595c6.presets) {
+                        foreach (var_a343b02b, s_preset in var_322595c6.presets) {
                             if (!is_true(s_preset.isvalid)) {
                                 continue;
                             }

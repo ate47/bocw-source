@@ -58,7 +58,7 @@ function init() {
 // Checksum 0x83cba711, Offset: 0x720
 // Size: 0x34
 function function_2d43051c() {
-    if (self.archetype === #"hash_9f6bc1960ff4912") {
+    if (self.archetype === #"raz") {
         self thread function_fc49d802();
     }
 }
@@ -122,7 +122,7 @@ function function_47f32607() {
     level endon(#"end_game");
     level flag::wait_till("start_zombie_round_logic");
     var_583d6636 = struct::get("ww_schematic", "targetname");
-    function_ade87eb5(#"hash_a2df964f9390e75", var_583d6636, 0);
+    function_ade87eb5(#"item_zmintel_gold_requiem_artifact_1", var_583d6636, 0);
     level clientfield::set("" + #"hash_e3e178ca4bfed0a", 1);
     level zm_sq::start(#"hash_6455630f195358ff", 1);
 }
@@ -197,7 +197,7 @@ function function_2b26d68b() {
     var_2805a4c0 = getentarray("weapon_folder", "targetname");
     foreach (var_15a4e821 in var_2805a4c0) {
         if (isdefined(var_15a4e821) && var_15a4e821.script_noteworthy == level.var_1aca2bc0) {
-            function_ade87eb5(#"hash_a2df664f939095c", var_15a4e821, 0);
+            function_ade87eb5(#"item_zmintel_gold_requiem_artifact_2", var_15a4e821, 0);
         }
         var_15a4e821 delete();
     }
@@ -224,7 +224,7 @@ function function_8de4f4ec() {
     }
     level flag::clear(#"hash_5dce120a8e013b48");
     level zm_ui_inventory::function_7df6bb60(#"hash_4214918e34681e5a", 1);
-    array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"hash_196207efbf3628f2");
+    array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"zmintel_gold_omega_artifact_1");
     level flag::set(#"hash_5c438c30435a20f3");
     s_spawn_pos = struct::get(self.target, "targetname");
     var_7f595528 = namespace_85745671::function_7a1b21f6(s_spawn_pos.origin, s_spawn_pos.angles, 15, 512, 512, 512);
@@ -362,7 +362,7 @@ function function_5d8ec91d() {
         if (!level flag::get("power_on3")) {
             continue;
         }
-        player function_bc82f900(#"hash_3937704286348bfa");
+        player function_bc82f900(#"zm_gold_interact_rumble_small");
         level notify(#"hash_7788540323db060");
         zm_unitrigger::unregister_unitrigger(self.stub);
     }
@@ -679,7 +679,7 @@ function function_d196daba(e_computer, var_77d81993) {
     playsoundatposition(#"hash_5cffc6d32c1f7512", var_35fc9135.origin);
     while (1) {
         activator = e_computer zm_unitrigger::function_fac87205(#"hash_6766f9d6a024ee72", 64);
-        activator function_bc82f900(#"hash_3937704286348bfa");
+        activator function_bc82f900(#"zm_gold_interact_rumble_small");
         playsoundatposition(#"hash_3874b1f24664c38a", var_35fc9135.origin);
         level function_d7d376af(var_77d81993);
     }
@@ -696,7 +696,7 @@ function function_2d9c01e4() {
     level flag::wait_till(#"hash_4942017a2b95789a");
     var_d5eca4f1 = struct::get("power_cell_pos", "targetname");
     activator = var_d5eca4f1 zm_unitrigger::function_fac87205(#"hash_48839f315e10aa6a", 64);
-    activator function_bc82f900(#"hash_3937704286348bfa");
+    activator function_bc82f900(#"zm_gold_interact_rumble_small");
     var_3875fad7 = level.round_number + 2;
     power_cell = util::spawn_model(#"hash_521acd0534d0676a", var_d5eca4f1.origin, var_d5eca4f1.angles);
     playsoundatposition(#"hash_70b82b4de231f767", var_d5eca4f1.origin);
@@ -794,7 +794,7 @@ function function_cd56635f(b_skipped) {
     zm_crafting::function_d1f16587("zblueprint_gold_wonderweapon", &function_37ad9539);
     level flag::wait_till(#"hash_6eeca22c4519b770");
     var_4c9abdd4 = struct::get("craft_item_pos", "targetname");
-    function_ade87eb5(#"hash_a2df464f93905f6", var_4c9abdd4, 0);
+    function_ade87eb5(#"item_zmintel_gold_requiem_artifact_4", var_4c9abdd4, 0);
     level waittill(#"ww_pickup");
     /#
         iprintlnbold("<unknown string>");
@@ -861,7 +861,7 @@ function function_6de8eec4() {
         waitresult = undefined;
         waitresult = self waittill(#"trigger");
         player = waitresult.activator;
-        player function_bc82f900(#"hash_3937704286348bfa");
+        player function_bc82f900(#"zm_gold_interact_rumble_small");
         if (is_true(self.stub.var_dad14d36.var_aa3c8a94)) {
             var_ac9c030e = array::random([1:"zone_tents", 0:"zone_tents2"]);
             var_aff5d50e = zm_utility::function_cce73165("mimic_location", #"spawner_bo5_mimic", var_ac9c030e);
@@ -884,7 +884,7 @@ function function_6de8eec4() {
             /#
                 iprintlnbold("<unknown string>");
             #/
-            array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"hash_4579071a9a00f2b1");
+            array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"zmintel_gold_requiem_artifact_3");
         }
         self.stub.var_dad14d36 thread scene::play("p7_lockers_metal_tail_01_bundle", self.stub.var_dad14d36);
         zm_unitrigger::unregister_unitrigger(self.stub);
@@ -938,9 +938,9 @@ function function_eeecf07f(params) {
     if (isplayer(self)) {
         if (isdefined(item.var_a6762160.name)) {
             switch (item.var_a6762160.name) {
-            case #"hash_a2df964f9390e75":
+            case #"item_zmintel_gold_requiem_artifact_1":
                 level zm_ui_inventory::function_7df6bb60(#"hash_5d24d46e696a9fd1", 1);
-                array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"hash_4579051a9a00ef4b");
+                array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"zmintel_gold_requiem_artifact_1");
                 level flag::set(#"hash_722723ce1e3aa7d2");
                 namespace_1812c3f4::function_65937665();
                 break;
@@ -949,16 +949,16 @@ function function_eeecf07f(params) {
                 level notify(#"hash_28bed8664988e37a");
                 level thread namespace_1812c3f4::function_84947a87();
                 break;
-            case #"hash_a2df664f939095c":
-                array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"hash_4579061a9a00f0fe");
+            case #"item_zmintel_gold_requiem_artifact_2":
+                array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"zmintel_gold_requiem_artifact_2");
                 break;
             case #"hash_63707e896cd62344":
                 level zm_ui_inventory::function_7df6bb60(#"hash_36dcff5d560ebdf2", 2);
                 level notify(#"hash_2aa8a173854fca6e");
                 level zm_gold_main_quest::function_b9a3fa11(#"hash_343bcffdd018ad79", #"hash_343bdffdd018c8a9", #"hash_343be3fdd018cf75");
                 break;
-            case #"hash_a2df464f93905f6":
-                array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"hash_4579081a9a00f464");
+            case #"item_zmintel_gold_requiem_artifact_4":
+                array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"zmintel_gold_requiem_artifact_4");
                 level notify(#"ww_pickup");
                 ww_weapon = getweapon(#"hash_5bd48d860ebd5a41");
                 self zm_weapons::weapon_give(ww_weapon, 1);
@@ -1122,7 +1122,7 @@ function function_e37a65e1() {
 function function_fdccaaa8(s_params) {
     /#
         str_hit_loc = s_params.shitloc;
-        if (self.archetype === #"hash_9f6bc1960ff4912" && str_hit_loc === "<unknown string>") {
+        if (self.archetype === #"raz" && str_hit_loc === "<unknown string>") {
             level thread function_f4a3a8b0(self);
         }
     #/

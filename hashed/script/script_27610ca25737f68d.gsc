@@ -238,7 +238,7 @@ function function_a68304b6(inflictor, attacker, *damage, *flags, meansofdeath, w
         if (!isdefined(self.var_786be2f0)) {
             self.var_786be2f0 = [];
         }
-        if (self.archetype === #"hash_9f6bc1960ff4912" && isarray(self.var_5ace757d) && isdefined(level.var_92e56a0f[#"hash_9f6bc1960ff4912"])) {
+        if (self.archetype === #"raz" && isarray(self.var_5ace757d) && isdefined(level.var_92e56a0f[#"raz"])) {
             foreach (weakpoint in self.var_5ace757d) {
                 if (weakpoint.type === #"armor" && weakpoint.var_292e2bf1 === 1 && weakpoint.health > 0 && !isinarray(self.var_786be2f0, weakpoint.var_f371ebb0)) {
                     if (!isdefined(self.var_786be2f0)) {
@@ -247,10 +247,10 @@ function function_a68304b6(inflictor, attacker, *damage, *flags, meansofdeath, w
                         self.var_786be2f0 = array(self.var_786be2f0);
                     }
                     self.var_786be2f0[self.var_786be2f0.size] = weakpoint.var_f371ebb0;
-                    [[ level.var_92e56a0f[#"hash_9f6bc1960ff4912"] ]](self, weakpoint, boneindex, weakpoint.health, 1, surfacetype, vsurfacenormal, modelindex, psoffsettime);
+                    [[ level.var_92e56a0f[#"raz"] ]](self, weakpoint, boneindex, weakpoint.health, 1, surfacetype, vsurfacenormal, modelindex, psoffsettime);
                 }
             }
-        } else if (self.archetype === #"hash_3d92e2c7bea1eee2" && isarray(self.var_5ace757d) && isdefined(level.var_92e56a0f[#"hash_3d92e2c7bea1eee2"])) {
+        } else if (self.archetype === #"mechz" && isarray(self.var_5ace757d) && isdefined(level.var_92e56a0f[#"mechz"])) {
             foreach (weakpoint in self.var_5ace757d) {
                 if (weakpoint.type === #"armor" && weakpoint.var_292e2bf1 === 1 && weakpoint.health > 0 && !isinarray(self.var_786be2f0, weakpoint.var_f371ebb0)) {
                     if (!isdefined(self.var_786be2f0)) {
@@ -259,7 +259,7 @@ function function_a68304b6(inflictor, attacker, *damage, *flags, meansofdeath, w
                         self.var_786be2f0 = array(self.var_786be2f0);
                     }
                     self.var_786be2f0[self.var_786be2f0.size] = weakpoint.var_f371ebb0;
-                    [[ level.var_92e56a0f[#"hash_3d92e2c7bea1eee2"] ]](self, weakpoint, boneindex, weakpoint.health, surfacetype, modelindex, psoffsettime);
+                    [[ level.var_92e56a0f[#"mechz"] ]](self, weakpoint, boneindex, weakpoint.health, surfacetype, modelindex, psoffsettime);
                 }
             }
         }

@@ -33,7 +33,7 @@ function private function_70a657d8() {
 // Checksum 0x97d04e45, Offset: 0x238
 // Size: 0xd4
 function init() {
-    level.var_9ea53546 = getgametypesetting(#"hash_70eba48eac2a1623");
+    level.killcammode = getgametypesetting(#"killcammode");
     level.finalkillcam = getgametypesetting(#"allowfinalkillcam");
     level.killcamtime = getgametypesetting(#"killcamtime");
     level.var_a95350da = getgametypesetting(#"hash_154db5a1b2e9d757");
@@ -100,7 +100,7 @@ function store_killcam_entity_on_entity(killcam_entity) {
 function init_final_killcam() {
     level.finalkillcamsettings = [];
     init_final_killcam_team(#"none");
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         init_final_killcam_team(team);
     }
     level.finalkillcam_winner = undefined;
@@ -260,7 +260,7 @@ LOC_0000014e:
 // Size: 0xbe
 function erase_final_killcam() {
     clear_final_killcam_team(#"none");
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         clear_final_killcam_team(team);
     }
     level.finalkillcam_winner = undefined;
@@ -460,7 +460,7 @@ function killcam(attackernum, targetnum, killcam_entity_info, weapon, meansofdea
             self.killcamlength = max(0.5, min(self.killcamlength, getdvarfloat(#"hash_475a5a67154785d", -1)));
         }
     #/
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         self allowspectateteam(team, 1);
     }
     self allowspectateteam("freelook", 1);
@@ -937,7 +937,7 @@ function get_closest_killcam_entity(attacker, killcamentities, depth = 0) {
     closestkillcamentindex = undefined;
     closestkillcamentdist = undefined;
     origin = undefined;
-    foreach (killcament in killcamentities) {
+    foreach (killcamentindex, killcament in killcamentities) {
         if (killcament == attacker) {
             continue;
         }

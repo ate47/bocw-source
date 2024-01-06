@@ -1,0 +1,32 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_375029475eb08880"
+        },
+        {
+            "var_fe10649e": "#hash_34256ec5c56190ed"
+        },
+        {
+            "var_fe10649e": "#hash_34256dc5c5618f3a"
+        },
+        {
+            "var_fe10649e": "#hash_342568c5c56186bb"
+        }
+    ],
+    "itemname": "#hash_2f29327b100e7fae",
+    "var_e9d9a8d0": 1,
+    "var_be574bd8": "#hash_2f29327b100e7fae",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_375029475eb08880",
+    "season": 4,
+    "var_46300498": 1,
+    "var_8ee7db29": 1,
+    "bodytype": "#hash_3ed40d1bdbd3428b",
+    "name": "c_t9_sa_pl_deathstalker_snake_mtxitem",
+    "category": "#character_outfit",
+    "var_db3e02ab": 750,
+    "var_700702e5": 2000,
+    "rarity": 5,
+    "itemid": "32963610",
+    "outfit": "#hash_284d203c7e86f466"
+}

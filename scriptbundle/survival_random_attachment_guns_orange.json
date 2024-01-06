@@ -1,0 +1,179 @@
+{
+    "itemlist": [
+        {
+            "minweight": 1,
+            "var_a6762160": "#ar_accurate_t9_orange_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#ar_standard_t9_orange_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#lmg_light_t9_orange_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#pistol_semiauto_t9_orange_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#shotgun_pump_t9_orange_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#shotgun_semiauto_t9_orange_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#smg_standard_t9_orange_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#sniper_quickscope_t9_orange_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#sniper_standard_t9_orange_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#tr_longburst_t9_orange_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#tr_damagesemi_t9_orange_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#launcher_standard_t9_orange_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#smg_heavy_t9_orange_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#pistol_burst_t9_orange_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#knife_loadout_t9_orange_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#ar_damage_t9_orange_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#ar_mobility_t9_orange_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#smg_handling_t9_orange_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#sniper_powersemi_t9_orange_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#ar_fastfire_t9_orange_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#lmg_slowfire_t9_orange_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#tr_precisionsemi_t9_orange_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#pistol_revolver_t9_orange_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#launcher_freefire_t9_orange_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#smg_burst_t9_orange_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#tr_powerburst_t9_orange_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#smg_capacity_t9_orange_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#lmg_accurate_t9_orange_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "survival_random_attachment_guns_orange",
+    "var_fde72c94": 100
+}

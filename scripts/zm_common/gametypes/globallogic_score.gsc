@@ -370,7 +370,7 @@ function _setteamscore(team, teamscore) {
 // Size: 0xcc
 function resetteamscores() {
     if (level.scoreroundwinbased || util::isfirstround()) {
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             game.stat[#"teamscores"][team] = 0;
         }
     }
@@ -415,7 +415,7 @@ function updateteamscores(team) {
 // Checksum 0x7257c9f6, Offset: 0x1858
 // Size: 0x88
 function updateallteamscores() {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         updateteamscores(team);
     }
 }
@@ -435,7 +435,7 @@ function _getteamscore(team) {
 function gethighestteamscoreteam() {
     score = 0;
     winning_teams = [];
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         team_score = game.stat[#"teamscores"][team];
         if (team_score > score) {
             score = team_score;

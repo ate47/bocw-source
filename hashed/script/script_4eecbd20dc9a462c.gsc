@@ -81,7 +81,7 @@ function function_241229f1(localclientnum, *oldval, newval, *bnewent, *binitials
         if (isdefined(player)) {
             self setsoundentcontext("plr_vehicle", "driver");
             player playrumblelooponentity(fieldname, #"hash_3c2b94894227f3cf");
-            self thread scene::play(#"hash_43f0fdfa89841d16");
+            self thread scene::play(#"chopper_gunner_door_open_client");
             if (isdefined(level.var_f7dac9d2.var_fa6a1c8c)) {
                 postfxbundle = level.var_f7dac9d2.var_fa6a1c8c;
                 player codeplaypostfxbundle(postfxbundle);

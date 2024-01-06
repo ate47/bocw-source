@@ -1,0 +1,38 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#lmg_light_bp_beachcomber_mtxitem",
+            "itemid": "31249630"
+        },
+        {
+            "var_4a4bc969": "#sniper_standard_bp_beachcomber_mtxitem",
+            "itemid": "20138531"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_boogie_board_mtxitem",
+            "itemid": "31002445"
+        },
+        {
+            "var_4a4bc969": "#callingcards_killersurf_mtxitem",
+            "itemid": "32486626"
+        },
+        {
+            "var_4a4bc969": "#emblems_killersurf_flipbook_mtxitem",
+            "itemid": "32055691"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_killersurf_mtxitem",
+            "itemid": "29821357"
+        }
+    ],
+    "itemname": "#hash_372fbf9f4e30824c",
+    "var_375a1747": "#hash_1d36fbbac60137b6",
+    "name": "bundle_blueprint_1039_lmg_light_killer_surf_mtxbundle",
+    "var_22f91505": "#hash_7a3b55d9e305ba8c",
+    "var_566825be": "#hash_7d5e9cfd7fa4ee19",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_39424e887fd7a1fc",
+    "var_db3e02ab": 2000,
+    "itemid": "25595990"
+}

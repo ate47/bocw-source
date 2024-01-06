@@ -1,0 +1,18 @@
+{
+    "description": "#hash_5f9431c0c5fb6b9",
+    "itemspawnentry": "#item_zmquest_tungsten_ww_quest_part_c",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#ww_quest",
+    "model": "#hash_46fcdb9500815015",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_105df004c41cb042",
+    "type": "zmintel",
+    "season": 6,
+    "var_ad4ad686": "#hash_70ce1650358c0923",
+    "name": "zmintel_tungsten_darkaether_artifact_3",
+    "var_9be0526e": "#artifact",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "title": "#hash_a8dd235901737e7",
+    "mapname": "#zm_tungsten"
+}

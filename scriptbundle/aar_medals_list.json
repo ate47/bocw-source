@@ -1,0 +1,23 @@
+{
+    "var_bb7dcd09": [
+        {
+            "description": "#hash_510b3f87f301774b",
+            "type": "#hash_798212a6fd4ab166",
+            "image": "#hash_2961e3db411e3878",
+            "var_e5119d1b": "#hash_5050be98d7bb1b74",
+            "displayname": "#hash_1d5dbacfe549935d",
+            "var_a4f2dd9e": "#none"
+        }
+    ],
+    "var_6bb475c1": 1,
+    "var_ef6b707": 1,
+    "var_88c0037d": 1,
+    "var_72ef398b": 1,
+    "var_922067c4": "SCRIPTBUNDLE",
+    "var_a77ed948": "#none",
+    "type": "datasourcelist",
+    "var_fb6daae5": 1,
+    "name": "aar_medals_list",
+    "var_501b626b": 1,
+    "var_6ff29b97": 1
+}

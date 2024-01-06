@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#bundle_blueprint_1084_sniper_quickscope_wooden_hunter_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_63200b4758453f8d",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_1d2d16eb67acb06b",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 1,
+    "var_46300498": 1,
+    "baseweapon": "#knife_loadout",
+    "name": "knife_combat_bp_wooden_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 3,
+    "itemid": "30771461",
+    "blueprint": "#hash_63200b4758453f8d"
+}

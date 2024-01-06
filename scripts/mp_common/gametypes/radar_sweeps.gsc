@@ -47,11 +47,11 @@ function private doradarsweep(var_bc40925b) {
     if (isdefined(var_bc40925b) && globallogic_utils::gettimeremaining() > 10) {
         thread globallogic_audio::leader_dialog("bountyUAVSweep");
     }
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         setteamspyplane(team, 1);
     }
     wait(5);
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         setteamspyplane(team, 0);
     }
 }

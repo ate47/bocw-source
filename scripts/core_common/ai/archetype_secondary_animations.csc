@@ -119,7 +119,7 @@ function buildandvalidatefacialanimationlist(localclientnum) {
     level.var_e776187e[2] = array(#"hash_284df1f0899aeec2");
     level.var_e776187e[3] = array(#"hash_11dfb67db7575849");
     var_72e0db27 = [];
-    foreach (value in level.__facialanimationslist[#"human"]) {
+    foreach (key, value in level.__facialanimationslist[#"human"]) {
         var_72e0db27[key] = value;
     }
     level.__facialanimationslist[#"civilian"] = var_72e0db27;

@@ -1,0 +1,65 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_woods_dapper_mtxitem",
+            "itemid": "24410143"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_woods_mtxitem",
+            "itemid": "28004165"
+        },
+        {
+            "var_4a4bc969": "#operator_mission_6018_mtxitem",
+            "itemid": "24657413"
+        },
+        {
+            "var_4a4bc969": "#operator_mission_6018_unlock_mtxitem",
+            "itemid": "22688802"
+        },
+        {
+            "var_4a4bc969": "#smg_handling_bp_gilded_mtxitem",
+            "itemid": "21453362"
+        },
+        {
+            "var_4a4bc969": "#ar_british_bp_gilded_mtxitem",
+            "itemid": "18703319"
+        },
+        {
+            "var_4a4bc969": "#pistol_fullauto_bp_gilded_mtxitem",
+            "itemid": "18507980"
+        },
+        {
+            "var_4a4bc969": "#execution_098_mtxitem",
+            "itemid": "31979891"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s6_analog_gilded_mtxitem",
+            "itemid": "29240557"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_teabag_gold_mtxitem",
+            "itemid": "20849861"
+        },
+        {
+            "var_4a4bc969": "#emblems_gildedagevii_s6_animated_mtxitem",
+            "itemid": "30631643"
+        },
+        {
+            "var_4a4bc969": "#callingcards_gilded_agevii_s6_animated_mtxitem",
+            "itemid": "28269889"
+        }
+    ],
+    "itemname": "#hash_122ed122838d61d9",
+    "var_375a1747": "#hash_24dfb52e55ddcb5b",
+    "var_3040f0d1": "#hash_4b57186dd6281a7d",
+    "var_fc891f35": "22688802",
+    "name": "operator_bundle_6018_woods_gilded_vi_mtxbundle",
+    "var_a788fada": "#hash_9d9a82b76ac3302",
+    "var_22f91505": "#hash_56e6e2757f2c530a",
+    "var_566825be": "#hash_1a11f319728cb50e",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_719aec3c7e3e5886",
+    "var_db3e02ab": 2000,
+    "itemid": "26969487"
+}

@@ -171,8 +171,8 @@ function function_6661621a() {
     mploadout.primarygrenadecount.mploadout = self getloadoutitem(self.class_num, "primarygrenadecount") ? 2 : 1;
     mploadout.specialgrenade.mploadout = self function_b958b70d(self.class_num, "secondarygrenade");
     mploadout.specialgrenadecount.mploadout = self getloadoutitem(self.class_num, "secondarygrenadecount") ? 2 : 1;
-    var_eef5c70e = self loadout::function_18a77b37("specialgrenade");
-    mploadout.var_eef5c70e.mploadout = var_eef5c70e.name;
+    fieldupgrade = self loadout::function_18a77b37("specialgrenade");
+    mploadout.fieldupgrade.mploadout = fieldupgrade.name;
     mploadout.tacticalgear.mploadout = self function_d78e0e04(self.class_num);
     mploadout.killstreak1.mploadout = self.killstreak.size < 0 ? hash(self.killstreak[0]) : 0;
     mploadout.killstreak2.mploadout = self.killstreak.size < 1 ? hash(self.killstreak[1]) : 0;

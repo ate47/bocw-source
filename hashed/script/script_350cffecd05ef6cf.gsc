@@ -649,7 +649,7 @@ function function_e4867f1d(var_7f2666c4, roj = 0) {
         self namespace_83eb6304::function_3ecfde67("fate_explo");
         objective_setstate(self.objectiveid, "invisible");
         level thread function_42b0778(self, player, roj);
-        player giveachievement(#"hash_2670a9f559576876");
+        player giveachievement(#"doa_achievement_fated");
     } else {
         /#
             assert(0, "<unknown string>");

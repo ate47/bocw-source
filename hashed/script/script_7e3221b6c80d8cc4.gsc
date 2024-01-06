@@ -910,7 +910,7 @@ function function_6a467cff() {
             return;
         }
         var_f10172cb = function_ce9fa82d();
-        foreach (var_462028a0 in level.stealth.var_ebbdef7a) {
+        foreach (group, var_462028a0 in level.stealth.var_ebbdef7a) {
             if (var_f10172cb != group && var_f10172cb != "<unknown string>") {
                 continue;
             }
@@ -920,8 +920,8 @@ function function_6a467cff() {
                     p1 = region.var_e7f2146e[i];
                     line(var_859e9f1c.origin, p1.origin, vectorscale((0, 1, 0), 0.7), 1, 0, 1);
                 }
-                foreach (var_7b4b2b57 in region.var_b60f2156) {
-                    function_391d248f(var_7b4b2b57.origin, 0, 360, var_7b4b2b57.angles, 10, 1, 3, vectorscale((1, 0, 0), 0.7));
+                foreach (smart_object in region.var_b60f2156) {
+                    function_391d248f(smart_object.origin, 0, 360, smart_object.angles, 10, 1, 3, vectorscale((1, 0, 0), 0.7));
                 }
                 foreach (point in region.var_dcc5d0c0) {
                     foreach (var_f4f0dcfd in point.transitions) {
@@ -947,7 +947,7 @@ function function_5a47b49c() {
             return;
         }
         var_f10172cb = function_ce9fa82d();
-        foreach (var_462028a0 in level.stealth.var_ebbdef7a) {
+        foreach (group, var_462028a0 in level.stealth.var_ebbdef7a) {
             if (var_f10172cb != group && var_f10172cb != "<unknown string>") {
                 continue;
             }

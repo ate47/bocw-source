@@ -1,0 +1,37 @@
+{
+    "var_210a8489": [
+        {
+            "var_37d9fb07": "survival_ai_zombie",
+            "var_a949845f": -1,
+            "var_857deb66": 53
+        },
+        {
+            "var_37d9fb07": "survival_ai_zombie_armor_medium",
+            "var_a949845f": -1,
+            "var_857deb66": 29
+        },
+        {
+            "var_37d9fb07": "survival_ai_avogadro",
+            "var_a949845f": -1,
+            "var_857deb66": 5
+        },
+        {
+            "var_37d9fb07": "survival_ai_mimic",
+            "var_a949845f": -1,
+            "var_857deb66": 4
+        },
+        {
+            "var_37d9fb07": "survival_ai_raz",
+            "var_a949845f": -1,
+            "var_857deb66": 4
+        },
+        {
+            "var_37d9fb07": "survival_ai_disciple",
+            "var_a949845f": -1,
+            "var_857deb66": 5
+        }
+    ],
+    "var_922067c4": "scriptbundle",
+    "type": "survivalailist",
+    "name": "objective_payload_ailist_4"
+}

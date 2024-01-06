@@ -23,7 +23,7 @@ function private autoexec __init__system__() {
 // Checksum 0x5aaae274, Offset: 0x2f0
 // Size: 0x2ec
 function function_70a657d8() {
-    if (!isarchetypeloaded(#"hash_be2e962be17d10e")) {
+    if (!isarchetypeloaded(#"mimic")) {
         return;
     }
     clientfield::register("actor", "" + #"hash_2f1c34ea62d86c57", 1, 1, "int", &function_ef33ecb7, 0, 0);
@@ -35,7 +35,7 @@ function function_70a657d8() {
     clientfield::register("scriptmover", "mimic_prop_lure_fx", 16000, 1, "int", &function_1c6775d4, 0, 0);
     clientfield::register("actor", "mimic_death_gib_fx", 1, 1, "int", &function_9d4b7144, 0, 0);
     clientfield::register("toplayer", "mimic_bite_hit", 16000, 1, "counter", &function_90fb7f1f, 0, 0);
-    ai::add_archetype_spawn_function(#"hash_be2e962be17d10e", &function_c50aa4b2);
+    ai::add_archetype_spawn_function(#"mimic", &function_c50aa4b2);
 }
 
 // Namespace archetype_mimic/archetype_mimic
@@ -51,7 +51,7 @@ function function_c50aa4b2(localclientnum) {
 // Checksum 0x23c13294, Offset: 0x620
 // Size: 0x180
 function function_ef33ecb7(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    if (self.archetype !== #"hash_be2e962be17d10e") {
+    if (self.archetype !== #"mimic") {
         return;
     }
     self util::waittill_dobj(fieldname);

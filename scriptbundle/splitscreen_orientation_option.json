@@ -1,0 +1,31 @@
+{
+    "options": [
+        {
+            "label": "#hash_4ed69c8f7d2e9c2",
+            "value": "0"
+        },
+        {
+            "label": "#hash_60326c1dd29e6384",
+            "value": "1"
+        }
+    ],
+    "var_d260763": "#hash_38ca120eae82520",
+    "description": "#hash_77dd6affd254e815",
+    "var_60fcfffa": "#hash_57f3f21157ef659b",
+    "var_9bc3be7": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_8722393c": 1,
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "maxvalue": 1,
+    "name": "splitscreen_orientation_option",
+    "displayname": "#hash_62587de1ea9c0083",
+    "var_2d7a664e": 1,
+    "var_500458ac": 10,
+    "var_66faec87": 10,
+    "statname": "splitscreenOrientation",
+    "var_6f00a61a": 1.1,
+    "var_6155d2c8": 1,
+    "var_b7401319": "#hash_6a489abface20fd6"
+}

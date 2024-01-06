@@ -34,9 +34,9 @@
 // Size: 0x238
 function autoexec function_313e9d31() {
     callback::on_start_gametype(&function_dd840c5f);
-    level.var_49aba988 = getgametypesetting(#"hash_7dcb6b2e14d55fb9");
-    level.var_621fba36 = getgametypesetting(#"hash_163acba9ae202312");
-    level.var_efe72173 = getgametypesetting(#"hash_3a380fd140cfd77f");
+    level.disablelethal = getgametypesetting(#"disablelethal");
+    level.disabletactical = getgametypesetting(#"disabletactical");
+    level.disablefieldupgrade = getgametypesetting(#"disablefieldupgrade");
     level.playerloadoutrestrictions = [];
     level.playerloadoutrestrictions[0] = getscriptbundle(#"plr_mp_default");
     if (is_true(getgametypesetting(#"scorestreaksbarebones"))) {
@@ -308,7 +308,7 @@ function private function_6bc4927f() {
     level.perkspecialties = [];
     level.killstreakicons = [];
     level.killstreakindices = [];
-    level.var_3cb4abe7 = [];
+    level.killstreakdeathpenaltyindividualearn = [];
     level.var_b29e45cf = [];
     level.var_b3c95dd8 = [];
     for (i = 0; i < 1024; i++) {
@@ -327,10 +327,10 @@ function private function_6bc4927f() {
             } else if (group_s == "killstreak") {
                 level.tbl_killstreakdata[i] = var_da0b29d2;
                 level.killstreakindices[var_da0b29d2] = i;
-                if (isdefined(iteminfo.var_3cb4abe7)) {
-                    level.var_3cb4abe7[var_da0b29d2] = iteminfo.var_3cb4abe7 / 100;
+                if (isdefined(iteminfo.killstreakdeathpenaltyindividualearn)) {
+                    level.killstreakdeathpenaltyindividualearn[var_da0b29d2] = iteminfo.killstreakdeathpenaltyindividualearn / 100;
                     /#
-                        assert(level.var_3cb4abe7[var_da0b29d2] <= 1);
+                        assert(level.killstreakdeathpenaltyindividualearn[var_da0b29d2] <= 1);
                     #/
                 }
                 if (isdefined(iteminfo.var_b29e45cf)) {
@@ -1134,7 +1134,7 @@ function private function_8e961216(slot, *previous_weapon) {
         primaryoffhand = level.weaponnone;
         primaryoffhandcount = 0;
     }
-    if (primaryoffhand == level.weaponnone || is_true(level.var_49aba988)) {
+    if (primaryoffhand == level.weaponnone || is_true(level.disablelethal)) {
         primaryoffhand = level.var_34d27b26;
         primaryoffhandcount = 0;
     }
@@ -1182,7 +1182,7 @@ function function_c3448ab0(slot, *previous_weapon, force_give_gadget_health_rege
         secondaryoffhand = level.weaponnone;
         secondaryoffhandcount = 0;
     }
-    if (secondaryoffhand == level.weaponnone || is_true(level.var_621fba36)) {
+    if (secondaryoffhand == level.weaponnone || is_true(level.disabletactical)) {
         secondaryoffhand = level.var_6388e216;
         secondaryoffhandcount = 0;
     }
@@ -1251,7 +1251,7 @@ function private give_special_offhand(slot, *previous_weapon) {
         }
         self.pers[#"specialgrenadecount"] = specialoffhandcount;
     }
-    if (isitemrestricted(specialoffhand.name) || !function_50797a7f(specialoffhand.name) || is_true(level.var_efe72173)) {
+    if (isitemrestricted(specialoffhand.name) || !function_50797a7f(specialoffhand.name) || is_true(level.disablefieldupgrade)) {
         specialoffhand = level.weaponnone;
         specialoffhandcount = 0;
     }

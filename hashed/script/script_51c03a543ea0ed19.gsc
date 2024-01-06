@@ -69,14 +69,14 @@ function function_aa3c5fab(params) {
     level.var_9a3944f4.var_71664ae5 = 1;
     attacker = params.eattacker;
     if (attacker == level.last_player_attacker) {
-        level.var_9a3944f4 thread namespace_e66dabaf::function_cbe25a41(attacker, "tag_glass_front_left_lower_d0", 1);
+        level.var_9a3944f4 thread tkdn_heli_intro::function_cbe25a41(attacker, "tag_glass_front_left_lower_d0", 1);
         level.var_7c11765c = gettime();
         return;
     }
     if (level.var_7c11765c < gettime() - 3000 || !isalive(level.last_player_attacker)) {
         level.var_7c11765c = gettime();
         level.last_player_attacker = attacker;
-        level.var_9a3944f4 thread namespace_e66dabaf::function_cbe25a41(attacker, "tag_glass_front_left_lower_d0", 1);
+        level.var_9a3944f4 thread tkdn_heli_intro::function_cbe25a41(attacker, "tag_glass_front_left_lower_d0", 1);
     }
 }
 
@@ -102,8 +102,8 @@ function bustout(var_d3440450, var_50cc0d4f) {
             level.var_40b02b72 = vehicle::simple_spawn_and_drive("intro_heli_bustout_truck");
             level.var_9a3944f4 = level.var_40b02b72[0];
             level.var_9a3944f4 setmodel("veh_t8_mil_helicopter_uh1d_cp_takedown");
-            level.var_9a3944f4 thread namespace_e66dabaf::function_fbb0d73f();
-            thread namespace_e66dabaf::function_efa33b5b(level.var_9a3944f4, "ally_heli_spot_light_bustout", "tag_glass_front_left_lower_d0", (-20, 12, 0), level.var_9a3944f4, 0, 1);
+            level.var_9a3944f4 thread tkdn_heli_intro::function_fbb0d73f();
+            thread tkdn_heli_intro::function_efa33b5b(level.var_9a3944f4, "ally_heli_spot_light_bustout", "tag_glass_front_left_lower_d0", (-20, 12, 0), level.var_9a3944f4, 0, 1);
             level.var_9a3944f4 util::delay_notify(0.2, "lights_on");
             thread function_f9d1756b();
         }
@@ -125,8 +125,8 @@ function bustout(var_d3440450, var_50cc0d4f) {
 function function_f9d1756b() {
     level flag::wait_till("bustout_pre_player_start");
     level.var_9a3944f4.var_71664ae5 = 1;
-    level.var_9a3944f4 util::delay(0.4, undefined, &namespace_e66dabaf::function_cbe25a41, level.var_664fd741, "tag_glass_front_left_lower_d0");
-    level.var_9a3944f4 util::delay(2.4, "move_light_to_garage", &namespace_e66dabaf::function_cbe25a41, getent("truck_bustout_heli_target", "targetname"), "tag_glass_front_left_lower_d0");
+    level.var_9a3944f4 util::delay(0.4, undefined, &tkdn_heli_intro::function_cbe25a41, level.var_664fd741, "tag_glass_front_left_lower_d0");
+    level.var_9a3944f4 util::delay(2.4, "move_light_to_garage", &tkdn_heli_intro::function_cbe25a41, getent("truck_bustout_heli_target", "targetname"), "tag_glass_front_left_lower_d0");
     wait(0.5);
     level.var_9a3944f4.var_71664ae5 = 1;
 }
@@ -246,7 +246,7 @@ function function_c000638d() {
     level.var_97dd00f8[0] vehicle::lights_on();
     if (isdefined(level.var_9a3944f4)) {
         level.var_9a3944f4.var_71664ae5 = 100;
-        level.var_9a3944f4 thread namespace_e66dabaf::function_cbe25a41(level.var_97dd00f8[0], "tag_origin", 0, 0, 0, 1);
+        level.var_9a3944f4 thread tkdn_heli_intro::function_cbe25a41(level.var_97dd00f8[0], "tag_origin", 0, 0, 0, 1);
     }
     player thread namespace_a052577e::function_6b5c2a3(var_b76ced44, level.var_97dd00f8);
     level flag::wait_till("bustout_start_slomo");
@@ -258,7 +258,7 @@ function function_c000638d() {
     }
     if (isdefined(level.var_9a3944f4)) {
         level.var_9a3944f4.var_71664ae5 = 60;
-        level.var_9a3944f4 thread namespace_e66dabaf::function_cbe25a41(level.var_664fd741, "tag_glass_front_left_lower_d0");
+        level.var_9a3944f4 thread tkdn_heli_intro::function_cbe25a41(level.var_664fd741, "tag_glass_front_left_lower_d0");
     }
     wait(2);
     level flag::set("woods_goto_crash");
@@ -285,12 +285,12 @@ function function_b4a74554(var_dd0a1cc3) {
         level.var_40b02b72 = vehicle::simple_spawn_and_drive("intro_heli_bustout");
         level.var_9a3944f4 = level.var_40b02b72[0];
         level.var_9a3944f4 setmodel("veh_t8_mil_helicopter_uh1d_cp_takedown");
-        level.var_9a3944f4 thread namespace_e66dabaf::function_fbb0d73f();
-        level.var_9a3944f4 thread namespace_e66dabaf::function_3cebcd1b();
-        thread namespace_e66dabaf::function_efa33b5b(level.var_9a3944f4, "ally_heli_spot_light_bustout", "tag_glass_front_left_lower_d0", (-20, 12, 0), level.var_9a3944f4, 0, 1);
+        level.var_9a3944f4 thread tkdn_heli_intro::function_fbb0d73f();
+        level.var_9a3944f4 thread tkdn_heli_intro::function_3cebcd1b();
+        thread tkdn_heli_intro::function_efa33b5b(level.var_9a3944f4, "ally_heli_spot_light_bustout", "tag_glass_front_left_lower_d0", (-20, 12, 0), level.var_9a3944f4, 0, 1);
         level.var_9a3944f4 util::delay_notify(0.2, "lights_on");
     } else {
-        level.var_9a3944f4 thread namespace_e66dabaf::function_cbe25a41(var_dd0a1cc3, "tag_glass_front_left_lower_d0");
+        level.var_9a3944f4 thread tkdn_heli_intro::function_cbe25a41(var_dd0a1cc3, "tag_glass_front_left_lower_d0");
     }
     thread function_69da7d8e(level.var_9a3944f4);
     level flag::set("intro_heli_lights_on");
@@ -310,7 +310,7 @@ function function_69da7d8e(heli) {
     move_start = getent("bustout_shoot_house_mover", "targetname");
     mover = util::spawn_model("tag_origin", move_start.origin, move_start.angles);
     level.var_9a3944f4.var_71664ae5 = 1;
-    heli thread namespace_e66dabaf::function_cbe25a41(var_ade9681a, "tag_glass_front_left_lower_d0");
+    heli thread tkdn_heli_intro::function_cbe25a41(var_ade9681a, "tag_glass_front_left_lower_d0");
     thread function_ba2c935e(mover, aim);
     var_8132076f = 1;
     heli turretsettarget(var_8132076f, mover);
@@ -330,7 +330,7 @@ function function_69da7d8e(heli) {
     door = getent("bustout_house_door", "script_noteworthy");
     door hide();
     door notsolid();
-    level.var_9a3944f4 thread namespace_e66dabaf::function_cbe25a41(struct::get("heli_spotlight_house_aim"), "tag_glass_front_left_lower_d0");
+    level.var_9a3944f4 thread tkdn_heli_intro::function_cbe25a41(struct::get("heli_spotlight_house_aim"), "tag_glass_front_left_lower_d0");
     thread function_76ce7c85();
 }
 
@@ -376,7 +376,7 @@ function function_17162917() {
     level.var_9a3944f4.var_71664ae5 = 180;
     level.var_9a3944f4.var_113b6995 = 1;
     self.var_19a7fb91 = 32;
-    level.var_9a3944f4 thread namespace_e66dabaf::function_cbe25a41(getplayers()[0], "tag_glass_front_left_lower_d0");
+    level.var_9a3944f4 thread tkdn_heli_intro::function_cbe25a41(getplayers()[0], "tag_glass_front_left_lower_d0");
 }
 
 // Namespace namespace_29b42773/namespace_d92ad9f3

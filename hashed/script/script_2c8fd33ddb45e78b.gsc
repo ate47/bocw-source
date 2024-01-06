@@ -54,15 +54,15 @@ function function_7bd1ca93(localclientnum, str_targetname, player) {
             switch (var_99bf2e73.var_bdb97676.var_fd5d9570) {
             case #"hash_5ad2dea4c296de59":
                 var_99bf2e73.var_bdb97676 setmodel(#"hash_4c7e76f2c17678e3");
-                var_99bf2e73.var_bdb97676.str_client_scene = #"hash_7fe298bdde4714e4";
+                var_99bf2e73.var_bdb97676.str_client_scene = #"p9_zm_ndu_audiolog_player_bundle";
                 break;
             case #"hash_1303dcb8d0e80e33":
                 var_99bf2e73.var_bdb97676 setmodel(#"hash_58228068154ebd8c");
-                var_99bf2e73.var_bdb97676.str_client_scene = #"hash_5f0087f80bfada21";
+                var_99bf2e73.var_bdb97676.str_client_scene = #"p9_zm_ndu_audiolog_player_requiem_bundle";
                 break;
             case #"omega":
                 var_99bf2e73.var_bdb97676 setmodel(#"hash_20f9a15d3e077602");
-                var_99bf2e73.var_bdb97676.str_client_scene = #"hash_7eb65d335384abcf";
+                var_99bf2e73.var_bdb97676.str_client_scene = #"p9_zm_ndu_reel_to_reel_audio_recorder_01_bundle";
                 break;
             }
         }

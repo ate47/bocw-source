@@ -1,0 +1,23 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#blueprint_bundle_7509_vault_tac_rifle_pack_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_a04454f1ba66e68",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_154871ccbdfb7286",
+    "weapon": "#hash_51114f6fd577519b",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_4ecbe38f651c3482",
+    "season": 1,
+    "var_46300498": 1,
+    "baseweapon": "#hash_51114f6fd577519b",
+    "name": "tr_damagesemi_bp_fighter_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 3,
+    "itemid": "25366229",
+    "blueprint": "#hash_a04454f1ba66e68"
+}

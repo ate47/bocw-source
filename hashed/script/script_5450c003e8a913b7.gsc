@@ -148,12 +148,12 @@ function function_65da73e7() {
         aiutility::removeaioverridedamagecallback(self, &function_21e59acf);
     } else {
         foreach (player in getplayers()) {
-            foreach (v in player.stealth.var_2818e780) {
+            foreach (k, v in player.stealth.var_2818e780) {
                 if (!isdefined(v)) {
                     player.stealth.var_2818e780[k] = undefined;
                 }
             }
-            foreach (v in player.stealth.var_a4965d8) {
+            foreach (k, v in player.stealth.var_a4965d8) {
                 if (!isdefined(v)) {
                     player.stealth.var_a4965d8[k] = undefined;
                 }
@@ -708,8 +708,8 @@ function function_ee9a5ec9(event) {
             event.type.event = "combat";
         } else if (distancesquared(self.origin, event.origin) < 62500) {
             if (isdefined(event.entity)) {
-                var_eba34d84 = self function_a884a736(event.entity);
-                if (var_eba34d84 >= 1) {
+                threatsight = self function_a884a736(event.entity);
+                if (threatsight >= 1) {
                     event.type.event = "combat";
                 }
             }
@@ -732,7 +732,7 @@ function function_ee9a5ec9(event) {
             event.type.event = "combat";
         }
         break;
-    case #"hash_34d73a5e47873cbf":
+    case #"glass_destroyed":
         if (self util::function_748809fc(event.origin, 0) && distance2dsquared(event.origin, self.origin) < 36864) {
             event.type.event = "combat";
         }
@@ -846,7 +846,7 @@ function function_63ac72da(event) {
             return 1;
         case #"footstep_sprint":
         case #"footstep":
-        case #"hash_34d73a5e47873cbf":
+        case #"glass_destroyed":
         case #"footstep_run":
             self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "investigate", delaytime);
             return 1;

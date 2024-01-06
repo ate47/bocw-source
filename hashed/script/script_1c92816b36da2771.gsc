@@ -243,7 +243,7 @@ function function_ea7dccdf(var_a276c861, var_19e802fa) {
 // Checksum 0x6dcd7e3, Offset: 0x1348
 // Size: 0x70
 function function_ffe3712a(*params) {
-    if (self.archetype !== #"hash_3d92e2c7bea1eee2") {
+    if (self.archetype !== #"mechz") {
         return;
     }
     level notify(#"hash_4c46400ce2d2546d", {#aitype:self.aitype, #position:self.origin});
@@ -259,7 +259,7 @@ function function_c8b7a7da() {
         waitresult = undefined;
         waitresult = level waittill(#"hash_4c46400ce2d2546d");
         if (zm_utility::check_point_in_playable_area(waitresult.position)) {
-            point = function_4ba8fde(#"hash_1060a256b79c8ede");
+            point = function_4ba8fde(#"item_zmquest_platinum_klaus_battery");
             var_169eb568 = item_drop::drop_item(0, undefined, 1, 0, point.id, waitresult.position, undefined, 2);
             var_169eb568.var_dd21aec2.var_169eb568 = 1 & 16;
             var_169eb568.var_a6762160.var_4cd830a = 1;
@@ -411,7 +411,7 @@ function private function_e9e410c2() {
         e_player.var_7d32b2c6 = undefined;
         e_player flag::clear(#"hash_7fb35d12e64cf793");
     }
-    array::thread_all(getplayers(), &namespace_4abf1500::function_3ad8805e, #"hash_655fe7af693fcfb9");
+    array::thread_all(getplayers(), &namespace_4abf1500::function_3ad8805e, #"zmintel_platinum_requiem_artifact_01");
     level zm_ui_inventory::function_7df6bb60(#"hash_6a83f912cd01808c", 1);
     if (isdefined(e_player)) {
         e_player val::reset(#"hash_3130bc68547f6e0d", "disable_weapons");
@@ -983,18 +983,18 @@ function on_item_pickup(params) {
     if (isplayer(self)) {
         if (isdefined(item.var_a6762160)) {
             switch (item.var_a6762160.name) {
-            case #"hash_4cda3d120d8d2090":
+            case #"item_zmquest_platinum_klaus_hand":
                 level zm_ui_inventory::function_7df6bb60(#"hash_6a83f912cd01808c", 1);
                 level flag::set(#"hash_392c756e6906b2a2");
                 /#
                     iprintlnbold("<unknown string>");
                 #/
                 break;
-            case #"hash_1060a256b79c8ede":
+            case #"item_zmquest_platinum_klaus_battery":
                 level zm_ui_inventory::function_7df6bb60(#"hash_4b03961693d6a43a", 1);
                 level flag::set(#"hash_20e3ef55ace43370");
                 function_5f47a7c2(#"hash_1afef7d9c56952d");
-                array::thread_all(getplayers(), &namespace_4abf1500::function_3ad8805e, #"hash_cb9cf52330f8d1e");
+                array::thread_all(getplayers(), &namespace_4abf1500::function_3ad8805e, #"zmintel_platinum_omega_artifact_01");
                 /#
                     iprintlnbold("<unknown string>");
                 #/

@@ -509,7 +509,7 @@ function player_shutdown() {
         return;
     }
     self.vsmgr_player_entnum = self getentitynumber();
-    foreach (v in level.vsmgr) {
+    foreach (k, v in level.vsmgr) {
         if (!v.in_use) {
             continue;
         }

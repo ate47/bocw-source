@@ -1,0 +1,30 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#tr_longburst_bp_verde_mtxitem",
+            "itemid": "19063332"
+        },
+        {
+            "var_4a4bc969": "#callingcards_redmissile_080_mtxitem",
+            "itemid": "32859214"
+        },
+        {
+            "var_4a4bc969": "#emblems_redmissile_64_mtxitem",
+            "itemid": "18952637"
+        },
+        {
+            "var_4a4bc969": "#weapon_xp_token_common_mtxitem",
+            "itemid": "27032621"
+        }
+    ],
+    "itemname": "#hash_58af21583ead0da8",
+    "var_375a1747": "#hash_6c79c57a1a18ff9a",
+    "name": "bundle_free_5_1105_season_1_mtxbundle",
+    "var_22f91505": "#hash_7bcf17260f30ae84",
+    "var_566825be": "#hash_3bce31d994032115",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_a99f6fa365001b4",
+    "var_db3e02ab": 2000,
+    "itemid": "21303656"
+}

@@ -26,7 +26,7 @@ function private function_70a657d8() {
 // Checksum 0xe039c96, Offset: 0x148
 // Size: 0xb4
 function main() {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         level.spectateoverride[team] = spawnstruct();
     }
     callback::on_connecting(&on_player_connecting);
@@ -130,7 +130,7 @@ function otherlocalplayerstillalive() {
 // Checksum 0xdc7fac96, Offset: 0x538
 // Size: 0x98
 function allowspectateallteams(allow) {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         self allowspectateteam(team, allow);
     }
 }
@@ -140,7 +140,7 @@ function allowspectateallteams(allow) {
 // Checksum 0x22b18772, Offset: 0x5d8
 // Size: 0xb0
 function allowspectateallteamsexceptteam(skip_team, allow) {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (team == skip_team) {
             continue;
         }

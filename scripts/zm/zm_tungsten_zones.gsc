@@ -550,7 +550,7 @@ function function_44b1279a() {
 // Checksum 0xe4f95ef3, Offset: 0x4db0
 // Size: 0x2a4
 function setupminimap(material, var_da0dddd2) {
-    corners = namespace_9a8780d8::function_1f583d2e("minimap_corner", "targetname");
+    corners = territory::function_1f583d2e("minimap_corner", "targetname");
     var_32af51c9 = [];
     var_aa9f20e7 = [];
     foreach (corner in corners) {

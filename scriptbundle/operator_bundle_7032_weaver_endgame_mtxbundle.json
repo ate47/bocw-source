@@ -1,0 +1,76 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_1ad7348b8a1c7340"
+        },
+        {
+            "var_fe10649e": "#hash_2e8551b5d804c502"
+        },
+        {
+            "var_fe10649e": "#hash_2e8550b5d804c34f"
+        },
+        {
+            "var_fe10649e": "#hash_2e854fb5d804c19c"
+        },
+        {
+            "var_fe10649e": "#hash_2e854eb5d804bfe9"
+        },
+        {
+            "var_fe10649e": "#hash_2e854db5d804be36"
+        }
+    ],
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#loot_smg_flechette_bp_endgame_mtxitem",
+            "itemid": "18754905"
+        },
+        {
+            "var_4a4bc969": "#ar_slowhandling_bp_endgame_mtxitem",
+            "itemid": "25046788"
+        },
+        {
+            "var_4a4bc969": "#po_c_t9_usa_pl_weaver_aftermath_mtxitem",
+            "itemid": "26941346"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_weaver_mtxitem",
+            "itemid": "19882636"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_endgame_mtxitem",
+            "itemid": "30351386"
+        },
+        {
+            "var_4a4bc969": "#execution_131_mtxitem",
+            "itemid": "31243575"
+        },
+        {
+            "var_4a4bc969": "#loot_ges_mtx_t9_point_down_mtxitem",
+            "itemid": "30869081"
+        },
+        {
+            "var_4a4bc969": "#callingcards_weaver_animated_mtxitem",
+            "itemid": "22778574"
+        },
+        {
+            "var_4a4bc969": "#emblem_weaver_mtxitem",
+            "itemid": "32187539"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s6_digital_endgame_mtxitem",
+            "itemid": "23490318"
+        }
+    ],
+    "itemname": "#hash_2f65809836660902",
+    "var_375a1747": "#hash_1ad7348b8a1c7340",
+    "var_8ee7db29": 1,
+    "name": "operator_bundle_7032_weaver_endgame_mtxbundle",
+    "var_a788fada": "#hash_5147bf93c4f26c3",
+    "var_22f91505": "#hash_701d55d8bb01b10b",
+    "var_566825be": "#hash_1a7de96367e838ab",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_c8db26e34085b8f",
+    "var_db3e02ab": 750,
+    "itemid": "33247643"
+}

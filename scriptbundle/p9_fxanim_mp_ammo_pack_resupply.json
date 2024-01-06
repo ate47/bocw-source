@@ -1,0 +1,27 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_79647b3513fd2190",
+                            "var_71bac06": "anim"
+                        }
+                    ]
+                }
+            ],
+            "model": "#wpn_t9_eqp_ammo_pack_world",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "ammo_pack"
+        }
+    ],
+    "scenetype": "fxanim",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "p9_fxanim_mp_ammo_pack_resupply",
+    "dontsync": 1,
+    "team": "any"
+}

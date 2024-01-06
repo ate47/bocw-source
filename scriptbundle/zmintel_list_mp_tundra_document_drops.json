@@ -1,0 +1,19 @@
+{
+    "var_572513bb": [
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_tundra_omega_document_1"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_tundra_omega_document_2"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_tundra_omega_document_3"
+        }
+    ],
+    "var_922067c4": "scriptbundle",
+    "type": "zmintel_list",
+    "name": "zmintel_list_mp_tundra_document_drops"
+}

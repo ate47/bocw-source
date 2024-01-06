@@ -1,0 +1,39 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_damage_bp_8bit_mtxitem",
+            "itemid": "20108070"
+        },
+        {
+            "var_4a4bc969": "#loot_sniper_cannon_bp_8bit_mtxitem",
+            "itemid": "19937307"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_nesting_doll_mtxitem",
+            "itemid": "31628642"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_ru_tank_t72_assembly_mpx_8bit_mtxitem",
+            "itemid": "27320835"
+        },
+        {
+            "var_4a4bc969": "#emblems_8_s5_mtxitem",
+            "itemid": "29367963"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s5_armsrace_2_mtxitem",
+            "itemid": "23902950"
+        }
+    ],
+    "itemname": "#hash_5f26f8e18bb1a878",
+    "var_375a1747": "#hash_1c5dd4ed93f8575e",
+    "name": "blueprint_bundle_5028_ak_47_8bit_russia_mtxbundle",
+    "var_a788fada": "#hash_5ec325950390042d",
+    "var_22f91505": "#hash_4c2eb406f924c282",
+    "var_566825be": "#hash_1b88a55900c2c65",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_2bcadc72f72d05fe",
+    "var_db3e02ab": 2000,
+    "itemid": "30870003"
+}

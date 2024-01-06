@@ -33,12 +33,12 @@ function private function_70a657d8() {
     clientfield::register("toplayer", "fx_heal_aoe_player_clientfield", 1, 1, "counter");
     clientfield::register("scriptmover", "fx_heal_aoe_pillar_clientfield", 1, 1, "counter");
     clientfield::register("scriptmover", "fx_heal_aoe_bubble_clientfield", 1, 1, "int");
-    namespace_1b527536::function_36e0540e(#"hash_7b5a77a85b0ffab7", 1, 50, #"hash_37b9ba3f40fc1ba5");
-    namespace_1b527536::function_36e0540e(#"hash_379869d5b6da974b", 1, 50, #"hash_4feb54f5041d1609");
-    namespace_1b527536::function_36e0540e(#"hash_37986ad5b6da98fe", 1, 50, #"hash_76ed099fde5ea820");
-    namespace_1b527536::function_36e0540e(#"hash_37986bd5b6da9ab1", 1, 50, #"hash_4554f3c03465642f");
-    namespace_1b527536::function_36e0540e(#"hash_37986cd5b6da9c64", 1, 50, #"hash_35d8042aa3ab475e");
-    namespace_1b527536::function_36e0540e(#"hash_37986dd5b6da9e17", 1, 50, #"hash_1fc30bedac3b39a5");
+    namespace_1b527536::function_36e0540e(#"hash_7b5a77a85b0ffab7", 1, 50, #"field_upgrade_heal_aoe_item_sr");
+    namespace_1b527536::function_36e0540e(#"hash_379869d5b6da974b", 1, 50, #"field_upgrade_heal_aoe_1_item_sr");
+    namespace_1b527536::function_36e0540e(#"hash_37986ad5b6da98fe", 1, 50, #"field_upgrade_heal_aoe_2_item_sr");
+    namespace_1b527536::function_36e0540e(#"hash_37986bd5b6da9ab1", 1, 50, #"field_upgrade_heal_aoe_3_item_sr");
+    namespace_1b527536::function_36e0540e(#"hash_37986cd5b6da9c64", 1, 50, #"field_upgrade_heal_aoe_4_item_sr");
+    namespace_1b527536::function_36e0540e(#"hash_37986dd5b6da9e17", 1, 50, #"field_upgrade_heal_aoe_5_item_sr");
     namespace_1b527536::function_dbd391bf(#"hash_7b5a77a85b0ffab7", &function_e190864a);
     namespace_1b527536::function_dbd391bf(#"hash_379869d5b6da974b", &function_1447ebb8);
     namespace_1b527536::function_dbd391bf(#"hash_37986ad5b6da98fe", &function_6ff0a318);

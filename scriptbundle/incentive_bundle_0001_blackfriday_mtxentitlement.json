@@ -1,0 +1,55 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#shotgun_pump_nt6_bus_mtxitem",
+            "itemid": "26183496"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_mann_female1_mtxitem",
+            "itemid": "20490722"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_mann_female2_mtxitem",
+            "itemid": "29484105"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_mann_female3_mtxitem",
+            "itemid": "24554450"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_mann_male4_mtxitem",
+            "itemid": "21764558"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_mann_male5_mtxitem",
+            "itemid": "28271905"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_mann_male6_mtxitem",
+            "itemid": "32215466"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_nuketown_c_mtxitem",
+            "itemid": "31326281"
+        },
+        {
+            "var_4a4bc969": "#callingcards_nuketown_mtxitem",
+            "itemid": "24239714"
+        },
+        {
+            "var_4a4bc969": "#emblems_nuketown_b_mtxitem",
+            "itemid": "21491191"
+        }
+    ],
+    "itemname": "#hash_4ff8472b952ae0dc",
+    "description": "#hash_7f2525803c959169",
+    "var_87756eb4": 1,
+    "var_375a1747": "#hash_339ba78a9bc9deeb",
+    "name": "incentive_bundle_0001_blackfriday_mtxentitlement",
+    "var_90708fcf": "#hash_20e2e7ecb1b30091",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "itemid": "23257428",
+    "var_7c846082": "#hash_39bc24db0771eb04"
+}

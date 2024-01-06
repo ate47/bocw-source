@@ -31,10 +31,10 @@ function private autoexec __init__system__() {
 // Checksum 0xb03ee39a, Offset: 0x1a8
 // Size: 0xdc
 function private function_70a657d8() {
-    spawner::add_archetype_spawn_function(#"hash_9f6bc1960ff4912", &function_3113cf8f);
-    zm_round_spawning::register_archetype(#"hash_9f6bc1960ff4912", &function_d4f11e3c, &round_spawn, undefined, 25);
-    zm_round_spawning::function_306ce518(#"hash_9f6bc1960ff4912", &function_f1355240);
-    zm_cleanup::function_cdf5a512(#"hash_9f6bc1960ff4912", &function_54993e2);
+    spawner::add_archetype_spawn_function(#"raz", &function_3113cf8f);
+    zm_round_spawning::register_archetype(#"raz", &function_d4f11e3c, &round_spawn, undefined, 25);
+    zm_round_spawning::function_306ce518(#"raz", &function_f1355240);
+    zm_cleanup::function_cdf5a512(#"raz", &function_54993e2);
 }
 
 // Namespace namespace_ac4eb28f/namespace_ac4eb28f
@@ -147,7 +147,7 @@ function function_62f1faf9() {
 // Checksum 0x6ced2bd1, Offset: 0x6b8
 // Size: 0xca
 function function_d29d5032() {
-    a_ai_raz = getaiarchetypearray(#"hash_9f6bc1960ff4912");
+    a_ai_raz = getaiarchetypearray(#"raz");
     var_2c3c71f0 = a_ai_raz.size;
     foreach (ai_raz in a_ai_raz) {
         if (!isalive(ai_raz)) {
@@ -187,7 +187,7 @@ function function_f1355240(*n_round_number) {
     }
     while (1) {
         level waittill(#"hash_5d3012139f083ccb");
-        if (zm_round_spawning::function_d0db51fc(#"hash_9f6bc1960ff4912")) {
+        if (zm_round_spawning::function_d0db51fc(#"raz")) {
             level.var_2f45d799++;
             n_player_count = zm_utility::function_a2541519(getplayers().size);
             if (n_player_count == 1) {

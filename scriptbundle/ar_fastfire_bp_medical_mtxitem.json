@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#blueprint_bundle_3069_ffar_1_mutagen_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_1a2f68f065651c60",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_1fc24c0cbe3f5f46",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 3,
+    "var_46300498": 1,
+    "baseweapon": "#hash_44214d17f349989d",
+    "name": "ar_fastfire_bp_medical_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 3,
+    "itemid": "21758740",
+    "blueprint": "#hash_1a2f68f065651c60"
+}

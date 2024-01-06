@@ -1,0 +1,52 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_mobility_bp_nature_mtxitem",
+            "itemid": "27960300"
+        },
+        {
+            "var_4a4bc969": "#smg_standard_bp_nature_mtxitem",
+            "itemid": "21836897"
+        },
+        {
+            "var_4a4bc969": "#shotgun_pump_bp_nature_mtxitem",
+            "itemid": "18292527"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_civ_ru_sedan_80s_assembly_mpx_death_touch_mtxitem",
+            "itemid": "29688351"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s3_digital_death_touch_mtxitem",
+            "itemid": "21246401"
+        },
+        {
+            "var_4a4bc969": "#vehiclehorn_drowning_mtxitem",
+            "itemid": "21033130"
+        },
+        {
+            "var_4a4bc969": "#emblems_dismemberment_mtxitem",
+            "itemid": "25447139"
+        },
+        {
+            "var_4a4bc969": "#loot_ges_mtx_t9_heart_mtxitem",
+            "itemid": "24435261"
+        },
+        {
+            "var_4a4bc969": "#execution_137_mtxitem",
+            "itemid": "24559668"
+        }
+    ],
+    "itemname": "#hash_69ba3bede164134d",
+    "var_375a1747": "#hash_7f3e254ddff62193",
+    "var_579fd6c3": 45,
+    "name": "blueprint_bundle_3018_qbz_83_acid_dismemberment_mtxbundle",
+    "var_a788fada": "#hash_7b659e7a4079362c",
+    "var_22f91505": "#hash_3ec0e6f302fe7fe3",
+    "var_566825be": "#hash_ca8093537198278",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_adbe0b0bcbe687",
+    "var_db3e02ab": 2000,
+    "itemid": "31461276"
+}

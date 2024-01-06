@@ -1,0 +1,730 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_5481ea3225f49040",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_t9_vign_cust_zm_silver_ee_outro_sh010_cam",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "name": "shot 1"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_5449686fdbea41cb",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_t9_vign_cust_zm_silver_ee_outro_sh020_cam",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "name": "shot 2",
+                    "var_39fd697b": "pbg_box_tn_igc_ee_outro_sh020",
+                    "var_b94164e": "pbg_box_tn_igc_ee_outro_sh020"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_ff33f6de5c28c6a",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_t9_vign_cust_zm_silver_ee_outro_sh030_cam",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "name": "shot 3"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_7824ea6eeb588d85",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_t9_vign_cust_zm_silver_ee_outro_sh040_cam",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "name": "shot 4"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_23d00b19628414c4",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_t9_vign_cust_zm_silver_ee_outro_sh050_cam",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "name": "shot 5"
+                }
+            ],
+            "model": "#hash_225b7a1c33079fb1",
+            "type": "player",
+            "var_1af33af1": 1,
+            "var_db255011": 1,
+            "name": "player 1"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_5481ed3225f49559",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_t9_vign_cust_zm_silver_ee_outro_sh010_cam",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "name": "shot 1"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_5449696fdbea437e",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_t9_vign_cust_zm_silver_ee_outro_sh020_cam",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "name": "shot 2",
+                    "var_39fd697b": "pbg_box_tn_igc_ee_outro_sh020",
+                    "var_b94164e": "pbg_box_tn_igc_ee_outro_sh020"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_ff33e6de5c28ab7",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_t9_vign_cust_zm_silver_ee_outro_sh030_cam",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "name": "shot 3"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_7824e76eeb58886c",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_t9_vign_cust_zm_silver_ee_outro_sh040_cam",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "name": "shot 4"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_23d00e19628419dd",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_t9_vign_cust_zm_silver_ee_outro_sh050_cam",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "name": "shot 5"
+                }
+            ],
+            "model": "#hash_225b7a1c33079fb1",
+            "type": "player",
+            "var_db255011": 1,
+            "name": "player 2"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_5481ec3225f493a6",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_t9_vign_cust_zm_silver_ee_outro_sh010_cam",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "name": "shot 1"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_54496a6fdbea4531",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_t9_vign_cust_zm_silver_ee_outro_sh020_cam",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "name": "shot 2",
+                    "var_39fd697b": "pbg_box_tn_igc_ee_outro_sh020",
+                    "var_b94164e": "pbg_box_tn_igc_ee_outro_sh020"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_ff33d6de5c28904",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_t9_vign_cust_zm_silver_ee_outro_sh030_cam",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "name": "shot 3"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_7824e86eeb588a1f",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_t9_vign_cust_zm_silver_ee_outro_sh040_cam",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "name": "shot 4"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_23d00d196284182a",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_t9_vign_cust_zm_silver_ee_outro_sh050_cam",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "name": "shot 5"
+                }
+            ],
+            "model": "#hash_225b7a1c33079fb1",
+            "type": "player",
+            "var_db255011": 1,
+            "name": "player 3"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_5481ef3225f498bf",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_t9_vign_cust_zm_silver_ee_outro_sh010_cam",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "name": "shot 1"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_54496b6fdbea46e4",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_t9_vign_cust_zm_silver_ee_outro_sh020_cam",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "name": "shot 2",
+                    "var_39fd697b": "pbg_box_tn_igc_ee_outro_sh020",
+                    "var_b94164e": "pbg_box_tn_igc_ee_outro_sh020"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_ff33c6de5c28751",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_t9_vign_cust_zm_silver_ee_outro_sh030_cam",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "name": "shot 3"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_7824e56eeb588506",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_t9_vign_cust_zm_silver_ee_outro_sh040_cam",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "name": "shot 4"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_23d0081962840fab",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_t9_vign_cust_zm_silver_ee_outro_sh050_cam",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "name": "shot 5"
+                }
+            ],
+            "model": "#hash_225b7a1c33079fb1",
+            "type": "player",
+            "var_db255011": 1,
+            "name": "player 4"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_617826853f39ee31",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_dffd878c2c2b558",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 2",
+                    "var_39fd697b": "pbg_box_tn_igc_ee_outro_sh020",
+                    "var_b94164e": "pbg_box_tn_igc_ee_outro_sh020"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_364186da85887663",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 3"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_4330879e425d90ca",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 4"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_15763604ed97496d",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 5"
+                }
+            ],
+            "model": 0,
+            "type": "vehicle",
+            "var_db255011": 1,
+            "deletewhenfinished": 1,
+            "name": "helicopter"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_772374509bc2a557",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_76b141899876cb56",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 2",
+                    "var_39fd697b": "pbg_box_tn_igc_ee_outro_sh020",
+                    "var_b94164e": "pbg_box_tn_igc_ee_outro_sh020"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_370ad48330be60f1",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 3"
+                },
+                {
+                    "name": "shot 4"
+                },
+                {
+                    "name": "shot 5"
+                }
+            ],
+            "model": "#hash_171259f36bcbe7c5",
+            "type": "prop",
+            "var_db255011": 1,
+            "deletewhenfinished": 1,
+            "name": "prop 4"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_772375509bc2a70a",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_76b140899876c9a3",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 2",
+                    "var_39fd697b": "pbg_box_tn_igc_ee_outro_sh020",
+                    "var_b94164e": "pbg_box_tn_igc_ee_outro_sh020"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_370ad18330be5bd8",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 3"
+                },
+                {
+                    "name": "shot 4"
+                },
+                {
+                    "name": "shot 5"
+                }
+            ],
+            "model": "#hash_62450fdeb7995121",
+            "type": "prop",
+            "var_db255011": 1,
+            "deletewhenfinished": 1,
+            "name": "prop 1"
+        },
+        {
+            "shots": [
+                {
+                    "name": "shot 1"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_76b13f899876c7f0",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 2",
+                    "var_39fd697b": "pbg_box_tn_igc_ee_outro_sh020",
+                    "var_b94164e": "pbg_box_tn_igc_ee_outro_sh020"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_370ad28330be5d8b",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 3"
+                },
+                {
+                    "name": "shot 4"
+                },
+                {
+                    "name": "shot 5"
+                }
+            ],
+            "model": "#hash_30c42c0b803daf6b",
+            "type": "prop",
+            "var_db255011": 1,
+            "deletewhenfinished": 1,
+            "name": "prop 2"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_77236f509bc29cd8",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_76b146899876d3d5",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 2",
+                    "var_39fd697b": "pbg_box_tn_igc_ee_outro_sh020",
+                    "var_b94164e": "pbg_box_tn_igc_ee_outro_sh020"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_370ad78330be660a",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 3"
+                },
+                {
+                    "name": "shot 4"
+                },
+                {
+                    "name": "shot 5"
+                }
+            ],
+            "model": "#hash_30c42d0b803db11e",
+            "type": "prop",
+            "var_db255011": 1,
+            "deletewhenfinished": 1,
+            "name": "prop 3"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_772370509bc29e8b",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_76b145899876d222",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 2",
+                    "var_39fd697b": "pbg_box_tn_igc_ee_outro_sh020",
+                    "var_b94164e": "pbg_box_tn_igc_ee_outro_sh020"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_370ad88330be67bd",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 3"
+                },
+                {
+                    "name": "shot 4"
+                },
+                {
+                    "name": "shot 5"
+                }
+            ],
+            "model": "#hash_62450cdeb7994c08",
+            "type": "prop",
+            "var_db255011": 1,
+            "deletewhenfinished": 1,
+            "name": "prop 5"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_77236f509bc29cd8",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_76b146899876d3d5",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 2",
+                    "var_39fd697b": "pbg_box_tn_igc_ee_outro_sh020",
+                    "var_b94164e": "pbg_box_tn_igc_ee_outro_sh020"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_370ad78330be660a",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 3"
+                },
+                {
+                    "name": "shot 4"
+                },
+                {
+                    "name": "shot 5"
+                }
+            ],
+            "model": "#hash_62450fdeb7995121",
+            "type": "prop",
+            "var_db255011": 1,
+            "deletewhenfinished": 1,
+            "name": "prop 6"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_772370509bc29e8b",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_76b145899876d222",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 2",
+                    "var_39fd697b": "pbg_box_tn_igc_ee_outro_sh020",
+                    "var_b94164e": "pbg_box_tn_igc_ee_outro_sh020"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_370ad88330be67bd",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 3"
+                },
+                {
+                    "name": "shot 4"
+                },
+                {
+                    "name": "shot 5"
+                }
+            ],
+            "model": "#hash_30c42c0b803daf6b",
+            "type": "prop",
+            "var_db255011": 1,
+            "deletewhenfinished": 1,
+            "name": "prop 7"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_2804fbdf712961ea",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_4b192271bfaac5e9",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 2",
+                    "var_39fd697b": "pbg_box_tn_igc_ee_outro_sh020",
+                    "var_b94164e": "pbg_box_tn_igc_ee_outro_sh020"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_60394e03623cd940",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 3"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_10d4794a16b62567",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 4"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_6a9cf4dbdffce5ae",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 5"
+                }
+            ],
+            "model": "#hash_3ca1ea9d84ee22b4",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "prop 8"
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "aib_t9_vign_cust_zm_silver_ee_outro",
+    "dontsync": 1,
+    "disablesceneskipping": 1,
+    "var_241c5f3c": 1,
+    "var_a6da2039": "aib_t9_vign_cust_zm_silver_ee_outro",
+    "aligntarget": "tag_align_outro_ee",
+    "ignorestreamer": 1,
+    "team": "any"
+}

@@ -1,0 +1,39 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#tr_precisionsemi_bp_8bit_mtxitem",
+            "itemid": "20301633"
+        },
+        {
+            "var_4a4bc969": "#pistol_semiauto_bp_8bit_mtxitem",
+            "itemid": "18412201"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_eagle_8_bit_mtxitem",
+            "itemid": "33470676"
+        },
+        {
+            "var_4a4bc969": "#emblems_independenceday_animated_mtxitem",
+            "itemid": "18235050"
+        },
+        {
+            "var_4a4bc969": "#fav_light_wz_assembly_mpx_8bit_mtxitem",
+            "itemid": "25338565"
+        },
+        {
+            "var_4a4bc969": "#paintjob_sticker_independenceday_mtxitem",
+            "itemid": "19185167"
+        }
+    ],
+    "itemname": "#hash_3a8d27eca3a4c1f8",
+    "var_375a1747": "#hash_36fdf36e6a4be7c2",
+    "name": "blueprint_bundle_4029_dmr_14_8bit_freedom_mtxbundle",
+    "var_a788fada": "#hash_559d030723257761",
+    "var_22f91505": "#hash_767347e2a2165ac8",
+    "var_566825be": "#hash_191b3d884375e4f9",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_39cc06db86ebc810",
+    "var_db3e02ab": 2000,
+    "itemid": "18076214"
+}

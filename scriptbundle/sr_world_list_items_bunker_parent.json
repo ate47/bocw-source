@@ -1,0 +1,23 @@
+{
+    "itemlist": [
+        {
+            "minweight": 500,
+            "var_a6762160": "#sr_world_list_items_bunker",
+            "maxweight": 500,
+            "available": -1
+        },
+        {
+            "minweight": 60,
+            "maxweight": 85,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_7fb0967b": 128,
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "sr_world_list_items_bunker_parent",
+    "var_fde72c94": 100
+}

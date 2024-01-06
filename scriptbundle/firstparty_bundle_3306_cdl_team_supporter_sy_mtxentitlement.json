@@ -1,0 +1,346 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#callingcards_s3_atlantafaze_base_sy_mtxitem",
+            "itemid": "26278049"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s3_dallasempire_base_sy_mtxitem",
+            "itemid": "23957362"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s3_floridamutineers_base_sy_mtxitem",
+            "itemid": "18113496"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s3_lagorillas_base_sy_mtxitem",
+            "itemid": "29140976"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s3_lathieves_base_sy_mtxitem",
+            "itemid": "18849480"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s3_londonroyalravens_base_sy_mtxitem",
+            "itemid": "30095454"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s3_nyxl_base_sy_mtxitem",
+            "itemid": "17919001"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s3_opticchi_base_sy_mtxitem",
+            "itemid": "20953922"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s3_parislegion_base_sy_mtxitem",
+            "itemid": "33294999"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s3_rokkr_base_sy_mtxitem",
+            "itemid": "31616546"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s3_surge_base_sy_mtxitem",
+            "itemid": "28730174"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s3_torontoultra_base_sy_mtxitem",
+            "itemid": "29377932"
+        },
+        {
+            "var_4a4bc969": "#emblems_s3_atlantafaze_base_sy_mtxitem",
+            "itemid": "28737941"
+        },
+        {
+            "var_4a4bc969": "#emblems_s3_empire_base_sy_mtxitem",
+            "itemid": "19573816"
+        },
+        {
+            "var_4a4bc969": "#emblems_s3_floridamutineers_base_sy_mtxitem",
+            "itemid": "22664752"
+        },
+        {
+            "var_4a4bc969": "#emblems_s3_lagorrilas_base_sy_mtxitem",
+            "itemid": "29091876"
+        },
+        {
+            "var_4a4bc969": "#emblems_s3_lathieves_base_sy_mtxitem",
+            "itemid": "28307329"
+        },
+        {
+            "var_4a4bc969": "#emblems_s3_londonroyalravens_v2_base_sy_mtxitem",
+            "itemid": "27010501"
+        },
+        {
+            "var_4a4bc969": "#emblems_s3_newyorkemblem_base_sy_mtxitem",
+            "itemid": "21001190"
+        },
+        {
+            "var_4a4bc969": "#emblems_s3_opticchi_base_sy_mtxitem",
+            "itemid": "30136828"
+        },
+        {
+            "var_4a4bc969": "#emblems_s3_parislegion_base_sy_mtxitem",
+            "itemid": "23841768"
+        },
+        {
+            "var_4a4bc969": "#emblems_s3_rokkrope_base_sy_mtxitem",
+            "itemid": "29646651"
+        },
+        {
+            "var_4a4bc969": "#emblems_s3_surge_base_sy_mtxitem",
+            "itemid": "32855824"
+        },
+        {
+            "var_4a4bc969": "#emblems_s3_torontoultra_base_sy_mtxitem",
+            "itemid": "29179121"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_empire_crimsix_base_sy_mtxitem",
+            "itemid": "22052067"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_empire_huke_base_sy_mtxitem",
+            "itemid": "21747839"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_empire_illey_base_sy_mtxitem",
+            "itemid": "32588584"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_empire_shotzzy_base_sy_mtxitem",
+            "itemid": "30381943"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_faze_abezy_base_sy_mtxitem",
+            "itemid": "32256797"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_faze_arcitys_base_sy_mtxitem",
+            "itemid": "18061709"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_faze_cellium_base_sy_mtxitem",
+            "itemid": "29667075"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_faze_sib_base_sy_mtxitem",
+            "itemid": "24676652"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_faze_simp_base_sy_mtxitem",
+            "itemid": "33506397"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_guerrillas_apathy_base_sy_mtxitem",
+            "itemid": "24785727"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_guerrillas_assault_base_sy_mtxitem",
+            "itemid": "25552127"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_guerrillas_cheen_base_sy_mtxitem",
+            "itemid": "17777339"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_guerrillas_mental_base_sy_mtxitem",
+            "itemid": "22846032"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_guerrillas_silly_base_sy_mtxitem",
+            "itemid": "32931170"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_guerrillas_vivid_base_sy_mtxitem",
+            "itemid": "24907429"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_legion_aqua_base_sy_mtxitem",
+            "itemid": "30722986"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_legion_classic_base_sy_mtxitem",
+            "itemid": "23756411"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_legion_fire_base_sy_mtxitem",
+            "itemid": "27923502"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_legion_skrapz_base_sy_mtxitem",
+            "itemid": "29536751"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_mutineers_havok_base_sy_mtxitem",
+            "itemid": "19345956"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_mutineers_owakening_base_sy_mtxitem",
+            "itemid": "32343976"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_mutineers_skyz_base_sy_mtxitem",
+            "itemid": "30515357"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_mutineers_slacked_base_sy_mtxitem",
+            "itemid": "32367881"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_rokkr_accuracy_base_sy_mtxitem",
+            "itemid": "28057008"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_rokkr_attach_base_sy_mtxitem",
+            "itemid": "22155694"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_rokkr_majormaniak_base_sy_mtxitem",
+            "itemid": "26191207"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_rokkr_priestahh_base_sy_mtxitem",
+            "itemid": "30669370"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_royalravens_alexx_base_sy_mtxitem",
+            "itemid": "32510558"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_royalravens_dylan_base_sy_mtxitem",
+            "itemid": "32852185"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_royalravens_seany_base_sy_mtxitem",
+            "itemid": "22176464"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_royalravens_zer0_base_sy_mtxitem",
+            "itemid": "20103077"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_subliners_clayster_base_sy_mtxitem",
+            "itemid": "28513167"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_subliners_hydra_base_sy_mtxitem",
+            "itemid": "19714137"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_subliners_mack_base_sy_mtxitem",
+            "itemid": "20897898"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_subliners_zoomaa_base_sy_mtxitem",
+            "itemid": "31003357"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_surge_gunless_base_sy_mtxitem",
+            "itemid": "20001121"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_surge_loony_base_sy_mtxitem",
+            "itemid": "24486423"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_surge_nubzy_base_sy_mtxitem",
+            "itemid": "30002683"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_surge_octane_base_sy_mtxitem",
+            "itemid": "25604074"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_surge_prestinni_base_sy_mtxitem",
+            "itemid": "18820513"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_thieves_drazah_base_sy_mtxitem",
+            "itemid": "20818094"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_thieves_kenny_base_sy_mtxitem",
+            "itemid": "31964267"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_thieves_slasher_base_sy_mtxitem",
+            "itemid": "18676712"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_thieves_temp_base_sy_mtxitem",
+            "itemid": "23787168"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_thieves_tjhaly_base_sy_mtxitem",
+            "itemid": "31215575"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_ultra_bance_base_sy_mtxitem",
+            "itemid": "22424730"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_ultra_cammy_base_sy_mtxitem",
+            "itemid": "31585471"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_ultra_cleanx_base_sy_mtxitem",
+            "itemid": "28307993"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_ultra_insight_base_sy_mtxitem",
+            "itemid": "20634950"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_ultra_methodz_base_sy_mtxitem",
+            "itemid": "20395622"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_empire_felo_2_base_sy_mtxitem",
+            "itemid": "20394350"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_legion_theory_base_sy_mtxitem",
+            "itemid": "26650925"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_mutineers_neptune_base_sy_mtxitem",
+            "itemid": "23677198"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_rokkr_saintt_2_base_sy_mtxitem",
+            "itemid": "27519949"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_royalravens_afro_base_sy_mtxitem",
+            "itemid": "29073746"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_royalravens_parasite_base_sy_mtxitem",
+            "itemid": "26102655"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_subliners_asim_base_sy_mtxitem",
+            "itemid": "24263124"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_subliners_diamondcon_base_sy_mtxitem",
+            "itemid": "31429534"
+        }
+    ],
+    "itemname": "#hash_5ef8d6d4638d696b",
+    "var_247d9ed7": "firstparty_bundle_3306_cdl_team_supporter",
+    "var_208d76b5": "#hash_36423ef7c554d708",
+    "var_70f66e54": "#hash_64e18c3c0ea3a54a",
+    "name": "firstparty_bundle_3306_cdl_team_supporter_sy_mtxentitlement",
+    "var_a788fada": "#hash_68cafa759ab69b57",
+    "var_22f91505": "#hash_5512e7d79ac5bab9",
+    "var_566825be": "#hash_1606ea9f2df5819f",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "var_4e46b1b3": "#orbis",
+    "itemid": "23992613",
+    "var_a592ce5": 1
+}

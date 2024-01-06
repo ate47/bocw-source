@@ -1,0 +1,42 @@
+{
+    "option_dependencies": [
+        {
+            "var_1643d946": "0",
+            "var_6825bdb": "#pc_airborne_mantle_behavior",
+            "operator": "=="
+        }
+    ],
+    "options": [
+        {
+            "label": "#hash_6a489abface20fd6",
+            "value": "2"
+        },
+        {
+            "label": "#hash_2222dd50e5e35d4",
+            "value": "0"
+        },
+        {
+            "label": "#hash_704be4ba7ee1453a",
+            "value": "1"
+        }
+    ],
+    "var_dfedf08e": 1,
+    "var_d260763": "#hash_77307344bce4a4c",
+    "description": "#hash_12470726fa75bd66",
+    "var_60fcfffa": "#menu/on",
+    "var_9bc3be7": 1,
+    "var_4ced19ab": 1,
+    "var_10e01ad5": 1,
+    "var_71620d66": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "maxvalue": 1,
+    "name": "pc_grounded_mantle_behavior",
+    "displayname": "#hash_65d5189459f547cd",
+    "var_500458ac": 10,
+    "var_66faec87": 10,
+    "statname": "mantle_behaviour_ground_kbm",
+    "var_6f00a61a": 1.1,
+    "var_b7401319": "#menu/off"
+}

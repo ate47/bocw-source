@@ -129,7 +129,7 @@ function function_f0b81b80(var_14d21c2b) {
             }
         }
         flags = [];
-        foreach (isset in flagset) {
+        foreach (flag, isset in flagset) {
             if (isset) {
                 if (!isdefined(flags)) {
                     flags = [];
@@ -226,7 +226,7 @@ function showstartspawnpoints() {
             team_colors[#"team6"] = (1, 0.5, 0);
             team_colors[#"team7"] = (1, 0.752941, 0.796078);
             team_colors[#"team8"] = (0.545098, 0.270588, 0.0745098);
-            foreach (color in team_colors) {
+            foreach (key, color in team_colors) {
                 if (!isdefined(level.spawn_start[key])) {
                     continue;
                 }

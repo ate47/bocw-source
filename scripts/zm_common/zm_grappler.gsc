@@ -46,7 +46,7 @@ function private postinit() {
 // Checksum 0x6ebb669c, Offset: 0x278
 // Size: 0x9c
 function private function_5f5a3405() {
-    foreach (value in level.grapple_ids) {
+    foreach (key, value in level.grapple_ids) {
         if (value === 0) {
             level.grapple_ids[key] = 1;
             return key;

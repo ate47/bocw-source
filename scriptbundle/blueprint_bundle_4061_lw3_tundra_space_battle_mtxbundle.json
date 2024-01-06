@@ -1,0 +1,48 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#sniper_standard_bp_space_mtxitem",
+            "itemid": "18669300"
+        },
+        {
+            "var_4a4bc969": "#ar_accurate_bp_space_mtxitem",
+            "itemid": "28380266"
+        },
+        {
+            "var_4a4bc969": "#loot_smg_spray_bp_space_mtxitem",
+            "itemid": "28818969"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_space_helmet_mtxitem",
+            "itemid": "32086815"
+        },
+        {
+            "var_4a4bc969": "#reticle_107_mtxitem",
+            "itemid": "21877206"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s4_analog_spaceship_mtxitem",
+            "itemid": "33296299"
+        },
+        {
+            "var_4a4bc969": "#emblems_spacebattles_animated_mtxitem",
+            "itemid": "24214970"
+        },
+        {
+            "var_4a4bc969": "#callingcards_oldschooltvshow_animated_mtxitem",
+            "itemid": "21603076"
+        }
+    ],
+    "itemname": "#hash_588c3ff24029b3ad",
+    "var_375a1747": "#hash_4787d5dca105fb8f",
+    "var_579fd6c3": 45,
+    "name": "blueprint_bundle_4061_lw3_tundra_space_battle_mtxbundle",
+    "var_a788fada": "#hash_78e3f02c3db34208",
+    "var_22f91505": "#hash_4eac98c4586c2f0c",
+    "var_566825be": "#hash_2f7351888b3f5f4",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_6428abd80e42927c",
+    "var_db3e02ab": 2000,
+    "itemid": "19085289"
+}

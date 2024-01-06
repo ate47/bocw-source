@@ -1,0 +1,56 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_nic_pl_smuggler_whiskey_mtxitem",
+            "itemid": "20599399"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_nic_mtxitem",
+            "itemid": "22017161"
+        },
+        {
+            "var_4a4bc969": "#loot_smg_fastfire_bp_jefes_mtxitem",
+            "itemid": "24477129"
+        },
+        {
+            "var_4a4bc969": "#shotgun_pump_bp_jefe_mtxitem",
+            "itemid": "27059020"
+        },
+        {
+            "var_4a4bc969": "#melee_shovel_bp_jefe_mtxitem",
+            "itemid": "25492791"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_horseshoe_mtxitem",
+            "itemid": "27355601"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s4_analog_jefe_mtxitem",
+            "itemid": "27354408"
+        },
+        {
+            "var_4a4bc969": "#execution_049_mtxitem",
+            "itemid": "24461787"
+        },
+        {
+            "var_4a4bc969": "#emblems_s4_mostwanted_animation_mtxitem",
+            "itemid": "23653710"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s4_gunslinger_animation_mtxitem",
+            "itemid": "31892941"
+        }
+    ],
+    "itemname": "#hash_7a239b8467975789",
+    "var_375a1747": "#hash_7b6524c463c80ebf",
+    "var_579fd6c3": 27,
+    "name": "operator_bundle_4028_rivas_bandidta_mtxbundle",
+    "var_a788fada": "#hash_b1cbf8c97ac0c30",
+    "var_22f91505": "#hash_1a97a2a57489973f",
+    "var_566825be": "#hash_565e2d83a12987fc",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_614c118a9c8091fb",
+    "var_db3e02ab": 2000,
+    "itemid": "28214960"
+}

@@ -1,0 +1,26 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#ar_damage_bp_confront_pc_mtxitem",
+            "itemid": "31929960"
+        },
+        {
+            "var_4a4bc969": "#tr_longburst_bp_confront_pc_mtxitem",
+            "itemid": "19170448"
+        }
+    ],
+    "itemname": "#hash_3213449bf8a19922",
+    "description": "#hash_7f2525803c959169",
+    "var_87756eb4": 1,
+    "var_375a1747": "#hash_60412b0462ad10a",
+    "var_70f66e54": "#hash_438bcc04c18db692",
+    "name": "steam_confrontation_weapons_pack_mtxentitlement",
+    "var_90708fcf": "#hash_61bc3f955a2c2584",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "var_4e46b1b3": "#steam",
+    "itemid": "19189324",
+    "var_a592ce5": 1,
+    "var_7c846082": "#hash_39bc24db0771eb04"
+}

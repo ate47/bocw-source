@@ -1,0 +1,19 @@
+{
+    "damageevaded": "#hash_5f8249d541f98c44",
+    "var_922067c4": "scriptbundle",
+    "var_878e23d6": "#hash_24b07fd80cdf54ba",
+    "type": "mpdialog_scorestreak",
+    "damaged": "#hash_6e913fd71b345e33",
+    "killmultiple": "#hash_253e152161e247d7",
+    "var_a0f53e83": "#hash_487b81a4f90816eb",
+    "var_7106a6f6": "#hash_389c824966d7fe75",
+    "var_8aa830a5": "#hash_e991be127f3111",
+    "vmtype": "both",
+    "timecheck": "#hash_4f039e65cfe70eb2",
+    "name": "blops_pilot3_kls_attack_chopper",
+    "arrive": "#hash_37e5caf245b90537",
+    "timeout": "#hash_1e3373ccbc05f8e6",
+    "kill1": "#hash_30e51770d5b6c14",
+    "kill3": "#hash_30e53770d5b6f7a",
+    "kill2": "#hash_30e54770d5b712d"
+}

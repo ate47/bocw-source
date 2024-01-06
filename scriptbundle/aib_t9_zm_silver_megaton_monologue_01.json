@@ -1,0 +1,60 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "name": "init"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_6312e9d473d91faf",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "main"
+                }
+            ],
+            "lerptime": 1,
+            "model": "#spawner_zm_steiner_f",
+            "type": "actor",
+            "var_37ccbf49": 1,
+            "var_db255011": 1,
+            "name": "steiner"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_104051558cebfdbe",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "init"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_38d3cd7051e12dd9",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "main"
+                }
+            ],
+            "model": "#tag_origin",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "prop 2"
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "aib_t9_zm_silver_megaton_monologue_01",
+    "dontsync": 1,
+    "aligntarget": "tag_align_vogel_1_3",
+    "team": "any"
+}

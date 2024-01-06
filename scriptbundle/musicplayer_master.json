@@ -1,0 +1,17 @@
+{
+    "var_1276d496": [
+        {
+            "playlist": "#all_musicplayer_playlist"
+        },
+        {
+            "playlist": "#cp_musicplayer_playlist"
+        },
+        {
+            "playlist": "#mp_musicplayer_playlist"
+        },
+        {
+            "playlist": "#zm_musicplayer_playlist"
+        }
+    ],
+    "name": "musicplayer_master"
+}

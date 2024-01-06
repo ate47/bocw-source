@@ -1,0 +1,51 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_hudson_rock_mtxitem",
+            "itemid": "19531639"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_hudson_mtxitem",
+            "itemid": "22860165"
+        },
+        {
+            "var_4a4bc969": "#ar_slowfire_bp_rockcold_mtxitem",
+            "itemid": "20611474"
+        },
+        {
+            "var_4a4bc969": "#smg_capacity_bp_rockcold_mtxitem",
+            "itemid": "29230785"
+        },
+        {
+            "var_4a4bc969": "#execution_028_mtxitem",
+            "itemid": "20839162"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s5_digital_critical_kill_mtxitem",
+            "itemid": "24817476"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_cigar_glass_mtxitem",
+            "itemid": "20393112"
+        },
+        {
+            "var_4a4bc969": "#emblems_vts_final_08_s6_mtxitem",
+            "itemid": "17884991"
+        },
+        {
+            "var_4a4bc969": "#callingcards_beamed_2_s6_mtxitem",
+            "itemid": "23562556"
+        }
+    ],
+    "itemname": "#hash_b61847bc43efcda",
+    "var_375a1747": "#hash_57b00a6e878200e8",
+    "name": "operator_bundle_7014_hudson_rock_cold_tracer_mtxbundle",
+    "var_a788fada": "#hash_3db520ce952bc65",
+    "var_22f91505": "#hash_1d3ae071fbd33ab",
+    "var_566825be": "#hash_eed8fe6f0daf1fd",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_3c0819d6dd70542f",
+    "var_db3e02ab": 2000,
+    "itemid": "31498473"
+}

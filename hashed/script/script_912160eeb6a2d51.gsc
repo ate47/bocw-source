@@ -128,7 +128,7 @@ function function_c08727b4() {
     if (self == level) {
         return (isdefined(level.stealth.var_c08727b4) && level.stealth.var_c08727b4);
     }
-    return isdefined(self.var_eba34d84) && self.var_eba34d84;
+    return isdefined(self.threatsight) && self.threatsight;
 }
 
 // Namespace namespace_6c0cd084/namespace_214c1803
@@ -151,24 +151,24 @@ function function_13bd3fad(statename) {
     }
     switch (statename) {
     case #"hidden":
-        self.var_eba34d84 = 1;
+        self.threatsight = 1;
         self.stealth.var_683a9557 = undefined;
         self.stealth.var_2e86232e = undefined;
         break;
     case #"investigate":
-        self.var_eba34d84 = 1;
+        self.threatsight = 1;
         break;
     case #"hash_5689f41e8c0ad00":
     case #"combat_hunt":
-        self.var_eba34d84 = 1;
+        self.threatsight = 1;
         break;
     case #"blind":
         break;
     case #"hash_67ac95dafb7278ea":
-        self.var_eba34d84 = 0;
+        self.threatsight = 0;
         break;
     case #"death":
-        self.var_eba34d84 = 0;
+        self.threatsight = 0;
         break;
     case #"hash_defdefdefdefdef0":
         /#
@@ -184,7 +184,7 @@ function function_13bd3fad(statename) {
     if (statename != "death") {
         self function_3c3f1684(statename);
     }
-    if (self.var_eba34d84) {
+    if (self.threatsight) {
         self thread function_3a739b35();
     }
 }
@@ -498,7 +498,7 @@ function function_ca2b6f35() {
         now = gettime();
         remove = [];
         delta = level.var_53ad6e22[#"hash_558c10dc4ef11317"] * waittime;
-        foreach (var_ece722e0 in self.stealth.var_6232c5c) {
+        foreach (key, var_ece722e0 in self.stealth.var_6232c5c) {
             if (now < var_ece722e0.end && issentient(var_ece722e0.ent) && !self cansee(var_ece722e0.ent)) {
                 var_c24fdf79 = self function_a884a736(var_ece722e0.ent);
                 if (isplayer(var_ece722e0.ent)) {
@@ -598,7 +598,7 @@ function function_40733f9f() {
                     }
                 }
             }
-            if (entity.alertlevel == "combat" || !entity.var_eba34d84) {
+            if (entity.alertlevel == "combat" || !entity.threatsight) {
                 var_6330dd7b = 1;
             }
         }

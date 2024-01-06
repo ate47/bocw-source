@@ -1,0 +1,178 @@
+{
+    "var_2be3941a": [
+        {
+            "unlockdescription": "#hash_1488b821812f67af",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_47fca50269df283b",
+            "var_b4ab831a": "#hash_6d811293dd604103",
+            "var_57554d43": 1,
+            "var_270fa547": "#weapons_mastery"
+        },
+        {
+            "unlockdescription": "#hash_12b6e1062094a4f7",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_47c9900269b3aaf3",
+            "var_b4ab831a": "#hash_6d4e0d93dd34deeb",
+            "var_270fa547": "#weapons_mastery"
+        },
+        {
+            "unlockdescription": "#hash_4dd786986af52964",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_4c9f91130128f8a5",
+            "var_b4ab831a": "#hash_5d77638e4dc29b90",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_7f0ce2a2e0a76e67"
+        },
+        {
+            "unlockdescription": "#hash_7644b5f06538b404",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_4ccb8413014e1d79",
+            "var_b4ab831a": "#hash_5dc5808e4e04ee28",
+            "var_270fa547": "#hash_7f0ce2a2e0a76e67"
+        },
+        {
+            "unlockdescription": "#hash_541e695a3a0634da",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_46ed1593bc948e5a",
+            "var_b4ab831a": "#hash_37249823b8317012",
+            "stattype": "#weapon_assault",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_7fce4a14fec05da1"
+        },
+        {
+            "unlockdescription": "#hash_5057a7d3afa8f04e",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_46c11a93bc6f5bee",
+            "var_b4ab831a": "#hash_36f8ad23b80c58d6",
+            "stattype": "#weapon_assault",
+            "var_270fa547": "#hash_7fce4a14fec05da1"
+        },
+        {
+            "unlockdescription": "#hash_66036262325ba404",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_227b284bffd8ecad",
+            "var_b4ab831a": "#hash_40ee3643851d5c95",
+            "stattype": "#weapon_smg",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_7fce4a14fec05da1"
+        },
+        {
+            "unlockdescription": "#hash_810848b65cf84cc",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_223b0b4bffa2d771",
+            "var_b4ab831a": "#hash_40ae494384e798e9",
+            "stattype": "#weapon_smg",
+            "var_270fa547": "#hash_7fce4a14fec05da1"
+        },
+        {
+            "unlockdescription": "#hash_5333624af9185521",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_65b5b2614e7ed7bc",
+            "var_b4ab831a": "#hash_f9684c07fbbcf74",
+            "stattype": "#weapon_lmg",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_7fce4a14fec05da1"
+        },
+        {
+            "unlockdescription": "#hash_5aff22925ceb57d9",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_65e8a7614eaa1ea4",
+            "var_b4ab831a": "#hash_fc969c07fe6fb2c",
+            "stattype": "#weapon_lmg",
+            "var_270fa547": "#hash_7fce4a14fec05da1"
+        },
+        {
+            "unlockdescription": "#hash_22b14603d3ebbf74",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_5c059fbb5bdfd595",
+            "var_b4ab831a": "#hash_22e8f1b6370a0f1d",
+            "stattype": "#weapon_sniper",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_7fce4a14fec05da1"
+        },
+        {
+            "unlockdescription": "#hash_59bbce904a3d297c",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_5bc5b2bb5baa11e9",
+            "var_b4ab831a": "#hash_2314f4b6372f4f21",
+            "stattype": "#weapon_sniper",
+            "var_270fa547": "#hash_7fce4a14fec05da1"
+        },
+        {
+            "unlockdescription": "#hash_26dd374945409583",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_14c6f19d54e3ea4a",
+            "var_b4ab831a": "#hash_2b6132bc99a04652",
+            "stattype": "#weapon_cqb",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_7fce4a14fec05da1"
+        },
+        {
+            "unlockdescription": "#hash_611a43a0666dfbd7",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_1507d69d551b535e",
+            "var_b4ab831a": "#hash_2b3447bc99797c16",
+            "stattype": "#weapon_cqb",
+            "var_270fa547": "#hash_7fce4a14fec05da1"
+        },
+        {
+            "unlockdescription": "#hash_5c788465d3198936",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_70af410d52098c52",
+            "var_b4ab831a": "#hash_797b6774c2d41aaa",
+            "stattype": "#weapon_tactical",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_7fce4a14fec05da1"
+        },
+        {
+            "unlockdescription": "#hash_17b3a2d661fa435a",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_7082560d51e2c216",
+            "var_b4ab831a": "#hash_79bc4c74c30b83be",
+            "stattype": "#weapon_tactical",
+            "var_270fa547": "#hash_7fce4a14fec05da1"
+        },
+        {
+            "unlockdescription": "#hash_5a81c37c9395a738",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_3cd7ac42b3c557d5",
+            "var_b4ab831a": "#hash_559a0349fb853ad",
+            "stattype": "#weapon_pistol",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_7fce4a14fec05da1"
+        },
+        {
+            "unlockdescription": "#hash_2a82b8fbabdb2cf0",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_3c96bf42b38de129",
+            "var_b4ab831a": "#hash_51983349f823e71",
+            "stattype": "#weapon_pistol",
+            "var_270fa547": "#hash_7fce4a14fec05da1"
+        },
+        {
+            "unlockdescription": "#hash_188f5c13c48ef817",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_70a7cceb7d2dd1f",
+            "var_b4ab831a": "#hash_734a30df0bd7effe",
+            "stattype": "#weapon_launcher",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_7fce4a14fec05da1"
+        },
+        {
+            "unlockdescription": "#hash_218ec5c92c6ef9cb",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_6bc6fceb790a5b7",
+            "var_b4ab831a": "#hash_73031ddf0b9bcd12",
+            "stattype": "#weapon_launcher",
+            "var_270fa547": "#hash_7fce4a14fec05da1"
+        }
+    ],
+    "var_922067c4": "SCRIPTBUNDLE",
+    "type": "challengerewards",
+    "var_5f0dd656": 4,
+    "var_4e39981b": 2,
+    "var_faec2a7f": 2,
+    "name": "challengerewards_weapon_stickers",
+    "sessionmode": "-1",
+    "var_91a1cb16": 2
+}

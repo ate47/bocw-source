@@ -24,8 +24,8 @@ function private autoexec __init__system__() {
 // Checksum 0xe3682985, Offset: 0x160
 // Size: 0x74
 function private function_70a657d8() {
-    spawner::add_archetype_spawn_function(#"hash_9f6bc1960ff4912", &function_ce3b36df);
-    spawner::function_89a2cd87(#"hash_9f6bc1960ff4912", &function_e7ad996);
+    spawner::add_archetype_spawn_function(#"raz", &function_ce3b36df);
+    spawner::function_89a2cd87(#"raz", &function_e7ad996);
     function_c7bb75d5();
 }
 

@@ -1,0 +1,16 @@
+{
+    "maxtargetplayerinfluence": 400,
+    "maxenemyinfluence": -800,
+    "var_922067c4": "scriptbundle",
+    "damagearearadius": 400,
+    "maxdistancefromtargetplayer": 1000,
+    "type": "squadspawnsettings",
+    "mindistancefromtargetplayer": 100,
+    "vmtype": "both",
+    "name": "default_squadspawn_settings",
+    "maxplayerinfluencerdistance": 2500,
+    "damagearealifetimems": 3000,
+    "mindistancefromenemyplayer": 1500,
+    "maxfriendlyinfluence": 200,
+    "var_9b27f322": -750
+}

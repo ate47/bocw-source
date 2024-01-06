@@ -122,7 +122,7 @@ function function_cc2b72fd(var_a30478b5, direction) {
         assert(isdefined(level.stealth.var_1ffc1de6[var_a30478b5]));
     #/
     priority = level.stealth.var_1ffc1de6[var_a30478b5] + direction;
-    foreach (var_7b0f2b7f in level.stealth.var_1ffc1de6) {
+    foreach (var_64cba2ea, var_7b0f2b7f in level.stealth.var_1ffc1de6) {
         if (var_7b0f2b7f == priority) {
             return var_64cba2ea;
         }
@@ -229,7 +229,7 @@ function function_f205a29() {
     while (1) {
         self flag::wait_till("stealth_enabled");
         var_7f729179 = undefined;
-        var_7f729179 = self waittill(#"hash_6db2b95877884141");
+        var_7f729179 = self waittill(#"ai_events");
         waittillframeend();
         if (!self flag::get("stealth_enabled")) {
             continue;

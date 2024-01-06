@@ -1,0 +1,41 @@
+{
+    "defaultloadouts": [
+        {
+            "var_4c0d0c4b": -1,
+            "customclassname": "#class/slot1",
+            "var_26b5c8ef": -1,
+            "primary": "#ar_accurate_t8",
+            "secondary": "#shotgun_pump_t8"
+        },
+        {
+            "var_4c0d0c4b": -1,
+            "customclassname": "#class/slot2",
+            "var_26b5c8ef": -1,
+            "primary": "#smg_standard_t8",
+            "secondary": "#pistol_standard_t8"
+        },
+        {
+            "var_4c0d0c4b": -1,
+            "customclassname": "#class/slot3",
+            "var_26b5c8ef": -1,
+            "primary": "#sniper_quickscope_t8",
+            "secondary": "#pistol_standard_t8"
+        },
+        {
+            "var_4c0d0c4b": -1,
+            "customclassname": "#class/slot4",
+            "var_26b5c8ef": -1,
+            "primary": "#smg_standard_t8",
+            "secondary": "#shotgun_pump_t8"
+        },
+        {
+            "var_4c0d0c4b": -1,
+            "customclassname": "#class/slot5",
+            "var_26b5c8ef": -1,
+            "primary": "#lmg_standard_t8",
+            "secondary": "#pistol_standard_t8"
+        }
+    ],
+    "name": "cp_default_loadouts",
+    "sessionmode": "cp"
+}

@@ -173,18 +173,18 @@ function function_ef2758f9() {
     self.zombie_arms_position = "up";
     self setavoidancemask("avoid none");
     self.zombie_move_speed = isdefined(level.var_8cff5775.var_13e8f9c9) ? level.var_8cff5775.var_13e8f9c9 : "run";
-    var_b9264d0e = namespace_fb2125f::function_f1ca69a7("zombietron_explosive_barrel", undefined, self.origin, self.angles, 0);
-    if (isdefined(var_b9264d0e)) {
-        var_b9264d0e notsolid();
-        var_b9264d0e enablelinkto();
+    barrel = namespace_fb2125f::function_f1ca69a7("zombietron_explosive_barrel", undefined, self.origin, self.angles, 0);
+    if (isdefined(barrel)) {
+        barrel notsolid();
+        barrel enablelinkto();
         self enablelinkto();
-        var_b9264d0e disableaimassist();
-        var_b9264d0e.carried.var_b9264d0e = 1;
-        var_b9264d0e.takedamage.var_b9264d0e = 1;
-        var_b9264d0e.health.var_b9264d0e = 99999;
-        var_b9264d0e linkto(self, "j_head", vectorscale((0, 0, 1), 15), vectorscale((1, 0, 0), 90));
-        var_b9264d0e thread function_bd3de922(self);
-        var_b9264d0e thread namespace_ec06fe4a::function_52afe5df(120);
+        barrel disableaimassist();
+        barrel.carried.barrel = 1;
+        barrel.takedamage.barrel = 1;
+        barrel.health.barrel = 99999;
+        barrel linkto(self, "j_head", vectorscale((0, 0, 1), 15), vectorscale((1, 0, 0), 90));
+        barrel thread function_bd3de922(self);
+        barrel thread namespace_ec06fe4a::function_52afe5df(120);
     }
 }
 

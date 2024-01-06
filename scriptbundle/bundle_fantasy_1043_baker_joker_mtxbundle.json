@@ -1,0 +1,55 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_navyseal_clown_mtxitem",
+            "itemid": "30334466"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_navy_seal_mtxitem",
+            "itemid": "20822559"
+        },
+        {
+            "var_4a4bc969": "#tr_longburst_bp_jokerh_mtxitem",
+            "itemid": "22176746"
+        },
+        {
+            "var_4a4bc969": "#shotgun_semiauto_bp_jokerh_mtxitem",
+            "itemid": "32511892"
+        },
+        {
+            "var_4a4bc969": "#callingcards_joker_mtxitem",
+            "itemid": "27256698"
+        },
+        {
+            "var_4a4bc969": "#execution_133_mtxitem",
+            "itemid": "22879253"
+        },
+        {
+            "var_4a4bc969": "#reticle_35_mtxitem",
+            "itemid": "19694409"
+        },
+        {
+            "var_4a4bc969": "#emblems_joker_flipbook_mtxitem",
+            "itemid": "24169409"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_happy_grenade_mtxitem",
+            "itemid": "30199713"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_joker_mtxitem",
+            "itemid": "26360126"
+        }
+    ],
+    "itemname": "#hash_3ace1cbfebf6b117",
+    "var_375a1747": "#hash_799a219feffb9589",
+    "var_579fd6c3": 45,
+    "name": "bundle_fantasy_1043_baker_joker_mtxbundle",
+    "var_22f91505": "#hash_1fc95049127d26d1",
+    "var_566825be": "#hash_6b1b50ecfb5be3a2",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_496ee9bafa77a9d1",
+    "var_db3e02ab": 2000,
+    "itemid": "29034428"
+}

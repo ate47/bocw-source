@@ -1957,15 +1957,15 @@ function function_f9a67ba4(var_bb671993) {
     switch (var_bb671993) {
     case 0:
         s_chest = struct::get("waw_chest_loc_01", "targetname");
-        function_c99bf6b8(0, s_chest, "zm_tungsten_world_at_war_chest_small", #"p9_fxanim_zm_gp_chest_01_sml_low_xmodel", #"hash_5815cc7ba68d56e", 1);
+        function_c99bf6b8(0, s_chest, "zm_tungsten_world_at_war_chest_small", #"p9_fxanim_zm_gp_chest_01_sml_low_xmodel", #"p9_fxanim_zm_gp_chest_01_sml_bundle", 1);
         break;
     case 1:
         s_chest = struct::get("waw_chest_loc_02", "targetname");
-        function_c99bf6b8(1, s_chest, "zm_tungsten_world_at_war_chest_medium", #"p9_fxanim_zm_gp_chest_01_med_low_xmodel", #"hash_7d3c5ac38ba069f0", 1);
+        function_c99bf6b8(1, s_chest, "zm_tungsten_world_at_war_chest_medium", #"p9_fxanim_zm_gp_chest_01_med_low_xmodel", #"p9_fxanim_zm_gp_chest_01_med_bundle", 1);
         break;
     case 2:
         s_chest = struct::get("waw_chest_loc_03", "targetname");
-        function_c99bf6b8(2, s_chest, "zm_tungsten_world_at_war_chest", #"p9_fxanim_zm_gp_chest_01_lrg_low_xmodel", #"hash_473df02427c669ff", 2);
+        function_c99bf6b8(2, s_chest, "zm_tungsten_world_at_war_chest", #"p9_fxanim_zm_gp_chest_01_lrg_low_xmodel", #"p9_fxanim_zm_gp_chest_01_lrg_bundle", 2);
         break;
     }
 }
@@ -2095,7 +2095,7 @@ function function_ec736a99() {
             var_6a59c435.var_7fa2b50b.var_6a59c435 = self getweaponammoclip(var_5df29481.dualwieldweapon);
         }
     }
-    var_37e14db3 = {#var_eef5c70e:var_4ffaff67, #var_5df29481:var_6a59c435, #weapon2:var_c6dd36cf, #weapon1:var_61bf1830, #lethal:var_312d49ec, #tactical:var_fe58c446, #scorestreak:var_16f12c31, #var_6032cf15:self.armortier, #armor:self.armor};
+    var_37e14db3 = {#fieldupgrade:var_4ffaff67, #var_5df29481:var_6a59c435, #weapon2:var_c6dd36cf, #weapon1:var_61bf1830, #lethal:var_312d49ec, #tactical:var_fe58c446, #scorestreak:var_16f12c31, #var_6032cf15:self.armortier, #armor:self.armor};
     self.var_7fac85b6 = var_37e14db3;
 }
 
@@ -2159,13 +2159,13 @@ function function_ceb0a340() {
             switch (var_12a9e30a.var_6032cf15) {
             case 1:
             case #"hash_defdefdefdefdef0":
-                var_65b6e624 = #"hash_35675bbd363f934a";
+                var_65b6e624 = #"armor_item_lv1_t9_sr";
                 break;
             case 2:
-                var_65b6e624 = #"hash_7777b2b5970da847";
+                var_65b6e624 = #"armor_item_lv2_t9_sr";
                 break;
             case 3:
-                var_65b6e624 = #"hash_7bc70addda19ca00";
+                var_65b6e624 = #"armor_item_lv3_t9_sr";
                 break;
             }
             self namespace_dd7e54e3::give_armor(var_65b6e624);
@@ -2184,10 +2184,10 @@ function function_ceb0a340() {
         var_20131ecc = item_world_util::get_itemtype(tactical.var_a6762160);
         self namespace_1cc7b406::give_item(var_20131ecc, tactical.count, 1);
     }
-    var_eef5c70e = var_12a9e30a.var_eef5c70e;
-    if (var_eef5c70e.var_bd027dd9 != 32767) {
-        var_8886adf6 = item_world_util::get_itemtype(var_eef5c70e.var_a6762160);
-        self namespace_1b527536::function_6457e4cd(var_8886adf6, var_eef5c70e.count);
+    fieldupgrade = var_12a9e30a.fieldupgrade;
+    if (fieldupgrade.var_bd027dd9 != 32767) {
+        var_8886adf6 = item_world_util::get_itemtype(fieldupgrade.var_a6762160);
+        self namespace_1b527536::function_6457e4cd(var_8886adf6, fieldupgrade.count);
     }
     scorestreak = var_12a9e30a.scorestreak;
     if (scorestreak.var_bd027dd9 != 32767) {

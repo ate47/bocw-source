@@ -1,0 +1,16 @@
+{
+    "weakpoints": [
+        {
+            "var_3765e777": 1,
+            "type": "#weakpoint",
+            "var_51e8b151": "tag_weakpoint_mouth",
+            "activebydefault": 1,
+            "var_b7fbe51b": 12,
+            "health": 1
+        }
+    ],
+    "var_922067c4": "scriptbundle",
+    "model": "#hash_70d3e417c1bd921f",
+    "type": "characterweakpointsettings",
+    "name": "c_t9_mimic_weakpoint_def"
+}

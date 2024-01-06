@@ -1,0 +1,71 @@
+{
+    "itemlist": [
+        {
+            "minweight": 100,
+            "var_a6762160": "#level_3_resource_list",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#level_4_resource_list",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#zm_equipment_list",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#zm_equipment_list",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#level_4_bonus_item_list",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#gold_chest_guns_level_4",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#armor_shard_item_sr",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#level_4_gun_list",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#gold_chest_guns_level_4",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#level_4_gun_list",
+            "maxweight": 100,
+            "available": 1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "boss_zombie_level2_parent_list",
+    "var_fde72c94": 100
+}

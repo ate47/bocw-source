@@ -87,12 +87,12 @@ function timeuntilspawn(includeteamkilldelay) {
     var_c04d33cd = isdefined(self.var_c04d33cd) ? self.var_c04d33cd : 0;
     self.var_c04d33cd = undefined;
     if (is_true(self.hasspawned)) {
-        var_28f1fc71 = namespace_1332002f::function_fd0f3019(self);
+        var_28f1fc71 = squad_spawn::function_fd0f3019(self);
         if (var_28f1fc71) {
             if (is_true(self.var_20250438)) {
                 return 0;
             }
-            if (namespace_1332002f::function_d072f205()) {
+            if (squad_spawn::function_d072f205()) {
                 if (self clientfield::get_player_uimodel("hudItems.squadSpawnSquadWipe")) {
                     return var_28f1fc71;
                 }
@@ -136,7 +136,7 @@ function timeuntilspawn(includeteamkilldelay) {
 // Checksum 0x3bbb3dd4, Offset: 0x7e8
 // Size: 0xb0
 function allteamshaveexisted() {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (!teams::function_9dd75dad(team)) {
             return 0;
         }
@@ -500,7 +500,7 @@ function spawnplayer() {
         self function_8a945c0e(1);
         self function_8b8a321a(1);
     }
-    self namespace_1332002f::spawn_player();
+    self squad_spawn::spawn_player();
     profileNamedStart(#"");
     if (gamestate::is_state(#"pregame")) {
         player::function_a074b96f(1);
@@ -871,7 +871,7 @@ function spawnqueuedclient(dead_player_team, killer) {
         spawnqueuedclientonteam(spawn_team);
         return;
     }
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (team == dead_player_team) {
             continue;
         }
@@ -890,7 +890,7 @@ function allteamsnearscorelimit() {
     if (level.scorelimit <= 1) {
         return 0;
     }
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (!(game.stat[#"teamscores"][team] >= level.scorelimit - 1)) {
             return 0;
         }
@@ -1006,8 +1006,8 @@ function waitandspawnclient(timealreadypassed) {
     }
     spawnedasspectator = 0;
     userespawntime = isdefined(timealreadypassed) ? 1 : 0;
-    if (namespace_1332002f::function_d072f205()) {
-        thread namespace_1332002f::function_5f24fd47(self, userespawntime);
+    if (squad_spawn::function_d072f205()) {
+        thread squad_spawn::function_5f24fd47(self, userespawntime);
         self thread respawn_asspectator(self.origin + vectorscale((0, 0, 1), 60), self.angles);
         spawnedasspectator = 1;
     }
@@ -1043,7 +1043,7 @@ function waitandspawnclient(timealreadypassed) {
         util::function_5355d311();
     }
     if (timeuntilspawn > 0) {
-        var_3ffa560b = namespace_1332002f::function_d072f205() && self clientfield::get_player_uimodel("hudItems.squadSpawnSquadWipe");
+        var_3ffa560b = squad_spawn::function_d072f205() && self clientfield::get_player_uimodel("hudItems.squadSpawnSquadWipe");
         if (!var_3ffa560b) {
             if (level.playerqueuedrespawn) {
                 hud_message::setlowermessage(game.strings[#"you_will_spawn"], timeuntilspawn);
@@ -1076,7 +1076,7 @@ function waitandspawnclient(timealreadypassed) {
             if (timealreadypassed >= timeuntilspawn) {
                 self.var_c04d33cd = 1;
             }
-            var_3ffa560b = namespace_1332002f::function_d072f205() && self clientfield::get_player_uimodel("hudItems.squadSpawnSquadWipe");
+            var_3ffa560b = squad_spawn::function_d072f205() && self clientfield::get_player_uimodel("hudItems.squadSpawnSquadWipe");
             var_239ada2f = timeuntilspawn(0);
             if (!var_3ffa560b) {
                 if (var_239ada2f > timealreadypassed) {
@@ -1104,10 +1104,10 @@ function waitandspawnclient(timealreadypassed) {
         self notify(#"hash_4651029f46118bc1");
     }
     if (function_b142f8d4()) {
-        if (namespace_1332002f::function_d072f205()) {
+        if (squad_spawn::function_d072f205()) {
             self clientfield::set_player_uimodel("hudItems.squadSpawnRespawnStatus", 1);
             hud_message::clearlowermessage();
-            self namespace_1332002f::function_6a7e8977();
+            self squad_spawn::function_6a7e8977();
         } else {
             hud_message::setlowermessage(game.strings[#"press_to_spawn"]);
         }
@@ -1118,7 +1118,7 @@ function waitandspawnclient(timealreadypassed) {
         self waitrespawnorsafespawnbutton();
     }
     self.waitingtospawn = 0;
-    if (!namespace_1332002f::function_d072f205()) {
+    if (!squad_spawn::function_d072f205()) {
         self hud_message::clearlowermessage();
     }
     self.wavespawnindex = undefined;
@@ -1158,8 +1158,8 @@ function private function_b142f8d4() {
 function waitrespawnorsafespawnbutton() {
     self endon(#"disconnect", #"end_respawn");
     while (1) {
-        if (namespace_1332002f::function_d072f205()) {
-            if (self namespace_1332002f::function_2ffd5f18()) {
+        if (squad_spawn::function_d072f205()) {
+            if (self squad_spawn::function_2ffd5f18()) {
                 break;
             }
         } else if (!is_true(self.var_20250438)) {

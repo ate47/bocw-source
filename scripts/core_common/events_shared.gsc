@@ -75,7 +75,7 @@ function add_round_score_event(score, notify_string, client_notify_string) {
 // Checksum 0xad5bb174, Offset: 0x318
 // Size: 0xac
 function any_team_reach_score(score) {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (game.stat[#"teamscores"][team] >= score) {
             return 1;
         }

@@ -470,7 +470,7 @@ function private play_potm_on_player_internal(event) {
     self.archivetime = killcamoffset;
     self.killcamlength = killcamlength;
     self.psoffsettime = offsettime;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         self allowspectateteam(team, 1);
     }
     self allowspectateteam("freelook", 1);

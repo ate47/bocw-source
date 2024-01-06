@@ -402,7 +402,7 @@ function function_e3bc3dc9(action) {
     }
     while (1) {
         waitframe(1);
-        if (isdefined(self.var_2e402479.victim[action.name]) && self.var_2e402479.var_f70bfde7) {
+        if (isdefined(self.var_2e402479.victim[action.name]) && self.var_2e402479.allow_melee) {
             self function_db07e398(action.name, undefined);
         }
         if (level flag::get("hold_context_melee")) {
@@ -457,7 +457,7 @@ function function_e3bc3dc9(action) {
             self function_db07e398(action.name, undefined);
             self function_7a061b23(1, action.name);
         }
-        foreach (value in self.var_2e402479.victim) {
+        foreach (key, value in self.var_2e402479.victim) {
             if (!isdefined(value)) {
                 self function_db07e398(key, undefined);
             }
@@ -959,7 +959,7 @@ function function_7a061b23(enabled, var_116dfc70) {
     if (!isdefined(self.var_2e402479.var_9871533)) {
         self.var_2e402479.var_9871533 = [];
         self.var_2e402479.var_d4da26de = 0;
-        self.var_2e402479.var_f70bfde7 = 1;
+        self.var_2e402479.allow_melee = 1;
     }
     if (isdefined(var_116dfc70) && !isdefined(self.var_2e402479.var_9871533[var_116dfc70])) {
         /#
@@ -981,7 +981,7 @@ function function_7a061b23(enabled, var_116dfc70) {
         self.var_2e402479.var_d4da26de = self.var_2e402479.var_d4da26de & var_48af221d;
     }
     var_b381ae79 = !self.var_2e402479.var_d4da26de;
-    self.var_2e402479.var_f70bfde7 = var_b381ae79;
+    self.var_2e402479.allow_melee = var_b381ae79;
     var_32d84328 = var_b381ae79;
     var_9463444 = self getcurrentweapon();
     if (var_9463444.name == #"knife_loadout" && is_true(self.var_31df4786)) {

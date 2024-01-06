@@ -1,0 +1,38 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_woods_fisherman_mtxitem",
+            "itemid": "24980795"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_woods_mtxitem",
+            "itemid": "28004165"
+        },
+        {
+            "var_4a4bc969": "#ar_fastfire_bp_sterile_mtxitem",
+            "itemid": "29476412"
+        },
+        {
+            "var_4a4bc969": "#emblems_merchantmarine_mtxitem",
+            "itemid": "19149887"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_boat_tactical_raft_mpx_fisherman_mtxitem",
+            "itemid": "25911833"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_fish_stick_hook_mtxitem",
+            "itemid": "25587004"
+        }
+    ],
+    "itemname": "#hash_4cd0f94c0dd5c3a",
+    "var_375a1747": "#hash_520a1a49426b29e4",
+    "name": "bundle_operator_1036_woods_merchant_marine_mtxbundle",
+    "var_22f91505": "#hash_4b0f443bf1a8bd15",
+    "var_566825be": "#hash_6463c8247211172d",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_328339a9b71be0cd",
+    "var_db3e02ab": 2000,
+    "itemid": "24481283"
+}

@@ -1,0 +1,46 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_5429275f1958894a",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "open"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_71263c35b893e076",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "close"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_19064200f67ae7e1",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "open_close"
+                }
+            ],
+            "model": "#hash_334445b2169a33a9",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "prop 1"
+        }
+    ],
+    "scenetype": "fxanim",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "p9_usa_large_ammo_crate_01_bundle_zm",
+    "dontsync": 1,
+    "team": "any"
+}

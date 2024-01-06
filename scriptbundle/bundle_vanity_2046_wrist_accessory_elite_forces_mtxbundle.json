@@ -1,0 +1,40 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s2_digital_sforce_mtxitem",
+            "itemid": "27334192"
+        },
+        {
+            "var_4a4bc969": "#knife_combat_bp_bananas_mtxitem",
+            "itemid": "27323885"
+        },
+        {
+            "var_4a4bc969": "#emblems_softouch_17_animated_mtxitem",
+            "itemid": "28648652"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_eliteforces_mtxitem",
+            "itemid": "23222896"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_parachute_soldier_mtxitem",
+            "itemid": "22486035"
+        },
+        {
+            "var_4a4bc969": "#callingcards_dropin_153_mtxitem",
+            "itemid": "25497101"
+        }
+    ],
+    "itemname": "#hash_50f1d1cdb8aa9508",
+    "var_375a1747": "#hash_fc56ce10027a406",
+    "var_579fd6c3": 25,
+    "name": "bundle_vanity_2046_wrist_accessory_elite_forces_mtxbundle",
+    "var_a788fada": "#hash_51d5f23371d682ed",
+    "var_22f91505": "#hash_21c1213eca3f6b79",
+    "var_566825be": "#hash_4633c58976cb6325",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_7ad51da3e238c7b9",
+    "var_db3e02ab": 2000,
+    "itemid": "29450220"
+}

@@ -1,0 +1,48 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#smg_heavy_bp_dinotoy_mtxitem",
+            "itemid": "31029990"
+        },
+        {
+            "var_4a4bc969": "#special_grenadelauncher_bp_oozeball_mtxitem",
+            "itemid": "29756897"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s1_digital_first_spy_01_mtxitem",
+            "itemid": "31331806"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_ru_heli_gunship_hind_mpx_oozie_mtxitem",
+            "itemid": "23551026"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_action_fig_mtxitem",
+            "itemid": "23599074"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_oozie_mtxitem",
+            "itemid": "29478040"
+        },
+        {
+            "var_4a4bc969": "#callingcards_oozie_mtxitem",
+            "itemid": "21276538"
+        },
+        {
+            "var_4a4bc969": "#vehiclehorn_treyarch_mtxitem",
+            "itemid": "27906979"
+        }
+    ],
+    "itemname": "#hash_23fd90f8adde223b",
+    "var_c919e644": "#hash_7856aeaedca9aebf",
+    "var_375a1747": "#hash_2a1154fa04478d89",
+    "name": "bundle_mastercraft_1042_smg_heavy_oozie_alt_mtxbundle",
+    "var_a788fada": "#hash_29817152caafc596",
+    "var_22f91505": "#hash_487db196844d84a2",
+    "var_566825be": "#hash_1576c7204b514c7a",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_13ac24f42bf4591e",
+    "var_db3e02ab": 2000,
+    "itemid": "19355819"
+}

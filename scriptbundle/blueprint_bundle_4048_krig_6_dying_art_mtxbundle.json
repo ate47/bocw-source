@@ -1,0 +1,31 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_accurate_bp_royal_mtxitem",
+            "itemid": "22510590"
+        },
+        {
+            "var_4a4bc969": "#emblems_dyingart_mtxitem",
+            "itemid": "25904123"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_bullet_mtxitem",
+            "itemid": "19546557"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_dyingart_mtxitem",
+            "itemid": "30723682"
+        }
+    ],
+    "itemname": "#hash_58549830390a6d37",
+    "var_375a1747": "#hash_d611d3ff40fb0f9",
+    "name": "blueprint_bundle_4048_krig_6_dying_art_mtxbundle",
+    "var_a788fada": "#hash_2c2018cb6cc6c14c",
+    "var_22f91505": "#hash_13419539433762fd",
+    "var_566825be": "#hash_1581eedef82d8a58",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_6013da1d895f77b5",
+    "var_db3e02ab": 2000,
+    "itemid": "32425904"
+}

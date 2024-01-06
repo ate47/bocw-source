@@ -1,0 +1,47 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_accurate_bp_rdecree_mtxitem",
+            "itemid": "25721293"
+        },
+        {
+            "var_4a4bc969": "#pistol_burst_cb_bp_decree_mtxitem",
+            "itemid": "33239776"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s4_digital_royal_decree_mtxitem",
+            "itemid": "17962343"
+        },
+        {
+            "var_4a4bc969": "#callingcards_royalg_animated_mtxitem",
+            "itemid": "25220249"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_king_tiger_mtxitem",
+            "itemid": "23005848"
+        },
+        {
+            "var_4a4bc969": "#reticle_99_mtxitem",
+            "itemid": "18825796"
+        },
+        {
+            "var_4a4bc969": "#emblems_royalg_animated_mtxitem",
+            "itemid": "30311486"
+        },
+        {
+            "var_4a4bc969": "#paintjob_sticker_marquee_01_mtxitem",
+            "itemid": "31329045"
+        }
+    ],
+    "itemname": "#hash_6c2cef626a7c576c",
+    "var_375a1747": "#hash_2468a6a2c6524c7e",
+    "name": "operator_bundle_4043_knight_royal_guard_mtxbundle",
+    "var_a788fada": "#hash_4af8c01a3386efd",
+    "var_22f91505": "#hash_2abe066e5a95be18",
+    "var_566825be": "#hash_28c87248ae62c8b5",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_2bc27e926d8fade0",
+    "var_db3e02ab": 2000,
+    "itemid": "31098307"
+}

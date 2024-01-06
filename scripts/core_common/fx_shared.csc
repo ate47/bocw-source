@@ -418,29 +418,29 @@ function private function_1725d99a() {
 function function_a795470c() {
     players = getlocalplayers();
     foreach (player in players) {
-        if (player getentitynumber() == getdvarint(#"hash_52cad1c182620ca9", -1)) {
+        if (player getentitynumber() == getdvarint(#"_internal_dof_i_playernum", -1)) {
             var_1498bcbe = undefined;
-            var_3ed74fac = getdvarint(#"hash_bc41fa458ae92e7", -1);
+            var_3ed74fac = getdvarint(#"_internal_dof_i_target_entnum", -1);
             if (var_3ed74fac == -1) {
                 var_3ed74fac = undefined;
             }
-            var_dc3df1b8 = getdvarint(#"hash_392d9d32234cbdcc", -1);
+            var_dc3df1b8 = getdvarint(#"_internal_dof_i_target_type", -1);
             if (var_dc3df1b8 == -1) {
                 var_dc3df1b8 = undefined;
             }
-            var_1436aa92 = getdvarstring(#"hash_41dce9c0c166c79e", "-1");
+            var_1436aa92 = getdvarstring(#"_internal_dof_s_target_tag", "-1");
             if (var_1436aa92 == "-1") {
                 var_1436aa92 = undefined;
             }
-            var_486f31cd = getdvarfloat(#"hash_5c3fe2ea8a7f72a5", -1);
+            var_486f31cd = getdvarfloat(#"_internal_dof_f_fstop", -1);
             if (var_486f31cd == -1) {
                 var_486f31cd = undefined;
             }
-            var_e9f7aace = getdvarfloat(#"hash_4b1a4ae3db9de087", -1);
+            var_e9f7aace = getdvarfloat(#"_internal_dof_f_fstop_time", -1);
             if (var_e9f7aace == -1) {
                 var_e9f7aace = undefined;
             }
-            var_bef008a5 = getdvarfloat(#"hash_3a0d8b2cf7ba0639", -1);
+            var_bef008a5 = getdvarfloat(#"_internal_dof_f_focus_time", -1);
             if (var_bef008a5 == -1) {
                 var_bef008a5 = undefined;
             }
@@ -470,12 +470,12 @@ function function_a795470c() {
 function function_5409b584() {
     players = getlocalplayers();
     foreach (player in players) {
-        if (player getentitynumber() == getdvarint(#"hash_2ae1e45cacd34543", -1)) {
-            var_904e61ce = getdvarfloat(#"hash_3fc2053e5e3e9257", 1);
+        if (player getentitynumber() == getdvarint(#"_internal_fob_i_playernum", -1)) {
+            var_904e61ce = getdvarfloat(#"_internal_fob_f_fstop", 1);
             if (var_904e61ce == -1) {
                 var_904e61ce = undefined;
             }
-            var_f7259b16 = getdvarfloat(#"hash_2fe2fecfa04f8331", -1);
+            var_f7259b16 = getdvarfloat(#"_internal_fob_f_fstop_time", -1);
             if (var_f7259b16 == -1) {
                 var_f7259b16 = undefined;
             }
@@ -506,7 +506,7 @@ function function_82104e32(var_904e61ce, var_f7259b16, var_ff9d26ff) {
     self function_1816c600(var_904e61ce, var_f7259b16);
     var_eb618ad5 = 500 / var_ff9d26ff;
     prev_time = undefined;
-    while (playernum == getdvarint(#"hash_2ae1e45cacd34543", -1)) {
+    while (playernum == getdvarint(#"_internal_fob_i_playernum", -1)) {
         if (isdefined(prev_time)) {
             var_a122c423 = gettime() - prev_time;
             var_56eeee5f = self trace_distance();
@@ -559,7 +559,7 @@ function trace_distance() {
     trace = bullettrace(playereye, playereye + playerforward * tracedist, 1, self);
     dist = distance(playereye, trace[#"position"]);
     /#
-        if (getdvarint(#"hash_4a7427d0aeefe741", 0) == 1) {
+        if (getdvarint(#"_internal_debug_dof", 0) == 1) {
             var_cba8e949 = 1;
             debugstar(trace[#"position"], var_cba8e949, (0, 1, 0));
             print3d(trace[#"position"], "<unknown string>" + dist, (0, 1, 0), 1, 0.2, var_cba8e949);
@@ -590,7 +590,7 @@ function function_70ba68f1(var_e4db2d63, var_904e61ce, var_ff9d26ff, var_f7259b1
         self function_9e574055(2);
         var_ae5fe668 = max(var_ff9d26ff, var_f7259b16);
         playernum = self getentitynumber();
-        while (playernum == getdvarint(#"hash_52cad1c182620ca9", -1)) {
+        while (playernum == getdvarint(#"_internal_dof_i_playernum", -1)) {
             target_origin = undefined;
             if (isdefined(var_e4db2d63)) {
                 if (isvec(var_e4db2d63)) {

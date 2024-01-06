@@ -60,10 +60,10 @@ function autoexec opt_in() {
     level.var_e2f95698 = #"hash_20902988a95a6003";
     level.var_462ca9bb = #"blops_taacom";
     level.var_8bb7479c = #"hash_10124966022c3040";
-    level.var_72a3d8bc = #"hash_7c308e44e34e652b";
+    level.var_72a3d8bc = #"aib_t9_vign_cust_zm_silver_outro_fail_01";
     level.var_6e297a0d = &function_4b29f610;
     level.var_cd3d6a27 = &function_65c65feb;
-    namespace_4abf1500::function_88645994(#"hash_1650c04a5db4ba64", #"hash_69f1546764fcc948", #"hash_44becc3958fa81a2", #"hash_549a6693186d47cc", #"hash_3c7bf14c75b291f9", #"hash_4eadf87f04308190", #"hash_7676acc36353a1ae", #"hash_14226a503acda919", #"hash_54455979b64faab");
+    namespace_4abf1500::function_88645994(#"hash_1650c04a5db4ba64", #"hash_69f1546764fcc948", #"hash_44becc3958fa81a2", #"hash_549a6693186d47cc", #"hash_3c7bf14c75b291f9", #"zmintel_list_silver_omega_intel_all", #"zmintel_list_silver_darkaether_intel_all", #"zmintel_list_silver_maxis_intel_all", #"zmintel_list_silver_requiem_intel_all");
     setdvar(#"player_shallowwaterwadescale", 1);
     setdvar(#"player_waistwaterwadescale", 1);
     setdvar(#"player_deepwaterwadescale", 1);
@@ -177,7 +177,7 @@ function function_44ed971() {
 // Checksum 0x6cdcaf58, Offset: 0x1640
 // Size: 0x44
 function function_963beb87() {
-    zm_magicbox::function_fcbfc7e9(#"hash_315d03848e9c8533", #"hash_79d7d5e206eaf770", &function_c260f7a1);
+    zm_magicbox::function_fcbfc7e9(#"ww_ieu_shockwave_t9_item_sr", #"ray_gun_item_sr", &function_c260f7a1);
 }
 
 // Namespace zm_silver/zm_silver

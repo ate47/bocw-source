@@ -1,0 +1,35 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_gen_pl_starter3_stone_squelch_mtxitem",
+            "itemid": "17958437"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_starter3_mtxitem",
+            "itemid": "21293402"
+        },
+        {
+            "var_4a4bc969": "#tr_powerburst_cb_bp_tanner_mtxitem",
+            "itemid": "20822831"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s3_western_mtxitem",
+            "itemid": "21943078"
+        },
+        {
+            "var_4a4bc969": "#reticle_85_mtxitem",
+            "itemid": "24614400"
+        }
+    ],
+    "itemname": "#hash_29e0242a25b19302",
+    "var_375a1747": "#hash_690ee3e610bb0c04",
+    "name": "operator_bundle_3071_stone_poncho_fighter_mtxbundle",
+    "var_a788fada": "#hash_5ce4c5a107b320bf",
+    "var_22f91505": "#hash_47149d38c083dd02",
+    "var_566825be": "#hash_fbb7a26b19500c7",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_16b531cc5c58ec7e",
+    "var_db3e02ab": 2000,
+    "itemid": "31372219"
+}

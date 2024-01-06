@@ -586,7 +586,7 @@ function addactivecounteruav() {
         level.activecounteruavs[self.team] = 0;
     }
     level.activecounteruavs[self.team]++;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (!util::function_fbce7263(team, self.team)) {
             continue;
         }

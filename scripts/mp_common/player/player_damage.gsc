@@ -214,7 +214,7 @@ function callback_playerdamage(einflictor, eattacker, idamage, idflags, smeansof
         }
         eattacker.var_4a755632[self.clientid].entity = self;
         eattacker.var_4a755632[self.clientid].var_47a91d9 = gettime();
-        namespace_1332002f::function_f6127864(self, eattacker);
+        squad_spawn::function_f6127864(self, eattacker);
     }
     if (isdefined(eattacker) && !attackerishittingself && (isalive(eattacker) || eattacker util::isusingremote())) {
         if (damagefeedback::dodamagefeedback(weapon, einflictor, idamage, smeansofdeath)) {
@@ -843,7 +843,7 @@ function private should_do_player_damage(eattacker, einflictor, weapon, smeansof
             return 0;
         }
     }
-    if (level.var_ca7e7c7f) {
+    if (level.onlyexecution) {
         if (level.onlyheadshots && smeansofdeath != "MOD_HEAD_SHOT" && smeansofdeath != "MOD_EXECUTION") {
             return 0;
         }
@@ -1384,7 +1384,7 @@ function function_201c298c() {
     var_28214e57 = undefined;
     lastdamagetime = undefined;
     if (isarray(self.attackerdamage)) {
-        foreach (damage in self.attackerdamage) {
+        foreach (clientid, damage in self.attackerdamage) {
             if (!isdefined(var_28214e57) || damage.lastdamagetime > lastdamagetime) {
                 var_28214e57 = clientid;
                 lastdamagetime = damage.lastdamagetime;

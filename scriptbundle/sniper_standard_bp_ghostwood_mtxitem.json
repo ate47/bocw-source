@@ -1,0 +1,23 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#blueprint_bundle_7508_vault_sniper_sg_pack_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_4afcbc81c66e5958",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_191bd44ce840d8d6",
+    "weapon": "#hash_696069d98ed3f228",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_39c267f0642bd822",
+    "season": 1,
+    "var_46300498": 1,
+    "baseweapon": "#hash_696069d98ed3f228",
+    "name": "sniper_standard_bp_ghostwood_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 3,
+    "itemid": "27393727",
+    "blueprint": "#hash_4afcbc81c66e5958"
+}

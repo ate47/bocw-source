@@ -1,0 +1,35 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_woods_holidaywoods_mtxitem",
+            "itemid": "32967059"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_woods_mtxitem",
+            "itemid": "28004165"
+        },
+        {
+            "var_4a4bc969": "#shotgun_semiauto_bp_uglysweater_mtxitem",
+            "itemid": "18742326"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_christmas_ornament_mtxitem",
+            "itemid": "17897145"
+        },
+        {
+            "var_4a4bc969": "#emblems_santaslittlehelper_mtxitem",
+            "itemid": "22801564"
+        }
+    ],
+    "itemname": "#hash_1bb9b496516d3de4",
+    "var_375a1747": "#hash_5bc4c37958c47d8a",
+    "var_579fd6c3": 42,
+    "name": "bundle_operator_1047_woods_ugly_sweater_mtxbundle",
+    "var_22f91505": "#hash_6ad6e58469287795",
+    "var_566825be": "#hash_4393f52bf1a0a655",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_1b5a5b202f4b674d",
+    "var_db3e02ab": 2000,
+    "itemid": "18306375"
+}

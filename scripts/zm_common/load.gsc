@@ -58,7 +58,7 @@
 // Checksum 0xf0614eb2, Offset: 0x2b8
 // Size: 0x25c
 function private event_handler[createstruct] function_e0a8e4ba(struct) {
-    foreach (k in [3:"script_unitrigger_type", 2:"zombie_weapon_upgrade", 1:"content_key", 0:"content_script_name"]) {
+    foreach (var_e7c98186, k in [3:"script_unitrigger_type", 2:"zombie_weapon_upgrade", 1:"content_key", 0:"content_script_name"]) {
         if (!isdefined(level.var_41204f29)) {
             level.var_41204f29 = [];
         } else if (!isarray(level.var_41204f29)) {

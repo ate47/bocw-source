@@ -140,7 +140,7 @@ function function_59d3154f() {
         }
     }
     var_d6155829[#"highestkillstreak"] = self.pers[#"cur_kill_streak"];
-    foreach (stat in var_d6155829) {
+    foreach (index, stat in var_d6155829) {
         self.pers[#"hvo"][#"current"][index] = stat;
     }
 }
@@ -159,7 +159,7 @@ function function_323c6715() {
         return;
     }
     level.var_1a0a6769 = [];
-    foreach (var_3aa46fc3 in var_e800bb6a) {
+    foreach (var_74be6838, var_3aa46fc3 in var_e800bb6a) {
         hvo = getscriptbundle(var_3aa46fc3);
         if (!isdefined(hvo) || !isdefined(hvo.statsarray) || !isarray(hvo.statsarray)) {
             continue;

@@ -1,0 +1,52 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#operator_bundle_7501_vault_greatest_hits_mtxbundle"
+        }
+    ],
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_7433cb2913fe00b9"
+        },
+        {
+            "var_fe10649e": "#hash_4b07887cc7474e5c"
+        },
+        {
+            "var_fe10649e": "#hash_4b07897cc747500f"
+        },
+        {
+            "var_fe10649e": "#hash_4b07867cc7474af6"
+        }
+    ],
+    "var_c1b2a9f": [
+        {
+            "var_fe10649e": "#hash_33a63c0e192989dd"
+        },
+        {
+            "var_fe10649e": "#hash_4e4c0de4ef993255"
+        },
+        {
+            "var_fe10649e": "#hash_4e4c0ae4ef992d3c"
+        },
+        {
+            "var_fe10649e": "#hash_4e4c0be4ef992eef"
+        }
+    ],
+    "itemname": "#hash_3a984ec8e8d92173",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_33a63c0e192989dd",
+    "var_4f3108ff": 1,
+    "var_728341a": 1,
+    "var_375a1747": "#hash_7433cb2913fe00b9",
+    "season": 2,
+    "var_46300498": 1,
+    "var_8ee7db29": 1,
+    "baseweapon": "#hash_4d8b07efde79fb03",
+    "name": "ar_slowhandling_bp_xray_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 750,
+    "var_700702e5": 750,
+    "rarity": 5,
+    "itemid": "22415806",
+    "blueprint": "#hash_3a984ec8e8d92173"
+}

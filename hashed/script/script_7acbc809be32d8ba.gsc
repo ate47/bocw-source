@@ -495,14 +495,14 @@ function function_53bb1917(localclientnum, *oldval, newval, *bnewent, *binitials
             var_accb4770.var_515e20e6.var_accb4770 = weapon.name === #"hash_2d0c14dce5a6ebed";
             var_accb4770 linktocamera();
             var_accb4770 setforcenocull();
-            var_accb4770 thread scene::play(#"hash_658647939375d560", var_accb4770);
-            var_accb4770 thread function_2ed768c7(self, #"hash_658647939375d560");
+            var_accb4770 thread scene::play(#"p9_fxanim_ww_mega_barrel_fullauto_copycat_circle_bundle", var_accb4770);
+            var_accb4770 thread function_2ed768c7(self, #"p9_fxanim_ww_mega_barrel_fullauto_copycat_circle_bundle");
             var_accb4770 playrenderoverridebundle(#"hash_225a66106179e9bb");
             util::playfxontag(fieldname, var_accb4770.var_515e20e6 ? #"hash_2eabcf6f328bb46b" : #"hash_2ac49f49b148a4fa", var_accb4770, "tag_flash");
             self.var_accb4770 = var_accb4770;
         }
     } else if (isdefined(self.var_accb4770)) {
-        self.var_accb4770 scene::stop(#"hash_658647939375d560", undefined, undefined, undefined, undefined, 1);
+        self.var_accb4770 scene::stop(#"p9_fxanim_ww_mega_barrel_fullauto_copycat_circle_bundle", undefined, undefined, undefined, undefined, 1);
         if (isdefined(self.var_accb4770)) {
             self.var_accb4770 delete();
         }

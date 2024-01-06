@@ -11,7 +11,7 @@
 function autoexec __init__() {
     gametype = function_be90acca(getdvarstring(#"g_gametype"));
     switch (gametype) {
-    case #"hash_3c969849921481cc":
+    case #"fireteam_dirty_bomb":
         function_cbbf16a4();
         break;
     case #"hash_6463dea5fa2dbea5":
@@ -29,7 +29,7 @@ function autoexec __init__() {
     case #"hash_defdefdefdefdef0":
         break;
     }
-    namespace_1c7b37c6::item_replacer(&item_world_fixup::function_6991057, #"hash_63cae5fcd6d8139d", #"hash_2ddee7c1e1c21dd6");
+    namespace_1c7b37c6::item_replacer(&item_world_fixup::function_6991057, #"hash_63cae5fcd6d8139d", #"t9_empty_global");
     function_d5eb555d();
     function_f05c9e0a();
 }
@@ -81,12 +81,12 @@ function function_1ed4cf79() {
 // Checksum 0x7df3fc08, Offset: 0x558
 // Size: 0x184
 function function_bcd11f83() {
-    namespace_1c7b37c6::item_replacer(&item_world_fixup::function_6991057, #"hash_203198a6940492f9", #"hash_2ddee7c1e1c21dd6");
-    namespace_1c7b37c6::item_replacer(&item_world_fixup::function_6991057, #"hash_152385d9b98f0818", #"hash_2ddee7c1e1c21dd6");
-    namespace_1c7b37c6::item_replacer(&item_world_fixup::function_6991057, #"hash_74c5644c939b5395", #"hash_2ddee7c1e1c21dd6");
-    namespace_1c7b37c6::item_replacer(&item_world_fixup::function_6991057, #"hash_4d756ccd3f484c1f", #"hash_2ddee7c1e1c21dd6");
-    namespace_1c7b37c6::item_replacer(&item_world_fixup::function_6991057, #"hash_4221ae2046a283be", #"hash_2ddee7c1e1c21dd6");
-    namespace_1c7b37c6::item_replacer(&item_world_fixup::function_6991057, #"hash_10521493269714cb", #"hash_2ddee7c1e1c21dd6");
+    namespace_1c7b37c6::item_replacer(&item_world_fixup::function_6991057, #"hash_203198a6940492f9", #"t9_empty_global");
+    namespace_1c7b37c6::item_replacer(&item_world_fixup::function_6991057, #"hash_152385d9b98f0818", #"t9_empty_global");
+    namespace_1c7b37c6::item_replacer(&item_world_fixup::function_6991057, #"hash_74c5644c939b5395", #"t9_empty_global");
+    namespace_1c7b37c6::item_replacer(&item_world_fixup::function_6991057, #"hash_4d756ccd3f484c1f", #"t9_empty_global");
+    namespace_1c7b37c6::item_replacer(&item_world_fixup::function_6991057, #"hash_4221ae2046a283be", #"t9_empty_global");
+    namespace_1c7b37c6::item_replacer(&item_world_fixup::function_6991057, #"hash_10521493269714cb", #"t9_empty_global");
 }
 
 // Namespace namespace_f4a4a352/namespace_f4a4a352

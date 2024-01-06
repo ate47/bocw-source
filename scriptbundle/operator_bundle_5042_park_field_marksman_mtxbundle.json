@@ -1,0 +1,39 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_uk_pl_mi6_guard_mtxitem",
+            "itemid": "26606029"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_uk_mi6_mtxitem",
+            "itemid": "23374822"
+        },
+        {
+            "var_4a4bc969": "#tr_precisionsemi_bp_fieldm_mtxitem",
+            "itemid": "26679414"
+        },
+        {
+            "var_4a4bc969": "#reticle_125_mtxitem",
+            "itemid": "27840801"
+        },
+        {
+            "var_4a4bc969": "#emblems_vts_final_12_s5_mtxitem",
+            "itemid": "32072582"
+        },
+        {
+            "var_4a4bc969": "#callingcards_parksman_s5_mtxitem",
+            "itemid": "27707649"
+        }
+    ],
+    "itemname": "#hash_70feef71962b8e75",
+    "var_375a1747": "#hash_4560e68502f8b19b",
+    "name": "operator_bundle_5042_park_field_marksman_mtxbundle",
+    "var_a788fada": "#hash_7c0c017343b2db5a",
+    "var_22f91505": "#hash_713bcb457ae0212e",
+    "var_566825be": "#hash_10653f937bc27766",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_303d292fbd1ad0a2",
+    "var_db3e02ab": 2000,
+    "itemid": "25426897"
+}

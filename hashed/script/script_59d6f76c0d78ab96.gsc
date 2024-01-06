@@ -21,7 +21,7 @@ function private autoexec __init__system__() {
 // Checksum 0x1d0073e5, Offset: 0x128
 // Size: 0x54
 function private function_70a657d8() {
-    callback::add_callback(#"hash_60ed86b180c0e829", &function_59941838);
+    callback::add_callback(#"territory", &function_59941838);
     callback::function_a880899e(&function_a880899e);
 }
 
@@ -39,7 +39,7 @@ function private function_59941838(*local_client_num, *eventstruct) {
 // Size: 0x7c
 function function_a880899e(eventparams) {
     localclientnum = eventparams.localclientnum;
-    if (!namespace_56e70a4a::function_b8fe9b52(localclientnum)) {
+    if (!codcaster::function_b8fe9b52(localclientnum)) {
         if (eventparams.enabled) {
             self codeplaypostfxbundle("pstfx_spawn_cam");
         } else {

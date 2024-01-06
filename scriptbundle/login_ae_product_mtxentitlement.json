@@ -1,0 +1,42 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#mtx_outfit_prt_mp_gen_starter1_default_mtxitem",
+            "itemid": "32022739"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_starter1_mtxitem",
+            "itemid": "31474701"
+        },
+        {
+            "var_4a4bc969": "#mtx_outfit_prt_mp_gen_starter2_default_mtxitem",
+            "itemid": "20329255"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_starter2_mtxitem",
+            "itemid": "19048863"
+        },
+        {
+            "var_4a4bc969": "#mtx_outfit_prt_mp_gen_starter4_default_mtxitem",
+            "itemid": "24249088"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_starter4_mtxitem",
+            "itemid": "31249471"
+        },
+        {
+            "var_4a4bc969": "#mtx_outfit_prt_mp_gen_starter5_default_mtxitem",
+            "itemid": "25076252"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_starter5_mtxitem",
+            "itemid": "31383564"
+        }
+    ],
+    "itemname": "#hash_5c5fa773f66005e5",
+    "name": "login_ae_product_mtxentitlement",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "itemid": "21477295"
+}

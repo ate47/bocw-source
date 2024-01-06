@@ -1,0 +1,199 @@
+{
+    "var_2be3941a": [
+        {
+            "unlockdescription": "#hash_5d5f3a5494e6069c",
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "var_b4ab831a": "#hash_9625d0a950c9461",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_513bd1963a91e24d"
+        },
+        {
+            "unlockdescription": "#hash_3869f2d624b7bd57",
+            "var_5f79ee71": "#wristaccessory",
+            "var_b4ab831a": "#wristaccessory_t9_s6_digital_gov2",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_513bce963a91dd34"
+        },
+        {
+            "unlockdescription": "#hash_1982c7d1ea2d890a",
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_witch_broom",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_513bcf963a91dee7"
+        },
+        {
+            "unlockdescription": "#hash_46721a3dab463cad",
+            "var_5f79ee71": "#crafticon",
+            "image": "#hash_670adad5e4f64276",
+            "var_e5119d1b": "#hash_670adad5e4f64276",
+            "var_b4ab831a": "#hash_700334874a4e7561",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_513bcc963a91d9ce"
+        },
+        {
+            "unlockdescription": "#hash_6692c06c68923510",
+            "var_5f79ee71": "#hash_340a72bfc2388a50",
+            "image": "#hash_67433eac4d544fbe",
+            "var_e5119d1b": "#hash_67433eac4d544fbe",
+            "var_b4ab831a": "#reticle_134",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_513bcd963a91db81"
+        },
+        {
+            "unlockdescription": "#hash_fe2c1c8560b735b",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_67c703670b3b5b75",
+            "var_e5119d1b": "#hash_67c703670b3b5b75",
+            "var_b4ab831a": "#hash_6de379548d4b11de",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_513bca963a91d668"
+        },
+        {
+            "unlockdescription": "#hash_6892b1d845b31c5e",
+            "var_5f79ee71": "#craftbackground",
+            "image": "#hash_6f6530361a9e3b62",
+            "var_e5119d1b": "#hash_6f6530361a9e3b62",
+            "var_b4ab831a": "#hash_4cb99b7acdb759ef",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_513bcb963a91d81b"
+        },
+        {
+            "unlockdescription": "#hash_65b70eb23fc61aa1",
+            "var_5f79ee71": "#arcadegame",
+            "var_b4ab831a": "#spider_fighter_game",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_513bc8963a91d302"
+        },
+        {
+            "unlockdescription": "#hash_7447b57a89b4ac4",
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_cracked_molar",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_513bc9963a91d4b5"
+        },
+        {
+            "unlockdescription": "#hash_3350333f24965345",
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "var_b4ab831a": "#hash_667b54a4bc3ccf86",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_3838c32bb431ef26"
+        },
+        {
+            "unlockdescription": "#hash_588c449cc4b53336",
+            "var_5f79ee71": "#wristaccessory",
+            "var_b4ab831a": "#wristaccessory_t9_s6_digital_gov1",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_3838c22bb431ed73"
+        },
+        {
+            "unlockdescription": "#hash_524476c32e0268d3",
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_mask_respirator",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_3838c12bb431ebc0"
+        },
+        {
+            "unlockdescription": "#hash_7c226044a3416954",
+            "var_5f79ee71": "#crafticon",
+            "image": "#hash_221e1d51a1ac9ddf",
+            "var_e5119d1b": "#hash_221e1d51a1ac9ddf",
+            "var_b4ab831a": "#hash_7305bda72f9a55c0",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_3838c82bb431f7a5"
+        },
+        {
+            "unlockdescription": "#hash_2d15ad2753707bf1",
+            "var_5f79ee71": "#hash_340a72bfc2388a50",
+            "image": "#hash_67433fac4d545171",
+            "var_e5119d1b": "#hash_67433fac4d545171",
+            "var_b4ab831a": "#reticle_135",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_3838c72bb431f5f2"
+        },
+        {
+            "unlockdescription": "#hash_3759587e68d50f42",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_4197da78ba9a7e83",
+            "var_e5119d1b": "#hash_4197da78ba9a7e83",
+            "var_b4ab831a": "#hash_52a078ae4ec7cc36",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_3838c62bb431f43f"
+        },
+        {
+            "unlockdescription": "#hash_50ec8bd8d91bd48f",
+            "var_5f79ee71": "#craftbackground",
+            "image": "#hash_9b847f5e316d5ed",
+            "var_e5119d1b": "#hash_9b847f5e316d5ed",
+            "var_b4ab831a": "#hash_7a78fadef26cc608",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_3838c52bb431f28c"
+        },
+        {
+            "unlockdescription": "#hash_2c0d09a8f7f828a0",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_393c283e90f0b104",
+            "var_e5119d1b": "#hash_393c283e90f0b104",
+            "var_b4ab831a": "#hash_22c28a84971135a1",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_3838cc2bb431fe71"
+        },
+        {
+            "unlockdescription": "#hash_38f08992bdfbcc7d",
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_kraken_tentacle",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_3838cb2bb431fcbe"
+        },
+        {
+            "unlockdescription": "#hash_16448d06b0bfd13f",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "var_b4ab831a": "#smg_season6_t9_mtxitem",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_835f663dcce8ae6",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_7c2434b9e52af4f8"
+        }
+    ],
+    "var_922067c4": "SCRIPTBUNDLE",
+    "type": "challengerewards",
+    "var_5f0dd656": 2,
+    "var_4e39981b": 2,
+    "name": "challengerewards_s6_ghosts_event",
+    "sessionmode": "1"
+}

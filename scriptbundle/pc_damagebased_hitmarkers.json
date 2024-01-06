@@ -1,0 +1,31 @@
+{
+    "options": [
+        {
+            "label": "#hash_3470b0ddc5bf7476",
+            "value": "0"
+        },
+        {
+            "label": "#hash_52870ab93422fd97",
+            "value": "1"
+        }
+    ],
+    "var_dfedf08e": 1,
+    "var_d260763": "#hash_64272b065ad5b46a",
+    "description": "#hash_5f53928f4ab69a0f",
+    "var_60fcfffa": "#hash_43ecbdda975e2ac1",
+    "var_9bc3be7": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 0.1,
+    "name": "pc_damagebased_hitmarkers",
+    "displayname": "#hash_440344988dc4b045",
+    "var_500458ac": 10,
+    "var_926d1be9": 0.01,
+    "var_66faec87": 2,
+    "statname": "hitmarkers_damage_type",
+    "var_6f00a61a": 1.1,
+    "minvalue": 1,
+    "var_d4e288e": 1,
+    "var_b7401319": "#hash_439156e8d96d245"
+}

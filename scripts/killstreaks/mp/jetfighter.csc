@@ -4,17 +4,17 @@
 #using scripts\core_common\renderoverridebundle.csc;
 #using scripts\core_common\clientfield_shared.csc;
 
-#namespace namespace_632e5b81;
+#namespace jetfighter;
 
-// Namespace namespace_632e5b81/namespace_632e5b81
+// Namespace jetfighter/jetfighter
 // Params 0, eflags: 0x5
 // Checksum 0x1e4be3a4, Offset: 0x108
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_60c23248e5923f35", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"jetfighter", &function_70a657d8, undefined, undefined, #"killstreaks");
 }
 
-// Namespace namespace_632e5b81/namespace_632e5b81
+// Namespace jetfighter/jetfighter
 // Params 0, eflags: 0x6 linked
 // Checksum 0xb4823c84, Offset: 0x158
 // Size: 0x6c
@@ -23,7 +23,7 @@ function private function_70a657d8() {
     level.var_852b61e4 = getscriptbundle("killstreak_jetfighter");
 }
 
-// Namespace namespace_632e5b81/namespace_632e5b81
+// Namespace jetfighter/jetfighter
 // Params 7, eflags: 0x2 linked
 // Checksum 0x7888861e, Offset: 0x1d0
 // Size: 0x20c

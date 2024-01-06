@@ -1,0 +1,37 @@
+{
+    "var_210a8489": [
+        {
+            "var_37d9fb07": "default_zombies_realm_5",
+            "var_a949845f": -1,
+            "var_857deb66": 80
+        },
+        {
+            "var_37d9fb07": "survival_ai_raz",
+            "var_a949845f": -1,
+            "var_857deb66": 20
+        },
+        {
+            "var_37d9fb07": "survival_ai_mimic",
+            "var_a949845f": -1,
+            "var_857deb66": 20
+        },
+        {
+            "var_37d9fb07": "survival_ai_mechz",
+            "var_a949845f": -1,
+            "var_857deb66": 1
+        },
+        {
+            "var_37d9fb07": "survival_ai_steiner",
+            "var_a949845f": -1,
+            "var_857deb66": 1
+        },
+        {
+            "var_37d9fb07": "inf_dogs",
+            "var_a949845f": -1,
+            "var_857deb66": 30
+        }
+    ],
+    "var_922067c4": "scriptbundle",
+    "type": "survivalailist",
+    "name": "sr_ee_hulk_beast_adds"
+}

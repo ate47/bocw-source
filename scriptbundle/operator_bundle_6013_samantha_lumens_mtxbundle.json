@@ -1,0 +1,75 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_3edc6f2133e6708a"
+        },
+        {
+            "var_fe10649e": "#hash_5be3815f72e564d4"
+        },
+        {
+            "var_fe10649e": "#hash_5be3845f72e569ed"
+        },
+        {
+            "var_fe10649e": "#hash_5be3835f72e5683a"
+        }
+    ],
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_ger_pl_maxis_lumens_mtxitem",
+            "itemid": "25810449"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_ger_pl_maxis_mtxitem",
+            "itemid": "27568255"
+        },
+        {
+            "var_4a4bc969": "#smg_handling_bp_electro_mtxitem",
+            "itemid": "19030118"
+        },
+        {
+            "var_4a4bc969": "#lmg_fastfire_bp_electro_mtxitem",
+            "itemid": "18866662"
+        },
+        {
+            "var_4a4bc969": "#ar_mobility_bp_electro_mtxitem",
+            "itemid": "25788215"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_neon_sign_mtxitem",
+            "itemid": "24005661"
+        },
+        {
+            "var_4a4bc969": "#execution_087_mtxitem",
+            "itemid": "26818259"
+        },
+        {
+            "var_4a4bc969": "#loot_ges_mtx_t9_zombie_fist_bump_mtxitem",
+            "itemid": "28977997"
+        },
+        {
+            "var_4a4bc969": "#emblems_lumens_maxis_s6_animated_mtxitem",
+            "itemid": "19130061"
+        },
+        {
+            "var_4a4bc969": "#callingcards_lumens_maxis_s6_animated_mtxitem",
+            "itemid": "21252682"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_lumens_maxis_s6_mtxitem",
+            "itemid": "25529167"
+        }
+    ],
+    "itemname": "#hash_5c31ffe2ab441ed8",
+    "var_375a1747": "#hash_3edc6f2133e6708a",
+    "var_3040f0d1": "#hash_3edc6f2133e6708a",
+    "var_8ee7db29": 1,
+    "name": "operator_bundle_6013_samantha_lumens_mtxbundle",
+    "var_a788fada": "#hash_29b50452ea8b07ef",
+    "var_22f91505": "#hash_2a759edaaedbb64b",
+    "var_566825be": "#hash_200a17287acd30f7",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_364af891382c00cf",
+    "var_db3e02ab": 750,
+    "itemid": "27723012"
+}

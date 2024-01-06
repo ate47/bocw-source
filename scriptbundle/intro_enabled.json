@@ -1,0 +1,19 @@
+{
+    "hinttext": "#hash_64314a26e091e153",
+    "var_922067c4": "scriptbundle",
+    "value2": "2",
+    "var_6006e991": "3",
+    "var_43883094": "1",
+    "var_dfed6968": "4",
+    "type": "gamesettings",
+    "label": "#menu/normal",
+    "name": "intro_enabled",
+    "displayname": "#hash_68ec33b1177a1a79",
+    "var_684ccd4c": "#menu/instant",
+    "var_9600a8ab": "#menu/slow",
+    "var_71b6e020": "#menu/fast",
+    "var_bd2ff709": "#menu/normal",
+    "var_9de86f42": 4,
+    "setting": "playIntroCinematics",
+    "var_82c732a7": 1
+}

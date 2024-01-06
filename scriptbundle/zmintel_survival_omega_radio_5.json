@@ -1,0 +1,80 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_37638ccccfa3fd71",
+            "var_5d4b5964": 4.76,
+            "var_36bf8e05": "#hash_1f5ac3a6f529c104"
+        },
+        {
+            "var_46bd7973": "#hash_18a637839c9a9145",
+            "var_5d4b5964": 5.95,
+            "var_36bf8e05": "#hash_7f819470f958b456"
+        },
+        {
+            "var_46bd7973": "#hash_18a634839c9a8c2c",
+            "var_5d4b5964": 3.86,
+            "var_36bf8e05": "#hash_2f634620ae7203d"
+        },
+        {
+            "var_46bd7973": "#hash_376389cccfa3f858",
+            "var_f35c5951": 1,
+            "var_5d4b5964": 8.04,
+            "var_36bf8e05": "#hash_4eb67d375d328cd3"
+        },
+        {
+            "var_46bd7973": "#hash_376390cccfa4043d",
+            "var_f35c5951": 0.5,
+            "var_5d4b5964": 7.64,
+            "var_36bf8e05": "#hash_3eb2e14ea5221ac0"
+        },
+        {
+            "var_46bd7973": "#hash_18a633839c9a8a79",
+            "var_f35c5951": 0.3,
+            "var_5d4b5964": 6.31,
+            "var_36bf8e05": "#hash_7ef7c321b0d4ab52"
+        },
+        {
+            "var_46bd7973": "#hash_18a630839c9a8560",
+            "var_5d4b5964": 3.09,
+            "var_36bf8e05": "#hash_4f1eb03eef747ad9"
+        },
+        {
+            "var_46bd7973": "#hash_37638dcccfa3ff24",
+            "var_f35c5951": 0.2,
+            "var_5d4b5964": 7.17,
+            "var_36bf8e05": "#hash_486190d2cc9863ef"
+        },
+        {
+            "var_46bd7973": "#hash_18a63e839c9a9d2a",
+            "var_5d4b5964": 12.03,
+            "var_36bf8e05": "#hash_523fc12287c88fdb"
+        },
+        {
+            "var_46bd7973": "#hash_376383cccfa3ee26",
+            "var_5d4b5964": 6.57,
+            "var_36bf8e05": "#hash_4713853dae2b9d89"
+        },
+        {
+            "var_46bd7973": "#hash_7d01c9a31aa529cf",
+            "var_5d4b5964": 12.25,
+            "var_36bf8e05": "#hash_a37ca65297163d2"
+        }
+    ],
+    "description": "#hash_7068e9e1ffd7340f",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#radio",
+    "model": "#hash_4fe193b7484608f8",
+    "var_824079e7": "#survival",
+    "uimodel": "#hash_10f65ca45f134f57",
+    "type": "zmintel",
+    "season": 3,
+    "var_ad4ad686": "#omega",
+    "soundloop": "#hash_5db0167d85d70c82",
+    "name": "zmintel_survival_omega_radio_5",
+    "var_9be0526e": "#hash_20ea75a25d912949",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "var_348b91fd": "#radio",
+    "title": "#hash_3234db8fa047ce45",
+    "var_3bb3493d": "#hash_d925ea20e4120d4"
+}

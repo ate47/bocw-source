@@ -947,7 +947,7 @@ function function_dc15ad60(deathcircle) {
         dodamage = gettime() >= var_f4d9a132;
         level.deathcircle.players = [];
         time = gettime();
-        foreach (player in getplayers()) {
+        foreach (i, player in getplayers()) {
             if (is_true(deathcircle.scaling) && i % 5 == var_1a1c0d86) {
                 player function_ba02cfb5();
             }

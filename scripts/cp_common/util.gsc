@@ -50,7 +50,7 @@ function private function_70a657d8() {
         level.var_54ce800f = [];
     }
     function_3969639b(&namespace_86402e7e::register, "cp_hint_text");
-    lui::add_luimenu("pip_menu", &namespace_b0163ca8::register);
+    lui::add_luimenu("pip_menu", &pip_menu::register);
     clientfield::register("toplayer", "cinematicmotion_blend", 1, 1, "int");
     serverfield::register("cinematicmotion_blend", 1, 1, "int", &function_e6d37e3b);
     animation::add_notetrack_func("dialog_gender_vo", &function_b7367cc0);
@@ -1165,7 +1165,7 @@ function function_250b79b0(n_zone) {
 // Checksum 0x4bb51865, Offset: 0x3a58
 // Size: 0x314
 function function_749362d7(var_53cdb3f5, gesture = #"hash_743809219cd0d96b") {
-    self val::function_e681e68e(#"hash_59b6dc89ac149f81");
+    self val::function_e681e68e(#"low_ready");
     if (isdefined(self.var_acac2f93)) {
         self stopgestureviewmodel(self.var_acac2f93);
         self notify(#"hash_1e1bc72a511dc338");
@@ -1173,22 +1173,22 @@ function function_749362d7(var_53cdb3f5, gesture = #"hash_743809219cd0d96b") {
     }
     if (var_53cdb3f5) {
         if ((isstring(gesture) || ishash(gesture)) && function_b72088f(gesture)) {
-            self val::set(#"hash_59b6dc89ac149f81", "disable_weapon_fire", 1);
+            self val::set(#"low_ready", "disable_weapon_fire", 1);
             self playgestureviewmodel(gesture);
             self.var_acac2f93 = gesture;
             self thread function_79e25924();
         } else {
-            self val::set(#"hash_59b6dc89ac149f81", "low_ready", 1);
+            self val::set(#"low_ready", "low_ready", 1);
         }
-        self val::set(#"hash_59b6dc89ac149f81", "show_weapon_hud", 0);
-        self val::set(#"hash_59b6dc89ac149f81", "allow_jump", 0);
-        self val::set(#"hash_59b6dc89ac149f81", "allow_double_jump", 0);
-        self val::set(#"hash_59b6dc89ac149f81", "allow_sprint", 0);
-        self val::set(#"hash_59b6dc89ac149f81", "disable_offhand_weapons", 1);
-        self val::set(#"hash_59b6dc89ac149f81", "disable_offhand_special", 1);
-        self val::set(#"hash_59b6dc89ac149f81", "allow_ads", 0);
-        self val::set(#"hash_59b6dc89ac149f81", "disable_aim_assist", 1);
-        self val::set(#"hash_59b6dc89ac149f81", "allow_prone", 0);
+        self val::set(#"low_ready", "show_weapon_hud", 0);
+        self val::set(#"low_ready", "allow_jump", 0);
+        self val::set(#"low_ready", "allow_double_jump", 0);
+        self val::set(#"low_ready", "allow_sprint", 0);
+        self val::set(#"low_ready", "disable_offhand_weapons", 1);
+        self val::set(#"low_ready", "disable_offhand_special", 1);
+        self val::set(#"low_ready", "allow_ads", 0);
+        self val::set(#"low_ready", "disable_aim_assist", 1);
+        self val::set(#"low_ready", "allow_prone", 0);
     }
     self.var_f82e2c3d = undefined;
     namespace_446fe428::function_24966b9c(!var_53cdb3f5);
@@ -2039,7 +2039,7 @@ function function_a5318821(var_79a934ad = 1, var_6fa12df4 = 0, var_64b54706 = un
     if (isdefined(var_64b54706)) {
         var_f82db92c = var_64b54706;
     }
-    var_1afba46e = [9:#"hash_75e51938faa93db4", 8:#"hash_591a373140baae1a", 7:#"hash_70060b67a1351a43", 6:#"hash_aea89633cc83b43", 5:#"hash_544c3c61e62c70a4", 4:#"hash_12592764e558eab2", 3:#"hash_547ecbb7fb47217c", 2:#"hash_1f20bcab39c50cd3", 1:#"hash_f1154b30376fcac", 0:#"hash_f6944e57e4d5890"];
+    var_1afba46e = [9:#"hash_75e51938faa93db4", 8:#"cp_ger_stakeout", 7:#"cp_rus_siege", 6:#"hash_aea89633cc83b43", 5:#"cp_nic_revolucion", 4:#"cp_nam_prisoner", 3:#"cp_rus_kgb", 2:#"cp_rus_duga", 1:#"cp_nam_armada", 0:#"cp_rus_amerika"];
     for (lookup = 0; lookup < var_1afba46e.size; lookup++) {
         if (var_1afba46e[lookup] == var_f82db92c) {
             break;
@@ -2066,10 +2066,10 @@ function function_a5318821(var_79a934ad = 1, var_6fa12df4 = 0, var_64b54706 = un
 // Size: 0xfa
 function function_de500b59() {
     mapname = get_map_name();
-    if (mapname === #"hash_30ecbd205d0881e4" || mapname === #"hash_1002d2465a1ddeb0" || mapname === #"hash_49de4c68778afe1c" || mapname === #"hash_3ff1bafafd8a45eb") {
+    if (mapname === #"cp_takedown" || mapname === #"cp_rus_yamantau" || mapname === #"cp_sidemission_takedown" || mapname === #"cp_sidemission_tundra") {
         return #"hash_4d5f6c0e8d8bec20";
     }
-    if (mapname === #"hash_547ecbb7fb47217c") {
+    if (mapname === #"cp_rus_kgb") {
         if (getplayers()[0].var_4fc36735 === 1) {
             return #"hash_40c037a247e8b24f";
         } else {

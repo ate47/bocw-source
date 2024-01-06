@@ -1,0 +1,23 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#bundle_operator_1004_mendo_contractor_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_36cde0a5abe2d5dc",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_7f2581606125d33a",
+    "weapon": "#hash_7a3989475f8af314",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_35ced12ef3d6b17e",
+    "season": 1,
+    "var_46300498": 1,
+    "baseweapon": "#hash_7a3989475f8af314",
+    "name": "smg_handling_bp_blowrunner_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "30279364",
+    "blueprint": "#hash_36cde0a5abe2d5dc"
+}

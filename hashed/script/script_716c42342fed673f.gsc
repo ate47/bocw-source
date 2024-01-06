@@ -6,9 +6,9 @@
 #using scripts\core_common\clientfield_shared.csc;
 #using scripts\core_common\ai_shared.csc;
 
-#namespace namespace_8df47e95;
+#namespace raz;
 
-// Namespace namespace_8df47e95/namespace_8df47e95
+// Namespace raz/raz
 // Params 0, eflags: 0x1
 // Checksum 0xeeb1bce5, Offset: 0x558
 // Size: 0x154
@@ -17,10 +17,10 @@ function autoexec main() {
     clientfield::register("scriptmover", "raz_torpedo_play_fx_on_self", 1, 1, "int", &namespace_fe3871d9::function_dc17c6d6, 0, 0);
     clientfield::register("scriptmover", "raz_torpedo_play_trail", 1, 1, "counter", &namespace_fe3871d9::function_868b328b, 0, 0);
     clientfield::register("actor", "raz_gun_weakpoint_hit", 1, 1, "counter", &namespace_fe3871d9::function_250b46c7, 0, 0);
-    ai::add_archetype_spawn_function(#"hash_9f6bc1960ff4912", &namespace_fe3871d9::function_e94574ae);
+    ai::add_archetype_spawn_function(#"raz", &namespace_fe3871d9::function_e94574ae);
 }
 
-// Namespace namespace_8df47e95/namespace_8df47e95
+// Namespace raz/raz
 // Params 0, eflags: 0x1
 // Checksum 0xcb51e791, Offset: 0x6b8
 // Size: 0x810
@@ -122,7 +122,7 @@ function autoexec precache() {
 
 #namespace namespace_fe3871d9;
 
-// Namespace namespace_fe3871d9/namespace_8df47e95
+// Namespace namespace_fe3871d9/raz
 // Params 1, eflags: 0x4
 // Checksum 0x2463546f, Offset: 0xed0
 // Size: 0x7c
@@ -133,7 +133,7 @@ function private function_e94574ae(localclientnum) {
     fxclientutils::playfxbundle(localclientnum, self, self.fxdef);
 }
 
-// Namespace namespace_fe3871d9/namespace_8df47e95
+// Namespace namespace_fe3871d9/raz
 // Params 1, eflags: 0x4
 // Checksum 0x3448f740, Offset: 0xf58
 // Size: 0xa8
@@ -147,7 +147,7 @@ function private function_3f40a429(localclientnum) {
     }
 }
 
-// Namespace namespace_fe3871d9/namespace_8df47e95
+// Namespace namespace_fe3871d9/raz
 // Params 1, eflags: 0x4
 // Checksum 0xb1bba114, Offset: 0x1008
 // Size: 0x80
@@ -159,7 +159,7 @@ function private function_baf6efda(localclientnum) {
     }
 }
 
-// Namespace namespace_fe3871d9/namespace_8df47e95
+// Namespace namespace_fe3871d9/raz
 // Params 1, eflags: 0x0
 // Checksum 0x4a65cb2c, Offset: 0x1090
 // Size: 0x9e
@@ -173,7 +173,7 @@ function function_d0d17a03(localclientnum) {
     }
 }
 
-// Namespace namespace_fe3871d9/namespace_8df47e95
+// Namespace namespace_fe3871d9/raz
 // Params 5, eflags: 0x0
 // Checksum 0xaa9eb63c, Offset: 0x1138
 // Size: 0x20e
@@ -206,7 +206,7 @@ function function_525f8122(localclientnum, pos, *surface, *notetrack, bone) {
     fx = util::playfxontag(surface, level._effect[#"hash_139afc42653bd345"], self, bone);
 }
 
-// Namespace namespace_fe3871d9/namespace_8df47e95
+// Namespace namespace_fe3871d9/raz
 // Params 7, eflags: 0x4
 // Checksum 0x27f84d8b, Offset: 0x1350
 // Size: 0x7e
@@ -214,7 +214,7 @@ function private function_e7290ec2(localclientnum, *oldvalue, *newvalue, *bnewen
     fx = playfx(wasdemojump, level._effect[#"hash_c824652e58b5fdf"], self.origin);
 }
 
-// Namespace namespace_fe3871d9/namespace_8df47e95
+// Namespace namespace_fe3871d9/raz
 // Params 7, eflags: 0x4
 // Checksum 0x300bd494, Offset: 0x13d8
 // Size: 0x7e
@@ -222,7 +222,7 @@ function private function_868b328b(localclientnum, *oldvalue, *newvalue, *bnewen
     fx = playfx(wasdemojump, level._effect[#"hash_4e7511e7b7f63d0a"], self.origin);
 }
 
-// Namespace namespace_fe3871d9/namespace_8df47e95
+// Namespace namespace_fe3871d9/raz
 // Params 7, eflags: 0x4
 // Checksum 0x462b4e58, Offset: 0x1460
 // Size: 0xda
@@ -236,7 +236,7 @@ function private function_dc17c6d6(localclientnum, *oldvalue, newvalue, *bnewent
     }
 }
 
-// Namespace namespace_fe3871d9/namespace_8df47e95
+// Namespace namespace_fe3871d9/raz
 // Params 7, eflags: 0x4
 // Checksum 0xcc90549c, Offset: 0x1548
 // Size: 0x1a4
@@ -261,7 +261,7 @@ function private function_16686fd4(localclientnum, model, pos, angles, *hitpos, 
     createdynentandlaunch(model, pos, angles, hitpos, self.origin, var_5846115f * var_243511ab);
 }
 
-// Namespace namespace_fe3871d9/namespace_8df47e95
+// Namespace namespace_fe3871d9/raz
 // Params 7, eflags: 0x4
 // Checksum 0x625048e5, Offset: 0x16f8
 // Size: 0x19c
@@ -275,7 +275,7 @@ function private function_27830d87(localclientnum, *oldvalue, *newvalue, *bnewen
     self playsound(wasdemojump, "zmb_raz_gun_explo", self gettagorigin("tag_eye"));
 }
 
-// Namespace namespace_fe3871d9/namespace_8df47e95
+// Namespace namespace_fe3871d9/raz
 // Params 7, eflags: 0x4
 // Checksum 0x28a9c468, Offset: 0x18a0
 // Size: 0x7e
@@ -283,7 +283,7 @@ function private function_250b46c7(localclientnum, *oldvalue, *newvalue, *bnewen
     fx = util::playfxontag(wasdemojump, level._effect[#"hash_7badd093aab9e236"], self, "j_shoulder_ri");
 }
 
-// Namespace namespace_fe3871d9/namespace_8df47e95
+// Namespace namespace_fe3871d9/raz
 // Params 2, eflags: 0x4
 // Checksum 0x644330ed, Offset: 0x1928
 // Size: 0xac
@@ -297,7 +297,7 @@ function private applynewfaceanim(localclientnum, animation) {
     }
 }
 
-// Namespace namespace_fe3871d9/namespace_8df47e95
+// Namespace namespace_fe3871d9/raz
 // Params 1, eflags: 0x4
 // Checksum 0x9c0be7ea, Offset: 0x19e0
 // Size: 0x76

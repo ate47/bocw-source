@@ -1,0 +1,38 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_cia_frostbite_mtxitem",
+            "itemid": "23472594"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_cia_mtxitem",
+            "itemid": "20084886"
+        },
+        {
+            "var_4a4bc969": "#reticle_36_mtxitem",
+            "itemid": "22365056"
+        },
+        {
+            "var_4a4bc969": "#execution_033_mtxitem",
+            "itemid": "26762470"
+        },
+        {
+            "var_4a4bc969": "#emblem_holiday2_mtxitem",
+            "itemid": "33210438"
+        },
+        {
+            "var_4a4bc969": "#paintjob_sticker_holiday2_mtxitem",
+            "itemid": "29460110"
+        }
+    ],
+    "itemname": "#hash_417c506e31f40984",
+    "var_375a1747": "#hash_c52acb7277fc7d2",
+    "name": "bundle_holiday_1044_sims_urban_winter_mtxbundle",
+    "var_22f91505": "#hash_135bde5ade9fafb8",
+    "var_566825be": "#hash_58ecdc50a4ff19c1",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_3949d81773f6f780",
+    "var_db3e02ab": 2000,
+    "itemid": "20143705"
+}

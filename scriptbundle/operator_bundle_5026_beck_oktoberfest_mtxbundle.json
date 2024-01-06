@@ -1,0 +1,65 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_ger_pl_west_professor_mtxitem",
+            "itemid": "29382924"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_ger_west_mtxitem",
+            "itemid": "31131649"
+        },
+        {
+            "var_4a4bc969": "#operator_mission_5026_mtxitem",
+            "itemid": "33317504"
+        },
+        {
+            "var_4a4bc969": "#operator_mission_5026_unlock_mtxitem",
+            "itemid": "19640921"
+        },
+        {
+            "var_4a4bc969": "#ar_mercenary_bp_oktober_mtxitem",
+            "itemid": "25672808"
+        },
+        {
+            "var_4a4bc969": "#smg_heavy_bp_oktober_mtxitem",
+            "itemid": "22157287"
+        },
+        {
+            "var_4a4bc969": "#knife_ballistic_bp_oktober_mtxitem",
+            "itemid": "29989028"
+        },
+        {
+            "var_4a4bc969": "#execution_161_mtxitem",
+            "itemid": "24463550"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s5_analog_beer_o_clock_mtxitem",
+            "itemid": "24058723"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_tankard_ale_mtxitem",
+            "itemid": "24448074"
+        },
+        {
+            "var_4a4bc969": "#callingcards_oktoberfest_s5_animated_mtxitem",
+            "itemid": "24071347"
+        },
+        {
+            "var_4a4bc969": "#emblems_oktoberfest_s5_animated_mtxitem",
+            "itemid": "24164392"
+        }
+    ],
+    "itemname": "#hash_52458d18714e8075",
+    "var_375a1747": "#hash_1a071c244fe43603",
+    "var_3040f0d1": "#hash_439fc26fe6966bd5",
+    "var_fc891f35": "19640921",
+    "name": "operator_bundle_5026_beck_oktoberfest_mtxbundle",
+    "var_a788fada": "#hash_6d4454295881cc90",
+    "var_22f91505": "#hash_21c2d3bc6825ddc0",
+    "var_566825be": "#hash_3d2f66ff060ab61c",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_1068db1f2d2ce048",
+    "var_db3e02ab": 2000,
+    "itemid": "31878965"
+}

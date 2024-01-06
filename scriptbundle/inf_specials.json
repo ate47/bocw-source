@@ -1,0 +1,27 @@
+{
+    "var_210a8489": [
+        {
+            "var_37d9fb07": "survival_ai_avogadro",
+            "var_a949845f": -1,
+            "var_857deb66": 1
+        },
+        {
+            "var_37d9fb07": "survival_ai_raz",
+            "var_a949845f": -1,
+            "var_857deb66": 1
+        },
+        {
+            "var_37d9fb07": "survival_ai_mimic",
+            "var_a949845f": -1,
+            "var_857deb66": 1
+        },
+        {
+            "var_37d9fb07": "survival_ai_disciple",
+            "var_a949845f": -1,
+            "var_857deb66": 1
+        }
+    ],
+    "var_922067c4": "scriptbundle",
+    "type": "survivalailist",
+    "name": "inf_specials"
+}

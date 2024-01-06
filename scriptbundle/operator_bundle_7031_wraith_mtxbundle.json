@@ -1,0 +1,56 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#po_c_t9_fin_pl_wraith_automaton_mtxitem",
+            "itemid": "21083567"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_fin_wraith_mtxitem",
+            "itemid": "21568824"
+        },
+        {
+            "var_4a4bc969": "#loot_shotgun_fullauto_bp_cyber_mtxitem",
+            "itemid": "32491693"
+        },
+        {
+            "var_4a4bc969": "#smg_cqb_bp_cyber_mtxitem",
+            "itemid": "18348356"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_cybernetic_skull_mtxitem",
+            "itemid": "30670394"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_shelly_mtxitem",
+            "itemid": "19375449"
+        },
+        {
+            "var_4a4bc969": "#execution_068_mtxitem",
+            "itemid": "26188760"
+        },
+        {
+            "var_4a4bc969": "#callingcards_cyborg_ninjia_animation_animated_mtxitem",
+            "itemid": "29712071"
+        },
+        {
+            "var_4a4bc969": "#reticle_144_mtxitem",
+            "itemid": "24410342"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s4_holographic_rank_cyber_mtxitem",
+            "itemid": "24301308"
+        }
+    ],
+    "itemname": "#hash_3104ef2cbf09cde2",
+    "var_375a1747": "#hash_704bdad9419fee64",
+    "var_3040f0d1": "#hash_704bdad9419fee64",
+    "name": "operator_bundle_7031_wraith_mtxbundle",
+    "var_a788fada": "#hash_4f5c98c28c29debb",
+    "var_22f91505": "#hash_4013e1be02becba2",
+    "var_566825be": "#hash_2e999fa2029e93e3",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_4e742ee9c717281e",
+    "var_db3e02ab": 2000,
+    "itemid": "32731773"
+}

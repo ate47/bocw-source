@@ -78,16 +78,16 @@ function event_handler[level_finalizeinit] codecallback_finalizeinitialization(*
         level.var_43723615 = &function_3ba7c551;
         level.var_43701269 = &function_b58be5d;
         level.var_b961672f = 0;
-        level.var_3cb4abe7 = undefined;
+        level.killstreakdeathpenaltyindividualearn = undefined;
     } else if (level.var_5b544215 === 1) {
         level.var_43723615 = &function_5dda25b9;
         level.var_43701269 = &function_fdbd4189;
         level.var_b961672f = (isdefined(getgametypesetting(#"hash_56a31bddd92a64dc")) ? getgametypesetting(#"hash_56a31bddd92a64dc") : 0) / 100;
-        level.var_3cb4abe7 = undefined;
+        level.killstreakdeathpenaltyindividualearn = undefined;
     } else if (level.var_5b544215 === 2) {
         level.var_43723615 = &function_94765bca;
         level.var_43701269 = &function_4301d2e0;
-        level.var_b961672f = (isdefined(getgametypesetting(#"hash_77809e5fafcdd481")) ? getgametypesetting(#"hash_77809e5fafcdd481") : 0) / 100;
+        level.var_b961672f = (isdefined(getgametypesetting(#"killstreakdeathpenaltyindividualearn")) ? getgametypesetting(#"killstreakdeathpenaltyindividualearn") : 0) / 100;
         level.var_bbaf4cdf = &function_fd1f8965;
         level.scorestreaksmaxstacking = 1;
     }
@@ -258,7 +258,7 @@ function function_3ecf3e8d() {
             var_3d6175e7 = var_f9c03957 - player.ekia;
             var_a0173673 = var_3d6175e7 * level.var_b4320b5b[#"hash_1f866ae0a3a62832"];
             if (isdefined(level.scoreinfo[#"ekia"][#"xp"])) {
-                foreach (ekia in player.pers[#"hash_34c4a79728ef275a"]) {
+                foreach (weaponname, ekia in player.pers[#"hash_34c4a79728ef275a"]) {
                     var_98217d33 = ekia / player.ekia;
                     player function_f93152a5(#"hash_11771ff800549e87", getweapon(weaponname), int(var_98217d33 * var_a0173673 * level.scoreinfo[#"ekia"][#"xp"]));
                 }
@@ -729,7 +729,7 @@ function default_onplayerscore(event, player, *victim) {
         }
     }
     function_889ed975(victim, score, objscore, rolescore);
-    if (!function_bb3eba01(player) && !function_a85339ff(player) && !namespace_b0275f02::function_66a9a1e4(player)) {
+    if (!function_bb3eba01(player) && !function_a85339ff(player) && !high_value_target::function_66a9a1e4(player)) {
         victim incpersstat(#"hash_26948141ff5e29a3", score, 0, 0);
     }
 }
@@ -966,8 +966,8 @@ function function_4301d2e0(player) {
             var_464ac60 = player.pers[level.var_e57efb05[slot]];
             var_b961672f = level.var_b961672f;
             killstreakweapon = killstreaks::get_killstreak_weapon(killstreaktype);
-            if (isdefined(level.var_3cb4abe7[killstreakweapon.statname])) {
-                var_b961672f = level.var_3cb4abe7[killstreakweapon.statname];
+            if (isdefined(level.killstreakdeathpenaltyindividualearn[killstreakweapon.statname])) {
+                var_b961672f = level.killstreakdeathpenaltyindividualearn[killstreakweapon.statname];
             }
             var_d152ff83 = player function_95ecfff8();
             var_c64c6d64 = var_464ac60 * var_b961672f - var_d152ff83;
@@ -1078,7 +1078,7 @@ function function_94765bca(player, momentum, *updatescore) {
 function private function_4f4a98bf(player, momentum) {
     level.var_8a1954d1 = 1;
     waittillframeend();
-    foreach (momentum in level.var_212e8400) {
+    foreach (entnum, momentum in level.var_212e8400) {
         player = getentbynum(entnum);
         if (!isdefined(player)) {
             continue;
@@ -1524,7 +1524,7 @@ function _setteamscore(team, teamscore) {
 // Size: 0xcc
 function resetteamscores() {
     if (level.scoreroundwinbased || util::isfirstround()) {
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             game.stat[#"teamscores"][team] = 0;
         }
     }
@@ -1571,7 +1571,7 @@ function updateteamscores(team) {
 // Checksum 0x31254ccf, Offset: 0x6138
 // Size: 0x88
 function updateallteamscores() {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         updateteamscores(team);
     }
 }
@@ -1591,7 +1591,7 @@ function _getteamscore(team) {
 function gethighestteamscoreteam() {
     score = 0;
     winning_teams = [];
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         team_score = game.stat[#"teamscores"][team];
         if (team_score > score) {
             score = team_score;
@@ -1779,7 +1779,7 @@ function updatewinstats(winner) {
     winner stats::function_bb7eedf0(#"wins", 1);
     if (level.rankedmatch && !level.disablestattracking && sessionmodeismultiplayergame()) {
         if (winner stats::get_stat_global(#"wins") >= 50) {
-            winner giveachievement(#"hash_ed510979375c908");
+            winner giveachievement(#"mp_achievement_match_wins");
         }
     }
     if (level.hardcoremode) {
@@ -2047,7 +2047,7 @@ function updatewinlossstats() {
         }
     } else if (function_d68cdc5d() > 1) {
         var_96974d12 = min(function_d68cdc5d(), level.var_eed7c027.size);
-        foreach (ranking in level.var_eed7c027) {
+        foreach (team, ranking in level.var_eed7c027) {
             if (ranking <= var_96974d12) {
                 var_5986770f = getplayers(team);
                 foreach (winner in var_5986770f) {
@@ -2306,7 +2306,7 @@ function givekillstats(smeansofdeath, weapon, evictim, var_e7a369ea) {
                     driverkills = self stats::get_stat_global(#"kills_vehicle_driver");
                     passengerkills = self stats::get_stat_global(#"kills_vehicle_passenger");
                     if (driverkills + passengerkills >= 100) {
-                        self giveachievement(#"hash_284d0b2a070bfb79");
+                        self giveachievement(#"mp_achievement_vehicle_kills");
                         self.var_9ff5ff83 = 1;
                     }
                 }
@@ -2337,7 +2337,7 @@ function givekillstats(smeansofdeath, weapon, evictim, var_e7a369ea) {
         self.ekia = self getpersstat(#"ekia");
         self function_863d9af1(weapon);
         if (self.var_ba29f4f6 !== 1 && self stats::get_stat_global(#"ekia") >= 200) {
-            self giveachievement(#"hash_5f4e85a66456e98b");
+            self giveachievement(#"mp_achievement_eliminations");
             self.var_ba29f4f6 = 1;
         }
     }
@@ -2534,7 +2534,7 @@ function function_c2ea00b2(attacker, inflictor, weapon) {
 function function_9779ac61() {
     if (level.scoreroundwinbased) {
         if (level.teambased) {
-            foreach (_ in level.teams) {
+            foreach (team, _ in level.teams) {
                 [[ level._setteamscore ]](team, game.stat[#"roundswon"][team]);
             }
         }

@@ -179,7 +179,7 @@ function function_81534803(dataname, missionname = function_8136eb5a()) {
                 world.mapdata[missionname][dataname] = spawnstruct();
             }
         } else {
-            foreach (value in world.mapdata[missionname]) {
+            foreach (dataname, value in world.mapdata[missionname]) {
                 world.mapdata[missionname][dataname] = spawnstruct();
             }
         }
@@ -204,7 +204,7 @@ function function_7e0e735b() {
     missionname = function_8136eb5a();
     level.var_d6bcee66 = [];
     if (isdefined(world.mapdata[missionname])) {
-        foreach (value in world.mapdata[missionname]) {
+        foreach (dataname, value in world.mapdata[missionname]) {
             level.var_d6bcee66[dataname] = function_2e532eed(world.mapdata[missionname][dataname], 1);
         }
     }
@@ -217,7 +217,7 @@ function function_7e0e735b() {
 function function_9797184c() {
     missionname = function_8136eb5a();
     if (isdefined(level.var_d6bcee66)) {
-        foreach (value in level.var_d6bcee66) {
+        foreach (dataname, value in level.var_d6bcee66) {
             world.mapdata[missionname][dataname] = function_2e532eed(level.var_d6bcee66[dataname], 1);
         }
     }

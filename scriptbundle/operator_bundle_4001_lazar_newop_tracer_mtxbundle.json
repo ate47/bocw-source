@@ -1,0 +1,56 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_eg_pl_quicksand_mtxitem",
+            "itemid": "30748943"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_eg_quicksand_mtxitem",
+            "itemid": "33165094"
+        },
+        {
+            "var_4a4bc969": "#ar_accurate_bp_draid_mtxitem",
+            "itemid": "31882677"
+        },
+        {
+            "var_4a4bc969": "#tr_powerburst_cb_bp_draid_mtxitem",
+            "itemid": "25398641"
+        },
+        {
+            "var_4a4bc969": "#execution_205_mtxitem",
+            "itemid": "20932491"
+        },
+        {
+            "var_4a4bc969": "#emblems_quicksand_mtxitem",
+            "itemid": "24429206"
+        },
+        {
+            "var_4a4bc969": "#callingcards_lazar_animated_mtxitem",
+            "itemid": "19967841"
+        },
+        {
+            "var_4a4bc969": "#loot_ges_mtx_t9_finger_guns_mtxitem",
+            "itemid": "19158441"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_skeleton_grenade_mtxitem",
+            "itemid": "24745175"
+        },
+        {
+            "var_4a4bc969": "#reticle_97_mtxitem",
+            "itemid": "18046350"
+        }
+    ],
+    "itemname": "#hash_5252f4137b3c0cc3",
+    "var_375a1747": "#hash_28cbb12bddd34495",
+    "var_579fd6c3": 54,
+    "name": "operator_bundle_4001_lazar_newop_tracer_mtxbundle",
+    "var_a788fada": "#hash_104e6dd1bafa1902",
+    "var_22f91505": "#hash_c197ce1abd1a2ba",
+    "var_566825be": "#hash_4f9788e441f9cb0e",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_718c4a1d45b5acb6",
+    "var_db3e02ab": 2000,
+    "itemid": "21394494"
+}

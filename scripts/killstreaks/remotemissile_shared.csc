@@ -322,7 +322,7 @@ function function_d260edc9(localclientnum, enabled) {
     if (!isdefined(postfxbundle)) {
         return;
     }
-    if (enabled && !function_148ccc79(localclientnum, postfxbundle) && (!function_1cbf351b(localclientnum) || function_f9af4fc2(localclientnum)) && !namespace_56e70a4a::function_c955fbd1(localclientnum)) {
+    if (enabled && !function_148ccc79(localclientnum, postfxbundle) && (!function_1cbf351b(localclientnum) || function_f9af4fc2(localclientnum)) && !codcaster::function_c955fbd1(localclientnum)) {
         if (isdefined(self.weapon) && self.weapon.statname == #"remote_missile") {
             function_a837926b(localclientnum, postfxbundle);
         }
@@ -344,7 +344,7 @@ function function_72c9005e(localclientnum, *oldval, newval, *bnewent, *binitials
     }
     if (bwastimejump) {
         if (isdefined(postfxbundle) && !function_148ccc79(fieldname, postfxbundle)) {
-            if (!namespace_56e70a4a::function_c955fbd1(fieldname) && !namespace_1332002f::function_21b773d5(fieldname)) {
+            if (!codcaster::function_c955fbd1(fieldname) && !squad_spawn::function_21b773d5(fieldname)) {
                 if (function_1cbf351b(fieldname)) {
                     level.var_9ca75ca3[fieldname] = 1;
                 }

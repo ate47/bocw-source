@@ -1,0 +1,35 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_navyseal_ringleader_mtxitem",
+            "itemid": "27563843"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_navy_seal_mtxitem",
+            "itemid": "20822559"
+        },
+        {
+            "var_4a4bc969": "#lmg_accurate_bp_bstreet_mtxitem",
+            "itemid": "19789935"
+        },
+        {
+            "var_4a4bc969": "#callingcards_properbully_mtxitem",
+            "itemid": "18620353"
+        },
+        {
+            "var_4a4bc969": "#reticle_70_mtxitem",
+            "itemid": "19862059"
+        }
+    ],
+    "itemname": "#hash_5e762888d44dc757",
+    "var_375a1747": "#hash_ff8e01a43a2f2e5",
+    "name": "bundle_operator_2068_baker_proper_bully_mtxbundle",
+    "var_a788fada": "#hash_1983c02abc2e13ea",
+    "var_22f91505": "#hash_c29bb17d31c70f1",
+    "var_566825be": "#hash_17a94235af026d76",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_67a43bf56616b1f1",
+    "var_db3e02ab": 2000,
+    "itemid": "29447778"
+}

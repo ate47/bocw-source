@@ -1,0 +1,174 @@
+{
+    "wonderweaponphases": [
+        {
+            "components": [
+                {
+                    "stages": [
+                        {
+                            "numneeded": 1,
+                            "var_2d787849": "#hash_704c4a0b391c38d6"
+                        },
+                        {
+                            "numneeded": 1,
+                            "var_2d787849": "#hash_274f96c2323265fd"
+                        }
+                    ],
+                    "clientfield": "#hash_2e341f321b2ab3da"
+                },
+                {
+                    "stages": [
+                        {
+                            "numneeded": 1,
+                            "var_2d787849": "#hash_4d6c10213f266446"
+                        },
+                        {
+                            "numneeded": 1,
+                            "var_2d787849": "#hash_234f402ed80ac54d"
+                        }
+                    ],
+                    "clientfield": "#hash_240dcac486ef946a"
+                },
+                {
+                    "stages": [
+                        {
+                            "numneeded": 1,
+                            "var_2d787849": "#hash_a157fc0ead8fb24"
+                        }
+                    ],
+                    "clientfield": "#hash_7b8f7131712d7564"
+                }
+            ]
+        }
+    ],
+    "shieldpieces": [
+        {
+            "var_37acb3da": "#hash_392454387b878862",
+            "clientfield": "#hash_2fed7d3c1ea3e1b8"
+        },
+        {
+            "var_37acb3da": "#hash_392454387b878862",
+            "clientfield": "#hash_2fed803c1ea3e6d1"
+        },
+        {
+            "var_37acb3da": "#hash_392454387b878862",
+            "clientfield": "#hash_2fed7f3c1ea3e51e"
+        }
+    ],
+    "quests": [
+        {
+            "phases": [
+                {
+                    "items": [
+                        {
+                            "stages": [
+                                {
+                                    "var_2d787849": "#hash_3976028e08aefd91"
+                                }
+                            ],
+                            "clientfield": "#hash_1f87150a0632f418"
+                        },
+                        {
+                            "stages": [
+                                {
+                                    "var_2d787849": "#hash_61b73326d5f47810"
+                                }
+                            ],
+                            "clientfield": "#hash_1f87180a0632f931"
+                        },
+                        {
+                            "stages": [
+                                {
+                                    "var_2d787849": "#hash_531c94beccacef8c"
+                                }
+                            ],
+                            "clientfield": "#hash_1f87170a0632f77e"
+                        }
+                    ]
+                }
+            ],
+            "name": "zm_mq_aetherscope",
+            "var_a0ebe517": "#hash_1ca4c39373eb4bdf",
+            "var_bb5d23fb": "#hash_14929302dd34fb90"
+        },
+        {
+            "phases": [
+                {
+                    "items": [
+                        {
+                            "stages": [
+                                {
+                                    "var_2d787849": "#hash_29952045f8804440"
+                                }
+                            ],
+                            "clientfield": "#hash_6df578dd42812c70"
+                        },
+                        {
+                            "stages": [
+                                {
+                                    "var_2d787849": "#hash_5f7bd05915dc4411"
+                                }
+                            ],
+                            "clientfield": "#hash_1b836a89598ddaa4"
+                        },
+                        {
+                            "stages": [
+                                {
+                                    "var_2d787849": "#hash_57beeb5d0783c84a"
+                                }
+                            ],
+                            "clientfield": "#hash_2d5b26565a3e1ea1"
+                        }
+                    ]
+                }
+            ],
+            "name": "zm_mq_item",
+            "var_a0ebe517": "#hash_1ca4c49373eb4d92",
+            "var_bb5d23fb": "#hash_3fdd6c78a4f4256f"
+        },
+        {
+            "phases": [
+                {
+                    "items": [
+                        {
+                            "stages": [
+                                {
+                                    "var_2d787849": "#hash_8eafe1525de2154"
+                                }
+                            ],
+                            "clientfield": "#hash_6de5cab1fba28d40"
+                        },
+                        {
+                            "stages": [
+                                {
+                                    "var_2d787849": "#hash_2de1e7a326a9e6db"
+                                }
+                            ],
+                            "clientfield": "#hash_1ec8e7f21f81afb0"
+                        }
+                    ]
+                }
+            ],
+            "name": "zm_ww_item",
+            "var_a0ebe517": "#hash_1ca4c59373eb4f45",
+            "var_bb5d23fb": "#hash_48a98f1907099371"
+        }
+    ],
+    "packapunchitems": [
+        {
+            "stages": [
+                {
+                    "var_2d787849": "#hash_7dd33a96083ebc49"
+                }
+            ],
+            "clientfield": "#hash_77bc2e157f9d438e"
+        }
+    ],
+    "var_fde97bcd": "#hash_48e8c8a1322af446",
+    "var_922067c4": "scriptbundle",
+    "var_6d1d6580": "#hash_75cbce196912130e",
+    "type": "zminventory",
+    "var_b10f2611": "#hash_7407af233550196d",
+    "name": "zm_inventory_silver",
+    "var_88c17f11": "#sentinel_artifact",
+    "var_45dbf920": "#hash_5350ddb77ac9317f"
+}

@@ -629,7 +629,7 @@ function getpotentialtargets(owner, customsettings) {
     owner_team = isdefined(owner) ? owner.team : undefined;
     if (level.teambased && isdefined(owner_team) && level.friendlyfire == 0) {
         potential_targets = [];
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             if (customsettings.var_14e16318 === 1 || util::function_fbce7263(team, owner_team)) {
                 potential_targets = arraycombine(potential_targets, getplayers(team), 0, 0);
                 continue;

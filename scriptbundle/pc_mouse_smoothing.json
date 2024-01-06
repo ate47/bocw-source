@@ -1,0 +1,28 @@
+{
+    "options": [
+        {
+            "label": "#hash_94eb0e3329edf5f",
+            "value": "0"
+        },
+        {
+            "label": "#menu/enabled",
+            "value": "1"
+        }
+    ],
+    "description": "#hash_6f03ae14b0bf8308",
+    "var_60fcfffa": "#menu/on",
+    "var_9bc3be7": 1,
+    "var_4ced19ab": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "maxvalue": 1,
+    "name": "pc_mouse_smoothing",
+    "displayname": "#hash_107aa4c2bd8bb180",
+    "var_500458ac": 10,
+    "var_66faec87": 10,
+    "statname": "mouse_smoothing",
+    "var_6f00a61a": 1.1,
+    "var_b7401319": "#menu/off"
+}

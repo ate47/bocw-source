@@ -25,13 +25,13 @@ function private function_70a657d8() {
 // Checksum 0xa8e9fa10, Offset: 0x158
 // Size: 0x15c
 function private function_14657fe9(*local_client_num, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    self.var_23944654 = bwastimejump;
+    self.battletrack_active = bwastimejump;
     waitframe(1);
     players = getlocalplayers();
     foreach (player in players) {
         vehicle = getplayervehicle(player);
         if (isdefined(vehicle)) {
-            if (vehicle.var_23944654 !== 0) {
+            if (vehicle.battletrack_active !== 0) {
                 setdvar(#"hash_30d02c7f5a4acf54", 1);
                 return;
             }

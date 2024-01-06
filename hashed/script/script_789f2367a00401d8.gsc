@@ -607,7 +607,7 @@ function function_ae0a22c4(position) {
 function getpotentialtargets(origin) {
     if (level.teambased && level.friendlyfire == 0) {
         potential_targets = [];
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             potential_targets = arraycombine(potential_targets, getplayers(team, origin, 65), 0, 0);
             continue;
         }

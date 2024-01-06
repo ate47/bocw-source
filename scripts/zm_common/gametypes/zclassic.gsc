@@ -59,7 +59,7 @@ function event_handler[gametype_init] main(*eventstruct) {
     spawner::add_ai_spawn_function(&function_a143f9d1);
     level thread function_a24232f4();
     namespace_58949729::function_5a12541e();
-    level thread function_cc18cf64();
+    level thread intro_cinematic();
     callback::on_round_end(&on_round_end);
     callback::add_callback(#"hash_594217387367ebb4", &function_d81240c3);
     callback::add_callback(#"hash_3b7d3ed9e484ef72", &function_809241a9);
@@ -218,7 +218,7 @@ function on_player_spawn() {
 // Params 0, eflags: 0x4
 // Checksum 0x9714d6e4, Offset: 0xc38
 // Size: 0x29c
-function private function_cc18cf64() {
+function private intro_cinematic() {
     level flag::wait_till("initial_blackscreen_passed");
     if (isdefined(level.var_dfee7fc2) && !getdvarint(#"hash_39af51993585a73e", 0)) {
         foreach (player in getplayers()) {

@@ -1,0 +1,77 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_38d761384a95dc18"
+        },
+        {
+            "var_fe10649e": "#hash_68c81b45628b45fa"
+        },
+        {
+            "var_fe10649e": "#hash_68c81a45628b4447"
+        },
+        {
+            "var_fe10649e": "#hash_68c81945628b4294"
+        },
+        {
+            "var_fe10649e": "#hash_68c81845628b40e1"
+        },
+        {
+            "var_fe10649e": "#hash_68c81745628b3f2e"
+        }
+    ],
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#po_c_t9_rus_pl_stitch_manga_mtxitem",
+            "itemid": "26537892"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_rus_stitch_mtxitem",
+            "itemid": "30156871"
+        },
+        {
+            "var_4a4bc969": "#ar_accurate_bp_stitch_mtxitem",
+            "itemid": "23164361"
+        },
+        {
+            "var_4a4bc969": "#loot_smg_fastfire_bp_stitch_mtxitem",
+            "itemid": "22783141"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_manga_robot_head_mtxitem",
+            "itemid": "25288088"
+        },
+        {
+            "var_4a4bc969": "#execution_046_mtxitem",
+            "itemid": "31001426"
+        },
+        {
+            "var_4a4bc969": "#callingcards_cel_shaded_animated_mtxitem",
+            "itemid": "30570064"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_cel_shaded_mtxitem",
+            "itemid": "29059517"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s6_digital_compass_stitch_mtxitem",
+            "itemid": "24649221"
+        },
+        {
+            "var_4a4bc969": "#emblems_cel_shaded_animated_mtxitem",
+            "itemid": "22415316"
+        }
+    ],
+    "itemname": "#hash_4b55c3a47265ccb6",
+    "var_375a1747": "#hash_38d761384a95dc18",
+    "var_3040f0d1": "#hash_38d761384a95dc18",
+    "var_8ee7db29": 1,
+    "name": "operator_bundle_7034_stitch_anime_mtxbundle",
+    "var_a788fada": "#hash_5057156f39832d13",
+    "var_22f91505": "#hash_626d15abe799be95",
+    "var_566825be": "#hash_19cfbd7b32f86c3b",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_56226515ca6e364d",
+    "var_db3e02ab": 600,
+    "itemid": "23503009"
+}

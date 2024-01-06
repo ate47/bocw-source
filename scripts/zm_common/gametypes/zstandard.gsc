@@ -1659,7 +1659,7 @@ function function_f6a30a49(n_round) {
 // Size: 0x10c
 function function_6a326935(str_door_name) {
     if (isdefined(level.var_5c3c0b68)) {
-        foreach (var_8048fc3c in level.var_5c3c0b68) {
+        foreach (index, var_8048fc3c in level.var_5c3c0b68) {
             foreach (var_4cf63d49 in var_8048fc3c) {
                 if (var_4cf63d49 == str_door_name) {
                     return index;
@@ -2167,7 +2167,7 @@ function function_399fa32() {
     if (!isdefined(level.var_f944d22e) || !isdefined(level.var_f944d22e[level.round_number])) {
         return;
     }
-    foreach (s_data in level.var_f944d22e[level.round_number]) {
+    foreach (archetype, s_data in level.var_f944d22e[level.round_number]) {
         if (archetype == #"zombie") {
             continue;
         }

@@ -1,0 +1,71 @@
+{
+    "itemlist": [
+        {
+            "minweight": 1,
+            "var_a6762160": "#smg_standard_t9_green_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#smg_heavy_t9_green_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#smg_handling_t9_green_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#smg_burst_t9_green_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#smg_capacity_t9_green_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#smg_fastfire_t9_green_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#smg_accurate_t9_green_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#smg_spray_t9_green_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#smg_semiauto_t9_green_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#smg_season6_t9_green_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "zm_magicbox_weapon_smg_green_list",
+    "var_fde72c94": 100
+}

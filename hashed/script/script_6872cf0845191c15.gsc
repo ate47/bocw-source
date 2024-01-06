@@ -106,7 +106,7 @@ function autoexec ignore_systems() {
     system::ignore(#"character_unlock_zero");
     system::ignore(#"character_unlock_zero_fixup");
     system::ignore(#"challenges_shared");
-    system::ignore(#"hash_2f648e335983677a");
+    system::ignore(#"chopper_gunner");
     system::ignore(#"colors");
     system::ignore(#"hash_19a39574bfda1b56");
     system::ignore(#"counteruav");
@@ -142,10 +142,10 @@ function autoexec ignore_systems() {
     system::ignore(#"killstreaks");
     system::ignore(#"laststand");
     system::ignore(#"laststand_mp");
-    system::ignore(#"hash_3d92e2c7bea1eee2");
+    system::ignore(#"mechz");
     system::ignore(#"hash_30f3aa1706b7cb3d");
     system::ignore(#"mp_platoons");
-    system::ignore(#"hash_438fafe881cdd097");
+    system::ignore(#"napalm_strike");
     system::ignore(#"planemortar");
     system::ignore(#"proximity_grenade");
     system::ignore(#"planner_commander");
@@ -162,7 +162,7 @@ function autoexec ignore_systems() {
     system::ignore(#"potm");
     system::ignore(#"popups");
     system::ignore(#"rank");
-    system::ignore(#"hash_165bcc9977521521");
+    system::ignore(#"recon_plane");
     system::ignore(#"remotemissile");
     system::ignore(#"spectating");
     system::ignore(#"hash_7710b10c0110b17");

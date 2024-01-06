@@ -1,0 +1,188 @@
+{
+    "koth": [
+        {
+            "didyouknowentry": "#tips_multiplayer_koth",
+            "weight": 1
+        }
+    ],
+    "var_afca0ba5": [
+        {
+            "didyouknowentry": "#tips_zombies_onslaught_holiday",
+            "weight": 51
+        }
+    ],
+    "control": [
+        {
+            "didyouknowentry": "#tips_multiplayer_control",
+            "weight": 1
+        }
+    ],
+    "sd": [
+        {
+            "didyouknowentry": "#tips_multiplayer_sd",
+            "weight": 1
+        }
+    ],
+    "conf": [
+        {
+            "didyouknowentry": "#tips_multiplayer_conf",
+            "weight": 1
+        }
+    ],
+    "var_6d6a0ac2": [
+        {
+            "didyouknowentry": "#tips_zombies_onslaught",
+            "weight": 50
+        }
+    ],
+    "var_e17fb942": [
+        {
+            "didyouknowentry": "#tips_pc_gamepad",
+            "weight": 1
+        }
+    ],
+    "ball": [
+        {
+            "didyouknowentry": "#tips_multiplayer_ball"
+        }
+    ],
+    "var_8b1637fb": [
+        {
+            "didyouknowentry": "#tips_zombies_zholiday",
+            "weight": 51
+        }
+    ],
+    "league": [
+        {
+            "didyouknowentry": "#tips_multiplayer_league",
+            "weight": 1
+        }
+    ],
+    "tdm_bb": [
+        {
+            "didyouknowentry": "#tips_multiplayer_tdm_bb",
+            "weight": 1
+        }
+    ],
+    "dom_bb": [
+        {
+            "didyouknowentry": "#tips_multiplayer_dom_bb",
+            "weight": 1
+        }
+    ],
+    "zsurvival": [
+        {
+            "didyouknowentry": "#tips_zombies_survival",
+            "weight": 50
+        },
+        {
+            "didyouknowentry": "#tips_zombies_shared",
+            "weight": 50
+        }
+    ],
+    "var_ec502488": [
+        {
+            "didyouknowentry": "#tips_zombies_cranked",
+            "weight": 51
+        }
+    ],
+    "escort": [
+        {
+            "didyouknowentry": "#tips_multiplayer_escort"
+        }
+    ],
+    "fireteam_dirty_bomb": [
+        {
+            "didyouknowentry": "#tips_multiplayer_fireteam_dirty_bomb",
+            "weight": 3
+        }
+    ],
+    "multiplayer": [
+        {
+            "didyouknowentry": "#tips_multiplayer_shared",
+            "weight": 1
+        }
+    ],
+    "var_8cff5775": [
+        {
+            "didyouknowentry": "#tips_zombies_doa",
+            "weight": 50
+        }
+    ],
+    "dom": [
+        {
+            "didyouknowentry": "#tips_multiplayer_dom",
+            "weight": 1
+        }
+    ],
+    "bounty": [
+        {
+            "didyouknowentry": "#tips_multiplayer_bounty"
+        }
+    ],
+    "gun": [
+        {
+            "didyouknowentry": "#tips_multiplayer_gun",
+            "weight": 1
+        }
+    ],
+    "var_aebde246": [
+        {
+            "didyouknowentry": "#tips_multiplayer_war12v12",
+            "weight": 3
+        }
+    ],
+    "var_774aa859": [
+        {
+            "didyouknowentry": "#tips_multiplayer_vip",
+            "weight": 3
+        }
+    ],
+    "public": [
+        {
+            "didyouknowentry": "#tips_multiplayer_public",
+            "weight": 1
+        }
+    ],
+    "warzone": [
+        {
+            "didyouknowentry": "#tips_warzone_shared"
+        },
+        {
+            "didyouknowentry": "#tips_warzone_redeploymodes"
+        },
+        {
+            "didyouknowentry": "#tips_warzone_spectrerising"
+        },
+        {
+            "didyouknowentry": "#tips_warzone_ambush"
+        },
+        {
+            "didyouknowentry": "#tips_warzone_groundwar"
+        }
+    ],
+    "zclassic": [
+        {
+            "didyouknowentry": "#tips_zombies_classic",
+            "weight": 50
+        },
+        {
+            "didyouknowentry": "#tips_zombies_shared",
+            "weight": 50
+        }
+    ],
+    "warzone_hot_pursuit": [
+        {
+            "didyouknowentry": "#tips_warzone_hotpursuit"
+        }
+    ],
+    "infect": [
+        {
+            "didyouknowentry": "#tips_zombies_infect",
+            "weight": 1
+        }
+    ],
+    "var_922067c4": "SCRIPTBUNDLE",
+    "type": "didyouknow",
+    "name": "pcdidyouknow"
+}

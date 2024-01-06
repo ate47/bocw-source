@@ -1,0 +1,34 @@
+{
+    "worldfx": [
+        {
+            "worldfx": "#hash_3dad79ca7ca879b5"
+        }
+    ],
+    "var_a6616b9c": 1,
+    "var_fa988b4b": 120,
+    "var_68c62574": 20,
+    "var_922067c4": "scriptbundle",
+    "model": "#hash_3245574588fabca9",
+    "var_16e34ef4": 64,
+    "var_e9898330": "zmpingitemquest",
+    "var_ac75b59f": -1,
+    "var_c2de1e75": "zm_item_pickup_rumble",
+    "type": "itemspawnentry",
+    "hintstring": "#hash_6c9065f33bf019de",
+    "spawnsound": "zmb_tung_mq_item_drop",
+    "var_4a1a4613": "armor_swap",
+    "var_6cc98559": "zmb_tung_mq_item_land",
+    "name": "item_zmquest_tungsten_mq_quest_part_catalyzed",
+    "displayname": "#hash_6c9065f33bf019de",
+    "var_36781d9f": "zmb_tung_mq_item_drop",
+    "var_9e569978": 1,
+    "icon": "#hash_1a24f848ad8bf952",
+    "modelscale": 1,
+    "rarity": "Ultra",
+    "var_1b0b57d1": "evt_item_despawn",
+    "handler": "#hash_1002a9af0882010e",
+    "var_3af59a99": 1,
+    "pickupicon": "#hash_1a24f848ad8bf952",
+    "itemtype": "quest",
+    "pickupsound": "zmb_tung_mq_item_pickup"
+}

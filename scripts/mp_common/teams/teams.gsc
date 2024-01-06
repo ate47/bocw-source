@@ -94,7 +94,7 @@ function on_joined_spectators(*params) {
 // Checksum 0x4f94dd8e, Offset: 0x410
 // Size: 0xc4
 function function_45721cef() {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (!isdefined(game.migratedhost)) {
             game.stat[#"teamscores"][team] = 0;
         }
@@ -187,7 +187,7 @@ function update_played_time() {
     timealive = int(min(self.timeplayed[#"alive"], level.timeplayedcap));
     self.pers[#"time_played_alive"] = self.pers[#"time_played_alive"] + timealive;
     profileNamedStop();
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (isdefined(self.timeplayed[team])) {
             self.timeplayed[team] = 0;
         }
@@ -328,7 +328,7 @@ function getteamindex(team) {
 // Checksum 0x70496e44, Offset: 0x11b0
 // Size: 0xc2
 function getenemyteam(player_team) {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (team == player_team) {
             continue;
         }
@@ -483,7 +483,7 @@ function function_596bfb16() {
     }
     /#
         if (getdvarint(#"hash_79f55d595a926104", 0)) {
-            foreach (_ in level.teams) {
+            foreach (team, _ in level.teams) {
                 game.everexisted[team] = 0;
                 level.everexisted[team] = 0;
             }

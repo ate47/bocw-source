@@ -1,0 +1,31 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#smg_handling_bp_sim_mtxitem",
+            "itemid": "20302911"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_3dglass_mtxitem",
+            "itemid": "31176027"
+        },
+        {
+            "var_4a4bc969": "#callingcards_rubberduck_mtxitem",
+            "itemid": "19484270"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_ahwk_08_mtxitem",
+            "itemid": "25981093"
+        }
+    ],
+    "itemname": "#hash_4f7579f041b30af0",
+    "var_375a1747": "#hash_cdfeccb3092aafa",
+    "name": "blueprint_bundle_3051_milano_821_railway_shootout_mtxbundle",
+    "var_a788fada": "#hash_39b15e9473694325",
+    "var_22f91505": "#hash_50f05cfdada97238",
+    "var_566825be": "#hash_997df53120a11bd",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_711ee4b9b4124600",
+    "var_db3e02ab": 2000,
+    "itemid": "23170046"
+}

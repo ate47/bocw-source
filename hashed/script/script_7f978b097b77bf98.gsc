@@ -103,12 +103,12 @@ function private function_b0c8ef74(eventstruct) {
         self.b_complete = undefined;
         self triggerenable(0);
         s_chest = self.instance.var_fe2612fe[#"chest"][0];
-        self.instance.var_31919730 thread scene::play(#"hash_29ab5c78f46f19a3", self.instance.var_31919730);
+        self.instance.var_31919730 thread scene::play(#"p9_fxanim_zm_gp_chest_01_lrg_black_bundle", self.instance.var_31919730);
         self.instance.var_85c920d0 = namespace_8b6a9d79::function_f3d93ee9(s_chest, #"hash_2641cfb5c2cdcc85");
         self.instance.var_85c920d0 clientfield::set("sr_demented_echo_fx", 1);
         self.instance.var_85c920d0 playsound(#"hash_36ac898552727197");
         self.instance.var_85c920d0 playloopsound(#"evt_sur_we_bc_ghost_lp");
-        s_chest thread scene::play(#"hash_736661ee1ae2dc67", self.instance.var_85c920d0);
+        s_chest thread scene::play(#"aib_t9_zm_sr_echo_chest_spawn", self.instance.var_85c920d0);
         level thread function_7914c7ef(self.instance.var_85c920d0, s_chest);
         eventstruct.activator function_bc82f900("damage_heavy");
         eventstruct.activator zm_stats::function_945c7ce2(#"hash_346e6565d0a79066", 1);
@@ -382,7 +382,7 @@ function private function_7914c7ef(var_85c920d0, *s_chest) {
             s_chest clientfield::set("sr_demented_echo_fx", 1);
             s_chest playsound(#"hash_36ac898552727197");
             s_chest playloopsound("evt_sur_we_bc_ghost_lp");
-            s_chest thread scene::play(#"hash_767e7376a0ad6762", s_chest);
+            s_chest thread scene::play(#"ai_t9_zm_sr_echo_world_spawn", s_chest);
             str_vo = array::function_a3b0f814(s_chest.var_3608d414, 0);
             s_chest thread zm_vo::function_d6f8bbd9(str_vo);
             a_players = getplayers("all", var_ff1022f3.origin, 350);
@@ -395,7 +395,7 @@ function private function_7914c7ef(var_85c920d0, *s_chest) {
             level flag::clear(#"hash_1681da514d47c415");
             level thread function_aa89ee85(s_chest.origin, undefined, undefined, a_ai);
             wait(5);
-            s_chest thread scene::play(#"hash_767e7376a0ad6762", "outro", s_chest);
+            s_chest thread scene::play(#"ai_t9_zm_sr_echo_world_spawn", "outro", s_chest);
             wait(0.5);
             s_chest clientfield::set("sr_demented_echo_fx", 0);
             s_chest playsound(#"hash_47ee04e03e4bdd6");

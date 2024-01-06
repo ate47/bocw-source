@@ -184,7 +184,7 @@ function function_b1553822() {
 // Checksum 0x5f70539d, Offset: 0xb88
 // Size: 0x24
 function function_c11b0642() {
-    level flag::wait_till(#"hash_17936c9c569996f5");
+    level flag::wait_till(#"system_postinit_complete");
 }
 
 // Namespace system/system_shared

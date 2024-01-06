@@ -1,0 +1,26 @@
+{
+    "weakpoints": [
+        {
+            "var_60790e23": [
+                {
+                    "hitloc": "head"
+                },
+                {
+                    "hitloc": "neck"
+                },
+                {
+                    "hitloc": "helmet"
+                }
+            ],
+            "var_3765e777": 1,
+            "var_641ce20e": 1,
+            "type": "#weakpoint",
+            "activebydefault": 1,
+            "health": 1
+        }
+    ],
+    "var_922067c4": "scriptbundle",
+    "model": "#hash_6e9f056c769f2820",
+    "type": "characterweakpointsettings",
+    "name": "c_t9_sr_steiner_weakpoint_def"
+}

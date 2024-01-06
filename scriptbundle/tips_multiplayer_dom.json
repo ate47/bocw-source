@@ -1,0 +1,28 @@
+{
+    "var_f2454da1": [
+        {
+            "var_9e589ff4": 1,
+            "var_75f09f03": "#hash_64cbe07dff4a1ecc",
+            "var_81294378": "#==",
+            "var_88ff5fc3": "#none"
+        },
+        {
+            "var_9e589ff4": 1,
+            "var_75f09f03": "#hash_5286a36efc08b517",
+            "var_81294378": "#==",
+            "var_88ff5fc3": "#none"
+        },
+        {
+            "var_9e589ff4": 1,
+            "var_75f09f03": "#hash_355fb240a778d4b4",
+            "var_81294378": "#==",
+            "var_88ff5fc3": "#none"
+        }
+    ],
+    "var_922067c4": "SCRIPTBUNDLE",
+    "type": "didyouknowentry",
+    "var_9e589ff4": 1,
+    "name": "tips_multiplayer_dom",
+    "var_81294378": "#==",
+    "var_88ff5fc3": "#none"
+}

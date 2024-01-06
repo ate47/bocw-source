@@ -1,0 +1,42 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_mobility_bp_camera_mtxitem",
+            "itemid": "29865114"
+        },
+        {
+            "var_4a4bc969": "#loot_smg_fastfire_bp_camera_mtxitem",
+            "itemid": "22458003"
+        },
+        {
+            "var_4a4bc969": "#callingcards_camera_gun_mtxitem",
+            "itemid": "25668694"
+        },
+        {
+            "var_4a4bc969": "#loot_ges_mtx_t9_finger_frame_mtxitem",
+            "itemid": "18978324"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_r82_24_mtxitem",
+            "itemid": "30695836"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_popcorn_mtxitem",
+            "itemid": "26761053"
+        },
+        {
+            "var_4a4bc969": "#emblems_camera_gun_01_mtxitem",
+            "itemid": "33014529"
+        }
+    ],
+    "itemname": "#hash_41f62acfe2ff2ee5",
+    "var_375a1747": "#hash_1cb0f82142f6dd63",
+    "name": "blueprint_bundle_2020_qbz_83_camera_gun_mtxbundle",
+    "var_22f91505": "#hash_247f2c7d15cdb4a5",
+    "var_566825be": "#hash_483406d830121290",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_3876b6d675b3645d",
+    "var_db3e02ab": 2000,
+    "itemid": "24730570"
+}

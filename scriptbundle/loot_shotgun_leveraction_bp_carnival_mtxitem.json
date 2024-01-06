@@ -1,0 +1,47 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_1577317650f1ee3b"
+        },
+        {
+            "var_fe10649e": "#hash_3407409d59e9c087"
+        },
+        {
+            "var_fe10649e": "#hash_3407419d59e9c23a"
+        },
+        {
+            "var_fe10649e": "#hash_3407429d59e9c3ed"
+        }
+    ],
+    "var_c1b2a9f": [
+        {
+            "var_fe10649e": "#hash_2e8265baa49bec7"
+        },
+        {
+            "var_fe10649e": "#hash_3ba182412700a19b"
+        },
+        {
+            "var_fe10649e": "#hash_3ba183412700a34e"
+        },
+        {
+            "var_fe10649e": "#hash_3ba184412700a501"
+        }
+    ],
+    "itemname": "#hash_673911d7d45c9f19",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_2e8265baa49bec7",
+    "var_4f3108ff": 1,
+    "var_728341a": 1,
+    "var_375a1747": "#hash_1577317650f1ee3b",
+    "season": 6,
+    "var_46300498": 1,
+    "var_8ee7db29": 1,
+    "baseweapon": "#hash_11d566ca27a342b2",
+    "name": "loot_shotgun_leveraction_bp_carnival_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 750,
+    "var_700702e5": 750,
+    "rarity": 5,
+    "itemid": "33462081",
+    "blueprint": "#hash_673911d7d45c9f19"
+}

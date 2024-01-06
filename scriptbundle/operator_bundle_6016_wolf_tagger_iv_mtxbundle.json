@@ -1,0 +1,40 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_deltaforce_brutalist_base_mtxitem",
+            "itemid": "32034964"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_deltaforce_mtxitem",
+            "itemid": "22503750"
+        },
+        {
+            "var_4a4bc969": "#loot_smg_spray_bp_tagger_solo_mtxitem",
+            "itemid": "32324764"
+        },
+        {
+            "var_4a4bc969": "#ar_fasthandling_bp_tagger_solo_mtxitem",
+            "itemid": "29904962"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s6_digital_tagger_solo_mtxitem",
+            "itemid": "24842618"
+        },
+        {
+            "var_4a4bc969": "#emblems_taggeriv_s6_mtxitem",
+            "itemid": "26410613"
+        }
+    ],
+    "itemname": "#hash_693ce5356d2ba6b4",
+    "var_375a1747": "#hash_663706d2afdcb6fa",
+    "var_637c8edf": 1,
+    "name": "operator_bundle_6016_wolf_tagger_iv_mtxbundle",
+    "var_a788fada": "#hash_21179cb8d3af30e1",
+    "var_22f91505": "#hash_167b5fd59ea8e1f8",
+    "var_566825be": "#hash_638d2d0d54796a79",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_7dfceb20cee0a5c0",
+    "var_db3e02ab": 2000,
+    "itemid": "22796637"
+}

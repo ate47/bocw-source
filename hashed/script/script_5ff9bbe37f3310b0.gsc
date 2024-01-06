@@ -157,7 +157,7 @@ function function_9212e29c(s_instance, s_chest) {
     mdl_fx playloopsound(#"hash_3b2e8e212c9bfb8a");
     wait(1);
     s_chest.scriptmodel.s_chest = namespace_8b6a9d79::function_f3d93ee9(struct, #"hash_401a47741ffd646f", 1);
-    s_chest.var_422ae63e.s_chest = #"hash_473df02427c669ff";
+    s_chest.var_422ae63e.s_chest = #"p9_fxanim_zm_gp_chest_01_lrg_bundle";
     var_31919730 = s_chest.scriptmodel;
     var_31919730 notsolid();
     var_31919730 function_619a5c20();

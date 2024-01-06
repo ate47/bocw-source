@@ -1,0 +1,39 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#melee_wakizashi_bp_ornate_mtxitem",
+            "itemid": "33516518"
+        },
+        {
+            "var_4a4bc969": "#c_t9_rus_pl_kgb_assassin_mtxitem",
+            "itemid": "20795403"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_rus_kgb_mtxitem",
+            "itemid": "29488041"
+        },
+        {
+            "var_4a4bc969": "#execution_100_mtxitem",
+            "itemid": "27424245"
+        },
+        {
+            "var_4a4bc969": "#emblems_disavowedassassin_mtxitem",
+            "itemid": "28708955"
+        },
+        {
+            "var_4a4bc969": "#callingcards_disavowedassassin_mtxitem",
+            "itemid": "19970416"
+        }
+    ],
+    "itemname": "#hash_2d3601bdca523502",
+    "var_375a1747": "#hash_117ffe5ad69fcc54",
+    "name": "bundle_operator_1066_kgb_disavowed_assassin_mtxbundle",
+    "var_a788fada": "#hash_67816a52fd2f8d47",
+    "var_22f91505": "#hash_77c10fe8f287c100",
+    "var_566825be": "#hash_246076a4b80e708f",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_57205192d1b3b788",
+    "var_db3e02ab": 2000,
+    "itemid": "27342047"
+}

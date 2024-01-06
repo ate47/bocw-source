@@ -481,7 +481,7 @@ function function_ff5c9214(a_ents) {
     victim = a_ents[#"victim"];
     player namespace_594b67e::function_2795d678(0);
     if (isdefined(victim) && !iscorpse(victim)) {
-        victim namespace_594b67e::function_5a0ffefa();
+        victim namespace_594b67e::become_corpse();
     }
     player.var_9ebbaa46.active = undefined;
     player notify(#"hash_51c6ae96a7e40432");

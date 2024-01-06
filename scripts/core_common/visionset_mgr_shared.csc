@@ -449,7 +449,7 @@ function monitor() {
     }
     while (1) {
         level waittill(#"hash_4dea82d5e85dfc");
-        foreach (v in level.vsmgr) {
+        foreach (k, v in level.vsmgr) {
             if (!v.in_use) {
                 continue;
             }

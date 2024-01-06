@@ -1,0 +1,24 @@
+{
+    "itemlist": [
+        {
+            "minweight": 10,
+            "var_a6762160": "#semtex_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#satchel_charge_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_7fb0967b": 256,
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "sr_world_list_equipment_rare",
+    "var_fde72c94": 100
+}

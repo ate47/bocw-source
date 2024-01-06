@@ -1,0 +1,35 @@
+{
+    "itemlist": [
+        {
+            "minweight": 60,
+            "var_a6762160": "#level_6_onslaught_gun_list",
+            "maxweight": 60,
+            "available": -1
+        },
+        {
+            "minweight": 30,
+            "var_a6762160": "#zm_ltm1_equipment_list",
+            "maxweight": 30,
+            "available": -1
+        },
+        {
+            "minweight": 5,
+            "var_a6762160": "#onslaught_scorestreaks",
+            "maxweight": 5,
+            "available": -1
+        },
+        {
+            "minweight": 5,
+            "var_a6762160": "#ltm_bad_item_list",
+            "maxweight": 5,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "ltm_os_level6_weapon_drop_list",
+    "var_fde72c94": 100
+}

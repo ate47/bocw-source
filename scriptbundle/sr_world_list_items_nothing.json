@@ -1,0 +1,16 @@
+{
+    "itemlist": [
+        {
+            "minweight": 60,
+            "maxweight": 85,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "sr_world_list_items_nothing",
+    "var_fde72c94": 100
+}

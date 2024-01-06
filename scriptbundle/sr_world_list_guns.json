@@ -1,0 +1,54 @@
+{
+    "itemlist": [
+        {
+            "minweight": 190,
+            "var_a6762160": "#guns_ars_sr",
+            "maxweight": 230,
+            "available": -1
+        },
+        {
+            "minweight": 260,
+            "var_a6762160": "#guns_smgs_sr",
+            "maxweight": 270,
+            "available": -1
+        },
+        {
+            "minweight": 180,
+            "var_a6762160": "#guns_pistols_sr",
+            "maxweight": 200,
+            "available": -1
+        },
+        {
+            "minweight": 180,
+            "var_a6762160": "#guns_shotguns_sr",
+            "maxweight": 200,
+            "available": -1
+        },
+        {
+            "minweight": 50,
+            "var_a6762160": "#guns_snipers_sr",
+            "maxweight": 60,
+            "available": -1
+        },
+        {
+            "minweight": 50,
+            "var_a6762160": "#guns_launchers_sr",
+            "maxweight": 60,
+            "available": -1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#guns_trs_sr",
+            "maxweight": 200,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_7fb0967b": 1024,
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "sr_world_list_guns",
+    "var_fde72c94": 100
+}

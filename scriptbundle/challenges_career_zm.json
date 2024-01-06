@@ -1,0 +1,31 @@
+{
+    "var_bb7dcd09": [
+        {
+            "var_5ed80a9c": "#hash_45ee6a533aa4da04",
+            "type": "#none",
+            "displayname": "#hash_42c601f893ed0a20",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "var_5ed80a9c": "#hash_766fe8f6dc41a427",
+            "type": "#none",
+            "displayname": "#hash_797dbaf969420034",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "var_5ed80a9c": "#hash_1e8b51bcf589ea0c",
+            "type": "#none",
+            "displayname": "#hash_45bd3d4b3a64e355",
+            "var_a4f2dd9e": "#none"
+        }
+    ],
+    "var_72ef398b": 1,
+    "var_d7f79634": 1,
+    "var_922067c4": "SCRIPTBUNDLE",
+    "var_e19b7aba": 1,
+    "var_a77ed948": "#none",
+    "type": "datasourcelist",
+    "name": "challenges_career_zm",
+    "var_50340f4": 1,
+    "var_8b233d0b": 1
+}

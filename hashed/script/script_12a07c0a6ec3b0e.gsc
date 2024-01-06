@@ -34,7 +34,7 @@ function init() {
     } else if (!isarray(level.var_3a2ad19b)) {
         level.var_3a2ad19b = array(level.var_3a2ad19b);
     }
-    level.var_3a2ad19b[level.var_3a2ad19b.size] = #"hash_6a952597b6a662fb";
+    level.var_3a2ad19b[level.var_3a2ad19b.size] = #"item_zmquest_sr_ltm_food_burger";
     clientfield::register("world", "" + #"hash_112d67305f861fe", 28000, 3, "int", &function_3bab499f, 0, 0);
     clientfield::register("scriptmover", "" + #"hash_3d5c2390c0768ed2", 28000, 1, "int", &function_dc99662d, 0, 0);
     clientfield::register("scriptmover", "" + #"hash_79077a9af52542c8", 28000, 1, "int", &function_f0302ec9, 0, 0);
@@ -561,7 +561,7 @@ function function_69ffb9e7(localclientnum, e_vehicle, var_e15e9f2a) {
         waitframe(1);
         dist = distance(self.origin, var_2b1dc7a6);
     }
-    self playsound(localclientnum, #"hash_5ca9fc80b368b993");
+    self playsound(localclientnum, #"zmb_powerup_resource_small_pickup");
     playfx(localclientnum, #"hash_ea17935f6555b31", self.origin);
     if (isdefined(self)) {
         self delete();

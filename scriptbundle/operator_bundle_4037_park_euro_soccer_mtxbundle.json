@@ -1,0 +1,58 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_uk_pl_mi6_football_mtxitem",
+            "itemid": "18053363"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_uk_mi6_mtxitem",
+            "itemid": "23374822"
+        },
+        {
+            "var_4a4bc969": "#po_c_t9_uk_pl_mi6_football_germany_mtxitem",
+            "itemid": "33554260"
+        },
+        {
+            "var_4a4bc969": "#po_c_t9_uk_pl_mi6_football_french_mtxitem",
+            "itemid": "18317189"
+        },
+        {
+            "var_4a4bc969": "#po_c_t9_uk_pl_mi6_football_uk_mtxitem",
+            "itemid": "24170486"
+        },
+        {
+            "var_4a4bc969": "#smg_accurate_bp_soccer_mtxitem",
+            "itemid": "20394708"
+        },
+        {
+            "var_4a4bc969": "#execution_039bc_mtxitem",
+            "itemid": "24708745"
+        },
+        {
+            "var_4a4bc969": "#loot_ges_mtx_t9_red_card_mtxitem",
+            "itemid": "19796943"
+        },
+        {
+            "var_4a4bc969": "#reticle_98_mtxitem",
+            "itemid": "26944692"
+        },
+        {
+            "var_4a4bc969": "#emblems_soccer_mtxitem",
+            "itemid": "26272467"
+        },
+        {
+            "var_4a4bc969": "#callingcards_soccer_mtxitem",
+            "itemid": "24313858"
+        }
+    ],
+    "itemname": "#hash_13b5e472732524e4",
+    "var_375a1747": "#hash_4ee851576ebcdc0a",
+    "name": "operator_bundle_4037_park_euro_soccer_mtxbundle",
+    "var_22f91505": "#hash_71e72fa4fb79307f",
+    "var_566825be": "#hash_5726ef05bd59ce5d",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_3cf7c50de053a23b",
+    "var_db3e02ab": 2000,
+    "itemid": "18363385"
+}

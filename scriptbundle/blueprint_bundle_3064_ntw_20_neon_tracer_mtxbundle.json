@@ -1,0 +1,47 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#loot_sniper_cannon_bp_debonair_mtxitem",
+            "itemid": "32017558"
+        },
+        {
+            "var_4a4bc969": "#smg_standard_cb_bp_debonair_mtxitem",
+            "itemid": "32992540"
+        },
+        {
+            "var_4a4bc969": "#pistol_revolver_bp_debonair_mtxitem",
+            "itemid": "33143355"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_champagne_bottle_mtxitem",
+            "itemid": "21342183"
+        },
+        {
+            "var_4a4bc969": "#callingcards_tropical_mtxitem",
+            "itemid": "19815387"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_tropical_mtxitem",
+            "itemid": "23831327"
+        },
+        {
+            "var_4a4bc969": "#execution_148_mtxitem",
+            "itemid": "30507170"
+        },
+        {
+            "var_4a4bc969": "#loot_ges_mtx_t9_yawn_mtxitem",
+            "itemid": "27318965"
+        }
+    ],
+    "itemname": "#hash_3ffd5ae2ab60a12d",
+    "var_375a1747": "#hash_73060e9ba974bf27",
+    "name": "blueprint_bundle_3064_ntw_20_neon_tracer_mtxbundle",
+    "var_a788fada": "#hash_6c700c27403a400a",
+    "var_22f91505": "#hash_428d44e877dfeda8",
+    "var_566825be": "#hash_2b6492eaa0968f56",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_1abdb6c83c2b7cf0",
+    "var_db3e02ab": 2000,
+    "itemid": "20234767"
+}

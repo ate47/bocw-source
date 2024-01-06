@@ -238,7 +238,7 @@ function get_shots_to_kill(weapon, meansofdeath, bundle) {
     if (!isdefined(shotstokill)) {
         switch (weapon.statname) {
         case #"hero_bowlauncher":
-        case #"hash_5ceaf52285031501":
+        case #"sig_bow_flame":
             if (meansofdeath == "MOD_PROJECTILE_SPLASH" || meansofdeath == "MOD_PROJECTILE" || meansofdeath == "MOD_GRENADE_SPLASH") {
                 shotstokill = bundle.kshero_bowlauncher;
             } else {

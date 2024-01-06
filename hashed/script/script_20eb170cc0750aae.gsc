@@ -254,7 +254,7 @@ function onscoreclosemusic() {
         scorelimitcheck = scorelimit - 10;
         topscore = 0;
         runnerupscore = 0;
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             score = [[ level._getteamscore ]](team);
             if (score > topscore) {
                 runnerupscore = topscore;
@@ -393,7 +393,7 @@ function function_34459363(var_e9724d01, var_d2b863b2) {
         player val::reset(#"hash_5677fd1c5f50cf38", "freezecontrols");
     }
     if (isdefined(level.heroes)) {
-        foreach (hero in level.heroes) {
+        foreach (key, hero in level.heroes) {
             util::unmake_hero(key);
         }
     }

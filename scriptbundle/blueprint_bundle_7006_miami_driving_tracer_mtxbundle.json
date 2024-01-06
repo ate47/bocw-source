@@ -1,0 +1,50 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_4de2b2a02d9919bb"
+        },
+        {
+            "var_fe10649e": "#hash_69a604ca49826d9f"
+        },
+        {
+            "var_fe10649e": "#hash_69a605ca49826f52"
+        },
+        {
+            "var_fe10649e": "#hash_69a606ca49827105"
+        }
+    ],
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#smg_semiauto_bp_mdriving_mtxitem",
+            "itemid": "30591861"
+        },
+        {
+            "var_4a4bc969": "#tr_fastburst_bp_mdriving_mtxitem",
+            "itemid": "28403255"
+        },
+        {
+            "var_4a4bc969": "#callingcards_companion_launch5_s6_mtxitem",
+            "itemid": "21015908"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_r82_80_s6_mtxitem",
+            "itemid": "23646932"
+        },
+        {
+            "var_4a4bc969": "#emblems_r8g11_34_s6_mtxitem",
+            "itemid": "23347963"
+        }
+    ],
+    "itemname": "#hash_2dd86e8d3cdda675",
+    "var_375a1747": "#hash_4de2b2a02d9919bb",
+    "var_8ee7db29": 1,
+    "name": "blueprint_bundle_7006_miami_driving_tracer_mtxbundle",
+    "var_a788fada": "#hash_34dbdf8470ae5392",
+    "var_22f91505": "#hash_251716ec1d286050",
+    "var_566825be": "#hash_6c5a6497c2dabede",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_fec1c958d731718",
+    "var_db3e02ab": 750,
+    "itemid": "22858620"
+}

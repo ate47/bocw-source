@@ -5,9 +5,9 @@
 #using scripts\core_common\renderoverridebundle.csc;
 #using scripts\core_common\clientfield_shared.csc;
 
-#namespace namespace_c6058970;
+#namespace napalm_strike;
 
-// Namespace namespace_c6058970/namespace_b00a727a
+// Namespace napalm_strike/namespace_b00a727a
 // Params 1, eflags: 0x0
 // Checksum 0xc490d44a, Offset: 0x120
 // Size: 0x150
@@ -20,7 +20,7 @@ function init_shared(bundlename) {
     level.var_a25fd5e1 = [];
 }
 
-// Namespace namespace_c6058970/namespace_b00a727a
+// Namespace napalm_strike/namespace_b00a727a
 // Params 7, eflags: 0x0
 // Checksum 0x3a690cc6, Offset: 0x278
 // Size: 0x28c
@@ -46,7 +46,7 @@ function function_e0221c63(localclientnum, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_c6058970/namespace_b00a727a
+// Namespace napalm_strike/namespace_b00a727a
 // Params 7, eflags: 0x0
 // Checksum 0xb81857eb, Offset: 0x510
 // Size: 0xc4
@@ -60,7 +60,7 @@ function function_818e69da(localclientnum, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_c6058970/namespace_b00a727a
+// Namespace napalm_strike/namespace_b00a727a
 // Params 7, eflags: 0x0
 // Checksum 0xcfd5513d, Offset: 0x5e0
 // Size: 0xa4
@@ -69,17 +69,17 @@ function function_344bba9b(localclientnum, *oldval, *newval, *bnewent, *binitial
     playfx(bwastimejump, level.var_30e551f4.var_f6580c0b, self.origin, (0, 0, 1), (forward[0], forward[1], 0));
 }
 
-// Namespace namespace_c6058970/entity_spawned
+// Namespace napalm_strike/entity_spawned
 // Params 1, eflags: 0x20
 // Checksum 0x17d04a89, Offset: 0x690
 // Size: 0x32
 function event_handler[entity_spawned] codecallback_entityspawned(*eventstruct) {
-    if (self.weapon.name !== #"hash_438fafe881cdd097") {
+    if (self.weapon.name !== #"napalm_strike") {
         return;
     }
 }
 
-// Namespace namespace_c6058970/namespace_b00a727a
+// Namespace napalm_strike/namespace_b00a727a
 // Params 0, eflags: 0x4
 // Checksum 0x98f5e923, Offset: 0x6d0
 // Size: 0x24
@@ -87,7 +87,7 @@ function private function_69d7c128() {
     function_3385d776(level.var_30e551f4.var_f6580c0b);
 }
 
-// Namespace namespace_c6058970/namespace_b00a727a
+// Namespace napalm_strike/namespace_b00a727a
 // Params 0, eflags: 0x4
 // Checksum 0x5611d318, Offset: 0x700
 // Size: 0x24

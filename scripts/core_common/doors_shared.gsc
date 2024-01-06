@@ -1963,7 +1963,7 @@ function function_81fba61a(flags) {
         if (flags & 268435456) {
             retval = retval + "<unknown string>";
         }
-        if (flags & -2147483648) {
+        if (flags & 2147483648) {
             retval = retval + "<unknown string>";
         }
         if (flags & 33554432) {

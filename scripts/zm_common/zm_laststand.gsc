@@ -1712,8 +1712,8 @@ function revive_success(reviver, b_track_stats = 1, var_c0ab6a65, var_5f465b1 = 
         reviver zm_utility::set_max_health();
     }
     self.var_1bee6f4b = undefined;
-    self val::reset(#"hash_2f648e335983677a", "ignoreme");
-    self val::reset(#"hash_2f648e335983677a", "takedamage");
+    self val::reset(#"chopper_gunner", "ignoreme");
+    self val::reset(#"chopper_gunner", "takedamage");
     self val::reset(#"remote_missile", "ignoreme");
     self val::reset(#"remote_missile", "takedamage");
     self revive_internal(reviver, b_track_stats, var_c0ab6a65, var_51ac50b4);
@@ -2021,7 +2021,7 @@ function on_ai_killed(s_params) {
 function on_item_pickup(s_params) {
     item = s_params.item;
     var_a6762160 = item.var_a6762160;
-    if (var_a6762160.name === #"hash_2cdb76a587cf7a3b") {
+    if (var_a6762160.name === #"self_revive_sr_item") {
         if (self function_618fd37e() < 1) {
             self function_3a00302e(1);
         }

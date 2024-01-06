@@ -675,7 +675,7 @@ function debug_display(debug_frames) {
         if (self == level) {
             b_found = 0;
             if (isdefined(self.scene_ents)) {
-                foreach (scene in self.scene_ents) {
+                foreach (k, scene in self.scene_ents) {
                     if (isarray(scene)) {
                         foreach (ent in scene) {
                             if (isdefined(ent)) {
@@ -692,7 +692,7 @@ function debug_display(debug_frames) {
                 return;
             }
         } else if (isdefined(self.last_scene_state_instance)) {
-            foreach (str_state in self.last_scene_state_instance) {
+            foreach (str_scene, str_state in self.last_scene_state_instance) {
                 print_scene_debug(debug_frames, i, str_scene, str_state);
                 i++;
             }

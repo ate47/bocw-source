@@ -116,7 +116,7 @@ function function_2ce126c4() {
     spawner::add_archetype_spawn_function(#"zombie_dog", &function_6a89f900);
     level callback::add_callback(#"hash_4ad847c8f6c6405f", &spawn_dog);
     level.onslaught_hud = onslaught_hud::register();
-    level.var_e2f95698 = #"hash_34e052fa44442bbb";
+    level.var_e2f95698 = #"zm_commander_onslaught";
     if (is_true(getgametypesetting(#"hash_cd096e90260a26b"))) {
         level.var_d4c0ef1a = getentarray("gunfight_zone_center", "targetname");
         foreach (zone in level.var_d4c0ef1a) {
@@ -313,7 +313,7 @@ function debug_spawns() {
                 var_273a84a9 = array(var_273a84a9);
             }
             var_273a84a9[var_273a84a9.size] = "energy_low";
-            var_8fb1964e = function_d400d613(#"hash_25370d2adea6cb91", var_273a84a9);
+            var_8fb1964e = function_d400d613(#"mp_spawn_point", var_273a84a9);
             spawns = var_8fb1964e[#"tdm"];
             if (!isdefined(spawns)) {
                 spawns = var_8fb1964e[#"ctf"];

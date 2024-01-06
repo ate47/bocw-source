@@ -102,7 +102,7 @@ function function_12b1d8eb() {
 // Size: 0x3c
 function function_1493eabf() {
     level waittill(#"hash_2ccb1e2f5d9ce793");
-    function_2cca7b47(0, #"hash_5c660362994b51ad");
+    function_2cca7b47(0, #"musictrack_zm_tungsten_ee");
 }
 
 // Namespace namespace_c097de49/namespace_c097de49

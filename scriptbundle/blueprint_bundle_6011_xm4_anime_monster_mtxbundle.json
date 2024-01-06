@@ -1,0 +1,59 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_64f057b38966de04"
+        },
+        {
+            "var_fe10649e": "#hash_6367968ce8438156"
+        },
+        {
+            "var_fe10649e": "#hash_6367958ce8437fa3"
+        },
+        {
+            "var_fe10649e": "#hash_6367948ce8437df0"
+        }
+    ],
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_mercenary_bp_animemon_mtxitem",
+            "itemid": "20085746"
+        },
+        {
+            "var_4a4bc969": "#sniper_accurate_bp_animemon_mtxitem",
+            "itemid": "28134401"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_blob_buddy_mtxitem",
+            "itemid": "32363214"
+        },
+        {
+            "var_4a4bc969": "#reticle_138_mtxitem",
+            "itemid": "26390697"
+        },
+        {
+            "var_4a4bc969": "#emblems_s6_animealpha_animated_mtxitem",
+            "itemid": "23928258"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s6_animealpha_animated_mtxitem",
+            "itemid": "32184729"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s6_animebeta_animated_mtxitem",
+            "itemid": "32806533"
+        }
+    ],
+    "itemname": "#hash_670dde3a96b06526",
+    "var_375a1747": "#hash_64f057b38966de04",
+    "var_3040f0d1": "#hash_64f057b38966de04",
+    "var_8ee7db29": 1,
+    "name": "blueprint_bundle_6011_xm4_anime_monster_mtxbundle",
+    "var_a788fada": "#hash_480565b4b6c9cd1f",
+    "var_22f91505": "#hash_283cc96d9cc9c811",
+    "var_566825be": "#hash_2241b823b91e7b67",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_786e5cfe2d24fa11",
+    "var_db3e02ab": 750,
+    "itemid": "24865692"
+}

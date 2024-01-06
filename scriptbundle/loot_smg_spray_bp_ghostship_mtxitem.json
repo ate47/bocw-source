@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#blueprint_bundle_5012_aug_master_ghost_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_4adce4bb62081a14",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_5782093b6da3fbc2",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 5,
+    "var_46300498": 1,
+    "baseweapon": "#hash_69868331b3d3cec2",
+    "name": "loot_smg_spray_bp_ghostship_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "18709101",
+    "blueprint": "#hash_4adce4bb62081a14"
+}

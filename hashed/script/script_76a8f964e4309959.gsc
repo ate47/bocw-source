@@ -173,7 +173,7 @@ function function_9f679c3c() {
 // Checksum 0x1446e7d5, Offset: 0x848
 // Size: 0xc8
 function function_5e09bd0f() {
-    self endon(#"death", #"hash_29b88049dcac8bb3", #"hash_19ad6f62d697788f");
+    self endon(#"death", #"hash_29b88049dcac8bb3", #"endambientvox");
     wait(1.1);
     self playsoundontag(#"hash_65eb1e22e2f9a826", "j_head");
     wait(2);

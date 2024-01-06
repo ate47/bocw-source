@@ -510,12 +510,12 @@ function function_927a773e(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Size: 0x10c
 function function_167fc35(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
-        forcestreamxmodel(#"hash_4ba274dbca0d6fd4");
-        forcestreamxmodel(#"hash_1d76083752295368");
+        forcestreamxmodel(#"p9_fxp_zm_teleport_tunnel");
+        forcestreamxmodel(#"p9_fxp_zm_teleport_tunnel_edge");
         function_3385d776(#"hash_2f112a3ab3cf120a");
     } else {
-        stopforcestreamingxmodel(#"hash_4ba274dbca0d6fd4");
-        stopforcestreamingxmodel(#"hash_1d76083752295368");
+        stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel");
+        stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel_edge");
         function_c22a1ca2(#"hash_2f112a3ab3cf120a");
     }
 }
@@ -646,16 +646,16 @@ function function_20daf01(localclientnum, state, *oldstate) {
     var_8c7054cc = undefined;
     switch (oldstate) {
     case #"hash_2da140794ea35354":
-        var_8c7054cc = #"hash_199a12eeb38034af";
+        var_8c7054cc = #"musictrack_zm_platinum_berlin";
         break;
     case #"hash_678984fc5d965c47":
-        var_8c7054cc = #"hash_5bc90d47f81157ae";
+        var_8c7054cc = #"musictrack_zm_platinum_acidbunny";
         break;
     case #"hash_2da143794ea3586d":
-        var_8c7054cc = #"hash_5f3a9050f08cb2a";
+        var_8c7054cc = #"musictrack_zm_platinum_whatawaits";
         break;
     case #"hash_496854798250cd7e":
-        var_8c7054cc = #"hash_2d2e4ce400a64c09";
+        var_8c7054cc = #"musictrack_zm_platinum_wrath";
         break;
     }
     if (isdefined(var_8c7054cc)) {

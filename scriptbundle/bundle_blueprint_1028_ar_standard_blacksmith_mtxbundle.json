@@ -1,0 +1,39 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_mercenary_bp_charden_mtxitem",
+            "itemid": "27163755"
+        },
+        {
+            "var_4a4bc969": "#smg_burst_bp_forged_mtxitem",
+            "itemid": "23862367"
+        },
+        {
+            "var_4a4bc969": "#callingcards_blacksmith_mtxitem",
+            "itemid": "18908302"
+        },
+        {
+            "var_4a4bc969": "#emblems_blacksmith_mtxitem",
+            "itemid": "29359530"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_anvil_mtxitem",
+            "itemid": "25877368"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_hammer_mtxitem",
+            "itemid": "23898713"
+        }
+    ],
+    "itemname": "#hash_29e56d90fb28b172",
+    "var_375a1747": "#hash_22e4a00c47736840",
+    "var_579fd6c3": 13,
+    "name": "bundle_blueprint_1028_ar_standard_blacksmith_mtxbundle",
+    "var_22f91505": "#hash_409112389e67fe",
+    "var_566825be": "#hash_1c388b33856224d1",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_3fcf53bd47f700b2",
+    "var_db3e02ab": 2000,
+    "itemid": "28099750"
+}

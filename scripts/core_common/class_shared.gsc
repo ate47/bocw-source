@@ -43,7 +43,7 @@ class class_d0a0a887 {
     // Size: 0x128
     function function_65cdd2df(owner) {
         index = undefined;
-        foreach (value in self.var_3639ef68) {
+        foreach (key, value in self.var_3639ef68) {
             index = key;
             break;
         }

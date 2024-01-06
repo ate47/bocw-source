@@ -300,7 +300,7 @@ function function_d52d06ee(id) {
 // Size: 0x1aa
 function function_b3411080(name) {
     switch (name) {
-    case #"hash_11753b18cd62f5b7":
+    case #"armory":
         return 1;
     case #"coop":
         return 2;
@@ -346,7 +346,7 @@ function function_b3411080(name) {
 // Size: 0x192
 function function_d496f180(name) {
     switch (name) {
-    case #"hash_11753b18cd62f5b7":
+    case #"armory":
         return 26;
     case #"coop":
         return 27;

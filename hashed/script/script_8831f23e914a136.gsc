@@ -193,7 +193,7 @@ function function_733e5314() {
             wait(1);
         }
         waitresult = undefined;
-        waitresult = self waittilltimeout(randomfloatrange(3, 5), #"hash_2b397aad1337c105", #"hash_143f8b5686980290");
+        waitresult = self waittilltimeout(randomfloatrange(3, 5), #"hash_2b397aad1337c105", #"wall_detected");
     }
 }
 

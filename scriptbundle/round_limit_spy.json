@@ -1,0 +1,20 @@
+{
+    "hinttext": "#hash_6326c9f7d8d192db",
+    "var_922067c4": "scriptbundle",
+    "var_f2038d90": "8",
+    "var_fc4aa21e": "9",
+    "value2": "2",
+    "var_6006e991": "3",
+    "var_43883094": "1",
+    "var_7c9022a3": "6",
+    "var_8e4ec620": "7",
+    "var_dfed6968": "4",
+    "var_71ce0d1f": "5",
+    "type": "gamesettings",
+    "label": "#hash_437e754ae41682ef",
+    "name": "round_limit_spy",
+    "displayname": "#hash_c3e6eece99d208c",
+    "var_9600a8ab": "#menu/1_round",
+    "var_9de86f42": 9,
+    "setting": "roundLimit"
+}

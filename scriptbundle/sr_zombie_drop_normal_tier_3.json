@@ -1,0 +1,35 @@
+{
+    "itemlist": [
+        {
+            "minweight": 200,
+            "var_a6762160": "#semtex_t9_item_sr",
+            "maxweight": 200,
+            "available": -1
+        },
+        {
+            "minweight": 200,
+            "var_a6762160": "#frag_t9_item_sr",
+            "maxweight": 200,
+            "available": -1
+        },
+        {
+            "minweight": 200,
+            "var_a6762160": "#hatchet_t9_item_sr",
+            "maxweight": 200,
+            "available": -1
+        },
+        {
+            "minweight": 200,
+            "var_a6762160": "#concussion_t9_item_sr",
+            "maxweight": 200,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "sr_zombie_drop_normal_tier_3",
+    "var_fde72c94": 100
+}

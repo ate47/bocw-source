@@ -98,7 +98,7 @@ function private function_63ac35a3(weapon) {
     clipsize = self getweaponammoclipsize(weapon);
     self function_e7f8957a(clipsize);
     if (self function_e3774219(weapon)) {
-        self notify(#"hash_509f2a6a55356654", {#var_51246a31:1});
+        self notify(#"switched_field_upgrade", {#var_51246a31:1});
         var_e3774219 = 1;
         var_cd27cff2 = 0;
     } else {
@@ -152,7 +152,7 @@ function private function_63ac35a3(weapon) {
 // Size: 0x9a4
 function private function_e7085388(weapon, var_e3774219 = 0) {
     self notify(#"hash_50ce27022d3b38c");
-    self endon(#"disconnect", #"hash_50ce27022d3b38c", #"round_ended", #"hash_509f2a6a55356654");
+    self endon(#"disconnect", #"hash_50ce27022d3b38c", #"round_ended", #"switched_field_upgrade");
     var_4dcb7b2e = self.pers[#"hash_13b806f669a6bb82"][#"hash_1f9e227d7c859634"];
     if (self hasperk(#"hash_46e52ae259ccc1e1")) {
         var_cdd95e58 = 1;

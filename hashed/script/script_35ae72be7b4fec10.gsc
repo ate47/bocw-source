@@ -38,7 +38,7 @@ function private preload() {
     level.var_61e6d095.inputs[#"ui_nexttab"] = "nexttab";
     level.var_61e6d095.inputs[#"hash_5686e6f2a8315663"] = "backspace";
     level.var_61e6d095.var_ebb98e0b = [];
-    foreach (value in level.var_61e6d095.inputs) {
+    foreach (key, value in level.var_61e6d095.inputs) {
         level.var_61e6d095.var_ebb98e0b[key] = [];
         thread globallogic_ui::function_9ed5232e("ScriptedWidgetData.blockGameInput." + value, 0);
     }
@@ -51,7 +51,7 @@ function private preload() {
 // Size: 0x170
 function on_player_spawn() {
     self endon(#"death");
-    foreach (value in level.var_61e6d095.inputs) {
+    foreach (key, value in level.var_61e6d095.inputs) {
         self flag::clear(key);
     }
     while (1) {
@@ -719,7 +719,7 @@ function function_3abc637f(uid, var_d4d3e35d) {
             }
         }
     } else {
-        foreach (var_7d11bc86 in level.var_61e6d095.var_db65bf2f) {
+        foreach (ref, var_7d11bc86 in level.var_61e6d095.var_db65bf2f) {
             arrayremoveindex(var_7d11bc86.var_59b0e764, uid, 1);
             if (!is_true(var_7d11bc86.active) && var_7d11bc86.var_59b0e764.size == 0) {
                 arrayremoveindex(level.var_61e6d095.var_db65bf2f, ref, 1);
@@ -1110,14 +1110,14 @@ function function_f2a9266(uid, index, name, value, var_29459a31 = "list", force)
         if (isdefined(index)) {
             var_d9cf51e8 = var_29459a31 + "." + index + "." + var_29459a31;
         }
-        foreach (v in value) {
+        foreach (i, v in value) {
             function_f2a9266(uid, i, name, v, var_d9cf51e8, force);
         }
     } else if (isstruct(value)) {
         /#
             assert(isdefined(value.names) && isdefined(value.data), "<unknown string>");
         #/
-        foreach (v in value.data) {
+        foreach (i, v in value.data) {
             function_f2a9266(uid, index, value.names[i], v, var_29459a31, force);
         }
     } else {

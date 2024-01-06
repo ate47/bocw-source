@@ -1,0 +1,21 @@
+{
+    "vehicleenteranim": "#hash_2bf596c9a4c49041",
+    "fireadditiveanim": "#hash_375c93dc89d54b1e",
+    "var_922067c4": "scriptbundle",
+    "var_5dbdd77c": 20,
+    "var_5becf9b5": -90,
+    "var_e6fe69e8": 20,
+    "type": "turretanims",
+    "var_faf96846": 90,
+    "var_9323d5c1": "#hash_718218e0a8aac84c",
+    "centerstraightanim": "#hash_68f0ac798b0694f6",
+    "vmtype": "none",
+    "centerdownanim": "#hash_59357895e28d9f3c",
+    "var_1f5b775e": 30000,
+    "name": "player_turret_rear_pbr_gunner_anims",
+    "centerupanim": "#hash_2f9ca5a86f3d9edd",
+    "aimpitchangleu": 25,
+    "aimpitchangled": 15,
+    "var_9b47c071": "#hash_718218e0a8aac84c",
+    "var_76635d45": 1
+}

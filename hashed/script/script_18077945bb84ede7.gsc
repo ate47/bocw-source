@@ -35,23 +35,23 @@ function on_player_connect() {
 // Size: 0x1ec
 function on_item_pickup(s_params) {
     var_a6762160 = s_params.item.var_a6762160;
-    if (var_a6762160.itemtype === #"hash_3a094c949a87214d") {
+    if (var_a6762160.itemtype === #"survival_scrap") {
         if (isplayer(self)) {
             e_player = self;
         } else {
             e_player = s_params.player;
         }
         rarity = var_a6762160.rarity;
-        if (var_a6762160.name === #"hash_595bb7a30746b8f2") {
+        if (var_a6762160.name === #"scrap_legendary_item_sr") {
             var_595a11bc = 25 * var_a6762160.amount;
             e_player function_a6d4221f(var_595a11bc);
-        } else if (var_a6762160.name === #"hash_1824627ee79fed84") {
+        } else if (var_a6762160.name === #"scrap_epic_item_sr") {
             var_595a11bc = 300 * var_a6762160.amount;
             e_player function_afab250a(var_595a11bc);
         } else if (rarity === #"rare") {
             var_595a11bc = 10 * var_a6762160.amount;
             e_player function_a6d4221f(var_595a11bc);
-        } else if (var_a6762160.name === #"hash_4a604970e6ceeee") {
+        } else if (var_a6762160.name === #"scrap_item_harvesting_sr") {
             e_player function_afab250a(200);
         } else {
             var_595a11bc = 50 * var_a6762160.amount;

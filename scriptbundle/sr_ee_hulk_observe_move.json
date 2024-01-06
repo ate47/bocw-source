@@ -1,0 +1,47 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_5876f44b0ef46444",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "idle"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_346f326850f39c8a",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "advance_slide"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_26f8e8ee3b883d8d",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "previous_slide"
+                }
+            ],
+            "firstframe": 1,
+            "model": "#hash_57ffaf2f98a015ed",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "slide_projector"
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "sr_ee_hulk_observe_move",
+    "dontsync": 1,
+    "team": "any"
+}

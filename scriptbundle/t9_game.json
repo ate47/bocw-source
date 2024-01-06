@@ -1,0 +1,190 @@
+{
+    "trophies": [
+        {
+            "id": "#doa_achievement_5_piece",
+            "var_6258d431": 41
+        },
+        {
+            "id": "#doa_achievement_dungeondiver",
+            "var_6258d431": 45
+        },
+        {
+            "id": "#doa_achievement_escapewild",
+            "var_6258d431": 42
+        },
+        {
+            "id": "#doa_achievement_fated",
+            "var_6258d431": 44
+        },
+        {
+            "id": "#doa_achievement_fidolina",
+            "var_6258d431": 43
+        },
+        {
+            "id": "#cp_achievement_body_shield",
+            "var_6258d431": 17
+        },
+        {
+            "id": "#cp_achievement_combat_hardened",
+            "var_6258d431": 3
+        },
+        {
+            "id": "#cp_achievement_combat_recruit",
+            "var_6258d431": 2
+        },
+        {
+            "id": "#cp_achievement_cp_ger_stakeout",
+            "var_6258d431": 6
+        },
+        {
+            "id": "#cp_achievement_cp_nam_armada",
+            "var_6258d431": 5
+        },
+        {
+            "id": "#cp_achievement_cp_nam_prisoner",
+            "var_6258d431": 11
+        },
+        {
+            "id": "#cp_achievement_cp_nic_revolucion",
+            "var_6258d431": 10
+        },
+        {
+            "id": "#cp_achievement_cp_rus_amerika",
+            "var_6258d431": 7
+        },
+        {
+            "id": "#cp_achievement_cp_rus_duga",
+            "var_6258d431": 13
+        },
+        {
+            "id": "#cp_achievement_cp_rus_kgb",
+            "var_6258d431": 9
+        },
+        {
+            "id": "#cp_achievement_cp_rus_siege",
+            "var_6258d431": 12
+        },
+        {
+            "id": "#cp_achievement_cp_rus_yamantau",
+            "var_6258d431": 8
+        },
+        {
+            "id": "#cp_achievement_cp_sidemission_takedown",
+            "var_6258d431": 14
+        },
+        {
+            "id": "#cp_achievement_cp_sidemission_tundra",
+            "var_6258d431": 15
+        },
+        {
+            "id": "#cp_achievement_cp_takedown",
+            "var_6258d431": 4
+        },
+        {
+            "id": "#cp_achievement_everyone",
+            "var_6258d431": 21
+        },
+        {
+            "id": "#cp_achievement_explosive_finiish",
+            "var_6258d431": 20
+        },
+        {
+            "id": "#cp_achievement_firing_range",
+            "var_6258d431": 16
+        },
+        {
+            "id": "#cp_achievement_jack_all_trades",
+            "var_6258d431": 23
+        },
+        {
+            "id": "#cp_achievement_mind_trip",
+            "var_6258d431": 19
+        },
+        {
+            "id": "#cp_achievement_old_faithful",
+            "var_6258d431": 24
+        },
+        {
+            "id": "#cp_achievement_patriot_arrow",
+            "var_6258d431": 18
+        },
+        {
+            "id": "#cp_achievement_red_door",
+            "var_6258d431": 22
+        },
+        {
+            "id": "#cp_achievement_scorched_earth",
+            "var_6258d431": 25
+        },
+        {
+            "id": "#cp_achievement_scorched_earth2",
+            "var_6258d431": 26
+        },
+        {
+            "id": "#zm_silver_craft",
+            "var_6258d431": 40
+        },
+        {
+            "id": "#zm_silver_mega",
+            "var_6258d431": 35
+        },
+        {
+            "id": "#zm_silver_pa",
+            "var_6258d431": 34
+        },
+        {
+            "id": "#zm_silver_pap",
+            "var_6258d431": 32
+        },
+        {
+            "id": "#zm_silver_six",
+            "var_6258d431": 37
+        },
+        {
+            "id": "#zm_silver_start",
+            "var_6258d431": 39
+        },
+        {
+            "id": "#zm_silver_upgrade",
+            "var_6258d431": 36
+        },
+        {
+            "id": "#zm_silver_wing",
+            "var_6258d431": 38
+        },
+        {
+            "id": "#zm_silver_ww",
+            "var_6258d431": 33
+        },
+        {
+            "id": "#mp_achievement_eliminations",
+            "var_6258d431": 27
+        },
+        {
+            "id": "#mp_achievement_match_wins",
+            "var_6258d431": 30
+        },
+        {
+            "id": "#mp_achievement_scorestreak_kills",
+            "var_6258d431": 31
+        },
+        {
+            "id": "#mp_achievement_squad_wipes",
+            "var_6258d431": 28
+        },
+        {
+            "id": "#mp_achievement_vehicle_kills",
+            "var_6258d431": 29
+        }
+    ],
+    "description": "TROPHY/PS4_TITLE_DETAIL_NEW",
+    "var_bc909f1c": "TROPHY/PS4_PLATINUM_NAME",
+    "var_922067c4": "SCRIPTBUNDLE",
+    "type": "Base",
+    "image": "art_assets\\ui\\trophy_icons\\icon0.png",
+    "var_87f87589": 1,
+    "name": "t9_game",
+    "title": "TROPHY/PS4_TITLE_NAME",
+    "var_a6219a23": "art_assets\\ui\\trophy_icons\\trophies\\01_top_shelf.png",
+    "var_eb9b3f28": "TROPHY/PS4_PLATINUM_DETAIL"
+}

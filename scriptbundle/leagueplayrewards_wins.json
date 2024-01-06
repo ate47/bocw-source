@@ -1,0 +1,160 @@
+{
+    "var_2be3941a": [
+        {
+            "statvalue": 10,
+            "unlockdescription": "#hash_1ec96a52ce18cd87",
+            "var_5f79ee71": "#crafticon",
+            "var_b4ab831a": "#hash_7f599619e00dabb8",
+            "statname": "#totalwins",
+            "var_98484e89": 1000
+        },
+        {
+            "statvalue": 10,
+            "unlockdescription": "#hash_1ec96a52ce18cd87",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "var_b4ab831a": "#hash_4bdef868fe177c8b",
+            "statname": "#totalwins"
+        },
+        {
+            "statvalue": 10,
+            "unlockdescription": "#hash_1ec96a52ce18cd87",
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_league_cdl_logo",
+            "statname": "#totalwins"
+        },
+        {
+            "statvalue": 20,
+            "unlockdescription": "#hash_4549d65889811b96",
+            "var_5f79ee71": "#crafticon",
+            "var_b4ab831a": "#hash_1b272856845384c6",
+            "statname": "#totalwins",
+            "var_98484e89": 2000
+        },
+        {
+            "statvalue": 20,
+            "unlockdescription": "#hash_4549d65889811b96",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "var_b4ab831a": "#hash_12323b0b93c87cff",
+            "statname": "#totalwins"
+        },
+        {
+            "statvalue": 20,
+            "unlockdescription": "#hash_4549d65889811b96",
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_league_cdl_badge",
+            "statname": "#totalwins"
+        },
+        {
+            "statvalue": 35,
+            "unlockdescription": "#hash_40a17fab2a6fbdd8",
+            "var_5f79ee71": "#crafticon",
+            "var_b4ab831a": "#hash_1be876e4431f3865",
+            "statname": "#totalwins",
+            "var_98484e89": 3500
+        },
+        {
+            "statvalue": 35,
+            "unlockdescription": "#hash_40a17fab2a6fbdd8",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "var_b4ab831a": "#hash_2f486a476cfd3ae4",
+            "statname": "#totalwins"
+        },
+        {
+            "statvalue": 35,
+            "unlockdescription": "#hash_40a17fab2a6fbdd8",
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_league_cdl_cap",
+            "statname": "#totalwins"
+        },
+        {
+            "statvalue": 50,
+            "unlockdescription": "#hash_37b3c77bf2d03933",
+            "var_5f79ee71": "#crafticon",
+            "var_b4ab831a": "#hash_72e3a9c81b3b306b",
+            "statname": "#totalwins",
+            "var_98484e89": 5000
+        },
+        {
+            "statvalue": 50,
+            "unlockdescription": "#hash_37b3c77bf2d03933",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "var_b4ab831a": "#hash_4419f05c56b165be",
+            "statname": "#totalwins"
+        },
+        {
+            "statvalue": 50,
+            "unlockdescription": "#hash_37b3c77bf2d03933",
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_league_cdl_headset",
+            "statname": "#totalwins"
+        },
+        {
+            "statvalue": 75,
+            "unlockdescription": "#hash_6602cb9e946e20ec",
+            "var_5f79ee71": "#crafticon",
+            "var_b4ab831a": "#hash_382f447fbc20f7e3",
+            "statname": "#totalwins",
+            "var_98484e89": 7500
+        },
+        {
+            "statvalue": 75,
+            "unlockdescription": "#hash_6602cb9e946e20ec",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "var_b4ab831a": "#hash_24b7b4441e9cd426",
+            "statname": "#totalwins"
+        },
+        {
+            "statvalue": 75,
+            "unlockdescription": "#hash_6602cb9e946e20ec",
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_league_c4_bomb",
+            "statname": "#totalwins"
+        },
+        {
+            "statvalue": 100,
+            "unlockdescription": "#hash_7df36fb52cb91a09",
+            "var_5f79ee71": "#crafticon",
+            "var_b4ab831a": "#hash_670b6c7fb39db108",
+            "statname": "#totalwins",
+            "var_98484e89": 10000
+        },
+        {
+            "statvalue": 100,
+            "unlockdescription": "#hash_7df36fb52cb91a09",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "var_b4ab831a": "#hash_5d638bcd51cb7c2b",
+            "statname": "#totalwins"
+        },
+        {
+            "statvalue": 100,
+            "unlockdescription": "#hash_7df36fb52cb91a09",
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_league_100emoji",
+            "statname": "#totalwins"
+        },
+        {
+            "statvalue": 20,
+            "unlockdescription": "#hash_4549d65889811b96",
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "var_b4ab831a": "#hash_756279ecd2957ad0",
+            "statname": "#totalwins"
+        },
+        {
+            "statvalue": 50,
+            "unlockdescription": "#hash_37b3c77bf2d03933",
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "var_b4ab831a": "#hash_4e3a88c5193127be",
+            "statname": "#totalwins"
+        },
+        {
+            "statvalue": 100,
+            "unlockdescription": "#hash_7df36fb52cb91a09",
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "var_b4ab831a": "#hash_1b60b1caba3c21c9",
+            "statname": "#totalwins"
+        }
+    ],
+    "var_922067c4": "SCRIPTBUNDLE",
+    "type": "leagueplayrewards",
+    "name": "leagueplayrewards_wins"
+}

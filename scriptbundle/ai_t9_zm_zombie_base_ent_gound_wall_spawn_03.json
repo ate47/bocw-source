@@ -1,0 +1,48 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_33f26b52ccaded0d",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "default"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_33f26b52ccaded0d",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "crawler"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_33f26b52ccaded0d",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "nova_crawler"
+                }
+            ],
+            "model": "#spawner_zm_zombie",
+            "type": "actor",
+            "var_db255011": 1,
+            "name": "actor 1",
+            "allowdeath": 1,
+            "takedamage": 1
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "ai_t9_zm_zombie_base_ent_gound_wall_spawn_03",
+    "dontsync": 1,
+    "team": "any"
+}

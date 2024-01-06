@@ -1,0 +1,35 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_cia_sog_tee_mtxitem",
+            "itemid": "24666607"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_cia_mtxitem",
+            "itemid": "20084886"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_civ_ru_sedan_80s_mpx_hot_pursuit_mtxitem",
+            "itemid": "18534978"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_dummy_head_mtxitem",
+            "itemid": "24256209"
+        },
+        {
+            "var_4a4bc969": "#execution_031_mtxitem",
+            "itemid": "32170996"
+        }
+    ],
+    "itemname": "#hash_3b72f09ffbf2662a",
+    "var_375a1747": "#hash_686bd1ec8dda6e94",
+    "name": "bundle_operator_2075_lawrence_sims_designated_driver_mtxbundle",
+    "var_a788fada": "#hash_2ccf8b283627bd51",
+    "var_22f91505": "#hash_6742eccf5332f287",
+    "var_566825be": "#hash_27af23a0f8030a29",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_1a53f94b3680a2e3",
+    "var_db3e02ab": 2000,
+    "itemid": "23442129"
+}

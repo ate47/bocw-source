@@ -652,7 +652,7 @@ function function_3cdae979() {
 // Size: 0x196
 function function_19e6d9ca(var_5ecdfc37) {
     var_42d8351e = 0;
-    foreach (var_ac58e8e0 in level.var_7d45d0d4.var_9614b1d2) {
+    foreach (objective_name, var_ac58e8e0 in level.var_7d45d0d4.var_9614b1d2) {
         if (isarray(var_ac58e8e0.list) && isinarray(var_ac58e8e0.list, var_5ecdfc37)) {
             var_42d8351e = 1;
             break;

@@ -28,7 +28,7 @@ function private function_70a657d8() {
     function_5ae4a10c(3, "double_door", #"hash_50ac7af2c5bc8257", #"hash_5f3108a8ed351288", #"hash_74b8c57369bfb24b");
     function_5ae4a10c(4, "electric_door", #"hash_59bd96ed40a5975e", undefined, #"hash_6e7ff1a0f66deab4");
     function_5ae4a10c(5, "power_double_door", #"hash_59bd96ed40a5975e", undefined, #"hash_6e7ff1a0f66deab4");
-    function_5ae4a10c(6, "intel", #"hash_1f02d183075803d9", #"hash_739c39c90683d021", undefined, 1);
+    function_5ae4a10c(6, "intel", #"hash_1f02d183075803d9", #"zmpingitemintel", undefined, 1);
     function_5ae4a10c(12, "barricade", #"hash_6bd049dac126e3d7", undefined, #"hash_7b0c47f2b55db04c", 1, 98);
     function_5ae4a10c(array(#"hash_334445b2169a33a9", #"hash_94b3a8b935248d0"), "ammocache", #"hash_6d999ac22537eeb7", #"hash_e98c059b131f86c", #"hash_1d81c3d4a23328ba");
     function_5ae4a10c(array(#"hash_272f8fab87929c77", #"hash_7dc3d2d824dee8f0"), "pc_terminal", #"hash_393d988e963356ec", #"hash_2e657370192514b5", #"hash_5c22f831283cbe0d", 0, -20);
@@ -41,8 +41,8 @@ function private function_70a657d8() {
     function_5ae4a10c("p9_fxanim_zm_gp_chest_01_lrg_low_xmodel", "explore_chest_large", #"hash_47e5788369dfc93", #"hash_69eda3d15a6035ab", #"hash_4c2e7f9c9b051d54");
     function_5ae4a10c(#"hash_401a47741ffd646f", "explore_chest_gold", #"hash_607c4680a1d5e42a", #"hash_69eda3d15a6035ab", #"hash_4c2e7f9c9b051d54");
     function_5ae4a10c(array("p9_gold_surcrystal_medium_01", "p9_gold_surcrystal_medium_02", #"hash_608da839b1edf856", #"hash_608da739b1edf6a3"), "loot_pod", #"hash_786b6df51c6c7977", #"hash_2e354b187fdbfbbc", #"hash_237f8ac6e3096959");
-    function_5ae4a10c(#"hash_1750a0152f36afa4", "dark_aether_crystal", #"hash_69364657a8e13bea", #"hash_4f054ee9602c2197", undefined, 0, 32);
-    function_5ae4a10c(#"hash_8b8c98dda08574e", "large_essence", #"hash_1f00efce440309fb", #"hash_2b309e3eecad85fb", #"hash_42a9c56cfc3985b9");
+    function_5ae4a10c(#"hash_1750a0152f36afa4", "dark_aether_crystal", #"hash_69364657a8e13bea", #"zmpingitemquest", undefined, 0, 32);
+    function_5ae4a10c(#"hash_8b8c98dda08574e", "large_essence", #"hash_1f00efce440309fb", #"zmpingitemaetherium", #"hash_42a9c56cfc3985b9");
     function_5ae4a10c(undefined, "magicbox", #"hash_3f01b77865c1572d", #"hash_4542da19e0c104c", #"hash_5135a0345a6ece48");
     function_5ae4a10c(undefined, "wallbuy", &function_d1852e75, #"hash_5fc866a41152b3c", #"hash_5507b821f566791f");
     function_5ae4a10c(#"hash_615f17c2d8b69f96", "exfil_radio", undefined, #"hash_4e2a478df2a81e8c");
@@ -62,7 +62,7 @@ function private function_70a657d8() {
     function_5ae4a10c(#"p7_zm_power_up_double_points", "powerup_double_points", #"hash_774207d74b355a8a", #"hash_25d360e4ab517722", #"hash_3f59065a3419e61d");
     function_5ae4a10c(#"p7_zm_power_up_carpenter", "powerup_carpenter", #"hash_7ee3cb05607f53f3", #"hash_23e7594539b63cb8", #"hash_bfa2b9c3bd06c40");
     function_5ae4a10c(#"p7_zm_power_up_firesale", "powerup_firesale", #"hash_2c7bc0fa0980f8f5", #"hash_365549a15c5bde23", #"hash_8ea2b7214fa0627");
-    function_5ae4a10c(#"hash_3dc8b52a598de649", "powerup_free_perk", #"hash_165c84a677f7a58c", #"hash_287f99f86f82e12e", #"hash_16e60be7e8413d5");
+    function_5ae4a10c(#"hash_3dc8b52a598de649", "powerup_free_perk", #"hash_165c84a677f7a58c", #"zmpingperkcan", #"hash_16e60be7e8413d5");
     function_5ae4a10c(#"p8_zm_power_up_bonfire_sale", "powerup_bonfire_sale", undefined);
     function_5ae4a10c(#"zombie_z_money_icon", "powerup_bonus_points", #"hash_5162c283a9d6ee16", #"hash_3321e0bf2e424c30", #"hash_241cbd09653f7bbf");
     function_5ae4a10c(#"p8_zm_powerup_full_power", "powerup_hero_power", #"hash_50af8943ead42bcc", #"hash_3580f779bbcaa04d", #"hash_6e55b93f6580badb");

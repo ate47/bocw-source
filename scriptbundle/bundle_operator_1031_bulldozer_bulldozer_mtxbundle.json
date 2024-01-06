@@ -1,0 +1,52 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_bulldozer_01_mtxitem",
+            "itemid": "24536224"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_bulldozer_mtxitem",
+            "itemid": "20317561"
+        },
+        {
+            "var_4a4bc969": "#tr_longburst_bp_dozer_mtxitem",
+            "itemid": "18551963"
+        },
+        {
+            "var_4a4bc969": "#shotgun_pump_bp_dozer_mtxitem",
+            "itemid": "19927201"
+        },
+        {
+            "var_4a4bc969": "#melee_sledgehammer_bp_dozer_mtxitem",
+            "itemid": "28858618"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s1_bracelet_skull_01_mtxitem",
+            "itemid": "23144916"
+        },
+        {
+            "var_4a4bc969": "#execution_150_mtxitem",
+            "itemid": "22852668"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_battering_mtxitem",
+            "itemid": "23522883"
+        },
+        {
+            "var_4a4bc969": "#emblems_bulldozer2_flipbook_animation_mtxitem",
+            "itemid": "23509645"
+        }
+    ],
+    "itemname": "#hash_6f0f14dd78e30c6e",
+    "var_375a1747": "#hash_78e4e04008406c0c",
+    "var_579fd6c3": 54,
+    "name": "bundle_operator_1031_bulldozer_bulldozer_mtxbundle",
+    "var_a788fada": "#hash_e2121411b378b7d",
+    "var_22f91505": "#hash_6c5fb5b599f85144",
+    "var_566825be": "#hash_179fa515065ec935",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_7743aebb5ed9374",
+    "var_db3e02ab": 2000,
+    "itemid": "28075444"
+}

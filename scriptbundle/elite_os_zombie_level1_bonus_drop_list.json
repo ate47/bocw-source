@@ -1,0 +1,29 @@
+{
+    "itemlist": [
+        {
+            "minweight": 50,
+            "var_a6762160": "#zm_equipment_list",
+            "maxweight": 50,
+            "available": -1
+        },
+        {
+            "minweight": 25,
+            "var_a6762160": "#ai_bonus_onslaught_item_list",
+            "maxweight": 25,
+            "available": -1
+        },
+        {
+            "minweight": 25,
+            "var_a6762160": "#level_1_onslaught_gun_list",
+            "maxweight": 25,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "elite_os_zombie_level1_bonus_drop_list",
+    "var_fde72c94": 100
+}

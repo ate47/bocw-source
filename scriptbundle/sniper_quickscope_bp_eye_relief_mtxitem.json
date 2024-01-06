@@ -1,0 +1,23 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#bundle_blueprint_1082_sniper_quickscope_eye_relief_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_8f27dfeb235e011",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_7bafe13c3835573f",
+    "weapon": "#hash_485d0c5e33d67e78",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_4441ff04490fab9b",
+    "season": 1,
+    "var_46300498": 1,
+    "baseweapon": "#hash_485d0c5e33d67e78",
+    "name": "sniper_quickscope_bp_eye_relief_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 2,
+    "itemid": "32800746",
+    "blueprint": "#hash_8f27dfeb235e011"
+}

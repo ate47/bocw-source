@@ -1,0 +1,11 @@
+{
+    "destroyedalias": "eq_gas_dstr",
+    "var_922067c4": "scriptbundle",
+    "type": "battlechatter",
+    "vmtype": "both",
+    "usealias": "eq_gas_use",
+    "name": "gas_trap_battlechatter",
+    "var_931a4bf8": "eq_gas_fail",
+    "var_ff5e0d8e": "eq_gas_threat",
+    "var_382f662": 1
+}

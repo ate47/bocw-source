@@ -1,0 +1,14 @@
+{
+    "var_96fd2041": [
+        {
+            "setting": "#auto_sprint_gamepad",
+            "value": "0"
+        },
+        {
+            "setting": "#auto_sprint_kbm",
+            "value": "0"
+        }
+    ],
+    "var_922067c4": "SCRIPTBUNDLE",
+    "name": "codcaster_settings_overrides"
+}

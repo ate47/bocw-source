@@ -1,0 +1,23 @@
+{
+    "itemlist": [
+        {
+            "minweight": 100,
+            "var_a6762160": "#t9_healing_global",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 50,
+            "maxweight": 50
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_7fb0967b": 12000,
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "t9_supply_stash_slot5",
+    "var_fde72c94": 100,
+    "supplystash": 1
+}

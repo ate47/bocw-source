@@ -1,0 +1,48 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_22e2aaf7be812676",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "default"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_7740c9730916c43e",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "crawler"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_543cfe4c33e5900d",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "nova_crawler"
+                }
+            ],
+            "model": "#spawner_zm_zombie",
+            "type": "actor",
+            "var_db255011": 1,
+            "name": "actor 1",
+            "allowdeath": 1,
+            "takedamage": 1
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "aib_t9_zm_zombie_spawn_undercroft_02",
+    "dontsync": 1,
+    "team": "any"
+}

@@ -48,8 +48,8 @@ function private function_70a657d8() {
     } else if (!isarray(level.var_91f71aa)) {
         level.var_91f71aa = array(level.var_91f71aa);
     }
-    level.var_91f71aa[#"hash_7ee7b21a68b25ce6"] = &function_d243e3bc;
-    level.var_91f71aa[#"hash_481a7553aa1b07b2"] = &function_6492d995;
+    level.var_91f71aa[#"axe_gun_energetic_shard_item_t9"] = &function_d243e3bc;
+    level.var_91f71aa[#"axe_gun_volatile_crystal_item_t9"] = &function_6492d995;
     if (!isdefined(level.var_6e197241)) {
         level.var_6e197241 = [];
     } else if (!isarray(level.var_6e197241)) {
@@ -307,7 +307,7 @@ function function_e339e720(s_params) {
             if (math::cointoss(var_161794b5)) {
                 player.var_f7e829c0.player = 0;
                 player.var_2501c648.player = 0;
-                var_d4d3b41a = function_4ba8fde(#"hash_481a7553aa1b07b2");
+                var_d4d3b41a = function_4ba8fde(#"axe_gun_volatile_crystal_item_t9");
                 self thread item_drop::drop_item(0, undefined, 1, 0, var_d4d3b41a.id, self.origin);
             } else {
                 player.var_f7e829c0++;
@@ -894,7 +894,7 @@ function function_b9e23a1e(attacker, weapon) {
     }
     wait(0.5);
     if (isdefined(self)) {
-        var_47c940c2 = function_4ba8fde(#"hash_7ee7b21a68b25ce6");
+        var_47c940c2 = function_4ba8fde(#"axe_gun_energetic_shard_item_t9");
         item_drop::drop_item(0, undefined, 1, 0, var_47c940c2.id, self.origin);
         self.allowdeath = 1;
         self kill(self.origin, attacker, undefined, weapon, undefined, 1);
@@ -973,7 +973,7 @@ function on_item_pickup(params) {
     if (isplayer(self)) {
         if (isdefined(item.var_a6762160.weapon) && function_58d581b6(item.var_a6762160.weapon)) {
             self.var_c926b4fc = isdefined(item.var_c926b4fc) ? item.var_c926b4fc : 5;
-        } else if (item.var_a6762160.name === #"hash_7ee7b21a68b25ce6") {
+        } else if (item.var_a6762160.name === #"axe_gun_energetic_shard_item_t9") {
             self.var_c926b4fc++;
             if (self.var_c926b4fc > 5) {
                 self.var_c926b4fc = 5;
@@ -982,7 +982,7 @@ function on_item_pickup(params) {
             /#
                 iprintlnbold("<unknown string>" + self.var_c926b4fc);
             #/
-        } else if (item.var_a6762160.name === #"hash_481a7553aa1b07b2") {
+        } else if (item.var_a6762160.name === #"axe_gun_volatile_crystal_item_t9") {
             var_3c4fcfcf = self function_49fa2899();
             if (!isdefined(var_3c4fcfcf)) {
                 return;
@@ -1073,10 +1073,10 @@ function cmd(cmd) {
     /#
         switch (cmd) {
         case #"hash_4fd39fa505917bb8":
-            function_4e036cff(#"hash_481a7553aa1b07b2");
+            function_4e036cff(#"axe_gun_volatile_crystal_item_t9");
             break;
         case #"hash_3282d077fe3c9d0c":
-            function_4e036cff(#"hash_7ee7b21a68b25ce6");
+            function_4e036cff(#"axe_gun_energetic_shard_item_t9");
             break;
         case #"hash_2bbefdbbe0dcca8":
             function_c1fdd154();

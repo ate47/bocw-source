@@ -1,0 +1,24 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_7a604f110b32858b"
+        }
+    ],
+    "description": "#hash_6d90c726586f032d",
+    "itemspawnentry": "#item_zmintel_gold_darkaether_artifact_1",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#main_quest",
+    "model": "#hash_42841f448127f000",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_5beb35ea656e0a2f",
+    "type": "zmintel",
+    "season": 1,
+    "var_ad4ad686": "#hash_70ce1650358c0923",
+    "soundloop": "#hash_6098b72d515f39d5",
+    "name": "zmintel_gold_darkaether_artifact_1",
+    "var_9be0526e": "#artifact",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "title": "#hash_568ab340b440f83b",
+    "mapname": "#zm_gold"
+}

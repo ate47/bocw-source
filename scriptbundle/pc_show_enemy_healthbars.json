@@ -1,0 +1,32 @@
+{
+    "options": [
+        {
+            "label": "#hash_3470b0ddc5bf7476",
+            "value": "0"
+        },
+        {
+            "label": "#hash_52870ab93422fd97",
+            "value": "1"
+        }
+    ],
+    "var_dfedf08e": 1,
+    "var_d260763": "#hash_2bc3f30fbb0bd606",
+    "description": "#hash_3fa377efba9a5c35",
+    "var_60fcfffa": "#hash_4f445f7612232efc",
+    "var_9bc3be7": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 0.1,
+    "name": "pc_show_enemy_healthbars",
+    "displayname": "#hash_474d83e1648d3763",
+    "var_2d7a664e": 1,
+    "var_500458ac": 10,
+    "var_926d1be9": 0.01,
+    "var_66faec87": 2,
+    "statname": "healthbar_show_enemy",
+    "var_6f00a61a": 1.1,
+    "minvalue": 1,
+    "var_d4e288e": 1,
+    "var_b7401319": "#hash_26907a4c5e0f4d75"
+}

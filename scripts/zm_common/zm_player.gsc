@@ -809,19 +809,19 @@ function function_b01adf41() {
     }
     if (isplayer(self)) {
         var_6e618382 = item_inventory::function_2e711614(13);
-        if (var_6e618382.var_a6762160.name === #"hash_689c84ba4e75b1c8") {
+        if (var_6e618382.var_a6762160.name === #"stimshot_t9_item_sr") {
             return 1;
         }
     }
     foreach (player in function_a1ef346b()) {
         if (isdefined(player.var_87f72f8)) {
             switch (player.var_87f72f8) {
-            case #"hash_1fc30bedac3b39a5":
-            case #"hash_35d8042aa3ab475e":
-            case #"hash_37b9ba3f40fc1ba5":
-            case #"hash_4554f3c03465642f":
-            case #"hash_4feb54f5041d1609":
-            case #"hash_76ed099fde5ea820":
+            case #"field_upgrade_heal_aoe_5_item_sr":
+            case #"field_upgrade_heal_aoe_4_item_sr":
+            case #"field_upgrade_heal_aoe_item_sr":
+            case #"field_upgrade_heal_aoe_3_item_sr":
+            case #"field_upgrade_heal_aoe_1_item_sr":
+            case #"field_upgrade_heal_aoe_2_item_sr":
                 return 1;
                 break;
             }
@@ -1347,7 +1347,7 @@ function spectator_respawn() {
         if (isdefined(self.var_f4710251)) {
             targetplayer = getentbynum(self.var_f4710251);
             if (isdefined(targetplayer) && isplayer(targetplayer) && isalive(targetplayer)) {
-                new_origin = namespace_1332002f::function_e402b74e(self, targetplayer);
+                new_origin = squad_spawn::function_e402b74e(self, targetplayer);
             }
         }
     }
@@ -2193,7 +2193,7 @@ function slowdown(str_type, var_a47cf2b2) {
     while (self.a_n_slowdown_timeouts.size) {
         str_lowest_type = undefined;
         n_lowest_rate = 10;
-        foreach (n_slowdown_timeout in self.a_n_slowdown_timeouts) {
+        foreach (str_index, n_slowdown_timeout in self.a_n_slowdown_timeouts) {
             if (isdefined(n_timeout) && n_slowdown_timeout <= n_time) {
                 self.a_n_slowdown_timeouts[str_index] = undefined;
             } else {

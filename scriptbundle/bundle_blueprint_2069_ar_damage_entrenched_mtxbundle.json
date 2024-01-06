@@ -1,0 +1,27 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_damage_bp_vcp_mtxitem",
+            "itemid": "24211842"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_vietn_helmet_mtxitem",
+            "itemid": "19885922"
+        },
+        {
+            "var_4a4bc969": "#callingcards_ratsnake_136_mtxitem",
+            "itemid": "32184671"
+        }
+    ],
+    "itemname": "#hash_6008bc3717129d18",
+    "var_375a1747": "#hash_7f39d5f3d0e96bea",
+    "name": "bundle_blueprint_2069_ar_damage_entrenched_mtxbundle",
+    "var_a788fada": "#hash_6228486538cbe3a7",
+    "var_22f91505": "#hash_38441c6547cff7c2",
+    "var_566825be": "#hash_38a8847679cf35ef",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_3fe237f1ad4ebe3e",
+    "var_db3e02ab": 2000,
+    "itemid": "24028316"
+}

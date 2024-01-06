@@ -51,7 +51,7 @@ function function_409efbe2(localclientnum, *oldval, newval, *bnewent, *binitials
     }
     function_d024972a(fieldname, var_1bb0b8aa);
     if (isdefined(level.var_d38af2b)) {
-        function_2cca7b47(fieldname, #"hash_1ecdcf251e36d7b2");
+        function_2cca7b47(fieldname, #"musictrack_mp_nuketown_ee");
         callback::on_spawned(&on_player_spawned);
         callback::on_killcam_begin(&on_killcam_begin);
         callback::on_player_corpse(&on_player_corpse);

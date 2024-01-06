@@ -249,7 +249,7 @@ function init() {
     level.waswinning = [];
     level.lastslowprocessframe = 0;
     level.placement = [];
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         level.placement[team] = [];
     }
     level.placement[#"all"] = [];
@@ -642,7 +642,7 @@ function killserverpc() {
 // Size: 0xb0
 function atleasttwoteams() {
     valid_count = 0;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (level.playercount[team] != 0) {
             valid_count++;
         }
@@ -679,7 +679,7 @@ function function_4b670b29() {
         return 0;
     }
     params = {#var_6eb69269:[], #teams_forfeited:[]};
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (function_f25690c1(team)) {
             if (!isdefined(params.teams_forfeited)) {
                 params.teams_forfeited.params = [];
@@ -805,7 +805,7 @@ function function_aaacae11(reason) {
 // Checksum 0x68c3e01b, Offset: 0x4148
 // Size: 0x9c
 function dospawnqueueupdates() {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (level.spawnqueuemodified[team]) {
             [[ level.onalivecountchange ]](team);
         }
@@ -817,7 +817,7 @@ function dospawnqueueupdates() {
 // Checksum 0x9cc9bcf6, Offset: 0x41f0
 // Size: 0x74
 function function_7b75ee16(team) {
-    if (level.playerlives[team] && !namespace_1332002f::function_d072f205()) {
+    if (level.playerlives[team] && !squad_spawn::function_d072f205()) {
         return 1;
     }
     if (function_a1ef346b(team).size - level.laststandcount[team] > 0) {
@@ -833,7 +833,7 @@ function function_7b75ee16(team) {
 function function_9c839e9() {
     params = {#teams_alive:[], #var_46a749a8:[], #var_8245068d:0};
     aliveteam = undefined;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (teams::function_9dd75dad(team)) {
             params.var_8245068d++;
             if (!teams::is_all_dead(team)) {
@@ -878,7 +878,7 @@ function private function_eb1c0d37() {
     if (level.var_f97a6ba3 && !level.var_4ad4bec3) {
         return 0;
     }
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (!level.var_f97a6ba3 && !level.everexisted[team]) {
             return 0;
         }
@@ -970,7 +970,7 @@ function private function_d0c92f82(team) {
 // Size: 0x110
 function doonelefteventupdates() {
     if (level.teambased) {
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             if (function_e356468d(team)) {
                 function_d0c92f82(team);
             }
@@ -991,7 +991,7 @@ function function_b29d2423(*params) {
         }
     #/
     if (is_true(level.takelivesondeath) && level.teamcount <= 2) {
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             player::function_c49fc862(team);
         }
     }
@@ -1016,7 +1016,7 @@ function function_b29d2423(*params) {
             level notify(#"abort forfeit");
         }
     }
-    if (!level.playerqueuedrespawn && !level.numlives && !level.numteamlives && !level.spawnsystem.var_c2cc011f && !namespace_1332002f::function_d072f205()) {
+    if (!level.playerqueuedrespawn && !level.numlives && !level.numteamlives && !level.spawnsystem.var_c2cc011f && !squad_spawn::function_d072f205()) {
         return;
     }
     if (level.ingraceperiod && !var_2e7f3e03) {
@@ -1199,7 +1199,7 @@ function wavespawntimer() {
     while (game.state == #"playing") {
         time = gettime();
         notified = 0;
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             notified = notified & notifyteamwavespawn(team, time);
         }
         if (notified) {
@@ -1254,7 +1254,7 @@ function getteamscoreratio() {
     playerteam = self.pers[#"team"];
     score = getteamscore(playerteam);
     otherteamscore = 0;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (team == playerteam) {
             continue;
         }
@@ -1831,7 +1831,7 @@ function private function_4720c07f(outcome) {
     }
     setmatchflag("cg_drawSpectatorMessages", 0);
     globallogic_audio::function_ac2cb1bc();
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         game.lastroundscore[team] = getteamscore(team);
     }
     if (util::isroundbased()) {
@@ -2092,11 +2092,11 @@ function private function_159d7b6f() {
     }
     wait(0.1);
     item_data = [];
-    foreach (location in summary) {
+    foreach (location_name, location in summary) {
         if (isdefined(location.itemtypes)) {
-            foreach (category in location.itemtypes) {
+            foreach (category_name, category in location.itemtypes) {
                 if (isdefined(category.items)) {
-                    foreach (item in category.items) {
+                    foreach (item_name, item in category.items) {
                         data = {#count:item.count, #rarity:item.rarity, #item:item_name, #category:category_name, #location:location_name};
                         if (!isdefined(item_data)) {
                             item_data = [];
@@ -2229,7 +2229,7 @@ function getplayerbyname(name) {
 // Checksum 0x7835fb3, Offset: 0x9450
 // Size: 0x174
 function function_4e7d44bd() {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (level.everexisted[team]) {
             teamranking = isdefined(level.var_eed7c027[team]) ? level.var_eed7c027[team] : 1;
             players = getplayers(team);
@@ -2747,7 +2747,7 @@ function updateteamplacement() {
         team = player.pers[#"team"];
         placement[team][placement[team].size] = player;
     }
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         level.placement[team] = placement[team];
     }
 }
@@ -2875,7 +2875,7 @@ function sortdeadplayers(team) {
 // Size: 0xa2
 function totalalivecount() {
     count = 0;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         count = count + function_a1ef346b(team).size;
     }
     return count;
@@ -2887,7 +2887,7 @@ function totalalivecount() {
 // Size: 0x9a
 function totalplayerlives() {
     count = 0;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         count = count + level.playerlives[team];
     }
     return count;
@@ -2899,7 +2899,7 @@ function totalplayerlives() {
 // Size: 0xa4
 function function_e9e52d05() {
     count = 0;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (function_a1ef346b(team).size) {
             count++;
         }
@@ -3106,7 +3106,7 @@ function updatealivetimes(team) {
 // Checksum 0xc0796a40, Offset: 0xc718
 // Size: 0x88
 function updateallalivetimes() {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         updatealivetimes(team);
     }
 }
@@ -3401,7 +3401,7 @@ function function_2960a822(activeteamcount) {
         if (activeteamcount.size <= 1) {
             return 0;
         }
-        foreach (team in activeteamcount) {
+        foreach (key, team in activeteamcount) {
             if (key == #"any") {
                 continue;
             }
@@ -3500,7 +3500,7 @@ function function_bf2901cf() {
                     }
                 }
                 params = {#var_6eb69269:[], #teams_forfeited:[]};
-                foreach (team in level.teams) {
+                foreach (hash, team in level.teams) {
                     if (var_7c0f98d7[team] == var_93221c73) {
                         if (!isdefined(params.var_6eb69269)) {
                             params.var_6eb69269.params = [];
@@ -3684,7 +3684,7 @@ function watchmatchendingsoon() {
 // Checksum 0x2f8fff5e, Offset: 0xe9b0
 // Size: 0x90
 function anyteamhaswavedelay() {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (level.wavedelay[team]) {
             return 1;
         }
@@ -3837,7 +3837,7 @@ function function_b9b7618() {
     level.disableattachments = getgametypesetting(#"disableattachments");
     level.disabletacinsert = getgametypesetting(#"disabletacinsert");
     level.var_d0e6b79d = getgametypesetting(#"hash_47df56af71e4df3");
-    level.var_3691c4b7 = getgametypesetting(#"hash_72977d6f997d7e81");
+    level.disablecustomcac = getgametypesetting(#"disablecustomcac");
     level.disableclassselection = getgametypesetting(#"disableclassselection");
     level.disableweapondrop = getgametypesetting(#"disableweapondrop");
     level.teamkillreducedpenalty = getgametypesetting(#"teamkillreducedpenalty");
@@ -3853,9 +3853,9 @@ function function_b9b7618() {
     level.var_90bb9821 = getgametypesetting(#"playermaxhealth") - 150;
     level.minimumallowedteamkills = getgametypesetting(#"teamkillpunishcount") - 1;
     level.onlyheadshots = getgametypesetting(#"onlyheadshots");
-    level.var_ca7e7c7f = getgametypesetting(#"hash_4423fa460a7113ff");
+    level.onlyexecution = getgametypesetting(#"onlyexecution");
     level.allowhitmarkers = getgametypesetting(#"allowhitmarkers");
-    level.var_b1e41c9b = getgametypesetting(#"hash_430ea04f2dccef18");
+    level.autoheal = getgametypesetting(#"autoheal");
     level.scoreresetondeath = getgametypesetting(#"scoreresetondeath");
     level.ekiaresetondeath = getgametypesetting(#"ekiaresetondeath");
     level.var_c77de7d6 = getgametypesetting(#"hash_32da91b78e54e7b5");
@@ -3915,13 +3915,13 @@ function function_b9b7618() {
             }
             level thread setteamlivesuimodels();
         } else {
-            foreach (_ in level.teams) {
+            foreach (team, _ in level.teams) {
                 game.lives[team] = 0;
             }
         }
     }
     if (is_true(level.var_5c49de55)) {
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             game.var_5c49de55[team] = level.var_5c49de55;
             game.var_794ec97[team] = 0;
         }
@@ -3948,7 +3948,7 @@ function function_b9b7618() {
     }
     wavedelay = level.waverespawndelay;
     if (wavedelay) {
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             level.wavedelay[team] = wavedelay;
             level.lastwave[team] = 0;
         }

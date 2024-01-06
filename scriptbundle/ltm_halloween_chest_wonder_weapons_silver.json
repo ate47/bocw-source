@@ -1,0 +1,47 @@
+{
+    "itemlist": [
+        {
+            "minweight": 150,
+            "var_a6762160": "#ray_gun_item_sr",
+            "maxweight": 150,
+            "available": -1
+        },
+        {
+            "minweight": 150,
+            "var_a6762160": "#ww_ieu_shockwave_t9_item_sr",
+            "maxweight": 150,
+            "available": -1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#ww_ieu_acid_t9_item_sr",
+            "maxweight": 100,
+            "available": -1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#ww_ieu_electric_t9_item_sr",
+            "maxweight": 100,
+            "available": -1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#ww_ieu_gas_t9_item_sr",
+            "maxweight": 100,
+            "available": -1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#ww_ieu_plasma_t9_item_sr",
+            "maxweight": 100,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "ltm_halloween_chest_wonder_weapons_silver",
+    "var_fde72c94": 100
+}

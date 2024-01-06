@@ -16,12 +16,12 @@ function function_9384b521() {
     if (!is_true(level.aat_in_use)) {
         return;
     }
-    aat::register("ammomod_brainrot", #"hash_1376180f99aa80c1", "ui_icon_zombie_ammomod_brainrot_stacked");
-    aat::register("ammomod_brainrot_1", #"hash_1376180f99aa80c1", "ui_icon_zombie_ammomod_brainrot_stacked");
-    aat::register("ammomod_brainrot_2", #"hash_1376180f99aa80c1", "ui_icon_zombie_ammomod_brainrot_stacked");
-    aat::register("ammomod_brainrot_3", #"hash_1376180f99aa80c1", "ui_icon_zombie_ammomod_brainrot_stacked");
-    aat::register("ammomod_brainrot_4", #"hash_1376180f99aa80c1", "ui_icon_zombie_ammomod_brainrot_stacked");
-    aat::register("ammomod_brainrot_5", #"hash_1376180f99aa80c1", "ui_icon_zombie_ammomod_brainrot_stacked");
+    aat::register("ammomod_brainrot", #"zmui/zm_ammomod_brainrot", "ui_icon_zombie_ammomod_brainrot_stacked");
+    aat::register("ammomod_brainrot_1", #"zmui/zm_ammomod_brainrot", "ui_icon_zombie_ammomod_brainrot_stacked");
+    aat::register("ammomod_brainrot_2", #"zmui/zm_ammomod_brainrot", "ui_icon_zombie_ammomod_brainrot_stacked");
+    aat::register("ammomod_brainrot_3", #"zmui/zm_ammomod_brainrot", "ui_icon_zombie_ammomod_brainrot_stacked");
+    aat::register("ammomod_brainrot_4", #"zmui/zm_ammomod_brainrot", "ui_icon_zombie_ammomod_brainrot_stacked");
+    aat::register("ammomod_brainrot_5", #"zmui/zm_ammomod_brainrot", "ui_icon_zombie_ammomod_brainrot_stacked");
     clientfield::register("actor", "ammomod_brainrot", 1, 1, "int", &function_d500905a, 0, 0);
     clientfield::register("vehicle", "ammomod_brainrot", 1, 1, "int", &function_d500905a, 0, 0);
     clientfield::register("actor", "zm_ammomod_brainrot_exp", 1, 1, "counter", &function_1d8434b9, 0, 0);
@@ -48,7 +48,7 @@ function function_d500905a(localclientnum, *oldval, newval, *bnewent, *binitials
         if (!gibclientutils::isgibbed(fieldname, self, 8)) {
             if (isdefined(self.archetype)) {
                 switch (self.archetype) {
-                case #"hash_9f6bc1960ff4912":
+                case #"raz":
                     if (isdefined(self gettagorigin("j_head"))) {
                         self.var_d59aa7bb = util::playfxontag(fieldname, "zm_weapons/fx9_aat_brain_rot_lvl1_mc_raz_eye", self, "j_head");
                     }
@@ -58,7 +58,7 @@ function function_d500905a(localclientnum, *oldval, newval, *bnewent, *binitials
                         self.var_d59aa7bb = util::playfxontag(fieldname, "zm_weapons/fx9_aat_brain_rot_lvl1_mc_avo_eye", self, "j_head");
                     }
                     break;
-                case #"hash_be2e962be17d10e":
+                case #"mimic":
                     if (isdefined(self gettagorigin("j_head"))) {
                         self.var_d59aa7bb = util::playfxontag(fieldname, "zm_weapons/fx9_aat_brain_rot_lvl1_mc_mimic_eye", self, "j_head");
                     }

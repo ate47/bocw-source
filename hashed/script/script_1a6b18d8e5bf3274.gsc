@@ -288,13 +288,13 @@ function function_8175cdcb(localclientnum) {
     self notify(var_17b7891d);
     self endon(var_17b7891d);
     while (1) {
-        if (!self function_f69ceea9(localclientnum) && !isdefined(self.var_a0d6f528) && !is_true(self.var_c108a678)) {
+        if (!self function_f69ceea9(localclientnum) && !isdefined(self.var_a0d6f528) && !is_true(self.inspect_clip_out)) {
             waitframe(1);
             continue;
         }
         var_4695f796 = self.oldval;
         self function_5962609c(localclientnum, self.oldval, 2, 0);
-        while (self function_f69ceea9(localclientnum) || isdefined(self.var_a0d6f528) || is_true(self.var_c108a678)) {
+        while (self function_f69ceea9(localclientnum) || isdefined(self.var_a0d6f528) || is_true(self.inspect_clip_out)) {
             waitframe(1);
         }
         self function_5962609c(localclientnum, 2, var_4695f796, 0);
@@ -325,7 +325,7 @@ function function_b63cc0c6(*localclientnum) {
     self endon(var_17b7891d);
     while (1) {
         self waittillmatch({#notetrack:"inspect_clip_out"}, #"notetrack");
-        self.var_c108a678 = 1;
+        self.inspect_clip_out = 1;
     }
 }
 
@@ -340,7 +340,7 @@ function function_acb526aa(*localclientnum) {
     self endon(var_17b7891d);
     while (1) {
         self waittillmatch({#notetrack:"inspect_done"}, #"notetrack");
-        self.var_c108a678 = 0;
+        self.inspect_clip_out = 0;
     }
 }
 

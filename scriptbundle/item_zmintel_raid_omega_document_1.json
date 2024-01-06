@@ -1,0 +1,32 @@
+{
+    "worldfx": [
+        {
+            "worldfx": "#hash_3dad79ca7ca879b5"
+        }
+    ],
+    "var_a6616b9c": 1,
+    "amount": 1,
+    "var_922067c4": "scriptbundle",
+    "var_5dc4470b": -6,
+    "var_3e688854": 10,
+    "model": "#hash_486f715934c1b94a",
+    "var_16e34ef4": 64,
+    "var_e9898330": "zmpingitemintel",
+    "var_ac75b59f": -1,
+    "var_c2de1e75": "zm_item_pickup_rumble",
+    "type": "itemspawnentry",
+    "hintstring": "#hash_3160ddd247bfc8dd",
+    "var_4a1a4613": "armor_swap",
+    "name": "item_zmintel_raid_omega_document_1",
+    "displayname": "#hash_3160ddd247bfc8dd",
+    "var_4cd830a": 1,
+    "var_9e569978": 1,
+    "modelscale": 1,
+    "rarity": "Ultra",
+    "var_1b0b57d1": "evt_item_despawn",
+    "handler": "#hash_1002a9af0882010e",
+    "unlimited": 1,
+    "var_3af59a99": 1,
+    "itemtype": "quest",
+    "pickupsound": "zmb_intel_document_pickup"
+}

@@ -1,0 +1,23 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#bundle_operator_1048_ingo_city_ripper_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_207556f76bbf38ad",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_3495e77fa216f55f",
+    "weapon": "#hash_1039f56708e1d3e4",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_4d193dee2a4e774b",
+    "season": 1,
+    "var_46300498": 1,
+    "baseweapon": "#hash_1039f56708e1d3e4",
+    "name": "ar_damage_bp_greyr2_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 3,
+    "itemid": "23998827",
+    "blueprint": "#hash_207556f76bbf38ad"
+}

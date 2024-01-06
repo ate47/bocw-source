@@ -1,0 +1,26 @@
+{
+    "option_dependencies": [
+        {
+            "var_1643d946": "1",
+            "var_6825bdb": "#is_player_online",
+            "operator": "=="
+        }
+    ],
+    "description": "#hash_27d0d5e807ced06f",
+    "var_60fcfffa": "#menu/on",
+    "var_79a1eec3": 1,
+    "var_9bc3be7": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_140d0a67": 1,
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "maxvalue": 1,
+    "name": "network_internal_ip",
+    "displayname": "#hash_532ca1559cdf918a",
+    "var_500458ac": 10,
+    "var_66faec87": 10,
+    "statname": "network_internal_ip",
+    "var_6f00a61a": 1.1,
+    "var_b7401319": "#menu/off"
+}

@@ -1,0 +1,43 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_gen_pl_starter2_vargas_bacano_mtxitem",
+            "itemid": "28541960"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_starter2_mtxitem",
+            "itemid": "19048863"
+        },
+        {
+            "var_4a4bc969": "#ar_slowfire_bp_special_mtxitem",
+            "itemid": "20772378"
+        },
+        {
+            "var_4a4bc969": "#execution_149_mtxitem",
+            "itemid": "23261311"
+        },
+        {
+            "var_4a4bc969": "#reticle_118_mtxitem",
+            "itemid": "28775052"
+        },
+        {
+            "var_4a4bc969": "#emblems_vts_05_s5_mtxitem",
+            "itemid": "29507400"
+        },
+        {
+            "var_4a4bc969": "#callingcards_vargasactionraid_s5_mtxitem",
+            "itemid": "28214531"
+        }
+    ],
+    "itemname": "#hash_682a9818e9fc2aaa",
+    "var_375a1747": "#hash_7c1bc66995bd96c8",
+    "name": "operator_bundle_5040_vargas_action_raider_mtxbundle",
+    "var_a788fada": "#hash_6900113792889cbf",
+    "var_22f91505": "#hash_4a5c33cf09330ee0",
+    "var_566825be": "#hash_51419aba9df65cc7",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_79f13e0cd3eb5f68",
+    "var_db3e02ab": 2000,
+    "itemid": "32669888"
+}

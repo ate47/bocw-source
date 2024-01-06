@@ -1,0 +1,207 @@
+{
+    "defaultloadouts": [
+        {
+            "primaryattachments": [
+                {
+                    "attachment": "#reflex"
+                },
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#fastreload"
+                },
+                {
+                    "attachment": "#grip2"
+                },
+                {
+                    "attachment": "#handle"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#hash_79fb37771b897822",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_5bf4dc6dcf1d2340",
+            "specialgrenade": "#hash_41adc0ca9daf6e9d"
+        },
+        {
+            "primaryattachments": [
+                {
+                    "attachment": "#elo2"
+                },
+                {
+                    "attachment": "#barrel"
+                },
+                {
+                    "attachment": "#steadyaim"
+                },
+                {
+                    "attachment": "#fastreload2"
+                },
+                {
+                    "attachment": "#handle2"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#hash_79fb35771b8974bc",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_33ed9170805d825c",
+            "specialgrenade": "#hash_2d88b4c5217c7e7c"
+        },
+        {
+            "primaryattachments": [
+                {
+                    "attachment": "#compensator2"
+                },
+                {
+                    "attachment": "#heavy2"
+                },
+                {
+                    "attachment": "#steadyaim"
+                },
+                {
+                    "attachment": "#extclip"
+                },
+                {
+                    "attachment": "#mixhandle"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#hash_79fb38771b8979d5",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_5243375728e388f6",
+            "specialgrenade": "#frost_blast"
+        },
+        {
+            "primaryattachments": [
+                {
+                    "attachment": "#acog"
+                },
+                {
+                    "attachment": "#compensator"
+                },
+                {
+                    "attachment": "#mixunder"
+                },
+                {
+                    "attachment": "#handle2"
+                },
+                {
+                    "attachment": "#stalker"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#hash_79fb32771b896fa3",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_5b3e3aae603f948e",
+            "specialgrenade": "#hash_7b5a77a85b0ffab7"
+        },
+        {
+            "primaryattachments": [
+                {
+                    "attachment": "#reflex2"
+                },
+                {
+                    "attachment": "#mixbarrel"
+                },
+                {
+                    "attachment": "#quickdraw"
+                },
+                {
+                    "attachment": "#grip"
+                },
+                {
+                    "attachment": "#stalker2"
+                }
+            ],
+            "var_4c0d0c4b": -1,
+            "customclassname": "#hash_79fb31771b896df0",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_70f8f2d92031f544",
+            "specialgrenade": "#hash_1d9cb9dbd298acba"
+        }
+    ],
+    "var_2f9f5375": [
+        {
+            "var_4c0d0c4b": -1,
+            "customclassname": "#class/slot1",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_70f8f2d92031f544",
+            "specialgrenade": "#frost_blast"
+        }
+    ],
+    "defaultcustomloadouts": [
+        {
+            "var_4c0d0c4b": -1,
+            "customclassname": "#class/slot1",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_70f8f2d92031f544",
+            "specialgrenade": "#frost_blast"
+        },
+        {
+            "var_4c0d0c4b": -1,
+            "customclassname": "#class/slot2",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_5bf4dc6dcf1d2340",
+            "specialgrenade": "#frost_blast"
+        },
+        {
+            "var_4c0d0c4b": -1,
+            "customclassname": "#class/slot3",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_8ff6b682d43c59c",
+            "specialgrenade": "#frost_blast"
+        },
+        {
+            "var_4c0d0c4b": -1,
+            "customclassname": "#class/slot4",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_485d0c5e33d67e78",
+            "specialgrenade": "#frost_blast"
+        },
+        {
+            "var_4c0d0c4b": -1,
+            "customclassname": "#class/slot5",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_51114f6fd577519b",
+            "specialgrenade": "#frost_blast"
+        },
+        {
+            "var_4c0d0c4b": -1,
+            "customclassname": "#class/slot6",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_1039f56708e1d3e4",
+            "specialgrenade": "#frost_blast"
+        },
+        {
+            "var_4c0d0c4b": -1,
+            "customclassname": "#class/slot7",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_7a3989475f8af314",
+            "specialgrenade": "#hash_41adc0ca9daf6e9d"
+        },
+        {
+            "var_4c0d0c4b": -1,
+            "customclassname": "#class/slot8",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_6251778e2d3b9a64",
+            "specialgrenade": "#hash_2d88b4c5217c7e7c"
+        },
+        {
+            "var_4c0d0c4b": -1,
+            "customclassname": "#class/slot9",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_696069d98ed3f228",
+            "specialgrenade": "#hash_7b5a77a85b0ffab7"
+        },
+        {
+            "var_4c0d0c4b": -1,
+            "customclassname": "#class/slot10",
+            "var_26b5c8ef": -1,
+            "primary": "#hash_6cb1c7e45075a0a4",
+            "specialgrenade": "#hash_1d9cb9dbd298acba"
+        }
+    ],
+    "name": "zm_default_loadouts",
+    "sessionmode": "zm"
+}

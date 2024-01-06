@@ -1,0 +1,50 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_7b1793df2c9b8245",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "fly_in"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_3ce4bc719a3ea6b",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "lerptime": 0.3,
+                    "name": "arrive",
+                    "blend": 0.3
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_7e54508e8fa9ef96",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "cleanupdelete": 1,
+                    "name": "retract"
+                }
+            ],
+            "model": "#hash_7ab1964a3a748a11",
+            "type": "prop",
+            "var_db255011": 1,
+            "deletewhenfinished": 1,
+            "name": "harness"
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "p9_fxanim_wz_parachute_supplydrop_01_harness_bundle",
+    "dontsync": 1,
+    "team": "any"
+}

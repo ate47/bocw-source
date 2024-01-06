@@ -1,0 +1,32 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#blueprint_bundle_3031_special_op_1_rfb_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3901_special_op_2_dh_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_3016_beck_zombie_circus_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3008_pelington_703_road_grime_mtxbundle"
+        }
+    ],
+    "var_ce1f5e1c": "#hash_266117c309d3227e",
+    "var_3156ffbf": "#hash_5eed955767f06002",
+    "var_355a0570": 1,
+    "var_922067c4": "SCRIPTBUNDLE",
+    "type": "seasonaleventinfo",
+    "challengecategory": "#hash_3d55b67873f376bf",
+    "var_a373b2c8": "#hash_470bb9972d46728f",
+    "var_2f5e10ee": "#hash_1c7cbe3acf0c1e8f",
+    "var_2a3cc8a0": "#challengerewards_s3_5_summer_event",
+    "var_9fa2c78d": "#hash_40b05da1042ddcd5",
+    "name": "seasonaleventinfo_season_3_5",
+    "var_3ee5fb5b": "#hash_39e1b40f90e6005c",
+    "var_39f9cee5": "#hash_39e1b40f90e6005c",
+    "var_eec51cef": "#hash_2720c9219288e9a",
+    "var_a0a0d1e2": "#hash_1b42c1080de59066",
+    "var_24311425": "#hash_59ef3a4416aa203a"
+}

@@ -1,0 +1,41 @@
+{
+    "itemlist": [
+        {
+            "minweight": 100,
+            "var_a6762160": "#sr_explore_small_chest_rewards_tier_1",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#sr_explore_medium_chest_rewards_tier_2",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#sr_explore_medium_chest_rewards_tier_2_chance",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#sr_explore_medium_chest_rewards_tier_3_chance",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#sr_explore_chest_rewards_guns_tier_2",
+            "maxweight": 100,
+            "available": 1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "sr_explore_chest_medium",
+    "var_fde72c94": 100
+}

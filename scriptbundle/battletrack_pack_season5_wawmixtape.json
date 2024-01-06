@@ -1,0 +1,19 @@
+{
+    "var_50c23eb3": [
+        {
+            "track": "#battletrack_waw_blackcats"
+        },
+        {
+            "track": "#battletrack_waw_dogfire"
+        },
+        {
+            "track": "#battletrack_waw_hellsgate"
+        },
+        {
+            "track": "#battletrack_waw_wildcard"
+        }
+    ],
+    "name": "battletrack_pack_season5_wawmixtape",
+    "var_6855e4be": "#battletrack_pack_season5_wawmixtape_mtxitem",
+    "title": "#hash_16b44a73fa9a3d6c"
+}

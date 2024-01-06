@@ -1,0 +1,27 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_mobility_bp_milboots_mtxitem",
+            "itemid": "18138472"
+        },
+        {
+            "var_4a4bc969": "#callingcards_3060_boot_mtxitem",
+            "itemid": "20884315"
+        },
+        {
+            "var_4a4bc969": "#emblem_3060_boot_mtxitem",
+            "itemid": "25848068"
+        }
+    ],
+    "itemname": "#hash_41938888e1975c29",
+    "var_375a1747": "#hash_756d0a4c39a3df77",
+    "name": "blueprint_bundle_3060_qbz_83_klass_86_mtxbundle",
+    "var_a788fada": "#hash_3545e39b6bc689fc",
+    "var_22f91505": "#hash_3a3bef0391b860b4",
+    "var_566825be": "#hash_9088ded003acd88",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_628aaef2904ac4a4",
+    "var_db3e02ab": 2000,
+    "itemid": "24503168"
+}

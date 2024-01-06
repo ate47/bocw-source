@@ -1,0 +1,26 @@
+{
+    "weakpoints": [
+        {
+            "var_60790e23": [
+                {
+                    "hitloc": "helmet"
+                },
+                {
+                    "hitloc": "head"
+                },
+                {
+                    "hitloc": "neck"
+                }
+            ],
+            "var_3765e777": 1,
+            "var_641ce20e": 1,
+            "type": "#weakpoint",
+            "activebydefault": 1,
+            "health": 1
+        }
+    ],
+    "var_922067c4": "scriptbundle",
+    "model": "#hash_28773e96cb142220",
+    "type": "characterweakpointsettings",
+    "name": "c_t9_sr_zombie_weakpoint_def"
+}

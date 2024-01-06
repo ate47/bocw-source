@@ -40,7 +40,7 @@ function function_9e94a567() {
         }
         score = 0;
         winning_teams = [];
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             team_score = game.stat[#"teamscores"][team];
             if (team_score > score) {
                 score = team_score;

@@ -1,0 +1,67 @@
+{
+    "var_572513bb": [
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_survival_requiem_radio_1"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_survival_requiem_radio_2"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_survival_requiem_radio_3"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_survival_requiem_radio_4"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_survival_requiem_radio_5"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_survival_requiem_radio_6"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_survival_requiem_radio_7"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_survival_requiem_radio_8"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_survival_requiem_radio_9"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_survival_requiem_radio_10"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_survival_requiem_radio_11"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_survival_requiem_radio_12"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_survival_requiem_radio_13"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_survival_requiem_radio_14"
+        },
+        {
+            "season": "#hash_2c11594a466148ad",
+            "var_cb9cd317": "#zmintel_survival_requiem_radio_15"
+        }
+    ],
+    "var_922067c4": "scriptbundle",
+    "type": "zmintel_list",
+    "name": "zmintel_list_survival_radio_transmissions_requiem"
+}

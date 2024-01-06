@@ -1,0 +1,22 @@
+{
+    "var_941096a8": [
+        {
+            "var_386af035": "#firstparty_bundle_4062_portnova_pro_pack_ms_mtxentitlement"
+        }
+    ],
+    "itemname": "#hash_43828f9a42c1618d",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_20eec7f8484da011",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 4,
+    "var_46300498": 1,
+    "baseweapon": "#hash_4d8b07efde79fb03",
+    "name": "ar_slowhandling_bp_carbonchrome_ms_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "21737354",
+    "blueprint": "#hash_43828f9a42c1618d"
+}

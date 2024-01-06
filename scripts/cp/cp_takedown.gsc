@@ -67,7 +67,7 @@ function event_handler[level_init] main(*eventstruct) {
     }
 }
 
-// Namespace tkdn/namespace_fbe06c5e
+// Namespace tkdn/cp_takedown
 // Params 0, eflags: 0x2 linked
 // Checksum 0x8b9f969b, Offset: 0x688
 // Size: 0x6d4
@@ -93,7 +93,7 @@ function function_37dfd679() {
     #/
 }
 
-// Namespace tkdn/namespace_fbe06c5e
+// Namespace tkdn/cp_takedown
 // Params 2, eflags: 0x0
 // Checksum 0xf725e976, Offset: 0xd68
 // Size: 0x18
@@ -102,12 +102,12 @@ function function_5bef74d0(*var_d3440450, *var_50cc0d4f) {
     #/
 }
 
-// Namespace tkdn/namespace_fbe06c5e
+// Namespace tkdn/cp_takedown
 // Params 0, eflags: 0x2 linked
 // Checksum 0xa19742fc, Offset: 0xd88
 // Size: 0xc4
 function init_flags() {
-    namespace_e66dabaf::init_flags();
+    tkdn_heli_intro::init_flags();
     namespace_cb0d537d::init_flags();
     namespace_29b42773::init_flags();
     tkdn_raid_bar::init_flags();
@@ -121,13 +121,13 @@ function init_flags() {
     tkdn_af_wreck::init_flags();
 }
 
-// Namespace tkdn/namespace_fbe06c5e
+// Namespace tkdn/cp_takedown
 // Params 0, eflags: 0x2 linked
 // Checksum 0x1dad651b, Offset: 0xe58
 // Size: 0xd4
 function init_clientfields() {
     namespace_b100dd86::init_clientfields();
-    namespace_e66dabaf::init_clientfields();
+    tkdn_heli_intro::init_clientfields();
     namespace_cb0d537d::init_clientfields();
     namespace_29b42773::init_clientfields();
     tkdn_raid_bar::init_clientfields();
@@ -141,12 +141,12 @@ function init_clientfields() {
     tkdn_af_wreck::init_clientfields();
 }
 
-// Namespace tkdn/namespace_fbe06c5e
+// Namespace tkdn/cp_takedown
 // Params 0, eflags: 0x2 linked
 // Checksum 0xd33f6c87, Offset: 0xf38
 // Size: 0xc4
 function function_22b7fffd() {
-    namespace_e66dabaf::function_22b7fffd();
+    tkdn_heli_intro::function_22b7fffd();
     namespace_cb0d537d::function_22b7fffd();
     namespace_29b42773::function_22b7fffd();
     tkdn_raid_bar::function_22b7fffd();
@@ -160,7 +160,7 @@ function function_22b7fffd() {
     tkdn_af_wreck::function_22b7fffd();
 }
 
-// Namespace tkdn/namespace_fbe06c5e
+// Namespace tkdn/cp_takedown
 // Params 0, eflags: 0x2 linked
 // Checksum 0xf37f5f02, Offset: 0x1008
 // Size: 0x44
@@ -169,7 +169,7 @@ function function_724788b2() {
     callback::on_connect(&on_player_connect);
 }
 
-// Namespace tkdn/namespace_fbe06c5e
+// Namespace tkdn/cp_takedown
 // Params 0, eflags: 0x2 linked
 // Checksum 0x61f1f653, Offset: 0x1058
 // Size: 0xbc
@@ -182,7 +182,7 @@ function on_player_connect() {
     }
 }
 
-// Namespace tkdn/namespace_fbe06c5e
+// Namespace tkdn/cp_takedown
 // Params 0, eflags: 0x2 linked
 // Checksum 0x3739e5bd, Offset: 0x1120
 // Size: 0x38a
@@ -232,7 +232,7 @@ function function_8106e2e1() {
     }
 }
 
-// Namespace tkdn/namespace_fbe06c5e
+// Namespace tkdn/cp_takedown
 // Params 0, eflags: 0x2 linked
 // Checksum 0x35dbc06f, Offset: 0x14b8
 // Size: 0x184
@@ -248,7 +248,7 @@ function function_95b5afc9() {
     self initialweaponraise(var_9f43fd46);
 }
 
-// Namespace tkdn/namespace_fbe06c5e
+// Namespace tkdn/cp_takedown
 // Params 0, eflags: 0x0
 // Checksum 0xdcaacc66, Offset: 0x1648
 // Size: 0x1cc
@@ -266,7 +266,7 @@ function function_6154e4c2() {
     self switchtoweapon(primary_weapon);
 }
 
-// Namespace tkdn/namespace_fbe06c5e
+// Namespace tkdn/cp_takedown
 // Params 0, eflags: 0x0
 // Checksum 0x91ca3fe1, Offset: 0x1820
 // Size: 0xdc
@@ -284,7 +284,7 @@ function function_13f6e85() {
     }
 }
 
-// Namespace tkdn/namespace_fbe06c5e
+// Namespace tkdn/cp_takedown
 // Params 0, eflags: 0x2 linked
 // Checksum 0x6a2c5d19, Offset: 0x1908
 // Size: 0x2a6
@@ -308,7 +308,7 @@ function function_43593d7d() {
     weapons = player getweaponslist(1);
 }
 
-// Namespace tkdn/namespace_fbe06c5e
+// Namespace tkdn/cp_takedown
 // Params 0, eflags: 0x0
 // Checksum 0x9ae0f653, Offset: 0x1bb8
 // Size: 0x2c0
@@ -334,7 +334,7 @@ function function_acddd8f1() {
     }
 }
 
-// Namespace tkdn/namespace_fbe06c5e
+// Namespace tkdn/cp_takedown
 // Params 0, eflags: 0x2 linked
 // Checksum 0x4ec929f3, Offset: 0x1e80
 // Size: 0x5c

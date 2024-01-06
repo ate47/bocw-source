@@ -1,0 +1,29 @@
+{
+    "itemlist": [
+        {
+            "minweight": 50,
+            "var_a6762160": "#satchel_charge_t9_item_sr",
+            "maxweight": 50,
+            "available": -1
+        },
+        {
+            "minweight": 50,
+            "var_a6762160": "#cymbal_monkey_t9_item_sr",
+            "maxweight": 50,
+            "available": -1
+        },
+        {
+            "minweight": 50,
+            "var_a6762160": "#molotov_t9_item_sr",
+            "maxweight": 50,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "rare_equipment_list",
+    "var_fde72c94": 100
+}

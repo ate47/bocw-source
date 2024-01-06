@@ -1,0 +1,27 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_491c03762321028b",
+                            "var_71bac06": "anim"
+                        }
+                    ]
+                }
+            ],
+            "model": "#hash_75170e9ff9b7dcc3",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "prop 1"
+        }
+    ],
+    "scenetype": "fxanim",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "p9_wpn_eqp_listening_device_bundle",
+    "dontsync": 1,
+    "team": "any"
+}

@@ -949,7 +949,7 @@ function function_ac9cb612(b_disable = 1) {
 // Size: 0xd0
 function function_59004002(str_bgb, b_disable = 1) {
     if (isarray(self.bgb_pack)) {
-        foreach (var_8024f0e5 in self.bgb_pack) {
+        foreach (n_slot, var_8024f0e5 in self.bgb_pack) {
             if (str_bgb === var_8024f0e5) {
                 self function_da912bff(n_slot, b_disable);
             }

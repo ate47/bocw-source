@@ -1,0 +1,46 @@
+{
+    "option_dependencies": [
+        {
+            "var_1643d946": "0",
+            "var_6825bdb": "#pc_vehicle_control_mode",
+            "operator": "=="
+        },
+        {
+            "var_1643d946": "2",
+            "var_6825bdb": "#vehicle_free_look_activation",
+            "operator": "=="
+        }
+    ],
+    "options": [
+        {
+            "label": "#hash_6a489abface20fd6",
+            "value": "0"
+        },
+        {
+            "label": "#hash_3e46d99f322471b8",
+            "value": "1000"
+        },
+        {
+            "label": "#hash_71523ce39f65c3b8",
+            "value": "3000"
+        }
+    ],
+    "var_dfedf08e": 2,
+    "description": "#hash_349f6bdd0b286a33",
+    "var_60fcfffa": "#menu/on",
+    "var_9bc3be7": 1,
+    "var_4ced19ab": 1,
+    "var_10e01ad5": 1,
+    "var_71620d66": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "maxvalue": 1,
+    "name": "pc_vehicle_camera_recenter_kbm",
+    "displayname": "#hash_45cceec923d19999",
+    "var_500458ac": 10,
+    "var_66faec87": 10,
+    "statname": "vehicle_camera_recenter_delay",
+    "var_6f00a61a": 1.1,
+    "var_b7401319": "#menu/off"
+}

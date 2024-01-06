@@ -10,9 +10,9 @@
 // Size: 0x14c
 function setupminimap(material, *zone = "") {
     requiredmapaspectratio = getdvarfloat(#"scr_requiredmapaspectratio", 0);
-    corners = namespace_9a8780d8::function_1f583d2e("minimap_corner", "targetname");
+    corners = territory::function_1f583d2e("minimap_corner", "targetname");
     if (corners.size == 0) {
-        corners = namespace_9a8780d8::function_1deaf019("minimap_corner", "targetname", "");
+        corners = territory::function_1deaf019("minimap_corner", "targetname", "");
     }
     if (corners.size != 2) {
         /#

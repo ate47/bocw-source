@@ -1,0 +1,51 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_adler_pressed_mtxitem",
+            "itemid": "30481260"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_hero_adler_mtxitem",
+            "itemid": "31112941"
+        },
+        {
+            "var_4a4bc969": "#ar_fasthandling_bp_classic_mtxitem",
+            "itemid": "26320795"
+        },
+        {
+            "var_4a4bc969": "#pistol_semiauto_bp_classic_mtxitem",
+            "itemid": "30407647"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_c_pawn_mtxitem",
+            "itemid": "29572381"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s5_analog_classic_mtxitem",
+            "itemid": "30364732"
+        },
+        {
+            "var_4a4bc969": "#execution_040bc_mtxitem",
+            "itemid": "17841253"
+        },
+        {
+            "var_4a4bc969": "#emblems_agentadler_final_s5_animated_mtxitem",
+            "itemid": "27436482"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_tuxedolion_s5_mtxitem",
+            "itemid": "20847267"
+        }
+    ],
+    "itemname": "#hash_42c07e995e3bf0a4",
+    "var_375a1747": "#hash_1cba85e6f58ccf92",
+    "name": "operator_bundle_5030_adler_tuxedo_agent_mtxbundle",
+    "var_a788fada": "#hash_636dcf791bb2275",
+    "var_22f91505": "#hash_7fec2374053d1e7f",
+    "var_566825be": "#hash_7f7470b6faee60cd",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_47d3407da507a03b",
+    "var_db3e02ab": 2000,
+    "itemid": "31607689"
+}

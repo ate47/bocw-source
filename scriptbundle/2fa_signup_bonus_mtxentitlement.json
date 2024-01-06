@@ -1,0 +1,22 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#battlepass_xp_token_legendary_mtxitem",
+            "itemid": "19658426"
+        },
+        {
+            "var_4a4bc969": "#battlepass_xp_token_legendary_mtxitem",
+            "itemid": "19658426"
+        }
+    ],
+    "itemname": "#hash_448210df69276e85",
+    "description": "#hash_7f2525803c959169",
+    "var_87756eb4": 1,
+    "var_375a1747": "#hash_1324c908aa106cf3",
+    "name": "2fa_signup_bonus_mtxentitlement",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "itemid": "28508155",
+    "var_7c846082": "#hash_f00c770b923deb6"
+}

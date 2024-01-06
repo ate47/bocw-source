@@ -17,12 +17,12 @@ function function_af1f180() {
     if (!is_true(level.aat_in_use)) {
         return;
     }
-    aat::register("ammomod_deadwire", #"hash_76f15fc22ff3b34b", "ui_icon_zombie_ammomod_deadwire_stacked");
-    aat::register("ammomod_deadwire_1", #"hash_76f15fc22ff3b34b", "ui_icon_zombie_ammomod_deadwire_stacked");
-    aat::register("ammomod_deadwire_2", #"hash_76f15fc22ff3b34b", "ui_icon_zombie_ammomod_deadwire_stacked");
-    aat::register("ammomod_deadwire_3", #"hash_76f15fc22ff3b34b", "ui_icon_zombie_ammomod_deadwire_stacked");
-    aat::register("ammomod_deadwire_4", #"hash_76f15fc22ff3b34b", "ui_icon_zombie_ammomod_deadwire_stacked");
-    aat::register("ammomod_deadwire_5", #"hash_76f15fc22ff3b34b", "ui_icon_zombie_ammomod_deadwire_stacked");
+    aat::register("ammomod_deadwire", #"zmui/zm_ammomod_deadwire", "ui_icon_zombie_ammomod_deadwire_stacked");
+    aat::register("ammomod_deadwire_1", #"zmui/zm_ammomod_deadwire", "ui_icon_zombie_ammomod_deadwire_stacked");
+    aat::register("ammomod_deadwire_2", #"zmui/zm_ammomod_deadwire", "ui_icon_zombie_ammomod_deadwire_stacked");
+    aat::register("ammomod_deadwire_3", #"zmui/zm_ammomod_deadwire", "ui_icon_zombie_ammomod_deadwire_stacked");
+    aat::register("ammomod_deadwire_4", #"zmui/zm_ammomod_deadwire", "ui_icon_zombie_ammomod_deadwire_stacked");
+    aat::register("ammomod_deadwire_5", #"zmui/zm_ammomod_deadwire", "ui_icon_zombie_ammomod_deadwire_stacked");
     clientfield::register("actor", "zm_ammomod_deadwire_explosion", 1, 1, "counter", &function_4e26277b, 0, 0);
     clientfield::register("vehicle", "zm_ammomod_deadwire_explosion", 1, 1, "counter", &function_4e26277b, 0, 0);
     clientfield::register("actor", "zm_ammomod_deadwire_zap", 1, 4, "int", &function_1a3ad2d7, 0, 0);

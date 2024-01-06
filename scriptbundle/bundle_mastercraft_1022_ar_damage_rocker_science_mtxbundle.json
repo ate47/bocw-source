@@ -1,0 +1,48 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_damage_bp_wargames_mtxitem",
+            "itemid": "26670060"
+        },
+        {
+            "var_4a4bc969": "#smg_capacity_bp_rocketscience_mtxitem",
+            "itemid": "28682826"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_red_button_mtxitem",
+            "itemid": "31693046"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_ru_tank_t72_mpx_rocket_mtxitem",
+            "itemid": "20798457"
+        },
+        {
+            "var_4a4bc969": "#callingcards_rocketscience_v2_mtxitem",
+            "itemid": "32319472"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_rocketscience_mtxitem",
+            "itemid": "26461292"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s1_digital_kazuya_01_mtxitem",
+            "itemid": "23474773"
+        },
+        {
+            "var_4a4bc969": "#vehiclehorn_alone_mtxitem",
+            "itemid": "23471219"
+        }
+    ],
+    "itemname": "#hash_7cc0366eec1fb4c2",
+    "var_375a1747": "#hash_4f8993df287717c4",
+    "var_579fd6c3": 54,
+    "name": "bundle_mastercraft_1022_ar_damage_rocker_science_mtxbundle",
+    "var_a788fada": "#hash_7eb4a53711ae3f15",
+    "var_22f91505": "#hash_23a63afb5302bc8",
+    "var_566825be": "#hash_422cceb01b44f6ad",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_260e881580515110",
+    "var_db3e02ab": 2000,
+    "itemid": "25054799"
+}

@@ -444,9 +444,9 @@ function function_57ba1474(var_648a2ef0) {
 function function_c7551020() {
     if (!isdefined(level.var_21347b32)) {
         level.var_21347b32 = [];
-        level.var_21347b32[0] = getscriptbundle(#"hash_6a1b31fa13fd3cf7");
-        level.var_21347b32[1] = getscriptbundle(#"hash_23dab6ae22f7bc8d");
-        level.var_21347b32[2] = getscriptbundle(#"hash_3f360ae2bc478e34");
+        level.var_21347b32[0] = getscriptbundle(#"gamedifficulty_recruit");
+        level.var_21347b32[1] = getscriptbundle(#"gamedifficulty_regular");
+        level.var_21347b32[2] = getscriptbundle(#"gamedifficulty_hardened");
         level.var_21347b32[3] = getscriptbundle(#"gamedifficulty_veteran");
         level.var_21347b32[4] = getscriptbundle(#"gamedifficulty_realistic");
     }

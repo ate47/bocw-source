@@ -1,0 +1,19 @@
+{
+    "description": "#hash_635acb6be5173527",
+    "itemspawnentry": "#item_zmintel_platinum_omega_artifact_1",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#main_quest",
+    "model": "#hash_7f661fb5cc610087",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_3916c26793c0700c",
+    "type": "zmintel",
+    "season": 4,
+    "var_ad4ad686": "#omega",
+    "soundloop": "#hash_6098b72d515f39d5",
+    "name": "zmintel_platinum_omega_artifact_02",
+    "var_9be0526e": "#artifact",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "title": "#hash_66a391af28ed491d",
+    "mapname": "#zm_platinum"
+}

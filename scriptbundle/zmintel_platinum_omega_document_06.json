@@ -1,0 +1,19 @@
+{
+    "description": "#hash_32df9a983b8d4470",
+    "itemspawnentry": "#item_zmintel_platinum_omega_document_06",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#hash_54f6484895bebf79",
+    "model": "#hash_184f13b0872bb9de",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_190b077b7ea9586b",
+    "type": "zmintel",
+    "season": 4,
+    "var_ad4ad686": "#omega",
+    "var_217aec15": "#hash_35d5a124898e465f",
+    "name": "zmintel_platinum_omega_document_06",
+    "var_9be0526e": "#hash_daeb8129dc8e394",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "title": "#hash_38185e8484d6b128",
+    "mapname": "#zm_platinum"
+}

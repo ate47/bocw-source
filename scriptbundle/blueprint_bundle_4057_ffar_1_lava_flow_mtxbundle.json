@@ -1,0 +1,31 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_fastfire_bp_smoulder_mtxitem",
+            "itemid": "29663737"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_longship_fire_mtxitem",
+            "itemid": "20005154"
+        },
+        {
+            "var_4a4bc969": "#callingcards_kamehameha_mtxitem",
+            "itemid": "21884956"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s3_vts_final_11_mtxitem",
+            "itemid": "21180963"
+        }
+    ],
+    "itemname": "#hash_7ba2c20abeefe1d4",
+    "var_375a1747": "#hash_1fcaf505a31453aa",
+    "name": "blueprint_bundle_4057_ffar_1_lava_flow_mtxbundle",
+    "var_a788fada": "#hash_789b4d4c1ec4ebc7",
+    "var_22f91505": "#hash_3ccec29151376c81",
+    "var_566825be": "#hash_14f100b87a9713cf",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_596cdbe08adf5941",
+    "var_db3e02ab": 2000,
+    "itemid": "32977222"
+}

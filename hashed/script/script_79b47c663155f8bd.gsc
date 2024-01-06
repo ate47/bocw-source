@@ -24,7 +24,7 @@ function function_70a657d8() {
             return;
         }
     }
-    foreach (teamstr in level.teams) {
+    foreach (team, teamstr in level.teams) {
         var_77e770bb = getgametypesetting(#"hash_43e6eb8f9fd14f92" + teamstr, 0);
         level.var_8a530af5[team] = var_77e770bb;
         count = getdvarint(#"hash_4d18019bc69bcf53" + teamstr, 0);
@@ -162,7 +162,7 @@ function private function_9bead880(var_8a291590, maxplayers) {
 function private function_38a06234() {
     var_4ec52f78 = undefined;
     var_dd1b756e = undefined;
-    foreach (count in level.var_f5c1fb9d) {
+    foreach (team, count in level.var_f5c1fb9d) {
         if (!isdefined(count) || count <= 0) {
             continue;
         }
@@ -195,7 +195,7 @@ function private function_e88d0cf4() {
     var_a6dba815 = undefined;
     var_e019b1bb = undefined;
     largestcount = undefined;
-    foreach (count in level.var_f5c1fb9d) {
+    foreach (team, count in level.var_f5c1fb9d) {
         bots = function_b16926ea(team);
         if (bots.size <= 0) {
             continue;

@@ -1,0 +1,19 @@
+{
+    "description": "#hash_5f75d22ee5108f38",
+    "itemspawnentry": "#item_zmintel_survival_requiem_artifact_18",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#exploration",
+    "model": "#hash_541742a968a4a1e3",
+    "var_824079e7": "#survival",
+    "uimodel": "#hash_485d9cd8ba390138",
+    "type": "zmintel",
+    "season": 5,
+    "var_ad4ad686": "#hash_1303dcb8d0e80e33",
+    "var_217aec15": "#hash_bdf51b19ed0e58c",
+    "name": "zmintel_survival_requiem_artifact_18",
+    "var_9be0526e": "#artifact",
+    "var_83e219de": "#hash_55af78a255e77597",
+    "var_53be913a": 5,
+    "title": "#hash_5e300c1a934cf410",
+    "mapname": "#mp_black_sea"
+}

@@ -78,7 +78,7 @@ function function_16a57018(damageendtime, owner, position, fireeffectarea, var_2
         } else {
             var_39fef10c = zm_equipment::function_379f6b5d(var_ba904176);
         }
-        foreach (actor in potential_targets) {
+        foreach (index, actor in potential_targets) {
             if (is_true(actor.takedamage)) {
                 actor thread function_f0bbc1f4(owner, var_39fef10c, customsettings.var_4bf1fc1f, start_time + int(float(function_60d95f53()) / 1000 * index * 1000));
             }

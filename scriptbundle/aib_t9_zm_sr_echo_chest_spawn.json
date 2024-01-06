@@ -1,0 +1,46 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_336a308a66dc99a2",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "intro"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_30f242853a9636be",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "loop"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_3b9ed2f957c01bb7",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "outro"
+                }
+            ],
+            "model": "#hash_2641cfb5c2cdcc85",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "prop 1"
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "aib_t9_zm_sr_echo_chest_spawn",
+    "dontsync": 1,
+    "team": "any"
+}

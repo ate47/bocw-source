@@ -92,7 +92,7 @@ function cloneblackboardfromstruct(struct) {
     #/
     blackboard = [];
     if (isdefined(struct.__blackboard)) {
-        foreach (v in struct.__blackboard) {
+        foreach (k, v in struct.__blackboard) {
             blackboard[k] = getstructblackboardattribute(struct, k);
         }
     }

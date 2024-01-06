@@ -1,0 +1,32 @@
+{
+    "talents": [
+        {
+            "talent": "#hash_2189719c57fda8c5"
+        }
+    ],
+    "var_a6616b9c": 1,
+    "amount": 1,
+    "var_fa988b4b": 180,
+    "description": "#hash_64be0fac2f97b95e",
+    "var_922067c4": "scriptbundle",
+    "model": "#p8_wz_perk_pickups_deadsilence",
+    "var_16e34ef4": 64,
+    "var_e9898330": "pingitemgeneric",
+    "var_ac75b59f": -1,
+    "type": "itemspawnentry",
+    "hintstring": "#hash_6f2e94ffeb96516e",
+    "var_4a1a4613": "armor_swap",
+    "name": "perk_threatperception_t9_item",
+    "displayname": "#hash_6f2e94ffeb96516e",
+    "var_9e569978": 1,
+    "stackcount": 1,
+    "icon": "#hash_384f5d23865b19cb",
+    "modelscale": 1,
+    "rarity": "None",
+    "equipsound": "uin_wz_perk_deadsilence",
+    "var_97c5ead1": 1,
+    "handler": "#hash_57df81951e3bc37c",
+    "var_3af59a99": 1,
+    "pickupicon": "#hash_384f5d23865b19cb",
+    "itemtype": "perk_tier_1"
+}

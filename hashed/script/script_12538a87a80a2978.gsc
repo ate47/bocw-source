@@ -178,17 +178,17 @@ function function_b4f2a34e(eventstruct) {
 // Checksum 0x20daa86a, Offset: 0x1060
 // Size: 0x34c
 function function_39340834(struct, trigger) {
-    var_2be3941a = #"hash_1ef73db4d92eeea8";
+    var_2be3941a = #"sr_objective_rewards_guns_tier_1";
     var_9c9943cf = 0;
     if (level.var_cf558bf < 1) {
-        var_2be3941a = #"hash_1ef73db4d92eeea8";
+        var_2be3941a = #"sr_objective_rewards_guns_tier_1";
     }
     if (level.var_cf558bf == 1) {
-        var_2be3941a = #"hash_1ef740b4d92ef3c1";
+        var_2be3941a = #"sr_objective_rewards_guns_tier_2";
         var_9c9943cf = 1;
     }
     if (level.var_cf558bf >= 2) {
-        var_2be3941a = #"hash_1ef73fb4d92ef20e";
+        var_2be3941a = #"sr_objective_rewards_guns_tier_3";
         var_9c9943cf = 2;
     }
     if (struct.state == 1) {
@@ -356,56 +356,56 @@ function private function_410c380(list, var_523adf97, var_5fe37ae8) {
 // Size: 0x27a
 function private function_219cb8bb(var_a6762160) {
     switch (var_a6762160) {
-    case #"hash_1ca36ca26c214cd6":
-    case #"hash_4777f28d1a2ad7bf":
+    case #"ar_accurate_t9_orange_item_sr":
+    case #"ar_accurate_t9_item_sr":
     case #"hash_5b2d331d596e0292":
         return 0;
         break;
     case #"hash_5b1db5e03f5e110":
-    case #"hash_33547d35295bb55d":
-    case #"hash_3b690bafadb73c0c":
+    case #"ar_slowhandling_t9_item_sr":
+    case #"ar_slowhandling_t9_orange_item_sr":
         return 1;
         break;
-    case #"hash_57ecfa2e8316c14d":
+    case #"launcher_standard_t9_item_sr":
         return 2;
         break;
-    case #"hash_500af850e37ee916":
+    case #"lmg_fastfire_t9_item_sr":
     case #"hash_591cbfbc064e6c05":
-    case #"hash_6f3b58530040f23d":
+    case #"lmg_fastfire_t9_orange_item_sr":
         return 3;
         break;
-    case #"hash_315f46ebc2faa42":
+    case #"lmg_slowfire_t9_orange_item_sr":
     case #"hash_19e050fa878481ae":
-    case #"hash_4753c3b0bc43322b":
+    case #"lmg_slowfire_t9_item_sr":
         return 4;
         break;
-    case #"hash_2f25727fed26d18":
-    case #"hash_7a3b47d15aca53f":
+    case #"smg_spray_t9_item_sr":
+    case #"smg_spray_t9_orange_item_sr":
     case #"hash_2116e38be200ebf7":
         return 5;
         break;
-    case #"hash_1ceed3c7dc5f09ad":
-    case #"hash_27a1d3b77a36f326":
+    case #"smg_standard_t9_orange_item_sr":
+    case #"smg_standard_t9_item_sr":
     case #"hash_551ca3818f740355":
         return 6;
         break;
-    case #"hash_1d907bc74dbe9c13":
-    case #"hash_2230087fda13a58c":
+    case #"tr_longburst_t9_orange_item_sr":
+    case #"tr_longburst_t9_item_sr":
     case #"hash_7b49122756d14edb":
         return 7;
         break;
     case #"hash_304d190e0d3d0fcb":
-    case #"hash_48970e40447be9fc":
-    case #"hash_71b652be0285b523":
+    case #"tr_fastburst_t9_item_sr":
+    case #"tr_fastburst_t9_orange_item_sr":
         return 8;
         break;
     case #"hash_39cfa9ec04309821":
-    case #"hash_69dbddfbde9661a9":
-    case #"hash_78f079dd7a6e2e22":
+    case #"sniper_cannon_t9_orange_item_sr":
+    case #"sniper_cannon_t9_item_sr":
         return 9;
         break;
-    case #"hash_168aa53c035ea545":
-    case #"hash_200bb87bd1c3049e":
+    case #"sniper_quickscope_t9_orange_item_sr":
+    case #"sniper_quickscope_t9_item_sr":
     case #"hash_4cf361d49f792fed":
         return 10;
         break;
@@ -417,7 +417,7 @@ function private function_219cb8bb(var_a6762160) {
 // Checksum 0x34aa3592, Offset: 0x1ef0
 // Size: 0x9a
 function private function_76d51213(struct, var_6ca170e7) {
-    foreach (player in struct.players) {
+    foreach (i, player in struct.players) {
         if (player == var_6ca170e7) {
             return i;
         }
@@ -518,7 +518,7 @@ function function_80bbb50b(chest, trigger) {
                 if (playerindex < 0) {
                     playerindex = 0;
                 }
-                var_25b6fcfc = #"hash_4777f28d1a2ad7bf";
+                var_25b6fcfc = #"ar_accurate_t9_item_sr";
                 if (isdefined(chest.var_f0f92268[playerindex][self.var_ba0ccdab])) {
                     var_25b6fcfc = chest.var_f0f92268[playerindex][self.var_ba0ccdab];
                 }

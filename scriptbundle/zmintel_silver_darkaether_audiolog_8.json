@@ -1,0 +1,47 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_3511ea5a562ff82",
+            "var_f35c5951": 0.47,
+            "var_5d4b5964": 5.93,
+            "var_36bf8e05": "#hash_436a9596c3543677"
+        },
+        {
+            "var_46bd7973": "#hash_3511fa5a5630135",
+            "var_f35c5951": 6.63,
+            "var_5d4b5964": 9.73,
+            "var_36bf8e05": "#hash_2c3f95bae02459ee"
+        },
+        {
+            "var_46bd7973": "#hash_3511ca5a562fc1c",
+            "var_f35c5951": 17.14,
+            "var_5d4b5964": 10.67,
+            "var_36bf8e05": "#hash_5961a621db4ea8e5"
+        },
+        {
+            "var_46bd7973": "#hash_3511da5a562fdcf",
+            "var_f35c5951": 28.72,
+            "var_5d4b5964": 4.86,
+            "var_36bf8e05": "#hash_3bcfc5951469bd44"
+        }
+    ],
+    "description": "#hash_51400fad6e6b02af",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#exploration",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_39975151641c4544",
+    "var_2a12d36": 1,
+    "type": "zmintel",
+    "season": 1,
+    "var_ad4ad686": "#hash_70ce1650358c0923",
+    "soundloop": "#hash_5b635b73ab6ca33f",
+    "name": "zmintel_silver_darkaether_audiolog_8",
+    "var_9be0526e": "#audiolog",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "var_348b91fd": "#tape",
+    "title": "#hash_516f20781b78a5",
+    "var_3bb3493d": "#hash_52931dc30ca46849",
+    "mapname": "#zm_silver",
+    "var_6073bf8f": "#hash_4042063c893f7f3a"
+}

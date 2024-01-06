@@ -1,0 +1,27 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#smg_heavy_bp_swiss_mtxitem",
+            "itemid": "24701217"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_multi_tool_mtxitem",
+            "itemid": "27474850"
+        },
+        {
+            "var_4a4bc969": "#emblems_diversetoolset_mtxitem",
+            "itemid": "19007536"
+        }
+    ],
+    "itemname": "#hash_251235811807efea",
+    "var_375a1747": "#hash_8e973f927d8c11c",
+    "name": "bundle_blueprint_2010_smg_heavy_toolset_mtxbundle",
+    "var_a788fada": "#hash_2cadb3955331ffdf",
+    "var_22f91505": "#hash_27265f6d604715ee",
+    "var_566825be": "#hash_4a73875828896d27",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_2f0868cf2314e662",
+    "var_db3e02ab": 2000,
+    "itemid": "33516732"
+}

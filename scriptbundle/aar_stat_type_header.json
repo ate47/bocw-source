@@ -1,0 +1,145 @@
+{
+    "var_bb7dcd09": [
+        {
+            "var_82ead409": 3,
+            "type": "#kills",
+            "displayname": "#aar/kills",
+            "var_a4f2dd9e": "#none",
+            "identifier": "blackout"
+        },
+        {
+            "var_82ead409": 3,
+            "type": "#damage",
+            "displayname": "#aar/damage",
+            "var_a4f2dd9e": "#none",
+            "identifier": "blackout"
+        },
+        {
+            "var_82ead409": 1,
+            "type": "#hash_67538d47ebe8b32",
+            "displayname": "#hash_5ac781e043eb6ac4",
+            "var_a4f2dd9e": "#none",
+            "identifier": "bounty"
+        },
+        {
+            "var_82ead409": 1,
+            "type": "#hash_67538d47ebe8b32",
+            "displayname": "#aar/cash",
+            "var_a4f2dd9e": "#none",
+            "identifier": "bounty"
+        },
+        {
+            "var_82ead409": 1,
+            "type": "#hash_67538d47ebe8b32",
+            "displayname": "#hash_312d135a50f00bc3",
+            "var_a4f2dd9e": "#none",
+            "identifier": "notbounty"
+        },
+        {
+            "var_82ead409": 1,
+            "type": "#score",
+            "displayname": "#aar/score",
+            "var_a4f2dd9e": "#none",
+            "identifier": "notbounty"
+        },
+        {
+            "var_82ead409": 1,
+            "type": "#objective",
+            "displayname": "#aar/objective",
+            "var_a4f2dd9e": "#none",
+            "identifier": "objectivetype"
+        },
+        {
+            "var_82ead409": 1,
+            "type": "#hash_4cafba86772e8350",
+            "displayname": "#aar/objective",
+            "var_a4f2dd9e": "#none",
+            "identifier": "ctf"
+        },
+        {
+            "var_82ead409": 1,
+            "type": "#damage",
+            "displayname": "#aar/damage",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "var_82ead409": 1,
+            "type": "#ekia_ratio",
+            "displayname": "#hash_6fc92b031c85115a",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "var_82ead409": 1,
+            "type": "#ekia",
+            "displayname": "#mpui/ekia",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "var_82ead409": 1,
+            "type": "#hash_64cea0a233aaf306",
+            "displayname": "#hash_39f34f3a8bd173f7",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "var_82ead409": 3,
+            "type": "#hash_67538d47ebe8b32",
+            "displayname": "#hash_312d135a50f00bc3",
+            "var_a4f2dd9e": "#none",
+            "identifier": "notbounty"
+        },
+        {
+            "var_82ead409": 3,
+            "type": "#score",
+            "displayname": "#aar/score",
+            "var_a4f2dd9e": "#none",
+            "identifier": "notbounty"
+        },
+        {
+            "var_82ead409": 3,
+            "type": "#objective",
+            "displayname": "#aar/objective",
+            "var_a4f2dd9e": "#none",
+            "identifier": "objectivetype"
+        },
+        {
+            "var_82ead409": 3,
+            "type": "#hash_4cafba86772e8350",
+            "displayname": "#aar/objective",
+            "var_a4f2dd9e": "#none",
+            "identifier": "ctf"
+        },
+        {
+            "var_82ead409": 3,
+            "type": "#damage",
+            "displayname": "#aar/damage",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "var_82ead409": 3,
+            "type": "#ekia_ratio",
+            "displayname": "#hash_6fc92b031c85115a",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "var_82ead409": 3,
+            "type": "#ekia",
+            "displayname": "#mpui/ekia",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "var_82ead409": 3,
+            "type": "#hash_64cea0a233aaf306",
+            "displayname": "#hash_39f34f3a8bd173f7",
+            "var_a4f2dd9e": "#none"
+        }
+    ],
+    "var_72ef398b": 1,
+    "var_ebb12613": "#hash_d2cf38bd612343d",
+    "var_922067c4": "SCRIPTBUNDLE",
+    "var_62a68a39": 1,
+    "var_a77ed948": "#hash_1d656fbd9f514ead",
+    "type": "datasourcelist",
+    "name": "aar_stat_type_header",
+    "var_d7ecf096": 1,
+    "var_1084c16f": 1
+}

@@ -373,7 +373,7 @@ function function_78083139() {
     if (!isdefined(player.pers[#"contracts"])) {
         return;
     }
-    foreach (var_5ceb23d0 in player.pers[#"contracts"]) {
+    foreach (var_38280f2f, var_5ceb23d0 in player.pers[#"contracts"]) {
         if (isdefined(var_5ceb23d0.current_value)) {
             delta = var_5ceb23d0.current_value - var_5ceb23d0.var_59cb904f;
         } else {

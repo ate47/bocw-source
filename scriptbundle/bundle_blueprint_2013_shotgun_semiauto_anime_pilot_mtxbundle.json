@@ -1,0 +1,35 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#tr_longburst_bp_animepilot_mtxitem",
+            "itemid": "22934586"
+        },
+        {
+            "var_4a4bc969": "#smg_standard_bp_apilot_mtxitem",
+            "itemid": "27164645"
+        },
+        {
+            "var_4a4bc969": "#shotgun_semiauto_bp_animepilot_mtxitem",
+            "itemid": "32982842"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_pilothelmet_mtxitem",
+            "itemid": "28306215"
+        },
+        {
+            "var_4a4bc969": "#callingcards_animepilot_mtxitem",
+            "itemid": "22300974"
+        }
+    ],
+    "itemname": "#hash_439a579ebeee6eb9",
+    "var_375a1747": "#hash_6fc3fd50c64650df",
+    "name": "bundle_blueprint_2013_shotgun_semiauto_anime_pilot_mtxbundle",
+    "var_a788fada": "#hash_28f6ed3882602e46",
+    "var_22f91505": "#hash_abf7cf3b5c03617",
+    "var_566825be": "#hash_5e427317e6ef0a92",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_3c68e526e2c1bb33",
+    "var_db3e02ab": 2000,
+    "itemid": "25096075"
+}

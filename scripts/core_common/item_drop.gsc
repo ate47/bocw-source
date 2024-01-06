@@ -872,7 +872,7 @@ function drop_inventory(player) {
         var_d54d0589[drop_item_id.size] = inventoryitem.var_1181c08b;
         drop_item_id[drop_item_id.size] = itemid;
     }
-    foreach (itemid in player.inventory.ammo) {
+    foreach (ammoweapon, itemid in player.inventory.ammo) {
         weapon = getweapon(ammoweapon);
         ammostock = player getweaponammostock(weapon);
         player setweaponammostock(weapon, 0);

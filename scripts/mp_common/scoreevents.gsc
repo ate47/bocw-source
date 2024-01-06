@@ -868,7 +868,7 @@ function heavyweaponkill(attacker, victim, weapon) {
     case #"hero_bowlauncher3":
     case #"hero_bowlauncher4":
     case #"hero_bowlauncher":
-    case #"hash_5ceaf52285031501":
+    case #"sig_bow_flame":
     case #"hash_6653bba8043d03f6":
     case #"hash_6653bca8043d05a9":
     case #"hash_6653bda8043d075c":
@@ -1446,7 +1446,7 @@ function updatemultikills(weapon, weaponclass, killstreak, victim, time, *meanso
     if (self.var_b27d41c0 >= 2) {
         if (isdefined(self.var_eed94074.var_615e1be9)) {
             if (self.var_eed94074.var_615e1be9 >= self.maxhealth) {
-                processscoreevent(#"hash_4bdbc016764205f3", self, time, getweapon(#"hash_18d1b94b35c3b851"));
+                processscoreevent(#"hash_4bdbc016764205f3", self, time, getweapon(#"weapon_armor"));
                 self stats::function_8fb23f94("weapon_armor", #"hash_e970dce71c27a65", 1);
                 self.var_eed94074 = undefined;
             }

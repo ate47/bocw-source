@@ -1,0 +1,45 @@
+{
+    "var_941096a8": [
+        {
+            "var_386af035": "#xb1_currency_pack_1100_mtxentitlement"
+        },
+        {
+            "var_386af035": "#ps4_currency_pack_1100_mtxentitlement"
+        },
+        {
+            "var_386af035": "#bnet_currency_pack_1100_mtxentitlement"
+        },
+        {
+            "var_386af035": "#atvi_westerndigital_1100_cp_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_5101_elite_pro_pack_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_5101_elite_pro_pack_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_5101_elite_pro_pack_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#steam_currency_pack_1100_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_5101_elite_pro_pack_steam_mtxentitlement"
+        }
+    ],
+    "itemname": "#hash_53dca054a9277204",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_7c834f6286721268",
+    "var_728341a": 1,
+    "quantity": 1100,
+    "var_375a1747": "#hash_4d49baa22352c914",
+    "var_46300498": 1,
+    "name": "cod_points_1100_mtxitem",
+    "var_c89f0785": "#hash_293582834683fcc5",
+    "category": "#currency",
+    "var_f3c937a9": "#hash_4e177b598c549070",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4
+}

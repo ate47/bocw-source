@@ -3510,11 +3510,11 @@ function arrivalattributescallback(entity, attribute, *oldvalue, value) {
 // Size: 0x82
 function function_eef4346c(entity, attribute, *oldvalue, value) {
     switch (oldvalue) {
-    case #"hash_3f0df0d01b4fe5a8":
+    case #"disablepeek":
         if (value) {
-            attribute.ai.var_59579895 = 1;
+            attribute.ai.disablepeek = 1;
         } else {
-            attribute.ai.var_59579895 = 0;
+            attribute.ai.disablepeek = 0;
         }
         break;
     }
@@ -3526,11 +3526,11 @@ function function_eef4346c(entity, attribute, *oldvalue, value) {
 // Size: 0x82
 function function_1cd75f29(entity, attribute, *oldvalue, value) {
     switch (oldvalue) {
-    case #"hash_4f85f5ad6144607f":
+    case #"disablelean":
         if (value) {
-            attribute.ai.var_4ec7ffb = 1;
+            attribute.ai.disablelean = 1;
         } else {
-            attribute.ai.var_4ec7ffb = 0;
+            attribute.ai.disablelean = 0;
         }
         break;
     }
@@ -3542,11 +3542,11 @@ function function_1cd75f29(entity, attribute, *oldvalue, value) {
 // Size: 0x82
 function function_a626b1a9(entity, attribute, *oldvalue, value) {
     switch (oldvalue) {
-    case #"hash_5c12eb61ce24c8ea":
+    case #"disablereload":
         if (value) {
-            attribute.ai.var_cca99c31 = 1;
+            attribute.ai.disablereload = 1;
         } else {
-            attribute.ai.var_cca99c31 = 0;
+            attribute.ai.disablereload = 0;
         }
         break;
     }

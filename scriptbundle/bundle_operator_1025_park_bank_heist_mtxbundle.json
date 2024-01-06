@@ -1,0 +1,52 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_uk_pl_mi6_heist_mtxitem",
+            "itemid": "17980583"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_uk_mi6_mtxitem",
+            "itemid": "23374822"
+        },
+        {
+            "var_4a4bc969": "#ar_accurate_bp_midnight_express_mtxitem",
+            "itemid": "31855413"
+        },
+        {
+            "var_4a4bc969": "#sniper_powersemi_bp_cmoney_mtxitem",
+            "itemid": "27332010"
+        },
+        {
+            "var_4a4bc969": "#reticle_31_mtxitem",
+            "itemid": "25488864"
+        },
+        {
+            "var_4a4bc969": "#execution_118_mtxitem",
+            "itemid": "33323597"
+        },
+        {
+            "var_4a4bc969": "#callingcards_bankheist_mtxitem",
+            "itemid": "25745332"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_duffel_mtxitem",
+            "itemid": "18624248"
+        },
+        {
+            "var_4a4bc969": "#knife_combat_bp_cmoney_mtxitem",
+            "itemid": "28208041"
+        }
+    ],
+    "itemname": "#hash_37985b62b37dbec5",
+    "var_375a1747": "#hash_6124e618d6e3749f",
+    "var_579fd6c3": 31,
+    "name": "bundle_operator_1025_park_bank_heist_mtxbundle",
+    "var_a788fada": "#hash_63e1cd7382b043b2",
+    "var_22f91505": "#hash_63c3d7b5ebee8aa1",
+    "var_566825be": "#hash_35310d8833452f8a",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_24fc1342b27b5861",
+    "var_db3e02ab": 2000,
+    "itemid": "24664460"
+}

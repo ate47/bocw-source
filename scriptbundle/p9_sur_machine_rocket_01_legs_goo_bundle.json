@@ -1,0 +1,335 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_49de6e29274b7e11",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "descend"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_38eb2686eafba393",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "doors_open"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_2376e506b4d9497b",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "bottom_breaks"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_31aa4ab3d9aaf461",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "middle_breaks"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_351a44279065f295",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "01_rise"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_2317fcfe69286660",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "01_loop"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_2e665b68a5556598",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "02_rise"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_5fd81e2c718201a1",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "02_loop"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_3a8a343e5f1059f3",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "03_rise"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_1a56610d87587fce",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "03_loop"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_712865f90ddb66f6",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "04_rise"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_257feab61e09507",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "04_loop"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_3edc9987b389cf89",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "05_rise"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_1db0d00edb491fb4",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "05_loop"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_1df79e4a55b4abac",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "06_rise"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_61a4be902b078d05",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "06_loop"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_28d9c1368a8afa66",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "drain"
+                }
+            ],
+            "model": "#hash_2eb7d391abf00e32",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "prop 2"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_49de6e29274b7e11",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "descend"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_38eb2686eafba393",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "doors_open"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_2376e506b4d9497b",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "bottom_breaks"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_31aa4ab3d9aaf461",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "middle_breaks"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_351a44279065f295",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "01_rise"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_2317fcfe69286660",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "01_loop"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_2e665b68a5556598",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "02_rise"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_5fd81e2c718201a1",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "02_loop"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_3a8a343e5f1059f3",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "03_rise"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_1a56610d87587fce",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "03_loop"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_712865f90ddb66f6",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "04_rise"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_257feab61e09507",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "04_loop"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_3edc9987b389cf89",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "05_rise"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_1db0d00edb491fb4",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "05_loop"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_1df79e4a55b4abac",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "06_rise"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_61a4be902b078d05",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "06_loop"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_28d9c1368a8afa66",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "drain"
+                }
+            ],
+            "model": "#hash_2eb7d391abf00e32",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "prop 2"
+        }
+    ],
+    "scenetype": "fxanim",
+    "var_922067c4": "scriptbundle",
+    "dontthrottle": 1,
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "p9_sur_machine_rocket_01_legs_goo_bundle",
+    "dontsync": 1,
+    "ignorestreamer": 1,
+    "team": "any"
+}

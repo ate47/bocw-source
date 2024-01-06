@@ -36,8 +36,8 @@ function event_handler[gametype_init] main(*eventstruct) {
     #/
     level.var_36a81b25 = 1;
     clientfield::register("scriptmover", "" + #"hash_56a6be021662c82e", 1, 2, "int", &function_bed6f88d, 0, 0);
-    clientfield::register_clientuimodel("hudItems.onslaught.wave_number", #"hash_6f4b11a0bee9b73d", [1:#"hash_32acff8a008c0f5c", 0:#"hash_45604809da7a7362"], 1, 7, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("hudItems.onslaught.bosskill_count", #"hash_6f4b11a0bee9b73d", [1:#"hash_2ec97775399a0680", 0:#"hash_45604809da7a7362"], 1, 7, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("hudItems.onslaught.wave_number", #"hash_6f4b11a0bee9b73d", [1:#"hash_32acff8a008c0f5c", 0:#"onslaught"], 1, 7, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("hudItems.onslaught.bosskill_count", #"hash_6f4b11a0bee9b73d", [1:#"hash_2ec97775399a0680", 0:#"onslaught"], 1, 7, "int", undefined, 0, 0);
     clientfield::register("scriptmover", "orb_spawn", 1, 1, "int", &function_b467504c, 0, 0);
     clientfield::register("scriptmover", "bot_claim_fx", 1, 2, "int", &function_ae87d0dd, 0, 0);
     clientfield::register("actor", "orb_soul_capture_fx", 1, 3, "int", &function_9ef71f89, 0, 0);

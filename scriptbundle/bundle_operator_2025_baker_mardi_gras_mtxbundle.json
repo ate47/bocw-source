@@ -1,0 +1,43 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_navyseal_breaker_mtxitem",
+            "itemid": "22586319"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_navy_seal_mtxitem",
+            "itemid": "20822559"
+        },
+        {
+            "var_4a4bc969": "#reticle_45_mtxitem",
+            "itemid": "19530902"
+        },
+        {
+            "var_4a4bc969": "#execution_002_mtxitem",
+            "itemid": "29763656"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_carnival_mtxitem",
+            "itemid": "28674829"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s2_bracelet_mardi_gras_mtxitem",
+            "itemid": "25530055"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_jester_mask_mtxitem",
+            "itemid": "32498868"
+        }
+    ],
+    "itemname": "#hash_706e7c0a2f8cd576",
+    "var_375a1747": "#hash_3927bf2b40d317c",
+    "name": "bundle_operator_2025_baker_mardi_gras_mtxbundle",
+    "var_a788fada": "#hash_1a9cb4bf584f8e2f",
+    "var_22f91505": "#hash_bd77ef7e6c6e2b2",
+    "var_566825be": "#hash_7ac75c67df519437",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_603a50043c03dfee",
+    "var_db3e02ab": 2000,
+    "itemid": "30614068"
+}

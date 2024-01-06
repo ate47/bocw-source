@@ -20,8 +20,8 @@ function private autoexec __init__system__() {
 // Size: 0x104
 function private function_70a657d8() {
     if (util::get_game_type() === #"hash_1aecd78b7244ff81") {
-        clientfield::register_clientuimodel("hudItems.onslaught.lottoloadouts_rarity", #"hash_6f4b11a0bee9b73d", [1:#"hash_19c18e491f34cf06", 0:#"hash_45604809da7a7362"], 1, 2, "int", undefined, 0, 0);
-        clientfield::register_clientuimodel("hudItems.onslaught.lottoloadouts_atttype", #"hash_6f4b11a0bee9b73d", [1:#"hash_5b02144a2c38c4f8", 0:#"hash_45604809da7a7362"], 1, 4, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("hudItems.onslaught.lottoloadouts_rarity", #"hash_6f4b11a0bee9b73d", [1:#"hash_19c18e491f34cf06", 0:#"onslaught"], 1, 2, "int", undefined, 0, 0);
+        clientfield::register_clientuimodel("hudItems.onslaught.lottoloadouts_atttype", #"hash_6f4b11a0bee9b73d", [1:#"hash_5b02144a2c38c4f8", 0:#"onslaught"], 1, 4, "int", undefined, 0, 0);
     }
 }
 

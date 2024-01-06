@@ -1,0 +1,34 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_navyseal_wolf_mtxitem",
+            "itemid": "27888844"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_starter3_mtxitem",
+            "itemid": "21293402"
+        },
+        {
+            "var_4a4bc969": "#lmg_slowfire_bp_btank_mtxitem",
+            "itemid": "27118006"
+        },
+        {
+            "var_4a4bc969": "#execution_001_mtxitem",
+            "itemid": "22573635"
+        },
+        {
+            "var_4a4bc969": "#reticle_23_mtxitem",
+            "itemid": "24392034"
+        }
+    ],
+    "itemname": "#hash_65970806980bad02",
+    "var_375a1747": "#hash_7e8a318e42125180",
+    "name": "bundle_operator_1026_baker_warthog_warrior_mtxbundle",
+    "var_22f91505": "#hash_61001ed128730e54",
+    "var_566825be": "#hash_74bb6a34e4009811",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_58f5b29c5a2f9544",
+    "var_db3e02ab": 2000,
+    "itemid": "27381828"
+}

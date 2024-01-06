@@ -1,0 +1,31 @@
+{
+    "options": [
+        {
+            "label": "#hash_6a489abface20fd6",
+            "value": "0"
+        },
+        {
+            "label": "#hash_57f3f21157ef659b",
+            "value": "1"
+        }
+    ],
+    "var_dfedf08e": 1,
+    "description": "#hash_489d1678fd532909",
+    "var_60fcfffa": "#hash_6a489abface20fd6",
+    "var_9bc3be7": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 0.01,
+    "name": "gamepad_target_assist",
+    "displayname": "#hash_18b691a98ac16c17",
+    "var_4a4760c0": 0.01,
+    "var_500458ac": 10,
+    "var_926d1be9": 0.01,
+    "var_66faec87": 4,
+    "statname": "input_targetAssist",
+    "var_6f00a61a": 1.1,
+    "minvalue": 1,
+    "var_d4e288e": 1,
+    "var_b7401319": "#hash_57f3f21157ef659b"
+}

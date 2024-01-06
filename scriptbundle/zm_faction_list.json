@@ -1,0 +1,54 @@
+{
+    "var_bb7dcd09": [
+        {
+            "description": "#hash_6f44fcb165326ca3",
+            "type": "#hash_1303dcb8d0e80e33",
+            "image": "#hash_4292bd282539d4e8",
+            "displayname": "#hash_51f9cc8e57d9804a",
+            "var_a4f2dd9e": "#hash_3069f93c4e1e6bd8",
+            "var_4e4109db": "#zm_intel_stat_list_requiem",
+            "action": "#hash_74047973e9fd3642"
+        },
+        {
+            "description": "#hash_4abf0ab40b3a4c9c",
+            "type": "#omega",
+            "image": "#hash_4e8ec8a35253c333",
+            "displayname": "#hash_47ec60f07681ad81",
+            "var_a4f2dd9e": "#hash_3069f93c4e1e6bd8",
+            "var_4e4109db": "#zm_intel_stat_list_omega",
+            "action": "#hash_74047973e9fd3642"
+        },
+        {
+            "description": "#hash_483a5939e0ea2645",
+            "type": "#hash_5ad2dea4c296de59",
+            "image": "#hash_64a8b32daac451aa",
+            "displayname": "#hash_532a46bfdb304524",
+            "var_a4f2dd9e": "#hash_3069f93c4e1e6bd8",
+            "var_4e4109db": "#zm_intel_stat_list_maxis",
+            "action": "#hash_74047973e9fd3642"
+        },
+        {
+            "description": "#hash_28fac5bbea564e76",
+            "type": "#hash_70ce1650358c0923",
+            "image": "#hash_7b9522af37534188",
+            "displayname": "#hash_28aa329225234b0b",
+            "var_a4f2dd9e": "#hash_3069f93c4e1e6bd8",
+            "var_4e4109db": "#zm_intel_stat_list_darkaether",
+            "action": "#hash_74047973e9fd3642"
+        }
+    ],
+    "var_88c0037d": 1,
+    "var_72ef398b": 1,
+    "var_ebb12613": "#factionlist",
+    "var_2f050ffa": 1,
+    "var_922067c4": "SCRIPTBUNDLE",
+    "var_a77ed948": "#hash_3069f93c4e1e6bd8",
+    "var_5cf4c78e": 1,
+    "type": "datasourcelist",
+    "var_5497949f": 1,
+    "var_fb6daae5": 1,
+    "name": "zm_faction_list",
+    "var_d7ecf096": 1,
+    "var_6ff29b97": 1,
+    "var_912f5388": 1
+}

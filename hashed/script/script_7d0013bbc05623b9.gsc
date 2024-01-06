@@ -881,7 +881,7 @@ function private function_660c618b(prompt, immediate) {
 function function_ee7adae5(group) {
     if (isdefined(self.var_3e95b88f.var_f48ab2e1)) {
         var_c94d18f6 = [];
-        foreach (var_248cbbcf in self.var_3e95b88f.var_f48ab2e1) {
+        foreach (prompt, var_248cbbcf in self.var_3e95b88f.var_f48ab2e1) {
             if (isdefined(var_248cbbcf.groups) && isinarray(var_248cbbcf.groups, group)) {
                 var_c94d18f6[var_c94d18f6.size] = prompt;
             }
@@ -1196,7 +1196,7 @@ function private function_7d76b3ac() {
             dist = distance(player getplayercamerapos(), isdefined(self function_334e020()) ? self function_334e020() : self.origin);
         }
         var_3808d0ab = 0;
-        foreach (var_62bce5b6 in self.var_3e95b88f.var_f48ab2e1) {
+        foreach (prompt, var_62bce5b6 in self.var_3e95b88f.var_f48ab2e1) {
             if (self function_d626d354(prompt, player, dist)) {
                 var_3808d0ab = 1;
                 break;

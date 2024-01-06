@@ -1,0 +1,27 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#lmg_accurate_bp_crimson_mtxitem",
+            "itemid": "26459295"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_pet_rock_mtxitem",
+            "itemid": "22471909"
+        },
+        {
+            "var_4a4bc969": "#callingcards_rocksalt_mtxitem",
+            "itemid": "21111620"
+        }
+    ],
+    "itemname": "#hash_112c334fa9daacce",
+    "var_375a1747": "#hash_5ea4297b876be0c4",
+    "name": "bundle_blueprint_2040_lmg_accurate_rock_hard_mtxbundle",
+    "var_a788fada": "#hash_1df5b742df6661",
+    "var_22f91505": "#hash_2a871e3c2d3ff097",
+    "var_566825be": "#hash_705a1e0ec374bf9",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_2540069d5af141b3",
+    "var_db3e02ab": 2000,
+    "itemid": "32390526"
+}

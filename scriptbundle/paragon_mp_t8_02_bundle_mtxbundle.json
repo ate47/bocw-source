@@ -1,0 +1,27 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#paragon_mp_t8_02_mtxitem",
+            "itemid": "19277740"
+        },
+        {
+            "var_4a4bc969": "#mp_paragon_t8_02_large_mtxitem",
+            "itemid": "20238467"
+        },
+        {
+            "var_4a4bc969": "#paintjob_mp_paragon_t8_02_large_sticker_mtxitem",
+            "itemid": "25361807"
+        }
+    ],
+    "itemname": "#hash_3a9975b3a0c2eed0",
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "var_637c8edf": 1,
+    "name": "paragon_mp_t8_02_bundle_mtxbundle",
+    "var_22f91505": "#hash_314c839c7470fc00",
+    "var_566825be": "#hash_7d5c1b47ea94922f",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_7d7ec5899f818d22",
+    "var_db3e02ab": 2000,
+    "itemid": "27023586"
+}

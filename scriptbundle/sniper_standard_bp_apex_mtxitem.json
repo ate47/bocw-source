@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#bundle_blueprint_2021_sniper_standard_side_swipe_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_36d96440c5622e6a",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_d40fb198d5d9b6c",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 2,
+    "var_46300498": 1,
+    "baseweapon": "#hash_696069d98ed3f228",
+    "name": "sniper_standard_bp_apex_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 3,
+    "itemid": "19522368",
+    "blueprint": "#hash_36d96440c5622e6a"
+}

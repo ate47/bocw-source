@@ -972,7 +972,7 @@ class class_9e71c1a2 {
 // Checksum 0x92098603, Offset: 0x288
 // Size: 0x22c
 function private event_handler[createstruct] function_e0a8e4ba(struct) {
-    foreach (k in [0:"script_minigame_interact"]) {
+    foreach (var_8041af38, k in [0:"script_minigame_interact"]) {
         if (!isdefined(level.var_41204f29)) {
             level.var_41204f29 = [];
         } else if (!isarray(level.var_41204f29)) {

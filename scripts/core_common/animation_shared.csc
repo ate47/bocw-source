@@ -271,8 +271,8 @@ function setup_notetracks() {
     add_notetrack_func("flag::clear", &flag::clear);
     add_notetrack_func("postfx::PlayPostFxBundle", &postfx::playpostfxbundle);
     add_notetrack_func("postfx::StopPostFxBundle", &postfx::stoppostfxbundle);
-    add_notetrack_func("cinematicMotion::SpeedModifierClient", &namespace_37638b11::function_bd8097ae);
-    add_notetrack_func("cinematicMotion::OverrideClient", &namespace_37638b11::function_8152b11);
+    add_notetrack_func("cinematicMotion::SpeedModifierClient", &cinematicmotion::function_bd8097ae);
+    add_notetrack_func("cinematicMotion::OverrideClient", &cinematicmotion::function_8152b11);
     add_global_notetrack_handler("red_cracks_on", &cracks_on, "red");
     add_global_notetrack_handler("green_cracks_on", &cracks_on, "green");
     add_global_notetrack_handler("blue_cracks_on", &cracks_on, "blue");

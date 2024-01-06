@@ -1,0 +1,18 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#c_t9_ger_pl_west_racer_sky_incentive_mtxitem",
+            "itemid": "24373477"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_ger_west_mtxitem",
+            "itemid": "31131649"
+        }
+    ],
+    "itemname": "#hash_1b7fd6aedec5af4c",
+    "name": "incentive_sky_skin_mtxentitlement",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "itemid": "27569667"
+}

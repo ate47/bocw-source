@@ -1,0 +1,29 @@
+{
+    "itemlist": [
+        {
+            "minweight": 80,
+            "var_a6762160": "#epic_gun_list",
+            "maxweight": 80,
+            "available": -1
+        },
+        {
+            "minweight": 17,
+            "var_a6762160": "#legendary_gun_list",
+            "maxweight": 17,
+            "available": -1
+        },
+        {
+            "minweight": 3,
+            "var_a6762160": "#named_gun_list",
+            "maxweight": 3,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "gold_chest_guns_level_4",
+    "var_fde72c94": 100
+}

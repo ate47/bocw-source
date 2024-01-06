@@ -1,0 +1,34 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_mobility_bp_aagirl_mtxitem",
+            "itemid": "31167693"
+        },
+        {
+            "var_4a4bc969": "#smg_heavy_bp_aagirl_mtxitem",
+            "itemid": "29794165"
+        },
+        {
+            "var_4a4bc969": "#knife_combat_bp_aagirl_mtxitem",
+            "itemid": "30034505"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_kniferose_mtxitem",
+            "itemid": "26040582"
+        },
+        {
+            "var_4a4bc969": "#callingcards_animeassasin_mtxitem",
+            "itemid": "26922694"
+        }
+    ],
+    "itemname": "#hash_63b4a765f5739c21",
+    "var_375a1747": "#hash_579d83be665e1c17",
+    "name": "bundle_blueprint_1083_ar_mobility_anime_assassin_mtxbundle",
+    "var_22f91505": "#hash_4851e1a5fe0470b5",
+    "var_566825be": "#hash_1f12539827432f3e",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_288184f131cd976d",
+    "var_db3e02ab": 2000,
+    "itemid": "32616831"
+}

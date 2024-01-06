@@ -1,0 +1,65 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_3ffec7f8cc4e4061",
+            "var_5d4b5964": 12.9,
+            "var_36bf8e05": "#hash_1ee5e0f2a193dfa3"
+        },
+        {
+            "var_46bd7973": "#hash_575a4a9bb0d7e546",
+            "var_f35c5951": 0.7,
+            "var_5d4b5964": 12.1,
+            "var_36bf8e05": "#hash_fa0f058529bb81a"
+        },
+        {
+            "var_46bd7973": "#hash_575a499bb0d7e393",
+            "var_5d4b5964": 8.6,
+            "var_36bf8e05": "#hash_761971200b143279"
+        },
+        {
+            "var_46bd7973": "#hash_3ffec4f8cc4e3b48",
+            "var_f35c5951": 0.4,
+            "var_5d4b5964": 14.1,
+            "var_36bf8e05": "#hash_4c986703bb5690d4"
+        },
+        {
+            "var_46bd7973": "#hash_3ffecbf8cc4e472d",
+            "var_5d4b5964": 5.1,
+            "var_36bf8e05": "#hash_294a1f13636ec9cf"
+        },
+        {
+            "var_46bd7973": "#hash_575a4e9bb0d7ec12",
+            "var_5d4b5964": 12.1,
+            "var_36bf8e05": "#hash_6ebffc39f70190b6"
+        },
+        {
+            "var_46bd7973": "#hash_3ffec9f8cc4e43c7",
+            "var_f35c5951": 0.1,
+            "var_5d4b5964": 10.5,
+            "var_36bf8e05": "#hash_1d175b52b4790461"
+        },
+        {
+            "var_46bd7973": "#hash_3ffec8f8cc4e4214",
+            "var_5d4b5964": 18.3,
+            "var_36bf8e05": "#hash_271e18eaff235a60"
+        }
+    ],
+    "description": "#hash_4447a93dfa32f036",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#exploration",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_39975151641c4544",
+    "type": "zmintel",
+    "season": 4,
+    "var_ad4ad686": "#hash_70ce1650358c0923",
+    "soundloop": "#hash_5b635b73ab6ca33f",
+    "name": "zmintel_platinum_darkaether_audiolog_01",
+    "var_9be0526e": "#audiolog",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "var_348b91fd": "#tape",
+    "title": "#hash_45685eb115d7aa46",
+    "var_3bb3493d": "#hash_aa143ef866eced3",
+    "mapname": "#zm_platinum",
+    "var_6073bf8f": "#hash_4042063c893f7f3a"
+}

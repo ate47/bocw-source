@@ -33,7 +33,7 @@ function private function_70a657d8() {
     level.var_a3ec798a = &turretscanning;
     level.var_6f2028c7 = 0;
     level.var_11d9ab7c = new class_c6c0e94();
-    [[ level.var_11d9ab7c ]]->initialize(#"hash_10d11d2a83e8da63", 1, float(function_60d95f53()) / 1000);
+    [[ level.var_11d9ab7c ]]->initialize(#"ultimate_turret_zm", 1, float(function_60d95f53()) / 1000);
     init_shared();
     deployable::register_deployable(getweapon("ultimate_turret"), &function_53028023, undefined, #"mp/sentry_deploy", #"hash_37605398dce96965");
     callback::on_vehicle_spawned(&function_bf97d10);
@@ -58,7 +58,7 @@ function function_634677dd() {
 function function_bf97d10(*params) {
     if (self.vehicletype === #"hash_d57fa1b1aacffc7") {
         self.var_4a64e878 = 1;
-        val::set(#"hash_10d11d2a83e8da63", "takedamage", 0);
+        val::set(#"ultimate_turret_zm", "takedamage", 0);
         level.var_6f2028c7++;
         level.var_6f2028c7 = math::clamp(level.var_6f2028c7, 0, 4);
     }

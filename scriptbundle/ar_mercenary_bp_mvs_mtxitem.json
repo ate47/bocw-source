@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#bundle_blueprint_2059_ar_standard_tight_grouping_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_5983113c01fd3f93",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_4d917ce4d2408981",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 2,
+    "var_46300498": 1,
+    "baseweapon": "#hash_70f8f2d92031f544",
+    "name": "ar_mercenary_bp_mvs_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 3,
+    "itemid": "28326231",
+    "blueprint": "#hash_5983113c01fd3f93"
+}

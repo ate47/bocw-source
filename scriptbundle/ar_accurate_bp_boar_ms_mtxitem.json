@@ -1,0 +1,22 @@
+{
+    "var_941096a8": [
+        {
+            "var_386af035": "#firstparty_bundle_5101_elite_pro_pack_ms_mtxentitlement"
+        }
+    ],
+    "itemname": "#hash_1cf84100e8f5a362",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_d7e0ff82747d6dc",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 5,
+    "var_46300498": 1,
+    "baseweapon": "#hash_2580580083c87b0d",
+    "name": "ar_accurate_bp_boar_ms_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "28840838",
+    "blueprint": "#hash_1cf84100e8f5a362"
+}

@@ -1,0 +1,29 @@
+{
+    "itemlist": [
+        {
+            "minweight": 80,
+            "var_a6762160": "#sr_world_list_tier_1_asylum",
+            "maxweight": 80,
+            "available": -1
+        },
+        {
+            "minweight": 15,
+            "var_a6762160": "#sr_world_list_tier_2_asylum",
+            "maxweight": 15,
+            "available": -1
+        },
+        {
+            "minweight": 5,
+            "var_a6762160": "#sr_world_list_tier_3_asylum",
+            "maxweight": 5,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "sr_world_list_items_graveyard",
+    "var_fde72c94": 100
+}

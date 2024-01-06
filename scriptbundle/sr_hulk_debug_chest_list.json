@@ -1,0 +1,47 @@
+{
+    "itemlist": [
+        {
+            "minweight": 1,
+            "var_a6762160": "#legendary_ar_list",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#legendary_lmg_list",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#legendary_shotgun_list",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#legendary_tr_list",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#ray_gun_item_sr",
+            "maxweight": 1,
+            "available": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#ww_ray_rifle_t9_item_sr",
+            "maxweight": 1,
+            "available": 1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "sr_hulk_debug_chest_list",
+    "var_fde72c94": 100
+}

@@ -1,0 +1,20 @@
+{
+    "description": "#hash_3288a6d09923fc1",
+    "itemspawnentry": "#item_zmintel_echelon_requiem_document_3",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#hash_54f6484895bebf79",
+    "model": "#hash_6565b3a8f5b502e5",
+    "var_824079e7": "#onslaught",
+    "uimodel": "#hash_5a0a8f7f25fd4652",
+    "type": "zmintel",
+    "season": 5,
+    "var_ad4ad686": "#hash_1303dcb8d0e80e33",
+    "var_217aec15": "#hash_1bfeab01ab6301e4",
+    "name": "zmintel_echelon_requiem_document_3",
+    "var_9be0526e": "#hash_daeb8129dc8e394",
+    "var_83e219de": "#exclusive",
+    "var_53be913a": 5,
+    "title": "#hash_5d52b6fd6d93cc4f",
+    "var_c664d393": "requiem_document_23",
+    "mapname": "#hash_3be2e434853eda53"
+}

@@ -380,7 +380,7 @@ function onspawncrossbowboltimpact_internal(s_watcher, e_player) {
     e_player endon(#"disconnect");
     self waittill(#"stationary");
     s_watcher thread waitandfizzleout(self, 0);
-    foreach (e_object in s_watcher.objectarray) {
+    foreach (n_index, e_object in s_watcher.objectarray) {
         if (self == e_object) {
             s_watcher.objectarray[n_index] = undefined;
         }

@@ -1,0 +1,64 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_ger_pl_west_judge_dredd_mtxitem",
+            "itemid": "22195380"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_ger_west_mtxitem",
+            "itemid": "31131649"
+        },
+        {
+            "var_4a4bc969": "#c_t9_ger_pl_west_judge_dredd_variant01_mtxitem",
+            "itemid": "27183682"
+        },
+        {
+            "var_4a4bc969": "#pistol_fullauto_bp_judged_mtxitem",
+            "itemid": "18849341"
+        },
+        {
+            "var_4a4bc969": "#ar_slowfire_bp_judged_mtxitem",
+            "itemid": "19067224"
+        },
+        {
+            "var_4a4bc969": "#loot_smg_fastfire_bp_judged_mtxitem",
+            "itemid": "23279198"
+        },
+        {
+            "var_4a4bc969": "#execution_194_mtxitem",
+            "itemid": "22593153"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s5_digital_judge_d_mtxitem",
+            "itemid": "26835848"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_law_book_mtxitem",
+            "itemid": "29717176"
+        },
+        {
+            "var_4a4bc969": "#emblems_thejudgebadge_s5_mtxitem",
+            "itemid": "17929542"
+        },
+        {
+            "var_4a4bc969": "#callingcards_dreddvsdeath_animated_mtxitem",
+            "itemid": "29317933"
+        },
+        {
+            "var_4a4bc969": "#player_xp_token_legendary_mtxitem",
+            "itemid": "32109261"
+        }
+    ],
+    "itemname": "#hash_32c75098c5980f3a",
+    "var_375a1747": "#hash_2cb1b3339959ece0",
+    "var_3040f0d1": "#hash_566ca1f65e85e968",
+    "name": "blueprint_bundle_5902_special_op_4_jd_mtxbundle",
+    "var_a788fada": "#hash_42b3ecc983a9cf47",
+    "var_22f91505": "#hash_3117c4be762045a1",
+    "var_566825be": "#hash_5f2451b0069f134f",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_4fbd1dfbf92ffb61",
+    "var_db3e02ab": 2000,
+    "itemid": "18585309"
+}

@@ -1,0 +1,240 @@
+{
+    "var_8e9936d5": [
+        {
+            "var_f08513a": "tag_phx_gear_control_animate"
+        }
+    ],
+    "var_aaf4ef8c": [
+        {
+            "var_f08513a": "tag_phx_gear_control"
+        }
+    ],
+    "var_98404a23": [
+        {
+            "var_f08513a": "tag_phx_cockpit_door_control"
+        }
+    ],
+    "setup_lgt_glowyriver": [
+        {
+            "var_f08513a": "tag_phx_door_control"
+        }
+    ],
+    "lightgroups_3_slots": [
+        {
+            "fx": "#hash_38ad7e228dc33277",
+            "tag": "tag_fx_light_body_bottom_white_strobe"
+        },
+        {
+            "fx": "#hash_3ad0ad7f5ec4368d",
+            "tag": "tag_fx_light_body_bottom_red_strobe"
+        },
+        {
+            "fx": "#hash_4b1246a69f37bc38",
+            "tag": "tag_fx_light_tail_left_upper"
+        },
+        {
+            "fx": "#hash_3e9ed96502b9726d",
+            "tag": "tag_fx_light_tail_right_upper"
+        },
+        {
+            "fx": "#hash_4b1246a69f37bc38",
+            "tag": "tag_fx_light_tail_left_lower"
+        },
+        {
+            "fx": "#hash_358f2b52a38e26d1",
+            "tag": "tag_fx_light_tail_right_lower"
+        },
+        {
+            "fx": "#hash_4b1246a69f37bc38",
+            "tag": "tag_fx_light_nav_upper_left"
+        },
+        {
+            "fx": "#hash_3e9ed96502b9726d",
+            "tag": "tag_fx_light_nav_upper_right"
+        },
+        {
+            "fx": "#hash_4b1246a69f37bc38",
+            "tag": "tag_fx_light_nav_lower_left"
+        },
+        {
+            "fx": "#hash_358f2b52a38e26d1",
+            "tag": "tag_fx_light_nav_lower_right"
+        },
+        {
+            "fx": "#hash_6b2b093542d0c84e",
+            "tag": "tag_fx_light_tail_strobe_red"
+        },
+        {
+            "fx": "#hash_7c4fbfcb15c218fd",
+            "tag": "tag_fx_spotlight"
+        }
+    ],
+    "malfunction_effects": [
+        {
+            "fatal": "#hash_4470dad4063cfa2b",
+            "warning": "#hash_4470dcd4063cfd91",
+            "var_2f451e59": "tag_fx_console_malfunction_02",
+            "tag_warning": "tag_fx_console_malfunction_02",
+            "var_ceeccc7a": "tag_fx_console_malfunction_02",
+            "var_454a4e08": "tag_fx_console_malfunction_02",
+            "active": "#hash_4470d9d4063cf878",
+            "transition": "#hash_25c1e3b03689a0aa"
+        },
+        {
+            "fatal": "#hash_64d440b1450e7466",
+            "warning": "#hash_64d43fb1450e72b3",
+            "var_2f451e59": "tag_body",
+            "tag_warning": "tag_body",
+            "var_ceeccc7a": "tag_body",
+            "var_454a4e08": "tag_body",
+            "active": "#hash_64d440b1450e7466",
+            "transition": "#hash_6ad36dd4e650a170"
+        }
+    ],
+    "var_b3fbebad": [
+        {
+        },
+        {
+            "var_e9927fbf": "tag_driver",
+            "var_82aeef56": "#hash_1a5596fa2acd9bd2",
+            "var_ad486dc4": 0.2
+        }
+    ],
+    "var_24cedff1": [
+        {
+        }
+    ],
+    "var_77c7a074": 400,
+    "var_3b8f2901": "#hash_6ef0874a61a5ef25",
+    "var_49514485": "#hash_1fa5d9f5b1c19862",
+    "var_22107604": "#hash_761114873317489d",
+    "var_2dcf8d82": "#hash_4803fa5f8ba9b3e7",
+    "var_9476dad3": "#hash_6e2daf306e9576cb",
+    "var_a244f66f": "#hash_32227d263a762d4b",
+    "var_efc15586": 10,
+    "var_e1d36c37": 300,
+    "turret_fire_burst_max": 5,
+    "var_2c69a255": 5,
+    "var_93360fe": 10,
+    "var_d3a00687": 300,
+    "damagestate_lv1_ratio": 0.75,
+    "var_2ade16ee": 450,
+    "var_c15b13ab": 500,
+    "var_9cdbf8c1": 1000,
+    "var_81a2bc21": "#hash_58b4cab1ca95ae6e",
+    "var_7e3165c1": 80,
+    "var_681129b2": "player_heli_ambient",
+    "var_7fa25761": 10,
+    "var_68c74e4f": 5,
+    "var_922067c4": "scriptbundle",
+    "var_eb8cf53c": 250,
+    "var_6a2a72b1": 5,
+    "var_79d711d2": 450,
+    "var_882a2e78": 100,
+    "var_9675cb0f": 100,
+    "vehicletype": "none",
+    "var_b71ffcbf": -300,
+    "var_d2f4b430": 210,
+    "var_dd2ec8a4": -335,
+    "var_b889ff5b": -335,
+    "var_78819fa": 100,
+    "var_357175d4": -50,
+    "var_6b6185e": 50,
+    "var_bad001a7": -40,
+    "var_3adc81be": -30,
+    "var_9e7448f0": 55,
+    "var_cc9ea544": -60,
+    "var_baee021b": 55,
+    "var_b033ec6f": -30,
+    "var_e08bc957": 4,
+    "max_duration": 30,
+    "var_e9898330": "pingvehiclehind",
+    "damagestate_lv4_ratio": 0.75,
+    "damagestate_lv2_ratio": 0.75,
+    "var_c5e4c9ab": 200,
+    "defaultmovespeed": 5,
+    "type": "vehiclecustomsettings",
+    "var_a03cd491": "#hash_4ecb7eec753ad761",
+    "var_4d8e2f31": "#hash_4ecb7eec753ad761",
+    "var_3bd38bbc": "#hash_100397ba83511797",
+    "max_move_dist": 100,
+    "empdowntime": 10,
+    "all_knowing": 1,
+    "var_745d947e": 350,
+    "var_941aa303": 150,
+    "var_be9cc43e": 500,
+    "var_28d67d1c": 1000,
+    "vmtype": "both",
+    "var_95ae4f6e": 1000,
+    "var_e2ac2883": -90,
+    "var_b066c3f9": 90,
+    "var_d4898c3e": 5,
+    "var_a9243574": 120,
+    "var_77015127": 150,
+    "var_5ff36e0a": 10,
+    "var_a8727ef7": 600,
+    "var_7bb92585": 5,
+    "var_c47f371c": 500,
+    "var_4487b733": 150,
+    "var_6e360a8f": 150,
+    "var_e9ebd61b": 500,
+    "var_9eff22ee": 5,
+    "var_99955aeb": 150,
+    "engagementdistmin": 500,
+    "engagementdistmax": 1000,
+    "near_goal_notify_dist": 80,
+    "engagementheightmax": 300,
+    "var_23061240": 40,
+    "name": "helicopter_mil_ru_heli_transport_bundle_settings_zm_platinum",
+    "var_e7260470": 65,
+    "rocketcooldown": 5,
+    "var_fb3ce03c": 200,
+    "meleedist": 50,
+    "damage_radius": 150,
+    "vehicle_turret": "#hash_10dd6da6249fb08d",
+    "jump_height": 40,
+    "var_2759e8a1": 5,
+    "scanning_speedscale": 0.01,
+    "var_8dc3330d": 4,
+    "var_a64907cd": 3,
+    "var_274be2d6": 15,
+    "var_c4d22a09": 300,
+    "var_2c001f55": 150,
+    "var_804ce8e7": 1,
+    "var_b0d7c1ed": 10,
+    "var_2cc03de3": "vehicle_damage_heavy",
+    "var_83f24ed5": "tag_body",
+    "var_5d7081d2": "tag_fx_left",
+    "var_6f302551": "tag_fx_right",
+    "var_3285f09a": 1000,
+    "damagestate_lv3_ratio": 0.75,
+    "var_7454f5d3": 5,
+    "var_a6de9f17": "vehicle_damage_light",
+    "var_c694bbbf": 90,
+    "var_1f9ce676": "#hash_7ffcdde92762f6dd",
+    "var_adea8313": "#hash_7ffcdde92762f6dd",
+    "var_e5257188": "#hash_1f1a86b06c62ca90",
+    "var_c8b0b89f": "#hash_1b5871c242eb0ad",
+    "var_d666d40b": "#hash_59ecbaf88a08d2de",
+    "var_17a9a936": 5,
+    "var_efbfa41e": 1000,
+    "var_e0c78652": 10,
+    "max_path_fail_count": 10,
+    "var_aef0d42": 150,
+    "lifetime": 5,
+    "var_f72c3104": 30,
+    "detonation_distance": 64,
+    "aim_assist": 1,
+    "death_dynent_count": 6,
+    "turret_cooldown_max": 5,
+    "friendly_fire": 1,
+    "var_4221c285": 1,
+    "repath_range": 60,
+    "var_7c315945": 10,
+    "var_6df5bcce": 10,
+    "var_4371e7c7": -60,
+    "var_26ea2eb8": -10,
+    "lightgroups_numgroups": 4,
+    "var_a255d709": 5,
+    "var_167e340": 50
+}

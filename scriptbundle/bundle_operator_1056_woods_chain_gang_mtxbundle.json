@@ -1,0 +1,51 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_woods_biker_mtxitem",
+            "itemid": "27648851"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_woods_mtxitem",
+            "itemid": "28004165"
+        },
+        {
+            "var_4a4bc969": "#ar_mobility_bp_wanker_mtxitem",
+            "itemid": "22342009"
+        },
+        {
+            "var_4a4bc969": "#smg_handling_bp_wanker_mtxitem",
+            "itemid": "24189163"
+        },
+        {
+            "var_4a4bc969": "#execution_030_mtxitem",
+            "itemid": "22018097"
+        },
+        {
+            "var_4a4bc969": "#callingcards_devildog_mtxitem",
+            "itemid": "29723668"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_us_motorcycle_offroad_mpx_hellrider_mtxitem",
+            "itemid": "29703601"
+        },
+        {
+            "var_4a4bc969": "#emblems_devildog_animated_mtxitem",
+            "itemid": "24368990"
+        },
+        {
+            "var_4a4bc969": "#vehiclehorn_115_mtxitem",
+            "itemid": "23361097"
+        }
+    ],
+    "itemname": "#hash_589eab0f83623c1c",
+    "var_375a1747": "#hash_115949e15b8b44c6",
+    "var_579fd6c3": 11,
+    "name": "bundle_operator_1056_woods_chain_gang_mtxbundle",
+    "var_22f91505": "#hash_25b7210878663e9f",
+    "var_566825be": "#hash_e1c4785b7fb0dad",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_1248ea11da03c85b",
+    "var_db3e02ab": 2000,
+    "itemid": "28137950"
+}

@@ -1,0 +1,104 @@
+{
+    "var_15c336d1": [
+        {
+            "start_round": 1,
+            "var_928e93a0": 2400
+        },
+        {
+            "start_round": 11,
+            "var_928e93a0": 4000
+        },
+        {
+            "start_round": 16,
+            "var_928e93a0": 12000
+        },
+        {
+            "start_round": 21,
+            "var_928e93a0": 20000
+        },
+        {
+            "start_round": 26,
+            "var_928e93a0": 28000
+        },
+        {
+            "start_round": 31,
+            "var_928e93a0": 37000
+        },
+        {
+            "start_round": 36,
+            "var_928e93a0": 10000
+        }
+    ],
+    "var_349be1e8": [
+        {
+            "type": "#electrical",
+            "var_4d90aaec": 1
+        }
+    ],
+    "spawnlocations": [
+        {
+            "spawnlocation": "stoker_location"
+        }
+    ],
+    "weapondamagescaleoverrides": [
+        {
+            "var_fe55d685": "#hero_scepter_lv1_zm",
+            "var_fc420d71": 0.5,
+            "weaponid": "#hero_scepter_lv1",
+            "var_628192b0": 1,
+            "var_97b22faa": 1,
+            "damagescale": 0.5
+        },
+        {
+            "var_fe55d685": "#hero_scepter_lv1_zm",
+            "var_fc420d71": 0.5,
+            "weaponid": "#hero_scepter_lv1",
+            "var_628192b0": 1,
+            "var_97b22faa": 1,
+            "damagescale": 0.5
+        },
+        {
+            "var_fe55d685": "#hero_scepter_lv1_zm",
+            "var_fc420d71": 0.5,
+            "weaponid": "#hero_scepter_lv1",
+            "var_628192b0": 1,
+            "var_97b22faa": 1,
+            "damagescale": 0.5
+        }
+    ],
+    "var_20266c0d": 400,
+    "var_604a84a1": 3,
+    "var_10460f1e": 1,
+    "var_87e1e74d": 250,
+    "var_10a1d059": 0.5,
+    "var_73070557": 5000,
+    "var_3e5bacce": "#hash_150ac8d4f9914a83",
+    "var_322773b9": 0.5,
+    "var_287805eb": 10000,
+    "var_b7a8163d": 110,
+    "var_d33d95d0": 8000,
+    "maxhealth": 750000,
+    "var_a3160086": 500,
+    "var_7b22b800": 1,
+    "var_fc420d71": 1,
+    "var_159f74bb": 240,
+    "var_accd767d": 5,
+    "name": "zm_steiner_hvt_settings",
+    "var_2512cf3b": 600,
+    "var_628192b0": 1,
+    "var_10d707f8": 1000,
+    "var_97b22faa": 5,
+    "damagescale": 1,
+    "category": "#hash_72d4f2ad2e333eb4",
+    "var_854eebd": 0.3,
+    "var_366e280d": 1,
+    "var_cd8b7a6c": 0.8,
+    "var_20dea374": 100,
+    "var_a22e6e32": 48,
+    "stunduration": 1,
+    "var_81da787": 1100,
+    "var_f227d0d0": 36,
+    "var_bf28a226": 250,
+    "var_1d505f4d": 5000,
+    "var_450edb3b": 1
+}

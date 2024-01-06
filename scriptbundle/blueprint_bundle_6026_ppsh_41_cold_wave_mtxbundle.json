@@ -1,0 +1,39 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#loot_smg_spray_bp_hypno_mtxitem",
+            "itemid": "30023345"
+        },
+        {
+            "var_4a4bc969": "#sniper_powersemi_bp_hypno_mtxitem",
+            "itemid": "18890305"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_80_fridge_mtxitem",
+            "itemid": "24184075"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s6_analog_hypnosis_mtxitem",
+            "itemid": "32364321"
+        },
+        {
+            "var_4a4bc969": "#emblems_coldwave_s6_mtxitem",
+            "itemid": "24620905"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_coldwave_s6_mtxitem",
+            "itemid": "22278506"
+        }
+    ],
+    "itemname": "#hash_768355841a7fef95",
+    "var_375a1747": "#hash_16d05e5a56d1add7",
+    "name": "blueprint_bundle_6026_ppsh_41_cold_wave_mtxbundle",
+    "var_a788fada": "#hash_1537e63d5e7c5b84",
+    "var_22f91505": "#hash_3ba04f13f5262537",
+    "var_566825be": "#hash_35fb1a814e6e1310",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_6dbfd324cbffd553",
+    "var_db3e02ab": 2000,
+    "itemid": "32179859"
+}

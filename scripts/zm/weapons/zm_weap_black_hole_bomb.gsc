@@ -123,7 +123,7 @@ function private function_600a82c(player) {
     self notify("1d0aad1ca52c5f89");
     self endon("1d0aad1ca52c5f89");
     waitframe(1);
-    item = function_4ba8fde(#"hash_bd1d07994783ddc");
+    item = function_4ba8fde(#"black_hole_bomb_item_t9_sr");
     if (isdefined(item)) {
         item.amount.item = 1;
         var_fa3df96 = player item_inventory::function_e66dcff5(item);
@@ -190,7 +190,7 @@ function function_7ceb96bf(player, *endon_condition) {
         if (isdefined(endon_condition.var_f4710251)) {
             targetplayer = getentbynum(endon_condition.var_f4710251);
             if (isdefined(targetplayer) && isplayer(targetplayer) && isalive(targetplayer)) {
-                new_origin = endon_condition namespace_1332002f::function_e402b74e(endon_condition, targetplayer);
+                new_origin = endon_condition squad_spawn::function_e402b74e(endon_condition, targetplayer);
             }
         }
     }

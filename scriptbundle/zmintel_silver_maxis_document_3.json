@@ -1,0 +1,18 @@
+{
+    "description": "#hash_7e5b4a97f1bee8ac",
+    "itemspawnentry": "#item_zmintel_silver_maxis_document_3",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#hash_54f6484895bebf79",
+    "model": "#hash_1b4eb5cdc95a6156",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_7171c88337ee54cb",
+    "type": "zmintel",
+    "var_ad4ad686": "#hash_5ad2dea4c296de59",
+    "var_217aec15": "#hash_208af4652db2703b",
+    "name": "zmintel_silver_maxis_document_3",
+    "var_9be0526e": "#hash_daeb8129dc8e394",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "title": "#hash_693e68e9f61c2b84",
+    "mapname": "#zm_silver"
+}

@@ -993,7 +993,7 @@ function init_levelvars() {
     level.current_zombie_count = 0;
     level.zombie_total_subtract = 0;
     level.destructible_callbacks = [];
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (!isdefined(level.zombie_vars[team])) {
             level.zombie_vars[team] = [];
         }
@@ -2087,7 +2087,7 @@ function private function_70171add() {
 // Size: 0x108
 function function_6c369691() {
     a_ai = getaiteamarray("axis");
-    foreach (ai in a_ai) {
+    foreach (n_index, ai in a_ai) {
         if (isalive(ai)) {
             ai val::set(#"end_game", "ignoreall", 1);
             ai thread zm_cleanup::no_target_override(ai);
@@ -2879,7 +2879,7 @@ function function_2c96cf0e(event) {
 // Size: 0x72e
 function function_d3113f01(var_bfe774a8) {
     var_ee65a0a8 = isdefined(level.var_acd0f67e) ? level.var_acd0f67e : 0;
-    var_931577c = isdefined(function_302bd0b9().var_4f7d48d7) ? function_302bd0b9().var_4f7d48d7 : #"hash_5458cf5c92883671";
+    var_931577c = isdefined(function_302bd0b9().var_4f7d48d7) ? function_302bd0b9().var_4f7d48d7 : #"gamedata/tables/zm/zm_perroundxp.csv";
     /#
         /#
             assert(isdefined(var_931577c), "<unknown string>");
@@ -3092,7 +3092,7 @@ function private function_85ea1f60(item) {
             }
         }
     }
-    if (item.var_a6762160.name === #"hash_2cdb76a587cf7a3b") {
+    if (item.var_a6762160.name === #"self_revive_sr_item") {
         if (self zm_laststand::function_618fd37e() < 1) {
             return 1;
         } else {
@@ -3132,7 +3132,7 @@ function private function_85ea1f60(item) {
         return 1;
         break;
     case #"armor":
-        if (item.var_a6762160.var_4a1a4613 === #"hash_3d98ea1d4a033e97") {
+        if (item.var_a6762160.var_4a1a4613 === #"armor_heal") {
             return (!self function_d87329b7() || !self function_1072c231() || self.armortier < (isdefined(item.var_a6762160.armortier) ? item.var_a6762160.armortier : 1));
         } else {
             return 1;
@@ -3142,16 +3142,16 @@ function private function_85ea1f60(item) {
     case #"scorestreak":
         return (!self function_ad7bd142(item) && self zm_weapons::function_2bcaec6f(item.var_a6762160.weapon));
         break;
-    case #"hash_7064fc95aa1c1bbe":
+    case #"survival_ammo":
         return !self function_be26a3f3(item);
         break;
-    case #"hash_576593319dc02d70":
+    case #"survival_armor_shard":
         return !self function_1072c231();
         break;
-    case #"hash_70823406977e7c34":
+    case #"survival_perk":
         return !self function_96184f63(item);
         break;
-    case #"hash_7cb16be6e8df98f2":
+    case #"survival_upgrade_item":
         return self zm_weapons::function_106ff01d(item);
         break;
     case #"equipment":

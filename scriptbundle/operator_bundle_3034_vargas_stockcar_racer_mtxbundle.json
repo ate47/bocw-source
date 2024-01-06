@@ -1,0 +1,35 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_gen_pl_starter2_vargas_finishline_mtxitem",
+            "itemid": "23128405"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_starter2_mtxitem",
+            "itemid": "19048863"
+        },
+        {
+            "var_4a4bc969": "#ar_mobility_bp_fastlane_mtxitem",
+            "itemid": "30121405"
+        },
+        {
+            "var_4a4bc969": "#execution_112_mtxitem",
+            "itemid": "31227379"
+        },
+        {
+            "var_4a4bc969": "#reticle_83_mtxitem",
+            "itemid": "23025675"
+        }
+    ],
+    "itemname": "#hash_27824999b00660fd",
+    "var_375a1747": "#hash_430d4cc801324c4f",
+    "name": "operator_bundle_3034_vargas_stockcar_racer_mtxbundle",
+    "var_a788fada": "#hash_36bb1e4351235336",
+    "var_22f91505": "#hash_43d4cfb98b2a4359",
+    "var_566825be": "#hash_40039d9179ba7c02",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_33eb43511f579099",
+    "var_db3e02ab": 2000,
+    "itemid": "28533045"
+}

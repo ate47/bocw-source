@@ -1,0 +1,65 @@
+{
+    "itemlist": [
+        {
+            "minweight": 80,
+            "var_a6762160": "#scrap_item_sr",
+            "maxweight": 80,
+            "available": 1
+        },
+        {
+            "minweight": 60,
+            "var_a6762160": "#armor_shard_item_sr",
+            "maxweight": 60,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#ammo_item_survival",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 15,
+            "var_a6762160": "#level_1_gun_list",
+            "maxweight": 15,
+            "available": 1
+        },
+        {
+            "minweight": 30,
+            "var_a6762160": "#uncommon_equipment_list",
+            "maxweight": 30,
+            "available": 1
+        },
+        {
+            "minweight": 20,
+            "var_a6762160": "#rare_equipment_list",
+            "maxweight": 20,
+            "available": 1
+        },
+        {
+            "minweight": 5,
+            "var_a6762160": "#epic_equipment_list",
+            "maxweight": 5,
+            "available": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#sr_explore_chest_perk_bottles",
+            "maxweight": 1,
+            "available": 1
+        },
+        {
+            "minweight": 80,
+            "var_a6762160": "#resource_item_sr",
+            "maxweight": 80,
+            "available": 1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "loot_pod_level_1",
+    "var_fde72c94": 100
+}

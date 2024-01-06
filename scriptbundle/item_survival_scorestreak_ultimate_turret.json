@@ -1,0 +1,39 @@
+{
+    "worldfx": [
+        {
+            "worldfx": "#hash_6c7840c9ca34f2a3"
+        }
+    ],
+    "var_a6616b9c": 1,
+    "amount": 1,
+    "var_fa988b4b": 60,
+    "description": "#hash_69a3d01cedc93f4c",
+    "var_922067c4": "scriptbundle",
+    "model": "#hash_610103e5b898f507",
+    "var_16e34ef4": 64,
+    "var_e9898330": "pingitemscorestreaksentryturret",
+    "weapon": "#ultimate_turret",
+    "var_ac75b59f": -1,
+    "var_c2de1e75": "zm_item_pickup_rumble",
+    "type": "itemspawnentry",
+    "hintstring": "#hash_4396473d5a5a8421",
+    "spawnsound": "zmb_powerup_kls_spawn",
+    "var_6b5d0aaa": 1,
+    "killstreak": "killstreak_ultimate_turret_zm",
+    "var_4a1a4613": "armor_swap",
+    "name": "item_survival_scorestreak_ultimate_turret",
+    "displayname": "#hash_4396473d5a5a8421",
+    "var_36781d9f": "fly_drop_generic",
+    "var_9e569978": 1,
+    "stackcount": 1,
+    "icon": "#hash_3f0df1dcd71e7760",
+    "modelscale": 1,
+    "rarity": "Epic",
+    "var_1b0b57d1": "evt_item_despawn",
+    "var_e6b47c6a": -6,
+    "handler": "#hash_1f0d729dc6dd1202",
+    "var_3af59a99": 1,
+    "pickupicon": "#hash_3f0df1dcd71e7760",
+    "itemtype": "scorestreak",
+    "pickupsound": "zmb_powerup_kls_pickup"
+}

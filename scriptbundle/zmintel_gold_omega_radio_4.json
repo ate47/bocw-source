@@ -1,0 +1,58 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_3ae7abcbc760ad3",
+            "var_f35c5951": 1.5,
+            "var_5d4b5964": 10.82,
+            "var_36bf8e05": "#hash_43ca2e55db7d1064"
+        },
+        {
+            "var_46bd7973": "#hash_3ae79bcbc760920",
+            "var_f35c5951": 1.5,
+            "var_5d4b5964": 13.67,
+            "var_36bf8e05": "#hash_75ace0eb0dff3301"
+        },
+        {
+            "var_46bd7973": "#hash_3ae7cbcbc760e39",
+            "var_f35c5951": 1.5,
+            "var_5d4b5964": 7.72,
+            "var_36bf8e05": "#hash_5f871bc8600fb5b6"
+        },
+        {
+            "var_46bd7973": "#hash_3ae7bbcbc760c86",
+            "var_f35c5951": 1.5,
+            "var_5d4b5964": 11.48,
+            "var_36bf8e05": "#hash_535174ceb861a5b3"
+        },
+        {
+            "var_46bd7973": "#hash_3ae7ebcbc76119f",
+            "var_f35c5951": 1.5,
+            "var_5d4b5964": 18.39,
+            "var_36bf8e05": "#hash_3a94e13c332c4ea0"
+        },
+        {
+            "var_46bd7973": "#hash_3ae7dbcbc760fec",
+            "var_f35c5951": 1,
+            "var_5d4b5964": 19.75,
+            "var_36bf8e05": "#hash_19d7d5096c6408ad"
+        }
+    ],
+    "description": "#hash_15fc032d77c98e7f",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#radio",
+    "model": "#hash_4fe193b7484608f8",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_10f65ca45f134f57",
+    "type": "zmintel",
+    "season": 1,
+    "var_ad4ad686": "#omega",
+    "soundloop": "#hash_5db0167d85d70c82",
+    "name": "zmintel_gold_omega_radio_4",
+    "var_9be0526e": "#hash_20ea75a25d912949",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "var_348b91fd": "#radio",
+    "title": "#hash_48b39a5e4bbeb8d5",
+    "var_3bb3493d": "#hash_5cfda76b1b22212a",
+    "mapname": "#zm_gold"
+}

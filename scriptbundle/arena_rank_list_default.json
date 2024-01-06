@@ -1,0 +1,171 @@
+{
+    "var_72363c2b": [
+        {
+            "mode": "#stars_locked",
+            "rankicon": "#hash_6435a6f98ba3869c",
+            "var_1470ae4": "#hash_2c983e4f75378ae8",
+            "points": 3
+        },
+        {
+            "mode": "#stars_locked",
+            "rankicon": "#hash_6435a9f98ba38bb5",
+            "var_1470ae4": "#hash_2c98414f75379001",
+            "points": 3
+        },
+        {
+            "mode": "#stars_locked",
+            "rankicon": "#hash_6435a8f98ba38a02",
+            "var_1470ae4": "#hash_2c98404f75378e4e",
+            "points": 3
+        },
+        {
+            "mode": "#stars_locked",
+            "rankicon": "#hash_6435a3f98ba38183",
+            "var_1470ae4": "#hash_2c98434f75379367",
+            "points": 3
+        },
+        {
+            "mode": "#stars_locked",
+            "rankicon": "#hash_6435a2f98ba37fd0",
+            "var_1470ae4": "#hash_2c98424f753791b4",
+            "points": 4
+        },
+        {
+            "mode": "#stars_locked",
+            "rankicon": "#hash_6435a5f98ba384e9",
+            "var_1470ae4": "#hash_2c98454f753796cd",
+            "points": 4
+        },
+        {
+            "mode": "#stars_locked",
+            "rankicon": "#hash_6435a4f98ba38336",
+            "var_1470ae4": "#hash_2c98444f7537951a",
+            "points": 4
+        },
+        {
+            "mode": "#stars_locked",
+            "rankicon": "#hash_6435aff98ba395e7",
+            "var_1470ae4": "#hash_2c98374f75377f03",
+            "points": 4
+        },
+        {
+            "mode": "#stars_locked",
+            "rankicon": "#hash_6435aef98ba39434",
+            "var_1470ae4": "#hash_2c98364f75377d50",
+            "points": 4
+        },
+        {
+            "mode": "#hash_7a17290a4fb68726",
+            "rankicon": "#hash_643221f98ba06ec6",
+            "var_1470ae4": "#hash_2c94b94f75347312",
+            "points": 5
+        },
+        {
+            "mode": "#hash_7a17290a4fb68726",
+            "rankicon": "#hash_643222f98ba07079",
+            "var_1470ae4": "#hash_2c94ba4f753474c5",
+            "points": 5
+        },
+        {
+            "mode": "#hash_7a17290a4fb68726",
+            "rankicon": "#hash_64321ff98ba06b60",
+            "var_1470ae4": "#hash_2c94b74f75346fac",
+            "points": 5
+        },
+        {
+            "mode": "#hash_7a17290a4fb68726",
+            "rankicon": "#hash_643220f98ba06d13",
+            "var_1470ae4": "#hash_2c94b84f7534715f",
+            "points": 5
+        },
+        {
+            "mode": "#hash_7a17290a4fb68726",
+            "rankicon": "#hash_643225f98ba07592",
+            "var_1470ae4": "#hash_2c94b54f75346c46",
+            "points": 5
+        },
+        {
+            "mode": "#hash_7a17290a4fb68726",
+            "rankicon": "#hash_643226f98ba07745",
+            "var_1470ae4": "#hash_2c94b64f75346df9",
+            "points": 6
+        },
+        {
+            "mode": "#hash_7a17290a4fb68726",
+            "rankicon": "#hash_643223f98ba0722c",
+            "var_1470ae4": "#hash_2c94b34f753468e0",
+            "points": 6
+        },
+        {
+            "mode": "#hash_7a17290a4fb68726",
+            "rankicon": "#hash_643224f98ba073df",
+            "var_1470ae4": "#hash_2c94b44f75346a93",
+            "points": 6
+        },
+        {
+            "mode": "#hash_7a17290a4fb68726",
+            "rankicon": "#hash_643229f98ba07c5e",
+            "var_1470ae4": "#hash_2c94c14f753480aa",
+            "points": 6
+        },
+        {
+            "mode": "#hash_7a17290a4fb68726",
+            "rankicon": "#hash_64322af98ba07e11",
+            "var_1470ae4": "#hash_2c94c24f7534825d",
+            "points": 6
+        },
+        {
+            "mode": "#hash_7a17280a4fb68573",
+            "rankicon": "#hash_642ebbf98b9d8b9d",
+            "var_1470ae4": "#hash_2c91334f75315989",
+            "points": 7
+        },
+        {
+            "mode": "#hash_7a17280a4fb68573",
+            "rankicon": "#hash_642ebaf98b9d89ea",
+            "var_1470ae4": "#hash_2c91324f753157d6",
+            "points": 7
+        },
+        {
+            "mode": "#hash_7a17280a4fb68573",
+            "points": 7
+        },
+        {
+            "mode": "#hash_7a17280a4fb68573",
+            "points": 7
+        },
+        {
+            "mode": "#hash_7a17280a4fb68573",
+            "points": 7
+        },
+        {
+            "mode": "#hash_7a17280a4fb68573",
+            "points": 8
+        },
+        {
+            "mode": "#hash_7a17280a4fb68573",
+            "points": 8
+        },
+        {
+            "mode": "#hash_7a17280a4fb68573",
+            "points": 8
+        },
+        {
+            "mode": "#hash_7a17280a4fb68573",
+            "points": 8
+        },
+        {
+            "mode": "#hash_7a17280a4fb68573",
+            "points": 8
+        },
+        {
+            "mode": "#hash_7a17280a4fb68573",
+            "points": 8
+        },
+        {
+            "mode": "#master",
+            "points": 1
+        }
+    ],
+    "name": "arena_rank_list_default"
+}

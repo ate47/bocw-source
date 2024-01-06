@@ -439,7 +439,7 @@ function private function_e3cd54bf(attacker, einflictor, var_41c4d474, assisteds
     if (assistedsuicide) {
         return 0;
     }
-    if (level.var_9ea53546 == 2) {
+    if (level.killcammode == 2) {
         return 0;
     }
     if (self.var_4ef33446) {
@@ -519,7 +519,7 @@ function private function_42862f77(var_a2f12b49, attacker, deathtimeoffset, psof
     }
     self.respawntimerstarttime = gettime();
     keep_deathcam = 0;
-    if (level.var_9ea53546 == 2) {
+    if (level.killcammode == 2) {
         self.var_686890d5 = undefined;
         function_fcaec253();
         self.sessionstate = "dead";
@@ -550,7 +550,7 @@ function private function_42862f77(var_a2f12b49, attacker, deathtimeoffset, psof
         }
     }
     dokillcam = self function_e3cd54bf(attacker, var_a2f12b49.einflictor, var_41c4d474, assistedsuicide);
-    if (!self.cancelkillcam && dokillcam && level.var_9ea53546 == 1 && wasteamkill == 0) {
+    if (!self.cancelkillcam && dokillcam && level.killcammode == 1 && wasteamkill == 0) {
         self clientfield::set_player_uimodel("hudItems.killcamActive", 1);
         livesleft = !(level.numlives && !self.pers[#"lives"]) && !(level.numteamlives && !game.lives[self.team]);
         timeuntilspawn = globallogic_spawn::timeuntilspawn(1);
@@ -586,7 +586,7 @@ function private function_42862f77(var_a2f12b49, attacker, deathtimeoffset, psof
         globallogic_utils::waitfortimeornotify(secondary_deathcam, "end_death_delay");
         self notify(#"death_delay_finished");
     }
-    if (!self.cancelkillcam && dokillcam && level.var_9ea53546 == 1 && keep_deathcam) {
+    if (!self.cancelkillcam && dokillcam && level.killcammode == 1 && keep_deathcam) {
         self.sessionstate = "dead";
         self.spectatorclient = -1;
         self.killcamentity = -1;

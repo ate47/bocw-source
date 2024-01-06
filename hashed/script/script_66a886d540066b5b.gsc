@@ -12,12 +12,12 @@ function function_4e14a881() {
     if (!is_true(level.aat_in_use)) {
         return;
     }
-    aat::register("ammomod_shatterblast", #"hash_348a3e874fc4d9fd", "ui_icon_zombie_ammomod_shatterblast_stacked");
-    aat::register("ammomod_shatterblast_1", #"hash_348a3e874fc4d9fd", "ui_icon_zombie_ammomod_shatterblast_stacked");
-    aat::register("ammomod_shatterblast_2", #"hash_348a3e874fc4d9fd", "ui_icon_zombie_ammomod_shatterblast_stacked");
-    aat::register("ammomod_shatterblast_3", #"hash_348a3e874fc4d9fd", "ui_icon_zombie_ammomod_shatterblast_stacked");
-    aat::register("ammomod_shatterblast_4", #"hash_348a3e874fc4d9fd", "ui_icon_zombie_ammomod_shatterblast_stacked");
-    aat::register("ammomod_shatterblast_5", #"hash_348a3e874fc4d9fd", "ui_icon_zombie_ammomod_shatterblast_stacked");
+    aat::register("ammomod_shatterblast", #"zmui/zm_ammomod_shatterblast", "ui_icon_zombie_ammomod_shatterblast_stacked");
+    aat::register("ammomod_shatterblast_1", #"zmui/zm_ammomod_shatterblast", "ui_icon_zombie_ammomod_shatterblast_stacked");
+    aat::register("ammomod_shatterblast_2", #"zmui/zm_ammomod_shatterblast", "ui_icon_zombie_ammomod_shatterblast_stacked");
+    aat::register("ammomod_shatterblast_3", #"zmui/zm_ammomod_shatterblast", "ui_icon_zombie_ammomod_shatterblast_stacked");
+    aat::register("ammomod_shatterblast_4", #"zmui/zm_ammomod_shatterblast", "ui_icon_zombie_ammomod_shatterblast_stacked");
+    aat::register("ammomod_shatterblast_5", #"zmui/zm_ammomod_shatterblast", "ui_icon_zombie_ammomod_shatterblast_stacked");
     clientfield::register("toplayer", "ammomod_shatterblast_proc", 6000, 1, "counter", &function_d28d723d, 1, 0);
 }
 

@@ -1,0 +1,107 @@
+{
+    "itemlist": [
+        {
+            "minweight": 150,
+            "var_a6762160": "#perk_deadsilence_t9_item",
+            "maxweight": 200,
+            "available": -1
+        },
+        {
+            "minweight": 150,
+            "var_a6762160": "#perk_engineer_t9_item",
+            "maxweight": 200,
+            "available": -1
+        },
+        {
+            "minweight": 150,
+            "var_a6762160": "#perk_gungho_t9_item",
+            "maxweight": 200,
+            "available": -1
+        },
+        {
+            "minweight": 150,
+            "var_a6762160": "#perk_medic_t9_item",
+            "maxweight": 200,
+            "available": -1
+        },
+        {
+            "minweight": 150,
+            "var_a6762160": "#perk_scavenger_t9_item",
+            "maxweight": 200,
+            "available": -1
+        },
+        {
+            "minweight": 150,
+            "var_a6762160": "#perk_quartermaster_t9_item",
+            "maxweight": 200,
+            "available": -1
+        },
+        {
+            "minweight": 150,
+            "var_a6762160": "#perk_ghost_t9_item",
+            "maxweight": 200,
+            "available": -1
+        },
+        {
+            "minweight": 150,
+            "var_a6762160": "#perk_endurance_t9_item",
+            "maxweight": 200,
+            "available": -1
+        },
+        {
+            "minweight": 150,
+            "var_a6762160": "#perk_tacticalmask_t9_item",
+            "maxweight": 200,
+            "available": -1
+        },
+        {
+            "minweight": 150,
+            "var_a6762160": "#perk_threatperception_t9_item",
+            "maxweight": 200,
+            "available": -1
+        },
+        {
+            "minweight": 150,
+            "var_a6762160": "#perk_flakjacket_t9_item",
+            "maxweight": 200,
+            "available": -1
+        },
+        {
+            "minweight": 150,
+            "var_a6762160": "#perk_logistics_t9_item",
+            "maxweight": 200,
+            "available": -1
+        },
+        {
+            "minweight": 150,
+            "var_a6762160": "#perk_highvaluetarget_t9_item",
+            "maxweight": 200,
+            "available": -1
+        },
+        {
+            "minweight": 150,
+            "var_a6762160": "#perk_tracker_t9_item",
+            "maxweight": 200,
+            "available": -1
+        },
+        {
+            "minweight": 150,
+            "var_a6762160": "#perk_coldblooded_t9_item",
+            "maxweight": 200,
+            "available": -1
+        },
+        {
+            "minweight": 150,
+            "var_a6762160": "#perk_spycraft_t9_item",
+            "maxweight": 200,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "t9_perks_global",
+    "var_fde72c94": 100
+}

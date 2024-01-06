@@ -1,0 +1,52 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_cia_kick_mtxitem",
+            "itemid": "26986870"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_cia_mtxitem",
+            "itemid": "20084886"
+        },
+        {
+            "var_4a4bc969": "#loot_smg_spray_bp_milspec_mtxitem",
+            "itemid": "21074579"
+        },
+        {
+            "var_4a4bc969": "#sniper_standard_bp_milspec_mtxitem",
+            "itemid": "31352032"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_boom_box_mtxitem",
+            "itemid": "24437093"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s5_analog_retrotac_mtxitem",
+            "itemid": "19951115"
+        },
+        {
+            "var_4a4bc969": "#execution_078_mtxitem",
+            "itemid": "26964588"
+        },
+        {
+            "var_4a4bc969": "#emblems_r8g11_s5_mtxitem",
+            "itemid": "29947194"
+        },
+        {
+            "var_4a4bc969": "#callingcards_martialarts_s5_mtxitem",
+            "itemid": "22140950"
+        }
+    ],
+    "itemname": "#hash_ec718393d1711b2",
+    "var_375a1747": "#hash_155557f590a74e04",
+    "var_579fd6c3": 27,
+    "name": "operator_bundle_5036_sims_karate_master_mtxbundle",
+    "var_a788fada": "#hash_336ad282a5a9ae3f",
+    "var_22f91505": "#hash_2a263cd1d62785e1",
+    "var_566825be": "#hash_7bfa6b20b70bfa47",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_77d950ba04e64a1",
+    "var_db3e02ab": 2000,
+    "itemid": "21783301"
+}

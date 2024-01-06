@@ -102,7 +102,7 @@ function timeuntilspawn(includeteamkilldelay) {
 // Checksum 0x21ce3429, Offset: 0x700
 // Size: 0x90
 function allteamshaveexisted() {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (!level.everexisted[team]) {
             return 0;
         }
@@ -548,7 +548,7 @@ function spawnqueuedclient(dead_player_team, killer) {
         spawnqueuedclientonteam(spawn_team);
         return;
     }
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (team == dead_player_team) {
             continue;
         }
@@ -567,7 +567,7 @@ function allteamsnearscorelimit() {
     if (level.scorelimit <= 1) {
         return 0;
     }
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (!(game.stat[#"teamscores"][team] >= level.scorelimit - 1)) {
             return 0;
         }

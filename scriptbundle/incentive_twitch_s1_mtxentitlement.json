@@ -1,0 +1,18 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#emblems_twitch_s1_mtxitem",
+            "itemid": "20468852"
+        },
+        {
+            "var_4a4bc969": "#callingcards_twitch_s1_mtxitem",
+            "itemid": "22235793"
+        }
+    ],
+    "itemname": "#hash_76ccc2c7e6514eed",
+    "name": "incentive_twitch_s1_mtxentitlement",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "itemid": "19009660"
+}

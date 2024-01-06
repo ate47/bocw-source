@@ -11,7 +11,7 @@
 function autoexec __init__() {
     gametype = getdvarstring(#"g_gametype");
     switch (gametype) {
-    case #"hash_3c969849921481cc":
+    case #"fireteam_dirty_bomb":
         function_cbbf16a4();
         break;
     case #"hash_6463dea5fa2dbea5":
@@ -32,7 +32,7 @@ function autoexec __init__() {
     case #"hash_defdefdefdefdef0":
         break;
     }
-    namespace_1c7b37c6::item_replacer(&item_world_fixup::function_6991057, #"hash_5de6b5f9e52cac08", #"hash_2ddee7c1e1c21dd6");
+    namespace_1c7b37c6::item_replacer(&item_world_fixup::function_6991057, #"hash_5de6b5f9e52cac08", #"t9_empty_global");
     function_d5eb555d();
     function_f05c9e0a();
 }
@@ -93,10 +93,10 @@ function function_11109d50() {
 // Checksum 0x59800b3e, Offset: 0x470
 // Size: 0x104
 function function_bcd11f83() {
-    namespace_1c7b37c6::item_replacer(&item_world_fixup::function_6991057, #"hash_203198a6940492f9", #"hash_2ddee7c1e1c21dd6");
-    namespace_1c7b37c6::item_replacer(&item_world_fixup::function_6991057, #"hash_67a3062578c7c05e", #"hash_2ddee7c1e1c21dd6");
-    namespace_1c7b37c6::item_replacer(&item_world_fixup::function_6991057, #"hash_288f3ff6a80e4bba", #"hash_2ddee7c1e1c21dd6");
-    namespace_1c7b37c6::item_replacer(&item_world_fixup::function_6991057, #"hash_645d5733111a79", #"hash_2ddee7c1e1c21dd6");
+    namespace_1c7b37c6::item_replacer(&item_world_fixup::function_6991057, #"hash_203198a6940492f9", #"t9_empty_global");
+    namespace_1c7b37c6::item_replacer(&item_world_fixup::function_6991057, #"hash_67a3062578c7c05e", #"t9_empty_global");
+    namespace_1c7b37c6::item_replacer(&item_world_fixup::function_6991057, #"hash_288f3ff6a80e4bba", #"t9_empty_global");
+    namespace_1c7b37c6::item_replacer(&item_world_fixup::function_6991057, #"hash_645d5733111a79", #"t9_empty_global");
 }
 
 // Namespace namespace_e5326a0e/namespace_e5326a0e

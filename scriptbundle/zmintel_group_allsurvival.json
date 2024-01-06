@@ -1,0 +1,25 @@
+{
+    "var_156fdc30": [
+        {
+            "intellist": "#zmintel_list_survival_omega_intel_all"
+        },
+        {
+            "intellist": "#zmintel_list_survival_darkaether_intel_all"
+        },
+        {
+            "intellist": "#zmintel_list_survival_maxis_intel_all"
+        },
+        {
+            "intellist": "#zmintel_list_survival_requiem_intel_all"
+        },
+        {
+            "intellist": "#zmintel_list_survival_darkaether_computer"
+        },
+        {
+            "intellist": "#zmintel_list_survival_document_drops"
+        }
+    ],
+    "var_922067c4": "scriptbundle",
+    "type": "zmintel_group",
+    "name": "zmintel_group_allsurvival"
+}

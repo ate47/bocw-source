@@ -1,0 +1,61 @@
+{
+    "worldfx": [
+        {
+            "worldfx": "#hash_6c7840c9ca34f2a3"
+        }
+    ],
+    "objectives": [
+        {
+            "teamsizedescriptions": [
+                {
+                    "description": "#hash_670d71867b3adb47",
+                    "teamsize": 1
+                },
+                {
+                    "description": "#hash_3bea3433e79cdac4",
+                    "teamsize": 2
+                },
+                {
+                    "description": "#hash_2b13aa9e715385af",
+                    "teamsize": 4
+                }
+            ],
+            "description": "#hash_670d71867b3adb47"
+        },
+        {
+            "description": "#hash_670d72867b3adcfa"
+        }
+    ],
+    "var_a6616b9c": 1,
+    "amount": 1,
+    "var_fa988b4b": 60,
+    "var_922067c4": "scriptbundle",
+    "var_e8b98a8a": "#hash_5c22594837a0950a",
+    "model": "#hash_369dd14b2f9bb727",
+    "var_16e34ef4": 64,
+    "var_e9898330": "pingitemscorestreakflamethrower",
+    "weapon": "#hero_flamethrower",
+    "var_ac75b59f": -1,
+    "var_c2de1e75": "zm_item_pickup_rumble",
+    "type": "itemspawnentry",
+    "hintstring": "#weapon/hero_flamethrower",
+    "spawnsound": "zmb_powerup_kls_spawn",
+    "unlockableitemref": "#hash_40d3a04ab73da3fa",
+    "var_6b5d0aaa": 1,
+    "killstreak": "killstreak_flamethrower",
+    "var_4a1a4613": "armor_swap",
+    "name": "item_survival_scorestreak_flamethrower",
+    "displayname": "#weapon/hero_flamethrower",
+    "var_9e569978": 1,
+    "stackcount": 1,
+    "icon": "#hash_1c7d56f969519ed3",
+    "modelscale": 1,
+    "rarity": "Epic",
+    "var_1b0b57d1": "evt_item_despawn",
+    "handler": "#hash_1f0d729dc6dd1202",
+    "rewardname": "#zombie/dempsey",
+    "var_3af59a99": 1,
+    "pickupicon": "#hash_1c7d56f969519ed3",
+    "itemtype": "scorestreak",
+    "pickupsound": "zmb_powerup_kls_pickup"
+}

@@ -1,0 +1,39 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#tr_damagesemi_bp_wildchild_mtxitem",
+            "itemid": "30143289"
+        },
+        {
+            "var_4a4bc969": "#ar_slowhandling_bp_wildchild_mtxitem",
+            "itemid": "26532605"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_glasses_mustache_mtxitem",
+            "itemid": "31170840"
+        },
+        {
+            "var_4a4bc969": "#emblems_r8g_11_s5_animated_mtxitem",
+            "itemid": "23069965"
+        },
+        {
+            "var_4a4bc969": "#callingcards_psychadelic_64_s5_animated_mtxitem",
+            "itemid": "31076831"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_r8g_1015_s5_mtxitem",
+            "itemid": "22456277"
+        }
+    ],
+    "itemname": "#hash_4d54994bf15ebcd3",
+    "var_375a1747": "#hash_14b6ee44bc9d6f19",
+    "name": "blueprint_bundle_5014_type_63_spear_fighter_mtxbundle",
+    "var_a788fada": "#hash_71ef236f4259ec02",
+    "var_22f91505": "#hash_623237d095eeac45",
+    "var_566825be": "#hash_5e59750737b0360e",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_6b06799e21bc19fd",
+    "var_db3e02ab": 2000,
+    "itemid": "30717328"
+}

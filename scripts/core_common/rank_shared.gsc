@@ -461,7 +461,7 @@ function on_player_connect() {
 // Checksum 0xd2bcb464, Offset: 0x1c78
 // Size: 0x90
 function atleastoneplayeroneachteam() {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (!level.playercount[team]) {
             return 0;
         }

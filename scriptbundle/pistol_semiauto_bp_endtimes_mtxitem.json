@@ -1,0 +1,25 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#operator_bundle_3013_bulldozer_wasteland_survivor_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_3013_bulldozer_wasteland_survivor_alt_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_336dbb88b5110d9f",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_569081f9e03b8a29",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 3,
+    "var_46300498": 1,
+    "baseweapon": "#hash_33ed9170805d825c",
+    "name": "pistol_semiauto_bp_endtimes_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "18437303",
+    "blueprint": "#hash_336dbb88b5110d9f"
+}

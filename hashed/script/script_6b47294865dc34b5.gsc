@@ -225,10 +225,10 @@ function function_a7dc18f3() {
     if (!isdefined(level.var_40b02b72)) {
         player = getplayers()[0];
         player val::set("takedown_hit1_intro", "show_weapon_hud", 0);
-        thread namespace_e66dabaf::function_c6662dbb("intro_enemy_trucks", 1);
+        thread tkdn_heli_intro::function_c6662dbb("intro_enemy_trucks", 1);
         waitframe(4);
         level flag::set("intro_heli_lights_on");
-        thread namespace_e66dabaf::function_3d66ebcc("intro_heli_player", 1, 1);
+        thread tkdn_heli_intro::function_3d66ebcc("intro_heli_player", 1, 1);
         wait(2.5);
     }
     aiarray = getentarray("intro_enemy_truck_guys", "script_noteworthy", 1);

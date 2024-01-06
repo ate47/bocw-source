@@ -1,0 +1,120 @@
+{
+    "var_3e805062": [
+        {
+            "var_6be1bec7": "scope3x_t9_item_sr"
+        },
+        {
+            "var_6be1bec7": "reflex_t9_item_sr"
+        },
+        {
+            "var_6be1bec7": "holo_t9_item_sr"
+        },
+        {
+            "var_6be1bec7": "acog_t9_item_sr"
+        },
+        {
+            "var_6be1bec7": "elo_t9_item_sr"
+        },
+        {
+            "var_6be1bec7": "reddot_t9_item_sr"
+        },
+        {
+            "var_6be1bec7": "elo2_t9_item_sr"
+        },
+        {
+            "var_6be1bec7": "ir_t9_item_sr"
+        },
+        {
+            "var_6be1bec7": "reflex2_t9_item_sr"
+        },
+        {
+            "var_6be1bec7": "reflex3_t9_item_sr"
+        },
+        {
+            "var_6be1bec7": "scope4x_t9_item_sr"
+        },
+        {
+            "var_6be1bec7": "dualoptic_t9_item_sr"
+        }
+    ],
+    "var_a53e9db0": [
+        {
+            "var_6be1bec7": "steadyaim_t9_item_sr"
+        },
+        {
+            "var_6be1bec7": "grip_t9_item_sr"
+        },
+        {
+            "var_6be1bec7": "stalker_t9_item_sr"
+        },
+        {
+            "var_6be1bec7": "quickdraw_t9_item_sr"
+        },
+        {
+            "var_6be1bec7": "extclip_t9_item_sr"
+        },
+        {
+            "var_6be1bec7": "mixclip_t9_item_sr"
+        },
+        {
+            "var_6be1bec7": "compensator_t9_item_sr"
+        },
+        {
+            "var_6be1bec7": "barrel_t9_item_sr"
+        },
+        {
+            "var_6be1bec7": "suppressed_t9_item_sr"
+        },
+        {
+            "var_6be1bec7": "mixbarrel_t9_item_sr"
+        },
+        {
+            "var_6be1bec7": "heavy_t9_item_sr"
+        },
+        {
+            "var_6be1bec7": "fastreload_t9_item_sr"
+        },
+        {
+            "var_6be1bec7": "sprintout_t9_item_sr"
+        },
+        {
+            "var_6be1bec7": "mixstock_t9_item_sr"
+        }
+    ],
+    "var_a6616b9c": 1,
+    "amount": 1,
+    "var_fa988b4b": 60,
+    "var_922067c4": "scriptbundle",
+    "var_5dc4470b": -6,
+    "var_3e688854": -2,
+    "var_16e34ef4": 64,
+    "var_e9898330": "pingitemgunar",
+    "weapon": "#ar_slowfire_t9",
+    "var_ac75b59f": -1,
+    "var_c2de1e75": "zm_item_pickup_rumble",
+    "attachslotmuzzle": 1,
+    "attachslotbody": 1,
+    "type": "itemspawnentry",
+    "spawnsound": "zmb_powerup_eqp_spawn",
+    "attachslotstock": 1,
+    "var_4a1a4613": "armor_swap",
+    "name": "ar_slowfire_t9_purple_rand_item_sr",
+    "var_36781d9f": "wpn_drop_generic_delay",
+    "var_9e569978": 1,
+    "icon": "#hash_5f2c3dc20a920da5",
+    "var_8e212f46": 6,
+    "attachslotmagazine": 1,
+    "attachslotunderbarrel": 1,
+    "modelscale": 1,
+    "rarity": "Epic",
+    "var_1b0b57d1": "evt_item_despawn",
+    "attachslotbarrel": 1,
+    "var_d0e99a2a": 6,
+    "handler": "#hash_50375e5de228e9fc",
+    "attachslotoptics": 1,
+    "attachslothandle": 1,
+    "var_3af59a99": 1,
+    "pickupicon": "#hash_5f2c3dc20a920da5",
+    "itemtype": "weapon",
+    "pickupsound": "zmb_powerup_eqp_pickup"
+}

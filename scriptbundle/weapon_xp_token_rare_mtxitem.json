@@ -1,0 +1,66 @@
+{
+    "var_941096a8": [
+        {
+            "var_386af035": "#cdl_stage06_weapon_xp_token_rare_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage05_weapon_xp_token_rare_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage04_weapon_xp_token_rare_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage03_weapon_xp_token_rare_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage02_weapon_xp_token_rare_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage01_weapon_xp_token_rare_mtxentitlement"
+        },
+        {
+            "var_386af035": "#atvi_weapon_xp_token_30_mins_mtxentitlement"
+        },
+        {
+            "var_386af035": "#wsow_twitch_viewership_01_mtxentitlement"
+        }
+    ],
+    "var_247df572": [
+        {
+            "var_9eb58a68": "#hash_216b78734d3681bf",
+            "var_40006035": 1
+        },
+        {
+            "var_9eb58a68": "#hash_5f7f85d759f896c1",
+            "var_40006035": 2
+        },
+        {
+            "var_9eb58a68": "#hash_5f7f84d759f8950e",
+            "var_40006035": 3
+        },
+        {
+            "var_9eb58a68": "#hash_5f7f87d759f89a27",
+            "var_40006035": 4
+        },
+        {
+            "var_9eb58a68": "#hash_5f7f86d759f89874",
+            "var_40006035": 5
+        },
+        {
+            "var_9eb58a68": "#hash_5f7f89d759f89d8d",
+            "var_40006035": 6
+        }
+    ],
+    "itemname": "#weapon_xp_token_rare",
+    "var_e9d9a8d0": 1,
+    "var_728341a": 1,
+    "var_46300498": 1,
+    "var_b6d84534": 1,
+    "name": "weapon_xp_token_rare_mtxitem",
+    "category": "#hash_7c692b8eb31f67eb",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 2,
+    "itemid": "22654383",
+    "var_75b1b276": "#weapon_xp_token_rare"
+}

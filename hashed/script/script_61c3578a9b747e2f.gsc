@@ -34,12 +34,12 @@ function private autoexec __init__system__() {
 function private function_70a657d8() {
     clientfield::register("allplayers", "" + #"hash_1668fcf85f7c231", 1, 2, "int");
     clientfield::register("actor", "" + #"hash_70a85ea8b0e1b09c", 1, 2, "int");
-    namespace_1b527536::function_36e0540e(#"hash_148e5880a4f4d46f", 1, 50, #"hash_7bf08605b9c71df5");
-    namespace_1b527536::function_36e0540e(#"hash_3d62b9c92bbca893", 1, 50, #"hash_4164e3a7de7df719");
-    namespace_1b527536::function_36e0540e(#"hash_3d62bac92bbcaa46", 1, 50, #"hash_3cc62f6f8109f930");
-    namespace_1b527536::function_36e0540e(#"hash_3d62bbc92bbcabf9", 1, 50, #"hash_5321b5f240c2937f");
-    namespace_1b527536::function_36e0540e(#"hash_3d62bcc92bbcadac", 1, 50, #"hash_23f397bb4a5a35ee");
-    namespace_1b527536::function_36e0540e(#"hash_3d62bdc92bbcaf5f", 1, 50, #"hash_1598b77b28777bb5");
+    namespace_1b527536::function_36e0540e(#"hash_148e5880a4f4d46f", 1, 50, #"field_upgrade_lightning_links_item_sr");
+    namespace_1b527536::function_36e0540e(#"hash_3d62b9c92bbca893", 1, 50, #"field_upgrade_lightning_links_1_item_sr");
+    namespace_1b527536::function_36e0540e(#"hash_3d62bac92bbcaa46", 1, 50, #"field_upgrade_lightning_links_2_item_sr");
+    namespace_1b527536::function_36e0540e(#"hash_3d62bbc92bbcabf9", 1, 50, #"field_upgrade_lightning_links_3_item_sr");
+    namespace_1b527536::function_36e0540e(#"hash_3d62bcc92bbcadac", 1, 50, #"field_upgrade_lightning_links_4_item_sr");
+    namespace_1b527536::function_36e0540e(#"hash_3d62bdc92bbcaf5f", 1, 50, #"field_upgrade_lightning_links_5_item_sr");
     namespace_1b527536::function_dbd391bf(#"hash_148e5880a4f4d46f", &function_913fe266);
     namespace_1b527536::function_dbd391bf(#"hash_3d62b9c92bbca893", &function_913fe266);
     namespace_1b527536::function_dbd391bf(#"hash_3d62bac92bbcaa46", &function_913fe266);

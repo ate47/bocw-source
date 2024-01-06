@@ -1354,7 +1354,7 @@ function private function_8eaaf665() {
                         assert(p.var_f171f012.size == p.userdata.size, "<unknown string>");
                     #/
                 }
-                foreach (var_1ad28f57 in p.var_f171f012) {
+                foreach (index, var_1ad28f57 in p.var_f171f012) {
                     if (isentity(self)) {
                         userdata = undefined;
                         if (p.userdata.size > 0) {

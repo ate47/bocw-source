@@ -1,0 +1,71 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#s4_battle_pass_season_7_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#s4_battle_pass_season_7_premium_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#s4_battle_pass_season_8_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#s4_battle_pass_season_8_premium_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#s4_battle_pass_season_9_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#s4_battle_pass_season_9_premium_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#s4_battle_pass_season_10_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#s4_battle_pass_season_10_premium_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#s4_battle_pass_season_11_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#s4_battle_pass_season_11_premium_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#s4_battle_pass_season_12_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#s4_battle_pass_season_12_premium_mtxbundle"
+        }
+    ],
+    "var_c3ac006d": [
+        {
+            "var_9eb58a68": "#hash_11373ff52e30e66a",
+            "var_40006035": 8
+        },
+        {
+            "var_9eb58a68": "#hash_3e843bfb90afa6ef",
+            "var_40006035": 9
+        },
+        {
+            "var_9eb58a68": "#hash_64097be24849bddc",
+            "var_40006035": 10
+        },
+        {
+            "var_9eb58a68": "#hash_3ad177ed92c72961",
+            "var_40006035": 11
+        }
+    ],
+    "itemname": "#hash_db837973e199375",
+    "var_e9d9a8d0": 1,
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 7,
+    "var_46300498": 1,
+    "name": "s4_battle_pass_token_mtxitem",
+    "category": "#hash_1c5d758624c9b051",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "var_84dc7961": 1,
+    "itemid": "33984432"
+}

@@ -644,7 +644,7 @@ function function_9ebf012d() {
         if (isdefined(self.var_f4710251)) {
             targetplayer = getentbynum(self.var_f4710251);
             if (isdefined(targetplayer) && isplayer(targetplayer) && isalive(targetplayer)) {
-                new_origin = namespace_1332002f::function_e402b74e(self, targetplayer);
+                new_origin = squad_spawn::function_e402b74e(self, targetplayer);
             }
         }
     }
@@ -947,13 +947,13 @@ function function_8bc73ff9() {
             switch (var_12a9e30a.var_6032cf15) {
             case 1:
             case #"hash_defdefdefdefdef0":
-                var_65b6e624 = #"hash_35675bbd363f934a";
+                var_65b6e624 = #"armor_item_lv1_t9_sr";
                 break;
             case 2:
-                var_65b6e624 = #"hash_7777b2b5970da847";
+                var_65b6e624 = #"armor_item_lv2_t9_sr";
                 break;
             case 3:
-                var_65b6e624 = #"hash_7777b2b5970da847";
+                var_65b6e624 = #"armor_item_lv2_t9_sr";
                 break;
             }
             self namespace_dd7e54e3::give_armor(var_65b6e624);

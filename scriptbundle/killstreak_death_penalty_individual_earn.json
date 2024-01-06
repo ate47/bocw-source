@@ -1,0 +1,16 @@
+{
+    "hinttext": "#hash_4a2075bdc0b9c32e",
+    "var_922067c4": "scriptbundle",
+    "value2": "25",
+    "var_6006e991": "50",
+    "var_43883094": "0",
+    "var_dfed6968": "100",
+    "type": "gamesettings",
+    "label": "#hash_49fba92264d6ddf7",
+    "name": "killstreak_death_penalty_individual_earn",
+    "displayname": "#hash_4f4f4c365c2bce5a",
+    "var_9600a8ab": "#hash_94eb0e3329edf5f",
+    "var_54e336e4": 1,
+    "var_9de86f42": 4,
+    "setting": "killstreakDeathPenaltyIndividualEarn"
+}

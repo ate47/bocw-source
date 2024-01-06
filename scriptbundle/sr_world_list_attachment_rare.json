@@ -1,0 +1,113 @@
+{
+    "itemlist": [
+        {
+            "minweight": 10,
+            "var_a6762160": "#scope4x_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#reflex_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#barrel_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#extclip_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#grip_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#handle_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#mixclip_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#quickdraw_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#compensator_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#stalker_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#steadyaim_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#suppressed_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#mixbarrel_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#heavy_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#fastreload_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#sprintout_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#mixstock_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "sr_world_list_attachment_rare",
+    "var_fde72c94": 100
+}

@@ -1,0 +1,39 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#tr_powerburst_cb_bp_animemeow_mtxitem",
+            "itemid": "32204262"
+        },
+        {
+            "var_4a4bc969": "#ar_fastfire_bp_animeskater_mtxitem",
+            "itemid": "20931144"
+        },
+        {
+            "var_4a4bc969": "#emblems_ninetails_animated_mtxitem",
+            "itemid": "28467716"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_luckycat_mtxitem",
+            "itemid": "27125334"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_ru_truck_transport_mpx_bidol_mtxitem",
+            "itemid": "19964254"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_animepop_mtxitem",
+            "itemid": "18528325"
+        }
+    ],
+    "itemname": "#hash_45ad90a7a1bcb10b",
+    "var_375a1747": "#hash_1f6c7eaefeced2c5",
+    "name": "blueprint_bundle_3063_aug_anime_fox_mtxbundle",
+    "var_a788fada": "#hash_60556173cca89906",
+    "var_22f91505": "#hash_45b99f92225a7501",
+    "var_566825be": "#hash_5f2d07dac9f32c52",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_4f32aca9b4bf3dc1",
+    "var_db3e02ab": 2000,
+    "itemid": "25123108"
+}

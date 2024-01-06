@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#bundle_operator_1068_woods_truckin_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_4621468f1b51e8c7",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_5a2a56c1d971e1cd",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 1,
+    "var_46300498": 1,
+    "baseweapon": "#hash_5bf4dc6dcf1d2340",
+    "name": "smg_standard_bp_blkmamba_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 3,
+    "itemid": "29195157",
+    "blueprint": "#hash_4621468f1b51e8c7"
+}

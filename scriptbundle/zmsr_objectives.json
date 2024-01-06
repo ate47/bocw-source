@@ -1,0 +1,93 @@
+{
+    "var_be78e8da": [
+        {
+            "var_e014f23a": [
+                {
+                    "variantname": "#hash_6603dbcf5b7eec59"
+                },
+                {
+                    "variantname": "#hash_60673e8a67b28631"
+                }
+            ],
+            "objectivename": "#defend"
+        },
+        {
+            "var_e014f23a": [
+                {
+                    "variantname": "#hash_3a562a601777fa88"
+                },
+                {
+                    "variantname": "#hash_716fb03a307ed1cc"
+                }
+            ],
+            "objectivename": "#holdout"
+        },
+        {
+            "var_e014f23a": [
+                {
+                    "variantname": "#hash_45f927c8af6cf356"
+                },
+                {
+                    "variantname": "#hunt_raz"
+                },
+                {
+                    "variantname": "#hunt_steiner"
+                },
+                {
+                    "variantname": "#hash_7b3c572929f02d72"
+                },
+                {
+                    "variantname": "#hash_7ecff86523884e12"
+                }
+            ],
+            "objectivename": "#hash_d380cc11d47ae4"
+        },
+        {
+            "var_e014f23a": [
+                {
+                    "variantname": "#payload_noteleport"
+                },
+                {
+                    "variantname": "#payload_teleport"
+                }
+            ],
+            "objectivename": "#payload"
+        },
+        {
+            "var_e014f23a": [
+                {
+                    "variantname": "#hash_6fd7815198233fef"
+                },
+                {
+                    "variantname": "#hash_1890a723bc26c833"
+                }
+            ],
+            "objectivename": "#hash_68d86d0667a9989b"
+        },
+        {
+            "objectivename": "#hash_65660aeee07403d0"
+        },
+        {
+            "objectivename": "#transport"
+        }
+    ],
+    "var_f9b18059": [
+        {
+            "objectivename": "#hash_5afb912664f336f"
+        },
+        {
+            "var_e014f23a": [
+                {
+                    "variantname": "#reveal"
+                },
+                {
+                    "variantname": "#mq4"
+                }
+            ],
+            "objectivename": "#ee"
+        }
+    ],
+    "var_922067c4": "scriptbundle",
+    "type": "zmsrobjectivelist",
+    "name": "zmsr_objectives"
+}

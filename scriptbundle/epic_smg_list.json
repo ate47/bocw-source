@@ -1,0 +1,41 @@
+{
+    "itemlist": [
+        {
+            "minweight": 100,
+            "var_a6762160": "#smg_standard_t9_purple_rand_item_sr",
+            "maxweight": 100,
+            "available": -1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#smg_heavy_t9_purple_rand_item_sr",
+            "maxweight": 100,
+            "available": -1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#smg_handling_t9_purple_rand_item_sr",
+            "maxweight": 100,
+            "available": -1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#smg_burst_t9_purple_rand_item_sr",
+            "maxweight": 100,
+            "available": -1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#smg_capacity_t9_purple_rand_item_sr",
+            "maxweight": 100,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "epic_smg_list",
+    "var_fde72c94": 100
+}

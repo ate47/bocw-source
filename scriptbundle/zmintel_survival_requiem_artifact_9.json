@@ -1,0 +1,19 @@
+{
+    "description": "#hash_317aade576de4dc3",
+    "itemspawnentry": "#item_zmintel_survival_requiem_artifact_9",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#exploration",
+    "model": "#hash_2148c3abf3e5592c",
+    "var_824079e7": "#survival",
+    "uimodel": "#hash_7052cd62b9439efb",
+    "type": "zmintel",
+    "season": 3,
+    "var_ad4ad686": "#hash_1303dcb8d0e80e33",
+    "var_217aec15": "#hash_bdf51b19ed0e58c",
+    "name": "zmintel_survival_requiem_artifact_9",
+    "var_9be0526e": "#artifact",
+    "var_83e219de": "#hash_55af78a255e77597",
+    "var_53be913a": 5,
+    "title": "#hash_498faa07e796d909",
+    "mapname": "#wz_golova"
+}

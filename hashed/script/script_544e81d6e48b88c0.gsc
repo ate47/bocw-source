@@ -19,7 +19,7 @@ function function_99652b58(name, index, *team) {
 // Checksum 0xa61f3592, Offset: 0x130
 // Size: 0x8c
 function function_bb3bbc2c(name, index, *team) {
-    cameras = namespace_9a8780d8::function_5c7345a3(index, "targetname");
+    cameras = territory::function_5c7345a3(index, "targetname");
     if (cameras.size) {
         addobjectivecamerapoint(index, team, #"none", cameras[0].origin, cameras[0].angles);
     }

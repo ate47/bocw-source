@@ -1,0 +1,26 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_accurate_bp_fchance_mtxitem",
+            "itemid": "25599208"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_box_glove_mtxitem",
+            "itemid": "24742584"
+        },
+        {
+            "var_4a4bc969": "#callingcards_fightingchance_mtxitem",
+            "itemid": "23932267"
+        }
+    ],
+    "itemname": "#hash_722133f0f31727c2",
+    "var_375a1747": "#hash_6d88d6f889658070",
+    "name": "bundle_blueprint_1040_ar_accurate_fighting_chance_mtxbundle",
+    "var_22f91505": "#hash_c2756fe11780bc4",
+    "var_566825be": "#hash_57753518f508882f",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_704b5c622e1d19f4",
+    "var_db3e02ab": 2000,
+    "itemid": "25978713"
+}

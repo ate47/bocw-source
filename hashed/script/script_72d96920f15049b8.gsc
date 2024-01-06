@@ -45,8 +45,8 @@ function function_70a657d8(bundlename) {
 // Checksum 0xca8761a8, Offset: 0x4d8
 // Size: 0xb4
 function function_3675de8b() {
-    scene::add_scene_func(#"hash_5c750c55b4fa9700", &function_294e90d4, "play");
-    scene::add_scene_func(#"hash_5c750c55b4fa9700", &function_4e4267e0, "done");
+    scene::add_scene_func(#"chopper_gunner_door_open", &function_294e90d4, "play");
+    scene::add_scene_func(#"chopper_gunner_door_open", &function_4e4267e0, "done");
     bundle = killstreaks::get_script_bundle("chopper_gunner");
     /#
         assert(isdefined(bundle));
@@ -74,7 +74,7 @@ function function_d887d24d(var_e7230502) {
 // Size: 0x1072
 function function_5160bb1e(killstreaktype) {
     /#
-        assert(!isdefined(level.var_2d471fab));
+        assert(!isdefined(level.chopper_gunner));
     #/
     profilestart();
     if (is_true(self.isplanting) || is_true(self.isdefusing) || self util::isusingremote() || self iswallrunning() || self oob::isoutofbounds()) {
@@ -91,53 +91,53 @@ function function_5160bb1e(killstreaktype) {
         assert(isdefined(bundle));
     #/
     spawnpos = level.mapcenter + (0, bundle.var_42d6fcc1, bundle.var_4325e427);
-    level.var_2d471fab = spawnvehicle(bundle.ksvehicle, spawnpos, (0, 0, 0), "chopper_gunner");
-    level.var_2d471fab.identifier_weapon = getweapon("chopper_gunner");
-    level.var_2d471fab killstreaks::configure_team(killstreaktype, killstreak_id, self, "helicopter");
-    level.var_2d471fab.killstreak_id = killstreak_id;
-    level.var_2d471fab.destroyfunc = &function_f1d43cb2;
-    level.var_2d471fab.hardpointtype = "chopper_gunner";
-    level.var_2d471fab clientfield::set("enemyvehicle", 1);
-    level.var_2d471fab vehicle::init_target_group();
-    level.var_2d471fab.killstreak_timer_started = 0;
-    level.var_2d471fab.allowdeath = 0;
-    level.var_2d471fab.var_c31213a5 = 1;
-    level.var_2d471fab.playermovedrecently = 0;
-    level.var_2d471fab.soundmod = "default_loud";
+    level.chopper_gunner = spawnvehicle(bundle.ksvehicle, spawnpos, (0, 0, 0), "chopper_gunner");
+    level.chopper_gunner.identifier_weapon = getweapon("chopper_gunner");
+    level.chopper_gunner killstreaks::configure_team(killstreaktype, killstreak_id, self, "helicopter");
+    level.chopper_gunner.killstreak_id = killstreak_id;
+    level.chopper_gunner.destroyfunc = &function_f1d43cb2;
+    level.chopper_gunner.hardpointtype = "chopper_gunner";
+    level.chopper_gunner clientfield::set("enemyvehicle", 1);
+    level.chopper_gunner vehicle::init_target_group();
+    level.chopper_gunner.killstreak_timer_started = 0;
+    level.chopper_gunner.allowdeath = 0;
+    level.chopper_gunner.var_c31213a5 = 1;
+    level.chopper_gunner.playermovedrecently = 0;
+    level.chopper_gunner.soundmod = "default_loud";
     if (isdefined(level.registerwithhackertool)) {
-        level.var_2d471fab [[ level.registerwithhackertool ]](50, 10000);
+        level.chopper_gunner [[ level.registerwithhackertool ]](50, 10000);
     }
-    level.var_2d471fab.usage = [];
+    level.chopper_gunner.usage = [];
     level.destructible_callbacks[#"turret_destroyed"] = &function_aecfdb77;
-    level.var_2d471fab.shuttingdown = 0;
-    level.var_2d471fab.completely_shutdown = 0;
-    level.var_2d471fab thread heatseekingmissile::playlockonsoundsthread(self, #"hash_fa62d8cec85b1a0", #"hash_1683ed70beb3f2");
-    level.var_2d471fab.maxhealth = isdefined(killstreak_bundles::get_max_health("chopper_gunner")) ? killstreak_bundles::get_max_health("chopper_gunner") : 5000;
-    level.var_2d471fab.original_health = level.var_2d471fab.maxhealth;
-    level.var_2d471fab.health = level.var_2d471fab.maxhealth;
-    level.var_2d471fab.damagestate = 0;
-    level.var_2d471fab helicopter::function_76f530c7(bundle);
-    level.var_2d471fab setcandamage(1);
-    target_set(level.var_2d471fab, vectorscale((0, 0, -1), 100));
-    target_setallowhighsteering(level.var_2d471fab, 1);
-    level.var_2d471fab.numflares = 1;
-    level.var_2d471fab.fx_flare = bundle.var_22ab738b;
-    level.var_2d471fab helicopter::create_flare_ent(vectorscale((0, 0, -1), 150));
-    level.var_2d471fab thread heatseekingmissile::missiletarget_proximitydetonateincomingmissile(bundle, "death");
-    level.var_2d471fab.is_still_valid_target_for_stinger_override = &function_c2bfa7e1;
-    level.var_2d471fab thread killstreak_vehicle::function_d4896942(bundle, "chopper_gunner");
-    level.var_2d471fab thread killstreak_vehicle::function_31f9c728(bundle, "chopper_gunner", "exp_incoming_missile", "uin_ac130_alarm_missile_incoming");
-    level.var_2d471fab setrotorspeed(1);
-    level thread helicopter::function_eca18f00(level.var_2d471fab, bundle.var_f90029e2);
-    level.var_2d471fab util::make_sentient();
-    level.var_2d471fab.maxvisibledist = 16384;
-    level.var_2d471fab function_53d3b37a(bundle);
-    level.var_2d471fab.totalrockethits = 0;
-    level.var_2d471fab.turretrockethits = 0;
-    level.var_2d471fab.overridevehicledamage = &function_77784598;
+    level.chopper_gunner.shuttingdown = 0;
+    level.chopper_gunner.completely_shutdown = 0;
+    level.chopper_gunner thread heatseekingmissile::playlockonsoundsthread(self, #"hash_fa62d8cec85b1a0", #"hash_1683ed70beb3f2");
+    level.chopper_gunner.maxhealth = isdefined(killstreak_bundles::get_max_health("chopper_gunner")) ? killstreak_bundles::get_max_health("chopper_gunner") : 5000;
+    level.chopper_gunner.original_health = level.chopper_gunner.maxhealth;
+    level.chopper_gunner.health = level.chopper_gunner.maxhealth;
+    level.chopper_gunner.damagestate = 0;
+    level.chopper_gunner helicopter::function_76f530c7(bundle);
+    level.chopper_gunner setcandamage(1);
+    target_set(level.chopper_gunner, vectorscale((0, 0, -1), 100));
+    target_setallowhighsteering(level.chopper_gunner, 1);
+    level.chopper_gunner.numflares = 1;
+    level.chopper_gunner.fx_flare = bundle.var_22ab738b;
+    level.chopper_gunner helicopter::create_flare_ent(vectorscale((0, 0, -1), 150));
+    level.chopper_gunner thread heatseekingmissile::missiletarget_proximitydetonateincomingmissile(bundle, "death");
+    level.chopper_gunner.is_still_valid_target_for_stinger_override = &function_c2bfa7e1;
+    level.chopper_gunner thread killstreak_vehicle::function_d4896942(bundle, "chopper_gunner");
+    level.chopper_gunner thread killstreak_vehicle::function_31f9c728(bundle, "chopper_gunner", "exp_incoming_missile", "uin_ac130_alarm_missile_incoming");
+    level.chopper_gunner setrotorspeed(1);
+    level thread helicopter::function_eca18f00(level.chopper_gunner, bundle.var_f90029e2);
+    level.chopper_gunner util::make_sentient();
+    level.chopper_gunner.maxvisibledist = 16384;
+    level.chopper_gunner function_53d3b37a(bundle);
+    level.chopper_gunner.totalrockethits = 0;
+    level.chopper_gunner.turretrockethits = 0;
+    level.chopper_gunner.overridevehicledamage = &function_77784598;
     self thread namespace_f9b02f80::play_killstreak_start_dialog("chopper_gunner", self.team, killstreak_id);
-    level.var_2d471fab namespace_f9b02f80::play_pilot_dialog_on_owner("arrive", "chopper_gunner", killstreak_id);
-    level.var_2d471fab thread killstreaks::player_killstreak_threat_tracking("chopper_gunner", 0.866025);
+    level.chopper_gunner namespace_f9b02f80::play_pilot_dialog_on_owner("arrive", "chopper_gunner", killstreak_id);
+    level.chopper_gunner thread killstreaks::player_killstreak_threat_tracking("chopper_gunner", 0.866025);
     self stats::function_e24eec31(bundle.ksweapon, #"used", 1);
     self clientfield::set_to_player("" + #"hash_7c907650b14abbbe", 1);
     profilestop();
@@ -178,7 +178,7 @@ function function_5160bb1e(killstreaktype) {
             }
             yaw = function_26e7fb55(position, height, var_24af7a37);
             var_24af7a37 = (var_24af7a37[0], yaw, var_24af7a37[2]);
-            level.var_2d471fab vehicle::function_3f76e204(startnode, position, self.angles, height, var_24af7a37, var_77e38a57);
+            level.chopper_gunner vehicle::function_3f76e204(startnode, position, self.angles, height, var_24af7a37, var_77e38a57);
             var_e31d6cb1 = position;
         } else {
             position = self.origin;
@@ -212,7 +212,7 @@ function function_5160bb1e(killstreaktype) {
             pivot = struct::get("chopper_gunner_pivot", "targetname");
             yaw = function_26e7fb55(position, var_b0490eb9, self.angles);
             location = {#yaw:yaw, #origin:position};
-            level.var_2d471fab vehicle::function_bb9b43a9(startnode, pivot.origin, pivot.angles, location, height);
+            level.chopper_gunner vehicle::function_bb9b43a9(startnode, pivot.origin, pivot.angles, location, height);
             var_e31d6cb1 = position;
         }
     } else {
@@ -221,12 +221,12 @@ function function_5160bb1e(killstreaktype) {
     /#
         var_8cdd01c7 = getdvarint(#"hash_4536100039d07f70", 0);
         if (var_8cdd01c7 > 0) {
-            level.var_2d471fab pathmove(startnode, (startnode.origin[0], startnode.origin[1], var_8cdd01c7), startnode.angles);
+            level.chopper_gunner pathmove(startnode, (startnode.origin[0], startnode.origin[1], var_8cdd01c7), startnode.angles);
         }
     #/
-    level.var_2d471fab thread vehicle::get_on_and_go_path(startnode);
-    level.var_2d471fab thread function_696b3380();
-    level.var_2d471fab killstreakrules::function_2e6ff61a("chopper_gunner", killstreak_id, {#team:level.var_2d471fab.team, #origin:var_e31d6cb1});
+    level.chopper_gunner thread vehicle::get_on_and_go_path(startnode);
+    level.chopper_gunner thread function_696b3380();
+    level.chopper_gunner killstreakrules::function_2e6ff61a("chopper_gunner", killstreak_id, {#team:level.chopper_gunner.team, #origin:var_e31d6cb1});
     if (level.gameended === 1) {
         return 0;
     }
@@ -300,8 +300,8 @@ function function_dede0607(*isowner, killstreaktype) {
     /#
         assert(isplayer(self));
     #/
-    choppergunner = level.var_2d471fab;
-    self forcestreambundle(#"hash_5c750c55b4fa9700");
+    choppergunner = level.chopper_gunner;
+    self forcestreambundle(#"chopper_gunner_door_open");
     streamermodelhint(choppergunner.model, 7);
     self util::setusingremote("chopper_gunner");
     result = self killstreaks::init_ride_killstreak("chopper_gunner");
@@ -325,14 +325,14 @@ function function_dede0607(*isowner, killstreaktype) {
         assert(isdefined(bundle));
     #/
     choppergunner clientfield::set("" + #"hash_4ddf67f7aa0f6884", 1);
-    choppergunner thread scene::play(#"hash_5c750c55b4fa9700");
+    choppergunner thread scene::play(#"chopper_gunner_door_open");
     choppergunner setanim(#"hash_7483c325182bab52");
     var_df4a5052 = undefined;
     var_df4a5052 = choppergunner waittilltimeout(getanimlength(#"hash_7483c325182bab52") - float(function_60d95f53()) / 1000, #"hash_623a20b6b2608171");
     choppergunner clearanim(#"hash_7483c325182bab52", 0.2);
     choppergunner clientfield::set("" + #"hash_4ddf67f7aa0f6884", 0);
     if (var_df4a5052._notify == #"hash_623a20b6b2608171") {
-        choppergunner thread scene::stop(#"hash_5c750c55b4fa9700");
+        choppergunner thread scene::stop(#"chopper_gunner_door_open");
         if (sessionmodeiszombiesgame()) {
             choppergunner clientfield::set("" + #"hash_164696e86d29988d", 1);
         }
@@ -376,10 +376,10 @@ function private function_9bdafd36(var_8d7be67c = 1.5) {
 // Checksum 0x6653ed66, Offset: 0x2028
 // Size: 0xae
 function function_294e90d4(ents) {
-    ents[#"gunner"] function_2ac7114f(level.var_2d471fab.owner);
-    ents[#"hash_605537e4af34be37"] hide();
-    ents[#"hash_605537e4af34be37"] showtoplayer(level.var_2d471fab.owner);
-    level.var_2d471fab.gunner = ents[#"gunner"];
+    ents[#"gunner"] function_2ac7114f(level.chopper_gunner.owner);
+    ents[#"fakearms"] hide();
+    ents[#"fakearms"] showtoplayer(level.chopper_gunner.owner);
+    level.chopper_gunner.gunner = ents[#"gunner"];
 }
 
 // Namespace namespace_e8c18978/namespace_e8c18978
@@ -387,7 +387,7 @@ function function_294e90d4(ents) {
 // Checksum 0x8b187581, Offset: 0x20e0
 // Size: 0x34
 function function_4e4267e0(ents) {
-    ents[#"gunner"] linkto(level.var_2d471fab);
+    ents[#"gunner"] linkto(level.chopper_gunner);
 }
 
 // Namespace namespace_e8c18978/namespace_e8c18978
@@ -396,7 +396,7 @@ function function_4e4267e0(ents) {
 // Size: 0x4c
 function init_shared() {
     callback::on_connect(&onplayerconnect);
-    level.var_2d471fab = undefined;
+    level.chopper_gunner = undefined;
     if (!isdefined(level.var_e8fd1435)) {
         level.var_e8fd1435 = 5000;
     }
@@ -418,12 +418,12 @@ function onplayerconnect() {
 // Size: 0x150
 function activatemaingunner(killstreaktype) {
     attempts = 0;
-    while (isdefined(level.var_2d471fab)) {
+    while (isdefined(level.chopper_gunner)) {
         if (!self killstreakrules::iskillstreakallowed("chopper_gunner", self.team)) {
             return 0;
         }
-        if (isdefined(level.var_4cc7833a[#"hash_2f648e335983677a"])) {
-            if (!self [[ level.var_4cc7833a[#"hash_2f648e335983677a"] ]]()) {
+        if (isdefined(level.var_4cc7833a[#"chopper_gunner"])) {
+            if (!self [[ level.var_4cc7833a[#"chopper_gunner"] ]]()) {
                 return 0;
             }
         }
@@ -459,7 +459,7 @@ function function_71c46904(var_2921b547) {
     profilestart();
     killstreakrules::killstreakstop(self.killstreaktype, self.originalteam, self.killstreak_id, var_2921b547);
     self.var_957d409b = 1;
-    level.var_2d471fab = undefined;
+    level.chopper_gunner = undefined;
     profilestop();
 }
 
@@ -511,8 +511,8 @@ function function_bc344300() {
 // Checksum 0xfcc1c4d6, Offset: 0x2520
 // Size: 0x6c
 function ontimeoutcallback() {
-    if (!is_true(level.var_43da6545) && isdefined(level.var_2d471fab) && isdefined(level.var_2d471fab.owner)) {
-        function_cf58dcdd(level.var_2d471fab.owner);
+    if (!is_true(level.var_43da6545) && isdefined(level.chopper_gunner) && isdefined(level.chopper_gunner.owner)) {
+        function_cf58dcdd(level.chopper_gunner.owner);
     }
 }
 
@@ -642,7 +642,7 @@ function function_cf58dcdd(player, var_a6648780 = 1) {
         }
         player setmodellodbias(0);
         player givededicatedshadow(player);
-        player function_66b6e720(#"hash_5c750c55b4fa9700");
+        player function_66b6e720(#"chopper_gunner_door_open");
         player notify(#"gunner_left");
         if (isdefined(player.var_49f5e483)) {
             player.var_49f5e483 thread util::delayed_delete(3);
@@ -654,24 +654,24 @@ function function_cf58dcdd(player, var_a6648780 = 1) {
             player [[ level.var_399dc69a ]]();
         }
     }
-    if (!isdefined(level.var_2d471fab) || level.var_2d471fab.completely_shutdown === 1) {
+    if (!isdefined(level.chopper_gunner) || level.chopper_gunner.completely_shutdown === 1) {
         profilestop();
         return;
     }
-    level.var_2d471fab clientfield::set("vehicletransition", 0);
-    level.var_2d471fab.shuttingdown = 1;
-    level.var_2d471fab notify(#"gunner_left");
-    level.var_2d471fab.hardpointtype = "chopper_gunner";
-    level.var_2d471fab thread function_31d18ab9();
-    level.var_2d471fab vehicle::get_off_path();
-    level.var_2d471fab thread audio::sndupdatevehiclecontext(0);
+    level.chopper_gunner clientfield::set("vehicletransition", 0);
+    level.chopper_gunner.shuttingdown = 1;
+    level.chopper_gunner notify(#"gunner_left");
+    level.chopper_gunner.hardpointtype = "chopper_gunner";
+    level.chopper_gunner thread function_31d18ab9();
+    level.chopper_gunner vehicle::get_off_path();
+    level.chopper_gunner thread audio::sndupdatevehiclecontext(0);
     if (var_a6648780) {
-        planedir = anglestoforward(level.var_2d471fab.angles);
-        var_15f570c1 = level.var_2d471fab.origin + vectorscale(planedir, 30000);
-        level.var_2d471fab thread helicopter::heli_leave(var_15f570c1, 1);
+        planedir = anglestoforward(level.chopper_gunner.angles);
+        var_15f570c1 = level.chopper_gunner.origin + vectorscale(planedir, 30000);
+        level.chopper_gunner thread helicopter::heli_leave(var_15f570c1, 1);
     }
-    level.var_2d471fab.completely_shutdown = 1;
-    level.var_2d471fab.shuttingdown = 0;
+    level.chopper_gunner.completely_shutdown = 1;
+    level.chopper_gunner.shuttingdown = 0;
     profilestop();
 }
 

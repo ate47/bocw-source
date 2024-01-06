@@ -1,0 +1,42 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_damage_bp_arctic_chill_mtxitem",
+            "itemid": "26036738"
+        },
+        {
+            "var_4a4bc969": "#lmg_accurate_bp_ssovel_mtxitem",
+            "itemid": "33463530"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_icebreaker_mtxitem",
+            "itemid": "24301570"
+        },
+        {
+            "var_4a4bc969": "#callingcards_coldfront_mtxitem",
+            "itemid": "31571172"
+        },
+        {
+            "var_4a4bc969": "#emblems_coldfront_mtxitem",
+            "itemid": "19990129"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s1_analog_aviator_02_mtxitem",
+            "itemid": "24556574"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_coldfront_mtxitem",
+            "itemid": "18333537"
+        }
+    ],
+    "itemname": "#hash_3500715f3e12be14",
+    "var_375a1747": "#hash_1db3b91ec260061e",
+    "name": "bundle_vanity_1075_ar_damage_cold_front_mtxbundle",
+    "var_22f91505": "#hash_c7c0199ff2c8d4",
+    "var_566825be": "#hash_7ba790144e0f4191",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_41ccd412d25f1bc4",
+    "var_db3e02ab": 2000,
+    "itemid": "26047774"
+}

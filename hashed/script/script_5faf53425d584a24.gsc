@@ -200,15 +200,15 @@ function private function_23b313bd(player, eventtype, eventdata, var_c5a66313) {
                     switch (inventoryitem.var_a6762160.itemtype) {
                     case #"tactical":
                     case #"equipment":
-                    case #"hash_3fd3555ae0c9b5c4":
+                    case #"field_upgrade":
                         player item_inventory::equip_equipment(inventoryitem);
                         break;
                     case #"health":
                         player item_inventory::equip_health(inventoryitem);
                         break;
-                    case #"hash_63c2e39c90346280":
-                    case #"hash_63c2e49c90346433":
-                    case #"hash_63c2e59c903465e6":
+                    case #"perk_tier_3":
+                    case #"perk_tier_2":
+                    case #"perk_tier_1":
                         player item_inventory::function_854cf2c3(inventoryitem);
                         break;
                     case #"scorestreak":

@@ -1,0 +1,1295 @@
+{
+    "mtxentitlementlist": [
+        {
+            "var_386af035": "#2fa_signup_bonus_mtxentitlement"
+        },
+        {
+            "var_386af035": "#ambassador_callingcard_1_mtxentitlement"
+        },
+        {
+            "var_386af035": "#ambassador_callingcard_2_mtxentitlement"
+        },
+        {
+            "var_386af035": "#ambassador_charm_1_mtxentitlement"
+        },
+        {
+            "var_386af035": "#ambassador_charm_2_mtxentitlement"
+        },
+        {
+            "var_386af035": "#ambassador_emblem_1_mtxentitlement"
+        },
+        {
+            "var_386af035": "#ambassador_emblem_2_mtxentitlement"
+        },
+        {
+            "var_386af035": "#ambassador_sticker_1_mtxentitlement"
+        },
+        {
+            "var_386af035": "#ambassador_sticker_2_mtxentitlement"
+        },
+        {
+            "var_386af035": "#ambassador_wz_callingcard_1_mtxentitlement"
+        },
+        {
+            "var_386af035": "#ambassador_wz_callingcard_2_mtxentitlement"
+        },
+        {
+            "var_386af035": "#ambassador_wz_callingcard_3_mtxentitlement"
+        },
+        {
+            "var_386af035": "#ambassador_wz_callingcard_4_mtxentitlement"
+        },
+        {
+            "var_386af035": "#ambassador_wz_sticker_1_mtxentitlement"
+        },
+        {
+            "var_386af035": "#ambassador_wz_sticker_2_mtxentitlement"
+        },
+        {
+            "var_386af035": "#atvi_battle_pass_token_mtxentitlement"
+        },
+        {
+            "var_386af035": "#atvi_battlepass_xp_token_15_mins_mtxentitlement"
+        },
+        {
+            "var_386af035": "#atvi_battlepass_xp_token_30_mins_mtxentitlement"
+        },
+        {
+            "var_386af035": "#atvi_battlepass_xp_token_45_mins_mtxentitlement"
+        },
+        {
+            "var_386af035": "#atvi_battlepass_xp_token_60_mins_mtxentitlement"
+        },
+        {
+            "var_386af035": "#atvi_digital_callingcard_s5_mtxentitlement"
+        },
+        {
+            "var_386af035": "#atvi_player_xp_token_15_mins_mtxentitlement"
+        },
+        {
+            "var_386af035": "#atvi_player_xp_token_30_mins_mtxentitlement"
+        },
+        {
+            "var_386af035": "#atvi_player_xp_token_45_mins_mtxentitlement"
+        },
+        {
+            "var_386af035": "#atvi_player_xp_token_60_mins_mtxentitlement"
+        },
+        {
+            "var_386af035": "#atvi_tier_skip_mtxentitlement"
+        },
+        {
+            "var_386af035": "#atvi_tier_skip_10_mtxentitlement"
+        },
+        {
+            "var_386af035": "#atvi_tier_skip_15_mtxentitlement"
+        },
+        {
+            "var_386af035": "#atvi_tier_skip_20_mtxentitlement"
+        },
+        {
+            "var_386af035": "#atvi_tier_skip_25_mtxentitlement"
+        },
+        {
+            "var_386af035": "#atvi_tier_skip_5_mtxentitlement"
+        },
+        {
+            "var_386af035": "#atvi_weapon_xp_token_15_mins_mtxentitlement"
+        },
+        {
+            "var_386af035": "#atvi_weapon_xp_token_30_mins_mtxentitlement"
+        },
+        {
+            "var_386af035": "#atvi_weapon_xp_token_45_mins_mtxentitlement"
+        },
+        {
+            "var_386af035": "#atvi_weapon_xp_token_60_mins_mtxentitlement"
+        },
+        {
+            "var_386af035": "#atvi_westerndigital_1100_cp_mtxentitlement"
+        },
+        {
+            "var_386af035": "#atvi_westerndigital_2400_cp_mtxentitlement"
+        },
+        {
+            "var_386af035": "#hash_3d30d4822836c71a"
+        },
+        {
+            "var_386af035": "#bnet_cdl_launch_pack_mtxentitlement"
+        },
+        {
+            "var_386af035": "#bnet_code_pack_mtxentitlement"
+        },
+        {
+            "var_386af035": "#bnet_consumable_test_mtxentitlement"
+        },
+        {
+            "var_386af035": "#bnet_currency_pack_1100_mtxentitlement"
+        },
+        {
+            "var_386af035": "#bnet_currency_pack_13000_mtxentitlement"
+        },
+        {
+            "var_386af035": "#bnet_currency_pack_200_mtxentitlement"
+        },
+        {
+            "var_386af035": "#bnet_currency_pack_21000_mtxentitlement"
+        },
+        {
+            "var_386af035": "#bnet_currency_pack_2400_mtxentitlement"
+        },
+        {
+            "var_386af035": "#bnet_currency_pack_500_mtxentitlement"
+        },
+        {
+            "var_386af035": "#bnet_currency_pack_5000_mtxentitlement"
+        },
+        {
+            "var_386af035": "#bnet_currency_pack_9500_mtxentitlement"
+        },
+        {
+            "var_386af035": "#hash_510f4c3304e7f15a"
+        },
+        {
+            "var_386af035": "#hash_5b37d50625252d7d"
+        },
+        {
+            "var_386af035": "#hash_3730a937cc208890"
+        },
+        {
+            "var_386af035": "#hash_5b27b40df682e2f3"
+        },
+        {
+            "var_386af035": "#hash_86158b9508b2b1e"
+        },
+        {
+            "var_386af035": "#hash_4661be8d38fc9a72"
+        },
+        {
+            "var_386af035": "#hash_5d7881ce0cd7ef90"
+        },
+        {
+            "var_386af035": "#bnet_preorder_items_mtxentitlement"
+        },
+        {
+            "var_386af035": "#bnet_standard_edition_consumables_mtxentitlement"
+        },
+        {
+            "var_386af035": "#hash_11488fd493ca0329"
+        },
+        {
+            "var_386af035": "#bnet_starter_pack_season_01_mtxentitlement"
+        },
+        {
+            "var_386af035": "#bnet_test_code_pack_mtxentitlement"
+        },
+        {
+            "var_386af035": "#bnet_ultimate_edition_consumables_mtxentitlement"
+        },
+        {
+            "var_386af035": "#bnet_ultimate_edition_items_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_champs_viewership_ar_mercenary_bp_leagueplay_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_champs_viewership_callingcards_codtiming_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_champs_viewership_callingcards_elite_s6_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_champs_viewership_callingcards_proplayer_s6_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_champs_viewership_callingcards_thunderclap_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_champs_viewership_dallasempire_vivid_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_champs_viewership_emblems_captainscup_s6_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_champs_viewership_emblems_nobots_s6_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_champs_viewership_emblems_squad_s6_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_champs_viewership_emblems_stacked_s6_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_champs_viewership_emblems_sweep_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_champs_viewership_lathieves_huke_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_champs_viewership_lathieves_venom_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_champs_viewership_londonroyalravens_paulehx_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_champs_viewership_londonroyalravens_shane_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_champs_viewership_londonroyalravens_zed_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_champs_viewership_minnesotarokkr_standy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_champs_viewership_parislegion_temp_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_champs_viewership_parislegion_zaptius_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_champs_viewership_seattlesurge_classic_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_crm_incentive_s1_1_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_crm_incentive_s1_2_callingcard_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage01_player_xp_token_common_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage01_player_xp_token_epic_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage01_player_xp_token_rare_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage01_weapon_xp_token_common_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage01_weapon_xp_token_epic_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage01_weapon_xp_token_rare_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage02_player_xp_token_common_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage02_player_xp_token_epic_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage02_player_xp_token_rare_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage02_weapon_xp_token_common_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage02_weapon_xp_token_epic_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage02_weapon_xp_token_rare_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage03_player_xp_token_common_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage03_player_xp_token_epic_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage03_player_xp_token_rare_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage03_weapon_xp_token_common_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage03_weapon_xp_token_epic_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage03_weapon_xp_token_rare_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage04_player_xp_token_common_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage04_player_xp_token_epic_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage04_player_xp_token_rare_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage04_weapon_xp_token_common_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage04_weapon_xp_token_epic_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage04_weapon_xp_token_rare_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage05_player_xp_token_common_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage05_player_xp_token_epic_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage05_player_xp_token_rare_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage05_weapon_xp_token_common_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage05_weapon_xp_token_epic_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage05_weapon_xp_token_rare_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage06_player_xp_token_common_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage06_player_xp_token_epic_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage06_player_xp_token_rare_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage06_weapon_xp_token_common_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage06_weapon_xp_token_epic_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage06_weapon_xp_token_rare_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_empire_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_empire_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_empire_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_faze_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_faze_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_faze_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_guerrillas_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_guerrillas_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_guerrillas_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_legion_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_legion_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_legion_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_mutineers_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_mutineers_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_mutineers_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_optic_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_optic_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_optic_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_ravens_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_ravens_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_ravens_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_rokkr_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_rokkr_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_rokkr_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_subliners_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_subliners_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_subliners_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_surge_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_surge_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_surge_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_thieves_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_thieves_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_thieves_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_ultra_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_ultra_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_team_pack_01_ultra_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_viewership_s1_callingcard_01_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_viewership_s1_callingcard_02_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_viewership_s1_callingcard_03_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_viewership_s1_callingcard_04_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_viewership_s1_callingcard_05_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_viewership_s1_callingcard_06_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_viewership_s1_callingcard_07_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_viewership_s1_callingcard_08_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_viewership_s1_callingcard_09_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_viewership_s1_charm_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_viewership_s1_emblem_01_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_viewership_s1_emblem_02_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_viewership_s1_emblem_03_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_viewership_s1_emblem_04_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cortez_standard_tracker_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cortez_ultimate_tracker_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_3304_cdl_stage_pack_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_3304_cdl_stage_pack_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_3304_cdl_stage_pack_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_3306_cdl_team_supporter_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_3306_cdl_team_supporter_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_3306_cdl_team_supporter_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_3307_code_medic_pack_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_3307_code_medic_pack_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_3307_code_medic_pack_steam_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_3307_code_medic_pack_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_4062_portnova_pro_pack_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_4062_portnova_pro_pack_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_4062_portnova_pro_pack_steam_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_4062_portnova_pro_pack_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_5101_elite_pro_pack_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_5101_elite_pro_pack_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_5101_elite_pro_pack_steam_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_5101_elite_pro_pack_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_5401_cdl_supporter_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_5602_cdl_champs_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_5602_cdl_champs_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_5602_cdl_champs_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_5604_cdl_viewership_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_5605_wsow_pack_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_5605_wsow_pack_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_5605_wsow_pack_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_5605_wsow_pack_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_6022_hudson_chemical_response_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_6022_hudson_chemical_response_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_6022_hudson_chemical_response_steam_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_6022_hudson_chemical_response_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_6501_ultimate_pro_pack_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_6501_ultimate_pro_pack_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_6501_ultimate_pro_pack_steam_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_6501_ultimate_pro_pack_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_winback_10_tiers_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_winback_10_tiers_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_winback_10_tiers_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_winback_20_tiers_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_winback_20_tiers_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_winback_20_tiers_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_3302_crm_medic_blueprint_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_app_launch_callingcard_1_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_app_launch_callingcard_2_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_app_launch_callingcard_3_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_app_launch_callingcard_4_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_app_launch_callingcard_5_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_app_s1_callingcard_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_app_s1_charm_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_app_s1_emblem_1_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_app_s1_emblem_2_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_app_s1_sticker_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_app_s2_callingcard_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_app_s2_charm_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_app_s2_emblem_1_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_app_s2_emblem_2_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_app_s2_sticker_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_app_s3_calling_card_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_app_s3_emblem_1_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_app_s3_emblem_2_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_app_s3_sticker_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_arg_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_arg_callingcard_1_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_arg_callingcard_2_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_arg_callingcard_3_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_arg_callingcard_4_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_arg_callingcard_5_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_arg_callingcard_6_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_arg_callingcard_7_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_astro_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_atvi_apac_tiers_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_bigben_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_bundle_0001_blackfriday_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_bundle_2701_price_operator_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_code_partner_1_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_code_partner_2_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_code_partner_3_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_crm_birthday_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_crm_callingcard_s1_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_crm_callingcard_s2_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_crm_callingcard_s3_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_crm_callingcard_s4_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_crm_callingcard_s5_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_crm_callingcard_s6_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_crm_emblem_s1_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_crm_emblem_s2_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_crm_emblem_s3_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_crm_emblem_s4_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_crm_emblem_s5_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_crm_emblem_s6_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_doritos_callingcard_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_doritos_charm_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_doritos_sticker_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_drkn_sticker_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_email_optin_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_gamefuel_skin_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_jacklinks_callingcard_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_jacklinks_charm_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_jacklinks_emblem_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_kontrolfreek_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_loyalty_callingcard_1_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_loyalty_callingcard_2_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_loyalty_callingcard_3_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_loyalty_callingcard_4_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_loyalty_callingcard_5_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_monster_callingcard_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_monster_charm_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_monster_emblem_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_mountaindew_charm_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_mountaindew_emblem_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_nvidia_callingcard_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_nvidia_charm_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_nvidia_emblem_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_papajohns_callingcard_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_papajohns_charm_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_papajohns_emblem_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_physicalretail_callingcard_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_physicalretail_charm_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_physicalretail_emblem_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_public_alpha_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_public_beta_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_sky_skin_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_totinos_callingcard_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_totinos_emblem_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_totinos_skin_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_tshirtpartner_charm_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_twitch_s1_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_twitch_s2_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_usretailer_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_xfinity_callingcard_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_xfinity_emblem_mtxentitlement"
+        },
+        {
+            "var_386af035": "#incentive_xfinity_skin_mtxentitlement"
+        },
+        {
+            "var_386af035": "#login_ae_product_mtxentitlement"
+        },
+        {
+            "var_386af035": "#msft_cdl_launch_pack_mtxentitlement"
+        },
+        {
+            "var_386af035": "#msft_crossgen_edition__preorder_items_mtxentitlement"
+        },
+        {
+            "var_386af035": "#msft_crossgen_edition_items_mtxentitlement"
+        },
+        {
+            "var_386af035": "#msft_standard_edition_items_mtxentitlement"
+        },
+        {
+            "var_386af035": "#msft_standard_edition_preorder_items_mtxentitlement"
+        },
+        {
+            "var_386af035": "#msft_standard_edition_unlock_items_mtxentitlement"
+        },
+        {
+            "var_386af035": "#msft_starter_pack_season_01_mtxentitlement"
+        },
+        {
+            "var_386af035": "#msft_ultimate_edition_items_mtxentitlement"
+        },
+        {
+            "var_386af035": "#msft_ultimate_edition_preorder_items_mtxentitlement"
+        },
+        {
+            "var_386af035": "#msft_ultimate_edition_unlock_items_mtxentitlement"
+        },
+        {
+            "var_386af035": "#msft_ultimate_igs_edition_items_mtxentitlement"
+        },
+        {
+            "var_386af035": "#operator_bundle_5007_stone_ultraskin_unkillable_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#operator_bundle_5007_stone_ultraskin_unkillable_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#operator_bundle_5007_stone_ultraskin_unkillable_steam_mtxentitlement"
+        },
+        {
+            "var_386af035": "#operator_bundle_5007_stone_ultraskin_unkillable_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#pro_pack_retail_sticker_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#pro_pack_retail_sticker_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#pro_pack_retail_sticker_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#pro_pack_s02_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#pro_pack_s02_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#pro_pack_s02_steam_mtxentitlement"
+        },
+        {
+            "var_386af035": "#pro_pack_s02_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#ps4_code_pack_mtxentitlement"
+        },
+        {
+            "var_386af035": "#ps4_currency_pack_1100_mtxentitlement"
+        },
+        {
+            "var_386af035": "#ps4_currency_pack_13000_mtxentitlement"
+        },
+        {
+            "var_386af035": "#ps4_currency_pack_200_mtxentitlement"
+        },
+        {
+            "var_386af035": "#ps4_currency_pack_21000_mtxentitlement"
+        },
+        {
+            "var_386af035": "#ps4_currency_pack_2400_mtxentitlement"
+        },
+        {
+            "var_386af035": "#ps4_currency_pack_500_mtxentitlement"
+        },
+        {
+            "var_386af035": "#ps4_currency_pack_5000_mtxentitlement"
+        },
+        {
+            "var_386af035": "#ps4_currency_pack_9500_mtxentitlement"
+        },
+        {
+            "var_386af035": "#s01_preseason_login_bonus_mtxentitlement"
+        },
+        {
+            "var_386af035": "#s1_code_bowl_wxp_mtxentitlement"
+        },
+        {
+            "var_386af035": "#s1_code_bowl_xp_mtxentitlement"
+        },
+        {
+            "var_386af035": "#s1_doritos_twitch_rivals_xp_mtxentitlement"
+        },
+        {
+            "var_386af035": "#s1_twitch_drop_wxp_mtxentitlement"
+        },
+        {
+            "var_386af035": "#s3_trailer_callingcard_01_mtxentitlement"
+        },
+        {
+            "var_386af035": "#s3_trailer_callingcard_02_mtxentitlement"
+        },
+        {
+            "var_386af035": "#s3_trailer_callingcard_03_mtxentitlement"
+        },
+        {
+            "var_386af035": "#s4_beta_level_10_mtxentitlement"
+        },
+        {
+            "var_386af035": "#s4_beta_level_20_mtxentitlement"
+        },
+        {
+            "var_386af035": "#s4_beta_level_30_mtxentitlement"
+        },
+        {
+            "var_386af035": "#s4_beta_participation_mtxentitlement"
+        },
+        {
+            "var_386af035": "#season_4_cdl_viewership_01_mtxentitlement"
+        },
+        {
+            "var_386af035": "#season_4_cdl_viewership_02_mtxentitlement"
+        },
+        {
+            "var_386af035": "#season_4_cdl_viewership_03_mtxentitlement"
+        },
+        {
+            "var_386af035": "#season_4_cdl_viewership_04_mtxentitlement"
+        },
+        {
+            "var_386af035": "#season_4_cdl_viewership_05_mtxentitlement"
+        },
+        {
+            "var_386af035": "#season_4_cdl_viewership_06_mtxentitlement"
+        },
+        {
+            "var_386af035": "#season_4_cdl_viewership_07_mtxentitlement"
+        },
+        {
+            "var_386af035": "#season_4_cdl_viewership_08_mtxentitlement"
+        },
+        {
+            "var_386af035": "#season_4_cdl_viewership_09_mtxentitlement"
+        },
+        {
+            "var_386af035": "#sony_cdl_launch_pack_mtxentitlement"
+        },
+        {
+            "var_386af035": "#sony_confrontation_weapons_pack_mtxentitlement"
+        },
+        {
+            "var_386af035": "#sony_landseaair_battlepass_pack_mtxentitlement"
+        },
+        {
+            "var_386af035": "#sony_psplus_season_01_mtxentitlement"
+        },
+        {
+            "var_386af035": "#sony_psplus_season_02_mtxentitlement"
+        },
+        {
+            "var_386af035": "#sony_psplus_season_03_mtxentitlement"
+        },
+        {
+            "var_386af035": "#sony_psplus_season_04_mtxentitlement"
+        },
+        {
+            "var_386af035": "#sony_psplus_season_05_mtxentitlement"
+        },
+        {
+            "var_386af035": "#sony_psplus_season_06_mtxentitlement"
+        },
+        {
+            "var_386af035": "#sony_starter_pack_season_01_mtxentitlement"
+        },
+        {
+            "var_386af035": "#steam_code_pack_mtxentitlement"
+        },
+        {
+            "var_386af035": "#steam_confrontation_weapons_pack_mtxentitlement"
+        },
+        {
+            "var_386af035": "#steam_currency_pack_1100_mtxentitlement"
+        },
+        {
+            "var_386af035": "#steam_currency_pack_13000_mtxentitlement"
+        },
+        {
+            "var_386af035": "#steam_currency_pack_200_mtxentitlement"
+        },
+        {
+            "var_386af035": "#steam_currency_pack_21000_mtxentitlement"
+        },
+        {
+            "var_386af035": "#steam_currency_pack_2400_mtxentitlement"
+        },
+        {
+            "var_386af035": "#steam_currency_pack_500_mtxentitlement"
+        },
+        {
+            "var_386af035": "#steam_currency_pack_5000_mtxentitlement"
+        },
+        {
+            "var_386af035": "#steam_currency_pack_9500_mtxentitlement"
+        },
+        {
+            "var_386af035": "#steam_starter_pack_season_01_mtxentitlement"
+        },
+        {
+            "var_386af035": "#studio_launch_incentives_mtxentitlement"
+        },
+        {
+            "var_386af035": "#studio_s01_incentives_mtxentitlement"
+        },
+        {
+            "var_386af035": "#studio_s02_incentives_mtxentitlement"
+        },
+        {
+            "var_386af035": "#hash_263d0b6ed7f047d2"
+        },
+        {
+            "var_386af035": "#hash_120a9662d9a181b3"
+        },
+        {
+            "var_386af035": "#hash_46abcfb650995e98"
+        },
+        {
+            "var_386af035": "#hash_5f496765a10ec891"
+        },
+        {
+            "var_386af035": "#twitch_prime_bundle_6403_duos_mtxentitlement"
+        },
+        {
+            "var_386af035": "#twitch_prime_bundle_6503_dec_mtxentitlement"
+        },
+        {
+            "var_386af035": "#twitch_prime_wsow_bundle_5603_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2021_base_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2021_base_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2021_base_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2021_crossgen_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2021_crossgen_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2021_cw_halloween_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2021_cw_halloween_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2021_cw_halloween_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2021_cw_mastercraft_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2021_cw_mastercraft_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2021_cw_mastercraft_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2021_cw_operator_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2021_cw_operator_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2021_cw_operator_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2021_cw_tierskips_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2021_cw_tierskips_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2021_cw_tierskips_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2021_standard_tracker_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2021_ult_igs_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2021_ult_igs_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2021_ult_igs_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2021_ultimate_tracker_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2022_crossgen_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2022_crossgen_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2022_standard_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2022_vault_igs_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2022_vault_igs_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2022_vault_igs_pc_upgrade_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2022_vault_igs_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2022_vault_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#upsell_2022_vault_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#wsow_twitch_viewership_01_mtxentitlement"
+        },
+        {
+            "var_386af035": "#xb1_code_pack_mtxentitlement"
+        },
+        {
+            "var_386af035": "#xb1_currency_pack_1100_mtxentitlement"
+        },
+        {
+            "var_386af035": "#xb1_currency_pack_13000_mtxentitlement"
+        },
+        {
+            "var_386af035": "#xb1_currency_pack_200_mtxentitlement"
+        },
+        {
+            "var_386af035": "#xb1_currency_pack_21000_mtxentitlement"
+        },
+        {
+            "var_386af035": "#xb1_currency_pack_2400_mtxentitlement"
+        },
+        {
+            "var_386af035": "#xb1_currency_pack_500_mtxentitlement"
+        },
+        {
+            "var_386af035": "#xb1_currency_pack_5000_mtxentitlement"
+        },
+        {
+            "var_386af035": "#xb1_currency_pack_9500_mtxentitlement"
+        }
+    ],
+    "name": "mtxentitlementlist"
+}

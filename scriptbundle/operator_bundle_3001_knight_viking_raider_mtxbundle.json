@@ -1,0 +1,52 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_uk_pl_sas_blackknight_mtxitem",
+            "itemid": "22994080"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_uk_sas_mtxitem",
+            "itemid": "27107479"
+        },
+        {
+            "var_4a4bc969": "#ar_mercenary_bp_knight_mtxitem",
+            "itemid": "28021684"
+        },
+        {
+            "var_4a4bc969": "#lmg_accurate_bp_knight_mtxitem",
+            "itemid": "20283825"
+        },
+        {
+            "var_4a4bc969": "#reticle_77_mtxitem",
+            "itemid": "27842891"
+        },
+        {
+            "var_4a4bc969": "#execution_203_mtxitem",
+            "itemid": "26981579"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_longship_mtxitem",
+            "itemid": "27444942"
+        },
+        {
+            "var_4a4bc969": "#emblems_vikingrider_animated_mtxitem",
+            "itemid": "31338084"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s3_vts_31_final_animation_mtxitem",
+            "itemid": "30592650"
+        }
+    ],
+    "itemname": "#hash_41d82571bdd2b5e6",
+    "var_375a1747": "#hash_1cdeb2a89937b3b0",
+    "var_579fd6c3": 25,
+    "name": "operator_bundle_3001_knight_viking_raider_mtxbundle",
+    "var_a788fada": "#hash_191c19c530ce834b",
+    "var_22f91505": "#hash_8a3c2dec0b27f95",
+    "var_566825be": "#hash_66a26a60a4107eb3",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_6a58464bf7372f4d",
+    "var_db3e02ab": 2000,
+    "itemid": "30650392"
+}

@@ -1,0 +1,22 @@
+{
+    "var_941096a8": [
+        {
+            "var_386af035": "#firstparty_bundle_4062_portnova_pro_pack_sy_mtxentitlement"
+        }
+    ],
+    "itemname": "#hash_7663748afca09c32",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_9ddeb6e64345b0e",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 4,
+    "var_46300498": 1,
+    "baseweapon": "#hash_6251778e2d3b9a64",
+    "name": "smg_heavy_bp_carbonchrome_sy_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "24165003",
+    "blueprint": "#hash_7663748afca09c32"
+}

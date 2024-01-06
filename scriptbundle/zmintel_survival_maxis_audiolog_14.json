@@ -1,0 +1,129 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_e01f4b52fc4f03d",
+            "var_f35c5951": 0.44,
+            "var_5d4b5964": 1.02,
+            "var_36bf8e05": "#hash_91120ad698da9b4"
+        },
+        {
+            "var_46bd7973": "#hash_b996d49d746df16",
+            "var_f35c5951": 1.41,
+            "var_5d4b5964": 2.9,
+            "var_36bf8e05": "#hash_1ff763870be7da81"
+        },
+        {
+            "var_46bd7973": "#hash_e01f2b52fc4ecd7",
+            "var_f35c5951": 4.5,
+            "var_5d4b5964": 2.88,
+            "var_36bf8e05": "#hash_7681a96b4481741a"
+        },
+        {
+            "var_46bd7973": "#hash_b996b49d746dbb0",
+            "var_f35c5951": 7.07,
+            "var_5d4b5964": 3.93,
+            "var_36bf8e05": "#hash_6df6dd8864dfb987"
+        },
+        {
+            "var_46bd7973": "#hash_e01f0b52fc4e971",
+            "var_f35c5951": 10.73,
+            "var_5d4b5964": 2.24,
+            "var_36bf8e05": "#hash_31abaa952190cc00"
+        },
+        {
+            "var_46bd7973": "#hash_b997149d746e5e2",
+            "var_f35c5951": 13.04,
+            "var_5d4b5964": 3.39,
+            "var_36bf8e05": "#hash_d482fecb0e0cf25"
+        },
+        {
+            "var_46bd7973": "#hash_e01eeb52fc4e60b",
+            "var_f35c5951": 16.74,
+            "var_5d4b5964": 7.62,
+            "var_36bf8e05": "#hash_5e2632cf6f6fb996"
+        },
+        {
+            "var_46bd7973": "#hash_b996f49d746e27c",
+            "var_f35c5951": 24.22,
+            "var_5d4b5964": 2.26,
+            "var_36bf8e05": "#hash_5ab5ea1a0c3e0ebb"
+        },
+        {
+            "var_46bd7973": "#hash_e01ecb52fc4e2a5",
+            "var_f35c5951": 26.81,
+            "var_5d4b5964": 4.52,
+            "var_36bf8e05": "#hash_4b9a6e769ece6bac"
+        },
+        {
+            "var_46bd7973": "#hash_b997549d746ecae",
+            "var_f35c5951": 31.53,
+            "var_5d4b5964": 5.53,
+            "var_36bf8e05": "#hash_4f3b89567b09b0a9"
+        },
+        {
+            "var_46bd7973": "#hash_123fd6e02ba1a60e",
+            "var_f35c5951": 36.89,
+            "var_5d4b5964": 10.58,
+            "var_36bf8e05": "#hash_5636498513bdd347"
+        },
+        {
+            "var_46bd7973": "#hash_7c93db78cd6d2f45",
+            "var_f35c5951": 47.73,
+            "var_5d4b5964": 1.77,
+            "var_36bf8e05": "#hash_7226056c3d9abd4e"
+        },
+        {
+            "var_46bd7973": "#hash_123fd4e02ba1a2a8",
+            "var_f35c5951": 50.15,
+            "var_5d4b5964": 7.38,
+            "var_36bf8e05": "#hash_55c67b88b79bf4e1"
+        },
+        {
+            "var_46bd7973": "#hash_7c93d978cd6d2bdf",
+            "var_f35c5951": 58.12,
+            "var_5d4b5964": 2.24,
+            "var_36bf8e05": "#hash_7efd20a98f3985c8"
+        },
+        {
+            "var_46bd7973": "#hash_123fdae02ba1acda",
+            "var_f35c5951": 61,
+            "var_5d4b5964": 5.89,
+            "var_36bf8e05": "#hash_3484e9a47a69663"
+        },
+        {
+            "var_46bd7973": "#hash_7c93d778cd6d2879",
+            "var_f35c5951": 67.04,
+            "var_5d4b5964": 1.73,
+            "var_36bf8e05": "#hash_30c9c754935714c2"
+        },
+        {
+            "var_46bd7973": "#hash_123fd8e02ba1a974",
+            "var_f35c5951": 68.58,
+            "var_5d4b5964": 4.89,
+            "var_36bf8e05": "#hash_434e5fee5cc454bd"
+        },
+        {
+            "var_46bd7973": "#hash_6dae3ed24e0ca4d7",
+            "var_f35c5951": 74,
+            "var_5d4b5964": 0.1
+        }
+    ],
+    "description": "#hash_4ecc415ebe0b9ccf",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#exploration",
+    "model": "#hash_4c7e76f2c17678e3",
+    "var_824079e7": "#survival",
+    "uimodel": "#hash_43c3b478e6bb838",
+    "var_2a12d36": 1,
+    "type": "zmintel",
+    "season": 5,
+    "var_ad4ad686": "#hash_5ad2dea4c296de59",
+    "soundloop": "#hash_2e77024e1f0a29f1",
+    "name": "zmintel_survival_maxis_audiolog_14",
+    "var_9be0526e": "#audiolog",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "var_348b91fd": "#tape",
+    "title": "#hash_2acecdec820ad105",
+    "var_3bb3493d": "#hash_698bfdeaefb3b715"
+}

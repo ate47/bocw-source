@@ -43,7 +43,7 @@ function private function_5700f119() {
 // Checksum 0xdafefb24, Offset: 0x210
 // Size: 0x44
 function function_a4cec352(instance) {
-    function_871649b9(instance, #"hash_797f22647c9675c5", #"hash_48180c936f74c980", 5);
+    function_871649b9(instance, #"hash_797f22647c9675c5", #"sr_harvesting_zombie_essence", 5);
 }
 
 // Namespace namespace_1ab3fb7b/namespace_1ab3fb7b
@@ -51,7 +51,7 @@ function function_a4cec352(instance) {
 // Checksum 0xb47422f5, Offset: 0x260
 // Size: 0x4c
 function function_225965a4(instance) {
-    function_871649b9(instance, #"hash_1f16d05c9834eacd", #"hash_3c7dd21773d294f4", 25, vectorscale((0, 0, -1), 12));
+    function_871649b9(instance, #"hash_1f16d05c9834eacd", #"sr_harvesting_zombie_essence_small", 25, vectorscale((0, 0, -1), 12));
 }
 
 // Namespace namespace_1ab3fb7b/namespace_1ab3fb7b
@@ -59,7 +59,7 @@ function function_225965a4(instance) {
 // Checksum 0x698eca37, Offset: 0x2b8
 // Size: 0x44
 function function_7a918a3f(instance) {
-    function_871649b9(instance, #"hash_773e201984b53b32", #"hash_50291762896b25c8", 5);
+    function_871649b9(instance, #"hash_773e201984b53b32", #"sr_harvesting_scrap", 5);
 }
 
 // Namespace namespace_1ab3fb7b/namespace_1ab3fb7b

@@ -1,0 +1,13 @@
+{
+    "killcambackdist": 24,
+    "killcamtype": 4,
+    "type": "killcam",
+    "var_5022638e": 0.1,
+    "vmtype": "none",
+    "killcamgroundupdist": 100,
+    "name": "killcam_land_mine",
+    "killcamupdist": 8,
+    "var_7f018185": 0.001,
+    "var_e7bad890": "explosive",
+    "killcamgroundbackdist": 500
+}

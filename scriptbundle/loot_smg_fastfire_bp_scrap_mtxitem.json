@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#operator_bundle_7011_bomber_scrapyard_tracer_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_f3cd90959c37f99",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_2f29628c021af25f",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 9,
+    "var_46300498": 1,
+    "baseweapon": "#hash_6436cdb615a2bb79",
+    "name": "loot_smg_fastfire_bp_scrap_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "24113967",
+    "blueprint": "#hash_f3cd90959c37f99"
+}

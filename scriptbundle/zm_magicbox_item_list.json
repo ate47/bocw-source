@@ -1,0 +1,29 @@
+{
+    "itemlist": [
+        {
+            "minweight": 1,
+            "var_a6762160": "#zm_magicbox_equipment_list",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#zm_magicbox_scorestreak_list",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#zm_magicbox_weapons_list",
+            "maxweight": 1,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "zm_magicbox_item_list",
+    "var_fde72c94": 100
+}

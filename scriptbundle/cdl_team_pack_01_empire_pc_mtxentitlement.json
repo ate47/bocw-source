@@ -1,0 +1,58 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#po_c_t9_gen_pl_esports_male_empire_home_pc_mtxitem",
+            "itemid": "19591254"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_pl_esports_male_mtxitem",
+            "itemid": "31358670"
+        },
+        {
+            "var_4a4bc969": "#po_c_t9_gen_pl_esports_male_empire_away_pc_mtxitem",
+            "itemid": "20792348"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_pl_esports_male_warsaw_mtxitem",
+            "itemid": "24054907"
+        },
+        {
+            "var_4a4bc969": "#camo_t9_cdl_dal_pc_mtxitem",
+            "itemid": "22027250"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_esports_empire_pc_mtxitem",
+            "itemid": "31974315"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_sneaker_empire_pc_mtxitem",
+            "itemid": "30840446"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_cdl_teamsticker_dal_1_pc_base_mtxitem",
+            "itemid": "31905352"
+        },
+        {
+            "var_4a4bc969": "#callingcards_cdl_teamcallingcards_dal_1_pc_base_mtxitem",
+            "itemid": "29887018"
+        },
+        {
+            "var_4a4bc969": "#emblems_cdl_teamemblem_010_dal_1_pc_base_mtxitem",
+            "itemid": "28956620"
+        }
+    ],
+    "itemname": "#hash_186435a825c5e5fb",
+    "var_247d9ed7": "cdl_team_pack_01_empire",
+    "var_208d76b5": "#hash_2076527f625b5ba3",
+    "var_70f66e54": "#hash_1c66f20b1ca95f51",
+    "name": "cdl_team_pack_01_empire_pc_mtxentitlement",
+    "var_a788fada": "#hash_2a708aa328bdb089",
+    "var_22f91505": "#hash_71d95bec404c14b5",
+    "var_566825be": "#hash_1c896a82f1048481",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "var_4e46b1b3": "#pc",
+    "itemid": "19873800",
+    "var_a592ce5": 1
+}

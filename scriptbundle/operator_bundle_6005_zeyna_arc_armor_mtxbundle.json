@@ -1,0 +1,63 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_52d646786248900d"
+        },
+        {
+            "var_fe10649e": "#hash_1ae62ca927d61239"
+        },
+        {
+            "var_fe10649e": "#hash_1ae629a927d60d20"
+        },
+        {
+            "var_fe10649e": "#hash_1ae62aa927d60ed3"
+        }
+    ],
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_fra_pl_dgse_arc_mtxitem",
+            "itemid": "23974260"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_fra_dgse_mtxitem",
+            "itemid": "18057790"
+        },
+        {
+            "var_4a4bc969": "#smg_standard_cb_bp_zenya_mtxitem",
+            "itemid": "18229407"
+        },
+        {
+            "var_4a4bc969": "#ar_mercenary_bp_zenya_mtxitem",
+            "itemid": "25485294"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_knee_armor_mtxitem",
+            "itemid": "21547483"
+        },
+        {
+            "var_4a4bc969": "#callingcards_paladin_s6_animated_mtxitem",
+            "itemid": "28091529"
+        },
+        {
+            "var_4a4bc969": "#emblems_paladin_s6_animated_mtxitem",
+            "itemid": "20034603"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_paladin_s6_mtxitem",
+            "itemid": "21208145"
+        }
+    ],
+    "itemname": "#hash_4f6c383ca6e4554f",
+    "var_375a1747": "#hash_52d646786248900d",
+    "var_3040f0d1": "#hash_52d646786248900d",
+    "var_8ee7db29": 1,
+    "name": "operator_bundle_6005_zeyna_arc_armor_mtxbundle",
+    "var_a788fada": "#hash_55a4a36079bea844",
+    "var_22f91505": "#hash_2c08b8af9ef5ac0c",
+    "var_566825be": "#hash_593598564d4f7ed0",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_4d4d9f0c68d677c",
+    "var_db3e02ab": 750,
+    "itemid": "22651541"
+}

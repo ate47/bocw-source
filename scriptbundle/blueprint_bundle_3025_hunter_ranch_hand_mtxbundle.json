@@ -1,0 +1,47 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_gen_pl_starter1_hunter_inferno_mtxitem",
+            "itemid": "26648119"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_starter1_mtxitem",
+            "itemid": "31474701"
+        },
+        {
+            "var_4a4bc969": "#smg_capacity_bp_rranch_mtxitem",
+            "itemid": "17847206"
+        },
+        {
+            "var_4a4bc969": "#melee_sledgehammer_bp_rranch_mtxitem",
+            "itemid": "22976540"
+        },
+        {
+            "var_4a4bc969": "#callingcards_bruiser_mtxitem",
+            "itemid": "20454442"
+        },
+        {
+            "var_4a4bc969": "#emblems_s3_vts_final_35_animation_mtxitem",
+            "itemid": "23915993"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_ru_tank_t72_assembly_mpx_oldwest_mtxitem",
+            "itemid": "18818000"
+        },
+        {
+            "var_4a4bc969": "#reticle_82_mtxitem",
+            "itemid": "29693232"
+        }
+    ],
+    "itemname": "#hash_486baefbae82b88a",
+    "var_375a1747": "#hash_4d832f049e5c4e48",
+    "name": "blueprint_bundle_3025_hunter_ranch_hand_mtxbundle",
+    "var_a788fada": "#hash_299fe977ab650123",
+    "var_22f91505": "#hash_3df659ee94103ba3",
+    "var_566825be": "#hash_65292a0d1758e5cb",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_506e99ac84492247",
+    "var_db3e02ab": 2000,
+    "itemid": "30592362"
+}

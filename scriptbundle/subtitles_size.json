@@ -1,0 +1,36 @@
+{
+    "option_dependencies": [
+        {
+            "var_1643d946": "0",
+            "var_6825bdb": "#pc_subtitles",
+            "operator": "=="
+        }
+    ],
+    "options": [
+        {
+            "label": "#hash_3a4da1e62340059a",
+            "value": "24"
+        },
+        {
+            "label": "#hash_4323345477104cf9",
+            "value": "29"
+        }
+    ],
+    "var_276859e2": 3,
+    "description": "#hash_54a4520747d780ac",
+    "var_9bc3be7": 1,
+    "var_4ced19ab": 1,
+    "var_10e01ad5": 1,
+    "var_71620d66": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 0.1,
+    "name": "subtitles_size",
+    "displayname": "#hash_3aa4855a8478b384",
+    "var_500458ac": 10,
+    "var_926d1be9": 0.01,
+    "var_66faec87": 1,
+    "statname": "subtitles_size",
+    "var_6f00a61a": 1.1,
+    "var_d4e288e": 1
+}

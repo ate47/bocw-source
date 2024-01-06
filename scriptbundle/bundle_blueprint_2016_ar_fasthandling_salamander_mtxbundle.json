@@ -1,0 +1,35 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_fasthandling_bp_triton_mtxitem",
+            "itemid": "20451997"
+        },
+        {
+            "var_4a4bc969": "#emblems_codename_13_animated_mtxitem",
+            "itemid": "26651476"
+        },
+        {
+            "var_4a4bc969": "#emblems_codename_10_animated_mtxitem",
+            "itemid": "23844709"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_biohazard_sign_mtxitem",
+            "itemid": "29970481"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_gekoskeleton_mtxitem",
+            "itemid": "23919446"
+        }
+    ],
+    "itemname": "#hash_588202ede199ac44",
+    "var_375a1747": "#hash_23bf56dc82e3f702",
+    "name": "bundle_blueprint_2016_ar_fasthandling_salamander_mtxbundle",
+    "var_a788fada": "#hash_3fde13c09b560c3b",
+    "var_22f91505": "#hash_9e129117a6ec6cc",
+    "var_566825be": "#hash_5d0062ab17f82d63",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_2d4dbe4b1de2243c",
+    "var_db3e02ab": 2000,
+    "itemid": "30339114"
+}

@@ -52,7 +52,7 @@ function private function_bb1ab64b() {
 // Checksum 0x70ae8fc8, Offset: 0x2c0
 // Size: 0xa2
 function function_43a7bead() {
-    foreach (_ in level.squads) {
+    foreach (squad, _ in level.squads) {
         if (self function_59396fe8(squad)) {
             return squad;
         }
@@ -156,7 +156,7 @@ function function_a65e2082(squad) {
 // Checksum 0x522dfeaa, Offset: 0x780
 // Size: 0xa2
 function function_4f237b02() {
-    foreach (_ in level.squads) {
+    foreach (squad, _ in level.squads) {
         if (self function_a65e2082(squad)) {
             return squad;
         }
@@ -169,7 +169,7 @@ function function_4f237b02() {
 // Checksum 0x220339f5, Offset: 0x830
 // Size: 0x12a
 function function_33843308(status) {
-    foreach (squad in level.squads) {
+    foreach (var_bdb3f6a6, squad in level.squads) {
         if (status == #"game") {
             if (isdefined(squad.voip) && squad.voip != #"game") {
                 continue;

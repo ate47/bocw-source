@@ -26,7 +26,7 @@ function init() {
 // Size: 0x34
 function function_a6f7e3da() {
     if (self.var_1a69e47f.size >= 14) {
-        zm_utility::function_659819fa(#"hash_47d5fff4205db171");
+        zm_utility::function_659819fa(#"zm_silver_craft");
     }
 }
 
@@ -58,7 +58,7 @@ function function_df8c20ce(s_params) {
                 }
             } else if (e_player.var_287dbab8 === ai_type) {
                 e_player.var_df6978da.e_player = 1;
-                e_player zm_utility::function_659819fa(#"hash_309368ef8f9b86a3");
+                e_player zm_utility::function_659819fa(#"zm_silver_mega");
             }
         }
         if (!isdefined(e_player.kill_count)) {
@@ -70,7 +70,7 @@ function function_df8c20ce(s_params) {
             }
             if (e_player.kill_count >= level.var_d8104f84) {
                 e_player.var_12445983.e_player = 1;
-                e_player zm_utility::function_659819fa(#"hash_69455e37009492aa");
+                e_player zm_utility::function_659819fa(#"zm_silver_wing");
             }
         }
     }
@@ -101,7 +101,7 @@ function function_e361ce1b() {
     self endon(#"disconnect");
     level endon(#"end_game");
     level flag::wait_till("pap_quest_completed");
-    self zm_utility::function_659819fa(#"hash_c33cd90f4b67bfe");
+    self zm_utility::function_659819fa(#"zm_silver_pap");
 }
 
 // Namespace namespace_c3c0ef6f/namespace_c3c0ef6f
@@ -112,7 +112,7 @@ function function_9a4f865b() {
     self endon(#"disconnect");
     level endon(#"end_game");
     level waittill(#"main_quest_completed");
-    self zm_utility::function_659819fa(#"hash_5fb48c8391ec697a");
+    self zm_utility::function_659819fa(#"zm_silver_pa");
 }
 
 // Namespace namespace_c3c0ef6f/namespace_c3c0ef6f
@@ -126,7 +126,7 @@ function function_ceba8321() {
     /#
         self iprintlnbold("<unknown string>");
     #/
-    self zm_utility::function_659819fa(#"hash_5faa668391e3d463");
+    self zm_utility::function_659819fa(#"zm_silver_ww");
 }
 
 // Namespace namespace_c3c0ef6f/namespace_c3c0ef6f
@@ -156,7 +156,7 @@ function function_f5b265ac() {
         if (isdefined(var_a26574af)) {
             if (var_a26574af == "zone_proto_start" || var_a26574af == "zone_proto_start2") {
                 if (level.round_number >= var_84d02e05) {
-                    self zm_utility::function_659819fa(#"hash_6567a09c3046170f");
+                    self zm_utility::function_659819fa(#"zm_silver_start");
                     break;
                 }
             } else {

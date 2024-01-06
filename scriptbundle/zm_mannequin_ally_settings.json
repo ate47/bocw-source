@@ -1,0 +1,22 @@
+{
+    "var_15c336d1": [
+        {
+            "start_round": 1,
+            "var_928e93a0": 1
+        }
+    ],
+    "var_604a84a1": 1,
+    "scoreevent": "#hash_74cf811cb0b52ac6",
+    "var_922067c4": "scriptbundle",
+    "maxhealth": 1,
+    "var_a3160086": 50,
+    "var_7b22b800": 1,
+    "var_fc420d71": 1,
+    "name": "zm_mannequin_ally_settings",
+    "var_628192b0": 1,
+    "var_97b22faa": 1,
+    "damagescale": 1,
+    "category": "#normal",
+    "var_dc706c6c": "#hash_74cf811cb0b52ac6",
+    "var_450edb3b": 1
+}

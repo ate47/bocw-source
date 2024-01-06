@@ -1,0 +1,30 @@
+{
+    "var_bb7dcd09": [
+        {
+            "var_5ed80a9c": "#player",
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "#hash_3519741a75e04d55",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "var_5ed80a9c": "#weapon",
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "#hash_459a2c89d1bbad12",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "var_5ed80a9c": "#hash_1c5d758624c9b051",
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "#hash_6dfbac6817e16caa",
+            "var_a4f2dd9e": "#none"
+        }
+    ],
+    "var_72ef398b": 1,
+    "var_d7f79634": 1,
+    "var_922067c4": "SCRIPTBUNDLE",
+    "var_abba0658": 1,
+    "var_a77ed948": "#none",
+    "type": "datasourcelist",
+    "name": "xp_token_categories",
+    "var_748e79a5": "#hash_12d5dc07f1e6cbf"
+}

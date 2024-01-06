@@ -1,0 +1,65 @@
+{
+    "worldfx": [
+        {
+            "worldfx": "#hash_6c7840c9ca34f2a3"
+        }
+    ],
+    "objectives": [
+        {
+            "teamsizedescriptions": [
+                {
+                    "description": "#hash_670d71867b3adb47",
+                    "teamsize": 1
+                },
+                {
+                    "description": "#hash_3bea3433e79cdac4",
+                    "teamsize": 2
+                },
+                {
+                    "description": "#hash_2b13aa9e715385af",
+                    "teamsize": 4
+                }
+            ],
+            "description": "#hash_670d71867b3adb47"
+        },
+        {
+            "description": "#hash_670d72867b3adcfa"
+        }
+    ],
+    "var_a6616b9c": 1,
+    "amount": 1,
+    "var_fa988b4b": 60,
+    "description": "#hash_6421656710e87b96",
+    "var_922067c4": "scriptbundle",
+    "var_e8b98a8a": "#hash_5c22594837a0950a",
+    "model": "#hash_e5d722aa30ff86a",
+    "var_16e34ef4": 64,
+    "var_e9898330": "pingitemscorestreakhandcannon",
+    "weapon": "#hero_annihilator",
+    "var_ac75b59f": -1,
+    "var_c2de1e75": "zm_item_pickup_rumble",
+    "type": "itemspawnentry",
+    "hintstring": "#weapon/hero_annihilator",
+    "spawnsound": "zmb_powerup_kls_spawn",
+    "unlockableitemref": "#hash_40d3a04ab73da3fa",
+    "var_e6ac0592": 90,
+    "var_6b5d0aaa": 1,
+    "killstreak": "killstreak_annihilator",
+    "var_4a1a4613": "armor_swap",
+    "var_22d128f2": 6,
+    "name": "item_survival_scorestreak_hand_cannon",
+    "displayname": "#weapon/hero_annihilator",
+    "var_9e569978": 1,
+    "stackcount": 1,
+    "icon": "#hash_76ea4b9b58578ed1",
+    "modelscale": 1,
+    "rarity": "Epic",
+    "var_1b0b57d1": "evt_item_despawn",
+    "handler": "#hash_1f0d729dc6dd1202",
+    "rewardname": "#zombie/dempsey",
+    "var_3af59a99": 1,
+    "pickupicon": "#hash_76ea4b9b58578ed1",
+    "var_50773731": 2,
+    "itemtype": "scorestreak",
+    "pickupsound": "zmb_powerup_kls_pickup"
+}

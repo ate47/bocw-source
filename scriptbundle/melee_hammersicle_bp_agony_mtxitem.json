@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#operator_bundle_6004_hammer_and_sickle_split_personality_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_28801bfd96e08958",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_6ccbf6800323c256",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 6,
+    "var_46300498": 1,
+    "baseweapon": "#hash_3af942ef08dcbd4a",
+    "name": "melee_hammersicle_bp_agony_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "26440132",
+    "blueprint": "#hash_28801bfd96e08958"
+}

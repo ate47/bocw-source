@@ -3580,7 +3580,7 @@ function positionquery_pointarray(origin, minsearchradius, maxsearchradius, half
 // Size: 0x9a
 function totalplayercount() {
     count = 0;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         count = count + level.playercount[team];
     }
     return count;
@@ -3665,7 +3665,7 @@ function hitroundlimit() {
 // Checksum 0xca144019, Offset: 0xa668
 // Size: 0x9c
 function anyteamhitroundwinlimit() {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (getroundswon(team) >= level.roundwinlimit) {
             return 1;
         }
@@ -3679,7 +3679,7 @@ function anyteamhitroundwinlimit() {
 // Size: 0xdc
 function anyteamhitroundlimitwithdraws() {
     tie_wins = game.stat[#"roundswon"][#"tie"];
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (getroundswon(team) + tie_wins >= level.roundwinlimit) {
             return 1;
         }
@@ -3693,7 +3693,7 @@ function anyteamhitroundlimitwithdraws() {
 // Size: 0xc8
 function function_385658da() {
     count = 0;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         wins = getroundswon(team);
         if (!isdefined(count)) {
             count = wins;
@@ -3763,7 +3763,7 @@ function get_current_round_score_limit() {
 // Size: 0xbc
 function any_team_hit_round_score_limit() {
     round_score_limit = get_current_round_score_limit();
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (game.stat[#"teamscores"][team] >= round_score_limit) {
             return 1;
         }
@@ -3814,7 +3814,7 @@ function getotherteamsroundswon(str_skip_team) {
     if (!isdefined(str_skip_team)) {
         return roundswon;
     }
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (team === str_skip_team) {
             continue;
         }
@@ -4281,7 +4281,7 @@ function getotherteam(team) {
 function function_668e9d6c(skip_team) {
     team = get_team_mapping(skip_team);
     var_314ec275 = [];
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (team == skip_team) {
             continue;
         }
@@ -4303,7 +4303,7 @@ function getotherteamsmask(str_skip_team) {
     if (!isdefined(str_skip_team)) {
         return mask;
     }
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (team === str_skip_team) {
             continue;
         }
@@ -4458,7 +4458,7 @@ function addcooldowntime(name, time_seconds) {
 // Size: 0x94
 function clearallcooldowns() {
     if (isdefined(self._cooldown)) {
-        foreach (cooldown in self._cooldown) {
+        foreach (str_name, cooldown in self._cooldown) {
             self._cooldown[str_name] = gettime() - 1;
         }
     }
@@ -4544,7 +4544,7 @@ function function_d7e70327(var_23866d2) {
 // Checksum 0x6f1965b9, Offset: 0xca98
 // Size: 0xb0
 function function_3d66774c(var_23866d2) {
-    foreach (v in level.var_fdf974de) {
+    foreach (i, v in level.var_fdf974de) {
         if (array::function_460f3c24(v, var_23866d2)) {
             array::remove_index(i);
         }

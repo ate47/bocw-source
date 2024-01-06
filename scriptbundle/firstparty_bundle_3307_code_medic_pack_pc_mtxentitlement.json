@@ -1,0 +1,46 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#po_c_t9_usa_pl_cia_macv_code_pc_mtxitem",
+            "itemid": "33526443"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_cia_mtxitem",
+            "itemid": "20084886"
+        },
+        {
+            "var_4a4bc969": "#ar_mercenary_bp_codemam_pc_mtxitem",
+            "itemid": "30061299"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_medical_injection_pc_mtxitem",
+            "itemid": "18257722"
+        },
+        {
+            "var_4a4bc969": "#emblems_code_medic_01_base_pc_mtxitem",
+            "itemid": "32645897"
+        },
+        {
+            "var_4a4bc969": "#callingcards_codemedic_base_pc_mtxitem",
+            "itemid": "32774818"
+        },
+        {
+            "var_4a4bc969": "#weapon_xp_token_legendary_mtxitem",
+            "itemid": "19262075"
+        }
+    ],
+    "itemname": "#hash_5386dffa8ef4a333",
+    "var_247d9ed7": "firstparty_bundle_3307_code_medic_pack",
+    "var_208d76b5": "#hash_235d8afbf781219b",
+    "var_70f66e54": "#hash_41463e9972ba1fdb",
+    "name": "firstparty_bundle_3307_code_medic_pack_pc_mtxentitlement",
+    "var_a788fada": "#hash_1190001dd29b9532",
+    "var_22f91505": "#hash_e3a4fe51d66a84a",
+    "var_566825be": "#hash_1e51ab8129d42dbe",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "var_4e46b1b3": "#pc",
+    "itemid": "33444223",
+    "var_a592ce5": 1
+}

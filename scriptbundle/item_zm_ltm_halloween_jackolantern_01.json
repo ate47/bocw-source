@@ -1,0 +1,37 @@
+{
+    "worldfx": [
+        {
+            "worldfx": "#hash_7f4c941a9564c78f"
+        }
+    ],
+    "var_a6616b9c": 1,
+    "amount": 1,
+    "var_fa988b4b": 60,
+    "var_922067c4": "scriptbundle",
+    "model": "#hash_3c1ffc686e482090",
+    "var_16e34ef4": 64,
+    "var_e9898330": "pingitemgeneric",
+    "var_ac75b59f": -1,
+    "var_c2de1e75": "zm_item_pickup_rumble",
+    "var_86d1fc36": "#hash_4c7d47bec47dda6c",
+    "type": "itemspawnentry",
+    "hintstring": "#hash_62fdcf40b9dd5a6a",
+    "spawnsound": "zmb_pickup_jackolantern_spawn",
+    "consumable": 1,
+    "var_4a1a4613": "armor_swap",
+    "name": "item_zm_ltm_halloween_jackolantern_01",
+    "displayname": "#hash_62fdcf40b9dd5a6a",
+    "var_36781d9f": "zmb_pickup_jackolantern_spawn",
+    "var_9e569978": 1,
+    "icon": "#hash_669ace6ef83af98f",
+    "casttime": 1,
+    "modelscale": 1.5,
+    "rarity": "Legendary",
+    "var_1b0b57d1": "evt_item_despawn",
+    "handler": "#hash_1002a9af0882010e",
+    "var_3af59a99": 1,
+    "pickupicon": "#hash_669ace6ef83af98f",
+    "var_37cd55af": "#hash_500ac547b78c8ffc",
+    "itemtype": "quest",
+    "pickupsound": "zmb_pickup_jackolantern_pickup"
+}

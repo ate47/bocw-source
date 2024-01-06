@@ -1,0 +1,39 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s3_digital_diver_wargames_mtxitem",
+            "itemid": "30632731"
+        },
+        {
+            "var_4a4bc969": "#c_t9_gen_pl_starter5_powers_ffl_mtxitem",
+            "itemid": "24338611"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_starter5_mtxitem",
+            "itemid": "31383564"
+        },
+        {
+            "var_4a4bc969": "#execution_016_mtxitem",
+            "itemid": "33451563"
+        },
+        {
+            "var_4a4bc969": "#loot_ges_mtx_t9_come_here_mtxitem",
+            "itemid": "32836118"
+        },
+        {
+            "var_4a4bc969": "#emblems_r8g11_2_mtxitem",
+            "itemid": "22755634"
+        }
+    ],
+    "itemname": "#hash_3917951dfdb4d846",
+    "var_375a1747": "#hash_4c739c8adf46c168",
+    "name": "vanity_bundle_3024_maker_watch_mtxbundle",
+    "var_a788fada": "#hash_43ace118668e1b89",
+    "var_22f91505": "#hash_374960c084d3aa3c",
+    "var_566825be": "#hash_39890b3cfb704781",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_2494a901a9aa9bac",
+    "var_db3e02ab": 2000,
+    "itemid": "22209937"
+}

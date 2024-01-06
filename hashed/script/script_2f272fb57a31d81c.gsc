@@ -2,9 +2,9 @@
 #using scripts\core_common\util_shared.csc;
 #using scripts\core_common\clientfield_shared.csc;
 
-#namespace namespace_4e48d9c;
+#namespace missile_turret;
 
-// Namespace namespace_4e48d9c/namespace_1b611bca
+// Namespace missile_turret/namespace_1b611bca
 // Params 0, eflags: 0x2 linked
 // Checksum 0xac6fd41, Offset: 0x118
 // Size: 0x13c
@@ -18,7 +18,7 @@ function init_shared() {
     }
 }
 
-// Namespace namespace_4e48d9c/namespace_1b611bca
+// Namespace missile_turret/namespace_1b611bca
 // Params 7, eflags: 0x2 linked
 // Checksum 0x783284f3, Offset: 0x260
 // Size: 0xec
@@ -33,7 +33,7 @@ function turret_init_anim(localclientnum, *oldval, newval, *bnewent, *binitialsn
     self setanimtime(#"o_turret_mini_deploy", 0);
 }
 
-// Namespace namespace_4e48d9c/namespace_1b611bca
+// Namespace missile_turret/namespace_1b611bca
 // Params 7, eflags: 0x2 linked
 // Checksum 0xf25d8b42, Offset: 0x358
 // Size: 0xdc
@@ -48,7 +48,7 @@ function turret_open(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *
     self setanimrestart(#"o_turret_mini_deploy", 1, 0, 1);
 }
 
-// Namespace namespace_4e48d9c/namespace_1b611bca
+// Namespace missile_turret/namespace_1b611bca
 // Params 7, eflags: 0x2 linked
 // Checksum 0xa9ef9bdc, Offset: 0x440
 // Size: 0x3c
@@ -56,7 +56,7 @@ function turret_close_anim(*localclientnum, *oldval, *newval, *bnewent, *binitia
     
 }
 
-// Namespace namespace_4e48d9c/namespace_1b611bca
+// Namespace missile_turret/namespace_1b611bca
 // Params 7, eflags: 0x2 linked
 // Checksum 0x112b0381, Offset: 0x488
 // Size: 0x138

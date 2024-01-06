@@ -1,0 +1,62 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_39265b4ed372175a",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "play"
+                }
+            ],
+            "model": "#p8_fxanim_wz_parachute_supplydrop_mod",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "p8_fxanim_wz_parachute_supplydrop_open_idle_scriptbundle_prop_1"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_4f2b2f1b4df13119",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "play"
+                }
+            ],
+            "model": "#c_t7_ally_fb",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "p8_fxanim_wz_parachute_supplydrop_open_idle_scriptbundle_prop_2"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_32ad963f25f115d2",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "play"
+                }
+            ],
+            "model": "#c_t7_ally_fb",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "p8_fxanim_wz_parachute_supplydrop_open_idle_scriptbundle_prop_3"
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "p8_fxanim_wz_parachute_supplydrop_open_idle_scriptbundle",
+    "dontsync": 1,
+    "team": "any"
+}

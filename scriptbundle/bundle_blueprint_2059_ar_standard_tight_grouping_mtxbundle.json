@@ -1,0 +1,28 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_mercenary_bp_mvs_mtxitem",
+            "itemid": "28326231"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_redacted_doc_mtxitem",
+            "itemid": "26152621"
+        },
+        {
+            "var_4a4bc969": "#callingcards_newnam_15_mtxitem",
+            "itemid": "22426161"
+        }
+    ],
+    "itemname": "#hash_38f3d5dcc1451a9d",
+    "var_375a1747": "#hash_2e4092ddb1458e9f",
+    "var_579fd6c3": 50,
+    "name": "bundle_blueprint_2059_ar_standard_tight_grouping_mtxbundle",
+    "var_a788fada": "#hash_13fa021d245c64a6",
+    "var_22f91505": "#hash_63f8b6aef66fb6b9",
+    "var_566825be": "#hash_21f57cbc44ded032",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_6bfc2b50cedeadf9",
+    "var_db3e02ab": 2000,
+    "itemid": "28436185"
+}

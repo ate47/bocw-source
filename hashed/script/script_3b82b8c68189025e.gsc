@@ -52,7 +52,7 @@ function private function_70a657d8() {
 // Params 8, eflags: 0x2 linked
 // Checksum 0x125192b7, Offset: 0x650
 // Size: 0x1fa
-function function_82b16606(enter_func = undefined, exit_func = undefined, var_7547c3a5 = 0, var_6cd69890 = 0, script_bundle, var_4d84ed71 = 1, timeout = 0, skippable = 1) {
+function function_82b16606(enter_func = undefined, exit_func = undefined, allow_movement = 0, var_6cd69890 = 0, script_bundle, var_4d84ed71 = 1, timeout = 0, skippable = 1) {
     if (!isdefined(level.var_d5314f55)) {
         level.var_d5314f55 = [];
     }
@@ -61,7 +61,7 @@ function function_82b16606(enter_func = undefined, exit_func = undefined, var_75
     var_5bc64970.player_pos.var_5bc64970 = [];
     var_5bc64970.enter_func = enter_func;
     var_5bc64970.exit_func = exit_func;
-    var_5bc64970.var_7547c3a5 = var_7547c3a5;
+    var_5bc64970.allow_movement = allow_movement;
     var_5bc64970.var_6cd69890 = var_6cd69890;
     var_5bc64970.var_4d84ed71 = var_4d84ed71;
     var_5bc64970.timeout = timeout;
@@ -391,7 +391,7 @@ function private function_a92530c0(var_34b21e8e, var_6a8278e5) {
 // Size: 0xc4
 function private function_edd56700(player) {
     wait(2);
-    if (!self.var_7547c3a5) {
+    if (!self.allow_movement) {
         player playerlinktodelta(self.var_bc205c58, "tag_origin", 1, 10, 10, 5, 5, 1, 1);
     } else {
         player unlink();
@@ -567,7 +567,7 @@ function run(var_34b21e8e, var_6a8278e5, timer, activator, var_5bab29d8 = 0, var
             var_34b21e8e val::set(#"hash_50dd1fbbd883b24e", "takedamage", 0);
         }
         self function_a92530c0(var_34b21e8e, var_6a8278e5);
-        if (!isdefined(self.var_bc205c58) && !self.var_7547c3a5) {
+        if (!isdefined(self.var_bc205c58) && !self.allow_movement) {
             self.var_bc205c58 = util::spawn_model("tag_origin", self.activator.origin, self.activator.angles);
             if (is_true(level.var_9c0a73b)) {
                 v = level.player getplayerangles();
@@ -710,7 +710,7 @@ function run(var_34b21e8e, var_6a8278e5, timer, activator, var_5bab29d8 = 0, var
         if (isdefined(self.var_bc62b3ce)) {
             setdvar(#"hash_6b57212fd4fcdd3a", self.var_bc62b3ce);
         }
-        if (!self.var_7547c3a5) {
+        if (!self.allow_movement) {
             self.activator unlink();
             if (isdefined(self.var_bc205c58)) {
                 self.var_bc205c58 delete();

@@ -250,7 +250,7 @@ function private function_ada90340(var_2b357ce9) {
     n_wait = var_90016943 zm_utility::fake_physicslaunch(s_landing.origin, 1900);
     wait(n_wait);
     var_90016943.origin.var_90016943 = s_landing.origin;
-    point = function_4ba8fde(#"hash_1147c0233d0fcf50");
+    point = function_4ba8fde(#"item_survival_mq4_beacon_device");
     item_drop::drop_item(0, undefined, 1, point.amount, point.id, var_90016943.origin, var_90016943.angles, 0);
     var_90016943 function_cb48cddd();
     callback::on_item_pickup(&function_6c8a368);
@@ -265,7 +265,7 @@ function private function_ada90340(var_2b357ce9) {
 // Checksum 0x8710dbaa, Offset: 0x16c0
 // Size: 0x114
 function private function_6c8a368(eventstruct) {
-    if (isplayer(self) && eventstruct.item.var_a6762160.name === #"hash_1147c0233d0fcf50") {
+    if (isplayer(self) && eventstruct.item.var_a6762160.name === #"item_survival_mq4_beacon_device") {
         callback::remove_callback(#"on_item_pickup", &function_6c8a368);
         if (!level flag::get(#"hash_537da116d92d952f")) {
             level flag::set(#"hash_4c9bb7a770c9e973");
@@ -473,11 +473,11 @@ function private function_c8fba110(eventstruct) {
     self.b_activated = 1;
     player function_bc82f900("zm_interact_rumble");
     foreach (player in getplayers()) {
-        player thread namespace_4abf1500::function_3ad8805e(#"hash_5b87019ce0ec391c", undefined, undefined, 1);
+        player thread namespace_4abf1500::function_3ad8805e(#"zmintel_survival_omega_audiolog_14", undefined, undefined, 1);
     }
     self.instance.var_a9ef21d stoploopsound();
     self.instance.var_a9ef21d playsound(#"hash_ea30fff000de600");
-    self.instance.var_a9ef21d thread scene::play(#"hash_1b79053f7d2b9dd1", self.instance.var_a9ef21d);
+    self.instance.var_a9ef21d thread scene::play(#"p9_zm_ndu_reel_to_reel_audio_recorder_01_server_bundle", self.instance.var_a9ef21d);
     level flag::set(#"hash_414ba7eb6d94978d");
     self.instance.var_a9ef21d zm_vo::function_d6f8bbd9(#"hash_68609aac048f6529");
     self.instance.var_a9ef21d zm_vo::function_d6f8bbd9(#"hash_686099ac048f6376");
@@ -486,7 +486,7 @@ function private function_c8fba110(eventstruct) {
     self.instance.var_a9ef21d zm_vo::function_d6f8bbd9(#"hash_68609eac048f6bf5");
     level flag::set(#"hash_16f61b20c3d2c610");
     self.instance.var_a9ef21d playsound(#"hash_19cebf2f0254187a");
-    self.instance.var_a9ef21d scene::stop(#"hash_1b79053f7d2b9dd1");
+    self.instance.var_a9ef21d scene::stop(#"p9_zm_ndu_reel_to_reel_audio_recorder_01_server_bundle");
     self triggerenable(1);
     self.b_activated = 0;
 }
@@ -606,8 +606,8 @@ function private function_4cb97b84(eventstruct) {
         player function_bc82f900("zm_interact_rumble");
         var_af44ab5f playsound(#"hash_1cb2156b9c85b526");
         var_af44ab5f playloopsound(#"hash_16c9b69ca21b8cb9");
-        scene::add_scene_func(#"hash_5bd18563535d0e37", &function_ea2f5d05, "dance");
-        var_af44ab5f thread scene::play(#"hash_5bd18563535d0e37", var_af44ab5f);
+        scene::add_scene_func(#"p9_sr_mq4_magic_box_bunny_bundle", &function_ea2f5d05, "dance");
+        var_af44ab5f thread scene::play(#"p9_sr_mq4_magic_box_bunny_bundle", var_af44ab5f);
         namespace_2c949ef8::function_8b6ae460(self.origin, undefined, 500, 1500);
         function_701ee731(self.origin);
         var_af44ab5f playsound(#"hash_1f204d7a336581e8");
@@ -620,7 +620,7 @@ function private function_4cb97b84(eventstruct) {
         var_69fc8214 = 15;
         var_2858caa2 = {#var_738dfc81:var_69fc8214, #angles:level.var_2c678640.angles, #origin:level.var_2c678640.origin + vectorscale((0, 0, 1), 24)};
         var_2858caa2 thread namespace_65181344::function_fd87c780(var_cc1fb2d0, var_69fc8214, 4);
-        var_2858caa2 thread namespace_65181344::function_fd87c780(#"hash_4db4013e3c90a1db", 1, 4);
+        var_2858caa2 thread namespace_65181344::function_fd87c780(#"sr_mq4_bunny_intel_drop", 1, 4);
         /#
             iprintlnbold("<unknown string>");
         #/
@@ -631,10 +631,10 @@ function private function_4cb97b84(eventstruct) {
     } else if (is_true(self.b_available)) {
         self.b_available = 0;
         player function_bc82f900("zm_interact_rumble");
-        scene::remove_scene_func(#"hash_5bd18563535d0e37", &function_ea2f5d05, "dance");
+        scene::remove_scene_func(#"p9_sr_mq4_magic_box_bunny_bundle", &function_ea2f5d05, "dance");
         var_af44ab5f stoploopsound();
         var_af44ab5f playsound(#"hash_298c8c0c83309783");
-        var_af44ab5f scene::stop(#"hash_5bd18563535d0e37");
+        var_af44ab5f scene::stop(#"p9_sr_mq4_magic_box_bunny_bundle");
         var_af44ab5f.trigger.var_af44ab5f = self;
         foreach (e_player in getplayers()) {
             if (e_player != player) {
@@ -677,8 +677,8 @@ function private function_4cb97b84(eventstruct) {
 // Size: 0xcc
 function function_f37669b6(eventstruct) {
     item = eventstruct.item;
-    if (isplayer(self) && item.var_a6762160.name === #"hash_267a32b67d5bb3cd") {
-        array::thread_all(getplayers(), &namespace_4abf1500::function_3ad8805e, #"hash_526d0121cbd13a5f");
+    if (isplayer(self) && item.var_a6762160.name === #"item_zmintel_survival_requiem_document_15") {
+        array::thread_all(getplayers(), &namespace_4abf1500::function_3ad8805e, #"zmintel_survival_requiem_document_15");
         callback::remove_callback(#"on_item_pickup", &function_f37669b6);
     }
 }
@@ -688,7 +688,7 @@ function function_f37669b6(eventstruct) {
 // Checksum 0x35c08e70, Offset: 0x3b68
 // Size: 0xf4
 function function_ea2f5d05(a_ents) {
-    ent = a_ents[#"hash_2b6cdfe2b147d77f"];
+    ent = a_ents[#"bunny"];
     var_41dec230 = util::spawn_model("tag_origin", ent.origin, ent.angles);
     ent linkto(var_41dec230);
     ent.var_41dec230 = var_41dec230;
@@ -751,7 +751,7 @@ function private function_63422d64() {
         self.var_67aa3392 unlink();
         self.var_67aa3392.angles = (0, self.angles[1], 0);
         self.var_67aa3392.origin = self.origin + vectorscale((0, 0, 1), 4);
-        self.var_67aa3392 thread scene::play(#"hash_5bd18563535d0e37", self.var_67aa3392);
+        self.var_67aa3392 thread scene::play(#"p9_sr_mq4_magic_box_bunny_bundle", self.var_67aa3392);
         playfxontag(#"hash_2620f801cec5ff00", self.var_67aa3392, "j_spine4");
         self.var_67aa3392 playsound(#"hash_5c0841de58dda162");
         self.var_67aa3392 playloopsound(#"hash_16c9b69ca21b8cb9");
@@ -1015,7 +1015,7 @@ function private function_6f51b8ea(eventstruct) {
     self.instance.var_af44ab5f unlink();
     self.instance.var_af44ab5f linkto(level.var_c39a4b8f, "tag_cage_attach", (0, 0, 0), vectorscale((0, 1, 0), 180));
     playfxontag(#"hash_2620f801cec5ff00", self.instance.var_af44ab5f, "j_spine4");
-    self.instance.var_af44ab5f thread scene::play(#"hash_5bd18563535d0e37", self.instance.var_af44ab5f);
+    self.instance.var_af44ab5f thread scene::play(#"p9_sr_mq4_magic_box_bunny_bundle", self.instance.var_af44ab5f);
     self.instance.var_af44ab5f playsound(#"hash_1f204d7a336581e8");
     self.instance.var_af44ab5f playloopsound(#"hash_16c9b69ca21b8cb9");
     level callback::remove_on_laststand(&function_72caec31);
@@ -1170,9 +1170,9 @@ function private function_1554ed60(*eventstruct) {
     }
     self.instance.var_fb224b3b stoploopsound();
     self.instance.var_fb224b3b playsound(#"hash_ea30fff000de600");
-    self.instance.var_fb224b3b thread scene::play(#"hash_1b79053f7d2b9dd1", self.instance.var_fb224b3b);
+    self.instance.var_fb224b3b thread scene::play(#"p9_zm_ndu_reel_to_reel_audio_recorder_01_server_bundle", self.instance.var_fb224b3b);
     foreach (player in getplayers()) {
-        player thread namespace_4abf1500::function_3ad8805e(#"hash_5b87029ce0ec3acf", undefined, undefined, 1);
+        player thread namespace_4abf1500::function_3ad8805e(#"zmintel_survival_omega_audiolog_15", undefined, undefined, 1);
     }
     /#
         iprintlnbold("<unknown string>");
@@ -1193,7 +1193,7 @@ function private function_1554ed60(*eventstruct) {
     }
     self.instance.var_fb224b3b zm_vo::function_d6f8bbd9(#"hash_622e24d4968b218f");
     self.instance.var_fb224b3b playsound(#"hash_19cebf2f0254187a");
-    self.instance.var_fb224b3b scene::stop(#"hash_1b79053f7d2b9dd1");
+    self.instance.var_fb224b3b scene::stop(#"p9_zm_ndu_reel_to_reel_audio_recorder_01_server_bundle");
     self.b_activated = 0;
     self triggerenable(1);
 }

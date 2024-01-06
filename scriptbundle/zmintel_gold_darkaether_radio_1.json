@@ -1,0 +1,63 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_16e3e17acc129ad",
+            "var_f35c5951": 1,
+            "var_5d4b5964": 2.41,
+            "var_36bf8e05": "#hash_4106dbba28d3d4c4"
+        },
+        {
+            "var_46bd7973": "#hash_16e3d17acc127fa",
+            "var_5d4b5964": 5.61,
+            "var_36bf8e05": "#hash_5e98bc46efb8c065"
+        },
+        {
+            "var_46bd7973": "#hash_16e3c17acc12647",
+            "var_f35c5951": 0.5,
+            "var_5d4b5964": 1.88,
+            "var_36bf8e05": "#hash_3176abdff48e716e"
+        },
+        {
+            "var_46bd7973": "#hash_16e3b17acc12494",
+            "var_f35c5951": 0.8,
+            "var_5d4b5964": 3.14,
+            "var_36bf8e05": "#hash_48a1abbbd7be4df7"
+        },
+        {
+            "var_46bd7973": "#hash_16e3a17acc122e1",
+            "var_f35c5951": 0.6,
+            "var_5d4b5964": 7.79,
+            "var_36bf8e05": "#hash_76e22a1435a33e40"
+        },
+        {
+            "var_46bd7973": "#hash_16e3917acc1212e",
+            "var_f35c5951": 0.5,
+            "var_5d4b5964": 2.86,
+            "var_36bf8e05": "#hash_645a39ad01c254f1"
+        },
+        {
+            "var_46bd7973": "#hash_16e3817acc11f7b",
+            "var_f35c5951": 0.75,
+            "var_5d4b5964": 1.62,
+            "var_36bf8e05": "#hash_57999188d03de7ba"
+        }
+    ],
+    "description": "#hash_44d8d7da65df127a",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#radio",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_483fb768867494d5",
+    "type": "zmintel",
+    "season": 1,
+    "var_ad4ad686": "#hash_70ce1650358c0923",
+    "soundloop": "#hash_5db0167d85d70c82",
+    "name": "zmintel_gold_darkaether_radio_1",
+    "var_9be0526e": "#hash_20ea75a25d912949",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "var_348b91fd": "#radio",
+    "title": "#hash_503636751dd897ca",
+    "var_3bb3493d": "#hash_15e735d16cca3683",
+    "mapname": "#zm_gold",
+    "var_6073bf8f": "#hash_30acea553928ba42"
+}

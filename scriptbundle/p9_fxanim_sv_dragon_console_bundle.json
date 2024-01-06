@@ -1,0 +1,122 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_77fb882e9f92812a",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "fuel init"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_61c486fee6e72cb4",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "anim": "#hash_70aa3d8c70f4d42d",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "fuel level 1"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_27751048e7c08b31",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "anim": "#hash_ecf0c045069179c",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "fuel level 2"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_6469a2ac9dc8b5fe",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "anim": "#hash_694c6d6e218e34ef",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "fuel level 3"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_145485eba5286ffb",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "fuel level 4"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_576afe4308177676",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "takeoff level 4"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_4d72b4d795f90451",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "takeoff level 3"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_7cec15aa534760b0",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "takeoff level 2"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_7f0a0b4105911273",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "takeoff level 1"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_8bd6dd58fd643ba",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "takeoff level 0"
+                }
+            ],
+            "model": "#hash_26730916f0bb7003",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "prop 1"
+        }
+    ],
+    "scenetype": "fxanim",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "vmtype": "server",
+    "name": "p9_fxanim_sv_dragon_console_bundle",
+    "dontsync": 1,
+    "team": "any"
+}

@@ -1,0 +1,11 @@
+{
+    "destroyedalias": "eq_ammo_pack_dstr",
+    "var_922067c4": "scriptbundle",
+    "type": "battlechatter",
+    "vmtype": "both",
+    "usealias": "eq_ammo_pack_use",
+    "name": "ammo_pack_battlechatter",
+    "var_931a4bf8": "eq_ammo_pack_fail",
+    "var_ff5e0d8e": "eq_ammo_pack_threat",
+    "var_382f662": 1
+}

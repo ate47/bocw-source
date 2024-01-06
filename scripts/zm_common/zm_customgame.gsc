@@ -877,9 +877,9 @@ function function_41ed4017() {
 function function_928e94b9(a_str_archetypes) {
     foreach (str_archetype in a_str_archetypes) {
         str_archetype = hash(str_archetype);
-        if (isinarray(array(#"blight_father", #"brutus", #"gegenees", #"hash_3d92e2c7bea1eee2", #"hash_7c0d83ac1e845ac2"), str_archetype) && function_901b751c(#"hash_4269e873a0c207c") == 0) {
+        if (isinarray(array(#"blight_father", #"brutus", #"gegenees", #"mechz", #"hash_7c0d83ac1e845ac2"), str_archetype) && function_901b751c(#"hash_4269e873a0c207c") == 0) {
             return 1;
-        } else if (isinarray(array(#"stoker", #"gladiator", #"gladiator_marauder", #"gladiator_destroyer", #"werewolf", #"avogadro", #"hash_9f6bc1960ff4912"), str_archetype) && function_901b751c(#"hash_69262a31e0f8f91c") == 0) {
+        } else if (isinarray(array(#"stoker", #"gladiator", #"gladiator_marauder", #"gladiator_destroyer", #"werewolf", #"avogadro", #"raz"), str_archetype) && function_901b751c(#"hash_69262a31e0f8f91c") == 0) {
             return 1;
         } else if (isinarray(array(#"bat", #"dog", #"zombie_dog", #"zombie"), str_archetype) && function_901b751c(#"hash_4035c12ee5837454") == 0) {
             return 1;

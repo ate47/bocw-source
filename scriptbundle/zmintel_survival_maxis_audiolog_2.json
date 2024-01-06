@@ -1,0 +1,135 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_37bcdf59f87d6c03",
+            "var_f35c5951": 13.2,
+            "var_5d4b5964": 13.4,
+            "var_36bf8e05": "#hash_66493d259636a524"
+        },
+        {
+            "var_46bd7973": "#hash_524af8028d300e1d",
+            "var_f35c5951": 27.5,
+            "var_5d4b5964": 6.63,
+            "var_36bf8e05": "#hash_53cb9ce6df49e08c"
+        },
+        {
+            "var_46bd7973": "#hash_37bce159f87d6f69",
+            "var_f35c5951": 34.7,
+            "var_5d4b5964": 8.47,
+            "var_36bf8e05": "#hash_6b10e03f4ac930c6"
+        },
+        {
+            "var_46bd7973": "#hash_524af6028d300ab7",
+            "var_f35c5951": 44,
+            "var_5d4b5964": 7.04,
+            "var_36bf8e05": "#hash_50964603541b0f12"
+        },
+        {
+            "var_46bd7973": "#hash_37bce359f87d72cf",
+            "var_f35c5951": 51.2,
+            "var_5d4b5964": 2.73,
+            "var_36bf8e05": "#hash_1a0e9158154f7350"
+        },
+        {
+            "var_46bd7973": "#hash_524af4028d300751",
+            "var_f35c5951": 54.7,
+            "var_5d4b5964": 2.03,
+            "var_36bf8e05": "#hash_6babdaf9a18d2b18"
+        },
+        {
+            "var_46bd7973": "#hash_37bce559f87d7635",
+            "var_f35c5951": 57,
+            "var_5d4b5964": 7.13,
+            "var_36bf8e05": "#hash_55f80de84d45c122"
+        },
+        {
+            "var_46bd7973": "#hash_524af2028d3003eb",
+            "var_f35c5951": 65,
+            "var_5d4b5964": 10.11,
+            "var_36bf8e05": "#hash_35ad2865a83b725e"
+        },
+        {
+            "var_46bd7973": "#hash_37bce759f87d799b",
+            "var_f35c5951": 75.7,
+            "var_5d4b5964": 13.97,
+            "var_36bf8e05": "#hash_2bc0526c90d0ec9c"
+        },
+        {
+            "var_46bd7973": "#hash_524af0028d300085",
+            "var_f35c5951": 90.5,
+            "var_5d4b5964": 6.81,
+            "var_36bf8e05": "#hash_5882e1aa4cfd2c34"
+        },
+        {
+            "var_46bd7973": "#hash_335832e13d1bc120",
+            "var_f35c5951": 98.5,
+            "var_5d4b5964": 15.34,
+            "var_36bf8e05": "#hash_21818bf7450b0ddd"
+        },
+        {
+            "var_46bd7973": "#hash_5719855e8a814c4",
+            "var_f35c5951": 114.7,
+            "var_5d4b5964": 8.85,
+            "var_36bf8e05": "#hash_16ad9a340026efad"
+        },
+        {
+            "var_46bd7973": "#hash_335834e13d1bc486",
+            "var_f35c5951": 125.2,
+            "var_5d4b5964": 9.75,
+            "var_36bf8e05": "#hash_14367f16082361ff"
+        },
+        {
+            "var_46bd7973": "#hash_5719a55e8a8182a",
+            "var_f35c5951": 136.2,
+            "var_5d4b5964": 3.65,
+            "var_36bf8e05": "#hash_38206cdeae8a4d43"
+        },
+        {
+            "var_46bd7973": "#hash_335836e13d1bc7ec",
+            "var_f35c5951": 140.6,
+            "var_5d4b5964": 3.99,
+            "var_36bf8e05": "#hash_636b36a0bffb2e79"
+        },
+        {
+            "var_46bd7973": "#hash_5719455e8a80df8",
+            "var_f35c5951": 145.5,
+            "var_5d4b5964": 5.72,
+            "var_36bf8e05": "#hash_295cadce5b2dc4a9"
+        },
+        {
+            "var_46bd7973": "#hash_335838e13d1bcb52",
+            "var_f35c5951": 152.2,
+            "var_5d4b5964": 1.6,
+            "var_36bf8e05": "#hash_8c4d59bf3f8b77b"
+        },
+        {
+            "var_46bd7973": "#hash_5719655e8a8115e",
+            "var_f35c5951": 155,
+            "var_5d4b5964": 2.62,
+            "var_36bf8e05": "#hash_4acf907909913d6f"
+        },
+        {
+            "var_46bd7973": "#hash_6dae3ed24e0ca4d7",
+            "var_f35c5951": 174,
+            "var_5d4b5964": 0.1
+        }
+    ],
+    "description": "#hash_62bb48a416353e0b",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#exploration",
+    "model": "#hash_4c7e76f2c17678e3",
+    "var_824079e7": "#survival",
+    "uimodel": "#hash_43c3b478e6bb838",
+    "var_2a12d36": 1,
+    "type": "zmintel",
+    "season": 2,
+    "var_ad4ad686": "#hash_5ad2dea4c296de59",
+    "soundloop": "#hash_2e77024e1f0a29f1",
+    "name": "zmintel_survival_maxis_audiolog_2",
+    "var_9be0526e": "#audiolog",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "var_348b91fd": "#tape",
+    "title": "#hash_5ca3ab97f9e192b1",
+    "var_3bb3493d": "#hash_763b6431d4720629"
+}

@@ -1,0 +1,39 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#smg_capacity_bp_dark_mtxitem",
+            "itemid": "30217720"
+        },
+        {
+            "var_4a4bc969": "#shotgun_pump_bp_dark_mtxitem",
+            "itemid": "19002541"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_ghost_wolf_mtxitem",
+            "itemid": "24199577"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_civ_ru_sedan_80s_assembly_mpx_strange_mtxitem",
+            "itemid": "19116050"
+        },
+        {
+            "var_4a4bc969": "#emblems_chasedbydemons_animated_mtxitem",
+            "itemid": "19947254"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s5_chasedbydemons_mtxitem",
+            "itemid": "27684728"
+        }
+    ],
+    "itemname": "#hash_59e6d016e15c9157",
+    "var_375a1747": "#hash_7662f054c6706ca9",
+    "name": "blueprint_bundle_5045_bullfrog_haunted_house_mtxbundle",
+    "var_a788fada": "#hash_966756375c3d45c",
+    "var_22f91505": "#hash_1dd654eb7eea9073",
+    "var_566825be": "#hash_479d372242b8ef28",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_450d95a442c70917",
+    "var_db3e02ab": 2000,
+    "itemid": "25069080"
+}

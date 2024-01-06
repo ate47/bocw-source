@@ -399,7 +399,7 @@ function function_279ca150() {
     var_ebcac3c2 = 0;
     if (!is_true(self.ignore_enemy_count) && a_ai_zombies.size == 1 && level.zombie_total <= 0 && !level flag::get("infinite_round_spawning")) {
         v_start = self.origin;
-        foreach (s_key in level.var_26a5066b) {
+        foreach (var_b30c192b, s_key in level.var_26a5066b) {
             if (s_key.var_6faa5e34) {
                 continue;
             }
@@ -579,7 +579,7 @@ function function_c492c4d6(str_index, var_ed1db1a7, a_str_zones, var_cc0c35ca, v
 function function_1e856719() {
     /#
         var_f95f5bc7 = getarraykeys(level.a_s_defend_areas);
-        foreach (s_defend_area in level.a_s_defend_areas) {
+        foreach (str_index, s_defend_area in level.a_s_defend_areas) {
             /#
                 assert(isarray(s_defend_area.var_cc0c35ca), "<unknown string>" + function_9e72a96(str_index) + "<unknown string>");
             #/

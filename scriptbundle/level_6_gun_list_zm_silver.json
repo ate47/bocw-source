@@ -1,0 +1,41 @@
+{
+    "itemlist": [
+        {
+            "minweight": 50,
+            "var_a6762160": "#uncommon_gun_list",
+            "maxweight": 50,
+            "available": -1
+        },
+        {
+            "minweight": 200,
+            "var_a6762160": "#rare_gun_list",
+            "maxweight": 200,
+            "available": -1
+        },
+        {
+            "minweight": 400,
+            "var_a6762160": "#epic_gun_list",
+            "maxweight": 400,
+            "available": -1
+        },
+        {
+            "minweight": 250,
+            "var_a6762160": "#legendary_gun_list",
+            "maxweight": 250,
+            "available": -1
+        },
+        {
+            "minweight": 150,
+            "var_a6762160": "#hash_28b82ccb71cfa6a0",
+            "maxweight": 150,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "level_6_gun_list_zm_silver",
+    "var_fde72c94": 100
+}

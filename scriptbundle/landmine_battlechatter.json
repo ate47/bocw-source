@@ -1,0 +1,11 @@
+{
+    "destroyedalias": "eq_landmine_dstr",
+    "var_922067c4": "scriptbundle",
+    "type": "battlechatter",
+    "vmtype": "both",
+    "usealias": "eq_landmine_use",
+    "name": "landmine_battlechatter",
+    "var_931a4bf8": "eq_landmine_fail",
+    "var_ff5e0d8e": "eq_landmine_threat",
+    "var_382f662": 1
+}

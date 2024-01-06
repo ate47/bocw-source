@@ -1,0 +1,35 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_navyseal_strike_mtxitem",
+            "itemid": "27892107"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_navy_seal_mtxitem",
+            "itemid": "20822559"
+        },
+        {
+            "var_4a4bc969": "#sniper_standard_bp_achill_mtxitem",
+            "itemid": "23515749"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_thermo_tac_mtxitem",
+            "itemid": "25221015"
+        },
+        {
+            "var_4a4bc969": "#emblems_s3_vts_final_28_mtxitem",
+            "itemid": "29066956"
+        }
+    ],
+    "itemname": "#hash_46efc5a53c3b5869",
+    "var_375a1747": "#hash_78d3f305cff16953",
+    "name": "blueprint_bundle_3054_baker_thermal_tracker_mtxbundle",
+    "var_a788fada": "#hash_7bb43977ec0c3d40",
+    "var_22f91505": "#hash_361ba4540b9a2c8b",
+    "var_566825be": "#hash_78deddb484e8ee0c",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_99ab51ad900db0f",
+    "var_db3e02ab": 2000,
+    "itemid": "24478735"
+}

@@ -1,0 +1,86 @@
+{
+    "var_2be3941a": [
+        {
+            "unlockdescription": "#hash_ddf74b317c917aa",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_837f265d755c7ce",
+            "var_e5119d1b": "#hash_837f265d755c7ce",
+            "var_b4ab831a": "#hash_9946f351c810757",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_522726cf51951b8"
+        },
+        {
+            "unlockdescription": "#hash_57c28be17a2b1aa1",
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_pager",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_10b266bec758c000"
+        },
+        {
+            "unlockdescription": "#hash_77764dd06afb22b4",
+            "var_5f79ee71": "#craftbackground",
+            "image": "#hash_3a76fa3923561665",
+            "var_e5119d1b": "#hash_3a76fa3923561665",
+            "var_b4ab831a": "#hash_c6cb8dc98af24b0",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_dfaf3206d734ea9"
+        },
+        {
+            "unlockdescription": "#hash_4e6d8a6a23e8ef3",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_7e856767126aba5",
+            "var_e5119d1b": "#hash_7e856767126aba5",
+            "var_b4ab831a": "#hash_791b50c974f88eb8",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_b97c02528f0717e"
+        },
+        {
+            "unlockdescription": "#hash_4ed08fa2b9c9c0f8",
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_dog_tag",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_3c8329e0d002b5a1"
+        },
+        {
+            "unlockdescription": "#hash_2088287acbca4cc5",
+            "var_5f79ee71": "#craftbackground",
+            "image": "#hash_34bd50ef30bf666a",
+            "var_e5119d1b": "#hash_34bd50ef30bf666a",
+            "var_b4ab831a": "#hash_3bbc74574915d71f",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_392b1599a0b76c6a"
+        },
+        {
+            "unlockdescription": "#hash_3b4534ddf93d5186",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_45dcbb345791d034",
+            "var_e5119d1b": "#hash_45dcbb345791d034",
+            "var_b4ab831a": "#c_t9_usa_pl_adler_hostage_mtxitem",
+            "var_7a2c1108": "#hash_835f663dcce8ae6",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_4829b4727bf98b59"
+        },
+        {
+            "unlockdescription": "#hash_3b4534ddf93d5186",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_45dcbb345791d034",
+            "var_e5119d1b": "#hash_45dcbb345791d034",
+            "var_b4ab831a": "#c_t9_usa_pl_adler_hostage_mtxitem",
+            "var_7a2c1108": "#hash_835f663dcce8ae6",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_74ff35a98f3ae296"
+        }
+    ],
+    "var_922067c4": "SCRIPTBUNDLE",
+    "type": "challengerewards",
+    "var_5f0dd656": 2,
+    "var_4e39981b": 2,
+    "name": "challengerewards_s3_adler_event",
+    "sessionmode": "1"
+}

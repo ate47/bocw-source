@@ -1,0 +1,35 @@
+{
+    "itemlist": [
+        {
+            "minweight": 1,
+            "var_a6762160": "#shotgun_pump_t9_green_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#shotgun_semiauto_t9_green_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#shotgun_fullauto_t9_green_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#shotgun_leveraction_t9_green_rand_item_sr",
+            "maxweight": 1,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "zm_magicbox_weapon_shotguns_green_list",
+    "var_fde72c94": 100
+}

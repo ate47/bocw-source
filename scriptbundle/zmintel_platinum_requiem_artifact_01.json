@@ -1,0 +1,19 @@
+{
+    "description": "#hash_5a1f11e67f2dca85",
+    "itemspawnentry": "#item_zmquest_platinum_klaus_hand",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#quest",
+    "model": "#hash_698f8c105a349a42",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_3626ca9071683df1",
+    "type": "zmintel",
+    "season": 4,
+    "var_ad4ad686": "#hash_1303dcb8d0e80e33",
+    "soundloop": "#hash_6098b72d515f39d5",
+    "name": "zmintel_platinum_requiem_artifact_01",
+    "var_9be0526e": "#artifact",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "title": "#hash_442b379e31ef0d3",
+    "mapname": "#zm_platinum"
+}

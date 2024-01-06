@@ -169,7 +169,7 @@ function show_cam(localclientnum, xcam, animname, lerpduration) {
     if (isdefined(level.var_368aaeb9[localclientnum]) && level.var_368aaeb9[localclientnum] == animname && isdefined(level.var_df72fe54[localclientnum]) && level.var_df72fe54[localclientnum] == xcam) {
         return;
     }
-    if (namespace_56e70a4a::function_b8fe9b52(localclientnum)) {
+    if (codcaster::function_b8fe9b52(localclientnum)) {
         lerpduration = 0;
     }
     team = function_c4dfe16e(localclientnum);
@@ -396,7 +396,7 @@ function function_6b532f83(localclientnum, var_de58f286, sessionmode) {
             anim_name = weapongroupanim[#"select"][gender];
         } else {
             if (!var_de58f286.var_91065a59) {
-                if (var_7eb5dfe9 == 1 && !namespace_56e70a4a::function_b8fe9b52(localclientnum)) {
+                if (var_7eb5dfe9 == 1 && !codcaster::function_b8fe9b52(localclientnum)) {
                     anim_intro_name = weapongroupanim[#"hash_6eaac8719751cb14"][gender];
                 }
                 var_b793aad = weapongroupanim[#"preready"][gender];
@@ -573,7 +573,7 @@ function update_team(localclientnum, var_4123f2c1) {
                 } else {
                     [[ draftcharacter ]]->function_82e05d64().player = undefined;
                 }
-                if (is_true([[ draftcharacter ]]->function_82e05d64().islocalclient) || namespace_56e70a4a::function_b8fe9b52(localclientnum)) {
+                if (is_true([[ draftcharacter ]]->function_82e05d64().islocalclient) || codcaster::function_b8fe9b52(localclientnum)) {
                     if (!isdefined([[ draftcharacter ]]->function_82e05d64().player)) {
                         [[ draftcharacter ]]->function_82e05d64().player = localplayer;
                         [[ draftcharacter ]]->function_82e05d64().primaryweapon = localplayer getprimaryweapon();
@@ -582,7 +582,7 @@ function update_team(localclientnum, var_4123f2c1) {
                         [[ draftcharacter ]]->function_82e05d64().secondaryweaponoptions = localplayer function_64c66c4b();
                     }
                     [[ draftcharacter ]]->function_82e05d64().localclientnum = localclientnum;
-                    if (isdefined([[ draftcharacter ]]->function_82e05d64().var_c018da16) && player_role::is_valid([[ draftcharacter ]]->function_82e05d64().var_c018da16.charactertype) || namespace_56e70a4a::function_b8fe9b52(localclientnum)) {
+                    if (isdefined([[ draftcharacter ]]->function_82e05d64().var_c018da16) && player_role::is_valid([[ draftcharacter ]]->function_82e05d64().var_c018da16.charactertype) || codcaster::function_b8fe9b52(localclientnum)) {
                         function_236a944e(localclientnum);
                         lerpduration = 1000;
                         if (var_4123f2c1) {
@@ -606,7 +606,7 @@ function update_team(localclientnum, var_4123f2c1) {
                 }
                 var_24b754fa = getuimodelvalue(getuimodel(positionmodel, "clientInfo"));
                 [[ draftcharacter ]]->function_82e05d64().var_91065a59 = getuimodelvalue(getuimodel(var_24b754fa, "ready"));
-                if (namespace_56e70a4a::function_b8fe9b52(localclientnum) && !isdefined([[ draftcharacter ]]->function_82e05d64().var_91065a59) && isdefined(player) && isbot(player)) {
+                if (codcaster::function_b8fe9b52(localclientnum) && !isdefined([[ draftcharacter ]]->function_82e05d64().var_91065a59) && isdefined(player) && isbot(player)) {
                     [[ draftcharacter ]]->function_82e05d64().var_91065a59 = 0;
                 }
             }
@@ -679,7 +679,7 @@ function watchupdate(localclientnum) {
         waitresult = undefined;
         waitresult = level waittill(#"positiondraft_update", #"positiondraft_reject");
         if (localclientnum == waitresult.localclientnum) {
-            if (namespace_56e70a4a::function_b8fe9b52(localclientnum)) {
+            if (codcaster::function_b8fe9b52(localclientnum)) {
                 setup_team(localclientnum);
             }
             update_team(localclientnum, 0);

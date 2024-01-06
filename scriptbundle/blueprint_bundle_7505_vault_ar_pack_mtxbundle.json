@@ -1,0 +1,55 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_standard_bp_titanium_mtxitem",
+            "itemid": "20417829"
+        },
+        {
+            "var_4a4bc969": "#ar_mercenary_bp_voodoo_mtxitem",
+            "itemid": "18411411"
+        },
+        {
+            "var_4a4bc969": "#ar_damage_bp_blackthroat_mtxitem",
+            "itemid": "21401337"
+        },
+        {
+            "var_4a4bc969": "#ar_damage_bp_go_bananas_mtxitem",
+            "itemid": "20721218"
+        },
+        {
+            "var_4a4bc969": "#ar_damage_bp_ufo_mtxitem",
+            "itemid": "23741611"
+        },
+        {
+            "var_4a4bc969": "#ar_mobility_bp_spirit_mtxitem",
+            "itemid": "20918470"
+        },
+        {
+            "var_4a4bc969": "#ar_mobility_bp_arcticwind_mtxitem",
+            "itemid": "26673104"
+        },
+        {
+            "var_4a4bc969": "#ar_accurate_bp_spirit_mtxitem",
+            "itemid": "31550348"
+        },
+        {
+            "var_4a4bc969": "#ar_fastfire_bp_aconstrictor_mtxitem",
+            "itemid": "19583081"
+        },
+        {
+            "var_4a4bc969": "#ar_fastfire_bp_reactor_mtxitem",
+            "itemid": "23923244"
+        }
+    ],
+    "itemname": "#hash_24d27dfb5f2fac04",
+    "var_375a1747": "#hash_3a2a44677fb942d6",
+    "name": "blueprint_bundle_7505_vault_ar_pack_mtxbundle",
+    "var_a788fada": "#hash_5461fd6872412061",
+    "var_22f91505": "#hash_276755cac3e4b4b2",
+    "var_566825be": "#hash_6cfa5b6a92f6d5f9",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_187a04793a13a1ee",
+    "var_db3e02ab": 2000,
+    "itemid": "32177847"
+}

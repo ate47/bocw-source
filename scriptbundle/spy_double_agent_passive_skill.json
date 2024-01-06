@@ -1,0 +1,13 @@
+{
+    "hinttext": "#hash_4a97187ab48f1baa",
+    "var_922067c4": "scriptbundle",
+    "value2": "1",
+    "var_43883094": "0",
+    "type": "gamesettings",
+    "name": "spy_double_agent_passive_skill",
+    "displayname": "#hash_1054d2db234b1eb6",
+    "var_9600a8ab": "#hash_94eb0e3329edf5f",
+    "var_bd2ff709": "#menu/enabled",
+    "var_9de86f42": 2,
+    "setting": "spyModeDoubleAgentPassiveSkill"
+}

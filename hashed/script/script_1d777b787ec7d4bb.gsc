@@ -248,7 +248,7 @@ function function_789417a9() {
 // Checksum 0x6ba2777a, Offset: 0x1350
 // Size: 0x4b4
 function function_b7c45db1(control_point, e_player) {
-    e_player function_bc82f900(#"hash_3937704286348bfa");
+    e_player function_bc82f900(#"zm_gold_interact_rumble_small");
     e_player playsound(#"hash_28c6c102591388a");
     level.var_28c80220--;
     if (level flag::get(#"hash_10087ff5db48e4db")) {

@@ -1,0 +1,59 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#ar_fastfire_bp_streetcred_mtxitem",
+            "itemid": "28952205"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_smoke_gren_mtxitem",
+            "itemid": "25879988"
+        },
+        {
+            "var_4a4bc969": "#po_c_t9_cub_pl_dgi_barrio_mtxitem",
+            "itemid": "24836368"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_cub_dgi_mtxitem",
+            "itemid": "21801561"
+        },
+        {
+            "var_4a4bc969": "#smg_handling_bp_silver_streak_mtxitem",
+            "itemid": "29331820"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_lunch_mtxitem",
+            "itemid": "23915170"
+        },
+        {
+            "var_4a4bc969": "#c_t9_uk_pl_mi6_scorch_mtxitem",
+            "itemid": "28059667"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_uk_mi6_mtxitem",
+            "itemid": "23374822"
+        },
+        {
+            "var_4a4bc969": "#callingcards_expedition_mtxitem",
+            "itemid": "24735791"
+        },
+        {
+            "var_4a4bc969": "#reticle_34_mtxitem",
+            "itemid": "23950812"
+        },
+        {
+            "var_4a4bc969": "#reticle_42_mtxitem",
+            "itemid": "24713126"
+        }
+    ],
+    "itemname": "#hash_474ec48dac8b7308",
+    "description": "#hash_67550f7c40faaf62",
+    "var_87756eb4": 1,
+    "var_375a1747": "#hash_524d6d099ce2b9ab",
+    "name": "s01_preseason_login_bonus_mtxentitlement",
+    "var_90708fcf": "#hash_660ebce628ccddf2",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "itemid": "22098795",
+    "var_7c846082": "#hash_39bc24db0771eb04"
+}

@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#blueprint_bundle_5012_aug_master_ghost_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_3e2eca7c8cb97bec",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_64ed1b2328b4018e",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 5,
+    "var_46300498": 1,
+    "baseweapon": "#hash_5818a5515e931441",
+    "name": "tr_powerburst_cb_bp_ghostship_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 5,
+    "itemid": "31027752",
+    "blueprint": "#hash_3e2eca7c8cb97bec"
+}

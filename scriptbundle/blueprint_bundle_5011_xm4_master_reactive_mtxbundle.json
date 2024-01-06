@@ -1,0 +1,68 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_559728fd81e5501d"
+        },
+        {
+            "var_fe10649e": "#hash_559727fd81e54e6a"
+        },
+        {
+            "var_fe10649e": "#hash_559726fd81e54cb7"
+        },
+        {
+            "var_fe10649e": "#hash_559725fd81e54b04"
+        }
+    ],
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_mercenary_bp_wonder_mtxitem",
+            "itemid": "19853494"
+        },
+        {
+            "var_4a4bc969": "#smg_burst_bp_wonder_mtxitem",
+            "itemid": "33073261"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_moth_skull_mtxitem",
+            "itemid": "21240822"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s5_digital_wonderland_mtxitem",
+            "itemid": "24111213"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_snowmobile_assembly_mpx_wonderland_mtxitem",
+            "itemid": "26152029"
+        },
+        {
+            "var_4a4bc969": "#vehiclehorn_csquares_mtxitem",
+            "itemid": "22803211"
+        },
+        {
+            "var_4a4bc969": "#emblems_aliceland_s5_animated_mtxitem",
+            "itemid": "30949460"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s3_vts_27_final_s5_animated_mtxitem",
+            "itemid": "28711007"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_r8g11_21_s5_mtxitem",
+            "itemid": "22051229"
+        }
+    ],
+    "itemname": "#hash_3c07ff20697bfb38",
+    "var_375a1747": "#hash_559728fd81e5501d",
+    "var_3040f0d1": "#hash_559728fd81e5501d",
+    "var_8ee7db29": 1,
+    "var_579fd6c3": 54,
+    "name": "blueprint_bundle_5011_xm4_master_reactive_mtxbundle",
+    "var_a788fada": "#hash_1ede31b30ebb0f6d",
+    "var_22f91505": "#hash_77034eb23f3a72d2",
+    "var_566825be": "#hash_565dd38ba25853a5",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_48b685c17e30fc0e",
+    "var_db3e02ab": 750,
+    "itemid": "21658288"
+}

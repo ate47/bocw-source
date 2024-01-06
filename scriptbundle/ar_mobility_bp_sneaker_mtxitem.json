@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#bundle_blueprint_2029_ar_mobility_sneakerhead_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_dd0bed0644576dd",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_6f69d511c6f36c7",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 3,
+    "var_46300498": 1,
+    "baseweapon": "#hash_6cb1c7e45075a0a4",
+    "name": "ar_mobility_bp_sneaker_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "24300710",
+    "blueprint": "#hash_dd0bed0644576dd"
+}

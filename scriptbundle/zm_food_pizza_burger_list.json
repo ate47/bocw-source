@@ -1,0 +1,23 @@
+{
+    "itemlist": [
+        {
+            "minweight": 1,
+            "var_a6762160": "#item_zmquest_sr_ltm_food_pizza_full",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#item_zmquest_sr_ltm_food_burger",
+            "maxweight": 1,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "zm_food_pizza_burger_list",
+    "var_fde72c94": 100
+}

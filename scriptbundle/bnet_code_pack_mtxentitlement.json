@@ -1,0 +1,45 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#tr_longburst_bp_code_pc_mtxitem",
+            "itemid": "30130266"
+        },
+        {
+            "var_4a4bc969": "#pistol_semiauto_bp_code_pc_mtxitem",
+            "itemid": "27472101"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_dogtags_pc_mtxitem",
+            "itemid": "19781523"
+        },
+        {
+            "var_4a4bc969": "#callingcards_code_pack_pc_base_mtxitem",
+            "itemid": "24700545"
+        },
+        {
+            "var_4a4bc969": "#emblems_code_pack_pc_base_mtxitem",
+            "itemid": "21650642"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_code_pack_pc_base_mtxitem",
+            "itemid": "19227673"
+        },
+        {
+            "var_4a4bc969": "#player_xp_token_legendary_mtxitem",
+            "itemid": "32109261"
+        }
+    ],
+    "itemname": "#hash_12d67a2390b37c6c",
+    "var_247d9ed7": "codepack",
+    "var_208d76b5": "#hash_2b8563123a2df5b6",
+    "var_70f66e54": "#hash_17b56dfca6e9dd86",
+    "name": "bnet_code_pack_mtxentitlement",
+    "var_22f91505": "#hash_5a4c4b429b49c19a",
+    "var_566825be": "#hash_7e82483667bae056",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "var_4e46b1b3": "#pc",
+    "itemid": "28772422",
+    "var_a592ce5": 1
+}

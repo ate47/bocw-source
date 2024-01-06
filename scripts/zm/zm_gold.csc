@@ -75,7 +75,7 @@ function event_handler[level_init] main(*eventstruct) {
 // Size: 0x3c
 function function_1493eabf() {
     level waittill(#"hash_2ccb1e2f5d9ce793");
-    function_2cca7b47(0, #"hash_7186f461234ff0fb");
+    function_2cca7b47(0, #"musictrack_zm_gold_ee");
 }
 
 // Namespace zm_gold/zm_gold

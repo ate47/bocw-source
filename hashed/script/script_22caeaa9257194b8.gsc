@@ -233,7 +233,7 @@ function private function_cf324cb0() {
 // Size: 0x16a
 function private function_cbb3e924(var_be457ed9) {
     /#
-        foreach (g in self.var_d0ca7119) {
+        foreach (i, g in self.var_d0ca7119) {
             if (isdefined(self.var_14439ba5) && self.var_14439ba5 == g) {
                 circle(g.origin, 5, var_be457ed9, 0, 1, 1);
             }

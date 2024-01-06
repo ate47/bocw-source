@@ -8,7 +8,7 @@
 // Checksum 0x6d1ac5a5, Offset: 0x98
 // Size: 0xa4
 function function_99652b58(name, index, team = #"none") {
-    cameras = namespace_9a8780d8::function_1f583d2e(name, "targetname");
+    cameras = territory::function_1f583d2e(name, "targetname");
     if (cameras.size) {
         addobjectivecamerapoint(name, index, team, cameras[0].origin, cameras[0].angles);
         return 1;

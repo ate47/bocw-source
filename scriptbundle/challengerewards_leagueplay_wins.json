@@ -1,0 +1,70 @@
+{
+    "var_2be3941a": [
+        {
+            "unlockdescription": "#hash_7295e89e5fb6c8e4",
+            "var_5f79ee71": "#craftbackground",
+            "image": "#hash_591cb8065a9e3572",
+            "var_e5119d1b": "#hash_591cb8065a9e3572",
+            "var_b4ab831a": "#hash_7e8b3d3c7514b77b",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_5677d9133114a8ac"
+        },
+        {
+            "unlockdescription": "#hash_2198a5c6f1b54287",
+            "var_5f79ee71": "#arcadegame",
+            "var_b4ab831a": "#robot_tank_game",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_4941bc4d64a8e38"
+        },
+        {
+            "unlockdescription": "#hash_3d73f59eff86458b",
+            "var_5f79ee71": "#wristaccessory",
+            "var_b4ab831a": "#wristaccessory_t9_s2_analog_caiman",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_47351685227336cc"
+        },
+        {
+            "unlockdescription": "#hash_5db07e990fde08dd",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_62c8eeffccb660f6",
+            "var_e5119d1b": "#hash_62c8eeffccb660f6",
+            "var_b4ab831a": "#hash_7345a613f023b561",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_3d48d424c78e2c71"
+        },
+        {
+            "unlockdescription": "#hash_38c5dc73687dcf32",
+            "var_5f79ee71": "#craftbackground",
+            "image": "#hash_4755f933db7024b7",
+            "var_e5119d1b": "#hash_4755f933db7024b7",
+            "var_b4ab831a": "#hash_400a70921348d4c0",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_6c9bd8c5ae1a5496"
+        },
+        {
+            "unlockdescription": "#hash_8dc01bad048b16a",
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_fun_palm",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_122768477016f4e5"
+        }
+    ],
+    "var_922067c4": "SCRIPTBUNDLE",
+    "type": "challengerewards",
+    "var_5f0dd656": 2,
+    "var_4e39981b": 2,
+    "name": "challengerewards_leagueplay_wins",
+    "sessionmode": "1"
+}

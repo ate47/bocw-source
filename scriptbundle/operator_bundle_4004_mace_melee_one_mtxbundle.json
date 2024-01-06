@@ -1,0 +1,46 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#melee_mace_bp_scepter_mtxitem",
+            "itemid": "27248047"
+        },
+        {
+            "var_4a4bc969": "#c_t9_gen_pl_starter5_powers_desert_mtxitem",
+            "itemid": "22900999"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_starter5_mtxitem",
+            "itemid": "31383564"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_motorcycle_mtxitem",
+            "itemid": "18449475"
+        },
+        {
+            "var_4a4bc969": "#execution_070_mtxitem",
+            "itemid": "28705701"
+        },
+        {
+            "var_4a4bc969": "#loot_ges_mtx_t9_think_about_it_mtxitem",
+            "itemid": "19241691"
+        },
+        {
+            "var_4a4bc969": "#emblems_macemelee_mtxitem",
+            "itemid": "28705939"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s3_vts_23_final_mtxitem",
+            "itemid": "25084389"
+        }
+    ],
+    "itemname": "#hash_4b49fe953718541e",
+    "var_375a1747": "#hash_d052960f5356924",
+    "name": "operator_bundle_4004_mace_melee_one_mtxbundle",
+    "var_22f91505": "#hash_6a696d78d02eda4d",
+    "var_566825be": "#hash_756f7c22378eb653",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_5121610681d92685",
+    "var_db3e02ab": 2000,
+    "itemid": "25867849"
+}

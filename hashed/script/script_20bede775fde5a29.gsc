@@ -144,7 +144,7 @@ function private function_4259f9f8(local_client_num, target_name) {
 function function_7adce590(local_client_num, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     var_ec067cd3 = array();
     if (isdefined(level.var_3e8dfeeb)) {
-        foreach (xuid in level.var_3e8dfeeb) {
+        foreach (key, xuid in level.var_3e8dfeeb) {
             if (xuid != 0) {
                 custom_character = function_1b0611e0(bwastimejump, xuid, "top_squad_" + key);
                 array::add(var_ec067cd3, [[ custom_character ]]->function_217b10ed());

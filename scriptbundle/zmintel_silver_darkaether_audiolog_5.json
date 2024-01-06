@@ -1,0 +1,68 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_118f771b30b98a7f",
+            "var_f35c5951": 0.8,
+            "var_5d4b5964": 4.78,
+            "var_36bf8e05": "#hash_4a5859aa8dd38bfa"
+        },
+        {
+            "var_46bd7973": "#hash_118f761b30b988cc",
+            "var_f35c5951": 6.1,
+            "var_5d4b5964": 12.2,
+            "var_36bf8e05": "#hash_21c3058c9d7598f3"
+        },
+        {
+            "var_46bd7973": "#hash_118f791b30b98de5",
+            "var_f35c5951": 18.71,
+            "var_5d4b5964": 6.98,
+            "var_36bf8e05": "#hash_5f73412e8c8b3400"
+        },
+        {
+            "var_46bd7973": "#hash_118f781b30b98c32",
+            "var_f35c5951": 25.61,
+            "var_5d4b5964": 13.63,
+            "var_36bf8e05": "#hash_fc8f7cdd02dcb99"
+        },
+        {
+            "var_46bd7973": "#hash_118f731b30b983b3",
+            "var_f35c5951": 39.18,
+            "var_5d4b5964": 9.56,
+            "var_36bf8e05": "#hash_25033558f74924e"
+        },
+        {
+            "var_46bd7973": "#hash_118f721b30b98200",
+            "var_f35c5951": 49.06,
+            "var_5d4b5964": 10.24,
+            "var_36bf8e05": "#hash_753e9ae3bfb2a6c7"
+        },
+        {
+            "var_46bd7973": "#hash_118f751b30b98719",
+            "var_f35c5951": 59.29,
+            "var_5d4b5964": 5.38,
+            "var_36bf8e05": "#hash_42f5ad544146184"
+        },
+        {
+            "var_46bd7973": "#null",
+            "var_f35c5951": 65.35
+        }
+    ],
+    "description": "#hash_3172563b2cfe660e",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#exploration",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_39975151641c4544",
+    "var_2a12d36": 1,
+    "type": "zmintel",
+    "var_ad4ad686": "#hash_70ce1650358c0923",
+    "soundloop": "#hash_5b635b73ab6ca33f",
+    "name": "zmintel_silver_darkaether_audiolog_5",
+    "var_9be0526e": "#audiolog",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "var_348b91fd": "#tape",
+    "title": "#hash_517220781b7dbe",
+    "var_3bb3493d": "#hash_43d65019846c2166",
+    "mapname": "#zm_silver",
+    "var_6073bf8f": "#hash_4042063c893f7f3a"
+}

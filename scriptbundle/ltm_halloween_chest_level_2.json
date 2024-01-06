@@ -1,0 +1,47 @@
+{
+    "itemlist": [
+        {
+            "minweight": 19,
+            "var_a6762160": "#sr_explore_chest_scorestreaks",
+            "maxweight": 19,
+            "available": 2
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#ltm_halloween_chest_wonder_weapons",
+            "maxweight": 1,
+            "available": 1
+        },
+        {
+            "minweight": 15,
+            "var_a6762160": "#ltm_halloween_chest_ammo_mods",
+            "maxweight": 15,
+            "available": 2
+        },
+        {
+            "minweight": 15,
+            "var_a6762160": "#bronze_chalice_item_sr",
+            "maxweight": 15,
+            "available": 1
+        },
+        {
+            "minweight": 20,
+            "var_a6762160": "#aether_tool_item_sr",
+            "maxweight": 20,
+            "available": 1
+        },
+        {
+            "minweight": 30,
+            "var_a6762160": "#armor_item_lv2_t9_sr",
+            "maxweight": 30,
+            "available": 2
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "ltm_halloween_chest_level_2",
+    "var_fde72c94": 100
+}

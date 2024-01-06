@@ -1,0 +1,980 @@
+{
+    "var_329872a2": [
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_001"
+        },
+        {
+            "var_e265e63e": "execution",
+            "var_b4a570f4": "#execution_004"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_007"
+        },
+        {
+            "var_8e1cee6b": 0.5,
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_017"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_018"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_020"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_024"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_029"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_030"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_033"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_036"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_038"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_066"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_099"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_100"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_101"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_117"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_118"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_120"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_121"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_124"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_126"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_127"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_129"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_132"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_133"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_135"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_136"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_150"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_025"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_026"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_002"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_016"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_123"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_130"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_027"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_015"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_021"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_048"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_037"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_003"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_064"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#hash_7bcf2ca75ab01a43"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_005"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_014"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_022"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_031"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_051"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_062"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#hash_699ef1a75023ce17"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_086"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_108"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_110"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_111"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_173"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_174"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_204"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_038r"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_039bc"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_043"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_059"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_134"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_159"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_205"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_023"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_052"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_125"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_146"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_032"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_049"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_063"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_065"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_067"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_070"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_113"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_119"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_140"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_206"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_061"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_141"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_080"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_157"
+        },
+        {
+            "var_e265e63e": "mtx_execute_rare",
+            "var_b4a570f4": "#execution_160"
+        },
+        {
+            "var_e265e63e": "mtx_execute_nice_knife",
+            "var_b4a570f4": "#execution_154"
+        },
+        {
+            "var_e265e63e": "mtx_execute_gun_fu",
+            "var_b4a570f4": "#execution_128"
+        },
+        {
+            "var_e265e63e": "mtx_execute_problem_solved",
+            "var_b4a570f4": "#execution_078"
+        },
+        {
+            "var_e265e63e": "mtx_execute_plenty_more",
+            "var_b4a570f4": "#execution_074"
+        },
+        {
+            "var_e265e63e": "mtx_execute_we_have_fun",
+            "var_b4a570f4": "#execution_040bc"
+        },
+        {
+            "var_e265e63e": "mtx_execute_suck_it_up",
+            "var_b4a570f4": "#execution_208"
+        },
+        {
+            "var_e265e63e": "mtx_execute_blitz",
+            "var_b4a570f4": "#execution_163"
+        },
+        {
+            "var_e265e63e": "mtx_execute_flexed_on_em",
+            "var_b4a570f4": "#execution_161"
+        },
+        {
+            "var_e265e63e": "mtx_execute_imp_weapon",
+            "var_b4a570f4": "#execution_207"
+        },
+        {
+            "var_e265e63e": "mtx_execute_judge_jury",
+            "var_b4a570f4": "#execution_194"
+        },
+        {
+            "var_e265e63e": "mtx_execute_nine_ten",
+            "var_b4a570f4": "#execution_162"
+        },
+        {
+            "var_e265e63e": "mtx_execute_terminated",
+            "var_b4a570f4": "#execution_182"
+        },
+        {
+            "var_e265e63e": "mtx_execute_the_lesson",
+            "var_b4a570f4": "#execution_081"
+        },
+        {
+            "var_e265e63e": "mtx_execute_think_hurt",
+            "var_b4a570f4": "#hash_31068a75e6604db"
+        },
+        {
+            "var_e265e63e": "mtx_execute_this_my_house",
+            "var_b4a570f4": "#execution_181"
+        },
+        {
+            "var_e265e63e": "mtx_execute_violence_solves",
+            "var_b4a570f4": "#execution_082"
+        },
+        {
+            "var_e265e63e": "mtx_execute_where_you_learn",
+            "var_b4a570f4": "#execution_083"
+        },
+        {
+            "var_e265e63e": "mtx_execute_that_enough",
+            "var_b4a570f4": "#execution_087"
+        },
+        {
+            "var_e265e63e": "mtx_execute_death_incarnate",
+            "var_b4a570f4": "#execution_198"
+        },
+        {
+            "var_e265e63e": "mtx_execute_oops_broke_them",
+            "var_b4a570f4": "#execution_089"
+        },
+        {
+            "var_e265e63e": "mtx_execute_you_fucked",
+            "var_b4a570f4": "#execution_142"
+        },
+        {
+            "var_e265e63e": "mtx_execute_worst_nightmare",
+            "var_b4a570f4": "#execution_209"
+        },
+        {
+            "var_e265e63e": "mtx_execute_got_off_easy",
+            "var_b4a570f4": "#execution_145"
+        },
+        {
+            "var_e265e63e": "mtx_execute_fire_chill",
+            "var_b4a570f4": "#execution_098"
+        },
+        {
+            "var_e265e63e": "mtx_execute_better_luck",
+            "var_b4a570f4": "#execution_196"
+        },
+        {
+            "var_e265e63e": "mtx_execute_dead",
+            "var_b4a570f4": "#execution_199"
+        },
+        {
+            "var_e265e63e": "mtx_execute_just_starting",
+            "var_b4a570f4": "#execution_176"
+        },
+        {
+            "var_e265e63e": "mtx_execute_esad",
+            "var_b4a570f4": "#execution_042"
+        },
+        {
+            "var_e265e63e": "mtx_execute_not_your_day",
+            "var_b4a570f4": "#execution_210"
+        },
+        {
+            "var_e265e63e": "mtx_execute_tick_tock",
+            "var_b4a570f4": "#execution_144"
+        },
+        {
+            "var_e265e63e": "mtx_execute_fire",
+            "var_b4a570f4": "#execution_096"
+        },
+        {
+            "var_e265e63e": "mtx_execute_electric_shock",
+            "var_b4a570f4": "#execution_143"
+        },
+        {
+            "var_e265e63e": "mtx_execute_fire_match",
+            "var_b4a570f4": "#execution_097"
+        },
+        {
+            "var_e265e63e": "mtx_execute_see_hell",
+            "var_b4a570f4": "#execution_166"
+        },
+        {
+            "var_e265e63e": "mtx_execute_hope_someones",
+            "var_b4a570f4": "#execution_171"
+        },
+        {
+            "var_e265e63e": "mtx_execute_no_second_chances",
+            "var_b4a570f4": "#execution_172"
+        },
+        {
+            "var_e265e63e": "mtx_execute_luck_ran_out",
+            "var_b4a570f4": "#execution_008"
+        },
+        {
+            "var_e265e63e": "mtx_execute_cant_take",
+            "var_b4a570f4": "#execution_046"
+        },
+        {
+            "var_e265e63e": "mtx_execute_close_eyes",
+            "var_b4a570f4": "#execution_068"
+        },
+        {
+            "var_e265e63e": "mtx_execute_howd_you_think",
+            "var_b4a570f4": "#execution_152"
+        },
+        {
+            "var_e265e63e": "mtx_execute_gonna_need_another",
+            "var_b4a570f4": "#execution_211"
+        },
+        {
+            "var_e265e63e": "mtx_execute_nice_try",
+            "var_b4a570f4": "#execution_075"
+        },
+        {
+            "var_e265e63e": "mtx_execute_moving_next_target",
+            "var_b4a570f4": "#execution_131"
+        },
+        {
+        }
+    ],
+    "gestures": [
+        {
+            "var_723e292": "mtx_gst_emote_kiss",
+            "gestureindex": 13
+        },
+        {
+            "var_723e292": "mtx_gst_taunt_all",
+            "gestureindex": 14
+        },
+        {
+            "var_723e292": "mtx_gst_taunt_all",
+            "gestureindex": 15
+        },
+        {
+            "var_723e292": "mtx_gst_taunt_all",
+            "gestureindex": 17
+        },
+        {
+            "var_723e292": "mtx_gst_emote_cry",
+            "gestureindex": 18
+        },
+        {
+            "var_723e292": "mtx_gst_emote_tired",
+            "gestureindex": 19
+        },
+        {
+            "var_723e292": "mtx_gst_taunt_all",
+            "gestureindex": 20
+        },
+        {
+            "var_723e292": "mtx_gst_taunt_all",
+            "gestureindex": 21
+        },
+        {
+            "var_723e292": "mtx_gst_taunt_all",
+            "gestureindex": 23
+        },
+        {
+            "var_723e292": "mtx_gst_taunt_all",
+            "gestureindex": 24
+        },
+        {
+            "var_723e292": "mtx_gst_emote_happy_sigh",
+            "gestureindex": 25
+        },
+        {
+            "var_723e292": "mtx_gst_taunt_all",
+            "gestureindex": 31
+        },
+        {
+            "var_723e292": "mtx_gst_taunt_all",
+            "gestureindex": 32
+        },
+        {
+            "var_723e292": "mtx_gst_taunt_all",
+            "gestureindex": 34
+        },
+        {
+            "var_723e292": "mtx_gst_taunt_all",
+            "gestureindex": 30
+        },
+        {
+            "var_723e292": "mtx_gst_emote_drink",
+            "var_87e637b": 3.6,
+            "gestureindex": 37
+        },
+        {
+            "var_723e292": "mtx_gst_taunt_all",
+            "gestureindex": 35
+        },
+        {
+            "var_723e292": "mtx_gst_taunt_all",
+            "gestureindex": 28
+        },
+        {
+            "var_723e292": "mtx_gst_emote_surprise",
+            "gestureindex": 36
+        },
+        {
+            "var_723e292": "mtx_gst_taunt_boast_crush_it",
+            "gestureindex": 41
+        },
+        {
+            "var_723e292": "mtx_gst_taunt_wave_payback",
+            "gestureindex": 39
+        },
+        {
+            "var_723e292": "mtx_gst_emote_kiss",
+            "gestureindex": 40
+        },
+        {
+            "var_723e292": "mtx_gst_taunt_point_bullet_name",
+            "gestureindex": 43
+        },
+        {
+            "var_723e292": "mtx_execute_shotgun_kill",
+            "gestureindex": 42
+        },
+        {
+            "var_723e292": "mtx_gst_taunt_boast_goml",
+            "gestureindex": 44
+        },
+        {
+            "var_723e292": "mtx_execute_taking_names",
+            "gestureindex": 49
+        },
+        {
+            "var_723e292": "mtx_gst_emote_cheer",
+            "gestureindex": 47
+        },
+        {
+            "var_723e292": "mtx_gst_social_high_five",
+            "gestureindex": 48
+        },
+        {
+            "var_723e292": "mtx_gst_taunt_point_youre_next",
+            "gestureindex": 45
+        },
+        {
+            "gestureindex": 50
+        },
+        {
+            "gestureindex": 46
+        }
+    ],
+    "var_9a9de604": "se_kill_mult_semtex",
+    "var_c097847f": "#hash_772968c56745ec19",
+    "var_7197146": "#hash_559e5b95b6fea46e",
+    "pinggearlethalgeneric": "ping_gear_lethal",
+    "exertsnipergasp": "exert_sniper_gasp",
+    "var_a9b4dabb": "exert_bullet_pain",
+    "zmpingitemsalvage": "#hash_35d28b039b1a2a1c",
+    "var_de5c6530": "#hash_af74e250ad6c21a",
+    "pingitemmelee": "ping_item_melee",
+    "var_5200615b": "ping_vip_exfil_site",
+    "exertemergegasp": "exert_underwater_emerge_gasp",
+    "var_574e476b": "ping_item_gun_tactical",
+    "var_c24b2eea": "#hash_396b0e8e66b34755",
+    "var_d05860d4": "se_kill_mult_6",
+    "var_62aa857a": "se_kill_mult_4",
+    "var_87104e45": "se_kill_mult_2",
+    "pingitemgunar": "ping_item_gun_ar",
+    "var_ea4e2490": "#hash_1966de982b35c0f7",
+    "var_78a321f1": "#hash_388988d66f788f26",
+    "var_673f0ab3": "#hash_307fddedfe4cfd13",
+    "var_a5d46693": "#hash_5b8710805006a028",
+    "var_981c7b13": "#hash_c3c088bf6b025a1",
+    "var_68bb30c1": "exert_electro",
+    "var_157d56ce": "se_kill_mult_landmine",
+    "pingitemlethalsemtex": "ping_item_lethal_semtex",
+    "var_8c705581": "se_kill_mult_one_bullet",
+    "var_66209010": "#hash_2e0da38a62e4c210",
+    "var_8cf57938": "#hash_54ffa30fa8b87888",
+    "var_c256dc31": "se_kill_point_blank",
+    "var_68d9f0e3": "ping_item_ss_strafe",
+    "var_66c19447": "exert_melee_heavy",
+    "var_407dd613": "se_kill_mult_gas",
+    "var_4167c49f": "#hash_51cb6ea04c57a547",
+    "pingitemammosniperrounds": "ping_item_ammo_sniper",
+    "var_a3fc0166": "ping_item_ss_hover_jet",
+    "pingitemtacticalstimshot": "ping_item_tactical_stim_shot",
+    "pingitemtacticalgeneric": "ping_item_tactical",
+    "var_dbfd0b22": "#hash_7ef3a5f8875d2719",
+    "var_d3bc2ad1": "#hash_780fd4cc399a12e",
+    "var_3823c559": "kill_generic_infantry_fm",
+    "var_61f04861": "exert_death_veh_under",
+    "exertpainunderwater": "exert_underwater_pain",
+    "var_b3bdd3b4": "ping_item_armor_satchel",
+    "var_ff9ef39": "#hash_604ac40aaf21b856",
+    "pingitemgungeneric": "ping_item_gun",
+    "var_5af4f77c": "ping_enemy_gear_tactical",
+    "var_b799ff98": "ping_objective_bomb",
+    "var_7184f342": "ping_item_rad_vest",
+    "threatinfantry": "threat_infantry",
+    "exertpaindrowning": "exert_underwater_air_low",
+    "var_59f0cf88": "se_kill_backstabber",
+    "var_aa5adc89": "#hash_570a8174f25ea1f1",
+    "var_f4cd0e25": "#hash_700a8f993cc97bf2",
+    "var_6f9b4909": "ping_item_bag_generic",
+    "var_da554fd6": "#hash_7ffd0a6dfca65d3a",
+    "var_a18357b0": "#hash_48692ea445e76a49",
+    "var_9903c3b": "kill_generic_infantry_ml",
+    "pingitemgunlmg": "ping_item_gun_lmg",
+    "var_922067c4": "scriptbundle",
+    "var_d6081434": "#hash_854d5c52b854e5d",
+    "var_b05f3727": "ping_enemy_gear_tactical_ammo_pack",
+    "var_32b3405f": "ping_gear_tactical",
+    "pingitemscorestreakrcxd": "ping_item_ss_rcxd",
+    "pingvehiclehind": "ping_item_veh_hind",
+    "congratulatelarge": "congrat_lrg",
+    "var_6a9e0dd7": "#hash_bc65474b8b05bdf",
+    "var_4c948189": "ping_gear_tactical_listen",
+    "pingitemattachmentgeneric": "ping_item_attach",
+    "pingitemlethalthrowingknife": "ping_item_lethal_throw_knife",
+    "var_3fd6720b": "ping_item_ss_recon",
+    "killsniper": "kill_sniper",
+    "var_6d143dab": "#hash_4a2217191a357209",
+    "var_a1f53a5": "se_kill_one_bullet_sniper",
+    "var_b61809f9": "ping_enemy_gear_tactical_gas",
+    "var_c150e63a": "#hash_43079699093ed17f",
+    "pingitemscorestreakcombatbow": "ping_item_ss_bow",
+    "var_5030cbb3": "#hash_d96d3813c12b356",
+    "var_f881d0f1": "ping_item_uranium_pouch",
+    "pingitemcontainer": "ping_item_container",
+    "var_27b6ab4b": "se_kill_mult_concuss",
+    "var_3f0128df": "#hash_25175ce996f492fd",
+    "var_1d0e764": "ping_item_first_aid",
+    "pingitemtacticalconcussion": "ping_item_tactical_concussion",
+    "var_7829e3bd": "se_kill_gunbutt",
+    "var_6f2c75ea": "ping_danger_210",
+    "var_25f3ebae": "ping_danger_225",
+    "var_a236ebbe": "ping_danger_240",
+    "var_ddc4203": "ping_danger_255",
+    "var_adcb08a2": "ping_danger_270",
+    "var_9210eb86": "ping_danger_285",
+    "var_12a31d61": "ping_item_lethal",
+    "var_4908a446": "se_kill_mult_nightingale",
+    "type": "mpdialog_player",
+    "zmpingperkcan": "#hash_5b7f4c9797286335",
+    "var_2ede36b7": "#hash_7a74b7680873fc70",
+    "pingitemammogeneric": "ping_item_ammo",
+    "killgeneric": "kill_generic_infantry",
+    "calloutacknowledge": "callout_base_acknow",
+    "pinglocation": "ping_location",
+    "pingitemgunlauncher": "ping_item_gun_launcher",
+    "pingitemgunhandgun": "ping_item_gun_handgun",
+    "calloutcelebration": "callout_base_celebrat_1",
+    "var_730dde6b": "#hash_1dc4b6cd566949e5",
+    "zmpingitemaetherium": "#hash_251b7abea78af55b",
+    "var_2935afac": "se_kill_mult_clear_obj",
+    "calloutgroupup": "callout_base_form_up",
+    "calloutneedride": "callout_base_need_ride",
+    "var_82f4c89a": "se_kill_quad_obit_feed",
+    "pingitemscorestreakgrenadelauncher": "ping_item_ss_grenade_launcher",
+    "var_f306595c": "#hash_7297c3be74c9d4c4",
+    "var_3825744e": "ping_item_ss_uav",
+    "var_7ad1016": "ping_item_veh_bike",
+    "pingitemlethalmolotov": "ping_item_lethal_molo",
+    "var_26b25ec0": "#hash_75ed79f00d95eb8",
+    "calloutcancel": "callout_base_cancel",
+    "var_8cf2fd05": "#hash_34cc6e333f643e98",
+    "pingitemtacticalsmokegrenade": "ping_item_tactical_smoke",
+    "spawnedsquad": "spawn_sqd",
+    "var_24133811": "ping_gear_tactical_jammer",
+    "var_5e955231": "ping_danger_330",
+    "var_b02f6f50": "ping_danger_315",
+    "var_e2914bcb": "ping_danger_300",
+    "pingitemammosmallcaliber": "ping_item_ammo_sml_cal",
+    "var_5b29b1d3": "se_kill_revenge",
+    "var_760e8043": "ping_danger_345",
+    "var_ed50283e": "exert_concuss",
+    "var_b5750896": "ping_gear_tactical_gas",
+    "var_87856536": "#hash_215be3e331979b74",
+    "var_7bbca396": "ping_objective_control_point",
+    "pingitemscorestreakflamethrower": "ping_item_ss_flamethrower",
+    "var_d13ebcfe": "callout_base_shout_out_1",
+    "var_3a42c1d5": "#hash_520e6c67ff0d2f98",
+    "var_27bdd2e2": "exert_melee_light",
+    "exertgasgag": "exert_gas_gag",
+    "var_3badb1da": "#hash_abd066db6254147",
+    "var_e70f5143": "#hash_73599c6fbab22afd",
+    "var_8c5b9bd9": "#hash_7359976fbab2227e",
+    "var_30a9e317": "#hash_73568c6fbaafd9f6",
+    "var_79d2f568": "#hash_7356916fbaafe275",
+    "pingvehicletank": "ping_item_veh_tank",
+    "var_dd1d58bf": "#hash_2b8a9fa01d774fb6",
+    "calloutnicework": "callout_base_good_job",
+    "congratulatesmall": "congrat_sml",
+    "var_f122552": "#hash_5fe4f643e8dc33a0",
+    "var_15fd8202": "#hash_644e3bf120c4b0f0",
+    "var_5bf416db": "#hash_20bd4a5702e75ddf",
+    "vmtype": "both",
+    "var_78a6d67c": "se_kill_mult_satchel",
+    "pingitemtacticalnightingale": "ping_item_tactical_nightingale",
+    "threatsniper": "threat_sniper",
+    "var_1ae942b1": "ping_item_ss_care",
+    "var_4122b61c": "ping_item_veh_combat",
+    "var_dfbf98e1": "#hash_645a782fd613c106",
+    "var_a9c27c67": "se_kill_mult_blind",
+    "calloutnegative": "callout_base_negative",
+    "var_4acc5536": "ping_enemy_gear_tactical_missile_trrt",
+    "exertsniperhold": "exert_sniper_hold",
+    "calloutneedhelp": "callout_base_need_assist",
+    "pingitemscorestreakdeathmachine": "ping_item_ss_death_machine",
+    "capturestartobjective": "objective_cap_start",
+    "pingitemscorestreakartillerystrike": "ping_item_ss_artillery",
+    "var_f35b9f76": "#hash_70a459d54597c49b",
+    "var_b82b11fd": "se_kill_survivor",
+    "var_d0891bab": "ping_objective_next_hardpoint",
+    "var_2bd61d23": "#hash_3a6f80763775ad3b",
+    "var_8fc7e499": "#hash_445847877904ba8b",
+    "pingitemgunsmg": "ping_item_gun_smg",
+    "var_44d86dec": "exert_explo_dead",
+    "var_c00403c2": "#hash_2bc3897b48a904",
+    "pingitemammoassaultrounds": "ping_item_ammo_assault",
+    "var_7b6aae4d": "ping_danger_195",
+    "var_2b498f1c": "ping_danger_180",
+    "var_b7cd1f5d": "ping_danger_105",
+    "var_1faeebfb": "ping_danger_135",
+    "var_8612b9d9": "ping_danger_120",
+    "var_5b127241": "ping_danger_150",
+    "var_e6150724": "ping_danger_165",
+    "pinglocationacknowledge": "ping_location_ack",
+    "var_b63eeb6b": "#hash_5dcb6aa29e9ad85a",
+    "pinggearenemyacknowledge": "ping_enemy_gear_ack",
+    "characterselect": "menu_select",
+    "var_40a8643d": "se_kill_semtex_stuck",
+    "name": "rambo_usa_dialog",
+    "var_f14aec9f": "kill_team_warn",
+    "pingitemscorestreaknapalmstrike": "ping_item_ss_napalm",
+    "var_79741a14": "ping_item_ss_cuav",
+    "var_b22401a2": "#hash_16c78550588c9a68",
+    "var_35f92256": "exert_death_veh_hit",
+    "var_b801796c": "exert_punch_take",
+    "var_5902d8f1": "se_kill_first",
+    "var_7c47cc4f": "#hash_5b264747f88ce21c",
+    "boostloss": "boost_loss",
+    "pingitemscorestreakcontrolledmissile": "ping_item_ss_ctrl_missile",
+    "var_76ca69c4": "ping_gear_tactical_missile_trrt",
+    "var_4e454b1f": "#hash_c1248ed441ea74a",
+    "exertgascough": "exert_gas_cough",
+    "var_531bbcef": "se_kill_mult_jammer",
+    "var_c24e639a": "se_dstr_veh_satchel",
+    "var_e6843753": "#hash_4e65f2cb77b4b92c",
+    "var_fd0fd940": "ping_objective",
+    "pingitemammoshotgunshells": "ping_item_ammo_shotgun",
+    "var_af72c6b": "se_kill_blindfire",
+    "pingitemgunsniper": "ping_item_gun_sniper",
+    "var_a7cd67b9": "#hash_2e520aeba8bde03b",
+    "pingitemscorestreaksentryturret": "ping_item_ss_sentry",
+    "pingitemscorestreakchoppergunner": "ping_item_ss_chop_gun",
+    "boostdraw": "boost_draw",
+    "var_c1674108": "exert_throw",
+    "var_b75d6820": "#hash_788b8184532f9f11",
+    "exertpainfalling": "exert_land_light",
+    "var_833c7654": "#hash_29ded6f3b78588e8",
+    "var_6275013": "#hash_4cf1c061d57b966f",
+    "pingitemarmor": "ping_item_armor",
+    "var_675f3003": "#hash_8c9cd77fcf46365",
+    "zmpingitemquest": "#hash_42832320335b55f7",
+    "var_cd466c4e": "se_kill_streak_10",
+    "var_50f573ae": "se_kill_streak_15",
+    "var_2ed3a883": "se_kill_streak_25",
+    "var_e36f11b7": "se_kill_streak_20",
+    "var_30efbb83": "se_kill_streak_30",
+    "var_5d6f46a4": "se_shutdown_grenade_launcher",
+    "pingitemselfrevive": "ping_item_self_rev",
+    "pingvehiclegunboat": "ping_item_veh_gunboat",
+    "var_a7daf1b2": "#hash_fede25463afd26",
+    "var_53f25688": "exert_bludgeoned",
+    "var_11bab4ea": "#hash_63942f0a1f905427",
+    "var_4f8768e5": "ping_item_ss_gunship",
+    "exertdeath": "exert_death",
+    "boostwin": "boost_win",
+    "pingitemgunshotgun": "ping_item_gun_shotgun",
+    "var_b7835026": "#hash_4f37de56fb611a02",
+    "pingitemarmorplate": "ping_item_armor_plate",
+    "var_93a555d": "#hash_1f100da6b8d9772",
+    "var_f528d687": "ping_item_ss_jet_fighter",
+    "exertdeathburned": "exert_burn_dead",
+    "var_c862d4e6": "ping_objective_hardpoint",
+    "pingvehiclewakerunner": "ping_item_veh_wakerun",
+    "var_1dfcabbd": "exert_death_fall",
+    "var_bac1f224": "threat_infantry_fm",
+    "exertmantheavy": "exert_mant_heavy",
+    "var_2a0d1f09": "#hash_4d3f081d6d08b03",
+    "calloutsorry": "callout_base_sorry",
+    "var_63cacd8": "#hash_32cca76329f7cc02",
+    "pingitemammospecialammo": "ping_item_ammo_special",
+    "var_b51ed73e": "ping_enemy_gear_lethal_landmine",
+    "var_af97fe9b": "exert_blind",
+    "exertgasgasp": "exert_gas_gasp",
+    "pingitemscorestreakgeneric": "ping_item_ss_generic",
+    "capturedobjective": "objective_captured",
+    "var_599a775c": "ping_gear_tactical_ammo_pack",
+    "var_3240afd6": "se_kill_savior",
+    "var_72bcbaa0": "ping_enemy_gear_tactical_trophy",
+    "var_29e91c40": "#hash_542c7615209f70f9",
+    "pingitemlethalfrag": "ping_item_lethal_frag",
+    "var_50ecd2a7": "ping_danger_030",
+    "var_c18fb1a3": "ping_danger_015",
+    "var_8fdc89e": "ping_danger_060",
+    "var_a4d07ee1": "ping_danger_075",
+    "var_a4248e7": "ping_danger_045",
+    "var_1edb8729": "ping_danger_090",
+    "var_5e572b53": "ping_gear_tactical_trophy",
+    "pingvehiclesnowmobile": "ping_item_veh_snow",
+    "var_72e8c256": "#hash_13fd807936846178",
+    "var_1d7e6d4f": "#hash_21c999eaed7cbbb9",
+    "var_fc81fdbb": "#hash_1ba43514b75b644a",
+    "var_57aeff94": "#hash_63db355944047d6b",
+    "exertdeathstabbed": "exert_stabbed",
+    "pingvehiclefav": "ping_item_veh_fav",
+    "var_c9d40ef3": "ping_enemy_gear_tactical_listen",
+    "var_87c03899": "#hash_374060170ca5c369",
+    "var_8b53e826": "#hash_7c78dcc0946f3bb6",
+    "pingitemlethalsatchelcharge": "ping_item_lethal_satchel",
+    "exertsniperexhale": "exert_sniper_exhale",
+    "var_160e4021": "ping_item_wpn_cache",
+    "var_12bf99b2": "se_shutdown_flamethrower",
+    "var_91b93080": "ping_enemy_gear_lethal",
+    "pingdangeracknowledge": "ping_danger_ack",
+    "var_ae6aac16": "#hash_10888e2c3ae61075",
+    "exertemergebreath": "exert_underwater_emerge_breath",
+    "var_ef22bcd7": "ping_gear_tactical_cover",
+    "pingvehicle": "ping_item_veh",
+    "var_f08b5f75": "se_kill_mult_frag",
+    "callouthello": "callout_base_social_hello",
+    "var_d5f47125": "ping_enemy_gear_tactical_jammer",
+    "var_9ff5cdcc": "#hash_39d6bac6c1a23bff",
+    "var_e70ab1f": "#hash_79b3071135f9c84a",
+    "var_113e7d50": "#hash_aeb4b147e543272",
+    "calloutthanks": "callout_base_social_thank",
+    "var_ead40107": "#hash_35ec86bd5a3ca467",
+    "callouttaunt": "callout_base_taunt_1",
+    "exertmantlight": "exert_mant_light",
+    "var_93b0d6ea": "kill_team",
+    "var_546b28ea": "#hash_77852ca94d7afe43",
+    "var_b4d315f0": "#hash_67ed983c88fda906",
+    "var_175ff69c": "ping_enemy_gear_tactical_cover",
+    "var_7a45f37b": "exert_gas_death",
+    "var_4d7d1d3a": "#hash_3f5d264e188a3a10",
+    "var_87dee9d8": "#hash_65841419beaa95e7",
+    "zmpingraygun": "#hash_2c2b8bdddd886e6d",
+    "var_8772175d": "se_kill_hatchet_bounce",
+    "var_327eb99c": "exert_breath_hurt",
+    "zmpingwonderweapongeneric": "#hash_11d1f095d74adfba",
+    "var_bfe9ea17": "se_shutdown_death_machine",
+    "var_33d6065e": "#hash_4345ef33c286607b",
+    "var_1c702f80": "se_kill_comeback",
+    "pingobjectiveacknowledge": "ping_objective_ack",
+    "promotionreaction": "promotion_reaction",
+    "var_636b894c": "ping_item_uranium",
+    "var_ea379016": "exert_suppressed",
+    "var_dd760bb1": "se_kill_mult_listen",
+    "var_fc84b24b": "se_shutdown_hand_cannon",
+    "pingitemacknowledge": "ping_item_ack",
+    "se_vehiclekill": "se_kill_veh",
+    "zmpingitemintel": "#hash_d2f0e04bece8681",
+    "var_861c8fa7": "#hash_31e8b94c9601eb49",
+    "pingitemgeneric": "ping_item",
+    "var_6577839f": "#hash_7c24a56334272e73",
+    "var_d29f2e0c": "zm_revive_downed",
+    "var_e2e7938c": "ping_danger_000",
+    "exertdeathdrowned": "exert_underwater_drown",
+    "var_b12a1e12": "exert_self_heal",
+    "var_90a92bf": "se_kill_streak_5",
+    "var_c3b67de0": "exert_burn_dmg",
+    "zmpingcymbalmonkey": "#hash_2a67c0c6db146d0c",
+    "pinggearlethallandmine": "ping_gear_lethal_landmine",
+    "var_cef2429": "threat_infantry_ml",
+    "var_898d7174": "se_kill_mult_molo",
+    "var_ee5850c4": "se_kill_backfire",
+    "pingvehicleenemy": "ping_enemy_veh",
+    "var_3b573f14": "ping_objective_bomb_site",
+    "var_e9e5affc": "ping_item_tactical_flash",
+    "voiceprefix": "vox_rmbo_",
+    "var_6002d7a1": "se_kill_hatchet_longshot",
+    "var_1ca33ad4": "exert_punch_give",
+    "var_2cecf015": "#hash_1dc37b47da94eff6",
+    "var_415efa99": "#hash_257487503a48591a",
+    "var_8e38058e": "ping_item_ss_lgt_chop",
+    "var_d863d2d": "se_shutdown_bow",
+    "pingitemammolargecaliber": "ping_item_ammo_lrg_cal",
+    "var_c6a87967": "#hash_7e1a582ba7a92371",
+    "var_bf6e4ac": "#hash_1d61bc44980381cd",
+    "pingitemscorestreakhandcannon": "ping_item_ss_hand_cannon",
+    "var_ba564a1e": "kill_team_react",
+    "var_49249335": "ping_objective_flag"
+}

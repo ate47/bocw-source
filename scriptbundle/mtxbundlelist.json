@@ -1,0 +1,2204 @@
+{
+    "mtxbundlelist": [
+        {
+            "var_8bd0af73": "#battle_pass_season_1_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#battle_pass_season_2_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#battle_pass_season_2_upsell_hightier_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#battle_pass_season_2_upsell_midtier_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#battle_pass_season_3_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#battle_pass_season_4_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#battle_pass_season_5_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#battle_pass_season_5_promo_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#battle_pass_season_6_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#battle_pass_season_6_promo_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_2020_qbz_83_camera_gun_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3003_pistol_fullauto_spycraft_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3004_ballistic_knife_russian_schematic_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3005_ffar_1_guitar_legend_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3006_m16_alien_infestation_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3007_hauer_77_steampunk_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3008_pelington_703_road_grime_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3009_ak_47_tentacle_monster_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3010_krig_6_dying_art_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3011_mac_10_motherboard_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3012_smg_accurate_cartoon_dogfight_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3017_ksp_45_rainbow_tracer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3018_qbz_83_acid_dismemberment_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3020_g11_refinery_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3021_park_wasteland_warrior_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3022_gallo_sa12_aether_weapons_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3023_song_punk_thrasher_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3025_hunter_ranch_hand_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3028_type_63_blacksmith_hammer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3031_special_op_1_rfb_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3032_fara_rough_nugget_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3033_g11_plastic_prototype_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3036_sims_nuclear_cowboy_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3037_pistol_fullauto_dart_frog_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3040_crossbow_gothic_pirate_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3042_stone_bomber_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#hash_65db4c5ff381e943"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3049_qbz_83_shoe_shine_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3050_milano_821_flower_power_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3051_milano_821_railway_shootout_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3054_baker_thermal_tracker_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3060_qbz_83_klass_86_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3062_aug_jewel_thief_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3063_aug_anime_fox_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3064_ntw_20_neon_tracer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3069_ffar_1_mutagen_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3070_baseball_bat_basebrawl_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3079_m60_tower_patrol_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3080_krig_6_coyote_mesa_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_3901_special_op_2_dh_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_4003_kiparis_new_weap_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_4005_nail_gun_melee_two_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_4007_stoner_63_hotrod_racer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_4008_lc10_evil_genius_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_4010_groza_short_circuit_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_4011_g11_reactive_one_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_4012_bullfrog_reactive_two_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_4013_gallo_sa12_reactive_three_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_4016_ak_74u_containminated_water_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_4020_ak_47_studded_spike_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_4023_ffar_1_the_jester_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_4029_dmr_14_8bit_freedom_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_4030_bullfrog_summer_pool_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_4038_zrg_20mm_dance_club_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_4046_ak_47_post_modern_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_4048_krig_6_dying_art_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_4050_ak_47_drift_racer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_4055_dmr_14_vineyard_cask_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_4057_ffar_1_lava_flow_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_4061_lw3_tundra_space_battle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5003_marshall_new_weap_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5005_fist_melee_two_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5010_mac_10_mastercraft_mummy_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5011_xm4_master_reactive_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5012_aug_master_ghost_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5014_type_63_spear_fighter_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5015_stoner_63_reactive_mafia_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5016_cetme_reactive_overload_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5017_kiparis_reactive_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5020_stoner_63_wrecking_crew_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5023_xm4_gold_ticket_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5028_ak_47_8bit_russia_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5032_g11_forest_friends_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5033_ak_47_checkmate_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5034_lc10_sugar_rush_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5041_milano_821_neon_lights_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5045_bullfrog_haunted_house_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5046_milano_821_cheese_shredder_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5048_ameli_lake_side_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5050_rpd_flight_deck_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5051_type_63_vegetable_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5052_pelington_703_skeleton_key_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5102_season_5_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5103_season_5_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5104_season_5_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5105_season_5_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5106_season_5_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5107_season_5_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5108_season_5_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5109_season_5_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5110_season_5_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5111_season_5_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5902_special_op_4_jd_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5903_free_autumn_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_6002_lapa_new_weapon_smg_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_6003_double_bladed_axe_berserker_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_6009_fara_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_6011_xm4_anime_monster_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_6012_ffar_1_bowling_league_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_6015_ak_74u_zombie_demolition_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_6023_bullfrog_banana_wars_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_6024_qbz_83_flash_funk_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_6026_ppsh_41_cold_wave_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_6027_ffar_1_ninjutsu_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_6028_ksp_45_dino_burst_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_6029_fara_antarctica_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_6030_ak_47_psa_pressure_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_6033_groza_runaway_train_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_6034_mg_82_reckoning_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_6035_xm4_hot_pepper_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_7001_vahan_new_weapon_ar_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_7004_vahan_ferrofluid_tracer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_7006_miami_driving_tracer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#hash_21b31a07e6d63694"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_7505_vault_ar_pack_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_7506_vault_smg_pack_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_7507_vault_lmg_pistol_pack_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_7508_vault_sniper_sg_pack_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_7509_vault_tac_rifle_pack_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#hash_ddbdebbc31cc2ae"
+        },
+        {
+            "var_8bd0af73": "#bundle_7003_scythe_melee_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_anime_1023_lmg_light_purple_tracer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1003_ar_accurate_samurai_spirit_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1005_ar_accurate_deaths_touch_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1015_smg_standard_black_gold_1_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1016_ar_mobility_frostbite_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1017_tr_damagesemi_king_scorpion_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1018_ar_fastfire_heavy_cover_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1019_smg_heavy_qrf_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1020_shotgun_pump_white_snake_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1021_smg_capacity_good_company_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#hash_25c12e2d6af8aa37"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1028_ar_standard_blacksmith_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1029_ar_accurate_midnight_express_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1030_smg_burst_loose_ends_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1032_shotgun_fullauto_power_overwhelming_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1032_shotgun_fullauto_power_overwhelming_alt_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1033_lmg_light_zombit_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1035_ar_standard_brute_force_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1039_lmg_light_killer_surf_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1040_ar_accurate_fighting_chance_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1041_ar_damage_kalashnikov_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1049_pistol_semiauto_handmany_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1050_smg_handling_snow_shovel_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1051_smg_capacity_bogged_down_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1057_smg_burst_beta_red_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1058_shotgun_semiauto_junk_food_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1059_smg_capacity_full_tank_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1060_tr_precisionsemi_well_placed_arrow_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1061_lmg_light_spoiled_rotten_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1062_ar_fastfire_mall_rat_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1065_ar_standard_devil_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1069_tr_longburst_peaceful_warrior_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1070_sniper_quickscope_winter_wonderland_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1071_smg_heavy_cemented_fate_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1074_ar_accurate_royal_flush_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1079_tr_powerburst_target_practice_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1080_ar_fastfire_send_it_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1081_smg_capacity_gravedigger_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1082_sniper_quickscope_eye_relief_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1083_ar_mobility_anime_assassin_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1084_sniper_quickscope_wooden_hunter_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1088_smg_heavy_striking_distance_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1089_tr_precisionsemi_dmr_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1090_smg_capacity_alleyway_ambush_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_1905_ar_fastfire_croc_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2002_sniper_quickscope_black_gold_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2009_tr_damagesemi_serpent_striker_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2010_smg_heavy_toolset_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2013_shotgun_semiauto_anime_pilot_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2015_tr_damagesemi_unyielding_force_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2016_ar_fasthandling_salamander_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2021_sniper_standard_side_swipe_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2026_ar_mobility_lunar_new_year_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2028_ar_standard_frogman_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2029_ar_mobility_sneakerhead_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2031_smg_burst_ruby_red_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2032_special_crossbow_crossbow_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2039_tr_precisionsemi_tiki_tactical_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2040_lmg_accurate_rock_hard_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2047_tr_powerburst_street_racer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2048_sniper_standard_canyon_coverage_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2049_ar_fastfire_phalanx_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2050_ar_mobility_dense_foliage_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2051_ar_accurate_burger_town_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2054_smg_heavy_zombie_slayer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2059_ar_standard_tight_grouping_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2060_smg_capacity_power_tool_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2063_tr_longburst_white_gold_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2069_ar_damage_entrenched_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2070_smg_burst_heat_wave_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2073_ar_mobility_fine_china_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2078_lmg_light_pink_stampede_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2079_easter_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_2902_blacksmith_battery_2_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_blueprint_3019_weed_tracer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_dismemberment_2058_lmg_slowfire_cold_fusion_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_event_1111_season_1_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_fantasy_1001_sims_blackkklansman_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_fantasy_1002_park_rifleman_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_fantasy_1043_baker_joker_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_fantasy_1052_kgb_longshot_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_fantasy_1072_adler_deadeye_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_fantasy_2001_frank_woods_shadow_commando_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_fantasy_2052_baker_quickscope_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_fantasy_2053_russell_adler_ptfo_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_fantasy_2071_stitch_sentinel_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_10_1110_season_1_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#hash_3b12e8c5fa7a768c"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_2102_season_2_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_2103_season_2_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_2104_season_2_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_2105_season_2_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_2106_season_2_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_2107_season_2_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_2108_season_2_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_2109_season_2_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_2110_season_2_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_2111_season_2_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_2_1102_season_1_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_3101_season_3_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_3102_season_3_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_3103_season_3_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_3104_season_3_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_3105_season_3_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_3106_season_3_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_3107_season_3_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_3108_season_3_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_3109_season_3_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_3110_season_3_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_3113_season_3_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_3_1103_season_1_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_4101_season_4_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_4102_season_4_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_4103_season_4_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_4104_season_4_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_4105_season_4_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_4106_season_4_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_4107_season_4_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_4108_season_4_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_4109_season_4_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_4110_season_4_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_4_1104_season_1_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_5_1105_season_1_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_6101_season_six_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_6102_season_six_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_6103_season_six_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_6104_season_six_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_6105_season_six_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_6106_season_six_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_6107_season_six_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_6108_season_six_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_6109_season_six_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_6110_season_six_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_6_1106_season_1_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_7_1107_season_1_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_8_1108_season_1_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_9_1109_season_1_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_fantasy_1903_mendo_overkill_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_five_tier_skips_01_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_five_tier_skips_02_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_five_tier_skips_03_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_four_tier_skips_01_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_four_tier_skips_02_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_four_tier_skips_03_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_one_tier_skip_01_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_one_tier_skip_02_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_one_tier_skip_03_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_retro_game_3111_season_3_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_retro_game_3112_season_3_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_retro_game_4111_season_4_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_retro_game_4112_season_4_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_retro_game_5111_season_5_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_retro_game_5112_season_5_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_retro_game_6111_season_6_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_retro_game_6112_season_6_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_three_tier_skips_01_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_three_tier_skips_02_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_three_tier_skips_03_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_two_tier_skips_01_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_two_tier_skips_02_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_two_tier_skips_03_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_holiday_1027_ingo_winter_assassin_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_holiday_1044_sims_urban_winter_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_holiday_1054_park_shooter_shooter_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_mastercraft_1022_ar_damage_rocker_science_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_mastercraft_1042_smg_heavy_oozie_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_mastercraft_1042_smg_heavy_oozie_alt_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_mastercraft_1073_smg_burst_retro_renegade_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_mastercraft_2012_smg_capacity_aztec_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_mastercraft_2042_ar_accurate_necroking_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_mastercraft_2072_sniper_quickscope_demonic_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_of_bundles_7016_miami_driving_light_em_up_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1004_mendo_contractor_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1006_ingo_militant_malware_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1007_sims_black_ops_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1008_ingo_red_barron_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1010_baker_the_brawler_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1011_adler_pathfinder_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1012_adler_vicelord_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1013_mendo_mechanic_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1025_park_bank_heist_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1026_baker_warthog_warrior_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1031_bulldozer_bulldozer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1034_baker_zombies_2_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1036_woods_merchant_marine_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#hash_54ad10e5155c6644"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1045_baker_urban_seal_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1046_kgb_the_messenger_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1047_woods_ugly_sweater_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1048_ingo_city_ripper_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1055_adler_private_eye_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1056_woods_chain_gang_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1063_awa_punk_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1064_park_graffiti_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1066_kgb_disavowed_assassin_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1067_sims_pattern_precision_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1068_woods_truckin_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#hash_66c543ac864f97f6"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1077_park_pilot_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1078_mendo_first_rule_collective_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1085_woods_blade_runner_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1086_kgb_punk_goth_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_1087_sims_deb_collector_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2003_mendo_hell_fury_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2005_ingo_fine_exports_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2007_lawrence_sims_chopper_gunner_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2014_lawrence_sims_tag_collector_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2017_machete_river_slasher_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2018_helen_park_nightshade_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2019_mendo_warlord_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2022_wolf_commando_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2024_kgb_valentine_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2025_baker_mardi_gras_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2027_ingo_silent_approach_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2033_bulldozer_zombie_dozer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2034_lawrence_sims_full_moon_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2035_kgb_bomb_squad_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2036_baker_cobra_hunter_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2037_helen_park_cavalrys_finest_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2041_naga_tribal_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2043_helen_park_powder_pink_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2044_mendo_local_fisherman_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2045_russell_adler_platoon_sergeant_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2055_frank_woods_bogged_down_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2056_ingo_expeditionary_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2057_mendo_revolucion_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2062_russell_adler_st_patrick_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2065_zeyna_cold_hearted_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2066_frank_woods_powoods_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2067_helen_park_fossil_fuel_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2068_baker_proper_bully_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2074_ingo_zombie_hunter_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2075_lawrence_sims_designated_driver_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2076_kgb_bullseye_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_operator_2080_bulldozer_hockey_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_reactive_2004_tr_damagesemi_fuego_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_reactive_2901_ar_standard_gigaswat_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_tracer_1009_smg_standard_tracer_pack_red_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_tracer_1009_smg_standard_tracer_pack_red_alt_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#hash_fb2256a9e39cb38"
+        },
+        {
+            "var_8bd0af73": "#bundle_tracer_1904_ar_standard_tracer_pack_blue_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_tracer_2023_smg_handling_rose_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_tracer_2064_lmg_slowfire_lucky_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_vanity_1014_wrist_accessory_quartermaster_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_vanity_1075_ar_damage_cold_front_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_vanity_2006_wrist_accessory_witchy_ways_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_vanity_2008_wrist_accessory_aviator_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_vanity_2030_sedan_animal_attack_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_vanity_2046_wrist_accessory_elite_forces_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_vanity_2061_sniper_cannon_poker_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_vanity_2100_community_event_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_vanity_2903_warzone_challenge_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_vehicle_1038_multi_vehicle_80s_neon_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#hash_32e0a574026be8eb"
+        },
+        {
+            "var_8bd0af73": "#hash_3717c0909b3eb955"
+        },
+        {
+            "var_8bd0af73": "#mtx_season_0_premium_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#mtx_season_0_premium_ps_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#mtx_season_1_premium_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#mtx_season_1_premium_ps_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#mtx_season_2_premium_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#mtx_season_2_premium_ps_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#mtx_season_3_premium_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#mtx_season_3_premium_ps_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#mtx_season_4_premium_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#mtx_season_4_premium_ps_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#mtx_season_5_premium_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#mtx_season_5_premium_ps_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#mtx_season_6_premium_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#mtx_season_6_premium_ps_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_3001_knight_viking_raider_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_3002_spetsnaz_radioactive_leak_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_3013_bulldozer_wasteland_survivor_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_3013_bulldozer_wasteland_survivor_alt_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_3015_rivas_scout_marksman_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_3016_beck_zombie_circus_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_3034_vargas_stockcar_racer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_3056_portnova_clown_heist_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_3057_beck_strange_dark_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_3065_naga_leaf_helmet_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_3066_stone_big_dummy_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_3068_park_cyborg_droid_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_3071_stone_poncho_fighter_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_3074_samantha_zombie_bride_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4001_lazar_newop_tracer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4002_weaver_newop_tracer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4004_mace_melee_one_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4006_qbz_83_zombie_master_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4009_ksp_45_golden_propsector_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4015_adler_independence_day_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4017_woods_gladiator_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4018_zeyna_power_bolt_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4019_wolf_zombies_one_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4021_woods_zombies_two_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4022_song_zombies_three_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4024_park_anime_decals_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4025_beck_tagger_two_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4026_sims_clown_heist_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4027_stone_motorcycle_sleek_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4028_rivas_bandidta_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4031_portnova_aerobics_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4033_bulldozer_big_bad_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4034_wraith_machine_tech_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4035_garcia_tour_guide_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4036_spetsnaz_russian_bear_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4037_park_euro_soccer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4039_beck_alien_research_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4040_baker_stranded_captain_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4041_baker_heist_two_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4043_knight_royal_guard_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4044_naga_mutant_dread_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4049_stone_heat_map_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4052_beck_sergeant_arms_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4063_ak47_roadleather_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_4063_ak47_roadleather_alt_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5001_super_soldier_newop_tracer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5002_hudson_newop_tracer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5004_cane_melee_one_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5006_park_ultraskin_fire_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5008_weaver_ultraskin_darkaether_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5009_ak_74u_mastercraft_genie_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5013_qbz_83_reactive_luchador_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5018_baker_tracer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5019_samantha_zombie_defense_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5021_sims_recon_photo_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5022_portnova_survivor_scavenger_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5024_rivas_muralist_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5025_wraith_motorcycle_assassin_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5026_beck_oktoberfest_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5027_woods_green_thumb_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5029_song_dryleaf_ambush_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5030_adler_tuxedo_agent_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5031_adler_cavalry_horseman_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5035_antonov_tomb_guard_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5036_sims_karate_master_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5037_portnova_cyber_fighter_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5038_powers_combat_journalist_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5039_hunter_vengeful_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5040_vargas_action_raider_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5042_park_field_marksman_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5043_adler_golf_athlete_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5044_naga_urban_tactical_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5047_portnova_carrion_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_5049_stone_masked_overlord_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_6001_stitch_echo_glitch_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_6004_hammer_and_sickle_split_personality_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_6005_zeyna_arc_armor_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_6006_naga_war_ghost_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_6007_em2_sultan_wrath_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_6008_gallo_sa12_ray_gun_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_6010_ak_74u_standoff_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_6013_samantha_lumens_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_6014_weaver_chaos_disciple_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_6016_wolf_tagger_iv_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_6017_garcia_joke_iv_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_6018_woods_gilded_vi_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#hash_1903a1a4b85a1e59"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_6019_portnova_delight_iii_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_6020_special_op_5_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_6021_portnova_necromancer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_6025_bomber_operator_tracer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_6031_baker_special_op_6_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_6032_bite_me_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_7002_lazaar_newop_tracer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_7003_ravenov_newop_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_7005_adler_airborne_tracer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_7007_stryker_light_em_up_tracer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_7008_mason_headgame_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_7009_starter3_stone_ripper_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_7010_wraith_freya_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_7011_bomber_scrapyard_tracer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_7012_kitsune_yokai_tracer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_7013_maxis_fire_berlin_tracer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_7014_hudson_rock_cold_tracer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_7015_salah_egyptian_fire_tracer_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_7019_adler_airborne_variant_a_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_7020_adler_airborne_variant_b_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_7021_adler_airborne_variant_c_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_7022_adler_airborne_variant_d_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_7031_wraith_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_7032_weaver_endgame_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_7033_maxis_zombie_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_7034_stitch_anime_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_7035_park_endgame_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_7036_stone_zombie_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#hash_b5b28407b7178a"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_7501_vault_greatest_hits_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_7502_vault_nato_warsaw_01_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_7503_vault_nato_warsaw_02_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#operator_bundle_7504_vault_nato_warsaw_03_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw3_01_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw3_02_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw3_03_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw3_04_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw3_05_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw3_06_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw3_07_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw3_08_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw3_09_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw3_10_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw4_01_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw4_02_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw4_03_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw4_04_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw4_05_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw4_06_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw4_07_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw4_08_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw4_09_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw4_10_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw5_01_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw5_02_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw5_03_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw5_04_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw5_05_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw5_06_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw5_07_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw5_08_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw5_09_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw5_10_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw5_master_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw6_01_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw6_02_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw6_03_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw6_04_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw6_05_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw6_06_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw6_07_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw6_08_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw6_09_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw6_10_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw7_01_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw7_02_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw7_03_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw7_04_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw7_05_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw7_06_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw7_07_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw7_08_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw7_09_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_iw7_10_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_s1_01_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_s1_02_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_s1_03_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_s1_04_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_s1_05_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_s1_06_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_s1_07_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_s1_08_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_s1_09_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_s1_10_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_s1_11_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_s1_12_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_s1_13_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_s1_14_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_s1_15_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_s1_16_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_s2_01_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_s2_02_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_s2_03_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_s2_04_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_s2_05_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_s2_06_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_s2_07_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_s2_08_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_s2_09_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_s2_10_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_s2_master_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t4_01_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t4_02_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t4_03_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t4_04_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t4_05_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t4_06_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t4_07_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t4_08_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t4_09_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t4_10_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t5_01_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t5_02_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t5_03_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t5_04_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t5_05_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t5_06_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t5_07_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t5_08_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t5_09_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t5_10_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t5_11_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t5_12_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t5_13_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t5_14_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t5_15_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t6_01_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t6_02_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t6_03_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t6_04_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t6_05_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t6_06_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t6_07_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t6_08_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t6_09_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t6_10_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t6_11_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t7_01_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t7_02_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t7_03_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t7_04_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t7_05_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t7_06_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t7_07_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t7_08_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t7_09_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t7_10_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t7_11_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t8_01_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t8_02_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t8_03_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t8_04_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t8_05_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t8_06_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t8_07_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t8_08_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t8_09_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t8_10_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t8_11_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t9_01_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t9_02_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t9_03_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t9_04_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t9_05_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t9_06_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t9_07_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t9_08_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t9_09_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t9_10_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t9_11_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t9_12_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t9_13_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t9_14_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t9_15_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t9_16_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t9_17_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t9_18_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t9_19_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t9_20_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t9_21_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t9_22_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t9_23_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t9_24_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t9_25_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t9_26_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_mp_t9_27_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_wz_t8_01_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_wz_t8_02_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_wz_t8_03_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_wz_t8_04_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_wz_t8_05_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_wz_t8_06_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_wz_t8_07_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_wz_t8_08_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_wz_t8_09_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_wz_t8_10_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_wz_t8_master_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_zm_t7_01_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_zm_t7_02_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_zm_t7_03_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_zm_t7_04_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_zm_t7_05_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_zm_t7_06_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_zm_t7_07_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_zm_t7_08_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_zm_t7_09_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_zm_t7_10_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_zm_t7_master_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_zm_t8_01_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_zm_t8_02_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_zm_t8_03_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_zm_t8_04_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_zm_t8_05_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_zm_t8_06_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_zm_t8_07_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_zm_t8_08_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_zm_t8_09_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_zm_t8_10_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#paragon_zm_t8_master_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#s4_battle_pass_season_10_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#s4_battle_pass_season_10_premium_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#s4_battle_pass_season_11_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#s4_battle_pass_season_11_premium_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#s4_battle_pass_season_12_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#s4_battle_pass_season_12_premium_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#s4_battle_pass_season_7_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#s4_battle_pass_season_7_premium_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#s4_battle_pass_season_8_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#s4_battle_pass_season_8_premium_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#s4_battle_pass_season_9_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#s4_battle_pass_season_9_premium_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#s5_trial_conversion_sentinel_ms_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#season_5_battle_pass_promo_operator_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#season_6_battle_pass_promo_operator_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#vanity_bundle_3024_maker_watch_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#wsow_war_track_bundle_mtxbundle"
+        }
+    ],
+    "name": "mtxbundlelist"
+}

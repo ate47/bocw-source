@@ -69,7 +69,7 @@ function private _destructhandler(localclientnum, entity, piecenumber) {
     if (!isdefined(entity._fxcharacter)) {
         return;
     }
-    foreach (fxbundleinst in entity._fxcharacter) {
+    foreach (fxbundlename, fxbundleinst in entity._fxcharacter) {
         fxbundle = _getfxbundle(fxbundlename);
         for (index = 0; index < fxbundle.fx.size; index++) {
             if (isdefined(fxbundleinst[index]) && fxbundle.fx[index].stoponpiecedestroyed === piecenumber) {
@@ -88,7 +88,7 @@ function private _gibhandler(localclientnum, entity, gibflag) {
     if (!isdefined(entity._fxcharacter)) {
         return;
     }
-    foreach (fxbundleinst in entity._fxcharacter) {
+    foreach (fxbundlename, fxbundleinst in entity._fxcharacter) {
         fxbundle = _getfxbundle(fxbundlename);
         for (index = 0; index < fxbundle.fx.size; index++) {
             if (isdefined(fxbundleinst[index]) && fxbundle.fx[index].stopongib === gibflag) {
@@ -191,7 +191,7 @@ function playfxbundle(localclientnum, entity, fxscriptbundle) {
 function stopallfxbundles(localclientnum, entity) {
     _configentity(localclientnum, entity);
     fxbundlenames = [];
-    foreach (fxbundle in entity._fxcharacter) {
+    foreach (fxbundlename, fxbundle in entity._fxcharacter) {
         fxbundlenames[fxbundlenames.size] = fxbundlename;
     }
     foreach (fxbundlename in fxbundlenames) {

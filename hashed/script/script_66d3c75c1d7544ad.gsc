@@ -32,10 +32,10 @@ function postinit() {
 function on_vehicle_spawned() {
     vehicle = self;
     if (isalive(vehicle) && isdefined(vehicle.target)) {
-        var_7196a55e = struct::get(vehicle.target);
-        if (isdefined(var_7196a55e)) {
-            vehicle.origin.vehicle = var_7196a55e.origin;
-            vehicle.angles.vehicle = var_7196a55e.angles;
+        start_spawn = struct::get(vehicle.target);
+        if (isdefined(start_spawn)) {
+            vehicle.origin.vehicle = start_spawn.origin;
+            vehicle.angles.vehicle = start_spawn.angles;
         }
     }
 }

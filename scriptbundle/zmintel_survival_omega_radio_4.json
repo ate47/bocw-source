@@ -1,0 +1,124 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_417614b0b4b524c8",
+            "var_f35c5951": 0.3,
+            "var_5d4b5964": 7.32,
+            "var_36bf8e05": "#hash_71c3212f5a7b4acd"
+        },
+        {
+            "var_46bd7973": "#hash_1f16fdee5df7f71e",
+            "var_5d4b5964": 3.82,
+            "var_36bf8e05": "#hash_29f8844153f5a29"
+        },
+        {
+            "var_46bd7973": "#hash_417616b0b4b5282e",
+            "var_f35c5951": 0.55,
+            "var_5d4b5964": 4.07,
+            "var_36bf8e05": "#hash_227adcc2151610fb"
+        },
+        {
+            "var_46bd7973": "#hash_417617b0b4b529e1",
+            "var_f35c5951": 0.85,
+            "var_5d4b5964": 11.67,
+            "var_36bf8e05": "#hash_6aca6fc61e96cd0a"
+        },
+        {
+            "var_46bd7973": "#hash_417618b0b4b52b94",
+            "var_f35c5951": 0.7,
+            "var_5d4b5964": 13.63,
+            "var_36bf8e05": "#hash_643feac1036166b9"
+        },
+        {
+            "var_46bd7973": "#hash_417619b0b4b52d47",
+            "var_f35c5951": 0.2,
+            "var_5d4b5964": 4.86,
+            "var_36bf8e05": "#hash_320be09d06435d38"
+        },
+        {
+            "var_46bd7973": "#hash_1f1700ee5df7fc37",
+            "var_f35c5951": 0.85,
+            "var_5d4b5964": 2.66,
+            "var_36bf8e05": "#hash_573374cd8e269866"
+        },
+        {
+            "var_46bd7973": "#hash_1f16ffee5df7fa84",
+            "var_f35c5951": 0.5,
+            "var_5d4b5964": 2.77,
+            "var_36bf8e05": "#hash_554674e86856f803"
+        },
+        {
+            "var_46bd7973": "#hash_41760cb0b4b51730",
+            "var_f35c5951": 0.2,
+            "var_5d4b5964": 6.89,
+            "var_36bf8e05": "#hash_67d03030e12a4725"
+        },
+        {
+            "var_46bd7973": "#hash_1f16f5ee5df7e986",
+            "var_f35c5951": 0.5,
+            "var_5d4b5964": 2.26,
+            "var_36bf8e05": "#hash_259e719e6c65831"
+        },
+        {
+            "var_46bd7973": "#hash_4c08aa09ac59032a",
+            "var_f35c5951": 0.15,
+            "var_5d4b5964": 6.57,
+            "var_36bf8e05": "#hash_17e46d54b9374a6f"
+        },
+        {
+            "var_46bd7973": "#hash_70cd25430fd00fbe",
+            "var_5d4b5964": 4.99,
+            "var_36bf8e05": "#hash_40de178ee387933b"
+        },
+        {
+            "var_46bd7973": "#hash_4c08a809ac58ffc4",
+            "var_5d4b5964": 4.12,
+            "var_36bf8e05": "#hash_4a91f5e468d7d069"
+        },
+        {
+            "var_46bd7973": "#hash_70cd23430fd00c58",
+            "var_f35c5951": 0.3,
+            "var_5d4b5964": 1.77,
+            "var_36bf8e05": "#hash_10255bfc28eb1a0d"
+        },
+        {
+            "var_46bd7973": "#hash_4c08a609ac58fc5e",
+            "var_5d4b5964": 2.61,
+            "var_36bf8e05": "#hash_4a2dafb04ec81c43"
+        },
+        {
+            "var_46bd7973": "#hash_70cd29430fd0168a",
+            "var_f35c5951": 0.35,
+            "var_5d4b5964": 3.46,
+            "var_36bf8e05": "#hash_77b8e9e24b4a6927"
+        },
+        {
+            "var_46bd7973": "#hash_70cd28430fd014d7",
+            "var_f35c5951": 0.4,
+            "var_5d4b5964": 2.35,
+            "var_36bf8e05": "#hash_219f23bb22711278"
+        },
+        {
+            "var_46bd7973": "#hash_4c08a509ac58faab",
+            "var_5d4b5964": 1.21,
+            "var_36bf8e05": "#hash_1a2bec30d69f3660"
+        }
+    ],
+    "description": "#hash_56d5b6878f906ec2",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#radio",
+    "model": "#hash_4fe193b7484608f8",
+    "var_824079e7": "#survival",
+    "uimodel": "#hash_10f65ca45f134f57",
+    "type": "zmintel",
+    "season": 3,
+    "var_ad4ad686": "#omega",
+    "soundloop": "#hash_5db0167d85d70c82",
+    "name": "zmintel_survival_omega_radio_4",
+    "var_9be0526e": "#hash_20ea75a25d912949",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "var_348b91fd": "#radio",
+    "title": "#hash_3234da8fa047cc92",
+    "var_3bb3493d": "#hash_1ee56ec3252d29a5"
+}

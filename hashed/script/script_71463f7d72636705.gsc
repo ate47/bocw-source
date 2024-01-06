@@ -2,9 +2,9 @@
 #using scripts\core_common\struct.csc;
 #using scripts\core_common\system_shared.csc;
 
-#namespace namespace_a11ce558;
+#namespace sound_tinnitus;
 
-// Namespace namespace_a11ce558/namespace_a11ce558
+// Namespace sound_tinnitus/sound_tinnitus
 // Params 2, eflags: 0x2 linked
 // Checksum 0x6cd5ccb7, Offset: 0x90
 // Size: 0x40
@@ -15,7 +15,7 @@ function function_fbb3b7ed(*_notify, var_cc1545d8) {
     }
 }
 
-// Namespace namespace_a11ce558/namespace_a11ce558
+// Namespace sound_tinnitus/sound_tinnitus
 // Params 5, eflags: 0x2 linked
 // Checksum 0x3b0b2fe7, Offset: 0xd8
 // Size: 0x148
@@ -45,7 +45,7 @@ function function_9a82b890(localclientnum, duration, startsound, var_ed2d4562, e
     }
 }
 
-// Namespace namespace_a11ce558/event_b19fdc1e
+// Namespace sound_tinnitus/event_b19fdc1e
 // Params 1, eflags: 0x20
 // Checksum 0x73aa3214, Offset: 0x228
 // Size: 0x444

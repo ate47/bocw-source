@@ -86,7 +86,7 @@ function function_c67a5089() {
         array::add_sorted(level.var_4c71ec6c, unlock_name, 0, &function_f53ec921);
     }
     var_743d50f5 = [];
-    foreach (unlock_name in level.var_4c71ec6c) {
+    foreach (index, unlock_name in level.var_4c71ec6c) {
         if (!isdefined(level.var_7d8da246[unlock_name])) {
             continue;
         }

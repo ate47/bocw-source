@@ -229,7 +229,7 @@ function function_9212ff4d(ee_name, step_name) {
     /#
         assert(isdefined(self._ee[ee_name]), "<unknown string>" + ee_name + "<unknown string>");
     #/
-    foreach (ee_step in self._ee[ee_name].steps) {
+    foreach (ee_index, ee_step in self._ee[ee_name].steps) {
         if (step_name == ee_step.name) {
             return ee_index;
         }

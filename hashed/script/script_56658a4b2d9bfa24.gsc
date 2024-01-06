@@ -120,25 +120,25 @@ function private function_40dbe923(dvarstr) {
     case #"ignoreall":
         level devgui_ignoreall(host, args[1], int(args[2]));
         break;
-    case #"hash_4f46fe233a7a959":
+    case #"force_press_button":
         level function_6a4a272b(host, args[1], int(args[2]), 0);
         break;
-    case #"hash_38c92fbdf4c576a2":
+    case #"force_toggle_button":
         level function_6a4a272b(host, args[1], int(args[2]), 1);
         break;
-    case #"hash_79fe360f20910e4c":
+    case #"clear_forced_buttons":
         level function_baee1142(host, args[1]);
         break;
-    case #"hash_4eac29b71e60f05a":
+    case #"force_offhand_primary":
         level function_8bb94cab(host, args[1], #"offhand", #"lethal grenade");
         break;
-    case #"hash_47cac9d9d624cb26":
+    case #"force_offhand_secondary":
         level function_8bb94cab(host, args[1], #"offhand", #"tactical grenade");
         break;
-    case #"hash_77036f3ad7fd71ff":
+    case #"force_offhand_special":
         level function_8bb94cab(host, args[1], "ability", #"special");
         break;
-    case #"hash_4348208dfd6da317":
+    case #"force_scorestreak":
         level function_9a65e59a(host, args[1]);
         break;
     case #"tpose":
@@ -159,13 +159,13 @@ function private function_40dbe923(dvarstr) {
         case #"goal":
             host devgui_goal(args[1], args[2]);
             break;
-        case #"hash_4f9d2e008f4feb26":
+        case #"force_aim_copy":
             host function_30f27f9f(args[1]);
             break;
-        case #"hash_333c3e82ff39a288":
+        case #"force_aim_freeze":
             host function_b037d12d(args[1]);
             break;
-        case #"hash_29f01db85bfe508":
+        case #"force_aim_clear":
             host function_f419ffae(args[1]);
             break;
         case #"hash_7d471b297adb925d":
@@ -612,7 +612,7 @@ function private function_8dbb49c0(ignoreteam) {
         assert(isdefined(ignoreteam));
     #/
     maxteamplayers = player::function_d36b6597();
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (team == ignoreteam) {
             continue;
         }
@@ -685,11 +685,11 @@ function private devgui_goal(botarg, cmdarg) {
     switch (cmdarg) {
     case #"set":
         self set_goal(botarg, 0);
-    case #"hash_5cc556255ab4f318":
+    case #"set_region":
         self function_417ef9e7(botarg);
     case #"force":
         self set_goal(botarg, 1);
-    case #"hash_4b0cc4587482b21c":
+    case #"add_forced":
         self function_93996ae6(botarg);
     case #"me":
         self function_6fdb87c7(botarg, self);

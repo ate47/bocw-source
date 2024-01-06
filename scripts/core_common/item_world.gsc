@@ -1547,7 +1547,7 @@ function pickup_item(item, var_22be503 = 1, var_26a492bc = 0, var_b362e309 = 0) 
         }
     }
     rumble = item.var_a6762160.var_c2de1e75;
-    self namespace_cc2ee5::function_7f2040e8();
+    self dynent_use::function_7f2040e8();
     if (var_22be503) {
         var_fa3df96 = self function_a4e63191(item, var_26a492bc);
     }
@@ -1650,7 +1650,7 @@ function function_1a46c8ae(player, var_a1ca235e, var_3d1f9df4, var_7089b458, var
 function function_83ddce0f(item, inventoryslot) {
     var_a1ca235e = undefined;
     var_3d1f9df4 = 0;
-    var_8acbe1d0 = self function_6105623a(item) || item.var_a6762160.itemtype == #"armor_shard" || item.var_a6762160.itemtype == #"resource" || item.var_a6762160.itemtype == #"ammo" || item.var_a6762160.itemtype == #"backpack" && !self item_inventory::has_backpack() || item.var_a6762160.var_4a1a4613 == #"hash_3d98ea1d4a033e97";
+    var_8acbe1d0 = self function_6105623a(item) || item.var_a6762160.itemtype == #"armor_shard" || item.var_a6762160.itemtype == #"resource" || item.var_a6762160.itemtype == #"ammo" || item.var_a6762160.itemtype == #"backpack" && !self item_inventory::has_backpack() || item.var_a6762160.var_4a1a4613 == #"armor_heal";
     stashitem = item_world_util::function_83c20f83(item);
     deathstashitem = isdefined(item.deathstash) ? item.deathstash : 0;
     stashitem = stashitem & ~deathstashitem;

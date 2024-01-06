@@ -1,0 +1,35 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#tr_damagesemi_bp_batts_mtxitem",
+            "itemid": "25109008"
+        },
+        {
+            "var_4a4bc969": "#shotgun_pump_bp_battery_mtxitem",
+            "itemid": "33416684"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_lucky_horseshoe_mtxitem",
+            "itemid": "18947075"
+        },
+        {
+            "var_4a4bc969": "#emblems_s3_vts_final_18_animated_mtxitem",
+            "itemid": "21786801"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_hammer_mace_flail_mtxitem",
+            "itemid": "27373373"
+        }
+    ],
+    "itemname": "#hash_3abfff3c89fe0550",
+    "var_375a1747": "#hash_1dc112d6acb3081e",
+    "name": "blueprint_bundle_3028_type_63_blacksmith_hammer_mtxbundle",
+    "var_a788fada": "#hash_e1009e2d57fd36d",
+    "var_22f91505": "#hash_46221ef6af2d2ae8",
+    "var_566825be": "#hash_4f30cd93f66337a5",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_6508e8e14f359330",
+    "var_db3e02ab": 2000,
+    "itemid": "22278153"
+}

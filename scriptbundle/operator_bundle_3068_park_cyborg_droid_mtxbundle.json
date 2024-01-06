@@ -1,0 +1,35 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_uk_pl_mi6_xray_mtxitem",
+            "itemid": "26345358"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_uk_mi6_mtxitem",
+            "itemid": "23374822"
+        },
+        {
+            "var_4a4bc969": "#tr_longburst_bp_cyborg_mtxitem",
+            "itemid": "25065559"
+        },
+        {
+            "var_4a4bc969": "#callingcards_cyborg_mtxitem",
+            "itemid": "26690637"
+        },
+        {
+            "var_4a4bc969": "#reticle_89_mtxitem",
+            "itemid": "25235883"
+        }
+    ],
+    "itemname": "#hash_6ba1799a4ba535bd",
+    "var_375a1747": "#hash_5f5f668f043fabb7",
+    "name": "operator_bundle_3068_park_cyborg_droid_mtxbundle",
+    "var_a788fada": "#hash_15ecb6a637fd0be6",
+    "var_22f91505": "#hash_1e9b8f22f2c56bfc",
+    "var_566825be": "#hash_50d6997d60796772",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_3dd47b4a1517e36c",
+    "var_db3e02ab": 2000,
+    "itemid": "29884480"
+}

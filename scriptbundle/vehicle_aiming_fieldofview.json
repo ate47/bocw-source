@@ -1,0 +1,29 @@
+{
+    "options": [
+        {
+            "label": "#hash_54b9d28e8d5975fa",
+            "value": "1"
+        },
+        {
+            "label": "#hash_4b665bb9dd5936a0",
+            "value": "0"
+        }
+    ],
+    "var_dfedf08e": 1,
+    "var_d260763": "#hash_9a15fca3234714e",
+    "description": "#hash_79d4bab86a1d5d41",
+    "var_60fcfffa": "#menu/on",
+    "var_9bc3be7": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "maxvalue": 1,
+    "name": "vehicle_aiming_fieldofview",
+    "displayname": "#hash_206c6aeb1e33f0cf",
+    "var_500458ac": 10,
+    "var_66faec87": 10,
+    "statname": "relative_vehicle_hipfire_fov",
+    "var_6f00a61a": 1.1,
+    "var_b7401319": "#menu/off"
+}

@@ -1,0 +1,10 @@
+{
+    "var_922067c4": "scriptbundle",
+    "type": "battlechatter",
+    "var_2c07bbf1": "eq_semtex_threat",
+    "vmtype": "both",
+    "usealias": "eq_semtex_use",
+    "name": "semtex_battlechatter",
+    "var_488f1315": "eq_semtex_stuck",
+    "var_382f662": 1
+}

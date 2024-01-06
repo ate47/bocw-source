@@ -1,0 +1,23 @@
+{
+    "itemlist": [
+        {
+            "minweight": 100,
+            "var_a6762160": "#sr_objective_chest_loot_epic",
+            "maxweight": 100,
+            "available": 2
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#sr_objective_chest_loot_legendary",
+            "maxweight": 100,
+            "available": 2
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "sr_objective_rewards_tier_4",
+    "var_fde72c94": 100
+}

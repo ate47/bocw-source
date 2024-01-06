@@ -991,7 +991,7 @@ function animarraypickrandom(animname) {
 function dumpanimarray() {
     /#
         println("<unknown string>");
-        foreach (v in self.a.array) {
+        foreach (k, v in self.a.array) {
             if (isarray(v)) {
                 println("<unknown string>" + k + "<unknown string>" + v.size + "<unknown string>");
             } else {
@@ -1170,7 +1170,7 @@ function set_zombie_var(zvar, value, defaultvalue, is_team_based = 0) {
         value = defaultvalue;
     }
     if (is_team_based) {
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             if (!isdefined(level.zombie_vars[team])) {
                 level.zombie_vars[team] = [];
             }

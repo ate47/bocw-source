@@ -53,10 +53,10 @@ function private function_70a657d8() {
     }
     clientfield::register("scriptmover", "supply_drop_parachute_rob", 1, 1, "int");
     zm::register_vehicle_damage_callback(&function_be51796c);
-    scene::add_scene_func(#"hash_23fe21c363168ac5", &function_4bf116ab, "init");
-    scene::add_scene_func(#"hash_23fe21c363168ac5", &function_2842c984, "done");
-    scene::add_scene_func(#"hash_23fe21c363168ac5", &function_2842c984, "stop");
-    scene::add_scene_func(#"hash_211993854fb33604", &function_76b49bd8, "open");
+    scene::add_scene_func(#"p9_fxanim_wz_parachute_supplydrop_01_harness_bundle", &function_4bf116ab, "init");
+    scene::add_scene_func(#"p9_fxanim_wz_parachute_supplydrop_01_harness_bundle", &function_2842c984, "done");
+    scene::add_scene_func(#"p9_fxanim_wz_parachute_supplydrop_01_harness_bundle", &function_2842c984, "stop");
+    scene::add_scene_func(#"p9_fxanim_wz_parachute_supplydrop_01_bundle", &function_76b49bd8, "open");
     namespace_8b6a9d79::function_b3464a7c(#"hash_146fecdc090c227e", &function_685a8288);
 }
 
@@ -132,7 +132,7 @@ function function_95c09591(destination) {
 // Size: 0x704
 function function_685a8288(instance) {
     level endon(#"end_game");
-    instance.var_422ae63e.instance = #"hash_d3de086d9682a24";
+    instance.var_422ae63e.instance = #"p9_fxanim_mp_care_package_bundle";
     var_28bf3706 = instance.var_fe2612fe[#"heli_spawn"][0];
     /#
         assert(isdefined(var_28bf3706.target), "<unknown string>");
@@ -211,7 +211,7 @@ function function_685a8288(instance) {
         return;
     }
     level thread zm_vo::function_7622cb70(#"hash_37d8017a04a1565d", 2);
-    var_69406530 thread scene::play(#"hash_23fe21c363168ac5", "fly_in");
+    var_69406530 thread scene::play(#"p9_fxanim_wz_parachute_supplydrop_01_harness_bundle", "fly_in");
     var_69406530 vehicle::get_on_and_go_path(nd_start);
     waitframe(1);
     if (isalive(var_69406530)) {
@@ -508,7 +508,7 @@ function cratephysics(instance) {
     self.trigger.origin = self.origin;
     self.trigger.angles = self.angles;
     self.trigger.struct = instance;
-    self.trigger.var_cc1fb2d0 = #"hash_25939761cf3b8050";
+    self.trigger.var_cc1fb2d0 = #"sr_helicopter_escape_resource_list";
     self function_d2d0a813();
 }
 
@@ -531,7 +531,7 @@ function function_960ea519(owner) {
     if (isdefined(self.var_46e0d8c8)) {
         playsoundatposition(self.var_46e0d8c8, self.origin);
     }
-    bundle = getscriptbundle(#"hash_103efa2815dd540f");
+    bundle = getscriptbundle(#"killstreak_supply_drop_zm");
     detonationdelay = bundle.var_18d14afd;
     self thread function_71c8970c(0.84);
     wait(detonationdelay);
@@ -552,7 +552,7 @@ function function_960ea519(owner) {
 // Checksum 0x3148e519, Offset: 0x2780
 // Size: 0x328
 function function_345ada65(attacker) {
-    bundle = getscriptbundle(#"hash_103efa2815dd540f");
+    bundle = getscriptbundle(#"killstreak_supply_drop_zm");
     if (isdefined(bundle.var_b768b86b)) {
         trace = groundtrace(self.origin + vectorscale((0, 0, 1), 10), self.origin + vectorscale((0, 0, -1), 10), 0, self);
         explosionfx = self getfxfromsurfacetable(bundle.var_b768b86b, trace[#"surfacetype"]);
@@ -662,7 +662,7 @@ function private function_9813d292() {
 // Size: 0x54
 function function_4bf116ab(ents) {
     if (isdefined(self.e_crate)) {
-        self.e_crate linkto(ents[#"hash_211fcbbafe5331ab"], "tag_care_package", (0, 0, 0), (0, 0, 0));
+        self.e_crate linkto(ents[#"harness"], "tag_care_package", (0, 0, 0), (0, 0, 0));
     }
 }
 
@@ -691,11 +691,11 @@ function function_76b49bd8(ents) {
 // Size: 0x114
 function function_2defd397() {
     self endon(#"death");
-    self scene::play(#"hash_211993854fb33604", "open");
-    self thread scene::play(#"hash_211993854fb33604", "idle");
+    self scene::play(#"p9_fxanim_wz_parachute_supplydrop_01_bundle", "open");
+    self thread scene::play(#"p9_fxanim_wz_parachute_supplydrop_01_bundle", "idle");
     self waittill(#"movedone");
-    self scene::stop(#"hash_211993854fb33604");
-    self.parachute thread scene::play(#"hash_211993854fb33604", "detach", self.parachute);
+    self scene::stop(#"p9_fxanim_wz_parachute_supplydrop_01_bundle");
+    self.parachute thread scene::play(#"p9_fxanim_wz_parachute_supplydrop_01_bundle", "detach", self.parachute);
     wait(1);
     if (isdefined(self.parachute)) {
         self.parachute clientfield::set("supply_drop_parachute_rob", 0);

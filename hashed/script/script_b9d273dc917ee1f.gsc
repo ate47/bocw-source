@@ -71,11 +71,11 @@ function postinit() {
 // Checksum 0x8894b072, Offset: 0x4d0
 // Size: 0x27e
 function private function_9b30a057() {
-    var_ce9ccdf6 = getscriptbundles(#"hash_49b858d4c40315f0");
+    var_ce9ccdf6 = getscriptbundles(#"zmintel");
     var_a2b0b0d1 = [];
     foreach (var_19a3087c in var_ce9ccdf6) {
         if (zm_utility::is_survival()) {
-            if (var_19a3087c.var_824079e7 === #"hash_7206932c2d24caaf" && function_46181f8c(var_19a3087c) && function_fe74d984(var_19a3087c)) {
+            if (var_19a3087c.var_824079e7 === #"survival" && function_46181f8c(var_19a3087c) && function_fe74d984(var_19a3087c)) {
                 if (!isdefined(var_a2b0b0d1)) {
                     var_a2b0b0d1 = [];
                 } else if (!isarray(var_a2b0b0d1)) {
@@ -977,7 +977,7 @@ function function_3f3be625(var_d5fa8477, var_eac6151d) {
     var_eac6151d function_bd78aea0(s_bundle, self);
     if (isarray(s_bundle.var_1ad142ee) && s_bundle.var_1ad142ee.size) {
         if (is_true(s_bundle.var_2a12d36)) {
-            foreach (var_73a92203 in s_bundle.var_1ad142ee) {
+            foreach (index, var_73a92203 in s_bundle.var_1ad142ee) {
                 if (index == s_bundle.var_1ad142ee.size - 1) {
                     var_eac6151d function_8a6749e9(var_73a92203.var_46bd7973, self, var_73a92203.var_f35c5951, undefined, var_73a92203.var_5d4b5964, var_1bdc121e);
                 } else {
@@ -1071,7 +1071,7 @@ function private function_bd78aea0(var_19a3087c, e_player) {
     }
     if (isdefined(var_19a3087c.var_348b91fd)) {
         switch (var_19a3087c.var_348b91fd) {
-        case #"hash_596431ef07ad2a25":
+        case #"tape":
             var_27c5b5a9 = #"hash_ea30fff000de600";
             var_42e4e060 = #"hash_aa0fa647067d823";
             break;
@@ -1103,7 +1103,7 @@ function private function_8f6791a4(var_19a3087c, e_player) {
     self function_3a2dd570(e_player);
     if (isdefined(var_19a3087c.var_348b91fd)) {
         switch (var_19a3087c.var_348b91fd) {
-        case #"hash_596431ef07ad2a25":
+        case #"tape":
             var_37b08e30 = #"hash_f315a8d18c2e535";
             break;
         case #"radio":
@@ -1164,7 +1164,7 @@ function function_2bcfd899(var_f84ece9f, player) {
         if (!isarray(var_71b26808.var_572513bb) || !var_71b26808.var_572513bb.size) {
             return;
         }
-        foreach (var_a36fa2c6 in var_71b26808.var_572513bb) {
+        foreach (n_index, var_a36fa2c6 in var_71b26808.var_572513bb) {
             if (var_a36fa2c6.season === #"hash_3c8cc59cdaa4bb29") {
                 continue;
             }

@@ -7,17 +7,17 @@
 #using scripts\core_common\clientfield_shared.csc;
 #using scripts\core_common\ai_shared.csc;
 
-#namespace namespace_b083eeac;
+#namespace mechz;
 
-// Namespace namespace_b083eeac/namespace_b083eeac
+// Namespace mechz/mechz
 // Params 0, eflags: 0x5
 // Checksum 0x83e0f8d8, Offset: 0x5b8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_3d92e2c7bea1eee2", &init, undefined, undefined, undefined);
+    system::register(#"mechz", &init, undefined, undefined, undefined);
 }
 
-// Namespace namespace_b083eeac/namespace_b083eeac
+// Namespace mechz/mechz
 // Params 0, eflags: 0x0
 // Checksum 0x613d4f92, Offset: 0x600
 // Size: 0x328
@@ -31,7 +31,7 @@ function init() {
     clientfield::register("actor", "mechz_long_jump", 1, 1, "counter", &namespace_e0c51a8c::function_d6762475, 0, 0);
     clientfield::register("actor", "mechz_jetpack_explosion", 1, 1, "int", &namespace_e0c51a8c::function_f0664979, 0, 0);
     clientfield::register("actor", "mechz_face", 1, 3, "int", &namespace_e0c51a8c::function_624ec357, 0, 0);
-    ai::add_archetype_spawn_function(#"hash_3d92e2c7bea1eee2", &namespace_e0c51a8c::function_b8b1efcd);
+    ai::add_archetype_spawn_function(#"mechz", &namespace_e0c51a8c::function_b8b1efcd);
     precache();
     level.var_bfb097e0 = [];
     level.var_bfb097e0[1] = "ai_face_zombie_generic_attack_1";
@@ -40,7 +40,7 @@ function init() {
     level.var_bfb097e0[4] = "ai_face_zombie_generic_pain_1";
 }
 
-// Namespace namespace_b083eeac/namespace_b083eeac
+// Namespace mechz/mechz
 // Params 0, eflags: 0x0
 // Checksum 0x8be5e065, Offset: 0x930
 // Size: 0x284
@@ -69,7 +69,7 @@ function precache() {
 
 #namespace namespace_e0c51a8c;
 
-// Namespace namespace_e0c51a8c/namespace_b083eeac
+// Namespace namespace_e0c51a8c/mechz
 // Params 1, eflags: 0x4
 // Checksum 0x1c358702, Offset: 0xbc0
 // Size: 0x94
@@ -80,7 +80,7 @@ function private function_b8b1efcd(localclientnum) {
     fxclientutils::playfxbundle(localclientnum, self, self.fxdef);
 }
 
-// Namespace namespace_e0c51a8c/namespace_b083eeac
+// Namespace namespace_e0c51a8c/mechz
 // Params 5, eflags: 0x0
 // Checksum 0x13dc63f, Offset: 0xc60
 // Size: 0x26e
@@ -116,7 +116,7 @@ function function_e7aefb0(localclientnum, pos, *surface, *notetrack, bone) {
     var_c04ea775 = util::playfxontag(surface, level._effect[#"hash_500cb52978dcca71"], self, var_cdc96555);
 }
 
-// Namespace namespace_e0c51a8c/namespace_b083eeac
+// Namespace namespace_e0c51a8c/mechz
 // Params 7, eflags: 0x4
 // Checksum 0x28304a95, Offset: 0xed8
 // Size: 0x16a
@@ -138,7 +138,7 @@ function private function_3fb58860(localclientnum, *oldvalue, newvalue, *bnewent
     }
 }
 
-// Namespace namespace_e0c51a8c/namespace_b083eeac
+// Namespace namespace_e0c51a8c/mechz
 // Params 7, eflags: 0x0
 // Checksum 0x6425dd98, Offset: 0x1050
 // Size: 0x94
@@ -147,7 +147,7 @@ function function_e7cbec57(localclientnum, *oldvalue, *newvalue, *bnewent, *bini
     self playsound(0, "zmb_ai_mechz_faceplate");
 }
 
-// Namespace namespace_e0c51a8c/namespace_b083eeac
+// Namespace namespace_e0c51a8c/mechz
 // Params 7, eflags: 0x0
 // Checksum 0x46702ba7, Offset: 0x10f0
 // Size: 0x112
@@ -158,7 +158,7 @@ function function_e364c573(localclientnum, *oldvalue, *newvalue, *bnewent, *bini
     self.var_7280af02 = util::playfxontag(wasdemojump, level._effect[#"hash_4f3864d9fbcff8e1"], self, "j_spine4");
 }
 
-// Namespace namespace_e0c51a8c/namespace_b083eeac
+// Namespace namespace_e0c51a8c/mechz
 // Params 7, eflags: 0x0
 // Checksum 0xae74f05, Offset: 0x1210
 // Size: 0x184
@@ -179,7 +179,7 @@ function function_fbdc5222(localclientnum, oldvalue, newvalue, bnewent, binitial
     util::playfxontag(localclientnum, level._effect[#"hash_58d2b96e346def74"], self, "j_spine4");
 }
 
-// Namespace namespace_e0c51a8c/namespace_b083eeac
+// Namespace namespace_e0c51a8c/mechz
 // Params 7, eflags: 0x0
 // Checksum 0x948d9136, Offset: 0x13a0
 // Size: 0x74
@@ -187,7 +187,7 @@ function function_b17ecff3(localclientnum, *oldvalue, *newvalue, *bnewent, *bini
     util::playfxontag(wasdemojump, level._effect[#"hash_3e338ce8948f836b"], self, "tag_gun_barrel2");
 }
 
-// Namespace namespace_e0c51a8c/namespace_b083eeac
+// Namespace namespace_e0c51a8c/mechz
 // Params 7, eflags: 0x0
 // Checksum 0xf4752ac8, Offset: 0x1420
 // Size: 0x94
@@ -196,7 +196,7 @@ function function_f0664979(localclientnum, *oldvalue, *newvalue, *bnewent, *bini
     self playsound(0, "zmb_ai_mechz_destroy_jetpack");
 }
 
-// Namespace namespace_e0c51a8c/namespace_b083eeac
+// Namespace namespace_e0c51a8c/mechz
 // Params 7, eflags: 0x0
 // Checksum 0x99ebec67, Offset: 0x14c0
 // Size: 0xd4
@@ -210,7 +210,7 @@ function function_3776d83(localclientnum, *oldvalue, newvalue, *bnewent, *biniti
     }
 }
 
-// Namespace namespace_e0c51a8c/namespace_b083eeac
+// Namespace namespace_e0c51a8c/mechz
 // Params 7, eflags: 0x4
 // Checksum 0x21456f57, Offset: 0x15a0
 // Size: 0x74
@@ -218,7 +218,7 @@ function private function_d6762475(localclientnum, *oldvalue, *newvalue, *bnewen
     earthquake(wasdemojump, 0.5, 1, self.origin, 600, 1);
 }
 
-// Namespace namespace_e0c51a8c/namespace_b083eeac
+// Namespace namespace_e0c51a8c/mechz
 // Params 7, eflags: 0x4
 // Checksum 0xf9d404fe, Offset: 0x1620
 // Size: 0xfa

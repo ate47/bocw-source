@@ -303,7 +303,7 @@ function function_f413b4d5(bodytype, outfitindex, var_c1154821, index) {
             var_9cf37283 = function_d7c3cf6c(bodytype, outfitindex, currentsessionmode());
             preset = var_9cf37283.presets[index];
             foreach (player in players) {
-                foreach (data in level.var_1a409216) {
+                foreach (type, data in level.var_1a409216) {
                     if (type != 7 && type != 1) {
                         player function_ab96a9b5(data.field, preset.parts[type]);
                     }
@@ -374,7 +374,7 @@ function body_customization_process_command(character_index) {
 // Size: 0x130
 function function_3cec5609(&arr, devgui_path, bodytype, outfitindex, optiontype) {
     /#
-        foreach (option in arr) {
+        foreach (index, option in arr) {
             if (option.isvalid) {
                 add_debug_command(devgui_path + index + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + bodytype + "<unknown string>" + "<unknown string>" + outfitindex + "<unknown string>" + optiontype + "<unknown string>" + index + "<unknown string>");
             }
@@ -441,8 +441,8 @@ function body_customization_populate(mode, var_ef4940a5) {
                     var_1bf829f2 = outfitindex + "<unknown string>" + var_346660ac + "<unknown string>" + function_c807b11d(function_9e72a96(var_9cf37283.namehash)) + "<unknown string>" + outfitindex;
                     var_a818c4e = body_customization_devgui_base + body_name + "<unknown string>" + var_1bf829f2;
                     add_debug_command(var_a818c4e + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + playerbodytype + "<unknown string>" + "<unknown string>" + outfitindex + "<unknown string>");
-                    foreach (data in level.var_1a409216) {
-                        foreach (option in var_9cf37283.options[type]) {
+                    foreach (type, data in level.var_1a409216) {
+                        foreach (index, option in var_9cf37283.options[type]) {
                             if (option.isvalid) {
                                 waittill_can_add_debug_command();
                                 add_debug_command(var_a818c4e + "<unknown string>" + data.path + "<unknown string>" + index + "<unknown string>" + index + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>" + playerbodytype + "<unknown string>" + "<unknown string>" + outfitindex + "<unknown string>" + data.field + "<unknown string>" + index + "<unknown string>");

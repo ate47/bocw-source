@@ -712,7 +712,7 @@ function function_9ec06f93() {
         var_db7cb1ce = array::quick_sort(var_8b9e74df, &function_2dbde8cf);
         counter = 1;
         common = 0;
-        var_2d9853ff = 0;
+        uncommon = 0;
         rare = 0;
         var_a5233b6b = 0;
         var_7303927e = 0;
@@ -748,7 +748,7 @@ function function_9ec06f93() {
                     color = (1, 1, 1);
                     break;
                 case 1:
-                    var_2d9853ff++;
+                    uncommon++;
                     var_b9583f1e = var_b9583f1e + [[ def ]]->function_b3131904();
                     color = (0, 1, 0);
                     break;
@@ -790,7 +790,7 @@ function function_9ec06f93() {
         namespace_1e25ad94::function_70e370a(x, y, "COMMON (" + common + ")", (1, 1, 1), 1, 1, 0.05);
         namespace_1e25ad94::function_70e370a(x + 200, y, "COUNT: " + var_d50d5463 + " [ " + int(var_d50d5463 / var_914554bd * 100 + 0.5) + " % ]", (1, 1, 1), 1, 1, 0.05);
         y = y + 20;
-        namespace_1e25ad94::function_70e370a(x, y, "UNCOMMON (" + var_2d9853ff + ")", (0, 1, 0), 1, 1, 0.05);
+        namespace_1e25ad94::function_70e370a(x, y, "UNCOMMON (" + uncommon + ")", (0, 1, 0), 1, 1, 0.05);
         namespace_1e25ad94::function_70e370a(x + 200, y, "COUNT: " + var_b9583f1e + " [ " + int(var_b9583f1e / var_914554bd * 100 + 0.5) + " % ]", (0, 1, 0), 1, 1, 0.05);
         y = y + 20;
         namespace_1e25ad94::function_70e370a(x, y, "RARE (" + rare + ")", (0, 1, 1), 1, 1, 0.05);
@@ -1955,7 +1955,7 @@ function function_598305fe() {
                 var_b18e4c25[var_b18e4c25.size] = function_db55a448(function_d7c5adee("<unknown string>"), level.var_8cff5775.dev.var_85d6cfdf.origin - right * 96 - forward * 56);
                 foreach (guy in var_b18e4c25) {
                     guy.ignoreall.guy = 1;
-                    guy.var_7547c3a5.guy = 0;
+                    guy.allow_movement.guy = 0;
                     guy.var_834ad023.guy = 1;
                     guy.var_6edab899.guy = 1;
                     guy setgoal(guy.origin);

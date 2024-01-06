@@ -1,0 +1,322 @@
+{
+    "itemlist": [
+        {
+            "minweight": 10,
+            "var_a6762160": "#acog_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#barrel2_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#barrel_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#compensator2_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#compensator_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#dualoptic_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#elo2_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#elo_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#elo3_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#extclip2_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#extclip_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#fastreload2_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#fastreload_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#grip2_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#grip_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#handle2_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#handle_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#heavy2_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#heavy_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#holo_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#ir_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#light2_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#light_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#mixbarrel2_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#mixbarrel_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#mixbody2_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#mixbody_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "var_a6762160": "#mixclip2_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#mixclip_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#mixhandle2_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#mixhandle_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#mixmuzzle2_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#mixmuzzle_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#mixstock2_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#mixstock_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#mixunder2_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#mixunder_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#quickdraw2_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#quickdraw_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#reddot_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#reflex2_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#reflex3_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#reflex4_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#reflex_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#scope3x_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#scope4x_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#smoothzoom2_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#smoothzoom_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#speedgrip2_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#speedgrip_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#sprintout2_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#sprintout_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#stalker2_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#stalker_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#steadyaim2_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#steadyaim_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#suppressed2_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#suppressed_t9_item_sr",
+            "maxweight": 1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#tactical_t9_item_sr",
+            "maxweight": 1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "zm_sr_attachment_all",
+    "var_fde72c94": 100
+}

@@ -64,7 +64,7 @@ function private function_4ba28b7e(s_instance) {
     var_85c920d0.targetname.var_85c920d0 = "sr_demented_echo";
     playsoundatposition(#"hash_45cee0561a5b0142", var_85c920d0.origin);
     var_85c920d0 playloopsound(#"hash_6e9b8f3f3b006d28");
-    var_85c920d0 thread scene::play(#"hash_10ecaabb2993aa0f", "idle", var_85c920d0);
+    var_85c920d0 thread scene::play(#"ai_t9_vign_cust_demented_echo", "idle", var_85c920d0);
     var_85c920d0 clientfield::set("sr_demented_echo_fx", 1);
     var_3d014474 = level.var_41dd92fd[#"hash_7cba8a05511ceedf"].health;
     var_85c920d0.health.var_85c920d0 = int(min(2000, var_3d014474 * 1.5));
@@ -156,7 +156,7 @@ function private function_6f4653fd(player) {
     level thread function_491bb6b7(self.instance, self.origin);
     self playsound(#"hash_1c9b23a03a1c2367");
     earthquake(0.5, 1.25, self.origin, 1024);
-    self scene::play(#"hash_10ecaabb2993aa0f", "gotcha", self);
+    self scene::play(#"ai_t9_vign_cust_demented_echo", "gotcha", self);
     self clientfield::set("sr_demented_echo_fx", 0);
     util::wait_network_frame();
     var_55e11aa9 delete();
@@ -169,7 +169,7 @@ function private function_6f4653fd(player) {
 // Size: 0x17c
 function private function_6003bca8(var_55e11aa9, v_player) {
     self endon(#"death", #"hash_1a42ae1b66d06a7d");
-    self thread scene::play(#"hash_10ecaabb2993aa0f", "react", self);
+    self thread scene::play(#"ai_t9_vign_cust_demented_echo", "react", self);
     self linkto(var_55e11aa9);
     var_1c408bb3 = self.instance.var_fe2612fe[#"hash_4e469ee1df801af0"][0];
     if (isdefined(var_1c408bb3)) {
@@ -178,7 +178,7 @@ function private function_6003bca8(var_55e11aa9, v_player) {
     v_facing = vectortoangles(v_player - self.origin);
     var_55e11aa9 rotateto(v_facing, 0.3);
     level flag::wait_till(#"hash_437a8fa2063abd31");
-    self thread scene::play(#"hash_10ecaabb2993aa0f", "chase", self);
+    self thread scene::play(#"ai_t9_vign_cust_demented_echo", "chase", self);
     self linkto(var_55e11aa9);
 }
 

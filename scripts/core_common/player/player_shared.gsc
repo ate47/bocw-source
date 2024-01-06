@@ -148,7 +148,7 @@ function function_135acc2d(var_e2bc3a9f, update_rate) {
             continue;
         }
         var_92c4d936 = 0;
-        foreach (player in players) {
+        foreach (index, player in players) {
             player = players[index];
             player_num = player getentitynumber();
             if (player_num >= var_42016ec7) {

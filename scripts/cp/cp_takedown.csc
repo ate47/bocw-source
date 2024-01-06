@@ -13,9 +13,9 @@
 #using scripts\core_common\clientfield_shared.csc;
 #using scripts\core_common\util_shared.csc;
 
-#namespace namespace_fbe06c5e;
+#namespace cp_takedown;
 
-// Namespace namespace_fbe06c5e/level_init
+// Namespace cp_takedown/level_init
 // Params 1, eflags: 0x20
 // Checksum 0xb649902, Offset: 0x3d8
 // Size: 0x134
@@ -32,7 +32,7 @@ function event_handler[level_init] main(*eventstruct) {
     util::waitforclient(0);
 }
 
-// Namespace namespace_fbe06c5e/namespace_fbe06c5e
+// Namespace cp_takedown/cp_takedown
 // Params 1, eflags: 0x2 linked
 // Checksum 0x7873ae86, Offset: 0x518
 // Size: 0x74
@@ -43,7 +43,7 @@ function on_spawned(*localclientnum) {
     self thread namespace_260f8380::function_d9475fc(0.6, undefined, undefined, undefined);
 }
 
-// Namespace namespace_fbe06c5e/namespace_fbe06c5e
+// Namespace cp_takedown/cp_takedown
 // Params 0, eflags: 0x2 linked
 // Checksum 0x4d154c5a, Offset: 0x598
 // Size: 0x5ec
@@ -71,7 +71,7 @@ function init_clientfields() {
     clientfield::register("toplayer", "force_stream_weapons", 1, 2, "int", &function_d126379e, 1, 1);
 }
 
-// Namespace namespace_fbe06c5e/namespace_fbe06c5e
+// Namespace cp_takedown/cp_takedown
 // Params 7, eflags: 0x2 linked
 // Checksum 0xf42d9062, Offset: 0xb90
 // Size: 0xb4
@@ -83,7 +83,7 @@ function function_d1d298b9(localclientnum, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_fbe06c5e/namespace_fbe06c5e
+// Namespace cp_takedown/cp_takedown
 // Params 7, eflags: 0x2 linked
 // Checksum 0x7baccaff, Offset: 0xc50
 // Size: 0xec
@@ -99,7 +99,7 @@ function function_513e85fe(*localclientnum, *oldval, newval, *bnewent, *binitial
     }
 }
 
-// Namespace namespace_fbe06c5e/namespace_fbe06c5e
+// Namespace cp_takedown/cp_takedown
 // Params 7, eflags: 0x2 linked
 // Checksum 0xe0dc135e, Offset: 0xd48
 // Size: 0x11c
@@ -114,7 +114,7 @@ function function_766abe10(*localclientnum, *oldval, *newval, *bnewent, *binitia
     }
 }
 
-// Namespace namespace_fbe06c5e/namespace_fbe06c5e
+// Namespace cp_takedown/cp_takedown
 // Params 7, eflags: 0x2 linked
 // Checksum 0x49787f49, Offset: 0xe70
 // Size: 0xb8
@@ -131,7 +131,7 @@ function function_e0deb842(*localclientnum, *oldval, *newval, *bnewent, *binitia
     }
 }
 
-// Namespace namespace_fbe06c5e/namespace_fbe06c5e
+// Namespace cp_takedown/cp_takedown
 // Params 7, eflags: 0x2 linked
 // Checksum 0xf36e0f7c, Offset: 0xf30
 // Size: 0x8c
@@ -144,7 +144,7 @@ function function_1e71913d(*localclientnum, *oldval, *newval, *bnewent, *binitia
     }
 }
 
-// Namespace namespace_fbe06c5e/namespace_fbe06c5e
+// Namespace cp_takedown/cp_takedown
 // Params 7, eflags: 0x2 linked
 // Checksum 0x58948eb1, Offset: 0xfc8
 // Size: 0x8c
@@ -157,7 +157,7 @@ function function_f7a0b31a(*localclientnum, *oldval, *newval, *bnewent, *binitia
     }
 }
 
-// Namespace namespace_fbe06c5e/namespace_fbe06c5e
+// Namespace cp_takedown/cp_takedown
 // Params 7, eflags: 0x2 linked
 // Checksum 0x85a61f66, Offset: 0x1060
 // Size: 0x70
@@ -169,7 +169,7 @@ function function_b40e980(*localclientnum, *oldval, *newval, *bnewent, *binitial
     }
 }
 
-// Namespace namespace_fbe06c5e/namespace_fbe06c5e
+// Namespace cp_takedown/cp_takedown
 // Params 7, eflags: 0x2 linked
 // Checksum 0x6b4abac9, Offset: 0x10d8
 // Size: 0x436
@@ -226,7 +226,7 @@ function function_2d4bf193(localclientnum, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_fbe06c5e/namespace_fbe06c5e
+// Namespace cp_takedown/cp_takedown
 // Params 7, eflags: 0x2 linked
 // Checksum 0xaf046560, Offset: 0x1518
 // Size: 0x5c
@@ -234,7 +234,7 @@ function function_371e91f5(*localclientnum, *oldval, *newval, *bnewent, *binitia
     self setanimrestart(#"hash_55c97e9bf41cf070");
 }
 
-// Namespace namespace_fbe06c5e/namespace_fbe06c5e
+// Namespace cp_takedown/cp_takedown
 // Params 7, eflags: 0x2 linked
 // Checksum 0xac3bb212, Offset: 0x1580
 // Size: 0x5c
@@ -242,7 +242,7 @@ function function_c4e8d2c6(*localclientnum, *oldval, *newval, *bnewent, *binitia
     self setanimrestart(#"hash_7ed3204394a2ff5e");
 }
 
-// Namespace namespace_fbe06c5e/namespace_fbe06c5e
+// Namespace cp_takedown/cp_takedown
 // Params 7, eflags: 0x2 linked
 // Checksum 0x7dfbf6e6, Offset: 0x15e8
 // Size: 0x5c
@@ -250,7 +250,7 @@ function function_4cce7a86(*localclientnum, *oldval, *newval, *bnewent, *binitia
     self setanimrestart(#"hash_65fb765a66b27ef1");
 }
 
-// Namespace namespace_fbe06c5e/namespace_fbe06c5e
+// Namespace cp_takedown/cp_takedown
 // Params 7, eflags: 0x2 linked
 // Checksum 0x27c2a9f3, Offset: 0x1650
 // Size: 0x5c
@@ -258,7 +258,7 @@ function function_3e1ddd25(*localclientnum, *oldval, *newval, *bnewent, *binitia
     self setanimrestart(#"hash_77cbdb56c22e71f");
 }
 
-// Namespace namespace_fbe06c5e/namespace_fbe06c5e
+// Namespace cp_takedown/cp_takedown
 // Params 7, eflags: 0x2 linked
 // Checksum 0x6d65da63, Offset: 0x16b8
 // Size: 0x5c
@@ -266,7 +266,7 @@ function function_da9d1625(*localclientnum, *oldval, *newval, *bnewent, *binitia
     self setanimrestart(#"hash_3be8472c6114d6b6");
 }
 
-// Namespace namespace_fbe06c5e/namespace_fbe06c5e
+// Namespace cp_takedown/cp_takedown
 // Params 7, eflags: 0x2 linked
 // Checksum 0xd785ed23, Offset: 0x1720
 // Size: 0x5c
@@ -274,7 +274,7 @@ function function_5359a453(*localclientnum, *oldval, *newval, *bnewent, *binitia
     self setanimrestart(#"hash_7e2b806a227352d0");
 }
 
-// Namespace namespace_fbe06c5e/namespace_fbe06c5e
+// Namespace cp_takedown/cp_takedown
 // Params 7, eflags: 0x2 linked
 // Checksum 0x227e389c, Offset: 0x1788
 // Size: 0x5c
@@ -282,7 +282,7 @@ function function_3cb79acb(*localclientnum, *oldval, *newval, *bnewent, *binitia
     self setanimrestart(#"hash_7310b4167a3dbe5f");
 }
 
-// Namespace namespace_fbe06c5e/namespace_fbe06c5e
+// Namespace cp_takedown/cp_takedown
 // Params 7, eflags: 0x0
 // Checksum 0xadd36c23, Offset: 0x17f0
 // Size: 0x5c
@@ -290,7 +290,7 @@ function function_d93be6d9(*localclientnum, *oldval, *newval, *bnewent, *binitia
     self setanimrestart(#"hash_7e27abd232bfd236");
 }
 
-// Namespace namespace_fbe06c5e/namespace_fbe06c5e
+// Namespace cp_takedown/cp_takedown
 // Params 7, eflags: 0x2 linked
 // Checksum 0x37929310, Offset: 0x1858
 // Size: 0x342
@@ -331,7 +331,7 @@ function function_a735d35(*localclientnum, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_fbe06c5e/namespace_fbe06c5e
+// Namespace cp_takedown/cp_takedown
 // Params 0, eflags: 0x0
 // Checksum 0x671cef28, Offset: 0x1ba8
 // Size: 0x1ee
@@ -354,7 +354,7 @@ function function_c4ad9641() {
     }
 }
 
-// Namespace namespace_fbe06c5e/namespace_fbe06c5e
+// Namespace cp_takedown/cp_takedown
 // Params 0, eflags: 0x0
 // Checksum 0x440bc574, Offset: 0x1da0
 // Size: 0x16
@@ -362,7 +362,7 @@ function function_6bc306e1() {
     self notify(#"hash_b2522f6440eb5d5");
 }
 
-// Namespace namespace_fbe06c5e/namespace_fbe06c5e
+// Namespace cp_takedown/cp_takedown
 // Params 1, eflags: 0x2 linked
 // Checksum 0x5a02150c, Offset: 0x1dc0
 // Size: 0x54
@@ -372,7 +372,7 @@ function function_26826144(*str_notify) {
     self function_9ea7b4eb(1);
 }
 
-// Namespace namespace_fbe06c5e/namespace_fbe06c5e
+// Namespace cp_takedown/cp_takedown
 // Params 7, eflags: 0x2 linked
 // Checksum 0xd5331188, Offset: 0x1e20
 // Size: 0x2c2
@@ -401,7 +401,7 @@ function function_f48f6d3(*localclientnum, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_fbe06c5e/namespace_fbe06c5e
+// Namespace cp_takedown/cp_takedown
 // Params 7, eflags: 0x2 linked
 // Checksum 0x58195bfa, Offset: 0x20f0
 // Size: 0x1aa
@@ -423,7 +423,7 @@ function function_7f111718(*localclientnum, *oldval, newval, *bnewent, *binitial
     }
 }
 
-// Namespace namespace_fbe06c5e/namespace_fbe06c5e
+// Namespace cp_takedown/cp_takedown
 // Params 7, eflags: 0x2 linked
 // Checksum 0x8af1f99f, Offset: 0x22a8
 // Size: 0xec
@@ -437,7 +437,7 @@ function function_b06125f0(localclientnum, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_fbe06c5e/namespace_fbe06c5e
+// Namespace cp_takedown/cp_takedown
 // Params 7, eflags: 0x2 linked
 // Checksum 0x99288f78, Offset: 0x23a0
 // Size: 0xc4
@@ -451,7 +451,7 @@ function function_a315cdc9(*localclientnum, *oldval, newval, *bnewent, *binitial
     }
 }
 
-// Namespace namespace_fbe06c5e/namespace_fbe06c5e
+// Namespace cp_takedown/cp_takedown
 // Params 7, eflags: 0x2 linked
 // Checksum 0xd7f80820, Offset: 0x2470
 // Size: 0x284

@@ -594,7 +594,7 @@ function on_item_pickup(params) {
     item = params.item;
     if (isplayer(self)) {
         if (isdefined(item.var_a6762160)) {
-            if (item.var_a6762160.itemtype === #"hash_70823406977e7c34") {
+            if (item.var_a6762160.itemtype === #"survival_perk") {
                 if (isdefined(item.var_a6762160.talents)) {
                     foreach (talent in item.var_a6762160.talents) {
                         if (isdefined(talent.talent)) {

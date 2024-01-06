@@ -78,7 +78,7 @@ function function_3c5d1e97(enabled, var_6d949755) {
             if (isdefined(var_17280c7c)) {
                 self thread function_bb5769fe("aim", var_17280c7c);
             }
-            foreach (ent in self.stealth.var_3d105d55) {
+            foreach (entnum, ent in self.stealth.var_3d105d55) {
                 if (!isdefined(self.stealth.var_3d105d55[entnum])) {
                     self.stealth.var_3d105d55[entnum] = undefined;
                 }

@@ -1,0 +1,55 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_47eeabce73fea9fa"
+        },
+        {
+            "var_fe10649e": "#hash_73b549e8b78093ea"
+        },
+        {
+            "var_fe10649e": "#hash_73b548e8b7809237"
+        },
+        {
+            "var_fe10649e": "#hash_73b547e8b7809084"
+        }
+    ],
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_slowfire_bp_media_mtxitem",
+            "itemid": "19255846"
+        },
+        {
+            "var_4a4bc969": "#smg_capacity_bp_media_mtxitem",
+            "itemid": "30855565"
+        },
+        {
+            "var_4a4bc969": "#reticle_115_mtxitem",
+            "itemid": "30895594"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_mann_tv_head_mtxitem",
+            "itemid": "27811474"
+        },
+        {
+            "var_4a4bc969": "#emblems_s5_tvhead15_animation_mtxitem",
+            "itemid": "32297363"
+        },
+        {
+            "var_4a4bc969": "#callingcards_homevideoculture_24_s5_animated_mtxitem",
+            "itemid": "22302439"
+        }
+    ],
+    "itemname": "#hash_2b5cd6fcd0f8c2a8",
+    "var_375a1747": "#hash_47eeabce73fea9fa",
+    "var_3040f0d1": "#hash_47eeabce73fea9fa",
+    "var_8ee7db29": 1,
+    "name": "blueprint_bundle_5016_cetme_reactive_overload_mtxbundle",
+    "var_a788fada": "#hash_1ea1e0e2733d5599",
+    "var_22f91505": "#hash_33ffba4431f9005f",
+    "var_566825be": "#hash_6d9d563b1ea36811",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_3acc3fe6a428f71b",
+    "var_db3e02ab": 750,
+    "itemid": "18739048"
+}

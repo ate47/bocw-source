@@ -204,7 +204,7 @@ function function_9b61eb65() {
 function function_60ef20d8(params) {
     item = params.item;
     if (isplayer(self)) {
-        if (isdefined(item.var_a6762160) && item.var_a6762160.name == #"hash_5efaf85ad8db43ee") {
+        if (isdefined(item.var_a6762160) && item.var_a6762160.name == #"item_zmquest_platinum_power_quest_fuse") {
             if (level flag::get(#"hash_1d6357b2512a35e5")) {
                 var_46e76b4b = randomintrangeinclusive(0, 2);
                 switch (level.var_114b6e35) {
@@ -789,7 +789,7 @@ function private function_9af4005() {
 // Checksum 0xb577786e, Offset: 0x4210
 // Size: 0x284
 function function_57138f33(*params) {
-    if (self.archetype === #"hash_3d92e2c7bea1eee2" && self.team === level.zombie_team && !level flag::get(#"hash_1e1634794b3aab52")) {
+    if (self.archetype === #"mechz" && self.team === level.zombie_team && !level flag::get(#"hash_1e1634794b3aab52")) {
         level flag::set(#"hash_1e1634794b3aab52");
         var_773dbbf2 = 0;
         while (!var_773dbbf2) {

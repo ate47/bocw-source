@@ -1,0 +1,47 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_53e14fd817f6a828",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "roots"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_1abcb9a3a419978e",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "open"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_464a0eeeab72c422",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "close"
+                }
+            ],
+            "firstframe": 1,
+            "model": "#hash_e2ad7264fcf3d4e",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "weapon_crate"
+        }
+    ],
+    "scenetype": "fxanim",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "p9_fxanim_zm_ndu_contain_crate_gas_bundle",
+    "dontsync": 1,
+    "team": "any"
+}

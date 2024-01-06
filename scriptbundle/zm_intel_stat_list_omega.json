@@ -1,0 +1,30 @@
+{
+    "var_bb7dcd09": [
+        {
+            "type": "#audiolog",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "type": "#hash_daeb8129dc8e394",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "type": "#hash_20ea75a25d912949",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "type": "#artifact",
+            "var_a4f2dd9e": "#none"
+        }
+    ],
+    "var_ebb12613": "#hash_49ddaeade859cf0f",
+    "var_922067c4": "SCRIPTBUNDLE",
+    "var_e19b7aba": 1,
+    "var_abba0658": 1,
+    "var_a77ed948": "#hash_3069f93c4e1e6bd8",
+    "type": "datasourcelist",
+    "name": "zm_intel_stat_list_omega",
+    "var_d7ecf096": 1,
+    "var_501b626b": 1,
+    "var_748e79a5": "#hash_614b1191c9cace31"
+}

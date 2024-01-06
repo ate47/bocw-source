@@ -1,0 +1,17 @@
+{
+    "duration": 2,
+    "var_efce6189": "#hash_6273700f93d40058",
+    "var_922067c4": "SCRIPTBUNDLE",
+    "type": "sound_tinnitus",
+    "minrange": 100,
+    "var_edcc1468": "#hash_5af6709acee7c3d0",
+    "var_9d3d0581": "#hash_1b43b3c7dd67201a",
+    "vmtype": "Client",
+    "var_94f03120": "#hash_4b55b90ae7648d9f",
+    "var_d45165cb": "#hash_17c17f964c71e083",
+    "name": "tinnitus_frag_grenade",
+    "var_60e944e1": "#hash_311daf51ec673c65",
+    "var_5dddb8e8": "#hash_17a1b8bc363b1d7e",
+    "maxrange": 500,
+    "var_82c14e93": "#hash_41d89f3e99dd3195"
+}

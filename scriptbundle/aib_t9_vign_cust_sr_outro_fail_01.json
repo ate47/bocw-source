@@ -1,0 +1,83 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "cameraswitcher": "c_t9_vign_cust_sr_outro_fail_02_cam",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "model": "#hash_225b7a1c33079fb1",
+            "type": "sharedplayer",
+            "var_db255011": 1,
+            "name": "sharedplayer 1"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_287f99573e724bd1",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "model": 0,
+            "type": "vehicle",
+            "var_db255011": 1,
+            "deletewhenfinished": 1,
+            "name": "helicopter"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_5a6324170e1575ee",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "model": "#hash_3ca1ea9d84ee22b4",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "helicopter_pilot"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_6b84a16410fe4ac6",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "model": "#tag_origin_animate",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "prop 1"
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "aib_t9_vign_cust_sr_outro_fail_01",
+    "dontsync": 1,
+    "disablesceneskipping": 1,
+    "var_a6da2039": "aib_t9_vign_cust_zm_silver_outro_fail_01",
+    "ignorestreamer": 1,
+    "team": "any"
+}

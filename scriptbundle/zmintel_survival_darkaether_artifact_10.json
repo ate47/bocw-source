@@ -1,0 +1,19 @@
+{
+    "description": "#hash_56400c64f028af06",
+    "itemspawnentry": "#item_zmintel_survival_darkaether_artifact_10",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#exploration",
+    "model": "#hash_667027600c37bf5d",
+    "var_824079e7": "#survival",
+    "uimodel": "#hash_6ef38d8f11350aba",
+    "type": "zmintel",
+    "season": 3,
+    "var_ad4ad686": "#hash_70ce1650358c0923",
+    "var_217aec15": "#hash_4c46bf4eab36c2b3",
+    "name": "zmintel_survival_darkaether_artifact_10",
+    "var_9be0526e": "#artifact",
+    "var_83e219de": "#hash_55af78a255e77597",
+    "var_53be913a": 5,
+    "title": "#hash_2711b526876a01f6",
+    "mapname": "#wz_ski_slopes"
+}

@@ -12,7 +12,7 @@
 // Checksum 0x985078e, Offset: 0x148
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_53f69893eea352cb", &function_70a657d8, undefined, undefined, #"hash_3c57623e9dc82608");
+    system::register(#"hash_53f69893eea352cb", &function_70a657d8, undefined, undefined, #"radiation");
 }
 
 // Namespace namespace_6615ea91/namespace_6615ea91
@@ -45,18 +45,18 @@ function private _on_player_spawned() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xa72398e2, Offset: 0x2c8
 // Size: 0x13c
-function function_59621e3c(player, var_970406cf) {
+function function_59621e3c(player, sickness) {
     if (!namespace_956bd4dd::function_ab99e60c()) {
         return;
     }
-    var_5b29bbc0 = namespace_d6fa67f1::function_c9c6dda1(player);
-    if (!isdefined(var_5b29bbc0)) {
+    radiationlevel = radiation::function_c9c6dda1(player);
+    if (!isdefined(radiationlevel)) {
         /#
             assert(0);
         #/
         return;
     }
-    var_2ba8769e = namespace_956bd4dd::function_6b384c0f(var_5b29bbc0, var_970406cf);
+    var_2ba8769e = namespace_956bd4dd::function_6b384c0f(radiationlevel, sickness);
     if (!isdefined(var_2ba8769e)) {
         /#
             assert(0);
@@ -66,7 +66,7 @@ function function_59621e3c(player, var_970406cf) {
     var_d4393988 = player clientfield::get_to_player("radiation");
     var_4e56b794 = var_d4393988 >> 3;
     var_4e56b794 = var_4e56b794 & 1 << var_2ba8769e;
-    var_66bba724 = var_5b29bbc0;
+    var_66bba724 = radiationlevel;
     var_d4393988 = var_4e56b794 << 3 & var_66bba724;
     player clientfield::set_to_player("radiation", var_d4393988);
 }
@@ -87,19 +87,19 @@ function function_cca7424d(player, percentage) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x3c49c48, Offset: 0x498
 // Size: 0x13c
-function function_5cf1c0a(player, var_970406cf) {
+function function_5cf1c0a(player, sickness) {
     if (!namespace_956bd4dd::function_ab99e60c()) {
         return;
     }
-    var_5b29bbc0 = namespace_d6fa67f1::function_c9c6dda1(player);
-    var_66bba724 = var_5b29bbc0;
-    if (!isdefined(var_5b29bbc0)) {
+    radiationlevel = radiation::function_c9c6dda1(player);
+    var_66bba724 = radiationlevel;
+    if (!isdefined(radiationlevel)) {
         /#
             assert(0);
         #/
         return;
     }
-    var_2ba8769e = namespace_956bd4dd::function_6b384c0f(var_5b29bbc0, var_970406cf);
+    var_2ba8769e = namespace_956bd4dd::function_6b384c0f(radiationlevel, sickness);
     if (!isdefined(var_2ba8769e)) {
         /#
             assert(0);
@@ -128,18 +128,18 @@ function function_36a2c924(player, var_c49d0215) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xbd7c0ec6, Offset: 0x630
 // Size: 0xec
-function function_137e7814(player, var_5b29bbc0) {
+function function_137e7814(player, radiationlevel) {
     if (!namespace_956bd4dd::function_ab99e60c()) {
         return;
     }
     var_d4393988 = player clientfield::get_to_player("radiation");
     /#
-        assert(var_5b29bbc0 >= 0);
+        assert(radiationlevel >= 0);
     #/
     /#
-        assert(var_5b29bbc0 < pow(2, 3));
+        assert(radiationlevel < pow(2, 3));
     #/
-    var_842e1a12 = var_d4393988 >> 3 << 3 & var_5b29bbc0 & 8 - 1;
+    var_842e1a12 = var_d4393988 >> 3 << 3 & radiationlevel & 8 - 1;
     player clientfield::set_to_player("radiation", var_842e1a12);
 }
 

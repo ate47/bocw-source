@@ -142,7 +142,7 @@ function init() {
     level.waswinning = [];
     level.lastslowprocessframe = 0;
     level.placement = [];
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         level.placement[team] = [];
     }
     level.placement[#"all"] = [];
@@ -284,7 +284,7 @@ function precache_mp_leaderboards() {
         return;
     }
     mapname = util::get_map_name();
-    globalleaderboards = "MP_GB_XPPRESTIGE LB_MP_GB_SCORE LB_MP_GB_KDRATIO LB_MP_GB_KILLS LB_MP_GB_WINS LB_MP_GB_DEATHS LB_MP_GB_XPMAXPERGAME LB_MP_GB_TACTICALINSERTS LB_MP_GB_TACTICALINSERTSKILLS LB_MP_GB_PRESTIGEXP LB_MP_GB_HEADSHOTS LB_MP_GB_WEAPONS_PRIMARY LB_MP_GB_WEAPONS_SECONDARY";
+    globalleaderboards = "LB_MP_GB_XPPRESTIGE LB_MP_GB_SCORE LB_MP_GB_KDRATIO LB_MP_GB_KILLS LB_MP_GB_WINS LB_MP_GB_DEATHS LB_MP_GB_XPMAXPERGAME LB_MP_GB_TACTICALINSERTS LB_MP_GB_TACTICALINSERTSKILLS LB_MP_GB_PRESTIGEXP LB_MP_GB_HEADSHOTS LB_MP_GB_WEAPONS_PRIMARY LB_MP_GB_WEAPONS_SECONDARY";
     careerleaderboard = "";
     switch (level.gametype) {
     case #"sas":
@@ -429,7 +429,7 @@ function killserverpc() {
 // Size: 0xb0
 function atleasttwoteams() {
     valid_count = 0;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (level.playercount[team] != 0) {
             valid_count++;
         }
@@ -461,7 +461,7 @@ function checkifteamforfeits(team) {
 function function_a39c3df6() {
     var_f8765cbc = 0;
     var_64d2b1d6 = undefined;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (checkifteamforfeits(team)) {
             var_f8765cbc++;
             if (!level.multiteam) {
@@ -484,7 +484,7 @@ function function_a39c3df6() {
 // Checksum 0x67f78924, Offset: 0x20a0
 // Size: 0x9c
 function dospawnqueueupdates() {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (level.spawnqueuemodified[team]) {
             [[ level.onalivecountchange ]](team);
         }
@@ -504,7 +504,7 @@ function isteamalldead(team) {
 // Checksum 0x58552579, Offset: 0x21a0
 // Size: 0x92
 function areallteamsdead() {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (!isteamalldead(team)) {
             return 0;
         }
@@ -520,7 +520,7 @@ function function_f2a0d980() {
     count = 0;
     var_91f4d3aa = 0;
     aliveteam = undefined;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (level.everexisted[team]) {
             if (!isteamalldead(team)) {
                 aliveteam = team;
@@ -555,7 +555,7 @@ function dodeadeventupdates() {
                 return 1;
             }
         } else {
-            foreach (_ in level.teams) {
+            foreach (team, _ in level.teams) {
                 if (isteamalldead(team)) {
                     [[ level.ondeadevent ]](team);
                     return 1;
@@ -583,7 +583,7 @@ function isonlyoneleftaliveonteam(team) {
 // Size: 0x120
 function doonelefteventupdates() {
     if (level.teambased) {
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             if (isonlyoneleftaliveonteam(team)) {
                 [[ level.ononeleftevent ]](team);
                 return 1;
@@ -694,7 +694,7 @@ function wavespawntimer() {
     level endon(#"game_ended");
     while (game.state == "playing") {
         time = gettime();
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             notifyteamwavespawn(team, time);
         }
         waitframe(1);
@@ -742,7 +742,7 @@ function getteamscoreratio() {
     playerteam = self.pers[#"team"];
     score = getteamscore(playerteam);
     otherteamscore = 0;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (team == playerteam) {
             continue;
         }
@@ -1144,7 +1144,7 @@ function checktimelimit() {
 // Checksum 0xf6d06390, Offset: 0x4440
 // Size: 0xa8
 function allteamsunderscorelimit() {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (game.stat[#"teamscores"][team] >= level.scorelimit) {
             return 0;
         }
@@ -1322,7 +1322,7 @@ function updateteamplacement() {
         team = player.pers[#"team"];
         placement[team][placement[team].size] = player;
     }
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         level.placement[team] = placement[team];
     }
 }
@@ -1418,7 +1418,7 @@ function sortdeadplayers(team) {
 // Size: 0xa2
 function totalalivecount() {
     count = 0;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         count = count + function_a1ef346b(team).size;
     }
     return count;
@@ -1430,7 +1430,7 @@ function totalalivecount() {
 // Size: 0x9a
 function totalplayerlives() {
     count = 0;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         count = count + level.playerlives[team];
     }
     return count;
@@ -1442,7 +1442,7 @@ function totalplayerlives() {
 // Size: 0x9a
 function function_b102e4be() {
     count = 0;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         count = count + level.laststandcount[team];
     }
     return count;
@@ -1503,7 +1503,7 @@ function updateteamstatus() {
     if (totalalive > level.maxplayercount) {
         level.maxplayercount = totalalive;
     }
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (function_a1ef346b(team).size) {
             game.everexisted[team] = 1;
             level.everexisted[team] = 1;
@@ -1798,7 +1798,7 @@ function watchmatchendingsoon() {
 // Checksum 0xb87f4d2e, Offset: 0x6830
 // Size: 0x90
 function anyteamhaswavedelay() {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (level.wavedelay[team]) {
             return 1;
         }
@@ -1902,7 +1902,7 @@ function callback_startgametype() {
     if (!isdefined(game.stat[#"roundswon"][#"tie"])) {
         game.stat[#"roundswon"][#"tie"] = 0;
     }
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (!isdefined(game.stat[#"roundswon"][team])) {
             game.stat[#"roundswon"][team] = 0;
         }
@@ -1935,7 +1935,7 @@ function callback_startgametype() {
     level.disableattachments = getgametypesetting(#"disableattachments");
     level.disabletacinsert = getgametypesetting(#"disabletacinsert");
     level.var_d0e6b79d = getgametypesetting(#"hash_47df56af71e4df3");
-    level.var_3691c4b7 = getgametypesetting(#"hash_72977d6f997d7e81");
+    level.disablecustomcac = getgametypesetting(#"disablecustomcac");
     if (!isdefined(level.disableclassselection)) {
         level.disableclassselection = getgametypesetting(#"disableclassselection");
     }
@@ -1952,7 +1952,7 @@ function callback_startgametype() {
     level.bulletdamagescalar = getgametypesetting(#"bulletdamagescalar");
     level.playermaxhealth = getgametypesetting(#"playermaxhealth");
     level.playerhealthregentime = getgametypesetting(#"playerhealthregentime");
-    level.var_b1e41c9b = getgametypesetting(#"hash_430ea04f2dccef18");
+    level.autoheal = getgametypesetting(#"autoheal");
     level.playerrespawndelay = getgametypesetting(#"playerrespawndelay");
     level.playerobjectiveheldrespawndelay = getgametypesetting(#"playerobjectiveheldrespawndelay");
     level.waverespawndelay = getgametypesetting(#"waverespawndelay");
@@ -1970,7 +1970,7 @@ function callback_startgametype() {
     level.voip.killershearvictim = getgametypesetting(#"voipkillershearvictim");
     gameobjects::main();
     callback::callback(#"on_start_gametype");
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         initteamvariables(team);
     }
     level.maxplayercount = 0;
@@ -1989,7 +1989,7 @@ function callback_startgametype() {
     }
     wavedelay = level.waverespawndelay;
     if (wavedelay) {
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             level.wavedelay[team] = wavedelay;
             level.lastwave[team] = 0;
         }

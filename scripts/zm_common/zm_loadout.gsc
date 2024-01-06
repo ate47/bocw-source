@@ -960,7 +960,7 @@ function menuclass(response, forcedclass, *updatecharacterindex, var_632376a3) {
     } else {
         playerclass = updatecharacterindex;
     }
-    if (is_true(level.var_3691c4b7) && issubstr(playerclass, "CLASS_CUSTOM") && isarray(level.classtoclassnum) && level.classtoclassnum.size > 0) {
+    if (is_true(level.disablecustomcac) && issubstr(playerclass, "CLASS_CUSTOM") && isarray(level.classtoclassnum) && level.classtoclassnum.size > 0) {
         defaultclasses = getarraykeys(level.var_8e1db8ee);
         playerclass = level.var_8e1db8ee[defaultclasses[randomint(defaultclasses.size)]];
     }

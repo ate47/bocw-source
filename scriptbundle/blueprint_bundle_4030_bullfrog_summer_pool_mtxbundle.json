@@ -1,0 +1,39 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#smg_capacity_bp_summer_mtxitem",
+            "itemid": "22091635"
+        },
+        {
+            "var_4a4bc969": "#shotgun_fullauto_bp_summer_mtxitem",
+            "itemid": "33276591"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_fun_beach_mtxitem",
+            "itemid": "31927736"
+        },
+        {
+            "var_4a4bc969": "#emblems_r8g_10212_animated_mtxitem",
+            "itemid": "24275047"
+        },
+        {
+            "var_4a4bc969": "#callingcards_splash_wave_final_mtxitem",
+            "itemid": "31568104"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_splashwave_mtxitem",
+            "itemid": "28265804"
+        }
+    ],
+    "itemname": "#hash_9f572ba49983ffe",
+    "var_375a1747": "#hash_312d248fbabc4490",
+    "name": "blueprint_bundle_4030_bullfrog_summer_pool_mtxbundle",
+    "var_a788fada": "#hash_15f7a0c950013f09",
+    "var_22f91505": "#hash_6079995b9503ff2",
+    "var_566825be": "#hash_6356a3fc32788701",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_22e46b8942923e2e",
+    "var_db3e02ab": 2000,
+    "itemid": "21981860"
+}

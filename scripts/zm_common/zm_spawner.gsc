@@ -1634,7 +1634,7 @@ function function_dce9f1a6(spots) {
         }
         /#
             if (getdvarint(#"hash_72ad1fcf80c5738d", -1) > -1 && level.players[getdvarint(#"hash_72ad1fcf80c5738d", -1)] == player_info.player) {
-                foreach (spot in a_candidates) {
+                foreach (index, spot in a_candidates) {
                     record3dtext(index, spot.origin, (0, 1, 0));
                 }
             }

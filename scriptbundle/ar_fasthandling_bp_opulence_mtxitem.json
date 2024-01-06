@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#bundle_blueprint_2063_tr_longburst_white_gold_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_5177dd395ca52ee5",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_5a39cbb31f97e8f3",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 2,
+    "var_46300498": 1,
+    "baseweapon": "#hash_6be9615b6d0ec416",
+    "name": "ar_fasthandling_bp_opulence_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "20786967",
+    "blueprint": "#hash_5177dd395ca52ee5"
+}

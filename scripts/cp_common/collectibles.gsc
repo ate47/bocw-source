@@ -40,12 +40,12 @@ function private postinit() {
 function function_5a395617() {
     var_7bb83649 = [];
     var_bdf7b99d = [];
-    var_b6e3d0a = getscriptbundle(#"hash_48b7dc89502faad4");
+    var_b6e3d0a = getscriptbundle(#"evidenceboardlist");
     var_8f4db568 = var_b6e3d0a.var_48be729c;
     foreach (var_eeb11904 in var_8f4db568) {
         if (isdefined(var_eeb11904.collectiblelist)) {
             collectibles = var_eeb11904.collectiblelist;
-            foreach (v in collectibles) {
+            foreach (k, v in collectibles) {
                 collectible = getscriptbundle(v.collectible);
                 if (!isdefined(collectible.var_1d226975)) {
                     collectible.var_1d226975.collectible = 0;
@@ -195,9 +195,9 @@ function function_ab921f3d(var_2a51713) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0xc500a089, Offset: 0xc20
 // Size: 0x15c
-function function_316c48a3(var_d13a0347, var_28c9f917, var_bfb1faa4 = 1) {
+function function_316c48a3(unknown shot, var_28c9f917, var_bfb1faa4 = 1) {
     /#
-        assert(isdefined(var_d13a0347));
+        assert(isdefined(unknown shot));
     #/
     /#
         assert(isdefined(var_28c9f917));
@@ -206,11 +206,11 @@ function function_316c48a3(var_d13a0347, var_28c9f917, var_bfb1faa4 = 1) {
     /#
         assert(isplayer(player));
     #/
-    if (var_bfb1faa4 == function_1fe63475(var_d13a0347, var_28c9f917)) {
+    if (var_bfb1faa4 == function_1fe63475(unknown shot, var_28c9f917)) {
         return;
     }
-    player stats::set_stat(#"mapdata", var_d13a0347, #"hash_2e70fc8f5906c564", var_28c9f917, var_bfb1faa4);
-    player stats::set_stat(#"mapdata", var_d13a0347, #"hash_42b984266100b32", var_28c9f917, var_bfb1faa4);
+    player stats::set_stat(#"mapdata", unknown shot, #"hash_2e70fc8f5906c564", var_28c9f917, var_bfb1faa4);
+    player stats::set_stat(#"mapdata", unknown shot, #"hash_42b984266100b32", var_28c9f917, var_bfb1faa4);
     uploadstats(player);
 }
 
@@ -218,9 +218,9 @@ function function_316c48a3(var_d13a0347, var_28c9f917, var_bfb1faa4 = 1) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x6802e2c1, Offset: 0xd88
 // Size: 0xea
-function function_1fe63475(var_d13a0347, var_28c9f917) {
+function function_1fe63475(unknown shot, var_28c9f917) {
     /#
-        assert(isdefined(var_d13a0347));
+        assert(isdefined(unknown shot));
     #/
     /#
         assert(isdefined(var_28c9f917));
@@ -229,7 +229,7 @@ function function_1fe63475(var_d13a0347, var_28c9f917) {
     /#
         assert(isplayer(player));
     #/
-    var_4f84589e = is_true(player stats::get_stat(#"mapdata", var_d13a0347, #"hash_2e70fc8f5906c564", var_28c9f917));
+    var_4f84589e = is_true(player stats::get_stat(#"mapdata", unknown shot, #"hash_2e70fc8f5906c564", var_28c9f917));
     return var_4f84589e;
 }
 
@@ -237,9 +237,9 @@ function function_1fe63475(var_d13a0347, var_28c9f917) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x84979bf3, Offset: 0xe80
 // Size: 0xea
-function function_ee216b9e(var_d13a0347, var_28c9f917) {
+function function_ee216b9e(unknown shot, var_28c9f917) {
     /#
-        assert(isdefined(var_d13a0347));
+        assert(isdefined(unknown shot));
     #/
     /#
         assert(isdefined(var_28c9f917));
@@ -248,7 +248,7 @@ function function_ee216b9e(var_d13a0347, var_28c9f917) {
     /#
         assert(isplayer(player));
     #/
-    var_335de244 = is_true(player stats::get_stat(#"mapdata", var_d13a0347, #"hash_42b984266100b32", var_28c9f917));
+    var_335de244 = is_true(player stats::get_stat(#"mapdata", unknown shot, #"hash_42b984266100b32", var_28c9f917));
     return var_335de244;
 }
 
@@ -256,9 +256,9 @@ function function_ee216b9e(var_d13a0347, var_28c9f917) {
 // Params 2, eflags: 0x0
 // Checksum 0xe2a32421, Offset: 0xf78
 // Size: 0xfc
-function function_55fb73ea(var_d13a0347, var_28c9f917) {
+function function_55fb73ea(unknown shot, var_28c9f917) {
     /#
-        assert(isdefined(var_d13a0347));
+        assert(isdefined(unknown shot));
     #/
     /#
         assert(isdefined(var_28c9f917));
@@ -267,10 +267,10 @@ function function_55fb73ea(var_d13a0347, var_28c9f917) {
     /#
         assert(isplayer(player));
     #/
-    if (!function_ee216b9e(var_d13a0347, var_28c9f917)) {
+    if (!function_ee216b9e(unknown shot, var_28c9f917)) {
         return;
     }
-    player stats::set_stat(#"mapdata", var_d13a0347, #"hash_42b984266100b32", var_28c9f917, 0);
+    player stats::set_stat(#"mapdata", unknown shot, #"hash_42b984266100b32", var_28c9f917, 0);
     uploadstats(player);
 }
 
@@ -313,13 +313,13 @@ function function_9f976c54(var_bd14e861 = savegame::function_8136eb5a()) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xe05773cd, Offset: 0x1218
 // Size: 0xb0
-function function_99c4aa1(var_d13a0347) {
-    if (!isdefined(var_d13a0347)) {
+function function_99c4aa1(unknown shot) {
+    if (!isdefined(unknown shot)) {
         return;
     }
     var_80fc6600 = 0;
     foreach (collectible in level.var_19cf69db) {
-        if (collectible.var_430d1d6a == var_d13a0347) {
+        if (collectible.var_430d1d6a == unknown shot) {
             var_80fc6600++;
         }
     }
@@ -360,13 +360,13 @@ function function_7be39f53(var_bd14e861 = savegame::function_8136eb5a()) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x63723483, Offset: 0x1498
 // Size: 0xe2
-function function_5d5166dd(var_d13a0347) {
-    if (!isdefined(var_d13a0347)) {
+function function_5d5166dd(unknown shot) {
+    if (!isdefined(unknown shot)) {
         return;
     }
     var_9a849009 = 0;
     foreach (collectible in level.var_19cf69db) {
-        if (collectible.var_430d1d6a == var_d13a0347) {
+        if (collectible.var_430d1d6a == unknown shot) {
             if (is_true(function_ab921f3d(collectible.var_f3575c58))) {
                 var_9a849009++;
             }
@@ -454,7 +454,7 @@ function function_f539a1fa(collectible, params) {
 // Size: 0x90
 function function_a66b8474() {
     /#
-        foreach (collectible in level.var_19cf69db) {
+        foreach (id, collectible in level.var_19cf69db) {
             function_cb8ff1b9(id, 0);
         }
     #/
@@ -466,7 +466,7 @@ function function_a66b8474() {
 // Size: 0x98
 function function_4e4a7021() {
     /#
-        foreach (collectible in level.var_19cf69db) {
+        foreach (id, collectible in level.var_19cf69db) {
             function_cb8ff1b9(id, 1);
         }
     #/

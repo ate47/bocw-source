@@ -1,0 +1,19 @@
+{
+    "description": "#hash_2c6b64bfd70a331",
+    "itemspawnentry": "#item_zmintel_platinum_requiem_artifact_05",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#main_quest",
+    "model": "#hash_2de93182b4f602d4",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_54448f10b43e4b33",
+    "type": "zmintel",
+    "season": 4,
+    "var_ad4ad686": "#hash_1303dcb8d0e80e33",
+    "soundloop": "#hash_6098b72d515f39d5",
+    "name": "zmintel_platinum_requiem_artifact_05",
+    "var_9be0526e": "#artifact",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "title": "#hash_442b779e31ef79f",
+    "mapname": "#zm_platinum"
+}

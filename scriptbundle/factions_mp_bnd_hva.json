@@ -1,0 +1,15 @@
+{
+    "faction": [
+        {
+            "var_d2446fa0": "#faction_mp"
+        },
+        {
+            "var_d2446fa0": "#faction_mp_bnd"
+        },
+        {
+            "var_d2446fa0": "#faction_mp_hva"
+        }
+    ],
+    "var_49ab12c7": "#faction_codcaster",
+    "name": "factions_mp_bnd_hva"
+}

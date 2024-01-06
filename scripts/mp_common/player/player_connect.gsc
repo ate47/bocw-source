@@ -675,10 +675,10 @@ function private function_efa6e25f() {
     self globallogic_score::initpersstat(#"participation", 0);
     self globallogic_score::initpersstat(#"teamkills", 0);
     self globallogic_score::initpersstat(#"teamkills_nostats", 0);
-    self globallogic_score::initpersstat(#"hash_52351b781d185546", 0);
-    self globallogic_score::initpersstat(#"hash_17bf82b54782349a", 0);
-    self globallogic_score::initpersstat(#"hash_42bbe24fa4f08f5", 0);
-    self globallogic_score::initpersstat(#"hash_3cee9fed3d4de15b", 0);
+    self globallogic_score::initpersstat(#"dirty_bomb_deposits", 0);
+    self globallogic_score::initpersstat(#"dirty_bomb_detonates", 0);
+    self globallogic_score::initpersstat(#"satlink_batteries", 0);
+    self globallogic_score::initpersstat(#"satlink_deposits", 0);
     self globallogic_score::initpersstat(#"kill_distances", 0);
     self globallogic_score::initpersstat(#"num_kill_distance_entries", 0);
     self globallogic_score::initpersstat(#"time_played_moving", 0);

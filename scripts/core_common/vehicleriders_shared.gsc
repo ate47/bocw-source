@@ -365,11 +365,11 @@ function private function_8160dc33() {
         var_db4c6b3d = var_97f17bbd - var_416fb9cc;
         if (util::function_33e5d0ac(var_44351b64, 0.5) || var_db4c6b3d > 0 != var_d28d4ba5 > 0) {
             if (var_db4c6b3d > 30 && var_97f17bbd > 0) {
-                self notify(#"hash_2fbee997ec3c5b0c");
+                self notify(#"vehicle_starting");
                 var_44351b64 = gettime();
                 var_d28d4ba5 = var_db4c6b3d;
             } else if (var_db4c6b3d < -30 && var_97f17bbd < 0) {
-                self notify(#"hash_7d28315e33e2cee0");
+                self notify(#"vehicle_stopping");
                 var_44351b64 = gettime();
                 var_d28d4ba5 = var_db4c6b3d;
             }
@@ -596,7 +596,7 @@ function fill_riders(a_ai, vehicle, seat) {
             arrayremovevalue(a_ai_remaining, a_ai[0]);
         }
         break;
-    case #"hash_29b559f9ccb8e48":
+    case #"gunner2":
         if (get_in(a_ai[0], vehicle, "gunner2", 0)) {
             arrayremovevalue(a_ai_remaining, a_ai[0]);
         }
@@ -684,7 +684,7 @@ function unload(seat) {
     case #"gunner1":
         self thread function_2ef91b74(self);
         break;
-    case #"hash_29b559f9ccb8e48":
+    case #"gunner2":
         self thread function_da0917a4(self);
         break;
     case #"gunners":
@@ -791,8 +791,8 @@ function private function_da0917a4(vehicle) {
     if (!vehicle.var_761c973.var_cc0d1da) {
         return;
     }
-    if (vehicle flag::get("gunner2_occupied") && isdefined(vehicle.var_761c973.riders[#"hash_29b559f9ccb8e48"]) && isalive(vehicle.var_761c973.riders[#"hash_29b559f9ccb8e48"])) {
-        ai = vehicle.var_761c973.riders[#"hash_29b559f9ccb8e48"];
+    if (vehicle flag::get("gunner2_occupied") && isdefined(vehicle.var_761c973.riders[#"gunner2"]) && isalive(vehicle.var_761c973.riders[#"gunner2"])) {
+        ai = vehicle.var_761c973.riders[#"gunner2"];
         if (ai flag::get("dead_in_vehicle")) {
             return;
         }
@@ -921,7 +921,7 @@ function get_out(vehicle, ai, seat, var_b67230a6 = 0) {
         case #"gunner1":
             vehicle flag::clear("gunner1_occupied");
             break;
-        case #"hash_29b559f9ccb8e48":
+        case #"gunner2":
             vehicle flag::clear("gunner2_occupied");
             break;
         case #"crew":
@@ -1371,7 +1371,7 @@ function get_in(ai, vehicle, seat, var_7c3e4d44 = 1) {
         }
         init_rider(ai, vehicle, var_ae62c7e5);
         break;
-    case #"hash_29b559f9ccb8e48":
+    case #"gunner2":
         if (vehicle.var_761c973.var_cc0d1da && vehicle flag::get("gunner2_occupied")) {
             /#
                 if (var_7c3e4d44) {
@@ -1480,7 +1480,7 @@ function private function_8a1b8aa0(ai, vehicle) {
     self thread function_88042c5b(ai, ai.var_ec30f5da.rideanim);
     while (1) {
         result = undefined;
-        result = vehicle waittill(#"hash_2fbee997ec3c5b0c", #"hash_7d28315e33e2cee0");
+        result = vehicle waittill(#"vehicle_starting", #"vehicle_stopping");
         if (result._notify == "vehicle_starting" && isdefined(ai.var_ec30f5da.var_1493a803)) {
             self childthread function_1585495a(ai, ai.var_ec30f5da.var_1493a803);
         } else if (result._notify == "vehicle_stopping" && isdefined(ai.var_ec30f5da.var_95e10146)) {

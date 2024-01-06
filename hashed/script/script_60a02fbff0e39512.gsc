@@ -94,7 +94,7 @@ function function_160e40a2() {
     var_3393f5fe = cos(50);
     var_2c51fa57 = function_a3f6cdac(64);
     while (1) {
-        foreach (player in getplayers()) {
+        foreach (i, player in getplayers()) {
             time = gettime();
             if (i % 2 == var_1a1c0d86) {
                 if (!isdefined(player.var_8a022726)) {
@@ -171,7 +171,7 @@ function function_160e40a2() {
                                     }
                                 }
                                 var_bb075e98 = {#origin:var_dea242aa};
-                                var_a852a7dd = var_bb075e98 namespace_cc2ee5::use_dynent(dynent, player, var_b731b99b, 1, 1);
+                                var_a852a7dd = var_bb075e98 dynent_use::use_dynent(dynent, player, var_b731b99b, 1, 1);
                                 player gestures::play_gesture("ges_t9_door_shove", undefined, 0);
                                 player function_bc82f900("door_shove");
                                 playsoundatposition("evt_door_bash", dynent.origin);
@@ -233,7 +233,7 @@ function function_c743094d(eventstruct) {
                     var_b731b99b = 5;
                 }
             }
-            var_a852a7dd = eventstruct.attacker.var_8a022726 namespace_cc2ee5::use_dynent(dynent, eventstruct.attacker, var_b731b99b, 1, 1);
+            var_a852a7dd = eventstruct.attacker.var_8a022726 dynent_use::use_dynent(dynent, eventstruct.attacker, var_b731b99b, 1, 1);
             playsoundatposition("evt_door_bash", dynent.origin);
             playfx("debris/fx9_door_bash", dynent.origin, anglestoforward(dynent.angles), anglestoup(dynent.angles));
             dynent.var_a548ec11.dynent = gettime() + var_a852a7dd * 1000;
@@ -382,7 +382,7 @@ function private function_724a2fa5(eventstruct) {
     if (distancesquared(eventstruct.ent.origin, eventstruct.position) > function_a3f6cdac(15)) {
         return;
     }
-    var_a852a7dd = namespace_cc2ee5::use_dynent(dynent);
+    var_a852a7dd = dynent_use::use_dynent(dynent);
     dynent.var_a548ec11.dynent = gettime() + var_a852a7dd * 1000;
 }
 

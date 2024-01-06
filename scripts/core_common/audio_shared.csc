@@ -34,7 +34,7 @@ function private function_70a657d8() {
     level thread register_clientfields();
     level thread sndkillcam();
     setsoundcontext("plr_impact", "flesh");
-    util::register_system(#"hash_4d75e1df6d9e7e60", &function_c037c7cd);
+    util::register_system(#"duckcmd", &function_c037c7cd);
     level.var_4fe1773a = getdvarint(#"hash_287dc342cd15a144", 1);
 }
 
@@ -88,7 +88,7 @@ function register_clientfields() {
     clientfield::register("world", "sndIGCsnapshot", 1, 4, "int", &sndigcsnapshot, 1, 0);
     clientfield::register("world", "sndChyronLoop", 1, 1, "int", &sndchyronloop, 0, 0);
     clientfield::register("world", "sndZMBFadeIn", 1, 1, "int", &sndzmbfadein, 1, 0);
-    clientfield::register("world", "sndDeactivateSquadSpawnMusic", 1, 1, "int", &function_5d0c5fda, 0, 0);
+    clientfield::register("world", "sndDeactivateSquadSpawnMusic", 1, 1, "int", &snddeactivatesquadspawnmusic, 0, 0);
     clientfield::register("toplayer", "sndVehicleDamageAlarm", 1, 1, "counter", &sndvehicledamagealarm, 0, 0);
     clientfield::register("toplayer", "sndCriticalHealth", 1, 1, "int", &sndcriticalhealth, 0, 1);
     clientfield::register("toplayer", "sndLastStand", 1, 1, "int", &sndlaststand, 0, 0);
@@ -128,7 +128,7 @@ function player_init(localclientnum) {
 // Params 7, eflags: 0x2 linked
 // Checksum 0x8c567456, Offset: 0xe18
 // Size: 0x54
-function function_5d0c5fda(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function snddeactivatesquadspawnmusic(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         level.var_acf54eb7 = 1;
     }

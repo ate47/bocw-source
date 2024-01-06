@@ -405,7 +405,7 @@ function function_4513f006(machine, trigger) {
                         self namespace_791d0451::function_3fecad82(talent, 1, 2);
                         if (isdefined(machine)) {
                             machine thread namespace_791d0451::function_3e9d8a8e(talent);
-                            machine thread scene::play(#"hash_4f912670058aa620", machine);
+                            machine thread scene::play(#"p9_fxanim_zm_gp_wunderfizz_bundle", machine);
                         }
                     } else {
                         machine playsoundtoplayer(#"hash_5334aa3b6d25f949", self);

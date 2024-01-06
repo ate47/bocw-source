@@ -1,0 +1,33 @@
+{
+    "option_dependencies": [
+        {
+            "var_1643d946": "1",
+            "var_6825bdb": "#pc_gamepad_haptics",
+            "operator": "=="
+        }
+    ],
+    "description": "#hash_17f8a654adc962db",
+    "var_60fcfffa": "#menu/on",
+    "var_9bc3be7": 1,
+    "var_10e01ad5": 1,
+    "var_71620d66": 1,
+    "var_491e9867": "none",
+    "var_8722393c": 1,
+    "var_799f4f7": 1,
+    "var_77c0bdd6": 1,
+    "var_86a04811": 1,
+    "var_43a952c1": 0.01,
+    "maxvalue": 1,
+    "name": "gamepad_trigger_deadzone_sensitivity_dualsense",
+    "displayname": "#hash_854b7f647babbfe",
+    "var_4a4760c0": 0.01,
+    "var_d6897f56": 1,
+    "var_500458ac": 10,
+    "var_926d1be9": 0.1,
+    "var_66faec87": 0.99,
+    "statname": "gpad_trigger_deadzone",
+    "var_8b80386": 1,
+    "var_6f00a61a": 1.1,
+    "var_d4e288e": 0.13,
+    "var_b7401319": "#menu/off"
+}

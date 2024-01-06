@@ -20,3 +20,4 @@ Pools dumped:
 |-------------------|-----|--------------------------|
 | stringtable       | 63  | `/`                      |
 | scriptparsetree   | 68  | `/`                      |
+| scriptbundle      | 87  | `/scriptbundle/`         |

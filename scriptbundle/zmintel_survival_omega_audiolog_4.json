@@ -1,0 +1,75 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_5c0275fb379b079c",
+            "var_f35c5951": 2,
+            "var_5d4b5964": 5.29,
+            "var_36bf8e05": "#hash_7f223e0c352dd997"
+        },
+        {
+            "var_46bd7973": "#hash_3d5cf567f47cca7f",
+            "var_f35c5951": 7.5,
+            "var_5d4b5964": 1.79,
+            "var_36bf8e05": "#hash_73a48689712000aa"
+        },
+        {
+            "var_46bd7973": "#hash_5c0277fb379b0b02",
+            "var_f35c5951": 9.5,
+            "var_5d4b5964": 16.66,
+            "var_36bf8e05": "#hash_4107e3130a6d9ea1"
+        },
+        {
+            "var_46bd7973": "#hash_3d5cf767f47ccde5",
+            "var_f35c5951": 26.5,
+            "var_5d4b5964": 5.42,
+            "var_36bf8e05": "#hash_7b71f0142f5eb8"
+        },
+        {
+            "var_46bd7973": "#hash_5c0271fb379b00d0",
+            "var_f35c5951": 32,
+            "var_5d4b5964": 11.41,
+            "var_36bf8e05": "#hash_55ad67b278680adb"
+        },
+        {
+            "var_46bd7973": "#hash_3d5cf167f47cc3b3",
+            "var_f35c5951": 44,
+            "var_5d4b5964": 11.18,
+            "var_36bf8e05": "#hash_37a3cc7cdb8bd74e"
+        },
+        {
+            "var_46bd7973": "#hash_3d5cf267f47cc566",
+            "var_f35c5951": 55.5,
+            "var_5d4b5964": 8.36,
+            "var_36bf8e05": "#hash_48d8d5e8faca9c39"
+        },
+        {
+            "var_46bd7973": "#hash_5c0274fb379b05e9",
+            "var_f35c5951": 64.5,
+            "var_5d4b5964": 8,
+            "var_36bf8e05": "#hash_a0d60638f44f294"
+        },
+        {
+            "var_46bd7973": "#hash_6dae3ed24e0ca4d7",
+            "var_f35c5951": 75,
+            "var_5d4b5964": 0.1
+        }
+    ],
+    "description": "#hash_660f2e969fa9c2ca",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#exploration",
+    "model": "#hash_20f9a15d3e077602",
+    "var_824079e7": "#survival",
+    "uimodel": "#hash_7af8f043b1133323",
+    "var_2a12d36": 1,
+    "type": "zmintel",
+    "season": 2,
+    "var_ad4ad686": "#omega",
+    "soundloop": "#hash_2e77024e1f0a29f1",
+    "name": "zmintel_survival_omega_audiolog_4",
+    "var_9be0526e": "#audiolog",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "var_348b91fd": "#tape",
+    "title": "#hash_60de1f7e20ce05fa",
+    "var_3bb3493d": "#hash_aa88b7bd4ab7744"
+}

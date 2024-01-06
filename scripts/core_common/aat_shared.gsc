@@ -87,7 +87,7 @@ function function_571fceb(aat_name, main) {
 function private on_player_connect() {
     self.aat = [];
     self.aat_cooldown_start = [];
-    foreach (v in level.aat) {
+    foreach (key, v in level.aat) {
         self.aat_cooldown_start[key] = 0;
     }
     self thread watch_weapon_changes();
@@ -122,7 +122,7 @@ function setup_devgui(var_e73fddff) {
         waittillframeend();
         setdvar(#"aat_acquire_devgui", "<unknown string>");
         aat_devgui_base = var_e73fddff;
-        foreach (v in level.aat) {
+        foreach (key, v in level.aat) {
             if (key != "<unknown string>") {
                 name = function_9e72a96(key);
                 add_debug_command(aat_devgui_base + name + "<unknown string>" + "<unknown string>" + "<unknown string>" + name + "<unknown string>");
@@ -215,7 +215,7 @@ function private aat_set_debug_text(name, success, success_reroll, fail) {
 // Size: 0x90
 function private aat_cooldown_init() {
     self.aat_cooldown_start = [];
-    foreach (v in level.aat) {
+    foreach (key, v in level.aat) {
         self.aat_cooldown_start[key] = 0;
     }
 }

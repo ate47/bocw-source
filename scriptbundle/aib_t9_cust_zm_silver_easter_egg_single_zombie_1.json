@@ -1,0 +1,67 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_7b7455f35eea9de7",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "dance_idle_1"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_7b7452f35eea98ce",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "dance_idle_2"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_7b7453f35eea9a81",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "dance_idle_3"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_7b77bcf35eed82c3",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "dance_idle_4"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_7b7450f35eea9568",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "dance_forward_1"
+                }
+            ],
+            "lerptime": 2,
+            "model": "#hash_3b0d990e5102a829",
+            "type": "actor",
+            "var_e2360d85": 1,
+            "var_db255011": 1,
+            "name": "z_single_dance",
+            "removeweapon": 1
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "aib_t9_cust_zm_silver_easter_egg_single_zombie_1",
+    "dontsync": 1,
+    "team": "any"
+}

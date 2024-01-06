@@ -175,7 +175,7 @@ function function_a1fa2219() {
 // Size: 0x148
 function function_156d91ef() {
     self endon(#"death", #"disconnect");
-    if (getdvarint(#"hash_743dc7d58f409837", 1) == 1) {
+    if (getdvarint(#"scr_parachute_camera_transition_mode", 1) == 1) {
         self function_41170420(0);
     }
     self waittill(#"hash_171443902e2a22ee");

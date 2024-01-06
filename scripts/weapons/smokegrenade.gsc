@@ -130,7 +130,7 @@ function smokedetonate(owner, statweapon, smokeweapon, position, radius, effectl
                 owner.var_e0e2e070.owner = [];
             }
             var_d6b53fbd = now - 14000;
-            foreach (var_96138b54 in owner.var_e0e2e070) {
+            foreach (key, var_96138b54 in owner.var_e0e2e070) {
                 if (!isstruct(var_96138b54)) {
                     continue;
                 }

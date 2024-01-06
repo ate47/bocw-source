@@ -164,7 +164,7 @@ function function_beae80f9(rawspawns) {
         if (!function_7309b6b3(spawn)) {
             continue;
         }
-        if (oob::chr_party(spawn.origin) && namespace_9a8780d8::function_83ad4d2b(spawn.origin)) {
+        if (oob::chr_party(spawn.origin) && territory::function_83ad4d2b(spawn.origin)) {
             continue;
         }
         if (!isdefined(var_2014d551[spawn.var_575417a4])) {

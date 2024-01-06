@@ -1,0 +1,40 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_26be2f176e48a892",
+            "var_f35c5951": 1.5,
+            "var_5d4b5964": 9.73,
+            "var_36bf8e05": "#hash_277c18276626cf79"
+        },
+        {
+            "var_46bd7973": "#hash_26be30176e48aa45",
+            "var_f35c5951": 1.5,
+            "var_5d4b5964": 13.41,
+            "var_36bf8e05": "#hash_1983e3812ebc8ef8"
+        },
+        {
+            "var_46bd7973": "#hash_26be2d176e48a52c",
+            "var_f35c5951": 1,
+            "var_5d4b5964": 10.54,
+            "var_36bf8e05": "#hash_6f9da9a85795e5a7"
+        }
+    ],
+    "description": "#hash_15cc7b864cda9658",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#radio",
+    "model": "#hash_4fe193b7484608f8",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_10f65ca45f134f57",
+    "type": "zmintel",
+    "season": 1,
+    "var_ad4ad686": "#omega",
+    "soundloop": "#hash_5db0167d85d70c82",
+    "name": "zmintel_gold_omega_radio_3",
+    "var_9be0526e": "#hash_20ea75a25d912949",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "var_348b91fd": "#radio",
+    "title": "#hash_48b3935e4bbeacf0",
+    "var_3bb3493d": "#hash_26d0818307e1cd5b",
+    "mapname": "#zm_gold"
+}

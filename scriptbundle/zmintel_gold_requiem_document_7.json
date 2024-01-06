@@ -1,0 +1,19 @@
+{
+    "description": "#hash_34334dbbc63b5ff6",
+    "itemspawnentry": "#item_zmintel_gold_requiem_document_7",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#hash_54f6484895bebf79",
+    "model": "#hash_7861a0a274d85b1e",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_743cc1bf57cf9fc3",
+    "type": "zmintel",
+    "season": 2,
+    "var_ad4ad686": "#hash_1303dcb8d0e80e33",
+    "var_217aec15": "#hash_61765ca2100d5811",
+    "name": "zmintel_gold_requiem_document_7",
+    "var_9be0526e": "#hash_daeb8129dc8e394",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "title": "#hash_25a9481f286cad06",
+    "mapname": "#zm_gold"
+}

@@ -1,0 +1,55 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_6f6faa6815e7e022"
+        },
+        {
+            "var_fe10649e": "#hash_22183e00373be585"
+        },
+        {
+            "var_fe10649e": "#hash_22183d00373be3d2"
+        },
+        {
+            "var_fe10649e": "#hash_22183800373bdb53"
+        }
+    ],
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#smg_capacity_bp_fishtank_mtxitem",
+            "itemid": "30066383"
+        },
+        {
+            "var_4a4bc969": "#ar_slowhandling_bp_fishtank_mtxitem",
+            "itemid": "27976039"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_gyro_sphere_mtxitem",
+            "itemid": "31708061"
+        },
+        {
+            "var_4a4bc969": "#reticle_106_mtxitem",
+            "itemid": "28741709"
+        },
+        {
+            "var_4a4bc969": "#emblems_s4_cyberfishtank_animation_mtxitem",
+            "itemid": "24031458"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s4_cyberfishtank_animation_mtxitem",
+            "itemid": "21541263"
+        }
+    ],
+    "itemname": "#hash_56341bcce1d8a488",
+    "var_375a1747": "#hash_6f6faa6815e7e022",
+    "var_3040f0d1": "#hash_6f6faa6815e7e022",
+    "var_8ee7db29": 1,
+    "name": "blueprint_bundle_4012_bullfrog_reactive_two_mtxbundle",
+    "var_a788fada": "#hash_2578c86be97d8a8d",
+    "var_22f91505": "#hash_4201d6d32931444a",
+    "var_566825be": "#hash_21d3061f6908cb85",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_2a73fb6dd9fad0c6",
+    "var_db3e02ab": 750,
+    "itemid": "25279048"
+}

@@ -1,0 +1,183 @@
+{
+    "var_50c23eb3": [
+        {
+            "track": "#musictrack_theme_campaign"
+        },
+        {
+            "track": "#battletrack_bo1_rooftops"
+        },
+        {
+            "track": "#battletrack_bo2_maintheme"
+        },
+        {
+            "track": "#battletrack_bo2_shadows"
+        },
+        {
+            "track": "#battletrack_bo3_ilive"
+        },
+        {
+            "track": "#battletrack_waw_blackcats"
+        },
+        {
+            "track": "#battletrack_waw_dogfire"
+        },
+        {
+            "track": "#battletrack_waw_hellsgate"
+        },
+        {
+            "track": "#battletrack_waw_wildcard"
+        },
+        {
+            "track": "#battletrack_trey_revenge"
+        },
+        {
+            "track": "#battletrack_trey_farid"
+        },
+        {
+            "track": "#battletrack_trey_sandcastle"
+        },
+        {
+            "track": "#musictrack_cp_takedown_1"
+        },
+        {
+            "track": "#musictrack_cp_takedown_2"
+        },
+        {
+            "track": "#musictrack_cp_takedown_3"
+        },
+        {
+            "track": "#musictrack_cp_takedown_4"
+        },
+        {
+            "track": "#musictrack_cp_takedown_5"
+        },
+        {
+            "track": "#musictrack_cp_takedown_6"
+        },
+        {
+            "track": "#musictrack_cp_takedown_7"
+        },
+        {
+            "track": "#musictrack_cp_armada_1"
+        },
+        {
+            "track": "#musictrack_cp_armada_2"
+        },
+        {
+            "track": "#musictrack_cp_armada_3"
+        },
+        {
+            "track": "#musictrack_cp_armada_4"
+        },
+        {
+            "track": "#musictrack_cp_armada_5"
+        },
+        {
+            "track": "#musictrack_cp_stakeout_1"
+        },
+        {
+            "track": "#musictrack_cp_stakeout_2"
+        },
+        {
+            "track": "#musictrack_cp_stakeout_3"
+        },
+        {
+            "track": "#musictrack_cp_stakeout_4"
+        },
+        {
+            "track": "#musictrack_cp_amerika_1"
+        },
+        {
+            "track": "#musictrack_cp_amerika_2"
+        },
+        {
+            "track": "#musictrack_cp_amerika_3"
+        },
+        {
+            "track": "#musictrack_cp_amerika_4"
+        },
+        {
+            "track": "#musictrack_cp_amerika_5"
+        },
+        {
+            "track": "#musictrack_cp_yamantau_1"
+        },
+        {
+            "track": "#musictrack_cp_yamantau_2"
+        },
+        {
+            "track": "#musictrack_cp_yamantau_3"
+        },
+        {
+            "track": "#musictrack_cp_yamantau_4"
+        },
+        {
+            "track": "#musictrack_cp_yamantau_5"
+        },
+        {
+            "track": "#musictrack_cp_kgb_1"
+        },
+        {
+            "track": "#musictrack_cp_kgb_2"
+        },
+        {
+            "track": "#musictrack_cp_kgb_3"
+        },
+        {
+            "track": "#musictrack_cp_kgb_4"
+        },
+        {
+            "track": "#musictrack_cp_kgb_5"
+        },
+        {
+            "track": "#musictrack_cp_kgb_6"
+        },
+        {
+            "track": "#musictrack_cp_cuba_1"
+        },
+        {
+            "track": "#musictrack_cp_cuba_2"
+        },
+        {
+            "track": "#musictrack_cp_cuba_3"
+        },
+        {
+            "track": "#musictrack_cp_cuba_4"
+        },
+        {
+            "track": "#musictrack_cp_cuba_5"
+        },
+        {
+            "track": "#musictrack_cp_prisoner_1"
+        },
+        {
+            "track": "#musictrack_cp_prisoner_2"
+        },
+        {
+            "track": "#musictrack_cp_prisoner_3"
+        },
+        {
+            "track": "#musictrack_cp_prisoner_4"
+        },
+        {
+            "track": "#musictrack_cp_prisoner_5"
+        },
+        {
+            "track": "#musictrack_cp_prisoner_6"
+        },
+        {
+            "track": "#musictrack_cp_siege_1"
+        },
+        {
+            "track": "#musictrack_cp_siege_2"
+        },
+        {
+            "track": "#musictrack_cp_duga_1"
+        },
+        {
+            "track": "#musictrack_cp_duga_2"
+        }
+    ],
+    "name": "cp_musicplayer_playlist",
+    "title": "#hash_43be98fc23e88644"
+}

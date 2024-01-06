@@ -83,7 +83,7 @@ function function_d04c220e() {
     if (!isdefined(var_6c8b1954.var_6e64bcd)) {
         return;
     }
-    foreach (var_de282b38 in var_6c8b1954.var_6e64bcd) {
+    foreach (var_6176a8ab, var_de282b38 in var_6c8b1954.var_6e64bcd) {
         savegame::function_6d003cb9(var_6176a8ab, var_de282b38);
     }
 }
@@ -265,7 +265,7 @@ function function_fc8e281d() {
             return level.var_cc2922d[#"hash_709460f14c72da1d"];
         }
     #/
-    return savegame::function_ac15668a(#"hash_3ff1bafafd8a45eb");
+    return savegame::function_ac15668a(#"cp_sidemission_tundra");
 }
 
 // Namespace namespace_ee1da81f/namespace_ee1da81f
@@ -327,7 +327,7 @@ function function_c8718964() {
             return level.var_cc2922d[#"hash_2576aa389eb6fa86"];
         }
     #/
-    return savegame::function_ac15668a(#"hash_49de4c68778afe1c");
+    return savegame::function_ac15668a(#"cp_sidemission_takedown");
 }
 
 // Namespace namespace_ee1da81f/namespace_ee1da81f
@@ -413,31 +413,31 @@ function private function_d0c3d0ce() {
     player = self;
     var_a268cecc = savegame::function_8136eb5a();
     var_6c8b1954 = savegame::function_6440b06b(#"hash_e7d26541441cb9d");
-    if (var_a268cecc == #"hash_591a373140baae1a") {
+    if (var_a268cecc == #"cp_ger_stakeout") {
         if (!isinarray(var_6c8b1954.var_f4d7790b, 4)) {
-            player stats::set_stat(#"mapdata", #"hash_547ecbb7fb47217c", #"hash_43a738b893199779", 2, 0);
+            player stats::set_stat(#"mapdata", #"cp_rus_kgb", #"hash_43a738b893199779", 2, 0);
         }
-    } else if (var_a268cecc == #"hash_54c2eea0483d1201") {
+    } else if (var_a268cecc == #"cp_ger_hub8") {
         if (isinarray(var_6c8b1954.var_f4d7790b, 0)) {
-            player stats::set_stat(#"mapdata", #"hash_1f20bcab39c50cd3", #"hash_43a738b893199779", 0, 0);
-            player stats::set_stat(#"mapdata", #"hash_1f20bcab39c50cd3", #"hash_43a738b893199779", 1, 0);
+            player stats::set_stat(#"mapdata", #"cp_rus_duga", #"hash_43a738b893199779", 0, 0);
+            player stats::set_stat(#"mapdata", #"cp_rus_duga", #"hash_43a738b893199779", 1, 0);
         }
         if (isinarray(var_6c8b1954.var_f4d7790b, 1)) {
-            player stats::set_stat(#"mapdata", #"hash_70060b67a1351a43", #"hash_43a738b893199779", 0, 0);
+            player stats::set_stat(#"mapdata", #"cp_rus_siege", #"hash_43a738b893199779", 0, 0);
         }
-    } else if (var_a268cecc == #"hash_70060b67a1351a43") {
+    } else if (var_a268cecc == #"cp_rus_siege") {
         if (isinarray(var_6c8b1954.var_f4d7790b, 0)) {
-            player stats::set_stat(#"mapdata", #"hash_1f20bcab39c50cd3", #"hash_43a738b893199779", 0, 0);
-            player stats::set_stat(#"mapdata", #"hash_1f20bcab39c50cd3", #"hash_43a738b893199779", 1, 0);
-            player stats::set_stat(#"mapdata", #"hash_54c2eea0483d1201", #"hash_43a738b893199779", 0, 1);
-            player stats::set_stat(#"mapdata", #"hash_54c2eea0483d1201", #"hash_43a738b893199779", 1, 0);
-            player stats::set_stat(#"mapdata", #"hash_54c2eea0483d1201", #"hash_43a738b893199779", 2, 0);
+            player stats::set_stat(#"mapdata", #"cp_rus_duga", #"hash_43a738b893199779", 0, 0);
+            player stats::set_stat(#"mapdata", #"cp_rus_duga", #"hash_43a738b893199779", 1, 0);
+            player stats::set_stat(#"mapdata", #"cp_ger_hub8", #"hash_43a738b893199779", 0, 1);
+            player stats::set_stat(#"mapdata", #"cp_ger_hub8", #"hash_43a738b893199779", 1, 0);
+            player stats::set_stat(#"mapdata", #"cp_ger_hub8", #"hash_43a738b893199779", 2, 0);
         }
-    } else if (var_a268cecc == #"hash_1f20bcab39c50cd3") {
+    } else if (var_a268cecc == #"cp_rus_duga") {
         if (isinarray(var_6c8b1954.var_f4d7790b, 0)) {
-            player stats::set_stat(#"mapdata", #"hash_70060b67a1351a43", #"hash_43a738b893199779", 0, 0);
-            player stats::set_stat(#"mapdata", #"hash_54c2eea0483d1201", #"hash_43a738b893199779", 0, 0);
-            player stats::set_stat(#"mapdata", #"hash_54c2eea0483d1201", #"hash_43a738b893199779", 1, 1);
+            player stats::set_stat(#"mapdata", #"cp_rus_siege", #"hash_43a738b893199779", 0, 0);
+            player stats::set_stat(#"mapdata", #"cp_ger_hub8", #"hash_43a738b893199779", 0, 0);
+            player stats::set_stat(#"mapdata", #"cp_ger_hub8", #"hash_43a738b893199779", 1, 1);
         }
     }
 }

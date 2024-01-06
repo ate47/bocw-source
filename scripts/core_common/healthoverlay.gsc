@@ -498,7 +498,7 @@ function private function_8f2722f6(now, var_677a3e37) {
     if (!isalive(player)) {
         return;
     }
-    if (level.var_b1e41c9b && !var_677a3e37) {
+    if (level.autoheal && !var_677a3e37) {
         if (player.health < player.var_66cb03ad && player.heal.enabled !== 1) {
             player gadget_health_regen::function_ef6c7869(now);
         }

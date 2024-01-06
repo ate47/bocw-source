@@ -340,7 +340,7 @@ function function_2b96d7dc() {
     args = strtok(table_name, "\");
     if (args.size) {
         table_name = "";
-        foreach (arg in args) {
+        foreach (index, arg in args) {
             table_name = table_name + arg;
             if (index < args.size - 1) {
                 table_name = table_name + "/";

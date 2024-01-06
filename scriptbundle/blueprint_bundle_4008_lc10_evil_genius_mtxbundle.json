@@ -1,0 +1,52 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#smg_accurate_bp_evil_mtxitem",
+            "itemid": "30481531"
+        },
+        {
+            "var_4a4bc969": "#ar_damage_bp_evil_mtxitem",
+            "itemid": "30242803"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s4_digital_evil_mtxitem",
+            "itemid": "28036231"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_lightbulb_brain_mtxitem",
+            "itemid": "29626791"
+        },
+        {
+            "var_4a4bc969": "#emblems_hammerhead_a_animated_mtxitem",
+            "itemid": "23101001"
+        },
+        {
+            "var_4a4bc969": "#callingcards_evil_genius_animated_mtxitem",
+            "itemid": "31547713"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_boat_jetski_mpx_evil_mtxitem",
+            "itemid": "22201090"
+        },
+        {
+            "var_4a4bc969": "#vehiclehorn_damn_mtxitem",
+            "itemid": "29621333"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_r82_3_mtxitem",
+            "itemid": "32326098"
+        }
+    ],
+    "itemname": "#hash_8f814edd00eff6a",
+    "var_375a1747": "#hash_6937e3e4536c7b78",
+    "var_579fd6c3": 50,
+    "name": "blueprint_bundle_4008_lc10_evil_genius_mtxbundle",
+    "var_a788fada": "#hash_39f67bab19753911",
+    "var_22f91505": "#hash_5c9663d9c8b72701",
+    "var_566825be": "#hash_47eda39519f98ae9",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_4243fd57030edfc1",
+    "var_db3e02ab": 2000,
+    "itemid": "18171102"
+}

@@ -1,0 +1,19 @@
+{
+    "var_ce6ea3fa": "#hash_16ecd99ba864024b",
+    "var_a246b2f7": "#hash_37972e72bed33ce0",
+    "var_922067c4": "scriptbundle",
+    "var_c83371f4": "#hash_5d45994498165985",
+    "type": "destructiblecharacterdef",
+    "var_cb768102": "helmet",
+    "vmtype": "both",
+    "name": "c_t9_zmb_zombie_medium1_dst_def_ww1",
+    "var_29a9a307": "evt_zombie_armored_armor_break",
+    "var_5b8369a": "j_head",
+    "var_b0b6f73d": "j_spine4",
+    "piececount": 2,
+    "var_3d956795": "#hash_193a4186808c99be",
+    "var_c3a6fb5e": "torso_upper",
+    "var_b935d8b7": "helmet",
+    "var_635c3fce": "body_armor",
+    "var_c5c9c194": "evt_zombie_armored_armor_break"
+}

@@ -1,0 +1,155 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#bundle_free_9_1109_season_1_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_8_1108_season_1_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_7_1107_season_1_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_6_1106_season_1_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_5_1105_season_1_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_4_1104_season_1_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_3_1103_season_1_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_2111_season_2_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_2110_season_2_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_2109_season_2_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_2108_season_2_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_2107_season_2_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_2106_season_2_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_2105_season_2_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_2104_season_2_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_2103_season_2_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_2102_season_2_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_2_1102_season_1_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_10_1110_season_1_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#hash_3b12e8c5fa7a768c"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_4101_season_4_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_4105_season_4_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_4106_season_4_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#bundle_free_4110_season_4_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5102_season_5_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5104_season_5_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5106_season_5_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5108_season_5_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5110_season_5_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#blueprint_bundle_5111_season_5_mtxbundle"
+        }
+    ],
+    "var_941096a8": [
+        {
+            "var_386af035": "#cdl_stage06_weapon_xp_token_common_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage05_weapon_xp_token_common_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage04_weapon_xp_token_common_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage03_weapon_xp_token_common_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage02_weapon_xp_token_common_mtxentitlement"
+        },
+        {
+            "var_386af035": "#cdl_stage01_weapon_xp_token_common_mtxentitlement"
+        },
+        {
+            "var_386af035": "#atvi_weapon_xp_token_15_mins_mtxentitlement"
+        }
+    ],
+    "var_247df572": [
+        {
+            "var_9eb58a68": "#hash_5d72ea897c0e5ff6",
+            "var_40006035": 1
+        },
+        {
+            "var_9eb58a68": "#hash_f9690631684d70e",
+            "var_40006035": 2
+        },
+        {
+            "var_9eb58a68": "#hash_f9691631684d8c1",
+            "var_40006035": 3
+        },
+        {
+            "var_9eb58a68": "#hash_f9692631684da74",
+            "var_40006035": 4
+        },
+        {
+            "var_9eb58a68": "#hash_f9693631684dc27",
+            "var_40006035": 5
+        },
+        {
+            "var_9eb58a68": "#hash_f9694631684ddda",
+            "var_40006035": 6
+        }
+    ],
+    "itemname": "#weapon_xp_token_common",
+    "var_e9d9a8d0": 1,
+    "var_728341a": 1,
+    "var_46300498": 1,
+    "var_b6d84534": 1,
+    "name": "weapon_xp_token_common_mtxitem",
+    "category": "#hash_7c692b8eb31f67eb",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 1,
+    "itemid": "27032621",
+    "var_75b1b276": "#weapon_xp_token_common"
+}

@@ -1,0 +1,26 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#tr_powerburst_cb_target_practice_mtxitem",
+            "itemid": "27600916"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_target_pract_mtxitem",
+            "itemid": "31162593"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_targetpractice_mtxitem",
+            "itemid": "31974767"
+        }
+    ],
+    "itemname": "#hash_603cf16d725842a",
+    "var_375a1747": "#hash_58855917cb56a18",
+    "name": "bundle_blueprint_1079_tr_powerburst_target_practice_mtxbundle",
+    "var_22f91505": "#hash_3f9f2946bc779930",
+    "var_566825be": "#hash_1a1075eefec03adb",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_72ac5a10fa1ef0f8",
+    "var_db3e02ab": 2000,
+    "itemid": "32334648"
+}

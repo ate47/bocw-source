@@ -88,7 +88,7 @@ function private function_2e5b5858(item, player, *var_bd027dd9, *itemid, itemcou
     var_b0938bd7 = undefined;
     var_381f3b39 = 0;
     var_77e61fc6 = 0;
-    if (var_bd027dd9.var_a6762160.var_4a1a4613 === #"hash_2358855db2698362") {
+    if (var_bd027dd9.var_a6762160.var_4a1a4613 === #"armor_swap") {
         if (itemid armor::has_armor()) {
             inventoryitem = itemid.inventory.items[6];
             if (inventoryitem.var_bd027dd9 != 32767) {
@@ -108,7 +108,7 @@ function private function_2e5b5858(item, player, *var_bd027dd9, *itemid, itemcou
                 var_381f3b39 = var_bd027dd9.var_a6762160.amount;
             }
         }
-    } else if (var_bd027dd9.var_a6762160.var_4a1a4613 === #"hash_3d98ea1d4a033e97") {
+    } else if (var_bd027dd9.var_a6762160.var_4a1a4613 === #"armor_heal") {
         var_ffd5d55f = 1;
         if (itemid.armortier > 0) {
             if (var_bd027dd9.var_a6762160.armortier > itemid.armortier) {

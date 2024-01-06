@@ -2925,9 +2925,9 @@ function function_2798ed66() {
     if (!isalive(self)) {
         return;
     }
-    if (!isdefined(self.var_77b06e7a) && isdefined(self.var_3579fd59)) {
+    if (!isdefined(self.var_77b06e7a) && isdefined(self.script_vehiclecovernode)) {
         self.var_77b06e7a = [];
-        var_2d292ec2 = getnodearray(self.var_3579fd59, "script_vehiclecovernode");
+        var_2d292ec2 = getnodearray(self.script_vehiclecovernode, "script_vehiclecovernode");
         foreach (node in var_2d292ec2) {
             /#
                 assert(isdefined(node.var_f3da2b27), "<unknown string>" + node.origin + "<unknown string>");
@@ -4195,7 +4195,7 @@ function private function_1eab63e3(flare_lifetime = undefined) {
         lifetimes[lifetimes.size] = flare_lifetime - var_b2814b11 * 0.3;
     }
     lifetimes = array::randomize(lifetimes);
-    foreach (value in lifetimes) {
+    foreach (key, value in lifetimes) {
         if (value == flare_lifetime) {
             lifetimes[key] = lifetimes[key] + key * 0.15;
         }
@@ -4420,7 +4420,7 @@ function function_78cfd053() {
     var_8ac0fa8[var_8ac0fa8.size] = 0;
     while (1) {
         self waittill(#"damage");
-        foreach (n_health_threshold in var_8ac0fa8) {
+        foreach (keys, n_health_threshold in var_8ac0fa8) {
             if (self.health > n_health_threshold) {
                 break;
             }

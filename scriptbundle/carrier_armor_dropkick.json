@@ -1,0 +1,19 @@
+{
+    "hinttext": "#hash_687449d390bc2d93",
+    "var_922067c4": "scriptbundle",
+    "var_f2038d90": "500",
+    "value2": "50",
+    "var_6006e991": "100",
+    "var_43883094": "0",
+    "var_7c9022a3": "300",
+    "var_8e4ec620": "400",
+    "var_dfed6968": "150",
+    "var_71ce0d1f": "200",
+    "type": "gamesettings",
+    "label": "#menu/noloc",
+    "name": "carrier_armor_dropkick",
+    "displayname": "#hash_5ebf176f4e5b189d",
+    "var_9600a8ab": "#hash_94eb0e3329edf5f",
+    "var_9de86f42": 8,
+    "setting": "dropkickCarrierArmor"
+}

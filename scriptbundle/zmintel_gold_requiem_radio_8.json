@@ -1,0 +1,46 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_4035a04dd2bca478",
+            "var_f35c5951": 1.5,
+            "var_5d4b5964": 17.24,
+            "var_36bf8e05": "#hash_22c28ddb8d3634e7"
+        },
+        {
+            "var_46bd7973": "#hash_4035a14dd2bca62b",
+            "var_f35c5951": 1.5,
+            "var_5d4b5964": 13.53,
+            "var_36bf8e05": "#hash_f0f6e79e27ba4d6"
+        },
+        {
+            "var_46bd7973": "#hash_4035a24dd2bca7de",
+            "var_f35c5951": 1.5,
+            "var_5d4b5964": 10.6,
+            "var_36bf8e05": "#hash_328e68a23d739c5"
+        },
+        {
+            "var_46bd7973": "#hash_4035a34dd2bca991",
+            "var_f35c5951": 1,
+            "var_5d4b5964": 18.69,
+            "var_36bf8e05": "#hash_31686faadaa8fcf4"
+        }
+    ],
+    "description": "#hash_29a4f3d7d240bf80",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#radio",
+    "model": "#hash_4fe1a0b748461f0f",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_7ea108a0c0ac5fa4",
+    "type": "zmintel",
+    "season": 1,
+    "var_ad4ad686": "#hash_1303dcb8d0e80e33",
+    "soundloop": "#hash_5db0167d85d70c82",
+    "name": "zmintel_gold_requiem_radio_8",
+    "var_9be0526e": "#hash_20ea75a25d912949",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "var_348b91fd": "#radio",
+    "title": "#hash_5cd2c4b5df847398",
+    "var_3bb3493d": "#hash_3aa5dd926866cdb9",
+    "mapname": "#zm_gold"
+}

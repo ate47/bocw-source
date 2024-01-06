@@ -33,7 +33,7 @@ function on_player_connect() {
 // Size: 0xb4
 function on_item_pickup(s_params) {
     var_a6762160 = s_params.item.var_a6762160;
-    if (var_a6762160.itemtype === #"hash_910bf9605abbcea") {
+    if (var_a6762160.itemtype === #"survival_essence") {
         if (isplayer(self)) {
             e_player = self;
         } else {
@@ -84,11 +84,11 @@ function on_ai_killed(s_params) {
             case #"avogadro":
                 var_b25755cf = 50;
                 break;
-            case #"hash_9f6bc1960ff4912":
+            case #"raz":
             case #"brutus":
                 var_b25755cf = 100;
                 break;
-            case #"hash_3d92e2c7bea1eee2":
+            case #"mechz":
             case #"blight_father":
                 var_b25755cf = 250;
                 break;

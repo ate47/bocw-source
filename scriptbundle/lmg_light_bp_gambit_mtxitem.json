@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#bundle_operator_1063_awa_punk_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_3b08dc935f10ad32",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_115e8753cf82a2c4",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 1,
+    "var_46300498": 1,
+    "baseweapon": "#hash_64e4e829150d8882",
+    "name": "lmg_light_bp_gambit_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "21766115",
+    "blueprint": "#hash_3b08dc935f10ad32"
+}

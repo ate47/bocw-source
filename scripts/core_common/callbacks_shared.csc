@@ -130,7 +130,7 @@ function function_52ac9652(event, func, obj) {
     if (!isdefined(self._callbacks) || !isdefined(self._callbacks[event])) {
         return;
     }
-    foreach (func_group in self._callbacks[event]) {
+    foreach (index, func_group in self._callbacks[event]) {
         if (func_group[0] == func) {
             if (func_group[1] === obj) {
                 arrayremoveindex(self._callbacks[event], index, 0);
@@ -151,7 +151,7 @@ function remove_callback(event, func, obj) {
     /#
         assert(isdefined(level._callbacks[event]), "<unknown string>");
     #/
-    foreach (func_group in level._callbacks[event]) {
+    foreach (index, func_group in level._callbacks[event]) {
         if (func_group[0] == func) {
             if (func_group[1] === obj) {
                 arrayremoveindex(level._callbacks[event], index, 0);
@@ -917,7 +917,7 @@ function event_handler[exploder_activate] codecallback_activateexploder(eventstr
         return;
     }
     exploder = undefined;
-    foreach (v in level._exploder_ids) {
+    foreach (k, v in level._exploder_ids) {
         if (v == eventstruct.exploder_id) {
             exploder = k;
             break;
@@ -938,7 +938,7 @@ function event_handler[exploder_deactivate] codecallback_deactivateexploder(even
         return;
     }
     exploder = undefined;
-    foreach (v in level._exploder_ids) {
+    foreach (k, v in level._exploder_ids) {
         if (v == eventstruct.exploder_id) {
             exploder = k;
             break;

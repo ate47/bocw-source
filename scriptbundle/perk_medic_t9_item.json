@@ -1,0 +1,32 @@
+{
+    "talents": [
+        {
+            "talent": "#hash_1b4c269b5a2c7cca"
+        }
+    ],
+    "var_a6616b9c": 1,
+    "amount": 1,
+    "var_fa988b4b": 180,
+    "description": "#hash_18fc67098800a626",
+    "var_922067c4": "scriptbundle",
+    "model": "#p8_wz_perk_pickups_medic",
+    "var_16e34ef4": 64,
+    "var_e9898330": "pingitemgeneric",
+    "var_ac75b59f": -1,
+    "type": "itemspawnentry",
+    "hintstring": "#hash_2b9883e118f9fa0b",
+    "var_4a1a4613": "armor_swap",
+    "name": "perk_medic_t9_item",
+    "displayname": "#hash_2b9883e118f9fa0b",
+    "var_9e569978": 1,
+    "stackcount": 1,
+    "icon": "#hash_58beba884bed0e5b",
+    "modelscale": 1,
+    "rarity": "None",
+    "equipsound": "uin_wz_perk_medic",
+    "var_97c5ead1": 1,
+    "handler": "#hash_57df81951e3bc37c",
+    "var_3af59a99": 1,
+    "pickupicon": "#hash_58beba884bed0e5b",
+    "itemtype": "perk_tier_1"
+}

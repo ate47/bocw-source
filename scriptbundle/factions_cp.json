@@ -1,0 +1,15 @@
+{
+    "faction": [
+        {
+            "var_d2446fa0": "#faction_cp"
+        },
+        {
+            "var_d2446fa0": "#faction_cp_allies"
+        },
+        {
+            "var_d2446fa0": "#faction_cp_axis"
+        }
+    ],
+    "var_49ab12c7": "#faction_codcaster",
+    "name": "factions_cp"
+}

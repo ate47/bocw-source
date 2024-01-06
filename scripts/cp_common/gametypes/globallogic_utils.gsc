@@ -403,7 +403,7 @@ function logteamwinstring(wintype, winner) {
     if (isdefined(winner)) {
         log_string = log_string + ", win: " + winner;
     }
-    foreach (str_team in level.teams) {
+    foreach (team, str_team in level.teams) {
         log_string = log_string + ", " + str_team + ": " + game.stat[#"teamscores"][team];
     }
     /#

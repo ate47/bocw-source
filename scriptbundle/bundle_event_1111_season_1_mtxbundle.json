@@ -1,0 +1,34 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#sniper_powersemi_bp_frostbite_mtxitem",
+            "itemid": "26981677"
+        },
+        {
+            "var_4a4bc969": "#callingcards_christmas2_mtxitem",
+            "itemid": "31564136"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_snowman_mtxitem",
+            "itemid": "31976010"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_gold_bell_mtxitem",
+            "itemid": "23778164"
+        },
+        {
+            "var_4a4bc969": "#emblems_firstdayofwinter_mtxitem",
+            "itemid": "20162825"
+        }
+    ],
+    "itemname": "#hash_378bb2af2c32ccf9",
+    "var_375a1747": "#hash_4aa27ceefa0f4bfb",
+    "name": "bundle_event_1111_season_1_mtxbundle",
+    "var_22f91505": "#hash_fbb8c82f3e4f09",
+    "var_566825be": "#hash_57bc937ba012706a",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_3f1fda09a5433b09",
+    "var_db3e02ab": 2000,
+    "itemid": "22950569"
+}

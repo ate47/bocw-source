@@ -27,9 +27,9 @@ function init_shared() {
     level.var_29115f03[1] = {#var_18c0a09d:#"hash_42b275f8ad52e92d", #slow:#"hash_8a5fd5a0a3d0325"};
     level.var_29115f03[2] = {#var_18c0a09d:#"hash_42b272f8ad52e414", #slow:#"hash_8a5fa5a0a3cfe0c"};
     level.var_29115f03[3] = {#var_18c0a09d:#"hash_42b273f8ad52e5c7", #slow:#"hash_8a5fb5a0a3cffbf"};
-    weapon = getweapon(#"hash_63826b4a80215cd3");
+    weapon = getweapon(#"tear_gas");
     clientfield::register("toplayer", "in_tear_gas", 1, 2, "int");
-    weaponobjects::function_e6400478(#"hash_63826b4a80215cd3", &function_db9e3adb, 0);
+    weaponobjects::function_e6400478(#"tear_gas", &function_db9e3adb, 0);
     deployable::register_deployable(weapon);
     globallogic_score::function_a458dbe1(#"hash_69c2a47bf2322b6b", &function_dbdedd18);
     globallogic_score::function_69c6cfcc(#"hash_69c2a47bf2322b6b", &function_c402f4b4);
@@ -266,7 +266,7 @@ function function_12b45f48(var_7acab93a, team) {
 // Checksum 0x4bb81132, Offset: 0x1240
 // Size: 0x40
 function function_585ad28f(weapon) {
-    if (getweapon(#"hash_63826b4a80215cd3") == weapon.rootweapon) {
+    if (getweapon(#"tear_gas") == weapon.rootweapon) {
         return 1;
     }
     return 0;
@@ -346,7 +346,7 @@ function private function_78d7002(var_7e6e7f9f, owner, grenadeent) {
     dot.var_3fc27996 = grenadeent;
     self thread status_effect::status_effect_apply(dot, var_7e6e7f9f, owner, 0, undefined, undefined, grenadeent.origin);
     self playsoundtoplayer(#"hash_569fa11d8a4005ba", self);
-    foreach (var_c62d6d34 in level.var_29115f03) {
+    foreach (stage, var_c62d6d34 in level.var_29115f03) {
         self.var_1b05dcde = stage;
         slow = getstatuseffect(var_c62d6d34.slow);
         self thread status_effect::status_effect_apply(slow, var_7e6e7f9f, owner);

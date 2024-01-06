@@ -120,7 +120,7 @@ function function_c3ae0dcf() {
     self endon(#"death", #"hash_29b88049dcac8bb3");
     while (1) {
         s_result = undefined;
-        s_result = self waittill(#"hash_75d966259d999fc2");
+        s_result = self waittill(#"sndambientbreath");
         self.var_ce0f9600 = int(s_result.active);
     }
 }

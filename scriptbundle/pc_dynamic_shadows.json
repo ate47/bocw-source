@@ -1,0 +1,39 @@
+{
+    "options": [
+        {
+            "label": "#hash_6a489abface20fd6",
+            "value": "0"
+        },
+        {
+            "label": "#hash_5491707fd793026d",
+            "value": "1"
+        },
+        {
+            "label": "#hash_1a854ddac8694867",
+            "value": "2"
+        }
+    ],
+    "var_d260763": "#hash_dd74e5f5fa1a5b2",
+    "description": "#hash_e7765a135a7fe71",
+    "var_ebe98576": 1,
+    "var_60fcfffa": "#menu/on",
+    "var_9bc3be7": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_799f4f7": 1,
+    "var_140d0a67": 1,
+    "var_77c0bdd6": 1,
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "name": "pc_dynamic_shadows",
+    "displayname": "#hash_1b7f9bc0edbb0bdf",
+    "var_4a4760c0": 1,
+    "var_500458ac": 10,
+    "var_66faec87": 10,
+    "statname": "r_lightingSunShadowDisableDynamicDraw",
+    "var_8b80386": 1,
+    "var_6f00a61a": 1.1,
+    "minvalue": 1,
+    "var_d4e288e": 1,
+    "var_b7401319": "#menu/off"
+}

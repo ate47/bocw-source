@@ -1,0 +1,22 @@
+{
+    "var_bb7dcd09": [
+        {
+            "type": "#hash_798212a6fd4ab166",
+            "var_a4f2dd9e": "#none",
+            "var_e1c44b36": "#hash_4101b12e25023b04"
+        },
+        {
+            "type": "#hash_798212a6fd4ab166",
+            "var_a4f2dd9e": "#none",
+            "var_e1c44b36": "#hash_2cb68181206b2bdf"
+        }
+    ],
+    "var_922067c4": "SCRIPTBUNDLE",
+    "var_abba0658": 1,
+    "var_a77ed948": "#none",
+    "type": "datasourcelist",
+    "name": "summary_battle_pass",
+    "var_501b626b": 1,
+    "var_f8c3715": 1,
+    "var_748e79a5": "#hash_43c7b7d41ab1a0"
+}

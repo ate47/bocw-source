@@ -1,0 +1,58 @@
+{
+    "worldfx": [
+        {
+            "worldfx": "#hash_20b3d352fb23155c"
+        }
+    ],
+    "var_a53e9db0": [
+        {
+            "var_6be1bec7": "elo_t9_item_sr"
+        },
+        {
+            "var_6be1bec7": "elo2_t9_item_sr"
+        },
+        {
+            "var_6be1bec7": "reflex_t9_item_sr"
+        },
+        {
+            "var_6be1bec7": "reflex2_t9_item_sr"
+        }
+    ],
+    "var_a6616b9c": 1,
+    "amount": 1,
+    "var_fa988b4b": 60,
+    "var_922067c4": "scriptbundle",
+    "var_16e34ef4": 64,
+    "var_e9898330": "pingitemgungeneric",
+    "weapon": "#hash_18a2b66939a974a1",
+    "var_ac75b59f": -1,
+    "var_c2de1e75": "zm_item_pickup_rumble",
+    "attachslotmuzzle": 1,
+    "attachslotbody": 1,
+    "type": "itemspawnentry",
+    "spawnsound": "zmb_powerup_eqp_spawn",
+    "var_e6ac0592": 35,
+    "attachslotstock": 1,
+    "var_4a1a4613": "armor_swap",
+    "name": "special_crossbow_t9_white_rand_item_sr",
+    "var_36781d9f": "wpn_drop_generic_delay",
+    "var_9e569978": 1,
+    "icon": "#hash_6b94d29fffd33f74",
+    "var_8e212f46": 1,
+    "attachslotmagazine": 1,
+    "attachslotunderbarrel": 1,
+    "modelscale": 1,
+    "rarity": "Resource",
+    "var_1b0b57d1": "evt_item_despawn",
+    "attachslotbarrel": 1,
+    "var_ee67711f": 20,
+    "var_d0e99a2a": 1,
+    "handler": "#hash_50375e5de228e9fc",
+    "attachslotoptics": 1,
+    "attachslothandle": 1,
+    "var_3af59a99": 1,
+    "pickupicon": "#hash_6b94d29fffd33f74",
+    "var_50773731": 20,
+    "itemtype": "weapon",
+    "pickupsound": "zmb_powerup_eqp_pickup"
+}

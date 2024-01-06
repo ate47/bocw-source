@@ -1,0 +1,47 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#tr_fastburst_bp_cuddly_mtxitem",
+            "itemid": "23955248"
+        },
+        {
+            "var_4a4bc969": "#smg_standard_cb_bp_cuddly_mtxitem",
+            "itemid": "32060002"
+        },
+        {
+            "var_4a4bc969": "#reticle_116_mtxitem",
+            "itemid": "25813578"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_cuddly_bird_mtxitem",
+            "itemid": "18191666"
+        },
+        {
+            "var_4a4bc969": "#emblems_cuddlyanimals_mtxitem",
+            "itemid": "24677098"
+        },
+        {
+            "var_4a4bc969": "#callingcards_cuddlyanimals01_mtxitem",
+            "itemid": "30291846"
+        },
+        {
+            "var_4a4bc969": "#callingcards_cuddlyanimals02_mtxitem",
+            "itemid": "26888500"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_cuddlyanimals_mtxitem",
+            "itemid": "22704458"
+        }
+    ],
+    "itemname": "#hash_7f9a67ccb5fb0058",
+    "var_375a1747": "#hash_47cfb411b7f5efbe",
+    "name": "blueprint_bundle_5032_g11_forest_friends_mtxbundle",
+    "var_a788fada": "#hash_7574c004b2bf0117",
+    "var_22f91505": "#hash_2eb5656256a1dbe5",
+    "var_566825be": "#hash_78addad94dc4c45f",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_7dfca0808438b59d",
+    "var_db3e02ab": 2000,
+    "itemid": "23809100"
+}

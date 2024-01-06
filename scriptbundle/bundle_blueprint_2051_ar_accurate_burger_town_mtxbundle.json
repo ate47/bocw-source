@@ -1,0 +1,27 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_accurate_bp_burgertown_mtxitem",
+            "itemid": "28714206"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_burger_town_mtxitem",
+            "itemid": "27208412"
+        },
+        {
+            "var_4a4bc969": "#callingcards_burgertown002_mtxitem",
+            "itemid": "30917078"
+        }
+    ],
+    "itemname": "#hash_41e0af6575f3bace",
+    "var_375a1747": "#hash_1574af6de5657ab8",
+    "name": "bundle_blueprint_2051_ar_accurate_burger_town_mtxbundle",
+    "var_a788fada": "#hash_7ad45f7fcc6b49f7",
+    "var_22f91505": "#hash_4f58db1cd7c2fb51",
+    "var_566825be": "#hash_5d57b7d47f2a3a7f",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_76687aed75defa51",
+    "var_db3e02ab": 2000,
+    "itemid": "30116293"
+}

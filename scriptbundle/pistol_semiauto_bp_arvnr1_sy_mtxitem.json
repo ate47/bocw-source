@@ -1,0 +1,22 @@
+{
+    "var_941096a8": [
+        {
+            "var_386af035": "#sony_psplus_season_02_mtxentitlement"
+        }
+    ],
+    "itemname": "#hash_39c47c15c8ac7d39",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_3a59742dce964e4a",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 2,
+    "var_46300498": 1,
+    "baseweapon": "#hash_33ed9170805d825c",
+    "name": "pistol_semiauto_bp_arvnr1_sy_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 3,
+    "itemid": "30567870",
+    "blueprint": "#hash_39c47c15c8ac7d39"
+}

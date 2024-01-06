@@ -23,7 +23,7 @@ function private function_2c4d3d40() {
     var_cce250bc = function_d634ed59();
     index = 0;
     offsetorigin = vectorscale((0, 0, -1), 64000);
-    foreach (var_28f8f6a9 in var_3a1737b4) {
+    foreach (var_1461de43, var_28f8f6a9 in var_3a1737b4) {
         if (isdefined(level.var_de3d5d56)) {
             level.var_de3d5d56[var_1461de43] = var_28f8f6a9;
         }
@@ -108,7 +108,7 @@ function function_9e9f43cd() {
         #/
         return;
     }
-    foreach (points in level.var_1d777960) {
+    foreach (targetname, points in level.var_1d777960) {
         for (index = 0; index < points.size; index++) {
             origin = points[index].origin;
             angles = points[index].angles;
@@ -289,7 +289,7 @@ function private _spawn_item(point, row, stashitem = 0) {
         }
         spawnpoint = ground_pos[#"position"] + vectorscale((0, 0, 1), 36);
         vehicle = undefined;
-        if (item_world_util::function_74e1e547(spawnpoint) && namespace_9a8780d8::function_83ad4d2b(spawnpoint)) {
+        if (item_world_util::function_74e1e547(spawnpoint) && territory::function_83ad4d2b(spawnpoint)) {
             params = spawnstruct();
             params.origin.params = point.origin;
             var_b9c86846 = getscriptbundle(item_name);
@@ -1377,7 +1377,7 @@ function setup_groups() {
     starttime = gettime();
     level.var_d0676b07 = getrealtime();
     level.var_4afb8f5a = level.itemreplacement;
-    foreach (value in level.var_4afb8f5a) {
+    foreach (key, value in level.var_4afb8f5a) {
     }
     level.var_fb9a8536 = level.var_ee110db8;
     foreach (value in level.var_fb9a8536) {
@@ -1420,7 +1420,7 @@ function setup_groups() {
         }
     #/
     /#
-        foreach (count in level.var_efeab371) {
+        foreach (type, count in level.var_efeab371) {
         }
     #/
     function_62fdaf9e();

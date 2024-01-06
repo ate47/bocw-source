@@ -313,13 +313,13 @@ function private function_f2a2832d(*player, msg) {
         thread function_4df43a5e();
         break;
     case #"unlock_all_takedownmus":
-        function_2cca7b47(0, #"hash_985a48664a3651b");
-        function_2cca7b47(0, #"hash_985a58664a366ce");
-        function_2cca7b47(0, #"hash_985a68664a36881");
-        function_2cca7b47(0, #"hash_985a78664a36a34");
-        function_2cca7b47(0, #"hash_985a88664a36be7");
-        function_2cca7b47(0, #"hash_985a98664a36d9a");
-        function_2cca7b47(0, #"hash_985aa8664a36f4d");
+        function_2cca7b47(0, #"musictrack_cp_takedown_1");
+        function_2cca7b47(0, #"musictrack_cp_takedown_2");
+        function_2cca7b47(0, #"musictrack_cp_takedown_3");
+        function_2cca7b47(0, #"musictrack_cp_takedown_4");
+        function_2cca7b47(0, #"musictrack_cp_takedown_5");
+        function_2cca7b47(0, #"musictrack_cp_takedown_6");
+        function_2cca7b47(0, #"musictrack_cp_takedown_7");
         break;
     case #"hash_defdefdefdefdef0":
         /#

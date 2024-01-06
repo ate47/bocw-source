@@ -1,0 +1,30 @@
+{
+    "var_bb7dcd09": [
+        {
+            "var_8354cfaa": "#hash_2ca8d64a53d5e569",
+            "type": "#none",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "var_8354cfaa": "#hash_4a1803cdf50f4064",
+            "type": "#none",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "var_8354cfaa": "#hash_2ca8d64a53d5e569",
+            "type": "#none",
+            "var_a4f2dd9e": "#none"
+        }
+    ],
+    "var_922067c4": "SCRIPTBUNDLE",
+    "var_abba0658": 1,
+    "var_feb93de0": 1,
+    "var_1af796": 1,
+    "var_a77ed948": "#none",
+    "type": "datasourcelist",
+    "name": "aar_game_history",
+    "var_501b626b": 1,
+    "var_912f5388": 1,
+    "var_8b233d0b": 1,
+    "var_748e79a5": "#hash_638e2c6a10670a9a"
+}

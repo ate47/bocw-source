@@ -1,0 +1,18 @@
+{
+    "var_4dbc4aee": "#hash_779a0dbba1017e95",
+    "var_922067c4": "SCRIPTBUNDLE",
+    "result": "#hash_42b14769a6933558",
+    "type": "craftblueprint",
+    "var_e414062": -12,
+    "var_99577dd3": "#hash_362369c9b2f5cfca",
+    "var_670f9944": "#hash_600229c217c6c6a5",
+    "var_2e0a273a": "#hash_90325b6cd1a0b18",
+    "name": "zblueprint_silver_aetherscope",
+    "displayname": "Aetherscope",
+    "var_391591d0": "#hash_756a871fa437cd39",
+    "var_46309255": "one_time_craft",
+    "var_abd9b2d0": "#hash_756a871fa437cd39",
+    "var_f4a82731": 3,
+    "var_d8967a0c": 1,
+    "var_318c150c": "SECTION_QUESTS"
+}

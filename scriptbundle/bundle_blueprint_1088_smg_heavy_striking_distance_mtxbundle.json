@@ -1,0 +1,26 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#smg_heavy_bp_striked_mtxitem",
+            "itemid": "21942906"
+        },
+        {
+            "var_4a4bc969": "#emblems_punchpow_006_mtxitem",
+            "itemid": "19271194"
+        },
+        {
+            "var_4a4bc969": "#execution_121_mtxitem",
+            "itemid": "21945944"
+        }
+    ],
+    "itemname": "#hash_9ecacf44f5720b3",
+    "var_375a1747": "#hash_58ecf31582cf6be1",
+    "name": "bundle_blueprint_1088_smg_heavy_striking_distance_mtxbundle",
+    "var_22f91505": "#hash_3831cd5803884c00",
+    "var_566825be": "#hash_ef37838e21c84ea",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_5720ea5e154aa88",
+    "var_db3e02ab": 2000,
+    "itemid": "33104514"
+}

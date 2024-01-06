@@ -1,0 +1,31 @@
+{
+    "worldfx": [
+        {
+            "worldfx": "#hash_43cc2e8a0840972f"
+        }
+    ],
+    "var_a6616b9c": 1,
+    "amount": 50,
+    "var_fa988b4b": 180,
+    "description": "#hash_e6a8062b87dd4ba",
+    "var_922067c4": "scriptbundle",
+    "model": "#p8_wz_ammo_pickup_9mm",
+    "var_16e34ef4": 64,
+    "var_e9898330": "pingitemammosmallcaliber",
+    "weapon": "#hash_21ad6487db9bb377",
+    "var_ac75b59f": -1,
+    "type": "itemspawnentry",
+    "hintstring": "#hash_7e3bd25ed0692407",
+    "spawnsound": "zmb_powerup_smallammo_spawn",
+    "var_4a1a4613": "armor_swap",
+    "name": "ammo_small_caliber_item_t9_sr",
+    "displayname": "#hash_7e3bd25ed0692407",
+    "var_9e569978": 1,
+    "icon": "#hash_1f1a7bba22bf7c6f",
+    "modelscale": 1.1,
+    "rarity": "Resource",
+    "handler": "#hash_9ed0c30684ca35a",
+    "var_3af59a99": 1,
+    "itemtype": "ammo",
+    "pickupsound": "fly_pickup_ammo_box"
+}

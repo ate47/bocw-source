@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#operator_bundle_4009_ksp_45_golden_propsector_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_1d154895e806e27f",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_5c8905344335c699",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 4,
+    "var_46300498": 1,
+    "baseweapon": "#hash_44214d17f349989d",
+    "name": "ar_fastfire_bp_nugget_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "17803580",
+    "blueprint": "#hash_1d154895e806e27f"
+}

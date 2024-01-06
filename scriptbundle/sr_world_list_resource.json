@@ -1,0 +1,24 @@
+{
+    "itemlist": [
+        {
+            "minweight": 60,
+            "var_a6762160": "#sr_world_list_ammo",
+            "maxweight": 65,
+            "available": -1
+        },
+        {
+            "minweight": 35,
+            "var_a6762160": "#armor_shard_item_sr",
+            "maxweight": 40,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_7fb0967b": 128,
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "sr_world_list_resource",
+    "var_fde72c94": 100
+}

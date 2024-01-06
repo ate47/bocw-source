@@ -1,0 +1,77 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_7819f72e2d7673d0"
+        },
+        {
+            "var_fe10649e": "#hash_6a4270a466459452"
+        },
+        {
+            "var_fe10649e": "#hash_6a426fa46645929f"
+        },
+        {
+            "var_fe10649e": "#hash_6a426ea4664590ec"
+        },
+        {
+            "var_fe10649e": "#hash_6a426da466458f39"
+        },
+        {
+            "var_fe10649e": "#hash_6a426ca466458d86"
+        }
+    ],
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#po_c_t9_ger_pl_maxis_phantom_mtxitem",
+            "itemid": "27174823"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_ger_pl_maxis_mtxitem",
+            "itemid": "27568255"
+        },
+        {
+            "var_4a4bc969": "#loot_ar_season6_bp_unicorn_mtxitem",
+            "itemid": "26060847"
+        },
+        {
+            "var_4a4bc969": "#sniper_accurate_bp_unicorn_mtxitem",
+            "itemid": "25260187"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_gas_mask_unicorn_mtxitem",
+            "itemid": "21402433"
+        },
+        {
+            "var_4a4bc969": "#execution_008_mtxitem",
+            "itemid": "27094522"
+        },
+        {
+            "var_4a4bc969": "#callingcards_zombicorn_animated_mtxitem",
+            "itemid": "31786232"
+        },
+        {
+            "var_4a4bc969": "#paintjob_sticker_zombicorn_mtxitem",
+            "itemid": "30619606"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s6_digital_undead_magic_mtxitem",
+            "itemid": "19195123"
+        },
+        {
+            "var_4a4bc969": "#emblem_zombicorn_animated_mtxitem",
+            "itemid": "20363559"
+        }
+    ],
+    "itemname": "#hash_3cc78266cab651f6",
+    "var_375a1747": "#hash_7819f72e2d7673d0",
+    "var_3040f0d1": "#hash_7819f72e2d7673d0",
+    "var_8ee7db29": 1,
+    "name": "operator_bundle_7033_maxis_zombie_mtxbundle",
+    "var_a788fada": "#hash_5e2d896bedb861ff",
+    "var_22f91505": "#hash_3bd87258fe952c4",
+    "var_566825be": "#hash_6d49420e5b0a6d07",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_2b136657c93fe8f4",
+    "var_db3e02ab": 500,
+    "itemid": "19255256"
+}

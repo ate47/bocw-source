@@ -1,0 +1,19 @@
+{
+    "description": "#hash_7e8b857de9861236",
+    "itemspawnentry": "#item_zmintel_tundra_omega_document_1",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#hash_54f6484895bebf79",
+    "model": "#hash_45554e1925166561",
+    "var_824079e7": "#onslaught",
+    "uimodel": "#hash_31396aac0fa6648c",
+    "type": "zmintel",
+    "var_ad4ad686": "#omega",
+    "var_217aec15": "#hash_79cc8008dfd35a51",
+    "name": "zmintel_tundra_omega_document_1",
+    "var_9be0526e": "#hash_daeb8129dc8e394",
+    "var_83e219de": "#exclusive",
+    "var_53be913a": 5,
+    "title": "#hash_4cda84b959e0a046",
+    "var_c664d393": "omega_document_04",
+    "mapname": "#mp_tundra"
+}

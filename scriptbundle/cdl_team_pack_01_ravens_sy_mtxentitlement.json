@@ -1,0 +1,58 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#po_c_t9_gen_pl_esports_male_royalravens_home_sy_mtxitem",
+            "itemid": "31245639"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_pl_esports_male_mtxitem",
+            "itemid": "31358670"
+        },
+        {
+            "var_4a4bc969": "#po_c_t9_gen_pl_esports_male_royalravens_away_sy_mtxitem",
+            "itemid": "26772235"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_pl_esports_male_warsaw_mtxitem",
+            "itemid": "24054907"
+        },
+        {
+            "var_4a4bc969": "#camo_t9_cdl_lon_sy_mtxitem",
+            "itemid": "32715246"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_esports_royalravens_sy_mtxitem",
+            "itemid": "20844741"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_sneaker_royalravens_sy_mtxitem",
+            "itemid": "22591999"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_cdl_teamsticker_lon_1_sy_base_mtxitem",
+            "itemid": "26641647"
+        },
+        {
+            "var_4a4bc969": "#callingcards_cdl_teamcallingcards_lon_1_sy_base_mtxitem",
+            "itemid": "25234533"
+        },
+        {
+            "var_4a4bc969": "#emblems_cdl_teamemblem_010_lon_1_sy_base_mtxitem",
+            "itemid": "19646893"
+        }
+    ],
+    "itemname": "#hash_32dea61e2a5c2a77",
+    "var_247d9ed7": "cdl_team_pack_01_ravens",
+    "var_208d76b5": "#hash_4c52e163d0df1e8c",
+    "var_70f66e54": "#hash_64de893c0ea16a5a",
+    "name": "cdl_team_pack_01_ravens_sy_mtxentitlement",
+    "var_a788fada": "#hash_78ae78bf2057b9da",
+    "var_22f91505": "#hash_3e619e55a2b5fd1a",
+    "var_566825be": "#hash_3d4a38df7c2249e6",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "var_4e46b1b3": "#orbis",
+    "itemid": "29438980",
+    "var_a592ce5": 1
+}

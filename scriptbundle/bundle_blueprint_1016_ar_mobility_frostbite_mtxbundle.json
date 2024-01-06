@@ -1,0 +1,38 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_mobility_bp_frostbite_mtxitem",
+            "itemid": "28799940"
+        },
+        {
+            "var_4a4bc969": "#pistol_burst_bp_avalanche_mtxitem",
+            "itemid": "29456911"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_icicle_mtxitem",
+            "itemid": "21029499"
+        },
+        {
+            "var_4a4bc969": "#emblems_frostbite_flipbook_mtxitem",
+            "itemid": "26426350"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_snowmobile_mtx_mpx_frostbite_mtxitem",
+            "itemid": "31131239"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_frostbite_mtxitem",
+            "itemid": "20676685"
+        }
+    ],
+    "itemname": "#hash_124d1d5d193d9215",
+    "var_375a1747": "#hash_17462c663a78f387",
+    "name": "bundle_blueprint_1016_ar_mobility_frostbite_mtxbundle",
+    "var_22f91505": "#hash_61db4bc5067923",
+    "var_566825be": "#hash_5014263e16bdca18",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_18998d0a442dd3c7",
+    "var_db3e02ab": 2000,
+    "itemid": "22489483"
+}

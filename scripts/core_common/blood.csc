@@ -247,7 +247,7 @@ function private function_27d3ba05(localclientnum) {
     if (function_92beaa28(localclientnum) && !function_d17ae3cc(localclientnum)) {
         return 0;
     }
-    if (namespace_1332002f::function_21b773d5(localclientnum) === 1) {
+    if (squad_spawn::function_21b773d5(localclientnum) === 1) {
         return 0;
     }
     if (level.var_4ecf5754 === #"silent_film") {
@@ -275,7 +275,7 @@ function private function_47d0632f(localclientnum, damage, death, dot, shockrifl
 // Checksum 0xa314ccb6, Offset: 0x1330
 // Size: 0xf4
 function private update_damage_effects(localclientnum, damage, death) {
-    if (namespace_56e70a4a::function_b8fe9b52(localclientnum)) {
+    if (codcaster::function_b8fe9b52(localclientnum)) {
         return;
     }
     /#

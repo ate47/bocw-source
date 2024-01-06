@@ -1,0 +1,174 @@
+{
+    "var_2be3941a": [
+        {
+            "unlockdescription": "#hash_5953e6b4f22422e8",
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_gas_mask",
+            "var_7a2c1108": "#hash_74ec3c32ca210261",
+            "var_270fa547": "#hash_1e1cccf58903bfa8"
+        },
+        {
+            "unlockdescription": "#hash_6fe6c951f4ce7494",
+            "var_5f79ee71": "#craftbackground",
+            "image": "#hash_ab287fd7d3944ad",
+            "var_e5119d1b": "#hash_ab287fd7d3944ad",
+            "var_b4ab831a": "#hash_13c6afb5d9f37ec4",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_270fa547": "#hash_a602af5d98b3813"
+        },
+        {
+            "unlockdescription": "#hash_61ad7d304d2a6ad1",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_57e6befd65e4fd96",
+            "var_e5119d1b": "#hash_57e6befd65e4fd96",
+            "var_b4ab831a": "#hash_3a66413cc6988329",
+            "var_7a2c1108": "#hash_74ec3c32ca210261",
+            "var_270fa547": "#hash_49f1cf535b9700b2"
+        },
+        {
+            "unlockdescription": "#hash_67ecd371ae866cef",
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_bleach",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_270fa547": "#hash_53e7ad570e40ffee"
+        },
+        {
+            "unlockdescription": "#hash_1dcd6cb2a73c40d9",
+            "var_5f79ee71": "#wristaccessory",
+            "var_b4ab831a": "#wristaccessory_t9_s2_analog_dark_aether",
+            "var_7a2c1108": "#hash_74ec3c32ca210261",
+            "var_270fa547": "#hash_5c79495cf16e0818"
+        },
+        {
+            "unlockdescription": "#hash_30145aa558e37d1c",
+            "var_5f79ee71": "#crafticon",
+            "image": "#hash_6ce2536ab32b5e86",
+            "var_e5119d1b": "#hash_6ce2536ab32b5e86",
+            "var_b4ab831a": "#hash_f12200a46d8218d",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_270fa547": "#hash_17a126142c8bde43"
+        },
+        {
+            "unlockdescription": "#hash_7a545a0fc8985509",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_57e6bffd65e4ff49",
+            "var_e5119d1b": "#hash_57e6bffd65e4ff49",
+            "var_b4ab831a": "#hash_3a66403cc6988176",
+            "var_7a2c1108": "#hash_74ec3c32ca210261",
+            "var_270fa547": "#hash_346e6565d0a79066"
+        },
+        {
+            "unlockdescription": "#hash_1c016d52460590b0",
+            "var_5f79ee71": "#crafticon",
+            "image": "#hash_6ce2566ab32b639f",
+            "var_e5119d1b": "#hash_6ce2566ab32b639f",
+            "var_b4ab831a": "#hash_f12190a46d815a8",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_270fa547": "#hash_37fdb218db6a4a17"
+        },
+        {
+            "unlockdescription": "#hash_4b20ca13e0f5d4e5",
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_hellscream",
+            "var_7a2c1108": "#hash_74ec3c32ca210261",
+            "var_270fa547": "#hash_165462f560a0538c"
+        },
+        {
+            "unlockdescription": "#hash_40ad7ff2b27cce16",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "var_b4ab831a": "#hash_3a663f3cc6987fc3",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_270fa547": "#hash_6754ded69da2bddf"
+        },
+        {
+            "unlockdescription": "#hash_6ed07639f5204fe6",
+            "var_5f79ee71": "#craftbackground",
+            "image": "#hash_ab281fd7d393a7b",
+            "var_e5119d1b": "#hash_ab281fd7d393a7b",
+            "var_b4ab831a": "#hash_13c6adb5d9f37b5e",
+            "var_7a2c1108": "#hash_74ec3c32ca210261",
+            "var_270fa547": "#hash_1a5bd2708defa02b"
+        },
+        {
+            "unlockdescription": "#hash_7162210d7411bb46",
+            "var_5f79ee71": "#craftbackground",
+            "image": "#hash_ab280fd7d3938c8",
+            "var_e5119d1b": "#hash_ab280fd7d3938c8",
+            "var_b4ab831a": "#hash_13c6aeb5d9f37d11",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_270fa547": "#hash_6c69633d9ed23679"
+        },
+        {
+            "unlockdescription": "#hash_40a16060a1c27d9",
+            "var_5f79ee71": "#craftbackground",
+            "image": "#hash_ab286fd7d3942fa",
+            "var_e5119d1b": "#hash_ab286fd7d3942fa",
+            "var_b4ab831a": "#hash_13c6b0b5d9f38077",
+            "var_7a2c1108": "#hash_74ec3c32ca210261",
+            "var_270fa547": "#hash_21e2f8fd18871114"
+        },
+        {
+            "unlockdescription": "#hash_33f54cde71ca6327",
+            "var_5f79ee71": "#craftbackground",
+            "image": "#hash_ab284fd7d393f94",
+            "var_e5119d1b": "#hash_ab284fd7d393f94",
+            "var_b4ab831a": "#hash_13c6b2b5d9f383dd",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_270fa547": "#hash_32db08b37173429a"
+        },
+        {
+            "unlockdescription": "#hash_658dd53ded3d6276",
+            "var_5f79ee71": "#crafticon",
+            "image": "#hash_6ce2556ab32b61ec",
+            "var_e5119d1b": "#hash_6ce2556ab32b61ec",
+            "var_b4ab831a": "#hash_f121a0a46d8175b",
+            "var_7a2c1108": "#hash_74ec3c32ca210261",
+            "var_270fa547": "#hash_4a2a695d0f0137d9"
+        },
+        {
+            "unlockdescription": "#hash_156f38321fd9fa4f",
+            "var_5f79ee71": "#crafticon",
+            "image": "#hash_6ce2586ab32b6705",
+            "var_e5119d1b": "#hash_6ce2586ab32b6705",
+            "var_b4ab831a": "#hash_f121b0a46d8190e",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_270fa547": "#hash_4c9be04ba5de90a0"
+        },
+        {
+            "unlockdescription": "#hash_38b44661c6973619",
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_stitched_dollhead",
+            "var_7a2c1108": "#hash_74ec3c32ca210261",
+            "var_270fa547": "#hash_629e66bd82d8cd38"
+        },
+        {
+            "unlockdescription": "#hash_31e5a4cc83483dae",
+            "var_5f79ee71": "#craftbackground",
+            "image": "#hash_ab283fd7d393de1",
+            "var_e5119d1b": "#hash_ab283fd7d393de1",
+            "var_b4ab831a": "#hash_13c6abb5d9f377f8",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_270fa547": "#hash_1975d125a4eb1421"
+        },
+        {
+            "unlockdescription": "#hash_51d8132a80e73bf8",
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "var_b4ab831a": "#hash_5cdeb39f2e3d05b4",
+            "var_7a2c1108": "#hash_74ec3c32ca210261",
+            "var_270fa547": "#hash_5d23b07f5d93408d"
+        },
+        {
+            "unlockdescription": "#hash_53d4d6752fbe0b9a",
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "var_b4ab831a": "#hash_7867f653e7bff0e8",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_270fa547": "#hash_2b782229c30dba93"
+        }
+    ],
+    "var_922067c4": "SCRIPTBUNDLE",
+    "type": "challengerewards",
+    "var_faec2a7f": 4,
+    "name": "challengerewards_s2_outbreak_event",
+    "sessionmode": "0",
+    "var_91a1cb16": 4
+}

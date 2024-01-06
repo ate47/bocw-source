@@ -133,8 +133,8 @@ function private function_3e9077b(localclientnum) {
     self function_c97460c6();
     var_2b836fea = undefined;
     while (1) {
-        var_a0364f90 = var_5bc097ee && !namespace_1332002f::function_21b773d5(localclientnum);
-        if (namespace_56e70a4a::function_c955fbd1(localclientnum)) {
+        var_a0364f90 = var_5bc097ee && !squad_spawn::function_21b773d5(localclientnum);
+        if (codcaster::function_c955fbd1(localclientnum)) {
             var_a0364f90 = 0;
         }
         var_7cefa3dc = undefined;
@@ -256,7 +256,7 @@ function private function_3e9077b(localclientnum) {
                         }
                     }
                 }
-                if (var_a0364f90 && !player hasperk(localclientnum, #"hash_617e57dbf2dc4cce") && !self isremotecontrolling(localclientnum)) {
+                if (var_a0364f90 && !player hasperk(localclientnum, #"specialty_immuneparanoia") && !self isremotecontrolling(localclientnum)) {
                     if (!is_true(player.var_1627fdd)) {
                         player.var_1627fdd.player = 1;
                         player playsound(localclientnum, #"hash_74faa2aaae4a8737");

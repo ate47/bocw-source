@@ -1,0 +1,202 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_1a6cb742a01b9e2c",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "model": "#hash_4e0c01b61171219",
+            "type": "prop",
+            "var_e2360d85": 1,
+            "var_db255011": 1,
+            "deletewhenfinished": 1,
+            "name": "prop 1"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_1a6cba42a01ba345",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "model": "#hash_4e0c01b61171219",
+            "type": "prop",
+            "var_e2360d85": 1,
+            "var_db255011": 1,
+            "deletewhenfinished": 1,
+            "name": "prop 2"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_1a6cb942a01ba192",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "model": "#hash_4e0c01b61171219",
+            "type": "prop",
+            "var_e2360d85": 1,
+            "var_db255011": 1,
+            "deletewhenfinished": 1,
+            "name": "prop 3"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_1a6cb442a01b9913",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "model": "#hash_4e0c01b61171219",
+            "type": "prop",
+            "var_e2360d85": 1,
+            "var_db255011": 1,
+            "deletewhenfinished": 1,
+            "name": "prop 4"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_1a6cb342a01b9760",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "model": "#hash_4e0c01b61171219",
+            "type": "prop",
+            "var_e2360d85": 1,
+            "var_db255011": 1,
+            "deletewhenfinished": 1,
+            "name": "prop 5"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_1a6cb642a01b9c79",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "model": "#hash_4e0c01b61171219",
+            "type": "prop",
+            "var_e2360d85": 1,
+            "var_db255011": 1,
+            "deletewhenfinished": 1,
+            "name": "prop 6"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_1a6cb542a01b9ac6",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "model": "#hash_4e0c01b61171219",
+            "type": "prop",
+            "var_e2360d85": 1,
+            "var_db255011": 1,
+            "deletewhenfinished": 1,
+            "name": "prop 7"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_1a6cc042a01bad77",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "model": "#hash_4e0c01b61171219",
+            "type": "prop",
+            "var_e2360d85": 1,
+            "var_db255011": 1,
+            "deletewhenfinished": 1,
+            "name": "prop 8"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_7a3f19402dd9ba27",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "model": "#hash_5e5bd99ce48a1efe",
+            "type": "prop",
+            "var_e2360d85": 1,
+            "var_db255011": 1,
+            "deletewhenfinished": 1,
+            "name": "prop 9"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_5c0ad63a0b7a5bc0",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "model": "#hash_7394911732c68226",
+            "type": "prop",
+            "var_e2360d85": 1,
+            "var_db255011": 1,
+            "deletewhenfinished": 1,
+            "name": "prop 10"
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "aib_t9_vign_cust_zm_xmas_bundle_01",
+    "dontsync": 1,
+    "aligntarget": "tag_align_yard_tank",
+    "team": "any"
+}

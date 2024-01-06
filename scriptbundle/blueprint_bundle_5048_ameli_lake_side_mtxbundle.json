@@ -1,0 +1,39 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#lmg_fastfire_bp_lochness_mtxitem",
+            "itemid": "28374903"
+        },
+        {
+            "var_4a4bc969": "#ar_mobility_bp_lochness_mtxitem",
+            "itemid": "23479612"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_sasquatch_mtxitem",
+            "itemid": "18730507"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_boat_tactical_raft_assembly_mpx_murky_mtxitem",
+            "itemid": "22412071"
+        },
+        {
+            "var_4a4bc969": "#emblems_batutut_s5_mtxitem",
+            "itemid": "31181996"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_fly_fishing_s5_mtxitem",
+            "itemid": "24357489"
+        }
+    ],
+    "itemname": "#hash_e7c9fb927ff176e",
+    "var_375a1747": "#hash_6996257ffa6700d4",
+    "name": "blueprint_bundle_5048_ameli_lake_side_mtxbundle",
+    "var_a788fada": "#hash_267fbabfcd8b750f",
+    "var_22f91505": "#hash_560a73cbe64a57b8",
+    "var_566825be": "#hash_1c6b8abe3eaa20d7",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_6348f604ee65f80",
+    "var_db3e02ab": 2000,
+    "itemid": "30314353"
+}

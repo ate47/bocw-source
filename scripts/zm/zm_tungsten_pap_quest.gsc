@@ -834,7 +834,7 @@ function function_4710b248(b_skipped) {
 // Checksum 0xb55f7f60, Offset: 0x4540
 // Size: 0x7c
 function function_54dd8e5d(a_ents) {
-    level.ai_abomination = a_ents[#"hash_42966f5c58c7a1e2"];
+    level.ai_abomination = a_ents[#"abomination"];
     level.ai_abomination.ignore_round_spawn_failsafe = 1;
     level.ai_abomination.no_powerups = 1;
     level.ai_abomination flag::set(#"hash_204aaf6e250ebdbc");

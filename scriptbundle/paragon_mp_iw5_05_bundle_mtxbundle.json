@@ -1,0 +1,27 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#paragon_mp_iw5_05_mtxitem",
+            "itemid": "29784671"
+        },
+        {
+            "var_4a4bc969": "#prestige_iw5_5_large_mtxitem",
+            "itemid": "27685125"
+        },
+        {
+            "var_4a4bc969": "#paintjob_prestige_iw5_5_large_mtxitem",
+            "itemid": "25234237"
+        }
+    ],
+    "itemname": "#hash_1022a5d1e644a9b8",
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "var_637c8edf": 1,
+    "name": "paragon_mp_iw5_05_bundle_mtxbundle",
+    "var_22f91505": "#hash_314c839c7470fc00",
+    "var_566825be": "#hash_7d5c1b47ea94922f",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_7d7ec5899f818d22",
+    "var_db3e02ab": 2000,
+    "itemid": "25147669"
+}

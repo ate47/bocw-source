@@ -140,7 +140,7 @@ function function_21acba11() {
 // Size: 0x170
 function function_29584e41() {
     level flag::wait_till(#"item_world_reset");
-    if (util::get_game_type() !== #"hash_26096195d0143dd") {
+    if (util::get_game_type() !== #"spy") {
         var_94c44cac = getdynentarray("spy_special_weapon_stash");
         var_de285f77 = getdynentarray("spy_ammo_stash");
         var_ffd6a2d3 = getdynentarray("spy_equipment_stash");

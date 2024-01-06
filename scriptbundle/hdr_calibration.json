@@ -1,0 +1,41 @@
+{
+    "option_dependencies": [
+        {
+            "var_1643d946": "1",
+            "var_6825bdb": "#pc_hdr",
+            "operator": "=="
+        }
+    ],
+    "options": [
+        {
+            "label": "#hash_6a489abface20fd6",
+            "value": "0"
+        },
+        {
+            "label": "#hash_57f3f21157ef659b",
+            "value": "1"
+        }
+    ],
+    "description": "#hash_19ae3c225fef2d3e",
+    "var_ebe98576": 1,
+    "var_60fcfffa": "#menu/off",
+    "var_9bc3be7": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_799f4f7": 1,
+    "var_77c0bdd6": 1,
+    "var_e0274350": 1,
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "name": "hdr_calibration",
+    "displayname": "#hash_4937bd6cbacca746",
+    "var_2d7a664e": 1,
+    "var_500458ac": 10,
+    "var_b56e8776": "#hash_32bf2d8c3a45454a",
+    "var_66faec87": 10,
+    "statname": "hdr_calibration_openbutton",
+    "var_8b80386": 1,
+    "var_6f00a61a": 1.1,
+    "minvalue": 1,
+    "var_b7401319": "#menu/on"
+}

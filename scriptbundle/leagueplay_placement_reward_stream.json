@@ -1,0 +1,62 @@
+{
+    "var_bb7dcd09": [
+        {
+            "description": "#hash_493f55c5bcd04d88",
+            "type": "#hash_798212a6fd4ab166",
+            "image": "#hash_5d139efb4bd189ff",
+            "displayname": "#hash_6e6bb3b84944841c",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "description": "#hash_6e56c9b849324d74",
+            "type": "#hash_798212a6fd4ab166",
+            "image": "#hash_5d139dfb4bd1884c",
+            "displayname": "#hash_6e6bb3b84944841c",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "description": "#hash_5ca2f8ae33b766d5",
+            "type": "#hash_798212a6fd4ab166",
+            "image": "#hash_585c4dc403f8d48a",
+            "displayname": "#hash_6e6bb3b84944841c",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "description": "#hash_257048d9800418d4",
+            "type": "#hash_798212a6fd4ab166",
+            "image": "#hash_7a54e8332414acc6",
+            "displayname": "#hash_29af90da2b0692ac",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "description": "#hash_257048d9800418d4",
+            "type": "#hash_798212a6fd4ab166",
+            "image": "#hash_14e1c233fa650916",
+            "displayname": "#hash_29b992da2b0eea97",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "description": "#hash_257048d9800418d4",
+            "type": "#hash_798212a6fd4ab166",
+            "image": "#hash_7aaddcb47e3a5b2b",
+            "displayname": "#hash_29b68cda2b0caa8e",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "description": "#hash_257048d9800418d4",
+            "type": "#hash_798212a6fd4ab166",
+            "image": "#hash_36ebfcd9fe6ecf94",
+            "displayname": "#hash_29ac8ada2b0452a3",
+            "var_a4f2dd9e": "#none"
+        }
+    ],
+    "var_88c0037d": 1,
+    "var_72ef398b": 1,
+    "var_922067c4": "SCRIPTBUNDLE",
+    "var_abba0658": 1,
+    "var_a77ed948": "#none",
+    "type": "datasourcelist",
+    "name": "leagueplay_placement_reward_stream",
+    "var_6ff29b97": 1,
+    "var_748e79a5": "#hash_4131675d96a3aac8"
+}

@@ -1,0 +1,26 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_75002fca408479a5",
+                            "var_71bac06": "anim"
+                        }
+                    ]
+                }
+            ],
+            "model": "#spawner_bo5_abom",
+            "type": "actor",
+            "name": "abomination"
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "aib_t9_zm_tungsten_abom_summon",
+    "dontsync": 1,
+    "team": "any"
+}

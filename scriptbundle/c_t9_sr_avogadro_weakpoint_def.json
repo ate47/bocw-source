@@ -1,0 +1,44 @@
+{
+    "weakpoints": [
+        {
+            "var_60790e23": [
+                {
+                    "hitloc": "torso_upper"
+                },
+                {
+                    "hitloc": "torso_mid"
+                },
+                {
+                    "hitloc": "torso_lower"
+                }
+            ],
+            "var_8b732142": 2,
+            "var_641ce20e": 1,
+            "type": "#armor",
+            "var_b98c4585": 1,
+            "var_f371ebb0": "body_armor",
+            "activebydefault": 1,
+            "health": 0.1
+        },
+        {
+            "var_60790e23": [
+                {
+                    "hitloc": "torso_upper"
+                },
+                {
+                    "hitloc": "torso_mid"
+                }
+            ],
+            "var_3765e777": 1,
+            "var_8223b0cf": 1,
+            "type": "#weakpoint",
+            "var_51e8b151": "tag_weakpoint",
+            "var_b7fbe51b": 5,
+            "health": 1
+        }
+    ],
+    "var_922067c4": "scriptbundle",
+    "model": "#hash_4766dd3f5230b861",
+    "type": "characterweakpointsettings",
+    "name": "c_t9_sr_avogadro_weakpoint_def"
+}

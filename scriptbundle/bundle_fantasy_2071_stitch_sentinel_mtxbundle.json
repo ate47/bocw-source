@@ -1,0 +1,56 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_rus_pl_stitch_cultist_ghoul_mtxitem",
+            "itemid": "28755999"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_rus_stitch_mtxitem",
+            "itemid": "30156871"
+        },
+        {
+            "var_4a4bc969": "#loot_smg_fastfire_bp_overrun_mtxitem",
+            "itemid": "26998213"
+        },
+        {
+            "var_4a4bc969": "#sniper_quickscope_bp_cotton_mtxitem",
+            "itemid": "27190294"
+        },
+        {
+            "var_4a4bc969": "#execution_013_mtxitem",
+            "itemid": "27073618"
+        },
+        {
+            "var_4a4bc969": "#reticle_71_mtxitem",
+            "itemid": "31496137"
+        },
+        {
+            "var_4a4bc969": "#callingcards_sentinel_animated_mtxitem",
+            "itemid": "25300618"
+        },
+        {
+            "var_4a4bc969": "#emblems_covertops2_animated_mtxitem",
+            "itemid": "29830141"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_oni_mask_mtxitem",
+            "itemid": "22616868"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_containmentzone_mtxitem",
+            "itemid": "21288816"
+        }
+    ],
+    "itemname": "#hash_2bc0bc2b09e602fa",
+    "var_375a1747": "#hash_10ac6b446f287c68",
+    "var_579fd6c3": 25,
+    "name": "bundle_fantasy_2071_stitch_sentinel_mtxbundle",
+    "var_a788fada": "#hash_2abafd780ef0ddcf",
+    "var_22f91505": "#hash_4fb9076801cc0823",
+    "var_566825be": "#hash_7ee71b807be2c057",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_5a14f641a98f26bf",
+    "var_db3e02ab": 2000,
+    "itemid": "32520342"
+}

@@ -1,0 +1,58 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#po_c_t9_gen_pl_esports_male_rokkr_home_sy_mtxitem",
+            "itemid": "28651303"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_pl_esports_male_mtxitem",
+            "itemid": "31358670"
+        },
+        {
+            "var_4a4bc969": "#po_c_t9_gen_pl_esports_male_rokkr_away_sy_mtxitem",
+            "itemid": "31490324"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_pl_esports_male_warsaw_mtxitem",
+            "itemid": "24054907"
+        },
+        {
+            "var_4a4bc969": "#camo_t9_cdl_minn_sy_mtxitem",
+            "itemid": "28853506"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_esports_rokkr_sy_mtxitem",
+            "itemid": "33239117"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_sneaker_rokkr_sy_mtxitem",
+            "itemid": "25638331"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_cdl_teamsticker_minn_1_sy_base_mtxitem",
+            "itemid": "25842138"
+        },
+        {
+            "var_4a4bc969": "#callingcards_cdl_teamcallingcards_minn_1_sy_base_mtxitem",
+            "itemid": "28712971"
+        },
+        {
+            "var_4a4bc969": "#emblems_cdl_teamemblem_010_minn_1_sy_base_mtxitem",
+            "itemid": "32104620"
+        }
+    ],
+    "itemname": "#hash_4fa7cde6223eb37",
+    "var_247d9ed7": "cdl_team_pack_01_rokkr",
+    "var_208d76b5": "#hash_541d87f1df321954",
+    "var_70f66e54": "#hash_64de7b3c0ea15290",
+    "name": "cdl_team_pack_01_rokkr_sy_mtxentitlement",
+    "var_a788fada": "#hash_1025ce004ea456c2",
+    "var_22f91505": "#hash_2c13e0c57058991a",
+    "var_566825be": "#hash_38556cb3815a04ce",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "var_4e46b1b3": "#orbis",
+    "itemid": "22975174",
+    "var_a592ce5": 1
+}

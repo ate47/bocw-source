@@ -5,9 +5,9 @@
 #using scripts\core_common\clientfield_shared.csc;
 #using scripts\core_common\callbacks_shared.csc;
 
-#namespace namespace_1332002f;
+#namespace squad_spawn;
 
-// Namespace namespace_1332002f/namespace_cd4d78f1
+// Namespace squad_spawn/namespace_cd4d78f1
 // Params 0, eflags: 0x5
 // Checksum 0x5fd12434, Offset: 0x1d0
 // Size: 0x3c
@@ -15,7 +15,7 @@ function private autoexec __init__system__() {
     system::register(#"hash_4ceb0867dc2d780f", &init, undefined, undefined, undefined);
 }
 
-// Namespace namespace_1332002f/namespace_cd4d78f1
+// Namespace squad_spawn/namespace_cd4d78f1
 // Params 0, eflags: 0x2 linked
 // Checksum 0x522a695f, Offset: 0x218
 // Size: 0xb4
@@ -28,7 +28,7 @@ function init() {
     level callback::on_end_game(&on_game_ended);
 }
 
-// Namespace namespace_1332002f/namespace_cd4d78f1
+// Namespace squad_spawn/namespace_cd4d78f1
 // Params 0, eflags: 0x2 linked
 // Checksum 0xbffda7c0, Offset: 0x2d8
 // Size: 0x204
@@ -41,7 +41,7 @@ function setupclientfields() {
     clientfield::register_clientuimodel("hudItems.squadSpawnSquadWipe", #"hash_6f4b11a0bee9b73d", #"hash_241b5d6ff260de2d", 1, 1, "int", &function_a58f32b0, 0, 0);
 }
 
-// Namespace namespace_1332002f/namespace_cd4d78f1
+// Namespace squad_spawn/namespace_cd4d78f1
 // Params 1, eflags: 0x2 linked
 // Checksum 0x2e19f0d5, Offset: 0x4e8
 // Size: 0x70
@@ -56,7 +56,7 @@ function function_21b773d5(localclientnum) {
     return player clientfield::get_player_uimodel("hudItems.squadSpawnActive") == 1;
 }
 
-// Namespace namespace_1332002f/namespace_cd4d78f1
+// Namespace squad_spawn/namespace_cd4d78f1
 // Params 7, eflags: 0x2 linked
 // Checksum 0xd8f0b29, Offset: 0x560
 // Size: 0x1c8
@@ -82,7 +82,7 @@ function function_cc03b772(localclientnum, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_1332002f/namespace_cd4d78f1
+// Namespace squad_spawn/namespace_cd4d78f1
 // Params 1, eflags: 0x2 linked
 // Checksum 0x3c538315, Offset: 0x730
 // Size: 0x5c
@@ -95,7 +95,7 @@ function function_cbcbd56d(*localclientnum) {
     }
 }
 
-// Namespace namespace_1332002f/namespace_cd4d78f1
+// Namespace squad_spawn/namespace_cd4d78f1
 // Params 1, eflags: 0x2 linked
 // Checksum 0x7ac2f951, Offset: 0x798
 // Size: 0x5c
@@ -108,7 +108,7 @@ function function_48811bf4(*localclientnum) {
     }
 }
 
-// Namespace namespace_1332002f/namespace_cd4d78f1
+// Namespace squad_spawn/namespace_cd4d78f1
 // Params 7, eflags: 0x2 linked
 // Checksum 0x78b25ca5, Offset: 0x800
 // Size: 0x64
@@ -118,7 +118,7 @@ function function_a58f32b0(localclientnum, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_1332002f/namespace_cd4d78f1
+// Namespace squad_spawn/namespace_cd4d78f1
 // Params 2, eflags: 0x2 linked
 // Checksum 0xa4c97583, Offset: 0x870
 // Size: 0xee
@@ -145,7 +145,7 @@ function function_429c452(localclientnum, should_play) {
     return 1;
 }
 
-// Namespace namespace_1332002f/namespace_cd4d78f1
+// Namespace squad_spawn/namespace_cd4d78f1
 // Params 1, eflags: 0x6 linked
 // Checksum 0x6192ea2d, Offset: 0x968
 // Size: 0x8c
@@ -156,7 +156,7 @@ function private on_game_ended(localclientnum) {
     function_c97b609d(localclientnum);
 }
 
-// Namespace namespace_1332002f/namespace_cd4d78f1
+// Namespace squad_spawn/namespace_cd4d78f1
 // Params 2, eflags: 0x6 linked
 // Checksum 0xa953a105, Offset: 0xa00
 // Size: 0xb2
@@ -175,7 +175,7 @@ function private function_ac750979(localclientnum, array) {
     }
 }
 
-// Namespace namespace_1332002f/namespace_cd4d78f1
+// Namespace squad_spawn/namespace_cd4d78f1
 // Params 2, eflags: 0x6 linked
 // Checksum 0x6b2b998c, Offset: 0xac0
 // Size: 0x94
@@ -191,7 +191,7 @@ function private function_bebd8395(localclientnum, array) {
     }
 }
 
-// Namespace namespace_1332002f/namespace_cd4d78f1
+// Namespace squad_spawn/namespace_cd4d78f1
 // Params 1, eflags: 0x6 linked
 // Checksum 0x8e68cf1e, Offset: 0xb60
 // Size: 0x2fe
@@ -235,7 +235,7 @@ function private function_58710bd2(localclientnum) {
     }
 }
 
-// Namespace namespace_1332002f/namespace_cd4d78f1
+// Namespace squad_spawn/namespace_cd4d78f1
 // Params 1, eflags: 0x6 linked
 // Checksum 0x22718041, Offset: 0xe68
 // Size: 0x24c

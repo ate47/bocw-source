@@ -729,7 +729,7 @@ function on_vehicle_damage(params) {
         return;
     }
     if (isdefined(params.eattacker) && isactor(params.eattacker)) {
-        if (params.eattacker.archetype === #"hash_9f6bc1960ff4912" && params.smeansofdeath === "MOD_EXPLOSIVE") {
+        if (params.eattacker.archetype === #"raz" && params.smeansofdeath === "MOD_EXPLOSIVE") {
             vehicle dodamage(500, params.eattacker.origin, params.eattacker);
             vehicle playrumbleonentity("sr_prototype_vehicle_run_over");
             occupants = vehicle getvehoccupants();

@@ -1,0 +1,58 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#po_c_t9_gen_pl_esports_male_thieves_home_pc_mtxitem",
+            "itemid": "22330356"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_pl_esports_male_mtxitem",
+            "itemid": "31358670"
+        },
+        {
+            "var_4a4bc969": "#po_c_t9_gen_pl_esports_male_thieves_away_pc_mtxitem",
+            "itemid": "32938451"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_pl_esports_male_warsaw_mtxitem",
+            "itemid": "24054907"
+        },
+        {
+            "var_4a4bc969": "#camo_t9_cdl_la_optic_pc_mtxitem",
+            "itemid": "23707680"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_esports_thieves_pc_mtxitem",
+            "itemid": "19330386"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_sneaker_thieves_pc_mtxitem",
+            "itemid": "26434900"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_cdl_la_sticker_1_pc_base_mtxitem",
+            "itemid": "30208677"
+        },
+        {
+            "var_4a4bc969": "#callingcards_cdl_la_callingcard_1_pc_base_mtxitem",
+            "itemid": "28251480"
+        },
+        {
+            "var_4a4bc969": "#emblems_cdl_la_emblem_1_pc_base_mtxitem",
+            "itemid": "32224648"
+        }
+    ],
+    "itemname": "#hash_53fa95a8c1eabf7d",
+    "var_247d9ed7": "cdl_team_pack_01_thieves",
+    "var_208d76b5": "#hash_1f8d2d7a482b4769",
+    "var_70f66e54": "#hash_7a2dc20b0965c2f9",
+    "name": "cdl_team_pack_01_thieves_pc_mtxentitlement",
+    "var_a788fada": "#hash_4e0d991d4de319b7",
+    "var_22f91505": "#hash_7e891f1589a53c33",
+    "var_566825be": "#hash_4574d398055f613f",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "var_4e46b1b3": "#pc",
+    "itemid": "29651893",
+    "var_a592ce5": 1
+}

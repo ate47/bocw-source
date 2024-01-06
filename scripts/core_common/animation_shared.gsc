@@ -404,7 +404,7 @@ function reach(animation, v_origin_or_ent, v_angles_or_tag, b_disable_arrivals =
 // Size: 0x51e
 function _reach(s_tracker, animation, v_origin_or_ent, v_angles_or_tag, b_disable_arrivals = 0, b_shoot = 1, var_5207b7a8 = undefined) {
     self endon(#"death");
-    if (!isdefined(self.var_7b4b2b57)) {
+    if (!isdefined(self.smart_object)) {
         self notify(#"stop_going_to_node");
     }
     self notify(#"new_anim_reach");
@@ -438,7 +438,7 @@ function _reach(s_tracker, animation, v_origin_or_ent, v_angles_or_tag, b_disabl
         self thread function_ba45bb6c();
         self childthread function_d7627522(animation, v_goal);
         s_waitresult = undefined;
-        s_waitresult = self waittill(#"goal", #"new_anim_reach", #"new_scripted_anim", #"stop_scripted_anim", #"hash_6bf9fa748656cfc7");
+        s_waitresult = self waittill(#"goal", #"new_anim_reach", #"new_scripted_anim", #"stop_scripted_anim", #"reach_timed_out");
         /#
             if (s_waitresult._notify === "<unknown string>") {
                 iprintlnbold("<unknown string>" + function_9e72a96(animation) + "<unknown string>" + v_goal);
@@ -479,7 +479,7 @@ function function_d7627522(animation, v_goal, radius = 100) {
     }
     self function_2ce879d2(var_f11838cd);
     s_waitresult = undefined;
-    s_waitresult = self waittill(#"goal", #"new_anim_reach", #"new_scripted_anim", #"stop_scripted_anim", #"hash_6bf9fa748656cfc7");
+    s_waitresult = self waittill(#"goal", #"new_anim_reach", #"new_scripted_anim", #"stop_scripted_anim", #"reach_timed_out");
     self function_9ae1c50();
 }
 
@@ -488,7 +488,7 @@ function function_d7627522(animation, v_goal, radius = 100) {
 // Checksum 0xe049a6c, Offset: 0x2508
 // Size: 0x134
 function function_ba45bb6c() {
-    self endon(#"death", #"goal", #"new_anim_reach", #"new_scripted_anim", #"stop_scripted_anim", #"reach_done", #"hash_6bf9fa748656cfc7");
+    self endon(#"death", #"goal", #"new_anim_reach", #"new_scripted_anim", #"stop_scripted_anim", #"reach_done", #"reach_timed_out");
     var_89ae1c69 = self.origin;
     var_dc2b2d0b = 0;
     while (1) {
@@ -501,7 +501,7 @@ function function_ba45bb6c() {
             var_89ae1c69 = self.origin;
         }
         if (var_dc2b2d0b > 10) {
-            self notify(#"hash_6bf9fa748656cfc7");
+            self notify(#"reach_timed_out");
             return;
         }
     }
@@ -554,13 +554,13 @@ function _do_death_anim(animation, v_origin_or_ent, v_angles_or_tag, n_rate, n_b
 // Params 1, eflags: 0x2 linked
 // Checksum 0xe2a09226, Offset: 0x2908
 // Size: 0xb2
-function set_player_clamps(var_14c1f460) {
+function set_player_clamps(blend_time) {
     if (is_true(self.player_anim_look_enabled)) {
-        if (!isdefined(var_14c1f460)) {
-            var_14c1f460 = 0;
+        if (!isdefined(blend_time)) {
+            blend_time = 0;
         }
-        if (var_14c1f460 > 0 && !is_true(self.var_cdb243ec)) {
-            wait(var_14c1f460);
+        if (blend_time > 0 && !is_true(self.var_cdb243ec)) {
+            wait(blend_time);
         }
         self setviewclamp(self.player_anim_clamp_right, self.player_anim_clamp_left, self.player_anim_clamp_top, self.player_anim_clamp_bottom, undefined, self.var_fcbf7c5a);
         self.var_cdb243ec = 1;
@@ -637,8 +637,8 @@ function setup_notetracks() {
     add_notetrack_func("flag::clear", &flag::clear);
     add_notetrack_func("util::break_glass", &util::break_glass);
     add_notetrack_func("PhysicsLaunch", &function_eb0aa7cf);
-    add_notetrack_func("cinematicMotion::SpeedModifierServer", &namespace_37638b11::function_92dd9a20);
-    add_notetrack_func("cinematicMotion::OverrideServer", &namespace_37638b11::function_bbf6e778);
+    add_notetrack_func("cinematicMotion::SpeedModifierServer", &cinematicmotion::function_92dd9a20);
+    add_notetrack_func("cinematicMotion::OverrideServer", &cinematicmotion::function_bbf6e778);
     add_notetrack_func("PlayGestureViewmodel", &playgestureviewmodel);
     clientfield::register("scriptmover", "cracks_on", 1, getminbitcountfornum(4), "int");
     clientfield::register("scriptmover", "cracks_off", 1, getminbitcountfornum(4), "int");

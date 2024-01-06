@@ -1,0 +1,16 @@
+{
+    "var_bc83573f": [
+        {
+            "var_bc83573f": "#multiplayer"
+        }
+    ],
+    "description": "#hash_7f679b864b845467",
+    "var_86b354f": 30,
+    "var_922067c4": "SCRIPTBUNDLE",
+    "var_525bbb8": "Silver",
+    "type": "trophy",
+    "var_4a95afca": "#hash_7ea6a33ae89237b9",
+    "image": "#hash_58ce8368cbb76216",
+    "name": "mp_achievement_match_wins",
+    "title": "#hash_dcc60f6b5af415d"
+}

@@ -1,0 +1,29 @@
+{
+    "itemlist": [
+        {
+            "minweight": 100,
+            "var_a6762160": "#item_zm_ltm_holiday_gift_01",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#item_zm_ltm_holiday_gift_02",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#item_zm_ltm_holiday_gift_03",
+            "maxweight": 100,
+            "available": 1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "zm_ltm1_powerup_drop_list",
+    "var_fde72c94": 100
+}

@@ -1,0 +1,45 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#tr_longburst_bp_code_sy_mtxitem",
+            "itemid": "17786861"
+        },
+        {
+            "var_4a4bc969": "#pistol_semiauto_bp_code_sy_mtxitem",
+            "itemid": "28983064"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_dogtags_sy_mtxitem",
+            "itemid": "32416334"
+        },
+        {
+            "var_4a4bc969": "#callingcards_code_pack_sy_base_mtxitem",
+            "itemid": "21345730"
+        },
+        {
+            "var_4a4bc969": "#emblems_code_pack_sy_base_mtxitem",
+            "itemid": "26530932"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_code_pack_sy_base_mtxitem",
+            "itemid": "29649410"
+        },
+        {
+            "var_4a4bc969": "#player_xp_token_legendary_mtxitem",
+            "itemid": "32109261"
+        }
+    ],
+    "itemname": "#hash_ca8b01d9270f554",
+    "var_247d9ed7": "codepack",
+    "var_208d76b5": "#hash_2b8563123a2df5b6",
+    "var_70f66e54": "#hash_1f6d483be741a65a",
+    "name": "ps4_code_pack_mtxentitlement",
+    "var_22f91505": "#hash_5a4c4b429b49c19a",
+    "var_566825be": "#hash_7e82483667bae056",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "var_4e46b1b3": "#orbis",
+    "itemid": "22137963",
+    "var_a592ce5": 1
+}

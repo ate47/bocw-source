@@ -1,0 +1,51 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_usa_woods_pl_eliminator_mtxitem",
+            "itemid": "27813100"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_woods_mtxitem",
+            "itemid": "28004165"
+        },
+        {
+            "var_4a4bc969": "#smg_handling_bp_high_end_mtxitem",
+            "itemid": "18895840"
+        },
+        {
+            "var_4a4bc969": "#shotgun_semiauto_bp_gunzandroses_mtxitem",
+            "itemid": "32811693"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_cyber_glasses_mtxitem",
+            "itemid": "18322190"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s1_bracelet_01_mtxitem",
+            "itemid": "23505824"
+        },
+        {
+            "var_4a4bc969": "#execution_126_mtxitem",
+            "itemid": "23495748"
+        },
+        {
+            "var_4a4bc969": "#emblems_hotshot_mtxitem",
+            "itemid": "25357913"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_hotshot_mtxitem",
+            "itemid": "18945526"
+        }
+    ],
+    "itemname": "#hash_23691e30ca9165fc",
+    "var_375a1747": "#hash_3965358a82142ba2",
+    "var_579fd6c3": 25,
+    "name": "bundle_operator_1085_woods_blade_runner_mtxbundle",
+    "var_22f91505": "#hash_4aae3b4eb24c77ab",
+    "var_566825be": "#hash_12a934538277e8ed",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_2f91ccf451ee782f",
+    "var_db3e02ab": 2000,
+    "itemid": "24280168"
+}

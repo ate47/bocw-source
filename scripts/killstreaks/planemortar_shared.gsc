@@ -28,7 +28,7 @@ function init_shared() {
         clientfield::register_clientuimodel("hudItems.planeMortarShotsRemaining", 1, 2, "int");
         killstreaks::function_d8c32ca4("planemortar", &function_a385666);
         killstreaks::function_94c74046("planemortar");
-        scene::add_scene_func(#"hash_2e551fd52450b37f", &function_ac3ad2f8, "play");
+        scene::add_scene_func(#"p9_fxanim_mp_planemortar_01_bundle", &function_ac3ad2f8, "play");
     }
 }
 
@@ -275,10 +275,10 @@ function planemortar_watchforendnotify(team, killstreak_id, *killstreaktype, isf
 function private function_ac3ad2f8(ents) {
     var_5496c504 = ents[#"bomb"];
     var_5496c504 endon(#"death");
-    var_5496c504 waittill(#"hash_147c8fc47f571390");
+    var_5496c504 waittill(#"spawn_killcam");
     angles = (35, self.angles[1] - 180, 0);
     direction = anglestoforward(angles);
-    scenelength = scene::function_12479eba(#"hash_2e551fd52450b37f");
+    scenelength = scene::function_12479eba(#"p9_fxanim_mp_planemortar_01_bundle");
     weapon = getweapon("planemortar");
     killcament = spawn("script_model", var_5496c504 gettagorigin("tag_killcam") + vectorscale(direction, -1500));
     killcament util::deleteaftertime(scenelength * 2);
@@ -288,7 +288,7 @@ function private function_ac3ad2f8(ents) {
     killcament setweapon(weapon);
     killcament killcam::store_killcam_entity_on_entity(self);
     killcament thread function_6ffdbd95(var_5496c504);
-    var_5496c504 waittill(#"hash_43cb32c55c45697");
+    var_5496c504 waittill(#"magic_missile");
     if (isdefined(self.owner)) {
         bomb = self.owner magicmissile(weapon, self.origin + vectorscale((0, 0, 1), 100), vectorscale((0, 0, -1), 5000));
         bomb.killstreakid.bomb = self.killstreakid;
@@ -306,7 +306,7 @@ function function_6ffdbd95(var_5496c504) {
     self rotatepitch(15, 3.5);
     wait(3.5);
     self rotatepitch(-15, 3);
-    var_5496c504 waittill(#"hash_64094b529783fd0e");
+    var_5496c504 waittill(#"unlink_killcam");
     self unlink();
 }
 
@@ -316,7 +316,7 @@ function function_6ffdbd95(var_5496c504) {
 // Size: 0x1e0
 function function_77ed0e9b(var_5496c504, fxanim) {
     /#
-        var_5496c504 endon(#"hash_43cb32c55c45697");
+        var_5496c504 endon(#"magic_missile");
         while (1) {
             println("<unknown string>" + fxanim.angles);
             println("<unknown string>" + fxanim.origin);
@@ -343,7 +343,7 @@ function function_83e61117(position, var_8bcd2218, killstreakid) {
     var_81c41c6e = util::spawn_model("tag_origin", position, (0, var_8bcd2218, 0));
     var_81c41c6e.owner.var_81c41c6e = self;
     var_81c41c6e.killstreakid = killstreakid;
-    var_81c41c6e scene::play(#"hash_2e551fd52450b37f");
+    var_81c41c6e scene::play(#"p9_fxanim_mp_planemortar_01_bundle");
     wait(0.5);
     if (isdefined(var_81c41c6e)) {
         var_81c41c6e delete();

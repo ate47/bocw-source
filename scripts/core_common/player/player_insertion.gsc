@@ -375,7 +375,7 @@ function private function_c62b5591(insertion) {
         insertion.cameraent.insertion = [];
     }
     var_163b0077 = 0;
-    foreach (plane in insertion.var_41091905) {
+    foreach (i, plane in insertion.var_41091905) {
         if (self islinkedto(plane)) {
             if (isdefined(insertion.cameraent[i])) {
                 insertion.cameraent[i] setvisibletoplayer(self);
@@ -719,7 +719,7 @@ function private function_e59d879f(insertion, var_cf46aa72) {
     #/
     function_948ac812(insertion, 0);
     bot_insertion::function_24ca8ecf(insertion);
-    var_d2f40e2f = [#"hash_31493d17c21fcc1b":"vehicle_t8_mil_helicopter_light_transport_wz_infil", #"hash_12d9972b4ec9db34":"vehicle_t8_mil_helicopter_gunship_wz_infiltration", #"hash_5475c25246521ac5":"vehicle_t9_mil_helicopter_care_package", #"hash_bdc1ec78ab2831c":"vehicle_t9_mil_air_transport_hpc_intro"];
+    var_d2f40e2f = [#"vehicle_t8_mil_helicopter_light_transport_wz_infil":"vehicle_t8_mil_helicopter_light_transport_wz_infil", #"vehicle_t8_mil_helicopter_gunship_wz_infiltration":"vehicle_t8_mil_helicopter_gunship_wz_infiltration", #"vehicle_t9_mil_helicopter_care_package":"vehicle_t9_mil_helicopter_care_package", #"vehicle_t9_mil_air_transport_hpc_intro":"vehicle_t9_mil_air_transport_hpc_intro"];
     if (var_d2f40e2f.size == 0) {
         return 0;
     }
@@ -963,7 +963,7 @@ function function_45b56b0a(insertion, startpoint, endpoint, var_872f085f, var_d2
     offset = (500, -50, 600);
     goaloffset = vectorscale((0, 0, -1), 400);
     var_61b1034d = startpoint + rotatepoint(offset, var_872f085f);
-    var_31e5487a = var_d2f40e2f[#"hash_31493d17c21fcc1b"];
+    var_31e5487a = var_d2f40e2f[#"vehicle_t8_mil_helicopter_light_transport_wz_infil"];
     insertion.var_933bdcf2.insertion = spawnvehicle(var_31e5487a, var_61b1034d, var_872f085f, "insertion_presentation");
     if (!isdefined(insertion.var_933bdcf2)) {
         /#
@@ -1880,7 +1880,7 @@ function function_1e981938(falltime, var_1e13fbc6, *var_921a1f7e, var_dc39d0fc, 
     }
     self function_b02c52b();
     self function_39c8b27e(1);
-    if (getdvarint(#"hash_743dc7d58f409837", 1) != 2) {
+    if (getdvarint(#"scr_parachute_camera_transition_mode", 1) != 2) {
         self function_41170420(1);
     }
     if (is_true(var_921a1f7e)) {

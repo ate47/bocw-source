@@ -1,0 +1,68 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_42ce961c675d510e"
+        },
+        {
+            "var_fe10649e": "#hash_a81eb0145ecd181"
+        },
+        {
+            "var_fe10649e": "#hash_a81ea0145eccfce"
+        },
+        {
+            "var_fe10649e": "#hash_a81ed0145ecd4e7"
+        }
+    ],
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_uk_pl_sas_gridlock_mtxitem",
+            "itemid": "21947677"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_uk_sas_mtxitem",
+            "itemid": "27107479"
+        },
+        {
+            "var_4a4bc969": "#smg_heavy_bp_blade_mtxitem",
+            "itemid": "27279494"
+        },
+        {
+            "var_4a4bc969": "#tr_powerburst_cb_bp_blade_mtxitem",
+            "itemid": "17872798"
+        },
+        {
+            "var_4a4bc969": "#pistol_burst_cb_blade_mtxitem",
+            "itemid": "32244914"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s4_digital_blade_mtxitem",
+            "itemid": "21092229"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_us_boat_pgb_mpx_sunburst_mtxitem",
+            "itemid": "26840476"
+        },
+        {
+            "var_4a4bc969": "#vehiclehorn_wawg_mtxitem",
+            "itemid": "23120691"
+        },
+        {
+            "var_4a4bc969": "#execution_061_mtxitem",
+            "itemid": "30281339"
+        }
+    ],
+    "itemname": "#hash_b2062e877dfbc24",
+    "var_375a1747": "#hash_42ce961c675d510e",
+    "var_3040f0d1": "#hash_42ce961c675d510e",
+    "var_8ee7db29": 1,
+    "var_579fd6c3": 54,
+    "name": "blueprint_bundle_4016_ak_74u_containminated_water_mtxbundle",
+    "var_a788fada": "#hash_1edf7ae4aaf76029",
+    "var_22f91505": "#hash_2fe78bee89bedae",
+    "var_566825be": "#hash_50e303c83f2e4661",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_e38cf3670965922",
+    "var_db3e02ab": 750,
+    "itemid": "25031678"
+}

@@ -79,7 +79,7 @@ function callback_actordamage(einflictor, eattacker, idamage, idflags, smeansofd
     } else if (isdefined(level.overrideactordamage)) {
         idamage = self [[ level.overrideactordamage ]](einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, psoffsettime, boneindex, modelindex);
     }
-    if (isplayer(eattacker) && eattacker hasperk(#"hash_7086fb93c78bfd6b") && weapons::isbulletdamage(smeansofdeath)) {
+    if (isplayer(eattacker) && eattacker hasperk(#"specialty_immunetrackerspotting") && weapons::isbulletdamage(smeansofdeath)) {
         idamage = int(idamage * 1.25);
     }
     if (isdefined(self.aioverridedamage)) {

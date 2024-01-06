@@ -1,0 +1,29 @@
+{
+    "itemlist": [
+        {
+            "minweight": 25,
+            "var_a6762160": "#sr_world_list_equipment_rare",
+            "maxweight": 25,
+            "available": -1
+        },
+        {
+            "minweight": 25,
+            "var_a6762160": "#sr_world_list_gear_rare",
+            "maxweight": 25,
+            "available": -1
+        },
+        {
+            "minweight": 50,
+            "var_a6762160": "#sr_world_list_attachment_rare",
+            "maxweight": 50,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "sr_world_list_tier_2_asylum",
+    "var_fde72c94": 100
+}

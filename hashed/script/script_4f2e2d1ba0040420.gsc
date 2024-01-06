@@ -49,7 +49,7 @@ function function_42818ffd(instance) {
     level flag::wait_till_all(array(#"gameplay_started", #"hash_1558183088c6ccff"));
     if (getdvarint(#"hash_292db25b2be947f", 0)) {
         var_841d9acf = isdefined(instance.var_fe2612fe[#"hash_748a25ac9b3e7766"]) ? instance.var_fe2612fe[#"hash_748a25ac9b3e7766"] : [];
-        foreach (player in getplayers()) {
+        foreach (i, player in getplayers()) {
             player setorigin(var_841d9acf[i].origin);
             player setplayerangles(var_841d9acf[i].angles);
             player clientfield::set_to_player("" + #"hash_34af381c063f6611", 1);
@@ -65,7 +65,7 @@ function function_42818ffd(instance) {
     var_1f6189f7 = instance.var_fe2612fe[#"hash_48ed0373db843512"][0];
     instance.var_675dd2c4.instance = namespace_8b6a9d79::function_f3d93ee9(var_1f6189f7, #"hash_20f9a15d3e077602");
     var_655b61b6 = instance.var_fe2612fe[#"hash_75fdd79b72460b80"][0];
-    point = function_4ba8fde(#"hash_3af5d193f6561a3c");
+    point = function_4ba8fde(#"item_survival_mq4_phase_neutralizer_blueprint");
     if (isdefined(point)) {
         item_drop::drop_item(0, undefined, 1, point.amount, point.id, var_655b61b6.origin, var_655b61b6.angles, 0);
         callback::on_item_pickup(&on_item_pickup);
@@ -358,11 +358,11 @@ function function_f1425083() {
 // Size: 0x304
 function function_5ec737ca(*params) {
     var_675dd2c4 = self.instance.var_675dd2c4;
-    var_675dd2c4 thread scene::play(#"hash_1b79053f7d2b9dd1", var_675dd2c4);
+    var_675dd2c4 thread scene::play(#"p9_zm_ndu_reel_to_reel_audio_recorder_01_server_bundle", var_675dd2c4);
     var_675dd2c4 stoploopsound();
     var_675dd2c4 playsound(#"hash_ea30fff000de600");
     foreach (player in getplayers()) {
-        player thread namespace_4abf1500::function_3ad8805e(#"hash_5b87039ce0ec3c82", undefined, undefined, 1);
+        player thread namespace_4abf1500::function_3ad8805e(#"zmintel_survival_omega_audiolog_16", undefined, undefined, 1);
     }
     zm_utility::function_bc5a54a8(self.instance.var_675dd2c4.n_obj_id);
     self.instance.var_675dd2c4.n_obj_id = undefined;
@@ -391,9 +391,9 @@ function function_5ec737ca(*params) {
 // Checksum 0x89d1f450, Offset: 0x2308
 // Size: 0x104
 function private on_item_pickup(params) {
-    if (params.item.var_a6762160.name === #"hash_3af5d193f6561a3c") {
+    if (params.item.var_a6762160.name === #"item_survival_mq4_phase_neutralizer_blueprint") {
         foreach (player in getplayers()) {
-            player thread namespace_4abf1500::function_3ad8805e(#"hash_4d8f86e486057da");
+            player thread namespace_4abf1500::function_3ad8805e(#"zmintel_survival_omega_document_13");
         }
         callback::remove_callback(#"on_item_pickup", &on_item_pickup);
     }

@@ -1,0 +1,10 @@
+{
+    "var_922067c4": "SCRIPTBUNDLE",
+    "var_30a9de1": "t9_cin_mp_amerika_apc",
+    "var_704cf864": "t9_cin_mp_amerika_tank",
+    "type": "mp_intro_cinematic",
+    "vmtype": "Both",
+    "name": "mp_amerika_intro_cin",
+    "var_a3282882": "mainscene_01",
+    "var_70e6c400": "mainscene_00"
+}

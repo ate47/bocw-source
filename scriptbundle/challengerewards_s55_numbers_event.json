@@ -1,0 +1,207 @@
+{
+    "var_2be3941a": [
+        {
+            "unlockdescription": "#hash_1b9b402980291508",
+            "var_5f79ee71": "#wristaccessory",
+            "var_b4ab831a": "#wristaccessory_t9_s5_analog_no_numbers",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_5a970e436e734f6"
+        },
+        {
+            "unlockdescription": "#hash_38aa7375938c1b99",
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_brain_puzzle",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_5a96fe436e73343"
+        },
+        {
+            "unlockdescription": "#hash_7188fd3ea32a91de",
+            "var_5f79ee71": "#craftbackground",
+            "image": "#hash_157f81b6c9199ce5",
+            "var_e5119d1b": "#hash_157f81b6c9199ce5",
+            "var_b4ab831a": "#hash_6885a07e90a4dc32",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_5a96ee436e73190"
+        },
+        {
+            "unlockdescription": "#hash_27e6337a6a3cc618",
+            "var_5f79ee71": "#crafticon",
+            "image": "#hash_79ea45e0291d8dbb",
+            "var_e5119d1b": "#hash_79ea45e0291d8dbb",
+            "var_b4ab831a": "#hash_3a5299692819f338",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_5a975e436e73d75"
+        },
+        {
+            "unlockdescription": "#hash_42663ad6344e7160",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_3d588adaaec63497",
+            "var_e5119d1b": "#hash_3d588adaaec63497",
+            "var_b4ab831a": "#hash_50f4f9c58a009516",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_5a974e436e73bc2"
+        },
+        {
+            "unlockdescription": "#hash_2af241829dbaaed1",
+            "var_5f79ee71": "#craftbackground",
+            "image": "#hash_5a7d82f3126bfa5d",
+            "var_e5119d1b": "#hash_5a7d82f3126bfa5d",
+            "var_b4ab831a": "#hash_e76474117a4695e",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_5a973e436e73a0f"
+        },
+        {
+            "unlockdescription": "#hash_9b74bade270e430",
+            "var_5f79ee71": "#crafticon",
+            "image": "#hash_2348f388f226d764",
+            "var_e5119d1b": "#hash_2348f388f226d764",
+            "var_b4ab831a": "#hash_6c36be7cdf585479",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_5a972e436e7385c"
+        },
+        {
+            "unlockdescription": "#hash_39db7578d8384c31",
+            "var_5f79ee71": "#arcadegame",
+            "var_b4ab831a": "#keystonekapers_game",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_5a979e436e74441"
+        },
+        {
+            "unlockdescription": "#hash_2385b725530a68ef",
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_tv_numbers",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_5a978e436e7428e"
+        },
+        {
+            "unlockdescription": "#hash_6d35521286b25c3",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_28992eae551fff91",
+            "var_e5119d1b": "#hash_28992eae551fff91",
+            "var_b4ab831a": "#hash_6c47bf5ee85d7e26",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_5cdb34e762e6c13c"
+        },
+        {
+            "unlockdescription": "#hash_692b6308fa98b633",
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_red_door",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_3dff37191ad5c7d0"
+        },
+        {
+            "unlockdescription": "#hash_2f894746e61c72c9",
+            "var_5f79ee71": "#craftbackground",
+            "image": "#hash_2d05ccd8bdb719da",
+            "var_e5119d1b": "#hash_2d05ccd8bdb719da",
+            "var_b4ab831a": "#hash_45d2dfb556ea41bb",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_6e6d659291806b0a"
+        },
+        {
+            "unlockdescription": "#hash_68441cecf2b47e77",
+            "var_5f79ee71": "#crafticon",
+            "image": "#hash_6eb5e8a367b269e7",
+            "var_e5119d1b": "#hash_6eb5e8a367b269e7",
+            "var_b4ab831a": "#hash_49a56824e2cb68b2",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_888da2016aa5d1c"
+        },
+        {
+            "unlockdescription": "#hash_6be8b347bde5d34e",
+            "var_5f79ee71": "#weaponcharm",
+            "var_b4ab831a": "#t9_charm_shattered_mirror",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_5262fef4c26cc2ab"
+        },
+        {
+            "unlockdescription": "#hash_5d79fdd31aad7bed",
+            "var_5f79ee71": "#craftbackground",
+            "image": "#hash_5d503c6157eca644",
+            "var_e5119d1b": "#hash_5d503c6157eca644",
+            "var_b4ab831a": "#hash_22e29afe3177bf01",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_5b6a992e1f541d6e"
+        },
+        {
+            "unlockdescription": "#hash_7706fa1c1037cb63",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_1043bfa3985e448c",
+            "var_e5119d1b": "#hash_1043bfa3985e448c",
+            "var_b4ab831a": "#hash_1e5c49f70577f03b",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_6561f9fe9f8b35fe"
+        },
+        {
+            "unlockdescription": "#hash_2acfd2838c4fcbf0",
+            "var_5f79ee71": "#craftbackground",
+            "image": "#hash_11df34cda97db808",
+            "var_e5119d1b": "#hash_11df34cda97db808",
+            "var_b4ab831a": "#hash_4d8ebcdc8a60205",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_29b3640368e489f5"
+        },
+        {
+            "unlockdescription": "#hash_36ad2a47539ac50b",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_50ece69229e3c47e",
+            "var_e5119d1b": "#hash_50ece69229e3c47e",
+            "var_b4ab831a": "#hash_76c582f236d98407",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_354e181f9cfcfaa"
+        },
+        {
+            "unlockdescription": "#hash_16448d06b0bfd13f",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_28d4e628543bd2ee",
+            "var_e5119d1b": "#hash_2f3f78c980a11ef7",
+            "var_b4ab831a": "#melee_sai_t9_dw_mtxitem",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_835f663dcce8ae6",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_3bc242e9c32bbf0e"
+        }
+    ],
+    "var_922067c4": "SCRIPTBUNDLE",
+    "type": "challengerewards",
+    "var_5f0dd656": 2,
+    "var_4e39981b": 2,
+    "name": "challengerewards_s55_numbers_event",
+    "sessionmode": "1"
+}

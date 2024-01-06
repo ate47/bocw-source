@@ -1,0 +1,44 @@
+{
+    "itemlist": [
+        {
+            "minweight": 200,
+            "var_a6762160": "#ar_accurate_t9_item",
+            "var_3f8c08e3": "#ammo_ar_item_t9",
+            "maxweight": 200,
+            "available": -1
+        },
+        {
+            "minweight": 200,
+            "var_a6762160": "#ar_fastfire_t9_item",
+            "var_3f8c08e3": "#ammo_ar_item_t9",
+            "maxweight": 200
+        },
+        {
+            "minweight": 200,
+            "var_a6762160": "#ar_damage_t9_item",
+            "var_3f8c08e3": "#ammo_ar_item_t9",
+            "maxweight": 200
+        },
+        {
+            "minweight": 200,
+            "var_a6762160": "#ar_mobility_t9_item",
+            "var_3f8c08e3": "#ammo_ar_item_t9",
+            "maxweight": 200
+        },
+        {
+            "minweight": 150,
+            "var_a6762160": "#ar_standard_t9_item",
+            "var_3f8c08e3": "#ammo_ar_item_t9",
+            "maxweight": 150
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_7fb0967b": 200,
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "var_dc7ffbef": 1,
+    "name": "t9_guns_ars",
+    "var_fde72c94": 100
+}

@@ -85,7 +85,7 @@ function function_a6c93300(*params) {
 function function_659d1778(attacker) {
     self endon(#"death");
     var_9a4ca881 = gettime() + 5000;
-    var_7e6e7f9f = getweapon(#"hash_63826b4a80215cd3");
+    var_7e6e7f9f = getweapon(#"tear_gas");
     params = getstatuseffect("dot_toxic_cloud");
     while (1) {
         alive_players = function_a1ef346b(undefined, self.origin, 110);

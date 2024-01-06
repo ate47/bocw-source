@@ -1,0 +1,45 @@
+{
+    "faction": [
+        {
+            "var_d2446fa0": "#faction_wz"
+        },
+        {
+            "var_d2446fa0": "#faction_wz_team1"
+        },
+        {
+            "var_d2446fa0": "#faction_wz_team2"
+        },
+        {
+            "var_d2446fa0": "#faction_wz_team3"
+        },
+        {
+            "var_d2446fa0": "#faction_wz_team4"
+        },
+        {
+            "var_d2446fa0": "#faction_wz_team5"
+        },
+        {
+            "var_d2446fa0": "#faction_wz_team6"
+        },
+        {
+            "var_d2446fa0": "#faction_wz_team7"
+        },
+        {
+            "var_d2446fa0": "#faction_wz_team8"
+        },
+        {
+            "var_d2446fa0": "#faction_wz_team9"
+        },
+        {
+            "var_d2446fa0": "#faction_wz_team10"
+        },
+        {
+            "var_d2446fa0": "#faction_wz_team11"
+        },
+        {
+            "var_d2446fa0": "#faction_wz_team12"
+        }
+    ],
+    "var_49ab12c7": "#faction_codcaster",
+    "name": "factions_wz"
+}

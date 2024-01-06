@@ -15,12 +15,12 @@ function function_4e4244c1() {
     if (!is_true(level.aat_in_use)) {
         return;
     }
-    aat::register("ammomod_napalmburst", #"hash_4fa799a70f7f113d", "ui_icon_zombie_ammomod_napalmburst_stacked");
-    aat::register("ammomod_napalmburst_1", #"hash_4fa799a70f7f113d", "ui_icon_zombie_ammomod_napalmburst_stacked");
-    aat::register("ammomod_napalmburst_2", #"hash_4fa799a70f7f113d", "ui_icon_zombie_ammomod_napalmburst_stacked");
-    aat::register("ammomod_napalmburst_3", #"hash_4fa799a70f7f113d", "ui_icon_zombie_ammomod_napalmburst_stacked");
-    aat::register("ammomod_napalmburst_4", #"hash_4fa799a70f7f113d", "ui_icon_zombie_ammomod_napalmburst_stacked");
-    aat::register("ammomod_napalmburst_5", #"hash_4fa799a70f7f113d", "ui_icon_zombie_ammomod_napalmburst_stacked");
+    aat::register("ammomod_napalmburst", #"zmui/zm_ammomod_napalmburst", "ui_icon_zombie_ammomod_napalmburst_stacked");
+    aat::register("ammomod_napalmburst_1", #"zmui/zm_ammomod_napalmburst", "ui_icon_zombie_ammomod_napalmburst_stacked");
+    aat::register("ammomod_napalmburst_2", #"zmui/zm_ammomod_napalmburst", "ui_icon_zombie_ammomod_napalmburst_stacked");
+    aat::register("ammomod_napalmburst_3", #"zmui/zm_ammomod_napalmburst", "ui_icon_zombie_ammomod_napalmburst_stacked");
+    aat::register("ammomod_napalmburst_4", #"zmui/zm_ammomod_napalmburst", "ui_icon_zombie_ammomod_napalmburst_stacked");
+    aat::register("ammomod_napalmburst_5", #"zmui/zm_ammomod_napalmburst", "ui_icon_zombie_ammomod_napalmburst_stacked");
     clientfield::register("actor", "zm_ammomod_napalmburst_explosion", 1, 1, "counter", &function_c8e3a0dc, 0, 0);
     clientfield::register("vehicle", "zm_ammomod_napalmburst_explosion", 1, 1, "counter", &function_c8e3a0dc, 0, 0);
     clientfield::register("actor", "zm_ammomod_napalmburst_burn", 1, 1, "int", &function_f3b43353, 0, 0);
@@ -36,18 +36,18 @@ function function_4e4244c1() {
     function_c487d6b1(#"zombie", "zm_weapons/fx9_aat_burnination_lvl1_fire_zmb_waist", "j_spinelower", undefined);
     function_c487d6b1(#"zombie", "zm_weapons/fx9_aat_burnination_lvl1_fire_zmb_torso", "j_spine4", undefined);
     function_c487d6b1(#"zombie_dog", "zm_weapons/fx9_aat_burnination_lvl1_fire_hound_torso", "j_spine4", undefined);
-    function_c487d6b1(#"hash_9f6bc1960ff4912", "zm_weapons/fx9_aat_burnination_lvl1_fire_raz_hip_left", "j_hip_le", 256);
-    function_c487d6b1(#"hash_9f6bc1960ff4912", "zm_weapons/fx9_aat_burnination_lvl1_fire_raz_hip_right", "j_hip_ri", 128);
-    function_c487d6b1(#"hash_9f6bc1960ff4912", "zm_weapons/fx9_aat_burnination_lvl1_fire_raz_leg_left", "j_knee_le", 256);
-    function_c487d6b1(#"hash_9f6bc1960ff4912", "zm_weapons/fx9_aat_burnination_lvl1_fire_raz_leg_right", "j_knee_ri", 128);
-    function_c487d6b1(#"hash_9f6bc1960ff4912", "zm_weapons/fx9_aat_burnination_lvl1_fire_raz_waist", "j_spinelower", undefined);
-    function_c487d6b1(#"hash_9f6bc1960ff4912", "zm_weapons/fx9_aat_burnination_lvl1_fire_raz_torso", "j_spine4", undefined);
-    function_c487d6b1(#"hash_be2e962be17d10e", "zm_weapons/fx9_aat_burnination_lvl1_fire_raz_hip_left", "j_hip_le", 256);
-    function_c487d6b1(#"hash_be2e962be17d10e", "zm_weapons/fx9_aat_burnination_lvl1_fire_raz_hip_right", "j_hip_ri", 128);
-    function_c487d6b1(#"hash_be2e962be17d10e", "zm_weapons/fx9_aat_burnination_lvl1_fire_raz_leg_left", "j_knee_le", 256);
-    function_c487d6b1(#"hash_be2e962be17d10e", "zm_weapons/fx9_aat_burnination_lvl1_fire_raz_leg_right", "j_knee_ri", 128);
-    function_c487d6b1(#"hash_be2e962be17d10e", "zm_weapons/fx9_aat_burnination_lvl1_fire_raz_waist", "j_spinelower", undefined);
-    function_c487d6b1(#"hash_be2e962be17d10e", "zm_weapons/fx9_aat_burnination_lvl1_fire_raz_torso", "j_spine4", undefined);
+    function_c487d6b1(#"raz", "zm_weapons/fx9_aat_burnination_lvl1_fire_raz_hip_left", "j_hip_le", 256);
+    function_c487d6b1(#"raz", "zm_weapons/fx9_aat_burnination_lvl1_fire_raz_hip_right", "j_hip_ri", 128);
+    function_c487d6b1(#"raz", "zm_weapons/fx9_aat_burnination_lvl1_fire_raz_leg_left", "j_knee_le", 256);
+    function_c487d6b1(#"raz", "zm_weapons/fx9_aat_burnination_lvl1_fire_raz_leg_right", "j_knee_ri", 128);
+    function_c487d6b1(#"raz", "zm_weapons/fx9_aat_burnination_lvl1_fire_raz_waist", "j_spinelower", undefined);
+    function_c487d6b1(#"raz", "zm_weapons/fx9_aat_burnination_lvl1_fire_raz_torso", "j_spine4", undefined);
+    function_c487d6b1(#"mimic", "zm_weapons/fx9_aat_burnination_lvl1_fire_raz_hip_left", "j_hip_le", 256);
+    function_c487d6b1(#"mimic", "zm_weapons/fx9_aat_burnination_lvl1_fire_raz_hip_right", "j_hip_ri", 128);
+    function_c487d6b1(#"mimic", "zm_weapons/fx9_aat_burnination_lvl1_fire_raz_leg_left", "j_knee_le", 256);
+    function_c487d6b1(#"mimic", "zm_weapons/fx9_aat_burnination_lvl1_fire_raz_leg_right", "j_knee_ri", 128);
+    function_c487d6b1(#"mimic", "zm_weapons/fx9_aat_burnination_lvl1_fire_raz_waist", "j_spinelower", undefined);
+    function_c487d6b1(#"mimic", "zm_weapons/fx9_aat_burnination_lvl1_fire_raz_torso", "j_spine4", undefined);
     function_c487d6b1(#"avogadro", "zm_weapons/fx9_aat_burnination_lvl1_fire_zmb_arm_left", "j_shoulder_le", 32);
     function_c487d6b1(#"avogadro", "zm_weapons/fx9_aat_burnination_lvl1_fire_zmb_arm_right", "j_shoulder_ri", 16);
     function_c487d6b1(#"avogadro", "zm_weapons/fx9_aat_burnination_lvl1_fire_zmb_head", "j_head", 8);
@@ -152,7 +152,7 @@ function function_a681160a(localclientnum, is_vehicle = 0) {
         if (!isdefined(self.var_9bdf44ae)) {
             self.var_9bdf44ae = [];
             if (isarray(level.var_fd6cbce7[self.archetype])) {
-                foreach (fx in level.var_fd6cbce7[self.archetype]) {
+                foreach (i, fx in level.var_fd6cbce7[self.archetype]) {
                     if (isdefined(fx.gibflag)) {
                         if (isdefined(self gettagorigin(fx.var_1167eff2)) && !gibclientutils::isgibbed(localclientnum, self, fx.gibflag)) {
                             fxid = util::playfxontag(localclientnum, i, self, fx.var_1167eff2);

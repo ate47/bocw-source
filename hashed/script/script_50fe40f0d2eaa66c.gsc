@@ -11,7 +11,7 @@
 // Size: 0x4c
 function private autoexec __init__system__() {
     /#
-        register(#"hash_7b2d0df8fb9099a8", &function_70a657d8, undefined, undefined, #"hash_3c57623e9dc82608");
+        register(#"hash_7b2d0df8fb9099a8", &function_70a657d8, undefined, undefined, #"radiation");
     #/
 }
 

@@ -1,0 +1,67 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_77205c04f3dd666f",
+            "var_f35c5951": 1.2,
+            "var_5d4b5964": 6.9,
+            "var_36bf8e05": "#hash_5dbfe71446dd7503"
+        },
+        {
+            "var_46bd7973": "#hash_77205b04f3dd64bc",
+            "var_f35c5951": 1,
+            "var_5d4b5964": 5.38,
+            "var_36bf8e05": "#hash_61d5fdece8f7ba0a"
+        },
+        {
+            "var_46bd7973": "#hash_77205e04f3dd69d5",
+            "var_f35c5951": 1.3,
+            "var_5d4b5964": 4.29,
+            "var_36bf8e05": "#hash_3fb314699b5d406d"
+        },
+        {
+            "var_46bd7973": "#hash_77205d04f3dd6822",
+            "var_f35c5951": 2,
+            "var_5d4b5964": 1.96,
+            "var_36bf8e05": "#hash_3e6384f7916e9be4"
+        },
+        {
+            "var_46bd7973": "#hash_77205804f3dd5fa3",
+            "var_f35c5951": 1,
+            "var_5d4b5964": 0.75,
+            "var_36bf8e05": "#hash_19fd3d822709a62f"
+        },
+        {
+            "var_46bd7973": "#hash_77205704f3dd5df0",
+            "var_f35c5951": 0.6,
+            "var_5d4b5964": 2.84,
+            "var_36bf8e05": "#hash_461aac1dd243fbd6"
+        },
+        {
+            "var_46bd7973": "#hash_77205a04f3dd6309",
+            "var_f35c5951": 2.4,
+            "var_5d4b5964": 2.3,
+            "var_36bf8e05": "#hash_7bf15ad77b8b0969"
+        },
+        {
+            "var_46bd7973": "#hash_77205904f3dd6156",
+            "var_5d4b5964": 1.71,
+            "var_36bf8e05": "#hash_4f8cc75b21014e50"
+        }
+    ],
+    "description": "#hash_757c34816c1be428",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#radio",
+    "model": "#hash_2a2df769d600b242",
+    "var_824079e7": "#survival",
+    "uimodel": "#hash_7dcfe35ccda755f1",
+    "type": "zmintel",
+    "season": 5,
+    "var_ad4ad686": "#hash_5ad2dea4c296de59",
+    "soundloop": "#hash_5db0167d85d70c82",
+    "name": "zmintel_survival_maxis_radio_8",
+    "var_9be0526e": "#hash_20ea75a25d912949",
+    "var_83e219de": "#hash_55af78a255e77597",
+    "var_53be913a": 5,
+    "var_348b91fd": "#radio",
+    "title": "#hash_23f78837417e4d60"
+}

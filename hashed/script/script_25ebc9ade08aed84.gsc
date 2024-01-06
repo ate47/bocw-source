@@ -145,7 +145,7 @@ function function_679a29cd(player) {
             return 1;
         } else {
             switch (self.stub.var_90ddceac.script_string) {
-            case #"hash_438fafe881cdd097":
+            case #"napalm_strike":
                 hint_string = player zm_utility::function_d6046228(#"hash_1c38e0fdb20ef055", #"hash_52a497d7fdd2698b");
                 self sethintstringforplayer(player, hint_string, level.var_d99df9f9);
                 if (!player zm_score::can_player_purchase(level.var_d99df9f9)) {
@@ -159,7 +159,7 @@ function function_679a29cd(player) {
                     player globallogic::function_d1924f29(#"hash_6e3ae7967dc5d414");
                 }
                 break;
-            case #"hash_2f648e335983677a":
+            case #"chopper_gunner":
                 hint_string = player zm_utility::function_d6046228(#"hash_61ac30cb1d0b9c0", #"hash_6d2d30daf8cd1ec");
                 self sethintstringforplayer(player, hint_string, level.var_d99df9f9);
                 if (!player zm_score::can_player_purchase(level.var_d99df9f9)) {

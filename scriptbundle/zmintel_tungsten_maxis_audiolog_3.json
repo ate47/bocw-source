@@ -1,0 +1,74 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_32467a824a6ab3fa",
+            "var_f35c5951": 0.8,
+            "var_5d4b5964": 3.73,
+            "var_36bf8e05": "#hash_636ac99866476233"
+        },
+        {
+            "var_46bd7973": "#hash_32467b824a6ab5ad",
+            "var_f35c5951": 1.2,
+            "var_5d4b5964": 5.69,
+            "var_36bf8e05": "#hash_34d49a007a819afa"
+        },
+        {
+            "var_46bd7973": "#hash_324678824a6ab094",
+            "var_f35c5951": 0.8,
+            "var_5d4b5964": 2.97,
+            "var_36bf8e05": "#hash_1487d270b5e7561d"
+        },
+        {
+            "var_46bd7973": "#hash_324679824a6ab247",
+            "var_f35c5951": 1.2,
+            "var_5d4b5964": 4.63,
+            "var_36bf8e05": "#hash_14c9210b25dd58d4"
+        },
+        {
+            "var_46bd7973": "#hash_324676824a6aad2e",
+            "var_f35c5951": 1.3,
+            "var_5d4b5964": 1.96,
+            "var_36bf8e05": "#hash_485560077f04361f"
+        },
+        {
+            "var_46bd7973": "#hash_324677824a6aaee1",
+            "var_f35c5951": 1,
+            "var_5d4b5964": 6.2,
+            "var_36bf8e05": "#hash_1cbf8c8ed3ea3646"
+        },
+        {
+            "var_46bd7973": "#hash_324674824a6aa9c8",
+            "var_f35c5951": 1,
+            "var_5d4b5964": 2.13,
+            "var_36bf8e05": "#hash_7f28ac7cd478b7d9"
+        },
+        {
+            "var_46bd7973": "#hash_324675824a6aab7b",
+            "var_f35c5951": 2,
+            "var_5d4b5964": 5.55,
+            "var_36bf8e05": "#hash_56243f22d01f1800"
+        },
+        {
+            "var_46bd7973": "#hash_324672824a6aa662",
+            "var_5d4b5964": 4.33,
+            "var_36bf8e05": "#hash_5b4ea4d4f5b2d6eb"
+        }
+    ],
+    "description": "#hash_3e2f930952fbd622",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#exploration",
+    "model": "#hash_4c7e76f2c17678e3",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_43c3b478e6bb838",
+    "type": "zmintel",
+    "season": 6,
+    "var_ad4ad686": "#hash_5ad2dea4c296de59",
+    "soundloop": "#hash_2e77024e1f0a29f1",
+    "name": "zmintel_tungsten_maxis_audiolog_3",
+    "var_9be0526e": "#audiolog",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "var_348b91fd": "#tape",
+    "title": "#hash_3315585b58f2f3b2",
+    "mapname": "#zm_tungsten"
+}

@@ -39,7 +39,7 @@ function on_player_spawn(*localclientnum) {
     inputs[#"ui_prevtab"] = "prevtab";
     inputs[#"ui_nexttab"] = "nexttab";
     inputs[#"hash_5686e6f2a8315663"] = "backspace";
-    foreach (value in inputs) {
+    foreach (key, value in inputs) {
         self flag::clear(key);
     }
     while (1) {

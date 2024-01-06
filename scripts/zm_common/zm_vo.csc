@@ -63,26 +63,26 @@ function private function_d1711916(var_332276f2, dialogkey) {
         return var_332276f2.var_a5d46693;
     case #"hash_5b20033c44a4321f":
         return var_332276f2.var_29e91c40;
-    case #"hash_6ea3cc8f89d4e196":
-        return var_332276f2.var_f4ff0388;
-    case #"hash_6f196f933d7ff3ac":
-        return var_332276f2.var_eecf27c;
-    case #"hash_7800d9b3f28f81ff":
-        return var_332276f2.var_65cbd0b3;
+    case #"zmpingraygun":
+        return var_332276f2.zmpingraygun;
+    case #"zmpingwonderweapongeneric":
+        return var_332276f2.zmpingwonderweapongeneric;
+    case #"zmpingcymbalmonkey":
+        return var_332276f2.zmpingcymbalmonkey;
     case #"hash_db5b175bd794f60":
         return var_332276f2.var_dbfd0b22;
-    case #"hash_37d287851f148bc":
-        return var_332276f2.var_5e0f090;
-    case #"hash_2b309e3eecad85fb":
-        return var_332276f2.var_af9eafb0;
-    case #"hash_739c39c90683d021":
-        return var_332276f2.var_b4c1e119;
-    case #"hash_4f054ee9602c2197":
-        return var_332276f2.var_54ec9c14;
+    case #"zmpingitemsalvage":
+        return var_332276f2.zmpingitemsalvage;
+    case #"zmpingitemaetherium":
+        return var_332276f2.zmpingitemaetherium;
+    case #"zmpingitemintel":
+        return var_332276f2.zmpingitemintel;
+    case #"zmpingitemquest":
+        return var_332276f2.zmpingitemquest;
     case #"hash_307d328d2ca73346":
         return var_332276f2.var_87856536;
-    case #"hash_287f99f86f82e12e":
-        return var_332276f2.var_af44f652;
+    case #"zmpingperkcan":
+        return var_332276f2.zmpingperkcan;
     case #"hash_3c46000cdd88c6a1":
         return var_332276f2.var_f35b9f76;
     case #"hash_5605b2abdf38cd4":

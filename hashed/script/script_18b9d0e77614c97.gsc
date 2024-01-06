@@ -53,7 +53,7 @@ function private function_121f6fcf(var_11a76757) {
     if (!isdefined(level.var_80747947)) {
         return;
     }
-    foreach (entry in level.var_80747947) {
+    foreach (var_74f025c6, entry in level.var_80747947) {
         if (var_11a76757 & entry.var_11a76757 == 0) {
             continue;
         }

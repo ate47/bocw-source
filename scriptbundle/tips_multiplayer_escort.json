@@ -1,0 +1,28 @@
+{
+    "var_f2454da1": [
+        {
+            "var_9e589ff4": 1,
+            "var_75f09f03": "#hash_6f1684d04816abc1",
+            "var_81294378": "#==",
+            "var_88ff5fc3": "#none"
+        },
+        {
+            "var_9e589ff4": 1,
+            "var_75f09f03": "#hash_19481119522d1c23",
+            "var_81294378": "#==",
+            "var_88ff5fc3": "#none"
+        },
+        {
+            "var_9e589ff4": 1,
+            "var_75f09f03": "#hash_27e50aa627ab1755",
+            "var_81294378": "#==",
+            "var_88ff5fc3": "#none"
+        }
+    ],
+    "var_922067c4": "SCRIPTBUNDLE",
+    "type": "didyouknowentry",
+    "var_9e589ff4": 1,
+    "name": "tips_multiplayer_escort",
+    "var_81294378": "#==",
+    "var_88ff5fc3": "#none"
+}

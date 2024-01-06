@@ -1,0 +1,14 @@
+{
+    "killcambackdist": 150,
+    "killcamtype": 1,
+    "type": "killcam",
+    "var_5022638e": 0.1,
+    "vmtype": "none",
+    "killcamgroundupdist": 25,
+    "name": "killcam_straferun",
+    "killcamupdist": 10,
+    "killcamwallsidedist": 30,
+    "var_e7bad890": "helicopter",
+    "killcamwalloutdist": 10,
+    "killcamgroundbackdist": 50
+}

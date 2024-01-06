@@ -1,0 +1,131 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_6c54dced978c8438",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_t9_vign_cust_sr_outro_success_01_cam",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "model": "#hash_225b7a1c33079fb1",
+            "type": "player",
+            "var_1af33af1": 1,
+            "var_db255011": 1,
+            "name": "player 1"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_6c54dfed978c8951",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_t9_vign_cust_sr_outro_success_01_cam",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "model": "#hash_225b7a1c33079fb1",
+            "type": "player",
+            "var_db255011": 1,
+            "name": "player 2"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_6c54deed978c879e",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_t9_vign_cust_sr_outro_success_01_cam",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "model": "#hash_225b7a1c33079fb1",
+            "type": "player",
+            "var_db255011": 1,
+            "name": "player 3"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_6c54e1ed978c8cb7",
+                            "var_71bac06": "anim"
+                        },
+                        {
+                            "cameraswitcher": "c_t9_vign_cust_sr_outro_success_01_cam",
+                            "var_71bac06": "cameraswitcher"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "model": "#hash_225b7a1c33079fb1",
+            "type": "player",
+            "var_db255011": 1,
+            "name": "player 4"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_947ce78dc0a80fa",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "model": 0,
+            "type": "vehicle",
+            "var_db255011": 1,
+            "name": "helicopter"
+        },
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_3cd942719a953353",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "model": "#tag_origin_animate",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "prop 1"
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "aib_t9_vign_cust_sr_outro_success_01",
+    "dontsync": 1,
+    "disablesceneskipping": 1,
+    "team": "any"
+}

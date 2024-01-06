@@ -1,0 +1,35 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#shotgun_semiauto_bp_aether_mtxitem",
+            "itemid": "30169267"
+        },
+        {
+            "var_4a4bc969": "#melee_machete_bp_daether_mtxitem",
+            "itemid": "30253991"
+        },
+        {
+            "var_4a4bc969": "#execution_139_mtxitem",
+            "itemid": "18106524"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_wpn_chalkoutline_mtxitem",
+            "itemid": "20919829"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s3_vts_28_final_mtxitem",
+            "itemid": "21923335"
+        }
+    ],
+    "itemname": "#hash_1f52fa03de45bf9b",
+    "var_375a1747": "#hash_1e364b821697145d",
+    "name": "blueprint_bundle_3022_gallo_sa12_aether_weapons_mtxbundle",
+    "var_a788fada": "#hash_e0de88c90155876",
+    "var_22f91505": "#hash_7af85d5a9e40d99e",
+    "var_566825be": "#hash_81756d44331d542",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_242db1ea05f7ab52",
+    "var_db3e02ab": 2000,
+    "itemid": "18930135"
+}

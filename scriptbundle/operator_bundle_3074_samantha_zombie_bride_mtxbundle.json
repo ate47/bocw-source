@@ -1,0 +1,56 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_ger_pl_maxis_bride_mtxitem",
+            "itemid": "32164388"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_ger_pl_maxis_mtxitem",
+            "itemid": "27568255"
+        },
+        {
+            "var_4a4bc969": "#loot_smg_fastfire_bp_angel_mtxitem",
+            "itemid": "25297495"
+        },
+        {
+            "var_4a4bc969": "#lmg_light_bp_angel_mtxitem",
+            "itemid": "18217304"
+        },
+        {
+            "var_4a4bc969": "#melee_shovel_bp_angel_mtxitem",
+            "itemid": "27189826"
+        },
+        {
+            "var_4a4bc969": "#execution_111_mtxitem",
+            "itemid": "32690830"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_sblade_spider_mtxitem",
+            "itemid": "26424004"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_snowmobile_assembly_mpx_bride_mtxitem",
+            "itemid": "33064061"
+        },
+        {
+            "var_4a4bc969": "#callingcards_zombiebride_animated_mtxitem",
+            "itemid": "21326317"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_maxis_mtxitem",
+            "itemid": "18519414"
+        }
+    ],
+    "itemname": "#hash_eeefa873430e9d5",
+    "var_375a1747": "#hash_79be1eaccf9d956f",
+    "var_579fd6c3": 45,
+    "name": "operator_bundle_3074_samantha_zombie_bride_mtxbundle",
+    "var_a788fada": "#hash_4b1d0d1935ed2d02",
+    "var_22f91505": "#hash_696dd126a55ecff5",
+    "var_566825be": "#hash_530959aaf2257f0e",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_ceadc68100f0fad",
+    "var_db3e02ab": 2000,
+    "itemid": "20069290"
+}

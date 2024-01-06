@@ -17,13 +17,13 @@ function private autoexec __init__system__() {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x8c93fe50, Offset: 0x178
 // Size: 0x1dc
-function function_69258685(localclientnum, var_8a4236ab = "light/fx9_light_cp_flashlight", var_20c3ffdc = "tag_light") {
+function function_69258685(localclientnum, flashlightfx = "light/fx9_light_cp_flashlight", var_20c3ffdc = "tag_light") {
     if (!isdefined(self.var_3d84fa3e)) {
         self.var_3d84fa3e = {};
     }
-    var_5a528883 = self.var_3d84fa3e.fx !== var_8a4236ab;
+    var_5a528883 = self.var_3d84fa3e.fx !== flashlightfx;
     var_f49dadc4 = self.var_3d84fa3e.fxtag !== var_20c3ffdc;
-    var_5a9e0eeb = var_5a528883 && var_8a4236ab !== "light/fx9_light_cp_flashlight" ? var_8a4236ab : undefined;
+    var_5a9e0eeb = var_5a528883 && flashlightfx !== "light/fx9_light_cp_flashlight" ? flashlightfx : undefined;
     var_9acb6f5e = var_f49dadc4 && var_20c3ffdc !== "tag_light" ? var_20c3ffdc : undefined;
     if (!isdefined(self.var_3d84fa3e) && (isdefined(var_5a9e0eeb) || isdefined(var_9acb6f5e))) {
         self.var_3d84fa3e = {};
@@ -172,11 +172,11 @@ function private function_69fc092e(localclientnum) {
         self.var_3d84fa3e = {};
     }
     if (isdefined(self.var_3d84fa3e.fx)) {
-        var_8a4236ab = self.var_3d84fa3e.fx;
+        flashlightfx = self.var_3d84fa3e.fx;
     } else if (isdefined(level.var_3d84fa3e.fx)) {
-        var_8a4236ab = level.var_3d84fa3e.fx;
+        flashlightfx = level.var_3d84fa3e.fx;
     } else {
-        var_8a4236ab = "light/fx9_light_cp_flashlight";
+        flashlightfx = "light/fx9_light_cp_flashlight";
     }
     if (isdefined(self.var_3d84fa3e.fxtag)) {
         var_20c3ffdc = self.var_3d84fa3e.fxtag;
@@ -185,7 +185,7 @@ function private function_69fc092e(localclientnum) {
     } else {
         var_20c3ffdc = "tag_light";
     }
-    self.var_3d84fa3e.fxid = util::playfxontag(localclientnum, var_8a4236ab, self, var_20c3ffdc);
+    self.var_3d84fa3e.fxid = util::playfxontag(localclientnum, flashlightfx, self, var_20c3ffdc);
     self thread function_54557944(localclientnum);
 }
 

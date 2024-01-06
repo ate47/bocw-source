@@ -36,7 +36,7 @@ function function_784b4e1e(curpos, region, var_5a990e80, var_939dd5a2 = 1) {
     var_aea7aa5b = 84 * (1 + dist);
     while (var_939dd5a2 && var_9a135fe4 < region.var_e7f2146e.size || !var_939dd5a2 && var_9a135fe4 >= 0) {
         var_84ee6edd = region.var_e7f2146e[var_9a135fe4].origin;
-        var_9bf11123 = self namespace_7b4b2b57::function_a49ba261(checkpos, var_84ee6edd, region, undefined, var_9da4df29, var_aea7aa5b, 0);
+        var_9bf11123 = self smart_object::function_a49ba261(checkpos, var_84ee6edd, region, undefined, var_9da4df29, var_aea7aa5b, 0);
         if (isdefined(var_9bf11123)) {
             var_640dd14c = checkpos;
             if (var_939dd5a2 && var_9a135fe4 - 1 >= 0) {
@@ -243,7 +243,7 @@ function function_44b60190() {
     foreach (var_462028a0 in level.var_d4a2da0.var_ebbdef7a) {
         foreach (region in var_462028a0.var_6ccb99d7) {
             var_18b52478 = [];
-            foreach (var_f4f0dcfd in region.var_dcc5d0c0) {
+            foreach (index, var_f4f0dcfd in region.var_dcc5d0c0) {
                 var_3fc78cb6 = region.var_3fc78cb6;
                 var_dcc5d0c0 = struct::get_array(var_f4f0dcfd.target, "targetname");
                 foreach (var_b042e906 in var_dcc5d0c0) {
@@ -367,7 +367,7 @@ function function_5303ad8d() {
         level.var_d4a2da0.var_ebbdef7a[group] = spawnstruct();
         level.var_d4a2da0.var_ebbdef7a[group].var_6ccb99d7 = [];
         level.var_d4a2da0.var_ebbdef7a[group].var_ec548349 = 0;
-        foreach (volume in var_2e6299dc) {
+        foreach (index, volume in var_2e6299dc) {
             region = spawnstruct();
             region.volume = volume;
             region.index = index;
@@ -422,10 +422,10 @@ function function_5303ad8d() {
                 #/
             }
             region.var_b60f2156.region = [];
-            foreach (var_7b4b2b57 in level.var_1ccc840f) {
-                if (volume istouching(var_7b4b2b57.origin)) {
+            foreach (smart_object in level.var_1ccc840f) {
+                if (volume istouching(smart_object.origin)) {
                     size = region.var_b60f2156.size;
-                    region.var_b60f2156[size] = var_7b4b2b57;
+                    region.var_b60f2156[size] = smart_object;
                 }
             }
             size = level.var_d4a2da0.var_ebbdef7a[group].var_6ccb99d7.size;

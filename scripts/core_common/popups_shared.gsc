@@ -374,7 +374,7 @@ function notif_devgui_gun_rank() {
                 break;
             }
         }
-        foreach (gun_group in a_weapons) {
+        foreach (group_name, gun_group in a_weapons) {
             foreach (gun, attachment_group in gun_group) {
                 foreach (attachment, attachment_data in attachment_group[#"attachments"]) {
                     devgui_cmd_gun_path = notif_gun_rank_devgui_base + function_9e72a96(group_name) + "<unknown string>" + function_9e72a96(gun_group[gun][#"ref"]) + "<unknown string>" + function_9e72a96(attachment);

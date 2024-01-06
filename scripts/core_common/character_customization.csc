@@ -186,7 +186,7 @@ class class_7da27482 {
                 assert(var_23904c1d.outfititems.size == 8);
             #/
         #/
-        foreach (itemindex in var_23904c1d.outfititems) {
+        foreach (itemtype, itemindex in var_23904c1d.outfititems) {
             [[ self ]]->set_character_outfit_item(itemindex, itemtype);
         }
     }
@@ -783,7 +783,7 @@ class class_7da27482 {
                     }
                 }
                 var_cc204afb = [];
-                foreach (model in var_89610e9c) {
+                foreach (slot, model in var_89610e9c) {
                     if (isdefined(model) && !isdefined(array::find(var_cc204afb, model))) {
                         array::add(var_cc204afb, model);
                         bone = isdefined(level.model_type_bones[slot]) ? level.model_type_bones[slot] : slot;
@@ -833,7 +833,7 @@ class class_7da27482 {
                 }
             }
         }
-        foreach (model in attached_models) {
+        foreach (slot, model in attached_models) {
             [[ self ]]->update_model_attachment(model, slot, undefined, undefined, 1);
         }
         if (!is_true(params.var_90d2372c)) {
@@ -1232,7 +1232,7 @@ class class_7da27482 {
                 self.var_a287debe thread scene::play(self.var_54430cb6);
             }
         }
-        foreach (ent in self.var_5633914d) {
+        foreach (slot, ent in self.var_5633914d) {
             ent thread character_customization::play_intro_and_animation(self._origin, self._angles, undefined, self.var_bf273e28[slot], 1);
         }
     }
@@ -2070,7 +2070,7 @@ function updateeventthread(localclientnum, var_d0b01271, notifyname, var_1d7f159
                 [[ var_d0b01271 ]]->set_character_outfit(waitresult.outfit_index);
             }
             outfititems = strtok(waitresult.presets, ";");
-            foreach (item in outfititems) {
+            foreach (type, item in outfititems) {
                 if (type != 7 && type != 1) {
                     [[ var_d0b01271 ]]->function_9146bf81(int(item), type);
                 }
@@ -2105,7 +2105,7 @@ function updateeventthread(localclientnum, var_d0b01271, notifyname, var_1d7f159
         case #"show":
             [[ var_d0b01271 ]]->show_model();
             break;
-        case #"hash_400f4cebb73b2781":
+        case #"loadrandomcharacter":
             params = {};
             [[ var_1d7f1597 ]](localclientnum, var_d0b01271, waitresult, params);
             [[ var_d0b01271 ]]->update(params);

@@ -1,0 +1,43 @@
+{
+    "var_bb7dcd09": [
+        {
+            "var_5ed80a9c": "#hunter",
+            "type": "#none",
+            "displayname": "#hash_6b31d6069443fefe",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "var_5ed80a9c": "#hash_246907adaab2599e",
+            "type": "#none",
+            "displayname": "#hash_2fd02d3d51d83c3",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "var_5ed80a9c": "#hash_2b6df6d5b5bad35f",
+            "type": "#none",
+            "displayname": "#hash_5a4e4455c695a8d0",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "var_5ed80a9c": "#hash_565c393743c4316a",
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "#hash_6e603ebfa753eb9a",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "var_5ed80a9c": "#stalker",
+            "type": "#hash_798212a6fd4ab166",
+            "displayname": "#hash_6007f08af9f3095d",
+            "var_a4f2dd9e": "#none"
+        }
+    ],
+    "var_72ef398b": 1,
+    "var_d7f79634": 1,
+    "var_922067c4": "SCRIPTBUNDLE",
+    "var_e19b7aba": 1,
+    "var_a77ed948": "#none",
+    "type": "datasourcelist",
+    "name": "challenges_battle_hardened_zm",
+    "var_50340f4": 1,
+    "var_8b233d0b": 1
+}

@@ -1,0 +1,37 @@
+{
+    "worldfx": [
+        {
+            "worldfx": "#hash_559f04d819ec7fb"
+        }
+    ],
+    "var_a6616b9c": 1,
+    "amount": 1,
+    "var_fa988b4b": 60,
+    "var_922067c4": "scriptbundle",
+    "var_3e688854": -10,
+    "model": "#hash_3b7136f2a0141196",
+    "var_16e34ef4": 64,
+    "var_e9898330": "pingitemgeneric",
+    "var_ac75b59f": -1,
+    "var_c2de1e75": "zm_item_pickup_rumble",
+    "type": "itemspawnentry",
+    "hintstring": "#hash_1fc384c31ff2adb2",
+    "spawnsound": "zmb_pickup_present_spawn",
+    "consumable": 1,
+    "var_4a1a4613": "armor_swap",
+    "name": "item_zm_ltm_holiday_gift_03",
+    "displayname": "#hash_1fc384c31ff2adb2",
+    "var_9e569978": 1,
+    "icon": "#hash_716e587ec49bac94",
+    "casttime": 1,
+    "modelscale": 2,
+    "rarity": "Uncommon",
+    "var_1b0b57d1": "evt_item_despawn",
+    "handler": "#hash_1002a9af0882010e",
+    "var_3af59a99": 1,
+    "pickupicon": "#hash_16965c86cfdb3846",
+    "var_37cd55af": "#hash_266b9fe958c67df6",
+    "var_50773731": 10,
+    "itemtype": "resource",
+    "pickupsound": "zmb_pickup_present_pickup"
+}

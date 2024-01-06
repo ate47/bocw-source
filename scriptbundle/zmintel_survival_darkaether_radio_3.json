@@ -1,0 +1,63 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_75f719480563eb0a",
+            "var_5d4b5964": 22.61,
+            "var_36bf8e05": "#hash_71cca4ece2ddc0cb"
+        },
+        {
+            "var_46bd7973": "#hash_75f71a480563ecbd",
+            "var_f35c5951": 23.47,
+            "var_5d4b5964": 13.5,
+            "var_36bf8e05": "#hash_201b99476adaf7ea"
+        },
+        {
+            "var_46bd7973": "#hash_75f717480563e7a4",
+            "var_f35c5951": 37.68,
+            "var_5d4b5964": 10.26,
+            "var_36bf8e05": "#hash_29f7a2da217bcf81"
+        },
+        {
+            "var_46bd7973": "#hash_75f718480563e957",
+            "var_f35c5951": 48.38,
+            "var_5d4b5964": 7.64,
+            "var_36bf8e05": "#hash_28f55cb759b00390"
+        },
+        {
+            "var_46bd7973": "#hash_75f715480563e43e",
+            "var_f35c5951": 56.77,
+            "var_5d4b5964": 8.49,
+            "var_36bf8e05": "#hash_622d1acc066ccfef"
+        },
+        {
+            "var_46bd7973": "#hash_75f716480563e5f1",
+            "var_f35c5951": 65.86,
+            "var_5d4b5964": 16.6,
+            "var_36bf8e05": "#hash_62cebb1fea59b48e"
+        },
+        {
+            "var_46bd7973": "#hash_75f713480563e0d8",
+            "var_f35c5951": 83.42,
+            "var_5d4b5964": 14.63,
+            "var_36bf8e05": "#hash_735e2c80140af905"
+        }
+    ],
+    "description": "#hash_762ee476affd3887",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#radio",
+    "var_824079e7": "#survival",
+    "uimodel": "#hash_483fb768867494d5",
+    "var_2a12d36": 1,
+    "type": "zmintel",
+    "season": 3,
+    "var_ad4ad686": "#hash_70ce1650358c0923",
+    "soundloop": "#hash_5db0167d85d70c82",
+    "name": "zmintel_survival_darkaether_radio_3",
+    "var_9be0526e": "#hash_20ea75a25d912949",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "var_348b91fd": "#radio",
+    "title": "#hash_3eee45bfbf48243d",
+    "var_3bb3493d": "#hash_4deca8ca81c495fb",
+    "var_6073bf8f": "#hash_30acea553928ba42"
+}

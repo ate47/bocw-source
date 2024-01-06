@@ -1,0 +1,17 @@
+{
+    "itemlist": [
+        {
+            "minweight": 650,
+            "var_a6762160": "#uncommon_gun_list",
+            "maxweight": 650,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "gold_chest_guns_level_1_food",
+    "var_fde72c94": 100
+}

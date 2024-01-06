@@ -1,0 +1,59 @@
+{
+    "itemlist": [
+        {
+            "minweight": 10,
+            "var_a6762160": "#hash_3dd30890ce81cf71",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 20,
+            "var_a6762160": "#hash_7ef9ab3656b301fc",
+            "maxweight": 20,
+            "available": -1
+        },
+        {
+            "minweight": 20,
+            "var_a6762160": "#hash_3d30f9cc0ad51ea0",
+            "maxweight": 20,
+            "available": -1
+        },
+        {
+            "minweight": 12,
+            "var_a6762160": "#hash_52eca1d03520a059",
+            "maxweight": 12,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#hash_4192cf85cfcd19d9",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#hash_1d5d3b585ea6bb9f",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#hash_32e3a7aed2bd9ea7",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 8,
+            "var_a6762160": "#hash_52eff7500a12a414",
+            "maxweight": 8,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "zm_magicbox_weapons_list_cranked_hard",
+    "var_fde72c94": 100
+}

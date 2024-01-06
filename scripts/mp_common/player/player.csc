@@ -28,7 +28,7 @@ function private function_70a657d8() {
     callback::on_player_corpse(&on_player_corpse);
     callback::function_930e5d42(&function_930e5d42);
     callback::on_weapon_change(&function_585458);
-    callback::on_localclient_connect(&namespace_56e70a4a::function_57a6b7b0);
+    callback::on_localclient_connect(&codcaster::function_57a6b7b0);
     level.var_15ab9bbd = 1;
     renderoverridebundle::function_f72f089c(#"hash_27554b8df2b9e92b", sessionmodeiscampaigngame() ? #"hash_1cbf6d26721c59a7" : #"hash_1c90592671f4c6e9", &function_6803f977, undefined, undefined, 1);
     renderoverridebundle::function_f72f089c(#"hash_48a9d99bb016fbd3", #"hash_39109749d54991e4", &function_c451ab29);
@@ -42,8 +42,8 @@ function private function_70a657d8() {
 // Checksum 0x53a44ed3, Offset: 0x388
 // Size: 0x7c
 function function_a25e8ff(localclientnum, var_27121fbd) {
-    if (!var_27121fbd && namespace_56e70a4a::function_b8fe9b52(localclientnum)) {
-        namespace_56e70a4a::function_12acfa84();
+    if (!var_27121fbd && codcaster::function_b8fe9b52(localclientnum)) {
+        codcaster::function_12acfa84();
     } else if (!self function_21c0fa55()) {
         self function_bcc9c79c(localclientnum);
     }
@@ -54,7 +54,7 @@ function function_a25e8ff(localclientnum, var_27121fbd) {
 // Checksum 0x4a8bb106, Offset: 0x410
 // Size: 0x144
 function on_player_spawned(localclientnum) {
-    if (namespace_56e70a4a::function_b8fe9b52(localclientnum)) {
+    if (codcaster::function_b8fe9b52(localclientnum)) {
         if (self postfx::function_556665f2("pstfx_radiation_dot")) {
             self postfx::exitpostfxbundle("pstfx_radiation_dot");
         }
@@ -101,14 +101,14 @@ function on_player_corpse(localclientnum, params) {
     self util::waittill_dobj(localclientnum);
     self function_a25e8ff(localclientnum, 1);
     self renderoverridebundle::stop_bundle(#"friendly", sessionmodeiscampaigngame() ? #"hash_1cbf6d26721c59a7" : #"hash_1c90592671f4c6e9", 0);
-    if (namespace_56e70a4a::function_b8fe9b52(localclientnum)) {
-        rob = self namespace_56e70a4a::is_friendly(localclientnum) ? #"hash_39109749d54991e4" : #"hash_39109a49d54996fd";
+    if (codcaster::function_b8fe9b52(localclientnum)) {
+        rob = self codcaster::is_friendly(localclientnum) ? #"hash_39109749d54991e4" : #"hash_39109a49d54996fd";
         if (isdefined(params.playernum) && function_b3cde530(localclientnum, params.playernum)) {
             self renderoverridebundle::start_bundle(#"hash_7e51b929877df918", rob);
             level thread function_74ce4ee8(localclientnum, params.playernum, self, rob);
-            namespace_56e70a4a::function_12acfa84();
+            codcaster::function_12acfa84();
         } else {
-            self namespace_56e70a4a::function_6d9b84d9(rob);
+            self codcaster::function_6d9b84d9(rob);
         }
     }
 }
@@ -141,7 +141,7 @@ function function_bcc9c79c(local_client_num) {
 // Checksum 0x3919807, Offset: 0x948
 // Size: 0x92
 function function_c451ab29(local_client_num, bundle) {
-    if (!namespace_56e70a4a::function_c955fbd1(local_client_num) && self == function_5c10bd79(local_client_num) && !function_b3cde530(local_client_num, self getentitynumber())) {
+    if (!codcaster::function_c955fbd1(local_client_num) && self == function_5c10bd79(local_client_num) && !function_b3cde530(local_client_num, self getentitynumber())) {
         return 0;
     }
     return function_9216f2c3(local_client_num, bundle);
@@ -155,7 +155,7 @@ function function_9216f2c3(local_client_num, *bundle) {
     if (level.gameended) {
         return 0;
     }
-    if (!namespace_56e70a4a::function_b8fe9b52(bundle)) {
+    if (!codcaster::function_b8fe9b52(bundle)) {
         return 0;
     }
     if (!isdefined(level.isigcactive) || level.isigcactive) {
@@ -204,8 +204,8 @@ function function_74ce4ee8(localclientnum, playernum, body, rob) {
         waitframe(1);
     }
     if (isdefined(body)) {
-        body namespace_56e70a4a::function_6d9b84d9(rob);
+        body codcaster::function_6d9b84d9(rob);
     }
-    namespace_56e70a4a::function_12acfa84();
+    codcaster::function_12acfa84();
 }
 

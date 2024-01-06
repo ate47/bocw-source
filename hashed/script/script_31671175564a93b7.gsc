@@ -424,7 +424,7 @@ function function_d6053a8f(var_e9082dc0, var_29a5aeda) {
 // Checksum 0x61853466, Offset: 0x1660
 // Size: 0xfc
 function function_6afe83c4(arr) {
-    foreach (item in arr) {
+    foreach (i, item in arr) {
         var_4c1ba7d3 = isstring(item);
         var_e6fa5c22 = function_dc4baa9(item);
         if (var_4c1ba7d3 == 1 && var_e6fa5c22 == 1) {
@@ -439,7 +439,7 @@ function function_6afe83c4(arr) {
 // Checksum 0x7d23fd73, Offset: 0x1768
 // Size: 0xfc
 function function_64a5440a(arr) {
-    foreach (item in arr) {
+    foreach (i, item in arr) {
         var_4c1ba7d3 = isstring(item);
         var_e6fa5c22 = function_dc4baa9(item);
         if (var_4c1ba7d3 == 1 && var_e6fa5c22 == 1) {

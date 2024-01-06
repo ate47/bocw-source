@@ -1,0 +1,135 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_adler_game_fuel_mtxitem",
+            "itemid": "24010313"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_hero_adler_mtxitem",
+            "itemid": "31112941"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_miami_mtxitem",
+            "itemid": "19833688"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_silver_badger_mtxitem",
+            "itemid": "25451765"
+        },
+        {
+            "var_4a4bc969": "#callingcards_3_anotherpawndown_mtxitem",
+            "itemid": "33384766"
+        },
+        {
+            "var_4a4bc969": "#callingcards_twitch_s2_mtxitem",
+            "itemid": "21605911"
+        },
+        {
+            "var_4a4bc969": "#emblems_twitch_s2_mtxitem",
+            "itemid": "30218103"
+        },
+        {
+            "var_4a4bc969": "#callingcards_02_sweatyhours_mtxitem",
+            "itemid": "21674659"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s3a_oneshot_mtxitem",
+            "itemid": "25913212"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s3b_turnmeup_mtxitem",
+            "itemid": "19302240"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s2b_snaked_mtxitem",
+            "itemid": "27899964"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s1a_pressf_mtxitem",
+            "itemid": "22772147"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s1b_icedout_mtxitem",
+            "itemid": "25857004"
+        },
+        {
+            "var_4a4bc969": "#emblems_01_bleedingheart_mtxitem",
+            "itemid": "29248204"
+        },
+        {
+            "var_4a4bc969": "#emblems_01_salty_mtxitem",
+            "itemid": "21324878"
+        },
+        {
+            "var_4a4bc969": "#emblems_02_hardcarry_mtxitem",
+            "itemid": "18371150"
+        },
+        {
+            "var_4a4bc969": "#emblems_03_youtried_mtxitem",
+            "itemid": "33267856"
+        },
+        {
+            "var_4a4bc969": "#callingcards_companion_s2_mtxitem",
+            "itemid": "18532510"
+        },
+        {
+            "var_4a4bc969": "#emblems_companion_s2a_mtxitem",
+            "itemid": "26941226"
+        },
+        {
+            "var_4a4bc969": "#emblems_companion_s2b_mtxitem",
+            "itemid": "23290869"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_companion_s2_mtxitem",
+            "itemid": "20727174"
+        },
+        {
+            "var_4a4bc969": "#callingcards_crm_s2_mtxitem",
+            "itemid": "26423997"
+        },
+        {
+            "var_4a4bc969": "#emblems_crm_s2_mtxitem",
+            "itemid": "23304154"
+        },
+        {
+            "var_4a4bc969": "#callingcards_wz_ambassador_0002_mtxitem",
+            "itemid": "19294557"
+        },
+        {
+            "var_4a4bc969": "#callingcards_wz_ambassador_02_mtxitem",
+            "itemid": "18393413"
+        },
+        {
+            "var_4a4bc969": "#callingcards_wz_ambassador_aces_static_02_mtxitem",
+            "itemid": "32131681"
+        },
+        {
+            "var_4a4bc969": "#callingcards_wz_ambassador_static_01_mtxitem",
+            "itemid": "24281054"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_wz_ambassador_loot_sticker_008_c_mtxitem",
+            "itemid": "28039349"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_wz_ambassador_loot_sticker_009_c_mtxitem",
+            "itemid": "21154011"
+        },
+        {
+            "var_4a4bc969": "#callingcards_crmsendit_mtxitem",
+            "itemid": "25688172"
+        }
+    ],
+    "itemname": "#hash_2e9eb2821cfd26ba",
+    "description": "#hash_7f2525803c959169",
+    "var_87756eb4": 1,
+    "var_375a1747": "#hash_1324c908aa106cf3",
+    "name": "studio_s02_incentives_mtxentitlement",
+    "var_90708fcf": "#hash_9367fb3ed8488a7",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "itemid": "25085774",
+    "var_7c846082": "#hash_f00c770b923deb6"
+}

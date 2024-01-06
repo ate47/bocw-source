@@ -1,0 +1,32 @@
+{
+    "options": [
+        {
+            "label": "#hash_4e6b05eba4bbb43f",
+            "value": "0"
+        },
+        {
+            "label": "#hash_7f9b44e25360bc86",
+            "value": "1"
+        }
+    ],
+    "var_d260763": "#hash_67046b7249a52639",
+    "description": "#hash_8c7b9e3a9da0af2",
+    "var_60fcfffa": "#hash_57f3f21157ef659b",
+    "var_9bc3be7": 1,
+    "var_4ced19ab": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "name": "walk_behavior",
+    "displayname": "#hash_63b5ebf970bb5b22",
+    "var_4a4760c0": 60,
+    "var_500458ac": 10,
+    "var_926d1be9": 1,
+    "var_66faec87": 120,
+    "statname": "toggle_walk",
+    "var_6f00a61a": 1.1,
+    "minvalue": 1,
+    "var_d4e288e": 90,
+    "var_b7401319": "#hash_6a489abface20fd6"
+}

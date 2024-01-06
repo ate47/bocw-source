@@ -1,0 +1,23 @@
+{
+    "amount": 1,
+    "var_fa988b4b": 180,
+    "description": "#hash_6d33206e0b85b95d",
+    "var_922067c4": "scriptbundle",
+    "var_16e34ef4": 64,
+    "var_e9898330": "pingitemscorestreakgeneric",
+    "var_ac75b59f": -1,
+    "type": "itemspawnentry",
+    "hintstring": "#hash_180c3f213daf79ba",
+    "var_4a1a4613": "armor_swap",
+    "name": "scorestreak_item_t9",
+    "displayname": "#hash_180c3f213daf79ba",
+    "var_9e569978": 1,
+    "stackcount": 1,
+    "icon": "#hash_6a6e277c90e5c00b",
+    "modelscale": 1,
+    "rarity": "None",
+    "var_97c5ead1": 1,
+    "handler": "#hash_1f0d729dc6dd1202",
+    "var_3af59a99": 1,
+    "itemtype": "scorestreak"
+}

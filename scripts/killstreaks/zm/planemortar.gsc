@@ -280,7 +280,7 @@ function private function_8f181838(var_5b276012, params, var_50a76fc3) {
         var_5acfe25f = a_trace[#"position"];
         self thread function_83e61117(var_5acfe25f, n_yaw);
     }
-    n_length = scene::function_12479eba(#"hash_2e551fd52450b37f");
+    n_length = scene::function_12479eba(#"p9_fxanim_mp_planemortar_01_bundle");
     wait(n_length + 0.5);
     self notify("planemortar_complete" + var_5b276012);
 }

@@ -416,8 +416,8 @@ function on_spawn_player() {
 // Size: 0xc4
 function on_player_killed(*params) {
     self endon(#"disconnect");
-    if (is_true(level.droppedtagrespawn) && namespace_1332002f::function_d072f205()) {
-        self namespace_1332002f::function_5f976259();
+    if (is_true(level.droppedtagrespawn) && squad_spawn::function_d072f205()) {
+        self squad_spawn::function_5f976259();
         /#
             var_f26d6aa7 = getdvarint(#"hash_40b119703c5fa11e", 0);
             if (var_f26d6aa7 > 0) {
@@ -519,7 +519,7 @@ function onusedogtag(player) {
             }
         }
     } else if (is_true(level.var_d0252074) && isdefined(self.victim)) {
-        self.victim namespace_1332002f::function_44c6679();
+        self.victim squad_spawn::function_44c6679();
     }
 }
 
@@ -530,8 +530,8 @@ function onusedogtag(player) {
 function dt_respawn() {
     if (is_true(level.var_d0252074)) {
         self.pers[#"lives"] = 1;
-        self namespace_1332002f::function_6a7e8977();
-        self namespace_1332002f::function_250e04e5();
+        self squad_spawn::function_6a7e8977();
+        self squad_spawn::function_250e04e5();
     } else {
         self thread waittillcanspawnclient();
     }

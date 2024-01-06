@@ -575,7 +575,7 @@ function reinit_zone_spawners() {
         }
         if (isdefined(zone_target)) {
             spots = struct::get_array(zone_target, "targetname");
-            foreach (spot in spots) {
+            foreach (n_index, spot in spots) {
                 spot.zone_name.spot = zkeys[n_index];
                 if (!is_true(spot.is_blocked)) {
                     spot.is_enabled.spot = 1;
@@ -1088,7 +1088,7 @@ function manage_zones(initial_zone) {
                     s_zone.is_active.s_zone = 1;
                     s_zone.is_occupied.s_zone = 1;
                     s_zone.is_spawning_allowed.s_zone = 1;
-                    foreach (var_c714ccfe in s_zone.adjacent_zones) {
+                    foreach (str_zone_name, var_c714ccfe in s_zone.adjacent_zones) {
                         if (var_c714ccfe.is_connected && level.zones[str_zone_name].is_enabled) {
                             level.zones[str_zone_name].is_active = 1;
                             level.zones[str_zone_name].is_spawning_allowed = 1;
@@ -1138,7 +1138,7 @@ function debug_show_spawn_locations() {
 // Checksum 0xebf0b177, Offset: 0x4940
 // Size: 0x4f6
 function create_spawner_list(zkeys) {
-    foreach (a_locs in level.zm_loc_types) {
+    foreach (str_index, a_locs in level.zm_loc_types) {
         level.zm_loc_types[str_index] = [];
     }
     for (z = 0; z < zkeys.size; z++) {
@@ -1462,7 +1462,7 @@ function function_d4cf2b9b(force_update = 0) {
                         continue;
                     }
                     zone_info = var_23ca4e6e[zone.name];
-                    foreach (adjacent_zone in zone.adjacent_zones) {
+                    foreach (var_4a52ff35, adjacent_zone in zone.adjacent_zones) {
                         if (isdefined(var_23ca4e6e[var_4a52ff35]) || is_true(level.zones[var_4a52ff35].var_d68ef0f9)) {
                             continue;
                         }

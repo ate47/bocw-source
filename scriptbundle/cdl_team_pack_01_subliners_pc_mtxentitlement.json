@@ -1,0 +1,58 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#po_c_t9_gen_pl_esports_male_subliners_home_pc_mtxitem",
+            "itemid": "24326636"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_pl_esports_male_mtxitem",
+            "itemid": "31358670"
+        },
+        {
+            "var_4a4bc969": "#po_c_t9_gen_pl_esports_male_subliners_away_pc_mtxitem",
+            "itemid": "27845405"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_pl_esports_male_warsaw_mtxitem",
+            "itemid": "24054907"
+        },
+        {
+            "var_4a4bc969": "#camo_t9_cdl_nyc_pc_mtxitem",
+            "itemid": "32354970"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_esports_subliners_pc_mtxitem",
+            "itemid": "27341887"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_sneaker_subliners_pc_mtxitem",
+            "itemid": "32771120"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_cdl_teamsticker_nyc_1_pc_base_mtxitem",
+            "itemid": "30034433"
+        },
+        {
+            "var_4a4bc969": "#callingcards_cdl_teamcallingcards_nyc_1_pc_base_mtxitem",
+            "itemid": "22430408"
+        },
+        {
+            "var_4a4bc969": "#emblems_cdl_teamemblem_010_ny_1_pc_base_mtxitem",
+            "itemid": "29294841"
+        }
+    ],
+    "itemname": "#hash_a85ef4331faf0a0",
+    "var_247d9ed7": "cdl_team_pack_01_subliners",
+    "var_208d76b5": "#hash_285fa3c2b654b62e",
+    "var_70f66e54": "#hash_7a12c20b094efb41",
+    "name": "cdl_team_pack_01_subliners_pc_mtxentitlement",
+    "var_a788fada": "#hash_1cba2a2e7a42a444",
+    "var_22f91505": "#hash_5455b450343aa374",
+    "var_566825be": "#hash_349315d670d35ad0",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "var_4e46b1b3": "#pc",
+    "itemid": "22923457",
+    "var_a592ce5": 1
+}

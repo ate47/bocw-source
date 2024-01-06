@@ -16,13 +16,13 @@ function registerhumaninterfaceattributes() {
     ai::registermatchedinterface(#"human", #"coveridleonly", 0, array(1, 0));
     ai::registermatchedinterface(#"human", #"useanimationoverride", 0, array(1, 0), &humansoldierserverutils::useanimationoverridecallback);
     ai::registermatchedinterface(#"human", #"disablearrivals", 0, array(1, 0), &aiutility::arrivalattributescallback);
-    ai::registermatchedinterface(#"human", #"hash_3f0df0d01b4fe5a8", 0, array(1, 0), &aiutility::function_eef4346c);
-    ai::registermatchedinterface(#"human", #"hash_4f85f5ad6144607f", 0, array(1, 0), &aiutility::function_1cd75f29);
-    ai::registermatchedinterface(#"human", #"hash_5c12eb61ce24c8ea", 0, array(1, 0), &aiutility::function_a626b1a9);
+    ai::registermatchedinterface(#"human", #"disablepeek", 0, array(1, 0), &aiutility::function_eef4346c);
+    ai::registermatchedinterface(#"human", #"disablelean", 0, array(1, 0), &aiutility::function_1cd75f29);
+    ai::registermatchedinterface(#"human", #"disablereload", 0, array(1, 0), &aiutility::function_a626b1a9);
     ai::registermatchedinterface(#"human", #"stealth", 0, array(1, 0));
     ai::registermatchedinterface(#"human", #"vignette_mode", "off", array("off", "slow", "fast"), &humansoldierserverutils::vignettemodecallback);
     ai::registermatchedinterface(#"human", #"usegrenades", 1, array(1, 0));
-    ai::registermatchedinterface(#"human", #"hash_5991c0a719d8e0e6", "combat", array("combat", "patrol", "cqb", "alert"), &humansoldierserverutils::function_20fdb709);
+    ai::registermatchedinterface(#"human", #"demeanor", "combat", array("combat", "patrol", "cqb", "alert"), &humansoldierserverutils::function_20fdb709);
     ai::registermatchedinterface(#"human", #"hash_1e055d856280060c", "none", array("none", "ads", "up", "down"), &humansoldierserverutils::function_beabbc97);
 }
 

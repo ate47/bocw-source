@@ -1,0 +1,170 @@
+{
+    "var_8009bee": [
+        {
+            "var_47b606f3": [
+                {
+                    "tag": "j_shoulder_ri"
+                },
+                {
+                    "tag": "j_wrist_ri"
+                },
+                {
+                    "tag": "j_elbow_ri"
+                }
+            ],
+            "fxtag": "j_elbow_ri",
+            "var_4aa216c9": "#hash_3f76b1015254a80",
+            "weakpoint": 6
+        }
+    ],
+    "weakpoints": [
+        {
+            "var_60790e23": [
+                {
+                    "hitloc": "helmet"
+                },
+                {
+                    "hitloc": "head"
+                }
+            ],
+            "var_8b732142": 7,
+            "var_641ce20e": 1,
+            "type": "#armor",
+            "var_51e8b151": "j_head",
+            "var_b98c4585": 1,
+            "var_f371ebb0": "helmet",
+            "activebydefault": 1,
+            "var_b7fbe51b": 11,
+            "health": 0.1
+        },
+        {
+            "var_60790e23": [
+                {
+                    "hitloc": "torso_upper"
+                },
+                {
+                    "hitloc": "torso_mid"
+                },
+                {
+                    "hitloc": "torso_lower"
+                },
+                {
+                    "hitloc": "neck"
+                }
+            ],
+            "var_8b732142": 8,
+            "var_641ce20e": 1,
+            "type": "#armor",
+            "var_51e8b151": "j_spine4_attach",
+            "var_b98c4585": 1,
+            "var_f371ebb0": "body_armor",
+            "activebydefault": 1,
+            "var_b7fbe51b": 12,
+            "health": 0.2
+        },
+        {
+            "var_60790e23": [
+                {
+                    "hitloc": "left_arm_upper"
+                }
+            ],
+            "var_641ce20e": 1,
+            "type": "#armor",
+            "var_51e8b151": "j_shouldertwist_le_attach",
+            "var_b98c4585": 1,
+            "var_f371ebb0": "left_arm_armor",
+            "activebydefault": 1,
+            "var_b7fbe51b": 9,
+            "health": 0.1
+        },
+        {
+            "var_60790e23": [
+                {
+                    "hitloc": "left_leg_upper"
+                },
+                {
+                    "hitloc": "left_leg_lower"
+                },
+                {
+                    "hitloc": "left_foot"
+                }
+            ],
+            "var_641ce20e": 1,
+            "type": "#armor",
+            "var_51e8b151": "j_hiptwist_le_attach",
+            "var_b98c4585": 1,
+            "var_f371ebb0": "left_leg_armor",
+            "activebydefault": 1,
+            "var_b7fbe51b": 9,
+            "health": 0.1
+        },
+        {
+            "var_60790e23": [
+                {
+                    "hitloc": "right_leg_upper"
+                },
+                {
+                    "hitloc": "right_leg_lower"
+                },
+                {
+                    "hitloc": "right_foot"
+                }
+            ],
+            "var_641ce20e": 1,
+            "type": "#armor",
+            "var_51e8b151": "j_hiptwist_le_attach",
+            "var_b98c4585": 1,
+            "var_f371ebb0": "right_leg_armor",
+            "activebydefault": 1,
+            "var_b7fbe51b": 9,
+            "health": 0.1
+        },
+        {
+            "var_60790e23": [
+                {
+                    "hitloc": "right_arm_upper"
+                },
+                {
+                    "hitloc": "right_arm_lower"
+                },
+                {
+                    "hitloc": "right_hand"
+                }
+            ],
+            "var_641ce20e": 1,
+            "type": "#armor",
+            "var_51e8b151": "j_shouldertwist_ri_attach",
+            "var_f371ebb0": "right_arm_armor",
+            "activebydefault": 1,
+            "var_b7fbe51b": 9,
+            "health": 0.25
+        },
+        {
+            "var_60790e23": [
+                {
+                    "hitloc": "helmet"
+                },
+                {
+                    "hitloc": "head"
+                }
+            ],
+            "var_3765e777": 1,
+            "type": "#weakpoint",
+            "health": 1
+        },
+        {
+            "var_60790e23": [
+                {
+                    "hitloc": "neck"
+                }
+            ],
+            "var_3765e777": 1,
+            "type": "#weakpoint",
+            "health": 1
+        }
+    ],
+    "var_922067c4": "scriptbundle",
+    "model": "#hash_51a31faf2251cc85",
+    "type": "characterweakpointsettings",
+    "name": "c_t9_sr_raz_weakpoint_def"
+}

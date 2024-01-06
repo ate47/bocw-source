@@ -1,0 +1,18 @@
+{
+    "description": "#hash_73b53538a5557c62",
+    "itemspawnentry": "#item_zmquest_tungsten_mq_quest_part_monitor",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#main_quest",
+    "model": "#hash_35fdc6c12e9b41f3",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_5caf60538e765d48",
+    "type": "zmintel",
+    "season": 6,
+    "var_ad4ad686": "#hash_1303dcb8d0e80e33",
+    "name": "zmintel_tungsten_requiem_artifact_3",
+    "var_9be0526e": "#artifact",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "title": "#hash_4dc7d50709e1ecf2",
+    "mapname": "#zm_tungsten"
+}

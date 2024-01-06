@@ -1,0 +1,44 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_deltaforce_cyclone_mtxitem",
+            "itemid": "30182138"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_deltaforce_mtxitem",
+            "itemid": "22503750"
+        },
+        {
+            "var_4a4bc969": "#loot_smg_spray_bp_urban_mtxitem",
+            "itemid": "20712314"
+        },
+        {
+            "var_4a4bc969": "#tr_powerburst_cb_bp_urban_mtxitem",
+            "itemid": "23748079"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_tombstone_dead_mtxitem",
+            "itemid": "24442279"
+        },
+        {
+            "var_4a4bc969": "#emblems_zombies_themed_final_mtxitem",
+            "itemid": "20745706"
+        },
+        {
+            "var_4a4bc969": "#callingcards_zombies_s4_4019_final_mtxitem",
+            "itemid": "31880903"
+        }
+    ],
+    "itemname": "#hash_23c7c7d91fa05fe9",
+    "var_375a1747": "#hash_1f2833cbee6a294f",
+    "var_579fd6c3": 27,
+    "name": "operator_bundle_4019_wolf_zombies_one_mtxbundle",
+    "var_a788fada": "#hash_510413a98e385e94",
+    "var_22f91505": "#hash_4cf8689bb1f6de8b",
+    "var_566825be": "#hash_4deb84c45b7ce160",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_7cac05c827507d0f",
+    "var_db3e02ab": 2000,
+    "itemid": "19479853"
+}

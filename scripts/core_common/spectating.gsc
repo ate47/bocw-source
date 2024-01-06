@@ -34,7 +34,7 @@ function private function_70a657d8() {
 // Checksum 0x58808533, Offset: 0x1d8
 // Size: 0x94
 function init() {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         level.spectateoverride[team] = spawnstruct();
     }
 }

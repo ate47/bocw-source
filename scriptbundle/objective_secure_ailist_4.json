@@ -1,0 +1,47 @@
+{
+    "var_210a8489": [
+        {
+            "var_37d9fb07": "survival_ai_zombie",
+            "var_a949845f": -1,
+            "var_857deb66": 47
+        },
+        {
+            "var_37d9fb07": "survival_ai_zombie_armor_medium",
+            "var_a949845f": -1,
+            "var_857deb66": 23
+        },
+        {
+            "var_37d9fb07": "survival_ai_dog_molotov",
+            "var_a949845f": 3,
+            "var_857deb66": 5
+        },
+        {
+            "var_37d9fb07": "survival_ai_dog_plague",
+            "var_a949845f": -1,
+            "var_857deb66": 5
+        },
+        {
+            "var_37d9fb07": "survival_ai_avogadro",
+            "var_a949845f": -1,
+            "var_857deb66": 5
+        },
+        {
+            "var_37d9fb07": "survival_ai_mimic",
+            "var_a949845f": -1,
+            "var_857deb66": 5
+        },
+        {
+            "var_37d9fb07": "survival_ai_raz",
+            "var_a949845f": -1,
+            "var_857deb66": 5
+        },
+        {
+            "var_37d9fb07": "survival_ai_disciple",
+            "var_a949845f": -1,
+            "var_857deb66": 5
+        }
+    ],
+    "var_922067c4": "scriptbundle",
+    "type": "survivalailist",
+    "name": "objective_secure_ailist_4"
+}

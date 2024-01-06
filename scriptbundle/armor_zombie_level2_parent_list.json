@@ -1,0 +1,17 @@
+{
+    "itemlist": [
+        {
+            "minweight": 60,
+            "var_a6762160": "#armor_zombie_level2_drop_list",
+            "maxweight": 60,
+            "available": 1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "armor_zombie_level2_parent_list",
+    "var_fde72c94": 100
+}

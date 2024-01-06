@@ -1,0 +1,33 @@
+{
+    "options": [
+        {
+            "label": "#hash_328c3889d907f9b",
+            "value": "1"
+        },
+        {
+            "label": "#hash_5a0c1b70b2759a27",
+            "value": "0"
+        }
+    ],
+    "var_dfedf08e": 1,
+    "description": "#hash_6c6225e8e4727f7d",
+    "var_60fcfffa": "#hash_5a0c1b70b2759a27",
+    "var_9bc3be7": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_8722393c": 1,
+    "var_86a04811": 1,
+    "var_43a952c1": 0.1,
+    "name": "pushtotalk",
+    "displayname": "#hash_3ca48c3e95c1c82b",
+    "var_500458ac": 10,
+    "var_926d1be9": 0.01,
+    "var_66faec87": 1,
+    "statname": "voice_pushToTalk",
+    "var_6f00a61a": 1.1,
+    "var_a89ae821": 1,
+    "var_624e2965": 1,
+    "minvalue": 1,
+    "var_d4e288e": 1,
+    "var_b7401319": "#hash_328c3889d907f9b"
+}

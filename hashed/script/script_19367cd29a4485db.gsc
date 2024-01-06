@@ -111,7 +111,7 @@ function private function_6f31d177() {
         foreach (var_aafdab5f in var_d9c347d9) {
             if (isdefined(var_aafdab5f.target)) {
                 a_s_spawns = get_array(var_aafdab5f.targetname, "<unknown string>");
-                foreach (s_spawn in a_s_spawns) {
+                foreach (n_index, s_spawn in a_s_spawns) {
                     add_debug_command("<unknown string>" + var_aafdab5f.target + "<unknown string>" + n_index + "<unknown string>" + var_aafdab5f.target + "<unknown string>" + n_index + "<unknown string>");
                 }
                 add_debug_command("<unknown string>" + var_aafdab5f.target + "<unknown string>" + var_aafdab5f.target + "<unknown string>");
@@ -207,13 +207,13 @@ function function_8cf627fd(params) {
             thread_all(function_a1ef346b(), &function_b2f69241);
             break;
         case #"hash_67c3788855e430dd":
-            thread_all(function_a1ef346b(), &give_armor, #"hash_35675bbd363f934a");
+            thread_all(function_a1ef346b(), &give_armor, #"armor_item_lv1_t9_sr");
             break;
         case #"hash_67c3758855e42bc4":
-            thread_all(function_a1ef346b(), &give_armor, #"hash_7777b2b5970da847");
+            thread_all(function_a1ef346b(), &give_armor, #"armor_item_lv2_t9_sr");
             break;
         case #"hash_67c3768855e42d77":
-            thread_all(function_a1ef346b(), &give_armor, #"hash_7bc70addda19ca00");
+            thread_all(function_a1ef346b(), &give_armor, #"armor_item_lv3_t9_sr");
             break;
         case #"hash_278d3011e8daefc9":
             var_cc6e64ae = getdvarint(#"hash_7255c78e5d6bfa33", -1);
@@ -880,7 +880,7 @@ function private function_42d3c9f5(params) {
             player setorigin(a_s_spawns[var_a75f9486].origin);
             player setplayerangles(a_s_spawns[var_a75f9486].angles);
         } else {
-            foreach (player in getplayers()) {
+            foreach (n_index, player in getplayers()) {
                 s_spawn = a_s_spawns[n_index];
                 if (isdefined(s_spawn)) {
                     player setorigin(s_spawn.origin);

@@ -1,0 +1,51 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#shotgun_semiauto_cb_cosplay_mtxitem",
+            "itemid": "31225047"
+        },
+        {
+            "var_4a4bc969": "#ar_slowfire_bp_ww_mtxitem",
+            "itemid": "19409495"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_raygun_mtxitem",
+            "itemid": "17801001"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s6_digital_ww_mtxitem",
+            "itemid": "19654657"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_ru_truck_transport_player_assembly_mpx_cosplay_mtxitem",
+            "itemid": "29618081"
+        },
+        {
+            "var_4a4bc969": "#vehiclehorn_alwaysrun_mtxitem",
+            "itemid": "22571881"
+        },
+        {
+            "var_4a4bc969": "#emblems_zombie_s6_animated_mtxitem",
+            "itemid": "25354665"
+        },
+        {
+            "var_4a4bc969": "#callingcards_zombie_s6_animated_mtxitem",
+            "itemid": "28406000"
+        },
+        {
+            "var_4a4bc969": "#paintjob_sticker_zombie_mastercraft_s6_mtxitem",
+            "itemid": "28905798"
+        }
+    ],
+    "itemname": "#hash_59df638215d47b61",
+    "var_375a1747": "#hash_5e7c6138ec69852f",
+    "name": "operator_bundle_6008_gallo_sa12_ray_gun_mtxbundle",
+    "var_a788fada": "#hash_70829e8f728fd390",
+    "var_22f91505": "#hash_1859deb5bc35ecef",
+    "var_566825be": "#hash_54b5df772280f51c",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_7c135b7fd91355ab",
+    "var_db3e02ab": 2000,
+    "itemid": "31425069"
+}

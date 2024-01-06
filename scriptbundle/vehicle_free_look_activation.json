@@ -1,0 +1,39 @@
+{
+    "option_dependencies": [
+        {
+            "var_1643d946": "0",
+            "var_6825bdb": "#pc_vehicle_control_mode",
+            "operator": "=="
+        }
+    ],
+    "options": [
+        {
+            "label": "#hash_2252beb4f258288a",
+            "value": "2"
+        },
+        {
+            "label": "#hash_36a751ff0e3ccabd",
+            "value": "1"
+        }
+    ],
+    "var_dfedf08e": 1,
+    "description": "#hash_a1f2c7c5c4540a9",
+    "var_60fcfffa": "#hash_446bd7e58c33df14",
+    "var_9bc3be7": 1,
+    "var_4ced19ab": 1,
+    "var_10e01ad5": 1,
+    "var_71620d66": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 0.1,
+    "maxvalue": 1,
+    "name": "vehicle_free_look_activation",
+    "displayname": "#hash_33c02d95131e5e77",
+    "var_500458ac": 10,
+    "var_926d1be9": 0.01,
+    "var_66faec87": 2,
+    "statname": "chase_cam_free_look_mode",
+    "var_6f00a61a": 1.1,
+    "var_d4e288e": 1,
+    "var_b7401319": "#hash_2b1913784275c2b1"
+}

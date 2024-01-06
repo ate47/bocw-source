@@ -1102,7 +1102,7 @@ function function_7c5bc025(name, section) {
             level thread namespace_9fc66ac::announce(60);
         }
         foreach (player in getplayers()) {
-            player giveachievement(#"hash_79b5e565395ad617");
+            player giveachievement(#"doa_achievement_escapewild");
             player thread namespace_7f5aeb59::function_bc1f5034(0);
         }
         wait(3.5);

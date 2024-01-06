@@ -161,7 +161,7 @@ function function_ca842288() {
     level flag::wait_till("start_zombie_round_logic");
     array::thread_all(getplayers(), &clientfield::set_to_player, "" + #"hash_216c75103f478671", 0);
     level flag::set("fl_challenges_active");
-    level.var_107cca82 thread scene::play(#"hash_2e65a0422ad34ba6", level.var_107cca82);
+    level.var_107cca82 thread scene::play(#"p9_fxanim_zm_gp_dac_bundle", level.var_107cca82);
     function_111530dd();
 }
 
@@ -627,7 +627,7 @@ function on_ai_killed(s_params) {
             }
         } else if (is_challenge_active(#"hash_62bc7c158375f1f2")) {
             if (!e_player playerads() && means_of_death !== "MOD_MELEE" && means_of_death !== "MOD_MELEE_WEAPON_BUTT" && means_of_death !== "MOD_CRUSH" && !isvehicle(s_params.einflictor)) {
-                if (weapon.name === #"hero_pineapplegun" || weapon.name === #"hash_5ceaf52285031501" || (weapon.inventorytype === #"dwlefthand" || weapon.inventorytype === #"primary" || weapon.inventorytype === #"altmode") && !killstreaks::is_killstreak_weapon(weapon)) {
+                if (weapon.name === #"hero_pineapplegun" || weapon.name === #"sig_bow_flame" || (weapon.inventorytype === #"dwlefthand" || weapon.inventorytype === #"primary" || weapon.inventorytype === #"altmode") && !killstreaks::is_killstreak_weapon(weapon)) {
                     e_player namespace_f999c142::function_53a333a8(#"hash_62bc7c158375f1f2", level.var_8b7ab859 * 0.01);
                 }
             }
@@ -636,7 +636,7 @@ function on_ai_killed(s_params) {
                 e_player namespace_f999c142::function_53a333a8(#"hash_5ab9ff1ebbf2de17", level.var_8b7ab859 * 0.02);
             }
         } else if (is_challenge_active(#"hash_4af69b7011fd4702")) {
-            if (e_player === level.var_2d471fab.owner || isdefined(e_player.origin) && isdefined(self.origin) && e_player.origin[2] > self.origin[2] + 50) {
+            if (e_player === level.chopper_gunner.owner || isdefined(e_player.origin) && isdefined(self.origin) && e_player.origin[2] > self.origin[2] + 50) {
                 e_player namespace_f999c142::function_53a333a8(#"hash_4af69b7011fd4702", level.var_8b7ab859 * 0.02);
             }
         } else if (is_challenge_active(#"hash_6c9f941878e99c63")) {
@@ -707,7 +707,7 @@ function private function_284f537c() {
 // Checksum 0xa431b7e0, Offset: 0x3ec0
 // Size: 0xe4
 function private function_cc254d94(params) {
-    if (is_challenge_active(#"hash_41722fe0656b9a5f") && (params.item.var_a6762160.itemtype === #"hash_910bf9605abbcea" || params.item.var_a6762160.itemtype === #"hash_3a094c949a87214d") && isplayer(params.player)) {
+    if (is_challenge_active(#"hash_41722fe0656b9a5f") && (params.item.var_a6762160.itemtype === #"survival_essence" || params.item.var_a6762160.itemtype === #"survival_scrap") && isplayer(params.player)) {
         params.player namespace_f999c142::function_53a333a8(#"hash_41722fe0656b9a5f", level.var_8b7ab859 * 0.1);
     }
 }
@@ -1915,7 +1915,7 @@ function function_28239d1e() {
         level notify(#"hash_32f12c135823837");
         level endon(#"hash_32f12c135823837", #"end_game", #"hash_345e9169ebba28fb");
         while (1) {
-            foreach (player in getplayers()) {
+            foreach (n_index, player in getplayers()) {
                 y_offset = n_index * 20;
                 debug2dtext((400, 300 + y_offset, 0), player.name + "<unknown string>" + (isdefined(player.n_tribute) ? player.n_tribute : 0) + "<unknown string>" + level.var_8b7ab859, undefined, undefined, undefined, 1);
             }

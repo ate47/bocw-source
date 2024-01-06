@@ -139,7 +139,7 @@ function init_teams() {
     if (!isdefined(level.teams)) {
         level.teams = [];
     }
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         spawnsystem.ispawn_teammask[team] = 1 << count;
         all = all & spawnsystem.ispawn_teammask[team];
         count++;
@@ -184,11 +184,11 @@ function onspawnplayer(predictedspawn = 0) {
         if (!spawnresurrect && !spawnoverride) {
             influencers::create_player_spawn_influencers(spawn.origin);
         }
-        if (namespace_1332002f::function_d072f205()) {
-            if (namespace_1332002f::function_61e7d9a8(self)) {
-                namespace_1332002f::function_4e197db9(self);
+        if (squad_spawn::function_d072f205()) {
+            if (squad_spawn::function_61e7d9a8(self)) {
+                squad_spawn::function_4e197db9(self);
             }
-            namespace_1332002f::function_bb63189b(self);
+            squad_spawn::function_bb63189b(self);
         }
     }
     return spawn;
@@ -223,8 +223,8 @@ function function_89116a1e(predictedspawn) {
     if (usestartspawns()) {
         spawn = self function_f53e594f();
     }
-    if (namespace_1332002f::function_403f2d91(self)) {
-        spawn = namespace_1332002f::getspawnpoint(self);
+    if (squad_spawn::function_403f2d91(self)) {
+        spawn = squad_spawn::getspawnpoint(self);
     }
     if (!isdefined(spawn)) {
         spawn = function_99ca1277(self, predictedspawn);

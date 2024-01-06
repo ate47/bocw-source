@@ -18,7 +18,7 @@
 // Checksum 0x3df22b96, Offset: 0x2c8
 // Size: 0x22c
 function private event_handler[createstruct] function_e0a8e4ba(struct) {
-    foreach (k in [0:"script_crashpath_scene"]) {
+    foreach (var_74ab9700, k in [0:"script_crashpath_scene"]) {
         if (!isdefined(level.var_41204f29)) {
             level.var_41204f29 = [];
         } else if (!isarray(level.var_41204f29)) {

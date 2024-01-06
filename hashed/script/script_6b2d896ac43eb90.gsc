@@ -64,7 +64,7 @@ function function_67dce9cd(var_beee4994) {
 // Size: 0x34c
 function function_e28ce6d9(struct) {
     var_6afa034c = namespace_8b6a9d79::function_f3d93ee9(struct, #"hash_31be7c895b8fbf9b", 1);
-    var_6afa034c thread scene::play(#"hash_6882ad84073eaa8d", var_6afa034c);
+    var_6afa034c thread scene::play(#"p9_fxanim_sv_tesla_tower_clean_bundle", var_6afa034c);
     var_6afa034c.var_c7f10fc1.var_6afa034c = 1;
     var_6afa034c hidepart("screen_portal_jnt");
     var_6afa034c hidepart("screen_exfil_jnt");
@@ -218,8 +218,8 @@ function function_7b3dca17(s_spawn) {
 // Size: 0x6c
 function function_2f7447a7(var_6afa034c) {
     var_6afa034c thread function_22aada64();
-    var_6afa034c scene::stop(#"hash_6882ad84073eaa8d");
-    var_6afa034c scene::play(#"hash_6882ad84073eaa8d", "Shot 2", var_6afa034c);
+    var_6afa034c scene::stop(#"p9_fxanim_sv_tesla_tower_clean_bundle");
+    var_6afa034c scene::play(#"p9_fxanim_sv_tesla_tower_clean_bundle", "Shot 2", var_6afa034c);
 }
 
 // Namespace namespace_dbb31ff3/namespace_dbb31ff3
@@ -246,7 +246,7 @@ function warp(var_6afa034c) {
     var_6afa034c showpart("screen_portal_jnt");
     foreach (player in getplayers()) {
         player zm_stats::function_945c7ce2(#"hash_1a5bd2708defa02b", 1);
-        player namespace_2d471fab::function_24fbd61e();
+        player chopper_gunner::function_24fbd61e();
         player clientfield::increment_to_player("" + #"hash_5616eb8cc6b9c498", 1);
     }
     destination = level.var_7d45d0d4.var_d60029a6[level.var_7d45d0d4.var_46849b1b];
@@ -426,7 +426,7 @@ function destroy_beacon(var_6afa034c, var_fcfc4edd = 10, var_495727a3) {
     var_668819de = axistoangles(anglestoright(v_tag_angles), anglestoforward(v_tag_angles));
     bomb = util::spawn_model(#"hash_397d38a359aae4e6", var_f6aedcc6, var_668819de);
     bomb linkto(var_6afa034c, var_62157006);
-    level scene::function_27f5972e(#"hash_7e592c9a3df1e17e");
+    level scene::function_27f5972e(#"p9_fxanim_sv_tesla_tower_dmg_bundle");
     timer = int(var_fcfc4edd);
     var_82edff1 = 0;
     while (timer) {
@@ -456,8 +456,8 @@ function destroy_beacon(var_6afa034c, var_fcfc4edd = 10, var_495727a3) {
     bomb delete();
     var_6afa034c zm_blockers::function_c1342dc1();
     var_6afa034c setmodel(#"hash_56de86439bdb98e2");
-    var_6afa034c scene::stop(#"hash_6882ad84073eaa8d");
-    var_6afa034c thread scene::play(#"hash_7e592c9a3df1e17e", var_6afa034c);
+    var_6afa034c scene::stop(#"p9_fxanim_sv_tesla_tower_clean_bundle");
+    var_6afa034c thread scene::play(#"p9_fxanim_sv_tesla_tower_dmg_bundle", var_6afa034c);
     if (isdefined(var_495727a3)) {
         var_495727a3 notify(#"hash_5000b502c39b09a3", {#var_6afa034c:var_6afa034c});
     }
@@ -465,7 +465,7 @@ function destroy_beacon(var_6afa034c, var_fcfc4edd = 10, var_495727a3) {
         zm_utility::function_bc5a54a8(var_6afa034c.objectiveid);
         var_6afa034c.objectiveid = undefined;
     }
-    level util::delay(2, "end_game", &scene::function_f81475ae, #"hash_7e592c9a3df1e17e");
+    level util::delay(2, "end_game", &scene::function_f81475ae, #"p9_fxanim_sv_tesla_tower_dmg_bundle");
 }
 
 // Namespace namespace_dbb31ff3/namespace_dbb31ff3
@@ -489,8 +489,8 @@ function function_22aada64() {
         s_result = self waittill(#"damage");
         n_damage = n_damage + s_result.amount;
         if (n_damage > n_threshold && isdefined(self)) {
-            self scene::stop(#"hash_6882ad84073eaa8d");
-            self thread scene::play(#"hash_7e592c9a3df1e17e", self);
+            self scene::stop(#"p9_fxanim_sv_tesla_tower_clean_bundle");
+            self thread scene::play(#"p9_fxanim_sv_tesla_tower_dmg_bundle", self);
             playsoundatposition(#"hash_5b0e17f7fb286ba9", self.origin);
             playfxontag(#"hash_56a294b510faabf7", self, "tag_origin");
             playfxontag(#"hash_15925475df9c7da7", self, "ball_jnt");

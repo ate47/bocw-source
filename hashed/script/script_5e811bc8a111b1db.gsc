@@ -55,7 +55,7 @@ function init() {
         level.var_77143112 = [];
         if (isdefined(level.var_d4c0ef1a)) {
             foreach (zone in level.var_d4c0ef1a) {
-                if (level.var_8de4d059 === #"hash_17289df276bb87d6" && zone.script_index === 1) {
+                if (level.var_8de4d059 === #"mp_cartel" && zone.script_index === 1) {
                     continue;
                 }
                 if (!isdefined(level.var_77143112)) {

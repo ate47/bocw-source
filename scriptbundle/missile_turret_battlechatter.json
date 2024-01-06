@@ -1,0 +1,12 @@
+{
+    "destroyedalias": "eq_missile_trrt_dstr",
+    "var_922067c4": "scriptbundle",
+    "var_9715d1af": 1,
+    "type": "battlechatter",
+    "vmtype": "both",
+    "usealias": "eq_missile_trrt_use",
+    "name": "missile_turret_battlechatter",
+    "var_fd232d7e": 1,
+    "var_ff5e0d8e": "eq_missile_trrt_threat",
+    "var_382f662": 1
+}

@@ -1,0 +1,36 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#special_crossbow_bp_diynot_mtxitem",
+            "itemid": "18120906"
+        },
+        {
+            "var_4a4bc969": "#c_t9_rus_pl_kgb_punk_mtxitem",
+            "itemid": "31726688"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_rus_kgb_mtxitem",
+            "itemid": "29488041"
+        },
+        {
+            "var_4a4bc969": "#emblems_bowhunter_03_mtxitem",
+            "itemid": "28686591"
+        },
+        {
+            "var_4a4bc969": "#execution_130_mtxitem",
+            "itemid": "28165470"
+        }
+    ],
+    "itemname": "#hash_6a3faf00d6df170b",
+    "var_375a1747": "#hash_49b0b87cd60fa39",
+    "var_579fd6c3": 26,
+    "name": "bundle_operator_2076_kgb_bullseye_mtxbundle",
+    "var_a788fada": "#hash_43d81a073357d316",
+    "var_22f91505": "#hash_cbb0ad40bfca61e",
+    "var_566825be": "#hash_51ab58e673c2b922",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_22957f0b97333d2",
+    "var_db3e02ab": 2000,
+    "itemid": "24013580"
+}

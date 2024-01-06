@@ -75,7 +75,7 @@ function function_500047aa(view) {
 // Size: 0x44
 function function_363802ea(*players, *attacker) {
     self function_86df9236();
-    self namespace_1332002f::function_e2ec8e07(1);
+    self squad_spawn::function_e2ec8e07(1);
 }
 
 // Namespace namespace_8a203916/namespace_8a203916
@@ -84,7 +84,7 @@ function function_363802ea(*players, *attacker) {
 // Size: 0x2c
 function function_86df9236() {
     self.var_8a203916 = 1;
-    self namespace_1332002f::function_a0bd2fd6(1);
+    self squad_spawn::function_a0bd2fd6(1);
 }
 
 // Namespace namespace_8a203916/namespace_8a203916
@@ -93,6 +93,6 @@ function function_86df9236() {
 // Size: 0x24
 function function_888901cb() {
     self.var_8a203916 = 0;
-    self namespace_1332002f::function_a0bd2fd6(0);
+    self squad_spawn::function_a0bd2fd6(0);
 }
 

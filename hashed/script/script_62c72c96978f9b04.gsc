@@ -41,8 +41,8 @@ function private function_5700f119() {
 // Size: 0x10c
 function function_595556d0(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self endon(#"death");
-    forcestreamxmodel(#"hash_4ba274dbca0d6fd4");
-    forcestreamxmodel(#"hash_1d76083752295368");
+    forcestreamxmodel(#"p9_fxp_zm_teleport_tunnel");
+    forcestreamxmodel(#"p9_fxp_zm_teleport_tunnel_edge");
     function_3385d776(#"hash_2f112a3ab3cf120a");
     self.var_915bbac = 1;
     playsound(bwastimejump, #"hash_df74ba2c210beef", (0, 0, 0));
@@ -55,8 +55,8 @@ function function_595556d0(localclientnum, *oldval, *newval, *bnewent, *binitial
 // Checksum 0x8a26f792, Offset: 0x328
 // Size: 0x9c
 function function_cc5db8e3(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    stopforcestreamingxmodel(#"hash_4ba274dbca0d6fd4");
-    stopforcestreamingxmodel(#"hash_1d76083752295368");
+    stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel");
+    stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel_edge");
     function_c22a1ca2(#"hash_2f112a3ab3cf120a");
 }
 

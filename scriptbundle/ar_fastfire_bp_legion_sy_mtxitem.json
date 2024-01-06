@@ -1,0 +1,22 @@
+{
+    "var_941096a8": [
+        {
+            "var_386af035": "#sony_psplus_season_03_mtxentitlement"
+        }
+    ],
+    "itemname": "#hash_a43db42962332a8",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_64e94785c99b3519",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 3,
+    "var_46300498": 1,
+    "baseweapon": "#hash_44214d17f349989d",
+    "name": "ar_fastfire_bp_legion_sy_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 3,
+    "itemid": "24235961",
+    "blueprint": "#hash_a43db42962332a8"
+}

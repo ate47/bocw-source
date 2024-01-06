@@ -1,0 +1,35 @@
+{
+    "option_dependencies": [
+        {
+            "var_1643d946": "1",
+            "var_6825bdb": "#pc_pushtotalk",
+            "operator": "=="
+        },
+        {
+            "var_1643d946": "1",
+            "var_6825bdb": "#voice_chat_enable",
+            "operator": "=="
+        }
+    ],
+    "description": "#hash_496bc26497db49f8",
+    "var_60fcfffa": "#menu/off",
+    "var_9bc3be7": 1,
+    "var_4ced19ab": 1,
+    "var_10e01ad5": 1,
+    "var_71620d66": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "maxvalue": 1,
+    "name": "pc_voice_chat_activation_treshold",
+    "displayname": "#hash_7392f329e99c6ed0",
+    "var_d6897f56": 1,
+    "var_500458ac": 10,
+    "var_66faec87": 100,
+    "statname": "voice_input_threshold",
+    "var_6f00a61a": 1.1,
+    "var_a89ae821": 1,
+    "var_624e2965": 1,
+    "var_d4e288e": 30,
+    "var_b7401319": "#menu/off"
+}

@@ -1,0 +1,16 @@
+{
+    "var_922067c4": "scriptbundle",
+    "value2": "1",
+    "var_6006e991": "2",
+    "var_43883094": "0",
+    "var_dfed6968": "3",
+    "type": "gamesettings",
+    "name": "zm_private_match_type",
+    "displayname": "#hash_30cde207f102cded",
+    "var_684ccd4c": "#hash_1f0968aad9d63087",
+    "var_9600a8ab": "#menu/solo",
+    "var_71b6e020": "#hash_19680cd9d03c2a1c",
+    "var_bd2ff709": "#hash_dc308eed3c91279",
+    "var_9de86f42": 2,
+    "setting": "zmPrivateMatchType"
+}

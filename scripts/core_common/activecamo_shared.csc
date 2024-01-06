@@ -129,7 +129,7 @@ function private function_130e0542(localclientnum, weapon, camoindex) {
     if (isdefined(activecamo)) {
         if (isdefined(activecamo.var_13949c61.stages)) {
             var_f8bf269c = 0;
-            foreach (stage in activecamo.var_13949c61.stages) {
+            foreach (key, stage in activecamo.var_13949c61.stages) {
                 if (isdefined(stage.var_d2eac588)) {
                     camo_stat = stats::get_stat_global(localclientnum, stage.var_d2eac588);
                     jumpiffalse(isdefined(camo_stat) && camo_stat >= stage.var_e2dbd42d) LOC_00000164;
@@ -279,7 +279,7 @@ function private function_3e27a7cb(localclientnum, tagname) {
 // Checksum 0x235d93a0, Offset: 0x1118
 // Size: 0x140
 function private function_a946fb86(activecamo, stagenum, var_d1460f46) {
-    foreach (stage in activecamo.var_13949c61.stages) {
+    foreach (key, stage in activecamo.var_13949c61.stages) {
         if (key > stagenum) {
             break;
         }
@@ -404,7 +404,7 @@ function private function_8a6ced15(var_f4eb4a50, forceupdate) {
                 var_13949c61.stages.var_13949c61 = [];
             }
             var_d3daabe = 0;
-            foreach (var_3594168e in var_f4eb4a50.stages) {
+            foreach (key, var_3594168e in var_f4eb4a50.stages) {
                 if (is_true(var_3594168e.disabled)) {
                     var_d3daabe++;
                 } else {
@@ -545,7 +545,7 @@ function function_e40c785a(localclientnum) {
         if (isdefined(var_f4eb4a50)) {
             if (isdefined(var_f4eb4a50.stages)) {
                 init_stage = 0;
-                foreach (var_3594168e in var_f4eb4a50.stages) {
+                foreach (key, var_3594168e in var_f4eb4a50.stages) {
                     if (isdefined(var_3594168e.var_d2eac588)) {
                         continue;
                     }

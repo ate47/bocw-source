@@ -1,0 +1,70 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_772132b08362da22",
+            "var_f35c5951": 1.5,
+            "var_5d4b5964": 5.89,
+            "var_36bf8e05": "#hash_48466b5fdff2b525"
+        },
+        {
+            "var_46bd7973": "#hash_772133b08362dbd5",
+            "var_f35c5951": 1.5,
+            "var_5d4b5964": 9.81,
+            "var_36bf8e05": "#hash_7b1ea2f85f3e6114"
+        },
+        {
+            "var_46bd7973": "#hash_772130b08362d6bc",
+            "var_f35c5951": 1.5,
+            "var_5d4b5964": 11.39,
+            "var_36bf8e05": "#hash_46beaa474861795b"
+        },
+        {
+            "var_46bd7973": "#hash_772131b08362d86f",
+            "var_f35c5951": 1.5,
+            "var_5d4b5964": 8.5,
+            "var_36bf8e05": "#hash_63203bac5707b3f2"
+        },
+        {
+            "var_46bd7973": "#hash_77212eb08362d356",
+            "var_f35c5951": 1.5,
+            "var_5d4b5964": 1.17,
+            "var_36bf8e05": "#hash_321925a7da670d21"
+        },
+        {
+            "var_46bd7973": "#hash_77212fb08362d509",
+            "var_f35c5951": 1.5,
+            "var_5d4b5964": 7.66,
+            "var_36bf8e05": "#hash_61b07124c790a4d0"
+        },
+        {
+            "var_46bd7973": "#hash_77212cb08362cff0",
+            "var_f35c5951": 1.5,
+            "var_5d4b5964": 6.55,
+            "var_36bf8e05": "#hash_703380a105274817"
+        },
+        {
+            "var_46bd7973": "#hash_77212db08362d1a3",
+            "var_f35c5951": 1.5,
+            "var_5d4b5964": 1.41,
+            "var_36bf8e05": "#hash_3c70bdfa8db5cc9e"
+        }
+    ],
+    "description": "#hash_52dedc89243e9ef2",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#radio",
+    "model": "#hash_4fe193b7484608f8",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_10f65ca45f134f57",
+    "type": "zmintel",
+    "season": 2,
+    "var_ad4ad686": "#omega",
+    "soundloop": "#hash_5db0167d85d70c82",
+    "name": "zmintel_gold_omega_radio_5",
+    "var_9be0526e": "#hash_20ea75a25d912949",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "var_348b91fd": "#radio",
+    "title": "#hash_48b3995e4bbeb722",
+    "var_3bb3493d": "#hash_d00b382b5a92329",
+    "mapname": "#zm_gold"
+}

@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#operator_bundle_6031_baker_special_op_6_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_eb03ff4f1b97759",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_19a5ebf6c6558b1f",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 6,
+    "var_46300498": 1,
+    "baseweapon": "#ar_slowfire_t9",
+    "name": "ar_slowfire_bp_donnie_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "20650822",
+    "blueprint": "#hash_eb03ff4f1b97759"
+}

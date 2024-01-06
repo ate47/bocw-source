@@ -208,7 +208,7 @@ function match_end() {
                     if (var_74386ffc == -1) {
                         var_23491496 = getscriptbundle(#"arena_league_play_skill_divisions_default");
                         if (isdefined(var_876fccfb) && isdefined(var_23491496)) {
-                            foreach (var_b5ddbfd7 in var_23491496.skilldivisiontierlist) {
+                            foreach (var_3bb20037, var_b5ddbfd7 in var_23491496.skilldivisiontierlist) {
                                 if (var_876fccfb < var_b5ddbfd7.var_7197b13a) {
                                     var_74386ffc = var_3bb20037;
                                     break;

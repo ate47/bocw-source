@@ -35,7 +35,7 @@ function private autoexec __init__system__() {
 // Size: 0x256
 function function_70a657d8() {
     profilestart();
-    if (!isarchetypeloaded(#"hash_be2e962be17d10e")) {
+    if (!isarchetypeloaded(#"mimic")) {
         profilestop();
         return;
     }
@@ -49,8 +49,8 @@ function function_70a657d8() {
     clientfield::register("actor", "mimic_death_gib_fx", 1, 1, "int");
     clientfield::register("toplayer", "mimic_bite_hit", 16000, 1, "counter");
     registerbehaviorscriptfunctions();
-    spawner::add_archetype_spawn_function(#"hash_be2e962be17d10e", &function_9e93acd1);
-    namespace_be0f9d50::init();
+    spawner::add_archetype_spawn_function(#"mimic", &function_9e93acd1);
+    mimic_prop_spawn::init();
     /#
         thread function_b2616fd7();
     #/
@@ -111,7 +111,7 @@ function function_6a99dcd1(*params) {
 // Size: 0x3c
 function function_33960526(*params) {
     self notsolid();
-    namespace_be0f9d50::function_8c7b02b0(self);
+    mimic_prop_spawn::function_8c7b02b0(self);
 }
 
 // Namespace archetype_mimic/archetype_mimic
@@ -218,7 +218,7 @@ function registerbehaviorscriptfunctions() {
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_234bec6511a23130", &function_8177d507);
     animationstatenetwork::registernotetrackhandlerfunction("mimic_bite", &function_20d2827d);
     animationstatenetwork::registernotetrackhandlerfunction("mimic_death_hide", &function_5c840d7b);
-    animationstatenetwork::registernotetrackhandlerfunction("mimic_death_head_explosion", &function_2d4df50a);
+    animationstatenetwork::registernotetrackhandlerfunction("mimic_death_head_explosion", &mimic_death_head_explosion);
 }
 
 // Namespace archetype_mimic/archetype_mimic
@@ -341,7 +341,7 @@ function function_ce7cc822(entity) {
 // Checksum 0x2ef855c1, Offset: 0x1bf8
 // Size: 0x6e
 function function_1cd29506(entity) {
-    return !is_true(entity.var_43c4bc66) && is_true(entity.should_hide) && (isdefined(entity.var_a6fe91fd) || namespace_be0f9d50::function_1541ff3a());
+    return !is_true(entity.var_43c4bc66) && is_true(entity.should_hide) && (isdefined(entity.var_a6fe91fd) || mimic_prop_spawn::function_1541ff3a());
 }
 
 // Namespace archetype_mimic/archetype_mimic
@@ -351,7 +351,7 @@ function function_1cd29506(entity) {
 function function_b773e233(entity) {
     result = 0;
     if (!isdefined(entity.var_a6fe91fd) || !entity.var_a6fe91fd.size) {
-        result = namespace_be0f9d50::function_861757a2(entity);
+        result = mimic_prop_spawn::function_861757a2(entity);
     }
     /#
         if (is_true(level.var_bce8fb65)) {
@@ -370,7 +370,7 @@ function function_b773e233(entity) {
 // Checksum 0x5e4bda9c, Offset: 0x1dc8
 // Size: 0x24
 function function_3336041e(entity) {
-    namespace_be0f9d50::function_8c7b02b0(entity);
+    mimic_prop_spawn::function_8c7b02b0(entity);
 }
 
 // Namespace archetype_mimic/archetype_mimic
@@ -400,20 +400,20 @@ function function_5fa4b25d(entity) {
     var_98b1552 = !isdefined(var_1386d828);
     if (isdefined(var_1386d828.spawn_loc.var_da70348d)) {
         var_98b1552 = 1;
-        level thread namespace_be0f9d50::function_175bb809(var_1386d828);
+        level thread mimic_prop_spawn::function_175bb809(var_1386d828);
         arrayremovevalue(entity.var_a6fe91fd, var_1386d828);
         entity.var_1386d828 = undefined;
     }
     var_9b487a9b = randomintrangeinclusive(3, 5);
-    if (var_98b1552 && namespace_be0f9d50::function_1541ff3a(1, entity)) {
-        namespace_be0f9d50::function_51012821(entity.origin, entity, undefined, var_9b487a9b);
+    if (var_98b1552 && mimic_prop_spawn::function_1541ff3a(1, entity)) {
+        mimic_prop_spawn::function_51012821(entity.origin, entity, undefined, var_9b487a9b);
         entity.should_hide.entity = 0;
         return;
     }
     if (isdefined(var_1386d828)) {
         var_1386d828.origin.var_1386d828 = entity.origin;
     }
-    namespace_be0f9d50::function_913ecbbc(props, entity, var_1386d828, entity.origin);
+    mimic_prop_spawn::function_913ecbbc(props, entity, var_1386d828, entity.origin);
     entity.should_hide.entity = 0;
 }
 
@@ -639,7 +639,7 @@ function function_d291b5a9(player, var_1b024168, var_52a75904, var_191562de) {
 // Params 4, eflags: 0x4
 // Checksum 0x11366088, Offset: 0x3048
 // Size: 0x30c
-function private function_224f342a(var_191562de, var_867664c5, origin, angles) {
+function private function_224f342a(var_191562de, mimic, origin, angles) {
     self endon(#"death", #"disconnect");
     level endon(#"game_ended");
     if (!isalive(self)) {
@@ -650,8 +650,8 @@ function private function_224f342a(var_191562de, var_867664c5, origin, angles) {
     callback::callback(#"hash_3065435e3005a796", {#player:player});
     player val::set(#"hash_43ae43be63a51874", "ignoreme", 1);
     player clientfield::set_to_player("mimic_grab_hit", 1);
-    player.var_7342424d = var_867664c5;
-    var_867664c5.var_d6c08ac = player;
+    player.var_7342424d = mimic;
+    mimic.var_d6c08ac = player;
     player animscripted(var_191562de, origin, angles, var_191562de, "normal", undefined, 1, 0.2, 0.3, 0, 1, 1, undefined, 0, "linear", 0);
     var_9d3ee67e = getanimlength(var_191562de);
     player waittillmatchtimeout(var_9d3ee67e, {#notetrack:"end"}, var_191562de);
@@ -660,8 +660,8 @@ function private function_224f342a(var_191562de, var_867664c5, origin, angles) {
     }
     if (isdefined(player)) {
         callback::callback(#"hash_2745091e63972f13", {#player:player});
-        if (isdefined(var_867664c5)) {
-            var_867664c5.var_d6c08ac = undefined;
+        if (isdefined(mimic)) {
+            mimic.var_d6c08ac = undefined;
             to_player = player.origin - origin;
             player applyknockback(200, (to_player[0], to_player[1], 10));
         }
@@ -802,7 +802,7 @@ function function_5c840d7b(entity) {
 // Params 1, eflags: 0x0
 // Checksum 0xc0af0f8e, Offset: 0x3c40
 // Size: 0xa4
-function function_2d4df50a(entity) {
+function mimic_death_head_explosion(entity) {
     if (entity haspart("j_head", "c_t9_zmb_mimic_head") && !entity isattached(#"hash_25e5543fd258a1a6")) {
         entity hidepart("j_head", "c_t9_zmb_mimic_head", 1);
         entity attach(#"hash_25e5543fd258a1a6");
@@ -983,7 +983,7 @@ function function_c5a69992(__index) {
         level endon(#"game_ended");
         spawn_points = get_array("<unknown string>", "<unknown string>");
         var_7eb6668 = [];
-        foreach (point in spawn_points) {
+        foreach (index, point in spawn_points) {
             if (isdefined(point.scriptbundlename) && !isinarray(var_7eb6668, point.scriptbundlename)) {
                 var_7eb6668[var_7eb6668.size] = point.scriptbundlename;
             }
@@ -991,7 +991,7 @@ function function_c5a69992(__index) {
                 waitframe(1);
             }
         }
-        foreach (name in var_7eb6668) {
+        foreach (name_index, name in var_7eb6668) {
             add_debug_command("<unknown string>" + __index + "<unknown string>" + function_9e72a96(name) + "<unknown string>" + name_index + "<unknown string>" + function_9e72a96(name) + "<unknown string>");
         }
     #/
@@ -1131,9 +1131,9 @@ function function_d312cd2c() {
         self notify("<unknown string>");
         self endon("<unknown string>");
         trace = function_ea10da3f();
-        var_867664c5 = spawnactor("<unknown string>", trace[#"position"], vectortoangles(getplayers()[0].origin - trace[#"position"]));
-        if (isdefined(var_867664c5)) {
-            var_867664c5.var_43c4bc66.var_867664c5 = 1;
+        mimic = spawnactor("<unknown string>", trace[#"position"], vectortoangles(getplayers()[0].origin - trace[#"position"]));
+        if (isdefined(mimic)) {
+            mimic.var_43c4bc66.mimic = 1;
         }
     #/
 }

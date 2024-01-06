@@ -1,0 +1,41 @@
+{
+    "var_616a2f60": [
+        {
+            "mip": 1,
+            "lod": 4,
+            "type": "#xmodel",
+            "asset": "#hash_452e57b67a2113ec"
+        },
+        {
+            "mip": 1,
+            "lod": 4,
+            "type": "#xmodel",
+            "asset": "#hash_6d0bd768b016a2b9"
+        },
+        {
+            "mip": 3,
+            "lod": 4,
+            "type": "#xmodel",
+            "asset": "#hash_451cbf7921ad44ef"
+        },
+        {
+            "mip": 1,
+            "lod": 4,
+            "type": "#xmodel",
+            "asset": "#hash_1cabd5926797f360"
+        },
+        {
+            "mip": 1,
+            "lod": 4,
+            "type": "#xmodel",
+            "asset": "#hash_321adc0bcdfe312e"
+        },
+        {
+            "mip": 1,
+            "lod": 4,
+            "type": "#xmodel",
+            "asset": "#hash_5ac2a5f288428ecd"
+        }
+    ],
+    "name": "zm_silver_force_streamed_model_list"
+}

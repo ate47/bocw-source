@@ -1,0 +1,60 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#sniper_quickscope_bp_manguish_mtxitem",
+            "itemid": "27590301"
+        },
+        {
+            "var_4a4bc969": "#loot_shotgun_fullauto_bp_wanker_mtxitem",
+            "itemid": "26687206"
+        },
+        {
+            "var_4a4bc969": "#c_t9_rus_pl_kgb_ghost_mtxitem",
+            "itemid": "22232855"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_rus_kgb_mtxitem",
+            "itemid": "29488041"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_spikey_heart_mtxitem",
+            "itemid": "19851382"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s2_analog_mortal_mtxitem",
+            "itemid": "30541399"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_fav_light_mpx_mortal_anguish_mtxitem",
+            "itemid": "22041185"
+        },
+        {
+            "var_4a4bc969": "#vehiclehorn_hellscream_mtxitem",
+            "itemid": "33078391"
+        },
+        {
+            "var_4a4bc969": "#callingcards_hellscream_animated_mtxitem",
+            "itemid": "21387145"
+        },
+        {
+            "var_4a4bc969": "#emblems_hellscream_animated_mtxitem",
+            "itemid": "19945939"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_hellscream_00_mtxitem",
+            "itemid": "28053538"
+        }
+    ],
+    "itemname": "#hash_2d7b7f6d642080d2",
+    "var_375a1747": "#hash_6e23d324acbe2f10",
+    "var_579fd6c3": 54,
+    "name": "bundle_mastercraft_2072_sniper_quickscope_demonic_mtxbundle",
+    "var_a788fada": "#hash_60d8424be91fee57",
+    "var_22f91505": "#hash_11e96243d948457a",
+    "var_566825be": "#hash_620739e262b579ef",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_19445e5111fa9476",
+    "var_db3e02ab": 2000,
+    "itemid": "33438969"
+}

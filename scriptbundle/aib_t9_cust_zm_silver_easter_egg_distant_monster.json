@@ -1,0 +1,28 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_6e97429d2afe34f3",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "walk"
+                }
+            ],
+            "model": "#hash_8008e36815b9bc9",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "prop 1"
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "aib_t9_cust_zm_silver_easter_egg_distant_monster",
+    "dontsync": 1,
+    "team": "any"
+}

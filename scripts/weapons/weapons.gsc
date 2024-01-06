@@ -392,7 +392,7 @@ function update_timings(newtime) {
                     perksindexarray[perk] = 1;
                 }
             }
-            foreach (v in perksindexarray) {
+            foreach (k, v in perksindexarray) {
                 if (v == 1 && k >= 0) {
                     self stats::inc_stat(#"itemstats", k, #"stats", #"timeused", #"statvalue", totaltime);
                 }

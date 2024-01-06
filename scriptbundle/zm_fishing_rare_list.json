@@ -1,0 +1,29 @@
+{
+    "itemlist": [
+        {
+            "minweight": 1,
+            "var_a6762160": "#armor_item_lv1_t9_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#scrap_rare_item_sr",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#zm_equipment_list",
+            "maxweight": 1,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "zm_fishing_rare_list",
+    "var_fde72c94": 100
+}

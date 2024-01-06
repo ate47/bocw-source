@@ -154,7 +154,7 @@ function private event_handler[gadget_on] function_7d697841(eventstruct) {
 // Checksum 0x3103c0e, Offset: 0x938
 // Size: 0x154
 function private function_845e1139() {
-    self endoncallback(&function_c2b5717d, #"death", #"hash_30a66833627c3e93");
+    self endoncallback(&function_c2b5717d, #"death", #"resupply");
     self clientfield::set_player_uimodel("hudItems.ammoCooldowns.equipment.tactical", 0);
     success = self function_e5f5216f("hudItems.ammoCooldowns.equipment.tactical");
     if (is_true(success)) {
@@ -174,7 +174,7 @@ function private function_845e1139() {
 // Checksum 0x70410fbb, Offset: 0xa98
 // Size: 0x266
 function private function_78976b52() {
-    self endoncallback(&function_4ed3bc25, #"death", #"hash_30a66833627c3e93");
+    self endoncallback(&function_4ed3bc25, #"death", #"resupply");
     offhandslot = self.var_7cedc725[0].slot;
     weapon = self.var_7cedc725[0].weapon;
     var_2b9b7c0f = offhandslot == "Lethal grenade" ? "hudItems.ammoCooldowns.equipment.lethal" : "hudItems.ammoCooldowns.equipment.tactical";

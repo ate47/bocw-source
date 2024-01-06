@@ -1,0 +1,39 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_ger_pl_west_paratrooper_mtxitem",
+            "itemid": "31056274"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_ger_west_mtxitem",
+            "itemid": "31131649"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s2_digital_mini_map_mtxitem",
+            "itemid": "22859990"
+        },
+        {
+            "var_4a4bc969": "#reticle_68_mtxitem",
+            "itemid": "30813277"
+        },
+        {
+            "var_4a4bc969": "#emblems_paratrooper_mtxitem",
+            "itemid": "24858516"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_ru_truck_light_mpx_paratrooper_mtxitem",
+            "itemid": "18837547"
+        }
+    ],
+    "itemname": "#hash_6bd6b84dcdf834e",
+    "var_375a1747": "#hash_71164f38cf40ab84",
+    "name": "bundle_operator_2056_ingo_expeditionary_mtxbundle",
+    "var_a788fada": "#hash_49948e7f68cb27",
+    "var_22f91505": "#hash_42eb692ea3e58438",
+    "var_566825be": "#hash_419d3bd7b66f596f",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_66436949ef5e4800",
+    "var_db3e02ab": 2000,
+    "itemid": "18072310"
+}

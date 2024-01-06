@@ -138,7 +138,7 @@ function function_aee99628(player) {
             }
             waitframe(1);
         }
-        self waittill(#"hash_7941e2c58e095ad8");
+        self waittill(#"mule_kick_fire");
     }
 }
 

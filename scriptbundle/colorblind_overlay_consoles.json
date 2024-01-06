@@ -1,0 +1,39 @@
+{
+    "options": [
+        {
+            "label": "#hash_94eb0e3329edf5f",
+            "value": "0"
+        },
+        {
+            "label": "#hash_1b6bc5ccab0bdee1",
+            "value": "1"
+        },
+        {
+            "label": "#hash_5c699d4cbbfef34d",
+            "value": "2"
+        },
+        {
+            "label": "#hash_4d464ae076b53d33",
+            "value": "3"
+        }
+    ],
+    "var_d260763": "#hash_445d9863c4baeb98",
+    "description": "#hash_50ad421f03fd4095",
+    "var_60fcfffa": "#menu/on",
+    "var_9bc3be7": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_8722393c": 1,
+    "var_e0274350": 1,
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "maxvalue": 1,
+    "name": "colorblind_overlay_consoles",
+    "displayname": "#hash_3a94e6177f896e03",
+    "var_500458ac": 10,
+    "var_b56e8776": "#startmenu_options_graphics_colorblind",
+    "var_66faec87": 10,
+    "statname": "colorblindOverlay",
+    "var_6f00a61a": 1.1,
+    "var_b7401319": "#menu/off"
+}

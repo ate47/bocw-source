@@ -1,0 +1,56 @@
+{
+    "var_bb7dcd09": [
+        {
+            "type": "#none",
+            "image": "#hash_115d8a7b217f2cce",
+            "var_e5119d1b": "#hash_29b2887ccdb289e",
+            "displayname": "#challenge/career",
+            "var_1a50db25": "#hash_5e7e1736f89fd8c5",
+            "var_a4f2dd9e": "#none",
+            "var_4e4109db": "#challenges_career_zm",
+            "var_e1c44b36": "#hash_4e5ebb949ff0cdad"
+        },
+        {
+            "type": "#none",
+            "image": "#hash_701c2e470777b1b1",
+            "var_e5119d1b": "#hash_1cfe26f76ead4b75",
+            "displayname": "#hash_26a53e7ac5368811",
+            "var_1a50db25": "#hash_5e7e1736f89fd8c5",
+            "var_a4f2dd9e": "#none",
+            "var_4e4109db": "#challenges_battle_hardened_zm",
+            "var_e1c44b36": "#hash_4e5ebb949ff0cdad"
+        },
+        {
+            "type": "#hash_798212a6fd4ab166",
+            "image": "#hash_2c92d3847d79b859",
+            "var_e5119d1b": "#hash_4d29cb0d7d1af6fd",
+            "displayname": "#hash_59993614a753316a",
+            "var_1a50db25": "#hash_5e7e1736f89fd8c5",
+            "var_a4f2dd9e": "#none",
+            "var_4e4109db": "#challenges_seasons_zm",
+            "var_e1c44b36": "#hash_4e5ebb949ff0cdad"
+        },
+        {
+            "type": "#hash_798212a6fd4ab166",
+            "image": "#hash_1d103f1bce12eb6c",
+            "var_e5119d1b": "#hash_3341babf8fbca1b8",
+            "displayname": "#challenge/darkops",
+            "var_1a50db25": "#hash_4a8cef046ae0d4c1",
+            "var_a4f2dd9e": "#none",
+            "var_4e4109db": "#challenges_dark_ops_zm",
+            "var_e1c44b36": "#hash_66da4dc773b6c67f"
+        }
+    ],
+    "var_6bb475c1": 1,
+    "var_72ef398b": 1,
+    "var_2f050ffa": 1,
+    "var_922067c4": "SCRIPTBUNDLE",
+    "var_a77ed948": "#none",
+    "type": "datasourcelist",
+    "var_5497949f": 1,
+    "name": "challenges_tabs_zombies",
+    "var_528e9240": 1,
+    "var_f8c3715": 1,
+    "var_6ff29b97": 1,
+    "var_8b233d0b": 1
+}

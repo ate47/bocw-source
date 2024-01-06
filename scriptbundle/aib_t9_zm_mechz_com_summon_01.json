@@ -1,0 +1,29 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_4803c1d78b1a99e5",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "lerptime": 0.2,
+            "model": "#hash_60d7855358ceb53d",
+            "type": "actor",
+            "var_db255011": 1,
+            "name": "actor 1"
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "aib_t9_zm_mechz_com_summon_01",
+    "dontsync": 1,
+    "team": "any"
+}

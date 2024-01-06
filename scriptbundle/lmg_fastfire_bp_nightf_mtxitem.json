@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#operator_bundle_7036_stone_zombie_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_2b611a190f713b2a",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_3625a1f4843829a8",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 10,
+    "var_46300498": 1,
+    "baseweapon": "#hash_70cb1c2da27e0190",
+    "name": "lmg_fastfire_bp_nightf_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 5,
+    "itemid": "24705397",
+    "blueprint": "#hash_2b611a190f713b2a"
+}

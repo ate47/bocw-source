@@ -1,0 +1,36 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_mobility_bp_lunar_mtxitem",
+            "itemid": "20014100"
+        },
+        {
+            "var_4a4bc969": "#tr_powerburst_cb_bp_lunar_mtxitem",
+            "itemid": "24011145"
+        },
+        {
+            "var_4a4bc969": "#emblem_marquee_06_mtxitem",
+            "itemid": "18892686"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_red_envelope_mtxitem",
+            "itemid": "19439691"
+        },
+        {
+            "var_4a4bc969": "#callingcards_lunarnewyear_mtxitem",
+            "itemid": "19832770"
+        }
+    ],
+    "itemname": "#hash_2d520f268d4c3790",
+    "var_375a1747": "#hash_202c5f2b93035eae",
+    "var_579fd6c3": 38,
+    "name": "bundle_blueprint_2026_ar_mobility_lunar_new_year_mtxbundle",
+    "var_a788fada": "#hash_1c183de2e70c7217",
+    "var_22f91505": "#hash_6323a666ce5a0c9b",
+    "var_566825be": "#hash_6e1e45abac45bd5f",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_7b10076c5f95085f",
+    "var_db3e02ab": 2000,
+    "itemid": "25698585"
+}

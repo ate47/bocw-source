@@ -1,0 +1,51 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_5cf794de6d7eeb7d",
+            "var_f35c5951": 0.8,
+            "var_5d4b5964": 19.78,
+            "var_36bf8e05": "#hash_17d6197dd931956a"
+        },
+        {
+            "var_46bd7973": "#hash_5cf793de6d7ee9ca",
+            "var_f35c5951": 0.8,
+            "var_5d4b5964": 43.07,
+            "var_36bf8e05": "#hash_7a977906651707db"
+        },
+        {
+            "var_46bd7973": "#hash_191db06f02403781",
+            "var_f35c5951": 0.8,
+            "var_5d4b5964": 25.66,
+            "var_36bf8e05": "#hash_206a2d93ef141c66"
+        },
+        {
+            "var_46bd7973": "#hash_191daf6f024035ce",
+            "var_f35c5951": 0.8,
+            "var_5d4b5964": 15.87,
+            "var_36bf8e05": "#hash_3cf9dc3a2dfc9187"
+        },
+        {
+            "var_46bd7973": "#hash_5cf790de6d7ee4b1",
+            "var_f35c5951": 0.5,
+            "var_5d4b5964": 12.31,
+            "var_36bf8e05": "#hash_3bfd911fe9f08da6"
+        }
+    ],
+    "description": "#hash_1e2d229cc94bdcc3",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#exploration",
+    "var_824079e7": "#survival",
+    "uimodel": "#hash_39975151641c4544",
+    "type": "zmintel",
+    "season": 3,
+    "var_ad4ad686": "#hash_70ce1650358c0923",
+    "soundloop": "#hash_5b635b73ab6ca33f",
+    "name": "zmintel_survival_darkaether_audiolog_4",
+    "var_9be0526e": "#audiolog",
+    "var_83e219de": "#hash_55af78a255e77597",
+    "var_53be913a": 5,
+    "var_348b91fd": "#tape",
+    "title": "#hash_1b3e1f730838be09",
+    "var_3bb3493d": "#hash_55907987861194d1",
+    "var_6073bf8f": "#hash_4042063c893f7f3a"
+}

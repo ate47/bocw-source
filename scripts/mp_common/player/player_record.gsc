@@ -446,7 +446,7 @@ function function_7569c0fb() {
     case #"dom":
     case #"hash_35e9174ce58d5bc2":
     case #"escort":
-    case #"hash_3c969849921481cc":
+    case #"fireteam_dirty_bomb":
     case #"hash_594c4ab1d31aa150":
     case #"hash_55786ad6106fde1c":
     case #"hash_7020e89c237486d0":

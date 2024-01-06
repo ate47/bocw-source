@@ -1,0 +1,39 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_2770cadd6b9899a3",
+            "var_f35c5951": 1,
+            "var_5d4b5964": 12.29,
+            "var_36bf8e05": "#hash_69f2cee50cee4fc6"
+        },
+        {
+            "var_46bd7973": "#hash_2770c9dd6b9897f0",
+            "var_f35c5951": 14,
+            "var_5d4b5964": 15.51,
+            "var_36bf8e05": "#hash_1588a25db8084f9f"
+        },
+        {
+            "var_46bd7973": "#hash_2770ccdd6b989d09",
+            "var_f35c5951": 30.5,
+            "var_5d4b5964": 4.31,
+            "var_36bf8e05": "#hash_2357817909233180"
+        }
+    ],
+    "description": "#hash_25b054c75c9cdf2c",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#radio",
+    "model": "#hash_2a2df769d600b242",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_7dcfe35ccda755f1",
+    "var_2a12d36": 1,
+    "type": "zmintel",
+    "var_ad4ad686": "#hash_5ad2dea4c296de59",
+    "soundloop": "#hash_5db0167d85d70c82",
+    "name": "zmintel_silver_maxis_radio_3",
+    "var_9be0526e": "#hash_20ea75a25d912949",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "var_348b91fd": "#radio",
+    "title": "#hash_3397bdbdac50e304",
+    "mapname": "#zm_silver"
+}

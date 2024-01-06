@@ -1,0 +1,18 @@
+{
+    "description": "#hash_3ff7f1e3c59eae87",
+    "itemspawnentry": "#item_zmintel_silver_omega_document_7",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#hash_54f6484895bebf79",
+    "model": "#hash_179bf9bfcb71f160",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_4bd2eb256a183a5",
+    "type": "zmintel",
+    "var_ad4ad686": "#omega",
+    "var_217aec15": "#hash_5d4da123e2e31368",
+    "name": "zmintel_silver_omega_document_7",
+    "var_9be0526e": "#hash_daeb8129dc8e394",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "title": "#hash_3dd9e96cc80fb63d",
+    "mapname": "#zm_silver"
+}

@@ -1,0 +1,13 @@
+{
+    "var_210a8489": [
+        {
+            "var_37d9fb07": "survival_ai_steiner_hvt",
+            "var_a949845f": 1,
+            "var_857deb66": 100
+        }
+    ],
+    "var_d961aeb3": 0.5,
+    "var_922067c4": "scriptbundle",
+    "type": "survivalailist",
+    "name": "horde_hunt_realm_3_follower_3"
+}

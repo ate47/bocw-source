@@ -1,0 +1,29 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_c0c0515c2474092",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "model": "#hash_6ab0cfbd974861a",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "purifier"
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "aib_t9_vign_cust_zm_silver_steiner_left_levitate",
+    "dontsync": 1,
+    "aligntarget": "tag_align_dmit_kalash_1",
+    "team": "any"
+}

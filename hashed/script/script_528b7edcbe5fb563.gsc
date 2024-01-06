@@ -51,7 +51,7 @@ function private function_8481733a() {
     if (!isbot(self) || isautocontrolledplayer(self)) {
         return;
     }
-    if (is_true(level.var_3691c4b7) || is_true(level.disableclassselection)) {
+    if (is_true(level.disablecustomcac) || is_true(level.disableclassselection)) {
         return;
     }
     if (!isstruct(self.bot) || !isstruct(self.bot.difficulty) || !isarray(self.bot.difficulty.var_ded0efe5) || self.bot.difficulty.var_ded0efe5.size <= 0) {
@@ -119,7 +119,7 @@ function private function_3d2e4133(var_87ee1a5d, weaponname, attachments, var_c2
     }
     self [[ var_c2575532 ]](var_87ee1a5d, weaponname);
     if (isdefined(attachments)) {
-        foreach (attachment in attachments) {
+        foreach (i, attachment in attachments) {
             attachmentname = attachment.attachment;
             if (isdefined(attachmentname) && !isattachmentrestricted(weaponname, attachmentname)) {
                 self [[ var_1b426c77 ]](var_87ee1a5d, attachmentname, i);
@@ -150,7 +150,7 @@ function private function_64f67be5(var_87ee1a5d, talents) {
     if (!isdefined(talents)) {
         return;
     }
-    foreach (talent in talents) {
+    foreach (i, talent in talents) {
         talentname = talent.talent;
         if (isdefined(talentname)) {
             self function_5a385365(var_87ee1a5d, talentname, i);
@@ -166,7 +166,7 @@ function private function_29b0ec15(var_87ee1a5d, bonuscards) {
     if (!isdefined(bonuscards)) {
         return;
     }
-    foreach (bonuscard in bonuscards) {
+    foreach (i, bonuscard in bonuscards) {
         var_9177262a = bonuscard.bonuscard;
         if (isdefined(var_9177262a)) {
             self function_f9b438ba(var_87ee1a5d, var_9177262a, i);
@@ -182,7 +182,7 @@ function private function_9d82de06(var_87ee1a5d, killstreaks) {
     if (!isdefined(killstreaks)) {
         return;
     }
-    foreach (killstreak in killstreaks) {
+    foreach (i, killstreak in killstreaks) {
         killstreakname = killstreak.killstreak;
         if (isdefined(killstreakname) || isitemrestricted(killstreakname)) {
             self function_60c5f1d4(var_87ee1a5d, killstreakname, i);
@@ -510,7 +510,7 @@ function private function_3dd3f3b6() {
                 }
             }
             x = 30;
-            foreach (var_8bd600a2 in var_3342d7a5) {
+            foreach (team, var_8bd600a2 in var_3342d7a5) {
                 y = 30;
                 debug2dtext((x, y, 0), function_9e72a96(team), undefined, undefined, undefined, 1);
                 y = y + 22;

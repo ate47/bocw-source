@@ -17,7 +17,7 @@ function private autoexec __init__system__() {
 // Checksum 0xd9fb9dd8, Offset: 0x130
 // Size: 0xbc
 function private function_70a657d8() {
-    clientfield::register_clientuimodel("hudItems.ammoCooldowns.fieldUpgrade", #"hash_6f4b11a0bee9b73d", [1:#"hash_34e99d76db2ac105", 0:#"hash_2f126bd99a74de8b"], 1, 5, "float", undefined, 0, 0);
+    clientfield::register_clientuimodel("hudItems.ammoCooldowns.fieldUpgrade", #"hash_6f4b11a0bee9b73d", [1:#"fieldupgrade", 0:#"hash_2f126bd99a74de8b"], 1, 5, "float", undefined, 0, 0);
     clientfield::register("missile", "fieldUpgradeActive", 1, 1, "int", &function_5fbd38e2, 0, 0);
 }
 

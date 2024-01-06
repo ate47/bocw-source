@@ -1,0 +1,33 @@
+{
+    "options": [
+        {
+            "label": "#hash_6a489abface20fd6",
+            "value": "0"
+        },
+        {
+            "label": "#hash_57f3f21157ef659b",
+            "value": "1"
+        }
+    ],
+    "var_dfedf08e": 1,
+    "description": "#hash_7ef6c4c10a2d8c2b",
+    "var_60fcfffa": "#hash_57f3f21157ef659b",
+    "var_9bc3be7": 1,
+    "var_4ced19ab": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "name": "parachute_auto_deploy_gamepad",
+    "displayname": "#hash_5033111401dd9d11",
+    "var_4a4760c0": 60,
+    "var_500458ac": 10,
+    "var_926d1be9": 1,
+    "var_66faec87": 120,
+    "statname": "parachute_auto_deploy_gpad",
+    "var_6f00a61a": 1.1,
+    "var_a89ae821": 1,
+    "minvalue": 1,
+    "var_d4e288e": 90,
+    "var_b7401319": "#hash_6a489abface20fd6"
+}

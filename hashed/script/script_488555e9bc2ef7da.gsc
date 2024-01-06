@@ -275,7 +275,7 @@ function function_f73f4bc2() {
         waitresult = undefined;
         waitresult = level waittill(#"hash_24ebf2a541a3c3ea");
         if (zm_utility::check_point_in_playable_area(waitresult.position)) {
-            point = function_4ba8fde(#"hash_5efaf85ad8db43ee");
+            point = function_4ba8fde(#"item_zmquest_platinum_power_quest_fuse");
             var_abd93a24 = item_drop::drop_item(0, undefined, 1, 0, point.id, waitresult.position, undefined, 2);
             level flag::set(#"hash_3877401081b5e296");
             var_abd93a24 thread function_6d277ee2();
@@ -314,14 +314,14 @@ function function_3cd87dd2(params) {
         level.var_f48dca1d = 0;
     }
     if (isplayer(self)) {
-        if (isdefined(item.var_a6762160) && item.var_a6762160.name == #"hash_5efaf85ad8db43ee") {
+        if (isdefined(item.var_a6762160) && item.var_a6762160.name == #"item_zmquest_platinum_power_quest_fuse") {
             level.var_f48dca1d++;
             /#
                 iprintlnbold("<unknown string>");
             #/
             level flag::set(#"hash_1497792b06f4b12");
             zm_ui_inventory::function_7df6bb60(#"hash_20cb8163974cc355", 1);
-            array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"hash_6b9b6a474fbed074");
+            array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"zmintel_platinum_darkaether_artifact_01");
             level thread function_ce636e();
             if (level.var_f48dca1d == 2) {
                 level flag::set(#"hash_359c32cf345f7ba9");
@@ -543,7 +543,7 @@ function cmd(cmd) {
         LOC_0000016e:
             var_dfe526e8 = function_a1ef346b();
             foreach (player in var_dfe526e8) {
-                point = function_4ba8fde(#"hash_5efaf85ad8db43ee");
+                point = function_4ba8fde(#"item_zmquest_platinum_power_quest_fuse");
                 var_752753e1 = drop_item(0, undefined, 1, 0, point.id, player.origin, undefined, 2);
                 var_752753e1.var_dd21aec2.var_752753e1 = 1 & 16;
             }

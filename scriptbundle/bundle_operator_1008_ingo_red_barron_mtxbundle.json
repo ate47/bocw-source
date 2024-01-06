@@ -1,0 +1,42 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_ger_pl_west_bomber_mtxitem",
+            "itemid": "27101498"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_ger_west_mtxitem",
+            "itemid": "31131649"
+        },
+        {
+            "var_4a4bc969": "#ar_accurate_bp_redbaron_mtxitem",
+            "itemid": "22021413"
+        },
+        {
+            "var_4a4bc969": "#pistol_burst_bp_rbaron_mtxitem",
+            "itemid": "30239569"
+        },
+        {
+            "var_4a4bc969": "#reticle_29_mtxitem",
+            "itemid": "32198051"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_red_baron_biplane_mtxitem",
+            "itemid": "21839215"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_redbaron_mtxitem",
+            "itemid": "22696280"
+        }
+    ],
+    "itemname": "#hash_732c76e7940c863",
+    "var_375a1747": "#hash_3eb384a449409c6d",
+    "name": "bundle_operator_1008_ingo_red_barron_mtxbundle",
+    "var_22f91505": "#hash_1c57e2e17d56f1f8",
+    "var_566825be": "#hash_29bab1e481076edc",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_11042dad140235c0",
+    "var_db3e02ab": 2000,
+    "itemid": "29492819"
+}

@@ -108,7 +108,7 @@ function private function_68ee7643() {
 // Params 0, eflags: 0x6 linked
 // Checksum 0x168bae95, Offset: 0x668
 // Size: 0xf0
-function private function_3221202f() {
+function private clear_all_pings() {
     foreach (ping in level.ping.var_92963150) {
         ping.player function_b56144ae(ping.player function_9c9adcf1(), ping.eventtype, 1, ping.location, ping.param, ping.id);
         function_aa50d3e4(ping);
@@ -148,7 +148,7 @@ function on_disconnect() {
 // Checksum 0xf1be7885, Offset: 0x820
 // Size: 0x14
 function on_end_game() {
-    function_3221202f();
+    clear_all_pings();
 }
 
 // Namespace ping/ping

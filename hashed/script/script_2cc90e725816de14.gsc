@@ -29,8 +29,8 @@ function private autoexec __init__system__() {
 // Checksum 0xe2ff3565, Offset: 0x408
 // Size: 0x64
 function __init__() {
-    spawner::add_archetype_spawn_function(#"hash_3d92e2c7bea1eee2", &function_b8e86206);
-    spawner::function_89a2cd87(#"hash_3d92e2c7bea1eee2", &function_3f369eaa);
+    spawner::add_archetype_spawn_function(#"mechz", &function_b8e86206);
+    spawner::function_89a2cd87(#"mechz", &function_3f369eaa);
 }
 
 // Namespace namespace_394b7174/namespace_394b7174
@@ -38,30 +38,30 @@ function __init__() {
 // Checksum 0xd086a29a, Offset: 0x478
 // Size: 0x544
 function private function_4df027f2() {
-    level thread aat::register_immunity("ammomod_brainrot", #"hash_3d92e2c7bea1eee2", 1, 1, 1);
-    level thread aat::register_immunity("ammomod_brainrot_1", #"hash_3d92e2c7bea1eee2", 1, 1, 1);
-    level thread aat::register_immunity("ammomod_brainrot_2", #"hash_3d92e2c7bea1eee2", 1, 1, 1);
-    level thread aat::register_immunity("ammomod_brainrot_3", #"hash_3d92e2c7bea1eee2", 1, 1, 1);
-    level thread aat::register_immunity("ammomod_brainrot_4", #"hash_3d92e2c7bea1eee2", 1, 1, 1);
-    level thread aat::register_immunity("ammomod_brainrot_5", #"hash_3d92e2c7bea1eee2", 1, 1, 1);
-    level thread aat::register_immunity("ammomod_cryofreeze", #"hash_3d92e2c7bea1eee2", 1, 1, 1);
-    level thread aat::register_immunity("ammomod_cryofreeze_1", #"hash_3d92e2c7bea1eee2", 1, 1, 1);
-    level thread aat::register_immunity("ammomod_cryofreeze_2", #"hash_3d92e2c7bea1eee2", 1, 1, 1);
-    level thread aat::register_immunity("ammomod_cryofreeze_3", #"hash_3d92e2c7bea1eee2", 1, 1, 1);
-    level thread aat::register_immunity("ammomod_cryofreeze_4", #"hash_3d92e2c7bea1eee2", 1, 1, 1);
-    level thread aat::register_immunity("ammomod_cryofreeze_5", #"hash_3d92e2c7bea1eee2", 1, 1, 1);
-    level thread aat::register_immunity("ammomod_deadwire", #"hash_3d92e2c7bea1eee2", 1, 1, 1);
-    level thread aat::register_immunity("ammomod_deadwire_1", #"hash_3d92e2c7bea1eee2", 1, 1, 1);
-    level thread aat::register_immunity("ammomod_deadwire_2", #"hash_3d92e2c7bea1eee2", 1, 1, 1);
-    level thread aat::register_immunity("ammomod_deadwire_3", #"hash_3d92e2c7bea1eee2", 1, 1, 1);
-    level thread aat::register_immunity("ammomod_deadwire_4", #"hash_3d92e2c7bea1eee2", 1, 1, 1);
-    level thread aat::register_immunity("ammomod_deadwire_5", #"hash_3d92e2c7bea1eee2", 1, 1, 1);
-    level thread aat::register_immunity("ammomod_napalmburst", #"hash_3d92e2c7bea1eee2", 1, 1, 1);
-    level thread aat::register_immunity("ammomod_napalmburst_1", #"hash_3d92e2c7bea1eee2", 1, 1, 1);
-    level thread aat::register_immunity("ammomod_napalmburst_2", #"hash_3d92e2c7bea1eee2", 1, 1, 1);
-    level thread aat::register_immunity("ammomod_napalmburst_3", #"hash_3d92e2c7bea1eee2", 1, 1, 1);
-    level thread aat::register_immunity("ammomod_napalmburst_4", #"hash_3d92e2c7bea1eee2", 1, 1, 1);
-    level thread aat::register_immunity("ammomod_napalmburst_5", #"hash_3d92e2c7bea1eee2", 1, 1, 1);
+    level thread aat::register_immunity("ammomod_brainrot", #"mechz", 1, 1, 1);
+    level thread aat::register_immunity("ammomod_brainrot_1", #"mechz", 1, 1, 1);
+    level thread aat::register_immunity("ammomod_brainrot_2", #"mechz", 1, 1, 1);
+    level thread aat::register_immunity("ammomod_brainrot_3", #"mechz", 1, 1, 1);
+    level thread aat::register_immunity("ammomod_brainrot_4", #"mechz", 1, 1, 1);
+    level thread aat::register_immunity("ammomod_brainrot_5", #"mechz", 1, 1, 1);
+    level thread aat::register_immunity("ammomod_cryofreeze", #"mechz", 1, 1, 1);
+    level thread aat::register_immunity("ammomod_cryofreeze_1", #"mechz", 1, 1, 1);
+    level thread aat::register_immunity("ammomod_cryofreeze_2", #"mechz", 1, 1, 1);
+    level thread aat::register_immunity("ammomod_cryofreeze_3", #"mechz", 1, 1, 1);
+    level thread aat::register_immunity("ammomod_cryofreeze_4", #"mechz", 1, 1, 1);
+    level thread aat::register_immunity("ammomod_cryofreeze_5", #"mechz", 1, 1, 1);
+    level thread aat::register_immunity("ammomod_deadwire", #"mechz", 1, 1, 1);
+    level thread aat::register_immunity("ammomod_deadwire_1", #"mechz", 1, 1, 1);
+    level thread aat::register_immunity("ammomod_deadwire_2", #"mechz", 1, 1, 1);
+    level thread aat::register_immunity("ammomod_deadwire_3", #"mechz", 1, 1, 1);
+    level thread aat::register_immunity("ammomod_deadwire_4", #"mechz", 1, 1, 1);
+    level thread aat::register_immunity("ammomod_deadwire_5", #"mechz", 1, 1, 1);
+    level thread aat::register_immunity("ammomod_napalmburst", #"mechz", 1, 1, 1);
+    level thread aat::register_immunity("ammomod_napalmburst_1", #"mechz", 1, 1, 1);
+    level thread aat::register_immunity("ammomod_napalmburst_2", #"mechz", 1, 1, 1);
+    level thread aat::register_immunity("ammomod_napalmburst_3", #"mechz", 1, 1, 1);
+    level thread aat::register_immunity("ammomod_napalmburst_4", #"mechz", 1, 1, 1);
+    level thread aat::register_immunity("ammomod_napalmburst_5", #"mechz", 1, 1, 1);
 }
 
 // Namespace namespace_394b7174/namespace_394b7174

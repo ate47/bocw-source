@@ -1,0 +1,35 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#smg_heavy_bp_soulripper_mtxitem",
+            "itemid": "29567594"
+        },
+        {
+            "var_4a4bc969": "#special_nailgun_bp_soulripper_mtxitem",
+            "itemid": "17974001"
+        },
+        {
+            "var_4a4bc969": "#execution_196_mtxitem",
+            "itemid": "18607846"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_snowflake_mtxitem",
+            "itemid": "25923085"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_r8g_02_s6_mtxitem",
+            "itemid": "27756585"
+        }
+    ],
+    "itemname": "#hash_2be6237ab12f25e0",
+    "var_375a1747": "#hash_53b60dabe456d8aa",
+    "name": "blueprint_bundle_6015_ak_74u_zombie_demolition_mtxbundle",
+    "var_a788fada": "#hash_40782649218a95ab",
+    "var_22f91505": "#hash_4ec50998cd1e42d5",
+    "var_566825be": "#hash_1ebe0726fdbc0dd3",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_36c2b3620927318d",
+    "var_db3e02ab": 2000,
+    "itemid": "32136764"
+}

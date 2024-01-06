@@ -1,0 +1,155 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_1e8dc33166061993",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "idle"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_10110a94837a46cd",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "teleport_start"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_4a9722ef70eae5d4",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "teleport_end"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_1210cf6a6de7d13f",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "weakpoint_shatter"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_8e0c44d2cdca2a0",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "stun_start"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_7e264296e2b0109c",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "stun_loop"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_182f5dfddb38d8c3",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "stun_end"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_d55cacaff48a25f",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "aether_bolt_start"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_3f6d905ba4febaa1",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "aether_bolt_loop"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_65c3a222c44070a0",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "aether_bolt_end"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_c1e6163d801b65c",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "aether_storm_start"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_687c415c8f478110",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "aether_storm_loop"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_69b38b3d4acc0a9f",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "aether_storm_end"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_2556270ee25d4e7d",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "death"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_3ececdfb5d09daf5",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "intro"
+                }
+            ],
+            "model": "#hash_46cb6387fd2006a7",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "prop 1",
+            "takedamage": 1
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "aib_t9_zm_tmpst_boss_fight",
+    "dontsync": 1,
+    "team": "any"
+}

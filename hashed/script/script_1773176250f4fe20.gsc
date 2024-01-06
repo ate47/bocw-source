@@ -67,12 +67,12 @@ function function_7431f6cc(localclientnum, *oldval, newval, *bnewent, *binitials
             str_fx = #"hash_1f8f75941d481d68";
             if (isdefined(self.archetype)) {
                 switch (self.archetype) {
-                case #"hash_3d92e2c7bea1eee2":
+                case #"mechz":
                 case #"hash_7c0d83ac1e845ac2":
                     str_fx = #"hash_1f5c7f941d1cd4cd";
                     break;
-                case #"hash_9f6bc1960ff4912":
-                case #"hash_be2e962be17d10e":
+                case #"raz":
+                case #"mimic":
                 case #"zombie_dog":
                     str_fx = #"hash_1f5f62941d1ed95d";
                     break;
@@ -103,12 +103,12 @@ function function_7431f6cc(localclientnum, *oldval, newval, *bnewent, *binitials
         var_37cec89a = #"hash_1f8f75941d481d68";
         if (isdefined(self.archetype)) {
             switch (self.archetype) {
-            case #"hash_3d92e2c7bea1eee2":
+            case #"mechz":
             case #"hash_7c0d83ac1e845ac2":
                 var_37cec89a = #"hash_d17ba387ed58333";
                 break;
-            case #"hash_9f6bc1960ff4912":
-            case #"hash_be2e962be17d10e":
+            case #"raz":
+            case #"mimic":
             case #"zombie_dog":
                 var_37cec89a = #"hash_704b1e9eda987ea3";
                 break;

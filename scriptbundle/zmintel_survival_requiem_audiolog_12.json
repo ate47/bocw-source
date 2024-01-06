@@ -1,0 +1,63 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_361b73f5890f976d",
+            "var_f35c5951": 1,
+            "var_5d4b5964": 12.95,
+            "var_36bf8e05": "#hash_56cb9f0cf18bef24"
+        },
+        {
+            "var_46bd7973": "#hash_361b72f5890f95ba",
+            "var_f35c5951": 1.2,
+            "var_5d4b5964": 20.42,
+            "var_36bf8e05": "#hash_3ffd138c177e5a3d"
+        },
+        {
+            "var_46bd7973": "#hash_361b71f5890f9407",
+            "var_f35c5951": 1,
+            "var_5d4b5964": 16.38,
+            "var_36bf8e05": "#hash_629d69e51a17d46e"
+        },
+        {
+            "var_46bd7973": "#hash_361b70f5890f9254",
+            "var_f35c5951": 1.2,
+            "var_5d4b5964": 19.11,
+            "var_36bf8e05": "#hash_66a3110cf64a532f"
+        },
+        {
+            "var_46bd7973": "#hash_361b6ff5890f90a1",
+            "var_f35c5951": 1,
+            "var_5d4b5964": 19.03,
+            "var_36bf8e05": "#hash_1c327afd58ccaf18"
+        },
+        {
+            "var_46bd7973": "#hash_361b6ef5890f8eee",
+            "var_f35c5951": 1,
+            "var_5d4b5964": 20.54,
+            "var_36bf8e05": "#hash_2629319f4e274d91"
+        },
+        {
+            "var_46bd7973": "#hash_361b6df5890f8d3b",
+            "var_f35c5951": 0.7,
+            "var_5d4b5964": 6.7,
+            "var_36bf8e05": "#hash_2bfa6fcfe166f092"
+        }
+    ],
+    "description": "#hash_1f7ed0eae23736dd",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#exploration",
+    "model": "#hash_58228068154ebd8c",
+    "var_824079e7": "#survival",
+    "uimodel": "#hash_b967b1b400fed9b",
+    "type": "zmintel",
+    "season": 3,
+    "var_ad4ad686": "#hash_1303dcb8d0e80e33",
+    "soundloop": "#hash_2e77024e1f0a29f1",
+    "name": "zmintel_survival_requiem_audiolog_12",
+    "var_9be0526e": "#audiolog",
+    "var_83e219de": "#hash_55af78a255e77597",
+    "var_53be913a": 5,
+    "var_348b91fd": "#tape",
+    "title": "#hash_375bd55d7468ddcb",
+    "var_3bb3493d": "#hash_79496eb1d8ca2714"
+}

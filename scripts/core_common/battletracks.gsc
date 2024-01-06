@@ -79,7 +79,7 @@ function private event_handler[vehicle_killed] function_c5f9a554(*eventstruct) {
 // Size: 0x74
 function private event_handler[event_35559816] function_35559816(eventstruct) {
     if (isvehicle(eventstruct.vehicle)) {
-        if (isdefined(eventstruct.vehicle.var_23944654)) {
+        if (isdefined(eventstruct.vehicle.battletrack_active)) {
             eventstruct.vehicle function_fe45d0ae();
         } else {
             self function_afb0648d(eventstruct.vehicle);
@@ -106,10 +106,10 @@ function private function_982d5b1() {
         self endon(#"death");
         self endon(#"hash_10f5e7a492971517");
         wait(getdvarint(#"hash_69d64509de665052", 5));
-        if (isdefined(self.var_23944654)) {
+        if (isdefined(self.battletrack_active)) {
             self clientfield::set("battletrack_active", 0);
-            self stopsound(self.var_23944654);
-            self.var_23944654 = undefined;
+            self stopsound(self.battletrack_active);
+            self.battletrack_active = undefined;
         }
     }
 }
@@ -121,10 +121,10 @@ function private function_982d5b1() {
 function function_fe45d0ae() {
     if (!sessionmodeiscampaigngame()) {
         self notify(#"hash_10f5e7a492971517");
-        if (isdefined(self.var_23944654)) {
+        if (isdefined(self.battletrack_active)) {
             self clientfield::set("battletrack_active", 0);
-            self stopsound(self.var_23944654);
-            self.var_23944654 = undefined;
+            self stopsound(self.battletrack_active);
+            self.battletrack_active = undefined;
         }
     }
 }
@@ -137,7 +137,7 @@ function private function_afb0648d(vehicle) {
     if (!sessionmodeiscampaigngame()) {
         if (self isinvehicle()) {
             vehicle function_fe45d0ae();
-            vehicle.var_23944654 = undefined;
+            vehicle.battletrack_active = undefined;
             if (isdefined(vehicle.var_13c5ef5f)) {
                 var_e273c985 = self function_18df0fba(vehicle.var_13c5ef5f);
                 var_45750595 = getscriptbundle(var_e273c985);
@@ -151,8 +151,8 @@ function private function_afb0648d(vehicle) {
                     if (isdefined(var_7450e8ac)) {
                         var_3ee3065f = getscriptbundle(var_7450e8ac);
                         if (isdefined(var_3ee3065f) && isdefined(var_3ee3065f.var_921a9ffa)) {
-                            vehicle.var_23944654.vehicle = var_3ee3065f.var_921a9ffa;
-                            vehicle playsoundwithnotify(vehicle.var_23944654, "battletrack_complete");
+                            vehicle.battletrack_active.vehicle = var_3ee3065f.var_921a9ffa;
+                            vehicle playsoundwithnotify(vehicle.battletrack_active, "battletrack_complete");
                             vehicle clientfield::set("battletrack_active", 1);
                         }
                     }

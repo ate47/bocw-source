@@ -61,7 +61,7 @@ function private registerclientfields() {
     clientfield::register("toplayer", "isJammed", 1, 1, "int", &player_isjammed, 0, 1);
     clientfield::register("allplayers", "isHiddenByFriendlyJammer", 1, 1, "int", &function_b53badf6, 0, 1);
     clientfield::register("missile", "jammer_active", 1, 1, "int", &jammeractive, 0, 0);
-    clientfield::register("missile", "jammer_hacked", 1, 1, "counter", &function_15726341, 0, 0);
+    clientfield::register("missile", "jammer_hacked", 1, 1, "counter", &jammerhacked, 0, 0);
     clientfield::register("toplayer", "jammedvehpostfx", 1, 1, "int", &function_4a82368f, 0, 1);
 }
 
@@ -88,12 +88,12 @@ function jammeractive(localclientnum, *oldval, newval, *bnewent, *binitialsnap, 
 // Params 7, eflags: 0x2 linked
 // Checksum 0xfca4a6ee, Offset: 0x6b0
 // Size: 0xfc
-function function_15726341(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function jammerhacked(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (!isentity(self.var_7ec0e2d1)) {
         return;
     }
     localplayer = function_5c10bd79(bwastimejump);
-    if (util::function_fbce7263(localplayer.team, self.team) && !namespace_56e70a4a::function_b8fe9b52(bwastimejump)) {
+    if (util::function_fbce7263(localplayer.team, self.team) && !codcaster::function_b8fe9b52(bwastimejump)) {
         self.var_7ec0e2d1 setcompassicon("ui_hud_minimap_shroud_flipbook");
     } else {
         self.var_7ec0e2d1 setcompassicon("ui_hud_minimap_shroud_friendly");
@@ -225,7 +225,7 @@ function function_2560e153(localclientnum, bwastimejump) {
     self.var_7ec0e2d1 setcompassicon("ui_hud_minimap_shroud_flipbook");
     self.var_7ec0e2d1 function_a5edb367(#"neutral");
     self.var_7ec0e2d1 enableonradar();
-    if (localplayer.team == self.team || namespace_56e70a4a::function_b8fe9b52(localclientnum)) {
+    if (localplayer.team == self.team || codcaster::function_b8fe9b52(localclientnum)) {
         self.var_7ec0e2d1 setcompassicon("ui_hud_minimap_shroud_friendly");
     } else {
         self.var_7ec0e2d1 setcompassicon("ui_hud_minimap_shroud_flipbook");

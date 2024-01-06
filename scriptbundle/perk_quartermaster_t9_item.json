@@ -1,0 +1,32 @@
+{
+    "talents": [
+        {
+            "talent": "#hash_746873701fc96f8a"
+        }
+    ],
+    "var_a6616b9c": 1,
+    "amount": 1,
+    "var_fa988b4b": 180,
+    "description": "#hash_62d985d7b19f0956",
+    "var_922067c4": "scriptbundle",
+    "model": "#p8_wz_perk_pickups_engineer",
+    "var_16e34ef4": 64,
+    "var_e9898330": "pingitemgeneric",
+    "var_ac75b59f": -1,
+    "type": "itemspawnentry",
+    "hintstring": "#hash_b93b339756d2d26",
+    "var_4a1a4613": "armor_swap",
+    "name": "perk_quartermaster_t9_item",
+    "displayname": "#hash_b93b339756d2d26",
+    "var_9e569978": 1,
+    "stackcount": 1,
+    "icon": "#hash_61b7a32604d6b023",
+    "modelscale": 1,
+    "rarity": "None",
+    "equipsound": "uin_wz_perk_engineer",
+    "var_97c5ead1": 1,
+    "handler": "#hash_57df81951e3bc37c",
+    "var_3af59a99": 1,
+    "pickupicon": "#hash_61b7a32604d6b023",
+    "itemtype": "perk_tier_2"
+}

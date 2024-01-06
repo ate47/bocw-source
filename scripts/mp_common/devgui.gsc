@@ -178,7 +178,7 @@ function function_d14c2698() {
         game.var_67f8923f = 1;
         setdvar(#"hash_57f1a3b4775bec24", "<unknown string>");
         var_81fd4bd0 = function_72eeb31d();
-        foreach (var_6d949755 in var_81fd4bd0) {
+        foreach (item_hash, var_6d949755 in var_81fd4bd0) {
             item_root = player_devgui_base + function_9e72a96(item_hash) + "<unknown string>";
             foreach (callout in var_6d949755) {
                 add_devgui(item_root + function_9e72a96(callout), "<unknown string>" + "<unknown string>" + "<unknown string>" + function_9e72a96(callout));
@@ -244,15 +244,15 @@ function function_caed2ca6() {
         }
         setdvar(#"hash_874c8b63573fc42", "<unknown string>");
         game.var_ea16e22a = 1;
-        var_b28591f0 = getscriptbundle("<unknown string>");
-        if (isdefined(var_b28591f0)) {
-            var_eb7a15a5 = var_b28591f0.var_8df231d6;
+        executionlist = getscriptbundle("<unknown string>");
+        if (isdefined(executionlist)) {
+            var_eb7a15a5 = executionlist.executions;
             item_root = player_devgui_base;
             count = 0;
-            foreach (var_a4891fd in var_eb7a15a5) {
-                if (isdefined(var_a4891fd.var_a4891fd)) {
+            foreach (execution in var_eb7a15a5) {
+                if (isdefined(execution.execution)) {
                     count++;
-                    add_devgui(item_root + function_9e72a96(var_a4891fd.var_a4891fd), "<unknown string>" + "<unknown string>" + "<unknown string>" + function_9e72a96(var_a4891fd.var_a4891fd));
+                    add_devgui(item_root + function_9e72a96(execution.execution), "<unknown string>" + "<unknown string>" + "<unknown string>" + function_9e72a96(execution.execution));
                     waitframe(1);
                 }
             }
@@ -271,16 +271,16 @@ function function_f9e5168a() {
     /#
         while (1) {
             level.var_fba97209 = getdvarint(#"hash_2702f51d0ea9e486", 0);
-            var_a4891fd = getdvarstring(#"hash_874c8b63573fc42");
-            if (var_a4891fd != "<unknown string>") {
+            execution = getdvarstring(#"hash_874c8b63573fc42");
+            if (execution != "<unknown string>") {
                 setdvar(#"hash_61dac11dea7f8b8d", 1);
                 players = getplayers();
                 foreach (player in players) {
                     player function_225eab37();
-                    player function_49dc736a(hash(var_a4891fd));
+                    player function_49dc736a(hash(execution));
                 }
                 setdvar(#"hash_874c8b63573fc42", "<unknown string>");
-                setdvar(#"hash_13d12c0b5b9b9738", var_a4891fd);
+                setdvar(#"hash_13d12c0b5b9b9738", execution);
             }
             wait(1);
         }
@@ -737,10 +737,10 @@ function devgui_give_weapon(weapon_name) {
             }
             if (weapon.isgrenadeweapon && !getdvarint(#"hash_1fce8e806b5356fc", 0)) {
             }
-            if (weapon.inventorytype == #"offhand" || weapon.inventorytype == #"hash_6384cecc5335463e") {
+            if (weapon.inventorytype == #"offhand" || weapon.inventorytype == #"offhand_primary") {
                 pweapons = self getweaponslist();
                 foreach (pweapon in pweapons) {
-                    if (pweapon != weapon && pweapon.gadget_type == 0 && (pweapon.inventorytype == #"offhand" || pweapon.inventorytype == #"hash_6384cecc5335463e")) {
+                    if (pweapon != weapon && pweapon.gadget_type == 0 && (pweapon.inventorytype == #"offhand" || pweapon.inventorytype == #"offhand_primary")) {
                         if (self hasweapon(pweapon)) {
                             self takeweapon(pweapon);
                         }
@@ -765,12 +765,12 @@ function devgui_give_weapon(weapon_name) {
             } else {
                 if (weapon.gadget_type == 0) {
                     self giveweapon(weapon);
-                    if (weapon.inventorytype == #"offhand" || weapon.inventorytype == #"hash_6384cecc5335463e") {
+                    if (weapon.inventorytype == #"offhand" || weapon.inventorytype == #"offhand_primary") {
                         gadgets[0] = level.var_34d27b26;
                     } else {
                         gadgets[2] = level.var_43a51921;
                     }
-                } else if (weapon.inventorytype == #"offhand" || weapon.inventorytype == #"hash_6384cecc5335463e") {
+                } else if (weapon.inventorytype == #"offhand" || weapon.inventorytype == #"offhand_primary") {
                     if (weapon.gadget_type == 23) {
                         gadgets[1] = weapon;
                     } else {

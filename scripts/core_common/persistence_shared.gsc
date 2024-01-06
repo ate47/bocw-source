@@ -71,7 +71,7 @@ function initialize_stat_tracking() {
     level.globalcarsdestroyed = 0;
     level.globalbarrelsdestroyed = 0;
     level.globalbombsdestroyedbyteam = [];
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         level.globalbombsdestroyedbyteam[team] = 0;
     }
 }

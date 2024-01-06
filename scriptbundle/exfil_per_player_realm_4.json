@@ -1,0 +1,27 @@
+{
+    "var_210a8489": [
+        {
+            "var_37d9fb07": "default_zombies_realm_4",
+            "var_a949845f": -1,
+            "var_857deb66": 20
+        },
+        {
+            "var_37d9fb07": "inf_dogs",
+            "var_a949845f": 3,
+            "var_857deb66": 5
+        },
+        {
+            "var_37d9fb07": "survival_ai_avogadro",
+            "var_a949845f": 1,
+            "var_857deb66": 1
+        },
+        {
+            "var_37d9fb07": "inf_specials",
+            "var_a949845f": 1,
+            "var_857deb66": 1
+        }
+    ],
+    "var_922067c4": "scriptbundle",
+    "type": "survivalailist",
+    "name": "exfil_per_player_realm_4"
+}

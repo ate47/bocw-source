@@ -1,0 +1,50 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_hudson_hazmat_pc_mtxitem",
+            "itemid": "28135175"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_hudson_mtxitem",
+            "itemid": "22860165"
+        },
+        {
+            "var_4a4bc969": "#smg_handling_bp_hudson_pc_mtxitem",
+            "itemid": "23366665"
+        },
+        {
+            "var_4a4bc969": "#shotgun_semiauto_bp_hudson_pc_mtxitem",
+            "itemid": "29592063"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_chemical_barrel_pc_mtxitem",
+            "itemid": "19688760"
+        },
+        {
+            "var_4a4bc969": "#emblems_containment_breach_s6_base_pc_mtxitem",
+            "itemid": "20148770"
+        },
+        {
+            "var_4a4bc969": "#callingcards_containment_breach_s6_base_pc_mtxitem",
+            "itemid": "31488608"
+        },
+        {
+            "var_4a4bc969": "#cod_points_2400_mtxitem"
+        }
+    ],
+    "itemname": "#hash_4883092c813f2076",
+    "var_247d9ed7": "firstparty_bundle_6022_breach_pro_pack",
+    "var_208d76b5": "#hash_6b666ddfcf146444",
+    "var_70f66e54": "#hash_37f78a08b79cad0f",
+    "name": "firstparty_bundle_6022_hudson_chemical_response_pc_mtxentitlement",
+    "var_a788fada": "#hash_238b3cb38078a953",
+    "var_22f91505": "#hash_1b1920f032a44353",
+    "var_566825be": "#hash_46ced500c4fe2b7b",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_f3c937a9": "#hash_1677e8e2dfc35cf7",
+    "var_db3e02ab": 2000,
+    "var_4e46b1b3": "#pc",
+    "itemid": "28662259",
+    "var_a592ce5": 1
+}

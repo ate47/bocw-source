@@ -36,17 +36,17 @@ function function_3531b9ba(scorestreak) {
     if (!isdefined(level.var_1953a530)) {
         level.var_1953a530 = [];
         if (sessionmodeiszombiesgame()) {
-            level.var_1953a530[#"hash_2f648e335983677a"] = #"hash_541f29266c6b7df8";
-            level.var_1953a530[#"hero_annihilator"] = #"hash_2294e52d4ac78b9a";
-            level.var_1953a530[#"hero_flamethrower"] = #"hash_24a1df9928527c11";
-            level.var_1953a530[#"hero_pineapplegun"] = #"hash_5f6d7361258230a";
-            level.var_1953a530[#"hash_183ddeea72e71f27"] = #"hash_54877da1f10e40b5";
-            level.var_1953a530[#"hash_3de3d523512f7cbc"] = #"hash_3e1160ae9d1b5446";
-            level.var_1953a530[#"hash_5ceaf52285031501"] = #"hash_18ed63a25d0c43d1";
-            level.var_1953a530[#"sig_lmg"] = #"hash_ba416827a85877c";
-            level.var_1953a530[#"ultimate_turret"] = #"hash_cefb3af28fb800b";
-            level.var_1953a530[#"hash_3f33adcbed7f6c86"] = #"hash_7ca6014caa35ad1e";
-            level.var_1953a530[#"recon_car"] = #"hash_5150714678b3f409";
+            level.var_1953a530[#"chopper_gunner"] = #"item_survival_scorestreak_chopper_gunner";
+            level.var_1953a530[#"hero_annihilator"] = #"item_survival_scorestreak_hand_cannon";
+            level.var_1953a530[#"hero_flamethrower"] = #"item_survival_scorestreak_flamethrower";
+            level.var_1953a530[#"hero_pineapplegun"] = #"item_survival_scorestreak_pineapple_gun";
+            level.var_1953a530[#"hash_183ddeea72e71f27"] = #"item_survival_scorestreak_napalm_strike";
+            level.var_1953a530[#"hash_3de3d523512f7cbc"] = #"item_survival_scorestreak_remote_missile";
+            level.var_1953a530[#"sig_bow_flame"] = #"item_survival_scorestreak_bow";
+            level.var_1953a530[#"sig_lmg"] = #"item_survival_scorestreak_deathmachine";
+            level.var_1953a530[#"ultimate_turret"] = #"item_survival_scorestreak_ultimate_turret";
+            level.var_1953a530[#"hash_3f33adcbed7f6c86"] = #"item_survival_scorestreak_artillery_strike";
+            level.var_1953a530[#"recon_car"] = #"item_survival_scorestreak_arcxd";
         } else {
             level.var_1953a530[#"inventory_ac130"] = #"hash_59372818d5a4b00";
             level.var_1953a530[#"inventory_chopper_gunner"] = #"hash_6fa05dcae5ac1c4b";
@@ -82,78 +82,78 @@ function function_6a0ee21a(attachmentname) {
     if (!isdefined(level.var_4d26e905)) {
         if (sessionmodeiszombiesgame()) {
             level.var_4d26e905 = [];
-            level.var_4d26e905[#"acog"] = #"hash_5951baf77aea4bb5";
+            level.var_4d26e905[#"acog"] = #"acog_t9_item_sr";
             level.var_4d26e905[#"break"] = #"hash_52158dff02a348c";
             level.var_4d26e905[#"break2"] = #"hash_628946b7b73932f2";
-            level.var_4d26e905[#"hash_ece059ad360b651"] = #"hash_9c323d05d70c243";
-            level.var_4d26e905[#"hash_8c9e9152d55ea39"] = #"hash_60d26e5edbea903b";
-            level.var_4d26e905[#"hash_511ece7df51e401a"] = #"hash_4cc226cdaeae487e";
-            level.var_4d26e905[#"hash_75990807826703f8"] = #"hash_b5a96736b401cc";
-            level.var_4d26e905[#"extclip"] = #"hash_67b9395b2e0029e6";
-            level.var_4d26e905[#"extclip2"] = #"hash_29445e5eef449964";
-            level.var_4d26e905[#"fastreload"] = #"hash_29c5035db4124cca";
-            level.var_4d26e905[#"fastreload2"] = #"hash_c78ec937b30c440";
-            level.var_4d26e905[#"grip"] = #"hash_57976ae65aa47edf";
-            level.var_4d26e905[#"grip2"] = #"hash_77228486973b1c5f";
-            level.var_4d26e905[#"handle"] = #"hash_3458660ffe1b7fa5";
-            level.var_4d26e905[#"hash_6dd6c64c51d668b3"] = #"hash_2a9b80bf6e719e25";
-            level.var_4d26e905[#"heavy"] = #"hash_69ff77781cdb7e44";
-            level.var_4d26e905[#"hash_3fd36eb4bbbd3336"] = #"hash_6b5294a02fc58a1a";
-            level.var_4d26e905[#"light"] = #"hash_c2dac0adf881b21";
-            level.var_4d26e905[#"hash_3a894c8a64d248a7"] = #"hash_6737da1ec5ceec49";
-            level.var_4d26e905[#"mixclip"] = #"hash_68c9e1eaf1008e31";
-            level.var_4d26e905[#"hash_14e658b564e40657"] = #"hash_e5c35c6be678059";
-            level.var_4d26e905[#"hash_7c6259ce4453863d"] = #"hash_7737198669ce118f";
-            level.var_4d26e905[#"hash_2ea4a87e19eccb7d"] = #"hash_71743f1f9fdd9a4f";
-            level.var_4d26e905[#"hash_574e57ebbb1fab71"] = #"hash_2b523070346b22a3";
-            level.var_4d26e905[#"hash_79caa88ef6d002d9"] = #"hash_67ae49fa210cf21b";
-            level.var_4d26e905[#"hash_27231e4565d05f6f"] = #"hash_79d7bb05f68ddc41";
-            level.var_4d26e905[#"hash_510bccec01120b07"] = #"hash_3dcbd16782db8ce9";
-            level.var_4d26e905[#"hash_6cb337a8f1814a78"] = #"hash_796bd61d402094c";
-            level.var_4d26e905[#"hash_35d1de125eb13bbe"] = #"hash_603b80c2dece2932";
-            level.var_4d26e905[#"hash_eeef17e8f501f49"] = #"hash_5867887c7438eb6b";
-            level.var_4d26e905[#"hash_3023d50d85257e01"] = #"hash_516b9c009f958053";
-            level.var_4d26e905[#"hash_2bd32c3c54913ae1"] = #"hash_66518103ed838ff3";
-            level.var_4d26e905[#"hash_90efd83b2c6f489"] = #"hash_4ca03fd7fb77142b";
-            level.var_4d26e905[#"quickdraw"] = #"hash_c8e1dbdf1b9a532";
-            level.var_4d26e905[#"quickdraw2"] = #"hash_70e74393ae147f98";
-            level.var_4d26e905[#"reddot"] = #"hash_657c0726e2c50cf5";
-            level.var_4d26e905[#"reflex"] = #"hash_3e4ff275ec81e8b1";
-            level.var_4d26e905[#"hash_15831b2cda728cd7"] = #"hash_6284d1f01b3447d9";
-            level.var_4d26e905[#"hash_15831a2cda728b24"] = #"hash_798c6f4830e4fd58";
-            level.var_4d26e905[#"hash_1583192cda728971"] = #"hash_37872a865636aca3";
-            level.var_4d26e905[#"dualoptic"] = #"hash_54b96cd4694b8d8";
-            level.var_4d26e905[#"holo"] = #"hash_73abacec2fd5e23b";
-            level.var_4d26e905[#"ir"] = #"hash_314a8049e018d6";
-            level.var_4d26e905[#"elo"] = #"hash_37f2c1e35818d083";
-            level.var_4d26e905[#"elo2"] = #"hash_1201c7fcb7f51efb";
-            level.var_4d26e905[#"hash_7f031a605310ffc6"] = #"hash_6e8212c05312bdca";
-            level.var_4d26e905[#"hash_487f75e1a5f169b0"] = #"hash_2358dab17bbd3454";
-            level.var_4d26e905[#"hash_48977fe1a6060c8f"] = #"hash_20b99d912e487ba1";
-            level.var_4d26e905[#"hash_7bdc3beafb1d08b0"] = #"hash_656765b4799b0954";
-            level.var_4d26e905[#"hash_14425248b25574e6"] = #"hash_31d80559a5a0ec2a";
-            level.var_4d26e905[#"hash_63e025b7feef496c"] = #"hash_4fb8b91096066f0";
-            level.var_4d26e905[#"hash_252975a63099aaba"] = #"hash_4af2b13b3c82745e";
-            level.var_4d26e905[#"hash_67c1a678b397c04f"] = #"hash_3a06adcc040945e1";
-            level.var_4d26e905[#"hash_65ce5c192adc1467"] = #"hash_e248eef6a401689";
-            level.var_4d26e905[#"stalker"] = #"hash_5dd5b8fd48364b3d";
-            level.var_4d26e905[#"stalker2"] = #"hash_14cdaa7fd97c546d";
-            level.var_4d26e905[#"steadyaim"] = #"hash_26ddd582ce81b2a4";
-            level.var_4d26e905[#"steadyaim2"] = #"hash_233d4b936507cefa";
-            level.var_4d26e905[#"suppressed"] = #"hash_4902fc1a64ffced9";
-            level.var_4d26e905[#"hash_63ce25ae5624b81f"] = #"hash_2ffc87f1c781bf91";
+            level.var_4d26e905[#"barrel"] = #"barrel_t9_item_sr";
+            level.var_4d26e905[#"barrel2"] = #"barrel2_t9_item_sr";
+            level.var_4d26e905[#"compensator"] = #"compensator_t9_item_sr";
+            level.var_4d26e905[#"compensator2"] = #"compensator2_t9_item_sr";
+            level.var_4d26e905[#"extclip"] = #"extclip_t9_item_sr";
+            level.var_4d26e905[#"extclip2"] = #"extclip2_t9_item_sr";
+            level.var_4d26e905[#"fastreload"] = #"fastreload_t9_item_sr";
+            level.var_4d26e905[#"fastreload2"] = #"fastreload2_t9_item_sr";
+            level.var_4d26e905[#"grip"] = #"grip_t9_item_sr";
+            level.var_4d26e905[#"grip2"] = #"grip2_t9_item_sr";
+            level.var_4d26e905[#"handle"] = #"handle_t9_item_sr";
+            level.var_4d26e905[#"handle2"] = #"handle2_t9_item_sr";
+            level.var_4d26e905[#"heavy"] = #"heavy_t9_item_sr";
+            level.var_4d26e905[#"heavy2"] = #"heavy2_t9_item_sr";
+            level.var_4d26e905[#"light"] = #"light_t9_item_sr";
+            level.var_4d26e905[#"light2"] = #"light2_t9_item_sr";
+            level.var_4d26e905[#"mixclip"] = #"mixclip_t9_item_sr";
+            level.var_4d26e905[#"mixclip2"] = #"mixclip2_t9_item_sr";
+            level.var_4d26e905[#"mixbarrel"] = #"mixbarrel_t9_item_sr";
+            level.var_4d26e905[#"mixbarrel2"] = #"mixbarrel2_t9_item_sr";
+            level.var_4d26e905[#"mixbody"] = #"mixbody_t9_item_sr";
+            level.var_4d26e905[#"mixbody2"] = #"mixbody2_t9_item_sr";
+            level.var_4d26e905[#"mixhandle"] = #"mixhandle_t9_item_sr";
+            level.var_4d26e905[#"mixhandle2"] = #"mixhandle2_t9_item_sr";
+            level.var_4d26e905[#"mixmuzzle"] = #"mixmuzzle_t9_item_sr";
+            level.var_4d26e905[#"mixmuzzle2"] = #"mixmuzzle2_t9_item_sr";
+            level.var_4d26e905[#"mixstock"] = #"mixstock_t9_item_sr";
+            level.var_4d26e905[#"mixstock2"] = #"mixstock2_t9_item_sr";
+            level.var_4d26e905[#"mixunder"] = #"mixunder_t9_item_sr";
+            level.var_4d26e905[#"mixunder2"] = #"mixunder2_t9_item_sr";
+            level.var_4d26e905[#"quickdraw"] = #"quickdraw_t9_item_sr";
+            level.var_4d26e905[#"quickdraw2"] = #"quickdraw2_t9_item_sr";
+            level.var_4d26e905[#"reddot"] = #"reddot_t9_item_sr";
+            level.var_4d26e905[#"reflex"] = #"reflex_t9_item_sr";
+            level.var_4d26e905[#"reflex2"] = #"reflex2_t9_item_sr";
+            level.var_4d26e905[#"reflex3"] = #"reflex3_t9_item_sr";
+            level.var_4d26e905[#"reflex4"] = #"reflex4_t9_item_sr";
+            level.var_4d26e905[#"dualoptic"] = #"dualoptic_t9_item_sr";
+            level.var_4d26e905[#"holo"] = #"holo_t9_item_sr";
+            level.var_4d26e905[#"ir"] = #"ir_t9_item_sr";
+            level.var_4d26e905[#"elo"] = #"elo_t9_item_sr";
+            level.var_4d26e905[#"elo2"] = #"elo2_t9_item_sr";
+            level.var_4d26e905[#"elo3"] = #"elo3_t9_item_sr";
+            level.var_4d26e905[#"scope3x"] = #"scope3x_t9_item_sr";
+            level.var_4d26e905[#"scope4x"] = #"scope4x_t9_item_sr";
+            level.var_4d26e905[#"smoothzoom"] = #"smoothzoom_t9_item_sr";
+            level.var_4d26e905[#"smoothzoom2"] = #"smoothzoom2_t9_item_sr";
+            level.var_4d26e905[#"speedgrip"] = #"speedgrip_t9_item_sr";
+            level.var_4d26e905[#"speedgrip2"] = #"speedgrip2_t9_item_sr";
+            level.var_4d26e905[#"sprintout"] = #"sprintout_t9_item_sr";
+            level.var_4d26e905[#"sprintout2"] = #"sprintout2_t9_item_sr";
+            level.var_4d26e905[#"stalker"] = #"stalker_t9_item_sr";
+            level.var_4d26e905[#"stalker2"] = #"stalker2_t9_item_sr";
+            level.var_4d26e905[#"steadyaim"] = #"steadyaim_t9_item_sr";
+            level.var_4d26e905[#"steadyaim2"] = #"steadyaim2_t9_item_sr";
+            level.var_4d26e905[#"suppressed"] = #"suppressed_t9_item_sr";
+            level.var_4d26e905[#"suppressed2"] = #"suppressed2_t9_item_sr";
             level.var_4d26e905[#"swayreduc"] = #"hash_57d83338a5296980";
             level.var_4d26e905[#"hash_cfd82035c8077ea"] = #"hash_66b9864ca183b4ae";
-            level.var_4d26e905[#"tactical"] = #"hash_1cafcd4206d28888";
+            level.var_4d26e905[#"tactical"] = #"tactical_t9_item_sr";
         } else {
             level.var_4d26e905 = [];
             level.var_4d26e905[#"acog"] = #"hash_74efc2f0523a1b43";
             level.var_4d26e905[#"break"] = #"hash_62fe2eebac0f72a4";
             level.var_4d26e905[#"break2"] = #"hash_2cdf0a02b981e7ea";
-            level.var_4d26e905[#"hash_ece059ad360b651"] = #"hash_3d79e8fa4d04bbe9";
-            level.var_4d26e905[#"hash_8c9e9152d55ea39"] = #"hash_1bdc6102e1922ee1";
-            level.var_4d26e905[#"hash_511ece7df51e401a"] = #"hash_7e68f63f8995b1e6";
-            level.var_4d26e905[#"hash_75990807826703f8"] = #"hash_63a257f430cb24e4";
+            level.var_4d26e905[#"barrel"] = #"hash_3d79e8fa4d04bbe9";
+            level.var_4d26e905[#"barrel2"] = #"hash_1bdc6102e1922ee1";
+            level.var_4d26e905[#"compensator"] = #"hash_7e68f63f8995b1e6";
+            level.var_4d26e905[#"compensator2"] = #"hash_63a257f430cb24e4";
             level.var_4d26e905[#"extclip"] = #"hash_2551991b0ce4278e";
             level.var_4d26e905[#"extclip2"] = #"hash_43a7c00ebad019fc";
             level.var_4d26e905[#"fastreload"] = #"hash_13e7b5e35b27fda2";
@@ -161,52 +161,52 @@ function function_6a0ee21a(attachmentname) {
             level.var_4d26e905[#"grip"] = #"hash_780b6e02fd11b515";
             level.var_4d26e905[#"grip2"] = #"hash_1e87409dae378d95";
             level.var_4d26e905[#"handle"] = #"hash_72c4fa7a2b91b0b3";
-            level.var_4d26e905[#"hash_6dd6c64c51d668b3"] = #"hash_5e8e59ff7a020c33";
+            level.var_4d26e905[#"handle2"] = #"hash_5e8e59ff7a020c33";
             level.var_4d26e905[#"heavy"] = #"hash_355338f948fa31c";
-            level.var_4d26e905[#"hash_3fd36eb4bbbd3336"] = #"hash_7a28e0acec4d71b2";
+            level.var_4d26e905[#"heavy2"] = #"hash_7a28e0acec4d71b2";
             level.var_4d26e905[#"light"] = #"hash_4e931ec838beed9f";
-            level.var_4d26e905[#"hash_3a894c8a64d248a7"] = #"hash_a89044fba7b2c27";
+            level.var_4d26e905[#"light2"] = #"hash_a89044fba7b2c27";
             level.var_4d26e905[#"mixclip"] = #"hash_8337602f5a165af";
-            level.var_4d26e905[#"hash_14e658b564e40657"] = #"hash_7ec532c309e0eef7";
-            level.var_4d26e905[#"hash_7c6259ce4453863d"] = #"hash_693720c039d99805";
-            level.var_4d26e905[#"hash_2ea4a87e19eccb7d"] = #"hash_2beafef30af1e8c5";
-            level.var_4d26e905[#"hash_574e57ebbb1fab71"] = #"hash_6d0a8b21a8b8b789";
-            level.var_4d26e905[#"hash_79caa88ef6d002d9"] = #"hash_63dd998473d02f01";
-            level.var_4d26e905[#"hash_27231e4565d05f6f"] = #"hash_13623c18b49d567f";
-            level.var_4d26e905[#"hash_510bccec01120b07"] = #"hash_4bfc4ce4d3e99f07";
-            level.var_4d26e905[#"hash_6cb337a8f1814a78"] = #"hash_438ee0a9ed0f3b64";
-            level.var_4d26e905[#"hash_35d1de125eb13bbe"] = #"hash_6cc986f0af4b142a";
-            level.var_4d26e905[#"hash_eeef17e8f501f49"] = #"hash_311a6366c098f011";
-            level.var_4d26e905[#"hash_3023d50d85257e01"] = #"hash_6db3b0a25b06fbb9";
-            level.var_4d26e905[#"hash_2bd32c3c54913ae1"] = #"hash_64d48522d34c4f99";
-            level.var_4d26e905[#"hash_90efd83b2c6f489"] = #"hash_26a11c1d57bbb4d1";
+            level.var_4d26e905[#"mixclip2"] = #"hash_7ec532c309e0eef7";
+            level.var_4d26e905[#"mixbarrel"] = #"hash_693720c039d99805";
+            level.var_4d26e905[#"mixbarrel2"] = #"hash_2beafef30af1e8c5";
+            level.var_4d26e905[#"mixbody"] = #"hash_6d0a8b21a8b8b789";
+            level.var_4d26e905[#"mixbody2"] = #"hash_63dd998473d02f01";
+            level.var_4d26e905[#"mixhandle"] = #"hash_13623c18b49d567f";
+            level.var_4d26e905[#"mixhandle2"] = #"hash_4bfc4ce4d3e99f07";
+            level.var_4d26e905[#"mixmuzzle"] = #"hash_438ee0a9ed0f3b64";
+            level.var_4d26e905[#"mixmuzzle2"] = #"hash_6cc986f0af4b142a";
+            level.var_4d26e905[#"mixstock"] = #"hash_311a6366c098f011";
+            level.var_4d26e905[#"mixstock2"] = #"hash_6db3b0a25b06fbb9";
+            level.var_4d26e905[#"mixunder"] = #"hash_64d48522d34c4f99";
+            level.var_4d26e905[#"mixunder2"] = #"hash_26a11c1d57bbb4d1";
             level.var_4d26e905[#"quickdraw"] = #"hash_2b8002d0d1dd882a";
             level.var_4d26e905[#"quickdraw2"] = #"hash_776efcf8d78c80";
             level.var_4d26e905[#"reddot"] = #"hash_2ff1e718a658a883";
             level.var_4d26e905[#"reflex"] = #"hash_28efceaacc63752f";
-            level.var_4d26e905[#"hash_15831b2cda728cd7"] = #"hash_60df57f4f5a14577";
-            level.var_4d26e905[#"hash_15831a2cda728b24"] = #"hash_53ac88663aebc40";
-            level.var_4d26e905[#"hash_1583192cda728971"] = #"hash_7935909de8935589";
+            level.var_4d26e905[#"reflex2"] = #"hash_60df57f4f5a14577";
+            level.var_4d26e905[#"reflex3"] = #"hash_53ac88663aebc40";
+            level.var_4d26e905[#"reflex4"] = #"hash_7935909de8935589";
             level.var_4d26e905[#"dualoptic"] = #"hash_66f7a79dbd87eec0";
             level.var_4d26e905[#"holo"] = #"hash_6edd00dc752c24e1";
             level.var_4d26e905[#"ir"] = #"hash_13101dfb0ca2d5fe";
             level.var_4d26e905[#"elo"] = #"hash_139fe0e3be289c29";
             level.var_4d26e905[#"elo2"] = #"hash_409656a5454ca9a1";
-            level.var_4d26e905[#"hash_7f031a605310ffc6"] = #"hash_1d1e0f96c57550a2";
-            level.var_4d26e905[#"hash_487f75e1a5f169b0"] = #"hash_6e6118f39468cb2c";
-            level.var_4d26e905[#"hash_48977fe1a6060c8f"] = #"hash_af064392d860f1f";
-            level.var_4d26e905[#"hash_7bdc3beafb1d08b0"] = #"hash_4bc121b59bfe4a2c";
-            level.var_4d26e905[#"hash_14425248b25574e6"] = #"hash_10ade3abf18cb742";
-            level.var_4d26e905[#"hash_63e025b7feef496c"] = #"hash_114f1df6ad46f598";
-            level.var_4d26e905[#"hash_252975a63099aaba"] = #"hash_3c63a8769b611006";
-            level.var_4d26e905[#"hash_67c1a678b397c04f"] = #"hash_21f2c71ee52d3d5f";
-            level.var_4d26e905[#"hash_65ce5c192adc1467"] = #"hash_fddd3e0764a6167";
+            level.var_4d26e905[#"elo3"] = #"hash_1d1e0f96c57550a2";
+            level.var_4d26e905[#"scope3x"] = #"hash_6e6118f39468cb2c";
+            level.var_4d26e905[#"scope4x"] = #"hash_af064392d860f1f";
+            level.var_4d26e905[#"smoothzoom"] = #"hash_4bc121b59bfe4a2c";
+            level.var_4d26e905[#"smoothzoom2"] = #"hash_10ade3abf18cb742";
+            level.var_4d26e905[#"speedgrip"] = #"hash_114f1df6ad46f598";
+            level.var_4d26e905[#"speedgrip2"] = #"hash_3c63a8769b611006";
+            level.var_4d26e905[#"sprintout"] = #"hash_21f2c71ee52d3d5f";
+            level.var_4d26e905[#"sprintout2"] = #"hash_fddd3e0764a6167";
             level.var_4d26e905[#"stalker"] = #"hash_12aaf0a984a5418b";
             level.var_4d26e905[#"stalker2"] = #"hash_767e2b6d5150883b";
             level.var_4d26e905[#"steadyaim"] = #"hash_1d25af262e371b3c";
             level.var_4d26e905[#"steadyaim2"] = #"hash_100ffabc91f834d2";
             level.var_4d26e905[#"suppressed"] = #"hash_bec81919557da77";
-            level.var_4d26e905[#"hash_63ce25ae5624b81f"] = #"hash_7823002429b5d54f";
+            level.var_4d26e905[#"suppressed2"] = #"hash_7823002429b5d54f";
             level.var_4d26e905[#"swayreduc"] = #"hash_6cd8671e4bd51c28";
             level.var_4d26e905[#"hash_cfd82035c8077ea"] = #"hash_59f84dd254fda616";
             level.var_4d26e905[#"tactical"] = #"hash_3bf739cbe86888f0";
@@ -228,15 +228,15 @@ function function_5340375f(equipment) {
         if (sessionmodeiszombiesgame()) {
             return;
         } else {
-            level.var_9b0e8004[#"frag_grenade"] = #"hash_29548403dc2ff36d";
-            level.var_9b0e8004[#"hatchet"] = #"hash_73b7240912c1f754";
-            level.var_9b0e8004[#"eq_molotov"] = #"hash_6d0e3a9a902d2201";
-            level.var_9b0e8004[#"satchel_charge"] = #"hash_281638550b45be2a";
-            level.var_9b0e8004[#"eq_sticky_grenade"] = #"hash_732cfbea10210169";
-            level.var_9b0e8004[#"eq_slow_grenade"] = #"hash_234815c9f71b452d";
+            level.var_9b0e8004[#"frag_grenade"] = #"frag_t9_item";
+            level.var_9b0e8004[#"hatchet"] = #"hatchet_t9_item";
+            level.var_9b0e8004[#"eq_molotov"] = #"molotov_t9_item";
+            level.var_9b0e8004[#"satchel_charge"] = #"satchel_charge_t9_item";
+            level.var_9b0e8004[#"eq_sticky_grenade"] = #"semtex_t9_item";
+            level.var_9b0e8004[#"eq_slow_grenade"] = #"concussion_t9_item";
             level.var_9b0e8004[#"nightingale"] = #"hash_760687d5f47b6117";
             level.var_9b0e8004[#"hash_5453c9b880261bcb"] = #"hash_676aa70930960427";
-            level.var_9b0e8004[#"willy_pete"] = #"hash_7126c22f114c7382";
+            level.var_9b0e8004[#"willy_pete"] = #"smoke_t9_item";
             level.var_9b0e8004[#"hash_364914e1708cb629"] = #"hash_51f70aff8a2ad330";
         }
     }
@@ -247,7 +247,7 @@ function function_5340375f(equipment) {
 // Params 1, eflags: 0x0
 // Checksum 0xc07178d0, Offset: 0x1db8
 // Size: 0x194
-function function_58020907(var_4aaf769) {
+function function_58020907(field_upgrade) {
     if (!isdefined(level.var_58f0d63e)) {
         level.var_58f0d63e = [];
         if (sessionmodeiszombiesgame()) {
@@ -256,14 +256,14 @@ function function_58020907(var_4aaf769) {
             level.var_58f0d63e[#"gadget_jammer"] = #"hash_3f154f45479130ed";
             level.var_58f0d63e[#"hash_2b9efbad11308e02"] = #"hash_2c9b75b17410f2de";
             level.var_58f0d63e[#"hash_320a8d55b915b9e5"] = #"hash_6364b7050271a94d";
-            level.var_58f0d63e[#"hash_f1b44dbfb6fccde"] = #"hash_2344c458b3acacf2";
+            level.var_58f0d63e[#"missile_turret"] = #"hash_2344c458b3acacf2";
             level.var_58f0d63e[#"ability_smart_cover"] = #"hash_3744693ba7d32972";
             level.var_58f0d63e[#"gadget_supplypod"] = #"hash_6f8ef4a1354850c9";
-            level.var_58f0d63e[#"hash_63826b4a80215cd3"] = #"hash_5f67f7b32b01ae53";
+            level.var_58f0d63e[#"tear_gas"] = #"hash_5f67f7b32b01ae53";
             level.var_58f0d63e[#"trophy_system"] = #"hash_7c7fd45dced7f579";
         }
     }
-    return level.var_58f0d63e[var_4aaf769];
+    return level.var_58f0d63e[field_upgrade];
 }
 
 // Namespace item_world_util/item_world_util
@@ -276,44 +276,44 @@ function function_86cb6f2(weapon) {
         if (sessionmodeiszombiesgame()) {
             return;
         } else {
-            level.var_d5713443[#"hash_2580580083c87b0d"] = #"hash_64d8fd8f660f9ab5";
-            level.var_d5713443[#"hash_1039f56708e1d3e4"] = #"hash_68c328741878e53a";
-            level.var_d5713443[#"hash_44214d17f349989d"] = #"hash_3fc63476772cbae5";
+            level.var_d5713443[#"hash_2580580083c87b0d"] = #"ar_accurate_t9_item";
+            level.var_d5713443[#"hash_1039f56708e1d3e4"] = #"ar_damage_t9_item";
+            level.var_d5713443[#"hash_44214d17f349989d"] = #"ar_fastfire_t9_item";
             level.var_d5713443[#"hash_6be9615b6d0ec416"] = #"hash_653191badff9fdec";
-            level.var_d5713443[#"hash_6cb1c7e45075a0a4"] = #"hash_b63210c20ac1dfa";
+            level.var_d5713443[#"hash_6cb1c7e45075a0a4"] = #"ar_mobility_t9_item";
             level.var_d5713443[#"ar_slowfire_t9"] = #"hash_3c6d3af46611d446";
             level.var_d5713443[#"hash_4d8b07efde79fb03"] = #"hash_120ef29b22cea56b";
-            level.var_d5713443[#"hash_70f8f2d92031f544"] = #"hash_6622d2ee99a15b5a";
+            level.var_d5713443[#"hash_70f8f2d92031f544"] = #"ar_standard_t9_item";
             level.var_d5713443[#"hash_5f1d39574585b511"] = #"hash_56894805a33c6d61";
-            level.var_d5713443[#"hash_349be5cb35ef5f77"] = #"hash_415b1073bad882a7";
-            level.var_d5713443[#"hash_2f42bc0a766b6567"] = #"hash_16cb63a32ff668b7";
+            level.var_d5713443[#"hash_349be5cb35ef5f77"] = #"smg_burst_t9_item";
+            level.var_d5713443[#"hash_2f42bc0a766b6567"] = #"smg_capacity_t9_item";
             level.var_d5713443[#"hash_278e52b904ea7e6b"] = #"hash_562223d745c92f33";
             level.var_d5713443[#"hash_6436cdb615a2bb79"] = #"hash_34b7dda2a2e4baa9";
-            level.var_d5713443[#"hash_7a3989475f8af314"] = #"hash_9de0a3df9f13c4a";
-            level.var_d5713443[#"hash_6251778e2d3b9a64"] = #"hash_2750d14514e1a8ba";
+            level.var_d5713443[#"hash_7a3989475f8af314"] = #"smg_handling_t9_item";
+            level.var_d5713443[#"hash_6251778e2d3b9a64"] = #"smg_heavy_t9_item";
             level.var_d5713443[#"hash_69868331b3d3cec2"] = #"hash_196d7e03e335500";
-            level.var_d5713443[#"hash_5bf4dc6dcf1d2340"] = #"hash_40c99434f20db4ce";
-            level.var_d5713443[#"hash_51114f6fd577519b"] = #"hash_69b3f97151b5eb43";
+            level.var_d5713443[#"hash_5bf4dc6dcf1d2340"] = #"smg_standard_t9_item";
+            level.var_d5713443[#"hash_51114f6fd577519b"] = #"tr_damagesemi_t9_item";
             level.var_d5713443[#"hash_36830b3ab9fbdde"] = #"hash_6696bccc81700814";
-            level.var_d5713443[#"hash_5b3e3aae603f948e"] = #"hash_33221421e317c5a4";
-            level.var_d5713443[#"hash_5818a5515e931441"] = #"hash_433072676a469971";
-            level.var_d5713443[#"hash_503338a31adadb4c"] = #"hash_6801787a9e9c43e2";
+            level.var_d5713443[#"hash_5b3e3aae603f948e"] = #"tr_longburst_t9_item";
+            level.var_d5713443[#"hash_5818a5515e931441"] = #"tr_powerburst_t9_item";
+            level.var_d5713443[#"hash_503338a31adadb4c"] = #"tr_precisionsemi_t9_item";
             level.var_d5713443[#"hash_43f69996d6cbbd89"] = #"hash_5ce806463c074d59";
             level.var_d5713443[#"hash_6d4147003a863d04"] = #"hash_492a74e6df52041a";
-            level.var_d5713443[#"hash_b75a549c0e857d0"] = #"hash_3922fe21235567e";
-            level.var_d5713443[#"hash_485d0c5e33d67e78"] = #"hash_4daa744408fbf246";
-            level.var_d5713443[#"hash_696069d98ed3f228"] = #"hash_6c326bdc0e1d9096";
-            level.var_d5713443[#"hash_8ff6b682d43c59c"] = #"hash_baa4e2b9bab7d92";
+            level.var_d5713443[#"hash_b75a549c0e857d0"] = #"sniper_powersemi_t9_item";
+            level.var_d5713443[#"hash_485d0c5e33d67e78"] = #"sniper_quickscope_t9_item";
+            level.var_d5713443[#"hash_696069d98ed3f228"] = #"sniper_standard_t9_item";
+            level.var_d5713443[#"hash_8ff6b682d43c59c"] = #"lmg_accurate_t9_item";
             level.var_d5713443[#"hash_70cb1c2da27e0190"] = #"hash_4cb7e9689ec1903e";
-            level.var_d5713443[#"hash_64e4e829150d8882"] = #"hash_21bbd5371dd313c0";
-            level.var_d5713443[#"hash_7fff139e10965561"] = #"hash_1c7af2ea1b880ed1";
-            level.var_d5713443[#"hash_42f6b5f6dd85875f"] = #"hash_4a91f5ba8501ab8f";
+            level.var_d5713443[#"hash_64e4e829150d8882"] = #"lmg_light_t9_item";
+            level.var_d5713443[#"hash_7fff139e10965561"] = #"lmg_slowfire_t9_item";
+            level.var_d5713443[#"hash_42f6b5f6dd85875f"] = #"pistol_burst_t9_item";
             level.var_d5713443[#"hash_1f48092b20589001"] = #"hash_391f9a2344435631";
-            level.var_d5713443[#"hash_35a57459d3bdbfa6"] = #"hash_71631c63ce2bd95c";
-            level.var_d5713443[#"hash_33ed9170805d825c"] = #"hash_2099525166a32b52";
-            level.var_d5713443[#"hash_7a7bd99ab5e9bd82"] = #"hash_25d01c98dbed92c0";
-            level.var_d5713443[#"hash_5243375728e388f6"] = #"hash_6a553e0f4e09a90c";
-            level.var_d5713443[#"hash_6f8ae26433fba2cf"] = #"hash_21ce9743f719299f";
+            level.var_d5713443[#"hash_35a57459d3bdbfa6"] = #"pistol_revolver_t9_item";
+            level.var_d5713443[#"hash_33ed9170805d825c"] = #"pistol_semiauto_t9_item";
+            level.var_d5713443[#"hash_7a7bd99ab5e9bd82"] = #"shotgun_fullauto_t9_item";
+            level.var_d5713443[#"hash_5243375728e388f6"] = #"shotgun_pump_t9_item";
+            level.var_d5713443[#"hash_6f8ae26433fba2cf"] = #"shotgun_semiauto_t9_item";
         }
     }
     return level.var_d5713443[weapon];
@@ -825,7 +825,7 @@ function function_a57773a4(var_a6762160) {
     if (!isdefined(var_a6762160) || !isdefined(var_a6762160.itemtype)) {
         return 0;
     }
-    foreach (itemtype in array(#"hash_63c2e59c903465e6", #"hash_63c2e49c90346433", #"hash_63c2e39c90346280")) {
+    foreach (itemtype in array(#"perk_tier_1", #"perk_tier_2", #"perk_tier_3")) {
         if (var_a6762160.itemtype == itemtype) {
             return 1;
         }

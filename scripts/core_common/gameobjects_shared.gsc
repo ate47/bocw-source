@@ -350,7 +350,7 @@ class cinteractobj {
 // Checksum 0x367bcf3c, Offset: 0x470
 // Size: 0x23c
 function private event_handler[createstruct] function_e0a8e4ba(struct) {
-    foreach (k in [1:"script_paired_gameobject", 0:"script_carry_object_key_target"]) {
+    foreach (var_d335d6ef, k in [1:"script_paired_gameobject", 0:"script_carry_object_key_target"]) {
         if (!isdefined(level.var_41204f29)) {
             level.var_41204f29 = [];
         } else if (!isarray(level.var_41204f29)) {
@@ -403,7 +403,7 @@ function main() {
     level.vehiclesenabled = getgametypesetting(#"vehiclesenabled");
     level.vehiclestimed = getgametypesetting(#"vehiclestimed");
     level.objectivepingdelay = getgametypesetting(#"objectivepingtime");
-    level.var_a5068446 = getgametypesetting(#"hash_2c27da9eca9892c6");
+    level.gameobjectscontestedmajoritywins = getgametypesetting(#"gameobjectscontestedmajoritywins");
     if (!isdefined(level.allowedgameobjects)) {
         level.allowedgameobjects = [];
     }
@@ -2375,7 +2375,7 @@ function private function_76f3a4cd() {
         num = self get_num_touching(self.var_a4926509);
         numother = self function_3a7a2963(self.var_a4926509);
         if (num && numother) {
-            if (!level.var_a5068446 || num === numother) {
+            if (!level.gameobjectscontestedmajoritywins || num === numother) {
                 return 1;
             }
         }
@@ -2406,7 +2406,7 @@ function private function_d897ff7() {
     numclaimants = isdefined(get_num_touching(self.var_a4926509)) ? get_num_touching(self.var_a4926509) : 0;
     if (numclaimants == 0) {
         return 1;
-    } else if (level.var_a5068446) {
+    } else if (level.gameobjectscontestedmajoritywins) {
         numother = isdefined(function_3a7a2963(self.var_a4926509)) ? function_3a7a2963(self.var_a4926509) : 0;
         return (numother > numclaimants);
     }
@@ -2684,7 +2684,7 @@ function can_claim(sentient) {
     if (self.cancontestclaim) {
         num = self get_num_touching(sentient.team);
         numother = function_3a7a2963(function_4e3386a8(sentient.team));
-        if (numother != 0 && (!level.var_a5068446 || numother >= num)) {
+        if (numother != 0 && (!level.gameobjectscontestedmajoritywins || numother >= num)) {
             return 0;
         }
     }
@@ -2695,7 +2695,7 @@ function can_claim(sentient) {
         return 1;
     }
     if (!isdefined(self.keyobject)) {
-        if (level.var_a5068446) {
+        if (level.gameobjectscontestedmajoritywins) {
             num = self get_num_touching(function_4e3386a8(sentient.team));
             numother = function_3a7a2963(function_4e3386a8(sentient.team));
             if (numother >= num) {
@@ -2741,7 +2741,7 @@ function private function_bbb55f41(sentient) {
     if (!self can_interact_with(sentient)) {
         return 0;
     }
-    if (!self function_350d0352() || level.var_a5068446 && self.curprogress == 0) {
+    if (!self function_350d0352() || level.gameobjectscontestedmajoritywins && self.curprogress == 0) {
         if (self can_claim(sentient)) {
             set_claim_team(sentient.team);
             self.claimplayer = sentient;
@@ -3041,7 +3041,7 @@ function update_use_rate() {
             self.userate = otheruserate;
         } else if (!numclaimants && !numother) {
             self.userate = 0;
-        } else if (numclaimants && numother && level.var_a5068446) {
+        } else if (numclaimants && numother && level.gameobjectscontestedmajoritywins) {
             self.userate = self function_21db7d02(numclaimants, numother);
         }
     } else if (numclaimants && !numother) {

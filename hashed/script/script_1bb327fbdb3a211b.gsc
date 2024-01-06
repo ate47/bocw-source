@@ -150,7 +150,7 @@ function function_defedffe() {
     level clientfield::set("" + #"hash_22d24ba0bcf94c3f", 1);
     playrumbleonposition(#"hash_6ecdc679dac14937", var_1f3c6d19.origin);
     earthquake(0.3, 0.8, var_1f3c6d19.origin, 1000);
-    level thread function_3db48fdd(#"hash_42432ddc5b3eecfb", var_1f3c6d19.origin + vectorscale((0, 0, 1), 10), var_1f3c6d19.angles);
+    level thread function_3db48fdd(#"item_zmquest_tungsten_ww_quest_part_a", var_1f3c6d19.origin + vectorscale((0, 0, 1), 10), var_1f3c6d19.angles);
     if (isdefined(var_3bc263c7.var_f0d7b908)) {
         var_3bc263c7.var_f0d7b908 delete();
     }
@@ -353,7 +353,7 @@ function function_b49b76d4(eventstruct) {
 // Size: 0x5c
 function function_844cd1f6(var_a53bb2cc) {
     level flag::set(#"hash_7239f34e436d2b72");
-    level function_3db48fdd(#"hash_42432edc5b3eeeae", var_a53bb2cc + vectorscale((0, 0, 1), 20));
+    level function_3db48fdd(#"item_zmquest_tungsten_ww_quest_part_b", var_a53bb2cc + vectorscale((0, 0, 1), 20));
 }
 
 // Namespace namespace_8a08914c/namespace_cc6c4729
@@ -368,7 +368,7 @@ function function_c24ab28e(s_params) {
     weapon = s_params.weapon;
     means_of_death = s_params.smeansofdeath;
     if (isplayer(attacker) && self.archetype === #"tormentor" && isdefined(weapon)) {
-        if (means_of_death === "MOD_BURNED" && weapon.name === #"hero_flamethrower" || means_of_death === "MOD_EXPLOSIVE" && weapon.name === #"hash_438fafe881cdd097" || function_313be247(attacker, weapon, means_of_death) || function_1c058bc5(weapon, means_of_death)) {
+        if (means_of_death === "MOD_BURNED" && weapon.name === #"hero_flamethrower" || means_of_death === "MOD_EXPLOSIVE" && weapon.name === #"napalm_strike" || function_313be247(attacker, weapon, means_of_death) || function_1c058bc5(weapon, means_of_death)) {
             self thread function_4f49262c();
         }
     }
@@ -446,7 +446,7 @@ function function_99f5fd48(var_a53bb2cc) {
         return;
     }
     level flag::set(#"hash_1d1c8f35328c066d");
-    level function_3db48fdd(#"hash_42432fdc5b3ef061", var_a53bb2cc + vectorscale((0, 0, 1), 10));
+    level function_3db48fdd(#"item_zmquest_tungsten_ww_quest_part_c", var_a53bb2cc + vectorscale((0, 0, 1), 10));
 }
 
 // Namespace namespace_8a08914c/namespace_cc6c4729
@@ -461,28 +461,28 @@ function on_item_pickup(params) {
         return;
     }
     switch (name) {
-    case #"hash_42432ddc5b3eecfb":
+    case #"item_zmquest_tungsten_ww_quest_part_a":
         level flag::set(#"hash_3b34b6b1b8c07116");
         level zm_ui_inventory::function_7df6bb60(#"hash_2d5a3bb1a97e6bcc", 1);
         level thread function_f9447d48(self);
         level clientfield::set("" + #"hash_45b04d88564a1cd", 0);
-        array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"hash_27e4fc2beb53e5e2");
+        array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"zmintel_tungsten_darkaether_artifact_1");
         break;
-    case #"hash_42432edc5b3eeeae":
+    case #"item_zmquest_tungsten_ww_quest_part_b":
         level flag::set(#"hash_377409bcba0102a7");
         level zm_ui_inventory::function_7df6bb60(#"hash_2d5a3eb1a97e70e5", 1);
         level thread function_75bec488(self);
-        array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"hash_27e4fb2beb53e42f");
+        array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"zmintel_tungsten_darkaether_artifact_2");
         break;
-    case #"hash_42432fdc5b3ef061":
+    case #"item_zmquest_tungsten_ww_quest_part_c":
         level flag::set(#"hash_6eaa2d1db393bd70");
         level zm_ui_inventory::function_7df6bb60(#"hash_2d5a3db1a97e6f32", 1);
         level thread function_da57dd7c(self);
-        array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"hash_27e4fa2beb53e27c");
+        array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"zmintel_tungsten_darkaether_artifact_3");
         break;
-    case #"hash_59dcec9189027842":
+    case #"ww_axe_gun_melee_t9_item_sr":
         level thread ww_pickup_vo(params.item, self);
-        array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"hash_48b4fb2df2953fd");
+        array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"zmintel_tungsten_requiem_artifact_1");
         break;
     }
 }
@@ -793,7 +793,7 @@ function function_40fcf197(b_skipped, var_19e802fa) {
 // Size: 0x15c
 function function_ea86330e() {
     var_222825ae = struct::get("ww_crystalaxe_spawn");
-    point = function_4ba8fde(#"hash_59dcec9189027842");
+    point = function_4ba8fde(#"ww_axe_gun_melee_t9_item_sr");
     var_4d1c70f5 = item_drop::drop_item(0, getweapon(#"hash_69461751fa492ea4"), 1, 0, point.id, var_222825ae.origin, var_222825ae.angles, 0);
     var_4d1c70f5.var_dd21aec2.var_4d1c70f5 = 1 & 16;
     var_4d1c70f5.var_19920dbe.var_4d1c70f5 = 1;
@@ -828,7 +828,7 @@ function function_904d21fd() {
     var_808239f1 = getaiarchetypearray(#"zombie");
     max_dist = 0;
     var_202d087b = undefined;
-    foreach (actor in var_808239f1) {
+    foreach (i, actor in var_808239f1) {
         if (is_true(actor.var_921627ad) || is_true(actor.var_a950813d) || is_true(actor.var_4df707f6)) {
             var_808239f1[i] = -1;
         }

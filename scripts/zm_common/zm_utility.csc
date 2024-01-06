@@ -478,7 +478,7 @@ function function_7bb8a38f(*localclientnum, *oldval, newval, *bnewent, *binitial
         self.var_d9e5ccb2 = #"hash_5b08235c0b55a003";
         break;
     case 5:
-        self.var_d9e5ccb2 = #"hash_646d58f646eba5ed";
+        self.var_d9e5ccb2 = #"rob_sr_item_purple";
         break;
     case 6:
         self.var_d9e5ccb2 = #"hash_64261dabb4df88cd";

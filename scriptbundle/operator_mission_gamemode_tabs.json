@@ -1,0 +1,32 @@
+{
+    "var_bb7dcd09": [
+        {
+            "var_5ed80a9c": "#hash_7e353191747e874",
+            "type": "#hash_1b021732192c0b87",
+            "displayname": "#hash_7d85b0c419734b4c",
+            "var_a4f2dd9e": "#none"
+        },
+        {
+            "var_5ed80a9c": "#mp",
+            "type": "#mode_multiplayer",
+            "displayname": "#menu/multiplayer",
+            "var_a4f2dd9e": "#none",
+            "identifier": "mp"
+        },
+        {
+            "var_5ed80a9c": "#zm",
+            "type": "#mode_zombies",
+            "displayname": "#menu/zombie",
+            "var_a4f2dd9e": "#none",
+            "identifier": "zm"
+        }
+    ],
+    "var_72ef398b": 1,
+    "var_ebb12613": "#emodes",
+    "var_d7f79634": 1,
+    "var_922067c4": "SCRIPTBUNDLE",
+    "var_a77ed948": "#hash_115ea6605dc15d80",
+    "type": "datasourcelist",
+    "name": "operator_mission_gamemode_tabs",
+    "var_d7ecf096": 1
+}

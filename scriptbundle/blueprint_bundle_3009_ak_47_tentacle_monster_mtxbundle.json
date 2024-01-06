@@ -1,0 +1,56 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_60e174604d4eba0b"
+        },
+        {
+            "var_fe10649e": "#hash_60e175604d4ebbbe"
+        },
+        {
+            "var_fe10649e": "#hash_60e176604d4ebd71"
+        },
+        {
+            "var_fe10649e": "#hash_60e177604d4ebf24"
+        }
+    ],
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_damage_bp_animedark_mtxitem",
+            "itemid": "30985808"
+        },
+        {
+            "var_4a4bc969": "#sniper_powersemi_cb_animelight_mtxitem",
+            "itemid": "32383251"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_angel_devil_mtxitem",
+            "itemid": "32440363"
+        },
+        {
+            "var_4a4bc969": "#callingcards_angel_animated_mtxitem",
+            "itemid": "26039594"
+        },
+        {
+            "var_4a4bc969": "#callingcards_demon_animated_mtxitem",
+            "itemid": "20838015"
+        },
+        {
+            "var_4a4bc969": "#emblems_angeldemons_animated_mtxitem",
+            "itemid": "27027733"
+        }
+    ],
+    "itemname": "#hash_219c03c536784d65",
+    "var_375a1747": "#hash_60e174604d4eba0b",
+    "var_3040f0d1": "#hash_60e174604d4eba0b",
+    "var_8ee7db29": 1,
+    "var_579fd6c3": 38,
+    "name": "blueprint_bundle_3009_ak_47_tentacle_monster_mtxbundle",
+    "var_a788fada": "#hash_5b8a4b67883211c6",
+    "var_22f91505": "#hash_70314a7b36ccb19d",
+    "var_566825be": "#hash_7b777750c34c0a12",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_52b676e20e313955",
+    "var_db3e02ab": 750,
+    "itemid": "18465254"
+}

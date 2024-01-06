@@ -59,7 +59,7 @@ function private function_3aa023f1(entity, var_c3317960) {
     gibpiecelookup[128] = "rightleg";
     gibpiecelookup[256] = "leftleg";
     gibpieces = [];
-    foreach (gibpiece in gibpiecelookup) {
+    foreach (gibflag, gibpiece in gibpiecelookup) {
         if (!isdefined(gibpiece)) {
             /#
                 assertmsg("<unknown string>" + gibflag);
@@ -510,7 +510,7 @@ function reapplyhiddengibpieces(entity, var_c3317960) {
         return;
     }
     gibpieces = function_3aa023f1(entity, var_c3317960);
-    foreach (gib in gibpieces) {
+    foreach (gibflag, gib in gibpieces) {
         if (!isgibbed(entity, gibflag)) {
             continue;
         }

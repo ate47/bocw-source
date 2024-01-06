@@ -1,0 +1,58 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#po_c_t9_gen_pl_esports_male_surge_home_sy_mtxitem",
+            "itemid": "20523320"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_pl_esports_male_mtxitem",
+            "itemid": "31358670"
+        },
+        {
+            "var_4a4bc969": "#po_c_t9_gen_pl_esports_male_surge_away_sy_mtxitem",
+            "itemid": "18849519"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_pl_esports_male_warsaw_mtxitem",
+            "itemid": "24054907"
+        },
+        {
+            "var_4a4bc969": "#camo_t9_cdl_sea_sy_mtxitem",
+            "itemid": "24462674"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_esports_surge_sy_mtxitem",
+            "itemid": "32956749"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_sneaker_surge_sy_mtxitem",
+            "itemid": "25679580"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_cdl_teamsticker_sea_1_sy_base_mtxitem",
+            "itemid": "18461201"
+        },
+        {
+            "var_4a4bc969": "#callingcards_cdl_teamcallingcards_sea_1_sy_base_mtxitem",
+            "itemid": "19765890"
+        },
+        {
+            "var_4a4bc969": "#emblems_cdl_teamemblem_010_sea_1_sy_base_mtxitem",
+            "itemid": "27347322"
+        }
+    ],
+    "itemname": "#hash_61d686de937a963e",
+    "var_247d9ed7": "cdl_team_pack_01_surge",
+    "var_208d76b5": "#hash_65c1e07afe3f61c3",
+    "var_70f66e54": "#hash_64e1873c0ea39ccb",
+    "name": "cdl_team_pack_01_surge_sy_mtxentitlement",
+    "var_a788fada": "#hash_25503c8f684c4645",
+    "var_22f91505": "#hash_5aee9543a25fc4c9",
+    "var_566825be": "#hash_428f315fa7a3c29d",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "var_4e46b1b3": "#orbis",
+    "itemid": "19650075",
+    "var_a592ce5": 1
+}

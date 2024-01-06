@@ -1,0 +1,29 @@
+{
+    "itemlist": [
+        {
+            "minweight": 7,
+            "var_a6762160": "#t9_equipment_tier3",
+            "maxweight": 7,
+            "available": -1
+        },
+        {
+            "minweight": 20,
+            "var_a6762160": "#t9_equipment_tier2",
+            "maxweight": 20,
+            "available": -1
+        },
+        {
+            "minweight": 20,
+            "var_a6762160": "#t9_equipment_tier1",
+            "maxweight": 20,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "t9_equipment_global",
+    "var_fde72c94": 100
+}

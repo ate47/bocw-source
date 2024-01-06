@@ -1059,7 +1059,7 @@ function get_weapon_damage(inflictor, attacker, damage, flags, meansofdeath, wea
         case #"remote_missile_missile":
             damage = 50000;
             break;
-        case #"hash_438fafe881cdd097":
+        case #"napalm_strike":
             damage = 10000;
             break;
         case #"planemortar":
@@ -1278,7 +1278,7 @@ function on_ai_killed(params) {
         level.var_9eaf1031++;
         level.var_d306d2e++;
     }
-    if (self.archetype === #"hash_be2e962be17d10e") {
+    if (self.archetype === #"mimic") {
         if (!isplayer(e_attacker)) {
             level thread function_11cc0e55();
             return;
@@ -1286,7 +1286,7 @@ function on_ai_killed(params) {
         level.var_2266b455--;
         level.var_d306d2e++;
     }
-    if (self.archetype === #"hash_9f6bc1960ff4912") {
+    if (self.archetype === #"raz") {
         if (!isplayer(e_attacker)) {
             level thread function_c658f846();
             return;

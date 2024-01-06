@@ -1,0 +1,51 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_4914bda0cc3ffdd8",
+            "var_f35c5951": 1,
+            "var_5d4b5964": 15.66,
+            "var_36bf8e05": "#hash_28b3e1138f4c0b91"
+        },
+        {
+            "var_46bd7973": "#hash_4914bea0cc3fff8b",
+            "var_f35c5951": 17.5,
+            "var_5d4b5964": 12.31,
+            "var_36bf8e05": "#hash_204088fbf1fb7770"
+        },
+        {
+            "var_46bd7973": "#hash_4914bfa0cc40013e",
+            "var_f35c5951": 30.5,
+            "var_5d4b5964": 6.25,
+            "var_36bf8e05": "#hash_484d6864f8aad053"
+        },
+        {
+            "var_46bd7973": "#hash_4914c0a0cc4002f1",
+            "var_f35c5951": 37.5,
+            "var_5d4b5964": 11.22,
+            "var_36bf8e05": "#hash_4b8704d823c93c2"
+        },
+        {
+            "var_46bd7973": "#hash_4914c1a0cc4004a4",
+            "var_f35c5951": 48.73,
+            "var_5d4b5964": 4.2,
+            "var_36bf8e05": "#hash_6649e536f8865955"
+        }
+    ],
+    "description": "#hash_3067fbc33878495b",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#radio",
+    "model": "#hash_4fe1a0b748461f0f",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_7ea108a0c0ac5fa4",
+    "var_2a12d36": 1,
+    "type": "zmintel",
+    "var_ad4ad686": "#hash_1303dcb8d0e80e33",
+    "soundloop": "#hash_5db0167d85d70c82",
+    "name": "zmintel_silver_requiem_radio_5",
+    "var_9be0526e": "#hash_20ea75a25d912949",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "var_348b91fd": "#radio",
+    "title": "#hash_23cf6060f46e0621",
+    "mapname": "#zm_silver"
+}

@@ -15,8 +15,8 @@
 // Checksum 0xe1806c8d, Offset: 0x148
 // Size: 0xe0
 function event_handler[level_preinit] codecallback_preinitialization(*eventstruct) {
-    clientfield::register("world", "hide_intro_models", 1, 1, "int", &function_89f2cd1c, 0, 0);
-    clientfield::register_clientuimodel("closeLoadingMovie", #"hash_414f1dabe0f0c1a5", #"hash_6917ff0cf66e7df", 1, 1, "int", undefined, 0, 0);
+    clientfield::register("world", "hide_intro_models", 1, 1, "int", &hide_intro_models, 0, 0);
+    clientfield::register_clientuimodel("closeLoadingMovie", #"hash_414f1dabe0f0c1a5", #"closeloadingmovie", 1, 1, "int", undefined, 0, 0);
     var_43a36c6f = function_6681bbf6();
     function_e526b83(var_43a36c6f);
     level.var_5337a48a = [];
@@ -103,7 +103,7 @@ function function_e526b83(var_43a36c6f) {
 // Params 7, eflags: 0x2 linked
 // Checksum 0x221a52e1, Offset: 0x5b8
 // Size: 0x1e4
-function function_89f2cd1c(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function hide_intro_models(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     var_6d963dbf = findstaticmodelindexarray("intro_scene_models");
     if (bwastimejump) {
         if (sessionmodeismultiplayergame()) {

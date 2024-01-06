@@ -1,0 +1,32 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_6420b05cfb88dcf8",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shot 1"
+                }
+            ],
+            "lerptime": 4,
+            "firstframe": 1,
+            "model": "#hash_12ba0b969e06861c",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "prop 1",
+            "var_16999a5d": -6,
+            "var_922b4fc5": -8
+        }
+    ],
+    "scenetype": "fxanim",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "p9_fxanim_zm_particle_accl_terminal_set_bundle",
+    "dontsync": 1,
+    "team": "any"
+}

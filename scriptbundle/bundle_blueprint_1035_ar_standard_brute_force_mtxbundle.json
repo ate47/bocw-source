@@ -1,0 +1,34 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_mercenary_bp_brutus_mtxitem",
+            "itemid": "19771326"
+        },
+        {
+            "var_4a4bc969": "#smg_burst_bp_brutus_mtxitem",
+            "itemid": "23726887"
+        },
+        {
+            "var_4a4bc969": "#emblems_bruteforce_mtxitem",
+            "itemid": "20765454"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_bruteforce_mtxitem",
+            "itemid": "25517880"
+        },
+        {
+            "var_4a4bc969": "#callingcards_bruteforce_mtxitem",
+            "itemid": "19932055"
+        }
+    ],
+    "itemname": "#hash_74bafb0a28dbee76",
+    "var_375a1747": "#hash_754cd40bba3a29dc",
+    "name": "bundle_blueprint_1035_ar_standard_brute_force_mtxbundle",
+    "var_22f91505": "#hash_73943d12671ff538",
+    "var_566825be": "#hash_637eeff5e3a876e3",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_5072b6a0fbc77100",
+    "var_db3e02ab": 2000,
+    "itemid": "23175109"
+}

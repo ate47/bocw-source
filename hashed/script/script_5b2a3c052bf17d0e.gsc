@@ -374,7 +374,7 @@ function function_90c8355(eventstruct) {
             eventstruct.activator.var_664db4ed = 0;
         }
         eventstruct.activator.var_664db4ed++;
-        var_2af6e229 = function_4ba8fde(#"hash_682698368e3a043");
+        var_2af6e229 = function_4ba8fde(#"resource_item_harvesting_sr");
         if (isdefined(var_2af6e229)) {
             level thread item_world::function_de2018e3(var_2af6e229, eventstruct.activator);
         }

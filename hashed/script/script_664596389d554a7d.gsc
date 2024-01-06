@@ -144,13 +144,13 @@ function event_handler[gametype_init] main(*eventstruct) {
         }
     #/
     if (is_true(getgametypesetting(#"hash_1e8998fd7f271bb7"))) {
-        setgametypesetting(#"hash_430ea04f2dccef18", 0);
+        setgametypesetting(#"autoheal", 0);
         setgametypesetting(#"zmstartingweaponenabled", 0);
         setgametypesetting(#"hash_2d9172b182d08475", 1);
         setgametypesetting(#"hash_a564dde6ee3c657", 0);
         setgametypesetting(#"hash_241e17e13da23de2", 0);
         setgametypesetting(#"disablecompass", 1);
-        level.var_3a2ad19b = [11:#"hash_5f756c8a3594e4bc", 10:#"hash_31b26d0981ba6551", 9:#"hash_7e6614597067499c", 8:#"hash_13fae5f55e8af58a", 7:#"hash_68ceb9b08b13b6d4", 6:#"hash_347ed9f95474b085", 5:#"hash_38b5d361ea812f41", 4:#"hash_1df587ce1971f89b", 3:#"hash_5ec684d0b3eb6315", 2:#"hash_189d15276e6b857a", 1:#"hash_6a952597b6a662fb", 0:#"hash_40dc69b05e92c55b"];
+        level.var_3a2ad19b = [11:#"item_zmquest_sr_ltm_food_poutine", 10:#"item_zmquest_sr_ltm_food_pizza_slice", 9:#"item_zmquest_sr_ltm_food_pizza_full", 8:#"item_zmquest_sr_ltm_food_croissant", 7:#"item_zmquest_sr_ltm_food_cookie", 6:#"item_zmquest_sr_ltm_food_chips", 5:#"item_zmquest_sr_ltm_food_chicken_soup", 4:#"item_zmquest_sr_ltm_food_cheese", 3:#"item_zmquest_sr_ltm_food_cauliflower", 2:#"item_zmquest_sr_ltm_food_canned_corn", 1:#"item_zmquest_sr_ltm_food_burger", 0:#"item_zmquest_sr_ltm_food_banana"];
     }
     level.is_survival = 1;
     level.aat_in_use = 1;
@@ -165,7 +165,7 @@ function event_handler[gametype_init] main(*eventstruct) {
     setdvar(#"hash_34cae673a047c202", 1);
     level.var_ea32773 = &on_end_game;
     level.var_68e3cf24 = 1;
-    namespace_4abf1500::function_88645994(#"hash_1440a8afd0539909", #"hash_3e41166877185a54", #"hash_5e3ec381febba2f9", #"hash_43108888a6396ab7", #"hash_7feac0b9fb13301a", #"hash_778743599747ead3", #"hash_6fd808779c3a9baf", #"hash_76ad101a51a56c6a", #"hash_5211f12ea197e258");
+    namespace_4abf1500::function_88645994(#"zmintel_list_survival_document_drops", #"zmintel_list_survival_darkaether_computer", #"zmintel_list_survival_radio_transmissions_requiem", #"zmintel_list_survival_radio_transmissions_maxis", #"zmintel_list_survival_radio_transmissions_omega", #"zmintel_list_survival_omega_intel_all", #"zmintel_list_survival_darkaether_intel_all", #"zmintel_list_survival_maxis_intel_all", #"zmintel_list_survival_requiem_intel_all");
     val::register("b_ignore_fow_damage", 1);
     val::default_value("b_ignore_fow_damage", 0);
     level thread function_9663b13b();
@@ -245,7 +245,7 @@ function event_handler[gametype_init] main(*eventstruct) {
     setdvar(#"hkai_navmeshusehierarchialpathfind", 0);
     setdvar(#"hkai_pathfinditerationlimit", 2000);
     setsaveddvar(#"hash_1677d88b90b7fcf8", 1);
-    level.var_13339abf = array(#"hash_41f5516d2a39d700", #"hash_7f522bf9ee249485", #"hash_2d2ce8582fb2b98", #"hash_68767e76af3b02ad", #"hash_294b09b399adeaf6", #"hash_335dbdca3e36e2bd");
+    level.var_13339abf = array(#"ammo_small_caliber_item_t9_sr", #"ammo_ar_item_t9_sr", #"ammo_large_caliber_item_t9_sr", #"ammo_sniper_item_t9_sr", #"ammo_shotgun_item_t9_sr", #"ammo_special_item_t9_sr");
     namespace_58949729::function_5a12541e();
     level.var_dcf5a517 = 1;
     namespace_d0ab5955::init();
@@ -269,11 +269,11 @@ function function_68b4ecc9(*var_d5fa8477, *var_f014519d) {
     level flag::wait_till("spawn_intel_at_start_complete");
     str_map_name = util::get_map_name();
     if (str_map_name === #"hash_61b0dcd51a7049e3") {
-        var_99bf2e73 = struct::get(#"hash_260892693b54bf6", "scriptbundlename");
+        var_99bf2e73 = struct::get(#"zmintel_survival_maxis_audiolog_15", "scriptbundlename");
         if (isdefined(var_99bf2e73)) {
             level thread namespace_4abf1500::function_d0e6ff7a("zmintel_survival_maxis_audiolog_15", undefined, 250);
         }
-        var_99bf2e73 = struct::get(#"hash_260872693b54890", "scriptbundlename");
+        var_99bf2e73 = struct::get(#"zmintel_survival_maxis_audiolog_17", "scriptbundlename");
         if (isdefined(var_99bf2e73)) {
             level thread namespace_4abf1500::function_d0e6ff7a("zmintel_survival_maxis_audiolog_17", undefined, 500);
         }
@@ -658,7 +658,7 @@ function on_player_spawn() {
     }
     self.var_f4710251 = undefined;
     if (isdefined(targetplayer) && isalive(targetplayer)) {
-        spawn = namespace_1332002f::function_e402b74e(self, targetplayer);
+        spawn = squad_spawn::function_e402b74e(self, targetplayer);
         if (isdefined(spawn.angles) && (isfloat(spawn.angles[1]) || isint(spawn.angles[1]))) {
             spawn.angles.spawn = (0, spawn.angles[1], 0);
         }
@@ -1089,7 +1089,7 @@ function function_798c4aa9() {
     item_world::function_de2018e3(backpack, self, var_fa3df96);
     var_ea8725b3 = getdvarstring(#"hash_7187c1ee48f0a1a");
     if (!isdefined(var_ea8725b3) || var_ea8725b3 == "") {
-        var_ea8725b3 = array::random(array(#"hash_4777f28d1a2ad7bf", #"hash_5d310a03cd9f9af4", #"hash_43e819ecb1562f21", #"hash_27a1d3b77a36f326", #"hash_2230087fda13a58c"));
+        var_ea8725b3 = array::random(array(#"ar_accurate_t9_item_sr", #"shotgun_pump_t9_item_sr", #"shotgun_semiauto_t9_item_sr", #"smg_standard_t9_item_sr", #"tr_longburst_t9_item_sr"));
     }
     item_weapon = function_4ba8fde(var_ea8725b3);
     var_fa3df96 = self item_inventory::function_e66dcff5(item_weapon);
@@ -1425,7 +1425,7 @@ function private function_938991d2() {
     var_a9b93bb4 = (var_cc6e64ae - 1) * 2000;
     self thread namespace_2a9f256a::function_afab250a(var_ef5aac55);
     self thread namespace_2a9f256a::function_a6d4221f(var_a9b93bb4);
-    self zm_weapons::function_98776900(function_4ba8fde(#"hash_79d7d5e206eaf770"), 1, 0);
+    self zm_weapons::function_98776900(function_4ba8fde(#"ray_gun_item_sr"), 1, 0);
 }
 
 // Namespace zsurvival/zsurvival
@@ -1438,7 +1438,7 @@ function private function_d48a4cc6(*itemname, rarity) {
     }
     currenthealth = self.health;
     switch (rarity) {
-    case #"hash_3a98cc868af9b743":
+    case #"uncommon":
         self.health = self.health + 50;
         self.health = math::clamp(self.health, 0, self.var_66cb03ad);
         break;

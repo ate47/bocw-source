@@ -256,7 +256,7 @@ function private function_daafd48c(&paramslist) {
 function private function_f692725c(&paramslist) {
     profileNamedStart(#"");
     var_6577f082 = self.bot.actionparams;
-    foreach (action in level.botactions) {
+    foreach (name, action in level.botactions) {
         actionparams = undefined;
         if (isdefined(var_6577f082) && var_6577f082.action == action) {
             actionparams = var_6577f082;

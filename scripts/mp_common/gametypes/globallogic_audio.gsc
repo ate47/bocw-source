@@ -175,7 +175,7 @@ function announcercontroller() {
         }
         level waittill(#"match_ending_very_soon");
         if (level.var_70cd9e95 !== 1) {
-            foreach (_ in level.teams) {
+            foreach (team, _ in level.teams) {
                 leader_dialog("roundTimeWarning", team);
             }
         }
@@ -245,7 +245,7 @@ function function_dfd17bd3() {
 // Checksum 0x6ca68297, Offset: 0x1418
 // Size: 0x120
 function announce_team_is_winning() {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (is_team_winning(team)) {
             var_5624e09d = isdefined(level.var_2ee800c8) ? level.var_2ee800c8 : "gameWinning";
             var_c678068b = isdefined(level.var_78739954) ? level.var_78739954 : "gameLosing";
@@ -281,7 +281,7 @@ function announce_round_winner(delay) {
             leader_dialog_for_other_teams("roundEncourageLost", winner, undefined, undefined, undefined, 1, level.var_db91e97c);
         }
     } else {
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             if (isdefined(level.teampostfix[team])) {
                 thread sound::play_on_players("mus_round_draw" + "_" + level.teampostfix[team]);
             }
@@ -497,7 +497,7 @@ function function_2685981b() {
     str_gametype = util::get_game_type();
     switch (str_gametype) {
     case #"control":
-    case #"hash_3c969849921481cc":
+    case #"fireteam_dirty_bomb":
     case #"hash_68e906194eba76f0":
         var_5d9df74c = 1;
         break;

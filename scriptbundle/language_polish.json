@@ -1,0 +1,28 @@
+{
+    "options": [
+        {
+            "label": "#hash_39e35430ce8daea6",
+            "value": "1"
+        },
+        {
+            "label": "#hash_1bfcfb78026cd693",
+            "value": "0"
+        }
+    ],
+    "var_dfedf08e": 1,
+    "description": "#hash_2031d712f3de327b",
+    "var_60fcfffa": "#menu/on",
+    "var_9bc3be7": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "maxvalue": 1,
+    "name": "language_polish",
+    "displayname": "#hash_1da69a671778f481",
+    "var_2d7a664e": 1,
+    "var_500458ac": 10,
+    "var_66faec87": 10,
+    "statname": "english_vo",
+    "var_6f00a61a": 1.1,
+    "var_b7401319": "#menu/off"
+}

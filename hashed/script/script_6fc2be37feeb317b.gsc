@@ -70,8 +70,8 @@ function postinit() {
 function function_a5ed2da0() {
     level.var_dcd62c45 = [];
     var_a559259f = [];
-    itemspawnlist = getscriptbundle(#"hash_dddaaa65c676e29");
-    var_70f9bc79 = getscriptbundle(#"hash_2eb1f6fc96ab3345");
+    itemspawnlist = getscriptbundle(#"pap_weapons_list");
+    var_70f9bc79 = getscriptbundle(#"pap_common_weapons_list");
     foreach (item in var_70f9bc79.itemlist) {
         point = getscriptbundle(item.var_a6762160);
         if (isdefined(point.weapon)) {
@@ -86,7 +86,7 @@ function function_a5ed2da0() {
         if (isdefined(point.weapon)) {
             var_d1d465fa = point.weapon.name;
             if (isdefined(item.var_23a1d10f) && isdefined(item.var_7b0c7fe3) && isdefined(item.var_8261a18) && isdefined(item.var_8261a18) && isdefined(var_a559259f[var_d1d465fa]) && isdefined(var_d1d465fa) && isdefined(item.var_168e36e8)) {
-                level.var_dcd62c45[var_d1d465fa] = [#"legendary":item.var_168e36e8, #"epic":item.var_23a1d10f, #"rare":item.var_7b0c7fe3, #"hash_3a98cc868af9b743":item.var_8261a18, #"resource":item.var_3f8c08e3, #"loadout":var_a559259f[var_d1d465fa]];
+                level.var_dcd62c45[var_d1d465fa] = [#"legendary":item.var_168e36e8, #"epic":item.var_23a1d10f, #"rare":item.var_7b0c7fe3, #"uncommon":item.var_8261a18, #"resource":item.var_3f8c08e3, #"loadout":var_a559259f[var_d1d465fa]];
             }
         }
     }
@@ -149,10 +149,10 @@ function function_395f9528() {
         level flag::wait_till_clear("disable_weapon_machine");
         self show();
         self.scriptmodel clientfield::set("weapon_machine_fx", 1);
-        self.scriptmodel thread scene::play(#"hash_19d0f38dbaefcd65", "Shot 1", self.scriptmodel);
+        self.scriptmodel thread scene::play(#"p9_fxanim_zm_gp_pap_bundle", "Shot 1", self.scriptmodel);
         level flag::wait_till("disable_weapon_machine");
         self.scriptmodel clientfield::set("weapon_machine_fx", 0);
-        self.scriptmodel thread scene::stop(#"hash_19d0f38dbaefcd65");
+        self.scriptmodel thread scene::stop(#"p9_fxanim_zm_gp_pap_bundle");
     }
 }
 
@@ -383,25 +383,25 @@ function function_ef9d58d0(item, weapon) {
     }
     if (isdefined(item.var_a6762160.name)) {
         switch (item.var_a6762160.name) {
-        case #"hash_ad7366e99bb5190":
-        case #"hash_c20bf6cb2f436fd":
-        case #"hash_f5896e310254300":
-        case #"hash_165e9ace72992332":
-        case #"hash_27815c5c48d7960a":
-        case #"hash_315d03848e9c8533":
-        case #"hash_33417f4ad8761c42":
-        case #"hash_3cd577fa00373968":
-        case #"hash_3d6c85e60e7f64bf":
+        case #"ww_ieu_shockwave_t9_upgraded_item_sr":
+        case #"ww_ieu_gas_t9_item_sr":
+        case #"ww_ieu_plasma_t9_item_sr":
+        case #"ww_ieu_gas_t9_upgraded_item_sr":
+        case #"ww_ieu_acid_t9_upgraded_item_sr":
+        case #"ww_ieu_shockwave_t9_item_sr":
+        case #"ww_mega_barrel_fullauto_copycat_t9_item_sr":
+        case #"ww_mega_barrel_fullauto_blazer_beam_t9_upgraded_item_sr":
+        case #"ww_ieu_electric_t9_item_sr":
         case #"hash_3dff7d94b9ae5c97":
-        case #"hash_4c696ce5b8b4e675":
-        case #"hash_55cb4fac65da3f6b":
-        case #"hash_6deee6c9f8742324":
-        case #"hash_6eac25a76519ca9f":
-        case #"hash_72a58b09181924ba":
-        case #"hash_73db7f5128ff7f04":
-        case #"hash_7a134781f4e9dcf7":
-        case #"hash_7b3b2febd34985f5":
-        case #"hash_7f5286e872cf6dd1":
+        case #"ww_ieu_acid_t9_item_sr":
+        case #"ww_mega_barrel_fullauto_blazer_beam_t9_item_sr":
+        case #"ww_ieu_electric_t9_upgraded_item_sr":
+        case #"ww_mega_barrel_fullauto_copycat_t9_upgraded_item_sr":
+        case #"ww_mega_barrel_fullauto_micro_missile_t9_item_sr":
+        case #"ww_mega_barrel_fullauto_diffusion_beam_t9_item_sr":
+        case #"ww_mega_barrel_fullauto_micro_missile_t9_upgraded_item_sr":
+        case #"ww_ieu_plasma_t9_upgraded_item_sr":
+        case #"ww_mega_barrel_fullauto_diffusion_beam_t9_upgraded_item_sr":
             return 1;
             break;
         }
@@ -561,7 +561,7 @@ function function_4609e67c(machine, trigger) {
                             self zm_stats::increment_player_stat(#"hash_1bcba3bbca05dee0");
                             self function_80287c83(undefined, var_461c9e9e);
                             if (isdefined(machine)) {
-                                machine thread scene::play(#"hash_19d0f38dbaefcd65", "Shot 3", machine);
+                                machine thread scene::play(#"p9_fxanim_zm_gp_pap_bundle", "Shot 3", machine);
                             }
                         } else {
                             machine playsoundtoplayer(#"hash_7d81a3ace87fb4e2", self);
@@ -595,7 +595,7 @@ function function_4609e67c(machine, trigger) {
                         }
                         self.var_2cf223c3++;
                         if (isdefined(machine)) {
-                            machine thread scene::play(#"hash_19d0f38dbaefcd65", "Shot 2", machine);
+                            machine thread scene::play(#"p9_fxanim_zm_gp_pap_bundle", "Shot 2", machine);
                         }
                         waitframe(1);
                         if (isplayer(self)) {

@@ -1,0 +1,66 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_700a62d1b4cbb063",
+            "var_5d4b5964": 6.89,
+            "var_36bf8e05": "#hash_376f54f9fc5cd352"
+        },
+        {
+            "var_46bd7973": "#hash_3b54cff6612de2fb",
+            "var_5d4b5964": 10.47,
+            "var_36bf8e05": "#hash_8bf51b0a2b8b1d4"
+        },
+        {
+            "var_46bd7973": "#hash_700a64d1b4cbb3c9",
+            "var_5d4b5964": 7.45,
+            "var_36bf8e05": "#hash_568a8aa4c32cf4d8"
+        },
+        {
+            "var_46bd7973": "#hash_700a63d1b4cbb216",
+            "var_5d4b5964": 8.45,
+            "var_36bf8e05": "#hash_5b1916ce511bdb51"
+        },
+        {
+            "var_46bd7973": "#hash_700a66d1b4cbb72f",
+            "var_5d4b5964": 8.06,
+            "var_36bf8e05": "#hash_3db581e79f4e7a2e"
+        },
+        {
+            "var_46bd7973": "#hash_3b54d3f6612de9c7",
+            "var_5d4b5964": 3.73,
+            "var_36bf8e05": "#hash_7379d7e5fbbe5568"
+        },
+        {
+            "var_46bd7973": "#hash_700a68d1b4cbba95",
+            "var_5d4b5964": 6.36,
+            "var_36bf8e05": "#hash_59858c8d3f5986e4"
+        },
+        {
+            "var_46bd7973": "#hash_3b54d5f6612ded2d",
+            "var_5d4b5964": 2.9,
+            "var_36bf8e05": "#hash_70f0ce4b262e0e56"
+        },
+        {
+            "var_46bd7973": "#hash_700a6ad1b4cbbdfb",
+            "var_5d4b5964": 9.34,
+            "var_36bf8e05": "#hash_711a7f84365b44ca"
+        }
+    ],
+    "description": "#hash_6bd687e7ca0dff78",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#exploration",
+    "model": "#hash_58228068154ebd8c",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_b967b1b400fed9b",
+    "type": "zmintel",
+    "season": 1,
+    "var_ad4ad686": "#hash_1303dcb8d0e80e33",
+    "soundloop": "#hash_2e77024e1f0a29f1",
+    "name": "zmintel_silver_requiem_audiolog_4",
+    "var_9be0526e": "#audiolog",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "var_348b91fd": "#tape",
+    "title": "#hash_16daaee0e47e1b50",
+    "mapname": "#zm_silver"
+}

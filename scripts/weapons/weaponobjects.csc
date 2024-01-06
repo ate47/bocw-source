@@ -159,7 +159,7 @@ function enemyequip_changed(local_client_num, *oldval, newval, *bnewent, *biniti
 // Checksum 0x71195dca, Offset: 0x9f8
 // Size: 0x134
 function function_6a5648dc(local_client_num, *bundle) {
-    if (namespace_56e70a4a::function_b8fe9b52(bundle)) {
+    if (codcaster::function_b8fe9b52(bundle)) {
         return 1;
     }
     if (!self function_e9fc6a64() || self.team === #"none") {
@@ -187,7 +187,7 @@ function function_6a5648dc(local_client_num, *bundle) {
 // Checksum 0x60198283, Offset: 0xb38
 // Size: 0x17c
 function function_232f3acf(local_client_num, bundle) {
-    if (namespace_56e70a4a::function_b8fe9b52(local_client_num)) {
+    if (codcaster::function_b8fe9b52(local_client_num)) {
         return 1;
     }
     if (self function_e9fc6a64() && self.team !== #"none") {
@@ -218,9 +218,9 @@ function function_232f3acf(local_client_num, bundle) {
 // Checksum 0x729ca1e4, Offset: 0xcc0
 // Size: 0x15c
 function updateenemyequipment(local_client_num, *newval) {
-    if (namespace_56e70a4a::function_b8fe9b52(newval)) {
-        var_7eda7144 = self namespace_56e70a4a::is_friendly(newval) ? #"friendly" : #"enemy";
-        robkey = self namespace_56e70a4a::is_friendly(newval) ? #"hash_2476e7ae62469f70" : #"hash_2476eaae6246a489";
+    if (codcaster::function_b8fe9b52(newval)) {
+        var_7eda7144 = self codcaster::is_friendly(newval) ? #"friendly" : #"enemy";
+        robkey = self codcaster::is_friendly(newval) ? #"hash_2476e7ae62469f70" : #"hash_2476eaae6246a489";
         self renderoverridebundle::function_c8d97b8e(newval, var_7eda7144, robkey);
         return;
     }

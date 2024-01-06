@@ -1,0 +1,55 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_nic_pl_smuggler_stinger_mtxitem",
+            "itemid": "20146288"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_nic_mtxitem",
+            "itemid": "22017161"
+        },
+        {
+            "var_4a4bc969": "#tr_precisionsemi_bp_doomsday_mtxitem",
+            "itemid": "17960562"
+        },
+        {
+            "var_4a4bc969": "#shotgun_semiauto_bp_doomsday_mtxitem",
+            "itemid": "24606268"
+        },
+        {
+            "var_4a4bc969": "#execution_108_mtxitem",
+            "itemid": "22182481"
+        },
+        {
+            "var_4a4bc969": "#loot_ges_mtx_t9_watching_you_mtxitem",
+            "itemid": "29425141"
+        },
+        {
+            "var_4a4bc969": "#emblems_blackpanther_animated_mtxitem",
+            "itemid": "30524706"
+        },
+        {
+            "var_4a4bc969": "#callingcards_blackpanther_animated_mtxitem",
+            "itemid": "24544399"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_black_panther_mtxitem",
+            "itemid": "32739287"
+        },
+        {
+            "var_4a4bc969": "#reticle_88_mtxitem",
+            "itemid": "22779572"
+        }
+    ],
+    "itemname": "#hash_c6d6a2918f0dae4",
+    "var_375a1747": "#hash_6da1f79bb477c0c2",
+    "name": "operator_bundle_3015_rivas_scout_marksman_mtxbundle",
+    "var_a788fada": "#hash_78837b8776abdb21",
+    "var_22f91505": "#hash_22c5a3a000603328",
+    "var_566825be": "#hash_5bdd08043457b7b9",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_31e69551c3fbf670",
+    "var_db3e02ab": 2000,
+    "itemid": "20493747"
+}

@@ -574,28 +574,28 @@ function function_e677fbe0() {
 function function_aece4588(var_3afe334f) {
     switch (var_3afe334f) {
     case 1:
-        var_e7a1cbae = #"hash_57db40fab3d9600a";
+        var_e7a1cbae = #"objective_rover_ailist_1";
         break;
     case 2:
-        var_e7a1cbae = #"hash_57db3ffab3d95e57";
+        var_e7a1cbae = #"objective_rover_ailist_2";
         break;
     case 3:
-        var_e7a1cbae = #"hash_57db3efab3d95ca4";
+        var_e7a1cbae = #"objective_rover_ailist_3";
         break;
     case 4:
-        var_e7a1cbae = #"hash_57db3dfab3d95af1";
+        var_e7a1cbae = #"objective_rover_ailist_4";
         break;
     case 5:
-        var_e7a1cbae = #"hash_57db3cfab3d9593e";
+        var_e7a1cbae = #"objective_rover_ailist_5";
         break;
     case 6:
-        var_e7a1cbae = #"hash_57db3bfab3d9578b";
+        var_e7a1cbae = #"objective_rover_ailist_6";
         break;
     case 7:
-        var_e7a1cbae = #"hash_57db3afab3d955d8";
+        var_e7a1cbae = #"objective_rover_ailist_7";
         break;
     case #"hash_defdefdefdefdef0":
-        var_e7a1cbae = #"hash_57db39fab3d95425";
+        var_e7a1cbae = #"objective_rover_ailist_8";
         break;
     }
     var_6017f33e = namespace_679a22ba::function_ca209564(var_e7a1cbae);
@@ -967,7 +967,7 @@ function function_81f989d5(instance) {
         wait(randomfloatrange(0.1, 0.5));
         instance.var_c851d175[instance.var_c851d175.size] = var_b8b81de9;
         var_b8b81de9 clientfield::set("" + #"hash_6390b0f27a5057c2", 1);
-        var_b8b81de9 thread scene::play(#"hash_76544dedcadfdf05", "idle", var_b8b81de9);
+        var_b8b81de9 thread scene::play(#"aib_t9_zm_tmpst_boss_fight", "idle", var_b8b81de9);
     }
 }
 
@@ -990,7 +990,7 @@ function function_9072f256(instance) {
 // Size: 0x74
 function function_12e2aa23() {
     self clientfield::set("" + #"hash_6390b0f27a5057c2", 0);
-    self scene::play(#"hash_76544dedcadfdf05", "teleport_start", self);
+    self scene::play(#"aib_t9_zm_tmpst_boss_fight", "teleport_start", self);
     if (isdefined(self)) {
         self delete();
     }

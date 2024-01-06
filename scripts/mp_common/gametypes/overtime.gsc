@@ -41,7 +41,7 @@ function round_stats_init() {
     if (!isdefined(game.stat[#"overtimeroundswon"][#"tie"])) {
         game.stat[#"overtimeroundswon"][#"tie"] = 0;
     }
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (!isdefined(game.stat[#"overtimeroundswon"][team])) {
             game.stat[#"overtimeroundswon"][team] = 0;
         }

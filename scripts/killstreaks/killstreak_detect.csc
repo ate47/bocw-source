@@ -57,7 +57,7 @@ function function_95f96f3e(local_client_num, *bundle, *param) {
     if (!self function_e9fc6a64()) {
         return 0;
     }
-    if (namespace_56e70a4a::function_b8fe9b52(param)) {
+    if (codcaster::function_b8fe9b52(param)) {
         return 0;
     }
     if (self.type === "vehicle" && self function_979020fe()) {
@@ -101,7 +101,7 @@ function function_d63aa49b(local_client_num, *bundle) {
     if (self function_e9fc6a64()) {
         return 0;
     }
-    if (namespace_56e70a4a::function_b8fe9b52(bundle)) {
+    if (codcaster::function_b8fe9b52(bundle)) {
         return 0;
     }
     if (self.type === "vehicle") {
@@ -130,7 +130,7 @@ function function_903bbed3(local_client_num, *bundle) {
     if (self function_e9fc6a64()) {
         return 0;
     }
-    if (namespace_56e70a4a::function_b8fe9b52(bundle)) {
+    if (codcaster::function_b8fe9b52(bundle)) {
         return 0;
     }
     if (self.type === "vehicle" && self function_4add50a7()) {

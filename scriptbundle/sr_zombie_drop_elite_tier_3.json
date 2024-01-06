@@ -1,0 +1,29 @@
+{
+    "itemlist": [
+        {
+            "minweight": 25,
+            "var_a6762160": "#armor_item_lv1_t9_sr",
+            "maxweight": 25,
+            "available": -1
+        },
+        {
+            "minweight": 50,
+            "var_a6762160": "#sr_zombie_drop_perk_bottles",
+            "maxweight": 50,
+            "available": -1
+        },
+        {
+            "minweight": 25,
+            "var_a6762160": "#sr_explore_chest_equipment_tier_3",
+            "maxweight": 25,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "sr_zombie_drop_elite_tier_3",
+    "var_fde72c94": 100
+}

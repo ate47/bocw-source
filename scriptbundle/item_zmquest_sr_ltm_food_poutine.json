@@ -1,0 +1,35 @@
+{
+    "worldfx": [
+        {
+            "worldfx": "#hash_7f4c941a9564c78f"
+        },
+        {
+            "worldfx": "#hash_4c7d47bec47dda6c"
+        }
+    ],
+    "var_a6616b9c": 1,
+    "var_fa988b4b": 210,
+    "var_922067c4": "scriptbundle",
+    "model": "#hash_bc2f029c0434219",
+    "var_16e34ef4": 64,
+    "var_e9898330": "zmpingitemquest",
+    "var_ac75b59f": -1,
+    "var_c2de1e75": "zm_item_pickup_rumble",
+    "type": "itemspawnentry",
+    "hintstring": "#hash_73b240bed0c08a32",
+    "var_6731866b": 4,
+    "var_4a1a4613": "armor_swap",
+    "var_6cc98559": "evt_sr_item_food_land",
+    "name": "item_zmquest_sr_ltm_food_poutine",
+    "displayname": "#hash_73b240bed0c08a32",
+    "var_36781d9f": "evt_sr_item_food_drop",
+    "var_9e569978": 1,
+    "modelscale": 1,
+    "rarity": "Legendary",
+    "var_1b0b57d1": "evt_item_despawn",
+    "handler": "#hash_1002a9af0882010e",
+    "var_3af59a99": 1,
+    "pickupicon": "#hash_22a3607cd35663bd",
+    "itemtype": "quest",
+    "pickupsound": "evt_sr_item_food_pickup"
+}

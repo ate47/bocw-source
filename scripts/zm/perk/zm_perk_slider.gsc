@@ -304,7 +304,7 @@ function function_4d806c6a(var_a25d1f0 = 25, explosion_radius = 64, var_8b77e4de
     var_6c77565b = self getenemiesinradius(self.origin, explosion_radius);
     var_6c77565b = arraysortclosest(var_6c77565b, self.origin);
     var_b61c0138 = 1;
-    foreach (zombie in var_6c77565b) {
+    foreach (i, zombie in var_6c77565b) {
         if (i > var_6c77565b.size / 2) {
             if (isalive(zombie) && isvec(zombie.origin) && isvec(self.origin)) {
                 var_b61c0138 = bullettracepassed(self.origin, zombie.origin, 0, zombie);

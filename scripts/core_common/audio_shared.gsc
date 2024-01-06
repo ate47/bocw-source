@@ -215,7 +215,7 @@ function function_30d4f8c4(attacker, smeansofdeath, weapon) {
         if (var_90937e56 === #"gas") {
             str_alias = #"hash_291958f59b6be82";
         }
-        if (var_90937e56 === #"hash_40c5f8104d76cc15") {
+        if (var_90937e56 === #"execution") {
             str_alias = #"hash_58d3709b34454b17";
         }
         if (var_90937e56 === #"bullet") {
@@ -235,7 +235,7 @@ function function_30d4f8c4(attacker, smeansofdeath, weapon) {
 function function_bd53fa92(*attacker, mod, weapon) {
     if (isdefined(mod)) {
         if (mod === "MOD_EXECUTION") {
-            return #"hash_40c5f8104d76cc15";
+            return #"execution";
         }
         if (mod === "MOD_EXPLOSIVE" || mod === "MOD_GRENADE" || mod === "MOD_GRENADE_SPLASH") {
             return #"explosive";

@@ -1,0 +1,19 @@
+{
+    "description": "#hash_628ac0c4be898bc6",
+    "itemspawnentry": "#item_zmintel_miami_requiem_document_1",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#hash_54f6484895bebf79",
+    "model": "#hash_12f07511d01b55d",
+    "var_824079e7": "#onslaught",
+    "uimodel": "#hash_87dcdfb87a98334",
+    "type": "zmintel",
+    "var_ad4ad686": "#hash_1303dcb8d0e80e33",
+    "var_217aec15": "#hash_13060f8fe834d761",
+    "name": "zmintel_miami_requiem_document_1",
+    "var_9be0526e": "#hash_daeb8129dc8e394",
+    "var_83e219de": "#exclusive",
+    "var_53be913a": 5,
+    "title": "#hash_255b5e560e6371b6",
+    "var_c664d393": "requiem_document_01",
+    "mapname": "#mp_miami"
+}

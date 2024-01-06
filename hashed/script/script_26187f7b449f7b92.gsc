@@ -629,7 +629,7 @@ function function_f69400ca(model, var_56fa7962 = 0, scale = 1) {
     self thread function_73b8cd81();
     var_b8bb1cdf = self function_a088b5df(model, scale, var_56fa7962 != 0, var_56fa7962 == 2);
     if (self.var_8cff5775.var_20c63763.size >= 5) {
-        self giveachievement(#"hash_7fc3515d8479dc7a");
+        self giveachievement(#"doa_achievement_5_piece");
     }
     return var_b8bb1cdf;
 }

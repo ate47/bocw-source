@@ -1,0 +1,34 @@
+{
+    "itemlist": [
+        {
+            "minweight": 39,
+            "maxweight": 39,
+            "available": -1
+        },
+        {
+            "minweight": 15,
+            "var_a6762160": "#zombie_armor_level1_resource_list",
+            "maxweight": 15,
+            "available": -1
+        },
+        {
+            "minweight": 8,
+            "var_a6762160": "#zm_equipment_list",
+            "maxweight": 8,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#zm_food_parent_list",
+            "maxweight": 10,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "armor_zombie_level1_drop_list_sr_food",
+    "var_fde72c94": 100
+}

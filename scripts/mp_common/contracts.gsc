@@ -118,7 +118,7 @@ function function_a7a24a36(weaponname) {
     case #"remote_missile":
         attacker increment_contract(#"hash_772e19fad283c8cf");
         break;
-    case #"hash_5ceaf52285031501":
+    case #"sig_bow_flame":
         attacker increment_contract(#"hash_6e992792aaf0dc10");
         break;
     case #"hero_pineapplegun":
@@ -142,7 +142,7 @@ function function_a7a24a36(weaponname) {
     case #"hash_2b9efbad11308e02":
         attacker increment_contract(#"hash_40b0132274ac999");
         break;
-    case #"hash_63826b4a80215cd3":
+    case #"tear_gas":
         attacker increment_contract(#"hash_4c13df5a3ef481e");
         break;
     }
@@ -269,10 +269,10 @@ function contract_kills(data) {
             attacker function_fd9fb79b(#"hash_1801dc5071019f1c");
             break;
         case #"hash_ed62df533816471":
-        case #"hash_438fafe881cdd097":
+        case #"napalm_strike":
             attacker function_fd9fb79b(#"hash_671056a002339a47");
             break;
-        case #"hash_5ceaf52285031501":
+        case #"sig_bow_flame":
             attacker function_fd9fb79b(#"hash_3595f542499fc68e");
             break;
         case #"sig_lmg":
@@ -339,7 +339,7 @@ function on_ekia(weapon, victim) {
         attacker function_fd9fb79b(#"contract_mp_hardcore_ekia");
     }
     switch (level.basegametype) {
-    case #"hash_3c969849921481cc":
+    case #"fireteam_dirty_bomb":
         attacker function_fd9fb79b(#"hash_72338a9a4e12ba3a");
         break;
     }
@@ -517,7 +517,7 @@ function function_fb608f0a(weapon) {
 function function_4b024d04() {
     var_c421e6b = undefined;
     switch (level.basegametype) {
-    case #"hash_3c969849921481cc":
+    case #"fireteam_dirty_bomb":
         var_c421e6b = #"hash_3a3d0c0b64f00008";
         break;
     }
@@ -749,7 +749,7 @@ function function_c5958b54() {
     case #"hash_68e906194eba76f0":
         var_c421e6b = #"hash_4384359f95ad0db0";
         break;
-    case #"hash_3c969849921481cc":
+    case #"fireteam_dirty_bomb":
         var_c421e6b = #"hash_445752ece698bef2";
         break;
     case #"hash_defdefdefdefdef0":

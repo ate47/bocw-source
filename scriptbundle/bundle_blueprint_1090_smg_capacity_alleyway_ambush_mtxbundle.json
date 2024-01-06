@@ -1,0 +1,30 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#smg_capacity_bp_alleywayamb_mtxitem",
+            "itemid": "20010331"
+        },
+        {
+            "var_4a4bc969": "#callingcards_alleyway_mtxitem",
+            "itemid": "24732160"
+        },
+        {
+            "var_4a4bc969": "#emblems_alleyway_mtxitem",
+            "itemid": "30762787"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_alleyway_mtxitem",
+            "itemid": "21696295"
+        }
+    ],
+    "itemname": "#hash_6bcae1095fc96f8b",
+    "var_375a1747": "#hash_dbd1637a7d7c8b5",
+    "name": "bundle_blueprint_1090_smg_capacity_alleyway_ambush_mtxbundle",
+    "var_22f91505": "#hash_35605f1861886b25",
+    "var_566825be": "#hash_53140cbfa872604c",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_39cee2b709ed06dd",
+    "var_db3e02ab": 2000,
+    "itemid": "31373729"
+}

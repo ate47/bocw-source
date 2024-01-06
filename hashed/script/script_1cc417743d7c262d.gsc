@@ -52,7 +52,7 @@ function function_6e084fd3(var_37ecca7, taacombundle) {
     case #"tank_robot":
         bundlename = taacombundle.aitankdialogbundle;
         break;
-    case #"hash_2f648e335983677a":
+    case #"chopper_gunner":
     case #"inventory_chopper_gunner":
         bundlename = taacombundle.var_3f45482e;
         break;
@@ -68,7 +68,7 @@ function function_6e084fd3(var_37ecca7, taacombundle) {
     case #"drone_squadron":
         bundlename = taacombundle.var_69a9ca12;
         break;
-    case #"hash_5ceaf52285031501":
+    case #"sig_bow_flame":
         bundlename = taacombundle.var_82cefc8c;
         break;
     case #"hero_flamethrower":
@@ -95,7 +95,7 @@ function function_6e084fd3(var_37ecca7, taacombundle) {
     case #"dog":
         bundlename = taacombundle.var_f68cebf2;
         break;
-    case #"hash_1b2bdd347dcfc0dc":
+    case #"hoverjet":
     case #"inventory_hoverjet":
         bundlename = taacombundle.var_c96adb95;
         break;
@@ -112,7 +112,7 @@ function function_6e084fd3(var_37ecca7, taacombundle) {
     case #"recon_car":
         bundlename = taacombundle.rcbombdialogbundle;
         break;
-    case #"hash_165bcc9977521521":
+    case #"recon_plane":
     case #"inventory_recon_plane":
         bundlename = taacombundle.var_5b8e4a97;
         break;
@@ -138,20 +138,20 @@ function function_6e084fd3(var_37ecca7, taacombundle) {
         bundlename = taacombundle.ultturretdialogbundle;
         break;
     case #"hash_49d514608adc6a24":
-    case #"hash_60c23248e5923f35":
+    case #"jetfighter":
         bundlename = taacombundle.var_2f6e3044;
         break;
-    case #"hash_4f802136d7ccd11":
-    case #"hash_438fafe881cdd097":
+    case #"napalm_strike_zm":
+    case #"napalm_strike":
     case #"hash_67f88dbc909e85f8":
         bundlename = taacombundle.var_3ab478cf;
         break;
-    case #"hash_18d1b94b35c3b851":
+    case #"weapon_armor":
     case #"hash_6bf7a941e385e178":
         bundlename = taacombundle.var_17e0a105;
         break;
     case #"nuke":
-    case #"hash_2e85cc3c8ca1e315":
+    case #"inventory_nuke":
         bundlename = taacombundle.var_6e8d651b;
         break;
     case #"hash_defdefdefdefdef0":
@@ -462,7 +462,7 @@ function leader_dialog_for_other_teams(dialogkey, skipteam, objectivekey, killst
     /#
         assert(isdefined(skipteam));
     #/
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (team != skipteam) {
             leader_dialog(dialogkey, team, objectivekey, killstreakid, dialogbufferkey, skippable, var_6ad14004);
         }
@@ -941,7 +941,7 @@ function function_ec14f55(dialogbundle, dialogkey) {
 // Size: 0xdc
 function is_team_winning(checkteam) {
     score = game.stat[#"teamscores"][checkteam];
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (team != checkteam) {
             if (game.stat[#"teamscores"][team] >= score) {
                 return 0;
@@ -1133,10 +1133,10 @@ function function_6daffa93(weapon, var_f3ab6571) {
     case #"hash_320a8d55b915b9e5":
         taacomdialog = "listenWeaponDestroyedFriendly";
         break;
-    case #"hash_f1b44dbfb6fccde":
+    case #"missile_turret":
         taacomdialog = "missileTurretWeaponDestroyedFriendly";
         break;
-    case #"hash_63826b4a80215cd3":
+    case #"tear_gas":
         taacomdialog = "tearGasWeaponDestroyedFriendly";
         break;
     case #"trophy_system":
@@ -1175,10 +1175,10 @@ function function_a2cde53d(weapon, var_f3ab6571) {
     case #"hash_320a8d55b915b9e5":
         taacomdialog = "listenHacked";
         break;
-    case #"hash_f1b44dbfb6fccde":
+    case #"missile_turret":
         taacomdialog = "missileTurretHacked";
         break;
-    case #"hash_63826b4a80215cd3":
+    case #"tear_gas":
         taacomdialog = "tearGasHacked";
         break;
     case #"trophy_system":
@@ -1238,7 +1238,7 @@ function function_4fb91bc7(weapon, var_df17fa82, var_53c10ed8) {
         taacomdialog = "ac130Hacked";
         break;
     case #"inventory_chopper_gunner":
-    case #"hash_2f648e335983677a":
+    case #"chopper_gunner":
         taacomdialog = "chopperGunnerHacked";
         break;
     case #"inventory_tank_robot":
@@ -1269,7 +1269,7 @@ function function_4fb91bc7(weapon, var_df17fa82, var_53c10ed8) {
         taacomdialog = "droneSquadHacked";
         var_b3fe42a9 = 1;
         break;
-    case #"hash_1b2bdd347dcfc0dc":
+    case #"hoverjet":
     case #"inventory_hoverjet":
         taacomdialog = "hoverJetHacked";
         break;
@@ -1277,7 +1277,7 @@ function function_4fb91bc7(weapon, var_df17fa82, var_53c10ed8) {
     case #"inventory_recon_car":
         taacomdialog = "reconCarHacked";
         break;
-    case #"hash_165bcc9977521521":
+    case #"recon_plane":
     case #"inventory_recon_plane":
         taacomdialog = "reconPlaneHacked";
         break;

@@ -1,0 +1,58 @@
+{
+    "itemlist": [
+        {
+            "minweight": 1,
+            "var_a6762160": "#item_zmquest_sr_cassette_tape_06",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#item_zmquest_sr_cassette_tape_07",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#item_zmquest_sr_cassette_tape_08",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#item_zmquest_sr_cassette_tape_09",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#item_zmquest_sr_cassette_tape_10",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#item_zmquest_sr_cassette_tape_11",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#item_zmquest_sr_cassette_tape_12",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#item_zmquest_sr_cassette_tape_13",
+            "maxweight": 1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "sr_radio_tuning_cassettes",
+    "var_fde72c94": 100
+}

@@ -1466,7 +1466,7 @@ function function_e26b3847() {
             continue;
         }
         if (player namespace_d2efac9a::function_4226df4b() && player.var_f5602976 <= var_77f9aad3) {
-            player giveachievement(#"hash_4fd5239967bfd36e");
+            player giveachievement(#"doa_achievement_fidolina");
             if (player.var_8cff5775.var_2d965438 === 0) {
                 player namespace_d2efac9a::function_267c2183();
             }

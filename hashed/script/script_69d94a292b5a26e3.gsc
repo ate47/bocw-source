@@ -34,10 +34,10 @@ function private function_70a657d8() {
 // Checksum 0x8ee35a19, Offset: 0x1f8
 // Size: 0xe4
 function function_4df027f2() {
-    level thread aat::register_immunity("ammomod_brainrot", #"hash_3d92e2c7bea1eee2", 1, 1, 1);
-    level thread aat::register_immunity("ammomod_cryofreeze", #"hash_3d92e2c7bea1eee2", 1, 1, 1);
-    level thread aat::register_immunity("ammomod_deadwire", #"hash_3d92e2c7bea1eee2", 1, 1, 1);
-    level thread aat::register_immunity("ammomod_napalmburst", #"hash_3d92e2c7bea1eee2", 1, 1, 1);
+    level thread aat::register_immunity("ammomod_brainrot", #"mechz", 1, 1, 1);
+    level thread aat::register_immunity("ammomod_cryofreeze", #"mechz", 1, 1, 1);
+    level thread aat::register_immunity("ammomod_deadwire", #"mechz", 1, 1, 1);
+    level thread aat::register_immunity("ammomod_napalmburst", #"mechz", 1, 1, 1);
 }
 
 // Namespace namespace_cd6bd9f/namespace_cd6bd9f

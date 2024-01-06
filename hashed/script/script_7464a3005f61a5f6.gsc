@@ -107,7 +107,7 @@ function private function_8aefaae3(s_burn) {
         var_25c61d06 = 0;
         var_2af3b934 = undefined;
         weapon = undefined;
-        foreach (var_39d0f0a8 in self.var_88421cc2) {
+        foreach (str_type, var_39d0f0a8 in self.var_88421cc2) {
             if (!isdefined(var_2af3b934)) {
                 var_2af3b934 = var_39d0f0a8.e_owner;
             }
@@ -319,7 +319,7 @@ function slowdown(str_type, var_a47cf2b2, callback) {
         str_lowest_type = undefined;
         n_lowest_rate = 10;
         self function_e01e1ea1();
-        foreach (var_94aa4140 in self.a_n_slowdown_timeouts) {
+        foreach (str_index, var_94aa4140 in self.a_n_slowdown_timeouts) {
             if (str_index == str_type && isdefined(var_a47cf2b2)) {
                 n_rate = var_a47cf2b2;
             } else {

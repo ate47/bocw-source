@@ -5,17 +5,17 @@
 #using scripts\core_common\clientfield_shared.gsc;
 #using scripts\core_common\callbacks_shared.gsc;
 
-#namespace namespace_cc2ee5;
+#namespace dynent_use;
 
-// Namespace namespace_cc2ee5/namespace_cc2ee5
+// Namespace dynent_use/dynent_use
 // Params 0, eflags: 0x5
 // Checksum 0x5af52b67, Offset: 0x128
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_8ee481b79bc4249", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"dynent_use", &function_70a657d8, undefined, undefined, undefined);
 }
 
-// Namespace namespace_cc2ee5/namespace_cc2ee5
+// Namespace dynent_use/dynent_use
 // Params 0, eflags: 0x6 linked
 // Checksum 0x57938ab1, Offset: 0x170
 // Size: 0x174
@@ -35,7 +35,7 @@ function private function_70a657d8() {
     level.var_7d3131e8 = &function_662eb91e;
 }
 
-// Namespace namespace_cc2ee5/namespace_cc2ee5
+// Namespace dynent_use/dynent_use
 // Params 0, eflags: 0x6 linked
 // Checksum 0xb23ab8e3, Offset: 0x2f0
 // Size: 0x74
@@ -50,7 +50,7 @@ function private on_player_connect() {
     #/
 }
 
-// Namespace namespace_cc2ee5/namespace_cc2ee5
+// Namespace dynent_use/dynent_use
 // Params 0, eflags: 0x6 linked
 // Checksum 0xdbd58f05, Offset: 0x370
 // Size: 0x2c
@@ -60,7 +60,7 @@ function private on_player_disconnect() {
     }
 }
 
-// Namespace namespace_cc2ee5/namespace_cc2ee5
+// Namespace dynent_use/dynent_use
 // Params 1, eflags: 0x6 linked
 // Checksum 0x53768fed, Offset: 0x3a8
 // Size: 0x2c
@@ -68,7 +68,7 @@ function private on_player_killed(*params) {
     self clientfield::set_player_uimodel("hudItems.dynentUseHoldProgress", 0);
 }
 
-// Namespace namespace_cc2ee5/namespace_cc2ee5
+// Namespace dynent_use/dynent_use
 // Params 0, eflags: 0x6 linked
 // Checksum 0x7faa1f34, Offset: 0x3e0
 // Size: 0x1a0
@@ -90,7 +90,7 @@ function private create_use_trigger() {
     return usetrigger;
 }
 
-// Namespace namespace_cc2ee5/namespace_cc2ee5
+// Namespace dynent_use/dynent_use
 // Params 0, eflags: 0x6 linked
 // Checksum 0x27192ce, Offset: 0x588
 // Size: 0x196
@@ -98,7 +98,7 @@ function private update_loop() {
     level endon(#"game_ended");
     var_1a1c0d86 = 0;
     while (1) {
-        foreach (player in getplayers()) {
+        foreach (i, player in getplayers()) {
             if (i % 5 == var_1a1c0d86) {
                 if (!isdefined(player.var_8a022726)) {
                     continue;
@@ -115,7 +115,7 @@ function private update_loop() {
     }
 }
 
-// Namespace namespace_cc2ee5/namespace_cc2ee5
+// Namespace dynent_use/dynent_use
 // Params 0, eflags: 0x6 linked
 // Checksum 0x6cfd8430, Offset: 0x728
 // Size: 0x69c
@@ -201,7 +201,7 @@ function private function_2f394f36() {
     trigger triggerenable(1);
 }
 
-// Namespace namespace_cc2ee5/namespace_cc2ee5
+// Namespace dynent_use/dynent_use
 // Params 4, eflags: 0x2 linked
 // Checksum 0x886475c4, Offset: 0xdd0
 // Size: 0x2f8
@@ -238,7 +238,7 @@ function function_662eb91e(dynent, vieworigin, viewforward, var_7c927bcc = 1) {
     return 0;
 }
 
-// Namespace namespace_cc2ee5/namespace_cc2ee5
+// Namespace dynent_use/dynent_use
 // Params 2, eflags: 0x2 linked
 // Checksum 0x12b62d8f, Offset: 0x10d0
 // Size: 0xa4
@@ -250,7 +250,7 @@ function function_836af3b3(bundle, state) {
     self sethintstring(hintstring);
 }
 
-// Namespace namespace_cc2ee5/namespace_cc2ee5
+// Namespace dynent_use/dynent_use
 // Params 1, eflags: 0x6 linked
 // Checksum 0x7fb86ce9, Offset: 0x1180
 // Size: 0x11a
@@ -270,7 +270,7 @@ function private function_46502841(trigger_struct) {
     }
 }
 
-// Namespace namespace_cc2ee5/namespace_cc2ee5
+// Namespace dynent_use/dynent_use
 // Params 1, eflags: 0x6 linked
 // Checksum 0xb1a353ce, Offset: 0x12a8
 // Size: 0x2f8
@@ -319,7 +319,7 @@ function private function_2b9e2224(trigger) {
     return success;
 }
 
-// Namespace namespace_cc2ee5/namespace_cc2ee5
+// Namespace dynent_use/dynent_use
 // Params 2, eflags: 0x2 linked
 // Checksum 0x1b40a3ba, Offset: 0x15a8
 // Size: 0xc0
@@ -348,7 +348,7 @@ function function_58fa8833(trigger, dynent) {
     return 1;
 }
 
-// Namespace namespace_cc2ee5/namespace_cc2ee5
+// Namespace dynent_use/dynent_use
 // Params 1, eflags: 0x6 linked
 // Checksum 0x1abce993, Offset: 0x1670
 // Size: 0xcc
@@ -366,7 +366,7 @@ function private function_e882de59(trigger) {
     trigger callback::on_trigger_once(&function_46502841);
 }
 
-// Namespace namespace_cc2ee5/namespace_cc2ee5
+// Namespace dynent_use/dynent_use
 // Params 0, eflags: 0x2 linked
 // Checksum 0xe870c277, Offset: 0x1748
 // Size: 0x5c
@@ -378,7 +378,7 @@ function function_7f2040e8() {
     self thread function_e882de59(self.var_8a022726);
 }
 
-// Namespace namespace_cc2ee5/namespace_cc2ee5
+// Namespace dynent_use/dynent_use
 // Params 5, eflags: 0x2 linked
 // Checksum 0xcd8768fa, Offset: 0x17b0
 // Size: 0x340
@@ -417,7 +417,7 @@ function use_dynent(dynent, activator, var_b731b99b, disablegesture = 0, var_c78
     return 0;
 }
 
-// Namespace namespace_cc2ee5/namespace_cc2ee5
+// Namespace dynent_use/dynent_use
 // Params 0, eflags: 0x4
 // Checksum 0xcb0ff404, Offset: 0x1af8
 // Size: 0x6c
@@ -432,7 +432,7 @@ function private devgui_loop() {
     #/
 }
 
-// Namespace namespace_cc2ee5/namespace_cc2ee5
+// Namespace dynent_use/dynent_use
 // Params 0, eflags: 0x4
 // Checksum 0xf9039352, Offset: 0x1b70
 // Size: 0x288

@@ -38,12 +38,12 @@ function function_2376fab8(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0x10c
 function function_6b66a9a3(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump) {
-        forcestreamxmodel(#"hash_4ba274dbca0d6fd4");
-        forcestreamxmodel(#"hash_1d76083752295368");
+        forcestreamxmodel(#"p9_fxp_zm_teleport_tunnel");
+        forcestreamxmodel(#"p9_fxp_zm_teleport_tunnel_edge");
         function_3385d776(#"hash_2f112a3ab3cf120a");
     } else {
-        stopforcestreamingxmodel(#"hash_4ba274dbca0d6fd4");
-        stopforcestreamingxmodel(#"hash_1d76083752295368");
+        stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel");
+        stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel_edge");
         function_c22a1ca2(#"hash_2f112a3ab3cf120a");
     }
 }

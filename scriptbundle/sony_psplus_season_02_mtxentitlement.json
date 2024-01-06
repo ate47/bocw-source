@@ -1,0 +1,50 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#po_c_t9_usa_pl_navyseal_endurance_sy_mtxitem",
+            "itemid": "19150981"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_navy_seal_mtxitem",
+            "itemid": "20822559"
+        },
+        {
+            "var_4a4bc969": "#tr_longburst_bp_sforces_sy_mtxitem",
+            "itemid": "33188609"
+        },
+        {
+            "var_4a4bc969": "#pistol_semiauto_bp_arvnr1_sy_mtxitem",
+            "itemid": "30567870"
+        },
+        {
+            "var_4a4bc969": "#knife_bowie_bp_predator_sy_mtxitem",
+            "itemid": "32644406"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_hawk_sy_mtxitem",
+            "itemid": "22963564"
+        },
+        {
+            "var_4a4bc969": "#callingcards_sonybundle_animated_base_sy_mtxitem",
+            "itemid": "21479423"
+        },
+        {
+            "var_4a4bc969": "#weapon_xp_token_legendary_mtxitem",
+            "itemid": "19262075"
+        }
+    ],
+    "itemname": "#sony_psplus_season_02",
+    "var_247d9ed7": "sony_psplus_season_02",
+    "var_208d76b5": "#hash_43ddeee245017c9f",
+    "var_70f66e54": "#hash_224ce3cba368acb4",
+    "name": "sony_psplus_season_02_mtxentitlement",
+    "var_a788fada": "#hash_5b5bb78305191b10",
+    "var_22f91505": "#hash_65ea7ae433937d65",
+    "var_566825be": "#hash_6d054e32e19e02c8",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "var_4e46b1b3": "#orbis",
+    "itemid": "24754285",
+    "var_a592ce5": 1
+}

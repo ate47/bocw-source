@@ -1,0 +1,71 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_6c6f7f2815b20e48"
+        },
+        {
+            "var_fe10649e": "#hash_7e508d303ad9876a"
+        },
+        {
+            "var_fe10649e": "#hash_7e508c303ad985b7"
+        },
+        {
+            "var_fe10649e": "#hash_7e508b303ad98404"
+        }
+    ],
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_adler_lancer_mtxitem",
+            "itemid": "31677568"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_hero_adler_mtxitem",
+            "itemid": "31112941"
+        },
+        {
+            "var_4a4bc969": "#lmg_accurate_bp_numbers_mtxitem",
+            "itemid": "29012316"
+        },
+        {
+            "var_4a4bc969": "#shotgun_fullauto_bp_numbers_mtxitem",
+            "itemid": "21543096"
+        },
+        {
+            "var_4a4bc969": "#smg_standard_cb_bp_numbers_mtxitem",
+            "itemid": "23380394"
+        },
+        {
+            "var_4a4bc969": "#execution_207_mtxitem",
+            "itemid": "27023992"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_nixie_tube_mtxitem",
+            "itemid": "23535786"
+        },
+        {
+            "var_4a4bc969": "#reticle_122_mtxitem",
+            "itemid": "30087282"
+        },
+        {
+            "var_4a4bc969": "#emblems_numbers_reactive_animated_mtxitem",
+            "itemid": "20919964"
+        },
+        {
+            "var_4a4bc969": "#callingcards_cipher_s5_animated_mtxitem",
+            "itemid": "23876811"
+        }
+    ],
+    "itemname": "#hash_405321c12a84870a",
+    "var_375a1747": "#hash_6c6f7f2815b20e48",
+    "var_3040f0d1": "#hash_6c6f7f2815b20e48",
+    "var_8ee7db29": 1,
+    "name": "blueprint_bundle_5015_stoner_63_reactive_mafia_mtxbundle",
+    "var_a788fada": "#hash_1ee603e63041091d",
+    "var_22f91505": "#hash_acc62e144290336",
+    "var_566825be": "#hash_40a1ab25efcf0995",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_4d9bc8a5181cee4a",
+    "var_db3e02ab": 750,
+    "itemid": "33374535"
+}

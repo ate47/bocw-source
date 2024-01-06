@@ -100,7 +100,7 @@ function freegameplayhudelems() {
 // Size: 0xb6
 function teamplayercountsequal(playercounts) {
     count = undefined;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (!isdefined(count)) {
             count = playercounts[team];
         } else if (count != playercounts[team]) {
@@ -117,7 +117,7 @@ function teamplayercountsequal(playercounts) {
 function teamwithlowestplayercount(playercounts, *ignore_team) {
     count = 9999;
     lowest_team = undefined;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (count > ignore_team[team]) {
             count = ignore_team[team];
             lowest_team = team;
@@ -214,7 +214,7 @@ function menuautoassign(comingfrommenu) {
 // Size: 0xcc
 function teamscoresequal() {
     score = undefined;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (!isdefined(score)) {
             score = getteamscore(team);
         } else if (score != getteamscore(team)) {
@@ -231,7 +231,7 @@ function teamscoresequal() {
 function teamwithlowestscore() {
     score = 99999999;
     lowest_team = undefined;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (score > getteamscore(team)) {
             lowest_team = team;
         }

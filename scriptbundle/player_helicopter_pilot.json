@@ -1,0 +1,17 @@
+{
+    "var_922067c4": "scriptbundle",
+    "var_5dbdd77c": 20,
+    "var_5becf9b5": -90,
+    "var_e6fe69e8": 20,
+    "type": "turretanims",
+    "var_faf96846": 90,
+    "var_9323d5c1": "#hash_764fa926bc5e5d11",
+    "centerstraightanim": "#hash_6b8648706933ad67",
+    "vmtype": "none",
+    "var_1f5b775e": 30000,
+    "name": "player_helicopter_pilot",
+    "aimpitchangleu": 90,
+    "aimpitchangled": 90,
+    "var_9b47c071": "#hash_764fa926bc5e5d11",
+    "var_76635d45": 1
+}

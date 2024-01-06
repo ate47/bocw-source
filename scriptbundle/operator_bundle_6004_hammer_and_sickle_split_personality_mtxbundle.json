@@ -1,0 +1,51 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#melee_hammersicle_bp_agony_mtxitem",
+            "itemid": "26440132"
+        },
+        {
+            "var_4a4bc969": "#c_t9_rus_pl_spetsnaz_melted_mtxitem",
+            "itemid": "25960839"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_rus_spetsnaz_mtxitem",
+            "itemid": "31261283"
+        },
+        {
+            "var_4a4bc969": "#c_t9_rus_pl_spetsnaz_infiltration_mtxitem",
+            "itemid": "28921153"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s6_analog_agony_mtxitem",
+            "itemid": "21924389"
+        },
+        {
+            "var_4a4bc969": "#execution_142_mtxitem",
+            "itemid": "30370382"
+        },
+        {
+            "var_4a4bc969": "#loot_ges_mtx_t9_tea_bag_mtxitem",
+            "itemid": "26006956"
+        },
+        {
+            "var_4a4bc969": "#emblems_split_personality_s6_animated_mtxitem",
+            "itemid": "21371479"
+        },
+        {
+            "var_4a4bc969": "#callingcards_personality_s6_animated_mtxitem",
+            "itemid": "23377541"
+        }
+    ],
+    "itemname": "#hash_700dba90c4ac11c6",
+    "var_375a1747": "#hash_566355abb12eca98",
+    "name": "operator_bundle_6004_hammer_and_sickle_split_personality_mtxbundle",
+    "var_a788fada": "#hash_db53134b4bd6019",
+    "var_22f91505": "#hash_6d2d8107bbb01f73",
+    "var_566825be": "#hash_1544b91f4f17c691",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_5ade484d365de017",
+    "var_db3e02ab": 2000,
+    "itemid": "21938900"
+}

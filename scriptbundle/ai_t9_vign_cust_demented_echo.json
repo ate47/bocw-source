@@ -1,0 +1,57 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_2ad2e54b5a595c29",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "idle"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_6c696ef07ccd1533",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "react"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_6bb485664a285a8e",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "chase"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_254dbbcdcf1a649e",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "gotcha"
+                }
+            ],
+            "var_9de1f44c": 1,
+            "model": "#hash_7c38d5db2819b6f8",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "echo",
+            "takedamage": 1
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "ai_t9_vign_cust_demented_echo",
+    "dontsync": 1,
+    "team": "any"
+}

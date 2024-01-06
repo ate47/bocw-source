@@ -1,0 +1,17 @@
+{
+    "durations": [
+        {
+            "duration": 1,
+            "archetype": "human",
+            "effecttype": "flash"
+        },
+        {
+            "duration": 1,
+            "archetype": "mp_dog",
+            "effecttype": "flash"
+        }
+    ],
+    "var_922067c4": "scriptbundle",
+    "type": "weapondamageeffectype",
+    "name": "damageeffecttype_flash"
+}

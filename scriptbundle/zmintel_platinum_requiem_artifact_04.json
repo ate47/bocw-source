@@ -1,0 +1,19 @@
+{
+    "description": "#hash_70bb473d48b1ea94",
+    "itemspawnentry": "#item_zmquest_platinum_rico_card",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#main_quest",
+    "model": "#hash_6e74e3c51d0e5ccc",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_71f2432828f6f0db",
+    "type": "zmintel",
+    "season": 4,
+    "var_ad4ad686": "#hash_1303dcb8d0e80e33",
+    "soundloop": "#hash_6098b72d515f39d5",
+    "name": "zmintel_platinum_requiem_artifact_04",
+    "var_9be0526e": "#artifact",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "title": "#hash_442b679e31ef5ec",
+    "mapname": "#zm_platinum"
+}

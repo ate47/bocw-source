@@ -1,0 +1,56 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_ger_pl_west_carnage_mtxitem",
+            "itemid": "18021952"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_ger_west_mtxitem",
+            "itemid": "31131649"
+        },
+        {
+            "var_4a4bc969": "#ar_mercenary_bp_predator_mtxitem",
+            "itemid": "20295619"
+        },
+        {
+            "var_4a4bc969": "#melee_sledgehammer_bp_zhunter_mtxitem",
+            "itemid": "27727602"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_skull_spine_mtxitem",
+            "itemid": "21534951"
+        },
+        {
+            "var_4a4bc969": "#execution_202_mtxitem",
+            "itemid": "30731787"
+        },
+        {
+            "var_4a4bc969": "#paintjob_sticker_ultimatehunter_20_mtxitem",
+            "itemid": "32649383"
+        },
+        {
+            "var_4a4bc969": "#callingcards_character02_mtxitem",
+            "itemid": "27689326"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_civ_ru_sedan_80s_mpx_zhunter_mtxitem",
+            "itemid": "21779215"
+        },
+        {
+            "var_4a4bc969": "#emblems_ultimatehunter_24_mtxitem",
+            "itemid": "23896928"
+        }
+    ],
+    "itemname": "#hash_6b0074e6b6eaa33c",
+    "var_375a1747": "#hash_7a8e7da6e37e5ee",
+    "var_579fd6c3": 45,
+    "name": "bundle_operator_2074_ingo_zombie_hunter_mtxbundle",
+    "var_a788fada": "#hash_633d2357b71618c",
+    "var_22f91505": "#hash_7cd812e0db7ca850",
+    "var_566825be": "#hash_4d6537d4d5487398",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_6af4c548e5e71f18",
+    "var_db3e02ab": 2000,
+    "itemid": "19331625"
+}

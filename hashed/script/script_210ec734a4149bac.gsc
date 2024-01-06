@@ -439,7 +439,7 @@ function private function_f1d19be1() {
             continue;
         }
         var_7f729179 = undefined;
-        var_7f729179 = self waittill(#"hash_6db2b95877884141");
+        var_7f729179 = self waittill(#"ai_events");
         waittillframeend();
         if (self.ignoreall || self isragdoll()) {
             continue;

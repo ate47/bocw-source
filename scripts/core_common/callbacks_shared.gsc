@@ -194,7 +194,7 @@ function private function_3f5f097e(ent, event, func, obj, instant) {
         arrayremovevalue(ent._callbacks[event], 0, 0);
         return;
     }
-    foreach (func_group in ent._callbacks[event]) {
+    foreach (index, func_group in ent._callbacks[event]) {
         if (isarray(func_group) && func_group[0] == func) {
             if (func_group[1] === obj) {
                 if (isdefined(obj)) {

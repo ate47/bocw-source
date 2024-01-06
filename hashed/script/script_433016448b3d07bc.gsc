@@ -117,7 +117,7 @@ function function_12b1d8eb() {
 // Size: 0x3c
 function function_1493eabf() {
     level waittill(#"hash_2ccb1e2f5d9ce793");
-    function_2cca7b47(0, #"hash_601bc802fb7516d1");
+    function_2cca7b47(0, #"musictrack_zm_platinum_ee");
 }
 
 // Namespace namespace_99d0d95e/namespace_99d0d95e

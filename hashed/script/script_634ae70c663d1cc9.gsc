@@ -446,7 +446,7 @@ function function_96e2f261(traps, page) {
             namespace_9529b92d::function_b3e13787(trap, page);
         } else if (trap.script_noteworthy === #"hash_c18c80da8827653") {
             namespace_53f73cda::function_28826539(trap, page);
-        } else if (trap.script_noteworthy === #"hash_ece059ad360b651") {
+        } else if (trap.script_noteworthy === #"barrel") {
             namespace_fb2125f::function_3dd2c543(trap, page);
         } else if (trap.script_noteworthy === #"hash_2d39e86ab80f92d8") {
             namespace_3c9cfcff::function_c808b1bb(trap, page);

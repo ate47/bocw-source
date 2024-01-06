@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#bundle_blueprint_2047_tr_powerburst_street_racer_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_5a5b25d92b22dbeb",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_7af11458afe25af1",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 2,
+    "var_46300498": 1,
+    "baseweapon": "#hash_5818a5515e931441",
+    "name": "tr_powerburst_cb_racer02_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 5,
+    "itemid": "24707125",
+    "blueprint": "#hash_5a5b25d92b22dbeb"
+}

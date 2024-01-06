@@ -1,0 +1,19 @@
+{
+    "description": "#hash_85be1231ac0d87b",
+    "itemspawnentry": "#item_zmintel_platinum_darkaether_artifact_02",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#main_quest",
+    "model": "#hash_3023420c57af55eb",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_7c2fd7a9464bb30",
+    "type": "zmintel",
+    "season": 4,
+    "var_ad4ad686": "#hash_70ce1650358c0923",
+    "soundloop": "#hash_6098b72d515f39d5",
+    "name": "zmintel_platinum_darkaether_artifact_02",
+    "var_9be0526e": "#artifact",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "title": "#hash_91e71c848a99681",
+    "mapname": "#zm_platinum"
+}

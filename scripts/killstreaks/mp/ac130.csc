@@ -41,7 +41,7 @@ function function_555656fe(localclientnum, *oldval, newval, *bnewent, *binitials
     if (!isdefined(self)) {
         return;
     }
-    if (bwastimejump && namespace_56e70a4a::function_c955fbd1(fieldname)) {
+    if (bwastimejump && codcaster::function_c955fbd1(fieldname)) {
         bwastimejump = 0;
     }
     if (bwastimejump) {
@@ -59,10 +59,10 @@ function function_555656fe(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0xa4
 function function_74f5faf8(eventparams) {
     localclientnum = eventparams.localclientnum;
-    if (namespace_56e70a4a::function_b8fe9b52(localclientnum)) {
+    if (codcaster::function_b8fe9b52(localclientnum)) {
         player = function_5c10bd79(localclientnum);
         if (player clientfield::get_to_player("inAC130")) {
-            function_555656fe(localclientnum, undefined, !namespace_56e70a4a::function_c955fbd1(localclientnum));
+            function_555656fe(localclientnum, undefined, !codcaster::function_c955fbd1(localclientnum));
         }
     }
 }

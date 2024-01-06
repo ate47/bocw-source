@@ -42,7 +42,7 @@ function event_handler[slide_begin] function_8183e35a(*eventstruct) {
     if (self postfx::function_556665f2(#"hash_715247c8f8a6a967")) {
         self postfx::exitpostfxbundle(#"hash_715247c8f8a6a967");
     }
-    if (!namespace_1332002f::function_21b773d5(self.localclientnum)) {
+    if (!squad_spawn::function_21b773d5(self.localclientnum)) {
         self thread postfx::playpostfxbundle(#"hash_715247c8f8a6a967");
     }
 }
@@ -157,7 +157,7 @@ function function_f9e445ee(localclientnum, *oldval, newval, *bnewent, *binitials
 // Checksum 0xc6f66df2, Offset: 0x938
 // Size: 0xfc
 function private function_f22aa227(localclientnum) {
-    if (namespace_56e70a4a::function_b8fe9b52(localclientnum)) {
+    if (codcaster::function_b8fe9b52(localclientnum)) {
         return;
     }
     if (!isalive(self)) {

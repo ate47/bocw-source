@@ -1,0 +1,11 @@
+{
+    "var_9f0ff6f3": "#hash_5ffcfa8a74d3e077",
+    "var_306f8f14": "#superfaction_warsaw_pact",
+    "name": "faction_mp_kgb",
+    "displayname": "#mpui/axis",
+    "icon": "#hash_51b2efc942f5ff7c",
+    "iconsmall": "#hash_6732cf4fc21fa7b0",
+    "var_42185d9b": "White",
+    "var_ccc3e5ba": "cdp_commander_kgb",
+    "color": "EnemyOrange"
+}

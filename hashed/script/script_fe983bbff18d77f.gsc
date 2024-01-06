@@ -10,8 +10,8 @@
 // Size: 0xcc
 function function_24b5e32(pos) {
     pos = function_2d8730f7(pos);
-    if (isdefined(self.var_7b4b2b57)) {
-        return self.var_7b4b2b57 namespace_7b4b2b57::get_goal().angles;
+    if (isdefined(self.smart_object)) {
+        return self.smart_object smart_object::get_goal().angles;
     }
     if (is_true(self.var_e9b6a21)) {
         return vectortoangles(pos - self.origin);

@@ -1,0 +1,27 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#weapon_xp_token_legendary_mtxitem",
+            "itemid": "19262075"
+        },
+        {
+            "var_4a4bc969": "#player_xp_token_legendary_mtxitem",
+            "itemid": "32109261"
+        },
+        {
+            "var_4a4bc969": "#callingcards_duos_s6_mtxitem",
+            "itemid": "29261455"
+        },
+        {
+            "var_4a4bc969": "#emblems_duos_s6_mtxitem",
+            "itemid": "30532499"
+        }
+    ],
+    "itemname": "#hash_3ceed3b2d3956e4d",
+    "var_637c8edf": 1,
+    "name": "twitch_prime_bundle_6403_duos_mtxentitlement",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "itemid": "20268665"
+}

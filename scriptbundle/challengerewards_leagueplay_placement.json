@@ -1,0 +1,78 @@
+{
+    "var_2be3941a": [
+        {
+            "unlockdescription": "#hash_7295e89e5fb6c8e4",
+            "var_5f79ee71": "#craftbackground",
+            "image": "#hash_591cb8065a9e3572",
+            "var_e5119d1b": "#hash_591cb8065a9e3572",
+            "var_b4ab831a": "#hash_7e8b3d3c7514b77b",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_5677d9133114a8ac"
+        },
+        {
+            "unlockdescription": "#hash_2198a5c6f1b54287",
+            "var_5f79ee71": "#arcadegame",
+            "var_b4ab831a": "#robot_tank_game",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_4941bc4d64a8e38"
+        },
+        {
+            "unlockdescription": "#hash_3d73f59eff86458b",
+            "var_5f79ee71": "#wristaccessory",
+            "var_b4ab831a": "#wristaccessory_t9_s2_analog_caiman",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_47351685227336cc"
+        },
+        {
+            "unlockdescription": "#hash_5db07e990fde08dd",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_62c8eeffccb660f6",
+            "var_e5119d1b": "#hash_62c8eeffccb660f6",
+            "var_b4ab831a": "#hash_7345a613f023b561",
+            "stattype": "#common",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_3d48d424c78e2c71"
+        },
+        {
+            "unlockdescription": "#hash_764b1d4067aea03b",
+            "var_5f79ee71": "#craftbackground",
+            "image": "#hash_42ba01890ea46f6",
+            "var_e5119d1b": "#hash_42ba01890ea46f6",
+            "var_b4ab831a": "#hash_7700c2b9376b0d15",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_341d75738a58c294"
+        },
+        {
+            "unlockdescription": "#hash_4808e4fc4276a90b",
+            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "image": "#hash_8346a65d752aadf",
+            "var_e5119d1b": "#hash_8346a65d752aadf",
+            "var_b4ab831a": "#hash_997d7351c83ede6",
+            "var_7a2c1108": "#hash_1bfee839b3986c80",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_17b5e73b9a9626e3"
+        },
+        {
+            "unlockdescription": "#hash_4c8aec02eacb2506",
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "var_b4ab831a": "#hash_1c7cbe3acf0c1e8f",
+            "var_7a2c1108": "#hash_4bc19862bca83e33",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_5eed955767f06002"
+        }
+    ],
+    "var_922067c4": "SCRIPTBUNDLE",
+    "type": "challengerewards",
+    "var_5f0dd656": 2,
+    "var_4e39981b": 2,
+    "name": "challengerewards_leagueplay_placement",
+    "sessionmode": "1"
+}

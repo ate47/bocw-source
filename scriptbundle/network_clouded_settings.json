@@ -1,0 +1,35 @@
+{
+    "option_dependencies": [
+        {
+            "var_1643d946": "1",
+            "var_6825bdb": "#is_player_online",
+            "operator": "=="
+        }
+    ],
+    "options": [
+        {
+            "label": "#hash_6a489abface20fd6",
+            "value": "1"
+        },
+        {
+            "label": "#hash_57f3f21157ef659b",
+            "value": "0"
+        }
+    ],
+    "var_dfedf08e": 1,
+    "description": "#hash_5f0ea8bc28b12762",
+    "var_60fcfffa": "#menu/on",
+    "var_9bc3be7": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "maxvalue": 1,
+    "name": "network_clouded_settings",
+    "displayname": "#hash_47996efca58a05f2",
+    "var_500458ac": 10,
+    "var_66faec87": 10,
+    "statname": "DISABLE_SETTINGS_CLOUDING",
+    "var_6f00a61a": 1.1,
+    "var_b7401319": "#menu/off"
+}

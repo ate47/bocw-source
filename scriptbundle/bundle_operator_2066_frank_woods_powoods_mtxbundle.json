@@ -1,0 +1,51 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_cia_pow_mtxitem",
+            "itemid": "27434437"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_woods_mtxitem",
+            "itemid": "28004165"
+        },
+        {
+            "var_4a4bc969": "#smg_heavy_bp_pow_mtxitem",
+            "itemid": "30302854"
+        },
+        {
+            "var_4a4bc969": "#pistol_semiauto_bp_pow_mtxitem",
+            "itemid": "24899838"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_prison_shiv_mtxitem",
+            "itemid": "27530737"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s2_analog_broken_fancy_mtxitem",
+            "itemid": "30837339"
+        },
+        {
+            "var_4a4bc969": "#execution_022_mtxitem",
+            "itemid": "26193828"
+        },
+        {
+            "var_4a4bc969": "#emblems_prisionerofwar_22_mtxitem",
+            "itemid": "27360850"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_prisionerofwarskull_mtxitem",
+            "itemid": "21485868"
+        }
+    ],
+    "itemname": "#hash_49f1cbb98fefeb51",
+    "var_375a1747": "#hash_1168309f54800df7",
+    "name": "bundle_operator_2066_frank_woods_powoods_mtxbundle",
+    "var_a788fada": "#hash_3eb96cd77420e2fa",
+    "var_22f91505": "#hash_3dbb5d353930577",
+    "var_566825be": "#hash_457b58c7f61a37c6",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_662d9edcce9a2d93",
+    "var_db3e02ab": 2000,
+    "itemid": "32801818"
+}

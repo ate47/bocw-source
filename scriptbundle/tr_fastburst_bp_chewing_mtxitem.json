@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#blueprint_bundle_4011_g11_reactive_one_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_1ae076f1ad1f5379",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_98ca9bef418f23",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 4,
+    "var_46300498": 1,
+    "baseweapon": "#hash_36830b3ab9fbdde",
+    "name": "tr_fastburst_bp_chewing_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 5,
+    "itemid": "26997697",
+    "blueprint": "#hash_1ae076f1ad1f5379"
+}

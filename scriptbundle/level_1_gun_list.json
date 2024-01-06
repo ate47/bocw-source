@@ -1,0 +1,41 @@
+{
+    "itemlist": [
+        {
+            "minweight": 798,
+            "var_a6762160": "#uncommon_gun_list",
+            "maxweight": 798,
+            "available": -1
+        },
+        {
+            "minweight": 150,
+            "var_a6762160": "#rare_gun_list",
+            "maxweight": 150,
+            "available": -1
+        },
+        {
+            "minweight": 50,
+            "var_a6762160": "#epic_gun_list",
+            "maxweight": 50,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#legendary_gun_list",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#named_gun_list",
+            "maxweight": 1,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "level_1_gun_list",
+    "var_fde72c94": 100
+}

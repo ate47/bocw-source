@@ -1,0 +1,20 @@
+{
+    "description": "#hash_104591211a303521",
+    "itemspawnentry": "#item_zmintel_dune_omega_document_1",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#hash_54f6484895bebf79",
+    "model": "#hash_725fe83d6136023",
+    "var_824079e7": "#onslaught",
+    "uimodel": "#hash_3221af7300a90f78",
+    "type": "zmintel",
+    "season": 4,
+    "var_ad4ad686": "#omega",
+    "var_217aec15": "#hash_76886b1b8fa7d4d6",
+    "name": "zmintel_dune_omega_document_1",
+    "var_9be0526e": "#hash_daeb8129dc8e394",
+    "var_83e219de": "#exclusive",
+    "var_53be913a": 5,
+    "title": "#hash_3dde1b5447308d6f",
+    "var_c664d393": "omega_document_20",
+    "mapname": "#hash_61b0dcd51a7049e3"
+}

@@ -1,0 +1,35 @@
+{
+    "worldfx": [
+        {
+            "worldfx": "#hash_19ef730d1f1a0f98"
+        }
+    ],
+    "attachments": [
+        {
+            "var_6be1bec7": "reflex3"
+        }
+    ],
+    "var_a6616b9c": 1,
+    "var_fa988b4b": 180,
+    "description": "#hash_2316d8550d35dcab",
+    "var_922067c4": "scriptbundle",
+    "model": "#attach_t8_optic_reflex_world",
+    "var_16e34ef4": 64,
+    "var_e9898330": "pingitemattachmentgeneric",
+    "var_ac75b59f": -1,
+    "type": "itemspawnentry",
+    "hintstring": "#hash_334f200abab0b291",
+    "var_4a1a4613": "armor_swap",
+    "name": "reflex3_t9_item_sr",
+    "displayname": "#hash_334f200abab0b291",
+    "var_9e569978": 1,
+    "icon": "#ui_icon_attachment_reflex",
+    "modelscale": 2,
+    "rarity": "Epic",
+    "equipsound": "uin_wz_attach_reflex",
+    "handler": "#hash_788c59214ead02af",
+    "attachslotoptics": 1,
+    "var_3af59a99": 1,
+    "pickupicon": "#ui_icon_attachment_reflex",
+    "itemtype": "attachment"
+}

@@ -334,8 +334,8 @@ class cscene : cscriptbundlebase {
             }
             self._e_root.scenes[self._e_root.scenes.size] = self;
             a_objs = get_valid_object_defs();
-            foreach (e_ent in arraycopy(a_ents)) {
-                foreach (s_obj in arraycopy(a_objs)) {
+            foreach (var_8713eed1, e_ent in arraycopy(a_ents)) {
+                foreach (i, s_obj in arraycopy(a_objs)) {
                     if (s_obj.name === (isdefined(var_8713eed1) ? "" + var_8713eed1 : "") || function_13804c36(e_ent, s_obj.name)) {
                         cscriptbundlebase::add_object([[ [[ self ]]->new_object(s_obj.type) ]]->first_init(s_obj, self, e_ent, self._e_root.localclientnum));
                         arrayremoveindex(a_ents, var_8713eed1);
@@ -486,7 +486,7 @@ class cscene : cscriptbundlebase {
                 return var_1a15e649;
             }
             a_shots = scene::get_all_shot_names(self._str_name, self._e_root);
-            foreach (str_shot in a_shots) {
+            foreach (i, str_shot in a_shots) {
                 if (str_shot === self._a_active_shots[0] && isdefined(a_shots[i + 1])) {
                     return a_shots[i + 1];
                 }
@@ -1454,7 +1454,7 @@ class csceneobject : cscriptbundleobjectbase {
     // Checksum 0xc3adef97, Offset: 0x21b0
     // Size: 0x9c
     function get_shot(str_shot) {
-        foreach (s_shot in self._s.shots) {
+        foreach (n_shot, s_shot in self._s.shots) {
             if (str_shot === s_shot.name) {
                 return n_shot;
             }
@@ -3282,7 +3282,7 @@ function get_active_scenes(str_scenedef) {
         return (isdefined(level.active_scenes[str_scenedef]) ? level.active_scenes[str_scenedef] : []);
     } else {
         a_active_scenes = [];
-        foreach (_ in level.active_scenes) {
+        foreach (str_scenedef, _ in level.active_scenes) {
             a_active_scenes = arraycombine(a_active_scenes, level.active_scenes[str_scenedef], 0, 0);
         }
         return a_active_scenes;
@@ -3370,7 +3370,7 @@ function get_inactive_scenes(str_scenedef) {
         return (isdefined(level.inactive_scenes[str_scenedef]) ? level.inactive_scenes[str_scenedef] : []);
     } else {
         a_scenes = [];
-        foreach (_ in level.inactive_scenes) {
+        foreach (str_scenedef, _ in level.inactive_scenes) {
             a_scenes = arraycombine(a_scenes, level.inactive_scenes[str_scenedef], 0, 0);
         }
         return a_scenes;

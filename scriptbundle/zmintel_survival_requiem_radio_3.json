@@ -1,0 +1,45 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_5c49152659d23fb7",
+            "var_f35c5951": 0.6,
+            "var_5d4b5964": 11.05,
+            "var_36bf8e05": "#hash_33fe0838b98cd2ec"
+        },
+        {
+            "var_46bd7973": "#hash_5c49142659d23e04",
+            "var_f35c5951": 0.6,
+            "var_5d4b5964": 4.97,
+            "var_36bf8e05": "#hash_5e43c821389c3b9d"
+        },
+        {
+            "var_46bd7973": "#hash_5c49172659d2431d",
+            "var_f35c5951": 0.7,
+            "var_5d4b5964": 13.1,
+            "var_36bf8e05": "#hash_40478560562b9c5e"
+        },
+        {
+            "var_46bd7973": "#hash_5c49162659d2416a",
+            "var_f35c5951": 0.5,
+            "var_5d4b5964": 6.49,
+            "var_36bf8e05": "#hash_21c5c3d760b9ead7"
+        }
+    ],
+    "description": "#hash_a5dcb009e2e2db3",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#radio",
+    "model": "#hash_4fe1a0b748461f0f",
+    "var_824079e7": "#survival",
+    "uimodel": "#hash_7ea108a0c0ac5fa4",
+    "type": "zmintel",
+    "season": 2,
+    "var_ad4ad686": "#hash_1303dcb8d0e80e33",
+    "soundloop": "#hash_5db0167d85d70c82",
+    "name": "zmintel_survival_requiem_radio_3",
+    "var_9be0526e": "#hash_20ea75a25d912949",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "var_348b91fd": "#radio",
+    "title": "#hash_500579cd932a6019",
+    "var_3bb3493d": "#hash_19f2c81eff36b2b3"
+}

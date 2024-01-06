@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#blueprint_bundle_5014_type_63_spear_fighter_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_5456848f8a738537",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_3e1d371f450baaa1",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 5,
+    "var_46300498": 1,
+    "baseweapon": "#hash_4d8b07efde79fb03",
+    "name": "ar_slowhandling_bp_wildchild_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "26532605",
+    "blueprint": "#hash_5456848f8a738537"
+}

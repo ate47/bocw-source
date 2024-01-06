@@ -1,0 +1,19 @@
+{
+    "description": "#hash_5f87681065815dc",
+    "var_60fcfffa": "#menu/on",
+    "var_9bc3be7": 1,
+    "var_4ced19ab": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "maxvalue": 1,
+    "name": "codcaster_ticker_top",
+    "displayname": "#hash_7618528d50f514",
+    "var_d6897f56": 1,
+    "var_500458ac": 5,
+    "var_66faec87": 200,
+    "statname": "codcaster_ticker_top",
+    "var_6f00a61a": 1.1,
+    "var_b7401319": "#menu/off"
+}

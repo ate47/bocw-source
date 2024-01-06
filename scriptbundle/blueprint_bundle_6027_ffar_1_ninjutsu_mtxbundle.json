@@ -1,0 +1,47 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_fastfire_bp_ninja_mtxitem",
+            "itemid": "30753905"
+        },
+        {
+            "var_4a4bc969": "#tr_precisionsemi_bp_ninja_mtxitem",
+            "itemid": "18301770"
+        },
+        {
+            "var_4a4bc969": "#melee_sai_bp_ninja_mtxitem",
+            "itemid": "28059508"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_tameshigiri_mtxitem",
+            "itemid": "32163716"
+        },
+        {
+            "var_4a4bc969": "#execution_144_mtxitem",
+            "itemid": "20726719"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_us_boat_pgb_assembly_mpx_ninja_mtxitem",
+            "itemid": "23851881"
+        },
+        {
+            "var_4a4bc969": "#callingcards_s6_ninjanoir_mtxitem",
+            "itemid": "24653962"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s6_ninjanoir_mtxitem",
+            "itemid": "20988277"
+        }
+    ],
+    "itemname": "#hash_61c35e543d131810",
+    "var_375a1747": "#hash_58a1fa1f4c1a517e",
+    "name": "blueprint_bundle_6027_ffar_1_ninjutsu_mtxbundle",
+    "var_a788fada": "#hash_c5aecda36e23e19",
+    "var_22f91505": "#hash_7119ffd8a4eb6cc0",
+    "var_566825be": "#hash_669cc1c1c0d39491",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_26398dc820c3b748",
+    "var_db3e02ab": 2000,
+    "itemid": "28539994"
+}

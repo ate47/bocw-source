@@ -1,0 +1,60 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_77dc37b34d4445b0"
+        },
+        {
+            "var_fe10649e": "#hash_77dc3ab34d444ac9"
+        },
+        {
+            "var_fe10649e": "#hash_77dc39b34d444916"
+        },
+        {
+            "var_fe10649e": "#hash_77dc3cb34d444e2f"
+        }
+    ],
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_mercenary_bp_gigaswatt_mtxitem",
+            "itemid": "19117563"
+        },
+        {
+            "var_4a4bc969": "#smg_capacity_bp_gigaswatt_mtxitem",
+            "itemid": "25778980"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_bug_zapper_mtxitem",
+            "itemid": "19834843"
+        },
+        {
+            "var_4a4bc969": "#callingcards_gigaswat_animated_mtxitem",
+            "itemid": "30480560"
+        },
+        {
+            "var_4a4bc969": "#emblem_marquee_02_animated_mtxitem",
+            "itemid": "19991512"
+        },
+        {
+            "var_4a4bc969": "#paintjob_sticker_marquee_02_mtxitem",
+            "itemid": "23470264"
+        },
+        {
+            "var_4a4bc969": "#reticle_72_mtxitem",
+            "itemid": "17902843"
+        }
+    ],
+    "itemname": "#hash_1228e258e084c74c",
+    "var_375a1747": "#hash_77dc37b34d4445b0",
+    "var_3040f0d1": "#hash_77dc37b34d4445b0",
+    "var_8ee7db29": 1,
+    "var_579fd6c3": 50,
+    "name": "bundle_reactive_2901_ar_standard_gigaswat_mtxbundle",
+    "var_a788fada": "#hash_453e41b09fd9a9b1",
+    "var_22f91505": "#hash_7d0b6d1c793f5883",
+    "var_566825be": "#hash_11b5f94713292229",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_3eaf8ea9ef7ce027",
+    "var_db3e02ab": 750,
+    "itemid": "26369908"
+}

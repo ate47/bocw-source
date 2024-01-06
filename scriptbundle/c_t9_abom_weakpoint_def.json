@@ -1,0 +1,92 @@
+{
+    "var_8009bee": [
+        {
+            "var_47b606f3": [
+                {
+                    "tag": "tag_fx_head_le_throat"
+                }
+            ],
+            "fxtag": "tag_fx_head_le_throat",
+            "var_4aa216c9": "#hash_1137dfb75f39c042",
+            "weakpoint": 1
+        },
+        {
+            "var_47b606f3": [
+                {
+                    "tag": "tag_fx_head_mid_throat"
+                }
+            ],
+            "fxtag": "tag_fx_head_center_throat",
+            "var_4aa216c9": "#hash_1137dfb75f39c042",
+            "weakpoint": 2
+        },
+        {
+            "var_47b606f3": [
+                {
+                    "tag": "tag_fx_head_ri_throat"
+                }
+            ],
+            "fxtag": "tag_fx_head_ri_throat",
+            "var_4aa216c9": "#hash_1137dfb75f39c042",
+            "weakpoint": 3
+        }
+    ],
+    "weakpoints": [
+        {
+            "var_8b732142": 4,
+            "var_3765e777": 1,
+            "var_641ce20e": 1,
+            "type": "#weakpoint",
+            "var_51e8b151": "tag_fx_jaw_le",
+            "activebydefault": 1,
+            "health": 0.1
+        },
+        {
+            "var_8b732142": 5,
+            "var_3765e777": 1,
+            "var_641ce20e": 1,
+            "type": "#weakpoint",
+            "var_51e8b151": "tag_fx_jaw_center",
+            "activebydefault": 1,
+            "health": 0.1
+        },
+        {
+            "var_8b732142": 6,
+            "var_3765e777": 1,
+            "var_641ce20e": 1,
+            "type": "#weakpoint",
+            "var_51e8b151": "tag_fx_jaw_ri",
+            "activebydefault": 1,
+            "health": 0.1
+        },
+        {
+            "type": "#weakpoint",
+            "var_51e8b151": "tag_fx_jaw_le",
+            "var_b7fbe51b": 15,
+            "health": 1
+        },
+        {
+            "type": "#weakpoint",
+            "var_51e8b151": "tag_fx_jaw_center",
+            "var_b7fbe51b": 15,
+            "health": 1
+        },
+        {
+            "type": "#weakpoint",
+            "var_51e8b151": "tag_fx_jaw_ri",
+            "var_b7fbe51b": 15,
+            "health": 1
+        },
+        {
+            "type": "#weakpoint",
+            "var_51e8b151": "j_tail_spine",
+            "activebydefault": 1,
+            "var_b7fbe51b": 16,
+            "health": 1
+        }
+    ],
+    "var_922067c4": "scriptbundle",
+    "model": "#hash_f686adcd7a6ac55",
+    "type": "characterweakpointsettings",
+    "name": "c_t9_abom_weakpoint_def"
+}

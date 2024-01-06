@@ -133,7 +133,7 @@ function countdown_timer(var_753cb060, var_3b192471 = "mission_fail_timer", str_
                 break;
             }
         }
-        foreach (var_2e453ccb in var_f2a3a140) {
+        foreach (index, var_2e453ccb in var_f2a3a140) {
             if (n_time_left <= var_2e453ccb.seconds) {
                 level notify(var_2e453ccb.notify_str, {#var_3b192471:var_3b192471});
                 self notify(var_2e453ccb.notify_str);
@@ -163,7 +163,7 @@ function countdown_timer(var_753cb060, var_3b192471 = "mission_fail_timer", str_
 // Size: 0xe6
 function function_77ab7e7d(n_seconds, var_8430ebdc, var_c15fc3d5) {
     notifies = [];
-    foreach (var_9cdf346f in var_8430ebdc) {
+    foreach (index, var_9cdf346f in var_8430ebdc) {
         if (n_seconds >= var_9cdf346f) {
             var_d67e0fa4 = spawnstruct();
             var_d67e0fa4.seconds = var_9cdf346f;

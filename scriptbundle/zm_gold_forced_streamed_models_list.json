@@ -1,0 +1,19 @@
+{
+    "var_616a2f60": [
+        {
+            "mip": 1,
+            "lod": 4,
+            "type": "#xmodel",
+            "asset": "#hash_5ce51d48c853ca39"
+        },
+        {
+            "mip": 1,
+            "lod": 4,
+            "type": "#xmodel",
+            "asset": "#hash_5abd729f7a45fe9a"
+        }
+    ],
+    "var_922067c4": "SCRIPTBUNDLE",
+    "type": "mimicproplist",
+    "name": "zm_gold_forced_streamed_models_list"
+}

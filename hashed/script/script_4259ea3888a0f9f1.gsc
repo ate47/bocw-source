@@ -63,9 +63,9 @@ function event_handler[gametype_init] main(*eventstruct) {
     setdvar(#"hash_5e3c0f05d2935beb", 1);
     callback::on_localclient_connect(&on_player_connect);
     if (is_true(getgametypesetting(#"hash_1e8998fd7f271bb7"))) {
-        level.var_3a2ad19b = [11:#"hash_5f756c8a3594e4bc", 10:#"hash_31b26d0981ba6551", 9:#"hash_7e6614597067499c", 8:#"hash_13fae5f55e8af58a", 7:#"hash_68ceb9b08b13b6d4", 6:#"hash_347ed9f95474b085", 5:#"hash_38b5d361ea812f41", 4:#"hash_1df587ce1971f89b", 3:#"hash_5ec684d0b3eb6315", 2:#"hash_189d15276e6b857a", 1:#"hash_6a952597b6a662fb", 0:#"hash_40dc69b05e92c55b"];
+        level.var_3a2ad19b = [11:#"item_zmquest_sr_ltm_food_poutine", 10:#"item_zmquest_sr_ltm_food_pizza_slice", 9:#"item_zmquest_sr_ltm_food_pizza_full", 8:#"item_zmquest_sr_ltm_food_croissant", 7:#"item_zmquest_sr_ltm_food_cookie", 6:#"item_zmquest_sr_ltm_food_chips", 5:#"item_zmquest_sr_ltm_food_chicken_soup", 4:#"item_zmquest_sr_ltm_food_cheese", 3:#"item_zmquest_sr_ltm_food_cauliflower", 2:#"item_zmquest_sr_ltm_food_canned_corn", 1:#"item_zmquest_sr_ltm_food_burger", 0:#"item_zmquest_sr_ltm_food_banana"];
     }
-    level.var_13339abf = array(#"hash_41f5516d2a39d700", #"hash_7f522bf9ee249485", #"hash_2d2ce8582fb2b98", #"hash_68767e76af3b02ad", #"hash_294b09b399adeaf6", #"hash_335dbdca3e36e2bd");
+    level.var_13339abf = array(#"ammo_small_caliber_item_t9_sr", #"ammo_ar_item_t9_sr", #"ammo_large_caliber_item_t9_sr", #"ammo_sniper_item_t9_sr", #"ammo_shotgun_item_t9_sr", #"ammo_special_item_t9_sr");
     clientfield::register_clientuimodel("hudItems.streamerLoadFraction", #"hash_6f4b11a0bee9b73d", #"streamerloadfraction", 1, 5, "float", undefined, 0, 0);
     clientfield::register_clientuimodel("hudItems.wzLoadFinished", #"hash_6f4b11a0bee9b73d", #"wzloadfinished", 1, 1, "int", undefined, 0, 0);
     clientfield::function_5b7d846d("hudItems.warzone.reinsertionPassengerCount", #"hash_593f03dd48d5bc1f", #"reinsertionpassengercount", 1, 7, "int", undefined, 0, 0);
@@ -87,7 +87,7 @@ function event_handler[gametype_init] main(*eventstruct) {
     clientfield::register("world", "set_objective_fog", 1, 2, "int", &function_bdd60454, 0, 0);
     clientfield::function_5b7d846d("hudItems.team1.roundsWon", #"hash_410fe12a68d6e801", [1:#"roundswon", 0:#"team1"], 1, 4, "int", undefined, 0, 0);
     clientfield::function_5b7d846d("hudItems.team2.roundsWon", #"hash_410fe12a68d6e801", [1:#"roundswon", 0:#"team2"], 1, 4, "int", undefined, 0, 0);
-    namespace_4abf1500::function_88645994(#"hash_1440a8afd0539909", #"hash_3e41166877185a54", #"hash_5e3ec381febba2f9", #"hash_43108888a6396ab7", #"hash_7feac0b9fb13301a");
+    namespace_4abf1500::function_88645994(#"zmintel_list_survival_document_drops", #"zmintel_list_survival_darkaether_computer", #"zmintel_list_survival_radio_transmissions_requiem", #"zmintel_list_survival_radio_transmissions_maxis", #"zmintel_list_survival_radio_transmissions_omega");
     setsoundcontext("ambience_swap", "zsurvival");
     setsoundcontext("dark_aether", "inactive");
 }

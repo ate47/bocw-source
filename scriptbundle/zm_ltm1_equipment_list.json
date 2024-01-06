@@ -1,0 +1,59 @@
+{
+    "itemlist": [
+        {
+            "minweight": 200,
+            "var_a6762160": "#frag_t9_item_sr",
+            "maxweight": 200,
+            "available": -1
+        },
+        {
+            "minweight": 200,
+            "var_a6762160": "#semtex_t9_item_sr",
+            "maxweight": 200,
+            "available": -1
+        },
+        {
+            "minweight": 200,
+            "var_a6762160": "#hatchet_t9_item_sr",
+            "maxweight": 200,
+            "available": -1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#satchel_charge_t9_item_sr",
+            "maxweight": 100,
+            "available": -1
+        },
+        {
+            "minweight": 50,
+            "var_a6762160": "#molotov_t9_item_sr",
+            "maxweight": 50,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#cymbal_monkey_t9_item_sr",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 6,
+            "var_a6762160": "#self_revive_sr_item",
+            "maxweight": 6,
+            "available": -1
+        },
+        {
+            "minweight": 50,
+            "var_a6762160": "#armor_item_lv1_t9_sr",
+            "maxweight": 50,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "zm_ltm1_equipment_list",
+    "var_fde72c94": 100
+}

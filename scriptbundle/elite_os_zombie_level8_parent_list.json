@@ -1,0 +1,41 @@
+{
+    "itemlist": [
+        {
+            "minweight": 100,
+            "var_a6762160": "#level_8_onslaught_gun_list",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#elite_os_zombie_level8_bonus_drop_list",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#ammo_item_survival",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#elite_os_zombie_armor_drop_chance_3",
+            "maxweight": 100,
+            "available": 1
+        },
+        {
+            "minweight": 100,
+            "var_a6762160": "#elite_os_zombie_upgrade_item_chance_3",
+            "maxweight": 100,
+            "available": 1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "elite_os_zombie_level8_parent_list",
+    "var_fde72c94": 100
+}

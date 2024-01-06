@@ -6,17 +6,17 @@
 #using scripts\core_common\callbacks_shared.gsc;
 #using scripts\core_common\armor.gsc;
 
-#namespace namespace_7776d72f;
+#namespace weapon_armor;
 
-// Namespace namespace_7776d72f/armor
+// Namespace weapon_armor/armor
 // Params 0, eflags: 0x5
 // Checksum 0x26080766, Offset: 0xd8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_18d1b94b35c3b851", &init_shared, undefined, undefined, undefined);
+    system::register(#"weapon_armor", &init_shared, undefined, undefined, undefined);
 }
 
-// Namespace namespace_7776d72f/armor
+// Namespace weapon_armor/armor
 // Params 0, eflags: 0x2 linked
 // Checksum 0x80e7847b, Offset: 0x120
 // Size: 0x4c
@@ -25,7 +25,7 @@ function init_shared() {
     callback::on_player_killed(&on_player_killed);
 }
 
-// Namespace namespace_7776d72f/armor
+// Namespace weapon_armor/armor
 // Params 1, eflags: 0x2 linked
 // Checksum 0xe58e0839, Offset: 0x178
 // Size: 0x206
@@ -51,7 +51,7 @@ function function_5bf3c285(*killstreaktype) {
     return 1;
 }
 
-// Namespace namespace_7776d72f/armor
+// Namespace weapon_armor/armor
 // Params 2, eflags: 0x2 linked
 // Checksum 0xb63a1424, Offset: 0x388
 // Size: 0xcc
@@ -71,7 +71,7 @@ function function_b299c6ec(eattacker, weapon) {
     }
 }
 
-// Namespace namespace_7776d72f/armor
+// Namespace weapon_armor/armor
 // Params 1, eflags: 0x2 linked
 // Checksum 0xffc24da2, Offset: 0x460
 // Size: 0x114

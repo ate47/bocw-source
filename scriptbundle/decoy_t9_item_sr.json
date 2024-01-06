@@ -1,0 +1,33 @@
+{
+    "worldfx": [
+        {
+            "worldfx": "#hash_3e3f86ff3fc6055"
+        }
+    ],
+    "var_a6616b9c": 1,
+    "amount": 1,
+    "var_fa988b4b": 60,
+    "var_922067c4": "scriptbundle",
+    "var_16e34ef4": 64,
+    "var_e9898330": "pingitemtacticalnightingale",
+    "weapon": "#hash_12f078ddc9b913c3",
+    "var_ac75b59f": -1,
+    "var_c2de1e75": "zm_item_pickup_rumble",
+    "type": "itemspawnentry",
+    "spawnsound": "zmb_powerup_eqp_spawn",
+    "var_4a1a4613": "armor_swap",
+    "name": "decoy_t9_item_sr",
+    "var_9e569978": 1,
+    "stackcount": 3,
+    "icon": "#hash_7a6a398396853ded",
+    "modelscale": 1.5,
+    "rarity": "Rare",
+    "var_1b0b57d1": "evt_item_despawn",
+    "handler": "#hash_2cbf15cbb314c93e",
+    "var_3af59a99": 1,
+    "pickupicon": "#hash_7a6a398396853ded",
+    "var_ef039d3d": 1,
+    "stackable": 1,
+    "itemtype": "tactical",
+    "pickupsound": "zmb_powerup_eqp_pickup"
+}

@@ -137,7 +137,7 @@ function private function_2d6a2f29(*entity) {
         if (isarray(self.var_4dfe3675)) {
             function_1eaaceab(self.var_4dfe3675);
             var_1b6d19cb = [];
-            foreach (struct in self.var_f7c25ec3) {
+            foreach (var_4b6c578e, struct in self.var_f7c25ec3) {
                 ent = getentbynum(var_4b6c578e);
                 if (namespace_85745671::is_player_valid(ent)) {
                     var_1b6d19cb[var_1b6d19cb.size] = ent;

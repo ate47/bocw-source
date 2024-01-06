@@ -1,0 +1,30 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_rus_pl_kgb_tacticalgoth_mtxitem",
+            "itemid": "30474531"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_rus_kgb_mtxitem",
+            "itemid": "29488041"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_fav_light_mpx_dominator_mtxitem",
+            "itemid": "21054965"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_gothamulet_mtxitem",
+            "itemid": "20524633"
+        }
+    ],
+    "itemname": "#hash_40185fe893671aff",
+    "var_375a1747": "#hash_a59b0ab926cc3fd",
+    "name": "bundle_operator_1086_kgb_punk_goth_mtxbundle",
+    "var_22f91505": "#hash_295dadb81c0af3c2",
+    "var_566825be": "#hash_4698cdd252ba08b4",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_5863425bc958da3e",
+    "var_db3e02ab": 2000,
+    "itemid": "30397418"
+}

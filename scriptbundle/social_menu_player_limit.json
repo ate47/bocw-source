@@ -1,0 +1,48 @@
+{
+    "options": [
+        {
+            "label": "#hash_10908bb4202cbc31",
+            "value": "1"
+        },
+        {
+            "label": "#hash_109088b4202cb718",
+            "value": "2"
+        },
+        {
+            "label": "#hash_109089b4202cb8cb",
+            "value": "3"
+        },
+        {
+            "label": "#hash_10908eb4202cc14a",
+            "value": "4"
+        },
+        {
+            "label": "#hash_10908fb4202cc2fd",
+            "value": "5"
+        },
+        {
+            "label": "#hash_10908cb4202cbde4",
+            "value": "6"
+        }
+    ],
+    "var_dfedf08e": 5,
+    "description": "#hash_6a7923e2180d5e4e",
+    "var_60fcfffa": "#hash_4f445f7612232efc",
+    "var_9bc3be7": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_5352657b": 1,
+    "var_86a04811": 1,
+    "var_43a952c1": 0.1,
+    "name": "social_menu_player_limit",
+    "displayname": "#hash_39f579200da477fe",
+    "var_2d7a664e": 1,
+    "var_500458ac": 10,
+    "var_926d1be9": 0.01,
+    "var_66faec87": 2,
+    "statname": "party_maxplayers",
+    "var_6f00a61a": 1.1,
+    "minvalue": 1,
+    "var_d4e288e": 1,
+    "var_b7401319": "#hash_26907a4c5e0f4d75"
+}

@@ -1,0 +1,344 @@
+{
+    "var_2012b5e4": [
+        {
+            "camo": "#camo_none"
+        },
+        {
+            "camo": "#camo_tier1_mp_01"
+        },
+        {
+            "camo": "#camo_tier1_mp_02"
+        },
+        {
+            "camo": "#camo_tier1_mp_03"
+        },
+        {
+            "camo": "#camo_tier1_mp_04"
+        },
+        {
+            "camo": "#camo_tier1_mp_05"
+        },
+        {
+            "camo": "#camo_tier2_mp_01"
+        },
+        {
+            "camo": "#camo_tier2_mp_02"
+        },
+        {
+            "camo": "#camo_tier2_mp_03"
+        },
+        {
+            "camo": "#camo_tier2_mp_04"
+        },
+        {
+            "camo": "#camo_tier2_mp_05"
+        },
+        {
+            "camo": "#camo_tier3_mp_01"
+        },
+        {
+            "camo": "#camo_tier3_mp_02"
+        },
+        {
+            "camo": "#camo_tier3_mp_03"
+        },
+        {
+            "camo": "#camo_tier3_mp_04"
+        },
+        {
+            "camo": "#camo_tier3_mp_05"
+        },
+        {
+            "camo": "#camo_tier4_mp_01"
+        },
+        {
+            "camo": "#camo_tier4_mp_02"
+        },
+        {
+            "camo": "#camo_tier4_mp_03"
+        },
+        {
+            "camo": "#camo_tier4_mp_04"
+        },
+        {
+            "camo": "#camo_tier4_mp_05"
+        },
+        {
+            "camo": "#camo_tier5_mp_01"
+        },
+        {
+            "camo": "#camo_tier5_mp_02"
+        },
+        {
+            "camo": "#camo_tier5_mp_03"
+        },
+        {
+            "camo": "#camo_tier5_mp_04"
+        },
+        {
+            "camo": "#camo_tier5_mp_05"
+        },
+        {
+            "camo": "#camo_tier6_mp_01"
+        },
+        {
+            "camo": "#camo_tier6_mp_02"
+        },
+        {
+            "camo": "#camo_tier6_mp_03"
+        },
+        {
+            "camo": "#camo_tier6_mp_04"
+        },
+        {
+            "camo": "#camo_tier6_mp_05"
+        },
+        {
+            "camo": "#camo_tier7_mp_01"
+        },
+        {
+            "camo": "#camo_tier7_mp_02"
+        },
+        {
+            "camo": "#camo_tier7_mp_03"
+        },
+        {
+            "camo": "#camo_tier7_mp_04"
+        },
+        {
+            "camo": "#camo_tier7_mp_05"
+        },
+        {
+            "camo": "#camo_mastery_mp_gold"
+        },
+        {
+            "camo": "#camo_mastery_mp_diamond"
+        },
+        {
+            "camo": "#camo_mastery_mp_darkmatter"
+        },
+        {
+            "camo": "#camo_tier1_zm_01"
+        },
+        {
+            "camo": "#camo_tier1_zm_02"
+        },
+        {
+            "camo": "#camo_tier1_zm_03"
+        },
+        {
+            "camo": "#camo_tier1_zm_04"
+        },
+        {
+            "camo": "#camo_tier1_zm_05"
+        },
+        {
+            "camo": "#camo_tier2_zm_01"
+        },
+        {
+            "camo": "#camo_tier2_zm_02"
+        },
+        {
+            "camo": "#camo_tier2_zm_03"
+        },
+        {
+            "camo": "#camo_tier2_zm_04"
+        },
+        {
+            "camo": "#camo_tier2_zm_05"
+        },
+        {
+            "camo": "#camo_tier3_zm_01"
+        },
+        {
+            "camo": "#camo_tier3_zm_02"
+        },
+        {
+            "camo": "#camo_tier3_zm_03"
+        },
+        {
+            "camo": "#camo_tier3_zm_04"
+        },
+        {
+            "camo": "#camo_tier3_zm_05"
+        },
+        {
+            "camo": "#camo_tier4_zm_01"
+        },
+        {
+            "camo": "#camo_tier4_zm_02"
+        },
+        {
+            "camo": "#camo_tier4_zm_03"
+        },
+        {
+            "camo": "#camo_tier4_zm_04"
+        },
+        {
+            "camo": "#camo_tier4_zm_05"
+        },
+        {
+            "camo": "#camo_tier5_zm_01"
+        },
+        {
+            "camo": "#camo_tier5_zm_02"
+        },
+        {
+            "camo": "#camo_tier5_zm_03"
+        },
+        {
+            "camo": "#camo_tier5_zm_04"
+        },
+        {
+            "camo": "#camo_tier5_zm_05"
+        },
+        {
+            "camo": "#camo_tier6_zm_01"
+        },
+        {
+            "camo": "#camo_tier6_zm_02"
+        },
+        {
+            "camo": "#camo_tier6_zm_03"
+        },
+        {
+            "camo": "#camo_tier6_zm_04"
+        },
+        {
+            "camo": "#camo_tier6_zm_05"
+        },
+        {
+            "camo": "#camo_tier7_zm_01"
+        },
+        {
+            "camo": "#camo_tier7_zm_02"
+        },
+        {
+            "camo": "#camo_tier7_zm_03"
+        },
+        {
+            "camo": "#camo_tier7_zm_04"
+        },
+        {
+            "camo": "#camo_tier7_zm_05"
+        },
+        {
+            "camo": "#camo_mastery_zm_gold"
+        },
+        {
+            "camo": "#camo_mastery_zm_diamond"
+        },
+        {
+            "camo": "#camo_mastery_zm_darkmatter"
+        },
+        {
+            "camo": "#camo_t9_cdl_atl_sy"
+        },
+        {
+            "camo": "#camo_t9_cdl_atl_ms"
+        },
+        {
+            "camo": "#camo_t9_cdl_atl_pc"
+        },
+        {
+            "camo": "#camo_t9_cdl_chi_sy"
+        },
+        {
+            "camo": "#camo_t9_cdl_chi_ms"
+        },
+        {
+            "camo": "#camo_t9_cdl_chi_pc"
+        },
+        {
+            "camo": "#camo_t9_cdl_dal_sy"
+        },
+        {
+            "camo": "#camo_t9_cdl_dal_ms"
+        },
+        {
+            "camo": "#camo_t9_cdl_dal_pc"
+        },
+        {
+            "camo": "#camo_t9_cdl_fl_sy"
+        },
+        {
+            "camo": "#camo_t9_cdl_fl_ms"
+        },
+        {
+            "camo": "#camo_t9_cdl_fl_pc"
+        },
+        {
+            "camo": "#camo_t9_cdl_la_gor_sy"
+        },
+        {
+            "camo": "#camo_t9_cdl_la_gor_ms"
+        },
+        {
+            "camo": "#camo_t9_cdl_la_gor_pc"
+        },
+        {
+            "camo": "#camo_t9_cdl_la_optic_sy"
+        },
+        {
+            "camo": "#camo_t9_cdl_la_optic_ms"
+        },
+        {
+            "camo": "#camo_t9_cdl_la_optic_pc"
+        },
+        {
+            "camo": "#camo_t9_cdl_lon_sy"
+        },
+        {
+            "camo": "#camo_t9_cdl_lon_ms"
+        },
+        {
+            "camo": "#camo_t9_cdl_lon_pc"
+        },
+        {
+            "camo": "#camo_t9_cdl_minn_sy"
+        },
+        {
+            "camo": "#camo_t9_cdl_minn_ms"
+        },
+        {
+            "camo": "#camo_t9_cdl_minn_pc"
+        },
+        {
+            "camo": "#camo_t9_cdl_nyc_sy"
+        },
+        {
+            "camo": "#camo_t9_cdl_nyc_ms"
+        },
+        {
+            "camo": "#camo_t9_cdl_nyc_pc"
+        },
+        {
+            "camo": "#camo_t9_cdl_par_sy"
+        },
+        {
+            "camo": "#camo_t9_cdl_par_ms"
+        },
+        {
+            "camo": "#camo_t9_cdl_par_pc"
+        },
+        {
+            "camo": "#camo_t9_cdl_sea_sy"
+        },
+        {
+            "camo": "#camo_t9_cdl_sea_ms"
+        },
+        {
+            "camo": "#camo_t9_cdl_sea_pc"
+        },
+        {
+            "camo": "#camo_t9_cdl_tor_sy"
+        },
+        {
+            "camo": "#camo_t9_cdl_tor_ms"
+        },
+        {
+            "camo": "#camo_t9_cdl_tor_pc"
+        }
+    ],
+    "name": "weaponoptioncamo_list"
+}

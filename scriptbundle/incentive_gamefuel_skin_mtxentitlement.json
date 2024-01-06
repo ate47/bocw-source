@@ -1,0 +1,18 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_adler_game_fuel_mtxitem",
+            "itemid": "24010313"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_hero_adler_mtxitem",
+            "itemid": "31112941"
+        }
+    ],
+    "itemname": "#hash_85537372eb63ddb",
+    "name": "incentive_gamefuel_skin_mtxentitlement",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "itemid": "23439272"
+}

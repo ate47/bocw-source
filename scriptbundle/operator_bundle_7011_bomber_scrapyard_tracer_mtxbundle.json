@@ -1,0 +1,51 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#po_c_t9_esp_pl_goe_bomber_scrapmetal_mtxitem",
+            "itemid": "22069306"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_esp_goe_bomber_mtxitem",
+            "itemid": "22183508"
+        },
+        {
+            "var_4a4bc969": "#loot_smg_fastfire_bp_scrap_mtxitem",
+            "itemid": "24113967"
+        },
+        {
+            "var_4a4bc969": "#lmg_accurate_cb_bp_scrap_mtxitem",
+            "itemid": "27376802"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_engine_hanging_mtxitem",
+            "itemid": "27105298"
+        },
+        {
+            "var_4a4bc969": "#callingcards_scrapyard_mtxitem",
+            "itemid": "33077019"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s6_analog_scrapyard_mtxitem",
+            "itemid": "30352012"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_us_motorcycle_offroad_assembly_mpx_scrapyard_mtxitem",
+            "itemid": "18531128"
+        },
+        {
+            "var_4a4bc969": "#vehiclehorn_mask_mtxitem",
+            "itemid": "20042358"
+        }
+    ],
+    "itemname": "#hash_d15a2e7fdc84bc2",
+    "var_375a1747": "#hash_5e9980a2f3e73790",
+    "name": "operator_bundle_7011_bomber_scrapyard_tracer_mtxbundle",
+    "var_a788fada": "#hash_78b2a5156597f151",
+    "var_22f91505": "#hash_1cbc997f5ef4c258",
+    "var_566825be": "#hash_4a30abd63194de29",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_65a4080af16e2920",
+    "var_db3e02ab": 2000,
+    "itemid": "18650333"
+}

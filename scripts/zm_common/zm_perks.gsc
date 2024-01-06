@@ -2712,7 +2712,7 @@ function function_59fb56ff(b_show) {
 // Size: 0x130
 function function_cc24f525() {
     self endon(#"disconnect");
-    foreach (var_16c042b8 in self.var_c27f1e90) {
+    foreach (n_slot, var_16c042b8 in self.var_c27f1e90) {
         if (!isinarray(self.var_466b927f, var_16c042b8)) {
             if (var_16c042b8 == #"specialty_mystery") {
                 var_16c042b8 = self function_5ea0c6cf();

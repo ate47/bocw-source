@@ -7,17 +7,17 @@
 #using scripts\core_common\contracts_shared.gsc;
 #using scripts\core_common\clientfield_shared.gsc;
 
-#namespace namespace_b0275f02;
+#namespace high_value_target;
 
-// Namespace namespace_b0275f02/namespace_b0275f02
+// Namespace high_value_target/high_value_target
 // Params 0, eflags: 0x5
 // Checksum 0xf8831da, Offset: 0xd0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_4842d3c0a67b6871", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"high_value_target", &function_70a657d8, undefined, undefined, undefined);
 }
 
-// Namespace namespace_b0275f02/namespace_b0275f02
+// Namespace high_value_target/high_value_target
 // Params 0, eflags: 0x6 linked
 // Checksum 0xdb8a236d, Offset: 0x118
 // Size: 0xdc
@@ -32,7 +32,7 @@ function private function_70a657d8() {
     }
 }
 
-// Namespace namespace_b0275f02/namespace_b0275f02
+// Namespace high_value_target/high_value_target
 // Params 0, eflags: 0x2 linked
 // Checksum 0x601764a7, Offset: 0x200
 // Size: 0xda
@@ -49,7 +49,7 @@ function onplayerspawned() {
     }
 }
 
-// Namespace namespace_b0275f02/namespace_b0275f02
+// Namespace high_value_target/high_value_target
 // Params 9, eflags: 0x2 linked
 // Checksum 0xab9cc360, Offset: 0x2e8
 // Size: 0x2a4
@@ -79,7 +79,7 @@ function onplayerkilled(*einflictor, attacker, *idamage, *smeansofdeath, weapon,
     }
 }
 
-// Namespace namespace_b0275f02/namespace_b0275f02
+// Namespace high_value_target/high_value_target
 // Params 1, eflags: 0x2 linked
 // Checksum 0x665bdbce, Offset: 0x598
 // Size: 0x1e

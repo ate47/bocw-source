@@ -1,0 +1,56 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_surge_mtxitem",
+            "itemid": "25753834"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_surge_mtxitem",
+            "itemid": "19197415"
+        },
+        {
+            "var_4a4bc969": "#ar_mobility_bp_supers_mtxitem",
+            "itemid": "19350628"
+        },
+        {
+            "var_4a4bc969": "#shotgun_semiauto_bp_supers_mtxitem",
+            "itemid": "17842433"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_c4_clacker_mtxitem",
+            "itemid": "27504083"
+        },
+        {
+            "var_4a4bc969": "#reticle_114_mtxitem",
+            "itemid": "33487001"
+        },
+        {
+            "var_4a4bc969": "#execution_208_mtxitem",
+            "itemid": "23832772"
+        },
+        {
+            "var_4a4bc969": "#loot_ges_mtx_t9_bullet_flip_mtxitem",
+            "itemid": "24671551"
+        },
+        {
+            "var_4a4bc969": "#emblem_s5_marquee_09_animated_mtxitem",
+            "itemid": "24612704"
+        },
+        {
+            "var_4a4bc969": "#callingcards_supersoldier_s5_animated_mtxitem",
+            "itemid": "28120839"
+        }
+    ],
+    "itemname": "#hash_205dc3c43780b22a",
+    "var_375a1747": "#hash_647559421f863624",
+    "var_579fd6c3": 10,
+    "name": "operator_bundle_5001_super_soldier_newop_tracer_mtxbundle",
+    "var_a788fada": "#hash_2920813f47539fdf",
+    "var_22f91505": "#hash_7ae61406e995e1cb",
+    "var_566825be": "#hash_76b9533332b80d27",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_951675ebcc4b04f",
+    "var_db3e02ab": 2000,
+    "itemid": "18058291"
+}

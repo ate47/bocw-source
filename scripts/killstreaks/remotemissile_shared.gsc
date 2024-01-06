@@ -175,7 +175,7 @@ function _fire(killstreaktype, player, team, killstreak_id) {
     missileweapon = getweapon(#"remote_missile_missile");
     streamermodelhint(weapon.var_22082a57, 7);
     streamermodelhint(missileweapon.projectilemodel, 7);
-    player forcestreambundle(#"hash_76778620dcab91dd");
+    player forcestreambundle(#"p9_fxanim_mp_remote_missile_bundle");
     player setmodellodbias(isdefined(level.remotemissile_lod_bias) ? level.remotemissile_lod_bias : 12);
     remotemissilespawnarray = getentarray("remoteMissileSpawn", "targetname");
     foreach (spawn in remotemissilespawnarray) {
@@ -309,7 +309,7 @@ function _fire(killstreaktype, player, team, killstreak_id) {
     if (!isdefined(player)) {
         return 0;
     }
-    player function_66b6e720(#"hash_76778620dcab91dd");
+    player function_66b6e720(#"p9_fxanim_mp_remote_missile_bundle");
     var_99178ae6 = player util::create_streamer_hint(player.origin, player.angles, 1, undefined, 0, 0);
     if (isdefined(cam)) {
         startpos = cam.origin - vectorscale((0, 0, 1), 100);
@@ -1073,7 +1073,7 @@ function targeting_hud_think(rocket) {
             }
         }
         if (targets.size > 0) {
-            foreach (target in targets) {
+            foreach (entnum, target in targets) {
                 if (!isdefined(target)) {
                     continue;
                 }
@@ -1101,7 +1101,7 @@ function targeting_hud_think(rocket) {
                 }
             }
         }
-        foreach (var_8712c5b8 in player.var_bbe80eed) {
+        foreach (var_3eaf95a4, var_8712c5b8 in player.var_bbe80eed) {
             if (var_8712c5b8.state == 0) {
                 level.var_aac98621[var_3eaf95a4] remote_missile_target_lockon::set_clientnum(player, player getentitynumber());
                 level.var_aac98621[var_3eaf95a4] remote_missile_target_lockon::function_7c227f6d(player, 0);

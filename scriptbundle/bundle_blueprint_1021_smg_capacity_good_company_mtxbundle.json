@@ -1,0 +1,26 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#smg_capacity_bp_gcompany_mtxitem",
+            "itemid": "24258021"
+        },
+        {
+            "var_4a4bc969": "#callingcards_goodcompany_mtxitem",
+            "itemid": "19776835"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_family_crest_mtxitem",
+            "itemid": "23490095"
+        }
+    ],
+    "itemname": "#hash_146ce92a91d56a73",
+    "var_375a1747": "#hash_2bc0bea929e236d1",
+    "name": "bundle_blueprint_1021_smg_capacity_good_company_mtxbundle",
+    "var_22f91505": "#hash_55280060d90825a5",
+    "var_566825be": "#hash_28fe26604586e1ee",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_22a6042d821c8d5d",
+    "var_db3e02ab": 2000,
+    "itemid": "17857906"
+}

@@ -711,7 +711,7 @@ function function_547ca7d2(safehouse, var_fc9732a9 = 1) {
     /#
         assert(isdefined(var_65792f8b) && isdefined(var_65792f8b.issafehouse));
     #/
-    if (safehouse == #"hash_15a4ef8668396552" || safehouse == #"hash_54c2eea0483d1201") {
+    if (safehouse == #"hash_15a4ef8668396552" || safehouse == #"cp_ger_hub8") {
         var_fc9732a9 = 0;
     }
     if (isdefined(var_65792f8b) && is_true(var_65792f8b.issafehouse)) {
@@ -1713,7 +1713,7 @@ function function_6914f647() {
             missionname = getmapatindex(i);
             var_65792f8b = function_2717b55f(missionname);
             var_8670e6a3 = savegame::function_6440b06b(#"persistent", missionname);
-            if (isdefined(var_65792f8b) && is_true(var_65792f8b.issafehouse) && is_true(var_8670e6a3.unlocked) && missionname != #"hash_15a4ef8668396552" && missionname != #"hash_54c2eea0483d1201") {
+            if (isdefined(var_65792f8b) && is_true(var_65792f8b.issafehouse) && is_true(var_8670e6a3.unlocked) && missionname != #"hash_15a4ef8668396552" && missionname != #"cp_ger_hub8") {
                 return missionname;
             }
         }
@@ -1733,7 +1733,7 @@ function function_99ddd76d() {
         return 2;
     } else {
         /#
-            assert(safehouse != #"hash_15a4ef8668396552" && safehouse != #"hash_54c2eea0483d1201");
+            assert(safehouse != #"hash_15a4ef8668396552" && safehouse != #"cp_ger_hub8");
         #/
         return 0;
     }
@@ -1843,7 +1843,7 @@ function function_1c2dfc20(var_83104433 = function_60ca00f5(), var_585e39fb = fu
         var_9ba5cef7 = savegame::function_2ee66e93("previous_mission", "");
         if (var_9ba5cef7 != "") {
             var_43758eae = function_2717b55f(var_9ba5cef7);
-            var_5e7454e = is_true(var_43758eae.issafehouse) && var_9ba5cef7 != #"hash_15a4ef8668396552" && var_9ba5cef7 != #"hash_54c2eea0483d1201";
+            var_5e7454e = is_true(var_43758eae.issafehouse) && var_9ba5cef7 != #"hash_15a4ef8668396552" && var_9ba5cef7 != #"cp_ger_hub8";
         }
         if (!var_8e962e56) {
             if (is_safehouse) {

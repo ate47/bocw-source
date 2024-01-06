@@ -1,0 +1,39 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#lmg_fastfire_bp_highnoon_mtxitem",
+            "itemid": "33419918"
+        },
+        {
+            "var_4a4bc969": "#tr_longburst_bp_highnoon_mtxitem",
+            "itemid": "18089230"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_sheriff_hat_mtxitem",
+            "itemid": "18410171"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_boat_tactical_raft_assembly_mpx_high_noon_mtxitem",
+            "itemid": "21047179"
+        },
+        {
+            "var_4a4bc969": "#emblem_skullstar_s6_mtxitem",
+            "itemid": "18449013"
+        },
+        {
+            "var_4a4bc969": "#paintjob_sticker_cowboyskull_s6_mtxitem",
+            "itemid": "25338387"
+        }
+    ],
+    "itemname": "#hash_163bbabaae117586",
+    "var_375a1747": "#hash_153e965b9ffa60a8",
+    "name": "blueprint_bundle_6034_mg_82_reckoning_mtxbundle",
+    "var_a788fada": "#hash_4479e894b6a6773",
+    "var_22f91505": "#hash_39efa3cb47518410",
+    "var_566825be": "#hash_75212f9d994b565b",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_67faf0a0638513d8",
+    "var_db3e02ab": 2000,
+    "itemid": "31551734"
+}

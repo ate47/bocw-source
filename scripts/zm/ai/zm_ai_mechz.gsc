@@ -49,11 +49,11 @@ function private autoexec __init__system__() {
 // Checksum 0xdb041621, Offset: 0x230
 // Size: 0x10c
 function function_70a657d8() {
-    zm_round_spawning::register_archetype(#"hash_3d92e2c7bea1eee2", &function_13043824, &round_spawn, undefined, 100);
-    zm_round_spawning::function_306ce518(#"hash_3d92e2c7bea1eee2", &function_5e8a178a);
-    spawner::add_archetype_spawn_function(#"hash_3d92e2c7bea1eee2", &function_3b8b6e80);
-    spawner::function_89a2cd87(#"hash_3d92e2c7bea1eee2", &function_5d873f78);
-    zm_cleanup::function_cdf5a512(#"hash_3d92e2c7bea1eee2", &function_66247c2);
+    zm_round_spawning::register_archetype(#"mechz", &function_13043824, &round_spawn, undefined, 100);
+    zm_round_spawning::function_306ce518(#"mechz", &function_5e8a178a);
+    spawner::add_archetype_spawn_function(#"mechz", &function_3b8b6e80);
+    spawner::function_89a2cd87(#"mechz", &function_5d873f78);
+    zm_cleanup::function_cdf5a512(#"mechz", &function_66247c2);
 }
 
 // Namespace namespace_6f90aa12/namespace_6f90aa12
@@ -250,10 +250,10 @@ function function_42dcd795() {
 // Checksum 0x1d0f8b95, Offset: 0xc98
 // Size: 0xca
 function function_638411dd() {
-    var_c500a70f = getaiarchetypearray(#"hash_3d92e2c7bea1eee2");
+    var_c500a70f = getaiarchetypearray(#"mechz");
     var_e2ec0129 = var_c500a70f.size;
-    foreach (var_b083eeac in var_c500a70f) {
-        if (!isalive(var_b083eeac)) {
+    foreach (mechz in var_c500a70f) {
+        if (!isalive(mechz)) {
             var_e2ec0129--;
         }
     }
@@ -352,7 +352,7 @@ function function_5e8a178a(*n_round_number) {
     }
     while (1) {
         level waittill(#"hash_5d3012139f083ccb");
-        if (zm_round_spawning::function_d0db51fc(#"hash_3d92e2c7bea1eee2")) {
+        if (zm_round_spawning::function_d0db51fc(#"mechz")) {
             level.var_ea1e9b1e++;
             n_player_count = zm_utility::function_a2541519(getplayers().size);
             if (n_player_count == 1) {

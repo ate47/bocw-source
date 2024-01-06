@@ -91,23 +91,23 @@ function play_vehicle_anim(*localclientnum, *oldval, *newval, *bnewent, *binitia
             case #"exit":
                 str_vh_anim = s_rider.vehicleexitanim;
                 break;
-            case #"hash_1f02466c21b9a172":
+            case #"exit_combat":
                 str_vh_anim = s_rider.var_cbf50c1d;
                 break;
             case #"close":
                 str_vh_anim = s_rider.vehiclecloseanim;
                 break;
-            case #"hash_71c6473844d1da3c":
+            case #"close_combat":
                 str_vh_anim = s_rider.var_b7605392;
                 break;
             case #"death":
                 str_vh_anim = s_rider.vehicleriderdeathanim;
                 break;
-            case #"hash_4ebdb081ee0d6fbc":
+            case #"exit_restore":
                 str_vh_anim = s_rider.vehicleexitanim;
                 var_73ba4ab0 = 1;
                 break;
-            case #"hash_5a1e5c7d6681865f":
+            case #"exit_combat_restore":
                 str_vh_anim = s_rider.var_cbf50c1d;
                 var_73ba4ab0 = 1;
                 break;

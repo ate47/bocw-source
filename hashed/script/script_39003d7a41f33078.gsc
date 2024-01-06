@@ -152,7 +152,7 @@ function function_364bc19c(outcome) {
                 arrayremovevalue(a_players, undefined);
             }
         #/
-        foreach (player in a_players) {
+        foreach (n_index, player in a_players) {
             if (n_index >= 4) {
                 break;
             }

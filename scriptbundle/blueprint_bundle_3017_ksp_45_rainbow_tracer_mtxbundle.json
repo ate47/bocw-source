@@ -1,0 +1,43 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#smg_burst_bp_rainbow_mtxitem",
+            "itemid": "30308131"
+        },
+        {
+            "var_4a4bc969": "#shotgun_semiauto_bp_rainbow_mtxitem",
+            "itemid": "25400674"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_moodring_mtxitem",
+            "itemid": "31435356"
+        },
+        {
+            "var_4a4bc969": "#callingcards_deadlyrainbow_034_animated_mtxitem",
+            "itemid": "32451598"
+        },
+        {
+            "var_4a4bc969": "#emblems_r8g_1025_mtxitem",
+            "itemid": "29223269"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_r82_21_mtxitem",
+            "itemid": "27721020"
+        },
+        {
+            "var_4a4bc969": "#reticle_87_mtxitem",
+            "itemid": "29318356"
+        }
+    ],
+    "itemname": "#hash_2e3be66891f1f77d",
+    "var_375a1747": "#hash_3aeefcbb80751357",
+    "name": "blueprint_bundle_3017_ksp_45_rainbow_tracer_mtxbundle",
+    "var_a788fada": "#hash_1dad293302e390bc",
+    "var_22f91505": "#hash_586e4994a3d12376",
+    "var_566825be": "#hash_2335c778a513fa48",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_a5159cd2b24818a",
+    "var_db3e02ab": 2000,
+    "itemid": "24992162"
+}

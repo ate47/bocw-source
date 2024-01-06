@@ -1,0 +1,28 @@
+{
+    "var_89aed911": [
+        {
+            "var_26bb4f8a": "Competition Stage 1",
+            "var_45bf5108": "cdl-stage-01"
+        },
+        {
+            "var_26bb4f8a": "Competition Stage 2",
+            "var_45bf5108": "cdl-stage-02"
+        },
+        {
+            "var_26bb4f8a": "Player Practice Area 1",
+            "var_45bf5108": "cdl-ppa-01"
+        },
+        {
+            "var_26bb4f8a": "Player Practice Area 2",
+            "var_45bf5108": "cdl-ppa-02"
+        }
+    ],
+    "var_922067c4": "SCRIPTBUNDLE",
+    "var_effba00f": 1,
+    "var_b85b4118": 1,
+    "var_90bbd133": 1,
+    "name": "codcaster_datacenters_local",
+    "var_57780420": 1,
+    "var_f45e5ab5": 1,
+    "var_9c73b209": 1
+}

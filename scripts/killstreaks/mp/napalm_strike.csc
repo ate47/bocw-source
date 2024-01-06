@@ -2,17 +2,17 @@
 #using scripts\core_common\system_shared.csc;
 #using script_1568a517f901b845;
 
-#namespace namespace_c6058970;
+#namespace napalm_strike;
 
-// Namespace namespace_c6058970/namespace_c6058970
+// Namespace napalm_strike/napalm_strike
 // Params 0, eflags: 0x5
 // Checksum 0x567e5dfe, Offset: 0xb0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_438fafe881cdd097", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"napalm_strike", &function_70a657d8, undefined, undefined, #"killstreaks");
 }
 
-// Namespace namespace_c6058970/namespace_c6058970
+// Namespace napalm_strike/napalm_strike
 // Params 0, eflags: 0x6 linked
 // Checksum 0x34cea211, Offset: 0x100
 // Size: 0x1c

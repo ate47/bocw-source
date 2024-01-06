@@ -1,0 +1,9 @@
+{
+    "var_922067c4": "scriptbundle",
+    "type": "mpdialog_scorestreak",
+    "vmtype": "both",
+    "timecheck": "#hash_5f3772e0cfa03d9a",
+    "name": "blops_droneop3_kls_uav",
+    "arrive": "#hash_38ee80f0e7f7695f",
+    "timeout": "#hash_3a31e72b0cc069de"
+}

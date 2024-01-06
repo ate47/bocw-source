@@ -1,0 +1,39 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_woods_trucker_mtxitem",
+            "itemid": "18812956"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_woods_mtxitem",
+            "itemid": "28004165"
+        },
+        {
+            "var_4a4bc969": "#tr_longburst_bp_gchoice_mtxitem",
+            "itemid": "26375011"
+        },
+        {
+            "var_4a4bc969": "#smg_standard_bp_blkmamba_mtxitem",
+            "itemid": "29195157"
+        },
+        {
+            "var_4a4bc969": "#reticle_40_mtxitem",
+            "itemid": "30853999"
+        },
+        {
+            "var_4a4bc969": "#mil_us_motorcycle_offroad_mpx_retro_mtxitem",
+            "itemid": "25847272"
+        }
+    ],
+    "itemname": "#hash_473ffb7176972bca",
+    "var_375a1747": "#hash_37cee69f8ca39460",
+    "var_579fd6c3": 13,
+    "name": "bundle_operator_1068_woods_truckin_mtxbundle",
+    "var_22f91505": "#hash_68ecf0490b0a68c2",
+    "var_566825be": "#hash_74c8de163934cf75",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_2a118548b9b7e73e",
+    "var_db3e02ab": 2000,
+    "itemid": "20712519"
+}

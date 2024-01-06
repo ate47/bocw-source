@@ -1,0 +1,16 @@
+{
+    "var_922067c4": "scriptbundle",
+    "type": "areaofeffect",
+    "earthquakescale": 0.2,
+    "effectradius": 350,
+    "vmtype": "client",
+    "end_effect": "#hash_596fba5b8b497436",
+    "name": "zm_aoe_radiation_hazard_ieu_override",
+    "var_a8609f98": "damage_light",
+    "var_e41627fe": "zmb_hellhound_plague_explo",
+    "endrumble": "damage_heavy",
+    "var_1ee49376": "zmb_hellhound_plague_cloud_lp",
+    "var_e4c85a5f": 1.5,
+    "loop_effect": "#hash_71832ad24881f0ed",
+    "startrumble": "damage_heavy"
+}

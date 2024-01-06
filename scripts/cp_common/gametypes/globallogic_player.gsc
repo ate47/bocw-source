@@ -808,7 +808,7 @@ function callback_playerdamage(einflictor, eattacker, idamage, idflags, smeansof
     params.psoffsettime = psoffsettime;
     self.var_a1653258 = level.time;
     self callback::callback(#"on_player_damage", params);
-    if (self hasperk(#"hash_617e57dbf2dc4cce")) {
+    if (self hasperk(#"specialty_immuneparanoia")) {
         var_fa50ba5f = self getvelocity();
         if (lengthsquared(var_fa50ba5f) < 2500) {
             idamage = idamage * 0.7;

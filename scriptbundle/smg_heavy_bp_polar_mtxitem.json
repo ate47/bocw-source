@@ -1,0 +1,23 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#blueprint_bundle_7506_vault_smg_pack_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_75685ca358f5d6da",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_48a1250f6ee05a4",
+    "weapon": "#hash_6251778e2d3b9a64",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_492f88ec23b0bc08",
+    "season": 1,
+    "var_46300498": 1,
+    "baseweapon": "#hash_6251778e2d3b9a64",
+    "name": "smg_heavy_bp_polar_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "31297372",
+    "blueprint": "#hash_75685ca358f5d6da"
+}

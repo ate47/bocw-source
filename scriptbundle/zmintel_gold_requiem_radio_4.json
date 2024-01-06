@@ -1,0 +1,58 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_2a90da36bf7c6f50",
+            "var_f35c5951": 1.5,
+            "var_5d4b5964": 14.46,
+            "var_36bf8e05": "#hash_5286233c45e6cb07"
+        },
+        {
+            "var_46bd7973": "#hash_2a90db36bf7c7103",
+            "var_f35c5951": 1.5,
+            "var_5d4b5964": 9.17,
+            "var_36bf8e05": "#hash_7cc4cf24c4eff30e"
+        },
+        {
+            "var_46bd7973": "#hash_2a90dc36bf7c72b6",
+            "var_f35c5951": 1.5,
+            "var_5d4b5964": 6.89,
+            "var_36bf8e05": "#hash_349b22358569394d"
+        },
+        {
+            "var_46bd7973": "#hash_2a90dd36bf7c7469",
+            "var_f35c5951": 1.5,
+            "var_5d4b5964": 7.79,
+            "var_36bf8e05": "#hash_3063a3a0b564d034"
+        },
+        {
+            "var_46bd7973": "#hash_2a90de36bf7c761c",
+            "var_f35c5951": 1.5,
+            "var_5d4b5964": 6.7,
+            "var_36bf8e05": "#hash_6be688973ea6592b"
+        },
+        {
+            "var_46bd7973": "#hash_2a90df36bf7c77cf",
+            "var_f35c5951": 1,
+            "var_5d4b5964": 7.36,
+            "var_36bf8e05": "#hash_1450c28c34b22a82"
+        }
+    ],
+    "description": "#hash_4e3e1ff631047934",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#radio",
+    "model": "#hash_4fe1a0b748461f0f",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_7ea108a0c0ac5fa4",
+    "type": "zmintel",
+    "season": 1,
+    "var_ad4ad686": "#hash_1303dcb8d0e80e33",
+    "soundloop": "#hash_5db0167d85d70c82",
+    "name": "zmintel_gold_requiem_radio_4",
+    "var_9be0526e": "#hash_20ea75a25d912949",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "var_348b91fd": "#radio",
+    "title": "#hash_5cd2c0b5df846ccc",
+    "var_3bb3493d": "#hash_612227d56200e0c5",
+    "mapname": "#zm_gold"
+}

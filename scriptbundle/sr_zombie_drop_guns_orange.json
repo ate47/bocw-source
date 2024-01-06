@@ -1,0 +1,17 @@
+{
+    "itemlist": [
+        {
+            "minweight": 100,
+            "var_a6762160": "#survival_random_attachment_guns_orange",
+            "maxweight": 100,
+            "available": 1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "sr_zombie_drop_guns_orange",
+    "var_fde72c94": 100
+}

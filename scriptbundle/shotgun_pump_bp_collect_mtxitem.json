@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#bundle_blueprint_1084_sniper_quickscope_wooden_hunter_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_6ed5ee6a6a1f78ca",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_2b05820aff299650",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 1,
+    "var_46300498": 1,
+    "baseweapon": "#hash_5243375728e388f6",
+    "name": "shotgun_pump_bp_collect_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "30171766",
+    "blueprint": "#hash_6ed5ee6a6a1f78ca"
+}

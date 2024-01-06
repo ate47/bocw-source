@@ -159,7 +159,7 @@ function function_32397759() {
             }
             n_xpos = 900;
             n_ypos = 10;
-            foreach (n_count in var_6a432250) {
+            foreach (n, n_count in var_6a432250) {
                 var_9bed9f5d = "<unknown string>";
                 switch (n) {
                 case 0:
@@ -1009,7 +1009,7 @@ function function_477de16b(var_b5311063, name_or_spawners, spawn_func, ...) {
     }
     a_spawned = [];
     var_64190a32 = vararg[5];
-    foreach (sp in spawners) {
+    foreach (index, sp in spawners) {
         if (index >= var_b5311063) {
             break;
         }

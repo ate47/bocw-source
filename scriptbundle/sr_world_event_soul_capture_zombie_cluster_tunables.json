@@ -1,0 +1,16 @@
+{
+    "var_fc18097c": [
+        {
+            "var_4af2c07b": "default_ai_list_0"
+        },
+        {
+            "var_4af2c07b": "default_ai_list_1"
+        }
+    ],
+    "var_783fc5e": 20,
+    "var_d961aeb3": 0.25,
+    "name": "sr_world_event_soul_capture_zombie_cluster_tunables",
+    "var_1fb426c4": 5,
+    "var_abf4838d": 5,
+    "wander_radius": 1000
+}

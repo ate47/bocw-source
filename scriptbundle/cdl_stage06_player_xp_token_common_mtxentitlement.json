@@ -1,0 +1,14 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#player_xp_token_common_mtxitem",
+            "itemid": "30886333"
+        }
+    ],
+    "itemname": "#hash_6439c7bd2451d956",
+    "name": "cdl_stage06_player_xp_token_common_mtxentitlement",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "itemid": "32001450"
+}

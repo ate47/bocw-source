@@ -370,7 +370,7 @@ function function_3a083565(s_chest) {
 function function_882a650f(var_13f9dee7, var_e1669514 = 0) {
     switch (var_13f9dee7) {
     case #"green":
-    case #"hash_3a98cc868af9b743":
+    case #"uncommon":
         if (var_e1669514) {
             return #"hash_2446e535f851a299";
         } else {
@@ -1364,7 +1364,7 @@ function function_ebff068f() {
     range = range * 100;
     var_c5eedd3f = 0;
     var_e7308a9 = level.var_e2f02558;
-    foreach (weight in level.var_c0c63390) {
+    foreach (i, weight in level.var_c0c63390) {
         if (range >= var_c5eedd3f && range < weight) {
             var_e7308a9 = i;
             break;
@@ -1477,7 +1477,7 @@ function function_4aa1f177(player) {
     #/
     if (isdefined(player)) {
         if (var_ad162e6a) {
-            var_4ac286cf = array(#"hash_3a98cc868af9b743", #"rare", #"epic", #"legendary", #"ultra");
+            var_4ac286cf = array(#"uncommon", #"rare", #"epic", #"legendary", #"ultra");
             weapon = function_830aff18(var_754850f5[0], player, var_4ac286cf, var_257fe1c5);
             return (isdefined(weapon) ? weapon : level.weaponnone);
         } else if (var_257fe1c5) {
@@ -1563,7 +1563,7 @@ function function_4aa1f177(player) {
             } else if (n_roll >= var_d82105ed) {
                 var_4ac286cf = array(#"rare");
             } else {
-                var_4ac286cf = array(#"hash_3a98cc868af9b743");
+                var_4ac286cf = array(#"uncommon");
             }
             goto LOC_00000b48;
         }
@@ -2235,7 +2235,7 @@ function function_a6d171f4(var_13f9dee7) {
     case #"resource":
         self clientfield::set("" + #"hash_66b8b96e588ce1ac", 2);
         break;
-    case #"hash_3a98cc868af9b743":
+    case #"uncommon":
         self clientfield::set("" + #"hash_66b8b96e588ce1ac", 3);
         break;
     case #"rare":

@@ -1,0 +1,23 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#c_t9_uk_pl_price_mtxitem",
+            "itemid": "28595391"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_uk_price_mtxitem",
+            "itemid": "31683170"
+        }
+    ],
+    "itemname": "#hash_1a95a6d20b16eddf",
+    "description": "#hash_2ba71de28ceda1df",
+    "var_87756eb4": 1,
+    "var_375a1747": "#hash_591b2d42abb52a08",
+    "name": "incentive_bundle_2701_price_operator_mtxentitlement",
+    "var_90708fcf": "#hash_1f427b5aaa57264c",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "itemid": "24193034",
+    "var_7c846082": "#hash_39bc24db0771eb04"
+}

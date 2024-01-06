@@ -1,0 +1,46 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_7d7e828f1ad696b1",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "open"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_5f034a9b1719fa7b",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "close"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_5662ed0bd621866d",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "shake"
+                }
+            ],
+            "model": "#hash_f93e1bf903e219b",
+            "type": "prop",
+            "var_db255011": 1,
+            "name": "prop 1"
+        }
+    ],
+    "scenetype": "fxanim",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "p9_fxanim_zm_gold_essence_trap_bundle",
+    "dontsync": 1,
+    "team": "any"
+}

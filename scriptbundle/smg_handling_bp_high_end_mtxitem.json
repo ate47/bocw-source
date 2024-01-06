@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#bundle_operator_1085_woods_blade_runner_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_23bdabb1654d930c",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_14bb3f61f67bc802",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 1,
+    "var_46300498": 1,
+    "baseweapon": "#hash_7a3989475f8af314",
+    "name": "smg_handling_bp_high_end_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "18895840",
+    "blueprint": "#hash_23bdabb1654d930c"
+}

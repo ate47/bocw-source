@@ -194,7 +194,7 @@ function private waittill_dead_thread(ent) {
 // Checksum 0xfe186cb1, Offset: 0xa60
 // Size: 0x60
 function function_abdc188(ent) {
-    self waittill(#"death", #"pain_death", #"hash_187c3820098f261");
+    self waittill(#"death", #"pain_death", #"in_action");
     ent.count--;
     ent notify(#"waittill_dead_guy_dead_or_dying");
 }
@@ -353,8 +353,8 @@ function function_620eeb6b(goalent) {
     if (is_true(self.var_8f561628)) {
         self.var_2925fedc = undefined;
     }
-    if (isdefined(goalent) && !isvec(goalent) && isdefined(goalent.var_b82fc539)) {
-        var_4c719501 = struct::get_array(goalent.var_b82fc539, "script_likelyenemy");
+    if (isdefined(goalent) && !isvec(goalent) && isdefined(goalent.script_likelyenemy)) {
+        var_4c719501 = struct::get_array(goalent.script_likelyenemy, "script_likelyenemy");
         targetent = undefined;
         var_b266f03e = "";
         if (self.team == #"allies") {
@@ -393,8 +393,8 @@ function function_620eeb6b(goalent) {
             }
         }
         if (!isdefined(targetent)) {
-            var_de73f9d2 = getentarray(goalent.var_b82fc539, "script_likelyenemy");
-            var_666dc042 = getnodearray(goalent.var_b82fc539, "script_likelyenemy");
+            var_de73f9d2 = getentarray(goalent.script_likelyenemy, "script_likelyenemy");
+            var_666dc042 = getnodearray(goalent.script_likelyenemy, "script_likelyenemy");
             var_d1535971 = arraycombine(arraycombine(var_de73f9d2, var_666dc042), var_4c719501);
             var_2188535d = array::exclude(var_d1535971, goalent);
             if (var_2188535d.size == 1) {
@@ -916,7 +916,7 @@ function function_8eca0691() {
 // Params 11, eflags: 0x0
 // Checksum 0x5e37ef4a, Offset: 0x2ec0
 // Size: 0x340
-function function_ccc923fb(var_ccc923fb, priority = 2, var_9e364106 = 1, duration = 0, var_152044ef, var_71e42546, var_a806de0b = 1, no_head = 0, var_3777d080 = 0, var_14c1f460 = 0.5, weight = 1) {
+function function_ccc923fb(var_ccc923fb, priority = 2, var_9e364106 = 1, duration = 0, var_152044ef, var_71e42546, var_a806de0b = 1, no_head = 0, var_3777d080 = 0, blend_time = 0.5, weight = 1) {
     /#
         assert(isai(self), "<unknown string>");
     #/
@@ -936,7 +936,7 @@ function function_ccc923fb(var_ccc923fb, priority = 2, var_9e364106 = 1, duratio
     self.var_8a068c50[priority].var_a806de0b = var_a806de0b;
     self.var_8a068c50[priority].no_head = no_head;
     self.var_8a068c50[priority].var_3777d080 = var_3777d080;
-    self.var_8a068c50[priority].var_14c1f460 = var_14c1f460;
+    self.var_8a068c50[priority].blend_time = blend_time;
     self.var_8a068c50[priority].weight = weight;
     if (isdefined(var_ccc923fb)) {
         self.var_8a068c50[priority].set = 1;
@@ -1057,7 +1057,7 @@ function private function_fcd4fcb7() {
     var_a806de0b = self.var_19fee601.var_a806de0b;
     no_head = self.var_19fee601.no_head;
     var_3777d080 = self.var_19fee601.var_3777d080;
-    var_14c1f460 = self.var_19fee601.var_14c1f460;
+    blend_time = self.var_19fee601.blend_time;
     weight = self.var_19fee601.weight;
     if (!function_5e5653d3()) {
         object = undefined;
@@ -1073,22 +1073,22 @@ function private function_fcd4fcb7() {
                 var_77a9fe9e = &aimatposik;
             }
             if (isentity(object)) {
-                self [[ var_9d112229 ]](object, var_14c1f460, weight);
+                self [[ var_9d112229 ]](object, blend_time, weight);
             } else if (!isvec(object)) {
-                self [[ var_77a9fe9e ]](object.origin, var_14c1f460, weight);
+                self [[ var_77a9fe9e ]](object.origin, blend_time, weight);
             } else {
-                self [[ var_77a9fe9e ]](object, var_14c1f460, weight);
+                self [[ var_77a9fe9e ]](object, blend_time, weight);
             }
         } else {
             if (is_true(var_eba0d1fe)) {
                 var_77a9fe9e = &function_146f68e9;
             }
             if (isentity(object)) {
-                self [[ var_9d112229 ]](object, var_a806de0b, no_head, var_3777d080, var_14c1f460, weight);
+                self [[ var_9d112229 ]](object, var_a806de0b, no_head, var_3777d080, blend_time, weight);
             } else if (!isvec(object)) {
-                self [[ var_77a9fe9e ]](object.origin, var_a806de0b, no_head, var_3777d080, var_14c1f460, weight);
+                self [[ var_77a9fe9e ]](object.origin, var_a806de0b, no_head, var_3777d080, blend_time, weight);
             } else {
-                self [[ var_77a9fe9e ]](object, var_a806de0b, no_head, var_3777d080, var_14c1f460, weight);
+                self [[ var_77a9fe9e ]](object, var_a806de0b, no_head, var_3777d080, blend_time, weight);
             }
         }
     } else {

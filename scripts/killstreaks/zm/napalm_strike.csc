@@ -5,17 +5,17 @@
 #using scripts\killstreaks\zm\airsupport.csc;
 #using script_1568a517f901b845;
 
-#namespace namespace_c6058970;
+#namespace napalm_strike;
 
-// Namespace namespace_c6058970/namespace_c6058970
+// Namespace napalm_strike/napalm_strike
 // Params 0, eflags: 0x5
 // Checksum 0x84db1e18, Offset: 0x180
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_438fafe881cdd097", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"napalm_strike", &function_70a657d8, undefined, undefined, #"killstreaks");
 }
 
-// Namespace namespace_c6058970/namespace_c6058970
+// Namespace napalm_strike/napalm_strike
 // Params 0, eflags: 0x4
 // Checksum 0x30382f07, Offset: 0x1d0
 // Size: 0xcc
@@ -25,7 +25,7 @@ function private function_70a657d8() {
     namespace_bf7415ae::function_fc85e1a("napalm_strike", &function_85f3e359, &function_e72f1d06, &show_marker, &function_4362abef);
 }
 
-// Namespace namespace_c6058970/namespace_c6058970
+// Namespace napalm_strike/napalm_strike
 // Params 7, eflags: 0x0
 // Checksum 0x27ea7ea9, Offset: 0x2a8
 // Size: 0x31c
@@ -67,7 +67,7 @@ function function_9b7af417(localclientnum, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_c6058970/namespace_c6058970
+// Namespace napalm_strike/napalm_strike
 // Params 1, eflags: 0x0
 // Checksum 0xf5831531, Offset: 0x5d0
 // Size: 0x84
@@ -78,7 +78,7 @@ function function_85f3e359(localclientnum) {
     }
 }
 
-// Namespace namespace_c6058970/namespace_c6058970
+// Namespace napalm_strike/napalm_strike
 // Params 1, eflags: 0x0
 // Checksum 0xa7aa3105, Offset: 0x660
 // Size: 0x84
@@ -89,7 +89,7 @@ function function_e72f1d06(localclientnum) {
     }
 }
 
-// Namespace namespace_c6058970/namespace_c6058970
+// Namespace napalm_strike/napalm_strike
 // Params 2, eflags: 0x0
 // Checksum 0x7cab6253, Offset: 0x6f0
 // Size: 0xdc
@@ -102,7 +102,7 @@ function show_marker(localclientnum, marker) {
     }
 }
 
-// Namespace namespace_c6058970/namespace_c6058970
+// Namespace napalm_strike/napalm_strike
 // Params 2, eflags: 0x0
 // Checksum 0x842d6ac6, Offset: 0x7d8
 // Size: 0x9c
@@ -114,7 +114,7 @@ function function_4362abef(localclientnum, marker) {
     }
 }
 
-// Namespace namespace_c6058970/namespace_c6058970
+// Namespace napalm_strike/napalm_strike
 // Params 1, eflags: 0x4
 // Checksum 0x9ff13672, Offset: 0x880
 // Size: 0x114
@@ -128,7 +128,7 @@ function private function_f43fb0d3(marker) {
     }
 }
 
-// Namespace namespace_c6058970/namespace_c6058970
+// Namespace napalm_strike/napalm_strike
 // Params 2, eflags: 0x0
 // Checksum 0xdf8838bf, Offset: 0x9a0
 // Size: 0xc6

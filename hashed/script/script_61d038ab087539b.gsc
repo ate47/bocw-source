@@ -188,13 +188,13 @@ function function_9db3514d(localclientnum, *oldval, newval, *bnewent, *binitials
             case #"hash_7c0d83ac1e845ac2":
                 var_9879245b = #"hash_1bdd3e074e3c755e";
                 break;
-            case #"hash_3d92e2c7bea1eee2":
+            case #"mechz":
                 var_9879245b = #"hash_685b3b698ec70340";
                 break;
-            case #"hash_9f6bc1960ff4912":
+            case #"raz":
                 var_9879245b = #"hash_1bda5f074e3a779a";
                 break;
-            case #"hash_be2e962be17d10e":
+            case #"mimic":
                 var_9879245b = #"hash_32f09fc1f3674574";
                 break;
             case #"zombie_dog":

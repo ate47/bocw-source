@@ -1,0 +1,51 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#tr_powerburst_bp_bush_mtxitem",
+            "itemid": "25573093"
+        },
+        {
+            "var_4a4bc969": "#tr_powerburst_cb_fcarbon_mtxitem",
+            "itemid": "26617111"
+        },
+        {
+            "var_4a4bc969": "#tr_precisionsemi_bp_reinforced_mtxitem",
+            "itemid": "25710669"
+        },
+        {
+            "var_4a4bc969": "#tr_precisionsemi_speckled_mtxitem",
+            "itemid": "31290180"
+        },
+        {
+            "var_4a4bc969": "#tr_longburst_bp_resp_mtxitem",
+            "itemid": "24425291"
+        },
+        {
+            "var_4a4bc969": "#tr_longburst_bp_arvnr2_mtxitem",
+            "itemid": "18013978"
+        },
+        {
+            "var_4a4bc969": "#tr_longburst_bp_smu_mtxitem",
+            "itemid": "27510272"
+        },
+        {
+            "var_4a4bc969": "#tr_damagesemi_bp_fighter_mtxitem",
+            "itemid": "25366229"
+        },
+        {
+            "var_4a4bc969": "#tr_damagesemi_bp_sovietops_mtxitem",
+            "itemid": "27750435"
+        }
+    ],
+    "itemname": "#hash_4329629423864274",
+    "var_375a1747": "#hash_4c986a9832688356",
+    "name": "blueprint_bundle_7509_vault_tac_rifle_pack_mtxbundle",
+    "var_a788fada": "#hash_bc5ce56188f4507",
+    "var_22f91505": "#hash_6b2794015281c8fe",
+    "var_566825be": "#hash_49b40e13e6cf90f",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_ddfbadb399d99b2",
+    "var_db3e02ab": 2000,
+    "itemid": "28625022"
+}

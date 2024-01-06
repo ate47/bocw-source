@@ -93,7 +93,7 @@ function private function_70a657d8() {
     default_value("allow_prone", 1);
     register("allow_melee", 1, "$self", &allowmelee, "$value");
     default_value("allow_melee", 1);
-    register("allow_melee_victim", 1, "$self", &function_a95a9a05, "$value");
+    register("allow_melee_victim", 1, "$self", &allow_melee_victim, "$value");
     default_value("allow_melee_victim", 1);
     register("allow_climb", 1, "$self", &function_4f1b1444, "$value");
     default_value("allow_climb", 1);
@@ -274,7 +274,7 @@ function function_e681e68e(str_id) {
         return;
     }
     var_bb7c988d = arraycopy(self.values);
-    foreach (var_ae0593af in var_bb7c988d) {
+    foreach (var_629dd807, var_ae0593af in var_bb7c988d) {
         foreach (state in var_ae0593af) {
             if (state.str_id === str_id) {
                 self reset(str_id, var_629dd807);
@@ -731,7 +731,7 @@ function private function_2014cd50(b_value = 1) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x93c11979, Offset: 0x2e20
 // Size: 0x36
-function private function_a95a9a05(b_value = 1) {
+function private allow_melee_victim(b_value = 1) {
     self.canbemeleed = b_value ? 1 : 0;
 }
 
@@ -863,7 +863,7 @@ function private debug_values() {
             foreach (ent in a_all_ents) {
                 if (isdefined(ent.values)) {
                     i = 1;
-                    foreach (a_value in ent.values) {
+                    foreach (str_name, a_value in ent.values) {
                         top_value = a_value[0];
                         if (isdefined(top_value)) {
                             b_valid = 1;

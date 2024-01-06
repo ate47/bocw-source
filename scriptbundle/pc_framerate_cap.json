@@ -1,0 +1,31 @@
+{
+    "option_dependencies": [
+        {
+            "var_1643d946": "1",
+            "var_6825bdb": "#pc_framerate_uncapped",
+            "operator": "=="
+        }
+    ],
+    "description": "#hash_2661763cbec3d1e4",
+    "var_ebe98576": 1,
+    "var_60fcfffa": "#menu/on",
+    "var_9bc3be7": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_799f4f7": 1,
+    "var_77c0bdd6": 1,
+    "var_86a04811": 1,
+    "var_43a952c1": 5,
+    "maxvalue": 1,
+    "name": "pc_framerate_cap",
+    "displayname": "#hash_7f4c54562c12809c",
+    "var_4a4760c0": 30,
+    "var_d6897f56": 1,
+    "var_500458ac": 10,
+    "var_66faec87": 335,
+    "statname": "com_maxfps",
+    "var_8b80386": 1,
+    "var_6f00a61a": 1.1,
+    "var_d4e288e": 250,
+    "var_b7401319": "#menu/off"
+}

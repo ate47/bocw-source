@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#bundle_free_fantasy_1903_mendo_overkill_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_4cdcf64a527d73f6",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_3f3099a2669c1674",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 3,
+    "var_46300498": 1,
+    "baseweapon": "#hash_227fd691c2da0969",
+    "name": "special_grenade_launcher_bp_shadow_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 3,
+    "itemid": "23556147",
+    "blueprint": "#hash_4cdcf64a527d73f6"
+}

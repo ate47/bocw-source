@@ -251,7 +251,7 @@ function getteammask(team) {
 // Size: 0xb8
 function getotherteamsmask(skip_team) {
     mask = 0;
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (team == skip_team) {
             continue;
         }

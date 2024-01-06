@@ -1,0 +1,12 @@
+{
+    "var_210a8489": [
+        {
+            "var_37d9fb07": "default_zombies_realm_1",
+            "var_a949845f": -1,
+            "var_857deb66": 10
+        }
+    ],
+    "var_922067c4": "scriptbundle",
+    "type": "survivalailist",
+    "name": "default_ai_list_0"
+}

@@ -514,7 +514,7 @@ function function_46850180(instance) {
 // Checksum 0x67527b61, Offset: 0x2ad8
 // Size: 0x4c
 function function_8b312db9(str_shot) {
-    self.var_1cd294c7 thread scene::play(#"hash_1d5a21a769272f94", str_shot, self.var_b8ca9d7.var_43123efe);
+    self.var_1cd294c7 thread scene::play(#"p9_fxanim_sv_payload_monkey_bundle", str_shot, self.var_b8ca9d7.var_43123efe);
 }
 
 // Namespace namespace_fa1c4f0a/namespace_fa1c4f0a
@@ -667,7 +667,7 @@ function function_27033bf7(instance) {
     self thread function_612a9925();
     self thread function_6ae999c2(instance);
     instance.var_1ac40948 playrumblelooponentity(#"hash_1903f70fddbadc53");
-    instance.var_1ac40948 scene::play(#"hash_56a14bcd4fb22528", instance.var_1ac40948);
+    instance.var_1ac40948 scene::play(#"p9_fxanim_sv_payload_delivery_open_bundle", instance.var_1ac40948);
     instance.var_1ac40948 stoprumble(#"hash_1903f70fddbadc53");
     instance.var_1ac40948 playrumbleonentity(#"sr_canister_damage_vehicle_rumble");
     if (isdefined(instance.var_f2af10b2)) {
@@ -982,7 +982,7 @@ function function_7ae9616f(instance) {
         }
     }
     for (i = 0; i < 2; i++) {
-        namespace_cc2ee5::use_dynent(var_dd05b6d[i]);
+        dynent_use::use_dynent(var_dd05b6d[i]);
         wait(randomfloatrange(0.2, 0.5));
     }
 }
@@ -2437,28 +2437,28 @@ function function_9bf6c44a() {
 function function_aece4588(var_3afe334f) {
     switch (var_3afe334f) {
     case 1:
-        var_e7a1cbae = #"hash_79f4cd8d0836f9b0";
+        var_e7a1cbae = #"objective_payload_ailist_1";
         break;
     case 2:
-        var_e7a1cbae = #"hash_79f4d08d0836fec9";
+        var_e7a1cbae = #"objective_payload_ailist_2";
         break;
     case 3:
-        var_e7a1cbae = #"hash_79f4cf8d0836fd16";
+        var_e7a1cbae = #"objective_payload_ailist_3";
         break;
     case 4:
-        var_e7a1cbae = #"hash_79f4d28d0837022f";
+        var_e7a1cbae = #"objective_payload_ailist_4";
         break;
     case 5:
-        var_e7a1cbae = #"hash_79f4d18d0837007c";
+        var_e7a1cbae = #"objective_payload_ailist_5";
         break;
     case 6:
-        var_e7a1cbae = #"hash_79f4d48d08370595";
+        var_e7a1cbae = #"objective_payload_ailist_6";
         break;
     case 7:
-        var_e7a1cbae = #"hash_79f4d38d083703e2";
+        var_e7a1cbae = #"objective_payload_ailist_7";
         break;
     case #"hash_defdefdefdefdef0":
-        var_e7a1cbae = #"hash_79f4d68d083708fb";
+        var_e7a1cbae = #"objective_payload_ailist_8";
         break;
     }
     var_6017f33e = namespace_679a22ba::function_ca209564(var_e7a1cbae);

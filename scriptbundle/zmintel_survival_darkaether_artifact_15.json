@@ -1,0 +1,19 @@
+{
+    "description": "#hash_291daf086a6567bd",
+    "itemspawnentry": "#item_zmintel_survival_darkaether_artifact_15",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#exploration",
+    "model": "#hash_f098b58fe0dd6bc",
+    "var_824079e7": "#survival",
+    "uimodel": "#hash_675d760a1d1d4f8b",
+    "type": "zmintel",
+    "season": 5,
+    "var_ad4ad686": "#hash_70ce1650358c0923",
+    "var_217aec15": "#hash_4c46bf4eab36c2b3",
+    "name": "zmintel_survival_darkaether_artifact_15",
+    "var_9be0526e": "#artifact",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "title": "#hash_3c75005198378d6b",
+    "mapname": "#hash_61b0dcd51a7049e3"
+}

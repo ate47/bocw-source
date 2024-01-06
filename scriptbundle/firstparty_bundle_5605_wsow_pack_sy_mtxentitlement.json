@@ -1,0 +1,35 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#ar_fastfire_bp_wsow_sy_mtxitem",
+            "itemid": "27085372"
+        },
+        {
+            "var_4a4bc969": "#loot_smg_fastfire_bp_wsow_sy_mtxitem",
+            "itemid": "18370244"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_crown_sy_mtxitem",
+            "itemid": "33071663"
+        },
+        {
+            "var_4a4bc969": "#callingcards_flexkillcam_s5_base_sy_mtxitem",
+            "itemid": "33467222"
+        }
+    ],
+    "itemname": "#hash_23f36cb290ebecdb",
+    "var_247d9ed7": "firstparty_bundle_5605_wsow_pack",
+    "var_208d76b5": "#hash_22810d64ecea2ed4",
+    "var_70f66e54": "#hash_64e1813c0ea39299",
+    "name": "firstparty_bundle_5605_wsow_pack_sy_mtxentitlement",
+    "var_a788fada": "#hash_97028e8eee0fb91",
+    "var_22f91505": "#hash_38ab2f0b5c00b481",
+    "var_566825be": "#hash_620f0965c9776169",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_f3c937a9": "#hash_6fb7f68967606141",
+    "var_db3e02ab": 2000,
+    "var_4e46b1b3": "#orbis",
+    "itemid": "26348888",
+    "var_a592ce5": 1
+}

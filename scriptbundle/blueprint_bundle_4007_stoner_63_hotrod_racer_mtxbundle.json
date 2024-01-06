@@ -1,0 +1,48 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#lmg_accurate_cb_ratrod_mtxitem",
+            "itemid": "24798416"
+        },
+        {
+            "var_4a4bc969": "#smg_heavy_bp_ratrod_mtxitem",
+            "itemid": "30763008"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s2_digital_mini_map_hot_rod_mtxitem",
+            "itemid": "27629684"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_8_ball_mtxitem",
+            "itemid": "24386385"
+        },
+        {
+            "var_4a4bc969": "#emblems_ratrod_animated_mtxitem",
+            "itemid": "28092530"
+        },
+        {
+            "var_4a4bc969": "#callingcards_ratrod_animated_mtxitem",
+            "itemid": "26220961"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_civ_ru_sedan_80s_mpx_hotrod_mtxitem",
+            "itemid": "20912348"
+        },
+        {
+            "var_4a4bc969": "#vehiclehorn_carr_mtxitem",
+            "itemid": "31614243"
+        }
+    ],
+    "itemname": "#hash_723573daec4c6b68",
+    "var_375a1747": "#hash_650c0ac7239380ea",
+    "var_579fd6c3": 25,
+    "name": "blueprint_bundle_4007_stoner_63_hotrod_racer_mtxbundle",
+    "var_a788fada": "#hash_4a4e71f41ad19cab",
+    "var_22f91505": "#hash_7c5b25287847c190",
+    "var_566825be": "#hash_d8c4c92fb334cd3",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_3025e3fe2369c558",
+    "var_db3e02ab": 2000,
+    "itemid": "25009591"
+}

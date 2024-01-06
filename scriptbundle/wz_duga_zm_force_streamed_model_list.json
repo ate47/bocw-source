@@ -1,0 +1,17 @@
+{
+    "var_616a2f60": [
+        {
+            "mip": 1,
+            "lod": 4,
+            "type": "#xmodel",
+            "asset": "#hash_31c1cb3766c9f12c"
+        },
+        {
+            "mip": 1,
+            "lod": 4,
+            "type": "#xmodel",
+            "asset": "#hash_5abd729f7a45fe9a"
+        }
+    ],
+    "name": "wz_duga_zm_force_streamed_model_list"
+}

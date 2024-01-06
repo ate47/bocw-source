@@ -1,0 +1,16 @@
+{
+    "var_bc83573f": [
+        {
+            "var_bc83573f": "#multiplayer"
+        }
+    ],
+    "description": "#hash_629a2f8f085110a7",
+    "var_86b354f": 30,
+    "var_922067c4": "SCRIPTBUNDLE",
+    "var_525bbb8": "Silver",
+    "type": "trophy",
+    "var_4a95afca": "#hash_efe424e3c74d9a0",
+    "image": "#hash_100682da7fcadaf7",
+    "name": "mp_achievement_squad_wipes",
+    "title": "#hash_3b23d2c13d31179d"
+}

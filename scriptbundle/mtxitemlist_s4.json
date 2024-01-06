@@ -1,0 +1,1274 @@
+{
+    "mtxitemlist": [
+        {
+            "var_4a4bc969": "#s4_accessory016_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_accessory052_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_accessory060_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_accessory062_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_accessory065_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_accessory085_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_accessory089_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_accessory095_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_accessory101_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_accessory111_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_accessory123_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_accessory14_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_accessory29_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_accessory39_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_accessory69_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_anna_basic_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_anna_e_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_arthur_i_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_ball_turret_gunner_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_beatrice_c_s4_mp_fra_beatrice_15_1a_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_beatrice_c_s4_mp_fra_beatrice_15_1b_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_beatrice_c_s4_mp_fra_beatrice_15_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_beatrice_c_s4_mp_fra_beatrice_17_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_beatrice_c_s4_mp_fra_beatrice_18_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_beatrice_c_s4_mp_fra_beatrice_20_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_beatrice_h_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_bp_boost_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_bp_boost_s2_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_bp_boost_s3_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_bp_boost_s4_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_bp_boost_s5_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_butcher_c_s4_mp_eng_butcher_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_butcher_c_s4_mp_eng_butcher_11_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cod_points_100_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_constanze_c_s4_mp_ger_constanze_21_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_constanze_c_s4_mp_ger_constanze_23_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_constanze_c_s4_mp_ger_constanze_26_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_constanze_k_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_constanze_m_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_066_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_082_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_105_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_106_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_120_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_136_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_145_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_146_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_147_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_148_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_149_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_150_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_229_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_230_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_231_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_232_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_233_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_234_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_279_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_282_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_283_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_284_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_285_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_286_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_287_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_333_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_334_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_335_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_336_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_337_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_cos_338_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_daniel_c_s4_mp_usa_daniel_19_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_daniel_c_s4_mp_usa_daniel_20_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_daniel_c_s4_mp_usa_daniel_23_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_daniel_c_s4_mp_usa_daniel_25_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_daniel_e_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_daniel_j_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_equip_sticky_grenade_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_equip_white_phosphorus_grenade_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_execution_mp_universal_ref_variant_21_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_execution_mp_universal_ref_variant_22_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_execution_mp_universal_ref_variant_24_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_execution_mp_universal_ref_variant_35_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_execution_mp_universal_ref_variant_45_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_fatality_anna_02_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_fatality_butcher_02_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_fatality_francis_02_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_fatality_generic_explosive_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_fatality_generic_shotgun_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_fatality_generic_shuriken_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_fatality_generic_smg_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_fatality_polina_02_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_francis_a_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_francis_basic_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_gesture022_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_halima_c_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_halima_c_s4_mp_ita_halima_19_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_halima_c_s4_mp_ita_halima_21_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_halima_c_s4_mp_ita_halima_22_a_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_halima_c_s4_mp_ita_halima_22_b_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_halima_c_s4_mp_ita_halima_22_c_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_halima_j_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_lucas_c_s4_mp_aus_lucas_20_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_lucas_c_s4_mp_aus_lucas_23_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_lucas_c_s4_mp_aus_lucas_29_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_lucas_j_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_lucas_m_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_mateo_b_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_mateo_basic_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_padmavati_c_s4_mp_ind_padma_20_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_padmavati_c_s4_mp_ind_padma_22_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_padmavati_c_s4_mp_ind_padma_24_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_padmavati_d_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_padmavati_i_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_polina_c_s4_mp_rus_polina_20_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_polina_c_s4_mp_rus_polina_23_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_polina_c_s4_mp_rus_polina_26_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_polina_i_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_polina_j_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_pom_battlepass_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_pom_daniel_02_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_pom_francis_02_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_pom_generic_coldone_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_pom_generic_gunfu_02_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_pom_generic_shotgun_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_pom_generic_shuriken_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_pom_halima_03_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_pom_rocketlaunchers_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_raul_c_s4_mp_nic_menendez_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_raul_c_s4_mp_nic_menendez_10_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_ret_s4_lens_501_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_ret_s4_reflex_201_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_ret_s4_reflex_202_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_ret_s4_reflex_301_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_ret_s4_reflex_302_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_ret_s4_reflex_401_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_ret_s4_reflex_402_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_ret_s4_sniper_502_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_roland_c_s4_mp_ger_roland_21_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_roland_c_s4_mp_ger_roland_23_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_roland_c_s4_mp_ger_roland_25_c_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_roland_c_s4_mp_ger_roland_25_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_roland_c_s4_mp_ger_roland_27_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_roland_i_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_roland_m_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_asierra44_variant_19_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_asierra44_variant_22_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_asierra44_variant_6_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_balpha_variant_14_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_balpha_variant_32_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_balpha_variant_4_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_bromeopg_variant_12_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_chotel41_variant_17_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_emike1_variant_0_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_emike1_variant_3_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_emike1_variant_4_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_fecho_variant_16_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_fecho_variant_25_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_fecho_variant_6_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_hyankee44_variant_0_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_hyankee44_variant_11_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_hyankee44_variant_16_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_hyankee44_variant_1_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_hyankee44_variant_4_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_kgolf40_variant_0_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_kgolf40_variant_1_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_kgolf40_variant_4_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_promeo45_variant_0_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_promeo45_variant_1_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_promeo45_variant_8_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_stango44_variant_10_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_stango44_variant_12_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_stango44_variant_29_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_valpha1952_variant_4_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_voscar_variant_12_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_voscar_variant_17_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_ar_voscar_variant_4_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_callingcard_ah_set_aircraftcarrier_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_ah_set_ammo_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_ah_set_charge_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_ah_set_enigmacodes_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_ah_set_espionage_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_ah_set_maintenance_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_ah_set_monsterattack_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_animated_opc_battlepass_03_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_animated_opc_battlepass_04_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_animated_opc_bptaskforcevillainsemblem_01_atlas_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_animated_opc_gun_02_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_animated_opc_mercsofwardeathandmurder_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_animated_opc_skull_03_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_animated_opc_ww2_02_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_animated_opc_yeti_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_e3d_anna_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_e3d_anna_02_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_fierceanimal_09_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_firewolf_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_goldensoldier_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_opc_gasmaskpunk_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_opc_hightec_04_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_opc_international_20_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_opc_isabella_02_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_opc_menendez_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_opc_mercsofwardeathandmurder_02_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_opc_mercsofwarmasks_02_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_opc_mercsofwarmasks_04_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_opc_mercsofwarthronesofguns_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_opc_mercsofwarthronesofguns_03_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_opc_mercsofwarww2_03_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_opc_prototype_02_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_opc_prototype_03_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_opc_prototype_04_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_opc_set_muscleking_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_opc_streetgang_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_rh_killstreak_localinformants_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_emblem_thomasbolt_02_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_killcam_vanity_013_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_killcam_vanity_014_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_me_axe_variant_1_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_me_icepick_variant_2_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_me_katana_variant_2_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_me_leiomano_variant_0_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_me_sledgehammer_variant_3_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mg_aalpha52_variant_0_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mg_aalpha52_variant_1_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mg_aalpha52_variant_2_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mg_bromeo37_variant_12_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mg_bromeo37_variant_13_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mg_bromeo37_variant_8_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mg_dpapa27_variant_6_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mg_malpha7_variant_0_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mg_malpha7_variant_1_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mg_malpha7_variant_7_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mg_malpha7_variant_9_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mg_mgolf42_variant_14_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mg_mgolf42_variant_18_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mg_mgolf42_variant_7_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mg_tyankee11_variant_11_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mr_aromeo99_variant_11_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mr_gecho43_variant_12_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mr_gecho43_variant_5_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mr_kalpha98_variant_18_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mr_kalpha98_variant_8_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mr_malpha1916_variant_0_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mr_malpha1916_variant_1_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mr_moscar_variant_15_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mr_moscar_variant_6_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mr_ptango41_variant_0_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mr_ptango41_variant_1_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mr_ptango41_variant_4_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mr_ptango41_variant_7_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mr_svictor40_variant_12_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_mr_svictor40_variant_16_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_pi_luniform08_variant_4_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_pi_luniform08_variant_7_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_pi_malpha96_variant_10_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_pi_mike1911_variant_11_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_pi_mike1911_variant_17_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_pi_mike1911_variant_8_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_pi_ttango33_variant_10_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_pi_wecho_variant_10_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_pi_wecho_variant_6_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_pi_wecho_variant_8_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_ah_set_fallensoldier_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_aim_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_animated_beat_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_animated_opc_alpine_05_s4_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_animated_opc_desert_04_atlas_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_animated_opc_desert_05_atlas_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_animated_opc_prototype_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_animated_opc_prototype_02_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_animated_opc_prototype_05_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_animated_opc_ww2_03_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_animated_opc_ww2_05_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_animated_opc_ww2_08_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_animated_opc_ww2_09_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_animated_opc_ww2_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_animated_specialforces_02_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_aromeo_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_deconstruction_04_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_deconstruction_05_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_e3d_pacific_08_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_female_03_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_la_m1bravo_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_mercenary_02_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_opc_4thofjuly_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_opc_airsuperiority_02_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_opc_bankheist_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_opc_bankheist_03_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_opc_bankheist_04_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_opc_control_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_opc_fieldmic_02_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_opc_groundwar_02_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_opc_hardpoint_02_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_opc_prototype_09_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_opc_prototype_10_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_opc_prototype_12_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_opc_prototype_14_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_opc_prototype_15_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_opc_punk_04_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_opc_streetgang_03_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_opc_streetgang_05_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_opc_teamdeathmatch_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_opc_tracker_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_opc_yeti_01_a_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_rh_nuclear_05_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_serialkiller_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_serialkiller_02_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_serialkiller_05_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_set_femalespy_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_soldier_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_soldier_03_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_swissalps_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_swissalps_03_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_swissalps_05_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_title_016_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_title_017_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_title_018_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_title_019_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_title_020_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_title_033_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_title_034_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_title_045_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_title_046_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_title_051_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_title_052_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_title_059_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_title_060_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_wwiimovieposter_06_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_wwiimovieposter_08_1_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_wwiivehicles_04_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_wwiivehicles_06_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_wwiivehicles_09_1_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_playercard_zombie_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sh_becho_variant_5_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sh_bromeo5_variant_8_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sh_lindia98_variant_6_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sh_lindia98_variant_9_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sh_mike97_variant_11_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sh_mike97_variant_9_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sm_aromeo43_variant_10_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sm_aromeo43_variant_11_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sm_aromeo43_variant_6_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sm_fromeo57_variant_0_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sm_fromeo57_variant_1_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sm_fromeo57_variant_3_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sm_guniform45_variant_3_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sm_guniform45_variant_5_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sm_mpapa40_variant_18_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sm_mpapa40_variant_32_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sm_mpapa40_variant_6_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sm_mpapa40_variant_7_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sm_owhiskey_variant_11_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sm_owhiskey_variant_5_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sm_ppapa41_variant_10_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sm_ppapa41_variant_11_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sm_ppapa41_variant_16_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sm_ppapa41_variant_21_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sm_salpha26_variant_0_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sm_salpha26_variant_1_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sm_salpha26_variant_2_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sm_stango5_variant_18_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sm_stango5_variant_8_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sm_tyankee100_variant_17_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sm_tyankee100_variant_6_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sm_wecho43_variant_7_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_spray_opc_ballturretgunner_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_spray_swissalph_04_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sticker_ah_cartelbling_femmefatale_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sticker_ah_militaryhistorianslugerenthusiast_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sticker_ah_set_car_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sticker_ah_set_charge_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sticker_ah_set_desertjeep_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sticker_ah_set_guns_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sticker_ah_set_highstakepacific_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sticker_ah_set_modernww2_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sticker_ah_set_monsterattack_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sticker_ah_set_motorbike_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sticker_ah_set_naval_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sticker_ah_set_poison_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sticker_animecrazysoldierwithbazooka_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sticker_flexingpilot_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sticker_grenadecartooncharacter_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sticker_rh_operator_taeyoung_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sticker_richbadguywithsharksinaquarium_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sticker_runningsoldier_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sticker_set_navalbase_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sticker_skullbunnywithgreenflamesandpistol_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sticker_soldiersmokingdynamite_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s4_sticker_tattoedlovershandsholdingeachother_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_s5_playercard_ah_set_forestambush_01_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_shigenori_c_s4_mp_jpn_shigenori_18_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_shigenori_h_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_shigenori_j_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_solange_c_s4_mp_eng_solange_20_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_solange_c_s4_mp_eng_solange_21_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_solange_c_s4_mp_eng_solange_23_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_solange_e_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_solange_i_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_specialty_armory_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_specialty_intuition_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_specialty_mechanic_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_specialty_serpentine_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_v_ui_elmnt_emblem_034_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_v_ui_elmnt_emblem_035_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_v_ui_elmnt_emblem_036_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_v_ui_elmnt_emblem_037_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_v_ui_elmnt_emblem_038_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_v_ui_elmnt_emblem_039_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_v_ui_elmnt_emblem_040_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_v_ui_preview_killcam_opc_alpine_02_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_v_ui_preview_killcam_opc_alpine_05_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_wade_c_s4_mp_usa_wade_25_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_wade_c_s4_mp_usa_wade_29_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_wade_m_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_wade_n_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_wade_q_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_weapon_xp_token_epic_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_weapon_xp_token_legendary_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_weapon_xp_token_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_weapon_xp_token_rare_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_xp_token_epic_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_xp_token_legendary_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_xp_token_mtxitem"
+        },
+        {
+            "var_4a4bc969": "#s4_xp_token_rare_mtxitem"
+        }
+    ],
+    "name": "mtxitemlist_s4"
+}

@@ -1,0 +1,35 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#lmg_accurate_bp_bayou_mtxitem",
+            "itemid": "32897083"
+        },
+        {
+            "var_4a4bc969": "#melee_bat_bp_bayou_mtxitem",
+            "itemid": "29454556"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_bundle_dynamite_mtxitem",
+            "itemid": "20365301"
+        },
+        {
+            "var_4a4bc969": "#execution_082_mtxitem",
+            "itemid": "32916445"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_r8g11_10_s5_mtxitem",
+            "itemid": "30799828"
+        }
+    ],
+    "itemname": "#hash_22a8d6f2ab480fa",
+    "var_375a1747": "#hash_2bd939578792b3ac",
+    "name": "blueprint_bundle_5020_stoner_63_wrecking_crew_mtxbundle",
+    "var_a788fada": "#hash_79c080feeee0308f",
+    "var_22f91505": "#hash_446096543dc039aa",
+    "var_566825be": "#hash_6c60ca6df60b857",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_75f25219c98b2026",
+    "var_db3e02ab": 2000,
+    "itemid": "31373677"
+}

@@ -354,7 +354,7 @@ function move_zombie_spawn_location(spot) {
         spot.script_noteworthy.spot = "spawn_location";
     }
     tokens = strtok(spot.script_noteworthy, " ");
-    foreach (token in tokens) {
+    foreach (index, token in tokens) {
         if (isdefined(self.spawn_point_override)) {
             spot = self.spawn_point_override;
             token = spot.script_noteworthy;
@@ -1399,7 +1399,7 @@ function function_c52e1749(origin, players) {
                     closestplayer = position_info.player;
                 }
             } else {
-                foreach (position in playerpositions) {
+                foreach (index, position in playerpositions) {
                     if (isdefined(level.var_cd24b30)) {
                         if (distance2dsquared(position, goalpos) < function_a3f6cdac(16) && abs(position[2] - goalpos[2]) <= level.var_cd24b30) {
                             closestplayer = players[index];
@@ -4281,7 +4281,7 @@ function is_point_inside_enabled_zone(v_origin, ignore_zone) {
 function clear_streamer_hint(var_49d474b2) {
     if (isarray(self.var_4a501715)) {
         if (isdefined(var_49d474b2)) {
-            foreach (var_b0b08518 in self.var_4a501715) {
+            foreach (n_index, var_b0b08518 in self.var_4a501715) {
                 if (n_index === var_49d474b2) {
                     if (isdefined(var_b0b08518)) {
                         var_b0b08518 delete();
@@ -4770,7 +4770,7 @@ function function_452938ed(params) {
         if (int(params.value)) {
             if (isarray(level.var_e63703cd)) {
                 println("<unknown string>" + level.var_e63703cd.size + "<unknown string>");
-                foreach (s_objective in level.var_e63703cd) {
+                foreach (n_obj_id, s_objective in level.var_e63703cd) {
                     println("<unknown string>" + n_obj_id + "<unknown string>" + function_9e72a96(s_objective.var_6cc77d4e));
                 }
             }
@@ -4784,7 +4784,7 @@ function function_452938ed(params) {
 // Checksum 0xaf8afa88, Offset: 0xf7a8
 // Size: 0xb8
 function function_3ba26955() {
-    foreach (var_1b589e4c in level.var_e63703cd) {
+    foreach (n_obj_id, var_1b589e4c in level.var_e63703cd) {
         if (isdefined(var_1b589e4c.var_c87f9ad7)) {
             self thread function_71071944(n_obj_id, var_1b589e4c.v_origin_or_ent, var_1b589e4c.var_c87f9ad7, var_1b589e4c.params);
         }
@@ -5329,7 +5329,7 @@ function function_36eb0acc(var_13f9dee7 = #"none") {
         self clientfield::set("model_rarity_rob", 2);
         break;
     case #"green":
-    case #"hash_3a98cc868af9b743":
+    case #"uncommon":
         self clientfield::set("model_rarity_rob", 3);
         break;
     case #"blue":

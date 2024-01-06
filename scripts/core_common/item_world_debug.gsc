@@ -96,7 +96,7 @@ function private function_bebe535() {
     /#
         n_total = 0;
         var_9243cc66 = 0;
-        foreach (list in level.var_2e96a450) {
+        foreach (i, list in level.var_2e96a450) {
             str_set = function_9e72a96(i);
             println(str_set + "<unknown string>" + list);
             n_total = n_total + list;
@@ -170,22 +170,22 @@ function private function_10b50848() {
                     type = "<unknown string>";
                     if (isdefined(the_item[0].var_a6762160) && isdefined(the_item[0].var_a6762160.itemtype)) {
                         switch (the_item[0].var_a6762160.itemtype) {
-                        case #"hash_910bf9605abbcea":
+                        case #"survival_essence":
                             type = "<unknown string>";
                             break;
-                        case #"hash_3a094c949a87214d":
+                        case #"survival_scrap":
                             type = "<unknown string>";
                             break;
-                        case #"hash_576593319dc02d70":
+                        case #"survival_armor_shard":
                             type = "<unknown string>";
                             break;
                         case #"hash_fc797c2a8f4d208":
                             type = "<unknown string>";
                             break;
-                        case #"hash_70823406977e7c34":
+                        case #"survival_perk":
                             type = "<unknown string>";
                             break;
-                        case #"hash_7064fc95aa1c1bbe":
+                        case #"survival_ammo":
                             type = "<unknown string>";
                             break;
                         case #"armor":
@@ -194,7 +194,7 @@ function private function_10b50848() {
                         case #"equipment":
                             type = "<unknown string>";
                             break;
-                        case #"hash_3fd3555ae0c9b5c4":
+                        case #"field_upgrade":
                             type = "<unknown string>";
                             break;
                         case #"tactical":
@@ -267,7 +267,7 @@ function private function_b6ea080() {
                         case #"equipment":
                             type = "<unknown string>";
                             break;
-                        case #"hash_3fd3555ae0c9b5c4":
+                        case #"field_upgrade":
                             type = "<unknown string>";
                             break;
                         case #"tactical":
@@ -972,7 +972,7 @@ function private function_cdd9b388() {
                             print3d(item.origin + vectorscale((0, 0, 1), 32), function_9e72a96(item.targetname), color, 1, 0.3, 20);
                         case 3:
                         LOC_0000175a:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"hash_7064fc95aa1c1bbe") {
+                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"survival_ammo") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                                 if (isdefined(item.targetname)) {
                                     print3d(item.origin + vectorscale((0, 0, 1), 32), function_9e72a96(item.targetname), color, 1, 0.3, 20);
@@ -1011,12 +1011,12 @@ function private function_cdd9b388() {
                             }
                             break;
                         case 8:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"hash_576593319dc02d70") {
+                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"survival_armor_shard") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
                             break;
                         case 9:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"hash_910bf9605abbcea") {
+                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"survival_essence") {
                                 if (item.var_a6762160.amount === 1) {
                                     color = vectorscale((1, 1, 1), 0.75);
                                 } else {
@@ -1026,7 +1026,7 @@ function private function_cdd9b388() {
                             }
                             break;
                         case 10:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"hash_3a094c949a87214d") {
+                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"survival_scrap") {
                                 if (item.var_a6762160.amount === 1) {
                                     color = vectorscale((1, 1, 1), 0.75);
                                 } else {
@@ -1036,7 +1036,7 @@ function private function_cdd9b388() {
                             }
                             break;
                         case 11:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"hash_70823406977e7c34") {
+                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"survival_perk") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
                             break;
@@ -1056,7 +1056,7 @@ function private function_cdd9b388() {
                             }
                             break;
                         case 16:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"hash_3fd3555ae0c9b5c4") {
+                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"field_upgrade") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
                             break;
@@ -1231,7 +1231,7 @@ function private function_cdd9b388() {
                             }
                             break;
                         case 15:
-                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"hash_3fd3555ae0c9b5c4") {
+                            if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"field_upgrade") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
                             break;
@@ -1489,7 +1489,7 @@ function function_9cc59537() {
                             if (isdefined(group.targetname)) {
                                 dynents = function_c79d31c4(group.targetname, 1);
                                 if (getdvarint(#"hash_f6b57eebb5965e6", 0) && dynents.size >= getdvarint(#"hash_6a4b2cc3aa3a5d21", 50)) {
-                                    foreach (stash in dynents) {
+                                    foreach (i, stash in dynents) {
                                         if (i >= getdvarint(#"hash_6a4b2cc3aa3a5d21", 50)) {
                                             continue;
                                         }
@@ -1566,7 +1566,7 @@ function function_9cc59537() {
                             }
                             if (is_true(var_b91441dd.supplystash)) {
                                 var_47748885 = n_depth;
-                                foreach (v_test in var_7cb887a8) {
+                                foreach (i, v_test in var_7cb887a8) {
                                     if (i > 2) {
                                         var_47748885 = n_width;
                                     }

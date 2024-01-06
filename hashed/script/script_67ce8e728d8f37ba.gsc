@@ -206,7 +206,7 @@ function function_14956b80() {
     if (currentsessionmode() == 4 || (isdefined(getgametypesetting(#"prematchperiod")) ? getgametypesetting(#"prematchperiod") : 0) <= 0) {
         return 0;
     }
-    if (!is_true(getgametypesetting(#"hash_16ec132a4fe8eba9"))) {
+    if (!is_true(getgametypesetting(#"playintrocinematics"))) {
         return 0;
     }
     if (!getdvarint(#"hash_3c02566432466eb2", 0)) {

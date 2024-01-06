@@ -1,0 +1,17 @@
+{
+    "wavestartfinal": "#hash_79f5a0541d2bb2d4",
+    "var_922067c4": "scriptbundle",
+    "var_878e23d6": "#hash_76d9e79bbd69e037",
+    "type": "mpdialog_scorestreak",
+    "killmultiple": "#hash_31d86e5618b091be",
+    "var_a0f53e83": "#hash_50f43838d2bccbe",
+    "var_93906c09": "#hash_6ffed5bca51b8350",
+    "vmtype": "both",
+    "name": "blops_pilot3_kls_straferun",
+    "arrive": "#hash_3a49c6ce65b4a64",
+    "wavestart": "#hash_2b7f6f3fc37fba79",
+    "kill1": "#hash_5fe7b5e1441444c3",
+    "kill3": "#hash_5fe7b7e144144829",
+    "kill2": "#hash_5fe7b6e144144676",
+    "killnone": "#hash_5bcb55c47c0a3b2"
+}

@@ -336,17 +336,17 @@ function function_5eeaa168() {
 function function_ef9d58d0(item) {
     if (isdefined(item.var_a6762160.name)) {
         switch (item.var_a6762160.name) {
-        case #"hash_ad7366e99bb5190":
-        case #"hash_c20bf6cb2f436fd":
-        case #"hash_f5896e310254300":
-        case #"hash_165e9ace72992332":
-        case #"hash_27815c5c48d7960a":
-        case #"hash_315d03848e9c8533":
-        case #"hash_3d6c85e60e7f64bf":
+        case #"ww_ieu_shockwave_t9_upgraded_item_sr":
+        case #"ww_ieu_gas_t9_item_sr":
+        case #"ww_ieu_plasma_t9_item_sr":
+        case #"ww_ieu_gas_t9_upgraded_item_sr":
+        case #"ww_ieu_acid_t9_upgraded_item_sr":
+        case #"ww_ieu_shockwave_t9_item_sr":
+        case #"ww_ieu_electric_t9_item_sr":
         case #"hash_3dff7d94b9ae5c97":
-        case #"hash_4c696ce5b8b4e675":
-        case #"hash_6deee6c9f8742324":
-        case #"hash_7b3b2febd34985f5":
+        case #"ww_ieu_acid_t9_item_sr":
+        case #"ww_ieu_electric_t9_upgraded_item_sr":
+        case #"ww_ieu_plasma_t9_upgraded_item_sr":
             return 1;
             break;
         }

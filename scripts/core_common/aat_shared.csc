@@ -22,7 +22,7 @@ function private function_70a657d8() {
     if (!is_true(level.aat_in_use)) {
         return;
     }
-    clientfield::register("toplayer", "rob_ammo_mod_ready", 1, 1, "int", &function_4f950d48, 0, 0);
+    clientfield::register("toplayer", "rob_ammo_mod_ready", 1, 1, "int", &rob_ammo_mod_ready, 0, 0);
     clientfield::register_clientuimodel("hud_items.gibDismembermentType", #"hash_6f4b11a0bee9b73d", #"hash_49b325aa4c9519d", 16000, 5, "int", undefined, 0, 0);
     level.aat_default_info_name = "none";
     level.aat_default_info_icon = "blacktransparent";
@@ -46,7 +46,7 @@ function function_2b3bcce0() {
 // Params 7, eflags: 0x2 linked
 // Checksum 0x2227eeeb, Offset: 0x380
 // Size: 0x84
-function function_4f950d48(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function rob_ammo_mod_ready(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self playrenderoverridebundle("rob_ammo_mod_ready_light");
     } else {

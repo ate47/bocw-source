@@ -996,7 +996,7 @@ function function_716add58() {
         }
         foreach (player in getplayers()) {
             if (isalive(player)) {
-                player namespace_2d471fab::function_24fbd61e();
+                player chopper_gunner::function_24fbd61e();
             }
         }
         level thread zm_silver_util::function_4cc5fca6();
@@ -1030,7 +1030,7 @@ function function_716add58() {
         }
         foreach (player in getplayers()) {
             if (isalive(player)) {
-                player namespace_2d471fab::function_24fbd61e();
+                player chopper_gunner::function_24fbd61e();
             }
         }
         level thread zm_silver_util::function_4cc5fca6();
@@ -1086,13 +1086,13 @@ function function_647c7f() {
     var_bdd70f6a = util::spawn_model(#"hash_ffa046503bd02bb", self.origin, self.angles);
     switch (var_b6a08ca5) {
     case 0:
-        var_bdd70f6a thread scene::play(#"hash_2dc577a7afb42228", "idle_01", var_bdd70f6a);
+        var_bdd70f6a thread scene::play(#"p9_fxanim_zm_monkey_idle_bundle", "idle_01", var_bdd70f6a);
         break;
     case 1:
-        var_bdd70f6a thread scene::play(#"hash_2dc577a7afb42228", "idle_02", var_bdd70f6a);
+        var_bdd70f6a thread scene::play(#"p9_fxanim_zm_monkey_idle_bundle", "idle_02", var_bdd70f6a);
         break;
     case 2:
-        var_bdd70f6a thread scene::play(#"hash_2dc577a7afb42228", "idle_03", var_bdd70f6a);
+        var_bdd70f6a thread scene::play(#"p9_fxanim_zm_monkey_idle_bundle", "idle_03", var_bdd70f6a);
         break;
     case #"hash_defdefdefdefdef0":
         break;

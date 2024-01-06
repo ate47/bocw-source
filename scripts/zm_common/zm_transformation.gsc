@@ -58,7 +58,7 @@ function function_6b183c78(var_736940b3) {
     /#
         assert(ishash(var_736940b3), "<unknown string>");
     #/
-    foreach (name_hash in level.var_50f7dbd5) {
+    foreach (index, name_hash in level.var_50f7dbd5) {
         if (name_hash == var_736940b3) {
             var_689205d = index;
             break;
@@ -865,7 +865,7 @@ function private setup_status() {
         }
         level.var_deb567a8[level.var_deb567a8.size] = {#var_735311f0:var_735311f0, #var_b99573ec:var_f4676cb4, #var_d189697d:var_af5fbf35, #title:var_e859a426};
         i = 0;
-        foreach (transformation in level.var_b175714d) {
+        foreach (id, transformation in level.var_b175714d) {
             y = y + 10;
             current_color = colors[i % colors.size];
             id_elem = create_hudelem(y);

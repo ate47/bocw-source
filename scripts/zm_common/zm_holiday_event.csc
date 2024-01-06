@@ -54,17 +54,17 @@ function function_675f0963(*localclientnum) {
             }
             self.var_dee85a7a = "j_head";
             break;
-        case #"hash_9f6bc1960ff4912":
+        case #"raz":
             self.var_6ffc5953 = #"hash_279687d633e3788b";
             self.var_dee85a7a = "j_head";
             self.var_fbfc64db = #"hash_567c329bd17fa23e";
             break;
-        case #"hash_be2e962be17d10e":
+        case #"mimic":
             self.var_6ffc5953 = #"hash_577e281da25751ae";
             self.var_dee85a7a = "j_head";
             self.var_fbfc64db = #"hash_567c329bd17fa23e";
             break;
-        case #"hash_3d92e2c7bea1eee2":
+        case #"mechz":
             self.var_6ffc5953 = #"hash_36be37cb09a62a29";
             self.var_dee85a7a = "j_head";
             self.var_fbfc64db = #"hash_567c329bd17fa23e";

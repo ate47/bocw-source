@@ -57,7 +57,7 @@ function function_c8bff20a(eventstruct) {
 // Checksum 0x8f1a4772, Offset: 0x280
 // Size: 0x114
 function function_549a01b9(localclientnum) {
-    if (namespace_56e70a4a::function_b8fe9b52(localclientnum)) {
+    if (codcaster::function_b8fe9b52(localclientnum)) {
         return;
     }
     if (function_56e2eaa8(self) && isdefined(level.killcam[localclientnum]) && game.state !== #"pregame") {

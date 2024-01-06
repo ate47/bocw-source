@@ -21,10 +21,10 @@ function function_90ae260d() {
     var_74257310 = &item_world_fixup::add_item_replacement;
     var_f8a4c541 = &item_world_fixup::function_6991057;
     var_edfbccd0 = &item_world_fixup::function_e70fa91c;
-    namespace_1c7b37c6::item_replacer(var_f8a4c541, #"hash_218c23f79bec44e2", #"hash_1b5199fd1393a226");
-    namespace_1c7b37c6::item_replacer(var_f8a4c541, #"hash_63e44c0150bb5992", #"hash_24b2c0f4ab55c0d7");
-    namespace_1c7b37c6::item_replacer(var_f8a4c541, #"hash_45a2c2712690bd0", #"hash_6284c394c2718975");
-    namespace_1c7b37c6::item_replacer(var_f8a4c541, #"hash_3ec8c7d720778d76", #"hash_350839c1d730853f");
-    namespace_1c7b37c6::item_replacer(var_74257310, #"hash_55c0a68941dcc80b", #"hash_79d7d5e206eaf770");
+    namespace_1c7b37c6::item_replacer(var_f8a4c541, #"zm_magicbox_weapon_named_weapons", #"hash_1b5199fd1393a226");
+    namespace_1c7b37c6::item_replacer(var_f8a4c541, #"level_6_gun_list", #"hash_24b2c0f4ab55c0d7");
+    namespace_1c7b37c6::item_replacer(var_f8a4c541, #"named_gun_list", #"hash_6284c394c2718975");
+    namespace_1c7b37c6::item_replacer(var_f8a4c541, #"ltm_halloween_chest_wonder_weapons", #"hash_350839c1d730853f");
+    namespace_1c7b37c6::item_replacer(var_74257310, #"ww_ray_rifle_t9_item_sr", #"ray_gun_item_sr");
 }
 

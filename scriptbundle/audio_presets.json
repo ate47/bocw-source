@@ -1,0 +1,50 @@
+{
+    "options": [
+        {
+            "label": "#hash_7613b2a5ca617ca9",
+            "value": "0"
+        },
+        {
+            "label": "#hash_d12b71f6eda0883",
+            "value": "3"
+        },
+        {
+            "label": "#hash_16a3ac0d1a01010e",
+            "value": "4"
+        },
+        {
+            "label": "#hash_3b1456102659d72e",
+            "value": "6"
+        },
+        {
+            "label": "#hash_138c57b1c6286df4",
+            "value": "5"
+        },
+        {
+            "label": "#hash_1457ba941a5e867b",
+            "value": "1"
+        },
+        {
+            "label": "#hash_1cd0169c5b113ef4",
+            "value": "2"
+        },
+        {
+            "label": "#hash_3bbb038df42d3c13",
+            "value": "7"
+        }
+    ],
+    "description": "#hash_378e4796c5ff3f38",
+    "var_60fcfffa": "#menu/on",
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "maxvalue": 1,
+    "name": "audio_presets",
+    "displayname": "#hash_64358215620a8410",
+    "var_500458ac": 10,
+    "var_66faec87": 10,
+    "statname": "snd_menu_presets",
+    "var_6f00a61a": 1.1,
+    "var_b7401319": "#menu/off"
+}

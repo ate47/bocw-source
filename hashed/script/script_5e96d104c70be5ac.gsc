@@ -561,7 +561,7 @@ function private on_item_pickup(params) {
                     }
                     attachments[attachments.size] = hash(attachment);
                 }
-                var_a63abfbe.var_3a1a7fda = attachments;
+                var_a63abfbe.weapon_attachments = attachments;
             }
             var_a63abfbe.var_ae6a042c.var_a63abfbe = item.var_a8bccf69;
             var_a63abfbe.var_78a16b58.var_a63abfbe = item.aat;
@@ -593,7 +593,7 @@ function private on_item_drop(params) {
                 }
                 attachments[attachments.size] = hash(attachment);
             }
-            var_a63abfbe.var_3a1a7fda = attachments;
+            var_a63abfbe.weapon_attachments = attachments;
         }
         var_a63abfbe.var_ae6a042c.var_a63abfbe = item.var_a8bccf69;
         var_a63abfbe.var_78a16b58.var_a63abfbe = item.aat;
@@ -647,7 +647,7 @@ function private function_2d2b9f81(data) {
     primaryweapon = data.player getloadoutweapon(data.player.class_num, "primary");
     var_2153b0fe.weapon.var_2153b0fe = primaryweapon.statname;
     var_c9ec28d9 = data.player function_b958b70d(data.player.class_num, "specialgrenade");
-    var_2153b0fe.var_4aaf769 = var_c9ec28d9;
+    var_2153b0fe.field_upgrade = var_c9ec28d9;
     var_2153b0fe.round_number.var_2153b0fe = data.round;
     data.player function_678f57c8(#"hash_193890e3bb1b528f", var_2153b0fe);
 }

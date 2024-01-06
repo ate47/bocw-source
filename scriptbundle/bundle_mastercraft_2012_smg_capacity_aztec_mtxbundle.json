@@ -1,0 +1,48 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#smg_capacity_bp_monte_mtxitem",
+            "itemid": "20938053"
+        },
+        {
+            "var_4a4bc969": "#tr_powerburst_cb_monte_mtxitem",
+            "itemid": "28925637"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_aztec_god_mtxitem",
+            "itemid": "20739709"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_boat_jetski_mpx_montezuma_mtxitem",
+            "itemid": "18249383"
+        },
+        {
+            "var_4a4bc969": "#callingcards_aztecassault_animated_mtxitem",
+            "itemid": "24508986"
+        },
+        {
+            "var_4a4bc969": "#emblems_marquee_04_zuma_animated_mtxitem",
+            "itemid": "24924538"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s2_digital_jade_mtxitem",
+            "itemid": "21765022"
+        },
+        {
+            "var_4a4bc969": "#vehiclehorn_paradol_mtxitem",
+            "itemid": "18329971"
+        }
+    ],
+    "itemname": "#hash_63e3fbb421d29a37",
+    "var_375a1747": "#hash_16e8757c933b12b9",
+    "var_579fd6c3": 50,
+    "name": "bundle_mastercraft_2012_smg_capacity_aztec_mtxbundle",
+    "var_a788fada": "#hash_76ae4d112be905e0",
+    "var_22f91505": "#hash_69b52dbd4d85dba0",
+    "var_566825be": "#hash_63d8b98d4c483698",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_23c6ca4786f1b328",
+    "var_db3e02ab": 2000,
+    "itemid": "32353244"
+}

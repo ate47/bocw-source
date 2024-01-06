@@ -1,0 +1,76 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_1654b97158fb5a4a"
+        },
+        {
+            "var_fe10649e": "#hash_79303336700ab294"
+        },
+        {
+            "var_fe10649e": "#hash_79303636700ab7ad"
+        },
+        {
+            "var_fe10649e": "#hash_79303536700ab5fa"
+        }
+    ],
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_weaver_sons_of_orda_mtxitem",
+            "itemid": "23256413"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_weaver_mtxitem",
+            "itemid": "19882636"
+        },
+        {
+            "var_4a4bc969": "#operator_mission_6014_mtxitem",
+            "itemid": "27540904"
+        },
+        {
+            "var_4a4bc969": "#operator_mission_6014_unlock_mtxitem",
+            "itemid": "28832783"
+        },
+        {
+            "var_4a4bc969": "#smg_heavy_bp_orda_mtxitem",
+            "itemid": "20496268"
+        },
+        {
+            "var_4a4bc969": "#ar_slowhandling_bp_orda_mtxitem",
+            "itemid": "28710361"
+        },
+        {
+            "var_4a4bc969": "#lmg_light_bp_orda_mtxitem",
+            "itemid": "28499138"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_jackolantern_mtxitem",
+            "itemid": "17785127"
+        },
+        {
+            "var_4a4bc969": "#execution_209_mtxitem",
+            "itemid": "27426088"
+        },
+        {
+            "var_4a4bc969": "#emblems_orda_s6_animated_mtxitem",
+            "itemid": "23520944"
+        },
+        {
+            "var_4a4bc969": "#callingcards_sonsoforda_animation_s6_mtxitem",
+            "itemid": "27765529"
+        }
+    ],
+    "itemname": "#hash_35d186daa4a09bb8",
+    "var_375a1747": "#hash_1654b97158fb5a4a",
+    "var_3040f0d1": "#hash_1083126a6bec2e7e",
+    "var_8ee7db29": 1,
+    "var_fc891f35": "28832783",
+    "name": "operator_bundle_6014_weaver_chaos_disciple_mtxbundle",
+    "var_a788fada": "#hash_2cad8de2adf524df",
+    "var_22f91505": "#hash_4473a9d9f0cc8d46",
+    "var_566825be": "#hash_5ddc968afbcdba27",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_40e757340952c95a",
+    "var_db3e02ab": 750,
+    "itemid": "29854023"
+}

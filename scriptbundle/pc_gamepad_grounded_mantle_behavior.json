@@ -1,0 +1,36 @@
+{
+    "option_dependencies": [
+        {
+            "var_1643d946": "0",
+            "var_6825bdb": "#pc_gamepad_airborne_mantle_behavior",
+            "operator": "=="
+        }
+    ],
+    "options": [
+        {
+            "label": "#hash_2222dd50e5e35d4",
+            "value": "0"
+        },
+        {
+            "label": "#hash_704be4ba7ee1453a",
+            "value": "1"
+        }
+    ],
+    "description": "#hash_17150d2a18924a3c",
+    "var_60fcfffa": "#menu/on",
+    "var_9bc3be7": 1,
+    "var_4ced19ab": 1,
+    "var_10e01ad5": 1,
+    "var_71620d66": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "maxvalue": 1,
+    "name": "pc_gamepad_grounded_mantle_behavior",
+    "displayname": "#hash_65d5189459f547cd",
+    "var_500458ac": 10,
+    "var_66faec87": 10,
+    "statname": "mantle_behaviour_ground_gpad",
+    "var_6f00a61a": 1.1,
+    "var_b7401319": "#menu/off"
+}

@@ -1,0 +1,73 @@
+{
+    "var_2be3941a": [
+        {
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "image": "#hash_5dafbe3b9f549bc5",
+            "var_e5119d1b": "#hash_5dafbe3b9f549bc5",
+            "var_b4ab831a": "#hash_2c12b240dbf2eb43",
+            "var_270fa547": "#hash_12ebd02003c58809"
+        },
+        {
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "image": "#hash_16add9ae60fbb6c6",
+            "var_e5119d1b": "#hash_16add9ae60fbb6c6",
+            "var_b4ab831a": "#hash_2e2d3119c7eba908",
+            "var_270fa547": "#hash_40c259a28bc275ba"
+        },
+        {
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "image": "#hash_5cd02fd1fcb79e94",
+            "var_e5119d1b": "#hash_5cd02fd1fcb79e94",
+            "var_b4ab831a": "#hash_11d84f8e6fcacfea",
+            "var_270fa547": "#hash_203f53d43e7b5525"
+        },
+        {
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "image": "#hash_76b4beba6c438524",
+            "var_e5119d1b": "#hash_76b4beba6c438524",
+            "var_b4ab831a": "#hash_6af8c0811b92773e",
+            "var_270fa547": "#hash_558f7942e2401eff"
+        },
+        {
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "image": "#hash_6ace651bdb8e5366",
+            "var_e5119d1b": "#hash_6ace651bdb8e5366",
+            "var_b4ab831a": "#hash_4e9d98373f0a4679",
+            "var_270fa547": "#hash_2d6bcee038d7e728"
+        },
+        {
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "image": "#hash_badfcb5517009b2",
+            "var_e5119d1b": "#hash_badfcb5517009b2",
+            "var_b4ab831a": "#hash_787b86aaa73d9c8b",
+            "var_270fa547": "#hash_45b90af94bc28199"
+        },
+        {
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "image": "#hash_54b2e52488c7004e",
+            "var_e5119d1b": "#hash_54b2e52488c7004e",
+            "var_b4ab831a": "#hash_2a8c492edec37cbe",
+            "var_270fa547": "#hash_3551fbb8f9272df6"
+        },
+        {
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "image": "#hash_3b9a6f3adbcd4299",
+            "var_e5119d1b": "#hash_3b9a6f3adbcd4299",
+            "var_b4ab831a": "#hash_2f41b7a5b905080a",
+            "var_270fa547": "#hash_5a234b7c00ae1ae4"
+        },
+        {
+            "var_5f79ee71": "#hash_39e1b40f90e6005c",
+            "image": "#hash_7ea2c2c6372f9418",
+            "var_e5119d1b": "#hash_7ea2c2c6372f9418",
+            "var_b4ab831a": "#hash_6917afb842d5d2d9",
+            "var_270fa547": "#hash_7aecddb420d2f602"
+        }
+    ],
+    "var_922067c4": "SCRIPTBUNDLE",
+    "type": "challengerewards",
+    "var_faec2a7f": 3,
+    "name": "challengerewards_onslaught",
+    "sessionmode": "0",
+    "var_91a1cb16": 3
+}

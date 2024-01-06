@@ -373,7 +373,7 @@ function logteamwinstring(wintype, winner) {
         if (isdefined(winner)) {
             log_string = log_string + "<unknown string>" + winner;
         }
-        foreach (str_team in level.teams) {
+        foreach (team, str_team in level.teams) {
             log_string = log_string + "<unknown string>" + str_team + "<unknown string>" + game.stat[#"teamscores"][team];
         }
         print(log_string);

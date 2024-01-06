@@ -1,0 +1,40 @@
+{
+    "itemlist": [
+        {
+            "minweight": 50,
+            "var_a6762160": "#zm_fishing_common_list",
+            "maxweight": 50,
+            "available": -1
+        },
+        {
+            "minweight": 30,
+            "var_a6762160": "#zm_fishing_rare_list",
+            "maxweight": 30,
+            "available": -1
+        },
+        {
+            "minweight": 10,
+            "var_a6762160": "#zm_fishing_epic_list",
+            "maxweight": 10,
+            "available": -1
+        },
+        {
+            "minweight": 1,
+            "var_a6762160": "#zm_fishing_legendary_list",
+            "maxweight": 1,
+            "available": -1
+        },
+        {
+            "minweight": 9,
+            "maxweight": 9,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "zm_fishing_parent_list",
+    "var_fde72c94": 100
+}

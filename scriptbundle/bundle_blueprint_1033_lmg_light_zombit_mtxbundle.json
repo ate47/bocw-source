@@ -1,0 +1,60 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_471c73106065e895"
+        },
+        {
+            "var_fe10649e": "#hash_4303cb2db6c6a168"
+        },
+        {
+            "var_fe10649e": "#hash_4303cc2db6c6a31b"
+        },
+        {
+            "var_fe10649e": "#hash_4303d12db6c6ab9a"
+        }
+    ],
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_fastfire_bp_arcade_mtxitem",
+            "itemid": "30411726"
+        },
+        {
+            "var_4a4bc969": "#lmg_light_bp_arcade_mtxitem",
+            "itemid": "30909766"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_zombiefoot_mtxitem",
+            "itemid": "30430294"
+        },
+        {
+            "var_4a4bc969": "#veh_t9_mil_snowmobile_mpx_doa_mtxitem",
+            "itemid": "23433964"
+        },
+        {
+            "var_4a4bc969": "#emblems_29_animated_mtxitem",
+            "itemid": "21057659"
+        },
+        {
+            "var_4a4bc969": "#callingcards_zombit_animated_mtxitem",
+            "itemid": "24965333"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_29_mtxitem",
+            "itemid": "22243444"
+        }
+    ],
+    "itemname": "#hash_63ce3b3f3de1ddc7",
+    "var_375a1747": "#hash_471c73106065e895",
+    "var_3040f0d1": "#hash_471c73106065e895",
+    "var_8ee7db29": 1,
+    "var_579fd6c3": 38,
+    "name": "bundle_blueprint_1033_lmg_light_zombit_mtxbundle",
+    "var_a788fada": "#hash_452aebe80c772f08",
+    "var_22f91505": "#hash_28b6104e0ccdca22",
+    "var_566825be": "#hash_5b3ef223a83f4af4",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_2ad5037db3c4d29e",
+    "var_db3e02ab": 750,
+    "itemid": "20511975"
+}

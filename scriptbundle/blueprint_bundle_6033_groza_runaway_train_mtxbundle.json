@@ -1,0 +1,39 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_fasthandling_bp_tiger_mtxitem",
+            "itemid": "23872907"
+        },
+        {
+            "var_4a4bc969": "#tr_damagesemi_bp_onyx_sy_mtxitem",
+            "itemid": "25661779"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_red_anvil_mtxitem",
+            "itemid": "18925946"
+        },
+        {
+            "var_4a4bc969": "#emblems_s6_vts_final_01_mtxitem",
+            "itemid": "26660317"
+        },
+        {
+            "var_4a4bc969": "#callingcards_western_1_s6_mtxitem",
+            "itemid": "18234775"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s6_reaper_mtxitem",
+            "itemid": "24321202"
+        }
+    ],
+    "itemname": "#hash_e56d9def3974f2f",
+    "var_375a1747": "#hash_fda8b9ba1c877ad",
+    "name": "blueprint_bundle_6033_groza_runaway_train_mtxbundle",
+    "var_a788fada": "#hash_48d9f959725df7b6",
+    "var_22f91505": "#hash_118f2f30741217a9",
+    "var_566825be": "#hash_16553ae8830e4482",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_e2c98b8ff9554a9",
+    "var_db3e02ab": 2000,
+    "itemid": "31033113"
+}

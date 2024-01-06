@@ -188,7 +188,7 @@ function private function_7dfb4daa(decoygrenade) {
     decoygrenade.var_20a0f018 clientfield::set("isJammed", 0);
     decoygrenade.var_20a0f018 clientfield::set("" + #"hash_7c2ee5bfa7cad803", 1);
     decoygrenade.var_20a0f018 playloopsound(#"hash_6e07f5906d35471");
-    decoygrenade thread scene::play(#"hash_668ca05f2b622f3d", decoygrenade.var_20a0f018);
+    decoygrenade thread scene::play(#"scene_grenade_decoy_footsteps", decoygrenade.var_20a0f018);
 }
 
 // Namespace nightingale/grenade_fire
@@ -247,7 +247,7 @@ function function_db24f032() {
     if (is_true(self.isjammed)) {
         decoy clientfield::set("isJammed", 1);
     } else {
-        self thread scene::play(#"hash_668ca05f2b622f3d", decoy);
+        self thread scene::play(#"scene_grenade_decoy_footsteps", decoy);
         decoy clientfield::set("" + #"hash_7c2ee5bfa7cad803", 1);
         decoy playloopsound(#"hash_6e07f5906d35471");
     }
@@ -344,7 +344,7 @@ function function_30a3d1d2(params) {
         owner = var_e5d834ab.owner;
         if (isdefined(owner) && isdefined(params.players[owner getentitynumber()]) && level.var_432fa05c.var_558ae5bc >= distancesquared(var_e5d834ab.origin, self.origin)) {
             scoreevents::processscoreevent(#"hash_f114eaf6ee78991", owner);
-            owner stats::function_622feb0d(var_e5d834ab.weapon.name, #"hash_1f29619736f4b06", 1);
+            owner stats::function_622feb0d(var_e5d834ab.weapon.name, #"nightingale_assists", 1);
             if (isdefined(level.var_b7bc3c75.var_e2298731)) {
                 owner [[ level.var_b7bc3c75.var_e2298731 ]]();
             }

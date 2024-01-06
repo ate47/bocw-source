@@ -1,0 +1,44 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_mercenary_bp_bluereaper_mtxitem",
+            "itemid": "28818986"
+        },
+        {
+            "var_4a4bc969": "#smg_capacity_bp_bluereaper_mtxitem",
+            "itemid": "31006826"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_crystal_eleph_mtxitem",
+            "itemid": "27214830"
+        },
+        {
+            "var_4a4bc969": "#callingcards_bluetracer_mtxitem",
+            "itemid": "19188206"
+        },
+        {
+            "var_4a4bc969": "#emblems_bluetracer_mtxitem",
+            "itemid": "29883395"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_bluetracer_mtxitem",
+            "itemid": "21103907"
+        },
+        {
+            "var_4a4bc969": "#reticle_44_mtxitem",
+            "itemid": "32140750"
+        }
+    ],
+    "itemname": "#hash_356651078c8e783d",
+    "var_375a1747": "#hash_34fb81cb366c418b",
+    "var_579fd6c3": 38,
+    "name": "bundle_tracer_1904_ar_standard_tracer_pack_blue_mtxbundle",
+    "var_a788fada": "#hash_77a657141cac7df4",
+    "var_22f91505": "#hash_6f13ed3b8cce0b53",
+    "var_566825be": "#hash_1395c7d968a5fa80",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_77034ce38bc0e4f7",
+    "var_db3e02ab": 2000,
+    "itemid": "22497100"
+}

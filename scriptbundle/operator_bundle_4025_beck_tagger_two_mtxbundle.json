@@ -1,0 +1,70 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_28b18cf792d720c8"
+        },
+        {
+            "var_fe10649e": "#hash_271f7c8987883bc5"
+        },
+        {
+            "var_fe10649e": "#hash_271f7b8987883a12"
+        },
+        {
+            "var_fe10649e": "#hash_271f768987883193"
+        },
+        {
+            "var_fe10649e": "#hash_271f7b8987883a12"
+        },
+        {
+            "var_fe10649e": "#hash_271f7c8987883bc5"
+        }
+    ],
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_ger_pl_west_tagger_ii_mtxitem",
+            "itemid": "31435630"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_ger_west_mtxitem",
+            "itemid": "31131649"
+        },
+        {
+            "var_4a4bc969": "#ar_damage_resist_mtxitem",
+            "itemid": "23725156"
+        },
+        {
+            "var_4a4bc969": "#ar_mercenary_bp_resist_mtxitem",
+            "itemid": "26124866"
+        },
+        {
+            "var_4a4bc969": "#callingcards_graffiti_77_animated_mtxitem",
+            "itemid": "24319705"
+        },
+        {
+            "var_4a4bc969": "#emblems_grafitti_animated_mtxitem",
+            "itemid": "20651999"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_paintbrush_mtxitem",
+            "itemid": "18610083"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_grafitti_mtxitem",
+            "itemid": "23396707"
+        }
+    ],
+    "itemname": "#hash_4c96081c259193d6",
+    "var_375a1747": "#hash_28b18cf792d720c8",
+    "var_3040f0d1": "#hash_28b18cf792d720c8",
+    "var_8ee7db29": 1,
+    "var_579fd6c3": 54,
+    "name": "operator_bundle_4025_beck_tagger_two_mtxbundle",
+    "var_a788fada": "#hash_7b8373ff0d5c35b5",
+    "var_22f91505": "#hash_7c11c4f0a224801c",
+    "var_566825be": "#hash_4ec380802a917b0d",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_43c9392cb6475e8c",
+    "var_db3e02ab": 500,
+    "itemid": "26767855"
+}

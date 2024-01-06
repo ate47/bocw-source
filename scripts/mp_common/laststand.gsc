@@ -111,7 +111,7 @@ function private function_70a657d8() {
     callback::on_disconnect(&on_player_disconnect);
     level.var_dea23a93 = [];
     level.var_ead46974 = [];
-    foreach (teamstr in level.teams) {
+    foreach (team, teamstr in level.teams) {
         level.var_dea23a93[team] = 0;
         level.var_ead46974[team] = 0;
     }
@@ -675,7 +675,7 @@ function playerlaststand(einflictor, attacker, idamage, smeansofdeath, weapon, v
             player clientfield::set_player_uimodel("PlayerTeamLastLivesData.numPlayersDowned", var_9b6c9b51);
             player thread function_5de626dc(self);
         }
-        foreach (count in level.var_ead46974) {
+        foreach (team, count in level.var_ead46974) {
             if (!util::function_fbce7263(team, self.team)) {
                 continue;
             }
@@ -1780,7 +1780,7 @@ function revive_hud_think() {
             continue;
         }
         revived = 0;
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             playertorevive = undefined;
             foreach (player in function_a1ef346b(team)) {
                 if (!isdefined(player.revivetrigger) || !isdefined(player.revivetrigger.createtime)) {
@@ -1852,7 +1852,7 @@ function function_1e8018b0() {
         foreach (player in getplayers(self.team)) {
             player clientfield::set_player_uimodel("PlayerTeamLastLivesData.numPlayersDowned", var_9b6c9b51);
         }
-        foreach (count in level.var_ead46974) {
+        foreach (team, count in level.var_ead46974) {
             if (!util::function_fbce7263(team, self.team)) {
                 continue;
             }

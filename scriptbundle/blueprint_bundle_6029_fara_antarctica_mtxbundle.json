@@ -1,0 +1,47 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_slowhandling_bp_frost_mtxitem",
+            "itemid": "23706210"
+        },
+        {
+            "var_4a4bc969": "#loot_smg_fastfire_bp_frost_mtxitem",
+            "itemid": "31563004"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s6_digital_frost_mtxitem",
+            "itemid": "21140076"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_penguin_w_gun_mtxitem",
+            "itemid": "31060118"
+        },
+        {
+            "var_4a4bc969": "#reticle_133_mtxitem",
+            "itemid": "32551108"
+        },
+        {
+            "var_4a4bc969": "#emblems_antarctica_s6_mtxitem",
+            "itemid": "26402434"
+        },
+        {
+            "var_4a4bc969": "#callingcards_ateam_137_s6_mtxitem",
+            "itemid": "19856897"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_antarctica_s6_mtxitem",
+            "itemid": "33025158"
+        }
+    ],
+    "itemname": "#hash_e98c40954447feb",
+    "var_375a1747": "#hash_3c81b3c103443c1d",
+    "name": "blueprint_bundle_6029_fara_antarctica_mtxbundle",
+    "var_a788fada": "#hash_37be63ac9a324686",
+    "var_22f91505": "#hash_1b85e02335ea5182",
+    "var_566825be": "#hash_16bc0b9edc9645d2",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_419b8f1beac3dcfe",
+    "var_db3e02ab": 2000,
+    "itemid": "29450325"
+}

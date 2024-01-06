@@ -1,0 +1,41 @@
+{
+    "option_dependencies": [
+        {
+            "var_1643d946": "1",
+            "var_6825bdb": "#auto_sprint_gamepad",
+            "operator": "=="
+        }
+    ],
+    "options": [
+        {
+            "label": "#hash_4e6b05eba4bbb43f",
+            "value": "0"
+        },
+        {
+            "label": "#hash_7f9b44e25360bc86",
+            "value": "2"
+        },
+        {
+            "label": "#hash_41996f67d047ad9f",
+            "value": "1"
+        }
+    ],
+    "var_dfedf08e": 2,
+    "description": "#hash_375b48e0169c024f",
+    "var_60fcfffa": "#menu/on",
+    "var_9bc3be7": 1,
+    "var_4ced19ab": 1,
+    "var_10e01ad5": 1,
+    "var_71620d66": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "maxvalue": 1,
+    "name": "pc_gamepad_sprint_behavior",
+    "displayname": "#hash_459c5b8a92bc9d39",
+    "var_500458ac": 10,
+    "var_66faec87": 10,
+    "statname": "toggle_sprint_gpad",
+    "var_6f00a61a": 1.1,
+    "var_b7401319": "#menu/off"
+}

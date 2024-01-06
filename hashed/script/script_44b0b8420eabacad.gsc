@@ -368,8 +368,8 @@ function function_82ca1565(spawnpoint, gametype) {
     case #"hash_42f07692f7d48364":
         return is_true(spawnpoint.var_3d72e6da);
         break;
-    case #"hash_26096195d0143dd":
-        return is_true(spawnpoint.var_636a4dac);
+    case #"spy":
+        return is_true(spawnpoint.spy);
         break;
     case #"hash_defdefdefdefdef0":
         /#
@@ -426,7 +426,7 @@ function function_4c00b132(func_callback) {
     /#
         assert(isdefined(level.var_811300ad) && level.var_811300ad.size, "<unknown string>");
     #/
-    foreach (func in level.var_811300ad) {
+    foreach (index, func in level.var_811300ad) {
         if (func == func_callback) {
             arrayremoveindex(level.var_811300ad, index, 0);
             return;
@@ -545,10 +545,10 @@ function function_90dee50d() {
     var_637da63f = [];
     spawns = function_4fe2525a();
     foreach (spawn in spawns) {
-        if (!namespace_9a8780d8::is_valid(spawn)) {
+        if (!territory::is_valid(spawn)) {
             continue;
         }
-        if (namespace_9a8780d8::function_83ad4d2b(spawn.origin)) {
+        if (territory::function_83ad4d2b(spawn.origin)) {
             if (!isdefined(var_637da63f)) {
                 var_637da63f = [];
             } else if (!isarray(var_637da63f)) {
@@ -565,10 +565,10 @@ function function_90dee50d() {
 // Checksum 0x58dc8f4c, Offset: 0x1db8
 // Size: 0x44
 function function_c24e290c(spawn) {
-    if (!namespace_9a8780d8::is_valid(spawn)) {
+    if (!territory::is_valid(spawn)) {
         return 0;
     }
-    return !namespace_9a8780d8::function_83ad4d2b(spawn.origin);
+    return !territory::function_83ad4d2b(spawn.origin);
 }
 
 // Namespace spawning/namespace_48f955ce

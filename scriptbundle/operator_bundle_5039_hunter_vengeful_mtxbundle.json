@@ -1,0 +1,55 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_gen_pl_starter1_hunter_killer_mtxitem",
+            "itemid": "30426184"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_gen_starter1_mtxitem",
+            "itemid": "31474701"
+        },
+        {
+            "var_4a4bc969": "#ar_fastfire_bp_hollywood_mtxitem",
+            "itemid": "27092726"
+        },
+        {
+            "var_4a4bc969": "#sniper_accurate_bp_hollywood_mtxitem",
+            "itemid": "33205776"
+        },
+        {
+            "var_4a4bc969": "#melee_machete_bp_hollywood_mtxitem",
+            "itemid": "26274691"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_cheetah_pin_mtxitem",
+            "itemid": "31370001"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s5_analog_blood_fancy_mtxitem",
+            "itemid": "33188899"
+        },
+        {
+            "var_4a4bc969": "#execution_081_mtxitem",
+            "itemid": "29524212"
+        },
+        {
+            "var_4a4bc969": "#emblems_hollywood_bad_guy_s5_mtxitem",
+            "itemid": "30749157"
+        },
+        {
+            "var_4a4bc969": "#callingcards_hollywood_bad_guy_s5_animated_mtxitem",
+            "itemid": "22969802"
+        }
+    ],
+    "itemname": "#hash_136f5268752e441e",
+    "var_375a1747": "#hash_6f57af72f98335ac",
+    "name": "operator_bundle_5039_hunter_vengeful_mtxbundle",
+    "var_a788fada": "#hash_5571bcd2de32a9cd",
+    "var_22f91505": "#hash_41ff179c697ec3f0",
+    "var_566825be": "#hash_157f39d3903a2cc5",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_775fab9f278d80b8",
+    "var_db3e02ab": 2000,
+    "itemid": "21687584"
+}

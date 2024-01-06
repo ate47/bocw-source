@@ -1913,8 +1913,8 @@ function set_equipment_list() {
         level.dev_equipment[10] = getweapon(#"threat_detector");
         level.dev_equipment[11] = getweapon(#"armor_station");
         level.dev_equipment[12] = getweapon(#"hash_2b9efbad11308e02");
-        level.dev_equipment[13] = getweapon(#"hash_f1b44dbfb6fccde");
-        level.dev_equipment[14] = getweapon(#"hash_18d1b94b35c3b851");
+        level.dev_equipment[13] = getweapon(#"missile_turret");
+        level.dev_equipment[14] = getweapon(#"weapon_armor");
     #/
 }
 

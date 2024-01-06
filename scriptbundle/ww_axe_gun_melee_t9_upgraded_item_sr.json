@@ -1,0 +1,32 @@
+{
+    "worldfx": [
+        {
+            "worldfx": "#hash_3dad79ca7ca879b5"
+        },
+        {
+            "worldfx": "#hash_3973d8117121b7fb"
+        }
+    ],
+    "var_a6616b9c": 1,
+    "amount": 1,
+    "var_fa988b4b": 60,
+    "var_922067c4": "scriptbundle",
+    "var_16e34ef4": 64,
+    "var_e9898330": "zmpingwonderweapongeneric",
+    "weapon": "#hash_5382c3fae4273fed",
+    "var_ac75b59f": -1,
+    "var_c2de1e75": "zm_item_pickup_rumble",
+    "type": "itemspawnentry",
+    "spawnsound": "zmb_powerup_eqp_spawn",
+    "var_4a1a4613": "armor_swap",
+    "name": "ww_axe_gun_melee_t9_upgraded_item_sr",
+    "var_9e569978": 1,
+    "icon": "#hash_7dcc809c6e47dee6",
+    "modelscale": 1,
+    "rarity": "Ultra",
+    "handler": "#hash_50375e5de228e9fc",
+    "var_3af59a99": 1,
+    "pickupicon": "#hash_77e20b7ab578a00f",
+    "var_50773731": 1,
+    "itemtype": "weapon"
+}

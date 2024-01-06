@@ -1,0 +1,19 @@
+{
+    "description": "#hash_2ca09553839b9543",
+    "var_60fcfffa": "#hash_14d7072b1be4a4c",
+    "var_9bc3be7": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "maxvalue": 1,
+    "name": "pc_sfx_volume",
+    "displayname": "#hash_5477d9e4bdcf4b89",
+    "var_d6897f56": 1,
+    "var_500458ac": 10,
+    "var_66faec87": 100,
+    "statname": "snd_menu_sfx",
+    "var_6f00a61a": 1.1,
+    "var_d4e288e": 100,
+    "var_b7401319": "#hash_661e43062ca9239f"
+}

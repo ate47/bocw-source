@@ -53,7 +53,7 @@ function function_5700f119() {
     if (!is_true(getgametypesetting(#"hash_6143c4e1e18f08fd"))) {
         return;
     }
-    var_b5f67dff = namespace_9a8780d8::function_5c7345a3("weapon_cache");
+    var_b5f67dff = territory::function_5c7345a3("weapon_cache");
     foreach (var_73b9e48e in var_b5f67dff) {
         var_73b9e48e.var_331b8fa4.var_73b9e48e = 0;
         var_73b9e48e function_4c6228cd();
@@ -106,7 +106,7 @@ function function_692bd0bc(player) {
         player setweaponammoclip(secondaryoffhand, player function_b7f1fd2c(secondaryoffhand));
     }
     player.var_864fb19.player = gettime();
-    player notify(#"hash_30a66833627c3e93");
+    player notify(#"resupply");
     player playsoundtoplayer(#"hash_da34d63dbce7ba7", player);
     player thread function_2909dca6(self.var_73b9e48e);
     player thread function_f9502d83();
@@ -118,7 +118,7 @@ function function_692bd0bc(player) {
 // Size: 0x1d0
 function function_f9502d83() {
     self endon(#"disconnect");
-    var_b5f67dff = namespace_9a8780d8::function_5c7345a3("weapon_cache");
+    var_b5f67dff = territory::function_5c7345a3("weapon_cache");
     self clientfield::set_to_player("weapon_cache_ammo_cooldown", 1);
     level.var_50c35573[self getentitynumber()] = 0;
     foreach (var_73b9e48e in var_b5f67dff) {
@@ -168,7 +168,7 @@ function function_f830a9db() {
 // Checksum 0x64f8b0bc, Offset: 0xc18
 // Size: 0x54
 function private function_6f438290() {
-    var_b5f67dff = namespace_9a8780d8::function_5c7345a3("weapon_cache");
+    var_b5f67dff = territory::function_5c7345a3("weapon_cache");
     var_8794b467 = arraysortclosest(var_b5f67dff, self.origin);
     return var_8794b467[0];
 }

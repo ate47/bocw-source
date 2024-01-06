@@ -1,0 +1,402 @@
+{
+    "var_cc8c4a60": [
+        {
+            "tierlist": [
+                {
+                    "description": "#hash_12879ddecf67d617",
+                    "displayname": "#hash_59c81a6b7d089f20",
+                    "var_daee0083": 1,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_664bdd0bf1d8395c",
+                    "displayname": "#hash_4e0db655eab866dd",
+                    "var_daee0083": 2,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_1ba5f06550188dd9",
+                    "displayname": "#hash_17394c1b8fc9d96e",
+                    "var_daee0083": 3,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_6c2c5ce5d863931e",
+                    "displayname": "#hash_603b8307dc99b3",
+                    "var_daee0083": 4,
+                    "var_20798bea": "#epic"
+                },
+                {
+                    "description": "#hash_407239fd7b964b1b",
+                    "displayname": "#hash_79f415bfa9f18a4c",
+                    "var_daee0083": 5,
+                    "var_20798bea": "#legendary"
+                }
+            ],
+            "var_a9b2402d": 3,
+            "description": "#hash_9839d791f2c12db",
+            "displayname": "#hash_7ad269a1e542f997",
+            "icon": "#hash_643f24f3f4b5b58b",
+            "itemgroup": "weapon_smg",
+            "var_cd070e56": "#hash_2c88d3bcf790ec34"
+        },
+        {
+            "tierlist": [
+                {
+                    "description": "#hash_9701ea8b55e17a2",
+                    "displayname": "#hash_1132c5749ada1a1f",
+                    "var_daee0083": 1,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_4806afb6a3cf351",
+                    "displayname": "#hash_261d10a66ebaf6f6",
+                    "var_daee0083": 2,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_4d4c912b60169534",
+                    "displayname": "#hash_782fedebf63ee405",
+                    "var_daee0083": 3,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_543ec9d101a08ab3",
+                    "displayname": "#hash_682314cce52279b4",
+                    "var_daee0083": 4,
+                    "var_20798bea": "#epic"
+                },
+                {
+                    "description": "#hash_2aa20ac7113c8896",
+                    "displayname": "#hash_7e9f814ca4c97c7b",
+                    "var_daee0083": 5,
+                    "var_20798bea": "#legendary"
+                }
+            ],
+            "description": "#hash_4ac300955911326e",
+            "displayname": "#hash_70746ab1cb4a06a8",
+            "icon": "#hash_30d923270793661a",
+            "itemgroup": "weapon_cqb",
+            "var_cd070e56": "#hash_1f78483ef16f84d5"
+        },
+        {
+            "tierlist": [
+                {
+                    "description": "#hash_6447cca7bb808f99",
+                    "displayname": "#hash_13bed0fcf982a42e",
+                    "var_daee0083": 1,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_12b41c497b20628a",
+                    "displayname": "#hash_7cace62d1940e657",
+                    "var_daee0083": 2,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_319b474db5aa96d7",
+                    "displayname": "#hash_6cdf398687d591e0",
+                    "var_daee0083": 3,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_5fc414e3f9850e90",
+                    "displayname": "#hash_199ac703b7770d39",
+                    "var_daee0083": 4,
+                    "var_20798bea": "#epic"
+                },
+                {
+                    "description": "#hash_3fa36eb53c39162d",
+                    "displayname": "#hash_52c22f113a17faca",
+                    "var_daee0083": 5,
+                    "var_20798bea": "#legendary"
+                }
+            ],
+            "description": "#hash_1638059b326550e9",
+            "displayname": "#hash_37960849658fd49d",
+            "icon": "#hash_27b5f890b905f903",
+            "itemgroup": "weapon_pistol",
+            "var_cd070e56": "#hash_47a2d98887910102"
+        },
+        {
+            "tierlist": [
+                {
+                    "description": "#hash_4b3707ae027527bb",
+                    "displayname": "#hash_28a0f8b4d986dd6c",
+                    "var_daee0083": 1,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_1a19a3ebd7892df0",
+                    "displayname": "#hash_68846910a7d60819",
+                    "var_daee0083": 2,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_7c7268798d6c820d",
+                    "displayname": "#hash_27abbff87f53722a",
+                    "var_daee0083": 3,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_54d70db796973d6a",
+                    "displayname": "#hash_4f944c9bf9f3ceb7",
+                    "var_daee0083": 4,
+                    "var_20798bea": "#epic"
+                },
+                {
+                    "description": "#hash_1d4d6b8f564865b7",
+                    "displayname": "#hash_50dfd60a9b91640",
+                    "var_daee0083": 5,
+                    "var_20798bea": "#legendary"
+                }
+            ],
+            "var_a9b2402d": 3,
+            "description": "#hash_59ac690e62463577",
+            "displayname": "#hash_2f0d1e783771ecd3",
+            "icon": "#hash_12202d253520705c",
+            "itemgroup": "weapon_tactical",
+            "var_cd070e56": "#hash_707a5c5c35f50dec"
+        },
+        {
+            "tierlist": [
+                {
+                    "description": "#hash_5323d271cff7657d",
+                    "displayname": "#hash_183b9b8322d7dc5a",
+                    "var_daee0083": 1,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_4b521b45a9aad0ee",
+                    "displayname": "#hash_77327304f955983",
+                    "var_daee0083": 2,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_7174a91c7bb16dab",
+                    "displayname": "#hash_711560eb4d037f1c",
+                    "var_daee0083": 3,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_6fd62820a46a7a6c",
+                    "displayname": "#hash_7c764825fee7946d",
+                    "var_daee0083": 4,
+                    "var_20798bea": "#epic"
+                },
+                {
+                    "description": "#hash_7bb84408b113a829",
+                    "displayname": "#hash_697d113fd06395fe",
+                    "var_daee0083": 5,
+                    "var_20798bea": "#legendary"
+                }
+            ],
+            "var_a9b2402d": 3,
+            "description": "#hash_8d176c56f71ad",
+            "displayname": "#hash_1ad571c3daddf2c9",
+            "icon": "#hash_6c772d67565c70b1",
+            "itemgroup": "weapon_sniper",
+            "var_cd070e56": "#hash_3d590f7af842ad92"
+        },
+        {
+            "tierlist": [
+                {
+                    "description": "#hash_56e23671d407e3ac",
+                    "displayname": "#hash_622a53c899a2acad",
+                    "var_daee0083": 1,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_46e287b7cdeb6a7",
+                    "displayname": "#hash_722f13ce7a5d00f0",
+                    "var_daee0083": 2,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_3aa7d96cf1e6c4da",
+                    "displayname": "#hash_e16071493754ea7",
+                    "var_daee0083": 3,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_10a1adef7a6f8dbd",
+                    "displayname": "#hash_129449b59748899a",
+                    "var_daee0083": 4,
+                    "var_20798bea": "#epic"
+                },
+                {
+                    "description": "#hash_3d160d451927fe0",
+                    "displayname": "#hash_7e9c85bcae3a7809",
+                    "var_daee0083": 5,
+                    "var_20798bea": "#legendary"
+                }
+            ],
+            "var_a9b2402d": 3,
+            "description": "#hash_6f4cbd818f9ce61c",
+            "displayname": "#hash_20632533b8de473e",
+            "icon": "#hash_780bb30127a1d38",
+            "itemgroup": "weapon_lmg",
+            "var_cd070e56": "#hash_5511ea176da6ac83"
+        },
+        {
+            "tierlist": [
+                {
+                    "description": "#hash_5a66c79602218e09",
+                    "displayname": "#hash_5498c2b6c0be2f5e",
+                    "var_daee0083": 1,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_5bc44eadfb54397a",
+                    "displayname": "#hash_3ee5a49798720dc7",
+                    "var_daee0083": 2,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_4e19087dde96f9c7",
+                    "displayname": "#hash_57cc97da8676a390",
+                    "var_daee0083": 3,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_24edd6155afff480",
+                    "displayname": "#hash_2f6c233fb3373729",
+                    "var_daee0083": 4,
+                    "var_20798bea": "#epic"
+                },
+                {
+                    "description": "#hash_31be233083dd025d",
+                    "displayname": "#hash_678aef93ba0084ba",
+                    "var_daee0083": 5,
+                    "var_20798bea": "#legendary"
+                }
+            ],
+            "var_a9b2402d": 3,
+            "description": "#hash_3b7524b7da0a7fd1",
+            "displayname": "#hash_45dae02ade5dbc4d",
+            "icon": "#hash_715f993d19cc177",
+            "itemgroup": "weapon_assault",
+            "var_cd070e56": "#hash_e4ec67369bdd326"
+        },
+        {
+            "tierlist": [
+                {
+                    "description": "#hash_28f286a934f5179f",
+                    "displayname": "#hash_63a133e594fb8758",
+                    "var_daee0083": 1,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_7cb5c5d65763c7e4",
+                    "displayname": "#hash_465beec4a17bf1b5",
+                    "var_daee0083": 2,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_5b285930ee8e97c1",
+                    "displayname": "#hash_49cd6472f11f3f26",
+                    "var_daee0083": 3,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_7877d56591df446",
+                    "displayname": "#hash_48b8486d55c3f8ab",
+                    "var_daee0083": 4,
+                    "var_20798bea": "#epic"
+                },
+                {
+                    "description": "#hash_2b3b20b4c63f9ce3",
+                    "displayname": "#hash_495a46cc3bc88a64",
+                    "var_daee0083": 5,
+                    "var_20798bea": "#legendary"
+                }
+            ],
+            "description": "#hash_7bf9a3d0f9d5632b",
+            "displayname": "#hash_3d9c50eaea63b40f",
+            "icon": "#hash_6287a1bdf849b20c",
+            "itemgroup": "weapon_knife",
+            "var_cd070e56": "#hash_265dfd25205ffba8"
+        },
+        {
+            "tierlist": [
+                {
+                    "description": "#hash_7b9f3390581ddc80",
+                    "displayname": "#hash_1cb5fb3bcd086f29",
+                    "var_daee0083": 1,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_197ec94d74d4d0b",
+                    "displayname": "#hash_7e339e18c12237fc",
+                    "var_daee0083": 2,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_52bb67143820184e",
+                    "displayname": "#hash_3e20973148db0663",
+                    "var_daee0083": 3,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_31182510ff3f7609",
+                    "displayname": "#hash_41e29ab2da8f675e",
+                    "var_daee0083": 4,
+                    "var_20798bea": "#epic"
+                },
+                {
+                    "description": "#hash_7aa473ef35c137cc",
+                    "displayname": "#hash_3324b826f82ef44d",
+                    "var_daee0083": 5,
+                    "var_20798bea": "#legendary"
+                }
+            ],
+            "description": "#hash_30b11ff96e9c4248",
+            "displayname": "#hash_54d4c78fd3d1bcba",
+            "icon": "#hash_78d25c198dd85ee",
+            "itemgroup": "weapon_launcher",
+            "var_cd070e56": "#hash_604f7493136f8a3"
+        },
+        {
+            "tierlist": [
+                {
+                    "description": "#hash_6ea43b88a2291845",
+                    "displayname": "#hash_78e14de13a645b2",
+                    "var_daee0083": 1,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_13e04ce64247f836",
+                    "displayname": "#hash_5eda3c4cfb396f9b",
+                    "var_daee0083": 2,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_d987f0cab952dd3",
+                    "displayname": "#hash_2c0de0d392180054",
+                    "var_daee0083": 3,
+                    "var_20798bea": "#rare"
+                },
+                {
+                    "description": "#hash_3776688e20d42e54",
+                    "displayname": "#hash_2035c26342ad17a5",
+                    "var_daee0083": 4,
+                    "var_20798bea": "#epic"
+                },
+                {
+                    "description": "#hash_6869b570d10340f1",
+                    "displayname": "#hash_2c7ffe7a476d0216",
+                    "var_daee0083": 5,
+                    "var_20798bea": "#legendary"
+                }
+            ],
+            "description": "#hash_e9d664f7ce8867d",
+            "displayname": "#hash_2ed199b855937ca1",
+            "icon": "#hash_7877b8a332be3619",
+            "itemgroup": "weapon_special",
+            "var_cd070e56": "#hash_746a85760decf362"
+        }
+    ],
+    "var_922067c4": "SCRIPTBUNDLE",
+    "type": "zmtierediteminfoentry",
+    "name": "zm_weapon_category_upgrade_info"
+}

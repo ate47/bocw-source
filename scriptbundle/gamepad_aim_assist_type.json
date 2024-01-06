@@ -1,0 +1,43 @@
+{
+    "option_dependencies": [
+        {
+            "var_1643d946": "0",
+            "var_6825bdb": "#gamepad_target_assist",
+            "operator": "=="
+        }
+    ],
+    "options": [
+        {
+            "label": "#hash_16435d58073cf5be",
+            "value": "0"
+        },
+        {
+            "label": "#menu/legacy",
+            "value": "1"
+        },
+        {
+            "label": "#hash_5645bc7ac68d7842",
+            "value": "2"
+        },
+        {
+            "label": "#hash_31a51eb8b0f18dbe",
+            "value": "3"
+        }
+    ],
+    "description": "#hash_6dd110018ea68231",
+    "var_60fcfffa": "#menu/on",
+    "var_9bc3be7": 1,
+    "var_10e01ad5": 1,
+    "var_71620d66": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "maxvalue": 1,
+    "name": "gamepad_aim_assist_type",
+    "displayname": "#hash_7869c1a837e03dbc",
+    "var_500458ac": 10,
+    "var_66faec87": 10,
+    "statname": "gpad_aim_assist_iw_algorithm",
+    "var_6f00a61a": 1.1,
+    "var_b7401319": "#menu/off"
+}

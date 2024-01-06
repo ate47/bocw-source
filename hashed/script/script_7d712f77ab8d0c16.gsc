@@ -117,11 +117,11 @@ function function_48a6b85() {
             level.var_94f4ca81.dataset = [];
             var_975467b9 = "<unknown string>";
             function_25e7711a("<unknown string>", #"none", var_975467b9, "<unknown string>");
-            foreach (var_725641f6 in level.teams) {
+            foreach (team, var_725641f6 in level.teams) {
                 function_25e7711a("<unknown string>", team, var_975467b9, var_725641f6);
             }
             var_96a18257 = "<unknown string>";
-            foreach (var_725641f6 in level.teams) {
+            foreach (team, var_725641f6 in level.teams) {
                 function_25e7711a("<unknown string>", team, var_96a18257, var_725641f6);
             }
             if (isdefined(level.var_c99a6ece)) {

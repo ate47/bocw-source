@@ -1,0 +1,29 @@
+{
+    "options": [
+        {
+            "label": "#hash_36b0499750ba34c8",
+            "value": "1"
+        },
+        {
+            "label": "#hash_54b8b52c6a6e8972",
+            "value": "0"
+        }
+    ],
+    "description": "#hash_e1edb666b2ba30c",
+    "var_60fcfffa": "#hash_54b8b52c6a6e8972",
+    "var_9bc3be7": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 0.1,
+    "name": "pc_voice_chat_channel",
+    "displayname": "#hash_277ec589d78fa3a4",
+    "var_500458ac": 10,
+    "var_926d1be9": 0.01,
+    "var_66faec87": 1,
+    "statname": "voice_favored_channel",
+    "var_6f00a61a": 1.1,
+    "minvalue": 2,
+    "var_d4e288e": 1,
+    "var_b7401319": "#hash_62ed1ce9b3cdba91"
+}

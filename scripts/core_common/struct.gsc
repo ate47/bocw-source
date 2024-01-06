@@ -6,7 +6,7 @@
 // Checksum 0xecaace6d, Offset: 0x158
 // Size: 0x2dc
 function private event_handler[createstruct] function_e0a8e4ba(struct) {
-    foreach (k in [11:"script_string", 10:"script_label", 9:"script_linkname", 8:"linkname", 7:"linkto", 6:"script_noteworthy", 5:"classname", 4:"groupname", 3:"variantname", 2:"scriptbundlename", 1:"target", 0:"targetname"]) {
+    foreach (var_c2d95ef4, k in [11:"script_string", 10:"script_label", 9:"script_linkname", 8:"linkname", 7:"linkto", 6:"script_noteworthy", 5:"classname", 4:"groupname", 3:"variantname", 2:"scriptbundlename", 1:"target", 0:"targetname"]) {
         if (!isdefined(level.var_41204f29)) {
             level.var_41204f29 = [];
         } else if (!isarray(level.var_41204f29)) {

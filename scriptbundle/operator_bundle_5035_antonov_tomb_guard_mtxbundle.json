@@ -1,0 +1,39 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#tr_precisionsemi_bp_egypt_mtxitem",
+            "itemid": "20619112"
+        },
+        {
+            "var_4a4bc969": "#pistol_fullauto_bp_eburial_mtxitem",
+            "itemid": "20209313"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_gold_idol_mtxitem",
+            "itemid": "26042949"
+        },
+        {
+            "var_4a4bc969": "#wristaccessory_t9_s5_analog_egy_burial_mtxitem",
+            "itemid": "23170315"
+        },
+        {
+            "var_4a4bc969": "#emblems_19_s5_mtxitem",
+            "itemid": "19404663"
+        },
+        {
+            "var_4a4bc969": "#callingcards_pyramidtank_162_s5_mtxitem",
+            "itemid": "23576308"
+        }
+    ],
+    "itemname": "#hash_2eb7f6022fba6781",
+    "var_375a1747": "#hash_337874b98b811b83",
+    "name": "operator_bundle_5035_antonov_tomb_guard_mtxbundle",
+    "var_a788fada": "#hash_7a21a1e4e29598fc",
+    "var_22f91505": "#hash_4b898c4830674594",
+    "var_566825be": "#hash_1a7739ffa9ba5488",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_67fd29fc85695784",
+    "var_db3e02ab": 2000,
+    "itemid": "17793512"
+}

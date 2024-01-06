@@ -2127,7 +2127,7 @@ function function_fc67b7ed(func) {
 // Checksum 0xe40b7780, Offset: 0x8ea0
 // Size: 0xa4
 function function_30df05d5(func) {
-    foreach (callback in self.var_fab98b03) {
+    foreach (index, callback in self.var_fab98b03) {
         if (callback == func) {
             arrayremoveindex(self.var_fab98b03, index, 0);
             break;

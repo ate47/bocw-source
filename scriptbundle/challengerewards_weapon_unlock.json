@@ -1,0 +1,629 @@
+{
+    "var_2be3941a": [
+        {
+            "unlockdescription": "#hash_3543d8f3f9f8cb00",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_3936b9de9b2d1de4",
+            "var_b4ab831a": "#melee_sledgehammer_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_539cbd04b9471ee4"
+        },
+        {
+            "unlockdescription": "#hash_5819e33f5517a5e7",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_6c7caf949084e00c",
+            "var_b4ab831a": "#melee_wakizashi_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_2dc09a051d45038d"
+        },
+        {
+            "unlockdescription": "#hash_4cba680937a670db",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_23d04b5f05967194",
+            "var_b4ab831a": "#shotgun_fullauto_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_458e8316073535c4"
+        },
+        {
+            "unlockdescription": "#hash_18f649c5a3c51847",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_4b6401b87f62f334",
+            "var_b4ab831a": "#melee_etool_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_515b8f2bd79567f8"
+        },
+        {
+            "unlockdescription": "#hash_552936aa331532b5",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_5012e2ee8d1c5f42",
+            "var_b4ab831a": "#melee_machete_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_180122e749fb5a26"
+        },
+        {
+            "unlockdescription": "#hash_6647f1663f27ec90",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_6b94d29fffd33f74",
+            "var_b4ab831a": "#special_crossbow_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_6daf88d537c4ae9d"
+        },
+        {
+            "unlockdescription": "#hash_439c3919184460fe",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_1120e8baf290964b",
+            "var_b4ab831a": "#sniper_cannon_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_4733deea0d442bf1"
+        },
+        {
+            "unlockdescription": "#hash_13de27d5e0e3fae5",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_70cac561add2d147",
+            "var_b4ab831a": "#ar_fasthandling_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_4749db0b7b2d6e3"
+        },
+        {
+            "unlockdescription": "#hash_114820e6dc864c66",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_113b899c227af7cc",
+            "var_b4ab831a": "#smg_fastfire_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_4d6b858ad789777"
+        },
+        {
+            "unlockdescription": "#hash_42972daf81717be8",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_76d0ea904ef32680",
+            "var_b4ab831a": "#smg_accurate_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_6b9dbfd78454d618"
+        },
+        {
+            "unlockdescription": "#hash_1bae73457faec957",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#ui_icon_weapon_ar_slowhandling_t9_render",
+            "var_b4ab831a": "#ar_slowhandling_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_21a7824cfc151de4"
+        },
+        {
+            "unlockdescription": "#hash_1f4a58ea815ccd18",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_1a61352ab40624e",
+            "var_b4ab831a": "#melee_baseballbat_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_6a34be0ae51df16d"
+        },
+        {
+            "unlockdescription": "#hash_3040700a2c581657",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_b54713167814d8a",
+            "var_b4ab831a": "#special_ballisticknife_t9_dw_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_2db8ed5da8ee8550"
+        },
+        {
+            "unlockdescription": "#hash_562a3206210a5a5d",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_46b705971eca93bd",
+            "var_b4ab831a": "#tr_fastburst_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_3a861a8644c0de3d"
+        },
+        {
+            "unlockdescription": "#hash_4a9b3273fb6a49dc",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_4d041c77685e6400",
+            "var_b4ab831a": "#pistol_fullauto_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_5e3e453862ca1816"
+        },
+        {
+            "unlockdescription": "#hash_7a1e0fdbf9f35f08",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_3936b9de9b2d1de4",
+            "var_b4ab831a": "#melee_sledgehammer_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_133973d140372afe"
+        },
+        {
+            "unlockdescription": "#hash_74ffaec3f0f7a44d",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_6c7caf949084e00c",
+            "var_b4ab831a": "#melee_wakizashi_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_351323b673476913"
+        },
+        {
+            "unlockdescription": "#hash_16765daef2e72249",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_23d04b5f05967194",
+            "var_b4ab831a": "#shotgun_fullauto_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_2da7b8a1df41011c"
+        },
+        {
+            "unlockdescription": "#hash_6ccb5b7c95b0125f",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_70cac561add2d147",
+            "var_b4ab831a": "#ar_fasthandling_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_20a9dbd1ca99a444"
+        },
+        {
+            "unlockdescription": "#hash_726155b8c239005a",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_113b899c227af7cc",
+            "var_b4ab831a": "#smg_fastfire_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_23fe7ee198149ca7"
+        },
+        {
+            "unlockdescription": "#hash_51235cb18d2810ed",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_4b6401b87f62f334",
+            "var_b4ab831a": "#melee_etool_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_5939a7f27c84412c"
+        },
+        {
+            "unlockdescription": "#hash_17b4bd37677a7e8f",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_5012e2ee8d1c5f42",
+            "var_b4ab831a": "#melee_machete_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_1e7c5dc6e73c2ea9"
+        },
+        {
+            "unlockdescription": "#hash_68a08fd10db45b38",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_6b94d29fffd33f74",
+            "var_b4ab831a": "#special_crossbow_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_1f1e05ecdb4321ff"
+        },
+        {
+            "unlockdescription": "#hash_99c1b99b7901f39",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_1120e8baf290964b",
+            "var_b4ab831a": "#sniper_cannon_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_637627fb0019084"
+        },
+        {
+            "unlockdescription": "#hash_4f501b853c1ac450",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_76d0ea904ef32680",
+            "var_b4ab831a": "#smg_accurate_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_1cd482b5aaa76a63"
+        },
+        {
+            "unlockdescription": "#hash_67824d6ea76c75d",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#ui_icon_weapon_ar_slowhandling_t9_render",
+            "var_b4ab831a": "#ar_slowhandling_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_4975a47f10046ed"
+        },
+        {
+            "unlockdescription": "#hash_36d5341e45ef34e0",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_1a61352ab40624e",
+            "var_b4ab831a": "#melee_baseballbat_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_cec186092dce3f2"
+        },
+        {
+            "unlockdescription": "#hash_71f0917eb4f3365d",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_b54713167814d8a",
+            "var_b4ab831a": "#special_ballisticknife_t9_dw_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_57b95e90f6cbac0d"
+        },
+        {
+            "unlockdescription": "#hash_676df537c8742757",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_46b705971eca93bd",
+            "var_b4ab831a": "#tr_fastburst_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_36199b2fd0602c5d"
+        },
+        {
+            "unlockdescription": "#hash_63fe0770c6f5e9c",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_4d041c77685e6400",
+            "var_b4ab831a": "#pistol_fullauto_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_5c77fb32f73c647d"
+        },
+        {
+            "unlockdescription": "#hash_7262d71c545711b7",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_71d68dd911384be8",
+            "var_b4ab831a": "#special_nailgun_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_6c9ea22e0bd57fc1"
+        },
+        {
+            "unlockdescription": "#hash_1087ab535a93b79",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_3df69a074fe42593",
+            "var_b4ab831a": "#smg_spray_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_19a15fdb3f31884a"
+        },
+        {
+            "unlockdescription": "#hash_6fdf1059b57723ef",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_187ceaecbbb01c88",
+            "var_b4ab831a": "#sniper_accurate_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_45c809e6fc999f3a"
+        },
+        {
+            "unlockdescription": "#hash_17f92307e5f7c0fd",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_71d68dd911384be8",
+            "var_b4ab831a": "#special_nailgun_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_5da5da5770a64639"
+        },
+        {
+            "unlockdescription": "#hash_4d63ba58e02ec57b",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_3df69a074fe42593",
+            "var_b4ab831a": "#smg_spray_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_510817c4cd9369ef"
+        },
+        {
+            "unlockdescription": "#hash_4f2e55b0f76ad995",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_187ceaecbbb01c88",
+            "var_b4ab831a": "#sniper_accurate_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_61fccc0731a4a01a"
+        },
+        {
+            "unlockdescription": "#hash_5aa923116a07bc0a",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_66300e3fe7d9f036",
+            "var_b4ab831a": "#smg_cqb_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_60c539b6c6bc428"
+        },
+        {
+            "unlockdescription": "#hash_49c2dd90d3cebc6",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_66300e3fe7d9f036",
+            "var_b4ab831a": "#smg_cqb_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_3b12ed4f1d5665e1"
+        },
+        {
+            "unlockdescription": "#hash_453e977ce2a7b154",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_29148477c417b7bb",
+            "var_b4ab831a": "#melee_mace_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_66e8176635440bb2"
+        },
+        {
+            "unlockdescription": "#hash_54f496877570cc54",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_29148477c417b7bb",
+            "var_b4ab831a": "#melee_mace_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_32e5fd6487f5c9fa"
+        },
+        {
+            "unlockdescription": "#hash_7d6c5a21b5700638",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_222931afad56970f",
+            "var_b4ab831a": "#lmg_fastfire_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_603615ffae21f65f"
+        },
+        {
+            "unlockdescription": "#hash_e2aa7332211662e",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_5f2c3dc20a920da5",
+            "var_b4ab831a": "#ar_slowfire_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_48bce293a3c7ef5d"
+        },
+        {
+            "unlockdescription": "#hash_3831c77f46050e20",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_240d903a1ae49226",
+            "var_b4ab831a": "#pistol_shotgun_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_1f4655121772d2c5"
+        },
+        {
+            "unlockdescription": "#hash_6f40ae2ab6bf15a9",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_18f243e049f9ae04",
+            "var_b4ab831a": "#melee_cane_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_647fad939355f5e7"
+        },
+        {
+            "unlockdescription": "#hash_7e748b75e0137403",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_222931afad56970f",
+            "var_b4ab831a": "#lmg_fastfire_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_174d558bf59e241a"
+        },
+        {
+            "unlockdescription": "#hash_2dc12714ef100e23",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_5f2c3dc20a920da5",
+            "var_b4ab831a": "#ar_slowfire_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_60eb36f8a47a2d1a"
+        },
+        {
+            "unlockdescription": "#hash_37bfec935c549367",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_240d903a1ae49226",
+            "var_b4ab831a": "#pistol_shotgun_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_399e533eb62256f6"
+        },
+        {
+            "unlockdescription": "#hash_1b91e59e2c679648",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_18f243e049f9ae04",
+            "var_b4ab831a": "#melee_cane_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_f6d02bd887e8a67"
+        },
+        {
+            "unlockdescription": "#hash_5bb58b2d990287a7",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_28d4e628543bd2ee",
+            "var_e5119d1b": "#hash_2f3f78c980a11ef7",
+            "var_b4ab831a": "#melee_sai_t9_dw_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_1468ae1763b44910"
+        },
+        {
+            "unlockdescription": "#hash_4d74acb67b9291e8",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_28d4e628543bd2ee",
+            "var_e5119d1b": "#hash_2f3f78c980a11ef7",
+            "var_b4ab831a": "#melee_sai_t9_dw_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_cb6c1fa7289ca52"
+        },
+        {
+            "unlockdescription": "#hash_4ded16ee753b0212",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_5927dbe8138f4b49",
+            "var_e5119d1b": "#hash_422d00e655413a26",
+            "var_b4ab831a": "#shotgun_leveraction_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_3d0bf673b9ea1117"
+        },
+        {
+            "unlockdescription": "#hash_75a9985f03536f50",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_1b21386fac7264a1",
+            "var_e5119d1b": "#hash_53cf027ecaa0071e",
+            "var_b4ab831a": "#melee_coldwar_t9_dw_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_26fc476300986ac1"
+        },
+        {
+            "unlockdescription": "#hash_4a92afdd0c43f0c8",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_78381d1134901fa7",
+            "var_e5119d1b": "#hash_12946f31d3c79f54",
+            "var_b4ab831a": "#melee_battleaxe_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_68b5c40f079f4af0"
+        },
+        {
+            "unlockdescription": "#hash_698176a24c4a6e9b",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_3c00dd47cafc5203",
+            "var_e5119d1b": "#hash_3c00dd47cafc5203",
+            "var_b4ab831a": "#ar_british_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_9d8677f2b8f6e88"
+        },
+        {
+            "unlockdescription": "#hash_76bce937bf25feca",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_6e292a55522af017",
+            "var_e5119d1b": "#hash_6e292a55522af017",
+            "var_b4ab831a": "#smg_semiauto_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_4633cd5d032f64ee"
+        },
+        {
+            "unlockdescription": "#hash_12e259d4ae8991da",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_64ef5b7db4c2d28d",
+            "var_e5119d1b": "#hash_64ef5b7db4c2d28d",
+            "var_b4ab831a": "#smg_season6_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_339ce8c4252def9e"
+        },
+        {
+            "unlockdescription": "#hash_34689b83925a1319",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_1b21386fac7264a1",
+            "var_e5119d1b": "#hash_1b21386fac7264a1",
+            "var_b4ab831a": "#melee_coldwar_t9_dw_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_4945dccf0e8c820a"
+        },
+        {
+            "unlockdescription": "#hash_5701b0d94edf920f",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_78381d1134901fa7",
+            "var_e5119d1b": "#hash_78381d1134901fa7",
+            "var_b4ab831a": "#melee_battleaxe_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_492732555967d2a2"
+        },
+        {
+            "unlockdescription": "#hash_7558bc7e07b72b7b",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_ee53355f18bad69",
+            "var_e5119d1b": "#hash_ee53355f18bad69",
+            "var_b4ab831a": "#ar_season6_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_2afbe016fb359bb5"
+        },
+        {
+            "unlockdescription": "#hash_40b00adb906792cd",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_5927dbe8138f4b49",
+            "var_e5119d1b": "#hash_5927dbe8138f4b49",
+            "var_b4ab831a": "#shotgun_leveraction_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_1c14b86adf849ce0"
+        },
+        {
+            "unlockdescription": "#hash_43e5eace368646d9",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_6e292a55522af017",
+            "var_e5119d1b": "#hash_7601b3046d6bb064",
+            "var_b4ab831a": "#smg_semiauto_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_2fb4d0164593f277"
+        },
+        {
+            "unlockdescription": "#hash_3fa8b303c28b17c0",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_3c00dd47cafc5203",
+            "var_e5119d1b": "#hash_34db4d52b0d29d78",
+            "var_b4ab831a": "#ar_british_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_6ccc99527a5a05e2"
+        },
+        {
+            "unlockdescription": "#hash_19be765a25fb3ef8",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_64ef5b7db4c2d28d",
+            "var_e5119d1b": "#hash_454f0f688e59df72",
+            "var_b4ab831a": "#smg_season6_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_488b3dbe0a2f928c"
+        },
+        {
+            "unlockdescription": "#hash_585c98bb9c4d77e3",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_ee53355f18bad69",
+            "var_e5119d1b": "#hash_2b1fc9cf11cbbc86",
+            "var_b4ab831a": "#ar_season6_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_7bc34d1910ad008"
+        },
+        {
+            "unlockdescription": "#hash_108183378ca392f2",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_4b124753adac1be3",
+            "var_e5119d1b": "#hash_524099f1baf22998",
+            "var_b4ab831a": "#ar_soviet_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_59e07dd9354c6be6"
+        },
+        {
+            "unlockdescription": "#hash_5636eb58011d30c0",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_512dd855abc0e48f",
+            "var_e5119d1b": "#hash_7c205c44d3638a9c",
+            "var_b4ab831a": "#smg_flechette_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_4425e8a9deb73e9a"
+        },
+        {
+            "unlockdescription": "#hash_441ac02287edc1bb",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_4b124753adac1be3",
+            "var_e5119d1b": "#hash_524099f1baf22998",
+            "var_b4ab831a": "#ar_soviet_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_153b001a46288fe6"
+        },
+        {
+            "unlockdescription": "#hash_79e73171fe8f0b4b",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_512dd855abc0e48f",
+            "var_e5119d1b": "#hash_7c205c44d3638a9c",
+            "var_b4ab831a": "#smg_flechette_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_49ee01ddb38e868e"
+        },
+        {
+            "unlockdescription": "#hash_20a886d4df4e309d",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_3becf11b7f6e4ae0",
+            "var_e5119d1b": "#hash_6bae147dfc5a6d79",
+            "var_b4ab831a": "#melee_scythe_t9_mtxitem",
+            "stattype": "#global",
+            "var_270fa547": "#hash_7cb905c409de3ce8"
+        },
+        {
+            "unlockdescription": "#hash_1c5f9b354472cae8",
+            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "image": "#hash_3becf11b7f6e4ae0",
+            "var_e5119d1b": "#hash_6bae147dfc5a6d79",
+            "var_b4ab831a": "#melee_scythe_t9_mtxitem",
+            "stattype": "#global",
+            "var_57554d43": 1,
+            "var_270fa547": "#hash_753784669444a09d"
+        }
+    ],
+    "var_922067c4": "SCRIPTBUNDLE",
+    "type": "challengerewards",
+    "var_5f0dd656": 2,
+    "var_4e39981b": 2,
+    "var_faec2a7f": 4,
+    "name": "challengerewards_weapon_unlock",
+    "sessionmode": "-1",
+    "var_91a1cb16": 4
+}

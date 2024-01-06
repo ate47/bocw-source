@@ -1,0 +1,81 @@
+{
+    "var_1ad142ee": [
+        {
+            "var_46bd7973": "#hash_4ad398c932f95e1f",
+            "var_f35c5951": 9.06,
+            "var_5d4b5964": 4.67,
+            "var_36bf8e05": "#hash_cb3355498d835f1"
+        },
+        {
+            "var_46bd7973": "#hash_6f1cbcc03e9bf2e0",
+            "var_f35c5951": 12.56,
+            "var_5d4b5964": 7.64,
+            "var_36bf8e05": "#hash_344ef0baf9b0161c"
+        },
+        {
+            "var_46bd7973": "#hash_4ad39ac932f96185",
+            "var_f35c5951": 20.56,
+            "var_5d4b5964": 22.98,
+            "var_36bf8e05": "#hash_3d0c01706587845f"
+        },
+        {
+            "var_46bd7973": "#hash_6f1cbec03e9bf646",
+            "var_f35c5951": 42.56,
+            "var_5d4b5964": 14.49,
+            "var_36bf8e05": "#hash_3dbefca15a913e6"
+        },
+        {
+            "var_46bd7973": "#hash_26421b4d7189b6b9",
+            "var_f35c5951": 57.67,
+            "var_5d4b5964": 12.78,
+            "var_36bf8e05": "#hash_65e28c735d852b83"
+        },
+        {
+            "var_46bd7973": "#hash_4ad393c932f955a0",
+            "var_f35c5951": 71.17,
+            "var_5d4b5964": 4.1,
+            "var_36bf8e05": "#hash_36df495bd570a064"
+        },
+        {
+            "var_46bd7973": "#hash_4ad396c932f95ab9",
+            "var_f35c5951": 73.83,
+            "var_5d4b5964": 3.11,
+            "var_36bf8e05": "#hash_3401f482c03b9933"
+        },
+        {
+            "var_46bd7973": "#hash_6f1cc2c03e9bfd12",
+            "var_f35c5951": 75.58,
+            "var_5d4b5964": 13.65,
+            "var_36bf8e05": "#hash_53a00e65c0ad9e4a"
+        },
+        {
+            "var_46bd7973": "#hash_6f1cc5c03e9c022b",
+            "var_f35c5951": 90.03,
+            "var_5d4b5964": 9.41,
+            "var_36bf8e05": "#hash_5973b215094c1d7d"
+        },
+        {
+            "var_46bd7973": "#null",
+            "var_f35c5951": 100
+        }
+    ],
+    "description": "#hash_106628d1a83880a8",
+    "var_922067c4": "scriptbundle",
+    "var_7b26d0bb": "#exploration",
+    "var_824079e7": "#hash_a00be196107a0fd",
+    "uimodel": "#hash_39975151641c4544",
+    "var_2a12d36": 1,
+    "type": "zmintel",
+    "season": 4,
+    "var_ad4ad686": "#hash_70ce1650358c0923",
+    "soundloop": "#hash_5b635b73ab6ca33f",
+    "name": "zmintel_platinum_darkaether_audiolog_03",
+    "var_9be0526e": "#audiolog",
+    "var_83e219de": "#hash_7f8d279a04b6d201",
+    "var_53be913a": 5,
+    "var_348b91fd": "#tape",
+    "title": "#hash_45685cb115d7a6e0",
+    "var_3bb3493d": "#hash_6f4eaae917659f24",
+    "mapname": "#zm_platinum",
+    "var_6073bf8f": "#hash_4042063c893f7f3a"
+}

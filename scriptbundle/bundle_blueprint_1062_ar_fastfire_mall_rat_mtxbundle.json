@@ -1,0 +1,26 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_fastfire_bp_mallrat_mtxitem",
+            "itemid": "22052939"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_cheese_mtxitem",
+            "itemid": "24259385"
+        },
+        {
+            "var_4a4bc969": "#callingcards_mallrat_mtxitem",
+            "itemid": "22425410"
+        }
+    ],
+    "itemname": "#hash_5252f38ec252280d",
+    "var_375a1747": "#hash_35fd20b7fb9fabbb",
+    "name": "bundle_blueprint_1062_ar_fastfire_mall_rat_mtxbundle",
+    "var_22f91505": "#hash_31b83e2b141bc12c",
+    "var_566825be": "#hash_99c244866405932",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_455dcbcedcd419c",
+    "var_db3e02ab": 2000,
+    "itemid": "19191430"
+}

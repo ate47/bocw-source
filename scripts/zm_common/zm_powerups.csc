@@ -203,7 +203,7 @@ function private function_d6070ac5(localclientnum) {
 // Checksum 0x8661fd23, Offset: 0xd98
 // Size: 0xb4
 function function_64c47bbc(localclientnum) {
-    var_4972e475 = util::spawn_model(localclientnum, #"hash_2505908c10168826", self.origin);
+    var_4972e475 = util::spawn_model(localclientnum, #"p7_zm_power_up", self.origin);
     var_4972e475 function_619a5c20();
     var_4972e475.var_fc558e74.var_4972e475 = isdefined(level.var_a0b1f787[self.model]) ? level.var_a0b1f787[self.model] : undefined;
     self.var_4972e475 = var_4972e475;

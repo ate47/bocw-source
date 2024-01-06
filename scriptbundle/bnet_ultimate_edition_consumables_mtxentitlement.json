@@ -1,0 +1,24 @@
+{
+    "var_279a3ec8": [
+        {
+            "var_4a4bc969": "#battle_pass_token_mtxitem",
+            "itemid": "24926821"
+        },
+        {
+            "var_4a4bc969": "#tier_skip_20_mtxitem"
+        }
+    ],
+    "itemname": "#hash_1203f5663107b45c",
+    "description": "#hash_7f2525803c959169",
+    "var_30a1c72c": "#hash_3f992ba598bffc15",
+    "var_70f66e54": "#hash_6808e3e617e2117f",
+    "name": "bnet_ultimate_edition_consumables_mtxentitlement",
+    "var_90708fcf": "#hash_42f4bbf132ea176e",
+    "var_4af381c": 2000,
+    "category": "#entitlement",
+    "var_db3e02ab": 2000,
+    "var_4e46b1b3": "#pc",
+    "itemid": "20920345",
+    "var_a592ce5": 1,
+    "var_7c846082": "#hash_39bc24db0771eb04"
+}

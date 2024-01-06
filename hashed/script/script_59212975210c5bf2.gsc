@@ -74,7 +74,7 @@ function private function_cc775529(s_instance) {
     level.instance.var_b7eee573 = var_b7eee573;
     s_instance.n_obj_id.s_instance = zm_utility::function_f5a222a8(#"hash_2d6eaf696a019fa3", var_b7eee573);
     var_b7eee573.aitype.var_b7eee573 = #"hash_1aff4b71635bda08";
-    var_b7eee573.aisettingsbundle.var_b7eee573 = #"hash_5eaef6da3bb64b9a";
+    var_b7eee573.aisettingsbundle.var_b7eee573 = #"zm_avogadro_settings";
     var_3d014474 = function_9ad12bee(var_b7eee573.aitype);
     var_b7eee573.maxhealth.var_b7eee573 = var_b7eee573 zm_ai_utility::function_f7014c3d(var_3d014474);
     var_b7eee573.health.var_b7eee573 = var_b7eee573.maxhealth;
@@ -140,7 +140,7 @@ function private function_cc775529(s_instance) {
                     var_4e227252 = int(var_4e227252 - var_edcf865 * var_4a6e5d8a);
                     level thread fx::play(#"hash_3955925eb5e7de1f", var_b7eee573.origin + var_d263d14a, var_b7eee573.angles);
                     var_2858caa2 = {#var_738dfc81:var_4a6e5d8a, #angles:var_b7eee573.angles, #origin:var_b7eee573.origin + var_a758131a};
-                    var_2858caa2 thread namespace_65181344::function_fd87c780(#"hash_bd0d579ff12f6d", var_4a6e5d8a, 3, #"hash_3b44370452dc91f8");
+                    var_2858caa2 thread namespace_65181344::function_fd87c780(#"survival_resource_list", var_4a6e5d8a, 3, #"hash_3b44370452dc91f8");
                     var_e81e0492 = var_e81e0492 + var_4a6e5d8a;
                     if (!isdefined(var_1b519b48)) {
                         var_1a8b690d = var_1a8b690d + var_4a6e5d8a;
@@ -156,7 +156,7 @@ function private function_cc775529(s_instance) {
                             }
                             var_206de304 = int(min(getplayers().size, 2));
                             var_2858caa2 = {#var_738dfc81:var_206de304, #angles:var_b7eee573.angles, #origin:var_b7eee573.origin};
-                            var_2858caa2 thread namespace_65181344::function_fd87c780(#"hash_1b1c96a3d03b6415", var_206de304, 2);
+                            var_2858caa2 thread namespace_65181344::function_fd87c780(#"sr_world_list_scorestreak_legendary", var_206de304, 2);
                             level scoreevents::doscoreeventcallback("scoreEventSR", {#allplayers:1, #scoreevent:"destroy_aether_orb_zm"});
                             foreach (player in getplayers()) {
                                 player zm_stats::increment_challenge_stat(#"hash_11dc4c118b41495");

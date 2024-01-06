@@ -243,7 +243,7 @@ function function_43aed0ca(n_round, var_b6a3a1ac = 1) {
 function function_f6cd912d(var_ef21400 = 0) {
     if (isdefined(level.var_45827161)) {
         var_af83ca3 = undefined;
-        foreach (var_a630f8a4 in level.var_45827161) {
+        foreach (n_round, var_a630f8a4 in level.var_45827161) {
             if (var_ef21400 && n_round >= level.round_number || n_round > level.round_number) {
                 if (!isdefined(var_af83ca3) || n_round < var_af83ca3) {
                     var_af83ca3 = n_round;
@@ -690,9 +690,9 @@ function private function_f3635804() {
 // Size: 0x2cc
 function function_6e064f4c(str_archetype) {
     var_148cc603 = level.zombie_total;
-    if (isinarray(array(#"blight_father", #"brutus", #"gegenees", #"hash_3d92e2c7bea1eee2", #"hash_7c0d83ac1e845ac2"), hash(str_archetype))) {
+    if (isinarray(array(#"blight_father", #"brutus", #"gegenees", #"mechz", #"hash_7c0d83ac1e845ac2"), hash(str_archetype))) {
         var_148cc603 = var_148cc603 * (isdefined(level.var_397ca369) ? level.var_397ca369 : 1);
-    } else if (isinarray(array(#"stoker", #"gladiator", #"gladiator_marauder", #"gladiator_destroyer", #"werewolf", #"avogadro", #"hash_9f6bc1960ff4912"), hash(str_archetype))) {
+    } else if (isinarray(array(#"stoker", #"gladiator", #"gladiator_marauder", #"gladiator_destroyer", #"werewolf", #"avogadro", #"raz"), hash(str_archetype))) {
         var_148cc603 = var_148cc603 * (isdefined(level.var_66682370) ? level.var_66682370 : 1);
     } else if (isinarray(array(#"bat", #"dog", #"zombie_dog", #"zombie"), hash(str_archetype))) {
         var_148cc603 = var_148cc603 * (isdefined(level.var_6a9f25ba) ? level.var_6a9f25ba : 1);
@@ -841,7 +841,7 @@ function private function_44298b05() {
     level.var_722fb772 = level.var_38b15968;
     var_d43195ce = array::randomize(getarraykeys(level.var_c1a3937d));
     var_e6f6bd65 = [];
-    foreach (var_355f65e2 in getarraykeys(level.var_c1a3937d)) {
+    foreach (i, var_355f65e2 in getarraykeys(level.var_c1a3937d)) {
         var_bcdbf8f = var_d43195ce[i];
         var_b5393440 = level.var_c1a3937d[var_355f65e2];
         var_e6f6bd65[var_bcdbf8f] = var_b5393440;
@@ -1079,7 +1079,7 @@ function private function_d7864087(var_dbce0c44) {
             waitframe(1);
         }
     }
-    foreach (var_26e567be in var_fe695913) {
+    foreach (n_index, var_26e567be in var_fe695913) {
         var_fe695913[n_index] = array::randomize(var_26e567be);
     }
     for (i = 0; i < 4; i++) {
@@ -1163,9 +1163,9 @@ function private function_24ccde2(var_fe695913, var_a9facc6) {
 // Checksum 0xc84ebd9b, Offset: 0x46d0
 // Size: 0x28c
 function private function_9eefccc1(var_148cc603, str_archetype) {
-    if (isinarray(array(#"blight_father", #"brutus", #"gegenees", #"hash_3d92e2c7bea1eee2", #"hash_7c0d83ac1e845ac2"), hash(str_archetype))) {
+    if (isinarray(array(#"blight_father", #"brutus", #"gegenees", #"mechz", #"hash_7c0d83ac1e845ac2"), hash(str_archetype))) {
         var_148cc603 = var_148cc603 * (isdefined(level.var_397ca369) ? level.var_397ca369 : 1);
-    } else if (isinarray(array(#"stoker", #"gladiator", #"gladiator_marauder", #"gladiator_destroyer", #"werewolf", #"avogadro", #"hash_9f6bc1960ff4912"), hash(str_archetype))) {
+    } else if (isinarray(array(#"stoker", #"gladiator", #"gladiator_marauder", #"gladiator_destroyer", #"werewolf", #"avogadro", #"raz"), hash(str_archetype))) {
         var_148cc603 = var_148cc603 * (isdefined(level.var_66682370) ? level.var_66682370 : 1);
     } else if (isinarray(array(#"bat", #"dog", #"zombie_dog", #"zombie"), hash(str_archetype))) {
         var_148cc603 = var_148cc603 * (isdefined(level.var_6a9f25ba) ? level.var_6a9f25ba : 1);
@@ -1182,9 +1182,9 @@ function private function_9eefccc1(var_148cc603, str_archetype) {
 // Checksum 0x53408b48, Offset: 0x4968
 // Size: 0x25a
 function private function_f2bdfd5a(str_archetype, var_376db024) {
-    if (isinarray(array(#"blight_father", #"brutus", #"gegenees", #"hash_3d92e2c7bea1eee2", #"hash_7c0d83ac1e845ac2"), hash(str_archetype))) {
+    if (isinarray(array(#"blight_father", #"brutus", #"gegenees", #"mechz", #"hash_7c0d83ac1e845ac2"), hash(str_archetype))) {
         var_376db024 = var_376db024 / (isdefined(level.var_397ca369) ? level.var_397ca369 : 1);
-    } else if (isinarray(array(#"stoker", #"gladiator", #"gladiator_marauder", #"gladiator_destroyer", #"werewolf", #"avogadro", #"hash_9f6bc1960ff4912"), hash(str_archetype))) {
+    } else if (isinarray(array(#"stoker", #"gladiator", #"gladiator_marauder", #"gladiator_destroyer", #"werewolf", #"avogadro", #"raz"), hash(str_archetype))) {
         var_376db024 = var_376db024 / (isdefined(level.var_66682370) ? level.var_66682370 : 1);
     } else if (isinarray(array(#"bat", #"dog", #"zombie_dog", #"zombie"), hash(str_archetype))) {
         var_376db024 = var_376db024 / (isdefined(level.var_6a9f25ba) ? level.var_6a9f25ba : 1);

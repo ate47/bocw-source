@@ -163,7 +163,7 @@ function getplayer(params) {
 // Size: 0xa8
 function function_5fd1a95b(params) {
     /#
-        foreach (func in level.rat.script_command_list) {
+        foreach (cmd, func in level.rat.script_command_list) {
             function_55e20e75(params._id, cmd);
         }
     #/

@@ -245,7 +245,7 @@ function private respawn() {
     self waittilltimeout(3, #"death_delay_finished");
     wait(0.1);
     if (is_true(getgametypesetting(#"hash_2b1f40bc711c41f3"))) {
-        self thread function_1332002f(0.1);
+        self thread squad_spawn(0.1);
         return;
     }
     while (1) {
@@ -258,7 +258,7 @@ function private respawn() {
 // Params 1, eflags: 0x6 linked
 // Checksum 0xa0fce17f, Offset: 0xd78
 // Size: 0x1f2
-function private function_1332002f(var_2b6a7c31) {
+function private squad_spawn(var_2b6a7c31) {
     level endon(#"game_ended");
     self endon(#"death", #"disconnect", #"spawned");
     while (!isdefined(self.spawn.var_e8f87696) || self.spawn.var_e8f87696 <= 0) {
@@ -394,7 +394,7 @@ function private function_4fb21bb4() {
         self.bot.var_b73d5099 = undefined;
     }
     profileNamedStart(#"");
-    if (self.combatstate == #"hash_25a4754a6175a242" || !isdefined(self.enemy) || !isalive(self.enemy) || self.bot.flashed || self function_ce3dfcfc(self.enemy)) {
+    if (self.combatstate == #"combat_state_idle" || !isdefined(self.enemy) || !isalive(self.enemy) || self.bot.flashed || self function_ce3dfcfc(self.enemy)) {
         self.bot.var_2cf887f8 = 0;
         self.bot.var_e8c84f98 = 0;
     } else if (isplayer(self.enemy) && self.enemy isinvehicle() && !self.enemy isremotecontrolling()) {
@@ -806,7 +806,7 @@ function function_52947b70(trigger) {
 // Size: 0x414
 function private function_e4055765() {
     var_458ddbc0 = self.bot.var_458ddbc0;
-    foreach (val in var_458ddbc0) {
+    foreach (bit, val in var_458ddbc0) {
         self bottapbutton(bit);
         if (val > 1) {
             var_458ddbc0[bit] = undefined;
@@ -1030,7 +1030,7 @@ function private function_5d55f3c9(combatstate) {
             return (1, 0.5, 0);
         case #"combat_state_aware_of_enemies":
             return (1, 1, 0);
-        case #"hash_25a4754a6175a242":
+        case #"combat_state_idle":
             return (0, 1, 0);
             break;
         }

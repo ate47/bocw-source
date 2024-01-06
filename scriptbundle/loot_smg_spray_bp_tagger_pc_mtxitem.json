@@ -1,0 +1,25 @@
+{
+    "var_941096a8": [
+        {
+            "var_386af035": "#firstparty_bundle_6501_ultimate_pro_pack_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_bundle_6501_ultimate_pro_pack_steam_mtxentitlement"
+        }
+    ],
+    "itemname": "#hash_2dbf0ba9607ad63b",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_5797f7cc89658f33",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 6,
+    "var_46300498": 1,
+    "baseweapon": "#hash_69868331b3d3cec2",
+    "name": "loot_smg_spray_bp_tagger_pc_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "20104437",
+    "blueprint": "#hash_2dbf0ba9607ad63b"
+}

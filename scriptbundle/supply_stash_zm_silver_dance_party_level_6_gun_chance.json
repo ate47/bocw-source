@@ -1,0 +1,17 @@
+{
+    "itemlist": [
+        {
+            "minweight": 100,
+            "var_a6762160": "#level_6_gun_list",
+            "maxweight": 100,
+            "available": 1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "name": "supply_stash_zm_silver_dance_party_level_6_gun_chance",
+    "var_fde72c94": 100
+}

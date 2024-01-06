@@ -9,7 +9,7 @@
 // Checksum 0x80b5d1eb, Offset: 0x380
 // Size: 0x22c
 function private event_handler[createstruct] function_e0a8e4ba(struct) {
-    foreach (k in [0:"rg_tag_type"]) {
+    foreach (var_7b62a41a, k in [0:"rg_tag_type"]) {
         if (!isdefined(level.var_41204f29)) {
             level.var_41204f29 = [];
         } else if (!isarray(level.var_41204f29)) {

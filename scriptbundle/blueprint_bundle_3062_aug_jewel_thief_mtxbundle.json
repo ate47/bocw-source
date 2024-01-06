@@ -1,0 +1,35 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#tr_powerburst_cb_bp_jewel_mtxitem",
+            "itemid": "30634645"
+        },
+        {
+            "var_4a4bc969": "#smg_handling_bp_jewel_mtxitem",
+            "itemid": "32616303"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_kings_court_iii_mtxitem",
+            "itemid": "29646905"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_diamond_mtxitem",
+            "itemid": "20570330"
+        },
+        {
+            "var_4a4bc969": "#callingcards_king3_mtxitem",
+            "itemid": "23182554"
+        }
+    ],
+    "itemname": "#hash_6dbb100fb42d6e52",
+    "var_375a1747": "#hash_54a8ad2212df1944",
+    "name": "blueprint_bundle_3062_aug_jewel_thief_mtxbundle",
+    "var_a788fada": "#hash_5111ad11fd010e03",
+    "var_22f91505": "#hash_7cd334146cb11592",
+    "var_566825be": "#hash_50f374dfb8b6c4eb",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_59f73438bb8914ce",
+    "var_db3e02ab": 2000,
+    "itemid": "33043057"
+}

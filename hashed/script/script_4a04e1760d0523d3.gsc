@@ -16,7 +16,7 @@ function init() {
     level.var_60693fca = (isdefined(getgametypesetting(#"hash_37aefeabeef0ec6c")) ? getgametypesetting(#"hash_37aefeabeef0ec6c") : 0) * 100;
     clientfield::register("scriptmover", "ftdb_zoneCircle", 1, 3, "int", &function_f4d234f9, 0, 0);
     clientfield::register("scriptmover", "zoneNearOOB", 1, 1, "int", &function_b315a5d2, 0, 0);
-    clientfield::register("scriptmover", "disable_compass_arrow", 1, 1, "int", &function_b61b40d7, 0, 0);
+    clientfield::register("scriptmover", "disable_compass_arrow", 1, 1, "int", &disable_compass_arrow, 0, 0);
     if (!isdefined(level.var_cfdf3928)) {
         level.var_99266dd4 = new class_c6c0e94();
         [[ level.var_99266dd4 ]]->initialize("radiation_compass", 1, 0.016);
@@ -95,7 +95,7 @@ function private function_6856257d(localclientnum) {
     if (isdefined(self.var_67899e33[localclientnum])) {
         return;
     }
-    if (!namespace_1332002f::function_21b773d5(localclientnum)) {
+    if (!squad_spawn::function_21b773d5(localclientnum)) {
         self.var_67899e33[localclientnum] = playfx(localclientnum, "wz/fx9_dirtybomb_radiation_zone", self.origin + vectorscale((0, 0, 1), 80));
     } else {
         self.var_67899e33[localclientnum] = playfx(localclientnum, "wz/fx9_dirtybomb_radiation_zone_spawn", self.origin + vectorscale((0, 0, 1), 80));
@@ -186,10 +186,10 @@ function on_local_client_connect(localclientnum) {
 // Size: 0x484
 function function_84d33874() {
     level endon(#"game_ended");
-    level endon(#"hash_7f76b7c5636fafb2");
+    level endon(#"disable_compass_arrow");
     while (1) {
         wait(0.05);
-        foreach (var_4f67e1b in level.var_4f67e1b) {
+        foreach (localclientnum, var_4f67e1b in level.var_4f67e1b) {
             player = function_5c10bd79(localclientnum);
             mapcenter = getmapcenter();
             var_4c3e77ea = (0, 0, 0);
@@ -290,9 +290,9 @@ function function_270bde4c(localclientnum, ent) {
 // Params 7, eflags: 0x0
 // Checksum 0xf2bc13c8, Offset: 0x1318
 // Size: 0x78
-function function_b61b40d7(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function disable_compass_arrow(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
-        level notify(#"hash_7f76b7c5636fafb2");
+        level notify(#"disable_compass_arrow");
         level.var_bae7602b = 0;
     } else {
         level.var_bae7602b = 1;

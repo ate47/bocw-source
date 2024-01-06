@@ -1,0 +1,59 @@
+{
+    "var_501d85c9": [
+        {
+            "var_fe10649e": "#hash_59ee7044393058cf"
+        },
+        {
+            "var_fe10649e": "#hash_59ee714439305a82"
+        },
+        {
+            "var_fe10649e": "#hash_59ee724439305c35"
+        },
+        {
+            "var_fe10649e": "#hash_59ee6b4439305050"
+        }
+    ],
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_accurate_bp_surge_mtxitem",
+            "itemid": "22403673"
+        },
+        {
+            "var_4a4bc969": "#shotgun_fullauto_bp_surge_mtxitem",
+            "itemid": "22930712"
+        },
+        {
+            "var_4a4bc969": "#pistol_burst_bp_surge_mtxitem",
+            "itemid": "30112988"
+        },
+        {
+            "var_4a4bc969": "#callingcards_powersurge_animated_mtxitem",
+            "itemid": "26869746"
+        },
+        {
+            "var_4a4bc969": "#emblems_powersurge_animated_mtxitem",
+            "itemid": "20031610"
+        },
+        {
+            "var_4a4bc969": "#reticle_78_mtxitem",
+            "itemid": "31186772"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_vtg_robot_mtxitem",
+            "itemid": "28639378"
+        }
+    ],
+    "itemname": "#hash_2851a4d54b46e365",
+    "var_375a1747": "#hash_59ee7044393058cf",
+    "var_3040f0d1": "#hash_59ee7044393058cf",
+    "var_8ee7db29": 1,
+    "name": "blueprint_bundle_3010_krig_6_dying_art_mtxbundle",
+    "var_a788fada": "#hash_47ed7daf4cce44fa",
+    "var_22f91505": "#hash_30f0ba3ad9dfa8fb",
+    "var_566825be": "#hash_1ee8fdc8d7c2a9c6",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_38485db5300f4bf",
+    "var_db3e02ab": 750,
+    "itemid": "27354393"
+}

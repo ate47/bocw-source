@@ -1,0 +1,75 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#c_t9_rus_pl_stitch_mtxitem",
+            "itemid": "29774561"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_rus_stitch_mtxitem",
+            "itemid": "30156871"
+        },
+        {
+            "var_4a4bc969": "#c_t9_rus_pl_kgb_burglar_mtxitem",
+            "itemid": "21769203"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_rus_kgb_mtxitem",
+            "itemid": "29488041"
+        },
+        {
+            "var_4a4bc969": "#c_t9_rus_pl_kgb_thekid_mtxitem",
+            "itemid": "31968345"
+        },
+        {
+            "var_4a4bc969": "#c_t9_cub_pl_sicario_mtxitem",
+            "itemid": "31711313"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_cub_dgi_mtxitem",
+            "itemid": "21801561"
+        },
+        {
+            "var_4a4bc969": "#c_t9_cub_pl_dgi_slasher_mtxitem",
+            "itemid": "18588108"
+        },
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_adler_traveler_mtxitem",
+            "itemid": "28713239"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_usa_hero_adler_mtxitem",
+            "itemid": "31112941"
+        },
+        {
+            "var_4a4bc969": "#c_t9_usa_pl_adler_renegade_mtxitem",
+            "itemid": "21190231"
+        },
+        {
+            "var_4a4bc969": "#c_t9_uk_pl_mi6_badblood_mtxitem",
+            "itemid": "22394513"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_uk_mi6_mtxitem",
+            "itemid": "23374822"
+        },
+        {
+            "var_4a4bc969": "#c_t9_uk_pl_mi6_survivor_mtxitem",
+            "itemid": "31610035"
+        },
+        {
+            "var_4a4bc969": "#c_t9_uk_pl_mi6_coal_mtxitem",
+            "itemid": "24557050"
+        }
+    ],
+    "itemname": "#hash_6ca3d9cbb672358f",
+    "var_375a1747": "#hash_7efe7816245a7949",
+    "name": "operator_bundle_7502_vault_nato_warsaw_01_mtxbundle",
+    "var_a788fada": "#hash_532d61479869573e",
+    "var_22f91505": "#hash_1145c161a186c93f",
+    "var_566825be": "#hash_2464200ef85ba2aa",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_1b9ef9e2878cb3fb",
+    "var_db3e02ab": 2000,
+    "itemid": "28936309"
+}

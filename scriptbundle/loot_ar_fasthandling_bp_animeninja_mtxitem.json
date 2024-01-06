@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#operator_bundle_4024_park_anime_decals_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_37a9a6cc561eac97",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_4c72ec8218df36c9",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 4,
+    "var_46300498": 1,
+    "baseweapon": "#hash_6be9615b6d0ec416",
+    "name": "loot_ar_fasthandling_bp_animeninja_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "32436547",
+    "blueprint": "#hash_37a9a6cc561eac97"
+}

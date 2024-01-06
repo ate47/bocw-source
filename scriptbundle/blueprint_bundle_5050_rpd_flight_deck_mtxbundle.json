@@ -1,0 +1,27 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#lmg_light_bp_warship_mtxitem",
+            "itemid": "30972606"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_buoy_mtxitem",
+            "itemid": "32670727"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_46_s5_mtxitem",
+            "itemid": "19261049"
+        }
+    ],
+    "itemname": "#hash_74cb35b1755ffcb6",
+    "var_375a1747": "#hash_746e3a24ae1322b8",
+    "name": "blueprint_bundle_5050_rpd_flight_deck_mtxbundle",
+    "var_a788fada": "#hash_431f1a8e877532cb",
+    "var_22f91505": "#hash_58a6bfff62730dcd",
+    "var_566825be": "#hash_69e26efb3148aa33",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_7325baffce5d9e05",
+    "var_db3e02ab": 2000,
+    "itemid": "25865240"
+}

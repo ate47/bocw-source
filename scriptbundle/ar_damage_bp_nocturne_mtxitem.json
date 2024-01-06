@@ -1,0 +1,23 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#bundle_operator_2027_ingo_silent_approach_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_36cece9d3ec23b98",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_7c26e73e81b3d8de",
+    "weapon": "#hash_1039f56708e1d3e4",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_64d4ec2368cdcd6a",
+    "season": 2,
+    "var_46300498": 1,
+    "baseweapon": "#hash_1039f56708e1d3e4",
+    "name": "ar_damage_bp_nocturne_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 3,
+    "itemid": "30294912",
+    "blueprint": "#hash_36cece9d3ec23b98"
+}

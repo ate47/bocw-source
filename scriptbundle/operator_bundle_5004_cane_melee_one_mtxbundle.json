@@ -1,0 +1,43 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#melee_cane_bp_class_mtxitem",
+            "itemid": "17781234"
+        },
+        {
+            "var_4a4bc969": "#c_t9_uk_pl_mi6_sis_mtxitem",
+            "itemid": "24937395"
+        },
+        {
+            "var_4a4bc969": "#prt_mp_uk_mi6_mtxitem",
+            "itemid": "23374822"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_roulette_wheel_mtxitem",
+            "itemid": "23840886"
+        },
+        {
+            "var_4a4bc969": "#execution_074_mtxitem",
+            "itemid": "28415532"
+        },
+        {
+            "var_4a4bc969": "#emblems_s5_uk_mtxitem",
+            "itemid": "19435207"
+        },
+        {
+            "var_4a4bc969": "#callingcards_ukcorgi_s5_mtxitem",
+            "itemid": "26299900"
+        }
+    ],
+    "itemname": "#hash_39546021db0574ea",
+    "var_375a1747": "#hash_508fea8cf446c74",
+    "name": "operator_bundle_5004_cane_melee_one_mtxbundle",
+    "var_a788fada": "#hash_2a96691d3adbed4b",
+    "var_22f91505": "#hash_66ebd501d9630d78",
+    "var_566825be": "#hash_7f793d8c445938b3",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_510359ee53795540",
+    "var_db3e02ab": 2000,
+    "itemid": "21553096"
+}

@@ -1,0 +1,18 @@
+{
+    "var_210a8489": [
+        {
+            "var_37d9fb07": "default_zombies_realm_3",
+            "var_a949845f": 12,
+            "var_857deb66": 100
+        },
+        {
+            "var_37d9fb07": "avogadro_or_disciple",
+            "var_a949845f": 3,
+            "var_857deb66": 30
+        }
+    ],
+    "var_d961aeb3": 0.2,
+    "var_922067c4": "scriptbundle",
+    "type": "survivalailist",
+    "name": "demented_echo_ambush_realm_3_variant_3"
+}

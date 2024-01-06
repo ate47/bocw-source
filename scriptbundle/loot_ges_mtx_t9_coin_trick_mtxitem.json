@@ -1,0 +1,16 @@
+{
+    "itemname": "#loot_ges_mtx_t9_coin_trick",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_1ec8776029174e85",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_3f39f1490b1ba719",
+    "season": 6,
+    "var_46300498": 1,
+    "gesture": "#loot_ges_mtx_t9_coin_trick",
+    "name": "loot_ges_mtx_t9_coin_trick_mtxitem",
+    "category": "#gesture",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 3,
+    "itemid": "24241868"
+}

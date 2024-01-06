@@ -21,7 +21,7 @@ function init_shared() {
         level.emp_shared = {};
         level.emp_shared.activeplayeremps = [];
         level.emp_shared.activeemps = [];
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             level.emp_shared.activeemps[team] = 0;
         }
         level.emp_shared.enemyempactivefunc = &enemyempactive;
@@ -302,7 +302,7 @@ function enemyempactive() {
         return 0;
     }
     if (level.teambased) {
-        foreach (_ in level.teams) {
+        foreach (team, _ in level.teams) {
             if (util::function_fbce7263(team, self.team) && teamhasactiveemp(team)) {
                 return 1;
             }
@@ -397,7 +397,7 @@ function updateemp() {
 // Checksum 0x523cedaf, Offset: 0x1648
 // Size: 0x12c
 function destroyotherteamsequipment(attacker, weapon, radius) {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (!util::function_fbce7263(team, attacker.team)) {
             continue;
         }
@@ -474,7 +474,7 @@ function destroytacticalinsertions(attacker, victimteam, radius) {
 // Checksum 0xb02ef77c, Offset: 0x1a78
 // Size: 0xd0
 function destroyotherteamsactivevehicles(attacker, weapon, radius) {
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (!util::function_fbce7263(team, attacker.team)) {
             continue;
         }

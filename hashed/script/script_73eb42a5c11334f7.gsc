@@ -70,7 +70,7 @@ function private init() {
 // Size: 0x34
 function private function_2dd58893(params) {
     if (isdefined(params.localclientnum)) {
-        function_3221202f(params.localclientnum);
+        clear_all_pings(params.localclientnum);
     }
 }
 
@@ -82,7 +82,7 @@ function private function_c81ef836() {
     level endon(#"disconnect");
     while (1) {
         waitresult = undefined;
-        waitresult = level waittill(#"hash_1f11a663bf3a84f6", #"hash_898a79529272628");
+        waitresult = level waittill(#"minimap_waypoint", #"clear_all_pings");
         local_client_num = waitresult.localclientnum;
         if (waitresult._notify == "minimap_waypoint") {
             if (is_true(waitresult.remove)) {
@@ -393,7 +393,7 @@ function private function_78827e7f(params) {
     var_dcc5aade = is_true(params.var_dcc5aade);
     currentplayer = function_5c10bd79(local_client_num);
     var_df55840 = currentplayer == var_56bcf423 && !var_dcc5aade;
-    if (namespace_56e70a4a::function_b8fe9b52(local_client_num)) {
+    if (codcaster::function_b8fe9b52(local_client_num)) {
         return;
     }
     if (gamemodeismode(5)) {
@@ -579,11 +579,11 @@ function private function_807b75f0(local_client_num, var_ec31db0f, var_48672d70)
 // Checksum 0x2cca3478, Offset: 0x2cf0
 // Size: 0x1be
 function private function_d8d7e32(local_client_num, param, var_398c2dad, var_9d45fcf2, var_13b70b57) {
-    foreach (var_92963150 in level.var_907386c0[local_client_num]) {
+    foreach (client_num, var_92963150 in level.var_907386c0[local_client_num]) {
         if (isdefined(var_9d45fcf2) && array::contains(var_9d45fcf2, client_num)) {
             continue;
         }
-        foreach (var_20da58f9 in var_92963150) {
+        foreach (var_638e268e, var_20da58f9 in var_92963150) {
             if (isdefined(var_13b70b57) && array::contains(var_13b70b57, var_638e268e)) {
                 continue;
             }
@@ -1156,8 +1156,8 @@ function private function_892476d5(local_client_num, var_ec31db0f) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0xf825b21d, Offset: 0x5660
 // Size: 0xa0
-function private function_3221202f(local_client_num) {
-    foreach (var_3866572e in level.var_907386c0[local_client_num]) {
+function private clear_all_pings(local_client_num) {
+    foreach (clientnum, var_3866572e in level.var_907386c0[local_client_num]) {
         function_892476d5(local_client_num, clientnum);
     }
 }

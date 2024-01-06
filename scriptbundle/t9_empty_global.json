@@ -1,0 +1,16 @@
+{
+    "itemlist": [
+        {
+            "var_a6762160": "#t9_ammo_global"
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_7fb0967b": 4000,
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "var_dc7ffbef": 1,
+    "name": "t9_empty_global",
+    "var_fde72c94": 100
+}

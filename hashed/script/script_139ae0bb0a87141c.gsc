@@ -718,7 +718,7 @@ function function_2e140491(guy, *volume) {
     var_8bfbd3f = (cos(var_dc04453c), sin(var_dc04453c), 0);
     var_cee92a66 = pod.origin + var_2e04480f * var_8bfbd3f;
     var_9ea07d03 = pod.state == 2;
-    var_bbfbe34b = namespace_7b4b2b57::function_ab981ed(var_cee92a66, pod.volume, 512, var_9ea07d03);
+    var_bbfbe34b = smart_object::function_ab981ed(var_cee92a66, pod.volume, 512, var_9ea07d03);
     if (isdefined(var_bbfbe34b)) {
         return self namespace_77fd5d41::function_4efdd16b(var_bbfbe34b);
     }

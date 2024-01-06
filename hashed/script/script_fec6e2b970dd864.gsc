@@ -242,14 +242,14 @@ function on_item_pickup(params) {
     item = params.item;
     if (isplayer(self)) {
         if (isdefined(item.var_a6762160.name)) {
-            if ((item.var_a6762160.name === #"hash_5a5d63f61e6770f9" || item.var_a6762160.name === #"hash_58951f692bf35608") && is_true(item.var_569199b9)) {
+            if ((item.var_a6762160.name === #"scrap_rare_item_sr" || item.var_a6762160.name === #"scrap_item_sr") && is_true(item.var_569199b9)) {
                 self zm_stats::increment_challenge_stat(#"hash_5d77c9a44bc6f7eb");
-            } else if (item.var_a6762160.name === #"hash_682698368e3a043" && is_true(self.var_f163034c)) {
+            } else if (item.var_a6762160.name === #"resource_item_harvesting_sr" && is_true(self.var_f163034c)) {
                 if (!isdefined(self.var_664db4ed)) {
                     self.var_664db4ed = 0;
                 }
                 self.var_664db4ed++;
-            } else if (item.var_a6762160.name === #"hash_54c0cbd255553ce7" && item.var_a6762160.var_31dcb18d === #"hash_3b44370452dc91f8") {
+            } else if (item.var_a6762160.name === #"resource_item_sr" && item.var_a6762160.var_31dcb18d === #"hash_3b44370452dc91f8") {
                 self zm_stats::increment_challenge_stat(#"hash_3c8437e4e9f1e638");
             }
         }

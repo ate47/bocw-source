@@ -148,7 +148,7 @@ function function_d63819fe() {
         return;
     }
     while (1) {
-        foreach (var_4db43f60 in level.var_f9c9c0) {
+        foreach (str_name, var_4db43f60 in level.var_f9c9c0) {
             foreach (ent in var_4db43f60.var_13b85955) {
                 if (isdefined(ent) && self function_cc876e01(ent)) {
                     n_damage = function_32b2e015(ent);
@@ -185,7 +185,7 @@ function on_player_killed(*params) {
 // Checksum 0x4830041d, Offset: 0xc40
 // Size: 0xe4
 function reset(var_f9b16c16) {
-    foreach (_ in level.var_f9c9c0) {
+    foreach (str_name, _ in level.var_f9c9c0) {
         self.var_e3ab1888[str_name] = 0;
         self.var_faa7fdee[str_name] = 1;
     }
@@ -332,7 +332,7 @@ function function_66980cf3() {
     self endon(#"disconnect");
     while (1) {
         self waittill(#"player_revived");
-        foreach (_ in level.var_f9c9c0) {
+        foreach (str_name, _ in level.var_f9c9c0) {
             if (function_838a3ba4(str_name) >= 1) {
                 function_de8dda88(str_name);
             }
@@ -482,14 +482,14 @@ function private function_7a5f3e98(str_name, e_ent, disable_ui) {
     self endon("_hazard_protection_" + str_name, #"death");
     var_4db43f60 = level.var_f9c9c0[str_name];
     var_cf8dfdc = "";
-    foreach (type in self.var_afb10e8b) {
+    foreach (model, type in self.var_afb10e8b) {
         if (type == var_4db43f60.n_type) {
             var_cf8dfdc = model;
             break;
         }
     }
     if (var_cf8dfdc == "") {
-        foreach (type in self.var_afb10e8b) {
+        foreach (model, type in self.var_afb10e8b) {
             if (type == 0) {
                 var_cf8dfdc = model;
                 break;

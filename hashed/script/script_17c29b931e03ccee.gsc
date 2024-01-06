@@ -282,8 +282,8 @@ function function_a109b3d3() {
 // Checksum 0x3dc043e, Offset: 0x11e0
 // Size: 0x24
 function private function_221192e6() {
-    level.var_cd3361fa = level.var_9ea53546;
-    level.var_9ea53546 = 0;
+    level.var_cd3361fa = level.killcammode;
+    level.killcammode = 0;
 }
 
 // Namespace nuke/nuke
@@ -292,7 +292,7 @@ function private function_221192e6() {
 // Size: 0x32
 function private function_b830d52b() {
     if (isdefined(level.var_cd3361fa)) {
-        level.var_9ea53546 = level.var_cd3361fa;
+        level.killcammode = level.var_cd3361fa;
         level.var_cd3361fa = undefined;
     }
 }

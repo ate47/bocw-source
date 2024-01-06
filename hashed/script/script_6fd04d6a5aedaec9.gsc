@@ -264,14 +264,14 @@ function function_31183ec4(e_player, var_b3dbe6aa) {
             case #"rare":
                 e_player zm_weapons::function_17e9ed37(#"epic");
                 break;
-            case #"hash_3a98cc868af9b743":
+            case #"uncommon":
                 e_player zm_weapons::function_17e9ed37(#"rare");
                 break;
             case #"resource":
-                e_player zm_weapons::function_17e9ed37(#"hash_3a98cc868af9b743");
+                e_player zm_weapons::function_17e9ed37(#"uncommon");
                 break;
             case #"loadout":
-                e_player zm_weapons::function_17e9ed37(#"hash_3a98cc868af9b743");
+                e_player zm_weapons::function_17e9ed37(#"uncommon");
                 break;
             }
         }
@@ -561,7 +561,7 @@ function function_d052dc1f(e_player, var_24b25ceb) {
     if (!isdefined(var_24b25ceb)) {
         return 0;
     }
-    foreach (var_d8f1c196 in var_24b25ceb) {
+    foreach (index, var_d8f1c196 in var_24b25ceb) {
         if (index != 0) {
             if (isfloat(var_d8f1c196.n_interval) && var_d8f1c196.n_interval > 0) {
                 wait(var_d8f1c196.n_interval);

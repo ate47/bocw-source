@@ -205,7 +205,7 @@ function function_f23a642e(localclientnum, *oldval, newval, *bnewent, *binitials
         if (!isdefined(var_c75c14fb.var_73f720d5)) {
             var_c75c14fb.var_73f720d5.var_c75c14fb = util::spawn_model(fieldname, #"hash_a02ea23378ffdcb", var_c75c14fb.origin, var_c75c14fb.angles);
         }
-        var_c75c14fb.var_73f720d5 thread animation::play_siege(#"hash_7b620c1b52b80cda", undefined, 1, 1);
+        var_c75c14fb.var_73f720d5 thread animation::play_siege(#"p9_fxanim_zm_silver_jellyfish_large_sanim", undefined, 1, 1);
         util::playfxontag(fieldname, #"hash_54e03b0df8f82be2", var_c75c14fb.var_73f720d5, "tag_origin");
     } else if (isdefined(var_c75c14fb.var_73f720d5)) {
         var_c75c14fb.var_73f720d5 delete();
@@ -532,7 +532,7 @@ function function_7da52bb6(localclientnum, var_a2fbae60) {
     var_a2fbae60.var_6aa3f2c3.var_a2fbae60 = util::spawn_model(localclientnum, #"hash_2a5390b16843700", var_a2fbae60.origin, var_a2fbae60.angles);
     var_a2fbae60 util::delay(0.2, undefined, &hide);
     playsound(localclientnum, #"hash_6c00f83cd6fdb678", var_a2fbae60.origin + vectorscale((0, 0, 1), 50));
-    var_a2fbae60.var_6aa3f2c3 animation::play_siege(#"hash_7215883c66396371", undefined, 1, 0);
+    var_a2fbae60.var_6aa3f2c3 animation::play_siege(#"p9_fxanim_sv_boss_crystals_sanim", undefined, 1, 0);
     var_a2fbae60 show();
     wait(1);
     var_a2fbae60 function_9ba86d16();

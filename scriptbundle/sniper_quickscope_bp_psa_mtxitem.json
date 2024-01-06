@@ -1,0 +1,22 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#blueprint_bundle_6030_ak_47_psa_pressure_mtxbundle"
+        }
+    ],
+    "itemname": "#hash_6267aa58f0881e8e",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_7e451015dd2b1ac0",
+    "var_728341a": 1,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "season": 6,
+    "var_46300498": 1,
+    "baseweapon": "#hash_485d0c5e33d67e78",
+    "name": "sniper_quickscope_bp_psa_mtxitem",
+    "category": "#blueprint",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4,
+    "itemid": "21731778",
+    "blueprint": "#hash_6267aa58f0881e8e"
+}

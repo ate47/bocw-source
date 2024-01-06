@@ -1,0 +1,28 @@
+{
+    "options": [
+        {
+            "label": "#hash_4bce2ff8c56b127c",
+            "value": "0"
+        },
+        {
+            "label": "#hash_4ed69c8f7d2e9c2",
+            "value": "1"
+        }
+    ],
+    "description": "#hash_452288f01d44bb57",
+    "var_60fcfffa": "#menu/on",
+    "var_9bc3be7": 1,
+    "var_4ced19ab": 1,
+    "var_10e01ad5": 1,
+    "var_491e9867": "none",
+    "var_86a04811": 1,
+    "var_43a952c1": 1,
+    "maxvalue": 1,
+    "name": "codcaster_freecam_movement_mode",
+    "displayname": "#hash_4a81e3f06ff1c4ed",
+    "var_500458ac": 10,
+    "var_66faec87": 10,
+    "statname": "codcaster_freecam_movement_mode",
+    "var_6f00a61a": 1.1,
+    "var_b7401319": "#menu/off"
+}

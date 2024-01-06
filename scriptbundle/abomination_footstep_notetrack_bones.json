@@ -1,0 +1,10 @@
+{
+    "footstep_left_large": "j_index_le_1",
+    "var_922067c4": "scriptbundle",
+    "model": "#hash_830ac1ac3897581",
+    "type": "ainotetrackbonemapping",
+    "footstep_right_back": "j_index_ri_1",
+    "name": "abomination_footstep_notetrack_bones",
+    "footstep_left_back": "j_index_le_1",
+    "footstep_right_large": "j_index_ri_1"
+}

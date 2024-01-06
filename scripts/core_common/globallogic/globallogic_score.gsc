@@ -754,7 +754,7 @@ function function_84088ec3(var_f801f37e) {
             case #"frag_grenade":
             case #"hash_2b9efbad11308e02":
             case #"gadget_jammer":
-            case #"hash_63826b4a80215cd3":
+            case #"tear_gas":
             case #"eq_molotov":
             case #"satchel_charge":
                 self stats::function_622feb0d(var_f801f37e.name, #"hash_7bf29fa438d54aad", 1);

@@ -1,0 +1,39 @@
+{
+    "objects": [
+        {
+            "shots": [
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_62cf886053a889ad",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "init"
+                },
+                {
+                    "entry": [
+                        {
+                            "anim": "#hash_5cc925c437264e22",
+                            "var_71bac06": "anim"
+                        }
+                    ],
+                    "name": "main"
+                }
+            ],
+            "model": "#hash_6373df5777aaa160",
+            "type": "prop",
+            "var_db255011": 1,
+            "deletewhenfinished": 1,
+            "name": "prop 1"
+        }
+    ],
+    "scenetype": "scene",
+    "var_922067c4": "scriptbundle",
+    "devstate": "placeholder",
+    "type": "scene",
+    "name": "aib_t9_zm_silver_echo_3_vogel_01",
+    "dontsync": 1,
+    "aligntarget": "tag_align_vogel_1_3",
+    "team": "any"
+}

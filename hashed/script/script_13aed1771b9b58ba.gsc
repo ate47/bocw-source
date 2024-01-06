@@ -26,12 +26,12 @@ function private autoexec __init__system__() {
 function private function_70a657d8() {
     clientfield::register("allplayers", "fx_frenzied_guard_player_clientfield", 9000, 1, "int");
     clientfield::register("actor", "fx_frenzied_guard_actor_clientfield", 9000, 1, "int");
-    namespace_1b527536::function_36e0540e(#"hash_55569355da0f0f68", 1, 60, #"hash_276a89fd0875409a");
-    namespace_1b527536::function_36e0540e(#"hash_43e326396554e18c", 1, 60, #"hash_32d3740bf1d93fe");
-    namespace_1b527536::function_36e0540e(#"hash_43e329396554e6a5", 1, 60, #"hash_56f5e5578534069b");
-    namespace_1b527536::function_36e0540e(#"hash_43e328396554e4f2", 1, 60, #"hash_45a15df330b74adc");
-    namespace_1b527536::function_36e0540e(#"hash_43e323396554dc73", 1, 60, #"hash_5addc54d5927cc29");
-    namespace_1b527536::function_36e0540e(#"hash_43e322396554dac0", 1, 60, #"hash_7fecb687adf7f042");
+    namespace_1b527536::function_36e0540e(#"hash_55569355da0f0f68", 1, 60, #"field_upgrade_frenzied_guard_item_sr");
+    namespace_1b527536::function_36e0540e(#"hash_43e326396554e18c", 1, 60, #"field_upgrade_frenzied_guard_1_item_sr");
+    namespace_1b527536::function_36e0540e(#"hash_43e329396554e6a5", 1, 60, #"field_upgrade_frenzied_guard_2_item_sr");
+    namespace_1b527536::function_36e0540e(#"hash_43e328396554e4f2", 1, 60, #"field_upgrade_frenzied_guard_3_item_sr");
+    namespace_1b527536::function_36e0540e(#"hash_43e323396554dc73", 1, 60, #"field_upgrade_frenzied_guard_4_item_sr");
+    namespace_1b527536::function_36e0540e(#"hash_43e322396554dac0", 1, 60, #"field_upgrade_frenzied_guard_5_item_sr");
     namespace_1b527536::function_dbd391bf(#"hash_55569355da0f0f68", &function_d798ebd7);
     namespace_1b527536::function_dbd391bf(#"hash_43e326396554e18c", &function_fd0036a5);
     namespace_1b527536::function_dbd391bf(#"hash_43e329396554e6a5", &function_f03b1d1b);

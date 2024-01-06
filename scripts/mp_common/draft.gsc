@@ -380,7 +380,7 @@ function function_21f5a2c1() {
             teamcount[player.team]++;
         }
     }
-    foreach (_ in level.teams) {
+    foreach (team, _ in level.teams) {
         if (teamcount[team] < var_e8cb777) {
             /#
                 function_95c03d66("<unknown string>" + var_e8cb777 + "<unknown string>" + team + "<unknown string>" + teamcount[team]);

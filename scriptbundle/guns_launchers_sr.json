@@ -1,0 +1,20 @@
+{
+    "itemlist": [
+        {
+            "minweight": 100,
+            "var_a6762160": "#launcher_standard_t9_item_sr",
+            "var_3f8c08e3": "#ammo_item_survival_large",
+            "maxweight": 200,
+            "available": -1
+        }
+    ],
+    "var_136dd314": 40,
+    "var_922067c4": "scriptbundle",
+    "var_7fb0967b": 200,
+    "var_e9898330": "pingitemcontainer",
+    "type": "itemspawnlist",
+    "var_9b009839": -1,
+    "var_dc7ffbef": 1,
+    "name": "guns_launchers_sr",
+    "var_fde72c94": 100
+}

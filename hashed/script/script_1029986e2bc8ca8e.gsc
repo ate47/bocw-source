@@ -387,7 +387,7 @@ function function_ef3a1d04(&destinations, &categories) {
             if (namespace_8b6a9d79::function_fe9fb6fd(location)) {
                 continue;
             }
-            foreach (instance in location.instances) {
+            foreach (var_524c3d6e, instance in location.instances) {
                 script = namespace_8b6a9d79::function_85255d0f(var_524c3d6e);
                 category = script.var_eef6eb91;
                 if (!isdefined(category)) {
@@ -832,7 +832,7 @@ function function_589654ad() {
 // Checksum 0x4e8643a9, Offset: 0x3648
 // Size: 0x36c
 function autoexec function_42fa2bab() {
-    var_8e30d7a1 = getscriptbundle(#"hash_280353dbdc21ec7a");
+    var_8e30d7a1 = getscriptbundle(#"zmsr_objectives");
     /#
         assert(isdefined(var_8e30d7a1), "<unknown string>");
     #/
@@ -909,7 +909,7 @@ function function_67b313bb() {
         var_b49d430f = array("<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>", "<unknown string>");
         var_9986d9d6 = array((1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 1, 0), (1, 0.5, 0), (0, 1, 1), (1, 0, 1), (0.439216, 0.501961, 0.564706), (0, 0, 0), vectorscale((1, 1, 0), 0.501961), (0.545098, 0.270588, 0.0745098));
         while (1) {
-            foreach (var_83aaaa47 in var_b49d430f) {
+            foreach (index, var_83aaaa47 in var_b49d430f) {
                 v_color = var_9986d9d6[index];
                 var_2cd4e005 = get_array(var_83aaaa47, "<unknown string>");
                 foreach (s_objective in var_2cd4e005) {

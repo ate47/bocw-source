@@ -6,17 +6,17 @@
 #using scripts\core_common\clientfield_shared.csc;
 #using scripts\core_common\callbacks_shared.csc;
 
-#namespace namespace_d6fa67f1;
+#namespace radiation;
 
-// Namespace namespace_d6fa67f1/namespace_d6fa67f1
+// Namespace radiation/radiation
 // Params 0, eflags: 0x5
 // Checksum 0x286dc2ce, Offset: 0x110
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_3c57623e9dc82608", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"radiation", &function_70a657d8, undefined, undefined, undefined);
 }
 
-// Namespace namespace_d6fa67f1/namespace_d6fa67f1
+// Namespace radiation/radiation
 // Params 0, eflags: 0x6 linked
 // Checksum 0x24b23578, Offset: 0x158
 // Size: 0xd4
@@ -33,17 +33,17 @@ function private function_70a657d8() {
     callback::on_end_game(&on_end_game);
 }
 
-// Namespace namespace_d6fa67f1/namespace_d6fa67f1
+// Namespace radiation/radiation
 // Params 1, eflags: 0x2 linked
 // Checksum 0x304b4674, Offset: 0x238
 // Size: 0x5e
 function function_f45ee99d(localclientnum) {
     level.var_96929d7f[localclientnum] = spawnstruct();
     level.var_96929d7f[localclientnum].var_32adf91d = 0;
-    level.var_96929d7f[localclientnum].var_970406cf = [];
+    level.var_96929d7f[localclientnum].sickness = [];
 }
 
-// Namespace namespace_d6fa67f1/namespace_d6fa67f1
+// Namespace radiation/radiation
 // Params 1, eflags: 0x2 linked
 // Checksum 0xb754e2ed, Offset: 0x2a0
 // Size: 0x24
@@ -51,7 +51,7 @@ function on_end_game(*localclientnum) {
     forceambientroom("");
 }
 
-// Namespace namespace_d6fa67f1/namespace_d6fa67f1
+// Namespace radiation/radiation
 // Params 7, eflags: 0x6 linked
 // Checksum 0xd3ab738d, Offset: 0x2d0
 // Size: 0x290
@@ -74,7 +74,7 @@ function private function_c76638c(localclientnum, *oldval, newval, *bnewent, *bi
         if (!isdefined(self)) {
             return;
         }
-        if (namespace_1332002f::function_21b773d5(fieldname)) {
+        if (squad_spawn::function_21b773d5(fieldname)) {
             return;
         }
         if (!isarray(level.var_e7fd1b8f[fieldname])) {

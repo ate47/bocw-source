@@ -1,0 +1,54 @@
+{
+    "var_50c23eb3": [
+        {
+            "track": "#musictrack_theme_multiplayer"
+        },
+        {
+            "track": "#battletrack_bo1_pentagon"
+        },
+        {
+            "track": "#battletrack_bo2_adrenaline"
+        },
+        {
+            "track": "#battletrack_bo3_ignition"
+        },
+        {
+            "track": "#battletrack_bo3_filter"
+        },
+        {
+            "track": "#battletrack_bo4_inferno"
+        },
+        {
+            "track": "#battletrack_cdl_theme"
+        },
+        {
+            "track": "#musictrack_mp_nuketown_ee"
+        },
+        {
+            "track": "#musictrack_mp_underscore_1"
+        },
+        {
+            "track": "#musictrack_mp_underscore_2"
+        },
+        {
+            "track": "#musictrack_mp_underscore_3"
+        },
+        {
+            "track": "#musictrack_mp_underscore_4"
+        },
+        {
+            "track": "#musictrack_theme_multiplayer_blops1"
+        },
+        {
+            "track": "#musictrack_theme_multiplayer_blops2"
+        },
+        {
+            "track": "#musictrack_theme_multiplayer_blops3"
+        },
+        {
+            "track": "#musictrack_theme_multiplayer_blops4"
+        }
+    ],
+    "name": "mp_musicplayer_playlist",
+    "title": "#hash_43d39cfc23fae91a"
+}

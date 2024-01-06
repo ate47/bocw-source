@@ -264,7 +264,7 @@ function function_dc263531(var_fd4bffcb, forcestop) {
     if (!isdefined(self.var_8e45c356)) {
         self.var_8e45c356 = [];
     }
-    foreach (postfx in self.var_8e45c356) {
+    foreach (key, postfx in self.var_8e45c356) {
         if (postfx.exiting) {
             continue;
         }

@@ -110,7 +110,7 @@ function event_handler[level_init] main(*eventstruct) {
     level.var_dfee7fc2 = #"hash_684819b1dcad20f5";
     level.var_775a83a7 = 1;
     namespace_1fd59e39::function_1376ec37(undefined, undefined, "tunnel_boundary_damage_volume");
-    namespace_4abf1500::function_88645994(#"hash_4eeb1c7447479151", #"hash_5efbc7b901eeb16c", undefined, undefined, #"hash_62c9a6dffc5a51c2", #"hash_3633d4db6bcd078b", #"hash_7a489b9c567a2477", undefined, #"hash_76c2fd67ac34ad50");
+    namespace_4abf1500::function_88645994(#"hash_4eeb1c7447479151", #"hash_5efbc7b901eeb16c", undefined, undefined, #"hash_62c9a6dffc5a51c2", #"zmintel_list_zm_platinum_omega_intel_all", #"zmintel_list_zm_platinum_darkaether_intel_all", undefined, #"zmintel_list_zm_platinum_requiem_intel_all");
     zm::init_fx();
     namespace_b574e135::init();
     namespace_bce659ef::init();
@@ -705,7 +705,7 @@ function function_6f6cc58(e_player) {
                 return 1;
             }
             return 0;
-        } else if (isplayer(e_player) && self.archetype === #"hash_3d92e2c7bea1eee2") {
+        } else if (isplayer(e_player) && self.archetype === #"mechz") {
             if (!is_true(self.var_7c4488fd)) {
                 var_1ea000f7 = [2:"zone_american_sector_left_building", 1:"zone_american_sector_right_building", 0:"zone_american_sector_street"];
                 zone_name = self zm_utility::get_current_zone();
@@ -799,9 +799,9 @@ function function_ddc13fd6() {
 // Checksum 0x40dd9629, Offset: 0x52a0
 // Size: 0x84
 function private function_859fa480(n_round) {
-    zm_round_spawning::function_306ce518(#"hash_3d92e2c7bea1eee2", &function_5e8a178a);
+    zm_round_spawning::function_306ce518(#"mechz", &function_5e8a178a);
     level.var_1db9948 = n_round;
-    zm_round_spawning::function_cc103b38(#"hash_3d92e2c7bea1eee2", n_round);
+    zm_round_spawning::function_cc103b38(#"mechz", n_round);
     level.var_e333bf92 = &function_65c98960;
 }
 
@@ -822,10 +822,10 @@ function private function_32401229(n_round) {
 // Checksum 0xb44bc5a, Offset: 0x53f0
 // Size: 0xb4
 function private function_9e6f187d(n_round) {
-    zm_round_spawning::function_2876740e(#"hash_9f6bc1960ff4912", &function_d4f11e3c);
-    zm_round_spawning::function_306ce518(#"hash_9f6bc1960ff4912", &function_f1355240);
+    zm_round_spawning::function_2876740e(#"raz", &function_d4f11e3c);
+    zm_round_spawning::function_306ce518(#"raz", &function_f1355240);
     level.var_36678664 = n_round;
-    zm_round_spawning::function_376e51ef(#"hash_9f6bc1960ff4912", n_round);
+    zm_round_spawning::function_376e51ef(#"raz", n_round);
     level.var_2e33420c = &function_218424b3;
 }
 
@@ -1453,14 +1453,14 @@ function function_b9dd887f(var_2fb6fe4e, var_be18ffe8) {
 function function_a67ccd4e(a_ents, var_4a8bf1a3 = 1) {
     if (var_4a8bf1a3) {
         for (i = 1; i < 9; i++) {
-            var_a74f3560 = a_ents["Vehicle " + i];
-            var_a74f3560 setforcenocull();
+            train = a_ents["Vehicle " + i];
+            train setforcenocull();
             if (!isdefined(level.var_8790bd5c)) {
                 level.var_8790bd5c = [];
             } else if (!isarray(level.var_8790bd5c)) {
                 level.var_8790bd5c = array(level.var_8790bd5c);
             }
-            level.var_8790bd5c[level.var_8790bd5c.size] = var_a74f3560;
+            level.var_8790bd5c[level.var_8790bd5c.size] = train;
         }
         /#
             assert(level.var_dd757193.size == level.var_8790bd5c.size, "zone_electronics_store");
@@ -1477,14 +1477,14 @@ function function_a67ccd4e(a_ents, var_4a8bf1a3 = 1) {
         }
     } else {
         for (i = 1; i < 9; i++) {
-            var_a74f3560 = a_ents["Vehicle " + i];
-            var_a74f3560 setforcenocull();
+            train = a_ents["Vehicle " + i];
+            train setforcenocull();
             if (!isdefined(level.var_43aa8d26)) {
                 level.var_43aa8d26 = [];
             } else if (!isarray(level.var_43aa8d26)) {
                 level.var_43aa8d26 = array(level.var_43aa8d26);
             }
-            level.var_43aa8d26[level.var_43aa8d26.size] = var_a74f3560;
+            level.var_43aa8d26[level.var_43aa8d26.size] = train;
         }
         /#
             assert(level.var_4075a99d.size == level.var_43aa8d26.size, "zone_american_sector_right_building");
@@ -1539,7 +1539,7 @@ function function_5e09fe1(var_4a8bf1a3 = 1, var_d15e3ab = 1) {
         foreach (zombie in a_zombies) {
             if (isdefined(zombie) && zombie.health > 0) {
                 if (zombie istouching(self)) {
-                    if (zombie.archetype === #"hash_3d92e2c7bea1eee2") {
+                    if (zombie.archetype === #"mechz") {
                         zombie dodamage(zombie.maxhealth * 0.1, self.origin, self, self, 0, "MOD_CRUSH");
                         if (zombie.health > 0) {
                             locs = function_65c98960();
@@ -1982,7 +1982,7 @@ function function_f1355240(*n_round_number) {
     }
     while (1) {
         level waittill(#"hash_5d3012139f083ccb");
-        if (zm_round_spawning::function_d0db51fc(#"hash_9f6bc1960ff4912")) {
+        if (zm_round_spawning::function_d0db51fc(#"raz")) {
             level.var_2f45d799++;
             n_player_count = zm_utility::function_a2541519(getplayers().size);
             if (n_player_count == 1) {
@@ -2005,7 +2005,7 @@ function function_5e8a178a(*n_round_number) {
     }
     while (1) {
         level waittill(#"hash_5d3012139f083ccb");
-        if (zm_round_spawning::function_d0db51fc(#"hash_3d92e2c7bea1eee2")) {
+        if (zm_round_spawning::function_d0db51fc(#"mechz")) {
             level.var_ea1e9b1e++;
             if (level.var_ea1e9b1e == 1 || level.var_ea1e9b1e == 2) {
                 level.var_1db9948 = level.round_number + 6;
@@ -2853,7 +2853,7 @@ function function_e6b581e7(var_9ff20235) {
         self thread function_29387491(#"hash_7f98b3dd3cce95aa");
         str_item_name = function_ff28876a(3);
         self function_923efc48(str_item_name, 3);
-        self give_item(#"hash_7bc70addda19ca00");
+        self give_item(#"armor_item_lv3_t9_sr");
     #/
 }
 

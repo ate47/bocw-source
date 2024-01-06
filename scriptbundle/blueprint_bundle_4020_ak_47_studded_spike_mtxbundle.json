@@ -1,0 +1,35 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#ar_damage_bp_penumbra_mtxitem",
+            "itemid": "19679880"
+        },
+        {
+            "var_4a4bc969": "#melee_bat_bp_penumbra_mtxitem",
+            "itemid": "21018068"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_bat_nails_mtxitem",
+            "itemid": "25804980"
+        },
+        {
+            "var_4a4bc969": "#execution_063_mtxitem",
+            "itemid": "20589050"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_s4_skulldeathsquad_mtxitem",
+            "itemid": "20327845"
+        }
+    ],
+    "itemname": "#hash_398169fca4612eda",
+    "var_375a1747": "#hash_756389cc02dc6a24",
+    "name": "blueprint_bundle_4020_ak_47_studded_spike_mtxbundle",
+    "var_a788fada": "#hash_6b09f65ae1c36b6f",
+    "var_22f91505": "#hash_4bb08a0f0701b667",
+    "var_566825be": "#hash_622f0ac6a7c4b077",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_1fc674552b9f35c3",
+    "var_db3e02ab": 2000,
+    "itemid": "20460056"
+}

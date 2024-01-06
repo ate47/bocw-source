@@ -1070,7 +1070,7 @@ function function_d48d77f2(s_point) {
     self clientfield::set("" + #"hash_1a529bb0de6717d5", 1);
     a_players = function_a1ef346b();
     foreach (player in a_players) {
-        player namespace_2d471fab::function_24fbd61e();
+        player chopper_gunner::function_24fbd61e();
     }
     level.var_fe6ca5e8 = 1;
     wait(7);
@@ -1416,13 +1416,13 @@ function function_619fdf5f() {
     } else if (!isarray(level.var_3a2ad19b)) {
         level.var_3a2ad19b = array(level.var_3a2ad19b);
     }
-    level.var_3a2ad19b[level.var_3a2ad19b.size] = #"hash_6a952597b6a662fb";
+    level.var_3a2ad19b[level.var_3a2ad19b.size] = #"item_zmquest_sr_ltm_food_burger";
     level flag::wait_till(#"start_zombie_round_logic");
-    level.var_91f71aa[#"hash_6a952597b6a662fb"] = &function_b087107d;
+    level.var_91f71aa[#"item_zmquest_sr_ltm_food_burger"] = &function_b087107d;
     callback::on_item_pickup(&function_e92a9ffd);
     var_4db66606 = struct::get_array("s_hamburger", "targetname");
     foreach (s_pos in var_4db66606) {
-        point = function_4ba8fde(#"hash_6a952597b6a662fb");
+        point = function_4ba8fde(#"item_zmquest_sr_ltm_food_burger");
         if (isdefined(point)) {
             var_4f434a9b = item_drop::drop_item(0, undefined, 1, 0, point.id, s_pos.origin, s_pos.angles, 0);
             var_4f434a9b.var_dd21aec2.var_4f434a9b = 1 & 16;
@@ -1777,7 +1777,7 @@ function function_b20e6cff() {
     level endon(#"end_game", #"hash_405fb18663eebcb4");
     wait(120);
     var_53313495 = struct::get("s_reward_chest", "targetname");
-    namespace_58949729::function_4ec9fc99(var_53313495, "large_chest_level_5", #"p9_fxanim_zm_gp_chest_01_lrg_low_xmodel", #"hash_473df02427c669ff", 3);
+    namespace_58949729::function_4ec9fc99(var_53313495, "large_chest_level_5", #"p9_fxanim_zm_gp_chest_01_lrg_low_xmodel", #"p9_fxanim_zm_gp_chest_01_lrg_bundle", 3);
     self thread function_7c6752c8();
     var_53313495 thread util::delay(30, undefined, &function_3076a002);
     level notify(#"cleanup_objective_bar");
@@ -1894,7 +1894,7 @@ function function_aa9da0e() {
             waitframe(1);
             continue;
         }
-        point = function_4ba8fde(#"hash_6a952597b6a662fb");
+        point = function_4ba8fde(#"item_zmquest_sr_ltm_food_burger");
         var_4f434a9b = item_drop::drop_item(0, undefined, 1, 0, point.id, self gettagorigin("tag_mouth"), self.angles, 0);
         var_4f434a9b.var_dd21aec2.var_4f434a9b = 1 & 16;
         var_4f434a9b.var_a6762160.var_fa988b4b = 30;
@@ -2017,7 +2017,7 @@ function function_e92a9ffd(params) {
     if (isplayer(self)) {
         if (isdefined(item.var_a6762160.name)) {
             switch (item.var_a6762160.name) {
-            case #"hash_6a952597b6a662fb":
+            case #"item_zmquest_sr_ltm_food_burger":
                 self thread function_965e8e5e(200);
                 break;
             case #"hash_2aeb24fda8b1b4f2":

@@ -1,0 +1,19 @@
+{
+    "var_50c23eb3": [
+        {
+            "track": "#battletrack_bo1_pentagon"
+        },
+        {
+            "track": "#battletrack_bo1_rooftops"
+        },
+        {
+            "track": "#battletrack_bo1_115"
+        },
+        {
+            "track": "#battletrack_bo1_damned"
+        }
+    ],
+    "name": "battletrack_pack_season1_blackopsmixtape1",
+    "var_6855e4be": "#battletrack_pack_season1_blackopsmixtape1_mtxitem",
+    "title": "#hash_56b79d59da1d5801"
+}

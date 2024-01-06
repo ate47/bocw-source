@@ -1,0 +1,32 @@
+{
+    "talents": [
+        {
+            "talent": "#hash_15e00b577a530dc6"
+        }
+    ],
+    "var_a6616b9c": 1,
+    "amount": 1,
+    "var_fa988b4b": 180,
+    "description": "#hash_3389da19535af9a",
+    "var_922067c4": "scriptbundle",
+    "model": "#hash_5cea54377b2bba81",
+    "var_16e34ef4": 64,
+    "var_e9898330": "pingitemgeneric",
+    "var_ac75b59f": -1,
+    "type": "itemspawnentry",
+    "hintstring": "#hash_371a42af1f0a767",
+    "var_4a1a4613": "armor_swap",
+    "name": "perk_gungho_t9_item",
+    "displayname": "#hash_371a42af1f0a767",
+    "var_9e569978": 1,
+    "stackcount": 1,
+    "icon": "#hash_7b5cc9c91a014d11",
+    "modelscale": 1,
+    "rarity": "None",
+    "equipsound": "uin_wz_perk_deadsilence",
+    "var_97c5ead1": 1,
+    "handler": "#hash_57df81951e3bc37c",
+    "var_3af59a99": 1,
+    "pickupicon": "#hash_7b5cc9c91a014d11",
+    "itemtype": "perk_tier_3"
+}

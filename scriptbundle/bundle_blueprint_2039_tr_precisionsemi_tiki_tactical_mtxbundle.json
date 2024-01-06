@@ -1,0 +1,32 @@
+{
+    "var_712c1974": [
+        {
+            "var_4a4bc969": "#tr_precisionsemi_bp_tiki_mtxitem",
+            "itemid": "32227039"
+        },
+        {
+            "var_4a4bc969": "#t9_charm_tiki_totem_mtxitem",
+            "itemid": "24704421"
+        },
+        {
+            "var_4a4bc969": "#callingcards_tiki_tiki_mtxitem",
+            "itemid": "19539554"
+        },
+        {
+            "var_4a4bc969": "#paintjob_stickers_treebranch_12_mtxitem",
+            "itemid": "19789941"
+        }
+    ],
+    "itemname": "#hash_4ab9e8ea3e889868",
+    "var_375a1747": "#hash_634ec77bd5620436",
+    "var_579fd6c3": 12,
+    "name": "bundle_blueprint_2039_tr_precisionsemi_tiki_tactical_mtxbundle",
+    "var_a788fada": "#hash_595b5828d220a73b",
+    "var_22f91505": "#hash_6414148adc134af7",
+    "var_566825be": "#hash_30a9d7fc85b031e3",
+    "var_4af381c": 2000,
+    "category": "#bundle",
+    "var_f3c937a9": "#hash_7d567d66566aa713",
+    "var_db3e02ab": 2000,
+    "itemid": "19400326"
+}

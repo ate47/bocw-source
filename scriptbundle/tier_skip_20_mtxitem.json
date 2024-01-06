@@ -1,0 +1,73 @@
+{
+    "var_e1f3b51": [
+        {
+            "var_8bd0af73": "#mtx_season_6_premium_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#mtx_season_5_premium_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#mtx_season_4_premium_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#mtx_season_3_premium_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#mtx_season_2_premium_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#mtx_season_1_premium_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#mtx_season_0_premium_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#season_5_battle_pass_promo_operator_bundle_mtxbundle"
+        },
+        {
+            "var_8bd0af73": "#season_6_battle_pass_promo_operator_bundle_mtxbundle"
+        }
+    ],
+    "var_941096a8": [
+        {
+            "var_386af035": "#sony_landseaair_battlepass_pack_mtxentitlement"
+        },
+        {
+            "var_386af035": "#msft_ultimate_igs_edition_items_mtxentitlement"
+        },
+        {
+            "var_386af035": "#msft_ultimate_edition_unlock_items_mtxentitlement"
+        },
+        {
+            "var_386af035": "#msft_ultimate_edition_items_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_winback_20_tiers_sy_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_winback_20_tiers_pc_mtxentitlement"
+        },
+        {
+            "var_386af035": "#firstparty_winback_20_tiers_ms_mtxentitlement"
+        },
+        {
+            "var_386af035": "#bnet_ultimate_edition_consumables_mtxentitlement"
+        },
+        {
+            "var_386af035": "#atvi_tier_skip_20_mtxentitlement"
+        }
+    ],
+    "itemname": "#hash_184fb5605ff054e0",
+    "var_e9d9a8d0": 1,
+    "var_5173e89a": "#hash_1d4a2b8c8738c41b",
+    "var_728341a": 1,
+    "quantity": 20,
+    "var_375a1747": "#hash_723cb9895d45a32c",
+    "var_46300498": 1,
+    "name": "tier_skip_20_mtxitem",
+    "var_c89f0785": "#hash_2e012ae21b396939",
+    "category": "#tier_skip",
+    "var_db3e02ab": 2000,
+    "var_700702e5": 2000,
+    "rarity": 4
+}
