@@ -19,6 +19,6 @@ function private autoexec __init__system__() {
 // Checksum 0x841d7cf3, Offset: 0x100
 // Size: 0x6c
 function private function_70a657d8() {
-    namespace_5b1144e::function_5ae4a10c(array(#"hash_4b3e0bd11cb399ef", #"p8_wz_snowball_pile_sml"), "snowball_pile", #"hash_34daeba184b6d103", undefined, #"hash_2236529fd654a6b9");
+    namespace_5b1144e::function_5ae4a10c(array(#"p8_wz_snowball_pile", #"p8_wz_snowball_pile_sml"), "snowball_pile", #"hash_34daeba184b6d103", undefined, #"hash_2236529fd654a6b9");
 }
 

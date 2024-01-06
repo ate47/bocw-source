@@ -643,9 +643,9 @@ function function_7695efd4(player, index, var_d17eb4df) {
     }
     weapon = getweapon(weapon_name);
     rootweapon = weapon.rootweapon;
-    var_5067ed1f = zm_weapons::function_d4f870ec(rarity);
-    if ((var_a8bccf69 || var_5067ed1f !== #"white" || !var_b3546c09) && (isdefined(level.var_c1f1b29a[rootweapon.name]) && isdefined(level.var_c1f1b29a[rootweapon.name][var_5067ed1f]) || isdefined(level.var_ec04a8a4[rootweapon.name]) && isdefined(level.var_ec04a8a4[rootweapon.name][var_5067ed1f]))) {
-        if (isdefined(var_a8bccf69) && var_5067ed1f === #"white" && var_b3546c09) {
+    weapon_rarity = zm_weapons::function_d4f870ec(rarity);
+    if ((var_a8bccf69 || weapon_rarity !== #"white" || !var_b3546c09) && (isdefined(level.var_c1f1b29a[rootweapon.name]) && isdefined(level.var_c1f1b29a[rootweapon.name][weapon_rarity]) || isdefined(level.var_ec04a8a4[rootweapon.name]) && isdefined(level.var_ec04a8a4[rootweapon.name][weapon_rarity]))) {
+        if (isdefined(var_a8bccf69) && weapon_rarity === #"white" && var_b3546c09) {
             if (zm_weapons::is_weapon_upgraded(rootweapon)) {
                 if (weapon.name == #"hash_7a910d220f3767fa") {
                     var_8114384d = "knife_loadout" + "_t9_upgraded" + "_item_sr";
@@ -654,9 +654,9 @@ function function_7695efd4(player, index, var_d17eb4df) {
                 }
             }
         } else if (isdefined(var_a8bccf69) && var_a8bccf69 > 0 && zm_weapons::is_weapon_upgraded(weapon)) {
-            var_8114384d = level.var_c1f1b29a[rootweapon.name][var_5067ed1f];
+            var_8114384d = level.var_c1f1b29a[rootweapon.name][weapon_rarity];
         } else {
-            var_8114384d = level.var_ec04a8a4[rootweapon.name][var_5067ed1f];
+            var_8114384d = level.var_ec04a8a4[rootweapon.name][weapon_rarity];
         }
         var_f259d9cd = isdefined(var_8114384d) ? var_8114384d : weapon;
     } else {

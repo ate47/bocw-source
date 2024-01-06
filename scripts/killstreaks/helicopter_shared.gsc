@@ -2361,10 +2361,10 @@ function heli_protect(startnode, protectdest, hardpointtype, heli_team) {
         if (isdefined(newdest)) {
             self function_86012f82(newdest.origin, 1);
             waitresult = undefined;
-            waitresult = self waittilltimeout(var_520e3459, #"abort_goal", #"locking on", #"locking on hacking", #"hash_37939023bf10813e");
+            waitresult = self waittilltimeout(var_520e3459, #"abort_goal", #"locking on", #"locking on hacking", #"acquired_heli_target");
         } else {
             waitresult = undefined;
-            waitresult = self waittilltimeout(var_520e3459, #"abort_goal", #"locking on", #"locking on hacking", #"hash_37939023bf10813e");
+            waitresult = self waittilltimeout(var_520e3459, #"abort_goal", #"locking on", #"locking on hacking", #"acquired_heli_target");
         }
         if (waitresult._notify === "locking on" || waitresult._notify === "locking on" || self is_targeted()) {
             self setneargoalnotifydist(60);
@@ -2567,7 +2567,7 @@ function function_83430362(*hardpointtype) {
                         break;
                     }
                     self.var_a6642d42 = 1;
-                    self notify(#"hash_37939023bf10813e");
+                    self notify(#"acquired_heli_target");
                     if (isdefined(var_5052ae94[0])) {
                         turret::function_38841344(self.var_8475558b, var_5052ae94[0]);
                     } else if (isdefined(var_5052ae94[1])) {

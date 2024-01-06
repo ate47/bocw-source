@@ -44,7 +44,7 @@ function function_9469a0c4() {
     level.var_114b6e35 = array::random([2:"grey", 1:"carver", 0:"strauss"]);
     wait(3.5);
     level function_d137d6a0(#"hash_1b7c7a29a85242f0", #"hash_1b7c6a29a85227c0", #"hash_1b7c6e29a8522e8c");
-    level flag::wait_till(#"hash_443b6a1ea0c4b52b");
+    level flag::wait_till(#"intro_scene_done");
     wait(1);
     level zm_vo::function_7622cb70(array::random([3:#"hash_6de3a2c3b8452ea", 2:#"hash_6de352c3b844a6b", 1:#"hash_6de342c3b8448b8", 0:#"hash_6de372c3b844dd1"]));
     level flag::set(#"match_start_vo_done");
@@ -70,7 +70,7 @@ function function_b922d5d7() {
 // Size: 0x5c
 function function_b65c4342() {
     level endon(#"end_game");
-    level flag::wait_till(#"hash_443b6a1ea0c4b52b");
+    level flag::wait_till(#"intro_scene_done");
     level thread namespace_4abf1500::function_d0e6ff7a("zmintel_tungsten_maxis_audiolog_2", undefined, 250);
 }
 
@@ -409,7 +409,7 @@ function function_d137d6a0(var_e0c6386f, var_40feefce, var_c4ad7aa9) {
     case #"strauss":
         self zm_vo::function_7622cb70(var_e0c6386f);
         break;
-    case #"hash_7ab638516c2bc0a6":
+    case #"carver":
         self zm_vo::function_7622cb70(var_40feefce);
         break;
     case #"grey":

@@ -22,7 +22,7 @@ function private autoexec __init__system__() {
 function private function_70a657d8(*localclientnum) {
     vehicle::add_vehicletype_callback("helicopter_heavy", &function_8220feb0);
     clientfield::register("toplayer", "hind_gunner_postfx_active", 1, 1, "int", &function_44ad5e3e, 0, 1);
-    clientfield::register("vehicle", "hind_compass_icon", 1, 2, "int", &function_ca913af1, 0, 1);
+    clientfield::register("vehicle", "hind_compass_icon", 1, 2, "int", &hind_compass_icon, 0, 1);
 }
 
 // Namespace player_heavy_helicopter/player_heavy_helicopter
@@ -51,7 +51,7 @@ function function_44ad5e3e(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Params 7, eflags: 0x0
 // Checksum 0xc9933e5a, Offset: 0x330
 // Size: 0x112
-function function_ca913af1(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function hind_compass_icon(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (!isdefined(self.scriptvehicletype) || self.scriptvehicletype != "helicopter_heavy") {
         return;
     }

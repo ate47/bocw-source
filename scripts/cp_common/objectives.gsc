@@ -99,7 +99,7 @@ function set(str_objective, a_targets, var_8c7ec5ce, var_4cfa0710 = str_objectiv
     }
     player = getplayers()[0];
     if (isdefined(player) && show_waypoint) {
-        player thread namespace_96850e69::function_2fa83dfd(0);
+        player thread namespace_96850e69::show_objectives(0);
     }
 }
 

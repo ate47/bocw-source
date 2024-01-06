@@ -26,7 +26,7 @@ function function_890b3889(killstreaktype, killstreakweapon, maxrange, var_f6825
 // Checksum 0x3b9cf557, Offset: 0x218
 // Size: 0x88
 function private function_4b1634b2(*killstreakweapon) {
-    self endon(#"death", #"disconnect", #"cancel_selection", #"hash_7484aa34e8fa9710");
+    self endon(#"death", #"disconnect", #"cancel_selection", #"lockin_selection");
     while (1) {
         if (!self killstreakrules::function_71e94a3b()) {
             self notify(#"hash_24520f447c149637");
@@ -67,7 +67,7 @@ function private function_a2eec6c2(killstreaktype, killstreakweapon) {
         }
     } else if (waitresult._notify === "weapon_fired" && waitresult.weapon === killstreakweapon) {
         if (function_469dabd0(killstreaktype)) {
-            self notify(#"hash_7484aa34e8fa9710");
+            self notify(#"lockin_selection");
         } else {
             w_weapon = waitresult.weapon;
             self setweaponammoclip(w_weapon, w_weapon.clipsize);
@@ -95,7 +95,7 @@ function private function_a2eec6c2(killstreaktype, killstreakweapon) {
 function function_be6de952(killstreaktype, var_94fe38b6) {
     self endon(#"disconnect");
     waitresult = undefined;
-    waitresult = self waittill(#"hash_7484aa34e8fa9710", #"cancel_selection");
+    waitresult = self waittill(#"lockin_selection", #"cancel_selection");
     if (waitresult._notify === "lockin_selection") {
         wait(0.1);
         e_target = self.mdl_target[killstreaktype];
@@ -119,7 +119,7 @@ function private function_f3305d7f(killstreaktype, var_c7502f87, var_7551540f) {
     self notify(var_17b7891d);
     self endon(var_17b7891d);
     waitresult = undefined;
-    waitresult = self waittill(#"disconnect", #"cancel_selection", #"hash_7484aa34e8fa9710");
+    waitresult = self waittill(#"disconnect", #"cancel_selection", #"lockin_selection");
     if (waitresult._notify === "lockin_selection") {
         self waittill(#"disconnect", var_7551540f);
     }
@@ -149,7 +149,7 @@ function private function_b66d4fac(killstreaktype, maxrange, var_f6825ff2, var_c
     var_17b7891d = "5dd623acf9935857" + killstreaktype;
     self notify(var_17b7891d);
     self endon(var_17b7891d);
-    self endon(#"disconnect", #"cancel_selection", #"hash_7484aa34e8fa9710");
+    self endon(#"disconnect", #"cancel_selection", #"lockin_selection");
     var_4ad3bc13 = vectorscale((0, 0, 1), 8);
     if (!isdefined(self.mdl_target[killstreaktype])) {
         self.mdl_target[killstreaktype] = util::spawn_model("tag_origin", self.origin, vectorscale((1, 0, 0), 270));

@@ -31,7 +31,7 @@ function init() {
 // Checksum 0x55af9d2e, Offset: 0x160
 // Size: 0x16
 function main() {
-    level.var_8cff5775.var_584a046 = [];
+    level.doa.var_584a046 = [];
 }
 
 // Namespace namespace_98036e8c/namespace_a98303de
@@ -44,7 +44,7 @@ function function_f5114543() {
     self thread namespace_268747c0::function_978c05b5();
     result = undefined;
     result = self waittill(#"hash_3e251384a5400dce");
-    arrayremovevalue(level.var_8cff5775.var_584a046, self);
+    arrayremovevalue(level.doa.var_584a046, self);
     if (isdefined(self.script_model)) {
         self.script_model delete();
         self.script_model = undefined;
@@ -96,10 +96,10 @@ function function_2c3d65c4(platform) {
 // Checksum 0xfae48954, Offset: 0x500
 // Size: 0xf0
 function function_1ba8281d() {
-    if (isdefined(level.var_8cff5775.var_a77e6349)) {
-        platforms = [[ level.var_8cff5775.var_a77e6349 ]]->function_87f950c1("platform");
+    if (isdefined(level.doa.var_a77e6349)) {
+        platforms = [[ level.doa.var_a77e6349 ]]->function_87f950c1("platform");
     } else {
-        platforms = [[ level.var_8cff5775.var_39e3fa99 ]]->function_242886d5("platform");
+        platforms = [[ level.doa.var_39e3fa99 ]]->function_242886d5("platform");
     }
     foreach (platform in platforms) {
         function_2c3d65c4(platform);

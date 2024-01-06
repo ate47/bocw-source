@@ -59,7 +59,7 @@ function function_124c1a34(player, model, note) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x3947973e, Offset: 0x3f8
 // Size: 0x228
-function function_a8f1c887(model = "zombietron_sawblade") {
+function sawbladeupdate(model = "zombietron_sawblade") {
     note = namespace_ec06fe4a::function_7fcca25d("end_sawblad_pickup");
     self endon(note);
     if (isplayer(self)) {
@@ -67,8 +67,8 @@ function function_a8f1c887(model = "zombietron_sawblade") {
     }
     waitframe(1);
     self endon(#"hash_5c1fd96dc1cc50e7");
-    if (!isdefined(self.var_8cff5775.var_1739bd8e)) {
-        self.var_8cff5775.var_1739bd8e = [];
+    if (!isdefined(self.doa.var_1739bd8e)) {
+        self.doa.var_1739bd8e = [];
     }
     org = namespace_ec06fe4a::function_e22ae9b3(self.origin, "tag_origin");
     if (!isdefined(org)) {
@@ -77,7 +77,7 @@ function function_a8f1c887(model = "zombietron_sawblade") {
     org.targetname.org = "sawbladeUpdate";
     org.angles.org = (0, randomint(180), 0);
     org enablelinkto();
-    self.var_8cff5775.var_1739bd8e[self.var_8cff5775.var_1739bd8e.size] = org;
+    self.doa.var_1739bd8e[self.doa.var_1739bd8e.size] = org;
     org linkto(self, undefined, vectorscale((0, 0, 1), 32));
     self thread function_40fc311d(org, note);
     self thread function_20139eee(org, note);
@@ -173,7 +173,7 @@ function private function_20139eee(org, var_58be1fc5) {
         org.blade delete();
     }
     if (isdefined(self)) {
-        arrayremovevalue(self.var_8cff5775.var_1739bd8e, org);
+        arrayremovevalue(self.doa.var_1739bd8e, org);
     }
     org delete();
 }

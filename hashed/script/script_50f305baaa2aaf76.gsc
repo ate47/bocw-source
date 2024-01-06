@@ -11,15 +11,15 @@
 
 #namespace trophy_system;
 
-// Namespace trophy_system/namespace_7bc467c
+// Namespace trophy_system/trophy_system_spy
 // Params 0, eflags: 0x5
 // Checksum 0x27eae31c, Offset: 0x180
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_355caaa1e2f55848", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"trophy_system_spy", &function_70a657d8, undefined, undefined, undefined);
 }
 
-// Namespace trophy_system/namespace_7bc467c
+// Namespace trophy_system/trophy_system_spy
 // Params 0, eflags: 0x6 linked
 // Checksum 0xf063e7b8, Offset: 0x1c8
 // Size: 0x1a4
@@ -38,7 +38,7 @@ function private function_70a657d8() {
     function_720ddf7f(&function_ccfcde75);
 }
 
-// Namespace trophy_system/namespace_7bc467c
+// Namespace trophy_system/trophy_system_spy
 // Params 2, eflags: 0x2 linked
 // Checksum 0x4d196d8d, Offset: 0x378
 // Size: 0x90
@@ -50,7 +50,7 @@ function function_ccfcde75(trophy, grenade) {
     }
 }
 
-// Namespace trophy_system/namespace_7bc467c
+// Namespace trophy_system/trophy_system_spy
 // Params 1, eflags: 0x2 linked
 // Checksum 0x5d632610, Offset: 0x410
 // Size: 0x132
@@ -73,7 +73,7 @@ function createtrophysystemwatcher(watcher) {
     watcher.ontimeout.watcher = &ontrophysystemsmashed;
 }
 
-// Namespace trophy_system/namespace_7bc467c
+// Namespace trophy_system/trophy_system_spy
 // Params 2, eflags: 0x2 linked
 // Checksum 0xa576433e, Offset: 0x550
 // Size: 0x214

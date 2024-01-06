@@ -140,7 +140,7 @@ function private function_5bb13b48(player) {
             }
         } else {
             player iprintlnbold(#"hash_5a11b7ef0cd7e33b");
-            player playsoundtoplayer(#"hash_7d81a3ace87fb4e2", player);
+            player playsoundtoplayer(#"uin_default_action_denied", player);
         }
     }
     if (!is_true(level.var_aff59367) && self.usecount >= level.var_ad9d03e7) {

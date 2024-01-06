@@ -18,9 +18,9 @@
 #using script_7fc996fe8678852;
 #using scripts\core_common\clientfield_shared.gsc;
 
-#namespace namespace_ac4c291d;
+#namespace world_event_orb_follow;
 
-// Namespace namespace_ac4c291d/namespace_ac4c291d
+// Namespace world_event_orb_follow/world_event_orb_follow
 // Params 0, eflags: 0x5
 // Checksum 0xf62009a9, Offset: 0x1a8
 // Size: 0x44
@@ -28,7 +28,7 @@ function private autoexec __init__system__() {
     system::register(#"hash_1c2f845f6ae4ceb2", &function_70a657d8, undefined, undefined, #"hash_f81b9dea74f0ee");
 }
 
-// Namespace namespace_ac4c291d/namespace_ac4c291d
+// Namespace world_event_orb_follow/world_event_orb_follow
 // Params 0, eflags: 0x0
 // Checksum 0xdcd8a0fc, Offset: 0x1f8
 // Size: 0xe4
@@ -45,7 +45,7 @@ function function_70a657d8() {
     namespace_8b6a9d79::function_b3464a7c(#"hash_64333b9f066daefa", &function_cc775529);
 }
 
-// Namespace namespace_ac4c291d/namespace_ac4c291d
+// Namespace world_event_orb_follow/world_event_orb_follow
 // Params 1, eflags: 0x4
 // Checksum 0x32515215, Offset: 0x2e8
 // Size: 0x10b4
@@ -73,7 +73,7 @@ function private function_cc775529(s_instance) {
     level.instance = s_instance;
     level.instance.var_b7eee573 = var_b7eee573;
     s_instance.n_obj_id.s_instance = zm_utility::function_f5a222a8(#"hash_2d6eaf696a019fa3", var_b7eee573);
-    var_b7eee573.aitype.var_b7eee573 = #"hash_1aff4b71635bda08";
+    var_b7eee573.aitype.var_b7eee573 = #"spawner_bo5_avogadro_sr";
     var_b7eee573.aisettingsbundle.var_b7eee573 = #"zm_avogadro_settings";
     var_3d014474 = function_9ad12bee(var_b7eee573.aitype);
     var_b7eee573.maxhealth.var_b7eee573 = var_b7eee573 zm_ai_utility::function_f7014c3d(var_3d014474);
@@ -224,7 +224,7 @@ function private function_cc775529(s_instance) {
     }
 }
 
-// Namespace namespace_ac4c291d/namespace_ac4c291d
+// Namespace world_event_orb_follow/world_event_orb_follow
 // Params 0, eflags: 0x4
 // Checksum 0xda4b030d, Offset: 0x13a8
 // Size: 0x128
@@ -240,7 +240,7 @@ function private function_7d88cc57() {
     }
 }
 
-// Namespace namespace_ac4c291d/namespace_ac4c291d
+// Namespace world_event_orb_follow/world_event_orb_follow
 // Params 1, eflags: 0x0
 // Checksum 0xa8182376, Offset: 0x14d8
 // Size: 0x34
@@ -250,7 +250,7 @@ function function_b95aa184(*params) {
     }
 }
 
-// Namespace namespace_ac4c291d/namespace_ac4c291d
+// Namespace world_event_orb_follow/world_event_orb_follow
 // Params 1, eflags: 0x0
 // Checksum 0x8ff92a3b, Offset: 0x1518
 // Size: 0x9c

@@ -165,9 +165,9 @@ function function_c8b3217e(instance) {
     while (1) {
         foreach (player in getplayers()) {
             if (distance2dsquared(player.origin, self.origin) <= 250000) {
-                player.var_99582f14.player = 1;
+                player.b_ignore_fow_damage.player = 1;
             } else {
-                player.var_99582f14.player = 0;
+                player.b_ignore_fow_damage.player = 0;
             }
         }
         wait(0.25);
@@ -191,9 +191,9 @@ function function_a7ae3459(instance) {
         foreach (vehicle in a_vehicles) {
             if (isalive(vehicle)) {
                 if (distance2dsquared(vehicle.origin, self.origin) <= 250000) {
-                    vehicle.var_99582f14.vehicle = 1;
+                    vehicle.b_ignore_fow_damage.vehicle = 1;
                 } else {
-                    vehicle.var_99582f14.vehicle = 0;
+                    vehicle.b_ignore_fow_damage.vehicle = 0;
                 }
             }
         }
@@ -276,7 +276,7 @@ function function_2db63909(instance) {
     exploder::exploder("lgtexp_dark_aether_bridge");
     exploder::exploder("lgtexp_dark_aether_bridge_2");
     exploder::exploder("fxexp_mq_phase_amb");
-    level flag::set(#"hash_299b0e75bff5106f");
+    level flag::set(#"in_dark_side");
     foreach (player in getplayers()) {
         player clientfield::set_to_player("" + #"hash_34af381c063f6611", 1);
         player.var_e5f956c5.player = 1;
@@ -289,7 +289,7 @@ function function_2db63909(instance) {
     exploder::stop_exploder("lgtexp_dark_aether_bridge");
     exploder::stop_exploder("lgtexp_dark_aether_bridge_2");
     exploder::stop_exploder("fxexp_mq_phase_amb");
-    level flag::clear(#"hash_299b0e75bff5106f");
+    level flag::clear(#"in_dark_side");
     foreach (player in getplayers()) {
         player.var_e5f956c5 = undefined;
         player.var_41c16555 = undefined;
@@ -325,7 +325,7 @@ function function_2db63909(instance) {
     wait(0.25);
     level notify(#"hash_62901a3385d3e7af");
     foreach (player in getplayers()) {
-        player.var_99582f14.player = 0;
+        player.b_ignore_fow_damage.player = 0;
     }
     level flag::set(#"hash_1558183088c6ccff");
     self playrumbleonentity(#"hash_2d43d9987e4a73a8");
@@ -751,7 +751,7 @@ function function_1b4b0c63(var_b8ca9d7) {
 // Params 0, eflags: 0x0
 // Checksum 0xf2a6da27, Offset: 0x3468
 // Size: 0xec
-function function_8375e4a7() {
+function player_rover_pos() {
     level flag::wait_till("all_players_spawned");
     a_s_pos = struct::get_array("player_rover_pos");
     a_players = getplayers();
@@ -1011,7 +1011,7 @@ function function_978eec63(einflictor, eattacker, idamage, *idflags, smeansofdea
         if (vsurfacenormal === "MOD_MELEE") {
             self playsound(#"hash_1ddeb8af5a217a6e");
         }
-        if (modelindex.model === #"hash_7114998b126157c8") {
+        if (modelindex.model === #"wpn_t9_sr_electric_avogadro_projectile") {
             partname = 60;
         } else if (modelindex.var_6f84b820 === #"hash_72d4f2ad2e333eb4") {
             partname = 100;

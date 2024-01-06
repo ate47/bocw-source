@@ -112,11 +112,11 @@ function function_167fc35(*localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwastimejump) {
         forcestreamxmodel(#"p9_fxp_zm_teleport_tunnel");
         forcestreamxmodel(#"p9_fxp_zm_teleport_tunnel_edge");
-        function_3385d776(#"hash_2f112a3ab3cf120a");
+        function_3385d776(#"zombie/fx9_aether_tear_portal_tunnel_1p");
     } else {
         stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel");
         stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel_edge");
-        function_c22a1ca2(#"hash_2f112a3ab3cf120a");
+        function_c22a1ca2(#"zombie/fx9_aether_tear_portal_tunnel_1p");
     }
 }
 
@@ -182,13 +182,13 @@ function function_c4603212(localclientnum, *oldval, *newval, *bnewent, *binitial
 // Size: 0x15e
 function function_760c94c(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
-        self.var_c2ac99f = util::playfxontag(fieldname, #"hash_6b812867a0d2dde5", self, "tag_origin");
+        self.portal_fx = util::playfxontag(fieldname, #"hash_6b812867a0d2dde5", self, "tag_origin");
         if (!isdefined(self.var_abc21e11)) {
             self playsound(fieldname, #"hash_4a04fd9edb696634");
             self.var_abc21e11 = self playloopsound(#"hash_61bfd6cc3f47194");
         }
     } else if (isdefined(self.var_abc21e11)) {
-        killfx(fieldname, self.var_c2ac99f);
+        killfx(fieldname, self.portal_fx);
         self playsound(fieldname, #"hash_257a16d125ce57ed");
         self stoploopsound(self.var_abc21e11);
         self.var_abc21e11 = undefined;

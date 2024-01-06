@@ -56,7 +56,7 @@ function function_ff7f32ae(*localclientnum, *oldval, newval, *bnewent, *binitial
 function function_910d2164(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump) {
         if (!isdefined(self.var_23e0d95c)) {
-            self.var_23e0d95c = util::playfxontag(fieldname, #"hash_6e639d06fdd098bc", self, "tag_origin");
+            self.var_23e0d95c = util::playfxontag(fieldname, #"sr/fx9_hvt_aether_portal_spawn", self, "tag_origin");
         }
         if (!isdefined(self.var_2095c8d1)) {
             self playsound(fieldname, #"hash_2acf7e3b4d9caf20");
@@ -68,7 +68,7 @@ function function_910d2164(localclientnum, *oldval, newval, *bnewent, *binitials
             self.var_23e0d95c = undefined;
         }
         if (!isdefined(self.var_b55b7d2c)) {
-            self.var_b55b7d2c = util::playfxontag(fieldname, #"hash_1f14417633f91368", self, "tag_origin");
+            self.var_b55b7d2c = util::playfxontag(fieldname, #"sr/fx9_hvt_aether_move_trail", self, "tag_origin");
         }
     } else {
         if (isdefined(self.var_23e0d95c)) {
@@ -81,7 +81,7 @@ function function_910d2164(localclientnum, *oldval, newval, *bnewent, *binitials
             self.var_2095c8d1 = undefined;
         }
         if (isdefined(self.var_b55b7d2c)) {
-            playfx(fieldname, #"hash_19835c3bc870def", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
+            playfx(fieldname, #"sr/fx9_hvt_aether_portal_close", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
             stopfx(fieldname, self.var_b55b7d2c);
             self.var_b55b7d2c = undefined;
         }
@@ -514,7 +514,7 @@ function function_ab076c2e(localclientnum, var_b39864d6) {
 function function_90383e67(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump) {
         if (!isdefined(self.var_f252bba1)) {
-            self.var_f252bba1 = util::playfxontag(fieldname, #"hash_1f14417633f91368", self, "tag_origin");
+            self.var_f252bba1 = util::playfxontag(fieldname, #"sr/fx9_hvt_aether_move_trail", self, "tag_origin");
         }
         if (!isdefined(self.var_fd2eefef)) {
             self playsound(fieldname, #"hash_5be3120a37873d9e");
@@ -629,15 +629,15 @@ function function_7c29d2b9(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Checksum 0xa39011bb, Offset: 0x3020
 // Size: 0x1c2
 function function_ec198408(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
-    var_e8a5ef56 = struct::get(#"hash_3dc7bf9a64aa2aab");
+    var_e8a5ef56 = struct::get(#"nuke_warhead");
     if (isdefined(var_e8a5ef56.mdl)) {
         var_e8a5ef56.mdl hide();
     }
-    var_324a4a44 = struct::get(#"hash_7d370c1d5d165969");
+    var_324a4a44 = struct::get(#"nuke_warhead_riser");
     if (isdefined(var_324a4a44.mdl)) {
         var_324a4a44.mdl hide();
     }
-    foreach (s_canister in struct::get_array(#"hash_db3de5ac651421f")) {
+    foreach (s_canister in struct::get_array(#"harvester_canister")) {
         if (isdefined(s_canister.mdl)) {
             s_canister.mdl hide();
         }

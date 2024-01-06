@@ -5,7 +5,7 @@
                 {
                     "entry": [
                         {
-                            "anim": "#hash_74e40e363afab0f3",
+                            "anim": "#p9_fxanim_sv_payload_atv_cage_open_anim",
                             "var_71bac06": "anim"
                         }
                     ],
@@ -14,7 +14,7 @@
                 {
                     "entry": [
                         {
-                            "anim": "#hash_6775bdea16b0e9c1",
+                            "anim": "#p9_fxanim_sv_payload_atv_cage_close_anim",
                             "var_71bac06": "anim"
                         }
                     ],

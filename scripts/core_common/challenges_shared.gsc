@@ -2082,7 +2082,7 @@ function playerkilled(einflictor, attacker, idamage, smeansofdeath, weapon, shit
         if (isdefined(data.var_525172df.name)) {
             var_f09a5f22 = 0;
             switch (data.var_525172df.name) {
-            case #"hash_320a8d55b915b9e5":
+            case #"listening_device":
                 var_5e93fb70 = function_a3f6cdac(isdefined(level.var_8ddf6d3d.var_151e2c9b) ? level.var_8ddf6d3d.var_151e2c9b : 512);
                 var_f09a5f22 = 1;
                 break;

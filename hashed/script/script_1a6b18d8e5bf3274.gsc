@@ -142,14 +142,14 @@ function function_219213be(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Checksum 0xff989900, Offset: 0xaa8
 // Size: 0x5c
 function function_95ad29e7(localclientnum, oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    self thread function_34d50615(binitialsnap, fieldname, bwastimejump, 1);
+    self thread wait_to_update_ammo_fx(binitialsnap, fieldname, bwastimejump, 1);
 }
 
 // Namespace namespace_a5ef5769/namespace_a5ef5769
 // Params 4, eflags: 0x0
 // Checksum 0xe935cac4, Offset: 0xb10
 // Size: 0xe4
-function function_34d50615(localclientnum, oldval, newval, var_efe94974) {
+function wait_to_update_ammo_fx(localclientnum, oldval, newval, var_efe94974) {
     self endon(#"death");
     var_17b7891d = "1caff36fc9c05c75" + "wait_to_update_ammo_fx";
     self notify(var_17b7891d);

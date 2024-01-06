@@ -751,7 +751,7 @@ function callback_playerdamage(einflictor, eattacker, idamage, idflags, smeansof
         if (einflictor.var_d92bc43b != "none" && einflictor.var_d92bc43b != "false") {
             var_e0445c07 = !isplayer(einflictor) && is_true(einflictor.var_860eee77);
             var_e44c571d = is_true(self.var_ac0c25c9) || var_e0445c07;
-            namespace_4a2d3ac2::do_damage(einflictor.var_d92bc43b, idamage, einflictor, var_e44c571d);
+            hazard::do_damage(einflictor.var_d92bc43b, idamage, einflictor, var_e44c571d);
             if (!var_e0445c07) {
                 return;
             }
@@ -922,7 +922,7 @@ function callback_playerdamage(einflictor, eattacker, idamage, idflags, smeansof
         }
     }
     if (function_c2a2b500(self, vdir, smeansofdeath)) {
-        self notify(#"hash_77f8d1ea8df47cf5", params);
+        self notify(#"body_shield_damage", params);
         self.var_c3d9d4c9 = 1;
         blockeddamage = 1;
         idamage = 0;

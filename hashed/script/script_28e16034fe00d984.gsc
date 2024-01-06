@@ -21,7 +21,7 @@ function private autoexec __init__system__() {
 // Checksum 0x2291246f, Offset: 0x1a8
 // Size: 0xe4
 function private function_70a657d8() {
-    clientfield::register("toplayer", "show_objectives", 1, 2, "int", &function_2fa83dfd, 0, 0);
+    clientfield::register("toplayer", "show_objectives", 1, 2, "int", &show_objectives, 0, 0);
     callback::add_callback(#"on_player_spawned", &on_player_spawned);
     /#
         function_5ac4dc99("<unknown string>", 3);
@@ -34,9 +34,9 @@ function private function_70a657d8() {
 // Params 7, eflags: 0x6 linked
 // Checksum 0x2af37fae, Offset: 0x298
 // Size: 0x6e
-function private function_2fa83dfd(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function private show_objectives(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
-        self notify(#"hash_5c929bf3012bdb4d", {#var_3094b3d4:bwastimejump});
+        self notify(#"show_objectives", {#var_3094b3d4:bwastimejump});
     }
 }
 
@@ -64,7 +64,7 @@ function private function_5c67d66(localclientnum) {
     setuimodelvalue(self.var_f74ea54b, 0);
     while (1) {
         ret = undefined;
-        ret = self waittill(#"hash_5c929bf3012bdb4d");
+        ret = self waittill(#"show_objectives");
         if (is_true(self.var_d52a8a6e)) {
             continue;
         }
@@ -79,7 +79,7 @@ function private function_5c67d66(localclientnum) {
 // Checksum 0xf5a7f39a, Offset: 0x5a0
 // Size: 0x114
 function private function_cd9face2(localclientnum, var_d17dd25a) {
-    self endon(#"hash_5c929bf3012bdb4d", #"hash_3b00cabe4586a186", #"death");
+    self endon(#"show_objectives", #"hash_3b00cabe4586a186", #"death");
     delay = 3;
     /#
         delay = getdvarfloat(#"hash_6d102de219912e53", delay);
@@ -116,7 +116,7 @@ function private function_fd86c6ac(localclientnum) {
 // Checksum 0x6241858a, Offset: 0x780
 // Size: 0x154
 function private function_aa3ed46f(localclientnum, uimodel, var_d17dd25a) {
-    self endon(#"hash_5c929bf3012bdb4d", #"hash_3b00cabe4586a186", #"death");
+    self endon(#"show_objectives", #"hash_3b00cabe4586a186", #"death");
     if (!is_true(var_d17dd25a)) {
         while (length(self util::function_ca4b4e19(localclientnum, 0)[#"move"]) < 0.2) {
             waitframe(1);

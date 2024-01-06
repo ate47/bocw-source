@@ -556,7 +556,7 @@ function function_66d020b0(var_5314bd63, nd_path_start, var_384528, str_notify, 
     level endon(#"end_game");
     self endoncallback(&function_79766c56, #"bled_out", #"death");
     self.var_16735873 = 1;
-    self.var_99582f14 = 1;
+    self.b_ignore_fow_damage = 1;
     self notify(#"hash_217479a2ecb64b4");
     if (var_1605b07a) {
         if (is_true(self.var_b895a3ff)) {
@@ -644,7 +644,7 @@ function function_66d020b0(var_5314bd63, nd_path_start, var_384528, str_notify, 
         self thread function_62686dda(var_6c365dbf);
     }
     self waittill(#"fasttravel_over");
-    self.var_99582f14 = 0;
+    self.b_ignore_fow_damage = 0;
     self flag::set(#"hash_66d02a378fc362d4");
     if (isdefined(var_5314bd63)) {
         self clientfield::set("fasttravel_rail_fx", 0);

@@ -29,11 +29,11 @@ function private function_70a657d8() {
         return;
     }
     level.aat_initializing = 1;
-    level aat::function_571fceb("ammomod_brainrot", &namespace_ee70f3c4::function_9384b521);
-    level aat::function_571fceb("ammomod_cryofreeze", &namespace_2315676d::function_ab6c8a0b);
-    level aat::function_571fceb("ammomod_deadwire", &namespace_86c9684b::function_af1f180);
-    level aat::function_571fceb("ammomod_napalmburst", &namespace_d53389a8::function_4e4244c1);
-    level aat::function_571fceb("ammomod_electriccherry", &namespace_d35c222c::function_4b66248d);
+    level aat::function_571fceb("ammomod_brainrot", &ammomod_brainrot::function_9384b521);
+    level aat::function_571fceb("ammomod_cryofreeze", &ammomod_cryofreeze::function_ab6c8a0b);
+    level aat::function_571fceb("ammomod_deadwire", &ammomod_deadwire::function_af1f180);
+    level aat::function_571fceb("ammomod_napalmburst", &ammomod_napalmburst::function_4e4244c1);
+    level aat::function_571fceb("ammomod_electriccherry", &ammomod_electriccherry::function_4b66248d);
     level aat::function_571fceb("ammomod_shatterblast", &ammomod_shatterblast::function_4e14a881);
     clientfield::register("toplayer", "" + #"hash_10f9eacd143d57ae", 1, 1, "int", &function_6ab142a9, 1, 0);
     clientfield::register("toplayer", "ammomod_play_rob_tier", 15000, 3, "int", &function_cc40e7e2, 1, 0);

@@ -85,11 +85,11 @@ function main(var_d3440450, *var_50cc0d4f) {
     exploder::exploder("hit3_prop_mist");
     wait(1.25);
     level thread util::screen_fade_in(0.7);
-    level thread scene::play("scene_tkd_hit3_intro", "shot 1", [1:level.woods, 0:level.var_fdc6062e]);
+    level thread scene::play("scene_tkd_hit3_intro", "shot 1", [1:level.woods, 0:level.adler]);
     thread function_d12ea338();
     music::setmusicstate("b1.0_opening_part_2");
     snd::function_7db65a93("af_intro_camera_whoosh");
-    namespace_a052577e::function_7c1cb9f9();
+    namespace_a052577e::evt_transition_roof_to_airfield_camera_pt2();
     wait(1.5);
     level thread function_1dee368();
     wait(2);
@@ -110,14 +110,14 @@ function main(var_d3440450, *var_50cc0d4f) {
     player util::delay(1, undefined, &util::function_749362d7, 0);
     player setlowready(0);
     player function_e0c7d69(1);
-    level.var_fdc6062e ai::set_behavior_attribute("demeanor", "cqb");
+    level.adler ai::set_behavior_attribute("demeanor", "cqb");
     level.woods ai::set_behavior_attribute("demeanor", "cqb");
     level waittill(#"hash_42c2d836748c8726");
     music::function_edda155f("b1.5_airfield_reveal");
     player util::function_3b6593e4(0.6, 2);
     namespace_82bfe441::fade(0, "FadeSlow");
-    var_19a8c4d9 = vehicle::simple_spawn_and_drive("plane_flyover");
-    thread namespace_a052577e::function_92a6fd6a(var_19a8c4d9);
+    plane_flyover = vehicle::simple_spawn_and_drive("plane_flyover");
+    thread namespace_a052577e::function_92a6fd6a(plane_flyover);
     level flag::wait_till("start_tarmac");
     if (isdefined(var_50cc0d4f)) {
         skipto::function_4e3ab877(var_50cc0d4f);
@@ -156,7 +156,7 @@ function function_1dee368(*var_54fed624) {
 // Size: 0x4c
 function function_d12ea338() {
     level waittill(#"hash_3286e739acb53c93");
-    level objectives::follow("af_follow_adler", level.var_fdc6062e, undefined, 0, 0);
+    level objectives::follow("af_follow_adler", level.adler, undefined, 0, 0);
 }
 
 // Namespace tkdn_af_intro/namespace_793341d2

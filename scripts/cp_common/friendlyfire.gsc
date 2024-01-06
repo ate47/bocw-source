@@ -264,7 +264,7 @@ function function_1ad87afd(entity, damage, attacker, method, weapon, einflictor)
     if (!isdefined(attacker)) {
         return;
     }
-    if (attacker.var_5ed65877 === einflictor) {
+    if (attacker.body_shield_grenade === einflictor) {
         return;
     }
     if (weapon.name === #"hash_5453c9b880261bcb" || weapon.name === #"hash_675e85b293a65c14") {

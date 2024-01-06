@@ -85,7 +85,7 @@ function function_cc984236(str_zone) {
 function function_d81240c3() {
     callback::remove_callback(#"hash_594217387367ebb4", &function_d81240c3);
     foreach (var_32f76af8 in level.var_cc43b632) {
-        level thread zm_unitrigger::unregister_unitrigger(var_32f76af8.var_c0f65ccb.s_unitrigger);
+        level thread zm_unitrigger::unregister_unitrigger(var_32f76af8.objective_pos.s_unitrigger);
         if (var_32f76af8.var_269ad176 === 1) {
             var_32f76af8 thread function_21a9e71b(0);
         }
@@ -134,7 +134,7 @@ function function_60f09fb9() {
     self.mdl function_619a5c20();
     self.mdl clientfield::set("set_compass_icon", 1);
     self.mdl.control_point = self;
-    self.var_c0f65ccb = struct::get(self.target, "targetname");
+    self.objective_pos = struct::get(self.target, "targetname");
 }
 
 // Namespace namespace_f7b3ed9/namespace_f7b3ed9
@@ -168,7 +168,7 @@ function function_ef4139d1() {
                         level.var_547f9dd5[level.var_547f9dd5.size] = target_pos;
                     }
                 } else if (target_pos.script_noteworthy === "objective_pos") {
-                    control_point_pos.var_c0f65ccb = target_pos;
+                    control_point_pos.objective_pos = target_pos;
                 }
             }
             control_point_pos thread function_6ed31494(control_point_pos.script_int);
@@ -183,7 +183,7 @@ function function_ef4139d1() {
 // Checksum 0xa3b2f9ac, Offset: 0xe78
 // Size: 0x66
 function function_6ed31494(index) {
-    var_8c61185f = self.var_c0f65ccb zm_unitrigger::create(&function_c03a8002, 100, &function_789417a9);
+    var_8c61185f = self.objective_pos zm_unitrigger::create(&function_c03a8002, 100, &function_789417a9);
     var_8c61185f.zone_index = index;
     var_8c61185f.control_point.var_8c61185f = self;
 }

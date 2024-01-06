@@ -31,7 +31,7 @@ function private function_70a657d8() {
     if (!isdefined(level.var_54ce800f)) {
         level.var_54ce800f = [];
     }
-    function_3969639b(&namespace_86402e7e::register, "cp_hint_text");
+    function_3969639b(&cp_hint_text::register, "cp_hint_text");
     pip_menu::register();
     clientfield::register("toplayer", "cinematicmotion_blend", 1, 1, "int", &function_e6d37e3b, 0, 0);
     serverfield::register("cinematicmotion_blend", 1, 1, "int");
@@ -149,7 +149,7 @@ function function_70df4eb1(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Params 2, eflags: 0x2 linked
 // Checksum 0x84a70dfa, Offset: 0x7a8
 // Size: 0x1ba
-function function_d126379e(localclientnum, var_941cbfdd) {
+function force_stream_weapons(localclientnum, var_941cbfdd) {
     /#
         assert(isplayer(self));
     #/
@@ -182,8 +182,8 @@ function function_d126379e(localclientnum, var_941cbfdd) {
 // Size: 0xec
 function function_d96391ba() {
     level.var_dd9e1cd5 = [];
-    level._effect[#"hash_db8dcdee3f6d9da"] = #"hash_3276d891dff1f743";
-    level._effect[#"hash_718c88942e3b0ab9"] = #"hash_326fec91dfebfa91";
+    level._effect[#"player_cold_breath"] = #"hash_3276d891dff1f743";
+    level._effect[#"ai_cold_breath"] = #"hash_326fec91dfebfa91";
     clientfield::register("toplayer", "player_cold_breath", 1, 1, "int", &function_73d83dae, 0, 0);
     clientfield::register("actor", "ai_cold_breath", 1, 1, "counter", &function_f39fc31d, 0, 0);
 }
@@ -213,7 +213,7 @@ function function_9340eb56(localclientnum) {
     self endon(#"death");
     while (is_true(level.var_dd9e1cd5[localclientnum])) {
         wait(randomintrange(5, 7));
-        playfxoncamera(localclientnum, level._effect[#"hash_db8dcdee3f6d9da"], (0, 0, 0), (1, 0, 0), (0, 0, 1));
+        playfxoncamera(localclientnum, level._effect[#"player_cold_breath"], (0, 0, 0), (1, 0, 0), (0, 0, 1));
     }
 }
 
@@ -225,7 +225,7 @@ function function_f39fc31d(localclientnum, *oldval, *newval, *bnewent, *binitial
     self endon(#"death");
     while (isalive(self)) {
         wait(randomintrange(6, 8));
-        playfxontag(bwastimejump, level._effect[#"hash_718c88942e3b0ab9"], self, "j_head");
+        playfxontag(bwastimejump, level._effect[#"ai_cold_breath"], self, "j_head");
     }
 }
 
@@ -289,7 +289,7 @@ function function_dc7fced6() {
 // Size: 0x86e
 function function_8e4d84eb(localclientnum, bundlename) {
     player = self;
-    player endon(#"death", #"disconnected", #"hash_33f56f4223e452ca");
+    player endon(#"death", #"disconnected", #"deactivate_camera_lens_overrides");
     /#
         function_5ac4dc99("<unknown string>", 0);
     #/

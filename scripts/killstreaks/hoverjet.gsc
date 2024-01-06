@@ -335,7 +335,7 @@ function function_c077f369(weapon) {
 function function_5c4dbcb4(var_ea5d6a42) {
     self endon(#"death");
     var_ea5d6a42 endon(#"death");
-    self endon(#"hash_9e36bdad67bf04e");
+    self endon(#"off_spline");
     for (;;) {
         self setplayerangles(var_ea5d6a42.angles);
         waitframe(1);
@@ -347,7 +347,7 @@ function function_5c4dbcb4(var_ea5d6a42) {
 // Checksum 0x587bc97c, Offset: 0x1998
 // Size: 0x5c
 function function_e6b2dc3e() {
-    self endon(#"death", #"hash_9e36bdad67bf04e");
+    self endon(#"death", #"off_spline");
     self waittill(#"hash_44ecf28b1fb3c4bb");
     self playsound(#"hash_12ddb7dd3e5716e2");
 }
@@ -377,7 +377,7 @@ function function_746680dc(var_ea5d6a42) {
     }
     if (isdefined(self)) {
         self clientfield::set_to_player("" + #"hash_1a4b729551097abf", 0);
-        self notify(#"hash_9e36bdad67bf04e");
+        self notify(#"off_spline");
         self val::reset(#"hash_8110844715cf5ff", "freezecontrols");
     }
 }

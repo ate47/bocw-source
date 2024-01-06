@@ -74,7 +74,7 @@ function event_handler[level_init] main(*eventstruct) {
 // Checksum 0x60aee7d7, Offset: 0x8d0
 // Size: 0x3c
 function function_1493eabf() {
-    level waittill(#"hash_2ccb1e2f5d9ce793");
+    level waittill(#"sndunlockeesong");
     function_2cca7b47(0, #"musictrack_zm_gold_ee");
 }
 

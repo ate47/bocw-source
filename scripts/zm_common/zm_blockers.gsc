@@ -1797,7 +1797,7 @@ function destructible_glass_barricade(unbroken_section, node) {
 // Checksum 0x6cabe21f, Offset: 0x7a58
 // Size: 0x334
 function blocker_attack_spots() {
-    if (self.var_739ddae === "barricade_window") {
+    if (self.content_key === "barricade_window") {
         str_target = self.target2;
     } else {
         str_target = self.target;

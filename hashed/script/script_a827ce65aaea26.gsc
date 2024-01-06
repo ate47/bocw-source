@@ -282,7 +282,7 @@ function on_round_end() {
 function function_c531a378() {
     if (level.round_number >= 55) {
         if (isdefined(level.var_b03d5c95)) {
-            playfx(#"hash_5a1e0e296fe6148f", level.var_b03d5c95.origin);
+            playfx(#"sr/fx9_safehouse_mchn_upgrades_spawn", level.var_b03d5c95.origin);
             playsoundatposition(#"hash_5c80b67921d4c89", level.var_b03d5c95.var_51c14c0b.origin);
             var_ce288ad4 = 0;
             if (is_true(level.var_41eb9e50)) {

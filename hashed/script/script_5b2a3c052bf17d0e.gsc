@@ -125,7 +125,7 @@ function private function_e7e5c90d(s_instance) {
             var_5207017.var_e2d1273.var_5207017 = [];
             var_50ebf8f1 = struct::get_array(var_5207017.targetname, "target");
             foreach (s_struct in var_50ebf8f1) {
-                if (s_struct.var_739ddae === #"hash_245e465fa05ffffe") {
+                if (s_struct.content_key === #"hash_245e465fa05ffffe") {
                     var_5207017.s_target = s_struct;
                 } else {
                     if (!isdefined(var_5207017.var_e2d1273)) {

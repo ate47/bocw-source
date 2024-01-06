@@ -17,9 +17,9 @@
 #using scripts\core_common\laststand_shared.gsc;
 #using scripts\core_common\callbacks_shared.gsc;
 
-#namespace namespace_162d5357;
+#namespace zombie_dog_toxic_cloud;
 
-// Namespace namespace_162d5357/namespace_162d5357
+// Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
 // Params 0, eflags: 0x5
 // Checksum 0x9e64ce5, Offset: 0x1f8
 // Size: 0x3c
@@ -27,7 +27,7 @@ function private autoexec __init__system__() {
     system::register(#"hash_33449a50d9656246", &init_shared, undefined, undefined, undefined);
 }
 
-// Namespace namespace_162d5357/namespace_162d5357
+// Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
 // Params 0, eflags: 0x0
 // Checksum 0x6c761a45, Offset: 0x240
 // Size: 0x154
@@ -40,7 +40,7 @@ function init_shared() {
     spawner::add_archetype_spawn_function(#"zombie_dog", &function_4f3cd1f0);
 }
 
-// Namespace namespace_162d5357/namespace_162d5357
+// Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
 // Params 0, eflags: 0x0
 // Checksum 0x53839c06, Offset: 0x3a0
 // Size: 0x7c
@@ -52,7 +52,7 @@ function function_4f3cd1f0() {
     }
 }
 
-// Namespace namespace_162d5357/namespace_162d5357
+// Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
 // Params 1, eflags: 0x0
 // Checksum 0x2aff0397, Offset: 0x428
 // Size: 0x1a4
@@ -78,7 +78,7 @@ function function_a6c93300(*params) {
     }
 }
 
-// Namespace namespace_162d5357/namespace_162d5357
+// Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
 // Params 1, eflags: 0x0
 // Checksum 0x94dd92da, Offset: 0x5d8
 // Size: 0x684
@@ -151,7 +151,7 @@ function function_659d1778(attacker) {
     }
 }
 
-// Namespace namespace_162d5357/namespace_162d5357
+// Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
 // Params 1, eflags: 0x0
 // Checksum 0x4a2a9268, Offset: 0xc68
 // Size: 0x2c

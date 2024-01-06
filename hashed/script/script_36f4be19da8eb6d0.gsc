@@ -45,8 +45,8 @@ function private function_70a657d8() {
         level.var_1a4cc228[#"hash_78215fa79f5557dc"] = [0:#"hash_4814b7b3c67568e3"];
         level.var_1a4cc228[#"hash_12a17ab3df5889eb"] = level.var_1a4cc228[#"hash_78215fa79f5557dc"];
         level.var_1a4cc228[#"hash_7a8b592728eec95d"] = [0:#"hash_2cb37314243526ec"];
-        level.var_1a4cc228[#"hash_12db1a8b34aa7918"] = [0:#"hash_614e3d7d0b75a944"];
-        level.var_1a4cc228[#"hash_5471f6916965b2d2"] = [0:#"hash_53c08317d48a0e49"];
+        level.var_1a4cc228[#"spawner_zm_steiner_split_radiation_bomb"] = [0:#"hash_614e3d7d0b75a944"];
+        level.var_1a4cc228[#"spawner_zm_steiner_split_radiation_blast"] = [0:#"hash_53c08317d48a0e49"];
         level.var_1a4cc228[#"hash_6904f5c7bef64405"] = [0:#"hash_5eafd160d077670d"];
         level.var_1a4cc228[#"hash_7f957e36b4f6160f"] = [0:#"hash_61df3be05096e9e2"];
         level.var_1a4cc228[#"hash_729b116cf9d044"] = [0:#"hash_78238b400ae08c28"];
@@ -55,8 +55,8 @@ function private function_70a657d8() {
         level.var_1a4cc228[#"hash_bc5dffd7824c28f"] = level.var_1a4cc228[#"hash_5214ebcccbd95a36"];
         level.var_1a4cc228[#"hash_78215fa79f5557dc"] = [0:#"hash_4814b7b3c67568e3"];
         level.var_1a4cc228[#"hash_12a17ab3df5889eb"] = level.var_1a4cc228[#"hash_78215fa79f5557dc"];
-        level.var_1a4cc228[#"hash_12db1a8b34aa7918"] = [0:#"hash_614e3d7d0b75a944"];
-        level.var_1a4cc228[#"hash_5471f6916965b2d2"] = [0:#"hash_53c08317d48a0e49"];
+        level.var_1a4cc228[#"spawner_zm_steiner_split_radiation_bomb"] = [0:#"hash_614e3d7d0b75a944"];
+        level.var_1a4cc228[#"spawner_zm_steiner_split_radiation_blast"] = [0:#"hash_53c08317d48a0e49"];
         level.var_1a4cc228[#"hash_19ef16d1ba01a5"] = [0:#"hash_4729aed4cfa43476"];
     }
     level.var_652bc5ed = getweapon(#"ww_ieu_shockwave_t9");

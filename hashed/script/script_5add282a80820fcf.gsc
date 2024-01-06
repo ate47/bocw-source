@@ -27,9 +27,9 @@ function init() {
     clientfield::register("actor", "mechz_powercap_detached", 1, 1, "int", &namespace_e0c51a8c::function_e364c573, 0, 0);
     clientfield::register("actor", "mechz_claw_detached", 1, 1, "int", &namespace_e0c51a8c::function_fbdc5222, 0, 0);
     clientfield::register("actor", "mechz_115_gun_firing", 1, 1, "int", &namespace_e0c51a8c::function_b17ecff3, 0, 0);
-    clientfield::register("actor", "mechz_headlamp_off", 1, 2, "int", &namespace_e0c51a8c::function_3776d83, 0, 0);
-    clientfield::register("actor", "mechz_long_jump", 1, 1, "counter", &namespace_e0c51a8c::function_d6762475, 0, 0);
-    clientfield::register("actor", "mechz_jetpack_explosion", 1, 1, "int", &namespace_e0c51a8c::function_f0664979, 0, 0);
+    clientfield::register("actor", "mechz_headlamp_off", 1, 2, "int", &namespace_e0c51a8c::mechz_headlamp_off, 0, 0);
+    clientfield::register("actor", "mechz_long_jump", 1, 1, "counter", &namespace_e0c51a8c::mechz_long_jump, 0, 0);
+    clientfield::register("actor", "mechz_jetpack_explosion", 1, 1, "int", &namespace_e0c51a8c::mechz_jetpack_explosion, 0, 0);
     clientfield::register("actor", "mechz_face", 1, 3, "int", &namespace_e0c51a8c::function_624ec357, 0, 0);
     ai::add_archetype_spawn_function(#"mechz", &namespace_e0c51a8c::function_b8b1efcd);
     precache();
@@ -191,7 +191,7 @@ function function_b17ecff3(localclientnum, *oldvalue, *newvalue, *bnewent, *bini
 // Params 7, eflags: 0x0
 // Checksum 0xf4752ac8, Offset: 0x1420
 // Size: 0x94
-function function_f0664979(localclientnum, *oldvalue, *newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
+function mechz_jetpack_explosion(localclientnum, *oldvalue, *newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
     util::playfxontag(wasdemojump, level._effect[#"hash_2b72eba2856c6e18"], self, "j_spine4");
     self playsound(0, "zmb_ai_mechz_destroy_jetpack");
 }
@@ -200,7 +200,7 @@ function function_f0664979(localclientnum, *oldvalue, *newvalue, *bnewent, *bini
 // Params 7, eflags: 0x0
 // Checksum 0x99ebec67, Offset: 0x14c0
 // Size: 0xd4
-function function_3776d83(localclientnum, *oldvalue, newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
+function mechz_headlamp_off(localclientnum, *oldvalue, newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
     if (self.var_44ac8cdd === 1 && wasdemojump != 0 && isdefined(self.var_a0bf769b)) {
         stopfx(fieldname, self.var_a0bf769b);
         self.var_44ac8cdd = 0;
@@ -214,7 +214,7 @@ function function_3776d83(localclientnum, *oldvalue, newvalue, *bnewent, *biniti
 // Params 7, eflags: 0x4
 // Checksum 0x21456f57, Offset: 0x15a0
 // Size: 0x74
-function private function_d6762475(localclientnum, *oldvalue, *newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
+function private mechz_long_jump(localclientnum, *oldvalue, *newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
     earthquake(wasdemojump, 0.5, 1, self.origin, 600, 1);
 }
 

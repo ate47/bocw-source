@@ -424,7 +424,7 @@ function function_7569c0fb() {
     case #"dem_hc":
     case #"sd":
     case #"escort_bb":
-    case #"hash_68e906194eba76f0":
+    case #"vip":
     case #"dom_bb_hc":
     case #"clean":
     case #"dem":
@@ -432,11 +432,11 @@ function function_7569c0fb() {
     case #"hash_5fd7317230bb0fac":
     case #"control_bb":
     case #"control_hc":
-    case #"hash_1f03b546a8317f1d":
+    case #"dom10v10":
     case #"hash_2561ffe336f1f9e3":
     case #"hash_26d903aae5afc467":
     case #"war":
-    case #"hash_5cb44bd4d87aa317":
+    case #"war12v12":
     case #"hash_5a63e4bb11fd4fa8":
     case #"dom_hc":
     case #"dom_bb":
@@ -459,14 +459,14 @@ function function_7569c0fb() {
         self stats::function_81f5c0fe(#"stat1", self.pers[#"objectivescore"]);
         self stats::function_81f5c0fe(#"stat2", self.ekia);
         break;
-    case #"hash_5ad222bb812ce35d":
+    case #"koth10v10":
     case #"koth":
     case #"hash_156594d96f8a6568":
     case #"hash_35a6541d081acef5":
     case #"hash_111d8ed9a9337f7b":
     case #"koth_hc":
     case #"koth_bb":
-    case #"hash_527f2aa95e2f400a":
+    case #"dropkick":
         self stats::function_81f5c0fe(#"stat1", self.pers[#"objectivetime"]);
         self stats::function_81f5c0fe(#"stat2", self.ekia);
         break;
@@ -475,7 +475,7 @@ function function_7569c0fb() {
     case #"tdm_bb":
     case #"fireteam_elimination":
     case #"oic":
-    case #"hash_ff071780b17ebd4":
+    case #"tdm10v10":
     case #"hash_c5acc1898a61b54":
     case #"scream":
     case #"conf":
@@ -483,7 +483,7 @@ function function_7569c0fb() {
     case #"tdm_bb_hc":
     case #"hash_6f784eb075451055":
     case #"dm_bb":
-    case #"hash_601b3d9434b9aac9":
+    case #"gunfight":
     case #"hash_451623a99cfee5d9":
     case #"gun":
     case #"conf_bb":

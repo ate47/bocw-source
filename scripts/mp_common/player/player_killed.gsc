@@ -1247,7 +1247,7 @@ function private update_killstreaks(attacker, weapon) {
             self updatestatratio("kdratio", "kills", "deaths");
             if (level.hardcoremode === 1) {
                 if (!is_true(self.var_cee93f5)) {
-                    self globallogic_score::incpersstat(#"hash_2872d49e7aa6b162", 1, 1, 1);
+                    self globallogic_score::incpersstat(#"deaths_hc", 1, 1, 1);
                 }
                 self updatestatratio("kdratio_hc", "kills_hc", "deaths_hc");
             }

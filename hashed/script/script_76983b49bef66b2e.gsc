@@ -39,7 +39,7 @@ function function_6ec0595a() {
     }
     self endon(#"death");
     self endon(#"player_died");
-    if (!isdefined(self.var_8cff5775.var_4606c19f)) {
+    if (!isdefined(self.doa.tesla_org)) {
         org = namespace_ec06fe4a::function_e22ae9b3(self.origin, "tag_origin");
         if (!isdefined(org)) {
             return;
@@ -47,7 +47,7 @@ function function_6ec0595a() {
         org enablelinkto();
         org.targetname.org = "tesla_org";
         org.angles.org = (0, randomint(180), 0);
-        self.var_8cff5775.var_4606c19f = org;
+        self.doa.tesla_org = org;
         org.owner.org = self;
         org.objects.org = [];
         org linkto(self, undefined, vectorscale((0, 0, 1), 30));
@@ -55,14 +55,14 @@ function function_6ec0595a() {
         org thread function_3be74620(self);
         self thread function_8efc825c(org);
     }
-    self function_dd76db7c(self.var_8cff5775.var_4606c19f);
+    self function_dd76db7c(self.doa.tesla_org);
     timeout = self namespace_1c2a96f9::function_4808b985(30);
     while (!namespace_dfc652ee::function_f759a457()) {
         waitframe(1);
     }
     wait(timeout);
-    if (isdefined(self.var_8cff5775.var_4606c19f)) {
-        self.var_8cff5775.var_4606c19f notify(#"hash_44e59870e1833e7");
+    if (isdefined(self.doa.tesla_org)) {
+        self.doa.tesla_org notify(#"hash_44e59870e1833e7");
     }
     self notify(#"hash_5c369acbb01ea11");
 }
@@ -182,7 +182,7 @@ function function_3be74620(owner) {
     }
     if (isdefined(owner)) {
         owner namespace_e32bb68::function_3a59ec34("evt_doa_pickup_teslaball_active_end");
-        owner.var_8cff5775.var_4606c19f = undefined;
+        owner.doa.tesla_org = undefined;
     }
     waitframe(1);
     self delete();

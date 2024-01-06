@@ -131,7 +131,7 @@ function init() {
 function function_1b3fc8e4() {
     namespace_250e9486::function_25b2c8a9();
     self namespace_250e9486::function_db744d28();
-    self.maxhealth = self.maxhealth + 250000 + int(100000 * namespace_ec06fe4a::function_ef369bae()) + level.var_8cff5775.var_6c58d51 * 300000;
+    self.maxhealth = self.maxhealth + 250000 + int(100000 * namespace_ec06fe4a::function_ef369bae()) + level.doa.var_6c58d51 * 300000;
     self.health = self.maxhealth;
     self.var_1c8b76d3 = 1;
     self.no_gib = 1;
@@ -510,7 +510,7 @@ function private function_d82de95f(entity) {
                     player status_effect::status_effect_apply(getstatuseffect(#"hash_706608d269d2fefc"), undefined, entity, undefined, 2000);
                     player thread function_60164697();
                     player clientfield::increment_to_player("gegenees_damage_cf");
-                    if (level.var_8cff5775.var_358fbdc8 != 0) {
+                    if (level.doa.world_state != 0) {
                         player dodamage(75, player.origin);
                     }
                     vec = vectornormalize(player.origin - entity.origin) * 1500 + vectorscale((0, 0, 1), 100);

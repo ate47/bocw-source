@@ -146,7 +146,7 @@ function function_d81240c3(*params) {
 // Size: 0x96
 function function_7a3ebb8a() {
     self endon(#"death");
-    if (self.targetname !== #"hash_48c68c10dd19929e") {
+    if (self.targetname !== #"exfil_ai") {
         return;
     }
     self.var_90d0c0ff = "anim_spawn_from_ground";
@@ -238,7 +238,7 @@ function private intro_cinematic() {
             player.var_f4e33249 = undefined;
         }
     }
-    level flag::set(#"hash_443b6a1ea0c4b52b");
+    level flag::set(#"intro_scene_done");
     gamestate::set_state(#"playing");
 }
 

@@ -360,7 +360,7 @@ LOC_00000422:
 // Size: 0xae
 function function_fc88234b(localclientnum, *oldvalue, newvalue, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
-        self.trailfx = util::playfxontag(fieldname, #"hash_661b2a1adda4ae40", self, "tag_origin");
+        self.trailfx = util::playfxontag(fieldname, #"zm_ai/fx9_steiner_rad_bomb_ai", self, "tag_origin");
     } else if (isdefined(self.trailfx)) {
         level thread function_e5799b09(fieldname, self.trailfx);
         self.trailfx = undefined;

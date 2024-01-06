@@ -460,7 +460,7 @@ function private function_479d351(var_4c1b2300, loop_sound, end_sound, position,
                 sound_ent = spawn("script_origin", position);
             }
             sound_ent playsoundwithnotify(end_sound, "sound_end");
-            sound_ent waittill(#"hash_46d2b9914cc325b6");
+            sound_ent waittill(#"sound_end");
             waitframe(1);
             sound_ent delete();
         } else if (isdefined(sound_ent)) {

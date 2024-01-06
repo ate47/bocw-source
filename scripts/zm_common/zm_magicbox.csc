@@ -42,14 +42,14 @@ function private function_70a657d8() {
     clientfield::register("zbarrier", "force_stream_magicbox_leave", 1, 1, "int", &force_stream_magicbox_leave, 0, 0);
     clientfield::register("zbarrier", "" + #"hash_2fcdae6b889933c7", 1, 1, "int", &function_b5807489, 0, 0);
     clientfield::register("zbarrier", "" + #"hash_66b8b96e588ce1ac", 1, 3, "int", &function_abe84c14, 0, 0);
-    clientfield::register("toplayer", "stream_magicbox_guns", 1, 1, "int", &function_a31f498c, 0, 0);
+    clientfield::register("toplayer", "stream_magicbox_guns", 1, 1, "int", &stream_magicbox_guns, 0, 0);
 }
 
 // Namespace zm_magicbox/zm_magicbox
 // Params 7, eflags: 0x0
 // Checksum 0xda12fb86, Offset: 0x6f8
 // Size: 0x158
-function function_a31f498c(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function stream_magicbox_guns(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         foreach (modelname in level.var_1d1c6c28) {
             forcestreamxmodel(modelname, 8, 1);

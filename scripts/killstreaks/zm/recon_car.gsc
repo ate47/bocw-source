@@ -185,7 +185,7 @@ function function_3f390797() {
     if (isplayer(self.owner)) {
         util::waittill_any_ents(self.owner, #"hash_217479a2ecb64b4", level, #"hash_345e9169ebba28fb");
     } else {
-        level waittill(#"hash_345e9169ebba28fb", #"hash_23d445a634bedeae", #"hash_299b0e75bff5106f");
+        level waittill(#"hash_345e9169ebba28fb", #"hash_23d445a634bedeae", #"in_dark_side");
     }
     self.selfdestruct = 1;
     self killstreak_vehicle::function_822e1f64();

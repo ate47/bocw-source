@@ -541,7 +541,7 @@ function function_ae44e21b(*action, command) {
         return self adsbuttonpressed();
     case #"use":
         return self usebuttonpressed();
-    case #"hash_7f544678d77c8bf5":
+    case #"frag":
         return self fragbuttonpressed();
     case #"smoke":
         return self secondaryoffhandbuttonpressed();
@@ -580,7 +580,7 @@ function function_9cb5ca63(action, command) {
     case #"use":
         self notifyonplayercommand(triggername, "+usereload");
         break;
-    case #"hash_7f544678d77c8bf5":
+    case #"frag":
         self notifyonplayercommand(triggername, "+frag");
         self notifyonplayercommand(triggername, "+equip_toggle_throw");
         break;
@@ -612,7 +612,7 @@ function function_7ca47b7c(action, event) {
     self notifyonplayercommand("player_cmd_melee_atk", "+attack");
     self notifyonplayercommand("player_cmd_melee_atk", "+attack_akimbo_accessible");
     while (1) {
-        self waittill(#"hash_456024e95c8671");
+        self waittill(#"player_cmd_melee_atk");
         weapon = self getcurrentweapon();
         if (weapons::isknife(weapon)) {
             self notify(event);
@@ -794,8 +794,8 @@ function function_d661f822() {
                     break;
                 case 1:
                     text = "<unknown string>";
-                    if (isdefined(self.var_2e402479.body)) {
-                        text = "<unknown string>" + self.var_2e402479.body getentitynumber();
+                    if (isdefined(self.takedown.body)) {
+                        text = "<unknown string>" + self.takedown.body getentitynumber();
                     }
                     break;
                 case 2:
@@ -805,7 +805,7 @@ function function_d661f822() {
                     }
                     break;
                 case 3:
-                    var_e817484d = isdefined(self.var_2e402479.var_70354814) ? self.var_2e402479.var_70354814 : "<unknown string>";
+                    var_e817484d = isdefined(self.takedown.var_70354814) ? self.takedown.var_70354814 : "<unknown string>";
                     if (var_e817484d != "<unknown string>") {
                         if (isdefined(getscriptbundle(var_e817484d))) {
                             text = "<unknown string>" + var_e817484d;

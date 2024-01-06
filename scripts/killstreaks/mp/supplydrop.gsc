@@ -1264,7 +1264,7 @@ function cratedelete(drop_all_to_ground) {
         self.parachute delete();
     }
     self function_9813d292();
-    self notify(#"hash_4229b0dbf67e8dd6");
+    self notify(#"stop_crate_use_think");
     self function_cb48cddd();
 }
 
@@ -1747,7 +1747,7 @@ function watch_explosive_crate(killcament) {
 // Checksum 0x6de0580b, Offset: 0x7810
 // Size: 0x1ec
 function function_960ea519(var_da089436, killcament) {
-    self notify(#"hash_4229b0dbf67e8dd6");
+    self notify(#"stop_crate_use_think");
     self.killcament = killcament;
     self thread scene::play(#"p9_fxanim_mp_care_package_bundle", self);
     if (getdvarint(#"hash_3f663d1e38d10d99", 0) == 1 || is_true(self.var_e8a59c52)) {
@@ -2089,7 +2089,7 @@ function useentownerdeathwaiter(owner) {
 function crateusethink() {
     while (isdefined(self)) {
         waitresult = undefined;
-        waitresult = self waittill(#"trigger", #"death", #"hash_4229b0dbf67e8dd6");
+        waitresult = self waittill(#"trigger", #"death", #"stop_crate_use_think");
         if (waitresult._notify === "stop_crate_use_think" || waitresult._notify === "death") {
             break;
         }

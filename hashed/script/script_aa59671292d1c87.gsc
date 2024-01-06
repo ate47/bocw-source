@@ -18,7 +18,7 @@
 // Checksum 0x7bdbf05d, Offset: 0x1a8
 // Size: 0xbc
 function init() {
-    clientfield::register("scriptmover", "dungeon_set_roomID", 1, 8, "int", &function_25849f16, 0, 0);
+    clientfield::register("scriptmover", "dungeon_set_roomID", 1, 8, "int", &dungeon_set_roomid, 0, 0);
     clientfield::register("scriptmover", "dungeon_set_explore_state", 1, 2, "int", &function_45d79d27, 0, 0);
     namespace_c004634e::init();
     level.var_40450ea6 = &function_e71841a;
@@ -56,7 +56,7 @@ function function_45d79d27(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Params 7, eflags: 0x2 linked
 // Checksum 0x7e753e01, Offset: 0x408
 // Size: 0x4e
-function function_25849f16(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function dungeon_set_roomid(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self.ffotdzodt8_ffot = bwastimejump - 1;
 }
 
@@ -66,13 +66,13 @@ function function_25849f16(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Size: 0x384
 function function_e71841a() {
     self.var_d8d445c4 = &function_cb06f399;
-    self.var_d95571e6 = [];
-    self.var_a5177d12 = [];
+    self.walldecor = [];
+    self.floordecor = [];
     self.wallbuy = [];
     var_f445d580 = self namespace_f27a9d0d::function_5165998("type", "room_center");
     if (isdefined(var_f445d580.script_parameters)) {
         if (issubstr(var_f445d580.script_parameters, "tweakCam")) {
-            self.var_4d30576a = 1;
+            self.tweakcam = 1;
         }
     }
     self.var_cd42b9c0 = namespace_ec06fe4a::function_e22ae9b3(0, var_f445d580.origin, "tag_origin", var_f445d580.angles, "dungeon mapObject");
@@ -92,11 +92,11 @@ LOC_000001de:
     }
     var_c9bdb63f = self namespace_f27a9d0d::function_cee62dac("type", "floordecor");
     foreach (var_f6198c5b in var_c9bdb63f) {
-        self.var_a5177d12[self.var_a5177d12.size] = namespace_c004634e::function_6a09928b(var_f6198c5b, #"floor");
+        self.floordecor[self.floordecor.size] = namespace_c004634e::function_6a09928b(var_f6198c5b, #"floor");
     }
     var_c9bdb63f = self namespace_f27a9d0d::function_cee62dac("type", "walldecor");
     foreach (var_f6198c5b in var_c9bdb63f) {
-        self.var_d95571e6[self.var_d95571e6.size] = namespace_c004634e::function_6a09928b(var_f6198c5b, #"hash_5e76c2f62c1e1615");
+        self.walldecor[self.walldecor.size] = namespace_c004634e::function_6a09928b(var_f6198c5b, #"hash_5e76c2f62c1e1615");
     }
 }
 
@@ -108,23 +108,23 @@ function function_cb06f399() {
     if (isdefined(self.var_cd42b9c0)) {
         self.var_cd42b9c0 delete();
     }
-    if (isdefined(self.var_d95571e6)) {
-        foreach (item in self.var_d95571e6) {
+    if (isdefined(self.walldecor)) {
+        foreach (item in self.walldecor) {
             if (isdefined(item.fx)) {
                 deletefx(0, item.fx);
             }
             item delete();
         }
-        self.var_d95571e6 = [];
+        self.walldecor = [];
     }
-    if (isdefined(self.var_a5177d12)) {
-        foreach (item in self.var_a5177d12) {
+    if (isdefined(self.floordecor)) {
+        foreach (item in self.floordecor) {
             if (isdefined(item.fx)) {
                 deletefx(0, item.fx);
             }
             item delete();
         }
-        self.var_a5177d12 = [];
+        self.floordecor = [];
     }
     if (isdefined(self.loot)) {
         foreach (item in self.loot) {

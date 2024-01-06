@@ -9,9 +9,9 @@
 #using scripts\core_common\callbacks_shared.gsc;
 #using scripts\core_common\struct.gsc;
 
-#namespace namespace_86fbdaad;
+#namespace electroball_grenade;
 
-// Namespace namespace_86fbdaad/namespace_86fbdaad
+// Namespace electroball_grenade/electroball_grenade
 // Params 0, eflags: 0x5
 // Checksum 0xed575d6c, Offset: 0x240
 // Size: 0x34
@@ -19,7 +19,7 @@ function private autoexec __init__system__() {
     system::register("electroball_grenade", &function_70a657d8, undefined, undefined, undefined);
 }
 
-// Namespace namespace_86fbdaad/namespace_86fbdaad
+// Namespace electroball_grenade/electroball_grenade
 // Params 0, eflags: 0x2 linked
 // Checksum 0x70b105fd, Offset: 0x280
 // Size: 0x1fc
@@ -38,7 +38,7 @@ function function_70a657d8() {
     callback::on_grenade_fired(&begin_other_grenade_tracking);
 }
 
-// Namespace namespace_86fbdaad/namespace_86fbdaad
+// Namespace electroball_grenade/electroball_grenade
 // Params 0, eflags: 0x2 linked
 // Checksum 0xf76df6fb, Offset: 0x488
 // Size: 0xc4
@@ -49,7 +49,7 @@ function register() {
     clientfield::register("allplayers", "electroball_shock", 1, 1, "int");
 }
 
-// Namespace namespace_86fbdaad/namespace_86fbdaad
+// Namespace electroball_grenade/electroball_grenade
 // Params 0, eflags: 0x2 linked
 // Checksum 0xf5a689a2, Offset: 0x558
 // Size: 0x13a
@@ -75,7 +75,7 @@ function function_5d95c1d() {
     watcher.onspawn.watcher = &function_5aeaf7bc;
 }
 
-// Namespace namespace_86fbdaad/namespace_86fbdaad
+// Namespace electroball_grenade/electroball_grenade
 // Params 2, eflags: 0x2 linked
 // Checksum 0x33b13882, Offset: 0x6a0
 // Size: 0xd4
@@ -91,7 +91,7 @@ function function_5aeaf7bc(watcher, owner) {
     self thread function_8e671a22();
 }
 
-// Namespace namespace_86fbdaad/namespace_86fbdaad
+// Namespace electroball_grenade/electroball_grenade
 // Params 0, eflags: 0x2 linked
 // Checksum 0x5cd11572, Offset: 0x780
 // Size: 0x74
@@ -102,7 +102,7 @@ function setupkillcament() {
     self thread cleanupkillcamentondeath();
 }
 
-// Namespace namespace_86fbdaad/namespace_86fbdaad
+// Namespace electroball_grenade/electroball_grenade
 // Params 0, eflags: 0x2 linked
 // Checksum 0x7b49914b, Offset: 0x800
 // Size: 0x4c
@@ -111,7 +111,7 @@ function cleanupkillcamentondeath() {
     self.killcament util::deleteaftertime(4 + level.proximitygrenadedotdamagetime * level.proximitygrenadedotdamageinstances);
 }
 
-// Namespace namespace_86fbdaad/namespace_86fbdaad
+// Namespace electroball_grenade/electroball_grenade
 // Params 3, eflags: 0x2 linked
 // Checksum 0xdeb149ef, Offset: 0x858
 // Size: 0x34
@@ -119,7 +119,7 @@ function proximitydetonate(attacker, weapon, *target) {
     weaponobjects::weapondetonate(weapon, target);
 }
 
-// Namespace namespace_86fbdaad/namespace_86fbdaad
+// Namespace electroball_grenade/electroball_grenade
 // Params 1, eflags: 0x2 linked
 // Checksum 0x2b0d9e90, Offset: 0x898
 // Size: 0x112
@@ -139,7 +139,7 @@ function watchproximitygrenadehitplayer(owner) {
     }
 }
 
-// Namespace namespace_86fbdaad/namespace_86fbdaad
+// Namespace electroball_grenade/electroball_grenade
 // Params 2, eflags: 0x0
 // Checksum 0xeaa4b962, Offset: 0x9b8
 // Size: 0x126
@@ -153,7 +153,7 @@ function performhudeffects(position, *distancetogrenade) {
     rangle = acos(rdot);
 }
 
-// Namespace namespace_86fbdaad/namespace_86fbdaad
+// Namespace electroball_grenade/electroball_grenade
 // Params 1, eflags: 0x2 linked
 // Checksum 0x240a31cb, Offset: 0xae8
 // Size: 0x74
@@ -164,7 +164,7 @@ function function_4e48c752(params) {
     }
 }
 
-// Namespace namespace_86fbdaad/namespace_86fbdaad
+// Namespace electroball_grenade/electroball_grenade
 // Params 1, eflags: 0x2 linked
 // Checksum 0xe5da2d17, Offset: 0xb68
 // Size: 0x1c4
@@ -193,7 +193,7 @@ function damageplayerinradius(attacker) {
     self clientfield::set_to_player("electroball_tazered", 0);
 }
 
-// Namespace namespace_86fbdaad/namespace_86fbdaad
+// Namespace electroball_grenade/electroball_grenade
 // Params 0, eflags: 0x2 linked
 // Checksum 0x6faa32b1, Offset: 0xd38
 // Size: 0xa4
@@ -207,7 +207,7 @@ function watch_death() {
     self clientfield::set_to_player("electroball_tazered", 0);
 }
 
-// Namespace namespace_86fbdaad/namespace_86fbdaad
+// Namespace electroball_grenade/electroball_grenade
 // Params 0, eflags: 0x2 linked
 // Checksum 0x93288624, Offset: 0xde8
 // Size: 0x54
@@ -218,7 +218,7 @@ function on_player_spawned() {
     }
 }
 
-// Namespace namespace_86fbdaad/namespace_86fbdaad
+// Namespace electroball_grenade/electroball_grenade
 // Params 0, eflags: 0x2 linked
 // Checksum 0x11df7c4c, Offset: 0xe48
 // Size: 0x2c
@@ -228,17 +228,17 @@ function on_ai_spawned() {
     }
 }
 
-// Namespace namespace_86fbdaad/namespace_86fbdaad
+// Namespace electroball_grenade/electroball_grenade
 // Params 1, eflags: 0x2 linked
 // Checksum 0x1f4a4001, Offset: 0xe80
 // Size: 0x7c
 function begin_other_grenade_tracking(params) {
-    if (isdefined(params.weapon) && isdefined(params.weapon.rootweapon) && params.weapon.rootweapon.name == #"hash_32370aa1d9f0d37") {
+    if (isdefined(params.weapon) && isdefined(params.weapon.rootweapon) && params.weapon.rootweapon.name == #"electroball_grenade") {
         params.projectile thread watchproximitygrenadehitplayer(self);
     }
 }
 
-// Namespace namespace_86fbdaad/namespace_86fbdaad
+// Namespace electroball_grenade/electroball_grenade
 // Params 0, eflags: 0x2 linked
 // Checksum 0xaa78def2, Offset: 0xf08
 // Size: 0xf4

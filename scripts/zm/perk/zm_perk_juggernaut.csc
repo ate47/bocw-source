@@ -32,7 +32,7 @@ function private function_70a657d8() {
 // Size: 0x3c
 function function_545fe52d() {
     if (is_true(level.enable_magic)) {
-        level._effect[#"hash_343b54b3b764e4e6"] = "zombie/fx_perk_juggernaut_ndu";
+        level._effect[#"jugger_light"] = "zombie/fx_perk_juggernaut_ndu";
     }
 }
 

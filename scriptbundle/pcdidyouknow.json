@@ -80,7 +80,7 @@
             "weight": 50
         }
     ],
-    "var_ec502488": [
+    "zcranked": [
         {
             "didyouknowentry": "#tips_zombies_cranked",
             "weight": 51
@@ -103,7 +103,7 @@
             "weight": 1
         }
     ],
-    "var_8cff5775": [
+    "doa": [
         {
             "didyouknowentry": "#tips_zombies_doa",
             "weight": 50
@@ -126,13 +126,13 @@
             "weight": 1
         }
     ],
-    "var_aebde246": [
+    "war12v12": [
         {
             "didyouknowentry": "#tips_multiplayer_war12v12",
             "weight": 3
         }
     ],
-    "var_774aa859": [
+    "vip": [
         {
             "didyouknowentry": "#tips_multiplayer_vip",
             "weight": 3

@@ -21,7 +21,7 @@ function private autoexec __init__system__() {
 // Checksum 0x852a320e, Offset: 0x170
 // Size: 0x84
 function function_70a657d8() {
-    level.var_2a994cc0 = namespace_eb35e6da::register();
+    level.var_2a994cc0 = sr_armor_menu::register();
     namespace_52c8f34d::function_70a657d8();
     clientfield::register("scriptmover", "" + #"hash_7dfc37315a4eff0", 1, 1, "int", &function_af3e97c, 0, 0);
 }

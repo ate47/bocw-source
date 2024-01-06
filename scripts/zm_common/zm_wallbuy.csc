@@ -180,8 +180,8 @@ function wallbuy_player_connect(localclientnum) {
 // Params 1, eflags: 0x4
 // Checksum 0xfcc78aab, Offset: 0x12a0
 // Size: 0xb4e
-function private function_86b59fcc(var_e77512f3) {
-    switch (var_e77512f3) {
+function private function_86b59fcc(chalk_model) {
+    switch (chalk_model) {
     case #"hash_20f0bd11d1c7311a":
     case #"hash_4114b6ac9879d85b":
     case #"hash_52461e82e039d255":
@@ -387,7 +387,7 @@ function private function_86b59fcc(var_e77512f3) {
         break;
     case #"hash_defdefdefdefdef0":
         /#
-            println("<unknown string>" + var_e77512f3);
+            println("<unknown string>" + chalk_model);
         #/
         type = 0;
         break;

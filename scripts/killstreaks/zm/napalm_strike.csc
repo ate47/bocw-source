@@ -21,7 +21,7 @@ function private autoexec __init__system__() {
 // Size: 0xcc
 function private function_70a657d8() {
     init_shared("killstreak_napalm_strike" + "_zm");
-    clientfield::register("scriptmover", "napalm_strike_marker_on", 1, 2, "int", &function_9b7af417, 0, 0);
+    clientfield::register("scriptmover", "napalm_strike_marker_on", 1, 2, "int", &napalm_strike_marker_on, 0, 0);
     namespace_bf7415ae::function_fc85e1a("napalm_strike", &function_85f3e359, &function_e72f1d06, &show_marker, &function_4362abef);
 }
 
@@ -29,7 +29,7 @@ function private function_70a657d8() {
 // Params 7, eflags: 0x0
 // Checksum 0x27ea7ea9, Offset: 0x2a8
 // Size: 0x31c
-function function_9b7af417(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function napalm_strike_marker_on(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         player = function_27673a7(fieldname);
         if (!is_true(self.allocated)) {

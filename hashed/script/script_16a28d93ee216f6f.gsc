@@ -160,8 +160,8 @@ function function_eb8c5f46() {
         corpses = [[ level.var_d3a7bebd ]](self.origin, var_e69a8d31);
     }
     level.stealth.var_69fc8bf2++;
-    var_64faa4a1 = undefined;
-    var_f5d24dc0 = undefined;
+    found_corpse = undefined;
+    saw_corpse = undefined;
     foreach (corpse in corpses) {
         var_2501cbe2 = corpse namespace_979752dc::function_5b776bd1();
         var_4ac4d617 = corpse getentitynumber();
@@ -182,7 +182,7 @@ function function_eb8c5f46() {
         }
         if (distsq < var_9f3728b2) {
             if (abs(self.origin[2] - var_2501cbe2[2]) < 60) {
-                var_64faa4a1 = corpse;
+                found_corpse = corpse;
                 break;
             }
         }
@@ -203,7 +203,7 @@ function function_eb8c5f46() {
             }
             if (distsq < var_3ff1021a) {
                 if (!isdefined(corpse.var_17022cd4) && self cansee(corpse)) {
-                    var_f5d24dc0 = corpse;
+                    saw_corpse = corpse;
                     break;
                 }
             }
@@ -211,21 +211,21 @@ function function_eb8c5f46() {
             var_b455e74a = vectornormalize(var_2501cbe2 + vectorscale((0, 0, 1), 30) - self geteye());
             if (vectordot(sight, var_b455e74a) > 0.55) {
                 if (!isdefined(corpse.var_17022cd4) && self cansee(corpse)) {
-                    var_f5d24dc0 = corpse;
+                    saw_corpse = corpse;
                     break;
                 }
             }
         }
     }
-    if (isdefined(var_64faa4a1)) {
-        var_64faa4a1.found.var_64faa4a1 = 1;
-        if (is_true(var_64faa4a1.var_17022cd4) && isdefined(self.stealth.corpse.ent) && self.stealth.corpse.ent == var_64faa4a1) {
+    if (isdefined(found_corpse)) {
+        found_corpse.found.found_corpse = 1;
+        if (is_true(found_corpse.var_17022cd4) && isdefined(self.stealth.corpse.ent) && self.stealth.corpse.ent == found_corpse) {
             self.stealth.var_e72a0096 = gettime();
         }
-        self function_a3fcf9e0("found_corpse", var_64faa4a1, var_64faa4a1 namespace_979752dc::function_5b776bd1());
-    } else if (isdefined(var_f5d24dc0)) {
-        self thread function_94ebd1f5(var_f5d24dc0);
-        self function_a3fcf9e0("saw_corpse", var_f5d24dc0, var_f5d24dc0 namespace_979752dc::function_5b776bd1());
+        self function_a3fcf9e0("found_corpse", found_corpse, found_corpse namespace_979752dc::function_5b776bd1());
+    } else if (isdefined(saw_corpse)) {
+        self thread function_94ebd1f5(saw_corpse);
+        self function_a3fcf9e0("saw_corpse", saw_corpse, saw_corpse namespace_979752dc::function_5b776bd1());
     }
 }
 
@@ -301,10 +301,10 @@ function function_f4ede6b0() {
 // Checksum 0xacd89fdf, Offset: 0x1160
 // Size: 0x644
 function function_808b81d8() {
-    if (!isdefined(self.stealth.var_c7c59c30)) {
-        self.stealth.var_c7c59c30 = spawnstruct();
+    if (!isdefined(self.stealth.suspicious_door)) {
+        self.stealth.suspicious_door = spawnstruct();
     }
-    if (isdefined(self.stealth.var_c7c59c30.nexttime) && gettime() < self.stealth.var_c7c59c30.nexttime) {
+    if (isdefined(self.stealth.suspicious_door.nexttime) && gettime() < self.stealth.suspicious_door.nexttime) {
         return;
     }
     if (self flag::get("stealth_hold_position")) {
@@ -313,15 +313,15 @@ function function_808b81d8() {
     if (self.ignoreall) {
         return;
     }
-    if (is_true(self.stealth.var_c7c59c30.var_209809da)) {
+    if (is_true(self.stealth.suspicious_door.var_209809da)) {
         return;
     }
-    if (isdefined(self.stealth.var_c7c59c30.ent)) {
-        self.stealth.var_c7c59c30.nexttime = gettime() + 100;
+    if (isdefined(self.stealth.suspicious_door.ent)) {
+        self.stealth.suspicious_door.nexttime = gettime() + 100;
     } else {
-        self.stealth.var_c7c59c30.nexttime = gettime() + 1000;
+        self.stealth.suspicious_door.nexttime = gettime() + 1000;
     }
-    doors = level.stealth.var_c7c59c30.doors;
+    doors = level.stealth.suspicious_door.doors;
     var_e51f89c2 = undefined;
     var_cc3596e8 = undefined;
     door = undefined;
@@ -332,20 +332,20 @@ function function_808b81d8() {
         }
         var_715a5cbd = door.origin;
         distsq = distancesquared(self.origin, var_715a5cbd);
-        var_9f3728b2 = level.stealth.var_c7c59c30.var_e055a590;
-        var_1adb66c8 = level.stealth.var_c7c59c30.var_9dc56984;
-        var_3ff1021a = level.stealth.var_c7c59c30.var_afbd85c2;
+        var_9f3728b2 = level.stealth.suspicious_door.var_e055a590;
+        var_1adb66c8 = level.stealth.suspicious_door.var_9dc56984;
+        var_3ff1021a = level.stealth.suspicious_door.var_afbd85c2;
         if (distsq < var_9f3728b2) {
             if (abs(self.origin[2] - var_715a5cbd[2]) < 60) {
                 var_e51f89c2 = door;
                 break;
             }
         }
-        if (isdefined(self.stealth.var_c7c59c30.ent)) {
-            if (self.stealth.var_c7c59c30.ent == door) {
+        if (isdefined(self.stealth.suspicious_door.ent)) {
+            if (self.stealth.suspicious_door.ent == door) {
                 continue;
             }
-            var_7e90842d = self.stealth.var_c7c59c30.ent.origin;
+            var_7e90842d = self.stealth.suspicious_door.ent.origin;
             var_2a0fe92a = distancesquared(self.origin, var_7e90842d);
             jumpiffalse(var_2a0fe92a <= distsq) LOC_000003b2;
         } else {
@@ -375,7 +375,7 @@ function function_808b81d8() {
     if (isdefined(var_e51f89c2)) {
         var_e51f89c2.found.var_e51f89c2 = 1;
         spot = undefined;
-        if (is_true(var_e51f89c2.var_17022cd4) && isdefined(self.stealth.var_c7c59c30.ent) && self.stealth.var_c7c59c30.ent == var_e51f89c2) {
+        if (is_true(var_e51f89c2.var_17022cd4) && isdefined(self.stealth.suspicious_door.ent) && self.stealth.suspicious_door.ent == var_e51f89c2) {
             self.stealth.var_e72a0096 = gettime();
         }
         if (isdefined(door.var_2fd025b)) {

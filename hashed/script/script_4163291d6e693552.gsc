@@ -31,13 +31,13 @@ function function_df911075() {
         break;
     case 3:
     case 4:
-        var_5e36739b = [2:#"hash_4f87aa2a203d37d0", 1:#"spawner_bo5_mimic", 0:#"hash_1aff4b71635bda08"];
+        var_5e36739b = [2:#"hash_4f87aa2a203d37d0", 1:#"spawner_bo5_mimic", 0:#"spawner_bo5_avogadro_sr"];
         break;
     case 5:
-        var_5e36739b = [3:#"hash_455ec8cc0d1ed4a4", 2:#"hash_4f87aa2a203d37d0", 1:#"spawner_bo5_mimic", 0:#"hash_1aff4b71635bda08"];
+        var_5e36739b = [3:#"spawner_zm_steiner", 2:#"hash_4f87aa2a203d37d0", 1:#"spawner_bo5_mimic", 0:#"spawner_bo5_avogadro_sr"];
         break;
     case #"hash_defdefdefdefdef0":
-        var_5e36739b = [5:#"spawner_bo5_abom", 4:#"hash_455ec8cc0d1ed4a4", 3:#"hash_4f87aa2a203d37d0", 2:#"spawner_bo5_mimic", 1:#"hash_704a090ff9fcffd0", 0:#"hash_1aff4b71635bda08"];
+        var_5e36739b = [5:#"spawner_bo5_abom", 4:#"spawner_zm_steiner", 3:#"hash_4f87aa2a203d37d0", 2:#"spawner_bo5_mimic", 1:#"spawner_bo5_mechz_sr", 0:#"spawner_bo5_avogadro_sr"];
         break;
     }
     return var_5e36739b;
@@ -48,7 +48,7 @@ function function_df911075() {
 // Checksum 0x688dc80c, Offset: 0x3f8
 // Size: 0xa2
 function function_82e262cf(var_7ecdee63) {
-    if (var_7ecdee63 === #"hash_1aff4b71635bda08" || var_7ecdee63 === #"hash_704a090ff9fcffd0" || var_7ecdee63 === #"spawner_bo5_mimic" || var_7ecdee63 === #"hash_4f87aa2a203d37d0" || var_7ecdee63 === #"hash_455ec8cc0d1ed4a4" || var_7ecdee63 === #"spawner_bo5_abom") {
+    if (var_7ecdee63 === #"spawner_bo5_avogadro_sr" || var_7ecdee63 === #"spawner_bo5_mechz_sr" || var_7ecdee63 === #"spawner_bo5_mimic" || var_7ecdee63 === #"hash_4f87aa2a203d37d0" || var_7ecdee63 === #"spawner_zm_steiner" || var_7ecdee63 === #"spawner_bo5_abom") {
         return 1;
     }
     return 0;
@@ -257,7 +257,7 @@ function function_df51a2e8(*var_5314bd63, *nd_path_start, *var_384528, str_notif
     level endon(#"end_game");
     self endoncallback(&zm_fasttravel::function_79766c56, #"bled_out", #"death");
     self.var_16735873 = 1;
-    self.var_99582f14 = 1;
+    self.b_ignore_fow_damage = 1;
     self zm_fasttravel::function_7a607f29(var_5817f611);
     self.var_f4e33249 = 1;
     self val::set(#"fasttravel", "freezecontrols", 1);
@@ -310,7 +310,7 @@ function function_df51a2e8(*var_5314bd63, *nd_path_start, *var_384528, str_notif
         self thread zm_fasttravel::function_a78584c0(var_12230d08, var_896486fb);
     }
     self waittill(#"fasttravel_over");
-    self.var_99582f14 = 0;
+    self.b_ignore_fow_damage = 0;
     if (isdefined(var_6c365dbf)) {
         level notify(var_6c365dbf);
     }
@@ -370,7 +370,7 @@ function function_3899cfea(v_org, n_radius) {
         a_zombies = getaiarray();
     }
     for (i = 0; i < a_zombies.size; i++) {
-        if (a_zombies[i].targetname === #"hash_38a18802d11dbb87" || is_true(a_zombies[i].var_1dccf3c1)) {
+        if (a_zombies[i].targetname === #"world_event_orda" || is_true(a_zombies[i].var_1dccf3c1)) {
             continue;
         }
         if (isalive(a_zombies[i])) {

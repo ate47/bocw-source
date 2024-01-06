@@ -34,8 +34,8 @@ function function_69258685(localclientnum, flashlightfx = "light/fx9_light_cp_fl
         level notify(#"hash_3832e59879eaf7fd");
         return;
     }
-    var_bc5e7a4e = isdefined(self.var_3d84fa3e.fxid);
-    if (var_bc5e7a4e && (var_5a528883 || var_f49dadc4)) {
+    flashlight_on = isdefined(self.var_3d84fa3e.fxid);
+    if (flashlight_on && (var_5a528883 || var_f49dadc4)) {
         self function_24a560cf(localclientnum);
         self function_69fc092e(localclientnum);
     }
@@ -72,16 +72,16 @@ function private register_clientfields() {
 // Checksum 0x71048321, Offset: 0x490
 // Size: 0x114
 function private function_db7bbe6c(localclientnum, *oldvalue, *newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
-    var_bc5e7a4e = self clientfield::get("gunflashlightfx");
+    flashlight_on = self clientfield::get("gunflashlightfx");
     var_787d46f2 = "tag_muzzle";
     if (isdefined(self.var_3d84fa3e.var_787d46f2)) {
         var_787d46f2 = self.var_3d84fa3e.var_787d46f2;
     }
-    if (var_bc5e7a4e) {
+    if (flashlight_on) {
         function_69258685(wasdemojump, "light/fx9_light_cp_flashlight", var_787d46f2);
     }
-    function_2573297e(wasdemojump, var_bc5e7a4e);
-    if (!var_bc5e7a4e) {
+    function_2573297e(wasdemojump, flashlight_on);
+    if (!flashlight_on) {
         function_69258685(wasdemojump, "light/fx9_light_cp_flashlight", "tag_light");
     }
 }
@@ -91,16 +91,16 @@ function private function_db7bbe6c(localclientnum, *oldvalue, *newvalue, *bnewen
 // Checksum 0x62c798d4, Offset: 0x5b0
 // Size: 0x7c
 function private function_7e507d3c(localclientnum, *oldvalue, *newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
-    var_bc5e7a4e = self clientfield::get("flashlightfx");
-    function_2573297e(wasdemojump, var_bc5e7a4e);
+    flashlight_on = self clientfield::get("flashlightfx");
+    function_2573297e(wasdemojump, flashlight_on);
 }
 
 // Namespace namespace_3d84fa3e/namespace_3d84fa3e
 // Params 2, eflags: 0x6 linked
 // Checksum 0x99df8064, Offset: 0x638
 // Size: 0xf4
-function private function_2573297e(localclientnum, var_bc5e7a4e) {
-    if (var_bc5e7a4e == 1) {
+function private function_2573297e(localclientnum, flashlight_on) {
+    if (flashlight_on == 1) {
         var_17716e4f = isdefined(self.var_3d84fa3e.fxid);
         if (var_17716e4f && !isfxplaying(localclientnum, self.var_3d84fa3e.fxid)) {
             self function_24a560cf(localclientnum);
@@ -108,7 +108,7 @@ function private function_2573297e(localclientnum, var_bc5e7a4e) {
         if (!isdefined(self.var_3d84fa3e.fxid)) {
             self function_69fc092e(localclientnum);
         }
-    } else if (var_bc5e7a4e == 0 && isdefined(self.var_3d84fa3e.fxid)) {
+    } else if (flashlight_on == 0 && isdefined(self.var_3d84fa3e.fxid)) {
         self function_24a560cf(localclientnum);
     }
 }

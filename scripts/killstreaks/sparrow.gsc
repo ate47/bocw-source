@@ -23,7 +23,7 @@ function __init__() {
     killstreaks::register_killstreak("killstreak_sparrow", &killstreaks::function_fc82c544);
     weapon = getweapon("sig_bow_flame");
     inventoryweapon = getweapon("inventory_sig_bow_flame");
-    var_2bd3ceea = getstatuseffect(#"hash_368c8f7e1e1459f9");
+    var_2bd3ceea = getstatuseffect(#"dot_sig_bow_flame");
     if (!isdefined(level.var_cc63b5fe)) {
         level.var_cc63b5fe = [];
     }
@@ -50,7 +50,7 @@ function function_8ea68ead(eattacker, einflictor, weapon, meansofdeath, *damage)
     if (damage == "MOD_DOT") {
         return;
     }
-    var_8d498080 = getstatuseffect(#"hash_368c8f7e1e1459f9");
+    var_8d498080 = getstatuseffect(#"dot_sig_bow_flame");
     self status_effect::status_effect_apply(var_8d498080, meansofdeath, einflictor);
 }
 
@@ -70,7 +70,7 @@ function event_handler[missile_fire] function_8cd77cf6(eventstruct) {
         missile.soundmod.missile = "player";
         missile thread weapons::check_stuck_to_player(1, 0, weapon);
         waitresult = undefined;
-        waitresult = missile waittill(#"projectile_impact_explode", #"projectile_impact_player", #"hash_4390b87a69abafe9");
+        waitresult = missile waittill(#"projectile_impact_explode", #"projectile_impact_player", #"bow_projectile_deleted");
         if (waitresult._notify == "bow_projectile_deleted") {
             return;
         }
@@ -106,7 +106,7 @@ function event_handler[missile_fire] function_8cd77cf6(eventstruct) {
 function function_1bb4a86d() {
     self waittill(#"death");
     waittillframeend();
-    self notify(#"hash_4390b87a69abafe9");
+    self notify(#"bow_projectile_deleted");
 }
 
 // Namespace namespace_e039b91b/namespace_e039b91b

@@ -515,7 +515,7 @@ function function_a0414d75(label) {
 // Params 6, eflags: 0x0
 // Checksum 0x54f15f75, Offset: 0x1e50
 // Size: 0x5c
-function function_e3bbd02e(*var_f828a846, *attack, *var_e18a7774, *release, var_2ce83612, *scale) {
+function function_e3bbd02e(*var_f828a846, *attack, *hold, *release, var_2ce83612, *scale) {
     if (isdefined(scale) == 1 && scale > 0) {
         wait(scale);
     }
@@ -525,7 +525,7 @@ function function_e3bbd02e(*var_f828a846, *attack, *var_e18a7774, *release, var_
 // Params 9, eflags: 0x0
 // Checksum 0x2162247, Offset: 0x1eb8
 // Size: 0x168
-function function_4f3aa5d6(*var_f828a846, attack, var_e18a7774, *release, var_2ce83612, var_81f8182f, dist_max, var_b0791d84, var_cc2c9bdb) {
+function function_4f3aa5d6(*var_f828a846, attack, hold, *release, var_2ce83612, var_81f8182f, dist_max, var_b0791d84, var_cc2c9bdb) {
     if (!isdefined(var_b0791d84) && isdefined(self) && isdefined(self.origin)) {
         var_b0791d84 = self.origin;
     }
@@ -553,7 +553,7 @@ function function_4f3aa5d6(*var_f828a846, attack, var_e18a7774, *release, var_2c
     if (release == 0) {
         release = release + 0.05;
     }
-    wait(var_e18a7774 + release);
+    wait(hold + release);
 }
 
 // Namespace snd/namespace_93606de4
@@ -782,7 +782,7 @@ function function_2517b19c(min, max, label = "shared_default", width = 0.5) {
 // Params 6, eflags: 0x6 linked
 // Checksum 0x30257099, Offset: 0x3090
 // Size: 0x66
-function private function_7776e399(alias, *var_f828a846, *attack, *var_e18a7774, *release, *scale) {
+function private function_7776e399(alias, *var_f828a846, *attack, *hold, *release, *scale) {
     self endon(#"death");
     self endon("abort_" + scale);
     while (1) {
@@ -830,9 +830,9 @@ function function_da704a02(alias, var_f828a846, scale, attack, release, radio) {
         var_2c0edc54 = 0;
     }
     var_a215ab3d = soundgetplaybacktime(alias);
-    var_e18a7774 = var_a215ab3d - attack - release;
-    if (var_e18a7774 < 0) {
-        var_e18a7774 = 0;
+    hold = var_a215ab3d - attack - release;
+    if (hold < 0) {
+        hold = 0;
     }
     if (function_81fac19d(var_a215ab3d <= 0, "alias '" + alias + "' length " + var_a215ab3d + " too short to envelope")) {
         var_2c0edc54 = 0;
@@ -849,7 +849,7 @@ function function_da704a02(alias, var_f828a846, scale, attack, release, radio) {
         if (function_81fac19d(dist > thresh, "critical dialogue '" + alias + "' " + dist / 12 + " feet away")) {
             var_2c0edc54 = 0;
         } else {
-            ent thread function_7776e399(alias, var_f828a846, attack, var_e18a7774, release, scale);
+            ent thread function_7776e399(alias, var_f828a846, attack, hold, release, scale);
         }
     }
     if (ent == level.player || radio == 1) {

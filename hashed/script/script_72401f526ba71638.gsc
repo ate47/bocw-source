@@ -42,7 +42,7 @@ function private function_70a657d8() {
         return;
     }
     level.var_d98fc25e = [];
-    function_134fcf4b(#"frost_blast", #"frost_blast_1", #"frost_blast_2", #"frost_blast_3", #"frost_blast_4", #"hash_2f14933f9c381974");
+    function_134fcf4b(#"frost_blast", #"frost_blast_1", #"frost_blast_2", #"frost_blast_3", #"frost_blast_4", #"frost_blast_5");
     function_134fcf4b(#"hash_7b5a77a85b0ffab7", #"hash_379869d5b6da974b", #"hash_37986ad5b6da98fe", #"hash_37986bd5b6da9ab1", #"hash_37986cd5b6da9c64", #"hash_37986dd5b6da9e17");
     function_134fcf4b(#"hash_41adc0ca9daf6e9d", #"energy_mine_1", #"energy_mine_2", #"energy_mine_3", #"energy_mine_4", #"hash_4ac3fea4add2a2c9");
     function_134fcf4b(#"hash_2d88b4c5217c7e7c", #"hash_164c43cbd0ee958", #"hash_164c73cbd0eee71", #"hash_164c63cbd0eecbe", #"hash_164c93cbd0ef1d7", #"hash_164c83cbd0ef024");
@@ -55,7 +55,7 @@ function private function_70a657d8() {
     level.var_fee98522 = [];
     level.var_5b46d961 = [];
     level.var_197c8eb1 = 0;
-    level.var_1b527536 = array(#"frost_blast", #"frost_blast_1", #"frost_blast_2", #"frost_blast_3", #"frost_blast_4", #"hash_2f14933f9c381974", #"hash_7b5a77a85b0ffab7", #"hash_379869d5b6da974b", #"hash_37986ad5b6da98fe", #"hash_37986bd5b6da9ab1", #"hash_37986cd5b6da9c64", #"hash_37986dd5b6da9e17", #"hash_41adc0ca9daf6e9d", #"energy_mine_1", #"energy_mine_2", #"energy_mine_3", #"energy_mine_4", #"hash_4ac3fea4add2a2c9", #"hash_2d88b4c5217c7e7c", #"hash_164c43cbd0ee958", #"hash_164c73cbd0eee71", #"hash_164c63cbd0eecbe", #"hash_164c93cbd0ef1d7", #"hash_164c83cbd0ef024", #"hash_1d9cb9dbd298acba", #"hash_631a223758cd92a", #"hash_631a123758cd777", #"hash_631a023758cd5c4", #"hash_6319f23758cd411", #"hash_6319e23758cd25e", #"hash_55569355da0f0f68", #"hash_43e326396554e18c", #"hash_43e329396554e6a5", #"hash_43e328396554e4f2", #"hash_43e323396554dc73", #"hash_43e322396554dac0", #"hash_5d6f444e983b62ca", #"hash_7a071f09cf16cbfa", #"hash_7a071e09cf16ca47", #"hash_7a071d09cf16c894", #"hash_7a071c09cf16c6e1", #"hash_7a071b09cf16c52e", #"hash_148e5880a4f4d46f", #"hash_3d62b9c92bbca893", #"hash_3d62bac92bbcaa46", #"hash_3d62bbc92bbcabf9", #"hash_3d62bcc92bbcadac", #"hash_3d62bdc92bbcaf5f");
+    level.var_1b527536 = array(#"frost_blast", #"frost_blast_1", #"frost_blast_2", #"frost_blast_3", #"frost_blast_4", #"frost_blast_5", #"hash_7b5a77a85b0ffab7", #"hash_379869d5b6da974b", #"hash_37986ad5b6da98fe", #"hash_37986bd5b6da9ab1", #"hash_37986cd5b6da9c64", #"hash_37986dd5b6da9e17", #"hash_41adc0ca9daf6e9d", #"energy_mine_1", #"energy_mine_2", #"energy_mine_3", #"energy_mine_4", #"hash_4ac3fea4add2a2c9", #"hash_2d88b4c5217c7e7c", #"hash_164c43cbd0ee958", #"hash_164c73cbd0eee71", #"hash_164c63cbd0eecbe", #"hash_164c93cbd0ef1d7", #"hash_164c83cbd0ef024", #"hash_1d9cb9dbd298acba", #"hash_631a223758cd92a", #"hash_631a123758cd777", #"hash_631a023758cd5c4", #"hash_6319f23758cd411", #"hash_6319e23758cd25e", #"hash_55569355da0f0f68", #"hash_43e326396554e18c", #"hash_43e329396554e6a5", #"hash_43e328396554e4f2", #"hash_43e323396554dc73", #"hash_43e322396554dac0", #"hash_5d6f444e983b62ca", #"hash_7a071f09cf16cbfa", #"hash_7a071e09cf16ca47", #"hash_7a071d09cf16c894", #"hash_7a071c09cf16c6e1", #"hash_7a071b09cf16c52e", #"hash_148e5880a4f4d46f", #"hash_3d62b9c92bbca893", #"hash_3d62bac92bbcaa46", #"hash_3d62bbc92bbcabf9", #"hash_3d62bcc92bbcadac", #"hash_3d62bdc92bbcaf5f");
     clientfield::register_clientuimodel("hud_items.ammoCooldowns.fieldUpgrade", 1, 5, "float");
     clientfield::register("toplayer", "field_upgrade_selected", 1, 6, "int");
     clientfield::register("allplayers", "field_upgrade_fired", 1, 4, "counter");
@@ -379,7 +379,7 @@ function private function_9a67c8c7(str_name) {
     case #"frost_blast_1":
     case #"frost_blast_3":
     case #"frost_blast_2":
-    case #"hash_2f14933f9c381974":
+    case #"frost_blast_5":
         var_45d28da0 = 1;
         break;
     case #"hash_379869d5b6da974b":

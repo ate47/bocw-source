@@ -2,13 +2,13 @@
 #using scripts\core_common\lui_shared.gsc;
 #using scripts\core_common\clientfield_shared.gsc;
 
-#namespace namespace_51c9859e;
+#namespace vip_notify_text;
 
-// Namespace namespace_51c9859e
+// Namespace vip_notify_text
 // Method(s) 7 Total 14
 class class_302a48fc : cluielem {
 
-    // Namespace class_302a48fc/namespace_51c9859e
+    // Namespace class_302a48fc/vip_notify_text
     // Params 0, eflags: 0x8
     // Checksum 0x9f56f53c, Offset: 0x230
     // Size: 0x14
@@ -16,7 +16,7 @@ class class_302a48fc : cluielem {
         cluielem::__constructor();
     }
 
-    // Namespace class_302a48fc/namespace_51c9859e
+    // Namespace class_302a48fc/vip_notify_text
     // Params 0, eflags: 0x90 class_linked
     // Checksum 0xa02d9667, Offset: 0x3e0
     // Size: 0x14
@@ -24,7 +24,7 @@ class class_302a48fc : cluielem {
         cluielem::__destructor();
     }
 
-    // Namespace namespace_302a48fc/namespace_51c9859e
+    // Namespace namespace_302a48fc/vip_notify_text
     // Params 2, eflags: 0x0
     // Checksum 0x7619b44c, Offset: 0x2c8
     // Size: 0x3c
@@ -32,7 +32,7 @@ class class_302a48fc : cluielem {
         cluielem::open_luielem(player, flags);
     }
 
-    // Namespace namespace_302a48fc/namespace_51c9859e
+    // Namespace namespace_302a48fc/vip_notify_text
     // Params 1, eflags: 0x0
     // Checksum 0x46de8545, Offset: 0x310
     // Size: 0x24
@@ -40,7 +40,7 @@ class class_302a48fc : cluielem {
         cluielem::close_luielem(player);
     }
 
-    // Namespace namespace_302a48fc/namespace_51c9859e
+    // Namespace namespace_302a48fc/vip_notify_text
     // Params 0, eflags: 0x0
     // Checksum 0xe16bf71a, Offset: 0x250
     // Size: 0x6c
@@ -50,7 +50,7 @@ class class_302a48fc : cluielem {
         cluielem::add_clientfield("alpha", 1, 8, "float");
     }
 
-    // Namespace namespace_302a48fc/namespace_51c9859e
+    // Namespace namespace_302a48fc/vip_notify_text
     // Params 2, eflags: 0x0
     // Checksum 0x118f27f9, Offset: 0x390
     // Size: 0x44
@@ -58,7 +58,7 @@ class class_302a48fc : cluielem {
         player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "alpha", value);
     }
 
-    // Namespace namespace_302a48fc/namespace_51c9859e
+    // Namespace namespace_302a48fc/vip_notify_text
     // Params 2, eflags: 0x0
     // Checksum 0xd14571ed, Offset: 0x340
     // Size: 0x44
@@ -68,7 +68,7 @@ class class_302a48fc : cluielem {
 
 }
 
-// Namespace namespace_51c9859e/namespace_51c9859e
+// Namespace vip_notify_text/vip_notify_text
 // Params 0, eflags: 0x0
 // Checksum 0x8653f2f9, Offset: 0x100
 // Size: 0x34
@@ -78,7 +78,7 @@ function register() {
     return elem;
 }
 
-// Namespace namespace_51c9859e/namespace_51c9859e
+// Namespace vip_notify_text/vip_notify_text
 // Params 2, eflags: 0x0
 // Checksum 0xa4df70d2, Offset: 0x140
 // Size: 0x38
@@ -86,7 +86,7 @@ function open(player, flags = 0) {
     [[ self ]]->open(player, flags);
 }
 
-// Namespace namespace_51c9859e/namespace_51c9859e
+// Namespace vip_notify_text/vip_notify_text
 // Params 1, eflags: 0x0
 // Checksum 0x2fdf789, Offset: 0x180
 // Size: 0x1c
@@ -94,7 +94,7 @@ function close(player) {
     [[ self ]]->close(player);
 }
 
-// Namespace namespace_51c9859e/namespace_51c9859e
+// Namespace vip_notify_text/vip_notify_text
 // Params 1, eflags: 0x0
 // Checksum 0xe6010a6a, Offset: 0x1a8
 // Size: 0x1a
@@ -102,7 +102,7 @@ function is_open(player) {
     return [[ self ]]->function_7bfd10e6(player);
 }
 
-// Namespace namespace_51c9859e/namespace_51c9859e
+// Namespace vip_notify_text/vip_notify_text
 // Params 2, eflags: 0x0
 // Checksum 0x38e07786, Offset: 0x1d0
 // Size: 0x28
@@ -110,7 +110,7 @@ function function_d01a102c(player, value) {
     [[ self ]]->function_d01a102c(player, value);
 }
 
-// Namespace namespace_51c9859e/namespace_51c9859e
+// Namespace vip_notify_text/vip_notify_text
 // Params 2, eflags: 0x0
 // Checksum 0xeb4ba0b, Offset: 0x200
 // Size: 0x28

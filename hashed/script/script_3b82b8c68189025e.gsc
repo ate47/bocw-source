@@ -19,9 +19,9 @@
 #using scripts\core_common\util_shared.gsc;
 #using scripts\core_common\flag_shared.gsc;
 
-#namespace namespace_6d8a9d04;
+#namespace dialog_tree;
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 0, eflags: 0x5
 // Checksum 0x29b09891, Offset: 0x4a0
 // Size: 0x34
@@ -29,7 +29,7 @@ function private autoexec __init__system__() {
     system::register("dialog_tree", &function_70a657d8, undefined, undefined, undefined);
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 0, eflags: 0x6 linked
 // Checksum 0xb7e97996, Offset: 0x4e0
 // Size: 0x164
@@ -48,7 +48,7 @@ function private function_70a657d8() {
     level.var_22817c8a[#"medium"] = 3;
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 8, eflags: 0x2 linked
 // Checksum 0x125192b7, Offset: 0x650
 // Size: 0x1fa
@@ -78,7 +78,7 @@ function function_82b16606(enter_func = undefined, exit_func = undefined, allow_
     return var_5bc64970;
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 1, eflags: 0x2 linked
 // Checksum 0x80b628a, Offset: 0x858
 // Size: 0x1a
@@ -86,7 +86,7 @@ function function_f95fa448(bundle) {
     self.scriptbundle = bundle;
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 10, eflags: 0x2 linked
 // Checksum 0x67841b15, Offset: 0x880
 // Size: 0x112
@@ -95,7 +95,7 @@ function function_58d27b23(var_394cd6af, var_cfef5030 = undefined, var_88ab04e5 
     return self function_d602cdd7(option);
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 11, eflags: 0x0
 // Checksum 0xed629975, Offset: 0x9a0
 // Size: 0xb2
@@ -104,7 +104,7 @@ function function_6bbbf87(var_9ddc06f5, var_394cd6af, var_cfef5030, var_88ab04e5
     return self function_d602cdd7(option);
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 13, eflags: 0x0
 // Checksum 0x1a5b1c53, Offset: 0xa60
 // Size: 0xe2
@@ -113,7 +113,7 @@ function function_7fe78745(var_84fa2307, var_c275310d, reset = 1, var_394cd6af, 
     return self function_d602cdd7(option);
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 10, eflags: 0x0
 // Checksum 0x742cd31e, Offset: 0xb50
 // Size: 0xda
@@ -124,7 +124,7 @@ function function_9e36808(var_394cd6af, var_cfef5030, var_88ab04e5, var_a0ee58ce
     return self function_d602cdd7(option);
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 11, eflags: 0x0
 // Checksum 0x8f7f542c, Offset: 0xc38
 // Size: 0xc2
@@ -134,7 +134,7 @@ function function_ad98a815(var_1307f204, var_394cd6af, var_cfef5030, var_88ab04e
     return self function_d602cdd7(option);
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 11, eflags: 0x0
 // Checksum 0x13ee37b3, Offset: 0xd08
 // Size: 0xe2
@@ -145,7 +145,7 @@ function function_f5d1891(var_9ddc06f5, var_394cd6af, var_cfef5030, var_88ab04e5
     return self function_d602cdd7(option);
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 12, eflags: 0x0
 // Checksum 0x5109fe73, Offset: 0xdf8
 // Size: 0xca
@@ -155,7 +155,7 @@ function function_da884b08(var_1307f204, var_9ddc06f5, var_394cd6af, var_cfef503
     return self function_d602cdd7(option);
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 2, eflags: 0x0
 // Checksum 0x333e11e7, Offset: 0xed0
 // Size: 0x56
@@ -163,15 +163,15 @@ function function_6cbfa3d2(var_e728c53 = self.options.size - 1, end_dialog = 1) 
     self.options[var_e728c53].end_dialog = end_dialog;
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 1, eflags: 0x0
 // Checksum 0x2ab8e6a9, Offset: 0xf30
 // Size: 0x42
 function function_6ebd37a4(var_e728c53 = self.options.size - 1) {
-    self.options[var_e728c53].var_9218c73a = 1;
+    self.options[var_e728c53].important = 1;
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 1, eflags: 0x0
 // Checksum 0xbbebe300, Offset: 0xf80
 // Size: 0x42
@@ -179,7 +179,7 @@ function function_bc7c03bf(var_e728c53 = self.options.size - 1) {
     self.options[var_e728c53].var_5741b81f = 1;
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 5, eflags: 0x0
 // Checksum 0xb6941ff5, Offset: 0xfd0
 // Size: 0x25e
@@ -211,7 +211,7 @@ function function_46f25b65(var_e728c53 = self.options.size - 1, var_a5bdf9c0 = 0
     }
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 2, eflags: 0x0
 // Checksum 0x92af4c7a, Offset: 0x1238
 // Size: 0x5e
@@ -226,7 +226,7 @@ function function_a3a3ea7d(message, var_b5df2c8b) {
     }
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 0, eflags: 0x0
 // Checksum 0x858307b6, Offset: 0x12a0
 // Size: 0xe
@@ -234,18 +234,18 @@ function function_b32b7f64() {
     self.var_6755136a = 0;
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 2, eflags: 0x2 linked
 // Checksum 0xd164f7e9, Offset: 0x12b8
 // Size: 0x9a
-function function_21780fc5(var_6d8a9d04, var_a9b0cfdc) {
+function function_21780fc5(dialog_tree, var_a9b0cfdc) {
     /#
-        assert(isdefined(var_6d8a9d04) && isarray(var_a9b0cfdc) && isint(var_a9b0cfdc[0]) && isint(var_a9b0cfdc[1]), "<unknown string>");
+        assert(isdefined(dialog_tree) && isarray(var_a9b0cfdc) && isint(var_a9b0cfdc[0]) && isint(var_a9b0cfdc[1]), "<unknown string>");
     #/
-    var_6d8a9d04.position = var_a9b0cfdc;
+    dialog_tree.position = var_a9b0cfdc;
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 1, eflags: 0x0
 // Checksum 0x4ecff83c, Offset: 0x1360
 // Size: 0x1a
@@ -253,7 +253,7 @@ function function_6bb91351(var_9c958fe3) {
     self.var_9c958fe3 = var_9c958fe3;
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 10, eflags: 0x0
 // Checksum 0x41171ec4, Offset: 0x1388
 // Size: 0x160
@@ -273,7 +273,7 @@ function function_b82713b8(var_348c0b50, var_f2aae3f7, var_dfe2a95d, var_60a7aec
     self.player_pos[self.player_pos.size] = new_pos;
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 3, eflags: 0x6 linked
 // Checksum 0xf63b688c, Offset: 0x14f0
 // Size: 0x17a
@@ -292,7 +292,7 @@ function private function_decf2123(var_8b3554e5, var_16f87bfa, var_66a25c9b) {
         case #"randomize":
             var_8b3554e5 = randomint(var_16f87bfa);
             break;
-        case #"hash_4585082b17ec44f":
+        case #"randomize_skip_first":
             var_8b3554e5 = randomint(var_16f87bfa - 1) + 1;
             break;
         }
@@ -313,7 +313,7 @@ function private function_decf2123(var_8b3554e5, var_16f87bfa, var_66a25c9b) {
     return var_8b3554e5;
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 2, eflags: 0x6 linked
 // Checksum 0x8bdf5f66, Offset: 0x1678
 // Size: 0x6e4
@@ -344,24 +344,24 @@ function private function_a92530c0(var_34b21e8e, var_6a8278e5) {
         if (isdefined(var_bb76606c.stance)) {
             switch (var_bb76606c.stance) {
             case #"stand":
-                self.activator val::set(#"hash_50dd1fbbd883b24e", "allow_crouch", 0);
-                self.activator val::set(#"hash_50dd1fbbd883b24e", "allow_prone", 0);
-                self.activator val::set(#"hash_50dd1fbbd883b24e", "allow_stand", 1);
+                self.activator val::set(#"dialog_tree", "allow_crouch", 0);
+                self.activator val::set(#"dialog_tree", "allow_prone", 0);
+                self.activator val::set(#"dialog_tree", "allow_stand", 1);
                 break;
             case #"crouch":
-                self.activator val::set(#"hash_50dd1fbbd883b24e", "allow_crouch", 1);
-                self.activator val::set(#"hash_50dd1fbbd883b24e", "allow_prone", 0);
-                self.activator val::set(#"hash_50dd1fbbd883b24e", "allow_stand", 0);
+                self.activator val::set(#"dialog_tree", "allow_crouch", 1);
+                self.activator val::set(#"dialog_tree", "allow_prone", 0);
+                self.activator val::set(#"dialog_tree", "allow_stand", 0);
                 break;
             case #"prone":
-                self.activator val::set(#"hash_50dd1fbbd883b24e", "allow_crouch", 0);
-                self.activator val::set(#"hash_50dd1fbbd883b24e", "allow_prone", 1);
-                self.activator val::set(#"hash_50dd1fbbd883b24e", "allow_stand", 0);
+                self.activator val::set(#"dialog_tree", "allow_crouch", 0);
+                self.activator val::set(#"dialog_tree", "allow_prone", 1);
+                self.activator val::set(#"dialog_tree", "allow_stand", 0);
                 break;
             }
             player setstance(var_bb76606c.stance);
         }
-        self.activator val::set(#"hash_50dd1fbbd883b24e", "allow_movement", 0);
+        self.activator val::set(#"dialog_tree", "allow_movement", 0);
         self.activator ghost();
         self.var_bc205c58 = player util::spawn_model("tag_origin", var_bb76606c.var_348c0b50.origin, var_bb76606c.var_348c0b50.angles);
         self.var_bc205c58 dontinterpolate();
@@ -385,7 +385,7 @@ function private function_a92530c0(var_34b21e8e, var_6a8278e5) {
     }
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 1, eflags: 0x6 linked
 // Checksum 0xb38c11e2, Offset: 0x1d68
 // Size: 0xc4
@@ -396,12 +396,12 @@ function private function_edd56700(player) {
     } else {
         player unlink();
         self.var_bc205c58 = undefined;
-        self.activator val::reset(#"hash_50dd1fbbd883b24e", "allow_movement");
+        self.activator val::reset(#"dialog_tree", "allow_movement");
     }
     player show();
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 4, eflags: 0x2 linked
 // Checksum 0x6cc06ab7, Offset: 0x1e38
 // Size: 0x1aa
@@ -426,7 +426,7 @@ function function_b8031554(var_34b21e8e, *struct, scene, shot) {
     }
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 3, eflags: 0x6 linked
 // Checksum 0xec537548, Offset: 0x1ff0
 // Size: 0xec
@@ -448,7 +448,7 @@ function private function_2ae0f2f5(var_34b21e8e, struct, player_pos) {
     }
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 3, eflags: 0x6 linked
 // Checksum 0x61dea120, Offset: 0x20e8
 // Size: 0x16c
@@ -479,11 +479,11 @@ function private function_86a1bed2(var_34b21e8e, struct, player_pos) {
     }
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 9, eflags: 0x2 linked
 // Checksum 0x2b85c9a5, Offset: 0x2260
 // Size: 0x29e
-function function_cfa96cee(var_6d8a9d04, var_6a8278e5, timer, var_b98e33f = "dialog_wait_cancel", var_9897a186 = 80, var_a4b4cae2 = 200, var_7f8e2bfe = 0, var_6c457e26 = vectorscale((1, 0, 0), 6), var_5bab29d8 = 0) {
+function function_cfa96cee(dialog_tree, var_6a8278e5, timer, var_b98e33f = "dialog_wait_cancel", var_9897a186 = 80, var_a4b4cae2 = 200, var_7f8e2bfe = 0, var_6c457e26 = vectorscale((1, 0, 0), 6), var_5bab29d8 = 0) {
     if (isdefined(self) && isai(self) && !isalive(self)) {
         /#
             println("<unknown string>" + self.name + "<unknown string>");
@@ -503,14 +503,14 @@ function function_cfa96cee(var_6d8a9d04, var_6a8278e5, timer, var_b98e33f = "dia
     msg = undefined;
     msg = self waittill(#"trigger", #"death", #"hash_15ec42f1846ef9d0", #"deleted", var_b98e33f);
     if (msg._notify == "trigger") {
-        return var_6d8a9d04 run(self, var_6a8278e5, timer, msg.activator, var_5bab29d8);
+        return dialog_tree run(self, var_6a8278e5, timer, msg.activator, var_5bab29d8);
     } else {
         self util::function_dce0e9b9();
         return;
     }
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 7, eflags: 0x2 linked
 // Checksum 0xfab586a3, Offset: 0x2508
 // Size: 0x13c8
@@ -532,7 +532,7 @@ function run(var_34b21e8e, var_6a8278e5, timer, activator, var_5bab29d8 = 0, var
     }
     self.activator endon(#"death");
     globallogic_ui::function_9ed5232e("ActorOverheadNames.0.hidden", 1);
-    self.activator val::set(#"hash_50dd1fbbd883b24e", "show_crosshair", 0);
+    self.activator val::set(#"dialog_tree", "show_crosshair", 0);
     if (self.var_6755136a || !savegame::function_51c242e9(1) && !var_5bab29d8) {
         var_e9ba1503 = 3;
         self.activator util::show_hint_text(self.var_6c2428f4, 0, undefined, var_e9ba1503);
@@ -553,18 +553,18 @@ function run(var_34b21e8e, var_6a8278e5, timer, activator, var_5bab29d8 = 0, var
     if (var_34b21e8e.var_b905c47b <= 1) {
         level flag::set("dialog_tree_active");
         level flag::set("prompts_disabled");
-        namespace_61e6d095::function_28027c42(#"hash_50dd1fbbd883b24e", [1:#"hint_tutorial", 0:#"hash_50dd1fbbd883b24e"]);
+        namespace_61e6d095::function_28027c42(#"dialog_tree", [1:#"hint_tutorial", 0:#"dialog_tree"]);
         objectives::function_9dfb43fc();
         self.var_bc62b3ce = getdvarfloat(#"hash_6b57212fd4fcdd3a");
         setdvar(#"hash_6b57212fd4fcdd3a", 0);
-        self.activator val::set(#"hash_50dd1fbbd883b24e", "ignoreme", 1);
-        self.activator val::set(#"hash_50dd1fbbd883b24e", "takedamage", 0);
+        self.activator val::set(#"dialog_tree", "ignoreme", 1);
+        self.activator val::set(#"dialog_tree", "takedamage", 0);
         if (isai(var_34b21e8e)) {
             if (!isdefined(var_34b21e8e.animname)) {
                 var_34b21e8e.animname.var_34b21e8e = "generic";
             }
-            var_34b21e8e val::set(#"hash_50dd1fbbd883b24e", "ignoreme", 1);
-            var_34b21e8e val::set(#"hash_50dd1fbbd883b24e", "takedamage", 0);
+            var_34b21e8e val::set(#"dialog_tree", "ignoreme", 1);
+            var_34b21e8e val::set(#"dialog_tree", "takedamage", 0);
         }
         self function_a92530c0(var_34b21e8e, var_6a8278e5);
         if (!isdefined(self.var_bc205c58) && !self.allow_movement) {
@@ -578,12 +578,12 @@ function run(var_34b21e8e, var_6a8278e5, timer, activator, var_5bab29d8 = 0, var
                 self.activator playerlinktodelta(self.var_bc205c58, "tag_origin", 0, 20, 20, 10, 10, 1);
             }
             self.activator setstance("stand");
-            self.activator val::set(#"hash_50dd1fbbd883b24e", "allow_crouch", 0);
-            self.activator val::set(#"hash_50dd1fbbd883b24e", "allow_prone", 0);
+            self.activator val::set(#"dialog_tree", "allow_crouch", 0);
+            self.activator val::set(#"dialog_tree", "allow_prone", 0);
         }
         if (!self.var_6cd69890) {
-            self.activator val::set(#"hash_50dd1fbbd883b24e", "disable_weapons", 1);
-            self.activator val::set(#"hash_50dd1fbbd883b24e", "disable_offhand_weapons", 1);
+            self.activator val::set(#"dialog_tree", "disable_weapons", 1);
+            self.activator val::set(#"dialog_tree", "disable_offhand_weapons", 1);
         }
         self.var_f5af9940 = 0;
     }
@@ -616,7 +616,7 @@ function run(var_34b21e8e, var_6a8278e5, timer, activator, var_5bab29d8 = 0, var
             continue;
         }
         var_34b21e8e flag::set("_dialog_ui_animating");
-        namespace_61e6d095::function_9ade1d9b(#"hash_50dd1fbbd883b24e", "kbmIndexSelected", -1, 1, undefined, undefined, 1);
+        namespace_61e6d095::function_9ade1d9b(#"dialog_tree", "kbmIndexSelected", -1, 1, undefined, undefined, 1);
         var_8989140b = function_8b61aa4c(var_d9d52a9d, var_34b21e8e, var_cf6d95c9);
         if (var_8989140b == -1) {
             break;
@@ -689,14 +689,14 @@ function run(var_34b21e8e, var_6a8278e5, timer, activator, var_5bab29d8 = 0, var
         if (self.var_4d84ed71) {
             namespace_82bfe441::fade(0, "FadeFast");
         }
-        if (namespace_61e6d095::exists(#"hash_50dd1fbbd883b24e")) {
-            namespace_61e6d095::function_73c9a490(#"hash_50dd1fbbd883b24e", 0);
-            namespace_61e6d095::remove(#"hash_50dd1fbbd883b24e");
+        if (namespace_61e6d095::exists(#"dialog_tree")) {
+            namespace_61e6d095::function_73c9a490(#"dialog_tree", 0);
+            namespace_61e6d095::remove(#"dialog_tree");
         }
-        namespace_61e6d095::function_4279fd02(#"hash_50dd1fbbd883b24e");
+        namespace_61e6d095::function_4279fd02(#"dialog_tree");
         objectives::function_4279fd02();
         globallogic_ui::function_9ed5232e("ActorOverheadNames.0.hidden", 0);
-        self.activator val::reset(#"hash_50dd1fbbd883b24e", "show_crosshair");
+        self.activator val::reset(#"dialog_tree", "show_crosshair");
         self.activator clientfield::set_to_player("dt_set_hide_reticle_dot", 0);
         if (isdefined(self.var_c7af782)) {
             self thread function_86a1bed2(var_34b21e8e, var_6a8278e5, self.var_c7af782);
@@ -716,24 +716,24 @@ function run(var_34b21e8e, var_6a8278e5, timer, activator, var_5bab29d8 = 0, var
                 self.var_bc205c58 delete();
                 self.var_bc205c58 = undefined;
             }
-            self.activator val::reset(#"hash_50dd1fbbd883b24e", "allow_crouch");
-            self.activator val::reset(#"hash_50dd1fbbd883b24e", "allow_prone");
-            self.activator val::reset(#"hash_50dd1fbbd883b24e", "allow_stand");
-            self.activator val::reset(#"hash_50dd1fbbd883b24e", "allow_movement");
+            self.activator val::reset(#"dialog_tree", "allow_crouch");
+            self.activator val::reset(#"dialog_tree", "allow_prone");
+            self.activator val::reset(#"dialog_tree", "allow_stand");
+            self.activator val::reset(#"dialog_tree", "allow_movement");
         }
         if (!self.var_6cd69890) {
-            self.activator val::reset(#"hash_50dd1fbbd883b24e", "disable_weapons");
-            self.activator val::reset(#"hash_50dd1fbbd883b24e", "disable_offhand_weapons");
+            self.activator val::reset(#"dialog_tree", "disable_weapons");
+            self.activator val::reset(#"dialog_tree", "disable_offhand_weapons");
         }
         var_34b21e8e flag::clear("_dialog_vo_playing");
         var_34b21e8e flag::clear("_dialog_anim_playing");
         var_34b21e8e flag::clear("_dialog_func_running");
-        self.activator val::reset(#"hash_50dd1fbbd883b24e", "ignoreme");
-        self.activator val::reset(#"hash_50dd1fbbd883b24e", "takedamage");
+        self.activator val::reset(#"dialog_tree", "ignoreme");
+        self.activator val::reset(#"dialog_tree", "takedamage");
         waitframe(1);
         if (isai(var_34b21e8e)) {
-            var_34b21e8e val::reset(#"hash_50dd1fbbd883b24e", "ignoreme");
-            var_34b21e8e val::reset(#"hash_50dd1fbbd883b24e", "takedamage");
+            var_34b21e8e val::reset(#"dialog_tree", "ignoreme");
+            var_34b21e8e val::reset(#"dialog_tree", "takedamage");
         }
         self notify(#"dialog_tree_end");
         var_34b21e8e notify(#"dialog_tree_end");
@@ -749,7 +749,7 @@ function run(var_34b21e8e, var_6a8278e5, timer, activator, var_5bab29d8 = 0, var
     return var_f4848d2b;
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 0, eflags: 0x0
 // Checksum 0xfecacd3d, Offset: 0x38d8
 // Size: 0x9c
@@ -757,13 +757,13 @@ function function_bfcc8f29() {
     if (self.var_4d84ed71) {
         namespace_82bfe441::fade(0, "FadeFast");
     }
-    namespace_61e6d095::function_73c9a490(#"hash_50dd1fbbd883b24e", 0);
-    namespace_61e6d095::remove(#"hash_50dd1fbbd883b24e");
-    namespace_61e6d095::function_4279fd02(#"hash_50dd1fbbd883b24e");
+    namespace_61e6d095::function_73c9a490(#"dialog_tree", 0);
+    namespace_61e6d095::remove(#"dialog_tree");
+    namespace_61e6d095::function_4279fd02(#"dialog_tree");
     objectives::function_4279fd02();
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 0, eflags: 0x0
 // Checksum 0xa64a5b96, Offset: 0x3980
 // Size: 0x2c
@@ -772,17 +772,17 @@ function function_6a2674b8() {
     return var_8447108b.size;
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 0, eflags: 0x0
 // Checksum 0xec78f232, Offset: 0x39b8
 // Size: 0x58
 function function_a6a75a20() {
     self.var_34b21e8e flag::wait_till("waiting_on_player_choice");
     waitframe(1);
-    level notify(#"hash_63db5f086ff3eaa2", {#var_70b35161:-1});
+    level notify(#"dialog_tree_option_selected", {#var_70b35161:-1});
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 2, eflags: 0x6 linked
 // Checksum 0x8ae744aa, Offset: 0x3a18
 // Size: 0x284
@@ -818,7 +818,7 @@ function private function_27059a7f(var_34b21e8e, var_6a8278e5) {
     }
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 3, eflags: 0x6 linked
 // Checksum 0xf72e847e, Offset: 0x3ca8
 // Size: 0x564
@@ -887,7 +887,7 @@ function private function_58881e72(var_7af0d1dc, str_shot, var_6a8278e5) {
     return 1;
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 2, eflags: 0x6 linked
 // Checksum 0x8fa9ca0a, Offset: 0x4218
 // Size: 0x1e4
@@ -921,7 +921,7 @@ function private function_62d48ab(var_34b21e8e, var_2f04fa05) {
     var_34b21e8e flag::clear("_dialog_vo_playing");
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 1, eflags: 0x6 linked
 // Checksum 0x7232ec4b, Offset: 0x4408
 // Size: 0x64
@@ -934,11 +934,11 @@ function private function_d602cdd7(var_e2b4d51e) {
     return var_e728c53;
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 16, eflags: 0x6 linked
 // Checksum 0x4ce63cb9, Offset: 0x4478
 // Size: 0x1f6
-function private function_98927b7b(parent_id, var_394cd6af, var_cfef5030, var_88ab04e5, var_a0ee58ce, end_dialog = 0, set_flag, var_a16c9b3f, var_9ddc06f5, var_3fa65bba, var_d3d10c6d, var_a1a8b237, var_9218c73a = 0, var_84fa2307, var_c275310d, var_50f9a62 = 1) {
+function private function_98927b7b(parent_id, var_394cd6af, var_cfef5030, var_88ab04e5, var_a0ee58ce, end_dialog = 0, set_flag, var_a16c9b3f, var_9ddc06f5, var_3fa65bba, var_d3d10c6d, var_a1a8b237, important = 0, var_84fa2307, var_c275310d, var_50f9a62 = 1) {
     option = spawnstruct();
     option.active.option = 1;
     option.parent_id = parent_id;
@@ -956,7 +956,7 @@ function private function_98927b7b(parent_id, var_394cd6af, var_cfef5030, var_88
     option.var_3fa65bba = var_3fa65bba;
     option.var_d3d10c6d = var_d3d10c6d;
     option.var_a1a8b237 = var_a1a8b237;
-    option.var_9218c73a = var_9218c73a;
+    option.important = important;
     option.var_5741b81f.option = 0;
     option.var_529974ff.option = -1;
     option.var_e05c8121.option = -1;
@@ -966,7 +966,7 @@ function private function_98927b7b(parent_id, var_394cd6af, var_cfef5030, var_88
     return option;
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 2, eflags: 0x6 linked
 // Checksum 0x158c5337, Offset: 0x4678
 // Size: 0x152
@@ -976,15 +976,15 @@ function private function_b85d5a3a(var_d9d52a9d, var_cf6d95c9 = 4) {
         if (isdefined(var_d9d52a9d[i])) {
             option = self.options[var_d9d52a9d[i]];
             var_2ebd3f57 = isdefined(option.var_9ddc06f5) && option.var_5741b81f && !level flag::get(option.var_9ddc06f5);
-            var_df0608f8[i] = {#locked:var_2ebd3f57, #string:option.var_8fece7d7, #var_9218c73a:option.var_9218c73a};
+            var_df0608f8[i] = {#locked:var_2ebd3f57, #string:option.var_8fece7d7, #important:option.important};
         } else {
-            var_df0608f8[i] = {#locked:0, #string:undefined, #var_9218c73a:0};
+            var_df0608f8[i] = {#locked:0, #string:undefined, #important:0};
         }
     }
     return var_df0608f8;
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 3, eflags: 0x6 linked
 // Checksum 0xbeca6064, Offset: 0x47d8
 // Size: 0xa4
@@ -1002,7 +1002,7 @@ function private function_a7575efe(func, param, var_a1a8b237) {
     self flag::clear("_dialog_func_running");
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 1, eflags: 0x6 linked
 // Checksum 0x4ca66db6, Offset: 0x4888
 // Size: 0x50
@@ -1013,7 +1013,7 @@ function private function_49048365(var_a1a8b237) {
     self childthread [[ var_a1a8b237 ]]();
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 5, eflags: 0x6 linked
 // Checksum 0x4aad74c6, Offset: 0x48e0
 // Size: 0x184
@@ -1038,7 +1038,7 @@ function private function_c331410b(var_34b21e8e, var_dc27586e, var_3470066f, str
     }
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 4, eflags: 0x6 linked
 // Checksum 0x627df8f, Offset: 0x4a70
 // Size: 0x86
@@ -1049,7 +1049,7 @@ function private function_c4ae7ee0(var_34b21e8e, shot_name, struct, scriptbundle
     self notify(#"hash_222d1d96d3da9edb");
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 1, eflags: 0x6 linked
 // Checksum 0x1e5ad18b, Offset: 0x4b00
 // Size: 0x88
@@ -1061,7 +1061,7 @@ function private function_a5ba53f8(var_34b21e8e) {
     var_34b21e8e notify(#"hash_12324459eb2bc76d");
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 1, eflags: 0x6 linked
 // Checksum 0xf9edd59d, Offset: 0x4b90
 // Size: 0x6c
@@ -1074,7 +1074,7 @@ function private function_a5440f84(flagname) {
     }
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 1, eflags: 0x6 linked
 // Checksum 0x764854a3, Offset: 0x4c08
 // Size: 0x244
@@ -1110,7 +1110,7 @@ function private function_4a2c9dcb(var_d1cccc43) {
     return var_d9d52a9d;
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 1, eflags: 0x6 linked
 // Checksum 0xc5cc58b0, Offset: 0x4e58
 // Size: 0xaa
@@ -1122,7 +1122,7 @@ function private function_59d38639(parent_id) {
     }
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 1, eflags: 0x6 linked
 // Checksum 0xcfb1198, Offset: 0x4f10
 // Size: 0x48
@@ -1132,7 +1132,7 @@ function private function_985e8e32(index) {
     return var_51b90557;
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 3, eflags: 0x6 linked
 // Checksum 0x2d018d57, Offset: 0x4f60
 // Size: 0x3cc
@@ -1142,19 +1142,19 @@ function private function_8b61aa4c(var_d9d52a9d, var_34b21e8e, var_cf6d95c9 = 4)
     var_8447108b = [];
     foreach (var_62950536 in var_1c35d027) {
         if (isdefined(var_62950536.string)) {
-            namespace_61e6d095::function_f2a9266(#"hash_50dd1fbbd883b24e", index, "dialogString", var_62950536.string);
-            namespace_61e6d095::function_f2a9266(#"hash_50dd1fbbd883b24e", index, "important", var_62950536.var_9218c73a);
-            namespace_61e6d095::function_f2a9266(#"hash_50dd1fbbd883b24e", index, "unImportant", var_62950536.locked);
-            namespace_61e6d095::function_f2a9266(#"hash_50dd1fbbd883b24e", index, "kbmShortcut", function_985e8e32(index));
+            namespace_61e6d095::function_f2a9266(#"dialog_tree", index, "dialogString", var_62950536.string);
+            namespace_61e6d095::function_f2a9266(#"dialog_tree", index, "important", var_62950536.important);
+            namespace_61e6d095::function_f2a9266(#"dialog_tree", index, "unImportant", var_62950536.locked);
+            namespace_61e6d095::function_f2a9266(#"dialog_tree", index, "kbmShortcut", function_985e8e32(index));
             var_8447108b[index] = var_62950536;
             index++;
         }
     }
-    namespace_61e6d095::function_9ade1d9b(#"hash_50dd1fbbd883b24e", "optionSelected", 0, 1, undefined, undefined, 1);
-    namespace_61e6d095::function_9ade1d9b(#"hash_50dd1fbbd883b24e", "isActive", 1);
+    namespace_61e6d095::function_9ade1d9b(#"dialog_tree", "optionSelected", 0, 1, undefined, undefined, 1);
+    namespace_61e6d095::function_9ade1d9b(#"dialog_tree", "isActive", 1);
     if (isdefined(self.timeout) && self.timeout > 0) {
         waittillframeend();
-        namespace_61e6d095::function_9ade1d9b(#"hash_50dd1fbbd883b24e", "timeOut", self.timeout);
+        namespace_61e6d095::function_9ade1d9b(#"dialog_tree", "timeOut", self.timeout);
     }
     player = self.activator;
     /#
@@ -1162,9 +1162,9 @@ function private function_8b61aa4c(var_d9d52a9d, var_34b21e8e, var_cf6d95c9 = 4)
     #/
     var_34b21e8e flag::set("waiting_on_player_choice");
     selected = undefined;
-    selected = level waittill(#"hash_63db5f086ff3eaa2");
+    selected = level waittill(#"dialog_tree_option_selected");
     var_34b21e8e flag::clear("waiting_on_player_choice");
-    namespace_61e6d095::function_9ade1d9b(#"hash_50dd1fbbd883b24e", "isActive", 0);
+    namespace_61e6d095::function_9ade1d9b(#"dialog_tree", "isActive", 0);
     if (selected.var_70b35161 < 0) {
         level thread function_310d2602(var_8447108b, var_34b21e8e, 1);
         return selected.var_70b35161;
@@ -1174,18 +1174,18 @@ function private function_8b61aa4c(var_d9d52a9d, var_34b21e8e, var_cf6d95c9 = 4)
     }
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 1, eflags: 0x4
 // Checksum 0xbc7ea99b, Offset: 0x5338
 // Size: 0x2a2
 function private function_9ca575ba(var_8447108b) {
-    self endon(#"death", #"hash_63db5f086ff3eaa2", #"disconnect");
+    self endon(#"death", #"dialog_tree_option_selected", #"disconnect");
     if (isdefined(var_8447108b) && isdefined(var_8447108b.size)) {
         level.var_b1d2d4fb = 1;
         var_cf6a20f2 = -1;
         while (level.var_b1d2d4fb) {
             var_dae97dcc = undefined;
-            var_dae97dcc = level waittill(#"hash_4a5e775805e2ba5b");
+            var_dae97dcc = level waittill(#"dialog_tree_kbm_key_selected");
             if (var_8447108b.size > 0 && var_dae97dcc.var_70b35161 == 1) {
                 var_cf6a20f2 = 0;
                 level.var_b1d2d4fb = 0;
@@ -1200,20 +1200,20 @@ function private function_9ca575ba(var_8447108b) {
                 level.var_b1d2d4fb = 0;
             }
             if (!level.var_b1d2d4fb) {
-                namespace_61e6d095::function_9ade1d9b(#"hash_50dd1fbbd883b24e", "index", var_cf6a20f2, 1, undefined, undefined, 1);
+                namespace_61e6d095::function_9ade1d9b(#"dialog_tree", "index", var_cf6a20f2, 1, undefined, undefined, 1);
                 waitframe(1);
-                namespace_61e6d095::function_9ade1d9b(#"hash_50dd1fbbd883b24e", "kbmIndexSelected", var_cf6a20f2, 1, undefined, undefined, 1);
+                namespace_61e6d095::function_9ade1d9b(#"dialog_tree", "kbmIndexSelected", var_cf6a20f2, 1, undefined, undefined, 1);
                 waitframe(1);
-                namespace_61e6d095::function_9ade1d9b(#"hash_50dd1fbbd883b24e", "validateListElement", var_cf6a20f2, 1, undefined, undefined, 1);
+                namespace_61e6d095::function_9ade1d9b(#"dialog_tree", "validateListElement", var_cf6a20f2, 1, undefined, undefined, 1);
                 waitframe(1);
-                level notify(#"hash_63db5f086ff3eaa2", {#var_70b35161:var_cf6a20f2});
+                level notify(#"dialog_tree_option_selected", {#var_70b35161:var_cf6a20f2});
             }
             waitframe(1);
         }
     }
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 3, eflags: 0x4
 // Checksum 0xa4b93fd8, Offset: 0x55e8
 // Size: 0x104
@@ -1233,45 +1233,45 @@ function private function_cde38026(var_d27bb493, var_44b06a67, var_8447108b) {
         }
     }
     if (var_1e50dc81 != var_c8994f32) {
-        namespace_61e6d095::function_9ade1d9b(#"hash_50dd1fbbd883b24e", "index", var_1e50dc81, 1, undefined, undefined, 1);
+        namespace_61e6d095::function_9ade1d9b(#"dialog_tree", "index", var_1e50dc81, 1, undefined, undefined, 1);
     }
     return [1:0, 0:var_1e50dc81];
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 3, eflags: 0x6 linked
 // Checksum 0x8c2f0ab5, Offset: 0x56f8
 // Size: 0xfc
 function private function_310d2602(var_8447108b, var_34b21e8e, var_e2ab6781 = 0) {
     if (!var_e2ab6781) {
-        namespace_61e6d095::function_9ade1d9b(#"hash_50dd1fbbd883b24e", "optionSelected", 1, 1);
+        namespace_61e6d095::function_9ade1d9b(#"dialog_tree", "optionSelected", 1, 1);
         wait(1.5);
     }
-    if (namespace_61e6d095::exists(#"hash_50dd1fbbd883b24e")) {
+    if (namespace_61e6d095::exists(#"dialog_tree")) {
         for (i = var_8447108b.size - 1; i >= 0; i--) {
-            namespace_61e6d095::function_7239e030(#"hash_50dd1fbbd883b24e", i);
+            namespace_61e6d095::function_7239e030(#"dialog_tree", i);
         }
     }
     var_34b21e8e flag::clear("_dialog_ui_animating");
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 2, eflags: 0x6 linked
 // Checksum 0xd0682850, Offset: 0x5800
 // Size: 0x254
 function private function_43bca3cb(position, var_9c958fe3) {
-    namespace_61e6d095::create(#"hash_50dd1fbbd883b24e", #"hash_5ee7619b9b614d34");
-    namespace_61e6d095::set_x(#"hash_50dd1fbbd883b24e", position[0]);
-    namespace_61e6d095::set_y(#"hash_50dd1fbbd883b24e", position[1]);
-    namespace_61e6d095::function_330981ed(#"hash_50dd1fbbd883b24e");
-    namespace_61e6d095::function_9ade1d9b(#"hash_50dd1fbbd883b24e", "index", 0);
-    namespace_61e6d095::function_9ade1d9b(#"hash_50dd1fbbd883b24e", "timeOut", 0);
-    namespace_61e6d095::function_9ade1d9b(#"hash_50dd1fbbd883b24e", "stateIndex", var_9c958fe3);
-    namespace_61e6d095::function_9ade1d9b(#"hash_50dd1fbbd883b24e", "optionSelected", 0);
-    namespace_61e6d095::function_9ade1d9b(#"hash_50dd1fbbd883b24e", "kbmIndexSelected", -1);
-    namespace_61e6d095::function_9ade1d9b(#"hash_50dd1fbbd883b24e", "isActive", 0);
-    namespace_61e6d095::function_73c9a490(#"hash_50dd1fbbd883b24e", 1);
-    namespace_61e6d095::function_24e5fa63(#"hash_50dd1fbbd883b24e", [1:#"hash_3c27402259e4c18e", 0:#"ui_confirm"], 1);
+    namespace_61e6d095::create(#"dialog_tree", #"hash_5ee7619b9b614d34");
+    namespace_61e6d095::set_x(#"dialog_tree", position[0]);
+    namespace_61e6d095::set_y(#"dialog_tree", position[1]);
+    namespace_61e6d095::function_330981ed(#"dialog_tree");
+    namespace_61e6d095::function_9ade1d9b(#"dialog_tree", "index", 0);
+    namespace_61e6d095::function_9ade1d9b(#"dialog_tree", "timeOut", 0);
+    namespace_61e6d095::function_9ade1d9b(#"dialog_tree", "stateIndex", var_9c958fe3);
+    namespace_61e6d095::function_9ade1d9b(#"dialog_tree", "optionSelected", 0);
+    namespace_61e6d095::function_9ade1d9b(#"dialog_tree", "kbmIndexSelected", -1);
+    namespace_61e6d095::function_9ade1d9b(#"dialog_tree", "isActive", 0);
+    namespace_61e6d095::function_73c9a490(#"dialog_tree", 1);
+    namespace_61e6d095::function_24e5fa63(#"dialog_tree", [1:#"hash_3c27402259e4c18e", 0:#"ui_confirm"], 1);
     self.activator clientfield::set_to_player("dt_set_hide_reticle_dot", 1);
 }
 

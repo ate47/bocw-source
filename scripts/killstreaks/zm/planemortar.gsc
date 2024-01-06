@@ -178,7 +178,7 @@ function private event_handler[grenade_fire] function_4776caf4(eventstruct) {
                 s_params = killstreaks::get_script_bundle("planemortar");
                 killstreakid = self killstreakrules::killstreakstart("planemortar", self.team, 0, 1);
                 if (killstreakid == -1) {
-                    self notify(#"hash_622caf5b3e6a66a8");
+                    self notify(#"planemortar_failed");
                     return 0;
                 }
                 self thread function_8f181838(s_params, s_location.origin);

@@ -15,7 +15,7 @@ function event_handler[level_init] main(*eventstruct) {
     if (!zm_utility::is_classic()) {
         return;
     }
-    clientfield::register("scriptmover", "zm_round_accelerant_fx", 15000, 2, "int", &function_bb1b5812, 0, 0);
+    clientfield::register("scriptmover", "zm_round_accelerant_fx", 15000, 2, "int", &zm_round_accelerant_fx, 0, 0);
     clientfield::function_5b7d846d("hud_items_rampage_inducer.rampage_state", #"hash_5c79bc8ee1ef9f4c", #"hash_19252472c38c39f6", 15000, 2, "int", undefined, 0, 0);
 }
 
@@ -23,7 +23,7 @@ function event_handler[level_init] main(*eventstruct) {
 // Params 7, eflags: 0x0
 // Checksum 0x2a7b2002, Offset: 0x1f8
 // Size: 0x102
-function function_bb1b5812(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function zm_round_accelerant_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump >= 2) {
         if (isdefined(self.fxid)) {
             stopfx(fieldname, self.fxid);

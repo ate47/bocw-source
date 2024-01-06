@@ -304,10 +304,10 @@ function function_ed6d34fb() {
     if (!level flag::get("open_fasttravel_to_hill")) {
         level flag::set("open_fasttravel_to_hill");
         var_73524bb4 = getentarray("portal_fx", "targetname");
-        foreach (var_c2ac99f in var_73524bb4) {
-            var_c2ac99f.var_2c517d4c.var_c2ac99f = util::spawn_model("tag_origin", var_c2ac99f.origin, var_c2ac99f.angles);
+        foreach (portal_fx in var_73524bb4) {
+            portal_fx.var_2c517d4c.portal_fx = util::spawn_model("tag_origin", portal_fx.origin, portal_fx.angles);
             level clientfield::set("" + #"hash_666ad912cb4541f1", 1);
-            playsoundatposition(#"hash_5f27432854b069c9", var_c2ac99f.var_2c517d4c.origin);
+            playsoundatposition(#"hash_5f27432854b069c9", portal_fx.var_2c517d4c.origin);
         }
     }
 }
@@ -439,9 +439,9 @@ function function_9d367ce1() {
     level endon(#"end_game");
     while (1) {
         level flag::wait_till_clear_any([2:#"power_on3", 1:#"power_on2", 0:#"power_on1"]);
-        level flag::set(#"hash_3032e4acc5a6d8ee");
+        level flag::set(#"disable_weapon_machine");
         level flag::wait_till_all([2:#"power_on3", 1:#"power_on2", 0:#"power_on1"]);
-        level flag::clear(#"hash_3032e4acc5a6d8ee");
+        level flag::clear(#"disable_weapon_machine");
     }
 }
 

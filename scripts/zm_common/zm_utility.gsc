@@ -192,7 +192,7 @@ function is_grief() {
 // Size: 0x4a
 function function_c4b020f8() {
     if (!isdefined(level.var_7ef56397)) {
-        level.var_7ef56397 = util::get_game_type() == #"hash_339838bfa1eb964d";
+        level.var_7ef56397 = util::get_game_type() == #"zcranked";
     }
     return level.var_7ef56397;
 }
@@ -203,7 +203,7 @@ function function_c4b020f8() {
 // Size: 0x4a
 function function_6931bc89() {
     if (!isdefined(level.var_2abedddf)) {
-        level.var_2abedddf = util::get_game_type() == #"hash_4aaf3d18f4747c4f";
+        level.var_2abedddf = util::get_game_type() == #"doa";
     }
     return level.var_2abedddf;
 }
@@ -5986,7 +5986,7 @@ function function_78e620d() {
         wait(0.2);
     }
     if (isdefined(self)) {
-        self clientfield::increment("" + #"hash_4974f4e39e6933fb");
+        self clientfield::increment("" + #"vehicle_teleport");
         wait(1.5);
         if (isdefined(self.var_e6604bb)) {
             foreach (ent in self.var_e6604bb) {

@@ -337,21 +337,21 @@ function function_7211414e(alertlevel) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x493bd0e9, Offset: 0x1178
 // Size: 0x5c
-function function_d77caf21(hidden, var_5cad848d) {
-    if (!isdefined(hidden) && !isdefined(var_5cad848d)) {
+function function_d77caf21(hidden, spotted) {
+    if (!isdefined(hidden) && !isdefined(spotted)) {
         /#
             assertmsg("<unknown string>");
         #/
     }
-    namespace_393f6012::function_53150079(hidden, var_5cad848d);
+    namespace_393f6012::function_53150079(hidden, spotted);
 }
 
 // Namespace namespace_979752dc/utility
 // Params 2, eflags: 0x2 linked
 // Checksum 0x2dfd13db, Offset: 0x11e0
 // Size: 0x206
-function function_2ebddb99(hidden, var_5cad848d) {
-    if (!isdefined(hidden) && !isdefined(var_5cad848d)) {
+function function_2ebddb99(hidden, spotted) {
+    if (!isdefined(hidden) && !isdefined(spotted)) {
         /#
             assertmsg("<unknown string>");
         #/
@@ -361,10 +361,10 @@ function function_2ebddb99(hidden, var_5cad848d) {
         level.stealth.var_33b5cf8f.var_67773281[#"hidden"][#"crouch"] = hidden[#"crouch"];
         level.stealth.var_33b5cf8f.var_67773281[#"hidden"][#"stand"] = hidden[#"stand"];
     }
-    if (isdefined(var_5cad848d)) {
-        level.stealth.var_33b5cf8f.var_67773281[#"hash_67ac95dafb7278ea"][#"prone"] = var_5cad848d[#"prone"];
-        level.stealth.var_33b5cf8f.var_67773281[#"hash_67ac95dafb7278ea"][#"crouch"] = var_5cad848d[#"crouch"];
-        level.stealth.var_33b5cf8f.var_67773281[#"hash_67ac95dafb7278ea"][#"stand"] = var_5cad848d[#"stand"];
+    if (isdefined(spotted)) {
+        level.stealth.var_33b5cf8f.var_67773281[#"spotted"][#"prone"] = spotted[#"prone"];
+        level.stealth.var_33b5cf8f.var_67773281[#"spotted"][#"crouch"] = spotted[#"crouch"];
+        level.stealth.var_33b5cf8f.var_67773281[#"spotted"][#"stand"] = spotted[#"stand"];
     }
 }
 
@@ -372,7 +372,7 @@ function function_2ebddb99(hidden, var_5cad848d) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0xfe3a6a28, Offset: 0x13f0
 // Size: 0xa2
-function function_115bcc6e() {
+function do_stealth() {
     switch (self.team) {
     case #"axis":
     case #"team3":
@@ -434,7 +434,7 @@ function function_59c4cc50(*animoverride) {
 function function_2379b418(style) {
     self.stealth.var_ddd427f7 = style;
     if (isdefined(self.stealth.var_ddd427f7)) {
-        self function_5fe0f311(self.stealth.var_ddd427f7);
+        self set_patrol_style(self.stealth.var_ddd427f7);
     }
 }
 
@@ -463,7 +463,7 @@ function function_f762f4e8(style) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x56f8d6de, Offset: 0x1760
 // Size: 0x144
-function function_5fe0f311(style, allowreact, var_10547fe1, magnitude) {
+function set_patrol_style(style, allowreact, var_10547fe1, magnitude) {
     if (style == "unaware") {
         style = "patrol";
     }
@@ -898,7 +898,7 @@ function function_fd7b3c0c(var_efa6061f = 0) {
 // Params 1, eflags: 0x0
 // Checksum 0xb89006bb, Offset: 0x2e38
 // Size: 0x14a
-function function_8cf7d603(override) {
+function stealth_override_goal(override) {
     /#
         assert(isdefined(self.stealth));
     #/
@@ -908,7 +908,7 @@ function function_8cf7d603(override) {
     if (override) {
         self.var_39ee0086 = 1;
         self flag::set("stealth_override_goal");
-        self namespace_f1f700ac::function_2a4b1fc1(0);
+        self namespace_f1f700ac::set_blind(0);
         self.var_8a4f85c5 = undefined;
     } else {
         self flag::clear("stealth_override_goal");
@@ -1025,8 +1025,8 @@ function function_b1017846(array) {
     /#
         assert(!isdefined(self.stealth), "<unknown string>");
     #/
-    if (isdefined(array[#"hash_67ac95dafb7278ea"])) {
-        self.var_e055c15a[#"hash_67ac95dafb7278ea"] = array[#"hash_67ac95dafb7278ea"];
+    if (isdefined(array[#"spotted"])) {
+        self.var_e055c15a[#"spotted"] = array[#"spotted"];
     }
     if (isdefined(array[#"hidden"])) {
         self.var_e055c15a[#"hidden"] = array[#"hidden"];

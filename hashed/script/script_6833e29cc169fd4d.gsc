@@ -297,7 +297,7 @@ function function_bb2cd3c1(target) {
         target.var_6a1a4bf6 = undefined;
         target.var_3f53671 = undefined;
         self notify(#"hash_5c27ba8c4f6d6d7a");
-        self notify(#"hash_76dcf7b1e4a954e8", {#target:target});
+        self notify(#"ccom_lost_lock", {#target:target});
     }
 }
 
@@ -327,7 +327,7 @@ function function_a8d75f2f(slot, note, var_bf4c2932) {
 // Checksum 0x7dc240a3, Offset: 0x1278
 // Size: 0xd4
 function private function_b44cb841(player) {
-    self endon(#"hash_76dcf7b1e4a954e8");
+    self endon(#"ccom_lost_lock");
     self notify(#"hash_2a729778ba08a118");
     self endon(#"hash_2a729778ba08a118");
     slot = player function_cc4e7260(self);
@@ -432,7 +432,7 @@ function function_eeb4c5eb(hacker) {
     hacker endon(#"disconnect");
     hacker notify(#"hash_5c27ba8c4f6d6d7a");
     hacker endon(#"hash_5c27ba8c4f6d6d7a");
-    hacker waittill(#"death", #"hash_4b778a3139f80d62", #"hash_76dcf7b1e4a954e8", #"hash_3e74cb35c04b5632");
+    hacker waittill(#"death", #"hash_4b778a3139f80d62", #"ccom_lost_lock", #"hash_3e74cb35c04b5632");
     function_f9f09e3f(hacker);
 }
 
@@ -559,8 +559,8 @@ function function_92c4b561() {
             }
         }
         if (!found) {
-            target notify(#"hash_76dcf7b1e4a954e8", {#owner:self});
-            level notify(#"hash_76dcf7b1e4a954e8", {#owner:self, #target:target});
+            target notify(#"ccom_lost_lock", {#owner:self});
+            level notify(#"ccom_lost_lock", {#owner:self, #target:target});
             self function_bb2cd3c1(target);
         } else {
             var_1ce9ea0e[var_1ce9ea0e.size] = target;

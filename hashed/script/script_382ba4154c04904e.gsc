@@ -94,7 +94,7 @@ function function_e746b148(localclientnum, oldval, newval, bnewent, binitialsnap
         a_portals = getentarray(localclientnum, "tungsten_teleporter", "targetname");
         foreach (portal in a_portals) {
             portal function_619a5c20();
-            portal zm_utility::function_7953267a(localclientnum, oldval, newval, bnewent, binitialsnap, fieldname, bwasdemojump);
+            portal zm_utility::set_compass_icon(localclientnum, oldval, newval, bnewent, binitialsnap, fieldname, bwasdemojump);
         }
         portal = getent(localclientnum, "anytown_usa_teleporter", "targetname");
         portal function_619a5c20();
@@ -103,7 +103,7 @@ function function_e746b148(localclientnum, oldval, newval, bnewent, binitialsnap
         portal.var_cc1c5020.portal = util::spawn_model(localclientnum, #"p9_zm_gold_teleporter_b", portal.origin - (-29, 0, 65.078), portal.angles);
         portal.var_cc1c5020 hide();
         portal.var_cc1c5020 function_619a5c20();
-        portal.var_cc1c5020 zm_utility::function_7953267a(localclientnum, oldval, newval, bnewent, binitialsnap, fieldname, bwasdemojump);
+        portal.var_cc1c5020 zm_utility::set_compass_icon(localclientnum, oldval, newval, bnewent, binitialsnap, fieldname, bwasdemojump);
     }
 }
 

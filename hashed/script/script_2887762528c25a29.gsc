@@ -31,7 +31,7 @@ function init() {
 // Checksum 0xc8040ddd, Offset: 0x298
 // Size: 0x16
 function main() {
-    level.var_8cff5775.var_6733605b = [];
+    level.doa.var_6733605b = [];
 }
 
 // Namespace namespace_9529b92d/namespace_9529b92d
@@ -45,7 +45,7 @@ function function_e073d92f() {
     result = undefined;
     result = self waittill(#"hash_3e251384a5400dce");
     if (is_true(self.var_7c56394) && is_true(result.var_760a0807)) {
-        arrayremovevalue(level.var_8cff5775.var_6733605b, self);
+        arrayremovevalue(level.doa.var_6733605b, self);
         namespace_1e25ad94::function_f5f0c0f8("Deleting Pressure Plate trap permenently at:" + self.origin);
     }
     util::wait_network_frame();
@@ -103,12 +103,12 @@ function function_b3e13787(trap, page = 0) {
         return;
     }
     if (page) {
-        if (!isdefined(level.var_8cff5775.var_6733605b)) {
-            level.var_8cff5775.var_6733605b = [];
-        } else if (!isarray(level.var_8cff5775.var_6733605b)) {
-            level.var_8cff5775.var_6733605b = array(level.var_8cff5775.var_6733605b);
+        if (!isdefined(level.doa.var_6733605b)) {
+            level.doa.var_6733605b = [];
+        } else if (!isarray(level.doa.var_6733605b)) {
+            level.doa.var_6733605b = array(level.doa.var_6733605b);
         }
-        level.var_8cff5775.var_6733605b[level.var_8cff5775.var_6733605b.size] = trap;
+        level.doa.var_6733605b[level.doa.var_6733605b.size] = trap;
     } else {
         function_a2e3342e(trap);
     }
@@ -128,7 +128,7 @@ function function_865e002e() {
         if (state == 0) {
             continue;
         }
-        foreach (trap in level.var_8cff5775.var_6733605b) {
+        foreach (trap in level.doa.var_6733605b) {
             time = gettime();
             if (isdefined(trap.var_eb9d64bb) && time < trap.var_eb9d64bb) {
                 continue;
@@ -169,13 +169,13 @@ function function_865e002e() {
 // Checksum 0x15c5163b, Offset: 0xa60
 // Size: 0x130
 function function_b2a0e8d2() {
-    level.var_8cff5775.var_6733605b = [];
+    level.doa.var_6733605b = [];
     level thread function_865e002e();
-    if (isdefined(level.var_8cff5775.var_a77e6349)) {
-        traps = [[ level.var_8cff5775.var_a77e6349 ]]->function_87f950c1("pressureplate");
+    if (isdefined(level.doa.var_a77e6349)) {
+        traps = [[ level.doa.var_a77e6349 ]]->function_87f950c1("pressureplate");
         page = 1;
     } else {
-        traps = [[ level.var_8cff5775.var_39e3fa99 ]]->function_242886d5("pressureplate");
+        traps = [[ level.doa.var_39e3fa99 ]]->function_242886d5("pressureplate");
     }
     foreach (trap in traps) {
         function_b3e13787(trap, page);

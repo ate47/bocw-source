@@ -45,7 +45,7 @@ function function_27473e44() {
 // Size: 0x44
 function init_perk() {
     if (is_true(level.enable_magic)) {
-        level._effect[#"hash_1832c7a0826c2fa1"] = #"hash_17afc35bb449d1c2";
+        level._effect[#"elemental_pop_light"] = #"hash_17afc35bb449d1c2";
     }
 }
 
@@ -96,15 +96,15 @@ function function_7f805dac(localclientnum, *oldval, newval, *bnewent, *binitials
     if (!isdefined(self)) {
         return;
     }
-    if (isdefined(self.var_c278b547)) {
-        stopfx(fieldname, self.var_c278b547);
-        self.var_c278b547 = undefined;
+    if (isdefined(self.elemental_pop_reload_fx)) {
+        stopfx(fieldname, self.elemental_pop_reload_fx);
+        self.elemental_pop_reload_fx = undefined;
     }
     switch (bwastimejump) {
     case 1:
     case 2:
     case 3:
-        self.var_c278b547 = util::playfxontag(fieldname, #"hash_70912cde462752a8", self, "tag_origin");
+        self.elemental_pop_reload_fx = util::playfxontag(fieldname, #"hash_70912cde462752a8", self, "tag_origin");
         break;
     }
 }

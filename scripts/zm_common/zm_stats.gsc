@@ -157,7 +157,7 @@ function player_stats_init() {
     self globallogic_score::initpersstat(#"talent_deadshot_drank", 0);
     self globallogic_score::initpersstat(#"talent_staminup_drank", 0);
     self globallogic_score::initpersstat(#"talent_elemental_pop_drank", 0);
-    self globallogic_score::initpersstat(#"hash_130f9164d83ebc5e", 0);
+    self globallogic_score::initpersstat(#"talent_tombstone_drank", 0);
     self globallogic_score::initpersstat(#"specialty_armorvest_drank", 0);
     self globallogic_score::initpersstat(#"specialty_quickrevive_drank", 0);
     self globallogic_score::initpersstat(#"specialty_fastreload_drank", 0);
@@ -1762,7 +1762,7 @@ function update_global_counters_on_match_end() {
     talent_deadshot_drank = 0;
     talent_staminup_drank = 0;
     talent_elemental_pop_drank = 0;
-    var_4fd26b12 = 0;
+    talent_tombstone_drank = 0;
     specialty_armorvest_drank = 0;
     specialty_quickrevive_drank = 0;
     specialty_fastreload_drank = 0;
@@ -1831,7 +1831,7 @@ function update_global_counters_on_match_end() {
         talent_deadshot_drank = talent_deadshot_drank + player.pers[#"talent_deadshot_drank"];
         talent_staminup_drank = talent_staminup_drank + player.pers[#"talent_staminup_drank"];
         talent_elemental_pop_drank = talent_elemental_pop_drank + player.pers[#"talent_elemental_pop_drank"];
-        var_4fd26b12 = var_4fd26b12 + player.pers[#"hash_130f9164d83ebc5e"];
+        talent_tombstone_drank = talent_tombstone_drank + player.pers[#"talent_tombstone_drank"];
         specialty_armorvest_drank = specialty_armorvest_drank + player.pers[#"specialty_armorvest_drank"];
         specialty_quickrevive_drank = specialty_quickrevive_drank + player.pers[#"specialty_quickrevive_drank"];
         specialty_fastreload_drank = specialty_fastreload_drank + player.pers[#"specialty_fastreload_drank"];
@@ -2297,7 +2297,7 @@ function function_1a222bee(params) {
             self stats::function_622feb0d(#"hash_41adc0ca9daf6e9d", #"hash_7d6781e4032b4aa5", 1);
             break;
         case #"frost_blast_4":
-        case #"hash_2f14933f9c381974":
+        case #"frost_blast_5":
         case #"frost_blast":
         case #"frost_blast_1":
         case #"frost_blast_3":

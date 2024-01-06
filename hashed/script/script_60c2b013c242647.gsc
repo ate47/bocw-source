@@ -58,37 +58,37 @@ function function_922745a1(player) {
 // Size: 0x2d4
 function function_d275f769(player, origin) {
     var_497e327b = origin + vectorscale((0, 0, 1), 800);
-    var_e2797039 = namespace_ec06fe4a::function_e22ae9b3(var_497e327b, "zombietron_sprinkler");
-    if (!isdefined(var_e2797039)) {
+    sprinkler = namespace_ec06fe4a::function_e22ae9b3(var_497e327b, "zombietron_sprinkler");
+    if (!isdefined(sprinkler)) {
         return;
     }
-    var_e2797039.targetname.var_e2797039 = "sprinkler";
-    var_e2797039 notsolid();
+    sprinkler.targetname.sprinkler = "sprinkler";
+    sprinkler notsolid();
     target = player.origin;
-    if (isdefined(player.var_8cff5775.vehicle)) {
+    if (isdefined(player.doa.vehicle)) {
         target = namespace_ec06fe4a::function_65ee50ba(player.origin);
     }
     var_403e6f0 = target + vectorscale((0, 0, 1), 12);
-    var_e2797039 moveto(var_403e6f0, 0.5);
-    var_e2797039 waittilltimeout(1, #"movedone");
-    var_e2797039 namespace_e32bb68::function_3a59ec34("evt_doa_pickup_sprinkler_land");
-    var_e2797039 namespace_83eb6304::function_3ecfde67("sprinkler_land");
+    sprinkler moveto(var_403e6f0, 0.5);
+    sprinkler waittilltimeout(1, #"movedone");
+    sprinkler namespace_e32bb68::function_3a59ec34("evt_doa_pickup_sprinkler_land");
+    sprinkler namespace_83eb6304::function_3ecfde67("sprinkler_land");
     physicsexplosionsphere(var_403e6f0, 200, 128, 2);
     playrumbleonposition("grenade_rumble", var_403e6f0);
     wait(1);
     if (isdefined(player)) {
-        var_e2797039 namespace_83eb6304::function_3ecfde67("sprinkler_active");
-        var_e2797039 thread function_922745a1(player);
+        sprinkler namespace_83eb6304::function_3ecfde67("sprinkler_active");
+        sprinkler thread function_922745a1(player);
         timeout = player namespace_1c2a96f9::function_4808b985(10);
         player waittilltimeout(timeout, #"disconnect");
     }
-    var_e2797039 notify(#"hash_1e744934a54fe4bc");
-    var_e2797039 namespace_83eb6304::turnofffx("sprinkler_active");
+    sprinkler notify(#"hash_1e744934a54fe4bc");
+    sprinkler namespace_83eb6304::turnofffx("sprinkler_active");
     wait(2);
-    var_e2797039 namespace_e32bb68::function_3a59ec34("evt_doa_pickup_sprinkler_takeoff");
-    var_e2797039 namespace_83eb6304::function_3ecfde67("sprinkler_takeoff");
-    var_e2797039 moveto(var_497e327b, 0.5);
-    var_e2797039 waittilltimeout(1, #"movedone");
-    var_e2797039 delete();
+    sprinkler namespace_e32bb68::function_3a59ec34("evt_doa_pickup_sprinkler_takeoff");
+    sprinkler namespace_83eb6304::function_3ecfde67("sprinkler_takeoff");
+    sprinkler moveto(var_497e327b, 0.5);
+    sprinkler waittilltimeout(1, #"movedone");
+    sprinkler delete();
 }
 

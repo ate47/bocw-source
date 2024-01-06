@@ -1958,7 +1958,7 @@ function updatelossstats(loser) {
     loser stats::function_bb7eedf0(#"losses", 1);
     loser updatestatratio("wlratio", "wins", "losses");
     if (level.hardcoremode) {
-        loser stats::function_bb7eedf0(#"hash_5b3f533ca6858fe2", 1);
+        loser stats::function_bb7eedf0(#"losses_hc", 1);
         loser updatestatratio("wlratio_hc", "wins_hc", "losses_hc");
     }
     loser notify(#"loss");
@@ -1973,7 +1973,7 @@ function updatelosslatejoinstats(loser) {
     loser stats::function_bb7eedf0(#"losses_late_join", 1);
     loser updatestatratio("wlratio", "wins", "losses");
     if (level.hardcoremode) {
-        loser stats::function_bb7eedf0(#"hash_5b3f533ca6858fe2", -1);
+        loser stats::function_bb7eedf0(#"losses_hc", -1);
         loser updatestatratio("wlratio_hc", "wins_hc", "losses_hc");
     }
 }
@@ -1988,7 +1988,7 @@ function updatetiestats(loser) {
     loser stats::function_bb7eedf0(#"ties", 1);
     loser updatestatratio("wlratio", "wins", "losses");
     if (level.hardcoremode) {
-        loser stats::function_bb7eedf0(#"hash_5b3f533ca6858fe2", -1);
+        loser stats::function_bb7eedf0(#"losses_hc", -1);
         loser stats::function_bb7eedf0(#"hash_6fe9f5043ed146ae", 1);
         loser updatestatratio("wlratio_hc", "wins_hc", "losses_hc");
     }
@@ -2261,7 +2261,7 @@ function givekillstats(smeansofdeath, weapon, evictim, var_e7a369ea) {
             self incpersstat(#"hash_766a818213440d53", 1, 0, 0);
         }
         if (level.hardcoremode === 1) {
-            self incpersstat(#"hash_4b9abc0475bbf766", 1, 1, 1);
+            self incpersstat(#"kills_hc", 1, 1, 1);
             self updatestatratio("kdratio_hc", "kills_hc", "deaths_hc");
         }
         if (isdefined(evictim) && isplayer(evictim) && isdefined(evictim.attackerdamage)) {

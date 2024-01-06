@@ -45,7 +45,7 @@ function private function_70a657d8() {
     callback::on_spawned(&on_player_spawn);
     callback::add_callback(#"scavenged_primary_grenade", &scavenged_primary_grenade);
     callback::add_callback(#"hash_171443902e2a22ee", &function_2bc84a5f);
-    level.challenges_callback_vehiclekilled = &function_afa829d8;
+    level.challenges_callback_vehiclekilled = &vehiclekilled;
     level.var_4d062db3 = &killstreak_started;
     level.var_706f827 = &function_e7e09ca1;
     level.var_d92c4db3 = &function_1123ffd1;
@@ -2026,7 +2026,7 @@ function challengekills(data) {
     if (isdefined(attacker) && isdefined(attacker.tookweaponfrom) && isdefined(attacker.tookweaponfrom[weapon]) && isdefined(attacker.tookweaponfrom[weapon].previousowner)) {
         if (!isdefined(attacker.tookweaponfrom[weapon].previousowner.team) || attacker.tookweaponfrom[weapon].previousowner.team != player.team) {
             player stats::function_dad108fa(#"kill_with_pickup", 1);
-            player stats::function_bcf9602(#"hash_4714f96a091995", 1, #"hash_11cc29f75eb57f4a");
+            player stats::function_bcf9602(#"hash_4714f96a091995", 1, #"event_test_enabled");
         }
     }
     awarded_kill_enemy_that_blinded_you = 0;
@@ -2356,7 +2356,7 @@ function challengekills(data) {
         var_e7c6fe5a = player.var_ea1458aa.var_e7c6fe5a;
         if (var_e7c6fe5a[#"primary"] > 0 && var_e7c6fe5a[#"secondary"] > 0) {
             player stats::function_dad108fa(#"hash_58ee12dacf893367", 1);
-            player stats::function_bcf9602(#"hash_4713f96a0917e2", 1, #"hash_11cc29f75eb57f4a");
+            player stats::function_bcf9602(#"hash_4713f96a0917e2", 1, #"event_test_enabled");
             player stats::function_dad108fa(#"hash_258a142c083b632f", 1);
             player stats::function_dad108fa(#"hash_258a122c083b5fc9", 1);
             var_e7c6fe5a[#"primary"]--;
@@ -3256,7 +3256,7 @@ function challengegameendmp(data) {
             }
         }
         break;
-    case #"hash_601b3d9434b9aac9":
+    case #"gunfight":
         if (player.team == winner) {
             player stats::function_dad108fa(#"hash_5072c55850678079", 1);
         }
@@ -3296,7 +3296,7 @@ function function_ea966b4a(killstreak, var_18db7a57, weapon) {
     case #"inventory_planemortar":
     case #"napalm_strike":
     case #"inventory_remote_missile":
-    case #"hash_67f88dbc909e85f8":
+    case #"inventory_napalm_strike":
     case #"planemortar":
         var_6616c2ea = 1;
     case #"dart":
@@ -3845,7 +3845,7 @@ function private function_90aad780(*killcount, weapon) {
 // Params 6, eflags: 0x2 linked
 // Checksum 0xec2c0a2b, Offset: 0x11fc0
 // Size: 0x564
-function function_afa829d8(inflictor, attacker, damage, mod, weapon, hitloc) {
+function vehiclekilled(inflictor, attacker, damage, mod, weapon, hitloc) {
     if (!is_true(self.var_46439e18)) {
         return;
     }
@@ -4124,7 +4124,7 @@ function private function_80327323(data) {
     if (isdefined(attackerstance)) {
         if (attackerstance == #"crouch") {
             player stats::function_dad108fa(#"kill_enemy_while_crouched", 1);
-            player stats::function_bcf9602(#"hash_4711f96a09147c", 1, #"hash_11cc29f75eb57f4a");
+            player stats::function_bcf9602(#"hash_4711f96a09147c", 1, #"event_test_enabled");
             player stats::function_dad108fa(#"hash_529cb0a2c0619c09", 1);
             player stats::function_dad108fa(#"hash_5f4b951cc4725fe2", 1);
             player stats::function_dad108fa(#"hash_5f4b941cc4725e2f", 1);
@@ -4148,8 +4148,8 @@ function private killstreak_started(params) {
     if (params.hardpointtype !== #"planemortar") {
         self stats::function_dad108fa(#"hash_4cb341530c521448", 1);
         function_e68cbed4();
-        var_42c49b1c = killstreaks::get_script_bundle(params.hardpointtype);
-        if (var_42c49b1c.var_192bb442 !== 1) {
+        killstreak_bundle = killstreaks::get_script_bundle(params.hardpointtype);
+        if (killstreak_bundle.var_192bb442 !== 1) {
             self stats::function_dad108fa(#"hash_4a20ff7cceff217c", 1);
         }
     }
@@ -4329,7 +4329,7 @@ function function_de80e959(data) {
     winningteam = data.winner;
     if (isdefined(winningteam) && player.team === winningteam) {
         switch (level.basegametype) {
-        case #"hash_601b3d9434b9aac9":
+        case #"gunfight":
             player stats::function_dad108fa(#"hash_5d841dfc6114d2ae", 1);
             break;
         }

@@ -1,9 +1,9 @@
 {
-    "var_ba4feba3": "#hash_2ea42100fa47bc61",
+    "targetlost": "#hash_2ea42100fa47bc61",
     "var_922067c4": "scriptbundle",
     "type": "mpdialog_scorestreak",
     "killmultiple": "#hash_3836c5795d6bcb39",
-    "var_a0f53e83": "#hash_14ea720a55571340",
+    "killaircraft": "#hash_14ea720a55571340",
     "vmtype": "both",
     "name": "blops_pilot2_kls_jetfighter",
     "arrive": "#hash_4986ac05dff2f27e",

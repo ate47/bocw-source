@@ -37,7 +37,7 @@
 // Checksum 0xa9367f99, Offset: 0x2f0
 // Size: 0x5c
 function init() {
-    clientfield::register("scriptmover", "dragonTrapState", 1, 2, "int", &function_462459e6, 0, 0);
+    clientfield::register("scriptmover", "dragonTrapState", 1, 2, "int", &dragontrapstate, 0, 0);
     function_32d5e898();
 }
 
@@ -82,7 +82,7 @@ function function_6f3ad355(localclientnum) {
 // Params 7, eflags: 0x2 linked
 // Checksum 0x6955961b, Offset: 0x4d8
 // Size: 0x35a
-function function_462459e6(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function dragontrapstate(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     switch (bwastimejump) {
     case 0:
         if (isdefined(self.var_f3b82c6d)) {
@@ -101,8 +101,8 @@ function function_462459e6(localclientnum, *oldval, newval, *bnewent, *binitials
             assert(isdefined(self.var_f3b82c6d));
         #/
         self.var_f3b82c6d setmodel("zombietron_dragonhead_trap");
-        stopforcestreamingxmodel(#"hash_15d4a61fccca4d76");
-        forcestreamxmodel(#"hash_26a679460fe50085");
+        stopforcestreamingxmodel(#"zombietron_dragonhead_trap");
+        forcestreamxmodel(#"zombietron_dragonhead_trap_active");
         namespace_1e25ad94::function_f5f0c0f8("Setting dragonhead trap (" + self getentitynumber() + ") at origin:" + self.origin + " to model zombietron_dragonhead_trap");
         self.var_f3b82c6d thread namespace_83eb6304::function_8b1a4e9c(fieldname, "dragonTrap");
         break;
@@ -114,8 +114,8 @@ function function_462459e6(localclientnum, *oldval, newval, *bnewent, *binitials
             assert(isdefined(self.var_f3b82c6d));
         #/
         self.var_f3b82c6d setmodel("zombietron_dragonhead_trap_active");
-        stopforcestreamingxmodel(#"hash_26a679460fe50085");
-        forcestreamxmodel(#"hash_15d4a61fccca4d76");
+        stopforcestreamingxmodel(#"zombietron_dragonhead_trap_active");
+        forcestreamxmodel(#"zombietron_dragonhead_trap");
         namespace_1e25ad94::function_f5f0c0f8("Setting dragonhead trap (" + self getentitynumber() + ") at origin:" + self.origin + " to model zombietron_dragonhead_trap_active");
         wait(1);
         if (isdefined(self.var_f3b82c6d)) {

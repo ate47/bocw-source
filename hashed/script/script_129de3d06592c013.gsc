@@ -11,17 +11,17 @@
 #using scripts\core_common\callbacks_shared.gsc;
 #using scripts\core_common\battlechatter.gsc;
 
-#namespace namespace_e14b07d6;
+#namespace listening_device;
 
-// Namespace namespace_e14b07d6/namespace_e14b07d6
+// Namespace listening_device/listening_device
 // Params 0, eflags: 0x5
 // Checksum 0x8575e1e4, Offset: 0x1a0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_320a8d55b915b9e5", &init_shared, undefined, undefined, undefined);
+    system::register(#"listening_device", &init_shared, undefined, undefined, undefined);
 }
 
-// Namespace namespace_e14b07d6/namespace_e14b07d6
+// Namespace listening_device/listening_device
 // Params 0, eflags: 0x2 linked
 // Checksum 0x3556bdd1, Offset: 0x1e8
 // Size: 0x164
@@ -38,7 +38,7 @@ function init_shared() {
     clientfield::register("missile", "listening_device_hacked", 1, 1, "counter");
 }
 
-// Namespace namespace_e14b07d6/namespace_e14b07d6
+// Namespace listening_device/listening_device
 // Params 0, eflags: 0x2 linked
 // Checksum 0xb6169fe4, Offset: 0x358
 // Size: 0x48
@@ -48,39 +48,39 @@ function function_1c601b99() {
     }
 }
 
-// Namespace namespace_e14b07d6/namespace_e14b07d6
+// Namespace listening_device/listening_device
 // Params 2, eflags: 0x2 linked
 // Checksum 0x28c69019, Offset: 0x3a8
 // Size: 0x238
-function function_bff5c062(var_e14b07d6, attackingplayer) {
-    var_f3ab6571 = var_e14b07d6.owner weaponobjects::function_8481fc06(var_e14b07d6.weapon) > 1;
-    var_e14b07d6.owner thread globallogic_audio::function_a2cde53d(var_e14b07d6.weapon, var_f3ab6571);
-    entnum = var_e14b07d6 getentitynumber();
-    level.var_b7bd6b6d[var_e14b07d6.team][entnum] = undefined;
+function function_bff5c062(listening_device, attackingplayer) {
+    var_f3ab6571 = listening_device.owner weaponobjects::function_8481fc06(listening_device.weapon) > 1;
+    listening_device.owner thread globallogic_audio::function_a2cde53d(listening_device.weapon, var_f3ab6571);
+    entnum = listening_device getentitynumber();
+    level.var_b7bd6b6d[listening_device.team][entnum] = undefined;
     newteam = attackingplayer.team;
-    var_e14b07d6.team = newteam;
-    var_e14b07d6 setteam(newteam);
-    var_e14b07d6.owner = attackingplayer;
-    var_e14b07d6 setowner(attackingplayer);
+    listening_device.team = newteam;
+    listening_device setteam(newteam);
+    listening_device.owner = attackingplayer;
+    listening_device setowner(attackingplayer);
     if (!isdefined(level.var_b7bd6b6d[newteam])) {
         level.var_b7bd6b6d[newteam] = [];
     }
-    level.var_b7bd6b6d[newteam][entnum] = var_e14b07d6;
-    if (isdefined(var_e14b07d6) && isdefined(level.var_f1edf93f)) {
+    level.var_b7bd6b6d[newteam][entnum] = listening_device;
+    if (isdefined(listening_device) && isdefined(level.var_f1edf93f)) {
         _station_up_to_detention_center_triggers = [[ level.var_f1edf93f ]]();
         if (isdefined(_station_up_to_detention_center_triggers) ? _station_up_to_detention_center_triggers : 0) {
-            var_e14b07d6 notify(#"cancel_timeout");
-            var_e14b07d6 thread weaponobjects::weapon_object_timeout(var_e14b07d6.var_2d045452, _station_up_to_detention_center_triggers);
+            listening_device notify(#"cancel_timeout");
+            listening_device thread weaponobjects::weapon_object_timeout(listening_device.var_2d045452, _station_up_to_detention_center_triggers);
         }
     }
-    var_e14b07d6 thread weaponobjects::function_6d8aa6a0(attackingplayer, var_e14b07d6.var_2d045452);
-    var_e14b07d6 clientfield::increment("listening_device_hacked");
+    listening_device thread weaponobjects::function_6d8aa6a0(attackingplayer, listening_device.var_2d045452);
+    listening_device clientfield::increment("listening_device_hacked");
     if (isdefined(level.var_b7bc3c75.var_1d3ef959)) {
         attackingplayer [[ level.var_b7bc3c75.var_1d3ef959 ]]();
     }
 }
 
-// Namespace namespace_e14b07d6/namespace_e14b07d6
+// Namespace listening_device/listening_device
 // Params 1, eflags: 0x2 linked
 // Checksum 0xd4c56b5e, Offset: 0x5e8
 // Size: 0x1c2
@@ -95,7 +95,7 @@ function function_2111cf41(watcher) {
     watcher.immediatedetonation.watcher = 1;
     watcher.immunespecialty.watcher = "specialty_immunetriggerbetty";
     watcher.var_8eda8949.watcher = (0, 0, 0);
-    var_167da8cf = getweapon(#"hash_320a8d55b915b9e5");
+    var_167da8cf = getweapon(#"listening_device");
     if (isdefined(var_167da8cf.customsettings)) {
         var_e6fbac16 = getscriptbundle(var_167da8cf.customsettings);
         /#
@@ -112,7 +112,7 @@ function function_2111cf41(watcher) {
     watcher.ondestroyed.watcher = &function_8af865a6;
 }
 
-// Namespace namespace_e14b07d6/namespace_e14b07d6
+// Namespace listening_device/listening_device
 // Params 3, eflags: 0x2 linked
 // Checksum 0x461398c8, Offset: 0x7b8
 // Size: 0xd4
@@ -124,7 +124,7 @@ function function_ad011f90(attacker, weapon, target) {
     weaponobjects::proximitydetonate(attacker, weapon, target);
 }
 
-// Namespace namespace_e14b07d6/namespace_e14b07d6
+// Namespace listening_device/listening_device
 // Params 1, eflags: 0x2 linked
 // Checksum 0xa5b05039, Offset: 0x898
 // Size: 0x24
@@ -132,13 +132,13 @@ function function_7b26afb(*player) {
     self weaponobjects::weaponobjectfizzleout();
 }
 
-// Namespace namespace_e14b07d6/namespace_e14b07d6
+// Namespace listening_device/listening_device
 // Params 2, eflags: 0x2 linked
 // Checksum 0x5abb1e3c, Offset: 0x8c8
 // Size: 0x12c
 function function_8bdff396(watcher, player) {
     weaponobjects::onspawnproximitygrenadeweaponobject(watcher, player);
-    self.weapon = getweapon(#"hash_320a8d55b915b9e5");
+    self.weapon = getweapon(#"listening_device");
     self.var_48d842c3 = 1;
     self.var_515d6dda = 1;
     self function_619a5c20();
@@ -155,7 +155,7 @@ function function_8bdff396(watcher, player) {
     player battlechatter::function_fc82b10(self.weapon, self.origin, self);
 }
 
-// Namespace namespace_e14b07d6/namespace_e14b07d6
+// Namespace listening_device/listening_device
 // Params 2, eflags: 0x2 linked
 // Checksum 0xefc6e809, Offset: 0xa00
 // Size: 0x13c
@@ -171,7 +171,7 @@ function function_8af865a6(attacker, *callback_data) {
     }
 }
 
-// Namespace namespace_e14b07d6/namespace_e14b07d6
+// Namespace listening_device/listening_device
 // Params 0, eflags: 0x2 linked
 // Checksum 0x6ca6b9ff, Offset: 0xb48
 // Size: 0x1ea
@@ -207,7 +207,7 @@ function function_23fef963() {
     return var_bf170232;
 }
 
-// Namespace namespace_e14b07d6/namespace_e14b07d6
+// Namespace listening_device/listening_device
 // Params 0, eflags: 0x6 linked
 // Checksum 0x158b8072, Offset: 0xd40
 // Size: 0x1c
@@ -215,7 +215,7 @@ function private on_game_playing() {
     level thread function_d993c135();
 }
 
-// Namespace namespace_e14b07d6/namespace_e14b07d6
+// Namespace listening_device/listening_device
 // Params 1, eflags: 0x6 linked
 // Checksum 0x7016f05a, Offset: 0xd68
 // Size: 0x26
@@ -224,7 +224,7 @@ function private on_weapon_fired(*params) {
     self.var_8c3b7f1a = self.origin;
 }
 
-// Namespace namespace_e14b07d6/namespace_e14b07d6
+// Namespace listening_device/listening_device
 // Params 0, eflags: 0x2 linked
 // Checksum 0x625f020f, Offset: 0xd98
 // Size: 0x3b4
@@ -292,7 +292,7 @@ function function_d993c135() {
     }
 }
 
-// Namespace namespace_e14b07d6/namespace_e14b07d6
+// Namespace listening_device/listening_device
 // Params 1, eflags: 0x2 linked
 // Checksum 0x18c5458b, Offset: 0x1158
 // Size: 0xa34
@@ -317,7 +317,7 @@ function function_f38fc2a8(data) {
         return 0;
     }
     var_ca2cadcd = level.var_8ddf6d3d.var_ec25308b !== 1;
-    var_52b5458f = getweapon(#"hash_320a8d55b915b9e5");
+    var_52b5458f = getweapon(#"listening_device");
     var_64c27ffb = 0;
     var_55336d8d = level.var_8ddf6d3d;
     var_c394e130 = level.var_96492769;

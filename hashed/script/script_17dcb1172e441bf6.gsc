@@ -30,7 +30,7 @@
 // Checksum 0xc1ce0717, Offset: 0x138
 // Size: 0x2c
 function init() {
-    level.var_8cff5775.var_62f60f27 = [];
+    level.doa.var_62f60f27 = [];
     level thread function_99069e31();
 }
 
@@ -121,7 +121,7 @@ function function_f5f0c0f8(var_4e2d590d, var_88421d4b = 0) {
         } else {
             text = "<unknown string>" + gettime() + "<unknown string>" + var_4e2d590d;
             println("<unknown string>" + text);
-            level.var_8cff5775.var_62f60f27[level.var_8cff5775.var_62f60f27.size] = text;
+            level.doa.var_62f60f27[level.doa.var_62f60f27.size] = text;
         }
     #/
 }
@@ -184,13 +184,13 @@ function function_99069e31() {
     /#
         while (1) {
             waitframe(1);
-            if (level.var_8cff5775.var_62f60f27.size && isdefined(level.var_8cff5775.var_39e3fa99)) {
-                if (level.var_8cff5775.var_358fbdc8 == 4) {
+            if (level.doa.var_62f60f27.size && isdefined(level.doa.var_39e3fa99)) {
+                if (level.doa.world_state == 4) {
                     origin = function_23e1f90f()[0].origin;
                 } else {
-                    origin = [[ level.var_8cff5775.var_39e3fa99 ]]->function_ffcf1d1();
+                    origin = [[ level.doa.var_39e3fa99 ]]->function_ffcf1d1();
                 }
-                print3d(origin, "<unknown string>" + level.var_8cff5775.var_62f60f27.size);
+                print3d(origin, "<unknown string>" + level.doa.var_62f60f27.size);
             }
         }
     #/
@@ -202,7 +202,7 @@ function function_99069e31() {
 // Size: 0xd4
 function function_d88064ec(clear = 1) {
     /#
-        foreach (msg in level.var_8cff5775.var_62f60f27) {
+        foreach (msg in level.doa.var_62f60f27) {
             println("<unknown string>" + msg);
         }
     #/
@@ -216,7 +216,7 @@ function function_d88064ec(clear = 1) {
 // Checksum 0x2e532692, Offset: 0xba0
 // Size: 0x16
 function function_8225da57() {
-    level.var_8cff5775.var_62f60f27 = [];
+    level.doa.var_62f60f27 = [];
 }
 
 // Namespace namespace_1e25ad94/namespace_1e25ad94
@@ -301,7 +301,7 @@ function function_ee689179() {
         self.alpha = self.alpha - 0.01;
         waitframe(1);
     }
-    arrayremovevalue(level.var_8cff5775.var_3843f782, self);
+    arrayremovevalue(level.doa.var_3843f782, self);
 }
 
 // Namespace namespace_1e25ad94/namespace_1e25ad94
@@ -312,10 +312,10 @@ function function_8f04a649() {
     /#
         self notify("<unknown string>");
         self endon("<unknown string>");
-        while (level.var_8cff5775.var_3843f782.size) {
+        while (level.doa.var_3843f782.size) {
             var_4c600979 = 800;
             time = gettime();
-            foreach (line in level.var_8cff5775.var_3843f782) {
+            foreach (line in level.doa.var_3843f782) {
                 if (time > line.var_3e2a561b && !isdefined(line.var_633e9e48)) {
                     line thread function_ee689179();
                 }
@@ -333,8 +333,8 @@ function function_8f04a649() {
 // Checksum 0xe0fd530d, Offset: 0x1360
 // Size: 0x14c
 function function_4e3cfad(text, color = (1, 1, 1), alpha = 1, scale = 1, duration = 3) {
-    if (!isdefined(level.var_8cff5775.var_3843f782)) {
-        level.var_8cff5775.var_3843f782 = [];
+    if (!isdefined(level.doa.var_3843f782)) {
+        level.doa.var_3843f782 = [];
     }
     struct = spawnstruct();
     struct.x.struct = 40;
@@ -343,7 +343,7 @@ function function_4e3cfad(text, color = (1, 1, 1), alpha = 1, scale = 1, duratio
     struct.alpha = alpha;
     struct.scale = scale;
     struct.var_3e2a561b.struct = gettime() + duration * 1000;
-    level.var_8cff5775.var_3843f782[level.var_8cff5775.var_3843f782.size] = struct;
+    level.doa.var_3843f782[level.doa.var_3843f782.size] = struct;
     level thread function_8f04a649();
 }
 

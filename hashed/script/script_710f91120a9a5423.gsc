@@ -17,7 +17,7 @@ function private autoexec __init__system__() {
 // Checksum 0xa3ad9dc3, Offset: 0x108
 // Size: 0x44
 function function_70a657d8() {
-    if (isdefined(level.killstreakrules[#"hash_1ef837cba38c6dd3"])) {
+    if (isdefined(level.killstreakrules[#"hero_weapons"])) {
         killstreakrules::addkillstreaktorule("napalm_strike_zm", "hero_weapons", 0, 0);
     }
 }

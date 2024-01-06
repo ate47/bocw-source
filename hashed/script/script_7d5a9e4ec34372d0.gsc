@@ -344,7 +344,7 @@ function private function_d103a3d0(entity) {
         if (isplayer(self.target_enemy)) {
             self.target_enemy clientfield::set_to_player("" + #"hash_32d35af47559b320", 1);
             if (!is_true(self.target_enemy.var_b4dc71a)) {
-                self.target_enemy thread zm_vo::function_7622cb70(#"hash_38c28e92884299a7");
+                self.target_enemy thread zm_vo::function_7622cb70(#"zber_env_grdtwr");
                 self.target_enemy.var_b4dc71a = 1;
             }
         }
@@ -681,7 +681,7 @@ function function_9d831b2f() {
             self.var_942bf052 = "left";
         }
         waitresult = undefined;
-        waitresult = self waittilltimeout(3.5, #"hash_3ea819b8f18a3765");
+        waitresult = self waittilltimeout(3.5, #"ultimate_turret_potential_target_acquired");
         if (waitresult._notify == "ultimate_turret_potential_target_acquired") {
             while (isdefined(self.var_c27dadc8) || isdefined(self.e_current_target)) {
                 wait(float(function_60d95f53()) / 1000);

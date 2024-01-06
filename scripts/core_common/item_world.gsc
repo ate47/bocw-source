@@ -1542,7 +1542,7 @@ function pickup_item(item, var_22be503 = 1, var_26a492bc = 0, var_b362e309 = 0) 
     }
     if (isdefined(item.hidefromteam) && item.hidefromteam == self.team) {
         if (!isdefined(item.var_6e788302) || item.var_6e788302 !== self getentitynumber()) {
-            self playsoundtoplayer(#"hash_7d81a3ace87fb4e2", self);
+            self playsoundtoplayer(#"uin_default_action_denied", self);
             return 0;
         }
     }

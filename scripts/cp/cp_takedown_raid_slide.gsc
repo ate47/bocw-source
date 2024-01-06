@@ -45,18 +45,18 @@ function function_f9f06983(*var_d3440450) {
     var_6534f716[0] spawner::add_spawn_function(&namespace_b100dd86::function_87d56d50);
     var_3eba13ec = getspawnerarray("qasim_final_rooftop", "targetname");
     var_3eba13ec[0] spawner::add_spawn_function(&namespace_b100dd86::function_a66feb27);
-    level.var_fdc6062e = var_8a3bb97c[0] spawner::spawn(1);
+    level.adler = var_8a3bb97c[0] spawner::spawn(1);
     level.woods = var_6534f716[0] spawner::spawn(1);
     level.var_2fef04d8 = var_3eba13ec[0] spawner::spawn(1);
     level.var_2fef04d8 val::set(#"magic_bullet_shield", "allowdeath", 0);
     level.var_2fef04d8.magic_bullet_shield = 1;
     var_fcbd93e0 = struct::get("raid_slide_adler", "targetname");
     var_1100faeb = struct::get("raid_slide_woods", "targetname");
-    level.var_fdc6062e forceteleport(var_fcbd93e0.origin, var_fcbd93e0.angles);
+    level.adler forceteleport(var_fcbd93e0.origin, var_fcbd93e0.angles);
     level.woods forceteleport(var_1100faeb.origin, var_1100faeb.angles);
     exploder::exploder("lgt_vista_lights");
     level thread objectives::scripted("obj_takedown_capture", undefined, #"hash_49c1d860c97e3792");
-    level thread objectives::follow("follow_adler", level.var_fdc6062e, undefined, 0, 0);
+    level thread objectives::follow("follow_adler", level.adler, undefined, 0, 0);
     level thread namespace_b100dd86::function_53531f27("trig_qasim_roof_run3");
     level thread scene::play("scene_tkd_hit2_apt_blindfire_bathroom", "death");
 }
@@ -89,7 +89,7 @@ function main(var_d3440450, var_50cc0d4f) {
     level endon(#"hash_7d9928c92b67b6b2");
     level battlechatter::function_2ab9360b(0);
     player util::function_3b6593e4(0.87, 1);
-    level.var_fdc6062e ai::set_behavior_attribute("demeanor", "combat");
+    level.adler ai::set_behavior_attribute("demeanor", "combat");
     level.woods ai::set_behavior_attribute("demeanor", "combat");
     var_5ca6956f = getweapon(#"ar_accurate_t9");
     w_pistol = getweapon(#"pistol_semiauto_t9", "steadyaim", "fastreload", "reflex_pistol");
@@ -98,16 +98,16 @@ function main(var_d3440450, var_50cc0d4f) {
     player thread function_e99afe47();
     level flag::wait_till("flag_start_roof_slide");
     var_2b876e6f = getspawnerarray("slide_enemy1", "targetname");
-    level.var_c2f99c79 = var_2b876e6f[0] spawner::spawn(1);
-    level.var_c2f99c79.targetname = "slide_enemy1";
-    level.var_c2f99c79.health = 999;
-    level.var_c2f99c79 disableaimassist();
+    level.slide_enemy1 = var_2b876e6f[0] spawner::spawn(1);
+    level.slide_enemy1.targetname = "slide_enemy1";
+    level.slide_enemy1.health = 999;
+    level.slide_enemy1 disableaimassist();
     var_b5c582ed = getspawnerarray("slide_enemy2", "targetname");
-    level.var_2db471ed = var_b5c582ed[0] spawner::spawn(1);
-    level.var_2db471ed.targetname = "slide_enemy2";
-    level.var_2db471ed.health = 999;
-    level.var_2db471ed.var_c681e4c1 = 1;
-    level.var_2db471ed disableaimassist();
+    level.slide_enemy2 = var_b5c582ed[0] spawner::spawn(1);
+    level.slide_enemy2.targetname = "slide_enemy2";
+    level.slide_enemy2.health = 999;
+    level.slide_enemy2.var_c681e4c1 = 1;
+    level.slide_enemy2 disableaimassist();
     var_ecae70ca = getspawnerarray("slide_enemy3", "targetname");
     level.slide_enemy3 = var_ecae70ca[0] spawner::spawn(1);
     level.slide_enemy3.targetname = "slide_enemy3";
@@ -123,8 +123,8 @@ function main(var_d3440450, var_50cc0d4f) {
     player thread function_624525f();
     thread namespace_a052577e::function_fd7139f4();
     weapon = getweapon(#"pistol_semiauto_t9");
-    level.var_fdc6062e aiutility::setprimaryweapon(weapon);
-    level.var_fdc6062e ai::gun_switchto(weapon, "right");
+    level.adler aiutility::setprimaryweapon(weapon);
+    level.adler ai::gun_switchto(weapon, "right");
     var_38ac20b2 = util::spawn_player_clone(player);
     var_38ac20b2.targetname.var_38ac20b2 = "FakePlayer";
     var_38ac20b2 hide();
@@ -133,17 +133,17 @@ function main(var_d3440450, var_50cc0d4f) {
     level thread function_4b1afed9();
     level scene::add_scene_func("scene_tkd_hit2_rooftop_slide", &function_c5d4fec8);
     level thread scene::play("scene_tkd_hit2_rooftop_slide", "Shot 1", [0:var_38ac20b2]);
-    level.var_c2f99c79 thread scene::play("scene_tkd_hit2_rooftop_slide_enemy1", "Shot 1", [0:level.var_c2f99c79]);
-    level.var_2db471ed thread scene::play("scene_tkd_hit2_rooftop_slide_enemy2", "Shot 1", [0:level.var_2db471ed]);
+    level.slide_enemy1 thread scene::play("scene_tkd_hit2_rooftop_slide_enemy1", "Shot 1", [0:level.slide_enemy1]);
+    level.slide_enemy2 thread scene::play("scene_tkd_hit2_rooftop_slide_enemy2", "Shot 1", [0:level.slide_enemy2]);
     level.slide_enemy3 thread scene::play("scene_tkd_hit2_rooftop_slide_enemy3", "Shot 1", [0:level.slide_enemy3]);
-    level.var_c2f99c79 thread function_83cb8fb7();
+    level.slide_enemy1 thread function_83cb8fb7();
     level.slide_enemy3 thread function_83cb8fb7();
     level.slide_enemy3 thread function_d6825a2e();
     level thread function_41a8d47e();
     level.var_2fef04d8 thread namespace_b100dd86::swap_head(undefined, "c_t9_cp_ira_militant_vip_qasim_head_nohat");
     level.var_2fef04d8 thread namespace_b100dd86::swap_head("qasim_punched", "c_t9_cp_ira_militant_vip_qasim_head_nohat_injured");
     level.var_2fef04d8 thread namespace_b100dd86::function_f82142f8(undefined, "c_t9_cp_ira_militant_vip_qasim_tkd_body");
-    level.var_fdc6062e thread util::delay(1, undefined, &namespace_b100dd86::function_f82142f8, undefined, "c_t9_usa_hero_adler_civ_amsterdam_body_no_coat");
+    level.adler thread util::delay(1, undefined, &namespace_b100dd86::function_f82142f8, undefined, "c_t9_usa_hero_adler_civ_amsterdam_body_no_coat");
     player playerlinktoblend(var_38ac20b2, "tag_player", 0.3);
     player playgestureviewmodel(#"hash_629a852e56700e02", undefined, 1, 0.2, 0, 1, 1);
     wait(0.3);
@@ -204,7 +204,7 @@ function function_58b2cc80() {
     level waittill(#"hash_11a7d299dcf3358");
     while (1) {
         wait(5);
-        level.var_fdc6062e namespace_a635adb1::queue("vox_cp_tdwn_05100_adlr_masonqasimwants_ff");
+        level.adler namespace_a635adb1::queue("vox_cp_tdwn_05100_adlr_masonqasimwants_ff");
         wait(5);
         level.woods namespace_a635adb1::queue("vox_cp_tdwn_05100_wood_comeonmasondoit_15");
     }
@@ -241,8 +241,8 @@ function function_624525f() {
     level endon(#"shot_slide_enemy1");
     var_b84b1bf9 = getent("mb_slide_enemy1", "targetname");
     level waittill(#"hash_3dd2c779be3b07c8");
-    if (isalive(level.var_c2f99c79) && !isdefined(level.var_c2f99c79.var_b481f04a)) {
-        magicbullet(getweapon(#"ar_standard_t9"), var_b84b1bf9.origin, level.var_c2f99c79.origin + vectorscale((0, 0, 1), 50));
+    if (isalive(level.slide_enemy1) && !isdefined(level.slide_enemy1.var_b481f04a)) {
+        magicbullet(getweapon(#"ar_standard_t9"), var_b84b1bf9.origin, level.slide_enemy1.origin + vectorscale((0, 0, 1), 50));
     }
 }
 
@@ -325,13 +325,13 @@ function function_79b1e578() {
 function function_1f6d0353() {
     level notify(#"hash_5f84172c70d1eb4c");
     wait(4);
-    level.var_fdc6062e namespace_a635adb1::queue("vox_cp_tdwn_04100_adlr_hesboltingkeepo_86");
+    level.adler namespace_a635adb1::queue("vox_cp_tdwn_04100_adlr_hesboltingkeepo_86");
     wait(0.5);
     level.woods namespace_a635adb1::queue("vox_cp_tdwn_04100_wood_jesusthisguyisf_42");
     wait(3.5);
-    level.var_fdc6062e namespace_a635adb1::queue("vox_cp_tdwn_03800_adlr_gogo_f9");
+    level.adler namespace_a635adb1::queue("vox_cp_tdwn_03800_adlr_gogo_f9");
     wait(3);
-    level.var_fdc6062e namespace_a635adb1::queue("vox_cp_tdwn_03800_adlr_hurryup_40");
+    level.adler namespace_a635adb1::queue("vox_cp_tdwn_03800_adlr_hurryup_40");
 }
 
 // Namespace tkdn_raid_slide/namespace_7747d072
@@ -376,7 +376,7 @@ function function_edf70272() {
 function function_83cb8fb7() {
     player = getplayers()[0];
     self waittill(#"damage", #"hash_4ba13b403b82d1dc");
-    if (self == level.var_c2f99c79) {
+    if (self == level.slide_enemy1) {
         self thread scene::play("scene_tkd_hit2_rooftop_slide_enemy1", "death");
         player playhitmarker(undefined, 5, undefined, 1);
         level notify(#"shot_slide_enemy1");

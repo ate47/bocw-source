@@ -36,16 +36,16 @@ function init() {
     namespace_cf4aa5f0::function_6dbaba52("center_zone_on", undefined, "lgt_env_powered_on_room_10", undefined, undefined, &function_41575406);
     namespace_cf4aa5f0::function_6dbaba52("exfil_begin", undefined, "fxexp_particle_accelerator_unstable", undefined, "fxexp_particle_accelerator_stabilized", &function_a6be5efd);
     namespace_cf4aa5f0::function_6dbaba52("exfil_aether_explode", "fxexp_fx_exfile_aether_energy", undefined, undefined, undefined, &exfil_aether_explode);
-    namespace_cf4aa5f0::function_6dbaba52("receptacle_off", "lgt_gold_container_receptacle_off", undefined, undefined, undefined, &function_a594dce9);
-    namespace_cf4aa5f0::function_6dbaba52("receptacle_on", undefined, undefined, undefined, "lgt_gold_container_receptacle_off", &function_e391f355);
+    namespace_cf4aa5f0::function_6dbaba52("receptacle_off", "lgt_gold_container_receptacle_off", undefined, undefined, undefined, &receptacle_off);
+    namespace_cf4aa5f0::function_6dbaba52("receptacle_on", undefined, undefined, undefined, "lgt_gold_container_receptacle_off", &receptacle_on);
     namespace_cf4aa5f0::function_6dbaba52("pa_romm_off", "lgt_env_powered_off_room_10", undefined, undefined, "lgt_env_powered_on_room_10", &function_5d65ec93);
     namespace_cf4aa5f0::function_6dbaba52("pa_romm_on", "lgt_env_powered_on_room_10", undefined, undefined, "lgt_env_powered_off_room_10", &function_d4f7930b);
-    clientfield::register("world", "dark_aether_active", 1, 1, "int", &function_d1d5b49d, 1, 0);
-    clientfield::register("world", "terminal_on", 1, 1, "int", &function_ee8dfd8b, 1, 0);
-    clientfield::register("world", "center_zone_lights_off", 1, 1, "int", &function_6c032b55, 1, 0);
-    clientfield::register("world", "gold_container_receptacle", 1, 2, "int", &function_c6e3a5f8, 1, 0);
+    clientfield::register("world", "dark_aether_active", 1, 1, "int", &dark_aether_active, 1, 0);
+    clientfield::register("world", "terminal_on", 1, 1, "int", &terminal_on, 1, 0);
+    clientfield::register("world", "center_zone_lights_off", 1, 1, "int", &center_zone_lights_off, 1, 0);
+    clientfield::register("world", "gold_container_receptacle", 1, 2, "int", &gold_container_receptacle, 1, 0);
     clientfield::register("world", "exfil_begin", 1, 1, "int", &exfil_begin, 1, 0);
-    clientfield::register("world", "exfil_aether_trigger", 1, 1, "int", &function_df263502, 1, 0);
+    clientfield::register("world", "exfil_aether_trigger", 1, 1, "int", &exfil_aether_trigger, 1, 0);
     var_c54ed3ff = array("lgt_env_helping_hand_room_1", "lgt_env_helping_hand_room_2", "lgt_env_helping_hand_room_3", "lgt_env_helping_hand_room_4", "lgt_env_helping_hand_room_5");
     var_5b828e46 = array("lgt_env_dance_party", "lgt_env_powered_off_room_10");
     var_d6887678 = array("lgt_env_eyes_in_dark_corpse_01", "lgt_env_eyes_in_dark_corpse_02", "lgt_env_eyes_in_dark_corpse_03", "lgt_env_eyes_in_dark_corpse_04", "lgt_env_eyes_in_dark_corpse_05", "lgt_env_eyes_in_dark_corpse_final");
@@ -65,16 +65,16 @@ function init() {
     namespace_cf4aa5f0::function_6dbaba52("eye_corpse_4_light_on", "lgt_env_eyes_in_dark_corpse_04", undefined, undefined, undefined, &eye_corpse_4_light_on);
     namespace_cf4aa5f0::function_6dbaba52("eye_corpse_5_light_on", "lgt_env_eyes_in_dark_corpse_05", undefined, undefined, undefined, &eye_corpse_5_light_on);
     namespace_cf4aa5f0::function_6dbaba52("eye_corpse_final_light_on", "lgt_env_eyes_in_dark_corpse_final", undefined, undefined, undefined, &eye_corpse_final_light_on);
-    clientfield::register("world", "helping_hand_room_light", 1, 3, "int", &function_fea08e0c, 1, 0);
-    clientfield::register("world", "dance_party_light", 1, 1, "int", &function_bf23133d, 1, 0);
-    clientfield::register("world", "eye_corpse_light", 1, 3, "int", &function_6b387dd, 1, 0);
+    clientfield::register("world", "helping_hand_room_light", 1, 3, "int", &helping_hand_room_light, 1, 0);
+    clientfield::register("world", "dance_party_light", 1, 1, "int", &dance_party_light, 1, 0);
+    clientfield::register("world", "eye_corpse_light", 1, 3, "int", &eye_corpse_light, 1, 0);
 }
 
 // Namespace namespace_812a8849/namespace_812a8849
 // Params 7, eflags: 0x2 linked
 // Checksum 0x13875864, Offset: 0x15d8
 // Size: 0x70
-function function_d1d5b49d(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function dark_aether_active(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         level notify(#"hash_22f24a373548473d");
     } else {
@@ -86,9 +86,9 @@ function function_d1d5b49d(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Params 7, eflags: 0x2 linked
 // Checksum 0xea72c354, Offset: 0x1650
 // Size: 0x58
-function function_ee8dfd8b(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function terminal_on(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
-        level notify(#"hash_64d74023529ce8c3");
+        level notify(#"terminal_on");
     }
 }
 
@@ -106,7 +106,7 @@ function private exfil_begin(*localclientnum, *oldval, newval, *bnewent, *biniti
 // Params 7, eflags: 0x6 linked
 // Checksum 0x58d50466, Offset: 0x1710
 // Size: 0x58
-function private function_df263502(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function private exfil_aether_trigger(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         level notify(#"exfil_aether_explode");
     }
@@ -116,9 +116,9 @@ function private function_df263502(*localclientnum, *oldval, newval, *bnewent, *
 // Params 7, eflags: 0x2 linked
 // Checksum 0x7f09d236, Offset: 0x1770
 // Size: 0x70
-function function_6c032b55(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function center_zone_lights_off(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
-        level notify(#"hash_7c23da1eb4e4983f");
+        level notify(#"center_zone_lights_off");
     } else {
         level notify(#"hash_6a85393053fbdebb");
     }
@@ -128,11 +128,11 @@ function function_6c032b55(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Params 7, eflags: 0x2 linked
 // Checksum 0xa24f7e87, Offset: 0x17e8
 // Size: 0x88
-function function_c6e3a5f8(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function gold_container_receptacle(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
-        level notify(#"hash_426c6e79fc34a5e1");
+        level notify(#"receptacle_off");
     } else if (bwastimejump == 2) {
-        level notify(#"hash_7c9713da070d9ae5");
+        level notify(#"receptacle_on");
     }
 }
 
@@ -140,7 +140,7 @@ function function_c6e3a5f8(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Params 7, eflags: 0x2 linked
 // Checksum 0xb015e2f4, Offset: 0x1878
 // Size: 0x16a
-function function_fea08e0c(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function helping_hand_room_light(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (isdefined(bwastimejump)) {
         switch (bwastimejump) {
         case 0:
@@ -172,7 +172,7 @@ function function_fea08e0c(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Params 7, eflags: 0x2 linked
 // Checksum 0x2fc90fde, Offset: 0x19f0
 // Size: 0x70
-function function_bf23133d(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function dance_party_light(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         level notify(#"dance_party_light_on");
     } else {
@@ -184,7 +184,7 @@ function function_bf23133d(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Params 7, eflags: 0x2 linked
 // Checksum 0xeb4499d4, Offset: 0x1a68
 // Size: 0x16a
-function function_6b387dd(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function eye_corpse_light(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (isdefined(bwastimejump)) {
         switch (bwastimejump) {
         case 0:
@@ -280,7 +280,7 @@ function private function_644c666() {
 // Checksum 0x9cf1c4c8, Offset: 0x1f48
 // Size: 0x22
 function private function_13508757() {
-    level waittill(#"hash_64d74023529ce8c3");
+    level waittill(#"terminal_on");
     wait(3);
 }
 
@@ -301,16 +301,16 @@ function private function_41575406() {
 // Params 0, eflags: 0x6 linked
 // Checksum 0x6d535c57, Offset: 0x1fd0
 // Size: 0x1c
-function private function_a594dce9() {
-    level waittill(#"hash_426c6e79fc34a5e1");
+function private receptacle_off() {
+    level waittill(#"receptacle_off");
 }
 
 // Namespace namespace_812a8849/namespace_812a8849
 // Params 0, eflags: 0x6 linked
 // Checksum 0xb4c8c6e7, Offset: 0x1ff8
 // Size: 0x1c
-function private function_e391f355() {
-    level waittill(#"hash_7c9713da070d9ae5");
+function private receptacle_on() {
+    level waittill(#"receptacle_on");
 }
 
 // Namespace namespace_812a8849/namespace_812a8849
@@ -318,7 +318,7 @@ function private function_e391f355() {
 // Checksum 0x252bf662, Offset: 0x2020
 // Size: 0x1c
 function private function_5d65ec93() {
-    level waittill(#"hash_7c23da1eb4e4983f");
+    level waittill(#"center_zone_lights_off");
 }
 
 // Namespace namespace_812a8849/namespace_812a8849

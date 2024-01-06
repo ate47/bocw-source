@@ -52,7 +52,7 @@ function function_dcb0d632(damaged = 0, var_3463bd5c) {
         result = self waittill(#"hash_3e251384a5400dce");
     }
     if (isdefined(var_3463bd5c) && is_true(var_3463bd5c.var_7c56394) && (is_true(result.var_760a0807) || damaged)) {
-        arrayremovevalue(level.var_8cff5775.var_d1534e45, self);
+        arrayremovevalue(level.doa.var_d1534e45, self);
         namespace_1e25ad94::function_f5f0c0f8("Deleting barrel trap permenently at:" + self.origin);
     }
     self namespace_ec06fe4a::function_8c808737();
@@ -202,12 +202,12 @@ function function_d971ecbd(time) {
 // Checksum 0xea52772b, Offset: 0xf10
 // Size: 0x118
 function function_6e3c8a46() {
-    level.var_8cff5775.var_d1534e45 = [];
-    if (isdefined(level.var_8cff5775.var_a77e6349)) {
-        traps = [[ level.var_8cff5775.var_a77e6349 ]]->function_87f950c1("explo_barrel");
+    level.doa.var_d1534e45 = [];
+    if (isdefined(level.doa.var_a77e6349)) {
+        traps = [[ level.doa.var_a77e6349 ]]->function_87f950c1("explo_barrel");
         page = 1;
     } else {
-        traps = [[ level.var_8cff5775.var_39e3fa99 ]]->function_242886d5("explo_barrel");
+        traps = [[ level.doa.var_39e3fa99 ]]->function_242886d5("explo_barrel");
     }
     foreach (trap in traps) {
         function_3dd2c543(trap, page);
@@ -220,12 +220,12 @@ function function_6e3c8a46() {
 // Size: 0xf4
 function function_3dd2c543(trap, page = 0) {
     if (page) {
-        if (!isdefined(level.var_8cff5775.var_d1534e45)) {
-            level.var_8cff5775.var_d1534e45 = [];
-        } else if (!isarray(level.var_8cff5775.var_d1534e45)) {
-            level.var_8cff5775.var_d1534e45 = array(level.var_8cff5775.var_d1534e45);
+        if (!isdefined(level.doa.var_d1534e45)) {
+            level.doa.var_d1534e45 = [];
+        } else if (!isarray(level.doa.var_d1534e45)) {
+            level.doa.var_d1534e45 = array(level.doa.var_d1534e45);
         }
-        level.var_8cff5775.var_d1534e45[level.var_8cff5775.var_d1534e45.size] = trap;
+        level.doa.var_d1534e45[level.doa.var_d1534e45.size] = trap;
     } else {
         function_647017bd(trap);
     }
@@ -236,23 +236,23 @@ function function_3dd2c543(trap, page = 0) {
 // Checksum 0x98f201b6, Offset: 0x1130
 // Size: 0x138
 function function_f1ca69a7(model, var_639facc4, origin, angles, disconnect = 1) {
-    var_4a2d3ac2 = namespace_ec06fe4a::function_e22ae9b3(origin, model);
-    if (isdefined(var_4a2d3ac2)) {
-        var_4a2d3ac2 setmodel(model);
-        var_4a2d3ac2.var_82190347 = var_639facc4;
-        var_4a2d3ac2.targetname.var_4a2d3ac2 = "hazard";
-        var_4a2d3ac2.var_fd5301f9.var_4a2d3ac2 = "barrel";
-        var_4a2d3ac2.angles = angles;
-        var_4a2d3ac2.takedamage.var_4a2d3ac2 = 1;
-        var_4a2d3ac2.health.var_4a2d3ac2 = 100000;
-        var_4a2d3ac2 solid();
+    hazard = namespace_ec06fe4a::function_e22ae9b3(origin, model);
+    if (isdefined(hazard)) {
+        hazard setmodel(model);
+        hazard.var_82190347 = var_639facc4;
+        hazard.targetname.hazard = "hazard";
+        hazard.var_fd5301f9.hazard = "barrel";
+        hazard.angles = angles;
+        hazard.takedamage.hazard = 1;
+        hazard.health.hazard = 100000;
+        hazard solid();
         if (disconnect) {
-            var_4a2d3ac2 disconnectpaths();
+            hazard disconnectpaths();
         }
-        var_4a2d3ac2 enableaimassist();
-        self thread function_db4a8bad(0, var_4a2d3ac2);
+        hazard enableaimassist();
+        self thread function_db4a8bad(0, hazard);
     }
-    return var_4a2d3ac2;
+    return hazard;
 }
 
 // Namespace namespace_fb2125f/namespace_fb2125f
@@ -269,8 +269,8 @@ function function_647017bd(trap, var_7c56394 = 0, modelname = "zombietron_explos
             var_639facc4 = args[1];
         }
     }
-    var_4a2d3ac2 = trap function_f1ca69a7(modelname, var_639facc4, trap.origin, trap.angles);
-    trap.script_model = var_4a2d3ac2;
+    hazard = trap function_f1ca69a7(modelname, var_639facc4, trap.origin, trap.angles);
+    trap.script_model = hazard;
     trap.var_7c56394 = var_7c56394;
     return trap;
 }
@@ -289,7 +289,7 @@ function function_2b60f30() {
         if (state == 0) {
             continue;
         }
-        foreach (trap in level.var_8cff5775.var_d1534e45) {
+        foreach (trap in level.doa.var_d1534e45) {
             time = gettime();
             if (isdefined(trap.var_eb9d64bb) && time < trap.var_eb9d64bb) {
                 continue;

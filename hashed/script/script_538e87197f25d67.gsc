@@ -22,8 +22,8 @@ function private autoexec __init__system__() {
 // Checksum 0xd7e80565, Offset: 0x160
 // Size: 0x74
 function function_70a657d8() {
-    level.var_5df76d0 = namespace_6df5a8d8::register();
-    level clientfield::register("scriptmover", "perk_machine_rob", 1, 1, "int", &function_1fb2fc57, 0, 0);
+    level.var_5df76d0 = sr_perk_machine_choice::register();
+    level clientfield::register("scriptmover", "perk_machine_rob", 1, 1, "int", &perk_machine_rob, 0, 0);
     namespace_52c8f34d::function_70a657d8();
 }
 
@@ -39,7 +39,7 @@ function postinit() {
 // Params 7, eflags: 0x2 linked
 // Checksum 0x35badb24, Offset: 0x1f0
 // Size: 0xcc
-function function_1fb2fc57(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function perk_machine_rob(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump && isdefined(self)) {
         self playrenderoverridebundle(#"hash_e8f3d55b3b05c7e");
         var_85bec78b = self.origin + vectorscale((0, 0, 1), 50);

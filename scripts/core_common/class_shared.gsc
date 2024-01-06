@@ -10,7 +10,7 @@ class class_d0a0a887 {
     // Checksum 0xdc520e06, Offset: 0x80
     // Size: 0x1a
     __constructor() {
-        self.var_3639ef68 = [];
+        self._avail = [];
         self.var_4198461b = [];
     }
 
@@ -32,9 +32,9 @@ class class_d0a0a887 {
         #/
         self.var_4198461b[index] = undefined;
         /#
-            assert(!isdefined(self.var_3639ef68[index]));
+            assert(!isdefined(self._avail[index]));
         #/
-        self.var_3639ef68[index] = index;
+        self._avail[index] = index;
     }
 
     // Namespace namespace_d0a0a887/class_shared
@@ -43,7 +43,7 @@ class class_d0a0a887 {
     // Size: 0x128
     function function_65cdd2df(owner) {
         index = undefined;
-        foreach (key, value in self.var_3639ef68) {
+        foreach (key, value in self._avail) {
             index = key;
             break;
         }
@@ -57,9 +57,9 @@ class class_d0a0a887 {
                 self.var_4198461b[index] = index;
             }
             /#
-                assert(isdefined(self.var_3639ef68[index]));
+                assert(isdefined(self._avail[index]));
             #/
-            self.var_3639ef68[index] = undefined;
+            self._avail[index] = undefined;
         }
         return index;
     }
@@ -78,13 +78,13 @@ class class_d0a0a887 {
     // Size: 0x88
     function init(count) {
         /#
-            assert(self.var_3639ef68.size == 0);
+            assert(self._avail.size == 0);
         #/
         /#
             assert(self.var_4198461b.size == 0);
         #/
         for (i = 0; i < count; i++) {
-            self.var_3639ef68[i] = i;
+            self._avail[i] = i;
         }
     }
 

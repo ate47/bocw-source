@@ -24,7 +24,7 @@ function private autoexec __init__system__() {
 // Checksum 0xc1910128, Offset: 0x120
 // Size: 0x64
 function function_70a657d8() {
-    level.var_90456892 = namespace_43d87eee::register();
+    level.var_90456892 = sr_message_box::register();
     if (!isdefined(level.var_31028c5d)) {
         level.var_31028c5d = prototype_hud::register();
     }
@@ -76,15 +76,15 @@ function function_cc8342e0(string = #"hash_6c919cffb550417a", opentime = 10) {
     if (!isplayer(self)) {
         return;
     }
-    if (!level.var_90456892 namespace_43d87eee::is_open(self)) {
-        level.var_90456892 namespace_43d87eee::open(self);
-        level.var_90456892 namespace_43d87eee::function_7a690474(self, string);
+    if (!level.var_90456892 sr_message_box::is_open(self)) {
+        level.var_90456892 sr_message_box::open(self);
+        level.var_90456892 sr_message_box::function_7a690474(self, string);
     } else {
         return;
     }
     wait(opentime);
-    if (level.var_90456892 namespace_43d87eee::is_open(self)) {
-        level.var_90456892 namespace_43d87eee::close(self);
+    if (level.var_90456892 sr_message_box::is_open(self)) {
+        level.var_90456892 sr_message_box::close(self);
     }
 }
 

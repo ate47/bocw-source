@@ -161,7 +161,7 @@ function private event_handler[grenade_fire] function_4776caf4(eventstruct) {
                 s_location.height.s_location = 1500 + 3400 + randomfloatrange(-200, 200);
                 killstreak_id = self killstreakrules::killstreakstart("napalm_strike_zm", self.team, 0, 1);
                 if (killstreak_id == -1) {
-                    self notify(#"hash_68cc9fc08f044d2d");
+                    self notify(#"napalm_strike_failed");
                     return 0;
                 }
                 self thread function_9aa2535(s_location, killstreak_id);

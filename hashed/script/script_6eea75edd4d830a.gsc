@@ -17,7 +17,7 @@ function function_86ac55c5(dvar, var_c7ec7d60, value, time, var_4ca73085, ease_i
 // Params 8, eflags: 0x0
 // Checksum 0xd0722e04, Offset: 0x1d0
 // Size: 0x18c
-function function_d9fc18e2(target, time, var_4ca73085, axis, additive, ease_in, ease_out, var_33ce6852) {
+function ease_origin(target, time, var_4ca73085, axis, additive, ease_in, ease_out, var_33ce6852) {
     /#
         assert(self != level);
     #/
@@ -44,7 +44,7 @@ function function_d9fc18e2(target, time, var_4ca73085, axis, additive, ease_in, 
 // Params 8, eflags: 0x0
 // Checksum 0x65315644, Offset: 0x368
 // Size: 0x18c
-function function_60848904(target, time, var_4ca73085, axis, additive, ease_in, ease_out, var_33ce6852) {
+function ease_angles(target, time, var_4ca73085, axis, additive, ease_in, ease_out, var_33ce6852) {
     /#
         assert(self != level);
     #/

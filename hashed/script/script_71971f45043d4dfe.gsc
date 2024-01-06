@@ -51,7 +51,7 @@ function init() {
     function_a767bb1c("zombie_steiner_split_radiation_blast_spawner", "split_blast");
     function_a767bb1c("zombie_steiner_split_radiation_bomb_spawner", "split_bomb");
     registerbehaviorscriptfunctions();
-    level.var_8cff5775.var_ce403221 = getweapon(#"hash_7e3de6b5b2134623");
+    level.doa.var_ce403221 = getweapon(#"hash_7e3de6b5b2134623");
 }
 
 // Namespace namespace_6479037a/namespace_6479037a
@@ -59,14 +59,14 @@ function init() {
 // Checksum 0x594a7bc2, Offset: 0x668
 // Size: 0x452
 function function_a485d734() {
-    if (!isdefined(level.var_8cff5775.var_6a9dfa7b)) {
-        level.var_8cff5775.var_6a9dfa7b = namespace_ff8b8430::function_d7c5adee("steiner");
-        level.var_8cff5775.var_c1781ccb = namespace_ff8b8430::function_d7c5adee("steiner_split_left_arm");
-        level.var_8cff5775.var_e6cf829d = namespace_ff8b8430::function_d7c5adee("steiner_split_right_arm");
+    if (!isdefined(level.doa.steiner)) {
+        level.doa.steiner = doa_enemy::function_d7c5adee("steiner");
+        level.doa.var_c1781ccb = doa_enemy::function_d7c5adee("steiner_split_left_arm");
+        level.doa.var_e6cf829d = doa_enemy::function_d7c5adee("steiner_split_right_arm");
     }
     self namespace_250e9486::function_25b2c8a9();
     if (!isdefined(self.var_9fde8624)) {
-        if (level.var_8cff5775.var_358fbdc8 == 0) {
+        if (level.doa.world_state == 0) {
             self.maxhealth = 60000;
         } else {
             self.maxhealth = self.maxhealth + 60000 + int(15000 * namespace_ec06fe4a::function_ef369bae());
@@ -811,7 +811,7 @@ function private function_ac56fb75() {
     if (self function_880fad96()) {
         self.var_9b474709 = 1;
         waitresult = undefined;
-        waitresult = self waittill(#"hash_58f0b0e23afeccb9", #"hash_789b6607327efc84");
+        waitresult = self waittill(#"hash_58f0b0e23afeccb9", #"stop_wait_for_split");
         if (!isalive(self) || waitresult._notify == "stop_wait_for_split") {
             return;
         }
@@ -825,8 +825,8 @@ function private function_ac56fb75() {
     var_7584b84b = (var_65110e32[0], var_65110e32[1], 0);
     var_53d254e5 = vectorscale(var_7584b84b, 15);
     var_488052a8 = vectorscale(var_7584b84b, -15);
-    self thread function_eafb4701(level.var_8cff5775.var_c1781ccb, self.origin, health, var_488052a8, self.enemy);
-    self thread function_eafb4701(level.var_8cff5775.var_e6cf829d, self.origin, health, var_53d254e5, self.enemy);
+    self thread function_eafb4701(level.doa.var_c1781ccb, self.origin, health, var_488052a8, self.enemy);
+    self thread function_eafb4701(level.doa.var_e6cf829d, self.origin, health, var_53d254e5, self.enemy);
     self namespace_e32bb68::function_3a59ec34("zmb_doa_ai_steiner_split_explode");
     self namespace_83eb6304::function_3ecfde67("zombie_generator_die");
     self namespace_83eb6304::function_3ecfde67("nova_crawler_burst");
@@ -846,7 +846,7 @@ function private function_eafb4701(var_49a15185, location, health, offset, enemy
     if (!isdefined(var_49a15185)) {
         return;
     }
-    entity = namespace_ff8b8430::function_db55a448(var_49a15185, location, enemy);
+    entity = doa_enemy::function_db55a448(var_49a15185, location, enemy);
     if (!isdefined(entity)) {
         return;
     }
@@ -984,7 +984,7 @@ function private function_392a816a(time) {
     self endon(#"death", #"hash_1126b46a114399d");
     self.var_8d1d18aa = 0;
     if (is_true(self.var_9b474709)) {
-        self notify(#"hash_789b6607327efc84");
+        self notify(#"stop_wait_for_split");
         self.var_9b474709 = 0;
     }
     var_e1f39584 = gettime() + int(time * 1000);
@@ -1181,21 +1181,21 @@ function private function_aed09e18(var_2fa3c4c9, location) {
         split hide();
         split function_cb48cddd();
     }
-    var_6a9dfa7b = namespace_ff8b8430::function_db55a448(level.var_8cff5775.var_6a9dfa7b, location, undefined);
-    if (isdefined(var_6a9dfa7b)) {
-        var_6a9dfa7b forceteleport(location.origin, location.angles);
-        var_6a9dfa7b.team.var_6a9dfa7b = #"allies";
-        var_6a9dfa7b.ignoreall.var_6a9dfa7b = 1;
-        var_6a9dfa7b.ignoreme.var_6a9dfa7b = 1;
-        var_6a9dfa7b.ignore_nuke.var_6a9dfa7b = 1;
-        var_6a9dfa7b.ignore_all_poi.var_6a9dfa7b = 1;
-        var_6a9dfa7b.cant_move_cb.var_6a9dfa7b = &zombiebehavior::function_79fe956f;
-        var_6a9dfa7b.takedamage.var_6a9dfa7b = 0;
-        var_6a9dfa7b.var_8d1d18aa.var_6a9dfa7b = 0;
-        var_6a9dfa7b.ai.var_a29f9a91 = 1;
-        var_6a9dfa7b.variant_type.var_6a9dfa7b = 0;
-        var_6a9dfa7b function_af554aaf(0);
-        var_6a9dfa7b function_16a8babd(0);
+    steiner = doa_enemy::function_db55a448(level.doa.steiner, location, undefined);
+    if (isdefined(steiner)) {
+        steiner forceteleport(location.origin, location.angles);
+        steiner.team.steiner = #"allies";
+        steiner.ignoreall.steiner = 1;
+        steiner.ignoreme.steiner = 1;
+        steiner.ignore_nuke.steiner = 1;
+        steiner.ignore_all_poi.steiner = 1;
+        steiner.cant_move_cb.steiner = &zombiebehavior::function_79fe956f;
+        steiner.takedamage.steiner = 0;
+        steiner.var_8d1d18aa.steiner = 0;
+        steiner.ai.var_a29f9a91 = 1;
+        steiner.variant_type.steiner = 0;
+        steiner function_af554aaf(0);
+        steiner function_16a8babd(0);
     }
     level flag::set("steiner_merge_done");
 }
@@ -1233,14 +1233,14 @@ function function_c6579189(target) {
 function private function_46d99f6b() {
     var_84e505 = getaiarchetypearray(#"hash_7c0d83ac1e845ac2");
     var_ddb534a3 = [];
-    foreach (var_6a9dfa7b in var_84e505) {
-        if (isalive(var_6a9dfa7b) && var_6a9dfa7b.team == #"allies") {
+    foreach (steiner in var_84e505) {
+        if (isalive(steiner) && steiner.team == #"allies") {
             if (!isdefined(var_ddb534a3)) {
                 var_ddb534a3 = [];
             } else if (!isarray(var_ddb534a3)) {
                 var_ddb534a3 = array(var_ddb534a3);
             }
-            var_ddb534a3[var_ddb534a3.size] = var_6a9dfa7b;
+            var_ddb534a3[var_ddb534a3.size] = steiner;
         }
     }
     return var_ddb534a3;

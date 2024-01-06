@@ -30,7 +30,7 @@ function init() {
     clientfield::register("toplayer", "brutus_shock_attack_player", 1, 1, "counter");
     clientfield::register("actor", "brutus_shock_attack", 1, 1, "counter");
     registerbehaviorscriptfunctions();
-    level.var_8cff5775.var_36fba6 = [];
+    level.doa.var_36fba6 = [];
 }
 
 // Namespace namespace_df4fbf0/namespace_df4fbf0
@@ -66,9 +66,9 @@ function registerbehaviorscriptfunctions() {
 // Checksum 0x58a07b6e, Offset: 0x558
 // Size: 0x5c
 function function_c610e461() {
-    function_1eaaceab(level.var_8cff5775.var_36fba6);
-    if (level.var_8cff5775.var_358fbdc8 == 0) {
-        return (level.var_8cff5775.var_36fba6.size < 16);
+    function_1eaaceab(level.doa.var_36fba6);
+    if (level.doa.world_state == 0) {
+        return (level.doa.var_36fba6.size < 16);
     }
     return 1;
 }
@@ -82,7 +82,7 @@ function function_8b038048() {
     self.var_9329a57c = 0;
     self.health = 50000;
     self.var_f979e699 = 350;
-    self.var_8cff5775.var_74e4ded8 = 1;
+    self.doa.var_74e4ded8 = 1;
     self.var_c7121c91 = 1;
     self.var_4dcf6637 = 1;
     self.var_1c8b76d3 = 1;
@@ -93,16 +93,16 @@ function function_8b038048() {
     self.shock_status_effect = getstatuseffect(#"hash_19533caf858a9f3b");
     self thread damagewatch();
     self thread function_79445831();
-    if (level.var_8cff5775.var_358fbdc8 == 0) {
-        if (!isdefined(level.var_8cff5775.var_36fba6)) {
-            level.var_8cff5775.var_36fba6 = [];
-        } else if (!isarray(level.var_8cff5775.var_36fba6)) {
-            level.var_8cff5775.var_36fba6 = array(level.var_8cff5775.var_36fba6);
+    if (level.doa.world_state == 0) {
+        if (!isdefined(level.doa.var_36fba6)) {
+            level.doa.var_36fba6 = [];
+        } else if (!isarray(level.doa.var_36fba6)) {
+            level.doa.var_36fba6 = array(level.doa.var_36fba6);
         }
-        level.var_8cff5775.var_36fba6[level.var_8cff5775.var_36fba6.size] = self;
+        level.doa.var_36fba6[level.doa.var_36fba6.size] = self;
         var_e7ef13a3 = undefined;
-        if (isdefined(level.var_8cff5775.var_dce49f12)) {
-            spot = [[ level.var_8cff5775.var_dce49f12 ]]();
+        if (isdefined(level.doa.var_dce49f12)) {
+            spot = [[ level.doa.var_dce49f12 ]]();
             if (isdefined(spot)) {
                 var_e7ef13a3 = spot.origin;
             }

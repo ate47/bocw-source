@@ -27,13 +27,13 @@ function function_70a657d8() {
         return;
     }
     clientfield::register("actor", "" + #"hash_2f1c34ea62d86c57", 1, 1, "int", &function_ef33ecb7, 0, 0);
-    clientfield::register("toplayer", "mimic_force_stream", 1, 1, "int", &function_1fc8d7ca, 0, 0);
+    clientfield::register("toplayer", "mimic_force_stream", 1, 1, "int", &mimic_force_stream, 0, 0);
     clientfield::register("actor", "mimic_emerge_fx", 1, 1, "int", &function_807a046, 0, 0);
     clientfield::register("toplayer", "mimic_attack_hit", 1, 1, "int", &mimic_attack_hit, 0, 0);
-    clientfield::register("toplayer", "mimic_grab_hit", 1, 1, "int", &function_309d67f9, 0, 0);
-    clientfield::register("actor", "mimic_weakpoint_fx", 1, 1, "int", &function_bd5297e4, 0, 0);
-    clientfield::register("scriptmover", "mimic_prop_lure_fx", 16000, 1, "int", &function_1c6775d4, 0, 0);
-    clientfield::register("actor", "mimic_death_gib_fx", 1, 1, "int", &function_9d4b7144, 0, 0);
+    clientfield::register("toplayer", "mimic_grab_hit", 1, 1, "int", &mimic_grab_hit, 0, 0);
+    clientfield::register("actor", "mimic_weakpoint_fx", 1, 1, "int", &mimic_weakpoint_fx, 0, 0);
+    clientfield::register("scriptmover", "mimic_prop_lure_fx", 16000, 1, "int", &mimic_prop_lure_fx, 0, 0);
+    clientfield::register("actor", "mimic_death_gib_fx", 1, 1, "int", &mimic_death_gib_fx, 0, 0);
     clientfield::register("toplayer", "mimic_bite_hit", 16000, 1, "counter", &function_90fb7f1f, 0, 0);
     ai::add_archetype_spawn_function(#"mimic", &function_c50aa4b2);
 }
@@ -67,7 +67,7 @@ function function_ef33ecb7(localclientnum, *oldval, newval, *bnewent, *binitials
 // Params 7, eflags: 0x0
 // Checksum 0x869c328b, Offset: 0x7a8
 // Size: 0x8c
-function function_1fc8d7ca(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function mimic_force_stream(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         util::lock_model(#"hash_5e75036cb47cbc1");
     } else {
@@ -101,7 +101,7 @@ function mimic_attack_hit(localclientnum, *oldval, newval, *bnewent, *binitialsn
 // Params 7, eflags: 0x0
 // Checksum 0x2b8d5980, Offset: 0x9b0
 // Size: 0xe6
-function function_309d67f9(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function mimic_grab_hit(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self endon(#"death");
     util::waittill_dobj(fieldname);
     if (bwastimejump) {
@@ -118,14 +118,14 @@ function function_309d67f9(localclientnum, *oldval, newval, *bnewent, *binitials
 // Params 7, eflags: 0x0
 // Checksum 0xf8f3aeb7, Offset: 0xaa0
 // Size: 0xd4
-function function_bd5297e4(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function mimic_weakpoint_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self endon(#"death");
     self util::waittill_dobj(fieldname);
     if (bwastimejump === 1) {
-        self.var_bd5297e4 = util::playfxontag(fieldname, "zm_ai/fx9_mimic_weak_point", self, "tag_weakpoint_mouth");
+        self.mimic_weakpoint_fx = util::playfxontag(fieldname, "zm_ai/fx9_mimic_weak_point", self, "tag_weakpoint_mouth");
     }
-    if (bwastimejump === 0 && isdefined(self.var_bd5297e4)) {
-        stopfx(fieldname, self.var_bd5297e4);
+    if (bwastimejump === 0 && isdefined(self.mimic_weakpoint_fx)) {
+        stopfx(fieldname, self.mimic_weakpoint_fx);
     }
 }
 
@@ -133,7 +133,7 @@ function function_bd5297e4(localclientnum, *oldval, newval, *bnewent, *binitials
 // Params 7, eflags: 0x0
 // Checksum 0xa58474e8, Offset: 0xb80
 // Size: 0xf4
-function function_1c6775d4(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function mimic_prop_lure_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (!isdefined(self)) {
         return;
     }
@@ -153,7 +153,7 @@ function function_1c6775d4(localclientnum, *oldval, newval, *bnewent, *binitials
 // Params 7, eflags: 0x0
 // Checksum 0xfc42e82, Offset: 0xc80
 // Size: 0x46
-function function_9d4b7144(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function mimic_death_gib_fx(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (!isdefined(self)) {
         return;
     }

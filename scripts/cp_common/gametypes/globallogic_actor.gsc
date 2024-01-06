@@ -103,7 +103,7 @@ function callback_actordamage(einflictor, eattacker, idamage, idflags, smeansofd
             if (isdefined(self.var_5753eaa5)) {
                 self thread [[ self.var_5753eaa5 ]]();
             }
-            self thread challenges::function_57a0f795(eattacker, eattacker, idamage, weapon, shitloc);
+            self thread challenges::actordamaged(eattacker, eattacker, idamage, weapon, shitloc);
             if (isdefined(einflictor) && (eattacker === einflictor || !isvehicle(einflictor)) && (!isdefined(smeansofdeath) || smeansofdeath != "MOD_MELEE_WEAPON_BUTT")) {
                 eattacker.hits++;
             }
@@ -113,7 +113,7 @@ function callback_actordamage(einflictor, eattacker, idamage, idflags, smeansofd
             }
         }
     }
-    var_e030d5db = 0;
+    actorkilled = 0;
     self thread globallogic_player::trackattackerdamage(eattacker, idamage, smeansofdeath, weapon);
     if (self.health > 0 && self.health - idamage <= 0) {
         if (isdefined(eattacker) && isplayer(eattacker.driver)) {
@@ -129,7 +129,7 @@ function callback_actordamage(einflictor, eattacker, idamage, idflags, smeansofd
                 }
             }
         }
-        var_e030d5db = 1;
+        actorkilled = 1;
     }
     if (weapons::isflashorstundamage(weapon, smeansofdeath)) {
         if (isdefined(self.type)) {
@@ -179,7 +179,7 @@ function callback_actordamage(einflictor, eattacker, idamage, idflags, smeansofd
     self callback::callback(#"on_ai_damage", params);
     self callback::callback(#"on_actor_damage", params);
     function_c10ff087(eattacker, einflictor, weapon, smeansofdeath, idamage);
-    bb::logdamage(eattacker, self, weapon, idamage, smeansofdeath, shitloc, var_e030d5db, var_e030d5db);
+    bb::logdamage(eattacker, self, weapon, idamage, smeansofdeath, shitloc, actorkilled, actorkilled);
     self globallogic_player::giveattackerandinflictorownerassist(eattacker, einflictor, idamage, smeansofdeath, weapon);
     self finishactordamage(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, vdamageorigin, psoffsettime, boneindex, surfacetype, surfacenormal);
 }
@@ -272,7 +272,7 @@ function callback_actorkilled(einflictor, eattacker, idamage, smeansofdeath, wea
         }
         if (!is_true(self.disable_score_events)) {
             if (!level.teambased || self.team != player.pers[#"team"]) {
-                self thread challenges::function_e030d5db(einflictor, player, idamage, smeansofdeath, weapon, shitloc);
+                self thread challenges::actorkilled(einflictor, player, idamage, smeansofdeath, weapon, shitloc);
                 self function_bb02eb15(einflictor, player, weapon, player.team);
             }
         }

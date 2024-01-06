@@ -6,15 +6,15 @@
 #using scripts\core_common\util_shared.csc;
 #using scripts\core_common\callbacks_shared.csc;
 
-#namespace namespace_ec502488;
+#namespace zcranked;
 
-// Namespace namespace_ec502488/gametype_init
+// Namespace zcranked/gametype_init
 // Params 1, eflags: 0x20
 // Checksum 0x95628b8f, Offset: 0x218
 // Size: 0x304
 function event_handler[gametype_init] main(*eventstruct) {
-    clientfield::register("allplayers", "cranked_explode_fx", 1, 1, "counter", &function_d2f90d68, 0, 0);
-    clientfield::register("toplayer", "cranked_timer_sfx", 1, 1, "int", &function_d76f5ac9, 0, 0);
+    clientfield::register("allplayers", "cranked_explode_fx", 1, 1, "counter", &cranked_explode_fx, 0, 0);
+    clientfield::register("toplayer", "cranked_timer_sfx", 1, 1, "int", &cranked_timer_sfx, 0, 0);
     clientfield::register_clientuimodel("hud_items_cranked.crankedMax", #"hash_6a55a513359bd404", #"hash_656f154d7d06b4a9", 6000, 5, "int", undefined, 0, 0);
     clientfield::register_clientuimodel("hud_items_cranked.crankedPct", #"hash_6a55a513359bd404", #"hash_435a004d21eddd40", 6000, 16, "float", undefined, 0, 0);
     clientfield::register_clientuimodel("hud_items_cranked.crankedTimerReset", #"hash_6a55a513359bd404", #"hash_104102aca5dec6e5", 6000, 1, "counter", undefined, 0, 0);
@@ -35,7 +35,7 @@ function event_handler[gametype_init] main(*eventstruct) {
     #/
 }
 
-// Namespace namespace_ec502488/namespace_ec502488
+// Namespace zcranked/zcranked
 // Params 0, eflags: 0x0
 // Checksum 0x25cd103b, Offset: 0x528
 // Size: 0x24
@@ -45,7 +45,7 @@ function onprecachegametype() {
     #/
 }
 
-// Namespace namespace_ec502488/namespace_ec502488
+// Namespace zcranked/zcranked
 // Params 0, eflags: 0x0
 // Checksum 0xfc0afbaf, Offset: 0x558
 // Size: 0x24
@@ -55,7 +55,7 @@ function onstartgametype() {
     #/
 }
 
-// Namespace namespace_ec502488/namespace_ec502488
+// Namespace zcranked/zcranked
 // Params 1, eflags: 0x0
 // Checksum 0xedb0b1c0, Offset: 0x588
 // Size: 0x4c
@@ -65,11 +65,11 @@ function on_gameplay_started(*localclientnum) {
     function_5ea2c6e3("zmb_cranked_neardeath", 0, 0);
 }
 
-// Namespace namespace_ec502488/namespace_ec502488
+// Namespace zcranked/zcranked
 // Params 7, eflags: 0x0
 // Checksum 0x2993a507, Offset: 0x5e0
 // Size: 0xfc
-function function_d2f90d68(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function cranked_explode_fx(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (self zm_utility::function_f8796df3(bwastimejump)) {
         playviewmodelfx(bwastimejump, #"hash_408d10583a1dff7f", "tag_torso");
         self playsound(bwastimejump, #"hash_78ebad845ac95f28");
@@ -79,11 +79,11 @@ function function_d2f90d68(localclientnum, *oldval, *newval, *bnewent, *binitial
     }
 }
 
-// Namespace namespace_ec502488/namespace_ec502488
+// Namespace zcranked/zcranked
 // Params 7, eflags: 0x0
 // Checksum 0x18a98159, Offset: 0x6e8
 // Size: 0xb4
-function function_d76f5ac9(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function cranked_timer_sfx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self thread function_ee85e4e3(fieldname);
     } else {
@@ -94,7 +94,7 @@ function function_d76f5ac9(localclientnum, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_ec502488/namespace_ec502488
+// Namespace zcranked/zcranked
 // Params 1, eflags: 0x0
 // Checksum 0x8253b95c, Offset: 0x7a8
 // Size: 0x320

@@ -12,7 +12,7 @@
                     "name": "dance"
                 }
             ],
-            "model": "#hash_44c7690221a57b08",
+            "model": "#spawner_zm_zombie_silver",
             "type": "actor",
             "var_e2360d85": 1,
             "var_db255011": 1,
@@ -31,7 +31,7 @@
                     "name": "dance"
                 }
             ],
-            "model": "#hash_44c7690221a57b08",
+            "model": "#spawner_zm_zombie_silver",
             "type": "actor",
             "var_e2360d85": 1,
             "var_db255011": 1,
@@ -50,7 +50,7 @@
                     "name": "dance"
                 }
             ],
-            "model": "#hash_44c7690221a57b08",
+            "model": "#spawner_zm_zombie_silver",
             "type": "actor",
             "var_e2360d85": 1,
             "var_db255011": 1,
@@ -69,7 +69,7 @@
                     "name": "dance"
                 }
             ],
-            "model": "#hash_44c7690221a57b08",
+            "model": "#spawner_zm_zombie_silver",
             "type": "actor",
             "var_e2360d85": 1,
             "var_db255011": 1,

@@ -537,9 +537,9 @@ function private initzmbehaviorsandasm() {
     #/
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_61d9bc9bf2de7261", &function_76d619c8);
     /#
-        assert(isscriptfunctionptr(&function_5bb0b857));
+        assert(isscriptfunctionptr(&barricadebreakterminate));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("barricadeBreakTerminate", &function_5bb0b857);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("barricadeBreakTerminate", &barricadebreakterminate);
     /#
         assert(!isdefined(&zombieattackthroughboardsaction) || isscriptfunctionptr(&zombieattackthroughboardsaction));
     #/
@@ -2482,7 +2482,7 @@ function function_76d619c8(behaviortreeentity) {
 // Params 1, eflags: 0x0
 // Checksum 0x8be2f83b, Offset: 0xa0b8
 // Size: 0xe6
-function function_5bb0b857(behaviortreeentity) {
+function barricadebreakterminate(behaviortreeentity) {
     behaviortreeentity.pushable.behaviortreeentity = 1;
     behaviortreeentity.blockingpain.behaviortreeentity = 0;
     behaviortreeentity pathmode("move allowed");
@@ -2699,7 +2699,7 @@ function barricadeentermocompupdate(entity, *mocompanim, *mocompanimblendouttime
 // Checksum 0x7c0a863e, Offset: 0xab00
 // Size: 0x4e
 function barricadeentermocompterminate(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
-    function_5bb0b857(mocompduration);
+    barricadebreakterminate(mocompduration);
     mocompduration.usegoalanimweight.mocompduration = 0;
 }
 

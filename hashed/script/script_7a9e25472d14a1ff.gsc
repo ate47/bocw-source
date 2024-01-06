@@ -47,7 +47,7 @@ function init() {
 function function_5836955d() {
     namespace_250e9486::function_25b2c8a9();
     self.zombie_move_speed = "sprint";
-    self.var_8cff5775.var_74e4ded8 = 1;
+    self.doa.var_74e4ded8 = 1;
     self setblackboardattribute("_locomotion_speed", "locomotion_speed_sprint");
     self.maxhealth = 100;
     self.health = self.maxhealth;
@@ -94,7 +94,7 @@ function private function_b8c581fb(*inflictor, *attacker, damage, *flags, *means
 // Size: 0x2e2
 function function_d8e8920a() {
     self endon(#"death");
-    if (!isdefined(level.var_8cff5775.var_39e3fa99)) {
+    if (!isdefined(level.doa.var_39e3fa99)) {
         return;
     }
     wait(randomint(6) + 1);

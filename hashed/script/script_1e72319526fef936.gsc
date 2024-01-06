@@ -81,7 +81,7 @@ function function_ea2db6a9(instance) {
 function function_16ee428c(*params) {
     if (isarray(level.var_ff7bf48c)) {
         foreach (mdl_portal in level.var_ff7bf48c) {
-            if (isdefined(mdl_portal) && mdl_portal.instance.var_b588b063 !== #"hash_18be5193d8310f84") {
+            if (isdefined(mdl_portal) && mdl_portal.instance.content_script_name !== #"hash_18be5193d8310f84") {
                 mdl_portal.fx_id.mdl_portal = playfxontag(#"hash_7312068ea6037f71", mdl_portal, "tag_origin");
             }
         }
@@ -189,7 +189,7 @@ function private function_dda69211(player, vehicle, var_2b357ce9) {
             }
         }
         if (isdefined(vehicle)) {
-            vehicle clientfield::increment("" + #"hash_4974f4e39e6933fb");
+            vehicle clientfield::increment("" + #"vehicle_teleport");
             var_9cfd0ea9 = vehicle getvehoccupants();
             foreach (rider in var_9cfd0ea9) {
                 rider unlink();

@@ -86,15 +86,15 @@ function callback_playerdamage(einflictor, eattacker, idamage, idflags, smeansof
             if (damagefeedback::dodamagefeedback(weapon, einflictor, idamage, smeansofdeath)) {
                 if (idamage > 0) {
                     var_4d72910 = 0;
-                    var_ceb6fa5 = is_true(self.var_426947c4);
+                    armorbroke = is_true(self.var_426947c4);
                     if (self.health > 0) {
                         var_4d72910 = 1;
                     } else if (self.health == 0 && self armor::get_armor() > 0) {
                         var_4d72910 = 1;
-                        var_ceb6fa5 = 1;
+                        armorbroke = 1;
                     }
                     if (var_4d72910) {
-                        perkfeedback = function_e512b988(self, weapon, smeansofdeath, einflictor, idflags & 2048, var_ceb6fa5);
+                        perkfeedback = function_e512b988(self, weapon, smeansofdeath, einflictor, idflags & 2048, armorbroke);
                     }
                 }
                 eattacker thread damagefeedback::update(smeansofdeath, einflictor, perkfeedback, weapon, self, psoffsettime, shitloc, 0, idflags);
@@ -220,15 +220,15 @@ function callback_playerdamage(einflictor, eattacker, idamage, idflags, smeansof
         if (damagefeedback::dodamagefeedback(weapon, einflictor, idamage, smeansofdeath)) {
             if (idamage > 0) {
                 var_4d72910 = 0;
-                var_ceb6fa5 = is_true(self.var_426947c4);
+                armorbroke = is_true(self.var_426947c4);
                 if (self.health > 0) {
                     var_4d72910 = 1;
                 } else if (self.health == 0 && self armor::get_armor() > 0) {
                     var_4d72910 = 1;
-                    var_ceb6fa5 = 1;
+                    armorbroke = 1;
                 }
                 if (var_4d72910) {
-                    perkfeedback = function_e512b988(self, weapon, smeansofdeath, einflictor, idflags & 2048, var_ceb6fa5);
+                    perkfeedback = function_e512b988(self, weapon, smeansofdeath, einflictor, idflags & 2048, armorbroke);
                 }
             }
             eattacker thread damagefeedback::update(smeansofdeath, einflictor, perkfeedback, weapon, self, psoffsettime, shitloc, fatal, idflags);

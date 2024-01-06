@@ -32,7 +32,7 @@ function init() {
 // Checksum 0xcbc42df1, Offset: 0x220
 // Size: 0x16
 function main() {
-    level.var_8cff5775.var_ed906439 = [];
+    level.doa.var_ed906439 = [];
 }
 
 // Namespace namespace_538252ab/namespace_538252ab
@@ -46,7 +46,7 @@ function function_49caf2d6() {
     result = undefined;
     result = self waittill(#"hash_3e251384a5400dce");
     if (is_true(self.var_7c56394) && is_true(result.var_760a0807)) {
-        arrayremovevalue(level.var_8cff5775.var_ed906439, self);
+        arrayremovevalue(level.doa.var_ed906439, self);
         namespace_1e25ad94::function_f5f0c0f8("Deleting killzone trap permenently at:" + self.origin);
     }
     util::wait_network_frame();
@@ -65,14 +65,14 @@ function function_49caf2d6() {
 // Size: 0xd8
 function function_4acf40a(trap, var_7c56394 = 0, modelname) {
     if (isdefined(modelname)) {
-        var_4a2d3ac2 = namespace_ec06fe4a::function_e22ae9b3(trap.origin, modelname);
-        if (isdefined(var_4a2d3ac2)) {
-            var_4a2d3ac2.targetname.var_4a2d3ac2 = "hazard";
-            var_4a2d3ac2.var_fd5301f9.var_4a2d3ac2 = "killzone";
-            var_4a2d3ac2.angles.var_4a2d3ac2 = trap.angles;
-            var_4a2d3ac2 enablelinkto();
+        hazard = namespace_ec06fe4a::function_e22ae9b3(trap.origin, modelname);
+        if (isdefined(hazard)) {
+            hazard.targetname.hazard = "hazard";
+            hazard.var_fd5301f9.hazard = "killzone";
+            hazard.angles.hazard = trap.angles;
+            hazard enablelinkto();
         }
-        trap.script_model = var_4a2d3ac2;
+        trap.script_model = hazard;
     }
     trap.var_7c56394 = var_7c56394;
     trap thread function_e20d74b3();
@@ -116,12 +116,12 @@ function function_7ae8d74a(trap, page = 0) {
         trap.initialized.trap = 1;
     }
     if (page) {
-        if (!isdefined(level.var_8cff5775.var_ed906439)) {
-            level.var_8cff5775.var_ed906439 = [];
-        } else if (!isarray(level.var_8cff5775.var_ed906439)) {
-            level.var_8cff5775.var_ed906439 = array(level.var_8cff5775.var_ed906439);
+        if (!isdefined(level.doa.var_ed906439)) {
+            level.doa.var_ed906439 = [];
+        } else if (!isarray(level.doa.var_ed906439)) {
+            level.doa.var_ed906439 = array(level.doa.var_ed906439);
         }
-        level.var_8cff5775.var_ed906439[level.var_8cff5775.var_ed906439.size] = trap;
+        level.doa.var_ed906439[level.doa.var_ed906439.size] = trap;
     } else {
         function_4acf40a(trap);
     }
@@ -137,7 +137,7 @@ function function_d4a86caf() {
     level endon(#"game_over");
     while (1) {
         wait(0.5);
-        foreach (trap in level.var_8cff5775.var_ed906439) {
+        foreach (trap in level.doa.var_ed906439) {
             time = gettime();
             if (isdefined(trap.var_eb9d64bb) && time < trap.var_eb9d64bb) {
                 continue;
@@ -183,14 +183,14 @@ function function_d4a86caf() {
 // Checksum 0x938bf70a, Offset: 0xad8
 // Size: 0x156
 function function_90e65586() {
-    level.var_8cff5775.var_ed906439 = [];
+    level.doa.var_ed906439 = [];
     level thread function_d4a86caf();
-    if (isdefined(level.var_8cff5775.var_a77e6349)) {
-        traps = [[ level.var_8cff5775.var_a77e6349 ]]->function_87f950c1("killzone");
+    if (isdefined(level.doa.var_a77e6349)) {
+        traps = [[ level.doa.var_a77e6349 ]]->function_87f950c1("killzone");
         page = 1;
         arena = 0;
     } else {
-        traps = [[ level.var_8cff5775.var_39e3fa99 ]]->function_242886d5("killzone");
+        traps = [[ level.doa.var_39e3fa99 ]]->function_242886d5("killzone");
         arena = 1;
     }
     foreach (trap in traps) {
@@ -289,7 +289,7 @@ function function_d1b295d7(trap) {
         }
         level notify(#"hash_50b5d49dd2306ca6", {#guy:guy});
         if (isplayer(guy) && is_true(trap.arena) && is_true(trap.teleport)) {
-            spot = [[ level.var_8cff5775.var_39e3fa99 ]]->function_70fb5745();
+            spot = [[ level.doa.var_39e3fa99 ]]->function_70fb5745();
             guy setorigin(spot.origin);
         }
     }

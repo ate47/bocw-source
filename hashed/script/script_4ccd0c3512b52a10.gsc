@@ -34,7 +34,7 @@ function private function_70a657d8() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xbbdb6962, Offset: 0x450
 // Size: 0x9c
-function function_2fa83dfd(var_e9791619 = 1) {
+function show_objectives(var_e9791619 = 1) {
     self notify("5651785c71962c50");
     self endon("5651785c71962c50");
     if (var_e9791619) {

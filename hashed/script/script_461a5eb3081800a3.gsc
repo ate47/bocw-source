@@ -17,7 +17,7 @@ function event_handler[level_init] main(*eventstruct) {
     clientfield::register("scriptmover", "" + #"hash_3eeee7f3f5bdb9ff", 1, 1, "counter", &function_7b661739, 0, 0);
     clientfield::register("scriptmover", "" + #"hash_18bcf106c476dfeb", 1, 1, "counter", &function_32398bfc, 0, 0);
     clientfield::register("scriptmover", "" + #"hash_186c35405f4624bc", 1, 2, "int", &function_968ccb74, 0, 0);
-    clientfield::register("vehicle", "" + #"hash_4974f4e39e6933fb", 1, 1, "counter", &function_b0e818e8, 0, 0);
+    clientfield::register("vehicle", "" + #"vehicle_teleport", 1, 1, "counter", &function_b0e818e8, 0, 0);
     util::waitforclient(0);
 }
 

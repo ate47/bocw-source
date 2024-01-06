@@ -24,13 +24,13 @@ function private autoexec __init__system__() {
 function private function_70a657d8() {
     clientfield::register("toplayer", "sitrep_toggle", 1, 1, "int", &function_8305981d, 0, 0);
     clientfield::register("toplayer", "active_dni_fx", 1, 1, "counter", &function_81c8f4da, 0, 0);
-    clientfield::register("toplayer", "hack_dni_fx", 1, 1, "counter", &function_7b9295b1, 0, 0);
+    clientfield::register("toplayer", "hack_dni_fx", 1, 1, "counter", &hack_dni_fx, 0, 0);
     clientfield::register("actor", "sitrep_material", 1, 1, "int", &function_fb942d18, 0, 0);
     clientfield::register("vehicle", "sitrep_material", 1, 1, "int", &function_fb942d18, 0, 0);
     clientfield::register("scriptmover", "sitrep_material", 1, 1, "int", &function_fb942d18, 0, 0);
     clientfield::register("item", "sitrep_material", 1, 1, "int", &function_fb942d18, 0, 0);
     clientfield::register("vehicle", "turret_keyline_render", 1, 1, "int", &function_c2b3ec13, 0, 0);
-    clientfield::register("vehicle", "vehicle_keyline_toggle", 1, 1, "int", &function_353ddad7, 0, 0);
+    clientfield::register("vehicle", "vehicle_keyline_toggle", 1, 1, "int", &vehicle_keyline_toggle, 0, 0);
     callback::on_spawned(&on_player_spawned);
     callback::on_localclient_shutdown(&on_localplayer_shutdown);
 }
@@ -71,7 +71,7 @@ function function_81c8f4da(*localclientnum, *oldval, *newval, *bnewent, *binitia
 // Params 7, eflags: 0x2 linked
 // Checksum 0x5b858e8a, Offset: 0x5e8
 // Size: 0x7c
-function function_7b9295b1(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function hack_dni_fx(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self thread postfx::playpostfxbundle(#"hash_28506c424004a886");
     self playsound(0, #"hash_3afb4f0542190053");
 }
@@ -99,7 +99,7 @@ function function_8305981d(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0x38
 function function_182c5d6b(*var_6fd2a8ac, newval) {
     self.var_bef05351 = newval;
-    level notify(#"hash_2f0a711bd1846543");
+    level notify(#"player_sitrep_toggle");
 }
 
 // Namespace namespace_446fe428/namespace_446fe428
@@ -171,7 +171,7 @@ function function_f8588df3(localclientnum, var_80583f56, var_1ca727c) {
     self.var_cc9b9440 = 1;
     while (1) {
         waitresult = undefined;
-        waitresult = level waittill(#"igc_activated", #"hash_2f0a711bd1846543");
+        waitresult = level waittill(#"igc_activated", #"player_sitrep_toggle");
         if (isigcactive(localclientnum)) {
             if (self.var_cc9b9440) {
                 self [[ var_1ca727c ]](localclientnum);
@@ -259,7 +259,7 @@ function function_c2b3ec13(localclientnum, *oldval, newval, *bnewent, *binitials
 // Params 7, eflags: 0x2 linked
 // Checksum 0x3e4bf0bd, Offset: 0xf28
 // Size: 0x2ee
-function function_353ddad7(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function vehicle_keyline_toggle(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     e_player = function_5c10bd79(fieldname);
     e_player endon(#"death", #"disconnect");
     self endon(#"death");

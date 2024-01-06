@@ -28,6 +28,6 @@ function private function_70a657d8() {
 // Checksum 0x820ea654, Offset: 0x1e0
 // Size: 0x14
 function function_11bcbb57() {
-    namespace_ee6ea590::register();
+    cp_chyron::register();
 }
 

@@ -50,12 +50,12 @@ function private function_72b9b674() {
     case #"dom":
     case #"hash_5e13d8428d20cfa6":
         return &dom_start;
-    case #"hash_527f2aa95e2f400a":
+    case #"dropkick":
         return &function_35d61d4;
     case #"gun":
         return &function_13821498;
     case #"hash_c5acc1898a61b54":
-    case #"hash_601b3d9434b9aac9":
+    case #"gunfight":
         return &function_8d249e99;
     case #"koth":
     case #"hash_156594d96f8a6568":

@@ -137,7 +137,7 @@ function function_3b0cb5a4(struct) {
         var_e57cfd4a = point.script_noteworthy;
         if (isdefined(var_e57cfd4a)) {
             switch (var_e57cfd4a) {
-            case #"hash_12986c908cc9f01c":
+            case #"cryo":
                 str_hint = #"hash_23ffe27517c6140c";
                 var_f8fadaec = #"hash_32859e73dd365b9e";
                 break;
@@ -177,7 +177,7 @@ function function_3b0cb5a4(struct) {
             scriptmodel scene::init(#"p9_fxanim_zm_ndu_contain_crate_rust_bundle", scriptmodel);
         } else {
             switch (var_e57cfd4a) {
-            case #"hash_12986c908cc9f01c":
+            case #"cryo":
                 scriptmodel thread scene::play(#"p9_fxanim_zm_ndu_contain_crate_cryo_bundle", "chain", scriptmodel);
                 break;
             case #"electric":
@@ -229,7 +229,7 @@ function function_fb2bc4ac(eventstruct) {
         if (isdefined(itemweapon) && function_165e54c9(itemweapon)) {
             model.opening.model = 1;
             switch (var_e57cfd4a) {
-            case #"hash_12986c908cc9f01c":
+            case #"cryo":
                 model thread function_8d9ddc22(player, "NITROGEN");
                 break;
             case #"electric":
@@ -271,7 +271,7 @@ function function_35eeef70(var_e57cfd4a) {
             itemweapon = player item_inventory::function_230ceec4(currentweapon);
             if (isdefined(itemweapon) && function_165e54c9(itemweapon)) {
                 switch (var_e57cfd4a) {
-                case #"hash_12986c908cc9f01c":
+                case #"cryo":
                     if (itemweapon.var_a6762160.name == #"ww_ieu_acid_t9_item_sr") {
                         self sethintstringforplayer(player, #"hash_4425ec8a1a0dcd32");
                     } else {
@@ -350,7 +350,7 @@ function function_217a625a(a_ents) {
         return;
     }
     switch (var_e57cfd4a) {
-    case #"hash_12986c908cc9f01c":
+    case #"cryo":
         if (level flag::get("exchange_base_back")) {
             var_2faa8624 = util::spawn_model(#"hash_9549d4549a59df5", var_bf71a40b gettagorigin("tag_tank"), var_bf71a40b gettagangles("tag_tank"));
             level flag::clear("exchange_base_back");
@@ -409,7 +409,7 @@ function function_217a625a(a_ents) {
 function function_8d9ddc22(player, var_e7772c37) {
     level endon(#"end_game");
     switch (var_e7772c37) {
-    case #"hash_40a6ba36859f14a3":
+    case #"nitrogen":
         var_6bdde8a3 = getweapon(#"ww_ieu_acid_t9");
         var_39023436 = getweapon(#"hash_189ef2dafffe1f4c");
         self.var_37023f0e = "cryo";
@@ -599,7 +599,7 @@ function function_6d4e1f71(var_d5c2e187, var_e7772c37, var_b0e35c50) {
         self takeweapon(var_d5c2e187);
         if (var_b0e35c50) {
             switch (var_e7772c37) {
-            case #"hash_40a6ba36859f14a3":
+            case #"nitrogen":
                 level.var_c3accf46 = undefined;
                 break;
             case #"gas":

@@ -1,13 +1,13 @@
 // Atian COD Tools GSC CW decompiler test
 #using scripts\core_common\lui_shared.csc;
 
-#namespace namespace_4e52ad0c;
+#namespace luielem_entity_bar;
 
-// Namespace namespace_4e52ad0c
+// Namespace luielem_entity_bar
 // Method(s) 14 Total 21
 class class_276088fe : cluielem {
 
-    // Namespace class_276088fe/namespace_4e52ad0c
+    // Namespace class_276088fe/luielem_entity_bar
     // Params 0, eflags: 0x8
     // Checksum 0x27e5fb57, Offset: 0x660
     // Size: 0x14
@@ -15,7 +15,7 @@ class class_276088fe : cluielem {
         cluielem::__constructor();
     }
 
-    // Namespace class_276088fe/namespace_4e52ad0c
+    // Namespace class_276088fe/luielem_entity_bar
     // Params 0, eflags: 0x90 class_linked
     // Checksum 0x488d6986, Offset: 0xc88
     // Size: 0x14
@@ -23,7 +23,7 @@ class class_276088fe : cluielem {
         cluielem::__destructor();
     }
 
-    // Namespace namespace_276088fe/namespace_4e52ad0c
+    // Namespace namespace_276088fe/luielem_entity_bar
     // Params 1, eflags: 0x0
     // Checksum 0x8b284b85, Offset: 0x970
     // Size: 0x24
@@ -31,7 +31,7 @@ class class_276088fe : cluielem {
         cluielem::open(localclientnum);
     }
 
-    // Namespace namespace_276088fe/namespace_4e52ad0c
+    // Namespace namespace_276088fe/luielem_entity_bar
     // Params 2, eflags: 0x0
     // Checksum 0xe4560bed, Offset: 0xba8
     // Size: 0x30
@@ -39,7 +39,7 @@ class class_276088fe : cluielem {
         [[ self ]]->set_data(localclientnum, "offset_y", value);
     }
 
-    // Namespace namespace_276088fe/namespace_4e52ad0c
+    // Namespace namespace_276088fe/luielem_entity_bar
     // Params 0, eflags: 0x0
     // Checksum 0x93116baa, Offset: 0x830
     // Size: 0x1c
@@ -47,7 +47,7 @@ class class_276088fe : cluielem {
         cluielem::register_clientside("LUIelem_entity_bar");
     }
 
-    // Namespace namespace_276088fe/namespace_4e52ad0c
+    // Namespace namespace_276088fe/luielem_entity_bar
     // Params 2, eflags: 0x0
     // Checksum 0xa9bce67c, Offset: 0xb70
     // Size: 0x30
@@ -55,7 +55,7 @@ class class_276088fe : cluielem {
         [[ self ]]->set_data(localclientnum, "offset_x", value);
     }
 
-    // Namespace namespace_276088fe/namespace_4e52ad0c
+    // Namespace namespace_276088fe/luielem_entity_bar
     // Params 2, eflags: 0x0
     // Checksum 0x5ded8a6a, Offset: 0xbe0
     // Size: 0x30
@@ -63,7 +63,7 @@ class class_276088fe : cluielem {
         [[ self ]]->set_data(localclientnum, "offset_z", value);
     }
 
-    // Namespace namespace_276088fe/namespace_4e52ad0c
+    // Namespace namespace_276088fe/luielem_entity_bar
     // Params 9, eflags: 0x0
     // Checksum 0xd36f64d8, Offset: 0x680
     // Size: 0x1a4
@@ -79,7 +79,7 @@ class class_276088fe : cluielem {
         cluielem::add_clientfield("entityScale", 1, 1, "int", var_2c8aa656);
     }
 
-    // Namespace namespace_276088fe/namespace_4e52ad0c
+    // Namespace namespace_276088fe/luielem_entity_bar
     // Params 2, eflags: 0x0
     // Checksum 0x30081a44, Offset: 0xc50
     // Size: 0x30
@@ -87,7 +87,7 @@ class class_276088fe : cluielem {
         [[ self ]]->set_data(localclientnum, "entityScale", value);
     }
 
-    // Namespace namespace_276088fe/namespace_4e52ad0c
+    // Namespace namespace_276088fe/luielem_entity_bar
     // Params 2, eflags: 0x0
     // Checksum 0x57f89024, Offset: 0xb38
     // Size: 0x30
@@ -95,7 +95,7 @@ class class_276088fe : cluielem {
         [[ self ]]->set_data(localclientnum, "entnum", value);
     }
 
-    // Namespace namespace_276088fe/namespace_4e52ad0c
+    // Namespace namespace_276088fe/luielem_entity_bar
     // Params 2, eflags: 0x0
     // Checksum 0xe8310d8b, Offset: 0x9a0
     // Size: 0x154
@@ -119,7 +119,7 @@ class class_276088fe : cluielem {
         }
     }
 
-    // Namespace namespace_276088fe/namespace_4e52ad0c
+    // Namespace namespace_276088fe/luielem_entity_bar
     // Params 2, eflags: 0x0
     // Checksum 0x2be0de5a, Offset: 0xc18
     // Size: 0x30
@@ -127,7 +127,7 @@ class class_276088fe : cluielem {
         [[ self ]]->set_data(localclientnum, "entityClamp", value);
     }
 
-    // Namespace namespace_276088fe/namespace_4e52ad0c
+    // Namespace namespace_276088fe/luielem_entity_bar
     // Params 2, eflags: 0x0
     // Checksum 0x2f38e616, Offset: 0xb00
     // Size: 0x30
@@ -135,7 +135,7 @@ class class_276088fe : cluielem {
         [[ self ]]->set_data(localclientnum, "progress_percent", value);
     }
 
-    // Namespace namespace_276088fe/namespace_4e52ad0c
+    // Namespace namespace_276088fe/luielem_entity_bar
     // Params 1, eflags: 0x0
     // Checksum 0x7149c8eb, Offset: 0x858
     // Size: 0x110
@@ -153,7 +153,7 @@ class class_276088fe : cluielem {
 
 }
 
-// Namespace namespace_4e52ad0c/namespace_4e52ad0c
+// Namespace luielem_entity_bar/luielem_entity_bar
 // Params 2, eflags: 0x0
 // Checksum 0xf3d30c21, Offset: 0x150
 // Size: 0x30
@@ -161,16 +161,16 @@ function function_78098d4b(localclientnum, value) {
     [[ self ]]->set_data(localclientnum, "boneTag", value);
 }
 
-// Namespace namespace_4e52ad0c/namespace_4e52ad0c
+// Namespace luielem_entity_bar/luielem_entity_bar
 // Params 3, eflags: 0x0
 // Checksum 0xe2754e26, Offset: 0x188
 // Size: 0x4c
-function function_919052d(localclientnum, entnum, var_ee710169) {
+function function_919052d(localclientnum, entnum, bonetag) {
     self set_entnum(localclientnum, entnum);
-    self function_78098d4b(localclientnum, var_ee710169);
+    self function_78098d4b(localclientnum, bonetag);
 }
 
-// Namespace namespace_4e52ad0c/namespace_4e52ad0c
+// Namespace luielem_entity_bar/luielem_entity_bar
 // Params 4, eflags: 0x0
 // Checksum 0xcb657f0d, Offset: 0x1e0
 // Size: 0x6c
@@ -180,7 +180,7 @@ function set_offset(localclientnum, offsetx, offsety, offsetz) {
     self function_7ddfdfef(localclientnum, offsetz);
 }
 
-// Namespace namespace_4e52ad0c/namespace_4e52ad0c
+// Namespace luielem_entity_bar/luielem_entity_bar
 // Params 9, eflags: 0x0
 // Checksum 0x1ac8c1ec, Offset: 0x258
 // Size: 0x1c6
@@ -190,18 +190,18 @@ function register(var_aabf01c7, var_5a7b4b38, var_bda3bf84, var_f228b5fa, var_59
     if (!isdefined(level.var_ae746e8f)) {
         level.var_ae746e8f = associativearray();
     }
-    if (!isdefined(level.var_ae746e8f[#"hash_1e4420d0550ea866"])) {
-        level.var_ae746e8f[#"hash_1e4420d0550ea866"] = [];
+    if (!isdefined(level.var_ae746e8f[#"luielem_entity_bar"])) {
+        level.var_ae746e8f[#"luielem_entity_bar"] = [];
     }
-    if (!isdefined(level.var_ae746e8f[#"hash_1e4420d0550ea866"])) {
-        level.var_ae746e8f[#"hash_1e4420d0550ea866"] = [];
-    } else if (!isarray(level.var_ae746e8f[#"hash_1e4420d0550ea866"])) {
-        level.var_ae746e8f[#"hash_1e4420d0550ea866"] = array(level.var_ae746e8f[#"hash_1e4420d0550ea866"]);
+    if (!isdefined(level.var_ae746e8f[#"luielem_entity_bar"])) {
+        level.var_ae746e8f[#"luielem_entity_bar"] = [];
+    } else if (!isarray(level.var_ae746e8f[#"luielem_entity_bar"])) {
+        level.var_ae746e8f[#"luielem_entity_bar"] = array(level.var_ae746e8f[#"luielem_entity_bar"]);
     }
-    level.var_ae746e8f[#"hash_1e4420d0550ea866"][level.var_ae746e8f[#"hash_1e4420d0550ea866"].size] = elem;
+    level.var_ae746e8f[#"luielem_entity_bar"][level.var_ae746e8f[#"luielem_entity_bar"].size] = elem;
 }
 
-// Namespace namespace_4e52ad0c/namespace_4e52ad0c
+// Namespace luielem_entity_bar/luielem_entity_bar
 // Params 0, eflags: 0x0
 // Checksum 0xf2c0af1, Offset: 0x428
 // Size: 0x34
@@ -211,7 +211,7 @@ function register_clientside() {
     return elem;
 }
 
-// Namespace namespace_4e52ad0c/namespace_4e52ad0c
+// Namespace luielem_entity_bar/luielem_entity_bar
 // Params 1, eflags: 0x0
 // Checksum 0x25137247, Offset: 0x468
 // Size: 0x1c
@@ -219,7 +219,7 @@ function open(player) {
     [[ self ]]->open(player);
 }
 
-// Namespace namespace_4e52ad0c/namespace_4e52ad0c
+// Namespace luielem_entity_bar/luielem_entity_bar
 // Params 1, eflags: 0x0
 // Checksum 0xae297bc1, Offset: 0x490
 // Size: 0x1c
@@ -227,7 +227,7 @@ function close(player) {
     [[ self ]]->close(player);
 }
 
-// Namespace namespace_4e52ad0c/namespace_4e52ad0c
+// Namespace luielem_entity_bar/luielem_entity_bar
 // Params 1, eflags: 0x0
 // Checksum 0x4c3e868d, Offset: 0x4b8
 // Size: 0x1a
@@ -235,7 +235,7 @@ function is_open(localclientnum) {
     return [[ self ]]->is_open(localclientnum);
 }
 
-// Namespace namespace_4e52ad0c/namespace_4e52ad0c
+// Namespace luielem_entity_bar/luielem_entity_bar
 // Params 2, eflags: 0x0
 // Checksum 0xac866871, Offset: 0x4e0
 // Size: 0x28
@@ -243,7 +243,7 @@ function set_state(localclientnum, state_name) {
     [[ self ]]->set_state(localclientnum, state_name);
 }
 
-// Namespace namespace_4e52ad0c/namespace_4e52ad0c
+// Namespace luielem_entity_bar/luielem_entity_bar
 // Params 2, eflags: 0x0
 // Checksum 0xdaa5a282, Offset: 0x510
 // Size: 0x28
@@ -251,7 +251,7 @@ function function_ecacbaa5(localclientnum, value) {
     [[ self ]]->function_ecacbaa5(localclientnum, value);
 }
 
-// Namespace namespace_4e52ad0c/namespace_4e52ad0c
+// Namespace luielem_entity_bar/luielem_entity_bar
 // Params 2, eflags: 0x0
 // Checksum 0xb1cdabcd, Offset: 0x540
 // Size: 0x28
@@ -259,7 +259,7 @@ function set_entnum(localclientnum, value) {
     [[ self ]]->set_entnum(localclientnum, value);
 }
 
-// Namespace namespace_4e52ad0c/namespace_4e52ad0c
+// Namespace luielem_entity_bar/luielem_entity_bar
 // Params 2, eflags: 0x0
 // Checksum 0xb8b3bccb, Offset: 0x570
 // Size: 0x28
@@ -267,7 +267,7 @@ function function_61312692(localclientnum, value) {
     [[ self ]]->function_61312692(localclientnum, value);
 }
 
-// Namespace namespace_4e52ad0c/namespace_4e52ad0c
+// Namespace luielem_entity_bar/luielem_entity_bar
 // Params 2, eflags: 0x0
 // Checksum 0xd85ada7e, Offset: 0x5a0
 // Size: 0x28
@@ -275,7 +275,7 @@ function function_4f6e830d(localclientnum, value) {
     [[ self ]]->function_4f6e830d(localclientnum, value);
 }
 
-// Namespace namespace_4e52ad0c/namespace_4e52ad0c
+// Namespace luielem_entity_bar/luielem_entity_bar
 // Params 2, eflags: 0x0
 // Checksum 0x9a3f3bd0, Offset: 0x5d0
 // Size: 0x28
@@ -283,7 +283,7 @@ function function_7ddfdfef(localclientnum, value) {
     [[ self ]]->function_7ddfdfef(localclientnum, value);
 }
 
-// Namespace namespace_4e52ad0c/namespace_4e52ad0c
+// Namespace luielem_entity_bar/luielem_entity_bar
 // Params 2, eflags: 0x0
 // Checksum 0x60647144, Offset: 0x600
 // Size: 0x28
@@ -291,7 +291,7 @@ function function_dfed4b05(localclientnum, value) {
     [[ self ]]->function_dfed4b05(localclientnum, value);
 }
 
-// Namespace namespace_4e52ad0c/namespace_4e52ad0c
+// Namespace luielem_entity_bar/luielem_entity_bar
 // Params 2, eflags: 0x0
 // Checksum 0x20660126, Offset: 0x630
 // Size: 0x28

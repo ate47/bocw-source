@@ -6,9 +6,9 @@
 #using scripts\core_common\clientfield_shared.csc;
 #using scripts\core_common\aat_shared.csc;
 
-#namespace namespace_ee70f3c4;
+#namespace ammomod_brainrot;
 
-// Namespace namespace_ee70f3c4/namespace_ee70f3c4
+// Namespace ammomod_brainrot/ammomod_brainrot
 // Params 0, eflags: 0x0
 // Checksum 0xc4598ab3, Offset: 0x380
 // Size: 0x2ac
@@ -29,7 +29,7 @@ function function_9384b521() {
     clientfield::register("toplayer", "ammomod_brainrot_proc", 1, 1, "counter", &function_e437bd26, 1, 0);
 }
 
-// Namespace namespace_ee70f3c4/namespace_ee70f3c4
+// Namespace ammomod_brainrot/ammomod_brainrot
 // Params 7, eflags: 0x0
 // Checksum 0x1e97dc0c, Offset: 0x638
 // Size: 0x64
@@ -37,7 +37,7 @@ function function_e437bd26(localclientnum, *oldval, *newval, *bnewent, *binitial
     playviewmodelfx(bwastimejump, #"hash_3538aa737ab364c7", "tag_fx1", 0);
 }
 
-// Namespace namespace_ee70f3c4/namespace_ee70f3c4
+// Namespace ammomod_brainrot/ammomod_brainrot
 // Params 7, eflags: 0x0
 // Checksum 0x8fb64855, Offset: 0x6a8
 // Size: 0x544
@@ -117,7 +117,7 @@ function function_d500905a(localclientnum, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_ee70f3c4/namespace_ee70f3c4
+// Namespace ammomod_brainrot/ammomod_brainrot
 // Params 2, eflags: 0x0
 // Checksum 0xc531cd01, Offset: 0xbf8
 // Size: 0x70
@@ -128,7 +128,7 @@ function function_b9c917cc(localclientnum, *str_bundle) {
     return 1;
 }
 
-// Namespace namespace_ee70f3c4/namespace_ee70f3c4
+// Namespace ammomod_brainrot/ammomod_brainrot
 // Params 7, eflags: 0x0
 // Checksum 0x6c5b2cf4, Offset: 0xc70
 // Size: 0xa4

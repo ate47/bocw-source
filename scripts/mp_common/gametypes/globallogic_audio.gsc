@@ -498,7 +498,7 @@ function function_2685981b() {
     switch (str_gametype) {
     case #"control":
     case #"fireteam_dirty_bomb":
-    case #"hash_68e906194eba76f0":
+    case #"vip":
         var_5d9df74c = 1;
         break;
     }

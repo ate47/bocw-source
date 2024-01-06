@@ -100,7 +100,7 @@ function function_16e7e76f() {
     self.var_e45b4876 = 0;
     self.var_bcf995f7 = 0;
     self pushplayer(0);
-    if (isdefined(self.stealth.funcs[#"hash_67ac95dafb7278ea"])) {
+    if (isdefined(self.stealth.funcs[#"spotted"])) {
         self namespace_b2b86d39::function_d8eafaa4("spotted");
     }
 }

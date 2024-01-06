@@ -42,7 +42,7 @@ function main(var_d3440450, *var_50cc0d4f) {
     level.var_33621ea7 = 1;
     if (is_true(level.var_33621ea7)) {
         thread function_27c66141();
-        thread function_b657bfdd();
+        thread bustout_house_guys();
         thread function_e78650d8();
         thread function_f9d1756b();
         level.var_7c11765c = 0;
@@ -186,7 +186,7 @@ function function_e78650d8() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x8004a8c3, Offset: 0x10a0
 // Size: 0x8c
-function function_b657bfdd() {
+function bustout_house_guys() {
     guys = getentarray("bustout_house_guys", "script_noteworthy", 1);
     if (isdefined(guys) && guys.size > 0) {
         ai::waittill_dead_or_dying(guys, guys.size);
@@ -237,10 +237,10 @@ function function_c000638d() {
     door hide();
     door notsolid();
     level.var_97dd00f8 = vehicle::simple_spawn_and_drive("intro_garage_bustout");
-    var_b76ced44 = undefined;
-    while (!isdefined(var_b76ced44)) {
+    bustout_driver = undefined;
+    while (!isdefined(bustout_driver)) {
         waitframe(1);
-        var_b76ced44 = getent("bustout_driver", "targetname", 1);
+        bustout_driver = getent("bustout_driver", "targetname", 1);
     }
     waitframe(2);
     level.var_97dd00f8[0] vehicle::lights_on();
@@ -248,13 +248,13 @@ function function_c000638d() {
         level.var_9a3944f4.var_71664ae5 = 100;
         level.var_9a3944f4 thread tkdn_heli_intro::function_cbe25a41(level.var_97dd00f8[0], "tag_origin", 0, 0, 0, 1);
     }
-    player thread namespace_a052577e::function_6b5c2a3(var_b76ced44, level.var_97dd00f8);
+    player thread namespace_a052577e::function_6b5c2a3(bustout_driver, level.var_97dd00f8);
     level flag::wait_till("bustout_start_slomo");
     level flag::wait_till("bustout_veeroff");
     level.var_664fd741 val::reset(#"hash_7a39ed2821b68c00", "ignoreall");
     wait(0.5);
-    if (isalive(var_b76ced44)) {
-        var_b76ced44 ai::bloody_death(0.2);
+    if (isalive(bustout_driver)) {
+        bustout_driver ai::bloody_death(0.2);
     }
     if (isdefined(level.var_9a3944f4)) {
         level.var_9a3944f4.var_71664ae5 = 60;

@@ -1951,7 +1951,7 @@
                     "var_5d4b5964": 3.05
                 }
             ],
-            "var_f34d52cb": "#hash_7041833ab00b95d8"
+            "var_f34d52cb": "#mq_end_sequence_start"
         },
         {
             "var_aa02f35a": [
@@ -1961,7 +1961,7 @@
                     "var_5d4b5964": 4.25
                 }
             ],
-            "var_f34d52cb": "#hash_60b348c5d0e1a3fb"
+            "var_f34d52cb": "#mq_end_sequence_explosion"
         },
         {
             "var_aa02f35a": [
@@ -1971,7 +1971,7 @@
                     "var_5d4b5964": 6.23
                 }
             ],
-            "var_f34d52cb": "#hash_e5e5da81f7dd726"
+            "var_f34d52cb": "#mq_fade_blk_mission_accomplished"
         }
     ],
     "var_d151963a": "#zmdialog_speaker_weaver",

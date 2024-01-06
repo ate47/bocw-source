@@ -193,7 +193,7 @@ function function_3ebfec3e(entity) {
 // Checksum 0x7635ffe1, Offset: 0xa98
 // Size: 0x126
 function function_bc29cf28() {
-    var_6be77126 = [4:#"safehouse", 3:#"hash_1f10ab49bdded60b", 2:#"hash_512059ba21e9bc93", 1:#"hash_7e48d08a5a78d573", 0:#"ammo_cache"];
+    var_6be77126 = [4:#"safehouse", 3:#"explore_chests_small", 2:#"explore_chests_large", 1:#"explore_chests", 0:#"ammo_cache"];
     var_68fc2252 = zm_destination_manager::function_506afb9e(level.var_7d45d0d4.var_49978223, var_6be77126);
     for (i = 0; i < var_68fc2252.size; i++) {
         if (!isdefined(var_68fc2252[i].trigger)) {

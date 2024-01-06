@@ -38,13 +38,13 @@ function init() {
 // Checksum 0xd37a1f7a, Offset: 0x370
 // Size: 0xc0
 function function_3d1b6aa8(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    level.var_8cff5775.var_182fb75a = undefined;
-    if (!isdefined(level.var_8cff5775.var_5d21548e)) {
+    level.doa.var_182fb75a = undefined;
+    if (!isdefined(level.doa.var_5d21548e)) {
         return;
     }
-    namespace_1e25ad94::function_f5f0c0f8("Destroying Dungeon! Index: " + level.var_8cff5775.var_5d21548e);
+    namespace_1e25ad94::function_f5f0c0f8("Destroying Dungeon! Index: " + level.doa.var_5d21548e);
     level thread namespace_95fdc800::function_b1989480();
-    level notify(#"hash_60fc87cdd1e267a9");
+    level notify(#"dungeon_destroyed");
 }
 
 // Namespace namespace_981c1f3c/namespace_981c1f3c
@@ -53,7 +53,7 @@ function function_3d1b6aa8(*localclientnum, *oldval, *newval, *bnewent, *binitia
 // Size: 0x72
 function function_10d7a147(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     namespace_1e25ad94::function_f5f0c0f8("Setting a new Dungeon! Index: " + bwastimejump);
-    level.var_8cff5775.var_5d21548e = bwastimejump;
+    level.doa.var_5d21548e = bwastimejump;
 }
 
 // Namespace namespace_981c1f3c/namespace_981c1f3c
@@ -62,12 +62,12 @@ function function_10d7a147(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Size: 0x25c
 function function_74359dc(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     level notify(#"hash_60c11a94a9191bb8");
-    level endon(#"hash_60fc87cdd1e267a9");
-    while (!isdefined(level.var_8cff5775.var_5d21548e)) {
+    level endon(#"dungeon_destroyed");
+    while (!isdefined(level.doa.var_5d21548e)) {
         waitframe(1);
     }
-    level.var_8cff5775.var_182fb75a = level.var_8cff5775.var_5d21548e;
-    var_bff754c6 = struct::get(level.var_8cff5775.var_4bd98f7c[level.var_8cff5775.var_182fb75a].name + "_startRoom", "targetname");
+    level.doa.var_182fb75a = level.doa.var_5d21548e;
+    var_bff754c6 = struct::get(level.doa.var_4bd98f7c[level.doa.var_182fb75a].name + "_startRoom", "targetname");
     if (isdefined(var_bff754c6)) {
         x = 0;
         y = 0;
@@ -85,7 +85,7 @@ function function_74359dc(localclientnum, *oldval, *newval, *bnewent, *binitials
         }
     }
     namespace_95fdc800::function_d6e32b1b();
-    namespace_95fdc800::function_1bce4bde(level.var_8cff5775.var_4bd98f7c[level.var_8cff5775.var_5d21548e].name);
+    namespace_95fdc800::function_1bce4bde(level.doa.var_4bd98f7c[level.doa.var_5d21548e].name);
 }
 
 // Namespace namespace_981c1f3c/namespace_981c1f3c
@@ -93,8 +93,8 @@ function function_74359dc(localclientnum, *oldval, *newval, *bnewent, *binitials
 // Checksum 0x9f3b2f97, Offset: 0x720
 // Size: 0x34
 function function_c153f40() {
-    if (isdefined(level.var_8cff5775.var_a7ccb320)) {
-        [[ level.var_8cff5775.var_a7ccb320 ]]();
+    if (isdefined(level.doa.var_a7ccb320)) {
+        [[ level.doa.var_a7ccb320 ]]();
     }
 }
 

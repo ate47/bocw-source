@@ -24,7 +24,7 @@ function function_70a657d8() {
     if (!zm_utility::function_36e7b4a2()) {
         return;
     }
-    level.var_996e8a57 = namespace_b4c5b93b::register();
+    level.var_996e8a57 = zm_dac_challenges_hud::register();
     if (zm_utility::is_survival()) {
         level.var_957b495e = 300;
     } else {

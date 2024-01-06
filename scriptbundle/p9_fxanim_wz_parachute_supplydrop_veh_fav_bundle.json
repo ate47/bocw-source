@@ -30,7 +30,7 @@
                     "name": "shot 3"
                 }
             ],
-            "model": "#hash_198a9f83669ef4fc",
+            "model": "#p9_fxanim_wz_parachute_supplydrop_veh_mod",
             "type": "prop",
             "var_db255011": 1,
             "name": "prop 1"
@@ -65,7 +65,7 @@
                     "name": "shot 3"
                 }
             ],
-            "model": "#hash_198a9f83669ef4fc",
+            "model": "#p9_fxanim_wz_parachute_supplydrop_veh_mod",
             "type": "prop",
             "var_db255011": 1,
             "name": "prop 2"
@@ -100,7 +100,7 @@
                     "name": "shot 3"
                 }
             ],
-            "model": "#hash_198a9f83669ef4fc",
+            "model": "#p9_fxanim_wz_parachute_supplydrop_veh_mod",
             "type": "prop",
             "var_db255011": 1,
             "name": "prop 3"
@@ -135,7 +135,7 @@
                     "name": "shot 3"
                 }
             ],
-            "model": "#hash_198a9f83669ef4fc",
+            "model": "#p9_fxanim_wz_parachute_supplydrop_veh_mod",
             "type": "prop",
             "var_db255011": 1,
             "name": "prop 4"

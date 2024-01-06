@@ -13,9 +13,9 @@
 #using scripts\core_common\system_shared.csc;
 #using scripts\core_common\clientfield_shared.csc;
 
-#namespace namespace_823484e1;
+#namespace snipercam;
 
-// Namespace namespace_823484e1/namespace_823484e1
+// Namespace snipercam/snipercam
 // Params 0, eflags: 0x5
 // Checksum 0xe5c1fc4, Offset: 0x2f0
 // Size: 0x34
@@ -23,7 +23,7 @@ function private autoexec __init__system__() {
     system::register("snipercam", &function_f64316de, undefined, undefined, undefined);
 }
 
-// Namespace namespace_823484e1/namespace_823484e1
+// Namespace snipercam/snipercam
 // Params 0, eflags: 0x6 linked
 // Checksum 0xdebf85f1, Offset: 0x330
 // Size: 0x2bc
@@ -50,7 +50,7 @@ function private function_f64316de() {
     }
 }
 
-// Namespace namespace_823484e1/namespace_823484e1
+// Namespace snipercam/snipercam
 // Params 1, eflags: 0x2 linked
 // Checksum 0x7d9d3962, Offset: 0x5f8
 // Size: 0x5c
@@ -62,7 +62,7 @@ function on_local_player_spawned(localclientnum) {
     forcestreamxmodel("attach_t9_bullet_762_tip_view");
 }
 
-// Namespace namespace_823484e1/namespace_823484e1
+// Namespace snipercam/snipercam
 // Params 7, eflags: 0x6 linked
 // Checksum 0x6f86d2bc, Offset: 0x660
 // Size: 0x84
@@ -74,7 +74,7 @@ function private function_36f6ea28(localclientnum, *oldval, newval, *bnewent, *b
     local_player thread function_7f8d6723(fieldname, self, bwastimejump);
 }
 
-// Namespace namespace_823484e1/namespace_823484e1
+// Namespace snipercam/snipercam
 // Params 7, eflags: 0x6 linked
 // Checksum 0x1d03b3ed, Offset: 0x6f0
 // Size: 0x78
@@ -86,7 +86,7 @@ function private function_9f2c8092(*localclientnum, *oldval, newval, *bnewent, *
     level notify(#"hash_615d2d7ba347572b");
 }
 
-// Namespace namespace_823484e1/namespace_823484e1
+// Namespace snipercam/snipercam
 // Params 1, eflags: 0x6 linked
 // Checksum 0x6350da08, Offset: 0x770
 // Size: 0x2a
@@ -94,7 +94,7 @@ function private function_23f390cc(var_be96a4f8) {
     return (var_be96a4f8[2], var_be96a4f8[1], var_be96a4f8[0] * -1);
 }
 
-// Namespace namespace_823484e1/namespace_823484e1
+// Namespace snipercam/snipercam
 // Params 1, eflags: 0x4
 // Checksum 0xc4a2199a, Offset: 0x7a8
 // Size: 0x232
@@ -103,16 +103,16 @@ function private function_51f065c3(parms) {
         foreach (var_188953e0 in level.var_6356fe3b) {
             var_1b6e3d9c = distance2d(var_188953e0.start.origin, parms.var_b21e26bd);
             if (var_1b6e3d9c < 200) {
-                var_d1e4d605 = var_188953e0.start;
+                side_cam_start = var_188953e0.start;
                 var_52c1d392 = var_188953e0.end;
                 var_61437df7 = var_188953e0.var_82267185;
                 break;
             }
         }
-        if (isdefined(var_d1e4d605)) {
+        if (isdefined(side_cam_start)) {
             var_c4c9ccaf = 0;
             while (var_c4c9ccaf < 6000) {
-                sphere(var_d1e4d605.origin, 4, (0.2, 1, 0.2), 1, 0, 24, 1);
+                sphere(side_cam_start.origin, 4, (0.2, 1, 0.2), 1, 0, 24, 1);
                 sphere(var_52c1d392.origin, 4, (0.2, 1, 0.2), 1, 0, 24, 1);
                 var_c3df7dfc = parms.var_b21e26bd;
                 if (isdefined(var_61437df7)) {
@@ -126,7 +126,7 @@ function private function_51f065c3(parms) {
     #/
 }
 
-// Namespace namespace_823484e1/namespace_823484e1
+// Namespace snipercam/snipercam
 // Params 3, eflags: 0x6 linked
 // Checksum 0xf04d9aef, Offset: 0x9e8
 // Size: 0xbec
@@ -165,20 +165,20 @@ function private function_7f8d6723(localclientnum, victim, var_d21483a5) {
         var_da5ce8d6 = function_a3f6cdac(100);
         var_14ba017f = function_a3f6cdac(200);
         var_53db73e1 = var_14ba017f + 1;
-        var_d1e4d605 = undefined;
+        side_cam_start = undefined;
         var_61437df7 = undefined;
         var_52c1d392 = undefined;
         foreach (var_188953e0 in level.var_6356fe3b) {
             var_8c36c881 = distance2dsquared(var_188953e0.start.origin, parms.var_b21e26bd);
             if (var_8c36c881 > var_da5ce8d6 && var_8c36c881 < var_53db73e1) {
                 var_53db73e1 = var_8c36c881;
-                var_d1e4d605 = var_188953e0.start;
+                side_cam_start = var_188953e0.start;
                 var_52c1d392 = var_188953e0.end;
                 var_61437df7 = var_188953e0.var_82267185;
             }
         }
-        if (isdefined(var_d1e4d605)) {
-            var_fa3c8b18 = var_d1e4d605.origin;
+        if (isdefined(side_cam_start)) {
+            var_fa3c8b18 = side_cam_start.origin;
             var_c3df7dfc = parms.var_b21e26bd;
             if (isdefined(var_61437df7)) {
                 var_c3df7dfc = var_61437df7.origin;
@@ -220,7 +220,7 @@ function private function_7f8d6723(localclientnum, victim, var_d21483a5) {
             var_7333a53a = var_fa3c8b18 + parms.forward * 25;
             var_ac259dff moveto(var_7333a53a, 0.8);
             var_26f59de4 = parms.var_e93a7f0f - var_fa3c8b18;
-            if (!isdefined(var_d1e4d605) && lengthsquared(var_26f59de4)) {
+            if (!isdefined(side_cam_start) && lengthsquared(var_26f59de4)) {
                 var_db8de2bd = vectortoangles(vectornormalize(var_26f59de4));
                 var_6f386fda = var_a4607150 + function_23f390cc((var_db8de2bd[0], 0, 0));
                 var_ac259dff rotateto(var_6f386fda, 0.8);
@@ -256,7 +256,7 @@ function private function_7f8d6723(localclientnum, victim, var_d21483a5) {
     var_ef954e24 delete();
 }
 
-// Namespace namespace_823484e1/namespace_823484e1
+// Namespace snipercam/snipercam
 // Params 1, eflags: 0x6 linked
 // Checksum 0x4c64203b, Offset: 0x15e0
 // Size: 0x114
@@ -271,7 +271,7 @@ function private function_9fb8e309(lerptime) {
     self thread function_63a2faff(0, 0.1, lerptime);
 }
 
-// Namespace namespace_823484e1/namespace_823484e1
+// Namespace snipercam/snipercam
 // Params 1, eflags: 0x6 linked
 // Checksum 0x58758664, Offset: 0x1700
 // Size: 0x5c
@@ -281,7 +281,7 @@ function private function_a2717a3e(lerptime) {
     self postfx::stoppostfxbundle("pstfx_speedblur");
 }
 
-// Namespace namespace_823484e1/namespace_823484e1
+// Namespace snipercam/snipercam
 // Params 3, eflags: 0x6 linked
 // Checksum 0x778c43e6, Offset: 0x1768
 // Size: 0x1b6
@@ -311,7 +311,7 @@ function private function_63a2faff(startval, endval, lerptime) {
     self notify(#"hash_3999b38781a1f7c1");
 }
 
-// Namespace namespace_823484e1/namespace_823484e1
+// Namespace snipercam/snipercam
 // Params 2, eflags: 0x6 linked
 // Checksum 0xd02ecbff, Offset: 0x1928
 // Size: 0x12c
@@ -325,7 +325,7 @@ function private function_3992911(localclientnum, parms) {
     util::playfxontag(localclientnum, "impacts/fx9_snipercam_headshot_trail", parms.victim, "j_head");
 }
 
-// Namespace namespace_823484e1/namespace_823484e1
+// Namespace snipercam/snipercam
 // Params 3, eflags: 0x2 linked
 // Checksum 0x7c1abd4d, Offset: 0x1a60
 // Size: 0x1cc
@@ -358,7 +358,7 @@ function function_ff6d0f8b(*localclientnum, parms, bullet) {
     function_ed62c9c2(var_f828a846, 0.15);
 }
 
-// Namespace namespace_823484e1/namespace_823484e1
+// Namespace snipercam/snipercam
 // Params 2, eflags: 0x6 linked
 // Checksum 0xd6731a0c, Offset: 0x1c38
 // Size: 0xfc

@@ -568,7 +568,7 @@ class cdoor {
             if (isdefined(self.m_s_bundle.var_3fbbd06c)) {
                 gesture = self.m_s_bundle.var_3fbbd06c;
             }
-            e_player thread doors::function_ab2f87ab(gesture);
+            e_player thread doors::player_door_gesture(gesture);
         }
         self.m_e_door notify(#"hash_7166c13e79b73f9");
     }
@@ -885,7 +885,7 @@ class cdoor {
             if (isdefined(self.m_s_bundle.var_b06bad19)) {
                 gesture = self.m_s_bundle.var_b06bad19;
             }
-            e_player thread doors::function_ab2f87ab(gesture);
+            e_player thread doors::player_door_gesture(gesture);
         }
         self.m_e_door notify(#"hash_923096b653062ea");
     }
@@ -2794,7 +2794,7 @@ function private function_b391c0a0(gesture, target) {
     }
     self.var_99ce8ae = 1;
     self val::set("player_door_gesture", "allow_melee", 0);
-    if (level.var_1def7d37[#"hash_131a4870898d0129"]) {
+    if (level.var_1def7d37[#"scr_door_player_gestures"]) {
         self playgestureviewmodel(gesture, target, 1);
     }
     wait(0.05);
@@ -3046,7 +3046,7 @@ function private function_5622c3c1(player) {
         if (!player issprinting()) {
             return 0;
         }
-        if (level.var_1def7d37[#"hash_572af0ecbc9cfb84"]) {
+        if (level.var_1def7d37[#"scr_door_bash_requires_use"]) {
             if (!player usebuttonpressed()) {
                 return 0;
             }
@@ -3281,7 +3281,7 @@ function private function_8d016934(var_248cbbcf) {
 // Checksum 0x21cd5d7a, Offset: 0xd598
 // Size: 0x44
 function private function_38746391() {
-    if (level.var_1def7d37[#"hash_131a4870898d0129"] == 0) {
+    if (level.var_1def7d37[#"scr_door_player_gestures"] == 0) {
         return 0;
     }
     return self getcurrentweapon() != level.weaponnone;
@@ -3291,9 +3291,9 @@ function private function_38746391() {
 // Params 1, eflags: 0x4
 // Checksum 0xafa3d9d9, Offset: 0xd5e8
 // Size: 0x10c
-function private function_ab2f87ab(gesture) {
-    self notify(#"hash_1f95a7e78f85a5ed");
-    self endon(#"hash_1f95a7e78f85a5ed");
+function private player_door_gesture(gesture) {
+    self notify(#"player_door_gesture");
+    self endon(#"player_door_gesture");
     if (!isdefined(gesture)) {
         return;
     }
@@ -3364,7 +3364,7 @@ function private function_1e18148c() {
     s_minigame.var_5ebe1cc1.s_minigame = 0;
     s_minigame.var_3b6bc456.s_minigame = self.var_3b6bc456;
     s_minigame.script_team.s_minigame = isdefined(self.script_team) ? self.script_team : #"any";
-    s_minigame.scriptbundlename.s_minigame = #"hash_3cb78f68e5832813";
+    s_minigame.scriptbundlename.s_minigame = #"minigame_lockpick";
     s_minigame.var_5350598b.s_minigame = self;
     s_minigame.ent.s_minigame = self.c_door.m_e_door;
     s_minigame.var_80778410 = var_80778410;

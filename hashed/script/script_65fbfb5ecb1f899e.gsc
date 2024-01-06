@@ -17,7 +17,7 @@ function function_a037b7c9(localclientnum, ui_model, value, time, var_4ca73085, 
 // Params 7, eflags: 0x0
 // Checksum 0x68839d3c, Offset: 0x298
 // Size: 0xec
-function function_40cf2e25(start, target, time, var_4ca73085, ease_in, ease_out, var_33ce6852) {
+function ease_camera_position(start, target, time, var_4ca73085, ease_in, ease_out, var_33ce6852) {
     /#
         assert(self isplayer());
     #/
@@ -32,7 +32,7 @@ function function_40cf2e25(start, target, time, var_4ca73085, ease_in, ease_out,
 // Params 7, eflags: 0x0
 // Checksum 0xab47aab8, Offset: 0x390
 // Size: 0x124
-function function_8fe3bbb8(start, target, time, var_4ca73085, ease_in, ease_out, var_33ce6852) {
+function ease_camera_angles(start, target, time, var_4ca73085, ease_in, ease_out, var_33ce6852) {
     /#
         assert(self isplayer());
     #/
@@ -123,7 +123,7 @@ function function_86ac55c5(localclientnum, dvar, var_c7ec7d60, value, time, var_
 // Params 9, eflags: 0x0
 // Checksum 0x268c1db2, Offset: 0xa70
 // Size: 0x194
-function function_d9fc18e2(localclientnum, target, time, var_4ca73085, axis, additive, ease_in, ease_out, var_33ce6852) {
+function ease_origin(localclientnum, target, time, var_4ca73085, axis, additive, ease_in, ease_out, var_33ce6852) {
     /#
         assert(self != level);
     #/
@@ -150,7 +150,7 @@ function function_d9fc18e2(localclientnum, target, time, var_4ca73085, axis, add
 // Params 9, eflags: 0x0
 // Checksum 0xb5ec1658, Offset: 0xc10
 // Size: 0x194
-function function_60848904(localclientnum, target, time, var_4ca73085, axis, additive, ease_in, ease_out, var_33ce6852) {
+function ease_angles(localclientnum, target, time, var_4ca73085, axis, additive, ease_in, ease_out, var_33ce6852) {
     /#
         assert(self != level);
     #/

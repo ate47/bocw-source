@@ -37,7 +37,7 @@ function function_3aea3305(localclientnum, *oldval, newval, *bnewent, *binitials
         for (i = 0; i < var_3ddad43b; i++) {
             if (isdefined(self)) {
                 v_pos = self.origin;
-                playfx(fieldname, #"hash_1564dca59f2d4af6", v_pos + anglestoup(self.angles) * 60);
+                playfx(fieldname, #"lensflares/fx9_lf_sniper_glint", v_pos + anglestoup(self.angles) * 60);
                 wait(randomfloatrange(0.5, 0.7));
             }
         }

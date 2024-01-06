@@ -8,13 +8,13 @@
 #using scripts\core_common\serverfield_shared.gsc;
 #using scripts\core_common\clientfield_shared.gsc;
 
-#namespace namespace_14de327b;
+#namespace lockpick;
 
-// Namespace namespace_14de327b
+// Namespace lockpick
 // Method(s) 13 Total 48
 class class_d28acd06 : class_9e71c1a2 {
 
-    // Namespace class_d28acd06/namespace_14de327b
+    // Namespace class_d28acd06/lockpick
     // Params 0, eflags: 0xa linked
     // Checksum 0x53613915, Offset: 0x408
     // Size: 0x14
@@ -22,7 +22,7 @@ class class_d28acd06 : class_9e71c1a2 {
         namespace_9e71c1a2::__constructor();
     }
 
-    // Namespace namespace_d28acd06/namespace_14de327b
+    // Namespace namespace_d28acd06/lockpick
     // Params 0, eflags: 0x82 linked class_linked
     // Checksum 0x6f097a2b, Offset: 0x428
     // Size: 0x14
@@ -30,24 +30,24 @@ class class_d28acd06 : class_9e71c1a2 {
         namespace_9e71c1a2::__destructor();
     }
 
-    // Namespace namespace_d28acd06/namespace_14de327b
+    // Namespace namespace_d28acd06/lockpick
     // Params 1, eflags: 0x2 linked
     // Checksum 0x42a5ba89, Offset: 0x878
     // Size: 0xc4
     function function_27940f1f(*str_team) {
         if (isdefined(self.var_b5a03b21.last_player)) {
             self.var_b5a03b21.last_player flag::clear("lockpicking");
-            self.var_b5a03b21.last_player val::function_e681e68e(#"hash_530ab699d58ec645");
+            self.var_b5a03b21.last_player val::function_e681e68e(#"lockpicking");
             self.var_b5a03b21.last_player function_e0c7d69(1);
             self.var_b5a03b21.last_player notify(#"hash_226f6717c97d10d6");
         }
     }
 
-    // Namespace namespace_d28acd06/namespace_14de327b
+    // Namespace namespace_d28acd06/lockpick
     // Params 0, eflags: 0x2 linked
     // Checksum 0x383cfa4d, Offset: 0x448
     // Size: 0x374
-    function function_2f0acccd() {
+    function _init() {
         self.var_1c4a269e = 1;
         self.var_7529951f = 1;
         self.var_b4563cfa = #"hash_74dc1865536890ee";
@@ -73,7 +73,7 @@ class class_d28acd06 : class_9e71c1a2 {
         }
     }
 
-    // Namespace namespace_d28acd06/namespace_14de327b
+    // Namespace namespace_d28acd06/lockpick
     // Params 2, eflags: 0x2 linked
     // Checksum 0x76dd936a, Offset: 0xcb0
     // Size: 0x38
@@ -81,7 +81,7 @@ class class_d28acd06 : class_9e71c1a2 {
         [[ self ]]->complete(e_player, n_new_val == 2, e_player.team);
     }
 
-    // Namespace namespace_d28acd06/namespace_14de327b
+    // Namespace namespace_d28acd06/lockpick
     // Params 1, eflags: 0x2 linked
     // Checksum 0x38ff24cc, Offset: 0xc50
     // Size: 0x34
@@ -90,7 +90,7 @@ class class_d28acd06 : class_9e71c1a2 {
         [[ self ]]->function_27940f1f();
     }
 
-    // Namespace namespace_d28acd06/namespace_14de327b
+    // Namespace namespace_d28acd06/lockpick
     // Params 1, eflags: 0x2 linked
     // Checksum 0x8b3645c0, Offset: 0xac8
     // Size: 0xc
@@ -98,7 +98,7 @@ class class_d28acd06 : class_9e71c1a2 {
         
     }
 
-    // Namespace namespace_d28acd06/namespace_14de327b
+    // Namespace namespace_d28acd06/lockpick
     // Params 1, eflags: 0x2 linked
     // Checksum 0xaee52e, Offset: 0x848
     // Size: 0x28
@@ -106,7 +106,7 @@ class class_d28acd06 : class_9e71c1a2 {
         e_player.var_ff7ce13b[self.m_s_bundle.type] = 0;
     }
 
-    // Namespace namespace_d28acd06/namespace_14de327b
+    // Namespace namespace_d28acd06/lockpick
     // Params 1, eflags: 0x2 linked
     // Checksum 0x21f48a40, Offset: 0xae0
     // Size: 0x34
@@ -116,17 +116,17 @@ class class_d28acd06 : class_9e71c1a2 {
         }
     }
 
-    // Namespace namespace_d28acd06/namespace_14de327b
+    // Namespace namespace_d28acd06/lockpick
     // Params 2, eflags: 0x2 linked
     // Checksum 0x99c35ad6, Offset: 0x7c8
     // Size: 0x74
     function function_89999e9c(*player, stream) {
         if (sessionmodeiscampaigngame()) {
-            setuimodelvalue(getuimodel(function_90d058e8(#"hash_6f7d895c5a9f4ff3"), "stream"), stream);
+            setuimodelvalue(getuimodel(function_90d058e8(#"lockpick"), "stream"), stream);
         }
     }
 
-    // Namespace namespace_d28acd06/namespace_14de327b
+    // Namespace namespace_d28acd06/lockpick
     // Params 1, eflags: 0x2 linked
     // Checksum 0xda40691c, Offset: 0xc90
     // Size: 0x18
@@ -134,7 +134,7 @@ class class_d28acd06 : class_9e71c1a2 {
         return self.var_1d21e4f3[var_f8d01c02];
     }
 
-    // Namespace namespace_d28acd06/namespace_14de327b
+    // Namespace namespace_d28acd06/lockpick
     // Params 1, eflags: 0x2 linked
     // Checksum 0x1f1a58d2, Offset: 0x948
     // Size: 0x178
@@ -146,8 +146,8 @@ class class_d28acd06 : class_9e71c1a2 {
             assert(self.var_6dfc35a >= 0);
         #/
         if (isdefined(e_player)) {
-            e_player val::set(#"hash_530ab699d58ec645", "disable_weapons", 1);
-            e_player val::set(#"hash_530ab699d58ec645", "show_weapon_hud", 0);
+            e_player val::set(#"lockpicking", "disable_weapons", 1);
+            e_player val::set(#"lockpicking", "show_weapon_hud", 0);
             e_player flag::set("lockpicking");
             e_player function_e0c7d69(0);
             e_player clientfield::set_to_player("lockpick_num_pins", self.var_9e3fdeff);
@@ -159,7 +159,7 @@ class class_d28acd06 : class_9e71c1a2 {
         }
     }
 
-    // Namespace namespace_d28acd06/namespace_14de327b
+    // Namespace namespace_d28acd06/lockpick
     // Params 1, eflags: 0x2 linked
     // Checksum 0x675c8bc6, Offset: 0xb20
     // Size: 0x124
@@ -175,14 +175,14 @@ class class_d28acd06 : class_9e71c1a2 {
             }
         }
         bb::function_cd497743("lockpick_success", e_player);
-        e_player notify(#"hash_5c86d24696b7e27");
+        e_player notify(#"minigame_tutorial_complete");
         [[ self ]]->function_89999e9c(e_player, 0);
         [[ self ]]->function_27940f1f();
     }
 
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 0, eflags: 0x5
 // Checksum 0x812a9b0e, Offset: 0x1d0
 // Size: 0x5c
@@ -191,7 +191,7 @@ function private autoexec __init__system__() {
     system::register("lockpick", &function_70a657d8);
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 0, eflags: 0x6 linked
 // Checksum 0x45e87069, Offset: 0x238
 // Size: 0xcc
@@ -202,7 +202,7 @@ function private function_70a657d8() {
     serverfield::register("lockpick_state", 1, 2, "int", &function_74ad25ad);
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 0, eflags: 0x2 linked
 // Checksum 0xf9b86e96, Offset: 0x310
 // Size: 0x14
@@ -210,7 +210,7 @@ function function_8d584152() {
     return new class_d28acd06();
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 0, eflags: 0x0
 // Checksum 0x8bb6cdc9, Offset: 0x330
 // Size: 0x6c
@@ -223,7 +223,7 @@ function cancel() {
     }
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 2, eflags: 0x6 linked
 // Checksum 0xc873210c, Offset: 0x3a8
 // Size: 0x58

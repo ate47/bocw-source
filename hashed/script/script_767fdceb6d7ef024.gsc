@@ -6,9 +6,9 @@
 #using scripts\core_common\item_inventory.csc;
 #using scripts\core_common\aat_shared.csc;
 
-#namespace namespace_d35c222c;
+#namespace ammomod_electriccherry;
 
-// Namespace namespace_d35c222c/namespace_d35c222c
+// Namespace ammomod_electriccherry/ammomod_electriccherry
 // Params 0, eflags: 0x0
 // Checksum 0x211b4fdc, Offset: 0x168
 // Size: 0x9c
@@ -20,7 +20,7 @@ function function_4b66248d() {
     clientfield::register("allplayers", "ammomod_electric_cherry_explode", 1, 1, "counter", &electric_cherry_explode, 0, 0);
 }
 
-// Namespace namespace_d35c222c/namespace_d35c222c
+// Namespace ammomod_electriccherry/ammomod_electriccherry
 // Params 7, eflags: 0x0
 // Checksum 0x47f782ca, Offset: 0x210
 // Size: 0xa4

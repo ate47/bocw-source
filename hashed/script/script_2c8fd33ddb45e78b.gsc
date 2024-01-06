@@ -337,7 +337,7 @@ function function_ded2880a(localclientnum) {
                 continue;
             }
             add_devgui(localclientnum, "<unknown string>" + var_2b65c1ac + "<unknown string>", "<unknown string>" + var_d5fa8477 + "<unknown string>");
-            if (s_bundle.var_ad4ad686 === #"hash_70ce1650358c0923") {
+            if (s_bundle.var_ad4ad686 === #"dark_aether") {
                 add_devgui(localclientnum, "<unknown string>" + var_2b65c1ac + "<unknown string>", "<unknown string>" + var_d5fa8477 + "<unknown string>");
             }
         }

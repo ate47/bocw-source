@@ -145,7 +145,7 @@ function function_29c22852(entity) {
 // Size: 0xa8
 function private function_33b29495(*entity) {
     var_711090a2 = 0;
-    var_b77044e1 = lerpfloat(0.2, 0.8, math::clamp((level.var_8cff5775.roundnumber - 1) / 30, 0, 1));
+    var_b77044e1 = lerpfloat(0.2, 0.8, math::clamp((level.doa.roundnumber - 1) / 30, 0, 1));
     if (randomfloat(1) <= var_b77044e1) {
         var_711090a2 = 1;
     }

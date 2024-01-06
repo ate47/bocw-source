@@ -180,7 +180,7 @@ function function_21fee83f(var_c4f44e2) {
 // Checksum 0x6de6ddd1, Offset: 0x9c8
 // Size: 0x3c
 function function_1493eabf() {
-    level waittill(#"hash_2ccb1e2f5d9ce793");
+    level waittill(#"sndunlockeesong");
     function_2cca7b47(0, #"musictrack_zm_silver_ee");
 }
 

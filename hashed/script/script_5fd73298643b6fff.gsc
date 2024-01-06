@@ -1950,10 +1950,10 @@ function function_f239fa6c(a_ents) {
         var_6abf3e9f.ignore_enemy_count.var_6abf3e9f = 1;
         var_6abf3e9f.var_2df02a0c.var_6abf3e9f = 1;
         var_6abf3e9f linkto(level.orda, "j_head", vectorscale((1, 0, 0), 50));
-        if (isdefined(level.var_3611fd4d)) {
-            level.var_3611fd4d delete();
+        if (isdefined(level.orda_indicator)) {
+            level.orda_indicator delete();
         }
-        level.var_3611fd4d = var_6abf3e9f;
+        level.orda_indicator = var_6abf3e9f;
         level thread function_2b49cac1();
     }
     level notify(#"hash_3eb4c19472384f5b");
@@ -1966,8 +1966,8 @@ function function_f239fa6c(a_ents) {
 function private function_2b49cac1() {
     level endon(#"end_game");
     level waittill(#"hash_f630acd8ed7aa5b", #"hash_a88cb65d3952bc4");
-    if (isdefined(level.var_3611fd4d)) {
-        level.var_3611fd4d delete();
+    if (isdefined(level.orda_indicator)) {
+        level.orda_indicator delete();
     }
 }
 

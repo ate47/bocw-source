@@ -502,7 +502,7 @@ function enter_oob(entity) {
     if (sessionmodeismultiplayergame() || sessionmodeiswarzonegame()) {
         if (!getdvarint(#"hash_4f2471155144a80a", 0)) {
             weapon = player loadout::function_18a77b37("specialgrenade");
-            if (weapon.name === #"gadget_jammer" || weapon.name === #"hash_320a8d55b915b9e5" || weapon.name === #"tear_gas") {
+            if (weapon.name === #"gadget_jammer" || weapon.name === #"listening_device" || weapon.name === #"tear_gas") {
                 player val::set(#"oob", "disable_offhand_special", 1);
             }
         }

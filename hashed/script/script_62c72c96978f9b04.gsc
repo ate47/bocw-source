@@ -43,7 +43,7 @@ function function_595556d0(localclientnum, *oldval, *newval, *bnewent, *binitial
     self endon(#"death");
     forcestreamxmodel(#"p9_fxp_zm_teleport_tunnel");
     forcestreamxmodel(#"p9_fxp_zm_teleport_tunnel_edge");
-    function_3385d776(#"hash_2f112a3ab3cf120a");
+    function_3385d776(#"zombie/fx9_aether_tear_portal_tunnel_1p");
     self.var_915bbac = 1;
     playsound(bwastimejump, #"hash_df74ba2c210beef", (0, 0, 0));
     wait(3);
@@ -57,6 +57,6 @@ function function_595556d0(localclientnum, *oldval, *newval, *bnewent, *binitial
 function function_cc5db8e3(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel");
     stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel_edge");
-    function_c22a1ca2(#"hash_2f112a3ab3cf120a");
+    function_c22a1ca2(#"zombie/fx9_aether_tear_portal_tunnel_1p");
 }
 

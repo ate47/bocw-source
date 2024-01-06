@@ -194,7 +194,7 @@ function private on_connect() {
 // Checksum 0xd8f24281, Offset: 0xb60
 // Size: 0x5d2
 function function_9799c283() {
-    if (level flag::get(#"hash_7d519492b49fd308") && !is_true(self.var_d02cff4e)) {
+    if (level flag::get(#"spawn_intel_at_start_complete") && !is_true(self.var_d02cff4e)) {
         foreach (var_495fa1f8 in level.var_238bd723) {
             if (isdefined(var_495fa1f8.var_bdb97676)) {
                 if (isarray(var_495fa1f8.var_de540b3a)) {
@@ -611,7 +611,7 @@ function private function_8176b2c7(e_player) {
         var_bdb97676 function_619a5c20();
         var_bdb97676 solid();
     }
-    if (var_bdb97676.var_9be0526e === #"hash_20ea75a25d912949" && level flag::get(#"hash_5c4e5d3571f5e1f6")) {
+    if (var_bdb97676.var_9be0526e === #"hash_20ea75a25d912949" && level flag::get(#"dark_aether_active")) {
         return 0;
     }
     if (isdefined(var_bdb97676.var_32edbef9)) {

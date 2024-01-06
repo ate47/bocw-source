@@ -38,7 +38,7 @@ function open(var_738a6265, top_left, bottom_right, var_879505e1 = 1, var_ff0f97
     if (!namespace_61e6d095::exists(#"interactive_map")) {
         player = getplayers()[0];
         player actions::function_6c59e78f(0);
-        player thread namespace_61e6d095::function_4bfa9617("close_interactive_map");
+        player thread namespace_61e6d095::block_kbm_pause_menu("close_interactive_map");
         player val::set(#"hash_46ef83540c23a2f7", "freezecontrols", 1);
         namespace_61e6d095::create(#"interactive_map", var_738a6265);
         namespace_61e6d095::function_28027c42(#"interactive_map", [2:#"hash_72cc4740fa4d3da3", 1:#"hint_tutorial", 0:#"interactive_map"]);
@@ -655,7 +655,7 @@ function function_fabe437a(var_248cbbcf) {
             waypoint add_object(#"hash_748279bcfd49d4cd", isdefined(waypoint.interactive_map.image) ? waypoint.interactive_map.image : #"hash_215b9409f9d7cc36", 0);
         }
         thread function_5cab7397();
-        var_248cbbcf.player thread namespace_96850e69::function_2fa83dfd();
+        var_248cbbcf.player thread namespace_96850e69::show_objectives();
     }
 }
 

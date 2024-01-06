@@ -37,29 +37,29 @@ function autoexec registerbehaviorscriptfunctions() {
     #/
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_2ec2006a59a43ce", &function_fa6d93ea);
     /#
-        assert(isscriptfunctionptr(&function_66b40330));
+        assert(isscriptfunctionptr(&exposedupdateservice));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("exposedUpdateService", &function_66b40330);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("exposedUpdateService", &exposedupdateservice);
     /#
-        assert(isscriptfunctionptr(&function_36cba91d));
+        assert(isscriptfunctionptr(&exposedshootstart));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("exposedShootStart", &function_36cba91d);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("exposedShootStart", &exposedshootstart);
     /#
-        assert(isscriptfunctionptr(&function_9d21c8ff));
+        assert(isscriptfunctionptr(&exposedshootupdate));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("exposedShootUpdate", &function_9d21c8ff);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("exposedShootUpdate", &exposedshootupdate);
     /#
-        assert(isscriptfunctionptr(&function_c20ec4e4));
+        assert(isscriptfunctionptr(&exposedshootterminate));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("exposedShootTerminate", &function_c20ec4e4);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("exposedShootTerminate", &exposedshootterminate);
     /#
-        assert(isscriptfunctionptr(&function_d9b2ddf9));
+        assert(isscriptfunctionptr(&exposedreloadinitialize));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("exposedReloadInitialize", &function_d9b2ddf9);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("exposedReloadInitialize", &exposedreloadinitialize);
     /#
-        assert(isscriptfunctionptr(&function_7852409f));
+        assert(isscriptfunctionptr(&exposedreloadterminate));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("exposedReloadTerminate", &function_7852409f);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("exposedReloadTerminate", &exposedreloadterminate);
     /#
         assert(isscriptfunctionptr(&exposedsetdesiredstancetostand));
     #/
@@ -69,9 +69,9 @@ function autoexec registerbehaviorscriptfunctions() {
     #/
     behaviortreenetworkutility::registerbehaviortreescriptapi("setPathMoveDelayedRandom", &setpathmovedelayedrandom);
     /#
-        assert(isscriptfunctionptr(&function_e44a792b));
+        assert(isscriptfunctionptr(&shouldusesidearmpistol));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("shouldUseSidearmPistol", &function_e44a792b);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("shouldUseSidearmPistol", &shouldusesidearmpistol);
     /#
         assert(isscriptfunctionptr(&function_ec3ea122));
     #/
@@ -125,7 +125,7 @@ function function_fa6d93ea(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x66737bc3, Offset: 0xb68
 // Size: 0x72
-function private function_66b40330(entity) {
+function private exposedupdateservice(entity) {
     if (entity isatcovernode()) {
         aiutility::function_3823e69e(entity);
         entity.var_342553bc.entity = 1;
@@ -139,7 +139,7 @@ function private function_66b40330(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x3249f855, Offset: 0xbe8
 // Size: 0x3e
-function private function_36cba91d(entity) {
+function private exposedshootstart(entity) {
     aiutility::releaseclaimnode(entity);
     entity.var_b636f23b.entity = 0;
     entity.var_a4f84a7f.entity = entity.var_c67bb799;
@@ -149,7 +149,7 @@ function private function_36cba91d(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x33e92d24, Offset: 0xc30
 // Size: 0xde
-function private function_9d21c8ff(entity) {
+function private exposedshootupdate(entity) {
     if (entity asmistransitionrunning()) {
         return;
     }
@@ -172,7 +172,7 @@ function private function_9d21c8ff(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x3ae1e110, Offset: 0xd18
 // Size: 0x22
-function private function_c20ec4e4(entity) {
+function private exposedshootterminate(entity) {
     entity.var_b636f23b = undefined;
     entity.var_a4f84a7f = undefined;
 }
@@ -181,7 +181,7 @@ function private function_c20ec4e4(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x6f8ce3df, Offset: 0xd48
 // Size: 0x3c
-function private function_d9b2ddf9(entity) {
+function private exposedreloadinitialize(entity) {
     aiutility::keepclaimnode(entity);
     aiutility::function_43a090a8(entity);
 }
@@ -190,7 +190,7 @@ function private function_d9b2ddf9(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x15ea273, Offset: 0xd90
 // Size: 0x54
-function private function_7852409f(entity) {
+function private exposedreloadterminate(entity) {
     if (isalive(entity)) {
         aiutility::function_dc44803c(entity);
     }
@@ -284,14 +284,14 @@ function private function_3a4e776(entity) {
 // Checksum 0x8370e0ec, Offset: 0xff0
 // Size: 0x34
 function private function_ec3ea122(entity) {
-    return !function_e44a792b(entity, function_a3f6cdac(500));
+    return !shouldusesidearmpistol(entity, function_a3f6cdac(500));
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
 // Params 2, eflags: 0x4
 // Checksum 0x2648cb13, Offset: 0x1030
 // Size: 0x386
-function private function_e44a792b(entity, checkdistance = function_a3f6cdac(300)) {
+function private shouldusesidearmpistol(entity, checkdistance = function_a3f6cdac(300)) {
     var_64c23a1b = 0;
     if (isdefined(entity.sidearm)) {
         if (is_true(entity.var_f0ab915e)) {

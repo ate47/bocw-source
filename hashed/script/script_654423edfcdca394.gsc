@@ -606,7 +606,7 @@ function function_57812547(s_pt) {
         }
         if (self flag::get(#"hash_2001caea1bbe9d01")) {
             if (self.var_9d0832d6 < self.var_6720064d) {
-                var_7ecdee63 = #"hash_1aff4b71635bda08";
+                var_7ecdee63 = #"spawner_bo5_avogadro_sr";
             }
         }
         ai_spawned = namespace_85745671::function_9d3ad056(var_7ecdee63, s_pt.origin, v_ang, "transport_zombie");
@@ -625,7 +625,7 @@ function function_57812547(s_pt) {
             ai_spawned thread function_3d030d9f(self, 16000000);
             ai_spawned thread function_14cb5911(self);
             self.n_active++;
-            if (self flag::get(#"hash_2001caea1bbe9d01") && var_7ecdee63 === #"hash_1aff4b71635bda08") {
+            if (self flag::get(#"hash_2001caea1bbe9d01") && var_7ecdee63 === #"spawner_bo5_avogadro_sr") {
                 self.var_9d0832d6++;
             }
         }
@@ -2403,11 +2403,11 @@ function function_b61cfe16(player) {
     if (isdefined(self) && isdefined(self.aitype)) {
         switch (self.aitype) {
         case #"spawner_bo5_abom":
-        case #"hash_704a090ff9fcffd0":
+        case #"spawner_bo5_mechz_sr":
             self function_98139c38(player, 0.25);
             break;
-        case #"hash_1aff4b71635bda08":
-        case #"hash_63cd2e85e68901a0":
+        case #"spawner_bo5_avogadro_sr":
+        case #"spawner_bo5_soa":
             self function_98139c38(player, 0.6);
             break;
         case #"spawner_bo5_mimic":
@@ -2416,7 +2416,7 @@ function function_b61cfe16(player) {
         case #"hash_4f87aa2a203d37d0":
             self function_98139c38(player, 0.5);
             break;
-        case #"hash_455ec8cc0d1ed4a4":
+        case #"spawner_zm_steiner":
             self function_98139c38(player, 0.4);
             break;
         case #"hash_defdefdefdefdef0":

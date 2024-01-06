@@ -7,9 +7,9 @@
 #using scripts\core_common\clientfield_shared.csc;
 #using scripts\core_common\aat_shared.csc;
 
-#namespace namespace_86c9684b;
+#namespace ammomod_deadwire;
 
-// Namespace namespace_86c9684b/namespace_86c9684b
+// Namespace ammomod_deadwire/ammomod_deadwire
 // Params 0, eflags: 0x0
 // Checksum 0x93607567, Offset: 0x2d0
 // Size: 0x2ac
@@ -25,12 +25,12 @@ function function_af1f180() {
     aat::register("ammomod_deadwire_5", #"zmui/zm_ammomod_deadwire", "ui_icon_zombie_ammomod_deadwire_stacked");
     clientfield::register("actor", "zm_ammomod_deadwire_explosion", 1, 1, "counter", &function_4e26277b, 0, 0);
     clientfield::register("vehicle", "zm_ammomod_deadwire_explosion", 1, 1, "counter", &function_4e26277b, 0, 0);
-    clientfield::register("actor", "zm_ammomod_deadwire_zap", 1, 4, "int", &function_1a3ad2d7, 0, 0);
-    clientfield::register("vehicle", "zm_ammomod_deadwire_zap", 1, 4, "int", &function_1a3ad2d7, 0, 0);
+    clientfield::register("actor", "zm_ammomod_deadwire_zap", 1, 4, "int", &zm_ammomod_deadwire_zap, 0, 0);
+    clientfield::register("vehicle", "zm_ammomod_deadwire_zap", 1, 4, "int", &zm_ammomod_deadwire_zap, 0, 0);
     clientfield::register("toplayer", "ammomod_deadwire_proc", 1, 1, "counter", &function_9e014d56, 1, 0);
 }
 
-// Namespace namespace_86c9684b/namespace_86c9684b
+// Namespace ammomod_deadwire/ammomod_deadwire
 // Params 7, eflags: 0x0
 // Checksum 0xca45f0d2, Offset: 0x588
 // Size: 0x64
@@ -38,11 +38,11 @@ function function_9e014d56(localclientnum, *oldval, *newval, *bnewent, *binitial
     playviewmodelfx(bwastimejump, #"hash_27f96ae62c620a7f", "tag_fx1", 0);
 }
 
-// Namespace namespace_86c9684b/namespace_86c9684b
+// Namespace ammomod_deadwire/ammomod_deadwire
 // Params 7, eflags: 0x0
 // Checksum 0x21d5646c, Offset: 0x5f8
 // Size: 0x246
-function function_1a3ad2d7(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function zm_ammomod_deadwire_zap(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         str_fx_tag = isdefined(self gettagorigin("j_spine4")) ? "j_spine4" : "tag_origin";
         if (bwastimejump > 5) {
@@ -71,7 +71,7 @@ function function_1a3ad2d7(localclientnum, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_86c9684b/namespace_86c9684b
+// Namespace ammomod_deadwire/ammomod_deadwire
 // Params 7, eflags: 0x0
 // Checksum 0xf02786a3, Offset: 0x848
 // Size: 0xac
@@ -82,7 +82,7 @@ function function_4e26277b(localclientnum, *oldval, *newval, *bnewent, *binitial
     }
 }
 
-// Namespace namespace_86c9684b/namespace_86c9684b
+// Namespace ammomod_deadwire/ammomod_deadwire
 // Params 1, eflags: 0x0
 // Checksum 0x965537ed, Offset: 0x900
 // Size: 0x2e
@@ -93,7 +93,7 @@ function function_a4b3da97(trace) {
     return 1;
 }
 
-// Namespace namespace_86c9684b/namespace_86c9684b
+// Namespace ammomod_deadwire/ammomod_deadwire
 // Params 1, eflags: 0x0
 // Checksum 0xc81a707f, Offset: 0x938
 // Size: 0x2a8
@@ -117,7 +117,7 @@ function function_d84b2bab(localclientnum) {
     }
 }
 
-// Namespace namespace_86c9684b/namespace_86c9684b
+// Namespace ammomod_deadwire/ammomod_deadwire
 // Params 3, eflags: 0x0
 // Checksum 0xb27c6f4c, Offset: 0xbe8
 // Size: 0x54

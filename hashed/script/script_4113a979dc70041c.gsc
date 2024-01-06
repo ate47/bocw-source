@@ -50,7 +50,7 @@ function function_70a657d8() {
     clientfield::register("world", "" + #"end_of_level_corpses", 1, 1, "int", &function_1c47acdc, 0, 0);
     clientfield::register("world", "" + #"end_of_level_exfil_outro_igc_props", 1, 1, "int", &function_e4145df1, 0, 0);
     clientfield::register("world", "" + #"hash_46265c2ce587e427", 1, 1, "int", &function_62b0987f, 0, 0);
-    animation::add_notetrack_func("play_outro_music", &function_fdbfd57f);
+    animation::add_notetrack_func("play_outro_music", &play_outro_music);
 }
 
 // Namespace namespace_af1ba366/namespace_af1ba366
@@ -310,7 +310,7 @@ function function_816573ad(localclientnum) {
 // Params 1, eflags: 0x0
 // Checksum 0x26247793, Offset: 0x1a80
 // Size: 0x24
-function function_fdbfd57f(*params) {
+function play_outro_music(*params) {
     soundsetmusicstate("bad_jellyfish");
 }
 

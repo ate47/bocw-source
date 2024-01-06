@@ -105,10 +105,10 @@ function function_2ce126c4() {
         if (is_true(level.var_e35c191f) || util::get_game_type() === #"hash_125fc0c0065c7dea") {
             level.var_7e2af8d5 = [4:#"hash_60d7855358ceb53d", 3:#"hash_acac3fe7a341329", 2:#"spawner_bo5_abom", 1:#"hash_4a900af3fc47cdd5", 0:#"hash_3ff43755c44e6d3d"];
         } else {
-            level.var_7e2af8d5 = [2:#"hash_4a900af3fc47cdd5", 1:#"hash_3ff43755c44e6d3d", 0:#"hash_455ec8cc0d1ed4a4"];
+            level.var_7e2af8d5 = [2:#"hash_4a900af3fc47cdd5", 1:#"hash_3ff43755c44e6d3d", 0:#"spawner_zm_steiner"];
         }
     } else {
-        level.var_7e2af8d5 = [2:#"spawner_bo5_mimic", 1:#"hash_4f87aa2a203d37d0", 0:#"hash_455ec8cc0d1ed4a4"];
+        level.var_7e2af8d5 = [2:#"spawner_bo5_mimic", 1:#"hash_4f87aa2a203d37d0", 0:#"spawner_zm_steiner"];
     }
     level.var_77805e8 = &function_77805e8;
     spawner::add_archetype_spawn_function(#"zombie", &zombiespawnsetup);
@@ -671,7 +671,7 @@ function function_6c40ff50() {
     }
     switch (level.var_2812b9f5) {
     case #"hash_43b8d4f24851653e":
-    case #"hash_455ec8cc0d1ed4a4":
+    case #"spawner_zm_steiner":
         self.var_8d1d18aa = 1;
         break;
     case #"hash_acac3fe7a341329":
@@ -824,7 +824,7 @@ function function_3fd720cc() {
     self val::reset(#"hash_60ade25781f407a4", "takedamage");
     self val::reset(#"hash_60ade25781f407a4", "ignoreall");
     if (is_true(level.var_612d6a21) || util::get_game_type() === #"hash_75aa82b3ae89f54e" || is_true(level.var_e35c191f) || util::get_game_type() === #"hash_125fc0c0065c7dea") {
-        level.var_df7b46d1 notify(#"hash_436e73a3be41daa5");
+        level.var_df7b46d1 notify(#"delete_boss_spawn_fx");
     }
 }
 
@@ -1026,16 +1026,16 @@ function function_c08eb1c4() {
         return;
     }
     waitresult = undefined;
-    waitresult = self waittill(#"hash_1164e7fab4c30c91");
+    waitresult = self waittill(#"spawned_split_ai");
     if (isdefined(level.var_c42bdd1b)) {
         var_9f7c58e6 = level.var_c42bdd1b;
     } else {
-        var_9f7c58e6 = #"hash_5471f6916965b2d2";
+        var_9f7c58e6 = #"spawner_zm_steiner_split_radiation_blast";
     }
     if (isdefined(level.var_dc38daf)) {
         var_a0024591 = level.var_dc38daf;
     } else {
-        var_a0024591 = #"hash_12db1a8b34aa7918";
+        var_a0024591 = #"spawner_zm_steiner_split_radiation_bomb";
     }
     if (self function_1e521615()) {
         if (isdefined(level.var_68b26ea)) {
@@ -2332,7 +2332,7 @@ function function_158444df(n_delay) {
     self endon(#"death");
     wait(n_delay);
     self.var_7f0213e3 = undefined;
-    self notify(#"hash_15196de7f3bf49b2");
+    self notify(#"end_orb_impact_fx");
 }
 
 // Namespace namespace_51f64aa9/namespace_51f64aa9
@@ -2692,7 +2692,7 @@ function function_f19e31a2() {
             var_9f0bcfaa = trace[#"position"] + vectorscale((0, 0, 1), 8);
         }
         level.var_15c1545d.objectiveanchor clientfield::set("" + #"hash_56a6be021662c82e", 3);
-        if (level.var_2812b9f5 == #"hash_455ec8cc0d1ed4a4" || level.var_2812b9f5 == #"hash_acac3fe7a341329" || level.var_2812b9f5 == #"hash_43b8d4f24851653e" || level.var_2812b9f5 == #"hash_156c697af81feaf9") {
+        if (level.var_2812b9f5 == #"spawner_zm_steiner" || level.var_2812b9f5 == #"hash_acac3fe7a341329" || level.var_2812b9f5 == #"hash_43b8d4f24851653e" || level.var_2812b9f5 == #"hash_156c697af81feaf9") {
             level.var_4095f78b = spawnactor(level.var_2812b9f5, var_9f0bcfaa, (0, 0, 0));
             level.var_4095f78b function_6c40ff50();
             level.var_4095f78b thread function_c08eb1c4();
@@ -2725,7 +2725,7 @@ function function_f19e31a2() {
         if (level.var_9b7bd0e8 !== 0) {
             level thread zm_vo::function_7622cb70(#"hash_482f677bdbe28fd1", 1.7, 1);
         }
-        if (level.var_2812b9f5 == #"hash_455ec8cc0d1ed4a4" || level.var_2812b9f5 == #"hash_acac3fe7a341329" || level.var_2812b9f5 == #"hash_43b8d4f24851653e" || level.var_2812b9f5 == #"hash_156c697af81feaf9") {
+        if (level.var_2812b9f5 == #"spawner_zm_steiner" || level.var_2812b9f5 == #"hash_acac3fe7a341329" || level.var_2812b9f5 == #"hash_43b8d4f24851653e" || level.var_2812b9f5 == #"hash_156c697af81feaf9") {
             level.var_4095f78b thread function_b5ba566b(level.var_4095f78b.origin, level.var_4095f78b.angles, "ai_t9_zm_steiner_base_com_stn_pain_ww_idle_loop_01");
         }
         level waittill(#"hash_1b8264e950c01344");

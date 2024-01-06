@@ -49,20 +49,20 @@ function function_f9f06983(*var_d3440450) {
     foreach (spawner in var_d7e0979c) {
         spawner spawner::add_spawn_function(&function_306807e5);
     }
-    level.var_fdc6062e = var_8a3bb97c[0] spawner::spawn(1);
+    level.adler = var_8a3bb97c[0] spawner::spawn(1);
     level.woods = var_6534f716[0] spawner::spawn(1);
     var_fcbd93e0 = struct::get("raid_roof_adler", "targetname");
     var_1100faeb = struct::get("raid_roof_woods", "targetname");
-    level.var_fdc6062e forceteleport(var_fcbd93e0.origin, var_fcbd93e0.angles);
+    level.adler forceteleport(var_fcbd93e0.origin, var_fcbd93e0.angles);
     level.woods forceteleport(var_1100faeb.origin, var_1100faeb.angles);
     level.var_efac709f = getent("player_breach_clip", "targetname");
     level.var_efac709f disconnectpaths();
-    var_d582d701 = getent("alley_clip", "targetname");
-    var_d582d701 delete();
+    alley_clip = getent("alley_clip", "targetname");
+    alley_clip delete();
     self util::function_3b6593e4(0.5, 0.25);
     level util::function_3e65fe0b(1);
-    level.var_2f3bf638 = getent("raid_car", "targetname");
-    level thread scene::play("scene_tkd_hit2_bar_alley", "Trunk_close", [0:level.var_2f3bf638]);
+    level.raid_car = getent("raid_car", "targetname");
+    level thread scene::play("scene_tkd_hit2_bar_alley", "Trunk_close", [0:level.raid_car]);
     level thread scene::play("scene_tkd_hit2_alley_civilians", "window_civilian");
     level thread scene::play("scene_tkd_hit2_alley_civilians", "drug_deal");
     level thread scene::init("scene_tkd_hit2_bar_alley");
@@ -72,7 +72,7 @@ function function_f9f06983(*var_d3440450) {
     level thread scene::play("scene_tkd_hit2_bar_alley", "Enemy_Waiting");
     level thread function_a6a40606();
     level thread objectives::scripted("obj_takedown_capture", undefined, #"hash_49c1d860c97e3792");
-    level thread objectives::follow("follow_adler", level.var_fdc6062e, undefined, 0, 0);
+    level thread objectives::follow("follow_adler", level.adler, undefined, 0, 0);
 }
 
 // Namespace tkdn_raid_apt/namespace_8c930e93
@@ -100,7 +100,7 @@ function main(var_d3440450, var_50cc0d4f) {
     }
     var_f10203a3 = getspawnerarray("set_no_context_melee", "script_noteworthy");
     foreach (spawner in var_f10203a3) {
-        spawner spawner::add_spawn_function(&function_6ac3fee4);
+        spawner spawner::add_spawn_function(&set_no_context_melee);
     }
     level thread function_a6a40606();
     level.player thread function_a8e1bcc4();
@@ -118,7 +118,7 @@ function main(var_d3440450, var_50cc0d4f) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x6d677489, Offset: 0x1320
 // Size: 0x12
-function function_6ac3fee4() {
+function set_no_context_melee() {
     self.var_c681e4c1 = 1;
 }
 
@@ -166,7 +166,7 @@ function function_a8e1bcc4() {
         level thread scene::play("scene_tkd_hit2_bar_alley", "enemy_react");
         level scene::stop("scene_tkd_hit2_adler_alley");
         level thread scene::play("scene_tkd_hit2_bar_alley", "Apt_Breach");
-        level.var_fdc6062e thread util::delay(2, undefined, &util::break_glass, 80);
+        level.adler thread util::delay(2, undefined, &util::break_glass, 80);
         wait(0.1);
         namespace_b100dd86::function_53531f27("trig_adler_advance_inside_apt");
         namespace_b100dd86::function_53531f27("trig_woods_advance_inside_apt");
@@ -183,9 +183,9 @@ function function_a8e1bcc4() {
     thread function_aeaba0c9("pool_table_mb_pos", "pool_table_mb_dest", 1);
     namespace_a052577e::function_1dc92e4f();
     level.woods.script_accuracy = 0.1;
-    level.var_fdc6062e.script_accuracy = 0.1;
+    level.adler.script_accuracy = 0.1;
     wait(1);
-    var_a79e4694 = snd::play("vox_cp_tdwn_03750_adlr_gogogo_c5", [1:"j_head", 0:level.var_fdc6062e]);
+    var_a79e4694 = snd::play("vox_cp_tdwn_03750_adlr_gogogo_c5", [1:"j_head", 0:level.adler]);
     level thread scene::play("scene_tkd_hit2_apt_door_kick", "start");
     level battlechatter::function_2ab9360b(1);
     wait(1);
@@ -353,7 +353,7 @@ function function_306807e5() {
     self endon(#"hash_10622d7e7f80ce71");
     self.var_c681e4c1 = 1;
     if (self.script_noteworthy == "kitchen_enemy4") {
-        level.var_e985d6b4 = self;
+        level.kitchen_enemy4 = self;
     }
     self thread function_5ba83448();
     level waittill(#"hash_2d7f82360e399f87");
@@ -453,7 +453,7 @@ function function_ced2a7df() {
     level waittill(#"hash_67f0f350991bdaf4");
     while (1) {
         wait(8);
-        var_23811abd = snd::play("vox_cp_tdwn_03750_adlr_onyoumason_b2", [1:"j_head", 0:level.var_fdc6062e]);
+        var_23811abd = snd::play("vox_cp_tdwn_03750_adlr_onyoumason_b2", [1:"j_head", 0:level.adler]);
         snd::function_2fdc4fb(var_23811abd);
         wait(4);
     }
@@ -474,7 +474,7 @@ function function_a6a40606() {
 // Size: 0x164
 function function_596afdef() {
     savegame::function_904f733(1);
-    level.var_fdc6062e ai::set_behavior_attribute("demeanor", "combat");
+    level.adler ai::set_behavior_attribute("demeanor", "combat");
     level.woods ai::set_behavior_attribute("demeanor", "combat");
     var_f3ebe39 = ai::function_e8b6bfec("floor1_guys");
     foreach (guy in var_f3ebe39) {
@@ -501,14 +501,14 @@ function function_503c8eb7() {
 // Size: 0x144
 function function_917872db() {
     level flag::wait_till_timeout(1.5, "flag_spawn_qasim_failsafe");
-    var_a2ec2530 = getspawnerarray("qasim_stairs", "targetname");
-    var_2fef04d8 = var_a2ec2530[0] spawner::spawn(1);
+    qasim_runner = getspawnerarray("qasim_stairs", "targetname");
+    var_2fef04d8 = qasim_runner[0] spawner::spawn(1);
     level notify(#"hash_750f5969110dee88");
     var_2fef04d8 namespace_b100dd86::function_6578b894();
-    var_c5225a2a = struct::get("rooftop_goto", "targetname");
+    rooftop_goto = struct::get("rooftop_goto", "targetname");
     objectives::remove("obj_takedown_qasim");
-    level objectives::complete("follow_adler", level.var_fdc6062e);
-    objectives::goto("obj_rooftops", var_c5225a2a.origin);
+    level objectives::complete("follow_adler", level.adler);
+    objectives::goto("obj_rooftops", rooftop_goto.origin);
     level thread function_effaa7aa();
 }
 
@@ -574,17 +574,17 @@ function function_5001b9be() {
 function function_5547ef8b() {
     level waittill(#"hash_750f5969110dee88");
     wait(1);
-    level.var_fdc6062e namespace_a635adb1::queue("vox_cp_tdwn_03800_adlr_theresqasim_a2");
+    level.adler namespace_a635adb1::queue("vox_cp_tdwn_03800_adlr_theresqasim_a2");
     wait(1);
-    level.var_fdc6062e namespace_a635adb1::queue("vox_cp_tdwn_03750_wood_comeonmason_ec");
+    level.adler namespace_a635adb1::queue("vox_cp_tdwn_03750_wood_comeonmason_ec");
     wait(2);
-    level.var_fdc6062e namespace_a635adb1::queue("vox_cp_tdwn_03800_adlr_qasimsheadedupt_21");
+    level.adler namespace_a635adb1::queue("vox_cp_tdwn_03800_adlr_qasimsheadedupt_21");
     wait(2.5);
-    level.var_fdc6062e namespace_a635adb1::queue("vox_cp_tdwn_03800_adlr_weneedqasimaliv_e5");
+    level.adler namespace_a635adb1::queue("vox_cp_tdwn_03800_adlr_weneedqasimaliv_e5");
     level flag::wait_till("flag_near_apt_stairs");
-    level.var_fdc6062e namespace_a635adb1::queue("vox_cp_tdwn_04100_adlr_qasimcantescape_7b");
+    level.adler namespace_a635adb1::queue("vox_cp_tdwn_04100_adlr_qasimcantescape_7b");
     wait(0.75);
-    level.var_fdc6062e namespace_a635adb1::queue("vox_cp_tdwn_03800_adlr_findhim_00");
+    level.adler namespace_a635adb1::queue("vox_cp_tdwn_03800_adlr_findhim_00");
 }
 
 // Namespace tkdn_raid_apt/namespace_8c930e93

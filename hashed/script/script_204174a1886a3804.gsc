@@ -2,13 +2,13 @@
 #using scripts\core_common\lui_shared.gsc;
 #using scripts\core_common\clientfield_shared.gsc;
 
-#namespace namespace_1e8602fa;
+#namespace incursion_infiltrationtitlecards;
 
-// Namespace namespace_1e8602fa
+// Namespace incursion_infiltrationtitlecards
 // Method(s) 7 Total 14
 class class_7c3faeda : cluielem {
 
-    // Namespace class_7c3faeda/namespace_1e8602fa
+    // Namespace class_7c3faeda/incursion_infiltrationtitlecards
     // Params 0, eflags: 0x8
     // Checksum 0x9f56f53c, Offset: 0x240
     // Size: 0x14
@@ -16,7 +16,7 @@ class class_7c3faeda : cluielem {
         cluielem::__constructor();
     }
 
-    // Namespace class_7c3faeda/namespace_1e8602fa
+    // Namespace class_7c3faeda/incursion_infiltrationtitlecards
     // Params 0, eflags: 0x90 class_linked
     // Checksum 0xff75f959, Offset: 0x7d8
     // Size: 0x14
@@ -24,7 +24,7 @@ class class_7c3faeda : cluielem {
         cluielem::__destructor();
     }
 
-    // Namespace namespace_7c3faeda/namespace_1e8602fa
+    // Namespace namespace_7c3faeda/incursion_infiltrationtitlecards
     // Params 2, eflags: 0x0
     // Checksum 0x3121b8de, Offset: 0x2d8
     // Size: 0x3c
@@ -32,7 +32,7 @@ class class_7c3faeda : cluielem {
         cluielem::open_luielem(player, flags);
     }
 
-    // Namespace namespace_7c3faeda/namespace_1e8602fa
+    // Namespace namespace_7c3faeda/incursion_infiltrationtitlecards
     // Params 1, eflags: 0x0
     // Checksum 0xafad6a02, Offset: 0x320
     // Size: 0x24
@@ -40,7 +40,7 @@ class class_7c3faeda : cluielem {
         cluielem::close_luielem(player);
     }
 
-    // Namespace namespace_7c3faeda/namespace_1e8602fa
+    // Namespace namespace_7c3faeda/incursion_infiltrationtitlecards
     // Params 0, eflags: 0x0
     // Checksum 0x39553705, Offset: 0x260
     // Size: 0x6c
@@ -50,7 +50,7 @@ class class_7c3faeda : cluielem {
         cluielem::add_clientfield("SelectedInfiltration", 1, 3, "int");
     }
 
-    // Namespace namespace_7c3faeda/namespace_1e8602fa
+    // Namespace namespace_7c3faeda/incursion_infiltrationtitlecards
     // Params 2, eflags: 0x0
     // Checksum 0x566df63d, Offset: 0x350
     // Size: 0x42c
@@ -92,7 +92,7 @@ class class_7c3faeda : cluielem {
         }
     }
 
-    // Namespace namespace_7c3faeda/namespace_1e8602fa
+    // Namespace namespace_7c3faeda/incursion_infiltrationtitlecards
     // Params 2, eflags: 0x0
     // Checksum 0x6bc84a3a, Offset: 0x788
     // Size: 0x44
@@ -102,7 +102,7 @@ class class_7c3faeda : cluielem {
 
 }
 
-// Namespace namespace_1e8602fa/namespace_1e8602fa
+// Namespace incursion_infiltrationtitlecards/incursion_infiltrationtitlecards
 // Params 0, eflags: 0x0
 // Checksum 0xf05e4dd6, Offset: 0x110
 // Size: 0x34
@@ -112,7 +112,7 @@ function register() {
     return elem;
 }
 
-// Namespace namespace_1e8602fa/namespace_1e8602fa
+// Namespace incursion_infiltrationtitlecards/incursion_infiltrationtitlecards
 // Params 2, eflags: 0x0
 // Checksum 0xa4df70d2, Offset: 0x150
 // Size: 0x38
@@ -120,7 +120,7 @@ function open(player, flags = 0) {
     [[ self ]]->open(player, flags);
 }
 
-// Namespace namespace_1e8602fa/namespace_1e8602fa
+// Namespace incursion_infiltrationtitlecards/incursion_infiltrationtitlecards
 // Params 1, eflags: 0x0
 // Checksum 0x2fdf789, Offset: 0x190
 // Size: 0x1c
@@ -128,7 +128,7 @@ function close(player) {
     [[ self ]]->close(player);
 }
 
-// Namespace namespace_1e8602fa/namespace_1e8602fa
+// Namespace incursion_infiltrationtitlecards/incursion_infiltrationtitlecards
 // Params 1, eflags: 0x0
 // Checksum 0xe6010a6a, Offset: 0x1b8
 // Size: 0x1a
@@ -136,7 +136,7 @@ function is_open(player) {
     return [[ self ]]->function_7bfd10e6(player);
 }
 
-// Namespace namespace_1e8602fa/namespace_1e8602fa
+// Namespace incursion_infiltrationtitlecards/incursion_infiltrationtitlecards
 // Params 2, eflags: 0x0
 // Checksum 0x77fa0285, Offset: 0x1e0
 // Size: 0x28
@@ -144,7 +144,7 @@ function set_state(player, state_name) {
     [[ self ]]->set_state(player, state_name);
 }
 
-// Namespace namespace_1e8602fa/namespace_1e8602fa
+// Namespace incursion_infiltrationtitlecards/incursion_infiltrationtitlecards
 // Params 2, eflags: 0x0
 // Checksum 0x87bb05ab, Offset: 0x210
 // Size: 0x28

@@ -51,7 +51,7 @@ function private function_70a657d8() {
 // Checksum 0xb7d1b507, Offset: 0x4a8
 // Size: 0x274
 function function_27473e44() {
-    zm_perks::register_perk_basic_info(#"hash_38c08136902fd553", #"hash_767d817479aafce5", 2000, #"hash_30c002174ad27054", getweapon("zombie_perk_bottle_tombstone"), undefined, #"hash_46862a73c93d9338");
+    zm_perks::register_perk_basic_info(#"hash_38c08136902fd553", #"perk_tombstone", 2000, #"hash_30c002174ad27054", getweapon("zombie_perk_bottle_tombstone"), undefined, #"hash_46862a73c93d9338");
     zm_perks::register_perk_precache_func(#"hash_38c08136902fd553", &precache);
     zm_perks::register_perk_clientfields(#"hash_38c08136902fd553", &register_clientfield, &set_clientfield);
     zm_perks::register_perk_machine(#"hash_38c08136902fd553", &perk_machine_setup);
@@ -76,7 +76,7 @@ function precache() {
         [[ level.var_cf57ff63 ]]();
         return;
     }
-    level._effect[#"hash_2461ad92ebe5737f"] = "maps/zm_gold/fx9_sur_machine_tombstone_eye_smk";
+    level._effect[#"tombstone_light"] = "maps/zm_gold/fx9_sur_machine_tombstone_eye_smk";
     level.machine_assets[#"hash_38c08136902fd553"] = spawnstruct();
     level.machine_assets[#"hash_38c08136902fd553"].weapon = getweapon("zombie_perk_bottle_tombstone");
     level.machine_assets[#"hash_38c08136902fd553"].off_model = "p9_sur_machine_tombstone_off";

@@ -4508,13 +4508,13 @@ function function_73fab74d() {
     function_9db3109f(#"allies", #"allies");
     function_9db3109f(#"axis", #"axis");
     function_9db3109f(#"allies", #"hash_75fde2190cfb2c00");
-    function_9db3109f(#"axis", #"hash_3dc25519365504ef");
+    function_9db3109f(#"axis", #"kgb");
     function_9db3109f(#"team3", #"side3");
     function_d3e0802c(#"sidea", #"sideb");
     function_d3e0802c(#"teama", #"teamb");
     function_d3e0802c(#"attacker", #"defender");
     function_d3e0802c(#"attackers", #"defenders");
-    function_d3e0802c(#"hash_75fde2190cfb2c00", #"hash_3dc25519365504ef");
+    function_d3e0802c(#"hash_75fde2190cfb2c00", #"kgb");
     function_c16f65a3(#"allies", #"axis");
     function_c16f65a3(#"team3", #"any");
     set_team_mapping(#"allies", #"axis");

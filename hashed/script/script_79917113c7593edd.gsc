@@ -17,7 +17,7 @@ function init_shared() {
     callback::on_localclient_connect(&on_localclient_connect);
     clientfield::register_clientuimodel("vehicle.selectedWeapon", #"hash_4c3ca831f332d4cc", #"hash_3b221bb80ee9e4b8", 1, 2, "int", &function_db40057d, 0, 0);
     clientfield::register_clientuimodel("vehicle.flareCount", #"hash_4c3ca831f332d4cc", #"hash_21c145e04c776d6e", 1, 2, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("vehicle.inAC130", #"hash_4c3ca831f332d4cc", #"hash_330b1e1999f09b72", 1, 1, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("vehicle.inAC130", #"hash_4c3ca831f332d4cc", #"inac130", 1, 1, "int", undefined, 0, 0);
     level.var_3e7d252b = getscriptbundle("killstreak_ac130");
 }
 

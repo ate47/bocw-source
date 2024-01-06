@@ -381,8 +381,8 @@ function function_d5ca3f62(player) {
     fx_name = undefined;
     if (isdefined(self.weapon)) {
         killstreak_type = killstreaks::get_killstreak_for_weapon(self.weapon);
-        var_42c49b1c = killstreaks::get_script_bundle(killstreak_type);
-        fx_name = var_42c49b1c.var_3af79d7e;
+        killstreak_bundle = killstreaks::get_script_bundle(killstreak_type);
+        fx_name = killstreak_bundle.var_3af79d7e;
     }
     self function_2cbae477(fx_name);
     player waittilltimeout(90, #"strobe_marked", #"payload_delivered", #"payload_fail", #"disconnect");

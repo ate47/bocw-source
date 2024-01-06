@@ -67,7 +67,7 @@ function private function_32402e29(*var_e662d59, *var_ae85e32) {
     namespace_61e6d095::create(#"hash_5903f7e85045920f", #"hash_77979ca92bd3cc85");
     namespace_61e6d095::function_28027c42(#"hash_5903f7e85045920f", #"hash_5903f7e85045920f");
     namespace_c8e236da::function_ebf737f8(#"hash_1aefb4de625039be");
-    level waittill(#"hash_4ac0b09821c90d92");
+    level waittill(#"note_closed");
     namespace_c8e236da::function_c27f93d5();
     namespace_61e6d095::remove(#"hash_5903f7e85045920f");
     namespace_61e6d095::function_4279fd02(#"hash_5903f7e85045920f");

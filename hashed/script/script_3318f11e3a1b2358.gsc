@@ -71,7 +71,7 @@ function private function_8610d024(localclientnum, _cmd) {
     if (isarray(args) && args.size >= 2) {
         cmd = args[0];
         switch (cmd) {
-        case #"hash_2f639e4c86018332":
+        case #"#":
         case #"m":
             level thread function_21d71e38(player, cmd, args);
             break;
@@ -88,8 +88,8 @@ function private function_8610d024(localclientnum, _cmd) {
             break;
         }
     }
-    if (isscriptfunctionptr(level._snd._callbacks[#"hash_49d86311cb37185a"])) {
-        level thread [[ level._snd._callbacks[#"hash_49d86311cb37185a"] ]](localclientnum, _cmd);
+    if (isscriptfunctionptr(level._snd._callbacks[#"clientsoundcommand"])) {
+        level thread [[ level._snd._callbacks[#"clientsoundcommand"] ]](localclientnum, _cmd);
     }
 }
 

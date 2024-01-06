@@ -35,7 +35,7 @@ function init() {
 // Checksum 0x2d75e0c1, Offset: 0x350
 // Size: 0x16
 function main() {
-    level.var_8cff5775.var_18f8e489 = [];
+    level.doa.var_18f8e489 = [];
 }
 
 // Namespace namespace_85f9e33a/namespace_85f9e33a
@@ -49,7 +49,7 @@ function function_81853592() {
     result = undefined;
     result = self waittill(#"hash_3e251384a5400dce");
     if (is_true(self.var_7c56394) && is_true(result.var_760a0807)) {
-        arrayremovevalue(level.var_8cff5775.var_18f8e489, self);
+        arrayremovevalue(level.doa.var_18f8e489, self);
         namespace_1e25ad94::function_f5f0c0f8("Deleting Flogger trap permenently at:" + self.origin);
     }
     if (isdefined(self.trigger)) {
@@ -70,14 +70,14 @@ function function_81853592() {
 // Checksum 0x87153a42, Offset: 0x558
 // Size: 0x210
 function function_ecfc6c75(trap, var_7c56394 = 0) {
-    var_4a2d3ac2 = namespace_ec06fe4a::function_e22ae9b3(trap.origin, "p8_fxanim_mp_zmuseum_flogger_trap_mod");
-    if (isdefined(var_4a2d3ac2)) {
-        var_4a2d3ac2.targetname.var_4a2d3ac2 = "hazard";
-        var_4a2d3ac2.var_fd5301f9.var_4a2d3ac2 = "flogger";
-        var_4a2d3ac2.angles.var_4a2d3ac2 = trap.angles;
-        var_4a2d3ac2 enablelinkto();
+    hazard = namespace_ec06fe4a::function_e22ae9b3(trap.origin, "p8_fxanim_mp_zmuseum_flogger_trap_mod");
+    if (isdefined(hazard)) {
+        hazard.targetname.hazard = "hazard";
+        hazard.var_fd5301f9.hazard = "flogger";
+        hazard.angles.hazard = trap.angles;
+        hazard enablelinkto();
     }
-    trap.script_model = var_4a2d3ac2;
+    trap.script_model = hazard;
     trap.var_7c56394 = var_7c56394;
     trap.trigger.trap = [];
     trap.spinrate.trap = 1;
@@ -110,12 +110,12 @@ function function_ecfc6c75(trap, var_7c56394 = 0) {
 // Size: 0xf4
 function function_7fb58446(trap, page = 0) {
     if (page) {
-        if (!isdefined(level.var_8cff5775.var_18f8e489)) {
-            level.var_8cff5775.var_18f8e489 = [];
-        } else if (!isarray(level.var_8cff5775.var_18f8e489)) {
-            level.var_8cff5775.var_18f8e489 = array(level.var_8cff5775.var_18f8e489);
+        if (!isdefined(level.doa.var_18f8e489)) {
+            level.doa.var_18f8e489 = [];
+        } else if (!isarray(level.doa.var_18f8e489)) {
+            level.doa.var_18f8e489 = array(level.doa.var_18f8e489);
         }
-        level.var_8cff5775.var_18f8e489[level.var_8cff5775.var_18f8e489.size] = trap;
+        level.doa.var_18f8e489[level.doa.var_18f8e489.size] = trap;
     } else {
         function_ecfc6c75(trap);
     }
@@ -134,7 +134,7 @@ function function_9d10940b() {
         if (namespace_4dae815d::function_59a9cf1d() == 0) {
             continue;
         }
-        foreach (trap in level.var_8cff5775.var_18f8e489) {
+        foreach (trap in level.doa.var_18f8e489) {
             time = gettime();
             if (isdefined(trap.var_13c99cf7) && time < trap.var_13c99cf7) {
                 continue;
@@ -183,13 +183,13 @@ function function_9d10940b() {
 // Checksum 0x14e3e0ed, Offset: 0xbc8
 // Size: 0x138
 function function_a76494d5() {
-    level.var_8cff5775.var_18f8e489 = [];
+    level.doa.var_18f8e489 = [];
     level thread function_9d10940b();
-    if (isdefined(level.var_8cff5775.var_a77e6349)) {
-        traps = [[ level.var_8cff5775.var_a77e6349 ]]->function_87f950c1("flogger");
+    if (isdefined(level.doa.var_a77e6349)) {
+        traps = [[ level.doa.var_a77e6349 ]]->function_87f950c1("flogger");
         page = 1;
     } else {
-        traps = [[ level.var_8cff5775.var_39e3fa99 ]]->function_242886d5("flogger");
+        traps = [[ level.doa.var_39e3fa99 ]]->function_242886d5("flogger");
     }
     foreach (trap in traps) {
         trap.var_13c99cf7.trap = 0;

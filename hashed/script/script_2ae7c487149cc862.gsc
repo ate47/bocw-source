@@ -17,7 +17,7 @@ function event_handler[level_init] main(*eventstruct) {
     clientfield::register("allplayers", "" + #"hash_5323a6afe3b7e366", 1, 1, "counter", &function_53ab1c7, 0, 0);
     clientfield::register("allplayers", "" + #"hash_1f6229f37994ba8f", 1, 1, "counter", &function_ebf5d79, 0, 0);
     clientfield::register("toplayer", "" + #"hash_bd79b6ca5ca6bc0", 1, 2, "int", &function_f002c513, 0, 0);
-    clientfield::register("toplayer", "" + #"hash_70ce1650358c0923", 1, 1, "int", &function_98c5cac0, 0, 0);
+    clientfield::register("toplayer", "" + #"dark_aether", 1, 1, "int", &function_98c5cac0, 0, 0);
     clientfield::register("toplayer", "" + #"hash_69409daf95eb8ffe", 1, 1, "int", &function_bd4ba224, 0, 0);
     clientfield::register("scriptmover", "" + #"hash_37895eb34ae6a3b0", 1, 1, "counter", &function_9609c8b9, 0, 0);
     clientfield::register("scriptmover", "" + #"hash_2a3141c1214d6eaa", 1, 1, "counter", &function_6a4e64d1, 0, 0);

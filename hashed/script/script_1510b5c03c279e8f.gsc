@@ -39,7 +39,7 @@
 // Size: 0x5e
 function init() {
     namespace_250e9486::function_252dff4d("spider", 14, &function_66da4f00, &function_9bb842bf, undefined, &function_75f88bcf);
-    level.var_8cff5775.var_5b56a42c = 0;
+    level.doa.var_5b56a42c = 0;
 }
 
 // Namespace namespace_7457b8d5/namespace_7457b8d5
@@ -47,7 +47,7 @@ function init() {
 // Checksum 0x7f52939f, Offset: 0x2d8
 // Size: 0x1c
 function function_75f88bcf() {
-    return level.var_8cff5775.var_5b56a42c < 15;
+    return level.doa.var_5b56a42c < 15;
 }
 
 // Namespace namespace_7457b8d5/namespace_7457b8d5
@@ -63,7 +63,7 @@ function function_9bb842bf() {
 // Checksum 0xe668091, Offset: 0x310
 // Size: 0x2c4
 function function_66da4f00() {
-    level.var_8cff5775.var_5b56a42c++;
+    level.doa.var_5b56a42c++;
     namespace_250e9486::function_25b2c8a9();
     self.fovcosine = 0;
     self.fovcosinebusy = 0;
@@ -128,9 +128,9 @@ function state_death_update(*params) {
     self namespace_83eb6304::function_3ecfde67("egg_explode");
     self asmrequestsubstate("death@stationary");
     vehicle_ai::waittill_asm_complete("death@stationary", 2);
-    level.var_8cff5775.var_5b56a42c--;
-    if (level.var_8cff5775.var_5b56a42c < 0) {
-        level.var_8cff5775.var_5b56a42c = 0;
+    level.doa.var_5b56a42c--;
+    if (level.doa.var_5b56a42c < 0) {
+        level.doa.var_5b56a42c = 0;
     }
     self vehicle_death::death_fx();
     vehicle_death::deletewhensafe();

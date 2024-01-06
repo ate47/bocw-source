@@ -188,7 +188,7 @@ function function_b1c6ca30(var_d13d4980) {
         var_7580ce3e.origin.var_7580ce3e = var_d13d4980.origin - vectorscale((0, 0, 1), 42);
     }
     scriptmodel = var_7580ce3e.scriptmodel;
-    var_a28d0d8c = var_7580ce3e.origin;
+    reward_origin = var_7580ce3e.origin;
     n_count = 1;
     players = getplayers();
     switch (players.size) {
@@ -200,7 +200,7 @@ function function_b1c6ca30(var_d13d4980) {
         n_count = 3;
         break;
     }
-    var_2858caa2 = {#var_738dfc81:n_count, #angles:scriptmodel.angles, #origin:var_a28d0d8c};
+    var_2858caa2 = {#var_738dfc81:n_count, #angles:scriptmodel.angles, #origin:reward_origin};
     a_items = var_2858caa2 namespace_65181344::function_fd87c780(#"zm_ltm1_powerup_drop_list", n_count, 2);
     if (a_items.size > 1) {
         var_b7d0c0a8 = randomint(a_items.size);

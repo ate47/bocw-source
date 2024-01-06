@@ -39,8 +39,8 @@ function function_90cdf7ba(type, origin) {
     case 34:
         count = randomintrange(5, 10);
         name = "skeleton_spear";
-        var_2d8ae5ef = "player_trail_" + self.var_8cff5775.color;
-        var_9cc53739 = array("doa_exit_taken", "arena_completed", "game_over");
+        var_2d8ae5ef = "player_trail_" + self.doa.color;
+        killnote = array("doa_exit_taken", "arena_completed", "game_over");
         var_4d5cf4b2 = level;
         namespace_e32bb68::function_3a59ec34("guardian_type_skeleton");
         break;
@@ -50,7 +50,7 @@ function function_90cdf7ba(type, origin) {
         #/
         break;
     }
-    var_49a15185 = namespace_ff8b8430::function_d7c5adee(name);
+    var_49a15185 = doa_enemy::function_d7c5adee(name);
     if (isdefined(var_49a15185)) {
         while (count) {
             count--;
@@ -58,7 +58,7 @@ function function_90cdf7ba(type, origin) {
             if (var_1c446dd6 >= 44) {
                 continue;
             }
-            ai = namespace_ff8b8430::function_db55a448(var_49a15185, origin + (randomintrange(-40, 40), randomintrange(-40, 40), 0));
+            ai = doa_enemy::function_db55a448(var_49a15185, origin + (randomintrange(-40, 40), randomintrange(-40, 40), 0));
             if (isdefined(ai)) {
                 ai.owner.ai = self;
                 if (isdefined(var_2d8ae5ef)) {
@@ -67,13 +67,13 @@ function function_90cdf7ba(type, origin) {
                 if (isdefined(var_e254c3ed)) {
                     ai thread [[ var_e254c3ed ]]();
                 }
-                if (isdefined(var_9cc53739) && isdefined(var_4d5cf4b2)) {
-                    if (isarray(var_9cc53739)) {
-                        foreach (note in var_9cc53739) {
+                if (isdefined(killnote) && isdefined(var_4d5cf4b2)) {
+                    if (isarray(killnote)) {
+                        foreach (note in killnote) {
                             ai thread namespace_ec06fe4a::function_d55f042c(var_4d5cf4b2, note);
                         }
                     } else {
-                        ai thread namespace_ec06fe4a::function_d55f042c(var_4d5cf4b2, var_9cc53739);
+                        ai thread namespace_ec06fe4a::function_d55f042c(var_4d5cf4b2, killnote);
                     }
                 }
             }

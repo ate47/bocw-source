@@ -97,7 +97,7 @@ function private function_5bb13b48(player) {
             }
         } else {
             player iprintlnbold(#"hash_2ea29b19d0e205e7");
-            self playsoundtoplayer(#"hash_7d81a3ace87fb4e2", player);
+            self playsoundtoplayer(#"uin_default_action_denied", player);
         }
     }
     if (!is_true(level.var_aff59367) && self.usecount >= level.var_ad9d03e7) {

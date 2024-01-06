@@ -431,8 +431,8 @@
 #infected_survivor,0,100,0,#,0,false,0,false,#hash_3887f79f505d8dcd,#stats_infected_survivor,#medal_infected_survivor,true,true,false,#gamemode,#,#,#,#,false,false,0,?0,0,false
 #survivor_still_alive,0,0,0,#,0,false,0,false,#hash_541891e4eb1897e0,#,#,false,true,false,#,#,#,#,#,false,false,0,?0,0,false
 #final_survivor,0,250,350,#,0,false,0,false,#hash_43a1a0d614c400e1,#stats_final_survivor,#medal_final_survivor,true,true,false,#gamemode,#,#,#,#,false,false,0,?0,0,false
-#hash_611f76f9237038ca,0,150,0,#,0,false,0,false,#,#hash_3ac0b25bcb4d86c5,#medal_infect_3_enemies,true,true,false,#gamemode,#,#,#,#,false,false,0,?0,0,false
-#hash_87a66991097bd18,0,150,0,#,0,false,0,false,#,#hash_26187deba312d31f,#medal_survive_30_seconds,true,true,false,#gamemode,#,#,#,#,false,false,0,?0,0,false
+#infected_infect_3_enemies,0,150,0,#,0,false,0,false,#,#hash_3ac0b25bcb4d86c5,#medal_infect_3_enemies,true,true,false,#gamemode,#,#,#,#,false,false,0,?0,0,false
+#infected_survive_30_seconds,0,150,0,#,0,false,0,false,#,#hash_26187deba312d31f,#medal_survive_30_seconds,true,true,false,#gamemode,#,#,#,#,false,false,0,?0,0,false
 #kill_enemy_grenade_throwback,0,0,0,#,0,false,0,false,#,#,#,false,false,false,#,#,#,#,#,false,false,0,?0,0,false
 #hacked,0,0,0,#,0,false,0,false,#,#,#,false,false,false,#,#,#,#,#,false,false,0,?0,0,false
 #hash_404f4ab8edc8e94b,0,0,0,#,0,false,0,false,#,#,#,false,false,false,#,#,#,#,#,false,false,0,?0,0,false

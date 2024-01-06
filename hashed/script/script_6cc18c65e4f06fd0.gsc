@@ -58,7 +58,7 @@ function init() {
     scene::add_scene_func(#"hash_66a962b4710a2287", &function_e3c65980, "done");
     level thread function_cdf29db1(1);
     level thread function_1d66a215(1);
-    level thread function_5e569522(1);
+    level thread end_fight_boss_arm_clip(1);
     if (!zm_utility::is_ee_enabled()) {
         return;
     }
@@ -135,7 +135,7 @@ function function_1d66a215(b_hide) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xed2b921, Offset: 0x1028
 // Size: 0xdc
-function function_5e569522(b_hide) {
+function end_fight_boss_arm_clip(b_hide) {
     var_f39a76f2 = getentarray("end_fight_boss_arm_clip", "targetname");
     if (!isdefined(var_f39a76f2)) {
         return;
@@ -503,8 +503,8 @@ function function_dc466f4e() {
     level thread function_542224cc(0.5, (0, 0, 0), "screen_fade_in_black");
     level thread function_abb25db(0.15, (0, 0, 0), "screen_fade_to_black");
     level scene::stop("aib_t9_zm_vign_peck_seated_01", 1);
-    if (isdefined(level.var_9f1e2800)) {
-        level.var_9f1e2800 delete();
+    if (isdefined(level.peck_chair)) {
+        level.peck_chair delete();
     }
     if (isdefined(level.var_9a81036b)) {
         level.var_9a81036b delete();
@@ -679,11 +679,11 @@ function function_aa6f0550(str_state, var_a013c644) {
         self.ai_state = "idle";
         self function_133bf8a7();
         break;
-    case #"hash_6a8b1918f70edff4":
+    case #"slam":
         self.ai_state = str_state;
         self function_c37dfa52(var_a013c644);
         break;
-    case #"hash_68b166a271f890bf":
+    case #"swarm":
         self.ai_state = str_state;
         self function_75edf7ba();
         break;
@@ -825,7 +825,7 @@ function function_75edf7ba() {
 // Size: 0xac
 function function_7d032ab3() {
     level endon(#"hash_3807e7b1086e4aa0", #"end_game");
-    self waittill(#"hash_71a52d15723347c");
+    self waittill(#"swarm_attack");
     self namespace_cc727a3b::function_f2b0a2e1();
     for (i = 0; i < 4; i++) {
         if (!isdefined(self)) {

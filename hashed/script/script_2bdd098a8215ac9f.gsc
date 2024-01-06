@@ -21,8 +21,8 @@ function private autoexec __init__system__() {
 // Checksum 0x4f6fd33c, Offset: 0x170
 // Size: 0x74
 function function_70a657d8() {
-    clientfield::register("scriptmover", "crafting_Table_spawn_fx", 1, 1, "int", &function_5a9ac55d, 0, 0);
-    level.var_3ed9fd33 = namespace_63c13948::register();
+    clientfield::register("scriptmover", "crafting_Table_spawn_fx", 1, 1, "int", &crafting_table_spawn_fx, 0, 0);
+    level.var_3ed9fd33 = sr_crafting_table_menu::register();
     namespace_52c8f34d::function_70a657d8();
 }
 
@@ -38,7 +38,7 @@ function postinit() {
 // Params 7, eflags: 0x0
 // Checksum 0xa4018a6e, Offset: 0x200
 // Size: 0x6c
-function function_5a9ac55d(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function crafting_table_spawn_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         function_239993de(fieldname, "zombie/fx9_crafting_table_lantern", self, "lantern_jnt");
     }

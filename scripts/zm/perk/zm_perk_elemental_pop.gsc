@@ -40,7 +40,7 @@ function private function_70a657d8() {
 // Checksum 0x41209728, Offset: 0x3d0
 // Size: 0x2b4
 function function_27473e44() {
-    zm_perks::register_perk_basic_info(#"hash_51b6cc6dbafb7f31", #"hash_2c415fb051308f1b", 2000, #"hash_3aca6fccecde9e86", getweapon("zombie_perk_bottle_elemental_pop"), undefined, #"hash_363622d67a410b29");
+    zm_perks::register_perk_basic_info(#"hash_51b6cc6dbafb7f31", #"perk_elemental_pop", 2000, #"hash_3aca6fccecde9e86", getweapon("zombie_perk_bottle_elemental_pop"), undefined, #"hash_363622d67a410b29");
     zm_perks::register_perk_precache_func(#"hash_51b6cc6dbafb7f31", &precache);
     zm_perks::register_perk_clientfields(#"hash_51b6cc6dbafb7f31", &register_clientfield, &set_clientfield);
     zm_perks::register_perk_machine(#"hash_51b6cc6dbafb7f31", &perk_machine_setup);
@@ -64,7 +64,7 @@ function precache() {
         [[ level.var_cf57ff63 ]]();
         return;
     }
-    level._effect[#"hash_1832c7a0826c2fa1"] = #"hash_17afc35bb449d1c2";
+    level._effect[#"elemental_pop_light"] = #"hash_17afc35bb449d1c2";
     level.machine_assets[#"hash_51b6cc6dbafb7f31"] = spawnstruct();
     level.machine_assets[#"hash_51b6cc6dbafb7f31"].weapon = getweapon("zombie_perk_bottle_elemental_pop");
     level.machine_assets[#"hash_51b6cc6dbafb7f31"].off_model = "p9_sur_elemental_pop_off";
@@ -280,7 +280,7 @@ function function_a26b7152() {
             if (isdefined(n_zombie_limit) && n_zombie_limit == 0) {
                 continue;
             }
-            self thread function_c278b547(n_fraction);
+            self thread elemental_pop_reload_fx(n_fraction);
             self notify(#"hash_410b85a0d0e82dc1");
             self playsound(#"hash_44f5e332b770413c");
             a_zombies = getaiteamarray(level.zombie_team);
@@ -371,7 +371,7 @@ function weapon_replaced_monitor(weapon) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x6507de1f, Offset: 0x1760
 // Size: 0xec
-function function_c278b547(n_fraction) {
+function elemental_pop_reload_fx(n_fraction) {
     self endon(#"disconnect");
     if (n_fraction >= 0.67) {
         self clientfield::set("elemental_pop_reload_fx", 1);

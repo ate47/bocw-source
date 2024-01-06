@@ -34,7 +34,7 @@ function init() {
 // Size: 0x204
 function setupclientfields() {
     clientfield::register_clientuimodel("hudItems.squadSpawnOnStatus", #"hash_6f4b11a0bee9b73d", #"hash_7105404fe72ff3f", 1, 3, "int", undefined, 0, 0);
-    clientfield::register_clientuimodel("hudItems.squadSpawnActive", #"hash_6f4b11a0bee9b73d", #"hash_6e232863fb0bc69e", 1, 1, "int", &function_cc03b772, 0, 0);
+    clientfield::register_clientuimodel("hudItems.squadSpawnActive", #"hash_6f4b11a0bee9b73d", #"squadspawnactive", 1, 1, "int", &function_cc03b772, 0, 0);
     clientfield::register_clientuimodel("hudItems.squadSpawnRespawnStatus", #"hash_6f4b11a0bee9b73d", #"hash_6b8b915fbdeaa722", 1, 2, "int", undefined, 0, 0);
     clientfield::register_clientuimodel("hudItems.squadSpawnViewType", #"hash_6f4b11a0bee9b73d", #"hash_2d210ef59c073abd", 1, 1, "int", undefined, 0, 0);
     clientfield::register_clientuimodel("hudItems.squadAutoSpawnPromptActive", #"hash_6f4b11a0bee9b73d", #"hash_4b3a0953a67ca151", 1, 1, "int", undefined, 0, 0);
@@ -67,8 +67,8 @@ function function_cc03b772(localclientnum, *oldval, newval, *bnewent, *binitials
         setsoundcontext("spawn_select_screen", "true");
         function_5ea2c6e3("uin_overhead_map", 0.1, 1);
         soundloopemitter(#"hash_5ef60d86d79dc9a1", (0, 0, 0));
-        if (isdefined(level.var_2d19faf3)) {
-            [[ level.var_2d19faf3 ]](fieldname);
+        if (isdefined(level.squadspawnactive)) {
+            [[ level.squadspawnactive ]](fieldname);
         }
     } else {
         level thread function_c97b609d(fieldname);

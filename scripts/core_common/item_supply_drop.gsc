@@ -1250,7 +1250,7 @@ function function_9771c7db(spawnpoint, itemspawnlist, var_93fe96a6 = 0, s_instan
     if (isdefined(level.var_183bdb80)) {
         supplydrop thread [[ level.var_183bdb80 ]](s_instance);
     } else {
-        supplydrop thread function_b835f789();
+        supplydrop thread supply_drop_portal_fx();
     }
     supplydrop.struct = struct;
     struct.supplydrop = supplydrop;
@@ -1262,7 +1262,7 @@ function function_9771c7db(spawnpoint, itemspawnlist, var_93fe96a6 = 0, s_instan
 // Params 0, eflags: 0x2 linked
 // Checksum 0xcbd63b64, Offset: 0x5ea0
 // Size: 0x4c
-function function_b835f789() {
+function supply_drop_portal_fx() {
     self clientfield::set("supply_drop_portal_fx", 1);
     wait(3);
     self clientfield::set("supply_drop_portal_fx", 0);

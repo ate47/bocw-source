@@ -8,17 +8,17 @@
 #using scripts\core_common\vehicle_shared.gsc;
 #using scripts\core_common\system_shared.gsc;
 
-#namespace namespace_37bbf050;
+#namespace player_vtol;
 
-// Namespace namespace_37bbf050/namespace_37bbf050
+// Namespace player_vtol/player_vtol
 // Params 0, eflags: 0x5
 // Checksum 0x63f5a619, Offset: 0xf8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_7190b01de1767404", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"player_vtol", &function_70a657d8, undefined, undefined, undefined);
 }
 
-// Namespace namespace_37bbf050/namespace_37bbf050
+// Namespace player_vtol/player_vtol
 // Params 0, eflags: 0x6 linked
 // Checksum 0x5e521a2d, Offset: 0x140
 // Size: 0x2c
@@ -26,7 +26,7 @@ function private function_70a657d8() {
     vehicle::add_main_callback("player_vtol", &function_1b39ded0);
 }
 
-// Namespace namespace_37bbf050/namespace_37bbf050
+// Namespace player_vtol/player_vtol
 // Params 0, eflags: 0x2 linked
 // Checksum 0x6262085a, Offset: 0x178
 // Size: 0xdc
@@ -42,7 +42,7 @@ function function_1b39ded0() {
     self thread targetting_delay::function_7e1a12ce(self.var_fc0dee44);
 }
 
-// Namespace namespace_37bbf050/namespace_37bbf050
+// Namespace player_vtol/player_vtol
 // Params 0, eflags: 0x2 linked
 // Checksum 0x78b478e7, Offset: 0x260
 // Size: 0xa8
@@ -58,7 +58,7 @@ function function_fcc7ca52() {
     }
 }
 
-// Namespace namespace_37bbf050/event_5fafee73
+// Namespace player_vtol/event_5fafee73
 // Params 0, eflags: 0x20
 // Checksum 0x9332faec, Offset: 0x310
 // Size: 0x12c
@@ -77,7 +77,7 @@ function event_handler[event_5fafee73] function_49e8c140() {
     self thread heatseekingmissile::missiletarget_proximitydetonateincomingmissile(bundle, "death", "dodge_missile", 1);
 }
 
-// Namespace namespace_37bbf050/event_a1da12f0
+// Namespace player_vtol/event_a1da12f0
 // Params 0, eflags: 0x20
 // Checksum 0x84c13e09, Offset: 0x448
 // Size: 0x1c
@@ -85,7 +85,7 @@ function event_handler[event_a1da12f0] function_9d2a2309() {
     target_set(self);
 }
 
-// Namespace namespace_37bbf050/namespace_37bbf050
+// Namespace player_vtol/player_vtol
 // Params 0, eflags: 0x2 linked
 // Checksum 0xe48cb87b, Offset: 0x470
 // Size: 0xc4
@@ -104,7 +104,7 @@ function function_7d2e878c() {
     }
 }
 
-// Namespace namespace_37bbf050/namespace_37bbf050
+// Namespace player_vtol/player_vtol
 // Params 1, eflags: 0x0
 // Checksum 0xf43e6ce2, Offset: 0x540
 // Size: 0x54

@@ -1109,7 +1109,7 @@ function function_b7c101fa() {
         while (getplayers().size <= 0) {
             waitframe(1);
         }
-        level flag::wait_till(#"hash_443b6a1ea0c4b52b");
+        level flag::wait_till(#"intro_scene_done");
     } else {
         return;
     }

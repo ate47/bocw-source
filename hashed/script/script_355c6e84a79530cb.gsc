@@ -90,7 +90,7 @@ function function_de302547(destination) {
         safehouse = var_5838bf4c;
     }
     if (isdefined(safehouse)) {
-        namespace_f3a74bbc::function_9d4e6125(safehouse.var_b588b063);
+        namespace_f3a74bbc::function_9d4e6125(safehouse.content_script_name);
         namespace_8b6a9d79::function_20d7e9c7(safehouse);
         level.var_7d45d0d4.var_c4181ea = safehouse;
     }
@@ -190,7 +190,7 @@ function function_e1fab6a9(instance, v_center) {
             wait(n_wait);
             n_time_elapsed = n_time_elapsed + n_wait;
         }
-        level thread function_ae44cb3d(instance, s_machine.var_739ddae);
+        level thread function_ae44cb3d(instance, s_machine.content_key);
         if (is_true(level.var_53bc31ad)) {
             a_ai = getaiteamarray(level.zombie_team);
             foreach (ai in a_ai) {
@@ -271,7 +271,7 @@ function function_5bc27bd2() {
     if (isdefined(self.var_7cf0a191)) {
         self [[ self.var_7cf0a191 ]]();
     }
-    playfxontag(#"hash_1050031e242f0f67", self, "tag_origin");
+    playfxontag(#"sr/fx9_obj_exploitative_teleporting", self, "tag_origin");
     wait(1.5);
     self delete();
 }
@@ -419,7 +419,7 @@ function private function_9d178321() {
         if (isdefined(safehouse)) {
             a_structs = struct::get_array(safehouse.targetname, "target");
             foreach (struct in a_structs) {
-                if (struct.var_739ddae === #"hash_4e5c1619877bed34") {
+                if (struct.content_key === #"hash_4e5c1619877bed34") {
                     safehouse.var_8947b368.safehouse = namespace_8b6a9d79::function_f3d93ee9(struct, #"toy_stuffed_animal_monkey_01");
                     safehouse.var_8947b368 val::set(#"hash_4e5c1619877bed34", "allowdeath", 0);
                     safehouse.s_ee = struct;

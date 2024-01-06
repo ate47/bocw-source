@@ -261,10 +261,10 @@ function function_d2f27d26(localclientnum, *oldval, newval, *bnewent, *binitials
         return;
     }
     if (bwastimejump && self haspart(fieldname, "j_head")) {
-        self.var_eae31f1b = function_239993de(fieldname, #"hash_24c6a9d87972dbc5", self, "j_head");
-    } else if (isdefined(self.var_eae31f1b)) {
-        stopfx(fieldname, self.var_eae31f1b);
-        self.var_eae31f1b = undefined;
+        self.stunned_head_fx = function_239993de(fieldname, #"hash_24c6a9d87972dbc5", self, "j_head");
+    } else if (isdefined(self.stunned_head_fx)) {
+        stopfx(fieldname, self.stunned_head_fx);
+        self.stunned_head_fx = undefined;
     }
 }
 

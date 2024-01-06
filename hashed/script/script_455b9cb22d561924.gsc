@@ -45,9 +45,9 @@ function registerbehaviorscriptfunctions() {
     #/
     behaviortreenetworkutility::registerbehaviortreescriptapi("dogTargetService", &dogtargetservice);
     /#
-        assert(isscriptfunctionptr(&function_574d7779));
+        assert(isscriptfunctionptr(&dogshouldmelee));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("dogShouldMelee", &function_574d7779);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("dogShouldMelee", &dogshouldmelee);
     /#
         assert(isscriptfunctionptr(&dogshouldwalk));
     #/
@@ -328,7 +328,7 @@ function dogtargetservice(behaviortreeentity) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xa72a30f5, Offset: 0x12b8
 // Size: 0xe0
-function function_574d7779(behaviortreeentity) {
+function dogshouldmelee(behaviortreeentity) {
     if (behaviortreeentity.ignoreall || !is_target_valid(behaviortreeentity, behaviortreeentity.favoriteenemy)) {
         return 0;
     }

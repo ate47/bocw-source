@@ -351,7 +351,7 @@ function private function_b4d1a9bb() {
 function private function_d0341c76(priority, var_9ced4e21) {
     self endon(#"death");
     result = undefined;
-    result = self waittilltimeout(var_9ced4e21, #"hash_53af1b91ec04f1c1", #"enemy");
+    result = self waittilltimeout(var_9ced4e21, #"stealth_attack", #"enemy");
     if (result._notify == "stealth_attack" || result._notify == "enemy") {
         self ai::function_ccc923fb(undefined, priority, 1);
     }

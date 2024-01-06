@@ -86,10 +86,10 @@ function function_44cc3493(var_2177e1d4 = 2, player) {
 // Checksum 0xbbb3fc9c, Offset: 0x6c8
 // Size: 0x4ec
 function function_465aaf09(player, origin) {
-    if (is_true(level.var_8cff5775.var_41adf604)) {
+    if (is_true(level.doa.var_41adf604)) {
         return;
     }
-    if (isdefined(level.var_8cff5775.var_54c5c3e6)) {
+    if (isdefined(level.doa.var_54c5c3e6)) {
         return;
     }
     var_d98803e1 = namespace_ec06fe4a::function_65ee50ba(origin);
@@ -107,8 +107,8 @@ function function_465aaf09(player, origin) {
     var_c95d22c.org thread namespace_ec06fe4a::function_d55f042c(var_c95d22c, "death");
     var_c95d22c thread namespace_ec06fe4a::function_d55f042c(level, "game_over");
     var_b411e9f2 = array("slideways", "slideways2", "slideways3", "slideways4", "slideways5");
-    level.var_8cff5775.var_848746c8 = is_true(level.var_8cff5775.hardcoremode) ? undefined : var_b411e9f2[randomint(var_b411e9f2.size)];
-    level.var_8cff5775.var_54c5c3e6 = var_c95d22c;
+    level.doa.var_848746c8 = is_true(level.doa.hardcoremode) ? undefined : var_b411e9f2[randomint(var_b411e9f2.size)];
+    level.doa.var_54c5c3e6 = var_c95d22c;
     var_c95d22c namespace_e32bb68::function_3a59ec34("evt_doa_pickup_arcade_active_lp");
     var_c95d22c thread namespace_ec06fe4a::function_2d920b3c(1, 0);
     timeout = gettime() + 30000;
@@ -117,7 +117,7 @@ function function_465aaf09(player, origin) {
             break;
         }
         result = undefined;
-        result = level waittilltimeout(randomfloatrange(1, 4), #"hash_4a98bd219750f891", #"hash_7b68a1d715669022");
+        result = level waittilltimeout(randomfloatrange(1, 4), #"exit_taken", #"arena_completed");
         var_c95d22c namespace_83eb6304::function_3ecfde67("lightningStrike");
         var_c95d22c namespace_e32bb68::function_3a59ec34("evt_doa_lightning_bolt");
         var_c95d22c thread function_44cc3493(randomintrange(1, 5), player);
@@ -132,7 +132,7 @@ function function_465aaf09(player, origin) {
     var_c95d22c namespace_83eb6304::function_3ecfde67("turret_impact");
     var_c95d22c namespace_e32bb68::function_3a59ec34("evt_doa_pickup_sentry_land");
     var_c95d22c moveto(var_c95d22c.origin + vectorscale((0, 0, 1), 3000), 1);
-    level.var_8cff5775.var_54c5c3e6 = undefined;
+    level.doa.var_54c5c3e6 = undefined;
     wait(1);
     var_c95d22c.org namespace_83eb6304::turnofffx("tesla_trail");
     var_c95d22c.org delete();

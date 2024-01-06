@@ -21,8 +21,8 @@ function private autoexec __init__system__() {
 // Checksum 0xc22dbd76, Offset: 0x148
 // Size: 0x74
 function function_70a657d8() {
-    level.var_2457162c = namespace_d21eb1ac::register();
-    clientfield::register("scriptmover", "weapon_machine_fx", 1, 1, "int", &function_3f010f7a, 0, 0);
+    level.var_2457162c = sr_weapon_upgrade_menu::register();
+    clientfield::register("scriptmover", "weapon_machine_fx", 1, 1, "int", &weapon_machine_fx, 0, 0);
     namespace_52c8f34d::function_70a657d8();
 }
 
@@ -38,12 +38,12 @@ function postinit() {
 // Params 7, eflags: 0x0
 // Checksum 0x5f739dfa, Offset: 0x1d8
 // Size: 0xae
-function function_3f010f7a(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function weapon_machine_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
-        self.var_3f010f7a = function_239993de(fieldname, #"hash_6864f1ec3b2c7d2e", self, "sphere_jnt");
-    } else if (isdefined(self.var_3f010f7a)) {
-        stopfx(fieldname, self.var_3f010f7a);
-        self.var_3f010f7a = undefined;
+        self.weapon_machine_fx = function_239993de(fieldname, #"hash_6864f1ec3b2c7d2e", self, "sphere_jnt");
+    } else if (isdefined(self.weapon_machine_fx)) {
+        stopfx(fieldname, self.weapon_machine_fx);
+        self.weapon_machine_fx = undefined;
     }
 }
 

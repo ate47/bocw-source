@@ -23,7 +23,7 @@ function private autoexec __init__system__() {
 function private function_70a657d8() {
     init_shared();
     clientfield::register("scriptmover", "planemortar_contrail", 1, 1, "int", &planemortar_contrail, 0, 0);
-    clientfield::register("scriptmover", "planemortar_marker_on", 1, 2, "int", &function_9060b7f2, 0, 0);
+    clientfield::register("scriptmover", "planemortar_marker_on", 1, 2, "int", &planemortar_marker_on, 0, 0);
     namespace_bf7415ae::function_fc85e1a("planemortar", &function_85f3e359, &function_e72f1d06, &show_marker, &function_4362abef);
 }
 
@@ -45,7 +45,7 @@ function planemortar_contrail(localclientnum, *oldval, newval, *bnewent, *biniti
 // Params 7, eflags: 0x0
 // Checksum 0x3604837a, Offset: 0x3e0
 // Size: 0x31c
-function function_9060b7f2(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function planemortar_marker_on(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         player = function_27673a7(fieldname);
         if (!is_true(self.allocated)) {

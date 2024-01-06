@@ -70,7 +70,7 @@ function function_9ed7339b(struct) {
         scriptmodel.trigger = trigger;
         struct.trigger = trigger;
         struct.scriptmodel = scriptmodel;
-        playfx(#"hash_5a1e0e296fe6148f", struct.origin);
+        playfx(#"sr/fx9_safehouse_mchn_upgrades_spawn", struct.origin);
         playsoundatposition(#"hash_20c4f0485930af2a", struct.origin);
     }
 }

@@ -50,7 +50,7 @@ function event_handler[event_1524de24] function_9d78f548(*eventstruct) {
 // Checksum 0x461c7d56, Offset: 0x240
 // Size: 0x5ec
 function function_14354831() {
-    if (self.var_739ddae === "barricade_window") {
+    if (self.content_key === "barricade_window") {
         str_target = self.target2;
         a_s_parts = struct::get_array(str_target);
         foreach (s_part in a_s_parts) {

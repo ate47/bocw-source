@@ -736,11 +736,11 @@ function private function_9e6f187d(n_round) {
 // Checksum 0xf0fa7fd3, Offset: 0x3d98
 // Size: 0xba
 function function_218424b3(get_all = 0) {
-    if (isdefined(level.zm_loc_types[#"hash_1ec21f2c7894c700"]) && level.zm_loc_types[#"hash_1ec21f2c7894c700"].size) {
+    if (isdefined(level.zm_loc_types[#"raz_location"]) && level.zm_loc_types[#"raz_location"].size) {
         if (get_all) {
-            s_spawn_loc = level.zm_loc_types[#"hash_1ec21f2c7894c700"];
+            s_spawn_loc = level.zm_loc_types[#"raz_location"];
         } else {
-            s_spawn_loc = array::random(level.zm_loc_types[#"hash_1ec21f2c7894c700"]);
+            s_spawn_loc = array::random(level.zm_loc_types[#"raz_location"]);
         }
     }
     return s_spawn_loc;
@@ -1267,7 +1267,7 @@ function function_54993e2() {
     if (isdefined(level.var_2e33420c)) {
         var_d7eff26a = [[ level.var_2e33420c ]]();
     } else {
-        var_91562d8c = level.zm_loc_types[#"hash_1ec21f2c7894c700"];
+        var_91562d8c = level.zm_loc_types[#"raz_location"];
         if (var_91562d8c.size) {
             var_d7eff26a = zm_spawner::function_20e7d186(var_91562d8c);
         }
@@ -1636,7 +1636,7 @@ function function_64515cbe(*params) {
 // Size: 0x8a
 function function_5394f283() {
     if (is_true(self.var_43c4bc66)) {
-        b_result = self zm_ai_mimic::function_dca29f5c();
+        b_result = self zm_ai_mimic::mimic_cleanup_teleport();
     } else {
         b_result = self function_ce42b67b();
     }
@@ -1897,7 +1897,7 @@ function function_bf14bffe() {
     self endon("63eba66124d8c2e");
     level endon(#"end_game");
     self endon(#"death", #"disconnect", #"hash_7f3f3b496fcd3707");
-    level flag::wait_till_all([1:#"hash_443b6a1ea0c4b52b", 0:#"load_main_complete"]);
+    level flag::wait_till_all([1:#"intro_scene_done", 0:#"load_main_complete"]);
     while (1) {
         var_1e8cb595 = undefined;
         if (self zm_zonemgr::is_player_in_zone(level.var_dc2ca204, 1)) {
@@ -2074,7 +2074,7 @@ function function_96aabf2f() {
         add_devgui("<unknown string>", "<unknown string>");
         add_devgui("<unknown string>", "<unknown string>");
         add_devgui("<unknown string>", "<unknown string>");
-        level wait_till_all([2:"<unknown string>", 1:"<unknown string>", 0:#"hash_443b6a1ea0c4b52b"]);
+        level wait_till_all([2:"<unknown string>", 1:"<unknown string>", 0:#"intro_scene_done"]);
         wait(2);
         level thread function_9b92c023();
     #/
@@ -2992,7 +2992,7 @@ function function_5a3997b4() {
         level waittill(#"open_sesame");
         function_8ac7a154();
         turn_power_on_and_open_doors(1, 0);
-        level clear(#"hash_3032e4acc5a6d8ee");
+        level clear(#"disable_weapon_machine");
     #/
 }
 

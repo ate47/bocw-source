@@ -433,7 +433,7 @@ function private function_b4083162(talent, var_96b5aff5) {
             source = #"world";
             break;
         case 2:
-            source = #"hash_39a33ee2ec422597";
+            source = #"wonderfizz";
             break;
         case #"hash_defdefdefdefdef0":
             source = #"hash_a6101af5e5d2384";
@@ -476,7 +476,7 @@ function get_perk_weapon(str_perk) {
         return weapon;
         break;
     case #"hash_5930cf0eb070e35a":
-        weapon = getweapon(#"hash_6460ce18ba7baca4");
+        weapon = getweapon(#"zombie_perk_bottle_sleight");
         return weapon;
         break;
     case #"hash_210097a75bb6c49a":
@@ -488,7 +488,7 @@ function get_perk_weapon(str_perk) {
         return weapon;
         break;
     case #"hash_47d7a8105237c88":
-        weapon = getweapon(#"hash_5e7ab1d3dbec9ab1");
+        weapon = getweapon(#"zombie_perk_bottle_jugg");
         return weapon;
         break;
     case #"hash_602a1b6107105f07":
@@ -496,15 +496,15 @@ function get_perk_weapon(str_perk) {
         return weapon;
         break;
     case #"hash_51b6cc6dbafb7f31":
-        weapon = getweapon(#"hash_248751e02931bddb");
+        weapon = getweapon(#"zombie_perk_bottle_elemental_pop");
         return weapon;
         break;
     case #"hash_38c08136902fd553":
-        weapon = getweapon(#"hash_18d7b9252dc864a5");
+        weapon = getweapon(#"zombie_perk_bottle_tombstone");
         return weapon;
         break;
     case #"hash_17e4ae593eaf4a47":
-        weapon = getweapon(#"hash_e4ecca40393b39d");
+        weapon = getweapon(#"zombie_perk_bottle_mulekick");
         return weapon;
         break;
     case #"hash_1ea1a9cfee998e89":
@@ -666,19 +666,19 @@ function function_381f04ca() {
         case #"vending_deadshot":
             str_alias = "mus_perks_deadshot_jingle";
             break;
-        case #"hash_4639ab066c8d8314":
+        case #"vending_elemental_pop":
             str_alias = "mus_perks_elementalpop_jingle";
             break;
-        case #"hash_6eabb0befc68edfc":
+        case #"vending_jugg":
             str_alias = "mus_perks_jugganog_jingle";
             break;
-        case #"hash_576bd4b6eef9afc2":
+        case #"vending_tombstone":
             str_alias = "mus_perks_tombstone_jingle";
             break;
-        case #"hash_68e7e1ce9acbf290":
+        case #"vending_mulekick":
             str_alias = "mus_perks_mulekick_jingle";
             break;
-        case #"hash_e40546b29b52340":
+        case #"vending_deathperception":
             str_alias = "mus_perks_deathperception_jingle";
             break;
         case #"vending_divetonuke":
@@ -706,7 +706,7 @@ function function_3e9d8a8e(var_11868f5d) {
     case #"hash_afdc97f440fbcec":
     case #"hash_afdcb7f440fc052":
     case #"hash_afdcc7f440fc205":
-        str_alias = #"hash_34bd69b6bce4beef";
+        str_alias = #"mus_perks_jugganog_sting";
         break;
     case #"hash_504b41f717f8931a":
     case #"hash_7f98b3dd3cce95aa":
@@ -746,7 +746,7 @@ function function_3e9d8a8e(var_11868f5d) {
     case #"hash_79774556f321d921":
     case #"hash_79774856f321de3a":
     case #"hash_79774956f321dfed":
-        str_alias = #"hash_48621522056c6c59";
+        str_alias = #"mus_perks_elementalpop_sting";
         break;
     case #"hash_4110e6372aa77f7e":
     case #"hash_4110e6372aa77f7e":
@@ -762,7 +762,7 @@ function function_3e9d8a8e(var_11868f5d) {
     case #"hash_59dbeef72baaacd5":
     case #"hash_59dbe7f72baaa0f0":
     case #"hash_38c08136902fd553":
-        str_alias = #"hash_435387cc768131cc";
+        str_alias = #"mus_perks_tombstone_sting";
         break;
     case #"hash_2cb9513f0cf67fe7":
     case #"hash_2cb9503f0cf67e34":
@@ -782,7 +782,7 @@ function function_3e9d8a8e(var_11868f5d) {
     case #"hash_7082a8127deb8de2":
     case #"hash_7082a9127deb8f95":
     case #"hash_7082a5127deb88c9":
-        str_alias = #"hash_2caf60d7736071ba";
+        str_alias = #"mus_perks_deathperception_sting";
         break;
     case #"hash_332be40e760e69a1":
     case #"hash_3417450e1347185":

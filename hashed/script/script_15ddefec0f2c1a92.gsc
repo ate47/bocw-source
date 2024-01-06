@@ -69,7 +69,7 @@ function registerbehaviorscriptfunctions() {
     #/
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_4c13ee431006ea01", &function_ad163d5a);
     /#
-        assert(!isdefined(&function_1c36e04b) || isscriptfunctionptr(&function_1c36e04b));
+        assert(!isdefined(&wolfmeleeaction) || isscriptfunctionptr(&wolfmeleeaction));
     #/
     /#
         assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
@@ -77,7 +77,7 @@ function registerbehaviorscriptfunctions() {
     /#
         assert(!isdefined(&function_8d42c979) || isscriptfunctionptr(&function_8d42c979));
     #/
-    behaviortreenetworkutility::registerbehaviortreeaction("wolfMeleeAction", &function_1c36e04b, undefined, &function_8d42c979);
+    behaviortreenetworkutility::registerbehaviortreeaction("wolfMeleeAction", &wolfmeleeaction, undefined, &function_8d42c979);
 }
 
 // Namespace namespace_53a8fe5e/namespace_53a8fe5e
@@ -96,7 +96,7 @@ function function_8c1ad7f9() {
 // Size: 0xa6
 function function_3ba58018() {
     function_ebb53c52();
-    self.var_8cff5775.var_74e4ded8 = 1;
+    self.doa.var_74e4ded8 = 1;
     self setavoidancemask("avoid none");
     self collidewithactors(0);
     self setplayercollision(0);
@@ -250,7 +250,7 @@ function function_df18852() {
         }
         self.var_828219d9 = need_to_run();
         self function_56bb65ac(self.var_828219d9 ? "RUN" : "WALK");
-        wait(self.var_8cff5775.var_a706a3a7);
+        wait(self.doa.var_a706a3a7);
     }
 }
 
@@ -310,7 +310,7 @@ function function_b8558f62() {
 function function_2e6b2ca9() {
     namespace_250e9486::function_4b49bf0d();
     force = 0;
-    if (isdefined(self.favoriteenemy) && level.var_8cff5775.var_358fbdc8 == 0) {
+    if (isdefined(self.favoriteenemy) && level.doa.world_state == 0) {
         force = 1;
         self.hasseenfavoriteenemy = 1;
         self thread function_a47b7e79(1);
@@ -334,7 +334,7 @@ function function_2e6b2ca9() {
     } else if (!is_true(self.hasseenfavoriteenemy)) {
         time = gettime();
         if (self.var_717a48cb < time) {
-            var_86faa86d = namespace_ff8b8430::function_4b2f19cb();
+            var_86faa86d = doa_enemy::function_4b2f19cb();
             self.var_717a48cb = time + randomintrange(12000, 24000);
             if (isdefined(var_86faa86d)) {
                 self namespace_250e9486::function_41354e51(var_86faa86d);
@@ -568,7 +568,7 @@ function use_low_attack() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x787d52d6, Offset: 0x2238
 // Size: 0xa0
-function function_1c36e04b(behaviortreeentity, asmstatename) {
+function wolfmeleeaction(behaviortreeentity, asmstatename) {
     behaviortreeentity clearpath();
     context = "high";
     if (behaviortreeentity use_low_attack()) {

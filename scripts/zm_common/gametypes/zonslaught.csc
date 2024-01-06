@@ -38,9 +38,9 @@ function event_handler[gametype_init] main(*eventstruct) {
     clientfield::register("scriptmover", "" + #"hash_56a6be021662c82e", 1, 2, "int", &function_bed6f88d, 0, 0);
     clientfield::register_clientuimodel("hudItems.onslaught.wave_number", #"hash_6f4b11a0bee9b73d", [1:#"hash_32acff8a008c0f5c", 0:#"onslaught"], 1, 7, "int", undefined, 0, 0);
     clientfield::register_clientuimodel("hudItems.onslaught.bosskill_count", #"hash_6f4b11a0bee9b73d", [1:#"hash_2ec97775399a0680", 0:#"onslaught"], 1, 7, "int", undefined, 0, 0);
-    clientfield::register("scriptmover", "orb_spawn", 1, 1, "int", &function_b467504c, 0, 0);
-    clientfield::register("scriptmover", "bot_claim_fx", 1, 2, "int", &function_ae87d0dd, 0, 0);
-    clientfield::register("actor", "orb_soul_capture_fx", 1, 3, "int", &function_9ef71f89, 0, 0);
+    clientfield::register("scriptmover", "orb_spawn", 1, 1, "int", &orb_spawn, 0, 0);
+    clientfield::register("scriptmover", "bot_claim_fx", 1, 2, "int", &bot_claim_fx, 0, 0);
+    clientfield::register("actor", "orb_soul_capture_fx", 1, 3, "int", &orb_soul_capture_fx, 0, 0);
     clientfield::register("actor", "zombie_aether_spawn_cf", 1, 1, "int", &function_ace38635, 0, 0);
     level.var_7bd7bdc8 = [3:#"hash_54da2f2da5752d99", 2:#"hash_2964f82e2c05c8b8", 1:#"hash_6a04f899ab555f22"];
     level.var_6e62d281 = #"hash_289962ed0e76921d";
@@ -70,7 +70,7 @@ function event_handler[gametype_init] main(*eventstruct) {
 function on_player_spawned(localclientnum) {
     self function_36b630a3(1);
     str_map_name = util::get_map_name();
-    if (str_map_name === #"mp_tundra" || str_map_name === #"hash_61b0dcd51a7049e3") {
+    if (str_map_name === #"mp_tundra" || str_map_name === #"mp_dune") {
         function_f58e42ae(localclientnum, 1);
     }
 }
@@ -144,7 +144,7 @@ function function_bed6f88d(local_client_num, *oldval, newval, *bnewent, *binitia
 // Params 7, eflags: 0x0
 // Checksum 0x21e23d95, Offset: 0xca0
 // Size: 0x19c
-function function_b467504c(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function orb_spawn(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (isdefined(self)) {
         level.var_df7b46d1 = self;
         level.var_df7b46d1 thread function_40deac72(bwastimejump);
@@ -162,7 +162,7 @@ function function_b467504c(localclientnum, *oldval, *newval, *bnewent, *binitial
 // Params 7, eflags: 0x0
 // Checksum 0x9322824f, Offset: 0xe48
 // Size: 0x21c
-function function_ae87d0dd(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function bot_claim_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self.fxid = function_239993de(fieldname, level._effect[#"hash_11fd5c794ccab4e5"], self, "tag_origin");
         if (!isdefined(self.var_94ebeb0a)) {
@@ -208,7 +208,7 @@ function fake_physicslaunch(target_pos, power, var_4862f668) {
 // Params 7, eflags: 0x0
 // Checksum 0x98a104fe, Offset: 0x11a8
 // Size: 0x23c
-function function_9ef71f89(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
+function orb_soul_capture_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump && isdefined(level.var_df7b46d1)) {
         e_fx = util::spawn_model(fieldname, "tag_origin", self.origin);
         e_fx playsound(fieldname, "zmb_onslaught_zsouls_start");

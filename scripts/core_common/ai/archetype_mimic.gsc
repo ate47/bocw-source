@@ -398,7 +398,7 @@ function function_5fa4b25d(entity) {
     props = entity.var_a6fe91fd;
     var_1386d828 = entity.var_1386d828;
     var_98b1552 = !isdefined(var_1386d828);
-    if (isdefined(var_1386d828.spawn_loc.var_da70348d)) {
+    if (isdefined(var_1386d828.spawn_loc.lure_prop_type)) {
         var_98b1552 = 1;
         level thread mimic_prop_spawn::function_175bb809(var_1386d828);
         arrayremovevalue(entity.var_a6fe91fd, var_1386d828);
@@ -1245,8 +1245,8 @@ function function_7f6a5e14() {
 // Size: 0x580
 function private function_5ef9a937(point) {
     /#
-        if (isdefined(point.var_da70348d)) {
-            switch (point.var_da70348d) {
+        if (isdefined(point.lure_prop_type)) {
+            switch (point.lure_prop_type) {
             case 0:
                 new_point = isdefined(point.trigger.scriptmodel) ? point.trigger.scriptmodel : point.scriptmodel;
                 point = isdefined(new_point) ? new_point : point;

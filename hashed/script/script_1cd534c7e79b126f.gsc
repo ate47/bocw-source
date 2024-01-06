@@ -880,7 +880,7 @@ function function_a221b3a(*var_273eefec) {
     playfxontag(#"hash_75b8555ea6711aff", self.var_31309e7a, "tag_origin");
     var_5ea363c clientfield::set("soul_capture_leave", 1);
     earthquake(0.1, 5, var_5ea363c.origin, 512);
-    playrumbleonposition(#"hash_5f4960d10f364d77", var_5ea363c.origin);
+    playrumbleonposition(#"artillery_rumble", var_5ea363c.origin);
     wait(1);
     playfxontag(#"hash_6041f3e753cd772e", self.var_31309e7a, "tag_origin");
     var_5ea363c connectpaths();

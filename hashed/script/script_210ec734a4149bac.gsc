@@ -26,9 +26,9 @@ function private autoexec __init__system__() {
 // Size: 0x10c
 function private function_70a657d8() {
     /#
-        assert(isscriptfunctionptr(&function_850bdbb2));
+        assert(isscriptfunctionptr(&civilianpaniccoverservice));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("civilianPanicCoverService", &function_850bdbb2, 1);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("civilianPanicCoverService", &civilianpaniccoverservice, 1);
     level.var_ec54dc19 = &function_251c139d;
     callback::on_ai_killed(&on_ai_killed);
     spawner::add_archetype_spawn_function(#"civilian", &function_478f2963);
@@ -241,7 +241,7 @@ function function_387a6908(node) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x114e7474, Offset: 0xfe0
 // Size: 0x82
-function private function_850bdbb2(entity) {
+function private civilianpaniccoverservice(entity) {
     result = 0;
     if (entity getblackboardattribute(#"hash_78e762abc4fbf1de") == "panic") {
         result = function_74f41e14(entity);
@@ -260,14 +260,14 @@ function private function_9cefbbde(var_5f60ac6c) {
     var_45d1a411 = var_5f60ac6c.origin;
     var_d6713e16 = (0, 0, -1);
     switch (var_5f60ac6c.var_2e23b67d) {
-    case #"hash_60c22b8bc17491b":
+    case #"umbrella_left":
         var_d6713e16 = (0, 0.25, 0.5);
         var_d6713e16 = rotatepoint(var_d6713e16, self.angles);
         var_9fa53333 = (0, -10, 10);
         var_9fa53333 = rotatepoint(var_9fa53333, self.angles);
         var_45d1a411 = var_45d1a411 + var_9fa53333;
         break;
-    case #"hash_60c2b887cb719ce4":
+    case #"umbrella_right":
         var_d6713e16 = (0, -0.25, 0.5);
         var_d6713e16 = rotatepoint(var_d6713e16, self.angles);
         var_9fa53333 = (0, 10, 10);
@@ -313,9 +313,9 @@ function private function_dcfd9c90() {
         waitframe(1);
         if (isdefined(level.players) && level.players.size > 0 && gettime() > level.var_2feffa6b) {
             player = level.players[0];
-            var_e8f8c93f = getaiarchetypearray(#"civilian");
-            var_b88ec851 = arraysortclosest(var_e8f8c93f, player.origin);
-            foreach (civilian in var_e8f8c93f) {
+            civilians = getaiarchetypearray(#"civilian");
+            var_b88ec851 = arraysortclosest(civilians, player.origin);
+            foreach (civilian in civilians) {
                 if (isdefined(civilian) && is_true(civilian.var_c0321be9) && civilian getblackboardattribute(#"hash_78e762abc4fbf1de") != "panic") {
                     civilian ai::set_behavior_attribute(#"hash_78e762abc4fbf1de", "panic");
                     civilian.var_c0321be9 = undefined;
@@ -395,17 +395,17 @@ function function_b0876f77(value) {
     var_df71f499 = undefined;
     var_c72571dd = undefined;
     switch (value) {
-    case #"hash_73e86238c271de95":
+    case #"briefcase_left":
         function_5c56272f("z_briefcase_01_closed", "tag_accessory_left", "BRIEFCASE_LEFT");
         break;
-    case #"hash_60c22b8bc17491b":
+    case #"umbrella_left":
         function_5c56272f("par_umbrella_open_01", "tag_accessory_left", "UMBRELLA_LEFT");
         break;
     case #"hash_4ac48798a0be234b":
         function_5c56272f("par_umbrella_open_01_anim", "tag_accessory_left", "UMBRELLA_LEFT");
         function_5c56272f("z_briefcase_01_closed", "tag_accessory_right", "BRIEFCASE_RIGHT");
         break;
-    case #"hash_60c2b887cb719ce4":
+    case #"umbrella_right":
         function_5c56272f("par_umbrella_open_01", "tag_accessory_right", "UMBRELLA_RIGHT");
         break;
     case #"none":

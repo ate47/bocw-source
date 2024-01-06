@@ -20,7 +20,7 @@ function init() {
     function_cae618b4("spawner_zombietron_skeleton_giant");
     clientfield::register("scriptmover", "" + #"spartoi_reassemble_clientfield", 1, 1, "int", &function_d83c0144, 0, 0);
     clientfield::register("actor", "" + #"hash_3a6a3e4ef0a1a999", 1, 1, "counter", &function_9e6319c8, 0, 0);
-    clientfield::register("actor", "skel_spawn_fx", 1, 1, "counter", &function_aee7c9d7, 0, 0);
+    clientfield::register("actor", "skel_spawn_fx", 1, 1, "counter", &skel_spawn_fx, 0, 0);
     ai::add_archetype_spawn_function(#"skeleton", &skeletonspawnsetup);
     ai::add_archetype_spawn_function(#"skeleton", &function_3b8e5273);
 }
@@ -29,7 +29,7 @@ function init() {
 // Params 7, eflags: 0x2 linked
 // Checksum 0x3f2f7551, Offset: 0x368
 // Size: 0x74
-function function_aee7c9d7(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
+function skel_spawn_fx(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     util::playfxontag(bwasdemojump, level._effect[#"lightning_dog_spawn"], self, "j_spine2");
 }
 

@@ -58,7 +58,7 @@ function private function_70a657d8() {
 // Checksum 0x17d8056a, Offset: 0x3d8
 // Size: 0x17c
 function function_27473e44() {
-    zm_perks::register_perk_basic_info(#"hash_17e4ae593eaf4a47", #"hash_767d817479aafce5", 2000, #"hash_4a88c89fbf0061f6", getweapon("zombie_perk_bottle_mulekick"), undefined, #"zmperksmulekick");
+    zm_perks::register_perk_basic_info(#"hash_17e4ae593eaf4a47", #"perk_tombstone", 2000, #"hash_4a88c89fbf0061f6", getweapon("zombie_perk_bottle_mulekick"), undefined, #"zmperksmulekick");
     zm_perks::register_perk_precache_func(#"hash_17e4ae593eaf4a47", &precache);
     zm_perks::register_perk_clientfields(#"hash_17e4ae593eaf4a47", &register_clientfield, &set_clientfield);
     zm_perks::register_perk_machine(#"hash_17e4ae593eaf4a47", &perk_machine_setup);

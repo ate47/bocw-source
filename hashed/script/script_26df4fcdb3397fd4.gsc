@@ -14,7 +14,7 @@ function init() {
     level thread function_1493eabf();
     level thread function_d8392499();
     level thread function_12b1d8eb();
-    util::register_system(#"hash_34557cea0a4ddd45", &function_ff96a7fd);
+    util::register_system(#"tritoncmd", &function_ff96a7fd);
 }
 
 // Namespace namespace_c097de49/namespace_c097de49
@@ -101,7 +101,7 @@ function function_12b1d8eb() {
 // Checksum 0xc5dbdb0, Offset: 0x728
 // Size: 0x3c
 function function_1493eabf() {
-    level waittill(#"hash_2ccb1e2f5d9ce793");
+    level waittill(#"sndunlockeesong");
     function_2cca7b47(0, #"musictrack_zm_tungsten_ee");
 }
 

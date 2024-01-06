@@ -46,10 +46,10 @@ function function_df8c20ce(s_params) {
             if (!is_true(e_player.var_f96ce53f)) {
                 if (ai_type === "spawner_zm_steiner_split_radiation_bomb" || ai_type === "spawner_zm_steiner_split_radiation_blast") {
                     switch (ai_type) {
-                    case #"hash_12db1a8b34aa7918":
+                    case #"spawner_zm_steiner_split_radiation_bomb":
                         e_player.var_287dbab8.e_player = "spawner_zm_steiner_split_radiation_blast";
                         break;
-                    case #"hash_5471f6916965b2d2":
+                    case #"spawner_zm_steiner_split_radiation_blast":
                         e_player.var_287dbab8.e_player = "spawner_zm_steiner_split_radiation_bomb";
                         break;
                     }

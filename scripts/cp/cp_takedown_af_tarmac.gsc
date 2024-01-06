@@ -33,9 +33,9 @@ function function_f9f06983(var_d3440450) {
     namespace_b100dd86::function_c8381339(plane, 0);
     exploder::stop_exploder("airfield_assault_lighting_noplane");
     exploder::exploder("airfield_assault_lighting");
-    var_2713b408 = ai::function_e8b6bfec("arash")[0];
-    level thread scene::skipto_end("scene_tkd_hit3_intro_overlook_arash", "overlook_shot", [0:var_2713b408]);
-    var_2713b408 thread util::delay(0.1, undefined, &delete);
+    arash = ai::function_e8b6bfec("arash")[0];
+    level thread scene::skipto_end("scene_tkd_hit3_intro_overlook_arash", "overlook_shot", [0:arash]);
+    arash thread util::delay(0.1, undefined, &delete);
     namespace_b100dd86::function_c8381339(plane, 1);
     setdvar(#"hash_76c0d7e6385ee6de", 0.05);
     level scene::init("scene_tkd_hit3_intro_overlook", "initial_loop");
@@ -47,7 +47,7 @@ function function_f9f06983(var_d3440450) {
     level flag::set("af_hill_complete");
     level flag::set("af_tarmac_complete");
     level thread scene::play_from_time("scene_tkd_hit3_intro", "shot 1", undefined, 1, 1, 1, 0, 0);
-    util::delay(0.2, undefined, &tkdn_af_hill::function_9967d19b, var_2713b408);
+    util::delay(0.2, undefined, &tkdn_af_hill::function_9967d19b, arash);
 }
 
 // Namespace tkdn_af_tarmac/namespace_8d783c4b
@@ -71,14 +71,14 @@ function main(var_d3440450, *var_50cc0d4f) {
     level.var_49a5d2a4 = var_c3025e74[0];
     level.var_49a5d2a4 val::set(#"chase", "allowdeath", 0);
     trigger::use("approach_airstrip", "targetname", undefined, 0);
-    level.var_fdc6062e val::reset(#"hash_50cb2a8c58c8ad4", "ignoreme");
-    level.var_fdc6062e val::reset(#"radiant", "ignoreall");
-    level.var_fdc6062e val::reset(#"hash_5d61277bd86a16a9", "ignoreall");
+    level.adler val::reset(#"hash_50cb2a8c58c8ad4", "ignoreme");
+    level.adler val::reset(#"radiant", "ignoreall");
+    level.adler val::reset(#"hash_5d61277bd86a16a9", "ignoreall");
     level.woods val::reset(#"hash_50cb2a8c58c8ad4", "ignoreme");
     level.woods val::reset(#"radiant", "ignoreall");
     level.woods val::reset(#"hash_5d61277bd86a16a9", "ignoreall");
-    level.var_fdc6062e.ignoreall = 0;
-    level.var_fdc6062e ai::set_behavior_attribute("demeanor", "combat");
+    level.adler.ignoreall = 0;
+    level.adler ai::set_behavior_attribute("demeanor", "combat");
     level.woods ai::set_behavior_attribute("demeanor", "combat");
     thread function_b3df3ebf();
     thread function_565588e1();

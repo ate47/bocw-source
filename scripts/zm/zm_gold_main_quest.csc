@@ -46,13 +46,13 @@ function function_48f7c5e6(localclientnum, *oldval, newval, *bnewent, *binitials
         stopfx(fieldname, self.var_358ffe83);
         self.var_358ffe83 = undefined;
         if (isdefined(var_eb1526b6) && isarray(var_eb1526b6)) {
-            foreach (var_912570af in var_eb1526b6) {
-                if (isdefined(var_912570af.fx)) {
-                    stopfx(fieldname, var_912570af.fx);
-                    if (isdefined(var_912570af.tag_fx)) {
-                        var_912570af.tag_fx delete();
+            foreach (sub_satellite_fx_pos in var_eb1526b6) {
+                if (isdefined(sub_satellite_fx_pos.fx)) {
+                    stopfx(fieldname, sub_satellite_fx_pos.fx);
+                    if (isdefined(sub_satellite_fx_pos.tag_fx)) {
+                        sub_satellite_fx_pos.tag_fx delete();
                     }
-                    var_912570af.fx = undefined;
+                    sub_satellite_fx_pos.fx = undefined;
                 }
             }
         }
@@ -62,12 +62,12 @@ function function_48f7c5e6(localclientnum, *oldval, newval, *bnewent, *binitials
     }
     if (bwasdemojump == 1) {
         self.var_358ffe83 = playfx(fieldname, #"hash_4b0034bfed0b13a0", self.origin, anglestoup(self.angles), anglestoforward(self.angles));
-        foreach (var_912570af in var_eb1526b6) {
-            var_912570af.tag_fx.var_912570af = var_912570af util::spawn_model(fieldname, "tag_origin", var_912570af.origin, var_912570af.angles);
-            if (var_912570af.script_noteworthy === "a") {
-                var_912570af.fx.var_912570af = util::playfxontag(fieldname, #"hash_4142f503f17f18c4", var_912570af.tag_fx, "tag_origin");
-            } else if (var_912570af.script_noteworthy === "b") {
-                var_912570af.fx.var_912570af = util::playfxontag(fieldname, #"hash_4142f803f17f1ddd", var_912570af.tag_fx, "tag_origin");
+        foreach (sub_satellite_fx_pos in var_eb1526b6) {
+            sub_satellite_fx_pos.tag_fx.sub_satellite_fx_pos = sub_satellite_fx_pos util::spawn_model(fieldname, "tag_origin", sub_satellite_fx_pos.origin, sub_satellite_fx_pos.angles);
+            if (sub_satellite_fx_pos.script_noteworthy === "a") {
+                sub_satellite_fx_pos.fx.sub_satellite_fx_pos = util::playfxontag(fieldname, #"hash_4142f503f17f18c4", sub_satellite_fx_pos.tag_fx, "tag_origin");
+            } else if (sub_satellite_fx_pos.script_noteworthy === "b") {
+                sub_satellite_fx_pos.fx.sub_satellite_fx_pos = util::playfxontag(fieldname, #"hash_4142f803f17f1ddd", sub_satellite_fx_pos.tag_fx, "tag_origin");
             }
         }
         soundlineemitter(#"hash_243e8130bf816d5a", (478, -15202, 7913), (-2140, -15285, 8125));
@@ -114,7 +114,7 @@ function function_e959dd37(localclientnum, *oldval, newval, *bnewent, *binitials
 function function_78d36eb1(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     self notify(#"hash_3a4fef0fcbf96242");
     if (bwasdemojump == 1) {
-        util::playfxontag(fieldname, #"hash_4a3ad412484c9c4c", self, "tag_origin");
+        util::playfxontag(fieldname, #"wz/fx9_dirtybomb_radiation_zone", self, "tag_origin");
         util::playfxontag(fieldname, #"wz/fx9_dirtybomb_radiation_zone_spawn", self, "tag_origin");
         self setcompassicon("ui_icon_minimap_collapse_ring");
         self function_811196d1(0);
@@ -393,19 +393,19 @@ function function_b66e99f1(localclientnum, *oldval, newval, *bnewent, *binitials
             self.var_63f32da = playfx(fieldname, #"hash_1a40f9087395c9d7", self.origin + vectorscale((0, 0, 1), 12));
         }
         if (!isdefined(self.var_5eec2cf6)) {
-            self.var_5eec2cf6 = playfx(fieldname, #"hash_195bc01181f12e0", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
+            self.var_5eec2cf6 = playfx(fieldname, #"zm_ai/fx9_steiner_rad_bomb_circle_128", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
         }
         foreach (s_fx in a_s_fx) {
             if (!isdefined(s_fx.var_bdfdbc4d)) {
                 switch (s_fx.str_fx) {
                 case #"sm":
-                    str_fx = #"hash_663c9f778945d52a";
+                    str_fx = #"zm_ai/fx9_steiner_rad_bomb_spot_sm_loop";
                     break;
                 case #"hash_8a95e07b5504ef4":
-                    str_fx = #"hash_7452a592591c35f1";
+                    str_fx = #"zm_ai/fx9_steiner_rad_bomb_spot_md_loop";
                     break;
                 case #"lg":
-                    str_fx = #"hash_2018ddd5a2723e2d";
+                    str_fx = #"zm_ai/fx9_steiner_rad_bomb_spot_lg_loop";
                     break;
                 }
                 s_fx.var_bdfdbc4d.s_fx = playfx(fieldname, str_fx, s_fx.origin, anglestoforward(s_fx.angles), anglestoup(s_fx.angles));

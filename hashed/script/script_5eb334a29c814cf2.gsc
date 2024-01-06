@@ -158,7 +158,7 @@ function function_a3b94da7() {
 // Checksum 0xa5e80fbb, Offset: 0x830
 // Size: 0x34
 function function_87d77748() {
-    if (zodcompanionbehavior::function_eb957b75(self)) {
+    if (zodcompanionbehavior::zodcompanionhasdefendlocation(self)) {
         self zodcompanionutility::function_34179e9a();
     }
 }

@@ -137,7 +137,7 @@ function function_bb5d646a(localclientnum, *oldval, *newval, *bnewent, *binitial
     playsound(bwasdemojump, #"hash_61be08677fe8683", e_fx.origin);
     var_5e7d1e09 = struct::get_array("satellite_pos", "script_noteworthy");
     satellite_pos = arraygetclosest(self.origin, var_5e7d1e09);
-    util::playfxontag(bwasdemojump, #"hash_64fa610e4b95ddc5", e_fx, "tag_origin");
+    util::playfxontag(bwasdemojump, #"zombie/fx9_onslaught_orb_soul", e_fx, "tag_origin");
     e_fx moveto(e_fx.origin + vectorscale((0, 0, 1), 40), 0.8);
     wait(0.75);
     n_time = distance(e_fx.origin, satellite_pos.origin) / 400;
@@ -178,7 +178,7 @@ function function_a93c81b4(localclientnum) {
     self endon(#"hash_64be90d89f0d9c8b");
     self.var_1caaf1f5 = playfx(localclientnum, #"hash_55dab9c7bb0687fa", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
     wait(0.3);
-    playfx(localclientnum, #"hash_67c4ddbc533200f0", self.origin + vectorscale((0, 0, 1), 30));
+    playfx(localclientnum, #"sr/fx9_safehouse_orb_activate", self.origin + vectorscale((0, 0, 1), 30));
     wait(3 - 0.3);
     stopfx(localclientnum, self.var_1caaf1f5);
     self.var_1caaf1f5 = undefined;

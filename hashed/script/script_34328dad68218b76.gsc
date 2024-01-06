@@ -98,7 +98,7 @@ function function_43cf284() {
     self callback::function_d8abfc3d(#"hash_4afe635f36531659", &function_a1b85021);
     self callback::function_d8abfc3d(#"on_ai_damage", &function_558990e3);
     level flag::wait_till("objective_locked");
-    if (level.var_7d45d0d4.activeobjective.var_b588b063 === #"holdout") {
+    if (level.var_7d45d0d4.activeobjective.content_script_name === #"holdout") {
         level waittill(#"survival_holdout_dest");
         self function_8bed563f();
         self val::set(#"hash_6b8a1b0c7fbf3df1", "ignoreall", 1);

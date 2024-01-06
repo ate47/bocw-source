@@ -76,7 +76,7 @@ function function_afc62ca5() {
     namespace_250e9486::function_25b2c8a9();
     self namespace_250e9486::function_db744d28();
     self.var_9329a57c = 0;
-    self.maxhealth = self.maxhealth + 250000 + int(50000 * namespace_ec06fe4a::function_ef369bae()) + level.var_8cff5775.var_6c58d51 * 300000;
+    self.maxhealth = self.maxhealth + 250000 + int(50000 * namespace_ec06fe4a::function_ef369bae()) + level.doa.var_6c58d51 * 300000;
     self.health = self.maxhealth;
     self.var_c59b482e = self.maxhealth * (0.1 + 0.15 * namespace_ec06fe4a::function_ef369bae());
     self.var_d04a8ee = 200;
@@ -103,7 +103,7 @@ function function_afc62ca5() {
     self setblackboardattribute("_locomotion_speed", "locomotion_speed_walk");
     self setblackboardattribute("_werewolf_stance", "upright");
     self.ai.var_9465ce93 = gettime() + randomintrange(4500, 5500);
-    self.var_c6213c58 = namespace_ff8b8430::function_d7c5adee("wolf_ghosthound");
+    self.var_c6213c58 = doa_enemy::function_d7c5adee("wolf_ghosthound");
     self namespace_e32bb68::function_3a59ec34("zmb_doa_ai_werewolf_vocal_summon");
     self thread namespace_9fc66ac::function_ba33d23d(#"hash_64aff27de2337435", #"hash_64aff27de2337435", #"hash_2b3a9f1a898594d7");
     target_set(self);
@@ -960,15 +960,15 @@ function function_e1743aa(entity) {
     right = anglestoright(entity.angles) * 50;
     point = getclosestpointonnavmesh(entity.origin + right, 80);
     if (isdefined(point)) {
-        namespace_ff8b8430::function_a6b807ea(entity.var_c6213c58, 1, point, 0, undefined, entity.enemy);
+        doa_enemy::function_a6b807ea(entity.var_c6213c58, 1, point, 0, undefined, entity.enemy);
         point = getclosestpointonnavmesh(entity.origin - right, 80);
-        namespace_ff8b8430::function_a6b807ea(entity.var_c6213c58, 1, point, 0, undefined, entity.enemy);
+        doa_enemy::function_a6b807ea(entity.var_c6213c58, 1, point, 0, undefined, entity.enemy);
     }
     if (getplayers().size > 1) {
         if (isdefined(point)) {
-            namespace_ff8b8430::function_a6b807ea(entity.var_c6213c58, 1, point, 0, undefined, entity.enemy);
+            doa_enemy::function_a6b807ea(entity.var_c6213c58, 1, point, 0, undefined, entity.enemy);
             point = getclosestpointonnavmesh(entity.origin - right, 80);
-            namespace_ff8b8430::function_a6b807ea(entity.var_c6213c58, 1, point, 0, undefined, entity.enemy);
+            doa_enemy::function_a6b807ea(entity.var_c6213c58, 1, point, 0, undefined, entity.enemy);
         }
     }
 }

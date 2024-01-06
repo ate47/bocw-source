@@ -48,13 +48,13 @@ function function_f9f06983(*var_d3440450) {
     player = getplayers()[0];
     var_8a3bb97c = getspawnerarray("raid_adler", "targetname");
     var_6534f716 = getspawnerarray("raid_woods", "targetname");
-    level.var_fdc6062e = var_8a3bb97c[0] spawner::spawn(1);
+    level.adler = var_8a3bb97c[0] spawner::spawn(1);
     var_fcbd93e0 = struct::get("raid_capture_adler", "targetname");
-    level.var_fdc6062e forceteleport(var_fcbd93e0.origin, var_fcbd93e0.angles);
-    level.var_fdc6062e.ignoreall = 1;
+    level.adler forceteleport(var_fcbd93e0.origin, var_fcbd93e0.angles);
+    level.adler.ignoreall = 1;
     weapon = getweapon(#"pistol_semiauto_t9");
-    level.var_fdc6062e aiutility::setprimaryweapon(weapon);
-    level.var_fdc6062e ai::gun_switchto(weapon, "right");
+    level.adler aiutility::setprimaryweapon(weapon);
+    level.adler ai::gun_switchto(weapon, "right");
     level.woods = var_6534f716[0] spawner::spawn(1);
     var_1100faeb = struct::get("raid_capture_woods", "targetname");
     level.woods forceteleport(var_1100faeb.origin, var_1100faeb.angles);
@@ -75,15 +75,15 @@ function function_f9f06983(*var_d3440450) {
 // Checksum 0x12df1d54, Offset: 0xd48
 // Size: 0x2b0
 function function_daaa52d5() {
-    var_67de73de = getent("raid_capture_plant", "targetname");
-    if (isdefined(var_67de73de)) {
-        level scene::init("scene_tkd_hit2_rooftop_props", [0:var_67de73de]);
+    raid_capture_plant = getent("raid_capture_plant", "targetname");
+    if (isdefined(raid_capture_plant)) {
+        level scene::init("scene_tkd_hit2_rooftop_props", [0:raid_capture_plant]);
     }
     level thread scene::play("scene_tkd_hit2_canal_ambience");
     level thread scene::init("bird_plantsmash_startle", "targetname");
     level thread function_bde24dd8();
-    var_db9090e4 = getentarray("canal_boats", "targetname");
-    foreach (boat in var_db9090e4) {
+    canal_boats = getentarray("canal_boats", "targetname");
+    foreach (boat in canal_boats) {
         if (isdefined(boat.target)) {
             boat.var_dcc87061.boat = [];
             var_dcc87061 = getentarray(boat.target, "targetname");
@@ -138,11 +138,11 @@ function main(var_d3440450, var_50cc0d4f) {
     scene::function_d0d7d9f7("scene_tkd_hit2_rooftop", &function_6c1a4c01);
     scene::function_d0d7d9f7("scene_tkd_hit2_rooftop_props", &function_6c1a4c01);
     level thread function_3dafee47();
-    if (isdefined(level.var_fdc6062e)) {
-        level.var_d9f0cb5b = level.var_fdc6062e;
+    if (isdefined(level.adler)) {
+        level.raid_adler = level.adler;
     }
     if (isdefined(level.woods)) {
-        level.var_e228f5df = level.woods;
+        level.raid_woods = level.woods;
     }
     level battlechatter::function_2ab9360b(0);
     player thread function_c0b643d5();
@@ -155,7 +155,7 @@ function main(var_d3440450, var_50cc0d4f) {
         player = getplayers()[0];
     }
     player thread util::delay(1, undefined, &disableweapons);
-    level.var_fdc6062e thread function_e5aa773b("adler_leave_capture");
+    level.adler thread function_e5aa773b("adler_leave_capture");
     level.woods thread function_e5aa773b("woods_leave_capture");
     player clientfield::set_to_player("lerp_fov", 0);
     namespace_a052577e::function_60c0a46b();
@@ -172,11 +172,11 @@ function main(var_d3440450, var_50cc0d4f) {
     tkdn_af_hill::function_a2015343();
     level thread scene::init("scene_tkd_hit3_intro");
     wait(2.5);
-    if (isdefined(level.var_d9f0cb5b.magic_bullet_shield)) {
-        level thread util::stop_magic_bullet_shield(level.var_d9f0cb5b);
+    if (isdefined(level.raid_adler.magic_bullet_shield)) {
+        level thread util::stop_magic_bullet_shield(level.raid_adler);
     }
-    if (isdefined(level.var_e228f5df.magic_bullet_shield)) {
-        level thread util::stop_magic_bullet_shield(level.var_e228f5df);
+    if (isdefined(level.raid_woods.magic_bullet_shield)) {
+        level thread util::stop_magic_bullet_shield(level.raid_woods);
     }
     level scene::stop("scene_tkd_hit2_rooftop", 1);
     level scene::stop("scene_tkd_hit2_rooftop_props", 1);
@@ -212,11 +212,11 @@ function function_26e6230d() {
     level.var_2fef04d8 endon(#"death");
     level.var_2fef04d8.var_c681e4c1 = 1;
     level.var_2fef04d8.ignoreall = 1;
-    level.var_d9f0cb5b = level.var_fdc6062e;
-    level.var_e228f5df = level.woods;
-    level.var_862acc3d = level.var_2fef04d8;
+    level.raid_adler = level.adler;
+    level.raid_woods = level.woods;
+    level.raid_qasim = level.var_2fef04d8;
     level flag::wait_till("flag_qasim_ready_for_interrogation");
-    level.var_2fef04d8 thread namespace_6d8a9d04::function_cfa96cee(level.var_27da2f39, undefined, undefined, undefined, 100, 200, 15, vectorscale((0, 0, 1), 6), 1);
+    level.var_2fef04d8 thread dialog_tree::function_cfa96cee(level.var_27da2f39, undefined, undefined, undefined, 100, 200, 15, vectorscale((0, 0, 1), 6), 1);
     level.var_2fef04d8 namespace_f48ab2e1::function_2557566(#"use", 5);
 }
 
@@ -258,8 +258,8 @@ function function_44f8874() {
     if (isdefined(level.var_30fc6630)) {
         level.var_30fc6630 delete();
     }
-    if (isdefined(level.var_d9f0cb5b.model) && level.var_d9f0cb5b.model != #"hash_738e719a1f46c805") {
-        level.var_d9f0cb5b thread namespace_b100dd86::function_f82142f8(undefined, "c_t9_usa_hero_adler_civ_amsterdam_body_no_dyn");
+    if (isdefined(level.raid_adler.model) && level.raid_adler.model != #"c_t9_usa_hero_adler_civ_amsterdam_body_no_dyn") {
+        level.raid_adler thread namespace_b100dd86::function_f82142f8(undefined, "c_t9_usa_hero_adler_civ_amsterdam_body_no_dyn");
     }
     level thread scene::play("scene_tkd_hit2_rooftop_props", "dt_enter");
     level scene::play("scene_tkd_hit2_rooftop", "dt_enter");
@@ -282,23 +282,23 @@ function function_8a6dd527() {
 // Size: 0x49c
 function function_3dafee47() {
     var_6139147e = [4:"vox_cp_tdwn_05100_adlr_newpresidentnew_27", 3:"vox_cp_tdwn_05100_adlr_ivesteppedthrou_86", 2:"vox_cp_tdwn_05100_qasm_youcantdothisyo_0e", 1:"vox_cp_tdwn_05100_adlr_idontthinkyouun_95", 0:"vox_cp_tdwn_05100_qasm_iijusthandlethe_6e"];
-    level.var_27da2f39 = namespace_6d8a9d04::function_82b16606(&function_44f8874, undefined, 1, 0, "scene_tkd_hit2_rooftop");
-    level.var_27da2f39 namespace_6d8a9d04::function_58d27b23(#"hash_3c66be703efed3de", undefined, "dt_1_res", "dt_idle", 1, undefined, undefined, &function_86b6bafa);
-    level.var_27da2f39 namespace_6d8a9d04::function_58d27b23(#"hash_318bdd24cc15cbb", undefined, "dt_1_res", "dt_idle", 1, undefined, undefined, &function_86b6bafa);
-    namespace_6d8a9d04::function_21780fc5(level.var_27da2f39, array(1340, 700));
-    level.var_58759087 = namespace_6d8a9d04::function_82b16606(undefined, undefined, 1, 0, "scene_tkd_hit2_rooftop");
-    level.var_58759087 namespace_6d8a9d04::function_58d27b23(#"hash_f2078633819f72a", undefined, "dt_2_res", "dt_idle", 1, undefined, undefined, &function_58efdf6d);
-    level.var_58759087 namespace_6d8a9d04::function_58d27b23(#"hash_18daf35010313d18", undefined, "dt_2_res", "dt_idle", 1, undefined, undefined, &function_58efdf6d);
-    namespace_6d8a9d04::function_21780fc5(level.var_58759087, array(1340, 700));
-    level.var_4a3df400 = namespace_6d8a9d04::function_82b16606(undefined, undefined, 1, 0, "scene_tkd_hit2_rooftop");
-    level.var_4a3df400 namespace_6d8a9d04::function_58d27b23(#"hash_349afebd4cf454c0", undefined, "dt_3_res", "dt_idle", 1, undefined, undefined, &function_6321f3d1);
-    level.var_4a3df400 namespace_6d8a9d04::function_58d27b23(#"hash_492dbe6eaab8aa2f", undefined, undefined, undefined, 1, undefined, undefined, &function_80b14544);
-    namespace_6d8a9d04::function_21780fc5(level.var_4a3df400, array(1340, 700));
-    level.var_cb1375a9 = namespace_6d8a9d04::function_82b16606(undefined, undefined, 1, 0, "scene_tkd_hit2_rooftop");
-    level.var_cb1375a9 namespace_6d8a9d04::function_58d27b23(#"hash_129166306e8bfcd3", undefined, undefined, undefined, 1, undefined, undefined, &function_4f4627e4);
-    level.var_cb1375a9 namespace_6d8a9d04::function_58d27b23(#"hash_492dbe6eaab8aa2f", undefined, undefined, undefined, 1, undefined, undefined, &function_80b14544);
-    level.var_cb1375a9 namespace_6d8a9d04::function_58d27b23(#"hash_48d4e67acff606fd", undefined, undefined, undefined, 1, undefined, undefined, &function_c29f52ec);
-    namespace_6d8a9d04::function_21780fc5(level.var_cb1375a9, array(1340, 700));
+    level.var_27da2f39 = dialog_tree::function_82b16606(&function_44f8874, undefined, 1, 0, "scene_tkd_hit2_rooftop");
+    level.var_27da2f39 dialog_tree::function_58d27b23(#"hash_3c66be703efed3de", undefined, "dt_1_res", "dt_idle", 1, undefined, undefined, &function_86b6bafa);
+    level.var_27da2f39 dialog_tree::function_58d27b23(#"hash_318bdd24cc15cbb", undefined, "dt_1_res", "dt_idle", 1, undefined, undefined, &function_86b6bafa);
+    dialog_tree::function_21780fc5(level.var_27da2f39, array(1340, 700));
+    level.var_58759087 = dialog_tree::function_82b16606(undefined, undefined, 1, 0, "scene_tkd_hit2_rooftop");
+    level.var_58759087 dialog_tree::function_58d27b23(#"hash_f2078633819f72a", undefined, "dt_2_res", "dt_idle", 1, undefined, undefined, &function_58efdf6d);
+    level.var_58759087 dialog_tree::function_58d27b23(#"hash_18daf35010313d18", undefined, "dt_2_res", "dt_idle", 1, undefined, undefined, &function_58efdf6d);
+    dialog_tree::function_21780fc5(level.var_58759087, array(1340, 700));
+    level.var_4a3df400 = dialog_tree::function_82b16606(undefined, undefined, 1, 0, "scene_tkd_hit2_rooftop");
+    level.var_4a3df400 dialog_tree::function_58d27b23(#"hash_349afebd4cf454c0", undefined, "dt_3_res", "dt_idle", 1, undefined, undefined, &function_6321f3d1);
+    level.var_4a3df400 dialog_tree::function_58d27b23(#"hash_492dbe6eaab8aa2f", undefined, undefined, undefined, 1, undefined, undefined, &function_80b14544);
+    dialog_tree::function_21780fc5(level.var_4a3df400, array(1340, 700));
+    level.var_cb1375a9 = dialog_tree::function_82b16606(undefined, undefined, 1, 0, "scene_tkd_hit2_rooftop");
+    level.var_cb1375a9 dialog_tree::function_58d27b23(#"hash_129166306e8bfcd3", undefined, undefined, undefined, 1, undefined, undefined, &function_4f4627e4);
+    level.var_cb1375a9 dialog_tree::function_58d27b23(#"hash_492dbe6eaab8aa2f", undefined, undefined, undefined, 1, undefined, undefined, &function_80b14544);
+    level.var_cb1375a9 dialog_tree::function_58d27b23(#"hash_48d4e67acff606fd", undefined, undefined, undefined, 1, undefined, undefined, &function_c29f52ec);
+    dialog_tree::function_21780fc5(level.var_cb1375a9, array(1340, 700));
 }
 
 // Namespace tkdn_raid_capture/namespace_9b20efbd
@@ -308,11 +308,11 @@ function function_3dafee47() {
 function function_86b6bafa() {
     level thread namespace_a052577e::function_e88f8edb();
     self waittill(#"hash_12324459eb2bc76d");
-    level.var_58759087 thread namespace_6d8a9d04::run(level.var_2fef04d8);
+    level.var_58759087 thread dialog_tree::run(level.var_2fef04d8);
     level namespace_f49eaa8b::function_a7d79fcb([1:"airfield_base", 0:"airfield_intro"]);
-    level thread function_5f86b0a3();
-    if (isdefined(level.var_d9f0cb5b.model) && level.var_d9f0cb5b.model != #"hash_22afa694f9308b29") {
-        level.var_d9f0cb5b thread namespace_b100dd86::function_f82142f8(undefined, "c_t9_usa_hero_adler_civ_amsterdam_body");
+    level thread slide_enemy2_clip();
+    if (isdefined(level.raid_adler.model) && level.raid_adler.model != #"c_t9_usa_hero_adler_civ_amsterdam_body") {
+        level.raid_adler thread namespace_b100dd86::function_f82142f8(undefined, "c_t9_usa_hero_adler_civ_amsterdam_body");
     }
 }
 
@@ -321,29 +321,29 @@ function function_86b6bafa() {
 // Checksum 0xe74f3a61, Offset: 0x20d8
 // Size: 0x1cc
 function function_b47183fb() {
-    if (!isdefined(level.var_5895f36c)) {
-        level.var_5895f36c = getent("raid_capture_street_vehicle", "targetname");
+    if (!isdefined(level.raid_capture_street_vehicle)) {
+        level.raid_capture_street_vehicle = getent("raid_capture_street_vehicle", "targetname");
     }
-    if (!isdefined(level.var_5895f36c)) {
+    if (!isdefined(level.raid_capture_street_vehicle)) {
         return;
     }
-    if (level.var_5895f36c haspart("tag_glass_windshield_d1")) {
-        level.var_5895f36c hidepart("tag_glass_windshield_d1");
+    if (level.raid_capture_street_vehicle haspart("tag_glass_windshield_d1")) {
+        level.raid_capture_street_vehicle hidepart("tag_glass_windshield_d1");
     }
-    if (level.var_5895f36c haspart("tag_glass_hatch_d1")) {
-        level.var_5895f36c hidepart("tag_glass_hatch_d1");
+    if (level.raid_capture_street_vehicle haspart("tag_glass_hatch_d1")) {
+        level.raid_capture_street_vehicle hidepart("tag_glass_hatch_d1");
     }
-    if (level.var_5895f36c haspart("tag_glass_right_side_d1")) {
-        level.var_5895f36c hidepart("tag_glass_right_side_d1");
+    if (level.raid_capture_street_vehicle haspart("tag_glass_right_side_d1")) {
+        level.raid_capture_street_vehicle hidepart("tag_glass_right_side_d1");
     }
-    if (level.var_5895f36c haspart("tag_glass_left_side_d1")) {
-        level.var_5895f36c hidepart("tag_glass_left_side_d1");
+    if (level.raid_capture_street_vehicle haspart("tag_glass_left_side_d1")) {
+        level.raid_capture_street_vehicle hidepart("tag_glass_left_side_d1");
     }
-    if (level.var_5895f36c haspart("tag_glass_right_front_d1")) {
-        level.var_5895f36c hidepart("tag_glass_right_front_d1");
+    if (level.raid_capture_street_vehicle haspart("tag_glass_right_front_d1")) {
+        level.raid_capture_street_vehicle hidepart("tag_glass_right_front_d1");
     }
-    if (level.var_5895f36c haspart("tag_glass_left_front_d1")) {
-        level.var_5895f36c hidepart("tag_glass_left_front_d1");
+    if (level.raid_capture_street_vehicle haspart("tag_glass_left_front_d1")) {
+        level.raid_capture_street_vehicle hidepart("tag_glass_left_front_d1");
     }
 }
 
@@ -352,52 +352,52 @@ function function_b47183fb() {
 // Checksum 0x7b92bb1a, Offset: 0x22b0
 // Size: 0x3f4
 function function_ba74fe83() {
-    if (!isdefined(level.var_5895f36c)) {
+    if (!isdefined(level.raid_capture_street_vehicle)) {
         level function_b47183fb();
     }
-    if (!isdefined(level.var_5895f36c)) {
+    if (!isdefined(level.raid_capture_street_vehicle)) {
         return;
     }
     level waittill(#"hash_6cb6f4903c20dbae");
-    playfxontag("destruct/fx_dest_glass_shard_impact_burst", level.var_5895f36c, "tag_glass_windshield_d0");
-    if (level.var_5895f36c haspart("tag_glass_windshield_d0")) {
-        level.var_5895f36c hidepart("tag_glass_windshield_d0");
+    playfxontag("destruct/fx_dest_glass_shard_impact_burst", level.raid_capture_street_vehicle, "tag_glass_windshield_d0");
+    if (level.raid_capture_street_vehicle haspart("tag_glass_windshield_d0")) {
+        level.raid_capture_street_vehicle hidepart("tag_glass_windshield_d0");
     }
-    if (level.var_5895f36c haspart("tag_glass_windshield_d1")) {
-        level.var_5895f36c showpart("tag_glass_windshield_d1");
+    if (level.raid_capture_street_vehicle haspart("tag_glass_windshield_d1")) {
+        level.raid_capture_street_vehicle showpart("tag_glass_windshield_d1");
     }
-    playfxontag("destruct/fx_dest_glass_shard_impact_burst", level.var_5895f36c, "tag_glass_hatch_d0");
-    if (level.var_5895f36c haspart("tag_glass_hatch_d0")) {
-        level.var_5895f36c hidepart("tag_glass_hatch_d0");
+    playfxontag("destruct/fx_dest_glass_shard_impact_burst", level.raid_capture_street_vehicle, "tag_glass_hatch_d0");
+    if (level.raid_capture_street_vehicle haspart("tag_glass_hatch_d0")) {
+        level.raid_capture_street_vehicle hidepart("tag_glass_hatch_d0");
     }
-    if (level.var_5895f36c haspart("tag_glass_hatch_d1")) {
-        level.var_5895f36c showpart("tag_glass_hatch_d1");
+    if (level.raid_capture_street_vehicle haspart("tag_glass_hatch_d1")) {
+        level.raid_capture_street_vehicle showpart("tag_glass_hatch_d1");
     }
-    if (level.var_5895f36c haspart("tag_glass_right_side_d0")) {
-        level.var_5895f36c hidepart("tag_glass_right_side_d0");
+    if (level.raid_capture_street_vehicle haspart("tag_glass_right_side_d0")) {
+        level.raid_capture_street_vehicle hidepart("tag_glass_right_side_d0");
     }
-    if (level.var_5895f36c haspart("tag_glass_right_side_d1")) {
-        level.var_5895f36c showpart("tag_glass_right_side_d1");
+    if (level.raid_capture_street_vehicle haspart("tag_glass_right_side_d1")) {
+        level.raid_capture_street_vehicle showpart("tag_glass_right_side_d1");
     }
-    playfxontag("destruct/fx_dest_glass_shard_impact_burst", level.var_5895f36c, "tag_glass_left_side_d0");
-    if (level.var_5895f36c haspart("tag_glass_left_side_d0")) {
-        level.var_5895f36c hidepart("tag_glass_left_side_d0");
+    playfxontag("destruct/fx_dest_glass_shard_impact_burst", level.raid_capture_street_vehicle, "tag_glass_left_side_d0");
+    if (level.raid_capture_street_vehicle haspart("tag_glass_left_side_d0")) {
+        level.raid_capture_street_vehicle hidepart("tag_glass_left_side_d0");
     }
-    if (level.var_5895f36c haspart("tag_glass_left_side_d1")) {
-        level.var_5895f36c showpart("tag_glass_left_side_d1");
+    if (level.raid_capture_street_vehicle haspart("tag_glass_left_side_d1")) {
+        level.raid_capture_street_vehicle showpart("tag_glass_left_side_d1");
     }
-    playfxontag("destruct/fx_dest_glass_shard_impact_burst", level.var_5895f36c, "tag_glass_right_front_d0");
-    if (level.var_5895f36c haspart("tag_glass_right_front_d0")) {
-        level.var_5895f36c hidepart("tag_glass_right_front_d0");
+    playfxontag("destruct/fx_dest_glass_shard_impact_burst", level.raid_capture_street_vehicle, "tag_glass_right_front_d0");
+    if (level.raid_capture_street_vehicle haspart("tag_glass_right_front_d0")) {
+        level.raid_capture_street_vehicle hidepart("tag_glass_right_front_d0");
     }
-    if (level.var_5895f36c haspart("tag_glass_right_front_d1")) {
-        level.var_5895f36c showpart("tag_glass_right_front_d1");
+    if (level.raid_capture_street_vehicle haspart("tag_glass_right_front_d1")) {
+        level.raid_capture_street_vehicle showpart("tag_glass_right_front_d1");
     }
-    if (level.var_5895f36c haspart("tag_glass_left_front_d0")) {
-        level.var_5895f36c hidepart("tag_glass_left_front_d0");
+    if (level.raid_capture_street_vehicle haspart("tag_glass_left_front_d0")) {
+        level.raid_capture_street_vehicle hidepart("tag_glass_left_front_d0");
     }
-    if (level.var_5895f36c haspart("tag_glass_left_front_d1")) {
-        level.var_5895f36c showpart("tag_glass_left_front_d1");
+    if (level.raid_capture_street_vehicle haspart("tag_glass_left_front_d1")) {
+        level.raid_capture_street_vehicle showpart("tag_glass_left_front_d1");
     }
 }
 
@@ -407,7 +407,7 @@ function function_ba74fe83() {
 // Size: 0x3c
 function function_58efdf6d() {
     self waittill(#"hash_12324459eb2bc76d");
-    level.var_4a3df400 thread namespace_6d8a9d04::run(level.var_2fef04d8);
+    level.var_4a3df400 thread dialog_tree::run(level.var_2fef04d8);
 }
 
 // Namespace tkdn_raid_capture/namespace_9b20efbd
@@ -417,7 +417,7 @@ function function_58efdf6d() {
 function function_6321f3d1() {
     self waittill(#"hash_12324459eb2bc76d");
     collectibles::function_6cd091d2(1, 0);
-    level.var_cb1375a9 thread namespace_6d8a9d04::run(level.var_2fef04d8);
+    level.var_cb1375a9 thread dialog_tree::run(level.var_2fef04d8);
 }
 
 // Namespace tkdn_raid_capture/namespace_9b20efbd
@@ -429,16 +429,16 @@ function function_80b14544() {
     music::function_edda155f("3.2_kill_stinger");
     player = getplayers()[0];
     player waittillmatch({#notetrack:"end"}, #"hash_b1f863e899edc77");
-    player namespace_ee1da81f::function_a029a114(1);
+    player player_decision::function_a029a114(1);
     getplayers()[0] stats::function_dad108fa(#"hash_66d228fbcd074f42", 1);
-    namespace_ee1da81f::function_8c0836dd(1);
+    player_decision::function_8c0836dd(1);
 }
 
 // Namespace tkdn_raid_capture/namespace_9b20efbd
 // Params 0, eflags: 0x2 linked
 // Checksum 0x70917646, Offset: 0x2868
 // Size: 0x44
-function function_5f86b0a3() {
+function slide_enemy2_clip() {
     clip = getent("slide_enemy2_clip", "targetname");
     clip delete();
 }
@@ -459,8 +459,8 @@ function function_c29f52ec() {
 function function_1998b542() {
     player = getplayers()[0];
     player waittillmatch({#notetrack:"end"}, #"hash_40acbc898ee5e354");
-    player namespace_ee1da81f::function_a029a114(0);
-    player namespace_ee1da81f::function_8c0836dd(2);
+    player player_decision::function_a029a114(0);
+    player player_decision::function_8c0836dd(2);
 }
 
 // Namespace tkdn_raid_capture/namespace_9b20efbd
@@ -506,8 +506,8 @@ function function_95707bc7() {
         level.var_2fef04d8 waittill(#"damage");
         level.var_2fef04d8 stopsounds();
     }
-    player namespace_ee1da81f::function_a029a114(1);
-    namespace_ee1da81f::function_8c0836dd(1);
+    player player_decision::function_a029a114(1);
+    player_decision::function_8c0836dd(1);
     level notify(#"hash_2871e831466dfa03");
     level.var_2fef04d8 namespace_a635adb1::function_47b06180();
     level scene::play("scene_tkd_hit2_rooftop", "dt_end_3_playershoots");
@@ -590,8 +590,8 @@ function function_2ed341fb() {
     wait(6);
     level notify(#"hash_19e8d79db3b9786a");
     aiutility::removeaioverridedamagecallback(level.var_2fef04d8, &function_c5881277);
-    player namespace_ee1da81f::function_a029a114(1);
-    namespace_ee1da81f::function_8c0836dd(1);
+    player player_decision::function_a029a114(1);
+    player_decision::function_8c0836dd(1);
     level scene::play("scene_tkd_hit2_rooftop", "dt_end_4_Adlershoots");
 }
 
@@ -600,35 +600,35 @@ function function_2ed341fb() {
 // Checksum 0x8b038066, Offset: 0x30d8
 // Size: 0x41c
 function cleanup(*name, *var_f9f06983, *direct, *player) {
-    if (isdefined(level.var_862acc3d)) {
-        if (isdefined(level.var_862acc3d.magic_bullet_shield)) {
-            level thread util::stop_magic_bullet_shield(level.var_862acc3d);
+    if (isdefined(level.raid_qasim)) {
+        if (isdefined(level.raid_qasim.magic_bullet_shield)) {
+            level thread util::stop_magic_bullet_shield(level.raid_qasim);
         }
-        level.var_862acc3d delete();
+        level.raid_qasim delete();
     }
-    if (isdefined(level.var_d9f0cb5b)) {
-        if (isdefined(level.var_d9f0cb5b.magic_bullet_shield)) {
-            level thread util::stop_magic_bullet_shield(level.var_d9f0cb5b);
+    if (isdefined(level.raid_adler)) {
+        if (isdefined(level.raid_adler.magic_bullet_shield)) {
+            level thread util::stop_magic_bullet_shield(level.raid_adler);
         }
-        level.var_d9f0cb5b delete();
+        level.raid_adler delete();
     }
-    if (isdefined(level.var_e228f5df)) {
-        if (isdefined(level.var_e228f5df.magic_bullet_shield)) {
-            level thread util::stop_magic_bullet_shield(level.var_e228f5df);
+    if (isdefined(level.raid_woods)) {
+        if (isdefined(level.raid_woods.magic_bullet_shield)) {
+            level thread util::stop_magic_bullet_shield(level.raid_woods);
         }
-        level.var_e228f5df delete();
+        level.raid_woods delete();
     }
-    var_5895f36c = getent("raid_capture_street_vehicle", "targetname");
-    if (isdefined(var_5895f36c)) {
-        var_5895f36c delete();
+    raid_capture_street_vehicle = getent("raid_capture_street_vehicle", "targetname");
+    if (isdefined(raid_capture_street_vehicle)) {
+        raid_capture_street_vehicle delete();
     }
-    var_67de73de = getent("raid_capture_plant", "targetname");
-    if (isdefined(var_67de73de)) {
-        var_67de73de delete();
+    raid_capture_plant = getent("raid_capture_plant", "targetname");
+    if (isdefined(raid_capture_plant)) {
+        raid_capture_plant delete();
     }
-    var_db9090e4 = getentarray("canal_boats", "targetname");
-    if (isdefined(var_db9090e4)) {
-        foreach (boat in var_db9090e4) {
+    canal_boats = getentarray("canal_boats", "targetname");
+    if (isdefined(canal_boats)) {
+        foreach (boat in canal_boats) {
             if (isdefined(boat.target)) {
                 var_dcc87061 = getentarray(boat.target, "targetname");
                 foreach (var_a8f6e856 in var_dcc87061) {
@@ -642,13 +642,13 @@ function cleanup(*name, *var_f9f06983, *direct, *player) {
             }
         }
     }
-    var_407b31ed = getent("canal_house_boat", "targetname");
-    if (isdefined(var_407b31ed)) {
-        var_407b31ed delete();
+    canal_house_boat = getent("canal_house_boat", "targetname");
+    if (isdefined(canal_house_boat)) {
+        canal_house_boat delete();
     }
-    var_86309a32 = getent("canal_small_boat", "targetname");
-    if (isdefined(var_86309a32)) {
-        var_86309a32 delete();
+    canal_small_boat = getent("canal_small_boat", "targetname");
+    if (isdefined(canal_small_boat)) {
+        canal_small_boat delete();
     }
     guys = getaiteamarray("axis");
     array::delete_all(guys);

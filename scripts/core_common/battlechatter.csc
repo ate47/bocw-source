@@ -396,7 +396,7 @@ function function_c8663dbc(weapon, player) {
     case #"inventory_helicopter_comlink":
         taacomdialog = "attackChopperHacked";
         break;
-    case #"hash_4557bd9f04730cb":
+    case #"inventory_helicopter_guard":
     case #"helicopter_guard":
         taacomdialog = "heavyAttackChopperHacked";
         break;

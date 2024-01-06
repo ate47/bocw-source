@@ -84,7 +84,7 @@ function event_handler[gametype_init] main(*eventstruct) {
     clientfield::function_5b7d846d("hudItems.warzone.collapseIndex", #"hash_593f03dd48d5bc1f", #"collapseindex", 1, 3, "int", undefined, 0, 0);
     clientfield::function_5b7d846d("hudItems.warzone.collapseCount", #"hash_593f03dd48d5bc1f", #"collapsecount", 1, 3, "int", undefined, 0, 0);
     clientfield::function_5b7d846d("hudItems.warzone.reinsertionIndex", #"hash_593f03dd48d5bc1f", #"reinsertionindex", 1, 3, "int", undefined, 0, 0);
-    clientfield::register("world", "set_objective_fog", 1, 2, "int", &function_bdd60454, 0, 0);
+    clientfield::register("world", "set_objective_fog", 1, 2, "int", &set_objective_fog, 0, 0);
     clientfield::function_5b7d846d("hudItems.team1.roundsWon", #"hash_410fe12a68d6e801", [1:#"roundswon", 0:#"team1"], 1, 4, "int", undefined, 0, 0);
     clientfield::function_5b7d846d("hudItems.team2.roundsWon", #"hash_410fe12a68d6e801", [1:#"roundswon", 0:#"team2"], 1, 4, "int", undefined, 0, 0);
     namespace_4abf1500::function_88645994(#"zmintel_list_survival_document_drops", #"zmintel_list_survival_darkaether_computer", #"zmintel_list_survival_radio_transmissions_requiem", #"zmintel_list_survival_radio_transmissions_maxis", #"zmintel_list_survival_radio_transmissions_omega");
@@ -111,7 +111,7 @@ function on_player_connect(localclientnum) {
 // Params 7, eflags: 0x0
 // Checksum 0x6cb70b23, Offset: 0xf80
 // Size: 0x1b4
-function function_bdd60454(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
+function set_objective_fog(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
     switch (wasdemojump) {
     case 0:
         var_92d85419 = level.var_6465f02d;

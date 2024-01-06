@@ -40,7 +40,7 @@ function function_f9f06983(*var_d3440450) {
     level.var_49a5d2a4 namespace_db2381c4::function_4c265dee();
     tkdn_af_hill::function_a2015343();
     a_ar = getweapon(#"ar_accurate_t9");
-    level.var_fdc6062e setweapon(a_ar);
+    level.adler setweapon(a_ar);
     level flag::set("af_start_enemy_crash_vehs");
     setdvar(#"hash_76c0d7e6385ee6de", 0.05);
     thread namespace_a052577e::function_3dbad6f5();
@@ -61,9 +61,9 @@ function main(var_d3440450, *var_50cc0d4f) {
     thread function_243c9d46(player);
     level notify(#"hash_2000b4f0550d06a6");
     level flag::wait_till("af_skid_complete");
-    if (isdefined(level.var_fdc6062e)) {
-        level.var_fdc6062e util::stop_magic_bullet_shield();
-        level.var_fdc6062e delete();
+    if (isdefined(level.adler)) {
+        level.adler util::stop_magic_bullet_shield();
+        level.adler delete();
     }
     setdvar(#"hash_3d9a09e7ecea2271", 1);
     if (isdefined(var_50cc0d4f)) {
@@ -148,7 +148,7 @@ function function_243c9d46(player) {
     }
     plane = getent("cargo_plane", "targetname");
     plane unlink();
-    level.var_fdc6062e unlink();
+    level.adler unlink();
     util::function_3d955ac5(1);
     actors = level.var_515a88e0;
     level.var_38ac20b2 = util::spawn_player_clone(level.player);

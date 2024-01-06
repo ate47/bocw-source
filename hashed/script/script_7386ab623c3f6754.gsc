@@ -195,7 +195,7 @@ function function_c355b189(origin, *angles, player) {
         }
     }
     if (zm_utility::is_survival()) {
-        if (level.var_7d45d0d4.activeobjective.var_b588b063 === "holdout" && isdefined(level.var_e6689780) || is_true(player.var_41c16555)) {
+        if (level.var_7d45d0d4.activeobjective.content_script_name === "holdout" && isdefined(level.var_e6689780) || is_true(player.var_41c16555)) {
             if (!ispointonnavmesh(angles, 8)) {
                 return 0;
             }

@@ -363,13 +363,13 @@ function function_171246a9() {
 // Size: 0x216
 function function_b8244ec0(ai, eventtype) {
     self endon(#"combat_started");
-    self endon(#"hash_23a37229c5405652");
+    self endon(#"stealth_enabled");
     self.stealth.var_92b57f62.var_74def2f9[self.stealth.var_92b57f62.var_74def2f9.size] = ai;
     if (ai [[ ai.var_678afc31 ]]()) {
         ai util::delay(10, array("combat_started", "stealth_enabled"), &util::function_90dafe5, "stealthHints_timeout");
-        ai waittill(#"hash_56f0c0a340f0b0ad", #"death", #"hash_1b2a8b7fa7e73d9a");
+        ai waittill(#"stealth_combat", #"death", #"stealthhints_timeout");
     } else if (ai [[ ai.var_cd774402 ]]()) {
-        ai waittill(#"hash_32b0a9d6ca03306f", #"hash_56f0c0a340f0b0ad", #"death");
+        ai waittill(#"stealth_idle", #"stealth_combat", #"death");
     }
     arrayremovevalue(self.stealth.var_92b57f62.var_74def2f9, ai);
     if (!isalive(ai) || isdefined(ai.var_1e36e368) && !ai [[ ai.var_1e36e368 ]]()) {

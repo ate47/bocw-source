@@ -40,7 +40,7 @@ function private autoexec __init__system__() {
 // Checksum 0x7069a258, Offset: 0x340
 // Size: 0x134
 function function_70a657d8() {
-    level.var_2457162c = namespace_d21eb1ac::register();
+    level.var_2457162c = sr_weapon_upgrade_menu::register();
     clientfield::register("scriptmover", "weapon_machine_fx", 1, 1, "int");
     weapon = getweapon(#"bare_hands");
     aat::register_aat_exemption(weapon);
@@ -117,7 +117,7 @@ function function_e0069640(struct) {
     }
     scriptmodel = namespace_8b6a9d79::function_f3d93ee9(struct, #"hash_7336039cd7e006a4", 1);
     zm_utility::function_ca960904(scriptmodel);
-    if (struct.parent.var_b588b063 !== #"safehouse") {
+    if (struct.parent.content_script_name !== #"safehouse") {
         objid = [[ var_c6d25878 ]](#"hash_1fb6c7512b2e0e38", scriptmodel);
         struct.objectiveid = objid;
         scriptmodel.objectiveid = objid;
@@ -201,9 +201,9 @@ function function_5b75a557(eventstruct) {
         if (currentweapon === level.weaponnone || currentweapon === level.weaponbasemeleeheld || killstreaks::is_killstreak_weapon(currentweapon)) {
             return;
         }
-        if (!level.var_2457162c namespace_d21eb1ac::is_open(player) && !player clientfield::get_player_uimodel("hudItems.srOverlayOpen")) {
+        if (!level.var_2457162c sr_weapon_upgrade_menu::is_open(player) && !player clientfield::get_player_uimodel("hudItems.srOverlayOpen")) {
             player notify(#"hash_5f178db4550eeae9");
-            level.var_2457162c namespace_d21eb1ac::open(player, 0);
+            level.var_2457162c sr_weapon_upgrade_menu::open(player, 0);
             player thread function_4609e67c(machine, self);
             player namespace_553954de::function_14bada94();
         }
@@ -305,8 +305,8 @@ function function_6c71e778(machine, trigger) {
             zm_utility::function_e8f4d47b(self, machine.objectiveid, 0);
         }
     }
-    if (level.var_2457162c namespace_d21eb1ac::is_open(self) && self clientfield::get_player_uimodel("hudItems.srOverlayOpen")) {
-        level.var_2457162c namespace_d21eb1ac::close(self);
+    if (level.var_2457162c sr_weapon_upgrade_menu::is_open(self) && self clientfield::get_player_uimodel("hudItems.srOverlayOpen")) {
+        level.var_2457162c sr_weapon_upgrade_menu::close(self);
         self namespace_553954de::function_548f282();
     }
     self notify(#"hash_213991f4845a7f0f");
@@ -362,13 +362,13 @@ function function_a9a3d4e0(machine, trigger) {
     self endon(#"disconnect", #"death", #"hash_213991f4845a7f0f");
     var_f9c2bece = distance2d(machine.origin, self.origin);
     start_origin = self.origin;
-    while ((distance2d(machine.origin, self.origin) <= var_f9c2bece || distance2d(self.origin, start_origin) < 32) && !self laststand::player_is_in_laststand() && !self isinvehicle() && !level flag::get(#"hash_3032e4acc5a6d8ee")) {
+    while ((distance2d(machine.origin, self.origin) <= var_f9c2bece || distance2d(self.origin, start_origin) < 32) && !self laststand::player_is_in_laststand() && !self isinvehicle() && !level flag::get(#"disable_weapon_machine")) {
         waitframe(1);
         if (!isdefined(machine)) {
             break;
         }
     }
-    if (level.var_2457162c namespace_d21eb1ac::is_open(self) && self clientfield::get_player_uimodel("hudItems.srOverlayOpen")) {
+    if (level.var_2457162c sr_weapon_upgrade_menu::is_open(self) && self clientfield::get_player_uimodel("hudItems.srOverlayOpen")) {
         self function_6c71e778(machine, trigger);
     }
 }
@@ -482,9 +482,9 @@ function function_4609e67c(machine, trigger) {
         var_9684b86c = 0;
         if (aat::is_exempt_weapon(weapon) || zm_weapons::is_wonder_weapon(weapon) || var_9f40587a || function_ef9d58d0(undefined, weapon)) {
             var_9684b86c = 1;
-            level.var_2457162c namespace_d21eb1ac::function_83d182e9(self, 1);
+            level.var_2457162c sr_weapon_upgrade_menu::function_83d182e9(self, 1);
         } else {
-            level.var_2457162c namespace_d21eb1ac::function_83d182e9(self, 0);
+            level.var_2457162c sr_weapon_upgrade_menu::function_83d182e9(self, 0);
         }
         while (self isswitchingweapons() || self getcurrentweapon() == level.weaponnone || is_true(self.var_c685a4c6)) {
             waitframe(1);
@@ -507,9 +507,9 @@ function function_4609e67c(machine, trigger) {
         var_9684b86c = 0;
         if (aat::is_exempt_weapon(weapon) || zm_weapons::is_wonder_weapon(weapon) || var_9f40587a || function_ef9d58d0(item)) {
             var_9684b86c = 1;
-            level.var_2457162c namespace_d21eb1ac::function_83d182e9(self, 1);
+            level.var_2457162c sr_weapon_upgrade_menu::function_83d182e9(self, 1);
         } else {
-            level.var_2457162c namespace_d21eb1ac::function_83d182e9(self, 0);
+            level.var_2457162c sr_weapon_upgrade_menu::function_83d182e9(self, 0);
         }
         if (weapon === level.weaponnone || weapon === level.weaponbasemeleeheld || killstreaks::is_killstreak_weapon(weapon)) {
             self function_6c71e778(machine, trigger);
@@ -518,7 +518,7 @@ function function_4609e67c(machine, trigger) {
         if (aat::is_exempt_weapon(weapon) || zm_weapons::is_wonder_weapon(weapon) || var_9f40587a) {
             var_9684b86c = 1;
         }
-        if (menu == #"hash_3ceffcd0b6394000") {
+        if (menu == #"sr_weapon_upgrade_menu") {
             switch (waitresult.response) {
             case #"hash_6235f4ca625f415":
                 if (var_9684b86c) {
@@ -541,16 +541,16 @@ function function_4609e67c(machine, trigger) {
                         var_4f0c684c = zm_aat::function_296cde87(aat_name);
                         if (zm_weapons::function_89e5e7dd(var_4f0c684c)) {
                             switch (var_4f0c684c) {
-                            case #"hash_3a26d24b0468790f":
+                            case #"ammomod_napalmburst":
                                 self playlocalsound(#"hash_51ce55cb5e478c26");
                                 break;
-                            case #"hash_11000effaf032a0":
+                            case #"ammomod_cryofreeze":
                                 self playlocalsound(#"hash_110bd5fceb403850");
                                 break;
-                            case #"hash_7958a864777a5c5b":
+                            case #"ammomod_brainrot":
                                 self playlocalsound(#"hash_26a2938f2f36ad31");
                                 break;
-                            case #"hash_61fcc1f817072249":
+                            case #"ammomod_deadwire":
                                 self playlocalsound(#"hash_55e994939fce271b");
                                 break;
                             }
@@ -564,16 +564,16 @@ function function_4609e67c(machine, trigger) {
                                 machine thread scene::play(#"p9_fxanim_zm_gp_pap_bundle", "Shot 3", machine);
                             }
                         } else {
-                            machine playsoundtoplayer(#"hash_7d81a3ace87fb4e2", self);
+                            machine playsoundtoplayer(#"uin_default_action_denied", self);
                         }
                     } else {
-                        machine playsoundtoplayer(#"hash_7d81a3ace87fb4e2", self);
+                        machine playsoundtoplayer(#"uin_default_action_denied", self);
                     }
                 }
                 break;
             case #"hash_199f079f459775b4":
                 if (self isswitchingweapons() || is_true(self.var_c685a4c6) || isdefined(item.var_a8bccf69) && item.var_a8bccf69 >= 3 || item.var_a8bccf69 === intpayload) {
-                    machine playsoundtoplayer(#"hash_7d81a3ace87fb4e2", self);
+                    machine playsoundtoplayer(#"uin_default_action_denied", self);
                 } else {
                     self.var_c685a4c6 = 1;
                     var_a8bccf69 = intpayload;

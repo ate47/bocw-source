@@ -94,7 +94,7 @@ function private function_887b8ada(var_5c5062cd, var_fbac2b3f) {
     self.var_29459a31 = var_5c5062cd.var_29459a31;
     self.var_89592ba7 = var_5c5062cd.var_89592ba7;
     self.var_722e942 = var_5c5062cd.var_722e942;
-    self.var_d194d219 = var_5c5062cd.var_d194d219;
+    self.hotzone = var_5c5062cd.hotzone;
 }
 
 // Namespace namespace_cd6bd9f/namespace_cd6bd9f
@@ -141,11 +141,11 @@ function private function_9d59692c(var_33e339fe, var_551c6a0e) {
     }
     if (isdefined(var_33e339fe)) {
         var_33e339fe function_887b8ada(self, var_551c6a0e);
-        namespace_ce1f29cc::function_418ab095(var_33e339fe, self.var_d194d219);
+        namespace_ce1f29cc::function_418ab095(var_33e339fe, self.hotzone);
     }
     if (isdefined(var_551c6a0e)) {
         var_551c6a0e function_887b8ada(self, var_33e339fe);
-        namespace_ce1f29cc::function_418ab095(var_551c6a0e, self.var_d194d219);
+        namespace_ce1f29cc::function_418ab095(var_551c6a0e, self.hotzone);
     }
 }
 
@@ -153,8 +153,8 @@ function private function_9d59692c(var_33e339fe, var_551c6a0e) {
 // Params 2, eflags: 0x4
 // Checksum 0xf3f7101e, Offset: 0x7e8
 // Size: 0x78
-function private function_ccdf9d44(params, *var_d194d219) {
-    if (!isdefined(self.var_29459a31) || !isdefined(self.var_89592ba7) || isplayer(var_d194d219.eattacker) || isalive(self.var_659efbe)) {
+function private function_ccdf9d44(params, *hotzone) {
+    if (!isdefined(self.var_29459a31) || !isdefined(self.var_89592ba7) || isplayer(hotzone.eattacker) || isalive(self.var_659efbe)) {
         return 0;
     }
     return 1;
@@ -164,8 +164,8 @@ function private function_ccdf9d44(params, *var_d194d219) {
 // Params 2, eflags: 0x4
 // Checksum 0x3a54187a, Offset: 0x868
 // Size: 0x92
-function private function_1915f8d6(params, *var_d194d219) {
-    if (!is_true(self.var_8576e0be) && !isplayer(var_d194d219.eattacker) && isdefined(self.var_29459a31) && isdefined(self.var_89592ba7) && !is_true(self.var_7a68cd0c)) {
+function private function_1915f8d6(params, *hotzone) {
+    if (!is_true(self.var_8576e0be) && !isplayer(hotzone.eattacker) && isdefined(self.var_29459a31) && isdefined(self.var_89592ba7) && !is_true(self.var_7a68cd0c)) {
         return 1;
     }
     return 0;

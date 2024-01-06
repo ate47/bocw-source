@@ -26,8 +26,8 @@
 // Checksum 0x5edb678, Offset: 0x278
 // Size: 0x52
 function init() {
-    level.var_8cff5775.var_45c191a4 = getweapon("zombietron_fireball_weapon");
-    level.var_8cff5775.var_18a44fc1 = getweapon("zombietron_fireball_weapon_gravity");
+    level.doa.var_45c191a4 = getweapon("zombietron_fireball_weapon");
+    level.doa.var_18a44fc1 = getweapon("zombietron_fireball_weapon_gravity");
 }
 
 // Namespace namespace_2a2a39d4/namespace_2a2a39d4
@@ -35,7 +35,7 @@ function init() {
 // Checksum 0x7a038bed, Offset: 0x2d8
 // Size: 0x16
 function main() {
-    level.var_8cff5775.var_a8a43931 = [];
+    level.doa.var_a8a43931 = [];
 }
 
 // Namespace namespace_2a2a39d4/namespace_2a2a39d4
@@ -49,7 +49,7 @@ function function_cddc7db1() {
     result = undefined;
     result = self waittill(#"hash_3e251384a5400dce");
     if (is_true(self.var_7c56394) && is_true(result.var_760a0807)) {
-        arrayremovevalue(level.var_8cff5775.var_a8a43931, self);
+        arrayremovevalue(level.doa.var_a8a43931, self);
         namespace_1e25ad94::function_f5f0c0f8("Deleting Fireball trap permenently at:" + self.origin);
     }
     util::wait_network_frame();
@@ -63,15 +63,15 @@ function function_cddc7db1() {
 // Checksum 0xd6ef386, Offset: 0x420
 // Size: 0x400
 function function_b9c75c0(trap, var_7c56394 = 0) {
-    trap.weapon.trap = level.var_8cff5775.var_45c191a4;
+    trap.weapon.trap = level.doa.var_45c191a4;
     trap.var_5a546472.trap = 0;
     if (isdefined(trap.script_parameters)) {
         toks = strtok(trap.script_parameters, ";");
         if (toks.size > 0) {
             if (toks[0] === "gravity") {
-                trap.weapon.trap = level.var_8cff5775.var_18a44fc1;
+                trap.weapon.trap = level.doa.var_18a44fc1;
             } else {
-                trap.weapon.trap = level.var_8cff5775.var_45c191a4;
+                trap.weapon.trap = level.doa.var_45c191a4;
             }
         }
         if (toks.size > 1) {
@@ -106,20 +106,20 @@ function function_b9c75c0(trap, var_7c56394 = 0) {
             trap.maxrounds.trap = int(toks[9]);
         }
     }
-    if (isdefined(trap.var_dc3a5332) && level.var_8cff5775.roundnumber < trap.var_dc3a5332) {
+    if (isdefined(trap.var_dc3a5332) && level.doa.roundnumber < trap.var_dc3a5332) {
         return;
     }
-    var_4a2d3ac2 = namespace_ec06fe4a::function_e22ae9b3(trap.origin, "zombietron_fireball_trap");
-    if (isdefined(var_4a2d3ac2)) {
-        var_4a2d3ac2.targetname.var_4a2d3ac2 = "hazard";
-        var_4a2d3ac2.var_fd5301f9.var_4a2d3ac2 = "fireball";
-        var_4a2d3ac2.angles.var_4a2d3ac2 = trap.angles;
-        var_4a2d3ac2.team.var_4a2d3ac2 = "axis";
+    hazard = namespace_ec06fe4a::function_e22ae9b3(trap.origin, "zombietron_fireball_trap");
+    if (isdefined(hazard)) {
+        hazard.targetname.hazard = "hazard";
+        hazard.var_fd5301f9.hazard = "fireball";
+        hazard.angles.hazard = trap.angles;
+        hazard.team.hazard = "axis";
         if (is_true(trap.var_bf0d44fb)) {
-            var_4a2d3ac2 hide();
+            hazard hide();
         }
     }
-    trap.script_model = var_4a2d3ac2;
+    trap.script_model = hazard;
     trap.var_7c56394 = var_7c56394;
     trap.velocity.trap = isdefined(trap.script_int) ? int(trap.script_int) : 200;
     trap thread function_14a55bfa();
@@ -141,12 +141,12 @@ function function_7a2f725d(trap, page = 0) {
         }
     }
     if (page) {
-        if (!isdefined(level.var_8cff5775.var_a8a43931)) {
-            level.var_8cff5775.var_a8a43931 = [];
-        } else if (!isarray(level.var_8cff5775.var_a8a43931)) {
-            level.var_8cff5775.var_a8a43931 = array(level.var_8cff5775.var_a8a43931);
+        if (!isdefined(level.doa.var_a8a43931)) {
+            level.doa.var_a8a43931 = [];
+        } else if (!isarray(level.doa.var_a8a43931)) {
+            level.doa.var_a8a43931 = array(level.doa.var_a8a43931);
         }
-        level.var_8cff5775.var_a8a43931[level.var_8cff5775.var_a8a43931.size] = trap;
+        level.doa.var_a8a43931[level.doa.var_a8a43931.size] = trap;
     } else {
         function_b9c75c0(trap);
     }
@@ -162,7 +162,7 @@ function function_d4a86caf() {
     level endon(#"game_over");
     while (1) {
         wait(0.5);
-        foreach (trap in level.var_8cff5775.var_a8a43931) {
+        foreach (trap in level.doa.var_a8a43931) {
             time = gettime();
             if (isdefined(trap.var_eb9d64bb) && time < trap.var_eb9d64bb) {
                 continue;
@@ -208,13 +208,13 @@ function function_d4a86caf() {
 // Checksum 0x8c7129f, Offset: 0xc98
 // Size: 0x130
 function function_3a25f62f() {
-    level.var_8cff5775.var_a8a43931 = [];
+    level.doa.var_a8a43931 = [];
     level thread function_d4a86caf();
-    if (isdefined(level.var_8cff5775.var_a77e6349)) {
-        traps = [[ level.var_8cff5775.var_a77e6349 ]]->function_87f950c1("fireball");
+    if (isdefined(level.doa.var_a77e6349)) {
+        traps = [[ level.doa.var_a77e6349 ]]->function_87f950c1("fireball");
         page = 1;
     } else {
-        traps = [[ level.var_8cff5775.var_39e3fa99 ]]->function_242886d5("fireball");
+        traps = [[ level.doa.var_39e3fa99 ]]->function_242886d5("fireball");
     }
     foreach (trap in traps) {
         function_7a2f725d(trap, page);
@@ -238,7 +238,7 @@ function function_14a55bfa() {
     angles = self.script_model gettagangles("tag_flash_lvl3_le");
     var_7ceb92b = self.velocity;
     var_c36bfa20 = self.velocity * 0.08;
-    var_ac885920 = is_true(self.var_5a546472) && !isdefined(level.var_8cff5775.var_182fb75a);
+    var_ac885920 = is_true(self.var_5a546472) && !isdefined(level.doa.var_182fb75a);
     var_d736690e = isdefined(self.var_f92c74e) ? self.var_f92c74e : 5;
     var_4180202d = isdefined(self.var_f92c74e) ? self.var_f92c74e << 1 : 10;
     while (1) {

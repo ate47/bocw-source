@@ -272,7 +272,7 @@ function function_dc15ad60() {
             if (isplayer(entity) && (!isalive(entity) || entity scene::is_igc_active())) {
                 entity clientfield::set("outsidetile", 0);
                 entity hide_effects();
-            } else if (!entity function_3824d2dc() && !is_true(entity.var_99582f14) && isdefined(entity.maxhealth)) {
+            } else if (!entity function_3824d2dc() && !is_true(entity.b_ignore_fow_damage) && isdefined(entity.maxhealth)) {
                 player = undefined;
                 vehicle = undefined;
                 if (!isdefined(entity.var_9a1624b5)) {

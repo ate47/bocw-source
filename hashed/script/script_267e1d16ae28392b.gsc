@@ -231,12 +231,12 @@ function private function_b25a404e(player, weapon) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x53936b65, Offset: 0xbf8
 // Size: 0x76
-function function_2240fcb8(eattacker, *evictim, *var_2d941c58) {
-    if (isdefined(var_2d941c58.var_628ca13e) && isplayer(var_2d941c58.var_628ca13e)) {
-        if (isdefined(var_2d941c58.killcount)) {
-            var_2d941c58.killcount++;
+function function_2240fcb8(eattacker, *evictim, *eweapon) {
+    if (isdefined(eweapon.var_628ca13e) && isplayer(eweapon.var_628ca13e)) {
+        if (isdefined(eweapon.killcount)) {
+            eweapon.killcount++;
         } else {
-            var_2d941c58.killcount.var_2d941c58 = 1;
+            eweapon.killcount.eweapon = 1;
         }
     }
 }
@@ -334,10 +334,10 @@ function function_1d62fbfa(count, weapclass, firetype) {
     } else {
         return;
     }
-    var_9f75c0be = isdefined(self stats::get_stat_global(#"hash_15ef52b8f08e8bcf")) ? self stats::get_stat_global(#"hash_15ef52b8f08e8bcf") : 0;
-    var_49ad0f61 = isdefined(self stats::get_stat_global(#"hash_5ed77b92fd058ae")) ? self stats::get_stat_global(#"hash_5ed77b92fd058ae") : 0;
-    var_25a65495 = isdefined(self stats::get_stat_global(#"hash_8a649c465b85e5a")) ? self stats::get_stat_global(#"hash_8a649c465b85e5a") : 0;
-    var_2f070c99 = isdefined(self stats::get_stat_global(#"hash_8e326c465ebd0ff")) ? self stats::get_stat_global(#"hash_8e326c465ebd0ff") : 0;
+    var_9f75c0be = isdefined(self stats::get_stat_global(#"cp_kills_lmg")) ? self stats::get_stat_global(#"cp_kills_lmg") : 0;
+    var_49ad0f61 = isdefined(self stats::get_stat_global(#"cp_kills_smg")) ? self stats::get_stat_global(#"cp_kills_smg") : 0;
+    var_25a65495 = isdefined(self stats::get_stat_global(#"cp_kills_ar")) ? self stats::get_stat_global(#"cp_kills_ar") : 0;
+    var_2f070c99 = isdefined(self stats::get_stat_global(#"cp_kills_sg")) ? self stats::get_stat_global(#"cp_kills_sg") : 0;
     if (var_9f75c0be >= 5 && var_49ad0f61 >= 5 && var_25a65495 >= 5 && var_2f070c99 >= 5) {
         self function_659819fa(#"cp_achievement_jack_all_trades");
     }

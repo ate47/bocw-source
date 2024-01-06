@@ -424,7 +424,7 @@ function function_ec198408(b_skipped, *var_19e802fa) {
         level thread function_a39582f9(3);
     }
     if (!var_19e802fa) {
-        function_7a35edd2();
+        boss_outro();
     } else {
         level clientfield::set("" + #"hash_5a36f05cbdf2580", 6);
     }
@@ -1520,7 +1520,7 @@ function function_3d5eabf(str_shot) {
     level.var_75a7d6.var_b9f89aa6 clientfield::set("" + #"hash_399e2afd773621df", 2);
     level thread function_a39582f9(1);
     zm_zonemgr::enable_zone("zone_intermission");
-    level flag::set(#"hash_299b0e75bff5106f");
+    level flag::set(#"in_dark_side");
     level.var_7aa0d894 = 1;
     if (isarray(level.var_bced5d3c)) {
         foreach (vehicle in level.var_bced5d3c) {
@@ -1611,7 +1611,7 @@ function function_3d5eabf(str_shot) {
     music::setmusicstate("boss_part2");
     level.var_75a7d6 flag::clear(#"intermission");
     level.var_7aa0d894 = undefined;
-    level flag::clear(#"hash_299b0e75bff5106f");
+    level flag::clear(#"in_dark_side");
     foreach (e_player in getplayers()) {
         level.var_87a3c4d1 zm_roots_health_bar::function_74adcd8a(e_player, 1);
         if (!level.var_87a3c4d1 zm_roots_health_bar::is_open(e_player)) {
@@ -4349,7 +4349,7 @@ function function_886e403b() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x320e8a74, Offset: 0x16148
 // Size: 0xa64
-function function_7a35edd2() {
+function boss_outro() {
     level endon(#"end_game");
     level.var_f3b7c276 = &function_c835e3c4;
     level.var_a69fc817 = 1;

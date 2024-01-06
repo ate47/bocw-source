@@ -451,10 +451,10 @@ function private function_2328518e(entity) {
     radiusdamage(var_dc9ec224, 200, 150, 150, entity);
     function_1eaaceab(entity.var_470f7225);
     if (entity.var_470f7225.size < 6 && randomint(100) < 25) {
-        if (!isdefined(level.var_8cff5775.var_314b1f0)) {
-            level.var_8cff5775.var_314b1f0 = namespace_ff8b8430::function_d7c5adee("spider");
+        if (!isdefined(level.doa.var_314b1f0)) {
+            level.doa.var_314b1f0 = doa_enemy::function_d7c5adee("spider");
         }
-        ai = namespace_ff8b8430::function_db55a448(level.var_8cff5775.var_314b1f0, origin);
+        ai = doa_enemy::function_db55a448(level.doa.var_314b1f0, origin);
         if (isdefined(ai)) {
             if (!isdefined(entity.var_470f7225)) {
                 entity.var_470f7225.entity = [];

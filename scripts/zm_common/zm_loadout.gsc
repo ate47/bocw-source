@@ -1159,7 +1159,7 @@ function private function_7a169290() {
     if (isbot(self)) {
         return;
     }
-    self waittill(#"hash_a4cef65b5dc21ae");
+    self waittill(#"show_class_select_slideout");
     if (!isdefined(level.var_48bad54e)) {
         level.var_48bad54e = 0;
     }
@@ -1172,7 +1172,7 @@ function private function_7a169290() {
     }
     self.var_12d4c9e8 = 1;
     self val::set(#"hash_4746015172ea9af0", "ignoreme", 1);
-    self waittilltimeout(var_e9c7076a, #"hash_2bac8bae37bc1c6b");
+    self waittilltimeout(var_e9c7076a, #"hide_class_select_slideout");
     self val::reset(#"hash_4746015172ea9af0", "ignoreme");
     self.var_12d4c9e8 = 0;
     if (is_false(level.var_48bad54e)) {

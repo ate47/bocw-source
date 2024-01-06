@@ -50,11 +50,11 @@ function private function_b58b73b6(oldval, newval) {
     }
 }
 
-// Namespace namespace_9b5aa273/event_dce47aeb
+// Namespace namespace_9b5aa273/checkpoint_restore
 // Params 0, eflags: 0x20
 // Checksum 0xf49a5825, Offset: 0x348
 // Size: 0x9c
-function event_handler[event_dce47aeb] function_d49b3ac5() {
+function event_handler[checkpoint_restore] function_d49b3ac5() {
     if (level.var_5f632232 === #"hash_5b4b0dc5da9b211d" || level.var_5f632232 === #"hash_5b44c3504ac0a01e") {
         hint_tutorial::function_9f427d88(0);
         player = getplayers()[0];

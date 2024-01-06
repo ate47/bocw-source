@@ -14,9 +14,9 @@
 #using scripts\core_common\globallogic\globallogic_shared.gsc;
 #using scripts\zm_common\gametypes\globallogic.gsc;
 
-#namespace namespace_8cff5775;
+#namespace doa;
 
-// Namespace namespace_8cff5775/namespace_8cff5775
+// Namespace doa/doa
 // Params 0, eflags: 0x1
 // Checksum 0xac43ba3f, Offset: 0x190
 // Size: 0x34
@@ -26,7 +26,7 @@ function autoexec function_aeb1baea() {
     level.var_f18a6bd6 = &function_5e443ed1;
 }
 
-// Namespace namespace_8cff5775/gametype_init
+// Namespace doa/gametype_init
 // Params 1, eflags: 0x20
 // Checksum 0xc6b75b96, Offset: 0x1d0
 // Size: 0xac
@@ -41,7 +41,7 @@ function event_handler[gametype_init] main(*eventstruct) {
     level thread namespace_4dae815d::init();
 }
 
-// Namespace namespace_8cff5775/namespace_8cff5775
+// Namespace doa/doa
 // Params 0, eflags: 0x0
 // Checksum 0xe701a217, Offset: 0x288
 // Size: 0x15c
@@ -64,7 +64,7 @@ function function_5e443ed1() {
     level flag::set(#"load_main_complete");
 }
 
-// Namespace namespace_8cff5775/namespace_8cff5775
+// Namespace doa/doa
 // Params 0, eflags: 0x0
 // Checksum 0xb091dfe3, Offset: 0x3f0
 // Size: 0x8
@@ -72,7 +72,7 @@ function mayspawn() {
     return 1;
 }
 
-// Namespace namespace_8cff5775/namespace_8cff5775
+// Namespace doa/doa
 // Params 0, eflags: 0x0
 // Checksum 0x626ede0, Offset: 0x400
 // Size: 0x27c
@@ -106,7 +106,7 @@ function onallplayersready() {
     level clientfield::set("gameplay_started", 1);
 }
 
-// Namespace namespace_8cff5775/namespace_8cff5775
+// Namespace doa/doa
 // Params 1, eflags: 0x0
 // Checksum 0x9743f7bb, Offset: 0x688
 // Size: 0x3c
@@ -115,7 +115,7 @@ function function_d797f41f(n_waittime = 1) {
     music::setmusicstate("none");
 }
 
-// Namespace namespace_8cff5775/namespace_8cff5775
+// Namespace doa/doa
 // Params 0, eflags: 0x0
 // Checksum 0x516e16ba, Offset: 0x6d0
 // Size: 0xce
@@ -132,7 +132,7 @@ function function_9a8ab40f() {
     } while(a_players.size > var_183929a8);
 }
 
-// Namespace namespace_8cff5775/namespace_8cff5775
+// Namespace doa/doa
 // Params 0, eflags: 0x0
 // Checksum 0x7f5bbefe, Offset: 0x7a8
 // Size: 0x54
@@ -141,7 +141,7 @@ function on_player_spawned() {
     self val::reset(#"hash_5bb0dd6b277fc20c", "disablegadgets");
 }
 
-// Namespace namespace_8cff5775/namespace_8cff5775
+// Namespace doa/doa
 // Params 2, eflags: 0x0
 // Checksum 0x54fd74b3, Offset: 0x808
 // Size: 0xdc
@@ -150,8 +150,8 @@ function default_onspawnspectator(origin, angles) {
         self spawn(origin, angles);
         return;
     }
-    if (isdefined(level.var_8cff5775.var_39e3fa99)) {
-        spawnpoint = [[ level.var_8cff5775.var_39e3fa99 ]]->getcenter();
+    if (isdefined(level.doa.var_39e3fa99)) {
+        spawnpoint = [[ level.doa.var_39e3fa99 ]]->getcenter();
     } else {
         var_422d359d = struct::get_array("arena_center", "targetname");
         spawnpoint = var_422d359d[0];

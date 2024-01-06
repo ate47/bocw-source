@@ -2026,7 +2026,7 @@ function on_ai_damage(params) {
                     v_velocity = var_80730518 getvelocity();
                     v_launch = v_velocity * n_slowdown * -1;
                     v_hitloc = params.vpoint;
-                    if (self.aitype === #"hash_704a090ff9fcffd0" || self.aitype === #"hash_4f87aa2a203d37d0" || self.aitype === #"hash_455ec8cc0d1ed4a4" || self.aitype === #"hash_21f3d5d40d72e08d") {
+                    if (self.aitype === #"spawner_bo5_mechz_sr" || self.aitype === #"hash_4f87aa2a203d37d0" || self.aitype === #"spawner_zm_steiner" || self.aitype === #"hash_21f3d5d40d72e08d") {
                         v_launch = v_velocity * var_e96b9598 * -1;
                         n_damage = n_damage * 4;
                     } else if (self.aitype === #"hash_60d7855358ceb53d" || self.aitype === #"hash_acac3fe7a341329" || self.aitype === #"hash_3ff43755c44e6d3d" || self.aitype === #"hash_469e4baceeaf38f5") {
@@ -2190,9 +2190,9 @@ function function_117ab176(victim) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x4f757e26, Offset: 0x9210
 // Size: 0x5c
-function function_7ae2ef10(var_e966cf33, victim) {
-    var_e966cf33 function_117ab176(victim);
-    var_e966cf33 function_dbf5bfd3(victim);
+function function_7ae2ef10(fake_vehicle, victim) {
+    fake_vehicle function_117ab176(victim);
+    fake_vehicle function_dbf5bfd3(victim);
     victim function_e81afe0c();
 }
 
@@ -2429,11 +2429,11 @@ function function_5cb3181e(*params) {
         return;
     }
     self.var_4df707f6 = 1;
-    var_85ab0b12 = self.var_85ab0b12;
-    if (!isdefined(var_85ab0b12) && isdefined(self.var_ecbef856)) {
-        var_85ab0b12 = self animmappingsearch(self.var_ecbef856);
+    despawn_anim = self.despawn_anim;
+    if (!isdefined(despawn_anim) && isdefined(self.var_ecbef856)) {
+        despawn_anim = self animmappingsearch(self.var_ecbef856);
     }
-    if (!isdefined(var_85ab0b12)) {
+    if (!isdefined(despawn_anim)) {
         self clientfield::increment("zombie_teleport", 1);
     }
     waitframe(randomintrange(2, 5));
@@ -2443,10 +2443,10 @@ function function_5cb3181e(*params) {
     self hide();
     self.ignoreall = 1;
     [[ level.var_454ed97e ]]->waitinqueue(self);
-    if (isdefined(var_85ab0b12) && !self isragdoll()) {
-        length = getanimlength(var_85ab0b12);
-        self animscripted("despawn_anim", self.origin, self.angles, var_85ab0b12, "normal", undefined, 1, 0.2);
-        self waittillmatchtimeout(length + 1, {#notetrack:"end"}, #"hash_1d6c0f5b5c8381db");
+    if (isdefined(despawn_anim) && !self isragdoll()) {
+        length = getanimlength(despawn_anim);
+        self animscripted("despawn_anim", self.origin, self.angles, despawn_anim, "normal", undefined, 1, 0.2);
+        self waittillmatchtimeout(length + 1, {#notetrack:"end"}, #"despawn_anim");
     }
     self util::stop_magic_bullet_shield();
     self ghost();

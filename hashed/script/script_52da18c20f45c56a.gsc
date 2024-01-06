@@ -257,7 +257,7 @@ function function_2795d678(encumbered, var_165b239b, var_37e68004, allow_ads, va
                     }
                 }
             }
-            self namespace_f48ab2e1::function_e79f51ec([2:#"hash_32b8e08ce69d0a1d", 1:#"doors", 0:#"actions"]);
+            self namespace_f48ab2e1::function_e79f51ec([2:#"body_carry", 1:#"doors", 0:#"actions"]);
             self flag::set("encumbered");
         }
     } else {
@@ -529,10 +529,10 @@ function function_aee5f6a6(var_b56433f8) {
         var_6f861737 = var_b56433f8 + "_ads_pain_" + index;
     }
     if (isdefined(level.var_f467e5b0.var_dc27586e[#"generic"][var_6f861737])) {
-        self.var_2e402479.body thread function_3f4de57b(var_6f861737, 0);
+        self.takedown.body thread function_3f4de57b(var_6f861737, 0);
         self.var_6639d45b function_3f4de57b(var_6f861737, 0);
         loop_anim = self function_47ffa6b8(var_b56433f8);
-        self.var_2e402479.body thread function_d621e6d6(loop_anim);
+        self.takedown.body thread function_d621e6d6(loop_anim);
         self.var_6639d45b thread function_d621e6d6(loop_anim);
     }
 }
@@ -719,11 +719,11 @@ function function_6e8e5902(ender) {
     self notify(#"hash_420f563c810c5f2c");
     self endon(#"hash_420f563c810c5f2c");
     result = undefined;
-    result = self waittill(ender, #"hash_4a7c2a6c1d3c2382", #"hash_298d88a0977193a7");
+    result = self waittill(ender, #"hash_4a7c2a6c1d3c2382", #"level_restarting");
     if (result._notify !== "level_restarting") {
         self thread function_1c2992ed(0);
     } else {
-        setsaveddvar(#"hash_b74dca3443656e7", 1);
+        setsaveddvar(#"bg_aimspreadscale", 1);
     }
     self function_800493d4(0, 0);
 }
@@ -884,12 +884,12 @@ function function_b0190b65(action) {
     /#
         assert(isplayer(self));
     #/
-    self.var_2e402479.var_84ade654 = 1;
+    self.takedown.var_84ade654 = 1;
     var_9463444 = self getcurrentweapon();
     if (isdefined(var_9463444) && var_9463444.name !== #"none") {
         self.last_weapon = var_9463444;
     }
-    self.var_2e402479.stance[action.name] = self getstance();
+    self.takedown.stance[action.name] = self getstance();
     self setstance("stand");
     self val::set(#"hash_16b14161e87e9ac4", "allow_crouch", 0);
     self val::set(#"hash_16b14161e87e9ac4", "allow_prone", 0);
@@ -927,7 +927,7 @@ function function_44a46209(var_d8ba335a) {
         assert(isplayer(self));
     #/
     self val::function_e681e68e(#"hash_16b14161e87e9ac4");
-    if (!is_true(self.var_2e402479.var_84ade654)) {
+    if (!is_true(self.takedown.var_84ade654)) {
         return;
     }
     if (!self.var_6639d45b function_30b535ff(0)) {
@@ -936,7 +936,7 @@ function function_44a46209(var_d8ba335a) {
     if (isdefined(var_d8ba335a)) {
         self setstance(var_d8ba335a);
     }
-    self.var_2e402479.var_84ade654 = undefined;
+    self.takedown.var_84ade654 = undefined;
     self val::function_e681e68e(#"hash_58b9fd1cfcf4a27d");
 }
 
@@ -959,7 +959,7 @@ function function_3ceda691(gesture = "", target, var_584fcd3e, blendtime, startt
 // Checksum 0xd0fd302c, Offset: 0x3e70
 // Size: 0x16
 function function_b56ad054() {
-    self.var_2e402479.var_adad6efa = 1;
+    self.takedown.var_adad6efa = 1;
 }
 
 // Namespace namespace_594b67e/namespace_594b67e
@@ -974,8 +974,8 @@ function private function_6f3e9127(gesture, target, var_584fcd3e, *blendtime, st
     #/
     self endon(target + "_stop");
     var_66f0ae81 = undefined;
-    if (is_true(self.var_2e402479.var_adad6efa)) {
-        self.var_2e402479.var_adad6efa = undefined;
+    if (is_true(self.takedown.var_adad6efa)) {
+        self.takedown.var_adad6efa = undefined;
         self function_44a46209();
     }
     while (self function_b2ec14ab()) {
@@ -1207,14 +1207,14 @@ function function_396e2076(var_860605de = 1, var_4170b151 = 1, var_e4647bb3 = 0)
     if (is_true(var_860605de) && e_player flag::get("body_shield_active")) {
         result = 1;
         /#
-            assert(isdefined(e_player.var_2e402479.var_3b825129.actor) && isai(e_player.var_2e402479.var_3b825129.actor), "<unknown string>");
+            assert(isdefined(e_player.takedown.body_shield.actor) && isai(e_player.takedown.body_shield.actor), "<unknown string>");
         #/
-        e_player.var_2e402479.var_3b825129.actor delete();
+        e_player.takedown.body_shield.actor delete();
         if (var_e4647bb3) {
             wait(2.75);
         }
     } else if (is_true(var_4170b151)) {
-        result = isdefined(e_player.var_2e402479.body);
+        result = isdefined(e_player.takedown.body);
         level notify(#"drop_corpse");
         if (var_e4647bb3 && result) {
             wait(1.25);
@@ -1275,19 +1275,19 @@ function function_d76eed10(action) {
     step = 10;
     var_112be404 = playerphysicstrace(self.origin + (0, 0, 1), self.origin);
     if (var_112be404 != self.origin) {
-        var_112be404 = playerphysicstrace(self.var_2e402479.start_origin + (0, 0, step), self.origin + (0, 0, step));
+        var_112be404 = playerphysicstrace(self.takedown.start_origin + (0, 0, step), self.origin + (0, 0, step));
         if (var_112be404[0] != self.origin[0] || var_112be404[1] != self.origin[1]) {
-            var_112be404 = var_112be404 + vectornormalize(self.var_2e402479.start_origin - self.origin);
+            var_112be404 = var_112be404 + vectornormalize(self.takedown.start_origin - self.origin);
         }
         var_112be404 = playerphysicstrace(var_112be404, var_112be404 - (0, 0, step));
         var_f5aab51b = playerphysicstrace(var_112be404 + (0, 0, 1), var_112be404);
         if (var_112be404 != var_f5aab51b) {
             /#
-                msg = "<unknown string>" + action.name + "<unknown string>" + self.var_2e402479.start_origin[0] + "<unknown string>" + self.var_2e402479.start_origin[1] + "<unknown string>" + self.var_2e402479.start_origin[2] + "<unknown string>";
+                msg = "<unknown string>" + action.name + "<unknown string>" + self.takedown.start_origin[0] + "<unknown string>" + self.takedown.start_origin[1] + "<unknown string>" + self.takedown.start_origin[2] + "<unknown string>";
                 iprintlnbold(msg);
                 println(msg + "<unknown string>");
             #/
-            var_112be404 = self.var_2e402479.start_origin;
+            var_112be404 = self.takedown.start_origin;
         }
         self setorigin(var_112be404);
     }
@@ -1299,27 +1299,27 @@ function function_d76eed10(action) {
 // Size: 0x228
 function function_fdff1cf3(forwarddist = 30) {
     /#
-        assert(isdefined(self.var_2e402479));
+        assert(isdefined(self.takedown));
     #/
-    if (!isdefined(self.var_2e402479.var_b44d4135)) {
-        self.var_2e402479.var_b44d4135 = [];
+    if (!isdefined(self.takedown.var_b44d4135)) {
+        self.takedown.var_b44d4135 = [];
     }
-    if (!isdefined(self.var_2e402479.var_b187389a)) {
-        self.var_2e402479.var_b187389a = [];
+    if (!isdefined(self.takedown.var_b187389a)) {
+        self.takedown.var_b187389a = [];
     }
-    if (isdefined(self.var_2e402479.var_b44d4135[forwarddist]) && gettime() == self.var_2e402479.var_b44d4135[forwarddist]) {
-        return self.var_2e402479.var_b187389a[forwarddist];
+    if (isdefined(self.takedown.var_b44d4135[forwarddist]) && gettime() == self.takedown.var_b44d4135[forwarddist]) {
+        return self.takedown.var_b187389a[forwarddist];
     }
     zoffset = vectorscale((0, 0, 1), 8);
     start = self.origin + zoffset;
     end = start + anglestoforward(self.angles) * forwarddist + zoffset;
-    self.var_2e402479.var_b187389a[forwarddist] = 0;
+    self.takedown.var_b187389a[forwarddist] = 0;
     radius = 15;
     trace = physicstrace(start, end, (radius * -1, radius * -1, 0), (radius, radius, 70), undefined, 32 & 1, 32768 & 8388608);
     if (trace[#"fraction"] == 1) {
-        self.var_2e402479.var_b187389a[forwarddist] = 1;
+        self.takedown.var_b187389a[forwarddist] = 1;
     }
-    self.var_2e402479.var_b44d4135[forwarddist] = gettime();
-    return self.var_2e402479.var_b187389a[forwarddist];
+    self.takedown.var_b44d4135[forwarddist] = gettime();
+    return self.takedown.var_b187389a[forwarddist];
 }
 

@@ -138,12 +138,12 @@ function function_bb5d646a(localclientnum, *oldval, *newval, *bnewent, *binitial
     playsound(bwasdemojump, #"hash_10f64731553b9b9d", e_fx.origin);
     e_fx.var_94450cf4.e_fx = e_fx playloopsound(#"hash_1cefc6f663a17a63");
     var_f0029f2 = struct::get_array("harvesting_unit", "targetname");
-    var_49408e95 = arraygetclosest(self.origin, var_f0029f2);
+    harvesting_unit = arraygetclosest(self.origin, var_f0029f2);
     util::playfxontag(bwasdemojump, #"hash_61e3c7a179d7cdfb", e_fx, "tag_origin");
     e_fx moveto(e_fx.origin + vectorscale((0, 0, 1), 40), 0.8);
     wait(0.75);
-    n_time = distance(e_fx.origin, var_49408e95.origin) / 400;
-    e_fx moveto(var_49408e95.origin + vectorscale((0, 0, 1), 32), n_time);
+    n_time = distance(e_fx.origin, harvesting_unit.origin) / 400;
+    e_fx moveto(harvesting_unit.origin + vectorscale((0, 0, 1), 32), n_time);
     e_fx waittill(#"movedone");
     util::playfxontag(bwasdemojump, #"hash_4d1d38d5da4d929b", e_fx, "tag_origin");
     e_fx stoploopsound(e_fx.var_94450cf4);
@@ -174,11 +174,11 @@ function function_1cd2646f(localclientnum, *oldval, newval, *bnewent, *binitials
             return;
         }
         if (self isplayer()) {
-            self.var_726a59ef = playfxoncamera(fieldname, #"hash_20e2c4240d945676", (0, 0, 0), (1, 0, 0), (0, 0, 1));
+            self.var_726a59ef = playfxoncamera(fieldname, #"sr/fx9_camera_canister_in_hand", (0, 0, 0), (1, 0, 0), (0, 0, 1));
             self postfx::playpostfxbundle(#"hash_75fe7a4dbc759253");
             self.var_51dd9721 = #"hash_75fe7a4dbc759253";
             if (!isdefined(self.var_fbd5f7c8)) {
-                self.var_fbd5f7c8 = util::playfxontag(fieldname, #"hash_4fd736083a266936", self, "tag_stowed_back");
+                self.var_fbd5f7c8 = util::playfxontag(fieldname, #"sr/fx9_obj_retrieval_container_gas_trail", self, "tag_stowed_back");
             }
             if (!isdefined(self.var_e53a5eb7)) {
                 self playsound(fieldname, #"hash_22a6864697c92c12");
@@ -214,7 +214,7 @@ function function_1cd2646f(localclientnum, *oldval, newval, *bnewent, *binitials
 // Checksum 0xe3b5aaaf, Offset: 0x1d68
 // Size: 0xbc
 function function_eb8ccdd(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
-    playfx(bwasdemojump, #"hash_21de711a73de2b60", self.origin, vectorscale((1, 0, 0), 180));
+    playfx(bwasdemojump, #"zombie/fx9_player_shockwave_retrieval", self.origin, vectorscale((1, 0, 0), 180));
     self playsound(bwasdemojump, #"hash_5db462e1df5084e7");
     self playrumbleonentity(bwasdemojump, "damage_heavy");
 }
@@ -355,15 +355,15 @@ function function_6b932134(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0x2ce
 function function_60886116(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
-        self.var_3e3964d7 = playfx(fieldname, #"hash_7fde4896c77b40b9", self.origin, anglestoup(self.angles));
+        self.var_3e3964d7 = playfx(fieldname, #"sr/fx9_hvt_aether_beam", self.origin, anglestoup(self.angles));
         if (!isdefined(self.var_7f6cb624)) {
             self playsound(fieldname, #"hash_62101ae824e3101a");
             self.var_7f6cb624 = self playloopsound(#"hash_234e4f385aba4fae");
         }
         wait(2.5);
-        self.var_ae8b25ed = playfx(fieldname, #"hash_6e639d06fdd098bc", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
+        self.var_ae8b25ed = playfx(fieldname, #"sr/fx9_hvt_aether_portal_spawn", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
     } else {
-        self.var_1c6eb712 = playfx(fieldname, #"hash_19835c3bc870def", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
+        self.var_1c6eb712 = playfx(fieldname, #"sr/fx9_hvt_aether_portal_close", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
         if (isdefined(self.var_3e3964d7)) {
             stopfx(fieldname, self.var_3e3964d7);
             self.var_3e3964d7 = undefined;
@@ -666,14 +666,14 @@ function function_cdc867b2(localclientnum, *oldval, newval, *bnewent, *binitials
     self util::waittill_dobj(fieldname);
     if (bwastimejump) {
         if (!isdefined(self.var_bb6d69f0)) {
-            self.var_bb6d69f0 = playfx(fieldname, #"hash_6e639d06fdd098bc", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
+            self.var_bb6d69f0 = playfx(fieldname, #"sr/fx9_hvt_aether_portal_spawn", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
         }
     } else {
         if (isdefined(self.var_bb6d69f0)) {
             stopfx(fieldname, self.var_bb6d69f0);
             self.var_bb6d69f0 = undefined;
         }
-        var_4776f2b8 = playfx(fieldname, #"hash_19835c3bc870def", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
+        var_4776f2b8 = playfx(fieldname, #"sr/fx9_hvt_aether_portal_close", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
         level thread function_2f3f5638(fieldname, var_4776f2b8);
     }
 }
@@ -697,7 +697,7 @@ function function_2f3f5638(localclientnum, var_4776f2b8) {
 function function_f15a1018(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self endon(#"death");
     self util::waittill_dobj(bwastimejump);
-    playfx(bwastimejump, #"hash_2c43a6476d6c84c4", self.origin + vectorscale((0, 0, 1), 32), anglestoforward(self.angles), anglestoup(self.angles));
+    playfx(bwastimejump, #"sr/fx9_hvt_aether_portal_exp", self.origin + vectorscale((0, 0, 1), 32), anglestoforward(self.angles), anglestoup(self.angles));
     self playsound(bwastimejump, #"hash_591b69e6e55b5eb1");
 }
 
@@ -709,7 +709,7 @@ function function_f471577a(localclientnum, *oldval, newval, *bnewent, *binitials
     self endon(#"death");
     self util::waittill_dobj(fieldname);
     if (bwastimejump == 1) {
-        self.var_27b51434 = util::playfxontag(fieldname, #"hash_44a4730c3ce4de8f", self, "tag_origin");
+        self.var_27b51434 = util::playfxontag(fieldname, #"sr/fx9_hvt_aether_beam_distant", self, "tag_origin");
     } else if (isdefined(self.var_27b51434)) {
         stopfx(fieldname, self.var_27b51434);
         self.var_27b51434 = undefined;
@@ -724,7 +724,7 @@ function function_691412b4(localclientnum, *oldval, newval, *bnewent, *binitials
     self endon(#"death");
     self util::waittill_dobj(fieldname);
     if (bwastimejump == 1) {
-        self.var_942f8233 = util::playfxontag(fieldname, #"hash_1f14417633f91368", self, "tag_origin");
+        self.var_942f8233 = util::playfxontag(fieldname, #"sr/fx9_hvt_aether_move_trail", self, "tag_origin");
     } else if (isdefined(self.var_942f8233)) {
         stopfx(fieldname, self.var_942f8233);
     }
@@ -1048,35 +1048,35 @@ function function_62492e2(*localclientnum, *oldval, newval, *bnewent, *binitials
         stopforcestreamingxmodel(#"hash_18ea421c8e112587");
         break;
     case 3:
-        forcestreamxmodel(#"hash_6525c79193f10c32");
+        forcestreamxmodel(#"p9_zm_platinum_intel_documents_r_05");
         stopforcestreamingxmodel(#"hash_18ea3f1c8e11206e");
         break;
     case 4:
-        forcestreamxmodel(#"hash_6525c69193f10a7f");
-        stopforcestreamingxmodel(#"hash_6525c79193f10c32");
+        forcestreamxmodel(#"p9_zm_platinum_intel_documents_r_06");
+        stopforcestreamingxmodel(#"p9_zm_platinum_intel_documents_r_05");
         break;
     case 5:
-        forcestreamxmodel(#"hash_6525c59193f108cc");
-        stopforcestreamingxmodel(#"hash_6525c69193f10a7f");
+        forcestreamxmodel(#"p9_zm_platinum_intel_documents_r_07");
+        stopforcestreamingxmodel(#"p9_zm_platinum_intel_documents_r_06");
         break;
     case 6:
-        forcestreamxmodel(#"hash_18ea401c8e112221");
-        stopforcestreamingxmodel(#"hash_6525c59193f108cc");
+        forcestreamxmodel(#"p9_zm_platinum_personal_computer_screen_05");
+        stopforcestreamingxmodel(#"p9_zm_platinum_intel_documents_r_07");
         break;
     case 7:
         forcestreamxmodel(#"hash_18ea3d1c8e111d08");
         forcestreamxmodel(#"hash_18ea3e1c8e111ebb");
-        stopforcestreamingxmodel(#"hash_18ea401c8e112221");
+        stopforcestreamingxmodel(#"p9_zm_platinum_personal_computer_screen_05");
         break;
     case 0:
         stopforcestreamingxmodel(#"hash_18ea3d1c8e111d08");
         stopforcestreamingxmodel(#"hash_18ea3e1c8e111ebb");
         stopforcestreamingxmodel(#"hash_18ea421c8e112587");
         stopforcestreamingxmodel(#"hash_18ea3f1c8e11206e");
-        stopforcestreamingxmodel(#"hash_18ea401c8e112221");
-        stopforcestreamingxmodel(#"hash_6525c79193f10c32");
-        stopforcestreamingxmodel(#"hash_6525c69193f10a7f");
-        stopforcestreamingxmodel(#"hash_6525c59193f108cc");
+        stopforcestreamingxmodel(#"p9_zm_platinum_personal_computer_screen_05");
+        stopforcestreamingxmodel(#"p9_zm_platinum_intel_documents_r_05");
+        stopforcestreamingxmodel(#"p9_zm_platinum_intel_documents_r_06");
+        stopforcestreamingxmodel(#"p9_zm_platinum_intel_documents_r_07");
         break;
     }
 }

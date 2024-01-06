@@ -127,7 +127,7 @@ function function_a7a24a36(weaponname) {
     case #"recon_car":
         attacker increment_contract(#"hash_3d11e20647031a01");
         break;
-    case #"hash_4d25a4e985df5d5b":
+    case #"blind_swat_grenade":
         attacker increment_contract(#"hash_42bc58cf2628c9ea");
         break;
     case #"hash_1527a22d8a6fdc21":
@@ -423,7 +423,7 @@ function on_ekia(weapon, victim) {
             attacker function_fd9fb79b(#"hash_6439891be84a20b1");
         }
     }
-    if (isdefined(level.var_774aa859) && level.var_774aa859 === victim) {
+    if (isdefined(level.vip) && level.vip === victim) {
         attacker function_fd9fb79b(#"hash_26d4790af9efa59c");
     }
     if (armor::get_armor() > 0 && isdefined(self.var_c79fb13d)) {
@@ -626,7 +626,7 @@ function function_3b024dd1(data) {
     winningteam = data.winner;
     if (isdefined(winningteam) && player.team == winningteam) {
         switch (level.basegametype) {
-        case #"hash_601b3d9434b9aac9":
+        case #"gunfight":
             player function_fd9fb79b(#"hash_244fe1eba6e2cbd", 1);
             break;
         case #"sd":
@@ -653,10 +653,10 @@ function contract_win(winner) {
     case #"dom":
         var_831b642b = #"hash_1286a20fba67f00f";
         break;
-    case #"hash_527f2aa95e2f400a":
+    case #"dropkick":
         var_831b642b = #"hash_7fe7c331c3ac1d69";
         break;
-    case #"hash_601b3d9434b9aac9":
+    case #"gunfight":
         var_831b642b = #"hash_637c243c43c99f88";
         break;
     case #"koth":
@@ -671,7 +671,7 @@ function contract_win(winner) {
     case #"sd":
         var_831b642b = #"hash_7065ab34c90b39b4";
         break;
-    case #"hash_68e906194eba76f0":
+    case #"vip":
         var_831b642b = #"hash_769fc475cca99231";
         break;
     case #"hash_defdefdefdefdef0":
@@ -713,10 +713,10 @@ function function_c5958b54() {
     case #"dom":
         var_c421e6b = #"hash_4289a3f53c536915";
         break;
-    case #"hash_527f2aa95e2f400a":
+    case #"dropkick":
         var_c421e6b = #"hash_4d02445b8cdd4388";
         break;
-    case #"hash_601b3d9434b9aac9":
+    case #"gunfight":
         var_c421e6b = #"hash_6f88335358950e1";
         break;
     case #"escort":
@@ -746,7 +746,7 @@ function function_c5958b54() {
         }
         var_c421e6b = #"hash_697ce077df5b3b5a";
         break;
-    case #"hash_68e906194eba76f0":
+    case #"vip":
         var_c421e6b = #"hash_4384359f95ad0db0";
         break;
     case #"fireteam_dirty_bomb":

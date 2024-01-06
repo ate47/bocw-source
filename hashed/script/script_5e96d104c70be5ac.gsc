@@ -531,8 +531,8 @@ function private function_3f08a12b(data) {
         assert(isdefined(data.weapon), "<unknown string>");
     #/
     var_abb39438 = {};
-    var_abb39438.var_ab773b96.var_abb39438 = data.weapon.statname;
-    var_abb39438.var_5067ed1f.var_abb39438 = hash(data.rarity);
+    var_abb39438.wallbuy_weapon.var_abb39438 = data.weapon.statname;
+    var_abb39438.weapon_rarity.var_abb39438 = hash(data.rarity);
     var_abb39438.round_number.var_abb39438 = zm_utility::get_round_number();
     var_abb39438.star_level.var_abb39438 = zm_utility::function_e3025ca5();
     data.purchaser function_678f57c8(#"hash_6fc06e3919c02137", var_abb39438);
@@ -550,7 +550,7 @@ function private on_item_pickup(params) {
         if (is_true(params.var_7b753bce)) {
             var_a63abfbe = {};
             var_a63abfbe.weapon.var_a63abfbe = weapon.statname;
-            var_a63abfbe.var_5067ed1f.var_a63abfbe = hash(item.var_a6762160.rarity);
+            var_a63abfbe.weapon_rarity.var_a63abfbe = hash(item.var_a6762160.rarity);
             if (weapon.attachments.size > 0) {
                 attachments = [];
                 foreach (attachment in weapon.attachments) {
@@ -582,7 +582,7 @@ function private on_item_drop(params) {
     if (isdefined(item) && isdefined(weapon)) {
         var_a63abfbe = {};
         var_a63abfbe.weapon.var_a63abfbe = weapon.statname;
-        var_a63abfbe.var_5067ed1f.var_a63abfbe = hash(item.var_a6762160.rarity);
+        var_a63abfbe.weapon_rarity.var_a63abfbe = hash(item.var_a6762160.rarity);
         if (weapon.attachments.size > 0) {
             attachments = [];
             foreach (attachment in weapon.attachments) {
@@ -763,7 +763,7 @@ function private function_e38db3d4(params, *activator) {
         player.pers[#"hash_2042ab53f67e07c0"].var_89b3f8b0 = player.kills;
     }
     level.var_f099aebe = function_f8d53445();
-    var_8c24333b = {#var_adfc9a7e:getplayers().size, #var_174b4191:isdefined(level.var_b48509f9) ? level.var_b48509f9 : 0, #var_ac2606df:isdefined(activator.instance.location.targetname) ? activator.instance.location.targetname : "", #var_90f03449:isdefined(level.script) ? level.script : "", #var_fffcd514:isdefined(level.var_f099aebe) ? level.var_f099aebe : 0, #var_4472945a:isdefined(activator.instance.var_b588b063) ? activator.instance.var_b588b063 : ""};
+    var_8c24333b = {#var_adfc9a7e:getplayers().size, #var_174b4191:isdefined(level.var_b48509f9) ? level.var_b48509f9 : 0, #var_ac2606df:isdefined(activator.instance.location.targetname) ? activator.instance.location.targetname : "", #var_90f03449:isdefined(level.script) ? level.script : "", #var_fffcd514:isdefined(level.var_f099aebe) ? level.var_f099aebe : 0, #var_4472945a:isdefined(activator.instance.content_script_name) ? activator.instance.content_script_name : ""};
     function_92d1707f(#"hash_7c94738a8f65d945", var_8c24333b);
 }
 
@@ -778,7 +778,7 @@ function private function_f13d2749(params) {
     if (isdefined(level.var_f099aebe)) {
         var_ecd4394f = function_f8d53445() - level.var_f099aebe;
     }
-    var_8c24333b = {#var_adfc9a7e:getplayers().size, #var_174b4191:isdefined(level.var_b48509f9) ? level.var_b48509f9 : 0, #var_a32e2b21:is_true(params.completed), #var_85aa2ee9:isdefined(var_ecd4394f) ? var_ecd4394f : 0, #var_ac2606df:isdefined(params.instance.location.targetname) ? params.instance.location.targetname : "", #var_90f03449:isdefined(level.script) ? level.script : "", #var_26d27f23:function_f8d53445(), #var_fffcd514:isdefined(level.var_f099aebe) ? level.var_f099aebe : 0, #var_4472945a:isdefined(params.instance.var_b588b063) ? params.instance.var_b588b063 : ""};
+    var_8c24333b = {#var_adfc9a7e:getplayers().size, #var_174b4191:isdefined(level.var_b48509f9) ? level.var_b48509f9 : 0, #var_a32e2b21:is_true(params.completed), #var_85aa2ee9:isdefined(var_ecd4394f) ? var_ecd4394f : 0, #var_ac2606df:isdefined(params.instance.location.targetname) ? params.instance.location.targetname : "", #var_90f03449:isdefined(level.script) ? level.script : "", #var_26d27f23:function_f8d53445(), #var_fffcd514:isdefined(level.var_f099aebe) ? level.var_f099aebe : 0, #var_4472945a:isdefined(params.instance.content_script_name) ? params.instance.content_script_name : ""};
     level.var_f099aebe = undefined;
     function_92d1707f(#"hash_7c94738a8f65d945", var_8c24333b);
     players = getplayers();
@@ -793,7 +793,7 @@ function private function_f13d2749(params) {
         var_c0c8369d = player rank::function_5b197def(2) - (isdefined(player.pers[#"hash_2042ab53f67e07c0"].var_dd546227) ? player.pers[#"hash_2042ab53f67e07c0"].var_dd546227 : 0);
         var_7284764c = player rank::function_5b197def(5) - (isdefined(player.pers[#"hash_2042ab53f67e07c0"].var_ccd5da9e) ? player.pers[#"hash_2042ab53f67e07c0"].var_ccd5da9e : 0);
         var_5ebc1188 = player.kills - (isdefined(player.pers[#"hash_2042ab53f67e07c0"].var_89b3f8b0) ? player.pers[#"hash_2042ab53f67e07c0"].var_89b3f8b0 : 0);
-        var_b1c6f834 = {#var_adfc9a7e:getplayers().size, #var_174b4191:isdefined(level.var_b48509f9) ? level.var_b48509f9 : 0, #var_4472945a:isdefined(params.instance.var_b588b063) ? params.instance.var_b588b063 : "", #var_c56e97ce:isdefined(var_5ebc1188) ? var_5ebc1188 : 0, #var_f58a5ef3:isdefined(var_7284764c) ? var_7284764c : 0, #var_30171d91:isdefined(var_c0c8369d) ? var_c0c8369d : 0, #var_6cf5475f:isdefined(var_8ce60ee4) ? var_8ce60ee4 : 0, #var_7ce7929c:isdefined(var_f4090d6e) ? var_f4090d6e : 0, #var_df4d256:isdefined(var_6e09d7) ? var_6e09d7 : 0};
+        var_b1c6f834 = {#var_adfc9a7e:getplayers().size, #var_174b4191:isdefined(level.var_b48509f9) ? level.var_b48509f9 : 0, #var_4472945a:isdefined(params.instance.content_script_name) ? params.instance.content_script_name : "", #var_c56e97ce:isdefined(var_5ebc1188) ? var_5ebc1188 : 0, #var_f58a5ef3:isdefined(var_7284764c) ? var_7284764c : 0, #var_30171d91:isdefined(var_c0c8369d) ? var_c0c8369d : 0, #var_6cf5475f:isdefined(var_8ce60ee4) ? var_8ce60ee4 : 0, #var_7ce7929c:isdefined(var_f4090d6e) ? var_f4090d6e : 0, #var_df4d256:isdefined(var_6e09d7) ? var_6e09d7 : 0};
         function_92d1707f(#"hash_7a17213a42c58963", var_b1c6f834);
     }
 }

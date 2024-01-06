@@ -37,14 +37,14 @@ function init() {
     clientfield::register("allplayers", "play_fx", 1, 8, "int", &function_368dc9eb, 0, 0);
     clientfield::register("actor", "play_fx", 1, 8, "int", &play_fx, 0, 0);
     clientfield::register("vehicle", "play_fx", 1, 8, "int", &play_fx, 0, 0);
-    clientfield::register("scriptmover", "stop_fx", 1, 8, "int", &function_546012c3, 0, 0);
-    clientfield::register("allplayers", "stop_fx", 1, 8, "int", &function_546012c3, 0, 0);
-    clientfield::register("actor", "stop_fx", 1, 8, "int", &function_546012c3, 0, 0);
-    clientfield::register("vehicle", "stop_fx", 1, 8, "int", &function_546012c3, 0, 0);
+    clientfield::register("scriptmover", "stop_fx", 1, 8, "int", &stop_fx, 0, 0);
+    clientfield::register("allplayers", "stop_fx", 1, 8, "int", &stop_fx, 0, 0);
+    clientfield::register("actor", "stop_fx", 1, 8, "int", &stop_fx, 0, 0);
+    clientfield::register("vehicle", "stop_fx", 1, 8, "int", &stop_fx, 0, 0);
     level._effect[#"bomb"] = "zombie/fx_concussive_wave_impact_zdo";
-    level._effect[#"hash_6f6e926dad241b0d"] = "zombie/fx_debris_body_nuke_dust_doa";
-    level._effect[#"hash_4aa003ac5586842a"] = "doa/fx9_impact_turret_land";
-    level._effect[#"hash_290b21dba9ffeed7"] = "explosions/fx_exp_grenade_dirt";
+    level._effect[#"nuke_dust"] = "zombie/fx_debris_body_nuke_dust_doa";
+    level._effect[#"turret_impact"] = "doa/fx9_impact_turret_land";
+    level._effect[#"skel_stomp_impact"] = "explosions/fx_exp_grenade_dirt";
     level._effect[#"character_fire_death_torso"] = "zombie/fx_fire_torso_os_doa";
     level._effect[#"character_fire_death_sm"] = "zombie/fx_fire_zombie_sm_os_doa";
     level._effect[#"hash_1bd1aca7803defd8"] = "zombie/fx_blood_torso_explo_zmb";
@@ -54,160 +54,160 @@ function init() {
     level._effect[#"hash_4b37c12194af9a3b"] = "zombie/fx_fire_arm_right_os_doa";
     level._effect[#"hash_7ce5c47eb2a473c1"] = "zombie/fx_fire_torso_os_doa";
     level._effect[#"hash_1d9e53a201883cb"] = "doa/fx_fire_arm_left_purple_os_doa";
-    level._effect[#"hash_2b3bc9d34326bcf7"] = "doa/fx_trail_gem_red_doa";
-    level._effect[#"hash_643cb9decadbd5ed"] = "doa/fx_trail_gem_white_doa";
-    level._effect[#"hash_45d7e77138d2f9c"] = "doa/fx_trail_gem_blue_doa";
-    level._effect[#"hash_4540309e6c61cdb3"] = "doa/fx_trail_gem_green_doa";
-    level._effect[#"hash_4eef6665b120858"] = "doa/fx_trail_gem_yellow_doa";
-    level._effect[#"hash_769ced45964e8397"] = "doa/fx9_trail_player_green";
-    level._effect[#"hash_2e19c0ba916605a0"] = "doa/fx9_trail_player_blue";
-    level._effect[#"hash_41431c8652eb8f8b"] = "doa/fx9_trail_player_red";
-    level._effect[#"hash_736adc53f92e74ac"] = "doa/fx9_trail_player_yellow";
-    level._effect[#"hash_7c98dbb28346d079"] = "doa/fx_light_doa_pickup_glow_blue";
-    level._effect[#"hash_588bd2b0d5c9f565"] = "doa/fx_light_doa_pickup_glow_gold";
-    level._effect[#"hash_47439ddaef397ed8"] = "doa/fx_light_doa_pickup_glow_green";
-    level._effect[#"hash_314b37db0596cbc8"] = "doa/fx_light_doa_pickup_glow_red";
-    level._effect[#"hash_32d4989e8df74dca"] = "doa/fx_light_doa_pickup_glow_white";
-    level._effect[#"hash_786fd953e56ce2f2"] = "doa/fx_light_doa_pickup_glow_white";
-    level._effect[#"hash_364ef23f15d07355"] = "doa/fx_light_doa_pickup_glow_blue";
-    level._effect[#"hash_37f2a7cc18b7b286"] = "doa/fx_light_doa_pickup_glow_red";
-    level._effect[#"hash_4bee6b6585f9cacd"] = "explosions/fx8_exp_elec_killstreak";
-    level._effect[#"hash_f3feb233200b24b"] = "explosions/fx8_exp_equipment_lg";
+    level._effect[#"gem_trail_red"] = "doa/fx_trail_gem_red_doa";
+    level._effect[#"gem_trail_white"] = "doa/fx_trail_gem_white_doa";
+    level._effect[#"gem_trail_blue"] = "doa/fx_trail_gem_blue_doa";
+    level._effect[#"gem_trail_green"] = "doa/fx_trail_gem_green_doa";
+    level._effect[#"gem_trail_yellow"] = "doa/fx_trail_gem_yellow_doa";
+    level._effect[#"player_trail_green"] = "doa/fx9_trail_player_green";
+    level._effect[#"player_trail_blue"] = "doa/fx9_trail_player_blue";
+    level._effect[#"player_trail_red"] = "doa/fx9_trail_player_red";
+    level._effect[#"player_trail_yellow"] = "doa/fx9_trail_player_yellow";
+    level._effect[#"glow_blue"] = "doa/fx_light_doa_pickup_glow_blue";
+    level._effect[#"glow_yellow"] = "doa/fx_light_doa_pickup_glow_gold";
+    level._effect[#"glow_green"] = "doa/fx_light_doa_pickup_glow_green";
+    level._effect[#"glow_red"] = "doa/fx_light_doa_pickup_glow_red";
+    level._effect[#"glow_white"] = "doa/fx_light_doa_pickup_glow_white";
+    level._effect[#"glow_item"] = "doa/fx_light_doa_pickup_glow_white";
+    level._effect[#"glow_weapon"] = "doa/fx_light_doa_pickup_glow_blue";
+    level._effect[#"giantskelheartglow"] = "doa/fx_light_doa_pickup_glow_red";
+    level._effect[#"generic_generator_die"] = "explosions/fx8_exp_elec_killstreak";
+    level._effect[#"generic_generator_active"] = "explosions/fx8_exp_equipment_lg";
     level._effect[#"hash_2ba7079a15be757c"] = "doa/fx9_spawn_blood_hand_burst_zmb";
     level._effect[#"hash_7207b019e119bc7d"] = "doa/fx9_spawn_blood_body_billowing_zmb";
     level._effect[#"hash_4dd7773ae2a48977"] = "zombie/fx_spawn_dirt_hand_burst_zmb";
     level._effect[#"hash_4f9dc73a09ccac6c"] = "zombie/fx_spawn_dirt_body_billowing_zmb";
-    level._effect[#"hash_21fb0da62b00ec91"] = "doa/fx9_spawn_demon_burst";
-    level._effect[#"hash_156e49d4ed00065c"] = "doa/fx9_shield_red_loop";
-    level._effect[#"hash_44dd5d7dcebd4083"] = "doa/fx9_shield_red_os";
-    level._effect[#"hash_232a36afb5c83cdd"] = "zombie/fx_shield_red_zdo";
-    level._effect[#"hash_70be7ffec8546e63"] = "zombie/fx_shield_zdo";
-    level._effect[#"hash_3c90d26f35e390c5"] = "zombie/fx_shield_gone_zdo";
-    level._effect[#"hash_5bc493104aea486a"] = "zombie/fx_shield_side_zdo";
-    level._effect[#"hash_2f395262073313a0"] = "zombie/fx_shield_gone_side_zdo";
+    level._effect[#"demon_burst"] = "doa/fx9_spawn_demon_burst";
+    level._effect[#"red_shield"] = "doa/fx9_shield_red_loop";
+    level._effect[#"red_shield_os"] = "doa/fx9_shield_red_os";
+    level._effect[#"silverback_shield"] = "zombie/fx_shield_red_zdo";
+    level._effect[#"player_shield_long"] = "zombie/fx_shield_zdo";
+    level._effect[#"player_shield_short"] = "zombie/fx_shield_gone_zdo";
+    level._effect[#"player_shield_long_sideview"] = "zombie/fx_shield_side_zdo";
+    level._effect[#"player_shield_short_sideview"] = "zombie/fx_shield_gone_side_zdo";
     level._effect[#"headshot"] = "zombie/fx_bul_flesh_head_fatal_zmb";
     level._effect[#"headshot_nochunks"] = "zombie/fx_bul_flesh_head_nochunks_zmb";
     level._effect[#"bloodspurt"] = "zombie/fx_bul_flesh_neck_spurt_zmb";
-    level._effect[#"hash_71f7e57f364aed4a"] = "doa/fx_bio_chicken_death_doa";
-    level._effect[#"hash_374150b522db3805"] = "zombie/fx_concussive_wave_impact_zdo";
-    level._effect[#"hash_2e46efe374a502f0"] = "doa/fx9_exp_chest_pirate_wood";
-    level._effect[#"hash_1e33728986f5a387"] = "doa/fx9_marker_tele_white_dist";
-    level._effect[#"hash_21fb0da62b00ec91"] = "doa/fx9_spawn_demon_burst";
-    level._effect[#"hash_12a9f4a719a68aa9"] = "doa/fx9_marker_exit_fog_md";
-    level._effect[#"hash_7e9082829bc9203f"] = "zombie/fx_powerup_boxer_gloves_impact_doa";
-    level._effect[#"hash_22e2efebdd0883c4"] = "zombie/fx_powerup_boxer_gloves_impact_stars_doa";
-    level._effect[#"hash_156ab78f93710649"] = "zombie/fx_magnet_ring_zdo";
-    level._effect[#"hash_2ee0a25585734c56"] = "zombie/fx_magnet_ring_fade_doa";
-    level._effect[#"hash_587602b29d4a0692"] = "doa/fx_fire_furiousfeet_os_zdo";
-    level._effect[#"hash_1f180520cfe07430"] = "doa/fx_powerup_timeshift_doa";
-    level._effect[#"hash_1f538ef0e3d36bcb"] = "doa/fx_powerup_timeshift_impact_doa";
-    level._effect[#"hash_1f85d28ef7f4b6b"] = "doa/fx_powerup_timeshift_fade_doa";
+    level._effect[#"chicken_explode"] = "doa/fx_bio_chicken_death_doa";
+    level._effect[#"treasure_chest_impact"] = "zombie/fx_concussive_wave_impact_zdo";
+    level._effect[#"treasure_chest_explode"] = "doa/fx9_exp_chest_pirate_wood";
+    level._effect[#"teleporter_dungeon_light"] = "doa/fx9_marker_tele_white_dist";
+    level._effect[#"demon_burst"] = "doa/fx9_spawn_demon_burst";
+    level._effect[#"exit_fog_marker"] = "doa/fx9_marker_exit_fog_md";
+    level._effect[#"boxing_pow"] = "zombie/fx_powerup_boxer_gloves_impact_doa";
+    level._effect[#"boxing_stars"] = "zombie/fx_powerup_boxer_gloves_impact_stars_doa";
+    level._effect[#"magnet_on"] = "zombie/fx_magnet_ring_zdo";
+    level._effect[#"magnet_fade"] = "zombie/fx_magnet_ring_fade_doa";
+    level._effect[#"boots"] = "doa/fx_fire_furiousfeet_os_zdo";
+    level._effect[#"timeshift"] = "doa/fx_powerup_timeshift_doa";
+    level._effect[#"timeshift_contact"] = "doa/fx_powerup_timeshift_impact_doa";
+    level._effect[#"timeshift_fade"] = "doa/fx_powerup_timeshift_fade_doa";
     level._effect[#"divine_shield"] = "doa/fx_powerup_timeshift_impact_nolight_doa";
     level._effect[#"divine_shield_off"] = "doa/fx_powerup_timeshift_nolight_os";
-    level._effect[#"hash_4c8bb4d9c4f2af53"] = "doa/fx_horn_doa";
-    level._effect[#"hash_577a73ed592349a8"] = "doa/fx_powerup_timeshift_red_doa";
-    level._effect[#"hash_162bc07f3ef57dff"] = "zm_weapons/fx8_cymbal_monkey_light";
-    level._effect[#"hash_194b022e3fe79f20"] = "maps/zm_white/fx8_monkey_bomb_reveal";
-    level._effect[#"hash_e28ee99aeb7b6c1"] = "doa/fx_exp_rpg_purple_doa";
-    level._effect[#"hash_3a4bc3f3452f689c"] = "doa/fx_powerup_stun_bear_fear_doa";
-    level._effect[#"hash_607c49e52ba406d4"] = "doa/fx_powerup_stun_bear_shield_impact_doa";
-    level._effect[#"hash_29409144866fd127"] = "doa/fx_powerup_stun_bear_shield_doa";
-    level._effect[#"hash_653bbbb4a0260cde"] = "animals/fx_bio_butterfly_top";
-    level._effect[#"hash_4fdf5dc737c3a8ea"] = "doa/fx_elec_sparks_burst_blue";
-    level._effect[#"hash_66295fe40fc570c0"] = "electric/fx8_elec_sparks_fixture_blue_md";
-    level._effect[#"hash_da0ff40267cc8d7"] = "doa/fx_trail_tesla_balls_doa";
+    level._effect[#"teamshift_contact"] = "doa/fx_horn_doa";
+    level._effect[#"teamshift"] = "doa/fx_powerup_timeshift_red_doa";
+    level._effect[#"monkey_light"] = "zm_weapons/fx8_cymbal_monkey_light";
+    level._effect[#"monkey_reveal"] = "maps/zm_white/fx8_monkey_bomb_reveal";
+    level._effect[#"monkey_detonate"] = "doa/fx_exp_rpg_purple_doa";
+    level._effect[#"stunbear_affected"] = "doa/fx_powerup_stun_bear_fear_doa";
+    level._effect[#"stunbear_contact"] = "doa/fx_powerup_stun_bear_shield_impact_doa";
+    level._effect[#"stunbear"] = "doa/fx_powerup_stun_bear_shield_doa";
+    level._effect[#"stunbear_fade"] = "animals/fx_bio_butterfly_top";
+    level._effect[#"tesla_launch"] = "doa/fx_elec_sparks_burst_blue";
+    level._effect[#"tesla_ball"] = "electric/fx8_elec_sparks_fixture_blue_md";
+    level._effect[#"tesla_trail"] = "doa/fx_trail_tesla_balls_doa";
     level._effect[#"tesla_shock"] = "doa/fx_tesla_shock_doa";
     level._effect[#"tesla_shock_eyes"] = "zombie/fx_tesla_shock_eyes_zmb";
-    level._effect[#"hash_2f51cc952693b62e"] = "doa/fx_sprinkler_active_doa";
-    level._effect[#"hash_5b372ff3383519c9"] = "doa/fx_sprinkler_impact_doa";
-    level._effect[#"hash_60fc0e63f8979c1c"] = "doa/fx_sprinkler_impact_doa";
-    level._effect[#"hash_47f183b1ce3830f4"] = "player/fx_plyr_clone_reaper_orb";
-    level._effect[#"hash_6969e3fd14b23dda"] = "player/fx_plyr_clone_reaper_appear";
-    level._effect[#"hash_7aa838a0b161e1e8"] = "player/fx_plyr_clone_vanish";
-    level._effect[#"hash_3beed201a3f72217"] = "doa/fx_powerup_egg_hatch_doa";
-    level._effect[#"hash_1efdbb2a074f69ac"] = "doa/fx_powerup_egg_destroy_doa";
-    level._effect[#"hash_28adfb7441ac652e"] = "doa/fx9_fire_barrel_red_os";
-    level._effect[#"hash_7a849162fd13237a"] = "doa/fx9_red_barrel_fire_os";
-    level._effect[#"hash_770afa1045080796"] = "doa/fx9_exp_doa_lg";
-    level._effect[#"hash_5afada6e55f6b926"] = "doa/fx9_mech_wpn_115_blob_exp_doa";
-    level._effect[#"hash_574f0114feb550d1"] = "doa/fx_elec_sparks_burst_med_os_doa";
-    level._effect[#"hash_421821990a6b6849"] = "doa/fx_trap_red_light_doa";
-    level._effect[#"hash_4b8b4e325b91e1cd"] = "doa/fx_trap_green_light_doa";
-    level._effect[#"hash_479440bc717b91c"] = "zombie/fx_electric_trap_zdo";
+    level._effect[#"sprinkler_active"] = "doa/fx_sprinkler_active_doa";
+    level._effect[#"sprinkler_land"] = "doa/fx_sprinkler_impact_doa";
+    level._effect[#"sprinkler_takeoff"] = "doa/fx_sprinkler_impact_doa";
+    level._effect[#"clone_orb"] = "player/fx_plyr_clone_reaper_orb";
+    level._effect[#"clone_appear"] = "player/fx_plyr_clone_reaper_appear";
+    level._effect[#"clone_vanish"] = "player/fx_plyr_clone_vanish";
+    level._effect[#"egg_hatch"] = "doa/fx_powerup_egg_hatch_doa";
+    level._effect[#"egg_explode"] = "doa/fx_powerup_egg_destroy_doa";
+    level._effect[#"barrel_fire"] = "doa/fx9_fire_barrel_red_os";
+    level._effect[#"barrel_fire_top"] = "doa/fx9_red_barrel_fire_os";
+    level._effect[#"explode_lg"] = "doa/fx9_exp_doa_lg";
+    level._effect[#"electrical_explo"] = "doa/fx9_mech_wpn_115_blob_exp_doa";
+    level._effect[#"hazard_electric"] = "doa/fx_elec_sparks_burst_med_os_doa";
+    level._effect[#"hazard_electric_trap_red"] = "doa/fx_trap_red_light_doa";
+    level._effect[#"hazard_electric_trap_green"] = "doa/fx_trap_green_light_doa";
+    level._effect[#"hazard_electric_trap_active"] = "zombie/fx_electric_trap_zdo";
     level._effect[#"hash_4c83639bb82942d8"] = "zombie/fx_electric_trap_sm_light_zdo";
-    level._effect[#"hash_31788894031794da"] = "electric/fx_sparks_burst_dir_md_z270_blue_os";
-    level._effect[#"hash_736ccca7e9759188"] = "fire/fx9_spot_md_blue";
-    level._effect[#"hash_5e060d5f293c4067"] = "zombie/fx_electric_trap_zdo";
-    level._effect[#"hash_429d125723073dbc"] = "doa/fx_ai_raven_dissolve_torso";
-    level._effect[#"hash_458cf82d87c28c77"] = "doa/fx_ai_raven_teleport";
-    level._effect[#"hash_65ddc2e1305c6a17"] = "doa/fx_ai_raven_teleport_in";
-    level._effect[#"hash_4ecc2b4dec82cf64"] = "doa/fx_ai_raven_juke_out";
-    level._effect[#"hash_1f63d3d9b97361c7"] = "doa/fx_ai_dni_rez_in";
+    level._effect[#"teleporter_disabled"] = "electric/fx_sparks_burst_dir_md_z270_blue_os";
+    level._effect[#"electrical_fire"] = "fire/fx9_spot_md_blue";
+    level._effect[#"arcade_spark"] = "zombie/fx_electric_trap_zdo";
+    level._effect[#"shadow_fade"] = "doa/fx_ai_raven_dissolve_torso";
+    level._effect[#"shadow_move"] = "doa/fx_ai_raven_teleport";
+    level._effect[#"shadow_appear"] = "doa/fx_ai_raven_teleport_in";
+    level._effect[#"shadow_die"] = "doa/fx_ai_raven_juke_out";
+    level._effect[#"shadow_rez_in"] = "doa/fx_ai_dni_rez_in";
     level._effect[#"hash_7fb19df63df2dd4c"] = "doa/fx_ai_dni_rez_out_clean";
     level._effect[#"hash_1ba28014cdeb28f"] = "doa/fx_raven_teleport_doa";
-    level._effect[#"hash_29c3655d15982fd7"] = "doa/fx_glow_smokeman_doa";
+    level._effect[#"shadow_glow"] = "doa/fx_glow_smokeman_doa";
     level._effect[#"hash_2e65d5696e71b8e9"] = "zombie/fx_blood_torso_explo_lg_os_zmb";
-    level._effect[#"hash_120ff5b1d446ab7a"] = "zombie/fx_spawn_body_cp_zmb";
-    level._effect[#"hash_34210bcf377d91c7"] = "doa/fx_trashcan_doa";
-    level._effect[#"hash_40442f82b0ea5839"] = "doa/fx_trashcan_damaged_doa";
-    level._effect[#"hash_aa66ddd7560f0e4"] = "doa/fx9_trap_spike_tell";
-    level._effect[#"hash_44e0174d8514961c"] = "doa/fx9_trap_spike_damage";
-    level._effect[#"hash_1ef0dffc2b5074ec"] = "doa/fx9_trap_spike_damage_player";
+    level._effect[#"spawnzombie"] = "zombie/fx_spawn_body_cp_zmb";
+    level._effect[#"weaponchargeractive"] = "doa/fx_trashcan_doa";
+    level._effect[#"weaponchargerdone"] = "doa/fx_trashcan_damaged_doa";
+    level._effect[#"pungi_hint"] = "doa/fx9_trap_spike_tell";
+    level._effect[#"pungi_activate"] = "doa/fx9_trap_spike_damage";
+    level._effect[#"pungi_damage"] = "doa/fx9_trap_spike_damage_player";
     level._effect[#"nova_crawler_aura_fx"] = "zm_ai/fx8_nova_crawler_aura";
-    level._effect[#"hash_b8c9f7d0954ae51"] = "zm_ai/fx8_nova_crawler_gas_release";
-    level._effect[#"hash_33c517be0d698d3e"] = "zm_ai/fx8_nova_crawler_aura";
-    level._effect[#"hash_5c9476c34322ade7"] = "zombie/fx_spawn_dirt_hand_burst_zmb";
-    level._effect[#"hash_be39ccf81ffe519"] = "zombie/fx_debris_body_nuke_dust_doa";
-    level._effect[#"hash_47cdb54f9a887290"] = "zombie/fx_exp_noxious_gas";
-    level._effect[#"hash_64ef260584630ddd"] = "doa/fx_ability_light_chest_immolation";
-    level._effect[#"hash_44cfe8bcf434c3ac"] = "doa/fx9_portal_loop";
-    level._effect[#"hash_7468c014ffd3e657"] = "doa/fx9_exp_chest_pirate_wood";
-    level._effect[#"hash_68028e848af3b66f"] = "zm_ai/fx8_dog_lightning_spawn";
-    level._effect[#"hash_7060dbf2eaaa798d"] = "doa/fx9_elec_pulse_os";
-    level._effect[#"hash_7f68e64009bc6293"] = "doa/fx9_elec_burst_radial_os";
-    level._effect[#"hash_66464b063cb81fdd"] = "doa/fx9_trap_dragon_mouth_fire";
-    level._effect[#"hash_32798caf5739ee28"] = "doa/fx9_exp_skull_blood_lg";
-    level._effect[#"hash_1bbf465fb13f8de1"] = "doa/fx9_exp_skull_bones_lg";
-    level._effect[#"hash_6990f0d9a05599ff"] = "doa/fx9_elec_burst_radial_os";
-    level._effect[#"hash_66d682aa3af31e36"] = "doa/fx9_exp_chest_pirate_wood";
-    level._effect[#"hash_723424ef52a8b99e"] = "doa/fx9_fireworks_gate";
+    level._effect[#"nova_crawler_burst"] = "zm_ai/fx8_nova_crawler_gas_release";
+    level._effect[#"nova_fx"] = "zm_ai/fx8_nova_crawler_aura";
+    level._effect[#"silverback_launch"] = "zombie/fx_spawn_dirt_hand_burst_zmb";
+    level._effect[#"silverback_land"] = "zombie/fx_debris_body_nuke_dust_doa";
+    level._effect[#"silverback_banana_explo"] = "zombie/fx_exp_noxious_gas";
+    level._effect[#"explo_warning_light"] = "doa/fx_ability_light_chest_immolation";
+    level._effect[#"wild_portal"] = "doa/fx9_portal_loop";
+    level._effect[#"basketexplo"] = "doa/fx9_exp_chest_pirate_wood";
+    level._effect[#"lightningstrike"] = "zm_ai/fx8_dog_lightning_spawn";
+    level._effect[#"wild_portal_elec_burst"] = "doa/fx9_elec_pulse_os";
+    level._effect[#"wild_portal_radial_burst"] = "doa/fx9_elec_burst_radial_os";
+    level._effect[#"dragontrap"] = "doa/fx9_trap_dragon_mouth_fire";
+    level._effect[#"zombie_generator_die"] = "doa/fx9_exp_skull_blood_lg";
+    level._effect[#"skeleton_generator_die"] = "doa/fx9_exp_skull_bones_lg";
+    level._effect[#"fate_landing"] = "doa/fx9_elec_burst_radial_os";
+    level._effect[#"fate_explo"] = "doa/fx9_exp_chest_pirate_wood";
+    level._effect[#"magic_door_open"] = "doa/fx9_fireworks_gate";
     level._effect[#"fireworks"] = "doa/fx9_fireworks_gate";
-    level._effect[#"hash_17af4085645039ad"] = "light/fx9_light_wz_doa_fire_animated";
-    level._effect[#"hash_5452f43eb18944cd"] = "doa/fx9_char_crawler_vomit_stream_rnr";
-    level._effect[#"hash_12612606a5823870"] = "doa/fx9_axe_trail_vis";
-    level._effect[#"hash_7a6d9f513658bbe3"] = "doa/fx9_char_ethereal_spawn";
-    level._effect[#"hash_28ae9c5ae357e205"] = "zm_ai/fx8_blightfather_vomit";
-    level._effect[#"hash_57935345b4ffe15b"] = "doa/fx_player_respawn_doa";
-    level._effect[#"hash_2e10378a016fbf34"] = "doa/fx_player_respawn_blue_doa";
-    level._effect[#"hash_1d529ee752fe310f"] = "doa/fx_player_respawn_red_doa";
-    level._effect[#"hash_1d529ee752fe310f"] = "doa/fx_player_respawn_yellow_doa";
-    level._effect[#"hash_1f1f418adb4db3ff"] = "doa/fx_ammo_can_doa";
-    level._effect[#"hash_6210e42404dd74cf"] = "destruct/fx9_red_barrel_exp";
-    level._effect[#"hash_3d509db58d77a828"] = "zombie/fx_meatball_explo_zod_zmb";
-    level._effect[#"hash_59ae6c65fe5d2463"] = "doa/fx9_ui_heal_aura_loop_red";
-    level._effect[#"hash_685a449c9bf8e715"] = "doa/fx9_ui_heal_aura_os_red";
-    level._effect[#"hash_47351561ef7bc93e"] = "doa/fx9_marker_1st_person";
-    level._effect[#"hash_208bf79c66c3594f"] = "doa/fx9_marker_lantern";
-    level._effect[#"hash_badc0ab59ed3826"] = "doa/fx9_marker_lantern_os";
-    level._effect[#"hash_5ce33e3764873463"] = "doa/fx9_hellhound_ghost_exp";
-    level._effect[#"hash_8e2b849e0253db1"] = "zm_ai/fx8_cata_plasma_blast";
-    level._effect[#"hash_67afb213fe7ebbd7"] = "doa/fx9_exp_skeleton_fb";
-    level._effect[#"hash_107c6009ac2232d"] = "doa/fx9_exp_skeleton_fb_giant";
-    level._effect[#"hash_680bbc57dd854a8b"] = "zm_ai/fx8_dog_lightning_spawn";
-    level._effect[#"hash_1d2b9e195c40660b"] = "zombie/fx_electric_trap_zdo";
-    level._effect[#"hash_ae735f9ee8a6ae4"] = "doa/fx9_cannon_ball_fuse";
-    level._effect[#"hash_75d047703f91db4b"] = "player/fx8_plyr_emote_bubbles_sm";
-    level._effect[#"hash_444be56956fb0f98"] = "doa/fx_incoming_impact_doa";
-    level._effect[#"hash_379c4b08ae7c355e"] = "doa/fx9_debris_lawn_mower";
-    level._effect[#"hash_261898a71a2ddfc6"] = "doa/fx9_hazard_elec_pole";
-    level._effect[#"hash_255dd00c30245d50"] = "electric/fx_sparks_burst_dir_md_z270_blue_os";
-    level._effect[#"hash_28c1e4ce78b7e9aa"] = "weapon/fx9_muz_md_gas_3p";
-    level._effect[#"hash_7d35b54a48886448"] = "explosions/fx9_bm_exp_surface_water_250";
+    level._effect[#"fx_fire_torch_wall_lit_castle"] = "light/fx9_light_wz_doa_fire_animated";
+    level._effect[#"crawler_generator_spawn"] = "doa/fx9_char_crawler_vomit_stream_rnr";
+    level._effect[#"axe_trail"] = "doa/fx9_axe_trail_vis";
+    level._effect[#"ethereal_vapors"] = "doa/fx9_char_ethereal_spawn";
+    level._effect[#"blightfather_vomit"] = "zm_ai/fx8_blightfather_vomit";
+    level._effect[#"player_respawn_green"] = "doa/fx_player_respawn_doa";
+    level._effect[#"player_respawn_blue"] = "doa/fx_player_respawn_blue_doa";
+    level._effect[#"player_respawn_red"] = "doa/fx_player_respawn_red_doa";
+    level._effect[#"player_respawn_red"] = "doa/fx_player_respawn_yellow_doa";
+    level._effect[#"ammo_unlimited"] = "doa/fx_ammo_can_doa";
+    level._effect[#"explode_red_barrel"] = "destruct/fx9_red_barrel_exp";
+    level._effect[#"meat_explode"] = "zombie/fx_meatball_explo_zod_zmb";
+    level._effect[#"player_heal"] = "doa/fx9_ui_heal_aura_loop_red";
+    level._effect[#"player_healos"] = "doa/fx9_ui_heal_aura_os_red";
+    level._effect[#"firstpersonmarker"] = "doa/fx9_marker_1st_person";
+    level._effect[#"lantern"] = "doa/fx9_marker_lantern";
+    level._effect[#"lantern_fade"] = "doa/fx9_marker_lantern_os";
+    level._effect[#"ghosthound_death"] = "doa/fx9_hellhound_ghost_exp";
+    level._effect[#"hellhound_death"] = "zm_ai/fx8_cata_plasma_blast";
+    level._effect[#"skeleton_death"] = "doa/fx9_exp_skeleton_fb";
+    level._effect[#"skeleton_giant_death"] = "doa/fx9_exp_skeleton_fb_giant";
+    level._effect[#"skeleton_hand_lightning"] = "zm_ai/fx8_dog_lightning_spawn";
+    level._effect[#"skeleton_hand_energy"] = "zombie/fx_electric_trap_zdo";
+    level._effect[#"bombfuse"] = "doa/fx9_cannon_ball_fuse";
+    level._effect[#"crab_bubbles"] = "player/fx8_plyr_emote_bubbles_sm";
+    level._effect[#"incoming_impact"] = "doa/fx_incoming_impact_doa";
+    level._effect[#"lawn_mower"] = "doa/fx9_debris_lawn_mower";
+    level._effect[#"pole_blast"] = "doa/fx9_hazard_elec_pole";
+    level._effect[#"pole_zombie_elecburst"] = "electric/fx_sparks_burst_dir_md_z270_blue_os";
+    level._effect[#"muzzleflash_md"] = "weapon/fx9_muz_md_gas_3p";
+    level._effect[#"water_explosion"] = "explosions/fx9_bm_exp_surface_water_250";
     level._effect[#"water_geyser"] = "doa/fx8_geyser";
     level._effect[#"water_geyser_sm"] = "water/fx_water_geyser_md";
     level._effect[#"water_boil_ambient"] = "doa/fx9_water_boil_area_ambient";
     level._effect[#"water_boil_deathzone"] = "doa/fx9_water_boil_death_area_rnr";
-    level._effect[#"hash_3de1bc10eda31dc7"] = "doa/fx9_marker_lightbulb";
+    level._effect[#"remote_player_busy"] = "doa/fx9_marker_lightbulb";
     namespace_7e1ec234::function_10d1200d();
     level.var_8056ac44 = array(level._effect[#"hash_551e1d0fcdb105e6"], level._effect[#"hash_4b37c12194af9a3b"], level._effect[#"hash_7ce5c47eb2a473c1"], level._effect[#"hash_551e1d0fcdb105e6"], level._effect[#"hash_4b37c12194af9a3b"]);
     level.var_75aaaa81 = array("j_elbow_le", "j_elbow_ri", "j_spine4", "j_knee_le", "j_knee_ri");
@@ -220,7 +220,7 @@ function init() {
     level.var_be2bb100 = 2;
     level.var_49fcf1d9 = 0.5;
     level.var_48152abe = array("zombietron_gib_chunk_fat", "zombietron_gib_chunk_bone_01", "zombietron_gib_chunk_bone_02", "zombietron_gib_chunk_bone_03", "zombietron_gib_chunk_flesh_01", "zombietron_gib_chunk_flesh_02", "zombietron_gib_chunk_flesh_03", "zombietron_gib_chunk_meat_01", "zombietron_gib_chunk_meat_02", "zombietron_gib_chunk_meat_03");
-    function_3385d776(#"hash_6eb76641c88275b0");
+    function_3385d776(#"zombie/fx_concussive_wave_impact_zdo");
 }
 
 // Namespace namespace_83eb6304/namespace_83eb6304
@@ -342,7 +342,7 @@ function function_68c546ac(localclientnum, name) {
 // Params 7, eflags: 0x2 linked
 // Checksum 0xfe50a5f5, Offset: 0x3800
 // Size: 0x74
-function function_546012c3(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function stop_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump != 0) {
         self thread function_68c546ac(fieldname, function_43755017(bwastimejump));
     }
@@ -527,41 +527,41 @@ function function_d8c789b8(localclientnum, name, *tag) {
     self endon(#"entityshutdown", #"death", #"disconnect");
     self thread function_a65eebe3(name);
     switch (tag) {
-    case #"hash_4a5d10a201708a87":
+    case #"annhilate":
         self annihilate(name);
         break;
-    case #"hash_1deabb64c2dc123d":
+    case #"gut_explode":
         self zombie_gut_explosion(name);
         break;
-    case #"hash_18ee462515be7820":
+    case #"saw_explode":
         self function_e5d3c2b4(name);
         break;
-    case #"hash_5fe4ac4b2c4901fa":
+    case #"boost_explode":
         self function_96d7f2e2(name);
         break;
-    case #"hash_1421900fa568846":
+    case #"delay_explode":
         self zombie_wait_explode(name);
         break;
-    case #"hash_5dc905162c6304bf":
+    case #"burn_zombie":
         self function_8fd3b08d(name, undefined);
         break;
-    case #"hash_2104a9c982c0d5dd":
-        self function_1b728474(name);
+    case #"zombie_chunk":
+        self zombie_chunk(name);
         break;
-    case #"hash_59784409ec081e9e":
+    case #"ai_blood_riser":
         playfx(name, level._effect[#"hash_2ba7079a15be757c"], self.origin);
         wait(0.25);
         playfx(name, level._effect[#"hash_7207b019e119bc7d"], self.origin);
         break;
-    case #"hash_6af7e6da3b75c130":
+    case #"ai_zombie_riser":
         playfx(name, level._effect[#"hash_4dd7773ae2a48977"], self.origin);
         wait(0.25);
         playfx(name, level._effect[#"hash_4f9dc73a09ccac6c"], self.origin);
         break;
-    case #"hash_255dd00c30245d50":
+    case #"pole_zombie_elecburst":
         currentangle = randomint(360);
         var_5ccd914d = rotatepointaroundaxis((1, 0, 0), (0, 0, 1), currentangle);
-        playfx(name, level._effect[#"hash_255dd00c30245d50"], self.origin, var_5ccd914d, (0, 0, 1));
+        playfx(name, level._effect[#"pole_zombie_elecburst"], self.origin, var_5ccd914d, (0, 0, 1));
         break;
     case #"hash_2488c7de86684bbd":
         if (isdefined(self.var_a7bcf699[tag])) {
@@ -576,17 +576,17 @@ function function_d8c789b8(localclientnum, name, *tag) {
         self.var_a7bcf699[tag][self.var_a7bcf699[tag].size] = util::playfxontag(name, level._effect[#"hash_2fbce616d1238481"], self, "j_wrist_le");
         self.var_a7bcf699[tag][self.var_a7bcf699[tag].size] = util::playfxontag(name, level._effect[#"hash_2fbce616d1238481"], self, "j_wrist_ri");
         break;
-    case #"hash_65ddc2e1305c6a17":
-        playfx(name, level._effect[#"hash_65ddc2e1305c6a17"], self.origin);
-        playfx(name, level._effect[#"hash_1f63d3d9b97361c7"], self.origin);
+    case #"shadow_appear":
+        playfx(name, level._effect[#"shadow_appear"], self.origin);
+        playfx(name, level._effect[#"shadow_rez_in"], self.origin);
         playfx(name, level._effect[#"hash_1ba28014cdeb28f"], self.origin);
         break;
-    case #"hash_4ecc2b4dec82cf64":
-        playfx(name, level._effect[#"hash_429d125723073dbc"], self.origin);
+    case #"shadow_die":
+        playfx(name, level._effect[#"shadow_fade"], self.origin);
         playfx(name, level._effect[#"hash_2e65d5696e71b8e9"], self.origin);
         playfx(name, level._effect[#"hash_7fb19df63df2dd4c"], self.origin);
         break;
-    case #"hash_479440bc717b91c":
+    case #"hazard_electric_trap_active":
         if (isdefined(self.var_a7bcf699[tag])) {
             foreach (fx in self.var_a7bcf699[tag]) {
                 stopfx(name, fx);
@@ -596,8 +596,8 @@ function function_d8c789b8(localclientnum, name, *tag) {
         self.var_a7bcf699[tag][self.var_a7bcf699[tag].size] = playfx(name, level._effect[tag], self.origin + vectorscale((0, 0, 1), 100));
         self.var_a7bcf699[tag][self.var_a7bcf699[tag].size] = playfx(name, level._effect[#"hash_4c83639bb82942d8"], self.origin + vectorscale((0, 0, 1), 124));
         break;
-    case #"hash_421821990a6b6849":
-    case #"hash_4b8b4e325b91e1cd":
+    case #"hazard_electric_trap_red":
+    case #"hazard_electric_trap_green":
         if (isdefined(self.var_a7bcf699[tag])) {
             foreach (fx in self.var_a7bcf699[tag]) {
                 stopfx(name, fx);
@@ -606,7 +606,7 @@ function function_d8c789b8(localclientnum, name, *tag) {
         self.var_a7bcf699[tag] = [];
         self.var_a7bcf699[tag][self.var_a7bcf699[tag].size] = playfx(name, level._effect[tag], self.origin + vectorscale((0, 0, 1), 124));
         break;
-    case #"hash_290b21dba9ffeed7":
+    case #"skel_stomp_impact":
         if (isdefined(self.var_a7bcf699[tag])) {
             foreach (fx in self.var_a7bcf699[tag]) {
                 stopfx(name, fx);
@@ -615,7 +615,7 @@ function function_d8c789b8(localclientnum, name, *tag) {
         self.var_a7bcf699[tag] = [];
         self.var_a7bcf699[tag][self.var_a7bcf699[tag].size] = playfx(name, level._effect[tag], self gettagorigin("j_ball_ri"));
         break;
-    case #"hash_75d047703f91db4b":
+    case #"crab_bubbles":
         if (isdefined(self.var_a7bcf699[tag])) {
             foreach (fx in self.var_a7bcf699[tag]) {
                 stopfx(name, fx);
@@ -728,7 +728,7 @@ function zombie_wait_explode(localclientnum) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xf1a4b538, Offset: 0x5578
 // Size: 0xcc
-function function_1b728474(localclientnum) {
+function zombie_chunk(localclientnum) {
     if (isdefined(level._effect[#"zombie_guts_explosion"]) && util::is_mature()) {
         where = self gettagorigin("J_SpineLower");
         if (!isdefined(where)) {

@@ -91,7 +91,7 @@ function private function_887ac605(objective) {
     case #"tkdn_af_wreck":
         function_b6407dd4(0);
         break;
-    case #"hash_46d353b99bf5cb75":
+    case #"no_game":
     case #"hash_6e531fb9475df744":
         break;
     case #"hash_defdefdefdefdef0":
@@ -108,10 +108,10 @@ function private function_887ac605(objective) {
 // Size: 0x43a
 function private function_32ab045(ent, name) {
     switch (name) {
-    case #"hash_5eebb4fdd6cd3d8b":
-        level.var_fdc6062e = ent;
+    case #"adler":
+        level.adler = ent;
         ent waittill(#"death");
-        level.var_fdc6062e = undefined;
+        level.adler = undefined;
         break;
     case #"woods":
         level.woods = ent;

@@ -104,17 +104,17 @@ function private function_70a657d8() {
         level.var_1a4cc228[#"hash_78215fa79f5557dc"] = [0:#"hash_4814b7b3c67568e3"];
         level.var_1a4cc228[#"hash_12a17ab3df5889eb"] = level.var_1a4cc228[#"hash_78215fa79f5557dc"];
         level.var_1a4cc228[#"hash_7a8b592728eec95d"] = [0:#"hash_2cb37314243526ec"];
-        level.var_1a4cc228[#"hash_12db1a8b34aa7918"] = [0:#"hash_614e3d7d0b75a944"];
-        level.var_1a4cc228[#"hash_5471f6916965b2d2"] = [0:#"hash_53c08317d48a0e49"];
+        level.var_1a4cc228[#"spawner_zm_steiner_split_radiation_bomb"] = [0:#"hash_614e3d7d0b75a944"];
+        level.var_1a4cc228[#"spawner_zm_steiner_split_radiation_blast"] = [0:#"hash_53c08317d48a0e49"];
         level.var_1a4cc228[#"hash_6904f5c7bef64405"] = [0:#"hash_5eafd160d077670d"];
         level.var_1a4cc228[#"hash_7f957e36b4f6160f"] = [0:#"hash_61df3be05096e9e2"];
         level.var_1a4cc228[#"hash_729b116cf9d044"] = [0:#"hash_78238b400ae08c28"];
     } else if (util::get_map_name() == "zm_platinum") {
-        level.var_1a4cc228[#"hash_7613c8395a7cd724"] = [3:#"hash_78fb681158a2a435", 2:#"hash_5508f5847f3dd438", 1:#"hash_7f1bca93226fa0d6", 0:#"hash_656d60e84740cf6b"];
+        level.var_1a4cc228[#"spawner_bo5_zombie_zm_platinum"] = [3:#"hash_78fb681158a2a435", 2:#"hash_5508f5847f3dd438", 1:#"hash_7f1bca93226fa0d6", 0:#"hash_656d60e84740cf6b"];
         level.var_1a4cc228[#"hash_23fa13756529654e"] = [3:#"hash_7f1bca93226fa0d6", 2:#"hash_656d60e84740cf6b", 1:#"hash_34bec5ddf4f376", 0:#"hash_423228b7b3b79e43"];
         level.var_1a4cc228[#"hash_2cdfe23b16faf150"] = [0:#"hash_4729aed4cfa43476"];
         level.var_1a4cc228[#"hash_67195396007b8efc"] = [0:#"hash_59e40ffcdcfbffa6"];
-        level.var_1a4cc228[#"hash_4056e78835d0d93d"] = [5:#"hash_33c0e923173d2b48", 4:#"hash_75cfd69ce1d6f3dd", 3:#"hash_b35b3dcb7417075", 2:#"hash_94674cb554826a9", 1:#"hash_63e9d6f275dc720", 0:#"hash_149fa86a9c5d858c"];
+        level.var_1a4cc228[#"spawner_bo5_zombie_zm_platinum_female"] = [5:#"hash_33c0e923173d2b48", 4:#"hash_75cfd69ce1d6f3dd", 3:#"hash_b35b3dcb7417075", 2:#"hash_94674cb554826a9", 1:#"hash_63e9d6f275dc720", 0:#"hash_149fa86a9c5d858c"];
         level.var_1a4cc228[#"hash_517608365a182612"] = [4:#"hash_15d9acb30e6d566c", 3:#"hash_7e8014d9564c6ed5", 2:#"hash_7f1bca93226fa0d6", 1:#"hash_29b24e853bff328a", 0:#"hash_65c4a876c73aee27"];
         level.var_1a4cc228[#"hash_3263f276cf59dde6"] = [0:#"hash_65c4a876c73aee27"];
         level.var_1a4cc228[#"hash_3263f176cf59dc33"] = [0:#"hash_29b24e853bff328a"];
@@ -1794,7 +1794,7 @@ function function_d0aeb094() {
 // Params 0, eflags: 0x0
 // Checksum 0xd10876dd, Offset: 0xfff8
 // Size: 0x160
-function function_19c342bc() {
+function mega_barrel_watch_reload() {
     self endon(#"death");
     var_17b7891d = "4a3a2e03173499cc" + "mega_barrel_watch_reload";
     self notify(var_17b7891d);
@@ -2036,10 +2036,10 @@ function function_11110983(params) {
             self.var_8c1397c7 = util::spawn_model(#"tag_origin", self.origin, self.angles);
             self.var_8c1397c7 linkto(self);
         }
-        self thread function_c393b3b7();
-        self thread function_19c342bc();
+        self thread mega_barrel_watch_multikill_vo();
+        self thread mega_barrel_watch_reload();
         self.var_42d07392 = gettime();
-        self thread function_e8f5f830();
+        self thread mega_barrel_watch_pacifist_vo();
         self clientfield::set_to_player("" + #"hash_4aec08923edd6a40", 1);
         if (!is_true(var_764ad66c) && isdefined(self.var_845ce7ff)) {
             time_now = gettime();
@@ -2400,7 +2400,7 @@ function function_1340d9d6(vo_line) {
 // Params 0, eflags: 0x0
 // Checksum 0xcb5a7dae, Offset: 0x122a0
 // Size: 0x1d8
-function function_c393b3b7() {
+function mega_barrel_watch_multikill_vo() {
     self endon(#"death");
     var_17b7891d = "486527bb6ce86b8d" + "mega_barrel_watch_multikill_vo";
     self notify(var_17b7891d);
@@ -2427,7 +2427,7 @@ function function_c393b3b7() {
 // Params 0, eflags: 0x0
 // Checksum 0x987b6542, Offset: 0x12480
 // Size: 0x16e
-function function_e8f5f830() {
+function mega_barrel_watch_pacifist_vo() {
     self endon(#"death");
     var_17b7891d = "1247c8fdca351653" + "mega_barrel_watch_pacifist_vo";
     self notify(var_17b7891d);

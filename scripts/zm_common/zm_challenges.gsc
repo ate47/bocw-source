@@ -774,7 +774,7 @@ function function_f807c679(e_attacker, e_inflictor) {
     if (var_a0345f37.var_d3ed3a9b && isdefined(var_a0345f37.str_damagemod) && var_a0345f37.str_damagemod != "MOD_MELEE") {
         e_attacker contracts::increment_zm_contract(#"hash_40cd9410951215b8");
         e_attacker zm_stats::increment_challenge_stat(#"hash_68a582f0fbd97eb2");
-        e_attacker zm_stats::function_17ee4529(#"hash_4714f96a091995", 1, #"hash_11cc29f75eb57f4a");
+        e_attacker zm_stats::function_17ee4529(#"hash_4714f96a091995", 1, #"event_test_enabled");
         e_attacker function_d6b32ad3(w_damage, #"hash_46422decc5803401", 1);
         if (isdefined(var_947d01ee)) {
             switch (var_947d01ee) {
@@ -795,7 +795,7 @@ function function_f807c679(e_attacker, e_inflictor) {
                     e_attacker debug_print("<unknown string>");
                 #/
                 e_attacker contracts::increment_zm_contract(#"hash_2bbe9120c601cb3d");
-                e_attacker stats::function_d0de7686(#"hash_5c77fb32f73c647d", 1, #"hash_cebe569a1d16ab3");
+                e_attacker stats::function_d0de7686(#"hash_5c77fb32f73c647d", 1, #"weapon_unlock_challenge_enabled_pm63");
                 break;
             case #"shotgun":
                 /#
@@ -837,7 +837,7 @@ function function_f807c679(e_attacker, e_inflictor) {
     if (str_damagemod === "MOD_MELEE") {
         e_attacker contracts::increment_zm_contract(#"hash_6945e246eaae0456");
         e_attacker zm_stats::increment_challenge_stat(#"hash_169c43fc771cc691");
-        e_attacker zm_stats::function_17ee4529(#"hash_4711f96a09147c", 1, #"hash_11cc29f75eb57f4a");
+        e_attacker zm_stats::function_17ee4529(#"hash_4711f96a09147c", 1, #"event_test_enabled");
         if (w_damage === level.weaponbasemeleeheld) {
             e_attacker zm_stats::increment_challenge_stat(#"hash_231ce4bb96dad98");
         }
@@ -1065,7 +1065,7 @@ function function_f807c679(e_attacker, e_inflictor) {
         case #"frost_blast_1":
         case #"frost_blast_3":
         case #"frost_blast_2":
-        case #"hash_2f14933f9c381974":
+        case #"frost_blast_5":
         case #"frost_blast_4":
             e_attacker contracts::increment_zm_contract(#"hash_1d79330297e3f68b");
             e_attacker stats::function_622feb0d(#"frost_blast", #"kills", 1);
@@ -1075,7 +1075,7 @@ function function_f807c679(e_attacker, e_inflictor) {
             break;
         }
     }
-    if (var_a0345f37.var_9fde8624 === #"hash_28e36e7b7d5421f" && is_true(var_a0345f37.var_1d8cde9) && level.var_7d45d0d4.activeobjective.var_b588b063 === "holdout") {
+    if (var_a0345f37.var_9fde8624 === #"hash_28e36e7b7d5421f" && is_true(var_a0345f37.var_1d8cde9) && level.var_7d45d0d4.activeobjective.content_script_name === "holdout") {
         e_attacker zm_stats::increment_challenge_stat(#"hash_3baee3fe30b6ea65");
     }
     if (w_damage.statname === #"bowie_knife") {
@@ -1385,7 +1385,7 @@ function function_575c37e0(weapon, enemy) {
         case #"frost_blast_1":
         case #"frost_blast_3":
         case #"frost_blast_2":
-        case #"hash_2f14933f9c381974":
+        case #"frost_blast_5":
         case #"frost_blast_4":
         case #"hash_3d62b9c92bbca893":
         case #"hash_3d62bac92bbcaa46":
@@ -2165,7 +2165,7 @@ function private perk_tracker() {
 // Checksum 0x22c10003, Offset: 0xabf8
 // Size: 0x174
 function private function_b892d1da() {
-    var_684d09cd = array(#"hash_4a68fcbb0951895a", #"perk_quick_revive", #"hash_25deb7e01a125cbc", #"perk_staminup", #"perk_dead_shot", #"hash_2c415fb051308f1b");
+    var_684d09cd = array(#"perk_juggernog", #"perk_quick_revive", #"hash_25deb7e01a125cbc", #"perk_staminup", #"perk_dead_shot", #"perk_elemental_pop");
     foreach (var_9b9f4901 in var_684d09cd) {
         if (!self stats::get_stat(#"perk_stats", var_9b9f4901, #"modifier_given", #"statvalue")) {
             return;
@@ -2214,7 +2214,7 @@ function function_e40c9d13() {
 // Params 0, eflags: 0x0
 // Checksum 0x6516a51a, Offset: 0xb1c8
 // Size: 0x394
-function function_b8aa1069() {
+function t9_tu5_zm_hunter_mastery_fixup() {
     if (!level.onlinegame || is_true(level.zm_disable_recording_stats)) {
         return;
     }
@@ -2408,7 +2408,7 @@ function on_game_playing(*params) {
     players = getplayers();
     foreach (player in players) {
         player thread function_1dd9fc03();
-        player thread function_b8aa1069();
+        player thread t9_tu5_zm_hunter_mastery_fixup();
         player thread function_4e5de0a2();
         if (getdvar(#"hash_570880cbdb22b9ac", 0) == 0) {
             player thread function_bc7f70a4();

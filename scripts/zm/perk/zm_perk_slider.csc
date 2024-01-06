@@ -49,10 +49,10 @@ function init_slider() {
 // Checksum 0xce502978, Offset: 0x308
 // Size: 0xec
 function function_4bb29d61() {
-    clientfield::register("toplayer", "slide_fx", 17000, 1, "int", &function_82475467, 0, 0);
+    clientfield::register("toplayer", "slide_fx", 17000, 1, "int", &slide_fx, 0, 0);
     if (zm_utility::is_classic()) {
-        clientfield::register("scriptmover", "phd_slider_machine_rob_poweron", 17000, 1, "int", &function_a0d9dbb3, 0, 0);
-        clientfield::register("scriptmover", "phd_slider_machine_rob_purchase", 17000, 1, "counter", &function_ed4b5d33, 0, 0);
+        clientfield::register("scriptmover", "phd_slider_machine_rob_poweron", 17000, 1, "int", &phd_slider_machine_rob_poweron, 0, 0);
+        clientfield::register("scriptmover", "phd_slider_machine_rob_purchase", 17000, 1, "counter", &phd_slider_machine_rob_purchase, 0, 0);
     }
 }
 
@@ -68,7 +68,7 @@ function function_90b5e96c() {
 // Params 7, eflags: 0x0
 // Checksum 0xd5a8bae2, Offset: 0x410
 // Size: 0x104
-function function_82475467(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function slide_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self endon(#"death");
     self util::waittill_dobj(fieldname);
     if (isplayer(self) && self hasdobj(fieldname)) {
@@ -84,7 +84,7 @@ function function_82475467(localclientnum, *oldval, newval, *bnewent, *binitials
 // Params 7, eflags: 0x0
 // Checksum 0x4d3a6317, Offset: 0x520
 // Size: 0x154
-function function_ed4b5d33(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function phd_slider_machine_rob_purchase(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     level endon(#"end_game");
     self endon(#"death");
     self notify("3d4720573ae624b0");
@@ -104,7 +104,7 @@ function function_ed4b5d33(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Params 7, eflags: 0x0
 // Checksum 0xa45df0b1, Offset: 0x680
 // Size: 0xa4
-function function_a0d9dbb3(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function phd_slider_machine_rob_poweron(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self playrenderoverridebundle("rob_phd_slide_side_lights");
         self playrenderoverridebundle("rob_phd_slide_top_lights1");

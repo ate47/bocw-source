@@ -81,11 +81,11 @@ function function_a77649db(name, onoff) {
 // Checksum 0x948c7dc9, Offset: 0x4a0
 // Size: 0xbc
 function function_5beeba99() {
-    if (!isdefined(level.var_8cff5775.var_39e3fa99)) {
+    if (!isdefined(level.doa.var_39e3fa99)) {
         return;
     }
-    name = [[ level.var_8cff5775.var_39e3fa99 ]]->getname();
-    var_8576a4b1 = level.var_8cff5775.roundnumber;
+    name = [[ level.doa.var_39e3fa99 ]]->getname();
+    var_8576a4b1 = level.doa.roundnumber;
     if (name === "boss") {
         function_5e3127a5(#"bossfight");
     } else {
@@ -98,11 +98,11 @@ function function_5beeba99() {
 // Checksum 0x12f588d, Offset: 0x568
 // Size: 0x62
 function function_2fc07d61() {
-    if (!isdefined(level.var_8cff5775.var_39e3fa99)) {
+    if (!isdefined(level.doa.var_39e3fa99)) {
         return;
     }
-    name = [[ level.var_8cff5775.var_39e3fa99 ]]->getname();
-    var_8576a4b1 = level.var_8cff5775.roundnumber;
+    name = [[ level.doa.var_39e3fa99 ]]->getname();
+    var_8576a4b1 = level.doa.roundnumber;
 }
 
 // Namespace namespace_9fc66ac/namespace_9fc66ac
@@ -110,7 +110,7 @@ function function_2fc07d61() {
 // Checksum 0x3ebf4b22, Offset: 0x5d8
 // Size: 0xda
 function function_65fcd877() {
-    switch (level.var_8cff5775.var_358fbdc8) {
+    switch (level.doa.world_state) {
     case 0:
         break;
     case 4:
@@ -211,7 +211,7 @@ function networksafereset() {
     self notify("736ddcf43ece996d");
     self endon("736ddcf43ece996d");
     while (1) {
-        level.var_8cff5775.var_3d0539c1 = 0;
+        level.doa.var_3d0539c1 = 0;
         util::wait_network_frame();
     }
 }
@@ -221,13 +221,13 @@ function networksafereset() {
 // Checksum 0x64d30bdd, Offset: 0xac8
 // Size: 0x6c
 function sndisnetworksafe() {
-    if (!isdefined(level.var_8cff5775.var_3d0539c1)) {
+    if (!isdefined(level.doa.var_3d0539c1)) {
         level thread networksafereset();
     }
-    if (level.var_8cff5775.var_3d0539c1 >= 2) {
+    if (level.doa.var_3d0539c1 >= 2) {
         return 0;
     }
-    level.var_8cff5775.var_3d0539c1++;
+    level.doa.var_3d0539c1++;
     return 1;
 }
 

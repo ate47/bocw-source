@@ -32,8 +32,8 @@
 // Checksum 0x10be4304, Offset: 0x1a0
 // Size: 0xdc
 function init() {
-    clientfield::register("actor", "clone_activated", 1, 1, "int", &function_29d05b0c, 0, 1);
-    clientfield::register("actor", "clone_damaged", 1, 1, "int", &function_be471bbb, 0, 0);
+    clientfield::register("actor", "clone_activated", 1, 1, "int", &clone_activated, 0, 1);
+    clientfield::register("actor", "clone_damaged", 1, 1, "int", &clone_damaged, 0, 0);
     clientfield::register("allplayers", "clone_activated", 1, 1, "int", &function_7ea4075e, 0, 0);
 }
 
@@ -41,7 +41,7 @@ function init() {
 // Params 7, eflags: 0x2 linked
 // Checksum 0xc338d9d3, Offset: 0x288
 // Size: 0x8c
-function function_29d05b0c(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function clone_activated(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self._isclone = 1;
         if (isdefined(level._monitor_tracker)) {
@@ -94,7 +94,7 @@ function function_d8a90cf2() {
 // Params 7, eflags: 0x2 linked
 // Checksum 0x408a9250, Offset: 0x4a0
 // Size: 0x74
-function function_be471bbb(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function clone_damaged(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self thread function_56d6762(fieldname);
     } else {

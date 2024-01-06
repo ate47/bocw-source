@@ -32,7 +32,7 @@ function init() {
 // Checksum 0x40b3db2e, Offset: 0x230
 // Size: 0x16
 function main() {
-    level.var_8cff5775.var_17228d33 = [];
+    level.doa.var_17228d33 = [];
 }
 
 // Namespace namespace_61052b71/namespace_c228bbfa
@@ -46,7 +46,7 @@ function function_5529395e() {
     result = undefined;
     result = self waittill(#"hash_3e251384a5400dce");
     if (is_true(self.var_7c56394) && is_true(result.var_760a0807)) {
-        arrayremovevalue(level.var_8cff5775.var_17228d33, self);
+        arrayremovevalue(level.doa.var_17228d33, self);
         namespace_1e25ad94::function_f5f0c0f8("Deleting physics box trap permenently at:" + self.origin);
     }
     util::wait_network_frame();
@@ -106,12 +106,12 @@ function function_bb1d1cf9(trap, page = 0) {
         return;
     }
     if (page) {
-        if (!isdefined(level.var_8cff5775.var_17228d33)) {
-            level.var_8cff5775.var_17228d33 = [];
-        } else if (!isarray(level.var_8cff5775.var_17228d33)) {
-            level.var_8cff5775.var_17228d33 = array(level.var_8cff5775.var_17228d33);
+        if (!isdefined(level.doa.var_17228d33)) {
+            level.doa.var_17228d33 = [];
+        } else if (!isarray(level.doa.var_17228d33)) {
+            level.doa.var_17228d33 = array(level.doa.var_17228d33);
         }
-        level.var_8cff5775.var_17228d33[level.var_8cff5775.var_17228d33.size] = trap;
+        level.doa.var_17228d33[level.doa.var_17228d33.size] = trap;
     } else {
         function_8b014c60(trap);
     }
@@ -131,7 +131,7 @@ function function_e74a3df6() {
         if (state == 0) {
             continue;
         }
-        foreach (trap in level.var_8cff5775.var_17228d33) {
+        foreach (trap in level.doa.var_17228d33) {
             time = gettime();
             if (isdefined(trap.var_eb9d64bb) && time < trap.var_eb9d64bb) {
                 continue;
@@ -172,13 +172,13 @@ function function_e74a3df6() {
 // Checksum 0xefb21993, Offset: 0x9f8
 // Size: 0x130
 function function_8bd713b2() {
-    level.var_8cff5775.var_17228d33 = [];
+    level.doa.var_17228d33 = [];
     level thread function_e74a3df6();
-    if (isdefined(level.var_8cff5775.var_a77e6349)) {
-        traps = [[ level.var_8cff5775.var_a77e6349 ]]->function_87f950c1("physicsbox");
+    if (isdefined(level.doa.var_a77e6349)) {
+        traps = [[ level.doa.var_a77e6349 ]]->function_87f950c1("physicsbox");
         page = 1;
     } else {
-        traps = [[ level.var_8cff5775.var_39e3fa99 ]]->function_242886d5("physicsbox");
+        traps = [[ level.doa.var_39e3fa99 ]]->function_242886d5("physicsbox");
     }
     foreach (trap in traps) {
         function_bb1d1cf9(trap, page);

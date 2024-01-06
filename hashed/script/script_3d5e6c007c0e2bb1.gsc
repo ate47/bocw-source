@@ -31,7 +31,7 @@
 // Params 1, eflags: 0x2 linked
 // Checksum 0x69664f53, Offset: 0x240
 // Size: 0x568
-function function_52e9d773(model_name = "zombietron_barrel") {
+function barrelupdate(model_name = "zombietron_barrel") {
     self notify(#"hash_562d458e34274132");
     if (isplayer(self)) {
         self endon(#"disconnect");
@@ -42,7 +42,7 @@ function function_52e9d773(model_name = "zombietron_barrel") {
     if (isdefined(org)) {
         org.targetname.org = "barrelUpdate";
         org.angles.org = (0, randomint(180), 0);
-        self.var_8cff5775.var_ba83e9 = org;
+        self.doa.var_ba83e9 = org;
         if (isplayer(self)) {
             org thread namespace_ec06fe4a::function_ae010bb4(self);
         }
@@ -146,7 +146,7 @@ function private function_7c757878(player, mod = "MOD_UNKNOWN", var_70c63791) {
             dir = guy.origin - self.origin;
             guy thread namespace_ec06fe4a::function_b4ff2191(dir, 50, undefined, player);
         } else {
-            guy dodamage(guy.health + 1, guy.origin, player, player, "none", mod, 0, level.var_8cff5775.var_c6e5e8d9);
+            guy dodamage(guy.health + 1, guy.origin, player, player, "none", mod, 0, level.doa.var_c6e5e8d9);
         }
         player playrumbleonentity("damage_light");
     }
@@ -234,7 +234,7 @@ function private function_f0855523(org) {
             vel = org.barrel2.origin - self.origin;
             org.barrel2 physicslaunch(org.barrel2.origin, vel);
         }
-        self.var_8cff5775.var_ba83e9 = undefined;
+        self.doa.var_ba83e9 = undefined;
         self namespace_e32bb68::function_ae271c0b("evt_doa_pickup_barrel_active_lp");
         self namespace_e32bb68::function_3a59ec34("evt_doa_pickup_barrel_active_end");
     }

@@ -2,13 +2,13 @@
 #using scripts\core_common\lui_shared.gsc;
 #using scripts\core_common\clientfield_shared.gsc;
 
-#namespace namespace_ee6ea590;
+#namespace cp_chyron;
 
-// Namespace namespace_ee6ea590
+// Namespace cp_chyron
 // Method(s) 11 Total 18
 class class_4c6a0e72 : cluielem {
 
-    // Namespace class_4c6a0e72/namespace_ee6ea590
+    // Namespace class_4c6a0e72/cp_chyron
     // Params 0, eflags: 0xa linked
     // Checksum 0xe96616ac, Offset: 0x308
     // Size: 0x14
@@ -16,7 +16,7 @@ class class_4c6a0e72 : cluielem {
         cluielem::__constructor();
     }
 
-    // Namespace class_4c6a0e72/namespace_ee6ea590
+    // Namespace class_4c6a0e72/cp_chyron
     // Params 0, eflags: 0x92 linked class_linked
     // Checksum 0xc6d26dc6, Offset: 0x698
     // Size: 0x14
@@ -24,7 +24,7 @@ class class_4c6a0e72 : cluielem {
         cluielem::__destructor();
     }
 
-    // Namespace namespace_4c6a0e72/namespace_ee6ea590
+    // Namespace namespace_4c6a0e72/cp_chyron
     // Params 2, eflags: 0x2 linked
     // Checksum 0xdd08d88d, Offset: 0x558
     // Size: 0x44
@@ -32,7 +32,7 @@ class class_4c6a0e72 : cluielem {
         player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "line3", value);
     }
 
-    // Namespace namespace_4c6a0e72/namespace_ee6ea590
+    // Namespace namespace_4c6a0e72/cp_chyron
     // Params 2, eflags: 0x2 linked
     // Checksum 0x18ee378, Offset: 0x440
     // Size: 0x3c
@@ -40,7 +40,7 @@ class class_4c6a0e72 : cluielem {
         cluielem::open_luielem(player, flags);
     }
 
-    // Namespace namespace_4c6a0e72/namespace_ee6ea590
+    // Namespace namespace_4c6a0e72/cp_chyron
     // Params 2, eflags: 0x2 linked
     // Checksum 0x48aaae22, Offset: 0x508
     // Size: 0x44
@@ -48,7 +48,7 @@ class class_4c6a0e72 : cluielem {
         player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "line2", value);
     }
 
-    // Namespace namespace_4c6a0e72/namespace_ee6ea590
+    // Namespace namespace_4c6a0e72/cp_chyron
     // Params 2, eflags: 0x2 linked
     // Checksum 0x75036974, Offset: 0x5f8
     // Size: 0x44
@@ -56,7 +56,7 @@ class class_4c6a0e72 : cluielem {
         player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "line5", value);
     }
 
-    // Namespace namespace_4c6a0e72/namespace_ee6ea590
+    // Namespace namespace_4c6a0e72/cp_chyron
     // Params 2, eflags: 0x2 linked
     // Checksum 0xd3cd3b16, Offset: 0x4b8
     // Size: 0x44
@@ -64,7 +64,7 @@ class class_4c6a0e72 : cluielem {
         player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "line1", value);
     }
 
-    // Namespace namespace_4c6a0e72/namespace_ee6ea590
+    // Namespace namespace_4c6a0e72/cp_chyron
     // Params 1, eflags: 0x2 linked
     // Checksum 0x569ab6a6, Offset: 0x488
     // Size: 0x24
@@ -72,7 +72,7 @@ class class_4c6a0e72 : cluielem {
         cluielem::close_luielem(player);
     }
 
-    // Namespace namespace_4c6a0e72/namespace_ee6ea590
+    // Namespace namespace_4c6a0e72/cp_chyron
     // Params 2, eflags: 0x2 linked
     // Checksum 0x5065f1c0, Offset: 0x648
     // Size: 0x44
@@ -80,7 +80,7 @@ class class_4c6a0e72 : cluielem {
         player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "index", value);
     }
 
-    // Namespace namespace_4c6a0e72/namespace_ee6ea590
+    // Namespace namespace_4c6a0e72/cp_chyron
     // Params 0, eflags: 0x2 linked
     // Checksum 0xb5e615e1, Offset: 0x328
     // Size: 0x10c
@@ -94,7 +94,7 @@ class class_4c6a0e72 : cluielem {
         cluielem::add_clientfield("index", 1, 4, "int");
     }
 
-    // Namespace namespace_4c6a0e72/namespace_ee6ea590
+    // Namespace namespace_4c6a0e72/cp_chyron
     // Params 2, eflags: 0x2 linked
     // Checksum 0x66caebfe, Offset: 0x5a8
     // Size: 0x44
@@ -104,7 +104,7 @@ class class_4c6a0e72 : cluielem {
 
 }
 
-// Namespace namespace_ee6ea590/namespace_ee6ea590
+// Namespace cp_chyron/cp_chyron
 // Params 0, eflags: 0x2 linked
 // Checksum 0x32efb638, Offset: 0x118
 // Size: 0x34
@@ -114,7 +114,7 @@ function register() {
     return elem;
 }
 
-// Namespace namespace_ee6ea590/namespace_ee6ea590
+// Namespace cp_chyron/cp_chyron
 // Params 2, eflags: 0x2 linked
 // Checksum 0x22b7d0a0, Offset: 0x158
 // Size: 0x38
@@ -122,7 +122,7 @@ function open(player, flags = 0) {
     [[ self ]]->open(player, flags);
 }
 
-// Namespace namespace_ee6ea590/namespace_ee6ea590
+// Namespace cp_chyron/cp_chyron
 // Params 1, eflags: 0x2 linked
 // Checksum 0xbeec1ac2, Offset: 0x198
 // Size: 0x1c
@@ -130,7 +130,7 @@ function close(player) {
     [[ self ]]->close(player);
 }
 
-// Namespace namespace_ee6ea590/namespace_ee6ea590
+// Namespace cp_chyron/cp_chyron
 // Params 1, eflags: 0x0
 // Checksum 0xd0ca6291, Offset: 0x1c0
 // Size: 0x1a
@@ -138,7 +138,7 @@ function is_open(player) {
     return [[ self ]]->function_7bfd10e6(player);
 }
 
-// Namespace namespace_ee6ea590/namespace_ee6ea590
+// Namespace cp_chyron/cp_chyron
 // Params 2, eflags: 0x0
 // Checksum 0x56d0c164, Offset: 0x1e8
 // Size: 0x28
@@ -146,7 +146,7 @@ function function_4b584028(player, value) {
     [[ self ]]->function_4b584028(player, value);
 }
 
-// Namespace namespace_ee6ea590/namespace_ee6ea590
+// Namespace cp_chyron/cp_chyron
 // Params 2, eflags: 0x0
 // Checksum 0x6e7c272f, Offset: 0x218
 // Size: 0x28
@@ -154,7 +154,7 @@ function function_147e5271(player, value) {
     [[ self ]]->function_147e5271(player, value);
 }
 
-// Namespace namespace_ee6ea590/namespace_ee6ea590
+// Namespace cp_chyron/cp_chyron
 // Params 2, eflags: 0x0
 // Checksum 0x7b0f9619, Offset: 0x248
 // Size: 0x28
@@ -162,7 +162,7 @@ function function_6b7b6e4(player, value) {
     [[ self ]]->function_6b7b6e4(player, value);
 }
 
-// Namespace namespace_ee6ea590/namespace_ee6ea590
+// Namespace cp_chyron/cp_chyron
 // Params 2, eflags: 0x0
 // Checksum 0x726d27f7, Offset: 0x278
 // Size: 0x28
@@ -170,7 +170,7 @@ function function_b7f01956(player, value) {
     [[ self ]]->function_b7f01956(player, value);
 }
 
-// Namespace namespace_ee6ea590/namespace_ee6ea590
+// Namespace cp_chyron/cp_chyron
 // Params 2, eflags: 0x0
 // Checksum 0x12c3d66, Offset: 0x2a8
 // Size: 0x28
@@ -178,7 +178,7 @@ function function_2a377de3(player, value) {
     [[ self ]]->function_2a377de3(player, value);
 }
 
-// Namespace namespace_ee6ea590/namespace_ee6ea590
+// Namespace cp_chyron/cp_chyron
 // Params 2, eflags: 0x2 linked
 // Checksum 0x2401a9ec, Offset: 0x2d8
 // Size: 0x28

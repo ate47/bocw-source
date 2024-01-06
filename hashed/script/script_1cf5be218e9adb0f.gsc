@@ -30,7 +30,7 @@ function private autoexec __init__system__() {
 // Size: 0x31c
 function private function_70a657d8() {
     clientfield::register("toplayer", "spy_camera_state", 1, 2, "int", &function_6e0dbd75, 1, 0);
-    clientfield::register("toplayer", "binoculars_overlay", 1, 1, "int", &function_7415d8f9, 1, 0);
+    clientfield::register("toplayer", "binoculars_overlay", 1, 1, "int", &binoculars_overlay, 1, 0);
     clientfield::register("toplayer", "spy_camera_tagging", 1, 1, "int", &function_f31f3835, 1, 0);
     clientfield::register("actor", "spy_camera_remove_highlight", 1, 1, "int", &function_fd29dc97, 1, 0);
     var_1e935eba = array("actor", "scriptmover");
@@ -223,7 +223,7 @@ function private function_fd29dc97(*localclientnum, *oldval, newval, *bnewent, *
 // Checksum 0xb01feb41, Offset: 0xd78
 // Size: 0xd26
 function private function_38401b6f(localclientnum) {
-    self endon(#"death", #"disconnected", #"hash_33f56f4223e452ca");
+    self endon(#"death", #"disconnected", #"deactivate_camera_lens_overrides");
     var_73024e3b = 0;
     var_8c180cda = 0;
     var_95d1f1bd = 0.33;
@@ -412,8 +412,8 @@ function private function_48d47618(localclientnum, ent, eye_pos, var_753686d6, v
             return 0;
         }
     }
-    var_3531ee5e = self function_a6a764a9(target_pos, 1);
-    if (isdefined(var_3531ee5e) && abs(var_3531ee5e[0]) < 0.7 && abs(var_3531ee5e[1]) < 0.7) {
+    screen_pos = self function_a6a764a9(target_pos, 1);
+    if (isdefined(screen_pos) && abs(screen_pos[0]) < 0.7 && abs(screen_pos[1]) < 0.7) {
         if (is_true(level.var_14094ff8.var_1a686ec3) || bullettracepassed(eye_pos, target_pos, 1, ent, undefined, 0, 1)) {
             if (var_cc746cfb) {
                 function_bcae220e(localclientnum, ent, 0, 2);
@@ -508,7 +508,7 @@ function private function_c6c2696d(localclientnum) {
 // Params 7, eflags: 0x6 linked
 // Checksum 0xdaebdddb, Offset: 0x2578
 // Size: 0x134
-function private function_7415d8f9(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function private binoculars_overlay(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     var_baa65467 = function_1df4c3b0(fieldname, #"hash_7b72ad35b5202ebd");
     var_b3a126ea = getuimodel(var_baa65467, "hideNoReticleDot");
     if (isdefined(var_b3a126ea)) {

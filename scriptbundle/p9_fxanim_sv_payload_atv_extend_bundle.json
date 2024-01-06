@@ -5,11 +5,11 @@
                 {
                     "entry": [
                         {
-                            "anim": "#hash_53280f982d8678a0",
+                            "anim": "#p9_fxanim_sv_payload_atv_extend_anim",
                             "var_71bac06": "anim"
                         },
                         {
-                            "anim": "#hash_b96ecdeb5c174c1",
+                            "anim": "#p9_fxanim_sv_payload_atv_extend_loop_anim",
                             "var_71bac06": "anim"
                         }
                     ],

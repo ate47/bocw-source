@@ -4926,8 +4926,8 @@ function function_1a4752d0() {
         }
         foreach (location in level.var_7d45d0d4.locations) {
             if (isdefined(location.instances[#"wallbuy"])) {
-                if (isarray(location.instances[#"wallbuy"].var_fe2612fe[#"hash_216a182c044d96bb"])) {
-                    var_d82a99e8 = location.instances[#"wallbuy"].var_fe2612fe[#"hash_216a182c044d96bb"][level.var_d13a2c74];
+                if (isarray(location.instances[#"wallbuy"].var_fe2612fe[#"wallbuy_chalk"])) {
+                    var_d82a99e8 = location.instances[#"wallbuy"].var_fe2612fe[#"wallbuy_chalk"][level.var_d13a2c74];
                     player = getplayers()[0];
                     forward = anglestoright(var_d82a99e8.angles);
                     forward = vectornormalize(forward);
@@ -4935,8 +4935,8 @@ function function_1a4752d0() {
                     var_92f819ac = var_d82a99e8.origin + forward;
                     player setorigin(var_92f819ac);
                     level.var_d13a2c74++;
-                    if (level.var_d13a2c74 >= location.instances[#"wallbuy"].var_fe2612fe[#"hash_216a182c044d96bb"].size) {
-                        level.var_d13a2c74 = level.var_d13a2c74 >= location.instances[#"wallbuy"].var_fe2612fe[#"hash_216a182c044d96bb"].size - 1;
+                    if (level.var_d13a2c74 >= location.instances[#"wallbuy"].var_fe2612fe[#"wallbuy_chalk"].size) {
+                        level.var_d13a2c74 = level.var_d13a2c74 >= location.instances[#"wallbuy"].var_fe2612fe[#"wallbuy_chalk"].size - 1;
                     }
                 }
             }
@@ -4954,8 +4954,8 @@ function function_5ec967f7() {
         while (1) {
             foreach (location in level.var_7d45d0d4.locations) {
                 if (isdefined(location.instances[#"wallbuy"])) {
-                    if (isarray(location.instances[#"wallbuy"].var_fe2612fe[#"hash_216a182c044d96bb"])) {
-                        foreach (wallbuy in location.instances[#"wallbuy"].var_fe2612fe[#"hash_216a182c044d96bb"]) {
+                    if (isarray(location.instances[#"wallbuy"].var_fe2612fe[#"wallbuy_chalk"])) {
+                        foreach (wallbuy in location.instances[#"wallbuy"].var_fe2612fe[#"wallbuy_chalk"]) {
                             player = getplayers()[0];
                             if (player is_looking_at(wallbuy.origin)) {
                                 sphere(wallbuy.origin, 32, (1, 0, 0), 1, 0, 10, 10);

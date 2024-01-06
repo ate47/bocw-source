@@ -168,11 +168,11 @@ function function_c9b21c8c() {
 // Checksum 0xd3c154fe, Offset: 0xc20
 // Size: 0x24c
 function function_43b18d1c() {
-    level endon(#"end_game", #"hash_359c32cf345f7ba9", #"power_on");
+    level endon(#"end_game", #"player_has_both_fuse", #"power_on");
     var_97742376 = struct::get_array("overground_fuse_hint_loc", "targetname");
-    level.var_f5f1406d = array::random(var_97742376);
-    var_be9c7d1f = struct::get(level.var_f5f1406d.target, "targetname");
-    var_856f78b1 = level.var_f5f1406d.script_noteworthy;
+    level.overground_fuse_hint_loc = array::random(var_97742376);
+    var_be9c7d1f = struct::get(level.overground_fuse_hint_loc.target, "targetname");
+    var_856f78b1 = level.overground_fuse_hint_loc.script_noteworthy;
     while (1) {
         var_dfe526e8 = function_a1ef346b();
         foreach (player in var_dfe526e8) {
@@ -230,7 +230,7 @@ function function_5a4491ab() {
 // Checksum 0xb61bfdda, Offset: 0x1010
 // Size: 0x22c
 function function_9f0d2282(var_23589c3d) {
-    level endon(#"end_game", #"hash_359c32cf345f7ba9", #"power_on");
+    level endon(#"end_game", #"player_has_both_fuse", #"power_on");
     level.var_6eccb0ad = struct::get(var_23589c3d, "targetname");
     var_be9c7d1f = struct::get(level.var_6eccb0ad.target, "targetname");
     var_2b2211f7 = level.var_6eccb0ad.script_noteworthy;
@@ -270,7 +270,7 @@ function function_9de5caaf(*params) {
 // Checksum 0x4c395d1a, Offset: 0x12e0
 // Size: 0x148
 function function_f73f4bc2() {
-    level endon(#"end_game", #"hash_359c32cf345f7ba9");
+    level endon(#"end_game", #"player_has_both_fuse");
     while (1) {
         waitresult = undefined;
         waitresult = level waittill(#"hash_24ebf2a541a3c3ea");
@@ -291,7 +291,7 @@ function function_f73f4bc2() {
 // Checksum 0x13b5e67d, Offset: 0x1430
 // Size: 0xe8
 function function_f4f15fc() {
-    level endon(#"end_game", #"hash_359c32cf345f7ba9", #"power_on");
+    level endon(#"end_game", #"player_has_both_fuse", #"power_on");
     while (1) {
         var_ff0a4380 = struct::get_array("tempest_location", "script_noteworthy");
         var_6df640be = array::random(var_ff0a4380);
@@ -319,13 +319,13 @@ function function_3cd87dd2(params) {
             /#
                 iprintlnbold("<unknown string>");
             #/
-            level flag::set(#"hash_1497792b06f4b12");
+            level flag::set(#"player_has_first_fuse");
             zm_ui_inventory::function_7df6bb60(#"hash_20cb8163974cc355", 1);
             array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"zmintel_platinum_darkaether_artifact_01");
             level thread function_ce636e();
             if (level.var_f48dca1d == 2) {
-                level flag::set(#"hash_359c32cf345f7ba9");
-                level flag::clear(#"hash_1497792b06f4b12");
+                level flag::set(#"player_has_both_fuse");
+                level flag::clear(#"player_has_first_fuse");
                 level flag::clear(#"hash_3877401081b5e296");
                 level thread function_14e27349();
                 /#
@@ -346,7 +346,7 @@ LOC_0000022e:
 // Size: 0x22c
 function function_ce636e() {
     level flag::wait_till(#"hash_1d6357b2512a35e5");
-    level flag::wait_till_any([1:"player_has_both_fuse", 0:#"hash_1497792b06f4b12"]);
+    level flag::wait_till_any([1:"player_has_both_fuse", 0:#"player_has_first_fuse"]);
     var_9edd4737 = struct::get("place_fuse_trigger", "targetname");
     if (!isdefined(level.var_a66279f7)) {
         level.var_a66279f7 = var_9edd4737 zm_unitrigger::create(#"hash_5887e42de1d323f7", 64);
@@ -424,7 +424,7 @@ function function_a2e9d398(var_6152b664) {
 // Size: 0xa4
 function function_4d91a114() {
     if (!level flag::get(#"hash_3f6a498e4113de40")) {
-        zm_sq::function_266d66eb(#"hash_19527602349bc485", level.var_f5f1406d, undefined, #"hash_7deb08c7fd035ada", undefined, 96);
+        zm_sq::function_266d66eb(#"hash_19527602349bc485", level.overground_fuse_hint_loc, undefined, #"hash_7deb08c7fd035ada", undefined, 96);
         level flag::wait_till(#"hash_3f6a498e4113de40");
         zm_sq::function_53d0d99(#"hash_19527602349bc485");
     }
@@ -472,7 +472,7 @@ function function_6d277ee2() {
             zm_sq::function_266d66eb(#"hash_792e2ed42520c5af", self, 1, #"hash_7deb08c7fd035ada", undefined, 96);
         }
     }
-    level waittill(#"hash_359c32cf345f7ba9", #"power_on");
+    level waittill(#"player_has_both_fuse", #"power_on");
     zm_sq::function_53d0d99(#"hash_792e2ed42520c5af");
     zm_sq::function_53d0d99(#"hash_63c58e15f2ce52ce");
     zm_sq::function_53d0d99(#"hash_5e9c8fcf0a9613ad");
@@ -483,10 +483,10 @@ function function_6d277ee2() {
 // Checksum 0x223cd354, Offset: 0x2180
 // Size: 0x10c
 function function_14e27349() {
-    var_a4d0eead = struct::get("fuse_box_loc", "targetname");
-    if (level flag::get(#"hash_359c32cf345f7ba9")) {
+    fuse_box_loc = struct::get("fuse_box_loc", "targetname");
+    if (level flag::get(#"player_has_both_fuse")) {
         level flag::wait_till(#"hash_1d6357b2512a35e5");
-        zm_sq::function_266d66eb(#"hash_5a6d7c583cee3493", var_a4d0eead, undefined, #"hash_7d61cfc441aebdb9", undefined, 96);
+        zm_sq::function_266d66eb(#"hash_5a6d7c583cee3493", fuse_box_loc, undefined, #"hash_7d61cfc441aebdb9", undefined, 96);
     }
     level flag::wait_till_all([1:#"hash_1937be129b1e59eb", 0:#"hash_63567177313a4f07"]);
     zm_sq::function_53d0d99(#"hash_5a6d7c583cee3493");
@@ -498,9 +498,9 @@ function function_14e27349() {
 // Size: 0xdc
 function function_ea520491() {
     level endon(#"end_game");
-    var_a4d0eead = struct::get("find_fuse_hint", "targetname");
-    var_d9653ef0 = var_a4d0eead zm_unitrigger::create(#"hash_2145e2abf11514fe", 70);
-    level flag::wait_till_any([1:#"hash_359c32cf345f7ba9", 0:#"hash_1497792b06f4b12"]);
+    fuse_box_loc = struct::get("find_fuse_hint", "targetname");
+    var_d9653ef0 = fuse_box_loc zm_unitrigger::create(#"hash_2145e2abf11514fe", 70);
+    level flag::wait_till_any([1:#"player_has_both_fuse", 0:#"player_has_first_fuse"]);
     wait(1);
     zm_unitrigger::unregister_unitrigger(var_d9653ef0);
 }
@@ -532,7 +532,7 @@ function cmd(cmd) {
             break;
         case #"hash_4cbd866bd8931c8a":
             level thread function_ce636e();
-            level set(#"hash_359c32cf345f7ba9");
+            level set(#"player_has_both_fuse");
             break;
         case #"hash_72b6d8c2e2e976a3":
             var_dfe526e8 = function_a1ef346b();

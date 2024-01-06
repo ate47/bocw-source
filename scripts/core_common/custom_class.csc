@@ -1173,7 +1173,7 @@ function function_415febc4(localclientnum) {
     level.var_64ee434 = undefined;
     level.var_908d7e4d = undefined;
     if (isdefined(level.weapon_script_model[localclientnum]) && !function_df656039(localclientnum)) {
-        foreach (var_7c18218b, model in level.weapon_script_model[localclientnum]) {
+        foreach (__, model in level.weapon_script_model[localclientnum]) {
             if (isdefined(model)) {
                 model hide();
             }
@@ -2354,15 +2354,15 @@ function function_7a6db01f(localclientnum, var_353b5fbf) {
     case 0:
     case 1:
     case #"hash_defdefdefdefdef0":
-        return #"hash_34205559d4d514b5";
+        return #"rob_ammo_mod_level_1";
     case 2:
-        return #"hash_34205259d4d50f9c";
+        return #"rob_ammo_mod_level_2";
     case 3:
-        return #"hash_34205359d4d5114f";
+        return #"rob_ammo_mod_level_3";
     case 4:
-        return #"hash_34205059d4d50c36";
+        return #"rob_ammo_mod_level_4";
     case 5:
-        return #"hash_34205159d4d50de9";
+        return #"rob_ammo_mod_level_5";
         break;
     }
 }
@@ -2406,7 +2406,7 @@ function function_75af31e2(localclientnum, var_addf3c2f) {
     case #"frost_blast_1":
     case #"frost_blast_3":
     case #"frost_blast_2":
-    case #"hash_2f14933f9c381974":
+    case #"frost_blast_5":
     case #"frost_blast_4":
         self setmodel(#"hash_51bb92358aa2d0d7");
         self.var_125d962d = util::playfxontag(localclientnum, #"hash_367649ac4b1edb9e", self, "tag_origin");

@@ -97,7 +97,7 @@ function function_23c31b4e() {
     }
     self endoncallback(&function_31b6f21e, #"death");
     while (1) {
-        if (level flag::get(#"hash_5c4e5d3571f5e1f6")) {
+        if (level flag::get(#"dark_aether_active")) {
             self clientfield::set("" + #"hash_63af42145e260fb5", 2);
         } else if (level flag::get("power_on")) {
             self clientfield::set("" + #"hash_63af42145e260fb5", 0);
@@ -105,11 +105,11 @@ function function_23c31b4e() {
             self childthread function_3ba2978d();
         }
         waitresult = undefined;
-        waitresult = level waittill(#"hash_5c4e5d3571f5e1f6", #"power_on");
+        waitresult = level waittill(#"dark_aether_active", #"power_on");
         if (waitresult._notify == "power_on") {
             wait(5);
         }
-        if (waitresult._notify == "dark_aether_active" && level flag::get(#"hash_5c4e5d3571f5e1f6")) {
+        if (waitresult._notify == "dark_aether_active" && level flag::get(#"dark_aether_active")) {
             wait(3);
         }
     }
@@ -120,7 +120,7 @@ function function_23c31b4e() {
 // Checksum 0xb483450, Offset: 0x550
 // Size: 0xce
 function function_3ba2978d() {
-    level endon(#"hash_5c4e5d3571f5e1f6", #"power_on");
+    level endon(#"dark_aether_active", #"power_on");
     while (1) {
         if (self zm_zonemgr::is_player_in_zone(level.var_b80c4ecc)) {
             self clientfield::set("" + #"hash_63af42145e260fb5", 1);

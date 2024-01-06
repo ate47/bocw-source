@@ -26,7 +26,7 @@ function private function_70a657d8() {
     }
     enable_death_perception_perk_for_level();
     level.var_ba997 = &function_fcfd6064;
-    level.var_d5d697f5 = &function_30fe2a1b;
+    level.var_d5d697f5 = &perk_death_perception_visuals_items;
     level.var_1c1febec = [];
     for (i = 0; i < getmaxlocalclients(); i++) {
         level.var_1c1febec[i] = 0;
@@ -61,11 +61,11 @@ function function_9b484511() {
 // Checksum 0x7fc436bc, Offset: 0x578
 // Size: 0x16c
 function function_6e0b6101() {
-    clientfield::register("scriptmover", "perk_death_perception_item_marked_for_rob", 15000, 1, "int", &function_a759ad17, 0, 0);
+    clientfield::register("scriptmover", "perk_death_perception_item_marked_for_rob", 15000, 1, "int", &perk_death_perception_item_marked_for_rob, 0, 0);
     clientfield::register("toplayer", "perk_death_perception_visuals", 15000, 1, "int", &perk_death_perception_visuals, 0, 0);
-    clientfield::register("toplayer", "perk_death_perception_visuals_items", 15000, 1, "int", &function_30fe2a1b, 0, 0);
-    clientfield::register("toplayer", "perk_death_perception_hud_warning", 15000, 1, "int", &function_3a73a8b0, 0, 0);
-    clientfield::register("world", "dark_aether_crystal_check_dynentstate", 15000, 1, "counter", &function_1f15c4b5, 0, 0);
+    clientfield::register("toplayer", "perk_death_perception_visuals_items", 15000, 1, "int", &perk_death_perception_visuals_items, 0, 0);
+    clientfield::register("toplayer", "perk_death_perception_hud_warning", 15000, 1, "int", &perk_death_perception_hud_warning, 0, 0);
+    clientfield::register("world", "dark_aether_crystal_check_dynentstate", 15000, 1, "counter", &dark_aether_crystal_check_dynentstate, 0, 0);
 }
 
 // Namespace zm_perk_death_perception/zm_perk_death_perception
@@ -177,7 +177,7 @@ function function_fcfd6064(localclientnum, var_a6762160, clientdata, var_bd027dd
 // Params 7, eflags: 0x0
 // Checksum 0xb007e33e, Offset: 0xc48
 // Size: 0xfc
-function function_a759ad17(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function perk_death_perception_item_marked_for_rob(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         if (!isdefined(level.var_5d9a0215)) {
             level.var_5d9a0215 = [];
@@ -195,7 +195,7 @@ function function_a759ad17(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Params 7, eflags: 0x0
 // Checksum 0xfef837fa, Offset: 0xd50
 // Size: 0xae
-function function_3a73a8b0(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function perk_death_perception_hud_warning(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump && !is_true(level.var_dc60105c) && !isigcactive(fieldname)) {
         self thread function_fff5377e(fieldname);
     } else {
@@ -207,7 +207,7 @@ function function_3a73a8b0(localclientnum, *oldval, newval, *bnewent, *binitials
 // Params 7, eflags: 0x0
 // Checksum 0x3c9ba397, Offset: 0xe08
 // Size: 0x1a8
-function function_30fe2a1b(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function perk_death_perception_visuals_items(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (function_65b9eb0f(fieldname)) {
         return;
     }
@@ -382,7 +382,7 @@ function function_dd6c1a8b(localclientnum, *b_igc_active) {
 // Params 7, eflags: 0x0
 // Checksum 0x95382a1, Offset: 0x1910
 // Size: 0x158
-function function_1f15c4b5(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function dark_aether_crystal_check_dynentstate(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     var_87edbe2f = getdynentarray("dark_aehter_loot_crystal", 1);
     foreach (crystal in var_87edbe2f) {
         state = function_ffdbe8c2(crystal);

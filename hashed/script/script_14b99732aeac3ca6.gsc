@@ -82,7 +82,7 @@ function function_c2924276(localclientnum, *oldval, newval, *bnewent, *binitials
 // Checksum 0x372690bb, Offset: 0x7b8
 // Size: 0x9c
 function function_95190421(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    playfx(bwastimejump, #"hash_7cba1293ce9b2890", self.origin);
+    playfx(bwastimejump, #"zombie/fx9_onslaught_spawn_sm", self.origin);
     playsound(bwastimejump, #"hash_58611db3b1d6494e", self.origin + vectorscale((0, 0, 1), 35));
 }
 

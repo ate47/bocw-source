@@ -18,14 +18,14 @@ function private autoexec __init__system__() {
 // Checksum 0x149220a2, Offset: 0x128
 // Size: 0x4c
 function private function_70a657d8() {
-    clientfield::register("actor", "molotov_zm_fire_fx", 1, 1, "int", &function_b081999c, 0, 0);
+    clientfield::register("actor", "molotov_zm_fire_fx", 1, 1, "int", &molotov_zm_fire_fx, 0, 0);
 }
 
 // Namespace zm_weap_molotov/zm_weap_molotov
 // Params 7, eflags: 0x0
 // Checksum 0xa8daf6fc, Offset: 0x180
 // Size: 0x128
-function function_b081999c(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function molotov_zm_fire_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self endon(#"death");
     self util::waittill_dobj(fieldname);
     if (bwastimejump) {

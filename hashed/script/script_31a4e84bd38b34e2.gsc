@@ -14,16 +14,16 @@
 // Checksum 0x919d9ce6, Offset: 0x150
 // Size: 0xdc
 function autoexec main() {
-    clientfield::register("toplayer", "player_cam_blur", 1, 1, "int", &function_dcb1c75f, 0, 1);
-    clientfield::register("toplayer", "player_cam_bubbles", 1, 1, "int", &function_4c8a5cf6, 0, 1);
-    clientfield::register("toplayer", "player_cam_fire", 1, 1, "int", &function_c9980421, 0, 0);
+    clientfield::register("toplayer", "player_cam_blur", 1, 1, "int", &player_cam_blur, 0, 1);
+    clientfield::register("toplayer", "player_cam_bubbles", 1, 1, "int", &player_cam_bubbles, 0, 1);
+    clientfield::register("toplayer", "player_cam_fire", 1, 1, "int", &player_cam_fire, 0, 0);
 }
 
 // Namespace namespace_5443b356/namespace_88f6bc3c
 // Params 7, eflags: 0x2 linked
 // Checksum 0x68c7171f, Offset: 0x238
 // Size: 0x96
-function function_dcb1c75f(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function player_cam_blur(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1 && !function_1cbf351b(fieldname)) {
         self thread function_3c4a545b(fieldname);
     } else {
@@ -49,7 +49,7 @@ function function_3c4a545b(*localclientnum) {
 // Params 7, eflags: 0x2 linked
 // Checksum 0x10eb6d51, Offset: 0x350
 // Size: 0x114
-function function_4c8a5cf6(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function player_cam_bubbles(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1 && !function_1cbf351b(fieldname)) {
         if (isdefined(self.n_fx_id)) {
             deletefx(fieldname, self.n_fx_id, 1);
@@ -65,7 +65,7 @@ function function_4c8a5cf6(localclientnum, *oldval, newval, *bnewent, *binitials
 // Params 7, eflags: 0x2 linked
 // Checksum 0x7d2f8452, Offset: 0x470
 // Size: 0x8c
-function function_c9980421(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function player_cam_fire(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1 && !function_1cbf351b(fieldname)) {
         burn_on_postfx();
     } else {

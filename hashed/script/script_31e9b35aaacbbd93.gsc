@@ -89,7 +89,7 @@ function private function_887ac605(objective) {
     case #"tkdn_af_wreck":
         snd::function_7db65a93("triton_off");
         break;
-    case #"hash_46d353b99bf5cb75":
+    case #"no_game":
     case #"hash_6e531fb9475df744":
         break;
     case #"hash_defdefdefdefdef0":
@@ -227,7 +227,7 @@ function function_ec4a61d9() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xf7b5e9f2, Offset: 0x13b8
 // Size: 0x14
-function function_6b5c2a3(*var_b76ced44, *veh) {
+function function_6b5c2a3(*bustout_driver, *veh) {
     
 }
 
@@ -434,7 +434,7 @@ function function_60c0a46b() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x149de064, Offset: 0x1c78
 // Size: 0x34
-function function_7c1cb9f9() {
+function evt_transition_roof_to_airfield_camera_pt2() {
     snd::play("evt_transition_roof_to_airfield_camera_pt2");
     snd::function_7db65a93("cp_takedown_raid_af_transition_complete");
 }

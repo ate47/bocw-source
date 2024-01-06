@@ -210,9 +210,9 @@ function function_7dcf5e() {
     #/
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_6623ac05b3e89d2", &namespace_77fd5d41::function_25281284);
     /#
-        assert(isscriptfunctionptr(&function_7e3b03e2));
+        assert(isscriptfunctionptr(&hunt_hunker));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_c3501ebe051547e", &namespace_77fd5d41::function_7e3b03e2);
+    behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_c3501ebe051547e", &namespace_77fd5d41::hunt_hunker);
     /#
         assert(isscriptfunctionptr(&function_658c9f29));
     #/

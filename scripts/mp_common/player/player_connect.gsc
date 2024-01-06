@@ -623,12 +623,12 @@ function private function_efa6e25f() {
     self globallogic_score::initpersstat(#"kills");
     self.kills = self globallogic_score::getpersstat(#"kills");
     if (level.hardcoremode === 1) {
-        self globallogic_score::initpersstat(#"hash_4b9abc0475bbf766");
+        self globallogic_score::initpersstat(#"kills_hc");
     }
     self globallogic_score::initpersstat(#"deaths");
     self.deaths = self globallogic_score::getpersstat(#"deaths");
     if (level.hardcoremode === 1) {
-        self globallogic_score::initpersstat(#"hash_2872d49e7aa6b162");
+        self globallogic_score::initpersstat(#"deaths_hc");
     }
     self globallogic_score::initpersstat(#"assists");
     self.assists = self globallogic_score::getpersstat(#"assists");

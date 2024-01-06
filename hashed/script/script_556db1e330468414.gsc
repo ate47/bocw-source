@@ -21,7 +21,7 @@
 
 #namespace namespace_181e92ae;
 
-// Namespace namespace_181e92ae/namespace_21a03d2d
+// Namespace namespace_181e92ae/world_event_monster_house
 // Params 0, eflags: 0x5
 // Checksum 0xece1d005, Offset: 0x2c0
 // Size: 0x44
@@ -29,7 +29,7 @@ function private autoexec __init__system__() {
     system::register(#"hash_6eb528f341abf64a", &function_70a657d8, undefined, undefined, #"hash_f81b9dea74f0ee");
 }
 
-// Namespace namespace_181e92ae/namespace_21a03d2d
+// Namespace namespace_181e92ae/world_event_monster_house
 // Params 0, eflags: 0x4
 // Checksum 0x5950bbe2, Offset: 0x310
 // Size: 0xec
@@ -46,7 +46,7 @@ function private function_70a657d8() {
     namespace_8b6a9d79::function_b3464a7c(#"hash_6eb528f341abf64a", &function_66c8033b, 1);
 }
 
-// Namespace namespace_181e92ae/namespace_21a03d2d
+// Namespace namespace_181e92ae/world_event_monster_house
 // Params 1, eflags: 0x0
 // Checksum 0x3fa1c84f, Offset: 0x408
 // Size: 0x276
@@ -77,7 +77,7 @@ function function_66c8033b(instance) {
     }
 }
 
-// Namespace namespace_181e92ae/namespace_21a03d2d
+// Namespace namespace_181e92ae/world_event_monster_house
 // Params 1, eflags: 0x4
 // Checksum 0xca4190a6, Offset: 0x688
 // Size: 0x10c
@@ -90,7 +90,7 @@ function private function_4c9f2ecc(s_result) {
     }
 }
 
-// Namespace namespace_181e92ae/namespace_21a03d2d
+// Namespace namespace_181e92ae/world_event_monster_house
 // Params 1, eflags: 0x4
 // Checksum 0xa7940df8, Offset: 0x7a0
 // Size: 0x2e0
@@ -129,7 +129,7 @@ function private function_37eab05b(instance) {
     }
 }
 
-// Namespace namespace_181e92ae/namespace_21a03d2d
+// Namespace namespace_181e92ae/world_event_monster_house
 // Params 0, eflags: 0x4
 // Checksum 0x9581d381, Offset: 0xa88
 // Size: 0xb0
@@ -141,7 +141,7 @@ function private function_6326cff8() {
     }
 }
 
-// Namespace namespace_181e92ae/namespace_21a03d2d
+// Namespace namespace_181e92ae/world_event_monster_house
 // Params 1, eflags: 0x4
 // Checksum 0x2833e1ec, Offset: 0xb40
 // Size: 0x2f4
@@ -170,7 +170,7 @@ function private function_cdec3a88(*s_result) {
     }
 }
 
-// Namespace namespace_181e92ae/namespace_21a03d2d
+// Namespace namespace_181e92ae/world_event_monster_house
 // Params 0, eflags: 0x4
 // Checksum 0x24f0ac8b, Offset: 0xe40
 // Size: 0x84
@@ -183,7 +183,7 @@ function private function_3a22c4f4() {
     }
 }
 
-// Namespace namespace_181e92ae/namespace_21a03d2d
+// Namespace namespace_181e92ae/world_event_monster_house
 // Params 1, eflags: 0x4
 // Checksum 0x22581d88, Offset: 0xed0
 // Size: 0x70
@@ -194,7 +194,7 @@ function private function_a77f3600(instance) {
     }
 }
 
-// Namespace namespace_181e92ae/namespace_21a03d2d
+// Namespace namespace_181e92ae/world_event_monster_house
 // Params 1, eflags: 0x4
 // Checksum 0xafbfe661, Offset: 0xf48
 // Size: 0x284
@@ -228,7 +228,7 @@ function private function_2d2fade8(instance) {
     instance flag::set(#"cleanup");
 }
 
-// Namespace namespace_181e92ae/namespace_21a03d2d
+// Namespace namespace_181e92ae/world_event_monster_house
 // Params 2, eflags: 0x0
 // Checksum 0x99241da5, Offset: 0x11d8
 // Size: 0x94
@@ -241,7 +241,7 @@ function function_84ab63bd(instance, n_wait_time) {
     level thread function_68aac628(instance, "monsterhouse_high");
 }
 
-// Namespace namespace_181e92ae/namespace_21a03d2d
+// Namespace namespace_181e92ae/world_event_monster_house
 // Params 1, eflags: 0x4
 // Checksum 0x368427fb, Offset: 0x1278
 // Size: 0x1c8
@@ -266,7 +266,7 @@ function private function_4b312787(struct) {
     return var_3128fb28;
 }
 
-// Namespace namespace_181e92ae/namespace_21a03d2d
+// Namespace namespace_181e92ae/world_event_monster_house
 // Params 1, eflags: 0x0
 // Checksum 0x4e938a58, Offset: 0x1448
 // Size: 0x132
@@ -293,7 +293,7 @@ function function_fc37bb4f(str_type) {
     }
 }
 
-// Namespace namespace_181e92ae/namespace_21a03d2d
+// Namespace namespace_181e92ae/world_event_monster_house
 // Params 2, eflags: 0x0
 // Checksum 0x9fffdad5, Offset: 0x1588
 // Size: 0x5c
@@ -304,7 +304,7 @@ function function_68aac628(instance, var_9c1ed9ea) {
     }
 }
 
-// Namespace namespace_181e92ae/namespace_21a03d2d
+// Namespace namespace_181e92ae/world_event_monster_house
 // Params 1, eflags: 0x4
 // Checksum 0x79670daa, Offset: 0x15f0
 // Size: 0x202

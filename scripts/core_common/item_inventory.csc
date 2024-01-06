@@ -425,7 +425,7 @@ function private function_9b83c65d(localclientnum) {
         waitresult = level waittill(var_ca4fc719, var_e2d1f454, var_3731e165, var_6a10d173, var_ce5c0b10, var_17bdd1c3);
         if (waitresult._notify === var_ca4fc719) {
             if (!function_10861362(localclientnum)) {
-                self playsound(localclientnum, #"hash_7d81a3ace87fb4e2");
+                self playsound(localclientnum, #"uin_default_action_denied");
                 continue;
             }
             inventoryitem = function_15d578f4(localclientnum, waitresult.id);
@@ -459,7 +459,7 @@ function private function_9b83c65d(localclientnum) {
             var_a3162739 = isdefined(clientdata.inventory.var_f3518190) && inventoryitem == clientdata.inventory.var_f3518190.item;
             if (waitresult._notify === var_e2d1f454) {
                 if (!function_e23e5e85(localclientnum) || inventoryitem.count == 0 || !function_10861362(localclientnum)) {
-                    self playsound(localclientnum, #"hash_7d81a3ace87fb4e2");
+                    self playsound(localclientnum, #"uin_default_action_denied");
                     inventoryuimodel = function_1df4c3b0(localclientnum, #"hash_159966ba825013a2");
                     var_3ea10284 = createuimodel(inventoryuimodel, "armorShardNotAvailable");
                     forcenotifyuimodel(var_3ea10284);

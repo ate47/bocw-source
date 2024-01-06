@@ -1821,7 +1821,7 @@ function set_team_mapping(str_team_for_sidea, str_team_for_sideb) {
     level.team_mapping[#"attackers"] = str_team_for_sidea;
     level.team_mapping[#"defenders"] = str_team_for_sideb;
     level.team_mapping[#"hash_75fde2190cfb2c00"] = #"allies";
-    level.team_mapping[#"hash_3dc25519365504ef"] = #"axis";
+    level.team_mapping[#"kgb"] = #"axis";
     level.team_mapping[#"teama"] = level.team_mapping[#"sidea"];
     level.team_mapping[#"teamb"] = level.team_mapping[#"sideb"];
     level.team_mapping[#"side3"] = #"team3";

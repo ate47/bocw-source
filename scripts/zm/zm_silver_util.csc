@@ -8,6 +8,6 @@
 // Checksum 0x2d1803b, Offset: 0x88
 // Size: 0x1c
 function init() {
-    level.var_91c0a927 = namespace_91c0a927::register();
+    level.zm_silver_hud = zm_silver_hud::register();
 }
 

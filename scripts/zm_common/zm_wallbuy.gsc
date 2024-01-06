@@ -88,7 +88,7 @@ function on_round_end() {
     if (level.round_number % 5 == 0) {
         round_number = level.round_number;
         foreach (instance in level.var_7d45d0d4.var_5eba96b3[#"wallbuy"]) {
-            foreach (var_727813d6 in instance.var_fe2612fe[#"hash_216a182c044d96bb"]) {
+            foreach (var_727813d6 in instance.var_fe2612fe[#"wallbuy_chalk"]) {
                 if (isdefined(var_727813d6.trigger.weapon.name) && isdefined(var_727813d6.trigger.rarity) && isdefined(var_727813d6.trigger) && isdefined(var_727813d6.trigger.weapon.displayname) && is_true(var_727813d6.trigger.var_9f32a5f4)) {
                     if (var_727813d6.trigger.rarity != "orange") {
                         n_chance = 0;
@@ -195,16 +195,16 @@ function on_round_end() {
 // Checksum 0x4d7c304, Offset: 0x1008
 // Size: 0x27c
 function function_26b21477(var_727813d6, var_3d2cce9) {
-    if (isdefined(var_727813d6.trigger.var_e77512f3)) {
-        var_727813d6.trigger.var_e77512f3 delete();
+    if (isdefined(var_727813d6.trigger.chalk_model)) {
+        var_727813d6.trigger.chalk_model delete();
         var_a2a22fe0 = var_727813d6.var_fe2612fe[#"hash_79425207763b7a66"][0];
         var_324ad795 = function_d26435e4(var_a2a22fe0, var_3d2cce9, var_727813d6.trigger.weapon.name);
-        var_e77512f3 = self namespace_8b6a9d79::function_f3d93ee9(var_727813d6, var_324ad795, 0, 0);
-        var_e77512f3 clientfield::set("set_compass_icon", 1);
-        fx_pos = var_e77512f3 getcentroid();
+        chalk_model = self namespace_8b6a9d79::function_f3d93ee9(var_727813d6, var_324ad795, 0, 0);
+        chalk_model clientfield::set("set_compass_icon", 1);
+        fx_pos = chalk_model getcentroid();
         playfx(#"hash_3d4331a432da7e8", fx_pos, anglestoforward(var_727813d6.angles), (0, 0, 1));
-        var_727813d6.trigger.var_e77512f3 = var_e77512f3;
-        var_e77512f3.targetname.var_e77512f3 = "chalk_model";
+        var_727813d6.trigger.chalk_model = chalk_model;
+        chalk_model.targetname.chalk_model = "chalk_model";
         item_name = level.var_29d88fe5[var_727813d6.trigger.weapon.name][var_3d2cce9];
         var_727813d6.trigger.item_name = item_name;
         var_727813d6.trigger.rarity = var_3d2cce9;
@@ -319,13 +319,13 @@ function function_6e93c5b2(var_13f9dee7) {
 // Params 8, eflags: 0x0
 // Checksum 0xb2609e23, Offset: 0x17b0
 // Size: 0x464
-function function_a1a1d2(weapon_name, var_e9040287, item_name, var_e77512f3, index, var_492e21a0, var_58bd64f1, var_13f9dee7) {
+function function_a1a1d2(weapon_name, var_e9040287, item_name, chalk_model, index, var_492e21a0, var_58bd64f1, var_13f9dee7) {
     weapon = getweapon(weapon_name);
     hint = function_6e93c5b2(var_13f9dee7);
     cost = zm_weapons::get_weapon_cost(weapon);
     cost = cost + zm_weapons::function_5d47055e(var_13f9dee7);
-    var_e77512f3 = self namespace_8b6a9d79::function_f3d93ee9(self, var_e77512f3, 0, 0);
-    var_e77512f3 clientfield::set("set_compass_icon", 1);
+    chalk_model = self namespace_8b6a9d79::function_f3d93ee9(self, chalk_model, 0, 0);
+    chalk_model clientfield::set("set_compass_icon", 1);
     switch (weapon.weapclass) {
     case #"mg":
         var_7f9f4eb = 80;
@@ -346,10 +346,10 @@ function function_a1a1d2(weapon_name, var_e9040287, item_name, var_e77512f3, ind
         var_7f9f4eb = 45;
         break;
     }
-    v_center = var_e77512f3 getcentroid();
-    var_8bda2b44 = v_center[1] - var_e77512f3.origin[1];
+    v_center = chalk_model getcentroid();
+    var_8bda2b44 = v_center[1] - chalk_model.origin[1];
     trigger = self namespace_8b6a9d79::function_22e120bc(self, &function_ab0340bb, hint, weapon.displayname, 25, var_7f9f4eb, 32, (0, var_8bda2b44, 0), cost);
-    trigger.angles.trigger = var_e77512f3.angles + vectorscale((0, 1, 0), 90);
+    trigger.angles.trigger = chalk_model.angles + vectorscale((0, 1, 0), 90);
     v_forward = anglestoforward(trigger.angles) * 10;
     trigger.origin.trigger = trigger.origin - v_forward;
     trigger.weapon = weapon;
@@ -357,8 +357,8 @@ function function_a1a1d2(weapon_name, var_e9040287, item_name, var_e77512f3, ind
     trigger.var_9f32a5f4.trigger = 1;
     trigger.item_name = item_name;
     trigger.rarity = var_13f9dee7;
-    var_e77512f3.targetname.var_e77512f3 = "chalk_model";
-    trigger.var_e77512f3 = var_e77512f3;
+    chalk_model.targetname.chalk_model = "chalk_model";
+    trigger.chalk_model = chalk_model;
     trigger.targetname.trigger = "trigger_wallbuy";
     tempmodel = var_e9040287 namespace_8b6a9d79::function_f3d93ee9(var_e9040287, weapon.worldmodel);
     tempmodel useweaponmodel(weapon);
@@ -419,7 +419,7 @@ function function_d77fb9ee(s_instance) {
     if (!is_true(getgametypesetting(#"zmwallbuysenabled"))) {
         return;
     }
-    wallbuys = s_instance.var_fe2612fe[#"hash_216a182c044d96bb"];
+    wallbuys = s_instance.var_fe2612fe[#"wallbuy_chalk"];
     count = 0;
     foreach (wallbuy in wallbuys) {
         weapon_name = wallbuy.script_noteworthy;
@@ -1208,7 +1208,7 @@ function weapon_spawn_think() {
                             if (isdefined(point.var_a6762160.var_a53e9db0)) {
                                 weapon = namespace_65181344::function_67456242(point.var_a6762160);
                                 dropitem = item_drop::drop_item(0, weapon, 1, weapon.maxammo, point.id, self.origin, self.angles, 1);
-                                dropitem.var_ab773b96.dropitem = 1;
+                                dropitem.wallbuy_weapon.dropitem = 1;
                                 dropitem.hidetime.dropitem = 1;
                                 dropitem hide();
                                 player zm_weapons::function_98776900(dropitem, 0, 0);

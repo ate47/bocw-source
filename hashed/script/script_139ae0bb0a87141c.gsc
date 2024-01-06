@@ -524,7 +524,7 @@ function function_f40dd0f4(groupname, guy, e) {
 // Checksum 0xcf68c8cb, Offset: 0x20b0
 // Size: 0x17c
 function function_2233d456(e) {
-    self endon(#"death", #"hash_15ec42f1846ef9d0", #"hash_3349bde4ee0b31e");
+    self endon(#"death", #"hash_15ec42f1846ef9d0", #"takedown");
     waitframe(1);
     self function_2a4de0ff(e);
     waitframe(1);
@@ -805,7 +805,7 @@ function function_3fc0db9c(guy) {
 // Checksum 0xd9607ead, Offset: 0x3110
 // Size: 0x22c
 function function_b3200aff(var_9bd7a27, e) {
-    self endon(#"death", #"hash_15ec42f1846ef9d0", #"hash_3349bde4ee0b31e");
+    self endon(#"death", #"hash_15ec42f1846ef9d0", #"takedown");
     waitframe(1);
     pod = function_9fd1b21a(var_9bd7a27, self);
     if (!isdefined(pod)) {
@@ -981,7 +981,7 @@ function function_7b7042da() {
     } else {
         return;
     }
-    var_52ad34fa = undefined;
+    first_lost = undefined;
     while (1) {
         hunters = [];
         foreach (group in level.stealth.var_9bd7a27.groups) {
@@ -1028,8 +1028,8 @@ function function_7b7042da() {
         } else {
             hunter = hunters[0];
             if (!is_true(hunter.ignoreall)) {
-                if (!isdefined(var_52ad34fa)) {
-                    var_52ad34fa = 1;
+                if (!isdefined(first_lost)) {
+                    first_lost = 1;
                     hunter thread namespace_979752dc::function_f5f4416f("stealth", "hunt", "first_lost");
                 } else {
                     hunter thread namespace_979752dc::function_f5f4416f("stealth", "hunt", "lost_sight");
@@ -1151,7 +1151,7 @@ function function_79baf7a9(delaytime, guy, target, targetpos) {
     }
     guy endon(#"death");
     self.var_bb6b3b67 = 1;
-    level notify(#"hash_6bf4833df7b2cba5");
+    level notify(#"cover_blown");
     foreach (var_9bd7a27 in level.stealth.var_9bd7a27.groups) {
         var_760c584d = arraysort(var_9bd7a27.members, guy.origin);
         foreach (var_37f4db4d in var_760c584d) {

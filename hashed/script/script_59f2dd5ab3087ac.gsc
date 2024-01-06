@@ -4,17 +4,17 @@
 #using scripts\core_common\system_shared.csc;
 #using scripts\core_common\clientfield_shared.csc;
 
-#namespace namespace_364bfa7e;
+#namespace weapon_cache;
 
-// Namespace namespace_364bfa7e/namespace_364bfa7e
+// Namespace weapon_cache/weapon_cache
 // Params 0, eflags: 0x5
 // Checksum 0xb1d67853, Offset: 0x178
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_4628a9543d238978", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"weapon_cache", &function_70a657d8, undefined, undefined, undefined);
 }
 
-// Namespace namespace_364bfa7e/namespace_364bfa7e
+// Namespace weapon_cache/weapon_cache
 // Params 0, eflags: 0x6 linked
 // Checksum 0x463f6420, Offset: 0x1c0
 // Size: 0x17c
@@ -22,9 +22,9 @@ function private function_70a657d8() {
     if (!is_true(getgametypesetting(#"hash_6143c4e1e18f08fd"))) {
         return;
     }
-    clientfield::register("scriptmover", "register_weapon_cache", 1, 1, "int", &function_5c346ca, 0, 0);
+    clientfield::register("scriptmover", "register_weapon_cache", 1, 1, "int", &register_weapon_cache, 0, 0);
     clientfield::register("toplayer", "weapon_cache_ammo_cooldown", 1, 1, "int", &function_ce75a340, 0, 0);
-    clientfield::register("toplayer", "weapon_cache_cac_cooldown", 1, 1, "int", &function_32e7acec, 0, 0);
+    clientfield::register("toplayer", "weapon_cache_cac_cooldown", 1, 1, "int", &weapon_cache_cac_cooldown, 0, 0);
     callback::on_localplayer_spawned(&on_localplayer_spawned);
     callback::on_localclient_connect(&_on_localclient_connect);
     level.var_745f6ccb = [];
@@ -32,7 +32,7 @@ function private function_70a657d8() {
     level.var_a979e61b = &function_a979e61b;
 }
 
-// Namespace namespace_364bfa7e/namespace_364bfa7e
+// Namespace weapon_cache/weapon_cache
 // Params 1, eflags: 0x6 linked
 // Checksum 0xb5dffa62, Offset: 0x348
 // Size: 0x7c
@@ -42,7 +42,7 @@ function private _on_localclient_connect(localclientnum) {
     setuimodelvalue(createuimodel(function_1df4c3b0(localclientnum, #"hash_6f4b11a0bee9b73d"), "weaponCachePromptState"), 1);
 }
 
-// Namespace namespace_364bfa7e/namespace_364bfa7e
+// Namespace weapon_cache/weapon_cache
 // Params 1, eflags: 0x6 linked
 // Checksum 0xa83318fc, Offset: 0x3d0
 // Size: 0x3c
@@ -52,11 +52,11 @@ function private on_localplayer_spawned(localclientnum) {
     }
 }
 
-// Namespace namespace_364bfa7e/namespace_364bfa7e
+// Namespace weapon_cache/weapon_cache
 // Params 7, eflags: 0x6 linked
 // Checksum 0x8def42e6, Offset: 0x418
 // Size: 0x8c
-function private function_5c346ca(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function private register_weapon_cache(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (!isdefined(level.var_b5f67dff)) {
         level.var_b5f67dff = [];
     }
@@ -64,7 +64,7 @@ function private function_5c346ca(*localclientnum, *oldval, *newval, *bnewent, *
     level.var_b5f67dff[level.var_b5f67dff.size] = self;
 }
 
-// Namespace namespace_364bfa7e/namespace_364bfa7e
+// Namespace weapon_cache/weapon_cache
 // Params 7, eflags: 0x6 linked
 // Checksum 0xe4622382, Offset: 0x4b0
 // Size: 0x298
@@ -77,26 +77,26 @@ function private function_ce75a340(localclientnum, *oldval, newval, *bnewent, *b
         return;
     }
     arrayremovevalue(level.var_b5f67dff, undefined, 0);
-    foreach (var_364bfa7e in level.var_b5f67dff) {
+    foreach (weapon_cache in level.var_b5f67dff) {
         level.var_2e44d000[fieldname] = bwastimejump;
         function_f3b7c879(fieldname);
         if (bwastimejump == 1) {
-            if (!isdefined(var_364bfa7e.var_1563bf09)) {
-                var_364bfa7e.var_1563bf09.var_364bfa7e = util::getnextobjid(fieldname);
-                objective_add(fieldname, var_364bfa7e.var_1563bf09, "active", #"hash_60b265ded94ea645", var_364bfa7e.origin, self.team, self);
+            if (!isdefined(weapon_cache.var_1563bf09)) {
+                weapon_cache.var_1563bf09.weapon_cache = util::getnextobjid(fieldname);
+                objective_add(fieldname, weapon_cache.var_1563bf09, "active", #"hash_60b265ded94ea645", weapon_cache.origin, self.team, self);
             } else {
-                objective_setstate(fieldname, var_364bfa7e.var_1563bf09, "active");
+                objective_setstate(fieldname, weapon_cache.var_1563bf09, "active");
             }
-            var_364bfa7e thread function_366dfc57(fieldname, var_364bfa7e.var_1563bf09, 60);
-        } else if (isdefined(var_364bfa7e.var_1563bf09)) {
-            var_364bfa7e notify(#"hash_21d2c3e2020a95a3");
-            objective_setprogress(fieldname, var_364bfa7e.var_1563bf09, 1);
-            objective_setstate(fieldname, var_364bfa7e.var_1563bf09, "invisible");
+            weapon_cache thread function_366dfc57(fieldname, weapon_cache.var_1563bf09, 60);
+        } else if (isdefined(weapon_cache.var_1563bf09)) {
+            weapon_cache notify(#"hash_21d2c3e2020a95a3");
+            objective_setprogress(fieldname, weapon_cache.var_1563bf09, 1);
+            objective_setstate(fieldname, weapon_cache.var_1563bf09, "invisible");
         }
     }
 }
 
-// Namespace namespace_364bfa7e/namespace_364bfa7e
+// Namespace weapon_cache/weapon_cache
 // Params 3, eflags: 0x2 linked
 // Checksum 0x86ebc60, Offset: 0x750
 // Size: 0xfc
@@ -116,11 +116,11 @@ function function_366dfc57(localclientnum, obj_id, cooldowntime) {
     }
 }
 
-// Namespace namespace_364bfa7e/namespace_364bfa7e
+// Namespace weapon_cache/weapon_cache
 // Params 7, eflags: 0x6 linked
 // Checksum 0x32dcdea8, Offset: 0x858
 // Size: 0x298
-function private function_32e7acec(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function private weapon_cache_cac_cooldown(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (!isdefined(self)) {
         return;
     }
@@ -129,26 +129,26 @@ function private function_32e7acec(localclientnum, *oldval, newval, *bnewent, *b
         return;
     }
     arrayremovevalue(level.var_b5f67dff, undefined, 0);
-    foreach (var_364bfa7e in level.var_b5f67dff) {
+    foreach (weapon_cache in level.var_b5f67dff) {
         level.var_745f6ccb[fieldname] = bwastimejump;
         function_f3b7c879(fieldname);
         if (bwastimejump == 1) {
-            if (!isdefined(var_364bfa7e.var_decd4745)) {
-                var_364bfa7e.var_decd4745.var_364bfa7e = util::getnextobjid(fieldname);
-                objective_add(fieldname, var_364bfa7e.var_decd4745, "active", #"hash_53b2e93d1661a0a4", var_364bfa7e.origin, self.team, self);
+            if (!isdefined(weapon_cache.var_decd4745)) {
+                weapon_cache.var_decd4745.weapon_cache = util::getnextobjid(fieldname);
+                objective_add(fieldname, weapon_cache.var_decd4745, "active", #"hash_53b2e93d1661a0a4", weapon_cache.origin, self.team, self);
             } else {
-                objective_setstate(fieldname, var_364bfa7e.var_decd4745, "active");
+                objective_setstate(fieldname, weapon_cache.var_decd4745, "active");
             }
-            var_364bfa7e thread function_366dfc57(fieldname, var_364bfa7e.var_decd4745, 120);
-        } else if (isdefined(var_364bfa7e.var_decd4745)) {
-            var_364bfa7e notify(#"hash_21d2c3e2020a95a3");
-            objective_setprogress(fieldname, var_364bfa7e.var_decd4745, 1);
-            objective_setstate(fieldname, var_364bfa7e.var_decd4745, "invisible");
+            weapon_cache thread function_366dfc57(fieldname, weapon_cache.var_decd4745, 120);
+        } else if (isdefined(weapon_cache.var_decd4745)) {
+            weapon_cache notify(#"hash_21d2c3e2020a95a3");
+            objective_setprogress(fieldname, weapon_cache.var_decd4745, 1);
+            objective_setstate(fieldname, weapon_cache.var_decd4745, "invisible");
         }
     }
 }
 
-// Namespace namespace_364bfa7e/namespace_364bfa7e
+// Namespace weapon_cache/weapon_cache
 // Params 1, eflags: 0x6 linked
 // Checksum 0x616ba8fa, Offset: 0xaf8
 // Size: 0xd4
@@ -162,8 +162,8 @@ function private function_a979e61b(localclientnum) {
     if (self.weapon.statname === #"ultimate_turret") {
         return 0;
     }
-    var_364bfa7e = function_2cf636b5(localclientnum);
-    if (!isdefined(var_364bfa7e)) {
+    weapon_cache = function_2cf636b5(localclientnum);
+    if (!isdefined(weapon_cache)) {
         return 0;
     }
     if (level.var_745f6ccb[localclientnum] == 0) {
@@ -173,7 +173,7 @@ function private function_a979e61b(localclientnum) {
     return 0;
 }
 
-// Namespace namespace_364bfa7e/namespace_364bfa7e
+// Namespace weapon_cache/weapon_cache
 // Params 1, eflags: 0x2 linked
 // Checksum 0xf9fde161, Offset: 0xbd8
 // Size: 0xb0
@@ -189,7 +189,7 @@ function function_e18d0975(localclientnum) {
     }
 }
 
-// Namespace namespace_364bfa7e/namespace_364bfa7e
+// Namespace weapon_cache/weapon_cache
 // Params 1, eflags: 0x6 linked
 // Checksum 0x8130765c, Offset: 0xc90
 // Size: 0x134
@@ -198,18 +198,18 @@ function private function_2cf636b5(localclientnum) {
         return undefined;
     }
     playerorigin = getlocalclienteyepos(localclientnum);
-    foreach (var_364bfa7e in level.var_b5f67dff) {
-        if (!isdefined(var_364bfa7e)) {
+    foreach (weapon_cache in level.var_b5f67dff) {
+        if (!isdefined(weapon_cache)) {
             continue;
         }
-        if (distance2dsquared(playerorigin, var_364bfa7e.origin) > function_a3f6cdac(96) || abs(playerorigin[2] - var_364bfa7e.origin[2]) > 96) {
+        if (distance2dsquared(playerorigin, weapon_cache.origin) > function_a3f6cdac(96) || abs(playerorigin[2] - weapon_cache.origin[2]) > 96) {
             continue;
         }
-        return var_364bfa7e;
+        return weapon_cache;
     }
 }
 
-// Namespace namespace_364bfa7e/namespace_364bfa7e
+// Namespace weapon_cache/weapon_cache
 // Params 1, eflags: 0x6 linked
 // Checksum 0x20e08c16, Offset: 0xdd0
 // Size: 0x14c

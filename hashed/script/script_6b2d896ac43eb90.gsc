@@ -195,10 +195,10 @@ function function_755edc7e(machine, trigger) {
 // Size: 0xac
 function function_8319d39() {
     self notify(#"hash_5f178db4550eeae9");
-    level.var_2457162c namespace_d21eb1ac::close(self);
-    level.var_5df76d0 namespace_6df5a8d8::close(self);
-    level.var_2a994cc0 namespace_eb35e6da::close(self);
-    level.var_3ed9fd33 namespace_63c13948::close(self);
+    level.var_2457162c sr_weapon_upgrade_menu::close(self);
+    level.var_5df76d0 sr_perk_machine_choice::close(self);
+    level.var_2a994cc0 sr_armor_menu::close(self);
+    level.var_3ed9fd33 sr_crafting_table_menu::close(self);
     self namespace_553954de::function_548f282();
 }
 

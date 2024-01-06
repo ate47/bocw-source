@@ -1,7 +1,7 @@
 // Atian COD Tools GSC CW decompiler test
-#namespace namespace_823484e1;
+#namespace snipercam;
 
-// Namespace namespace_823484e1/namespace_7db676d5
+// Namespace snipercam/namespace_7db676d5
 // Params 5, eflags: 0x2 linked
 // Checksum 0xf76920a5, Offset: 0xa0
 // Size: 0x366

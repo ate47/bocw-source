@@ -522,9 +522,9 @@ function function_ecae2d5a(var_ffd1df9a) {
         return;
     }
     if (var_ffd1df9a) {
-        level.stealth.var_c7c59c30.doors[level.stealth.var_c7c59c30.doors.size] = self;
+        level.stealth.suspicious_door.doors[level.stealth.suspicious_door.doors.size] = self;
     } else {
-        arrayremovevalue(level.stealth.var_c7c59c30.doors, self);
+        arrayremovevalue(level.stealth.suspicious_door.doors, self);
     }
 }
 

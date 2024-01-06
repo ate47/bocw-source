@@ -70,8 +70,8 @@ function private function_8ba92985(s_instance) {
     var_69b86a0a thread function_4dccab86(var_8e27c3fd);
     while (1) {
         var_8e27c3fd waittill(#"trigger_look", #"proximity");
-        if (level flag::get(#"hash_448cb2a9e543af93")) {
-            level flag::wait_till_clear(#"hash_448cb2a9e543af93");
+        if (level flag::get(#"objective_locked")) {
+            level flag::wait_till_clear(#"objective_locked");
             continue;
         } else {
             break;
@@ -87,7 +87,7 @@ function private function_8ba92985(s_instance) {
 // Checksum 0xd194fef3, Offset: 0x638
 // Size: 0x62
 function function_a1ca0279(*v_origin_or_ent, *params) {
-    if (level flag::get(#"hash_448cb2a9e543af93") && !level flag::get(#"hash_68097fc64a08e557")) {
+    if (level flag::get(#"objective_locked") && !level flag::get(#"hash_68097fc64a08e557")) {
         return 0;
     }
     return 1;
@@ -118,8 +118,8 @@ function function_db97f0ee() {
     if (isdefined(self.var_8e27c3fd)) {
         self.var_8e27c3fd delete();
     }
-    if (isdefined(self.var_7c87f68c)) {
-        self.var_7c87f68c delete();
+    if (isdefined(self.ambush_trigger)) {
+        self.ambush_trigger delete();
     }
 }
 
@@ -221,7 +221,7 @@ function function_19490940(*eventstruct) {
     var_31919730 clientfield::set("sr_supply_drop_chest_fx", 2);
     wait(2);
     namespace_2c949ef8::function_8b6ae460(var_571f5454, function_873ab308(), 500, 1500, undefined, undefined, undefined, undefined, undefined, 1);
-    self sethintstring(#"hash_75724e383d531b42");
+    self sethintstring(#"survival/supply_drop_open");
     self setvisibletoall();
     var_31919730 clientfield::set("sr_supply_drop_chest_fx", 3);
     var_31919730 clientfield::set("reward_chest_fx", 3);

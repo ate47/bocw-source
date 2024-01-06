@@ -5,7 +5,7 @@
                 {
                     "entry": [
                         {
-                            "anim": "#hash_6a1ef0e6cd4efb0a",
+                            "anim": "#p9_fxanim_sv_payload_atv_static_anim",
                             "var_71bac06": "anim"
                         }
                     ],
@@ -14,11 +14,11 @@
                 {
                     "entry": [
                         {
-                            "anim": "#hash_269e3a56b0328df9",
+                            "anim": "#p9_fxanim_sv_payload_atv_initiate_anim",
                             "var_71bac06": "anim"
                         },
                         {
-                            "anim": "#hash_41c80f712bbc27f2",
+                            "anim": "#p9_fxanim_sv_payload_atv_loop_anim",
                             "var_71bac06": "anim"
                         }
                     ],

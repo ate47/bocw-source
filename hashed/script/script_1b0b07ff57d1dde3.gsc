@@ -31,9 +31,9 @@
 // Checksum 0xaa785486, Offset: 0x3c0
 // Size: 0x17a
 function init() {
-    level.var_8cff5775.var_1c58e161 = array(getweapon("zombietron_deathmachine"), getweapon("zombietron_deathmachine_1"), getweapon("zombietron_deathmachine_2"), getweapon("zombietron_shotgun_fullauto_t9"), getweapon("zombietron_shotgun_fullauto_t9_1"), getweapon("zombietron_shotgun_fullauto_t9_2"), getweapon("zombietron_launcher_1"), getweapon("zombietron_launcher_2"));
-    level.var_8cff5775.var_d516e53 = array("MOD_GRENADE", "MOD_GRENADE_SPLASH", "MOD_PROJECTILE", "MOD_PROJECTIVLE_SPLASH", "MOD_EXPLOSIVE");
-    level.var_8cff5775.var_3d2f9bf0 = array("left_hand", "left_arm_lower", "left_arm_upper", "right_hand", "right_arm_lower", "right_arm_upper");
+    level.doa.var_1c58e161 = array(getweapon("zombietron_deathmachine"), getweapon("zombietron_deathmachine_1"), getweapon("zombietron_deathmachine_2"), getweapon("zombietron_shotgun_fullauto_t9"), getweapon("zombietron_shotgun_fullauto_t9_1"), getweapon("zombietron_shotgun_fullauto_t9_2"), getweapon("zombietron_launcher_1"), getweapon("zombietron_launcher_2"));
+    level.doa.var_d516e53 = array("MOD_GRENADE", "MOD_GRENADE_SPLASH", "MOD_PROJECTILE", "MOD_PROJECTIVLE_SPLASH", "MOD_EXPLOSIVE");
+    level.doa.var_3d2f9bf0 = array("left_hand", "left_arm_lower", "left_arm_upper", "right_hand", "right_arm_lower", "right_arm_upper");
 }
 
 // Namespace namespace_ed80aead/namespace_ed80aead
@@ -129,7 +129,7 @@ function trygibbinghead(entity, damage, weapon, var_fd90b0bb, hitloc = "head", i
 function trygibbinglimb(entity, damage, weapon, var_fd90b0bb, hitloc, isexplosive = 0) {
     var_c3317960 = gibserverutils::function_de4d9d(weapon, var_fd90b0bb);
     if (!isdefined(hitloc)) {
-        hitloc = level.var_8cff5775.var_3d2f9bf0[randomint(level.var_8cff5775.var_3d2f9bf0.size)];
+        hitloc = level.doa.var_3d2f9bf0[randomint(level.doa.var_3d2f9bf0.size)];
     }
     if (isexplosive && randomfloatrange(0, 1) <= 0.35) {
         if (entity.health - damage <= 0 && entity.allowdeath && math::cointoss()) {
@@ -166,7 +166,7 @@ function trygibbinglegs(entity, damage, weapon, var_fd90b0bb, hitloc, isexplosiv
         attacker = entity;
     }
     if (!isdefined(hitloc)) {
-        hitloc = level.var_8cff5775.var_3d2f9bf0[randomint(level.var_8cff5775.var_3d2f9bf0.size)];
+        hitloc = level.doa.var_3d2f9bf0[randomint(level.doa.var_3d2f9bf0.size)];
     }
     cangiblegs = entity.health - damage <= 0 && entity.allowdeath;
     cangiblegs = cangiblegs || (entity.health - damage) / entity.maxhealth <= 0.25 && distancesquared(entity.origin, attacker.origin) <= function_a3f6cdac(600) && entity.allowdeath;
@@ -232,14 +232,14 @@ function function_5e680689(attacker, damage, meansofdeath, weapon, var_fd90b0bb,
     }
     self.var_60368e1e = gettime();
     self endon(#"death");
-    isexplosive = isinarray(level.var_8cff5775.var_d516e53, weapon);
+    isexplosive = isinarray(level.doa.var_d516e53, weapon);
     trygibbinglimb(self, meansofdeath, var_fd90b0bb, hitloc, vdir, isexplosive);
     trygibbinglegs(self, meansofdeath, var_fd90b0bb, hitloc, vdir, isexplosive, damage);
     if (meansofdeath >= self.health && gettime() > self.birthtime) {
-        if (isinarray(level.var_8cff5775.var_1c58e161, var_fd90b0bb)) {
+        if (isinarray(level.doa.var_1c58e161, var_fd90b0bb)) {
             self namespace_83eb6304::function_3ecfde67("zombie_chunk");
         }
-        if (var_fd90b0bb === level.var_8cff5775.var_6a5eb56f || var_fd90b0bb === level.var_8cff5775.var_3efdf9e5) {
+        if (var_fd90b0bb === level.doa.var_6a5eb56f || var_fd90b0bb === level.doa.var_3efdf9e5) {
             trygibbinghead(self, meansofdeath, var_fd90b0bb, hitloc, vdir, isexplosive);
             self namespace_83eb6304::function_3ecfde67("boost_explode");
         }

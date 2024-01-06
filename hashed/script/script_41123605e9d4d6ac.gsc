@@ -21,12 +21,12 @@ function private autoexec __init__system__() {
 // Checksum 0x5d9dc923, Offset: 0x170
 // Size: 0x1f4
 function function_70a657d8() {
-    clientfield::register("scriptmover", "" + #"hash_405a03ca855745df", 16000, 1, "int", &function_9666c7b1, 0, 0);
+    clientfield::register("scriptmover", "" + #"dog_launcher_explode_fx", 16000, 1, "int", &function_9666c7b1, 0, 0);
     clientfield::register("scriptmover", "hs_swarm_state", 1, 1, "counter", &function_440e968, 0, 0);
     clientfield::register("allplayers", "hs_swarm_damage", 1, 1, "counter", &function_64d1f09b, 1, 0);
     clientfield::register("allplayers", "" + #"hash_2201faa112c8313", 16000, 1, "counter", &function_ea257a5f, 1, 0);
     clientfield::register("scriptmover", "" + #"hash_2201faa112c8313", 16000, 1, "counter", &function_ea257a5f, 1, 0);
-    clientfield::register("scriptmover", "" + #"hash_1765de695fca8bdc", 16000, 1, "int", &function_48a507d9, 0, 0);
+    clientfield::register("scriptmover", "" + #"dog_projectile_fx", 16000, 1, "int", &dog_projectile_fx, 0, 0);
 }
 
 // Namespace namespace_cc727a3b/namespace_cc727a3b
@@ -116,7 +116,7 @@ function private function_ea257a5f(localclientnum, *oldval, *newval, *bnewent, *
 // Params 7, eflags: 0x2 linked
 // Checksum 0x3d769ce7, Offset: 0x7f0
 // Size: 0xb6
-function function_48a507d9(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function dog_projectile_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self.var_e65311fc = util::playfxontag(fieldname, #"hash_901b71115b1cd3f", self, "j_spine4");
     } else if (isdefined(self.var_e65311fc)) {

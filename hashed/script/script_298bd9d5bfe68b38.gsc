@@ -10,17 +10,17 @@
 #using scripts\core_common\callbacks_shared.gsc;
 #using scripts\core_common\clientfield_shared.gsc;
 
-#namespace namespace_364bfa7e;
+#namespace weapon_cache;
 
-// Namespace namespace_364bfa7e/namespace_364bfa7e
+// Namespace weapon_cache/weapon_cache
 // Params 0, eflags: 0x5
 // Checksum 0xf1d5cf45, Offset: 0x1d8
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_4628a9543d238978", &function_70a657d8, undefined, &function_5700f119, undefined);
+    system::register(#"weapon_cache", &function_70a657d8, undefined, &function_5700f119, undefined);
 }
 
-// Namespace namespace_364bfa7e/namespace_364bfa7e
+// Namespace weapon_cache/weapon_cache
 // Params 0, eflags: 0x6 linked
 // Checksum 0x84585ae8, Offset: 0x228
 // Size: 0x128
@@ -37,7 +37,7 @@ function private function_70a657d8() {
     level.var_50c35573 = [];
 }
 
-// Namespace namespace_364bfa7e/namespace_364bfa7e
+// Namespace weapon_cache/weapon_cache
 // Params 0, eflags: 0x2 linked
 // Checksum 0x92778c9b, Offset: 0x358
 // Size: 0x24
@@ -45,7 +45,7 @@ function onplayerconnect() {
     level.var_50c35573[self getentitynumber()] = 1;
 }
 
-// Namespace namespace_364bfa7e/namespace_364bfa7e
+// Namespace weapon_cache/weapon_cache
 // Params 0, eflags: 0x2 linked
 // Checksum 0xa1527727, Offset: 0x388
 // Size: 0xe8
@@ -60,7 +60,7 @@ function function_5700f119() {
     }
 }
 
-// Namespace namespace_364bfa7e/namespace_364bfa7e
+// Namespace weapon_cache/weapon_cache
 // Params 0, eflags: 0x2 linked
 // Checksum 0x9720f5f2, Offset: 0x478
 // Size: 0x1f2
@@ -68,7 +68,7 @@ function function_4c6228cd() {
     usetrigger = spawn("trigger_radius_use", self.origin, 0, 96, 32);
     usetrigger setcursorhint("HINT_INTERACTIVE_PROMPT");
     usetrigger function_dae4ab9b(0);
-    useobject = gameobjects::create_use_object(#"any", usetrigger, [], undefined, #"hash_4628a9543d238978", 1, 1, 1, self.angles);
+    useobject = gameobjects::create_use_object(#"any", usetrigger, [], undefined, #"weapon_cache", 1, 1, 1, self.angles);
     useobject gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
     useobject gameobjects::allow_use(#"hash_5ccfd7bbbf07c770");
     useobject gameobjects::set_use_time(0);
@@ -83,7 +83,7 @@ function function_4c6228cd() {
     useobject.var_73b9e48e.useobject = self;
 }
 
-// Namespace namespace_364bfa7e/namespace_364bfa7e
+// Namespace weapon_cache/weapon_cache
 // Params 1, eflags: 0x2 linked
 // Checksum 0x8a13c96f, Offset: 0x678
 // Size: 0x2ac
@@ -112,7 +112,7 @@ function function_692bd0bc(player) {
     player thread function_f9502d83();
 }
 
-// Namespace namespace_364bfa7e/namespace_364bfa7e
+// Namespace weapon_cache/weapon_cache
 // Params 0, eflags: 0x2 linked
 // Checksum 0x39fc9e3, Offset: 0x930
 // Size: 0x1d0
@@ -132,7 +132,7 @@ function function_f9502d83() {
     }
 }
 
-// Namespace namespace_364bfa7e/namespace_364bfa7e
+// Namespace weapon_cache/weapon_cache
 // Params 1, eflags: 0x6 linked
 // Checksum 0x6e5f231b, Offset: 0xb08
 // Size: 0x3e
@@ -143,7 +143,7 @@ function private function_43017839(player) {
     return 1;
 }
 
-// Namespace namespace_364bfa7e/namespace_364bfa7e
+// Namespace weapon_cache/weapon_cache
 // Params 1, eflags: 0x6 linked
 // Checksum 0x5aab1f87, Offset: 0xb50
 // Size: 0x2c
@@ -151,7 +151,7 @@ function private function_b24258(*eventstruct) {
     self luinotifyevent(#"hash_c893e57629c7648");
 }
 
-// Namespace namespace_364bfa7e/namespace_364bfa7e
+// Namespace weapon_cache/weapon_cache
 // Params 0, eflags: 0x2 linked
 // Checksum 0x619fd154, Offset: 0xb88
 // Size: 0x84
@@ -163,7 +163,7 @@ function function_f830a9db() {
     self clientfield::set_to_player("weapon_cache_cac_cooldown", 0);
 }
 
-// Namespace namespace_364bfa7e/namespace_364bfa7e
+// Namespace weapon_cache/weapon_cache
 // Params 0, eflags: 0x6 linked
 // Checksum 0x64f8b0bc, Offset: 0xc18
 // Size: 0x54
@@ -173,7 +173,7 @@ function private function_6f438290() {
     return var_8794b467[0];
 }
 
-// Namespace namespace_364bfa7e/namespace_364bfa7e
+// Namespace weapon_cache/weapon_cache
 // Params 0, eflags: 0x4
 // Checksum 0x7e3135ac, Offset: 0xc78
 // Size: 0x7c
@@ -187,7 +187,7 @@ function private function_74547745() {
     var_73b9e48e function_70db7bab();
 }
 
-// Namespace namespace_364bfa7e/namespace_364bfa7e
+// Namespace weapon_cache/weapon_cache
 // Params 1, eflags: 0x6 linked
 // Checksum 0xa3e0af6a, Offset: 0xd00
 // Size: 0x3c
@@ -197,7 +197,7 @@ function private function_2909dca6(var_73b9e48e) {
     var_73b9e48e function_70db7bab();
 }
 
-// Namespace namespace_364bfa7e/namespace_364bfa7e
+// Namespace weapon_cache/weapon_cache
 // Params 0, eflags: 0x6 linked
 // Checksum 0xf0c75e1d, Offset: 0xd48
 // Size: 0x58
@@ -208,7 +208,7 @@ function private function_4ac19c4f() {
     self.var_331b8fa4++;
 }
 
-// Namespace namespace_364bfa7e/namespace_364bfa7e
+// Namespace weapon_cache/weapon_cache
 // Params 0, eflags: 0x6 linked
 // Checksum 0xfd4e62fc, Offset: 0xda8
 // Size: 0x64

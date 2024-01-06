@@ -202,14 +202,14 @@ function function_8106e2e1() {
     switch (level.var_28c22d88[0]) {
     case #"tkdn_raid_bar":
         var_4f2ba130 = self getweaponslist();
-        foreach (var_5f48185 in var_4f2ba130) {
-            self takeweapon(var_5f48185);
+        foreach (e_w in var_4f2ba130) {
+            self takeweapon(e_w);
         }
         break;
     case #"tkdn_raid_gearup":
         var_4f2ba130 = self getweaponslist();
-        foreach (var_5f48185 in var_4f2ba130) {
-            self takeweapon(var_5f48185);
+        foreach (e_w in var_4f2ba130) {
+            self takeweapon(e_w);
         }
         break;
     case #"tkdn_raid_apt":
@@ -238,8 +238,8 @@ function function_8106e2e1() {
 // Size: 0x184
 function function_95b5afc9() {
     var_4f2ba130 = self getweaponslist();
-    foreach (var_5f48185 in var_4f2ba130) {
-        self takeweapon(var_5f48185);
+    foreach (e_w in var_4f2ba130) {
+        self takeweapon(e_w);
     }
     var_9f43fd46 = getweapon(#"smg_standard_t9", "steadyaim", "elo2", "grip");
     pistol = getweapon(#"pistol_semiauto_t9", "steadyaim", "fastreload", "reflex_pistol");
@@ -254,8 +254,8 @@ function function_95b5afc9() {
 // Size: 0x1cc
 function function_6154e4c2() {
     var_4f2ba130 = self getweaponslist();
-    foreach (var_5f48185 in var_4f2ba130) {
-        self takeweapon(var_5f48185);
+    foreach (e_w in var_4f2ba130) {
+        self takeweapon(e_w);
     }
     primary_weapon = getweapon(#"smg_standard_t9", array("reflex", "fastreload"));
     primaryoffhand = getweapon(#"frag_grenade");
@@ -291,9 +291,9 @@ function function_13f6e85() {
 function function_43593d7d() {
     player = getplayers()[0];
     var_4f2ba130 = self getweaponslist();
-    foreach (var_5f48185 in var_4f2ba130) {
-        if (isdefined(var_5f48185) && var_5f48185 != getweapon(#"null_offhand_primary") && var_5f48185 != getweapon("gadget_health_regen")) {
-            self takeweapon(var_5f48185);
+    foreach (e_w in var_4f2ba130) {
+        if (isdefined(e_w) && e_w != getweapon(#"null_offhand_primary") && e_w != getweapon("gadget_health_regen")) {
+            self takeweapon(e_w);
         }
     }
     primary_weapon = getweapon(#"ar_standard_t9", array("holo", "steadyaim", "grip", "extclip"));
@@ -315,8 +315,8 @@ function function_43593d7d() {
 function function_acddd8f1() {
     player = getplayers()[0];
     var_4f2ba130 = self getweaponslist();
-    foreach (var_5f48185 in var_4f2ba130) {
-        self takeweapon(var_5f48185);
+    foreach (e_w in var_4f2ba130) {
+        self takeweapon(e_w);
     }
     level waittill(#"hash_47b9f42b49b80814");
     wait(1);

@@ -85,8 +85,8 @@ function function_51012821(origin, entity, var_d1cd7a80, var_9b487a9b = 1, searc
 // Size: 0x238
 function function_913ecbbc(&var_a6fe91fd, mimic, var_1386d828, var_c3962187, var_75f9ae2d) {
     if (isstruct(var_1386d828)) {
-        if (isdefined(level.var_6939ebc1[var_1386d828.var_da70348d])) {
-            var_6f50b277 = [[ level.var_6939ebc1[var_1386d828.var_da70348d].handler ]](var_1386d828);
+        if (isdefined(level.var_6939ebc1[var_1386d828.lure_prop_type])) {
+            var_6f50b277 = [[ level.var_6939ebc1[var_1386d828.lure_prop_type].handler ]](var_1386d828);
             if (isdefined(var_6f50b277)) {
                 var_1386d828 = var_6f50b277.prop;
                 var_d56229a9 = var_6f50b277.activation_func;
@@ -180,7 +180,7 @@ function function_d8f63afd(origin, radius, var_9b487a9b, var_d022f4ac = 1) {
     var_79422067 = level.var_6e175eb;
     var_79422067 = function_72d3bca6(var_79422067, origin, undefined, undefined, radius);
     foreach (index, spawn_point in var_79422067) {
-        if (isdefined(level.var_6939ebc1[spawn_point.var_da70348d].var_df801b88) && ![[ level.var_6939ebc1[spawn_point.var_da70348d].var_df801b88 ]](spawn_point)) {
+        if (isdefined(level.var_6939ebc1[spawn_point.lure_prop_type].var_df801b88) && ![[ level.var_6939ebc1[spawn_point.lure_prop_type].var_df801b88 ]](spawn_point)) {
             var_79422067[index] = undefined;
         }
     }
@@ -245,7 +245,7 @@ function function_c928b745(&spawn_points, var_9b487a9b, entity, var_75f9ae2d) {
     }
     spawn_points = array::randomize(spawn_points);
     foreach (loc in spawn_points) {
-        if (isdefined(loc.var_da70348d) || function_a1ef346b(undefined, loc.origin, 300).size) {
+        if (isdefined(loc.lure_prop_type) || function_a1ef346b(undefined, loc.origin, 300).size) {
             continue;
         }
         prop = function_fc585b51(loc, var_75f9ae2d);
@@ -834,7 +834,7 @@ function function_f021ef67(prop, &var_ef7458f2, var_1fc547b0) {
     }
     prop.var_1626d18c = undefined;
     prop.claimed = undefined;
-    if (!isdefined(prop.spawn_loc.var_da70348d)) {
+    if (!isdefined(prop.spawn_loc.lure_prop_type)) {
         prop val::set(#"mimic_spawn", "hide", 1);
         prop notsolid();
     }
@@ -911,7 +911,7 @@ function function_175bb809(prop, var_38acf8bf = 1) {
         [[ prop.var_3c964886 ]](prop);
         prop.var_3c964886 = undefined;
     }
-    if (isdefined(prop.spawn_loc.var_da70348d)) {
+    if (isdefined(prop.spawn_loc.lure_prop_type)) {
         return;
     }
     if (isdefined(prop.var_d661f9f1)) {

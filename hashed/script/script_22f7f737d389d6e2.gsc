@@ -70,7 +70,7 @@ function function_8dbbde01(player, origin) {
     org namespace_83eb6304::function_3ecfde67("teamshift");
     trigger thread function_7649c09d();
     waitresult = undefined;
-    waitresult = player waittilltimeout(timetowait, #"death", #"entering_last_stand", #"hash_658e10e65ed524c0", #"disconnect");
+    waitresult = player waittilltimeout(timetowait, #"death", #"entering_last_stand", #"doa_exit_taken", #"disconnect");
     org namespace_83eb6304::turnofffx("teamshift");
     var_23141e86 namespace_e32bb68::function_ae271c0b("evt_doa_pickup_coatofarms_active_lp");
     var_23141e86 namespace_e32bb68::function_3a59ec34("evt_doa_pickup_coatofarms_active_end");
@@ -106,7 +106,7 @@ function private function_8ff2eaf3(trigger) {
         self.team = "allies";
     }
     self.favoriteenemy = undefined;
-    level.var_8cff5775.var_e2e8967b[level.var_8cff5775.var_e2e8967b.size] = self;
+    level.doa.var_e2e8967b[level.doa.var_e2e8967b.size] = self;
     self clearenemy();
     timeleft = gettime() + 20000;
     while (gettime() < timeleft) {
@@ -118,7 +118,7 @@ function private function_8ff2eaf3(trigger) {
     }
     self namespace_83eb6304::turnofffx("teamshift_contact");
     self namespace_e32bb68::function_ae271c0b("evt_doa_pickup_coatofarms_zombie_lp");
-    arrayremovevalue(level.var_8cff5775.var_e2e8967b, self);
+    arrayremovevalue(level.doa.var_e2e8967b, self);
     self clearenemy();
     self.favoriteenemy = undefined;
     self.var_d55daa7c = undefined;

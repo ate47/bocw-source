@@ -23,7 +23,7 @@
 // Checksum 0xdf63919d, Offset: 0x248
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_4d08eeea0f720e8d", &function_70a657d8, undefined, undefined, #"hash_f81b9dea74f0ee");
+    system::register(#"sr_demented_echo", &function_70a657d8, undefined, undefined, #"hash_f81b9dea74f0ee");
 }
 
 // Namespace namespace_780aaec4/namespace_780aaec4

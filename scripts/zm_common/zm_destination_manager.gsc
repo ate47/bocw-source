@@ -118,7 +118,7 @@ function function_e4254bac(destination, var_f281f968) {
     foreach (location in locations) {
         instances = array::randomize(namespace_8b6a9d79::function_f703a5a(location));
         foreach (instance in instances) {
-            if (instance.var_b588b063 === #"start_spawn" && instance.script_int === var_f281f968) {
+            if (instance.content_script_name === #"start_spawn" && instance.script_int === var_f281f968) {
                 return instance;
             }
         }

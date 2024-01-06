@@ -31,14 +31,14 @@
 // Checksum 0x15932554, Offset: 0x190
 // Size: 0x264
 function init() {
-    clientfield::register("scriptmover", "play_sfx", 1, 8, "int", &function_9c0d45e6, 0, 0);
-    clientfield::register("allplayers", "play_sfx", 1, 8, "int", &function_9c0d45e6, 0, 0);
-    clientfield::register("actor", "play_sfx", 1, 8, "int", &function_9c0d45e6, 0, 0);
-    clientfield::register("vehicle", "play_sfx", 1, 8, "int", &function_9c0d45e6, 0, 0);
-    clientfield::register("scriptmover", "stop_sfx", 1, 8, "int", &function_618b9443, 0, 0);
-    clientfield::register("allplayers", "stop_sfx", 1, 8, "int", &function_618b9443, 0, 0);
-    clientfield::register("actor", "stop_sfx", 1, 8, "int", &function_618b9443, 0, 0);
-    clientfield::register("vehicle", "stop_sfx", 1, 8, "int", &function_618b9443, 0, 0);
+    clientfield::register("scriptmover", "play_sfx", 1, 8, "int", &play_sfx, 0, 0);
+    clientfield::register("allplayers", "play_sfx", 1, 8, "int", &play_sfx, 0, 0);
+    clientfield::register("actor", "play_sfx", 1, 8, "int", &play_sfx, 0, 0);
+    clientfield::register("vehicle", "play_sfx", 1, 8, "int", &play_sfx, 0, 0);
+    clientfield::register("scriptmover", "stop_sfx", 1, 8, "int", &stop_sfx, 0, 0);
+    clientfield::register("allplayers", "stop_sfx", 1, 8, "int", &stop_sfx, 0, 0);
+    clientfield::register("actor", "stop_sfx", 1, 8, "int", &stop_sfx, 0, 0);
+    clientfield::register("vehicle", "stop_sfx", 1, 8, "int", &stop_sfx, 0, 0);
     namespace_9bef0a98::function_fd4107e4();
     function_32d5e898();
 }
@@ -55,7 +55,7 @@ function function_32d5e898(*localclientnum) {
 // Params 7, eflags: 0x2 linked
 // Checksum 0xacc0928d, Offset: 0x418
 // Size: 0x74
-function function_9c0d45e6(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function play_sfx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (fieldname != 0) {
         return;
     }
@@ -68,7 +68,7 @@ function function_9c0d45e6(localclientnum, *oldval, newval, *bnewent, *binitials
 // Params 7, eflags: 0x2 linked
 // Checksum 0xd7bf5db6, Offset: 0x498
 // Size: 0x74
-function function_618b9443(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function stop_sfx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (fieldname != 0) {
         return;
     }

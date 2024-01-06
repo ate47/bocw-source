@@ -7,9 +7,9 @@
 #using scripts\core_common\util_shared.csc;
 #using scripts\core_common\struct.csc;
 
-#namespace namespace_6d8a9d04;
+#namespace dialog_tree;
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 0, eflags: 0x5
 // Checksum 0x62ffb14b, Offset: 0x128
 // Size: 0x34
@@ -17,7 +17,7 @@ function private autoexec __init__system__() {
     system::register("dialog_tree", &function_70a657d8, undefined, undefined, undefined);
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 0, eflags: 0x6 linked
 // Checksum 0x9aa74bcc, Offset: 0x168
 // Size: 0xdc
@@ -27,7 +27,7 @@ function private function_70a657d8() {
     clientfield::register("toplayer", "dt_set_hide_reticle_dot", 1, 1, "int", &function_356192f3, 0, 0);
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 7, eflags: 0x2 linked
 // Checksum 0x6e7eda68, Offset: 0x250
 // Size: 0x192
@@ -52,7 +52,7 @@ function function_63175268(*localclientnum, *oldval, newval, *bnewent, *binitial
     }
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 7, eflags: 0x6 linked
 // Checksum 0xe816f349, Offset: 0x3f0
 // Size: 0xac
@@ -64,7 +64,7 @@ function private function_356192f3(localclientnum, *oldval, newval, *bnewent, *b
     }
 }
 
-// Namespace namespace_6d8a9d04/namespace_6d8a9d04
+// Namespace dialog_tree/dialog_tree
 // Params 7, eflags: 0x2 linked
 // Checksum 0x30c9531, Offset: 0x4a8
 // Size: 0x192

@@ -97,7 +97,7 @@ function function_c52e8ba(player, var_8d5d092c) {
             self.hint_string[n_player_index] = player zm_utility::function_d6046228(#"hash_2731cc5c1208e2e4", #"hash_47b20f457b370888");
             b_result = 1;
         }
-    } else if (!level flag::get(#"hash_5c4e5d3571f5e1f6")) {
+    } else if (!level flag::get(#"dark_aether_active")) {
         self.hint_string[n_player_index] = #"";
     } else if (!self zm_fasttravel::function_d06e636b(player) || player isswitchingweapons()) {
         self.hint_string[n_player_index] = #"";
@@ -116,7 +116,7 @@ function function_c52e8ba(player, var_8d5d092c) {
         case #"hash_15d6fece382a5cbe":
             hint_string = #"hash_19ae69436c39da09";
             break;
-        case #"hash_2deb5dbcd63b4191":
+        case #"fasttravel_loc_crash_site_down":
             hint_string = #"hash_3be004aaa3ef2edd";
             break;
         case #"hash_2b732b2cff505c84":
@@ -125,7 +125,7 @@ function function_c52e8ba(player, var_8d5d092c) {
         case #"hash_5af6096260ab857c":
             hint_string = #"hash_5c514164da699bed";
             break;
-        case #"hash_7cd29d5f4696b949":
+        case #"fasttravel_loc_pond_down":
             hint_string = #"hash_5de92cc1bf44a38a";
             break;
         case #"hash_defdefdefdefdef0":
@@ -170,12 +170,12 @@ function private function_76138a38() {
 function function_ebb262ad() {
     level endon(#"end_game");
     while (1) {
-        level flag::wait_till(#"hash_5c4e5d3571f5e1f6");
+        level flag::wait_till(#"dark_aether_active");
         if (level flag::get(#"hash_268c943ffdd74fa")) {
             break;
         }
         level thread function_1fad5dd0();
-        level flag::wait_till_clear(#"hash_5c4e5d3571f5e1f6");
+        level flag::wait_till_clear(#"dark_aether_active");
         function_2b30b25d();
     }
 }
@@ -187,7 +187,7 @@ function function_ebb262ad() {
 function function_130d4334() {
     level endon(#"hash_268c943ffdd74fa");
     while (1) {
-        level flag::wait_till(#"hash_5c4e5d3571f5e1f6");
+        level flag::wait_till(#"dark_aether_active");
         a_s_fasttravel = struct::get_array("fasttravel_trigger");
         foreach (s_fasttravel in a_s_fasttravel) {
             if (isdefined(s_fasttravel.target)) {
@@ -195,7 +195,7 @@ function function_130d4334() {
                 array::run_all(a_ents, &hide);
             }
         }
-        level flag::wait_till_clear(#"hash_5c4e5d3571f5e1f6");
+        level flag::wait_till_clear(#"dark_aether_active");
         foreach (s_fasttravel in a_s_fasttravel) {
             if (isdefined(s_fasttravel.target)) {
                 a_ents = getentarray(s_fasttravel.target, "targetname");
@@ -285,7 +285,7 @@ function function_12f1a9dd() {
 // Checksum 0x69e6f933, Offset: 0x1490
 // Size: 0x29c
 function function_1fad5dd0() {
-    level endon(#"hash_1984980316091991", #"hash_61e8a39b3a4bee6a", #"end_game");
+    level endon(#"dark_side_timeout", #"hash_61e8a39b3a4bee6a", #"end_game");
     a_s_fasttravel = struct::get_array("fasttravel_trigger");
     var_7f26d025 = 0;
     while (1) {
@@ -344,7 +344,7 @@ function function_2b30b25d() {
 // Size: 0xc4
 function function_ca8f3b73() {
     level flag::wait_till(#"hash_268c943ffdd74fa");
-    level flag::wait_till_clear(#"hash_5c4e5d3571f5e1f6");
+    level flag::wait_till_clear(#"dark_aether_active");
     wait(1);
     level thread function_1fad5dd0();
     level thread zm_silver_pap_quest::function_c1bd7e55();

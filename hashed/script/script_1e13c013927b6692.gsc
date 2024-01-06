@@ -71,7 +71,7 @@ function function_c52e8ba(player, var_8d5d092c) {
         self.hint_string[n_player_index] = #"";
     } else if (isdefined(self.stub.var_a92d1b24) && !level flag::get_all(self.stub.var_a92d1b24)) {
         switch (self.stub.script_string) {
-        case #"hash_3d8f4b7588477e3":
+        case #"village":
         case #"firebase":
             self.hint_string[n_player_index] = #"zombie/fasttravel_locked";
             break;
@@ -81,7 +81,7 @@ function function_c52e8ba(player, var_8d5d092c) {
         b_result = 1;
     } else if (is_true(player.var_9c7b96ed[var_8d5d092c])) {
         switch (self.stub.script_string) {
-        case #"hash_3d8f4b7588477e3":
+        case #"village":
             self.hint_string[n_player_index] = #"hash_1b9857d1769d3430";
             b_result = 1;
             break;
@@ -92,7 +92,7 @@ function function_c52e8ba(player, var_8d5d092c) {
         }
     } else if (isdefined(self.stub.delay) && !self.stub flag::get("delayed")) {
         switch (self.stub.script_string) {
-        case #"hash_3d8f4b7588477e3":
+        case #"village":
             self.hint_string[n_player_index] = #"hash_1b9857d1769d3430";
             b_result = 1;
             break;
@@ -103,7 +103,7 @@ function function_c52e8ba(player, var_8d5d092c) {
         }
     } else {
         switch (self.stub.script_string) {
-        case #"hash_3d8f4b7588477e3":
+        case #"village":
             if (level flag::get(#"hash_7752d012501cd222") || level flag::get(#"hash_7735f4e5fdb1382b")) {
                 self.hint_string[n_player_index] = #"hash_1155071b36db5cc4";
             } else {

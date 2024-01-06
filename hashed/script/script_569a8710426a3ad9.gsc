@@ -4,9 +4,9 @@
 #using scripts\core_common\compass.gsc;
 #using scripts\core_common\load_shared.gsc;
 
-#namespace namespace_46340e70;
+#namespace wz_zoo;
 
-// Namespace namespace_46340e70/level_init
+// Namespace wz_zoo/level_init
 // Params 1, eflags: 0x20
 // Checksum 0xe81a428e, Offset: 0x260
 // Size: 0x64
@@ -18,7 +18,7 @@ function event_handler[level_init] main(*eventstruct) {
     function_e8fa58f2();
 }
 
-// Namespace namespace_46340e70/namespace_46340e70
+// Namespace wz_zoo/wz_zoo
 // Params 0, eflags: 0x2 linked
 // Checksum 0xc89795d7, Offset: 0x2d0
 // Size: 0xac
@@ -32,7 +32,7 @@ function function_564698fd() {
     }
 }
 
-// Namespace namespace_46340e70/namespace_46340e70
+// Namespace wz_zoo/wz_zoo
 // Params 0, eflags: 0x2 linked
 // Checksum 0xfa6ba4c2, Offset: 0x388
 // Size: 0x19c

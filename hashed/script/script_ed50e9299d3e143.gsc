@@ -53,21 +53,21 @@ function private function_93a22b64() {
 // Size: 0x534
 function private function_cb019e1f() {
     /#
-        assert(isscriptfunctionptr(&function_e6bb5366));
+        assert(isscriptfunctionptr(&aileapgoalservice));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("aiLeapGoalService", &function_e6bb5366, 1);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("aiLeapGoalService", &aileapgoalservice, 1);
     /#
-        assert(isscriptfunctionptr(&function_a69c4b69));
+        assert(isscriptfunctionptr(&aishouldleap));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("aiShouldLeap", &function_a69c4b69);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("aiShouldLeap", &aishouldleap);
     /#
-        assert(isscriptfunctionptr(&function_602211f7));
+        assert(isscriptfunctionptr(&aiisleaping));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("aiIsLeaping", &function_602211f7);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("aiIsLeaping", &aiisleaping);
     /#
-        assert(isscriptfunctionptr(&function_5bfaa15d));
+        assert(isscriptfunctionptr(&aishouldleapfollowpath));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("aiShouldLeapFollowPath", &function_5bfaa15d);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("aiShouldLeapFollowPath", &aishouldleapfollowpath);
     /#
         assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
     #/
@@ -89,13 +89,13 @@ function private function_cb019e1f() {
     #/
     behaviortreenetworkutility::registerbehaviortreeaction("aiLeapPathLoop", &function_21a9aefd, &function_3cc9b7f6, &function_9952445c);
     /#
-        assert(isscriptfunctionptr(&function_34761c6c));
+        assert(isscriptfunctionptr(&aileapstart));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("aiLeapStart", &function_34761c6c);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("aiLeapStart", &aileapstart);
     /#
-        assert(isscriptfunctionptr(&function_dccd852a));
+        assert(isscriptfunctionptr(&aileapterminate));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("aiLeapTerminate", &function_dccd852a);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("aiLeapTerminate", &aileapterminate);
     animationstatenetwork::registeranimationmocomp("mocomp_ai_leap", &function_92a98e31, &function_f14ad812, &function_a8ad5ef0);
     animationstatenetwork::registeranimationmocomp("mocomp_ai_leap_face_goal", &function_f4e094cf, undefined, &function_4e828c3b);
     animationstatenetwork::registeranimationmocomp("mocomp_ai_leap_path", &function_384fce1f, &function_a53a095f, &function_2534f25d);
@@ -181,7 +181,7 @@ function private function_52c99a4f(entity) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x925ea039, Offset: 0xe70
 // Size: 0xc9e
-function function_e6bb5366(entity) {
+function aileapgoalservice(entity) {
     if (isdefined(entity.var_862cb24b) || gettime() < entity.var_1e185a34 || !is_true(entity.var_7c4488fd) || isdefined(entity.var_ed09bf93)) {
         return 0;
     }
@@ -317,7 +317,7 @@ function function_e6bb5366(entity) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x8cde51ca, Offset: 0x1b18
 // Size: 0x36
-function function_a69c4b69(entity) {
+function aishouldleap(entity) {
     if (isdefined(entity.var_862cb24b) || isdefined(entity.var_ed09bf93)) {
         return 1;
     }
@@ -328,7 +328,7 @@ function function_a69c4b69(entity) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xc373e1ae, Offset: 0x1b58
 // Size: 0x24
-function function_602211f7(entity) {
+function aiisleaping(entity) {
     if (isdefined(entity.var_1eb8b1ad)) {
         return 1;
     }
@@ -339,7 +339,7 @@ function function_602211f7(entity) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0xb1b12d15, Offset: 0x1b88
 // Size: 0x36
-function private function_5bfaa15d(entity) {
+function private aishouldleapfollowpath(entity) {
     if (isdefined(entity.var_6da37a9a) && isdefined(entity.var_ed09bf93)) {
         return 1;
     }
@@ -441,7 +441,7 @@ function private function_9952445c(entity, *asmstatename) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0xb303eaf4, Offset: 0x2238
 // Size: 0xb4
-function private function_34761c6c(entity) {
+function private aileapstart(entity) {
     /#
         if (getdvarint(#"hash_6a18a97ccb2ee1d8", 0)) {
             println("<unknown string>" + "<unknown string>" + self getentitynumber() + "<unknown string>" + entity.origin);
@@ -455,7 +455,7 @@ function private function_34761c6c(entity) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x5eb67afc, Offset: 0x22f8
 // Size: 0x104
-function private function_dccd852a(entity) {
+function private aileapterminate(entity) {
     entity.var_1eb8b1ad = undefined;
     if (isdefined(entity.var_e34ba400) && isdefined(entity.var_a87eb847)) {
         entity.var_d27dc378.entity = gettime() + entity.var_e34ba400 + randomfloat(entity.var_a87eb847 - entity.var_e34ba400);
@@ -610,7 +610,7 @@ function private function_376516c9() {
             self.var_73915a58 = undefined;
         } else if (self.var_73915a58 !== var_bf810675) {
             self.var_73915a58 = var_bf810675;
-            if (!function_602211f7(self)) {
+            if (!aiisleaping(self)) {
                 /#
                     if (getdvarint(#"hash_6a18a97ccb2ee1d8", 0)) {
                         println("<unknown string>" + "<unknown string>" + self getentitynumber() + "<unknown string>");
@@ -751,7 +751,7 @@ function function_fe23c655(var_8787728e, var_5f3b05e8) {
     if (!(isdefined(var_8787728e) && isdefined(var_5f3b05e8))) {
         return;
     }
-    if (self function_72371f2a() || function_a69c4b69(self) || function_602211f7(self)) {
+    if (self function_72371f2a() || aishouldleap(self) || aiisleaping(self)) {
         /#
             if (getdvarint(#"hash_6a18a97ccb2ee1d8", 0)) {
                 println("<unknown string>" + "<unknown string>" + self getentitynumber() + "<unknown string>" + var_8787728e + "<unknown string>" + var_5f3b05e8 + "<unknown string>");

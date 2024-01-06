@@ -29,8 +29,8 @@ function private autoexec __init__system__() {
 function private function_70a657d8() {
     init_shared();
     callback::on_start_gametype(&start_gametype);
-    level.challenges_callback_vehicledamaged = &function_9edd9ef;
-    level.challenges_callback_vehiclekilled = &function_afa829d8;
+    level.challenges_callback_vehicledamaged = &vehicledamaged;
+    level.challenges_callback_vehiclekilled = &vehiclekilled;
 }
 
 // Namespace challenges/challenges
@@ -121,7 +121,7 @@ function function_fc664fc6(challengestat, var_2c59fe94, var_21bccb49 = 1, var_ca
 // Params 6, eflags: 0x2 linked
 // Checksum 0x1b9e534f, Offset: 0x640
 // Size: 0x144
-function function_e030d5db(einflictor, attacker, idamage, smeansofdeath, weapon = level.weaponnone, shitloc) {
+function actorkilled(einflictor, attacker, idamage, smeansofdeath, weapon = level.weaponnone, shitloc) {
     attacker endon(#"disconnect");
     data = spawnstruct();
     data.victim.data = self;
@@ -133,7 +133,7 @@ function function_e030d5db(einflictor, attacker, idamage, smeansofdeath, weapon 
     data.shitloc = shitloc;
     data.time.data = gettime();
     data.victimweapon.data = data.victim.currentweapon;
-    if (einflictor === attacker.var_5ed65877) {
+    if (einflictor === attacker.body_shield_grenade) {
         data.var_2a0adc57.data = 1;
     }
     function_ff5f9a00(data);
@@ -157,7 +157,7 @@ function function_ff5f9a00(data) {
 // Params 5, eflags: 0x2 linked
 // Checksum 0x3fc7231a, Offset: 0x808
 // Size: 0x10c
-function function_57a0f795(einflictor, attacker, idamage, weapon = level.weaponnone, shitloc) {
+function actordamaged(einflictor, attacker, idamage, weapon = level.weaponnone, shitloc) {
     attacker endon(#"disconnect");
     data = spawnstruct();
     data.victim.data = self;
@@ -189,7 +189,7 @@ function function_5e9d4ad3(data) {
 // Params 6, eflags: 0x2 linked
 // Checksum 0xd498479f, Offset: 0x998
 // Size: 0x134
-function function_afa829d8(einflictor, attacker, idamage, smeansofdeath, weapon, shitloc) {
+function vehiclekilled(einflictor, attacker, idamage, smeansofdeath, weapon, shitloc) {
     if (isdefined(level.var_e855c811)) {
         return;
     }
@@ -228,7 +228,7 @@ function function_94d6aade(data) {
 // Params 5, eflags: 0x2 linked
 // Checksum 0x675d284f, Offset: 0xb50
 // Size: 0x10c
-function function_9edd9ef(einflictor, attacker, idamage, weapon = level.weaponnone, shitloc) {
+function vehicledamaged(einflictor, attacker, idamage, weapon = level.weaponnone, shitloc) {
     attacker endon(#"disconnect");
     data = spawnstruct();
     data.victim.data = self;
@@ -377,7 +377,7 @@ function private function_65b0a754() {
             namespace_61e6d095::remove(#"hash_166066a38ca1f36d");
         }
         namespace_61e6d095::create(#"hash_166066a38ca1f36d", #"hash_367f58e18cde1c9e");
-        namespace_61e6d095::function_d3c3e5c3(#"hash_166066a38ca1f36d", [2:#"hash_af16b6b2e499098", 1:#"interactive_map", 0:#"hash_50dd1fbbd883b24e"]);
+        namespace_61e6d095::function_d3c3e5c3(#"hash_166066a38ca1f36d", [2:#"hash_af16b6b2e499098", 1:#"interactive_map", 0:#"dialog_tree"]);
         namespace_61e6d095::function_9ade1d9b(#"hash_166066a38ca1f36d", "text", hash(var_21e736f9));
         namespace_61e6d095::function_9ade1d9b(#"hash_166066a38ca1f36d", "desc", hash(var_3e63e7e4));
         namespace_61e6d095::function_9ade1d9b(#"hash_166066a38ca1f36d", "count", challengexp);

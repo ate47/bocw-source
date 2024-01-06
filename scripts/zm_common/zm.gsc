@@ -402,7 +402,7 @@ function function_21e4b1c2() {
     if (is_true(self.laststand)) {
         return 1;
     }
-    if (!level flag::get(#"hash_443b6a1ea0c4b52b")) {
+    if (!level flag::get(#"intro_scene_done")) {
         return 1;
     }
     if (self scene::is_igc_active()) {
@@ -460,9 +460,9 @@ function function_b0613540() {
                 if (var_655d056a !== self.var_c069e1cd) {
                     println(text);
                 }
-                var_a479c6be = self getplayercamerapos() + anglestoforward(self getplayerangles()) * 50 + vectorscale((0, 0, 1), 15) + anglestoright(self getplayerangles()) * 25;
-                sphere(var_a479c6be, 3, function_1a01f2f7(self) ? (1, 0, 0) : (0, 1, 0), 1, 0, 10, 1);
-                debugstar(var_a479c6be, 1, function_1a01f2f7(self) ? (1, 0, 0) : (0, 1, 0));
+                sphere_pos = self getplayercamerapos() + anglestoforward(self getplayerangles()) * 50 + vectorscale((0, 0, 1), 15) + anglestoright(self getplayerangles()) * 25;
+                sphere(sphere_pos, 3, function_1a01f2f7(self) ? (1, 0, 0) : (0, 1, 0), 1, 0, 10, 1);
+                debugstar(sphere_pos, 1, function_1a01f2f7(self) ? (1, 0, 0) : (0, 1, 0));
             }
             waitframe(1);
         }
@@ -1999,7 +1999,7 @@ function function_9dd8ba0b(weapon_name) {
     case #"frost_blast_1":
     case #"frost_blast_3":
     case #"frost_blast_2":
-    case #"hash_2f14933f9c381974":
+    case #"frost_blast_5":
     case #"frost_blast_4":
     case #"hash_41adc0ca9daf6e9d":
     case #"energy_mine_4":
@@ -3099,7 +3099,7 @@ function private function_85ea1f60(item) {
             return 0;
         }
     }
-    if (is_true(item.var_2462eb26) || is_true(item.var_ab773b96) || is_true(item.var_864ea466)) {
+    if (is_true(item.magic_box_weapon) || is_true(item.wallbuy_weapon) || is_true(item.var_864ea466)) {
         return 0;
     }
     var_5d43f96a = 1;

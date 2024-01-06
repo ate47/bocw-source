@@ -235,7 +235,7 @@ function function_1f97238f(var_e07fc3c5, var_cdf41f72 = 1) {
     case #"hash_667e89d9c5124e84":
         var_198cd593 = struct::get("arcade_room_dest", "targetname");
         break;
-    case #"hash_5eade419487cae66":
+    case #"waw":
         var_198cd593 = struct::get("waw_player_start_pos", "targetname");
         var_cd594462 = 1;
         break;
@@ -668,7 +668,7 @@ function function_70c1775c(e_player) {
         if (!level flag::get(#"hash_3814c5c6793e2b2d")) {
             self sethintstring(#"hash_289d0eb4a904e033");
             return 1;
-        } else if (level flag::get(#"hash_3e765c26047c9f54") || level flag::get(#"hash_547cc154153f60ee")) {
+        } else if (level flag::get(#"hash_3e765c26047c9f54") || level flag::get(#"rbz_exfil_beacon_active")) {
             return 0;
         } else if (level flag::get(#"hash_549a957b8f4d551f") || level flag::get(#"hash_1b8228b2efbf4022") || level flag::get(#"hash_6de3a0458517d4ad")) {
             self sethintstring(#"hash_25f4721d7307ef13");
@@ -897,7 +897,7 @@ function function_d4c77559() {
 function function_187d7597() {
     level endon(#"end_game");
     self endon(#"death");
-    self waittill(#"hash_255be61a7cd034f6");
+    self waittill(#"chest_opened");
 }
 
 // Namespace namespace_edb23975/namespace_edb23975
@@ -1101,7 +1101,7 @@ function function_542f231(e_player) {
         if (!level flag::get(#"hash_3814c5c6793e2b2d")) {
             self sethintstring(#"hash_289d0eb4a904e033");
             return 1;
-        } else if (level flag::get(#"hash_3e765c26047c9f54") || level flag::get(#"hash_547cc154153f60ee")) {
+        } else if (level flag::get(#"hash_3e765c26047c9f54") || level flag::get(#"rbz_exfil_beacon_active")) {
             return 0;
         } else if (level flag::get(#"hash_62300d1a6a6d537e") || level flag::get(#"hash_6de3a0458517d4ad")) {
             self sethintstring(#"hash_25f4721d7307ef13");
@@ -1250,8 +1250,8 @@ function function_9a8fea6b(*str_notify) {
 // Size: 0x1a4
 function function_65ff42b0() {
     if (!isdefined(level.rcxd)) {
-        var_6c8607dd = struct::get("rcxd_spawner", "targetname");
-        level.rcxd = spawnvehicle(#"hash_1fac6cb792fef8ba", var_6c8607dd.origin, var_6c8607dd.angles);
+        rcxd_spawner = struct::get("rcxd_spawner", "targetname");
+        level.rcxd = spawnvehicle(#"hash_1fac6cb792fef8ba", rcxd_spawner.origin, rcxd_spawner.angles);
         if (isdefined(level.rcxd) && isdefined(level.var_7a1e7f5e)) {
             level.rcxd val::set("gp", "takedamage", 0);
             level.rcxd clientfield::increment("" + #"gp_spawn");
@@ -1545,7 +1545,7 @@ function function_7991969e(e_player) {
         if (!level flag::get(#"hash_3814c5c6793e2b2d")) {
             self sethintstring(#"hash_289d0eb4a904e033");
             return 1;
-        } else if (level flag::get(#"hash_3e765c26047c9f54") || level flag::get(#"hash_547cc154153f60ee")) {
+        } else if (level flag::get(#"hash_3e765c26047c9f54") || level flag::get(#"rbz_exfil_beacon_active")) {
             return 0;
         } else if (level flag::get(#"hash_480a4ce872938116") || level flag::get(#"hash_6de3a0458517d4ad")) {
             self sethintstring(#"hash_25f4721d7307ef13");
@@ -1604,7 +1604,7 @@ function function_f4b38561() {
         self zm_stats::increment_challenge_stat(#"hash_2157c2e652a3a1e4");
     }
     level thread function_3fd2fae6(#"hash_6c8e9e5de4dcbca");
-    self thread function_1f97238f(#"hash_5eade419487cae66");
+    self thread function_1f97238f(#"waw");
     level.no_powerups = 1;
     wait(2.45);
     if (isdefined(self)) {
@@ -2002,7 +2002,7 @@ function function_37c935e1() {
     level endon(#"end_game");
     self endon(#"death");
     level waittill(#"hash_6c8e9e5de4dcbca", #"hash_4b186b35454a7d2b");
-    self notify(#"hash_255be61a7cd034f6");
+    self notify(#"chest_opened");
     self delete();
 }
 
@@ -2013,7 +2013,7 @@ function function_37c935e1() {
 function function_c0f95bf4(var_e503dc79) {
     level endon(#"end_game");
     self endon(#"death");
-    self waittill(#"hash_255be61a7cd034f6");
+    self waittill(#"chest_opened");
     level zm_sq::function_53d0d99(#"hash_624aaed17c0e408e");
     switch (var_e503dc79) {
     case 0:

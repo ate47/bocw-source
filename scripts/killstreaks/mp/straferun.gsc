@@ -283,9 +283,9 @@ function function_1e30e51e(hardpointtype, killstreak_id, location, var_a6b1bda0,
     var_b818f98a = function_2e532eed(location);
     var_b818f98a.origin.var_b818f98a = var_b818f98a.origin + var_49d19de7;
     plane vehicle::function_bb9b43a9(startnode, var_1c847d0f, var_dda93e6c, var_b818f98a, var_e4c839a6);
-    plane.var_f8208d58.plane = [];
-    plane.var_f8208d58[#"origin"] = var_b818f98a.origin;
-    plane.var_f8208d58[#"angles"] = (0, var_b818f98a.yaw, 0);
+    plane.killbox.plane = [];
+    plane.killbox[#"origin"] = var_b818f98a.origin;
+    plane.killbox[#"angles"] = (0, var_b818f98a.yaw, 0);
     plane thread vehicle::get_on_and_go_path(startnode);
     plane thread heatseekingmissile::missiletarget_proximitydetonateincomingmissile(bundle, "death");
     plane thread watchforownerexit(self);
@@ -615,7 +615,7 @@ function function_ec6320ce(bundle, var_a6b1bda0) {
     }
     self.strafing = 1;
     self.var_23493b54++;
-    var_6a6f2e87 = self.var_f8208d58[#"origin"];
+    var_6a6f2e87 = self.killbox[#"origin"];
     var_2ea5f1f3 = bullettrace((var_6a6f2e87[0], var_6a6f2e87[1], 5000), (var_6a6f2e87[0], var_6a6f2e87[1], -5000), 0, undefined, 0, 1);
     var_6a6f2e87 = (var_6a6f2e87[0], var_6a6f2e87[1], var_2ea5f1f3[#"position"][2]);
     var_5455cb95 = anglestoforward((0, self.angles[1], 0));
@@ -970,7 +970,7 @@ function function_f7055dec() {
             if (isdefined(var_e0345575[var_4ef4e267]) && var_e0345575[var_4ef4e267] + 2000 > now) {
                 continue;
             }
-            if (distance2dsquared(self.var_f8208d58[#"origin"], var_62e5f4cc.origin) > var_6a3a9bb1) {
+            if (distance2dsquared(self.killbox[#"origin"], var_62e5f4cc.origin) > var_6a3a9bb1) {
                 continue;
             }
             if (!util::function_fbce7263(self.team, var_62e5f4cc.team)) {

@@ -118,7 +118,7 @@ function zone_init() {
 // Checksum 0x7da646ef, Offset: 0x1ad0
 // Size: 0x7c
 function function_2ccf9bdc() {
-    level flag::wait_till(#"hash_5c4e5d3571f5e1f6");
+    level flag::wait_till(#"dark_aether_active");
     namespace_f0b43eb5::create_challenge(#"hash_28a0e374fc2d128b", 90, undefined, undefined, #"hash_136efa9e9c0bcf06", undefined, &function_a0910b80, &function_f62d4e38);
 }
 
@@ -135,7 +135,7 @@ function function_a0910b80() {
 // Checksum 0xd9a16de9, Offset: 0x1b88
 // Size: 0x84
 function function_34c9de53(params) {
-    if (isplayer(params.eattacker) && level flag::get(#"hash_5c4e5d3571f5e1f6")) {
+    if (isplayer(params.eattacker) && level flag::get(#"dark_aether_active")) {
         params.eattacker namespace_f999c142::function_53a333a8(#"hash_1c39f9ea95f27462", level.var_8b7ab859 * 0.02);
     }
 }
@@ -156,8 +156,8 @@ function function_a74dcd0a(player) {
     if (!isdefined(level.var_fdcaf3a6)) {
         return player zm_zonemgr::get_player_zone();
     } else {
-        if (player.cached_zone.name === #"hash_4802456347c176c2" || player.cached_zone.name === #"hash_764f7bd07ef904") {
-            return #"hash_764f7bd07ef904";
+        if (player.cached_zone.name === #"zone_proto_exterior_rear2" || player.cached_zone.name === #"zone_proto_exterior_rear") {
+            return #"zone_proto_exterior_rear";
         }
         return player zm_zonemgr::get_player_zone();
     }
@@ -170,14 +170,14 @@ function function_a74dcd0a(player) {
 function function_64c67df3(zone_path) {
     if (isdefined(level.var_fdcaf3a6) && isdefined(zone_path)) {
         if (zone_path.cost == 2) {
-            if (self.cached_zone.name === #"hash_195633c405c3988f") {
-                if (self.favoriteenemy.cached_zone.name === #"hash_4802456347c176c2") {
-                    if (is_true(level.flag[#"hash_1b3a3f97ccd47121"])) {
-                        return level.zones[#"hash_4802456347c176c2"];
+            if (self.cached_zone.name === #"zone_tunnel_interior") {
+                if (self.favoriteenemy.cached_zone.name === #"zone_proto_exterior_rear2") {
+                    if (is_true(level.flag[#"connect_proto_exterior_rear_to_tunnel"])) {
+                        return level.zones[#"zone_proto_exterior_rear2"];
                     }
-                } else if (self.favoriteenemy.cached_zone.name === #"hash_764f7bd07ef904") {
-                    if (is_true(level.flag[#"hash_1b3a3f97ccd47121"])) {
-                        return level.zones[#"hash_4802456347c176c2"];
+                } else if (self.favoriteenemy.cached_zone.name === #"zone_proto_exterior_rear") {
+                    if (is_true(level.flag[#"connect_proto_exterior_rear_to_tunnel"])) {
+                        return level.zones[#"zone_proto_exterior_rear2"];
                     }
                 }
             }
@@ -220,59 +220,59 @@ function function_27028b8e(str_zone) {
         str_zone = str_zone[0];
     }
     switch (str_zone) {
-    case #"hash_451b8f4567cd5449":
-    case #"hash_6f2ccc7f46dbfc21":
+    case #"zone_proto_start2":
+    case #"zone_proto_start":
         var_601fee0 = #"hash_5dec24fd79fe88e4";
         break;
-    case #"hash_4bfac014fc880d18":
+    case #"zone_proto_upstairs":
         var_601fee0 = #"hash_1883157e3a8c1bcf";
         break;
-    case #"hash_49e54a9675d18259":
+    case #"zone_proto_interior_cave":
         var_601fee0 = #"hash_3b12520037a181";
         break;
-    case #"hash_1c373c9cac5e3c89":
+    case #"zone_proto_interior_lower":
         var_601fee0 = #"hash_48fcaccdc583f88a";
         break;
-    case #"hash_60c49459301dfd95":
+    case #"zone_proto_upstairs_2":
         var_601fee0 = #"hash_58e5493c26a40efd";
         break;
-    case #"hash_3c7b4116c3fd33b0":
-    case #"hash_457aa861105338e3":
+    case #"zone_proto_roof_plane":
+    case #"zone_proto_roof_center":
         var_601fee0 = #"hash_29459d2873e524e";
         break;
-    case #"hash_6b24d6ff0d5daec6":
-    case #"hash_6d484763b630489c":
+    case #"zone_proto_plane_exterior":
+    case #"zone_proto_plane_exterior2":
         var_601fee0 = #"hash_621ea24bd69a239";
         break;
-    case #"hash_764f7bd07ef904":
-    case #"hash_4802456347c176c2":
+    case #"zone_proto_exterior_rear":
+    case #"zone_proto_exterior_rear2":
         var_601fee0 = #"hash_3b327c1463ec9f8d";
         break;
-    case #"hash_195633c405c3988f":
+    case #"zone_tunnel_interior":
         var_601fee0 = #"hash_32b5142fe11acb26";
         break;
-    case #"hash_edcce88f14b33d9":
-    case #"hash_20e44b5e1129fca5":
-    case #"hash_3cd4f5e1b2d24760":
-    case #"hash_4a026516a29ce916":
+    case #"zone_power_room":
+    case #"zone_power_room_outside":
+    case #"zone_power_trans_north":
+    case #"zone_power_trans_south":
         var_601fee0 = #"hash_3f356cdd2bb6e576";
         break;
-    case #"hash_29f4b15781050cd2":
-    case #"hash_576acdea6900b046":
+    case #"zone_trans_north_pap_room":
+    case #"zone_trans_north":
         var_601fee0 = #"hash_3e51b8ba7a93fbe";
         break;
-    case #"hash_22b4abd2f2280a74":
-    case #"hash_2dabd19b45d13a78":
-    case #"hash_335dda1ec4569777":
+    case #"zone_trans_south_pap_room":
+    case #"zone_trans_south":
+    case #"zone_trans_south_tunnel":
         var_601fee0 = #"hash_7988e17f66389e69";
         break;
-    case #"hash_14cab5eb5b4e617c":
-    case #"hash_217b2348a69ea727":
-    case #"hash_300981dae5d6f8ea":
-    case #"hash_3868b398b27daf26":
+    case #"zone_center_upper_west":
+    case #"zone_center_lower":
+    case #"zone_center_upper_north":
+    case #"zone_center_upper":
         var_601fee0 = #"hash_57edcb7278524c75";
         break;
-    case #"hash_f2d3d27f56207f4":
+    case #"zone_power_tunnel":
         var_601fee0 = #"hash_75f7127232f283bb";
         break;
     case #"hash_defdefdefdefdef0":

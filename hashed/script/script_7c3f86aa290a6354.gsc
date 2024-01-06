@@ -344,19 +344,19 @@ function private function_e5d01ba1() {
         } else if (window_boards.var_cd17ea88 == "window_02") {
             window_boards.var_811c2d3a = var_7f2b410c;
         }
-        var_47eecade = spawn("trigger_radius", window_boards.origin, 0, 64, 80, 1);
+        window_trigger = spawn("trigger_radius", window_boards.origin, 0, 64, 80, 1);
         /#
-            assert(isdefined(var_47eecade));
+            assert(isdefined(window_trigger));
         #/
-        var_47eecade triggerignoreteam();
-        var_47eecade setvisibletoall();
-        var_47eecade usetriggerrequirelookat();
-        var_47eecade setcursorhint("HINT_NOICON");
-        var_47eecade sethintstring(#"hash_3766e0d30f6782ad");
-        var_47eecade.window_boards = window_boards;
-        window_boards.trigger = var_47eecade;
-        var_47eecade.parent_struct = window_boards;
-        var_47eecade thread function_51095a3d();
+        window_trigger triggerignoreteam();
+        window_trigger setvisibletoall();
+        window_trigger usetriggerrequirelookat();
+        window_trigger setcursorhint("HINT_NOICON");
+        window_trigger sethintstring(#"hash_3766e0d30f6782ad");
+        window_trigger.window_boards = window_boards;
+        window_boards.trigger = window_trigger;
+        window_trigger.parent_struct = window_boards;
+        window_trigger thread function_51095a3d();
     }
 }
 

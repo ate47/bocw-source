@@ -16,11 +16,11 @@ function init() {
     clientfield::register("world", "gold_container_receptacle", 1, 2, "int");
     clientfield::register("world", "exfil_begin", 1, 1, "int");
     clientfield::register("world", "exfil_aether_trigger", 1, 1, "int");
-    level thread function_d88ded8(#"hash_5c4e5d3571f5e1f6", "dark_aether_active");
+    level thread function_d88ded8(#"dark_aether_active", "dark_aether_active");
     level thread function_d88ded8(array("terminal_1_is_on", "terminal_2_is_on"), "terminal_on");
     level thread function_d88ded8(#"hash_94bda7ad49639f5", "center_zone_lights_off");
     level thread function_d88ded8(#"hash_6dae739b31c68d72", "exfil_begin");
-    level thread function_d88ded8(#"hash_1712c7073985c292", "exfil_aether_trigger");
+    level thread function_d88ded8(#"exfil_aether_trigger", "exfil_aether_trigger");
     level thread function_b5bdf435();
     clientfield::register("world", "helping_hand_room_light", 1, 3, "int");
     clientfield::register("world", "dance_party_light", 1, 1, "int");
@@ -64,7 +64,7 @@ function function_bd7cde02(state) {
     level endon(#"hash_2d0433bbc2675311");
     if (isdefined(state)) {
         switch (state) {
-        case #"hash_6114abe64465c780":
+        case #"turn_all_lights_off":
             level clientfield::set("helping_hand_room_light", 0);
             break;
         case #"hash_5352f9e4f4c14e5d":

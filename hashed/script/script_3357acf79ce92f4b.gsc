@@ -1713,9 +1713,9 @@ function private function_fbae6630(awareness_event) {
 // Checksum 0xd49d7098, Offset: 0x72e8
 // Size: 0x13a
 function function_c6b1009e() {
-    self notify(#"hash_2af033c32b8c9fad");
+    self notify(#"sndawarenesschange");
     self endon(#"death");
-    self endon(#"hash_2af033c32b8c9fad");
+    self endon(#"sndawarenesschange");
     wait(0.2);
     switch (self.current_state.name) {
     case #"wander":

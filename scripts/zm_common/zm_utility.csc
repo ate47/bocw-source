@@ -34,8 +34,8 @@ function private function_70a657d8() {
     clientfield::register_clientuimodel("pap_current", #"zm_hud", #"hash_64f2ff2ddddbe9c7", 1, 2, "int", undefined, 0, 0);
     clientfield::register("toplayer", "zm_zone_out_of_bounds", 1, 1, "int", &zm_zone_out_of_bounds, 0, 0);
     clientfield::register("actor", "flame_corpse_fx", 1, 1, "int", &flame_corpse_fx, 0, 0);
-    clientfield::register("scriptmover", "model_rarity_rob", 1, 3, "int", &function_7bb8a38f, 0, 0);
-    clientfield::register("scriptmover", "set_compass_icon", 1, 1, "int", &function_7953267a, 0, 0);
+    clientfield::register("scriptmover", "model_rarity_rob", 1, 3, "int", &model_rarity_rob, 0, 0);
+    clientfield::register("scriptmover", "set_compass_icon", 1, 1, "int", &set_compass_icon, 0, 0);
     clientfield::register("scriptmover", "force_stream", 1, 1, "int", &force_stream_changed, 0, 0);
     callback::on_localclient_connect(&on_localclient_connect);
     for (i = 0; i < 5; i++) {
@@ -463,7 +463,7 @@ function flame_corpse_fx(localclientnum, *oldval, newval, *bnewent, *binitialsna
 // Params 7, eflags: 0x0
 // Checksum 0xfaefa576, Offset: 0x1a38
 // Size: 0x1ec
-function function_7bb8a38f(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
+function model_rarity_rob(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     switch (bwasdemojump) {
     case 1:
         self.var_d9e5ccb2 = #"hash_6f1ab68ac78ac2ea";
@@ -503,10 +503,10 @@ function function_7bb8a38f(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Params 7, eflags: 0x0
 // Checksum 0xd75614b1, Offset: 0x1c30
 // Size: 0x266
-function function_7953267a(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function set_compass_icon(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         switch (self.model) {
-        case #"hash_14819c4a2194274e":
+        case #"p9_zm_platinum_radio_call_boxes_on":
             str_objective = #"hash_4542aa212012068";
             break;
         case #"p8_wz_ep_fishing_pole":
@@ -527,13 +527,13 @@ function function_7953267a(localclientnum, *oldval, newval, *bnewent, *binitials
         case #"p9_zm_gold_teleporter_b":
             str_objective = #"hash_48c296f58e75bbc7";
             break;
-        case #"hash_fc01471c7c27bc9":
+        case #"p9_zm_gold_jumppads_machine_mod":
             str_objective = #"hash_7ccf11b4a680682a";
             break;
         case #"p9_zm_gold_jumppads_machine_sub":
             str_objective = #"hash_7f5d2d61a6f36e5d";
             break;
-        case #"hash_caf404286047050":
+        case #"p8_zm_off_trap_switch_box":
             str_objective = #"hash_6906420c98a0ea37";
             break;
         case #"hash_defdefdefdefdef0":
@@ -630,7 +630,7 @@ function force_stream_changed(localclientnum, *oldval, newval, *bnewent, *biniti
         if (!isinarray(level.var_c427e93b, self)) {
             level.var_c427e93b[level.var_c427e93b.size] = self;
         }
-        if (self.model == #"hash_272f8fab87929c77") {
+        if (self.model == #"p9_fxanim_zm_gp_dac_xmodel") {
             self.var_35f71e38 = array(#"hash_1a9f65484a9fb8de", #"hash_1a9f64484a9fb72b");
         } else if (self.model == #"hash_6668752a365bf732") {
             player = function_5c10bd79(fieldname);

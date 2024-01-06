@@ -892,7 +892,7 @@ function private function_968efd1f(entity) {
 // Checksum 0x8d13e9aa, Offset: 0x35e8
 // Size: 0x5e
 function private function_c2fb1a1e(entity) {
-    if (!level.var_293817c8) {
+    if (!level.enablehipflip) {
         return 0;
     }
     starttime = entity.ai.var_f92c6536;
@@ -968,7 +968,7 @@ function private function_f2c9142(entity) {
 // Checksum 0x595f9bf7, Offset: 0x3920
 // Size: 0xca
 function private function_d8a81861(entity) {
-    if (!level.var_293817c8) {
+    if (!level.enablehipflip) {
         return function_1972c057(entity);
     }
     if (!is_true(entity.ai.var_c978f9a1)) {
@@ -988,7 +988,7 @@ function private function_d8a81861(entity) {
 // Checksum 0x3b9a3ac9, Offset: 0x39f8
 // Size: 0x90
 function private function_ab6f96b6(entity) {
-    if (!level.var_293817c8) {
+    if (!level.enablehipflip) {
         return function_968efd1f(entity);
     }
     if (is_true(entity.ai.var_c978f9a1)) {

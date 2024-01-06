@@ -21,8 +21,8 @@ function private autoexec __init__system__() {
 // Size: 0x160
 function private function_70a657d8() {
     clientfield::register("scriptmover", "recon_plane", 1, 1, "int", &function_1f842f91, 0, 0);
-    clientfield::register("scriptmover", "recon_plane_reveal", 1, 1, "int", &function_bf2187ea, 0, 0);
-    clientfield::register("scriptmover", "recon_plane_damage_fx", 1, 2, "int", &function_24cfeb4b, 0, 0);
+    clientfield::register("scriptmover", "recon_plane_reveal", 1, 1, "int", &recon_plane_reveal, 0, 0);
+    clientfield::register("scriptmover", "recon_plane_damage_fx", 1, 2, "int", &recon_plane_damage_fx, 0, 0);
     callback::on_localclient_connect(&player_init);
     bundlename = "killstreak_recon_plane";
     if (sessionmodeiswarzonegame()) {
@@ -110,7 +110,7 @@ function private on_game_ended(localclientnum) {
 // Params 7, eflags: 0x2 linked
 // Checksum 0xcdb20d4f, Offset: 0x670
 // Size: 0xec
-function function_bf2187ea(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function recon_plane_reveal(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         if (self function_ca024039()) {
             entnum = self getentitynumber();
@@ -174,7 +174,7 @@ function private function_af19a98(localclientnum, entnum) {
 // Params 7, eflags: 0x2 linked
 // Checksum 0x6379f8c1, Offset: 0xa50
 // Size: 0xbc
-function function_24cfeb4b(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function recon_plane_damage_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         util::playfxontag(fieldname, level.var_d9ef3e7c.fxlowhealth, self, "tag_fx_engine_exhaust_back");
     } else if (bwastimejump == 2) {

@@ -61,7 +61,7 @@ function function_28632638() {
     vehicle::function_ea56e00e(self);
     self.overridevehicledamage = &function_af52eeea;
     self turretsetontargettolerance(0, 5);
-    if (self.scriptvehicletype == #"hash_7b495c5447a86bac") {
+    if (self.scriptvehicletype == #"xbot") {
         self.var_5a6df386 = &function_409612d9;
         self.var_dc23ac4b = 1;
     }
@@ -172,7 +172,7 @@ function state_death_update(params) {
     self turretsettargetangles(0, (0, 0, 0));
     self turretsettargetangles(1, (0, 0, 0));
     self turretsettargetangles(2, (0, 0, 0));
-    self asmrequestsubstate(#"hash_49ca75b66bd55529");
+    self asmrequestsubstate(#"death@stationary");
     self waittill(#"hash_689707d6ed13e238");
     self vehicle_death::set_death_model(self.deathmodel, self.modelswapdelay);
     self vehicle::do_death_dynents();
@@ -216,7 +216,7 @@ function function_660b79d2() {
             driver = self getseatoccupant(0);
             if (isdefined(driver)) {
                 self usevehicle(driver, 0);
-                self notify(#"hash_578ad900f475ef93");
+                self notify(#"flipped");
                 util::wait_network_frame();
             }
             self kill(self.origin);
@@ -878,7 +878,7 @@ function function_73fc60dc() {
             }
             if (fired) {
                 cooldown = 15;
-                if (self.scriptvehicletype == #"hash_7b495c5447a86bac") {
+                if (self.scriptvehicletype == #"xbot") {
                     if (is_true(self.var_bb240734)) {
                         cooldown = cooldown - 5;
                     }

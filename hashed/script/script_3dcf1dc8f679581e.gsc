@@ -15,7 +15,7 @@ function init() {
     clientfield::register("scriptmover", "" + #"hash_73d20572196ff3ab", 1, getminbitcountfornum(3), "int", &function_c3996268, 0, 0);
     clientfield::register("scriptmover", "" + #"hash_44cce9f2e2fd1c96", 1, getminbitcountfornum(2), "int", &function_cc365474, 0, 0);
     clientfield::register("world", "" + #"hash_2e8ad83a0edc8ab4", 1, 1, "int", &function_fb584243, 0, 0);
-    clientfield::register("world", "" + #"hash_6c0269e654087b08", 1, getminbitcountfornum(10), "int", &function_1b5487eb, 0, 0);
+    clientfield::register("world", "" + #"pap_quest_beam_start", 1, getminbitcountfornum(10), "int", &pap_quest_beam_start, 0, 0);
     clientfield::register("world", "" + #"hash_3fb8ca8c017ba7ac", 1, getminbitcountfornum(10), "int", &function_c6f8ff7b, 0, 0);
 }
 
@@ -119,7 +119,7 @@ function function_fb584243(localclientnum, *oldval, newval, *bnewent, *binitials
 // Params 7, eflags: 0x2 linked
 // Checksum 0x3ebf2605, Offset: 0xac8
 // Size: 0x244
-function function_1b5487eb(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function pap_quest_beam_start(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     a_s_start = struct::get_array("pap_quest_beam_start");
     a_s_start = array::sort_by_script_int(a_s_start, 1);
     var_c2f24bc = struct::get_array("pap_quest_beam_end");

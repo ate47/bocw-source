@@ -374,7 +374,7 @@ function event_handler[player_gunchallengecomplete] codecallback_gunchallengecom
         return;
     }
     if (islastrank === 1) {
-        self thread challenges::dochallengecallback(#"hash_2ecb29a924a075a2", eventstruct);
+        self thread challenges::dochallengecallback(#"gun_level_complete_last_rank", eventstruct);
     }
     self luinotifyevent(#"gun_level_complete", 5, rankid, itemindex, attachmentindex, rewardxp, islastrank);
     self function_8ba40d2f(#"gun_level_complete", 5, rankid, itemindex, attachmentindex, rewardxp, islastrank);

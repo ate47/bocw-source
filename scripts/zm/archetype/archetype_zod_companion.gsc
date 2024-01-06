@@ -101,49 +101,49 @@ function registerbehaviorscriptfunctions() {
     #/
     behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionKeepsCurrentMovementMode", &zodcompanionkeepscurrentmovementmode);
     /#
-        assert(isscriptfunctionptr(&function_ad245111));
+        assert(isscriptfunctionptr(&zodcompanionshouldmelee));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionShouldMelee", &function_ad245111);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionShouldMelee", &zodcompanionshouldmelee);
     /#
-        assert(isscriptfunctionptr(&function_11e6aca));
+        assert(isscriptfunctionptr(&zodcompanionisinmeleecooldown));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionIsInMeleeCooldown", &function_11e6aca);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionIsInMeleeCooldown", &zodcompanionisinmeleecooldown);
     /#
-        assert(isscriptfunctionptr(&function_6d669535));
+        assert(isscriptfunctionptr(&zodshouldattackenemy));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("zodShouldAttackEnemy", &function_6d669535);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("zodShouldAttackEnemy", &zodshouldattackenemy);
     /#
-        assert(isscriptfunctionptr(&function_6379110b));
+        assert(isscriptfunctionptr(&zodcompanionisexhausted));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionIsExhausted", &function_6379110b);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionIsExhausted", &zodcompanionisexhausted);
     /#
-        assert(isscriptfunctionptr(&function_b227bb80));
+        assert(isscriptfunctionptr(&zodcompanionhasattackable));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionHasAttackable", &function_b227bb80);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionHasAttackable", &zodcompanionhasattackable);
     /#
         assert(isscriptfunctionptr(&function_b0f37bd1));
     #/
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_20604332da3960bd", &function_b0f37bd1);
     /#
-        assert(isscriptfunctionptr(&function_eb957b75));
+        assert(isscriptfunctionptr(&zodcompanionhasdefendlocation));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionHasDefendLocation", &function_eb957b75);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionHasDefendLocation", &zodcompanionhasdefendlocation);
     /#
-        assert(isscriptfunctionptr(&function_7a02ee66));
+        assert(isscriptfunctionptr(&zodcompaniondontshootwhilemoving));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionDontShootWhileMoving", &function_7a02ee66);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionDontShootWhileMoving", &zodcompaniondontshootwhilemoving);
     /#
-        assert(isscriptfunctionptr(&function_63ea1da8));
+        assert(isscriptfunctionptr(&zodcompanioniscarryingbomb));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionIsCarryingBomb", &function_63ea1da8);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionIsCarryingBomb", &zodcompanioniscarryingbomb);
     /#
-        assert(isscriptfunctionptr(&function_f09ebebd));
+        assert(isscriptfunctionptr(&zodcompanioncarrybombcanmove));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionCarryBombCanMove", &function_f09ebebd);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionCarryBombCanMove", &zodcompanioncarrybombcanmove);
     /#
-        assert(isscriptfunctionptr(&function_4c27129));
+        assert(isscriptfunctionptr(&zodcompanionissprinting));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionIsSprinting", &function_4c27129);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionIsSprinting", &zodcompanionissprinting);
     /#
         assert(isscriptfunctionptr(&zodcompanioncanjuke));
     #/
@@ -161,9 +161,9 @@ function registerbehaviorscriptfunctions() {
     #/
     behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionPreemptiveJukeTerminate", &zodcompanionpreemptivejuketerminate);
     /#
-        assert(isscriptfunctionptr(&function_295d18f9));
+        assert(isscriptfunctionptr(&zodcompanionleapterminate));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionLeapTerminate", &function_295d18f9);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionLeapTerminate", &zodcompanionleapterminate);
     /#
         assert(isscriptfunctionptr(&zodcompaniontargetservice));
     #/
@@ -181,21 +181,21 @@ function registerbehaviorscriptfunctions() {
     #/
     behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionCollisionService", &zodcompanioncollisionservice);
     /#
-        assert(isscriptfunctionptr(&function_5e0202e4));
+        assert(isscriptfunctionptr(&trystoppingcompanionservice));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("tryStoppingCompanionService", &function_5e0202e4);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("tryStoppingCompanionService", &trystoppingcompanionservice);
     /#
-        assert(isscriptfunctionptr(&function_28f700f0));
+        assert(isscriptfunctionptr(&zodcompanionexhaustedbehaviorservice));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionExhaustedBehaviorService", &function_28f700f0);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionExhaustedBehaviorService", &zodcompanionexhaustedbehaviorservice);
     /#
-        assert(isscriptfunctionptr(&function_4c53c3ad));
+        assert(isscriptfunctionptr(&zodcompaniondefendlocationbehaviorservice));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionDefendLocationBehaviorService", &function_4c53c3ad);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionDefendLocationBehaviorService", &zodcompaniondefendlocationbehaviorservice);
     /#
-        assert(isscriptfunctionptr(&function_6a3f6a31));
+        assert(isscriptfunctionptr(&zodcompanionclearobstacleservice));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionClearObstacleService", &function_6a3f6a31);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("zodCompanionClearObstacleService", &zodcompanionclearobstacleservice);
     /#
         assert(!isdefined(&function_72edbea6) || isscriptfunctionptr(&function_72edbea6));
     #/
@@ -207,17 +207,17 @@ function registerbehaviorscriptfunctions() {
     #/
     behaviortreenetworkutility::registerbehaviortreeaction("zodProceduralTraversal", &function_72edbea6, &function_7598aa02, &function_74ffdef5);
     /#
-        assert(isscriptfunctionptr(&function_f5c4149e));
+        assert(isscriptfunctionptr(&zodcalcproceduraltraversal));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("zodCalcProceduralTraversal", &function_f5c4149e);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("zodCalcProceduralTraversal", &zodcalcproceduraltraversal);
     /#
         assert(isscriptfunctionptr(&function_2b827272));
     #/
     behaviortreenetworkutility::registerbehaviortreescriptapi("zodProceduralLanding", &function_2b827272);
     /#
-        assert(isscriptfunctionptr(&function_7942d9f2));
+        assert(isscriptfunctionptr(&zodtraverseend));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("zodTraverseEnd", &function_7942d9f2);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("zodTraverseEnd", &zodtraverseend);
     animationstatenetwork::registeranimationmocomp("mocomp_procedural_traversal", &function_26cc92cd, &function_7d1f506, &function_dd922f46);
 }
 
@@ -225,7 +225,7 @@ function registerbehaviorscriptfunctions() {
 // Params 1, eflags: 0x4
 // Checksum 0xe5da91f3, Offset: 0x1a60
 // Size: 0x232
-function private function_ad245111(behaviortreeentity) {
+function private zodcompanionshouldmelee(behaviortreeentity) {
     if (function_b0f37bd1(behaviortreeentity)) {
         return 1;
     } else {
@@ -263,7 +263,7 @@ function private function_ad245111(behaviortreeentity) {
 // Params 1, eflags: 0x4
 // Checksum 0x562af5bc, Offset: 0x1ca0
 // Size: 0x4e
-function private function_11e6aca(behaviortreeentity) {
+function private zodcompanionisinmeleecooldown(behaviortreeentity) {
     if (!isdefined(behaviortreeentity)) {
         return 0;
     }
@@ -289,16 +289,16 @@ function private function_a8bce123(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x82587a31, Offset: 0x1d58
 // Size: 0x56
-function private function_6d669535(entity) {
+function private zodshouldattackenemy(entity) {
     var_d81e0034 = isdefined(entity.enemy) || isdefined(entity.favoriteenemy);
-    return var_d81e0034 && !function_b227bb80(entity);
+    return var_d81e0034 && !zodcompanionhasattackable(entity);
 }
 
 // Namespace zodcompanionbehavior/archetype_zod_companion
 // Params 1, eflags: 0x0
 // Checksum 0xd39f32e, Offset: 0x1db8
 // Size: 0xbe
-function function_5e0202e4(entity) {
+function trystoppingcompanionservice(entity) {
     if (is_true(entity.var_2a757d07) || isdefined(entity.var_9140144d) || isdefined(entity.v_zombie_custom_goal_pos) || is_true(self.reviving_a_player)) {
         return 0;
     }
@@ -589,7 +589,7 @@ function private zodcompanionpreemptivejuketerminate(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0xbfab9a3e, Offset: 0x2e18
 // Size: 0x34
-function private function_295d18f9(entity) {
+function private zodcompanionleapterminate(entity) {
     entity setblackboardattribute("_locomotion_speed", "locomotion_speed_walk");
 }
 
@@ -657,7 +657,7 @@ function private manage_companion_movement(entity) {
     if (is_true(entity.var_2a757d07)) {
         return;
     }
-    if (function_63ea1da8(entity)) {
+    if (zodcompanioniscarryingbomb(entity)) {
         return;
     }
     if (isdefined(level.var_1a612d42) && level.var_1a612d42.eligible_leader) {
@@ -703,7 +703,7 @@ function private manage_companion_movement(entity) {
         }
     }
     if (isdefined(entity.attackable) && isdefined(entity.var_b238ef38) && isdefined(entity.var_b238ef38.position)) {
-        if (function_eb957b75(entity)) {
+        if (zodcompanionhasdefendlocation(entity)) {
             entity zodcompanionutility::function_34179e9a();
         }
         var_ad1c1da4 = entity.var_b238ef38.position;
@@ -904,7 +904,7 @@ function private pick_new_movement_point() {
         self.next_move_time = gettime() + randomintrange(20000, 30000);
         return;
     }
-    if (namespace_47c5b560::function_a69c4b69(self) || is_true(self.var_2b5f41fd)) {
+    if (namespace_47c5b560::aishouldleap(self) || is_true(self.var_2b5f41fd)) {
         /#
             if (getdvarint(#"hash_1b2cf8e5ac354d32", 0)) {
                 println("MOD_EXPLOSIVE" + "<unknown string>");
@@ -1203,7 +1203,7 @@ function private zodcompanionsprinttransitioning(behaviortreeentity) {
 // Params 1, eflags: 0x0
 // Checksum 0x9a09f14c, Offset: 0x5678
 // Size: 0x22
-function function_6379110b(behaviortreeentity) {
+function zodcompanionisexhausted(behaviortreeentity) {
     return is_true(behaviortreeentity.var_2a757d07);
 }
 
@@ -1211,7 +1211,7 @@ function function_6379110b(behaviortreeentity) {
 // Params 1, eflags: 0x0
 // Checksum 0xfc3d3c9a, Offset: 0x56a8
 // Size: 0xc2
-function function_28f700f0(behaviortreeentity) {
+function zodcompanionexhaustedbehaviorservice(behaviortreeentity) {
     if (!is_true(behaviortreeentity.var_2a757d07)) {
         return;
     }
@@ -1227,7 +1227,7 @@ function function_28f700f0(behaviortreeentity) {
 // Params 1, eflags: 0x0
 // Checksum 0x4e49cb28, Offset: 0x5778
 // Size: 0x18
-function function_eb957b75(behaviortreeentity) {
+function zodcompanionhasdefendlocation(behaviortreeentity) {
     return isdefined(behaviortreeentity.var_9140144d);
 }
 
@@ -1243,11 +1243,11 @@ function function_55a341c9(behaviortreeentity) {
 // Params 1, eflags: 0x0
 // Checksum 0x1638c395, Offset: 0x57d0
 // Size: 0x20c
-function function_4c53c3ad(behaviortreeentity) {
-    if (!function_eb957b75(behaviortreeentity)) {
+function zodcompaniondefendlocationbehaviorservice(behaviortreeentity) {
+    if (!zodcompanionhasdefendlocation(behaviortreeentity)) {
         return;
     }
-    if (function_6379110b(behaviortreeentity)) {
+    if (zodcompanionisexhausted(behaviortreeentity)) {
         return;
     }
     if (is_true(behaviortreeentity.reviving_a_player)) {
@@ -1283,7 +1283,7 @@ function function_4c53c3ad(behaviortreeentity) {
 // Params 1, eflags: 0x0
 // Checksum 0x2921d5e9, Offset: 0x59e8
 // Size: 0x35a
-function function_6a3f6a31(behaviortreeentity) {
+function zodcompanionclearobstacleservice(behaviortreeentity) {
     var_126918fc = function_55a341c9(behaviortreeentity);
     time = gettime();
     if (isdefined(behaviortreeentity.var_879af1ac)) {
@@ -1343,15 +1343,15 @@ function function_6a3f6a31(behaviortreeentity) {
 // Params 1, eflags: 0x0
 // Checksum 0x1174f71f, Offset: 0x5d50
 // Size: 0x3c
-function function_7a02ee66(behaviortreeentity) {
-    return function_6379110b(behaviortreeentity) || function_eb957b75(behaviortreeentity);
+function zodcompaniondontshootwhilemoving(behaviortreeentity) {
+    return zodcompanionisexhausted(behaviortreeentity) || zodcompanionhasdefendlocation(behaviortreeentity);
 }
 
 // Namespace zodcompanionbehavior/archetype_zod_companion
 // Params 1, eflags: 0x0
 // Checksum 0x7f5404dc, Offset: 0x5d98
 // Size: 0x34
-function function_4c27129(behaviortreeentity) {
+function zodcompanionissprinting(behaviortreeentity) {
     return behaviortreeentity getblackboardattribute("_locomotion_speed") === "locomotion_speed_sprint";
 }
 
@@ -1359,7 +1359,7 @@ function function_4c27129(behaviortreeentity) {
 // Params 1, eflags: 0x0
 // Checksum 0x3344d6b3, Offset: 0x5dd8
 // Size: 0x18
-function function_b227bb80(behaviortreeentity) {
+function zodcompanionhasattackable(behaviortreeentity) {
     return isdefined(behaviortreeentity.attackable);
 }
 
@@ -1384,7 +1384,7 @@ function function_b0f37bd1(behaviortreeentity) {
 // Params 1, eflags: 0x4
 // Checksum 0xd6939960, Offset: 0x5ea0
 // Size: 0x5c2
-function private function_f5c4149e(entity) {
+function private zodcalcproceduraltraversal(entity) {
     if (isdefined(entity.traversestartnode) && isdefined(entity.traverseendnode)) {
         startpos = entity.origin;
         endpos = entity.traverseendnode.origin;
@@ -1507,7 +1507,7 @@ function private function_74ffdef5(entity, *asmstatename) {
 // Params 1, eflags: 0x4
 // Checksum 0xe2ae9fce, Offset: 0x6688
 // Size: 0x54
-function private function_7942d9f2(entity) {
+function private zodtraverseend(entity) {
     function_74ffdef5(entity);
     entity.skipdeath.entity = 0;
     entity.traversal = undefined;
@@ -1585,7 +1585,7 @@ function private calculatecubicbezier(t, p1, p2, p3, p4) {
 // Params 1, eflags: 0x0
 // Checksum 0x4718af46, Offset: 0x6ba0
 // Size: 0x22
-function function_63ea1da8(behaviortreeentity) {
+function zodcompanioniscarryingbomb(behaviortreeentity) {
     return is_true(behaviortreeentity.var_fee1e0f4);
 }
 
@@ -1593,7 +1593,7 @@ function function_63ea1da8(behaviortreeentity) {
 // Params 1, eflags: 0x0
 // Checksum 0x2d4d08de, Offset: 0x6bd0
 // Size: 0xf2
-function function_f09ebebd(behaviortreeentity) {
+function zodcompanioncarrybombcanmove(behaviortreeentity) {
     if (behaviortreeentity zodcompanionutility::function_be70ddb1() <= 0) {
         return 0;
     }
@@ -1792,7 +1792,7 @@ function private zodcompanionsoldierspawnsetup() {
 function manage_companion() {
     self endon(#"death");
     while (1) {
-        if (!self.reviving_a_player && !zodcompanionbehavior::function_6379110b(self)) {
+        if (!self.reviving_a_player && !zodcompanionbehavior::zodcompanionisexhausted(self)) {
             if (!isdefined(self.leader) || !self.leader.eligible_leader) {
                 if (self flag::get(#"hash_2ba0c8dec55ab3f2")) {
                     goto LOC_000000aa;
@@ -1901,7 +1901,7 @@ function get_potential_leaders(companion, var_4266300b) {
 function function_14f3d97b(goalpos, var_ff1d11ed = 0) {
     self endon(#"death");
     var_5a7117fb = undefined;
-    if (is_true(var_ff1d11ed) && zodcompanionbehavior::function_eb957b75(self)) {
+    if (is_true(var_ff1d11ed) && zodcompanionbehavior::zodcompanionhasdefendlocation(self)) {
         self function_34179e9a();
     }
     if (isdefined(goalpos)) {
@@ -1946,7 +1946,7 @@ function function_3fb3f41e(var_a5839c5b) {
 // Checksum 0xe178f086, Offset: 0x8440
 // Size: 0xbc
 function function_633d6f7b(var_ff1d11ed = 1) {
-    if (is_true(var_ff1d11ed) && zodcompanionbehavior::function_eb957b75(self)) {
+    if (is_true(var_ff1d11ed) && zodcompanionbehavior::zodcompanionhasdefendlocation(self)) {
         self function_34179e9a();
     }
     self.var_2a757d07 = undefined;
@@ -1960,13 +1960,13 @@ function function_633d6f7b(var_ff1d11ed = 1) {
 // Checksum 0x960058b6, Offset: 0x8508
 // Size: 0x428
 function function_fc7a4f48(goalpos, var_f36009e2 = 0) {
-    if (zodcompanionbehavior::function_6379110b(self)) {
+    if (zodcompanionbehavior::zodcompanionisexhausted(self)) {
         return 0;
     }
-    if (zodcompanionbehavior::function_63ea1da8(self)) {
+    if (zodcompanionbehavior::zodcompanioniscarryingbomb(self)) {
         return 0;
     }
-    if (namespace_47c5b560::function_a69c4b69(self)) {
+    if (namespace_47c5b560::aishouldleap(self)) {
         /#
             if (getdvarint(#"hash_1b2cf8e5ac354d32", 0)) {
                 println("MOD_EXPLOSIVE" + "<unknown string>" + goalpos);
@@ -2208,7 +2208,7 @@ function function_681263de() {
         }
     #/
     self.var_c7f5b6e1 = undefined;
-    if (zodcompanionbehavior::function_eb957b75(self)) {
+    if (zodcompanionbehavior::zodcompanionhasdefendlocation(self)) {
         /#
             if (getdvarint(#"hash_1b2cf8e5ac354d32", 0)) {
                 println("MOD_EXPLOSIVE" + "<unknown string>");

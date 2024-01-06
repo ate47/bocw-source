@@ -40,12 +40,12 @@ function preload() {
 function on_player_spawned() {
     var_7edfa20f = struct::get_array("obj_desc_rect", "variantname");
     circles = struct::get_array("obj_desc_circle", "variantname");
-    foreach (index, var_a2eed8c5 in var_7edfa20f) {
+    foreach (index, rect in var_7edfa20f) {
         var_206eca0c = undefined;
-        if (isdefined(var_a2eed8c5.target)) {
-            var_206eca0c = getent(var_a2eed8c5.target, "targetname");
+        if (isdefined(rect.target)) {
+            var_206eca0c = getent(rect.target, "targetname");
         }
-        function_23e7a30a("rect" + index, var_a2eed8c5.origin, var_a2eed8c5.angles, var_a2eed8c5.script_width, var_a2eed8c5.script_height, hash(var_a2eed8c5.script_string), var_a2eed8c5.script_maxdist, var_206eca0c);
+        function_23e7a30a("rect" + index, rect.origin, rect.angles, rect.script_width, rect.script_height, hash(rect.script_string), rect.script_maxdist, var_206eca0c);
     }
     foreach (index, circle in circles) {
         var_206eca0c = undefined;
@@ -310,7 +310,7 @@ function private function_975e779f(data) {
 // Size: 0x544
 function private function_7d76b3ac() {
     self endon(#"death");
-    level endon(#"hash_298d88a0977193a7");
+    level endon(#"level_restarting");
     level flag::set("object_descriptions_active");
     namespace_61e6d095::create(#"hash_7ccb313a097bf40", #"hash_1dbb8163d29524c9");
     var_ebb41806 = undefined;
@@ -319,7 +319,7 @@ function private function_7d76b3ac() {
         var_a74a4e75 = anglestoforward(self getplayerangles());
         text = #"";
         var_36247bfb = #"";
-        if (!namespace_61e6d095::exists(#"hint_tutorial") && !self flag::get(#"hash_530ab699d58ec645") && function_185fc34e(eye, var_a74a4e75)) {
+        if (!namespace_61e6d095::exists(#"hint_tutorial") && !self flag::get(#"lockpicking") && function_185fc34e(eye, var_a74a4e75)) {
             end = eye + var_a74a4e75 * level.var_93648050.trace_dist;
             trace = bullettrace(eye, end, 1, self, 1, 0);
             if (trace[#"fraction"] < 1) {

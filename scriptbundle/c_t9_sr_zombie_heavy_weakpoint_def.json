@@ -10,7 +10,7 @@
                 }
             ],
             "fxtag": "j_head",
-            "var_4aa216c9": "#hash_3f76b1015254a80",
+            "var_4aa216c9": "#zm_ai/fx9_raz_dmg_weak_point",
             "weakpoint": 1
         },
         {
@@ -23,7 +23,7 @@
                 }
             ],
             "fxtag": "j_spine4",
-            "var_4aa216c9": "#hash_3f76b1015254a80",
+            "var_4aa216c9": "#zm_ai/fx9_raz_dmg_weak_point",
             "weakpoint": 2
         },
         {
@@ -39,7 +39,7 @@
                 }
             ],
             "fxtag": "j_shoulder_le",
-            "var_4aa216c9": "#hash_3f76b1015254a80",
+            "var_4aa216c9": "#zm_ai/fx9_raz_dmg_weak_point",
             "weakpoint": 3
         },
         {
@@ -55,7 +55,7 @@
                 }
             ],
             "fxtag": "j_shoulder_ri",
-            "var_4aa216c9": "#hash_3f76b1015254a80",
+            "var_4aa216c9": "#zm_ai/fx9_raz_dmg_weak_point",
             "weakpoint": 4
         },
         {
@@ -71,7 +71,7 @@
                 }
             ],
             "fxtag": "j_knee_le",
-            "var_4aa216c9": "#hash_3f76b1015254a80",
+            "var_4aa216c9": "#zm_ai/fx9_raz_dmg_weak_point",
             "weakpoint": 5
         },
         {
@@ -87,7 +87,7 @@
                 }
             ],
             "fxtag": "j_knee_ri",
-            "var_4aa216c9": "#hash_3f76b1015254a80",
+            "var_4aa216c9": "#zm_ai/fx9_raz_dmg_weak_point",
             "weakpoint": 6
         }
     ],

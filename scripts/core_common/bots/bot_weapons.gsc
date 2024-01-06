@@ -108,7 +108,7 @@ function private function_1f3281d9() {
     bot_action::register_weapon(#"gadget_jammer", &function_c329e7cf, &function_de73a533);
     bot_action::register_weapon(#"gadget_supplypod", &function_86ce2c, &function_de73a533);
     bot_action::register_weapon(#"hash_2b9efbad11308e02", &function_66e1fe37, &function_de73a533);
-    bot_action::register_weapon(#"hash_320a8d55b915b9e5", &function_d6e71e28, &function_de73a533);
+    bot_action::register_weapon(#"listening_device", &function_d6e71e28, &function_de73a533);
     bot_action::register_weapon(#"missile_turret", &function_5c276034, &function_de73a533);
     bot_action::register_weapon(#"tear_gas", &function_126a6787, &function_de73a533);
     bot_action::register_weapon(#"trophy_system", &function_69624ba2, &function_de73a533);
@@ -117,7 +117,7 @@ function private function_1f3281d9() {
     bot_action::register_weapon(#"frost_blast_2", &function_66e1fe37, &function_de73a533);
     bot_action::register_weapon(#"frost_blast_3", &function_66e1fe37, &function_de73a533);
     bot_action::register_weapon(#"frost_blast_4", &function_66e1fe37, &function_de73a533);
-    bot_action::register_weapon(#"hash_2f14933f9c381974", &function_66e1fe37, &function_de73a533);
+    bot_action::register_weapon(#"frost_blast_5", &function_66e1fe37, &function_de73a533);
     bot_action::register_weapon(#"hash_7b5a77a85b0ffab7", &function_66e1fe37, &function_de73a533);
     bot_action::register_weapon(#"hash_379869d5b6da974b", &function_66e1fe37, &function_de73a533);
     bot_action::register_weapon(#"hash_37986ad5b6da98fe", &function_66e1fe37, &function_de73a533);
@@ -218,7 +218,7 @@ function private function_d4db3361() {
 // Checksum 0xb24f1e71, Offset: 0x29c0
 // Size: 0x64
 function private function_a79f6dfb() {
-    if (level.gametype == #"hash_527f2aa95e2f400a") {
+    if (level.gametype == #"dropkick") {
         bot_action::register_weapon(#"hash_29ab150f9f8964f", &function_6aa40bb4, &function_3f4d56d1);
     }
 }

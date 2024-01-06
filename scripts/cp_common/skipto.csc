@@ -27,8 +27,8 @@ function private function_70a657d8() {
     level flag::init("level_has_skiptos");
     level flag::init("level_has_skipto_branches");
     level.var_28c22d88 = [];
-    clientfield::register("toplayer", "catch_up_transition", 1, 1, "counter", &function_db5a75f3, 0, 0);
-    clientfield::register("world", "set_last_map_dvar", 1, 1, "counter", &function_e6020d64, 0, 0);
+    clientfield::register("toplayer", "catch_up_transition", 1, 1, "counter", &catch_up_transition, 0, 0);
+    clientfield::register("world", "set_last_map_dvar", 1, 1, "counter", &set_last_map_dvar, 0, 0);
     level.var_46d8992a = "_default";
     function_7d6f76df("_default");
     function_7d6f76df("no_game");
@@ -597,7 +597,7 @@ function function_60288de7(name, var_f9f06983) {
 // Params 7, eflags: 0x2 linked
 // Checksum 0xeb20caa6, Offset: 0x26b0
 // Size: 0x7c
-function function_e6020d64(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function set_last_map_dvar(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     missionname = util::get_map_name();
     setdvar(#"last_map", missionname);
 }
@@ -622,7 +622,7 @@ function private function_9b847391(*objective, *var_f9f06983) {
 // Params 7, eflags: 0x2 linked
 // Checksum 0x5473df0a, Offset: 0x2778
 // Size: 0x5c
-function function_db5a75f3(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function catch_up_transition(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     postfx::playpostfxbundle(#"hash_4c8b84239d3d1056");
 }
 
@@ -631,6 +631,6 @@ function function_db5a75f3(*localclientnum, *oldval, *newval, *bnewent, *binitia
 // Checksum 0xa7af597d, Offset: 0x27e0
 // Size: 0x1c
 function function_17cc9832() {
-    level waittill(#"hash_671cab19053f30bf");
+    level waittill(#"aar");
 }
 

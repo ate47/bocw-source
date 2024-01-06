@@ -24,8 +24,8 @@ function private function_70a657d8() {
     }
     clientfield::register("scriptmover", "supply_drop_fx", 1, 1, "int", &supply_drop_fx, 0, 0);
     clientfield::register("scriptmover", "supply_drop_parachute_rob", 1, 1, "int", &supply_drop_parachute, 0, 0);
-    clientfield::register("scriptmover", "supply_drop_portal_fx", 1, 1, "int", &function_b835f789, 0, 0);
-    clientfield::register("vehicle", "supply_drop_vehicle_landed", 1, 1, "counter", &function_577e789d, 0, 0);
+    clientfield::register("scriptmover", "supply_drop_portal_fx", 1, 1, "int", &supply_drop_portal_fx, 0, 0);
+    clientfield::register("vehicle", "supply_drop_vehicle_landed", 1, 1, "counter", &supply_drop_vehicle_landed, 0, 0);
 }
 
 // Namespace item_supply_drop/item_supply_drop
@@ -69,7 +69,7 @@ function supply_drop_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap
 // Params 7, eflags: 0x0
 // Checksum 0x2383cb89, Offset: 0x4e8
 // Size: 0x15a
-function function_b835f789(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function supply_drop_portal_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         player = function_5c10bd79(fieldname);
         if (isdefined(self.var_227361c6)) {
@@ -93,7 +93,7 @@ function function_b835f789(localclientnum, *oldval, newval, *bnewent, *binitials
 // Params 7, eflags: 0x0
 // Checksum 0xbcc4e3e0, Offset: 0x650
 // Size: 0x84
-function function_577e789d(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function supply_drop_vehicle_landed(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self playrumbleonentity(bwastimejump, #"hash_6ee3e7be4dd47bed");
     self playsound(0, #"hash_531aa4857265e186");
 }

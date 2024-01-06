@@ -39,8 +39,8 @@ function function_a53db30e(owner, origin) {
     }
     monkey_bomb.owner = owner;
     monkey_bomb.var_7f3187c5.monkey_bomb = function_a3f6cdac(300);
-    arrayremovevalue(level.var_8cff5775.var_af6d47dd, undefined);
-    level.var_8cff5775.var_af6d47dd[level.var_8cff5775.var_af6d47dd.size] = monkey_bomb;
+    arrayremovevalue(level.doa.var_af6d47dd, undefined);
+    level.doa.var_af6d47dd[level.doa.var_af6d47dd.size] = monkey_bomb;
     monkey_bomb namespace_e32bb68::function_3a59ec34("evt_doa_pickup_monkeybomb_music");
     monkey_bomb namespace_83eb6304::function_3ecfde67("monkey_light");
     monkey_bomb thread function_b9934c1d();

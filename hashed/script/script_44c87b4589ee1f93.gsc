@@ -9,9 +9,9 @@
 #using scripts\core_common\audio_shared.csc;
 #using scripts\core_common\ai_shared.csc;
 
-#namespace namespace_162d5357;
+#namespace zombie_dog_toxic_cloud;
 
-// Namespace namespace_162d5357/namespace_162d5357
+// Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
 // Params 0, eflags: 0x5
 // Checksum 0x254b7afc, Offset: 0x150
 // Size: 0x4c
@@ -19,7 +19,7 @@ function private autoexec __init__system__() {
     system::register(#"hash_33449a50d9656246", &function_70a657d8, &postinit, undefined, undefined);
 }
 
-// Namespace namespace_162d5357/namespace_162d5357
+// Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
 // Params 0, eflags: 0x4
 // Checksum 0xe947366b, Offset: 0x1a8
 // Size: 0x154
@@ -30,7 +30,7 @@ function private function_70a657d8() {
     clientfield::register("actor", "pustule_pulse_plague", 1, 1, "int", &function_a17af3df, 0, 0);
 }
 
-// Namespace namespace_162d5357/namespace_162d5357
+// Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
 // Params 0, eflags: 0x4
 // Checksum 0x80f724d1, Offset: 0x308
 // Size: 0x4
@@ -38,7 +38,7 @@ function private postinit() {
     
 }
 
-// Namespace namespace_162d5357/namespace_162d5357
+// Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
 // Params 7, eflags: 0x0
 // Checksum 0x20b1e319, Offset: 0x318
 // Size: 0x142
@@ -62,7 +62,7 @@ function function_d89c5699(localclientnum, *oldval, *newval, *bnewent, *binitial
     }
 }
 
-// Namespace namespace_162d5357/namespace_162d5357
+// Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
 // Params 7, eflags: 0x0
 // Checksum 0xa3501e41, Offset: 0x468
 // Size: 0x18c
@@ -88,7 +88,7 @@ function function_29b682f8(localclientnum, *oldval, *newval, *bnewent, *binitial
     self playsound(bwasdemojump, #"hash_34a8404fc3e64767");
 }
 
-// Namespace namespace_162d5357/namespace_162d5357
+// Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
 // Params 1, eflags: 0x0
 // Checksum 0x212ef316, Offset: 0x600
 // Size: 0xfa
@@ -112,7 +112,7 @@ function function_bdc0d799(localclientnum) {
     }
 }
 
-// Namespace namespace_162d5357/namespace_162d5357
+// Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
 // Params 7, eflags: 0x0
 // Checksum 0x55b44045, Offset: 0x708
 // Size: 0xa6
@@ -130,7 +130,7 @@ function function_3c2a50f4(localclientnum, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_162d5357/namespace_162d5357
+// Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
 // Params 1, eflags: 0x0
 // Checksum 0x1793515e, Offset: 0x7b8
 // Size: 0x11c
@@ -147,7 +147,7 @@ function function_87a4de18(localclientnum) {
     audio::stoploopat(#"hash_155791cb3cba6094", var_18407835);
 }
 
-// Namespace namespace_162d5357/namespace_162d5357
+// Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
 // Params 7, eflags: 0x0
 // Checksum 0x2da538c, Offset: 0x8e0
 // Size: 0xbc
@@ -164,7 +164,7 @@ function function_a17af3df(localclientnum, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_162d5357/namespace_162d5357
+// Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
 // Params 1, eflags: 0x0
 // Checksum 0x23cdbdf1, Offset: 0x9a8
 // Size: 0x2c

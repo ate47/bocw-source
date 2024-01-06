@@ -53,8 +53,8 @@ function function_6a549f51() {
 // Size: 0xa4
 function client_field_func() {
     if (zm_utility::is_classic()) {
-        clientfield::register("scriptmover", "mule_kick_machine_rob", 13000, 1, "int", &function_b93aff53, 0, 0);
-        clientfield::register("scriptmover", "mule_kick_machine_rob_buy", 13000, 1, "counter", &function_36817bc4, 0, 0);
+        clientfield::register("scriptmover", "mule_kick_machine_rob", 13000, 1, "int", &mule_kick_machine_rob, 0, 0);
+        clientfield::register("scriptmover", "mule_kick_machine_rob_buy", 13000, 1, "counter", &mule_kick_machine_rob_buy, 0, 0);
     }
 }
 
@@ -70,7 +70,7 @@ function function_f71e2d8f() {
 // Params 7, eflags: 0x2 linked
 // Checksum 0x43f4c00c, Offset: 0x388
 // Size: 0x10c
-function function_b93aff53(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function mule_kick_machine_rob(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self endon(#"death");
     if (bwastimejump) {
         self playrenderoverridebundle(#"hash_7cb1e2c4664b70f9");
@@ -87,7 +87,7 @@ function function_b93aff53(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Params 7, eflags: 0x2 linked
 // Checksum 0x2a644e78, Offset: 0x4a0
 // Size: 0x54
-function function_36817bc4(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function mule_kick_machine_rob_buy(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self thread function_194b61fc();
 }
 

@@ -1293,7 +1293,7 @@ function function_b064d2a4(var_6bb4ec43, var_c412903e, var_b7925ab5 = "shutoff_p
         var_3ebb2225 = 100;
         var_d67a7d0a = 125;
         break;
-    case #"hash_456279193a5b5b43":
+    case #"jog":
         var_133f0647 = 0.6;
         var_b89dea0e = 0.65;
         var_e7783b69 = 0.7;
@@ -1596,7 +1596,7 @@ function function_c21ef1d8(var_a5a6c25b = "shoot_player", target = undefined) {
         self turret::function_21827343(0);
         self turret::function_14223170(0);
         break;
-    case #"hash_1d216f0755c99bb8":
+    case #"shoot_player":
     case #"hash_defdefdefdefdef0":
         self turret::set_target(level.player, vectorscale((0, 0, 1), 5), 0, 1);
         self turret::function_49c3b892(level.player, 0);

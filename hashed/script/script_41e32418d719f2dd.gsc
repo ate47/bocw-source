@@ -19,7 +19,7 @@ function private autoexec __init__system__() {
 // Checksum 0xb5e4be34, Offset: 0xf8
 // Size: 0x54
 function function_70a657d8() {
-    namespace_43d87eee::register();
+    sr_message_box::register();
     if (!isdefined(level.var_352498c6)) {
         prototype_hud::register();
         level.var_352498c6 = 1;

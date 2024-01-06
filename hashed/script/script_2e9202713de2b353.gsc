@@ -45,23 +45,23 @@ function function_cb06f399() {
     if (isdefined(self.var_cd42b9c0)) {
         self.var_cd42b9c0 delete();
     }
-    if (isdefined(self.var_d95571e6)) {
-        foreach (item in self.var_d95571e6) {
+    if (isdefined(self.walldecor)) {
+        foreach (item in self.walldecor) {
             if (isdefined(item.fx)) {
                 item.fx delete();
             }
             item delete();
         }
-        self.var_d95571e6 = [];
+        self.walldecor = [];
     }
-    if (isdefined(self.var_a5177d12)) {
-        foreach (item in self.var_a5177d12) {
+    if (isdefined(self.floordecor)) {
+        foreach (item in self.floordecor) {
             if (isdefined(item.fx)) {
                 item.fx delete();
             }
             item delete();
         }
-        self.var_a5177d12 = [];
+        self.floordecor = [];
     }
     if (isdefined(self.loot)) {
         foreach (item in self.loot) {
@@ -95,10 +95,10 @@ function function_cb06f399() {
 // Checksum 0x158a2588, Offset: 0x6d8
 // Size: 0xf30
 function function_e71841a() {
-    level.var_8cff5775.var_4cdaff39[self.var_a1152600.var_94ac342f]++;
+    level.doa.var_4cdaff39[self.var_a1152600.rg_room]++;
     self.var_d8d445c4 = &function_cb06f399;
-    self.var_d95571e6 = [];
-    self.var_a5177d12 = [];
+    self.walldecor = [];
+    self.floordecor = [];
     self.loot = [];
     self.var_f807cf8f = [];
     self.wallbuy = [];
@@ -107,7 +107,7 @@ function function_e71841a() {
     var_f445d580 = self namespace_f27a9d0d::function_5165998("type", "room_center");
     if (isdefined(var_f445d580.script_parameters)) {
         if (issubstr(var_f445d580.script_parameters, "tweakcam")) {
-            self.var_4d30576a = 1;
+            self.tweakcam = 1;
             args = strtok(var_f445d580.script_parameters, ";");
             if (args.size > 1) {
                 self.var_95773ba5 = int(float(args[1]) * (32 - 1));
@@ -118,7 +118,7 @@ function function_e71841a() {
     }
     var_eebf1bb0 = self namespace_f27a9d0d::function_cee62dac("type", "room_connector");
     foreach (tag in var_eebf1bb0) {
-        level.var_8cff5775.var_d1501142[level.var_8cff5775.var_d1501142.size] = tag.origin;
+        level.doa.var_d1501142[level.doa.var_d1501142.size] = tag.origin;
     }
     var_c9bdb63f = self namespace_f27a9d0d::function_cee62dac("type", "spawner");
     foreach (var_f6198c5b in var_c9bdb63f) {
@@ -144,13 +144,13 @@ function function_e71841a() {
             if (!isdefined(var_f6198c5b.script_string)) {
                 continue;
             }
-            var_49a15185 = namespace_ff8b8430::function_d7c5adee(var_f6198c5b.script_string);
+            var_49a15185 = doa_enemy::function_d7c5adee(var_f6198c5b.script_string);
             if (isdefined(var_49a15185)) {
                 goalradius = 40;
                 if (isdefined(var_f6198c5b.script_int)) {
                     goalradius = int(var_f6198c5b.script_int);
                 }
-                ai = namespace_ff8b8430::function_db55a448(var_49a15185, var_f6198c5b.origin);
+                ai = doa_enemy::function_db55a448(var_49a15185, var_f6198c5b.origin);
                 if (isdefined(ai)) {
                     ai.var_f906062a.ai = 1;
                     ai.var_76cb41b3.ai = 1;
@@ -165,17 +165,17 @@ function function_e71841a() {
     }
     var_c9bdb63f = self namespace_f27a9d0d::function_cee62dac("type", "lootspawn");
     foreach (var_f6198c5b in var_c9bdb63f) {
-        level.var_8cff5775.var_51400a66[level.var_8cff5775.var_51400a66.size] = var_f6198c5b;
+        level.doa.var_51400a66[level.doa.var_51400a66.size] = var_f6198c5b;
     }
     var_c9bdb63f = self namespace_f27a9d0d::function_cee62dac("type", "trap");
     foreach (var_f6198c5b in var_c9bdb63f) {
-        level.var_8cff5775.var_f5a14209[level.var_8cff5775.var_f5a14209.size] = var_f6198c5b;
+        level.doa.var_f5a14209[level.doa.var_f5a14209.size] = var_f6198c5b;
     }
     var_c9bdb63f = self namespace_f27a9d0d::function_cee62dac("type", "floordecor");
     foreach (var_f6198c5b in var_c9bdb63f) {
         if (var_f6198c5b.script_noteworthy === "dungeon_door") {
             add = 1;
-            foreach (door in level.var_8cff5775.var_a8a563fc) {
+            foreach (door in level.doa.var_a8a563fc) {
                 distsq = distancesquared(var_f6198c5b.origin, door.origin);
                 if (distsq < function_a3f6cdac(512)) {
                     add = 0;
@@ -183,17 +183,17 @@ function function_e71841a() {
                 }
             }
             if (add) {
-                level.var_8cff5775.var_a8a563fc[level.var_8cff5775.var_a8a563fc.size] = var_f6198c5b;
+                level.doa.var_a8a563fc[level.doa.var_a8a563fc.size] = var_f6198c5b;
             }
         } else if (var_f6198c5b.script_noteworthy === "teleporter") {
-            level.var_8cff5775.var_c2648383[level.var_8cff5775.var_c2648383.size] = var_f6198c5b;
+            level.doa.var_c2648383[level.doa.var_c2648383.size] = var_f6198c5b;
         } else {
-            self.var_a5177d12[self.var_a5177d12.size] = namespace_c004634e::function_6a09928b(var_f6198c5b, #"floor");
+            self.floordecor[self.floordecor.size] = namespace_c004634e::function_6a09928b(var_f6198c5b, #"floor");
         }
     }
     var_c9bdb63f = self namespace_f27a9d0d::function_cee62dac("type", "walldecor");
     foreach (var_f6198c5b in var_c9bdb63f) {
-        self.var_d95571e6[self.var_d95571e6.size] = namespace_c004634e::function_6a09928b(var_f6198c5b, #"hash_5e76c2f62c1e1615");
+        self.walldecor[self.walldecor.size] = namespace_c004634e::function_6a09928b(var_f6198c5b, #"hash_5e76c2f62c1e1615");
     }
     var_c9bdb63f = self namespace_f27a9d0d::function_cee62dac("type", "wallbuy");
     foreach (var_f6198c5b in var_c9bdb63f) {
@@ -204,7 +204,7 @@ function function_e71841a() {
         args = strtok(var_f6198c5b.script_parameters, ";");
         var_5e62902b.origin.var_5e62902b = var_f6198c5b.origin;
         var_5e62902b.type.var_5e62902b = args[0];
-        if (var_5e62902b.type == #"hash_367003e34deb561") {
+        if (var_5e62902b.type == #"room_warp") {
             /#
                 assert(args.size >= 4, "<unknown string>");
             #/

@@ -67,7 +67,7 @@ function function_4c2d4fc4(message, title = #"", var_9696a2d = 0, var_db331a85 =
     if (type == 1) {
         namespace_82bfe441::fade(1, "FadeImmediate");
     }
-    namespace_61e6d095::function_d3c3e5c3(#"hint_tutorial", [2:#"hash_af16b6b2e499098", 1:#"hash_50dd1fbbd883b24e", 0:#"interactive_map"]);
+    namespace_61e6d095::function_d3c3e5c3(#"hint_tutorial", [2:#"hash_af16b6b2e499098", 1:#"dialog_tree", 0:#"interactive_map"]);
     level.var_940e0c3e = type;
     level.var_5f632232 = message;
     if (isdefined(var_c18a5a8b) || isdefined(var_9763e3fa)) {
@@ -184,7 +184,7 @@ function pause(var_1d470cc4 = #"hash_3c27402259e4c18e", var_63d0d48f = #"hash_3f
         namespace_61e6d095::function_9ade1d9b(#"hint_tutorial", "pause", var_29fa9286);
         player function_df08d48(5);
         selected = undefined;
-        selected = level waittill(#"hash_443eefc45fe845c8");
+        selected = level waittill(#"lui_unpause_game");
         player thread flag::set_for_time(float(function_60d95f53()) / 1000 * 2, "was_paused");
         if (isdefined(var_37e3f2b0)) {
             level notify(var_37e3f2b0);

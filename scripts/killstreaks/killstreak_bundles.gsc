@@ -177,7 +177,7 @@ function get_shots_to_kill(weapon, meansofdeath, bundle) {
     case #"planemortar":
         shotstokill = bundle.var_843b7bd3;
         break;
-    case #"hash_397bd80cf477986a":
+    case #"jetfighter_missile":
         shotstokill = 1;
         break;
     case #"gadget_heat_wave":

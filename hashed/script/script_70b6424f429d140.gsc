@@ -564,7 +564,7 @@ function function_cbe25a41(var_4cd99adc, tag, var_fa2357fe = 0, var_1a67724f = 0
                             sphere(end_point, 4, (0, 0, 1), 1, 0, 10, 40);
                         }
                     #/
-                    self.var_ba240678 thread namespace_ca99987f::function_d9fc18e2(end_point, self.var_113b6995, #"back", undefined, 0, 1, 1, [1:3.5, 0:0.35]);
+                    self.var_ba240678 thread namespace_ca99987f::ease_origin(end_point, self.var_113b6995, #"back", undefined, 0, 1, 1, [1:3.5, 0:0.35]);
                     self.var_35f26704 = gettime() + self.var_113b6995 * 1000;
                     self sethoverparams(75, 100, 50);
                 }
@@ -579,7 +579,7 @@ function function_cbe25a41(var_4cd99adc, tag, var_fa2357fe = 0, var_1a67724f = 0
                             sphere(end_point, 4, (1, 0, 0), 1, 0, 10, 20);
                         }
                     #/
-                    self.var_ba240678 thread namespace_ca99987f::function_d9fc18e2(end_point, self.var_113b6995 / 3, #"sine", undefined, 0, 1, 1);
+                    self.var_ba240678 thread namespace_ca99987f::ease_origin(end_point, self.var_113b6995 / 3, #"sine", undefined, 0, 1, 1);
                 }
             } else if (self.var_c7d51a18) {
                 if (self.var_35f26704 < gettime()) {

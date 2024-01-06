@@ -723,7 +723,7 @@ function function_8aecc4f0() {
     if (isdefined(self.script_flag)) {
         level flag::wait_till(self.script_flag);
     }
-    namespace_43cd39d4::function_731b9325(self, 1);
+    rappel::function_731b9325(self, 1);
 }
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones

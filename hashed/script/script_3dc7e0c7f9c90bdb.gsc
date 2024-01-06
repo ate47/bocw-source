@@ -28,8 +28,8 @@ function function_70a657d8() {
     if (!is_true(getgametypesetting(#"hash_1e2b95e15661dad")) && !getdvarint(#"hash_730311c63805303a", 0) && !is_true(level.var_1d1a6e08)) {
         return;
     }
-    clientfield::register("actor", "soul_capture_zombie_fire", 1, 1, "int", &function_ad278032, 0, 0);
-    clientfield::register("scriptmover", "soul_capture_leave", 1, 1, "int", &function_ddc6498d, 0, 0);
+    clientfield::register("actor", "soul_capture_zombie_fire", 1, 1, "int", &soul_capture_zombie_fire, 0, 0);
+    clientfield::register("scriptmover", "soul_capture_leave", 1, 1, "int", &soul_capture_leave, 0, 0);
     clientfield::register("scriptmover", "soul_capture_timer", 1, 1, "int", &function_86bba240, 0, 0);
     level.var_1ffd81e8 = [];
 }
@@ -38,7 +38,7 @@ function function_70a657d8() {
 // Params 7, eflags: 0x0
 // Checksum 0x5c54fa81, Offset: 0x3a8
 // Size: 0xbe
-function function_ad278032(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function soul_capture_zombie_fire(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         if (!isdefined(self.var_f6a6e73d)) {
             self.var_f6a6e73d = util::playfxontag(fieldname, #"hash_5a09c40118c2df6e", self, "j_spine4");
@@ -53,7 +53,7 @@ function function_ad278032(localclientnum, *oldval, newval, *bnewent, *binitials
 // Params 7, eflags: 0x0
 // Checksum 0x29bdbb1d, Offset: 0x470
 // Size: 0x1e4
-function function_ddc6498d(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function soul_capture_leave(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         if (!isdefined(self.n_fx)) {
             var_70609425 = self.origin + vectorscale((0, 0, 1), 5000);

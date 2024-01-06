@@ -32,12 +32,12 @@
 // Checksum 0xf69ef0a1, Offset: 0x1f8
 // Size: 0x1b4
 function init() {
-    clientfield::register("scriptmover", "pickuprotate", 1, 1, "int", &function_c8046d59, 0, 0);
-    clientfield::register("scriptmover", "pickupsettype", 1, 6 + 3, "int", &function_d1da8f8f, 0, 0);
+    clientfield::register("scriptmover", "pickuprotate", 1, 1, "int", &pickuprotate, 0, 0);
+    clientfield::register("scriptmover", "pickupsettype", 1, 6 + 3, "int", &pickupsettype, 0, 0);
     clientfield::register("scriptmover", "pickupvisibility", 1, 1, "int", &function_d04f663, 0, 0);
     clientfield::register("scriptmover", "pickuptimeout", 1, 1, "int", &function_727ce85b, 0, 0);
     clientfield::register("scriptmover", "pickupmoveto", 1, 4, "int", &function_3577c445, 0, 0);
-    level.var_8cff5775.pickups = [];
+    level.doa.pickups = [];
     namespace_c501aa2e::init();
     namespace_5d515bd5::init();
     function_32d5e898();
@@ -56,7 +56,7 @@ function function_32d5e898(*localclientnum) {
 // Checksum 0x4241b344, Offset: 0x3d0
 // Size: 0xb6
 function function_c9502d74(type, variant) {
-    foreach (pickup in level.var_8cff5775.pickups) {
+    foreach (pickup in level.doa.pickups) {
         if (pickup.type == type) {
             if (variant == pickup.variant) {
                 return pickup;
@@ -75,7 +75,7 @@ function function_c1018360(modelname, type, variant, *rarity, modelscale, *angle
     pickup.scale = unused;
     pickup.type = angles;
     pickup.variant = data;
-    level.var_8cff5775.pickups[level.var_8cff5775.pickups.size] = pickup;
+    level.doa.pickups[level.doa.pickups.size] = pickup;
 }
 
 // Namespace namespace_dfc652ee/namespace_dfc652ee
@@ -101,7 +101,7 @@ function function_3c872f01() {
 // Params 7, eflags: 0x2 linked
 // Checksum 0xd4a12417, Offset: 0x640
 // Size: 0x1ec
-function function_d1da8f8f(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function pickupsettype(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self.pickuptype = bwastimejump & (1 << 6) - 1;
     self.variant = bwastimejump >> 6;
     def = function_c9502d74(self.pickuptype, self.variant);
@@ -127,7 +127,7 @@ function function_d1da8f8f(localclientnum, *oldval, newval, *bnewent, *binitials
 // Params 7, eflags: 0x2 linked
 // Checksum 0x404a3a1f, Offset: 0x838
 // Size: 0xa4
-function function_c8046d59(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function pickuprotate(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (!isdefined(self.var_f3b82c6d)) {
         return;
     }
@@ -163,7 +163,7 @@ function function_727ce85b(*localclientnum, *oldval, newval, *bnewent, *binitial
         return;
     }
     if (bwastimejump) {
-        self.var_f3b82c6d thread function_f96b17e3(10);
+        self.var_f3b82c6d thread pickuptimeout(10);
     } else {
         self.var_f3b82c6d notify(#"hash_2a866f50cc161ca8");
     }
@@ -173,7 +173,7 @@ function function_727ce85b(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Params 1, eflags: 0x2 linked
 // Checksum 0xb8b3f3a8, Offset: 0xa20
 // Size: 0xe4
-function function_f96b17e3(timetowait) {
+function pickuptimeout(timetowait) {
     if (timetowait <= 0) {
         return;
     }
@@ -224,28 +224,28 @@ function function_3577c445(localclientnum, *oldval, newval, *bnewent, *binitials
     }
     self.var_f3b82c6d unlink();
     self.var_f3b82c6d notify(#"hash_2a866f50cc161ca8");
-    var_d4afa276 = 0;
+    flipped = 0;
     foreach (localplayer in getlocalplayers()) {
         if (localplayer getlocalclientnumber() === fieldname) {
-            var_d4afa276 = level.var_8cff5775.var_f65cb6ee[localplayer.entnum];
+            flipped = level.doa.var_f65cb6ee[localplayer.entnum];
             break;
         }
     }
-    self.var_f3b82c6d thread function_4ecd84a8(player, var_d4afa276);
+    self.var_f3b82c6d thread function_4ecd84a8(player, flipped);
 }
 
 // Namespace namespace_dfc652ee/namespace_dfc652ee
 // Params 2, eflags: 0x2 linked
 // Checksum 0x3d816351, Offset: 0xd90
 // Size: 0x18c
-function function_4ecd84a8(player, var_d4afa276 = 0) {
+function function_4ecd84a8(player, flipped = 0) {
     self endon(#"death");
     self show();
     if (isdefined(player)) {
         x = 2000;
         y = 3000;
         z = 1000;
-        if (var_d4afa276) {
+        if (flipped) {
             x = 0 - x;
             y = 0 - y;
         }

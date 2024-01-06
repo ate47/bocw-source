@@ -5,9 +5,9 @@
 #using scripts\core_common\clientfield_shared.csc;
 #using scripts\core_common\callbacks_shared.csc;
 
-#namespace namespace_13c9b452;
+#namespace world_event_black_chest;
 
-// Namespace namespace_13c9b452/namespace_13c9b452
+// Namespace world_event_black_chest/world_event_black_chest
 // Params 0, eflags: 0x5
 // Checksum 0x4d1bca76, Offset: 0x100
 // Size: 0x3c
@@ -15,7 +15,7 @@ function private autoexec __init__system__() {
     system::register(#"hash_24e8e2e7c9881782", &function_70a657d8, undefined, undefined, undefined);
 }
 
-// Namespace namespace_13c9b452/namespace_13c9b452
+// Namespace world_event_black_chest/world_event_black_chest
 // Params 0, eflags: 0x0
 // Checksum 0x5ac45588, Offset: 0x148
 // Size: 0x144
@@ -33,7 +33,7 @@ function function_70a657d8() {
     clientfield::register("scriptmover", "sr_black_chest_swarm_fx", 1, 3, "int", &function_372485e9, 0, 0);
 }
 
-// Namespace namespace_13c9b452/namespace_13c9b452
+// Namespace world_event_black_chest/world_event_black_chest
 // Params 7, eflags: 0x0
 // Checksum 0x6210d0b, Offset: 0x298
 // Size: 0x43c
@@ -88,7 +88,7 @@ function function_f1dc3a2c(localclientnum, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_13c9b452/namespace_13c9b452
+// Namespace world_event_black_chest/world_event_black_chest
 // Params 7, eflags: 0x4
 // Checksum 0x4f232fb6, Offset: 0x6e0
 // Size: 0x1da
@@ -128,7 +128,7 @@ function private function_372485e9(localclientnum, *oldval, newval, *bnewent, *b
     self.var_d61d7100 = util::playfxontag(fieldname, fx, self, "tag_origin");
 }
 
-// Namespace namespace_13c9b452/namespace_13c9b452
+// Namespace world_event_black_chest/world_event_black_chest
 // Params 1, eflags: 0x4
 // Checksum 0x900946b9, Offset: 0x8c8
 // Size: 0xa4

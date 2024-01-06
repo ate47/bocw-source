@@ -38,7 +38,7 @@
 // Checksum 0x9e0490ae, Offset: 0x230
 // Size: 0x4c
 function init() {
-    level.var_8cff5775.var_b95a5b86 = [];
+    level.doa.var_b95a5b86 = [];
     namespace_250e9486::function_252dff4d("bat", 0, &function_3b9ddd99, &function_d48ae962);
 }
 
@@ -104,7 +104,7 @@ function function_3b9ddd99() {
     self.maxhealth = 1000;
     self.damage_on_death = 0;
     defaultrole();
-    level.var_8cff5775.var_b95a5b86[level.var_8cff5775.var_b95a5b86.size] = self;
+    level.doa.var_b95a5b86[level.doa.var_b95a5b86.size] = self;
     target_set(self);
     self namespace_e32bb68::function_3a59ec34("zmb_doa_ai_bat_spawn");
     self thread namespace_9fc66ac::function_ba33d23d(#"hash_448d2fb335fe0966", #"hash_448d2fb335fe0966", #"hash_17c9c900a52243f8");
@@ -303,7 +303,7 @@ function function_9122b0e5() {
 // Size: 0xc4
 function state_death_update(*params) {
     self endon(#"death");
-    self asmrequestsubstate(#"hash_49ca75b66bd55529");
+    self asmrequestsubstate(#"death@stationary");
     if (isdefined(self.var_c4e19d3) && isdefined(self.var_c4e19d3.hunted_by)) {
         self.var_c4e19d3.hunted_by--;
     }
@@ -350,9 +350,9 @@ function function_2b369c9f() {
 function function_1c4cd527(origin, owner, innerradius, outerradius, halfheight, spacing) {
     queryresult = positionquery_source_navigation(origin, innerradius, outerradius, halfheight, spacing, "navvolume_small", spacing);
     positionquery_filter_sight(queryresult, origin, self geteye() - self.origin, self, 0, owner);
-    arrayremovevalue(level.var_8cff5775.var_b95a5b86, undefined);
+    arrayremovevalue(level.doa.var_b95a5b86, undefined);
     foreach (point in queryresult.data) {
-        foreach (bat in level.var_8cff5775.var_b95a5b86) {
+        foreach (bat in level.doa.var_b95a5b86) {
             if (isdefined(bat.var_c8c5a7d3)) {
                 distsq = distancesquared(point.origin, bat.var_c8c5a7d3);
                 if (distsq <= function_a3f6cdac(300)) {

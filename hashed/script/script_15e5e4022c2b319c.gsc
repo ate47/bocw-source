@@ -241,7 +241,7 @@ function function_bea256c(a_ents) {
 function function_93a73f43() {
     level endon(#"hash_3c62d3b6b67922c0");
     player = self;
-    player endon(#"death", #"hash_2e13c8d06037430");
+    player endon(#"death", #"grab_done");
     player clientfield::set_to_player("" + #"hash_802934d416ac981", 1);
     wait(1);
     while (1) {

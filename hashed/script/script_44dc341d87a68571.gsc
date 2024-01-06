@@ -51,7 +51,7 @@
 // Checksum 0xc6b3ce92, Offset: 0x840
 // Size: 0x154
 function init() {
-    level.var_8cff5775.var_48af1fc9 = [];
+    level.doa.var_48af1fc9 = [];
     namespace_250e9486::function_252dff4d("gladiator_destroyer", 6, &function_5af2c5ef, undefined, 5, &function_adb41cc7);
     namespace_250e9486::function_252dff4d("gladiator_marauder", 7, &function_5af2c5ef, undefined, 5, &function_adb41cc7);
     registerbehaviorscriptfunctions();
@@ -970,10 +970,10 @@ function private function_894d3d57(entity) {
 // Checksum 0xe3c4eccc, Offset: 0x3ef0
 // Size: 0x14a
 function function_adb41cc7() {
-    max = level.var_8cff5775.var_358fbdc8 == 0 ? 10 : 20;
-    function_1eaaceab(level.var_8cff5775.var_48af1fc9);
-    total = level.var_8cff5775.var_48af1fc9.size;
-    foreach (item in level.var_8cff5775.var_dcbded2) {
+    max = level.doa.world_state == 0 ? 10 : 20;
+    function_1eaaceab(level.doa.var_48af1fc9);
+    total = level.doa.var_48af1fc9.size;
+    foreach (item in level.doa.var_dcbded2) {
         type = [[ item.var_49a15185 ]]->gettype();
         if (type == 6 || type == 7) {
             total = total + item.count;
@@ -987,15 +987,15 @@ function function_adb41cc7() {
 // Checksum 0x13829d4a, Offset: 0x4048
 // Size: 0x4ac
 function function_5af2c5ef() {
-    if (!isdefined(level.var_8cff5775.var_48af1fc9)) {
-        level.var_8cff5775.var_48af1fc9 = [];
-    } else if (!isarray(level.var_8cff5775.var_48af1fc9)) {
-        level.var_8cff5775.var_48af1fc9 = array(level.var_8cff5775.var_48af1fc9);
+    if (!isdefined(level.doa.var_48af1fc9)) {
+        level.doa.var_48af1fc9 = [];
+    } else if (!isarray(level.doa.var_48af1fc9)) {
+        level.doa.var_48af1fc9 = array(level.doa.var_48af1fc9);
     }
-    level.var_8cff5775.var_48af1fc9[level.var_8cff5775.var_48af1fc9.size] = self;
+    level.doa.var_48af1fc9[level.doa.var_48af1fc9.size] = self;
     self namespace_250e9486::function_25b2c8a9();
     self.maxhealth = self.health + 13000;
-    if (isdefined(level.var_8cff5775.var_a77e6349)) {
+    if (isdefined(level.doa.var_a77e6349)) {
         self.maxhealth = self.maxhealth + 10000;
     }
     self.meleedistsq = 1764 * 2;
@@ -1007,7 +1007,7 @@ function function_5af2c5ef() {
     self.var_9a9a0311 = [];
     self.var_f46fbf3f = 1;
     self.closest_player_override = &namespace_7f5aeb59::function_7781556b;
-    self.var_8cff5775.var_74e4ded8 = 1;
+    self.doa.var_74e4ded8 = 1;
     self setblackboardattribute("_locomotion_speed", "locomotion_speed_walk");
     self.zombie_move_speed = "walk";
     self collidewithactors(1);
@@ -1176,7 +1176,7 @@ function private function_3b8907b9(s_params) {
     if (self.archetype != #"gladiator") {
         return;
     }
-    arrayremovevalue(level.var_8cff5775.var_48af1fc9, self);
+    arrayremovevalue(level.doa.var_48af1fc9, self);
     self val::set(#"gladiator_death", "takedamage", 0);
     if (isdefined(self.var_9a9a0311[#"tag_weapon_left"])) {
         self.var_9a9a0311[#"tag_weapon_left"] delete();

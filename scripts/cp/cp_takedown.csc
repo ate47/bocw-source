@@ -57,18 +57,18 @@ function init_clientfields() {
     clientfield::register("vehicle", "af_rc_deploy1", 1, 1, "int", &function_4cce7a86, 0, 0);
     clientfield::register("vehicle", "af_rc_deploy2", 1, 1, "int", &function_3e1ddd25, 0, 0);
     clientfield::register("vehicle", "af_rc_deploy3", 1, 1, "int", &function_da9d1625, 0, 0);
-    clientfield::register("toplayer", "lerp_fov", 1, 3, "int", &function_a735d35, 0, 0);
-    clientfield::register("vehicle", "hit1_helispotlight", 1, 1, "int", &function_2d4bf193, 0, 0);
-    clientfield::register("vehicle", "hit1_track_vehicle", 1, 1, "int", &function_f7a0b31a, 0, 0);
-    clientfield::register("scriptmover", "hit1_track_ent", 1, 1, "int", &function_e0deb842, 0, 0);
-    clientfield::register("scriptmover", "hit1_tracking", 1, 1, "int", &function_1e71913d, 0, 0);
-    clientfield::register("scriptmover", "hit1_light", 1, 1, "int", &function_b40e980, 0, 0);
+    clientfield::register("toplayer", "lerp_fov", 1, 3, "int", &lerp_fov, 0, 0);
+    clientfield::register("vehicle", "hit1_helispotlight", 1, 1, "int", &hit1_helispotlight, 0, 0);
+    clientfield::register("vehicle", "hit1_track_vehicle", 1, 1, "int", &hit1_track_vehicle, 0, 0);
+    clientfield::register("scriptmover", "hit1_track_ent", 1, 1, "int", &hit1_track_ent, 0, 0);
+    clientfield::register("scriptmover", "hit1_tracking", 1, 1, "int", &hit1_tracking, 0, 0);
+    clientfield::register("scriptmover", "hit1_light", 1, 1, "int", &hit1_light, 0, 0);
     clientfield::register("world", "wreck_volume_decals", 1, 1, "int", &function_f48f6d3, 0, 1);
     clientfield::register("world", "crash_models", 1, 1, "int", &function_7f111718, 0, 1);
-    clientfield::register("toplayer", "set_player_pbg_bank", 1, 1, "int", &function_b06125f0, 0, 0);
+    clientfield::register("toplayer", "set_player_pbg_bank", 1, 1, "int", &set_player_pbg_bank, 0, 0);
     clientfield::register("toplayer", "wreck_vision", 1, 1, "int", &function_a315cdc9, 1, 0);
     clientfield::register("world", "prop_wash", 1, 1, "int", &function_766abe10, 0, 0);
-    clientfield::register("toplayer", "force_stream_weapons", 1, 2, "int", &function_d126379e, 1, 1);
+    clientfield::register("toplayer", "force_stream_weapons", 1, 2, "int", &force_stream_weapons, 1, 1);
 }
 
 // Namespace cp_takedown/cp_takedown
@@ -118,7 +118,7 @@ function function_766abe10(*localclientnum, *oldval, *newval, *bnewent, *binitia
 // Params 7, eflags: 0x2 linked
 // Checksum 0x49787f49, Offset: 0xe70
 // Size: 0xb8
-function function_e0deb842(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
+function hit1_track_ent(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (isdefined(level.var_9a3944f4)) {
         level.var_9a3944f4.var_ba240678 = self;
         level.var_cc43fb24 = undefined;
@@ -135,7 +135,7 @@ function function_e0deb842(*localclientnum, *oldval, *newval, *bnewent, *binitia
 // Params 7, eflags: 0x2 linked
 // Checksum 0xf36e0f7c, Offset: 0xf30
 // Size: 0x8c
-function function_1e71913d(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
+function hit1_tracking(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (isdefined(level.var_9a3944f4.var_ba240678)) {
         level.var_9a3944f4.var_ba240678.tracking = self;
         level.var_bda6b1e1 = undefined;
@@ -148,7 +148,7 @@ function function_1e71913d(*localclientnum, *oldval, *newval, *bnewent, *binitia
 // Params 7, eflags: 0x2 linked
 // Checksum 0x58948eb1, Offset: 0xfc8
 // Size: 0x8c
-function function_f7a0b31a(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
+function hit1_track_vehicle(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (isdefined(level.var_9a3944f4.var_ba240678)) {
         level.var_9a3944f4.var_ba240678.tracking = self;
         level.var_bda6b1e1 = undefined;
@@ -161,7 +161,7 @@ function function_f7a0b31a(*localclientnum, *oldval, *newval, *bnewent, *binitia
 // Params 7, eflags: 0x2 linked
 // Checksum 0x85a61f66, Offset: 0x1060
 // Size: 0x70
-function function_b40e980(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
+function hit1_light(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (isdefined(level.var_9a3944f4)) {
         level.var_9a3944f4.light = self;
     } else {
@@ -173,7 +173,7 @@ function function_b40e980(*localclientnum, *oldval, *newval, *bnewent, *binitial
 // Params 7, eflags: 0x2 linked
 // Checksum 0x6b4abac9, Offset: 0x10d8
 // Size: 0x436
-function function_2d4bf193(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function hit1_helispotlight(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self endon(#"death");
     self endon(#"hash_55fc2759ea7b7c72");
     getplayers(fieldname)[0] endon(#"death", #"disconnect");
@@ -294,7 +294,7 @@ function function_d93be6d9(*localclientnum, *oldval, *newval, *bnewent, *binitia
 // Params 7, eflags: 0x2 linked
 // Checksum 0x37929310, Offset: 0x1858
 // Size: 0x342
-function function_a735d35(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
+function lerp_fov(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     switch (bwasdemojump) {
     case 1:
         self namespace_ca99987f::function_f95cb457(undefined, 15.5, 0.5, #"linear");
@@ -427,7 +427,7 @@ function function_7f111718(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Params 7, eflags: 0x2 linked
 // Checksum 0x8af1f99f, Offset: 0x22a8
 // Size: 0xec
-function function_b06125f0(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
+function set_player_pbg_bank(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump) {
         setpbgactivebank(fieldname, 2);
         function_be93487f(fieldname, 2, 0, 1, 0, 0);
@@ -455,7 +455,7 @@ function function_a315cdc9(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Params 7, eflags: 0x2 linked
 // Checksum 0xd7f80820, Offset: 0x2470
 // Size: 0x284
-function function_d126379e(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
+function force_stream_weapons(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     weapons = [];
     switch (bwasdemojump) {
     case 1:
@@ -472,6 +472,6 @@ function function_d126379e(localclientnum, *oldval, newval, *bnewent, *binitials
         weapons[weapons.size] = getweapon(#"smg_heavy_t9", "acog");
         break;
     }
-    self thread util::function_d126379e(fieldname, weapons);
+    self thread util::force_stream_weapons(fieldname, weapons);
 }
 

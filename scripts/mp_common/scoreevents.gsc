@@ -990,7 +990,7 @@ function specificweaponkill(attacker, victim, weapon, killstreak, inflictor) {
     case #"swat_team":
         event = "swat_team_kill";
         break;
-    case #"hash_1bb82c01e27085a2":
+    case #"inventory_sig_lmg":
     case #"sig_lmg":
         if (getdvarint(#"hash_5c49df97f4f82e12", 0)) {
             event = #"hash_152f120fead67512";
@@ -1421,7 +1421,7 @@ function updatemultikills(weapon, weaponclass, killstreak, victim, time, *meanso
     }
     if (self.var_aa2f2279 >= 2) {
         if (!isdefined(self.pers[#"hash_68cb2a4ef4c94dbb"])) {
-            self stats::function_d0de7686(#"hash_539cbd04b9471ee4", 1, #"hash_59592d69443157f");
+            self stats::function_d0de7686(#"hash_539cbd04b9471ee4", 1, #"weapon_unlock_challenge_enabled_sledgehammer");
             self.pers[#"hash_68cb2a4ef4c94dbb"] = 1;
         }
     }

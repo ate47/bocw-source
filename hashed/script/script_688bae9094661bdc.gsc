@@ -295,9 +295,9 @@ function function_fc882f9f(*var_47983f3e, eventtype, modifier, *delay, *eventstr
             var_9c201ccd = "checkin";
         }
         if (var_9c201ccd == "checkin") {
-            self.var_6c59d395 = 1;
+            self.checkin = 1;
         } else {
-            self.stealth.var_18d729a2 = 1;
+            self.stealth.callin = 1;
         }
         break;
     case #"radio":
@@ -306,13 +306,13 @@ function function_fc882f9f(*var_47983f3e, eventtype, modifier, *delay, *eventstr
         var_9c201ccd = "update";
         if (!is_true(self.stealth.var_db0aaa4f)) {
             var_2a1d88cd = "callin";
-            self.stealth.var_18d729a2 = 1;
+            self.stealth.callin = 1;
             self.stealth.var_db0aaa4f = 1;
         } else {
             self.update = 1;
         }
         break;
-    case #"hash_d380cc11d47ae4":
+    case #"hunt":
         self.stealth.var_db0aaa4f = 0;
         break;
     }

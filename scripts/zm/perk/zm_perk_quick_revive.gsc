@@ -173,7 +173,7 @@ function quick_revive_precache() {
         [[ level.var_88d522c3 ]]();
         return;
     }
-    level._effect[#"revive_light"] = #"hash_1305f75a4e8d28c0";
+    level._effect[#"revive_light"] = #"zombie/fx_perk_quickrevive_ndu";
     level.machine_assets[#"hash_7f98b3dd3cce95aa"] = spawnstruct();
     level.machine_assets[#"hash_7f98b3dd3cce95aa"].weapon = getweapon("zombie_perk_bottle_revive");
     level.machine_assets[#"hash_7f98b3dd3cce95aa"].off_model = "p9_sur_machine_quick_revive_off";

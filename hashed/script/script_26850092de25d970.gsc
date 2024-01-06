@@ -41,11 +41,11 @@ function function_f9f06983(*var_d3440450) {
     var_6534f716[0] spawner::add_spawn_function(&namespace_b100dd86::function_87d56d50);
     level.var_efac709f = getent("player_breach_clip", "targetname");
     level.var_efac709f disconnectpaths();
-    level.var_fdc6062e = var_8a3bb97c[0] spawner::spawn(1);
+    level.adler = var_8a3bb97c[0] spawner::spawn(1);
     level.woods = var_6534f716[0] spawner::spawn(1);
     var_fcbd93e0 = struct::get("raid_approach_adler", "targetname");
     var_1100faeb = struct::get("raid_approach_woods", "targetname");
-    level.var_fdc6062e forceteleport(var_fcbd93e0.origin, var_fcbd93e0.angles);
+    level.adler forceteleport(var_fcbd93e0.origin, var_fcbd93e0.angles);
     level.woods forceteleport(var_1100faeb.origin, var_1100faeb.angles);
     player clientfield::set_to_player("force_stream_weapons", 1);
     level thread tkdn_raid_bar::function_68461db2();
@@ -67,9 +67,9 @@ function main(var_d3440450, var_50cc0d4f) {
         player = getplayers()[0];
         player setmovespeedscale(0.4);
         objectives::scripted("obj_takedown_capture", undefined, #"hash_49c1d860c97e3792");
-        objectives::follow("follow_adler", level.var_fdc6062e, undefined, 0, 0);
-        level.var_2f3bf638 = getent("raid_car", "targetname");
-        level thread scene::play("scene_tkd_hit2_intro_bar_v2", "Adler_part_3", [0:level.var_2f3bf638]);
+        objectives::follow("follow_adler", level.adler, undefined, 0, 0);
+        level.raid_car = getent("raid_car", "targetname");
+        level thread scene::play("scene_tkd_hit2_intro_bar_v2", "Adler_part_3", [0:level.raid_car]);
         if (isdefined(level.var_d7d201ba)) {
             player flag::set(level.var_d7d201ba);
         }
@@ -79,8 +79,8 @@ function main(var_d3440450, var_50cc0d4f) {
     thread namespace_a052577e::function_2032c91c();
     player = getplayers()[0];
     var_4f2ba130 = player getweaponslistprimaries();
-    foreach (var_5f48185 in var_4f2ba130) {
-        player takeweapon(var_5f48185);
+    foreach (e_w in var_4f2ba130) {
+        player takeweapon(e_w);
     }
     player util::function_3b6593e4(0.5, 2);
     level scene::init("scene_tkd_hit2_alley_civilians");
@@ -91,8 +91,8 @@ function main(var_d3440450, var_50cc0d4f) {
     level flag::wait_till("flag_move_on_to_alley");
     level thread function_3df72127();
     level notify(#"hash_5c41a54cd623966e");
-    var_d582d701 = getent("alley_clip", "targetname");
-    var_d582d701 delete();
+    alley_clip = getent("alley_clip", "targetname");
+    alley_clip delete();
     player val::reset(#"bar", "allow_sprint");
     player val::reset(#"bar", "allow_mantle");
     player val::reset(#"bar", "allow_jump");

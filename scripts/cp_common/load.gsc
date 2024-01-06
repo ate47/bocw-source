@@ -317,7 +317,7 @@ function function_d44ed07e(var_83104433 = skipto::function_60ca00f5(), var_585e3
 // Checksum 0x30447f27, Offset: 0x11d0
 // Size: 0x54
 function function_ff52baa2() {
-    level notify(#"hash_7048237e6652cff9");
+    level notify(#"cancel_preload");
     function_227b0384();
     level.var_d89799d7 = undefined;
     level flag::clear("switchmap_preload_finished");

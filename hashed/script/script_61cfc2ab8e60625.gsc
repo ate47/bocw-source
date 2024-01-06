@@ -38,7 +38,7 @@ function init_clientfields() {
 // Checksum 0xb5637ccd, Offset: 0x4a8
 // Size: 0xd2
 function function_9109a1fe() {
-    level.var_fdc6062e = self;
+    level.adler = self;
     self function_854b5376(1);
     self.radius = 32;
     level thread util::magic_bullet_shield(self);
@@ -201,7 +201,7 @@ function function_a66feb27() {
 // Size: 0xc4
 function function_a3c6d04c() {
     var_9343fe71 = struct::get("obj_jump", "targetname");
-    objectives::complete("follow_adler", level.var_fdc6062e);
+    objectives::complete("follow_adler", level.adler);
     objectives::follow("obj_rooftop_jump", var_9343fe71.origin, undefined, undefined, 0, #"hash_579ea815337d21d3");
     level flag::wait_till("flag_start_roof_slide");
     objectives::remove("obj_rooftop_jump");

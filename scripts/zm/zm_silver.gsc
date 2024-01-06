@@ -436,11 +436,11 @@ function function_87f4bdb0() {
 // Checksum 0x723231c8, Offset: 0x2a80
 // Size: 0xba
 function function_55b0a71e(get_all = 0) {
-    if (isdefined(level.zm_loc_types[#"hash_7d70de92d56468a1"]) && level.zm_loc_types[#"hash_7d70de92d56468a1"].size) {
+    if (isdefined(level.zm_loc_types[#"steiner_location"]) && level.zm_loc_types[#"steiner_location"].size) {
         if (get_all) {
-            s_spawn_loc = level.zm_loc_types[#"hash_7d70de92d56468a1"];
+            s_spawn_loc = level.zm_loc_types[#"steiner_location"];
         } else {
-            s_spawn_loc = array::random(level.zm_loc_types[#"hash_7d70de92d56468a1"]);
+            s_spawn_loc = array::random(level.zm_loc_types[#"steiner_location"]);
         }
     }
     return s_spawn_loc;
@@ -632,7 +632,7 @@ function function_b935b15c() {
     if (level clientfield::get("dog_round_fog_bank")) {
         level thread clientfield::set("dog_round_fog_bank", 0);
     }
-    if (level flag::get(#"hash_2402b0c689744e00") || level flag::get(#"hash_71f5c680c8211f16")) {
+    if (level flag::get(#"snowfall_fade_in") || level flag::get(#"snowfall_loop")) {
         function_7bb4a5d7("snowfall_fade_out");
         function_be03ceef(30);
         function_7bb4a5d7("snowfall_clear");
@@ -645,15 +645,15 @@ function function_b935b15c() {
 // Size: 0x234
 function function_7cdd91fd() {
     level endon(#"end_game");
-    level flag::wait_till(#"hash_5c4e5d3571f5e1f6");
-    level flag::wait_till_clear(#"hash_5c4e5d3571f5e1f6");
+    level flag::wait_till(#"dark_aether_active");
+    level flag::wait_till_clear(#"dark_aether_active");
     level notify(#"hash_245ff34dcc7bfe66");
-    level flag::clear(#"hash_2402b0c689744e00");
+    level flag::clear(#"snowfall_fade_in");
     level flag::clear(#"hash_2751dc07d8287c1");
-    level flag::clear(#"hash_36fc2d5b9b1b7085");
+    level flag::clear(#"snowfall_fade_out");
     if (!level flag::get("dog_round")) {
         level thread clientfield::set("" + #"hash_5e38b0496d9664bb", 3);
-        level flag::set(#"hash_71f5c680c8211f16");
+        level flag::set(#"snowfall_loop");
         exploder::stop_exploder("fxexp_snow_blizzard_fade_in");
         exploder::exploder("fxexp_snow_blizzard_loop");
         setdvar(#"hash_7b06b8037c26b99b", 195);
@@ -689,44 +689,44 @@ function function_a6308ec9() {
 // Size: 0x472
 function function_7bb4a5d7(state) {
     switch (state) {
-    case #"hash_2402b0c689744e00":
+    case #"snowfall_fade_in":
         if (!level flag::get("dog_round")) {
-            level flag::set(#"hash_2402b0c689744e00");
+            level flag::set(#"snowfall_fade_in");
             level thread clientfield::set("" + #"hash_5e38b0496d9664bb", 1);
             exploder::exploder("fxexp_snow_blizzard_fade_in");
             exploder::stop_exploder("fxexp_snow_blizzard_loop");
             setdvar(#"hash_7b06b8037c26b99b", 195);
         }
         break;
-    case #"hash_71f5c680c8211f16":
-        if (!level flag::get("dog_round") && level flag::get(#"hash_2402b0c689744e00")) {
-            level flag::clear(#"hash_2402b0c689744e00");
-            level flag::set(#"hash_71f5c680c8211f16");
+    case #"snowfall_loop":
+        if (!level flag::get("dog_round") && level flag::get(#"snowfall_fade_in")) {
+            level flag::clear(#"snowfall_fade_in");
+            level flag::set(#"snowfall_loop");
             exploder::stop_exploder("fxexp_snow_blizzard_fade_in");
             exploder::exploder("fxexp_snow_blizzard_loop");
         }
         break;
-    case #"hash_36fc2d5b9b1b7085":
-        if (!level flag::get("dog_round") && level flag::get(#"hash_71f5c680c8211f16")) {
-            level flag::clear(#"hash_71f5c680c8211f16");
-            level flag::set(#"hash_36fc2d5b9b1b7085");
+    case #"snowfall_fade_out":
+        if (!level flag::get("dog_round") && level flag::get(#"snowfall_loop")) {
+            level flag::clear(#"snowfall_loop");
+            level flag::set(#"snowfall_fade_out");
             level thread clientfield::set("" + #"hash_5e38b0496d9664bb", 0);
             exploder::stop_exploder("fxexp_snow_blizzard_fade_in");
             exploder::stop_exploder("fxexp_snow_blizzard_loop");
             setdvar(#"hash_7b06b8037c26b99b", 72);
         }
         break;
-    case #"hash_2ce5f9c5c37a2b35":
-        if (level flag::get(#"hash_36fc2d5b9b1b7085")) {
-            level flag::clear(#"hash_2402b0c689744e00");
+    case #"snowfall_clear":
+        if (level flag::get(#"snowfall_fade_out")) {
+            level flag::clear(#"snowfall_fade_in");
             level flag::clear(#"hash_2751dc07d8287c1");
-            level flag::clear(#"hash_36fc2d5b9b1b7085");
+            level flag::clear(#"snowfall_fade_out");
         }
         break;
     case #"dog_round":
-        level flag::clear(#"hash_2402b0c689744e00");
-        level flag::clear(#"hash_71f5c680c8211f16");
-        level flag::clear(#"hash_36fc2d5b9b1b7085");
+        level flag::clear(#"snowfall_fade_in");
+        level flag::clear(#"snowfall_loop");
+        level flag::clear(#"snowfall_fade_out");
         level thread clientfield::set("" + #"hash_5e38b0496d9664bb", 2);
         exploder::stop_exploder("fxexp_snow_blizzard_fade_in");
         exploder::stop_exploder("fxexp_snow_blizzard_loop");
@@ -778,11 +778,11 @@ function function_7a15a086() {
 function function_85bd89cb() {
     level endon(#"end_game");
     level flag::wait_till("start_zombie_round_logic");
-    var_ff5865d2 = getent("toy_horse_trigger", "targetname");
+    toy_horse_trigger = getent("toy_horse_trigger", "targetname");
     level thread scene::init(#"hash_4054de8e8701c4d");
-    var_ff5865d2 waittill(#"trigger");
+    toy_horse_trigger waittill(#"trigger");
     level thread scene::play(#"hash_4054de8e8701c4d");
-    var_ff5865d2 delete();
+    toy_horse_trigger delete();
 }
 
 // Namespace zm_silver/zm_silver

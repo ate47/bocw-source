@@ -1925,7 +1925,7 @@ function function_d0f5602a() {
         level thread [[ level.var_9b33b774 ]]();
         return;
     }
-    level notify(#"hash_1d40735298a6a821");
+    level notify(#"musroundend");
     if (is_true(level.var_607bd5fb)) {
         level thread sndmusicsystem_playstate("round_end_special");
         level.var_607bd5fb = 0;
@@ -2477,7 +2477,7 @@ function zmbaivox_notifyconvert() {
 // Size: 0x442
 function zmbaivox_playvox(zombie, type, override, priority, delayambientvox = 0) {
     zombie endon(#"disconnect", #"death");
-    if (level.gametype === #"hash_4aaf3d18f4747c4f") {
+    if (level.gametype === #"doa") {
         return;
     }
     if (!isdefined(zombie)) {

@@ -32,19 +32,19 @@
 // Checksum 0x83a3fe18, Offset: 0x290
 // Size: 0x174
 function function_f44fbe7c() {
-    if (!isdefined(self.var_8cff5775.var_121de807)) {
-        self.var_8cff5775.var_121de807 = namespace_ec06fe4a::function_b5731057("trigger_radius", self.origin, 1 & 512 & 8, 130, 50);
-        if (isdefined(self.var_8cff5775.var_121de807)) {
-            self.var_8cff5775.var_121de807.targetname = "stunBear";
-            self.var_8cff5775.var_121de807 enablelinkto();
-            self.var_8cff5775.var_121de807 linkto(self);
-            self.var_8cff5775.var_121de807 thread function_510ce803(self);
+    if (!isdefined(self.doa.var_121de807)) {
+        self.doa.var_121de807 = namespace_ec06fe4a::function_b5731057("trigger_radius", self.origin, 1 & 512 & 8, 130, 50);
+        if (isdefined(self.doa.var_121de807)) {
+            self.doa.var_121de807.targetname = "stunBear";
+            self.doa.var_121de807 enablelinkto();
+            self.doa.var_121de807 linkto(self);
+            self.doa.var_121de807 thread function_510ce803(self);
             self namespace_e32bb68::function_3a59ec34("evt_doa_pickup_teddybear_active_lp");
             self namespace_83eb6304::function_3ecfde67("stunbear");
         }
     }
     self thread function_6a9ffef0();
-    self thread function_7343529d(self.var_8cff5775.var_121de807);
+    self thread function_7343529d(self.doa.var_121de807);
 }
 
 // Namespace namespace_5f74ac47/namespace_5bb43837
@@ -55,21 +55,21 @@ function private function_79cb4037() {
     self notify("36c490e4e613efc0");
     self endon("36c490e4e613efc0");
     self endon(#"death");
-    self.var_8cff5775.stunned = 1;
+    self.doa.stunned = 1;
     self namespace_83eb6304::function_3ecfde67("stunbear_affected");
-    if (!is_true(self.var_8cff5775.var_74e4ded8)) {
-        self.var_8cff5775.var_db417b61 = self.var_8cff5775.original_origin;
-        self.var_8cff5775.var_33b29baf = 1;
+    if (!is_true(self.doa.var_74e4ded8)) {
+        self.doa.var_db417b61 = self.doa.original_origin;
+        self.doa.var_33b29baf = 1;
     } else {
-        self.var_8cff5775.var_db417b61 = self.origin;
-        self.var_8cff5775.var_33b29baf = 2;
+        self.doa.var_db417b61 = self.origin;
+        self.doa.var_33b29baf = 2;
     }
-    self namespace_250e9486::function_41354e51(self.var_8cff5775.var_db417b61, 1, self.var_8cff5775.var_33b29baf);
+    self namespace_250e9486::function_41354e51(self.doa.var_db417b61, 1, self.doa.var_33b29baf);
     wait(20);
     if (self.zombie_move_speed == "walk") {
         self.zombie_move_speed = "run";
     }
-    self.var_8cff5775.stunned = 0;
+    self.doa.stunned = 0;
     self namespace_83eb6304::turnofffx("stunbear_affected");
     self.ignoreall = 0;
     self clearenemy();
@@ -98,13 +98,13 @@ function private function_510ce803(player) {
         result = undefined;
         result = self waittill(#"trigger");
         guy = result.activator;
-        if (!isdefined(guy) || !isdefined(guy.var_8cff5775)) {
+        if (!isdefined(guy) || !isdefined(guy.doa)) {
             continue;
         }
         if (is_true(guy.var_bbdaef90) || is_true(guy.boss)) {
             continue;
         }
-        if (guy.var_8cff5775.stunned === 0) {
+        if (guy.doa.stunned === 0) {
             guy namespace_e32bb68::function_3a59ec34("evt_doa_pickup_teddybear_repulse");
             guy namespace_83eb6304::function_3ecfde67("stunbear_contact");
             player playrumbleonentity("slide_rumble");
@@ -125,7 +125,7 @@ function private function_6a9ffef0() {
         self endon(#"disconnect");
     }
     timeout = self namespace_1c2a96f9::function_4808b985(20);
-    self waittilltimeout(timeout, #"entering_last_stand", #"hash_658e10e65ed524c0", #"player_died", #"death");
+    self waittilltimeout(timeout, #"entering_last_stand", #"doa_exit_taken", #"player_died", #"death");
     self notify(#"hash_26b5087b9dec0906");
 }
 
@@ -136,7 +136,7 @@ function private function_6a9ffef0() {
 function private function_7343529d(trigger) {
     self notify("38070fbe679eeaab");
     self endon("38070fbe679eeaab");
-    self waittill(#"hash_26b5087b9dec0906", #"disconnect", #"hash_658e10e65ed524c0", #"clone_shutdown");
+    self waittill(#"hash_26b5087b9dec0906", #"disconnect", #"doa_exit_taken", #"clone_shutdown");
     if (isdefined(self)) {
         self notify(#"hash_26b5087b9dec0906");
         self namespace_83eb6304::turnofffx("stunbear");

@@ -335,13 +335,13 @@ function function_4bac897(var_4d2ad93e) {
 // Size: 0x8c
 function function_525c846d(ammomod) {
     switch (ammomod) {
-    case #"hash_7958a864777a5c5b":
+    case #"ammomod_brainrot":
         return 6;
-    case #"hash_11000effaf032a0":
+    case #"ammomod_cryofreeze":
         return 1;
-    case #"hash_61fcc1f817072249":
+    case #"ammomod_deadwire":
         return 4;
-    case #"hash_3a26d24b0468790f":
+    case #"ammomod_napalmburst":
         return 3;
     case #"ammomod_shatterblast":
         return 7;

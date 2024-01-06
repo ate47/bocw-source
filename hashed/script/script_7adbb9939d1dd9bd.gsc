@@ -241,7 +241,7 @@ function function_a161addf() {
     used = [];
     guys = getplayers();
     foreach (guy in guys) {
-        used[used.size] = guy.var_8cff5775.color;
+        used[used.size] = guy.doa.color;
     }
     valid = array::exclude(colors, used);
     return "TEST MONKEY (" + valid[0] + ")";

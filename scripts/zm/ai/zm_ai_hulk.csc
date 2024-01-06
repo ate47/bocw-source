@@ -23,10 +23,10 @@ function private autoexec __init__system__() {
 // Checksum 0xf7f4c830, Offset: 0x330
 // Size: 0x37c
 function private function_70a657d8() {
-    clientfield::register("scriptmover", "dog_launcher_explode_fx", 1, 1, "counter", &function_2168aab4, 0, 0);
+    clientfield::register("scriptmover", "dog_launcher_explode_fx", 1, 1, "counter", &dog_launcher_explode_fx, 0, 0);
     clientfield::register("scriptmover", "hs_swarm_state", 1, 3, "int", &function_440e968, 0, 0);
     clientfield::register("allplayers", "hs_swarm_damage", 1, 3, "int", &function_64d1f09b, 1, 0);
-    clientfield::register("scriptmover", "dog_projectile_fx", 1, 1, "int", &function_48a507d9, 0, 0);
+    clientfield::register("scriptmover", "dog_projectile_fx", 1, 1, "int", &dog_projectile_fx, 0, 0);
     clientfield::register("scriptmover", "hs_summon_cf", 1, 2, "int", &function_e54f99c7, 0, 0);
     clientfield::register("actor", "hs_melee_wander_heal_cf", 1, 1, "int", &function_492b47af, 0, 0);
     clientfield::register("actor", "hs_hound_actor_cf", 1, 1, "int", &function_fa6b2c4a, 0, 0);
@@ -86,7 +86,7 @@ function private function_16f54168(localclientnum, point, radius, duration, var_
 // Params 7, eflags: 0x0
 // Checksum 0xee850eca, Offset: 0x900
 // Size: 0xd6
-function function_48a507d9(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function dog_projectile_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     util::waittill_dobj(fieldname);
     if (!isdefined(self)) {
         return;
@@ -103,7 +103,7 @@ function function_48a507d9(localclientnum, *oldval, newval, *bnewent, *binitials
 // Params 7, eflags: 0x4
 // Checksum 0xb26b2445, Offset: 0x9e0
 // Size: 0x10c
-function private function_2168aab4(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function private dog_launcher_explode_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self.fx = playfx(fieldname, #"hash_1a93b9b31b5d1d3b", self.origin + vectorscale((0, 0, 1), 18), anglestoup(self.angles));
         self playsound(fieldname, #"hash_6a76932cce379c66");

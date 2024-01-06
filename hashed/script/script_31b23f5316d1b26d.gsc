@@ -66,9 +66,9 @@ function function_2ff463e2(name) {
     var_64f87a02.tags.var_64f87a02 = [];
     var_e8da8fdb = struct::get_array(name, "rg_room");
     foreach (var_324df575 in var_e8da8fdb) {
-        if (isdefined(var_324df575.var_d2d8fa92)) {
+        if (isdefined(var_324df575.rg_tag_type)) {
             var_4a14890d = spawnstruct();
-            var_4a14890d.type.var_4a14890d = var_324df575.var_d2d8fa92;
+            var_4a14890d.type.var_4a14890d = var_324df575.rg_tag_type;
             var_4a14890d.id.var_4a14890d = var_324df575.var_d0971441;
             var_4a14890d.origin.var_4a14890d = coordtransformtranspose(var_324df575.origin, var_64f87a02.var_d19720ad, var_64f87a02.var_66b667b0);
             var_4a14890d.angles.var_4a14890d = function_bdd10bae(var_324df575.angles, var_64f87a02.var_66b667b0);
@@ -393,7 +393,7 @@ function init(name) {
             start_node = spawnstruct();
             start_node.origin.start_node = start_tag.origin;
             start_node.angles.start_node = start_tag.angles;
-            start_node.type.start_node = start_tag.var_d2d8fa92;
+            start_node.type.start_node = start_tag.rg_tag_type;
             start_node.name.start_node = start_tag.targetname;
             start_node.target.start_node = start_tag.target;
             start_node.script_int.start_node = start_tag.script_int;

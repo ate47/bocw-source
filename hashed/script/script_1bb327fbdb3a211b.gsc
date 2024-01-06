@@ -316,7 +316,7 @@ function function_4d67771c(n_wave) {
         ai.b_ignore_cleanup.ai = 1;
         ai.ignore_enemy_count.ai = 1;
         ai.no_powerups.ai = 1;
-        if (ai.aitype === #"hash_1aff4b71635bda08") {
+        if (ai.aitype === #"spawner_bo5_avogadro_sr") {
             archetype_avogadro::function_33237109(ai, self.origin, 600);
         } else if (ai.aitype === #"spawner_bo5_mimic") {
             ai clientfield::increment("" + #"hash_54e2a4e02a26cc62", 1);

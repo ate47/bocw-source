@@ -31,7 +31,7 @@
 // Checksum 0xd10cc159, Offset: 0x218
 // Size: 0x1a4
 function init() {
-    level.var_8cff5775.var_9e132ad0 = [];
+    level.doa.var_9e132ad0 = [];
     clientfield::register("scriptmover", "play_sfx", 1, 8, "int");
     clientfield::register("allplayers", "play_sfx", 1, 8, "int");
     clientfield::register("actor", "play_sfx", 1, 8, "int");
@@ -48,17 +48,17 @@ function init() {
 // Checksum 0x4d7cc666, Offset: 0x3c8
 // Size: 0x12c
 function function_c1e0cc87(name, *unused1, *var_5ddf2027, var_f80dfd0d = 0) {
-    if (!isdefined(level.var_8cff5775.var_9e132ad0)) {
-        level.var_8cff5775.var_9e132ad0 = [];
+    if (!isdefined(level.doa.var_9e132ad0)) {
+        level.doa.var_9e132ad0 = [];
     }
-    var_318e5b78 = level.var_8cff5775.var_9e132ad0.size + 1;
+    var_318e5b78 = level.doa.var_9e132ad0.size + 1;
     /#
         assert(var_318e5b78 < 256, "<unknown string>");
     #/
     /#
-        assert(!isdefined(level.var_8cff5775.var_9e132ad0[var_5ddf2027]), "<unknown string>");
+        assert(!isdefined(level.doa.var_9e132ad0[var_5ddf2027]), "<unknown string>");
     #/
-    level.var_8cff5775.var_9e132ad0[var_5ddf2027] = {#clear:var_f80dfd0d, #id:var_318e5b78, #name:var_5ddf2027};
+    level.doa.var_9e132ad0[var_5ddf2027] = {#clear:var_f80dfd0d, #id:var_318e5b78, #name:var_5ddf2027};
 }
 
 // Namespace namespace_e32bb68/namespace_e32bb68
@@ -145,19 +145,19 @@ function function_ae271c0b(name) {
     /#
         assert(self != level, "<unknown string>" + name);
     #/
-    if (!isdefined(level.var_8cff5775.var_9e132ad0[name])) {
+    if (!isdefined(level.doa.var_9e132ad0[name])) {
         namespace_1e25ad94::function_f5f0c0f8("SFX OFF ERROR for entity [" + (isdefined(self.entnum) ? self.entnum : self getentitynumber()) + "] effect UNDFINED--> [" + name + "] ");
         return;
     }
     if (!isdefined(self.var_a045580f)) {
-        self thread function_10e0969b(level.var_8cff5775.var_9e132ad0[name]);
-    } else if (!isinarray(self.var_a045580f, level.var_8cff5775.var_9e132ad0[name])) {
+        self thread function_10e0969b(level.doa.var_9e132ad0[name]);
+    } else if (!isinarray(self.var_a045580f, level.doa.var_9e132ad0[name])) {
         if (!isdefined(self.var_a045580f)) {
             self.var_a045580f = [];
         } else if (!isarray(self.var_a045580f)) {
             self.var_a045580f = array(self.var_a045580f);
         }
-        self.var_a045580f[self.var_a045580f.size] = level.var_8cff5775.var_9e132ad0[name];
+        self.var_a045580f[self.var_a045580f.size] = level.doa.var_9e132ad0[name];
     }
     /#
         assert(self.var_a045580f.size < 24, "<unknown string>" + name);
@@ -175,19 +175,19 @@ function function_3a59ec34(name) {
     /#
         assert(self != level, "<unknown string>" + name);
     #/
-    if (!isdefined(level.var_8cff5775.var_9e132ad0[name])) {
+    if (!isdefined(level.doa.var_9e132ad0[name])) {
         namespace_1e25ad94::function_f5f0c0f8("SFX ON ERROR for entity [" + (isdefined(self.entnum) ? self.entnum : self getentitynumber()) + "] effect UNDFINED--> [" + name + "] ");
         return;
     }
     if (!isdefined(self.var_17618ff9)) {
-        self thread function_8dc5fbf8(level.var_8cff5775.var_9e132ad0[name]);
-    } else if (!isinarray(self.var_17618ff9, level.var_8cff5775.var_9e132ad0[name])) {
+        self thread function_8dc5fbf8(level.doa.var_9e132ad0[name]);
+    } else if (!isinarray(self.var_17618ff9, level.doa.var_9e132ad0[name])) {
         if (!isdefined(self.var_17618ff9)) {
             self.var_17618ff9 = [];
         } else if (!isarray(self.var_17618ff9)) {
             self.var_17618ff9 = array(self.var_17618ff9);
         }
-        self.var_17618ff9[self.var_17618ff9.size] = level.var_8cff5775.var_9e132ad0[name];
+        self.var_17618ff9[self.var_17618ff9.size] = level.doa.var_9e132ad0[name];
     }
     /#
         assert(self.var_17618ff9.size < 24, "<unknown string>" + name);

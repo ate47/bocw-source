@@ -228,7 +228,7 @@ function function_ea7dccdf(var_a276c861, var_19e802fa) {
         if (isdefined(level.var_86967fca)) {
             level.var_86967fca delete();
         }
-        zm_utility::function_d729de6a(1, [0:#"hash_74f0786199aae77e"]);
+        zm_utility::function_d729de6a(1, [0:#"zone_safe_house"]);
         if (isdefined(level.var_56e22cfa)) {
             level.var_56e22cfa thread namespace_8d91c4fb::function_b6999bc7();
         }
@@ -568,7 +568,7 @@ function private function_83b1ebd5(var_ba86b46) {
 // Size: 0x104
 function private function_f0bfb4bb(var_ba86b46) {
     if (level flag::get(#"hash_ea77ee1e954ccf") && level flag::get(#"hash_504c8d65e27d0216")) {
-        zm_utility::function_d729de6a(1, [0:#"hash_74f0786199aae77e"]);
+        zm_utility::function_d729de6a(1, [0:#"zone_safe_house"]);
         if (isdefined(level.var_56e22cfa)) {
             level.var_56e22cfa thread namespace_8d91c4fb::function_b6999bc7();
         }
@@ -590,7 +590,7 @@ function private function_c3447490() {
         level.var_56e22cfa clientfield::set("" + #"hash_3e4641a9ea00d061", 1);
     }
     level.var_cee8794f = struct::get("tag_align_klaus_sit", "targetname");
-    level.var_e102da87 = struct::get("klaus_hole_loc", "targetname");
+    level.klaus_hole_loc = struct::get("klaus_hole_loc", "targetname");
 }
 
 // Namespace namespace_6fb22263/namespace_6fb22263
@@ -649,7 +649,7 @@ function private function_b503a4ce(n_state) {
     case 1:
         if (isarray(level.var_8f2f30f5)) {
             foreach (radio in level.var_8f2f30f5) {
-                radio setmodel(#"hash_14819c4a2194274e");
+                radio setmodel(#"p9_zm_platinum_radio_call_boxes_on");
                 radio function_619a5c20();
                 radio playsound(#"hash_694ca8a2f30e0e55");
                 radio clientfield::set("" + #"hash_19a76e1eb767b16b", 1);
@@ -661,7 +661,7 @@ function private function_b503a4ce(n_state) {
         break;
     case 2:
         foreach (radio in level.var_8f2f30f5) {
-            radio setmodel(#"hash_6c48c9f70ea7dc70");
+            radio setmodel(#"p9_zm_platinum_radio_call_boxes_off");
             radio function_619a5c20();
             radio playsound(#"hash_7b6bafe300f8cd31");
             radio clientfield::set("" + #"hash_19a76e1eb767b16b", 0);
@@ -833,7 +833,7 @@ function private function_8d5c5a84(var_a5839c5b, var_1e447653 = 0) {
             level.var_56e22cfa clientfield::set("" + #"hash_3e4641a9ea00d061", 0);
         }
         level flag::set(#"hash_19be6db4d7ab2200");
-        zm_utility::function_d729de6a(0, [0:#"hash_74f0786199aae77e"]);
+        zm_utility::function_d729de6a(0, [0:#"zone_safe_house"]);
     } else if (isdefined(level.var_56e22cfa)) {
         var_22043f8e = var_a5839c5b.origin;
         level.var_56e22cfa zodcompanionutility::function_3fb3f41e(var_a5839c5b);

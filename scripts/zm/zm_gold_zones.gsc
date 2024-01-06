@@ -397,7 +397,7 @@ function function_a2cfeff5() {
     level endon(#"end_game");
     level flag::wait_till(#"all_players_spawned");
     foreach (var_9503a78 in getentarray("flinger_pad_aimer", "targetname")) {
-        if (var_9503a78.script_noteworthy === #"hash_723332556beabf57") {
+        if (var_9503a78.script_noteworthy === #"jump_pad") {
             var_9503a78 clientfield::set("set_compass_icon", 1);
         }
     }
@@ -502,7 +502,7 @@ function function_27028b8e(str_zone) {
         var_601fee0 = #"hash_4e1d8a30f4ea2f2b";
         break;
     case #"zone_armory2":
-    case #"hash_42eb643694d01172":
+    case #"zone_armory":
         var_601fee0 = #"hash_3cc28115aef8d6f6";
         break;
     case #"zone_chopper_gunner":

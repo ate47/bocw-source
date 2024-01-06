@@ -33,7 +33,7 @@ function init_shared(bundlename, var_b083dcd0) {
     clientfield::register("scriptmover", "" + #"hash_3d8e05debfa62f2d", 1, 1, "int");
     clientfield::register("missile", "" + #"hash_77346335cbe9ecde", 1, 1, "int");
     level.var_ea918548 = scene::get_all_shot_names(#"p9_fxanim_mp_napalm_strike_spin");
-    level.var_84be063a = {#var_2d3611fa:[], #var_9bac810c:[], #var_cf856437:[]};
+    level.napalmstrike = {#var_2d3611fa:[], #var_9bac810c:[], #var_cf856437:[]};
 }
 
 // Namespace napalm_strike/namespace_b00a727a
@@ -106,7 +106,7 @@ function function_88e2e18a(killstreaktype, location, team, killstreak_id, startd
         wait(startdelay);
     }
     if (isdefined(killstreak_id)) {
-        level.var_84be063a.var_cf856437[killstreak_id] = 1;
+        level.napalmstrike.var_cf856437[killstreak_id] = 1;
     }
     if (is_true(level.var_dfdeb3ed)) {
         position = location.origin;
@@ -224,9 +224,9 @@ function cleanup(killstreaktype, plane, killstreak_id, team, owner, location) {
     if (isdefined(plane)) {
         plane thread killstreaks::function_3696d106();
     }
-    if (isdefined(level.var_84be063a.var_cf856437[killstreak_id])) {
+    if (isdefined(level.napalmstrike.var_cf856437[killstreak_id])) {
         owner killstreakrules::killstreakstop(killstreaktype, team, killstreak_id);
-        arrayremoveindex(level.var_84be063a.var_cf856437, killstreak_id, 1);
+        arrayremoveindex(level.napalmstrike.var_cf856437, killstreak_id, 1);
     }
     self waittilltimeout(3, #"death");
     if (isdefined(self)) {
@@ -486,7 +486,7 @@ function function_985141f2(owner, startpos, normal, direction, killcament, team,
         }
         var_d1bb98ed = position + vectorscale(fxnormal, 10);
         var_acf59456 = {#team:team, #owner:owner, #killcament:killcament, #var_d1bb98ed:var_d1bb98ed, #damageendtime:damageendtime};
-        level.var_84be063a.var_9bac810c[level.var_84be063a.var_9bac810c.size] = var_acf59456;
+        level.napalmstrike.var_9bac810c[level.napalmstrike.var_9bac810c.size] = var_acf59456;
         /#
             if (getdvarint(#"hash_2cb865fc68c3cb44", 0)) {
                 sphere(var_d1bb98ed, 70, (1, 0, 0), 0.3, 1, 10, 200);
@@ -517,12 +517,12 @@ function private function_660d94c3(firesound, killcament, var_51589eb4) {
 // Size: 0xd4
 function private function_f712ec5e() {
     time = gettime();
-    foreach (key, var_93057333 in level.var_84be063a.var_9bac810c) {
+    foreach (key, var_93057333 in level.napalmstrike.var_9bac810c) {
         if (var_93057333.damageendtime < time) {
-            level.var_84be063a.var_9bac810c[key] = undefined;
+            level.napalmstrike.var_9bac810c[key] = undefined;
         }
     }
-    arrayremovevalue(level.var_84be063a.var_9bac810c, undefined);
+    arrayremovevalue(level.napalmstrike.var_9bac810c, undefined);
 }
 
 // Namespace napalm_strike/namespace_b00a727a
@@ -555,18 +555,18 @@ function private isunderwater(position) {
 // Checksum 0xfed4828a, Offset: 0x2a78
 // Size: 0x626
 function private function_e3bc95f2(killstreakbundle) {
-    if (is_true(level.var_84be063a.var_f6509520)) {
+    if (is_true(level.napalmstrike.var_f6509520)) {
         return;
     }
-    level.var_84be063a.var_f6509520 = 1;
+    level.napalmstrike.var_f6509520 = 1;
     level endon(#"game_ended");
     var_e9c2375d = killstreakbundle.var_95280bcc;
     var_4122ca21 = 0;
     var_54715763 = getweapon(#"hash_72c14c150086340c");
-    while (level.var_84be063a.var_cf856437.size || level.var_84be063a.var_9bac810c.size) {
+    while (level.napalmstrike.var_cf856437.size || level.napalmstrike.var_9bac810c.size) {
         var_e5a58a70 = [];
         var_d98685bf = [];
-        foreach (var_93057333 in level.var_84be063a.var_9bac810c) {
+        foreach (var_93057333 in level.napalmstrike.var_9bac810c) {
             position = var_93057333.var_d1bb98ed;
             playertargets = level getpotentialtargets(var_93057333, var_e9c2375d);
             foreach (player in playertargets) {
@@ -593,21 +593,21 @@ function private function_e3bc95f2(killstreakbundle) {
         foreach (entity in var_d98685bf) {
             entity thread function_2f66cd96(var_93057333, var_54715763, killstreakbundle);
         }
-        foreach (entitynumber, player in level.var_84be063a.var_2d3611fa) {
+        foreach (entitynumber, player in level.napalmstrike.var_2d3611fa) {
             if (!isdefined(var_e5a58a70[entitynumber])) {
                 player function_1db9aa5e();
             }
         }
-        level.var_84be063a.var_2d3611fa = var_e5a58a70;
+        level.napalmstrike.var_2d3611fa = var_e5a58a70;
         wait(killstreakbundle.var_f5f02f46);
         var_4122ca21 = var_4122ca21 - killstreakbundle.var_f5f02f46;
         level function_f712ec5e();
     }
-    foreach (player in level.var_84be063a.var_2d3611fa) {
+    foreach (player in level.napalmstrike.var_2d3611fa) {
         player function_1db9aa5e();
     }
-    level.var_84be063a.var_f6509520 = undefined;
-    level.var_84be063a.var_2d3611fa = [];
+    level.napalmstrike.var_f6509520 = undefined;
+    level.napalmstrike.var_2d3611fa = [];
 }
 
 // Namespace napalm_strike/namespace_b00a727a

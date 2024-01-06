@@ -34,13 +34,13 @@
                     "variantname": "#hunt_steiner"
                 },
                 {
-                    "variantname": "#hash_7b3c572929f02d72"
+                    "variantname": "#hunt_mimic"
                 },
                 {
                     "variantname": "#hash_7ecff86523884e12"
                 }
             ],
-            "objectivename": "#hash_d380cc11d47ae4"
+            "objectivename": "#hunt"
         },
         {
             "var_e014f23a": [
@@ -56,13 +56,13 @@
         {
             "var_e014f23a": [
                 {
-                    "variantname": "#hash_6fd7815198233fef"
+                    "variantname": "#retrieval_alt"
                 },
                 {
                     "variantname": "#hash_1890a723bc26c833"
                 }
             ],
-            "objectivename": "#hash_68d86d0667a9989b"
+            "objectivename": "#retrieval"
         },
         {
             "objectivename": "#hash_65660aeee07403d0"
@@ -73,7 +73,7 @@
     ],
     "var_f9b18059": [
         {
-            "objectivename": "#hash_5afb912664f336f"
+            "objectivename": "#exfil"
         },
         {
             "var_e014f23a": [

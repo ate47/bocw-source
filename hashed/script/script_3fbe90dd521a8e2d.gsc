@@ -11,9 +11,9 @@
 #using scripts\core_common\ai_shared.gsc;
 #using scripts\core_common\aat_shared.gsc;
 
-#namespace namespace_86c9684b;
+#namespace ammomod_deadwire;
 
-// Namespace namespace_86c9684b/namespace_86c9684b
+// Namespace ammomod_deadwire/ammomod_deadwire
 // Params 0, eflags: 0x0
 // Checksum 0xdd58fb17, Offset: 0x268
 // Size: 0xa84
@@ -104,35 +104,35 @@ function function_af1f180() {
     callback::add_callback(#"hash_210adcf09e99fba1", &function_ffe2bb2f);
 }
 
-// Namespace namespace_86c9684b/namespace_86c9684b
+// Namespace ammomod_deadwire/ammomod_deadwire
 // Params 1, eflags: 0x4
 // Checksum 0x7aa45a27, Offset: 0xcf8
 // Size: 0xcc
 function private function_832f84f6(aat_name = "ammomod_deadwire") {
     switch (aat_name) {
-    case #"hash_61fcc1f817072249":
+    case #"ammomod_deadwire":
         return 0;
         break;
-    case #"hash_1340f0354789de09":
+    case #"ammomod_deadwire_1":
         return 1;
         break;
-    case #"hash_1340ed354789d8f0":
+    case #"ammomod_deadwire_2":
         return 2;
         break;
-    case #"hash_1340ee354789daa3":
+    case #"ammomod_deadwire_3":
         return 3;
         break;
-    case #"hash_1340f3354789e322":
+    case #"ammomod_deadwire_4":
         return 4;
         break;
-    case #"hash_1340f4354789e4d5":
+    case #"ammomod_deadwire_5":
         return 5;
         break;
     }
     return 0;
 }
 
-// Namespace namespace_86c9684b/namespace_86c9684b
+// Namespace ammomod_deadwire/ammomod_deadwire
 // Params 8, eflags: 0x0
 // Checksum 0x8ee194f7, Offset: 0xdd0
 // Size: 0x40c
@@ -200,23 +200,23 @@ function result(*death, attacker, *mod, weapon, *var_fd90b0bb, vpoint, *shitloc,
     }
 }
 
-// Namespace namespace_86c9684b/namespace_86c9684b
+// Namespace ammomod_deadwire/ammomod_deadwire
 // Params 1, eflags: 0x0
 // Checksum 0xe652af5c, Offset: 0x11e8
 // Size: 0xc2
 function function_b686c867(e_attacker) {
     n_current_time = float(gettime()) / 1000;
     if (isplayer(e_attacker)) {
-        if (!isdefined(e_attacker.aat_cooldown_start[#"hash_2ef5c0c95cba4c2d"])) {
+        if (!isdefined(e_attacker.aat_cooldown_start[#"zm_ammomod_deadwire_explosion"])) {
             return 1;
-        } else if (isdefined(e_attacker.aat_cooldown_start[#"hash_2ef5c0c95cba4c2d"]) && n_current_time >= e_attacker.aat_cooldown_start[#"hash_2ef5c0c95cba4c2d"] + 30) {
+        } else if (isdefined(e_attacker.aat_cooldown_start[#"zm_ammomod_deadwire_explosion"]) && n_current_time >= e_attacker.aat_cooldown_start[#"zm_ammomod_deadwire_explosion"] + 30) {
             return 1;
         }
     }
     return 0;
 }
 
-// Namespace namespace_86c9684b/namespace_86c9684b
+// Namespace ammomod_deadwire/ammomod_deadwire
 // Params 3, eflags: 0x0
 // Checksum 0xf0d3e54f, Offset: 0x12b8
 // Size: 0xdc
@@ -235,7 +235,7 @@ function function_e0e02bed(attacker, s_params, tier) {
     }
 }
 
-// Namespace namespace_86c9684b/namespace_86c9684b
+// Namespace ammomod_deadwire/ammomod_deadwire
 // Params 3, eflags: 0x0
 // Checksum 0xba95f931, Offset: 0x13a0
 // Size: 0x1c4
@@ -261,7 +261,7 @@ function function_5e4b580b(player, s_params, tier) {
     }
 }
 
-// Namespace namespace_86c9684b/namespace_86c9684b
+// Namespace ammomod_deadwire/ammomod_deadwire
 // Params 5, eflags: 0x0
 // Checksum 0x7efb632f, Offset: 0x1570
 // Size: 0x19c
@@ -269,10 +269,10 @@ function function_de99f2ad(player, var_fb0999c0, s_params, tier, var_ebf63dce = 
     if (!isalive(self)) {
         return;
     }
-    if (is_true(level.aat[#"hash_61fcc1f817072249"].immune_result_indirect[self.archetype])) {
+    if (is_true(level.aat[#"ammomod_deadwire"].immune_result_indirect[self.archetype])) {
         return;
     }
-    if (self == var_fb0999c0 && is_true(level.aat[#"hash_61fcc1f817072249"].immune_result_direct[self.archetype])) {
+    if (self == var_fb0999c0 && is_true(level.aat[#"ammomod_deadwire"].immune_result_direct[self.archetype])) {
         return;
     }
     if (self ai::is_stunned() || self flag::get(#"hash_83000b27a1fe353") || !self ai::function_28aab32a()) {
@@ -286,7 +286,7 @@ function function_de99f2ad(player, var_fb0999c0, s_params, tier, var_ebf63dce = 
     self thread function_30c7f12c(player, s_params, tier, var_ebf63dce);
 }
 
-// Namespace namespace_86c9684b/namespace_86c9684b
+// Namespace ammomod_deadwire/ammomod_deadwire
 // Params 3, eflags: 0x0
 // Checksum 0xb250a954, Offset: 0x1718
 // Size: 0x11c
@@ -301,7 +301,7 @@ function function_13d4bcdf(*origin, player, params) {
     self thread function_2bd8c11(player, damage_percent, weapon, var_871d3454);
 }
 
-// Namespace namespace_86c9684b/namespace_86c9684b
+// Namespace ammomod_deadwire/ammomod_deadwire
 // Params 4, eflags: 0x0
 // Checksum 0xc375d4c0, Offset: 0x1840
 // Size: 0x23e
@@ -331,7 +331,7 @@ function function_2bd8c11(player, damage_percent, weapon, var_871d3454) {
     }
 }
 
-// Namespace namespace_86c9684b/namespace_86c9684b
+// Namespace ammomod_deadwire/ammomod_deadwire
 // Params 4, eflags: 0x0
 // Checksum 0xf871d4d6, Offset: 0x1a88
 // Size: 0x134
@@ -351,7 +351,7 @@ function function_30c7f12c(player, s_params, tier, *var_ebf63dce = 0) {
     self thread function_ffe2bb2f();
 }
 
-// Namespace namespace_86c9684b/namespace_86c9684b
+// Namespace ammomod_deadwire/ammomod_deadwire
 // Params 0, eflags: 0x0
 // Checksum 0x73223b05, Offset: 0x1bc8
 // Size: 0xc4
@@ -367,7 +367,7 @@ function function_ffe2bb2f() {
     }
 }
 
-// Namespace namespace_86c9684b/namespace_86c9684b
+// Namespace ammomod_deadwire/ammomod_deadwire
 // Params 3, eflags: 0x0
 // Checksum 0xe05b0c2f, Offset: 0x1c98
 // Size: 0x7c
@@ -378,7 +378,7 @@ function function_742f2da3(damage = 0, attacker, weapon) {
     }
 }
 
-// Namespace namespace_86c9684b/namespace_86c9684b
+// Namespace ammomod_deadwire/ammomod_deadwire
 // Params 2, eflags: 0x0
 // Checksum 0x3fc7d39e, Offset: 0x1d20
 // Size: 0xb4

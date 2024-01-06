@@ -213,11 +213,11 @@ function function_6b66a9a3(*localclientnum, *oldval, newval, *bnewent, *binitial
     if (bwastimejump) {
         forcestreamxmodel(#"p9_fxp_zm_teleport_tunnel");
         forcestreamxmodel(#"p9_fxp_zm_teleport_tunnel_edge");
-        function_3385d776(#"hash_2f112a3ab3cf120a");
+        function_3385d776(#"zombie/fx9_aether_tear_portal_tunnel_1p");
     } else {
         stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel");
         stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel_edge");
-        function_c22a1ca2(#"hash_2f112a3ab3cf120a");
+        function_c22a1ca2(#"zombie/fx9_aether_tear_portal_tunnel_1p");
     }
 }
 
@@ -433,11 +433,11 @@ function function_167fc35(*localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwastimejump) {
         forcestreamxmodel(#"p9_fxp_zm_teleport_tunnel");
         forcestreamxmodel(#"p9_fxp_zm_teleport_tunnel_edge");
-        function_3385d776(#"hash_2f112a3ab3cf120a");
+        function_3385d776(#"zombie/fx9_aether_tear_portal_tunnel_1p");
     } else {
         stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel");
         stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel_edge");
-        function_c22a1ca2(#"hash_2f112a3ab3cf120a");
+        function_c22a1ca2(#"zombie/fx9_aether_tear_portal_tunnel_1p");
     }
 }
 

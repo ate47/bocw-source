@@ -7,17 +7,17 @@
 #using scripts\core_common\flag_shared.gsc;
 #using scripts\core_common\system_shared.gsc;
 
-#namespace namespace_8a9215cf;
+#namespace spy_wanted_order;
 
-// Namespace namespace_8a9215cf/namespace_8a9215cf
+// Namespace spy_wanted_order/spy_wanted_order
 // Params 0, eflags: 0x5
 // Checksum 0xb9d3ccae, Offset: 0x1a0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_29e063b051470416", &function_70a657d8, undefined, undefined, #"killstreaks");
+    system::register(#"spy_wanted_order", &function_70a657d8, undefined, undefined, #"killstreaks");
 }
 
-// Namespace namespace_8a9215cf/namespace_8a9215cf
+// Namespace spy_wanted_order/spy_wanted_order
 // Params 0, eflags: 0x6 linked
 // Checksum 0xe7bf5175, Offset: 0x1f0
 // Size: 0x58
@@ -27,7 +27,7 @@ function private function_70a657d8() {
     level.var_e9e1396f = {};
 }
 
-// Namespace namespace_8a9215cf/namespace_8a9215cf
+// Namespace spy_wanted_order/spy_wanted_order
 // Params 1, eflags: 0x2 linked
 // Checksum 0x79d38aae, Offset: 0x250
 // Size: 0x520
@@ -67,11 +67,11 @@ function function_cd089b2e(*killstreaktype) {
         if (!isdefined(player)) {
             return;
         }
-        level.var_44018194 namespace_bfc09150::set_state(player, "WantedOrderMenu");
+        level.var_44018194 hud_spy::set_state(player, "WantedOrderMenu");
         player flag::set("selectingWantedPlayer");
         player thread function_eb585639();
         event = undefined;
-        event = player waittill(#"hash_79490f9acf32966c", #"hash_91a93ea58d7ad74", #"death", #"disconnect", #"game_ended");
+        event = player waittill(#"player_selected", #"hash_91a93ea58d7ad74", #"death", #"disconnect", #"game_ended");
         if (event._notify === "player_selected") {
             result = 1;
         }
@@ -80,7 +80,7 @@ function function_cd089b2e(*killstreaktype) {
             return;
         }
         player flag::clear("selectingWantedPlayer");
-        level.var_44018194 namespace_bfc09150::set_state(player, "CombatHud");
+        level.var_44018194 hud_spy::set_state(player, "CombatHud");
     }
     player callback::remove_callback(#"underwater", &function_84845e32);
     player allowmelee(1);
@@ -94,7 +94,7 @@ function function_cd089b2e(*killstreaktype) {
     return result;
 }
 
-// Namespace namespace_8a9215cf/namespace_8a9215cf
+// Namespace spy_wanted_order/spy_wanted_order
 // Params 1, eflags: 0x6 linked
 // Checksum 0x34e84884, Offset: 0x778
 // Size: 0x96
@@ -103,13 +103,13 @@ function private on_weapon_change(*params) {
         return;
     }
     curweapon = self getcurrentweapon();
-    var_465632db = getweapon(#"hash_29e063b051470416");
+    var_465632db = getweapon(#"spy_wanted_order");
     if (curweapon != var_465632db) {
         self notify(#"hash_91a93ea58d7ad74");
     }
 }
 
-// Namespace namespace_8a9215cf/namespace_8a9215cf
+// Namespace spy_wanted_order/spy_wanted_order
 // Params 1, eflags: 0x6 linked
 // Checksum 0x3d1e9ccd, Offset: 0x818
 // Size: 0x46
@@ -120,12 +120,12 @@ function private function_84845e32(*params) {
     self notify(#"hash_91a93ea58d7ad74");
 }
 
-// Namespace namespace_8a9215cf/namespace_8a9215cf
+// Namespace spy_wanted_order/spy_wanted_order
 // Params 0, eflags: 0x6 linked
 // Checksum 0xe4e9083b, Offset: 0x868
 // Size: 0x162
 function private function_eb585639() {
-    self endon(#"disconnect", #"death", #"hash_91a93ea58d7ad74", #"hash_79490f9acf32966c");
+    self endon(#"disconnect", #"death", #"hash_91a93ea58d7ad74", #"player_selected");
     level endon(#"game_ended");
     while (1) {
         waitresult = undefined;
@@ -139,7 +139,7 @@ function private function_eb585639() {
                 return;
             }
             if (response == "player_selected") {
-                self notify(#"hash_79490f9acf32966c", {#playerclientnum:clientnum});
+                self notify(#"player_selected", {#playerclientnum:clientnum});
                 return;
             }
         }

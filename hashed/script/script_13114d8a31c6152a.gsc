@@ -16,7 +16,7 @@ function function_ebf737f8(var_e11b5b56) {
     if (!namespace_61e6d095::exists(#"hash_72cc4740fa4d3da3")) {
         namespace_61e6d095::create(#"hash_72cc4740fa4d3da3", #"hash_33da613c2715b7bb");
         namespace_61e6d095::function_46df0bc7(#"hash_72cc4740fa4d3da3", 999);
-        namespace_61e6d095::function_d3c3e5c3(#"hash_72cc4740fa4d3da3", [2:#"hash_af16b6b2e499098", 1:#"hash_50dd1fbbd883b24e", 0:#"interactive_map"]);
+        namespace_61e6d095::function_d3c3e5c3(#"hash_72cc4740fa4d3da3", [2:#"hash_af16b6b2e499098", 1:#"dialog_tree", 0:#"interactive_map"]);
     }
     namespace_61e6d095::function_9ade1d9b(#"hash_72cc4740fa4d3da3", #"hash_732287e2565c2a79", 1, 1);
     namespace_61e6d095::function_f2a9266(#"hash_72cc4740fa4d3da3", level.var_f9c1d7d5.size, "ContentLine", var_e11b5b56, undefined, 1);

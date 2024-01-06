@@ -55,77 +55,77 @@ function autoexec init() {
 // Size: 0x894
 function private function_c7bb75d5() {
     /#
-        assert(isscriptfunctionptr(&function_ec216f27));
+        assert(isscriptfunctionptr(&razsprintservice));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("razSprintService", &function_ec216f27);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("razSprintService", &razsprintservice);
     /#
-        assert(isscriptfunctionptr(&function_cb76ccb7));
+        assert(isscriptfunctionptr(&razshouldmelee));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("razShouldMelee", &function_cb76ccb7);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("razShouldMelee", &razshouldmelee);
     /#
-        assert(isscriptfunctionptr(&function_ed41886c));
+        assert(isscriptfunctionptr(&razshouldshowpain));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("razShouldShowPain", &function_ed41886c);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("razShouldShowPain", &razshouldshowpain);
     /#
-        assert(isscriptfunctionptr(&function_c2a31702));
+        assert(isscriptfunctionptr(&razshouldshowspecialpain));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("razShouldShowSpecialPain", &function_c2a31702);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("razShouldShowSpecialPain", &razshouldshowspecialpain);
     /#
-        assert(isscriptfunctionptr(&function_8299c978));
+        assert(isscriptfunctionptr(&razshouldshowshieldpain));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("razShouldShowShieldPain", &function_8299c978);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("razShouldShowShieldPain", &razshouldshowshieldpain);
     /#
-        assert(isscriptfunctionptr(&function_1c1bebef));
+        assert(isscriptfunctionptr(&razshouldshootgroundtorpedo));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("razShouldShootGroundTorpedo", &function_1c1bebef);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("razShouldShootGroundTorpedo", &razshouldshootgroundtorpedo);
     /#
-        assert(isscriptfunctionptr(&function_f5cc7052));
+        assert(isscriptfunctionptr(&razshouldgoberserk));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("razShouldGoBerserk", &function_f5cc7052);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("razShouldGoBerserk", &razshouldgoberserk);
     /#
-        assert(isscriptfunctionptr(&function_f8587ec5));
+        assert(isscriptfunctionptr(&razshouldtraversewindow));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("razShouldTraverseWindow", &function_f8587ec5);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("razShouldTraverseWindow", &razshouldtraversewindow);
     /#
-        assert(isscriptfunctionptr(&function_a812a54));
+        assert(isscriptfunctionptr(&razgroundtorpedowasinterrupted));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("razGroundTorpedoWasInterrupted", &function_a812a54);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("razGroundTorpedoWasInterrupted", &razgroundtorpedowasinterrupted);
     /#
-        assert(isscriptfunctionptr(&function_7e5f6277));
+        assert(isscriptfunctionptr(&razshouldcutoffarm));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("razShouldCutOffArm", &function_7e5f6277);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("razShouldCutOffArm", &razshouldcutoffarm);
     /#
-        assert(isscriptfunctionptr(&function_ba199276));
+        assert(isscriptfunctionptr(&razshouldmeleerun));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("razShouldMeleeRun", &function_ba199276);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("razShouldMeleeRun", &razshouldmeleerun);
     /#
-        assert(isscriptfunctionptr(&function_bc455bdf));
+        assert(isscriptfunctionptr(&razstartmelee));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("razStartMelee", &function_bc455bdf);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("razStartMelee", &razstartmelee);
     /#
-        assert(isscriptfunctionptr(&function_3281b45e));
+        assert(isscriptfunctionptr(&razfinishmelee));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("razFinishMelee", &function_3281b45e);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("razFinishMelee", &razfinishmelee);
     /#
-        assert(isscriptfunctionptr(&function_14d40e20));
+        assert(isscriptfunctionptr(&razfinishgroundtorpedo));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("razFinishGroundTorpedo", &function_14d40e20);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("razFinishGroundTorpedo", &razfinishgroundtorpedo);
     /#
-        assert(isscriptfunctionptr(&function_89844126));
+        assert(isscriptfunctionptr(&razgoneberserk));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("razGoneBerserk", &function_89844126);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("razGoneBerserk", &razgoneberserk);
     /#
-        assert(isscriptfunctionptr(&function_ce6e5e8f));
+        assert(isscriptfunctionptr(&raztookpain));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("razTookPain", &function_ce6e5e8f);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("razTookPain", &raztookpain);
     /#
-        assert(isscriptfunctionptr(&function_c08869bb));
+        assert(isscriptfunctionptr(&razstartdeath));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("razStartDeath", &function_c08869bb);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("razStartDeath", &razstartdeath);
     /#
-        assert(isscriptfunctionptr(&function_7e8a6d1f));
+        assert(isscriptfunctionptr(&razgroundtorpedostaggerstart));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("razGroundTorpedoStaggerStart", &function_7e8a6d1f);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("razGroundTorpedoStaggerStart", &razgroundtorpedostaggerstart);
     /#
         assert(!isdefined(&function_68ef46bd) || isscriptfunctionptr(&function_68ef46bd));
     #/
@@ -133,9 +133,9 @@ function private function_c7bb75d5() {
         assert(!isdefined(&function_46545247) || isscriptfunctionptr(&function_46545247));
     #/
     /#
-        assert(!isdefined(&function_14d40e20) || isscriptfunctionptr(&function_14d40e20));
+        assert(!isdefined(&razfinishgroundtorpedo) || isscriptfunctionptr(&razfinishgroundtorpedo));
     #/
-    behaviortreenetworkutility::registerbehaviortreeaction("razGroundTorpedoAction", &function_68ef46bd, &function_46545247, &function_14d40e20);
+    behaviortreenetworkutility::registerbehaviortreeaction("razGroundTorpedoAction", &function_68ef46bd, &function_46545247, &razfinishgroundtorpedo);
     animationstatenetwork::registeranimationmocomp("mocomp_raz_shoot_torpedo", &function_20e100b4, &function_70204084, &function_bf9973c);
     animationstatenetwork::registernotetrackhandlerfunction("mangler_fire", &function_67e66d54);
     animationstatenetwork::registernotetrackhandlerfunction("raz_mangler_gib", &function_c49e4c9);
@@ -181,7 +181,7 @@ function private bb_getshouldturn() {
 // Params 1, eflags: 0x4
 // Checksum 0x80b3ae4d, Offset: 0x16d0
 // Size: 0xd4
-function private function_ec216f27(entity) {
+function private razsprintservice(entity) {
     if (is_true(entity.var_6f97029e)) {
         return 0;
     }
@@ -204,7 +204,7 @@ function private function_ec216f27(entity) {
 // Params 1, eflags: 0x0
 // Checksum 0xdd9bdf66, Offset: 0x17b0
 // Size: 0xd2
-function function_cb76ccb7(entity) {
+function razshouldmelee(entity) {
     if (entity.ignoreall) {
         return 0;
     }
@@ -228,7 +228,7 @@ function function_cb76ccb7(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x3020737, Offset: 0x1890
 // Size: 0xca
-function private function_ed41886c(entity) {
+function private razshouldshowpain(entity) {
     if (is_true(entity.var_72d96058) && !is_true(entity.var_4e179643) || isdefined(entity.var_3059ea5f) || is_true(entity.var_6d2f7ac8)) {
         return 0;
     }
@@ -245,12 +245,12 @@ function private function_ed41886c(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0xe950d59a, Offset: 0x1968
 // Size: 0xfa
-function private function_c2a31702(entity) {
+function private razshouldshowspecialpain(entity) {
     var_76279076 = entity getblackboardattribute("_gib_location");
     if (var_76279076 === "right_arm") {
         return 1;
     }
-    if (!function_ed41886c(entity)) {
+    if (!razshouldshowpain(entity)) {
         return 0;
     }
     var_a8fd62d7 = gettime() - entity.var_5ed30918;
@@ -267,7 +267,7 @@ function private function_c2a31702(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0xaf924a92, Offset: 0x1a70
 // Size: 0x54
-function private function_8299c978(entity) {
+function private razshouldshowshieldpain(entity) {
     if (isdefined(entity.damageweapon) && isdefined(entity.damageweapon.name)) {
         return (entity.damageweapon.name == "dragonshield");
     }
@@ -278,7 +278,7 @@ function private function_8299c978(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x43c7b4ce, Offset: 0x1ad0
 // Size: 0x9a
-function private function_f5cc7052(entity) {
+function private razshouldgoberserk(entity) {
     if (is_true(entity.var_72d96058) && !is_true(entity.var_4e179643)) {
         return 1;
     }
@@ -292,7 +292,7 @@ function private function_f5cc7052(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x9805f986, Offset: 0x1b78
 // Size: 0x22
-function private function_f8587ec5(entity) {
+function private razshouldtraversewindow(entity) {
     return is_true(entity.var_54ce29af);
 }
 
@@ -300,7 +300,7 @@ function private function_f8587ec5(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0xd26546d6, Offset: 0x1ba8
 // Size: 0x22
-function private function_a812a54(entity) {
+function private razgroundtorpedowasinterrupted(entity) {
     return is_true(entity.var_6d2f7ac8);
 }
 
@@ -308,7 +308,7 @@ function private function_a812a54(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x665b2f17, Offset: 0x1bd8
 // Size: 0x1a
-function private function_7e5f6277(entity) {
+function private razshouldcutoffarm(entity) {
     return entity.var_417905cf <= 0;
 }
 
@@ -316,7 +316,7 @@ function private function_7e5f6277(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x3d961dd2, Offset: 0x1c00
 // Size: 0x18a
-function private function_ba199276(entity) {
+function private razshouldmeleerun(entity) {
     if (entity.ignoreall) {
         return 0;
     }
@@ -342,7 +342,7 @@ function private function_ba199276(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x34d39c01, Offset: 0x1d98
 // Size: 0x1a
-function private function_89844126(entity) {
+function private razgoneberserk(entity) {
     entity.var_4e179643.entity = 1;
 }
 
@@ -350,7 +350,7 @@ function private function_89844126(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x5dfda58e, Offset: 0x1dc0
 // Size: 0x34
-function private function_ce6e5e8f(entity) {
+function private raztookpain(entity) {
     entity setblackboardattribute("_gib_location", "legs");
 }
 
@@ -358,7 +358,7 @@ function private function_ce6e5e8f(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x58c51384, Offset: 0x1e00
 // Size: 0x23e
-function private function_c08869bb(entity) {
+function private razstartdeath(entity) {
     entity playsoundontag("zmb_raz_death", "tag_eye");
     weakpoints = namespace_81245006::function_fab3ee3e(entity);
     if (!isdefined(weakpoints)) {
@@ -397,7 +397,7 @@ function private function_c08869bb(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0xf56d89da, Offset: 0x2048
 // Size: 0x16
-function private function_7e8a6d1f(entity) {
+function private razgroundtorpedostaggerstart(entity) {
     entity.var_6d2f7ac8 = undefined;
 }
 
@@ -405,7 +405,7 @@ function private function_7e8a6d1f(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0xc5a2da66, Offset: 0x2068
 // Size: 0x1be
-function private function_1c1bebef(entity) {
+function private razshouldshootgroundtorpedo(entity) {
     if (entity.ignoreall) {
         return 0;
     }
@@ -471,7 +471,7 @@ function private function_bb9de4d7(enemy) {
 // Params 1, eflags: 0x4
 // Checksum 0x91342238, Offset: 0x23d8
 // Size: 0xc
-function private function_bc455bdf(*entity) {
+function private razstartmelee(*entity) {
     
 }
 
@@ -479,7 +479,7 @@ function private function_bc455bdf(*entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x53c96b27, Offset: 0x23f0
 // Size: 0x16
-function private function_3281b45e(entity) {
+function private razfinishmelee(entity) {
     entity.var_bb461bfb = undefined;
 }
 
@@ -511,7 +511,7 @@ function private function_46545247(entity, *asmstate) {
 // Params 2, eflags: 0x4
 // Checksum 0x6aeffedb, Offset: 0x2510
 // Size: 0x32
-function private function_14d40e20(entity, *asmstate) {
+function private razfinishgroundtorpedo(entity, *asmstate) {
     asmstate.var_467d69c7 = undefined;
     asmstate.var_af9cbc1c.asmstate = gettime() + 3000;
     return 4;
@@ -1168,7 +1168,7 @@ function function_3c2e8416() {
 // Size: 0x1a6
 function function_1f9940b8() {
     self endon(#"death");
-    playfx(#"hash_7cba1293ce9b2890", self.origin);
+    playfx(#"zombie/fx9_onslaught_spawn_sm", self.origin);
     playsoundatposition(#"hash_14247392847093a6", self.origin + vectorscale((0, 0, 1), 75));
     self.in_the_ground = 1;
     self ghost();
@@ -1180,7 +1180,7 @@ function function_1f9940b8() {
     self orientmode("face default");
     if (!self isragdoll()) {
         self playsound(#"hash_4b49f05e8c054fd9");
-        self animscripted("rise_anim", self.origin, self.angles, #"hash_40bf97d6519a7c81", "normal");
+        self animscripted("rise_anim", self.origin, self.angles, #"ai_t9_zm_zombie_base_traverse_ground_dugup", "normal");
         waitframe(1);
     }
     self show();

@@ -105,7 +105,7 @@ function function_70a657d8() {
         }
         if (getdvarint(#"hash_27ed0b721aab06a", 0)) {
             level set(#"hash_4b060b9820d4141d");
-            level thread function_8375e4a7();
+            level thread player_rover_pos();
         }
     #/
 }
@@ -665,8 +665,8 @@ function private function_4cb97b84(eventstruct) {
         }
         player flag::set(#"hash_35735a804a34da04");
         player clientfield::set_to_player("" + #"hash_5ef33fc92614c211", 1);
-        player thread namespace_3f4c38e1::function_4be8796(self.instance);
-        player thread namespace_3f4c38e1::function_d52adbbc(self.instance);
+        player thread objective_retrieval::function_4be8796(self.instance);
+        player thread objective_retrieval::function_d52adbbc(self.instance);
         player thread function_c132c1b1();
     }
 }
@@ -745,7 +745,7 @@ function private function_63422d64() {
     self flag::clear(#"hash_35735a804a34da04");
     self notify(#"hash_6d2d12b8afe43c8e");
     self clientfield::set_to_player("" + #"hash_5ef33fc92614c211", 0);
-    self thread namespace_3f4c38e1::function_1a58f438();
+    self thread objective_retrieval::function_1a58f438();
     self function_bc82f900("zm_interact_rumble");
     if (isdefined(self.var_67aa3392)) {
         self.var_67aa3392 unlink();
@@ -793,7 +793,7 @@ function private function_6fcaf33e(var_af44ab5f) {
 // Checksum 0x36a9bc5d, Offset: 0x4250
 // Size: 0xad0
 function private function_99e393f3(instance) {
-    s_orb = array::random(isdefined(instance.var_fe2612fe[#"hash_3df16446745a4852"]) ? instance.var_fe2612fe[#"hash_3df16446745a4852"] : []);
+    s_orb = array::random(isdefined(instance.var_fe2612fe[#"orb_spawn"]) ? instance.var_fe2612fe[#"orb_spawn"] : []);
     var_b7eee573 = namespace_8b6a9d79::function_f3d93ee9(s_orb, #"hash_53079af25eecf35b");
     var_b7eee573 setscale(0.5);
     var_b7eee573 playsound(#"hash_55b5e35f7d261fee");
@@ -1005,7 +1005,7 @@ function private function_6f51b8ea(eventstruct) {
         level thread zm_vo::function_7622cb70(#"hash_14097c38f792fcfc", 0.5);
     }
     player clientfield::set_to_player("" + #"hash_5ef33fc92614c211", 0);
-    player thread namespace_3f4c38e1::function_1a58f438();
+    player thread objective_retrieval::function_1a58f438();
     player function_bc82f900("zm_interact_rumble");
     self.instance notify(#"objective_ended");
     level thread function_eb56183c();

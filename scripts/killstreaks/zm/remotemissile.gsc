@@ -27,7 +27,7 @@ function private function_70a657d8() {
     clientfield::register("toplayer", "" + #"hash_7bdbbf163a28169", 6000, 1, "int");
     clientfield::register("toplayer", "" + #"hash_4241f7b51f8c144", 8000, 1, "int");
     init_shared("killstreak_remote_missile" + "_zm", &function_ea3ce28b);
-    if (isdefined(level.killstreakrules[#"hash_1ef837cba38c6dd3"])) {
+    if (isdefined(level.killstreakrules[#"hero_weapons"])) {
         killstreakrules::addkillstreaktorule("remote_missile", "hero_weapons", 0, 0);
     }
     killstreaks::function_7b6102ed("remote_missile");

@@ -14,7 +14,7 @@
 // Checksum 0xee435a53, Offset: 0x100
 // Size: 0x34
 function init() {
-    level.var_91c0a927 = namespace_91c0a927::register();
+    level.zm_silver_hud = zm_silver_hud::register();
     /#
         level thread function_37597f29();
     #/
@@ -46,8 +46,8 @@ function function_8fbe908e() {
 // Checksum 0xd5fa2e13, Offset: 0x280
 // Size: 0x44
 function function_1aeb4889() {
-    if (!level.var_91c0a927 namespace_91c0a927::is_open(self)) {
-        level.var_91c0a927 namespace_91c0a927::open(self);
+    if (!level.zm_silver_hud zm_silver_hud::is_open(self)) {
+        level.zm_silver_hud zm_silver_hud::open(self);
     }
 }
 
@@ -56,8 +56,8 @@ function function_1aeb4889() {
 // Checksum 0xcf3a14dd, Offset: 0x2d0
 // Size: 0x44
 function close_hud() {
-    if (level.var_91c0a927 namespace_91c0a927::is_open(self)) {
-        level.var_91c0a927 namespace_91c0a927::close(self);
+    if (level.zm_silver_hud zm_silver_hud::is_open(self)) {
+        level.zm_silver_hud zm_silver_hud::close(self);
     }
 }
 
@@ -67,7 +67,7 @@ function close_hud() {
 // Size: 0x44
 function function_12995a01(status) {
     self function_1aeb4889();
-    level.var_91c0a927 namespace_91c0a927::function_9efecfd1(self, status);
+    level.zm_silver_hud zm_silver_hud::function_9efecfd1(self, status);
 }
 
 // Namespace zm_silver_util/zm_silver_util
@@ -77,7 +77,7 @@ function function_12995a01(status) {
 function function_2c918ed(*n_display_time, *str_waittill) {
     self endon(#"death");
     self function_1aeb4889();
-    level.var_91c0a927 namespace_91c0a927::function_39ee9107(self, 1);
+    level.zm_silver_hud zm_silver_hud::function_39ee9107(self, 1);
 }
 
 // Namespace zm_silver_util/zm_silver_util
@@ -247,7 +247,7 @@ function function_37597f29() {
 function function_14a89247() {
     /#
         foreach (player in function_a1ef346b()) {
-            level.var_91c0a927 function_39ee9107(player, 0);
+            level.zm_silver_hud function_39ee9107(player, 0);
         }
         waitframe(1);
         function_30fe7a2();

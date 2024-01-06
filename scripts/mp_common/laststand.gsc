@@ -888,9 +888,9 @@ function laststand_bleedout(bleedouttime, var_969fabf4) {
     var_cb141a23 = int(0.1 * 1000);
     var_93b9385d = bleedouttime * 0.06;
     var_1b4f5d73 = "BUTTON_BIT_ACTIONSLOT_4";
-    if (self function_a8bbc98a(4) != #"hash_c90b6da44b3c85b") {
+    if (self function_a8bbc98a(4) != #"scorestreak_wheel") {
         for (i = 1; i <= 4; i++) {
-            if (self function_a8bbc98a(i) == #"hash_c90b6da44b3c85b") {
+            if (self function_a8bbc98a(i) == #"scorestreak_wheel") {
                 var_1b4f5d73 = "BUTTON_BIT_ACTIONSLOT_" + i;
                 break;
             }
@@ -1145,10 +1145,10 @@ function revive_trigger_think() {
                     reviver stopgestureviewmodel(var_6525e39a, 0, 1);
                 }
                 reviver gestures::function_56e00fbf("gestable_t9_stimshot_last_stand");
-                reviver val::set(#"hash_b383e6306655009", "disable_weapon_cycling", 1);
-                reviver val::set(#"hash_b383e6306655009", "disable_offhand_weapons", 1);
-                reviver val::set(#"hash_b383e6306655009", "disable_usability", 1);
-                reviver val::set(#"hash_b383e6306655009", "disable_offhand_special", 1);
+                reviver val::set(#"laststand_revive", "disable_weapon_cycling", 1);
+                reviver val::set(#"laststand_revive", "disable_offhand_weapons", 1);
+                reviver val::set(#"laststand_revive", "disable_usability", 1);
+                reviver val::set(#"laststand_revive", "disable_offhand_special", 1);
                 reviver val::set("laststand_revive", "allow_movement", 0);
                 revive_success = reviver revive_do_revive(self);
                 if (isdefined(reviver)) {
@@ -1349,10 +1349,10 @@ function function_92bfddb4() {
         return;
     }
     self stopgestureviewmodel(self gestures::function_c77349d4("gestable_t9_stimshot_last_stand"));
-    self val::reset(#"hash_b383e6306655009", "disable_usability");
-    self val::reset(#"hash_b383e6306655009", "disable_weapon_cycling");
-    self val::reset(#"hash_b383e6306655009", "disable_offhand_weapons");
-    self val::reset(#"hash_b383e6306655009", "disable_offhand_special");
+    self val::reset(#"laststand_revive", "disable_usability");
+    self val::reset(#"laststand_revive", "disable_weapon_cycling");
+    self val::reset(#"laststand_revive", "disable_offhand_weapons");
+    self val::reset(#"laststand_revive", "disable_offhand_special");
     self val::set("laststand_revive", "allow_movement", 1);
     self.is_reviving_any--;
     if (self.is_reviving_any < 0) {

@@ -62,9 +62,9 @@ function private function_321bb79b(localclientnum, value) {
         setting = gamepadusedlast(localclientnum) ? #"armor_plate_behavior_gpad" : #"armor_plate_behavior_kbm";
         value = isdefined(function_ab88dbd2(localclientnum, setting)) ? function_ab88dbd2(localclientnum, setting) : 0;
     }
-    if (player.var_8d801ee2 !== value) {
+    if (player.armor_plate_behavior !== value) {
         player serverfield::set("armor_plate_behavior", value);
-        player.var_8d801ee2 = value;
+        player.armor_plate_behavior = value;
     }
 }
 

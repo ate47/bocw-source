@@ -43,46 +43,46 @@ function function_d28e9b17() {
         org.targetname.org = "boxingPickupUpdate";
         org.angles.org = (0, randomint(180), 0);
         org setmodel("tag_origin");
-        self.var_8cff5775.var_c3159deb = org;
+        self.doa.var_c3159deb = org;
     } else {
         return;
     }
-    var_62aa8bc = namespace_ec06fe4a::function_e22ae9b3(self.origin + (0, 60, 32), "zombietron_boxing_gloves_lt");
-    if (isdefined(var_62aa8bc)) {
-        var_62aa8bc.targetname.var_62aa8bc = "leftglove";
-        var_62aa8bc setplayercollision(0);
-        var_62aa8bc linkto(org, "tag_origin", (0, 60, 32), vectorscale((1, 0, 0), 90));
-        trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", var_62aa8bc.origin, 1 & 512 & 8, 40, 50);
+    leftglove = namespace_ec06fe4a::function_e22ae9b3(self.origin + (0, 60, 32), "zombietron_boxing_gloves_lt");
+    if (isdefined(leftglove)) {
+        leftglove.targetname.leftglove = "leftglove";
+        leftglove setplayercollision(0);
+        leftglove linkto(org, "tag_origin", (0, 60, 32), vectorscale((1, 0, 0), 90));
+        trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", leftglove.origin, 1 & 512 & 8, 40, 50);
         if (isdefined(trigger)) {
             trigger.targetname.trigger = "leftGlove";
             trigger enablelinkto();
-            trigger linkto(var_62aa8bc);
+            trigger linkto(leftglove);
             trigger thread function_7c757878(self, "MOD_IMPACT", &function_c2d94d61);
         }
     }
-    org.var_f9c2f48c = var_62aa8bc;
+    org.var_f9c2f48c = leftglove;
     org.trigger1 = trigger;
-    var_c1635585 = namespace_ec06fe4a::function_e22ae9b3(self.origin + (0, -60, 32), "zombietron_boxing_gloves_rt");
-    if (isdefined(var_c1635585)) {
-        var_c1635585.targetname.var_c1635585 = "rightGlove";
-        var_c1635585 setplayercollision(0);
-        var_c1635585 linkto(org, "tag_origin", (0, -60, 32), vectorscale((1, 0, 0), 90));
-        trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", var_c1635585.origin, 1 & 512 & 8, 40, 50);
+    rightglove = namespace_ec06fe4a::function_e22ae9b3(self.origin + (0, -60, 32), "zombietron_boxing_gloves_rt");
+    if (isdefined(rightglove)) {
+        rightglove.targetname.rightglove = "rightGlove";
+        rightglove setplayercollision(0);
+        rightglove linkto(org, "tag_origin", (0, -60, 32), vectorscale((1, 0, 0), 90));
+        trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", rightglove.origin, 1 & 512 & 8, 40, 50);
         if (isdefined(trigger)) {
             trigger.targetname.trigger = "rightGlove";
             trigger enablelinkto();
-            trigger linkto(var_c1635585);
+            trigger linkto(rightglove);
             trigger thread function_7c757878(self, "MOD_IMPACT", &function_c2d94d61);
         }
     }
-    org.var_b981836 = var_c1635585;
+    org.var_b981836 = rightglove;
     org.trigger2 = trigger;
     org linkto(self, "", vectorscale((0, 0, 1), 10), (0, 0, 0));
     self thread function_61888137(org);
     self thread function_f0855523(org);
     self waittill(#"hash_6733dfa48ff87a81");
-    var_62aa8bc setmodel("zombietron_boxing_gloves_expiring_lt");
-    var_c1635585 setmodel("zombietron_boxing_gloves_expiring_rt");
+    leftglove setmodel("zombietron_boxing_gloves_expiring_lt");
+    rightglove setmodel("zombietron_boxing_gloves_expiring_rt");
 }
 
 // Namespace namespace_dcd37093/namespace_25c52f74
@@ -141,7 +141,7 @@ function private function_7c757878(player, mod = "MOD_UNKNOWN", var_70c63791) {
             dir = guy.origin - self.origin;
             guy thread namespace_ec06fe4a::function_b4ff2191(dir, 50, undefined, player);
         } else {
-            guy dodamage(guy.health + 1, guy.origin, player, player, "none", mod, 0, level.var_8cff5775.var_c6e5e8d9);
+            guy dodamage(guy.health + 1, guy.origin, player, player, "none", mod, 0, level.doa.var_c6e5e8d9);
         }
         player playrumbleonentity("damage_light");
     }
@@ -198,7 +198,7 @@ function private function_f0855523(org) {
             vel = org.var_b981836.origin - self.origin;
             org.var_b981836 physicslaunch(org.var_b981836.origin, vel);
         }
-        self.var_8cff5775.var_c3159deb = undefined;
+        self.doa.var_c3159deb = undefined;
     }
     wait(5);
     if (isdefined(org) && isdefined(org.var_f9c2f48c)) {

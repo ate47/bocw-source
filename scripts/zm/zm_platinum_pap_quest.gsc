@@ -30,7 +30,7 @@ function init() {
     clientfield::register("scriptmover", "" + #"hash_73d20572196ff3ab", 1, getminbitcountfornum(3), "int");
     clientfield::register("scriptmover", "" + #"hash_44cce9f2e2fd1c96", 1, getminbitcountfornum(2), "int");
     clientfield::register("world", "" + #"hash_2e8ad83a0edc8ab4", 1, 1, "int");
-    clientfield::register("world", "" + #"hash_6c0269e654087b08", 1, getminbitcountfornum(10), "int");
+    clientfield::register("world", "" + #"pap_quest_beam_start", 1, getminbitcountfornum(10), "int");
     clientfield::register("world", "" + #"hash_3fb8ca8c017ba7ac", 1, getminbitcountfornum(10), "int");
     level thread function_cdc6589b();
     level thread function_3c35fb99();
@@ -125,9 +125,9 @@ function function_3c35fb99() {
 // Size: 0x1dc
 function function_c3996268() {
     level endon(#"end_game");
-    var_bdf71d3c = struct::get("s_pap_machine_fx");
+    s_pap_machine_fx = struct::get("s_pap_machine_fx");
     level flag::wait_till("start_zombie_round_logic");
-    var_748011b3 = util::spawn_model("tag_origin", var_bdf71d3c.origin, var_bdf71d3c.angles);
+    var_748011b3 = util::spawn_model("tag_origin", s_pap_machine_fx.origin, s_pap_machine_fx.angles);
     var_748011b3 clientfield::set("" + #"hash_73d20572196ff3ab", 1);
     level flag::wait_till_any([1:#"hash_20afa38b1f1c339e", 0:#"hash_434bc775e67b7233"]);
     var_748011b3 clientfield::set("" + #"hash_73d20572196ff3ab", 2);
@@ -161,10 +161,10 @@ function function_bf1953a() {
         var_8a36246d thread scene::play("awake");
         var_922a1dba++;
         n_count++;
-        level clientfield::set("" + #"hash_6c0269e654087b08", n_count);
+        level clientfield::set("" + #"pap_quest_beam_start", n_count);
         if (n_count == 9) {
             wait(0.15);
-            level clientfield::set("" + #"hash_6c0269e654087b08", n_count + 1);
+            level clientfield::set("" + #"pap_quest_beam_start", n_count + 1);
         }
         mdl_zombie = var_8a36246d.scene_ents[#"actor 1"];
         if (isdefined(mdl_zombie)) {
@@ -177,7 +177,7 @@ function function_bf1953a() {
         wait(0.15);
     }
     wait(0.25);
-    level clientfield::set("" + #"hash_6c0269e654087b08", 0);
+    level clientfield::set("" + #"pap_quest_beam_start", 0);
     var_67a6506b = struct::get_script_bundle_instances("scene", [1:"targetname", 0:"scene_zombie_pap_land"]);
     var_67a6506b = array::sort_by_script_int(var_67a6506b, 1);
     n_count = 0;
@@ -315,7 +315,7 @@ function function_bcc7802(ents) {
 // Size: 0x300
 function function_b1db8691() {
     level endon(#"end_game", #"hash_20afa38b1f1c339e");
-    level flag::wait_till(#"hash_5e276ce0b94f2f04");
+    level flag::wait_till(#"flag_pap_quest_start_adds");
     wait(3);
     n_players = zm_utility::get_number_of_valid_players();
     var_95421a26 = 0;
@@ -590,10 +590,10 @@ function function_ca27bef9() {
 // Size: 0x8c
 function function_9d367ce1() {
     level endon(#"end_game");
-    level flag::set(#"hash_3032e4acc5a6d8ee");
+    level flag::set(#"disable_weapon_machine");
     level flag::wait_till(#"hash_20afa38b1f1c339e");
     function_d18f9441();
-    level flag::clear(#"hash_3032e4acc5a6d8ee");
+    level flag::clear(#"disable_weapon_machine");
 }
 
 // Namespace namespace_bce659ef/namespace_bce659ef

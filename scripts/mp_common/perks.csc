@@ -452,14 +452,14 @@ function gettrackerfxposition(local_client_num) {
         playfastfx = player hasperk(local_client_num, #"specialty_trackerjammer");
         if (is_true(self.trailrightfoot)) {
             if (playfastfx) {
-                fx = #"hash_5f6b5f67f7592f92";
+                fx = #"player/fx_plyr_footstep_tracker_rf";
             } else {
-                fx = isdefined(level.var_d98eed82) ? level.var_d98eed82 : #"hash_3e1a754a8b3a8ac1";
+                fx = isdefined(level.var_d98eed82) ? level.var_d98eed82 : #"player/fx9_perk_tracker_footstep_rgt";
             }
         } else if (playfastfx) {
-            fx = #"hash_5fd18f67f7b03454";
+            fx = #"player/fx_plyr_footstep_tracker_lf";
         } else {
-            fx = isdefined(level.var_373c2e89) ? level.var_373c2e89 : #"hash_5936554ae2db391a";
+            fx = isdefined(level.var_373c2e89) ? level.var_373c2e89 : #"player/fx9_perk_tracker_footstep_lft";
         }
         fwd = self getvelocity();
         if (lengthsquared(fwd) < 1) {

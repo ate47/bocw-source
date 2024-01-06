@@ -86,7 +86,7 @@ function init() {
     level.var_64800a5a = &function_be0c9c8b;
     level.var_a5007a40 = &function_137603f;
     level.var_51e07970 = &function_e4ead132;
-    level.var_8cff5775.var_33daab96 = 0;
+    level.doa.var_33daab96 = 0;
     level.var_8eaf991c = [];
     if (!isdefined(level.var_8eaf991c)) {
         level.var_8eaf991c = [];
@@ -225,7 +225,7 @@ function private function_e855118e() {
     self namespace_83eb6304::turnofffx("skeleton_hand_energy");
     self thread function_c91fa191();
     amount = randomintrange(4, 8) + getplayers().size * randomint(4);
-    namespace_ff8b8430::function_a6b807ea(self.var_33dcf942, randomintrange(4, 8), self.origin + anglestoforward(self.angles) * 40, 50, undefined, self.enemy, self, undefined, undefined, 1);
+    doa_enemy::function_a6b807ea(self.var_33dcf942, randomintrange(4, 8), self.origin + anglestoforward(self.angles) * 40, 50, undefined, self.enemy, self, undefined, undefined, 1);
     self waittill(#"hash_2201232e09d14552");
     self namespace_83eb6304::turnofffx("skeleton_hand_energy");
 }
@@ -283,7 +283,7 @@ function function_d63e2f4a() {
     result = self waittill(#"damage");
     if (namespace_ec06fe4a::function_a8975c67()) {
         playfx("explosions/fx_exp_grenade_dirt", self.origin);
-        playsoundatposition(#"hash_2045536a4b849959", self.origin);
+        playsoundatposition(#"zmb_doa_ai_bfather_missile_imp", self.origin);
     }
     self function_cb48cddd();
 }
@@ -424,7 +424,7 @@ function function_30a4da95() {
     self attach("zombietron_giant_skeleton_heart", "j_spinelower");
     self namespace_83eb6304::function_3ecfde67("giantSkelHeartGlow");
     self.var_5ab15c1a = getweapon("zombietron_giant_skeleton_blaster");
-    self.var_33dcf942 = namespace_ff8b8430::function_d7c5adee("skeleton");
+    self.var_33dcf942 = doa_enemy::function_d7c5adee("skeleton");
     self thread function_e7667c0d();
     aiutility::addaioverridedamagecallback(self, &function_33864934);
     namespace_81245006::initweakpoints(self);
@@ -451,7 +451,7 @@ function private function_33864934(*inflictor, attacker, damage, *idflags, *mean
 function function_2ee0142d() {
     self namespace_250e9486::function_25b2c8a9();
     self.var_418bd7f0 = 0;
-    self.var_8cff5775.var_74e4ded8 = 1;
+    self.doa.var_74e4ded8 = 1;
     self.should_zigzag = 0;
     self.var_dafc95a5 = 3000;
     self setavoidancemask("avoid ai");
@@ -520,7 +520,7 @@ function function_6e5de5bd(time = 45) {
 // Size: 0xcc
 function private function_4ac532fd(*s_params) {
     if (is_true(self.is_charging)) {
-        level.var_8cff5775.var_33daab96--;
+        level.doa.var_33daab96--;
     }
     if (!is_true(self.fake_death)) {
         destructserverutils::togglespawngibs(self, 1);
@@ -750,12 +750,12 @@ function private function_42a1dabd() {
 function private function_be0c9c8b(*entity) {
     var_1423159a = 0;
     foreach (var_d2287bdc in level.var_8eaf991c) {
-        if (level.var_8cff5775.roundnumber < var_d2287bdc.round) {
+        if (level.doa.roundnumber < var_d2287bdc.round) {
             break;
         }
         var_1423159a = var_d2287bdc.limit;
     }
-    if (level.var_8cff5775.var_33daab96 >= var_1423159a) {
+    if (level.doa.var_33daab96 >= var_1423159a) {
         return 0;
     }
     return 1;
@@ -766,7 +766,7 @@ function private function_be0c9c8b(*entity) {
 // Checksum 0x38701ef2, Offset: 0x36d8
 // Size: 0x18
 function private function_137603f() {
-    level.var_8cff5775.var_33daab96++;
+    level.doa.var_33daab96++;
 }
 
 // Namespace namespace_d1abdcb5/namespace_d1abdcb5
@@ -774,6 +774,6 @@ function private function_137603f() {
 // Checksum 0x3a49b130, Offset: 0x36f8
 // Size: 0x18
 function private function_e4ead132() {
-    level.var_8cff5775.var_33daab96--;
+    level.doa.var_33daab96--;
 }
 

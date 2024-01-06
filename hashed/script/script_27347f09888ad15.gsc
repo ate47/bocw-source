@@ -105,15 +105,15 @@ function function_898aced0(var_8452bcb9, var_ddb02c2b) {
 function function_ce65eab6(var_89592ba7) {
     spawned = 0;
     var_cffbc08 = 0;
-    var_68e61c47 = 0;
+    infinite = 0;
     foreach (entry in var_89592ba7.var_7c88c117) {
         if (entry.var_cffbc08 == -1) {
-            var_68e61c47 = 1;
+            infinite = 1;
         }
         spawned = spawned + entry.spawned;
         var_cffbc08 = var_cffbc08 + function_b9ea4226(entry.var_cffbc08, var_89592ba7.var_b0abb10e);
     }
-    return {#var_cffbc08:var_68e61c47 ? -1 : var_cffbc08, #spawned:spawned};
+    return {#var_cffbc08:infinite ? -1 : var_cffbc08, #spawned:spawned};
 }
 
 // Namespace namespace_679a22ba/namespace_519b3aaf

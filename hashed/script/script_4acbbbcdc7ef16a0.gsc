@@ -53,7 +53,7 @@ function function_acd83a15() {
     level endon(#"game_over");
     while (1) {
         waitresult = undefined;
-        waitresult = level waittill(#"hash_1d40735298a6a821", #"hash_350a3e373494a400");
+        waitresult = level waittill(#"musroundend", #"hash_350a3e373494a400");
         if (waitresult._notify === "musRoundEnd") {
             level thread function_e2901362();
         } else {

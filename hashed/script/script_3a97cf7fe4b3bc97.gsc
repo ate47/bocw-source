@@ -11,7 +11,7 @@
 // Checksum 0x9ac88b4f, Offset: 0x140
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_4d08eeea0f720e8d", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"sr_demented_echo", &function_70a657d8, undefined, undefined, undefined);
 }
 
 // Namespace namespace_780aaec4/namespace_780aaec4
@@ -28,14 +28,14 @@ function function_70a657d8() {
     if (!is_true(getgametypesetting(#"hash_24d18e3942c82edb")) && !getdvarint(#"hash_730311c63805303a", 0)) {
         return;
     }
-    clientfield::register("scriptmover", "sr_demented_echo_fx", 1, 2, "int", &function_4b233039, 0, 0);
+    clientfield::register("scriptmover", "sr_demented_echo_fx", 1, 2, "int", &sr_demented_echo_fx, 0, 0);
 }
 
 // Namespace namespace_780aaec4/namespace_780aaec4
 // Params 7, eflags: 0x0
 // Checksum 0x318f3c9c, Offset: 0x290
 // Size: 0x3e4
-function function_4b233039(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function sr_demented_echo_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (!isdefined(self)) {
         return;
     }

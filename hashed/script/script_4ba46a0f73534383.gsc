@@ -48,7 +48,7 @@ function function_deb3cb98(*oldval, newval) {
     if (!isplayer(self)) {
         return;
     }
-    self.var_8d801ee2 = newval;
+    self.armor_plate_behavior = newval;
 }
 
 // Namespace namespace_2ed67032/namespace_2ed67032
@@ -56,8 +56,8 @@ function function_deb3cb98(*oldval, newval) {
 // Checksum 0xf419b241, Offset: 0x328
 // Size: 0x5a
 function private on_player_connect() {
-    if (!isdefined(self.var_8d801ee2)) {
-        self.var_8d801ee2 = isdefined(self serverfield::get("armor_plate_behavior")) ? self serverfield::get("armor_plate_behavior") : 0;
+    if (!isdefined(self.armor_plate_behavior)) {
+        self.armor_plate_behavior = isdefined(self serverfield::get("armor_plate_behavior")) ? self serverfield::get("armor_plate_behavior") : 0;
     }
 }
 
@@ -164,12 +164,12 @@ function private function_a7879258(lastweapon) {
         return;
     }
     if (self getcurrentweapon() === level.var_8ef8b9e8) {
-        if (!isdefined(self.var_8d801ee2)) {
-            self.var_8d801ee2 = isdefined(self serverfield::get("armor_plate_behavior")) ? self serverfield::get("armor_plate_behavior") : 0;
+        if (!isdefined(self.armor_plate_behavior)) {
+            self.armor_plate_behavior = isdefined(self serverfield::get("armor_plate_behavior")) ? self serverfield::get("armor_plate_behavior") : 0;
         }
         self.var_6a0f2dd7 = 0;
         self.var_32b4a72a = 0;
-        if (self.var_8d801ee2 != 1) {
+        if (self.armor_plate_behavior != 1) {
             self thread function_c81e4a7c();
         }
         for (;;) {

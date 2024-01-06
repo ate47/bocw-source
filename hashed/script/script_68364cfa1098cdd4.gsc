@@ -16,7 +16,7 @@
 // Method(s) 3 Total 3
 class class_6e09f777 {
 
-    // Namespace class_6e09f777/namespace_a6a79e7
+    // Namespace class_6e09f777/turret_dead_system
     // Params 0, eflags: 0xa linked
     // Checksum 0x80f724d1, Offset: 0x208
     // Size: 0x4
@@ -24,7 +24,7 @@ class class_6e09f777 {
         
     }
 
-    // Namespace namespace_6e09f777/namespace_a6a79e7
+    // Namespace namespace_6e09f777/turret_dead_system
     // Params 0, eflags: 0x82 linked class_linked
     // Checksum 0x80f724d1, Offset: 0x218
     // Size: 0x4
@@ -32,7 +32,7 @@ class class_6e09f777 {
         
     }
 
-    // Namespace namespace_6e09f777/namespace_a6a79e7
+    // Namespace namespace_6e09f777/turret_dead_system
     // Params 1, eflags: 0x2 linked
     // Checksum 0x2d922a1a, Offset: 0x228
     // Size: 0x3c
@@ -43,7 +43,7 @@ class class_6e09f777 {
 
 }
 
-// Namespace namespace_e85e312c/namespace_a6a79e7
+// Namespace namespace_e85e312c/turret_dead_system
 // Params 0, eflags: 0x5
 // Checksum 0xfdab6121, Offset: 0x120
 // Size: 0x4c
@@ -51,7 +51,7 @@ function private autoexec __init__system__() {
     system::register(#"hash_4bbb330ecd0b67a8", &function_70a657d8, &postinit, undefined, undefined);
 }
 
-// Namespace namespace_e85e312c/namespace_a6a79e7
+// Namespace namespace_e85e312c/turret_dead_system
 // Params 0, eflags: 0x6 linked
 // Checksum 0x597e5906, Offset: 0x178
 // Size: 0x34
@@ -59,7 +59,7 @@ function private function_70a657d8() {
     vehicle::add_spawn_function_group("turret_dead_system", "script_turret_type", &function_33dd3fda);
 }
 
-// Namespace namespace_e85e312c/namespace_a6a79e7
+// Namespace namespace_e85e312c/turret_dead_system
 // Params 0, eflags: 0x6 linked
 // Checksum 0x80f724d1, Offset: 0x1b8
 // Size: 0x4
@@ -67,7 +67,7 @@ function private postinit() {
     
 }
 
-// Namespace namespace_e85e312c/namespace_a6a79e7
+// Namespace namespace_e85e312c/turret_dead_system
 // Params 0, eflags: 0x2 linked
 // Checksum 0x169dfeb0, Offset: 0x1c8
 // Size: 0x34

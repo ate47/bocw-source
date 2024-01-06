@@ -31,7 +31,7 @@
 // Params 2, eflags: 0x2 linked
 // Checksum 0x4df4cfd2, Offset: 0x240
 // Size: 0x414
-function function_c167f80(player, origin) {
+function timeshifterupdate(player, origin) {
     var_d98803e1 = namespace_ec06fe4a::function_65ee50ba(origin);
     origin = (origin[0], origin[1], var_d98803e1[2]);
     clock = namespace_ec06fe4a::function_e22ae9b3(origin + vectorscale((0, 0, 1), 12));
@@ -67,7 +67,7 @@ function function_c167f80(player, origin) {
     clock thread namespace_ec06fe4a::function_2d920b3c(0.6, 0);
     trigger thread function_dd66aa61();
     waitresult = undefined;
-    waitresult = player waittilltimeout(timetowait, #"death", #"entering_last_stand", #"hash_658e10e65ed524c0", #"disconnect");
+    waitresult = player waittilltimeout(timetowait, #"death", #"entering_last_stand", #"doa_exit_taken", #"disconnect");
     org namespace_83eb6304::turnofffx("timeshift");
     org namespace_83eb6304::function_3ecfde67("timeshift_fade");
     clock namespace_e32bb68::function_ae271c0b("evt_doa_pickup_clock_active_lp");
@@ -102,7 +102,7 @@ function private function_91bc1c0d(trigger) {
     }
     self namespace_83eb6304::turnofffx("timeshift_contact");
     wait(0.75);
-    self asmsetanimationrate(isdefined(self.var_8cff5775.var_da43a859) ? self.var_8cff5775.var_da43a859 : 1);
+    self asmsetanimationrate(isdefined(self.doa.var_da43a859) ? self.doa.var_da43a859 : 1);
     self.var_d33de52f = undefined;
 }
 

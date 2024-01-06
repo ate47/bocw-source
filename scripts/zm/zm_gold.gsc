@@ -139,7 +139,7 @@ function event_handler[level_init] main(*eventstruct) {
     level.player_out_of_playable_area_monitor_callback = &player_out_of_playable_area_monitor_callback;
     level thread function_d4738f46();
     level.var_1c486b12 = [];
-    function_aa7d6bdd((-49800, -19833, 727), 200, #"hash_3d8f4b7588477e3");
+    function_aa7d6bdd((-49800, -19833, 727), 200, #"village");
     load::main();
     setupminimap("", "village");
     level.zones = [];
@@ -250,7 +250,7 @@ function function_d4738f46() {
     level endon(#"end_game");
     var_f27ded04 = getent("vol_player_in_village", "targetname");
     var_417f8343 = getent("vol_player_in_firebase", "targetname");
-    var_1d1bbd52[#"hash_3d8f4b7588477e3"] = struct::get_array("initial_spawn_points", "targetname");
+    var_1d1bbd52[#"village"] = struct::get_array("initial_spawn_points", "targetname");
     var_1d1bbd52[#"firebase"] = [];
     for (i = 0; i < 4; i++) {
         var_1d1bbd52[#"firebase"][i] = struct::get("firebase_end_" + i, "targetname");
@@ -1181,7 +1181,7 @@ function function_6f6cc58(e_player) {
         var_9fb26bc8 = getent("vol_player_in_bunny_room", "targetname");
         var_72b2c2ea = function_48e07036(e_player.origin);
         var_7769ffe6 = function_48e07036(self.origin);
-        if ((self istouching(var_129a65ba) || var_7769ffe6 === #"hash_3d8f4b7588477e3") && (e_player istouching(var_129a65ba) || var_72b2c2ea === #"hash_3d8f4b7588477e3")) {
+        if ((self istouching(var_129a65ba) || var_7769ffe6 === #"village") && (e_player istouching(var_129a65ba) || var_72b2c2ea === #"village")) {
             return 1;
         } else if ((self istouching(var_ca4a1377) || var_7769ffe6 === #"firebase") && (e_player istouching(var_ca4a1377) || var_72b2c2ea === #"firebase")) {
             return 1;
@@ -1224,12 +1224,12 @@ function function_a1960bde() {
 // Size: 0xe4
 function function_e3e3f619() {
     level flag::wait_till("start_zombie_round_logic");
-    var_c0948775 = getent("col_peck_room_fire", "targetname");
-    var_c0948775 disconnectpaths();
+    col_peck_room_fire = getent("col_peck_room_fire", "targetname");
+    col_peck_room_fire disconnectpaths();
     namespace_8dac58da::function_a7e6c47e(1);
     level flag::wait_till(#"power_on2");
-    var_c0948775 connectpaths();
-    var_c0948775 delete();
+    col_peck_room_fire connectpaths();
+    col_peck_room_fire delete();
     namespace_8dac58da::function_a7e6c47e(0);
 }
 
@@ -1409,10 +1409,10 @@ function function_71a6c3ea() {
             control_point thread function_21a9e71b(1);
         }
         var_b0c3aec3 = getentarray("<unknown string>", "<unknown string>");
-        foreach (var_f504f705 in var_b0c3aec3) {
-            if (var_f504f705.script_noteworthy === "<unknown string>") {
-                level set("<unknown string>" + var_f504f705.script_int);
-                var_f504f705 thread function_726d8f3a();
+        foreach (flinger_landing_pad in var_b0c3aec3) {
+            if (flinger_landing_pad.script_noteworthy === "<unknown string>") {
+                level set("<unknown string>" + flinger_landing_pad.script_int);
+                flinger_landing_pad thread function_726d8f3a();
             }
         }
         level thread function_ed6d34fb();

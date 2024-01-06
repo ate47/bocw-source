@@ -121,7 +121,7 @@ function wormhole_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *
     if (isdefined(str_fx)) {
         self util::waittill_dobj(fieldname);
         waitframe(1);
-        level.var_c2ac99f = util::playfxontag(fieldname, str_fx, self, "tag_fx_wormhole");
+        level.portal_fx = util::playfxontag(fieldname, str_fx, self, "tag_fx_wormhole");
     }
 }
 

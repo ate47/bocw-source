@@ -56,45 +56,45 @@ function init() {
 // Size: 0x9c4
 function registerbehaviorscriptfunctions() {
     /#
-        assert(isscriptfunctionptr(&function_d979b203));
+        assert(isscriptfunctionptr(&margwatargetservice));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaTargetService", &function_d979b203);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaTargetService", &margwatargetservice);
     /#
-        assert(isscriptfunctionptr(&function_d217c032));
+        assert(isscriptfunctionptr(&margwashouldsmashattack));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaShouldSmashAttack", &function_d217c032);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaShouldSmashAttack", &margwashouldsmashattack);
     /#
-        assert(isscriptfunctionptr(&function_136e62ae));
+        assert(isscriptfunctionptr(&margwashouldswipeattack));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaShouldSwipeAttack", &function_136e62ae);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaShouldSwipeAttack", &margwashouldswipeattack);
     /#
-        assert(isscriptfunctionptr(&function_688cae19));
+        assert(isscriptfunctionptr(&margwashouldshowpain));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaShouldShowPain", &function_688cae19);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaShouldShowPain", &margwashouldshowpain);
     /#
-        assert(isscriptfunctionptr(&function_810e3d9c));
+        assert(isscriptfunctionptr(&margwashouldreactstun));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaShouldReactStun", &function_810e3d9c);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaShouldReactStun", &margwashouldreactstun);
     /#
-        assert(isscriptfunctionptr(&function_526d8f08));
+        assert(isscriptfunctionptr(&margwashouldspawn));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaShouldSpawn", &function_526d8f08);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaShouldSpawn", &margwashouldspawn);
     /#
-        assert(isscriptfunctionptr(&function_f18896c4));
+        assert(isscriptfunctionptr(&margwashouldreset));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaShouldReset", &function_f18896c4);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaShouldReset", &margwashouldreset);
     /#
-        assert(!isdefined(&function_2d008e42) || isscriptfunctionptr(&function_2d008e42));
-    #/
-    /#
-        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
+        assert(!isdefined(&margwareactstunaction) || isscriptfunctionptr(&margwareactstunaction));
     #/
     /#
         assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
     #/
-    behaviortreenetworkutility::registerbehaviortreeaction("margwaReactStunAction", &function_2d008e42, undefined, undefined);
     /#
-        assert(!isdefined(&function_47aaa6d3) || isscriptfunctionptr(&function_47aaa6d3));
+        assert(!isdefined(undefined) || isscriptfunctionptr(undefined));
+    #/
+    behaviortreenetworkutility::registerbehaviortreeaction("margwaReactStunAction", &margwareactstunaction, undefined, undefined);
+    /#
+        assert(!isdefined(&margwaswipeattackaction) || isscriptfunctionptr(&margwaswipeattackaction));
     #/
     /#
         assert(!isdefined(&function_12a0b652) || isscriptfunctionptr(&function_12a0b652));
@@ -102,55 +102,55 @@ function registerbehaviorscriptfunctions() {
     /#
         assert(!isdefined(&function_9f21d288) || isscriptfunctionptr(&function_9f21d288));
     #/
-    behaviortreenetworkutility::registerbehaviortreeaction("margwaSwipeAttackAction", &function_47aaa6d3, &function_12a0b652, &function_9f21d288);
+    behaviortreenetworkutility::registerbehaviortreeaction("margwaSwipeAttackAction", &margwaswipeattackaction, &function_12a0b652, &function_9f21d288);
     /#
-        assert(isscriptfunctionptr(&function_98b849d1));
+        assert(isscriptfunctionptr(&margwaidlestart));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaIdleStart", &function_98b849d1);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaIdleStart", &margwaidlestart);
     /#
-        assert(isscriptfunctionptr(&function_24c3fc2e));
+        assert(isscriptfunctionptr(&margwamovestart));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaMoveStart", &function_24c3fc2e);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaMoveStart", &margwamovestart);
     /#
-        assert(isscriptfunctionptr(&function_9124c540));
+        assert(isscriptfunctionptr(&margwatraverseactionstart));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaTraverseActionStart", &function_9124c540);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaTraverseActionStart", &margwatraverseactionstart);
     /#
-        assert(isscriptfunctionptr(&function_19fcc654));
+        assert(isscriptfunctionptr(&margwapainstart));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaPainStart", &function_19fcc654);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaPainStart", &margwapainstart);
     /#
-        assert(isscriptfunctionptr(&function_54c48e9d));
+        assert(isscriptfunctionptr(&margwapainterminate));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaPainTerminate", &function_54c48e9d);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaPainTerminate", &margwapainterminate);
     /#
-        assert(isscriptfunctionptr(&function_24a7e6d8));
+        assert(isscriptfunctionptr(&margwareactstunstart));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaReactStunStart", &function_24a7e6d8);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaReactStunStart", &margwareactstunstart);
     /#
-        assert(isscriptfunctionptr(&function_6c869f44));
+        assert(isscriptfunctionptr(&margwareactstunterminate));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaReactStunTerminate", &function_6c869f44);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaReactStunTerminate", &margwareactstunterminate);
     /#
-        assert(isscriptfunctionptr(&function_d4af4a26));
+        assert(isscriptfunctionptr(&margwaspawnstart));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaSpawnStart", &function_d4af4a26);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaSpawnStart", &margwaspawnstart);
     /#
-        assert(isscriptfunctionptr(&function_1f5a8c7c));
+        assert(isscriptfunctionptr(&margwasmashattackstart));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaSmashAttackStart", &function_1f5a8c7c);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaSmashAttackStart", &margwasmashattackstart);
     /#
-        assert(isscriptfunctionptr(&function_8cd97ee2));
+        assert(isscriptfunctionptr(&margwasmashattackterminate));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaSmashAttackTerminate", &function_8cd97ee2);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaSmashAttackTerminate", &margwasmashattackterminate);
     /#
-        assert(isscriptfunctionptr(&function_2fc34f70));
+        assert(isscriptfunctionptr(&margwaswipeattackstart));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaSwipeAttackStart", &function_2fc34f70);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaSwipeAttackStart", &margwaswipeattackstart);
     /#
-        assert(isscriptfunctionptr(&function_4d6ee8ea));
+        assert(isscriptfunctionptr(&margwaswipeattackterminate));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaSwipeAttackTerminate", &function_4d6ee8ea);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("margwaSwipeAttackTerminate", &margwaswipeattackterminate);
     animationstatenetwork::registernotetrackhandlerfunction("margwa_smash_attack", &function_b4c86753);
     animationstatenetwork::registernotetrackhandlerfunction("margwa_bodyfall large", &function_11199ef4);
     animationstatenetwork::registernotetrackhandlerfunction("margwa_melee_fire", &function_badfb816);
@@ -164,7 +164,7 @@ function function_e9608fd3() {
     profilestart();
     self namespace_250e9486::function_25b2c8a9();
     self namespace_250e9486::function_db744d28();
-    self.maxhealth = 3 * (70000 + int(50000 * namespace_ec06fe4a::function_ef369bae()) + level.var_8cff5775.var_6c58d51 * 150000);
+    self.maxhealth = 3 * (70000 + int(50000 * namespace_ec06fe4a::function_ef369bae()) + level.doa.var_6c58d51 * 150000);
     self.health = self.maxhealth;
     self collidewithactors(1);
     self function_11578581(70);
@@ -196,7 +196,7 @@ function function_e9608fd3() {
     self.updatesight = 0;
     self.var_cccb0ad2 = 1;
     self namespace_e32bb68::function_3a59ec34("zmb_doa_ai_margwa_spawn");
-    self thread namespace_9fc66ac::function_ba33d23d(#"hash_577557bfb30885c0", #"hash_577557bfb30885c0", #"");
+    self thread namespace_9fc66ac::function_ba33d23d(#"zmb_vocals_margwa_ambient", #"zmb_vocals_margwa_ambient", #"");
     profilestop();
 }
 
@@ -287,7 +287,7 @@ function private function_badfb816(entity) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x6d3d7fa4, Offset: 0x1c20
 // Size: 0x5c
-function function_d217c032(entity) {
+function margwashouldsmashattack(entity) {
     if (self.zombie_move_speed != "walk") {
         return 0;
     }
@@ -304,7 +304,7 @@ function function_d217c032(entity) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x3775ac4, Offset: 0x1c88
 // Size: 0xfc
-function function_136e62ae(entity) {
+function margwashouldswipeattack(entity) {
     if (!isdefined(entity.enemy)) {
         return 0;
     }
@@ -324,17 +324,17 @@ function function_136e62ae(entity) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0xc1e84bd2, Offset: 0x1d90
 // Size: 0x10a
-function private function_688cae19(entity) {
+function private margwashouldshowpain(entity) {
     if (isdefined(entity.headdestroyed)) {
         var_130114d2 = entity.head[entity.headdestroyed];
         switch (var_130114d2.var_2b9b7c0f) {
-        case #"hash_62825fcbe6d25795":
+        case #"margwa_head_left":
             self setblackboardattribute("_margwa_head", "left");
             break;
-        case #"hash_12e8c8f25c3fdfb6":
+        case #"margwa_head_mid":
             self setblackboardattribute("_margwa_head", "middle");
             break;
-        case #"hash_40742b5f7f0596e":
+        case #"margwa_head_right":
             self setblackboardattribute("_margwa_head", "right");
             break;
         }
@@ -347,7 +347,7 @@ function private function_688cae19(entity) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x8617fa6d, Offset: 0x1ea8
 // Size: 0x2e
-function private function_810e3d9c(entity) {
+function private margwashouldreactstun(entity) {
     if (is_true(entity.var_b8239c7b)) {
         return 1;
     }
@@ -358,7 +358,7 @@ function private function_810e3d9c(entity) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0xaefdb1dd, Offset: 0x1ee0
 // Size: 0x2e
-function private function_526d8f08(entity) {
+function private margwashouldspawn(entity) {
     if (is_true(entity.var_243b04fc)) {
         return 1;
     }
@@ -369,7 +369,7 @@ function private function_526d8f08(entity) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0xe466fbb5, Offset: 0x1f18
 // Size: 0x66
-function private function_f18896c4(entity) {
+function private margwashouldreset(entity) {
     if (isdefined(entity.headdestroyed)) {
         return 1;
     }
@@ -386,13 +386,13 @@ function private function_f18896c4(entity) {
 // Params 2, eflags: 0x6 linked
 // Checksum 0x3d712659, Offset: 0x1f88
 // Size: 0xe8
-function private function_2d008e42(entity, asmstatename) {
+function private margwareactstunaction(entity, asmstatename) {
     animationstatenetworkutility::requeststate(entity, asmstatename);
     var_e369804c = entity astsearch(asmstatename);
     var_30358842 = animationstatenetworkutility::searchanimationmap(entity, var_e369804c[#"animation"]);
     closetime = int(getanimlength(var_30358842) * 1000);
     entity function_e146597a(closetime);
-    function_24a7e6d8(entity);
+    margwareactstunstart(entity);
     return 5;
 }
 
@@ -400,7 +400,7 @@ function private function_2d008e42(entity, asmstatename) {
 // Params 2, eflags: 0x6 linked
 // Checksum 0x28d86fe7, Offset: 0x2078
 // Size: 0xea
-function private function_47aaa6d3(entity, asmstatename) {
+function private margwaswipeattackaction(entity, asmstatename) {
     animationstatenetworkutility::requeststate(entity, asmstatename);
     if (!isdefined(entity.var_514cf595)) {
         var_d44a2fd7 = entity astsearch(asmstatename);
@@ -437,7 +437,7 @@ function private function_9f21d288(entity, *asmstatename) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x9fdf7b0a, Offset: 0x21e8
 // Size: 0x64
-function private function_98b849d1(entity) {
+function private margwaidlestart(entity) {
     entity orientmode("face enemy");
     if (entity function_b92d6daa()) {
         entity clientfield::set("margwa_jaw", 1);
@@ -448,7 +448,7 @@ function private function_98b849d1(entity) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x908f134d, Offset: 0x2258
 // Size: 0xa4
-function private function_24c3fc2e(entity) {
+function private margwamovestart(entity) {
     entity orientmode("face motion");
     if (entity function_b92d6daa()) {
         if (entity.zombie_move_speed == "run") {
@@ -471,7 +471,7 @@ function private function_fa5c3a61(*entity) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0xfa146233, Offset: 0x2320
 // Size: 0x16a
-function private function_9124c540(entity) {
+function private margwatraverseactionstart(entity) {
     entity setblackboardattribute("_traversal_type", entity.traversestartnode.animscript);
     if (isdefined(entity.traversestartnode.animscript)) {
         if (entity function_b92d6daa()) {
@@ -497,7 +497,7 @@ function private function_9124c540(entity) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0xb7b60ecf, Offset: 0x2498
 // Size: 0x13e
-function private function_19fcc654(entity) {
+function private margwapainstart(entity) {
     entity notify(#"hash_28b17b286ff6e084");
     if (entity function_b92d6daa()) {
         head = self getblackboardattribute("_margwa_head");
@@ -522,7 +522,7 @@ function private function_19fcc654(entity) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x806981ee, Offset: 0x25e0
 // Size: 0x64
-function private function_54c48e9d(entity) {
+function private margwapainterminate(entity) {
     entity.headdestroyed = undefined;
     entity.var_aef14ab3.entity = 1;
     entity.var_ea4696bd.entity = 1;
@@ -534,7 +534,7 @@ function private function_54c48e9d(entity) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0xfab19f5d, Offset: 0x2650
 // Size: 0x54
-function private function_24a7e6d8(entity) {
+function private margwareactstunstart(entity) {
     entity.var_b8239c7b = undefined;
     entity.var_aef14ab3.entity = 0;
     if (entity function_b92d6daa()) {
@@ -546,7 +546,7 @@ function private function_24a7e6d8(entity) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x5f025dec, Offset: 0x26b0
 // Size: 0x1a
-function function_6c869f44(entity) {
+function margwareactstunterminate(entity) {
     entity.var_aef14ab3.entity = 1;
 }
 
@@ -554,7 +554,7 @@ function function_6c869f44(entity) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0xfa48a8f2, Offset: 0x26d8
 // Size: 0x16
-function private function_d4af4a26(entity) {
+function private margwaspawnstart(entity) {
     entity.var_243b04fc.entity = 0;
 }
 
@@ -567,7 +567,7 @@ function function_729da05c() {
     self endon("11ab4b546d040b17");
     self endon(#"death");
     self endon(#"hash_2b106aceb73a448d");
-    self waittill(#"hash_c737507ea6cdac4");
+    self waittill(#"margwa_smash_attack");
     zombies = arraysortclosest(getaiteamarray("axis"), self.origin, undefined, 0, 150);
     var_31a419e0 = [];
     foreach (zombie in zombies) {
@@ -621,7 +621,7 @@ function function_66a5466d(origin, radius) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x1162150e, Offset: 0x2b88
 // Size: 0x9c
-function private function_1f5a8c7c(entity) {
+function private margwasmashattackstart(entity) {
     entity.var_bec33427.entity = gettime() + randomintrange(3000, 10000);
     entity function_59b4caf4();
     entity thread function_729da05c();
@@ -634,7 +634,7 @@ function private function_1f5a8c7c(entity) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xd77a6405, Offset: 0x2c30
 // Size: 0x34
-function function_8cd97ee2(entity) {
+function margwasmashattackterminate(entity) {
     entity notify(#"hash_2b106aceb73a448d");
     entity function_e146597a();
 }
@@ -643,7 +643,7 @@ function function_8cd97ee2(entity) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xae05fe11, Offset: 0x2c70
 // Size: 0x44
-function function_2fc34f70(entity) {
+function margwaswipeattackstart(entity) {
     if (entity function_b92d6daa()) {
         entity clientfield::set("margwa_jaw", 16);
     }
@@ -653,7 +653,7 @@ function function_2fc34f70(entity) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x9fbc98bf, Offset: 0x2cc0
 // Size: 0x24
-function private function_4d6ee8ea(entity) {
+function private margwaswipeattackterminate(entity) {
     entity function_e146597a();
 }
 
@@ -698,13 +698,13 @@ function private function_195ee8be(headmodel, var_755136c1) {
     self.head[model] = spawnstruct();
     self.head[model].model = model;
     self.head[model].tag = var_755136c1;
-    self.head[model].health = 70000 + int(50000 * namespace_ec06fe4a::function_ef369bae()) + level.var_8cff5775.var_6c58d51 * 150000;
+    self.head[model].health = 70000 + int(50000 * namespace_ec06fe4a::function_ef369bae()) + level.doa.var_6c58d51 * 150000;
     self.head[model].var_ea4696bd = 0;
     self.head[model].open = 1;
     self.head[model].closed = 2;
     self.head[model].var_e08e3957 = 3;
     switch (headmodel) {
-    case #"hash_7d0beddefa1a314a":
+    case #"c_zom_margwa_chunks_le":
         self.head[model].var_2b9b7c0f = "margwa_head_left";
         self.head[model].var_2d048cdf = "margwa_head_left_hit";
         self.head[model].var_a74031e = "c_zom_margwa_gore_le";
@@ -714,7 +714,7 @@ function private function_195ee8be(headmodel, var_755136c1) {
         self.head[model].var_d3879c8e = 1;
         self.var_94be3b8e = model;
         break;
-    case #"hash_e5e28e2f6eeb425":
+    case #"c_zom_margwa_chunks_mid":
         self.head[model].var_2b9b7c0f = "margwa_head_mid";
         self.head[model].var_2d048cdf = "margwa_head_mid_hit";
         self.head[model].var_a74031e = "c_zom_margwa_gore_mid";
@@ -724,7 +724,7 @@ function private function_195ee8be(headmodel, var_755136c1) {
         self.head[model].var_d3879c8e = 2;
         self.var_a0986652 = model;
         break;
-    case #"hash_7d3c05defa437dd4":
+    case #"c_zom_margwa_chunks_ri":
         self.head[model].var_2b9b7c0f = "margwa_head_right";
         self.head[model].var_2d048cdf = "margwa_head_right_hit";
         self.head[model].var_a74031e = "c_zom_margwa_gore_ri";
@@ -988,13 +988,13 @@ function function_239ee36(*inflictor, attacker, damage, *dflags, *mod, *weapon, 
 // Size: 0xa4
 function private function_102d7140(*entity, partname) {
     switch (partname) {
-    case #"hash_869244feff29d8d":
+    case #"j_chunk_head_bone_le":
     case #"hash_6b21848b3145d294":
         return self.var_94be3b8e;
     case #"hash_151bf92e805446aa":
-    case #"hash_4c2ecd31641537b9":
+    case #"j_chunk_head_bone":
         return self.var_a0986652;
-    case #"hash_802f44fef9b98cb":
+    case #"j_chunk_head_bone_ri":
     case #"hash_6b7a648b3191c50a":
         return self.var_a285d7da;
         break;
@@ -1087,7 +1087,7 @@ function private function_fe2eb01c(enemy) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0xd867550, Offset: 0x41d0
 // Size: 0xc
-function private function_d979b203(*entity) {
+function private margwatargetservice(*entity) {
     
 }
 

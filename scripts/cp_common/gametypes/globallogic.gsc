@@ -1821,7 +1821,7 @@ function callback_startgametype() {
             game.allies = #"hash_75fde2190cfb2c00";
         }
         if (!isdefined(game.axis)) {
-            game.axis = #"hash_3dc25519365504ef";
+            game.axis = #"kgb";
         }
         if (!isdefined(game.attackers)) {
             game.attackers = #"allies";
@@ -2041,7 +2041,7 @@ function callback_startgametype() {
 // Checksum 0x3cf7b8f0, Offset: 0x7ee8
 // Size: 0x104
 function function_403c8a1() {
-    level endon(#"hash_5cbaaae9275fceba");
+    level endon(#"level_intro_complete");
     level flag::wait_till("all_players_spawned");
     var_a1fdb637 = 0;
     foreach (e_player in level.players) {
@@ -2061,9 +2061,9 @@ function function_403c8a1() {
 // Size: 0x64
 function function_70ff69a7() {
     self endon(#"disconnect");
-    level endon(#"hash_5cbaaae9275fceba");
+    level endon(#"level_intro_complete");
     self flag::wait_till("kill_initial_black");
-    level flag::set(#"hash_5cbaaae9275fceba");
+    level flag::set(#"level_intro_complete");
 }
 
 // Namespace globallogic/globallogic

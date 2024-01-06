@@ -114,7 +114,7 @@ function function_a53f1f75(localclientnum, *oldval, newval, *bnewent, *binitials
             if (!isinarray(e_player.var_2788ca7e, ai)) {
                 e_player.var_2788ca7e[e_player.var_2788ca7e.size] = ai;
             }
-            e_player thread function_aa95c5f0(fieldname);
+            e_player thread abom_beam_rumble(fieldname);
         }
     } else {
         for (head_index = 0; head_index < 3; head_index++) {
@@ -474,7 +474,7 @@ function private function_8cddfdf6(localclientnum, enable, head, tag, anim, var_
             self.var_4b1a9504[head] = undefined;
         }
         if (self.aitype === #"hash_469e4baceeaf38f5") {
-            self.var_4b1a9504[head] = util::playfxontag(localclientnum, #"hash_117012bfc166d93c", self, tag);
+            self.var_4b1a9504[head] = util::playfxontag(localclientnum, #"zm_ai/fx9_abom_gulp_crystal_ambient", self, tag);
         } else {
             self.var_4b1a9504[head] = util::playfxontag(localclientnum, #"hash_5b5c7c5ca0112aef", self, tag);
         }
@@ -527,7 +527,7 @@ function function_3a01e8d7(localclientnum, *oldval, newval, *bnewent, *binitials
         if (!isinarray(e_player.var_10eeb170, self)) {
             e_player.var_10eeb170[e_player.var_10eeb170.size] = self;
         }
-        e_player thread function_c85b0a83(fieldname);
+        e_player thread abom_roar_rumble(fieldname);
     } else {
         self flag::clear(#"hash_2cde7566171da1e9");
         function_1eaaceab(e_player.var_10eeb170);
@@ -559,7 +559,7 @@ function function_d96bc835(localclientnum, *oldval, newval, *bnewent, *binitials
 // Params 1, eflags: 0x4
 // Checksum 0xe28f5e75, Offset: 0x2d60
 // Size: 0x37e
-function private function_c85b0a83(localclientnum) {
+function private abom_roar_rumble(localclientnum) {
     self endon(#"death");
     var_17b7891d = "7048eac650a2b727" + "abom_roar_rumble";
     self notify(var_17b7891d);
@@ -614,7 +614,7 @@ function private function_c85b0a83(localclientnum) {
 // Params 1, eflags: 0x4
 // Checksum 0x7f8b75e5, Offset: 0x30e8
 // Size: 0x266
-function private function_aa95c5f0(localclientnum) {
+function private abom_beam_rumble(localclientnum) {
     self endon(#"death");
     var_17b7891d = "33b0eac464f6a3eb" + "abom_beam_rumble";
     self notify(var_17b7891d);

@@ -193,7 +193,7 @@ function function_e126c567(eventstruct) {
         var_a8ad3bed = self function_1cbcfab5(player);
         if (!var_a8ad3bed) {
             self thread function_2bf9274();
-            self playsoundtoplayer(#"hash_7d81a3ace87fb4e2", player);
+            self playsoundtoplayer(#"uin_default_action_denied", player);
             return;
         }
         player val::set(#"fishing", "freezecontrols_allowlook", 1);

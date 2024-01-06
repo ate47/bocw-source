@@ -1149,9 +1149,9 @@ function function_631f02c5(var_f9e67747) {
     if (var_f9e67747 == 0) {
         self.var_1824934b = (isdefined(self.var_1824934b) ? self.var_1824934b : 0) + 1;
     } else if (var_f9e67747 == 1) {
-        self.var_6c81f48 = (isdefined(self.var_6c81f48) ? self.var_6c81f48 : 0) + 1;
+        self.secondarykill = (isdefined(self.secondarykill) ? self.secondarykill : 0) + 1;
     } else {
-        self.var_bcdeb5e6 = (isdefined(self.var_bcdeb5e6) ? self.var_bcdeb5e6 : 0) + 1;
+        self.tertiarykill = (isdefined(self.tertiarykill) ? self.tertiarykill : 0) + 1;
     }
     wait(2.5);
     if (!isdefined(self)) {
@@ -1170,13 +1170,13 @@ function function_568f6426(var_f9e67747) {
         prefix = "kill";
         self.var_1824934b = 0;
     } else if (var_f9e67747 == 1) {
-        kills = self.var_6c81f48;
+        kills = self.secondarykill;
         prefix = "secondaryKill";
-        self.var_6c81f48 = 0;
+        self.secondarykill = 0;
     } else {
-        kills = self.var_bcdeb5e6;
+        kills = self.tertiarykill;
         prefix = "tertiaryKill";
-        self.var_bcdeb5e6 = 0;
+        self.tertiarykill = 0;
     }
     if (kills > 3) {
         dialogkey = prefix + "Multiple";

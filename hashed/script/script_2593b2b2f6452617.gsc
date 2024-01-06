@@ -42,7 +42,7 @@ function event_handler[level_init] main(*eventstruct) {
     clientfield::register("scriptmover", "" + #"hash_3eeee7f3f5bdb9ff", 1, 1, "counter");
     clientfield::register("scriptmover", "" + #"hash_18bcf106c476dfeb", 1, 1, "counter");
     clientfield::register("scriptmover", "" + #"hash_186c35405f4624bc", 1, 2, "int");
-    clientfield::register("vehicle", "" + #"hash_4974f4e39e6933fb", 1, 1, "counter");
+    clientfield::register("vehicle", "" + #"vehicle_teleport", 1, 1, "counter");
     callback::on_item_pickup(&function_e1ea43c1);
 }
 
@@ -437,10 +437,10 @@ function function_1b438ea2() {
     wait(1);
     level namespace_7589cf5c::play_vo("objectiveDefendStartResponse");
     self flag::set(#"hash_5afa3625eb7ee268");
-    self waittill(#"hash_430378078da4fe03");
+    self waittill(#"wave_start");
     playsoundatposition(#"hash_1fe69eb0d3391a76", self.var_4a416ea9.origin);
     level namespace_7589cf5c::play_vo("objectiveDefendWave2");
-    self waittill(#"hash_430378078da4fe03");
+    self waittill(#"wave_start");
     playsoundatposition(#"hash_1fe69eb0d3391a76", self.var_4a416ea9.origin);
     level namespace_7589cf5c::play_vo("objectiveDefendWave3");
 }
@@ -829,14 +829,14 @@ function function_677356aa(instance) {
     self thread function_34ac205(instance, var_fd6a4001, self.var_559503f1, 1);
     wait(30 - randomintrangeinclusive(10, 20));
     self thread function_22281e97(instance);
-    instance waittill(#"hash_430378078da4fe03");
+    instance waittill(#"wave_start");
     self thread function_34ac205(instance, var_102fe58c, self.var_559503f1, 2);
     wait(30 - randomintrangeinclusive(10, 20));
     self thread function_22281e97(instance);
-    instance waittill(#"hash_430378078da4fe03");
+    instance waittill(#"wave_start");
     self thread function_34ac205(instance, var_3b743c0c, self.var_559503f1, 3);
     self thread function_22281e97(instance);
-    instance waittill(#"hash_430378078da4fe03");
+    instance waittill(#"wave_start");
     self thread function_34ac205(instance, var_7dbbc09a, self.var_559503f1, 4);
 }
 
@@ -849,15 +849,15 @@ function function_b3615a60() {
     wait(30);
     self notify(#"hash_7729c6e7911b801d");
     wait(15);
-    self notify(#"hash_430378078da4fe03");
+    self notify(#"wave_start");
     wait(30);
     self notify(#"hash_7729c6e7911b801d");
     wait(15);
-    self notify(#"hash_430378078da4fe03");
+    self notify(#"wave_start");
     wait(30);
     self notify(#"hash_7729c6e7911b801d");
     wait(15);
-    self notify(#"hash_430378078da4fe03");
+    self notify(#"wave_start");
 }
 
 // Namespace namespace_bff7ce85/namespace_cb308359
@@ -1501,7 +1501,7 @@ function function_1fe3eb34() {
 // Params 2, eflags: 0x0
 // Checksum 0xc8921920, Offset: 0x6ac8
 // Size: 0x264
-function function_58ec23ca(instance, var_e72a7b11) {
+function function_58ec23ca(instance, defend_object) {
     self endon(#"death");
     instance endon(#"objective_ended");
     var_dbe41436 = 50;
@@ -1515,15 +1515,15 @@ function function_58ec23ca(instance, var_e72a7b11) {
     while (1) {
         if (current_target == 1) {
             current_time = gettime();
-            if (isdefined(var_e72a7b11)) {
-                if (current_time > self.time_to_wait || distance(var_e72a7b11.origin, self.origin) > 2500) {
-                    if (distance(var_e72a7b11.origin, self.origin) > 2500) {
+            if (isdefined(defend_object)) {
+                if (current_time > self.time_to_wait || distance(defend_object.origin, self.origin) > 2500) {
+                    if (distance(defend_object.origin, self.origin) > 2500) {
                         self.var_cdf71d99 = gettime() + 8000;
                     } else {
                         self.var_cdf71d99 = gettime() + 3000;
                     }
                     self.var_ff290a61 = undefined;
-                    self.attackable = var_e72a7b11;
+                    self.attackable = defend_object;
                     current_target = 0;
                 }
             }

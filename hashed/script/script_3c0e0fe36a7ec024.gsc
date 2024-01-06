@@ -28,14 +28,14 @@ function function_70a657d8() {
     if (!is_true(getgametypesetting(#"hash_49c3a9d150ecbb16")) && !getdvarint(#"hash_730311c63805303a", 0)) {
         return;
     }
-    clientfield::register("scriptmover", "sr_supply_drop_chest_fx", 1, 2, "int", &function_804af09b, 0, 0);
+    clientfield::register("scriptmover", "sr_supply_drop_chest_fx", 1, 2, "int", &sr_supply_drop_chest_fx, 0, 0);
 }
 
 // Namespace namespace_12a6a726/namespace_12a6a726
 // Params 7, eflags: 0x0
 // Checksum 0xd7958dfc, Offset: 0x230
 // Size: 0x2d4
-function function_804af09b(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function sr_supply_drop_chest_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (!isdefined(self)) {
         return;
     }

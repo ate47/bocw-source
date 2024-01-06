@@ -21,7 +21,7 @@ function private autoexec __init__system__() {
 // Size: 0xdc
 function private function_70a657d8() {
     clientfield::register("actor", "mimic_show_on_minimap", 16000, 1, "int", &function_78505cdf, 0, 0);
-    clientfield::register("actor", "mimic_cleanup_teleport", 16000, 1, "counter", &function_dca29f5c, 0, 0);
+    clientfield::register("actor", "mimic_cleanup_teleport", 16000, 1, "counter", &mimic_cleanup_teleport, 0, 0);
     clientfield::register("toplayer", "mimic_range_hit", 16000, 1, "counter", &function_4bc65819, 0, 0);
 }
 
@@ -41,7 +41,7 @@ function function_78505cdf(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Params 7, eflags: 0x0
 // Checksum 0xe1af24b5, Offset: 0x2e8
 // Size: 0x6c
-function function_dca29f5c(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
+function mimic_cleanup_teleport(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (isdefined(self)) {
         util::playfxontag(bwasdemojump, #"hash_784a8bc7b9b17876", self, "tag_origin");
     }

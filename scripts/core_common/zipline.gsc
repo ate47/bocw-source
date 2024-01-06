@@ -420,7 +420,7 @@ function private function_aeb6539c() {
 // Checksum 0x673e151, Offset: 0x1c38
 // Size: 0xae
 function private function_25f7c630() {
-    self.var_b20b0960 endon(#"death", #"reached_end_node", #"hash_5b1e35d9b7575fd4");
+    self.var_b20b0960 endon(#"death", #"reached_end_node", #"zipline_start_disconnect");
     while (1) {
         waitframe(1);
         velocity = self.var_b20b0960 getvelocity();
@@ -457,7 +457,7 @@ function private function_9dac9d34() {
 function private function_56e443d9() {
     self.var_b20b0960 endon(#"death");
     s_results = undefined;
-    s_results = self.var_b20b0960 waittill(#"reached_end_node", #"hash_5b1e35d9b7575fd4");
+    s_results = self.var_b20b0960 waittill(#"reached_end_node", #"zipline_start_disconnect");
     if (s_results._notify === "zipline_start_disconnect") {
         s_results = undefined;
         s_results = self.var_b20b0960 waittilltimeout(0.35, #"reached_end_node");

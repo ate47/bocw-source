@@ -97,7 +97,7 @@ function function_acd83a15() {
     level endon(#"game_over");
     while (1) {
         waitresult = undefined;
-        waitresult = level waittill(#"hash_1d40735298a6a821", #"hash_350a3e373494a400");
+        waitresult = level waittill(#"musroundend", #"hash_350a3e373494a400");
         if (waitresult._notify === "musRoundEnd") {
             foreach (player in getplayers()) {
                 player clientfield::set_to_player("" + #"hash_4be33f9c734f0cb9", 2);

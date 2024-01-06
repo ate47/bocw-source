@@ -2025,7 +2025,7 @@ function private function_48ca0bbb(localclientnum) {
                     if (!is_true(codegetworlduimodelfield("ZMInventory.Quest3.1.stage"))) {
                         var_77055f15 = 1048576;
                     }
-                } else if (var_a6762160.name === #"hash_2b899cf380ab5725" && is_true(self.var_a74ce90c)) {
+                } else if (var_a6762160.name === #"item_zmquest_tungsten_mq_quest_part_refuel" && is_true(self.var_a74ce90c)) {
                     var_77055f15 = 8192;
                 } else if (var_a6762160.name === #"mega_barrel_modkit_blazer_beam_item_t9" || var_a6762160.name === #"mega_barrel_modkit_diffusion_beam_item_t9" || var_a6762160.name === #"mega_barrel_modkit_micro_missile_item_t9") {
                     if (isdefined(level.var_282dc0af)) {

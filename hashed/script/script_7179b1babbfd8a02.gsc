@@ -5,15 +5,15 @@
 
 #namespace trophy_system;
 
-// Namespace trophy_system/namespace_7bc467c
+// Namespace trophy_system/trophy_system_spy
 // Params 0, eflags: 0x5
 // Checksum 0xafc95621, Offset: 0xb8
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_355caaa1e2f55848", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"trophy_system_spy", &function_70a657d8, undefined, undefined, undefined);
 }
 
-// Namespace trophy_system/namespace_7bc467c
+// Namespace trophy_system/trophy_system_spy
 // Params 0, eflags: 0x6 linked
 // Checksum 0xc1c1d54b, Offset: 0x100
 // Size: 0xb4

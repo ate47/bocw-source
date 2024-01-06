@@ -132,7 +132,7 @@ function private function_303e39b2() {
         level.var_85422c0e = "grey";
         break;
     }
-    level flag::wait_till(#"hash_443b6a1ea0c4b52b");
+    level flag::wait_till(#"intro_scene_done");
     var_d0767760 = array::random([4:#"hash_6650e8afb63fdd30", 3:#"hash_6650e9afb63fdee3", 2:#"hash_6650eeafb63fe762", 1:#"hash_6650efafb63fe915", 0:#"hash_6650ecafb63fe3fc"]);
     level zm_vo::function_7622cb70(var_d0767760);
     level flag::set("match_start_vo_done");
@@ -440,7 +440,7 @@ function function_65937665() {
     case #"strauss":
         var_d0767760 = #"hash_359dc466218eb0ff";
         break;
-    case #"hash_7ab638516c2bc0a6":
+    case #"carver":
         var_d0767760 = #"hash_359dd466218ecc2f";
         break;
     case #"grey":
@@ -512,7 +512,7 @@ function private function_543f9e02() {
         case #"strauss":
             var_b3b54a4 = #"hash_66dcd6a30312f825";
             break;
-        case #"hash_7ab638516c2bc0a6":
+        case #"carver":
             var_b3b54a4 = #"hash_5b02401fdc592601";
             break;
         case #"grey":
@@ -565,7 +565,7 @@ function private function_a6c9ee49() {
     case #"strauss":
         var_4b8c1ea7 = #"hash_4271010934d7ff16";
         break;
-    case #"hash_7ab638516c2bc0a6":
+    case #"carver":
         var_4b8c1ea7 = #"hash_7e3a0e811e6347d2";
         break;
     case #"grey":
@@ -590,7 +590,7 @@ function private on_actor_killed(*params) {
         case #"strauss":
             var_b3b54a4 = #"hash_74270a8581b4849a";
             break;
-        case #"hash_7ab638516c2bc0a6":
+        case #"carver":
             var_b3b54a4 = #"hash_12a4b90943442c86";
             break;
         case #"grey":
@@ -617,7 +617,7 @@ function on_ai_spawned() {
         case #"strauss":
             var_b3b54a4 = #"hash_62001c8ac133172a";
             break;
-        case #"hash_7ab638516c2bc0a6":
+        case #"carver":
             var_b3b54a4 = #"hash_6cc8aa06ce7cc5d6";
             break;
         case #"grey":
@@ -670,7 +670,7 @@ function function_421f7a59() {
     case #"strauss":
         var_b3b54a4 = array::random([2:#"hash_4b1d5dadb2764dea", 1:#"hash_4b1d5eadb2764f9d", 0:#"hash_4b1d5badb2764a84"]);
         break;
-    case #"hash_7ab638516c2bc0a6":
+    case #"carver":
         var_b3b54a4 = array::random([2:#"hash_4b53ddadb2a4b6da", 1:#"hash_4b53deadb2a4b88d", 0:#"hash_4b53dbadb2a4b374"]);
         break;
     case #"grey":
@@ -692,7 +692,7 @@ function function_f314c888() {
     case #"strauss":
         var_b3b54a4 = #"hash_e353adc2878fc33";
         break;
-    case #"hash_7ab638516c2bc0a6":
+    case #"carver":
         var_b3b54a4 = #"hash_e354adc28791763";
         break;
     case #"grey":
@@ -806,7 +806,7 @@ function function_68c6149e() {
     case #"strauss":
         var_b3b54a4 = array::random([2:#"hash_1b5b25733cdc44de", 1:#"hash_1b5b26733cdc4691", 0:#"hash_1b5b23733cdc4178"]);
         break;
-    case #"hash_7ab638516c2bc0a6":
+    case #"carver":
         var_b3b54a4 = array::random([2:#"hash_1b91a5733d0aadce", 1:#"hash_1b91a6733d0aaf81", 0:#"hash_1b91a3733d0aaa68"]);
         break;
     case #"grey":
@@ -828,7 +828,7 @@ function function_a71f7322() {
     case #"strauss":
         var_b3b54a4 = #"hash_4a84679c88de5a62";
         break;
-    case #"hash_7ab638516c2bc0a6":
+    case #"carver":
         var_b3b54a4 = #"hash_4a84579c88de3f32";
         break;
     case #"grey":
@@ -851,7 +851,7 @@ function private function_d50a530() {
     case #"strauss":
         var_b3b54a4 = #"hash_4b8ddfd962701e2e";
         break;
-    case #"hash_7ab638516c2bc0a6":
+    case #"carver":
         var_b3b54a4 = #"hash_4b8dcfd9627002fe";
         break;
     case #"grey":
@@ -873,7 +873,7 @@ function function_7930927d() {
     case #"strauss":
         var_b3b54a4 = #"hash_7c4c4f063a9db5b8";
         break;
-    case #"hash_7ab638516c2bc0a6":
+    case #"carver":
         var_b3b54a4 = #"hash_7c4c5f063a9dd0e8";
         break;
     case #"grey":
@@ -904,7 +904,7 @@ function function_8cc97115() {
     case #"strauss":
         var_3e86fd2e = #"hash_6dc5d7d4efbfbfa9";
         break;
-    case #"hash_7ab638516c2bc0a6":
+    case #"carver":
         var_3e86fd2e = #"hash_6dfc97d4efee9559";
         break;
     case #"grey":

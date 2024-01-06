@@ -172,9 +172,9 @@ function function_aa1d2bf6(localclientnum, *oldval, newval, *bnewent, *binitials
     level endon(#"end_game");
     if (bwasdemojump) {
         var_79bb44c5 = util::spawn_model(fieldname, #"hash_130813d3a3ab8977", self.origin, self.angles);
-        var_dbbe9941 = getent(fieldname, "board_rotate_origin", "targetname");
-        var_79bb44c5 linkto(var_dbbe9941);
-        var_dbbe9941 rotateto(var_dbbe9941.angles + vectorscale((0, 1, 0), 90), 3);
+        board_rotate_origin = getent(fieldname, "board_rotate_origin", "targetname");
+        var_79bb44c5 linkto(board_rotate_origin);
+        board_rotate_origin rotateto(board_rotate_origin.angles + vectorscale((0, 1, 0), 90), 3);
         var_79bb44c5 playsound(fieldname, #"hash_1500984cecfd6a57");
     }
 }

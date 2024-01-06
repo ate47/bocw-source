@@ -38,12 +38,12 @@ function init() {
 // Checksum 0x5388bfc0, Offset: 0x148
 // Size: 0xba
 function function_2d3e0ee4() {
-    foreach (door in level.var_8cff5775.var_a8a563fc) {
+    foreach (door in level.doa.var_a8a563fc) {
         if (isdefined(door.model)) {
             door.model delete();
         }
     }
-    level.var_8cff5775.var_a8a563fc = [];
+    level.doa.var_a8a563fc = [];
 }
 
 // Namespace namespace_5849a337/namespace_5849a337
@@ -51,7 +51,7 @@ function function_2d3e0ee4() {
 // Checksum 0xa893064e, Offset: 0x210
 // Size: 0x13e
 function function_fabbde0d() {
-    foreach (door in level.var_8cff5775.var_a8a563fc) {
+    foreach (door in level.doa.var_a8a563fc) {
         var_c9d9522c = isdefined(door.model) ? door.model : door.script_string;
         /#
             assert(isdefined(var_c9d9522c));

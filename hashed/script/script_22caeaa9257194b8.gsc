@@ -389,7 +389,7 @@ function private function_5eaa8292() {
     #/
     while (1) {
         var_12d56c89 = undefined;
-        var_12d56c89 = self waittill(#"hash_49e873f367b910d9", #"hash_5e92346a57004ba");
+        var_12d56c89 = self waittill(#"path_set", #"reset_door_check");
         result = var_12d56c89._notify;
         if (isdefined(self.ai.var_8df88381)) {
             continue;

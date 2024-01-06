@@ -78,7 +78,7 @@ function function_58bee038(var_743c45a5, var_9e2396e0, var_ad4bbcad, var_93847fa
                 } else {
                     level.var_472721ed[i].color = vectorscale((1, 1, 1), 0.4);
                 }
-                text = "<unknown string>" + level.var_2db12862[i].var_13dc58e3 + "<unknown string>";
+                text = "<unknown string>" + level.var_2db12862[i].sm_id + "<unknown string>";
                 text = text + "<unknown string>" + level.var_2db12862[i].spawncount;
                 text = text + "<unknown string>" + level.var_2db12862[i].var_5ee53e3.size + "<unknown string>" + level.var_2db12862[i].var_2023678c + "<unknown string>" + level.var_2db12862[i].var_b02a42f7 + "<unknown string>";
                 text = text + "<unknown string>" + level.var_2db12862[i].var_e6c22a54.size;

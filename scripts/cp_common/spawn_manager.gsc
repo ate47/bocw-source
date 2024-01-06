@@ -49,7 +49,7 @@ function function_21b5cb9e() {
         assert(isdefined(self.target));
     #/
     /#
-        assert(self.var_ff71eda6 >= self.var_3ea8113, "<unknown string>" + self.var_13dc58e3);
+        assert(self.var_ff71eda6 >= self.var_3ea8113, "<unknown string>" + self.sm_id);
     #/
     if (!isdefined(self.var_ae34b6c9) || self.var_ae34b6c9 > self.var_e6c22a54.size) {
         self.var_ae34b6c9 = self.var_e6c22a54.size;
@@ -58,7 +58,7 @@ function function_21b5cb9e() {
         self.var_25a70a68 = self.var_e6c22a54.size;
     }
     /#
-        assert(self.var_25a70a68 >= self.var_ae34b6c9, "<unknown string>" + self.var_13dc58e3);
+        assert(self.var_25a70a68 >= self.var_ae34b6c9, "<unknown string>" + self.sm_id);
     #/
     self.var_82a78b41 = randomintrange(self.var_ae34b6c9, self.var_25a70a68 + 1);
     self.spawners = self function_bf4a387a();
@@ -81,7 +81,7 @@ function function_7051aeac(var_21472c04) {
     var_514ec5ff = var_54642189 >= var_21472c04 && var_e6bd8201 >= var_21472c04 && var_21472c04 > 0;
     var_7d4f7444 = level.var_539b11be - level.var_e4fdd7dd;
     /#
-        assert(self.enable == level get("<unknown string>" + self.var_13dc58e3 + "<unknown string>"), "<unknown string>");
+        assert(self.enable == level get("<unknown string>" + self.sm_id + "<unknown string>"), "<unknown string>");
     #/
     if (self.script_forcespawn == 0) {
         return (var_e6bd8201 > 0 && var_54642189 > 0 && var_7d4f7444 > 0 && var_514ec5ff && self.enable);
@@ -116,7 +116,7 @@ function function_ae26af62(spawner, var_21472c04) {
         if (isdefined(spawner) && isdefined(spawner.targetname)) {
             ai = spawner function_92d46b09(2);
             if (isdefined(ai)) {
-                ai.var_13dc58e3.ai = self.var_13dc58e3;
+                ai.sm_id.ai = self.sm_id;
             }
         } else {
             continue;
@@ -168,12 +168,12 @@ function function_b4ecf5f4() {
         /#
             function_827b4278(self.name);
         #/
-        self.var_13dc58e3 = self.name;
+        self.sm_id = self.name;
     } else if (isdefined(self.targetname) && !strstartswith(self.targetname, "pf")) {
         /#
             function_827b4278(self.targetname);
         #/
-        self.var_13dc58e3 = self.targetname;
+        self.sm_id = self.targetname;
     } else {
         function_2abead89();
     }
@@ -221,7 +221,7 @@ function function_2abead89() {
     if (!isdefined(level.var_f64196ab)) {
         level.var_f64196ab = 0;
     }
-    self.var_13dc58e3 = "sm_auto" + level.var_f64196ab;
+    self.sm_id = "sm_auto" + level.var_f64196ab;
     level.var_f64196ab++;
 }
 
@@ -361,9 +361,9 @@ function function_b574e20c() {
     var_8f5fa93b = 1;
     self.var_e6c22a54 = getentarray(self.target, "targetname");
     /#
-        assert(self.var_e6c22a54.size, "<unknown string>" + self.var_13dc58e3 + "<unknown string>");
+        assert(self.var_e6c22a54.size, "<unknown string>" + self.sm_id + "<unknown string>");
     #/
-    level flag::wait_till("sm_" + self.var_13dc58e3 + "_enabled");
+    level flag::wait_till("sm_" + self.sm_id + "_enabled");
     util::script_delay();
     self function_21b5cb9e();
     var_73138af8 = 1;
@@ -458,10 +458,10 @@ function function_b574e20c() {
         }
         waitframe(1);
         /#
-            assert(!level get("<unknown string>" + self.var_13dc58e3 + "<unknown string>"), "<unknown string>");
+            assert(!level get("<unknown string>" + self.sm_id + "<unknown string>"), "<unknown string>");
         #/
         /#
-            assert(!level get("<unknown string>" + self.var_13dc58e3 + "<unknown string>"), "<unknown string>");
+            assert(!level get("<unknown string>" + self.sm_id + "<unknown string>"), "<unknown string>");
         #/
     }
     self function_f00c27f1();
@@ -505,17 +505,17 @@ function function_9db43c7f(spawn_manager) {
 // Size: 0x16c
 function function_16231fe() {
     self waittill(#"death");
-    var_13dc58e3 = self.var_13dc58e3;
+    sm_id = self.sm_id;
     a_spawners = self.var_e6c22a54;
     var_61262c99 = self.var_5ee53e3;
-    level flag::clear("sm_" + var_13dc58e3 + "_enabled");
-    level flag::set("sm_" + var_13dc58e3 + "_killed");
-    level flag::set("sm_" + var_13dc58e3 + "_complete");
+    level flag::clear("sm_" + sm_id + "_enabled");
+    level flag::set("sm_" + sm_id + "_killed");
+    level flag::set("sm_" + sm_id + "_complete");
     function_257e48e2();
     if (var_61262c99.size) {
         array::wait_till(var_61262c99, "death");
     }
-    level flag::set("sm_" + var_13dc58e3 + "_cleared");
+    level flag::set("sm_" + sm_id + "_cleared");
     arrayremovevalue(level.var_47f0dbb6, undefined);
 }
 
@@ -715,10 +715,10 @@ function function_42a4d0d8(spawner) {
 // Checksum 0x50ebbc3c, Offset: 0x2670
 // Size: 0xc4
 function function_a239f3bc() {
-    level flag::init("sm_" + self.var_13dc58e3 + "_enabled");
-    level flag::init("sm_" + self.var_13dc58e3 + "_complete");
-    level flag::init("sm_" + self.var_13dc58e3 + "_killed");
-    level flag::init("sm_" + self.var_13dc58e3 + "_cleared");
+    level flag::init("sm_" + self.sm_id + "_enabled");
+    level flag::init("sm_" + self.sm_id + "_complete");
+    level flag::init("sm_" + self.sm_id + "_killed");
+    level flag::init("sm_" + self.sm_id + "_cleared");
 }
 
 // Namespace spawn_manager/spawn_manager
@@ -727,9 +727,9 @@ function function_a239f3bc() {
 // Size: 0x84
 function function_2b1e3e5f() {
     /#
-        assert(!level get("<unknown string>" + self.var_13dc58e3 + "<unknown string>"), "<unknown string>");
+        assert(!level get("<unknown string>" + self.sm_id + "<unknown string>"), "<unknown string>");
     #/
-    level flag::set("sm_" + self.var_13dc58e3 + "_enabled");
+    level flag::set("sm_" + self.sm_id + "_enabled");
 }
 
 // Namespace spawn_manager/spawn_manager
@@ -738,7 +738,7 @@ function function_2b1e3e5f() {
 // Size: 0x3c
 function function_e6bfc4ff() {
     self.enable = 0;
-    level flag::clear("sm_" + self.var_13dc58e3 + "_enabled");
+    level flag::clear("sm_" + self.sm_id + "_enabled");
 }
 
 // Namespace spawn_manager/spawn_manager
@@ -747,9 +747,9 @@ function function_e6bfc4ff() {
 // Size: 0x84
 function function_c81f3c84() {
     /#
-        assert(!level get("<unknown string>" + self.var_13dc58e3 + "<unknown string>"), "<unknown string>");
+        assert(!level get("<unknown string>" + self.sm_id + "<unknown string>"), "<unknown string>");
     #/
-    level flag::set("sm_" + self.var_13dc58e3 + "_killed");
+    level flag::set("sm_" + self.sm_id + "_killed");
 }
 
 // Namespace spawn_manager/spawn_manager
@@ -758,9 +758,9 @@ function function_c81f3c84() {
 // Size: 0x84
 function function_f00c27f1() {
     /#
-        assert(!level get("<unknown string>" + self.var_13dc58e3 + "<unknown string>"), "<unknown string>");
+        assert(!level get("<unknown string>" + self.sm_id + "<unknown string>"), "<unknown string>");
     #/
-    level flag::set("sm_" + self.var_13dc58e3 + "_complete");
+    level flag::set("sm_" + self.sm_id + "_complete");
 }
 
 // Namespace spawn_manager/spawn_manager
@@ -769,9 +769,9 @@ function function_f00c27f1() {
 // Size: 0x84
 function function_a1dec600() {
     /#
-        assert(!level get("<unknown string>" + self.var_13dc58e3 + "<unknown string>"), "<unknown string>");
+        assert(!level get("<unknown string>" + self.sm_id + "<unknown string>"), "<unknown string>");
     #/
-    level flag::set("sm_" + self.var_13dc58e3 + "_cleared");
+    level flag::set("sm_" + self.sm_id + "_cleared");
 }
 
 // Namespace spawn_manager/spawn_manager
@@ -903,7 +903,7 @@ function function_2886c4a9(var_368d405d, process, ent, var1, var_2c1ca37f, var_7
 function enable(var_368d405d, var_6ea96389) {
     if (level flag::exists("sm_" + var_368d405d + "_enabled")) {
         foreach (sm in level.var_47f0dbb6) {
-            if (isdefined(sm) && sm.var_13dc58e3 == var_368d405d) {
+            if (isdefined(sm) && sm.sm_id == var_368d405d) {
                 sm notify(#"enable");
                 return;
             }
@@ -922,7 +922,7 @@ function enable(var_368d405d, var_6ea96389) {
 function disable(var_368d405d, var_6ea96389) {
     if (level flag::exists("sm_" + var_368d405d + "_enabled")) {
         foreach (sm in level.var_47f0dbb6) {
-            if (isdefined(sm) && sm.var_13dc58e3 == var_368d405d) {
+            if (isdefined(sm) && sm.sm_id == var_368d405d) {
                 sm notify(#"disable");
                 return;
             }
@@ -941,7 +941,7 @@ function disable(var_368d405d, var_6ea96389) {
 function kill(var_368d405d, var_6ea96389) {
     if (level flag::exists("sm_" + var_368d405d + "_enabled")) {
         foreach (sm in level.var_47f0dbb6) {
-            if (isdefined(sm) && sm.var_13dc58e3 == var_368d405d) {
+            if (isdefined(sm) && sm.sm_id == var_368d405d) {
                 sm delete();
                 arrayremovevalue(level.var_47f0dbb6, undefined);
                 return;

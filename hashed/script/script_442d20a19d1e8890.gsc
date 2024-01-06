@@ -1,13 +1,13 @@
 // Atian COD Tools GSC CW decompiler test
 #using scripts\core_common\lui_shared.csc;
 
-#namespace namespace_1e8602fa;
+#namespace incursion_infiltrationtitlecards;
 
-// Namespace namespace_1e8602fa
+// Namespace incursion_infiltrationtitlecards
 // Method(s) 8 Total 15
 class class_7c3faeda : cluielem {
 
-    // Namespace class_7c3faeda/namespace_1e8602fa
+    // Namespace class_7c3faeda/incursion_infiltrationtitlecards
     // Params 0, eflags: 0x8
     // Checksum 0x71617b1e, Offset: 0x3a0
     // Size: 0x14
@@ -15,7 +15,7 @@ class class_7c3faeda : cluielem {
         cluielem::__constructor();
     }
 
-    // Namespace class_7c3faeda/namespace_1e8602fa
+    // Namespace class_7c3faeda/incursion_infiltrationtitlecards
     // Params 0, eflags: 0x90 class_linked
     // Checksum 0xe1c3639e, Offset: 0x890
     // Size: 0x14
@@ -23,7 +23,7 @@ class class_7c3faeda : cluielem {
         cluielem::__destructor();
     }
 
-    // Namespace namespace_7c3faeda/namespace_1e8602fa
+    // Namespace namespace_7c3faeda/incursion_infiltrationtitlecards
     // Params 1, eflags: 0x0
     // Checksum 0x444082bb, Offset: 0x4d0
     // Size: 0x24
@@ -31,7 +31,7 @@ class class_7c3faeda : cluielem {
         cluielem::open(localclientnum);
     }
 
-    // Namespace namespace_7c3faeda/namespace_1e8602fa
+    // Namespace namespace_7c3faeda/incursion_infiltrationtitlecards
     // Params 0, eflags: 0x0
     // Checksum 0x8e16e15a, Offset: 0x440
     // Size: 0x1c
@@ -39,7 +39,7 @@ class class_7c3faeda : cluielem {
         cluielem::register_clientside("Incursion_InfiltrationTitleCards");
     }
 
-    // Namespace namespace_7c3faeda/namespace_1e8602fa
+    // Namespace namespace_7c3faeda/incursion_infiltrationtitlecards
     // Params 1, eflags: 0x0
     // Checksum 0xbed1e8de, Offset: 0x3c0
     // Size: 0x74
@@ -49,7 +49,7 @@ class class_7c3faeda : cluielem {
         cluielem::add_clientfield("SelectedInfiltration", 1, 3, "int", var_f1385203);
     }
 
-    // Namespace namespace_7c3faeda/namespace_1e8602fa
+    // Namespace namespace_7c3faeda/incursion_infiltrationtitlecards
     // Params 2, eflags: 0x0
     // Checksum 0x3dbb2774, Offset: 0x500
     // Size: 0x34c
@@ -91,7 +91,7 @@ class class_7c3faeda : cluielem {
         }
     }
 
-    // Namespace namespace_7c3faeda/namespace_1e8602fa
+    // Namespace namespace_7c3faeda/incursion_infiltrationtitlecards
     // Params 2, eflags: 0x0
     // Checksum 0x1afcbb04, Offset: 0x858
     // Size: 0x30
@@ -99,7 +99,7 @@ class class_7c3faeda : cluielem {
         [[ self ]]->set_data(localclientnum, "SelectedInfiltration", value);
     }
 
-    // Namespace namespace_7c3faeda/namespace_1e8602fa
+    // Namespace namespace_7c3faeda/incursion_infiltrationtitlecards
     // Params 1, eflags: 0x0
     // Checksum 0xe3958547, Offset: 0x468
     // Size: 0x60
@@ -111,7 +111,7 @@ class class_7c3faeda : cluielem {
 
 }
 
-// Namespace namespace_1e8602fa/namespace_1e8602fa
+// Namespace incursion_infiltrationtitlecards/incursion_infiltrationtitlecards
 // Params 1, eflags: 0x0
 // Checksum 0xccfce999, Offset: 0x108
 // Size: 0x176
@@ -121,18 +121,18 @@ function register(var_f1385203) {
     if (!isdefined(level.var_ae746e8f)) {
         level.var_ae746e8f = associativearray();
     }
-    if (!isdefined(level.var_ae746e8f[#"hash_b8e5d861b522932"])) {
-        level.var_ae746e8f[#"hash_b8e5d861b522932"] = [];
+    if (!isdefined(level.var_ae746e8f[#"incursion_infiltrationtitlecards"])) {
+        level.var_ae746e8f[#"incursion_infiltrationtitlecards"] = [];
     }
-    if (!isdefined(level.var_ae746e8f[#"hash_b8e5d861b522932"])) {
-        level.var_ae746e8f[#"hash_b8e5d861b522932"] = [];
-    } else if (!isarray(level.var_ae746e8f[#"hash_b8e5d861b522932"])) {
-        level.var_ae746e8f[#"hash_b8e5d861b522932"] = array(level.var_ae746e8f[#"hash_b8e5d861b522932"]);
+    if (!isdefined(level.var_ae746e8f[#"incursion_infiltrationtitlecards"])) {
+        level.var_ae746e8f[#"incursion_infiltrationtitlecards"] = [];
+    } else if (!isarray(level.var_ae746e8f[#"incursion_infiltrationtitlecards"])) {
+        level.var_ae746e8f[#"incursion_infiltrationtitlecards"] = array(level.var_ae746e8f[#"incursion_infiltrationtitlecards"]);
     }
-    level.var_ae746e8f[#"hash_b8e5d861b522932"][level.var_ae746e8f[#"hash_b8e5d861b522932"].size] = elem;
+    level.var_ae746e8f[#"incursion_infiltrationtitlecards"][level.var_ae746e8f[#"incursion_infiltrationtitlecards"].size] = elem;
 }
 
-// Namespace namespace_1e8602fa/namespace_1e8602fa
+// Namespace incursion_infiltrationtitlecards/incursion_infiltrationtitlecards
 // Params 0, eflags: 0x0
 // Checksum 0x944f6941, Offset: 0x288
 // Size: 0x34
@@ -142,7 +142,7 @@ function register_clientside() {
     return elem;
 }
 
-// Namespace namespace_1e8602fa/namespace_1e8602fa
+// Namespace incursion_infiltrationtitlecards/incursion_infiltrationtitlecards
 // Params 1, eflags: 0x0
 // Checksum 0x4da297e1, Offset: 0x2c8
 // Size: 0x1c
@@ -150,7 +150,7 @@ function open(player) {
     [[ self ]]->open(player);
 }
 
-// Namespace namespace_1e8602fa/namespace_1e8602fa
+// Namespace incursion_infiltrationtitlecards/incursion_infiltrationtitlecards
 // Params 1, eflags: 0x0
 // Checksum 0xc510c8a8, Offset: 0x2f0
 // Size: 0x1c
@@ -158,7 +158,7 @@ function close(player) {
     [[ self ]]->close(player);
 }
 
-// Namespace namespace_1e8602fa/namespace_1e8602fa
+// Namespace incursion_infiltrationtitlecards/incursion_infiltrationtitlecards
 // Params 1, eflags: 0x0
 // Checksum 0xe65cac88, Offset: 0x318
 // Size: 0x1a
@@ -166,7 +166,7 @@ function is_open(localclientnum) {
     return [[ self ]]->is_open(localclientnum);
 }
 
-// Namespace namespace_1e8602fa/namespace_1e8602fa
+// Namespace incursion_infiltrationtitlecards/incursion_infiltrationtitlecards
 // Params 2, eflags: 0x0
 // Checksum 0x4cd5a38b, Offset: 0x340
 // Size: 0x28
@@ -174,7 +174,7 @@ function set_state(localclientnum, state_name) {
     [[ self ]]->set_state(localclientnum, state_name);
 }
 
-// Namespace namespace_1e8602fa/namespace_1e8602fa
+// Namespace incursion_infiltrationtitlecards/incursion_infiltrationtitlecards
 // Params 2, eflags: 0x0
 // Checksum 0x13785c9f, Offset: 0x370
 // Size: 0x28

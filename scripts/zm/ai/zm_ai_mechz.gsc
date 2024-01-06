@@ -220,7 +220,7 @@ function spawn_single(b_force_spawn, var_eb3a8721 = 0, *var_bc66d64b) {
         #/
         return undefined;
     }
-    ai = spawnactor(#"hash_704a090ff9fcffd0", s_spawn_loc.origin, s_spawn_loc.angles);
+    ai = spawnactor(#"spawner_bo5_mechz_sr", s_spawn_loc.origin, s_spawn_loc.angles);
     if (isdefined(ai)) {
         ai.script_string.ai = s_spawn_loc.script_string;
         ai.find_flesh_struct_string.ai = s_spawn_loc.find_flesh_struct_string;
@@ -288,11 +288,11 @@ function function_33485c02() {
 // Checksum 0xc52c1686, Offset: 0xe30
 // Size: 0xba
 function function_65c98960(get_all = 0) {
-    if (isdefined(level.zm_loc_types[#"hash_480d68ed8437230"]) && level.zm_loc_types[#"hash_480d68ed8437230"].size) {
+    if (isdefined(level.zm_loc_types[#"mechz_location"]) && level.zm_loc_types[#"mechz_location"].size) {
         if (get_all) {
-            s_spawn_loc = level.zm_loc_types[#"hash_480d68ed8437230"];
+            s_spawn_loc = level.zm_loc_types[#"mechz_location"];
         } else {
-            s_spawn_loc = array::random(level.zm_loc_types[#"hash_480d68ed8437230"]);
+            s_spawn_loc = array::random(level.zm_loc_types[#"mechz_location"]);
         }
     }
     return s_spawn_loc;
@@ -459,7 +459,7 @@ function private function_ea7b33b6() {
         }
         var_c84ba99b = 0;
         if (waitresult._notify == #"bad_path") {
-            if (!self function_dd070839() && !namespace_47c5b560::function_602211f7(self)) {
+            if (!self function_dd070839() && !namespace_47c5b560::aiisleaping(self)) {
                 var_1f2328d0 = self function_4794d6a3();
                 if (!isdefined(var_686cf729) || var_1f2328d0.goalpos !== var_686cf729) {
                     var_686cf729 = var_1f2328d0.goalpos;

@@ -1387,7 +1387,7 @@ function function_4aa1f177(player) {
             level.var_f83c8dc2 = undefined;
             if (isdefined(point) && isdefined(point.var_a6762160.weapon)) {
                 item = drop_item(0, point.var_a6762160.weapon, 1, point.var_a6762160.weapon.maxammo, point.id, self.origin, self.angles, 1);
-                item.var_2462eb26.item = 1;
+                item.magic_box_weapon.item = 1;
                 item.hidetime.item = 1;
                 item hide();
                 function_a6d171f4(item.var_a6762160.rarity);
@@ -1654,7 +1654,7 @@ function function_830aff18(var_e05f8872, player, var_4ac286cf, var_257fe1c5, *va
                     if (!isdefined(item)) {
                         return;
                     }
-                    item.var_2462eb26.item = 1;
+                    item.magic_box_weapon.item = 1;
                     item.hidetime.item = 1;
                     item hide();
                 }
@@ -1675,7 +1675,7 @@ function function_830aff18(var_e05f8872, player, var_4ac286cf, var_257fe1c5, *va
                 if (!isdefined(item)) {
                     return;
                 }
-                item.var_2462eb26.item = 1;
+                item.magic_box_weapon.item = 1;
                 item.hidetime.item = 1;
                 item hide();
             }

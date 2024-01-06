@@ -24,7 +24,7 @@ function private autoexec __init__system__() {
 // Checksum 0x48a99f69, Offset: 0x2b0
 // Size: 0xcc
 function private function_70a657d8() {
-    registerscoreeventcallback("scoreEventSR", &function_abce7fd5);
+    registerscoreeventcallback("scoreEventSR", &scoreeventsr);
     level.var_ade393f4 = &function_ade393f4;
     level.var_f8b76690 = &function_f8b76690;
     level.var_88e6f8b7 = &function_88e6f8b7;
@@ -37,7 +37,7 @@ function private function_70a657d8() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xb11e0e8e, Offset: 0x388
 // Size: 0x4e8
-function function_abce7fd5(params) {
+function scoreeventsr(params) {
     if (is_true(params.allplayers)) {
         players = getplayers();
         foreach (player in players) {
@@ -152,7 +152,7 @@ function function_ade393f4(var_a0345f37, player, weapon) {
             player zm_stats::increment_challenge_stat(#"hash_36c9caf1c41a8356");
         }
     }
-    if (level.var_7d45d0d4.activeobjective.var_b588b063 === "holdout") {
+    if (level.var_7d45d0d4.activeobjective.content_script_name === "holdout") {
         if (var_a0345f37.var_1d8cde9 === 1) {
             player zm_stats::increment_challenge_stat(#"hash_57e42cdb892d3717");
             level doscoreeventcallback("scoreEventZM", {#enemy:var_a0345f37, #scoreevent:"holdout_barricade_finisher_zm", #attacker:player});
@@ -165,7 +165,7 @@ function function_ade393f4(var_a0345f37, player, weapon) {
 // Checksum 0xa7faf58, Offset: 0xf70
 // Size: 0x3b4
 function function_88e6f8b7(params) {
-    if (level.var_7d45d0d4.activeobjective.var_b588b063 === "retrieval" && isdefined(params.enemy)) {
+    if (level.var_7d45d0d4.activeobjective.content_script_name === "retrieval" && isdefined(params.enemy)) {
         params.enemy function_513fa6e4(params.enemy.attacker);
     }
     if (isdefined(params.enemy.attackable) && params.enemy.attackable.targetname === "defend_object") {

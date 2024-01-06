@@ -500,7 +500,7 @@ function function_e803632f(b_force_spawn, var_eb3a8721 = 0, *var_bc66d64b) {
         #/
         return undefined;
     }
-    ai = spawnactor(#"hash_63cd2e85e68901a0", s_spawn_loc.origin, s_spawn_loc.angles);
+    ai = spawnactor(#"spawner_bo5_soa", s_spawn_loc.origin, s_spawn_loc.angles);
     if (isdefined(ai)) {
         ai.script_string.ai = s_spawn_loc.script_string;
         ai.find_flesh_struct_string.ai = s_spawn_loc.find_flesh_struct_string;

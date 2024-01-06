@@ -27,14 +27,14 @@ function private autoexec __init__system__() {
 // Checksum 0xa3c52749, Offset: 0x1a0
 // Size: 0x4c
 function function_70a657d8() {
-    level clientfield::register("scriptmover", "safehouse_claim_fx", 1, 1, "int", &function_2a388744, 0, 0);
+    level clientfield::register("scriptmover", "safehouse_claim_fx", 1, 1, "int", &safehouse_claim_fx, 0, 0);
 }
 
 // Namespace namespace_73df937d/namespace_73df937d
 // Params 7, eflags: 0x0
 // Checksum 0x37097271, Offset: 0x1f8
 // Size: 0x15c
-function function_2a388744(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function safehouse_claim_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self.fxid = function_239993de(fieldname, "sr/fx9_safehouse_orb_idle", self, "tag_origin");
         if (!isdefined(self.var_94ebeb0a)) {

@@ -17,9 +17,9 @@
 #using script_7fc996fe8678852;
 #using scripts\core_common\clientfield_shared.gsc;
 
-#namespace namespace_e7ab676d;
+#namespace world_event_radio_tuning;
 
-// Namespace namespace_e7ab676d/namespace_e7ab676d
+// Namespace world_event_radio_tuning/world_event_radio_tuning
 // Params 0, eflags: 0x5
 // Checksum 0x7f485a7d, Offset: 0x2d8
 // Size: 0x44
@@ -27,7 +27,7 @@ function private autoexec __init__system__() {
     system::register(#"hash_7811e7ce71e374d0", &function_70a657d8, undefined, undefined, #"hash_f81b9dea74f0ee");
 }
 
-// Namespace namespace_e7ab676d/namespace_e7ab676d
+// Namespace world_event_radio_tuning/world_event_radio_tuning
 // Params 0, eflags: 0x0
 // Checksum 0x3a76dd71, Offset: 0x328
 // Size: 0x11c
@@ -46,7 +46,7 @@ function function_70a657d8() {
     util::registerclientsys("musicUnlock");
 }
 
-// Namespace namespace_e7ab676d/namespace_e7ab676d
+// Namespace world_event_radio_tuning/world_event_radio_tuning
 // Params 1, eflags: 0x0
 // Checksum 0xde051df4, Offset: 0x450
 // Size: 0x444
@@ -76,25 +76,25 @@ function function_602f1c7e(instance) {
     instance.trigger.instance = namespace_8b6a9d79::function_214737c7(s_start, &function_1d6f6f32, #"hash_4f14ba599385295e", undefined, 64);
     instance.trigger.instance = instance;
     var_7f1aa846 = #"hash_2c156700f31bca97";
-    if (instance.var_b588b063 === "amplify") {
+    if (instance.content_script_name === "amplify") {
         var_7f1aa846 = #"hash_47ed2b712bc3aa56";
     }
     instance.var_628c4a3a playloopsound(var_7f1aa846);
     instance.var_628c4a3a thread function_35bafcde(instance, "idle", "radio");
 }
 
-// Namespace namespace_e7ab676d/namespace_e7ab676d
+// Namespace world_event_radio_tuning/world_event_radio_tuning
 // Params 2, eflags: 0x0
 // Checksum 0x58159b26, Offset: 0x8a0
 // Size: 0x3e
 function function_f128aae9(*v_origin_or_ent, *params) {
-    if (level flag::get(#"hash_448cb2a9e543af93")) {
+    if (level flag::get(#"objective_locked")) {
         return 0;
     }
     return 1;
 }
 
-// Namespace namespace_e7ab676d/namespace_e7ab676d
+// Namespace world_event_radio_tuning/world_event_radio_tuning
 // Params 1, eflags: 0x4
 // Checksum 0xc1e33901, Offset: 0x8e8
 // Size: 0x144
@@ -120,7 +120,7 @@ function private function_1d6f6f32(*eventstruct) {
     self delete();
 }
 
-// Namespace namespace_e7ab676d/namespace_e7ab676d
+// Namespace world_event_radio_tuning/world_event_radio_tuning
 // Params 1, eflags: 0x0
 // Checksum 0xe76ede33, Offset: 0xa38
 // Size: 0x150
@@ -140,7 +140,7 @@ function function_556eed55(trigger) {
     }
 }
 
-// Namespace namespace_e7ab676d/namespace_e7ab676d
+// Namespace world_event_radio_tuning/world_event_radio_tuning
 // Params 1, eflags: 0x0
 // Checksum 0x408fc436, Offset: 0xb90
 // Size: 0x6d4
@@ -148,7 +148,7 @@ function function_ba971eed(instance) {
     instance endon(#"cleanup");
     instance.var_628c4a3a stoploopsound();
     var_a2f3927f = #"hash_7e7c603e2ee4fc35";
-    if (instance.var_b588b063 === "amplify") {
+    if (instance.content_script_name === "amplify") {
         var_a2f3927f = #"hash_e5c05e974fad1d6";
     }
     instance.var_628c4a3a playsound(var_a2f3927f);
@@ -176,7 +176,7 @@ function function_ba971eed(instance) {
     instance flag::wait_till("radio_tuning_success");
     instance.var_628c4a3a stoploopsound();
     var_84152d93 = #"hash_7395bde5c5f8e1b9";
-    if (instance.var_b588b063 === "amplify") {
+    if (instance.content_script_name === "amplify") {
         var_84152d93 = #"hash_7306f4c002ca0976";
     }
     instance.var_628c4a3a playsound(var_84152d93);
@@ -198,7 +198,7 @@ function function_ba971eed(instance) {
     instance thread function_a3780cd3();
 }
 
-// Namespace namespace_e7ab676d/namespace_e7ab676d
+// Namespace world_event_radio_tuning/world_event_radio_tuning
 // Params 1, eflags: 0x0
 // Checksum 0x481c0db6, Offset: 0x1270
 // Size: 0x588
@@ -266,7 +266,7 @@ function function_42d1d544(instance) {
     }
 }
 
-// Namespace namespace_e7ab676d/namespace_e7ab676d
+// Namespace world_event_radio_tuning/world_event_radio_tuning
 // Params 3, eflags: 0x0
 // Checksum 0x56bfca2f, Offset: 0x1800
 // Size: 0xd6
@@ -282,7 +282,7 @@ function function_35bafcde(instance, str_suffix, str_type = "amplifier") {
     }
 }
 
-// Namespace namespace_e7ab676d/namespace_e7ab676d
+// Namespace world_event_radio_tuning/world_event_radio_tuning
 // Params 1, eflags: 0x0
 // Checksum 0x2ccaf639, Offset: 0x18e0
 // Size: 0xfc
@@ -307,7 +307,7 @@ function function_2c1d994f(instance) {
     }
 }
 
-// Namespace namespace_e7ab676d/namespace_e7ab676d
+// Namespace world_event_radio_tuning/world_event_radio_tuning
 // Params 1, eflags: 0x0
 // Checksum 0x26dac0df, Offset: 0x19e8
 // Size: 0xa0
@@ -326,7 +326,7 @@ function function_d3b57053(instance) {
     return 0;
 }
 
-// Namespace namespace_e7ab676d/namespace_e7ab676d
+// Namespace world_event_radio_tuning/world_event_radio_tuning
 // Params 0, eflags: 0x0
 // Checksum 0x919ac21e, Offset: 0x1a90
 // Size: 0x1ac
@@ -353,7 +353,7 @@ function function_a3780cd3() {
     }
 }
 
-// Namespace namespace_e7ab676d/namespace_e7ab676d
+// Namespace world_event_radio_tuning/world_event_radio_tuning
 // Params 2, eflags: 0x0
 // Checksum 0x1fad9e4e, Offset: 0x1c48
 // Size: 0x274
@@ -409,7 +409,7 @@ function function_b1aee549(instance, var_976623c6) {
     }
 }
 
-// Namespace namespace_e7ab676d/namespace_e7ab676d
+// Namespace world_event_radio_tuning/world_event_radio_tuning
 // Params 1, eflags: 0x0
 // Checksum 0x291a6e0f, Offset: 0x1ec8
 // Size: 0x264
@@ -471,7 +471,7 @@ function function_97d03d85(s_params) {
     }
 }
 
-// Namespace namespace_e7ab676d/namespace_e7ab676d
+// Namespace world_event_radio_tuning/world_event_radio_tuning
 // Params 2, eflags: 0x0
 // Checksum 0x800bea64, Offset: 0x2138
 // Size: 0x4a

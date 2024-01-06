@@ -1092,11 +1092,11 @@ function function_da5051ef(objectivename, player) {
             var_1bd74555 = player.movementtracking.doublejump.count;
         }
     }
-    player function_9ef3400f("distance_wallrun", objectiveindex, player.var_62e314f8.var_318f23df, int(var_d72847a7));
-    player function_9ef3400f("distance_sprinted", objectiveindex, player.var_62e314f8.var_d7f744ce, int(var_313c84fd));
-    player function_9ef3400f("distance_boosted", objectiveindex, player.var_62e314f8.var_29e16154, int(var_17cff347));
-    player function_9ef3400f("wallruns_total", objectiveindex, player.var_62e314f8.var_c8c1cc28, int(var_1940d7af));
-    player function_9ef3400f("boosts_total", objectiveindex, player.var_62e314f8.var_f8fff71c, int(var_1bd74555));
+    player function_9ef3400f("distance_wallrun", objectiveindex, player.var_62e314f8.distance_wallrun, int(var_d72847a7));
+    player function_9ef3400f("distance_sprinted", objectiveindex, player.var_62e314f8.distance_sprinted, int(var_313c84fd));
+    player function_9ef3400f("distance_boosted", objectiveindex, player.var_62e314f8.distance_boosted, int(var_17cff347));
+    player function_9ef3400f("wallruns_total", objectiveindex, player.var_62e314f8.wallruns_total, int(var_1940d7af));
+    player function_9ef3400f("boosts_total", objectiveindex, player.var_62e314f8.boosts_total, int(var_1bd74555));
     player matchrecordsetcheckpointstat(objectiveindex, "start_difficulty", player.var_62e314f8.difficulty);
     player matchrecordsetcheckpointstat(objectiveindex, "end_difficulty", level.var_d2257418);
     if (isdefined(level.sceneskippedcount)) {
@@ -1145,11 +1145,11 @@ function function_7c7195b4(player) {
             var_1bd74555 = player.movementtracking.doublejump.count;
         }
     }
-    player.var_62e314f8.var_318f23df = int(var_d72847a7);
-    player.var_62e314f8.var_d7f744ce = int(var_313c84fd);
-    player.var_62e314f8.var_29e16154 = int(var_17cff347);
-    player.var_62e314f8.var_c8c1cc28 = int(var_1940d7af);
-    player.var_62e314f8.var_f8fff71c = int(var_1bd74555);
+    player.var_62e314f8.distance_wallrun = int(var_d72847a7);
+    player.var_62e314f8.distance_sprinted = int(var_313c84fd);
+    player.var_62e314f8.distance_boosted = int(var_17cff347);
+    player.var_62e314f8.wallruns_total = int(var_1940d7af);
+    player.var_62e314f8.boosts_total = int(var_1bd74555);
 }
 
 // Namespace skipto/skipto
@@ -1871,7 +1871,7 @@ function function_1c2dfc20(var_83104433 = function_60ca00f5(), var_585e39fb = fu
     if (isdefined(level.var_b28c2c3a) && !function_3b424100()) {
         function_4e3ab877(level.var_b28c2c3a);
     }
-    if (level.script === #"hash_aea89633cc83b43" || function_3b424100()) {
+    if (level.script === #"cp_ger_hub" || function_3b424100()) {
         namespace_643f86fe::function_59e67711("_exit");
     }
     level.level_ending = 1;
@@ -1901,8 +1901,8 @@ function function_1c2dfc20(var_83104433 = function_60ca00f5(), var_585e39fb = fu
         player._weapons = undefined;
         player.gun_removed = undefined;
     }
-    namespace_ee1da81f::function_d04c220e();
-    namespace_ee1da81f::function_ef22e409();
+    player_decision::function_d04c220e();
+    player_decision::function_ef22e409();
     savegame::function_6d003cb9("previous_mission", savegame::function_8136eb5a());
     function_521de2b3();
     if (!function_3b424100()) {
@@ -1941,7 +1941,7 @@ function function_1c2dfc20(var_83104433 = function_60ca00f5(), var_585e39fb = fu
             player thread function_e8abcd84();
         }
         level flag::wait_till("credits_done");
-        level notify(#"hash_348064ee6e1d8e46");
+        level notify(#"credits_done");
         music::setmusicstate("");
         util::wait_network_frame();
         globallogic::function_7b994f00();
@@ -1983,7 +1983,7 @@ function function_e8abcd84(var_7a179706 = 0) {
 // Checksum 0xfa6e87d7, Offset: 0x8550
 // Size: 0x23a
 function function_18193dd4() {
-    level endon(#"hash_348064ee6e1d8e46");
+    level endon(#"credits_done");
     var_6396ca45 = [];
     var_6396ca45[0] = [1:194.704, 0:"mp_theme"];
     var_6396ca45[1] = [1:179.428, 0:"kgb_combat"];

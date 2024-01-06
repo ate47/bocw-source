@@ -66,8 +66,8 @@ function spawn_single(b_force_spawn, var_eb3a8721 = 0, *var_bc66d64b) {
         s_spawn_loc = var_bc66d64b;
     } else if (isdefined(level.var_2e33420c)) {
         s_spawn_loc = [[ level.var_2e33420c ]]();
-    } else if (level.zm_loc_types[#"hash_1ec21f2c7894c700"].size > 0) {
-        s_spawn_loc = array::random(level.zm_loc_types[#"hash_1ec21f2c7894c700"]);
+    } else if (level.zm_loc_types[#"raz_location"].size > 0) {
+        s_spawn_loc = array::random(level.zm_loc_types[#"raz_location"]);
     }
     if (!isdefined(s_spawn_loc)) {
         /#
@@ -207,7 +207,7 @@ function function_54993e2() {
     if (isdefined(level.var_2e33420c)) {
         var_d7eff26a = [[ level.var_2e33420c ]]();
     } else {
-        var_91562d8c = level.zm_loc_types[#"hash_1ec21f2c7894c700"];
+        var_91562d8c = level.zm_loc_types[#"raz_location"];
         if (var_91562d8c.size) {
             var_d7eff26a = zm_spawner::function_20e7d186(var_91562d8c);
         }
@@ -232,7 +232,7 @@ function function_54993e2() {
 // Size: 0x1a6
 function function_1f9940b8() {
     self endon(#"death");
-    playfx(#"hash_7cba1293ce9b2890", self.origin);
+    playfx(#"zombie/fx9_onslaught_spawn_sm", self.origin);
     playsoundatposition(#"hash_14247392847093a6", self.origin + vectorscale((0, 0, 1), 75));
     self.in_the_ground = 1;
     self ghost();
@@ -244,7 +244,7 @@ function function_1f9940b8() {
     self orientmode("face default");
     if (!self isragdoll()) {
         self playsound(#"hash_4b49f05e8c054fd9");
-        self animscripted("rise_anim", self.origin, self.angles, #"hash_40bf97d6519a7c81", "normal");
+        self animscripted("rise_anim", self.origin, self.angles, #"ai_t9_zm_zombie_base_traverse_ground_dugup", "normal");
         waitframe(1);
     }
     self show();

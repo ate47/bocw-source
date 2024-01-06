@@ -18,14 +18,14 @@ function private autoexec __init__system__() {
 // Checksum 0x48bcc164, Offset: 0x178
 // Size: 0x4c
 function function_70a657d8() {
-    clientfield::register("scriptmover", "reward_chest_fx", 1, 2, "int", &function_d9565a7b, 0, 0);
+    clientfield::register("scriptmover", "reward_chest_fx", 1, 2, "int", &reward_chest_fx, 0, 0);
 }
 
 // Namespace namespace_58949729/namespace_58949729
 // Params 7, eflags: 0x0
 // Checksum 0xfb058cfa, Offset: 0x1d0
 // Size: 0x242
-function function_d9565a7b(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function reward_chest_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     switch (bwastimejump) {
     case 0:
         if (isdefined(self.n_fx_id)) {

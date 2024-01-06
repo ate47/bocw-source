@@ -72,8 +72,8 @@ function function_36d6caea(myteam = "allies") {
 // Checksum 0x135b46a5, Offset: 0x4e0
 // Size: 0x60
 function addpoi(ent) {
-    arrayremovevalue(level.var_8cff5775.var_af6d47dd, undefined);
-    level.var_8cff5775.var_af6d47dd[level.var_8cff5775.var_af6d47dd.size] = ent;
+    arrayremovevalue(level.doa.var_af6d47dd, undefined);
+    level.doa.var_af6d47dd[level.doa.var_af6d47dd.size] = ent;
 }
 
 // Namespace namespace_ec06fe4a/namespace_ec06fe4a
@@ -81,9 +81,9 @@ function addpoi(ent) {
 // Checksum 0xd46a1ba1, Offset: 0x548
 // Size: 0x19e
 function function_ff7594d7(origin, var_5e23c42a = function_a3f6cdac(200)) {
-    arrayremovevalue(level.var_8cff5775.var_af6d47dd, undefined);
-    if (level.var_8cff5775.var_af6d47dd.size > 0) {
-        var_23912d23 = arraysortclosest(level.var_8cff5775.var_af6d47dd, origin);
+    arrayremovevalue(level.doa.var_af6d47dd, undefined);
+    if (level.doa.var_af6d47dd.size > 0) {
+        var_23912d23 = arraysortclosest(level.doa.var_af6d47dd, origin);
         foreach (poi in var_23912d23) {
             var_5e23c42a = isdefined(poi.var_7f3187c5) ? poi.var_7f3187c5 : var_5e23c42a;
             distsq = distancesquared(poi.origin, origin);
@@ -121,11 +121,11 @@ function function_38de0ce8() {
 function function_9788bacc(myteam = "allies") {
     team = util::getotherteam(myteam);
     teamsize = 0;
-    if (isdefined(level.var_8cff5775.var_e2e8967b)) {
-        if (level.var_8cff5775.var_e2e8967b.size) {
-            arrayremovevalue(level.var_8cff5775.var_e2e8967b, undefined);
+    if (isdefined(level.doa.var_e2e8967b)) {
+        if (level.doa.var_e2e8967b.size) {
+            arrayremovevalue(level.doa.var_e2e8967b, undefined);
         }
-        foreach (guy in level.var_8cff5775.var_e2e8967b) {
+        foreach (guy in level.doa.var_e2e8967b) {
             if (guy.oldteam === team) {
                 teamsize++;
             }
@@ -251,11 +251,11 @@ function function_e10101e(seconds, bosskills = 1, var_f906062a = 0) {
 function function_de70888a(bosskills = 1, var_f906062a = 0) {
     self notify("3b9e4824698b6816");
     self endon("3b9e4824698b6816");
-    level.var_8cff5775.var_1b8c7044 = 1;
+    level.doa.var_1b8c7044 = 1;
     var_36793870 = function_9788bacc();
     attempts = 20;
     while (var_36793870 > 0 && attempts > 0) {
-        level.var_8cff5775.var_dcbded2 = [];
+        level.doa.var_dcbded2 = [];
         enemies = function_8ff7f92c();
         foreach (var_fd93c973 in enemies) {
             var_36793870--;
@@ -280,7 +280,7 @@ function function_de70888a(bosskills = 1, var_f906062a = 0) {
             var_36793870 = function_9788bacc();
         }
     }
-    level.var_8cff5775.var_1b8c7044 = 0;
+    level.doa.var_1b8c7044 = 0;
 }
 
 // Namespace namespace_ec06fe4a/namespace_ec06fe4a
@@ -288,7 +288,7 @@ function function_de70888a(bosskills = 1, var_f906062a = 0) {
 // Checksum 0x9569c526, Offset: 0xf60
 // Size: 0x44
 function function_a4b3f184(frozen = 1) {
-    self.var_8cff5775.var_a5eb0385 = frozen;
+    self.doa.var_a5eb0385 = frozen;
     self freezecontrols(frozen);
 }
 
@@ -520,16 +520,16 @@ function function_d55f042c(other, note) {
         return;
     }
     self endon(#"death");
-    var_9cc53739 = function_7fcca25d("DeleteNote");
-    self thread function_719951d3(other, var_9cc53739);
+    killnote = function_7fcca25d("DeleteNote");
+    self thread function_719951d3(other, killnote);
     if (isplayer(other)) {
         if (note == "disconnect") {
-            other waittill(note, var_9cc53739);
+            other waittill(note, killnote);
         } else {
-            other waittill(note, #"disconnect", var_9cc53739);
+            other waittill(note, #"disconnect", killnote);
         }
     } else {
-        other waittill(note, var_9cc53739);
+        other waittill(note, killnote);
     }
     if (isdefined(self)) {
         self function_52afe5df(0);
@@ -545,16 +545,16 @@ function function_203591b7(other, note, var_df2b8649) {
         return;
     }
     self endon(#"death");
-    var_9cc53739 = function_7fcca25d("DeleteNote");
-    self thread function_719951d3(other, var_9cc53739);
+    killnote = function_7fcca25d("DeleteNote");
+    self thread function_719951d3(other, killnote);
     if (isplayer(other)) {
         if (note == "disconnect") {
-            other waittill(note, var_9cc53739);
+            other waittill(note, killnote);
         } else {
-            other waittill(note, #"disconnect", var_9cc53739);
+            other waittill(note, #"disconnect", killnote);
         }
     } else {
-        other waittill(note, var_9cc53739);
+        other waittill(note, killnote);
     }
     if (isdefined(self)) {
         self notify(var_df2b8649);
@@ -583,19 +583,19 @@ function function_ad852085(other, note) {
         return;
     }
     self endon(#"death");
-    var_9cc53739 = function_7fcca25d("killNote");
-    self thread function_719951d3(other, var_9cc53739);
+    killnote = function_7fcca25d("killNote");
+    self thread function_719951d3(other, killnote);
     if (isplayer(other)) {
         if (note == "disconnect") {
-            other waittill(note, var_9cc53739);
+            other waittill(note, killnote);
         } else {
-            other waittill(note, #"disconnect", var_9cc53739);
+            other waittill(note, #"disconnect", killnote);
         }
     } else {
-        other waittill(note, var_9cc53739);
+        other waittill(note, killnote);
     }
     if (isdefined(self)) {
-        self notify(var_9cc53739);
+        self notify(killnote);
         self.aioverridedamage = undefined;
         self.takedamage = 1;
         self.allowdeath = 1;
@@ -618,11 +618,11 @@ function deletemeonnotify(note, delay = 1) {
 // Checksum 0xb0f47632, Offset: 0x1e08
 // Size: 0x60
 function function_7fcca25d(note) {
-    if (!isdefined(level.var_8cff5775.var_3898afe7)) {
-        level.var_8cff5775.var_3898afe7 = 0;
+    if (!isdefined(level.doa.var_3898afe7)) {
+        level.doa.var_3898afe7 = 0;
     }
-    level.var_8cff5775.var_3898afe7++;
-    return note + level.var_8cff5775.var_3898afe7;
+    level.doa.var_3898afe7++;
+    return note + level.doa.var_3898afe7;
 }
 
 // Namespace namespace_ec06fe4a/namespace_ec06fe4a
@@ -630,11 +630,11 @@ function function_7fcca25d(note) {
 // Checksum 0xf324b6a0, Offset: 0x1e70
 // Size: 0x58
 function function_3390402b() {
-    if (!isdefined(level.var_8cff5775.var_8f229afa)) {
-        level.var_8cff5775.var_8f229afa = 0;
+    if (!isdefined(level.doa.var_8f229afa)) {
+        level.doa.var_8f229afa = 0;
     }
-    level.var_8cff5775.var_8f229afa++;
-    return "doa_dynamic_" + level.var_8cff5775.var_8f229afa;
+    level.doa.var_8f229afa++;
+    return "doa_dynamic_" + level.doa.var_8f229afa;
 }
 
 // Namespace namespace_ec06fe4a/namespace_ec06fe4a
@@ -671,10 +671,10 @@ function function_2d920b3c(var_bf710acd = 0.6, var_6575092a = 1) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0xf275baa7, Offset: 0x2020
 // Size: 0x166
-function function_8b1ae345(time = 2, dist = 24, var_9cc53739) {
+function function_8b1ae345(time = 2, dist = 24, killnote) {
     self endon(#"death");
-    if (isdefined(var_9cc53739)) {
-        self endon(var_9cc53739);
+    if (isdefined(killnote)) {
+        self endon(killnote);
     }
     var_21419d4d = time;
     var_c421a5fd = dist;
@@ -1187,11 +1187,11 @@ function function_a8975c67(var_635abe53 = 0) {
 // Size: 0x108
 function function_ef369bae() {
     playercount = getplayers().size;
-    if (!isdefined(level.var_8cff5775.var_39459d49) || level.var_8cff5775.var_39459d49 == 0) {
-        level.var_8cff5775.var_39459d49 = getplayers().size;
+    if (!isdefined(level.doa.var_39459d49) || level.doa.var_39459d49 == 0) {
+        level.doa.var_39459d49 = getplayers().size;
     }
-    var_737826ee = math::clamp(level.var_8cff5775.roundnumber, 1, level.var_8cff5775.roundnumber);
-    avg = math::clamp(level.var_8cff5775.var_39459d49 / var_737826ee, playercount, 4);
+    var_737826ee = math::clamp(level.doa.roundnumber, 1, level.doa.roundnumber);
+    avg = math::clamp(level.doa.var_39459d49 / var_737826ee, playercount, 4);
     if (avg < playercount) {
         return playercount;
     }

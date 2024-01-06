@@ -42,7 +42,7 @@ function init() {
 // Checksum 0x351406b9, Offset: 0x2d8
 // Size: 0x1e
 function function_32d5e898(*localclientnum) {
-    level.var_8cff5775.var_87b8e8ea = [];
+    level.doa.var_87b8e8ea = [];
 }
 
 // Namespace namespace_c85a46fe/namespace_c85a46fe
@@ -97,8 +97,8 @@ function function_76f6cec6(*localclientnum, *oldval, newval, *bnewent, *binitial
             self function_a5edb367(color);
         }
     }
-    if (!is_true(var_9c06499c) && !isinarray(level.var_8cff5775.var_87b8e8ea, self)) {
-        level.var_8cff5775.var_87b8e8ea[level.var_8cff5775.var_87b8e8ea.size] = self;
+    if (!is_true(var_9c06499c) && !isinarray(level.doa.var_87b8e8ea, self)) {
+        level.doa.var_87b8e8ea[level.doa.var_87b8e8ea.size] = self;
     }
 }
 
@@ -111,7 +111,7 @@ function function_b8b01a1f(localclientnum, *oldval, newval, bnewent, binitialsna
         return;
     }
     state = newval ? 1 : 0;
-    foreach (model in level.var_8cff5775.var_87b8e8ea) {
+    foreach (model in level.doa.var_87b8e8ea) {
         if (!isdefined(model)) {
             continue;
         }

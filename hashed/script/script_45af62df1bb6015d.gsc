@@ -10,9 +10,9 @@
 #using scripts\core_common\flag_shared.csc;
 #using scripts\core_common\clientfield_shared.csc;
 
-#namespace namespace_14de327b;
+#namespace lockpick;
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 0, eflags: 0x5
 // Checksum 0xb48e62f2, Offset: 0x350
 // Size: 0x34
@@ -20,7 +20,7 @@ function private autoexec __init__system__() {
     system::register("lockpick", &function_70a657d8, undefined, undefined, undefined);
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 0, eflags: 0x6 linked
 // Checksum 0xecc459a2, Offset: 0x390
 // Size: 0x104
@@ -31,7 +31,7 @@ function private function_70a657d8() {
     serverfield::register("lockpick_state", 1, 2, "int");
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 7, eflags: 0x6 linked
 // Checksum 0x48a9ce99, Offset: 0x4a0
 // Size: 0xe4
@@ -54,7 +54,7 @@ function private function_ef87790b(localclientnum, oldval, newval, *bnewent, *bi
     }
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 7, eflags: 0x6 linked
 // Checksum 0x8d7a2f4c, Offset: 0x590
 // Size: 0x9e
@@ -72,7 +72,7 @@ function private function_a24ecc14(localclientnum, oldval, newval, *bnewent, *bi
     self.var_e10de4ad.difficulty = bwastimejump;
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 7, eflags: 0x6 linked
 // Checksum 0x50c5a350, Offset: 0x638
 // Size: 0x9e
@@ -90,7 +90,7 @@ function private function_72047528(localclientnum, oldval, newval, *bnewent, *bi
     self.var_e10de4ad.var_843d0b2b = bwastimejump;
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 0, eflags: 0x6 linked
 // Checksum 0x9df169a2, Offset: 0x6e0
 // Size: 0x5e
@@ -103,7 +103,7 @@ function private function_d65cbeab() {
     }
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 1, eflags: 0x6 linked
 // Checksum 0xeface018, Offset: 0x748
 // Size: 0xa4
@@ -120,7 +120,7 @@ function private function_3653370a(localclientnum) {
     self thread function_bef7a7e6(localclientnum);
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 0, eflags: 0x6 linked
 // Checksum 0xf8214ecc, Offset: 0x7f8
 // Size: 0x4bc
@@ -166,7 +166,7 @@ function private function_64609828() {
     self serverfield::set("lockpick_state", 0);
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 0, eflags: 0x6 linked
 // Checksum 0x8e90713a, Offset: 0xcc0
 // Size: 0x72
@@ -174,7 +174,7 @@ function private function_17e7b461() {
     return lerpfloat(self.var_e10de4ad.var_be8b922e.var_84bfe4cb, self.var_e10de4ad.var_be8b922e.var_1c764e77, self.var_e10de4ad.scratch.var_b47c6dfb / self.var_e10de4ad.scratch.var_83e465eb);
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 1, eflags: 0x6 linked
 // Checksum 0x26cdeb45, Offset: 0xd40
 // Size: 0x452
@@ -204,7 +204,7 @@ function private function_a0aa5f5f(init) {
     }
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 1, eflags: 0x6 linked
 // Checksum 0x6adb3532, Offset: 0x11a0
 // Size: 0x12c
@@ -224,7 +224,7 @@ function private function_bef7a7e6(localclientnum) {
     self function_35d8ea7();
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 0, eflags: 0x2 linked
 // Checksum 0xb0aa96a7, Offset: 0x12d8
 // Size: 0x182
@@ -243,7 +243,7 @@ function function_969d3dfa() {
     self.var_e10de4ad.scratch.var_c17cd87c = self.var_e10de4ad.currenttime;
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 1, eflags: 0x2 linked
 // Checksum 0xcd05dbad, Offset: 0x1468
 // Size: 0xbe
@@ -255,7 +255,7 @@ function function_d04f90d8(localclientnum) {
     }
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 1, eflags: 0x6 linked
 // Checksum 0xe1f8eb31, Offset: 0x1530
 // Size: 0x30c
@@ -272,7 +272,7 @@ function private function_8b0dc9ba(localclientnum) {
     }
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 1, eflags: 0x6 linked
 // Checksum 0x248ba8e9, Offset: 0x1848
 // Size: 0x28c
@@ -293,7 +293,7 @@ function private function_395ef29b(input) {
     function_28ef17b1(self.localclientnum, self.var_e10de4ad.scratch.var_b4059b5f);
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 1, eflags: 0x6 linked
 // Checksum 0x9b80412a, Offset: 0x1ae0
 // Size: 0x32c
@@ -327,7 +327,7 @@ LOC_000002f8:
     function_59f6b71c(self.localclientnum, self.var_e10de4ad.scratch.var_7c5c4577);
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 1, eflags: 0x6 linked
 // Checksum 0x31f02b24, Offset: 0x1e18
 // Size: 0x30c
@@ -356,7 +356,7 @@ function private function_7265f078(localclientnum) {
     self function_2d0a7942(self.var_e10de4ad.var_be8b922e.var_346d34d3, self.var_e10de4ad.scratch.var_b2a5eac8);
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 1, eflags: 0x6 linked
 // Checksum 0x1b077bc1, Offset: 0x2130
 // Size: 0x59c
@@ -425,7 +425,7 @@ function private function_74dbcf3e(var_999c568b) {
     }
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 2, eflags: 0x6 linked
 // Checksum 0x4d22e933, Offset: 0x26d8
 // Size: 0x8e
@@ -437,7 +437,7 @@ function private function_95eb0e7b(rumble, fadestart) {
     }
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 2, eflags: 0x6 linked
 // Checksum 0xe111a3ed, Offset: 0x2770
 // Size: 0x74
@@ -450,7 +450,7 @@ function private function_2d0a7942(rumble, fade) {
     }
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 0, eflags: 0x6 linked
 // Checksum 0x5d94876f, Offset: 0x27f0
 // Size: 0x52
@@ -461,7 +461,7 @@ function private function_35d8ea7() {
     }
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 0, eflags: 0x6 linked
 // Checksum 0xe8927141, Offset: 0x2850
 // Size: 0x11e
@@ -480,7 +480,7 @@ function private function_b3ef69ee() {
     self notify(#"hash_4296cd5b3f255c63");
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 1, eflags: 0x6 linked
 // Checksum 0x6f9cae44, Offset: 0x2978
 // Size: 0xea
@@ -498,7 +498,7 @@ function private function_9b9eaf7e(*notifyhash) {
     self.var_e10de4ad.audio = undefined;
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 0, eflags: 0x2 linked
 // Checksum 0xc47f286e, Offset: 0x2a70
 // Size: 0x4c
@@ -509,7 +509,7 @@ function function_f081ea1a() {
     snd::play("evt_lockpick_end", self);
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 0, eflags: 0x2 linked
 // Checksum 0x54b78aa0, Offset: 0x2ac8
 // Size: 0x34
@@ -517,15 +517,15 @@ function function_3424c790() {
     snd::stop(self.var_e10de4ad.audio.var_f1ed0ff0, 0.25);
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 1, eflags: 0x6 linked
 // Checksum 0xdc92166c, Offset: 0x2b08
 // Size: 0x2a
 function private function_80847fa6(localclientnum) {
-    return function_1df4c3b0(localclientnum, #"hash_6f7d895c5a9f4ff3");
+    return function_1df4c3b0(localclientnum, #"lockpick");
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 2, eflags: 0x6 linked
 // Checksum 0x2b160bbe, Offset: 0x2b40
 // Size: 0x64
@@ -534,7 +534,7 @@ function private function_ef02d214(localclientnum, active) {
     setuimodelvalue(getuimodel(var_dd2c6e79, "active"), active);
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 2, eflags: 0x6 linked
 // Checksum 0x3133d4c4, Offset: 0x2bb0
 // Size: 0x94
@@ -546,7 +546,7 @@ function private function_90b8720(localclientnum, var_83e465eb) {
     setuimodelvalue(getuimodel(var_dd2c6e79, "numPins"), var_83e465eb);
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 2, eflags: 0x6 linked
 // Checksum 0xc8b959a4, Offset: 0x2c50
 // Size: 0x64
@@ -555,7 +555,7 @@ function private function_2c6a1130(localclientnum, var_8b0a564b) {
     setuimodelvalue(getuimodel(var_dd2c6e79, "lockDataAsset"), var_8b0a564b);
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 2, eflags: 0x6 linked
 // Checksum 0x21181c3c, Offset: 0x2cc0
 // Size: 0x1ae
@@ -578,7 +578,7 @@ function private function_28ef17b1(localclientnum, angle) {
     self.var_e10de4ad.audio.var_6dc5be9f = angle;
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 2, eflags: 0x6 linked
 // Checksum 0x8a496087, Offset: 0x2e78
 // Size: 0x64
@@ -587,7 +587,7 @@ function private function_192c93dd(localclientnum, state) {
     setuimodelvalue(getuimodel(var_dd2c6e79, "pickState"), state);
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 2, eflags: 0x6 linked
 // Checksum 0xc6fd38ad, Offset: 0x2ee8
 // Size: 0x256
@@ -616,7 +616,7 @@ function private function_59f6b71c(localclientnum, angle) {
     self.var_e10de4ad.audio.var_d1d4a588 = angle;
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 2, eflags: 0x6 linked
 // Checksum 0xf1f8e22d, Offset: 0x3148
 // Size: 0x13e
@@ -631,7 +631,7 @@ function private function_efaef15b(localclientnum, state) {
     self.var_e10de4ad.audio.var_78430c0a = state;
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 2, eflags: 0x6 linked
 // Checksum 0x476fa7e7, Offset: 0x3290
 // Size: 0x64
@@ -640,31 +640,31 @@ function private function_ef54083f(localclientnum, unlocked) {
     setuimodelvalue(getuimodel(var_dd2c6e79, "unlocked"), unlocked);
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 2, eflags: 0x6 linked
 // Checksum 0x61d192fa, Offset: 0x3300
 // Size: 0x9a
-function private function_5a89af80(localclientnum, var_13408359) {
+function private function_5a89af80(localclientnum, pin) {
     /#
-        assert(var_13408359 > 0 && var_13408359 <= 5);
+        assert(pin > 0 && pin <= 5);
     #/
     var_dd2c6e79 = function_80847fa6(localclientnum);
-    var_8ec71e64 = getuimodel(var_dd2c6e79, "pin" + var_13408359);
+    var_8ec71e64 = getuimodel(var_dd2c6e79, "pin" + pin);
     return var_8ec71e64;
 }
 
-// Namespace namespace_14de327b/namespace_14de327b
+// Namespace lockpick/lockpick
 // Params 3, eflags: 0x6 linked
 // Checksum 0x9204ae99, Offset: 0x33a8
 // Size: 0x14e
-function private function_e9e03641(localclientnum, var_13408359, state) {
-    setuimodelvalue(getuimodel(function_5a89af80(localclientnum, var_13408359), "state"), state);
+function private function_e9e03641(localclientnum, pin, state) {
+    setuimodelvalue(getuimodel(function_5a89af80(localclientnum, pin), "state"), state);
     if (state == 1 && self.var_e10de4ad.audio.var_d8de23d1 == 0) {
         snd::play("evt_lockpick_pin_lifted", self);
     } else if (state == 0 && self.var_e10de4ad.audio.var_d8de23d1 == 1) {
         snd::play("evt_lockpick_pin_dropped", self);
     } else if (state == 2) {
-        snd::play("evt_lockpick_pin_unlock_" + var_13408359, self);
+        snd::play("evt_lockpick_pin_unlock_" + pin, self);
     }
     self.var_e10de4ad.audio.var_d8de23d1 = state;
 }

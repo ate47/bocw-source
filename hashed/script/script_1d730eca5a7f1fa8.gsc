@@ -45,7 +45,7 @@ function function_b784c6bd(type) {
     case 12:
         break;
     case 46:
-        self.var_8cff5775.var_ccd8393c++;
+        self.doa.var_ccd8393c++;
         self namespace_83eb6304::function_3ecfde67("divine_shield");
         self namespace_83eb6304::function_3ecfde67("player_respawn_red");
         self namespace_83eb6304::function_3ecfde67("player_respawn_yellow");
@@ -65,7 +65,7 @@ function function_a6ab97f0(type) {
     case 12:
         break;
     case 46:
-        self.var_8cff5775.var_ccd8393c = 0;
+        self.doa.var_ccd8393c = 0;
         self namespace_83eb6304::turnofffx("divine_shield");
         self namespace_83eb6304::function_3ecfde67("divine_shield_off");
         break;

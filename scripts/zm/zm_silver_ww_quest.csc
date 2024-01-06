@@ -17,9 +17,9 @@ function init() {
     clientfield::register("scriptmover", "" + #"hash_7159facf785aad53", 1, 1, "int", &function_7bceb311, 0, 0);
     clientfield::register("toplayer", "" + #"hash_864ef374ea11ea7", 1, 1, "int", &function_37ba0961, 0, 0);
     clientfield::register("scriptmover", "" + #"hash_18f64f139f905f76", 1, 1, "int", &function_f875612b, 0, 0);
-    clientfield::register("scriptmover", "crystal_energy_fx", 1, 1, "int", &function_2755647d, 0, 0);
-    clientfield::register("allplayers", "ww_vacuum_crystal_fx", 1, 1, "int", &function_b718fe1f, 0, 0);
-    clientfield::register("allplayers", "hold_crystal_energy", 1, 1, "int", &function_818a91d9, 0, 0);
+    clientfield::register("scriptmover", "crystal_energy_fx", 1, 1, "int", &crystal_energy_fx, 0, 0);
+    clientfield::register("allplayers", "ww_vacuum_crystal_fx", 1, 1, "int", &ww_vacuum_crystal_fx, 0, 0);
+    clientfield::register("allplayers", "hold_crystal_energy", 1, 1, "int", &hold_crystal_energy, 0, 0);
     clientfield::register("scriptmover", "" + #"hash_21ba194bb9030d0c", 1, 1, "int", &function_f0bc5344, 0, 0);
     clientfield::register("scriptmover", "" + #"hash_5e31ed9954a7a58a", 1, 2, "int", &function_29b9f19b, 0, 0);
     clientfield::register("scriptmover", "" + #"hash_5020565243fa510a", 1, 1, "int", &function_c4793fe5, 0, 0);
@@ -102,7 +102,7 @@ function function_c4793fe5(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0x16c
 function function_408232a7(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump == 1) {
-        self.var_87f7f912 = playfx(fieldname, #"hash_6ad2e753a27af5f8", self.origin + vectorscale((0, 0, 1), 20));
+        self.var_87f7f912 = playfx(fieldname, #"zm_ai/fx9_hound_plague_dth_aoe", self.origin + vectorscale((0, 0, 1), 20));
         playsound(fieldname, #"hash_11a2fa9d6a695f96", self.origin + vectorscale((0, 0, 1), 20));
         audio::playloopat(#"hash_155791cb3cba6094", self.origin + vectorscale((0, 0, 1), 20));
         wait(2);
@@ -267,7 +267,7 @@ function function_f875612b(localclientnum, *oldval, newval, *bnewent, *binitials
 // Params 7, eflags: 0x2 linked
 // Checksum 0x21abf19a, Offset: 0x1718
 // Size: 0x11e
-function function_2755647d(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
+function crystal_energy_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump) {
         self.var_358ffe83 = playfx(fieldname, #"hash_498785d4883daa1", self.origin);
         if (!isdefined(self.var_a15fac69)) {
@@ -289,7 +289,7 @@ function function_2755647d(localclientnum, *oldval, newval, *bnewent, *binitials
 // Params 7, eflags: 0x2 linked
 // Checksum 0x249dbc43, Offset: 0x1840
 // Size: 0x278
-function function_b718fe1f(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
+function ww_vacuum_crystal_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (!isdefined(level.var_37d7e267)) {
         level.var_37d7e267 = [];
     }
@@ -326,7 +326,7 @@ function function_b718fe1f(localclientnum, *oldval, newval, *bnewent, *binitials
 // Params 7, eflags: 0x2 linked
 // Checksum 0xb2c88a83, Offset: 0x1ac0
 // Size: 0x10e
-function function_818a91d9(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
+function hold_crystal_energy(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (!isdefined(level.var_23b807cf)) {
         level.var_23b807cf = [];
     }

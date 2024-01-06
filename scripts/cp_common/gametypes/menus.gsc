@@ -127,21 +127,21 @@ function on_menu_response() {
             } else if (response == "autocontrol") {
                 self [[ level.autocontrolplayer ]]();
             } else if (response == "typing_complete") {
-                level notify(#"hash_179b3902d6818468", {#line:intpayload});
+                level notify(#"typing_complete", {#line:intpayload});
             } else if (response == "personnel_profile_closed") {
-                level notify(#"hash_31bb1649bbe5f3e6", {#var_ee99e999:intpayload});
+                level notify(#"personnel_profile_closed", {#var_ee99e999:intpayload});
             } else if (response == "note_closed") {
-                level notify(#"hash_4ac0b09821c90d92");
+                level notify(#"note_closed");
             } else if (response == "evidence_board_option_selected") {
-                level notify(#"hash_72adfc5c95bcfe4b", {#var_70b35161:intpayload});
+                level notify(#"evidence_board_option_selected", {#var_70b35161:intpayload});
             } else if (response == "mission_option_selected") {
-                level notify(#"hash_d0eb5e5d85a3a81", {#var_70b35161:intpayload});
+                level notify(#"mission_option_selected", {#var_70b35161:intpayload});
             } else if (response == "dialog_tree_option_selected") {
-                level notify(#"hash_63db5f086ff3eaa2", {#var_70b35161:intpayload});
+                level notify(#"dialog_tree_option_selected", {#var_70b35161:intpayload});
             } else if (response == "dialog_tree_kbm_key_selected") {
-                level notify(#"hash_4a5e775805e2ba5b", {#var_70b35161:intpayload});
+                level notify(#"dialog_tree_kbm_key_selected", {#var_70b35161:intpayload});
             } else if (response == "lui_unpause_game") {
-                level notify(#"hash_443eefc45fe845c8", {#success:intpayload == 1});
+                level notify(#"lui_unpause_game", {#success:intpayload == 1});
             } else if (response == "objective_splash" && intpayload === 0) {
                 level notify(#"hash_4df0c0f18673f6c3");
             } else if (response == #"hash_4c6480245891f16a") {

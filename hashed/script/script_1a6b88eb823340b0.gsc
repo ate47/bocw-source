@@ -4,9 +4,9 @@
 #using scripts\core_common\item_inventory.gsc;
 #using scripts\core_common\aat_shared.gsc;
 
-#namespace namespace_d35c222c;
+#namespace ammomod_electriccherry;
 
-// Namespace namespace_d35c222c/namespace_d35c222c
+// Namespace ammomod_electriccherry/ammomod_electriccherry
 // Params 0, eflags: 0x0
 // Checksum 0xed25e85e, Offset: 0x130
 // Size: 0xec
@@ -21,7 +21,7 @@ function function_4b66248d() {
     clientfield::register("allplayers", "ammomod_electric_cherry_explode", 1, 1, "counter");
 }
 
-// Namespace namespace_d35c222c/namespace_d35c222c
+// Namespace ammomod_electriccherry/ammomod_electriccherry
 // Params 8, eflags: 0x0
 // Checksum 0x6cb62f74, Offset: 0x228
 // Size: 0x60
@@ -31,7 +31,7 @@ function result(*death, *attacker, *mod, *weapon, *var_fd90b0bb, *vpoint, *shitl
     }
 }
 
-// Namespace namespace_d35c222c/reload
+// Namespace ammomod_electriccherry/reload
 // Params 1, eflags: 0x20
 // Checksum 0x1c86da15, Offset: 0x290
 // Size: 0x9c
@@ -41,12 +41,12 @@ function event_handler[reload] function_b4174270(*eventstruct) {
     }
     weapon = self getcurrentweapon();
     item = item_inventory::function_230ceec4(weapon);
-    if (item.var_a6762160.var_b079a6e6 === #"hash_3cf70f1874b2c3cc") {
+    if (item.var_a6762160.var_b079a6e6 === #"ammomod_electriccherry") {
         self function_aa4171b9();
     }
 }
 
-// Namespace namespace_d35c222c/namespace_d35c222c
+// Namespace ammomod_electriccherry/ammomod_electriccherry
 // Params 0, eflags: 0x0
 // Checksum 0x58b2531c, Offset: 0x338
 // Size: 0x14c
@@ -65,7 +65,7 @@ function function_aa4171b9() {
         if (e_zombie.var_6f84b820 === #"hash_72d4f2ad2e333eb4") {
             continue;
         }
-        e_zombie namespace_86c9684b::function_de99f2ad(self, e_zombie, s_params, 5);
+        e_zombie ammomod_deadwire::function_de99f2ad(self, e_zombie, s_params, 5);
         count++;
     }
 }

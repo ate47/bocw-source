@@ -3,9 +3,9 @@
 #using scripts\core_common\postfx_shared.csc;
 #using scripts\core_common\clientfield_shared.csc;
 
-#namespace namespace_3f4c38e1;
+#namespace objective_retrieval;
 
-// Namespace namespace_3f4c38e1/level_init
+// Namespace objective_retrieval/level_init
 // Params 1, eflags: 0x20
 // Checksum 0x4234be52, Offset: 0x2b8
 // Size: 0x1dc
@@ -18,7 +18,7 @@ function event_handler[level_init] main(*eventstruct) {
     util::waitforclient(0);
 }
 
-// Namespace namespace_3f4c38e1/namespace_3f4c38e1
+// Namespace objective_retrieval/objective_retrieval
 // Params 7, eflags: 0x0
 // Checksum 0x3144da86, Offset: 0x4a0
 // Size: 0x246
@@ -55,7 +55,7 @@ function function_5ce76614(localclientnum, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_3f4c38e1/namespace_3f4c38e1
+// Namespace objective_retrieval/objective_retrieval
 // Params 7, eflags: 0x0
 // Checksum 0x2c2a6154, Offset: 0x6f0
 // Size: 0x11e
@@ -75,7 +75,7 @@ function function_6b90cf3a(localclientnum, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_3f4c38e1/namespace_3f4c38e1
+// Namespace objective_retrieval/objective_retrieval
 // Params 7, eflags: 0x0
 // Checksum 0x95726a97, Offset: 0x818
 // Size: 0x166
@@ -101,7 +101,7 @@ function function_1eb1d4d6(localclientnum, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_3f4c38e1/namespace_3f4c38e1
+// Namespace objective_retrieval/objective_retrieval
 // Params 7, eflags: 0x0
 // Checksum 0x32df1eda, Offset: 0x988
 // Size: 0xf4
@@ -109,14 +109,14 @@ function function_704685e1(localclientnum, *oldval, *newval, *bnewent, *binitial
     if (self.model === #"hash_7f311e8d38b7d936") {
         str_fx = #"hash_138a5318ce27c2ca";
     } else {
-        str_fx = #"hash_21de711a73de2b60";
+        str_fx = #"zombie/fx9_player_shockwave_retrieval";
     }
     playfx(bwastimejump, str_fx, self.origin, vectorscale((1, 0, 0), 180));
     self playsound(bwastimejump, #"hash_5db462e1df5084e7");
     self playrumbleonentity(bwastimejump, "damage_heavy");
 }
 
-// Namespace namespace_3f4c38e1/namespace_3f4c38e1
+// Namespace objective_retrieval/objective_retrieval
 // Params 7, eflags: 0x0
 // Checksum 0xc62f95ca, Offset: 0xa88
 // Size: 0x386
@@ -169,7 +169,7 @@ function function_d3af9ddb(localclientnum, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_3f4c38e1/namespace_3f4c38e1
+// Namespace objective_retrieval/objective_retrieval
 // Params 0, eflags: 0x0
 // Checksum 0x740f4cab, Offset: 0xe18
 // Size: 0x114

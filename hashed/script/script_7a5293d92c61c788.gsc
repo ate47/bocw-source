@@ -46,7 +46,7 @@ function private autoexec __init__system__() {
 // Checksum 0x27bef3ad, Offset: 0x320
 // Size: 0x20c
 function function_70a657d8() {
-    level.var_2a994cc0 = namespace_eb35e6da::register();
+    level.var_2a994cc0 = sr_armor_menu::register();
     level.var_ade77b07 = array(#"hash_6c055e078965b4e3", #"armor_item_lv1_t9_sr", #"armor_item_lv2_t9_sr", #"armor_item_lv3_t9_sr");
     level.var_3a2e321c = array(250, 500, 1000, 250);
     level.var_67a1f481 = array(#"hash_1bce1d027595650f", #"green", #"blue", #"purple", #"orange");
@@ -103,7 +103,7 @@ function function_93a99046(struct) {
     }
     scriptmodel = namespace_8b6a9d79::function_f3d93ee9(struct, model, 1);
     zm_utility::function_ca960904(scriptmodel);
-    if (struct.parent.var_b588b063 !== #"safehouse") {
+    if (struct.parent.content_script_name !== #"safehouse") {
         objid = [[ var_c6d25878 ]](#"hash_25a19901af9e8467", scriptmodel);
         struct.objectiveid = objid;
         scriptmodel.objectiveid = objid;
@@ -186,9 +186,9 @@ function function_fe5f8894(eventstruct) {
         assert(isdefined(machine), "<unknown string>");
     #/
     if (isplayer(player)) {
-        if (!level.var_2a994cc0 namespace_eb35e6da::is_open(player) && !player clientfield::get_player_uimodel("hudItems.srOverlayOpen") && machine.script_noteworthy !== "power") {
+        if (!level.var_2a994cc0 sr_armor_menu::is_open(player) && !player clientfield::get_player_uimodel("hudItems.srOverlayOpen") && machine.script_noteworthy !== "power") {
             player notify(#"hash_5f178db4550eeae9");
-            level.var_2a994cc0 namespace_eb35e6da::open(player, 0);
+            level.var_2a994cc0 sr_armor_menu::open(player, 0);
             player thread function_cb2d9b9b(machine, self);
             player namespace_553954de::function_14bada94();
         }
@@ -215,8 +215,8 @@ function function_6c71e778(machine, trigger) {
             zm_utility::function_e8f4d47b(self, machine.objectiveid, 0);
         }
     }
-    if (level.var_2a994cc0 namespace_eb35e6da::is_open(self) && self clientfield::get_player_uimodel("hudItems.srOverlayOpen")) {
-        level.var_2a994cc0 namespace_eb35e6da::close(self);
+    if (level.var_2a994cc0 sr_armor_menu::is_open(self) && self clientfield::get_player_uimodel("hudItems.srOverlayOpen")) {
+        level.var_2a994cc0 sr_armor_menu::close(self);
         self namespace_553954de::function_548f282();
     }
     self notify(#"hash_5e4c1bf6d3ef5df0");
@@ -251,7 +251,7 @@ function function_620db6a4(machine, trigger) {
             break;
         }
     }
-    if (level.var_2a994cc0 namespace_eb35e6da::is_open(self) && self clientfield::get_player_uimodel("hudItems.srOverlayOpen")) {
+    if (level.var_2a994cc0 sr_armor_menu::is_open(self) && self clientfield::get_player_uimodel("hudItems.srOverlayOpen")) {
         self function_6c71e778(machine, trigger);
     }
 }
@@ -394,7 +394,7 @@ function function_cb2d9b9b(machine, trigger) {
         menu = waitresult.menu;
         response = waitresult.response;
         intpayload = waitresult.intpayload;
-        if (menu == #"hash_26b59e932706b6ee") {
+        if (menu == #"sr_armor_menu") {
             weapon = self getcurrentweapon();
             item = item_inventory::function_230ceec4(weapon);
             var_bfd531ce = item_inventory::function_d768ea30();
@@ -426,15 +426,15 @@ function function_cb2d9b9b(machine, trigger) {
                             self namespace_2a9f256a::function_3610299b(var_1d1d4a2a);
                         }
                     } else {
-                        machine playsoundtoplayer(#"hash_7d81a3ace87fb4e2", self);
+                        machine playsoundtoplayer(#"uin_default_action_denied", self);
                     }
                 } else {
-                    machine playsoundtoplayer(#"hash_7d81a3ace87fb4e2", self);
+                    machine playsoundtoplayer(#"uin_default_action_denied", self);
                 }
                 break;
             case #"hash_652072d835f5b0fa":
                 if (!function_1490abe2(weapon) || self isswitchingweapons()) {
-                    machine playsoundtoplayer(#"hash_7d81a3ace87fb4e2", self);
+                    machine playsoundtoplayer(#"uin_default_action_denied", self);
                 } else {
                     var_35d31714 = level.var_67a1f481[intpayload];
                     var_9b05d455 = level.var_9d209b60[intpayload];
@@ -442,7 +442,7 @@ function function_cb2d9b9b(machine, trigger) {
                     if (isdefined(var_35d31714) && isdefined(var_9b05d455)) {
                         if (var_35d31714 === #"hash_1bce1d027595650f") {
                             if (weapon.weapclass === "melee" || weapon.weapclass === "rocketlauncher" || weapon.weapclass === "grenade" || weapon.name === #"special_ballisticknife_t9_dw" || weapon.name === #"hash_4650af6ac5c9ce80" || weapon.name === #"special_nailgun_t9" || weapon.name === #"hash_1f564f586c2ec416") {
-                                machine playsoundtoplayer(#"hash_7d81a3ace87fb4e2", self);
+                                machine playsoundtoplayer(#"uin_default_action_denied", self);
                             } else {
                                 item_weapon = function_44368952(weapon, item.var_a6762160.rarity);
                                 var_79770f09 = function_137f88c6(item.var_a6762160.rarity);
@@ -477,7 +477,7 @@ function function_cb2d9b9b(machine, trigger) {
                                         }
                                     }
                                 } else {
-                                    machine playsoundtoplayer(#"hash_7d81a3ace87fb4e2", self);
+                                    machine playsoundtoplayer(#"uin_default_action_denied", self);
                                 }
                             }
                         } else {
@@ -507,11 +507,11 @@ function function_cb2d9b9b(machine, trigger) {
                                     }
                                 }
                             } else {
-                                machine playsoundtoplayer(#"hash_7d81a3ace87fb4e2", self);
+                                machine playsoundtoplayer(#"uin_default_action_denied", self);
                             }
                         }
                     } else {
-                        machine playsoundtoplayer(#"hash_7d81a3ace87fb4e2", self);
+                        machine playsoundtoplayer(#"uin_default_action_denied", self);
                     }
                 }
                 break;

@@ -11,7 +11,7 @@
 // Checksum 0xa51c9971, Offset: 0x460
 // Size: 0x40c
 function event_handler[level_init] main(*eventstruct) {
-    clientfield::register("scriptmover", "" + #"portal", 1, 1, "int", &function_c2ac99f, 0, 0);
+    clientfield::register("scriptmover", "" + #"portal", 1, 1, "int", &portal_fx, 0, 0);
     clientfield::register("scriptmover", "" + #"hash_2a7da9a87ecef87b", 1, 1, "int", &function_36ab0d37, 0, 0);
     clientfield::register("scriptmover", "" + #"payload_teleport", 1, 2, "int", &function_5884461e, 0, 0);
     clientfield::register("toplayer", "" + #"hash_19f93b2cb70ea2c5", 1, 1, "int", &function_fa7a206b, 0, 0);
@@ -255,7 +255,7 @@ function function_d233fb1f() {
 // Params 7, eflags: 0x2 linked
 // Checksum 0x91499c80, Offset: 0x15f0
 // Size: 0xa4
-function function_c2ac99f(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function portal_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self.var_ae8b25ed = util::playfxontag(fieldname, "sr/fx9_obj_payload_aether_portal", self, "tag_origin");
     } else if (isdefined(self.var_ae8b25ed)) {

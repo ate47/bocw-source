@@ -6,31 +6,31 @@
 #using scripts\core_common\system_shared.csc;
 #using scripts\core_common\struct.csc;
 
-#namespace namespace_4a2d3ac2;
+#namespace hazard;
 
-// Namespace namespace_4a2d3ac2/namespace_4a2d3ac2
+// Namespace hazard/hazard
 // Params 0, eflags: 0x5
 // Checksum 0x625ccb8e, Offset: 0x128
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_c5db72275346f4d", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"hazard", &function_70a657d8, undefined, undefined, undefined);
 }
 
-// Namespace namespace_4a2d3ac2/namespace_4a2d3ac2
+// Namespace hazard/hazard
 // Params 0, eflags: 0x6 linked
 // Checksum 0xae5b6634, Offset: 0x170
 // Size: 0xb4
 function private function_70a657d8() {
-    clientfield::register("toplayer", "hazard_gas", 1, 1, "int", &function_e92ac01b, 0, 0);
-    clientfield::register("toplayer", "hazard_gas_with_mask", 1, 1, "int", &function_206b5d38, 0, 0);
+    clientfield::register("toplayer", "hazard_gas", 1, 1, "int", &hazard_gas, 0, 0);
+    clientfield::register("toplayer", "hazard_gas_with_mask", 1, 1, "int", &hazard_gas_with_mask, 0, 0);
     level._effect[#"hash_667f50f096a9a290"] = "fire/fx_fire_ai_human_head_loop";
 }
 
-// Namespace namespace_4a2d3ac2/namespace_4a2d3ac2
+// Namespace hazard/hazard
 // Params 7, eflags: 0x2 linked
 // Checksum 0xc9eeeaa1, Offset: 0x230
 // Size: 0xbc
-function function_e92ac01b(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function hazard_gas(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         setblurbylocalclientnum(fieldname, 16, 1);
     } else {
@@ -42,11 +42,11 @@ function function_e92ac01b(localclientnum, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_4a2d3ac2/namespace_4a2d3ac2
+// Namespace hazard/hazard
 // Params 7, eflags: 0x2 linked
 // Checksum 0x4a8f5577, Offset: 0x2f8
 // Size: 0xd4
-function function_206b5d38(localclientnum, oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function hazard_gas_with_mask(localclientnum, oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump != fieldname) {
         if (bwastimejump) {
             setblurbylocalclientnum(binitialsnap, 2, 3);
@@ -59,7 +59,7 @@ function function_206b5d38(localclientnum, oldval, newval, *bnewent, *binitialsn
     }
 }
 
-// Namespace namespace_4a2d3ac2/namespace_4a2d3ac2
+// Namespace hazard/hazard
 // Params 0, eflags: 0x2 linked
 // Checksum 0x896459a8, Offset: 0x3d8
 // Size: 0x68

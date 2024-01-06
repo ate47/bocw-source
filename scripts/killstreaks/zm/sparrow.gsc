@@ -45,7 +45,7 @@ function private onactordamage(params) {
     }
     statuseffect = getstatuseffect("dot_sig_bow_flame");
     self status_effect::status_effect_apply(statuseffect, weapon, params.eattacker, 0, undefined, undefined, params.vpoint);
-    self namespace_d53389a8::function_74816787();
+    self ammomod_napalmburst::function_74816787();
     duration = float(statuseffect.var_77449e9) / 1000;
     self thread function_77b06e9c(duration);
 }
@@ -57,7 +57,7 @@ function private onactordamage(params) {
 function function_77b06e9c(duration) {
     self endon(#"death");
     wait(duration);
-    self namespace_d53389a8::function_68364c40();
+    self ammomod_napalmburst::function_68364c40();
 }
 
 // Namespace zm_sparrow/namespace_e039b91b

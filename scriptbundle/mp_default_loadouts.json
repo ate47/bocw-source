@@ -527,7 +527,7 @@
             "customclassname": "#class/slot2",
             "var_26b5c8ef": -1,
             "primary": "#smg_standard_t9",
-            "specialgrenade": "#hash_320a8d55b915b9e5",
+            "specialgrenade": "#listening_device",
             "secondary": "#pistol_semiauto_t9",
             "primarygrenade": "#frag_grenade",
             "secondarygrenade": "#eq_slow_grenade"
@@ -587,7 +587,7 @@
             "customclassname": "#class/slot4",
             "var_26b5c8ef": -1,
             "primary": "#sniper_quickscope_t9",
-            "specialgrenade": "#hash_320a8d55b915b9e5",
+            "specialgrenade": "#listening_device",
             "secondary": "#pistol_semiauto_t9",
             "primarygrenade": "#frag_grenade",
             "secondarygrenade": "#eq_slow_grenade"
@@ -677,7 +677,7 @@
             "customclassname": "#class/slot7",
             "var_26b5c8ef": -1,
             "primary": "#smg_handling_t9",
-            "specialgrenade": "#hash_320a8d55b915b9e5",
+            "specialgrenade": "#listening_device",
             "secondary": "#knife_loadout",
             "primarygrenade": "#satchel_charge",
             "secondarygrenade": "#eq_slow_grenade"

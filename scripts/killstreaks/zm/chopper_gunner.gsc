@@ -134,7 +134,7 @@ function private function_5160bb1e(killstreaktype) {
     }
     player thread killstreakrules::function_24241971();
     player thread function_48170f5e();
-    if (zm_utility::is_survival() && !level flag::get(#"hash_448cb2a9e543af93")) {
+    if (zm_utility::is_survival() && !level flag::get(#"objective_locked")) {
         if (!level flag::get(#"hash_3070ff342f14b371")) {
             level.var_d5ad2e35 = 1;
         }

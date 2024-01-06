@@ -30,7 +30,7 @@
 // Checksum 0x1b12a661, Offset: 0x208
 // Size: 0x1a4
 function init() {
-    level.var_8cff5775.var_11c4dca4 = [];
+    level.doa.var_11c4dca4 = [];
     clientfield::register("scriptmover", "play_fx", 1, 8, "int");
     clientfield::register("allplayers", "play_fx", 1, 8, "int");
     clientfield::register("actor", "play_fx", 1, 8, "int");
@@ -47,14 +47,14 @@ function init() {
 // Checksum 0xab60247b, Offset: 0x3b8
 // Size: 0x10c
 function function_4060ccb4(name, *unused1, var_f80dfd0d, *var_5ddf2027, *var_26f1324c = 0) {
-    var_318e5b78 = level.var_8cff5775.var_11c4dca4.size;
+    var_318e5b78 = level.doa.var_11c4dca4.size;
     /#
         assert(var_318e5b78 < 256, "<unknown string>");
     #/
     /#
-        assert(!isdefined(level.var_8cff5775.var_11c4dca4[var_5ddf2027]), "<unknown string>");
+        assert(!isdefined(level.doa.var_11c4dca4[var_5ddf2027]), "<unknown string>");
     #/
-    level.var_8cff5775.var_11c4dca4[var_5ddf2027] = {#clear:var_26f1324c, #id:var_318e5b78, #name:var_5ddf2027};
+    level.doa.var_11c4dca4[var_5ddf2027] = {#clear:var_26f1324c, #id:var_318e5b78, #name:var_5ddf2027};
 }
 
 // Namespace namespace_83eb6304/namespace_83eb6304
@@ -157,11 +157,11 @@ function turnofffx(name) {
     if (!isdefined(name) || !isdefined(self)) {
         return;
     }
-    if (!isdefined(level.var_8cff5775.var_11c4dca4[name])) {
+    if (!isdefined(level.doa.var_11c4dca4[name])) {
         namespace_1e25ad94::function_f5f0c0f8("FX OFF ERROR for entity [" + (isdefined(self.entnum) ? self.entnum : self getentitynumber()) + "] effect UNDFINED--> [" + name + "] ");
         return;
     }
-    var_e86c9812 = {#flag:"stop_fx", #fx:level.var_8cff5775.var_11c4dca4[name]};
+    var_e86c9812 = {#flag:"stop_fx", #fx:level.doa.var_11c4dca4[name]};
     if (!isdefined(self.var_93d7fb93)) {
         self thread function_dd47bd22(var_e86c9812);
     } else {
@@ -185,11 +185,11 @@ function function_3ecfde67(name) {
     if (!isdefined(name) || !isdefined(self)) {
         return;
     }
-    if (!isdefined(level.var_8cff5775.var_11c4dca4[name])) {
+    if (!isdefined(level.doa.var_11c4dca4[name])) {
         namespace_1e25ad94::function_f5f0c0f8("FX ON ERROR for entity [" + (isdefined(self.entnum) ? self.entnum : self getentitynumber()) + "] effect UNDFINED--> [" + name + "] ");
         return;
     }
-    var_e86c9812 = {#flag:"play_fx", #fx:level.var_8cff5775.var_11c4dca4[name]};
+    var_e86c9812 = {#flag:"play_fx", #fx:level.doa.var_11c4dca4[name]};
     if (!isdefined(self.var_93d7fb93)) {
         self thread function_dd47bd22(var_e86c9812);
     } else {

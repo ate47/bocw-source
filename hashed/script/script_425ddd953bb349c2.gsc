@@ -25,7 +25,7 @@ function private function_70a657d8() {
     if (!is_true(getgametypesetting(#"hash_4bf87ef3ad101bb4")) && !getdvarint(#"hash_730311c63805303a", 0)) {
         return;
     }
-    clientfield::register("allplayers", "phase_rift_player_fx", 1, 2, "int", &function_5a246a9f, 0, 0);
+    clientfield::register("allplayers", "phase_rift_player_fx", 1, 2, "int", &phase_rift_player_fx, 0, 0);
     clientfield::register("toplayer", "" + #"hash_1b01e37683714902", 1, 1, "int", &function_1f107cad, 0, 0);
 }
 
@@ -33,7 +33,7 @@ function private function_70a657d8() {
 // Params 7, eflags: 0x0
 // Checksum 0x2c8a420c, Offset: 0x260
 // Size: 0x1bc
-function function_5a246a9f(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function phase_rift_player_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (!isdefined(self) || !self hasdobj(fieldname)) {
         return;
     }

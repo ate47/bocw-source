@@ -88,13 +88,13 @@ function function_2a1e5c1f(origin, angles, modelname, type = 1, var_5653e2ee = 2
         }
     }
     if (var_56d14168.var_fc5f2aa0.type === #"hardcore") {
-        if (is_true(level.var_8cff5775.hardcoremode)) {
+        if (is_true(level.doa.hardcoremode)) {
             var_56d14168.var_d6118311.var_56d14168 = 1;
         }
         var_56d14168.var_fc5f2aa0 = undefined;
     }
     namespace_1e25ad94::function_f5f0c0f8("Creating Door (" + modelname + ") at " + origin);
-    level.var_8cff5775.var_b8ef1466[level.var_8cff5775.var_b8ef1466.size] = var_56d14168;
+    level.doa.var_b8ef1466[level.doa.var_b8ef1466.size] = var_56d14168;
     return var_56d14168;
 }
 

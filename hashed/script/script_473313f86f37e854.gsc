@@ -4,9 +4,9 @@
 #using scripts\core_common\clientfield_shared.csc;
 #using scripts\core_common\aat_shared.csc;
 
-#namespace namespace_2315676d;
+#namespace ammomod_cryofreeze;
 
-// Namespace namespace_2315676d/namespace_2315676d
+// Namespace ammomod_cryofreeze/ammomod_cryofreeze
 // Params 0, eflags: 0x0
 // Checksum 0x3a18a4ab, Offset: 0x430
 // Size: 0x2ac
@@ -27,7 +27,7 @@ function function_ab6c8a0b() {
     clientfield::register("toplayer", "ammomod_cryofreeze_proc", 1, 1, "counter", &function_b43ea396, 1, 0);
 }
 
-// Namespace namespace_2315676d/namespace_2315676d
+// Namespace ammomod_cryofreeze/ammomod_cryofreeze
 // Params 7, eflags: 0x0
 // Checksum 0xb692e679, Offset: 0x6e8
 // Size: 0x64
@@ -35,7 +35,7 @@ function function_b43ea396(localclientnum, *oldval, *newval, *bnewent, *binitial
     playviewmodelfx(bwastimejump, #"hash_49415c5017d46d03", "tag_fx1", 0);
 }
 
-// Namespace namespace_2315676d/namespace_2315676d
+// Namespace ammomod_cryofreeze/ammomod_cryofreeze
 // Params 7, eflags: 0x0
 // Checksum 0xd6c76499, Offset: 0x758
 // Size: 0x58c
@@ -90,7 +90,7 @@ function function_a7a5e842(localclientnum, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_2315676d/namespace_2315676d
+// Namespace ammomod_cryofreeze/ammomod_cryofreeze
 // Params 2, eflags: 0x0
 // Checksum 0xd3adf7b, Offset: 0xcf0
 // Size: 0x3d8
@@ -149,7 +149,7 @@ function function_bfdbfcd(localclientnum, b_freeze) {
     }
 }
 
-// Namespace namespace_2315676d/namespace_2315676d
+// Namespace ammomod_cryofreeze/ammomod_cryofreeze
 // Params 0, eflags: 0x0
 // Checksum 0xc189bd0c, Offset: 0x10d0
 // Size: 0x102
@@ -166,7 +166,7 @@ function function_2734889d() {
     }
 }
 
-// Namespace namespace_2315676d/namespace_2315676d
+// Namespace ammomod_cryofreeze/ammomod_cryofreeze
 // Params 1, eflags: 0x0
 // Checksum 0x843bfa90, Offset: 0x11e0
 // Size: 0x7c
@@ -181,7 +181,7 @@ function function_a565490f(localclientnum) {
     }
 }
 
-// Namespace namespace_2315676d/namespace_2315676d
+// Namespace ammomod_cryofreeze/ammomod_cryofreeze
 // Params 7, eflags: 0x0
 // Checksum 0x7bd88a6f, Offset: 0x1268
 // Size: 0xcc

@@ -31,7 +31,7 @@ function init_dog_fx() {
     level._effect[#"hash_33fd6545401e3622"] = #"hash_39b25de05718b20c";
     level._effect[#"hash_63f497890003547"] = #"hash_3055dc23ae9ca695";
     level._effect[#"dog_gib"] = #"hash_529c1a5672216926";
-    level._effect[#"lightning_dog_spawn"] = #"hash_2494cb3c2a3c9c3a";
+    level._effect[#"lightning_dog_spawn"] = #"zm_ai/fx8_dog_lightning_spawn";
 }
 
 // Namespace namespace_53a8fe5e/namespace_53a8fe5e

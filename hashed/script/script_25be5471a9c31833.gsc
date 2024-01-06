@@ -34,7 +34,7 @@ function private autoexec __init__system__() {
 // Checksum 0xdd97b691, Offset: 0x288
 // Size: 0x7c
 function function_70a657d8() {
-    level.var_5df76d0 = namespace_6df5a8d8::register();
+    level.var_5df76d0 = sr_perk_machine_choice::register();
     if (!isdefined(level.var_dfe80386)) {
         level.var_dfe80386 = 0;
     }
@@ -89,8 +89,8 @@ function function_999594fe(var_beee4994, hint_string, model, var_c024c2e0, cost)
         return;
     }
     foreach (var_7d0e37f8 in var_beee4994) {
-        if (isdefined(var_7d0e37f8.var_739ddae)) {
-            function_744f2a2(var_7d0e37f8, var_7d0e37f8.var_739ddae, model, hint_string, var_c024c2e0, cost, &function_472f16d8);
+        if (isdefined(var_7d0e37f8.content_key)) {
+            function_744f2a2(var_7d0e37f8, var_7d0e37f8.content_key, model, hint_string, var_c024c2e0, cost, &function_472f16d8);
         }
     }
 }
@@ -128,7 +128,7 @@ function function_744f2a2(struct, var_a0f07ebc, modelname, hint_string, var_c024
         var_386a4480 = hint_string;
         hint_string = #"zombie/need_power";
     }
-    if (struct.parent.var_b588b063 !== #"safehouse") {
+    if (struct.parent.content_script_name !== #"safehouse") {
         objid = [[ var_c6d25878 ]](#"hash_7d2b8cd6f37639c9", scriptmodel);
         struct.objectiveid = objid;
         scriptmodel.objectiveid = objid;
@@ -261,9 +261,9 @@ function function_472f16d8(eventstruct) {
     #/
     if (isplayer(player)) {
         if (var_c024c2e0 == #"hash_3eac5ec7a888ddfb") {
-            if (!level.var_5df76d0 namespace_6df5a8d8::is_open(player) && !player clientfield::get_player_uimodel("hudItems.srOverlayOpen")) {
+            if (!level.var_5df76d0 sr_perk_machine_choice::is_open(player) && !player clientfield::get_player_uimodel("hudItems.srOverlayOpen")) {
                 player notify(#"hash_5f178db4550eeae9");
-                level.var_5df76d0 namespace_6df5a8d8::open(player, 0);
+                level.var_5df76d0 sr_perk_machine_choice::open(player, 0);
                 player thread function_4513f006(machine, self);
                 player namespace_553954de::function_14bada94();
             }
@@ -275,7 +275,7 @@ function function_472f16d8(eventstruct) {
                 player zm_score::minus_to_player_score(var_87abc3a0);
                 player namespace_791d0451::function_3fecad82(var_11868f5d, 1, 2);
             } else {
-                machine playsoundtoplayer(#"hash_7d81a3ace87fb4e2", player);
+                machine playsoundtoplayer(#"uin_default_action_denied", player);
             }
         }
     }
@@ -296,8 +296,8 @@ function function_6c71e778(machine, trigger) {
             zm_utility::function_e8f4d47b(self, machine.objectiveid, 0);
         }
     }
-    if (level.var_5df76d0 namespace_6df5a8d8::is_open(self) && self clientfield::get_player_uimodel("hudItems.srOverlayOpen")) {
-        level.var_5df76d0 namespace_6df5a8d8::close(self);
+    if (level.var_5df76d0 sr_perk_machine_choice::is_open(self) && self clientfield::get_player_uimodel("hudItems.srOverlayOpen")) {
+        level.var_5df76d0 sr_perk_machine_choice::close(self);
         self namespace_553954de::function_548f282();
     }
     self notify(#"hash_2a909cd1a72f625b");
@@ -358,7 +358,7 @@ function function_3fec008f(machine, trigger) {
             break;
         }
     }
-    if (level.var_5df76d0 namespace_6df5a8d8::is_open(self) && self clientfield::get_player_uimodel("hudItems.srOverlayOpen")) {
+    if (level.var_5df76d0 sr_perk_machine_choice::is_open(self) && self clientfield::get_player_uimodel("hudItems.srOverlayOpen")) {
         self function_6c71e778(machine, trigger);
     }
 }
@@ -382,7 +382,7 @@ function function_4513f006(machine, trigger) {
         menu = waitresult.menu;
         response = waitresult.response;
         intpayload = waitresult.intpayload;
-        if (menu == #"hash_2b785c016a6553c3") {
+        if (menu == #"sr_perk_machine_choice") {
             switch (waitresult.response) {
             case #"hash_5c8984efe0e105db":
                 var_82e23366 = getunlockableiteminfofromindex(intpayload, 5);

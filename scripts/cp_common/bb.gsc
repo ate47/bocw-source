@@ -39,7 +39,7 @@ function private function_3872d0f0() {
     self endon("676c2f77e9785ef0");
     self notifyonplayercommand("objective_ping", "+scores");
     while (1) {
-        self waittill(#"hash_2aaa674f834b3b89");
+        self waittill(#"objective_ping");
         function_cd497743("show_objectives", self);
     }
 }

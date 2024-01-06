@@ -455,12 +455,12 @@ function private function_2d8ba5c4() {
     while (1) {
         var_b3fccd4b = gettime();
         var_496bb3bc = var_b3fccd4b - var_acca0715;
-        if (is_true(level.var_e3f5eafc.var_f91a82ef) && var_496bb3bc >= level.var_e3f5eafc.var_3a0d6cd6 && !self scene::function_c935c42() && !self flag::get(#"hash_530ab699d58ec645")) {
+        if (is_true(level.var_e3f5eafc.var_f91a82ef) && var_496bb3bc >= level.var_e3f5eafc.var_3a0d6cd6 && !self scene::function_c935c42() && !self flag::get(#"lockpicking")) {
             var_34487abc = isdefined(level.var_e3f5eafc.var_257480e5) ? level.var_e3f5eafc.var_257480e5 : "hide_camera_unequip_hint";
             self util::show_hint_text(level.var_e3f5eafc.var_7d598677, undefined, var_34487abc, 4000);
             self waittill(#"hash_19f1b179d8ebf1dd");
             self util::hide_hint_text(0);
-        } else if (self scene::function_c935c42() || self flag::get(#"hash_530ab699d58ec645")) {
+        } else if (self scene::function_c935c42() || self flag::get(#"lockpicking")) {
             wait(1);
             var_acca0715 = gettime();
         }

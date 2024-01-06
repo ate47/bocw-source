@@ -2,13 +2,13 @@
 #using scripts\core_common\lui_shared.gsc;
 #using scripts\core_common\clientfield_shared.gsc;
 
-#namespace namespace_54dcccfc;
+#namespace sr_objective_reward_menu;
 
-// Namespace namespace_54dcccfc
+// Namespace sr_objective_reward_menu
 // Method(s) 11 Total 18
 class class_51a06b68 : cluielem {
 
-    // Namespace class_51a06b68/namespace_54dcccfc
+    // Namespace class_51a06b68/sr_objective_reward_menu
     // Params 0, eflags: 0xa linked
     // Checksum 0xb32238a4, Offset: 0x328
     // Size: 0x14
@@ -16,7 +16,7 @@ class class_51a06b68 : cluielem {
         cluielem::__constructor();
     }
 
-    // Namespace class_51a06b68/namespace_54dcccfc
+    // Namespace class_51a06b68/sr_objective_reward_menu
     // Params 0, eflags: 0x92 linked class_linked
     // Checksum 0x2df6ea90, Offset: 0x7d0
     // Size: 0x14
@@ -24,7 +24,7 @@ class class_51a06b68 : cluielem {
         cluielem::__destructor();
     }
 
-    // Namespace namespace_51a06b68/namespace_54dcccfc
+    // Namespace namespace_51a06b68/sr_objective_reward_menu
     // Params 2, eflags: 0x2 linked
     // Checksum 0x1fd4a3c2, Offset: 0x460
     // Size: 0x3c
@@ -32,7 +32,7 @@ class class_51a06b68 : cluielem {
         cluielem::open_luielem(player, flags);
     }
 
-    // Namespace namespace_51a06b68/namespace_54dcccfc
+    // Namespace namespace_51a06b68/sr_objective_reward_menu
     // Params 2, eflags: 0x2 linked
     // Checksum 0xd0056079, Offset: 0x6e0
     // Size: 0x44
@@ -40,7 +40,7 @@ class class_51a06b68 : cluielem {
         player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "gunindex2", value);
     }
 
-    // Namespace namespace_51a06b68/namespace_54dcccfc
+    // Namespace namespace_51a06b68/sr_objective_reward_menu
     // Params 2, eflags: 0x2 linked
     // Checksum 0x4127ac74, Offset: 0x690
     // Size: 0x44
@@ -48,7 +48,7 @@ class class_51a06b68 : cluielem {
         player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "gunIndex1", value);
     }
 
-    // Namespace namespace_51a06b68/namespace_54dcccfc
+    // Namespace namespace_51a06b68/sr_objective_reward_menu
     // Params 1, eflags: 0x2 linked
     // Checksum 0x51d810ae, Offset: 0x4a8
     // Size: 0x24
@@ -56,7 +56,7 @@ class class_51a06b68 : cluielem {
         cluielem::close_luielem(player);
     }
 
-    // Namespace namespace_51a06b68/namespace_54dcccfc
+    // Namespace namespace_51a06b68/sr_objective_reward_menu
     // Params 0, eflags: 0x2 linked
     // Checksum 0x8e07f8e8, Offset: 0x348
     // Size: 0x10c
@@ -70,7 +70,7 @@ class class_51a06b68 : cluielem {
         cluielem::add_clientfield("color", 1, 2, "int");
     }
 
-    // Namespace namespace_51a06b68/namespace_54dcccfc
+    // Namespace namespace_51a06b68/sr_objective_reward_menu
     // Params 2, eflags: 0x2 linked
     // Checksum 0x15a3303f, Offset: 0x780
     // Size: 0x44
@@ -78,7 +78,7 @@ class class_51a06b68 : cluielem {
         player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "color", value);
     }
 
-    // Namespace namespace_51a06b68/namespace_54dcccfc
+    // Namespace namespace_51a06b68/sr_objective_reward_menu
     // Params 2, eflags: 0x2 linked
     // Checksum 0xb6e5963f, Offset: 0x730
     // Size: 0x44
@@ -86,7 +86,7 @@ class class_51a06b68 : cluielem {
         player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "gunindex3", value);
     }
 
-    // Namespace namespace_51a06b68/namespace_54dcccfc
+    // Namespace namespace_51a06b68/sr_objective_reward_menu
     // Params 2, eflags: 0x2 linked
     // Checksum 0xdeb07104, Offset: 0x640
     // Size: 0x44
@@ -94,18 +94,18 @@ class class_51a06b68 : cluielem {
         player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "promptProgress", value);
     }
 
-    // Namespace namespace_51a06b68/namespace_54dcccfc
+    // Namespace namespace_51a06b68/sr_objective_reward_menu
     // Params 2, eflags: 0x2 linked
     // Checksum 0x1c8577b6, Offset: 0x4d8
     // Size: 0x15c
     function set_state(player, state_name) {
         if (#"defaultstate" == state_name) {
             player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 0);
-        } else if (#"hash_aae094fcdbbfdf5" == state_name) {
+        } else if (#"gun1selected" == state_name) {
             player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 1);
-        } else if (#"hash_6e088fcf60bf0124" == state_name) {
+        } else if (#"gun2selected" == state_name) {
             player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 2);
-        } else if (#"hash_7ca278cf4669f74b" == state_name) {
+        } else if (#"gun3selected" == state_name) {
             player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 3);
         } else {
             /#
@@ -118,7 +118,7 @@ class class_51a06b68 : cluielem {
 
 }
 
-// Namespace namespace_54dcccfc/namespace_54dcccfc
+// Namespace sr_objective_reward_menu/sr_objective_reward_menu
 // Params 0, eflags: 0x0
 // Checksum 0x4526992f, Offset: 0x138
 // Size: 0x34
@@ -128,7 +128,7 @@ function register() {
     return elem;
 }
 
-// Namespace namespace_54dcccfc/namespace_54dcccfc
+// Namespace sr_objective_reward_menu/sr_objective_reward_menu
 // Params 2, eflags: 0x2 linked
 // Checksum 0x3a6790e3, Offset: 0x178
 // Size: 0x38
@@ -136,7 +136,7 @@ function open(player, flags = 0) {
     [[ self ]]->open(player, flags);
 }
 
-// Namespace namespace_54dcccfc/namespace_54dcccfc
+// Namespace sr_objective_reward_menu/sr_objective_reward_menu
 // Params 1, eflags: 0x2 linked
 // Checksum 0x2ad0b106, Offset: 0x1b8
 // Size: 0x1c
@@ -144,7 +144,7 @@ function close(player) {
     [[ self ]]->close(player);
 }
 
-// Namespace namespace_54dcccfc/namespace_54dcccfc
+// Namespace sr_objective_reward_menu/sr_objective_reward_menu
 // Params 1, eflags: 0x2 linked
 // Checksum 0x1e0592ea, Offset: 0x1e0
 // Size: 0x1a
@@ -152,7 +152,7 @@ function is_open(player) {
     return [[ self ]]->function_7bfd10e6(player);
 }
 
-// Namespace namespace_54dcccfc/namespace_54dcccfc
+// Namespace sr_objective_reward_menu/sr_objective_reward_menu
 // Params 2, eflags: 0x2 linked
 // Checksum 0xca11b23c, Offset: 0x208
 // Size: 0x28
@@ -160,7 +160,7 @@ function set_state(player, state_name) {
     [[ self ]]->set_state(player, state_name);
 }
 
-// Namespace namespace_54dcccfc/namespace_54dcccfc
+// Namespace sr_objective_reward_menu/sr_objective_reward_menu
 // Params 2, eflags: 0x2 linked
 // Checksum 0x2755c0ff, Offset: 0x238
 // Size: 0x28
@@ -168,7 +168,7 @@ function function_b94196b8(player, value) {
     [[ self ]]->function_b94196b8(player, value);
 }
 
-// Namespace namespace_54dcccfc/namespace_54dcccfc
+// Namespace sr_objective_reward_menu/sr_objective_reward_menu
 // Params 2, eflags: 0x2 linked
 // Checksum 0xddea3d97, Offset: 0x268
 // Size: 0x28
@@ -176,7 +176,7 @@ function function_43ba5f0e(player, value) {
     [[ self ]]->function_43ba5f0e(player, value);
 }
 
-// Namespace namespace_54dcccfc/namespace_54dcccfc
+// Namespace sr_objective_reward_menu/sr_objective_reward_menu
 // Params 2, eflags: 0x2 linked
 // Checksum 0x6a852ae4, Offset: 0x298
 // Size: 0x28
@@ -184,7 +184,7 @@ function function_2d7f3298(player, value) {
     [[ self ]]->function_2d7f3298(player, value);
 }
 
-// Namespace namespace_54dcccfc/namespace_54dcccfc
+// Namespace sr_objective_reward_menu/sr_objective_reward_menu
 // Params 2, eflags: 0x2 linked
 // Checksum 0xe0109913, Offset: 0x2c8
 // Size: 0x28
@@ -192,7 +192,7 @@ function function_ada8b2f1(player, value) {
     [[ self ]]->function_ada8b2f1(player, value);
 }
 
-// Namespace namespace_54dcccfc/namespace_54dcccfc
+// Namespace sr_objective_reward_menu/sr_objective_reward_menu
 // Params 2, eflags: 0x2 linked
 // Checksum 0x995dbca2, Offset: 0x2f8
 // Size: 0x28

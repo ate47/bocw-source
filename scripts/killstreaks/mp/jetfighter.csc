@@ -19,7 +19,7 @@ function private autoexec __init__system__() {
 // Checksum 0xb4823c84, Offset: 0x158
 // Size: 0x6c
 function private function_70a657d8() {
-    clientfield::register("scriptmover", "jetfighter_contrail", 1, 1, "int", &function_720ee4ec, 0, 0);
+    clientfield::register("scriptmover", "jetfighter_contrail", 1, 1, "int", &jetfighter_contrail, 0, 0);
     level.var_852b61e4 = getscriptbundle("killstreak_jetfighter");
 }
 
@@ -27,7 +27,7 @@ function private function_70a657d8() {
 // Params 7, eflags: 0x2 linked
 // Checksum 0x7888861e, Offset: 0x1d0
 // Size: 0x20c
-function function_720ee4ec(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function jetfighter_contrail(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self endon(#"death");
     util::waittill_dobj(fieldname);
     if (bwastimejump) {

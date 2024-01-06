@@ -1291,7 +1291,7 @@ function function_d103a3d0() {
         self.var_c27dadc8 = function_145804c6();
         if (isdefined(self.var_c27dadc8)) {
             self.var_f1c3676 = gettime();
-            self notify(#"hash_3ea819b8f18a3765");
+            self notify(#"ultimate_turret_potential_target_acquired");
             if (!isdefined(self.var_ec2f1ab4) || self.var_ec2f1ab4 + 5000 < gettime()) {
                 self playsoundtoteam("mpl_ultimate_turret_lockon", self.team);
                 self playsoundtoteam("mpl_ultimate_turret_lockon_enemy", util::getotherteam(self.team));
@@ -1373,7 +1373,7 @@ function function_9d831b2f() {
             self.var_942bf052 = "left";
         }
         waitresult = undefined;
-        waitresult = self waittilltimeout(3.5, #"hash_3ea819b8f18a3765");
+        waitresult = self waittilltimeout(3.5, #"ultimate_turret_potential_target_acquired");
         if (waitresult._notify == "ultimate_turret_potential_target_acquired") {
             while (isdefined(self.var_c27dadc8) || isdefined(self.e_current_target)) {
                 wait(float(function_60d95f53()) / 1000);

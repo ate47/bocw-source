@@ -116,37 +116,37 @@ function function_db945ce9() {
 // Size: 0x61c
 function function_3332c6a1() {
     toks = strtok("doaGlobal.player$.hudVisible", "$");
-    self.var_8cff5775.score.var_d252ca7f = toks[0] + self.var_8cff5775.entnum + 1 + toks[1];
+    self.doa.score.var_d252ca7f = toks[0] + self.doa.entnum + 1 + toks[1];
     toks = strtok("doaGlobal.player$.bombs", "$");
-    self.var_8cff5775.score.var_37920e93 = toks[0] + self.var_8cff5775.entnum + 1 + toks[1];
+    self.doa.score.var_37920e93 = toks[0] + self.doa.entnum + 1 + toks[1];
     toks = strtok("doaGlobal.player$.boosts", "$");
-    self.var_8cff5775.score.var_e3acbd27 = toks[0] + self.var_8cff5775.entnum + 1 + toks[1];
+    self.doa.score.var_e3acbd27 = toks[0] + self.doa.entnum + 1 + toks[1];
     toks = strtok("doaGlobal.player$.keys", "$");
-    self.var_8cff5775.score.var_27660984 = toks[0] + self.var_8cff5775.entnum + 1 + toks[1];
+    self.doa.score.var_27660984 = toks[0] + self.doa.entnum + 1 + toks[1];
     toks = strtok("doaGlobal.player$.lives", "$");
-    self.var_8cff5775.score.var_3c0cc2d1 = toks[0] + self.var_8cff5775.entnum + 1 + toks[1];
+    self.doa.score.var_3c0cc2d1 = toks[0] + self.doa.entnum + 1 + toks[1];
     toks = strtok("doaGlobal.player$.score", "$");
-    self.var_8cff5775.score.var_234fa0ba = toks[0] + self.var_8cff5775.entnum + 1 + toks[1];
+    self.doa.score.var_234fa0ba = toks[0] + self.doa.entnum + 1 + toks[1];
     toks = strtok("doaGlobal.player$.health", "$");
-    self.var_8cff5775.score.var_b45b1692 = toks[0] + self.var_8cff5775.entnum + 1 + toks[1];
+    self.doa.score.var_b45b1692 = toks[0] + self.doa.entnum + 1 + toks[1];
     toks = strtok("doaGlobal.player$.scoreMultiplier", "$");
-    self.var_8cff5775.score.var_66579589 = toks[0] + self.var_8cff5775.entnum + 1 + toks[1];
+    self.doa.score.var_66579589 = toks[0] + self.doa.entnum + 1 + toks[1];
     toks = strtok("doaGlobal.player$.scoreMultiProgressBar", "$");
-    self.var_8cff5775.score.var_16ec5307 = toks[0] + self.var_8cff5775.entnum + 1 + toks[1];
+    self.doa.score.var_16ec5307 = toks[0] + self.doa.entnum + 1 + toks[1];
     toks = strtok("doaGlobal.player$.weaponType", "$");
-    self.var_8cff5775.score.var_52144f6f = toks[0] + self.var_8cff5775.entnum + 1 + toks[1];
+    self.doa.score.var_52144f6f = toks[0] + self.doa.entnum + 1 + toks[1];
     toks = strtok("doaGlobal.player$.weaponLevel", "$");
-    self.var_8cff5775.score.var_18b2a561 = toks[0] + self.var_8cff5775.entnum + 1 + toks[1];
+    self.doa.score.var_18b2a561 = toks[0] + self.doa.entnum + 1 + toks[1];
     toks = strtok("doaGlobal.player$.weaponDecayBar", "$");
-    self.var_8cff5775.score.var_a5236080 = toks[0] + self.var_8cff5775.entnum + 1 + toks[1];
+    self.doa.score.var_a5236080 = toks[0] + self.doa.entnum + 1 + toks[1];
     toks = strtok("doaGlobal.player$.leader", "$");
-    self.var_8cff5775.score.var_68162a1e = toks[0] + self.var_8cff5775.entnum + 1 + toks[1];
+    self.doa.score.var_68162a1e = toks[0] + self.doa.entnum + 1 + toks[1];
     toks = strtok("doaGlobal.player$.respawnTimer", "$");
-    self.var_8cff5775.score.var_5cb9ca20 = toks[0] + self.var_8cff5775.entnum + 1 + toks[1];
+    self.doa.score.var_5cb9ca20 = toks[0] + self.doa.entnum + 1 + toks[1];
     toks = strtok("doaGlobal.player$.respawnSeconds", "$");
-    self.var_8cff5775.score.var_85987bae = toks[0] + self.var_8cff5775.entnum + 1 + toks[1];
+    self.doa.score.var_85987bae = toks[0] + self.doa.entnum + 1 + toks[1];
     toks = strtok("doaGlobal.player$.respawnHelpers", "$");
-    self.var_8cff5775.score.var_ac6c4aee = toks[0] + self.var_8cff5775.entnum + 1 + toks[1];
+    self.doa.score.var_ac6c4aee = toks[0] + self.doa.entnum + 1 + toks[1];
     self function_7f7a069d();
 }
 
@@ -191,44 +191,44 @@ function function_c937e51f(var_f40cf449) {
 // Checksum 0x6c6217a0, Offset: 0x1558
 // Size: 0x6ac
 function function_7f7a069d() {
-    if (!isdefined(self.var_8cff5775) || !isdefined(self.var_8cff5775.score)) {
+    if (!isdefined(self.doa) || !isdefined(self.doa.score)) {
         return;
     }
-    level clientfield::set_world_uimodel(self.var_8cff5775.score.var_d252ca7f, 1);
-    level clientfield::set_world_uimodel(self.var_8cff5775.score.var_37920e93, self.var_8cff5775.score.bombs);
-    level clientfield::set_world_uimodel(self.var_8cff5775.score.var_e3acbd27, self.var_8cff5775.score.boosts);
-    level clientfield::set_world_uimodel(self.var_8cff5775.score.var_27660984, self.var_8cff5775.score.keys);
-    level clientfield::set_world_uimodel(self.var_8cff5775.score.var_3c0cc2d1, self.var_8cff5775.score.lives);
-    level clientfield::set_world_uimodel(self.var_8cff5775.score.var_234fa0ba, self.var_8cff5775.score.points);
-    level clientfield::set_world_uimodel(self.var_8cff5775.score.var_b45b1692, self.health / 150);
-    var_194c59ae = self.var_8cff5775.score.var_194c59ae;
-    if (is_true(self.var_8cff5775.var_3e81d24c) && level.var_8cff5775.var_358fbdc8 == 0 && !is_true(level.var_8cff5775.var_318aa67a)) {
+    level clientfield::set_world_uimodel(self.doa.score.var_d252ca7f, 1);
+    level clientfield::set_world_uimodel(self.doa.score.var_37920e93, self.doa.score.bombs);
+    level clientfield::set_world_uimodel(self.doa.score.var_e3acbd27, self.doa.score.boosts);
+    level clientfield::set_world_uimodel(self.doa.score.var_27660984, self.doa.score.keys);
+    level clientfield::set_world_uimodel(self.doa.score.var_3c0cc2d1, self.doa.score.lives);
+    level clientfield::set_world_uimodel(self.doa.score.var_234fa0ba, self.doa.score.points);
+    level clientfield::set_world_uimodel(self.doa.score.var_b45b1692, self.health / 150);
+    var_194c59ae = self.doa.score.var_194c59ae;
+    if (is_true(self.doa.var_3e81d24c) && level.doa.world_state == 0 && !is_true(level.doa.var_318aa67a)) {
         if (var_194c59ae < 4) {
             var_194c59ae = 4;
         }
     }
-    level clientfield::set_world_uimodel(self.var_8cff5775.score.var_66579589, var_194c59ae);
-    level clientfield::set_world_uimodel(self.var_8cff5775.score.var_52144f6f, self.var_8cff5775.weapontype);
-    level clientfield::set_world_uimodel(self.var_8cff5775.score.var_18b2a561, self.var_8cff5775.weaponlevel);
-    level clientfield::set_world_uimodel(self.var_8cff5775.score.var_a5236080, self.var_8cff5775.var_d8955419 / 1024);
-    level clientfield::set_world_uimodel(self.var_8cff5775.score.var_68162a1e, namespace_eccff4fb::function_f3b382da(self));
-    var_20367411 = self.var_8cff5775.score.var_98425e00 - self.var_8cff5775.score.var_6ec1ad9d;
-    var_fd0181fe = self.var_8cff5775.score.var_e49e3de7 - self.var_8cff5775.score.var_6ec1ad9d;
-    level clientfield::set_world_uimodel(self.var_8cff5775.score.var_16ec5307, var_20367411 / var_fd0181fe);
-    if (is_true(self.var_8cff5775.var_70c50ae0)) {
-        var_2e0e9ad1 = self.var_8cff5775.var_ac8a92d4 / self.var_8cff5775.var_22e62f63;
-        var_a40917f6 = (1 - var_2e0e9ad1) * self.var_8cff5775.var_22e62f63 / 1000;
-        level clientfield::set_world_uimodel(self.var_8cff5775.score.var_5cb9ca20, 1 - var_2e0e9ad1);
+    level clientfield::set_world_uimodel(self.doa.score.var_66579589, var_194c59ae);
+    level clientfield::set_world_uimodel(self.doa.score.var_52144f6f, self.doa.weapontype);
+    level clientfield::set_world_uimodel(self.doa.score.var_18b2a561, self.doa.weaponlevel);
+    level clientfield::set_world_uimodel(self.doa.score.var_a5236080, self.doa.var_d8955419 / 1024);
+    level clientfield::set_world_uimodel(self.doa.score.var_68162a1e, namespace_eccff4fb::function_f3b382da(self));
+    var_20367411 = self.doa.score.var_98425e00 - self.doa.score.var_6ec1ad9d;
+    var_fd0181fe = self.doa.score.var_e49e3de7 - self.doa.score.var_6ec1ad9d;
+    level clientfield::set_world_uimodel(self.doa.score.var_16ec5307, var_20367411 / var_fd0181fe);
+    if (is_true(self.doa.var_70c50ae0)) {
+        var_2e0e9ad1 = self.doa.var_ac8a92d4 / self.doa.var_22e62f63;
+        var_a40917f6 = (1 - var_2e0e9ad1) * self.doa.var_22e62f63 / 1000;
+        level clientfield::set_world_uimodel(self.doa.score.var_5cb9ca20, 1 - var_2e0e9ad1);
         var_41a785dc = int(var_a40917f6);
         var_b096e444 = var_a40917f6 - var_41a785dc;
         var_be72147f = int((var_41a785dc << 8) + var_b096e444 * 255);
-        level clientfield::set_world_uimodel(self.var_8cff5775.score.var_85987bae, var_be72147f);
+        level clientfield::set_world_uimodel(self.doa.score.var_85987bae, var_be72147f);
         self.health = int(var_2e0e9ad1 * self.maxhealth);
-        level clientfield::set_world_uimodel(self.var_8cff5775.score.var_ac6c4aee, self.var_8cff5775.var_f64d2ac0);
+        level clientfield::set_world_uimodel(self.doa.score.var_ac6c4aee, self.doa.var_f64d2ac0);
     } else {
-        level clientfield::set_world_uimodel(self.var_8cff5775.score.var_5cb9ca20, 0);
-        level clientfield::set_world_uimodel(self.var_8cff5775.score.var_85987bae, 0);
-        level clientfield::set_world_uimodel(self.var_8cff5775.score.var_ac6c4aee, 0);
+        level clientfield::set_world_uimodel(self.doa.score.var_5cb9ca20, 0);
+        level clientfield::set_world_uimodel(self.doa.score.var_85987bae, 0);
+        level clientfield::set_world_uimodel(self.doa.score.var_ac6c4aee, 0);
     }
 }
 
@@ -248,12 +248,12 @@ function function_9aff0a25(var_9ba84610) {
 // Checksum 0xef772df9, Offset: 0x1c88
 // Size: 0xd4
 function function_55775bbc(var_9ba84610, set = 1) {
-    level.var_8cff5775.var_25f4de97 = level.var_8cff5775.var_25f4de97 & 1 << var_9ba84610;
-    if (set && isdefined(self.var_8cff5775)) {
-        if (!isdefined(self.var_8cff5775.var_25f4de97)) {
-            self.var_8cff5775.var_25f4de97 = 0;
+    level.doa.var_25f4de97 = level.doa.var_25f4de97 & 1 << var_9ba84610;
+    if (set && isdefined(self.doa)) {
+        if (!isdefined(self.doa.var_25f4de97)) {
+            self.doa.var_25f4de97 = 0;
         }
-        self.var_8cff5775.var_25f4de97 = self.var_8cff5775.var_25f4de97 & 1 << var_9ba84610;
+        self.doa.var_25f4de97 = self.doa.var_25f4de97 & 1 << var_9ba84610;
     }
     self thread function_9aff0a25(var_9ba84610);
 }
@@ -277,34 +277,34 @@ function function_c28bc3eb(var_9ba84610, set = 1, delay = 0) {
 // Checksum 0x7babb476, Offset: 0x1e60
 // Size: 0x1d2
 function function_47e11416(id, time = 4, force = 0, var_84f4f42e = 0) {
-    if (!isdefined(self.var_8cff5775)) {
-        self.var_8cff5775 = {};
+    if (!isdefined(self.doa)) {
+        self.doa = {};
     }
-    if (!isdefined(self.var_8cff5775.var_578b6ad4)) {
-        self.var_8cff5775.var_578b6ad4 = 0;
+    if (!isdefined(self.doa.var_578b6ad4)) {
+        self.doa.var_578b6ad4 = 0;
     }
-    if (!force && is_true(self.var_8cff5775.var_91fab440)) {
+    if (!force && is_true(self.doa.var_91fab440)) {
         return;
     }
-    if (!force && gettime() < self.var_8cff5775.var_578b6ad4) {
+    if (!force && gettime() < self.doa.var_578b6ad4) {
         return;
     }
-    while (isdefined(self) && is_true(self.var_8cff5775.var_91fab440)) {
+    while (isdefined(self) && is_true(self.doa.var_91fab440)) {
         wait(0.5);
     }
     if (isdefined(self)) {
-        self.var_8cff5775.var_91fab440 = id;
+        self.doa.var_91fab440 = id;
         self clientfield::set("set_text_bubble", id);
     } else {
         return;
     }
     if (!is_true(var_84f4f42e)) {
-        self.var_8cff5775.var_578b6ad4 = gettime() + 10000 + time * 1000;
+        self.doa.var_578b6ad4 = gettime() + 10000 + time * 1000;
     }
     wait(time);
     if (isdefined(self)) {
         self clientfield::set("set_text_bubble", 0);
-        self.var_8cff5775.var_91fab440 = undefined;
+        self.doa.var_91fab440 = undefined;
     }
 }
 

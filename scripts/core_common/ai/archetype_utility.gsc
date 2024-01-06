@@ -3358,7 +3358,7 @@ function isunarmed(entity) {
 // Size: 0x174
 function function_7bbe1407(ai) {
     ai endon(#"death");
-    sniper_glint = #"hash_1564dca59f2d4af6";
+    sniper_glint = #"lensflares/fx9_lf_sniper_glint";
     var_910f361 = ai.weapon;
     var_48aba1a9 = [5:"tag_eye", 4:"tag_flash", 3:"tag_barrel", 2:"tag_scope", 1:"tag_scope_rear_lid_animate", 0:"tag_sights"];
     while (1) {

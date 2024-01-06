@@ -71,8 +71,8 @@ function function_70a657d8() {
 function function_7ba58c09() {
     function_ed796ba1();
     self setblackboardattribute("_locomotion_speed", "locomotion_speed_walk");
-    level thread function_16d3af70();
-    level thread function_a55742e8();
+    level thread query_all_possible_targets();
+    level thread designate_preferred_soa_for_players();
     if (!isdefined(level.var_8f50760e)) {
         level.var_8f50760e = 0;
     }
@@ -256,9 +256,9 @@ function registerbehaviorscriptfunctions() {
     #/
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_6478754622c6e9a", &function_fa0a3cc);
     /#
-        assert(isscriptfunctionptr(&function_718c627d));
+        assert(isscriptfunctionptr(&soalocomotionstrafeupdate));
     #/
-    behaviorstatemachine::registerbsmscriptapiinternal("soaLocomotionStrafeUpdate", &function_718c627d);
+    behaviorstatemachine::registerbsmscriptapiinternal("soaLocomotionStrafeUpdate", &soalocomotionstrafeupdate);
     /#
         assert(isscriptfunctionptr(&function_7b84cb6a));
     #/
@@ -352,13 +352,13 @@ function registerbehaviorscriptfunctions() {
     #/
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_ad592f3057b5637", &function_7fe60089);
     /#
-        assert(isscriptfunctionptr(&function_f5f0b614));
+        assert(isscriptfunctionptr(&soashouldlocomotionstrafeflip));
     #/
-    behaviorstatemachine::registerbsmscriptapiinternal("soaShouldLocomotionStrafeFlip", &function_f5f0b614);
+    behaviorstatemachine::registerbsmscriptapiinternal("soaShouldLocomotionStrafeFlip", &soashouldlocomotionstrafeflip);
     /#
-        assert(isscriptfunctionptr(&function_6d6bd946));
+        assert(isscriptfunctionptr(&soashoulduselocomotionblendspace));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("soaShouldUseLocomotionBlendspace", &function_6d6bd946);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("soaShouldUseLocomotionBlendspace", &soashoulduselocomotionblendspace);
     animationstatenetwork::registeranimationmocomp("soa_move_to_retreat@soa", &function_190c6600, &function_2a8799e1, &function_1d3f5ac);
     animationstatenetwork::registeranimationmocomp("soa_move_zipline@soa", &function_8b051aff, &function_90db0e6d, &function_d7a2a6d3);
     animationstatenetwork::registeranimationmocomp("soa_move_sweep_noclip@soa", &function_f4e85274, &function_3b5becd0, &function_80985f6);
@@ -1030,7 +1030,7 @@ function function_a25a16fc(entity) {
 // Params 0, eflags: 0x4
 // Checksum 0xb98482f2, Offset: 0x4d98
 // Size: 0x2d2
-function private function_16d3af70() {
+function private query_all_possible_targets() {
     self endon(#"hash_e87dc146d0a8050");
     var_17b7891d = "5ba70c9ec7187013" + "query_all_possible_targets";
     self notify(var_17b7891d);
@@ -1082,7 +1082,7 @@ function private function_16d3af70() {
 // Params 0, eflags: 0x4
 // Checksum 0xf14cbbd4, Offset: 0x5078
 // Size: 0x33a
-function private function_a55742e8() {
+function private designate_preferred_soa_for_players() {
     self endon(#"hash_e87dc146d0a8050");
     var_17b7891d = "4e1387a26cb9b5e0" + "designate_preferred_soa_for_players";
     self notify(var_17b7891d);
@@ -1874,7 +1874,7 @@ function private function_82f2b2fd(entity) {
         } else {
             entity flag::clear(#"hash_5c35337a4e15867");
         }
-        entity waittill(#"goal", #"goal_changed", #"hash_49e873f367b910d9", #"pathfind_result");
+        entity waittill(#"goal", #"goal_changed", #"path_set", #"pathfind_result");
         waitframe(1);
     }
 }
@@ -2338,7 +2338,7 @@ function private function_1a63a646() {
 // Params 1, eflags: 0x4
 // Checksum 0x8e14814a, Offset: 0x9c80
 // Size: 0x76
-function private function_718c627d(entity) {
+function private soalocomotionstrafeupdate(entity) {
     entity.ai.var_798e85cd = isdefined(entity.ai.var_7979fbb2) ? entity.ai.var_7979fbb2 : 0;
     entity.ai.var_7979fbb2 = entity function_144f21ef();
     return 1;
@@ -2348,7 +2348,7 @@ function private function_718c627d(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0xcb8cff3f, Offset: 0x9d00
 // Size: 0xc2
-function private function_f5f0b614(entity) {
+function private soashouldlocomotionstrafeflip(entity) {
     if (!(isdefined(entity.ai.var_798e85cd) && isdefined(entity.ai.var_798e85cd))) {
         return 0;
     }
@@ -2363,7 +2363,7 @@ function private function_f5f0b614(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0xc49e1622, Offset: 0x9dd0
 // Size: 0x36
-function private function_6d6bd946(*entity) {
+function private soashoulduselocomotionblendspace(*entity) {
     return getdvarint(#"hash_191681a8103230c9", 1) > 0;
 }
 

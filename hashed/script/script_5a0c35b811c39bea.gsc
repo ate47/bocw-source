@@ -89,7 +89,7 @@ function private function_f34df3c() {
     self.var_4cc2bf28 = 0;
     self.var_90d0c0ff = "anim_avogadro_spawn";
     self.var_ecbef856 = "anim_avogadro_despawn";
-    self.var_85ab0b12 = "ai_t9_zm_avogadro_exit";
+    self.despawn_anim = "ai_t9_zm_avogadro_exit";
     self.var_c11b8a5a = 1;
     self.var_e9c62827 = 1;
     self.ai.var_870d0893 = 1;

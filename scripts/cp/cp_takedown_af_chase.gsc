@@ -136,8 +136,8 @@ function init_clientfields() {
 // Checksum 0x76ae2d43, Offset: 0x19d0
 // Size: 0x84
 function function_22b7fffd() {
-    animation::add_notetrack_func("le_door_en2_death_fallout_server", &function_3c807d60);
-    animation::add_notetrack_func("ri_door_en2_death_fallout_server", &function_bfc3dbe5);
+    animation::add_notetrack_func("le_door_en2_death_fallout_server", &le_door_en2_death_fallout_server);
+    animation::add_notetrack_func("ri_door_en2_death_fallout_server", &ri_door_en2_death_fallout_server);
     scene::add_scene_func("scene_tkd_hit3_chase", &function_192e7a1, "loop");
 }
 
@@ -145,7 +145,7 @@ function function_22b7fffd() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xeb856db1, Offset: 0x1a60
 // Size: 0x64
-function function_3c807d60(*params) {
+function le_door_en2_death_fallout_server(*params) {
     self.vehicle clientfield::set("le_door_en2_death_fallout", 1);
     self.vehicle setanim(#"hash_55c97e9bf41cf070", 1, 0, 1);
 }
@@ -154,7 +154,7 @@ function function_3c807d60(*params) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x11a317a, Offset: 0x1ad0
 // Size: 0x64
-function function_bfc3dbe5(*params) {
+function ri_door_en2_death_fallout_server(*params) {
     self.vehicle clientfield::set("ri_door_en2_death_fallout", 1);
     self.vehicle setanim(#"hash_7ed3204394a2ff5e", 1, 0, 1);
 }
@@ -169,8 +169,8 @@ function main(var_d3440450, var_50cc0d4f) {
     if (var_50cc0d4f) {
         util::delay(0.2, undefined, &tkdn_af_tarmac::function_565588e1);
     }
-    level.var_fdc6062e namespace_a635adb1::function_47b06180();
-    level.var_fdc6062e.script_accuracy = 100;
+    level.adler namespace_a635adb1::function_47b06180();
+    level.adler.script_accuracy = 100;
     level.woods.script_accuracy = 100;
     setdvar(#"hash_3d9a09e7ecea2271", 0);
     level.af_plane namespace_db2381c4::function_c5bbfcb8();
@@ -269,9 +269,9 @@ function function_2ccc781e(var_d3440450, var_50cc0d4f) {
     thread function_31c124f2();
     waitframe(1);
     org = getent("rpg_guy_plane_spot", "script_noteworthy");
-    level.var_52eba6e7 = spawner::simple_spawn_single("plane_rpg_guy");
-    level.var_52eba6e7 linkto(org, undefined, (0, 0, 0), vectorscale((0, 1, 0), 180));
-    level.var_52eba6e7 val::set(#"af_chase", "ignoreall", 1);
+    level.plane_rpg_guy = spawner::simple_spawn_single("plane_rpg_guy");
+    level.plane_rpg_guy linkto(org, undefined, (0, 0, 0), vectorscale((0, 1, 0), 180));
+    level.plane_rpg_guy val::set(#"af_chase", "ignoreall", 1);
     level waittill(#"hash_3b760cd442251b37");
     level thread namespace_a635adb1::radio("vox_cp_tdwn_07400_masn_ontheground_ee", undefined, 1);
     player ghost();
@@ -313,7 +313,7 @@ function function_2ccc781e(var_d3440450, var_50cc0d4f) {
     level.rc_car makevehicleunusable();
     level.rc_car linkto(level.af_plane);
     setdvar(#"hash_252e699c41531f1a", 2);
-    array::add(level.var_2e151cca, level.var_52eba6e7);
+    array::add(level.var_2e151cca, level.plane_rpg_guy);
     foreach (guy in level.var_2e151cca) {
         if (isalive(guy)) {
             guy kill();
@@ -403,7 +403,7 @@ function function_1ce84183() {
 function function_9509c87f() {
     level.woods namespace_a635adb1::queue("vox_cp_tdwn_07400_wood_goddamnittheyre_69");
     level util::delay_notify(2.5, "show_rc_hint");
-    level.var_fdc6062e namespace_a635adb1::queue("vox_cp_tdwn_07400_adlr_werenotdoneyetb_2d");
+    level.adler namespace_a635adb1::queue("vox_cp_tdwn_07400_adlr_werenotdoneyetb_2d");
 }
 
 // Namespace tkdn_af_chase/namespace_3547be0
@@ -840,7 +840,7 @@ function function_d9fae56b() {
 function function_b90ebd9a() {
     util::magic_bullet_shield(level.woods);
     level.woods thread util::function_27f5f662([2:"vox_cp_tdwn_07200_wood_getinwecancatch_96", 1:"vox_cp_tdwn_07200_wood_hopin_3f", 0:"vox_cp_tdwn_07200_wood_letsgomoveit_7f"], "af_player_start_ride", 3);
-    level objectives::complete("af_follow_adler", level.var_fdc6062e);
+    level objectives::complete("af_follow_adler", level.adler);
     objectives::function_4eb5c04a("af_get_in_truck", level.var_49a5d2a4 gettagorigin("tag_bed") + vectorscale((0, 0, 1), 24));
     level flag::wait_till_any([2:"af_player_get_in_right", 1:"af_player_get_in_left", 0:"af_player_get_in_back"]);
     level.player thread actions::function_202ab848(0);
@@ -858,7 +858,7 @@ function function_b90ebd9a() {
     level.player namespace_db2381c4::function_ec0a577();
     thread function_d3cdf2a7();
     a_ar = getweapon(#"ar_accurate_t9");
-    level.var_fdc6062e setweapon(a_ar);
+    level.adler setweapon(a_ar);
     level.player.fakeplayer = util::spawn_player_clone(level.player);
     level.player.fakeplayer.targetname = "FakePlayer 2";
     level.player.fakeplayer ghost();
@@ -919,7 +919,7 @@ function function_b90ebd9a() {
     level.var_49a5d2a4 thread function_8d9f9fd7();
     waitframe(1);
     function_6c9a840b();
-    level.var_fdc6062e thread namespace_a635adb1::queue("vox_cp_tdwn_07200_adlr_gogo_ef");
+    level.adler thread namespace_a635adb1::queue("vox_cp_tdwn_07200_adlr_gogo_ef");
 }
 
 // Namespace tkdn_af_chase/namespace_3547be0
@@ -941,7 +941,7 @@ function function_db746914(shot) {
     level.var_49a5d2a4 scene::play("scene_tkd_hit3_chase_getin_player", shot, level.player.fakeplayer);
     level.player unlink();
     level.woods notsolid();
-    level.var_fdc6062e notsolid();
+    level.adler notsolid();
     level.player val::reset(#"chase", "allow_crouch");
     level.player.overrideplayerdamage = &function_132b6d19;
     if (isdefined(level.player.fakeplayer)) {
@@ -1005,7 +1005,7 @@ function function_8d9f9fd7() {
         wait(randomfloatrange(1, 5));
         var_c3025e74 = getvehiclearray("af_enemy_chase_veh_r", "script_noteworthy");
         if (var_c3025e74.size > 0) {
-            var_c3025e74 = array::get_all_closest(level.var_fdc6062e.origin, var_c3025e74);
+            var_c3025e74 = array::get_all_closest(level.adler.origin, var_c3025e74);
             dot = level.var_49a5d2a4 math::get_dot_forward(var_c3025e74[0].origin, 1, 1);
             shot = "shoot_right_";
             if (dot > 0.2) {
@@ -1141,14 +1141,14 @@ function function_35bf824f() {
         if (isdefined(ret.veh) && isalive(ret.veh)) {
             switch (ret.veh.script_noteworthy) {
             case #"af_enemy_chase_veh_r":
-                level.var_fdc6062e namespace_a635adb1::queue(var_be9333bc[var_fb6cba84]);
+                level.adler namespace_a635adb1::queue(var_be9333bc[var_fb6cba84]);
                 var_fb6cba84++;
                 if (var_fb6cba84 >= var_be9333bc.size) {
                     var_fb6cba84 = 0;
                 }
                 break;
             case #"af_enemy_chase_veh_l":
-                level.var_fdc6062e namespace_a635adb1::queue(var_539f7582[var_ea3f660f]);
+                level.adler namespace_a635adb1::queue(var_539f7582[var_ea3f660f]);
                 var_ea3f660f++;
                 if (var_ea3f660f >= var_539f7582.size) {
                     var_ea3f660f = 0;
@@ -1506,8 +1506,8 @@ function function_bc4a48ea() {
     level waittill(#"hash_3b760cd442251b37");
     wait(5);
     weapon = getweapon("launcher_standard_t9_takedown_chase");
-    while (!level flag::get("af_plane_raise_gate") && isalive(level.var_52eba6e7)) {
-        org = level.var_52eba6e7 gettagorigin("tag_flash");
+    while (!level flag::get("af_plane_raise_gate") && isalive(level.plane_rpg_guy)) {
+        org = level.plane_rpg_guy gettagorigin("tag_flash");
         var_b26e76e3 = level.rc_car.origin + (vectornormalize(anglestoforward(level.rc_car.angles)) + vectornormalize(org - level.rc_car.origin) * 0.5) * 750;
         var_b26e76e3 = (var_b26e76e3[0], var_b26e76e3[1], level.rc_car.origin[2]);
         if (distancesquared(var_b26e76e3, org) < 40000) {
@@ -1515,7 +1515,7 @@ function function_bc4a48ea() {
         }
         var_d5843701 = vectornormalize(var_b26e76e3 - org);
         missile = level.player magicmissile(weapon, org, var_d5843701);
-        playfxontag(#"hash_338c0ef8c7e88199", level.var_52eba6e7, "tag_flash");
+        playfxontag(#"hash_338c0ef8c7e88199", level.plane_rpg_guy, "tag_flash");
         missile thread function_e652a247();
         wait(randomfloatrange(3, 6));
     }

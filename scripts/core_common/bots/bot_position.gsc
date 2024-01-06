@@ -135,7 +135,7 @@ function think() {
     }
     if (is_true(self.bot.var_6bea1d82) || self.bot.flashed || self function_5673fb61() || self function_2b063e16() || self isplayinganimscripted() || self arecontrolsfrozen() || self function_5972c3cf()) {
         if (!is_true(info.var_9e404264)) {
-            self set_position(self.origin, #"hash_4029f6cc7e6d28b8");
+            self set_position(self.origin, #"hold");
         }
         profileNamedStop();
         return;

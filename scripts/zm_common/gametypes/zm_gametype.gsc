@@ -597,9 +597,9 @@ function menu_onmenuresponse() {
                 } else {
                 LOC_000006de:
                     if (response == "hide_class_select_slideout") {
-                        self notify(#"hash_2bac8bae37bc1c6b");
+                        self notify(#"hide_class_select_slideout");
                     } else if (response == "show_class_select_slideout") {
-                        self notify(#"hash_a4cef65b5dc21ae");
+                        self notify(#"show_class_select_slideout");
                     }
                     if (menu == game.menu[#"menu_team"] && level.allow_teamchange) {
                         switch (response) {

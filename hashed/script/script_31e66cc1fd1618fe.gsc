@@ -19,16 +19,16 @@ function private autoexec __init__system__() {
 // Checksum 0xfd85a0ea, Offset: 0x148
 // Size: 0xdc
 function private function_70a657d8() {
-    clientfield::register("scriptmover", "link_to_camera", 1, 2, "int", &function_4b016eb7, 0, 0);
-    clientfield::register("actor", "link_to_camera", 1, 2, "int", &function_4b016eb7, 0, 0);
-    clientfield::register("toplayer", "fake_ads", 1, 1, "int", &function_de3f1267, 0, 0);
+    clientfield::register("scriptmover", "link_to_camera", 1, 2, "int", &link_to_camera, 0, 0);
+    clientfield::register("actor", "link_to_camera", 1, 2, "int", &link_to_camera, 0, 0);
+    clientfield::register("toplayer", "fake_ads", 1, 1, "int", &fake_ads, 0, 0);
 }
 
 // Namespace namespace_594b67e/namespace_594b67e
 // Params 7, eflags: 0x6 linked
 // Checksum 0xe710e11d, Offset: 0x230
 // Size: 0xb4
-function private function_4b016eb7(localclientnum, oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function private link_to_camera(localclientnum, oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     player = function_5c10bd79(binitialsnap);
     if (bwastimejump) {
         self thread function_bd9c7275(fieldname, bwastimejump);
@@ -42,7 +42,7 @@ function private function_4b016eb7(localclientnum, oldval, newval, *bnewent, *bi
 // Params 7, eflags: 0x6 linked
 // Checksum 0x4e47e452, Offset: 0x2f0
 // Size: 0x14c
-function private function_de3f1267(localclientnum, oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function private fake_ads(localclientnum, oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self notify("2e682ee9f9b29c84");
     self endon("2e682ee9f9b29c84");
     if (bwastimejump && bwastimejump != fieldname) {

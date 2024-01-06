@@ -96,7 +96,7 @@ function private function_168bc21c(trigger) {
 // Checksum 0x6c2f1c3e, Offset: 0x9c0
 // Size: 0x2c
 function function_1ed72d78(params) {
-    level.var_293817c8 = int(params.value);
+    level.enablehipflip = int(params.value);
 }
 
 // Namespace namespace_ae9b2918/archetype_human
@@ -630,7 +630,7 @@ function function_88dcd11f() {
     self.var_6a36b46d = self.var_ca796dd1;
     self.var_dd1cd771 = undefined;
     while (1) {
-        self waittill(#"hash_49e873f367b910d9");
+        self waittill(#"path_set");
         var_d3d7b85f = self.lookaheaddir;
         if (!isdefined(var_d3d7b85f) || lengthsquared(var_d3d7b85f) == 0) {
             continue;

@@ -36,7 +36,7 @@ function function_f94325d3() {
         return 1;
     }
     if (sessionmodeiszombiesgame()) {
-        if (level.gametype === #"hash_4aaf3d18f4747c4f") {
+        if (level.gametype === #"doa") {
             return 1;
         }
     }

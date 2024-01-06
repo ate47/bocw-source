@@ -371,7 +371,7 @@ function function_8aecc4f0() {
     if (isdefined(self.script_flag)) {
         level flag::wait_till(self.script_flag);
     }
-    namespace_43cd39d4::function_731b9325(self, 1);
+    rappel::function_731b9325(self, 1);
 }
 
 // Namespace namespace_3d14a28e/namespace_3d14a28e
@@ -386,49 +386,49 @@ function function_27028b8e(str_zone) {
         str_zone = str_zone[0];
     }
     switch (str_zone) {
-    case #"hash_5503881c064faaa9":
+    case #"zone_rooftops_start":
         var_601fee0 = #"hash_2c209ce1cd9bd3ce";
         break;
-    case #"hash_47c4791fb5554f13":
+    case #"zone_rooftops_interior":
         var_601fee0 = #"hash_5e96e2ef2c8950d2";
         break;
-    case #"hash_3e44eef33ec9abfa":
+    case #"zone_destroyed_upper_floors":
         var_601fee0 = #"hash_1a8c74e3aeacbefc";
         break;
-    case #"hash_3da4f781ec4e9e17":
-    case #"hash_3da4f881ec4e9fca":
+    case #"zone_east_berlin_hotel_1":
+    case #"zone_east_berlin_hotel_2":
         var_601fee0 = #"hash_3b15d4ce09e80704";
         break;
-    case #"hash_3da4f281ec4e9598":
-    case #"hash_3da4f981ec4ea17d":
+    case #"zone_east_berlin_hotel_4":
+    case #"zone_east_berlin_hotel_3":
         var_601fee0 = #"hash_5b0cd266588cd410";
         break;
-    case #"hash_42d8348b416fbb1e":
-    case #"hash_13088577c96b5d58":
+    case #"zone_korber_roof2":
+    case #"zone_korber_roof":
         var_601fee0 = #"hash_40f2768ae57e622a";
         break;
-    case #"hash_58166670a44cbb64":
+    case #"zone_korber_stairs":
         var_601fee0 = #"hash_1218344774c0d52d";
         break;
-    case #"hash_21ad58814b6b5909":
+    case #"zone_korber_sewing_room":
         var_601fee0 = #"hash_31277f2032fd4275";
         break;
-    case #"hash_442102653b2c46a2":
+    case #"zone_east_berlin_street_alley":
         var_601fee0 = #"hash_663a898d9c4368d2";
         break;
-    case #"hash_70e7f4a8485c4627":
-    case #"hash_70e7f2a8485c42c1":
-    case #"hash_70e7f1a8485c410e":
-    case #"hash_70e7efa8485c3da8":
+    case #"zone_east_berlin_street_4":
+    case #"zone_east_berlin_street_2":
+    case #"zone_east_berlin_street_3":
+    case #"zone_east_berlin_street_1":
         var_601fee0 = #"hash_366de72e1c7f10e3";
         break;
-    case #"hash_7dd2daf753a70bad":
+    case #"zone_bar":
         var_601fee0 = #"hash_5f70123180ddedbf";
         break;
-    case #"hash_69264dc9811b0d70":
+    case #"zone_market":
         var_601fee0 = #"hash_6bbc9c396cab4166";
         break;
-    case #"hash_f219b6f716a9efd":
+    case #"zone_electronics_store":
         var_601fee0 = #"hash_c517c13dd73a87f";
         break;
     case #"zone_ghost_station":
@@ -437,42 +437,42 @@ function function_27028b8e(str_zone) {
     case #"zone_ghost_station_4":
         var_601fee0 = #"hash_3354615b6b73090a";
         break;
-    case #"hash_2cd3b66e8b07e49d":
-    case #"hash_2cd3b36e8b07df84":
+    case #"zone_basement_1":
+    case #"zone_basement_2":
         var_601fee0 = #"hash_10f6d2cdd4e18f44";
         break;
-    case #"hash_74f0786199aae77e":
+    case #"zone_safe_house":
         var_601fee0 = #"hash_5e16c141529c6a38";
         break;
-    case #"hash_149aa12b9544af8a":
-    case #"hash_2913f9b7b6c7a97c":
-    case #"hash_1dc6c869f518de2":
+    case #"zone_sewers_and_escape_tunnel2":
+    case #"zone_sewers_and_escape_tunnel":
+    case #"zone_sewers_stairs":
         var_601fee0 = #"hash_1ed5ed99b953f70f";
         break;
-    case #"hash_62cac9cde5981354":
-    case #"hash_76a84edd2168f652":
+    case #"zone_power_substation":
+    case #"zone_power_substation2":
         var_601fee0 = #"hash_503c96cc7237c4f";
         break;
-    case #"hash_7d2340ef0f5afef8":
+    case #"zone_hidden_lab":
         var_601fee0 = #"hash_128f08319d9463fd";
         break;
-    case #"hash_4fab2dda615e7dfd":
+    case #"zone_american_sector_street":
         var_601fee0 = #"hash_7d30c2e28970d40f";
         break;
-    case #"hash_527d3a0d44d86449":
+    case #"zone_american_sector_right_building":
         var_601fee0 = #"hash_1d8344d97c9165a";
         break;
-    case #"hash_4be8b1fc82f1d3bc":
+    case #"zone_american_sector_left_building":
         var_601fee0 = #"hash_383b8711d6edd6bd";
         break;
-    case #"hash_209c871d99243c3b":
+    case #"zone_no_mans_land_1":
         var_601fee0 = #"hash_6f4cc791adc72201";
         break;
-    case #"hash_209c891d99243fa1":
-    case #"hash_209c881d99243dee":
+    case #"zone_no_mans_land_3":
+    case #"zone_no_mans_land_2":
         var_601fee0 = #"hash_75adba86a5dd13c1";
         break;
-    case #"hash_494bb227e8f6f50d":
+    case #"zone_control_room":
         var_601fee0 = #"hash_3e9e52ed3360a871";
         break;
     case #"hash_defdefdefdefdef0":

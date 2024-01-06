@@ -1126,29 +1126,29 @@ function function_13b51154(curve, size) {
                 assert(0);
             #/
             break;
-        case #"hash_64149da5880749a":
+        case #"default_vfcurve":
         case #"linear":
             lut[0] = 0;
             lut[1] = 1;
             return lut;
         case #"sine":
             y = 0.5 + cos(x * 180) * -0.5;
-        case #"hash_71c6e5b6b973ada4":
+        case #"easein":
             y = 1 - cos(x * 90);
             break;
-        case #"hash_12b2457d007119b1":
+        case #"easeout":
             y = sin(x * 90);
             break;
-        case #"hash_209eea27a3a6a628":
+        case #"easeinout":
             y = 3 * pow(x, 2) - 2 * pow(x, 3);
             break;
-        case #"hash_6b610690607a3e3f":
+        case #"circularin":
             y = 1 - sqrt(1 - x * x);
             break;
-        case #"hash_230862540c42ebe4":
+        case #"circularout":
             y = sqrt(1 - (1 - x) * (1 - x));
             break;
-        case #"hash_2cf5be273c8e293f":
+        case #"exponential_40db":
             lut[0] = 0;
             lut[1] = 0.0158489;
             lut[2] = 0.0251189;
@@ -1161,7 +1161,7 @@ function function_13b51154(curve, size) {
             lut[9] = 0.630957;
             lut[10] = 1;
             return lut;
-        case #"hash_166fda39223fb02d":
+        case #"exponential_60db":
             lut[0] = 0;
             lut[1] = 1.97531e-05;
             lut[2] = 0.000316049;
@@ -1195,14 +1195,14 @@ function function_3ffa0089(size) {
     level.var_c386bd24 = [];
     level.var_c386bd24[#"linear"] = function_13b51154("linear", size);
     level.var_c386bd24[#"sine"] = function_13b51154("sine", size);
-    level.var_c386bd24[#"hash_71c6e5b6b973ada4"] = function_13b51154("easein", size);
-    level.var_c386bd24[#"hash_12b2457d007119b1"] = function_13b51154("easeout", size);
-    level.var_c386bd24[#"hash_209eea27a3a6a628"] = function_13b51154("easeinout", size);
-    level.var_c386bd24[#"hash_6b610690607a3e3f"] = function_13b51154("circularin", size);
-    level.var_c386bd24[#"hash_230862540c42ebe4"] = function_13b51154("circularout", size);
-    level.var_c386bd24[#"hash_2cf5be273c8e293f"] = function_13b51154("exponential_40db", size);
-    level.var_c386bd24[#"hash_166fda39223fb02d"] = function_13b51154("exponential_60db", size);
-    level.var_c386bd24[#"hash_64149da5880749a"] = function_13b51154("default_vfcurve", size);
+    level.var_c386bd24[#"easein"] = function_13b51154("easein", size);
+    level.var_c386bd24[#"easeout"] = function_13b51154("easeout", size);
+    level.var_c386bd24[#"easeinout"] = function_13b51154("easeinout", size);
+    level.var_c386bd24[#"circularin"] = function_13b51154("circularin", size);
+    level.var_c386bd24[#"circularout"] = function_13b51154("circularout", size);
+    level.var_c386bd24[#"exponential_40db"] = function_13b51154("exponential_40db", size);
+    level.var_c386bd24[#"exponential_60db"] = function_13b51154("exponential_60db", size);
+    level.var_c386bd24[#"default_vfcurve"] = function_13b51154("default_vfcurve", size);
 }
 
 // Namespace snd/namespace_b63b5857
@@ -1214,7 +1214,7 @@ function private function_d3f407d6(alias) {
         return "easeout";
     }
     switch (alias) {
-    case #"hash_49f226123a6787e9":
+    case #"xfade":
         return "easeout";
         break;
     }

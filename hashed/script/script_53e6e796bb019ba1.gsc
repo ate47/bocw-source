@@ -5,9 +5,9 @@
 #using scripts\core_common\clientfield_shared.csc;
 #using scripts\core_common\aat_shared.csc;
 
-#namespace namespace_d53389a8;
+#namespace ammomod_napalmburst;
 
-// Namespace namespace_d53389a8/namespace_d53389a8
+// Namespace ammomod_napalmburst/ammomod_napalmburst
 // Params 0, eflags: 0x0
 // Checksum 0xc4a340ce, Offset: 0x650
 // Size: 0xcfc
@@ -77,7 +77,7 @@ function function_4e4244c1() {
     function_c487d6b1(#"tormentor", "zm_weapons/fx9_aat_burnination_lvl1_fire_zmb_torso", "j_spine4", undefined);
 }
 
-// Namespace namespace_d53389a8/namespace_d53389a8
+// Namespace ammomod_napalmburst/ammomod_napalmburst
 // Params 7, eflags: 0x0
 // Checksum 0x13958838, Offset: 0x1358
 // Size: 0x64
@@ -85,7 +85,7 @@ function function_15482148(localclientnum, *oldval, *newval, *bnewent, *binitial
     playviewmodelfx(bwastimejump, #"hash_308bd3bf83b35604", "tag_fx1", 0);
 }
 
-// Namespace namespace_d53389a8/namespace_d53389a8
+// Namespace ammomod_napalmburst/ammomod_napalmburst
 // Params 4, eflags: 0x0
 // Checksum 0x36145a08, Offset: 0x13c8
 // Size: 0xc2
@@ -101,7 +101,7 @@ function function_c487d6b1(archetype, fx, var_1167eff2, gibflag) {
     level.var_fd6cbce7[archetype][fx].gibflag = gibflag;
 }
 
-// Namespace namespace_d53389a8/namespace_d53389a8
+// Namespace ammomod_napalmburst/ammomod_napalmburst
 // Params 7, eflags: 0x0
 // Checksum 0x56d616d6, Offset: 0x1498
 // Size: 0xd4
@@ -113,7 +113,7 @@ function function_c8e3a0dc(localclientnum, *oldval, *newval, *bnewent, *binitial
     }
 }
 
-// Namespace namespace_d53389a8/namespace_d53389a8
+// Namespace ammomod_napalmburst/ammomod_napalmburst
 // Params 7, eflags: 0x0
 // Checksum 0xdeb81d87, Offset: 0x1578
 // Size: 0x74
@@ -125,7 +125,7 @@ function function_f3b43353(localclientnum, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_d53389a8/namespace_d53389a8
+// Namespace ammomod_napalmburst/ammomod_napalmburst
 // Params 7, eflags: 0x0
 // Checksum 0xae6a33da, Offset: 0x15f8
 // Size: 0x7c
@@ -137,7 +137,7 @@ function function_2d64f265(localclientnum, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_d53389a8/namespace_d53389a8
+// Namespace ammomod_napalmburst/ammomod_napalmburst
 // Params 2, eflags: 0x0
 // Checksum 0x142524fd, Offset: 0x1680
 // Size: 0x382
@@ -182,7 +182,7 @@ function function_a681160a(localclientnum, is_vehicle = 0) {
     }
 }
 
-// Namespace namespace_d53389a8/namespace_d53389a8
+// Namespace ammomod_napalmburst/ammomod_napalmburst
 // Params 1, eflags: 0x0
 // Checksum 0xa93e8d67, Offset: 0x1a10
 // Size: 0x102

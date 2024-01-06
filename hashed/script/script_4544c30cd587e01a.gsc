@@ -9,7 +9,7 @@
 // Checksum 0x180fc8e6, Offset: 0xd0
 // Size: 0x9c
 function autoexec init() {
-    level.var_d43d228 = namespace_f7ea75be::register_clientside();
+    level.var_d43d228 = cp_killcam::register_clientside();
     registerclientfield("playercorpse", "hide_body", 1, 1, "int", &function_961f3093, 0);
     registerclientfield("toplayer", "killcam_menu", 1, 1, "int", &function_8b7a2341, 0);
 }
@@ -47,11 +47,11 @@ function function_8b7a2341(localclientnum, *oldval, newval, *bnewent, *binitials
         return;
     }
     if (bwastimejump) {
-        if (!level.var_d43d228 namespace_f7ea75be::is_open(fieldname)) {
-            level.var_d43d228 namespace_f7ea75be::open(fieldname);
+        if (!level.var_d43d228 cp_killcam::is_open(fieldname)) {
+            level.var_d43d228 cp_killcam::open(fieldname);
         }
-    } else if (level.var_d43d228 namespace_f7ea75be::is_open(fieldname)) {
-        level.var_d43d228 namespace_f7ea75be::close(fieldname);
+    } else if (level.var_d43d228 cp_killcam::is_open(fieldname)) {
+        level.var_d43d228 cp_killcam::close(fieldname);
     }
 }
 

@@ -19,14 +19,14 @@ function private autoexec __init__system__() {
 // Checksum 0xfda5dba2, Offset: 0x1b0
 // Size: 0x4c
 function private function_70a657d8() {
-    clientfield::register("toplayer", "toggle_interactive_map", 1, 1, "int", &function_831986b, 0, 0);
+    clientfield::register("toplayer", "toggle_interactive_map", 1, 1, "int", &toggle_interactive_map, 0, 0);
 }
 
 // Namespace interactive_map/interactive_map
 // Params 7, eflags: 0x6 linked
 // Checksum 0xf8b8e58e, Offset: 0x208
 // Size: 0x76
-function private function_831986b(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function private toggle_interactive_map(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self thread function_f4804ac(fieldname);
     } else {

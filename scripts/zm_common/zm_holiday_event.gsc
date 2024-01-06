@@ -84,7 +84,7 @@ function function_5837bf72() {
             foreach (location in level.var_7d45d0d4.var_49978223.locations) {
                 instances = array::randomize(namespace_8b6a9d79::function_f703a5a(location));
                 foreach (instance in instances) {
-                    if (instance.var_b588b063 === "explore_chests_large") {
+                    if (instance.content_script_name === "explore_chests_large") {
                         if (!isdefined(var_f79418e)) {
                             var_f79418e = [];
                         } else if (!isarray(var_f79418e)) {

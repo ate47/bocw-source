@@ -371,7 +371,7 @@ function play_loop_on_machine() {
     }
     sound_ent = spawn("script_origin", self.origin + vectorscale((0, 0, 1), 50));
     sound_ent playsound(#"hash_1ac5c65e0bb6f52e");
-    sound_ent playloopsound(#"hash_cede15e98eb6db7");
+    sound_ent playloopsound(#"zmb_perkmachine_power_on_lp");
     sound_ent linkto(self);
     self waittill(#"stop_loopsound");
     sound_ent unlink();

@@ -3,9 +3,9 @@
 #using scripts\core_common\util_shared.csc;
 #using scripts\core_common\callbacks_shared.csc;
 
-#namespace namespace_46340e70;
+#namespace wz_zoo;
 
-// Namespace namespace_46340e70/level_init
+// Namespace wz_zoo/level_init
 // Params 1, eflags: 0x20
 // Checksum 0xd9b499b, Offset: 0xe8
 // Size: 0x124
@@ -21,7 +21,7 @@ function event_handler[level_init] main(*eventstruct) {
     function_103cfebf();
 }
 
-// Namespace namespace_46340e70/namespace_46340e70
+// Namespace wz_zoo/wz_zoo
 // Params 0, eflags: 0x6 linked
 // Checksum 0x14d1ac7a, Offset: 0x218
 // Size: 0x1b8
@@ -37,7 +37,7 @@ function private function_103cfebf() {
     }
 }
 
-// Namespace namespace_46340e70/namespace_46340e70
+// Namespace wz_zoo/wz_zoo
 // Params 1, eflags: 0x2 linked
 // Checksum 0x24055392, Offset: 0x3d8
 // Size: 0x2c

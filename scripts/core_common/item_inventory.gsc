@@ -1460,12 +1460,12 @@ function consume_item(item) {
     if (self isinvehicle()) {
         vehicle = self getvehicleoccupied();
         if (vehicle getoccupantseat(self) == 0) {
-            self playsoundtoplayer(#"hash_7d81a3ace87fb4e2", self);
+            self playsoundtoplayer(#"uin_default_action_denied", self);
             return 0;
         }
         currentweapon = self getcurrentweapon();
         if (isdefined(currentweapon) && is_true(currentweapon.var_29d24e37)) {
-            self playsoundtoplayer(#"hash_7d81a3ace87fb4e2", self);
+            self playsoundtoplayer(#"uin_default_action_denied", self);
             return 0;
         }
     }
@@ -1474,7 +1474,7 @@ function consume_item(item) {
     }
     consumeditem = self function_85645978(item);
     if (!isdefined(consumeditem) && self function_3fe6ef04() >= 10) {
-        self playsoundtoplayer(#"hash_7d81a3ace87fb4e2", self);
+        self playsoundtoplayer(#"uin_default_action_denied", self);
         return 0;
     }
     self callback::callback(#"hash_5775ae80fc576ea6", item);
@@ -1580,7 +1580,7 @@ function cycle_equipment_item() {
     if (isdefined(item)) {
         equip_equipment(item);
     } else {
-        self playsoundtoplayer(#"hash_7d81a3ace87fb4e2", self);
+        self playsoundtoplayer(#"uin_default_action_denied", self);
     }
 }
 
@@ -1605,7 +1605,7 @@ function cycle_health_item() {
     if (isdefined(item)) {
         equip_health(item);
     } else {
-        self playsoundtoplayer(#"hash_7d81a3ace87fb4e2", self);
+        self playsoundtoplayer(#"uin_default_action_denied", self);
     }
 }
 
@@ -1630,7 +1630,7 @@ function function_fa4bb600() {
     if (isdefined(item)) {
         function_1ac37022(item);
     } else {
-        self playsoundtoplayer(#"hash_7d81a3ace87fb4e2", self);
+        self playsoundtoplayer(#"uin_default_action_denied", self);
     }
 }
 
@@ -1655,7 +1655,7 @@ function function_a50547af() {
     if (isdefined(item)) {
         equip_equipment(item);
     } else {
-        self playsoundtoplayer(#"hash_7d81a3ace87fb4e2", self);
+        self playsoundtoplayer(#"uin_default_action_denied", self);
     }
 }
 
@@ -4887,7 +4887,7 @@ function function_73ae3380(item, var_a8bccf69) {
         var_65cfac4a = 1;
     }
     if (isdefined(item.var_387e74f4)) {
-        var_9460390a = 1;
+        chest_weapon = 1;
     }
     if (isdefined(item.var_569199b9)) {
         var_604af0c7 = 1;
@@ -4942,7 +4942,7 @@ function function_73ae3380(item, var_a8bccf69) {
                 if (is_true(var_65cfac4a)) {
                     var_ec0c35ac.var_d688ad29.var_ec0c35ac = 1;
                 }
-                if (is_true(var_9460390a)) {
+                if (is_true(chest_weapon)) {
                     var_ec0c35ac.var_387e74f4.var_ec0c35ac = 1;
                 }
                 if (is_true(var_604af0c7)) {

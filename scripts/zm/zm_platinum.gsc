@@ -300,7 +300,7 @@ function player_out_of_playable_area_monitor_callback() {
 // Size: 0x62e
 function function_452e5ad6() {
     self endon(#"disconnect");
-    if (level flag::get(#"hash_299b0e75bff5106f")) {
+    if (level flag::get(#"in_dark_side")) {
         var_1a672bba = struct::get_array("zone_bunny_club_respawn_points");
         s_player_spawn = array::random(var_1a672bba);
         return s_player_spawn;
@@ -445,7 +445,7 @@ function function_833114ef() {
 // Size: 0x1f6
 function function_bf14bffe() {
     self endon(#"death", #"disconnect", #"hash_7f3f3b496fcd3707");
-    level flag::wait_till_all([1:#"hash_443b6a1ea0c4b52b", 0:#"load_main_complete"]);
+    level flag::wait_till_all([1:#"intro_scene_done", 0:#"load_main_complete"]);
     while (1) {
         var_1e8cb595 = bullettracepassed(self.origin, self.origin + vectorscale((0, 0, 1), 10000), 0, self);
         if (var_1e8cb595 && !self flag::get(#"hash_1561f2d74277f5a1") && !is_true(self.var_16735873)) {
@@ -616,7 +616,7 @@ function function_6e0fa6eb() {
 // Size: 0x4e0
 function function_3ba2978d() {
     level endon(#"hash_31a61be99d69708a");
-    level flag::wait_till_all([2:"start_zombie_round_logic", 1:"all_players_spawned", 0:#"hash_443b6a1ea0c4b52b"]);
+    level flag::wait_till_all([2:"start_zombie_round_logic", 1:"all_players_spawned", 0:#"intro_scene_done"]);
     wait(1);
     if (!level flag::get("power_on")) {
         self thread zm_equipment::show_hint_text(#"hash_77929503066a286b", 5);
@@ -843,11 +843,11 @@ function private function_ae72b4d0(n_round) {
 // Checksum 0xf513ab72, Offset: 0x5518
 // Size: 0xba
 function function_65c98960(get_all = 0) {
-    if (isdefined(level.zm_loc_types[#"hash_480d68ed8437230"]) && level.zm_loc_types[#"hash_480d68ed8437230"].size) {
+    if (isdefined(level.zm_loc_types[#"mechz_location"]) && level.zm_loc_types[#"mechz_location"].size) {
         if (get_all) {
-            s_spawn_loc = level.zm_loc_types[#"hash_480d68ed8437230"];
+            s_spawn_loc = level.zm_loc_types[#"mechz_location"];
         } else {
-            s_spawn_loc = array::random(level.zm_loc_types[#"hash_480d68ed8437230"]);
+            s_spawn_loc = array::random(level.zm_loc_types[#"mechz_location"]);
         }
     }
     return s_spawn_loc;
@@ -858,11 +858,11 @@ function function_65c98960(get_all = 0) {
 // Checksum 0xb1b8d963, Offset: 0x55e0
 // Size: 0x382
 function function_41a4961d(get_all = 0) {
-    if (isdefined(level.zm_loc_types[#"hash_6e9ce9c1beaea349"]) && level.zm_loc_types[#"hash_6e9ce9c1beaea349"].size) {
+    if (isdefined(level.zm_loc_types[#"tempest_location"]) && level.zm_loc_types[#"tempest_location"].size) {
         if (get_all) {
-            s_spawn_loc = level.zm_loc_types[#"hash_6e9ce9c1beaea349"];
+            s_spawn_loc = level.zm_loc_types[#"tempest_location"];
         } else {
-            locs = level.zm_loc_types[#"hash_6e9ce9c1beaea349"];
+            locs = level.zm_loc_types[#"tempest_location"];
             if (getplayers().size > 1) {
                 var_a6c95035 = [];
                 var_b0becd1e = namespace_19c99142::function_a64f7068();
@@ -913,11 +913,11 @@ function function_41a4961d(get_all = 0) {
 // Checksum 0x3c576cc2, Offset: 0x5970
 // Size: 0xba
 function function_218424b3(get_all = 0) {
-    if (isdefined(level.zm_loc_types[#"hash_6e9ce9c1beaea349"]) && level.zm_loc_types[#"hash_6e9ce9c1beaea349"].size) {
+    if (isdefined(level.zm_loc_types[#"tempest_location"]) && level.zm_loc_types[#"tempest_location"].size) {
         if (get_all) {
-            s_spawn_loc = level.zm_loc_types[#"hash_6e9ce9c1beaea349"];
+            s_spawn_loc = level.zm_loc_types[#"tempest_location"];
         } else {
-            s_spawn_loc = array::random(level.zm_loc_types[#"hash_6e9ce9c1beaea349"]);
+            s_spawn_loc = array::random(level.zm_loc_types[#"tempest_location"]);
         }
     }
     return s_spawn_loc;
@@ -928,11 +928,11 @@ function function_218424b3(get_all = 0) {
 // Checksum 0x5f06ad1a, Offset: 0x5a38
 // Size: 0xba
 function function_d9f5ec34(get_all = 0) {
-    if (isdefined(level.zm_loc_types[#"hash_6e9ce9c1beaea349"]) && level.zm_loc_types[#"hash_6e9ce9c1beaea349"].size) {
+    if (isdefined(level.zm_loc_types[#"tempest_location"]) && level.zm_loc_types[#"tempest_location"].size) {
         if (get_all) {
-            s_spawn_loc = level.zm_loc_types[#"hash_6e9ce9c1beaea349"];
+            s_spawn_loc = level.zm_loc_types[#"tempest_location"];
         } else {
-            s_spawn_loc = array::random(level.zm_loc_types[#"hash_6e9ce9c1beaea349"]);
+            s_spawn_loc = array::random(level.zm_loc_types[#"tempest_location"]);
         }
     }
     return s_spawn_loc;
@@ -945,10 +945,10 @@ function function_d9f5ec34(get_all = 0) {
 function function_ae76beb4() {
     level endon(#"end_game");
     level flag::wait_till("start_zombie_round_logic");
-    level flag::wait_till(#"hash_61e50ad0c8b499c0");
+    level flag::wait_till(#"connect_no_mans_land_to_east_berlin_street");
     wait(2);
-    var_9ad9e33b = struct::get("charlie_rubble", "targetname");
-    util::spawn_model(#"hash_73d31ba007bb147d", var_9ad9e33b.origin, var_9ad9e33b.angles);
+    charlie_rubble = struct::get("charlie_rubble", "targetname");
+    util::spawn_model(#"hash_73d31ba007bb147d", charlie_rubble.origin, charlie_rubble.angles);
     var_69708f86 = getentarray("charlie_razorwire", "targetname");
     array::delete_all(var_69708f86);
 }
@@ -1422,7 +1422,7 @@ function private function_66dff432(var_2fb6fe4e) {
 // Checksum 0x427dfc2c, Offset: 0x7ea8
 // Size: 0x1d0
 function function_b9dd887f(var_2fb6fe4e, var_be18ffe8) {
-    zombie = zm_utility::function_cce73165("riser_location", #"hash_7613c8395a7cd724", #"zone_ghost_station");
+    zombie = zm_utility::function_cce73165("riser_location", #"spawner_bo5_zombie_zm_platinum", #"zone_ghost_station");
     if (isactor(zombie) && isalive(zombie)) {
         zombie function_d7fb6a4c();
         if (is_true(var_be18ffe8)) {
@@ -1559,7 +1559,7 @@ function function_5e09fe1(var_4a8bf1a3 = 1, var_d15e3ab = 1) {
                         }
                         zombie.allowdeath.zombie = 1;
                         zombie kill(undefined, undefined, undefined, undefined, undefined, 1);
-                        playfxontag(#"hash_76477e9d3b3abaf4", zombie, "J_Spine4");
+                        playfxontag(#"zm_weapons/fx9_ww_ieu_death", zombie, "J_Spine4");
                         zombie function_cb48cddd();
                     }
                 }
@@ -1660,7 +1660,7 @@ function private function_9feaaed() {
     if (level flag::get("rbz_exfil_started")) {
         return;
     }
-    if (level flag::get(#"hash_547cc154153f60ee")) {
+    if (level flag::get(#"rbz_exfil_beacon_active")) {
         level flag::clear("rbz_exfil_beacon_active");
     }
     if (level flag::get("rbz_exfil_allowed")) {
@@ -2318,15 +2318,15 @@ function function_90cffb5b(var_f52c2c29) {
     level flag::wait_till("zones_initialized");
     level.var_141e4a5f = [];
     foreach (var_8c8031b6 in var_f52c2c29) {
-        var_43cd39d4 = struct::get(var_8c8031b6, "targetname");
-        if (!isdefined(var_43cd39d4)) {
+        rappel = struct::get(var_8c8031b6, "targetname");
+        if (!isdefined(rappel)) {
             continue;
         }
-        posonnavmesh = getclosestpointonnavmesh(var_43cd39d4.origin, 64, 16);
+        posonnavmesh = getclosestpointonnavmesh(rappel.origin, 64, 16);
         if (!isdefined(posonnavmesh)) {
             continue;
         }
-        var_49360d05 = struct::get(var_43cd39d4.target, "targetname");
+        var_49360d05 = struct::get(rappel.target, "targetname");
         if (!isdefined(var_49360d05)) {
             continue;
         }
@@ -2340,7 +2340,7 @@ function function_90cffb5b(var_f52c2c29) {
             if (!isdefined(level.var_141e4a5f[var_5f3b05e8])) {
                 level.var_141e4a5f[var_5f3b05e8] = [];
             }
-            level.var_141e4a5f[var_5f3b05e8][str_zone] = {#var_db90fcba:var_db90fcba, #posonnavmesh:posonnavmesh, #var_43cd39d4:var_43cd39d4};
+            level.var_141e4a5f[var_5f3b05e8][str_zone] = {#var_db90fcba:var_db90fcba, #posonnavmesh:posonnavmesh, #rappel:rappel};
         }
     }
 }
@@ -2386,8 +2386,8 @@ function private function_20ad9d07() {
                     str_zone = zombie zm_utility::get_current_zone();
                     if (isdefined(str_zone) && isdefined(level.var_141e4a5f[var_5f3b05e8][str_zone])) {
                         var_71c80ceb = level.var_141e4a5f[var_5f3b05e8][str_zone];
-                        var_43cd39d4 = var_71c80ceb.var_43cd39d4;
-                        if (distancesquared(zombie.origin, var_43cd39d4.origin) < max_dist_sq) {
+                        rappel = var_71c80ceb.rappel;
+                        if (distancesquared(zombie.origin, rappel.origin) < max_dist_sq) {
                             /#
                                 println("<unknown string>" + zombie getentitynumber() + "<unknown string>" + var_5f3b05e8);
                             #/
@@ -2478,7 +2478,7 @@ function function_85dc9b9d() {
 // Size: 0x8c
 function function_9d23c457() {
     level clientfield::set("" + #"hash_6eb96d2ad043aa56", 1);
-    level flag::wait_till(#"hash_443b6a1ea0c4b52b");
+    level flag::wait_till(#"intro_scene_done");
     level clientfield::set("" + #"hash_6eb96d2ad043aa56", 0);
 }
 
@@ -2538,7 +2538,7 @@ function function_a56b42c0() {
             var_c32b93c6 = zm_zonemgr::get_active_zone_names();
             zone_name = array::random(var_c32b93c6);
             if (isdefined(zone_name)) {
-                var_9e2396e0 = zm_utility::function_cce73165("mechz_location", #"hash_704a090ff9fcffd0", zone_name);
+                var_9e2396e0 = zm_utility::function_cce73165("mechz_location", #"spawner_bo5_mechz_sr", zone_name);
                 if (isdefined(var_9e2396e0)) {
                     var_9e2396e0.var_5e54763a = zone_name;
                     var_9e2396e0.var_98f1f37c.var_9e2396e0 = 1;
@@ -2584,7 +2584,7 @@ function function_c13a2cf5() {
         add_devgui("<unknown string>", "<unknown string>");
         add_devgui("<unknown string>", "<unknown string>");
         add_devgui("<unknown string>", "<unknown string>");
-        level wait_till_all([2:"<unknown string>", 1:"<unknown string>", 0:#"hash_443b6a1ea0c4b52b"]);
+        level wait_till_all([2:"<unknown string>", 1:"<unknown string>", 0:#"intro_scene_done"]);
         wait(2);
         level thread function_dd856618();
     #/

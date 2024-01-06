@@ -52,7 +52,7 @@ function on_end_game() {
 // Checksum 0x3446e5ab, Offset: 0x310
 // Size: 0xa4
 function on_player_spawned() {
-    if (level flag::get(#"hash_443b6a1ea0c4b52b")) {
+    if (level flag::get(#"intro_scene_done")) {
         if (isdefined(level.var_d1b0ffd) && level.var_d1b0ffd != "") {
             self set_to_player(level.var_d1b0ffd);
         } else {
@@ -67,7 +67,7 @@ function on_player_spawned() {
 // Checksum 0xc1d3c3e4, Offset: 0x3c0
 // Size: 0x8c
 function on_player_connect() {
-    if (flag::get(#"hash_443b6a1ea0c4b52b")) {
+    if (flag::get(#"intro_scene_done")) {
         if (isdefined(level.var_d1b0ffd) && level.var_d1b0ffd != "") {
             self set_to_player(level.var_d1b0ffd);
         } else {
@@ -92,8 +92,8 @@ function function_83b6d24a(params) {
     }
     str_objective_name = undefined;
     s_instance = params.instance;
-    if (isdefined(s_instance.var_b588b063)) {
-        str_objective_name = s_instance.var_b588b063;
+    if (isdefined(s_instance.content_script_name)) {
+        str_objective_name = s_instance.content_script_name;
     }
     function_df47d1da(str_objective_name);
 }
@@ -108,8 +108,8 @@ function function_2b1da4a6(params) {
     }
     str_objective_name = undefined;
     s_instance = params.instance;
-    if (isdefined(s_instance.var_b588b063)) {
-        str_objective_name = s_instance.var_b588b063;
+    if (isdefined(s_instance.content_script_name)) {
+        str_objective_name = s_instance.content_script_name;
     }
     function_a9cc2e9f(params.completed, str_objective_name);
 }

@@ -1026,8 +1026,8 @@ function function_34f85f1b(str_flag, var_1303e212) {
             }
             var_842cdacd = [];
             if (var_1303e212) {
-                var_d194d219 = arraygetclosest(getplayers()[0].origin, level.var_f804b293);
-                var_842cdacd = get_array(var_d194d219.targetname, "<unknown string>");
+                hotzone = arraygetclosest(getplayers()[0].origin, level.var_f804b293);
+                var_842cdacd = get_array(hotzone.targetname, "<unknown string>");
             } else {
                 trigger = arraygetclosest(getplayers()[0].origin, getentarray("<unknown string>", "<unknown string>"));
                 if (isdefined(trigger.target)) {

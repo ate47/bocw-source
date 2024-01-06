@@ -23,9 +23,9 @@
 #using scripts\core_common\math_shared.csc;
 #using scripts\core_common\array_shared.csc;
 
-#namespace namespace_ff8b8430;
+#namespace doa_enemy;
 
-// Namespace namespace_ff8b8430/namespace_ff8b8430
+// Namespace doa_enemy/doa_enemy
 // Params 0, eflags: 0x2 linked
 // Checksum 0x121b2ffc, Offset: 0x138
 // Size: 0x14
@@ -33,7 +33,7 @@ function init() {
     function_32d5e898();
 }
 
-// Namespace namespace_ff8b8430/namespace_ff8b8430
+// Namespace doa_enemy/doa_enemy
 // Params 1, eflags: 0x2 linked
 // Checksum 0x3fb3d003, Offset: 0x158
 // Size: 0xc

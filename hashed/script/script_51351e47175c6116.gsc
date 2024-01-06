@@ -53,16 +53,16 @@ function function_32160152(player, modelname, origin, angles, scale = 1) {
             spawnorigin = model.origin;
             players = getplayers();
             foreach (player in players) {
-                if (!isdefined(player.var_8cff5775.vehicle)) {
+                if (!isdefined(player.doa.vehicle)) {
                     continue;
                 }
-                distsq = distancesquared(player.var_8cff5775.vehicle.origin, spawnorigin);
+                distsq = distancesquared(player.doa.vehicle.origin, spawnorigin);
                 if (distsq < function_a3f6cdac(64)) {
                     namespace_dfc652ee::function_ad7ac41b(spawnorigin, 1, 32, 27, 1);
                     return;
                 }
             }
-            namespace_ff8b8430::function_a6b807ea(namespace_ff8b8430::function_d7c5adee("spider"), randomint(4) + 1, model.origin);
+            doa_enemy::function_a6b807ea(doa_enemy::function_d7c5adee("spider"), randomint(4) + 1, model.origin);
         } else {
             model namespace_83eb6304::function_3ecfde67("fireworks");
             model namespace_e32bb68::function_3a59ec34("evt_doa_pickup_giftbox_fireworks");

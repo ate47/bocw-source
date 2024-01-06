@@ -116,10 +116,10 @@ function on_weapon_change(params) {
     weapon = self function_d2c2b168();
     if (function_3efc58e4(weapon)) {
         self.var_960d365a = 0;
-        self thread function_71c63cef(localclientnum, weapon);
-        self thread function_2262d0b6(localclientnum, weapon);
-        self thread function_d89c7385(localclientnum, weapon);
-        self thread function_2f3ad676(localclientnum, weapon);
+        self thread watch_mega_barrel_ammo_change(localclientnum, weapon);
+        self thread watch_mega_barrel_mag_out_notetrack(localclientnum, weapon);
+        self thread watch_mega_barrel_mag_in_notetrack(localclientnum, weapon);
+        self thread watch_mega_barrel_mag_throw_notetrack(localclientnum, weapon);
     } else if (isdefined(self.var_49d95be6)) {
         self function_6b945d59(#"hash_8c1c803276508fe" + self.var_49d95be6);
         self.var_49d95be6 = undefined;
@@ -131,7 +131,7 @@ function on_weapon_change(params) {
 // Params 2, eflags: 0x0
 // Checksum 0x3fb90890, Offset: 0xc88
 // Size: 0x1f0
-function function_2262d0b6(localclientnum, weapon) {
+function watch_mega_barrel_mag_out_notetrack(localclientnum, weapon) {
     self endon(#"death", #"weapon_change");
     var_17b7891d = "51273cd61d1e6f07" + "watch_mega_barrel_mag_out_notetrack";
     self notify(var_17b7891d);
@@ -162,7 +162,7 @@ function function_2262d0b6(localclientnum, weapon) {
 // Params 2, eflags: 0x0
 // Checksum 0x2768b1b2, Offset: 0xe80
 // Size: 0x230
-function function_2f3ad676(localclientnum, weapon) {
+function watch_mega_barrel_mag_throw_notetrack(localclientnum, weapon) {
     self endon(#"death", #"weapon_change");
     var_17b7891d = "bb81bf554d144e6" + "watch_mega_barrel_mag_throw_notetrack";
     self notify(var_17b7891d);
@@ -194,7 +194,7 @@ function function_2f3ad676(localclientnum, weapon) {
 // Params 2, eflags: 0x0
 // Checksum 0x7704ba67, Offset: 0x10b8
 // Size: 0xaa
-function function_d89c7385(*localclientnum, *weapon) {
+function watch_mega_barrel_mag_in_notetrack(*localclientnum, *weapon) {
     self endon(#"death", #"weapon_change");
     var_17b7891d = "72c40ea1ad927740" + "watch_mega_barrel_mag_in_notetrack";
     self notify(var_17b7891d);
@@ -209,7 +209,7 @@ function function_d89c7385(*localclientnum, *weapon) {
 // Params 2, eflags: 0x0
 // Checksum 0x1fbada94, Offset: 0x1170
 // Size: 0x286
-function function_71c63cef(localclientnum, weapon) {
+function watch_mega_barrel_ammo_change(localclientnum, weapon) {
     self endon(#"death", #"weapon_change");
     var_17b7891d = "54ae0da6d02ad59f" + "watch_mega_barrel_ammo_change";
     self notify(var_17b7891d);

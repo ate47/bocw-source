@@ -48,7 +48,7 @@ function function_5e62ed5c() {
         }
         level.var_49f4fe8e = undefined;
         var_7f729179 = undefined;
-        var_7f729179 = level waittilltimeout(randomfloatrange(level.var_cf15d540, level.var_f535b5f0), #"hash_411b28075ee4555c", #"hash_448cb2a9e543af93");
+        var_7f729179 = level waittilltimeout(randomfloatrange(level.var_cf15d540, level.var_f535b5f0), #"start_ambush", #"objective_locked");
         if (level flag::get("objective_locked")) {
             level flag::wait_till_clear("objective_locked");
         } else {
@@ -128,11 +128,11 @@ function function_f4413120() {
 // Size: 0x108
 function function_be6ec6c(var_2b43a4c4, var_30ff34e3 = 1) {
     if (!isdefined(var_2b43a4c4)) {
-        level notify(#"hash_411b28075ee4555c", {#var_30ff34e3:var_30ff34e3});
+        level notify(#"start_ambush", {#var_30ff34e3:var_30ff34e3});
     } else if (isplayer(var_2b43a4c4)) {
-        level notify(#"hash_411b28075ee4555c", {#var_30ff34e3:var_30ff34e3, #player:var_2b43a4c4});
+        level notify(#"start_ambush", {#var_30ff34e3:var_30ff34e3, #player:var_2b43a4c4});
     } else if (isvec(var_2b43a4c4)) {
-        level notify(#"hash_411b28075ee4555c", {#var_30ff34e3:var_30ff34e3, #location:var_2b43a4c4});
+        level notify(#"start_ambush", {#var_30ff34e3:var_30ff34e3, #location:var_2b43a4c4});
     }
 }
 

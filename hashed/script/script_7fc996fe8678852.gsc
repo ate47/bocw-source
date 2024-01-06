@@ -107,7 +107,7 @@ function function_31e8da78(destination, var_100faab4) {
     foreach (location in locations) {
         instances = array::randomize(function_f703a5a(location));
         foreach (instance in instances) {
-            if (instance.var_b588b063 === var_100faab4) {
+            if (instance.content_script_name === var_100faab4) {
                 return instance;
             }
         }
@@ -231,12 +231,12 @@ function private function_e97ef0d4() {
                 continue;
             }
             /#
-                assert(isdefined(child.var_b588b063));
+                assert(isdefined(child.content_script_name));
             #/
             /#
-                assert(!isdefined(instances[child.var_b588b063]));
+                assert(!isdefined(instances[child.content_script_name]));
             #/
-            instances[child.var_b588b063] = child;
+            instances[child.content_script_name] = child;
             child.location = location;
         }
     }
@@ -254,13 +254,13 @@ function function_20d7e9c7(instance) {
         assert(instance.variantname == #"hash_60feba77d317eb4");
     #/
     /#
-        assert(isstring(instance.var_b588b063) || ishash(instance.var_b588b063));
+        assert(isstring(instance.content_script_name) || ishash(instance.content_script_name));
     #/
     /#
         assert(isstruct(instance.location));
     #/
     function_656a32f0(instance);
-    script = level.var_7d45d0d4.var_405f83af[instance.var_b588b063];
+    script = level.var_7d45d0d4.var_405f83af[instance.content_script_name];
     if (isdefined(script.var_946ffae7)) {
         level thread [[ script.var_946ffae7 ]](instance);
     }
@@ -279,7 +279,7 @@ function function_1c78a45d(instance) {
         assert(instance.variantname == #"hash_60feba77d317eb4");
     #/
     /#
-        assert(isstring(instance.var_b588b063) || ishash(instance.var_b588b063));
+        assert(isstring(instance.content_script_name) || ishash(instance.content_script_name));
     #/
     /#
         assert(isstruct(instance.location));
@@ -300,10 +300,10 @@ function private function_130f0da3(instance) {
     }
     instance.location.var_5eba96b3[instance.location.var_5eba96b3.size] = instance;
     var_5eba96b3 = level.var_7d45d0d4.var_5eba96b3;
-    if (!isdefined(var_5eba96b3[instance.var_b588b063])) {
-        var_5eba96b3[instance.var_b588b063] = [];
+    if (!isdefined(var_5eba96b3[instance.content_script_name])) {
+        var_5eba96b3[instance.content_script_name] = [];
     }
-    instances = var_5eba96b3[instance.var_b588b063];
+    instances = var_5eba96b3[instance.content_script_name];
     instances[instances.size] = instance;
 }
 
@@ -534,7 +534,7 @@ function private function_656a32f0(parent) {
     var_fe2612fe = function_bedd4c47(children);
     parent.var_fe2612fe = var_fe2612fe;
     foreach (child in children) {
-        if (child.variantname !== #"hash_ef6acc1408a8e86" || !isdefined(child.var_739ddae)) {
+        if (child.variantname !== #"hash_ef6acc1408a8e86" || !isdefined(child.content_key)) {
             continue;
         }
         child.parent = parent;
@@ -549,13 +549,13 @@ function private function_656a32f0(parent) {
 function private function_bedd4c47(children) {
     groups = [];
     foreach (child in children) {
-        if (child.variantname != #"hash_ef6acc1408a8e86" || !isdefined(child.var_739ddae)) {
+        if (child.variantname != #"hash_ef6acc1408a8e86" || !isdefined(child.content_key)) {
             continue;
         }
-        if (!isdefined(groups[child.var_739ddae])) {
-            groups[child.var_739ddae] = [];
+        if (!isdefined(groups[child.content_key])) {
+            groups[child.content_key] = [];
         }
-        group = groups[child.var_739ddae];
+        group = groups[child.content_key];
         group[group.size] = child;
     }
     return groups;
@@ -584,16 +584,16 @@ function private init_devgui() {
         foreach (destination in level.var_7d45d0d4.destinations) {
             foreach (location in destination.locations) {
                 foreach (instance in location.instances) {
-                    var_4eb7bd13 = location.targetname + "<unknown string>" + instance.var_b588b063;
-                    path = devgui_path("<unknown string>", 1, destination.targetname, location.targetname, instance.var_b588b063);
+                    var_4eb7bd13 = location.targetname + "<unknown string>" + instance.content_script_name;
+                    path = devgui_path("<unknown string>", 1, destination.targetname, location.targetname, instance.content_script_name);
                     add_devgui(path, "<unknown string>" + var_4eb7bd13);
                 }
             }
         }
         foreach (location in level.var_7d45d0d4.locations) {
             foreach (instance in location.instances) {
-                var_4eb7bd13 = location.targetname + "<unknown string>" + instance.var_b588b063;
-                path = devgui_path("<unknown string>", 2, location.targetname, instance.var_b588b063);
+                var_4eb7bd13 = location.targetname + "<unknown string>" + instance.content_script_name;
+                path = devgui_path("<unknown string>", 2, location.targetname, instance.content_script_name);
                 add_devgui(path, "<unknown string>" + var_4eb7bd13);
             }
         }
@@ -750,8 +750,8 @@ function function_56a6441e(struct, color, parent, var_f5b09155) {
         }
         var_acfd36dc = undefined;
         var_acfd36dc = function_4636f4cb(var_acfd36dc, struct.variantname);
-        var_acfd36dc = function_4636f4cb(var_acfd36dc, struct.var_b588b063);
-        var_acfd36dc = function_4636f4cb(var_acfd36dc, struct.var_739ddae);
+        var_acfd36dc = function_4636f4cb(var_acfd36dc, struct.content_script_name);
+        var_acfd36dc = function_4636f4cb(var_acfd36dc, struct.content_key);
         var_acfd36dc = function_4636f4cb(var_acfd36dc, var_f5b09155);
         if (isdefined(parent)) {
             line(struct.origin, parent.origin, color);

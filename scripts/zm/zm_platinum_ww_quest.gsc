@@ -341,7 +341,7 @@ function function_fb9b5ce9(e_player) {
 // Checksum 0x42abbaa5, Offset: 0x19b8
 // Size: 0xf6
 function private function_50cbcfee(e_user) {
-    level.zones[#"hash_2230277eeac29a"].is_spawning_allowed = 0;
+    level.zones[#"zone_hotel_jack_room"].is_spawning_allowed = 0;
     level.var_a0657c54 = e_user;
     level.var_a0657c54 function_8b40c670(self);
     level function_7d0eaace();
@@ -350,7 +350,7 @@ function private function_50cbcfee(e_user) {
         level.var_a0657c54.var_9e8e7b78 = undefined;
     }
     level.var_a0657c54 = undefined;
-    level.zones[#"hash_2230277eeac29a"].is_spawning_allowed = 1;
+    level.zones[#"zone_hotel_jack_room"].is_spawning_allowed = 1;
 }
 
 // Namespace namespace_47f97e84/namespace_47f97e84

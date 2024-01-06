@@ -49,7 +49,7 @@ function private function_70a657d8() {
     if (!isdefined(level.var_54ce800f)) {
         level.var_54ce800f = [];
     }
-    function_3969639b(&namespace_86402e7e::register, "cp_hint_text");
+    function_3969639b(&cp_hint_text::register, "cp_hint_text");
     lui::add_luimenu("pip_menu", &pip_menu::register);
     clientfield::register("toplayer", "cinematicmotion_blend", 1, 1, "int");
     serverfield::register("cinematicmotion_blend", 1, 1, "int", &function_e6d37e3b);
@@ -1328,16 +1328,16 @@ function show_hint_text(str_text_to_show, *b_should_blink, str_turn_off_notify =
 // Size: 0x10c
 function function_84f75222(str_text_to_show, b_should_blink, str_turn_off_notify, n_display_time) {
     lui_elem = function_d1397ecd("cp_hint_text");
-    if (lui_elem namespace_86402e7e::is_open(self)) {
+    if (lui_elem cp_hint_text::is_open(self)) {
         self hide_hint_text(0);
     }
-    lui_elem namespace_86402e7e::open(self);
-    lui_elem namespace_86402e7e::function_a16f86c1(self, str_text_to_show);
+    lui_elem cp_hint_text::open(self);
+    lui_elem cp_hint_text::function_a16f86c1(self, str_text_to_show);
     wait_network_frame();
     if (b_should_blink) {
-        lui_elem namespace_86402e7e::function_64d95cad(self);
+        lui_elem cp_hint_text::function_64d95cad(self);
     } else {
-        lui_elem namespace_86402e7e::function_a981d6b6(self);
+        lui_elem cp_hint_text::function_a981d6b6(self);
     }
     self thread function_7b7dfab3(n_display_time, str_turn_off_notify);
 }
@@ -1388,7 +1388,7 @@ function function_502198f3(var_67df10fb = 4) {
     self endon("2142fa1c1345de02");
     if (!namespace_61e6d095::exists(#"hash_5a8140e735eea0a")) {
         namespace_61e6d095::create(#"hash_5a8140e735eea0a", #"hash_bca0ed0cade1b34");
-        namespace_61e6d095::function_d3c3e5c3(#"hash_5a8140e735eea0a", [2:#"hash_af16b6b2e499098", 1:#"hash_50dd1fbbd883b24e", 0:#"interactive_map"]);
+        namespace_61e6d095::function_d3c3e5c3(#"hash_5a8140e735eea0a", [2:#"hash_af16b6b2e499098", 1:#"dialog_tree", 0:#"interactive_map"]);
         namespace_61e6d095::function_46df0bc7(#"hash_5a8140e735eea0a", 1000);
     }
     namespace_61e6d095::function_9ade1d9b(#"hash_5a8140e735eea0a", "text", #"hash_15fd757c26b65474", 0, 0, 0, 1);
@@ -1411,7 +1411,7 @@ function function_b9dfcfb7(var_67df10fb = 4) {
     self endon("6ecd26f4e31dfab8");
     if (!namespace_61e6d095::exists(#"hash_4362296ac2fe0d63")) {
         namespace_61e6d095::create(#"hash_4362296ac2fe0d63", #"hash_35889974967db979");
-        namespace_61e6d095::function_d3c3e5c3(#"hash_4362296ac2fe0d63", [2:#"hash_af16b6b2e499098", 1:#"hash_50dd1fbbd883b24e", 0:#"interactive_map"]);
+        namespace_61e6d095::function_d3c3e5c3(#"hash_4362296ac2fe0d63", [2:#"hash_af16b6b2e499098", 1:#"dialog_tree", 0:#"interactive_map"]);
         namespace_61e6d095::function_46df0bc7(#"hash_4362296ac2fe0d63", 1000);
     }
     namespace_61e6d095::function_9ade1d9b(#"hash_4362296ac2fe0d63", "text", #"hash_55ed0cb21f07064d", 0, 0, 0, 1);
@@ -1838,7 +1838,7 @@ function private function_b7367cc0(parms) {
         /#
             assert(lines.size == 3, "<unknown string>");
         #/
-        self function_9bc3cd7f(lines[0], lines[1], lines[2]);
+        self dialog_gender_vo(lines[0], lines[1], lines[2]);
     }
 }
 
@@ -1852,7 +1852,7 @@ function private function_244408f7(parms) {
         /#
             assert(lines.size == 4, "<unknown string>");
         #/
-        self function_f11f8038(lines[0], lines[1], lines[2], lines[3]);
+        self dialog_faction_vo(lines[0], lines[1], lines[2], lines[3]);
     }
 }
 
@@ -1860,7 +1860,7 @@ function private function_244408f7(parms) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x8fe38754, Offset: 0x62a0
 // Size: 0x12a
-function function_f11f8038(var_d9823b39, var_be096d26, var_7f1981e0, var_500f33b5) {
+function dialog_faction_vo(var_d9823b39, var_be096d26, var_7f1981e0, var_500f33b5) {
     player = getplayers()[0];
     if (!isplayer(player)) {
         return;
@@ -1890,7 +1890,7 @@ function function_c76fa9e1(var_42ff3045, var_d47e50e, var_97085828) {
     if (!isplayer(player)) {
         return;
     }
-    switch (player namespace_ee1da81f::function_1c4fb6d4()) {
+    switch (player player_decision::function_1c4fb6d4()) {
     case 0:
         self function_b6f9da41(var_42ff3045);
         break;
@@ -1907,7 +1907,7 @@ function function_c76fa9e1(var_42ff3045, var_d47e50e, var_97085828) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0xaca23a84, Offset: 0x64e0
 // Size: 0x102
-function function_9bc3cd7f(var_fb68995e, var_75afe953, var_7c7241a) {
+function dialog_gender_vo(var_fb68995e, var_75afe953, var_7c7241a) {
     player = getplayers()[0];
     if (!isplayer(player)) {
         return;
@@ -1967,7 +1967,7 @@ function function_d8ae866d(var_d9823b39, var_be096d26, var_7f1981e0, var_500f33b
 // Size: 0xb2
 function function_a1a0fe0c(var_42ff3045, var_d47e50e, var_97085828) {
     player = getplayers()[0];
-    switch (player namespace_ee1da81f::function_1c4fb6d4()) {
+    switch (player player_decision::function_1c4fb6d4()) {
     case 0:
         return var_42ff3045;
         break;
@@ -2005,7 +2005,7 @@ function function_3ac6fa36(var_fb68995e, var_75afe953, var_7c7241a) {
 // Size: 0xc6
 function function_875955a() {
     player = getplayers()[0];
-    switch (player namespace_ee1da81f::function_1c4fb6d4()) {
+    switch (player player_decision::function_1c4fb6d4()) {
     case 0:
         var_ea95c1e7 = "park";
         break;
@@ -2039,7 +2039,7 @@ function function_a5318821(var_79a934ad = 1, var_6fa12df4 = 0, var_64b54706 = un
     if (isdefined(var_64b54706)) {
         var_f82db92c = var_64b54706;
     }
-    var_1afba46e = [9:#"hash_75e51938faa93db4", 8:#"cp_ger_stakeout", 7:#"cp_rus_siege", 6:#"hash_aea89633cc83b43", 5:#"cp_nic_revolucion", 4:#"cp_nam_prisoner", 3:#"cp_rus_kgb", 2:#"cp_rus_duga", 1:#"cp_nam_armada", 0:#"cp_rus_amerika"];
+    var_1afba46e = [9:#"hash_75e51938faa93db4", 8:#"cp_ger_stakeout", 7:#"cp_rus_siege", 6:#"cp_ger_hub", 5:#"cp_nic_revolucion", 4:#"cp_nam_prisoner", 3:#"cp_rus_kgb", 2:#"cp_rus_duga", 1:#"cp_nam_armada", 0:#"cp_rus_amerika"];
     for (lookup = 0; lookup < var_1afba46e.size; lookup++) {
         if (var_1afba46e[lookup] == var_f82db92c) {
             break;

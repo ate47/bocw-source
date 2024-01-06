@@ -196,8 +196,8 @@ function function_39340834(struct, trigger) {
         list = getscriptbundle(var_2be3941a);
         function_621d45bc(list, struct);
     }
-    if (!level.var_30197c60 namespace_54dcccfc::is_open(self)) {
-        level.var_30197c60 namespace_54dcccfc::open(self, 0);
+    if (!level.var_30197c60 sr_objective_reward_menu::is_open(self)) {
+        level.var_30197c60 sr_objective_reward_menu::open(self, 0);
         if (isdefined(struct.var_f0f92268)) {
             playerindex = function_76d51213(struct, self);
             if (playerindex < 0) {
@@ -211,13 +211,13 @@ function function_39340834(struct, trigger) {
                 index2 = struct.var_f0f92268[playerindex][1];
                 var_d6a6fb08 = struct.var_f0f92268[playerindex][2];
             }
-            var_d80c7456 = function_219cb8bb(index1);
-            var_c65bd0f5 = function_219cb8bb(index2);
-            var_ff88c34e = function_219cb8bb(var_d6a6fb08);
-            level.var_30197c60 namespace_54dcccfc::function_43ba5f0e(self, var_d80c7456);
-            level.var_30197c60 namespace_54dcccfc::function_2d7f3298(self, var_c65bd0f5);
-            level.var_30197c60 namespace_54dcccfc::function_ada8b2f1(self, var_ff88c34e);
-            level.var_30197c60 namespace_54dcccfc::set_color(self, var_9c9943cf);
+            gunindex1 = function_219cb8bb(index1);
+            gunindex2 = function_219cb8bb(index2);
+            gunindex3 = function_219cb8bb(var_d6a6fb08);
+            level.var_30197c60 sr_objective_reward_menu::function_43ba5f0e(self, gunindex1);
+            level.var_30197c60 sr_objective_reward_menu::function_2d7f3298(self, gunindex2);
+            level.var_30197c60 sr_objective_reward_menu::function_ada8b2f1(self, gunindex3);
+            level.var_30197c60 sr_objective_reward_menu::set_color(self, var_9c9943cf);
         }
         self thread function_80bbb50b(struct, trigger);
         self namespace_553954de::function_14bada94();
@@ -432,7 +432,7 @@ function private function_76d51213(struct, var_6ca170e7) {
 function function_6c71e778() {
     self val::reset(#"hash_5ff56dba9074b0b4", "allow_crouch");
     self val::reset(#"hash_5ff56dba9074b0b4", "allow_prone");
-    level.var_30197c60 namespace_54dcccfc::close(self);
+    level.var_30197c60 sr_objective_reward_menu::close(self);
     self namespace_553954de::function_548f282();
 }
 
@@ -474,7 +474,7 @@ function function_80bbb50b(chest, trigger) {
     self val::set(#"hash_5ff56dba9074b0b4", "allow_prone", 0);
     self.var_ba0ccdab = 0;
     state = function_39d87af7(self.var_ba0ccdab);
-    level.var_30197c60 namespace_54dcccfc::set_state(self, state);
+    level.var_30197c60 sr_objective_reward_menu::set_state(self, state);
     var_38c5c771 = 0;
     var_8cd7eab = 0;
     var_febc0c66 = 0;
@@ -492,7 +492,7 @@ function function_80bbb50b(chest, trigger) {
                     self.var_ba0ccdab = 0;
                 }
                 state = function_39d87af7(self.var_ba0ccdab);
-                level.var_30197c60 namespace_54dcccfc::set_state(self, state);
+                level.var_30197c60 sr_objective_reward_menu::set_state(self, state);
             }
             var_8cd7eab = 1;
         } else {
@@ -505,7 +505,7 @@ function function_80bbb50b(chest, trigger) {
                     self.var_ba0ccdab = 2;
                 }
                 state = function_39d87af7(self.var_ba0ccdab);
-                level.var_30197c60 namespace_54dcccfc::set_state(self, state);
+                level.var_30197c60 sr_objective_reward_menu::set_state(self, state);
             }
             var_febc0c66 = 1;
         } else {
@@ -534,10 +534,10 @@ function function_80bbb50b(chest, trigger) {
                 self function_6c71e778();
                 return;
             }
-            level.var_30197c60 namespace_54dcccfc::function_b94196b8(self, var_38c5c771 / 750);
+            level.var_30197c60 sr_objective_reward_menu::function_b94196b8(self, var_38c5c771 / 750);
         } else {
             var_38c5c771 = 0;
-            level.var_30197c60 namespace_54dcccfc::function_b94196b8(self, var_38c5c771 / 750);
+            level.var_30197c60 sr_objective_reward_menu::function_b94196b8(self, var_38c5c771 / 750);
         }
         if (self stancebuttonpressed() || distance2d(self.origin, chest.origin) > 128 || self laststand::player_is_in_laststand() || self isinvehicle()) {
             trigger sethintstring(#"hash_4703982104472957");

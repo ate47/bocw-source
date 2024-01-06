@@ -49,7 +49,7 @@ function init() {
 // Checksum 0x54d10317, Offset: 0x820
 // Size: 0x2c
 function function_11bcbb57() {
-    lui::add_luimenu("cpChyron", &namespace_ee6ea590::register);
+    lui::add_luimenu("cpChyron", &cp_chyron::register);
 }
 
 // Namespace globallogic_ui/globallogic_ui
@@ -172,8 +172,8 @@ function private function_3e57e536(set) {
         setuimodelvalue(getuimodel(function_90d058e8(#"spy_camera"), "active"), 0);
         setuimodelvalue(getuimodel(function_90d058e8(#"spy_camera"), "stream"), 0);
         setuimodelvalue(getuimodel(function_90d058e8(#"hash_3d93adfe2bc1e980"), "active"), 0);
-        setuimodelvalue(getuimodel(function_90d058e8(#"hash_6f7d895c5a9f4ff3"), "active"), 0);
-        setuimodelvalue(getuimodel(function_90d058e8(#"hash_6f7d895c5a9f4ff3"), "stream"), 0);
+        setuimodelvalue(getuimodel(function_90d058e8(#"lockpick"), "active"), 0);
+        setuimodelvalue(getuimodel(function_90d058e8(#"lockpick"), "stream"), 0);
         level flag::clear("restoring_ui_models");
     } else {
         function_52da41bb("hudItems.cpObjectiveUiData.compassMessage", #"", 1);
@@ -622,7 +622,7 @@ function beginclasschoice() {
             if (isdefined(world.var_f2c8b0cb[self.name])) {
                 self savegame::function_6d003cb9("playerClass", world.var_f2c8b0cb[self.name]);
                 self thread spawn_player(world.var_f2c8b0cb[self.name]);
-                if (level flag::get(#"hash_f38968d6c87ba22")) {
+                if (level flag::get(#"all_players_class_choice_completed")) {
                     world.var_f2c8b0cb = undefined;
                 }
                 level notify(#"hash_68a23a10a81d2ba5");
@@ -714,7 +714,7 @@ function function_cdbb5c49(show, persistent) {
 function function_ac6e682a() {
     self endon(#"disconnect");
     initial_black = lui::get_luimenu("InitialBlack");
-    initial_black.var_6fba7045.initial_black = #"hash_2d0624797b56dba";
+    initial_black.var_6fba7045.initial_black = #"kill_initial_black";
     self val::set(#"initial_black", "disable_oob", 1);
     function_cdbb5c49(1, 1);
     while (self isloadingcinematicplaying()) {
@@ -747,7 +747,7 @@ function function_ac6e682a() {
     } while(self flag::get(#"chyron_menu_open") || level flag::get(#"waitting_for_igc_ready"));
     waitframe(1);
     level flag::wait_till_clear("streamer_waits");
-    self flag::set(#"hash_2d0624797b56dba");
+    self flag::set(#"kill_initial_black");
     self lui::screen_fade_out(0, "black");
     util::wait_network_frame(2);
     function_cdbb5c49(0);
@@ -1008,10 +1008,10 @@ function private function_36e939c(var_4146002e = 1, var_d76d90ac = 0) {
     /#
         assert(var_d76d90ac <= 15);
     #/
-    var_ee6ea590 = lui::get_luimenu("cpChyron");
-    var_ee6ea590 namespace_ee6ea590::function_90bde5d3(self, var_d76d90ac);
-    var_ee6ea590 namespace_ee6ea590::close(self);
-    var_ee6ea590 namespace_ee6ea590::open(self);
+    cp_chyron = lui::get_luimenu("cpChyron");
+    cp_chyron cp_chyron::function_90bde5d3(self, var_d76d90ac);
+    cp_chyron cp_chyron::close(self);
+    cp_chyron cp_chyron::open(self);
     if (var_4146002e) {
         self val::set(#"hash_7b7f5444af189990", "takedamage", 0);
         self val::set(#"hash_7b7f5444af189990", "freezecontrols", 1);
@@ -1020,8 +1020,8 @@ function private function_36e939c(var_4146002e = 1, var_d76d90ac = 0) {
     }
     waittillframeend();
     level notify(#"chyron_menu_open");
-    self waittillmatchtimeout(15, {#response:#"closed", #menu:#"hash_20b8e2cf08821e86"}, #"menuresponse");
-    var_ee6ea590.var_779239b4.var_ee6ea590 = 0;
+    self waittillmatchtimeout(15, {#response:#"closed", #menu:#"cp_chyron"}, #"menuresponse");
+    cp_chyron.var_779239b4.cp_chyron = 0;
     self notify(#"chyron_menu_closed");
     level notify(#"chyron_menu_closed");
     self flag::clear(#"chyron_menu_open");
@@ -1029,7 +1029,7 @@ function private function_36e939c(var_4146002e = 1, var_d76d90ac = 0) {
     level flag::wait_till_clear("waitting_for_igc_ready");
     self val::function_e681e68e(#"hash_7b7f5444af189990");
     wait(10);
-    var_ee6ea590 namespace_ee6ea590::close(self);
+    cp_chyron cp_chyron::close(self);
 }
 
 // Namespace globallogic_ui/globallogic_ui
@@ -1137,7 +1137,7 @@ function function_9ed5232e(model_name, var_832d6681, var_f566006a, var_80d5359e,
 function private function_5b537ee3(model, model_name, var_832d6681, var_80d5359e, var_7b030046, var_2226bd51) {
     if (is_true(var_2226bd51)) {
         level notify("set_ui_model_" + model_name);
-        level endon("set_ui_model_" + model_name, "removing_ui_model_data_" + model_name, #"hash_298d88a0977193a7");
+        level endon("set_ui_model_" + model_name, "removing_ui_model_data_" + model_name, #"level_restarting");
         waittillframeend();
     }
     notified = 0;

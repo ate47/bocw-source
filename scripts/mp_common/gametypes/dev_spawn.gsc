@@ -74,8 +74,8 @@ function function_f084faed() {
             level.var_2f11d3e5[#"ct"] = "<unknown string>";
             level.var_2f11d3e5[#"escort"] = "<unknown string>";
             level.var_2f11d3e5[#"bounty"] = "<unknown string>";
-            level.var_2f11d3e5[#"hash_68e906194eba76f0"] = "<unknown string>";
-            level.var_2f11d3e5[#"hash_527f2aa95e2f400a"] = "<unknown string>";
+            level.var_2f11d3e5[#"vip"] = "<unknown string>";
+            level.var_2f11d3e5[#"dropkick"] = "<unknown string>";
         }
     #/
 }

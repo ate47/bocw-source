@@ -45,7 +45,7 @@ function init_shared() {
         level.var_6964d56c.var_d67ec774[#"remote_missile"] = 1;
         level.var_6964d56c.var_d67ec774[#"straferun"] = 1;
         level.var_6964d56c.var_1543185c = array("ac130", "inventory_ac130", "helicopter_guard", "inventory_helicopter_guard", "chopper_gunner", "inventory_chopper_gunner", "hoverjet", "inventory_hoverjet", "helicopter_comlink", "inventory_helicopter_comlink", "recon_plane", "inventory_recon_plane", "uav", "inventory_uav", "counteruav", "inventory_counteruav");
-        level.var_6964d56c.var_512625a1 = [#"inventory_uav":"uav", #"uav":"uav", #"inventory_recon_plane":"spy_plane_alt", #"recon_plane":"spy_plane_alt", #"inventory_hoverjet":"hover_jet", #"hoverjet":"hover_jet", #"inventory_helicopter_comlink":"lgt_chop", #"helicopter_comlink":"lgt_chop", #"hash_4557bd9f04730cb":"lgt_chop", #"helicopter_guard":"lgt_chop", #"inventory_counteruav":"cuav", #"counteruav":"cuav", #"inventory_chopper_gunner":"chop_gun", #"chopper_gunner":"chop_gun", #"inventory_ac130":"gunship", #"ac130":"gunship"];
+        level.var_6964d56c.var_512625a1 = [#"inventory_uav":"uav", #"uav":"uav", #"inventory_recon_plane":"spy_plane_alt", #"recon_plane":"spy_plane_alt", #"inventory_hoverjet":"hover_jet", #"hoverjet":"hover_jet", #"inventory_helicopter_comlink":"lgt_chop", #"helicopter_comlink":"lgt_chop", #"inventory_helicopter_guard":"lgt_chop", #"helicopter_guard":"lgt_chop", #"inventory_counteruav":"cuav", #"counteruav":"cuav", #"inventory_chopper_gunner":"chop_gun", #"chopper_gunner":"chop_gun", #"inventory_ac130":"gunship", #"ac130":"gunship"];
         level.var_6964d56c.var_e321cb16 = [];
         if (!isdefined(level.var_2d90c17e)) {
             level.var_2d90c17e = [];
@@ -914,7 +914,7 @@ function function_42bacd5b() {
         var_e30e452.var_dd11f4a7.var_e30e452 = gettime();
     }
     var_e30e452.var_7d92eba8.var_e30e452 = gettime();
-    self notify(#"hash_4b6df700a846b682");
+    self notify(#"missile_turret_potential_target_acquired");
     self thread aim_at_target(self.var_c27dadc8);
     if (!isdefined(self.var_ec2f1ab4) || self.var_ec2f1ab4 + 5000 < gettime()) {
         self stoploopsound();
@@ -1123,7 +1123,7 @@ function function_9d831b2f() {
                 self.var_942bf052 = "left";
             }
             waitresult = undefined;
-            waitresult = self waittilltimeout(3.5, #"hash_4b6df700a846b682");
+            waitresult = self waittilltimeout(3.5, #"missile_turret_potential_target_acquired");
             if (waitresult._notify == "missile_turret_potential_target_acquired") {
                 continue;
             };

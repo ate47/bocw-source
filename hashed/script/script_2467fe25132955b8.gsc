@@ -33,28 +33,28 @@ function private function_70a657d8() {
     namespace_1b527536::function_36e0540e(#"frost_blast_2", 2, 25, #"field_upgrade_frost_blast_2_item_sr");
     namespace_1b527536::function_36e0540e(#"frost_blast_3", 2, 25, #"field_upgrade_frost_blast_3_item_sr");
     namespace_1b527536::function_36e0540e(#"frost_blast_4", 3, 25, #"field_upgrade_frost_blast_4_item_sr");
-    namespace_1b527536::function_36e0540e(#"hash_2f14933f9c381974", 3, 25, #"field_upgrade_frost_blast_5_item_sr");
+    namespace_1b527536::function_36e0540e(#"frost_blast_5", 3, 25, #"field_upgrade_frost_blast_5_item_sr");
     namespace_1b527536::function_dbd391bf(#"frost_blast", &function_d7d09902);
     namespace_1b527536::function_dbd391bf(#"frost_blast_1", &function_de15a58c);
     namespace_1b527536::function_dbd391bf(#"frost_blast_2", &function_3542d3e9);
     namespace_1b527536::function_dbd391bf(#"frost_blast_3", &function_4980fc65);
     namespace_1b527536::function_dbd391bf(#"frost_blast_4", &function_353fd3e7);
-    namespace_1b527536::function_dbd391bf(#"hash_2f14933f9c381974", &function_4959fc1b);
+    namespace_1b527536::function_dbd391bf(#"frost_blast_5", &function_4959fc1b);
     namespace_9ff9f642::register_slowdown(#"frost_blast", 0.5, 3);
-    namespace_9ff9f642::register_slowdown(#"hash_2f14933f9c381974", 0.1, 5);
+    namespace_9ff9f642::register_slowdown(#"frost_blast_5", 0.1, 5);
     zombie_utility::add_zombie_gib_weapon_callback("frost_blast_5", &no_gib, &no_gib);
-    var_202ed5fb = getweapon(#"frost_blast");
+    frost_blast_0 = getweapon(#"frost_blast");
     frost_blast_1 = getweapon(#"frost_blast");
     frost_blast_2 = getweapon(#"frost_blast");
     frost_blast_3 = getweapon(#"frost_blast");
     frost_blast_4 = getweapon(#"frost_blast");
-    var_6ea2372 = getweapon(#"frost_blast");
-    zm_weapons::function_90953640(var_202ed5fb, 3, float(function_60d95f53()) / 1000);
+    frost_blast_5 = getweapon(#"frost_blast");
+    zm_weapons::function_90953640(frost_blast_0, 3, float(function_60d95f53()) / 1000);
     zm_weapons::function_90953640(frost_blast_1, 3, float(function_60d95f53()) / 1000);
     zm_weapons::function_90953640(frost_blast_2, 3, float(function_60d95f53()) / 1000);
     zm_weapons::function_90953640(frost_blast_3, 3, float(function_60d95f53()) / 1000);
     zm_weapons::function_90953640(frost_blast_4, 3, float(function_60d95f53()) / 1000);
-    zm_weapons::function_90953640(var_6ea2372, 3, float(function_60d95f53()) / 1000);
+    zm_weapons::function_90953640(frost_blast_5, 3, float(function_60d95f53()) / 1000);
 }
 
 // Namespace namespace_cf2b4f27/namespace_cf2b4f27
@@ -130,12 +130,12 @@ function function_6736205c(var_638b775a = 0) {
         damage = 200;
         break;
     case 5:
-        weapon = getweapon(#"hash_2f14933f9c381974");
+        weapon = getweapon(#"frost_blast_5");
         var_89ae2770 = #"hash_6096dc38f90bce4d";
         radius = 256;
         damage = 200;
         duration = 5;
-        slowdown = #"hash_2f14933f9c381974";
+        slowdown = #"frost_blast_5";
         break;
     }
     self playsound(var_3decbda2);
@@ -277,7 +277,7 @@ function function_93765018(var_638b775a) {
     if (var_638b775a < 5) {
         self namespace_9ff9f642::function_520f4da5(#"frost_blast");
     } else {
-        self namespace_9ff9f642::function_520f4da5(#"hash_2f14933f9c381974");
+        self namespace_9ff9f642::function_520f4da5(#"frost_blast_5");
     }
 }
 

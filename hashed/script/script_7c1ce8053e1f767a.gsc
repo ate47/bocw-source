@@ -26,10 +26,10 @@ function function_70a657d8() {
     if (!is_true(getgametypesetting(#"hash_318abd2654cf527a")) && !getdvarint(#"hash_1afcd13f069fa385", 0)) {
         return;
     }
-    clientfield::register("scriptmover", "jump_pad_active", 1, 1, "int", &function_25dc718c, 0, 0);
-    clientfield::register("scriptmover", "jump_pad_essence_fx", 1, 1, "int", &function_c01b356c, 0, 0);
-    clientfield::register("scriptmover", "jump_pad_amb_sound_lp", 1, 1, "int", &function_da442c1, 0, 0);
-    clientfield::register("toplayer", "jump_pad_wind_sound", 1, 1, "int", &function_27dd512, 0, 0);
+    clientfield::register("scriptmover", "jump_pad_active", 1, 1, "int", &jump_pad_active, 0, 0);
+    clientfield::register("scriptmover", "jump_pad_essence_fx", 1, 1, "int", &jump_pad_essence_fx, 0, 0);
+    clientfield::register("scriptmover", "jump_pad_amb_sound_lp", 1, 1, "int", &jump_pad_amb_sound_lp, 0, 0);
+    clientfield::register("toplayer", "jump_pad_wind_sound", 1, 1, "int", &jump_pad_wind_sound, 0, 0);
     visionset_mgr::register_overlay_info_style_postfx_bundle("sr_jump_pad_visionset", 1, 1, "pstfx_jump_pad_launch");
 }
 
@@ -37,7 +37,7 @@ function function_70a657d8() {
 // Params 7, eflags: 0x0
 // Checksum 0xf9bf56d1, Offset: 0x408
 // Size: 0x164
-function function_25dc718c(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function jump_pad_active(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self endon(#"death");
     self util::waittill_dobj(fieldname);
     if (bwastimejump) {
@@ -59,7 +59,7 @@ function function_25dc718c(localclientnum, *oldval, newval, *bnewent, *binitials
 // Params 7, eflags: 0x0
 // Checksum 0x4a1fcd5e, Offset: 0x578
 // Size: 0x12c
-function function_c01b356c(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function jump_pad_essence_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self endon(#"death");
     self util::waittill_dobj(fieldname);
     if (bwastimejump) {
@@ -90,7 +90,7 @@ function function_6192b162() {
 // Params 7, eflags: 0x0
 // Checksum 0xd20c827b, Offset: 0x728
 // Size: 0x6a
-function function_da442c1(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function jump_pad_amb_sound_lp(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self.var_c50612a2 = self playloopsound(#"hash_67d068901551222c");
     }
@@ -100,7 +100,7 @@ function function_da442c1(*localclientnum, *oldval, newval, *bnewent, *binitials
 // Params 7, eflags: 0x0
 // Checksum 0xd9c66b56, Offset: 0x7a0
 // Size: 0xfe
-function function_27dd512(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function jump_pad_wind_sound(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self.var_dbe88563 = self playloopsound(#"hash_296e1c756ae8ae2b");
         self thread function_ca483953(fieldname);

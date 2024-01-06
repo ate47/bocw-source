@@ -1,13 +1,13 @@
 // Atian COD Tools GSC CW decompiler test
 #using scripts\core_common\lui_shared.csc;
 
-#namespace namespace_eb35e6da;
+#namespace sr_armor_menu;
 
-// Namespace namespace_eb35e6da
+// Namespace sr_armor_menu
 // Method(s) 6 Total 13
 class class_8ebbf51b : cluielem {
 
-    // Namespace class_8ebbf51b/namespace_eb35e6da
+    // Namespace class_8ebbf51b/sr_armor_menu
     // Params 0, eflags: 0x8
     // Checksum 0xf58476ea, Offset: 0x2f8
     // Size: 0x14
@@ -15,7 +15,7 @@ class class_8ebbf51b : cluielem {
         cluielem::__constructor();
     }
 
-    // Namespace class_8ebbf51b/namespace_eb35e6da
+    // Namespace class_8ebbf51b/sr_armor_menu
     // Params 0, eflags: 0x90 class_linked
     // Checksum 0x9604ee4a, Offset: 0x3c8
     // Size: 0x14
@@ -23,7 +23,7 @@ class class_8ebbf51b : cluielem {
         cluielem::__destructor();
     }
 
-    // Namespace namespace_8ebbf51b/namespace_eb35e6da
+    // Namespace namespace_8ebbf51b/sr_armor_menu
     // Params 1, eflags: 0x0
     // Checksum 0xe9672f07, Offset: 0x398
     // Size: 0x24
@@ -31,7 +31,7 @@ class class_8ebbf51b : cluielem {
         cluielem::open(localclientnum);
     }
 
-    // Namespace namespace_8ebbf51b/namespace_eb35e6da
+    // Namespace namespace_8ebbf51b/sr_armor_menu
     // Params 0, eflags: 0x0
     // Checksum 0x343720c7, Offset: 0x340
     // Size: 0x1c
@@ -39,7 +39,7 @@ class class_8ebbf51b : cluielem {
         cluielem::register_clientside("sr_armor_menu");
     }
 
-    // Namespace namespace_8ebbf51b/namespace_eb35e6da
+    // Namespace namespace_8ebbf51b/sr_armor_menu
     // Params 0, eflags: 0x0
     // Checksum 0xa460a7ea, Offset: 0x318
     // Size: 0x1c
@@ -47,7 +47,7 @@ class class_8ebbf51b : cluielem {
         cluielem::setup_clientfields("sr_armor_menu");
     }
 
-    // Namespace namespace_8ebbf51b/namespace_eb35e6da
+    // Namespace namespace_8ebbf51b/sr_armor_menu
     // Params 1, eflags: 0x0
     // Checksum 0xbb37dd6e, Offset: 0x368
     // Size: 0x24
@@ -57,7 +57,7 @@ class class_8ebbf51b : cluielem {
 
 }
 
-// Namespace namespace_eb35e6da/namespace_eb35e6da
+// Namespace sr_armor_menu/sr_armor_menu
 // Params 0, eflags: 0x0
 // Checksum 0xdfc0b962, Offset: 0xc8
 // Size: 0x16e
@@ -67,18 +67,18 @@ function register() {
     if (!isdefined(level.var_ae746e8f)) {
         level.var_ae746e8f = associativearray();
     }
-    if (!isdefined(level.var_ae746e8f[#"hash_26b59e932706b6ee"])) {
-        level.var_ae746e8f[#"hash_26b59e932706b6ee"] = [];
+    if (!isdefined(level.var_ae746e8f[#"sr_armor_menu"])) {
+        level.var_ae746e8f[#"sr_armor_menu"] = [];
     }
-    if (!isdefined(level.var_ae746e8f[#"hash_26b59e932706b6ee"])) {
-        level.var_ae746e8f[#"hash_26b59e932706b6ee"] = [];
-    } else if (!isarray(level.var_ae746e8f[#"hash_26b59e932706b6ee"])) {
-        level.var_ae746e8f[#"hash_26b59e932706b6ee"] = array(level.var_ae746e8f[#"hash_26b59e932706b6ee"]);
+    if (!isdefined(level.var_ae746e8f[#"sr_armor_menu"])) {
+        level.var_ae746e8f[#"sr_armor_menu"] = [];
+    } else if (!isarray(level.var_ae746e8f[#"sr_armor_menu"])) {
+        level.var_ae746e8f[#"sr_armor_menu"] = array(level.var_ae746e8f[#"sr_armor_menu"]);
     }
-    level.var_ae746e8f[#"hash_26b59e932706b6ee"][level.var_ae746e8f[#"hash_26b59e932706b6ee"].size] = elem;
+    level.var_ae746e8f[#"sr_armor_menu"][level.var_ae746e8f[#"sr_armor_menu"].size] = elem;
 }
 
-// Namespace namespace_eb35e6da/namespace_eb35e6da
+// Namespace sr_armor_menu/sr_armor_menu
 // Params 0, eflags: 0x0
 // Checksum 0xe1663481, Offset: 0x240
 // Size: 0x34
@@ -88,7 +88,7 @@ function register_clientside() {
     return elem;
 }
 
-// Namespace namespace_eb35e6da/namespace_eb35e6da
+// Namespace sr_armor_menu/sr_armor_menu
 // Params 1, eflags: 0x0
 // Checksum 0xb035c16b, Offset: 0x280
 // Size: 0x1c
@@ -96,7 +96,7 @@ function open(player) {
     [[ self ]]->open(player);
 }
 
-// Namespace namespace_eb35e6da/namespace_eb35e6da
+// Namespace sr_armor_menu/sr_armor_menu
 // Params 1, eflags: 0x0
 // Checksum 0x8a5d773e, Offset: 0x2a8
 // Size: 0x1c
@@ -104,7 +104,7 @@ function close(player) {
     [[ self ]]->close(player);
 }
 
-// Namespace namespace_eb35e6da/namespace_eb35e6da
+// Namespace sr_armor_menu/sr_armor_menu
 // Params 1, eflags: 0x0
 // Checksum 0xeaa27b4e, Offset: 0x2d0
 // Size: 0x1a

@@ -83,13 +83,13 @@ function function_cc21ae2e() {
     self.var_63c8edf4 linkto(self);
     self.var_6f3293fb linkto(self);
     var_b0c3aec3 = getentarray("flinger_landing_pad", "targetname");
-    foreach (var_f504f705 in var_b0c3aec3) {
-        if (var_f504f705.script_noteworthy === "landing_pad" && self.script_int === var_f504f705.script_int) {
-            var_f504f705 thread function_b4913776();
-            self.landing_pad = var_f504f705;
-            self.var_803f2038 = "landing_pad_active" + var_f504f705.script_int;
-            var_f504f705.var_90ddceac.var_f504f705 = self;
-            var_f504f705 function_619a5c20();
+    foreach (flinger_landing_pad in var_b0c3aec3) {
+        if (flinger_landing_pad.script_noteworthy === "landing_pad" && self.script_int === flinger_landing_pad.script_int) {
+            flinger_landing_pad thread function_b4913776();
+            self.landing_pad = flinger_landing_pad;
+            self.var_803f2038 = "landing_pad_active" + flinger_landing_pad.script_int;
+            flinger_landing_pad.var_90ddceac.flinger_landing_pad = self;
+            flinger_landing_pad function_619a5c20();
             break;
         }
     }

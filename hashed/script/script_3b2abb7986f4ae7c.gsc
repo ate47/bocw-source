@@ -157,7 +157,7 @@ function function_685a8288(instance) {
     var_69406530 setforcenocull();
     var_69406530 vehicle::toggle_tread_fx(1);
     var_69406530 vehicle::toggle_sounds(1);
-    var_69406530.var_99582f14.var_69406530 = 1;
+    var_69406530.b_ignore_fow_damage.var_69406530 = 1;
     var_69406530.var_1b9f096d.var_69406530 = 1;
     var_69406530.var_ac1388df.var_69406530 = 1;
     if (!issentient(var_69406530)) {
@@ -189,7 +189,7 @@ function function_685a8288(instance) {
                 break;
             }
         }
-        if (level.var_7d45d0d4.activeobjective.var_b588b063 === "holdout") {
+        if (level.var_7d45d0d4.activeobjective.content_script_name === "holdout") {
             wait(0.5);
             continue;
         }

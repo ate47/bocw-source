@@ -369,7 +369,7 @@ function private function_e674d71a(vehicle) {
         case #"helicopter_light":
             var_2bc6fbf6 = getgametypesetting(#"hash_7f190c8839d3f05c");
             break;
-        case #"hash_76cd61dae9df2928":
+        case #"helicopter_heavy":
             var_2bc6fbf6 = getgametypesetting(#"hash_4f00f3f568c284af");
             break;
         case #"hash_2212824fabcc986c":
@@ -448,7 +448,7 @@ function private function_f77a9b1b(vehicle) {
         case #"helicopter_light":
             var_2bc6fbf6 = getgametypesetting(#"hash_2a02614601829003");
             break;
-        case #"hash_76cd61dae9df2928":
+        case #"helicopter_heavy":
             var_2bc6fbf6 = getgametypesetting(#"hash_5598d36d6b224c9a");
             break;
         case #"hash_2212824fabcc986c":

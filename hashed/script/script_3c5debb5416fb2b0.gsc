@@ -4,9 +4,9 @@
 #using scripts\core_common\system_shared.csc;
 #using scripts\core_common\clientfield_shared.csc;
 
-#namespace namespace_e7ab676d;
+#namespace world_event_radio_tuning;
 
-// Namespace namespace_e7ab676d/namespace_e7ab676d
+// Namespace world_event_radio_tuning/world_event_radio_tuning
 // Params 0, eflags: 0x5
 // Checksum 0x6065b674, Offset: 0xa0
 // Size: 0x3c
@@ -14,7 +14,7 @@ function private autoexec __init__system__() {
     system::register(#"hash_7811e7ce71e374d0", &function_70a657d8, undefined, undefined, undefined);
 }
 
-// Namespace namespace_e7ab676d/namespace_e7ab676d
+// Namespace world_event_radio_tuning/world_event_radio_tuning
 // Params 0, eflags: 0x0
 // Checksum 0xe2acc168, Offset: 0xe8
 // Size: 0xe4
@@ -28,10 +28,10 @@ function function_70a657d8() {
     if (!is_true(getgametypesetting(#"hash_4e8a552c8b6dcbb2")) && !getdvarint(#"hash_730311c63805303a", 0)) {
         return;
     }
-    util::register_system(#"hash_38eb1a36dcb54190", &function_214fe607);
+    util::register_system(#"musicunlock", &function_214fe607);
 }
 
-// Namespace namespace_e7ab676d/namespace_e7ab676d
+// Namespace world_event_radio_tuning/world_event_radio_tuning
 // Params 3, eflags: 0x0
 // Checksum 0x587661c2, Offset: 0x1d8
 // Size: 0x26c
@@ -41,43 +41,43 @@ function function_214fe607(localclientnum, state, *oldstate) {
     }
     var_8c7054cc = undefined;
     switch (oldstate) {
-    case #"hash_7490a1208ba135a3":
+    case #"unlocksrmus_01":
         var_8c7054cc = #"musictrack_sr_lullaby";
         break;
-    case #"hash_7490a2208ba13756":
+    case #"unlocksrmus_02":
         var_8c7054cc = #"musictrack_sr_theone";
         break;
-    case #"hash_7490a3208ba13909":
+    case #"unlocksrmus_03":
         var_8c7054cc = #"musictrack_sr_abra";
         break;
-    case #"hash_7490a4208ba13abc":
+    case #"unlocksrmus_04":
         var_8c7054cc = #"musictrack_sr_brave";
         break;
-    case #"hash_7490a5208ba13c6f":
+    case #"unlocksrmus_05":
         var_8c7054cc = #"musictrack_sr_aminfil";
         break;
-    case #"hash_7490a6208ba13e22":
+    case #"unlocksrmus_06":
         var_8c7054cc = #"musictrack_zm_silver_ee";
         break;
-    case #"hash_7490a7208ba13fd5":
+    case #"unlocksrmus_07":
         var_8c7054cc = #"musictrack_zm_gold_ee";
         break;
-    case #"hash_7490a8208ba14188":
+    case #"unlocksrmus_08":
         var_8c7054cc = #"musictrack_sr_generation";
         break;
-    case #"hash_7490a9208ba1433b":
+    case #"unlocksrmus_09":
         var_8c7054cc = #"musictrack_sr_avogadro";
         break;
-    case #"hash_749426208ba44d79":
+    case #"unlocksrmus_10":
         var_8c7054cc = #"musictrack_sr_frequency";
         break;
-    case #"hash_749425208ba44bc6":
+    case #"unlocksrmus_11":
         var_8c7054cc = #"musictrack_sr_boa";
         break;
-    case #"hash_749424208ba44a13":
+    case #"unlocksrmus_12":
         var_8c7054cc = #"musictrack_sr_pareidolia";
         break;
-    case #"hash_749423208ba44860":
+    case #"unlocksrmus_13":
         var_8c7054cc = #"musictrack_sr_tribes";
         break;
     }

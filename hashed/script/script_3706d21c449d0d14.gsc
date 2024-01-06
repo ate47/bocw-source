@@ -365,19 +365,19 @@ function function_57ba1474(var_648a2ef0) {
         /#
             var_89694459 = getdvarstring(#"overridedifficulty", "<unknown string>");
             switch (tolower(var_89694459)) {
-            case #"hash_2cd4519f045aef21":
+            case #"recruit":
                 level.var_d2257418 = 0;
                 break;
             case #"regular":
                 level.var_d2257418 = 1;
                 break;
-            case #"hash_2b3ab0d493df360e":
+            case #"hardened":
                 level.var_d2257418 = 2;
                 break;
-            case #"hash_6c671baf4f8496d4":
+            case #"veteran":
                 level.var_d2257418 = 3;
                 break;
-            case #"hash_48ddc63df69a1c7f":
+            case #"realistic":
                 level.var_d2257418 = 4;
                 break;
             }

@@ -5,9 +5,9 @@
 #using scripts\core_common\system_shared.csc;
 #using scripts\core_common\clientfield_shared.csc;
 
-#namespace namespace_2303c104;
+#namespace world_event_horde_hunt;
 
-// Namespace namespace_2303c104/namespace_2303c104
+// Namespace world_event_horde_hunt/world_event_horde_hunt
 // Params 0, eflags: 0x5
 // Checksum 0x3a37b9f7, Offset: 0x158
 // Size: 0x3c
@@ -15,7 +15,7 @@ function private autoexec __init__system__() {
     system::register(#"hash_1e60252f388011fb", &function_70a657d8, undefined, undefined, undefined);
 }
 
-// Namespace namespace_2303c104/namespace_2303c104
+// Namespace world_event_horde_hunt/world_event_horde_hunt
 // Params 0, eflags: 0x0
 // Checksum 0xb521cfc8, Offset: 0x1a0
 // Size: 0x144
@@ -29,15 +29,15 @@ function function_70a657d8() {
     if (!is_true(getgametypesetting(#"hash_7029ea8551fb906f")) && !getdvarint(#"hash_730311c63805303a", 0)) {
         return;
     }
-    clientfield::register("actor", "sr_horde_hunt_fx", 1, 1, "int", &function_4d144c6a, 0, 0);
-    clientfield::register("world", "sr_horde_hunt_decals", 1, 2, "int", &function_b7e9f79d, 0, 0);
+    clientfield::register("actor", "sr_horde_hunt_fx", 1, 1, "int", &sr_horde_hunt_fx, 0, 0);
+    clientfield::register("world", "sr_horde_hunt_decals", 1, 2, "int", &sr_horde_hunt_decals, 0, 0);
 }
 
-// Namespace namespace_2303c104/namespace_2303c104
+// Namespace world_event_horde_hunt/world_event_horde_hunt
 // Params 7, eflags: 0x0
 // Checksum 0x671ead85, Offset: 0x2f0
 // Size: 0x144
-function function_4d144c6a(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function sr_horde_hunt_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1 && isdefined(self)) {
         self util::waittill_dobj(fieldname);
         if (!isdefined(self)) {
@@ -53,11 +53,11 @@ function function_4d144c6a(localclientnum, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_2303c104/namespace_2303c104
+// Namespace world_event_horde_hunt/world_event_horde_hunt
 // Params 7, eflags: 0x0
 // Checksum 0x4382902a, Offset: 0x440
 // Size: 0x128
-function function_b7e9f79d(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function sr_horde_hunt_decals(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         str_targetname = "hordehunt_corpses_1";
     } else if (bwastimejump == 2) {

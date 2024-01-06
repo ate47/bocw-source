@@ -1307,7 +1307,7 @@ function function_6e338a1c() {
     if (!is_true(getgametypesetting(#"hash_4cec0e29a8901e65"))) {
         namespace_1c7b37c6::item_remover(var_87d0eef8, #"item_survival_scorestreak_hand_cannon");
     }
-    if (!is_true(getgametypesetting(#"hash_3ab300fc07c95c32"))) {
+    if (!is_true(getgametypesetting(#"zmenablescorestreaknapalmstrike"))) {
         namespace_1c7b37c6::item_remover(var_87d0eef8, #"item_survival_scorestreak_napalm_strike");
     }
     if (!is_true(getgametypesetting(#"hash_3c47218eb5aa98c9"))) {

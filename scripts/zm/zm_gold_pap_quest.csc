@@ -49,9 +49,9 @@ function function_7d467651(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0xfe
 function function_e4ea3f5f(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     var_ca9ffa6a = getentarray(bwasdemojump, "gold_teleporter", "targetname");
-    foreach (var_ad142a82 in var_ca9ffa6a) {
-        var_ad142a82 function_619a5c20();
-        var_ad142a82.var_fc558e74.var_ad142a82 = "gold_teleporter";
+    foreach (teleporter in var_ca9ffa6a) {
+        teleporter function_619a5c20();
+        teleporter.var_fc558e74.teleporter = "gold_teleporter";
     }
 }
 
@@ -61,7 +61,7 @@ function function_e4ea3f5f(localclientnum, *oldval, *newval, *bnewent, *binitial
 // Size: 0xf0
 function function_b35747a(localclientnum, oldval, newval, bnewent, binitialsnap, fieldname, bwasdemojump) {
     foreach (var_1da0aee8 in getentarray(localclientnum, "gold_teleporter", "targetname")) {
-        var_1da0aee8 zm_utility::function_7953267a(localclientnum, oldval, newval, bnewent, binitialsnap, fieldname, bwasdemojump);
+        var_1da0aee8 zm_utility::set_compass_icon(localclientnum, oldval, newval, bnewent, binitialsnap, fieldname, bwasdemojump);
     }
 }
 

@@ -8,9 +8,9 @@
 #using scripts\core_common\array_shared.gsc;
 #using scripts\core_common\aat_shared.gsc;
 
-#namespace namespace_d53389a8;
+#namespace ammomod_napalmburst;
 
-// Namespace namespace_d53389a8/namespace_d53389a8
+// Namespace ammomod_napalmburst/ammomod_napalmburst
 // Params 0, eflags: 0x0
 // Checksum 0xdc47c2e0, Offset: 0x260
 // Size: 0x3dc
@@ -35,36 +35,36 @@ function function_4e4244c1() {
     level.var_da1321f4 = &function_80b0dbe5;
 }
 
-// Namespace namespace_d53389a8/namespace_d53389a8
+// Namespace ammomod_napalmburst/ammomod_napalmburst
 // Params 1, eflags: 0x4
 // Checksum 0x147782cc, Offset: 0x648
 // Size: 0xdc
 function private function_e8018847(aat_name = "ammomod_napalmburst") {
     switch (aat_name) {
-    case #"hash_3a26d24b0468790f":
+    case #"ammomod_napalmburst":
     case #"hash_defdefdefdefdef0":
         return 0;
         break;
-    case #"hash_6d8becbd4aed0df3":
+    case #"ammomod_napalmburst_1":
         return 1;
         break;
-    case #"hash_6d8bedbd4aed0fa6":
+    case #"ammomod_napalmburst_2":
         return 2;
         break;
-    case #"hash_6d8beebd4aed1159":
+    case #"ammomod_napalmburst_3":
         return 3;
         break;
-    case #"hash_6d8befbd4aed130c":
+    case #"ammomod_napalmburst_4":
         return 4;
         break;
-    case #"hash_6d8bf0bd4aed14bf":
+    case #"ammomod_napalmburst_5":
         return 5;
         break;
     }
     return 0;
 }
 
-// Namespace namespace_d53389a8/namespace_d53389a8
+// Namespace ammomod_napalmburst/ammomod_napalmburst
 // Params 8, eflags: 0x0
 // Checksum 0x80fabf, Offset: 0x730
 // Size: 0x304
@@ -106,23 +106,23 @@ function result(death, attacker, mod, weapon, var_fd90b0bb, vpoint, *shitloc, *b
     }
 }
 
-// Namespace namespace_d53389a8/namespace_d53389a8
+// Namespace ammomod_napalmburst/ammomod_napalmburst
 // Params 1, eflags: 0x4
 // Checksum 0x9862234d, Offset: 0xa40
 // Size: 0xc2
 function private function_4f7f29ab(e_attacker) {
     n_current_time = float(gettime()) / 1000;
     if (isplayer(e_attacker)) {
-        if (!isdefined(e_attacker.aat_cooldown_start[#"hash_28aafab9c6f0945f"])) {
+        if (!isdefined(e_attacker.aat_cooldown_start[#"zm_ammomod_napalmburst_explosion"])) {
             return 1;
-        } else if (isdefined(e_attacker.aat_cooldown_start[#"hash_28aafab9c6f0945f"]) && n_current_time >= e_attacker.aat_cooldown_start[#"hash_28aafab9c6f0945f"] + 30) {
+        } else if (isdefined(e_attacker.aat_cooldown_start[#"zm_ammomod_napalmburst_explosion"]) && n_current_time >= e_attacker.aat_cooldown_start[#"zm_ammomod_napalmburst_explosion"] + 30) {
             return 1;
         }
     }
     return 0;
 }
 
-// Namespace namespace_d53389a8/namespace_d53389a8
+// Namespace ammomod_napalmburst/ammomod_napalmburst
 // Params 6, eflags: 0x0
 // Checksum 0xe5e176f4, Offset: 0xb10
 // Size: 0x280
@@ -135,7 +135,7 @@ function function_c8e3a0dc(var_4589e270, var_23255fc5, e_attacker, *mod, w_weapo
     }
     n_range = 144;
     if (isplayer(mod)) {
-        mod.aat_cooldown_start[#"hash_28aafab9c6f0945f"] = float(gettime()) / 1000;
+        mod.aat_cooldown_start[#"zm_ammomod_napalmburst_explosion"] = float(gettime()) / 1000;
     }
     a_potential_targets = getentitiesinradius(e_attacker, 144, 15);
     count = 0;
@@ -158,7 +158,7 @@ function function_c8e3a0dc(var_4589e270, var_23255fc5, e_attacker, *mod, w_weapo
     }
 }
 
-// Namespace namespace_d53389a8/namespace_d53389a8
+// Namespace ammomod_napalmburst/ammomod_napalmburst
 // Params 3, eflags: 0x0
 // Checksum 0x44ea484a, Offset: 0xd98
 // Size: 0x296
@@ -205,7 +205,7 @@ function function_80b0dbe5(e_attacker, w_weapon, tier) {
     self.var_e7dcb25b = undefined;
 }
 
-// Namespace namespace_d53389a8/namespace_d53389a8
+// Namespace ammomod_napalmburst/ammomod_napalmburst
 // Params 0, eflags: 0x0
 // Checksum 0xe6e9ba44, Offset: 0x1038
 // Size: 0x58
@@ -219,7 +219,7 @@ function function_74816787() {
     self.var_2290a541++;
 }
 
-// Namespace namespace_d53389a8/namespace_d53389a8
+// Namespace ammomod_napalmburst/ammomod_napalmburst
 // Params 0, eflags: 0x0
 // Checksum 0xade8717e, Offset: 0x1098
 // Size: 0x54
@@ -233,7 +233,7 @@ function function_68364c40() {
     }
 }
 
-// Namespace namespace_d53389a8/namespace_d53389a8
+// Namespace ammomod_napalmburst/ammomod_napalmburst
 // Params 5, eflags: 0x0
 // Checksum 0x51afefa3, Offset: 0x10f8
 // Size: 0x114
@@ -248,7 +248,7 @@ function function_be5234be(attacker, mod, weapon, var_fd90b0bb, tier = 0) {
     }
 }
 
-// Namespace namespace_d53389a8/namespace_d53389a8
+// Namespace ammomod_napalmburst/ammomod_napalmburst
 // Params 3, eflags: 0x0
 // Checksum 0x58207c2d, Offset: 0x1218
 // Size: 0xcc

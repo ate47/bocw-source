@@ -953,7 +953,7 @@ function private function_838ac041(entity) {
                 }
             #/
         }
-        entity waittill(#"goal", #"goal_changed", #"hash_49e873f367b910d9", #"pathfind_result");
+        entity waittill(#"goal", #"goal_changed", #"path_set", #"pathfind_result");
         waitframe(1);
     }
 }

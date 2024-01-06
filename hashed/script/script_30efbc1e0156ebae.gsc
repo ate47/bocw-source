@@ -41,15 +41,15 @@ function init() {
 // Checksum 0x2484d79a, Offset: 0x2b8
 // Size: 0x13c
 function function_32d5e898(*localclientnum) {
-    level.var_8cff5775.var_8f6ccf63 = [];
-    level.var_8cff5775.var_938e4f08 = 0;
+    level.doa.var_8f6ccf63 = [];
+    level.doa.var_938e4f08 = 0;
     var_b411e9f2 = struct::get_array("zombietron_bonus_room", "targetname");
     foreach (room in var_b411e9f2) {
         if (isdefined(room.script_parameters)) {
             args = strtok(room.script_parameters, ";");
             room.var_899e2128.room = int(args[0]);
         }
-        level.var_8cff5775.var_8f6ccf63[room.script_noteworthy] = room;
+        level.doa.var_8f6ccf63[room.script_noteworthy] = room;
     }
 }
 
@@ -58,7 +58,7 @@ function function_32d5e898(*localclientnum) {
 // Checksum 0x6a1a7263, Offset: 0x400
 // Size: 0x362
 function function_40356127(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
-    level.var_8cff5775.var_938e4f08 = bwastimejump;
+    level.doa.var_938e4f08 = bwastimejump;
     switch (bwastimejump) {
     case 0:
         function_a7ff1fc3(fieldname);
@@ -117,15 +117,15 @@ function function_40356127(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0x104
 function function_a7ff1fc3(localclientnum) {
     player = function_5c10bd79(localclientnum);
-    if (!isdefined(player) || !isdefined(player.var_8cff5775)) {
+    if (!isdefined(player) || !isdefined(player.doa)) {
         return;
     }
-    if (isdefined(player.var_8cff5775.var_903d75b1)) {
-        player.var_8cff5775.cameramode = player namespace_ac2a80f5::function_f7736714(localclientnum, player.var_8cff5775.var_903d75b1);
+    if (isdefined(player.doa.var_903d75b1)) {
+        player.doa.cameramode = player namespace_ac2a80f5::function_f7736714(localclientnum, player.doa.var_903d75b1);
     } else {
-        player.var_8cff5775.cameramode = 1;
+        player.doa.cameramode = 1;
     }
-    player namespace_ac2a80f5::function_288d5ebb(player.var_8cff5775.cameramode);
+    player namespace_ac2a80f5::changecamera(player.doa.cameramode);
     namespace_9fc66ac::function_a77649db(0);
     namespace_4dae815d::function_b6e8ef46();
 }
@@ -136,18 +136,18 @@ function function_a7ff1fc3(localclientnum) {
 // Size: 0x124
 function function_d2e02ee(localclientnum, name) {
     /#
-        assert(isdefined(level.var_8cff5775.var_8f6ccf63[name]));
+        assert(isdefined(level.doa.var_8f6ccf63[name]));
     #/
-    room = level.var_8cff5775.var_8f6ccf63[name];
+    room = level.doa.var_8f6ccf63[name];
     player = function_5c10bd79(localclientnum);
-    if (!isdefined(player.var_8cff5775)) {
+    if (!isdefined(player.doa)) {
         return;
     }
     if (!is_true(room.var_899e2128)) {
-        player.var_8cff5775.cameramode = 7;
+        player.doa.cameramode = 7;
     }
-    level.var_8cff5775.var_b73cc08.origin = room.origin;
-    level.var_8cff5775.var_b73cc08.angles = room.angles;
+    level.doa.var_b73cc08.origin = room.origin;
+    level.doa.var_b73cc08.angles = room.angles;
     namespace_9fc66ac::function_a77649db(1, name);
 }
 

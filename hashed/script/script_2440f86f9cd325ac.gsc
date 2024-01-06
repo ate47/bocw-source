@@ -34,7 +34,7 @@
 function function_98acc465() {
     self endon(#"death");
     self physicslaunch(self.origin, vectorscale((0, 0, 1), 10));
-    self.health = 500 + level.var_8cff5775.var_6c58d51 * 500;
+    self.health = 500 + level.doa.var_6c58d51 * 500;
     if (self.type === 33) {
         self.health = self.health + 1250;
     }
@@ -50,18 +50,18 @@ function function_98acc465() {
     wait(1);
     self namespace_e32bb68::function_3a59ec34("zmb_egg_hatch");
     self namespace_83eb6304::function_3ecfde67("egg_hatch");
-    if (isdefined(self.var_94a6a59e)) {
-        var_94a6a59e = self.var_94a6a59e;
+    if (isdefined(self.prize)) {
+        prize = self.prize;
     } else {
-        var_94a6a59e = namespace_dfc652ee::function_2c9923d7(function_137dd3d5(self.type));
+        prize = namespace_dfc652ee::function_2c9923d7(function_137dd3d5(self.type));
     }
     origin = namespace_ec06fe4a::function_65ee50ba(self.origin, 10) + vectorscale((0, 0, 1), 12);
-    if ([[ var_94a6a59e ]]->gettype() != 13) {
-        var_94a6a59e = namespace_dfc652ee::itemspawn(var_94a6a59e, origin, undefined, 1, 1);
+    if ([[ prize ]]->gettype() != 13) {
+        prize = namespace_dfc652ee::itemspawn(prize, origin, undefined, 1, 1);
     } else {
-        var_94a6a59e = namespace_dfc652ee::function_b8f6a8cd(level.var_8cff5775.var_9a6327ee, origin, 1, 1, randomfloatrange(1, 3));
+        prize = namespace_dfc652ee::function_b8f6a8cd(level.doa.var_9a6327ee, origin, 1, 1, randomfloatrange(1, 3));
     }
-    level notify(#"hash_1ebd993fc32acc25", {#var_d3558104:self, #var_94a6a59e:var_94a6a59e});
+    level notify(#"hash_1ebd993fc32acc25", {#egg:self, #prize:prize});
     util::wait_network_frame();
     self.pickup = undefined;
 }

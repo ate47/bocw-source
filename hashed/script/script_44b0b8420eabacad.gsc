@@ -350,14 +350,14 @@ function function_82ca1565(spawnpoint, gametype) {
     case #"hash_317e5380181c9168":
         return is_true(spawnpoint.var_50bf3e3b);
         break;
-    case #"hash_68e906194eba76f0":
-        return is_true(spawnpoint.var_774aa859);
+    case #"vip":
+        return is_true(spawnpoint.vip);
         break;
     case #"war":
         return is_true(spawnpoint.war);
         break;
-    case #"hash_527f2aa95e2f400a":
-        return is_true(spawnpoint.var_1b79ce2c);
+    case #"dropkick":
+        return is_true(spawnpoint.dropkick);
         break;
     case #"hash_35b3b60f0a291417":
         return is_true(spawnpoint.var_3cb82e5e);

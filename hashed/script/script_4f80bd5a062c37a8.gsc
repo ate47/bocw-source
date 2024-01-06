@@ -34,9 +34,9 @@
 // Size: 0x484
 function function_86bd7962(player, spot = player.origin, mg = 1) {
     if (mg) {
-        sentry = level.var_8cff5775.pickups.var_ef3f4447 spawner::spawn(1, "zombietron_sentry_spawner");
+        sentry = level.doa.pickups.var_ef3f4447 spawner::spawn(1, "zombietron_sentry_spawner");
     } else {
-        sentry = level.var_8cff5775.pickups.var_9eec57e8 spawner::spawn(1, "zombietron_grenade_spawner");
+        sentry = level.doa.pickups.var_9eec57e8 spawner::spawn(1, "zombietron_grenade_spawner");
     }
     var_540d3e16 = namespace_ec06fe4a::function_e22ae9b3(sentry.origin);
     if (!isdefined(sentry)) {
@@ -53,7 +53,7 @@ function function_86bd7962(player, spot = player.origin, mg = 1) {
     sentry.angles.sentry = (player.angles[0], player.angles[1], 0);
     sentry.weapon.sentry = sentry seatgetweapon(0);
     sentry turretsetontargettolerance(0, 10);
-    sentry namespace_83eb6304::function_3ecfde67("player_trail_" + player.var_8cff5775.color);
+    sentry namespace_83eb6304::function_3ecfde67("player_trail_" + player.doa.color);
     sentry thread namespace_ec06fe4a::function_1a117d29(spot, 0.5);
     sentry waittill(#"movedone");
     sentry.angles.sentry = (sentry.angles[0], sentry.angles[1], 0);
@@ -240,14 +240,14 @@ function function_aa217b6c(enemy) {
     if (!isdefined(enemy)) {
         return;
     }
-    if (!isdefined(level.var_8cff5775.var_23e902a0)) {
-        level.var_8cff5775.var_23e902a0 = getweapon("zombietron_missile_turret_weapon");
+    if (!isdefined(level.doa.var_23e902a0)) {
+        level.doa.var_23e902a0 = getweapon("zombietron_missile_turret_weapon");
     }
     v_dir = vectornormalize(enemy.origin - self.origin);
     var_a64609fe = v_dir * 200;
     owner = isdefined(self.owner) ? self.owner : self;
     if (namespace_ec06fe4a::function_a8975c67(64)) {
-        missile = owner magicmissile(level.var_8cff5775.var_23e902a0, self gettagorigin("tag_flash"), var_a64609fe, enemy);
+        missile = owner magicmissile(level.doa.var_23e902a0, self gettagorigin("tag_flash"), var_a64609fe, enemy);
         self namespace_83eb6304::function_3ecfde67("muzzleFlash_md");
         self namespace_e32bb68::function_3a59ec34("evt_doa_pickup_missileturret_fire");
     }

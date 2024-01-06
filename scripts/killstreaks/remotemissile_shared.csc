@@ -28,11 +28,11 @@ function init_shared() {
         clientfield::register("missile", "remote_missile_bomblet_fired", 1, 1, "int", &bomblets_deployed, 0, 0);
         clientfield::register("missile", "remote_missile_fired", 1, 2, "int", &missile_fired, 0, 0);
         clientfield::register("missile", "remote_missile_phase2", 1, 1, "int", undefined, 0, 0);
-        clientfield::register("toplayer", "remote_missile_piloting", 1, 1, "int", &function_72c9005e, 0, 1);
+        clientfield::register("toplayer", "remote_missile_piloting", 1, 1, "int", &remote_missile_piloting, 0, 1);
         clientfield::register_clientuimodel("hudItems.remoteMissilePhase2", #"hash_6f4b11a0bee9b73d", #"remotemissilephase2", 1, 1, "int", undefined, 0, 0);
         clientfield::register("scriptmover", "hellstorm_camera", 1, 1, "int", &function_6d66e75a, 0, 0);
         clientfield::register("scriptmover", "hellstorm_deploy", 1, 1, "int", &hellstorm_deploy, 0, 0);
-        clientfield::register("scriptmover", "remote_missile_child_rocket_fx", 1, 1, "int", &function_7bbc1658, 0, 0);
+        clientfield::register("scriptmover", "remote_missile_child_rocket_fx", 1, 1, "int", &remote_missile_child_rocket_fx, 0, 0);
         callback::function_74f5faf8(&function_74f5faf8);
         callback::on_spawned(&on_player_spawned);
         bundlename = "killstreak_remote_missile";
@@ -335,7 +335,7 @@ function function_d260edc9(localclientnum, enabled) {
 // Params 7, eflags: 0x0
 // Checksum 0x226dc77e, Offset: 0x1848
 // Size: 0x1fc
-function function_72c9005e(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function remote_missile_piloting(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     postfxbundle = level.var_bb1f7e1e.var_19f55f0;
     rumble = level.var_bb1f7e1e.var_f0728ef;
     self util::function_6d0694af();
@@ -373,7 +373,7 @@ function function_72c9005e(localclientnum, *oldval, newval, *bnewent, *binitials
 // Params 7, eflags: 0x0
 // Checksum 0x607fa09e, Offset: 0x1a50
 // Size: 0x74
-function function_7bbc1658(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function remote_missile_child_rocket_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         util::playfxontag(fieldname, level.var_bb1f7e1e.var_96312ae9, self, "tag_fx");
     }

@@ -85,65 +85,65 @@ function function_5700f119() {
 // Size: 0x100c
 function private function_eebf86a4() {
     /#
-        assert(isscriptfunctionptr(&function_d38b475f));
+        assert(isscriptfunctionptr(&mechztargetservice));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzTargetService", &function_d38b475f);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzTargetService", &mechztargetservice);
     /#
-        assert(isscriptfunctionptr(&function_d177be75));
+        assert(isscriptfunctionptr(&mechzgrenadeservice));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzGrenadeService", &function_d177be75);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzGrenadeService", &mechzgrenadeservice);
     /#
-        assert(isscriptfunctionptr(&function_1c9301d6));
+        assert(isscriptfunctionptr(&mechzberserkknockdownservice));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzBerserkKnockdownService", &function_1c9301d6);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzBerserkKnockdownService", &mechzberserkknockdownservice);
     /#
-        assert(isscriptfunctionptr(&function_2a1d23a3));
+        assert(isscriptfunctionptr(&mechzshouldmelee));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShouldMelee", &function_2a1d23a3);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShouldMelee", &mechzshouldmelee);
     /#
-        assert(isscriptfunctionptr(&function_95c51ad6));
+        assert(isscriptfunctionptr(&mechzshouldshowpain));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShouldShowPain", &function_95c51ad6);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShouldShowPain", &mechzshouldshowpain);
     /#
-        assert(isscriptfunctionptr(&function_843546a7));
+        assert(isscriptfunctionptr(&mechzshouldshowjetpackpain));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShouldShowJetpackPain", &function_843546a7);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShouldShowJetpackPain", &mechzshouldshowjetpackpain);
     /#
-        assert(isscriptfunctionptr(&function_3b7595ba));
+        assert(isscriptfunctionptr(&mechzenemyinaim));
     #/
-    behaviorstatemachine::registerbsmscriptapiinternal("mechzEnemyInAim", &function_3b7595ba);
+    behaviorstatemachine::registerbsmscriptapiinternal("mechzEnemyInAim", &mechzenemyinaim);
     /#
-        assert(isscriptfunctionptr(&function_15b0a251));
+        assert(isscriptfunctionptr(&mechzenemynotinaim));
     #/
-    behaviorstatemachine::registerbsmscriptapiinternal("mechzEnemyNotInAim", &function_15b0a251);
+    behaviorstatemachine::registerbsmscriptapiinternal("mechzEnemyNotInAim", &mechzenemynotinaim);
     /#
-        assert(isscriptfunctionptr(&function_6aa1f869));
+        assert(isscriptfunctionptr(&mechzshouldshootgrenade));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShouldShootGrenade", &function_6aa1f869);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShouldShootGrenade", &mechzshouldshootgrenade);
     /#
-        assert(isscriptfunctionptr(&function_45f4e87d));
+        assert(isscriptfunctionptr(&mechzshouldshootflame));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShouldShootFlame", &function_45f4e87d);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShouldShootFlame", &mechzshouldshootflame);
     /#
-        assert(isscriptfunctionptr(&function_c929b50f));
+        assert(isscriptfunctionptr(&mechzshouldshootflamesweep));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShouldShootFlameSweep", &function_c929b50f);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShouldShootFlameSweep", &mechzshouldshootflamesweep);
     /#
-        assert(isscriptfunctionptr(&function_55d53cbb));
+        assert(isscriptfunctionptr(&mechzshouldturnberserk));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShouldTurnBerserk", &function_55d53cbb);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShouldTurnBerserk", &mechzshouldturnberserk);
     /#
-        assert(isscriptfunctionptr(&function_70d2a97f));
+        assert(isscriptfunctionptr(&mechzshouldstumble));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShouldStumble", &function_70d2a97f);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShouldStumble", &mechzshouldstumble);
     /#
-        assert(isscriptfunctionptr(&function_77bd7d26));
+        assert(isscriptfunctionptr(&mechzisinsafezone));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzIsInSafeZone", &function_77bd7d26);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzIsInSafeZone", &mechzisinsafezone);
     /#
-        assert(isscriptfunctionptr(&function_bb90106e));
+        assert(isscriptfunctionptr(&mechzshouldturninplacebeforeidle));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShouldTurnInPlaceBeforeIdle", &function_bb90106e);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShouldTurnInPlaceBeforeIdle", &mechzshouldturninplacebeforeidle);
     /#
         assert(!isdefined(&function_db525b31) || isscriptfunctionptr(&function_db525b31));
     #/
@@ -165,85 +165,85 @@ function private function_eebf86a4() {
     #/
     behaviortreenetworkutility::registerbehaviortreeaction("mechzShootFlameAction", &function_5a7ad15e, &function_a3c24f6a, &function_d58e0db5);
     /#
-        assert(isscriptfunctionptr(&function_d40c590a));
+        assert(isscriptfunctionptr(&mechzpreptoshootgrenadestart));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzPrepToShootGrenadeStart", &function_d40c590a);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzPrepToShootGrenadeStart", &mechzpreptoshootgrenadestart);
     /#
-        assert(isscriptfunctionptr(&function_d40c590a));
+        assert(isscriptfunctionptr(&mechzpreptoshootgrenadestart));
     #/
-    behaviorstatemachine::registerbsmscriptapiinternal("mechzPrepToShootGrenadeStart", &function_d40c590a);
+    behaviorstatemachine::registerbsmscriptapiinternal("mechzPrepToShootGrenadeStart", &mechzpreptoshootgrenadestart);
     /#
-        assert(isscriptfunctionptr(&function_f5ffcbb4));
+        assert(isscriptfunctionptr(&mechzpreptoshootgrenadesterminate));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzPrepToShootGrenadesTerminate", &function_f5ffcbb4);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzPrepToShootGrenadesTerminate", &mechzpreptoshootgrenadesterminate);
     /#
-        assert(isscriptfunctionptr(&function_f5ffcbb4));
+        assert(isscriptfunctionptr(&mechzpreptoshootgrenadesterminate));
     #/
-    behaviorstatemachine::registerbsmscriptapiinternal("mechzPrepToShootGrenadesTerminate", &function_f5ffcbb4);
+    behaviorstatemachine::registerbsmscriptapiinternal("mechzPrepToShootGrenadesTerminate", &mechzpreptoshootgrenadesterminate);
     /#
-        assert(isscriptfunctionptr(&function_61dd507d));
+        assert(isscriptfunctionptr(&mechzshootgrenadestart));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShootGrenadeStart", &function_61dd507d);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShootGrenadeStart", &mechzshootgrenadestart);
     /#
-        assert(isscriptfunctionptr(&function_61dd507d));
+        assert(isscriptfunctionptr(&mechzshootgrenadestart));
     #/
-    behaviorstatemachine::registerbsmscriptapiinternal("mechzShootGrenadeStart", &function_61dd507d);
+    behaviorstatemachine::registerbsmscriptapiinternal("mechzShootGrenadeStart", &mechzshootgrenadestart);
     /#
-        assert(isscriptfunctionptr(&function_e8c59ca8));
+        assert(isscriptfunctionptr(&mechzshootgrenadeterminate));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShootGrenadeTerminate", &function_e8c59ca8);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShootGrenadeTerminate", &mechzshootgrenadeterminate);
     /#
-        assert(isscriptfunctionptr(&function_e8c59ca8));
+        assert(isscriptfunctionptr(&mechzshootgrenadeterminate));
     #/
-    behaviorstatemachine::registerbsmscriptapiinternal("mechzShootGrenadeTerminate", &function_e8c59ca8);
+    behaviorstatemachine::registerbsmscriptapiinternal("mechzShootGrenadeTerminate", &mechzshootgrenadeterminate);
     /#
-        assert(isscriptfunctionptr(&function_fc05dfd3));
+        assert(isscriptfunctionptr(&mechzsetspeedwalk));
     #/
-    behaviorstatemachine::registerbsmscriptapiinternal("mechzSetSpeedWalk", &function_fc05dfd3);
+    behaviorstatemachine::registerbsmscriptapiinternal("mechzSetSpeedWalk", &mechzsetspeedwalk);
     /#
-        assert(isscriptfunctionptr(&function_1a37c206));
+        assert(isscriptfunctionptr(&mechzsetspeedrun));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzSetSpeedRun", &function_1a37c206);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzSetSpeedRun", &mechzsetspeedrun);
     /#
-        assert(isscriptfunctionptr(&function_4b2bb1e));
+        assert(isscriptfunctionptr(&mechzshootflame));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShootFlame", &function_4b2bb1e);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzShootFlame", &mechzshootflame);
     /#
-        assert(isscriptfunctionptr(&function_3c48fa1b));
+        assert(isscriptfunctionptr(&mechzupdateflame));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzUpdateFlame", &function_3c48fa1b);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzUpdateFlame", &mechzupdateflame);
     /#
-        assert(isscriptfunctionptr(&function_a7ee39a8));
+        assert(isscriptfunctionptr(&mechzstopflame));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzStopFlame", &function_a7ee39a8);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzStopFlame", &mechzstopflame);
     /#
-        assert(isscriptfunctionptr(&function_2f8660f6));
+        assert(isscriptfunctionptr(&mechzplayedberserkintro));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzPlayedBerserkIntro", &function_2f8660f6);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzPlayedBerserkIntro", &mechzplayedberserkintro);
     /#
-        assert(isscriptfunctionptr(&function_9bcfb4ed));
+        assert(isscriptfunctionptr(&mechzattackstart));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzAttackStart", &function_9bcfb4ed);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzAttackStart", &mechzattackstart);
     /#
-        assert(isscriptfunctionptr(&function_951a1b56));
+        assert(isscriptfunctionptr(&mechzdeathstart));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzDeathStart", &function_951a1b56);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzDeathStart", &mechzdeathstart);
     /#
-        assert(isscriptfunctionptr(&function_19e0a4ed));
+        assert(isscriptfunctionptr(&mechzidlestart));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzIdleStart", &function_19e0a4ed);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzIdleStart", &mechzidlestart);
     /#
-        assert(isscriptfunctionptr(&function_5977aa05));
+        assert(isscriptfunctionptr(&mechzpainstart));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzPainStart", &function_5977aa05);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzPainStart", &mechzpainstart);
     /#
-        assert(isscriptfunctionptr(&function_4f625150));
+        assert(isscriptfunctionptr(&mechzpainterminate));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzPainTerminate", &function_4f625150);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzPainTerminate", &mechzpainterminate);
     /#
-        assert(isscriptfunctionptr(&function_2726bc43));
+        assert(isscriptfunctionptr(&mechzjetpackpainterminate));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzJetpackPainTerminate", &function_2726bc43);
+    behaviortreenetworkutility::registerbehaviortreescriptapi("mechzJetpackPainTerminate", &mechzjetpackpainterminate);
     animationstatenetwork::registernotetrackhandlerfunction("melee_soldat", &function_d9de8431);
     animationstatenetwork::registernotetrackhandlerfunction("fire_chaingun", &function_e26728bc);
     animationstatenetwork::registernotetrackhandlerfunction("jump_shake", &function_4e89924a);
@@ -321,7 +321,7 @@ function function_4e89924a(entity) {
 // Params 1, eflags: 0x0
 // Checksum 0xa9a344b4, Offset: 0x20c8
 // Size: 0x2fc
-function function_d38b475f(entity) {
+function mechztargetservice(entity) {
     if (is_true(entity.ignoreall)) {
         return 0;
     }
@@ -387,7 +387,7 @@ function function_d38b475f(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x65bd2f21, Offset: 0x23d0
 // Size: 0xce
-function private function_d177be75(entity) {
+function private mechzgrenadeservice(entity) {
     if (!isdefined(entity.var_a0e09fde)) {
         entity.var_a0e09fde.entity = 0;
     }
@@ -420,7 +420,7 @@ function private function_424646a8(grenade, mechz) {
 // Params 1, eflags: 0x4
 // Checksum 0xd5dd9a53, Offset: 0x24e0
 // Size: 0x3ce
-function private function_1c9301d6(entity) {
+function private mechzberserkknockdownservice(entity) {
     velocity = entity getvelocity();
     var_b98d779c = 0.3;
     var_6c6317b9 = entity.origin + velocity * var_b98d779c;
@@ -500,7 +500,7 @@ function private function_c01bcef(zombie, mechz, *var_6c6317b9) {
 // Params 1, eflags: 0x0
 // Checksum 0xfad5325, Offset: 0x2a38
 // Size: 0xca
-function function_2a1d23a3(entity) {
+function mechzshouldmelee(entity) {
     if (!isdefined(entity.enemy)) {
         return 0;
     }
@@ -521,7 +521,7 @@ function function_2a1d23a3(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0xdea395d2, Offset: 0x2b10
 // Size: 0x28
-function private function_95c51ad6(entity) {
+function private mechzshouldshowpain(entity) {
     if (entity.var_bc17791c === 1) {
         return 1;
     }
@@ -532,7 +532,7 @@ function private function_95c51ad6(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x4cc28058, Offset: 0x2b40
 // Size: 0x28
-function private function_843546a7(entity) {
+function private mechzshouldshowjetpackpain(entity) {
     if (entity.var_97601164 === 1) {
         return 1;
     }
@@ -543,7 +543,7 @@ function private function_843546a7(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0xa716776f, Offset: 0x2b70
 // Size: 0x2e
-function private function_3b7595ba(entity) {
+function private mechzenemyinaim(entity) {
     if (entity namespace_8681f0e2::function_923942a7()) {
         return 1;
     }
@@ -554,15 +554,15 @@ function private function_3b7595ba(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0xe775bf95, Offset: 0x2ba8
 // Size: 0x24
-function private function_15b0a251(entity) {
-    return !function_3b7595ba(entity);
+function private mechzenemynotinaim(entity) {
+    return !mechzenemyinaim(entity);
 }
 
 // Namespace namespace_3444cb7b/mechz
 // Params 1, eflags: 0x0
 // Checksum 0xc3c255b, Offset: 0x2bd8
 // Size: 0x21e
-function function_6aa1f869(entity) {
+function mechzshouldshootgrenade(entity) {
     if (entity.var_72d96058 === 1) {
         return 0;
     }
@@ -605,7 +605,7 @@ function function_6aa1f869(entity) {
     if (dist_sq < 62500 || dist_sq > 1440000) {
         return 0;
     }
-    if (!function_3b7595ba(self)) {
+    if (!mechzenemyinaim(self)) {
         return 0;
     }
     return 1;
@@ -615,7 +615,7 @@ function function_6aa1f869(entity) {
 // Params 1, eflags: 0x0
 // Checksum 0x1976176f, Offset: 0x2e00
 // Size: 0x2be
-function function_45f4e87d(entity) {
+function mechzshouldshootflame(entity) {
     /#
         if (is_true(entity.var_7b41c3ce)) {
             return 1;
@@ -658,11 +658,11 @@ function function_45f4e87d(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x2d381b2f, Offset: 0x30c8
 // Size: 0xb4
-function private function_c929b50f(entity) {
+function private mechzshouldshootflamesweep(entity) {
     if (entity.var_72d96058 === 1) {
         return 0;
     }
-    if (!function_45f4e87d(entity)) {
+    if (!mechzshouldshootflame(entity)) {
         return 0;
     }
     if (randomint(100) > 10) {
@@ -680,7 +680,7 @@ function private function_c929b50f(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x8237d02c, Offset: 0x3188
 // Size: 0xa2
-function private function_55d53cbb(entity) {
+function private mechzshouldturnberserk(entity) {
     if (entity.var_72d96058 === 1 && entity.var_5eca4346 !== 1) {
         return 1;
     }
@@ -694,7 +694,7 @@ function private function_55d53cbb(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0xf5997b86, Offset: 0x3238
 // Size: 0x2e
-function private function_70d2a97f(entity) {
+function private mechzshouldstumble(entity) {
     if (is_true(entity.stumble)) {
         return 1;
     }
@@ -705,7 +705,7 @@ function private function_70d2a97f(entity) {
 // Params 1, eflags: 0x0
 // Checksum 0xf957fe77, Offset: 0x3270
 // Size: 0x80
-function function_77bd7d26(entity) {
+function mechzisinsafezone(entity) {
     if (!isdefined(entity.favoriteenemy)) {
         return 0;
     }
@@ -720,7 +720,7 @@ function function_77bd7d26(entity) {
 // Params 1, eflags: 0x0
 // Checksum 0xf4947d08, Offset: 0x32f8
 // Size: 0x76
-function function_bb90106e(entity) {
+function mechzshouldturninplacebeforeidle(entity) {
     enemy = is_true(entity.var_1fa24724) ? entity.enemy : entity.favoriteenemy;
     if (!isdefined(enemy)) {
         return 0;
@@ -789,7 +789,7 @@ function private function_c13b8a0c(entity, *asmstatename) {
 // Size: 0x56
 function function_5a7ad15e(entity, asmstatename) {
     animationstatenetworkutility::requeststate(entity, asmstatename);
-    function_4b2bb1e(entity);
+    mechzshootflame(entity);
     entity.blindaim.entity = 1;
     return 5;
 }
@@ -800,20 +800,20 @@ function function_5a7ad15e(entity, asmstatename) {
 // Size: 0x128
 function function_a3c24f6a(entity, *asmstatename) {
     if (is_true(asmstatename.var_72d96058)) {
-        function_a7ee39a8(asmstatename);
+        mechzstopflame(asmstatename);
         return 4;
     }
-    var_5e55975f = isdefined(self.var_5e55975f) ? self.var_5e55975f : &function_2a1d23a3;
+    var_5e55975f = isdefined(self.var_5e55975f) ? self.var_5e55975f : &mechzshouldmelee;
     if (is_true([[ var_5e55975f ]](asmstatename))) {
-        function_a7ee39a8(asmstatename);
+        mechzstopflame(asmstatename);
         return 4;
     }
     if (is_true(asmstatename.var_492622ad)) {
         if (isdefined(asmstatename.var_b25ccf7) && gettime() > asmstatename.var_b25ccf7) {
-            function_a7ee39a8(asmstatename);
+            mechzstopflame(asmstatename);
             return 4;
         }
-        function_3c48fa1b(asmstatename);
+        mechzupdateflame(asmstatename);
     }
     return 5;
 }
@@ -823,7 +823,7 @@ function function_a3c24f6a(entity, *asmstatename) {
 // Checksum 0x1b98a8d7, Offset: 0x3660
 // Size: 0x3a
 function function_d58e0db5(entity, *asmstatename) {
-    function_a7ee39a8(asmstatename);
+    mechzstopflame(asmstatename);
     asmstatename.blindaim.asmstatename = 0;
     return 4;
 }
@@ -832,7 +832,7 @@ function function_d58e0db5(entity, *asmstatename) {
 // Params 1, eflags: 0x4
 // Checksum 0x44a08812, Offset: 0x36a8
 // Size: 0x1e
-function private function_d40c590a(entity) {
+function private mechzpreptoshootgrenadestart(entity) {
     entity.blindaim.entity = 1;
     return 1;
 }
@@ -841,7 +841,7 @@ function private function_d40c590a(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x915cd8b5, Offset: 0x36d0
 // Size: 0x1a
-function private function_f5ffcbb4(entity) {
+function private mechzpreptoshootgrenadesterminate(entity) {
     entity.blindaim.entity = 0;
     return 1;
 }
@@ -850,7 +850,7 @@ function private function_f5ffcbb4(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x808eef45, Offset: 0x36f8
 // Size: 0x4e
-function private function_61dd507d(entity) {
+function private mechzshootgrenadestart(entity) {
     entity.var_a0e09fde++;
     if (entity.var_a0e09fde >= 1) {
         entity.var_a8e56aa3.entity = gettime() + 6000;
@@ -863,7 +863,7 @@ function private function_61dd507d(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0xe4120c34, Offset: 0x3750
 // Size: 0x86
-function private function_e8c59ca8(entity) {
+function private mechzshootgrenadeterminate(entity) {
     entity.blindaim.entity = 0;
     entity clearpath();
     entity setgoal(entity.origin);
@@ -878,7 +878,7 @@ function private function_e8c59ca8(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x2064424a, Offset: 0x37e0
 // Size: 0x34
-function private function_fc05dfd3(entity) {
+function private mechzsetspeedwalk(entity) {
     entity setblackboardattribute("_locomotion_speed", "locomotion_speed_walk");
 }
 
@@ -886,7 +886,7 @@ function private function_fc05dfd3(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x14ac2e5d, Offset: 0x3820
 // Size: 0x34
-function private function_1a37c206(entity) {
+function private mechzsetspeedrun(entity) {
     entity setblackboardattribute("_locomotion_speed", "locomotion_speed_run");
 }
 
@@ -894,7 +894,7 @@ function private function_1a37c206(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0xb20db72f, Offset: 0x3860
 // Size: 0x24
-function private function_4b2bb1e(entity) {
+function private mechzshootflame(entity) {
     entity thread function_35c0aac1();
 }
 
@@ -916,7 +916,7 @@ function private function_35c0aac1() {
 // Params 1, eflags: 0x4
 // Checksum 0x235cb27b, Offset: 0x3928
 // Size: 0x410
-function private function_3c48fa1b(entity) {
+function private mechzupdateflame(entity) {
     if (!isdefined(entity.var_1df3d140)) {
         return;
     }
@@ -1012,7 +1012,7 @@ function function_fd99ea48(mechz) {
 // Params 1, eflags: 0x0
 // Checksum 0xf1c2e2f1, Offset: 0x3f58
 // Size: 0x9a
-function function_a7ee39a8(entity) {
+function mechzstopflame(entity) {
     self notify(#"hash_35afb115cb92d570");
     entity clientfield::set("mechz_ft", 0);
     entity.var_492622ad.entity = 0;
@@ -1041,7 +1041,7 @@ function function_34d763b5() {
 // Params 1, eflags: 0x4
 // Checksum 0x22cfd045, Offset: 0x4098
 // Size: 0x1a
-function private function_2f8660f6(entity) {
+function private mechzplayedberserkintro(entity) {
     entity.var_5eca4346.entity = 1;
 }
 
@@ -1069,7 +1069,7 @@ function private function_9e135033() {
 // Params 1, eflags: 0x4
 // Checksum 0x89b51839, Offset: 0x4188
 // Size: 0x2c
-function private function_9bcfb4ed(entity) {
+function private mechzattackstart(entity) {
     entity clientfield::set("mechz_face", 1);
 }
 
@@ -1077,7 +1077,7 @@ function private function_9bcfb4ed(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x26ff23b3, Offset: 0x41c0
 // Size: 0x2c
-function private function_951a1b56(entity) {
+function private mechzdeathstart(entity) {
     entity clientfield::set("mechz_face", 2);
 }
 
@@ -1085,7 +1085,7 @@ function private function_951a1b56(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0xdbd45819, Offset: 0x41f8
 // Size: 0x2c
-function private function_19e0a4ed(entity) {
+function private mechzidlestart(entity) {
     entity clientfield::set("mechz_face", 3);
 }
 
@@ -1093,7 +1093,7 @@ function private function_19e0a4ed(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x19020730, Offset: 0x4230
 // Size: 0x2c
-function private function_5977aa05(entity) {
+function private mechzpainstart(entity) {
     entity clientfield::set("mechz_face", 4);
 }
 
@@ -1101,7 +1101,7 @@ function private function_5977aa05(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x212ff850, Offset: 0x4268
 // Size: 0x22
-function private function_4f625150(entity) {
+function private mechzpainterminate(entity) {
     entity.var_bc17791c.entity = 0;
     entity.var_54db22a4 = undefined;
 }
@@ -1110,9 +1110,9 @@ function private function_4f625150(entity) {
 // Params 1, eflags: 0x4
 // Checksum 0x1f33716, Offset: 0x4298
 // Size: 0x2c
-function private function_2726bc43(entity) {
+function private mechzjetpackpainterminate(entity) {
     entity.var_97601164.entity = 0;
-    function_4f625150(entity);
+    mechzpainterminate(entity);
 }
 
 #namespace namespace_8681f0e2;
@@ -1431,7 +1431,7 @@ function function_40c68562() {
     self.var_bc17791c = 1;
     self setblackboardattribute("_mechz_part", "mechz_faceplate");
     self namespace_3444cb7b::function_34d763b5();
-    level notify(#"hash_710da473a9f077a5");
+    level notify(#"mechz_faceplate_detached");
 }
 
 // Namespace namespace_8681f0e2/mechz

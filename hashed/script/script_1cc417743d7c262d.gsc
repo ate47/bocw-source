@@ -85,7 +85,7 @@ function function_6e084fd3(var_37ecca7, taacombundle) {
     case #"inventory_helicopter_comlink":
         bundlename = taacombundle.helicopterdialogbundle;
         break;
-    case #"hash_4557bd9f04730cb":
+    case #"inventory_helicopter_guard":
     case #"helicopter_guard":
         bundlename = taacombundle.var_7275c81d;
         break;
@@ -103,7 +103,7 @@ function function_6e084fd3(var_37ecca7, taacombundle) {
     case #"inventory_overwatch_helicopter":
         bundlename = taacombundle.overwatchhelicopterdialogbundle;
         break;
-    case #"hash_59687845e5356ded":
+    case #"overwatch_helicopter_snipers":
         bundlename = taacombundle.var_4062b33e;
         break;
     case #"planemortar":
@@ -143,7 +143,7 @@ function function_6e084fd3(var_37ecca7, taacombundle) {
         break;
     case #"napalm_strike_zm":
     case #"napalm_strike":
-    case #"hash_67f88dbc909e85f8":
+    case #"inventory_napalm_strike":
         bundlename = taacombundle.var_3ab478cf;
         break;
     case #"weapon_armor":
@@ -1130,7 +1130,7 @@ function function_6daffa93(weapon, var_f3ab6571) {
     case #"hash_2b9efbad11308e02":
         taacomdialog = "landmineWeaponDestroyedFriendly";
         break;
-    case #"hash_320a8d55b915b9e5":
+    case #"listening_device":
         taacomdialog = "listenWeaponDestroyedFriendly";
         break;
     case #"missile_turret":
@@ -1172,7 +1172,7 @@ function function_a2cde53d(weapon, var_f3ab6571) {
     case #"hash_2b9efbad11308e02":
         taacomdialog = "landmineHacked";
         break;
-    case #"hash_320a8d55b915b9e5":
+    case #"listening_device":
         taacomdialog = "listenHacked";
         break;
     case #"missile_turret":
@@ -1252,7 +1252,7 @@ function function_4fb91bc7(weapon, var_df17fa82, var_53c10ed8) {
     case #"inventory_helicopter_comlink":
         taacomdialog = "attackChopperHacked";
         break;
-    case #"hash_4557bd9f04730cb":
+    case #"inventory_helicopter_guard":
     case #"helicopter_guard":
         taacomdialog = "heavyAttackChopperHacked";
         break;

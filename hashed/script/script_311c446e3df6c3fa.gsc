@@ -29,7 +29,7 @@ function private function_70a657d8() {
     clientfield::function_5b7d846d("hudItems.warzone.objectiveTotal", #"hash_593f03dd48d5bc1f", #"objectivetotal", 1, 5, "int", undefined, 0, 0);
     clientfield::function_5b7d846d("hudItems.warzone.objectivesCompleted", #"hash_593f03dd48d5bc1f", #"hash_46ad7187ceb8287e", 1, 5, "int", undefined, 0, 0);
     callback::on_localclient_connect(&on_localplayer_connect);
-    level.var_4f12f6d0 = namespace_d1cd89d6::register();
+    level.var_4f12f6d0 = sr_objective_timer::register();
 }
 
 // Namespace namespace_f3a74bbc/namespace_f3a74bbc

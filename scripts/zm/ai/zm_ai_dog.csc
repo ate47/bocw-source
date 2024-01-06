@@ -21,7 +21,7 @@ function private autoexec __init__system__() {
 // Checksum 0x63163aba, Offset: 0x120
 // Size: 0x7c
 function private function_70a657d8() {
-    clientfield::register("actor", "ZombieDogVocals", 1, 2, "int", &function_127b782f, 0, 0);
+    clientfield::register("actor", "ZombieDogVocals", 1, 2, "int", &zombiedogvocals, 0, 0);
     ai::add_archetype_spawn_function(#"zombie_dog", &function_3b0e8b8b);
 }
 
@@ -37,7 +37,7 @@ function function_3b0e8b8b(localclientnum) {
 // Params 7, eflags: 0x0
 // Checksum 0xbb6a0d7a, Offset: 0x1d8
 // Size: 0x172
-function function_127b782f(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
+function zombiedogvocals(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
     self endon(#"death");
     if (isdefined(self.var_64e89a2f)) {
         self stoploopsound(self.var_64e89a2f);

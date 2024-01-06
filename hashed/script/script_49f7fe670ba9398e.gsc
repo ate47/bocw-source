@@ -33,7 +33,7 @@ function init() {
 // Checksum 0x24da7304, Offset: 0x248
 // Size: 0x16
 function main() {
-    level.var_8cff5775.var_ea40471b = [];
+    level.doa.var_ea40471b = [];
 }
 
 // Namespace namespace_a7c12078/namespace_a7c12078
@@ -47,7 +47,7 @@ function function_c6453062() {
     result = undefined;
     result = self waittill(#"hash_3e251384a5400dce");
     if (is_true(self.var_7c56394) && is_true(result.var_760a0807)) {
-        arrayremovevalue(level.var_8cff5775.var_ea40471b, self);
+        arrayremovevalue(level.doa.var_ea40471b, self);
         namespace_1e25ad94::function_f5f0c0f8("Deleting LogDrop trap permenently at:" + self.origin);
     }
     util::wait_network_frame();
@@ -65,14 +65,14 @@ function function_c6453062() {
 // Checksum 0xb99c1384, Offset: 0x3c0
 // Size: 0x100
 function function_cb1b5203(trap, var_7c56394 = 0) {
-    var_4a2d3ac2 = namespace_ec06fe4a::function_e22ae9b3(trap.origin, "p8_fxanim_zm_towers_trap_blade_01_mod");
-    if (isdefined(var_4a2d3ac2)) {
-        var_4a2d3ac2.targetname.var_4a2d3ac2 = "hazard";
-        var_4a2d3ac2.var_fd5301f9.var_4a2d3ac2 = "logdrop";
-        var_4a2d3ac2.angles.var_4a2d3ac2 = trap.angles;
-        var_4a2d3ac2 enablelinkto();
+    hazard = namespace_ec06fe4a::function_e22ae9b3(trap.origin, "p8_fxanim_zm_towers_trap_blade_01_mod");
+    if (isdefined(hazard)) {
+        hazard.targetname.hazard = "hazard";
+        hazard.var_fd5301f9.hazard = "logdrop";
+        hazard.angles.hazard = trap.angles;
+        hazard enablelinkto();
     }
-    trap.script_model = var_4a2d3ac2;
+    trap.script_model = hazard;
     trap.var_7c56394 = var_7c56394;
     if (isdefined(trap.trigger)) {
         trap.trigger namespace_268747c0::function_54f185a();
@@ -91,12 +91,12 @@ function function_7f3d5e5d(trap, page = 0) {
         return;
     }
     if (page) {
-        if (!isdefined(level.var_8cff5775.var_ea40471b)) {
-            level.var_8cff5775.var_ea40471b = [];
-        } else if (!isarray(level.var_8cff5775.var_ea40471b)) {
-            level.var_8cff5775.var_ea40471b = array(level.var_8cff5775.var_ea40471b);
+        if (!isdefined(level.doa.var_ea40471b)) {
+            level.doa.var_ea40471b = [];
+        } else if (!isarray(level.doa.var_ea40471b)) {
+            level.doa.var_ea40471b = array(level.doa.var_ea40471b);
         }
-        level.var_8cff5775.var_ea40471b[level.var_8cff5775.var_ea40471b.size] = trap;
+        level.doa.var_ea40471b[level.doa.var_ea40471b.size] = trap;
     } else {
         function_cb1b5203(trap);
     }
@@ -116,7 +116,7 @@ function function_d4a86caf() {
         if (state == 0) {
             continue;
         }
-        foreach (trap in level.var_8cff5775.var_ea40471b) {
+        foreach (trap in level.doa.var_ea40471b) {
             time = gettime();
             if (isdefined(trap.var_eb9d64bb) && time < trap.var_eb9d64bb) {
                 continue;
@@ -162,13 +162,13 @@ function function_d4a86caf() {
 // Checksum 0x25bba857, Offset: 0x930
 // Size: 0x130
 function function_237de89e() {
-    level.var_8cff5775.var_ea40471b = [];
+    level.doa.var_ea40471b = [];
     level thread function_d4a86caf();
-    if (isdefined(level.var_8cff5775.var_a77e6349)) {
-        traps = [[ level.var_8cff5775.var_a77e6349 ]]->function_87f950c1("logdrop");
+    if (isdefined(level.doa.var_a77e6349)) {
+        traps = [[ level.doa.var_a77e6349 ]]->function_87f950c1("logdrop");
         page = 1;
     } else {
-        traps = [[ level.var_8cff5775.var_39e3fa99 ]]->function_242886d5("logdrop");
+        traps = [[ level.doa.var_39e3fa99 ]]->function_242886d5("logdrop");
     }
     foreach (trap in traps) {
         function_7f3d5e5d(trap, page);
@@ -207,7 +207,7 @@ function function_b31750de(lifetime) {
                 if (isvehicle(guy)) {
                     continue;
                 }
-                if (isplayer(guy) && isdefined(guy.var_8cff5775.vehicle)) {
+                if (isplayer(guy) && isdefined(guy.doa.vehicle)) {
                     continue;
                 }
                 if (!isdefined(guy.var_ef6bca09)) {

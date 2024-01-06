@@ -9,9 +9,9 @@
 #using scripts\core_common\system_shared.gsc;
 #using scripts\core_common\clientfield_shared.gsc;
 
-#namespace namespace_823484e1;
+#namespace snipercam;
 
-// Namespace namespace_823484e1/namespace_823484e1
+// Namespace snipercam/snipercam
 // Params 0, eflags: 0x5
 // Checksum 0x5b76a1d4, Offset: 0x1a0
 // Size: 0x34
@@ -19,7 +19,7 @@ function private autoexec __init__system__() {
     system::register("snipercam", &function_f64316de, undefined, undefined, undefined);
 }
 
-// Namespace namespace_823484e1/namespace_823484e1
+// Namespace snipercam/snipercam
 // Params 3, eflags: 0x2 linked
 // Checksum 0xb43c2ceb, Offset: 0x1e0
 // Size: 0xd4
@@ -36,7 +36,7 @@ function function_6e29b7f1(enabled, on_damage = 0, var_895878e1 = 3) {
     }
 }
 
-// Namespace namespace_823484e1/namespace_823484e1
+// Namespace snipercam/snipercam
 // Params 2, eflags: 0x0
 // Checksum 0xfdb66e17, Offset: 0x2c0
 // Size: 0x64
@@ -48,7 +48,7 @@ function function_5d276f5b(var_895878e1, victim) {
     #/
 }
 
-// Namespace namespace_823484e1/namespace_823484e1
+// Namespace snipercam/snipercam
 // Params 0, eflags: 0x6 linked
 // Checksum 0x9f089411, Offset: 0x330
 // Size: 0x64
@@ -57,7 +57,7 @@ function private function_f64316de() {
     clientfield::register("actor", "stop_snipercam", 1, 1, "int");
 }
 
-// Namespace namespace_823484e1/namespace_823484e1
+// Namespace snipercam/snipercam
 // Params 0, eflags: 0x6 linked
 // Checksum 0xb77ca251, Offset: 0x3a0
 // Size: 0x2c
@@ -66,7 +66,7 @@ function private function_b5597fc3() {
     aiutility::addaioverridedamagecallback(self, &function_4ad903f4);
 }
 
-// Namespace namespace_823484e1/namespace_823484e1
+// Namespace snipercam/snipercam
 // Params 13, eflags: 0x6 linked
 // Checksum 0xcce5ce54, Offset: 0x3d8
 // Size: 0x21c
@@ -94,7 +94,7 @@ function private function_4ad903f4(einflictor, eattacker, idamage, idflags, smea
     return idflags;
 }
 
-// Namespace namespace_823484e1/namespace_823484e1
+// Namespace snipercam/snipercam
 // Params 13, eflags: 0x6 linked
 // Checksum 0xd528aa84, Offset: 0x600
 // Size: 0x53c
@@ -115,12 +115,12 @@ function private function_856a28c3(var_afe2c3af, einflictor, eattacker, *idamage
     }
     player flag::set("snipercam");
     namespace_61e6d095::function_28027c42(#"hash_d7f94b2708cafa2");
-    player val::set(#"hash_1353dc8d4ff19d25", "freezecontrols", 1);
-    player val::set(#"hash_1353dc8d4ff19d25", "takedamage", 0);
-    player val::set(#"hash_1353dc8d4ff19d25", "show_weapon_hud", 0);
-    player val::set(#"hash_1353dc8d4ff19d25", "show_hit_marker", 0);
-    player val::set(#"hash_1353dc8d4ff19d25", "show_compass", 0);
-    player val::set(#"hash_1353dc8d4ff19d25", "show_crosshair", 0);
+    player val::set(#"snipercam", "freezecontrols", 1);
+    player val::set(#"snipercam", "takedamage", 0);
+    player val::set(#"snipercam", "show_weapon_hud", 0);
+    player val::set(#"snipercam", "show_hit_marker", 0);
+    player val::set(#"snipercam", "show_compass", 0);
+    player val::set(#"snipercam", "show_crosshair", 0);
     hint_tutorial::function_57a24ab5(0);
     parms = function_83d35e98(player, player geteye(), player getplayerangles(), self, self.var_ca3bd64e);
     player.var_35ee6252 = undefined;
@@ -145,7 +145,7 @@ function private function_856a28c3(var_afe2c3af, einflictor, eattacker, *idamage
     wait(0.1);
     self notify(#"hash_377b8997737880e7");
     hint_tutorial::function_57a24ab5(1);
-    player val::function_e681e68e(#"hash_1353dc8d4ff19d25");
+    player val::function_e681e68e(#"snipercam");
     player show();
     self clientfield::set("stop_snipercam", 0);
     player flag::clear("snipercam");

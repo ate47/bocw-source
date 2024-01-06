@@ -116,7 +116,7 @@ function function_8dc68d9c() {
     a_s_pos = struct::get_array(self.target, "targetname");
     foreach (pos in a_s_pos) {
         if (pos.script_noteworthy === "icon_location") {
-            self.var_34d6d1c9 = pos;
+            self.icon_location = pos;
             if (is_true(self.var_b7bf4ddb)) {
                 var_e1b5a40b = util::spawn_model("tag_origin", pos.origin, pos.angles);
                 var_e1b5a40b clientfield::set("" + #"hash_2e4913c031d2a97c", 1);
@@ -129,7 +129,7 @@ function function_8dc68d9c() {
             self.is_active = 1;
             self.var_b79a8ac7 = {#slots:slots, #var_f019ea1a:1200};
         } else if (pos.script_noteworthy === "disk_location") {
-            self.var_25f129bc = pos;
+            self.disk_location = pos;
         }
     }
     if (!isdefined(level.var_44ff9e2)) {
@@ -180,10 +180,10 @@ function function_b546cde6(b_skipped) {
     var_1baed918 = struct::get_array(var_9039575a.target, "targetname");
     foreach (target_pos in var_1baed918) {
         if (target_pos.script_noteworthy == "klaus_enter_pos") {
-            var_9039575a.var_e7ddc176 = target_pos;
+            var_9039575a.klaus_enter_pos = target_pos;
         }
         if (target_pos.script_noteworthy == "sub_dis_pos") {
-            var_9039575a.var_431dce00 = target_pos;
+            var_9039575a.sub_dis_pos = target_pos;
         }
         if (target_pos.script_noteworthy == "spawn_loc") {
             var_9039575a.spawn_loc = target_pos;
@@ -382,8 +382,8 @@ function function_5aaec675(e_player) {
 function function_dc580b92() {
     level endon(#"end_game");
     self waittill(#"trigger");
-    if (isdefined(self.stub.script_model.var_431dce00)) {
-        var_55ce5b28 = util::spawn_model(#"hash_5ca33d5114f5bccd", self.stub.script_model.var_431dce00.origin, self.stub.script_model.var_431dce00.angles);
+    if (isdefined(self.stub.script_model.sub_dis_pos)) {
+        var_55ce5b28 = util::spawn_model(#"hash_5ca33d5114f5bccd", self.stub.script_model.sub_dis_pos.origin, self.stub.script_model.sub_dis_pos.angles);
         var_55ce5b28 playsound(#"hash_5e8619a5e50dcd1d");
     }
     level flag::set(#"hash_2fea433a677a8531");
@@ -467,7 +467,7 @@ function function_f0be2da6() {
         if (!isdefined(level.var_56e22cfa)) {
             return;
         }
-        var_5a7117fb = level.var_56e22cfa zodcompanionutility::function_14f3d97b(var_9039575a.var_e7ddc176.origin);
+        var_5a7117fb = level.var_56e22cfa zodcompanionutility::function_14f3d97b(var_9039575a.klaus_enter_pos.origin);
         if (is_true(var_5a7117fb)) {
             level.var_56e22cfa.var_fc6edf64 = 1;
             level.var_56e22cfa waittill(#"goal");
@@ -794,7 +794,7 @@ function private function_1bf091a7() {
 function function_2a26db52(var_c7498e44) {
     level endon(#"end_game", #"hash_30bd3fb769cba5e7");
     self endon(#"defend_succeed", #"hash_5dec93745dff8acb");
-    zone_name = zm_zonemgr::get_zone_from_position(self.var_e7ddc176.origin, 1, 1);
+    zone_name = zm_zonemgr::get_zone_from_position(self.klaus_enter_pos.origin, 1, 1);
     if (!isdefined(zone_name)) {
         /#
             iprintlnbold("<unknown string>");
@@ -976,11 +976,11 @@ function function_ed04cf0f(var_ff27a24 = 0) {
     }
     if (var_ff27a24) {
         point = function_4ba8fde(#"hash_7af2b5eb8d8c6fda");
-        var_22009b28 = item_drop::drop_item(0, undefined, 1, 0, point.id, self.var_25f129bc.origin, self.var_25f129bc.angles, 0);
+        var_22009b28 = item_drop::drop_item(0, undefined, 1, 0, point.id, self.disk_location.origin, self.disk_location.angles, 0);
         var_22009b28.var_dd21aec2.var_22009b28 = 1 & 16;
     } else if (!level flag::get(str_flag) && is_true(self.var_b7bf4ddb)) {
         point = function_4ba8fde(var_dc7e53b6);
-        var_22009b28 = item_drop::drop_item(0, undefined, 1, 0, point.id, self.var_25f129bc.origin, self.var_25f129bc.angles, 0);
+        var_22009b28 = item_drop::drop_item(0, undefined, 1, 0, point.id, self.disk_location.origin, self.disk_location.angles, 0);
         var_22009b28.var_dd21aec2.var_22009b28 = 1 & 16;
     }
     wait(30);

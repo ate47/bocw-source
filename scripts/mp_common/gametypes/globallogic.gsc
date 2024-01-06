@@ -1317,7 +1317,7 @@ function recordplaystyleinformation() {
     numkilldistanceentries = float(self.pers[#"num_kill_distance_entries"]);
     timeplayedmoving = float(self.pers[#"time_played_moving"]);
     timeplayedalive = float(self.pers[#"time_played_alive"]);
-    var_4d5874c6 = float(self.pers[#"hash_20464b40eeb9b465"]);
+    totaldistancewhenmoving = float(self.pers[#"hash_20464b40eeb9b465"]);
     totaldistancetravelled = float(self.pers[#"total_distance_travelled"]);
     movementupdatecount = float(self.pers[#"movement_update_count"]);
     if (numkilldistanceentries > 0) {
@@ -1327,13 +1327,13 @@ function recordplaystyleinformation() {
         percenttimemoving = timeplayedmoving / movementupdatecount * 1 * 100;
     }
     if (timeplayedmoving > 0) {
-        avgspeedofplayerwhenmoving = var_4d5874c6 / timeplayedmoving;
+        avgspeedofplayerwhenmoving = totaldistancewhenmoving / timeplayedmoving;
     }
     recordplayerstats(self, "totalKillDistances", totalkilldistances);
     recordplayerstats(self, "numKillDistanceEntries", numkilldistanceentries);
     recordplayerstats(self, "timePlayedMoving", timeplayedmoving);
     recordplayerstats(self, "timePlayedAlive", timeplayedalive);
-    recordplayerstats(self, "totalDistanceWhenMoving", var_4d5874c6);
+    recordplayerstats(self, "totalDistanceWhenMoving", totaldistancewhenmoving);
     recordplayerstats(self, "averageKillDistance", avgkilldistance);
     recordplayerstats(self, "percentageOfTimeMoving", percenttimemoving);
     recordplayerstats(self, "averageSpeedDuringMatch", avgspeedofplayerwhenmoving);
@@ -1552,16 +1552,16 @@ function function_b0a2785c() {
 function function_8111babb() {
     setmatchtalkflag("DeadChatWithDead", level.voip.deadchatwithdead);
     setmatchtalkflag("DeadChatWithTeam", level.voip.deadchatwithteam);
-    setmatchtalkflag("DeadChatWithSquad", level.voip.var_ab475cfb);
-    setmatchtalkflag("LivingChatWithSquad", level.voip.var_b85badb9);
+    setmatchtalkflag("DeadChatWithSquad", level.voip.deadchatwithsquad);
+    setmatchtalkflag("LivingChatWithSquad", level.voip.livingchatwithsquad);
     setmatchtalkflag("DeadHearTeamLiving", level.voip.deadhearteamliving);
     setmatchtalkflag("DeadHearAllLiving", level.voip.deadhearallliving);
-    setmatchtalkflag("EveryoneHearsAlive", level.voip.var_76acec56);
+    setmatchtalkflag("EveryoneHearsAlive", level.voip.everyonehearsalive);
     setmatchtalkflag("EveryoneHearsEveryone", level.voip.everyonehearseveryone);
-    setmatchtalkflag("EveryoneHearsFriendly", level.voip.var_89b2c80d);
+    setmatchtalkflag("EveryoneHearsFriendly", level.voip.everyonehearsfriendly);
     setmatchtalkflag("DeadHearKiller", level.voip.deadhearkiller);
     setmatchtalkflag("KillersHearVictim", level.voip.killershearvictim);
-    setmatchtalkflag("PrivateChannel", level.voip.var_d64cd4cf);
+    setmatchtalkflag("PrivateChannel", level.voip.privatechannel);
 }
 
 // Namespace globallogic/globallogic
@@ -3871,17 +3871,17 @@ function function_b9b7618() {
     level.voip = spawnstruct();
     level.voip.deadchatwithdead = getgametypesetting(#"voipdeadchatwithdead");
     level.voip.deadchatwithteam = getgametypesetting(#"voipdeadchatwithteam");
-    level.voip.var_ab475cfb = getgametypesetting(#"hash_7b8284382bffc197");
-    level.voip.var_b85badb9 = getgametypesetting(#"hash_6e6991561babdd7e");
+    level.voip.deadchatwithsquad = getgametypesetting(#"hash_7b8284382bffc197");
+    level.voip.livingchatwithsquad = getgametypesetting(#"hash_6e6991561babdd7e");
     level.voip.deadhearallliving = getgametypesetting(#"voipdeadhearallliving");
     level.voip.deadhearteamliving = getgametypesetting(#"voipdeadhearteamliving");
-    level.voip.var_76acec56 = getgametypesetting(#"hash_50a46f60312cf53c");
+    level.voip.everyonehearsalive = getgametypesetting(#"hash_50a46f60312cf53c");
     level.voip.everyonehearseveryone = getgametypesetting(#"voipeveryonehearseveryone");
-    level.voip.var_89b2c80d = getgametypesetting(#"hash_2a76bf462f4c2f50");
+    level.voip.everyonehearsfriendly = getgametypesetting(#"hash_2a76bf462f4c2f50");
     level.voip.deadhearkiller = getgametypesetting(#"voipdeadhearkiller");
     level.voip.killershearvictim = getgametypesetting(#"voipkillershearvictim");
     level.voip.partychat = getgametypesetting(#"hash_33bc6781006ae83d");
-    level.voip.var_d64cd4cf = getgametypesetting(#"hash_5cc3c32813d17039");
+    level.voip.privatechannel = getgametypesetting(#"hash_5cc3c32813d17039");
     level.droppedtagrespawn = getgametypesetting(#"droppedtagrespawn");
     level.var_5b544215 = isdefined(getgametypesetting(#"hash_444634d99df7a661")) ? getgametypesetting(#"hash_444634d99df7a661") : 0;
     level.var_ac25d260 = getgametypesetting(#"hash_66b6ee89ac1ad152");

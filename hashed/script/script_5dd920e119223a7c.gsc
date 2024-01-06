@@ -38,7 +38,7 @@ function event_handler[level_init] main(*eventstruct) {
     clientfield::register("scriptmover", "" + #"hash_60e4230d63925ac1", 1, 1, "int");
     clientfield::register("scriptmover", "" + #"hash_6d05bbcab1912e5a", 1, 1, "int");
     clientfield::register("world", "" + #"hash_7d92d99179091a4f", 1, 1, "int");
-    namespace_f3a74bbc::function_b3464a7c(#"hash_24a710d5fc2ed834", &spawn_func, &start_callback, #"hash_d380cc11d47ae4", #"hash_59cd8f2a488c0201", #"hash_23331c459fc1fe23", 5, #"hash_5a76d5e2fa7e03c0");
+    namespace_f3a74bbc::function_b3464a7c(#"hash_24a710d5fc2ed834", &spawn_func, &start_callback, #"hunt", #"hash_59cd8f2a488c0201", #"hash_23331c459fc1fe23", 5, #"hash_5a76d5e2fa7e03c0");
 }
 
 // Namespace namespace_662ff671/namespace_662ff671
@@ -55,7 +55,7 @@ function private spawn_func(s_instance) {
             s_instance.mdl_base setscale(1.55);
         }
     }
-    foreach (var_109708e0 in isdefined(s_instance.var_fe2612fe[#"hash_33111a192fb39e85"]) ? s_instance.var_fe2612fe[#"hash_33111a192fb39e85"] : []) {
+    foreach (var_109708e0 in isdefined(s_instance.var_fe2612fe[#"hvt"]) ? s_instance.var_fe2612fe[#"hvt"] : []) {
         n_count = int(isdefined(var_109708e0.count) ? var_109708e0.count : 1);
         if (var_109708e0.ai_type === "raz" && var_3afe334f > 1 && n_players >= 3) {
             n_count++;
@@ -389,7 +389,7 @@ function private start_callback(instance, activator) {
     instance.var_c42980f6.instance = 0;
     instance flag::wait_till(#"summon");
     n_players = function_a1ef346b().size;
-    foreach (var_109708e0 in isdefined(instance.var_fe2612fe[#"hash_33111a192fb39e85"]) ? instance.var_fe2612fe[#"hash_33111a192fb39e85"] : []) {
+    foreach (var_109708e0 in isdefined(instance.var_fe2612fe[#"hvt"]) ? instance.var_fe2612fe[#"hvt"] : []) {
         instance.var_c42980f6++;
         var_109708e0.count.var_109708e0 = int(isdefined(var_109708e0.count) ? var_109708e0.count : 1);
         if (!is_true(instance.var_9ef060ec) && var_109708e0.ai_type === "raz" && level.var_b48509f9 > 1 && n_players >= 3) {
@@ -1430,10 +1430,10 @@ function function_d20a3932(s_instance, *var_f5064815, var_6a4ec994) {
         var_7ecdee63 = #"hash_12a17ab3df5889eb";
         break;
     case #"hash_60d7855358ceb53d":
-        var_7ecdee63 = #"hash_1aff4b71635bda08";
+        var_7ecdee63 = #"spawner_bo5_avogadro_sr";
         break;
     case #"hash_4a900af3fc47cdd5":
-        var_7ecdee63 = #"hash_63cd2e85e68901a0";
+        var_7ecdee63 = #"spawner_bo5_soa";
         break;
     case #"hash_469e4baceeaf38f5":
         var_7ecdee63 = #"spawner_bo5_mimic";
@@ -1468,28 +1468,28 @@ function function_d20a3932(s_instance, *var_f5064815, var_6a4ec994) {
 function function_336cb6b9(var_7ecdee63) {
     switch (getplayers().size) {
     case 1:
-        if (var_7ecdee63 == #"hash_1aff4b71635bda08" || var_7ecdee63 == #"hash_63cd2e85e68901a0") {
+        if (var_7ecdee63 == #"spawner_bo5_avogadro_sr" || var_7ecdee63 == #"spawner_bo5_soa") {
             var_e00b0988 = 2;
         } else {
             var_e00b0988 = 3;
         }
         break;
     case 2:
-        if (var_7ecdee63 == #"hash_1aff4b71635bda08" || var_7ecdee63 == #"hash_63cd2e85e68901a0") {
+        if (var_7ecdee63 == #"spawner_bo5_avogadro_sr" || var_7ecdee63 == #"spawner_bo5_soa") {
             var_e00b0988 = 2;
         } else {
             var_e00b0988 = 4;
         }
         break;
     case 3:
-        if (var_7ecdee63 == #"hash_1aff4b71635bda08" || var_7ecdee63 == #"hash_63cd2e85e68901a0") {
+        if (var_7ecdee63 == #"spawner_bo5_avogadro_sr" || var_7ecdee63 == #"spawner_bo5_soa") {
             var_e00b0988 = 2;
         } else {
             var_e00b0988 = 5;
         }
         break;
     case 4:
-        if (var_7ecdee63 == #"hash_1aff4b71635bda08" || var_7ecdee63 == #"hash_63cd2e85e68901a0") {
+        if (var_7ecdee63 == #"spawner_bo5_avogadro_sr" || var_7ecdee63 == #"spawner_bo5_soa") {
             var_e00b0988 = 3;
         } else {
             var_e00b0988 = 7;
@@ -1624,7 +1624,7 @@ function private function_c93772c() {
 // Checksum 0xc6510cf4, Offset: 0x7bd0
 // Size: 0x94
 function private function_d91f142f(var_109708e0) {
-    var_59980149 = isdefined(var_109708e0.var_fe2612fe[#"hash_33111a192fb39e85"]) ? var_109708e0.var_fe2612fe[#"hash_33111a192fb39e85"] : [];
+    var_59980149 = isdefined(var_109708e0.var_fe2612fe[#"hvt"]) ? var_109708e0.var_fe2612fe[#"hvt"] : [];
     var_a2b4a7d6 = var_59980149[0];
     if (isdefined(var_a2b4a7d6)) {
         self.var_fe987b5c++;
@@ -1638,7 +1638,7 @@ function private function_d91f142f(var_109708e0) {
 // Size: 0x7f4
 function private function_90591f67(var_f5064815, var_109708e0, s_instance) {
     self endon(#"death");
-    var_59980149 = isdefined(var_109708e0.var_fe2612fe[#"hash_33111a192fb39e85"]) ? var_109708e0.var_fe2612fe[#"hash_33111a192fb39e85"] : [];
+    var_59980149 = isdefined(var_109708e0.var_fe2612fe[#"hvt"]) ? var_109708e0.var_fe2612fe[#"hvt"] : [];
     var_a2b4a7d6 = var_59980149[0];
     if (!isdefined(var_a2b4a7d6)) {
         self unlink();
@@ -2319,9 +2319,9 @@ function private function_470ef707(var_82706add = "") {
     case #"hash_46c917a1b5ed91e7":
     case #"hash_7d0b1329ae633e1f":
         return #"hash_46c917a1b5ed91e7";
-    case #"hash_1aff4b71635bda08":
+    case #"spawner_bo5_avogadro_sr":
     case #"avogadro":
-        return #"hash_1aff4b71635bda08";
+        return #"spawner_bo5_avogadro_sr";
     case #"mechz":
     case #"hash_60d7855358ceb53d":
         return #"hash_60d7855358ceb53d";
@@ -2331,7 +2331,7 @@ function private function_470ef707(var_82706add = "") {
     case #"mimic":
     case #"hash_4a900af3fc47cdd5":
         return #"hash_4a900af3fc47cdd5";
-    case #"hash_8e32650ae9d0289":
+    case #"steiner":
     case #"hash_acac3fe7a341329":
         return #"hash_acac3fe7a341329";
     case #"hash_12a17ab3df5889eb":
@@ -2459,7 +2459,7 @@ function function_3ef1d58a(instance, n_path) {
     case #"hash_3caea328a59d3e04":
     case #"hash_468f3aef91e9cecd":
     case #"hash_415a0b41b0435853":
-    case #"hash_5c4ec64be78df56c":
+    case #"objective_golova_hunt_steiner":
     case #"hash_3aa0078a45343bfc":
     case #"hash_5a481126c9087f93":
         var_cdce8e6f = instance.var_fe2612fe[#"hash_5e2a8afd063b9a25" + n_path][0];
@@ -2531,7 +2531,7 @@ function function_81d3631c() {
         }
     }
     if (isdefined(self)) {
-        self clientfield::increment("" + #"hash_4974f4e39e6933fb");
+        self clientfield::increment("" + #"vehicle_teleport");
         wait(1.9);
         if (isdefined(self.v_org)) {
             self.origin = self.v_org;

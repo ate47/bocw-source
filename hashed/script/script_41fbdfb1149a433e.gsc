@@ -31,7 +31,7 @@
 // Checksum 0xfa0ee012, Offset: 0x1a8
 // Size: 0x16
 function init() {
-    level.var_8cff5775.var_51400a66 = [];
+    level.doa.var_51400a66 = [];
 }
 
 // Namespace namespace_22574328/namespace_22574328
@@ -48,12 +48,12 @@ function function_b9c8a739() {
 // Size: 0x138
 function function_da7439a2() {
     level notify(#"hash_2303b11a0ac86ffe");
-    foreach (loot in level.var_8cff5775.var_51400a66) {
+    foreach (loot in level.doa.var_51400a66) {
         if (isdefined(loot.item.var_c8386627)) {
             namespace_1c2a96f9::function_85da1646(loot.item.var_c8386627);
         }
         if (isdefined(loot.var_3f97a9a6)) {
-            arrayremovevalue(level.var_8cff5775.var_b8ef1466, loot.item.var_3f97a9a6);
+            arrayremovevalue(level.doa.var_b8ef1466, loot.item.var_3f97a9a6);
             loot.var_3f97a9a6 = undefined;
         }
         if (isdefined(loot.item)) {
@@ -72,7 +72,7 @@ function function_417fd9b() {
     level endon(#"game_over", #"hash_2303b11a0ac86ffe");
     while (1) {
         wait(0.5);
-        foreach (loot in level.var_8cff5775.var_51400a66) {
+        foreach (loot in level.doa.var_51400a66) {
             time = gettime();
             if (isdefined(loot.var_eb9d64bb) && time < loot.var_eb9d64bb) {
                 continue;

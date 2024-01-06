@@ -200,7 +200,7 @@ function function_16139ef4(params) {
             self setactionslot(1, "altmode");
         }
         if (function_565c848a(params.weapon)) {
-            self thread function_db4bf625(params.weapon);
+            self thread axe_right_melee_attack_think(params.weapon);
             self thread function_219565f5(params.weapon);
             self clientfield::set("" + #"hash_5d6139b1ce0e7c82", 1);
             if (!is_true(self.var_7fe71a4d)) {
@@ -384,7 +384,7 @@ function function_6c14b72a() {
 // Params 1, eflags: 0x4
 // Checksum 0x1289ab15, Offset: 0x19d8
 // Size: 0x88
-function private function_db4bf625(weapon) {
+function private axe_right_melee_attack_think(weapon) {
     self endon(#"death");
     var_17b7891d = "75cc23f3c91f3b51" + "axe_right_melee_attack_think";
     self notify(var_17b7891d);
