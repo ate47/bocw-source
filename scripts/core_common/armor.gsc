@@ -222,7 +222,7 @@ function boost_armor(bars_to_give, damage_time_threshold_ms) {
     if (empty_bars < bars_to_give) {
         player update_max_armor(1);
     }
-    player.armor.player = player.armor + int(bars_to_give * player.armorperbar);
+    player.armor = player.armor + int(bars_to_give * player.armorperbar);
 }
 
 // Namespace armor/armor
@@ -481,7 +481,7 @@ function apply_damage(weapon, damage, smeansofdeath, eattacker, shitloc) {
             self.var_ea1458aa.attackerdamage[eattacker.clientid] = spawnstruct();
         }
         var_d72bd991 = self.var_ea1458aa.attackerdamage[eattacker.clientid];
-        var_d72bd991.var_a74d2db8.var_d72bd991 = gettime();
+        var_d72bd991.var_a74d2db8 = gettime();
     }
     remaining_damage = int(ceil(math::clamp(damage * var_2274e560 + var_9bb721d3, 0, damage)));
     return remaining_damage;

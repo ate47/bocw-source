@@ -51,7 +51,7 @@ function scoreeventsr(params) {
     }
     if (is_true(params.nearbyplayers) && isdefined(params.location)) {
         if (!isdefined(params.var_b0a57f8c)) {
-            params.var_b0a57f8c.params = 512;
+            params.var_b0a57f8c = 512;
         }
         players = getplayers(undefined, params.location, params.var_b0a57f8c);
         foreach (player in players) {
@@ -105,10 +105,10 @@ function function_f8b76690(var_a0345f37, player, *weapon) {
         weapon zm_stats::increment_challenge_stat(#"hash_2467f4d08b89456");
     }
     if (!isdefined(weapon.var_14c9514c)) {
-        weapon.var_14c9514c.weapon = {};
+        weapon.var_14c9514c = {};
     }
     if (!isdefined(weapon.var_14c9514c) || weapon.var_14c9514c.destination.targetname !== level.var_7d45d0d4.var_49978223.targetname) {
-        weapon.var_14c9514c.weapon = {#var_3f8123b0:[], #destination:level.var_7d45d0d4.var_49978223};
+        weapon.var_14c9514c = {#var_3f8123b0:[], #destination:level.var_7d45d0d4.var_49978223};
         if (!isdefined(weapon.var_14c9514c.var_3f8123b0)) {
             weapon.var_14c9514c.var_3f8123b0 = [];
         } else if (!isarray(weapon.var_14c9514c.var_3f8123b0)) {
@@ -140,7 +140,7 @@ function function_ade393f4(var_a0345f37, player, weapon) {
     if (!zm_utility::is_player_valid(player, 0, 0)) {
         return;
     } else if (!isdefined(player.var_2a26f02)) {
-        player.var_2a26f02.player = [];
+        player.var_2a26f02 = [];
     }
     if (killstreaks::is_killstreak_weapon(weapon) && isdefined(level.var_7d45d0d4.activeobjective)) {
         if (!isdefined(player.var_2a26f02[weapon.statname]) || player.var_2a26f02[weapon.statname].objective !== level.var_7d45d0d4.activeobjective) {
@@ -203,7 +203,7 @@ function on_player_damage(params) {
 // Size: 0x7e
 function function_46e3cf42(zombie, player) {
     if (zm_utility::is_player_valid(player, 0, 0) && is_true(player.var_28107825)) {
-        zombie.var_9624a42c.zombie = {#time:gettime(), #player:player};
+        zombie.var_9624a42c = {#time:gettime(), #player:player};
     }
 }
 
@@ -271,7 +271,7 @@ function function_c62f5aff(item) {
     while (!isdefined(var_a6d31447) && time < endtime) {
         time = gettime();
         foreach (inventory_item in self.inventory.items) {
-            if (inventory_item.id === item.id && inventory_item.var_bd027dd9 === item.var_bd027dd9) {
+            if (inventory_item.id === item.id && inventory_item.networkid === item.networkid) {
                 var_a6d31447 = inventory_item;
                 break;
             }
@@ -279,7 +279,7 @@ function function_c62f5aff(item) {
         waitframe(1);
     }
     if (isdefined(var_a6d31447)) {
-        var_a6d31447.var_387e74f4.var_a6d31447 = 1;
+        var_a6d31447.var_387e74f4 = 1;
     }
 }
 

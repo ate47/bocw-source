@@ -42,7 +42,7 @@ function function_7bd1ca93(localclientnum, str_targetname, player) {
     if (isdefined(var_99bf2e73.scriptbundlename) && !isdefined(var_99bf2e73.var_bdb97676) && player function_f0f36d47(localclientnum, var_99bf2e73.scriptbundlename)) {
         s_bundle = getscriptbundle(var_99bf2e73.scriptbundlename);
         if (isdefined(s_bundle.model) && s_bundle.var_9be0526e === #"audiolog") {
-            var_99bf2e73.var_bdb97676.var_99bf2e73 = util::spawn_anim_model(localclientnum, s_bundle.model, var_99bf2e73.origin, var_99bf2e73.angles);
+            var_99bf2e73.var_bdb97676 = util::spawn_anim_model(localclientnum, s_bundle.model, var_99bf2e73.origin, var_99bf2e73.angles);
             var_99bf2e73.var_bdb97676.var_2b372cf6 = s_bundle.var_9be0526e;
             var_99bf2e73.var_bdb97676.var_fd5d9570 = s_bundle.var_ad4ad686;
             var_99bf2e73.var_bdb97676.var_d5fa8477 = var_99bf2e73.scriptbundlename;
@@ -166,7 +166,7 @@ function function_3a2dd570(localclientnum, *oldval, newval, *bnewent, *binitials
             case #"hash_4fe193b7484608f8":
             case #"hash_4fe1a0b748461f0f":
                 if (!isdefined(var_99bf2e73.var_bdb97676)) {
-                    var_99bf2e73.var_bdb97676.var_99bf2e73 = util::spawn_anim_model(fieldname, #"tag_origin", var_99bf2e73.origin, var_99bf2e73.angles);
+                    var_99bf2e73.var_bdb97676 = util::spawn_anim_model(fieldname, #"tag_origin", var_99bf2e73.origin, var_99bf2e73.angles);
                     if (!isdefined(self.var_e2ab3227)) {
                         self.var_e2ab3227 = [];
                     } else if (!isarray(self.var_e2ab3227)) {

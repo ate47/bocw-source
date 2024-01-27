@@ -297,15 +297,15 @@ function function_bcc7802(ents) {
         return;
     }
     ai_zombie endon(#"death");
-    ai_zombie.maxhealth.ai_zombie = ai_zombie zm_ai_utility::function_b5fe98(level.round_number);
-    ai_zombie.health.ai_zombie = ai_zombie.maxhealth;
-    ai_zombie.ignore_round_spawn_failsafe.ai_zombie = 1;
-    ai_zombie.ignore_enemy_count.ai_zombie = 1;
-    ai_zombie.no_powerups.ai_zombie = 1;
-    ai_zombie.script_string.ai_zombie = "find_flesh";
+    ai_zombie.maxhealth = ai_zombie zm_ai_utility::function_b5fe98(level.round_number);
+    ai_zombie.health = ai_zombie.maxhealth;
+    ai_zombie.ignore_round_spawn_failsafe = 1;
+    ai_zombie.ignore_enemy_count = 1;
+    ai_zombie.no_powerups = 1;
+    ai_zombie.script_string = "find_flesh";
     ai_zombie pathmode("move allowed");
-    ai_zombie.ai_state.ai_zombie = "zombie_think";
-    ai_zombie.zombie_think_done.ai_zombie = 1;
+    ai_zombie.ai_state = "zombie_think";
+    ai_zombie.zombie_think_done = 1;
     ai_zombie thread function_6a8117ab();
 }
 
@@ -350,10 +350,10 @@ function function_b1db8691() {
             ai_zombie = zombie_utility::spawn_zombie(spawner, "pap_quest_ai", array::random(var_509132fd), level.round_number);
             waitframe(1);
         }
-        ai_zombie.maxhealth.ai_zombie = ai_zombie zm_ai_utility::function_b5fe98(level.round_number);
-        ai_zombie.health.ai_zombie = ai_zombie.maxhealth;
-        ai_zombie.no_powerups.ai_zombie = 1;
-        ai_zombie.script_string.ai_zombie = "find_flesh";
+        ai_zombie.maxhealth = ai_zombie zm_ai_utility::function_b5fe98(level.round_number);
+        ai_zombie.health = ai_zombie.maxhealth;
+        ai_zombie.no_powerups = 1;
+        ai_zombie.script_string = "find_flesh";
         ai_zombie thread function_6a8117ab();
         var_95421a26++;
         wait(randomfloatrange(5, 8));
@@ -399,16 +399,16 @@ function function_8ff08856() {
     var_f490e876 = undefined;
     s_spawn_loc = struct::get("s_pap_quest_mechz_spawn");
     var_8a9b34b3 = getent("spawner_bo5_mechz_sr", "targetname");
-    var_8a9b34b3.script_forcespawn.var_8a9b34b3 = 1;
+    var_8a9b34b3.script_forcespawn = 1;
     while (!isdefined(var_f490e876)) {
         var_f490e876 = zombie_utility::spawn_zombie(var_8a9b34b3, "pap_quest_ai", s_spawn_loc);
         waitframe(1);
     }
-    var_f490e876.var_126d7bef.var_f490e876 = 1;
-    var_f490e876.ignore_round_spawn_failsafe.var_f490e876 = 1;
-    var_f490e876.b_ignore_cleanup.var_f490e876 = 1;
-    var_f490e876.ignore_enemy_count.var_f490e876 = 1;
-    var_f490e876.no_powerups.var_f490e876 = 1;
+    var_f490e876.var_126d7bef = 1;
+    var_f490e876.ignore_round_spawn_failsafe = 1;
+    var_f490e876.b_ignore_cleanup = 1;
+    var_f490e876.ignore_enemy_count = 1;
+    var_f490e876.no_powerups = 1;
 }
 
 // Namespace namespace_bce659ef/namespace_bce659ef
@@ -426,7 +426,7 @@ function function_f8cbb582() {
     level.var_7ff7eaf9 = [];
     a_s_loc = array::sort_by_script_int(struct::get_array("s_pap_quest_boss_spawn"), 1);
     var_5e5e4c63 = getent("spawner_bo5_soa", "targetname");
-    var_5e5e4c63.script_forcespawn.var_5e5e4c63 = 1;
+    var_5e5e4c63.script_forcespawn = 1;
     level.var_1ceed659 = undefined;
     wait(0.5);
     var_84a3b2fc = 0;
@@ -541,7 +541,7 @@ function function_5fc5de3e(ents) {
     level.var_1ceed659 = var_e8cb6c46;
     var_e8cb6c46 clientfield::set("" + #"hash_3e4641a9ea00d061", 1);
     var_e8cb6c46 val::set(#"hash_2892ab448df38143", "allowdeath", 0);
-    var_e8cb6c46.var_306ee014.var_e8cb6c46 = &function_1a49126a;
+    var_e8cb6c46.var_306ee014 = &function_1a49126a;
     aiutility::addaioverridedamagecallback(var_e8cb6c46, &function_5d4aa7f8);
 }
 

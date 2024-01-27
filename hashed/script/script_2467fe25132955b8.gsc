@@ -82,8 +82,8 @@ function function_6736205c(var_638b775a = 0) {
     self namespace_1b527536::function_460882e2(1);
     var_189ef5f2 = spawnstruct();
     v_forward = vecscale(vectornormalize(anglestoforward(self.angles)), 64);
-    var_189ef5f2.origin.var_189ef5f2 = self.origin;
-    var_189ef5f2.origin.var_189ef5f2 = var_189ef5f2.origin + v_forward;
+    var_189ef5f2.origin = self.origin;
+    var_189ef5f2.origin = var_189ef5f2.origin + v_forward;
     switch (var_638b775a) {
     case 0:
         playfx("zm_weapons/fx9_fld_frost_blast_lvl0_3p", var_189ef5f2.origin);
@@ -172,8 +172,8 @@ function function_6736205c(var_638b775a = 0) {
                     if (var_638b775a >= 3 && zombie.var_6f84b820 === #"special" || zombie.var_6f84b820 === #"normal" || zombie.archetype === #"zombie_dog") {
                         self stats::function_622feb0d(#"frost_blast", #"hash_485f780a2a3da36a", 1);
                         zombie thread namespace_9ff9f642::slowdown(slowdown);
-                        zombie.var_958cf9c5.zombie = 1;
-                        zombie.var_991315b5.zombie = self;
+                        zombie.var_958cf9c5 = 1;
+                        zombie.var_991315b5 = self;
                         if (var_638b775a == 5 && var_2b1ad45b) {
                             if (zombie.var_6f84b820 === #"normal" || zombie.archetype === #"zombie_dog") {
                                 zombie damagemode("next_shot_kills");

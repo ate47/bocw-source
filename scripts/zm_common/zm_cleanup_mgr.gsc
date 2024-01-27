@@ -455,7 +455,7 @@ function no_target_override(ai_zombie) {
         }
     }
     if (!isdefined(ai_zombie.var_cc1c538e)) {
-        ai_zombie.var_cc1c538e.ai_zombie = ai_zombie get_escape_position();
+        ai_zombie.var_cc1c538e = ai_zombie get_escape_position();
         ai_zombie val::set(#"zm_cleanup_mgr", "ignoreall", 1);
     }
     if (isdefined(ai_zombie.var_cc1c538e)) {
@@ -493,7 +493,7 @@ function function_c6ad3003(b_timeout = 0) {
         }
         ai_enemy function_23621259(1);
         ai_enemy zombie_utility::reset_attack_spot();
-        ai_enemy.var_c39323b5.ai_enemy = 1;
+        ai_enemy.var_c39323b5 = 1;
         ai_enemy kill(undefined, undefined, undefined, undefined, undefined, 1);
         waitframe(1);
     }

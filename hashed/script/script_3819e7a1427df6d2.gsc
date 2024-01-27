@@ -477,9 +477,9 @@ function addaioverridedamagecallback(entity, callback, addtofront) {
         assert(!isdefined(entity.aioverridedamage) || isarray(entity.aioverridedamage));
     #/
     if (!isdefined(entity.aioverridedamage)) {
-        entity.aioverridedamage.entity = [];
+        entity.aioverridedamage = [];
     } else if (!isarray(entity.aioverridedamage)) {
-        entity.aioverridedamage.entity = array(entity.aioverridedamage);
+        entity.aioverridedamage = array(entity.aioverridedamage);
     }
     if (is_true(addtofront)) {
         damageoverrides = [];
@@ -490,9 +490,9 @@ function addaioverridedamagecallback(entity, callback, addtofront) {
         entity.aioverridedamage = damageoverrides;
     } else {
         if (!isdefined(entity.aioverridedamage)) {
-            entity.aioverridedamage.entity = [];
+            entity.aioverridedamage = [];
         } else if (!isarray(entity.aioverridedamage)) {
-            entity.aioverridedamage.entity = array(entity.aioverridedamage);
+            entity.aioverridedamage = array(entity.aioverridedamage);
         }
         entity.aioverridedamage[entity.aioverridedamage.size] = callback;
     }
@@ -513,7 +513,7 @@ function removeaioverridedamagecallback(entity, callback) {
         assert(isarray(entity.aioverridedamage));
     #/
     currentdamagecallbacks = entity.aioverridedamage;
-    entity.aioverridedamage.entity = [];
+    entity.aioverridedamage = [];
     foreach (value in currentdamagecallbacks) {
         if (value != callback) {
             entity.aioverridedamage[entity.aioverridedamage.size] = value;
@@ -526,7 +526,7 @@ function removeaioverridedamagecallback(entity, callback) {
 // Checksum 0x2794aef4, Offset: 0x1e90
 // Size: 0x16
 function clearaioverridedamagecallbacks(entity) {
-    entity.aioverridedamage.entity = [];
+    entity.aioverridedamage = [];
 }
 
 // Namespace aiutility/namespace_7d3e8f59
@@ -544,9 +544,9 @@ function addaioverridekilledcallback(entity, callback) {
         assert(!isdefined(entity.aioverridekilled) || isarray(entity.aioverridekilled));
     #/
     if (!isdefined(entity.aioverridekilled)) {
-        entity.aioverridekilled.entity = [];
+        entity.aioverridekilled = [];
     } else if (!isarray(entity.aioverridekilled)) {
-        entity.aioverridekilled.entity = array(entity.aioverridekilled);
+        entity.aioverridekilled = array(entity.aioverridekilled);
     }
     entity.aioverridekilled[entity.aioverridekilled.size] = callback;
 }

@@ -127,7 +127,7 @@ function private _initializelevelinterface(archetype) {
 // Size: 0x26
 function createinterfaceforentity(entity) {
     if (!isdefined(entity.__interface)) {
-        entity.__interface.entity = [];
+        entity.__interface = [];
     }
 }
 

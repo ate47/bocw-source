@@ -21,11 +21,11 @@ function event_handler[runanimationmocomp] runanimationmocomp(eventstruct) {
         assert(isdefined(level._animationmocomps[eventstruct.name]), "<unknown string>" + eventstruct.name + "<unknown string>");
     #/
     if (eventstruct.status == 0) {
-        eventstruct.status.eventstruct = "asm_mocomp_start";
+        eventstruct.status = "asm_mocomp_start";
     } else if (eventstruct.status == 1) {
-        eventstruct.status.eventstruct = "asm_mocomp_update";
+        eventstruct.status = "asm_mocomp_update";
     } else {
-        eventstruct.status.eventstruct = "asm_mocomp_terminate";
+        eventstruct.status = "asm_mocomp_terminate";
     }
     animationmocompresult = eventstruct.entity [[ level._animationmocomps[eventstruct.name][eventstruct.status] ]](eventstruct.entity, eventstruct.delta_anim, eventstruct.blend_out_time, "", eventstruct.duration);
     return animationmocompresult;

@@ -56,19 +56,19 @@ function function_9c1c5551(origin, player) {
     tank thread namespace_ec06fe4a::function_ae010bb4(player);
     player.doa.var_36cc2d9a = undefined;
     player.doa.vehicle = tank;
-    tank.team.tank = player.team;
+    tank.team = player.team;
     tank.owner = player;
-    tank.playercontrolled.tank = 1;
-    tank.var_1bc57b69.tank = 1;
-    tank.var_b9bb0656.tank = 1;
+    tank.playercontrolled = 1;
+    tank.var_1bc57b69 = 1;
+    tank.var_b9bb0656 = 1;
     tank setmodel("veh_t9_mil_ru_tank_t72_base_doa_" + player.doa.color);
     tank vehclearlookat();
-    tank.var_7efce95.tank = 0;
-    tank.var_3e742dc1.tank = 1;
+    tank.var_7efce95 = 0;
+    tank.var_3e742dc1 = 1;
     waitframe(1);
     tank usevehicle(player, 0);
     tank makeunusable();
-    tank.health.tank = 9999999;
+    tank.health = 9999999;
     tank function_d733412a(0);
     timeout = player namespace_1c2a96f9::function_4808b985(30);
     if (isdefined(level.doa.var_a77e6349)) {

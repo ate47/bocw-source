@@ -754,7 +754,7 @@ function waittill_level_string(msg, ent, otherent) {
 // Size: 0x9c
 function waittill_multiple(...) {
     s_tracker = spawnstruct();
-    s_tracker._wait_count.s_tracker = 0;
+    s_tracker._wait_count = 0;
     for (i = 0; i < vararg.size; i++) {
         self thread _waitlogic(s_tracker, vararg[i]);
     }
@@ -803,7 +803,7 @@ function waittill_multiple_ents(...) {
         }
     }
     s_tracker = spawnstruct();
-    s_tracker._wait_count.s_tracker = 0;
+    s_tracker._wait_count = 0;
     for (i = 0; i < a_ents.size; i++) {
         ent = a_ents[i];
         if (isdefined(ent)) {
@@ -1865,7 +1865,7 @@ function spawn_model(model_name, origin = (0, 0, 0), angles = (0, 0, 0), n_spawn
 function spawn_anim_model(model_name, origin, angles, n_spawnflags = 0, b_throttle) {
     model = spawn_model(model_name, origin, angles, n_spawnflags, b_throttle);
     model useanimtree("generic");
-    model.animtree.model = "generic";
+    model.animtree = "generic";
     return model;
 }
 
@@ -1876,7 +1876,7 @@ function spawn_anim_model(model_name, origin, angles, n_spawnflags = 0, b_thrott
 function spawn_anim_player_model(model_name, origin, angles, n_spawnflags = 0, b_throttle) {
     model = spawn_model(model_name, origin, angles, n_spawnflags, b_throttle);
     model useanimtree("all_player");
-    model.animtree.model = "all_player";
+    model.animtree = "all_player";
     return model;
 }
 
@@ -1976,7 +1976,7 @@ function waittillendonthreaded(waitcondition, callback, endcondition1, endcondit
 // Size: 0x42
 function new_timer(n_timer_length) {
     s_timer = spawnstruct();
-    s_timer.n_time_created.s_timer = gettime();
+    s_timer.n_time_created = gettime();
     s_timer.n_length = n_timer_length;
     return s_timer;
 }
@@ -2240,7 +2240,7 @@ function is_flashbanged() {
 // Size: 0x112
 function magic_bullet_shield(ent = self) {
     ent val::set(#"magic_bullet_shield", "allowdeath", 0);
-    ent.magic_bullet_shield.ent = 1;
+    ent.magic_bullet_shield = 1;
     /#
         ent notify(#"_stop_magic_bullet_shield_debug");
         level thread debug_magic_bullet_shield_death(ent);
@@ -2252,7 +2252,7 @@ function magic_bullet_shield(ent = self) {
         if (isactor(ent)) {
             ent bloodimpact("hero");
         }
-        ent.attackeraccuracy.ent = 0.1;
+        ent.attackeraccuracy = 0.1;
     }
 }
 
@@ -2283,10 +2283,10 @@ function debug_magic_bullet_shield_death(guy) {
 // Size: 0x478
 function spawn_player_clone(player, animname, s_align, var_df23b31f = 0, var_b661e70a) {
     playerclone = spawn("script_model", player.origin);
-    playerclone.angles.playerclone = player.angles;
-    playerclone.var_8323de3e.playerclone = 1;
+    playerclone.angles = player.angles;
+    playerclone.var_8323de3e = 1;
     playerclone.var_1ff8de20 = player;
-    playerclone.var_3b97696d.playerclone = player getplayergendertype();
+    playerclone.var_3b97696d = player getplayergendertype();
     if (player function_390cb543()) {
         var_1749f1e8 = player function_92ea4100();
         if (isdefined(var_1749f1e8)) {
@@ -2333,9 +2333,9 @@ function spawn_player_clone(player, animname, s_align, var_df23b31f = 0, var_b66
             playerclone thread animation::play(animname, playerclone.origin, playerclone.angles);
         }
     }
-    playerclone.health.playerclone = 100;
+    playerclone.health = 100;
     playerclone setowner(player);
-    playerclone.team.playerclone = player.team;
+    playerclone.team = player.team;
     playerclone solid();
     return playerclone;
 }
@@ -2350,9 +2350,9 @@ function stop_magic_bullet_shield(ent = self) {
     if (isai(ent)) {
         if (isactor(ent)) {
             ent bloodimpact("normal");
-            ent.allowdeath.ent = 1;
+            ent.allowdeath = 1;
         }
-        ent.attackeraccuracy.ent = 1;
+        ent.attackeraccuracy = 1;
     }
     ent notify(#"stop_magic_bullet_shield");
 }
@@ -3230,7 +3230,7 @@ function drawcylinder_think(pos, rad, height, seconds, stop_notify, color, alpha
 // Size: 0x2e
 function spawn_array_struct() {
     s = spawnstruct();
-    s.a.s = [];
+    s.a = [];
     return s;
 }
 
@@ -3416,8 +3416,8 @@ function auto_delete(n_mode = 1, n_min_time_alive = 0, n_dist_horizontal = 0, n_
         return;
     }
     if (n_mode & 16 || n_mode == 1 || n_mode == 8) {
-        n_mode = n_mode & 2;
-        n_mode = n_mode & 4;
+        n_mode = n_mode | 2;
+        n_mode = n_mode | 4;
     }
     n_think_time = 1;
     n_tests_to_do = 2;
@@ -4307,7 +4307,7 @@ function getotherteamsmask(str_skip_team) {
         if (team === str_skip_team) {
             continue;
         }
-        mask = mask & getteammask(team);
+        mask = mask | getteammask(team);
     }
     return mask;
 }
@@ -5209,7 +5209,7 @@ function function_8561e73e() {
         profilestop();
         return;
     }
-    player.var_2981e271.player = 1;
+    player.var_2981e271 = 1;
     profilestop();
 }
 
@@ -5236,7 +5236,7 @@ function function_2a269390() {
         profilestop();
         return;
     }
-    player.var_a9ceab54.player = 1;
+    player.var_a9ceab54 = 1;
     profilestop();
 }
 
@@ -5263,7 +5263,7 @@ function function_baee40f5() {
         profilestop();
         return;
     }
-    player.var_d5ae8847.player = 1;
+    player.var_d5ae8847 = 1;
     profilestop();
 }
 
@@ -5290,7 +5290,7 @@ function function_99c354e1() {
         profilestop();
         return;
     }
-    player.var_a1e8de2b.player = 1;
+    player.var_a1e8de2b = 1;
     profilestop();
 }
 
@@ -5312,7 +5312,7 @@ function function_f67628d4() {
     if (!gamemodeismode(0) && !gamemodeisarena()) {
         return;
     }
-    player.var_f67628d4.player = 1;
+    player.var_f67628d4 = 1;
 }
 
 // Namespace util/util_shared
@@ -5451,7 +5451,7 @@ function private function_97194cc7() {
 function private function_64ba0ace(caller, func, param1, param2, param3, param4, param5) {
     self endon(#"death");
     if (!isdefined(caller.var_2bf19e35)) {
-        caller.var_2bf19e35.caller = [];
+        caller.var_2bf19e35 = [];
     }
     caller.var_2bf19e35[caller.var_2bf19e35.size] = self;
     self thread function_a4eaf81f(caller);

@@ -168,13 +168,13 @@ function private function_808efdee(hacker, entity) {
 // Size: 0x48c
 function function_3e9e9071(player, var_f4452fa1) {
     if (!isdefined(player.var_c1e0dff3)) {
-        player.var_c1e0dff3.player = spawn("trigger_radius_use", vectorscale((0, 0, -1), 10000), 0, var_f4452fa1.var_b19ab876, var_f4452fa1.var_b19ab876, 1);
+        player.var_c1e0dff3 = spawn("trigger_radius_use", vectorscale((0, 0, -1), 10000), 0, var_f4452fa1.var_b19ab876, var_f4452fa1.var_b19ab876, 1);
         player.var_c1e0dff3.objid = gameobjects::get_next_obj_id();
         objective_add(player.var_c1e0dff3.objid, "invisible", player.var_c1e0dff3.origin, "spycraft_progress_bar");
         objective_setinvisibletoall(player.var_c1e0dff3.objid);
         objective_setvisibletoplayer(player.var_c1e0dff3.objid, player);
         thread function_73e0b42c(player, player.var_c1e0dff3);
-        player.var_7faf6953.player = [];
+        player.var_7faf6953 = [];
     }
     entities = getentitiesinradius(player.origin, var_f4452fa1.var_b19ab876 * 2);
     closestdistance = 2147483647;
@@ -221,7 +221,7 @@ function function_fa58758(objid, var_288da8b5) {
     var_288da8b5 val::set(#"spycraft", "disable_weapons");
     var_288da8b5 val::set(#"spycraft", "disable_offhand_weapons");
     var_288da8b5 playsound(#"hash_777a719a05382baf");
-    var_288da8b5.var_8f044438.var_288da8b5 = 1;
+    var_288da8b5.var_8f044438 = 1;
 }
 
 // Namespace namespace_1ec2f789/namespace_1ec2f789
@@ -248,11 +248,11 @@ function function_56762cd0(objid, var_288da8b5, hacktimems, targetentity) {
 // Checksum 0x3354ffbf, Offset: 0x1010
 // Size: 0x154
 function function_dce89a3e(entityweapon, targetentity, var_288da8b5) {
-    targetentity.ishacked.targetentity = 1;
+    targetentity.ishacked = 1;
     targetentity notify(#"hash_3a9500a4f045d0f3");
     thread [[ level.var_ff6f539f[entityweapon.name] ]](targetentity, var_288da8b5);
     if (!isdefined(targetentity.var_e2131267)) {
-        targetentity.var_e2131267.targetentity = [];
+        targetentity.var_e2131267 = [];
     }
     playerentnum = var_288da8b5 getentitynumber();
     var_b1e8c44 = targetentity.var_e2131267[playerentnum];
@@ -275,7 +275,7 @@ function function_b82a484d(objid, var_288da8b5) {
     var_288da8b5 val::reset(#"spycraft", "disable_weapons");
     var_288da8b5 val::reset(#"spycraft", "disable_offhand_weapons");
     var_288da8b5 stopsound(#"hash_777a719a05382baf");
-    var_288da8b5.var_8f044438.var_288da8b5 = 0;
+    var_288da8b5.var_8f044438 = 0;
 }
 
 // Namespace namespace_1ec2f789/namespace_1ec2f789

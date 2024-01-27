@@ -87,8 +87,8 @@ function function_6873a657(localclientnum, *oldval, newval, bnewent, *binitialsn
         self setanim(level.var_87226c31.bundle.deployanim, 1, var_f56117a2, 0);
     }
     if (bwastimejump) {
-        var_e72a224a = self getanimtime(level.var_87226c31.bundle.deployanim);
-        if (var_f56117a2 < var_e72a224a || fieldname) {
+        currentanimtime = self getanimtime(level.var_87226c31.bundle.deployanim);
+        if (var_f56117a2 < currentanimtime || fieldname) {
             self setanimtime(level.var_87226c31.bundle.deployanim, var_f56117a2);
         }
     } else {

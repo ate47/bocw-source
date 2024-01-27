@@ -161,12 +161,12 @@ function function_364bc19c(outcome) {
                 var_bb497eb0 function_5a1fa1a2(player);
                 if (isdefined(level.var_ecb89926)) {
                     var_bb497eb0 dontinterpolate();
-                    var_bb497eb0.origin.var_bb497eb0 = level.var_ecb89926;
+                    var_bb497eb0.origin = level.var_ecb89926;
                 }
                 var_bb497eb0 sethighdetail(1);
                 var_bb497eb0 ghost();
                 var_bb497eb0 notsolid();
-                var_bb497eb0.var_e7622b1.var_bb497eb0 = player getentitynumber();
+                var_bb497eb0.var_e7622b1 = player getentitynumber();
                 if (!isdefined(level.var_3eada96b)) {
                     level.var_3eada96b = [];
                 } else if (!isarray(level.var_3eada96b)) {

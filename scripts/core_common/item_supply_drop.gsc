@@ -146,15 +146,15 @@ function private debug_supply_drop() {
                 line(level.var_57e06aea[index - 1], level.var_57e06aea[index], (1, 0, 0));
             }
             if (isdefined(level.supplydropmax) && isdefined(level.supplydropmin)) {
-                var_d54803e = level.supplydropmin;
+                mintop = level.supplydropmin;
                 var_9c1af46d = (level.supplydropmin[0], level.supplydropmax[1], level.supplydropmax[2]);
                 var_c46271bf = (level.supplydropmax[0], level.supplydropmin[1], level.supplydropmin[2]);
                 var_99a8be82 = level.supplydropmax;
-                line(var_d54803e, var_9c1af46d, (1, 1, 1));
-                line(var_d54803e, var_c46271bf, (1, 1, 1));
+                line(mintop, var_9c1af46d, (1, 1, 1));
+                line(mintop, var_c46271bf, (1, 1, 1));
                 line(var_99a8be82, var_9c1af46d, (1, 1, 1));
                 line(var_99a8be82, var_c46271bf, (1, 1, 1));
-                sphere(var_d54803e, radius, (1, 1, 1));
+                sphere(mintop, radius, (1, 1, 1));
                 sphere(var_c46271bf, radius, (1, 1, 1));
                 sphere(var_9c1af46d, radius, (1, 1, 1));
                 sphere(var_99a8be82, radius, (1, 1, 1));
@@ -197,34 +197,34 @@ function private function_c7bd0aa8(point, startpoint) {
     var_1ccbeeaa = (point[0], point[1], 0);
     var_49e5fac9 = (startpoint[0], startpoint[1], 0);
     if (var_1ccbeeaa[0] < min[0]) {
-        var_dd00b78e = vectornormalize(var_1ccbeeaa - var_49e5fac9);
+        toend = vectornormalize(var_1ccbeeaa - var_49e5fac9);
         /#
-            assert(var_dd00b78e[0] != 0);
+            assert(toend[0] != 0);
         #/
-        t = (min[0] - var_49e5fac9[0]) / var_dd00b78e[0];
-        var_1ccbeeaa = var_49e5fac9 + var_dd00b78e * t;
+        t = (min[0] - var_49e5fac9[0]) / toend[0];
+        var_1ccbeeaa = var_49e5fac9 + toend * t;
     } else if (var_1ccbeeaa[0] > max[0]) {
-        var_dd00b78e = vectornormalize(var_1ccbeeaa - var_49e5fac9);
+        toend = vectornormalize(var_1ccbeeaa - var_49e5fac9);
         /#
-            assert(var_dd00b78e[0] != 0);
+            assert(toend[0] != 0);
         #/
-        t = (max[0] - var_49e5fac9[0]) / var_dd00b78e[0];
-        var_1ccbeeaa = var_49e5fac9 + var_dd00b78e * t;
+        t = (max[0] - var_49e5fac9[0]) / toend[0];
+        var_1ccbeeaa = var_49e5fac9 + toend * t;
     }
     if (var_1ccbeeaa[1] < min[1]) {
-        var_dd00b78e = vectornormalize(var_1ccbeeaa - var_49e5fac9);
+        toend = vectornormalize(var_1ccbeeaa - var_49e5fac9);
         /#
-            assert(var_dd00b78e[1] != 0);
+            assert(toend[1] != 0);
         #/
-        t = (min[1] - var_49e5fac9[1]) / var_dd00b78e[1];
-        var_1ccbeeaa = var_49e5fac9 + var_dd00b78e * t;
+        t = (min[1] - var_49e5fac9[1]) / toend[1];
+        var_1ccbeeaa = var_49e5fac9 + toend * t;
     } else if (var_1ccbeeaa[1] > max[1]) {
-        var_dd00b78e = vectornormalize(var_1ccbeeaa - var_49e5fac9);
+        toend = vectornormalize(var_1ccbeeaa - var_49e5fac9);
         /#
-            assert(var_dd00b78e[1] != 0);
+            assert(toend[1] != 0);
         #/
-        t = (max[1] - var_49e5fac9[1]) / var_dd00b78e[1];
-        var_1ccbeeaa = var_49e5fac9 + var_dd00b78e * t;
+        t = (max[1] - var_49e5fac9[1]) / toend[1];
+        var_1ccbeeaa = var_49e5fac9 + toend * t;
     }
     point = (var_1ccbeeaa[0], var_1ccbeeaa[1], point[2]);
     return point;
@@ -331,7 +331,7 @@ function private function_500a6615(itemspawnlist = #"t9_supply_drop_stash_parent
         supplydrop endon(#"death");
         supplydrop unlink();
         supplydrop show();
-        supplydrop.angles.supplydrop = (0, supplydrop.angles[1], 0);
+        supplydrop.angles = (0, supplydrop.angles[1], 0);
         startpoint = (supplydrop.origin[0], supplydrop.origin[1], min(32000, supplydrop.origin[2] - 200));
         endpoint = (supplydrop.origin[0], supplydrop.origin[1], -32000);
         travelspeed = is_true(supplydrop.var_abd32694) ? 400 : 200;
@@ -357,7 +357,7 @@ function private function_500a6615(itemspawnlist = #"t9_supply_drop_stash_parent
         foreach (supplydropparachute in var_d6cc4b8c) {
             supplydropparachute notify(#"parachute_close");
             supplydropparachute flag::set("parachute_close");
-            supplydropparachute.parachute_close.supplydropparachute = 1;
+            supplydropparachute.parachute_close = 1;
         }
         if (is_true(supplydrop.var_abd32694)) {
             if (isdefined(supplydrop.var_d5552131)) {
@@ -384,14 +384,14 @@ function private function_500a6615(itemspawnlist = #"t9_supply_drop_stash_parent
 // Size: 0x1fc
 function private function_e21ceb1b() {
     self endon(#"death", #"movedone");
-    var_9d85c40f = vectorscale((1, 1, 1), 10);
+    extendbounds = vectorscale((1, 1, 1), 10);
     previousorigin = self.origin;
     while (1) {
         var_3769eb50 = getentitiesinradius(self.origin, 128, 1);
         var_15d21979 = abs((previousorigin - self.origin)[2]);
         if (var_15d21979 > 4) {
             foreach (player in var_3769eb50) {
-                if (isalive(player) && player istouching(self, var_9d85c40f)) {
+                if (isalive(player) && player istouching(self, extendbounds)) {
                     player dodamage(player.health + 1, player.origin, self, self, "none", "MOD_HIT_BY_OBJECT", 0, getweapon(#"supplydrop"));
                     player playsound("evt_supply_crush");
                 }
@@ -469,9 +469,9 @@ function private function_4daa76d4(supplydrop, var_d91c179d) {
     var_58a748b4 = [];
     if (!isdefined(var_d91c179d)) {
         parachute = spawn("script_model", (0, 0, 0));
-        parachute.targetname.parachute = "supply_drop_chute";
-        parachute.origin.parachute = supplydrop.origin;
-        parachute.angles.parachute = supplydrop.angles;
+        parachute.targetname = "supply_drop_chute";
+        parachute.origin = supplydrop.origin;
+        parachute.angles = supplydrop.angles;
         parachute setforcenocull();
         parachute setmodel("p9_fxanim_wz_parachute_supplydrop_01_mod");
         parachute clientfield::set("supply_drop_parachute_rob", 1);
@@ -482,9 +482,9 @@ function private function_4daa76d4(supplydrop, var_d91c179d) {
         var_daf5f046 = 4;
         for (index = 0; index < var_daf5f046; index++) {
             parachute = spawn("script_model", (0, 0, 0));
-            parachute.targetname.parachute = "supply_drop_chute";
-            parachute.origin.parachute = supplydrop.origin;
-            parachute.angles.parachute = supplydrop.angles;
+            parachute.targetname = "supply_drop_chute";
+            parachute.origin = supplydrop.origin;
+            parachute.angles = supplydrop.angles;
             parachute setforcenocull();
             parachute setmodel("p9_fxanim_wz_parachute_supplydrop_veh_mod");
             parachute clientfield::set("supply_drop_parachute_rob", 1);
@@ -502,16 +502,16 @@ function private function_4daa76d4(supplydrop, var_d91c179d) {
 // Size: 0x19e
 function private function_67d7d040(var_d91c179d) {
     supplydrop = spawn("script_model", (0, 0, 0));
-    supplydrop.targetname.supplydrop = "supply_drop";
+    supplydrop.targetname = "supply_drop";
     supplydrop setmodel("wpn_t9_streak_care_package_friendly_world_nosight");
     supplydrop setforcenocull();
     supplydrop useanimtree("generic");
-    supplydrop.var_a64ed253.supplydrop = 1;
-    supplydrop.var_bad13452.supplydrop = 0;
-    supplydrop.targetname.supplydrop = supplydrop getentitynumber() + "_stash_" + randomint(2147483647);
+    supplydrop.var_a64ed253 = 1;
+    supplydrop.var_bad13452 = 0;
+    supplydrop.targetname = supplydrop getentitynumber() + "_stash_" + randomint(2147483647);
     supplydrop clientfield::set("dynamic_stash", 1);
     supplydrop clientfield::set("dynamic_stash_type", 1);
-    supplydrop.stash_type.supplydrop = 1;
+    supplydrop.stash_type = 1;
     supplydrop setweapon(getweapon(#"hash_36d39ebc29109d2d"));
     supplydrop function_619a5c20();
     supplydrop.supplydropveh = var_d91c179d;
@@ -524,7 +524,7 @@ function private function_67d7d040(var_d91c179d) {
 // Size: 0x12e
 function private function_70f0b08a(var_d91c179d, vehicletype) {
     var_c7acf5ad = spawn("script_model", (0, 0, 0));
-    var_c7acf5ad.targetname.var_c7acf5ad = "supply_drop_harness";
+    var_c7acf5ad.targetname = "supply_drop_harness";
     var_c7acf5ad setforcenocull();
     if (!isdefined(vehicletype)) {
         var_c7acf5ad setmodel("p9_fxanim_wz_parachute_supplydrop_harness_01_mod");
@@ -586,8 +586,8 @@ function private function_a3832aa0(var_d91c179d, vehicletype, dropangles, var_b4
     var_da7d45d1 = vectorscale((0, 1, 0), 90);
     dropangles = dropangles - var_b48a7d49 + var_da7d45d1;
     var_d5552131 linkto(supplydrop, "tag_origin", (0, 0, 0), dropangles);
-    var_d5552131.var_b9b5403c.var_d5552131 = var_d5552131.health * 0.5;
-    var_d5552131.overridevehicledamage.var_d5552131 = &function_9a275b1f;
+    var_d5552131.var_b9b5403c = var_d5552131.health * 0.5;
+    var_d5552131.overridevehicledamage = &function_9a275b1f;
     var_d5552131.supplydropveh = var_d91c179d;
     var_d5552131.supplydrop = supplydrop;
     var_d5552131 makeusable();
@@ -596,7 +596,7 @@ function private function_a3832aa0(var_d91c179d, vehicletype, dropangles, var_b4
         var_d5552131 setbrake(1);
     }
     supplydrop.var_d5552131 = var_d5552131;
-    supplydrop.var_abd32694.supplydrop = 1;
+    supplydrop.var_abd32694 = 1;
     arrayremovevalue(level.var_3f771530, undefined);
     level.var_3f771530[level.var_3f771530.size] = var_d5552131;
     return supplydrop;
@@ -901,9 +901,9 @@ function private function_261b0e67(spawnpoint, endpoint, droppoint, dropflare = 
     }
     var_7366c0ff endon(#"death");
     var_7366c0ff setforcenocull();
-    var_7366c0ff.goalradius.var_7366c0ff = 128;
-    var_7366c0ff.goalheight.var_7366c0ff = 128;
-    var_7366c0ff.health.var_7366c0ff = 10000;
+    var_7366c0ff.goalradius = 128;
+    var_7366c0ff.goalheight = 128;
+    var_7366c0ff.health = 10000;
     var_7366c0ff setspeed(125);
     var_7366c0ff setrotorspeed(1);
     var_7366c0ff vehicle::toggle_tread_fx(1);
@@ -958,9 +958,9 @@ function function_7d4a448f(var_47d17dcb = 0) {
     var_396cbf6e = deathcircle.radius;
     var_be734526 = deathcircle.radius - var_4f59c30d;
     if (var_be734526 > 0) {
-        var_e7993c63 = vectornormalize(deathcirclecenter - (deathcircle.origin[0], deathcircle.origin[1], var_94f13d8b));
-        var_8df04549 = deathcirclecenter - var_e7993c63 * var_4f59c30d;
-        exitpoint = deathcirclecenter + var_e7993c63 * var_4f59c30d;
+        dirtocenter = vectornormalize(deathcirclecenter - (deathcircle.origin[0], deathcircle.origin[1], var_94f13d8b));
+        var_8df04549 = deathcirclecenter - dirtocenter * var_4f59c30d;
+        exitpoint = deathcirclecenter + dirtocenter * var_4f59c30d;
     } else {
         degrees = randomint(360);
         var_8df04549 = (cos(degrees) * var_4f59c30d, sin(degrees) * var_4f59c30d, 0) + deathcirclecenter;
@@ -1076,17 +1076,17 @@ function function_b8dd1978(startpoint, endpoint, droppoint, var_2118f785 = undef
     if (voiceevent) {
         callback::callback(#"hash_40cd438036ae13df", undefined);
     }
-    supplydropveh.goalradius.supplydropveh = 128;
-    supplydropveh.goalheight.supplydropveh = 128;
+    supplydropveh.goalradius = 128;
+    supplydropveh.goalheight = 128;
     supplydropveh.var_57e06aea = var_57e06aea;
-    supplydropveh.maxhealth.supplydropveh = supplydropveh.health;
-    supplydropveh.var_b9b5403c.supplydropveh = supplydropveh.maxhealth * 0.5;
+    supplydropveh.maxhealth = supplydropveh.health;
+    supplydropveh.var_b9b5403c = supplydropveh.maxhealth * 0.5;
     supplydropveh setspeed(100);
     supplydropveh setrotorspeed(1);
     supplydropveh vehicle::toggle_tread_fx(1);
     supplydropveh vehicle::toggle_exhaust_fx(1);
     supplydropveh vehicle::toggle_sounds(1);
-    supplydropveh.var_5d0810d7.supplydropveh = 1;
+    supplydropveh.var_5d0810d7 = 1;
     supplydrop = function_67d7d040(supplydropveh);
     if (!isdefined(supplydropveh)) {
         return;
@@ -1125,19 +1125,19 @@ function function_47ec98c4(startpoint, endpoint, droppoint, var_d91c179d = 0, ve
     }
     supplydropveh setforcenocull();
     callback::callback(#"hash_40cd438036ae13df", {#droppoint:droppoint, #vehicletype:vehicletype});
-    supplydropveh.takedamage.supplydropveh = 0;
-    supplydropveh.goalradius.supplydropveh = 128;
-    supplydropveh.goalheight.supplydropveh = 128;
+    supplydropveh.takedamage = 0;
+    supplydropveh.goalradius = 128;
+    supplydropveh.goalheight = 128;
     supplydropveh.var_57e06aea = var_57e06aea;
-    supplydropveh.maxhealth.supplydropveh = supplydropveh.health;
-    supplydropveh.var_b9b5403c.supplydropveh = supplydropveh.maxhealth * 0.5;
-    supplydropveh.overridevehicledamage.supplydropveh = &function_415bdb1d;
+    supplydropveh.maxhealth = supplydropveh.health;
+    supplydropveh.var_b9b5403c = supplydropveh.maxhealth * 0.5;
+    supplydropveh.overridevehicledamage = &function_415bdb1d;
     supplydropveh setspeed(100);
     supplydropveh setrotorspeed(1);
     supplydropveh vehicle::toggle_tread_fx(1);
     supplydropveh vehicle::toggle_exhaust_fx(1);
     supplydropveh vehicle::toggle_sounds(1);
-    supplydropveh.var_5d0810d7.supplydropveh = 1;
+    supplydropveh.var_5d0810d7 = 1;
     if (var_d91c179d) {
         harness = function_70f0b08a(supplydropveh, vehicletype);
         supplydrop = function_a3832aa0(supplydropveh, vehicletype, dropangles, var_ce19c689);

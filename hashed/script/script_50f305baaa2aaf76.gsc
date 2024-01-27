@@ -55,22 +55,22 @@ function function_ccfcde75(trophy, grenade) {
 // Checksum 0x5d632610, Offset: 0x410
 // Size: 0x132
 function createtrophysystemwatcher(watcher) {
-    watcher.ondetonatecallback.watcher = &trophysystemdetonate;
-    watcher.activatesound.watcher = #"wpn_claymore_alert";
-    watcher.hackertoolradius.watcher = level.equipmenthackertoolradius;
-    watcher.hackertooltimems.watcher = level.equipmenthackertooltimems;
-    watcher.ownergetsassist.watcher = 1;
-    watcher.ignoredirection.watcher = 1;
-    watcher.activationdelay.watcher = 0.1;
-    watcher.enemydestroy.watcher = 1;
-    watcher.var_10efd558.watcher = "switched_field_upgrade";
-    watcher.onspawn.watcher = &ontrophysystemspawn;
-    watcher.ondamage.watcher = &watchtrophysystemdamage;
-    watcher.ondestroyed.watcher = &ontrophysystemsmashed;
-    watcher.var_994b472b.watcher = &function_5a4f1e1e;
-    watcher.onstun.watcher = &weaponobjects::weaponstun;
-    watcher.stuntime.watcher = 1;
-    watcher.ontimeout.watcher = &ontrophysystemsmashed;
+    watcher.ondetonatecallback = &trophysystemdetonate;
+    watcher.activatesound = #"wpn_claymore_alert";
+    watcher.hackertoolradius = level.equipmenthackertoolradius;
+    watcher.hackertooltimems = level.equipmenthackertooltimems;
+    watcher.ownergetsassist = 1;
+    watcher.ignoredirection = 1;
+    watcher.activationdelay = 0.1;
+    watcher.enemydestroy = 1;
+    watcher.var_10efd558 = "switched_field_upgrade";
+    watcher.onspawn = &ontrophysystemspawn;
+    watcher.ondamage = &watchtrophysystemdamage;
+    watcher.ondestroyed = &ontrophysystemsmashed;
+    watcher.var_994b472b = &function_5a4f1e1e;
+    watcher.onstun = &weaponobjects::weaponstun;
+    watcher.stuntime = 1;
+    watcher.ontimeout = &ontrophysystemsmashed;
 }
 
 // Namespace trophy_system/trophy_system_spy

@@ -53,10 +53,10 @@ function private function_6ef31de9(s_instance) {
     level flag::wait_till(#"hash_34f9aa6f075e21c0");
     var_c088f113 = s_instance.var_fe2612fe[#"hash_18c54e641c89f8eb"][0];
     var_7af625c6 = s_instance.var_fe2612fe[#"hash_11421144b772dcdf"][0];
-    s_instance.n_obj_id.s_instance = zm_utility::function_f5a222a8(#"hash_71d4dbe7c877d7ae", var_7af625c6.origin);
+    s_instance.n_obj_id = zm_utility::function_f5a222a8(#"hash_71d4dbe7c877d7ae", var_7af625c6.origin);
     level callback::add_callback(#"hash_594217387367ebb4", &function_b3a6e0bc, s_instance);
     while (!isdefined(s_instance.ai_hulk)) {
-        s_instance.ai_hulk.s_instance = namespace_85745671::function_9d3ad056(#"hash_21f3d5d40d72e08d", var_7af625c6.origin, var_7af625c6.angles, "world_event_orda");
+        s_instance.ai_hulk = namespace_85745671::function_9d3ad056(#"hash_21f3d5d40d72e08d", var_7af625c6.origin, var_7af625c6.angles, "world_event_orda");
         wait(0.1);
     }
     if (isdefined(s_instance.ai_hulk)) {

@@ -166,7 +166,7 @@ function function_d99e101d(localclientnum, var_86cccd7b) {
             continue;
         }
         var_9ce372f7 = util::spawn_model(localclientnum, "tag_origin", start_pos);
-        var_9ce372f7.var_29dd623b.var_9ce372f7 = util::playfxontag(localclientnum, #"hash_523a16f9296294f0", var_9ce372f7, "tag_origin");
+        var_9ce372f7.var_29dd623b = util::playfxontag(localclientnum, #"hash_523a16f9296294f0", var_9ce372f7, "tag_origin");
         var_9ce372f7 thread function_6333cd88(self);
         var_9ce372f7 thread function_ca3614(self);
         wait(0.1);

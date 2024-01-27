@@ -52,14 +52,14 @@ function private function_70a657d8() {
 // Size: 0x276
 function function_66c8033b(instance) {
     s_start = instance.var_fe2612fe[#"hash_4d7f33a283d72002"][0];
-    instance.var_8b241b32.instance = s_start.origin;
+    instance.var_8b241b32 = s_start.origin;
     var_360148 = function_4b312787(s_start);
     if (var_360148 clientfield::is_registered("perk_death_perception_item_marked_for_rob")) {
         var_360148 clientfield::set("perk_death_perception_item_marked_for_rob", 1);
     }
     var_360148.instance = instance;
     instance.var_b9e44637 = var_360148;
-    instance.n_obj_id.instance = zm_utility::function_f5a222a8(#"hash_4ca0447c67516315", instance.var_8b241b32);
+    instance.n_obj_id = zm_utility::function_f5a222a8(#"hash_4ca0447c67516315", instance.var_8b241b32);
     var_360148 callback::function_d8abfc3d(#"hash_5f0caa4b2d44fedf", &function_4c9f2ecc);
     instance flag::wait_till(#"cleanup");
     level thread namespace_9b972177::function_16bede30();
@@ -70,7 +70,7 @@ function function_66c8033b(instance) {
     foreach (ai in a_ai) {
         if (isalive(ai)) {
             gibserverutils::annihilate(ai);
-            ai.allowdeath.ai = 1;
+            ai.allowdeath = 1;
             ai kill(undefined, undefined, undefined, undefined, undefined, 1);
             waitframe(1);
         }
@@ -99,7 +99,7 @@ function private function_37eab05b(instance) {
     level thread function_2d2fade8(instance);
     level thread function_68aac628(instance, "monsterhouse_low");
     var_d56fdb6 = array::randomize(isdefined(instance.var_fe2612fe[#"hash_1c35d9839ba0d789"]) ? instance.var_fe2612fe[#"hash_1c35d9839ba0d789"] : []);
-    instance.var_eb3bf4b1.instance = [];
+    instance.var_eb3bf4b1 = [];
     var_90acdb64 = getplayers().size * 2 + 4;
     n_spawned = 0;
     instance.var_5cbcc78a = var_90acdb64;
@@ -110,9 +110,9 @@ function private function_37eab05b(instance) {
                 var_3128fb28 clientfield::set("perk_death_perception_item_marked_for_rob", 1);
             }
             if (!isdefined(instance.var_eb3bf4b1)) {
-                instance.var_eb3bf4b1.instance = [];
+                instance.var_eb3bf4b1 = [];
             } else if (!isarray(instance.var_eb3bf4b1)) {
-                instance.var_eb3bf4b1.instance = array(instance.var_eb3bf4b1);
+                instance.var_eb3bf4b1 = array(instance.var_eb3bf4b1);
             }
             instance.var_eb3bf4b1[instance.var_eb3bf4b1.size] = var_3128fb28;
             n_spawned++;
@@ -256,9 +256,9 @@ function private function_4b312787(struct) {
     var_3128fb28 = namespace_8b6a9d79::function_f3d93ee9(struct, model);
     var_3128fb28 setscale(randomfloatrange(0.9, 1.1));
     var_3128fb28 val::set(#"hash_3f8039e6e19dc02b", "takedamage", 1);
-    var_3128fb28.health.var_3128fb28 = 5;
-    var_3128fb28.var_ef3ac4e.var_3128fb28 = #"hash_73df079d82dffbb";
-    var_3128fb28.var_9880bf81.var_3128fb28 = 1;
+    var_3128fb28.health = 5;
+    var_3128fb28.var_ef3ac4e = #"hash_73df079d82dffbb";
+    var_3128fb28.var_9880bf81 = 1;
     var_3128fb28 thread function_fc37bb4f("active");
     var_3128fb28 thread scene::play(str_scene, var_3128fb28);
     var_3128fb28 fx::play(#"hash_55757df7429e3ca6", var_3128fb28.origin, var_3128fb28.angles, #"hash_285fd9bc53c292d8", 1);

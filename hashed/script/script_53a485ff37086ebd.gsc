@@ -118,7 +118,7 @@ function private function_da6accd0() {
     zm_loadout::init_player(isdefined(self.var_1fa95cc));
     zm_loadout::function_f436358b(self.curclass);
     zm_weapons::give_start_weapons();
-    namespace_341c57b3::function_18135b72(#"hash_27cccc0731de1722", {#player:self});
+    telemetry::function_18135b72(#"hash_27cccc0731de1722", {#player:self});
 }
 
 // Namespace zcranked/zcranked
@@ -276,7 +276,7 @@ function private intro_cinematic() {
     music::setmusicstate("cranked_intro");
     if (isdefined(level.var_dfee7fc2) && !getdvarint(#"hash_39af51993585a73e", 0)) {
         foreach (player in getplayers()) {
-            player.var_f4e33249.player = 1;
+            player.var_f4e33249 = 1;
         }
         namespace_66d6aa44::function_bb17da18();
         level.var_3dfa8db4 = 1;
@@ -359,20 +359,20 @@ function on_round_end() {
     luinotifyevent(#"hash_3e6dd0ad7b864154", 1, var_370ac26d);
     foreach (player in getplayers()) {
         if (!isdefined(player.var_8d41c907)) {
-            player.var_8d41c907.player = 0;
+            player.var_8d41c907 = 0;
         }
         if (zm_utility::function_1a01f2f7(player)) {
             player addrankxpvalue("round_end_xp", var_370ac26d, 4);
-            player.var_8d41c907.player = player.var_8d41c907 - var_370ac26d;
+            player.var_8d41c907 = player.var_8d41c907 - var_370ac26d;
         }
         if (!isdefined(player.var_a160c21d) || player.var_a160c21d === 0) {
             /#
                 println("<unknown string>" + player getentitynumber() + "<unknown string>");
             #/
-            player.var_a160c21d.player = 0;
+            player.var_a160c21d = 0;
         }
-        player.var_8d41c907.player = player.var_8d41c907 + player zm_round_logic::function_f4c57bbe();
-        player.var_a160c21d.player = 0;
+        player.var_8d41c907 = player.var_8d41c907 + player zm_round_logic::function_f4c57bbe();
+        player.var_a160c21d = 0;
         if (level.round_number % 5 == 0 && level.round_number >= 5) {
             var_36bda4b = function_ef580a0c(level.round_number);
             var_ef5aac55 = var_36bda4b * 100;
@@ -424,7 +424,7 @@ function give_match_bonus(*data) {
         var_22ba849f = getdvarint(#"hash_3f0689f4ecc2fbab", 0);
         var_900d44db = zm::function_d3113f01();
         if (!isdefined(player.var_8d41c907)) {
-            player.var_8d41c907.player = 0;
+            player.var_8d41c907 = 0;
         }
         var_103c65cc = player.var_8d41c907;
         var_7a7b21ad = player zm_round_logic::function_f4c57bbe();
@@ -591,9 +591,9 @@ function private function_5d44c2ba(var_d02140db = 0) {
         return;
     }
     if (!isdefined(player.var_5f356773)) {
-        player.var_5f356773.player = 0;
+        player.var_5f356773 = 0;
     }
-    player.var_5f356773.player = int(max(player.var_5f356773, function_600547a4()));
+    player.var_5f356773 = int(max(player.var_5f356773, function_600547a4()));
     player clientfield::increment_uimodel("hud_items_cranked.crankedTimerReset");
     if (!player function_64030a52()) {
         player thread function_bab1a386(player.var_5f356773);
@@ -779,8 +779,8 @@ function private function_62dd8e0c(einflictor, attacker, *idamage, smeansofdeath
     self zm_stats::function_8f10788e("boas_deaths");
     body = self cloneplayer(deathanimduration, vdir, weapon, shitloc);
     self.body = body;
-    body.player.body = self;
-    body.iscorpse.body = 1;
+    body.player = self;
+    body.iscorpse = 1;
     self thread delayed_ragdoll(body);
     var_a8cdcd4a = killcam::get_killcam_entity_info(weapon, smeansofdeath, vdir);
     clientnum = self getentitynumber();

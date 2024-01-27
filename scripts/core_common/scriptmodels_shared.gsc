@@ -35,9 +35,9 @@ function private function_9abee270(model) {
         return;
     }
     if (isdefined(model.script_health)) {
-        model.health.model = model.script_health;
-        model.maxhealth.model = model.script_health;
-        model.takedamage.model = 1;
+        model.health = model.script_health;
+        model.maxhealth = model.script_health;
+        model.takedamage = 1;
     }
     if (is_true(model.var_3ee8e0e2)) {
         model util::make_sentient();
@@ -46,7 +46,7 @@ function private function_9abee270(model) {
         model function_619a5c20();
     }
     if (isdefined(model.script_team) && model.script_team != "none") {
-        model.team.model = model.script_team;
+        model.team = model.script_team;
         model setteam(model.script_team);
     }
 }

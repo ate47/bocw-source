@@ -35,8 +35,8 @@ function private on_begin() {
     if (util::get_map_name() == "zm_office") {
         elevator1 = getent("elevator1", "targetname");
         elevator2 = getent("elevator2", "targetname");
-        elevator1.cost.elevator1 = 0;
-        elevator2.cost.elevator2 = 0;
+        elevator1.cost = 0;
+        elevator2.cost = 0;
         trigger1 = getent(elevator1.targetname + "_buy", "script_noteworthy");
         trigger2 = getent(elevator2.targetname + "_buy", "script_noteworthy");
         trigger1 sethintstring(level.var_31560d97, elevator1.cost);
@@ -62,8 +62,8 @@ function private on_end(*round_reset) {
     if (util::get_map_name() == "zm_office") {
         elevator1 = getent("elevator1", "targetname");
         elevator2 = getent("elevator2", "targetname");
-        elevator1.cost.elevator1 = 500;
-        elevator2.cost.elevator2 = 500;
+        elevator1.cost = 500;
+        elevator2.cost = 500;
         trigger1 = getent(elevator1.targetname + "_buy", "script_noteworthy");
         trigger2 = getent(elevator2.targetname + "_buy", "script_noteworthy");
         trigger1 sethintstring(level.var_31560d97, elevator1.cost);

@@ -186,9 +186,9 @@ function on_player_spawned(local_client_num) {
             level.nearbyspawns = [];
         }
         spawnlocation = spawnstruct();
-        spawnlocation.origin.spawnlocation = self.origin;
-        spawnlocation.spawntime.spawnlocation = getservertime(local_client_num);
-        spawnlocation.player.spawnlocation = self;
+        spawnlocation.origin = self.origin;
+        spawnlocation.spawntime = getservertime(local_client_num);
+        spawnlocation.player = self;
         level.nearbyspawns[level.nearbyspawns.size] = spawnlocation;
     }
 }
@@ -305,7 +305,7 @@ function monitor_tracker_perk_killcam(local_client_num) {
             }
             positionandrotationstruct = self gettrackerfxposition(local_client_num);
             if (isdefined(positionandrotationstruct)) {
-                positionandrotationstruct.time.positionandrotationstruct = getservertime(local_client_num);
+                positionandrotationstruct.time = getservertime(local_client_num);
                 level.trackerspecialtyself[local_client_num][level.trackerspecialtycounter[local_client_num]] = positionandrotationstruct;
                 level.trackerspecialtycounter[local_client_num]++;
                 if (level.trackerspecialtycounter[local_client_num] > 20) {
@@ -416,8 +416,8 @@ function killtrackerfx_on_death(local_client_num) {
         self.killtrackerfx = undefined;
     }
     killtrackerfx = spawnstruct();
-    killtrackerfx.array.killtrackerfx = [];
-    killtrackerfx.index.killtrackerfx = 0;
+    killtrackerfx.array = [];
+    killtrackerfx.index = 0;
     self.killtrackerfx = killtrackerfx;
     self waittill(#"death");
     servertime = getservertime(local_client_num);
@@ -426,8 +426,8 @@ function killtrackerfx_on_death(local_client_num) {
             killfx(local_client_num, killfxstruct.handle);
         }
     }
-    killtrackerfx.array.killtrackerfx = [];
-    killtrackerfx.index.killtrackerfx = 0;
+    killtrackerfx.array = [];
+    killtrackerfx.index = 0;
     killtrackerfx = undefined;
 }
 
@@ -785,16 +785,16 @@ function monitor_detectnearbyenemies(local_client_num) {
                     var_c729e60c = 2;
                 }
                 if (cosangle > 0.707107) {
-                    enemydetectedbitfield = enemydetectedbitfield & var_c729e60c << 0;
+                    enemydetectedbitfield = enemydetectedbitfield | var_c729e60c << 0;
                 } else if (cosangle < -0.707107) {
-                    enemydetectedbitfield = enemydetectedbitfield & var_c729e60c << 9;
+                    enemydetectedbitfield = enemydetectedbitfield | var_c729e60c << 9;
                 } else {
                     localplayeranglestoright = anglestoright(playerangles);
                     var_21060744 = vectordot(vectorflat, localplayeranglestoright) < 0;
                     if (cosangle > 0) {
-                        enemydetectedbitfield = enemydetectedbitfield & var_c729e60c << (var_21060744 ? 15 : 3);
+                        enemydetectedbitfield = enemydetectedbitfield | var_c729e60c << (var_21060744 ? 15 : 3);
                     } else {
-                        enemydetectedbitfield = enemydetectedbitfield & var_c729e60c << (var_21060744 ? 12 : 6);
+                        enemydetectedbitfield = enemydetectedbitfield | var_c729e60c << (var_21060744 ? 12 : 6);
                     }
                 }
             }
@@ -802,10 +802,10 @@ function monitor_detectnearbyenemies(local_client_num) {
         if (enemydetectedbitfield) {
             enemylosttime = 0;
             if (previousenemydetectedbitfield != enemydetectedbitfield && enemynearbytime >= 0.05) {
-                var_277a1951 = enemydetectedbitfield;
+                bitfields = enemydetectedbitfield;
                 for (i = 0; i < 4; i++) {
-                    self thread function_c90f8547(var_c948d7f9[i], var_277a1951 & (1 << 4) - 1, bundle.var_a3d426e6);
-                    var_277a1951 = var_277a1951 >> 3;
+                    self thread function_c90f8547(var_c948d7f9[i], bitfields & (1 << 4) - 1, bundle.var_a3d426e6);
+                    bitfields = bitfields >> 3;
                 }
                 enemynearbytime = 0;
                 diff = enemydetectedbitfield ^ previousenemydetectedbitfield;
@@ -860,7 +860,7 @@ function function_c2b5b27c(*local_client_num) {
         if (isdefined(waitresult.var_53714565)) {
             var_9f19a239 = waitresult.var_53714565;
             if (!isdefined(var_9f19a239.var_629d0f94)) {
-                var_9f19a239.var_629d0f94.var_9f19a239 = [];
+                var_9f19a239.var_629d0f94 = [];
             }
             var_9f19a239.var_629d0f94[waitresult.action] = gettime();
         }

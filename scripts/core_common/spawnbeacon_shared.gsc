@@ -70,7 +70,7 @@ function function_1c601b99() {
 // Checksum 0xfc221c30, Offset: 0x520
 // Size: 0x54
 function function_bff5c062(spawnbeacon, *attackingplayer) {
-    attackingplayer.var_d02ddb8e.attackingplayer = getweapon(#"gadget_icepick");
+    attackingplayer.var_d02ddb8e = getweapon(#"gadget_icepick");
     attackingplayer thread function_a9ff3efb(1);
 }
 
@@ -128,10 +128,10 @@ function function_6b437265(team) {
 // Checksum 0x7e5446ff, Offset: 0x730
 // Size: 0x62
 function function_cfabb62c(watcher) {
-    watcher.watchforfire.watcher = 1;
-    watcher.onspawn.watcher = &beacon_spawned;
-    watcher.ontimeout.watcher = &function_13ac856e;
-    watcher.var_994b472b.watcher = &function_f9d3fff8;
+    watcher.watchforfire = 1;
+    watcher.onspawn = &beacon_spawned;
+    watcher.ontimeout = &function_13ac856e;
+    watcher.var_994b472b = &function_f9d3fff8;
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
@@ -223,7 +223,7 @@ function beacon_spawned(watcher, owner) {
     owner.var_9bab32d9 = undefined;
     owner onplacespawnbeacon(self);
     owner clientfield::set_player_uimodel("hudItems.spawnbeacon.active", 1);
-    owner.var_9698a18d.owner = 1;
+    owner.var_9698a18d = 1;
     spawnbeacon = self.spawnbeacon;
     spawnbeacon setanim(#"o_spawn_beacon_deploy", 1);
 }
@@ -338,7 +338,7 @@ function on_player_spawned() {
 // Size: 0x196
 function function_41a037e6() {
     spawnbeacon = self;
-    spawnbeacon.threatlevel.spawnbeacon = 0;
+    spawnbeacon.threatlevel = 0;
     foreach (player in level.players) {
         if (player getteam() == spawnbeacon.team) {
             continue;
@@ -346,7 +346,7 @@ function function_41a037e6() {
         foreach (var_25d50c8b in level.spawnbeaconsettings.var_613ff100) {
             distance = distancesquared(spawnbeacon.origin, player.origin);
             if (distance <= var_25d50c8b.zonemax && distance > var_25d50c8b.zonemin) {
-                spawnbeacon.threatlevel.spawnbeacon = spawnbeacon.threatlevel + var_25d50c8b.points;
+                spawnbeacon.threatlevel = spawnbeacon.threatlevel + var_25d50c8b.points;
             }
         }
     }
@@ -474,7 +474,7 @@ function function_4d9f82ce() {
     var_4dbaac09 = player gadgetgetslot(level.spawnbeaconsettings.var_c1a364b9);
     currentpower = player gadgetpowerget(var_4dbaac09) / 100;
     penalty = (isdefined(level.spawnbeaconsettings.settingsbundle.var_da5fcc2d) ? level.spawnbeaconsettings.settingsbundle.var_da5fcc2d : 0) - (isdefined(level.spawnbeaconsettings.settingsbundle.var_da5fcc2d) ? level.spawnbeaconsettings.settingsbundle.var_da5fcc2d : 0) * currentpower;
-    player.var_299012ff.player = int(penalty);
+    player.var_299012ff = int(penalty);
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
@@ -571,12 +571,12 @@ function function_a9ff3efb(var_d3213f00) {
         var_c2ca0930 = getarraykeys(level.spawnbeaconsettings.userspawnbeacons[self.owner.clientid]);
         foreach (var_2f55edb in var_c2ca0930) {
             if (level.spawnbeaconsettings.userspawnbeacons[self.owner.clientid][var_2f55edb] == self) {
-                var_10432750 = var_2f55edb;
+                indextoremove = var_2f55edb;
             }
         }
     }
-    if (isdefined(var_10432750)) {
-        level.spawnbeaconsettings.userspawnbeacons[self.owner.clientid] = array::remove_index(level.spawnbeaconsettings.userspawnbeacons[self.owner.clientid], var_10432750, 0);
+    if (isdefined(indextoremove)) {
+        level.spawnbeaconsettings.userspawnbeacons[self.owner.clientid] = array::remove_index(level.spawnbeaconsettings.userspawnbeacons[self.owner.clientid], indextoremove, 0);
     }
     self stoploopsound();
     self notify(#"beacon_removed");
@@ -584,7 +584,7 @@ function function_a9ff3efb(var_d3213f00) {
     if (isdefined(player)) {
         player notify(#"beacon_removed");
         player clientfield::set_player_uimodel("hudItems.spawnbeacon.active", 0);
-        player.var_9698a18d.player = 0;
+        player.var_9698a18d = 0;
         player.var_583f6cce = undefined;
     }
     if (isdefined(self.var_2d045452)) {
@@ -634,7 +634,7 @@ function createspawngroupforspawnbeacon(associatedspawnbeacon, spawnstoadd) {
     team = associatedspawnbeacon.team;
     enemyteam = util::getotherteam(team);
     var_5b29525a = level.teambased && isdefined(game.switchedsides) && game.switchedsides && level.spawnsystem.var_3709dc53;
-    associatedspawnbeacon.spawnlist.associatedspawnbeacon = getnewspawnbeaconspawnlist();
+    associatedspawnbeacon.spawnlist = getnewspawnbeaconspawnlist();
     /#
         assert(isdefined(associatedspawnbeacon.spawnlist));
     #/
@@ -661,7 +661,7 @@ function function_425d8006() {
     spawnbeacon = self;
     spawnbeacon endon(#"beacon_removed");
     level endon(#"game_ended");
-    spawnbeacon.isdisabled.spawnbeacon = 1;
+    spawnbeacon.isdisabled = 1;
     spawnbeacon notify(#"beacon_disabled");
     objective_setgamemodeflags(spawnbeacon.objectiveid, 3);
     var_d7760961 = isdefined(level.spawnbeaconsettings.settingsbundle.var_26f4f5f0) ? level.spawnbeaconsettings.settingsbundle.var_26f4f5f0 : 0;
@@ -675,7 +675,7 @@ function function_425d8006() {
     function_d7cd849c(level.spawnbeaconsettings.settingsbundle.var_c5d0582b, util::getotherteam(spawnbeacon.team), undefined);
     setbombtimer(var_f1c32a14, gettime() + int(var_d7760961 * 1000));
     wait(var_d7760961);
-    spawnbeacon.isdisabled.spawnbeacon = 0;
+    spawnbeacon.isdisabled = 0;
     spawnbeacon notify(#"beacon_enabled");
 }
 
@@ -711,11 +711,11 @@ function watchfordamage() {
     self endon(#"hash_523ddcbd662010e5");
     spawnbeacon = self;
     spawnbeacon endon(#"death");
-    spawnbeacon.health.spawnbeacon = level.spawnbeaconsettings.settingsbundle.health;
+    spawnbeacon.health = level.spawnbeaconsettings.settingsbundle.health;
     if (isdefined(level.var_b8701e49)) {
-        spawnbeacon.health.spawnbeacon = level.var_b8701e49;
+        spawnbeacon.health = level.var_b8701e49;
     }
-    spawnbeacon.maxhealth.spawnbeacon = spawnbeacon.health;
+    spawnbeacon.maxhealth = spawnbeacon.health;
     while (1) {
         waitresult = undefined;
         waitresult = self waittill(#"damage");
@@ -745,7 +745,7 @@ function function_40c032a1(*einflictor, attacker, idamage, idflags, smeansofdeat
 // Size: 0x34
 function function_438ca4e0() {
     spawnbeacon = self;
-    spawnbeacon.var_648955e6.spawnbeacon = 1;
+    spawnbeacon.var_648955e6 = 1;
     spawnbeacon function_68a6ec15();
 }
 
@@ -754,9 +754,9 @@ function function_438ca4e0() {
 // Checksum 0x2bd4b16, Offset: 0x2c98
 // Size: 0x38
 function function_9c87725b() {
-    var_d5110c6d = game.spawnbeaconid;
+    currentid = game.spawnbeaconid;
     game.spawnbeaconid = game.spawnbeaconid + 1;
-    return var_d5110c6d;
+    return currentid;
 }
 
 // Namespace spawn_beacon/spawnbeacon_shared
@@ -777,7 +777,7 @@ function function_639cb9da() {
 // Checksum 0x78c1c75d, Offset: 0x2d30
 // Size: 0xcc
 function function_b3608e1(spawnbeacon) {
-    spawnbeacon.objectiveid.spawnbeacon = getobjectiveid();
+    spawnbeacon.objectiveid = getobjectiveid();
     objective_add(spawnbeacon.objectiveid, "active", spawnbeacon.origin, level.spawnbeaconsettings.settingsbundle.mainobjective);
     objective_setteam(spawnbeacon.objectiveid, spawnbeacon.team);
     function_29ef32ee(spawnbeacon.objectiveid, spawnbeacon.owner.team);
@@ -813,15 +813,15 @@ function retreatedstartmelee(var_a820f9, spawns) {
     placedspawnbeacon.owner = player;
     placedspawnbeacon clientfield::set("spawnbeacon_placed", 1);
     placedspawnbeacon setteam(player getteam());
-    placedspawnbeacon.var_86a21346.placedspawnbeacon = &function_40c032a1;
+    placedspawnbeacon.var_86a21346 = &function_40c032a1;
     placedspawnbeacon solid();
     placedspawnbeacon show();
-    placedspawnbeacon.victimsoundmod.placedspawnbeacon = "vehicle";
+    placedspawnbeacon.victimsoundmod = "vehicle";
     if (isdefined(level.var_6cd68fbe) ? level.var_6cd68fbe : 0) {
         player.pers[#"lives"]++;
     }
     placedspawnbeacon setweapon(level.spawnbeaconsettings.var_c1a364b9);
-    placedspawnbeacon.weapon.placedspawnbeacon = level.spawnbeaconsettings.var_c1a364b9;
+    placedspawnbeacon.weapon = level.spawnbeaconsettings.var_c1a364b9;
     function_b3608e1(placedspawnbeacon);
     createspawngroupforspawnbeacon(placedspawnbeacon, spawns);
     level.spawnbeaconsettings.beacons[placedspawnbeacon.objectiveid] = placedspawnbeacon;
@@ -834,10 +834,10 @@ function retreatedstartmelee(var_a820f9, spawns) {
         placedspawnbeacon setcandamage(1);
     }
     placedspawnbeacon clientfield::set("enemyequip", 1);
-    placedspawnbeacon.var_99d2556b.placedspawnbeacon = gettime();
-    placedspawnbeacon.threatlevel.placedspawnbeacon = 0;
-    placedspawnbeacon.spawncount.placedspawnbeacon = 0;
-    placedspawnbeacon.uniqueid.placedspawnbeacon = function_9c87725b();
+    placedspawnbeacon.var_99d2556b = gettime();
+    placedspawnbeacon.threatlevel = 0;
+    placedspawnbeacon.spawncount = 0;
+    placedspawnbeacon.uniqueid = function_9c87725b();
     function_d7cd849c(level.spawnbeaconsettings.settingsbundle.var_69b1ff7, player getteam(), player);
     function_d7cd849c(level.spawnbeaconsettings.settingsbundle.var_4f37dfe9, util::getotherteam(player getteam()), undefined);
     if (isdefined(level.spawnbeaconsettings.settingsbundle.var_a0db3d4d)) {
@@ -880,7 +880,7 @@ function function_264da546(*var_cd3712d2, *jammer) {
 // Size: 0x80
 function function_9aafb7bb(origin, angles, player) {
     if (!isdefined(player.var_9bab32d9)) {
-        player.var_9bab32d9.player = spawnstruct();
+        player.var_9bab32d9 = spawnstruct();
     }
     player.var_9bab32d9.spawns = [];
     if (isdefined(level.var_ae2fe442)) {

@@ -137,7 +137,7 @@ function private function_57d4a011(insertion) {
         foreach (var_e1dd0f66 in var_719e741e) {
             var_b06f2346 = "warp_portal_vehicle_spawn_" + count;
             var_7cac53bf = var_e1dd0f66 spawnfromspawner(var_b06f2346, 1, 1);
-            var_7cac53bf.takedamage.var_7cac53bf = 0;
+            var_7cac53bf.takedamage = 0;
             var_7cac53bf ghost();
             if (!isdefined(level.warp_portal_vehicles)) {
                 level.warp_portal_vehicles = [];
@@ -160,7 +160,7 @@ function private function_57d4a011(insertion) {
                 x_pos = center[0] + radius * cos(angle);
                 y_pos = center[1] + radius * sin(angle);
                 z_pos = var_5199e69;
-                portal_vehicle.origin.portal_vehicle = (x_pos, y_pos, z_pos);
+                portal_vehicle.origin = (x_pos, y_pos, z_pos);
                 portal_vehicle.angle_step = angle;
                 angle = angle + step_size;
                 target = var_8a2c40d0.origin - portal_vehicle.origin;
@@ -417,7 +417,7 @@ function function_4910c182(insertion) {
         insertion clear(#"hash_60fcdd11812a0134");
         insertion clear(#"hash_122f326d72f4c884");
         function_a21d9dc();
-        insertion.players.insertion = function_a1ef346b();
+        insertion.players = function_a1ef346b();
         level function_948ac812(insertion);
         level thread function_1b105d5b(insertion, 2, 2, 5, 1);
         wait(2 + 0.1);

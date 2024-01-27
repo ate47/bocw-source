@@ -605,7 +605,7 @@ function private matchpreplannedturn(entity, animations) {
 // Size: 0x2b4
 function private planhumanturnanimations(entity, animations) {
     if (!isdefined(entity.var_7b1f015a)) {
-        entity.var_7b1f015a.entity = {};
+        entity.var_7b1f015a = {};
     }
     if (animations.size > 0) {
         var_bff64930 = evaluator_findfirstvalidanimation(entity, animations, array(&function_147224));
@@ -626,14 +626,14 @@ function private planhumanturnanimations(entity, animations) {
             /#
                 record3dtext("<unknown string>" + gettime() + "<unknown string>", entity.origin, (1, 0.5, 0), "<unknown string>", entity);
             #/
-            entity.var_3b77553e.entity = -1;
+            entity.var_3b77553e = -1;
         }
         return var_bff64930;
     }
     /#
         record3dtext("<unknown string>" + gettime() + "<unknown string>", entity.origin, (1, 0.5, 0), "<unknown string>", entity);
     #/
-    entity.var_3b77553e.entity = -1;
+    entity.var_3b77553e = -1;
     return undefined;
 }
 
@@ -667,16 +667,16 @@ function private function_147224(entity, animation) {
         profileNamedStop();
         return 0;
     }
-    var_dfe61703 = midpoint + vectornormalize(entity.origin - midpoint) * length(localdeltahalfvector);
-    var_dfe61703 = entity function_fe8e7e36(var_dfe61703);
-    if (entity maymovefrompointtopoint(var_dfe61703, midpoint, 1, 1, entity, 0.75)) {
+    entrypoint = midpoint + vectornormalize(entity.origin - midpoint) * length(localdeltahalfvector);
+    entrypoint = entity function_fe8e7e36(entrypoint);
+    if (entity maymovefrompointtopoint(entrypoint, midpoint, 1, 1, entity, 0.75)) {
         /#
-            recordline(midpoint, var_dfe61703, (1, 0.5, 0), "<unknown string>", entity);
+            recordline(midpoint, entrypoint, (1, 0.5, 0), "<unknown string>", entity);
         #/
         var_aca7a141 = function_199662d1(animation);
         var_16ebe729 = getmovedelta(animation, 0, var_aca7a141);
-        var_d66f5018 = vectortoangles(midpoint - var_dfe61703);
-        endpoint = coordtransform(var_16ebe729, var_dfe61703, var_d66f5018);
+        var_d66f5018 = vectortoangles(midpoint - entrypoint);
+        endpoint = coordtransform(var_16ebe729, entrypoint, var_d66f5018);
         endpoint = entity function_fe8e7e36(endpoint);
         if (entity maymovefrompointtopoint(midpoint, endpoint, 1, 1, entity, 0.75)) {
             /#
@@ -691,7 +691,7 @@ function private function_147224(entity, animation) {
         }
     } else {
         /#
-            recordline(midpoint, var_dfe61703, (1, 0, 0), "<unknown string>", entity);
+            recordline(midpoint, entrypoint, (1, 0, 0), "<unknown string>", entity);
         #/
     }
     profileNamedStop();

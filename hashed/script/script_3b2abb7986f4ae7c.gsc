@@ -132,7 +132,7 @@ function function_95c09591(destination) {
 // Size: 0x704
 function function_685a8288(instance) {
     level endon(#"end_game");
-    instance.var_422ae63e.instance = #"p9_fxanim_mp_care_package_bundle";
+    instance.var_422ae63e = #"p9_fxanim_mp_care_package_bundle";
     var_28bf3706 = instance.var_fe2612fe[#"heli_spawn"][0];
     /#
         assert(isdefined(var_28bf3706.target), "<unknown string>");
@@ -143,8 +143,8 @@ function function_685a8288(instance) {
         waitframe(1);
     } while(!isdefined(var_69406530));
     var_69406530 setteam(level.zombie_team);
-    var_69406530.health.var_69406530 = function_a0861762(2500, 150000);
-    var_69406530.maxhealth.var_69406530 = var_69406530.health;
+    var_69406530.health = function_a0861762(2500, 150000);
+    var_69406530.maxhealth = var_69406530.health;
     var_69406530 setmaxhealth(var_69406530.maxhealth);
     var_69406530 callback::function_d8abfc3d(#"on_vehicle_killed", &function_36564c7c);
     var_69406530 callback::function_d8abfc3d(#"on_vehicle_damage", &function_2a05a8c6);
@@ -157,9 +157,9 @@ function function_685a8288(instance) {
     var_69406530 setforcenocull();
     var_69406530 vehicle::toggle_tread_fx(1);
     var_69406530 vehicle::toggle_sounds(1);
-    var_69406530.b_ignore_fow_damage.var_69406530 = 1;
-    var_69406530.var_1b9f096d.var_69406530 = 1;
-    var_69406530.var_ac1388df.var_69406530 = 1;
+    var_69406530.b_ignore_fow_damage = 1;
+    var_69406530.var_1b9f096d = 1;
+    var_69406530.var_ac1388df = 1;
     if (!issentient(var_69406530)) {
         var_69406530 makesentient();
     }
@@ -172,7 +172,7 @@ function function_685a8288(instance) {
     level thread helicopter::function_eca18f00(var_69406530, #"hash_5793213ec26a2aa5");
     var_69406530.instance = instance;
     if (instance.targetname === "helicopter_escape_dune_instance_3") {
-        var_28bf3706.radius.var_28bf3706 = 2500;
+        var_28bf3706.radius = 2500;
     }
     if (isdefined(var_28bf3706.radius) && var_28bf3706.radius > 0) {
         var_deaf3fc0 = var_28bf3706.origin;
@@ -202,7 +202,7 @@ function function_685a8288(instance) {
         return;
     }
     if (!isdefined(var_69406530.e_crate)) {
-        var_69406530.e_crate.var_69406530 = function_974be700(var_69406530.origin, var_69406530.angles, instance);
+        var_69406530.e_crate = function_974be700(var_69406530.origin, var_69406530.angles, instance);
     }
     if (var_69406530.e_crate clientfield::is_registered("perk_death_perception_item_marked_for_rob")) {
         var_69406530.e_crate clientfield::set("perk_death_perception_item_marked_for_rob", 1);
@@ -390,7 +390,7 @@ function function_974be700(v_origin, v_angles, instance) {
     crate.origin = v_origin;
     crate.angles = v_angles;
     instance.scriptmodel = crate;
-    crate.weapon.crate = getweapon(#"hash_4b481c684ce22455");
+    crate.weapon = getweapon(#"hash_4b481c684ce22455");
     crate setweapon(crate.weapon);
     crate function_619a5c20();
     return crate;
@@ -407,7 +407,7 @@ function drop_crate(instance, var_f9972216, var_f16f4b37) {
         self.e_crate = function_974be700(var_a53bb2cc, var_55ab02db, instance);
     }
     self playsound(#"veh_supply_drop");
-    mask = 1 & 4;
+    mask = 1 | 4;
     radius = 30;
     trace = physicstrace(self.e_crate.origin + vectorscale((0, 0, -1), 100), self.e_crate.origin + vectorscale((0, 0, -1), 10000), (radius * -1, radius * -1, 0), (radius, radius, 2 * radius), undefined, mask);
     v_target_location = trace[#"position"];
@@ -428,14 +428,14 @@ function cratecontrolleddrop(instance, v_target_location, n_drop_time = 10, var_
     crate endon(#"death");
     params = spawnstruct();
     if (!isdefined(params.var_a2629b1c)) {
-        params.var_a2629b1c.params = 100;
+        params.var_a2629b1c = 100;
     }
-    params.kstotaldroptime.params = isdefined(n_drop_time) ? n_drop_time : 10;
+    params.kstotaldroptime = isdefined(n_drop_time) ? n_drop_time : 10;
     if (!isdefined(params.var_46783f3a)) {
-        params.var_46783f3a.params = 0.65;
+        params.var_46783f3a = 0.65;
     }
     if (!isdefined(params.var_827e3209)) {
-        params.var_827e3209.params = #"hash_3aa3ac8dc366dcf1";
+        params.var_827e3209 = #"hash_3aa3ac8dc366dcf1";
     }
     crate thread watchforcratekill(v_target_location[2] + 200);
     crate thread update_crate_velocity();
@@ -518,7 +518,7 @@ function cratephysics(instance) {
 // Size: 0x74
 function function_f7155f4f(params) {
     e_crate = self.struct.scriptmodel;
-    e_crate.var_11428995.e_crate = vectorscale((0, 1, 0), 90);
+    e_crate.var_11428995 = vectorscale((0, 1, 0), 90);
     self namespace_58949729::function_8665f666(params);
     e_crate thread function_960ea519(params.activator);
 }

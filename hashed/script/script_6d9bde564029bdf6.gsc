@@ -109,13 +109,13 @@ function event_handler[bulletwhizby] function_e77b4f15(eventstruct) {
         }
     } else if (isdefined(source.turretweapon)) {
         if (source.turretweapon.name == #"gun_ultimate_turret") {
-            source.var_87b1ba00.source = 1;
+            source.var_87b1ba00 = 1;
             self playkillstreakthreat(source.killstreaktype);
         }
     } else if (isdefined(source.weapon)) {
         if (isdefined(level.var_24de8afe) && isdefined(source.ai) && is_true(source.ai.swat_gunner) && source.weapon.name == #"hash_6c1be4b025206124") {
             source [[ level.var_24de8afe ]](self, source.script_owner);
-            source.var_87b1ba00.source = 1;
+            source.var_87b1ba00 = 1;
         }
     }
     if (!isdefined(dialogkey)) {
@@ -246,7 +246,7 @@ function private function_1bc99c5e(*attacker, *inflictor, weapon, *mod, killstre
     allyradius = mpdialog_value("killstreakKillAllyRadius", 0);
     if (isdefined(ally) && distancesquared(self.origin, ally.origin) < function_a3f6cdac(allyradius)) {
         ally playkillstreakthreat(killstreaktype);
-        mod.var_95b0150d.mod = gettime();
+        mod.var_95b0150d = gettime();
     }
 }
 

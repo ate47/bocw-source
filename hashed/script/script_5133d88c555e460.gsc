@@ -156,7 +156,7 @@ function function_644621c0() {
         self.var_febfd0.owner = self;
         self.var_febfd0 thread namespace_ec06fe4a::function_d55f042c(self, "death");
     }
-    self.trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", self.origin, 2 & 1 & 512, 50, 50);
+    self.trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", self.origin, 2 | 1 | 512, 50, 50);
     if (isdefined(self.trigger)) {
         self.trigger thread function_f87ac23b(self);
         self.trigger enablelinkto();
@@ -559,7 +559,7 @@ function function_31f5e5b(*params) {
 // Size: 0x20a
 function function_7ea2ce80(entity) {
     if (entity.var_1077b9da) {
-        entity.var_1077b9da.entity = 0;
+        entity.var_1077b9da = 0;
         return isdefined(entity.var_b0f99546);
     }
     if (is_true(entity.var_6ea9e4cf)) {
@@ -579,7 +579,7 @@ function function_7ea2ce80(entity) {
         return 0;
     }
     if (randomint(100) > 30) {
-        entity.var_6e5b38d9.entity = time + 3000;
+        entity.var_6e5b38d9 = time + 3000;
         return 0;
     }
     var_92423047 = [];
@@ -595,7 +595,7 @@ function function_7ea2ce80(entity) {
     if (var_92423047.size == 0) {
         return 0;
     }
-    entity.var_b0f99546.entity = var_92423047[randomint(var_92423047.size)];
+    entity.var_b0f99546 = var_92423047[randomint(var_92423047.size)];
     return 1;
 }
 
@@ -610,7 +610,7 @@ function function_6ae08d6c(origin, raygun = 0) {
         silverback = doa_enemy::function_db55a448(doa_enemy::function_d7c5adee("silverback_raygun"), origin);
     }
     if (isdefined(silverback)) {
-        silverback.targetname.silverback = "silverback";
+        silverback.targetname = "silverback";
         silverback clientfield::increment("silverback_spawn", 1);
         function_1eaaceab(level.doa.var_5598fe58);
         if (!isdefined(level.doa.var_5598fe58)) {
@@ -638,27 +638,27 @@ function function_571bb3ac() {
     if (isdefined(silverback)) {
         silverback endon(#"death");
         silverback function_add8c81a("walk");
-        silverback.ignoreall.silverback = 1;
-        silverback.var_6ea9e4cf.silverback = 1;
-        silverback.goalradius.silverback = 16;
+        silverback.ignoreall = 1;
+        silverback.var_6ea9e4cf = 1;
+        silverback.goalradius = 16;
         silverback thread function_2c4249ed(function_a3f6cdac(28));
         result = undefined;
         result = level waittilltimeout(60, #"damage", #"doa_exit_taken", #"hash_72523790f36bd2a8", #"teleporter_taken", #"enter_the_wild", #"hash_7270a59e1f502d96");
         silverback notify(#"hash_72523790f36bd2a8");
         silverback.var_6ea9e4cf = undefined;
         if (result._notify == #"timeout" || result._notify == #"hash_72523790f36bd2a8" || result._notify == #"damage") {
-            silverback.var_37f6ce66.silverback = 0;
+            silverback.var_37f6ce66 = 0;
             silverback.var_860a34b9 = undefined;
-            silverback.ignoreall.silverback = 0;
+            silverback.ignoreall = 0;
             silverback function_add8c81a("run");
             silverback thread namespace_6e90e490::function_47e11416(6);
-            silverback.var_6e5b38d9.silverback = gettime() + 11000;
+            silverback.var_6e5b38d9 = gettime() + 11000;
             result = undefined;
             result = level waittilltimeout(10, #"doa_exit_taken", #"teleporter_taken", #"enter_the_wild", #"hash_7270a59e1f502d96", #"hash_72523790f36bd2a8");
         }
         silverback thread namespace_6e90e490::function_47e11416(6);
-        silverback.var_1077b9da.silverback = 1;
-        silverback.var_b0f99546.silverback = #"hash_3dd480845ef2e135";
+        silverback.var_1077b9da = 1;
+        silverback.var_b0f99546 = #"hash_3dd480845ef2e135";
         level waittilltimeout(15, #"move_to_pos_downward_cycle", #"hash_1b322de3d2e3e781");
         silverback delete();
     }
@@ -719,7 +719,7 @@ function private function_ae656597(entity, *asmstatename) {
 // Size: 0x3a
 function private function_3a5a0b29(entity, *asmstatename) {
     asmstatename.var_6ea9e4cf = undefined;
-    asmstatename.ignoreall.asmstatename = 0;
+    asmstatename.ignoreall = 0;
     asmstatename.var_860a34b9 = undefined;
     return 4;
 }
@@ -779,7 +779,7 @@ function function_89406011() {
                 }
             #/
             if (self haspath() == 0 && self.var_f95bc76f === 10) {
-                currenttarget.var_23b495d.currenttarget = 1;
+                currenttarget.var_23b495d = 1;
                 continue;
             }
             timeout = 20;
@@ -792,7 +792,7 @@ function function_89406011() {
                 }
                 if (isdefined(self.var_860a34b9) && distancesquared(self.var_860a34b9, self.origin) > function_a3f6cdac(12) && distancesquared(var_b5a2be68, self.origin) < function_a3f6cdac(8)) {
                     if (isdefined(currenttarget)) {
-                        currenttarget.var_23b495d.currenttarget = 1;
+                        currenttarget.var_23b495d = 1;
                     }
                     break;
                 }
@@ -838,7 +838,7 @@ function function_f23c95c0(entity) {
     if (gettime() < entity.var_3b0b5ef8) {
         return 0;
     }
-    entity.var_3b0b5ef8.entity = entity.var_3b0b5ef8 + randomint(1000);
+    entity.var_3b0b5ef8 = entity.var_3b0b5ef8 + randomint(1000);
     return randomint(100) < 5;
 }
 
@@ -847,7 +847,7 @@ function function_f23c95c0(entity) {
 // Checksum 0x847cf30e, Offset: 0x3880
 // Size: 0x70
 function private function_33d8ef00(entity, asmstatename) {
-    entity.var_3b0b5ef8.entity = gettime() + 18000 + randomint(6000);
+    entity.var_3b0b5ef8 = gettime() + 18000 + randomint(6000);
     animationstatenetworkutility::requeststate(entity, asmstatename);
     entity thread function_5dfb821d();
     return 5;
@@ -905,7 +905,7 @@ function private function_6d8dd464(entity, asmstatename) {
     entity.var_febfd0.angles = entity.angles;
     entity.var_febfd0.origin = entity.origin;
     entity linkto(entity.var_febfd0);
-    entity.var_c4b93228.entity = randomint(3) + 2;
+    entity.var_c4b93228 = randomint(3) + 2;
     entity thread namespace_6e90e490::function_47e11416(6);
     entity thread function_396fbf53(entity.var_febfd0, entity.var_c4b93228);
     if (isdefined(entity.trigger)) {
@@ -935,8 +935,8 @@ function private function_fcbe1c10(entity, *asmstatename) {
     if (isdefined(asmstatename.trigger)) {
         asmstatename.trigger triggerenable(0);
     }
-    asmstatename.var_aff8ab1.asmstatename = gettime() + 5000;
-    asmstatename.var_6e5b38d9.asmstatename = gettime() + 3000 + randomint(3000);
+    asmstatename.var_aff8ab1 = gettime() + 5000;
+    asmstatename.var_6e5b38d9 = gettime() + 3000 + randomint(3000);
     asmstatename.var_b0f99546 = undefined;
     return 4;
 }
@@ -976,10 +976,10 @@ function function_396fbf53(var_febfd0, numattacks = 1) {
             var_febfd0 thread namespace_1e25ad94::debugorigin(3, 20, (1, 0, 0));
         }
         var_febfd0 thread function_51226983(self.enemy);
-        self.var_bfd2020f = 1;
+        self.boosting = 1;
         var_febfd0 moveto(var_49e4e4be, var_7162689c);
         var_febfd0 waittilltimeout(var_7162689c + 2, #"movedone");
-        self.var_bfd2020f = undefined;
+        self.boosting = undefined;
         var_febfd0 notify(#"hash_531e95963631c569");
         if (getdvarint(#"hash_370090a969cdbc39", 0)) {
             var_febfd0 notify(#"hash_60eabc6ae83239fe");
@@ -1025,7 +1025,7 @@ function private function_a1f4593d(entity, asmstatename) {
     entity.var_febfd0.angles = entity.angles;
     entity.var_febfd0.origin = entity.origin;
     entity linkto(entity.var_febfd0);
-    entity.var_66f5fb1a.entity = randomint(3) + 1;
+    entity.var_66f5fb1a = randomint(3) + 1;
     entity thread function_de1c2fc3(entity.var_febfd0, entity.var_66f5fb1a);
     if (isdefined(entity.trigger)) {
         entity.trigger triggerenable(1);
@@ -1054,8 +1054,8 @@ function private function_aacc3221(entity, *asmstatename) {
     if (isdefined(asmstatename.trigger)) {
         asmstatename.trigger triggerenable(0);
     }
-    asmstatename.var_7d10766.asmstatename = gettime() + 3000;
-    asmstatename.var_6e5b38d9.asmstatename = gettime() + 3000 + randomint(3000);
+    asmstatename.var_7d10766 = gettime() + 3000;
+    asmstatename.var_6e5b38d9 = gettime() + 3000 + randomint(3000);
     asmstatename.var_b0f99546 = undefined;
     return 4;
 }
@@ -1112,8 +1112,8 @@ function function_de1c2fc3(var_febfd0, numattacks = 1) {
         playrumbleonposition("explosion_generic", self.origin);
         height = 1000;
         timems = height / 1000 * 3000;
-        var_febfd0.angles.var_febfd0 = self.angles;
-        var_febfd0.origin.var_febfd0 = self.origin;
+        var_febfd0.angles = self.angles;
+        var_febfd0.origin = self.origin;
         self linkto(var_febfd0);
         if (getdvarint(#"hash_225943d24ee71d", 0)) {
             level thread namespace_1e25ad94::function_5af86e1d(targetpos + vectorscale((0, 0, 1), 20), 30, 3, (1, 0, 0));
@@ -1252,7 +1252,7 @@ function private function_ea163d5b(entity, asmstatename) {
     if (function_1d0310f4()) {
         banana1 = namespace_ec06fe4a::function_e22ae9b3(self.origin, "zombietron_banana");
         if (isdefined(banana1)) {
-            banana1.targetname.banana1 = "banana1";
+            banana1.targetname = "banana1";
             banana1 setmodel("zombietron_banana");
             banana1 enablelinkto();
             banana1 linkto(self, "j_thumb_ri_3", (0, 0, 0), (0, 0, 0));
@@ -1262,7 +1262,7 @@ function private function_ea163d5b(entity, asmstatename) {
     if (function_1d0310f4()) {
         banana2 = namespace_ec06fe4a::function_e22ae9b3(self.origin, "zombietron_banana");
         if (isdefined(banana2)) {
-            banana2.targetname.banana2 = "banana2";
+            banana2.targetname = "banana2";
             banana2 setmodel("zombietron_banana");
             banana2 enablelinkto();
             banana2 linkto(self, "j_thumb_le_3", (0, 0, 0), (0, 0, 0));
@@ -1288,8 +1288,8 @@ function private function_cea06112(entity, *asmstatename) {
 // Checksum 0xf925e73f, Offset: 0x5020
 // Size: 0x5e
 function private function_ebaf98e0(entity, *asmstatename) {
-    asmstatename.var_131a202d.asmstatename = gettime() + 3000;
-    asmstatename.var_6e5b38d9.asmstatename = gettime() + 3000 + randomint(3000);
+    asmstatename.var_131a202d = gettime() + 3000;
+    asmstatename.var_6e5b38d9 = gettime() + 3000 + randomint(3000);
     asmstatename.var_b0f99546 = undefined;
     return 4;
 }
@@ -1323,7 +1323,7 @@ function function_bf9a2a1d(number = 5) {
     while (number) {
         banana1 = namespace_ec06fe4a::function_e22ae9b3(self.origin, "zombietron_banana");
         if (isdefined(banana1)) {
-            banana1.targetname.banana1 = "banana1";
+            banana1.targetname = "banana1";
             banana1 setmodel("zombietron_banana");
             banana1 thread function_bcfd19b2(self, undefined, var_a8660f81);
             var_a8660f81 = var_a8660f81 + increment;
@@ -1367,7 +1367,7 @@ function function_bcfd19b2(silverback, note, angles) {
     self namespace_ec06fe4a::function_8c808737();
     self thread namespace_ec06fe4a::function_52afe5df(5 + 0.1);
     if (isdefined(trigger)) {
-        trigger.targetname.trigger = "banana";
+        trigger.targetname = "banana";
         trigger thread function_d70f65d0();
         wait(5);
         trigger delete();

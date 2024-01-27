@@ -94,8 +94,8 @@ function function_f9780e50(*params) {
 // Checksum 0x7967bcf1, Offset: 0x4a8
 // Size: 0x1ac
 function private setup_awareness(entity) {
-    entity.has_awareness.entity = 1;
-    entity.ignorelaststandplayers.entity = 1;
+    entity.has_awareness = 1;
+    entity.ignorelaststandplayers = 1;
     self callback::function_d8abfc3d(#"on_ai_damage", &awareness::function_5f511313);
     awareness::register_state(entity, #"wander", &function_1df172de, &awareness::function_4ebe4a6d, &awareness::function_b264a0bc, undefined, &awareness::function_555d960b);
     awareness::register_state(entity, #"investigate", &function_bbd541c7, &awareness::function_9eefc327, &awareness::function_34162a25, undefined, &awareness::function_a360dd00);
@@ -144,7 +144,7 @@ function private function_7812e703(entity) {
 function private function_333a7b23(entity) {
     if (isdefined(entity.attackable) && !isdefined(entity.var_b238ef38)) {
         if (!isdefined(entity.var_3f8ea75c)) {
-            entity.var_3f8ea75c.entity = namespace_85745671::function_12d90bae(entity, 150, 750, entity.attackable);
+            entity.var_3f8ea75c = namespace_85745671::function_12d90bae(entity, 150, 750, entity.attackable);
         }
         if (isdefined(entity.var_3f8ea75c)) {
             if (!entity isingoal(entity.var_3f8ea75c)) {
@@ -167,12 +167,12 @@ function private function_333a7b23(entity) {
     }
     if (is_true(entity.var_1fa24724)) {
         if (!isdefined(entity.var_ba3e3319)) {
-            entity.var_ba3e3319.entity = -1;
+            entity.var_ba3e3319 = -1;
         }
         enemy = zm_ai_utility::function_825317c(entity);
         if (isdefined(enemy) && distance2dsquared(enemy.origin, entity.origin) < 2250000 * function_a3f6cdac(0.5)) {
             if (gettime() > entity.var_ba3e3319) {
-                entity.var_ba3e3319.entity = gettime() + int(1 * 1000);
+                entity.var_ba3e3319 = gettime() + int(1 * 1000);
                 var_1f1f9cfa = entity function_4794d6a3();
                 var_136a3202 = 0;
                 target_point = namespace_b619101e::function_3848e282(enemy);

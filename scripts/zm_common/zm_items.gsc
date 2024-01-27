@@ -184,7 +184,7 @@ function player_has(player, w_item) {
         holder = player;
     }
     if (!isdefined(holder.item_inventory)) {
-        holder.item_inventory.holder = [];
+        holder.item_inventory = [];
     }
     return is_true(holder.item_inventory[w_item]);
 }
@@ -200,7 +200,7 @@ function player_pick_up(player, w_item) {
         holder = player;
     }
     if (!isdefined(holder.item_inventory)) {
-        holder.item_inventory.holder = [];
+        holder.item_inventory = [];
     }
     holder.item_inventory[w_item] = 1;
     if (w_item.var_df0f9ce9) {
@@ -242,7 +242,7 @@ function player_take(player, w_item) {
         player zm_weapons::weapon_take(w_item);
     }
     if (!isdefined(holder.item_inventory)) {
-        holder.item_inventory.holder = [];
+        holder.item_inventory = [];
     }
     holder.item_inventory[w_item] = 0;
 }

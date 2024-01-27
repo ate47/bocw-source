@@ -599,7 +599,7 @@ function set_goal(goal, var_28e27203, goalradius = 16) {
         if (isvec(goal)) {
             var_b72e4ea6.origin = goal;
         } else {
-            var_b72e4ea6.origin.var_b72e4ea6 = goal.origin;
+            var_b72e4ea6.origin = goal.origin;
         }
         var_b72e4ea6.angles = var_28e27203;
         goal = var_b72e4ea6;
@@ -663,7 +663,7 @@ function function_7b651d3b(other) {
 // Checksum 0xb7af2ef9, Offset: 0x20d0
 // Size: 0x3a
 function function_587a5bca(ent) {
-    ent.distsqrd.ent = function_ad6e4a3b(self.origin, ent.origin, self);
+    ent.distsqrd = function_ad6e4a3b(self.origin, ent.origin, self);
 }
 
 // Namespace namespace_979752dc/utility
@@ -953,7 +953,7 @@ function function_6891681b() {
         ai function_18290695(0);
     }
     foreach (player in getplayers()) {
-        player.maxvisibledist.player = 8192;
+        player.maxvisibledist = 8192;
         if (player flag::exists("stealth_enabled")) {
             player flag::clear("stealth_enabled");
         }
@@ -993,11 +993,11 @@ function function_18290695(enabled, var_6f52290c = 0) {
         if (self flag::exists("stealth_enabled") && self flag::get("stealth_enabled") && self.team == "axis") {
             player = getplayers()[0];
             var_819ce53c = spawnstruct();
-            var_819ce53c.origin.var_819ce53c = player.origin;
-            var_819ce53c.investigate_point.var_819ce53c = player.origin;
-            var_819ce53c.var_ce3a18c7.var_819ce53c = player.origin;
-            var_819ce53c.type.var_819ce53c = "combat";
-            var_819ce53c.var_dd29a83a.var_819ce53c = "attack";
+            var_819ce53c.origin = player.origin;
+            var_819ce53c.investigate_point = player.origin;
+            var_819ce53c.var_ce3a18c7 = player.origin;
+            var_819ce53c.type = "combat";
+            var_819ce53c.var_dd29a83a = "attack";
             if (var_6f52290c) {
                 var_819ce53c.entity = player;
             }

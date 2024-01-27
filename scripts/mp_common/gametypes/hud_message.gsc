@@ -106,35 +106,35 @@ function function_a2f30ab4(var_68c25772, var_c1e98979, game_end, outcome) {
     result = function_2e532eed(outcome);
     result.var_277c7d47 = undefined;
     result.var_68c25772 = var_68c25772;
-    result.var_14f94126.result = "";
-    result.var_7d5c2c5f.result = 0;
+    result.var_14f94126 = "";
+    result.var_7d5c2c5f = 0;
     if (level.teambased) {
-        result.var_44e9b5f9.result = teams::getteamindex(result.team);
+        result.var_44e9b5f9 = teams::getteamindex(result.team);
         if (function_82f36142(var_c1e98979)) {
-            result.var_14f94126.result = function_460b0309(game_end);
-            result.var_277c7d47.result = 0;
+            result.var_14f94126 = function_460b0309(game_end);
+            result.var_277c7d47 = 0;
         } else if (var_68c25772 == 2) {
-            result.var_14f94126.result = game.strings[#"halftime"];
-            result.var_277c7d47.result = 1;
+            result.var_14f94126 = game.strings[#"halftime"];
+            result.var_277c7d47 = 1;
         } else if (var_68c25772 == 3) {
-            result.var_14f94126.result = game.strings[#"intermission"];
-            result.var_277c7d47.result = 1;
+            result.var_14f94126 = game.strings[#"intermission"];
+            result.var_277c7d47 = 1;
         } else if (var_68c25772 == 4) {
-            result.var_14f94126.result = game.strings[#"overtime"];
-            result.var_277c7d47.result = 1;
+            result.var_14f94126 = game.strings[#"overtime"];
+            result.var_277c7d47 = 1;
         } else {
             if (outcome::get_flag(outcome, "tie")) {
-                result.var_14f94126.result = function_460b0309(game_end);
+                result.var_14f94126 = function_460b0309(game_end);
             }
-            result.var_277c7d47.result = !game_end && !util::isoneround() && !util::waslastround();
+            result.var_277c7d47 = !game_end && !util::isoneround() && !util::waslastround();
         }
     } else {
-        result.var_44e9b5f9.result = 0;
+        result.var_44e9b5f9 = 0;
         if (!util::isoneround() && game_end) {
-            result.var_14f94126.result = game.strings[#"game_over"];
+            result.var_14f94126 = game.strings[#"game_over"];
         } else {
-            result.var_14f94126.result = game.strings[#"defeat"];
-            result.var_7d5c2c5f.result = 1;
+            result.var_14f94126 = game.strings[#"defeat"];
+            result.var_7d5c2c5f = 1;
         }
     }
     return result;
@@ -284,7 +284,7 @@ function outcomenotify(outcome) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x12f828a2, Offset: 0x1648
 // Size: 0x2c
-function function_6be746c2() {
+function hide_outcome() {
     self luinotifyevent(#"pre_killcam_transition", 1, 0);
 }
 

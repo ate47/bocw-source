@@ -143,8 +143,8 @@ function function_496d0824(var_3bc2d545, var_e8456387, team, killstreak_id) {
     plane killstreak_hacking::enable_hacking("artillery_barrage");
     plane endon(#"hash_1fe75f940ce5fd52");
     var_1313ba73 = bundle.var_540b2ab4;
-    plane.var_61e3ab9c.plane = var_1313ba73 * 2;
-    plane.var_7d573472.plane = var_1313ba73 * 2;
+    plane.var_61e3ab9c = var_1313ba73 * 2;
+    plane.var_7d573472 = var_1313ba73 * 2;
     plane setspeedimmediate(var_1313ba73, plane.var_61e3ab9c, plane.var_7d573472);
     target_set(plane, vectorscale((0, 0, 1), 100));
     plane solid();
@@ -215,7 +215,7 @@ function function_4b1354ff() {
     if (plane.isleaving === 1) {
         return;
     }
-    plane.isleaving.plane = 1;
+    plane.isleaving = 1;
     var_fc8999ee = 10;
     planedir = anglestoforward(plane.angles);
     var_6fe4cf51 = 30000;
@@ -482,9 +482,9 @@ function function_5a0d2864(startpoint, endpoint, targetpoint, angles, team, kill
     bundle = killstreaks::get_script_bundle("artillery_barrage");
     shell = spawn("script_model", startpoint);
     shell.team = team;
-    shell.targetname.shell = "guided_artillery_shell";
+    shell.targetname = "guided_artillery_shell";
     shell setowner(self);
-    shell.owner.shell = self;
+    shell.owner = self;
     shell.owner thread watchownerevents(shell);
     shell killstreaks::configure_team("artillery_barrage", killstreak_id, self);
     shell killstreak_hacking::enable_hacking("artillery_barrage");
@@ -518,9 +518,9 @@ function function_5a0d2864(startpoint, endpoint, targetpoint, angles, team, kill
     bomb killstreak_hacking::enable_hacking("artillery_barrage");
     shell notify(#"hackertool_update_ent", {#entity:bomb});
     bomb clientfield::set("enemyvehicle", 1);
-    bomb.targetname.bomb = "guided_artillery_shell";
+    bomb.targetname = "guided_artillery_shell";
     bomb setowner(self);
-    bomb.owner.bomb = self;
+    bomb.owner = self;
     bomb.team = team;
     var_23aaa2dd = max(droptime - 4, 2);
     bomb thread function_ae65820c(var_23aaa2dd);
@@ -603,9 +603,9 @@ function watchforimpact(*owner) {
         return;
     }
     s_info = spawnstruct();
-    s_info.origin.s_info = self.origin;
+    s_info.origin = self.origin;
     while (isalive(self)) {
-        s_info.origin.s_info = self.origin;
+        s_info.origin = self.origin;
         waitframe(1);
     }
     [[ level.var_dfa42e41 ]](s_info);
@@ -634,7 +634,7 @@ function function_9b3c6309(attacker) {
 // Size: 0x164
 function function_cc147a03(attacker, weapon) {
     plane = self;
-    plane.destroyed.plane = 1;
+    plane.destroyed = 1;
     if (isdefined(attacker) && (!isdefined(plane.owner) || plane.owner util::isenemyplayer(attacker))) {
         challenges::destroyedaircraft(attacker, weapon, 0);
         attacker challenges::addflyswatterstat(weapon, self);

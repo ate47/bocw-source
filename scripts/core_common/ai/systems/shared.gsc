@@ -227,7 +227,7 @@ function throwweapon(weapon, positiontag, scavenger, deleteweaponafterdropping) 
         angularvelocity = vectornormalize(endangles - startangles) * angularscalar;
         throwweapon = self dropweapon(weapon, positiontag, linearvelocity, angularvelocity, scavenger);
         if (isdefined(throwweapon)) {
-            throwweapon setcontents(throwweapon setcontents(0) & ~(32768 & 16777216 & 2097152 & 8388608));
+            throwweapon setcontents(throwweapon setcontents(0) & ~(32768 | 16777216 | 2097152 | 8388608));
         }
         if (deleteweaponafterdropping) {
             throwweapon delete();

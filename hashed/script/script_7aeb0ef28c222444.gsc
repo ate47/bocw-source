@@ -60,7 +60,7 @@ function function_90cdf7ba(type, origin) {
             }
             ai = doa_enemy::function_db55a448(var_49a15185, origin + (randomintrange(-40, 40), randomintrange(-40, 40), 0));
             if (isdefined(ai)) {
-                ai.owner.ai = self;
+                ai.owner = self;
                 if (isdefined(var_2d8ae5ef)) {
                     ai namespace_83eb6304::function_3ecfde67(var_2d8ae5ef);
                 }

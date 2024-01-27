@@ -80,14 +80,14 @@ function staminup_set_clientfield(*state) {
 // Checksum 0x80f254c4, Offset: 0x4d8
 // Size: 0x9a
 function staminup_perk_machine_setup(use_trigger, perk_machine, bump_trigger, *collision) {
-    perk_machine.script_sound.perk_machine = "mus_perks_stamin_jingle";
-    perk_machine.script_string.perk_machine = "marathon_perk";
-    perk_machine.script_label.perk_machine = "mus_perks_stamin_sting";
-    perk_machine.target.perk_machine = "vending_marathon";
-    bump_trigger.script_string.bump_trigger = "marathon_perk";
-    bump_trigger.targetname.bump_trigger = "vending_marathon";
+    perk_machine.script_sound = "mus_perks_stamin_jingle";
+    perk_machine.script_string = "marathon_perk";
+    perk_machine.script_label = "mus_perks_stamin_sting";
+    perk_machine.target = "vending_marathon";
+    bump_trigger.script_string = "marathon_perk";
+    bump_trigger.targetname = "vending_marathon";
     if (isdefined(collision)) {
-        collision.script_string.collision = "marathon_perk";
+        collision.script_string = "marathon_perk";
     }
 }
 

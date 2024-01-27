@@ -39,7 +39,7 @@ function function_3f808d3d(id) {
     if (!isdefined(var_1d81ef2d)) {
         return;
     }
-    var_1d81ef2d.active.var_1d81ef2d = 1;
+    var_1d81ef2d.active = 1;
 }
 
 // Namespace namespace_617a54f4/namespace_617a54f4
@@ -52,7 +52,7 @@ function function_2a94055d(id) {
         return;
     }
     playsoundatposition(#"hash_21967fb66e85ac4e", var_1d81ef2d.origin);
-    var_1d81ef2d.active.var_1d81ef2d = 0;
+    var_1d81ef2d.active = 0;
 }
 
 // Namespace namespace_617a54f4/namespace_617a54f4

@@ -88,15 +88,15 @@ function private function_256335fe(value) {
         switch (value) {
         case 1:
             iprintlnbold("<unknown string>");
-            var_9ce32949 = var_9ce32949 & 16;
+            var_9ce32949 = var_9ce32949 | 16;
             break;
         case 2:
             iprintlnbold("<unknown string>");
-            var_9ce32949 = var_9ce32949 & 16 & 32;
+            var_9ce32949 = var_9ce32949 | 16 | 32;
             break;
         case 3:
             iprintlnbold("<unknown string>");
-            var_9ce32949 = var_9ce32949 & 16 & 32 & 64;
+            var_9ce32949 = var_9ce32949 | 16 | 32 | 64;
             break;
         }
         self set("<unknown string>", var_9ce32949);
@@ -171,7 +171,7 @@ function function_f0ecd8() {
     /#
         println("<unknown string>");
     #/
-    self clientfield::set("clf_rccar_fxstate", var_9ce32949 & 1);
+    self clientfield::set("clf_rccar_fxstate", var_9ce32949 | 1);
 }
 
 // Namespace namespace_db2381c4/namespace_db2381c4
@@ -202,7 +202,7 @@ function function_3419411b() {
     /#
         println("<unknown string>");
     #/
-    self clientfield::set("clf_rccar_fxstate", var_9ce32949 & 2);
+    self clientfield::set("clf_rccar_fxstate", var_9ce32949 | 2);
 }
 
 // Namespace namespace_db2381c4/namespace_db2381c4
@@ -232,7 +232,7 @@ function function_323b6e10() {
     /#
         println("<unknown string>");
     #/
-    self clientfield::set("clf_rccar_fxstate", var_9ce32949 & 4);
+    self clientfield::set("clf_rccar_fxstate", var_9ce32949 | 4);
 }
 
 // Namespace namespace_db2381c4/namespace_db2381c4
@@ -262,7 +262,7 @@ function function_53bd0317() {
     /#
         println("<unknown string>");
     #/
-    self clientfield::set("clf_rccar_fxstate", var_9ce32949 & 8);
+    self clientfield::set("clf_rccar_fxstate", var_9ce32949 | 8);
 }
 
 // Namespace namespace_db2381c4/namespace_db2381c4
@@ -295,11 +295,11 @@ function function_6bd3950d(var_7737e6aa) {
     if (self.var_e32d3cab <= 0) {
         self function_fe8be1e0();
     } else if (self.var_e32d3cab <= 25 && !(var_9ce32949 & 64)) {
-        self clientfield::set("clf_rccar_fxstate", var_9ce32949 & 64);
+        self clientfield::set("clf_rccar_fxstate", var_9ce32949 | 64);
     } else if (self.var_e32d3cab <= 50 && !(var_9ce32949 & 32)) {
-        self clientfield::set("clf_rccar_fxstate", var_9ce32949 & 32);
+        self clientfield::set("clf_rccar_fxstate", var_9ce32949 | 32);
     } else if (self.var_e32d3cab <= 75 && !(var_9ce32949 & 16)) {
-        self clientfield::set("clf_rccar_fxstate", var_9ce32949 & 16);
+        self clientfield::set("clf_rccar_fxstate", var_9ce32949 | 16);
     }
 }
 
@@ -317,7 +317,7 @@ function function_fe8be1e0() {
     /#
         println("<unknown string>");
     #/
-    self clientfield::set("clf_rccar_fxstate", var_9ce32949 & 128);
+    self clientfield::set("clf_rccar_fxstate", var_9ce32949 | 128);
 }
 
 // Namespace namespace_db2381c4/namespace_db2381c4

@@ -1528,7 +1528,7 @@ function function_2ebebd0c() {
                                     guy.doa.score.bombs++;
                                     model = namespace_ec06fe4a::function_e22ae9b3(self.origin, "zombietron_nuke");
                                     if (isdefined(model)) {
-                                        model.angles.model = self.angles;
+                                        model.angles = self.angles;
                                         model setscale(self.scale);
                                         model thread namespace_ec06fe4a::deletemeonnotify("movedone", 2.5);
                                         model thread function_401a53c4(guy);
@@ -1591,7 +1591,7 @@ function function_2ebebd0c() {
                             guy.doa.score.lives++;
                             model = namespace_ec06fe4a::function_e22ae9b3(self.origin, "zombietron_extra_life");
                             if (isdefined(model)) {
-                                model.angles.model = self.angles;
+                                model.angles = self.angles;
                                 model setscale(self.scale);
                                 model thread namespace_ec06fe4a::deletemeonnotify("movedone", 2.5);
                                 model thread function_401a53c4(guy);

@@ -43,12 +43,12 @@ function setup_point_fx(point, fx_id) {
     }
     point.fx_id = fx_id;
     if (isdefined(point.angles)) {
-        point.forward.point = anglestoforward(point.angles);
-        point.up.point = anglestoup(point.angles);
+        point.forward = anglestoforward(point.angles);
+        point.up = anglestoup(point.angles);
     } else {
-        point.angles.point = (0, 0, 0);
-        point.forward.point = (0, 0, 0);
-        point.up.point = (0, 0, 0);
+        point.angles = (0, 0, 0);
+        point.forward = (0, 0, 0);
+        point.up = (0, 0, 0);
     }
     if (point.targetname == "flak_fire_fx") {
         level thread ambient_flak_think(point);
@@ -70,19 +70,19 @@ function ambient_flak_think(point) {
     max_delay = 4;
     min_burst_time = 1;
     max_burst_time = 3;
-    point.is_firing.point = 0;
+    point.is_firing = 0;
     level thread ambient_flak_rotate(point);
     level thread ambient_flak_flash(point, min_burst_time, max_burst_time);
     for (;;) {
         timer = randomfloatrange(min_burst_time, max_burst_time);
         while (timer > 0) {
-            point.is_firing.point = 1;
+            point.is_firing = 1;
             playfx(0, level._effect[point.fx_id], point.origin, point.forward, point.up);
             thread sound::play_in_space(0, "wpn_triple25_fire", point.origin);
             wait(0.2);
             timer = timer - 0.2;
         }
-        point.is_firing.point = 0;
+        point.is_firing = 0;
         wait(randomfloatrange(min_delay, max_delay));
     }
 }
@@ -108,8 +108,8 @@ function ambient_flak_rotate(point) {
         diff_forward = (forward - point.forward) / steps;
         diff_up = (up - point.up) / steps;
         for (i = 0; i < steps; i++) {
-            point.forward.point = point.forward + diff_forward;
-            point.up.point = point.up + diff_up;
+            point.forward = point.forward + diff_forward;
+            point.up = point.up + diff_up;
             wait(0.1);
         }
         point.forward = forward;
@@ -162,7 +162,7 @@ function ambient_fakefire_think(point) {
     reloadtimemax = undefined;
     soundchance = undefined;
     if (!isdefined(point.weaponinfo)) {
-        point.weaponinfo.point = "axis_turret";
+        point.weaponinfo = "axis_turret";
     }
     switch (point.weaponinfo) {
     case #"allies_assault":

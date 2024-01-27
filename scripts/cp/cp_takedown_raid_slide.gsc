@@ -126,7 +126,7 @@ function main(var_d3440450, var_50cc0d4f) {
     level.adler aiutility::setprimaryweapon(weapon);
     level.adler ai::gun_switchto(weapon, "right");
     var_38ac20b2 = util::spawn_player_clone(player);
-    var_38ac20b2.targetname.var_38ac20b2 = "FakePlayer";
+    var_38ac20b2.targetname = "FakePlayer";
     var_38ac20b2 hide();
     var_38ac20b2 setinvisibletoall();
     player thread function_79b1e578();

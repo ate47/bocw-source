@@ -9,26 +9,26 @@
 // Checksum 0xfcf00259, Offset: 0xb0
 // Size: 0x15e
 function function_ae7e49da(watcher) {
-    watcher.watchforfire.watcher = 1;
-    watcher.activatesound.watcher = #"wpn_claymore_alert";
-    watcher.hackable.watcher = 0;
-    watcher.hackertoolradius.watcher = level.equipmenthackertoolradius;
-    watcher.hackertooltimems.watcher = level.equipmenthackertooltimems;
-    watcher.activatefx.watcher = 1;
-    watcher.ownergetsassist.watcher = 1;
+    watcher.watchforfire = 1;
+    watcher.activatesound = #"wpn_claymore_alert";
+    watcher.hackable = 0;
+    watcher.hackertoolradius = level.equipmenthackertoolradius;
+    watcher.hackertooltimems = level.equipmenthackertooltimems;
+    watcher.activatefx = 1;
+    watcher.ownergetsassist = 1;
     watcher.ignoredirection = undefined;
-    watcher.immediatedetonation.watcher = 1;
-    watcher.immunespecialty.watcher = "specialty_immunetriggerbetty";
-    watcher.detectiondot.watcher = cos(70);
-    watcher.detectionmindist.watcher = 20;
-    watcher.detectiongraceperiod.watcher = 0.6;
-    watcher.stuntime.watcher = 3;
-    watcher.notequipment.watcher = 1;
-    watcher.activationdelay.watcher = 0.5;
-    watcher.ondetonatecallback.watcher = &weaponobjects::proximitydetonate;
-    watcher.onfizzleout.watcher = &weaponobjects::weaponobjectfizzleout;
-    watcher.onspawn.watcher = &weaponobjects::onspawnproximitygrenadeweaponobject;
-    watcher.stun.watcher = &weaponobjects::weaponstun;
+    watcher.immediatedetonation = 1;
+    watcher.immunespecialty = "specialty_immunetriggerbetty";
+    watcher.detectiondot = cos(70);
+    watcher.detectionmindist = 20;
+    watcher.detectiongraceperiod = 0.6;
+    watcher.stuntime = 3;
+    watcher.notequipment = 1;
+    watcher.activationdelay = 0.5;
+    watcher.ondetonatecallback = &weaponobjects::proximitydetonate;
+    watcher.onfizzleout = &weaponobjects::weaponobjectfizzleout;
+    watcher.onspawn = &weaponobjects::onspawnproximitygrenadeweaponobject;
+    watcher.stun = &weaponobjects::weaponstun;
     return watcher;
 }
 
@@ -37,25 +37,25 @@ function function_ae7e49da(watcher) {
 // Checksum 0xe4b7c022, Offset: 0x218
 // Size: 0x146
 function function_1daa29fc(watcher) {
-    watcher.watchforfire.watcher = 1;
-    watcher.activatesound.watcher = #"wpn_claymore_alert";
-    watcher.hackable.watcher = 0;
-    watcher.hackertoolradius.watcher = level.equipmenthackertoolradius;
-    watcher.hackertooltimems.watcher = level.equipmenthackertooltimems;
-    watcher.activatefx.watcher = 1;
-    watcher.ownergetsassist.watcher = 1;
-    watcher.ignoredirection.watcher = 1;
-    watcher.immediatedetonation.watcher = 1;
-    watcher.immunespecialty.watcher = "specialty_immunetriggerbetty";
-    watcher.detectionmindist.watcher = 64;
-    watcher.detectiongraceperiod.watcher = 0.6;
-    watcher.stuntime.watcher = 3;
-    watcher.notequipment.watcher = 1;
-    watcher.activationdelay.watcher = 0.5;
-    watcher.ondetonatecallback.watcher = &weaponobjects::proximitydetonate;
-    watcher.onfizzleout.watcher = &weaponobjects::weaponobjectfizzleout;
-    watcher.onspawn.watcher = &weaponobjects::onspawnproximitygrenadeweaponobject;
-    watcher.stun.watcher = &weaponobjects::weaponstun;
+    watcher.watchforfire = 1;
+    watcher.activatesound = #"wpn_claymore_alert";
+    watcher.hackable = 0;
+    watcher.hackertoolradius = level.equipmenthackertoolradius;
+    watcher.hackertooltimems = level.equipmenthackertooltimems;
+    watcher.activatefx = 1;
+    watcher.ownergetsassist = 1;
+    watcher.ignoredirection = 1;
+    watcher.immediatedetonation = 1;
+    watcher.immunespecialty = "specialty_immunetriggerbetty";
+    watcher.detectionmindist = 64;
+    watcher.detectiongraceperiod = 0.6;
+    watcher.stuntime = 3;
+    watcher.notequipment = 1;
+    watcher.activationdelay = 0.5;
+    watcher.ondetonatecallback = &weaponobjects::proximitydetonate;
+    watcher.onfizzleout = &weaponobjects::weaponobjectfizzleout;
+    watcher.onspawn = &weaponobjects::onspawnproximitygrenadeweaponobject;
+    watcher.stun = &weaponobjects::weaponstun;
     return watcher;
 }
 
@@ -64,25 +64,25 @@ function function_1daa29fc(watcher) {
 // Checksum 0x708e08a4, Offset: 0x368
 // Size: 0x146
 function function_d8d3b49b(watcher) {
-    watcher.watchforfire.watcher = 1;
-    watcher.activatesound.watcher = #"wpn_claymore_alert";
-    watcher.hackable.watcher = 0;
-    watcher.hackertoolradius.watcher = level.equipmenthackertoolradius;
-    watcher.hackertooltimems.watcher = level.equipmenthackertooltimems;
-    watcher.activatefx.watcher = 1;
-    watcher.ownergetsassist.watcher = 1;
-    watcher.ignoredirection.watcher = 1;
-    watcher.immediatedetonation.watcher = 1;
-    watcher.immunespecialty.watcher = "specialty_immunetriggerbetty";
-    watcher.detectionmindist.watcher = 64;
-    watcher.detectiongraceperiod.watcher = 0.6;
-    watcher.stuntime.watcher = 3;
-    watcher.notequipment.watcher = 1;
-    watcher.activationdelay.watcher = 0.5;
-    watcher.ondetonatecallback.watcher = &weaponobjects::proximitydetonate;
-    watcher.onfizzleout.watcher = &weaponobjects::weaponobjectfizzleout;
-    watcher.onspawn.watcher = &weaponobjects::onspawnproximitygrenadeweaponobject;
-    watcher.stun.watcher = &weaponobjects::weaponstun;
+    watcher.watchforfire = 1;
+    watcher.activatesound = #"wpn_claymore_alert";
+    watcher.hackable = 0;
+    watcher.hackertoolradius = level.equipmenthackertoolradius;
+    watcher.hackertooltimems = level.equipmenthackertooltimems;
+    watcher.activatefx = 1;
+    watcher.ownergetsassist = 1;
+    watcher.ignoredirection = 1;
+    watcher.immediatedetonation = 1;
+    watcher.immunespecialty = "specialty_immunetriggerbetty";
+    watcher.detectionmindist = 64;
+    watcher.detectiongraceperiod = 0.6;
+    watcher.stuntime = 3;
+    watcher.notequipment = 1;
+    watcher.activationdelay = 0.5;
+    watcher.ondetonatecallback = &weaponobjects::proximitydetonate;
+    watcher.onfizzleout = &weaponobjects::weaponobjectfizzleout;
+    watcher.onspawn = &weaponobjects::onspawnproximitygrenadeweaponobject;
+    watcher.stun = &weaponobjects::weaponstun;
     return watcher;
 }
 
@@ -91,25 +91,25 @@ function function_d8d3b49b(watcher) {
 // Checksum 0xb6445b43, Offset: 0x4b8
 // Size: 0x146
 function function_518130e(watcher) {
-    watcher.watchforfire.watcher = 1;
-    watcher.activatesound.watcher = #"wpn_claymore_alert";
-    watcher.hackable.watcher = 0;
-    watcher.hackertoolradius.watcher = level.equipmenthackertoolradius;
-    watcher.hackertooltimems.watcher = level.equipmenthackertooltimems;
-    watcher.activatefx.watcher = 1;
-    watcher.ownergetsassist.watcher = 1;
-    watcher.ignoredirection.watcher = 1;
-    watcher.immediatedetonation.watcher = 1;
-    watcher.immunespecialty.watcher = "specialty_immunetriggerbetty";
-    watcher.detectionmindist.watcher = 64;
-    watcher.detectiongraceperiod.watcher = 0.6;
-    watcher.stuntime.watcher = 3;
-    watcher.notequipment.watcher = 1;
-    watcher.activationdelay.watcher = 0.5;
-    watcher.ondetonatecallback.watcher = &function_367f94ba;
-    watcher.onfizzleout.watcher = &weaponobjects::weaponobjectfizzleout;
-    watcher.onspawn.watcher = &weaponobjects::onspawnproximitygrenadeweaponobject;
-    watcher.stun.watcher = &weaponobjects::weaponstun;
+    watcher.watchforfire = 1;
+    watcher.activatesound = #"wpn_claymore_alert";
+    watcher.hackable = 0;
+    watcher.hackertoolradius = level.equipmenthackertoolradius;
+    watcher.hackertooltimems = level.equipmenthackertooltimems;
+    watcher.activatefx = 1;
+    watcher.ownergetsassist = 1;
+    watcher.ignoredirection = 1;
+    watcher.immediatedetonation = 1;
+    watcher.immunespecialty = "specialty_immunetriggerbetty";
+    watcher.detectionmindist = 64;
+    watcher.detectiongraceperiod = 0.6;
+    watcher.stuntime = 3;
+    watcher.notequipment = 1;
+    watcher.activationdelay = 0.5;
+    watcher.ondetonatecallback = &function_367f94ba;
+    watcher.onfizzleout = &weaponobjects::weaponobjectfizzleout;
+    watcher.onspawn = &weaponobjects::onspawnproximitygrenadeweaponobject;
+    watcher.stun = &weaponobjects::weaponstun;
     return watcher;
 }
 

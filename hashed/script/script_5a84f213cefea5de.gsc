@@ -76,7 +76,7 @@ function private function_77512b90(killstreakbundle, var_e8992218 = 0) {
 // Params 7, eflags: 0x6 linked
 // Checksum 0x28577106, Offset: 0x460
 // Size: 0x534
-function private function_898628ef(item, player, *var_bd027dd9, *itemid, itemcount, var_aec6fa7f, *slotid) {
+function private function_898628ef(item, player, *networkid, *itemid, itemcount, var_aec6fa7f, *slotid) {
     if (itemcount isswitchingweapons()) {
         return var_aec6fa7f;
     }
@@ -138,7 +138,7 @@ function private function_898628ef(item, player, *var_bd027dd9, *itemid, itemcou
 // Params 7, eflags: 0x6 linked
 // Checksum 0x9a36ae66, Offset: 0x9a0
 // Size: 0x446
-function private function_a712496a(item, player, *var_bd027dd9, *itemid, itemcount, *var_aec6fa7f, *slotid) {
+function private function_a712496a(item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, *slotid) {
     if (is_true(var_aec6fa7f.var_8c9cccf2)) {
         return slotid;
     }
@@ -208,7 +208,7 @@ function function_84172a80(var_4c42f7cf, weapon) {
 // Params 7, eflags: 0x6 linked
 // Checksum 0xe361743, Offset: 0xf60
 // Size: 0x2d2
-function private function_2eebeff5(item, player, *var_bd027dd9, *itemid, itemcount, *var_aec6fa7f, *slotid) {
+function private function_2eebeff5(item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, *slotid) {
     var_9ef8e72f = var_aec6fa7f getweaponslist();
     weapon = namespace_a0d533d1::function_2b83d3ff(itemcount);
     heldweapon = level.var_34d27b26;
@@ -254,7 +254,7 @@ function function_79270eec(var_4c42f7cf, weapon) {
 // Params 7, eflags: 0x6 linked
 // Checksum 0x53171a8f, Offset: 0x1358
 // Size: 0x1c6
-function private function_8c369ecb(item, player, *var_bd027dd9, *itemid, itemcount, *var_aec6fa7f, *slotid) {
+function private function_8c369ecb(item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, *slotid) {
     var_9ef8e72f = var_aec6fa7f getweaponslist();
     weapon = namespace_a0d533d1::function_2b83d3ff(itemcount);
     heldweapon = isdefined(var_9ef8e72f[4]) ? var_9ef8e72f[4] : level.var_43a51921;
@@ -296,7 +296,7 @@ function function_3af40ef4(var_4c42f7cf, weapon) {
 // Params 7, eflags: 0x6 linked
 // Checksum 0xe43a7741, Offset: 0x1640
 // Size: 0x9e
-function private function_6598f0a0(*item, player, *var_bd027dd9, *itemid, itemcount, *var_aec6fa7f, *slotid) {
+function private function_6598f0a0(*item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, *slotid) {
     var_6a4efe8e = var_aec6fa7f clientfield::get_player_uimodel("hud_items.selfReviveAvailable");
     if (var_6a4efe8e) {
         return slotid;
@@ -309,7 +309,7 @@ function private function_6598f0a0(*item, player, *var_bd027dd9, *itemid, itemco
 // Params 7, eflags: 0x6 linked
 // Checksum 0x339d5c13, Offset: 0x16e8
 // Size: 0x174
-function private function_d045e83b(*item, player, *var_bd027dd9, *itemid, itemcount, *var_aec6fa7f, *slotid) {
+function private function_d045e83b(*item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, *slotid) {
     weaponslist = var_aec6fa7f getweaponslist();
     var_c20b09e1 = 0;
     for (i = 0; i < min(weaponslist.size, 2); i++) {

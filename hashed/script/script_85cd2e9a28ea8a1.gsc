@@ -11,7 +11,7 @@
 // Params 7, eflags: 0x0
 // Checksum 0x64c55d1, Offset: 0xa8
 // Size: 0x154
-function function_669c57bc(var_8b98e431, var_7dcdc89b, text, color, alpha, scale, duration) {
+function function_669c57bc(posx, posy, text, color, alpha, scale, duration) {
     /#
         if (isdefined(text) == 0 || text == "<unknown string>") {
             return;
@@ -21,9 +21,9 @@ function function_669c57bc(var_8b98e431, var_7dcdc89b, text, color, alpha, scale
         scale = function_ea2f17d1(scale, 1);
         duration = function_ea2f17d1(duration, 1);
         if (isscriptfunctionptr(level.var_44a79f1b) == 1) {
-            [[ level.var_44a79f1b ]](var_8b98e431, var_7dcdc89b, text, color, alpha, scale, duration);
+            [[ level.var_44a79f1b ]](posx, posy, text, color, alpha, scale, duration);
         } else {
-            debug2dtext((var_8b98e431, var_7dcdc89b, 0), text, color, alpha, (0, 0, 0), 0, scale, duration);
+            debug2dtext((posx, posy, 0), text, color, alpha, (0, 0, 0), 0, scale, duration);
         }
     #/
 }
@@ -71,7 +71,7 @@ function function_409c06e5(text, scale) {
 // Params 7, eflags: 0x4
 // Checksum 0xdcca15ce, Offset: 0x3f8
 // Size: 0x41c
-function private function_ac3c5285(var_8b98e431, var_7dcdc89b, text, color, scale, var_24ea4e17, var_45b08b81) {
+function private function_ac3c5285(posx, posy, text, color, scale, var_24ea4e17, var_45b08b81) {
     /#
         var_d6f54187 = 24 * scale;
         frametime = function_6cfa7975();
@@ -91,14 +91,14 @@ function private function_ac3c5285(var_8b98e431, var_7dcdc89b, text, color, scal
         #/
         if (level.var_89c4a5f0.size > 0) {
             foreach (row in level.var_89c4a5f0) {
-                if (isinarray(level.var_89c4a5f0, var_7dcdc89b) == 1) {
-                    var_7dcdc89b = var_7dcdc89b + var_d6f54187;
+                if (isinarray(level.var_89c4a5f0, posy) == 1) {
+                    posy = posy + var_d6f54187;
                 } else {
                     break;
                 }
             }
         }
-        level.var_89c4a5f0[level.var_89c4a5f0.size] = var_7dcdc89b;
+        level.var_89c4a5f0[level.var_89c4a5f0.size] = posy;
         while (var_3b5a35c4 < var_48c93ed9) {
             if (var_3b5a35c4 < var_1c57e012) {
                 var_78aff59a = int(float(var_3b5a35c4) / float(var_9a0d8dab));
@@ -114,12 +114,12 @@ function private function_ac3c5285(var_8b98e431, var_7dcdc89b, text, color, scal
             alpha = function_b918d683(1 - var_53d7cee7, "<unknown string>");
             var_8b9208e = alpha * alpha;
             colorscale = function_2677a7e2(color, alpha);
-            function_65bb0ccd(text, var_8b98e431, var_7dcdc89b, scale, "<unknown string>", colorscale, alpha, (0, 0, 0), var_8b9208e, (1, 1, 1), var_8b9208e, 1);
+            function_65bb0ccd(text, posx, posy, scale, "<unknown string>", colorscale, alpha, (0, 0, 0), var_8b9208e, (1, 1, 1), var_8b9208e, 1);
             var_3b5a35c4 = var_3b5a35c4 + 1;
             waitframe(1);
         }
         if (isarray(level.var_89c4a5f0)) {
-            arrayremovevalue(level.var_89c4a5f0, var_7dcdc89b);
+            arrayremovevalue(level.var_89c4a5f0, posy);
         }
     #/
 }
@@ -128,7 +128,7 @@ function private function_ac3c5285(var_8b98e431, var_7dcdc89b, text, color, scal
 // Params 7, eflags: 0x0
 // Checksum 0x2bd59671, Offset: 0x820
 // Size: 0x1a4
-function function_3ba3cecb(text, var_8b98e431, var_7dcdc89b, color, scale, var_24ea4e17, var_45b08b81) {
+function function_3ba3cecb(text, posx, posy, color, scale, var_24ea4e17, var_45b08b81) {
     /#
         /#
             assert(isdefined(text) == 1);
@@ -137,16 +137,16 @@ function function_3ba3cecb(text, var_8b98e431, var_7dcdc89b, color, scale, var_2
         scale = function_ea2f17d1(scale, 1.75);
         var_24ea4e17 = function_ea2f17d1(var_24ea4e17, 4);
         var_45b08b81 = function_ea2f17d1(var_45b08b81, 1);
-        if (isdefined(var_8b98e431) == 0 || isdefined(var_7dcdc89b) == 0) {
+        if (isdefined(posx) == 0 || isdefined(posy) == 0) {
             var_6411df1b = function_409c06e5(text, scale);
-            if (isdefined(var_8b98e431) == 0) {
-                var_8b98e431 = var_6411df1b[0];
+            if (isdefined(posx) == 0) {
+                posx = var_6411df1b[0];
             }
-            if (isdefined(var_7dcdc89b) == 0) {
-                var_7dcdc89b = var_6411df1b[1];
+            if (isdefined(posy) == 0) {
+                posy = var_6411df1b[1];
             }
         }
-        level thread function_ac3c5285(var_8b98e431, var_7dcdc89b, text, color, scale, var_24ea4e17, var_45b08b81);
+        level thread function_ac3c5285(posx, posy, text, color, scale, var_24ea4e17, var_45b08b81);
         println(text);
     #/
 }

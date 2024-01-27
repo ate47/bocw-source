@@ -127,7 +127,7 @@ function function_60eeb02c(var_3f97a9a6) {
     self.var_cbff4088 = var_3f97a9a6.var_cbff4088;
     self.var_e254c3ed = var_3f97a9a6.var_e254c3ed;
     self.var_3f97a9a6 = var_3f97a9a6;
-    var_3f97a9a6.script_model.var_3f97a9a6 = self;
+    var_3f97a9a6.script_model = self;
     if (isdefined(self.var_e254c3ed)) {
         self [[ self.var_e254c3ed ]]();
     }

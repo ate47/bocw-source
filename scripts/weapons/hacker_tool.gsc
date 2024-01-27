@@ -106,7 +106,7 @@ function watchhackertoolfired() {
                 }
             } else if (isentityhackableweaponobject(hackertooltarget) && isdefined(hackertooltarget.hackertrigger)) {
                 hackertooltarget.hackertrigger notify(#"trigger", {#dropped_item:1, #activator:self});
-                hackertooltarget.previouslyhacked.hackertooltarget = 1;
+                hackertooltarget.previouslyhacked = 1;
                 self.throwinggrenade = 0;
             } else if (isdefined(hackertooltarget.killstreak_hackedcallback) && (!isdefined(hackertooltarget.killstreaktimedout) || hackertooltarget.killstreaktimedout == 0)) {
                 if (hackertooltarget.killstreak_hackedprotection == 0) {
@@ -115,7 +115,7 @@ function watchhackertoolfired() {
                     }
                     self playsoundtoplayer(#"evt_hacker_fw_success", self);
                     hackertooltarget notify(#"killstreak_hacked", {#hacker:self});
-                    hackertooltarget.previouslyhacked.hackertooltarget = 1;
+                    hackertooltarget.previouslyhacked = 1;
                     hackertooltarget [[ hackertooltarget.killstreak_hackedcallback ]](self);
                     if (self util::has_blind_eye_perk_purchased_and_equipped() || self util::has_hacker_perk_purchased_and_equipped()) {
                         self stats::function_dad108fa(#"hack_streak_with_blindeye_or_engineer", 1);
@@ -127,7 +127,7 @@ function watchhackertoolfired() {
                     self playsoundtoplayer(#"evt_hacker_ks_success", self);
                     scoreevents::processscoreevent(#"hacked_killstreak_protection", self, hackertooltarget, level.weaponhackertool);
                 }
-                hackertooltarget.killstreak_hackedprotection.hackertooltarget = 0;
+                hackertooltarget.killstreak_hackedprotection = 0;
             } else {
                 if (isdefined(hackertooltarget.classname) && hackertooltarget.classname == "grenade") {
                     damage = 1;

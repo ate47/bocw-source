@@ -104,18 +104,18 @@ function get_contract_stat(slot, stat_name) {
 function function_d17bcd3c(slot) {
     player = self;
     var_5ceb23d0 = spawnstruct();
-    var_5ceb23d0.var_38280f2f.var_5ceb23d0 = #"hash_6a1133003efe7380";
-    var_5ceb23d0.var_59cb904f.var_5ceb23d0 = 0;
-    var_5ceb23d0.var_c3e2bb05.var_5ceb23d0 = 0;
+    var_5ceb23d0.var_38280f2f = #"hash_6a1133003efe7380";
+    var_5ceb23d0.var_59cb904f = 0;
+    var_5ceb23d0.var_c3e2bb05 = 0;
     var_38280f2f = player stats::function_ff8f4f17(#"loot_contracts", slot, #"contracthash");
     if (!getdvarint(#"hash_d233413e805fbd0", 0)) {
         var_38280f2f = hash(var_38280f2f);
     }
     if (var_38280f2f != #"") {
         var_5ceb23d0.var_38280f2f = var_38280f2f;
-        var_5ceb23d0.target_value.var_5ceb23d0 = player stats::function_ff8f4f17(#"loot_contracts", slot, #"target");
-        var_5ceb23d0.var_59cb904f.var_5ceb23d0 = player stats::function_ff8f4f17(#"loot_contracts", slot, #"progress");
-        var_5ceb23d0.var_c3e2bb05.var_5ceb23d0 = player stats::function_ff8f4f17(#"loot_contracts", slot, #"contractgamemode");
+        var_5ceb23d0.target_value = player stats::function_ff8f4f17(#"loot_contracts", slot, #"target");
+        var_5ceb23d0.var_59cb904f = player stats::function_ff8f4f17(#"loot_contracts", slot, #"progress");
+        var_5ceb23d0.var_c3e2bb05 = player stats::function_ff8f4f17(#"loot_contracts", slot, #"contractgamemode");
         level.contract_ids[var_38280f2f] = player stats::function_ff8f4f17(#"loot_contracts", slot, #"contractid");
     }
     return var_5ceb23d0;
@@ -324,9 +324,9 @@ function function_33bab9aa() {
                         continue;
                     }
                     var_61525c00 = spawnstruct();
-                    var_61525c00.var_38280f2f.var_61525c00 = hash(var_f029d0d7);
-                    var_61525c00.target_value.var_61525c00 = 8;
-                    var_61525c00.var_59cb904f.var_61525c00 = 0;
+                    var_61525c00.var_38280f2f = hash(var_f029d0d7);
+                    var_61525c00.target_value = 8;
+                    var_61525c00.var_59cb904f = 0;
                     player function_5e1c4d33(var_61525c00);
                     iprintln("<unknown string>" + var_f029d0d7 + "<unknown string>" + player.name + "<unknown string>");
                 }
@@ -382,10 +382,10 @@ function function_78083139() {
         var_4b67585c = 0;
         var_2de8a050 = 0;
         if (!isdefined(var_5ceb23d0.var_1bd1ecbb)) {
-            var_5ceb23d0.var_1bd1ecbb.var_5ceb23d0 = 0;
+            var_5ceb23d0.var_1bd1ecbb = 0;
         }
         if (!isdefined(var_5ceb23d0.var_c7d05ecd)) {
-            var_5ceb23d0.var_c7d05ecd.var_5ceb23d0 = 0;
+            var_5ceb23d0.var_c7d05ecd = 0;
         }
         if (isdefined(var_5ceb23d0.var_be5bf249)) {
             var_4b67585c = var_5ceb23d0.var_be5bf249 - var_5ceb23d0.var_1bd1ecbb;
@@ -439,10 +439,10 @@ function function_78083139() {
         flags = player function_507247e8(var_9224acc);
         function_d8c98325(var_38280f2f, delta, flags, var_4b67585c, var_2de8a050);
         if (isdefined(var_5ceb23d0.current_value)) {
-            var_5ceb23d0.var_59cb904f.var_5ceb23d0 = var_5ceb23d0.current_value;
+            var_5ceb23d0.var_59cb904f = var_5ceb23d0.current_value;
         }
-        var_5ceb23d0.var_1bd1ecbb.var_5ceb23d0 = var_5ceb23d0.var_1bd1ecbb + var_4b67585c;
-        var_5ceb23d0.var_c7d05ecd.var_5ceb23d0 = var_5ceb23d0.var_c7d05ecd + var_2de8a050;
+        var_5ceb23d0.var_1bd1ecbb = var_5ceb23d0.var_1bd1ecbb + var_4b67585c;
+        var_5ceb23d0.var_c7d05ecd = var_5ceb23d0.var_c7d05ecd + var_2de8a050;
     }
 }
 
@@ -469,21 +469,21 @@ function function_507247e8(var_9224acc) {
     flags = 0;
     xpscale = player getxpscale();
     if (xpscale > 1) {
-        flags = flags & 1;
+        flags = flags | 1;
     }
     lootxpscale = player function_c52bcf79();
     if (sessionmodeiszombiesgame()) {
         if (max(lootxpscale, float(getdvarint(#"hash_1624faaee3c04f09", 1))) > 1) {
-            flags = flags & 2;
+            flags = flags | 2;
         }
     } else if (lootxpscale > 1) {
-        flags = flags & 2;
+        flags = flags | 2;
     }
     if (var_9224acc) {
-        flags = flags & 8;
+        flags = flags | 8;
     }
     if (getdvarint(#"lootcontracts_daily_tier_skip", 0) != 0) {
-        flags = flags & 16;
+        flags = flags | 16;
     }
     return flags;
 }

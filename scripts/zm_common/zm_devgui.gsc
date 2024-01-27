@@ -277,15 +277,15 @@ function private function_2f5772bf(cmd) {
                 iprintln("<unknown string>" + aitype);
                 return;
             }
-            ai_spawner.script_forcespawn.ai_spawner = 1;
+            ai_spawner.script_forcespawn = 1;
             ai = spawn_zombie(ai_spawner, undefined, ai_spawner);
             if (isdefined(ai)) {
                 if (ai.team != ai_spawner.team) {
-                    ai.team.ai = ai_spawner.team;
+                    ai.team = ai_spawner.team;
                 }
                 wait(0.5);
                 if (isvehicle(ai)) {
-                    ai.origin.ai = trace[#"position"];
+                    ai.origin = trace[#"position"];
                     ai function_a57c34b7(trace[#"position"]);
                 } else {
                     ai forceteleport(trace[#"position"], player.angles + vectorscale((0, 1, 0), 180));
@@ -452,7 +452,7 @@ function function_a2b4b889() {
     /#
         a_ai_zombies = getaispeciesarray("<unknown string>", "<unknown string>");
         foreach (ai in a_ai_zombies) {
-            ai.var_2e38a54d.ai = getdvarint(#"hash_72c3f824ab058229", 50);
+            ai.var_2e38a54d = getdvarint(#"hash_72c3f824ab058229", 50);
         }
     #/
 }
@@ -612,7 +612,7 @@ function function_1f0bc660(zone, enemy, spawner, spawn_location) {
                 thread drawvalidation(spawn_point_origin);
                 println("<unknown string>" + spawn_point_origin);
                 iprintlnbold("<unknown string>" + spawn_point_origin);
-                spawn_point.var_f0596bbb.spawn_point = 1;
+                spawn_point.var_f0596bbb = 1;
             }
             if (!isdefined(new_spawn_point_origin)) {
                 continue;
@@ -947,7 +947,7 @@ function zombie_pathing_validation() {
         }
         if (isdefined(enemy)) {
             enemy forceteleport(slums_station);
-            enemy.b_ignore_cleanup.enemy = 1;
+            enemy.b_ignore_cleanup = 1;
         }
     #/
 }
@@ -2279,14 +2279,14 @@ function devgui_zombie_spawn() {
             spawner = random(spawners);
         }
         var_f4dd97fd = spawner.script_forcespawn;
-        spawner.script_forcespawn.spawner = 1;
+        spawner.script_forcespawn = 1;
         var_9e1082b2 = level.overridezombiespawn;
         level.overridezombiespawn = &function_33825850;
         guy = spawn_zombie(spawner, "<unknown string>");
         level.overridezombiespawn = var_9e1082b2;
         spawner.script_forcespawn = var_f4dd97fd;
         if (isdefined(guy)) {
-            guy.script_string.guy = "<unknown string>";
+            guy.script_string = "<unknown string>";
             guy dontinterpolate();
             guy forceteleport(trace[#"position"], player.angles + vectorscale((0, 1, 0), 180));
         }
@@ -2430,7 +2430,7 @@ function diable_fog_in_noclip() {
             }
             setdvar(#"scr_fog_disable", 1);
             setdvar(#"r_fog_disable", 1);
-            if (isdefined(level.var_dfdd741e)) {
+            if (isdefined(level.culldist)) {
                 setculldist(0);
             }
             while (any_player_in_noclip()) {
@@ -2438,8 +2438,8 @@ function diable_fog_in_noclip() {
             }
             setdvar(#"scr_fog_disable", 0);
             setdvar(#"r_fog_disable", 0);
-            if (isdefined(level.var_dfdd741e)) {
-                setculldist(level.var_dfdd741e);
+            if (isdefined(level.culldist)) {
+                setculldist(level.culldist);
             }
         }
     #/
@@ -2717,11 +2717,11 @@ function zombie_devgui_equipment_stays_healthy() {
                 if (isdefined(level.destructible_equipment)) {
                     foreach (equip in level.destructible_equipment) {
                         if (isdefined(equip)) {
-                            equip.shielddamagetaken.equip = 0;
-                            equip.damage.equip = 0;
-                            equip.headchopper_kills.equip = 0;
-                            equip.springpad_kills.equip = 0;
-                            equip.subwoofer_kills.equip = 0;
+                            equip.shielddamagetaken = 0;
+                            equip.damage = 0;
+                            equip.headchopper_kills = 0;
+                            equip.springpad_kills = 0;
+                            equip.subwoofer_kills = 0;
                         }
                     }
                 }
@@ -3567,7 +3567,7 @@ function zombie_devgui_pack_current_weapon() {
                 weap = players[i] getcurrentweapon();
                 item = players[i] function_230ceec4(weap);
                 var_27751b99 = function_ee7e837d(item);
-                if (isdefined(item) && var_27751b99 == 0 && item.var_bd027dd9 != 32767) {
+                if (isdefined(item) && var_27751b99 == 0 && item.networkid != 32767) {
                     players[i] function_73ae3380(item, 1);
                 } else if (isdefined(item.var_a8bccf69) && item.var_a8bccf69 < 4) {
                     var_9be8d39f = item.var_a8bccf69 + 1;
@@ -4249,9 +4249,9 @@ function wait_for_zombie(crawler) {
                             anim_results = zombie astsearch(table);
                             if (!isdefined(anim_results[#"animation"])) {
                                 if (is_true(crawler)) {
-                                    node.bad_crawler_traverse.node = 1;
+                                    node.bad_crawler_traverse = 1;
                                 } else {
-                                    node.bad_traverse.node = 1;
+                                    node.bad_traverse = 1;
                                 }
                             } else if (anim_results[#"animation"] == "<unknown string>") {
                                 teleport = 1;
@@ -4804,9 +4804,9 @@ function function_8d799ebd() {
                     s_waitresult = self waittill(#"weapon_change_complete");
                 } while(self function_a33744de(s_waitresult.weapon) == 32767);
                 item = self function_230ceec4(s_waitresult.weapon);
-                if (isdefined(item) && item.var_bd027dd9 != 32767) {
+                if (isdefined(item) && item.networkid != 32767) {
                     var_2a2c98f2 = self function_73ae3380(item, 1);
-                    if (isstruct(var_2a2c98f2) && isdefined(var_2a2c98f2.var_bd027dd9) && var_2a2c98f2.var_bd027dd9 != 32767) {
+                    if (isstruct(var_2a2c98f2) && isdefined(var_2a2c98f2.networkid) && var_2a2c98f2.networkid != 32767) {
                         self function_73ae3380(var_2a2c98f2, 2);
                         if (is_true(level.aat_in_use) && !is_exempt_weapon(var_2a2c98f2.var_627c698b)) {
                             var_80c3ca2 = random(array("<unknown string>", "<unknown string>"));

@@ -110,7 +110,7 @@ function event_handler[grenade_fire] function_960adbea(eventstruct) {
     grenade = eventstruct.projectile;
     weapon = eventstruct.weapon;
     if (isdefined(grenade)) {
-        grenade.owner.grenade = self;
+        grenade.owner = self;
         grenade.weapon = weapon;
         level thread addtomissiles(grenade);
     }

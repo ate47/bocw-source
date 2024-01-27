@@ -76,7 +76,7 @@ function on_buff() {
 function gadget_health_regen_on_give(slot, weapon) {
     self.gadget_health_regen_slot = slot;
     self.gadget_health_regen_weapon = weapon;
-    weapon.ignore_grenade.weapon = 1;
+    weapon.ignore_grenade = 1;
     if (isdefined(weapon) && weapon.maxheal) {
         self player::function_9080887a(weapon.maxheal);
     } else {
@@ -399,10 +399,10 @@ function enable_healing(slot, weapon, player) {
             }
         }
     }
-    var_915fee20 = self.heal.enabled;
+    was_enabled = self.heal.enabled;
     self.heal.enabled = 1;
     if (getdvarint(#"hash_7f9cfdea69a18091", 1) == 1) {
-        if (!var_915fee20) {
+        if (!was_enabled) {
             self.heal.var_f37a08a8 = gettime();
             self.heal.var_fa57541f = self.health;
         }

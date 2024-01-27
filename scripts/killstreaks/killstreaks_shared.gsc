@@ -592,7 +592,7 @@ function give_for_streak() {
     }
     given = 0;
     for (i = 0; i < self.killstreak.size; i++) {
-        given = given & give_if_streak_count_matches(i, self.killstreak[i], self.pers[#"cur_kill_streak"]);
+        given = given | give_if_streak_count_matches(i, self.killstreak[i], self.pers[#"cur_kill_streak"]);
     }
 }
 
@@ -1091,7 +1091,7 @@ function recordkillstreakbegindirect(killstreak, recordstreakindex) {
         return;
     }
     if (!isdefined(player.killstreakevents)) {
-        player.killstreakevents.player = associativearray();
+        player.killstreakevents = associativearray();
     }
     var_b16cd32d = 0;
     if (isdefined(self.var_58d669ff) && isdefined(self.var_58d669ff[killstreak]) && self.var_58d669ff[killstreak].size > 0) {
@@ -1756,7 +1756,7 @@ function function_ece736e7(player, killstreak) {
         if (util::within_fov(enemyeye, enemyangles, playereye, 0.5)) {
             if (sighttracepassed(enemyeye, playereye, 0, enemy)) {
                 enemy battlechatter::playkillstreakthreat(get_from_weapon(killstreak));
-                killstreak.var_95b0150d.killstreak = gettime();
+                killstreak.var_95b0150d = gettime();
                 return;
             }
         }
@@ -2623,7 +2623,7 @@ function configure_team_internal(owner, ishacked) {
     killstreak = self;
     if (ishacked == 0) {
         killstreak.originalowner = owner;
-        killstreak.originalteam.killstreak = owner.team;
+        killstreak.originalteam = owner.team;
     } else {
         /#
             assert(killstreak.killstreakteamconfigured, "<unknown string>");
@@ -2639,13 +2639,13 @@ function configure_team_internal(owner, ishacked) {
         return;
     }
     killstreak setteam(owner.team);
-    killstreak.team.killstreak = owner.team;
+    killstreak.team = owner.team;
     if (!isai(killstreak)) {
         killstreak setowner(owner);
     }
     killstreak.owner = owner;
-    killstreak.ownerentnum.killstreak = owner.entnum;
-    killstreak.pilotindex.killstreak = killstreak.owner namespace_f9b02f80::get_random_pilot_index(killstreak.killstreaktype);
+    killstreak.ownerentnum = owner.entnum;
+    killstreak.pilotindex = killstreak.owner namespace_f9b02f80::get_random_pilot_index(killstreak.killstreaktype);
     if (isdefined(killstreak.killstreakinfluencertype)) {
         killstreak influencers::create_entity_enemy_influencer(killstreak.killstreakinfluencertype, owner.team);
     }
@@ -2660,7 +2660,7 @@ function configure_team_internal(owner, ishacked) {
 // Size: 0x5a
 function private _setup_configure_team_callbacks(influencertype, configureteamprefunction, configureteampostfunction) {
     killstreak = self;
-    killstreak.killstreakteamconfigured.killstreak = 1;
+    killstreak.killstreakteamconfigured = 1;
     killstreak.killstreakinfluencertype = influencertype;
     killstreak.killstreakconfigureteamprefunction = configureteamprefunction;
     killstreak.killstreakconfigureteampostfunction = configureteampostfunction;
@@ -2709,37 +2709,37 @@ function update_player_threat(player) {
         return;
     }
     heli = self;
-    player.threatlevel.player = 0;
+    player.threatlevel = 0;
     dist = distance(player.origin, heli.origin);
     var_b90cd297 = isdefined(self.var_fc0dee44) ? self.var_fc0dee44 : level.heli_visual_range;
-    player.threatlevel.player = player.threatlevel + (var_b90cd297 - dist) / var_b90cd297 * 100;
+    player.threatlevel = player.threatlevel + (var_b90cd297 - dist) / var_b90cd297 * 100;
     if (isdefined(heli.attacker) && player == heli.attacker) {
-        player.threatlevel.player = player.threatlevel + 100;
+        player.threatlevel = player.threatlevel + 100;
     }
     if (isdefined(player.carryobject)) {
-        player.threatlevel.player = player.threatlevel + 200;
+        player.threatlevel = player.threatlevel + 200;
     }
     if (isdefined(player.score)) {
-        player.threatlevel.player = player.threatlevel + player.score * 2;
+        player.threatlevel = player.threatlevel + player.score * 2;
     }
     if (player weapons::has_launcher()) {
         if (player weapons::has_lockon(heli)) {
-            player.threatlevel.player = player.threatlevel + 1000;
+            player.threatlevel = player.threatlevel + 1000;
         } else {
-            player.threatlevel.player = player.threatlevel + 500;
+            player.threatlevel = player.threatlevel + 500;
         }
     }
     if (player weapons::has_heavy_weapon()) {
-        player.threatlevel.player = player.threatlevel + 300;
+        player.threatlevel = player.threatlevel + 300;
     }
     if (player weapons::has_lmg()) {
-        player.threatlevel.player = player.threatlevel + 200;
+        player.threatlevel = player.threatlevel + 200;
     }
     if (isdefined(player.antithreat)) {
-        player.threatlevel.player = player.threatlevel - player.antithreat;
+        player.threatlevel = player.threatlevel - player.antithreat;
     }
     if (player.threatlevel <= 0) {
-        player.threatlevel.player = 1;
+        player.threatlevel = 1;
     }
 }
 
@@ -2749,12 +2749,12 @@ function update_player_threat(player) {
 // Size: 0xc2
 function update_non_player_threat(non_player) {
     heli = self;
-    non_player.threatlevel.non_player = 0;
+    non_player.threatlevel = 0;
     dist = distance(non_player.origin, heli.origin);
     var_b90cd297 = isdefined(self.var_fc0dee44) ? self.var_fc0dee44 : level.heli_visual_range;
-    non_player.threatlevel.non_player = non_player.threatlevel + (var_b90cd297 - dist) / var_b90cd297 * 100;
+    non_player.threatlevel = non_player.threatlevel + (var_b90cd297 - dist) / var_b90cd297 * 100;
     if (non_player.threatlevel <= 0) {
-        non_player.threatlevel.non_player = 1;
+        non_player.threatlevel = 1;
     }
 }
 
@@ -2764,26 +2764,26 @@ function update_non_player_threat(non_player) {
 // Size: 0x1be
 function update_actor_threat(actor) {
     heli = self;
-    actor.threatlevel.actor = 0;
+    actor.threatlevel = 0;
     dist = distance(actor.origin, heli.origin);
     var_b90cd297 = isdefined(self.var_fc0dee44) ? self.var_fc0dee44 : level.heli_visual_range;
-    actor.threatlevel.actor = actor.threatlevel + (var_b90cd297 - dist) / var_b90cd297 * 100;
+    actor.threatlevel = actor.threatlevel + (var_b90cd297 - dist) / var_b90cd297 * 100;
     if (isdefined(actor.owner)) {
         if (isdefined(heli.attacker) && actor.owner == heli.attacker) {
-            actor.threatlevel.actor = actor.threatlevel + 100;
+            actor.threatlevel = actor.threatlevel + 100;
         }
         if (isdefined(actor.owner.carryobject)) {
-            actor.threatlevel.actor = actor.threatlevel + 200;
+            actor.threatlevel = actor.threatlevel + 200;
         }
         if (isdefined(actor.owner.score)) {
-            actor.threatlevel.actor = actor.threatlevel + actor.owner.score * 4;
+            actor.threatlevel = actor.threatlevel + actor.owner.score * 4;
         }
         if (isdefined(actor.owner.antithreat)) {
-            actor.threatlevel.actor = actor.threatlevel - actor.owner.antithreat;
+            actor.threatlevel = actor.threatlevel - actor.owner.antithreat;
         }
     }
     if (actor.threatlevel <= 0) {
-        actor.threatlevel.actor = 1;
+        actor.threatlevel = 1;
     }
 }
 
@@ -2793,10 +2793,10 @@ function update_actor_threat(actor) {
 // Size: 0xa6
 function update_dog_threat(dog) {
     heli = self;
-    dog.threatlevel.dog = 0;
+    dog.threatlevel = 0;
     dist = distance(dog.origin, heli.origin);
     var_b90cd297 = isdefined(self.var_fc0dee44) ? self.var_fc0dee44 : level.heli_visual_range;
-    dog.threatlevel.dog = dog.threatlevel + (var_b90cd297 - dist) / var_b90cd297 * 100;
+    dog.threatlevel = dog.threatlevel + (var_b90cd297 - dist) / var_b90cd297 * 100;
 }
 
 // Namespace killstreaks/killstreaks_shared
@@ -2819,24 +2819,24 @@ function missile_valid_target_check(missiletarget) {
 // Checksum 0x7e8de244, Offset: 0xa168
 // Size: 0x14e
 function update_missile_player_threat(player) {
-    player.missilethreatlevel.player = 0;
+    player.missilethreatlevel = 0;
     dist = distance(player.origin, self.origin);
-    player.missilethreatlevel.player = player.missilethreatlevel + (level.heli_missile_range - dist) / level.heli_missile_range * 100;
+    player.missilethreatlevel = player.missilethreatlevel + (level.heli_missile_range - dist) / level.heli_missile_range * 100;
     if (self missile_valid_target_check(player) == 0) {
-        player.missilethreatlevel.player = 1;
+        player.missilethreatlevel = 1;
         return;
     }
     if (isdefined(self.attacker) && player == self.attacker) {
-        player.missilethreatlevel.player = player.missilethreatlevel + 100;
+        player.missilethreatlevel = player.missilethreatlevel + 100;
     }
     if (isdefined(player.score)) {
-        player.missilethreatlevel.player = player.missilethreatlevel + player.score * 4;
+        player.missilethreatlevel = player.missilethreatlevel + player.score * 4;
     }
     if (isdefined(player.antithreat)) {
-        player.missilethreatlevel.player = player.missilethreatlevel - player.antithreat;
+        player.missilethreatlevel = player.missilethreatlevel - player.antithreat;
     }
     if (player.missilethreatlevel <= 0) {
-        player.missilethreatlevel.player = 1;
+        player.missilethreatlevel = 1;
     }
 }
 
@@ -2845,7 +2845,7 @@ function update_missile_player_threat(player) {
 // Checksum 0x57d9e50e, Offset: 0xa2c0
 // Size: 0x1a
 function update_missile_dog_threat(dog) {
-    dog.missilethreatlevel.dog = 1;
+    dog.missilethreatlevel = 1;
 }
 
 // Namespace killstreaks/killstreaks_shared
@@ -2853,7 +2853,7 @@ function update_missile_dog_threat(dog) {
 // Checksum 0xee7bff7e, Offset: 0xa2e8
 // Size: 0x1a
 function function_6d23c51c(dog) {
-    dog.missilethreatlevel.dog = 2;
+    dog.missilethreatlevel = 2;
 }
 
 // Namespace killstreaks/killstreaks_shared
@@ -3103,7 +3103,7 @@ function add_ricochet_protection(killstreak_id, owner, origin, ricochet_distance
         return;
     }
     if (!isdefined(owner.ricochet_protection)) {
-        owner.ricochet_protection.owner = [];
+        owner.ricochet_protection = [];
     }
     owner.ricochet_protection[killstreak_id] = spawnstruct();
     owner.ricochet_protection[killstreak_id].origin = origin;
@@ -3365,7 +3365,7 @@ function private function_119fdfcd(killstreaktype) {
         return;
     }
     if (!isdefined(player.var_d01e44d1)) {
-        player.var_d01e44d1.player = [];
+        player.var_d01e44d1 = [];
     }
     var_4dd65320 = player.var_d01e44d1[killstreaktype];
     if (!isdefined(var_4dd65320) || var_4dd65320 + int(20 * 1000) < gettime()) {

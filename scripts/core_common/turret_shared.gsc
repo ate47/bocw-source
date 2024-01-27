@@ -319,7 +319,7 @@ function set_target(target, v_offset, n_index = 0, var_6bfa76e = 0, var_d55528ca
     if (!isdefined(v_offset)) {
         v_offset = _get_default_target_offset(target, n_index);
     }
-    s_turret.var_fac6f431.s_turret = s_turret.target;
+    s_turret.var_fac6f431 = s_turret.target;
     s_turret.e_next_target = target;
     s_turret.target = target;
     s_turret.v_offset = v_offset;
@@ -395,8 +395,8 @@ function clear_target(n_index = 0) {
     s_turret.e_next_target = undefined;
     s_turret.target = undefined;
     s_turret.var_50fbd548 = undefined;
-    s_turret.var_d55528ca.s_turret = 0;
-    s_turret.var_f351ad56.s_turret = 0;
+    s_turret.var_d55528ca = 0;
+    s_turret.var_f351ad56 = 0;
     self turretcleartarget(n_index);
 }
 
@@ -502,7 +502,7 @@ function fire(n_index) {
         }
         self fireweapon(n_index, e_target, s_turret.v_offset, s_turret.e_parent);
     }
-    s_turret.n_last_fire_time.s_turret = gettime();
+    s_turret.n_last_fire_time = gettime();
 }
 
 // Namespace turret/turret_shared
@@ -554,8 +554,8 @@ function get_in(var_34b21e8e, n_index = 0) {
         self usevehicle(var_34b21e8e, n_index);
         var_34b21e8e flag::set(#"hash_1b89f498c2647e6");
         if (is_true(s_turret.var_7394b9dc)) {
-            var_34b21e8e.allowpain.var_34b21e8e = 0;
-            var_34b21e8e.blockingpain.var_34b21e8e = 1;
+            var_34b21e8e.allowpain = 0;
+            var_34b21e8e.blockingpain = 1;
         }
         /#
             if (!is_true(var_34b21e8e islinkedto(self))) {
@@ -565,7 +565,7 @@ function get_in(var_34b21e8e, n_index = 0) {
         #/
         self enable(n_index, 1);
         var_34b21e8e.s_turret = s_turret;
-        var_34b21e8e.var_72f4d1b7.var_34b21e8e = s_turret.var_72f4d1b7;
+        var_34b21e8e.var_72f4d1b7 = s_turret.var_72f4d1b7;
         var_34b21e8e.var_41adb97 = undefined;
         aiutility::addaioverridedamagecallback(var_34b21e8e, &function_d72fcb0a);
         self thread handle_rider_death(var_34b21e8e, n_index);
@@ -587,8 +587,8 @@ function private function_2c718f9e(var_34b21e8e, n_index) {
         if (is_true(s_turret.var_7394b9dc) || is_true(s_turret.var_aa100948)) {
             continue;
         }
-        s_turret.e_last_target.s_turret = s_turret.target;
-        s_turret.var_aa100948.s_turret = 1;
+        s_turret.e_last_target = s_turret.target;
+        s_turret.var_aa100948 = 1;
         var_d8c89de3 = 1.5;
         stop(n_index, 1);
         pause(-1, n_index);
@@ -610,7 +610,7 @@ function private function_2c718f9e(var_34b21e8e, n_index) {
             }
         }
         wait(var_d8c89de3);
-        s_turret.var_aa100948.s_turret = 0;
+        s_turret.var_aa100948 = 0;
         unpause(n_index);
         set_target(s_turret.e_last_target);
     }
@@ -643,18 +643,18 @@ function get_out(var_34b21e8e, n_index = 0) {
             var_34b21e8e flag::clear(#"hash_1b89f498c2647e6");
             var_34b21e8e.s_turret = undefined;
             var_34b21e8e.var_72f4d1b7 = undefined;
-            var_34b21e8e.blockingpain.var_34b21e8e = 0;
-            var_34b21e8e.allowpain.var_34b21e8e = 1;
-            var_34b21e8e.ignoreme.var_34b21e8e = 0;
+            var_34b21e8e.blockingpain = 0;
+            var_34b21e8e.allowpain = 1;
+            var_34b21e8e.ignoreme = 0;
             aiutility::releaseclaimnode(var_34b21e8e);
             aiutility::choosebestcovernodeasap(var_34b21e8e);
             if (isdefined(var_34b21e8e.aioverridedamage)) {
                 aiutility::removeaioverridedamagecallback(var_34b21e8e, &function_d72fcb0a);
             }
             var_3b228fdf = isdefined(var_34b21e8e.node) && var_34b21e8e.node.type == "Turret";
-            var_3b228fdf = var_3b228fdf & (isdefined(var_34b21e8e.covernode) && var_34b21e8e.covernode.type == "Turret");
+            var_3b228fdf = var_3b228fdf | (isdefined(var_34b21e8e.covernode) && var_34b21e8e.covernode.type == "Turret");
             if (var_3b228fdf) {
-                var_34b21e8e.var_41adb97.var_34b21e8e = gettime() + 4000;
+                var_34b21e8e.var_41adb97 = gettime() + 4000;
                 var_34b21e8e setgoal(var_34b21e8e.origin, 0, var_34b21e8e.goalradius);
             }
         }
@@ -795,7 +795,7 @@ function private _shoot_turret_at_target(target, v_offset, n_index, b_just_once)
         while (s_turret.n_burst_time < s_turret.n_burst_fire_time) {
             while (can_hit_target(target, n_index)) {
                 set_target(target, v_offset, n_index, s_turret.var_f351ad56, 0);
-                s_turret.var_50fbd548.s_turret = target.origin;
+                s_turret.var_50fbd548 = target.origin;
                 wait(s_turret.var_b52bbdba);
             }
             if (isdefined(s_turret.var_50fbd548)) {
@@ -876,8 +876,8 @@ function disable_ai_getoff(n_index, b_disable = 1) {
 function disable(n_index) {
     if (is_turret_enabled(n_index)) {
         s_turret = _get_turret_data(n_index);
-        s_turret.is_enabled.s_turret = 0;
-        s_turret.var_aa100948.s_turret = 0;
+        s_turret.is_enabled = 0;
+        s_turret.var_aa100948 = 0;
         function_14223170(n_index);
         clear_target(n_index);
         unpause(n_index);
@@ -896,9 +896,9 @@ function pause(time, n_index) {
         time = int(time * 1000);
     }
     if (isdefined(s_turret.pause)) {
-        s_turret.pause_time.s_turret = s_turret.pause_time + time;
+        s_turret.pause_time = s_turret.pause_time + time;
     } else {
-        s_turret.pause.s_turret = 1;
+        s_turret.pause = 1;
         s_turret.pause_time = time;
         stop(n_index);
     }
@@ -966,7 +966,7 @@ function _turret_think(n_index, v_offset) {
         }
         e_original_next_target = s_turret.e_next_target;
         if (!is_true(s_turret.var_f351ad56) || isactor(s_turret.target) && !isalive(s_turret.target)) {
-            s_turret.e_next_target.s_turret = _get_best_target(n_index);
+            s_turret.e_next_target = _get_best_target(n_index);
         }
         if (isdefined(s_turret.e_next_target)) {
             no_target_start_time = 0;
@@ -1100,7 +1100,7 @@ function _listen_for_damage_on_actor(ai_user, n_index) {
         s_turret = _get_turret_data(n_index);
         if (isdefined(s_turret)) {
             if (!isdefined(s_turret.e_next_target) && !isdefined(s_turret.target)) {
-                s_turret.e_last_target.s_turret = waitresult.attacker;
+                s_turret.e_last_target = waitresult.attacker;
             }
         }
     }
@@ -1128,7 +1128,7 @@ function _waittill_user_change(n_index) {
 // Size: 0xb6
 function _check_for_paused(n_index) {
     s_turret = _get_turret_data(n_index);
-    s_turret.pause_start_time.s_turret = gettime();
+    s_turret.pause_start_time = gettime();
     while (isdefined(s_turret.pause)) {
         if (s_turret.pause_time > 0) {
             time = gettime();
@@ -1331,10 +1331,10 @@ function has_turret(n_index) {
 // Size: 0x8e
 function _update_turret_arcs(n_index) {
     s_turret = _get_turret_data(n_index);
-    s_turret.rightarc.s_turret = s_turret.w_weapon.rightarc;
-    s_turret.leftarc.s_turret = s_turret.w_weapon.leftarc;
-    s_turret.toparc.s_turret = s_turret.w_weapon.toparc;
-    s_turret.bottomarc.s_turret = s_turret.w_weapon.bottomarc;
+    s_turret.rightarc = s_turret.w_weapon.rightarc;
+    s_turret.leftarc = s_turret.w_weapon.leftarc;
+    s_turret.toparc = s_turret.w_weapon.toparc;
+    s_turret.bottomarc = s_turret.w_weapon.bottomarc;
 }
 
 // Namespace turret/turret_shared
@@ -1354,35 +1354,35 @@ function _init_turret(n_index = 0) {
     s_turret = _init_vehicle_turret(n_index);
     s_turret.w_weapon = w_weapon;
     _update_turret_arcs(n_index);
-    s_turret.is_enabled.s_turret = 0;
+    s_turret.is_enabled = 0;
     s_turret.target = undefined;
-    s_turret.e_parent.s_turret = self;
-    s_turret.var_73446dab.s_turret = 1;
-    s_turret.var_cd8600bd.s_turret = 0;
-    s_turret.var_30e97b22.s_turret = 0;
-    s_turret.var_d55528ca.s_turret = 0;
-    s_turret.var_7394b9dc.s_turret = 0;
-    s_turret.b_ignore_line_of_sight.s_turret = 0;
-    s_turret.var_2890139c.s_turret = 0;
-    s_turret.var_aa100948.s_turret = 0;
-    s_turret.var_f351ad56.s_turret = 0;
-    s_turret.v_offset.s_turret = (0, 0, 0);
+    s_turret.e_parent = self;
+    s_turret.var_73446dab = 1;
+    s_turret.var_cd8600bd = 0;
+    s_turret.var_30e97b22 = 0;
+    s_turret.var_d55528ca = 0;
+    s_turret.var_7394b9dc = 0;
+    s_turret.b_ignore_line_of_sight = 0;
+    s_turret.var_2890139c = 0;
+    s_turret.var_aa100948 = 0;
+    s_turret.var_f351ad56 = 0;
+    s_turret.v_offset = (0, 0, 0);
     s_turret.var_50fbd548 = undefined;
-    s_turret.n_burst_fire_time.s_turret = 0;
-    s_turret.n_burst_time.s_turret = 0;
-    s_turret.n_burst_wait.s_turret = 0;
+    s_turret.n_burst_fire_time = 0;
+    s_turret.n_burst_time = 0;
+    s_turret.n_burst_wait = 0;
     s_turret.n_index = n_index;
-    s_turret.n_last_fire_time.s_turret = 0;
-    s_turret.var_43ce86ed.s_turret = 36;
-    s_turret.var_b52bbdba.s_turret = 1;
-    s_turret.var_72f4d1b7.s_turret = 0.5;
-    s_turret.str_weapon_type.s_turret = w_weapon.type;
-    s_turret.str_guidance_type.s_turret = w_weapon.guidedmissiletype;
+    s_turret.n_last_fire_time = 0;
+    s_turret.var_43ce86ed = 36;
+    s_turret.var_b52bbdba = 1;
+    s_turret.var_72f4d1b7 = 0.5;
+    s_turret.str_weapon_type = w_weapon.type;
+    s_turret.str_guidance_type = w_weapon.guidedmissiletype;
     if (isdefined(self.target)) {
-        s_turret.node.s_turret = getnode(self.target, "targetname");
+        s_turret.node = getnode(self.target, "targetname");
     }
     if (isdefined(w_weapon.aiturretanims)) {
-        s_turret.var_bf6d793d.s_turret = getscriptbundle(w_weapon.aiturretanims);
+        s_turret.var_bf6d793d = getscriptbundle(w_weapon.aiturretanims);
     }
     set_on_target_angle(1, n_index);
     s_turret flag::init("turret manual");
@@ -1401,28 +1401,28 @@ function _init_vehicle_turret(n_index) {
     s_turret = spawnstruct();
     switch (n_index) {
     case 0:
-        s_turret.str_tag_flash.s_turret = "tag_flash";
-        s_turret.str_tag_pivot.s_turret = "tag_barrel";
+        s_turret.str_tag_flash = "tag_flash";
+        s_turret.str_tag_pivot = "tag_barrel";
         break;
     case 1:
-        s_turret.str_tag_flash.s_turret = "tag_gunner_flash1";
-        s_turret.str_tag_pivot.s_turret = "tag_gunner_barrel1";
+        s_turret.str_tag_flash = "tag_gunner_flash1";
+        s_turret.str_tag_pivot = "tag_gunner_barrel1";
         break;
     case 2:
-        s_turret.str_tag_flash.s_turret = "tag_gunner_flash2";
-        s_turret.str_tag_pivot.s_turret = "tag_gunner_barrel2";
+        s_turret.str_tag_flash = "tag_gunner_flash2";
+        s_turret.str_tag_pivot = "tag_gunner_barrel2";
         break;
     case 3:
-        s_turret.str_tag_flash.s_turret = "tag_gunner_flash3";
-        s_turret.str_tag_pivot.s_turret = "tag_gunner_barrel3";
+        s_turret.str_tag_flash = "tag_gunner_flash3";
+        s_turret.str_tag_pivot = "tag_gunner_barrel3";
         break;
     case 4:
-        s_turret.str_tag_flash.s_turret = "tag_gunner_flash4";
-        s_turret.str_tag_pivot.s_turret = "tag_gunner_barrel4";
+        s_turret.str_tag_flash = "tag_gunner_flash4";
+        s_turret.str_tag_pivot = "tag_gunner_barrel4";
         break;
     }
     if (self.vehicleclass === "helicopter") {
-        s_turret.e_trace_ignore.s_turret = self;
+        s_turret.e_trace_ignore = self;
     }
     if (!isdefined(self.a_turrets)) {
         self.a_turrets = [];
@@ -1443,9 +1443,9 @@ function _init_vehicle_turret(n_index) {
 // Size: 0x5a
 function function_14223170(n_index = 0) {
     s_turret = _get_turret_data(n_index);
-    s_turret.n_burst_time.s_turret = 0;
-    s_turret.n_burst_fire_time.s_turret = 0;
-    s_turret.n_burst_wait.s_turret = 0;
+    s_turret.n_burst_time = 0;
+    s_turret.n_burst_fire_time = 0;
+    s_turret.n_burst_wait = 0;
 }
 
 // Namespace turret/turret_shared
@@ -1455,15 +1455,15 @@ function function_14223170(n_index = 0) {
 function _burst_fire(n_index) {
     self endon(#"drone_death", #"death", "_stop_turret" + _index(n_index), "turret_disabled" + _index(n_index), #"terminate_all_turrets_firing", #"exit_vehicle", "turret manual" + _index(n_index));
     s_turret = _get_turret_data(n_index);
-    s_turret.n_burst_time.s_turret = 0;
-    s_turret.n_burst_fire_time.s_turret = _get_burst_fire_time(n_index);
-    s_turret.n_burst_wait.s_turret = _get_burst_wait_time(n_index);
+    s_turret.n_burst_time = 0;
+    s_turret.n_burst_fire_time = _get_burst_fire_time(n_index);
+    s_turret.n_burst_wait = _get_burst_wait_time(n_index);
     w_weapon = get_weapon(n_index);
     var_a2524721 = 0;
     n_fire_time = w_weapon.firetime < 0 ? w_weapon.firetime : 0.016;
     var_f612cac5 = ceil(s_turret.n_burst_fire_time / n_fire_time);
     for (i = 0; i < var_f612cac5; i++) {
-        s_turret.n_burst_time.s_turret = s_turret.n_burst_time + n_fire_time;
+        s_turret.n_burst_time = s_turret.n_burst_time + n_fire_time;
         var_a2524721 = s_turret.n_burst_time >= s_turret.n_burst_fire_time;
         fire(n_index);
         wait(n_fire_time);
@@ -1577,7 +1577,7 @@ function can_hit_target(e_target, n_index) {
         b_trace_passed = trace_test(e_target, v_offset - (0, 0, isdefined(s_turret.n_torso_targetting_offset) ? s_turret.n_torso_targetting_offset : isvehicle(e_target) ? 0 : 0), n_index);
     }
     if (b_current_target && !b_trace_passed && !isdefined(s_turret.n_time_lose_sight)) {
-        s_turret.n_time_lose_sight.s_turret = gettime();
+        s_turret.n_time_lose_sight = gettime();
     }
     return b_trace_passed;
 }

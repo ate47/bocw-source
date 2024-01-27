@@ -1869,7 +1869,7 @@ function function_6732b1b(*item) {
 // Checksum 0x19bea34, Offset: 0x103e8
 // Size: 0x22
 function function_c0543415(watcher) {
-    watcher.onspawn.watcher = &function_f2346f03;
+    watcher.onspawn = &function_f2346f03;
 }
 
 // Namespace namespace_1e7573ec/namespace_1e7573ec
@@ -1987,7 +1987,7 @@ LOC_0000037a:
 function on_item_drop(params) {
     item = params.item;
     if (isplayer(self) && isdefined(item.var_a6762160.weapon) && function_3efc58e4(item.var_a6762160.weapon)) {
-        item.var_23178d00.item = self.var_23178d00;
+        item.var_23178d00 = self.var_23178d00;
     }
 }
 
@@ -2140,7 +2140,7 @@ function function_425c8feb(params) {
                         level.var_19e4b715[character] = arraycopy(level.var_e36f0de5[character]);
                     }
                     player thread function_1340d9d6(array::function_a3b0f814(level.var_19e4b715[character]));
-                    player.var_a5bcc97b.player = 1;
+                    player.var_a5bcc97b = 1;
                     player thread function_8ec19026();
                 }
             }
@@ -2264,8 +2264,8 @@ function function_e7547fea(var_cbe471c0, var_6ce69257 = 0) {
         var_37e764ff.var_627c698b = var_c07b2ded;
         var_3383cd4e = function_4ba8fde(var_cbe471c0 + "_item_sr");
         if (isdefined(var_3383cd4e)) {
-            var_37e764ff.var_a6762160.var_37e764ff = var_3383cd4e.var_a6762160;
-            var_37e764ff.id.var_37e764ff = var_3383cd4e.id;
+            var_37e764ff.var_a6762160 = var_3383cd4e.var_a6762160;
+            var_37e764ff.id = var_3383cd4e.id;
         } else {
             /#
                 /#
@@ -2545,7 +2545,7 @@ function function_51b7e176() {
     self clientfield::set_to_player("" + #"hash_713a0ba5968a3bde", 1);
     weapon = zm_weapons::function_386dacbc(self getcurrentweapon());
     var_accb4770 = util::spawn_model(#"hash_62460e2f377db8bc");
-    var_accb4770.var_515e20e6.var_accb4770 = weapon.name === #"hash_2d0c14dce5a6ebed";
+    var_accb4770.var_515e20e6 = weapon.name === #"hash_2d0c14dce5a6ebed";
     var_accb4770 ghost();
     var_accb4770 setforcenocull();
     var_accb4770 thread scene::play(#"p9_fxanim_ww_mega_barrel_fullauto_copycat_circle_bundle", var_accb4770);

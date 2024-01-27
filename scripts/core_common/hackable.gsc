@@ -35,22 +35,22 @@ function add_hackable_object(obj, test_callback, start_callback, fail_callback, 
     }
     level.hackable_items[level.hackable_items.size] = obj;
     if (!isdefined(obj.hackable_distance_sq)) {
-        obj.hackable_distance_sq.obj = getdvarfloat(#"scr_hacker_default_distance", 0) * getdvarfloat(#"scr_hacker_default_distance", 0);
+        obj.hackable_distance_sq = getdvarfloat(#"scr_hacker_default_distance", 0) * getdvarfloat(#"scr_hacker_default_distance", 0);
     }
     if (!isdefined(obj.hackable_angledot)) {
-        obj.hackable_angledot.obj = getdvarfloat(#"scr_hacker_default_angledot", 0);
+        obj.hackable_angledot = getdvarfloat(#"scr_hacker_default_angledot", 0);
     }
     if (!isdefined(obj.hackable_timeout)) {
-        obj.hackable_timeout.obj = getdvarfloat(#"scr_hacker_default_timeout", 0);
+        obj.hackable_timeout = getdvarfloat(#"scr_hacker_default_timeout", 0);
     }
     if (!isdefined(obj.hackable_progress_prompt)) {
-        obj.hackable_progress_prompt.obj = #"hash_7080e1304a0ce47d";
+        obj.hackable_progress_prompt = #"hash_7080e1304a0ce47d";
     }
     if (!isdefined(obj.hackable_cost_mult)) {
-        obj.hackable_cost_mult.obj = 1;
+        obj.hackable_cost_mult = 1;
     }
     if (!isdefined(obj.hackable_hack_time)) {
-        obj.hackable_hack_time.obj = getdvarfloat(#"scr_hacker_default_hack_time", 0);
+        obj.hackable_hack_time = getdvarfloat(#"scr_hacker_default_hack_time", 0);
     }
     obj.hackable_test_callback = test_callback;
     obj.hackable_start_callback = start_callback;
@@ -136,8 +136,8 @@ function is_object_hackable(obj, origin, forward) {
 // Checksum 0x1d1fbf77, Offset: 0x630
 // Size: 0x4c
 function start_hacking_object(obj) {
-    obj.hackable_being_hacked.obj = 1;
-    obj.hackable_hacked_amount.obj = 0;
+    obj.hackable_being_hacked = 1;
+    obj.hackable_hacked_amount = 0;
     if (isdefined(obj.hackable_start_callback)) {
         obj thread [[ obj.hackable_start_callback ]](self);
     }
@@ -151,8 +151,8 @@ function fail_hacking_object(obj) {
     if (isdefined(obj.hackable_fail_callback)) {
         obj thread [[ obj.hackable_fail_callback ]](self);
     }
-    obj.hackable_hacked_amount.obj = 0;
-    obj.hackable_being_hacked.obj = 0;
+    obj.hackable_hacked_amount = 0;
+    obj.hackable_being_hacked = 0;
     obj notify(#"hackable_watch_timeout");
 }
 
@@ -165,8 +165,8 @@ function complete_hacking_object(obj) {
     if (isdefined(obj.hackable_hacked_callback)) {
         obj thread [[ obj.hackable_hacked_callback ]](self);
     }
-    obj.hackable_hacked_amount.obj = 0;
-    obj.hackable_being_hacked.obj = 0;
+    obj.hackable_hacked_amount = 0;
+    obj.hackable_being_hacked = 0;
 }
 
 // Namespace hackable/hackable
@@ -197,7 +197,7 @@ function continue_hacking_object(obj) {
             self thread watch_timeout(obj, obj.hackable_timeout);
         }
         amt = 1 / 20 * obj.hackable_hack_time;
-        obj.hackable_hacked_amount.obj = obj.hackable_hacked_amount + amt;
+        obj.hackable_hacked_amount = obj.hackable_hacked_amount + amt;
         if (obj.hackable_hacked_amount > 1) {
             self complete_hacking_object(obj);
         }

@@ -215,8 +215,8 @@ function function_5d985962(var_b375589a) {
     level.var_b375589a = var_b375589a;
     if (!var_b375589a) {
         foreach (player in level.players) {
-            player.var_edc6d524.player = "";
-            player.var_187e3f7e.player = "";
+            player.var_edc6d524 = "";
+            player.var_187e3f7e = "";
         }
     }
 }

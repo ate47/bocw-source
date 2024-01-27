@@ -569,7 +569,7 @@ function private go_to_node_using_funcs(node, optional_arrived_at_node_func, req
             } else {
                 player_wait_dist = 256;
             }
-            node.script_requires_player.node = 0;
+            node.script_requires_player = 0;
         }
         self function_5c5e2093(node);
         if (isdefined(node.height)) {
@@ -641,9 +641,9 @@ function private go_to_node_using_funcs(node, optional_arrived_at_node_func, req
             level flag::wait_till_any(var_b177ca91);
         }
         while (isdefined(node.script_requires_player)) {
-            node.script_requires_player.node = 0;
+            node.script_requires_player = 0;
             if (self go_to_node_wait_for_player(node, get_target_func, player_wait_dist)) {
-                node.script_requires_player.node = 1;
+                node.script_requires_player = 1;
                 node notify(#"script_requires_player");
                 break;
             }
@@ -834,7 +834,7 @@ function crawl_target_and_init_flags(ent, get_func) {
     for (;;) {
         for (;;) {
             if (!isdefined(ent.crawled)) {
-                ent.crawled.ent = 1;
+                ent.crawled = 1;
                 level thread remove_crawled(ent);
                 if (isdefined(ent.script_flag_set)) {
                     if (!isdefined(level.flag[ent.script_flag_set])) {
@@ -1206,15 +1206,15 @@ function spawn(b_force = 0, str_targetname, v_origin, v_angles, bignorespawningl
                 originalangles = archetype_spawner.angles;
                 originaltarget = archetype_spawner.target;
                 originaltargetname = archetype_spawner.targetname;
-                archetype_spawner.target.archetype_spawner = self.target;
-                archetype_spawner.targetname.archetype_spawner = self.targetname;
-                archetype_spawner.script_noteworthy.archetype_spawner = self.script_noteworthy;
-                archetype_spawner.script_string.archetype_spawner = self.script_string;
-                archetype_spawner.origin.archetype_spawner = self.origin;
-                archetype_spawner.angles.archetype_spawner = self.angles;
+                archetype_spawner.target = self.target;
+                archetype_spawner.targetname = self.targetname;
+                archetype_spawner.script_noteworthy = self.script_noteworthy;
+                archetype_spawner.script_string = self.script_string;
+                archetype_spawner.origin = self.origin;
+                archetype_spawner.angles = self.angles;
                 e_spawned = archetype_spawner spawnfromspawner(str_targetname, force_spawn, makeroom, infinitespawn);
                 if (!isdefined(str_targetname)) {
-                    e_spawned.targetname.e_spawned = archetype_spawner.targetname;
+                    e_spawned.targetname = archetype_spawner.targetname;
                 }
                 archetype_spawner.target = originaltarget;
                 archetype_spawner.targetname = originaltargetname;
@@ -1223,23 +1223,23 @@ function spawn(b_force = 0, str_targetname, v_origin, v_angles, bignorespawningl
                 if (isdefined(archetype_spawner.spawnflags) && (archetype_spawner.spawnflags & 64) == 64) {
                     archetype_spawner.count++;
                 }
-                archetype_spawner.lastspawntime.archetype_spawner = gettime();
+                archetype_spawner.lastspawntime = gettime();
             } else if (archetype === "<unknown string>") {
                 bot = add_bot(self.team);
                 if (isdefined(bot)) {
-                    bot.botremoveondeath.bot = 1;
+                    bot.botremoveondeath = 1;
                     bot function_bab12815(self.origin, self.angles[1]);
                     bot function_39d30bb6(is_true(self.script_forcegoal));
                     bot waittill(#"spawned_player");
-                    bot.sessionteam.bot = self.team;
+                    bot.sessionteam = self.team;
                     bot setteam(self.team);
                     if (isdefined(bot.pers)) {
                         bot.pers[#"team"] = self.team;
                     }
-                    bot.target.bot = self.target;
-                    bot.targetname.bot = self.targetname + "<unknown string>";
-                    bot.script_noteworthy.bot = self.script_noteworthy;
-                    bot.script_string.bot = self.script_string;
+                    bot.target = self.target;
+                    bot.targetname = self.targetname + "<unknown string>";
+                    bot.script_noteworthy = self.script_noteworthy;
+                    bot.script_string = self.script_string;
                     return bot;
                 }
             }

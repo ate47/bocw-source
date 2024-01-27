@@ -208,10 +208,10 @@ function function_b3496fde(*inflictor, attacker, damage, *flags, meansofdeath, w
         case 5:
             if (isplayer(shitloc) && shitloc.var_16cd8b35 < 1) {
                 var_9eaf0b7a = int(0.1 * shitloc.var_66cb03ad);
-                shitloc.health.shitloc = shitloc.health + var_9eaf0b7a;
+                shitloc.health = shitloc.health + var_9eaf0b7a;
                 if (shitloc.health > shitloc.var_66cb03ad) {
                     var_253772ec = var_9eaf0b7a - shitloc.health - shitloc.var_66cb03ad;
-                    shitloc.health.shitloc = shitloc.var_66cb03ad;
+                    shitloc.health = shitloc.var_66cb03ad;
                 } else {
                     var_253772ec = var_9eaf0b7a;
                 }

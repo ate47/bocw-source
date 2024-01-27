@@ -124,7 +124,7 @@ class class_6fd989ce {
         }
         self.var_85613d6b = struct::get_array(var_d7dae20a.target, "targetname");
         foreach (node in self.var_85613d6b) {
-            node.origin.node = node.origin - var_d7dae20a.origin;
+            node.origin = node.origin - var_d7dae20a.origin;
         }
     }
 
@@ -266,7 +266,7 @@ class class_c4926dee {
                     continue;
                 }
                 if (is_true(ai.var_1f2d0447) && gettime() - ai.doa.birthtime < 1500) {
-                    ai.annihilate.ai = 1;
+                    ai.annihilate = 1;
                     ai thread namespace_ec06fe4a::function_570729f0(0.1);
                 }
             }
@@ -512,7 +512,7 @@ class class_c4926dee {
             var_8a14a619 = [[ self.var_de510cda ]]->function_1296c737();
         }
         if (!function_30a0163e()) {
-            self.var_a3c3a5f4 = namespace_ec06fe4a::function_b5731057("trigger_radius", origin + vectorscale((0, 0, -1), 72), 2 & 16, width, height);
+            self.var_a3c3a5f4 = namespace_ec06fe4a::function_b5731057("trigger_radius", origin + vectorscale((0, 0, -1), 72), 2 | 16, width, height);
             if (!isdefined(self.var_a3c3a5f4)) {
                 return;
             }
@@ -543,13 +543,13 @@ class class_c4926dee {
         var_d7f42bb7 = [[ self.var_de510cda ]]->function_910a1ed9();
         foreach (node in var_d7f42bb7) {
             spawner = spawnstruct();
-            spawner.origin.spawner = self.m_model.origin + rotatepoint(node.origin, self.m_model.angles);
-            spawner.ai_type.spawner = node.script_noteworthy;
+            spawner.origin = self.m_model.origin + rotatepoint(node.origin, self.m_model.angles);
+            spawner.ai_type = node.script_noteworthy;
             if ([[ self.var_de510cda ]]->function_6b86128a()) {
-                spawner.origin.spawner = namespace_ec06fe4a::function_65ee50ba(spawner.origin);
+                spawner.origin = namespace_ec06fe4a::function_65ee50ba(spawner.origin);
             }
-            spawner.angles.spawner = node.angles + self.m_model.angles;
-            spawner.var_6d14cf9d.spawner = isdefined(node.script_int) ? int(node.script_int) : 3;
+            spawner.angles = node.angles + self.m_model.angles;
+            spawner.var_6d14cf9d = isdefined(node.script_int) ? int(node.script_int) : 3;
             if (!isdefined(self.m_type) && isdefined(spawner.ai_type)) {
                 self.m_type = spawner.ai_type;
             }
@@ -674,7 +674,7 @@ class class_c4926dee {
                 continue;
             }
             if (is_true(ai.var_1f2d0447) && gettime() - ai.doa.birthtime < 1500) {
-                ai.annihilate.ai = 1;
+                ai.annihilate = 1;
                 ai thread namespace_ec06fe4a::function_570729f0(0.1);
             }
         }

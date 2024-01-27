@@ -43,12 +43,12 @@ function private function_613baf1b() {
 function private function_26d68622(v_center, var_50721d66) {
     var_4fb7e8bb = struct::get("satellite_computer_screen", "targetname");
     var_91b180f0 = {};
-    var_91b180f0.entity.var_91b180f0 = getent("mq_sat_scr", "targetname");
-    var_91b180f0.model.var_91b180f0 = #"hash_3bc4ed2f30d82d31" + var_50721d66;
-    var_91b180f0.info.var_91b180f0 = util::spawn_model("tag_origin", var_91b180f0.entity.origin, var_91b180f0.entity.angles);
+    var_91b180f0.entity = getent("mq_sat_scr", "targetname");
+    var_91b180f0.model = #"hash_3bc4ed2f30d82d31" + var_50721d66;
+    var_91b180f0.info = util::spawn_model("tag_origin", var_91b180f0.entity.origin, var_91b180f0.entity.angles);
     var_91b180f0.info hide();
     var_91b180f0.center = v_center;
-    var_91b180f0.var_3824bcad.var_91b180f0 = var_4fb7e8bb.var_fc656a7;
+    var_91b180f0.var_3824bcad = var_4fb7e8bb.var_fc656a7;
     level.terminal.screen = var_91b180f0;
 }
 
@@ -217,14 +217,14 @@ function function_92c05efb(var_9da78756) {
 function private function_1e3823bc(var_3f94a5b6) {
     var_26dcbc78 = {#var_93354cc2:0, #updown:0};
     if (self buttonbitstate(var_3f94a5b6.var_a666ab6e[0])) {
-        var_26dcbc78.updown.var_26dcbc78 = var_26dcbc78.updown + 1;
+        var_26dcbc78.updown = var_26dcbc78.updown + 1;
     } else if (self buttonbitstate(var_3f94a5b6.var_a666ab6e[1])) {
-        var_26dcbc78.updown.var_26dcbc78 = var_26dcbc78.updown - 1;
+        var_26dcbc78.updown = var_26dcbc78.updown - 1;
     }
     if (self buttonbitstate(var_3f94a5b6.var_a666ab6e[2])) {
-        var_26dcbc78.var_93354cc2.var_26dcbc78 = var_26dcbc78.var_93354cc2 - 1;
+        var_26dcbc78.var_93354cc2 = var_26dcbc78.var_93354cc2 - 1;
     } else if (self buttonbitstate(var_3f94a5b6.var_a666ab6e[3])) {
-        var_26dcbc78.var_93354cc2.var_26dcbc78 = var_26dcbc78.var_93354cc2 + 1;
+        var_26dcbc78.var_93354cc2 = var_26dcbc78.var_93354cc2 + 1;
     }
     return var_26dcbc78;
 }
@@ -238,10 +238,10 @@ function private function_d25d2a9(var_e9a27711, s_screen, var_7b1452d6, n_active
     var_2b6fca73[1] = distance(var_e9a27711, s_screen.center + (0, -40, -80));
     a_angles[0] = acos(abs(s_screen.center[1] + (0, 60, -20)[1] - var_e9a27711[1]) / var_2b6fca73[0]);
     a_angles[1] = acos(abs(s_screen.center[2] + (0, -40, -80)[2] - var_e9a27711[2]) / var_2b6fca73[1]);
-    var_7b1452d6.radius.var_7b1452d6 = (var_2b6fca73[0], var_2b6fca73[1], 0);
-    var_7b1452d6.origin.var_7b1452d6 = var_7b1452d6.radius * 10000;
-    var_7b1452d6.origin.var_7b1452d6 = (var_7b1452d6.origin[0], var_7b1452d6.origin[1], n_active);
-    var_7b1452d6.angles.var_7b1452d6 = (a_angles[0], a_angles[1], 0);
+    var_7b1452d6.radius = (var_2b6fca73[0], var_2b6fca73[1], 0);
+    var_7b1452d6.origin = var_7b1452d6.radius * 10000;
+    var_7b1452d6.origin = (var_7b1452d6.origin[0], var_7b1452d6.origin[1], n_active);
+    var_7b1452d6.angles = (a_angles[0], a_angles[1], 0);
 }
 
 // Namespace namespace_2a67e53/namespace_2a67e53
@@ -267,7 +267,7 @@ function private function_dae63c17() {
 // Size: 0x14a
 function function_b699cdc8(var_3f94a5b6) {
     var_1806c69c = self gamepadusedlast();
-    if (var_1806c69c !== var_3f94a5b6.var_ed769620) {
+    if (var_1806c69c !== var_3f94a5b6.gamepad) {
         if (var_1806c69c) {
             var_3f94a5b6.var_a666ab6e[0] = "BUTTON_BIT_ACTIONSLOT_1";
             var_3f94a5b6.var_a666ab6e[1] = "BUTTON_BIT_ACTIONSLOT_2";
@@ -283,7 +283,7 @@ function function_b699cdc8(var_3f94a5b6) {
             var_3f94a5b6.var_a666ab6e[4] = "BUTTON_BIT_ACTIVATE";
             var_3f94a5b6.var_a666ab6e[5] = "BUTTON_BIT_CROUCH";
         }
-        var_3f94a5b6.var_ed769620 = var_1806c69c;
+        var_3f94a5b6.gamepad = var_1806c69c;
     }
 }
 
@@ -325,15 +325,15 @@ function function_f3c47da1(var_3f94a5b6, e_trigger) {
         self thread function_dae63c17();
     #/
     if (!isdefined(var_3f94a5b6.var_a666ab6e)) {
-        var_3f94a5b6.var_a666ab6e.var_3f94a5b6 = [];
+        var_3f94a5b6.var_a666ab6e = [];
     }
     if (!isdefined(var_3f94a5b6.var_fa7400be)) {
-        var_3f94a5b6.var_fa7400be.var_3f94a5b6 = [];
+        var_3f94a5b6.var_fa7400be = [];
     }
     if (!isdefined(var_3f94a5b6.var_fa7400be[self getentitynumber()])) {
         var_3f94a5b6.var_fa7400be[self getentitynumber()] = [];
     }
-    var_3f94a5b6.var_ed769620 = undefined;
+    var_3f94a5b6.gamepad = undefined;
     self thread function_d228e8b0(var_3f94a5b6);
     while (self usebuttonpressed()) {
         waitframe(1);
@@ -354,17 +354,17 @@ function function_f3c47da1(var_3f94a5b6, e_trigger) {
                 }
                 s_result = {#success:b_success};
                 v_delta = var_3f94a5b6.cursor - var_3f94a5b6.screen.center;
-                s_result.yaw.s_result = v_delta[1] / var_3f94a5b6.screen.var_3824bcad[1] + 0.5;
+                s_result.yaw = v_delta[1] / var_3f94a5b6.screen.var_3824bcad[1] + 0.5;
                 if (s_result.yaw < 0) {
-                    s_result.yaw.s_result = 0;
+                    s_result.yaw = 0;
                 } else if (s_result.yaw > 1) {
-                    s_result.yaw.s_result = 1;
+                    s_result.yaw = 1;
                 }
-                s_result.pitch.s_result = v_delta[2] / var_3f94a5b6.screen.var_3824bcad[2] + 0.5;
+                s_result.pitch = v_delta[2] / var_3f94a5b6.screen.var_3824bcad[2] + 0.5;
                 if (s_result.pitch < 0) {
-                    s_result.pitch.s_result = 0;
+                    s_result.pitch = 0;
                 } else if (s_result.pitch > 1) {
-                    s_result.pitch.s_result = 1;
+                    s_result.pitch = 1;
                 }
                 break;
             }

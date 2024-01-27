@@ -474,7 +474,7 @@ function private function_47ed291b() {
 // Size: 0x16e
 function private function_10801ad3() {
     foreach (player in getplayers()) {
-        player.var_42a4759e.player = {};
+        player.var_42a4759e = {};
         player.var_42a4759e.score = player zm_score::function_ffc2d0bc();
         player.var_42a4759e.score_total = player.score_total;
         if (player.sessionstate == "spectator") {
@@ -525,7 +525,7 @@ function private function_bcd35efc() {
         } else {
             player zm_trial_util::function_d37a769(player.var_42a4759e.var_8c5bddf5);
             player zm_score::function_c1f146ff(player.var_42a4759e.score);
-            player.score_total.player = player.var_42a4759e.score_total;
+            player.score_total = player.var_42a4759e.score_total;
             if (isdefined(player.var_42a4759e.loadout)) {
                 player zm_weapons::player_give_loadout(player.var_42a4759e.loadout, 1, 0);
             } else {
@@ -577,11 +577,11 @@ function private function_4dbf2663() {
                 if (!isdefined(var_6d87ac05.rounds[round_index])) {
                     var_6d87ac05.rounds[round_index] = {};
                     round_info = var_6d87ac05.rounds[round_index];
-                    round_info.name.round_info = tablelookupcolumnforrow(table, row, 1);
+                    round_info.name = tablelookupcolumnforrow(table, row, 1);
                     round_info.round = round;
-                    round_info.name_str.round_info = tablelookupcolumnforrow(table, row, 2);
-                    round_info.desc_str.round_info = tablelookupcolumnforrow(table, row, 3);
-                    round_info.challenges.round_info = [];
+                    round_info.name_str = tablelookupcolumnforrow(table, row, 2);
+                    round_info.desc_str = tablelookupcolumnforrow(table, row, 3);
+                    round_info.challenges = [];
                 }
                 /#
                     assert(isdefined(var_6d87ac05.rounds[round_index]));

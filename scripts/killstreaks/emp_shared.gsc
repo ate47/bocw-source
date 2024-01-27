@@ -59,11 +59,11 @@ function fx_flesh_hit_neck_fatal(params) {
 function initturretvehicle() {
     turretvehicle = self;
     turretvehicle killstreaks::setup_health("emp");
-    turretvehicle.damagetaken.turretvehicle = 0;
-    turretvehicle.health.turretvehicle = turretvehicle.maxhealth;
+    turretvehicle.damagetaken = 0;
+    turretvehicle.health = turretvehicle.maxhealth;
     turretvehicle clientfield::set("enemyvehicle", 1);
-    turretvehicle.soundmod.turretvehicle = "drone_land";
-    turretvehicle.overridevehiclekilled.turretvehicle = &onturretdeath;
+    turretvehicle.soundmod = "drone_land";
+    turretvehicle.overridevehiclekilled = &onturretdeath;
     target_set(turretvehicle, vectorscale((0, 0, 1), 36));
     if (isdefined(level.var_389a99a4)) {
         turretvehicle [[ level.var_389a99a4 ]]();
@@ -202,7 +202,7 @@ function shutdownemp(emp) {
     if (isdefined(emp.already_shutdown)) {
         return;
     }
-    emp.already_shutdown.emp = 1;
+    emp.already_shutdown = 1;
     if (isdefined(emp.vehicle)) {
         emp.vehicle clientfield::set("emp_turret_deploy", 0);
     }
@@ -357,7 +357,7 @@ function emp_jamenemies(empent, hacked) {
     visionsetnaked("default", 5);
     radius = isdefined(level.empkillstreakbundle.ksdamageradius) ? level.empkillstreakbundle.ksdamageradius : 750;
     empkillstreakweapon = getweapon(#"emp");
-    empkillstreakweapon.isempkillstreak.empkillstreakweapon = 1;
+    empkillstreakweapon.isempkillstreak = 1;
     level destroyotherteamsactivevehicles(self, empkillstreakweapon, radius);
     level destroyotherteamsequipment(self, empkillstreakweapon, radius);
     level weaponobjects::destroy_other_teams_supplemental_watcher_objects(self, empkillstreakweapon, radius);

@@ -163,7 +163,7 @@ function function_912eedf3(zombie, eattacker) {
             zombie launchragdoll(v_launch);
         }
         level thread function_139ba789(zombie, eattacker);
-        zombie.allowdeath.zombie = 1;
+        zombie.allowdeath = 1;
         zombie kill();
     }
 }
@@ -189,7 +189,7 @@ function function_e1c4e1c2(v_org, eattacker, einflictor) {
 // Checksum 0x4f3d67f1, Offset: 0xed8
 // Size: 0x101c
 function function_c668a011(s_instance) {
-    s_instance.var_2bb61e5b.s_instance = 0;
+    s_instance.var_2bb61e5b = 0;
     level flag::wait_till_clear(#"hash_6559e11da1f3a7cf");
     var_f6b6b97e = isdefined(s_instance.var_fe2612fe[#"hash_402487319cc06a4c"]) ? s_instance.var_fe2612fe[#"hash_402487319cc06a4c"] : [];
     foreach (var_50b7449f in var_f6b6b97e) {
@@ -217,8 +217,8 @@ function function_c668a011(s_instance) {
     }
     var_f6b6b97e = array::randomize(var_f6b6b97e);
     if (isdefined(s_instance.script_noteworthy)) {
-        s_instance.var_28f56db4.s_instance = [];
-        s_instance.var_b550f3c3.s_instance = [];
+        s_instance.var_28f56db4 = [];
+        s_instance.var_b550f3c3 = [];
         foreach (var_50b7449f in var_f6b6b97e) {
             s_instance.var_b550f3c3[var_50b7449f.script_int] = var_50b7449f;
         }
@@ -238,7 +238,7 @@ function function_c668a011(s_instance) {
                     vehicle = spawnvehicle(var_50b7449f.vehicletype, var_50b7449f.origin, var_50b7449f.angles, "sr_vehicle");
                     if (isdefined(vehicle)) {
                         if (isdefined(var_50b7449f.var_df2f9ba4)) {
-                            vehicle.var_df2f9ba4.vehicle = var_50b7449f.var_df2f9ba4;
+                            vehicle.var_df2f9ba4 = var_50b7449f.var_df2f9ba4;
                             vehicle.s_start = var_50b7449f;
                         }
                         var_7a436008[i] = var_7a436008[i] + var_50b7449f.var_14a123d5;
@@ -250,8 +250,8 @@ function function_c668a011(s_instance) {
                         if (!isinarray(s_instance.location.destination.a_vehicles, vehicle)) {
                             s_instance.location.destination.a_vehicles[s_instance.location.destination.a_vehicles.size] = vehicle;
                         }
-                        vehicle.v_org.vehicle = vehicle.origin;
-                        vehicle.v_ang.vehicle = vehicle.angles;
+                        vehicle.v_org = vehicle.origin;
+                        vehicle.v_ang = vehicle.angles;
                         vehicle thread function_17a3dc2f(s_instance);
                         if (vehicle.vehicletype === "vehicle_motorcycle_mil_us_offroad" || vehicle.vehicletype === "vehicle_t9_mil_fav_light") {
                             foreach (var_f8d6002f in var_f6b6b97e) {
@@ -259,7 +259,7 @@ function function_c668a011(s_instance) {
                                     vehicle = spawnvehicle(var_f8d6002f.vehicletype, var_f8d6002f.origin, var_f8d6002f.angles, "sr_vehicle");
                                     if (isdefined(vehicle)) {
                                         if (isdefined(var_50b7449f.var_df2f9ba4)) {
-                                            vehicle.var_df2f9ba4.vehicle = var_50b7449f.var_df2f9ba4;
+                                            vehicle.var_df2f9ba4 = var_50b7449f.var_df2f9ba4;
                                             vehicle.s_start = var_50b7449f;
                                         }
                                         var_7a436008[i] = var_7a436008[i] + var_50b7449f.var_14a123d5;
@@ -271,8 +271,8 @@ function function_c668a011(s_instance) {
                                         if (!isinarray(s_instance.location.destination.a_vehicles, vehicle)) {
                                             s_instance.location.destination.a_vehicles[s_instance.location.destination.a_vehicles.size] = vehicle;
                                         }
-                                        vehicle.v_org.vehicle = vehicle.origin;
-                                        vehicle.v_ang.vehicle = vehicle.angles;
+                                        vehicle.v_org = vehicle.origin;
+                                        vehicle.v_ang = vehicle.angles;
                                         vehicle thread function_17a3dc2f(s_instance);
                                         if (s_instance.var_2bb61e5b >= 4) {
                                             continue;
@@ -297,7 +297,7 @@ function function_c668a011(s_instance) {
                 }
                 if (isdefined(vehicle)) {
                     if (isdefined(var_50b7449f.var_df2f9ba4)) {
-                        vehicle.var_df2f9ba4.vehicle = var_50b7449f.var_df2f9ba4;
+                        vehicle.var_df2f9ba4 = var_50b7449f.var_df2f9ba4;
                         vehicle.s_start = var_50b7449f;
                     }
                     if (!isdefined(s_instance.location.destination.a_vehicles)) {
@@ -308,9 +308,9 @@ function function_c668a011(s_instance) {
                     if (!isinarray(s_instance.location.destination.a_vehicles, vehicle)) {
                         s_instance.location.destination.a_vehicles[s_instance.location.destination.a_vehicles.size] = vehicle;
                     }
-                    vehicle.v_org.vehicle = vehicle.origin;
-                    vehicle.v_ang.vehicle = vehicle.angles;
-                    s_instance.var_2bb61e5b.s_instance = s_instance.var_2bb61e5b + var_50b7449f.var_14a123d5;
+                    vehicle.v_org = vehicle.origin;
+                    vehicle.v_ang = vehicle.angles;
+                    s_instance.var_2bb61e5b = s_instance.var_2bb61e5b + var_50b7449f.var_14a123d5;
                     vehicle thread function_17a3dc2f(s_instance);
                     if (vehicle.vehicletype === "vehicle_motorcycle_mil_us_offroad" || vehicle.vehicletype === "vehicle_t9_mil_fav_light") {
                         foreach (var_f8d6002f in var_f6b6b97e) {
@@ -318,7 +318,7 @@ function function_c668a011(s_instance) {
                                 vehicle = spawnvehicle(var_f8d6002f.vehicletype, var_f8d6002f.origin, var_f8d6002f.angles, "sr_vehicle");
                                 if (isdefined(vehicle)) {
                                     if (isdefined(var_50b7449f.var_df2f9ba4)) {
-                                        vehicle.var_df2f9ba4.vehicle = var_50b7449f.var_df2f9ba4;
+                                        vehicle.var_df2f9ba4 = var_50b7449f.var_df2f9ba4;
                                         vehicle.s_start = var_50b7449f;
                                     }
                                     if (!isdefined(s_instance.location.destination.a_vehicles)) {
@@ -329,9 +329,9 @@ function function_c668a011(s_instance) {
                                     if (!isinarray(s_instance.location.destination.a_vehicles, vehicle)) {
                                         s_instance.location.destination.a_vehicles[s_instance.location.destination.a_vehicles.size] = vehicle;
                                     }
-                                    vehicle.v_org.vehicle = vehicle.origin;
-                                    vehicle.v_ang.vehicle = vehicle.angles;
-                                    s_instance.var_2bb61e5b.s_instance = s_instance.var_2bb61e5b + var_50b7449f.var_14a123d5;
+                                    vehicle.v_org = vehicle.origin;
+                                    vehicle.v_ang = vehicle.angles;
+                                    s_instance.var_2bb61e5b = s_instance.var_2bb61e5b + var_50b7449f.var_14a123d5;
                                     vehicle thread function_17a3dc2f(s_instance);
                                     if (s_instance.var_2bb61e5b >= 4) {
                                         break;
@@ -383,9 +383,9 @@ function function_c772bd2c(destination) {
 function function_17a3dc2f(s_instance) {
     self makevehicleusable();
     if (!isdefined(s_instance.a_vehicles)) {
-        s_instance.a_vehicles.s_instance = [];
+        s_instance.a_vehicles = [];
     } else if (!isarray(s_instance.a_vehicles)) {
-        s_instance.a_vehicles.s_instance = array(s_instance.a_vehicles);
+        s_instance.a_vehicles = array(s_instance.a_vehicles);
     }
     s_instance.a_vehicles[s_instance.a_vehicles.size] = self;
     if (self.vehicletype === "vehicle_t9_mil_ru_truck_light_player" && (getdvarint(#"hash_11ff4ccbba6b40f6", 0) === 1 || math::cointoss(66))) {
@@ -447,9 +447,9 @@ function function_724dafb1(destination) {
             vehicle = spawnvehicle(var_22e1dc7, spawn.origin, spawn.angles, "sr_vehicle");
             vehicle makevehicleusable();
             if (!isdefined(destination.a_vehicles)) {
-                destination.a_vehicles.destination = [];
+                destination.a_vehicles = [];
             } else if (!isarray(destination.a_vehicles)) {
-                destination.a_vehicles.destination = array(destination.a_vehicles);
+                destination.a_vehicles = array(destination.a_vehicles);
             }
             destination.a_vehicles[destination.a_vehicles.size] = vehicle;
             var_33ffcb09++;
@@ -535,11 +535,11 @@ function function_cddedd63(var_1028910, v_angle_offset = (0, 0, 0), n_x_offset) 
     }
     trigger = spawn("trigger_radius", self.origin, 0, 400, 128);
     struct = spawnstruct();
-    struct.origin.struct = self.origin + v_origin_offset;
-    struct.angles.struct = self.angles + v_angle_offset;
+    struct.origin = self.origin + v_origin_offset;
+    struct.angles = self.angles + v_angle_offset;
     struct.var_90d0c0ff = var_1028910;
-    trigger.vehicle.trigger = self;
-    trigger.var_ed5e226b.trigger = self.origin;
+    trigger.vehicle = self;
+    trigger.var_ed5e226b = self.origin;
     trigger.spawn_struct = struct;
     trigger callback::on_trigger(&namespace_2c949ef8::function_39ee3b21);
 }
@@ -575,7 +575,7 @@ function on_vehicle_spawned() {
     }
     var_6031fb1f = self;
     if (isdefined(var_6031fb1f.var_df2f9ba4)) {
-        var_6031fb1f.var_a419f368.var_6031fb1f = 1;
+        var_6031fb1f.var_a419f368 = 1;
         bundles = struct::get_script_bundle_instances("scene", [1:"targetname", 0:"scene_jetski_deploy_" + var_6031fb1f.var_df2f9ba4]);
         foreach (bundle in bundles) {
             if (bundle.var_df2f9ba4 === var_6031fb1f.var_df2f9ba4) {
@@ -590,7 +590,7 @@ function on_vehicle_spawned() {
         if (isdefined(bundle)) {
             var_6031fb1f player_vehicle::function_971ca64b();
             if (!isdefined(bundle.var_af2d1e6)) {
-                bundle.var_af2d1e6.bundle = "port";
+                bundle.var_af2d1e6 = "port";
             }
             var_d487d45c = bundle.scene_ents[#"prop 1"];
             while (!isdefined(var_d487d45c) && isalive(var_6031fb1f)) {
@@ -598,9 +598,9 @@ function on_vehicle_spawned() {
                 waitframe(1);
             }
             if (isalive(var_6031fb1f)) {
-                var_6031fb1f.var_369c83bd.var_6031fb1f = 1;
-                var_6031fb1f.var_475b9991.var_6031fb1f = 1;
-                var_6031fb1f.var_c0381a15.var_6031fb1f = 1;
+                var_6031fb1f.var_369c83bd = 1;
+                var_6031fb1f.var_475b9991 = 1;
+                var_6031fb1f.var_c0381a15 = 1;
                 var_6031fb1f linkto(var_d487d45c, "tag_jetski", (0, 0, 0), (0, 0, 0));
             }
             var_c8229258 = "enter_vehicle";
@@ -663,11 +663,11 @@ function on_vehicle_spawned() {
                     }
                 }
                 if (isdefined(var_6031fb1f)) {
-                    var_6031fb1f.var_369c83bd.var_6031fb1f = 0;
-                    var_6031fb1f.var_475b9991.var_6031fb1f = 0;
-                    var_6031fb1f.var_c0381a15.var_6031fb1f = 0;
+                    var_6031fb1f.var_369c83bd = 0;
+                    var_6031fb1f.var_475b9991 = 0;
+                    var_6031fb1f.var_c0381a15 = 0;
                     var_6031fb1f unlink();
-                    var_6031fb1f.var_a419f368.var_6031fb1f = 0;
+                    var_6031fb1f.var_a419f368 = 0;
                 }
                 if (isdefined(var_c11876a8)) {
                     var_c11876a8 delete();
@@ -725,7 +725,7 @@ function function_a6b2f443(vehicle) {
 // Size: 0x20c
 function on_vehicle_damage(params) {
     vehicle = self;
-    if (!is_true(vehicle.var_46439e18)) {
+    if (!is_true(vehicle.isplayervehicle)) {
         return;
     }
     if (isdefined(params.eattacker) && isactor(params.eattacker)) {

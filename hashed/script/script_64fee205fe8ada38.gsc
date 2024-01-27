@@ -157,7 +157,7 @@ function private function_b38c1846(e_projectile, target, b_ignore_cleanup, orda)
         var_55783e7b = 1;
         if (isdefined(orda)) {
             if (!isdefined(orda.var_1cf9bc4)) {
-                orda.var_1cf9bc4.orda = [];
+                orda.var_1cf9bc4 = [];
             }
             function_1eaaceab(orda.var_1cf9bc4);
             var_55783e7b = orda.var_1cf9bc4.size < 4;
@@ -177,12 +177,12 @@ function private function_b38c1846(e_projectile, target, b_ignore_cleanup, orda)
             ai_dog = spawnactor(#"hash_7a8b592728eec95d", spawn_pos, var_2cadffe7.angles);
             if (isdefined(ai_dog)) {
                 ai_dog.b_ignore_cleanup = b_ignore_cleanup;
-                ai_dog.var_bee4eef1.ai_dog = 1;
+                ai_dog.var_bee4eef1 = 1;
                 if (isdefined(orda)) {
                     if (!isdefined(orda.var_1cf9bc4)) {
-                        orda.var_1cf9bc4.orda = [];
+                        orda.var_1cf9bc4 = [];
                     } else if (!isarray(orda.var_1cf9bc4)) {
-                        orda.var_1cf9bc4.orda = array(orda.var_1cf9bc4);
+                        orda.var_1cf9bc4 = array(orda.var_1cf9bc4);
                     }
                     orda.var_1cf9bc4[orda.var_1cf9bc4.size] = ai_dog;
                 }
@@ -248,7 +248,7 @@ function function_23e153fb(var_bb13ffb2) {
         }
         foreach (zombie in a_zombies) {
             if (distancesquared(zombie.origin, self gettagorigin("j_ball_ri")) <= 72900) {
-                zombie.allowdeath.zombie = 1;
+                zombie.allowdeath = 1;
                 zombie kill();
             }
         }
@@ -261,7 +261,7 @@ function function_23e153fb(var_bb13ffb2) {
         }
         foreach (zombie in a_zombies) {
             if (distancesquared(zombie.origin, self gettagorigin("j_ball_le")) <= 72900) {
-                zombie.allowdeath.zombie = 1;
+                zombie.allowdeath = 1;
                 zombie kill();
             }
         }
@@ -310,7 +310,7 @@ function private function_9fc2b867() {
     origin = vectorlerp(self gettagorigin("j_shoulder_le"), self gettagorigin("j_shoulder_ri"), 0.5);
     swarm = util::spawn_model(#"hash_7a7aadfb584e0859", origin);
     swarm playloopsound(#"hash_4c9124e9213250df");
-    swarm.var_66a3d186.swarm = self;
+    swarm.var_66a3d186 = self;
     if (!isdefined(self.var_36225742)) {
         self.var_36225742 = [];
     }

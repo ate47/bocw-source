@@ -53,11 +53,11 @@ function private function_70a657d8() {
 // Checksum 0x1f3a3501, Offset: 0x3e8
 // Size: 0x6e
 function private function_713a08b(watcher) {
-    watcher.ignoredirection.watcher = 1;
-    watcher.ondestroyed.watcher = &function_81619d12;
-    watcher.ondamage.watcher = &function_acc36c55;
-    watcher.ondetonatecallback.watcher = &function_c4afd8d1;
-    watcher.var_ce3a3280.watcher = 48;
+    watcher.ignoredirection = 1;
+    watcher.ondestroyed = &function_81619d12;
+    watcher.ondamage = &function_acc36c55;
+    watcher.ondetonatecallback = &function_c4afd8d1;
+    watcher.var_ce3a3280 = 48;
 }
 
 // Namespace nightingale/nightingale
@@ -198,11 +198,11 @@ function private function_7dfb4daa(decoygrenade) {
 function private event_handler[grenade_fire] function_4776caf4(eventstruct) {
     if (eventstruct.weapon.name == #"nightingale" || eventstruct.weapon.name == #"hash_12f078ddc9b913c3") {
         grenade = eventstruct.projectile;
-        grenade.var_cb19e5d4.grenade = 1;
-        grenade.var_515d6dda.grenade = 1;
-        grenade.var_48d842c3.grenade = 1;
+        grenade.var_cb19e5d4 = 1;
+        grenade.var_515d6dda = 1;
+        grenade.var_48d842c3 = 1;
         if (sessionmodeiszombiesgame()) {
-            grenade.var_dfa42180.grenade = &function_400826e;
+            grenade.var_dfa42180 = &function_400826e;
         }
         grenade waittill(#"stationary", #"death");
         if (!isdefined(grenade)) {
@@ -214,7 +214,7 @@ function private event_handler[grenade_fire] function_4776caf4(eventstruct) {
         } else {
             grenade thread function_db24f032();
             if (sessionmodeiszombiesgame()) {
-                grenade.var_acdc8d71.grenade = grenade function_65ee50ba();
+                grenade.var_acdc8d71 = grenade function_65ee50ba();
             }
             if (!isdefined(level.var_432fa05c.var_402a4207)) {
                 level.var_432fa05c.var_402a4207 = [];
@@ -234,9 +234,9 @@ function function_db24f032() {
     decoy = util::spawn_model(self.model, self.origin, self.angles);
     self.var_20a0f018 = decoy;
     decoy setteam(self.team);
-    decoy.team.decoy = self.team;
+    decoy.team = self.team;
     decoy clientfield::set("enemyequip", 1);
-    decoy.aitype.decoy = #"hash_25454a5a4de341b8";
+    decoy.aitype = #"hash_25454a5a4de341b8";
     decoy linkto(self);
     if (isdefined(self.originalowner) && isplayer(self.originalowner)) {
         decoy setowner(self.originalowner);

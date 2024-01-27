@@ -84,10 +84,10 @@ function state_off_update(*params) {
             foreach (point in queryresult.data) {
                 randomscore = randomfloatrange(0, 100);
                 disttooriginscore = point.disttoorigin2d * 0.2;
-                point.score.point = point.score + randomscore + disttooriginscore;
+                point.score = point.score + randomscore + disttooriginscore;
                 /#
                     if (!isdefined(point._scoredebug)) {
-                        point._scoredebug.point = [];
+                        point._scoredebug = [];
                     }
                     if (!isdefined(point._scoredebug[#"disttoorigin"])) {
                         point._scoredebug[#"disttoorigin"] = spawnstruct();
@@ -95,7 +95,7 @@ function state_off_update(*params) {
                     point._scoredebug[#"disttoorigin"].score = disttooriginscore;
                     point._scoredebug[#"disttoorigin"].scorename = "<unknown string>";
                 #/
-                point.score.point = point.score + disttooriginscore;
+                point.score = point.score + disttooriginscore;
                 if (point.score > best_score) {
                     best_score = point.score;
                     best_point = point;
@@ -174,7 +174,7 @@ function spawnflakrocket(missile, spawnpos, parent) {
     missile endon(#"death");
     missile missile_settarget(parent);
     rocket = magicbullet(getweapon(#"flak_drone_rocket"), spawnpos, missile.origin, parent, missile);
-    rocket.team.rocket = parent.team;
+    rocket.team = parent.team;
     rocket setteam(parent.team);
     rocket clientfield::set("enemyvehicle", 1);
     rocket missile_settarget(missile);
@@ -364,7 +364,7 @@ function spawn(parent, ondeathcallback) {
 // Size: 0xb2
 function configureteam(parent, ishacked) {
     drone = self;
-    drone.team.drone = parent.team;
+    drone.team = parent.team;
     drone setteam(parent.team);
     if (ishacked) {
         drone clientfield::set("enemyvehicle", 2);
@@ -417,7 +417,7 @@ function watchparentmissiles() {
     drone.parent endon(#"death");
     waitresult = undefined;
     waitresult = drone.parent waittill(#"stinger_fired_at_me");
-    drone.incoming_missile.drone = waitresult.projectile;
+    drone.incoming_missile = waitresult.projectile;
     drone.incoming_missile.target_weapon = waitresult.weapon;
     drone.incoming_missile.target_attacker = waitresult.attacker;
     drone vehicle_ai::set_state("combat");

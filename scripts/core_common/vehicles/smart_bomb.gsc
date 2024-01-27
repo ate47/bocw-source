@@ -128,7 +128,7 @@ function state_combat_update(*params) {
                 foreach (point in queryresult.data) {
                     /#
                         if (!isdefined(point._scoredebug)) {
-                            point._scoredebug.point = [];
+                            point._scoredebug = [];
                         }
                         if (!isdefined(point._scoredebug[#"disttoorigin"])) {
                             point._scoredebug[#"disttoorigin"] = spawnstruct();
@@ -136,11 +136,11 @@ function state_combat_update(*params) {
                         point._scoredebug[#"disttoorigin"].score = mapfloat(0, 200, 0, 100, point.disttoorigin2d);
                         point._scoredebug[#"disttoorigin"].scorename = "<unknown string>";
                     #/
-                    point.score.point = point.score + mapfloat(0, 200, 0, 100, point.disttoorigin2d);
+                    point.score = point.score + mapfloat(0, 200, 0, 100, point.disttoorigin2d);
                     if (point.inclaimedlocation) {
                         /#
                             if (!isdefined(point._scoredebug)) {
-                                point._scoredebug.point = [];
+                                point._scoredebug = [];
                             }
                             if (!isdefined(point._scoredebug[#"inclaimedlocation"])) {
                                 point._scoredebug[#"inclaimedlocation"] = spawnstruct();
@@ -148,11 +148,11 @@ function state_combat_update(*params) {
                             point._scoredebug[#"inclaimedlocation"].score = -500;
                             point._scoredebug[#"inclaimedlocation"].scorename = "<unknown string>";
                         #/
-                        point.score.point = point.score + -500;
+                        point.score = point.score + -500;
                     }
                     /#
                         if (!isdefined(point._scoredebug)) {
-                            point._scoredebug.point = [];
+                            point._scoredebug = [];
                         }
                         if (!isdefined(point._scoredebug[#"random"])) {
                             point._scoredebug[#"random"] = spawnstruct();
@@ -160,13 +160,13 @@ function state_combat_update(*params) {
                         point._scoredebug[#"random"].score = randomfloatrange(0, 50);
                         point._scoredebug[#"random"].scorename = "<unknown string>";
                     #/
-                    point.score.point = point.score + randomfloatrange(0, 50);
+                    point.score = point.score + randomfloatrange(0, 50);
                     if (isdefined(self.prevmovedir)) {
                         movedir = vectornormalize(point.origin - self.origin);
                         if (vectordot(movedir, self.prevmovedir) > 0.64) {
                             /#
                                 if (!isdefined(point._scoredebug)) {
-                                    point._scoredebug.point = [];
+                                    point._scoredebug = [];
                                 }
                                 if (!isdefined(point._scoredebug[#"currentmovedir"])) {
                                     point._scoredebug[#"currentmovedir"] = spawnstruct();
@@ -174,7 +174,7 @@ function state_combat_update(*params) {
                                 point._scoredebug[#"currentmovedir"].score = randomfloatrange(50, 150);
                                 point._scoredebug[#"currentmovedir"].scorename = "<unknown string>";
                             #/
-                            point.score.point = point.score + randomfloatrange(50, 150);
+                            point.score = point.score + randomfloatrange(50, 150);
                         }
                     }
                     if (point.score > best_score) {
@@ -253,7 +253,7 @@ function hunt_enemy() {
             foreach (point in queryresult.data) {
                 /#
                     if (!isdefined(point._scoredebug)) {
-                        point._scoredebug.point = [];
+                        point._scoredebug = [];
                     }
                     if (!isdefined(point._scoredebug[#"disttoorigin"])) {
                         point._scoredebug[#"disttoorigin"] = spawnstruct();
@@ -261,10 +261,10 @@ function hunt_enemy() {
                     point._scoredebug[#"disttoorigin"].score = mapfloat(0, 200, 0, -200, distance(point.origin, queryresult.origin));
                     point._scoredebug[#"disttoorigin"].scorename = "<unknown string>";
                 #/
-                point.score.point = point.score + mapfloat(0, 200, 0, -200, distance(point.origin, queryresult.origin));
+                point.score = point.score + mapfloat(0, 200, 0, -200, distance(point.origin, queryresult.origin));
                 /#
                     if (!isdefined(point._scoredebug)) {
-                        point._scoredebug.point = [];
+                        point._scoredebug = [];
                     }
                     if (!isdefined(point._scoredebug[#"heighttoorigin"])) {
                         point._scoredebug[#"heighttoorigin"] = spawnstruct();
@@ -272,11 +272,11 @@ function hunt_enemy() {
                     point._scoredebug[#"heighttoorigin"].score = mapfloat(50, 200, 0, -200, abs(point.origin[2] - queryresult.origin[2]));
                     point._scoredebug[#"heighttoorigin"].scorename = "<unknown string>";
                 #/
-                point.score.point = point.score + mapfloat(50, 200, 0, -200, abs(point.origin[2] - queryresult.origin[2]));
+                point.score = point.score + mapfloat(50, 200, 0, -200, abs(point.origin[2] - queryresult.origin[2]));
                 if (point.inclaimedlocation === 1) {
                     /#
                         if (!isdefined(point._scoredebug)) {
-                            point._scoredebug.point = [];
+                            point._scoredebug = [];
                         }
                         if (!isdefined(point._scoredebug[#"inclaimedlocation"])) {
                             point._scoredebug[#"inclaimedlocation"] = spawnstruct();
@@ -284,7 +284,7 @@ function hunt_enemy() {
                         point._scoredebug[#"inclaimedlocation"].score = -500;
                         point._scoredebug[#"inclaimedlocation"].scorename = "<unknown string>";
                     #/
-                    point.score.point = point.score + -500;
+                    point.score = point.score + -500;
                 }
                 if (point.score > best_score) {
                     best_score = point.score;
@@ -790,7 +790,7 @@ function function_12857be3() {
 // Size: 0x34
 function isdrivableplayervehicle() {
     str_vehicletype = self.vehicletype;
-    if (isdefined(str_vehicletype) && self.var_46439e18) {
+    if (isdefined(str_vehicletype) && self.isplayervehicle) {
         return 1;
     }
     return 0;

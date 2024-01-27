@@ -151,8 +151,8 @@ function private mine_watch(wpn_type) {
         mine = waitresult.projectile;
         fired_weapon = waitresult.weapon;
         if (fired_weapon == wpn_type) {
-            mine.owner.mine = self;
-            mine.team.mine = self.team;
+            mine.owner = self;
+            mine.team = self.team;
             mine.weapon = fired_weapon;
             self notify("zmb_enable_" + fired_weapon.name + "_prompt");
             if (mine safe_to_plant()) {
@@ -401,14 +401,14 @@ function setup_watchers() {
 // Checksum 0x1e86d78e, Offset: 0x1380
 // Size: 0x9a
 function zm_red_challenges_hud_wear(watcher) {
-    watcher.onspawnretrievetriggers.watcher = &on_spawn_retrieve_trigger;
-    watcher.adjusttriggerorigin.watcher = &adjust_trigger_origin;
-    watcher.pickup.watcher = level.pickup_placeable_mine;
-    watcher.pickup_trigger_listener.watcher = level.pickup_placeable_mine_trigger_listener;
-    watcher.skip_weapon_object_damage.watcher = 1;
-    watcher.watchforfire.watcher = 1;
-    watcher.ondetonatecallback.watcher = &placeable_mine_detonate;
-    watcher.ondamage.watcher = level.placeable_mines_on_damage;
+    watcher.onspawnretrievetriggers = &on_spawn_retrieve_trigger;
+    watcher.adjusttriggerorigin = &adjust_trigger_origin;
+    watcher.pickup = level.pickup_placeable_mine;
+    watcher.pickup_trigger_listener = level.pickup_placeable_mine_trigger_listener;
+    watcher.skip_weapon_object_damage = 1;
+    watcher.watchforfire = 1;
+    watcher.ondetonatecallback = &placeable_mine_detonate;
+    watcher.ondamage = level.placeable_mines_on_damage;
 }
 
 // Namespace zm_placeable_mine/zm_placeable_mine

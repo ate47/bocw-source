@@ -67,7 +67,7 @@ function event_handler[ui_menuresponse] codecallback_menuresponse(eventstruct) {
         } else if (response == "spawnOnPlayer") {
             var_53227942.spawn.var_e8f87696 = 0;
             var_53227942.spawn.response = "spawnOnPlayer";
-            var_53227942.var_d690fc0b.var_53227942 = getentbynum(var_8893508d);
+            var_53227942.var_d690fc0b = getentbynum(var_8893508d);
         } else if (response == "spawnOnObjective") {
             var_53227942.spawn.var_e8f87696 = 0;
             var_53227942.spawn.response = "spawnOnObjective";
@@ -430,9 +430,9 @@ function function_f6127864(player, attacker) {
         return;
     }
     damagearea = spawnstruct();
-    damagearea.createdtime.damagearea = gettime();
+    damagearea.createdtime = gettime();
     damagearea.attacker = attacker;
-    damagearea.origin.damagearea = player.origin;
+    damagearea.origin = player.origin;
     level.var_10f21cf8[level.var_10f21cf8.size] = damagearea;
     player.var_cc060afa[var_ecbf2401] = 500 + gettime();
 }
@@ -476,11 +476,11 @@ function function_ef8e6bd1(player) {
     damagearearadius = function_e5152e84("damageAreaRadius", 0);
     radiussq = damagearearadius * damagearearadius;
     if (!isdefined(player.var_b7d9b739) || player.var_b7d9b739 < gettime()) {
-        player.var_b7d9b739.player = gettime() + 250;
-        player.var_e72b96de.player = 0;
+        player.var_b7d9b739 = gettime() + 250;
+        player.var_e72b96de = 0;
         foreach (damagearea in level.var_10f21cf8) {
             if (distancesquared(player.origin, damagearea.origin) < radiussq) {
-                player.var_e72b96de.player = 1;
+                player.var_e72b96de = 1;
             }
         }
     }
@@ -521,7 +521,7 @@ function private function_61f1a8b6(player) {
         var_556a7867 = gettime() - (isdefined(player.var_b30b9f4a) ? player.var_b30b9f4a : 0);
         if (var_4e655dbe != 1 || var_556a7867 > 200) {
             player.var_83de62a2 = var_4e655dbe;
-            player.var_b30b9f4a.player = gettime();
+            player.var_b30b9f4a = gettime();
         }
     }
 }
@@ -637,7 +637,7 @@ function function_154cf7ca(player) {
     }
     if ((isdefined(targetplayer.var_23adeae5) ? targetplayer.var_23adeae5 : 0) < gettime()) {
         player battlechatter::play_dialog("spawnedSquad", 1);
-        targetplayer.var_23adeae5.targetplayer = gettime() + int(battlechatter::mpdialog_value("squadSpawnCooldown", 5) * 1000);
+        targetplayer.var_23adeae5 = gettime() + int(battlechatter::mpdialog_value("squadSpawnCooldown", 5) * 1000);
     }
     return spawn;
 }
@@ -724,14 +724,14 @@ function private function_e1997588(targetplayer, &points) {
     validpoints = [];
     for (pointindex = 0; pointindex < points.size; pointindex++) {
         point = points[pointindex];
-        var_2282e309 = 0;
+        canbeseen = 0;
         for (playerindex = 0; playerindex < nearbyplayers.size; playerindex++) {
             if (sighttracepassed(nearbyplayers[playerindex].origin + vectorscale((0, 0, 1), 72), point + vectorscale((0, 0, 1), 72), 0, undefined)) {
-                var_2282e309 = 1;
+                canbeseen = 1;
                 break;
             }
         }
-        if (!var_2282e309) {
+        if (!canbeseen) {
             validpoints[validpoints.size] = point;
         }
     }
@@ -849,7 +849,7 @@ function function_70c0ae61(var_53227942, var_9eff2ce) {
     if (!isdefined(var_8b889046)) {
         function_426b6bde(var_9eff2ce, #"hash_6a2b417ef9f221f1");
         var_8b889046 = var_9eff2ce;
-        var_53227942.var_59baee6.var_53227942 = 1;
+        var_53227942.var_59baee6 = 1;
     }
     groundtrace = function_32843fc9(var_8b889046 + vectorscale((0, 0, 1), 64), var_8b889046 - vectorscale((0, 0, 1), 64));
     if (groundtrace[#"fraction"] < 1) {
@@ -859,7 +859,7 @@ function function_70c0ae61(var_53227942, var_9eff2ce) {
     var_53227942.spawn.var_276f15f0 = var_8b889046;
     spawn_point = spawnstruct();
     spawn_point.origin = var_8b889046;
-    spawn_point.angles.spawn_point = function_d95ba61f(var_8b889046, angles, var_9eff2ce);
+    spawn_point.angles = function_d95ba61f(var_8b889046, angles, var_9eff2ce);
     if (!isdefined(spawn_point)) {
         return undefined;
     }
@@ -998,8 +998,8 @@ function getspawnpoint(var_53227942) {
         return undefined;
     }
     spawnpoint = spawnstruct();
-    spawnpoint.origin.spawnpoint = var_53227942.spawn.var_276f15f0;
-    spawnpoint.angles.spawnpoint = function_d95ba61f(spawnpoint.origin, var_53227942.spawn.var_8791b6ff.angles, var_53227942.spawn.var_8791b6ff.origin);
+    spawnpoint.origin = var_53227942.spawn.var_276f15f0;
+    spawnpoint.angles = function_d95ba61f(spawnpoint.origin, var_53227942.spawn.var_8791b6ff.angles, var_53227942.spawn.var_8791b6ff.origin);
     return spawnpoint;
 }
 
@@ -1086,7 +1086,7 @@ function function_bfb027d2(player) {
         return 6;
     }
     if ((isdefined(player.var_12db485c) ? player.var_12db485c : 0) < gettime()) {
-        player.var_708884c0.player = gettime() + randomintrange(100, 400);
+        player.var_708884c0 = gettime() + randomintrange(100, 400);
         enemies = player getenemiesinradius(player.origin, isdefined(getgametypesetting(#"hash_718b497c5205e74b")) ? getgametypesetting(#"hash_718b497c5205e74b") : 0);
         if (enemies.size > 0) {
             return 1;
@@ -1188,15 +1188,15 @@ function function_e86729f(params) {
     squad = params.squad;
     foreach (var_cc6fd54 in function_c65231e2(squad)) {
         var_cc6fd54 function_8c7462a6(1);
-        var_cc6fd54.var_312f13e0.var_cc6fd54 = 1;
+        var_cc6fd54.var_312f13e0 = 1;
         var_cc6fd54 notify(#"hash_33713849648e651d");
     }
     var_67899abe = function_fd0f3019(function_c65231e2(squad)[0]);
     wait(var_67899abe);
     foreach (var_cc6fd54 in function_c65231e2(squad)) {
         var_cc6fd54 function_8c7462a6(0);
-        var_cc6fd54.var_312f13e0.var_cc6fd54 = 0;
-        var_cc6fd54.var_20250438.var_cc6fd54 = 1;
+        var_cc6fd54.var_312f13e0 = 0;
+        var_cc6fd54.var_20250438 = 1;
         var_cc6fd54 notify(#"hash_33713849648e651d");
     }
 }

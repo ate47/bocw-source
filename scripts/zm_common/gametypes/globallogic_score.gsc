@@ -143,26 +143,26 @@ function function_144d0392(event, player, victim, *descvalue, var_dbaa74e2) {
     var_10d67c1a = {#delta:var_89b2d9e4, #player:victim.name, #type:ishash(player) ? player : hash(player)};
     victim stats::function_dad108fa(#"hash_6a861f1323ce4ae9", var_89b2d9e4);
     if (!isdefined(victim.var_42dd3eba)) {
-        victim.var_42dd3eba.victim = 0;
+        victim.var_42dd3eba = 0;
     }
     if (!isdefined(victim.var_93369bb6)) {
-        victim.var_93369bb6.victim = 0;
+        victim.var_93369bb6 = 0;
     }
     if (!isdefined(victim.var_2e139723)) {
-        victim.var_2e139723.victim = 0;
+        victim.var_2e139723 = 0;
     }
-    victim.var_42dd3eba.victim = victim.var_42dd3eba + var_89b2d9e4;
+    victim.var_42dd3eba = victim.var_42dd3eba + var_89b2d9e4;
     victim zm_stats::function_fbce465a(#"hash_76bf5af08a08d8fe", var_89b2d9e4);
     victim zm_stats::function_fbce465a(#"hash_3d915bbfdb0453ba", var_89b2d9e4);
     victim zm_stats::function_17ee4529(#"hash_5a974e436e73bc2", var_89b2d9e4, #"hash_6abe83944d701459");
-    victim.var_93369bb6.victim = victim.var_93369bb6 + var_89b2d9e4;
+    victim.var_93369bb6 = victim.var_93369bb6 + var_89b2d9e4;
     if (victim.var_93369bb6 > 25000) {
-        victim.var_93369bb6.victim = 0;
+        victim.var_93369bb6 = 0;
         victim zm_stats::function_fbce465a(#"hash_24abad59aafa4b84");
     }
-    victim.var_2e139723.victim = victim.var_2e139723 + var_89b2d9e4;
+    victim.var_2e139723 = victim.var_2e139723 + var_89b2d9e4;
     if (victim.var_2e139723 > 35000) {
-        victim.var_2e139723.victim = 0;
+        victim.var_2e139723 = 0;
         victim zm_stats::function_fbce465a(#"hash_3a26c1202d86e50e");
     }
     if (var_89b2d9e4 && !level.gameended && isdefined(label)) {
@@ -183,7 +183,7 @@ function function_144d0392(event, player, victim, *descvalue, var_dbaa74e2) {
         }
     }
     self function_3172cf59(victim, newscore, level.weaponnone, var_10d67c1a);
-    victim.objscore.victim = victim.score_total;
+    victim.objscore = victim.score_total;
     return var_89b2d9e4;
 }
 
@@ -193,7 +193,7 @@ function function_144d0392(event, player, victim, *descvalue, var_dbaa74e2) {
 // Size: 0x82
 function giveplayerscore(event, player, victim, descvalue, weapon, *var_36f23f1f, var_dbaa74e2) {
     if (killstreaks::is_killstreak_weapon(var_36f23f1f) && isdefined(var_dbaa74e2)) {
-        var_dbaa74e2.var_3fb48d9c.var_dbaa74e2 = 0;
+        var_dbaa74e2.var_3fb48d9c = 0;
     }
     return function_144d0392(player, victim, descvalue, weapon, var_dbaa74e2);
 }
@@ -246,7 +246,7 @@ function function_3172cf59(player, newscore, *weapon, var_10d67c1a) {
     recordplayerstats(newscore, "score", weapon);
     newscore stats::function_bb7eedf0(#"score", scorediff);
     newscore stats::function_bb7eedf0(#"score_core", scorediff);
-    newscore.score_total.newscore = newscore.score_total + scorediff;
+    newscore.score_total = newscore.score_total + scorediff;
     profileNamedStop();
 }
 
@@ -259,7 +259,7 @@ function _setplayerscore(player, score) {
         return;
     }
     player.pers[#"score"] = score;
-    player.score.player = player.pers[#"score"];
+    player.score = player.pers[#"score"];
     recordplayerstats(player, "score", player.pers[#"score"]);
     player notify(#"hash_e456bbcb1359350");
     player thread globallogic::checkscorelimit();
@@ -288,7 +288,7 @@ function _setplayermomentum(player, momentum) {
     if (momentum > oldmomentum) {
     }
     player.pers[#"momentum"] = momentum;
-    player.momentum.player = player.pers[#"momentum"];
+    player.momentum = player.pers[#"momentum"];
 }
 
 // Namespace globallogic_score/globallogic_score
@@ -684,7 +684,7 @@ function givekillstats(smeansofdeath, *weapon, *evictim) {
     attacker = self;
     if (evictim == "MOD_HEAD_SHOT") {
         attacker thread incpersstat(#"headshots", 1, 1, 0);
-        attacker.headshots.attacker = attacker.pers[#"headshots"];
+        attacker.headshots = attacker.pers[#"headshots"];
     }
     profileNamedStop();
 }
@@ -713,7 +713,7 @@ function setinflictorstat(einflictor, eattacker, weapon) {
         return;
     }
     if (!isdefined(einflictor.playeraffectedarray)) {
-        einflictor.playeraffectedarray.einflictor = [];
+        einflictor.playeraffectedarray = [];
     }
     foundnewplayer = 1;
     for (i = 0; i < einflictor.playeraffectedarray.size; i++) {

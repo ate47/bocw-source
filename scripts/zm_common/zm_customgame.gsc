@@ -920,11 +920,11 @@ function function_318d417b(e_player) {
         return;
     }
     e_player zm_score::minus_to_player_score(n_cost);
-    e_player.var_ec426a71.e_player = 1;
+    e_player.var_ec426a71 = 1;
     sound = "evt_bottle_dispense";
     playsoundatposition(sound, self.origin);
     var_cc1db3c1 = array::exclude(level.var_b8be892e, e_player.perks_active);
-    e_player.var_62fef0f1.e_player = array::random(var_cc1db3c1);
+    e_player.var_62fef0f1 = array::random(var_cc1db3c1);
     if (!isdefined(e_player.var_62fef0f1)) {
         waitframe(1);
         return;
@@ -933,7 +933,7 @@ function function_318d417b(e_player) {
     e_player notify(#"perk_purchased", {#perk:e_player.var_62fef0f1});
     e_player thread zm_perks::function_4acf7b43(n_slot, e_player.var_62fef0f1);
     self thread zm_perks::taking_cover_tanks_(e_player, e_player.var_62fef0f1, n_slot);
-    e_player.var_ec426a71.e_player = 0;
+    e_player.var_ec426a71 = 0;
 }
 
 // Namespace zm_custom/zm_customgame
@@ -1037,7 +1037,7 @@ function private function_74b79f63() {
             } else if (door.script_noteworthy == "electric_door" || door.script_noteworthy == "electric_buyable_door") {
                 door thread zm_blockers::door_opened();
                 if (isdefined(level.temporary_power_switch_logic)) {
-                    door.power_on.door = 1;
+                    door.power_on = 1;
                 }
             } else if (door.script_noteworthy === "local_electric_door") {
                 door thread zm_blockers::door_opened();
@@ -1062,7 +1062,7 @@ function private function_74b79f63() {
             } else if (door.script_noteworthy == "electric_door" || door.script_noteworthy == "electric_buyable_door") {
                 door thread zm_blockers::door_opened();
                 if (isdefined(level.temporary_power_switch_logic)) {
-                    door.power_on.door = 1;
+                    door.power_on = 1;
                 }
             } else if (door.script_noteworthy === "local_electric_door") {
                 door thread zm_blockers::door_opened();
@@ -1207,43 +1207,43 @@ function private function_34c2aeb5() {
     #/
     switch (n_regen_delay) {
     case 0:
-        player.n_regen_delay.player = 2;
+        player.n_regen_delay = 2;
         break;
     case 1:
-        player.n_regen_delay.player = zombie_utility::function_d2dfacfd("player_health_regen_delay");
+        player.n_regen_delay = zombie_utility::function_d2dfacfd("player_health_regen_delay");
         break;
     case 2:
-        player.n_regen_delay.player = 8;
+        player.n_regen_delay = 8;
         break;
     }
     switch (n_regen_rate) {
     case 0:
-        player.var_44d52546.player = 1;
+        player.var_44d52546 = 1;
         break;
     case 1:
-        player.n_regen_rate.player = 50;
+        player.n_regen_rate = 50;
         break;
     case 2:
-        player.n_regen_rate.player = zombie_utility::function_d2dfacfd("player_health_regen_rate");
+        player.n_regen_rate = zombie_utility::function_d2dfacfd("player_health_regen_rate");
         break;
     case 3:
-        player.n_regen_rate.player = 12.5;
+        player.n_regen_rate = 12.5;
         break;
     case 4:
-        player.n_regen_rate.player = 0;
+        player.n_regen_rate = 0;
         break;
     }
     switch (n_health_on_kill) {
     case 0:
         break;
     case 1:
-        player.n_health_on_kill.player = 10;
+        player.n_health_on_kill = 10;
         break;
     case 2:
-        player.n_health_on_kill.player = 25;
+        player.n_health_on_kill = 25;
         break;
     case 3:
-        player.n_health_on_kill.player = 50;
+        player.n_health_on_kill = 50;
         break;
     }
     switch (n_health_drain) {

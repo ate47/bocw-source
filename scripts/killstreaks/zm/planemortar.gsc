@@ -168,13 +168,13 @@ function private event_handler[grenade_fire] function_4776caf4(eventstruct) {
             }
             projectile waittill(#"stationary");
             if (isdefined(projectile)) {
-                projectile.angles.projectile = vectorscale((-1, 0, 1), 90);
+                projectile.angles = vectorscale((-1, 0, 1), 90);
             }
             wait(1);
             if (isdefined(projectile) && isplayer(self)) {
                 projectile thread function_5673c107();
                 s_location = spawnstruct();
-                s_location.origin.s_location = projectile.origin;
+                s_location.origin = projectile.origin;
                 s_params = killstreaks::get_script_bundle("planemortar");
                 killstreakid = self killstreakrules::killstreakstart("planemortar", self.team, 0, 1);
                 if (killstreakid == -1) {

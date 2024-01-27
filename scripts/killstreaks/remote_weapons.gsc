@@ -83,7 +83,7 @@ function useremoteweapon(weapon, weaponname, immediate, allowmanualdeactivation 
         assert(isplayer(player));
     #/
     weapon.remoteowner = player;
-    weapon.inittime.weapon = gettime();
+    weapon.inittime = gettime();
     weapon.remotename = weaponname;
     weapon.remoteweaponallowmanualdeactivation = allowmanualdeactivation;
     weapon thread watchremoveremotecontrolledweapon();
@@ -107,7 +107,7 @@ function watchforhack() {
     if (is_true(weapon.remoteweaponallowmanualdeactivation)) {
         weapon thread watchremotecontroldeactivate();
     }
-    weapon.remoteowner.weapon = waitresult.hacker;
+    weapon.remoteowner = waitresult.hacker;
 }
 
 // Namespace remote_weapons/remote_weapons
@@ -147,7 +147,7 @@ function createremoteweapontrigger() {
     if (isdefined(weapon.usetrigger)) {
         weapon.usetrigger delete();
     }
-    weapon.usetrigger.weapon = spawn("trigger_radius_use", player.origin, 0, 32, 32);
+    weapon.usetrigger = spawn("trigger_radius_use", player.origin, 0, 32, 32);
     weapon.usetrigger enablelinkto();
     weapon.usetrigger linkto(player);
     weapon.usetrigger sethintlowpriority(1);
@@ -158,7 +158,7 @@ function createremoteweapontrigger() {
     weapon.usetrigger setteamfortrigger(player.team);
     weapon.usetrigger.team = player.team;
     player clientclaimtrigger(weapon.usetrigger);
-    player.remotecontroltrigger.player = weapon.usetrigger;
+    player.remotecontroltrigger = weapon.usetrigger;
     player.activeremotecontroltriggers[player.activeremotecontroltriggers.size] = weapon.usetrigger;
     weapon.usetrigger.claimedby = player;
     weapon thread watchweapondeath();
@@ -270,8 +270,8 @@ function useremotecontrolweapon(allowmanualdeactivation = 1, always_allow_ride =
     /#
         assert(isdefined(weapon.remoteowner));
     #/
-    weapon.control_initiated.weapon = 1;
-    weapon.endremotecontrolweapon.weapon = 0;
+    weapon.control_initiated = 1;
+    weapon.endremotecontrolweapon = 0;
     weapon.remoteowner endon(#"disconnect", #"joined_team");
     weapon.remoteowner disableoffhandweapons();
     weapon.remoteowner disableweaponcycling();
@@ -295,7 +295,7 @@ function useremotecontrolweapon(allowmanualdeactivation = 1, always_allow_ride =
         }
     }
     weapon callback::function_d8abfc3d(#"on_end_game", &on_game_ended);
-    weapon.var_57446df7.weapon = 1;
+    weapon.var_57446df7 = 1;
     weapon.remoteowner thread killstreaks::watch_for_remove_remote_weapon();
     weapon.remoteowner util::setusingremote(weapon.remotename);
     weapon.remoteowner val::set(#"useremotecontrolweapon", "freezecontrols");
@@ -307,8 +307,8 @@ function useremotecontrolweapon(allowmanualdeactivation = 1, always_allow_ride =
             weapon thread resetcontrolinitiateduponownerrespawn();
         }
     } else {
-        weapon.controlled.weapon = 1;
-        weapon.killcament.weapon = self;
+        weapon.controlled = 1;
+        weapon.killcament = self;
         weapon notify(#"remote_start");
         if (allowmanualdeactivation) {
             weapon thread watchremotecontroldeactivate();
@@ -362,7 +362,7 @@ function watchremotecontroldeactivate() {
             weapon.remoteowner function_7deaa2a4(timeused / var_f6263fe2);
             if (timeused > var_f6263fe2) {
                 weapon thread endremotecontrolweaponuse(1);
-                weapon.lastusetime.weapon = gettime();
+                weapon.lastusetime = gettime();
                 return;
             }
             waitframe(1);
@@ -380,7 +380,7 @@ function endremotecontrolweaponuse(exitrequestedbyowner, gameended) {
     if (!isdefined(weapon) || is_true(weapon.endremotecontrolweapon)) {
         return;
     }
-    weapon.endremotecontrolweapon.weapon = 1;
+    weapon.endremotecontrolweapon = 1;
     remote_controlled = is_true(weapon.control_initiated) || is_true(weapon.controlled);
     while (isdefined(weapon) && weapon.forcewaitremotecontrol === 1 && remote_controlled == 0) {
         remote_controlled = is_true(weapon.control_initiated) || is_true(weapon.controlled);
@@ -399,10 +399,10 @@ function endremotecontrolweaponuse(exitrequestedbyowner, gameended) {
             wait(1);
             if (isdefined(player)) {
                 player clientfield::set_to_player("static_postfx", 0);
-                player.dofutz.player = 0;
+                player.dofutz = 0;
             }
         } else if (!exitrequestedbyowner && weapon.watch_remote_weapon_death === 1 && !isalive(weapon)) {
-            weapon.dontfreeme.weapon = 1;
+            weapon.dontfreeme = 1;
             wait(isdefined(weapon.watch_remote_weapon_death_duration) ? weapon.watch_remote_weapon_death_duration : 1);
             if (isdefined(weapon)) {
                 weapon.dontfreeme = undefined;
@@ -441,10 +441,10 @@ function endremotecontrolweaponuse(exitrequestedbyowner, gameended) {
         if (is_true(weapon.var_57446df7)) {
             weapon callback::function_52ac9652(#"on_end_game", &on_game_ended);
         }
-        weapon.control_initiated.weapon = 0;
-        weapon.controlled.weapon = 0;
+        weapon.control_initiated = 0;
+        weapon.controlled = 0;
         if (!exitrequestedbyowner || is_true(weapon.one_remote_use)) {
-            weapon.remote_weapon_end.weapon = 1;
+            weapon.remote_weapon_end = 1;
             weapon notify(#"remote_weapon_end");
         }
     }

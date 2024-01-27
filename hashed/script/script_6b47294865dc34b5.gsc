@@ -116,8 +116,8 @@ function function_46693791() {
     aiarray = ai::function_e8b6bfec("intro_assault_extra_guys");
     aiarray = arraycombine(aiarray, getentarray("intro_enemy_truck_guys", "script_noteworthy"), 1, 0);
     foreach (guy in aiarray) {
-        guy.ignoreall.guy = 1;
-        guy.ignoreme.guy = 1;
+        guy.ignoreall = 1;
+        guy.ignoreme = 1;
         if (!isdefined(driver)) {
             if (isdefined(guy.script_parameters) && guy.script_parameters == "intro_driver_assassinate") {
                 driver = guy;
@@ -127,7 +127,7 @@ function function_46693791() {
     wait(0.2);
     foreach (guy in aiarray) {
         if (isdefined(guy)) {
-            guy.ignoreme.guy = 0;
+            guy.ignoreme = 0;
         }
     }
     level.var_664fd741.ignoreall = 0;
@@ -135,7 +135,7 @@ function function_46693791() {
     foreach (guy in aiarray) {
         if (isdefined(guy)) {
             if (!(isdefined(guy.script_parameters) && guy.script_parameters == "squirter")) {
-                guy.ignoreall.guy = 0;
+                guy.ignoreall = 0;
             }
         }
     }
@@ -202,7 +202,7 @@ function function_d8f00fe0(truck) {
     if (truck.script_parameters == "truck_bustout_unload") {
         foreach (rider in truck.var_761c973.riders) {
             if (isdefined(rider)) {
-                rider.ignoreme.rider = 1;
+                rider.ignoreme = 1;
             }
         }
     }

@@ -173,9 +173,9 @@ function marker_state_changed(localclientnum, *oldval, newval, *bnewent, *biniti
     player = self;
     killstreakcorebundle = getscriptbundle("killstreak_core");
     if (bwastimejump == 1) {
-        player.markerfx.player = killstreakcorebundle.fxvalidlocation;
+        player.markerfx = killstreakcorebundle.fxvalidlocation;
     } else if (bwastimejump == 2) {
-        player.markerfx.player = killstreakcorebundle.fxinvalidlocation;
+        player.markerfx = killstreakcorebundle.fxinvalidlocation;
     } else {
         player.markerfx = undefined;
     }
@@ -188,13 +188,13 @@ function marker_state_changed(localclientnum, *oldval, newval, *bnewent, *biniti
     }
     if (isdefined(player.markerfx)) {
         if (!isdefined(player.markerobj)) {
-            player.markerobj.player = spawn(fieldname, (0, 0, 0), "script_model");
+            player.markerobj = spawn(fieldname, (0, 0, 0), "script_model");
             player.markerobj.angles = vectorscale((1, 0, 0), 270);
             player.markerobj setmodel(#"wpn_t7_none_world");
             player.markerobj util::waittill_dobj(fieldname);
             player thread updatemarkerthread(fieldname);
         }
-        player.markerfxhandle.player = util::playfxontag(fieldname, player.markerfx, player.markerobj, "tag_origin");
+        player.markerfxhandle = util::playfxontag(fieldname, player.markerfx, player.markerobj, "tag_origin");
     } else if (isdefined(player.markerobj)) {
         player.markerobj delete();
     }

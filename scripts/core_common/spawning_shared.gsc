@@ -129,9 +129,9 @@ function add_default_spawnlist(spawnlist) {
 // Size: 0x17c
 function init_teams() {
     spawnsystem = level.spawnsystem;
-    spawnsystem.ispawn_teammask.spawnsystem = [];
-    spawnsystem.var_c2989de.spawnsystem = 1;
-    spawnsystem.var_146943ea.spawnsystem = 1;
+    spawnsystem.ispawn_teammask = [];
+    spawnsystem.var_c2989de = 1;
+    spawnsystem.var_146943ea = 1;
     spawnsystem.ispawn_teammask[#"none"] = spawnsystem.var_c2989de;
     spawnsystem.ispawn_teammask[#"neutral"] = spawnsystem.var_146943ea;
     all = spawnsystem.var_c2989de;
@@ -141,7 +141,7 @@ function init_teams() {
     }
     foreach (team, _ in level.teams) {
         spawnsystem.ispawn_teammask[team] = 1 << count;
-        all = all & spawnsystem.ispawn_teammask[team];
+        all = all | spawnsystem.ispawn_teammask[team];
         count++;
     }
     spawnsystem.ispawn_teammask[#"all"] = all;
@@ -313,8 +313,8 @@ function private function_99ca1277(player, predictedspawn) {
         function_92d1707f(#"hash_608dde355fff78f5", mpspawnpointsused);
     }
     spawn = spawnstruct();
-    spawn.origin.spawn = spawn_point[#"origin"];
-    spawn.angles.spawn = spawn_point[#"angles"];
+    spawn.origin = spawn_point[#"origin"];
+    spawn.angles = spawn_point[#"angles"];
     return spawn;
 }
 

@@ -240,8 +240,8 @@ function private gladiatortargetservice(entity) {
     if (!is_true(entity.hasseenfavoriteenemy)) {
         if (isdefined(entity.favoriteenemy) && entity cansee(entity.favoriteenemy) || isdefined(entity.var_cb89528d)) {
             entity.var_cb89528d = undefined;
-            entity.hasseenfavoriteenemy.entity = 1;
-            entity.var_908a5d30.entity = 1;
+            entity.hasseenfavoriteenemy = 1;
+            entity.var_908a5d30 = 1;
             if (entity.var_9fde8624 == #"gladiator_destroyer") {
                 entity setblackboardattribute("_gladiator_react", "idle");
                 if (entity haspath()) {
@@ -330,9 +330,9 @@ function private function_4660925e(entity) {
 // Size: 0x42
 function private gladiatorpickaxe(entity) {
     if (math::cointoss()) {
-        entity.var_34cc44de.entity = "left";
+        entity.var_34cc44de = "left";
     } else {
-        entity.var_34cc44de.entity = "right";
+        entity.var_34cc44de = "right";
     }
 }
 
@@ -621,7 +621,7 @@ function private function_c1b97472(entity) {
 // Checksum 0x217adc82, Offset: 0x2978
 // Size: 0x2c
 function private function_fe0ecd9f(entity) {
-    entity.var_d5e9528.entity = 0;
+    entity.var_d5e9528 = 0;
     entity function_104b8cc1();
 }
 
@@ -631,10 +631,10 @@ function private function_fe0ecd9f(entity) {
 // Size: 0x84
 function private function_6719445a(entity) {
     if (entity.var_9fde8624 == #"gladiator_marauder") {
-        entity.var_5dd07a80.entity = 1;
-        entity.var_c2986b66.entity = 1;
+        entity.var_5dd07a80 = 1;
+        entity.var_c2986b66 = 1;
         entity function_d1242576();
-        entity.var_b736fc8b.entity = 1;
+        entity.var_b736fc8b = 1;
         entity pathmode("dont move", 1);
     }
 }
@@ -648,7 +648,7 @@ function private function_fced00e1(entity) {
         entity.var_5dd07a80 = undefined;
         entity.var_c2986b66 = undefined;
         entity function_d1242576();
-        entity.var_b736fc8b.entity = 0;
+        entity.var_b736fc8b = 0;
         entity pathmode("move allowed");
     }
 }
@@ -659,8 +659,8 @@ function private function_fced00e1(entity) {
 // Size: 0x42
 function private function_3963581d(entity) {
     if (entity.var_9fde8624 == #"gladiator_marauder") {
-        entity.var_5dd07a80.entity = 1;
-        entity.var_c2986b66.entity = 1;
+        entity.var_5dd07a80 = 1;
+        entity.var_c2986b66 = 1;
     }
 }
 
@@ -688,7 +688,7 @@ function private function_990c9627(entity) {
 // Checksum 0x5b14d6a6, Offset: 0x2b98
 // Size: 0x34
 function private function_6ba071ff(entity) {
-    entity.var_9b959f19.entity = 0;
+    entity.var_9b959f19 = 0;
     entity pathmode("move allowed");
 }
 
@@ -699,7 +699,7 @@ function private function_6ba071ff(entity) {
 function private function_3ca98f5a(entity) {
     entity pathmode("dont move", 1);
     if (entity.var_9fde8624 == #"gladiator_marauder") {
-        entity.var_4f1b8d2b.entity = 1;
+        entity.var_4f1b8d2b = 1;
     }
 }
 
@@ -709,7 +709,7 @@ function private function_3ca98f5a(entity) {
 // Size: 0x36
 function private function_e217245a(entity) {
     entity pathmode("move allowed");
-    entity.var_908a5d30.entity = 0;
+    entity.var_908a5d30 = 0;
 }
 
 // Namespace namespace_146875e/namespace_146875e
@@ -717,10 +717,10 @@ function private function_e217245a(entity) {
 // Checksum 0x22427592, Offset: 0x2c78
 // Size: 0x3a
 function function_85b2f76f() {
-    var_cd8354e0 = spawnstruct();
-    var_cd8354e0.adjustmentstarted.var_cd8354e0 = 0;
-    var_cd8354e0.var_425c4c8b.var_cd8354e0 = 1;
-    return var_cd8354e0;
+    meleeinfo = spawnstruct();
+    meleeinfo.adjustmentstarted = 0;
+    meleeinfo.var_425c4c8b = 1;
+    return meleeinfo;
 }
 
 // Namespace namespace_146875e/namespace_146875e
@@ -730,23 +730,23 @@ function function_85b2f76f() {
 function registerhud_message_electricity_(entity, mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
     mocompanimflag animmode("gravity", 1);
     mocompanimflag orientmode("face angle", mocompanimflag.angles[1]);
-    mocompanimflag.blockingpain.mocompanimflag = 1;
-    mocompanimflag.var_5dd07a80.mocompanimflag = 1;
-    mocompanimflag.var_c2986b66.mocompanimflag = 1;
-    mocompanimflag.usegoalanimweight.mocompanimflag = 1;
+    mocompanimflag.blockingpain = 1;
+    mocompanimflag.var_5dd07a80 = 1;
+    mocompanimflag.var_c2986b66 = 1;
+    mocompanimflag.usegoalanimweight = 1;
     mocompanimflag pathmode("dont move");
     mocompanimflag collidewithactors(0);
     if (isdefined(mocompanimflag.favoriteenemy)) {
         dirtoenemy = vectornormalize(mocompanimflag.favoriteenemy.origin - mocompanimflag.origin);
         mocompanimflag forceteleport(mocompanimflag.origin, vectortoangles(dirtoenemy));
     }
-    if (!isdefined(self.var_cd8354e0)) {
-        self.var_cd8354e0 = function_85b2f76f();
-        self.var_cd8354e0.var_9bfa8497 = mocompanimflag.origin;
-        self.var_cd8354e0.var_98bc84b7 = getnotetracktimes(mocompduration, "start_procedural")[0];
-        self.var_cd8354e0.var_6392c3a2 = getnotetracktimes(mocompduration, "stop_procedural")[0];
+    if (!isdefined(self.meleeinfo)) {
+        self.meleeinfo = function_85b2f76f();
+        self.meleeinfo.var_9bfa8497 = mocompanimflag.origin;
+        self.meleeinfo.var_98bc84b7 = getnotetracktimes(mocompduration, "start_procedural")[0];
+        self.meleeinfo.var_6392c3a2 = getnotetracktimes(mocompduration, "stop_procedural")[0];
         var_e397f54c = getmovedelta(mocompduration, 0, 1);
-        self.var_cd8354e0.var_cb28f380 = mocompanimflag localtoworldcoords(var_e397f54c);
+        self.meleeinfo.var_cb28f380 = mocompanimflag localtoworldcoords(var_e397f54c);
     }
     namespace_1e25ad94::function_f5f0c0f8("mocompGladiatorLeapStart entNum:" + self getentitynumber());
 }
@@ -760,13 +760,13 @@ function function_3f15e557(entity, mocompanim, *mocompanimblendouttime, *mocompa
         return;
     }
     /#
-        assert(isdefined(self.var_cd8354e0));
+        assert(isdefined(self.meleeinfo));
     #/
-    if (!isdefined(self.var_cd8354e0)) {
+    if (!isdefined(self.meleeinfo)) {
         return;
     }
-    var_e72a224a = mocompanimflag getanimtime(mocompduration);
-    if (isdefined(self.favoriteenemy) && !self.var_cd8354e0.adjustmentstarted && self.var_cd8354e0.var_425c4c8b && var_e72a224a >= self.var_cd8354e0.var_98bc84b7) {
+    currentanimtime = mocompanimflag getanimtime(mocompduration);
+    if (isdefined(self.favoriteenemy) && !self.meleeinfo.adjustmentstarted && self.meleeinfo.var_425c4c8b && currentanimtime >= self.meleeinfo.var_98bc84b7) {
         predictedenemypos = mocompanimflag.favoriteenemy.origin;
         if (isplayer(mocompanimflag.favoriteenemy)) {
             velocity = mocompanimflag.favoriteenemy getvelocity();
@@ -776,50 +776,50 @@ function function_3f15e557(entity, mocompanim, *mocompanimblendouttime, *mocompa
         }
         var_83fd29ee = vectornormalize(predictedenemypos - mocompanimflag.origin);
         var_1efb2395 = predictedenemypos - var_83fd29ee * mocompanimflag getpathfindingradius();
-        self.var_cd8354e0.adjustedendpos = var_1efb2395;
-        var_776ddabf = distancesquared(self.var_cd8354e0.var_cb28f380, self.var_cd8354e0.adjustedendpos);
-        var_65cbfb52 = distancesquared(self.var_cd8354e0.var_9bfa8497, self.var_cd8354e0.adjustedendpos);
+        self.meleeinfo.adjustedendpos = var_1efb2395;
+        var_776ddabf = distancesquared(self.meleeinfo.var_cb28f380, self.meleeinfo.adjustedendpos);
+        var_65cbfb52 = distancesquared(self.meleeinfo.var_9bfa8497, self.meleeinfo.adjustedendpos);
         if (var_776ddabf <= function_a3f6cdac(20)) {
-            self.var_cd8354e0.var_425c4c8b = 0;
+            self.meleeinfo.var_425c4c8b = 0;
         } else if (var_65cbfb52 <= function_a3f6cdac(90)) {
-            self.var_cd8354e0.var_425c4c8b = 0;
+            self.meleeinfo.var_425c4c8b = 0;
         } else if (var_65cbfb52 >= function_a3f6cdac(400)) {
-            self.var_cd8354e0.var_425c4c8b = 0;
+            self.meleeinfo.var_425c4c8b = 0;
         }
-        if (self.var_cd8354e0.var_425c4c8b) {
-            var_776ddabf = distancesquared(self.var_cd8354e0.var_cb28f380, self.var_cd8354e0.adjustedendpos);
+        if (self.meleeinfo.var_425c4c8b) {
+            var_776ddabf = distancesquared(self.meleeinfo.var_cb28f380, self.meleeinfo.adjustedendpos);
             var_beabc994 = anglestoforward(self.angles);
             var_1c3641f2 = (mocompanimflag.favoriteenemy.origin[0], mocompanimflag.favoriteenemy.origin[1], mocompanimflag.origin[2]);
             dirtoenemy = vectornormalize(var_1c3641f2 - mocompanimflag.origin);
-            zdiff = self.var_cd8354e0.var_cb28f380[2] - mocompanimflag.favoriteenemy.origin[2];
+            zdiff = self.meleeinfo.var_cb28f380[2] - mocompanimflag.favoriteenemy.origin[2];
             var_6738a702 = abs(zdiff) <= 45;
             withinfov = vectordot(var_beabc994, dirtoenemy) > cos(30);
             var_7948b2f3 = var_6738a702 && withinfov;
             isvisible = bullettracepassed(mocompanimflag.origin, mocompanimflag.favoriteenemy.origin, 0, self);
             var_425c4c8b = isvisible && var_7948b2f3;
             if (var_425c4c8b) {
-                var_90c3cdd2 = length(self.var_cd8354e0.adjustedendpos - self.var_cd8354e0.var_cb28f380);
+                var_90c3cdd2 = length(self.meleeinfo.adjustedendpos - self.meleeinfo.var_cb28f380);
                 timestep = function_60d95f53();
                 animlength = getanimlength(mocompduration) * 1000;
-                starttime = self.var_cd8354e0.var_98bc84b7 * animlength;
-                stoptime = self.var_cd8354e0.var_6392c3a2 * animlength;
+                starttime = self.meleeinfo.var_98bc84b7 * animlength;
+                stoptime = self.meleeinfo.var_6392c3a2 * animlength;
                 starttime = floor(starttime / timestep);
                 stoptime = floor(stoptime / timestep);
                 adjustduration = stoptime - starttime;
-                self.var_cd8354e0.var_10b8b6d1 = vectornormalize(self.var_cd8354e0.adjustedendpos - self.var_cd8354e0.var_cb28f380);
-                self.var_cd8354e0.var_8b9a15a6 = var_90c3cdd2 / adjustduration;
-                self.var_cd8354e0.var_425c4c8b = 1;
-                self.var_cd8354e0.adjustmentstarted = 1;
+                self.meleeinfo.var_10b8b6d1 = vectornormalize(self.meleeinfo.adjustedendpos - self.meleeinfo.var_cb28f380);
+                self.meleeinfo.var_8b9a15a6 = var_90c3cdd2 / adjustduration;
+                self.meleeinfo.var_425c4c8b = 1;
+                self.meleeinfo.adjustmentstarted = 1;
             } else {
-                self.var_cd8354e0.var_425c4c8b = 0;
+                self.meleeinfo.var_425c4c8b = 0;
             }
         }
     }
-    if (self.var_cd8354e0.adjustmentstarted && var_e72a224a <= self.var_cd8354e0.var_6392c3a2) {
+    if (self.meleeinfo.adjustmentstarted && currentanimtime <= self.meleeinfo.var_6392c3a2) {
         /#
-            assert(isdefined(self.var_cd8354e0.var_10b8b6d1) && isdefined(self.var_cd8354e0.var_8b9a15a6));
+            assert(isdefined(self.meleeinfo.var_10b8b6d1) && isdefined(self.meleeinfo.var_8b9a15a6));
         #/
-        adjustedorigin = mocompanimflag.origin + mocompanimflag.var_cd8354e0.var_10b8b6d1 * self.var_cd8354e0.var_8b9a15a6;
+        adjustedorigin = mocompanimflag.origin + mocompanimflag.meleeinfo.var_10b8b6d1 * self.meleeinfo.var_8b9a15a6;
         mocompanimflag forceteleport(adjustedorigin);
     }
 }
@@ -830,14 +830,14 @@ function function_3f15e557(entity, mocompanim, *mocompanimblendouttime, *mocompa
 // Size: 0xe6
 function function_96f1cbf6(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
     namespace_1e25ad94::function_f5f0c0f8("mocompGladiatorLeapEnd entNum:" + self getentitynumber());
-    mocompduration.blockingpain.mocompduration = 0;
+    mocompduration.blockingpain = 0;
     mocompduration.var_5dd07a80 = undefined;
     mocompduration.var_c2986b66 = undefined;
-    mocompduration.usegoalanimweight.mocompduration = 0;
+    mocompduration.usegoalanimweight = 0;
     mocompduration pathmode("move allowed");
     mocompduration orientmode("face default");
     mocompduration collidewithactors(1);
-    mocompduration.var_cd8354e0 = undefined;
+    mocompduration.meleeinfo = undefined;
 }
 
 // Namespace namespace_146875e/namespace_146875e
@@ -911,7 +911,7 @@ function function_2bc1ffb8(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 // Size: 0xa4
 function private function_cdef55f0(entity) {
     hitent = entity melee(anglestoforward(entity.angles));
-    entity.var_4f1b8d2b.entity = 0;
+    entity.var_4f1b8d2b = 0;
     if (isdefined(hitent) && isplayer(hitent) && hitent.birthtime !== gettime()) {
         hitent clientfield::increment_to_player("gladiator_melee_effect");
     }
@@ -1351,7 +1351,7 @@ function private function_137ed431(axe, var_a4388d06, *spin_dir) {
     max_dist = 450;
     var_7900b267 = vectornormalize(tag_pos - var_a4388d06.origin);
     new_yaw = absangleclamp360(var_a4388d06.angles[1] + 180);
-    var_a4388d06.angles.var_a4388d06 = (0, new_yaw, 0);
+    var_a4388d06.angles = (0, new_yaw, 0);
     self thread function_c3712093(var_a4388d06, spin_dir, var_bb95ea0c);
     while (1) {
         tag_pos = self gettagorigin(spin_dir);

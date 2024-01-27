@@ -208,9 +208,9 @@ function ramprobsetting(localclientnum, from, to, ramptime, key) {
 // Params 8, eflags: 0x0
 // Checksum 0x386aa0ca, Offset: 0xe18
 // Size: 0xc4
-function function_1126eb8c(*currenttime, elapsedtime, *localclientnum, duration, var_2347e08e, var_991d3376, key, rob) {
+function function_1126eb8c(*currenttime, elapsedtime, *localclientnum, duration, stagefrom, stageto, key, rob) {
     percent = localclientnum / duration;
-    amount = var_991d3376 * percent + var_2347e08e * (1 - percent);
+    amount = stageto * percent + stagefrom * (1 - percent);
     if (isdefined(self) && self function_d2cb869e(rob)) {
         self function_78233d29(rob, "", key, amount);
     }
@@ -316,7 +316,7 @@ function private player_splatter(localclientnum) {
             if (opacity > 0 || blur > 0) {
                 local_player = function_5c10bd79(localclientnum);
                 if (isdefined(local_player)) {
-                    splatter.var_9e4cc220.splatter = 1;
+                    splatter.var_9e4cc220 = 1;
                     if (!local_player function_d2cb869e(#"hash_73c750f53749d44d")) {
                         function_a837926b(localclientnum, #"hash_73c750f53749d44d");
                     }
@@ -330,7 +330,7 @@ function private player_splatter(localclientnum) {
                     }
                 }
             } else if (is_true(splatter.var_9e4cc220)) {
-                splatter.var_9e4cc220.splatter = 0;
+                splatter.var_9e4cc220 = 0;
                 if (function_148ccc79(localclientnum, #"hash_73c750f53749d44d")) {
                     codestoppostfxbundlelocal(localclientnum, #"hash_73c750f53749d44d");
                 }
@@ -374,7 +374,7 @@ function private splatter_postfx(localclientnum, player, damage, var_cd141ca2, d
     hold_time = 0;
     splatter = getsplatter(localclientnum);
     if (dot && !death) {
-        splatter.var_90495387.splatter = getservertime(localclientnum);
+        splatter.var_90495387 = getservertime(localclientnum);
         blur = level.blood.var_de10c136.dot.blur;
         opacity = level.blood.var_de10c136.dot.opacity;
         var_587ce5b0 = level.blood.var_de10c136.dot.var_587ce5b0;
@@ -874,7 +874,7 @@ function function_8fe966f4(localclientnum, var_bfd952c7, new_stage, ramptime, po
 // Params 6, eflags: 0x0
 // Checksum 0x23993eac, Offset: 0x3a88
 // Size: 0x22c
-function function_c0cdd1f2(localclientnum, var_2347e08e, var_991d3376, ramptime, key, postfx) {
+function function_c0cdd1f2(localclientnum, stagefrom, stageto, ramptime, key, postfx) {
     self endon(#"death", #"hash_6d50f64fe99aed76");
     var_97b5c837 = "rampPostFx" + key + postfx;
     self notify(var_97b5c837);
@@ -889,7 +889,7 @@ function function_c0cdd1f2(localclientnum, var_2347e08e, var_991d3376, ramptime,
     elapsedtime = 0;
     while (elapsedtime < ramptime) {
         percent = elapsedtime / ramptime;
-        amount = var_991d3376 * percent + var_2347e08e * (1 - percent);
+        amount = stageto * percent + stagefrom * (1 - percent);
         if (is_true(self.blood_enabled)) {
             self function_116b95e5(postfx, key, amount);
         }
@@ -906,7 +906,7 @@ function function_c0cdd1f2(localclientnum, var_2347e08e, var_991d3376, ramptime,
         elapsedtime = currenttime - starttime;
     }
     if (is_true(self.blood_enabled)) {
-        self function_116b95e5(postfx, key, var_991d3376);
+        self function_116b95e5(postfx, key, stageto);
     }
 }
 
@@ -1180,7 +1180,7 @@ function private function_162fe6ec(localclientnum) {
     splatter = getsplatter(localclientnum);
     if (!isdefined(splatter)) {
         splatter = spawnstruct();
-        splatter.splatters.splatter = [];
+        splatter.splatters = [];
         if (!isdefined(level.blood.var_de10c136.var_51036e02)) {
             level.blood.var_de10c136.var_51036e02 = [];
         }
@@ -1193,7 +1193,7 @@ function private function_162fe6ec(localclientnum) {
         splatter.splatters[j][#"blur amount"] = 0;
         splatter.splatters[j][#"opacity"] = 0;
     }
-    splatter.var_120a7b2c.splatter = 0;
+    splatter.var_120a7b2c = 0;
     splatter.var_90495387 = undefined;
 }
 

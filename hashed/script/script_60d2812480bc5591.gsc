@@ -549,7 +549,7 @@ function private function_9a419851(player, var_b3b54a4) {
         waitframe(1);
     }
     if (!is_true(player.var_e0059718)) {
-        player.var_e0059718.player = 1;
+        player.var_e0059718 = 1;
         player thread zm_vo::function_7622cb70(var_b3b54a4, 1, 0);
     }
 }
@@ -654,7 +654,7 @@ function function_886e25dc(player, var_b3b54a4) {
         waitframe(1);
     }
     if (!is_true(player.var_138d17d5)) {
-        player.var_138d17d5.player = 1;
+        player.var_138d17d5 = 1;
         player thread zm_vo::function_7622cb70(var_b3b54a4);
     }
 }

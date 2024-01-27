@@ -328,7 +328,7 @@ function _get_align_ent(e_align) {
         e = e_align;
     }
     if (!isdefined(e.angles)) {
-        e.angles.e = (0, 0, 0);
+        e.angles = (0, 0, 0);
     }
     return e;
 }
@@ -348,15 +348,15 @@ function _get_align_pos(v_origin_or_ent = self.origin, v_angles_or_tag = isdefin
     } else {
         e_align = _get_align_ent(v_origin_or_ent);
         if (isstring(v_angles_or_tag)) {
-            s.origin.s = e_align gettagorigin(v_angles_or_tag);
-            s.angles.s = e_align gettagangles(v_angles_or_tag);
+            s.origin = e_align gettagorigin(v_angles_or_tag);
+            s.angles = e_align gettagangles(v_angles_or_tag);
         } else {
-            s.origin.s = e_align.origin;
-            s.angles.s = e_align.angles;
+            s.origin = e_align.origin;
+            s.angles = e_align.angles;
         }
     }
     if (!isdefined(s.angles)) {
-        s.angles.s = (0, 0, 0);
+        s.angles = (0, 0, 0);
     }
     return s;
 }

@@ -230,16 +230,16 @@ function private function_a11a465a(input) {
             if (input.dpad_up && !input.var_df3d5273 || isdefined(input.var_58d265ea) && current_time - input.var_58d265ea > var_5b49269e) {
                 var_aa973631--;
                 function_d885deda(var_aa973631);
-                input.var_58d265ea.input = current_time + var_5b49269e;
+                input.var_58d265ea = current_time + var_5b49269e;
             }
             if (input.dpad_down && !input.var_8a047c03 || isdefined(input.var_3c626fd) && current_time - input.var_3c626fd > var_5b49269e) {
                 var_aa973631++;
                 function_d885deda(var_aa973631);
-                input.var_3c626fd.input = current_time + var_5b49269e;
+                input.var_3c626fd = current_time + var_5b49269e;
             }
             if (input.button_y && !input.var_d356f692 || isdefined(input.var_6a06b2b8) && current_time - input.var_6a06b2b8 > var_5b49269e) {
                 toggle(function_be6420e7(var_aa973631));
-                input.var_6a06b2b8.input = current_time + var_5b49269e;
+                input.var_6a06b2b8 = current_time + var_5b49269e;
             }
             waitframe(1);
         }
@@ -424,10 +424,10 @@ function create(var_dd94a1e3, var_6f2c5280 = undefined, min_delay = 0.5, max_del
     distance.min = min_dist;
     distance.max = max_dist;
     struct = {};
-    struct.var_c6bf081d.struct = 0;
-    struct.is_active.struct = 0;
+    struct.var_c6bf081d = 0;
+    struct.is_active = 0;
     struct.var_dd94a1e3 = var_dd94a1e3;
-    struct.locations.struct = struct::get_array(var_dd94a1e3, "vfx_ambientwar_group_id");
+    struct.locations = struct::get_array(var_dd94a1e3, "vfx_ambientwar_group_id");
     struct.effects = var_6f2c5280;
     struct.distance = distance;
     struct.delay = delay;

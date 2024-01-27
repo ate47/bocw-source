@@ -380,7 +380,7 @@ function function_551980b7(speakingplayer, var_76787d10) {
 // Params 5, eflags: 0x2 linked
 // Checksum 0x599e13f4, Offset: 0x19b8
 // Size: 0x5ca
-function function_bd715920(var_28b40381, attacker, var_87017634, eventobject, timedelay) {
+function function_bd715920(var_28b40381, attacker, eventorigin, eventobject, timedelay) {
     if (!is_true(level.allowspecialistdialog) || !isdefined(self) || !isplayer(self)) {
         return;
     }
@@ -398,14 +398,14 @@ function function_bd715920(var_28b40381, attacker, var_87017634, eventobject, ti
     if (isdefined(var_4a247dec) ? var_4a247dec : 0) {
         if (isdefined(attacker) && isplayer(attacker) && !attacker hasperk(#"specialty_quieter")) {
             if (isdefined(var_2f741f8e) ? var_2f741f8e : 0) {
-                eventobject.var_87b1ba00.eventobject = 1;
+                eventobject.var_87b1ba00 = 1;
             } else {
                 self.var_87b1ba00 = 1;
             }
             attacker function_95e44f78(var_28b40381, timedelay);
             return;
         }
-    } else if (isdefined(var_87017634)) {
+    } else if (isdefined(eventorigin)) {
         players = self getenemies();
         allyradius = mpdialog_value("enemyContactAllyRadius", 0);
         enemydistance = mpdialog_value("enemyContactDistance", 0);
@@ -417,9 +417,9 @@ function function_bd715920(var_28b40381, attacker, var_87017634, eventobject, ti
                 continue;
             }
             if (isdefined(var_4e424b8b) ? var_4e424b8b : 0) {
-                jumpcmp(distancesquared(var_87017634, player.origin) > function_a3f6cdac(allyradius)) LOC_00000492;
+                jumpcmp(distancesquared(eventorigin, player.origin) > function_a3f6cdac(allyradius)) LOC_00000492;
                 if (isdefined(var_494ab587) ? var_494ab587 : 0) {
-                    relativepos = vectornormalize(player.origin - var_87017634);
+                    relativepos = vectornormalize(player.origin - eventorigin);
                     dir = anglestoforward(self getplayerangles());
                     dotproduct = vectordot(relativepos, dir);
                     if (dotproduct > 0) {
@@ -429,17 +429,17 @@ function function_bd715920(var_28b40381, attacker, var_87017634, eventobject, ti
                 }
             } else {
             LOC_00000492:
-                if (distancesquared(var_87017634, player.origin) > function_a3f6cdac(enemydistance)) {
+                if (distancesquared(eventorigin, player.origin) > function_a3f6cdac(enemydistance)) {
                     continue;
                 }
                 eyepoint = player geteye();
-                relativepos = vectornormalize(var_87017634 - eyepoint);
+                relativepos = vectornormalize(eventorigin - eyepoint);
                 dir = anglestoforward(player getplayerangles());
                 dotproduct = vectordot(relativepos, dir);
                 if (dotproduct > 0) {
-                    if (sighttracepassed(var_87017634, eyepoint, 1, player, eventobject)) {
+                    if (sighttracepassed(eventorigin, eyepoint, 1, player, eventobject)) {
                         if (isdefined(var_2f741f8e) ? var_2f741f8e : 0) {
-                            eventobject.var_87b1ba00.eventobject = 1;
+                            eventobject.var_87b1ba00 = 1;
                         } else {
                             self.var_87b1ba00 = 1;
                         }
@@ -456,7 +456,7 @@ function function_bd715920(var_28b40381, attacker, var_87017634, eventobject, ti
 // Params 3, eflags: 0x2 linked
 // Checksum 0xd901a151, Offset: 0x1f90
 // Size: 0x402
-function function_fc82b10(weapon, var_87017634, eventobject) {
+function function_fc82b10(weapon, eventorigin, eventobject) {
     if (!isdefined(weapon)) {
         return;
     }
@@ -468,7 +468,7 @@ function function_fc82b10(weapon, var_87017634, eventobject) {
         return;
     }
     var_4e424b8b = isdefined(var_8e39def3.var_c6face5d) ? var_8e39def3.var_c6face5d : 0;
-    if (isdefined(var_87017634)) {
+    if (isdefined(eventorigin)) {
         players = self getenemies();
         if (isdefined(players) && players.size > 0) {
             playerbundle = function_58c93260(players[0], undefined);
@@ -482,10 +482,10 @@ function function_fc82b10(weapon, var_87017634, eventobject) {
                 if (!isplayer(player) || player hasperk(#"specialty_quieter")) {
                     continue;
                 }
-                distancetoplayer = distancesquared(var_87017634, player.origin);
+                distancetoplayer = distancesquared(eventorigin, player.origin);
                 if (var_4e424b8b) {
                     jumpcmp(distancetoplayer > function_a3f6cdac(allyradius)) LOC_0000030a;
-                    relativepos = vectornormalize(player.origin - var_87017634);
+                    relativepos = vectornormalize(player.origin - eventorigin);
                     dir = anglestoforward(self getplayerangles());
                     dotproduct = vectordot(relativepos, dir);
                     jumpcmp(dotproduct < 0) LOC_0000030a;
@@ -495,12 +495,12 @@ function function_fc82b10(weapon, var_87017634, eventobject) {
                         continue;
                     }
                     eyepoint = player geteye();
-                    relativepos = vectornormalize(var_87017634 - eyepoint);
+                    relativepos = vectornormalize(eventorigin - eyepoint);
                     dir = anglestoforward(player getplayerangles());
                     dotproduct = vectordot(relativepos, dir);
                     if (dotproduct > 0) {
-                        if (sighttracepassed(var_87017634, eyepoint, 1, player, eventobject)) {
-                            eventobject.var_87b1ba00.eventobject = 1;
+                        if (sighttracepassed(eventorigin, eyepoint, 1, player, eventobject)) {
+                            eventobject.var_87b1ba00 = 1;
                             player thread function_a48c33ff(dialogkey, 2);
                             return;
                         }
@@ -557,8 +557,8 @@ function function_b06bbccf(sniper) {
     }
     var_a1886234 = voiceprefix + playerbundle.threatsniper;
     closest_ally thread function_a48c33ff(var_a1886234, 2);
-    sniper.spottedtime.sniper = gettime();
-    sniper.spottedby.sniper = [];
+    sniper.spottedtime = gettime();
+    sniper.spottedby = [];
     players = self get_friendly_players();
     players = arraysort(players, self.origin);
     voiceradius = mpdialog_value("playerVoiceRadius", 0);
@@ -1133,7 +1133,7 @@ function private function_253c2ba4(var_cf210c5b, dialogbuffer) {
         if (!isdefined(player) || !isalive(player) || is_true(player.playingdialog) && !is_true(player.var_6765d33e)) {
             continue;
         }
-        player.var_6765d33e.player = 0;
+        player.var_6765d33e = 0;
         player playsoundtoplayer(var_cf210c5b, player);
         player thread wait_dialog_buffer(dialogbuffer);
     }
@@ -1252,7 +1252,7 @@ function function_72b65730() {
 // Size: 0xc4
 function heavyweaponkilllogic(attacker, weapon, victim) {
     if (!isdefined(attacker.heavyweaponkillcount)) {
-        attacker.heavyweaponkillcount.attacker = 0;
+        attacker.heavyweaponkillcount = 0;
     }
     attacker.heavyweaponkillcount++;
     if (!is_true(attacker.playedgadgetsuccess) && attacker.heavyweaponkillcount >= mpdialog_value("heroWeaponKillCount", 0)) {

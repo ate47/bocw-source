@@ -67,7 +67,7 @@ class class_b20c2804 : cluielem {
     // Params 5, eflags: 0x0
     // Checksum 0x7ebdb5aa, Offset: 0x580
     // Size: 0x44
-    function setup_clientfields(*var_5a7b4b38, *var_f5852d69, *var_5957697a, *var_90efc226, *var_b77f41ee) {
+    function setup_clientfields(*var_5a7b4b38, *textcallback, *var_5957697a, *var_90efc226, *var_b77f41ee) {
         cluielem::setup_clientfields("DOA_TextBubble");
     }
 
@@ -133,9 +133,9 @@ function function_919052d(localclientnum, entnum, bonetag) {
 // Params 5, eflags: 0x0
 // Checksum 0xc526122, Offset: 0x210
 // Size: 0x19e
-function register(var_5a7b4b38, var_f5852d69, var_5957697a, var_90efc226, var_b77f41ee) {
+function register(var_5a7b4b38, textcallback, var_5957697a, var_90efc226, var_b77f41ee) {
     elem = new class_b20c2804();
-    [[ elem ]]->setup_clientfields(var_5a7b4b38, var_f5852d69, var_5957697a, var_90efc226, var_b77f41ee);
+    [[ elem ]]->setup_clientfields(var_5a7b4b38, textcallback, var_5957697a, var_90efc226, var_b77f41ee);
     if (!isdefined(level.var_ae746e8f)) {
         level.var_ae746e8f = associativearray();
     }

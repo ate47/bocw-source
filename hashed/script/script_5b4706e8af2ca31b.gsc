@@ -185,7 +185,7 @@ function function_1fd398d8() {
 // Size: 0xb6
 function function_752582be(ascender) {
     if (isdefined(ascender)) {
-        ascender.inuse.ascender = 0;
+        ascender.inuse = 0;
         hint = #"hash_4079b1df1f035718";
         ascender.trigger sethintstring(hint);
         if (isdefined(ascender.var_381fcaec) && isdefined(ascender.var_381fcaec.trigger)) {
@@ -238,7 +238,7 @@ function function_2e714695() {
 // Size: 0x204
 function function_c487f6c0(var_13bb8c94) {
     if (!isdefined(var_13bb8c94.radius)) {
-        var_13bb8c94.radius.var_13bb8c94 = 128;
+        var_13bb8c94.radius = 128;
     }
     var_3d783ef7 = spawn("trigger_radius_use", var_13bb8c94.origin + vectorscale((0, 0, 1), 16), 0, var_13bb8c94.radius, 128);
     var_3d783ef7.var_13bb8c94 = var_13bb8c94;
@@ -273,17 +273,17 @@ function function_731b9325(struct, dir) {
     level.var_4b97f99c[struct.target] = struct;
     struct.var_381fcaec = var_b53569ae;
     struct.var_4b2e2dac = var_1802b8ab;
-    struct.inuse.struct = 0;
+    struct.inuse = 0;
     if (sessionmodeiszombiesgame()) {
-        struct.cooldown.struct = [];
+        struct.cooldown = [];
         if (isdefined(struct.script_string)) {
-            struct.clip.struct = getent(struct.script_string, "targetname");
+            struct.clip = getent(struct.script_string, "targetname");
         }
     }
-    struct.exitangle.struct = struct.angles + vectorscale((0, 1, 0), 180);
-    struct.var_820d830d.struct = struct.angles;
+    struct.exitangle = struct.angles + vectorscale((0, 1, 0), 180);
+    struct.var_820d830d = struct.angles;
     struct.dir = dir;
-    struct.trigger.struct = function_c487f6c0(struct);
+    struct.trigger = function_c487f6c0(struct);
 }
 
 // Namespace rappel/rappel
@@ -385,8 +385,8 @@ function function_4945d10b(var_df401071) {
         player.ascender = var_13bb8c94;
         thread function_8c46de17(var_13bb8c94, var_5c1b57ee);
         var_13bb8c94 thread function_cf4e25e5();
-        var_13bb8c94.inuse.var_13bb8c94 = 1;
-        var_5c1b57ee.inuse.var_5c1b57ee = 1;
+        var_13bb8c94.inuse = 1;
+        var_5c1b57ee.inuse = 1;
     }
     player function_256406a6(var_13bb8c94.origin, var_13bb8c94.angles[1], var_81d2b10b);
 }

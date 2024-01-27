@@ -101,7 +101,7 @@ function private function_451a49f4(localclientnum, var_f4eb4a50, weapon, stagenu
     activecamo = self init_activecamo(var_f4eb4a50, 0);
     if (isdefined(activecamo)) {
         if (!isdefined(activecamo.var_fe56592)) {
-            activecamo.var_fe56592.activecamo = [];
+            activecamo.var_fe56592 = [];
         }
         if (!isdefined(activecamo.var_fe56592[localclientnum])) {
             activecamo.var_fe56592[localclientnum] = {};
@@ -130,8 +130,8 @@ function private function_130e0542(localclientnum, weapon, camoindex) {
         if (isdefined(activecamo.var_13949c61.stages)) {
             var_f8bf269c = 0;
             foreach (key, stage in activecamo.var_13949c61.stages) {
-                if (isdefined(stage.var_d2eac588)) {
-                    camo_stat = stats::get_stat_global(localclientnum, stage.var_d2eac588);
+                if (isdefined(stage.permanentstatname)) {
+                    camo_stat = stats::get_stat_global(localclientnum, stage.permanentstatname);
                     jumpiffalse(isdefined(camo_stat) && camo_stat >= stage.var_e2dbd42d) LOC_00000164;
                     var_f8bf269c = 1;
                 } else if (var_f8bf269c || stage.var_19b6044e === camoindex) {
@@ -176,7 +176,7 @@ function private function_350f0d(localclientnum, weapon, tagname, stagenum, var_
         return;
     }
     if (!isdefined(activecamo.var_fe56592)) {
-        activecamo.var_fe56592.activecamo = [];
+        activecamo.var_fe56592 = [];
     }
     if (!isdefined(activecamo.var_fe56592[localclientnum])) {
         activecamo.var_fe56592[localclientnum] = {};
@@ -208,7 +208,7 @@ function private function_350f0d(localclientnum, weapon, tagname, stagenum, var_
         }
     }
     activecamo.var_fe56592[localclientnum].var_dd54a13b[baseweapon].stagenum = stagenum;
-    var_58bac2d.crob.var_58bac2d = stage.rob;
+    var_58bac2d.crob = stage.rob;
     if (isdefined(stage.rob) && tagname == "tag_weapon_right") {
         if (!self function_d2503806(stage.rob, tagname)) {
             self playrenderoverridebundle(stage.rob, tagname);
@@ -401,7 +401,7 @@ function private function_8a6ced15(var_f4eb4a50, forceupdate) {
         var_13949c61 = level.activecamoinfo[var_f4eb4a50.name];
         if (isdefined(var_f4eb4a50.stages)) {
             if (!isdefined(var_13949c61.stages)) {
-                var_13949c61.stages.var_13949c61 = [];
+                var_13949c61.stages = [];
             }
             var_d3daabe = 0;
             foreach (key, var_3594168e in var_f4eb4a50.stages) {
@@ -412,25 +412,25 @@ function private function_8a6ced15(var_f4eb4a50, forceupdate) {
                         var_13949c61.stages[key - var_d3daabe] = {};
                     }
                     stage = var_13949c61.stages[key - var_d3daabe];
-                    stage.rob.stage = var_3594168e.rob;
-                    if (isdefined(var_3594168e.var_879c8798)) {
-                        stage.var_19b6044e.stage = function_8b51d9d1(var_3594168e.var_879c8798);
+                    stage.rob = var_3594168e.rob;
+                    if (isdefined(var_3594168e.camooption)) {
+                        stage.var_19b6044e = function_8b51d9d1(var_3594168e.camooption);
                     }
-                    stage.var_9fbd261d.stage = var_3594168e.var_9fbd261d;
-                    stage.var_d2eac588.stage = var_3594168e.var_d2eac588;
-                    stage.var_e2dbd42d.stage = function_54f0afd2(var_3594168e);
+                    stage.var_9fbd261d = var_3594168e.var_9fbd261d;
+                    stage.permanentstatname = var_3594168e.permanentstatname;
+                    stage.var_e2dbd42d = function_54f0afd2(var_3594168e);
                     if (isdefined(stage.var_9fbd261d)) {
-                        stage.var_d04f3816.stage = var_3594168e.var_d04f3816;
-                        stage.var_413aa223.stage = var_3594168e.var_413aa223;
-                        stage.var_2873d2ba.stage = var_3594168e.var_2873d2ba;
+                        stage.var_d04f3816 = var_3594168e.var_d04f3816;
+                        stage.var_413aa223 = var_3594168e.var_413aa223;
+                        stage.var_2873d2ba = var_3594168e.var_2873d2ba;
                     }
                     if (is_true(level.var_b9b11197)) {
-                        stage.var_1c54e7b8.stage = var_3594168e.var_1c54e7b8;
-                        stage.var_a000b430.stage = var_3594168e.var_a000b430;
+                        stage.var_1c54e7b8 = var_3594168e.var_1c54e7b8;
+                        stage.var_a000b430 = var_3594168e.var_a000b430;
                     }
-                    stage.var_bafc7841.stage = var_3594168e.var_bafc7841;
-                    stage.var_9828c877.stage = var_3594168e.var_9828c877;
-                    stage.var_69896523.stage = var_3594168e.var_69896523;
+                    stage.var_bafc7841 = var_3594168e.var_bafc7841;
+                    stage.var_9828c877 = var_3594168e.var_9828c877;
+                    stage.var_69896523 = var_3594168e.var_69896523;
                     for (layer = 1; layer <= 3; layer++) {
                         var_d1732bd2 = "robLayer" + layer;
                         var_4a72a14a = var_d1732bd2 + "_LerpTime";
@@ -442,10 +442,10 @@ function private function_8a6ced15(var_f4eb4a50, forceupdate) {
                         stage.(var_f5747b8) = var_3594168e.(var_f5747b8);
                         stage.(var_7fd61736) = var_3594168e.(var_7fd61736);
                     }
-                    stage.diffuse2alpha.stage = isdefined(var_3594168e.diffuse2alpha) ? var_3594168e.diffuse2alpha : 0;
-                    stage.var_2eeeee1b.stage = isdefined(var_3594168e.var_2eeeee1b) ? var_3594168e.var_2eeeee1b : 0;
-                    stage.diffuse3alpha.stage = isdefined(var_3594168e.diffuse3alpha) ? var_3594168e.diffuse3alpha : 0;
-                    stage.var_7a3e0e45.stage = isdefined(var_3594168e.var_7a3e0e45) ? var_3594168e.var_7a3e0e45 : 0;
+                    stage.diffuse2alpha = isdefined(var_3594168e.diffuse2alpha) ? var_3594168e.diffuse2alpha : 0;
+                    stage.var_2eeeee1b = isdefined(var_3594168e.var_2eeeee1b) ? var_3594168e.var_2eeeee1b : 0;
+                    stage.diffuse3alpha = isdefined(var_3594168e.diffuse3alpha) ? var_3594168e.diffuse3alpha : 0;
+                    stage.var_7a3e0e45 = isdefined(var_3594168e.var_7a3e0e45) ? var_3594168e.var_7a3e0e45 : 0;
                 }
             }
         }
@@ -469,7 +469,7 @@ function private init_activecamo(var_f4eb4a50, forceupdate) {
             self.var_9413f8b4[var_f4eb4a50.name] = {};
         }
         activecamo = self.var_9413f8b4[var_f4eb4a50.name];
-        activecamo.var_13949c61.activecamo = function_8a6ced15(var_f4eb4a50, forceupdate);
+        activecamo.var_13949c61 = function_8a6ced15(var_f4eb4a50, forceupdate);
         /#
             assert(isdefined(activecamo.var_13949c61));
         #/
@@ -487,11 +487,11 @@ function function_6c9e0e1a(localclientnum, weaponmodel, var_3594168e, &var_49daa
         return 0;
     }
     stage = {};
-    stage.rob.stage = var_3594168e.rob;
-    stage.diffuse2alpha.stage = isdefined(var_3594168e.diffuse2alpha) ? var_3594168e.diffuse2alpha : 0;
-    stage.var_2eeeee1b.stage = isdefined(var_3594168e.var_2eeeee1b) ? var_3594168e.var_2eeeee1b : 0;
-    stage.diffuse3alpha.stage = isdefined(var_3594168e.diffuse3alpha) ? var_3594168e.diffuse3alpha : 0;
-    stage.var_7a3e0e45.stage = isdefined(var_3594168e.var_7a3e0e45) ? var_3594168e.var_7a3e0e45 : 0;
+    stage.rob = var_3594168e.rob;
+    stage.diffuse2alpha = isdefined(var_3594168e.diffuse2alpha) ? var_3594168e.diffuse2alpha : 0;
+    stage.var_2eeeee1b = isdefined(var_3594168e.var_2eeeee1b) ? var_3594168e.var_2eeeee1b : 0;
+    stage.diffuse3alpha = isdefined(var_3594168e.diffuse3alpha) ? var_3594168e.diffuse3alpha : 0;
+    stage.var_7a3e0e45 = isdefined(var_3594168e.var_7a3e0e45) ? var_3594168e.var_7a3e0e45 : 0;
     if (!weaponmodel function_d2503806(stage.rob, "tag_origin")) {
         weaponmodel playrenderoverridebundle(stage.rob, "tag_origin");
         var_49daa2f6[localclientnum] = stage.rob;
@@ -546,7 +546,7 @@ function function_e40c785a(localclientnum) {
             if (isdefined(var_f4eb4a50.stages)) {
                 init_stage = 0;
                 foreach (key, var_3594168e in var_f4eb4a50.stages) {
-                    if (isdefined(var_3594168e.var_d2eac588)) {
+                    if (isdefined(var_3594168e.permanentstatname)) {
                         continue;
                     }
                     init_stage = key;
@@ -581,8 +581,8 @@ function function_6efb762c(localclientnum, camoweapon, weaponoptions) {
             }
             if (isdefined(var_f4eb4a50.stages)) {
                 var_3594168e = var_f4eb4a50.stages[init_stage];
-                if (isdefined(var_3594168e.var_879c8798)) {
-                    var_19b6044e = function_8b51d9d1(var_3594168e.var_879c8798);
+                if (isdefined(var_3594168e.camooption)) {
+                    var_19b6044e = function_8b51d9d1(var_3594168e.camooption);
                     self setcamo(var_19b6044e);
                     self setactivecamostage(init_stage);
                 }

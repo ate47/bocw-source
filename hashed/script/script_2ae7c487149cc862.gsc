@@ -204,7 +204,7 @@ function function_eac49163(localclientnum, *oldval, newval, *bnewent, *binitials
         setexposureactivebank(fieldname, 2);
         var_90a50598 = struct::get_array("jellyfish_large", "targetname");
         foreach (var_b6e76b65 in var_90a50598) {
-            var_b6e76b65.var_b965b5e5.var_b6e76b65 = util::spawn_model(fieldname, var_b6e76b65.model, var_b6e76b65.origin);
+            var_b6e76b65.var_b965b5e5 = util::spawn_model(fieldname, var_b6e76b65.model, var_b6e76b65.origin);
         }
         waitframe(1);
         foreach (var_b6e76b65 in var_90a50598) {

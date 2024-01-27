@@ -203,7 +203,7 @@ function match_end() {
                     player arenaendmatch(-1, level.var_ba92f0a8);
                 }
                 if (getdvarint(#"hash_5a49cb3f6a18c3a6", 0) && player function_4ded3935()) {
-                    var_876fccfb = player stats::get_stat(#"arenabest", #"hash_2bc489a4bc916e4a");
+                    var_876fccfb = player stats::get_stat(#"arenabest", #"performancevalue");
                     var_74386ffc = player function_cdaaa372(var_876fccfb);
                     if (var_74386ffc == -1) {
                         var_23491496 = getscriptbundle(#"arena_league_play_skill_divisions_default");

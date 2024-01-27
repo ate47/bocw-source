@@ -67,7 +67,7 @@ function function_78d34bcb(localclientnum, *oldval, *newval, *bnewent, *binitial
                 continue;
             }
             var_4db59adc = util::spawn_model(bwasdemojump, #"hash_5b0706c194ab1d75", decal.origin, decal.angles);
-            var_4db59adc.rob.var_4db59adc = #"hash_5ee04cd58e027952" + var_d4cc6f3d;
+            var_4db59adc.rob = #"hash_5ee04cd58e027952" + var_d4cc6f3d;
             if (!isdefined(level.var_455f7b8c)) {
                 level.var_455f7b8c = [];
             } else if (!isarray(level.var_455f7b8c)) {

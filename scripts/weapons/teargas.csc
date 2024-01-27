@@ -60,9 +60,9 @@ function function_9810ebc(localclientnum, *oldval, newval, *bnewent, *binitialsn
 // Params 8, eflags: 0x0
 // Checksum 0x7a017367, Offset: 0x350
 // Size: 0xa4
-function function_3b08d399(*currenttime, elapsedtime, *localclientnum, duration, var_2347e08e, var_991d3376, constant, postfx) {
+function function_3b08d399(*currenttime, elapsedtime, *localclientnum, duration, stagefrom, stageto, constant, postfx) {
     percent = localclientnum / duration;
-    amount = var_991d3376 * percent + var_2347e08e * (1 - percent);
+    amount = stageto * percent + stagefrom * (1 - percent);
     self.var_5316504e = amount;
     self function_116b95e5(postfx, constant, amount);
 }

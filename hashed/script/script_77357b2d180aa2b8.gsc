@@ -62,12 +62,12 @@ function function_2a1e5c1f(origin, angles, modelname, type = 1, var_5653e2ee = 2
     var_56d14168.angles = angles;
     var_56d14168 function_94c7c0d9(type, var_5653e2ee, context);
     if (type === 4) {
-        var_56d14168.trigger_offset.var_56d14168 = vectorscale((0, 0, -1), 128);
+        var_56d14168.trigger_offset = vectorscale((0, 0, -1), 128);
     }
     if (isdefined(var_fc5f2aa0)) {
         args = strtok(var_fc5f2aa0, ";");
         if (args.size > 1) {
-            var_56d14168.var_fc5f2aa0.var_56d14168 = {#type:args[1]};
+            var_56d14168.var_fc5f2aa0 = {#type:args[1]};
             if (args.size > 2) {
                 switch (int(args[2])) {
                 case 1:
@@ -80,16 +80,16 @@ function function_2a1e5c1f(origin, angles, modelname, type = 1, var_5653e2ee = 2
                 var_56d14168.var_fc5f2aa0.var_115ea089 = args[3];
             }
             if (args.size > 4) {
-                var_56d14168.var_d6118311.var_56d14168 = int(args[4]);
+                var_56d14168.var_d6118311 = int(args[4]);
             }
             if (args.size > 5) {
-                var_56d14168.var_5710d551.var_56d14168 = args[5];
+                var_56d14168.var_5710d551 = args[5];
             }
         }
     }
     if (var_56d14168.var_fc5f2aa0.type === #"hardcore") {
         if (is_true(level.doa.hardcoremode)) {
-            var_56d14168.var_d6118311.var_56d14168 = 1;
+            var_56d14168.var_d6118311 = 1;
         }
         var_56d14168.var_fc5f2aa0 = undefined;
     }

@@ -55,7 +55,7 @@ function private postinit() {
 function init_vortices() {
     for (i = 0; i < 4; i++) {
         svortex = spawn("script_model", (0, 0, 0));
-        svortex.targetname.svortex = "zombie_vortex_sVortex";
+        svortex.targetname = "zombie_vortex_sVortex";
         if (!isdefined(level.vortex_manager.a_vorticies)) {
             level.vortex_manager.a_vorticies = [];
         } else if (!isarray(level.vortex_manager.a_vorticies)) {
@@ -118,10 +118,10 @@ function start_timed_vortex(effect_version, v_vortex_origin, n_vortex_radius, n_
         n_vortex_explosion_radius = n_vortex_radius * 1.5;
     }
     svortex = get_unused_vortex();
-    svortex.in_use.svortex = 1;
+    svortex.in_use = 1;
     svortex.attacker = eattacker;
     svortex.weapon = weapon;
-    svortex.angles.svortex = (0, 0, 0);
+    svortex.angles = (0, 0, 0);
     svortex.origin = v_vortex_origin;
     svortex dontinterpolate();
     svortex clientfield::increment("vortex_start", effect_version);
@@ -169,7 +169,7 @@ function start_timed_vortex(effect_version, v_vortex_origin, n_vortex_radius, n_
                     }
                 } else {
                     if (is_true(ai_zombie._black_hole_bomb_collapse_death)) {
-                        ai_zombie.skipautoragdoll.ai_zombie = 1;
+                        ai_zombie.skipautoragdoll = 1;
                         ai_zombie dodamage(ai_zombie.health + 666, ai_zombie.origin + vectorscale((0, 0, 1), 50), ai_zombie.interdimensional_gun_attacker, undefined, undefined, "MOD_CRUSH");
                         if (is_true(ai_zombie.allowdeath)) {
                             gibserverutils::annihilate(ai_zombie);
@@ -178,7 +178,7 @@ function start_timed_vortex(effect_version, v_vortex_origin, n_vortex_radius, n_
                     if (!is_true(ai_zombie.interdimensional_gun_kill) && !ai_zombie.ignorevortices) {
                         ai_zombie.var_ecd5b1b9 = svortex;
                         ai_zombie.damageorigin = v_vortex_origin;
-                        ai_zombie.interdimensional_gun_kill.ai_zombie = 1;
+                        ai_zombie.interdimensional_gun_kill = 1;
                         ai_zombie.interdimensional_gun_attacker = eattacker;
                         ai_zombie.interdimensional_gun_inflictor = eattacker;
                         ai_zombie.interdimensional_gun_weapon = weapon;
@@ -197,7 +197,7 @@ function start_timed_vortex(effect_version, v_vortex_origin, n_vortex_radius, n_
         }
     }
     wait(n_time_to_wait_for_explosion);
-    svortex.in_use.svortex = 0;
+    svortex.in_use = 0;
     arrayremovevalue(level.vortex_manager.a_active_vorticies, s_active_vortex);
     if (isdefined(var_f16a8ebd)) {
         [[ var_f16a8ebd ]](v_vortex_origin, eattacker, n_vortex_explosion_radius);
@@ -242,8 +242,8 @@ function private vortex_explosion(v_vortex_explosion_origin, eattacker, n_vortex
     foreach (ai_zombie in a_ai_zombies) {
         if (!ai_zombie.ignorevortices) {
             ai_zombie.interdimensional_gun_kill = undefined;
-            ai_zombie.interdimensional_gun_kill_vortex_explosion.ai_zombie = 1;
-            ai_zombie.veh_idgun_allow_damage.ai_zombie = 1;
+            ai_zombie.interdimensional_gun_kill_vortex_explosion = 1;
+            ai_zombie.veh_idgun_allow_damage = 1;
             if (isdefined(eattacker)) {
                 ai_zombie dodamage(ai_zombie.health + 10000, ai_zombie.origin, eattacker, undefined, undefined, "MOD_EXPLOSIVE");
             } else {
@@ -320,7 +320,7 @@ function state_idgun_crush_update(params) {
     }
     veh_to_black_hole_vec = vectornormalize(black_hole_center - self.origin);
     fly_ent = spawn("script_origin", self.origin);
-    fly_ent.targetname.fly_ent = "zombie_vortex_fly_ent";
+    fly_ent.targetname = "zombie_vortex_fly_ent";
     fly_ent thread flyentdelete(self);
     self linkto(fly_ent);
     while (1) {
@@ -335,7 +335,7 @@ function state_idgun_crush_update(params) {
             }
             self.crush_anim_started = 1;
         }
-        fly_ent.origin.fly_ent = fly_ent.origin + veh_to_black_hole_vec * 8;
+        fly_ent.origin = fly_ent.origin + veh_to_black_hole_vec * 8;
         wait(0.1);
     }
 }

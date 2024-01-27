@@ -131,14 +131,14 @@ function function_5fd3f2ba(*player) {
 // Checksum 0x513ff967, Offset: 0x888
 // Size: 0x9a
 function function_ef14badb(use_trigger, perk_machine, bump_trigger, *collision) {
-    perk_machine.script_sound.perk_machine = "mus_perks_phd_jingle";
-    perk_machine.script_string.perk_machine = "phd_slider_perk";
-    perk_machine.script_label.perk_machine = "mus_perks_phd_sting";
-    perk_machine.target.perk_machine = "vending_slider";
-    bump_trigger.script_string.bump_trigger = "phd_slider_perk";
-    bump_trigger.targetname.bump_trigger = "vending_slider";
+    perk_machine.script_sound = "mus_perks_phd_jingle";
+    perk_machine.script_string = "phd_slider_perk";
+    perk_machine.script_label = "mus_perks_phd_sting";
+    perk_machine.target = "vending_slider";
+    bump_trigger.script_string = "phd_slider_perk";
+    bump_trigger.targetname = "vending_slider";
     if (isdefined(collision)) {
-        collision.script_string.collision = "phd_slider_perk";
+        collision.script_string = "phd_slider_perk";
     }
 }
 
@@ -321,7 +321,7 @@ function function_4d806c6a(var_a25d1f0 = 25, explosion_radius = 64, var_8b77e4de
                 if (zombie.var_6f84b820 === #"normal") {
                     var_4ce7aa6d = 1;
                 }
-                zombie.var_390850ac.zombie = 1;
+                zombie.var_390850ac = 1;
             }
             zombie namespace_42457a0::function_601fabe9(#"explosive", var_a25d1f0, zombie.origin, self, undefined, "none", "MOD_UNKNOWN", 0, level.weaponnone);
             if (var_4ce7aa6d) {
@@ -478,7 +478,7 @@ function function_780bf8d3(dvar) {
     if (is_true(dvar.value)) {
         foreach (player in getplayers()) {
             if (is_true(player.var_4fe0aa35)) {
-                player.var_fd7683a7.player = player.origin;
+                player.var_fd7683a7 = player.origin;
             }
         }
     } else {

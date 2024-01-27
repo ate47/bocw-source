@@ -43,9 +43,9 @@ class cseeker_mine_prompt : cluielem {
     // Params 2, eflags: 0x0
     // Checksum 0xfa2128e8, Offset: 0x3b8
     // Size: 0x7c
-    function setup_clientfields(var_afaddf7a, var_ca3086f0) {
+    function setup_clientfields(progresscallback, var_ca3086f0) {
         cluielem::setup_clientfields("seeker_mine_prompt");
-        cluielem::add_clientfield("progress", 1, 5, "float", var_afaddf7a);
+        cluielem::add_clientfield("progress", 1, 5, "float", progresscallback);
         cluielem::add_clientfield("promptState", 1, 2, "int", var_ca3086f0);
     }
 
@@ -81,9 +81,9 @@ class cseeker_mine_prompt : cluielem {
 // Params 2, eflags: 0x0
 // Checksum 0xea5af425, Offset: 0xf8
 // Size: 0x17e
-function register(var_afaddf7a, var_ca3086f0) {
+function register(progresscallback, var_ca3086f0) {
     elem = new cseeker_mine_prompt();
-    [[ elem ]]->setup_clientfields(var_afaddf7a, var_ca3086f0);
+    [[ elem ]]->setup_clientfields(progresscallback, var_ca3086f0);
     if (!isdefined(level.var_ae746e8f)) {
         level.var_ae746e8f = associativearray();
     }

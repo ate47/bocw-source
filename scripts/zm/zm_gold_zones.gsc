@@ -331,9 +331,9 @@ function zone_init() {
     namespace_f0b43eb5::create_challenge(#"hash_363ccc9296a0bb43", 90, array("zone_artillery_strike", "zone_artillery_strike2"), undefined, #"hash_374955e0c82d6aa4", "s_obj_challenge_zone_artillery_strike", &namespace_f0b43eb5::function_f51adffa, &namespace_f0b43eb5::function_9742c28f);
     namespace_f0b43eb5::create_challenge(#"hash_97ec7cda4d126e", 90, array("zone_village", "zone_village2", "zone_village3"), undefined, #"hash_374955e0c82d6aa4", "s_obj_challenge_zone_village", &namespace_f0b43eb5::function_f51adffa, &namespace_f0b43eb5::function_9742c28f);
     s_challenge = namespace_f0b43eb5::create_challenge(#"hash_2274efc6b68c164b", 90, "zone_artillery_strike", undefined, #"hash_5cee7e17aff44d7e", "s_obj_challenge_zone_upper_data_center", &namespace_f0b43eb5::function_1d60215, &namespace_f0b43eb5::function_6be352fc);
-    s_challenge.var_4e0096cd.s_challenge = #"hash_7cfeb04f6733358c";
+    s_challenge.var_4e0096cd = #"hash_7cfeb04f6733358c";
     s_challenge = namespace_f0b43eb5::create_challenge(#"hash_1cc52d72244f1eda", 90, "zone_artillery_strike2", undefined, #"hash_5cee7e17aff44d7e", "s_obj_challenge_zone_lower_data_center", &namespace_f0b43eb5::function_1d60215, &namespace_f0b43eb5::function_6be352fc);
-    s_challenge.var_4e0096cd.s_challenge = #"hash_2c46e924aa04dbf1";
+    s_challenge.var_4e0096cd = #"hash_2c46e924aa04dbf1";
     namespace_f0b43eb5::create_challenge(#"hash_79ec66f63fc093c6", 90, "zone_trenches_office", undefined, #"hash_5cee7e17aff44d7e", "s_obj_challenge_zone_motor_office", &namespace_f0b43eb5::function_1d60215, &namespace_f0b43eb5::function_6be352fc);
     namespace_f0b43eb5::create_challenge(#"hash_3b5a9c328640c84f", 90, "zone_trenches_garage", undefined, #"hash_5cee7e17aff44d7e", "s_obj_challenge_zone_motor_garage", &namespace_f0b43eb5::function_1d60215, &namespace_f0b43eb5::function_6be352fc);
     namespace_f0b43eb5::create_challenge(#"hash_864f03f723d7dc3", 90, "zone_tents_a", undefined, #"hash_5cee7e17aff44d7e", "s_obj_challenge_zone_tents_a", &namespace_f0b43eb5::function_1d60215, &namespace_f0b43eb5::function_6be352fc);
@@ -341,20 +341,20 @@ function zone_init() {
     namespace_f0b43eb5::create_challenge(#"hash_78b5818aca0414eb", 90, "zone_field_hospital", undefined, #"hash_5cee7e17aff44d7e", "s_obj_challenge_zone_field_hospital", &namespace_f0b43eb5::function_1d60215, &namespace_f0b43eb5::function_6be352fc);
     namespace_f0b43eb5::create_challenge(#"hash_3f88531b59d4cc0b", 90, "zone_walkway", undefined, #"hash_5cee7e17aff44d7e", "s_obj_challenge_zone_walkway", &namespace_f0b43eb5::function_1d60215, &namespace_f0b43eb5::function_6be352fc);
     s_challenge = namespace_f0b43eb5::create_challenge(#"hash_64cc9ec22d551ae5", 90, "zone_colonel_office", undefined, #"hash_5cee7e17aff44d7e", "s_obj_challenge_zone_colonel_office", &namespace_f0b43eb5::function_1d60215, &namespace_f0b43eb5::function_6be352fc);
-    s_challenge.var_4e0096cd.s_challenge = #"hash_64c3b50e1de42d57";
+    s_challenge.var_4e0096cd = #"hash_64c3b50e1de42d57";
     namespace_f0b43eb5::create_challenge(#"hash_1f16e513ff381c18", 90, "zone_chopper_gunner", undefined, #"hash_5cee7e17aff44d7e", "s_obj_challenge_zone_chopper_gunner", &namespace_f0b43eb5::function_1d60215, &namespace_f0b43eb5::function_6be352fc);
     namespace_f0b43eb5::create_challenge(#"hash_2f4a7e5da228eead", 90, "zone_chopper_gunner3", undefined, #"hash_5cee7e17aff44d7e", "s_obj_challenge_zone_chopper_gunner3", &namespace_f0b43eb5::function_1d60215, &namespace_f0b43eb5::function_6be352fc);
     s_challenge = namespace_f0b43eb5::create_challenge(#"hash_257a005f64e8c41e", 90, array("zone_armory2", "zone_armory2_outside"), undefined, #"hash_5cee7e17aff44d7e", "s_obj_challenge_zone_armory", &namespace_f0b43eb5::function_1d60215, &namespace_f0b43eb5::function_6be352fc);
-    s_challenge.var_4e0096cd.s_challenge = #"hash_3cc28115aef8d6f6";
+    s_challenge.var_4e0096cd = #"hash_3cc28115aef8d6f6";
     s_challenge = namespace_f0b43eb5::create_challenge(#"hash_6e9cc81a9a529f18", 90, "zone_lot", undefined, #"hash_5cee7e17aff44d7e", "s_obj_challenge_zone_lot", &namespace_f0b43eb5::function_1d60215, &namespace_f0b43eb5::function_6be352fc);
-    s_challenge.var_4e0096cd.s_challenge = #"hash_4e1d8a30f4ea2f2b";
+    s_challenge.var_4e0096cd = #"hash_4e1d8a30f4ea2f2b";
     namespace_f0b43eb5::create_challenge(#"hash_52a6d61d1d8e570c", 90, "zone_weapon_lab", undefined, #"hash_5cee7e17aff44d7e", "s_obj_challenge_zone_weapon_lab", &namespace_f0b43eb5::function_1d60215, &namespace_f0b43eb5::function_6be352fc);
     s_challenge = namespace_f0b43eb5::create_challenge(#"hash_346b7588b58a9ac5", 90, "zone_mess_hall", undefined, #"hash_5cee7e17aff44d7e", "s_obj_challenge_zone_mess_hall", &namespace_f0b43eb5::function_1d60215, &namespace_f0b43eb5::function_6be352fc);
-    s_challenge.var_4e0096cd.s_challenge = #"hash_8dfbc02b8d787a5";
+    s_challenge.var_4e0096cd = #"hash_8dfbc02b8d787a5";
     s_challenge = namespace_f0b43eb5::create_challenge(#"hash_b5ed710fa19696b", 90, "zone_briefing_room", undefined, #"hash_5cee7e17aff44d7e", "s_obj_challenge_zone_briefing_room", &namespace_f0b43eb5::function_1d60215, &namespace_f0b43eb5::function_6be352fc);
-    s_challenge.var_4e0096cd.s_challenge = #"hash_3802e9f1f7fdc236";
+    s_challenge.var_4e0096cd = #"hash_3802e9f1f7fdc236";
     s_challenge = namespace_f0b43eb5::create_challenge(#"hash_749eb9a0557be48d", 90, "zone_scientist_quarters", undefined, #"hash_5cee7e17aff44d7e", "s_obj_challenge_zone_scientist_quarters", &namespace_f0b43eb5::function_1d60215, &namespace_f0b43eb5::function_6be352fc);
-    s_challenge.var_4e0096cd.s_challenge = #"hash_6e2fe33d2742e702";
+    s_challenge.var_4e0096cd = #"hash_6e2fe33d2742e702";
 }
 
 // Namespace zm_gold_zones/zm_gold_zones

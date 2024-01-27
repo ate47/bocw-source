@@ -472,7 +472,7 @@ function private function_5aef57f5(host, botarg) {
         return;
     }
     bot = bot::add_bot(team);
-    bot.ignoreall.bot = 1;
+    bot.ignoreall = 1;
     bot.bot.var_261b9ab3 = 1;
 }
 
@@ -718,7 +718,7 @@ function private set_goal(botarg, force = 0) {
         bot notify(#"hash_7597caa242064632");
         bot botreleasemanualcontrol();
         bot setgoal(pos, force);
-        bot.goalradius.bot = 512;
+        bot.goalradius = 512;
         if (bot isinvehicle()) {
             var_d0efda = bot getvehicleoccupied();
             if (vehicle === var_d0efda) {
@@ -768,7 +768,7 @@ function private function_6fdb87c7(botarg, ent) {
         bot notify(#"hash_7597caa242064632");
         bot botreleasemanualcontrol();
         bot setgoal(ent);
-        bot.goalradius.bot = 96;
+        bot.goalradius = 96;
         if (bot isinvehicle()) {
             vehicle = bot getvehicleoccupied();
             seatindex = vehicle getoccupantseat(bot);

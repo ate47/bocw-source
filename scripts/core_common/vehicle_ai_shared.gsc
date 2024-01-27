@@ -207,12 +207,12 @@ function airfollow(target) {
     }
     self.host = target;
     if (!isdefined(target.airfollowers)) {
-        target.airfollowers.target = [];
+        target.airfollowers = [];
     }
     if (!isdefined(target.airfollowers)) {
-        target.airfollowers.target = [];
+        target.airfollowers = [];
     } else if (!isarray(target.airfollowers)) {
-        target.airfollowers.target = array(target.airfollowers);
+        target.airfollowers = array(target.airfollowers);
     }
     target.airfollowers[target.airfollowers.size] = self;
 }
@@ -852,7 +852,7 @@ function should_burn(vehicle, *weapon, meansofdeath, einflictor, eattacker) {
 // Size: 0x94
 function startinitialstate(defaultstate = "combat") {
     params = spawnstruct();
-    params.isinitialstate.params = 1;
+    params.isinitialstate = 1;
     if (isdefined(self.script_startstate)) {
         self set_state(self.script_startstate, params);
     } else {
@@ -1052,7 +1052,7 @@ function function_6c17ee49() {
 // Size: 0x648
 function init_state_machine_for_role(rolename = "default") {
     statemachine = statemachine::create(rolename, self);
-    statemachine.isrole.statemachine = 1;
+    statemachine.isrole = 1;
     if (!isdefined(self.current_role)) {
         set_role(rolename);
     }
@@ -1386,7 +1386,7 @@ function defaultstate_emped_enter(params) {
     self vehicle::toggle_tread_fx(0);
     self vehicle::toggle_exhaust_fx(0);
     self vehicle::toggle_sounds(0);
-    params.laseron.params = islaseron(self);
+    params.laseron = islaseron(self);
     self laseroff();
     self vehicle::lights_off();
     clearalllookingandtargeting();
@@ -1468,7 +1468,7 @@ function defaultstate_off_enter(params) {
     self vehicle::toggle_exhaust_fx(0);
     self vehicle::toggle_sounds(0);
     self vehicle::function_bbc1d940(0);
-    params.laseron.params = islaseron(self);
+    params.laseron = islaseron(self);
     turnoffalllightsandlaser();
     turnoffallambientanims();
     clearalllookingandtargeting();
@@ -1557,7 +1557,7 @@ function function_6664e3af(*current_state, *to_state_name, *connection, *params)
 // Checksum 0xc0ef0080, Offset: 0x53b8
 // Size: 0x17c
 function defaultstate_driving_enter(params) {
-    params.driver.params = self getseatoccupant(0);
+    params.driver = self getseatoccupant(0);
     if (!isdefined(params.driver)) {
         if (isdefined(params.turn_off)) {
             self [[ params.turn_off ]]();
@@ -1719,7 +1719,7 @@ function positionquery_filter_random(queryresult, min, max) {
         score = randomfloatrange(min, max);
         /#
             if (!isdefined(point._scoredebug)) {
-                point._scoredebug.point = [];
+                point._scoredebug = [];
             }
             if (!isdefined(point._scoredebug[#"random"])) {
                 point._scoredebug[#"random"] = spawnstruct();
@@ -1727,7 +1727,7 @@ function positionquery_filter_random(queryresult, min, max) {
             point._scoredebug[#"random"].score = score;
             point._scoredebug[#"random"].scorename = "<unknown string>";
         #/
-        point.score.point = point.score + score;
+        point.score = point.score + score;
     }
 }
 
@@ -1738,7 +1738,7 @@ function positionquery_filter_random(queryresult, min, max) {
 function positionquery_postprocess_sortscore(queryresult, descending = 1) {
     sorted = array::merge_sort(queryresult.data, &_sort_by_score, descending);
     queryresult.data = sorted;
-    queryresult.sorted.queryresult = 1;
+    queryresult.sorted = 1;
 }
 
 // Namespace vehicle_ai/vehicle_ai_shared
@@ -1751,7 +1751,7 @@ function positionquery_filter_outofgoalanchor(queryresult, tolerance = 1) {
             score = -10000 - point.disttogoal * 10;
             /#
                 if (!isdefined(point._scoredebug)) {
-                    point._scoredebug.point = [];
+                    point._scoredebug = [];
                 }
                 if (!isdefined(point._scoredebug[#"outofgoalanchor"])) {
                     point._scoredebug[#"outofgoalanchor"] = spawnstruct();
@@ -1759,7 +1759,7 @@ function positionquery_filter_outofgoalanchor(queryresult, tolerance = 1) {
                 point._scoredebug[#"outofgoalanchor"].score = score;
                 point._scoredebug[#"outofgoalanchor"].scorename = "<unknown string>";
             #/
-            point.score.point = point.score + score;
+            point.score = point.score + score;
         }
     }
 }
@@ -1779,7 +1779,7 @@ function positionquery_filter_engagementdist(queryresult, enemy, engagementdista
     enemy_origin = (enemy.origin[0], enemy.origin[1], 0);
     vec_enemy_to_self = vectornormalize((self.origin[0], self.origin[1], 0) - enemy_origin);
     foreach (point in queryresult.data) {
-        point.distawayfromengagementarea.point = 0;
+        point.distawayfromengagementarea = 0;
         vec_enemy_to_point = (point.origin[0], point.origin[1], 0) - enemy_origin;
         dist_in_front_of_enemy = vectordot(vec_enemy_to_point, vec_enemy_to_self);
         if (abs(dist_in_front_of_enemy) < engagementdistancemin) {
@@ -1787,7 +1787,7 @@ function positionquery_filter_engagementdist(queryresult, enemy, engagementdista
         }
         dist_away_from_sweet_line = abs(dist_in_front_of_enemy - engagementdistance);
         if (dist_away_from_sweet_line > half_engagement_width) {
-            point.distawayfromengagementarea.point = dist_away_from_sweet_line - half_engagement_width;
+            point.distawayfromengagementarea = dist_away_from_sweet_line - half_engagement_width;
         }
         too_far_dist = engagementdistancemax * 1.1;
         too_far_dist_sq = function_a3f6cdac(too_far_dist);
@@ -1830,7 +1830,7 @@ function positionquery_filter_distawayfromtarget(queryresult, targetarray, dista
         if (tooclose) {
             /#
                 if (!isdefined(point._scoredebug)) {
-                    point._scoredebug.point = [];
+                    point._scoredebug = [];
                 }
                 if (!isdefined(point._scoredebug[#"tooclosetoothers"])) {
                     point._scoredebug[#"tooclosetoothers"] = spawnstruct();
@@ -1838,7 +1838,7 @@ function positionquery_filter_distawayfromtarget(queryresult, targetarray, dista
                 point._scoredebug[#"tooclosetoothers"].score = tooclosepenalty;
                 point._scoredebug[#"tooclosetoothers"].scorename = "<unknown string>";
             #/
-            point.score.point = point.score + tooclosepenalty;
+            point.score = point.score + tooclosepenalty;
         }
     }
 }
@@ -1873,11 +1873,11 @@ function positionquery_filter_engagementheight(queryresult, enemy, engagementhei
     engagementheight = 0.5 * (engagementheightmin + engagementheightmax);
     half_height = abs(engagementheightmax - engagementheight);
     foreach (point in queryresult.data) {
-        point.distengagementheight.point = 0;
+        point.distengagementheight = 0;
         targetheight = enemy.origin[2] + engagementheight;
         distfromengagementheight = abs(point.origin[2] - targetheight);
         if (distfromengagementheight > half_height) {
-            point.distengagementheight.point = distfromengagementheight - half_height;
+            point.distengagementheight = distfromengagementheight - half_height;
         }
     }
 }
@@ -1988,13 +1988,13 @@ function function_1d436633(...) {
         self.ai.var_88b0fd29 = gettime();
     }
     var_12cb92c6 = 0;
-    var_1f2328d0 = self function_4794d6a3();
+    goalinfo = self function_4794d6a3();
     newpos = undefined;
-    forcedgoal = is_true(var_1f2328d0.goalforced);
-    isatgoal = is_true(var_1f2328d0.isatgoal) || self isapproachinggoal() && isdefined(self.overridegoalpos);
-    itsbeenawhile = is_true(var_1f2328d0.isatgoal) && gettime() > self.ai.var_88b0fd29;
+    forcedgoal = is_true(goalinfo.goalforced);
+    isatgoal = is_true(goalinfo.isatgoal) || self isapproachinggoal() && isdefined(self.overridegoalpos);
+    itsbeenawhile = is_true(goalinfo.isatgoal) && gettime() > self.ai.var_88b0fd29;
     var_48ea0381 = 0;
-    var_2a8c95a5 = forcedgoal && isdefined(self.overridegoalpos) && distancesquared(self.overridegoalpos, var_1f2328d0.goalpos) < function_a3f6cdac(self.radius);
+    var_2a8c95a5 = forcedgoal && isdefined(self.overridegoalpos) && distancesquared(self.overridegoalpos, goalinfo.goalpos) < function_a3f6cdac(self.radius);
     if (isdefined(self.enemy) && !self haspath()) {
         var_48ea0381 = !self seerecently(self.enemy, randomintrange(3, 5));
         if (issentient(self.enemy) || function_ffa5b184(self.enemy)) {
@@ -2005,12 +2005,12 @@ function function_1d436633(...) {
     var_12cb92c6 = var_12cb92c6 && !var_2a8c95a5;
     if (var_12cb92c6) {
         if (forcedgoal) {
-            newpos = getclosestpointonnavmesh(var_1f2328d0.goalpos, self.radius * 2, self.radius);
+            newpos = getclosestpointonnavmesh(goalinfo.goalpos, self.radius * 2, self.radius);
         } else {
             /#
                 assert(isdefined(self.settings.tacbundle) && self.settings.tacbundle != "<unknown string>", "<unknown string>");
             #/
-            goalarray = function_e057db25(self.settings.tacbundle, var_1f2328d0.goalpos, vararg);
+            goalarray = function_e057db25(self.settings.tacbundle, goalinfo.goalpos, vararg);
             var_817e8fd0 = [];
             if (isdefined(goalarray) && goalarray.size) {
                 foreach (goal in goalarray) {
@@ -2029,7 +2029,7 @@ function function_1d436633(...) {
             }
         }
         if (!isdefined(newpos)) {
-            newpos = getclosestpointonnavmesh(var_1f2328d0.goalpos, self.radius * 2, self.radius);
+            newpos = getclosestpointonnavmesh(goalinfo.goalpos, self.radius * 2, self.radius);
         }
         self.ai.var_88b0fd29 = gettime() + randomintrange(3500, 5000);
     }
@@ -2057,7 +2057,7 @@ function private function_4ab1a63a(goal) {
         if (point.inclaimedlocation) {
             /#
                 if (!isdefined(point._scoredebug)) {
-                    point._scoredebug.point = [];
+                    point._scoredebug = [];
                 }
                 if (!isdefined(point._scoredebug[#"inclaimedlocation"])) {
                     point._scoredebug[#"inclaimedlocation"] = spawnstruct();
@@ -2065,12 +2065,12 @@ function private function_4ab1a63a(goal) {
                 point._scoredebug[#"inclaimedlocation"].score = -5000;
                 point._scoredebug[#"inclaimedlocation"].scorename = "<unknown string>";
             #/
-            point.score.point = point.score + -5000;
+            point.score = point.score + -5000;
         }
         score = randomfloatrange(0, 80);
         /#
             if (!isdefined(point._scoredebug)) {
-                point._scoredebug.point = [];
+                point._scoredebug = [];
             }
             if (!isdefined(point._scoredebug[#"random"])) {
                 point._scoredebug[#"random"] = spawnstruct();
@@ -2078,7 +2078,7 @@ function private function_4ab1a63a(goal) {
             point._scoredebug[#"random"].score = score;
             point._scoredebug[#"random"].scorename = "<unknown string>";
         #/
-        point.score.point = point.score + score;
+        point.score = point.score + score;
     }
     if (queryresult.data.size > 0) {
         positionquery_postprocess_sortscore(queryresult);
@@ -2129,7 +2129,7 @@ function function_1e0d693b(goal, enemy) {
             score = -5000 - point.disttogoal * 2;
             /#
                 if (!isdefined(point._scoredebug)) {
-                    point._scoredebug.point = [];
+                    point._scoredebug = [];
                 }
                 if (!isdefined(point._scoredebug[#"outofgoalanchor"])) {
                     point._scoredebug[#"outofgoalanchor"] = spawnstruct();
@@ -2137,12 +2137,12 @@ function function_1e0d693b(goal, enemy) {
                 point._scoredebug[#"outofgoalanchor"].score = score;
                 point._scoredebug[#"outofgoalanchor"].scorename = "<unknown string>";
             #/
-            point.score.point = point.score + score;
+            point.score = point.score + score;
         }
         if (!point.visibility) {
             /#
                 if (!isdefined(point._scoredebug)) {
-                    point._scoredebug.point = [];
+                    point._scoredebug = [];
                 }
                 if (!isdefined(point._scoredebug[#"no visibility"])) {
                     point._scoredebug[#"no visibility"] = spawnstruct();
@@ -2150,11 +2150,11 @@ function function_1e0d693b(goal, enemy) {
                 point._scoredebug[#"no visibility"].score = -5000;
                 point._scoredebug[#"no visibility"].scorename = "<unknown string>";
             #/
-            point.score.point = point.score + -5000;
+            point.score = point.score + -5000;
         }
         /#
             if (!isdefined(point._scoredebug)) {
-                point._scoredebug.point = [];
+                point._scoredebug = [];
             }
             if (!isdefined(point._scoredebug[#"engagementdist"])) {
                 point._scoredebug[#"engagementdist"] = spawnstruct();
@@ -2162,10 +2162,10 @@ function function_1e0d693b(goal, enemy) {
             point._scoredebug[#"engagementdist"].score = point.distawayfromengagementarea * -1;
             point._scoredebug[#"engagementdist"].scorename = "<unknown string>";
         #/
-        point.score.point = point.score + point.distawayfromengagementarea * -1;
+        point.score = point.score + point.distawayfromengagementarea * -1;
         /#
             if (!isdefined(point._scoredebug)) {
-                point._scoredebug.point = [];
+                point._scoredebug = [];
             }
             if (!isdefined(point._scoredebug[#"hash_6c444b535ec20313"])) {
                 point._scoredebug[#"hash_6c444b535ec20313"] = spawnstruct();
@@ -2173,11 +2173,11 @@ function function_1e0d693b(goal, enemy) {
             point._scoredebug[#"hash_6c444b535ec20313"].score = mapfloat(0, prefereddistawayfromorigin, -5000, 0, point.disttoorigin2d);
             point._scoredebug[#"hash_6c444b535ec20313"].scorename = "<unknown string>";
         #/
-        point.score.point = point.score + mapfloat(0, prefereddistawayfromorigin, -5000, 0, point.disttoorigin2d);
+        point.score = point.score + mapfloat(0, prefereddistawayfromorigin, -5000, 0, point.disttoorigin2d);
         if (point.inclaimedlocation) {
             /#
                 if (!isdefined(point._scoredebug)) {
-                    point._scoredebug.point = [];
+                    point._scoredebug = [];
                 }
                 if (!isdefined(point._scoredebug[#"inclaimedlocation"])) {
                     point._scoredebug[#"inclaimedlocation"] = spawnstruct();
@@ -2185,14 +2185,14 @@ function function_1e0d693b(goal, enemy) {
                 point._scoredebug[#"inclaimedlocation"].score = -5000;
                 point._scoredebug[#"inclaimedlocation"].scorename = "<unknown string>";
             #/
-            point.score.point = point.score + -5000;
+            point.score = point.score + -5000;
         }
         distfrompreferredheight = abs(point.origin[2] - goalheight);
         if (distfrompreferredheight > var_20b5eeff) {
             heightscore = mapfloat(var_20b5eeff, 10000, 0, 2500, distfrompreferredheight) * -1;
             /#
                 if (!isdefined(point._scoredebug)) {
-                    point._scoredebug.point = [];
+                    point._scoredebug = [];
                 }
                 if (!isdefined(point._scoredebug[#"height"])) {
                     point._scoredebug[#"height"] = spawnstruct();
@@ -2200,12 +2200,12 @@ function function_1e0d693b(goal, enemy) {
                 point._scoredebug[#"height"].score = heightscore;
                 point._scoredebug[#"height"].scorename = "<unknown string>";
             #/
-            point.score.point = point.score + heightscore;
+            point.score = point.score + heightscore;
         }
         score = randomfloatrange(0, 80);
         /#
             if (!isdefined(point._scoredebug)) {
-                point._scoredebug.point = [];
+                point._scoredebug = [];
             }
             if (!isdefined(point._scoredebug[#"random"])) {
                 point._scoredebug[#"random"] = spawnstruct();
@@ -2213,7 +2213,7 @@ function function_1e0d693b(goal, enemy) {
             point._scoredebug[#"random"].score = score;
             point._scoredebug[#"random"].scorename = "<unknown string>";
         #/
-        point.score.point = point.score + score;
+        point.score = point.score + score;
     }
     if (queryresult.data.size > 0) {
         positionquery_postprocess_sortscore(queryresult);
@@ -2242,7 +2242,7 @@ function private function_4646fb11(goal) {
             score = -5000 - point.disttogoal * 2;
             /#
                 if (!isdefined(point._scoredebug)) {
-                    point._scoredebug.point = [];
+                    point._scoredebug = [];
                 }
                 if (!isdefined(point._scoredebug[#"outofgoalanchor"])) {
                     point._scoredebug[#"outofgoalanchor"] = spawnstruct();
@@ -2250,12 +2250,12 @@ function private function_4646fb11(goal) {
                 point._scoredebug[#"outofgoalanchor"].score = score;
                 point._scoredebug[#"outofgoalanchor"].scorename = "<unknown string>";
             #/
-            point.score.point = point.score + score;
+            point.score = point.score + score;
         }
         if (point.inclaimedlocation) {
             /#
                 if (!isdefined(point._scoredebug)) {
-                    point._scoredebug.point = [];
+                    point._scoredebug = [];
                 }
                 if (!isdefined(point._scoredebug[#"inclaimedlocation"])) {
                     point._scoredebug[#"inclaimedlocation"] = spawnstruct();
@@ -2263,12 +2263,12 @@ function private function_4646fb11(goal) {
                 point._scoredebug[#"inclaimedlocation"].score = -5000;
                 point._scoredebug[#"inclaimedlocation"].scorename = "<unknown string>";
             #/
-            point.score.point = point.score + -5000;
+            point.score = point.score + -5000;
         }
         score = randomfloatrange(0, 80);
         /#
             if (!isdefined(point._scoredebug)) {
-                point._scoredebug.point = [];
+                point._scoredebug = [];
             }
             if (!isdefined(point._scoredebug[#"random"])) {
                 point._scoredebug[#"random"] = spawnstruct();
@@ -2276,7 +2276,7 @@ function private function_4646fb11(goal) {
             point._scoredebug[#"random"].score = score;
             point._scoredebug[#"random"].scorename = "<unknown string>";
         #/
-        point.score.point = point.score + score;
+        point.score = point.score + score;
     }
     if (queryresult.data.size > 0) {
         positionquery_postprocess_sortscore(queryresult);
@@ -2302,17 +2302,17 @@ function function_b1bd875a() {
         self.ai.var_88b0fd29 = gettime() + 1000;
         return;
     }
-    var_1f2328d0 = self function_4794d6a3();
+    goalinfo = self function_4794d6a3();
     /#
-        assert(isdefined(var_1f2328d0.goalpos));
+        assert(isdefined(goalinfo.goalpos));
     #/
     var_12cb92c6 = 0;
     newpos = undefined;
     point = undefined;
     enemy = self.enemy;
     currenttime = gettime();
-    forcedgoal = is_true(var_1f2328d0.goalforced);
-    isatgoal = is_true(var_1f2328d0.isatgoal);
+    forcedgoal = is_true(goalinfo.goalforced);
+    isatgoal = is_true(goalinfo.isatgoal);
     haspath = self haspath();
     isapproachinggoal = !isatgoal && haspath && self isapproachinggoal();
     itsbeenawhile = currenttime >= self.ai.var_88b0fd29;
@@ -2324,39 +2324,39 @@ function function_b1bd875a() {
             var_48ea0381 = !self attackedrecently(enemy, randomintrange(5, 7));
         }
     }
-    var_3e782e85 = forcedgoal || var_1f2328d0.goalradius < 2 * self.radius && var_1f2328d0.goalheight < 2 * self.radius;
+    var_3e782e85 = forcedgoal || goalinfo.goalradius < 2 * self.radius && goalinfo.goalheight < 2 * self.radius;
     var_f5ae7ee0 = isatgoal && !var_3e782e85 && (itsbeenawhile || var_48ea0381);
     var_633ff15a = !isatgoal && (!isapproachinggoal || var_ed3f071f);
     var_12cb92c6 = var_f5ae7ee0 || var_633ff15a;
     if (var_12cb92c6) {
         if (!isatgoal || !var_3e782e85) {
             if (var_3e782e85) {
-                newpos = self getclosestpointonnavvolume(var_1f2328d0.goalpos, self.radius * 2);
+                newpos = self getclosestpointonnavvolume(goalinfo.goalpos, self.radius * 2);
             } else if (!isatgoal) {
-                point = function_4ab1a63a(var_1f2328d0);
+                point = function_4ab1a63a(goalinfo);
             } else if (isdefined(enemy)) {
-                point = function_1e0d693b(var_1f2328d0, enemy);
+                point = function_1e0d693b(goalinfo, enemy);
             } else {
-                point = function_4646fb11(var_1f2328d0);
+                point = function_4646fb11(goalinfo);
             }
             if (isdefined(point)) {
                 newpos = point.origin;
             }
             if (!isdefined(newpos)) {
-                newpos = self getclosestpointonnavvolume(var_1f2328d0.goalpos, self.radius * 2);
+                newpos = self getclosestpointonnavvolume(goalinfo.goalpos, self.radius * 2);
             }
             if (!isdefined(newpos)) {
                 /#
-                    record3dtext("<unknown string>" + var_1f2328d0.goalpos + "<unknown string>" + var_1f2328d0.goalradius + "<unknown string>" + var_1f2328d0.goalheight, self.origin + vectorscale((0, 0, 1), 8), (1, 0, 0));
-                    recordline(self.origin, var_1f2328d0.goalpos, (1, 0, 0));
+                    record3dtext("<unknown string>" + goalinfo.goalpos + "<unknown string>" + goalinfo.goalradius + "<unknown string>" + goalinfo.goalheight, self.origin + vectorscale((0, 0, 1), 8), (1, 0, 0));
+                    recordline(self.origin, goalinfo.goalpos, (1, 0, 0));
                 #/
-                newpos = var_1f2328d0.goalpos;
+                newpos = goalinfo.goalpos;
             } else if (!self isingoal(newpos)) {
                 /#
-                    record3dtext("<unknown string>" + newpos + "<unknown string>" + var_1f2328d0.goalpos + "<unknown string>" + var_1f2328d0.goalradius + "<unknown string>" + var_1f2328d0.goalheight, self.origin + vectorscale((0, 0, 1), 8), (1, 0, 0));
+                    record3dtext("<unknown string>" + newpos + "<unknown string>" + goalinfo.goalpos + "<unknown string>" + goalinfo.goalradius + "<unknown string>" + goalinfo.goalheight, self.origin + vectorscale((0, 0, 1), 8), (1, 0, 0));
                     recordline(self.origin, newpos, (1, 0, 0));
                 #/
-                newpos = var_1f2328d0.goalpos;
+                newpos = goalinfo.goalpos;
             }
             if (distancesquared(self.origin, newpos) < function_a3f6cdac(self.radius * 2)) {
                 newpos = undefined;

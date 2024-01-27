@@ -25,9 +25,9 @@ function function_7d467651(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwasdemojump) {
         var_73524bb4 = getentarray(fieldname, "portal_fx", "targetname");
         foreach (var_2c517d4c in var_73524bb4) {
-            var_2c517d4c.var_b875cdb1.var_2c517d4c = playfx(fieldname, #"hash_3af1d592cda71a5c", var_2c517d4c.origin, anglestoforward(var_2c517d4c.angles), anglestoup(var_2c517d4c.angles));
+            var_2c517d4c.var_b875cdb1 = playfx(fieldname, #"hash_3af1d592cda71a5c", var_2c517d4c.origin, anglestoforward(var_2c517d4c.angles), anglestoup(var_2c517d4c.angles));
             if (!isdefined(var_2c517d4c.var_a3b04735)) {
-                var_2c517d4c.var_a3b04735.var_2c517d4c = var_2c517d4c playloopsound(#"hash_722697efdfb3562f");
+                var_2c517d4c.var_a3b04735 = var_2c517d4c playloopsound(#"hash_722697efdfb3562f");
             }
         }
     } else {
@@ -51,7 +51,7 @@ function function_e4ea3f5f(localclientnum, *oldval, *newval, *bnewent, *binitial
     var_ca9ffa6a = getentarray(bwasdemojump, "gold_teleporter", "targetname");
     foreach (teleporter in var_ca9ffa6a) {
         teleporter function_619a5c20();
-        teleporter.var_fc558e74.teleporter = "gold_teleporter";
+        teleporter.var_fc558e74 = "gold_teleporter";
     }
 }
 

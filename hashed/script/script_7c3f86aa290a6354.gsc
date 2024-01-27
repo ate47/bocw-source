@@ -61,7 +61,7 @@ function function_d186cb81() {
     var_57652081 = struct::get_array("survival_door");
     foreach (var_2b02295f in var_57652081) {
         var_2b02295f.var_a7417bea = var_51eefac8;
-        var_2b02295f.s_boards.var_2b02295f = arraygetclosest(var_2b02295f.origin, struct::get_array("survival_door_boards"));
+        var_2b02295f.s_boards = arraygetclosest(var_2b02295f.origin, struct::get_array("survival_door_boards"));
         use_trigger = spawn("trigger_radius_use", var_2b02295f.origin, 0, 96, 96, 1);
         /#
             assert(isdefined(use_trigger));
@@ -76,14 +76,14 @@ function function_d186cb81() {
         /#
             assert(isdefined(var_56d14168));
         #/
-        var_56d14168.angles.var_56d14168 = var_2b02295f.angles;
-        var_56d14168.health.var_56d14168 = 10000000;
+        var_56d14168.angles = var_2b02295f.angles;
+        var_56d14168.health = 10000000;
         var_56d14168 setcandamage(1);
         var_56d14168 setmodel("p8_wz_door_01");
-        var_56d14168.var_1c553fa4.var_56d14168 = 1;
-        var_56d14168.damage_level.var_56d14168 = 0;
-        var_56d14168.var_27a45076.var_56d14168 = 0;
-        var_56d14168.var_9420d4b4.var_56d14168 = 0;
+        var_56d14168.var_1c553fa4 = 1;
+        var_56d14168.damage_level = 0;
+        var_56d14168.var_27a45076 = 0;
+        var_56d14168.var_9420d4b4 = 0;
         var_2b02295f.trigger = use_trigger;
         var_2b02295f.door = var_56d14168;
         use_trigger.parent_struct = var_2b02295f;
@@ -178,7 +178,7 @@ function private door_think(eventstruct) {
         var_1be3aa53 = vectordot(player.origin - door.origin, anglestoforward(door.angles)) > 0;
         if (door.var_27a45076 == 0 && var_1be3aa53) {
             door rotateto(var_f6f828b2, 0.5);
-            door.var_27a45076.door = 1;
+            door.var_27a45076 = 1;
             function_be2c24a3(parent_struct.target, 1);
             if (!is_true(door.var_9420d4b4)) {
                 self sethintstring(#"hash_3197c6dc91249ca2");
@@ -187,7 +187,7 @@ function private door_think(eventstruct) {
             }
         } else if (door.var_27a45076 == 0 && !var_1be3aa53) {
             door rotateto(var_bc7389e4, 0.5);
-            door.var_27a45076.door = -1;
+            door.var_27a45076 = -1;
             function_be2c24a3(parent_struct.target, 1);
             if (!is_true(door.var_9420d4b4)) {
                 self sethintstring(#"hash_3197c6dc91249ca2");
@@ -196,14 +196,14 @@ function private door_think(eventstruct) {
             }
         } else if (door.var_27a45076 == 1) {
             door rotateto(var_bc7389e4, 0.5);
-            door.var_27a45076.door = 0;
+            door.var_27a45076 = 0;
             function_be2c24a3(parent_struct.target, 0);
             if (!is_true(door.var_9420d4b4)) {
                 self sethintstring(#"hash_e0e56e669b6a886");
             }
         } else if (door.var_27a45076 == -1) {
             door rotateto(var_f6f828b2, 0.5);
-            door.var_27a45076.door = 0;
+            door.var_27a45076 = 0;
             function_be2c24a3(parent_struct.target, 0);
             if (!is_true(door.var_9420d4b4)) {
                 self sethintstring(#"hash_e0e56e669b6a886");
@@ -308,22 +308,22 @@ function function_55859752() {
         /#
             assert(isdefined(door));
         #/
-        door.angles.door = self.angles;
-        door.health.door = 10000000;
+        door.angles = self.angles;
+        door.health = 10000000;
         door setcandamage(1);
-        door.var_27a45076.door = 0;
+        door.var_27a45076 = 0;
         self.door = door;
-        door.parent_struct.door = self;
+        door.parent_struct = self;
         function_be2c24a3(self.target, 0);
     } else if (door.var_9420d4b4 && door.damage_level <= 0 || door.var_27a45076 != 0) {
         return 0;
     }
-    door.damage_level.door = 0;
-    door.var_1c553fa4.door = 1;
+    door.damage_level = 0;
+    door.var_1c553fa4 = 1;
     door setmodel(self.var_a7417bea[door.damage_level]);
-    door.origin.door = self.s_boards.origin;
+    door.origin = self.s_boards.origin;
     door setscale(self.s_boards.modelscale);
-    door.var_9420d4b4.door = 1;
+    door.var_9420d4b4 = 1;
     namespace_85745671::function_1ede0cd3(self.target, self.door);
     door playsound(#"hash_4ef96dfa0f645331");
     return 1;
@@ -476,16 +476,16 @@ function function_673a485() {
         /#
             assert(isdefined(window));
         #/
-        window.angles.window = self.angles;
-        window.health.window = 10000000;
+        window.angles = self.angles;
+        window.health = 10000000;
         window setcandamage(1);
         self.window = window;
-        window.parent_struct.window = self;
+        window.parent_struct = self;
     } else if (window.damage_level <= 0) {
         return 0;
     }
-    window.damage_level.window = 0;
-    window.var_1c553fa4.window = 1;
+    window.damage_level = 0;
+    window.var_1c553fa4 = 1;
     window setmodel(self.var_811c2d3a[window.damage_level]);
     window playsound(#"hash_65d45ffe1b39c009");
     namespace_85745671::function_1ede0cd3(self.target, self.window);

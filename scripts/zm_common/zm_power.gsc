@@ -318,7 +318,7 @@ function add_powered_item(power_on_func, power_off_func, range_func, cost_func, 
     powered.cost_func = cost_func;
     powered.power = self_powered;
     powered.powered_count = self_powered;
-    powered.depowered_count.powered = 0;
+    powered.depowered_count = 0;
     level.powered_items[level.powered_items.size] = powered;
     return powered;
 }
@@ -342,7 +342,7 @@ function add_temp_powered_item(power_on_func, power_off_func, range_func, cost_f
             if (powered [[ powered.range_func ]](1, localpower.origin, localpower.radius)) {
                 powered change_power(1, localpower.origin, localpower.radius);
                 if (!isdefined(localpower.added_list)) {
-                    localpower.added_list.localpower = [];
+                    localpower.added_list = [];
                 }
                 localpower.added_list[localpower.added_list.size] = powered;
             }
@@ -455,7 +455,7 @@ function add_local_power(origin, radius) {
     #/
     localpower.origin = origin;
     localpower.radius = radius;
-    localpower.enabled_list.localpower = change_power_in_radius(1, origin, radius);
+    localpower.enabled_list = change_power_in_radius(1, origin, radius);
     level.local_power[level.local_power.size] = localpower;
     return localpower;
 }
@@ -877,7 +877,7 @@ function turn_power_on_and_open_doors(power_zone, var_9d1c1c4a = 1) {
             } else if (isdefined(door.script_int) && door.script_int == power_zone && (door.script_noteworthy == "electric_door" || door.script_noteworthy == "electric_buyable_door")) {
                 door notify(#"power_on");
                 if (isdefined(level.temporary_power_switch_logic)) {
-                    door.power_on.door = 1;
+                    door.power_on = 1;
                 }
             } else if (isdefined(door.script_int) && door.script_int == power_zone && door.script_noteworthy === "local_electric_door") {
                 door notify(#"local_power_on");
@@ -911,7 +911,7 @@ function turn_power_off_and_close_doors(power_zone) {
             } else if (isdefined(door.script_int) && door.script_int == power_zone && (door.script_noteworthy == "electric_door" || door.script_noteworthy == "electric_buyable_door")) {
                 door notify(#"power_on");
                 if (isdefined(level.temporary_power_switch_logic)) {
-                    door.power_on.door = 0;
+                    door.power_on = 0;
                     door sethintstring(#"zombie/need_power");
                     door notify(#"kill_door_think");
                     door thread zm_blockers::door_think();

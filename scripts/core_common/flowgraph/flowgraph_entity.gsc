@@ -61,8 +61,8 @@ function function_fd19ef53(e_entity, str_field) {
 // Params 4, eflags: 0x0
 // Checksum 0xc3bf4a96, Offset: 0x218
 // Size: 0x38
-function function_7e40ae2d(*x, e_entity, str_field, var_b8003601) {
-    e_entity.(str_field) = var_b8003601;
+function function_7e40ae2d(*x, e_entity, str_field, var_value) {
+    e_entity.(str_field) = var_value;
     return 1;
 }
 

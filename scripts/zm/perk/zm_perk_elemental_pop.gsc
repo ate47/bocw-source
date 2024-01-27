@@ -93,16 +93,16 @@ function set_clientfield(*state) {
 // Checksum 0xd84a3365, Offset: 0x840
 // Size: 0xb2
 function perk_machine_setup(use_trigger, perk_machine, bump_trigger, *collision) {
-    perk_machine.script_sound.perk_machine = "mus_perks_elementalpop_jingle";
-    perk_machine.script_string.perk_machine = "elemental_perk";
-    perk_machine.script_label.perk_machine = "mus_perks_elementalpop_sting";
-    perk_machine.target.perk_machine = "vending_elemental_pop";
-    bump_trigger.script_string.bump_trigger = "elemental_perk";
-    bump_trigger.targetname.bump_trigger = "vending_elemental_pop";
+    perk_machine.script_sound = "mus_perks_elementalpop_jingle";
+    perk_machine.script_string = "elemental_perk";
+    perk_machine.script_label = "mus_perks_elementalpop_sting";
+    perk_machine.target = "vending_elemental_pop";
+    bump_trigger.script_string = "elemental_perk";
+    bump_trigger.targetname = "vending_elemental_pop";
     if (isdefined(collision)) {
-        collision.script_string.collision = "elemental_perk";
+        collision.script_string = "elemental_perk";
     }
-    bump_trigger.var_3ee46cbd.bump_trigger = &function_290b5aa8;
+    bump_trigger.var_3ee46cbd = &function_290b5aa8;
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
@@ -119,7 +119,7 @@ function function_abddd809(inflictor, attacker, damage, flags, meansofdeath, wea
                 return flags;
             }
             if (!isdefined(damage.var_4caed594)) {
-                damage.var_4caed594.damage = 0;
+                damage.var_4caed594 = 0;
             }
             if (math::cointoss(5) && flags > 1 && damage is_valid_weapon(var_fd90b0bb) && damage.var_4caed594 + int(15 * 1000) < gettime()) {
                 var_43cad97a = flags > self.health;
@@ -127,7 +127,7 @@ function function_abddd809(inflictor, attacker, damage, flags, meansofdeath, wea
                 var_3d46284b = getarraykeys(level.var_e44e90d6);
                 arrayremovevalue(var_3d46284b, "ammomod_electriccherry");
                 var_1bfeafad = array::random(var_3d46284b);
-                damage.var_2defbefd.damage = 1;
+                damage.var_2defbefd = 1;
                 var_1799ae59 = getweapon(#"hash_2b2738038b4c33be");
                 var_bebe15e1 = 0;
                 weapon = "MOD_PISTOL_BULLET";
@@ -142,7 +142,7 @@ function function_abddd809(inflictor, attacker, damage, flags, meansofdeath, wea
                 if (self.var_6f84b820 === #"normal" || self.var_6f84b820 === #"special" && isdefined(n_tier) && n_tier > 3) {
                     damage clientfield::increment_to_player("" + #"hash_12c6e46c315cd43b", 1);
                     aat::aat_response(var_43cad97a, attacker, damage, flags, meansofdeath, weapon, var_1799ae59, var_bebe15e1, vpoint, vdir, shitloc, psoffsettime, boneindex, surfacetype);
-                    damage.var_4caed594.damage = gettime();
+                    damage.var_4caed594 = gettime();
                 }
                 damage thread function_751b9d86(var_1799ae59);
             }

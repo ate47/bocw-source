@@ -119,7 +119,7 @@ function delete_all(&array) {
             if (isstruct(ent)) {
                 ent struct::delete();
             } else if (isdefined(ent.__vtable)) {
-                ent._deleted.ent = 1;
+                ent._deleted = 1;
                 ent notify(#"death");
                 ent = undefined;
             } else {
@@ -255,7 +255,7 @@ function wait_till(&array, notifies, n_timeout) {
         __s util::delay_notify(n_timeout, "timeout");
     }
     s_tracker = spawnstruct();
-    s_tracker._wait_count.s_tracker = 0;
+    s_tracker._wait_count = 0;
     foreach (ent in array) {
         if (isdefined(ent)) {
             ent thread util::timeout(n_timeout, &util::_waitlogic, s_tracker, notifies);
@@ -277,7 +277,7 @@ function wait_till_match(&array, str_notify, str_match, n_timeout) {
         __s util::delay_notify(n_timeout, "timeout");
     }
     s_tracker = spawnstruct();
-    s_tracker._array_wait_count.s_tracker = 0;
+    s_tracker._array_wait_count = 0;
     foreach (ent in array) {
         if (isdefined(ent)) {
             s_tracker._array_wait_count++;

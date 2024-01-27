@@ -43,7 +43,7 @@ function private on_begin() {
     foreach (player in getplayers()) {
         player function_f0b698a7();
         if (!isdefined(player.var_7864a0f6)) {
-            player.var_7864a0f6.player = player zm_trial_util::function_3f8a4145(0);
+            player.var_7864a0f6 = player zm_trial_util::function_3f8a4145(0);
             player function_85611c27();
         }
     }

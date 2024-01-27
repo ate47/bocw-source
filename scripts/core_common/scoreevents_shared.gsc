@@ -165,7 +165,7 @@ function processscoreevent(event, player, victim, weapon, var_36f23f1f, var_dbaa
             var_8e0fb6fa = isdefined(player function_5ab9855c(var_a0af8e8f)) ? player function_5ab9855c(var_a0af8e8f) : 0;
             var_de0c8b34 = var_8e0fb6fa - var_38f824bb;
             if (var_de0c8b34 > 0) {
-                level thread namespace_341c57b3::function_18135b72(#"hash_b88b6d2e0028e13", {#weaponpickedup:pickedup, #value:var_de0c8b34, #statname:#"xpearned", #weapon:weapon, #player:player});
+                level thread telemetry::function_18135b72(#"hash_b88b6d2e0028e13", {#weaponpickedup:pickedup, #value:var_de0c8b34, #statname:#"xpearned", #weapon:weapon, #player:player});
             }
         }
         if (level.hardcoremode && isdefined(level.var_c26a3a23[event])) {

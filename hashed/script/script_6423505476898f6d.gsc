@@ -101,7 +101,7 @@ function private function_a35f798(var_85b47952, increment, var_b6cc4c20) {
     var_5f70cf61 = 0;
     finished = 0;
     var_a6406def = 0;
-    var_8652fcd1 = 65536 & 1 & 268435456;
+    var_8652fcd1 = 65536 | 1 | 268435456;
     var_338875fc = 179;
     if (isdefined(self.m_s_bundle.door_swing_angle)) {
         var_338875fc = abs(self.m_s_bundle.door_swing_angle);
@@ -152,7 +152,7 @@ function private function_1d47f826(yaw, var_b6cc4c20, *var_43119537) {
     end = var_ded121f8 + self doors::function_eea7cdb4(1) * self.var_e9da41b9;
     mins = vectorscale((-1, -1, 0), 6);
     maxs = (6, 6, 40);
-    var_84a65cf6 = physicstrace(start, end, mins, maxs, self.m_e_door, 1 & 8);
+    var_84a65cf6 = physicstrace(start, end, mins, maxs, self.m_e_door, 1 | 8);
     var_fe34498d = distance2d(start, var_84a65cf6[#"position"]);
     /#
         if (getdvarint(#"hash_5171254138328d84") == 2) {
@@ -182,7 +182,7 @@ function private function_1d47f826(yaw, var_b6cc4c20, *var_43119537) {
     #/
     if (var_fe34498d > 3) {
         start = var_ded121f8 + self doors::function_eea7cdb4(var_f9770d53) * self.var_e9da41b9 * 0.9;
-        var_5124c314 = physicstrace(start, end, mins, maxs, self.m_e_door, 1 & 8);
+        var_5124c314 = physicstrace(start, end, mins, maxs, self.m_e_door, 1 | 8);
         var_17a48baf = distance2d(start, var_5124c314[#"position"]);
         /#
             if (getdvarint(#"hash_5171254138328d84") == 2) {
@@ -579,8 +579,8 @@ function private function_8fc67f7d() {
 // Params 2, eflags: 0x4
 // Checksum 0x22c053e4, Offset: 0x2040
 // Size: 0x3a
-function private function_6b2e389a(var_43883094, value2) {
-    diff = angleclamp180(var_43883094 - value2);
+function private function_6b2e389a(value1, value2) {
+    diff = angleclamp180(value1 - value2);
     return diff;
 }
 

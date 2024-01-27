@@ -68,9 +68,9 @@ function function_7023aae4(trap, var_7c56394 = 0, modelname) {
     if (isdefined(modelname)) {
         hazard = namespace_ec06fe4a::function_e22ae9b3(trap.origin, modelname);
         if (isdefined(hazard)) {
-            hazard.targetname.hazard = "hazard";
-            hazard.var_fd5301f9.hazard = "killbox";
-            hazard.angles.hazard = trap.angles;
+            hazard.targetname = "hazard";
+            hazard.var_fd5301f9 = "killbox";
+            hazard.angles = trap.angles;
             hazard enablelinkto();
         }
         trap.script_model = hazard;
@@ -93,29 +93,29 @@ function function_bbdbcaa5(trap, page = 0) {
         /#
             assert(args.size >= 4, "<unknown string>");
         #/
-        trap.type.trap = hash(args[0]);
-        trap.length.trap = int(args[1]);
-        trap.width.trap = int(args[2]);
-        trap.height.trap = int(args[3]);
-        trap.teleport.trap = 1;
+        trap.type = hash(args[0]);
+        trap.length = int(args[1]);
+        trap.width = int(args[2]);
+        trap.height = int(args[3]);
+        trap.teleport = 1;
         if (args.size > 4) {
-            trap.teleport.trap = int(args[4]);
+            trap.teleport = int(args[4]);
         }
-        trap.damage.trap = 50;
-        trap.var_f3e30707.trap = 1;
+        trap.damage = 50;
+        trap.var_f3e30707 = 1;
         if (args.size > 5) {
-            trap.damage.trap = int(args[5]);
+            trap.damage = int(args[5]);
         }
         if (args.size > 6) {
-            trap.var_f3e30707.trap = int(args[6]);
+            trap.var_f3e30707 = int(args[6]);
         }
         if (trap.type === #"acid") {
-            trap.var_2e485cc.trap = getstatuseffect(#"hash_69c2a47bf2322b6b");
+            trap.var_2e485cc = getstatuseffect(#"hash_69c2a47bf2322b6b");
         }
         if (trap.type === #"fire") {
-            trap.var_2e485cc.trap = getstatuseffect(#"hash_69374f563cb01313");
+            trap.var_2e485cc = getstatuseffect(#"hash_69374f563cb01313");
         }
-        trap.initialized.trap = 1;
+        trap.initialized = 1;
     }
     if (page) {
         if (!isdefined(level.doa.var_e60dfadc)) {
@@ -144,7 +144,7 @@ function function_d4a86caf() {
             if (isdefined(trap.var_eb9d64bb) && time < trap.var_eb9d64bb) {
                 continue;
             }
-            trap.var_eb9d64bb.trap = time + 2000 + randomint(600);
+            trap.var_eb9d64bb = time + 2000 + randomint(600);
             if (!is_true(trap.active)) {
                 activate = 0;
                 if (isdefined(trap.var_f8660931)) {
@@ -154,11 +154,11 @@ function function_d4a86caf() {
                     }
                 }
                 if (!activate) {
-                    trap.var_f8660931.trap = namespace_ec06fe4a::function_6eacecf5(trap.origin, 3200);
+                    trap.var_f8660931 = namespace_ec06fe4a::function_6eacecf5(trap.origin, 3200);
                     if (isdefined(trap.var_f8660931)) {
                         activate = 1;
                     } else {
-                        trap.var_f8660931.trap = namespace_ec06fe4a::function_bd3709ce(trap.origin, 1200);
+                        trap.var_f8660931 = namespace_ec06fe4a::function_bd3709ce(trap.origin, 1200);
                         if (isdefined(trap.var_f8660931)) {
                             activate = 1;
                         }
@@ -166,11 +166,11 @@ function function_d4a86caf() {
                 }
                 if (activate) {
                     function_7023aae4(trap, 1);
-                    trap.var_eb9d64bb.trap = trap.var_eb9d64bb + 5000;
+                    trap.var_eb9d64bb = trap.var_eb9d64bb + 5000;
                     namespace_1e25ad94::function_f5f0c0f8("Paging IN killbox trap at:" + trap.origin);
                 }
             } else {
-                trap.var_f8660931.trap = namespace_ec06fe4a::function_f3eab80e(trap.origin, 3600);
+                trap.var_f8660931 = namespace_ec06fe4a::function_f3eab80e(trap.origin, 3600);
                 if (!isdefined(trap.var_f8660931)) {
                     trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
                     namespace_1e25ad94::function_f5f0c0f8("Paging out killbox trap at:" + trap.origin);
@@ -264,13 +264,13 @@ function function_d1b295d7(trap) {
             continue;
         }
         if (!isdefined(guy.var_a138f7e0)) {
-            guy.var_a138f7e0.guy = 0;
+            guy.var_a138f7e0 = 0;
         }
         time = gettime();
         if (guy.var_a138f7e0 > gettime()) {
             continue;
         }
-        guy.var_a138f7e0.guy = time + var_f3e30707;
+        guy.var_a138f7e0 = time + var_f3e30707;
         if (isplayer(guy)) {
             guy dodamage(isdefined(trap.damage) ? trap.damage : guy.health + 100, guy.origin);
             guy playrumbleonentity("damage_light");
@@ -279,13 +279,13 @@ function function_d1b295d7(trap) {
             }
         } else {
             if (!isdefined(guy.var_4ff10643)) {
-                guy.var_4ff10643.guy = 0;
+                guy.var_4ff10643 = 0;
             }
             if (guy.var_4ff10643 < gettime()) {
                 if (trap.type === #"fire") {
                     guy namespace_83eb6304::function_3ecfde67("burn_zombie");
                 }
-                guy.var_4ff10643.guy = gettime() + 1000;
+                guy.var_4ff10643 = gettime() + 1000;
             }
             if (trap.type === #"fire") {
                 guy thread namespace_ec06fe4a::function_570729f0(randomfloatrange(0.5, 2.2));

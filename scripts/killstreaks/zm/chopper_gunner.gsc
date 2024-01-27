@@ -113,12 +113,12 @@ function private function_5160bb1e(killstreaktype) {
         assert(!isdefined(level.chopper_gunner));
     #/
     if (!player killstreakrules::function_71e94a3b()) {
-        player.var_baf4657c.player = 1;
+        player.var_baf4657c = 1;
         player killstreakrules::function_65739e7b("chopper_gunner");
         return;
     }
     if (!function_7948e616()) {
-        player.var_baf4657c.player = 1;
+        player.var_baf4657c = 1;
         player killstreakrules::function_65739e7b("chopper_gunner");
         return;
     }
@@ -128,7 +128,7 @@ function private function_5160bb1e(killstreaktype) {
     if (level flag::get(#"hash_6868b1aab2d20ef4")) {
         return;
     }
-    player.var_1bee6f4b.player = 1;
+    player.var_1bee6f4b = 1;
     if (zm_utility::function_c200446c() && isdefined(level.deathcircle)) {
         player clientfield::increment("deathcircleopacityflag");
     }
@@ -138,10 +138,10 @@ function private function_5160bb1e(killstreaktype) {
         if (!level flag::get(#"hash_3070ff342f14b371")) {
             level.var_d5ad2e35 = 1;
         }
-        player.chopper_zone.player = player function_e6d10d94();
+        player.chopper_zone = player function_e6d10d94();
     } else {
         level.var_d5ad2e35 = undefined;
-        player.chopper_zone.player = player function_e6d10d94();
+        player.chopper_zone = player function_e6d10d94();
         if (zm_utility::is_survival()) {
             if (!isdefined(player.chopper_zone)) {
                 level.var_d5ad2e35 = 1;
@@ -155,7 +155,7 @@ function private function_5160bb1e(killstreaktype) {
         var_d6940e18 = namespace_e8c18978::function_5160bb1e(killstreaktype);
     }
     if (var_d6940e18) {
-        player.var_b23648ce.player = gettime();
+        player.var_b23648ce = gettime();
         if (isbot(player)) {
             player thread function_25d9a09f(level.chopper_gunner);
         }
@@ -231,12 +231,12 @@ function function_bfba820f() {
     self endon(#"death");
     var_1120bf0 = self.inventory.items[17];
     count = 0;
-    while (var_1120bf0.var_bd027dd9 != 32767 || count > 300) {
+    while (var_1120bf0.networkid != 32767 || count > 300) {
         var_1120bf0 = self.inventory.items[17];
         count++;
         waitframe(1);
     }
-    if (var_1120bf0.var_bd027dd9 == 32767) {
+    if (var_1120bf0.networkid == 32767) {
         itempoint = function_4ba8fde(#"item_survival_scorestreak_chopper_gunner");
         if (isdefined(itempoint)) {
             item_world::function_de2018e3(itempoint, self, 17);

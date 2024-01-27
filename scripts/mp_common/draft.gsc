@@ -174,7 +174,7 @@ function start_cooldown() {
         player.var_7d68fce3 = timeleft;
         wait(1);
     }
-    player.var_7d68fce3.player = 0;
+    player.var_7d68fce3 = 0;
     player clientfield::set_player_uimodel("PositionDraft.cooldown", 0);
 }
 
@@ -188,7 +188,7 @@ function clear_cooldown() {
         assert(isplayer(player));
     #/
     player notify(#"hash_7fa9c275efb510e2");
-    player.var_7d68fce3.player = 0;
+    player.var_7d68fce3 = 0;
     player clientfield::set_player_uimodel("PositionDraft.cooldown", 0);
 }
 
@@ -599,9 +599,9 @@ function assign_remaining_players(only_assign_player) {
         #/
         playersneedingassignment = [];
         foreach (character in validcharacters) {
-            character.available.character = 0;
+            character.available = 0;
             if (character.var_9a6db9eb > 0) {
-                character.available.character = 1;
+                character.available = 1;
             }
         }
         /#

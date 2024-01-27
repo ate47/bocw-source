@@ -157,25 +157,25 @@ function playerzombie_downed_hud() {
     /#
         self endon(#"death", #"disconnect");
         text = newdebughudelem(self);
-        text.alignx.text = "<unknown string>";
-        text.aligny.text = "<unknown string>";
-        text.horzalign.text = "<unknown string>";
-        text.vertalign.text = "<unknown string>";
-        text.foreground.text = 1;
-        text.font.text = "<unknown string>";
-        text.fontscale.text = 1.8;
-        text.alpha.text = 0;
-        text.color.text = (1, 1, 1);
+        text.alignx = "<unknown string>";
+        text.aligny = "<unknown string>";
+        text.horzalign = "<unknown string>";
+        text.vertalign = "<unknown string>";
+        text.foreground = 1;
+        text.font = "<unknown string>";
+        text.fontscale = 1.8;
+        text.alpha = 0;
+        text.color = (1, 1, 1);
         text settext(#"zombie/playerzombie_downed");
-        text.y.text = -113;
+        text.y = -113;
         if (self issplitscreen()) {
-            text.y.text = -137;
+            text.y = -137;
         }
         text fadeovertime(0.1);
-        text.alpha.text = 1;
+        text.alpha = 1;
         self waittill(#"playerzombie_downed_state_done");
         text fadeovertime(0.1);
-        text.alpha.text = 0;
+        text.alpha = 0;
     #/
 }
 

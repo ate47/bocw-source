@@ -63,7 +63,7 @@ function function_42818ffd(instance) {
     level.var_97e461d4 = "chopper_gunner_path_sanatorium_exfil_end_of_level";
     level flag::set(#"hash_3070ff342f14b371");
     var_1f6189f7 = instance.var_fe2612fe[#"hash_48ed0373db843512"][0];
-    instance.var_675dd2c4.instance = namespace_8b6a9d79::function_f3d93ee9(var_1f6189f7, #"hash_20f9a15d3e077602");
+    instance.var_675dd2c4 = namespace_8b6a9d79::function_f3d93ee9(var_1f6189f7, #"hash_20f9a15d3e077602");
     var_655b61b6 = instance.var_fe2612fe[#"hash_75fdd79b72460b80"][0];
     point = function_4ba8fde(#"item_survival_mq4_phase_neutralizer_blueprint");
     if (isdefined(point)) {

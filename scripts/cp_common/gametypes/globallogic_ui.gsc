@@ -35,7 +35,7 @@ function init() {
     level.var_e30ae574 = &function_2793ce76;
     level.var_659c87ff = &function_760546ce;
     var_e074d966 = savegame::function_6440b06b(#"hash_e7d26541441cb9d");
-    var_e074d966.var_c42c3d.var_e074d966 = [];
+    var_e074d966.var_c42c3d = [];
     level flag::init("all_players_class_choice_completed");
     thread function_1cb458b4();
     callback::add_callback(#"on_player_spawned", &on_player_spawn);
@@ -197,7 +197,7 @@ function private function_52da41bb(model_name, var_832d6681, var_ec71f60a, var_2
     }
     var_e074d966 = savegame::function_6440b06b(#"hash_e7d26541441cb9d");
     if (!isdefined(var_e074d966.var_c42c3d)) {
-        var_e074d966.var_c42c3d.var_e074d966 = [];
+        var_e074d966.var_c42c3d = [];
     }
     if (!isdefined(var_e074d966.var_c42c3d[model_name])) {
         var_e074d966.var_c42c3d[model_name] = spawnstruct();
@@ -217,7 +217,7 @@ function function_3f278444() {
     level flag::set("restoring_ui_models");
     var_e074d966 = savegame::function_6440b06b(#"hash_e7d26541441cb9d");
     if (!isdefined(var_e074d966.var_c42c3d)) {
-        var_e074d966.var_c42c3d.var_e074d966 = [];
+        var_e074d966.var_c42c3d = [];
     }
     foreach (model_data in var_e074d966.var_c42c3d) {
         function_9ed5232e(model_data.name, model_data.value, model_data.global, 1, undefined, undefined, model_data.var_2226bd51);
@@ -236,7 +236,7 @@ function function_2ec075a9(model_name, var_c15ae58d) {
     }
     var_e074d966 = savegame::function_6440b06b(#"hash_e7d26541441cb9d");
     if (!isdefined(var_e074d966.var_c42c3d)) {
-        var_e074d966.var_c42c3d.var_e074d966 = [];
+        var_e074d966.var_c42c3d = [];
     }
     arrayremoveindex(var_e074d966.var_c42c3d, model_name, 1);
     if (is_true(var_c15ae58d)) {
@@ -714,7 +714,7 @@ function function_cdbb5c49(show, persistent) {
 function function_ac6e682a() {
     self endon(#"disconnect");
     initial_black = lui::get_luimenu("InitialBlack");
-    initial_black.var_6fba7045.initial_black = #"kill_initial_black";
+    initial_black.var_6fba7045 = #"kill_initial_black";
     self val::set(#"initial_black", "disable_oob", 1);
     function_cdbb5c49(1, 1);
     while (self isloadingcinematicplaying()) {
@@ -1021,7 +1021,7 @@ function private function_36e939c(var_4146002e = 1, var_d76d90ac = 0) {
     waittillframeend();
     level notify(#"chyron_menu_open");
     self waittillmatchtimeout(15, {#response:#"closed", #menu:#"cp_chyron"}, #"menuresponse");
-    cp_chyron.var_779239b4.cp_chyron = 0;
+    cp_chyron.var_779239b4 = 0;
     self notify(#"chyron_menu_closed");
     level notify(#"chyron_menu_closed");
     self flag::clear(#"chyron_menu_open");

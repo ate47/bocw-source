@@ -187,7 +187,7 @@ function function_8c6ab347() {
     a_ai = getaiteamarray(level.zombie_team);
     foreach (ai in a_ai) {
         if (!(ai.var_6f84b820 === #"normal")) {
-            ai.var_d45ca662.ai = 1;
+            ai.var_d45ca662 = 1;
         }
     }
     array::thread_all(getplayers(), &val::set, #"hash_7a406b91ff079d07", "takedamage", 0);
@@ -346,12 +346,12 @@ function function_4b10f2d6() {
         if (isalive(ai)) {
             var_bb17225f = ai.health / ai.maxhealth;
             ai zm_utility::init_zombie_run_cycle();
-            ai._starting_round_number.ai = zm_utility::get_round_number();
+            ai._starting_round_number = zm_utility::get_round_number();
             if (isdefined(ai.aitype) || isdefined(ai.archetype)) {
                 var_d0aa45b6 = ai zm_ai_utility::function_f7014c3d(ai.basehealth);
             }
             if (isdefined(var_d0aa45b6) && var_d0aa45b6 > ai.maxhealth) {
-                ai.maxhealth.ai = int(var_d0aa45b6);
+                ai.maxhealth = int(var_d0aa45b6);
                 ai setmaxhealth(ai.maxhealth);
                 ai setnormalhealth(var_bb17225f);
             }

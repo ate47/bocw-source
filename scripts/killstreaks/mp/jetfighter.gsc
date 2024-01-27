@@ -109,8 +109,8 @@ function private function_4b3b25af(killstreak_id) {
     var_ce2c18d3 = util::spawn_model("tag_origin", (var_d44b8c3e[0], var_d44b8c3e[1], startposition[2]), angles);
     var_ce2c18d3.team = team;
     var_ce2c18d3.killstreak_id = killstreak_id;
-    var_ce2c18d3.owner.var_ce2c18d3 = self;
-    var_ce2c18d3.pilotindex.var_ce2c18d3 = namespace_f9b02f80::get_random_pilot_index("jetfighter");
+    var_ce2c18d3.owner = self;
+    var_ce2c18d3.pilotindex = namespace_f9b02f80::get_random_pilot_index("jetfighter");
     var_ce2c18d3 killstreakrules::function_2e6ff61a("jetfighter", killstreak_id, {#team:team, #origin:var_ce2c18d3.origin});
     if (var_ce2c18d3 function_3fbf2154()) {
         return;
@@ -273,7 +273,7 @@ function private function_ce402c10(bundle, team, var_d44b8c3e) {
                         targets = array(targets);
                     }
                     targets[targets.size] = streak;
-                    streak.killstreakbundle.streak = killstreaks::get_script_bundle(var_587ae679);
+                    streak.killstreakbundle = killstreaks::get_script_bundle(var_587ae679);
                     if (targets.size >= var_e06c789) {
                         return targets;
                     }
@@ -350,7 +350,7 @@ function private function_a04ffd9d(target, var_196fbc4d, owner) {
     self endon(#"hash_658778b8e9e9d13a", #"death");
     target endoncallback(&function_165f8cad, #"death");
     if (!isdefined(target.var_7cc84720)) {
-        target.var_7cc84720.target = self;
+        target.var_7cc84720 = self;
     }
     weapon = getweapon("jetfighter_missile");
     var_ee7e70af = 0;
@@ -418,10 +418,10 @@ function private function_90471c53(target, spawnpoint, weapon, owner) {
     missile = owner magicmissile(weapon, spawnpoint, vectornormalize(target.origin - spawnpoint), target);
     missile thread function_644ef4bf(target);
     missile missile_settarget(target);
-    missile.team.missile = self.team;
+    missile.team = self.team;
     missile setteam(self.team);
-    missile.var_30dc969d.missile = 1;
-    missile.var_b324d423.missile = 1;
+    missile.var_30dc969d = 1;
+    missile.var_b324d423 = 1;
     target heatseekingmissile::function_a439ae56(missile, weapon, owner);
     wait(randomfloatrange(0.1, 0.75));
     arrayremovevalue(self.var_fb24e6b5, spawnpoint);

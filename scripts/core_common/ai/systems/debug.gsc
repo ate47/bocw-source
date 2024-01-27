@@ -143,8 +143,8 @@ function drawdebugenttext(text, ent, color, channel) {
         #/
         if (!getdvarint(#"recorder_enablerec", 0)) {
             if (!isdefined(ent.debuganimscripttime) || gettime() > ent.debuganimscripttime) {
-                ent.debuganimscriptlevel.ent = 0;
-                ent.debuganimscripttime.ent = gettime();
+                ent.debuganimscriptlevel = 0;
+                ent.debuganimscripttime = gettime();
             }
             indentlevel = vectorscale(vectorscale((0, 0, -1), 10), ent.debuganimscriptlevel);
             print3d(self.origin + vectorscale((0, 0, 1), 70) + indentlevel, text, color);
@@ -176,12 +176,12 @@ function debugpushstate(statename, extrainfo) {
         #/
         state = spawnstruct();
         state.statename = statename;
-        state.statelevel.state = self.debuginfo.statelevel;
-        state.statetime.state = gettime();
-        state.statevalid.state = 1;
+        state.statelevel = self.debuginfo.statelevel;
+        state.statetime = gettime();
+        state.statevalid = 1;
         self.debuginfo.statelevel++;
         if (isdefined(extrainfo)) {
-            state.extrainfo.state = extrainfo + "<unknown string>";
+            state.extrainfo = extrainfo + "<unknown string>";
         }
         self.debuginfo.states[self.debuginfo.states.size] = state;
     #/

@@ -83,11 +83,11 @@ class czm_dac_challenges_hud : cluielem {
     // Params b, eflags: 0x2 linked
     // Checksum 0xb936ef80, Offset: 0x670
     // Size: 0x22c
-    function setup_clientfields(*var_be2ad4d, *var_a7896263, var_4866daed, var_afaddf7a, var_5d7491df, var_26df3d64, var_90359ec7, *var_2404f6c6, var_74cf4193, var_e89bb89d, var_2c511278) {
+    function setup_clientfields(*var_be2ad4d, *var_a7896263, var_4866daed, progresscallback, var_5d7491df, var_26df3d64, var_90359ec7, *var_2404f6c6, var_74cf4193, var_e89bb89d, var_2c511278) {
         cluielem::setup_clientfields("zm_dac_challenges_hud");
         cluielem::function_dcb34c80("string", "challengeText", 1);
         cluielem::function_dcb34c80("string", "bottomText", 1);
-        cluielem::add_clientfield("bInLocation", 1, 1, "int", var_afaddf7a);
+        cluielem::add_clientfield("bInLocation", 1, 1, "int", progresscallback);
         cluielem::add_clientfield("progress", 1, 1, "counter", var_5d7491df);
         cluielem::add_clientfield("tributeAvailable", 1, 3, "int", var_26df3d64);
         cluielem::add_clientfield("rewardHidden", 1, 1, "int", var_90359ec7);
@@ -173,9 +173,9 @@ class czm_dac_challenges_hud : cluielem {
 // Params 11, eflags: 0x2 linked
 // Checksum 0x8bf26842, Offset: 0x1a8
 // Size: 0x1de
-function register(var_be2ad4d, var_a7896263, var_4866daed, var_afaddf7a, var_5d7491df, var_26df3d64, var_90359ec7, var_2404f6c6, var_74cf4193, var_e89bb89d, var_2c511278) {
+function register(var_be2ad4d, var_a7896263, var_4866daed, progresscallback, var_5d7491df, var_26df3d64, var_90359ec7, var_2404f6c6, var_74cf4193, var_e89bb89d, var_2c511278) {
     elem = new czm_dac_challenges_hud();
-    [[ elem ]]->setup_clientfields(var_be2ad4d, var_a7896263, var_4866daed, var_afaddf7a, var_5d7491df, var_26df3d64, var_90359ec7, var_2404f6c6, var_74cf4193, var_e89bb89d, var_2c511278);
+    [[ elem ]]->setup_clientfields(var_be2ad4d, var_a7896263, var_4866daed, progresscallback, var_5d7491df, var_26df3d64, var_90359ec7, var_2404f6c6, var_74cf4193, var_e89bb89d, var_2c511278);
     if (!isdefined(level.var_ae746e8f)) {
         level.var_ae746e8f = associativearray();
     }

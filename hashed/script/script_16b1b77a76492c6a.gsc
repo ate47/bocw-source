@@ -234,7 +234,7 @@ function function_156560eb(var_cf21a49f, var_aa19ae, var_437c9d8d = 1500, var_f2
                             }
                             var_42c6e7d2[var_42c6e7d2.size] = ai_spawned;
                             ai_spawned.var_42c6e7d2 = var_42c6e7d2;
-                            ai_spawned.var_9602c8b2.ai_spawned = &function_12db74f8;
+                            ai_spawned.var_9602c8b2 = &function_12db74f8;
                             ai_spawned thread function_1c491c2b(var_6cd49f50, var_4bf95f4c.var_29459a31, var_6443acc);
                             namespace_679a22ba::function_266ee075(var_4bf95f4c.var_29459a31, var_6443acc);
                             if (str_targetname === "demented_echo_zombie") {
@@ -404,14 +404,14 @@ function function_39ee3b21(eventstruct, a_spawns) {
                         break;
                     }
                     var_abb82760 = namespace_85745671::function_3b941e5c(spawn.origin, var_4bf95f4c.var_990b33df);
-                    var_4bf95f4c.var_990b33df.var_4bf95f4c = isdefined(var_abb82760) ? var_abb82760 : var_4bf95f4c.var_990b33df;
+                    var_4bf95f4c.var_990b33df = isdefined(var_abb82760) ? var_abb82760 : var_4bf95f4c.var_990b33df;
                     ai = spawnactor(var_4bf95f4c.var_990b33df, spawn.origin, spawn.angles, undefined, 1, 1);
                 }
                 if (isdefined(ai)) {
                     if (isdefined(spawn.var_90d0c0ff) && spawn.var_90d0c0ff != " " && spawn.var_90d0c0ff != "") {
-                        ai.var_c9b11cb3.ai = spawn.var_90d0c0ff;
+                        ai.var_c9b11cb3 = spawn.var_90d0c0ff;
                     } else {
-                        ai.var_c9b11cb3.ai = "anim_spawn_from_ground";
+                        ai.var_c9b11cb3 = "anim_spawn_from_ground";
                     }
                     ai thread awareness::function_c241ef9a(ai, eventstruct.activator, 20);
                     ai callback::function_d8abfc3d(#"hash_4afe635f36531659", &function_5c3d1f);

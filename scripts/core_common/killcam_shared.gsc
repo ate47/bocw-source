@@ -178,7 +178,7 @@ function function_eb3deeec(spectatorclient, targetentityindex, killcam_entity_in
     if (spectatorclient == -1) {
         spectatorclient = player getentitynumber();
     }
-    player.var_e59bd911.player = {#attacker:attacker, #killstreaks:killstreaks, #perks:perks, #targetentityindex:targetentityindex, #killcam_entity_info:killcam_entity_info, #offsettime:offsettime, #deathtimeoffset:deathtimeoffset, #deathtime:deathtime, #meansofdeath:meansofdeath, #weapon:weapon, #spectatorclient:spectatorclient};
+    player.var_e59bd911 = {#attacker:attacker, #killstreaks:killstreaks, #perks:perks, #targetentityindex:targetentityindex, #killcam_entity_info:killcam_entity_info, #offsettime:offsettime, #deathtimeoffset:deathtimeoffset, #deathtime:deathtime, #meansofdeath:meansofdeath, #weapon:weapon, #spectatorclient:spectatorclient};
 }
 
 // Namespace killcam/killcam_shared
@@ -221,7 +221,7 @@ function deathcam(victim) {
     s = victim.var_e59bd911;
     self killcam(s.spectatorclient, s.targetentityindex, s.killcam_entity_info, s.weapon, s.meansofdeath, s.deathtime, s.deathtimeoffset, s.offsettime, 0, undefined, s.perks, s.killstreaks, s.attacker, 0);
     var_9a73aefe = self.currentspectatingclient;
-    self function_223716c();
+    self stopfollowing();
     if (var_9a73aefe >= 0) {
         var_e1f8d08d = getentbynum(var_9a73aefe);
         if (isdefined(var_e1f8d08d)) {
@@ -1070,7 +1070,7 @@ function get_primary_killcam_entity(attacker, einflictor, weapon, entity_info) {
             if (killcamentitystarttime < 0) {
                 killcamentitystarttime = 0;
             }
-            entity_info.var_30f79181.entity_info = 1;
+            entity_info.var_30f79181 = 1;
         }
     }
     entity_info.entity_indexes[entity_info.entity_indexes.size] = killcamentityindex;
@@ -1084,8 +1084,8 @@ function get_primary_killcam_entity(attacker, einflictor, weapon, entity_info) {
 // Size: 0x70
 function get_killcam_entity_info(attacker, einflictor, weapon) {
     entity_info = spawnstruct();
-    entity_info.entity_indexes.entity_info = [];
-    entity_info.entity_spawntimes.entity_info = [];
+    entity_info.entity_indexes = [];
+    entity_info.entity_spawntimes = [];
     get_primary_killcam_entity(attacker, einflictor, weapon, entity_info);
     return entity_info;
 }

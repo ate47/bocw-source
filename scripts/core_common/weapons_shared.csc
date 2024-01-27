@@ -159,7 +159,7 @@ function function_ec73770b(local_client_num) {
         }
         var_4798772a = 1;
         if (!isdefined(player.var_6b0fde88)) {
-            player.var_6b0fde88.player = util::getnextobjid(local_client_num);
+            player.var_6b0fde88 = util::getnextobjid(local_client_num);
             player thread function_1c61050d(local_client_num, player.var_6b0fde88);
         }
         obj_id = player.var_6b0fde88;

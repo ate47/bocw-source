@@ -88,15 +88,15 @@ function function_d47881a3() {
         if (self isplayinganimscripted() || is_true(self.var_8dd8140a)) {
             continue;
         }
-        var_1f2328d0 = self function_4794d6a3();
+        goalinfo = self function_4794d6a3();
         switch (waitresult._notify) {
         case #"bad_path":
             jumpiftrue(self function_dd070839()) LOC_000001dc;
             counters[1]++;
-            var_686cf729 = var_1f2328d0.goalpos;
+            var_686cf729 = goalinfo.goalpos;
         case #"goal":
         LOC_000001dc:
-            if (isdefined(var_686cf729) && var_1f2328d0.goalpos === var_686cf729) {
+            if (isdefined(var_686cf729) && goalinfo.goalpos === var_686cf729) {
                 break;
             }
             counters[1] = 0;
@@ -261,7 +261,7 @@ function function_c8b7a7da() {
         if (zm_utility::check_point_in_playable_area(waitresult.position)) {
             point = function_4ba8fde(#"item_zmquest_platinum_klaus_battery");
             var_169eb568 = item_drop::drop_item(0, undefined, 1, 0, point.id, waitresult.position, undefined, 2);
-            var_169eb568.var_dd21aec2.var_169eb568 = 1 & 16;
+            var_169eb568.var_dd21aec2 = 1 | 16;
             var_169eb568.var_a6762160.var_4cd830a = 1;
             break;
         }
@@ -403,7 +403,7 @@ function private function_e9e410c2() {
     e_player val::set(#"hash_3130bc68547f6e0d", "disable_weapons");
     level notify(#"hash_57f2c29e7e96eda7");
     e_player flag::set(#"hash_7fb35d12e64cf793");
-    e_player.var_7d32b2c6.e_player = 0;
+    e_player.var_7d32b2c6 = 0;
     e_player val::set(#"hash_2d4db1e2c3e7d2f1", "ignoreme", 1);
     level scene::play(#"hash_c1640839c1a4da0", e_player);
     if (isdefined(e_player)) {
@@ -654,7 +654,7 @@ function private function_b503a4ce(n_state) {
                 radio playsound(#"hash_694ca8a2f30e0e55");
                 radio clientfield::set("" + #"hash_19a76e1eb767b16b", 1);
                 if (!isdefined(radio.var_7ecc12d9)) {
-                    radio.var_7ecc12d9.radio = radio playloopsound(#"hash_27a52bcb771fe5e5");
+                    radio.var_7ecc12d9 = radio playloopsound(#"hash_27a52bcb771fe5e5");
                 }
             }
         }

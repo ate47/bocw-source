@@ -68,7 +68,7 @@ function event_handler[checkpoint_restore] function_d49b3ac5() {
 // Size: 0x44
 function event_handler[event_6aa1189e] function_c6a7519f() {
     player = self;
-    player.var_35ee6252.player = 1;
+    player.var_35ee6252 = 1;
     setslowmotion(1, 0.2, 0.5);
 }
 

@@ -1741,10 +1741,10 @@ function killedcustomtraversallistener() {
 function event_handler[entity_playcustomtraversal] codecallback_playcustomtraversal(eventstruct) {
     entity = eventstruct.entity;
     endparent = eventstruct.end_entity;
-    entity.blockingpain.entity = 1;
-    entity.usegoalanimweight.entity = 1;
-    entity.customtraverseendnode.entity = entity.traverseendnode;
-    entity.customtraversestartnode.entity = entity.traversestartnode;
+    entity.blockingpain = 1;
+    entity.usegoalanimweight = 1;
+    entity.customtraverseendnode = entity.traverseendnode;
+    entity.customtraversestartnode = entity.traversestartnode;
     entity animmode("noclip", 0);
     entity orientmode("face angle", eventstruct.direction[1]);
     if (isdefined(endparent)) {
@@ -2136,8 +2136,8 @@ function event_handler[event_596b7bdc] function_f5026566(eventstruct) {
     /#
     #/
     eventdata = {};
-    eventdata.tableindex.eventdata = eventstruct.tableindex;
-    eventdata.var_96db1aff.eventdata = eventstruct.var_96db1aff;
+    eventdata.tableindex = eventstruct.tableindex;
+    eventdata.var_96db1aff = eventstruct.var_96db1aff;
     self [[ level.var_abb3fd2 ]](eventstruct.event_name, eventstruct.time, eventstruct.client, eventstruct.priority, eventdata);
 }
 

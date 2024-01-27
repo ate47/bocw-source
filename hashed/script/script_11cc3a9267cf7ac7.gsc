@@ -71,12 +71,12 @@ function function_28efdb7f(localclientnum, *oldval, *newval, *bnewent, *binitial
 // Params 8, eflags: 0x0
 // Checksum 0x73153c95, Offset: 0x618
 // Size: 0xec
-function function_606248f8(*currenttime, elapsedtime, *localclientnum, duration, var_2347e08e, var_991d3376, *constant, *postfx) {
+function function_606248f8(*currenttime, elapsedtime, *localclientnum, duration, stagefrom, stageto, *constant, *postfx) {
     self endon(#"death");
     if (!self postfx::function_556665f2(#"hash_1d2ed88d1700cf24")) {
         return;
     }
-    percent = var_2347e08e / var_991d3376;
+    percent = stagefrom / stageto;
     amount = postfx * percent + constant * (1 - percent);
     self.var_f0007ebc = amount;
     self postfx::function_c8b5f318(#"hash_1d2ed88d1700cf24", "Opacity", amount);

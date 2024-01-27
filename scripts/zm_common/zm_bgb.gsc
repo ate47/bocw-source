@@ -191,9 +191,9 @@ function private bgb_end_game() {
 // Size: 0x1f2
 function private bgb_finalize() {
     foreach (v in level.bgb) {
-        v.item_index.v = getitemindexfromref(v.name);
+        v.item_index = getitemindexfromref(v.name);
         var_ddcb67f4 = getunlockableiteminfofromindex(v.item_index, 2);
-        v.stat_index.v = isdefined(var_ddcb67f4) && isdefined(var_ddcb67f4.var_2f8e25b8) ? var_ddcb67f4.var_2f8e25b8 : 0;
+        v.stat_index = isdefined(var_ddcb67f4) && isdefined(var_ddcb67f4.var_2f8e25b8) ? var_ddcb67f4.var_2f8e25b8 : 0;
         var_5415dfb9 = function_b143666d(v.item_index, 2);
         if (!isdefined(var_ddcb67f4) || !isdefined(var_5415dfb9)) {
             /#
@@ -201,16 +201,16 @@ function private bgb_finalize() {
             #/
         } else {
             if (!isdefined(var_5415dfb9.bgbrarity)) {
-                var_5415dfb9.bgbrarity.var_5415dfb9 = 0;
+                var_5415dfb9.bgbrarity = 0;
             }
-            v.rarity.v = var_5415dfb9.bgbrarity;
+            v.rarity = var_5415dfb9.bgbrarity;
             if (0 == v.rarity || 1 == v.rarity) {
-                v.consumable.v = 0;
+                v.consumable = 0;
             } else {
-                v.consumable.v = 1;
+                v.consumable = 1;
             }
-            v.camo_index.v = var_5415dfb9.var_daefc551;
-            v.dlc_index.v = var_ddcb67f4.dlc;
+            v.camo_index = var_5415dfb9.var_daefc551;
+            v.dlc_index = var_ddcb67f4.dlc;
         }
     }
 }
@@ -1300,7 +1300,7 @@ function get_player_dropped_powerup_origin() {
 // Size: 0xbc
 function function_c6cd71d5(str_powerup, v_origin, *var_22a4c702 = self get_player_dropped_powerup_origin()) {
     e_powerup = zm_powerups::specific_powerup_drop(v_origin, var_22a4c702, undefined, 0.1, undefined, undefined, 1, 1, 1, 1);
-    e_powerup.var_2b5ec373.e_powerup = self;
+    e_powerup.var_2b5ec373 = self;
     if (isplayer(self)) {
         self zm_stats::increment_challenge_stat(#"hash_3ebae93ea866519c");
     }

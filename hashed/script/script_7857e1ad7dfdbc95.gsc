@@ -294,7 +294,7 @@ function function_d63e2f4a() {
 // Size: 0x70
 function private function_c4d9fd77(entity) {
     entity pathmode("dont move", 1);
-    entity.var_95bfdd95.entity = gettime() + randomintrange(10000, 16000);
+    entity.var_95bfdd95 = gettime() + randomintrange(10000, 16000);
     entity thread function_fe8bad69();
     return 5;
 }
@@ -327,7 +327,7 @@ function private function_165f51f1() {
 // Size: 0x70
 function private function_a641b0ef(entity) {
     entity pathmode("dont move", 1);
-    entity.var_60188515.entity = gettime() + randomintrange(6000, 16000) + 2000;
+    entity.var_60188515 = gettime() + randomintrange(6000, 16000) + 2000;
     entity thread function_165f51f1();
     return 5;
 }
@@ -360,7 +360,7 @@ function private function_724727fb() {
 // Size: 0x70
 function private function_e86abfca(entity) {
     entity pathmode("dont move", 1);
-    entity.var_249206b6.entity = gettime() + randomintrange(6000, 16000) + 2000;
+    entity.var_249206b6 = gettime() + randomintrange(6000, 16000) + 2000;
     entity thread function_724727fb();
     return 5;
 }
@@ -370,7 +370,7 @@ function private function_e86abfca(entity) {
 // Checksum 0x6e3b6065, Offset: 0x1cc8
 // Size: 0x58
 function private function_3311572f(entity) {
-    entity.var_6e5b38d9.entity = gettime() + randomintrange(8000, 16000);
+    entity.var_6e5b38d9 = gettime() + randomintrange(8000, 16000);
     entity pathmode("move allowed");
     return 4;
 }
@@ -622,7 +622,7 @@ function private function_af85a094(inflictor, attacker, damage, idflags, meansof
 // Checksum 0x34471a37, Offset: 0x2d18
 // Size: 0x2c
 function private function_6318bedf(entity) {
-    entity.knockdown.entity = 0;
+    entity.knockdown = 0;
     self thread function_c9f197d2();
 }
 
@@ -715,7 +715,7 @@ function private function_42a1dabd() {
         }
         self thread animation::play(var_cee6fc30, undefined, undefined, 1, 0, 0);
         self namespace_e32bb68::function_3a59ec34("zmb_doa_ai_skeleton_spawn");
-        var_708e5e40.angles.var_708e5e40 = (var_ee3cfcfe.angles[0], var_ee3cfcfe.angles[1] + 90, var_ee3cfcfe.angles[2]);
+        var_708e5e40.angles = (var_ee3cfcfe.angles[0], var_ee3cfcfe.angles[1] + 90, var_ee3cfcfe.angles[2]);
         var_704f0f40 = #"p8_fxanim_zm_red_spartoi_rise_no_helm_bundle";
         if (is_true(self.var_3420e847)) {
             var_704f0f40 = #"hash_27a8f88c6e23290e";

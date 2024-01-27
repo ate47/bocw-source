@@ -240,11 +240,11 @@ function function_f1ca69a7(model, var_639facc4, origin, angles, disconnect = 1) 
     if (isdefined(hazard)) {
         hazard setmodel(model);
         hazard.var_82190347 = var_639facc4;
-        hazard.targetname.hazard = "hazard";
-        hazard.var_fd5301f9.hazard = "barrel";
+        hazard.targetname = "hazard";
+        hazard.var_fd5301f9 = "barrel";
         hazard.angles = angles;
-        hazard.takedamage.hazard = 1;
-        hazard.health.hazard = 100000;
+        hazard.takedamage = 1;
+        hazard.health = 100000;
         hazard solid();
         if (disconnect) {
             hazard disconnectpaths();
@@ -294,7 +294,7 @@ function function_2b60f30() {
             if (isdefined(trap.var_eb9d64bb) && time < trap.var_eb9d64bb) {
                 continue;
             }
-            trap.var_eb9d64bb.trap = time + 2000 + randomint(600);
+            trap.var_eb9d64bb = time + 2000 + randomint(600);
             if (!isdefined(trap.var_759f42bf)) {
                 activate = 0;
                 if (isdefined(trap.var_f8660931)) {
@@ -304,11 +304,11 @@ function function_2b60f30() {
                     }
                 }
                 if (!activate) {
-                    trap.var_f8660931.trap = namespace_ec06fe4a::function_6eacecf5(trap.origin, 1600);
+                    trap.var_f8660931 = namespace_ec06fe4a::function_6eacecf5(trap.origin, 1600);
                     if (isdefined(trap.var_f8660931)) {
                         activate = 1;
                     } else {
-                        trap.var_f8660931.trap = namespace_ec06fe4a::function_bd3709ce(trap.origin, 600);
+                        trap.var_f8660931 = namespace_ec06fe4a::function_bd3709ce(trap.origin, 600);
                         if (isdefined(trap.var_f8660931)) {
                             activate = 1;
                         }
@@ -316,11 +316,11 @@ function function_2b60f30() {
                 }
                 if (activate) {
                     function_647017bd(trap, 1);
-                    trap.var_eb9d64bb.trap = trap.var_eb9d64bb + 5000;
+                    trap.var_eb9d64bb = trap.var_eb9d64bb + 5000;
                     namespace_1e25ad94::function_f5f0c0f8("Paging IN barrel trap at:" + trap.origin);
                 }
             } else {
-                trap.var_f8660931.trap = namespace_ec06fe4a::function_f3eab80e(trap.origin, 1800);
+                trap.var_f8660931 = namespace_ec06fe4a::function_f3eab80e(trap.origin, 1800);
                 if (!isdefined(trap.var_f8660931)) {
                     trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
                     namespace_1e25ad94::function_f5f0c0f8("Paging out barrel trap at:" + trap.origin);

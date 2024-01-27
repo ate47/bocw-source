@@ -67,9 +67,9 @@ function function_4acf40a(trap, var_7c56394 = 0, modelname) {
     if (isdefined(modelname)) {
         hazard = namespace_ec06fe4a::function_e22ae9b3(trap.origin, modelname);
         if (isdefined(hazard)) {
-            hazard.targetname.hazard = "hazard";
-            hazard.var_fd5301f9.hazard = "killzone";
-            hazard.angles.hazard = trap.angles;
+            hazard.targetname = "hazard";
+            hazard.var_fd5301f9 = "killzone";
+            hazard.angles = trap.angles;
             hazard enablelinkto();
         }
         trap.script_model = hazard;
@@ -92,28 +92,28 @@ function function_7ae8d74a(trap, page = 0) {
         /#
             assert(args.size >= 4, "<unknown string>");
         #/
-        trap.type.trap = hash(args[0]);
-        trap.radius.trap = int(args[1]);
-        trap.height.trap = int(args[2]);
-        trap.teleport.trap = 1;
-        trap.damage.trap = 50;
-        trap.var_f3e30707.trap = 1;
+        trap.type = hash(args[0]);
+        trap.radius = int(args[1]);
+        trap.height = int(args[2]);
+        trap.teleport = 1;
+        trap.damage = 50;
+        trap.var_f3e30707 = 1;
         if (args.size > 3) {
-            trap.teleport.trap = int(args[3]);
+            trap.teleport = int(args[3]);
         }
         if (args.size > 4) {
-            trap.damage.trap = int(args[4]);
+            trap.damage = int(args[4]);
         }
         if (args.size > 5) {
-            trap.var_f3e30707.trap = int(args[5]);
+            trap.var_f3e30707 = int(args[5]);
         }
         if (trap.type === #"acid") {
-            trap.var_2e485cc.trap = getstatuseffect(#"hash_69c2a47bf2322b6b");
+            trap.var_2e485cc = getstatuseffect(#"hash_69c2a47bf2322b6b");
         }
         if (trap.type === #"fire") {
-            trap.var_2e485cc.trap = getstatuseffect(#"hash_69374f563cb01313");
+            trap.var_2e485cc = getstatuseffect(#"hash_69374f563cb01313");
         }
-        trap.initialized.trap = 1;
+        trap.initialized = 1;
     }
     if (page) {
         if (!isdefined(level.doa.var_ed906439)) {
@@ -142,7 +142,7 @@ function function_d4a86caf() {
             if (isdefined(trap.var_eb9d64bb) && time < trap.var_eb9d64bb) {
                 continue;
             }
-            trap.var_eb9d64bb.trap = time + 2000 + randomint(600);
+            trap.var_eb9d64bb = time + 2000 + randomint(600);
             if (!is_true(trap.active)) {
                 activate = 0;
                 if (isdefined(trap.var_f8660931)) {
@@ -152,11 +152,11 @@ function function_d4a86caf() {
                     }
                 }
                 if (!activate) {
-                    trap.var_f8660931.trap = namespace_ec06fe4a::function_6eacecf5(trap.origin, 3200);
+                    trap.var_f8660931 = namespace_ec06fe4a::function_6eacecf5(trap.origin, 3200);
                     if (isdefined(trap.var_f8660931)) {
                         activate = 1;
                     } else {
-                        trap.var_f8660931.trap = namespace_ec06fe4a::function_bd3709ce(trap.origin, 1200);
+                        trap.var_f8660931 = namespace_ec06fe4a::function_bd3709ce(trap.origin, 1200);
                         if (isdefined(trap.var_f8660931)) {
                             activate = 1;
                         }
@@ -164,11 +164,11 @@ function function_d4a86caf() {
                 }
                 if (activate) {
                     function_4acf40a(trap, 1);
-                    trap.var_eb9d64bb.trap = trap.var_eb9d64bb + 5000;
+                    trap.var_eb9d64bb = trap.var_eb9d64bb + 5000;
                     namespace_1e25ad94::function_f5f0c0f8("Paging IN killzone trap at:" + trap.origin);
                 }
             } else {
-                trap.var_f8660931.trap = namespace_ec06fe4a::function_f3eab80e(trap.origin, 3600);
+                trap.var_f8660931 = namespace_ec06fe4a::function_f3eab80e(trap.origin, 3600);
                 if (!isdefined(trap.var_f8660931)) {
                     trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
                     namespace_1e25ad94::function_f5f0c0f8("Paging out killzone trap at:" + trap.origin);
@@ -258,13 +258,13 @@ function function_d1b295d7(trap) {
             continue;
         }
         if (!isdefined(guy.var_386ce6f4)) {
-            guy.var_386ce6f4.guy = 0;
+            guy.var_386ce6f4 = 0;
         }
         time = gettime();
         if (guy.var_386ce6f4 > gettime()) {
             continue;
         }
-        guy.var_386ce6f4.guy = time + var_f3e30707;
+        guy.var_386ce6f4 = time + var_f3e30707;
         if (isplayer(guy)) {
             guy dodamage(isdefined(trap.damage) ? trap.damage : guy.health + 100, guy.origin);
             guy playrumbleonentity("damage_light");
@@ -273,13 +273,13 @@ function function_d1b295d7(trap) {
             }
         } else {
             if (!isdefined(guy.var_a1500eee)) {
-                guy.var_a1500eee.guy = 0;
+                guy.var_a1500eee = 0;
             }
             if (guy.var_a1500eee < gettime()) {
                 if (trap.type === #"fire") {
                     guy namespace_83eb6304::function_3ecfde67("burn_zombie");
                 }
-                guy.var_a1500eee.guy = gettime() + 1000;
+                guy.var_a1500eee = gettime() + 1000;
             }
             if (trap.type === #"fire") {
                 guy thread namespace_ec06fe4a::function_570729f0(randomfloatrange(0.5, 2.2));

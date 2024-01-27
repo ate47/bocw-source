@@ -94,14 +94,14 @@ function function_303319e9(params) {
             zombie forceteleport(spawn, player.angles);
             if (isdefined(params.is_dummy) && params.is_dummy == 1) {
                 if (!isdefined(zombie.ignore_player)) {
-                    zombie.ignore_player.zombie = [];
+                    zombie.ignore_player = [];
                 } else if (!isarray(zombie.ignore_player)) {
-                    zombie.ignore_player.zombie = array(zombie.ignore_player);
+                    zombie.ignore_player = array(zombie.ignore_player);
                 }
                 zombie.ignore_player[zombie.ignore_player.size] = player;
-                zombie.var_67faa700.zombie = 1;
-                zombie.ignoremelee.zombie = 1;
-                zombie.ignore_round_spawn_failsafe.zombie = 1;
+                zombie.var_67faa700 = 1;
+                zombie.ignoremelee = 1;
+                zombie.ignore_round_spawn_failsafe = 1;
                 zombie pathmode("<unknown string>");
                 zombie orientmode("<unknown string>", player.angles[1]);
             }
@@ -588,7 +588,7 @@ function derriesezombiespawnnavmeshtest(params, inrat) {
             wait(10);
         }
         enemy = devgui_zombie_spawn();
-        enemy.is_rat_test.enemy = 1;
+        enemy.is_rat_test = 1;
         failed_spawn_origin = [];
         failed_node_origin = [];
         failed_attack_spot_spawn_origin = [];

@@ -164,9 +164,9 @@ function aplockloop(weapon) {
                     /#
                         assert(isdefined(target.aptarget));
                     #/
-                    target.aplockfinalized.target = 1;
-                    target.aplocking.target = 0;
-                    target.aplockpending.target = 0;
+                    target.aplockfinalized = 1;
+                    target.aplocking = 0;
+                    target.aplockpending = 0;
                     self weaponlockfinalize(target.aptarget, i);
                     self thread seekersound(weapon.lockonseekerlockedsound, weapon.lockonseekerlockedsoundloops, target.apsoundid);
                     target.aptarget notify(#"missile_lock", {#weapon:weapon, #attacker:self});
@@ -184,10 +184,10 @@ function aplockloop(weapon) {
                             done = 0;
                             break;
                         }
-                        target.aplockstarttime.target = gettime();
-                        target.aplockfinalized.target = 0;
-                        target.aplockpending.target = 0;
-                        target.aplocking.target = 1;
+                        target.aplockstarttime = gettime();
+                        target.aplockfinalized = 0;
+                        target.aplockpending = 0;
+                        target.aplocking = 1;
                         self thread seekersound(weapon.lockonseekersearchsound, weapon.lockonseekersearchsoundloops, target.apsoundid);
                         done = 1;
                         break;
@@ -245,7 +245,7 @@ function getbesttarget(*weapon) {
     for (i = 0; i < targetsvalid.size; i++) {
         newitem = spawnstruct();
         newitem.index = i;
-        newitem.dot.newitem = vectordot(playerforward, vectornormalize(targetsvalid[i].origin - self.origin));
+        newitem.dot = vectordot(playerforward, vectornormalize(targetsvalid[i].origin - self.origin));
         array::add_sorted(dots, newitem, 0, &targetinsertionsortcompare);
     }
     index = 0;
@@ -260,13 +260,13 @@ function getbesttarget(*weapon) {
             continue;
         }
         newentry = spawnstruct();
-        newentry.aptarget.newentry = targetsvalid[dot.index];
-        newentry.aplockstarttime.newentry = gettime();
-        newentry.aplockpending.newentry = 1;
-        newentry.aplocking.newentry = 0;
-        newentry.aplockfinalized.newentry = 0;
-        newentry.aplostsightlinetime.newentry = 0;
-        newentry.apsoundid.newentry = randomint(2147483647);
+        newentry.aptarget = targetsvalid[dot.index];
+        newentry.aplockstarttime = gettime();
+        newentry.aplockpending = 1;
+        newentry.aplocking = 0;
+        newentry.aplockfinalized = 0;
+        newentry.aplostsightlinetime = 0;
+        newentry.apsoundid = randomint(2147483647);
         return newentry;
     }
     return undefined;

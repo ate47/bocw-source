@@ -87,7 +87,7 @@ function revive_hud_create() {
         assert(isdefined(level.revive_hud));
     #/
     if (!level.revive_hud revive_hud::is_open(self)) {
-        level.revive_hud revive_hud::open(self, 1 & 2 & 4);
+        level.revive_hud revive_hud::open(self, 1 | 2 | 4);
     }
     self thread function_7c7d873();
 }

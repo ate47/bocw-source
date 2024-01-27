@@ -178,7 +178,7 @@ function function_7f381bc5(var_56a7a731, var_dee4cb7d, var_2107b994) {
                 self thread util::delete_on_death(snd_ent);
             }
             snd_ent linkto(self);
-            snd_ent.isplaying.snd_ent = 0;
+            snd_ent.isplaying = 0;
             self.stealth.var_728ac6b1[alias] = snd_ent;
         }
     }
@@ -250,10 +250,10 @@ function function_7f381bc5(var_56a7a731, var_dee4cb7d, var_2107b994) {
             if (vol > 0) {
                 var_7fe1c557 = 1;
                 if (snd_ent.isplaying == 0) {
-                    snd_ent.isplaying.snd_ent = 1;
+                    snd_ent.isplaying = 1;
                 }
             } else if (snd_ent.isplaying == 1) {
-                snd_ent.isplaying.snd_ent = 0;
+                snd_ent.isplaying = 0;
             }
             /#
                 if (var_2107b994) {

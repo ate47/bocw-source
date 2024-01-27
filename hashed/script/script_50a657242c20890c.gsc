@@ -78,7 +78,7 @@ function function_718ef5ea(var_a7dcc4c7, v_center) {
         }
         if (var_a7dcc4c7.origin != v_target) {
             if (!isdefined(var_a7dcc4c7.var_28cc73f6)) {
-                var_a7dcc4c7.var_28cc73f6.var_a7dcc4c7 = var_a7dcc4c7 playloopsound(#"hash_7f519f5efb38d2ba");
+                var_a7dcc4c7.var_28cc73f6 = var_a7dcc4c7 playloopsound(#"hash_7f519f5efb38d2ba");
             }
             var_a7dcc4c7 moveto(v_target, 0.05);
             var_a7dcc4c7 waittill(#"movedone");

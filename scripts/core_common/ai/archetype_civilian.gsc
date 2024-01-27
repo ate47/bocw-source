@@ -143,7 +143,7 @@ function private civilianinit() {
     entity setblackboardattribute("_human_locomotion_variation", locomotiontypes[altindex]);
     entity setavoidancemask("avoid none");
     entity disableaimassist();
-    entity.ignorepathenemyfightdist.entity = 1;
+    entity.ignorepathenemyfightdist = 1;
     entity trackblackboardattribute("_traversal_type");
     entity finalizetrackedblackboardattributes();
 }
@@ -185,8 +185,8 @@ function private rioterchoosepositionservice(entity) {
     if (function_ebea502e(entity)) {
         return 0;
     }
-    var_1f2328d0 = entity function_4794d6a3();
-    forcedgoal = is_true(var_1f2328d0.goalforced);
+    goalinfo = entity function_4794d6a3();
+    forcedgoal = is_true(goalinfo.goalforced);
     isatscriptgoal = entity isatgoal() || entity isapproachinggoal();
     itsbeenawhile = gettime() > entity.nextfindbestcovertime;
     isinbadplace = entity isinanybadplace();
@@ -198,9 +198,9 @@ function private rioterchoosepositionservice(entity) {
     }
     if (forcedgoal) {
         /#
-            assert(isdefined(var_1f2328d0.goalpos));
+            assert(isdefined(goalinfo.goalpos));
         #/
-        entity function_a57c34b7(var_1f2328d0.goalpos);
+        entity function_a57c34b7(goalinfo.goalpos);
         aiutility::setnextfindbestcovertime(entity);
         return 1;
     }
@@ -279,8 +279,8 @@ function private civilianwanderservice(entity) {
     if (function_ebea502e(entity)) {
         return 0;
     }
-    var_1f2328d0 = entity function_4794d6a3();
-    forcedgoal = is_true(var_1f2328d0.goalforced);
+    goalinfo = entity function_4794d6a3();
+    forcedgoal = is_true(goalinfo.goalforced);
     isatscriptgoal = entity isatgoal() || entity isapproachinggoal();
     itsbeenawhile = gettime() > entity.nextfindbestcovertime;
     var_1ebff8de = itsbeenawhile || !isatscriptgoal;
@@ -289,9 +289,9 @@ function private civilianwanderservice(entity) {
     }
     if (forcedgoal) {
         /#
-            assert(isdefined(var_1f2328d0.goalpos));
+            assert(isdefined(goalinfo.goalpos));
         #/
-        entity function_a57c34b7(var_1f2328d0.goalpos);
+        entity function_a57c34b7(goalinfo.goalpos);
         aiutility::setnextfindbestcovertime(entity);
         return 1;
     }
@@ -338,9 +338,9 @@ function private civilianfollowservice(entity) {
     if (function_ebea502e(entity)) {
         return 0;
     }
-    var_1f2328d0 = entity function_4794d6a3();
+    goalinfo = entity function_4794d6a3();
     distsq = isdefined(entity.overridegoalpos) ? distancesquared(entity.overridegoalpos, followent.origin) : -1;
-    forcedgoal = is_true(var_1f2328d0.goalforced);
+    forcedgoal = is_true(goalinfo.goalforced);
     isatscriptgoal = entity isatgoal() || entity isapproachinggoal();
     itsbeenawhile = gettime() > entity.nextfindbestcovertime;
     var_1ebff8de = itsbeenawhile || !isatscriptgoal || distsq < 0 || distsq > followradiussq;
@@ -518,17 +518,17 @@ function civiliancanthrowmolotovgrenade(behaviortreeentity, throwifpossible = 0)
 function private civilianpreparetothrowgrenade(behaviortreeentity) {
     aiutility::keepclaimnode(behaviortreeentity);
     if (isdefined(behaviortreeentity.enemy)) {
-        behaviortreeentity.grenadethrowposition.behaviortreeentity = behaviortreeentity lastknownpos(behaviortreeentity.enemy);
+        behaviortreeentity.grenadethrowposition = behaviortreeentity lastknownpos(behaviortreeentity.enemy);
     }
     grenadethrowinfo = spawnstruct();
     grenadethrowinfo.grenadethrower = behaviortreeentity;
-    grenadethrowinfo.grenadethrownat.grenadethrowinfo = behaviortreeentity.enemy;
-    grenadethrowinfo.grenadethrownposition.grenadethrowinfo = behaviortreeentity.grenadethrowposition;
+    grenadethrowinfo.grenadethrownat = behaviortreeentity.enemy;
+    grenadethrowinfo.grenadethrownposition = behaviortreeentity.grenadethrowposition;
     blackboard::addblackboardevent("riot_grenade_throw", grenadethrowinfo, randomintrange(15000, 20000));
     grenadethrowinfo = spawnstruct();
-    grenadethrowinfo.grenadethrowerteam.grenadethrowinfo = behaviortreeentity.team;
+    grenadethrowinfo.grenadethrowerteam = behaviortreeentity.team;
     blackboard::addblackboardevent("team_grenade_throw", grenadethrowinfo, randomintrange(5000, 10000));
-    behaviortreeentity.preparegrenadeammo.behaviortreeentity = behaviortreeentity.grenadeammo;
+    behaviortreeentity.preparegrenadeammo = behaviortreeentity.grenadeammo;
 }
 
 // Namespace archetypecivilian/archetype_civilian
@@ -547,8 +547,8 @@ function private civiliancleanuptothrowgrenade(behaviortreeentity) {
             }
             if (isdefined(grenade)) {
                 grenade.owner = behaviortreeentity;
-                grenade.team.grenade = behaviortreeentity.team;
-                grenade setcontents(grenade setcontents(0) & ~(32768 & 16777216 & 2097152 & 8388608));
+                grenade.team = behaviortreeentity.team;
+                grenade setcontents(grenade setcontents(0) & ~(32768 | 16777216 | 2097152 | 8388608));
             }
         }
     }
@@ -563,23 +563,23 @@ function private rioterreaquireservice(entity) {
         return 0;
     }
     if (!isdefined(entity.reacquire_state)) {
-        entity.reacquire_state.entity = 0;
+        entity.reacquire_state = 0;
     }
     if (!isdefined(entity.enemy)) {
-        entity.reacquire_state.entity = 0;
+        entity.reacquire_state = 0;
         return 0;
     }
     if (entity haspath()) {
         return 0;
     }
     if (entity seerecently(entity.enemy, 3)) {
-        entity.reacquire_state.entity = 0;
+        entity.reacquire_state = 0;
         return 0;
     }
     dirtoenemy = vectornormalize(entity.enemy.origin - entity.origin);
     forward = anglestoforward(entity.angles);
     if (vectordot(dirtoenemy, forward) < 0.5) {
-        entity.reacquire_state.entity = 0;
+        entity.reacquire_state = 0;
         return 0;
     }
     switch (entity.reacquire_state) {
@@ -596,14 +596,14 @@ function private rioterreaquireservice(entity) {
         break;
     case #"hash_defdefdefdefdef0":
         if (entity.reacquire_state > 15) {
-            entity.reacquire_state.entity = 0;
+            entity.reacquire_state = 0;
             return 0;
         }
         break;
     }
     if (isvec(reacquirepos)) {
         entity function_a57c34b7(reacquirepos);
-        entity.reacquire_state.entity = 0;
+        entity.reacquire_state = 0;
         return 1;
     }
     entity.reacquire_state++;

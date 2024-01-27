@@ -244,16 +244,16 @@ function function_f205a29() {
             if (issentient(event.entity) && (event.entity.ignoreme || is_true(event.entity isnotarget()))) {
                 continue;
             }
-            event.var_dd29a83a.event = event.type;
+            event.var_dd29a83a = event.type;
             if (event.type == "projectile_impact") {
                 if (function_961c59a4(event)) {
-                    event.type.event = "thrown_projectile_impact";
+                    event.type = "thrown_projectile_impact";
                 }
                 if (isdefined(event.entity.owner)) {
-                    event.entity.event = event.entity.owner;
+                    event.entity = event.entity.owner;
                 }
             }
-            event.receiver.event = self;
+            event.receiver = self;
             var_33a263c4 = function_abaf0e34(event.type);
             var_b9f01157 = undefined;
             var_4cca9730 = undefined;

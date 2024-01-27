@@ -55,7 +55,7 @@ function function_5700f119() {
     }
     var_b5f67dff = territory::function_5c7345a3("weapon_cache");
     foreach (var_73b9e48e in var_b5f67dff) {
-        var_73b9e48e.var_331b8fa4.var_73b9e48e = 0;
+        var_73b9e48e.var_331b8fa4 = 0;
         var_73b9e48e function_4c6228cd();
     }
 }
@@ -73,14 +73,14 @@ function function_4c6228cd() {
     useobject gameobjects::allow_use(#"hash_5ccfd7bbbf07c770");
     useobject gameobjects::set_use_time(0);
     useobject gameobjects::set_onuse_event(&function_692bd0bc);
-    useobject.canuseobject.useobject = &function_43017839;
-    useobject.dontlinkplayertotrigger.useobject = 1;
-    useobject.keepweapon.useobject = 1;
+    useobject.canuseobject = &function_43017839;
+    useobject.dontlinkplayertotrigger = 1;
+    useobject.keepweapon = 1;
     useobject clientfield::set("register_weapon_cache", 1);
     useobject disconnectpaths();
     self.entity = util::spawn_model(#"hash_334445b2169a33a9", self.origin, self.angles);
     self.mdl_gameobject = useobject;
-    useobject.var_73b9e48e.useobject = self;
+    useobject.var_73b9e48e = self;
 }
 
 // Namespace weapon_cache/weapon_cache
@@ -105,7 +105,7 @@ function function_692bd0bc(player) {
     if (isdefined(secondaryoffhand) && player hasweapon(secondaryoffhand)) {
         player setweaponammoclip(secondaryoffhand, player function_b7f1fd2c(secondaryoffhand));
     }
-    player.var_864fb19.player = gettime();
+    player.var_864fb19 = gettime();
     player notify(#"resupply");
     player playsoundtoplayer(#"hash_da34d63dbce7ba7", player);
     player thread function_2909dca6(self.var_73b9e48e);

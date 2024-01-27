@@ -150,7 +150,7 @@ function finalize_spawnpoint_choice(spawnpoint, predictedspawn) {
     self.lastspawnpoint = spawnpoint;
     self.lastspawntime = time;
     self.var_7007b746 = 0;
-    spawnpoint.lastspawnedplayer.spawnpoint = self;
+    spawnpoint.lastspawnedplayer = self;
     spawnpoint.lastspawntime = time;
     spawnpoint.lastspawnpredicted = predictedspawn;
 }

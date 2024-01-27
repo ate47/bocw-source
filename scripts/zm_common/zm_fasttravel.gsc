@@ -155,7 +155,7 @@ function function_cdbbf1ee() {
 // Checksum 0x661c5996, Offset: 0xd60
 // Size: 0x274
 function function_2d4bda34(s_loc) {
-    s_loc.unitrigger_stub.s_loc = spawnstruct();
+    s_loc.unitrigger_stub = spawnstruct();
     s_loc.unitrigger_stub.origin = s_loc.origin;
     s_loc.unitrigger_stub.angles = s_loc.angles;
     s_loc.unitrigger_stub.script_unitrigger_type = "unitrigger_box_use";
@@ -365,7 +365,7 @@ function function_b9c7ccbb(var_12230d08, var_829a20a8 = 0) {
     level notify(var_f80635c + "_start", {#s_unitrigger:var_12230d08, #player:self});
     var_4500bf3f = var_12230d08.script_noteworthy;
     var_8d5d092c = var_12230d08.var_8d5d092c;
-    var_12230d08.used.var_12230d08 = 1;
+    var_12230d08.used = 1;
     switch (var_4500bf3f) {
     case #"traverse":
         if (var_829a20a8) {
@@ -941,7 +941,7 @@ function function_5165d69() {
             continue;
         }
         player endon(#"death");
-        player.var_3011d31c.player = 1;
+        player.var_3011d31c = 1;
         player notify(#"switch_rail");
         player.var_2790fd8b vehicle::detach_path();
         player.var_2790fd8b vehicle::get_on_path(var_616025ba);

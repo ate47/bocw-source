@@ -121,13 +121,13 @@ function updateplayernum(player) {
             if (!isdefined(game._team1_num)) {
                 game._team1_num = 0;
             }
-            player.playernum.player = game._team1_num;
+            player.playernum = game._team1_num;
             game._team1_num = player.playernum + 1;
         } else {
             if (!isdefined(game._team2_num)) {
                 game._team2_num = 0;
             }
-            player.playernum.player = game._team2_num;
+            player.playernum = game._team2_num;
             game._team2_num = player.playernum + 1;
         }
     }
@@ -431,7 +431,7 @@ function callback_playerdamage(einflictor, eattacker, idamage, idflags, smeansof
             return;
         }
     }
-    idflags = idflags & level.idflags_no_knockback;
+    idflags = idflags | level.idflags_no_knockback;
     if (idamage > 0 && shitloc == "riotshield") {
         shitloc = "torso_upper";
     }
@@ -699,7 +699,7 @@ function onplayerspawned() {
 // Size: 0x62
 function spawn_life_brush(origin, radius, height) {
     life_brush = spawn("trigger_radius", origin, 0, radius, height);
-    life_brush.script_noteworthy.life_brush = "life_brush";
+    life_brush.script_noteworthy = "life_brush";
     return life_brush;
 }
 
@@ -726,7 +726,7 @@ function in_life_brush() {
 // Size: 0x62
 function spawn_kill_brush(origin, radius, height) {
     kill_brush = spawn("trigger_radius", origin, 0, radius, height);
-    kill_brush.script_noteworthy.kill_brush = "kill_brush";
+    kill_brush.script_noteworthy = "kill_brush";
     return kill_brush;
 }
 
@@ -1052,7 +1052,7 @@ function player_grenade_watcher() {
         grenade = waitresult.projectile;
         weapon = waitresult.weapon;
         if (isdefined(grenade) && isalive(grenade)) {
-            grenade.team.grenade = self.team;
+            grenade.team = self.team;
         }
         self thread player_grenade_multiattack_bookmark_watcher(grenade, weapon);
         if (isdefined(level.grenade_watcher)) {
@@ -1791,13 +1791,13 @@ function player_damage_override(einflictor, eattacker, idamage, idflags, smeanso
         if (isdefined(self.var_fa7c46f)) {
             idamage = 0;
         }
-        idflags = idflags & 2048;
+        idflags = idflags | 2048;
         if (gear_armor > 0 && self.armor <= 0) {
             self.var_426947c4 = 1;
         }
     }
     if (is_true(self.power_armor_took_damage)) {
-        idflags = idflags & 1024;
+        idflags = idflags | 1024;
     }
     if (isdefined(level.var_ccdc4ca6)) {
         for (i = 0; i < level.var_ccdc4ca6.size; i++) {
@@ -1809,11 +1809,11 @@ function player_damage_override(einflictor, eattacker, idamage, idflags, smeanso
     }
     if (is_true(self.var_96971e3c) || is_true(eattacker.var_9a6fcc)) {
         if (is_true(eattacker.is_zombie) && eattacker.var_6f84b820 === #"normal") {
-            eattacker.var_6e9934ba.eattacker = 1;
+            eattacker.var_6e9934ba = 1;
             playfxontag(#"hash_2bc83d9e991e53ad", eattacker, "j_spine4");
             eattacker thread zm_ai_utility::function_e9209002(self.origin, 2, 1, self);
         } else if (eattacker.archetype === #"zombie_dog") {
-            eattacker.var_6e9934ba.eattacker = 1;
+            eattacker.var_6e9934ba = 1;
             playfxontag(#"hash_2bc83d9e991e53ad", eattacker, "j_spine4");
             eattacker kill(eattacker.origin, self, self, undefined, undefined, 1);
         }
@@ -1832,7 +1832,7 @@ function player_damage_override(einflictor, eattacker, idamage, idflags, smeanso
             if (isdefined(level.custom_kill_damaged_vo)) {
                 eattacker thread [[ level.custom_kill_damaged_vo ]](self);
             } else {
-                eattacker.sound_damage_player.eattacker = self;
+                eattacker.sound_damage_player = self;
             }
             if (is_true(eattacker.missinglegs)) {
                 self zm_audio::create_and_play_dialog(#"general", #"crawl_hit");
@@ -1856,7 +1856,7 @@ function player_damage_override(einflictor, eattacker, idamage, idflags, smeanso
     if (level.scr_zm_ui_gametype == "zcleansed" && idamage > 0) {
         if (isdefined(eattacker) && isplayer(eattacker) && eattacker.team != self.team && (!is_true(self.laststand) && !self laststand::player_is_in_laststand() || !isdefined(self.last_player_attacker))) {
             if (isdefined(eattacker.maxhealth) && is_true(eattacker.is_zombie)) {
-                eattacker.health.eattacker = eattacker.maxhealth;
+                eattacker.health = eattacker.maxhealth;
             }
             if (isdefined(level.player_kills_player)) {
                 self thread [[ level.player_kills_player ]](einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, vpoint, vdir, shitloc, psoffsettime);
@@ -1919,7 +1919,7 @@ function clear_path_timers() {
     zombies = getaiteamarray(level.zombie_team);
     foreach (zombie in zombies) {
         if (isdefined(zombie.favoriteenemy) && zombie.favoriteenemy == self) {
-            zombie.zombie_path_timer.zombie = 0;
+            zombie.zombie_path_timer = 0;
         }
     }
 }

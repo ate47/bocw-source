@@ -23,18 +23,18 @@ function private autoexec __init__system__() {
 function function_70a657d8() {
     dynents = getdynentarray("dynent_garage_button");
     foreach (dynent in dynents) {
-        dynent.onuse.dynent = &function_51a020;
-        dynent.ondamaged.dynent = &function_724a2fa5;
+        dynent.onuse = &function_51a020;
+        dynent.ondamaged = &function_724a2fa5;
     }
     dynents = getdynentarray("dynent_door_check_for_vehicles");
     foreach (dynent in dynents) {
-        dynent.onuse.dynent = &function_995a4e51;
-        dynent.ondamaged.dynent = &function_67b96164;
+        dynent.onuse = &function_995a4e51;
+        dynent.ondamaged = &function_67b96164;
     }
     dynents = getdynentarray("dynent_destroyable_door");
     foreach (dynent in dynents) {
-        dynent.ondamaged.dynent = &function_5d409a7b;
-        dynent.maxhealth.dynent = dynent.health;
+        dynent.ondamaged = &function_5d409a7b;
+        dynent.maxhealth = dynent.health;
     }
     doors = function_f3e164a9(#"hash_4d1fb8524fdfd254");
     if (isdefined(doors) && doors.size > 0) {
@@ -75,7 +75,7 @@ function function_b217acf() {
         params = level waittill(#"hash_2d1093d938f2fad6");
         dynent = params.hitent;
         if (!isdefined(dynent.var_667629e9)) {
-            dynent.var_667629e9.dynent = [];
+            dynent.var_667629e9 = [];
         }
         arrayremovevalue(dynent.var_667629e9, undefined);
         dynent.var_667629e9[dynent.var_667629e9.size] = params.projectile;
@@ -177,7 +177,7 @@ function function_160e40a2() {
                                 playsoundatposition("evt_door_bash", dynent.origin);
                                 playfx("debris/fx9_door_bash", dynent.origin, anglestoforward(dynent.angles), anglestoup(dynent.angles));
                                 var_a548ec11 = 1;
-                                dynent.var_a548ec11.dynent = gettime() + int(var_a852a7dd * 1000) + int(var_a548ec11 * 1000);
+                                dynent.var_a548ec11 = gettime() + int(var_a852a7dd * 1000) + int(var_a548ec11 * 1000);
                                 if (isdefined(level.var_83c46567)) {
                                     [[ level.var_83c46567 ]](dynent);
                                 }
@@ -198,7 +198,7 @@ function function_160e40a2() {
 // Size: 0x8e
 function function_92f2f8cf(doors) {
     foreach (door in doors) {
-        door.ondamaged.door = &function_c743094d;
+        door.ondamaged = &function_c743094d;
     }
 }
 
@@ -210,7 +210,7 @@ function function_c743094d(eventstruct) {
     dynent = eventstruct.ent;
     activator = eventstruct.attacker;
     if (is_true(eventstruct.melee) && isplayer(activator) && isdefined(activator.var_8a022726) && activator.var_8a022726 istriggerenabled()) {
-        dynent.health.dynent = dynent.health + eventstruct.amount;
+        dynent.health = dynent.health + eventstruct.amount;
         stateindex = function_ffdbe8c2(dynent);
         var_b4b3af4c = anglestoforward(dynent.angles);
         playerdir = activator.var_8a022726.origin - activator.origin;
@@ -236,7 +236,7 @@ function function_c743094d(eventstruct) {
             var_a852a7dd = eventstruct.attacker.var_8a022726 dynent_use::use_dynent(dynent, eventstruct.attacker, var_b731b99b, 1, 1);
             playsoundatposition("evt_door_bash", dynent.origin);
             playfx("debris/fx9_door_bash", dynent.origin, anglestoforward(dynent.angles), anglestoup(dynent.angles));
-            dynent.var_a548ec11.dynent = gettime() + var_a852a7dd * 1000;
+            dynent.var_a548ec11 = gettime() + var_a852a7dd * 1000;
         }
     } else if (isplayer(activator) && dynent.health <= 0) {
         activator notify(#"hash_34928429a0070510", {#dynent:dynent});
@@ -374,7 +374,7 @@ function function_51a020(activator, laststate, state) {
 function private function_724a2fa5(eventstruct) {
     dynent = eventstruct.ent;
     if (isdefined(eventstruct)) {
-        dynent.health.dynent = dynent.health + eventstruct.amount;
+        dynent.health = dynent.health + eventstruct.amount;
     }
     if (isdefined(dynent.var_a548ec11) && gettime() <= dynent.var_a548ec11) {
         return;
@@ -383,7 +383,7 @@ function private function_724a2fa5(eventstruct) {
         return;
     }
     var_a852a7dd = dynent_use::use_dynent(dynent);
-    dynent.var_a548ec11.dynent = gettime() + var_a852a7dd * 1000;
+    dynent.var_a548ec11 = gettime() + var_a852a7dd * 1000;
 }
 
 // Namespace namespace_f3e83343/namespace_f3e83343

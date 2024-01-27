@@ -473,10 +473,10 @@ function function_a511c7c4() {
     player endon(#"disconnect");
     player.doa.var_70c50ae0 = 0;
     var_4b98f072 = spawnstruct();
-    var_4b98f072.var_917afa01.var_4b98f072 = 0;
-    var_4b98f072.result.var_4b98f072 = 0;
-    var_4b98f072.timeleft.var_4b98f072 = 15;
-    var_4b98f072.var_5b55ba1f.var_4b98f072 = function_21cd3890(2);
+    var_4b98f072.var_917afa01 = 0;
+    var_4b98f072.result = 0;
+    var_4b98f072.timeleft = 15;
+    var_4b98f072.var_5b55ba1f = function_21cd3890(2);
     level flag::set("doa_round_paused");
     if (!level.var_43cd3fe5 doa_keytrade::is_open(player)) {
         if (!is_true(level.doa.var_318aa67a)) {
@@ -492,7 +492,7 @@ function function_a511c7c4() {
     while (var_4b98f072.timeleft > 0) {
         level clientfield::set_world_uimodel("DOA_GLOBALUIMODEL_COUNTDOWN", var_4b98f072.timeleft);
         wait(1);
-        var_4b98f072.timeleft.var_4b98f072 = var_4b98f072.timeleft - 1;
+        var_4b98f072.timeleft = var_4b98f072.timeleft - 1;
     }
     if (!isdefined(level.doa.var_6f3d327)) {
         namespace_6e90e490::function_fa6f7ba7();
@@ -525,8 +525,8 @@ function function_49592bf9(var_4b98f072) {
         waitresult = self waittill(#"menuresponse");
         response = waitresult.response;
         if (response == "menu_second_chance_cancel") {
-            var_4b98f072.result.var_4b98f072 = 0;
-            var_4b98f072.timeleft.var_4b98f072 = 0;
+            var_4b98f072.result = 0;
+            var_4b98f072.timeleft = 0;
             setdvar(#"ui_busyblockingamemenu", 0);
             level notify(#"hash_47730e778d03543b");
             return;
@@ -543,7 +543,7 @@ function function_295c3381(var_4b98f072) {
     self endon(#"disconnect");
     var_7ce1e87 = 0;
     var_44294245 = 0;
-    var_4b98f072.result.var_4b98f072 = 0;
+    var_4b98f072.result = 0;
     self thread function_49592bf9(var_4b98f072);
     while (1) {
         if (self.doa.score.lives > 0 && self.doa.score.keys > 0) {
@@ -559,8 +559,8 @@ function function_295c3381(var_4b98f072) {
             level.var_43cd3fe5 doa_keytrade::function_3ae8b40f(self, hash(""));
         }
         if (self usebuttonpressed() && self.doa.score.lives > 0) {
-            var_4b98f072.result.var_4b98f072 = 1;
-            var_4b98f072.timeleft.var_4b98f072 = 0;
+            var_4b98f072.result = 1;
+            var_4b98f072.timeleft = 0;
             setdvar(#"ui_busyblockingamemenu", 0);
             return;
         }

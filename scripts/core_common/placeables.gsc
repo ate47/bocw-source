@@ -15,8 +15,8 @@
 function spawnplaceable(onplacecallback, oncancelcallback, onmovecallback, onshutdowncallback, ondeathcallback, onempcallback, ondamagecallback, var_d0dd7e76, model, validmodel, invalidmodel, spawnsvehicle, pickupstring, timeout, health, empdamage, placehintstring, invalidlocationhintstring, placeimmediately = 0, var_c71994b5 = undefined) {
     player = self;
     placeable = spawn("script_model", player.origin);
-    placeable.cancelable.placeable = 1;
-    placeable.held.placeable = 0;
+    placeable.cancelable = 1;
+    placeable.held = 0;
     placeable.validmodel = validmodel;
     placeable.invalidmodel = invalidmodel;
     placeable.oncancel = oncancelcallback;
@@ -29,31 +29,31 @@ function spawnplaceable(onplacecallback, oncancelcallback, onmovecallback, onshu
     placeable.var_d0dd7e76 = var_d0dd7e76;
     placeable.owner = player;
     placeable.originalowner = player;
-    placeable.ownerentnum.placeable = player.entnum;
-    placeable.originalownerentnum.placeable = player.entnum;
+    placeable.ownerentnum = player.entnum;
+    placeable.originalownerentnum = player.entnum;
     placeable.pickupstring = pickupstring;
     placeable.placedmodel = model;
     placeable.spawnsvehicle = spawnsvehicle;
-    placeable.originalteam.placeable = player.team;
-    placeable.team.placeable = player.team;
-    placeable.timedout.placeable = 0;
+    placeable.originalteam = player.team;
+    placeable.team = player.team;
+    placeable.timedout = 0;
     placeable.timeout = timeout;
-    placeable.timeoutstarted.placeable = 0;
-    placeable.angles.placeable = (0, player.angles[1], 0);
+    placeable.timeoutstarted = 0;
+    placeable.angles = (0, player.angles[1], 0);
     placeable.placehintstring = placehintstring;
     placeable.invalidlocationhintstring = invalidlocationhintstring;
     placeable.placeimmediately = placeimmediately;
     if (!isdefined(placeable.placehintstring)) {
-        placeable.placehintstring.placeable = "";
+        placeable.placehintstring = "";
     }
     if (!isdefined(placeable.invalidlocationhintstring)) {
-        placeable.invalidlocationhintstring.placeable = "";
+        placeable.invalidlocationhintstring = "";
     }
     placeable notsolid();
     if (isdefined(placeable.vehicle)) {
         placeable.vehicle notsolid();
     }
-    placeable.othermodel.placeable = spawn("script_model", player.origin);
+    placeable.othermodel = spawn("script_model", player.origin);
     placeable.othermodel setmodel(placeable.placedmodel);
     placeable.othermodel setinvisibletoplayer(player);
     placeable.othermodel notsolid();
@@ -114,8 +114,8 @@ function function_df4e6283(placeable) {
 function function_f872b831(onplacecallback, oncancelcallback, onmovecallback, onshutdowncallback, ondeathcallback, onempcallback, ondamagecallback, var_d0dd7e76, var_c6d99e09, weapon, pickupstring, placehintstring, invalidlocationhintstring, timeout) {
     player = self;
     placeable = spawn("script_model", player.origin);
-    placeable.cancelable.placeable = 1;
-    placeable.held.placeable = 0;
+    placeable.cancelable = 1;
+    placeable.held = 0;
     placeable.oncancel = oncancelcallback;
     placeable.onemp = onempcallback;
     placeable.onmove = onmovecallback;
@@ -126,25 +126,25 @@ function function_f872b831(onplacecallback, oncancelcallback, onmovecallback, on
     placeable.var_d0dd7e76 = var_d0dd7e76;
     placeable.owner = player;
     placeable.originalowner = player;
-    placeable.ownerentnum.placeable = player.entnum;
-    placeable.originalownerentnum.placeable = player.entnum;
+    placeable.ownerentnum = player.entnum;
+    placeable.originalownerentnum = player.entnum;
     placeable.pickupstring = pickupstring;
     placeable.placehintstring = placehintstring;
     placeable.invalidlocationhintstring = invalidlocationhintstring;
-    placeable.originalteam.placeable = player.team;
-    placeable.team.placeable = player.team;
-    placeable.timedout.placeable = 0;
+    placeable.originalteam = player.team;
+    placeable.team = player.team;
+    placeable.timedout = 0;
     placeable.timeout = timeout;
-    placeable.timeoutstarted.placeable = 0;
-    placeable.angles.placeable = (0, player.angles[1], 0);
-    placeable.placeimmediately.placeable = 0;
+    placeable.timeoutstarted = 0;
+    placeable.angles = (0, player.angles[1], 0);
+    placeable.placeimmediately = 0;
     placeable.weapon = weapon;
     placeable.var_8f4513d1 = var_c6d99e09;
     if (!isdefined(placeable.placehintstring)) {
-        placeable.placehintstring.placeable = "";
+        placeable.placehintstring = "";
     }
     if (!isdefined(placeable.invalidlocationhintstring)) {
-        placeable.invalidlocationhintstring.placeable = "";
+        placeable.invalidlocationhintstring = "";
     }
     player function_e4fd9a4c(placeable);
     player thread function_b7fcffdd(placeable);
@@ -184,11 +184,11 @@ function function_b7fcffdd(placeable) {
             [[ level.var_69959686 ]](placeable.weapon);
         }
         if (is_true(self.var_7a3f3edf) && isdefined(self.var_b8878ba9) && isdefined(self.var_b8878ba9)) {
-            placeable.held.placeable = 0;
+            placeable.held = 0;
             player.holding_placeable = undefined;
-            placeable.cancelable.placeable = 0;
-            placeable.origin.placeable = self.var_b8878ba9;
-            placeable.angles.placeable = self.var_ddc03e10;
+            placeable.cancelable = 0;
+            placeable.origin = self.var_b8878ba9;
+            placeable.angles = self.var_ddc03e10;
             player onplace(placeable);
             return;
         }
@@ -222,7 +222,7 @@ function carryplaceable(placeable) {
         placeable.othermodel thread util::ghost_wait_show_to_others(player, 0.05, "abort_ghost_wait_show");
         placeable.othermodel notsolid();
     }
-    placeable.held.placeable = 1;
+    placeable.held = 1;
     player.holding_placeable = placeable;
     player carryturret(placeable, vectorscale((1, 0, 0), 40), (0, 0, 0));
     player val::set(#"placeable", "disable_weapons");
@@ -315,17 +315,17 @@ function watchplacement(placeable) {
     player thread watchcarrycancelevents(placeable);
     player thread function_e222876f(placeable);
     lastattempt = -1;
-    placeable.canbeplaced.placeable = 0;
+    placeable.canbeplaced = 0;
     waitingforattackbuttonrelease = 1;
     while (1) {
         placement = player canplayerplaceturret();
-        placeable.origin.placeable = placement[#"origin"];
-        placeable.angles.placeable = placement[#"angles"];
-        placeable.canbeplaced.placeable = placement[#"result"] && !placeable innoplacementtrigger();
+        placeable.origin = placement[#"origin"];
+        placeable.angles = placement[#"angles"];
+        placeable.canbeplaced = placement[#"result"] && !placeable innoplacementtrigger();
         laststand = player laststand::player_is_in_laststand();
         in_igc = player scene::is_igc_active();
         if (laststand || in_igc) {
-            placeable.canbeplaced.placeable = 0;
+            placeable.canbeplaced = 0;
         }
         if (isdefined(placeable.othermodel)) {
             placeable.othermodel.origin = placement[#"origin"];
@@ -358,14 +358,14 @@ function watchplacement(placeable) {
                 buildallowed = placeable [[ placeable.var_d944a140 ]](placement[#"origin"], player);
             }
             if (placement[#"result"] && buildallowed) {
-                placeable.origin.placeable = placement[#"origin"];
-                placeable.angles.placeable = placement[#"angles"];
+                placeable.origin = placement[#"origin"];
+                placeable.angles = placement[#"angles"];
                 player sethintstring("");
                 player stopcarryturret(placeable);
                 player val::reset(#"placeable", "disable_weapons");
-                placeable.held.placeable = 0;
+                placeable.held = 0;
                 player.holding_placeable = undefined;
-                placeable.cancelable.placeable = 0;
+                placeable.cancelable = 0;
                 if (is_true(placeable.health)) {
                     placeable setcandamage(1);
                     placeable solid();
@@ -374,8 +374,8 @@ function watchplacement(placeable) {
                     placeable setmodel(placeable.placedmodel);
                 } else {
                     placeable notify(#"abort_ghost_wait_show");
-                    placeable.abort_ghost_wait_show_to_player.placeable = 1;
-                    placeable.abort_ghost_wait_show_to_others.placeable = 1;
+                    placeable.abort_ghost_wait_show_to_player = 1;
+                    placeable.abort_ghost_wait_show_to_others = 1;
                     placeable ghost();
                     if (isdefined(placeable.othermodel)) {
                         placeable.othermodel notify(#"abort_ghost_wait_show");
@@ -386,7 +386,7 @@ function watchplacement(placeable) {
                 }
                 if (isdefined(placeable.timeout)) {
                     if (!placeable.timeoutstarted) {
-                        placeable.timeoutstarted.placeable = 1;
+                        placeable.timeoutstarted = 1;
                         if (isdefined(placeable.var_d0dd7e76)) {
                             placeable thread [[ placeable.var_d0dd7e76 ]](placeable.timeout, &ontimeout, "death", "cancelled");
                         }
@@ -457,7 +457,7 @@ function function_e222876f(placeable) {
 function ontimeout() {
     placeable = self;
     if (is_true(placeable.held)) {
-        placeable.timedout.placeable = 1;
+        placeable.timedout = 1;
         return;
     }
     placeable notify(#"delete_placeable_trigger");
@@ -570,7 +570,7 @@ function cancelongameend(placeable) {
 // Size: 0x114
 function spawnmovetrigger(placeable, player) {
     pos = placeable.origin + vectorscale((0, 0, 1), 15);
-    placeable.pickuptrigger.placeable = spawn("trigger_radius_use", pos);
+    placeable.pickuptrigger = spawn("trigger_radius_use", pos);
     placeable.pickuptrigger setcursorhint("HINT_NOICON", placeable);
     placeable.pickuptrigger sethintstring(placeable.pickupstring);
     placeable.pickuptrigger setteamfortrigger(player.team);
@@ -630,7 +630,7 @@ function watchpickup(player) {
             if (isdefined(placeable.weapon_instance)) {
                 placeable.weapon_instance notify(#"picked_up");
             }
-            placeable.held.placeable = 1;
+            placeable.held = 1;
             placeable setcandamage(0);
             player onmove(placeable);
             return;
@@ -644,7 +644,7 @@ function watchpickup(player) {
 // Size: 0x30
 function forceshutdown() {
     placeable = self;
-    placeable.cancelable.placeable = 0;
+    placeable.cancelable = 0;
     placeable notify(#"cancelled");
 }
 
@@ -659,7 +659,7 @@ function watchownergameevents() {
     placeable endon(#"cancelled");
     placeable.owner waittill(#"joined_team", #"disconnect", #"joined_spectators");
     if (isdefined(placeable)) {
-        placeable.abandoned.placeable = 1;
+        placeable.abandoned = 1;
         placeable forceshutdown();
     }
 }
@@ -690,8 +690,8 @@ function shutdownoncancelevent(placeable) {
             [[ level.var_69959686 ]](placeable.weapon);
         }
         if (is_true(self.var_7a3f3edf) && isdefined(player.var_b8878ba9) && isdefined(player.var_b8878ba9)) {
-            placeable.origin.placeable = player.var_b8878ba9;
-            placeable.angles.placeable = player.var_ddc03e10;
+            placeable.origin = player.var_b8878ba9;
+            placeable.angles = player.var_ddc03e10;
         }
     }
     if (isdefined(player) && isdefined(placeable) && placeable.held === 1) {
@@ -722,8 +722,8 @@ function shutdownoncancelevent(placeable) {
     }
     if (function_3132f113(placeable)) {
         if (isdefined(vehicle)) {
-            vehicle.selfdestruct.vehicle = 1;
-            vehicle._no_death_state.vehicle = 1;
+            vehicle.selfdestruct = 1;
+            vehicle._no_death_state = 1;
             vehicle kill();
         }
         if (isdefined(othermodel)) {

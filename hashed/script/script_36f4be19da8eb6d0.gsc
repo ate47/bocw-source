@@ -669,7 +669,7 @@ function function_13da7675(var_75bb3d80) {
         }
         if (function_bd61e5e5(ai, view_pos, forward_view_angles)) {
             target.ai = ai;
-            target.distance.target = distance2d(view_pos, test_origin);
+            target.distance = distance2d(view_pos, test_origin);
             if (!isdefined(targets)) {
                 targets = [];
             } else if (!isarray(targets)) {
@@ -722,7 +722,7 @@ function function_427f113c(weapon, var_242262dc = 1) {
                 function_64cd8a8f("<unknown string>" + trigger getentitynumber());
             #/
             if (!isdefined(trigger.var_42859232)) {
-                trigger.var_42859232.trigger = [];
+                trigger.var_42859232 = [];
             }
             if (!isdefined(trigger.var_42859232[self getentitynumber()])) {
                 trigger.var_42859232[self getentitynumber()] = gettime();
@@ -1104,7 +1104,7 @@ function function_42402593(value) {
 // Checksum 0xf1584734, Offset: 0x5318
 // Size: 0x22
 function function_d48a01a5(watcher) {
-    watcher.onspawn.watcher = &function_cdb97cd1;
+    watcher.onspawn = &function_cdb97cd1;
 }
 
 // Namespace namespace_b376a999/namespace_b376a999
@@ -1248,12 +1248,12 @@ function function_caac60f2() {
     shatter_trigger = spawn("trigger_damage", self.origin, 0, 15, 72);
     flag = function_27f2ef17(shatter_trigger);
     function_4e3bb793(shatter_trigger, flag & ~512);
-    shatter_trigger.var_af6e27ba.shatter_trigger = 0;
+    shatter_trigger.var_af6e27ba = 0;
     shatter_trigger enablelinkto();
     shatter_trigger linkto(self);
     shatter_trigger thread function_e31780b1();
     shatter_trigger thread function_ff9195ba();
-    spawnflags = 512 & 1 & 512 & 2 & 512 & 4 & 16;
+    spawnflags = 512 | 1 | 512 | 2 | 512 | 4 | 16;
     crumple_trigger = spawn("trigger_radius", self.origin, spawnflags, 0, 0);
     crumple_trigger enablelinkto();
     crumple_trigger linkto(self);
@@ -1327,7 +1327,7 @@ function function_ee76afdc(params, shatter_trigger, crumple_trigger) {
             continue;
         }
         if (isdefined(s_notify.amount)) {
-            shatter_trigger.var_af6e27ba.shatter_trigger = shatter_trigger.var_af6e27ba + s_notify.amount;
+            shatter_trigger.var_af6e27ba = shatter_trigger.var_af6e27ba + s_notify.amount;
             if (shatter_trigger.var_af6e27ba >= 100) {
                 if (!is_true(s_notify.var_98e101b0)) {
                     self thread function_1a915299(params, shatter_trigger, crumple_trigger);
@@ -1519,7 +1519,7 @@ function function_2a7980e() {
 // Checksum 0xa4af9315, Offset: 0x6980
 // Size: 0x22
 function function_47c38bc8(watcher) {
-    watcher.onspawn.watcher = &function_4af61eed;
+    watcher.onspawn = &function_4af61eed;
 }
 
 // Namespace namespace_b376a999/namespace_b376a999
@@ -1594,7 +1594,7 @@ function function_f9ebf407(owner, position, *normal, radius, damageendtime) {
             if (isalive(target) && target getteam() == level.zombie_team || isinarray(var_b063467a, target)) {
                 target dodamage(1500 * var_d3c8f6cd, target.origin, position, self, "none", "MOD_UNKNOWN", 0, getweapon(#"ww_ieu_gas_t9"));
                 if (1500 < target.health && !is_true(target.var_65ebe4ec) && isactor(target)) {
-                    target.var_65ebe4ec.target = 1;
+                    target.var_65ebe4ec = 1;
                     target thread function_48c9861b(gettime());
                 }
             }
@@ -1706,7 +1706,7 @@ function function_53e5275c(ammo_count) {
 // Checksum 0xce78bd6d, Offset: 0x7328
 // Size: 0x22
 function function_3c39516d(watcher) {
-    watcher.onspawn.watcher = &function_83869cdb;
+    watcher.onspawn = &function_83869cdb;
 }
 
 // Namespace namespace_b376a999/namespace_b376a999
@@ -1760,11 +1760,11 @@ function function_fd195372(inflictor, attacker, damage, *flags, meansofdeath, *w
     if (isdefined(shitloc) && shitloc != self && surfacetype != "MOD_DOT" && surfacetype != "MOD_MELEE") {
         var_d3c8f6cd = isdefined(shitloc.var_d3c8f6cd) ? shitloc.var_d3c8f6cd : 1;
         if (!isdefined(shitloc.var_4bc2bb56)) {
-            shitloc.var_4bc2bb56.shitloc = 150000 * var_d3c8f6cd;
+            shitloc.var_4bc2bb56 = 150000 * var_d3c8f6cd;
         }
         boneindex = min(self.health, shitloc.var_4bc2bb56);
         boneindex = min(boneindex, 50000 * var_d3c8f6cd);
-        shitloc.var_4bc2bb56.shitloc = shitloc.var_4bc2bb56 - boneindex;
+        shitloc.var_4bc2bb56 = shitloc.var_4bc2bb56 - boneindex;
         if (isplayer(psoffsettime)) {
             psoffsettime clientfield::increment("" + #"hash_492f4817c4296ddf");
         }

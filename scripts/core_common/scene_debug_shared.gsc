@@ -574,9 +574,9 @@ function function_3bafd088(var_a572f325) {
                 if (!isdefined(var_a572f325)) {
                     var_a572f325 = spawnstruct();
                 }
-                var_a572f325.var_3ee40508.var_a572f325 = getdvarint(#"hash_13d62f4d290ef671", 0);
-                var_a572f325.var_2640d68e.var_a572f325 = getdvarint(#"scr_show_shot_info_for_igcs", 0);
-                var_a572f325.drawfps.var_a572f325 = getdvarint(#"cg_drawfps", 1);
+                var_a572f325.drawbig = getdvarint(#"hash_13d62f4d290ef671", 0);
+                var_a572f325.var_2640d68e = getdvarint(#"scr_show_shot_info_for_igcs", 0);
+                var_a572f325.drawfps = getdvarint(#"cg_drawfps", 1);
                 level.var_a572f325 = var_a572f325;
                 setdvar(#"hash_13d62f4d290ef671", 1);
                 setdvar(#"scr_show_shot_info_for_igcs", 1);
@@ -596,12 +596,12 @@ function function_d2785094(var_a572f325) {
     /#
         /#
             if (getdvarint(#"dvr_enable", 0) > 0 && getdvarint(#"scr_scene_dvr", 0) > 0) {
-                var_3ee40508 = 0;
+                drawbig = 0;
                 var_2640d68e = 0;
                 drawfps = 1;
                 if (isdefined(var_a572f325)) {
-                    if (isdefined(var_a572f325.var_3ee40508)) {
-                        var_3ee40508 = var_a572f325.var_3ee40508;
+                    if (isdefined(var_a572f325.drawbig)) {
+                        drawbig = var_a572f325.drawbig;
                     }
                     if (isdefined(var_a572f325.var_2640d68e)) {
                         var_2640d68e = var_a572f325.var_2640d68e;
@@ -610,7 +610,7 @@ function function_d2785094(var_a572f325) {
                         drawfps = var_a572f325.drawfps;
                     }
                 }
-                setdvar(#"hash_13d62f4d290ef671", var_3ee40508);
+                setdvar(#"hash_13d62f4d290ef671", drawbig);
                 setdvar(#"scr_show_shot_info_for_igcs", var_2640d68e);
                 setdvar(#"cg_drawfps", drawfps);
                 adddebugcommand("<unknown string>");
@@ -632,10 +632,10 @@ function test_play(arg1, arg2, str_mode) {
         var_a572f325 = spawnstruct();
         var_a572f325.name = arg1;
         if (!isdefined(var_a572f325.name)) {
-            var_a572f325.name.var_a572f325 = self.scriptbundlename;
+            var_a572f325.name = self.scriptbundlename;
         }
         if (!isdefined(var_a572f325.name)) {
-            var_a572f325.name.var_a572f325 = "<unknown string>";
+            var_a572f325.name = "<unknown string>";
         }
         function_3bafd088(var_a572f325);
         play(arg1, arg2, undefined, 1, str_mode);

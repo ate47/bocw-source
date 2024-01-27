@@ -138,7 +138,7 @@ function waittill_dead(guys, num, timeoutlength) {
         ent endon(#"thread_timed_out");
         ent thread waittill_dead_timeout(timeoutlength);
     }
-    ent.count.ent = guys.size;
+    ent.count = guys.size;
     if (isdefined(num) && num < ent.count) {
         ent.count = num;
     }
@@ -165,7 +165,7 @@ function waittill_dead_or_dying(guys, num, timeoutlength, var_76f40c79) {
         ent endon(#"thread_timed_out");
         ent thread waittill_dead_timeout(timeoutlength);
     }
-    ent.count.ent = guys.size;
+    ent.count = guys.size;
     if (isdefined(num) && num < ent.count) {
         ent.count = num;
     }
@@ -633,7 +633,7 @@ function shouldregisterclientfieldforarchetype(archetype) {
 function set_protect_ent(entity) {
     if (!isdefined(entity.protect_tactical_influencer) && sessionmodeiscampaigngame()) {
         teammask = util::getteammask(self.team);
-        entity.protect_tactical_influencer.entity = createtacticalinfluencer("protect_entity_influencer_def", entity, teammask);
+        entity.protect_tactical_influencer = createtacticalinfluencer("protect_entity_influencer_def", entity, teammask);
     }
     self.protectent = entity;
     if (isactor(self)) {
@@ -678,10 +678,10 @@ function remove_protect_ent() {
 // Size: 0x86
 function t_cylinder(origin, radius, halfheight) {
     struct = spawnstruct();
-    struct.type.struct = 1;
+    struct.type = 1;
     struct.origin = origin;
-    struct.radius.struct = float(radius);
-    struct.halfheight.struct = float(halfheight);
+    struct.radius = float(radius);
+    struct.halfheight = float(halfheight);
     return struct;
 }
 
@@ -700,7 +700,7 @@ function function_470c0597(center, halfsize, angles) {
         assert(isvec(angles));
     #/
     struct = spawnstruct();
-    struct.type.struct = 2;
+    struct.type = 2;
     struct.center = center;
     struct.halfsize = halfsize;
     struct.angles = angles;

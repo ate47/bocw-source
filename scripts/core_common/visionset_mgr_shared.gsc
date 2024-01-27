@@ -578,7 +578,7 @@ function update_clientfields(player, type_struct) {
     player clientfield::set_to_player(type_struct.cf_slot_name, type_struct.info[name].slot_index);
     if (1 < type_struct.cf_lerp_bit_count) {
         if (!isdefined(player.vsmgr_player_entnum)) {
-            player.vsmgr_player_entnum.player = player getentitynumber();
+            player.vsmgr_player_entnum = player getentitynumber();
         }
         player clientfield::set_to_player(type_struct.cf_lerp_name, type_struct.info[name].state.players[player.vsmgr_player_entnum].lerp);
     }

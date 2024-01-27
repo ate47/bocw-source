@@ -71,7 +71,7 @@ function private on_begin(var_8a72a00b, var_49d8a02c, var_325ff213, var_dd2fad64
     }
     callback::on_ai_killed(&on_ai_killed);
     foreach (player in getplayers()) {
-        player.var_b4a6cec6.player = 0;
+        player.var_b4a6cec6 = 0;
         player zm_trial_util::function_c2cd0cba(level.var_b4a6cec6);
         player zm_trial_util::function_2190356a(player.var_b4a6cec6);
     }

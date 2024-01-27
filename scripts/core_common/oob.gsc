@@ -488,13 +488,13 @@ function enter_oob(entity) {
     player notify(#"oob_enter");
     if (isdefined(level.oob_timekeep_ms) && isdefined(player.last_oob_timekeep_ms) && isdefined(player.var_2c46cbd0) && gettime() - player.last_oob_timekeep_ms < level.oob_timekeep_ms) {
         var_e09617 = player function_54e69ee4();
-        player.var_2c46cbd0.player = int(min(player.var_2c46cbd0, var_e09617));
-        player.oob_start_time.player = gettime() - var_e09617 - player.var_2c46cbd0;
+        player.var_2c46cbd0 = int(min(player.var_2c46cbd0, var_e09617));
+        player.oob_start_time = gettime() - var_e09617 - player.var_2c46cbd0;
     } else {
-        player.oob_start_time.player = gettime();
+        player.oob_start_time = gettime();
     }
-    player.oob_lastvalidplayerloc.player = entity.origin;
-    player.oob_lastvalidplayerdir.player = vectornormalize(entity getvelocity());
+    player.oob_lastvalidplayerloc = entity.origin;
+    player.oob_lastvalidplayerdir = vectornormalize(entity getvelocity());
     player clientfield::set_to_player("nonplayer_oob_usage", 0);
     player val::set(#"oob", "show_hud", 0);
     player thread watchforleave(entity);
@@ -626,7 +626,7 @@ function killentity(entity) {
             vehicle dodamage(vehicle.health + 10000, vehicle.origin, undefined, undefined, "none", "MOD_EXPLOSIVE", 8192);
         }
     }
-    entity dodamage(entity.health + 10000, entity.origin, undefined, undefined, "none", "MOD_TRIGGER_HURT", 8192 & 16384);
+    entity dodamage(entity.health + 10000, entity.origin, undefined, undefined, "none", "MOD_TRIGGER_HURT", 8192 | 16384);
     if (isplayer(entity)) {
         entity suicide();
     }
@@ -709,7 +709,7 @@ function private function_20431d45(var_952a24b5) {
         return;
     }
     if (!is_true(player.var_fe73e6f8) && var_952a24b5) {
-        player.var_fe73e6f8.player = 1;
+        player.var_fe73e6f8 = 1;
         timeremaining = player function_f896a102();
         callback::callback(#"hash_75edd53ff899cd30", {#var_7a3dfae:timeremaining});
     } else if (is_true(player.var_fe73e6f8) && !var_952a24b5) {

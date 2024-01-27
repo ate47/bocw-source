@@ -66,7 +66,7 @@ class csceneactor : csceneobject {
         ent = self._e;
         if (isdefined(ent)) {
             if (isdefined(self.var_55b4f21e.deathanim) && !is_true(ent.var_67d418)) {
-                ent.var_4a438c2b.ent = 1;
+                ent.var_4a438c2b = 1;
                 ent setnormalhealth(1);
                 align = self.m_align;
                 if (is_true(self.var_55b4f21e.var_d49adf2f)) {
@@ -74,7 +74,7 @@ class csceneactor : csceneobject {
                 }
                 ent animation::play(self.var_55b4f21e.deathanim, align, self.m_tag, 1, isdefined(self.var_55b4f21e.blend) ? self.var_55b4f21e.blend : 0.2, 0);
                 if (isalive(ent)) {
-                    ent.var_4a438c2b.ent = 0;
+                    ent.var_4a438c2b = 0;
                     ent kill();
                 }
             } else {

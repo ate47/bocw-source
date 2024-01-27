@@ -518,7 +518,7 @@ function filter_spawnpoints(*spawnpoints) {
             assert(isdefined(level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid].spawns) && level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid].spawns.size > 0);
         #/
     #/
-    e_player.var_7007b746.e_player = 1;
+    e_player.var_7007b746 = 1;
     return level.spawnselect.vox_plr_1_revive_down_2[spawbeaconid].spawns;
 }
 
@@ -623,8 +623,8 @@ function waitandenablespawngroups() {
 // Params 1, eflags: 0x0
 // Checksum 0x4a47c149, Offset: 0x1fb8
 // Size: 0x2c
-function function_4f78b01d(var_22eb977c) {
-    level clientfield::set_world_uimodel("hideautospawnoption", var_22eb977c);
+function function_4f78b01d(shoulddisable) {
+    level clientfield::set_world_uimodel("hideautospawnoption", shoulddisable);
 }
 
 // Namespace userspawnselection/userspawnselection
@@ -669,7 +669,7 @@ function private setupspawnlistforspawngroup(spawngroupkey, spawnlistname, team)
             continue;
         }
         if (!isdefined(spawn.enabled)) {
-            spawn.enabled.spawn = -1;
+            spawn.enabled = -1;
         }
         array::add(self.spawns, spawn);
         var_38345be7 = var_38345be7 + spawn.origin[0];
@@ -690,18 +690,18 @@ function private setupspawnlistforspawngroup(spawngroupkey, spawnlistname, team)
 // Checksum 0xd806d74f, Offset: 0x2330
 // Size: 0x13e
 function private setupspawngroup(spawngroup) {
-    spawngroup.objectiveid.spawngroup = gameobjects::get_next_obj_id();
+    spawngroup.objectiveid = gameobjects::get_next_obj_id();
     if (level.teambased && isdefined(game.switchedsides) && game.switchedsides) {
-        spawngroup.team.spawngroup = util::getotherteam(spawngroup.script_team);
+        spawngroup.team = util::getotherteam(spawngroup.script_team);
     } else {
-        spawngroup.team.spawngroup = spawngroup.script_team;
+        spawngroup.team = spawngroup.script_team;
     }
     var_b5d9fb3a = spawngroup setupspawnlistforspawngroup(spawngroup.target, spawngroup.spawnlist, spawngroup.team);
     objectivename = spawngroup.script_objective;
     objective_add(spawngroup.objectiveid, "active", var_b5d9fb3a, objectivename);
     objective_setteam(spawngroup.objectiveid, spawngroup.team);
     level.spawnselect.vox_plr_1_revive_down_2[spawngroup.objectiveid] = spawngroup;
-    spawngroup.var_34d7dddd.spawngroup = 1;
+    spawngroup.var_34d7dddd = 1;
 }
 
 // Namespace userspawnselection/userspawnselection

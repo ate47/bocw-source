@@ -121,9 +121,9 @@ function function_381c8192() {
     level.doa.var_ad2c78a5 = [];
     for (i = 0; i < 8; i++) {
         obj = spawnstruct();
-        obj.var_e429ef89.obj = luielem_entity_bar::register_clientside();
-        obj.localclientnum.obj = -1;
-        obj.entitynum.obj = -1;
+        obj.var_e429ef89 = luielem_entity_bar::register_clientside();
+        obj.localclientnum = -1;
+        obj.entitynum = -1;
         level.doa.var_ad2c78a5[i] = obj;
     }
 }
@@ -137,8 +137,8 @@ function function_295b0822() {
         if (obj.localclientnum != -1 && obj.var_e429ef89 luielem_entity_bar::is_open(obj.localclientnum)) {
             obj.var_e429ef89 luielem_entity_bar::close(obj.localclientnum);
         }
-        obj.localclientnum.obj = -1;
-        obj.entitynum.obj = -1;
+        obj.localclientnum = -1;
+        obj.entitynum = -1;
     }
     namespace_1e25ad94::function_f5f0c0f8("Reset all healthBars");
 }
@@ -195,8 +195,8 @@ function function_60e526c9(localclientnum, entitynum) {
         if (obj.var_e429ef89 luielem_entity_bar::is_open(localclientnum)) {
             obj.var_e429ef89 luielem_entity_bar::close(localclientnum);
         }
-        obj.localclientnum.obj = -1;
-        obj.entitynum.obj = -1;
+        obj.localclientnum = -1;
+        obj.entitynum = -1;
         namespace_1e25ad94::function_f5f0c0f8("Released a healthBar to localClientNum:" + localclientnum + " Entity:" + entitynum);
     }
     profilestop();
@@ -290,17 +290,17 @@ function function_9d1ddcae() {
     level.doa.var_b1d82287 = [];
     for (i = 0; i < 8; i++) {
         obj = spawnstruct();
-        obj.var_e429ef89.obj = doa_textbubble::register_clientside();
-        obj.localclientnum.obj = -1;
-        obj.entitynum.obj = -1;
+        obj.var_e429ef89 = doa_textbubble::register_clientside();
+        obj.localclientnum = -1;
+        obj.entitynum = -1;
         level.doa.var_b1d82287[i] = obj;
     }
     level.doa.var_96dc6b3b = [];
     for (i = 0; i < 4; i++) {
         obj = spawnstruct();
-        obj.var_e429ef89.obj = doa_textbubble_playername::register_clientside();
-        obj.localclientnum.obj = -1;
-        obj.entitynum.obj = -1;
+        obj.var_e429ef89 = doa_textbubble_playername::register_clientside();
+        obj.localclientnum = -1;
+        obj.entitynum = -1;
         level.doa.var_96dc6b3b[i] = obj;
     }
     function_9c007987();
@@ -343,15 +343,15 @@ function function_2c7423ff() {
         if (obj.localclientnum != -1 && obj.var_e429ef89 doa_textbubble::is_open(obj.localclientnum)) {
             obj.var_e429ef89 doa_textbubble::close(obj.localclientnum);
         }
-        obj.localclientnum.obj = -1;
-        obj.entitynum.obj = -1;
+        obj.localclientnum = -1;
+        obj.entitynum = -1;
     }
     foreach (obj in level.doa.var_96dc6b3b) {
         if (obj.localclientnum != -1 && obj.var_e429ef89 doa_textbubble_playername::is_open(obj.localclientnum)) {
             obj.var_e429ef89 doa_textbubble_playername::close(obj.localclientnum);
         }
-        obj.localclientnum.obj = -1;
-        obj.entitynum.obj = -1;
+        obj.localclientnum = -1;
+        obj.entitynum = -1;
     }
     namespace_1e25ad94::function_f5f0c0f8("Reset all text bubbles");
 }
@@ -404,8 +404,8 @@ function function_5f71ab96(localclientnum, entitynum) {
         if (obj.var_e429ef89 doa_textbubble::is_open(localclientnum)) {
             obj.var_e429ef89 doa_textbubble::close(localclientnum);
         }
-        obj.localclientnum.obj = -1;
-        obj.entitynum.obj = -1;
+        obj.localclientnum = -1;
+        obj.entitynum = -1;
         namespace_1e25ad94::function_f5f0c0f8("Released a textBubble to localClientNum:" + localclientnum + " Entity:" + entitynum);
     }
     profilestop();
@@ -551,8 +551,8 @@ function function_820380e1() {
         if (obj.localclientnum != -1 && obj.var_e429ef89 doa_textbubble_playername::is_open(obj.localclientnum)) {
             obj.var_e429ef89 doa_textbubble_playername::close(obj.localclientnum);
         }
-        obj.localclientnum.obj = -1;
-        obj.entitynum.obj = -1;
+        obj.localclientnum = -1;
+        obj.entitynum = -1;
     }
     namespace_1e25ad94::function_f5f0c0f8("Reset all name bubbles");
 }
@@ -605,8 +605,8 @@ function function_651f262d(localclientnum, entitynum) {
         if (obj.var_e429ef89 doa_textbubble_playername::is_open(localclientnum)) {
             obj.var_e429ef89 doa_textbubble_playername::close(localclientnum);
         }
-        obj.localclientnum.obj = -1;
-        obj.entitynum.obj = -1;
+        obj.localclientnum = -1;
+        obj.entitynum = -1;
         namespace_1e25ad94::function_f5f0c0f8("Released a nameBubble to localClientNum:" + localclientnum + " Entity:" + entitynum);
     }
     profilestop();
@@ -748,7 +748,7 @@ function function_d47b1ac(id, var_a793c1e1 = 0, var_a6e8b35b) {
             break;
         }
     } else {
-        val.msg.val = #"hash_4bec7ac65a15bb06";
+        val.msg = #"hash_4bec7ac65a15bb06";
         switch (id) {
         case 1:
             val = level.doa.var_49bb35e6[randomint(level.doa.var_49bb35e6.size)];
@@ -785,105 +785,105 @@ function function_d47b1ac(id, var_a793c1e1 = 0, var_a6e8b35b) {
             break;
         case 7:
             val = level.doa.var_d0bdbf5a[randomint(level.doa.var_d0bdbf5a.size)];
-            val.q.val = 1;
+            val.q = 1;
             break;
         case 8:
             val = level.doa.var_5127d579[randomint(level.doa.var_5127d579.size)];
-            val.q.val = 1;
+            val.q = 1;
             break;
         case 21:
-            val.msg.val = #"hash_9d56a2e5a17db7d";
-            val.audio.val = #"hash_1896db69557c5e11";
-            val.q.val = 1;
+            val.msg = #"hash_9d56a2e5a17db7d";
+            val.audio = #"hash_1896db69557c5e11";
+            val.q = 1;
             break;
         case 22:
-            val.msg.val = #"hash_284ba6bcad0fa011";
-            val.audio.val = #"hash_3e81803ccb560d6a";
-            val.q.val = 1;
+            val.msg = #"hash_284ba6bcad0fa011";
+            val.audio = #"hash_3e81803ccb560d6a";
+            val.q = 1;
             break;
         case 23:
-            val.msg.val = #"hash_7f4cffc1031f00b5";
-            val.audio.val = #"hash_960c838d32b0e8c";
-            val.cooldown.val = 60000;
-            val.q.val = 1;
+            val.msg = #"hash_7f4cffc1031f00b5";
+            val.audio = #"hash_960c838d32b0e8c";
+            val.cooldown = 60000;
+            val.q = 1;
             break;
         case 24:
-            val.msg.val = #"hash_3b4bad43aa759f1f";
-            val.audio.val = #"hash_77239a5e66ecb44e";
-            val.q.val = 1;
+            val.msg = #"hash_3b4bad43aa759f1f";
+            val.audio = #"hash_77239a5e66ecb44e";
+            val.q = 1;
             break;
         case 25:
-            val.msg.val = #"hash_7645e95bcead3896";
-            val.audio.val = #"hash_4755fe2ee3054075";
-            val.q.val = 1;
+            val.msg = #"hash_7645e95bcead3896";
+            val.audio = #"hash_4755fe2ee3054075";
+            val.q = 1;
             break;
         case 26:
-            val.msg.val = #"hash_609187824bab8f8c";
-            val.audio.val = #"hash_1ff8f63b3359b055";
-            val.q.val = 1;
+            val.msg = #"hash_609187824bab8f8c";
+            val.audio = #"hash_1ff8f63b3359b055";
+            val.q = 1;
             break;
         case 27:
-            val.msg.val = #"hash_55f7d13453910be6";
-            val.audio.val = #"hash_5f5539a0f0a1cec9";
-            val.q.val = 1;
+            val.msg = #"hash_55f7d13453910be6";
+            val.audio = #"hash_5f5539a0f0a1cec9";
+            val.q = 1;
             break;
         case 28:
-            val.msg.val = #"hash_54810c69b1e10296";
-            val.audio.val = #"hash_1c7d3da2f3f4766b";
-            val.q.val = 1;
+            val.msg = #"hash_54810c69b1e10296";
+            val.audio = #"hash_1c7d3da2f3f4766b";
+            val.q = 1;
             break;
         case 29:
-            val.msg.val = #"hash_4785a63a664e7e55";
-            val.audio.val = #"hash_7fe1ef05f43ee976";
-            val.q.val = 1;
+            val.msg = #"hash_4785a63a664e7e55";
+            val.audio = #"hash_7fe1ef05f43ee976";
+            val.q = 1;
             break;
         case 30:
-            val.msg.val = #"hash_61eedbd5833223cd";
-            val.audio.val = #"hash_6b032800e231f06c";
-            val.q.val = 1;
+            val.msg = #"hash_61eedbd5833223cd";
+            val.audio = #"hash_6b032800e231f06c";
+            val.q = 1;
             break;
         case 31:
-            val.msg.val = #"hash_6cfbe5e38a154902";
-            val.audio.val = #"hash_1a3ed45b1f0c08e1";
-            val.q.val = 1;
+            val.msg = #"hash_6cfbe5e38a154902";
+            val.audio = #"hash_1a3ed45b1f0c08e1";
+            val.q = 1;
             break;
         case 32:
-            val.msg.val = #"hash_7069bbfd2df0b9d5";
-            val.audio.val = #"hash_378c7a0d252fe332";
-            val.q.val = 1;
+            val.msg = #"hash_7069bbfd2df0b9d5";
+            val.audio = #"hash_378c7a0d252fe332";
+            val.q = 1;
             break;
         case 33:
-            val.msg.val = #"hash_19083756004a8d81";
-            val.audio.val = #"hash_6e94595ca610130";
-            val.q.val = 1;
+            val.msg = #"hash_19083756004a8d81";
+            val.audio = #"hash_6e94595ca610130";
+            val.q = 1;
             break;
         case 34:
-            val.msg.val = #"hash_35dabf0d1049ba8d";
-            val.audio.val = #"hash_22426692f607a5e";
-            val.q.val = 1;
+            val.msg = #"hash_35dabf0d1049ba8d";
+            val.audio = #"hash_22426692f607a5e";
+            val.q = 1;
             break;
         case 40:
-            val.msg.val = randomint(100) < 50 ? #"hash_67f52b43a04c1e55" : #"hash_61b1168e92e80ba5";
-            val.audio.val = #"hash_6298fe3f8c45ac9f";
+            val.msg = randomint(100) < 50 ? #"hash_67f52b43a04c1e55" : #"hash_61b1168e92e80ba5";
+            val.audio = #"hash_6298fe3f8c45ac9f";
             break;
         case 41:
-            val.msg.val = #"hash_146f885685f54d05";
-            val.audio.val = #"hash_8c6429df541c34c";
+            val.msg = #"hash_146f885685f54d05";
+            val.audio = #"hash_8c6429df541c34c";
             break;
         case 42:
-            val.msg.val = #"hash_17532668544a90bb";
-            val.audio.val = #"hash_8c6429df541c34c";
+            val.msg = #"hash_17532668544a90bb";
+            val.audio = #"hash_8c6429df541c34c";
             break;
         case 48:
             var_aa21ed6 = randomint(3);
             if (var_aa21ed6 == 0) {
-                val.msg.val = #"hash_3d7f0f4a1c902cc";
+                val.msg = #"hash_3d7f0f4a1c902cc";
             } else if (var_aa21ed6 == 1) {
-                val.msg.val = #"hash_50f16daee890159a";
+                val.msg = #"hash_50f16daee890159a";
             } else if (var_aa21ed6 == 2) {
-                val.msg.val = #"hash_50f16eaee890174d";
+                val.msg = #"hash_50f16eaee890174d";
             }
-            val.audio.val = #"hash_3551d2b408fff8cb";
+            val.audio = #"hash_3551d2b408fff8cb";
             break;
         }
     }
@@ -1021,7 +1021,7 @@ function showplayerhint(localclientnum, *oldval, newval, *bnewent, *binitialsnap
     if (!function_f457ec42(fieldname)) {
         return;
     }
-    self.doa.var_25f4de97 = self.doa.var_25f4de97 & 1 << bwastimejump;
+    self.doa.var_25f4de97 = self.doa.var_25f4de97 | 1 << bwastimejump;
     msg = function_3d3e551(bwastimejump);
     if (isdefined(msg)) {
         self thread message(fieldname, msg);

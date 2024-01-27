@@ -207,7 +207,7 @@ function function_e870d33d() {
                 vehicle_origin = vehicle_origin + (0, 0, var_5035eb1b);
                 player.var_2d23ee07 = var_5035eb1b;
                 vehicle = spawnvehicle(var_13ab34e1, vehicle_origin, var_a3a6eba5);
-                vehicle.team.vehicle = player.team;
+                vehicle.team = player.team;
                 vehicle setteam(vehicle.team);
                 vehicle hide();
                 if (isdefined(var_6900cfa4)) {
@@ -244,8 +244,8 @@ function function_e870d33d() {
                     vehicle usevehicle(player, 0);
                     vehicle_used = 1;
                     vehicle turretsettargetangles(0, var_a3a6eba5 - player_angles);
-                    player.var_ca876b0f.player = 1;
-                    player.var_e7e2e3e5.player = 1;
+                    player.var_ca876b0f = 1;
+                    player.var_e7e2e3e5 = 1;
                     player.var_766deb67 = vehicle;
                     while (player adsbuttonpressed()) {
                         wait(float(function_60d95f53()) / 1000);

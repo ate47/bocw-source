@@ -421,7 +421,7 @@ function private function_d05902d9(local_client_num, newval) {
         level.var_b1dca2fb[local_client_num] = [];
     }
     var_55251088 = spawnstruct();
-    var_55251088.vehicle.var_55251088 = self;
+    var_55251088.vehicle = self;
     var_55251088.newval = newval;
     if (!isdefined(level.var_b1dca2fb[local_client_num])) {
         level.var_b1dca2fb[local_client_num] = [];
@@ -465,7 +465,7 @@ function private function_f27ffe49(local_client_num, newval) {
         level.inserted_pop_[local_client_num] = [];
     }
     var_a87a8991 = spawnstruct();
-    var_a87a8991.actor.var_a87a8991 = self;
+    var_a87a8991.actor = self;
     var_a87a8991.newval = newval;
     if (!isdefined(level.inserted_pop_[local_client_num])) {
         level.inserted_pop_[local_client_num] = [];

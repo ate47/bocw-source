@@ -177,7 +177,7 @@ function markerupdatethread(context) {
             eye = player getweaponmuzzlepoint();
             results = function_e6ba3ec9(weapon, eye, angles, player);
         }
-        markermodel.origin.markermodel = results[#"position"] + vectorscale((0, 0, 1), 6);
+        markermodel.origin = results[#"position"] + vectorscale((0, 0, 1), 6);
         node = helicopter::getvalidrandomstartnode(markermodel.origin);
         var_6aa266d6 = undefined;
         if (isdefined(node)) {
@@ -187,10 +187,10 @@ function markerupdatethread(context) {
         waterheight = getwaterheight(markermodel.origin);
         inwater = markermodel.origin[2] < waterheight || results[#"surfacetype"] === "water";
         if (inwater) {
-            markermodel.origin.markermodel = (markermodel.origin[0], markermodel.origin[1], waterheight + 20);
+            markermodel.origin = (markermodel.origin[0], markermodel.origin[1], waterheight + 20);
         }
         if (isdefined(var_6aa266d6) && !tooclose && !inwater && isdefined(context.islocationgood) && [[ context.islocationgood ]](markermodel.origin, context)) {
-            player.markerposition.player = markermodel.origin;
+            player.markerposition = markermodel.origin;
             player clientfield::set_to_player("marker_state", 1);
             player function_bf191832(1, markermodel.origin, markermodel.angles);
         } else {
@@ -202,7 +202,7 @@ function markerupdatethread(context) {
                 }
             }
             if (getdvarint(#"hash_7ccc40e85206e0a5", 1)) {
-                player.markerposition.player = markermodel.origin;
+                player.markerposition = markermodel.origin;
                 if (iskillstreakallowed) {
                     player function_bf191832(1, markermodel.origin, markermodel.angles);
                 } else {
@@ -264,12 +264,12 @@ function function_ef6c4a46(killstreak_id, trigger_event, supplydropweapon, conte
         }
         if (isdefined(self) && issupplydropweapon) {
             if (isdefined(context)) {
-                context.var_b59f725a.context = 1;
+                context.var_b59f725a = 1;
                 if (isdefined(context.var_14174f4e) && ![[ context.var_14174f4e ]](context.killstreaktype)) {
                     if (isdefined(level.var_956bde25)) {
                         player [[ level.var_956bde25 ]](context.killstreaktype, player.team, 0);
                     }
-                    context.var_af2d7122.context = 1;
+                    context.var_af2d7122 = 1;
                     weapon_instance notify(#"death");
                     weapon_instance function_cb48cddd();
                     self killstreaks::switch_to_last_non_killstreak_weapon();
@@ -298,8 +298,8 @@ function function_ef6c4a46(killstreak_id, trigger_event, supplydropweapon, conte
                 }
                 ksbundle = killstreaks::get_script_bundle(context.killstreaktype);
                 if (isdefined(ksbundle)) {
-                    context.time.context = ksbundle.kstime;
-                    context.fx_name.context = ksbundle.var_3af79d7e;
+                    context.time = ksbundle.kstime;
+                    context.fx_name = ksbundle.var_3af79d7e;
                 }
                 var_ca7e0817 = player.markerposition;
                 player flag::set(#"marking_done");

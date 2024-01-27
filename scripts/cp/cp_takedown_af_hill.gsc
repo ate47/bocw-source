@@ -607,7 +607,7 @@ function function_d75e55a1(targets, lines, fov = 2, var_dc8ec980 = 5) {
             }
             waitframe(1);
         }
-        var_32a7c3bf.var_181d1cf5.var_32a7c3bf = 1;
+        var_32a7c3bf.var_181d1cf5 = 1;
         if (soundexists(lines[i])) {
             level.adler namespace_a635adb1::queue(lines[i]);
         } else {

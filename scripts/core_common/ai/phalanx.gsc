@@ -56,7 +56,7 @@ class phalanx {
         #/
         sentient ai::set_behavior_attribute("phalanx", 1);
         if (sentient.archetype === "human") {
-            sentient.allowpain.sentient = 0;
+            sentient.allowpain = 0;
         }
         sentient setavoidancemask("avoid none");
         if (isdefined(sentient.archetype) && sentient.archetype == #"robot") {
@@ -359,7 +359,7 @@ class phalanx {
             sentient ai::set_behavior_attribute("phalanx", 0);
             waitframe(1);
             if (sentient.archetype === "human") {
-                sentient.allowpain.sentient = 1;
+                sentient.allowpain = 1;
             }
             sentient setavoidancemask("avoid all");
             aiutility::removeaioverridedamagecallback(sentient, &_dampenexplosivedamage);

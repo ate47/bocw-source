@@ -147,7 +147,7 @@ function private function_6fd56055() {
             /#
                 assert(!isdefined(wallbuy.var_d6cca569));
             #/
-            wallbuy.var_d6cca569.wallbuy = level clientfield::get(wallbuy.trigger_stub.clientfieldname);
+            wallbuy.var_d6cca569 = level clientfield::get(wallbuy.trigger_stub.clientfieldname);
             level clientfield::set(wallbuy.trigger_stub.clientfieldname, 0);
         }
     }

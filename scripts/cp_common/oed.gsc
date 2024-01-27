@@ -196,7 +196,7 @@ function function_b925bd3c() {
 // Size: 0xc8
 function function_19b0de13(*b_active) {
     foreach (player in level.players) {
-        player.var_bef05351.player = !is_true(player.var_bef05351);
+        player.var_bef05351 = !is_true(player.var_bef05351);
         player clientfield::set_to_player("sitrep_toggle", player.var_bef05351);
     }
 }
@@ -212,9 +212,9 @@ function function_8c3be026() {
     var_57f4c959 = level.var_ddf5b902[#"sitrep"][self.scriptbundlename];
     var_7343683f = util::spawn_model(var_57f4c959.model, self.origin, self.angles);
     if (isdefined(var_57f4c959.var_2e0f906a)) {
-        var_7343683f.var_280ea1f.var_7343683f = var_57f4c959.var_2e0f906a;
+        var_7343683f.var_280ea1f = var_57f4c959.var_2e0f906a;
     } else {
-        var_7343683f.var_280ea1f.var_7343683f = 0;
+        var_7343683f.var_280ea1f = 0;
     }
     return var_7343683f;
 }

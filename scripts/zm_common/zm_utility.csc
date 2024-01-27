@@ -732,7 +732,7 @@ function function_725e99fb(localclientnum) {
             if (isdefined(machine)) {
                 if (var_30300360 && !is_true(machine.var_c02c4d66)) {
                     util::lock_model(machine.model);
-                    machine.var_c02c4d66.machine = 1;
+                    machine.var_c02c4d66 = 1;
                     if (isarray(machine.var_35f71e38)) {
                         foreach (var_61794186 in machine.var_35f71e38) {
                             util::lock_model(var_61794186);

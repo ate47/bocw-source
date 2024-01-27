@@ -41,7 +41,7 @@ function init_shared() {
 // Checksum 0x546dc927, Offset: 0x2a8
 // Size: 0x22
 function function_5545649e(watcher) {
-    watcher.onspawn.watcher = &function_77344457;
+    watcher.onspawn = &function_77344457;
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
@@ -420,7 +420,7 @@ function function_8a03d3f3(owner, impactpos, startpos, normal, multiplier, rotat
     var_bf264593 = level.var_a88ac760.size;
     level.var_a88ac760[var_bf264593] = {};
     var_4b424bc1 = level.var_a88ac760[var_bf264593];
-    var_4b424bc1.var_46ee5246.var_4b424bc1 = int(gettime() + customsettings.var_b79d64a9 * 1000);
+    var_4b424bc1.var_46ee5246 = int(gettime() + customsettings.var_b79d64a9 * 1000);
     var_4b424bc1.origin = startpos;
     thread damageeffectarea(owner, startpos, normal, var_aecaaa11, customsettings, multiplier, var_e76400c0, wallnormal, var_693f108f, var_4b424bc1.var_46ee5246);
     thread function_9464e4ad(owner, startpos, normal, var_aecaaa11, customsettings, multiplier, var_e76400c0, wallnormal, var_693f108f, var_4b424bc1.var_46ee5246);
@@ -512,7 +512,7 @@ function damageeffectarea(owner, position, *normal, weapon, customsettings, radi
         damageapplied = 0;
         potential_targets = self getpotentialtargets(position, customsettings);
         if (isdefined(position)) {
-            position.var_52dceca.position = [];
+            position.var_52dceca = [];
         }
         foreach (target in potential_targets) {
             self trytoapplyfiredamage(target, position, normal, fireeffectarea, var_289a74bc, weapon, customsettings);
@@ -541,7 +541,7 @@ function damageeffectarea(owner, position, *normal, weapon, customsettings, radi
         target status_effect::function_408158ef(level.var_71a63cb2, level.var_26472ea3);
     }
     if (isdefined(position)) {
-        position.var_52dceca.position = [];
+        position.var_52dceca = [];
     }
     if (isdefined(fireeffectarea)) {
         fireeffectarea delete();

@@ -10,17 +10,17 @@
 #using scripts\cp_common\util.gsc;
 #using scripts\core_common\struct.gsc;
 
-#namespace namespace_32b4992a;
+#namespace achievements;
 
-// Namespace namespace_32b4992a/namespace_32b4992a
+// Namespace achievements/achievements
 // Params 0, eflags: 0x5
 // Checksum 0x356dc59d, Offset: 0x168
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"hash_2d1ef9ab49375351", &function_70a657d8, undefined, undefined, undefined);
+    system::register(#"achievements", &function_70a657d8, undefined, undefined, undefined);
 }
 
-// Namespace namespace_32b4992a/namespace_32b4992a
+// Namespace achievements/achievements
 // Params 0, eflags: 0x6 linked
 // Checksum 0xa193d1af, Offset: 0x1b0
 // Size: 0xb4
@@ -33,7 +33,7 @@ function private function_70a657d8() {
     function_df1192a7();
 }
 
-// Namespace namespace_32b4992a/namespace_32b4992a
+// Namespace achievements/achievements
 // Params 0, eflags: 0x2 linked
 // Checksum 0x80f724d1, Offset: 0x270
 // Size: 0x4
@@ -41,7 +41,7 @@ function function_df1192a7() {
     
 }
 
-// Namespace namespace_32b4992a/namespace_32b4992a
+// Namespace achievements/achievements
 // Params 2, eflags: 0x2 linked
 // Checksum 0xb2e1caef, Offset: 0x280
 // Size: 0x104
@@ -63,7 +63,7 @@ function function_659819fa(achievement, *var_a299f0b3) {
     self giveachievement(var_a299f0b3);
 }
 
-// Namespace namespace_32b4992a/namespace_32b4992a
+// Namespace achievements/achievements
 // Params 0, eflags: 0x2 linked
 // Checksum 0xfffeb954, Offset: 0x390
 // Size: 0xd0
@@ -82,7 +82,7 @@ function on_player_connect() {
     }
 }
 
-// Namespace namespace_32b4992a/namespace_32b4992a
+// Namespace achievements/achievements
 // Params 3, eflags: 0x2 linked
 // Checksum 0x34616dd1, Offset: 0x468
 // Size: 0x4c
@@ -90,7 +90,7 @@ function function_20254235(var_7607ad3, var_bf26b910, *difficulty) {
     var_bf26b910 function_659819fa(hash("cp_achievement_" + difficulty));
 }
 
-// Namespace namespace_32b4992a/namespace_32b4992a
+// Namespace achievements/achievements
 // Params 1, eflags: 0x2 linked
 // Checksum 0x36e73940, Offset: 0x4c0
 // Size: 0x204
@@ -121,7 +121,7 @@ function function_cc2216e2(var_7607ad3) {
     }
 }
 
-// Namespace namespace_32b4992a/namespace_32b4992a
+// Namespace achievements/achievements
 // Params 3, eflags: 0x2 linked
 // Checksum 0x23472d41, Offset: 0x6d0
 // Size: 0x4c
@@ -130,7 +130,7 @@ function function_f854bc50(var_7607ad3, var_bf26b910, difficulty) {
     function_cc2216e2(var_7607ad3);
 }
 
-// Namespace namespace_32b4992a/namespace_32b4992a
+// Namespace achievements/achievements
 // Params 0, eflags: 0x2 linked
 // Checksum 0x80f724d1, Offset: 0x728
 // Size: 0x4
@@ -138,7 +138,7 @@ function on_ai_spawned() {
     
 }
 
-// Namespace namespace_32b4992a/namespace_32b4992a
+// Namespace achievements/achievements
 // Params 1, eflags: 0x2 linked
 // Checksum 0x3005cffc, Offset: 0x738
 // Size: 0x5a
@@ -151,7 +151,7 @@ function on_ai_damage(s_params) {
     }
 }
 
-// Namespace namespace_32b4992a/namespace_32b4992a
+// Namespace achievements/achievements
 // Params 1, eflags: 0x2 linked
 // Checksum 0x4fb48180, Offset: 0x7a0
 // Size: 0x4e
@@ -162,14 +162,14 @@ function on_player_death(*s_params) {
     self.var_8e5e0541.var_f79c95f9 = [];
 }
 
-// Namespace namespace_32b4992a/namespace_32b4992a
+// Namespace achievements/achievements
 // Params 2, eflags: 0x6 linked
 // Checksum 0x7682ab43, Offset: 0x7f8
 // Size: 0x124
 function private function_467369b2(var_668b29af, evictim) {
     var_a8f62552 = distance(var_668b29af.origin, evictim.origin);
     if (var_a8f62552 >= 3937) {
-        var_41db60bc = var_668b29af stats::get_stat(#"hash_2d1ef9ab49375351", #"hash_5740a8698a4d0345");
+        var_41db60bc = var_668b29af stats::get_stat(#"achievements", #"hash_5740a8698a4d0345");
         var_41db60bc++;
         /#
             printtoprightln("<unknown string>" + var_a8f62552 + "<unknown string>" + var_41db60bc, (1, 1, 1));
@@ -177,12 +177,12 @@ function private function_467369b2(var_668b29af, evictim) {
         if (var_41db60bc >= 5) {
             var_668b29af function_659819fa(#"hash_5740a8698a4d0345");
         } else {
-            var_668b29af stats::set_stat(#"hash_2d1ef9ab49375351", #"hash_5740a8698a4d0345", var_41db60bc);
+            var_668b29af stats::set_stat(#"achievements", #"hash_5740a8698a4d0345", var_41db60bc);
         }
     }
 }
 
-// Namespace namespace_32b4992a/namespace_32b4992a
+// Namespace achievements/achievements
 // Params 3, eflags: 0x6 linked
 // Checksum 0x66244c7e, Offset: 0x928
 // Size: 0x14c
@@ -202,7 +202,7 @@ function private function_4239da84(player, *var_6d2d969a, *weapon) {
     }
 }
 
-// Namespace namespace_32b4992a/namespace_32b4992a
+// Namespace achievements/achievements
 // Params 2, eflags: 0x6 linked
 // Checksum 0x5071de4e, Offset: 0xa80
 // Size: 0x16c
@@ -227,7 +227,7 @@ function private function_b25a404e(player, weapon) {
     }
 }
 
-// Namespace namespace_32b4992a/namespace_32b4992a
+// Namespace achievements/achievements
 // Params 3, eflags: 0x2 linked
 // Checksum 0x53936b65, Offset: 0xbf8
 // Size: 0x76
@@ -236,12 +236,12 @@ function function_2240fcb8(eattacker, *evictim, *eweapon) {
         if (isdefined(eweapon.killcount)) {
             eweapon.killcount++;
         } else {
-            eweapon.killcount.eweapon = 1;
+            eweapon.killcount = 1;
         }
     }
 }
 
-// Namespace namespace_32b4992a/namespace_32b4992a
+// Namespace achievements/achievements
 // Params 2, eflags: 0x2 linked
 // Checksum 0x37f303c, Offset: 0xc78
 // Size: 0x7c
@@ -251,7 +251,7 @@ function function_8b531812(var_7607ad3, evictim) {
     }
 }
 
-// Namespace namespace_32b4992a/namespace_32b4992a
+// Namespace achievements/achievements
 // Params 1, eflags: 0x2 linked
 // Checksum 0x98e93194, Offset: 0xd00
 // Size: 0x5c
@@ -262,7 +262,7 @@ function function_6e3f345f(var_7607ad3) {
     }
 }
 
-// Namespace namespace_32b4992a/namespace_32b4992a
+// Namespace achievements/achievements
 // Params 1, eflags: 0x2 linked
 // Checksum 0x5bca1a40, Offset: 0xd68
 // Size: 0x144
@@ -280,7 +280,7 @@ function on_ai_killed(s_params) {
     }
 }
 
-// Namespace namespace_32b4992a/namespace_32b4992a
+// Namespace achievements/achievements
 // Params 0, eflags: 0x6 linked
 // Checksum 0x6111222, Offset: 0xeb8
 // Size: 0xa4
@@ -296,7 +296,7 @@ function private function_fd51b8a8() {
     }
 }
 
-// Namespace namespace_32b4992a/namespace_32b4992a
+// Namespace achievements/achievements
 // Params 1, eflags: 0x2 linked
 // Checksum 0xd2e29df5, Offset: 0xf68
 // Size: 0x3c
@@ -306,7 +306,7 @@ function function_c3541c14(var_71d636c6) {
     }
 }
 
-// Namespace namespace_32b4992a/namespace_32b4992a
+// Namespace achievements/achievements
 // Params 2, eflags: 0x2 linked
 // Checksum 0x3232722b, Offset: 0xfb0
 // Size: 0xb4
@@ -318,7 +318,7 @@ function function_533e57d6(player, count) {
     }
 }
 
-// Namespace namespace_32b4992a/namespace_32b4992a
+// Namespace achievements/achievements
 // Params 3, eflags: 0x2 linked
 // Checksum 0xf551c6e1, Offset: 0x1070
 // Size: 0x2e4

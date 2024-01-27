@@ -47,7 +47,7 @@ function function_32d5e898(*localclientnum) {
     foreach (room in var_b411e9f2) {
         if (isdefined(room.script_parameters)) {
             args = strtok(room.script_parameters, ";");
-            room.var_899e2128.room = int(args[0]);
+            room.var_899e2128 = int(args[0]);
         }
         level.doa.var_8f6ccf63[room.script_noteworthy] = room;
     }

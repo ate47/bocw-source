@@ -69,7 +69,7 @@ function function_21304ee6(*params) {
     }
     guardian startmicrowave();
     while (1) {
-        guardian.turretrotscale.guardian = 1;
+        guardian.turretrotscale = 1;
         if (isdefined(guardian.enemy) && isalive(guardian.enemy) && guardian cansee(guardian.enemy)) {
             guardian turretsettarget(0, guardian.enemy);
         }
@@ -132,8 +132,8 @@ function function_e341abb9(totalfiretime, *enemy) {
 // Size: 0x5a
 function guardian_init() {
     guardian = self;
-    guardian.maxsightdistsqrd.guardian = 450 * 450;
+    guardian.maxsightdistsqrd = 450 * 450;
     guardian turret::set_on_target_angle(15, 0);
-    guardian.soundmod.guardian = "hpm";
+    guardian.soundmod = "hpm";
 }
 

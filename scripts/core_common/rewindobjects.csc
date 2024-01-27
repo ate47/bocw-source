@@ -128,7 +128,7 @@ function createrewindwatcher(localclientnum, name) {
         level.rewindwatcherarray[localclientnum][level.rewindwatcherarray[localclientnum].size] = rewindwatcher;
     }
     rewindwatcher.name = name;
-    rewindwatcher.event.rewindwatcher = [];
+    rewindwatcher.event = [];
     rewindwatcher thread resetondemojump(localclientnum);
     return rewindwatcher;
 }

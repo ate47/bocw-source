@@ -80,7 +80,7 @@ function player_init(*clientnum) {
     for (i = 0; i < script_exploders.size; i++) {
         exploder = script_exploders[i];
         ent = createexploder(exploder.script_fxid);
-        ent.v.ent = [];
+        ent.v = [];
         ent.v[#"origin"] = exploder.origin;
         ent.v[#"angles"] = exploder.angles;
         ent.v[#"delay"] = exploder.script_delay;
@@ -292,7 +292,7 @@ function stop_exploder(exploder_id) {
                         ent.loopfx[j] = undefined;
                     }
                 }
-                ent.loopfx.ent = [];
+                ent.loopfx = [];
             }
         }
     }
@@ -384,7 +384,7 @@ function stoplightloopexploder(exploderindex) {
         for (i = 0; i < level.createfxexploders[num].size; i++) {
             ent = level.createfxexploders[num][i];
             if (!isdefined(ent.looperfx)) {
-                ent.looperfx.ent = [];
+                ent.looperfx = [];
             }
             for (clientnum = 0; clientnum < level.max_local_clients; clientnum++) {
                 if (localclientactive(clientnum)) {
@@ -396,7 +396,7 @@ function stoplightloopexploder(exploderindex) {
                 }
                 ent.looperfx[clientnum] = [];
             }
-            ent.looperfx.ent = [];
+            ent.looperfx = [];
         }
     }
 }
@@ -411,7 +411,7 @@ function playlightloopexploder(exploderindex) {
         for (i = 0; i < level.createfxexploders[num].size; i++) {
             ent = level.createfxexploders[num][i];
             if (!isdefined(ent.looperfx)) {
-                ent.looperfx.ent = [];
+                ent.looperfx = [];
             }
             for (clientnum = 0; clientnum < level.max_local_clients; clientnum++) {
                 if (localclientactive(clientnum)) {

@@ -106,7 +106,7 @@ function on_player_spawned() {
 function owner_init() {
     owner = self;
     if (!isdefined(owner._traps_deployable)) {
-        owner._traps_deployable.owner = spawnstruct();
+        owner._traps_deployable = spawnstruct();
     }
     if (!isdefined(owner._traps_deployable.watchers_init)) {
         owner._traps_deployable.watchers_init = [];
@@ -145,19 +145,19 @@ function function_5726a711() {
             if (isdefined(var_2d727ba0)) {
                 var_a8539bf6 = spawnstruct();
                 if (isdefined(var_5e63b00d.script_team) && var_5e63b00d.script_team != #"none") {
-                    var_a8539bf6.team.var_a8539bf6 = var_5e63b00d.script_team;
+                    var_a8539bf6.team = var_5e63b00d.script_team;
                 } else {
-                    var_a8539bf6.team.var_a8539bf6 = #"any";
+                    var_a8539bf6.team = #"any";
                 }
-                var_a8539bf6.origin.var_a8539bf6 = var_5e63b00d.origin;
-                var_a8539bf6.angles.var_a8539bf6 = var_5e63b00d.angles;
-                var_a8539bf6.model.var_a8539bf6 = var_5e63b00d.model;
+                var_a8539bf6.origin = var_5e63b00d.origin;
+                var_a8539bf6.angles = var_5e63b00d.angles;
+                var_a8539bf6.model = var_5e63b00d.model;
                 gameobject = var_2d727ba0.gameobject;
                 if (isdefined(var_5e63b00d.scriptbundle_gameobject_override)) {
                     gameobject = var_5e63b00d.scriptbundle_gameobject_override;
                 }
-                var_a8539bf6.var_5b026504.var_a8539bf6 = var_5e63b00d.script_objective;
-                var_a8539bf6.var_ef146db5.var_a8539bf6 = var_5e63b00d.var_d513a1cb;
+                var_a8539bf6.var_5b026504 = var_5e63b00d.script_objective;
+                var_a8539bf6.var_ef146db5 = var_5e63b00d.var_d513a1cb;
                 var_a8539bf6.gameobject = gameobject;
                 if (var_a8539bf6 register_trap(var_2d727ba0)) {
                     var_5e63b00d.var_a8539bf6 = var_a8539bf6;
@@ -551,10 +551,10 @@ function track_trap(trap_instance) {
     }
     if (isdefined(trap_instance)) {
         if (isdefined(var_3af54106.var_3efa7c17.var_5b026504)) {
-            trap_instance.var_5b026504.trap_instance = var_3af54106.var_3efa7c17.var_5b026504;
+            trap_instance.var_5b026504 = var_3af54106.var_3efa7c17.var_5b026504;
         }
         if (isdefined(var_3af54106.var_3efa7c17.var_ef146db5)) {
-            trap_instance.var_ef146db5.trap_instance = var_3af54106.var_3efa7c17.var_ef146db5;
+            trap_instance.var_ef146db5 = var_3af54106.var_3efa7c17.var_ef146db5;
         }
         if (!isdefined(level._traps_deployable.trap_instances)) {
             level._traps_deployable.trap_instances = [];
@@ -576,10 +576,10 @@ function function_94e3167b(mdl_gameobject) {
     }
     if (isdefined(mdl_gameobject)) {
         if (isdefined(var_3af54106.var_3efa7c17.var_5b026504)) {
-            mdl_gameobject.var_5b026504.mdl_gameobject = var_3af54106.var_3efa7c17.var_5b026504;
+            mdl_gameobject.var_5b026504 = var_3af54106.var_3efa7c17.var_5b026504;
         }
         if (isdefined(var_3af54106.var_3efa7c17.var_ef146db5)) {
-            mdl_gameobject.var_ef146db5.mdl_gameobject = var_3af54106.var_3efa7c17.var_ef146db5;
+            mdl_gameobject.var_ef146db5 = var_3af54106.var_3efa7c17.var_ef146db5;
         }
         if (!isdefined(level._traps_deployable.var_9afef5eb)) {
             level._traps_deployable.var_9afef5eb = [];
@@ -630,14 +630,14 @@ function function_a879466e(var_3af54106, *origin, *angles) {
             player function_e4fd9a4c(angles);
             placeable = player placeables::function_f872b831(level._traps_deployable.traptypes[type].onplacecallback, level._traps_deployable.traptypes[type].oncancelcallback, onmovecallback, level._traps_deployable.traptypes[type].onshutdowncallback, level._traps_deployable.traptypes[type].ondeathcallback, level._traps_deployable.traptypes[type].onempcallback, level._traps_deployable.traptypes[type].ondamagecallback, level._traps_deployable.traptypes[type].var_d0dd7e76, &function_c26db3e, angles.m_weapon, angles.var_656cbe2d, angles.var_f81e0192, angles.var_b4662b52, angles.m_timeout);
             placeable.var_3af54106 = angles;
-            placeable.is_placeable.placeable = 1;
-            placeable.var_25404db4.placeable = 1;
+            placeable.is_placeable = 1;
+            placeable.var_25404db4 = 1;
             placeable placeables::function_613a226a(1);
         } else {
             placeable = player placeables::spawnplaceable(level._traps_deployable.traptypes[type].onplacecallback, level._traps_deployable.traptypes[type].oncancelcallback, onmovecallback, level._traps_deployable.traptypes[type].onshutdowncallback, level._traps_deployable.traptypes[type].ondeathcallback, level._traps_deployable.traptypes[type].onempcallback, level._traps_deployable.traptypes[type].ondamagecallback, level._traps_deployable.traptypes[type].var_d0dd7e76, angles.m_model, angles.var_e84fc5dc, angles.var_28f1ce55, angles.m_spawnsentity, angles.var_656cbe2d, angles.m_timeout, angles.m_health, angles.m_empdamage, angles.var_f81e0192, angles.var_b4662b52, angles.m_placeimmediately, level._traps_deployable.traptypes[type].damagewrapper);
             placeable.var_3af54106 = angles;
-            placeable.is_placeable.placeable = 1;
-            placeable.var_25404db4.placeable = 1;
+            placeable.is_placeable = 1;
+            placeable.var_25404db4 = 1;
             placeable placeables::function_613a226a(1);
             placeable notsolid();
         }
@@ -673,7 +673,7 @@ function function_2b8baf6d(placeable) {
     player = self;
     var_3af54106 = placeable.var_3af54106;
     player function_e4fd9a4c(var_3af54106);
-    placeable.cancelable.placeable = 1;
+    placeable.cancelable = 1;
 }
 
 // Namespace traps_deployable/traps_deployable
@@ -713,8 +713,8 @@ function function_a21e6a22(damagecallback, destroyedcallback, var_1891d3cd, var_
 function function_b501ff0b(*damagecallback, *destroyedcallback, *var_1891d3cd, *var_2053fdc6) {
     waitframe(1);
     placeable = self;
-    placeable.health.placeable = 9999999;
-    placeable.damagetaken.placeable = 0;
+    placeable.health = 9999999;
+    placeable.damagetaken = 0;
     placeable function_6253b65f(placeable.var_3af54106.m_health, placeable.var_3af54106.var_c59ba447);
 }
 
@@ -860,13 +860,13 @@ function function_3c3f30e3(placeable) {
     var_3af54106 = placeable.var_3af54106;
     if (isplayer(player)) {
         var_c98531e5 = player watcher_init(var_3af54106);
-        placeable.weapon_instance.placeable = player magicgrenadeplayer(var_3af54106.m_weapon, placeable.origin, (0, 0, -1));
+        placeable.weapon_instance = player magicgrenadeplayer(var_3af54106.m_weapon, placeable.origin, (0, 0, -1));
         if (isdefined(placeable.weapon_instance)) {
             placeable.weapon_instance.angles = placeable.angles;
             placeable.weapon_instance.var_cea6a2fb = placeable;
             trap_instance = spawnstruct();
             trap_instance.var_c98531e5 = var_c98531e5;
-            trap_instance.weapon_instance.trap_instance = placeable.weapon_instance;
+            trap_instance.weapon_instance = placeable.weapon_instance;
             var_3af54106 track_trap(trap_instance);
             player function_c75a9937(placeable);
         }
@@ -889,15 +889,15 @@ function function_4a401677(var_3af54106, owner, *team) {
             weapon_instance = team magicgrenadetype(owner.m_weapon, var_a8539bf6.origin, (0, 0, -1));
         }
         if (isdefined(weapon_instance)) {
-            weapon_instance.angles.weapon_instance = var_a8539bf6.angles;
+            weapon_instance.angles = var_a8539bf6.angles;
             trap_instance = spawnstruct();
             trap_instance.weapon_instance = weapon_instance;
             trap_instance.var_c98531e5 = var_c98531e5;
             owner track_trap(trap_instance);
             if (!isdefined(var_a8539bf6.var_6a698b3c)) {
-                var_a8539bf6.var_6a698b3c.var_a8539bf6 = [];
+                var_a8539bf6.var_6a698b3c = [];
             } else if (!isarray(var_a8539bf6.var_6a698b3c)) {
-                var_a8539bf6.var_6a698b3c.var_a8539bf6 = array(var_a8539bf6.var_6a698b3c);
+                var_a8539bf6.var_6a698b3c = array(var_a8539bf6.var_6a698b3c);
             }
             var_a8539bf6.var_6a698b3c[var_a8539bf6.var_6a698b3c.size] = weapon_instance;
             arrayremovevalue(var_a8539bf6.var_6a698b3c, undefined);
@@ -932,11 +932,11 @@ function function_612e5ef9(var_3af54106, owner, team) {
 function function_a39b7bb6(placeable) {
     player = self;
     var_3af54106 = placeable.var_3af54106;
-    placeable.vehicle.placeable = player turret_activate(var_3af54106, player, player.team, placeable.vehicle, placeable.origin, placeable.angles, placeable);
+    placeable.vehicle = player turret_activate(var_3af54106, player, player.team, placeable.vehicle, placeable.origin, placeable.angles, placeable);
     if (isdefined(placeable.vehicle)) {
         placeable.vehicle thread util::ghost_wait_show(0.05);
         trap_instance = spawnstruct();
-        trap_instance.var_71676691.trap_instance = placeable.vehicle;
+        trap_instance.var_71676691 = placeable.vehicle;
         trap_instance.var_cea6a2fb = placeable;
         var_3af54106 track_trap(trap_instance);
     }
@@ -959,7 +959,7 @@ function turret_activate(var_3af54106, owner, team, vehicle, origin, angles, par
         if (isdefined(owner)) {
             ownerteam = owner.team;
             vehicle.owner = owner;
-            vehicle.ownerentnum.vehicle = owner.entnum;
+            vehicle.ownerentnum = owner.entnum;
             if (isplayer(owner)) {
                 vehicle setowner(owner);
             }
@@ -972,10 +972,10 @@ function turret_activate(var_3af54106, owner, team, vehicle, origin, angles, par
             vehicle setteam(team);
         }
         vehicle.parentstruct = parent;
-        vehicle.controlled.vehicle = 0;
-        vehicle.treat_owner_damage_as_friendly_fire.vehicle = 1;
-        vehicle.ignore_team_kills.vehicle = 1;
-        vehicle.deal_no_crush_damage.vehicle = 1;
+        vehicle.controlled = 0;
+        vehicle.treat_owner_damage_as_friendly_fire = 1;
+        vehicle.ignore_team_kills = 1;
+        vehicle.deal_no_crush_damage = 1;
         if (isdefined(vehicle.parentstruct) && is_true(vehicle.parentstruct.is_placeable)) {
             vehicle thread function_da421875(vehicle.parentstruct);
         }
@@ -986,9 +986,9 @@ function turret_activate(var_3af54106, owner, team, vehicle, origin, angles, par
         } else {
             level.var_c70c6768 = level.var_c70c6768 + 1;
         }
-        vehicle.turret_id.vehicle = string(level.var_c70c6768);
+        vehicle.turret_id = string(level.var_c70c6768);
         badplace_cylinder("turret_bad_place_" + vehicle.turret_id, 0, vehicle.origin, vehicle.settings.var_9493f6dc, vehicle.settings.var_c9c01aa4, #"axis", #"allies", #"neutral");
-        vehicle.has_bad_place.vehicle = 1;
+        vehicle.has_bad_place = 1;
     }
     vehicle unlink();
     targetoffset = (isdefined(vehicle.settings.lockon_offsetx) ? vehicle.settings.lockon_offsetx : 0, isdefined(vehicle.settings.lockon_offsety) ? vehicle.settings.lockon_offsety : 0, isdefined(vehicle.settings.lockon_offsetz) ? vehicle.settings.lockon_offsetz : 36);
@@ -1003,7 +1003,7 @@ function turret_activate(var_3af54106, owner, team, vehicle, origin, angles, par
 function function_69efb3b0(placeable) {
     player = self;
     if (isdefined(placeable.vehicle)) {
-        placeable.cancelable.placeable = 1;
+        placeable.cancelable = 1;
         placeable.vehicle ghost();
         if (placeable.vehicle vehicle_ai::has_state("off")) {
             placeable.vehicle vehicle_ai::set_state("off");
@@ -1066,7 +1066,7 @@ function vehicle_activate(var_3af54106, owner, team, vehicle, origin, angles, pa
         if (isdefined(owner)) {
             ownerteam = owner.team;
             vehicle.owner = owner;
-            vehicle.ownerentnum.vehicle = owner.entnum;
+            vehicle.ownerentnum = owner.entnum;
             if (isplayer(owner)) {
                 vehicle setowner(owner);
             }
@@ -1079,10 +1079,10 @@ function vehicle_activate(var_3af54106, owner, team, vehicle, origin, angles, pa
             vehicle setteam(team);
         }
         vehicle.parentstruct = parent;
-        vehicle.controlled.vehicle = 0;
-        vehicle.treat_owner_damage_as_friendly_fire.vehicle = 1;
-        vehicle.ignore_team_kills.vehicle = 1;
-        vehicle.deal_no_crush_damage.vehicle = 1;
+        vehicle.controlled = 0;
+        vehicle.treat_owner_damage_as_friendly_fire = 1;
+        vehicle.ignore_team_kills = 1;
+        vehicle.deal_no_crush_damage = 1;
         if (isdefined(vehicle.parentstruct) && is_true(vehicle.parentstruct.is_placeable)) {
             vehicle thread function_da421875(vehicle.parentstruct);
         }

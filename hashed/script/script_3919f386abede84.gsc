@@ -38,7 +38,7 @@ class class_e500a966 : cdoor {
     function init(var_82b05767, s_instance) {
         self.m_s_bundle = var_82b05767;
         self.var_a2f96f78 = s_instance;
-        s_instance.c_door.s_instance = doors::setup_door_info(self.m_s_bundle, s_instance, self);
+        s_instance.c_door = doors::setup_door_info(self.m_s_bundle, s_instance, self);
     }
 
 }

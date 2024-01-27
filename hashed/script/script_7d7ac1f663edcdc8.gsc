@@ -65,8 +65,8 @@ function function_8e066676() {
     foreach (ai in getaiarray()) {
         if (isalive(ai) && !function_3132f113(ai)) {
             util::stop_magic_bullet_shield(ai);
-            ai.allowdeath.ai = 1;
-            ai.takedamage.ai = 1;
+            ai.allowdeath = 1;
+            ai.takedamage = 1;
             ai kill(undefined, undefined, undefined, undefined, undefined, 1);
             waitframe(randomint(3) + 1);
         }

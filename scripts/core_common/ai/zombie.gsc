@@ -412,10 +412,10 @@ function function_84b43711(weapon) {
 // Checksum 0xb2587444, Offset: 0x25a8
 // Size: 0x46
 function function_da30b556(entity) {
-    entity.stumble.entity = 1;
-    entity.var_b1c7a59d.entity = gettime() + 5000;
-    entity.var_eabe8c08.entity = gettime() + 1000;
-    entity.var_4db55459.entity = 0;
+    entity.stumble = 1;
+    entity.var_b1c7a59d = gettime() + 5000;
+    entity.var_eabe8c08 = gettime() + 1000;
+    entity.var_4db55459 = 0;
 }
 
 // Namespace zombiebehavior/zombie
@@ -435,10 +435,10 @@ function private function_ce53cb2e(entity) {
 // Checksum 0xf9724cf4, Offset: 0x2650
 // Size: 0x42
 function private function_30373e53(entity) {
-    entity.stumble.entity = 0;
-    entity.var_b1c7a59d.entity = gettime() + 5000;
-    entity.var_eabe8c08.entity = gettime() + 1000;
-    entity.var_4db55459.entity = 0;
+    entity.stumble = 0;
+    entity.var_b1c7a59d = gettime() + 5000;
+    entity.var_eabe8c08 = gettime() + 1000;
+    entity.var_4db55459 = 0;
 }
 
 // Namespace zombiebehavior/zombie
@@ -555,7 +555,7 @@ function private zombiestumbleactionstart(entity) {
 // Checksum 0x4299b97e, Offset: 0x29b0
 // Size: 0x1a
 function private zombieattackobjectstart(entity) {
-    entity.is_inert.entity = 1;
+    entity.is_inert = 1;
 }
 
 // Namespace zombiebehavior/zombie
@@ -563,7 +563,7 @@ function private zombieattackobjectstart(entity) {
 // Checksum 0xd5ce86db, Offset: 0x29d8
 // Size: 0x16
 function private zombieattackobjectterminate(entity) {
-    entity.is_inert.entity = 0;
+    entity.is_inert = 0;
 }
 
 // Namespace zombiebehavior/zombie
@@ -590,7 +590,7 @@ function zombienotetrackmeleefire(entity) {
     if (is_true(entity.marked_for_death)) {
         return;
     }
-    entity.melee_cooldown.entity = gettime() + getdvarfloat(#"scr_zombiemeleecooldown", 1) * 1000 * (isdefined(entity.var_ce2dd587) ? entity.var_ce2dd587 : 1);
+    entity.melee_cooldown = gettime() + getdvarfloat(#"scr_zombiemeleecooldown", 1) * 1000 * (isdefined(entity.var_ce2dd587) ? entity.var_ce2dd587 : 1);
     if (is_true(entity.aat_turned)) {
         if (isdefined(entity.enemy) && isalive(entity.enemy) && !isplayer(entity.enemy)) {
             if (isdefined(entity.var_3533970d)) {
@@ -827,7 +827,7 @@ function zombiecrawlercollision(entity) {
         dist_sq = distancesquared(entity.origin, zombie.origin);
         if (dist_sq < 14400) {
             entity collidewithactors(0);
-            entity.dontpushtime.entity = gettime() + 2000;
+            entity.dontpushtime = gettime() + 2000;
             return 1;
         }
     }
@@ -872,7 +872,7 @@ function zombieisatattackobject(entity) {
         if (dist < 256) {
             height_offset = abs(entity.origin[2] - entity.attackable_slot.origin[2]);
             if (height_offset < 32) {
-                entity.is_at_attackable.entity = 1;
+                entity.is_at_attackable = 1;
                 return 1;
             }
         }
@@ -1012,7 +1012,7 @@ function function_1b8c9407(entity) {
 // Size: 0x6c
 function private function_ecba5a44(entity) {
     var_1e466fbb = spawnstruct();
-    var_1e466fbb.enemy.var_1e466fbb = entity.enemy;
+    var_1e466fbb.enemy = entity.enemy;
     blackboard::addblackboardevent("zombie_full_pain", var_1e466fbb, randomintrange(6000, 9000));
 }
 
@@ -1061,7 +1061,7 @@ function private zombieshouldturn(entity) {
 // Checksum 0x6f8db770, Offset: 0x45d0
 // Size: 0x22
 function private function_a716a3af(entity) {
-    entity.turn_cooldown.entity = gettime() + 1000;
+    entity.turn_cooldown = gettime() + 1000;
     return 1;
 }
 
@@ -1174,7 +1174,7 @@ function zombiestumble(entity) {
         return 0;
     }
     if (!isdefined(entity.next_stumble_time)) {
-        entity.next_stumble_time.entity = gettime() + randomintrange(9000, 12000);
+        entity.next_stumble_time = gettime() + randomintrange(9000, 12000);
     }
     if (gettime() > entity.next_stumble_time) {
         if (randomint(100) < 5) {
@@ -1184,7 +1184,7 @@ function zombiestumble(entity) {
                     entity.next_juke_time = undefined;
                 }
                 entity.next_stumble_time = undefined;
-                entity.stumble.entity = 1;
+                entity.stumble = 1;
                 return 1;
             }
         }
@@ -1215,7 +1215,7 @@ function zombiejuke(entity) {
         return 0;
     }
     if (!isdefined(entity.next_juke_time)) {
-        entity.next_juke_time.entity = gettime() + randomintrange(7500, 9500);
+        entity.next_juke_time = gettime() + randomintrange(7500, 9500);
     }
     if (gettime() > entity.next_juke_time) {
         entity.next_juke_time = undefined;
@@ -1224,10 +1224,10 @@ function zombiejuke(entity) {
                 entity.next_stumble_time = undefined;
             }
             forwardoffset = 15;
-            entity.ignorebackwardposition.entity = 1;
+            entity.ignorebackwardposition = 1;
             if (math::cointoss()) {
                 jukedistance = 101;
-                entity.jukedistance.entity = "long";
+                entity.jukedistance = "long";
                 switch (entity aiutility::function_cc26899f()) {
                 case #"locomotion_speed_run":
                 case #"locomotion_speed_walk":
@@ -1237,11 +1237,11 @@ function zombiejuke(entity) {
                     forwardoffset = 129;
                     break;
                 }
-                entity.juke.entity = aiutility::calculatejukedirection(entity, forwardoffset, jukedistance);
+                entity.juke = aiutility::calculatejukedirection(entity, forwardoffset, jukedistance);
             }
             if (!isdefined(entity.juke) || entity.juke == "forward") {
                 jukedistance = 69;
-                entity.jukedistance.entity = "short";
+                entity.jukedistance = "short";
                 switch (entity aiutility::function_cc26899f()) {
                 case #"locomotion_speed_run":
                 case #"locomotion_speed_walk":
@@ -1251,7 +1251,7 @@ function zombiejuke(entity) {
                     forwardoffset = 148;
                     break;
                 }
-                entity.juke.entity = aiutility::calculatejukedirection(entity, forwardoffset, jukedistance);
+                entity.juke = aiutility::calculatejukedirection(entity, forwardoffset, jukedistance);
                 if (entity.juke == "forward") {
                     entity.juke = undefined;
                     entity.jukedistance = undefined;
@@ -1299,10 +1299,10 @@ function wascrushedbyinterdimensionalgunblackholecondition(entity) {
 function zombieidgundeathmocompstart(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
     mocompduration orientmode("face angle", mocompduration.angles[1]);
     mocompduration animmode("noclip");
-    mocompduration.pushable.mocompduration = 0;
-    mocompduration.blockingpain.mocompduration = 1;
+    mocompduration.pushable = 0;
+    mocompduration.blockingpain = 1;
     mocompduration pathmode("dont move");
-    mocompduration.hole_pull_speed.mocompduration = 0;
+    mocompduration.hole_pull_speed = 0;
 }
 
 // Namespace zombiebehavior/zombie
@@ -1312,11 +1312,11 @@ function zombieidgundeathmocompstart(entity, *mocompanim, *mocompanimblendouttim
 function zombiemeleejumpmocompstart(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
     mocompduration orientmode("face enemy");
     mocompduration animmode("noclip", 0);
-    mocompduration.pushable.mocompduration = 0;
-    mocompduration.blockingpain.mocompduration = 1;
-    mocompduration.clamptonavmesh.mocompduration = 0;
+    mocompduration.pushable = 0;
+    mocompduration.blockingpain = 1;
+    mocompduration.clamptonavmesh = 0;
     mocompduration collidewithactors(0);
-    mocompduration.jumpstartposition.mocompduration = mocompduration.origin;
+    mocompduration.jumpstartposition = mocompduration.origin;
 }
 
 // Namespace zombiebehavior/zombie
@@ -1368,9 +1368,9 @@ function zombiemeleejumpmocompupdate(entity, mocompanim, mocompanimblendouttime,
 // Checksum 0x87ed9dbe, Offset: 0x55e8
 // Size: 0xb4
 function zombiemeleejumpmocompterminate(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
-    mocompduration.pushable.mocompduration = 1;
-    mocompduration.blockingpain.mocompduration = 0;
-    mocompduration.clamptonavmesh.mocompduration = 1;
+    mocompduration.pushable = 1;
+    mocompduration.blockingpain = 0;
+    mocompduration.clamptonavmesh = 1;
     mocompduration collidewithactors(1);
     groundpoint = getclosestpointonnavmesh(mocompduration.origin, 12);
     if (isdefined(groundpoint)) {
@@ -1386,12 +1386,12 @@ function zombieidgundeathupdate(entity, *mocompanim, *mocompanimblendouttime, *m
     if (!isdefined(mocompduration.killby_interdimensional_gun_hole)) {
         entity_eye = mocompduration geteye();
         if (mocompduration.b_vortex_repositioned !== 1) {
-            mocompduration.b_vortex_repositioned.mocompduration = 1;
+            mocompduration.b_vortex_repositioned = 1;
             v_nearest_navmesh_point = getclosestpointonnavmesh(mocompduration.damageorigin, 36, 15);
             if (isdefined(v_nearest_navmesh_point)) {
                 f_distance = distance(mocompduration.damageorigin, v_nearest_navmesh_point);
                 if (f_distance < 41) {
-                    mocompduration.damageorigin.mocompduration = mocompduration.damageorigin + vectorscale((0, 0, 1), 36);
+                    mocompduration.damageorigin = mocompduration.damageorigin + vectorscale((0, 0, 1), 36);
                 }
             }
         }
@@ -1401,13 +1401,13 @@ function zombieidgundeathupdate(entity, *mocompanim, *mocompanimblendouttime, *m
         if (lengthfromhole < mocompduration.hole_pull_speed) {
             if (!is_true(mocompduration.var_6581b296)) {
                 mocompduration thread function_1ad2970();
-                mocompduration.var_6581b296.mocompduration = 1;
+                mocompduration.var_6581b296 = 1;
             }
         } else {
             if (mocompduration.hole_pull_speed < 12) {
-                mocompduration.hole_pull_speed.mocompduration = mocompduration.hole_pull_speed + 0.5;
+                mocompduration.hole_pull_speed = mocompduration.hole_pull_speed + 0.5;
                 if (mocompduration.hole_pull_speed > 12) {
-                    mocompduration.hole_pull_speed.mocompduration = 12;
+                    mocompduration.hole_pull_speed = 12;
                 }
             }
             flyingdir = vectornormalize(flyingdir);
@@ -1445,7 +1445,7 @@ function function_1ad2970() {
 function zombieidgunholedeathmocompstart(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
     mocompduration orientmode("face angle", mocompduration.angles[1]);
     mocompduration animmode("noclip");
-    mocompduration.pushable.mocompduration = 0;
+    mocompduration.pushable = 0;
 }
 
 // Namespace zombiebehavior/zombie
@@ -1543,7 +1543,7 @@ function zombieshouldmeleesuicide(entity) {
 // Checksum 0x90dc7132, Offset: 0x5e20
 // Size: 0x40
 function zombiemeleesuicidestart(entity) {
-    entity.blockingpain.entity = 1;
+    entity.blockingpain = 1;
     if (isdefined(level.zombiemeleesuicidecallback)) {
         entity thread [[ level.zombiemeleesuicidecallback ]](entity);
     }
@@ -1563,8 +1563,8 @@ function zombiemeleesuicideupdate(*entity) {
 // Size: 0x80
 function zombiemeleesuicideterminate(entity) {
     if (isalive(entity) && zombieshouldmeleesuicide(entity)) {
-        entity.takedamage.entity = 1;
-        entity.allowdeath.entity = 1;
+        entity.takedamage = 1;
+        entity.allowdeath = 1;
         if (isdefined(level.zombiemeleesuicidedonecallback)) {
             entity thread [[ level.zombiemeleesuicidedonecallback ]](entity);
         }
@@ -1581,11 +1581,11 @@ function zombiemoveactionstart(entity, asmstatename) {
     if (is_true(entity.stumble) && !isdefined(entity.move_anim_end_time)) {
         stumbleactionresult = entity astsearch(asmstatename);
         stumbleactionanimation = animationstatenetworkutility::searchanimationmap(entity, stumbleactionresult[#"animation"]);
-        entity.move_anim_end_time.entity = entity.movetime + getanimlength(stumbleactionanimation);
+        entity.move_anim_end_time = entity.movetime + getanimlength(stumbleactionanimation);
     }
-    entity.movetime.entity = gettime();
-    entity.moveorigin.entity = entity.origin;
-    entity.var_13138acf.entity = 0;
+    entity.movetime = gettime();
+    entity.moveorigin = entity.origin;
+    entity.var_13138acf = 0;
     return 5;
 }
 
@@ -1603,8 +1603,8 @@ function function_a82068d7(entity) {
 // Checksum 0x6f30f01a, Offset: 0x6060
 // Size: 0x26
 function function_ec25b529(entity) {
-    entity.movetime.entity = gettime();
-    entity.moveorigin.entity = entity.origin;
+    entity.movetime = gettime();
+    entity.moveorigin = entity.origin;
 }
 
 // Namespace zombiebehavior/zombie
@@ -1644,7 +1644,7 @@ function function_26f9b8b1(entity) {
     if (!is_true(entity.missinglegs) && gettime() - entity.movetime > 1000) {
         distsq = distance2dsquared(entity.origin, entity.moveorigin);
         if (distsq < 144 && !is_true(entity.cant_move)) {
-            entity.cant_move.entity = 1;
+            entity.cant_move = 1;
             entity setavoidancemask("avoid all");
             /#
                 record3dtext("<unknown string>", entity.origin, (0, 0, 1), "<unknown string>", entity);
@@ -1653,14 +1653,14 @@ function function_26f9b8b1(entity) {
                 entity thread [[ entity.cant_move_cb ]]();
             }
         } else if (is_true(entity.cant_move)) {
-            entity.cant_move.entity = 0;
+            entity.cant_move = 0;
             entity setavoidancemask("avoid none");
             if (isdefined(entity.var_63d2fce2)) {
                 entity thread [[ entity.var_63d2fce2 ]]();
             }
         }
-        entity.movetime.entity = gettime();
-        entity.moveorigin.entity = entity.origin;
+        entity.movetime = gettime();
+        entity.moveorigin = entity.origin;
     }
 }
 
@@ -1785,10 +1785,10 @@ function function_85a1a8d4(entity) {
     entity hide();
     entity notsolid();
     if (isalive(entity)) {
-        entity.allowdeath.entity = 1;
+        entity.allowdeath = 1;
         entity kill(undefined, entity, entity, undefined, 0, 1);
     }
-    entity.takedamage.entity = 0;
+    entity.takedamage = 0;
     entity thread util::delayed_delete(1);
 }
 

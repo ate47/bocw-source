@@ -222,12 +222,12 @@ function spawn_single(b_force_spawn, var_eb3a8721 = 0, *var_bc66d64b) {
     }
     ai = spawnactor(#"spawner_bo5_mechz_sr", s_spawn_loc.origin, s_spawn_loc.angles);
     if (isdefined(ai)) {
-        ai.script_string.ai = s_spawn_loc.script_string;
-        ai.find_flesh_struct_string.ai = s_spawn_loc.find_flesh_struct_string;
-        ai.check_point_in_enabled_zone.ai = &zm_utility::check_point_in_playable_area;
-        ai.ignore_enemy_count.ai = 1;
+        ai.script_string = s_spawn_loc.script_string;
+        ai.find_flesh_struct_string = s_spawn_loc.find_flesh_struct_string;
+        ai.check_point_in_enabled_zone = &zm_utility::check_point_in_playable_area;
+        ai.ignore_enemy_count = 1;
         ai forceteleport(s_spawn_loc.origin, s_spawn_loc.angles);
-        ai.var_5e54763a.ai = s_spawn_loc.zone_name;
+        ai.var_5e54763a = s_spawn_loc.zone_name;
     }
     return ai;
 }
@@ -460,9 +460,9 @@ function private function_ea7b33b6() {
         var_c84ba99b = 0;
         if (waitresult._notify == #"bad_path") {
             if (!self function_dd070839() && !namespace_47c5b560::aiisleaping(self)) {
-                var_1f2328d0 = self function_4794d6a3();
-                if (!isdefined(var_686cf729) || var_1f2328d0.goalpos !== var_686cf729) {
-                    var_686cf729 = var_1f2328d0.goalpos;
+                goalinfo = self function_4794d6a3();
+                if (!isdefined(var_686cf729) || goalinfo.goalpos !== var_686cf729) {
+                    var_686cf729 = goalinfo.goalpos;
                     var_201abbfd = 1;
                 } else {
                     var_201abbfd++;

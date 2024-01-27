@@ -145,7 +145,7 @@ function private function_6f689c85(localclientnum) {
         }
         if (var_6685c065) {
             if (!isdefined(player.var_59f39e8a)) {
-                player.var_59f39e8a.player = player playloopsound(#"hash_4665942676cd6feb");
+                player.var_59f39e8a = player playloopsound(#"hash_4665942676cd6feb");
             }
         } else if (isdefined(player.var_59f39e8a)) {
             player stoploopsound(player.var_59f39e8a);

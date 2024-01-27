@@ -156,14 +156,14 @@ function function_c60d9d72() {
 // Checksum 0x6170dc4a, Offset: 0xaf8
 // Size: 0x9a
 function perk_machine_setup(use_trigger, perk_machine, bump_trigger, *collision) {
-    perk_machine.script_sound.perk_machine = "mus_perks_mulekick_jingle";
-    perk_machine.script_string.perk_machine = "mule_kick_perk";
-    perk_machine.script_label.perk_machine = "mus_perks_mulekick_sting";
-    perk_machine.target.perk_machine = "vending_mulekick";
-    bump_trigger.script_string.bump_trigger = "mule_kick_vending";
-    bump_trigger.targetname.bump_trigger = "vending_mulekick";
+    perk_machine.script_sound = "mus_perks_mulekick_jingle";
+    perk_machine.script_string = "mule_kick_perk";
+    perk_machine.script_label = "mus_perks_mulekick_sting";
+    perk_machine.target = "vending_mulekick";
+    bump_trigger.script_string = "mule_kick_vending";
+    bump_trigger.targetname = "vending_mulekick";
     if (isdefined(collision)) {
-        collision.script_string.collision = "mule_kick_perk";
+        collision.script_string = "mule_kick_perk";
     }
 }
 

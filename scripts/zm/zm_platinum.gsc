@@ -366,13 +366,13 @@ function function_452e5ad6() {
     var_1a672bba = var_5d59bb63.size ? var_5d59bb63 : var_7fc5b7c3;
     s_player_spawn = array::random(var_1a672bba);
     if (s_player_spawn.script_noteworthy === #"zone_ghost_station_2") {
-        s_player_spawn.origin.s_player_spawn = (-2335.62, 11589.8, -278);
+        s_player_spawn.origin = (-2335.62, 11589.8, -278);
     }
     if (s_player_spawn.script_noteworthy === #"zone_ghost_station_3") {
-        s_player_spawn.origin.s_player_spawn = (-2481.43, 11584.8, -285);
+        s_player_spawn.origin = (-2481.43, 11584.8, -285);
     }
     if (s_player_spawn.script_noteworthy === #"zone_ghost_station_4") {
-        s_player_spawn.origin.s_player_spawn = (-1209.13, 11597.9, -284.75);
+        s_player_spawn.origin = (-1209.13, 11597.9, -284.75);
     }
     return s_player_spawn;
 }
@@ -1557,7 +1557,7 @@ function function_5e09fe1(var_4a8bf1a3 = 1, var_d15e3ab = 1) {
                                 player zm_stats::increment_challenge_stat(#"hash_64e4655b2bad9f63");
                             }
                         }
-                        zombie.allowdeath.zombie = 1;
+                        zombie.allowdeath = 1;
                         zombie kill(undefined, undefined, undefined, undefined, undefined, 1);
                         playfxontag(#"zm_weapons/fx9_ww_ieu_death", zombie, "J_Spine4");
                         zombie function_cb48cddd();
@@ -1569,7 +1569,7 @@ function function_5e09fe1(var_4a8bf1a3 = 1, var_d15e3ab = 1) {
             if (isalive(player)) {
                 if (player istouching(self)) {
                     if (player laststand::player_is_in_laststand() && !player flag::get(#"hash_6dd5946508e5689a")) {
-                        player.bleedout_time.player = 0;
+                        player.bleedout_time = 0;
                     } else if (var_d15e3ab) {
                         player dodamage(30, self.origin, self, self, 0);
                         var_a6470558 = vectornormalize(player.origin - self.origin);
@@ -2179,7 +2179,7 @@ function function_49fa8c75() {
                         } else {
                             n_damage = 31;
                         }
-                        player.var_b2373233.player = 1;
+                        player.var_b2373233 = 1;
                         player thread function_7fd17b10();
                         player dodamage(n_damage, player.origin, undefined, undefined, undefined, "MOD_DEATH_CIRCLE", 8192);
                     }
@@ -2380,7 +2380,7 @@ function private function_20ad9d07() {
             }
             if (zombie.favoriteenemy === self) {
                 if (isdefined(zombie.var_29656770) && zombie.var_29656770.var_990bf66b === var_5f3b05e8) {
-                    zombie.v_zombie_custom_goal_pos.zombie = zombie.var_29656770.var_178696d;
+                    zombie.v_zombie_custom_goal_pos = zombie.var_29656770.var_178696d;
                     zombie.var_29656770.target_zone = var_5f3b05e8;
                 } else {
                     str_zone = zombie zm_utility::get_current_zone();
@@ -2391,9 +2391,9 @@ function private function_20ad9d07() {
                             /#
                                 println("<unknown string>" + zombie getentitynumber() + "<unknown string>" + var_5f3b05e8);
                             #/
-                            zombie.var_29656770.zombie = {#target_zone:var_5f3b05e8, #var_178696d:var_71c80ceb.posonnavmesh, #var_990bf66b:str_zone};
-                            zombie.v_zombie_custom_goal_pos.zombie = var_71c80ceb.var_db90fcba;
-                            zombie.var_b0709fcc.zombie = &function_ab69ca2e;
+                            zombie.var_29656770 = {#target_zone:var_5f3b05e8, #var_178696d:var_71c80ceb.posonnavmesh, #var_990bf66b:str_zone};
+                            zombie.v_zombie_custom_goal_pos = var_71c80ceb.var_db90fcba;
+                            zombie.var_b0709fcc = &function_ab69ca2e;
                             zombie thread function_85dc9b9d();
                         }
                     }
@@ -2541,7 +2541,7 @@ function function_a56b42c0() {
                 var_9e2396e0 = zm_utility::function_cce73165("mechz_location", #"spawner_bo5_mechz_sr", zone_name);
                 if (isdefined(var_9e2396e0)) {
                     var_9e2396e0.var_5e54763a = zone_name;
-                    var_9e2396e0.var_98f1f37c.var_9e2396e0 = 1;
+                    var_9e2396e0.var_98f1f37c = 1;
                     callback::function_50fdac80(&function_a56b42c0);
                     break;
                 }
@@ -2876,8 +2876,8 @@ function function_749d2cfc(*str_weapon_name, str_item_name, var_27751b99) {
             if (isdefined(point.var_a6762160.var_a53e9db0)) {
                 weapon = function_67456242(point.var_a6762160);
                 dropitem = drop_item(0, weapon, 1, weapon.maxammo, point.id, self.origin, self.angles, 1);
-                dropitem.var_519e776c.dropitem = 1;
-                dropitem.hidetime.dropitem = 1;
+                dropitem.var_519e776c = 1;
+                dropitem.hidetime = 1;
                 dropitem hide();
                 self function_98776900(dropitem, 0, 0, 1);
             } else {
@@ -2998,8 +2998,8 @@ function run_step(ee, step, var_5ea5c94d) {
             self endon(#"disconnect");
         }
         self endon(#"game_ended");
-        ee.started.ee = 1;
-        step.started.step = 1;
+        ee.started = 1;
+        step.started = 1;
         self thread function_3f795dc3(ee, step, var_5ea5c94d);
         if (!step.completed) {
             waitresult = undefined;
@@ -3010,7 +3010,7 @@ function run_step(ee, step, var_5ea5c94d) {
         }
         ended_early = isdefined(waitresult) && waitresult._notify == step.var_e788cdd7 + "<unknown string>";
         [[ step.cleanup_func ]](var_5ea5c94d, ended_early);
-        step.cleaned_up.step = 1;
+        step.cleaned_up = 1;
         if (game.state === #"postgame") {
             return;
         }
@@ -3020,7 +3020,7 @@ function run_step(ee, step, var_5ea5c94d) {
             ee.current_step++;
             self thread run_step(ee, step.next_step, var_5ea5c94d);
         } else {
-            ee.completed.ee = 1;
+            ee.completed = 1;
             self set(ee.name + "<unknown string>");
         }
     #/
@@ -3043,7 +3043,7 @@ function private function_3f795dc3(*ee, step, var_5ea5c94d) {
             level function_266d66eb(step.var_6cc77d4e, step.a_targets, undefined, step.var_441061cd);
         }
         [[ step.setup_func ]](var_5ea5c94d);
-        step.completed.step = 1;
+        step.completed = 1;
         if (isdefined(step.var_6cc77d4e)) {
             level function_53d0d99(step.var_6cc77d4e, step.a_targets);
         }

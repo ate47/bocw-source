@@ -192,12 +192,12 @@ function private function_fd269801(var_ac850bbc) {
             var_c3031858 = function_3be17ddc(child.var_dfb0558b, child.var_4e8e65e4, 0);
             if (child.height == 1) {
                 var_c3031858 = function_3be17ddc(child.var_dfb0558b, 2, 0);
-                child.room.child = namespace_f27a9d0d::function_eaad15e2(level.var_49329074, var_c3031858.var_fef51edb, function_5a8d487e(cur, child, var_c3031858));
+                child.room = namespace_f27a9d0d::function_eaad15e2(level.var_49329074, var_c3031858.var_fef51edb, function_5a8d487e(cur, child, var_c3031858));
                 child.room.var_dbb4ff9a = level.var_49329074;
                 level.var_ee250665 = child.room;
             } else {
                 var_8afc2ef3 = cur.room namespace_f27a9d0d::function_5165998("id", function_968ec9e9(cur, child, var_cbb28d5));
-                child.room.child = namespace_f27a9d0d::function_eaad15e2(var_8afc2ef3, var_c3031858.var_fef51edb, function_5a8d487e(cur, child, var_c3031858));
+                child.room = namespace_f27a9d0d::function_eaad15e2(var_8afc2ef3, var_c3031858.var_fef51edb, function_5a8d487e(cur, child, var_c3031858));
                 child.room.var_dbb4ff9a = var_8afc2ef3;
             }
             child.room.depth = child.height;

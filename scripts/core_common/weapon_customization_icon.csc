@@ -101,14 +101,14 @@ function setup_wc_extracam_settings(localclientnum, extracam_data_struct) {
     if (!isdefined(camera_ent)) {
         return;
     }
-    extracam_data_struct.subxcam.extracam_data_struct = "cam_icon";
+    extracam_data_struct.subxcam = "cam_icon";
     if (extracam_data_struct.loadoutslot == "default_camo_render") {
-        extracam_data_struct.xcam.extracam_data_struct = "ui_cam_icon_camo_export";
+        extracam_data_struct.xcam = "ui_cam_icon_camo_export";
     } else {
-        extracam_data_struct.xcam.extracam_data_struct = getxcam(extracam_data_struct.current_weapon, "cam_icon_weapon");
+        extracam_data_struct.xcam = getxcam(extracam_data_struct.current_weapon, "cam_icon_weapon");
     }
     if (!isdefined(extracam_data_struct.xcam)) {
-        extracam_data_struct.xcam.extracam_data_struct = "ui_cam_icon_camo_export";
+        extracam_data_struct.xcam = "ui_cam_icon_camo_export";
     }
     position = extracam_data_struct.weapon_position;
     camera_ent playextracamxcam(extracam_data_struct.xcam, 0, extracam_data_struct.subxcam, extracam_data_struct.notetrack, position.origin, position.angles, extracam_data_struct.weapon_script_model, position.origin, position.angles);
@@ -157,10 +157,10 @@ function spawn_weapon_model(localclientnum, origin, angles) {
 // Size: 0x7e
 function get_safehouse_position_struct() {
     position = spawnstruct();
-    position.angles.position = (0, 0, 0);
+    position.angles = (0, 0, 0);
     switch (util::get_map_name()) {
     case #"hash_defdefdefdefdef0":
-        position.origin.position = (191, 113, -2550);
+        position.origin = (191, 113, -2550);
         break;
     }
     return position;
@@ -180,9 +180,9 @@ function setup_wc_weapon_model(localclientnum, extracam_data_struct) {
             position = get_safehouse_position_struct();
         }
         if (!isdefined(extracam_data_struct.weapon_script_model)) {
-            extracam_data_struct.weapon_script_model.extracam_data_struct = spawn_weapon_model(localclientnum, position.origin, position.angles);
+            extracam_data_struct.weapon_script_model = spawn_weapon_model(localclientnum, position.origin, position.angles);
         }
-        extracam_data_struct.current_weapon.extracam_data_struct = getweapon(weapon_name);
+        extracam_data_struct.current_weapon = getweapon(weapon_name);
         extracam_data_struct.weapon_script_model useweaponmodel(extracam_data_struct.current_weapon);
         extracam_data_struct.weapon_position = position;
         if (isdefined(weapon_options_param) && weapon_options_param != "none") {

@@ -56,7 +56,7 @@ class cbarricade : cdoor {
         self.m_s_bundle = var_4a686ff8;
         self.var_a2f96f78 = s_instance;
         self.m_s_bundle.door_start_open = s_instance.door_start_open;
-        s_instance.c_door.s_instance = doors::setup_door_info(self.m_s_bundle, s_instance, self);
+        s_instance.c_door = doors::setup_door_info(self.m_s_bundle, s_instance, self);
         if (is_true(self.m_s_bundle.door_start_open)) {
             if (isdefined(self.var_a2f96f78.target)) {
                 var_59746f25 = struct::get_array(self.var_a2f96f78.target, "targetname");

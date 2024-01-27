@@ -200,8 +200,8 @@ function private function_47dab4a5(alias, var_9a8be594, gestures, var_e01a79b9, 
     }
     org = spawn("script_origin", (0, 0, 0));
     org endon(#"death");
-    org.origin.org = self.origin;
-    org.angles.org = self.angles;
+    org.origin = self.origin;
+    org.angles = self.angles;
     org linkto(self);
     player = self function_bbd6c05b();
     var_9170250 = self function_7ddb5aa3();

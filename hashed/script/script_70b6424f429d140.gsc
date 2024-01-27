@@ -126,8 +126,8 @@ function function_fbb0d73f() {
     self setrotorspeed(1);
     self vehicle::lights_on();
     params = spawnstruct();
-    params.no_clear_movement.params = 1;
-    params.var_a22ee662.params = 1;
+    params.no_clear_movement = 1;
+    params.var_a22ee662 = 1;
     self vehicle_ai::set_state("scripted", params);
 }
 
@@ -208,11 +208,11 @@ function function_3d66ebcc(tname, var_5283a254, skipto_end = 0) {
     var_77c8c733 hidepart("tag_gunner_barrel1", "veh_t8_mil_helicopter_uh1d_left_gun_mount_attach_grn", 1);
     thread function_efa33b5b(level.var_9a3944f4, "ally_heli_spot_light_bustout", "tag_glass_front_left_lower_d0", (-20, 12, 0), level.var_9a3944f4, 0, 1);
     level.var_9a3944f4 thread function_3cebcd1b();
-    var_77c8c733.probe.var_77c8c733 = getent("heli_probe", "targetname");
+    var_77c8c733.probe = getent("heli_probe", "targetname");
     if (isdefined(var_77c8c733.probe)) {
         var_77c8c733.probe linkto(var_77c8c733, "tag_fire_extinguisher_attach", (-4, 0, 12), (0, 0, 0));
     }
-    var_77c8c733.var_6098f318.var_77c8c733 = getent("heli_cab_probe", "targetname");
+    var_77c8c733.var_6098f318 = getent("heli_cab_probe", "targetname");
     if (isdefined(var_77c8c733.var_6098f318)) {
         var_77c8c733.var_6098f318 linkto(var_77c8c733, "tag_fire_extinguisher_attach", (38, 0, 16), (0, 0, 0));
     }
@@ -397,7 +397,7 @@ function function_3cebcd1b() {
 // Checksum 0xc78b0efc, Offset: 0x2050
 // Size: 0x144
 function function_f97ce389(heli, tag, var_2d65f507, var_5525c0b0) {
-    heli.light.heli = util::spawn_model("tag_origin", heli gettagorigin(tag) + vectorscale((0, 0, -1), 84), heli gettagangles(tag) + var_2d65f507);
+    heli.light = util::spawn_model("tag_origin", heli gettagorigin(tag) + vectorscale((0, 0, -1), 84), heli gettagangles(tag) + var_2d65f507);
     if (var_5525c0b0) {
         util::delay(0.3, undefined, &playfxontag, #"hash_f80473c70ea6ee3", heli.light, "tag_origin");
     } else {
@@ -414,7 +414,7 @@ function function_efa33b5b(heli, tname, tag, var_2d65f507, var_ba240678, var_fa2
     fx_light = 1;
     heli endon(#"death");
     heli waittill(#"lights_on");
-    heli.col_hack.heli = (1, 0, 0);
+    heli.col_hack = (1, 0, 0);
     if (!isdefined(level.var_eaf95d92)) {
         level.var_eaf95d92 = [];
     }
@@ -424,9 +424,9 @@ function function_efa33b5b(heli, tname, tag, var_2d65f507, var_ba240678, var_fa2
                 function_f97ce389(heli, tag, var_2d65f507, var_5525c0b0);
             }
         } else {
-            heli.light.heli = getent(tname, "targetname");
+            heli.light = getent(tname, "targetname");
             if (!isdefined(heli.light)) {
-                heli.light.heli = getent(tname + "_temp", "targetname");
+                heli.light = getent(tname + "_temp", "targetname");
             }
         }
         if (isdefined(heli.light)) {
@@ -517,7 +517,7 @@ function function_cbe25a41(var_4cd99adc, tag, var_fa2357fe = 0, var_1a67724f = 0
     if (var_fa2357fe) {
         var_8c29c159 = getent("light_ally_helispot_bnc", "targetname");
         if (isdefined(var_8c29c159)) {
-            var_8c29c159.var_6da8d78a.var_8c29c159 = 1;
+            var_8c29c159.var_6da8d78a = 1;
             var_8c29c159 linkto(self.var_ba240678, "tag_origin", vectorscale((0, 0, -1), 200), (0, 0, 0));
             if (var_61bc4e7) {
                 var_8c29c159 thread function_336e9e88();

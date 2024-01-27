@@ -10,14 +10,14 @@
 // Params 2, eflags: 0x2 linked
 // Checksum 0xdf404a6, Offset: 0xa0
 // Size: 0x84
-function setup(*localclientnum, var_582cb7bb) {
+function setup(*localclientnum, seedvalue) {
     if (!item_world_util::use_item_spawns()) {
         return;
     }
     level.var_8c615e33 = [];
-    function_1f4464c0(var_582cb7bb);
+    function_1f4464c0(seedvalue);
     /#
-        println("<unknown string>" + var_582cb7bb);
+        println("<unknown string>" + seedvalue);
     #/
     namespace_65181344::setup_groups();
 }

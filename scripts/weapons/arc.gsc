@@ -21,7 +21,7 @@ function init_arc(weapon, var_26b2b1bb) {
     }
     var_26b2b1bb = level.var_8a74f7fc[weapon];
     if (!isdefined(var_26b2b1bb.var_874bd25a)) {
-        var_26b2b1bb.var_874bd25a.var_26b2b1bb = &function_874bd25a;
+        var_26b2b1bb.var_874bd25a = &function_874bd25a;
     }
     function_8d134256(var_26b2b1bb);
 }
@@ -66,8 +66,8 @@ function setup_arc(weapon, var_26b2b1bb) {
 // Checksum 0x65f9bf46, Offset: 0x248
 // Size: 0x6c
 function function_8d134256(var_26b2b1bb) {
-    var_26b2b1bb.range_sqr.var_26b2b1bb = var_26b2b1bb.range * var_26b2b1bb.range;
-    var_26b2b1bb.var_1c1be14.var_26b2b1bb = var_26b2b1bb.max_range * var_26b2b1bb.max_range;
+    var_26b2b1bb.range_sqr = var_26b2b1bb.range * var_26b2b1bb.range;
+    var_26b2b1bb.var_1c1be14 = var_26b2b1bb.max_range * var_26b2b1bb.max_range;
     callback::add_weapon_damage(var_26b2b1bb.weapon, var_26b2b1bb.var_874bd25a);
 }
 
@@ -238,7 +238,7 @@ function function_30a9a6c1(var_26b2b1bb, delay, eattacker, arc_source, *var_9a09
         if (isdefined(arc_source_pos.var_f5037060)) {
             var_ac6e1436 = arc_target_pos [[ arc_source_pos.var_f5037060 ]](arc_source, arc_source_pos, depth);
         }
-        arc_source_pos.var_290ed3ab.arc_source_pos = gettime() + var_ac6e1436;
+        arc_source_pos.var_290ed3ab = gettime() + var_ac6e1436;
     }
 }
 
@@ -264,12 +264,12 @@ function function_db12bbd1(arc_source) {
 function function_41827934(arc_source, arc_target) {
     arc_target.arc_source = arc_source;
     if (!isdefined(arc_target.var_671951da)) {
-        arc_target.var_671951da.arc_target = [];
+        arc_target.var_671951da = [];
     }
     arc_target.var_671951da[arc_target.var_671951da.size] = arc_source;
     if (isdefined(arc_source)) {
         if (!isdefined(arc_source.var_d8d780c1)) {
-            arc_source.var_d8d780c1.arc_source = [];
+            arc_source.var_d8d780c1 = [];
         }
         arc_source.var_d8d780c1[arc_source.var_d8d780c1.size] = arc_target;
     }

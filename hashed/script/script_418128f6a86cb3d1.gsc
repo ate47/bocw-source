@@ -18,7 +18,7 @@ function private autoexec __init__system__() {
 // Checksum 0x55dc8f90, Offset: 0xf8
 // Size: 0xac
 function private function_70a657d8() {
-    level.var_1ff088cf = {#var_8ca84e59:[]};
+    level.var_1ff088cf = {#layers:[]};
     function_f75dd8e0("low", 6000, #"hash_3cb3a6fc9eb00337");
     callback::add_callback(#"freefall", &function_c9a18304);
     callback::add_callback(#"hash_171443902e2a22ee", &function_f99c2453);
@@ -56,9 +56,9 @@ function private function_f99c2453(eventstruct) {
 // Size: 0x9c
 function function_f75dd8e0(name, min_height, fx) {
     /#
-        assert(!isdefined(level.var_1ff088cf.var_8ca84e59[name]));
+        assert(!isdefined(level.var_1ff088cf.layers[name]));
     #/
-    level.var_1ff088cf.var_8ca84e59[name] = {#fx:fx, #min_height:min_height, #name:name};
+    level.var_1ff088cf.layers[name] = {#fx:fx, #min_height:min_height, #name:name};
 }
 
 // Namespace namespace_1ff088cf/namespace_1ff088cf
@@ -82,7 +82,7 @@ function start(localclientnum) {
     }
     height = self.origin[2];
     var_3c752058 = function_59a04cbf();
-    foreach (layer in level.var_1ff088cf.var_8ca84e59) {
+    foreach (layer in level.var_1ff088cf.layers) {
         if (layer.min_height > height - var_3c752058) {
             continue;
         }
@@ -103,7 +103,7 @@ function update(localclientnum) {
     var_3c752058 = function_59a04cbf();
     while (1) {
         foreach (name, fx in self.var_1ff088cf) {
-            if (self.origin[2] < level.var_1ff088cf.var_8ca84e59[name].min_height - var_3c752058) {
+            if (self.origin[2] < level.var_1ff088cf.layers[name].min_height - var_3c752058) {
                 self function_2baaca3c(localclientnum, name);
             }
         }

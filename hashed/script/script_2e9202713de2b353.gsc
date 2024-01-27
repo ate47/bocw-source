@@ -152,13 +152,13 @@ function function_e71841a() {
                 }
                 ai = doa_enemy::function_db55a448(var_49a15185, var_f6198c5b.origin);
                 if (isdefined(ai)) {
-                    ai.var_f906062a.ai = 1;
-                    ai.var_76cb41b3.ai = 1;
+                    ai.var_f906062a = 1;
+                    ai.var_76cb41b3 = 1;
                     ai.goalradius = goalradius;
                     self.var_f807cf8f[self.var_f807cf8f.size] = ai;
-                    ai.room.ai = self;
-                    ai.engagementdistance.ai = 1200;
-                    ai.var_a84a3d40.ai = function_a3f6cdac(ai.engagementdistance);
+                    ai.room = self;
+                    ai.engagementdistance = 1200;
+                    ai.var_a84a3d40 = function_a3f6cdac(ai.engagementdistance);
                 }
             }
         }
@@ -202,8 +202,8 @@ function function_e71841a() {
         }
         var_5e62902b = spawnstruct();
         args = strtok(var_f6198c5b.script_parameters, ";");
-        var_5e62902b.origin.var_5e62902b = var_f6198c5b.origin;
-        var_5e62902b.type.var_5e62902b = args[0];
+        var_5e62902b.origin = var_f6198c5b.origin;
+        var_5e62902b.type = args[0];
         if (var_5e62902b.type == #"room_warp") {
             /#
                 assert(args.size >= 4, "<unknown string>");
@@ -211,11 +211,11 @@ function function_e71841a() {
             width = int(args[1]);
             length = int(args[2]);
             height = int(args[3]);
-            var_5e62902b.trigger.var_5e62902b = namespace_ec06fe4a::function_b5731057("trigger_box", var_5e62902b.origin, 2, length, height, width);
+            var_5e62902b.trigger = namespace_ec06fe4a::function_b5731057("trigger_box", var_5e62902b.origin, 2, length, height, width);
             /#
                 assert(isdefined(var_f6198c5b.script_noteworthy), "<unknown string>");
             #/
-            var_5e62902b.room.var_5e62902b = namespace_5a917022::function_c8892b0f(var_f6198c5b.script_noteworthy);
+            var_5e62902b.room = namespace_5a917022::function_c8892b0f(var_f6198c5b.script_noteworthy);
             /#
                 assert(isdefined(var_5e62902b.room), "<unknown string>");
             #/

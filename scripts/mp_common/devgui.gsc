@@ -120,10 +120,10 @@ function devgui_player_spawn_think() {
                     if (player.playername != playername) {
                         continue;
                     }
-                    player.devguilockspawn.player = !player.devguilockspawn;
+                    player.devguilockspawn = !player.devguilockspawn;
                     if (player.devguilockspawn) {
-                        player.resurrect_origin.player = player.origin;
-                        player.resurrect_angles.player = player.angles;
+                        player.resurrect_origin = player.origin;
+                        player.resurrect_angles = player.angles;
                     }
                 }
                 setdvar(#"mp_lockspawn_command_devgui", "<unknown string>");
@@ -890,8 +890,8 @@ function add_vehicle_at_eye_trace(vehiclename) {
         vehicle asmrequestsubstate(#"locomotion@movement");
         waitframe(1);
         vehicle makevehicleusable();
-        vehicle.origin.vehicle = trace[#"position"];
-        vehicle.nojumping.vehicle = 1;
+        vehicle.origin = trace[#"position"];
+        vehicle.nojumping = 1;
         vehicle thread watch_player_death();
         return vehicle;
     #/
@@ -1101,7 +1101,7 @@ function function_be0f9897() {
                     if (player.health + heal > var_66cb03ad) {
                         player.health = var_66cb03ad;
                     } else {
-                        player.health.player = player.health + heal;
+                        player.health = player.health + heal;
                     }
                 } else {
                     player dodamage(damage, player.origin + vectorscale((1, 0, 0), 100));
@@ -1180,7 +1180,7 @@ function private function_57edec18() {
                     continue;
                 }
                 drone_camera = spawnvehicle("<unknown string>", player.origin + vectorscale((0, 0, 1), 150), player.angles, "<unknown string>");
-                drone_camera.ignoreme.drone_camera = 1;
+                drone_camera.ignoreme = 1;
                 drone_camera usevehicle(player, 0);
                 level.drone_camera = drone_camera;
             } else if (isdefined(level.drone_camera)) {

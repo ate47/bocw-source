@@ -226,28 +226,28 @@ function function_732dcb56(killstreaktype) {
     recon_plane setweapon(weapon);
     recon_plane setforcenocull();
     recon_plane.killstreak_id = killstreak_id;
-    recon_plane.owner.recon_plane = self;
-    recon_plane.ownerentnum.recon_plane = self getentitynumber();
-    recon_plane.team.recon_plane = self.team;
+    recon_plane.owner = self;
+    recon_plane.ownerentnum = self getentitynumber();
+    recon_plane.team = self.team;
     recon_plane setteam(self.team);
     recon_plane setowner(self);
     recon_plane killstreaks::configure_team(killstreaktype, killstreak_id, self, undefined, undefined, &configureteampost);
     recon_plane killstreak_hacking::enable_hacking("recon_plane", &hackedprefunction, undefined);
-    recon_plane.targetname.recon_plane = "recon_plane";
-    recon_plane.leaving.recon_plane = 0;
+    recon_plane.targetname = "recon_plane";
+    recon_plane.leaving = 0;
     recon_plane util::make_sentient();
-    recon_plane.var_c31213a5.recon_plane = 1;
+    recon_plane.var_c31213a5 = 1;
     recon_plane thread killstreaks::function_2b6aa9e8("recon_plane", &function_e55922df, &onlowhealth);
     recon_plane thread function_f724cfe4(100000);
     recon_plane thread killstreaks::waittillemp(&function_b16d07ad);
-    recon_plane.killstreakdamagemodifier.recon_plane = &killstreakdamagemodifier;
+    recon_plane.killstreakdamagemodifier = &killstreakdamagemodifier;
     if (isdefined(bundle.var_6dfc61a2) && bundle.var_6dfc61a2 > 0) {
-        recon_plane.extra_low_health.recon_plane = bundle.var_6dfc61a2;
-        recon_plane.extra_low_health_callback.recon_plane = &function_71ad74a1;
+        recon_plane.extra_low_health = bundle.var_6dfc61a2;
+        recon_plane.extra_low_health_callback = &function_71ad74a1;
     }
-    recon_plane.numflares.recon_plane = 1;
+    recon_plane.numflares = 1;
     recon_plane helicopter::create_flare_ent(vectorscale((0, 0, -1), 25));
-    recon_plane.rocketdamage.recon_plane = recon_plane.maxhealth / 3 + 1;
+    recon_plane.rocketdamage = recon_plane.maxhealth / 3 + 1;
     recon_plane moveto(endposition, 40000 * 0.002);
     recon_plane.angles = angles;
     target_set(recon_plane);
@@ -570,12 +570,12 @@ function function_bde85071() {
 // Size: 0xe6
 function function_65f48f1a(player) {
     if (!isdefined(player.entnum)) {
-        player.entnum.player = player getentitynumber();
+        player.entnum = player getentitynumber();
     }
     var_eb10c6a7 = level.var_eb10c6a7[player.entnum];
     var_a06a125 = var_eb10c6a7 + (isdefined(level.activeuavs) && isdefined(level.activeuavs[player.team]) ? level.activeuavs[player.team] : 0);
     player setclientuivisibilityflag("radar_client", var_a06a125 > 0);
-    player.var_83266838.player = var_eb10c6a7 > 0;
+    player.var_83266838 = var_eb10c6a7 > 0;
 }
 
 // Namespace recon_plane/recon_plane

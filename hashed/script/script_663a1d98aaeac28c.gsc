@@ -26,12 +26,12 @@ function init_shared() {
 // Checksum 0xc670620a, Offset: 0x160
 // Size: 0xbc
 function function_1679806a(s_watcher) {
-    s_watcher.onspawn.s_watcher = &function_16a186f;
-    s_watcher.ondamage.s_watcher = &util::void;
-    s_watcher.onspawnretrievetriggers.s_watcher = &weaponobjects::function_23b0aea9;
-    s_watcher.pickup.s_watcher = &weaponobjects::function_d9219ce2;
-    s_watcher.ontimeout.s_watcher = &function_27ae0902;
-    s_watcher.onfizzleout.s_watcher = &function_27ae0902;
+    s_watcher.onspawn = &function_16a186f;
+    s_watcher.ondamage = &util::void;
+    s_watcher.onspawnretrievetriggers = &weaponobjects::function_23b0aea9;
+    s_watcher.pickup = &weaponobjects::function_d9219ce2;
+    s_watcher.ontimeout = &function_27ae0902;
+    s_watcher.onfizzleout = &function_27ae0902;
     if (isdefined(level.createhatchetwatcher)) {
         self [[ level.createhatchetwatcher ]](s_watcher);
     }
@@ -44,7 +44,7 @@ function function_1679806a(s_watcher) {
 function function_27ae0902() {
     e_fx = spawn("script_model", self.origin);
     e_fx setmodel(#"tag_origin");
-    e_fx.angles.e_fx = self.angles;
+    e_fx.angles = self.angles;
     playfxontag(#"hash_522eb6eca07bfe70", e_fx, "tag_origin");
     self delete();
 }

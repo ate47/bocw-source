@@ -797,7 +797,7 @@ function private validate(str_name, call_on, func, ...) {
             return;
         }
         s_value = level.values[str_name];
-        s_value.b_validate.s_value = 1;
+        s_value.b_validate = 1;
         s_value.func_validate = func;
         s_value.validate_call_on = call_on;
         s_value.validate_args = vararg;

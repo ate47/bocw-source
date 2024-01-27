@@ -19,7 +19,7 @@ function init_shared() {
 // Checksum 0x34e40ef9, Offset: 0x158
 // Size: 0x22
 function creategrenadewatcher(watcher) {
-    watcher.onspawn.watcher = &function_aa95d684;
+    watcher.onspawn = &function_aa95d684;
 }
 
 // Namespace grenades/grenades

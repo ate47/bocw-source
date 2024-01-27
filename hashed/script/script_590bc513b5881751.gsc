@@ -166,9 +166,9 @@ function function_4d980695(*isowner, killstreaktype) {
     #/
     player = self;
     player util::setusingremote("ac130");
-    player.ignoreempjammed.player = 1;
+    player.ignoreempjammed = 1;
     result = player killstreaks::init_ride_killstreak("ac130");
-    player.ignoreempjammed.player = 0;
+    player.ignoreempjammed = 0;
     if (result != "success") {
         if (result != "disconnect") {
             player killstreaks::clear_using_remote();
@@ -234,7 +234,7 @@ function init_shared() {
 // Size: 0x7c
 function function_bff5c062(var_2f03ffd6, attackingplayer) {
     var_2f03ffd6 killstreaks::function_73566ec7(attackingplayer, getweapon(#"gadget_icepick"), var_2f03ffd6.owner);
-    var_2f03ffd6.destroyscoreeventgiven.var_2f03ffd6 = 1;
+    var_2f03ffd6.destroyscoreeventgiven = 1;
     function_8721028e(var_2f03ffd6.owner, 1);
 }
 
@@ -309,11 +309,11 @@ function hackedpostfunction(hacker) {
     hacker thread watchplayerteamchangethread(heligunner);
     hacker killstreaks::set_killstreak_delay_killcam("ac130");
     if (heligunner.killstreak_timer_started) {
-        heligunner.killstreak_duration.heligunner = heligunner killstreak_hacking::get_hacked_timeout_duration_ms();
-        heligunner.killstreak_end_time.heligunner = hacker killstreak_hacking::set_vehicle_drivable_time_starting_now(heligunner);
-        heligunner.killstreakendtime.heligunner = int(heligunner.killstreak_end_time);
+        heligunner.killstreak_duration = heligunner killstreak_hacking::get_hacked_timeout_duration_ms();
+        heligunner.killstreak_end_time = hacker killstreak_hacking::set_vehicle_drivable_time_starting_now(heligunner);
+        heligunner.killstreakendtime = int(heligunner.killstreak_end_time);
     } else {
-        heligunner.killstreak_timer_start_using_hacked_time.heligunner = 1;
+        heligunner.killstreak_timer_start_using_hacked_time = 1;
     }
 }
 
@@ -329,7 +329,7 @@ function function_e187e17b() {
         if (isdefined(params.projectiles) && isdefined(self.killstreak_id)) {
             foreach (projectile in params.projectiles) {
                 if (isdefined(projectile)) {
-                    projectile.killstreakid.projectile = self.killstreak_id;
+                    projectile.killstreakid = self.killstreak_id;
                 }
             }
         }
@@ -691,7 +691,7 @@ function mainturretdestroyed(ac130, eattacker, weapon) {
     if (issentient(ac130)) {
         ac130 function_60d50ea4();
     }
-    ac130.shuttingdown.ac130 = 1;
+    ac130.shuttingdown = 1;
     eattacker = self [[ level.figure_out_attacker ]](eattacker);
     if (isdefined(eattacker) && (!isdefined(ac130.owner) || ac130.owner util::isenemyplayer(eattacker))) {
         luinotifyevent(#"player_callout", 2, #"hash_bbc64fd3a1e88d", eattacker.entnum);
@@ -709,7 +709,7 @@ function mainturretdestroyed(ac130, eattacker, weapon) {
 // Params 6, eflags: 0x2 linked
 // Checksum 0xebad70f9, Offset: 0x2ff0
 // Size: 0x84
-function vtoldestructiblecallback(*brokennotify, eattacker, weapon, *var_b1f9d94f, *dir, *mod) {
+function vtoldestructiblecallback(*brokennotify, eattacker, weapon, *pieceindex, *dir, *mod) {
     ac130 = self;
     ac130 endon(#"delete", #"ac130_shutdown");
     mainturretdestroyed(ac130, dir, mod);
@@ -833,7 +833,7 @@ function function_dea7ec6a(einflictor, eattacker, idamage, idflags, smeansofdeat
         self thread function_ae354bc7();
     }
     if (self.health > 0 && var_902cbab5 <= 0 && !ac130.shuttingdown) {
-        ac130.shuttingdown.ac130 = 1;
+        ac130.shuttingdown = 1;
         ac130 notify(#"hash_410e7050279b0b25");
         if (!isdefined(ac130.destroyscoreeventgiven) && isdefined(idflags) && (!isdefined(ac130.owner) || ac130.owner util::isenemyplayer(idflags))) {
             idflags = self [[ level.figure_out_attacker ]](idflags);
@@ -843,7 +843,7 @@ function function_dea7ec6a(einflictor, eattacker, idamage, idflags, smeansofdeat
             challenges::destroyedaircraft(idflags, vdir, 1, ac130, 1);
             idflags challenges::addflyswatterstat(vdir, ac130);
             idflags stats::function_e24eec31(vdir, #"hash_3f3d8a93c372c67d", 1);
-            ac130.destroyscoreeventgiven.ac130 = 1;
+            ac130.destroyscoreeventgiven = 1;
         }
         if (isdefined(idamage) && idamage getentitytype() == 4) {
             bundle = killstreaks::get_script_bundle("ac130");
@@ -985,7 +985,7 @@ function watchlocationchangethread(destnodes) {
     #/
     ac130 endon(#"delete", #"ac130_shutdown");
     player thread setplayermovedrecentlythread();
-    player.moves.player = 0;
+    player.moves = 0;
     while (1) {
         ac130 waittill(#"goal");
         if (player.moves > 0) {
@@ -1035,8 +1035,8 @@ function setplayermovedrecentlythread() {
 function updateareanodes(areanodes, forcemove) {
     validenemies = [];
     foreach (node in areanodes) {
-        node.validplayers.node = [];
-        node.nodescore.node = 0;
+        node.validplayers = [];
+        node.nodescore = 0;
     }
     foreach (player in level.players) {
         if (!isalive(player)) {
@@ -1059,13 +1059,13 @@ function updateareanodes(areanodes, forcemove) {
         }
         helinode = getent(node.target, "targetname");
         foreach (player in node.validplayers) {
-            node.nodescore.node = node.nodescore + 1;
+            node.nodescore = node.nodescore + 1;
             if (bullettracepassed(player.origin + vectorscale((0, 0, 1), 32), helinode.origin, 0, player)) {
-                node.nodescore.node = node.nodescore + 3;
+                node.nodescore = node.nodescore + 3;
             }
         }
         if (forcemove && distancesquared(level.ac130.origin, helinode.origin) < 40000) {
-            node.nodescore.node = -1;
+            node.nodescore = -1;
         }
         if (!isdefined(bestnode) || node.nodescore > bestnode.nodescore) {
             bestnode = node;

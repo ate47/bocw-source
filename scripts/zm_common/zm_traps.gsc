@@ -293,7 +293,7 @@ function trap_purchase(e_player, n_cost) {
 // Size: 0x2ac
 function trap_activate(trap, who) {
     trap.activated_by_player = who;
-    trap._trap_in_use.trap = 1;
+    trap._trap_in_use = 1;
     trap trap_set_string(#"zombie/trap_active");
     if (isdefined(who)) {
         zm_utility::play_sound_at_pos("purchase", who.origin);
@@ -313,7 +313,7 @@ function trap_activate(trap, who) {
     trap trap_set_string(#"zombie/trap_cooldown");
     /#
         if (getdvarint(#"zombie_cheat", 0) >= 1) {
-            trap._trap_cooldown_time.trap = 5;
+            trap._trap_cooldown_time = 5;
         }
     #/
     n_cooldown = function_da13db45(trap._trap_cooldown_time, who);
@@ -323,7 +323,7 @@ function trap_activate(trap, who) {
         level thread [[ level.sndtrapfunc ]](trap, 0);
     }
     trap notify(#"available");
-    trap._trap_in_use.trap = 0;
+    trap._trap_in_use = 0;
     trap function_783f63e9();
 }
 
@@ -859,7 +859,7 @@ function trap_disable(var_ccf895cc = #"zombie/trap_locked") {
     }
     if (isarray(self._trap_use_trigs)) {
         foreach (t_trap in self._trap_use_trigs) {
-            t_trap.var_fc36786e.t_trap = 1;
+            t_trap.var_fc36786e = 1;
         }
     }
     self trap_lights_red();
@@ -949,15 +949,15 @@ function function_3f401e8d(e_player) {
     }
     if (e_player bgb::is_enabled(#"zm_bgb_anti_entrapment")) {
         if (!isdefined(e_player.var_410e7c36)) {
-            e_player.var_410e7c36.e_player = [];
+            e_player.var_410e7c36 = [];
         } else if (!isarray(e_player.var_410e7c36)) {
-            e_player.var_410e7c36.e_player = array(e_player.var_410e7c36);
+            e_player.var_410e7c36 = array(e_player.var_410e7c36);
         }
         if (!isinarray(e_player.var_410e7c36, self)) {
             if (!isdefined(e_player.var_410e7c36)) {
-                e_player.var_410e7c36.e_player = [];
+                e_player.var_410e7c36 = [];
             } else if (!isarray(e_player.var_410e7c36)) {
-                e_player.var_410e7c36.e_player = array(e_player.var_410e7c36);
+                e_player.var_410e7c36 = array(e_player.var_410e7c36);
             }
             e_player.var_410e7c36[e_player.var_410e7c36.size] = self;
             e_player zm_stats::increment_challenge_stat(#"hash_108042c8bd6693fb");

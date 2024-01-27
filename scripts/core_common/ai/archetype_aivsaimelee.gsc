@@ -271,7 +271,7 @@ function private hasaivsaienemy(behaviortreeentity) {
             self notify(#"failed_melee_mbs", {#entity:enemy});
             return 0;
         }
-        behaviortreeentity._ai_melee_attacker_loser.behaviortreeentity = 1;
+        behaviortreeentity._ai_melee_attacker_loser = 1;
         return 1;
     }
     return 1;
@@ -284,7 +284,7 @@ function private hasaivsaienemy(behaviortreeentity) {
 function private decideinitiator(behaviortreeentity) {
     if (!isdefined(behaviortreeentity._ai_melee_initiator)) {
         if (!isdefined(behaviortreeentity.enemy._ai_melee_initiator)) {
-            behaviortreeentity._ai_melee_initiator.behaviortreeentity = 1;
+            behaviortreeentity._ai_melee_initiator = 1;
             return 1;
         }
     }
@@ -436,13 +436,13 @@ function private aivsaimeleebundleexists(behaviortreeentity, attacker_variant, d
 // Checksum 0x62a76985, Offset: 0x1f98
 // Size: 0xe8
 function aivsaimeleeinitialize(behaviortreeentity, *asmstatename) {
-    asmstatename.blockingpain.asmstatename = 1;
+    asmstatename.blockingpain = 1;
     asmstatename.enemy.blockingpain = 1;
     aiutility::meleeacquiremutex(asmstatename);
-    asmstatename._ai_melee_opponent.asmstatename = asmstatename.enemy;
+    asmstatename._ai_melee_opponent = asmstatename.enemy;
     asmstatename.enemy._ai_melee_opponent = asmstatename;
     if (is_true(asmstatename._ai_melee_attacker_loser)) {
-        asmstatename._ai_melee_markeddead.asmstatename = 1;
+        asmstatename._ai_melee_markeddead = 1;
         asmstatename.enemy thread playscriptedmeleeanimations();
     } else {
         asmstatename.enemy._ai_melee_markeddead = 1;
@@ -521,13 +521,13 @@ function private chooseaivsaimeleefrontflipanimations(behaviortreeentity, animbu
         assert(isdefined(animbundle));
     #/
     if (is_true(behaviortreeentity._ai_melee_attacker_loser)) {
-        behaviortreeentity._ai_melee_animname.behaviortreeentity = animbundle.attackerloserfrontanim;
+        behaviortreeentity._ai_melee_animname = animbundle.attackerloserfrontanim;
         behaviortreeentity.enemy._ai_melee_animname = animbundle.defenderwinnerfrontanim;
     } else {
-        behaviortreeentity._ai_melee_animname.behaviortreeentity = animbundle.attackerfrontanim;
+        behaviortreeentity._ai_melee_animname = animbundle.attackerfrontanim;
         behaviortreeentity.enemy._ai_melee_animname = animbundle.victimfrontanim;
     }
-    behaviortreeentity._ai_melee_animtype.behaviortreeentity = 1;
+    behaviortreeentity._ai_melee_animtype = 1;
     behaviortreeentity.enemy._ai_melee_animtype = 1;
 }
 
@@ -543,13 +543,13 @@ function private chooseaivsaimeleefrontwrestleanimations(behaviortreeentity, ani
         assert(isdefined(animbundle));
     #/
     if (is_true(behaviortreeentity._ai_melee_attacker_loser)) {
-        behaviortreeentity._ai_melee_animname.behaviortreeentity = animbundle.attackerloseralternatefrontanim;
+        behaviortreeentity._ai_melee_animname = animbundle.attackerloseralternatefrontanim;
         behaviortreeentity.enemy._ai_melee_animname = animbundle.defenderwinneralternatefrontanim;
     } else {
-        behaviortreeentity._ai_melee_animname.behaviortreeentity = animbundle.attackeralternatefrontanim;
+        behaviortreeentity._ai_melee_animname = animbundle.attackeralternatefrontanim;
         behaviortreeentity.enemy._ai_melee_animname = animbundle.victimalternatefrontanim;
     }
-    behaviortreeentity._ai_melee_animtype.behaviortreeentity = 0;
+    behaviortreeentity._ai_melee_animtype = 0;
     behaviortreeentity.enemy._ai_melee_animtype = 0;
 }
 
@@ -565,13 +565,13 @@ function private chooseaivsaimeleebackanimations(behaviortreeentity, animbundle)
         assert(isdefined(animbundle));
     #/
     if (is_true(behaviortreeentity._ai_melee_attacker_loser)) {
-        behaviortreeentity._ai_melee_animname.behaviortreeentity = animbundle.attackerloserbackanim;
+        behaviortreeentity._ai_melee_animname = animbundle.attackerloserbackanim;
         behaviortreeentity.enemy._ai_melee_animname = animbundle.defenderwinnerbackanim;
     } else {
-        behaviortreeentity._ai_melee_animname.behaviortreeentity = animbundle.attackerbackanim;
+        behaviortreeentity._ai_melee_animname = animbundle.attackerbackanim;
         behaviortreeentity.enemy._ai_melee_animname = animbundle.victimbackanim;
     }
-    behaviortreeentity._ai_melee_animtype.behaviortreeentity = 2;
+    behaviortreeentity._ai_melee_animtype = 2;
     behaviortreeentity.enemy._ai_melee_animtype = 2;
 }
 
@@ -587,13 +587,13 @@ function private chooseaivsaimeleerightanimations(behaviortreeentity, animbundle
         assert(isdefined(animbundle));
     #/
     if (is_true(behaviortreeentity._ai_melee_attacker_loser)) {
-        behaviortreeentity._ai_melee_animname.behaviortreeentity = animbundle.attackerloserrightanim;
+        behaviortreeentity._ai_melee_animname = animbundle.attackerloserrightanim;
         behaviortreeentity.enemy._ai_melee_animname = animbundle.defenderwinnerrightanim;
     } else {
-        behaviortreeentity._ai_melee_animname.behaviortreeentity = animbundle.attackerrightanim;
+        behaviortreeentity._ai_melee_animname = animbundle.attackerrightanim;
         behaviortreeentity.enemy._ai_melee_animname = animbundle.victimrightanim;
     }
-    behaviortreeentity._ai_melee_animtype.behaviortreeentity = 3;
+    behaviortreeentity._ai_melee_animtype = 3;
     behaviortreeentity.enemy._ai_melee_animtype = 3;
 }
 
@@ -609,13 +609,13 @@ function private chooseaivsaimeleeleftanimations(behaviortreeentity, animbundle)
         assert(isdefined(animbundle));
     #/
     if (is_true(behaviortreeentity._ai_melee_attacker_loser)) {
-        behaviortreeentity._ai_melee_animname.behaviortreeentity = animbundle.attackerloserleftanim;
+        behaviortreeentity._ai_melee_animname = animbundle.attackerloserleftanim;
         behaviortreeentity.enemy._ai_melee_animname = animbundle.defenderwinnerleftanim;
     } else {
-        behaviortreeentity._ai_melee_animname.behaviortreeentity = animbundle.attackerleftanim;
+        behaviortreeentity._ai_melee_animname = animbundle.attackerleftanim;
         behaviortreeentity.enemy._ai_melee_animname = animbundle.victimleftanim;
     }
-    behaviortreeentity._ai_melee_animtype.behaviortreeentity = 4;
+    behaviortreeentity._ai_melee_animtype = 4;
     behaviortreeentity.enemy._ai_melee_animtype = 4;
 }
 
@@ -664,8 +664,8 @@ function processinterrupteddeath() {
     }
     if (isalive(opponent)) {
         if (is_true(opponent._ai_melee_markeddead)) {
-            opponent.diedinscriptedanim.opponent = 1;
-            opponent.skipdeath.opponent = 1;
+            opponent.diedinscriptedanim = 1;
+            opponent.skipdeath = 1;
             opponent notify(#"interrupteddeath");
             opponent notify(#"meleecompleted");
             opponent stopanimscripted();
@@ -673,10 +673,10 @@ function processinterrupteddeath() {
             opponent startragdoll();
         } else {
             opponent._ai_melee_initiator = undefined;
-            opponent.blockingpain.opponent = 0;
+            opponent.blockingpain = 0;
             opponent._ai_melee_markeddead = undefined;
-            opponent.skipdeath.opponent = 0;
-            opponent.diedinscriptedanim.opponent = 0;
+            opponent.skipdeath = 0;
+            opponent.diedinscriptedanim = 0;
             aiutility::cleanupchargemeleeattack(opponent);
             opponent notify(#"interrupteddeath");
             opponent notify(#"meleecompleted");

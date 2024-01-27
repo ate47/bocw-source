@@ -10,7 +10,7 @@
 // Params 17, eflags: 0x2 linked
 // Checksum 0x44844bb6, Offset: 0xa0
 // Size: 0x334
-function function_8c7ec52f(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, vdamageorigin, psoffsettime, iboneindex, imodelindex, var_934bdd11, var_740ad64b, vsurfacenormal) {
+function function_8c7ec52f(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, vdamageorigin, psoffsettime, iboneindex, imodelindex, var_934bdd11, isurfacetype, vsurfacenormal) {
     if (!isdefined(self.attackerdata)) {
         self.attackerdata = [];
     }
@@ -45,9 +45,9 @@ function function_8c7ec52f(einflictor, eattacker, idamage, idflags, smeansofdeat
     params.iboneindex = iboneindex;
     params.imodelindex = imodelindex;
     params.var_934bdd11 = var_934bdd11;
-    params.var_740ad64b = var_740ad64b;
+    params.isurfacetype = isurfacetype;
     params.vsurfacenormal = vsurfacenormal;
     self callback::callback(#"hash_2e68909d4e4ed889", params);
-    self function_f7f9c3eb(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, vdamageorigin, psoffsettime, iboneindex, imodelindex, var_934bdd11, var_740ad64b, vsurfacenormal);
+    self function_f7f9c3eb(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, vdamageorigin, psoffsettime, iboneindex, imodelindex, var_934bdd11, isurfacetype, vsurfacenormal);
 }
 

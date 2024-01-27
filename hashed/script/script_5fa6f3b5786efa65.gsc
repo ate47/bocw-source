@@ -67,7 +67,7 @@ function function_44cc3493(var_2177e1d4 = 2, player) {
                 }
                 self namespace_83eb6304::function_3ecfde67("teleporter_disabled");
                 var_2177e1d4--;
-                guy.var_85a0c6e6.guy = 1;
+                guy.var_85a0c6e6 = 1;
                 self.org.origin = self.origin + vectorscale((0, 0, 1), 40);
                 self.org namespace_83eb6304::function_3ecfde67("tesla_trail");
                 self.org moveto(guy.origin + vectorscale((0, 0, 1), 40), 0.4);
@@ -99,7 +99,7 @@ function function_465aaf09(player, origin) {
         return;
     }
     var_c95d22c endon(#"death");
-    var_c95d22c.org.var_c95d22c = namespace_ec06fe4a::function_e22ae9b3(origin + vectorscale((0, 0, 1), 12), "tag_origin", (0, 0, 0), "zombietron_arcademachine_org");
+    var_c95d22c.org = namespace_ec06fe4a::function_e22ae9b3(origin + vectorscale((0, 0, 1), 12), "tag_origin", (0, 0, 0), "zombietron_arcademachine_org");
     if (!isdefined(var_c95d22c.org)) {
         var_c95d22c delete();
         return;

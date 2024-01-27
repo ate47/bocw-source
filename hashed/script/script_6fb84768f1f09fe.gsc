@@ -18,31 +18,31 @@ function function_83d35e98(attacker, var_4fa5c66a, var_83634238, victim, mode = 
     parms.var_83634238 = var_83634238;
     parms.victim = victim;
     parms.startpos = var_4fa5c66a;
-    parms.startpos.parms = parms.startpos + anglestoforward(var_83634238) * var_83ca76ef;
-    parms.targetpos.parms = victim gettagorigin(target_tag);
-    parms.targetpos.parms = parms.targetpos + vectornormalize(parms.startpos - parms.targetpos) * var_3d5fa3d5;
-    parms.var_b21e26bd.parms = victim gettagorigin("j_head");
-    parms.var_e93a7f0f.parms = victim.origin;
-    parms.angles.parms = vectortoangles(parms.targetpos - parms.startpos);
-    parms.forward.parms = anglestoforward(parms.angles);
-    parms.startpos.parms = parms.startpos + parms.forward;
-    parms.distance.parms = distance(parms.targetpos, parms.startpos);
-    parms.endpos.parms = parms.startpos + parms.forward * parms.distance;
-    parms.timescale.parms = 0.5;
-    parms.time.parms = parms.distance / 1500 * parms.timescale;
+    parms.startpos = parms.startpos + anglestoforward(var_83634238) * var_83ca76ef;
+    parms.targetpos = victim gettagorigin(target_tag);
+    parms.targetpos = parms.targetpos + vectornormalize(parms.startpos - parms.targetpos) * var_3d5fa3d5;
+    parms.var_b21e26bd = victim gettagorigin("j_head");
+    parms.var_e93a7f0f = victim.origin;
+    parms.angles = vectortoangles(parms.targetpos - parms.startpos);
+    parms.forward = anglestoforward(parms.angles);
+    parms.startpos = parms.startpos + parms.forward;
+    parms.distance = distance(parms.targetpos, parms.startpos);
+    parms.endpos = parms.startpos + parms.forward * parms.distance;
+    parms.timescale = 0.5;
+    parms.time = parms.distance / 1500 * parms.timescale;
     var_9066ce9a = 0.1;
     if (mode == 3 || mode == 4) {
         var_9066ce9a = 0.02;
     } else if (mode == 2) {
         var_9066ce9a = 0.02;
     }
-    parms.var_684cf08c.parms = parms.time - var_9066ce9a;
+    parms.var_684cf08c = parms.time - var_9066ce9a;
     if (parms.var_684cf08c <= 0) {
-        parms.var_684cf08c.parms = parms.time;
+        parms.var_684cf08c = parms.time;
     }
-    parms.var_6051349d.parms = 1;
+    parms.var_6051349d = 1;
     if (mode == 3 || mode == 2 || mode == 4) {
-        parms.var_6051349d.parms = 0.7;
+        parms.var_6051349d = 0.7;
     }
     return parms;
 }

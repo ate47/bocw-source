@@ -123,7 +123,7 @@ function function_3e0af5bf(var_a276c861) {
     }
     s_unitrigger = var_73888042 zm_unitrigger::create(#"hash_a3ff0135b4c5d4a", (56, 56, 100));
     zm_unitrigger::unitrigger_force_per_player_triggers(s_unitrigger, 1);
-    s_unitrigger.origin.s_unitrigger = s_unitrigger.origin + (-24, 30, 0);
+    s_unitrigger.origin = s_unitrigger.origin + (-24, 30, 0);
     var_73888042 thread function_372852d();
     var_73888042 util::delay_notify(5, "trigger_activated");
 }
@@ -270,7 +270,7 @@ function function_a7cf8b16(a_ents) {
     var_e82701bb = a_ents[#"hash_4b65a37172a01802"];
     var_e82701bb clientfield::set("" + #"hash_5808d23568bc787", 1);
     var_e82701bb setcandamage(1);
-    var_e82701bb.health.var_e82701bb = 1000;
+    var_e82701bb.health = 1000;
     var_22a80ca2 = getent("col_ronnie_raygun", "targetname");
     var_22a80ca2 disconnectpaths();
     while (var_e82701bb.health > 0) {
@@ -278,7 +278,7 @@ function function_a7cf8b16(a_ents) {
         s_waitresult = var_e82701bb waittill(#"damage");
         var_e82701bb clientfield::increment("" + #"hash_50dd9d9bf6b71a00", 1);
         if (s_waitresult.amount > 0) {
-            var_e82701bb.health.var_e82701bb = var_e82701bb.health - s_waitresult.amount;
+            var_e82701bb.health = var_e82701bb.health - s_waitresult.amount;
             /#
                 iprintlnbold("<unknown string>" + var_e82701bb.health);
             #/
@@ -484,9 +484,9 @@ function function_a32f14f8() {
         } else {
             point = function_4ba8fde(var_aa4f9213);
             var_9e536071 = item_drop::drop_item(0, undefined, 1, 0, point.id, v_pos, var_53313495.angles, 0);
-            var_9e536071.var_dd21aec2.var_9e536071 = 1 & 16;
+            var_9e536071.var_dd21aec2 = 1 | 16;
             if (var_aa4f9213 === #"armor_item_lv1_t9_sr" || var_aa4f9213 === #"ray_gun_item_sr") {
-                var_53313495.origin.var_53313495 = var_53313495.origin + vectorscale((0, 0, 1), 12);
+                var_53313495.origin = var_53313495.origin + vectorscale((0, 0, 1), 12);
             }
             n_power = length(v_pos - var_53313495.origin) * 2;
             var_9e536071 zm_utility::fake_physicslaunch(var_53313495.origin, n_power);

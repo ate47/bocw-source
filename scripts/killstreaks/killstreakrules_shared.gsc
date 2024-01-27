@@ -220,7 +220,7 @@ function recordkillstreakend(recordstreakindex, totalkills) {
         totalkills = 0;
     }
     if (!isdefined(player.killstreakevents)) {
-        player.killstreakevents.player = associativearray();
+        player.killstreakevents = associativearray();
     }
     eventindex = player.killstreakevents[recordstreakindex];
     if (isdefined(eventindex)) {

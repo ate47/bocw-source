@@ -167,7 +167,7 @@ function function_77ab7e7d(n_seconds, var_8430ebdc, var_c15fc3d5) {
         if (n_seconds >= var_9cdf346f) {
             var_d67e0fa4 = spawnstruct();
             var_d67e0fa4.seconds = var_9cdf346f;
-            var_d67e0fa4.notify_str.var_d67e0fa4 = var_c15fc3d5[index];
+            var_d67e0fa4.notify_str = var_c15fc3d5[index];
             notifies[notifies.size] = var_d67e0fa4;
         }
     }

@@ -47,7 +47,7 @@ function grab_nuke(player) {
     }
     player thread zm_powerups::powerup_vo("nuke");
     zombies = getaiteamarray(level.zombie_team);
-    player.zombie_nuked.player = arraysort(zombies, self.origin);
+    player.zombie_nuked = arraysort(zombies, self.origin);
     player notify(#"nuke_triggered");
 }
 

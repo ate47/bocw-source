@@ -240,7 +240,7 @@ function function_a68304b6(inflictor, attacker, *damage, *flags, meansofdeath, w
         }
         if (self.archetype === #"raz" && isarray(self.var_5ace757d) && isdefined(level.var_92e56a0f[#"raz"])) {
             foreach (weakpoint in self.var_5ace757d) {
-                if (weakpoint.type === #"armor" && weakpoint.var_292e2bf1 === 1 && weakpoint.health > 0 && !isinarray(self.var_786be2f0, weakpoint.var_f371ebb0)) {
+                if (weakpoint.type === #"armor" && weakpoint.currstate === 1 && weakpoint.health > 0 && !isinarray(self.var_786be2f0, weakpoint.var_f371ebb0)) {
                     if (!isdefined(self.var_786be2f0)) {
                         self.var_786be2f0 = [];
                     } else if (!isarray(self.var_786be2f0)) {
@@ -252,7 +252,7 @@ function function_a68304b6(inflictor, attacker, *damage, *flags, meansofdeath, w
             }
         } else if (self.archetype === #"mechz" && isarray(self.var_5ace757d) && isdefined(level.var_92e56a0f[#"mechz"])) {
             foreach (weakpoint in self.var_5ace757d) {
-                if (weakpoint.type === #"armor" && weakpoint.var_292e2bf1 === 1 && weakpoint.health > 0 && !isinarray(self.var_786be2f0, weakpoint.var_f371ebb0)) {
+                if (weakpoint.type === #"armor" && weakpoint.currstate === 1 && weakpoint.health > 0 && !isinarray(self.var_786be2f0, weakpoint.var_f371ebb0)) {
                     if (!isdefined(self.var_786be2f0)) {
                         self.var_786be2f0 = [];
                     } else if (!isarray(self.var_786be2f0)) {

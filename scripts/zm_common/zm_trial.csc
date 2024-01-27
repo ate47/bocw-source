@@ -120,11 +120,11 @@ function private function_4dbf2663() {
                 if (!isdefined(var_6d87ac05.rounds[round_index])) {
                     var_6d87ac05.rounds[round_index] = {};
                     round_info = var_6d87ac05.rounds[round_index];
-                    round_info.name.round_info = tablelookupcolumnforrow(table, row, 1);
+                    round_info.name = tablelookupcolumnforrow(table, row, 1);
                     round_info.round = round;
-                    round_info.name_str.round_info = tablelookupcolumnforrow(table, row, 2);
-                    round_info.desc_str.round_info = tablelookupcolumnforrow(table, row, 3);
-                    round_info.challenges.round_info = [];
+                    round_info.name_str = tablelookupcolumnforrow(table, row, 2);
+                    round_info.desc_str = tablelookupcolumnforrow(table, row, 3);
+                    round_info.challenges = [];
                 }
                 /#
                     assert(isdefined(var_6d87ac05.rounds[round_index]));

@@ -67,7 +67,7 @@ function private function_347f52dd(localclientnum) {
     self notify("49500164d82f5c49");
     self endon("49500164d82f5c49");
     var_ef2f4cec = spawnstruct();
-    var_ef2f4cec.var_e450444f.var_ef2f4cec = 0;
+    var_ef2f4cec.var_e450444f = 0;
     while (1) {
         currentplayer = function_5c10bd79(localclientnum);
         if (!isdefined(currentplayer)) {
@@ -91,7 +91,7 @@ function private function_d45dd62(localclientnum, var_9b8a5ad2, currentplayer) {
     if (var_9b8a5ad2 == 1) {
         if (!isdefined(currentplayer.var_103fdf58)) {
             playsound(localclientnum, #"hash_7b5289d48cc02d77", (0, 0, 0));
-            currentplayer.var_103fdf58.currentplayer = currentplayer playloopsound("evt_sr_phase_player_lp");
+            currentplayer.var_103fdf58 = currentplayer playloopsound("evt_sr_phase_player_lp");
         }
         if (!function_148ccc79(localclientnum, #"hash_2964f82e2c05c8b8")) {
             function_a837926b(localclientnum, #"hash_2964f82e2c05c8b8");
@@ -526,7 +526,7 @@ function function_18f73941(localclientnum, *oldval, newval, *bnewent, *binitials
         }
         wait(0.1);
         if (isdefined(var_ea7f8dca)) {
-            var_ea7f8dca.n_fx_id.var_ea7f8dca = util::playfxontag(fieldname, "maps/zm_tungsten/fx9_zm_arcade_cabinet_elec_spark", var_ea7f8dca, "tag_origin");
+            var_ea7f8dca.n_fx_id = util::playfxontag(fieldname, "maps/zm_tungsten/fx9_zm_arcade_cabinet_elec_spark", var_ea7f8dca, "tag_origin");
             var_ea7f8dca thread function_695e2e56(fieldname);
         }
     } else if (isdefined(self.beam_id)) {

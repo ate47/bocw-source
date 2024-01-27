@@ -82,7 +82,7 @@ function private function_ce75a340(localclientnum, *oldval, newval, *bnewent, *b
         function_f3b7c879(fieldname);
         if (bwastimejump == 1) {
             if (!isdefined(weapon_cache.var_1563bf09)) {
-                weapon_cache.var_1563bf09.weapon_cache = util::getnextobjid(fieldname);
+                weapon_cache.var_1563bf09 = util::getnextobjid(fieldname);
                 objective_add(fieldname, weapon_cache.var_1563bf09, "active", #"hash_60b265ded94ea645", weapon_cache.origin, self.team, self);
             } else {
                 objective_setstate(fieldname, weapon_cache.var_1563bf09, "active");
@@ -134,7 +134,7 @@ function private weapon_cache_cac_cooldown(localclientnum, *oldval, newval, *bne
         function_f3b7c879(fieldname);
         if (bwastimejump == 1) {
             if (!isdefined(weapon_cache.var_decd4745)) {
-                weapon_cache.var_decd4745.weapon_cache = util::getnextobjid(fieldname);
+                weapon_cache.var_decd4745 = util::getnextobjid(fieldname);
                 objective_add(fieldname, weapon_cache.var_decd4745, "active", #"hash_53b2e93d1661a0a4", weapon_cache.origin, self.team, self);
             } else {
                 objective_setstate(fieldname, weapon_cache.var_decd4745, "active");

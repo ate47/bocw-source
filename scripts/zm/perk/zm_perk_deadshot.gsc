@@ -84,14 +84,14 @@ function deadshot_set_clientfield(*state) {
 // Checksum 0xf8fbf0b, Offset: 0x590
 // Size: 0x9a
 function deadshot_perk_machine_setup(use_trigger, perk_machine, bump_trigger, *collision) {
-    perk_machine.script_sound.perk_machine = "mus_perks_deadshot_jingle";
-    perk_machine.script_string.perk_machine = "deadshot_perk";
-    perk_machine.script_label.perk_machine = "mus_perks_deadshot_sting";
-    perk_machine.target.perk_machine = "vending_deadshot";
-    bump_trigger.script_string.bump_trigger = "deadshot_vending";
-    bump_trigger.targetname.bump_trigger = "vending_deadshot";
+    perk_machine.script_sound = "mus_perks_deadshot_jingle";
+    perk_machine.script_string = "deadshot_perk";
+    perk_machine.script_label = "mus_perks_deadshot_sting";
+    perk_machine.target = "vending_deadshot";
+    bump_trigger.script_string = "deadshot_vending";
+    bump_trigger.targetname = "vending_deadshot";
     if (isdefined(collision)) {
-        collision.script_string.collision = "deadshot_vending";
+        collision.script_string = "deadshot_vending";
     }
 }
 
@@ -135,20 +135,20 @@ function function_4d088c19(*inflictor, attacker, damage, *flags, meansofdeath, *
         }
         if (vpoint namespace_791d0451::function_56cedda7(#"hash_1f95b08e4a49d87e")) {
             if (!isdefined(vpoint.var_39f18bc3)) {
-                vpoint.var_39f18bc3.vpoint = 0;
+                vpoint.var_39f18bc3 = 0;
             }
             if (self === vpoint.var_9c098a96) {
                 vpoint.var_39f18bc3++;
                 if (vpoint.var_39f18bc3 < vpoint.var_39f18bc3) {
-                    vpoint.var_39f18bc3.vpoint = vpoint.var_39f18bc3;
+                    vpoint.var_39f18bc3 = vpoint.var_39f18bc3;
                 } else if (vpoint.var_39f18bc3 > 10) {
-                    vpoint.var_39f18bc3.vpoint = 10;
+                    vpoint.var_39f18bc3 = 10;
                 }
                 vdir = vdir + vdir * 0.02 * vpoint.var_39f18bc3;
             } else {
-                vpoint.var_39f18bc3.vpoint = 0;
+                vpoint.var_39f18bc3 = 0;
             }
-            vpoint.var_9c098a96.vpoint = self;
+            vpoint.var_9c098a96 = self;
         }
     }
     return vdir;

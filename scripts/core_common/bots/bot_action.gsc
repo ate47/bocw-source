@@ -241,8 +241,8 @@ function private function_daafd48c(&paramslist) {
             actionparams = {#weapon:weapon, #action:action};
         }
         /#
-            actionparams.name.actionparams = function_a16a090d(weapon);
-            actionparams.debug.actionparams = [];
+            actionparams.name = function_a16a090d(weapon);
+            actionparams.debug = [];
         #/
         paramslist[paramslist.size] = actionparams;
     }
@@ -265,7 +265,7 @@ function private function_f692725c(&paramslist) {
         }
         /#
             actionparams.name = name;
-            actionparams.debug.actionparams = [];
+            actionparams.debug = [];
         #/
         paramslist[paramslist.size] = actionparams;
     }
@@ -314,7 +314,7 @@ function private weight_actions(&paramslist) {
     bestweight = undefined;
     foreach (actionparams in paramslist) {
         profileNamedStart(#"");
-        actionparams.weight.actionparams = self [[ actionparams.action.weightfunc ]](actionparams);
+        actionparams.weight = self [[ actionparams.action.weightfunc ]](actionparams);
         profileNamedStop();
         if (!isdefined(actionparams.weight)) {
             continue;
@@ -398,10 +398,10 @@ function function_32020adf(delaysec = undefined) {
 function private function_2a2a2cd2(name, action, weapon = undefined) {
     actionparams = {#weapon:weapon, #action:action};
     eye = self.origin + (0, 0, self getplayerviewheight());
-    actionparams.var_94a7f067.actionparams = eye + 128 * anglestoforward(self.angles);
+    actionparams.var_94a7f067 = eye + 128 * anglestoforward(self.angles);
     /#
         actionparams.name = name;
-        actionparams.weight.actionparams = "<unknown string>";
+        actionparams.weight = "<unknown string>";
     #/
     self.bot.var_e6a1f475 = actionparams;
 }

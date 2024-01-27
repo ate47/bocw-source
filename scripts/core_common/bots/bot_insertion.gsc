@@ -150,7 +150,7 @@ function function_24ca8ecf(insertion) {
     foreach (team in bots) {
         var_28cd9792 = function_9526ce62(var_ef4bfcd8);
         foreach (bot in team) {
-            bot.var_33a2e995.bot = var_28cd9792 + function_8ed212d();
+            bot.var_33a2e995 = var_28cd9792 + function_8ed212d();
         }
     }
 }

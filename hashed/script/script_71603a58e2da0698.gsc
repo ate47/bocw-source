@@ -89,7 +89,7 @@ function on_player_connect(localclientnum) {
     if (!isdefined(player)) {
         return;
     }
-    player.var_f5602976.player = gettime();
+    player.var_f5602976 = gettime();
     var_818c564f = function_dac0d84(localclientnum);
     var_dd2c6e79 = function_5f72e972(#"hash_365a974a1df27ef4");
     uimodel = getuimodel(var_dd2c6e79, #"hash_a6a99321ab96e8d");
@@ -152,7 +152,7 @@ function function_c75159ad(localclientnum, *oldval, newval, *bnewent, *binitials
     if (!isdefined(bomb)) {
         return;
     }
-    bomb.angles.bomb = vectorscale((1, 0, 0), 90);
+    bomb.angles = vectorscale((1, 0, 0), 90);
     bomb moveto(var_7def0a05, 0.3, 0, 0);
     playsound(0, "evt_doa_powerup_nuke_activate", self.origin);
     bomb waittill(#"movedone");

@@ -33,7 +33,7 @@ function waterfallmistoverlay(localclientnum) {
 // Size: 0x3e
 function waterfallmistoverlayreset(localclientnum) {
     localplayer = function_5c10bd79(localclientnum);
-    localplayer.rainopacity.localplayer = 0;
+    localplayer.rainopacity = 0;
 }
 
 // Namespace waterfall/waterfall
@@ -122,7 +122,7 @@ function trig_enter_waterfall_mist(localplayer) {
     localplayer endon(#"death");
     trigger = self;
     if (!isdefined(localplayer.rainopacity)) {
-        localplayer.rainopacity.localplayer = 0;
+        localplayer.rainopacity = 0;
     }
     while (trigger istouching(localplayer)) {
         localclientnum = trigger.localclientnum;
@@ -132,9 +132,9 @@ function trig_enter_waterfall_mist(localplayer) {
         if (isunderwater(localclientnum)) {
             break;
         }
-        localplayer.rainopacity.localplayer = localplayer.rainopacity + 0.003;
+        localplayer.rainopacity = localplayer.rainopacity + 0.003;
         if (localplayer.rainopacity > 1) {
-            localplayer.rainopacity.localplayer = 1;
+            localplayer.rainopacity = 1;
         }
         waitframe(1);
     }
@@ -153,10 +153,10 @@ function trig_leave_waterfall_mist(localplayer) {
             if (isunderwater(localclientnum)) {
                 break;
             }
-            localplayer.rainopacity.localplayer = localplayer.rainopacity - 0.005;
+            localplayer.rainopacity = localplayer.rainopacity - 0.005;
             waitframe(1);
         }
     }
-    localplayer.rainopacity.localplayer = 0;
+    localplayer.rainopacity = 0;
 }
 

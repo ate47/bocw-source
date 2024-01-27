@@ -318,9 +318,9 @@ function zone_init() {
     namespace_f0b43eb5::create_challenge(#"hash_453a742eed680932", 90, "zone_xxx_club_roof", undefined, #"hash_374955e0c82d6aa4", "s_obj_challenge_zone_xxx_club_roof", &namespace_f0b43eb5::function_f51adffa, &namespace_f0b43eb5::function_9742c28f);
     namespace_f0b43eb5::create_challenge(#"hash_30c036366e17895", 90, "zone_pizza_parlor", undefined, #"hash_374955e0c82d6aa4", "s_obj_challenge_zone_pizza_parlor", &namespace_f0b43eb5::function_f51adffa, &namespace_f0b43eb5::function_9742c28f);
     s_challenge = namespace_f0b43eb5::create_challenge(#"hash_2c457fb4d5c4a3b9", 90, "zone_dark_aether_lab_upper", undefined, #"hash_374955e0c82d6aa4", "s_obj_challenge_zone_dark_aether_lab_upper", &namespace_f0b43eb5::function_f51adffa, &namespace_f0b43eb5::function_9742c28f);
-    s_challenge.var_4e0096cd.s_challenge = #"hash_19f7784bc90ba3c5";
+    s_challenge.var_4e0096cd = #"hash_19f7784bc90ba3c5";
     s_challenge = namespace_f0b43eb5::create_challenge(#"hash_6cda1bb2296c5334", 90, "zone_dark_aether_lab_lower", undefined, #"hash_374955e0c82d6aa4", "s_obj_challenge_zone_dark_aether_lab_lower", &namespace_f0b43eb5::function_f51adffa, &namespace_f0b43eb5::function_9742c28f);
-    s_challenge.var_4e0096cd.s_challenge = #"hash_366946412ba7b470";
+    s_challenge.var_4e0096cd = #"hash_366946412ba7b470";
     namespace_f0b43eb5::create_challenge(#"hash_6f2d55d2d3f4d404", 90, "zone_video_store_2f", undefined, #"hash_374955e0c82d6aa4", "s_obj_challenge_zone_video_store_2f", &namespace_f0b43eb5::function_f51adffa, &namespace_f0b43eb5::function_9742c28f);
     var_f8f0b389 = struct::get("s_obj_challenge_zone_tv_repair");
     if (isdefined(var_f8f0b389.target)) {
@@ -709,7 +709,7 @@ function function_9dd333eb() {
     foreach (t_door in a_t_doors) {
         if (t_door.script_flag === "connect_pizza_parlor" || t_door.script_flag === "connect_diner") {
             if (distance2dsquared(t_door.origin, var_47b7f8a9.origin) <= function_a3f6cdac(350)) {
-                t_door.var_4f96681c.t_door = "zone_main_street_bridge";
+                t_door.var_4f96681c = "zone_main_street_bridge";
             }
         }
     }
@@ -775,7 +775,7 @@ function function_49779a9c() {
 function private function_8d8f7e79(a_ents) {
     e_door = a_ents[#"hash_12c1afcfcedeafb"];
     e_door function_619a5c20();
-    e_door.var_72910c52.e_door = zm_utility::function_4a4cf79a(#"hash_1b7c3d825c8b5c1a", e_door.origin);
+    e_door.var_72910c52 = zm_utility::function_4a4cf79a(#"hash_1b7c3d825c8b5c1a", e_door.origin);
 }
 
 // Namespace zm_tungsten_zones/zm_tungsten_zones
@@ -814,7 +814,7 @@ function private function_88c5fdab(a_ents) {
 // Size: 0x5c
 function function_6e486b1(*var_d3413870) {
     var_74de2d96 = self zm_zonemgr::is_player_in_zone(level.var_65c43c31);
-    var_74de2d96 = var_74de2d96 & self zm_zonemgr::is_player_in_zone("zone_observation");
+    var_74de2d96 = var_74de2d96 | self zm_zonemgr::is_player_in_zone("zone_observation");
     return var_74de2d96;
 }
 

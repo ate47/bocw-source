@@ -75,8 +75,8 @@ function private function_65e6d40c(a_str_zones, n_max_zombies = 0) {
         if (level.zombie_total > 0) {
             ai = zombie_utility::spawn_zombie(level.zombie_spawners[0], undefined, s_loc);
             if (isdefined(ai)) {
-                ai.b_ignore_cleanup.ai = 1;
-                ai.var_45cec07d.ai = 1;
+                ai.b_ignore_cleanup = 1;
+                ai.var_45cec07d = 1;
                 level.zombie_total--;
                 util::wait_network_frame();
             }

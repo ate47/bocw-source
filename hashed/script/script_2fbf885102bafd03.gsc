@@ -95,10 +95,10 @@ function function_41109d42(localclientnum, *oldval, newval, *bnewent, *binitials
         assert(isdefined(var_e429ef89));
     #/
     var_d6bac235 = spawnstruct();
-    var_d6bac235.y.var_d6bac235 = 200 + entnum * 50;
-    var_d6bac235.timeout.var_d6bac235 = 5;
+    var_d6bac235.y = 200 + entnum * 50;
+    var_d6bac235.timeout = 5;
     var_d6bac235.color = color;
-    var_d6bac235.scale.var_d6bac235 = 0.4;
+    var_d6bac235.scale = 0.4;
     switch (var_eb6dbadd) {
     case 0:
         function_56821d13(fieldname);
@@ -127,11 +127,11 @@ function function_41109d42(localclientnum, *oldval, newval, *bnewent, *binitials
         break;
     case 9:
         text = #"hash_420476f9d6971298";
-        var_d6bac235.scale.var_d6bac235 = 0.6;
+        var_d6bac235.scale = 0.6;
         break;
     case 8:
         text = #"hash_34cd5701c0b949b8";
-        var_d6bac235.scale.var_d6bac235 = 0.6;
+        var_d6bac235.scale = 0.6;
         break;
     }
     /#
@@ -166,52 +166,52 @@ function function_778aa85f(localclientnum, *oldval, newval, *bnewent, *binitials
         break;
     case 14:
         var_936d31f7 = spawnstruct();
-        var_936d31f7.text.var_936d31f7 = #"hash_6edbfd161005ab44";
+        var_936d31f7.text = #"hash_6edbfd161005ab44";
         /#
             assert(isdefined(var_936d31f7.text));
         #/
-        var_936d31f7.timeout.var_936d31f7 = 4;
-        var_936d31f7.color.var_936d31f7 = (0.3, 0.84, 0.2);
+        var_936d31f7.timeout = 4;
+        var_936d31f7.color = (0.3, 0.84, 0.2);
         break;
     case 15:
         var_d6bac235 = spawnstruct();
-        var_d6bac235.text.var_d6bac235 = #"hash_3a07bfbf9fc8fe5e";
+        var_d6bac235.text = #"hash_3a07bfbf9fc8fe5e";
         /#
             assert(isdefined(var_d6bac235.text));
         #/
-        var_d6bac235.y.var_d6bac235 = 200;
-        var_d6bac235.timeout.var_d6bac235 = 3;
-        var_d6bac235.color.var_d6bac235 = (0.3, 0.84, 0.2);
-        var_d6bac235.scale.var_d6bac235 = 0.6;
+        var_d6bac235.y = 200;
+        var_d6bac235.timeout = 3;
+        var_d6bac235.color = (0.3, 0.84, 0.2);
+        var_d6bac235.scale = 0.6;
         break;
     case 13:
         if (isdefined(level.doa)) {
             var_d6bac235 = spawnstruct();
-            var_d6bac235.text.var_d6bac235 = #"hash_6a342a929b6bfca2";
+            var_d6bac235.text = #"hash_6a342a929b6bfca2";
             /#
                 assert(isdefined(var_d6bac235.text));
             #/
-            var_d6bac235.y.var_d6bac235 = 200;
+            var_d6bac235.y = 200;
             /#
                 assert(isdefined(level.doa.roundnumber), "<unknown string>");
             #/
             if (!isdefined(level.doa.roundnumber)) {
                 level.doa.roundnumber = 4;
             }
-            var_d6bac235.payload.var_d6bac235 = level.doa.roundnumber;
-            var_d6bac235.timeout.var_d6bac235 = 9999;
-            var_d6bac235.color.var_d6bac235 = (1, 0.84, 0);
+            var_d6bac235.payload = level.doa.roundnumber;
+            var_d6bac235.timeout = 9999;
+            var_d6bac235.color = (1, 0.84, 0);
         }
         var_8d552f67 = spawnstruct();
-        var_8d552f67.text.var_8d552f67 = #"hash_2bca86061b6767e4";
+        var_8d552f67.text = #"hash_2bca86061b6767e4";
         /#
             assert(isdefined(var_8d552f67.text));
         #/
-        var_8d552f67.y.var_8d552f67 = 280;
-        var_8d552f67.timeout.var_8d552f67 = 9999;
-        var_8d552f67.color.var_8d552f67 = (1, 0.55, 0);
-        var_8d552f67.delay.var_8d552f67 = 2;
-        var_8d552f67.scale.var_8d552f67 = 0.6;
+        var_8d552f67.y = 280;
+        var_8d552f67.timeout = 9999;
+        var_8d552f67.color = (1, 0.55, 0);
+        var_8d552f67.delay = 2;
+        var_8d552f67.scale = 0.6;
         break;
     case 12:
         if (isdefined(level.doa)) {
@@ -222,64 +222,64 @@ function function_778aa85f(localclientnum, *oldval, newval, *bnewent, *binitials
                 }
             }
             var_d6bac235 = spawnstruct();
-            var_d6bac235.text.var_d6bac235 = #"hash_6a342a929b6bfca2";
+            var_d6bac235.text = #"hash_6a342a929b6bfca2";
             /#
                 assert(isdefined(var_d6bac235.text));
             #/
-            var_d6bac235.y.var_d6bac235 = 200;
-            var_d6bac235.payload.var_d6bac235 = level.doa.roundnumber;
-            var_d6bac235.timeout.var_d6bac235 = 9999;
-            var_d6bac235.color.var_d6bac235 = (1, 0.84, 0);
+            var_d6bac235.y = 200;
+            var_d6bac235.payload = level.doa.roundnumber;
+            var_d6bac235.timeout = 9999;
+            var_d6bac235.color = (1, 0.84, 0);
             var_8d552f67 = spawnstruct();
         }
-        var_8d552f67.text.var_8d552f67 = #"hash_f123d93fac4c288";
+        var_8d552f67.text = #"hash_f123d93fac4c288";
         /#
             assert(isdefined(var_8d552f67.text));
         #/
-        var_8d552f67.y.var_8d552f67 = 280;
-        var_8d552f67.timeout.var_8d552f67 = 25;
+        var_8d552f67.y = 280;
+        var_8d552f67.timeout = 25;
         if (isdefined(level.doa) && isdefined(level.doa.var_72b899ad) && level.doa.var_72b899ad.script_noteworthy == #"wintercave") {
-            var_8d552f67.timeout.var_8d552f67 = 9999;
+            var_8d552f67.timeout = 9999;
         }
-        var_8d552f67.color.var_8d552f67 = (1, 0.55, 0);
-        var_8d552f67.delay.var_8d552f67 = 2;
-        var_8d552f67.scale.var_8d552f67 = 0.6;
+        var_8d552f67.color = (1, 0.55, 0);
+        var_8d552f67.delay = 2;
+        var_8d552f67.scale = 0.6;
         var_c4241d08 = spawnstruct();
-        var_c4241d08.text.var_c4241d08 = #"hash_5ac4e544985e273d";
+        var_c4241d08.text = #"hash_5ac4e544985e273d";
         /#
             assert(isdefined(var_c4241d08.text));
         #/
-        var_c4241d08.y.var_c4241d08 = 330;
-        var_c4241d08.timeout.var_c4241d08 = 1;
-        var_c4241d08.color.var_c4241d08 = (1, 0.55, 0);
-        var_c4241d08.delay.var_c4241d08 = 3;
-        var_c4241d08.scale.var_c4241d08 = 0.6;
-        var_c4241d08.text2.var_c4241d08 = #"hash_2bca86061b6767e4";
+        var_c4241d08.y = 330;
+        var_c4241d08.timeout = 1;
+        var_c4241d08.color = (1, 0.55, 0);
+        var_c4241d08.delay = 3;
+        var_c4241d08.scale = 0.6;
+        var_c4241d08.text2 = #"hash_2bca86061b6767e4";
         /#
             assert(isdefined(var_c4241d08.text2));
         #/
-        var_c4241d08.var_b6501bb5.var_c4241d08 = 9999;
+        var_c4241d08.var_b6501bb5 = 9999;
         break;
     case 16:
         var_936d31f7 = spawnstruct();
-        var_936d31f7.text.var_936d31f7 = #"hash_53e517a90b3cd2e2";
+        var_936d31f7.text = #"hash_53e517a90b3cd2e2";
         /#
             assert(isdefined(var_936d31f7.text));
         #/
-        var_936d31f7.timeout.var_936d31f7 = 6;
-        var_936d31f7.color.var_936d31f7 = (0.35, 0.35, 0.89);
+        var_936d31f7.timeout = 6;
+        var_936d31f7.color = (0.35, 0.35, 0.89);
         var_c4241d08 = spawnstruct();
-        var_c4241d08.text.var_c4241d08 = function_5a3210ac();
+        var_c4241d08.text = function_5a3210ac();
         retry = 4;
         while (!isdefined(var_c4241d08.text) && retry > 0) {
             retry--;
             wait(0.5);
-            var_c4241d08.text.var_c4241d08 = function_5a3210ac();
+            var_c4241d08.text = function_5a3210ac();
         }
-        var_c4241d08.y.var_c4241d08 = 300;
-        var_c4241d08.timeout.var_c4241d08 = 4;
-        var_c4241d08.color.var_c4241d08 = (0.5, 0.5, 0.89);
-        var_c4241d08.delay.var_c4241d08 = 2;
+        var_c4241d08.y = 300;
+        var_c4241d08.timeout = 4;
+        var_c4241d08.color = (0.5, 0.5, 0.89);
+        var_c4241d08.delay = 2;
         break;
     case 10:
         if (!isdefined(level.doa.roundnumber)) {
@@ -302,105 +302,105 @@ function function_778aa85f(localclientnum, *oldval, newval, *bnewent, *binitials
         }
         if (isdefined(level.doa) && isdefined(level.doa.roundnumber)) {
             var_d6bac235 = spawnstruct();
-            var_d6bac235.text.var_d6bac235 = #"hash_6a342a929b6bfca2";
+            var_d6bac235.text = #"hash_6a342a929b6bfca2";
             /#
                 assert(isdefined(var_d6bac235.text));
             #/
-            var_d6bac235.y.var_d6bac235 = 200;
-            var_d6bac235.payload.var_d6bac235 = level.doa.roundnumber;
-            var_d6bac235.timeout.var_d6bac235 = 9999;
-            var_d6bac235.color.var_d6bac235 = (1, 0.84, 0);
+            var_d6bac235.y = 200;
+            var_d6bac235.payload = level.doa.roundnumber;
+            var_d6bac235.timeout = 9999;
+            var_d6bac235.color = (1, 0.84, 0);
         }
         var_8d552f67 = spawnstruct();
-        var_8d552f67.text.var_8d552f67 = bwastimejump == 11 ? #"hash_f123d93fac4c288" : var_4e2d590d;
+        var_8d552f67.text = bwastimejump == 11 ? #"hash_f123d93fac4c288" : var_4e2d590d;
         /#
             assert(isdefined(var_8d552f67.text));
         #/
-        var_8d552f67.y.var_8d552f67 = 280;
-        var_8d552f67.timeout.var_8d552f67 = 9999;
-        var_8d552f67.color.var_8d552f67 = (1, 0.55, 0);
-        var_8d552f67.delay.var_8d552f67 = 2;
-        var_8d552f67.scale.var_8d552f67 = 0.6;
+        var_8d552f67.y = 280;
+        var_8d552f67.timeout = 9999;
+        var_8d552f67.color = (1, 0.55, 0);
+        var_8d552f67.delay = 2;
+        var_8d552f67.scale = 0.6;
         var_8d552f67.payload = var_aa7fba18;
         break;
     case 61:
         var_936d31f7 = spawnstruct();
-        var_936d31f7.text.var_936d31f7 = #"hash_64706df7d9dd7484";
+        var_936d31f7.text = #"hash_64706df7d9dd7484";
         /#
             assert(isdefined(var_936d31f7.text));
         #/
-        var_936d31f7.var_6dcbe6ee.var_936d31f7 = 1.5;
-        var_936d31f7.timeout.var_936d31f7 = 6;
+        var_936d31f7.var_6dcbe6ee = 1.5;
+        var_936d31f7.timeout = 6;
         break;
     case 62:
         var_936d31f7 = spawnstruct();
-        var_936d31f7.text.var_936d31f7 = #"hash_54f36d5e55ebd1a0";
+        var_936d31f7.text = #"hash_54f36d5e55ebd1a0";
         /#
             assert(isdefined(var_936d31f7.text));
         #/
-        var_936d31f7.var_6dcbe6ee.var_936d31f7 = 1.5;
-        var_936d31f7.timeout.var_936d31f7 = 8;
+        var_936d31f7.var_6dcbe6ee = 1.5;
+        var_936d31f7.timeout = 8;
         break;
     case 60:
         var_936d31f7 = spawnstruct();
-        var_936d31f7.text.var_936d31f7 = #"hash_1f7c09e88239dac";
+        var_936d31f7.text = #"hash_1f7c09e88239dac";
         /#
             assert(isdefined(var_936d31f7.text));
         #/
-        var_936d31f7.timeout.var_936d31f7 = 6;
-        var_936d31f7.color.var_936d31f7 = (1, 0.84, 0);
+        var_936d31f7.timeout = 6;
+        var_936d31f7.color = (1, 0.84, 0);
         var_d6bac235 = spawnstruct();
-        var_d6bac235.text.var_d6bac235 = #"hash_279b40f60bc50dc4";
+        var_d6bac235.text = #"hash_279b40f60bc50dc4";
         /#
             assert(isdefined(var_d6bac235.text));
         #/
-        var_d6bac235.y.var_d6bac235 = 320;
-        var_d6bac235.timeout.var_d6bac235 = 6;
-        var_d6bac235.color.var_d6bac235 = (1, 0.55, 0);
-        var_d6bac235.delay.var_d6bac235 = 1;
-        var_d6bac235.scale.var_d6bac235 = 0.6;
+        var_d6bac235.y = 320;
+        var_d6bac235.timeout = 6;
+        var_d6bac235.color = (1, 0.55, 0);
+        var_d6bac235.delay = 1;
+        var_d6bac235.scale = 0.6;
         break;
     case 59:
         var_936d31f7 = spawnstruct();
-        var_936d31f7.text.var_936d31f7 = #"hash_7841b2473599470";
+        var_936d31f7.text = #"hash_7841b2473599470";
         /#
             assert(isdefined(var_936d31f7.text));
         #/
-        var_936d31f7.var_6dcbe6ee.var_936d31f7 = 1.5;
-        var_936d31f7.timeout.var_936d31f7 = 15;
-        var_936d31f7.color.var_936d31f7 = (1, 0.1, 0.1);
+        var_936d31f7.var_6dcbe6ee = 1.5;
+        var_936d31f7.timeout = 15;
+        var_936d31f7.color = (1, 0.1, 0.1);
         if (isdefined(level.doa)) {
             var_8d552f67 = spawnstruct();
-            var_8d552f67.text.var_8d552f67 = #"hash_2294c09e27c1dd1a";
+            var_8d552f67.text = #"hash_2294c09e27c1dd1a";
             /#
                 assert(isdefined(var_8d552f67.text));
             #/
-            var_8d552f67.y.var_8d552f67 = 300;
-            var_8d552f67.payload.var_8d552f67 = level.doa.roundnumber;
-            var_8d552f67.timeout.var_8d552f67 = 15;
-            var_8d552f67.color.var_8d552f67 = (1, 0.55, 0);
-            var_8d552f67.scale.var_8d552f67 = 0.8;
+            var_8d552f67.y = 300;
+            var_8d552f67.payload = level.doa.roundnumber;
+            var_8d552f67.timeout = 15;
+            var_8d552f67.color = (1, 0.55, 0);
+            var_8d552f67.scale = 0.8;
         }
         if (getdvarint(#"hash_29afb60660d7bc06", 0)) {
             var_c4241d08 = spawnstruct();
-            var_c4241d08.text.var_c4241d08 = #"hash_b9e3616935b95c0";
+            var_c4241d08.text = #"hash_b9e3616935b95c0";
             /#
                 assert(isdefined(var_c4241d08.text));
             #/
-            var_c4241d08.y.var_c4241d08 = 400;
-            var_c4241d08.timeout.var_c4241d08 = 15;
-            var_c4241d08.color.var_c4241d08 = (1, 0.55, 0);
-            var_c4241d08.scale.var_c4241d08 = 0.4;
+            var_c4241d08.y = 400;
+            var_c4241d08.timeout = 15;
+            var_c4241d08.color = (1, 0.55, 0);
+            var_c4241d08.scale = 0.4;
         } else if (getdvarint(#"hash_47849a8681a67ce7", 0)) {
             var_c4241d08 = spawnstruct();
-            var_c4241d08.text.var_c4241d08 = #"hash_2081e18dffda7e9f";
+            var_c4241d08.text = #"hash_2081e18dffda7e9f";
             /#
                 assert(isdefined(var_c4241d08.text));
             #/
-            var_c4241d08.y.var_c4241d08 = 400;
-            var_c4241d08.timeout.var_c4241d08 = 15;
-            var_c4241d08.color.var_c4241d08 = (1, 0.55, 0);
-            var_c4241d08.scale.var_c4241d08 = 0.4;
+            var_c4241d08.y = 400;
+            var_c4241d08.timeout = 15;
+            var_c4241d08.color = (1, 0.55, 0);
+            var_c4241d08.scale = 0.4;
         }
         break;
     case 20:
@@ -410,23 +410,23 @@ function function_778aa85f(localclientnum, *oldval, newval, *bnewent, *binitials
     case 28:
         level thread namespace_9fc66ac::announce(fieldname, 19);
         var_936d31f7 = spawnstruct();
-        var_936d31f7.text.var_936d31f7 = #"hash_30cfa520b05f1c31";
+        var_936d31f7.text = #"hash_30cfa520b05f1c31";
         /#
             assert(isdefined(var_936d31f7.text));
         #/
-        var_936d31f7.timeout.var_936d31f7 = 6;
-        var_936d31f7.color.var_936d31f7 = (1, 0.84, 0);
+        var_936d31f7.timeout = 6;
+        var_936d31f7.color = (1, 0.84, 0);
         var_d6bac235 = spawnstruct();
-        var_d6bac235.text.var_d6bac235 = function_4d2e3eaa(bwastimejump);
+        var_d6bac235.text = function_4d2e3eaa(bwastimejump);
         /#
             assert(isdefined(var_d6bac235.text));
         #/
-        var_d6bac235.announce.var_d6bac235 = function_59dbb042(bwastimejump);
-        var_d6bac235.y.var_d6bac235 = 300;
-        var_d6bac235.timeout.var_d6bac235 = 6;
-        var_d6bac235.color.var_d6bac235 = (1, 0.55, 0);
-        var_d6bac235.delay.var_d6bac235 = 1;
-        var_d6bac235.scale.var_d6bac235 = 0.8;
+        var_d6bac235.announce = function_59dbb042(bwastimejump);
+        var_d6bac235.y = 300;
+        var_d6bac235.timeout = 6;
+        var_d6bac235.color = (1, 0.55, 0);
+        var_d6bac235.delay = 1;
+        var_d6bac235.scale = 0.8;
         break;
     case 17:
     case 18:
@@ -436,44 +436,44 @@ function function_778aa85f(localclientnum, *oldval, newval, *bnewent, *binitials
     case 26:
         level thread namespace_9fc66ac::announce(fieldname, 12);
         var_936d31f7 = spawnstruct();
-        var_936d31f7.text.var_936d31f7 = #"hash_7baa5fa3bb1a720b";
+        var_936d31f7.text = #"hash_7baa5fa3bb1a720b";
         /#
             assert(isdefined(var_936d31f7.text));
         #/
-        var_936d31f7.timeout.var_936d31f7 = 6;
-        var_936d31f7.color.var_936d31f7 = (1, 0.84, 0);
+        var_936d31f7.timeout = 6;
+        var_936d31f7.color = (1, 0.84, 0);
         var_d6bac235 = spawnstruct();
-        var_d6bac235.text.var_d6bac235 = function_4d2e3eaa(bwastimejump);
+        var_d6bac235.text = function_4d2e3eaa(bwastimejump);
         /#
             assert(isdefined(var_d6bac235.text));
         #/
-        var_d6bac235.announce.var_d6bac235 = function_59dbb042(bwastimejump);
-        var_d6bac235.y.var_d6bac235 = 300;
-        var_d6bac235.timeout.var_d6bac235 = 6;
-        var_d6bac235.color.var_d6bac235 = (1, 0.55, 0);
-        var_d6bac235.delay.var_d6bac235 = 1;
-        var_d6bac235.scale.var_d6bac235 = 0.8;
+        var_d6bac235.announce = function_59dbb042(bwastimejump);
+        var_d6bac235.y = 300;
+        var_d6bac235.timeout = 6;
+        var_d6bac235.color = (1, 0.55, 0);
+        var_d6bac235.delay = 1;
+        var_d6bac235.scale = 0.8;
         break;
     case 25:
         var_d6bac235 = spawnstruct();
-        var_d6bac235.text.var_d6bac235 = #"hash_8bdf3c0ddafe15a";
+        var_d6bac235.text = #"hash_8bdf3c0ddafe15a";
         /#
             assert(isdefined(var_d6bac235.text));
         #/
-        var_d6bac235.y.var_d6bac235 = 200;
-        var_d6bac235.timeout.var_d6bac235 = 6;
-        var_d6bac235.color.var_d6bac235 = (1, 0.1, 0.1);
-        var_d6bac235.scale.var_d6bac235 = 0.7;
+        var_d6bac235.y = 200;
+        var_d6bac235.timeout = 6;
+        var_d6bac235.color = (1, 0.1, 0.1);
+        var_d6bac235.scale = 0.7;
         var_8d552f67 = spawnstruct();
-        var_8d552f67.text.var_8d552f67 = #"hash_686dc889dc26ce9a";
+        var_8d552f67.text = #"hash_686dc889dc26ce9a";
         /#
             assert(isdefined(var_8d552f67.text));
         #/
-        var_8d552f67.y.var_8d552f67 = 280;
-        var_8d552f67.timeout.var_8d552f67 = 6;
-        var_8d552f67.color.var_8d552f67 = (1, 0.55, 0);
-        var_8d552f67.delay.var_8d552f67 = 2;
-        var_8d552f67.scale.var_8d552f67 = 0.5;
+        var_8d552f67.y = 280;
+        var_8d552f67.timeout = 6;
+        var_8d552f67.color = (1, 0.55, 0);
+        var_8d552f67.delay = 2;
+        var_8d552f67.scale = 0.5;
         break;
     case 30:
     case 31:
@@ -485,23 +485,23 @@ function function_778aa85f(localclientnum, *oldval, newval, *bnewent, *binitials
     case 40:
     case 42:
         var_d6bac235 = spawnstruct();
-        var_d6bac235.text.var_d6bac235 = #"hash_5cf341d25f5b6392";
+        var_d6bac235.text = #"hash_5cf341d25f5b6392";
         /#
             assert(isdefined(var_d6bac235.text));
         #/
-        var_d6bac235.y.var_d6bac235 = 200;
-        var_d6bac235.timeout.var_d6bac235 = 6;
-        var_d6bac235.color.var_d6bac235 = (1, 0.84, 0);
+        var_d6bac235.y = 200;
+        var_d6bac235.timeout = 6;
+        var_d6bac235.color = (1, 0.84, 0);
         var_8d552f67 = spawnstruct();
-        var_8d552f67.text.var_8d552f67 = function_b6e2bc81(bwastimejump);
+        var_8d552f67.text = function_b6e2bc81(bwastimejump);
         /#
             assert(isdefined(var_8d552f67.text));
         #/
-        var_8d552f67.y.var_8d552f67 = 280;
-        var_8d552f67.timeout.var_8d552f67 = 6;
-        var_8d552f67.color.var_8d552f67 = (1, 0.55, 0);
-        var_8d552f67.delay.var_8d552f67 = 2;
-        var_8d552f67.scale.var_8d552f67 = 0.6;
+        var_8d552f67.y = 280;
+        var_8d552f67.timeout = 6;
+        var_8d552f67.color = (1, 0.55, 0);
+        var_8d552f67.delay = 2;
+        var_8d552f67.scale = 0.6;
         break;
     case 39:
     case 37:
@@ -509,238 +509,238 @@ function function_778aa85f(localclientnum, *oldval, newval, *bnewent, *binitials
     case 34:
     case 43:
         var_d6bac235 = spawnstruct();
-        var_d6bac235.text.var_d6bac235 = #"hash_4efeacff23c592b7";
+        var_d6bac235.text = #"hash_4efeacff23c592b7";
         /#
             assert(isdefined(var_d6bac235.text));
         #/
-        var_d6bac235.y.var_d6bac235 = 200;
-        var_d6bac235.timeout.var_d6bac235 = 6;
-        var_d6bac235.color.var_d6bac235 = (1, 0.84, 0);
+        var_d6bac235.y = 200;
+        var_d6bac235.timeout = 6;
+        var_d6bac235.color = (1, 0.84, 0);
         var_8d552f67 = spawnstruct();
-        var_8d552f67.text.var_8d552f67 = function_b6e2bc81(bwastimejump);
+        var_8d552f67.text = function_b6e2bc81(bwastimejump);
         /#
             assert(isdefined(var_8d552f67.text));
         #/
-        var_8d552f67.y.var_8d552f67 = 280;
-        var_8d552f67.timeout.var_8d552f67 = 6;
-        var_8d552f67.color.var_8d552f67 = (1, 0.55, 0);
-        var_8d552f67.delay.var_8d552f67 = 2;
-        var_8d552f67.scale.var_8d552f67 = 0.6;
+        var_8d552f67.y = 280;
+        var_8d552f67.timeout = 6;
+        var_8d552f67.color = (1, 0.55, 0);
+        var_8d552f67.delay = 2;
+        var_8d552f67.scale = 0.6;
         break;
     case 52:
         var_936d31f7 = spawnstruct();
-        var_936d31f7.text.var_936d31f7 = #"doa/roj";
+        var_936d31f7.text = #"doa/roj";
         /#
             assert(isdefined(var_936d31f7.text));
         #/
-        var_936d31f7.timeout.var_936d31f7 = 6;
-        var_936d31f7.color.var_936d31f7 = (0.35, 0.35, 0.89);
+        var_936d31f7.timeout = 6;
+        var_936d31f7.color = (0.35, 0.35, 0.89);
         var_c4241d08 = spawnstruct();
-        var_c4241d08.text.var_c4241d08 = #"hash_10f337afa86612b4";
+        var_c4241d08.text = #"hash_10f337afa86612b4";
         /#
             assert(isdefined(var_c4241d08.text));
         #/
-        var_c4241d08.y.var_c4241d08 = 300;
-        var_c4241d08.timeout.var_c4241d08 = 4;
-        var_c4241d08.color.var_c4241d08 = (0.5, 0.5, 0.89);
-        var_c4241d08.delay.var_c4241d08 = 2;
-        var_c4241d08.scale.var_c4241d08 = 0.6;
+        var_c4241d08.y = 300;
+        var_c4241d08.timeout = 4;
+        var_c4241d08.color = (0.5, 0.5, 0.89);
+        var_c4241d08.delay = 2;
+        var_c4241d08.scale = 0.6;
         break;
     case 53:
         var_c4241d08 = spawnstruct();
-        var_c4241d08.text.var_c4241d08 = #"hash_10f33aafa86617cd";
+        var_c4241d08.text = #"hash_10f33aafa86617cd";
         /#
             assert(isdefined(var_c4241d08.text));
         #/
-        var_c4241d08.y.var_c4241d08 = 300;
-        var_c4241d08.timeout.var_c4241d08 = 4;
-        var_c4241d08.color.var_c4241d08 = (0.5, 0.5, 0.89);
-        var_c4241d08.delay.var_c4241d08 = 2;
-        var_c4241d08.scale.var_c4241d08 = 0.6;
+        var_c4241d08.y = 300;
+        var_c4241d08.timeout = 4;
+        var_c4241d08.color = (0.5, 0.5, 0.89);
+        var_c4241d08.delay = 2;
+        var_c4241d08.scale = 0.6;
         break;
     case 54:
         var_c4241d08 = spawnstruct();
-        var_c4241d08.text.var_c4241d08 = #"hash_10f339afa866161a";
+        var_c4241d08.text = #"hash_10f339afa866161a";
         /#
             assert(isdefined(var_c4241d08.text));
         #/
-        var_c4241d08.y.var_c4241d08 = 300;
-        var_c4241d08.timeout.var_c4241d08 = 4;
-        var_c4241d08.color.var_c4241d08 = (0.5, 0.5, 0.89);
-        var_c4241d08.delay.var_c4241d08 = 2;
-        var_c4241d08.scale.var_c4241d08 = 0.6;
+        var_c4241d08.y = 300;
+        var_c4241d08.timeout = 4;
+        var_c4241d08.color = (0.5, 0.5, 0.89);
+        var_c4241d08.delay = 2;
+        var_c4241d08.scale = 0.6;
         break;
     case 55:
         var_936d31f7 = spawnstruct();
-        var_936d31f7.text.var_936d31f7 = #"hash_2754828e3e485547";
+        var_936d31f7.text = #"hash_2754828e3e485547";
         /#
             assert(isdefined(var_936d31f7.text));
         #/
-        var_936d31f7.timeout.var_936d31f7 = 6;
-        var_936d31f7.color.var_936d31f7 = (0.35, 0.35, 0.89);
+        var_936d31f7.timeout = 6;
+        var_936d31f7.color = (0.35, 0.35, 0.89);
         var_c4241d08 = spawnstruct();
-        var_c4241d08.text.var_c4241d08 = #"hash_6c6bf5dfe635c87a";
+        var_c4241d08.text = #"hash_6c6bf5dfe635c87a";
         /#
             assert(isdefined(var_c4241d08.text));
         #/
-        var_c4241d08.y.var_c4241d08 = 300;
-        var_c4241d08.timeout.var_c4241d08 = 4;
-        var_c4241d08.color.var_c4241d08 = (0.5, 0.5, 0.89);
-        var_c4241d08.delay.var_c4241d08 = 2;
-        var_c4241d08.scale.var_c4241d08 = 0.6;
+        var_c4241d08.y = 300;
+        var_c4241d08.timeout = 4;
+        var_c4241d08.color = (0.5, 0.5, 0.89);
+        var_c4241d08.delay = 2;
+        var_c4241d08.scale = 0.6;
         break;
     case 56:
         var_936d31f7 = spawnstruct();
-        var_936d31f7.text.var_936d31f7 = #"hash_2754828e3e485547";
+        var_936d31f7.text = #"hash_2754828e3e485547";
         /#
             assert(isdefined(var_936d31f7.text));
         #/
-        var_936d31f7.timeout.var_936d31f7 = 6;
-        var_936d31f7.color.var_936d31f7 = (0.35, 0.35, 0.89);
+        var_936d31f7.timeout = 6;
+        var_936d31f7.color = (0.35, 0.35, 0.89);
         var_c4241d08 = spawnstruct();
-        var_c4241d08.text.var_c4241d08 = #"hash_284b81f16c3d9e48";
+        var_c4241d08.text = #"hash_284b81f16c3d9e48";
         /#
             assert(isdefined(var_c4241d08.text));
         #/
-        var_c4241d08.y.var_c4241d08 = 300;
-        var_c4241d08.timeout.var_c4241d08 = 4;
-        var_c4241d08.color.var_c4241d08 = (0.5, 0.5, 0.89);
-        var_c4241d08.delay.var_c4241d08 = 2;
-        var_c4241d08.scale.var_c4241d08 = 0.6;
+        var_c4241d08.y = 300;
+        var_c4241d08.timeout = 4;
+        var_c4241d08.color = (0.5, 0.5, 0.89);
+        var_c4241d08.delay = 2;
+        var_c4241d08.scale = 0.6;
         break;
     case 44:
         var_936d31f7 = spawnstruct();
-        var_936d31f7.text.var_936d31f7 = #"hash_3415698ef62cc127";
+        var_936d31f7.text = #"hash_3415698ef62cc127";
         /#
             assert(isdefined(var_936d31f7.text));
         #/
-        var_936d31f7.timeout.var_936d31f7 = 6;
-        var_936d31f7.color.var_936d31f7 = (0.35, 0.35, 0.89);
+        var_936d31f7.timeout = 6;
+        var_936d31f7.color = (0.35, 0.35, 0.89);
         var_c4241d08 = spawnstruct();
-        var_c4241d08.text.var_c4241d08 = #"hash_220c6afbbdd6e391";
+        var_c4241d08.text = #"hash_220c6afbbdd6e391";
         /#
             assert(isdefined(var_c4241d08.text));
         #/
-        var_c4241d08.y.var_c4241d08 = 300;
-        var_c4241d08.timeout.var_c4241d08 = 4;
-        var_c4241d08.color.var_c4241d08 = (0.5, 0.5, 0.89);
-        var_c4241d08.delay.var_c4241d08 = 2;
-        var_c4241d08.scale.var_c4241d08 = 0.6;
+        var_c4241d08.y = 300;
+        var_c4241d08.timeout = 4;
+        var_c4241d08.color = (0.5, 0.5, 0.89);
+        var_c4241d08.delay = 2;
+        var_c4241d08.scale = 0.6;
         break;
     case 57:
         var_c4241d08 = spawnstruct();
-        var_c4241d08.text.var_c4241d08 = #"hash_220c6afbbdd6e391";
+        var_c4241d08.text = #"hash_220c6afbbdd6e391";
         /#
             assert(isdefined(var_c4241d08.text));
         #/
-        var_c4241d08.y.var_c4241d08 = 300;
-        var_c4241d08.timeout.var_c4241d08 = 4;
-        var_c4241d08.color.var_c4241d08 = (0.5, 0.5, 0.89);
-        var_c4241d08.delay.var_c4241d08 = 2;
-        var_c4241d08.scale.var_c4241d08 = 0.6;
+        var_c4241d08.y = 300;
+        var_c4241d08.timeout = 4;
+        var_c4241d08.color = (0.5, 0.5, 0.89);
+        var_c4241d08.delay = 2;
+        var_c4241d08.scale = 0.6;
         break;
     case 49:
         var_936d31f7 = spawnstruct();
-        var_936d31f7.text.var_936d31f7 = #"hash_6edbfd161005ab44";
-        var_936d31f7.timeout.var_936d31f7 = 4;
-        var_936d31f7.color.var_936d31f7 = (0.3, 0.84, 0.2);
+        var_936d31f7.text = #"hash_6edbfd161005ab44";
+        var_936d31f7.timeout = 4;
+        var_936d31f7.color = (0.3, 0.84, 0.2);
         var_c4241d08 = spawnstruct();
-        var_c4241d08.text.var_c4241d08 = #"hash_241673ce039e1331";
+        var_c4241d08.text = #"hash_241673ce039e1331";
         /#
             assert(isdefined(var_c4241d08.text));
         #/
-        var_c4241d08.y.var_c4241d08 = 300;
-        var_c4241d08.timeout.var_c4241d08 = 4;
-        var_c4241d08.color.var_c4241d08 = (0.3, 0.64, 0.2);
-        var_c4241d08.delay.var_c4241d08 = 2;
-        var_c4241d08.scale.var_c4241d08 = 0.6;
+        var_c4241d08.y = 300;
+        var_c4241d08.timeout = 4;
+        var_c4241d08.color = (0.3, 0.64, 0.2);
+        var_c4241d08.delay = 2;
+        var_c4241d08.scale = 0.6;
         break;
     case 45:
         var_c4241d08 = spawnstruct();
-        var_c4241d08.text.var_c4241d08 = #"hash_49bc9775ce122be2";
+        var_c4241d08.text = #"hash_49bc9775ce122be2";
         /#
             assert(isdefined(var_c4241d08.text));
         #/
-        var_c4241d08.y.var_c4241d08 = 300;
-        var_c4241d08.timeout.var_c4241d08 = 5;
-        var_c4241d08.color.var_c4241d08 = (0.5, 0.5, 0.89);
-        var_c4241d08.scale.var_c4241d08 = 0.6;
+        var_c4241d08.y = 300;
+        var_c4241d08.timeout = 5;
+        var_c4241d08.color = (0.5, 0.5, 0.89);
+        var_c4241d08.scale = 0.6;
         break;
     case 46:
         var_d6bac235 = spawnstruct();
-        var_d6bac235.text.var_d6bac235 = #"hash_155e552e57ff5998";
+        var_d6bac235.text = #"hash_155e552e57ff5998";
         /#
             assert(isdefined(var_d6bac235.text));
         #/
-        var_d6bac235.y.var_d6bac235 = 200;
-        var_d6bac235.timeout.var_d6bac235 = 5;
-        var_d6bac235.color.var_d6bac235 = (0.5, 0.5, 0.89);
-        var_d6bac235.scale.var_d6bac235 = 0.6;
+        var_d6bac235.y = 200;
+        var_d6bac235.timeout = 5;
+        var_d6bac235.color = (0.5, 0.5, 0.89);
+        var_d6bac235.scale = 0.6;
         break;
     case 47:
         var_c4241d08 = spawnstruct();
-        var_c4241d08.text.var_c4241d08 = #"hash_653fc36b071285d5";
+        var_c4241d08.text = #"hash_653fc36b071285d5";
         /#
             assert(isdefined(var_c4241d08.text));
         #/
-        var_c4241d08.y.var_c4241d08 = 300;
-        var_c4241d08.timeout.var_c4241d08 = 4;
-        var_c4241d08.color.var_c4241d08 = (0.5, 0.5, 0.89);
-        var_c4241d08.scale.var_c4241d08 = 0.6;
+        var_c4241d08.y = 300;
+        var_c4241d08.timeout = 4;
+        var_c4241d08.color = (0.5, 0.5, 0.89);
+        var_c4241d08.scale = 0.6;
         break;
     case 48:
         var_c4241d08 = spawnstruct();
-        var_c4241d08.text.var_c4241d08 = #"hash_5c99b98fb7538d89";
+        var_c4241d08.text = #"hash_5c99b98fb7538d89";
         /#
             assert(isdefined(var_c4241d08.text));
         #/
-        var_c4241d08.y.var_c4241d08 = 300;
-        var_c4241d08.timeout.var_c4241d08 = 4;
-        var_c4241d08.color.var_c4241d08 = (0.5, 0.5, 0.89);
-        var_c4241d08.scale.var_c4241d08 = 0.6;
+        var_c4241d08.y = 300;
+        var_c4241d08.timeout = 4;
+        var_c4241d08.color = (0.5, 0.5, 0.89);
+        var_c4241d08.scale = 0.6;
         break;
     case 50:
         var_c4241d08 = spawnstruct();
-        var_c4241d08.text.var_c4241d08 = #"hash_35c9692834e646f8";
+        var_c4241d08.text = #"hash_35c9692834e646f8";
         /#
             assert(isdefined(var_c4241d08.text));
         #/
-        var_c4241d08.y.var_c4241d08 = 300;
-        var_c4241d08.timeout.var_c4241d08 = 10;
-        var_c4241d08.color.var_c4241d08 = (1, 1, 1);
-        var_c4241d08.scale.var_c4241d08 = 0.35;
+        var_c4241d08.y = 300;
+        var_c4241d08.timeout = 10;
+        var_c4241d08.color = (1, 1, 1);
+        var_c4241d08.scale = 0.35;
         break;
     case 51:
         var_c4241d08 = spawnstruct();
-        var_c4241d08.text.var_c4241d08 = #"hash_485f00a41720d5b3";
+        var_c4241d08.text = #"hash_485f00a41720d5b3";
         /#
             assert(isdefined(var_c4241d08.text));
         #/
-        var_c4241d08.y.var_c4241d08 = 300;
-        var_c4241d08.timeout.var_c4241d08 = 10;
-        var_c4241d08.color.var_c4241d08 = (1, 1, 1);
-        var_c4241d08.scale.var_c4241d08 = 0.35;
+        var_c4241d08.y = 300;
+        var_c4241d08.timeout = 10;
+        var_c4241d08.color = (1, 1, 1);
+        var_c4241d08.scale = 0.35;
         break;
     case 58:
         var_c4241d08 = spawnstruct();
-        var_c4241d08.text.var_c4241d08 = #"hash_39d9e1cbc7106724";
+        var_c4241d08.text = #"hash_39d9e1cbc7106724";
         /#
             assert(isdefined(var_c4241d08.text));
         #/
-        var_c4241d08.y.var_c4241d08 = 300;
-        var_c4241d08.timeout.var_c4241d08 = 9;
-        var_c4241d08.color.var_c4241d08 = (0.35, 0.35, 0.89);
-        var_c4241d08.scale.var_c4241d08 = 0.45;
+        var_c4241d08.y = 300;
+        var_c4241d08.timeout = 9;
+        var_c4241d08.color = (0.35, 0.35, 0.89);
+        var_c4241d08.scale = 0.45;
         var_e8f666ac = spawnstruct();
-        var_e8f666ac.text.var_e8f666ac = #"hash_6286324b57917ce9";
+        var_e8f666ac.text = #"hash_6286324b57917ce9";
         /#
             assert(isdefined(var_e8f666ac.text));
         #/
-        var_e8f666ac.y.var_e8f666ac = 365;
-        var_e8f666ac.timeout.var_e8f666ac = 9;
-        var_e8f666ac.color.var_e8f666ac = (0.5, 0.5, 0.89);
-        var_e8f666ac.delay.var_e8f666ac = 4;
-        var_e8f666ac.scale.var_e8f666ac = 0.6;
+        var_e8f666ac.y = 365;
+        var_e8f666ac.timeout = 9;
+        var_e8f666ac.color = (0.5, 0.5, 0.89);
+        var_e8f666ac.delay = 4;
+        var_e8f666ac.scale = 0.6;
         break;
     case #"hash_defdefdefdefdef0":
         break;

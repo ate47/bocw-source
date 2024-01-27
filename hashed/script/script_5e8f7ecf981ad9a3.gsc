@@ -178,7 +178,7 @@ function function_3e73036b(entity) {
 // Size: 0x6c
 function private function_a85ea11(entity) {
     var_77d2339d = spawnstruct();
-    var_77d2339d.enemy.var_77d2339d = entity.enemy;
+    var_77d2339d.enemy = entity.enemy;
     blackboard::addblackboardevent("nfrtu_full_pain", var_77d2339d, randomintrange(4500, 6500));
 }
 

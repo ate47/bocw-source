@@ -159,7 +159,7 @@ function function_beae80f9(rawspawns) {
     var_22a1f7c8 = [];
     foreach (spawn in rawspawns) {
         if (!isdefined(spawn.var_575417a4)) {
-            spawn.var_575417a4.spawn = 0;
+            spawn.var_575417a4 = 0;
         }
         if (!function_7309b6b3(spawn)) {
             continue;
@@ -244,11 +244,11 @@ function function_b4f071cd() {
     var_bbd0ce18 = distancesquared(spawns[0].origin, var_ba7cd990.origin);
     var_1f5969dc = distancesquared(spawns[0].origin, var_3ab559fb.origin);
     if (var_bbd0ce18 < var_1f5969dc) {
-        var_ba7cd990.team.var_ba7cd990 = #"allies";
-        var_3ab559fb.team.var_3ab559fb = #"axis";
+        var_ba7cd990.team = #"allies";
+        var_3ab559fb.team = #"axis";
     } else {
-        var_3ab559fb.team.var_3ab559fb = #"allies";
-        var_ba7cd990.team.var_ba7cd990 = #"axis";
+        var_3ab559fb.team = #"allies";
+        var_ba7cd990.team = #"axis";
     }
     util::function_c77e4851(var_ba7cd990.team, var_3ab559fb.team);
 }

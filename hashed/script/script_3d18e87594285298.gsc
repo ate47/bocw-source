@@ -175,11 +175,11 @@ function function_85d6c09b(*guy) {
 function function_d521a78f() {
     player = self;
     var_248cbbcf = {};
-    var_248cbbcf.var_4ac77177.var_248cbbcf = 0;
-    var_248cbbcf.var_de6f0004.var_248cbbcf = 0;
-    var_248cbbcf.var_531201f1.var_248cbbcf = &function_d2cf74ab;
-    var_248cbbcf.var_be77841a.var_248cbbcf = 0;
-    var_248cbbcf.groups.var_248cbbcf = [0:#"actions"];
+    var_248cbbcf.var_4ac77177 = 0;
+    var_248cbbcf.var_de6f0004 = 0;
+    var_248cbbcf.var_531201f1 = &function_d2cf74ab;
+    var_248cbbcf.var_be77841a = 0;
+    var_248cbbcf.groups = [0:#"actions"];
     self namespace_f48ab2e1::function_c97a48c7(#"stance", var_248cbbcf);
     self namespace_f48ab2e1::function_263320e2(#"stance", #"hash_738e0cc280f3474f");
     self namespace_f48ab2e1::function_c97a48c7(#"frag", var_248cbbcf);
@@ -191,22 +191,22 @@ function function_d521a78f() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xac43df90, Offset: 0xe80
 // Size: 0x194
-function function_5ebe8eba(var_116dfc70) {
+function function_5ebe8eba(action_name) {
     if (is_true(self flag::get("snipercam"))) {
         return 0;
     }
     if (is_true(self.var_f467e5b0.var_36a4a92c)) {
         return 0;
     }
-    if (!is_true(self.var_f467e5b0.enabled[var_116dfc70])) {
+    if (!is_true(self.var_f467e5b0.enabled[action_name])) {
         return 0;
     }
     override = self actions::function_abaa32c("body_shield");
-    if (isdefined(override.disable) && array::contains(override.disable, var_116dfc70)) {
+    if (isdefined(override.disable) && array::contains(override.disable, action_name)) {
         return 0;
     }
     if (self.takedown.body_shield.health > 0) {
-        switch (var_116dfc70) {
+        switch (action_name) {
         case #"body_shield_kill":
             return self namespace_594b67e::function_fdff1cf3();
         case #"body_shield_grenade":
@@ -391,12 +391,12 @@ function function_7ead73b1(*action, *body, *var_d1b14335, scene, gesture) {
     player.var_ca6b6423 = undefined;
     setdvar(#"scr_door_player_gestures", 1);
     var_17813638 = spawnstruct();
-    var_17813638.origin.var_17813638 = self.origin;
-    var_17813638.angles.var_17813638 = self.angles;
+    var_17813638.origin = self.origin;
+    var_17813638.angles = self.angles;
     if (!self namespace_594b67e::function_fdff1cf3()) {
         offset = vectorscale((0, 0, 1), 8);
-        var_17813638.origin.var_17813638 = playerphysicstrace(self.origin + offset, self.origin + anglestoforward(self.angles) * -15 + offset);
-        var_17813638.origin.var_17813638 = playerphysicstrace(var_17813638.origin, var_17813638.origin - offset);
+        var_17813638.origin = playerphysicstrace(self.origin + offset, self.origin + anglestoforward(self.angles) * -15 + offset);
+        var_17813638.origin = playerphysicstrace(var_17813638.origin, var_17813638.origin - offset);
     }
     self.takedown.victim = [];
     self.takedown.body = undefined;
@@ -432,10 +432,10 @@ function function_7ead73b1(*action, *body, *var_d1b14335, scene, gesture) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x1734a334, Offset: 0x1f80
 // Size: 0x140
-function function_11b042fc(var_2e4886d4, var_47eb4927, shot = 0, var_dd00fdae = 0) {
+function function_11b042fc(var_2e4886d4, objectname, shot = 0, var_dd00fdae = 0) {
     scene = getscriptbundle(var_2e4886d4);
     if (isdefined(scene.objects)) {
-        var_61da41d8 = tolower(var_47eb4927);
+        var_61da41d8 = tolower(objectname);
         foreach (obj in scene.objects) {
             if (tolower(obj.name) === var_61da41d8) {
                 return obj.shots[shot].entry[var_dd00fdae].anim;
@@ -452,7 +452,7 @@ function function_1058ffa1(guy = self) {
     /#
         assert(isactor(guy));
     #/
-    guy.var_54163419.guy = util::spawn_model(#"hash_32587dcc01217c21", guy.origin, guy.angles);
+    guy.var_54163419 = util::spawn_model(#"hash_32587dcc01217c21", guy.origin, guy.angles);
     guy.var_54163419 notsolid();
     guy.var_54163419 linkto(guy, "tag_accessory_left", (0, 0, 0), (0, 0, 0));
     guy callback::function_30c3f95d(&function_6794cd13);
@@ -495,7 +495,7 @@ function grenade_explode(var_5fb1bd74, delay) {
         if (isdefined(delay)) {
             now = gettime();
             if (!isdefined(grenade.var_be9d05c3)) {
-                grenade.var_be9d05c3.grenade = gettime() + delay * 1000;
+                grenade.var_be9d05c3 = gettime() + delay * 1000;
             }
             if ((isdefined(grenade.var_be9d05c3) ? grenade.var_be9d05c3 : now) > now) {
                 wait(float(grenade.var_be9d05c3 - now) / 1000);
@@ -506,7 +506,7 @@ function grenade_explode(var_5fb1bd74, delay) {
             grenade delete();
             wpn_grenade = getweapon(#"frag_grenade");
             player = getplayers()[0];
-            player.body_shield_grenade.player = player magicgrenademanualplayer(origin, (0, 0, 0), wpn_grenade, 0);
+            player.body_shield_grenade = player magicgrenademanualplayer(origin, (0, 0, 0), wpn_grenade, 0);
         }
     }
 }
@@ -699,8 +699,8 @@ function function_306feb88(*guy) {
                         dir = rotatepoint(var_c3467a5d, vectorscale((0, 1, 0), 45));
                     }
                     var_ba580a85 = "body_shield_push" + "_push_" + randomintrange(1, 5);
-                    interact.var_f6639ad8.interact = level.var_f467e5b0.var_dc27586e[#"generic"][var_ba580a85];
-                    interact.var_475b4bbe.interact = vectortoangles(dir)[1] + 180;
+                    interact.var_f6639ad8 = level.var_f467e5b0.var_dc27586e[#"generic"][var_ba580a85];
+                    interact.var_475b4bbe = vectortoangles(dir)[1] + 180;
                     interact animcustom(&function_adf3cfb0, &function_9e4f9044);
                 }
             } else if (isdefined(interact.c_door)) {
@@ -732,7 +732,7 @@ function function_306feb88(*guy) {
         zoffset = vectorscale((0, 0, 1), 16);
         var_9dade54f = vectorscale((-1, -1, 0), 16);
         var_7179020a = (16, 16, 40);
-        mask = 1 & 8 & 2;
+        mask = 1 | 8 | 2;
         tracestart = self.origin + zoffset;
         traceend = tracestart + var_c3548f43;
         var_ddac030a = tracestart + var_858fa287;

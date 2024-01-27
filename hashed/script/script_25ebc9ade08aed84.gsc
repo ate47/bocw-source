@@ -88,18 +88,18 @@ function function_cc21ae2e() {
             flinger_landing_pad thread function_b4913776();
             self.landing_pad = flinger_landing_pad;
             self.var_803f2038 = "landing_pad_active" + flinger_landing_pad.script_int;
-            flinger_landing_pad.var_90ddceac.flinger_landing_pad = self;
+            flinger_landing_pad.var_90ddceac = self;
             flinger_landing_pad function_619a5c20();
             break;
         }
     }
     self.vol_fling = getent("flinger_vol" + self.script_int, "targetname");
     var_948355ad = self zm_unitrigger::create(&function_679a29cd, 100, &function_23ef27c);
-    var_948355ad.origin.var_948355ad = self.origin + vectorscale((0, 0, 1), 30);
-    var_948355ad.cost.var_948355ad = 500;
-    var_948355ad.var_90ddceac.var_948355ad = self;
-    var_948355ad.var_b555f02e.var_948355ad = self.var_b555f02e;
-    var_948355ad.var_803f2038.var_948355ad = self.var_803f2038;
+    var_948355ad.origin = self.origin + vectorscale((0, 0, 1), 30);
+    var_948355ad.cost = 500;
+    var_948355ad.var_90ddceac = self;
+    var_948355ad.var_b555f02e = self.var_b555f02e;
+    var_948355ad.var_803f2038 = self.var_803f2038;
     var_948355ad.var_90ddceac.var_37db5cf = 1;
     self.var_2ddd9b0c = getvehiclenode("flinger_vehicle_startnode" + self.script_int, "targetname");
     self thread function_b2a2cce8();

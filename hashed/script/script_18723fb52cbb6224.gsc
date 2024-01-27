@@ -62,18 +62,18 @@ function function_602f1c7e(instance) {
     var_927876a9 = instance.var_fe2612fe[#"radio"][0];
     var_364b8f56 = isdefined(instance.var_fe2612fe[#"hash_2a62eb308e140655"]) ? instance.var_fe2612fe[#"hash_2a62eb308e140655"] : [];
     if (!is_true(instance.var_600aeeb9)) {
-        instance.var_74554a28.instance = zm_utility::function_f5a222a8(#"hash_496b373a4a051d25", var_927876a9.origin, &function_f128aae9);
+        instance.var_74554a28 = zm_utility::function_f5a222a8(#"hash_496b373a4a051d25", var_927876a9.origin, &function_f128aae9);
     }
-    instance.var_628c4a3a.instance = namespace_8b6a9d79::function_f3d93ee9(var_927876a9, #"hash_6f139def53a9ba61");
+    instance.var_628c4a3a = namespace_8b6a9d79::function_f3d93ee9(var_927876a9, #"hash_6f139def53a9ba61");
     instance.var_628c4a3a fx::play(#"hash_6615a4858493260b", instance.var_628c4a3a.origin, instance.var_628c4a3a.angles, #"hash_5fc1f0dacaa027e8");
     instance.var_364b8f56 = var_364b8f56;
     foreach (var_c42af4d6 in var_364b8f56) {
-        var_c42af4d6.var_e43750de.var_c42af4d6 = namespace_8b6a9d79::function_f3d93ee9(var_c42af4d6, #"hash_6644a1e856afa8ab");
+        var_c42af4d6.var_e43750de = namespace_8b6a9d79::function_f3d93ee9(var_c42af4d6, #"hash_6644a1e856afa8ab");
     }
     s_start = instance.var_fe2612fe[#"start"][0];
-    s_start.scriptmodel.s_start = instance.var_628c4a3a;
+    s_start.scriptmodel = instance.var_628c4a3a;
     instance.s_start = s_start;
-    instance.trigger.instance = namespace_8b6a9d79::function_214737c7(s_start, &function_1d6f6f32, #"hash_4f14ba599385295e", undefined, 64);
+    instance.trigger = namespace_8b6a9d79::function_214737c7(s_start, &function_1d6f6f32, #"hash_4f14ba599385295e", undefined, 64);
     instance.trigger.instance = instance;
     var_7f1aa846 = #"hash_2c156700f31bca97";
     if (instance.content_script_name === "amplify") {
@@ -165,7 +165,7 @@ function function_ba971eed(instance) {
     instance.var_628c4a3a notify(#"hash_5fc1f0dacaa027e8");
     instance.var_628c4a3a fx::play(#"hash_2461617b51991e17", instance.var_628c4a3a.origin, instance.var_628c4a3a.angles, #"hash_5fc1f0dacaa027e8");
     instance.var_628c4a3a playsound(#"hash_4d16320cccbd00fc");
-    instance.var_3875a0bb.instance = randomintrangeinclusive(1, 8);
+    instance.var_3875a0bb = randomintrangeinclusive(1, 8);
     instance.var_628c4a3a playloopsound(#"hash_15bd285132a5e267" + instance.var_3875a0bb);
     instance.var_628c4a3a thread function_35bafcde(instance, instance.var_3875a0bb, "radio");
     var_364b8f56 = isdefined(instance.var_fe2612fe[#"hash_2a62eb308e140655"]) ? instance.var_fe2612fe[#"hash_2a62eb308e140655"] : [];
@@ -313,15 +313,15 @@ function function_2c1d994f(instance) {
 // Size: 0xa0
 function function_d3b57053(instance) {
     if (!isdefined(instance.var_abe944bc)) {
-        instance.var_abe944bc.instance = 10;
+        instance.var_abe944bc = 10;
     }
     if (randomintrange(1, 101) <= instance.var_abe944bc) {
-        instance.var_abe944bc.instance = 1;
+        instance.var_abe944bc = 1;
         return 1;
     }
-    instance.var_abe944bc.instance = instance.var_abe944bc + 5;
+    instance.var_abe944bc = instance.var_abe944bc + 5;
     if (instance.var_abe944bc >= 50) {
-        instance.var_abe944bc.instance = 50;
+        instance.var_abe944bc = 50;
     }
     return 0;
 }

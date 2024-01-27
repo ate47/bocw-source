@@ -31,12 +31,12 @@ function event_handler[level_init] main(*eventstruct) {
 // Size: 0x132
 function function_53a680b8(var_deac51dd, var_5301f4f1, var_13c55557, var_4737bddd, var_ac28bd17, var_3e17832) {
     params = spawnstruct();
-    params.var_e2ae1db1.params = 1;
-    params.var_2b18af9d.params = 0.76;
-    params.var_8dfc1be0.params = int(3000);
-    params.var_69681160.params = getweapon(#"zombie_builder");
-    params.fx_name.params = level._effect[#"building_dust"];
-    params.fx_loop.params = 0.5;
+    params.var_e2ae1db1 = 1;
+    params.var_2b18af9d = 0.76;
+    params.var_8dfc1be0 = int(3000);
+    params.var_69681160 = getweapon(#"zombie_builder");
+    params.fx_name = level._effect[#"building_dust"];
+    params.fx_loop = 0.5;
     params.var_deac51dd = var_deac51dd;
     params.var_5301f4f1 = var_5301f4f1;
     params.var_13c55557 = var_13c55557;
@@ -190,7 +190,7 @@ function private function_f8b39299(player, params, var_c060d2c8) {
     _from_temple_geyser = params.var_69681160 != level.weaponnone;
     if (use_time > 0) {
         player zm_utility::disable_player_move_states(1);
-        player.var_1f8802c9.player = 1;
+        player.var_1f8802c9 = 1;
         player zm_utility::increment_is_drinking();
         if (_from_temple_geyser) {
             orgweapon = player getcurrentweapon();
@@ -222,7 +222,7 @@ function private function_f8b39299(player, params, var_c060d2c8) {
             if (is_true(player.is_drinking)) {
                 player zm_utility::decrement_is_drinking();
             }
-            player.var_1f8802c9.player = 0;
+            player.var_1f8802c9 = 0;
             player zm_utility::enable_player_move_states();
         }
     }

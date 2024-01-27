@@ -128,10 +128,10 @@ function function_fa6d93ea(entity) {
 function private exposedupdateservice(entity) {
     if (entity isatcovernode()) {
         aiutility::function_3823e69e(entity);
-        entity.var_342553bc.entity = 1;
-        entity.var_b8cc25c.entity = 0;
-        entity.var_f13fb34f.entity = gettime();
-        entity.var_39226de1.entity = entity.origin;
+        entity.var_342553bc = 1;
+        entity.var_b8cc25c = 0;
+        entity.var_f13fb34f = gettime();
+        entity.var_39226de1 = entity.origin;
     }
 }
 
@@ -141,8 +141,8 @@ function private exposedupdateservice(entity) {
 // Size: 0x3e
 function private exposedshootstart(entity) {
     aiutility::releaseclaimnode(entity);
-    entity.var_b636f23b.entity = 0;
-    entity.var_a4f84a7f.entity = entity.var_c67bb799;
+    entity.var_b636f23b = 0;
+    entity.var_a4f84a7f = entity.var_c67bb799;
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
@@ -154,17 +154,17 @@ function private exposedshootupdate(entity) {
         return;
     }
     if (entity.var_c67bb799 > entity.var_a4f84a7f) {
-        entity.var_b636f23b.entity = 0;
-        entity.var_a4f84a7f.entity = entity.var_c67bb799;
+        entity.var_b636f23b = 0;
+        entity.var_a4f84a7f = entity.var_c67bb799;
     }
     if (isdefined(entity.enemy) && entity cansee(entity.enemy)) {
-        entity.var_b636f23b.entity = entity.var_b636f23b + 0.05;
+        entity.var_b636f23b = entity.var_b636f23b + 0.05;
     } else {
-        entity.var_b636f23b.entity = 0;
+        entity.var_b636f23b = 0;
     }
     if (entity.var_b636f23b >= 5) {
-        entity.nextfindbestcovertime.entity = gettime();
-        entity.var_b636f23b.entity = 0;
+        entity.nextfindbestcovertime = gettime();
+        entity.var_b636f23b = 0;
     }
 }
 
@@ -202,8 +202,8 @@ function private exposedreloadterminate(entity) {
 // Checksum 0xef81c98d, Offset: 0xdf0
 // Size: 0x44
 function private preparetoreacttoenemy(behaviortreeentity) {
-    behaviortreeentity.newenemyreaction.behaviortreeentity = 0;
-    behaviortreeentity.malfunctionreaction.behaviortreeentity = 0;
+    behaviortreeentity.newenemyreaction = 0;
+    behaviortreeentity.malfunctionreaction = 0;
     behaviortreeentity pathmode("move delayed", 1, 3);
 }
 
@@ -212,8 +212,8 @@ function private preparetoreacttoenemy(behaviortreeentity) {
 // Checksum 0x9f0af29a, Offset: 0xe40
 // Size: 0x22
 function private resetreactiontoenemy(behaviortreeentity) {
-    behaviortreeentity.newenemyreaction.behaviortreeentity = 0;
-    behaviortreeentity.malfunctionreaction.behaviortreeentity = 0;
+    behaviortreeentity.newenemyreaction = 0;
+    behaviortreeentity.malfunctionreaction = 0;
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
@@ -247,7 +247,7 @@ function private hascloseenemy(behaviortreeentity) {
 // Checksum 0x7c7decd4, Offset: 0xf38
 // Size: 0x2a
 function private function_56512b87(entity) {
-    entity.bulletsinclip.entity = entity.sidearm.clipsize;
+    entity.bulletsinclip = entity.sidearm.clipsize;
     return 1;
 }
 
@@ -344,7 +344,7 @@ function private exposedsetdesiredstancetostand(behaviortreeentity, *asmstatenam
 // Size: 0x3c6
 function private tryreacquireservice(behaviortreeentity) {
     if (!isdefined(behaviortreeentity.reacquire_state)) {
-        behaviortreeentity.reacquire_state.behaviortreeentity = 0;
+        behaviortreeentity.reacquire_state = 0;
     }
     var_d78ca29a = aiutility::function_589c524f(behaviortreeentity);
     if (var_d78ca29a == 4) {
@@ -352,36 +352,36 @@ function private tryreacquireservice(behaviortreeentity) {
         behaviortreeentity.ai.var_47823ae7 = gettime() + 5000;
     }
     if (!isdefined(behaviortreeentity.enemy)) {
-        behaviortreeentity.reacquire_state.behaviortreeentity = 0;
+        behaviortreeentity.reacquire_state = 0;
         return 0;
     }
     if (aiutility::isexposedatcovercondition(behaviortreeentity)) {
         return 0;
     }
     if (isdefined(behaviortreeentity.ai.var_47823ae7) && gettime() < behaviortreeentity.ai.var_47823ae7) {
-        behaviortreeentity.reacquire_state.behaviortreeentity = 0;
+        behaviortreeentity.reacquire_state = 0;
         return 0;
     }
     if (behaviortreeentity.birthtime + 1000 > gettime()) {
-        behaviortreeentity.reacquire_state.behaviortreeentity = 0;
+        behaviortreeentity.reacquire_state = 0;
         return 0;
     }
     if (behaviortreeentity haspath()) {
-        behaviortreeentity.reacquire_state.behaviortreeentity = 0;
+        behaviortreeentity.reacquire_state = 0;
         return 0;
     }
     if (is_true(behaviortreeentity.fixednode)) {
-        behaviortreeentity.reacquire_state.behaviortreeentity = 0;
+        behaviortreeentity.reacquire_state = 0;
         return 0;
     }
     if (behaviortreeentity seerecently(behaviortreeentity.enemy, 4)) {
-        behaviortreeentity.reacquire_state.behaviortreeentity = 0;
+        behaviortreeentity.reacquire_state = 0;
         return 0;
     }
     dirtoenemy = vectornormalize(behaviortreeentity.enemy.origin - behaviortreeentity.origin);
     forward = anglestoforward(behaviortreeentity.angles);
     if (vectordot(dirtoenemy, forward) < 0.5) {
-        behaviortreeentity.reacquire_state.behaviortreeentity = 0;
+        behaviortreeentity.reacquire_state = 0;
         return 0;
     }
     switch (behaviortreeentity.reacquire_state) {
@@ -398,7 +398,7 @@ function private tryreacquireservice(behaviortreeentity) {
         break;
     case #"hash_defdefdefdefdef0":
         if (behaviortreeentity.reacquire_state > 15) {
-            behaviortreeentity.reacquire_state.behaviortreeentity = 0;
+            behaviortreeentity.reacquire_state = 0;
             return 0;
         }
         break;

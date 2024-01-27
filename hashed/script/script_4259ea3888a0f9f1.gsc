@@ -151,13 +151,13 @@ function private function_33593a44(localclientnum, var_312d65d1, var_68f7ce2e, n
     if (var_312d65d1 == 2) {
         level.var_6465f02d = var_92d85419;
         while (n_blend < var_92d85419) {
-            function_be93487f(localclientnum, var_312d65d1 & var_68f7ce2e, 0, var_8a727807 - n_blend, n_blend, 0);
+            function_be93487f(localclientnum, var_312d65d1 | var_68f7ce2e, 0, var_8a727807 - n_blend, n_blend, 0);
             n_blend = n_blend + n_increment;
             waitframe(1);
         }
     } else if (var_312d65d1 == 4 || var_312d65d1 == 8) {
         while (n_blend < var_8a727807) {
-            function_be93487f(localclientnum, var_312d65d1 & var_68f7ce2e, 0, n_blend, var_92d85419 - n_blend, 0);
+            function_be93487f(localclientnum, var_312d65d1 | var_68f7ce2e, 0, n_blend, var_92d85419 - n_blend, 0);
             n_blend = n_blend + n_increment;
             waitframe(1);
         }

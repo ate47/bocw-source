@@ -34,7 +34,7 @@ function function_6f4eaf88(var_756fda07) {
         return;
     }
     if (!isdefined(var_756fda07.setype)) {
-        var_756fda07.setype.var_756fda07 = 0;
+        var_756fda07.setype = 0;
     }
     register_status_effect(var_756fda07.setype);
     level.var_233471d2[var_756fda07.setype] = var_756fda07;
@@ -160,7 +160,7 @@ function status_effect_apply(var_756fda07, weapon, applicant, isadditive, var_ab
     }
     var_756fda07.applicant = applicant;
     if (isdefined(var_894859a2)) {
-        var_756fda07.var_77449e9.var_756fda07 = var_756fda07.var_77449e9 * var_894859a2;
+        var_756fda07.var_77449e9 = var_756fda07.var_77449e9 * var_894859a2;
         if (isdefined(var_ab5b905e)) {
             var_ab5b905e = var_ab5b905e * var_894859a2;
         }
@@ -198,7 +198,7 @@ function status_effect_apply(var_756fda07, weapon, applicant, isadditive, var_ab
     if (isdefined(location)) {
         effect.location = location;
     } else if (isdefined(applicant)) {
-        effect.location.effect = applicant.origin;
+        effect.location = applicant.origin;
     }
     effect handle_sounds(var_756fda07);
     var_4df0ea83 = 1;
@@ -235,11 +235,11 @@ function status_effect_apply(var_756fda07, weapon, applicant, isadditive, var_ab
     var_1d673e46 = !isplayer(self) || self function_6c32d092(#"talent_resistance") && !is_true(var_756fda07.var_857e12ae);
     if (!var_1d673e46 && !isdefined(effect.var_b5207a36)) {
         if (isdefined(var_756fda07.var_208fb7da)) {
-            effect.var_b5207a36.effect = self gestures::function_c77349d4(var_756fda07.var_208fb7da);
+            effect.var_b5207a36 = self gestures::function_c77349d4(var_756fda07.var_208fb7da);
         }
         if (!isdefined(effect.var_b5207a36)) {
             if (isdefined(var_756fda07.var_b5207a36)) {
-                effect.var_b5207a36.effect = var_756fda07.var_b5207a36;
+                effect.var_b5207a36 = var_756fda07.var_b5207a36;
             }
         }
         if (isdefined(effect.var_b5207a36)) {

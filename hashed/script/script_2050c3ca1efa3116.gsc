@@ -65,9 +65,9 @@ function function_be14ecd2() {
 function function_c5cbd3bf(trap, var_7c56394 = 0) {
     hazard = namespace_ec06fe4a::function_e22ae9b3(trap.origin, "zombietron_pungi_sticks");
     if (isdefined(hazard)) {
-        hazard.targetname.hazard = "hazard";
-        hazard.var_fd5301f9.hazard = "pungi";
-        hazard.angles.hazard = trap.angles;
+        hazard.targetname = "hazard";
+        hazard.var_fd5301f9 = "pungi";
+        hazard.angles = trap.angles;
     }
     trap.script_model = hazard;
     trap.var_7c56394 = var_7c56394;
@@ -114,7 +114,7 @@ function function_157f1b14() {
             if (isdefined(trap.var_eb9d64bb) && time < trap.var_eb9d64bb) {
                 continue;
             }
-            trap.var_eb9d64bb.trap = time + 2000 + randomint(600);
+            trap.var_eb9d64bb = time + 2000 + randomint(600);
             if (!isdefined(trap.script_model)) {
                 activate = 0;
                 if (isdefined(trap.var_f8660931)) {
@@ -124,11 +124,11 @@ function function_157f1b14() {
                     }
                 }
                 if (!activate) {
-                    trap.var_f8660931.trap = namespace_ec06fe4a::function_6eacecf5(trap.origin, 3200);
+                    trap.var_f8660931 = namespace_ec06fe4a::function_6eacecf5(trap.origin, 3200);
                     if (isdefined(trap.var_f8660931)) {
                         activate = 1;
                     } else {
-                        trap.var_f8660931.trap = namespace_ec06fe4a::function_bd3709ce(trap.origin, 1200);
+                        trap.var_f8660931 = namespace_ec06fe4a::function_bd3709ce(trap.origin, 1200);
                         if (isdefined(trap.var_f8660931)) {
                             activate = 1;
                         }
@@ -136,11 +136,11 @@ function function_157f1b14() {
                 }
                 if (activate) {
                     function_c5cbd3bf(trap, 1);
-                    trap.var_eb9d64bb.trap = trap.var_eb9d64bb + 5000;
+                    trap.var_eb9d64bb = trap.var_eb9d64bb + 5000;
                     namespace_1e25ad94::function_f5f0c0f8("Paging IN pungi trap at:" + trap.origin);
                 }
             } else {
-                trap.var_f8660931.trap = namespace_ec06fe4a::function_f3eab80e(trap.origin, 3600);
+                trap.var_f8660931 = namespace_ec06fe4a::function_f3eab80e(trap.origin, 3600);
                 if (!isdefined(trap.var_f8660931)) {
                     trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
                     namespace_1e25ad94::function_f5f0c0f8("Paging out pungi trap at:" + trap.origin);
@@ -251,12 +251,12 @@ function function_1e690b43(movetime, lifetime) {
                     continue;
                 }
                 if (!isdefined(guy.var_69a33279)) {
-                    guy.var_69a33279.guy = 0;
+                    guy.var_69a33279 = 0;
                 }
                 if (guy.var_69a33279 < gettime()) {
                     guy namespace_e32bb68::function_3a59ec34("evt_doa_hazard_pungi_spike_impact");
                     guy namespace_83eb6304::function_3ecfde67("pungi_damage");
-                    guy.var_69a33279.guy = gettime() + 1000;
+                    guy.var_69a33279 = gettime() + 1000;
                 }
                 if (isplayer(guy)) {
                     guy dodamage(guy.health + 100, guy.origin);

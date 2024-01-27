@@ -95,7 +95,7 @@ function callback_actordamage(einflictor, eattacker, idamage, idflags, smeansofd
         assert(isdefined(idamage), "<unknown string>");
     #/
     if (!isdefined(vdir)) {
-        idflags = idflags & 4;
+        idflags = idflags | 4;
     }
     if (isdefined(eattacker)) {
         if (isplayer(eattacker)) {
@@ -204,7 +204,7 @@ function callback_actorkilled(einflictor, eattacker, idamage, smeansofdeath, wea
     }
     eattacker = globallogic_player::figureoutattacker(eattacker);
     if (globallogic_utils::isheadshot(weapon, shitloc, smeansofdeath, einflictor)) {
-        params.smeansofdeath.params = "MOD_HEAD_SHOT";
+        params.smeansofdeath = "MOD_HEAD_SHOT";
     }
     if (isdefined(eattacker) && eattacker != self) {
         if (!isdefined(einflictor) || !isai(einflictor) || isvehicle(einflictor) && einflictor getseatoccupant(0) === eattacker) {
@@ -248,7 +248,7 @@ function callback_actorkilled(einflictor, eattacker, idamage, smeansofdeath, wea
         if (isdefined(weapon)) {
             if (weapon.name == #"remote_missile_missile" || weapon.name == #"remote_missile_bomblet") {
                 if (!isdefined(player.remotemissilebda)) {
-                    player.remotemissilebda.player = 0;
+                    player.remotemissilebda = 0;
                 }
                 player.remotemissilebda++;
             }

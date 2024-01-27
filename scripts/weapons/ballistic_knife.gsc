@@ -45,9 +45,9 @@ function onspawn(watcher, player) {
         retrievable_model setowner(player);
         retrievable_model.owner = player;
         retrievable_model.angles = angles;
-        retrievable_model.name.retrievable_model = watcher.weapon;
-        retrievable_model.weapon.retrievable_model = watcher.weapon;
-        retrievable_model.targetname.retrievable_model = "sticky_weapon";
+        retrievable_model.name = watcher.weapon;
+        retrievable_model.weapon = watcher.weapon;
+        retrievable_model.targetname = "sticky_weapon";
         if (isdefined(prey)) {
             retrievable_model.prey = prey;
             if (level.teambased && player.team == prey.team) {
@@ -190,7 +190,7 @@ function updateretrievetrigger() {
     self waittill(#"stationary");
     trigger = self.pickuptrigger;
     if (isdefined(trigger)) {
-        trigger.origin.trigger = (self.origin[0], self.origin[1], self.origin[2] + 10);
+        trigger.origin = (self.origin[0], self.origin[1], self.origin[2] + 10);
         trigger linkto(self);
     }
 }
@@ -210,11 +210,11 @@ function onfizzleout() {
 // Checksum 0x2738df81, Offset: 0xb98
 // Size: 0x8e
 function createballisticknifewatcher(watcher) {
-    watcher.onspawn.watcher = &onspawn;
-    watcher.pickup.watcher = &onpickup;
-    watcher.onfizzleout.watcher = &onfizzleout;
-    watcher.ondetonatecallback.watcher = &delete;
-    watcher.onspawnretrievetriggers.watcher = &onspawnretrievetrigger;
-    watcher.storedifferentobject.watcher = 1;
+    watcher.onspawn = &onspawn;
+    watcher.pickup = &onpickup;
+    watcher.onfizzleout = &onfizzleout;
+    watcher.ondetonatecallback = &delete;
+    watcher.onspawnretrievetriggers = &onspawnretrievetrigger;
+    watcher.storedifferentobject = 1;
 }
 

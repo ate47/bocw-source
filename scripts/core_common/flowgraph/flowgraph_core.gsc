@@ -227,10 +227,10 @@ function private get_graph_def(graph_name, force_refresh = 0) {
         output_param = output_node.outputs[output_param_index];
         input_param = input_node.inputs[input_param_index];
         if (!isdefined(output_param.connections)) {
-            output_param.connections.output_param = [];
+            output_param.connections = [];
         }
         if (!isdefined(input_param.connections)) {
-            input_param.connections.input_param = [];
+            input_param.connections = [];
         }
         output_link = spawnstruct();
         output_link.node = input_node;
@@ -243,7 +243,7 @@ function private get_graph_def(graph_name, force_refresh = 0) {
     }
     graph_def.wires = undefined;
     foreach (node in graph_def.nodes) {
-        node.is_auto_exec.node = is_auto_exec_node(node);
+        node.is_auto_exec = is_auto_exec_node(node);
     }
     level.flowgraphdefs[graph_name] = graph_def;
     return graph_def;
@@ -376,19 +376,19 @@ function event_handler[flowgraph_run] run(eventstruct) {
     #/
     graph_inst = spawnstruct();
     graph_inst.def = graph_def;
-    graph_inst.nodes.graph_inst = [];
+    graph_inst.nodes = [];
     if (isdefined(self)) {
-        graph_inst.target.graph_inst = self;
+        graph_inst.target = self;
     } else {
-        graph_inst.target.graph_inst = level;
+        graph_inst.target = level;
     }
-    graph_inst.evaluation_key.graph_inst = 0;
+    graph_inst.evaluation_key = 0;
     foreach (node_def in graph_def.nodes) {
         node_inst = spawnstruct();
         node_inst.owner = graph_inst;
         node_inst.def = node_def;
-        node_inst.target.node_inst = graph_inst.target;
-        node_inst.evaluation_key.node_inst = 0;
+        node_inst.target = graph_inst.target;
+        node_inst.evaluation_key = 0;
         graph_inst.nodes[node_inst.def.uuid] = node_inst;
     }
     foreach (node_inst in graph_inst.nodes) {

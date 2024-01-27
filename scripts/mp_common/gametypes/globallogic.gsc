@@ -682,16 +682,16 @@ function function_4b670b29() {
     foreach (team, _ in level.teams) {
         if (function_f25690c1(team)) {
             if (!isdefined(params.teams_forfeited)) {
-                params.teams_forfeited.params = [];
+                params.teams_forfeited = [];
             } else if (!isarray(params.teams_forfeited)) {
-                params.teams_forfeited.params = array(params.teams_forfeited);
+                params.teams_forfeited = array(params.teams_forfeited);
             }
             params.teams_forfeited[params.teams_forfeited.size] = team;
         } else {
             if (!isdefined(params.var_6eb69269)) {
-                params.var_6eb69269.params = [];
+                params.var_6eb69269 = [];
             } else if (!isarray(params.var_6eb69269)) {
-                params.var_6eb69269.params = array(params.var_6eb69269);
+                params.var_6eb69269 = array(params.var_6eb69269);
             }
             params.var_6eb69269[params.var_6eb69269.size] = team;
         }
@@ -838,16 +838,16 @@ function function_9c839e9() {
             params.var_8245068d++;
             if (!teams::is_all_dead(team)) {
                 if (!isdefined(params.teams_alive)) {
-                    params.teams_alive.params = [];
+                    params.teams_alive = [];
                 } else if (!isarray(params.teams_alive)) {
-                    params.teams_alive.params = array(params.teams_alive);
+                    params.teams_alive = array(params.teams_alive);
                 }
                 params.teams_alive[params.teams_alive.size] = team;
             } else {
                 if (!isdefined(params.var_46a749a8)) {
-                    params.var_46a749a8.params = [];
+                    params.var_46a749a8 = [];
                 } else if (!isarray(params.var_46a749a8)) {
-                    params.var_46a749a8.params = array(params.var_46a749a8);
+                    params.var_46a749a8 = array(params.var_46a749a8);
                 }
                 params.var_46a749a8[params.var_46a749a8.size] = team;
             }
@@ -1200,7 +1200,7 @@ function wavespawntimer() {
         time = gettime();
         notified = 0;
         foreach (team, _ in level.teams) {
-            notified = notified & notifyteamwavespawn(team, time);
+            notified = notified | notifyteamwavespawn(team, time);
         }
         if (notified) {
             level callback::callback(#"hash_3be1213f454fa90e");
@@ -1669,7 +1669,7 @@ function private function_6c9e78d5(var_c1e98979) {
     updateplacement();
     function_68bfd6d7();
     roundlength = getroundlength();
-    var_f9adbf05 = function_70171add();
+    survey_id = function_70171add();
     current_time = gettime();
     game_over = is_game_over();
     players = level.players;
@@ -1685,7 +1685,7 @@ function private function_6c9e78d5(var_c1e98979) {
             player stats::function_7a850245(#"demofileid", getdemofileid());
             player stats::function_7a850245(#"matchid", getmatchid());
             if (level.rankedmatch) {
-                player stats::function_7a850245("surveyId", var_f9adbf05);
+                player stats::function_7a850245("surveyId", survey_id);
             }
         }
         player stats::function_7a850245("hardcore", level.hardcoremode);
@@ -1996,7 +1996,7 @@ function end_round(var_c1e98979) {
     outcome = hud_message::function_a2f30ab4(1, var_c1e98979, 0, round::function_f37f02fc());
     function_4720c07f(outcome);
     overtime::function_f435f4dd();
-    level thread namespace_341c57b3::function_18135b72(#"hash_711212b10739dcce");
+    level thread telemetry::function_18135b72(#"hash_711212b10739dcce");
     display_transition::display_round_end(outcome);
     if (!function_d89bf8aa()) {
         beacon_cp_biodomes_server_room_top_floor_door_rumble();
@@ -2994,7 +2994,7 @@ function updateteamstatus() {
             }
             if (player.sessionstate == "playing") {
                 level.playerlives[team]++;
-                player.spawnqueueindex.player = -1;
+                player.spawnqueueindex = -1;
                 if (isalive(player)) {
                     if (isdefined(player.laststand) && player.laststand) {
                         level.laststandcount[team]++;
@@ -3180,7 +3180,7 @@ function timelimitclock() {
     waitframe(1);
     clockobject = spawn("script_origin", (0, 0, 0));
     if (isdefined(clockobject)) {
-        clockobject.targetname.clockobject = "timeLimitClock";
+        clockobject.targetname = "timeLimitClock";
     }
     var_df4e70cd = #"hash_6c97261a8e7dd055";
     while (!gamestate::is_game_over() && is_true(level.var_8e3a3faf)) {
@@ -3503,16 +3503,16 @@ function function_bf2901cf() {
                 foreach (hash, team in level.teams) {
                     if (var_7c0f98d7[team] == var_93221c73) {
                         if (!isdefined(params.var_6eb69269)) {
-                            params.var_6eb69269.params = [];
+                            params.var_6eb69269 = [];
                         } else if (!isarray(params.var_6eb69269)) {
-                            params.var_6eb69269.params = array(params.var_6eb69269);
+                            params.var_6eb69269 = array(params.var_6eb69269);
                         }
                         params.var_6eb69269[params.var_6eb69269.size] = hash;
                     } else {
                         if (!isdefined(params.teams_forfeited)) {
-                            params.teams_forfeited.params = [];
+                            params.teams_forfeited = [];
                         } else if (!isarray(params.teams_forfeited)) {
-                            params.teams_forfeited.params = array(params.teams_forfeited);
+                            params.teams_forfeited = array(params.teams_forfeited);
                         }
                         params.teams_forfeited[params.teams_forfeited.size] = hash;
                     }
@@ -3661,7 +3661,7 @@ function graceperiod() {
         for (i = 0; i < players.size; i++) {
             player = players[i];
             if (!player.hasspawned && player.sessionteam != #"spectator" && !isalive(player)) {
-                player.statusicon.player = "hud_status_dead";
+                player.statusicon = "hud_status_dead";
             }
         }
     }
@@ -4502,11 +4502,11 @@ function function_a4156fb2() {
             if (self function_fdb8b430(player)) {
                 if (!is_true(player.strobed)) {
                     player clientfield::set_to_player("strobe_light", 1);
-                    player.strobed.player = 1;
+                    player.strobed = 1;
                 }
             } else if (is_true(player.strobed)) {
                 player clientfield::set_to_player("strobe_light", 0);
-                player.strobed.player = 0;
+                player.strobed = 0;
             }
         }
         waitframe(1);
@@ -4526,7 +4526,7 @@ function function_b761e219() {
         }
         if (is_true(player.strobed)) {
             player clientfield::set_to_player("strobe_light", 0);
-            player.strobed.player = 0;
+            player.strobed = 0;
         }
     }
 }

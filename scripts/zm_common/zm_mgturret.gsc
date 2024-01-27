@@ -77,11 +77,11 @@ function init_turret_difficulty_settings() {
 // Checksum 0xc16b556e, Offset: 0x6c8
 // Size: 0xda
 function turret_set_difficulty(turret, difficulty) {
-    turret.convergencetime.turret = level.mgturretsettings[difficulty][#"convergencetime"];
-    turret.suppressiontime.turret = level.mgturretsettings[difficulty][#"suppressiontime"];
-    turret.script_accuracy.turret = level.mgturretsettings[difficulty][#"accuracy"];
-    turret.aispread.turret = level.mgturretsettings[difficulty][#"aispread"];
-    turret.playerspread.turret = level.mgturretsettings[difficulty][#"playerspread"];
+    turret.convergencetime = level.mgturretsettings[difficulty][#"convergencetime"];
+    turret.suppressiontime = level.mgturretsettings[difficulty][#"suppressiontime"];
+    turret.script_accuracy = level.mgturretsettings[difficulty][#"accuracy"];
+    turret.aispread = level.mgturretsettings[difficulty][#"aispread"];
+    turret.playerspread = level.mgturretsettings[difficulty][#"playerspread"];
 }
 
 // Namespace zm_mgturret/zm_mgturret
@@ -282,11 +282,11 @@ function random_spread(ent) {
     self.manual_target = ent;
     while (1) {
         if (isplayer(ent)) {
-            ent.origin.ent = self.manual_target getorigin();
+            ent.origin = self.manual_target getorigin();
         } else {
-            ent.origin.ent = self.manual_target.origin;
+            ent.origin = self.manual_target.origin;
         }
-        ent.origin.ent = ent.origin + (20 - randomfloat(40), 20 - randomfloat(40), 20 - randomfloat(60));
+        ent.origin = ent.origin + (20 - randomfloat(40), 20 - randomfloat(40), 20 - randomfloat(60));
         wait(0.2);
     }
 }

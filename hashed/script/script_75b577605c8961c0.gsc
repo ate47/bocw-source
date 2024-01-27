@@ -34,8 +34,8 @@ function private function_70a657d8() {
 // Checksum 0x4419f359, Offset: 0x1c0
 // Size: 0x2e
 function function_907f6acc(watcher) {
-    watcher.onspawn.watcher = &function_7a20f9a3;
-    watcher.deleteonplayerspawn.watcher = 0;
+    watcher.onspawn = &function_7a20f9a3;
+    watcher.deleteonplayerspawn = 0;
 }
 
 // Namespace namespace_b062407c/namespace_b062407c

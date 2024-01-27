@@ -272,11 +272,11 @@ function setup_traversals() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x5f99a18c, Offset: 0xfe8
 // Size: 0x2a
-function function_f97a8023(var_bd14e861) {
-    if (!isdefined(var_bd14e861)) {
+function function_f97a8023(mission_name) {
+    if (!isdefined(mission_name)) {
         return 0;
     }
-    return function_dd83f1b6(var_bd14e861);
+    return function_dd83f1b6(mission_name);
 }
 
 // Namespace load/load
@@ -384,8 +384,8 @@ function player_intermission(var_1ed3b46b = 1) {
                     org = spawn("script_model", self.origin + vectorscale((0, 0, -1), 60));
                     org setmodel(#"tag_origin");
                 }
-                org.origin.org = points[i].origin;
-                org.angles.org = points[i].angles;
+                org.origin = points[i].origin;
+                org.angles = points[i].angles;
                 for (j = 0; j < getplayers().size; j++) {
                     player = getplayers()[j];
                     player camerasetposition(org);

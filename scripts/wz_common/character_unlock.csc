@@ -26,7 +26,7 @@ function private function_70a657d8() {
 // Params 3, eflags: 0x0
 // Checksum 0x107156d2, Offset: 0x100
 // Size: 0x1c
-function function_d2294476(*var_2ab9d3bd, *var_f532cd9f, *var_3afaa57b) {
+function function_d2294476(*var_2ab9d3bd, *replacementcount, *var_3afaa57b) {
     
 }
 

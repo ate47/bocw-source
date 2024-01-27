@@ -356,7 +356,7 @@ function state_emped_enter(params) {
     playsoundatposition(#"veh_sentry_turret_emp_down", self.origin);
     self.turretrotscale = 0.5;
     self rest_turret(params.resting_pitch);
-    params.laseron.params = islaseron(self);
+    params.laseron = islaseron(self);
     self laseroff();
     self vehicle::lights_off();
     if (!isdefined(self.abnormal_status)) {

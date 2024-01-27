@@ -102,14 +102,14 @@ function function_f3393d6a() {
             }
         }
     } else {
-        self.var_eb15d3ac = level.var_314051a1.var_2e61f0ce[self.var_e06cb519].var_203c6468[self.var_bf6f8ec3].var_4e49f678;
+        self.var_eb15d3ac = level.var_314051a1.var_2e61f0ce[self.var_e06cb519].var_203c6468[self.var_bf6f8ec3].tcmgametype;
         str_gametype = util::get_game_type();
         if (self.var_eb15d3ac == str_gametype) {
             s_tcm = level.var_314051a1.var_2e61f0ce[self.var_e06cb519].var_203c6468[self.var_bf6f8ec3];
             foreach (task in s_tcm.var_272b4041) {
                 self function_c3be3572(task.task, #"hash_647ebc7d24425fee", task.target, task.xp);
             }
-            self function_c3be3572(s_tcm.tcmgoal, #"tcmgoal", s_tcm.var_baa2833f, s_tcm.var_b7150b6, 0, 0);
+            self function_c3be3572(s_tcm.tcmgoal, #"tcmgoal", s_tcm.tcmgoaltarget, s_tcm.tcmgoalxp, 0, 0);
         }
     }
 }
@@ -127,7 +127,7 @@ function private function_10a1ac3c(var_d1017f27, var_e06cb519, var_bf6f8ec3) {
         }
     } else {
         if (!isdefined(var_d1017f27.var_1020847d)) {
-            var_d1017f27.var_1020847d.var_d1017f27 = 0;
+            var_d1017f27.var_1020847d = 0;
         }
         return var_d1017f27.var_1020847d;
     }
@@ -146,9 +146,9 @@ function private function_66714869(var_d1017f27, var_e06cb519, var_bf6f8ec3, n_i
         }
     } else {
         if (!isdefined(var_d1017f27.var_1020847d)) {
-            var_d1017f27.var_1020847d.var_d1017f27 = 0;
+            var_d1017f27.var_1020847d = 0;
         }
-        var_d1017f27.var_1020847d.var_d1017f27 = var_d1017f27.var_1020847d + n_inc;
+        var_d1017f27.var_1020847d = var_d1017f27.var_1020847d + n_inc;
     }
 }
 
@@ -195,7 +195,7 @@ function private function_104c5d35() {
                     break;
                 }
                 if (!var_ed9fe2be && is_true(var_d1017f27.var_89ed7b39)) {
-                    var_d1017f27.var_89ed7b39.var_d1017f27 = 0;
+                    var_d1017f27.var_89ed7b39 = 0;
                     var_ed9fe2be = 1;
                 }
             }
@@ -219,7 +219,7 @@ function function_4368582a(var_d1017f27, n_value = 1) {
     n_target = var_d1017f27.var_e226ec4f;
     if (var_e4edaaf0 < n_target) {
         if (var_e4edaaf0 + n_value >= n_target) {
-            var_d1017f27.var_89ed7b39.var_d1017f27 = 1;
+            var_d1017f27.var_89ed7b39 = 1;
             self function_a6a40735(var_d1017f27, self.var_e06cb519, self.var_bf6f8ec3, n_target, 1);
             self luinotifyevent(#"zombie_callings_notification", 3, 2, var_d1017f27.var_de86e878, self getentitynumber());
             /#

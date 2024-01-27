@@ -85,15 +85,15 @@ function function_daaa52d5() {
     canal_boats = getentarray("canal_boats", "targetname");
     foreach (boat in canal_boats) {
         if (isdefined(boat.target)) {
-            boat.var_dcc87061.boat = [];
+            boat.var_dcc87061 = [];
             var_dcc87061 = getentarray(boat.target, "targetname");
             foreach (var_a8f6e856 in var_dcc87061) {
                 if (isdefined(var_a8f6e856)) {
                     var_a8f6e856 linkto(boat);
                     if (!isdefined(boat.var_dcc87061)) {
-                        boat.var_dcc87061.boat = [];
+                        boat.var_dcc87061 = [];
                     } else if (!isarray(boat.var_dcc87061)) {
-                        boat.var_dcc87061.boat = array(boat.var_dcc87061);
+                        boat.var_dcc87061 = array(boat.var_dcc87061);
                     }
                     boat.var_dcc87061[boat.var_dcc87061.size] = var_a8f6e856;
                 }
@@ -687,7 +687,7 @@ function function_2d0aefe0(*height, time = 3) {
     struct = struct::get("raid_zoom_out_pos", "targetname");
     namespace_a052577e::function_60c0a46b();
     var_4449f5d0 = spawn("script_model", self.origin + vectorscale((0, 0, 1), 120));
-    var_4449f5d0.angles.var_4449f5d0 = struct.angles;
+    var_4449f5d0.angles = struct.angles;
     var_4449f5d0 setmodel("tag_origin");
     self playerlinktoblend(var_4449f5d0, "tag_origin", 0.5, 0, 0, 0.5, 0, 0, 1);
     var_4449f5d0 moveto(struct.origin, time, 0.5, time / 3);

@@ -92,7 +92,7 @@ function function_27c82a36(entity, catalyst_type) {
 // Checksum 0x5fc3945a, Offset: 0x500
 // Size: 0xd8
 function function_84c6177b(spawner, catalyst_type, location) {
-    spawner.script_forcespawn.spawner = 1;
+    spawner.script_forcespawn = 1;
     entity = zombie_utility::spawn_zombie(spawner, undefined, location);
     if (!isdefined(entity)) {
         return;

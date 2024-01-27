@@ -143,7 +143,7 @@ function function_9d8b22d8(entity, throwifpossible = 0, var_f06df42 = 1) {
         if (is_true(level.var_6324e9e5[#"hash_555b62c2fb0fbb4e"])) {
             throwifpossible = 1;
             if (isdefined(entity.grenadeammo) && entity.grenadeammo <= 0) {
-                entity.grenadeammo.entity = 1;
+                entity.grenadeammo = 1;
             }
         }
     #/
@@ -294,7 +294,7 @@ function function_9d8b22d8(entity, throwifpossible = 0, var_f06df42 = 1) {
     if (var_f06df42) {
         level.var_7f6cef33[entity.team] = gettime();
     }
-    entity.var_8a3fd1b2.entity = entity.health;
+    entity.var_8a3fd1b2 = entity.health;
     return 1;
 }
 
@@ -318,7 +318,7 @@ function private function_4387243d(entity) {
 function private coverpreparetothrowgrenade(entity) {
     aiutility::keepclaimednodeandchoosecoverdirection(entity);
     entity setblackboardattribute("_cover_mode", "cover_alert");
-    entity.preparegrenadeammo.entity = entity.grenadeammo;
+    entity.preparegrenadeammo = entity.grenadeammo;
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
@@ -331,11 +331,11 @@ function function_ce446f2e(entity) {
     #/
     grenadethrowinfo = spawnstruct();
     grenadethrowinfo.grenadethrower = entity;
-    grenadethrowinfo.grenadethrowerteam.grenadethrowinfo = entity.team;
+    grenadethrowinfo.grenadethrowerteam = entity.team;
     if (!isdefined(entity.var_38754eac)) {
-        grenadethrowinfo.grenadethrownat.grenadethrowinfo = entity.enemy;
+        grenadethrowinfo.grenadethrownat = entity.enemy;
     }
-    grenadethrowinfo.grenadethrownposition.grenadethrowinfo = entity.grenadethrowposition;
+    grenadethrowinfo.grenadethrownposition = entity.grenadethrowposition;
     blackboard::addblackboardevent("self_grenade_throw", grenadethrowinfo, randomintrange(5000, 10000));
     blackboard::addblackboardevent("team_grenade_throw", grenadethrowinfo, randomintrange(5000, 10000));
     blackboard::addblackboardevent("target_grenade_throw", grenadethrowinfo, randomintrange(30000, 60000));
@@ -355,9 +355,9 @@ function function_83c0b7e1(entity) {
     grenade_origin = entity gettagorigin("j_wrist_ri");
     grenadethrowinfo = spawnstruct();
     grenadethrowinfo.grenadethrower = entity;
-    grenadethrowinfo.grenadethrowerteam.grenadethrowinfo = entity.team;
+    grenadethrowinfo.grenadethrowerteam = entity.team;
     if (!isdefined(entity.var_38754eac)) {
-        grenadethrowinfo.grenadethrownat.grenadethrowinfo = entity.enemy;
+        grenadethrowinfo.grenadethrownat = entity.enemy;
     }
     grenadethrowinfo.grenadethrownposition = grenade_origin;
     blackboard::addblackboardevent("self_grenade_throw", grenadethrowinfo, randomintrange(5000, 10000));
@@ -383,9 +383,9 @@ function private covercleanuptothrowgrenade(entity) {
             }
             if (isdefined(grenade)) {
                 grenade.owner = entity;
-                grenade.team.grenade = entity.team;
-                grenade setcontents(grenade setcontents(0) & ~(32768 & 16777216 & 2097152 & 8388608));
-                grenade.var_ec078486.grenade = 1;
+                grenade.team = entity.team;
+                grenade setcontents(grenade setcontents(0) & ~(32768 | 16777216 | 2097152 | 8388608));
+                grenade.var_ec078486 = 1;
             }
         }
     }
@@ -521,7 +521,7 @@ function private coverblindfireshootstart(entity, *asmstatename) {
     aiutility::keepclaimnode(asmstatename);
     asmstatename setblackboardattribute("_cover_mode", "cover_blind");
     aiutility::choosecoverdirection(asmstatename);
-    asmstatename.var_2e7eed43.asmstatename = 1;
+    asmstatename.var_2e7eed43 = 1;
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
@@ -530,7 +530,7 @@ function private coverblindfireshootstart(entity, *asmstatename) {
 // Size: 0x2e
 function private function_49bbbf20(entity) {
     aiutility::resetcoverparameters(entity);
-    entity.var_2e7eed43.entity = 0;
+    entity.var_2e7eed43 = 0;
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
@@ -549,7 +549,7 @@ function private preparetochangestancetostand(entity, *asmstatename) {
 // Size: 0x36
 function private cleanupchangestancetostand(entity, *asmstatename) {
     aiutility::releaseclaimnode(asmstatename);
-    asmstatename.newenemyreaction.asmstatename = 0;
+    asmstatename.newenemyreaction = 0;
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
@@ -567,7 +567,7 @@ function private preparetochangestancetocrouch(entity, *asmstatename) {
 // Size: 0x36
 function private cleanupchangestancetocrouch(entity, *asmstatename) {
     aiutility::releaseclaimnode(asmstatename);
-    asmstatename.newenemyreaction.asmstatename = 0;
+    asmstatename.newenemyreaction = 0;
 }
 
 // Namespace archetype_human_cover/archetype_human_cover
@@ -585,7 +585,7 @@ function private function_79c0ab14(entity, *asmstatename) {
 // Size: 0x36
 function private function_bdba5c4(entity, *asmstatename) {
     aiutility::releaseclaimnode(asmstatename);
-    asmstatename.newenemyreaction.asmstatename = 0;
+    asmstatename.newenemyreaction = 0;
 }
 
 // Namespace archetype_human_cover/archetype_human_cover

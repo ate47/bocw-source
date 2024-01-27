@@ -82,8 +82,8 @@ function function_60a6c623() {
 function setup_craftfoundry(craftfoundry) {
     if (isdefined(craftfoundry)) {
         if (!is_true(craftfoundry.loaded)) {
-            craftfoundry.loaded.craftfoundry = 1;
-            craftfoundry.blueprints.craftfoundry = [];
+            craftfoundry.loaded = 1;
+            craftfoundry.blueprints = [];
             switch (craftfoundry.var_2a2adea3) {
             case 8:
                 craftfoundry.blueprints[7] = function_b18074d0(craftfoundry.var_b81b4995);
@@ -120,7 +120,7 @@ function setup_tables() {
     foreach (trigger in var_c443493d) {
         var_6886faaa = trigger.var_6886faaa;
         if (isdefined(var_6886faaa)) {
-            trigger.craftfoundry.trigger = function_c1552513(var_6886faaa);
+            trigger.craftfoundry = function_c1552513(var_6886faaa);
         } else {
             /#
                 assertmsg("<unknown string>");
@@ -183,10 +183,10 @@ function function_b18074d0(name) {
     blueprint = getscriptbundle(name);
     if (isdefined(blueprint)) {
         if (!is_true(blueprint.loaded)) {
-            blueprint.loaded.blueprint = 1;
+            blueprint.loaded = 1;
             blueprint.name = name;
-            blueprint.components.blueprint = [];
-            switch (blueprint.var_f4a82731) {
+            blueprint.components = [];
+            switch (blueprint.componentcount) {
             case 8:
                 blueprint.components[7] = get_component(blueprint.var_f4d434cb, blueprint);
             case 7:
@@ -205,17 +205,17 @@ function function_b18074d0(name) {
                 blueprint.components[0] = get_component(blueprint.var_99577dd3, blueprint);
                 break;
             }
-            blueprint.var_54a97edd.blueprint = get_component(blueprint.result, blueprint);
+            blueprint.var_54a97edd = get_component(blueprint.result, blueprint);
             x = isdefined(blueprint.var_2206e7ed) ? float(blueprint.var_2206e7ed) : 0;
             y = isdefined(blueprint.var_e414062) ? float(blueprint.var_e414062) : 0;
             z = isdefined(blueprint.var_3c809ce0) ? float(blueprint.var_3c809ce0) : 0;
-            blueprint.v_offset.blueprint = (x, y, z);
+            blueprint.v_offset = (x, y, z);
             x = isdefined(blueprint.prj_scr_round_pause) ? float(blueprint.prj_scr_round_pause) : 0;
             y = isdefined(blueprint.var_11928e3b) ? float(blueprint.var_11928e3b) : 0;
             z = isdefined(blueprint.var_71c8b937) ? float(blueprint.var_71c8b937) : 0;
-            blueprint.v_angles.blueprint = (x, y, z);
+            blueprint.v_angles = (x, y, z);
             if (!isdefined(blueprint.var_4dbc4aee)) {
-                blueprint.var_4dbc4aee.blueprint = "ERROR: Missing Prompt String";
+                blueprint.var_4dbc4aee = "ERROR: Missing Prompt String";
             }
             function_728a82e0(blueprint);
             /#
@@ -302,7 +302,7 @@ function private function_40f32480() {
 // Size: 0x54
 function function_728a82e0(blueprint) {
     if (!isdefined(level.var_5df2581a[blueprint.name])) {
-        blueprint.completed.blueprint = 0;
+        blueprint.completed = 0;
         blueprint.builder = undefined;
         level.var_5df2581a[blueprint.name] = blueprint;
     }
@@ -425,7 +425,7 @@ function function_8962a3bb(*player, *unitrigger) {
 // Size: 0x5c
 function function_735c3a67(player, unitrigger) {
     if (isdefined(player)) {
-        unitrigger.locked.unitrigger = 1;
+        unitrigger.locked = 1;
         unitrigger.blueprint.locked = 1;
         player playsound(#"hash_1fff2aa71bff91fa");
     }
@@ -458,7 +458,7 @@ function function_d95a600f(player, *unitrigger) {
 // Checksum 0x1d2ae911, Offset: 0x1a30
 // Size: 0x32
 function function_73f3bb03(*player, unitrigger) {
-    unitrigger.locked.unitrigger = 0;
+    unitrigger.locked = 0;
     unitrigger.blueprint.locked = 0;
 }
 
@@ -535,70 +535,70 @@ function function_f665fde0(trig) {
         return;
     }
     unitrigger_stub = spawnstruct();
-    unitrigger_stub.craftfoundry.unitrigger_stub = trig.craftfoundry;
+    unitrigger_stub.craftfoundry = trig.craftfoundry;
     if (zm_utility::get_story() == 1 && isdefined(trig.target2)) {
-        unitrigger_stub.var_c2f40a58.unitrigger_stub = getent(trig.target2, "targetname");
+        unitrigger_stub.var_c2f40a58 = getent(trig.target2, "targetname");
         unitrigger_stub.var_c2f40a58 ghost();
     }
     if (zm_utility::get_story() == 1 && isdefined(trig.target3)) {
-        unitrigger_stub.var_4f749ffe.unitrigger_stub = getent(trig.target3, "targetname");
+        unitrigger_stub.var_4f749ffe = getent(trig.target3, "targetname");
         unitrigger_stub.var_4f749ffe ghost();
     }
     angles = trig.script_angles;
     if (!isdefined(angles)) {
         angles = (0, 0, 0);
     }
-    unitrigger_stub.origin.unitrigger_stub = trig.origin + anglestoright(angles) * -6;
-    unitrigger_stub.angles.unitrigger_stub = trig.angles;
+    unitrigger_stub.origin = trig.origin + anglestoright(angles) * -6;
+    unitrigger_stub.angles = trig.angles;
     if (isdefined(trig.script_angles)) {
-        unitrigger_stub.angles.unitrigger_stub = trig.script_angles;
+        unitrigger_stub.angles = trig.script_angles;
     }
-    unitrigger_stub.delete_trigger.unitrigger_stub = 1;
-    unitrigger_stub.crafted.unitrigger_stub = 0;
-    unitrigger_stub.var_c66d8f22.unitrigger_stub = 1;
-    unitrigger_stub.var_42839ec7.unitrigger_stub = 1;
-    unitrigger_stub.usetime.unitrigger_stub = int(3000);
+    unitrigger_stub.delete_trigger = 1;
+    unitrigger_stub.crafted = 0;
+    unitrigger_stub.var_c66d8f22 = 1;
+    unitrigger_stub.var_42839ec7 = 1;
+    unitrigger_stub.usetime = int(3000);
     if (isdefined(self.usetime)) {
-        unitrigger_stub.usetime.unitrigger_stub = self.usetime;
+        unitrigger_stub.usetime = self.usetime;
     } else if (isdefined(trig.usetime)) {
-        unitrigger_stub.usetime.unitrigger_stub = trig.usetime;
+        unitrigger_stub.usetime = trig.usetime;
     }
     tmins = trig getmins();
     tmaxs = trig getmaxs();
     tsize = tmaxs - tmins;
     if (isdefined(trig.script_depth)) {
-        unitrigger_stub.script_length.unitrigger_stub = trig.script_depth;
+        unitrigger_stub.script_length = trig.script_depth;
     } else {
-        unitrigger_stub.script_length.unitrigger_stub = tsize[1];
+        unitrigger_stub.script_length = tsize[1];
     }
     if (isdefined(trig.script_width)) {
-        unitrigger_stub.script_width.unitrigger_stub = trig.script_width;
+        unitrigger_stub.script_width = trig.script_width;
     } else {
-        unitrigger_stub.script_width.unitrigger_stub = tsize[0];
+        unitrigger_stub.script_width = tsize[0];
     }
     if (isdefined(trig.script_height)) {
-        unitrigger_stub.script_height.unitrigger_stub = trig.script_height;
+        unitrigger_stub.script_height = trig.script_height;
     } else {
-        unitrigger_stub.script_height.unitrigger_stub = tsize[2];
+        unitrigger_stub.script_height = tsize[2];
     }
-    unitrigger_stub.target.unitrigger_stub = trig.target;
-    unitrigger_stub.targetname.unitrigger_stub = trig.targetname;
-    unitrigger_stub.script_noteworthy.unitrigger_stub = trig.script_noteworthy;
-    unitrigger_stub.script_parameters.unitrigger_stub = trig.script_parameters;
-    unitrigger_stub.script_string.unitrigger_stub = trig.script_string;
-    unitrigger_stub.cursor_hint.unitrigger_stub = "HINT_NOICON";
-    unitrigger_stub.hint_string.unitrigger_stub = #"hash_a502ccb8fec4c7a";
-    unitrigger_stub.script_unitrigger_type.unitrigger_stub = "unitrigger_box_use";
-    unitrigger_stub.require_look_at.unitrigger_stub = 1;
-    unitrigger_stub.require_look_toward.unitrigger_stub = 0;
-    unitrigger_stub.var_c060d2c8.unitrigger_stub = 1;
+    unitrigger_stub.target = trig.target;
+    unitrigger_stub.targetname = trig.targetname;
+    unitrigger_stub.script_noteworthy = trig.script_noteworthy;
+    unitrigger_stub.script_parameters = trig.script_parameters;
+    unitrigger_stub.script_string = trig.script_string;
+    unitrigger_stub.cursor_hint = "HINT_NOICON";
+    unitrigger_stub.hint_string = #"hash_a502ccb8fec4c7a";
+    unitrigger_stub.script_unitrigger_type = "unitrigger_box_use";
+    unitrigger_stub.require_look_at = 1;
+    unitrigger_stub.require_look_toward = 0;
+    unitrigger_stub.var_c060d2c8 = 1;
     zm_unitrigger::unitrigger_force_per_player_triggers(unitrigger_stub, 1);
-    unitrigger_stub.prompt_and_visibility_func.unitrigger_stub = &function_126fc77c;
+    unitrigger_stub.prompt_and_visibility_func = &function_126fc77c;
     zm_unitrigger::register_static_unitrigger(unitrigger_stub, &crafting_think);
     unitrigger_stub.piece_trigger = trig;
     trig.trigger_stub = unitrigger_stub;
     if (isdefined(trig.zombie_weapon_upgrade)) {
-        unitrigger_stub.zombie_weapon_upgrade.unitrigger_stub = getweapon(trig.zombie_weapon_upgrade);
+        unitrigger_stub.zombie_weapon_upgrade = getweapon(trig.zombie_weapon_upgrade);
     }
     if (isdefined(unitrigger_stub.target)) {
         m_target = getent(unitrigger_stub.target, "targetname");
@@ -656,14 +656,14 @@ function function_987a472(modelname, blueprint) {
         s_model = struct::get(s_crafting.target, "targetname");
         if (isdefined(s_model)) {
             m_spawn = spawn("script_model", s_model.origin);
-            m_spawn.origin.m_spawn = m_spawn.origin + blueprint.v_offset;
+            m_spawn.origin = m_spawn.origin + blueprint.v_offset;
             if (isdefined(s_crafting.v_origin_offset)) {
-                m_spawn.origin.m_spawn = m_spawn.origin + s_crafting.v_origin_offset;
+                m_spawn.origin = m_spawn.origin + s_crafting.v_origin_offset;
             }
-            m_spawn.angles.m_spawn = s_model.angles;
-            m_spawn.angles.m_spawn = m_spawn.angles + blueprint.v_angles;
+            m_spawn.angles = s_model.angles;
+            m_spawn.angles = m_spawn.angles + blueprint.v_angles;
             if (isdefined(s_crafting.v_angle_offset)) {
-                m_spawn.angles.m_spawn = m_spawn.angles + s_crafting.v_angle_offset;
+                m_spawn.angles = m_spawn.angles + s_crafting.v_angle_offset;
             }
             m_spawn setmodel(modelname);
             s_crafting.model = m_spawn;
@@ -704,7 +704,7 @@ function function_ca244624(var_55426150) {
         return;
     }
     foreach (trigger in level.var_4fe2f84d[var_55426150]) {
-        trigger.locked.trigger = 1;
+        trigger.locked = 1;
         level thread zm_unitrigger::unregister_unitrigger(trigger);
     }
 }
@@ -1214,7 +1214,7 @@ function function_c9163c5d(str) {
 // Size: 0x1fa
 function function_ceac3bf9(player, b_repaired = 0) {
     if (!isdefined(player.var_36ea3103)) {
-        player.var_36ea3103.player = 0;
+        player.var_36ea3103 = 0;
     }
     if (isdefined(player.talisman_shield_price) && self.blueprint.var_54a97edd.isriotshield) {
         var_a185bd91 = player.talisman_shield_price;
@@ -1351,7 +1351,7 @@ function private function_df8ce6e2(player) {
         if (isdefined(var_f66d1847) && var_f66d1847 > 0) {
             if (is_true(self.stub.blueprint.var_c028dcfe) && !player function_48ce9379(self.stub.blueprint.var_54a97edd)) {
                 if (!isdefined(player.var_4e90ce0c)) {
-                    player.var_4e90ce0c.player = [];
+                    player.var_4e90ce0c = [];
                 }
                 array::add(player.var_4e90ce0c, self.stub.blueprint.var_54a97edd, 0);
                 player thread function_fccf9f0d();
@@ -1369,7 +1369,7 @@ function private function_df8ce6e2(player) {
         }
         if (isdefined(self.stub.blueprint.var_fe8a5e39)) {
             if (!isdefined(player.var_2f3339f0)) {
-                player.var_2f3339f0.player = [];
+                player.var_2f3339f0 = [];
             }
             if (!is_true(player.var_2f3339f0[self.stub.blueprint.var_54a97edd])) {
                 player thread zm_equipment::show_hint_text(self.stub.blueprint.var_fe8a5e39);

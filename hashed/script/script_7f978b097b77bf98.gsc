@@ -56,11 +56,11 @@ function function_70a657d8() {
 // Size: 0x24c
 function function_4d243036(instance) {
     s_chest = instance.var_fe2612fe[#"chest"][0];
-    instance.var_31919730.instance = namespace_8b6a9d79::function_f3d93ee9(s_chest, #"hash_52b22fc56fd98bd6");
-    s_chest.scriptmodel.s_chest = instance.var_31919730;
+    instance.var_31919730 = namespace_8b6a9d79::function_f3d93ee9(s_chest, #"hash_52b22fc56fd98bd6");
+    s_chest.scriptmodel = instance.var_31919730;
     instance.var_31919730 clientfield::set("sr_black_chest_fx", 1);
     instance.var_31919730 disconnectpaths();
-    instance.n_obj_id.instance = zm_utility::function_f5a222a8(#"hash_6f9aa3330822e0f1", s_chest.origin);
+    instance.n_obj_id = zm_utility::function_f5a222a8(#"hash_6f9aa3330822e0f1", s_chest.origin);
     forward = anglestoforward(s_chest.angles);
     forward = vectornormalize(forward);
     forward = (forward[0] * 16, forward[1] * 16, forward[2] * 16);
@@ -192,7 +192,7 @@ function private function_5338581(instance) {
     wait(2);
     playsoundatposition(#"hash_2cc0c33bfc0f9373", instance.var_31919730.origin + vectorscale((0, 0, 1), 20));
     instance.var_31919730 thread zm_vo::function_d6f8bbd9(#"hash_15b09a217e61af64", 2.5);
-    instance.var_fc398f5e.instance = 0;
+    instance.var_fc398f5e = 0;
     s_chest = instance.var_fe2612fe[#"chest"][0];
     var_5d7b56a9 = anglestoup(s_chest.angles) * 58;
     var_5086009e = anglestoright(s_chest.angles) * 12;
@@ -201,9 +201,9 @@ function private function_5338581(instance) {
     var_6ef72e62 = spawnstruct();
     var_5a4d050e = spawnstruct();
     var_440ed88e = spawnstruct();
-    var_6ef72e62.origin.var_6ef72e62 = s_chest.origin + var_5d7b56a9 + var_5086009e;
-    var_5a4d050e.origin.var_5a4d050e = s_chest.origin + var_5d7b56a9 + var_42cc652b;
-    var_440ed88e.origin.var_440ed88e = s_chest.origin + var_5d7b56a9 + var_2d0a39a7;
+    var_6ef72e62.origin = s_chest.origin + var_5d7b56a9 + var_5086009e;
+    var_5a4d050e.origin = s_chest.origin + var_5d7b56a9 + var_42cc652b;
+    var_440ed88e.origin = s_chest.origin + var_5d7b56a9 + var_2d0a39a7;
     var_21a5c532 = instance.var_fe2612fe[#"hash_5e01f407a95da14a"][0];
     var_306462af = instance.var_fe2612fe[#"hash_5e01f307a95d9f97"][0];
     var_b02fe248 = instance.var_fe2612fe[#"hash_5e01f207a95d9de4"][0];
@@ -223,14 +223,14 @@ function private function_ed1e62c9(instance, var_5ec5a681, s_spawn) {
     var_d4358084 = namespace_8b6a9d79::function_f3d93ee9(s_spawn, #"hash_7a7aadfb584e0859");
     var_d4358084 clientfield::set("sr_black_chest_swarm_fx", 1);
     var_d4358084 val::set(#"hash_65a3f68c4d919b89", "allowdeath", 0);
-    var_d4358084.var_e8280122.var_d4358084 = var_5ec5a681.origin;
-    var_d4358084.targetname.var_d4358084 = "world_event_black_chest_swarm";
+    var_d4358084.var_e8280122 = var_5ec5a681.origin;
+    var_d4358084.targetname = "world_event_black_chest_swarm";
     var_d4358084 playloopsound(#"hash_4c9124e9213250df");
     trigger = spawn("trigger_radius", var_5ec5a681.origin + (0, 0, 128 * -1), 0, 450, 128 * 2);
     trigger.var_d4358084 = var_d4358084;
     var_d4358084.trigger = trigger;
     trigger callback::on_trigger(&function_e03c6f84);
-    var_d4358084.n_obj_id.var_d4358084 = zm_utility::function_f5a222a8(#"hash_4b8c0ed5c08eb78e", var_d4358084);
+    var_d4358084.n_obj_id = zm_utility::function_f5a222a8(#"hash_4b8c0ed5c08eb78e", var_d4358084);
     n_move_time = distance(var_d4358084.origin, var_5ec5a681.origin) / 850;
     var_d4358084 moveto(var_5ec5a681.origin, n_move_time);
     var_d4358084 thread function_1f15d9fc(instance);
@@ -375,8 +375,8 @@ function private function_7914c7ef(var_85c920d0, *s_chest) {
         }
         if (isdefined(var_ff1022f3)) {
             s_chest dontinterpolate();
-            s_chest.origin.s_chest = var_ff1022f3.origin + vectorscale((0, 0, 1), 40);
-            s_chest.angles.s_chest = var_ff1022f3.angles;
+            s_chest.origin = var_ff1022f3.origin + vectorscale((0, 0, 1), 40);
+            s_chest.angles = var_ff1022f3.angles;
             s_chest show();
             s_chest thread fx::play(#"hash_6e08ff9234426629", var_ff1022f3.origin + vectorscale((0, 0, 1), 48), var_ff1022f3.angles);
             s_chest clientfield::set("sr_demented_echo_fx", 1);

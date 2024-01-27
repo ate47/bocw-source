@@ -101,8 +101,8 @@ function function_be6de952(killstreaktype, var_94fe38b6) {
         e_target = self.mdl_target[killstreaktype];
         if (isdefined(e_target)) {
             s_location = spawnstruct();
-            s_location.origin.s_location = e_target.origin;
-            s_location.angles.s_location = e_target.angles;
+            s_location.origin = e_target.origin;
+            s_location.angles = e_target.angles;
             e_target [[ var_94fe38b6 ]]();
             return s_location;
         }

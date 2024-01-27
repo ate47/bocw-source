@@ -375,8 +375,8 @@ function function_3f8a4145(var_26f4f16d) {
         assert(self.var_c27f1e90.size >= 4);
     #/
     var_806e2de0 = {};
-    var_806e2de0.var_149ec45c.var_806e2de0 = [];
-    var_806e2de0.var_8f0c164f.var_806e2de0 = [];
+    var_806e2de0.var_149ec45c = [];
+    var_806e2de0.var_8f0c164f = [];
     for (slot = 0; slot < 4; slot++) {
         vapor = self.var_c27f1e90[slot];
         var_bf4e9328 = isinarray(self.var_466b927f, vapor);
@@ -394,7 +394,7 @@ function function_3f8a4145(var_26f4f16d) {
                 self notify(var_e6aaa1c2 + "_stop", {#var_613b7621:!var_d84249cb});
             }
             if (vapor == #"specialty_additionalprimaryweapon") {
-                var_806e2de0.additional_primary_weapon.var_806e2de0 = self.var_2a62e678;
+                var_806e2de0.additional_primary_weapon = self.var_2a62e678;
             }
             var_806e2de0.var_149ec45c[slot] = 1;
             var_806e2de0.var_8f0c164f[slot] = vapor;
@@ -403,15 +403,15 @@ function function_3f8a4145(var_26f4f16d) {
         }
     }
     if (self.var_67ba1237.size) {
-        var_806e2de0.var_724d826b.var_806e2de0 = arraycopy(self.var_67ba1237);
-        var_806e2de0.var_8dee79a9.var_806e2de0 = self.var_1eba264f;
-        var_806e2de0.var_d3f0257d.var_806e2de0 = self.var_b773066d;
+        var_806e2de0.var_724d826b = arraycopy(self.var_67ba1237);
+        var_806e2de0.var_8dee79a9 = self.var_1eba264f;
+        var_806e2de0.var_d3f0257d = self.var_b773066d;
         foreach (var_6cbabb29 in self.var_67ba1237) {
             self notify(var_6cbabb29 + "_stop", {#var_fe7072f6:1, #var_613b7621:1});
         }
         if (isdefined(self.var_64f51f65)) {
-            var_806e2de0.additional_primary_weapon.var_806e2de0 = self.var_64f51f65;
-            var_806e2de0.var_1596d94c.var_806e2de0 = self.var_64f51f65;
+            var_806e2de0.additional_primary_weapon = self.var_64f51f65;
+            var_806e2de0.var_1596d94c = self.var_64f51f65;
         }
     }
     return var_806e2de0;
@@ -546,7 +546,7 @@ function function_96e10d88(successful) {
 function function_1e223bce(players) {
     bitarray = 0;
     foreach (player in players) {
-        bitarray = bitarray & 1 << player getentitynumber();
+        bitarray = bitarray | 1 << player getentitynumber();
     }
     return bitarray;
 }
@@ -557,7 +557,7 @@ function function_1e223bce(players) {
 // Size: 0x3e
 function function_85d088ed(player) {
     bitarray = 0;
-    bitarray = bitarray & 1 << player getentitynumber();
+    bitarray = bitarray | 1 << player getentitynumber();
     return bitarray;
 }
 

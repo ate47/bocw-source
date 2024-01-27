@@ -690,6 +690,6 @@ function function_f47a0e3b(localclientnum, speakingplayer, dialogkey) {
         return;
     }
     speakingplayer playsound(localclientnum, dialogalias);
-    speakingplayer.var_20af9a03.speakingplayer = gettime();
+    speakingplayer.var_20af9a03 = gettime();
 }
 

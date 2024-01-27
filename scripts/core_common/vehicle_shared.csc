@@ -668,8 +668,8 @@ function function_34105b89(localclientnum, groupid, ison) {
     if (!isdefined(settings)) {
         return;
     }
-    var_fbd7b872 = settings.var_e08bc957;
-    if (isdefined(var_fbd7b872) && groupid > var_fbd7b872) {
+    num_slots = settings.var_e08bc957;
+    if (isdefined(num_slots) && groupid > num_slots) {
         return;
     }
     self endon(#"death");
@@ -744,7 +744,7 @@ function event_handler[enter_vehicle] codecallback_vehicleenter(eventstruct) {
         if (isdefined(var_8730ee3e)) {
             if (is_true(var_8730ee3e.zmenhancedstatejukeinit)) {
                 if (!isdefined(vehicle.t_sarah_foy_objective__indicator_)) {
-                    vehicle.t_sarah_foy_objective__indicator_.vehicle = [];
+                    vehicle.t_sarah_foy_objective__indicator_ = [];
                 }
                 if (is_true(vehicle.t_sarah_foy_objective__indicator_[seatindex])) {
                     return;
@@ -789,7 +789,7 @@ function event_handler[change_seat] function_124469f4(eventstruct) {
             }
             if (is_true(var_8730ee3e.zmenhancedstatejukeinit)) {
                 if (!isdefined(vehicle.t_sarah_foy_objective__indicator_)) {
-                    vehicle.t_sarah_foy_objective__indicator_.vehicle = [];
+                    vehicle.t_sarah_foy_objective__indicator_ = [];
                 }
                 if (is_true(vehicle.t_sarah_foy_objective__indicator_[seatindex])) {
                     return;

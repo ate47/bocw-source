@@ -107,7 +107,7 @@ function private postinit() {
     for (i = 0; i < script_exploders.size; i++) {
         exploder = script_exploders[i];
         ent = createexploder(exploder.script_fxid);
-        ent.v.ent = [];
+        ent.v = [];
         ent.v[#"origin"] = exploder.origin;
         ent.v[#"angles"] = exploder.angles;
         ent.v[#"delay"] = exploder.script_delay;
@@ -171,7 +171,7 @@ function private postinit() {
     reportexploderids();
     foreach (trig in trigger::get_all()) {
         if (isdefined(trig.script_prefab_exploder)) {
-            trig.script_exploder.trig = trig.script_prefab_exploder;
+            trig.script_exploder = trig.script_prefab_exploder;
         }
         if (isdefined(trig.script_exploder)) {
             level thread exploder_trigger(trig, trig.script_exploder);
@@ -322,7 +322,7 @@ function trail_effect() {
         playfxontag(level._effect[self.v[#"trailfx"]], self.model, self.v[#"trailfxtag"]);
     } else {
         temp_ent = spawn("script_model", self.model.origin);
-        temp_ent.targetname.temp_ent = "exploder_fx";
+        temp_ent.targetname = "exploder_fx";
         temp_ent setmodel(#"tag_origin");
         temp_ent linkto(self.model, self.v[#"trailfxtag"]);
         playfxontag(level._effect[self.v[#"trailfx"]], temp_ent, "tag_origin");

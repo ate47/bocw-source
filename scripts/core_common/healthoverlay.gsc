@@ -96,7 +96,7 @@ function player_health_regen_t7() {
     regenrate = 0.1;
     usetrueregen = 0;
     veryhurt = 0;
-    player.breathingstoptime.player = -10000;
+    player.breathingstoptime = -10000;
     thread player_breathing_sound(maxhealth * 0.35);
     thread player_heartbeat_sound(maxhealth * 0.35);
     lastsoundtime_recover = 0;
@@ -178,7 +178,7 @@ function player_health_regen_t7() {
             } else {
                 oldhealth = player.health;
                 hurttime = gettime();
-                player.breathingstoptime.player = hurttime + 6000;
+                player.breathingstoptime = hurttime + 6000;
             }
         }
     }
@@ -272,7 +272,7 @@ function private function_df99db2() {
 // Size: 0xa8
 function private function_f09367a0(var_dc77251f, regen_delay) {
     if (is_true(self.disable_health_regen_delay)) {
-        var_dc77251f.var_ba47a7a3.var_dc77251f = 1;
+        var_dc77251f.var_ba47a7a3 = 1;
     }
     if (!is_true(self.ignore_health_regen_delay) && var_dc77251f.time_now - var_dc77251f.var_ba47a7a3 < regen_delay) {
         return 0;
@@ -303,7 +303,7 @@ function private function_53964fa3(var_bc840360, var_dc77251f) {
         return 0;
     }
     if (!isdefined(var_dc77251f.time_now)) {
-        var_dc77251f.time_now.var_dc77251f = gettime();
+        var_dc77251f.time_now = gettime();
     }
     if (!isdefined(self.heal.var_fa57541f)) {
         self.heal.var_fa57541f = self.health;
@@ -385,7 +385,7 @@ function private heal(var_dc77251f) {
         return;
     }
     if (var_dc77251f.time_now - var_dc77251f.var_7cb44c56 > regen_delay) {
-        var_dc77251f.var_7cb44c56.var_dc77251f = var_dc77251f.time_now;
+        var_dc77251f.var_7cb44c56 = var_dc77251f.time_now;
         self notify(#"snd_breathing_better");
     }
     var_bc840360 = player function_f8139729();
@@ -403,7 +403,7 @@ function private heal(var_dc77251f) {
     if (regen_amount == 0) {
         return;
     }
-    var_dc77251f.var_ec8863bf.var_dc77251f = math::clamp(var_dc77251f.ratio + regen_amount, 0, 1);
+    var_dc77251f.var_ec8863bf = math::clamp(var_dc77251f.ratio + regen_amount, 0, 1);
     if (var_dc77251f.var_ec8863bf <= 0) {
         return;
     }
@@ -414,8 +414,8 @@ function private heal(var_dc77251f) {
     if (new_health < player.health) {
         new_health = player.health;
     }
-    player.health.player = int(math::clamp(floor(new_health), 0, max(self.maxhealth, self.var_66cb03ad)));
-    var_dc77251f.var_e65dca8d.var_dc77251f = new_health - player.health;
+    player.health = int(math::clamp(floor(new_health), 0, max(self.maxhealth, self.var_66cb03ad)));
+    var_dc77251f.var_e65dca8d = new_health - player.health;
     if (player.health >= var_bc840360 && var_dc77251f.old_health < var_bc840360) {
         player player::function_c6fe9951();
     }
@@ -445,7 +445,7 @@ function private check_max_health(var_dc77251f) {
             self notify(#"challenge_survived_from_death");
             self.atbrinkofdeath = undefined;
         }
-        var_dc77251f.old_health.var_dc77251f = player.health;
+        var_dc77251f.old_health = player.health;
         return 1;
     }
     return 0;
@@ -477,9 +477,9 @@ function player_health_regen() {
         return;
     }
     player = self;
-    player.var_4d9b2bc3.player = 1;
-    player.breathingstoptime.player = -10000;
-    player.var_dc77251f.player = {#var_d1e06a5f:gettime(), #var_7cb44c56:0, #old_health:player.health, #var_dae4d7ea:0, #var_215539de:0, #var_e65dca8d:0, #var_ec8863bf:0, #ratio:0, #time_elapsed:0, #time_now:0, #var_ba47a7a3:0};
+    player.var_4d9b2bc3 = 1;
+    player.breathingstoptime = -10000;
+    player.var_dc77251f = {#var_d1e06a5f:gettime(), #var_7cb44c56:0, #old_health:player.health, #var_dae4d7ea:0, #var_215539de:0, #var_e65dca8d:0, #var_ec8863bf:0, #ratio:0, #time_elapsed:0, #time_now:0, #var_ba47a7a3:0};
     player function_df115fb1();
 }
 
@@ -505,45 +505,45 @@ function private function_8f2722f6(now, var_677a3e37) {
     }
     var_dc77251f = player.var_dc77251f;
     if (player check_max_health(var_dc77251f)) {
-        var_dc77251f.var_e65dca8d.var_dc77251f = 0;
+        var_dc77251f.var_e65dca8d = 0;
         player function_2eee85c1();
         return;
     }
     if (!player function_df99db2()) {
-        var_dc77251f.var_e65dca8d.var_dc77251f = 0;
+        var_dc77251f.var_e65dca8d = 0;
         player function_2eee85c1();
         return;
     }
     var_bc840360 = player function_f8139729();
     if (var_bc840360 <= player.health) {
         player.health = var_bc840360;
-        var_dc77251f.var_e65dca8d.var_dc77251f = 0;
+        var_dc77251f.var_e65dca8d = 0;
         player function_2eee85c1();
         return;
     }
-    var_dc77251f.ratio.var_dc77251f = player.health / var_bc840360;
-    var_dc77251f.var_ec8863bf.var_dc77251f = var_dc77251f.ratio;
+    var_dc77251f.ratio = player.health / var_bc840360;
+    var_dc77251f.var_ec8863bf = var_dc77251f.ratio;
     player function_69e7b01c(player.health / player.maxhealth);
     var_dc77251f.time_now = now;
     if (player.health < var_dc77251f.old_health) {
-        player.breathingstoptime.player = now + 6000;
+        player.breathingstoptime = now + 6000;
         var_dc77251f.var_ba47a7a3 = now;
     } else {
-        var_dc77251f.time_elapsed.var_dc77251f = now - var_dc77251f.var_d1e06a5f;
+        var_dc77251f.time_elapsed = now - var_dc77251f.var_d1e06a5f;
         player heal(var_dc77251f);
         if (var_dc77251f.var_ec8863bf <= 0) {
-            player.var_4d9b2bc3.player = 0;
+            player.var_4d9b2bc3 = 0;
             return;
         }
     }
-    var_dc77251f.var_a83bd8fd.var_dc77251f = level.var_a7985066 / player.maxhealth;
-    var_dc77251f.var_dae4d7ea.var_dc77251f = level.var_9b350462 / player.maxhealth;
+    var_dc77251f.var_a83bd8fd = level.var_a7985066 / player.maxhealth;
+    var_dc77251f.var_dae4d7ea = level.var_9b350462 / player.maxhealth;
     if (!player.var_61e6c24d && var_dc77251f.var_ec8863bf <= var_dc77251f.var_a83bd8fd) {
         player function_c48cb1fc();
     } else if (player.var_61e6c24d && var_dc77251f.var_ec8863bf > var_dc77251f.var_dae4d7ea) {
         player function_df115fb1();
     }
-    var_dc77251f.old_health.var_dc77251f = player.health;
+    var_dc77251f.old_health = player.health;
 }
 
 // Namespace healthoverlay/healthoverlay

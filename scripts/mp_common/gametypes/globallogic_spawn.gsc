@@ -848,7 +848,7 @@ function spawnqueuedclientonteam(team) {
         break;
     }
     if (isdefined(player_to_spawn)) {
-        player_to_spawn.allowqueuespawn.player_to_spawn = 1;
+        player_to_spawn.allowqueuespawn = 1;
         player_to_spawn globallogic_ui::closemenus();
         player_to_spawn thread [[ level.spawnclient ]]();
     }

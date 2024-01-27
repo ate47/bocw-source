@@ -174,7 +174,7 @@ function function_b4b9937(localclientnum, newval, str_state) {
             self.var_ed9e4472 = self zbarriergetpiece(1);
             self.var_ed9e4472.var_fc558e74 = "magicbox";
             if (isdefined(var_e0f13b51)) {
-                var_e0f13b51.var_fc558e74.var_e0f13b51 = "magicbox";
+                var_e0f13b51.var_fc558e74 = "magicbox";
             }
             waitframe(1);
         }
@@ -245,7 +245,7 @@ function function_b5807489(localclientnum, *oldval, newval, *bnewent, *binitials
     if (isdefined(self)) {
         if (bwastimejump) {
             mdl_piece = self zbarriergetpiece(1);
-            mdl_piece.tag_origin.mdl_piece = mdl_piece gettagorigin("tag_origin");
+            mdl_piece.tag_origin = mdl_piece gettagorigin("tag_origin");
             self.var_788272f2 = util::playfxontag(fieldname, level._effect[#"fire_runner"], mdl_piece, "tag_origin");
         } else if (isdefined(self.var_788272f2)) {
             stopfx(fieldname, self.var_788272f2);

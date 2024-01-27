@@ -108,7 +108,7 @@ function state_death_update(params) {
     self endon(#"death");
     death_type = vehicle_ai::get_death_type(params);
     if (!isdefined(death_type)) {
-        params.death_type.params = "gibbed";
+        params.death_type = "gibbed";
         death_type = params.death_type;
     }
     if (death_type === "suicide_crash") {
@@ -412,11 +412,11 @@ function state_combat_update(*params) {
             }
             self.lock_evading = 0;
             if (is_true(self.settings.evade_enemies_locked_on_me)) {
-                self.lock_evading = self.lock_evading & self.locked_on;
+                self.lock_evading = self.lock_evading | self.locked_on;
             }
             if (is_true(self.settings.evade_enemies_locking_on_me)) {
-                self.lock_evading = self.lock_evading & self.locking_on;
-                self.lock_evading = self.lock_evading & self.locking_on_hacking;
+                self.lock_evading = self.lock_evading | self.locking_on;
+                self.lock_evading = self.lock_evading | self.locking_on_hacking;
             }
             if (is_true(self.inpain)) {
                 wait(0.1);
@@ -615,9 +615,9 @@ function getnextmoveposition_wander() {
         randomscore = randomfloatrange(0, 100);
         disttooriginscore = point.disttoorigin2d * 0.2;
         if (point.inclaimedlocation) {
-            point.score.point = point.score - 500;
+            point.score = point.score - 500;
         }
-        point.score.point = point.score + randomscore + disttooriginscore;
+        point.score = point.score + randomscore + disttooriginscore;
         if (point.score > best_score) {
             best_score = point.score;
             best_point = point;
@@ -660,7 +660,7 @@ function getnextmoveposition_evasive(client_flags) {
         if (point.inclaimedlocation) {
             /#
                 if (!isdefined(point._scoredebug)) {
-                    point._scoredebug.point = [];
+                    point._scoredebug = [];
                 }
                 if (!isdefined(point._scoredebug[#"inclaimedlocation"])) {
                     point._scoredebug[#"inclaimedlocation"] = spawnstruct();
@@ -668,7 +668,7 @@ function getnextmoveposition_evasive(client_flags) {
                 point._scoredebug[#"inclaimedlocation"].score = -500;
                 point._scoredebug[#"inclaimedlocation"].scorename = "<unknown string>";
             #/
-            point.score.point = point.score + -500;
+            point.score = point.score + -500;
         }
     }
     remaining_lock_threats_to_evaluate = 3;
@@ -684,7 +684,7 @@ function getnextmoveposition_evasive(client_flags) {
                     if (abs_directness < 0.2) {
                         /#
                             if (!isdefined(point._scoredebug)) {
-                                point._scoredebug.point = [];
+                                point._scoredebug = [];
                             }
                             if (!isdefined(point._scoredebug[#"evading_directness"])) {
                                 point._scoredebug[#"evading_directness"] = spawnstruct();
@@ -692,11 +692,11 @@ function getnextmoveposition_evasive(client_flags) {
                             point._scoredebug[#"evading_directness"].score = 200;
                             point._scoredebug[#"evading_directness"].scorename = "<unknown string>";
                         #/
-                        point.score.point = point.score + 200;
+                        point.score = point.score + 200;
                     } else if (abs_directness > (isdefined(self.settings.lock_evade_enemy_line_of_sight_directness) ? self.settings.lock_evade_enemy_line_of_sight_directness : 0.9)) {
                         /#
                             if (!isdefined(point._scoredebug)) {
-                                point._scoredebug.point = [];
+                                point._scoredebug = [];
                             }
                             if (!isdefined(point._scoredebug[#"evading_directness_line_of_sight"])) {
                                 point._scoredebug[#"evading_directness_line_of_sight"] = spawnstruct();
@@ -704,7 +704,7 @@ function getnextmoveposition_evasive(client_flags) {
                             point._scoredebug[#"evading_directness_line_of_sight"].score = -101;
                             point._scoredebug[#"evading_directness_line_of_sight"].scorename = "<unknown string>";
                         #/
-                        point.score.point = point.score + -101;
+                        point.score = point.score + -101;
                     }
                 }
                 remaining_flags_to_process = remaining_flags_to_process & ~client_flag;
@@ -717,7 +717,7 @@ function getnextmoveposition_evasive(client_flags) {
         if (point.directness > 0.5) {
             /#
                 if (!isdefined(point._scoredebug)) {
-                    point._scoredebug.point = [];
+                    point._scoredebug = [];
                 }
                 if (!isdefined(point._scoredebug[#"hash_3c71f4605004afec"])) {
                     point._scoredebug[#"hash_3c71f4605004afec"] = spawnstruct();
@@ -725,7 +725,7 @@ function getnextmoveposition_evasive(client_flags) {
                 point._scoredebug[#"hash_3c71f4605004afec"].score = 105;
                 point._scoredebug[#"hash_3c71f4605004afec"].scorename = "<unknown string>";
             #/
-            point.score.point = point.score + 105;
+            point.score = point.score + 105;
         }
     }
     best_point = undefined;
@@ -803,7 +803,7 @@ function getnextmoveposition_tactical(enemy) {
         }
         /#
             if (!isdefined(point._scoredebug)) {
-                point._scoredebug.point = [];
+                point._scoredebug = [];
             }
             if (!isdefined(point._scoredebug[#"directnessraw"])) {
                 point._scoredebug[#"directnessraw"] = spawnstruct();
@@ -811,10 +811,10 @@ function getnextmoveposition_tactical(enemy) {
             point._scoredebug[#"directnessraw"].score = point.directness;
             point._scoredebug[#"directnessraw"].scorename = "<unknown string>";
         #/
-        point.score.point = point.score + point.directness;
+        point.score = point.score + point.directness;
         /#
             if (!isdefined(point._scoredebug)) {
-                point._scoredebug.point = [];
+                point._scoredebug = [];
             }
             if (!isdefined(point._scoredebug[#"directness"])) {
                 point._scoredebug[#"directness"] = spawnstruct();
@@ -822,10 +822,10 @@ function getnextmoveposition_tactical(enemy) {
             point._scoredebug[#"directness"].score = directnessscore;
             point._scoredebug[#"directness"].scorename = "<unknown string>";
         #/
-        point.score.point = point.score + directnessscore;
+        point.score = point.score + directnessscore;
         /#
             if (!isdefined(point._scoredebug)) {
-                point._scoredebug.point = [];
+                point._scoredebug = [];
             }
             if (!isdefined(point._scoredebug[#"disttoorigin"])) {
                 point._scoredebug[#"disttoorigin"] = spawnstruct();
@@ -833,7 +833,7 @@ function getnextmoveposition_tactical(enemy) {
             point._scoredebug[#"disttoorigin"].score = mapfloat(0, prefereddistawayfromorigin, 0, 100, point.disttoorigin2d);
             point._scoredebug[#"disttoorigin"].scorename = "<unknown string>";
         #/
-        point.score.point = point.score + mapfloat(0, prefereddistawayfromorigin, 0, 100, point.disttoorigin2d);
+        point.score = point.score + mapfloat(0, prefereddistawayfromorigin, 0, 100, point.disttoorigin2d);
         targetdistscore = 0;
         if (point.targetdist < tooclosedist) {
             targetdistscore = targetdistscore - 200;
@@ -841,7 +841,7 @@ function getnextmoveposition_tactical(enemy) {
         if (point.inclaimedlocation) {
             /#
                 if (!isdefined(point._scoredebug)) {
-                    point._scoredebug.point = [];
+                    point._scoredebug = [];
                 }
                 if (!isdefined(point._scoredebug[#"inclaimedlocation"])) {
                     point._scoredebug[#"inclaimedlocation"] = spawnstruct();
@@ -849,11 +849,11 @@ function getnextmoveposition_tactical(enemy) {
                 point._scoredebug[#"inclaimedlocation"].score = -500;
                 point._scoredebug[#"inclaimedlocation"].scorename = "<unknown string>";
             #/
-            point.score.point = point.score + -500;
+            point.score = point.score + -500;
         }
         /#
             if (!isdefined(point._scoredebug)) {
-                point._scoredebug.point = [];
+                point._scoredebug = [];
             }
             if (!isdefined(point._scoredebug[#"disttotarget"])) {
                 point._scoredebug[#"disttotarget"] = spawnstruct();
@@ -861,10 +861,10 @@ function getnextmoveposition_tactical(enemy) {
             point._scoredebug[#"disttotarget"].score = targetdistscore;
             point._scoredebug[#"disttotarget"].scorename = "<unknown string>";
         #/
-        point.score.point = point.score + targetdistscore;
+        point.score = point.score + targetdistscore;
         /#
             if (!isdefined(point._scoredebug)) {
-                point._scoredebug.point = [];
+                point._scoredebug = [];
             }
             if (!isdefined(point._scoredebug[#"random"])) {
                 point._scoredebug[#"random"] = spawnstruct();
@@ -872,7 +872,7 @@ function getnextmoveposition_tactical(enemy) {
             point._scoredebug[#"random"].score = randomfloatrange(0, randomness);
             point._scoredebug[#"random"].scorename = "<unknown string>";
         #/
-        point.score.point = point.score + randomfloatrange(0, randomness);
+        point.score = point.score + randomfloatrange(0, randomness);
         if (point.score > best_score) {
             best_score = point.score;
             best_point = point;

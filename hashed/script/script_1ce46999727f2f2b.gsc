@@ -135,7 +135,7 @@ function function_4ae6488b() {
     var_9225fc4e = 0;
     var_fd869b30 = 0;
     var_cd4c12da = 0;
-    var_b02085c8 = 0;
+    samples = 0;
     var_e7a7a8d9 = self.doa.score.points;
     var_86cc83fe = self.doa.score.killstotal;
     while (1) {
@@ -161,7 +161,7 @@ function function_4ae6488b() {
         var_9225fc4e = var_9225fc4e + var_bf384b50[idx];
         idx = (idx + 1) % 60;
         var_18f7f8fe = (idx + 1) % 60;
-        var_b02085c8++;
+        samples++;
         if (var_6399b44b > self.doa.score.var_a4105a25) {
             self.doa.score.var_a4105a25 = var_6399b44b;
         }
@@ -172,8 +172,8 @@ function function_4ae6488b() {
         self.doa.score.var_8bd11e9c = var_9225fc4e;
         var_fd869b30 = var_fd869b30 + var_6399b44b;
         var_cd4c12da = var_cd4c12da + var_9225fc4e;
-        self.doa.score.var_14b9da0e = var_fd869b30 / var_b02085c8;
-        self.doa.score.var_2b624d62 = var_cd4c12da / var_b02085c8;
+        self.doa.score.var_14b9da0e = var_fd869b30 / samples;
+        self.doa.score.var_2b624d62 = var_cd4c12da / samples;
     }
 }
 

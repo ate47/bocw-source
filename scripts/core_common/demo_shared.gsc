@@ -67,8 +67,8 @@ function function_651a5f4(var_81538b15, einflictor) {
 // Params 5, eflags: 0x0
 // Checksum 0xe4736878, Offset: 0x300
 // Size: 0x7c
-function event_bookmark(var_65e76577, time, var_81538b15, scoreeventpriority, eventdata) {
-    bookmark = potm::function_5b1e9ed4(game.var_e9714926, var_65e76577, time, var_81538b15, undefined, scoreeventpriority, undefined, undefined, 0, eventdata);
+function event_bookmark(bookmarkname, time, var_81538b15, scoreeventpriority, eventdata) {
+    bookmark = potm::function_5b1e9ed4(game.var_e9714926, bookmarkname, time, var_81538b15, undefined, scoreeventpriority, undefined, undefined, 0, eventdata);
     add_bookmark(bookmark);
 }
 
@@ -76,8 +76,8 @@ function event_bookmark(var_65e76577, time, var_81538b15, scoreeventpriority, ev
 // Params 5, eflags: 0x0
 // Checksum 0x54f41ded, Offset: 0x388
 // Size: 0x74
-function bookmark(var_65e76577, time, var_81538b15, var_f28fb772, scoreeventpriority) {
-    bookmark = potm::function_5b1e9ed4(game.var_e9714926, var_65e76577, time, var_81538b15, var_f28fb772, scoreeventpriority);
+function bookmark(bookmarkname, time, var_81538b15, var_f28fb772, scoreeventpriority) {
+    bookmark = potm::function_5b1e9ed4(game.var_e9714926, bookmarkname, time, var_81538b15, var_f28fb772, scoreeventpriority);
     add_bookmark(bookmark);
 }
 
@@ -85,11 +85,11 @@ function bookmark(var_65e76577, time, var_81538b15, var_f28fb772, scoreeventprio
 // Params 3, eflags: 0x0
 // Checksum 0x712abe2d, Offset: 0x408
 // Size: 0xc4
-function function_c6ae5fd6(var_65e76577, winningteamindex, losingteamindex) {
-    bookmark = potm::function_5b1e9ed4(game.var_e9714926, var_65e76577, gettime(), undefined, undefined, 0);
+function function_c6ae5fd6(bookmarkname, winningteamindex, losingteamindex) {
+    bookmark = potm::function_5b1e9ed4(game.var_e9714926, bookmarkname, gettime(), undefined, undefined, 0);
     if (!isdefined(bookmark)) {
         /#
-            println("<unknown string>" + var_65e76577 + "<unknown string>");
+            println("<unknown string>" + bookmarkname + "<unknown string>");
         #/
         return;
     }
@@ -196,7 +196,7 @@ function watch_actor_bookmarks() {
                 bookmark(#"actor_kill", gettime(), player);
                 potm::bookmark(#"actor_kill", gettime(), player);
                 player reset_actor_bookmark_kill_times();
-                player.ignore_actor_kill_times.player = now + level.actor_bookmark_kill_times_delay;
+                player.ignore_actor_kill_times = now + level.actor_bookmark_kill_times_delay;
             }
         }
     }

@@ -278,9 +278,9 @@ function private function_96ef8382() {
             foreach (node in var_d6702980) {
                 dropped = function_9cc082d2(node.origin, 100);
                 if (isdefined(dropped[#"point"])) {
-                    node.origin.node = dropped[#"point"];
+                    node.origin = dropped[#"point"];
                 }
-                node.origin.node = getclosestpointonnavmesh(node.origin, 200, 50);
+                node.origin = getclosestpointonnavmesh(node.origin, 200, 50);
                 if (isdefined(node.origin)) {
                     nodes[nodes.size] = node;
                 }
@@ -295,8 +295,8 @@ function private function_96ef8382() {
                 }
             }
             volume.entrance_nodes = entrance_nodes;
-            volume.var_2dfb472b.volume = [];
-            volume.var_8b2a5592.volume = [];
+            volume.var_2dfb472b = [];
+            volume.var_8b2a5592 = [];
             foreach (node in nodes) {
                 floor = max(isdefined(int(node.floor)) ? int(node.floor) : 1, 0);
                 while (floor >= volume.var_2dfb472b.size) {
@@ -308,7 +308,7 @@ function private function_96ef8382() {
                 volume.var_8b2a5592[o] = function_a3627e9d(volume, o);
             }
             if (isdefined(volume.var_1fa7d27e)) {
-                volume.var_1fa7d27e.volume = int(volume.var_1fa7d27e);
+                volume.var_1fa7d27e = int(volume.var_1fa7d27e);
             }
             level.var_afa5478b[level.var_afa5478b.size] = volume;
             var_3380ebc8 = var_25d1f8b[i] getmaxs();
@@ -359,7 +359,7 @@ function private function_5aeeecac(entity) {
     var_d54999e4 = namespace_85745671::ee_head(entity, 0.8, forwardoffset);
     foreach (dynent in var_d54999e4) {
         if (!is_true(dynent.destroyed) && namespace_85745671::function_8f57dc52(dynent)) {
-            entity.var_4c85ebad.entity = 1;
+            entity.var_4c85ebad = 1;
             return;
         }
     }
@@ -370,7 +370,7 @@ function private function_5aeeecac(entity) {
 // Checksum 0xab992784, Offset: 0x22e0
 // Size: 0x4c
 function function_eea7a68a(entity) {
-    entity.enemy_override.entity = namespace_85745671::function_b67c088d();
+    entity.enemy_override = namespace_85745671::function_b67c088d();
     namespace_85745671::function_744beb04(entity);
     awareness::target_update(entity);
 }
@@ -478,20 +478,20 @@ function zombieshouldmelee(entity) {
         }
     }
     if (distancesquared(entity.origin, test_origin) < function_a3f6cdac(40)) {
-        entity.idletime.entity = gettime();
-        entity.var_1b250399.entity = entity.origin;
+        entity.idletime = gettime();
+        entity.var_1b250399 = entity.origin;
         return 1;
     }
     if (isdefined(enemy_vehicle)) {
-        entity.idletime.entity = gettime();
-        entity.var_1b250399.entity = entity.origin;
+        entity.idletime = gettime();
+        entity.var_1b250399 = entity.origin;
         return 1;
     }
     if (is_true(self.isonnavmesh) && !tracepassedonnavmesh(entity.origin, isdefined(enemy.last_valid_position) ? enemy.last_valid_position : enemy.origin, enemy getpathfindingradius())) {
         return 0;
     }
-    entity.idletime.entity = gettime();
-    entity.var_1b250399.entity = entity.origin;
+    entity.idletime = gettime();
+    entity.var_1b250399 = entity.origin;
     return 1;
 }
 
@@ -553,7 +553,7 @@ function private function_bfc25c77(entity) {
         return 0;
     }
     if (namespace_85745671::function_f4087909(startnode.var_597f08bf)) {
-        entity.var_597f08bf.entity = startnode.var_597f08bf;
+        entity.var_597f08bf = startnode.var_597f08bf;
         return 1;
     }
     return 0;
@@ -663,7 +663,7 @@ function function_5abf1ae8(*entity, *asmstate) {
 // Checksum 0x72de4ec1, Offset: 0x32c8
 // Size: 0x16
 function function_62fb515e(entity) {
-    entity.var_62b4721.entity = gettime();
+    entity.var_62b4721 = gettime();
 }
 
 // Namespace namespace_e292b080/namespace_e292b080
@@ -766,12 +766,12 @@ function function_c8caa34b(entity) {
 // Checksum 0x6fe8afd8, Offset: 0x3730
 // Size: 0xa2
 function private zombiemoveactionstart(entity) {
-    entity.movetime.entity = gettime();
-    entity.moveorigin.entity = entity.origin;
-    entity.var_13138acf.entity = 0;
-    entity.var_16b73748.entity = entity asmgetcurrentdeltaanimation();
+    entity.movetime = gettime();
+    entity.moveorigin = entity.origin;
+    entity.var_13138acf = 0;
+    entity.var_16b73748 = entity asmgetcurrentdeltaanimation();
     if (isdefined(entity.var_16b73748)) {
-        entity.var_cb2a43c0.entity = getmovedelta(entity.var_16b73748) / getanimlength(entity.var_16b73748) * 0.5;
+        entity.var_cb2a43c0 = getmovedelta(entity.var_16b73748) / getanimlength(entity.var_16b73748) * 0.5;
     }
     return 1;
 }
@@ -782,9 +782,9 @@ function private zombiemoveactionstart(entity) {
 // Size: 0x1aa
 function private zombiemoveactionupdate(entity) {
     if (!isdefined(entity.var_16b73748) || entity asmgetcurrentdeltaanimation() !== entity.var_16b73748) {
-        entity.var_16b73748.entity = entity asmgetcurrentdeltaanimation();
+        entity.var_16b73748 = entity asmgetcurrentdeltaanimation();
         if (isdefined(entity.var_16b73748)) {
-            entity.var_cb2a43c0.entity = getmovedelta(entity.var_16b73748) / getanimlength(entity.var_16b73748) * 0.5;
+            entity.var_cb2a43c0 = getmovedelta(entity.var_16b73748) / getanimlength(entity.var_16b73748) * 0.5;
         }
     }
     if (!is_true(entity.missinglegs) && gettime() - entity.movetime >= 1000 && isdefined(entity.var_cb2a43c0)) {
@@ -794,8 +794,8 @@ function private zombiemoveactionupdate(entity) {
                 entity thread [[ entity.cant_move_cb ]]();
             }
         }
-        entity.movetime.entity = gettime();
-        entity.moveorigin.entity = entity.origin;
+        entity.movetime = gettime();
+        entity.moveorigin = entity.origin;
     }
     return 1;
 }
@@ -822,10 +822,10 @@ function private function_7c8e35e8(entity, asmstate) {
         entity pathmode("dont move");
     }
     if (isdefined(entity.var_597f08bf)) {
-        entity.var_a476b329.entity = entity.var_597f08bf.angles;
+        entity.var_a476b329 = entity.var_597f08bf.angles;
     }
     if (!isdefined(self.traversemantlenode)) {
-        entity.var_df840b81.entity = 1;
+        entity.var_df840b81 = 1;
     } else {
         entity.var_df840b81 = undefined;
     }
@@ -846,9 +846,9 @@ function private function_fee7d867(entity, asmstate) {
     if (!namespace_85745671::function_f4087909(entity.var_597f08bf)) {
         return 4;
     }
-    var_1f2328d0 = entity function_4794d6a3();
-    if (isdefined(var_1f2328d0) && isdefined(var_1f2328d0.goalpos)) {
-        var_f940b57b = var_1f2328d0.goalpos;
+    goalinfo = entity function_4794d6a3();
+    if (isdefined(goalinfo) && isdefined(goalinfo.goalpos)) {
+        var_f940b57b = goalinfo.goalpos;
     }
     if (!isdefined(var_f940b57b) && isdefined(entity.favoriteenemy)) {
         var_f940b57b = entity.favoriteenemy.last_valid_position;
@@ -876,7 +876,7 @@ function private function_3f71b9c2(entity, *asmstate) {
     asmstate.var_a476b329 = undefined;
     asmstate callback::function_52ac9652(#"on_ai_melee", &damagedoor);
     if (asmstate asmgetstatus() == "asm_status_running") {
-        asmstate.var_fc781a6f.asmstate = 1;
+        asmstate.var_fc781a6f = 1;
     }
     return 4;
 }
@@ -898,7 +898,7 @@ function zombieknockdownactionstart(behaviortreeentity) {
 // Checksum 0x6ba46f1b, Offset: 0x3f88
 // Size: 0x74
 function private function_c8939973(behaviortreeentity) {
-    behaviortreeentity.knockdown.behaviortreeentity = 0;
+    behaviortreeentity.knockdown = 0;
     behaviortreeentity collidewithactors(1);
     behaviortreeentity clearpath();
     behaviortreeentity val::reset(#"zombie_knockdown", "blockingpain");
@@ -909,7 +909,7 @@ function private function_c8939973(behaviortreeentity) {
 // Checksum 0x9b2162a7, Offset: 0x4008
 // Size: 0x74
 function private zombiegetupactionterminate(behaviortreeentity) {
-    behaviortreeentity.knockdown.behaviortreeentity = 0;
+    behaviortreeentity.knockdown = 0;
     behaviortreeentity collidewithactors(1);
     behaviortreeentity clearpath();
     behaviortreeentity val::reset(#"zombie_knockdown", "blockingpain");
@@ -931,8 +931,8 @@ function private function_78106a79(entity, *asmstatename) {
 // Checksum 0xe61d0a0b, Offset: 0x40f0
 // Size: 0x2a
 function private function_f8250d5e(entity) {
-    entity.idletime.entity = gettime();
-    entity.var_1b250399.entity = entity.origin;
+    entity.idletime = gettime();
+    entity.var_1b250399 = entity.origin;
     return 1;
 }
 
@@ -951,8 +951,8 @@ function private function_860d5d8(entity) {
                 entity thread [[ entity.cant_move_cb ]]();
             }
         }
-        entity.idletime.entity = gettime();
-        entity.var_1b250399.entity = entity.origin;
+        entity.idletime = gettime();
+        entity.var_1b250399 = entity.origin;
     }
     return 1;
 }
@@ -1029,8 +1029,8 @@ function function_8aa7d53(entity, *mocompanim, *mocompanimblendouttime, *mocompa
         return;
     }
     var_ce870aa5 = 13 + mocompduration getpathfindingradius();
-    mocompduration.var_910c3b2c.mocompduration = mocompduration.traversemantlenode.origin - vectornormalize(forward) * var_ce870aa5;
-    mocompduration.var_910c3b2c.mocompduration = (mocompduration.var_910c3b2c[0], mocompduration.var_910c3b2c[1], mocompduration.traversalstartpos[2]);
+    mocompduration.var_910c3b2c = mocompduration.traversemantlenode.origin - vectornormalize(forward) * var_ce870aa5;
+    mocompduration.var_910c3b2c = (mocompduration.var_910c3b2c[0], mocompduration.var_910c3b2c[1], mocompduration.traversalstartpos[2]);
     mocompduration animmode("angle deltas noclip", 0);
     mocompduration orientmode("face angle", vectortoangles(forward)[1]);
     mocompduration forceteleport(mocompduration.var_910c3b2c, mocompduration.angles, 0);
@@ -1253,7 +1253,7 @@ function zombieupdategoal(goalpos) {
                                 queryresult = {#data:function_bc777234(seedposition, dir, 4, max(innerzigzagradius, outerzigzagradius / 2), outerzigzagradius, 36, self getpathfindingradius())};
                             }
                             positionquery_filter_inclaimedlocation(queryresult, self);
-                            queryresult.data.queryresult = function_7b8e26b3(queryresult.data, 0, "inClaimedLocation");
+                            queryresult.data = function_7b8e26b3(queryresult.data, 0, "inClaimedLocation");
                             if (queryresult.data.size > 0) {
                                 a_data = array::randomize(queryresult.data);
                                 for (i = 0; i < a_data.size; i++) {

@@ -404,13 +404,13 @@ function draw_color_friendlies() {
             }
             for (p = 0; p < colored_friendlies[colors[i]]; p++) {
                 overlay = newdebughudelem();
-                overlay.x.overlay = 15 + 25 * p;
+                overlay.x = 15 + 25 * p;
                 overlay.y = y;
                 overlay setshader(#"white", 16, 16);
-                overlay.alignx.overlay = "<unknown string>";
-                overlay.aligny.overlay = "<unknown string>";
-                overlay.alpha.overlay = 1;
-                overlay.color.overlay = rgb[colors[i]];
+                overlay.alignx = "<unknown string>";
+                overlay.aligny = "<unknown string>";
+                overlay.alpha = 1;
+                overlay.color = rgb[colors[i]];
                 level.debug_color_huds[level.debug_color_huds.size] = overlay;
             }
             y = y + 25;
@@ -750,15 +750,15 @@ function prioritize_colorcoded_nodes(team, colorcode, color) {
         return;
     }
     ent = spawnstruct();
-    ent.path_nodes.ent = [];
-    ent.cover_nodes_first.ent = [];
-    ent.cover_nodes_last.ent = [];
+    ent.path_nodes = [];
+    ent.cover_nodes_first = [];
+    ent.cover_nodes_last = [];
     lastcolorforced_exists = isdefined(level.lastcolorforced[team][color]);
     for (i = 0; i < nodes.size; i++) {
         node = nodes[i];
         ent [[ level.color_node_type_function[node.type][lastcolorforced_exists] ]](node, level.lastcolorforced[team][color], team);
     }
-    ent.cover_nodes_first.ent = array::randomize(ent.cover_nodes_first);
+    ent.cover_nodes_first = array::randomize(ent.cover_nodes_first);
     nodes = ent.cover_nodes_first;
     for (i = 0; i < ent.cover_nodes_last.size; i++) {
         nodes[nodes.size] = ent.cover_nodes_last[i];
@@ -881,7 +881,7 @@ function player_color_node() {
         } else {
             olduser = self.node.color_user;
             playernode = self.node;
-            playernode.color_user.playernode = self;
+            playernode.color_user = self;
             for (;;) {
                 for (;;) {
                     if (!isdefined(self.node)) {
@@ -1098,7 +1098,7 @@ function private function_a328c372() {
             self.color_node.color_user = undefined;
         }
         self.color_node = node;
-        node.color_user.node = self;
+        node.color_user = self;
         self ai_sets_goal(node);
     }
     if (!isdefined(node)) {
@@ -1238,7 +1238,7 @@ function reached_node_but_could_not_claim_it(node) {
 // Checksum 0xccc757ff, Offset: 0x43a8
 // Size: 0x76
 function decrementcolorusers(node) {
-    node.color_user.node = self;
+    node.color_user = self;
     self.color_node = node;
     /#
         self.color_node_debug_val = 1;
@@ -1394,7 +1394,7 @@ function colornode_spawn_reinforcement(classname, fromcolor) {
                     level flag::set("friendly_spawner_locked");
                 }
                 spawner = get_color_spawner(classname, fromcolor);
-                spawner.count.spawner = 1;
+                spawner.count = 1;
                 level.friendly_spawners_types[friendly_spawners_type] = level.friendly_spawners_types[friendly_spawners_type] - 1;
                 spawner util::script_wait();
                 spawn = spawner spawner::spawn();
@@ -1606,9 +1606,9 @@ function get_color_spawner(classname, fromcolor) {
         }
     }
     if (isdefined(fromcolor) && specificfromcolor) {
-        spawner.origin.spawner = level.respawn_spawners_specific[fromcolor].origin;
+        spawner.origin = level.respawn_spawners_specific[fromcolor].origin;
     } else {
-        spawner.origin.spawner = level.respawn_spawner.origin;
+        spawner.origin = level.respawn_spawner.origin;
     }
     return spawner;
 }

@@ -38,8 +38,8 @@ function init() {
     level.doa.var_581c8f9a = [];
     foreach (var_46058269 in var_581c8f9a) {
         var_f784a248 = spawnstruct();
-        var_f784a248.name.var_f784a248 = var_46058269.script_noteworthy;
-        var_f784a248.id.var_f784a248 = int(var_46058269.script_int);
+        var_f784a248.name = var_46058269.script_noteworthy;
+        var_f784a248.id = int(var_46058269.script_int);
         level.doa.var_581c8f9a[level.doa.var_581c8f9a.size] = var_f784a248;
     }
     function_32d5e898();

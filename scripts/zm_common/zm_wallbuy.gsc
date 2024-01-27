@@ -204,7 +204,7 @@ function function_26b21477(var_727813d6, var_3d2cce9) {
         fx_pos = chalk_model getcentroid();
         playfx(#"hash_3d4331a432da7e8", fx_pos, anglestoforward(var_727813d6.angles), (0, 0, 1));
         var_727813d6.trigger.chalk_model = chalk_model;
-        chalk_model.targetname.chalk_model = "chalk_model";
+        chalk_model.targetname = "chalk_model";
         item_name = level.var_29d88fe5[var_727813d6.trigger.weapon.name][var_3d2cce9];
         var_727813d6.trigger.item_name = item_name;
         var_727813d6.trigger.rarity = var_3d2cce9;
@@ -349,27 +349,27 @@ function function_a1a1d2(weapon_name, var_e9040287, item_name, chalk_model, inde
     v_center = chalk_model getcentroid();
     var_8bda2b44 = v_center[1] - chalk_model.origin[1];
     trigger = self namespace_8b6a9d79::function_22e120bc(self, &function_ab0340bb, hint, weapon.displayname, 25, var_7f9f4eb, 32, (0, var_8bda2b44, 0), cost);
-    trigger.angles.trigger = chalk_model.angles + vectorscale((0, 1, 0), 90);
+    trigger.angles = chalk_model.angles + vectorscale((0, 1, 0), 90);
     v_forward = anglestoforward(trigger.angles) * 10;
-    trigger.origin.trigger = trigger.origin - v_forward;
+    trigger.origin = trigger.origin - v_forward;
     trigger.weapon = weapon;
     trigger.cost = cost;
-    trigger.var_9f32a5f4.trigger = 1;
+    trigger.var_9f32a5f4 = 1;
     trigger.item_name = item_name;
     trigger.rarity = var_13f9dee7;
-    chalk_model.targetname.chalk_model = "chalk_model";
+    chalk_model.targetname = "chalk_model";
     trigger.chalk_model = chalk_model;
-    trigger.targetname.trigger = "trigger_wallbuy";
+    trigger.targetname = "trigger_wallbuy";
     tempmodel = var_e9040287 namespace_8b6a9d79::function_f3d93ee9(var_e9040287, weapon.worldmodel);
     tempmodel useweaponmodel(weapon);
     if (isdefined(var_e9040287.var_3474efbf)) {
         var_e27c9160 = tempmodel worldtolocalcoords(tempmodel.origin);
         var_e27c9160 = (var_e27c9160[0] + var_492e21a0, var_e27c9160[1], var_e27c9160[2] + var_58bd64f1);
-        tempmodel.origin.tempmodel = tempmodel localtoworldcoords(var_e27c9160);
+        tempmodel.origin = tempmodel localtoworldcoords(var_e27c9160);
     }
     tempmodel hide();
-    tempmodel.targetname.tempmodel = "wallbuy_weapon" + index;
-    trigger.target.trigger = tempmodel.targetname;
+    tempmodel.targetname = "wallbuy_weapon" + index;
+    trigger.target = tempmodel.targetname;
     trigger thread function_7a2524b3();
     trigger thread weapon_spawn_think();
 }
@@ -389,7 +389,7 @@ function function_7a2524b3() {
                 }
                 continue;
             } else {
-                player.var_ff409c52.player = self;
+                player.var_ff409c52 = self;
                 if (player zm_score::can_player_purchase(self.cost)) {
                     player globallogic::function_d96c031e();
                 } else if (self zm_utility::function_4f593819(player)) {
@@ -677,7 +677,7 @@ function init_spawnable_weapon_upgrade(s_destination) {
         match_string_plus_space = " " + match_string;
         for (i = 0; i < spawnable_weapon_spawns.size; i++) {
             spawnable_weapon = spawnable_weapon_spawns[i];
-            spawnable_weapon.weapon.spawnable_weapon = getweapon(spawnable_weapon.zombie_weapon_upgrade);
+            spawnable_weapon.weapon = getweapon(spawnable_weapon.zombie_weapon_upgrade);
             weapon_group = util::getweaponclass(spawnable_weapon);
             if (weapon_group == #"weapon_pistol" && !zm_custom::function_901b751c(#"zmweaponspistol") || weapon_group == #"weapon_cqb" && !zm_custom::function_901b751c(#"zmweaponsshotgun") || weapon_group == #"weapon_smg" && !zm_custom::function_901b751c(#"zmweaponssmg") || weapon_group == #"weapon_assault" && !zm_custom::function_901b751c(#"zmweaponsar") || weapon_group == #"weapon_tactical" && !zm_custom::function_901b751c(#"zmweaponstr") || weapon_group == #"weapon_lmg" && !zm_custom::function_901b751c(#"zmweaponslmg") || weapon_group == #"weapon_sniper" && !zm_custom::function_901b751c(#"zmweaponssniper") || weapon_group == #"weapon_knife" && !zm_custom::function_901b751c(#"zmweaponsknife")) {
                 continue;
@@ -717,8 +717,8 @@ function init_spawnable_weapon_upgrade(s_destination) {
                 var_887e6ebe = 32;
                 var_b0e9dcba = 120;
                 if (is_true(level.var_a8f3193b)) {
-                    tempmodel.origin.tempmodel = spawn_list[i].origin;
-                    tempmodel.angles.tempmodel = spawn_list[i].angles;
+                    tempmodel.origin = spawn_list[i].origin;
+                    tempmodel.angles = spawn_list[i].angles;
                     mins = undefined;
                     maxs = undefined;
                     absmins = undefined;
@@ -738,24 +738,24 @@ function init_spawnable_weapon_upgrade(s_destination) {
                 zm_unitrigger::function_47625e58(unitrigger_stub, spawn_list[i].origin - anglestoright(spawn_list[i].angles) * var_887e6ebe * 0.2, spawn_list[i].angles);
                 zm_unitrigger::function_c4a5fdf5(unitrigger_stub, 1);
                 if (is_true(spawn_list[i].require_look_from)) {
-                    unitrigger_stub.require_look_from.unitrigger_stub = 1;
+                    unitrigger_stub.require_look_from = 1;
                 }
-                unitrigger_stub.target.unitrigger_stub = spawn_list[i].target;
-                unitrigger_stub.targetname.unitrigger_stub = spawn_list[i].targetname;
+                unitrigger_stub.target = spawn_list[i].target;
+                unitrigger_stub.targetname = spawn_list[i].targetname;
                 zm_unitrigger::function_c9e3607c(unitrigger_stub, "HINT_WEAPON", spawn_list[i].weapon);
                 zm_unitrigger::unitrigger_set_hint_string(unitrigger_stub, zm_weapons::get_weapon_hint(spawn_list[i].weapon), zm_weapons::get_weapon_cost(spawn_list[i].weapon));
                 if (is_true(spawn_list[i].require_look_from)) {
-                    unitrigger_stub.require_look_from.unitrigger_stub = 1;
+                    unitrigger_stub.require_look_from = 1;
                 }
                 if (isdefined(spawn_list[i].script_string) && is_true(int(spawn_list[i].script_string))) {
                     zm_unitrigger::function_89380dda(unitrigger_stub, 0);
                 } else {
                     zm_unitrigger::function_89380dda(unitrigger_stub, 1);
                 }
-                unitrigger_stub.target.unitrigger_stub = spawn_list[i].target;
-                unitrigger_stub.targetname.unitrigger_stub = spawn_list[i].targetname;
-                unitrigger_stub.weapon.unitrigger_stub = spawn_list[i].weapon;
-                unitrigger_stub.var_9d17fab9.unitrigger_stub = spawn_list[i].zombie_weapon_upgrade + "_item_sr";
+                unitrigger_stub.target = spawn_list[i].target;
+                unitrigger_stub.targetname = spawn_list[i].targetname;
+                unitrigger_stub.weapon = spawn_list[i].weapon;
+                unitrigger_stub.var_9d17fab9 = spawn_list[i].zombie_weapon_upgrade + "_item_sr";
                 unitrigger_stub.clientfieldname = clientfieldname;
                 if (unitrigger_stub.weapon.weapclass != "melee" && unitrigger_stub.weapon.weapclass != "grenade") {
                     zm_unitrigger::function_2547d31f(unitrigger_stub, &wall_weapon_update_prompt);
@@ -795,11 +795,11 @@ function function_c970de50(trigger, parent) {
         trigger enablelinkto();
         trigger linkto(parent, "", self worldtolocalcoords(trigger.origin), (0, 0, 0));
     }
-    trigger.weapon.trigger = getweapon(trigger.zombie_weapon_upgrade);
+    trigger.weapon = getweapon(trigger.zombie_weapon_upgrade);
     trigger setcursorhint("HINT_WEAPON_3D", trigger.weapon);
-    trigger.cost.trigger = zm_weapons::get_weapon_cost(trigger.weapon);
-    trigger.hint_string.trigger = zm_weapons::get_weapon_hint(trigger.weapon);
-    trigger.hint_parm1.trigger = trigger.cost;
+    trigger.cost = zm_weapons::get_weapon_cost(trigger.weapon);
+    trigger.hint_string = zm_weapons::get_weapon_hint(trigger.weapon);
+    trigger.hint_parm1 = trigger.cost;
     trigger sethintstring(trigger.hint_string);
     self.buyable_weapon = trigger;
     level._spawned_wallbuys[level._spawned_wallbuys.size] = trigger;
@@ -853,10 +853,10 @@ function add_dynamic_wallbuy(weapon, wallbuy, pristine) {
     clientfieldname = spawned_wallbuy.clientfieldname;
     model = weapon.worldmodel;
     unitrigger_stub = spawnstruct();
-    unitrigger_stub.origin.unitrigger_stub = target_struct.origin;
-    unitrigger_stub.angles.unitrigger_stub = target_struct.angles;
-    wallmodel.origin.wallmodel = target_struct.origin;
-    wallmodel.angles.wallmodel = target_struct.angles;
+    unitrigger_stub.origin = target_struct.origin;
+    unitrigger_stub.angles = target_struct.angles;
+    wallmodel.origin = target_struct.origin;
+    wallmodel.angles = target_struct.angles;
     mins = undefined;
     maxs = undefined;
     absmins = undefined;
@@ -868,36 +868,36 @@ function add_dynamic_wallbuy(weapon, wallbuy, pristine) {
     absmins = wallmodel getabsmins();
     absmaxs = wallmodel getabsmaxs();
     bounds = absmaxs - absmins;
-    unitrigger_stub.script_length.unitrigger_stub = bounds[0] * 0.25;
-    unitrigger_stub.script_width.unitrigger_stub = bounds[1];
-    unitrigger_stub.script_height.unitrigger_stub = bounds[2];
-    unitrigger_stub.origin.unitrigger_stub = unitrigger_stub.origin - anglestoright(unitrigger_stub.angles) * unitrigger_stub.script_length * 0.4;
-    unitrigger_stub.target.unitrigger_stub = spawned_wallbuy.target;
-    unitrigger_stub.targetname.unitrigger_stub = "weapon_upgrade";
-    unitrigger_stub.cursor_hint.unitrigger_stub = "HINT_NOICON";
-    unitrigger_stub.first_time_triggered.unitrigger_stub = !pristine;
+    unitrigger_stub.script_length = bounds[0] * 0.25;
+    unitrigger_stub.script_width = bounds[1];
+    unitrigger_stub.script_height = bounds[2];
+    unitrigger_stub.origin = unitrigger_stub.origin - anglestoright(unitrigger_stub.angles) * unitrigger_stub.script_length * 0.4;
+    unitrigger_stub.target = spawned_wallbuy.target;
+    unitrigger_stub.targetname = "weapon_upgrade";
+    unitrigger_stub.cursor_hint = "HINT_NOICON";
+    unitrigger_stub.first_time_triggered = !pristine;
     if (!weapon.ismeleeweapon) {
         if (pristine || zm_loadout::is_placeable_mine(weapon)) {
-            unitrigger_stub.hint_string.unitrigger_stub = zm_weapons::get_weapon_hint(weapon);
+            unitrigger_stub.hint_string = zm_weapons::get_weapon_hint(weapon);
         } else {
-            unitrigger_stub.hint_string.unitrigger_stub = get_weapon_hint_ammo();
+            unitrigger_stub.hint_string = get_weapon_hint_ammo();
         }
-        unitrigger_stub.cost.unitrigger_stub = zm_weapons::get_weapon_cost(weapon);
+        unitrigger_stub.cost = zm_weapons::get_weapon_cost(weapon);
     }
     unitrigger_stub.weapon = weapon;
     unitrigger_stub.weapon_upgrade = weapon;
-    unitrigger_stub.script_unitrigger_type.unitrigger_stub = "unitrigger_box_use";
-    unitrigger_stub.require_look_at.unitrigger_stub = 1;
+    unitrigger_stub.script_unitrigger_type = "unitrigger_box_use";
+    unitrigger_stub.require_look_at = 1;
     unitrigger_stub.clientfieldname = clientfieldname;
     zm_unitrigger::unitrigger_force_per_player_triggers(unitrigger_stub, 1);
     if (weapon.ismeleeweapon) {
         if (weapon == "tazer_knuckles" && isdefined(level.taser_trig_adjustment)) {
-            unitrigger_stub.origin.unitrigger_stub = unitrigger_stub.origin + level.taser_trig_adjustment;
+            unitrigger_stub.origin = unitrigger_stub.origin + level.taser_trig_adjustment;
         }
         zm_melee_weapon::add_stub(unitrigger_stub, weapon);
         zm_unitrigger::register_static_unitrigger(unitrigger_stub, &zm_melee_weapon::melee_weapon_think);
     } else {
-        unitrigger_stub.prompt_and_visibility_func.unitrigger_stub = &wall_weapon_update_prompt;
+        unitrigger_stub.prompt_and_visibility_func = &wall_weapon_update_prompt;
         zm_unitrigger::register_static_unitrigger(unitrigger_stub, &weapon_spawn_think);
     }
     spawned_wallbuy.trigger_stub = unitrigger_stub;
@@ -1037,13 +1037,13 @@ function reset_wallbuys() {
             stub = level._unitriggers.trigger_stubs[i];
             tn = stub.targetname;
             if (tn == "weapon_upgrade" || tn == "bowie_upgrade" || tn == "sickle_upgrade" || tn == "tazer_upgrade" || tn == "claymore_purchase") {
-                stub.first_time_triggered.stub = 0;
+                stub.first_time_triggered = 0;
                 if (isdefined(stub.clientfieldname)) {
                     level clientfield::set(stub.clientfieldname, 0);
                 }
                 if (tn == "weapon_upgrade") {
-                    stub.hint_string.stub = zm_weapons::get_weapon_hint(stub.weapon);
-                    stub.cost.stub = zm_weapons::get_weapon_cost(stub.weapon);
+                    stub.hint_string = zm_weapons::get_weapon_hint(stub.weapon);
+                    stub.cost = zm_weapons::get_weapon_cost(stub.weapon);
                 }
             }
         }
@@ -1208,8 +1208,8 @@ function weapon_spawn_think() {
                             if (isdefined(point.var_a6762160.var_a53e9db0)) {
                                 weapon = namespace_65181344::function_67456242(point.var_a6762160);
                                 dropitem = item_drop::drop_item(0, weapon, 1, weapon.maxammo, point.id, self.origin, self.angles, 1);
-                                dropitem.wallbuy_weapon.dropitem = 1;
-                                dropitem.hidetime.dropitem = 1;
+                                dropitem.wallbuy_weapon = 1;
+                                dropitem.hidetime = 1;
                                 dropitem hide();
                                 player zm_weapons::function_98776900(dropitem, 0, 0);
                             } else {
@@ -1225,7 +1225,7 @@ function weapon_spawn_think() {
                         player zm_stats::increment_player_stat("wallbuy_weapons_purchased");
                         player zm_stats::function_8f10788e("boas_wallbuy_weapons_purchased");
                         bb::logpurchaseevent(player, self, cost, weapon.name, player zm_weapons::has_upgrade(weapon), "_weapon", "_purchase");
-                        namespace_341c57b3::function_18135b72(#"hash_44873692d238cf3b", {#purchaser:player, #rarity:rarity, #weapon:weapon});
+                        telemetry::function_18135b72(#"hash_44873692d238cf3b", {#purchaser:player, #rarity:rarity, #weapon:weapon});
                         weaponindex = undefined;
                         if (isdefined(weaponindex)) {
                             weaponindex = matchrecordgetweaponindex(weapon);

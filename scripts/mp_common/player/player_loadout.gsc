@@ -435,7 +435,7 @@ function clear_killstreaks() {
             player function_b181bcbd(i);
         }
     }
-    player.killstreak.player = [];
+    player.killstreak = [];
 }
 
 // Namespace loadout/player_loadout
@@ -537,7 +537,7 @@ function give_killstreak(var_523d9b33, &var_58335e4f) {
                     }
                 }
                 sortdata = spawnstruct();
-                sortdata.cost.sortdata = self function_dceb5542(level.killstreaks[killstreaktype].itemindex);
+                sortdata.cost = self function_dceb5542(level.killstreaks[killstreaktype].itemindex);
                 sortdata.weapon = weapon;
                 sortindex = 0;
                 for (sortindex = 0; sortindex < var_58335e4f.size; sortindex++) {
@@ -639,7 +639,7 @@ function give_talents(var_b280cc48 = 1) {
     self.var_c8836f02 = self function_fd62a2aa(self.class_num);
     foreach (var_ebdddedf in self.var_c8836f02) {
         if (var_ebdddedf.namehash == #"hash_6be738527a4213aa" && level.hardcoremode) {
-            var_ebdddedf.namehash.var_ebdddedf = #"hash_5c9c79c25b74b7bb";
+            var_ebdddedf.namehash = #"hash_5c9c79c25b74b7bb";
         }
         var_b3ed76f5 = function_c84c77d8(var_ebdddedf.loadoutslot);
         if (var_b3ed76f5 && !self function_6c32d092(var_ebdddedf.namehash)) {
@@ -881,8 +881,8 @@ function private function_d9035e42(weapon) {
     itemindex = getbaseweaponitemindex(weapon);
     iteminfo = getunlockableiteminfofromindex(itemindex, 1);
     if (iteminfo.loadoutslotname === "primary") {
-        self.playerloadoutrestrictions.var_42aa9c3--;
-        if (self.playerloadoutrestrictions.var_42aa9c3 < 0) {
+        self.playerloadoutrestrictions.numprimaryweapons--;
+        if (self.playerloadoutrestrictions.numprimaryweapons < 0) {
             return 0;
         }
     } else if (iteminfo.loadoutslotname === "secondary") {
@@ -1611,7 +1611,7 @@ function cac_modified_damage(victim, attacker, damage, mod, weapon, inflictor, h
         if (getdvarint(#"scr_perkdebug", 0)) {
             debug = 1;
             if (!isdefined(attacker.name)) {
-                attacker.name.attacker = "<unknown string>";
+                attacker.name = "<unknown string>";
             }
         }
     #/
@@ -1658,12 +1658,12 @@ function cac_modified_damage(victim, attacker, damage, mod, weapon, inflictor, h
         }
     }
     /#
-        victim.cac_debug_damage_type.victim = tolower(mod);
+        victim.cac_debug_damage_type = tolower(mod);
         victim.cac_debug_original_damage = damage;
         victim.cac_debug_final_damage = final_damage;
-        victim.cac_debug_location.victim = tolower(hitloc);
-        victim.cac_debug_weapon.victim = weapon.displayname;
-        victim.cac_debug_range.victim = int(distance(attacker.origin, victim.origin));
+        victim.cac_debug_location = tolower(hitloc);
+        victim.cac_debug_weapon = weapon.displayname;
+        victim.cac_debug_range = int(distance(attacker.origin, victim.origin));
         if (debug) {
             println("<unknown string>" + final_damage / damage + "<unknown string>" + damage + "<unknown string>" + final_damage);
         }
@@ -1720,7 +1720,7 @@ function private function_c57586b8() {
 function private function_8aa3ff4e() {
     wildcards = self function_6f2c0492(self.class_num);
     self.playerloadoutrestrictions = spawnstruct();
-    self.playerloadoutrestrictions.var_42aa9c3 = isdefined(level.playerloadoutrestrictions[0].var_42aa9c3) ? level.playerloadoutrestrictions[0].var_42aa9c3 : 0;
+    self.playerloadoutrestrictions.numprimaryweapons = isdefined(level.playerloadoutrestrictions[0].numprimaryweapons) ? level.playerloadoutrestrictions[0].numprimaryweapons : 0;
     self.playerloadoutrestrictions.var_355c3581 = isdefined(level.playerloadoutrestrictions[0].var_355c3581) ? level.playerloadoutrestrictions[0].var_355c3581 : 0;
     self.playerloadoutrestrictions.var_882b6b71 = isdefined(level.playerloadoutrestrictions[0].var_882b6b71) ? level.playerloadoutrestrictions[0].var_882b6b71 : 0;
     self.playerloadoutrestrictions.var_ab1984e9 = isdefined(level.playerloadoutrestrictions[0].var_ab1984e9) ? level.playerloadoutrestrictions[0].var_ab1984e9 : 0;
@@ -1733,7 +1733,7 @@ function private function_8aa3ff4e() {
         foreach (var_9bb0ceab in wildcards) {
             var_47dbd1c3 = level.playerloadoutrestrictions[var_9bb0ceab];
             if (isdefined(var_47dbd1c3)) {
-                self.playerloadoutrestrictions.var_42aa9c3 = self.playerloadoutrestrictions.var_42aa9c3 + (isdefined(var_47dbd1c3.var_42aa9c3) ? var_47dbd1c3.var_42aa9c3 : 0);
+                self.playerloadoutrestrictions.numprimaryweapons = self.playerloadoutrestrictions.numprimaryweapons + (isdefined(var_47dbd1c3.numprimaryweapons) ? var_47dbd1c3.numprimaryweapons : 0);
                 self.playerloadoutrestrictions.var_355c3581 = self.playerloadoutrestrictions.var_355c3581 + (isdefined(var_47dbd1c3.var_355c3581) ? var_47dbd1c3.var_355c3581 : 0);
                 self.playerloadoutrestrictions.var_882b6b71 = self.playerloadoutrestrictions.var_882b6b71 + (isdefined(var_47dbd1c3.var_882b6b71) ? var_47dbd1c3.var_882b6b71 : 0);
                 self.playerloadoutrestrictions.var_ab1984e9 = self.playerloadoutrestrictions.var_ab1984e9 + (isdefined(var_47dbd1c3.var_ab1984e9) ? var_47dbd1c3.var_ab1984e9 : 0);

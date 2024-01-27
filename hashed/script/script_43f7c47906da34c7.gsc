@@ -112,7 +112,7 @@ function function_48a0864e(einflictor, victim, *idamage, weapon) {
         if (!iskillstreakweapon) {
             attacker.var_a53bf240++;
             if (attacker.var_a53bf240 >= level.var_9dc10d2f && attacker.var_2a9b3d6d !== 1) {
-                attacker.var_2a9b3d6d.attacker = 1;
+                attacker.var_2a9b3d6d = 1;
                 attacker playlocalsound("mpl_d_hard_full_meter");
             }
         }
@@ -171,8 +171,8 @@ function function_98abc2e2() {
         return;
     }
     var_4c4a5215 = spawnstruct();
-    var_4c4a5215.player.var_4c4a5215 = self;
-    var_4c4a5215.var_c3317960.var_4c4a5215 = 0;
+    var_4c4a5215.player = self;
+    var_4c4a5215.var_c3317960 = 0;
     gibserverutils::function_b14ffba8(var_4c4a5215);
     gibserverutils::playergiblegsvel(var_4c4a5215);
     gibserverutils::playergibleftarmvel(var_4c4a5215);

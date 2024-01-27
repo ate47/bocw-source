@@ -39,7 +39,7 @@ function getparent() {
 // Size: 0x3c
 function addchild(element) {
     /#
-        element.index.element = self.children.size;
+        element.index = self.children.size;
         self.children[self.children.size] = element;
     #/
 }
@@ -313,18 +313,18 @@ function updatebarscale(barfrac, rateofchange) {
 function function_665f547d(font, fontscale) {
     /#
         fontelem = newdebughudelem(self);
-        fontelem.elemtype.fontelem = "<unknown string>";
+        fontelem.elemtype = "<unknown string>";
         fontelem.font = font;
         fontelem.fontscale = fontscale;
-        fontelem.x.fontelem = 0;
-        fontelem.y.fontelem = 0;
-        fontelem.width.fontelem = 0;
-        fontelem.height.fontelem = int(level.fontheight * fontscale);
-        fontelem.xoffset.fontelem = 0;
-        fontelem.yoffset.fontelem = 0;
-        fontelem.children.fontelem = [];
+        fontelem.x = 0;
+        fontelem.y = 0;
+        fontelem.width = 0;
+        fontelem.height = int(level.fontheight * fontscale);
+        fontelem.xoffset = 0;
+        fontelem.yoffset = 0;
+        fontelem.children = [];
         fontelem setparent(level.uiparent);
-        fontelem.hidden.fontelem = 0;
+        fontelem.hidden = 0;
         return fontelem;
     #/
 }
@@ -336,18 +336,18 @@ function function_665f547d(font, fontscale) {
 function function_f5a689d(font, fontscale) {
     /#
         fontelem = newdebughudelem();
-        fontelem.elemtype.fontelem = "<unknown string>";
+        fontelem.elemtype = "<unknown string>";
         fontelem.font = font;
         fontelem.fontscale = fontscale;
-        fontelem.x.fontelem = 0;
-        fontelem.y.fontelem = 0;
-        fontelem.width.fontelem = 0;
-        fontelem.height.fontelem = int(level.fontheight * fontscale);
-        fontelem.xoffset.fontelem = 0;
-        fontelem.yoffset.fontelem = 0;
-        fontelem.children.fontelem = [];
+        fontelem.x = 0;
+        fontelem.y = 0;
+        fontelem.width = 0;
+        fontelem.height = int(level.fontheight * fontscale);
+        fontelem.xoffset = 0;
+        fontelem.yoffset = 0;
+        fontelem.children = [];
         fontelem setparent(level.uiparent);
-        fontelem.hidden.fontelem = 0;
+        fontelem.hidden = 0;
         return fontelem;
     #/
 }
@@ -359,52 +359,52 @@ function function_f5a689d(font, fontscale) {
 function function_7a0dd8a9(color, width, height) {
     /#
         barelem = newdebughudelem(self);
-        barelem.x.barelem = 0;
-        barelem.y.barelem = 0;
-        barelem.frac.barelem = 0;
+        barelem.x = 0;
+        barelem.y = 0;
+        barelem.frac = 0;
         barelem.color = color;
-        barelem.sort.barelem = -2;
-        barelem.shader.barelem = "<unknown string>";
+        barelem.sort = -2;
+        barelem.shader = "<unknown string>";
         barelem setshader(#"progress_bar_fill", width, height);
-        barelem.hidden.barelem = 0;
+        barelem.hidden = 0;
         barelemframe = newdebughudelem(self);
-        barelemframe.elemtype.barelemframe = "<unknown string>";
-        barelemframe.x.barelemframe = 0;
-        barelemframe.y.barelemframe = 0;
+        barelemframe.elemtype = "<unknown string>";
+        barelemframe.x = 0;
+        barelemframe.y = 0;
         barelemframe.width = width;
         barelemframe.height = height;
-        barelemframe.xoffset.barelemframe = 0;
-        barelemframe.yoffset.barelemframe = 0;
+        barelemframe.xoffset = 0;
+        barelemframe.yoffset = 0;
         barelemframe.bar = barelem;
         barelemframe.barframe = barelemframe;
-        barelemframe.children.barelemframe = [];
-        barelemframe.sort.barelemframe = -1;
-        barelemframe.color.barelemframe = (1, 1, 1);
+        barelemframe.children = [];
+        barelemframe.sort = -1;
+        barelemframe.color = (1, 1, 1);
         barelemframe setparent(level.uiparent);
-        barelemframe.hidden.barelemframe = 0;
+        barelemframe.hidden = 0;
         barelembg = newdebughudelem(self);
-        barelembg.elemtype.barelembg = "<unknown string>";
+        barelembg.elemtype = "<unknown string>";
         if (!level.splitscreen) {
-            barelembg.x.barelembg = -2;
-            barelembg.y.barelembg = -2;
+            barelembg.x = -2;
+            barelembg.y = -2;
         }
         barelembg.width = width;
         barelembg.height = height;
-        barelembg.xoffset.barelembg = 0;
-        barelembg.yoffset.barelembg = 0;
+        barelembg.xoffset = 0;
+        barelembg.yoffset = 0;
         barelembg.bar = barelem;
         barelembg.barframe = barelemframe;
-        barelembg.children.barelembg = [];
-        barelembg.sort.barelembg = -3;
-        barelembg.color.barelembg = (0, 0, 0);
-        barelembg.alpha.barelembg = 0.5;
+        barelembg.children = [];
+        barelembg.sort = -3;
+        barelembg.color = (0, 0, 0);
+        barelembg.alpha = 0.5;
         barelembg setparent(level.uiparent);
         if (!level.splitscreen) {
             barelembg setshader(#"progress_bar_bg", width + 4, height + 4);
         } else {
             barelembg setshader(#"progress_bar_bg", width + 0, height + 0);
         }
-        barelembg.hidden.barelembg = 0;
+        barelembg.hidden = 0;
         return barelembg;
     #/
 }
@@ -437,7 +437,7 @@ function function_48badcf4() {
         } else {
             text setpoint("<unknown string>", undefined, level.primaryprogressbartextx, level.primaryprogressbartexty);
         }
-        text.sort.text = -1;
+        text.sort = -1;
         return text;
     #/
 }

@@ -211,7 +211,7 @@ function function_86515c3b(player, var_191ca105, banner = 1) {
     player namespace_83eb6304::function_3ecfde67("lightningStrike");
     player namespace_e32bb68::function_3a59ec34("evt_doa_lightning_bolt");
     if (!isdefined(player.entnum)) {
-        player.entnum.player = player getentitynumber();
+        player.entnum = player getentitynumber();
     }
     if (is_true(banner)) {
         var_6b186658 = var_191ca105.var_af104f33 + (player.entnum << 4);
@@ -221,20 +221,20 @@ function function_86515c3b(player, var_191ca105, banner = 1) {
     player namespace_d2efac9a::function_9d3fe107();
     var_f1bda869 = namespace_ec06fe4a::function_e22ae9b3(player.origin + vectorscale((0, 0, 1), 1500), var_191ca105.var_3831681e);
     if (isdefined(var_f1bda869)) {
-        var_f1bda869.angles.var_f1bda869 = var_191ca105.var_d75b5b21;
+        var_f1bda869.angles = var_191ca105.var_d75b5b21;
         var_f1bda869 thread namespace_dfc652ee::function_7e4e4b8a(player, 0);
         var_f1bda869 waittilltimeout(3.5, #"bombsaway");
         var_f1bda869 delete();
         player namespace_83eb6304::function_3ecfde67(var_191ca105.fx);
         player namespace_e32bb68::function_3a59ec34(var_191ca105.sfx);
     }
-    player.doa.var_484cc88b = player.doa.var_484cc88b & var_191ca105.var_c8386627;
+    player.doa.var_484cc88b = player.doa.var_484cc88b | var_191ca105.var_c8386627;
     var_9a24b67c = level.var_73ffa220[player.name];
     /#
         assert(isdefined(var_9a24b67c), "<unknown string>");
     #/
     if (isdefined(var_9a24b67c)) {
-        var_9a24b67c.var_484cc88b.var_9a24b67c = player.doa.var_484cc88b;
+        var_9a24b67c.var_484cc88b = player.doa.var_484cc88b;
     }
     switch (var_191ca105.var_c8386627) {
     case 1:
@@ -252,7 +252,7 @@ function function_86515c3b(player, var_191ca105, banner = 1) {
         player.doa.var_9c7d56c1 = [[ player.doa.weaponpack ]]->function_91c18b19(weaponlevel);
         weaponlevel = math::clamp(player.doa.weaponlevel + level.doa.var_6c58d51, player.doa.weaponlevel, 2);
         player.doa.var_4eda72ee = [[ player.doa.weaponpack ]]->function_91c18b19(weaponlevel);
-        player.var_10948967.player = player namespace_4ff32993::function_f69400ca("zombietron_fated_chicken", 1, 1.2);
+        player.var_10948967 = player namespace_4ff32993::function_f69400ca("zombietron_fated_chicken", 1, 1.2);
         break;
     case 8:
         player.doa.var_e5805edb = 1.5;
@@ -520,14 +520,14 @@ function function_11463552() {
         if (isdefined(var_ea5e17f4)) {
             var_ea5e17f4 solid();
             var_ea5e17f4.data = var_7f2666c4;
-            var_ea5e17f4.context.var_ea5e17f4 = 1;
-            var_ea5e17f4.dest.var_ea5e17f4 = var_7f432780[i].origin;
+            var_ea5e17f4.context = 1;
+            var_ea5e17f4.dest = var_7f432780[i].origin;
             if (model == "zombietron_fate_rock_default") {
-                var_ea5e17f4.angles.var_ea5e17f4 = (0, randomint(180), 0);
+                var_ea5e17f4.angles = (0, randomint(180), 0);
             } else {
-                var_ea5e17f4.angles.var_ea5e17f4 = var_7f2666c4.var_d75b5b21 + (0, randomint(180), 0);
+                var_ea5e17f4.angles = var_7f2666c4.var_d75b5b21 + (0, randomint(180), 0);
             }
-            var_ea5e17f4.objectiveid.var_ea5e17f4 = 14 + i;
+            var_ea5e17f4.objectiveid = 14 + i;
             var_ea5e17f4 thread function_e4867f1d(var_7f2666c4);
             var_7f432780[i].model = var_ea5e17f4;
             objective_onentity(var_ea5e17f4.objectiveid, var_ea5e17f4);
@@ -542,7 +542,7 @@ function function_11463552() {
             /#
                 assert((mask & var_5ab7bbf5) != var_5ab7bbf5, "<unknown string>");
             #/
-            mask = mask & var_5ab7bbf5;
+            mask = mask | var_5ab7bbf5;
         }
     #/
     if (isdefined(level.doa.var_a5d58dd1)) {
@@ -725,10 +725,10 @@ function function_41d66855(var_419d3eb7 = 0) {
         if (isdefined(var_ea5e17f4)) {
             var_ea5e17f4 solid();
             var_ea5e17f4.data = var_7f2666c4;
-            var_ea5e17f4.context.var_ea5e17f4 = 1;
-            var_ea5e17f4.dest.var_ea5e17f4 = var_7f432780[i].origin + vectorscale((0, 0, 1), 20);
-            var_ea5e17f4.angles.var_ea5e17f4 = var_7f2666c4.var_d75b5b21 + (0, randomint(180), 0);
-            var_ea5e17f4.objectiveid.var_ea5e17f4 = 14 + i;
+            var_ea5e17f4.context = 1;
+            var_ea5e17f4.dest = var_7f432780[i].origin + vectorscale((0, 0, 1), 20);
+            var_ea5e17f4.angles = var_7f2666c4.var_d75b5b21 + (0, randomint(180), 0);
+            var_ea5e17f4.objectiveid = 14 + i;
             var_ea5e17f4 thread function_e4867f1d(var_7f2666c4, 1);
             var_7f432780[i].model = var_ea5e17f4;
             objective_onentity(var_ea5e17f4.objectiveid, var_ea5e17f4);

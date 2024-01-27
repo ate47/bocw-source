@@ -62,7 +62,7 @@ function function_174651ce(bird) {
             var_bef82893 = "a_chicken_run";
         }
         animlength = getanimlength(var_bef82893);
-        bird.angles.bird = self.angles;
+        bird.angles = self.angles;
         bird thread animation::play(var_bef82893);
         wait(animlength);
         var_63ad8013 = var_bef82893;
@@ -103,7 +103,7 @@ function add_a_chicken(model, scale, var_56fa7962, *var_706dd25e) {
     }
     var_956de39f = namespace_ec06fe4a::function_e22ae9b3(self.origin + vectorscale((0, 0, 1), 30), "tag_origin", self.angles);
     if (isdefined(var_956de39f)) {
-        var_956de39f.targetname.var_956de39f = "add_a_chicken";
+        var_956de39f.targetname = "add_a_chicken";
         var_956de39f enablelinkto();
         var_956de39f notsolid();
     } else {
@@ -111,7 +111,7 @@ function add_a_chicken(model, scale, var_56fa7962, *var_706dd25e) {
     }
     bird = namespace_ec06fe4a::function_e22ae9b3(var_956de39f.origin, scale, self.angles);
     if (isdefined(bird)) {
-        bird.targetname.bird = "chicken";
+        bird.targetname = "chicken";
         bird linkto(var_956de39f, "tag_origin");
         bird notsolid();
         bird setscale(var_56fa7962);
@@ -122,19 +122,19 @@ function add_a_chicken(model, scale, var_56fa7962, *var_706dd25e) {
     var_956de39f.var_fb8d92c4 = var_56fa7962;
     var_956de39f.bird = bird;
     bird.var_956de39f = var_956de39f;
-    var_956de39f.player.var_956de39f = self;
-    var_956de39f.owner.var_956de39f = self;
-    bird.owner.bird = self;
-    bird.var_7b9e42c2.bird = 1;
-    bird.killcount.bird = 0;
-    bird.team.bird = self.team;
-    bird.donotdamageowner.bird = 1;
-    var_956de39f.team.var_956de39f = self.team;
+    var_956de39f.player = self;
+    var_956de39f.owner = self;
+    bird.owner = self;
+    bird.var_7b9e42c2 = 1;
+    bird.killcount = 0;
+    bird.team = self.team;
+    bird.donotdamageowner = 1;
+    var_956de39f.team = self.team;
     var_956de39f.special = var_706dd25e;
-    var_956de39f.var_3e3b0c6e.var_956de39f = 0;
-    var_956de39f.var_7d2d343c.var_956de39f = 0;
+    var_956de39f.var_3e3b0c6e = 0;
+    var_956de39f.var_7d2d343c = 0;
     arrayremovevalue(self.doa.var_20c63763, undefined);
-    var_956de39f.var_ce3eecd4.var_956de39f = self.doa.var_20c63763.size == 0 ? self : self.doa.var_20c63763[self.doa.var_20c63763.size - 1];
+    var_956de39f.var_ce3eecd4 = self.doa.var_20c63763.size == 0 ? self : self.doa.var_20c63763[self.doa.var_20c63763.size - 1];
     var_956de39f thread function_174651ce(bird);
     if (is_true(var_956de39f.special) && self.doa.var_20c63763.size > 0) {
         arrayinsert(self.doa.var_20c63763, var_956de39f, 0);

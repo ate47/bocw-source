@@ -145,8 +145,8 @@ function function_371b4147(aoeid, type, position, userdata, var_fb4d789f, var_6e
     #/
     aoe = new areaofeffect();
     aoe.position = position;
-    aoe.endtime.aoe = gettime() + var_46f1b5eb.lifetime;
-    aoe.entity.aoe = spawn("script_model", position);
+    aoe.endtime = gettime() + var_46f1b5eb.lifetime;
+    aoe.entity = spawn("script_model", position);
     aoe.type = type;
     aoe.entity clientfield::set("aoe_id", aoeid);
     function_668a9b2d(aoe, type);
@@ -263,12 +263,12 @@ function private function_ccf8f659(aoe, forceend = 0) {
     }
     if (aoe.state == 0) {
         aoe.entity clientfield::set("aoe_state", 1);
-        aoe.state.aoe = 1;
-        aoe.var_be1913ae.aoe = gettime() + 100;
+        aoe.state = 1;
+        aoe.var_be1913ae = gettime() + 100;
     } else if (aoe.state == 1) {
         aoe.entity clientfield::set("aoe_state", 2);
-        aoe.state.aoe = 2;
-        aoe.var_be1913ae.aoe = aoe.endtime;
+        aoe.state = 2;
+        aoe.var_be1913ae = aoe.endtime;
         if (isdefined(aoe.var_fb4d789f)) {
             [[ aoe.var_fb4d789f ]](aoe);
         }
@@ -276,7 +276,7 @@ function private function_ccf8f659(aoe, forceend = 0) {
         function_97d801ea(aoe, var_46f1b5eb, 0);
     } else if (aoe.state == 3 || aoe.state == 4) {
         aoe.entity clientfield::set("aoe_state", 5);
-        aoe.state.aoe = 5;
+        aoe.state = 5;
     }
 }
 
@@ -285,14 +285,14 @@ function private function_ccf8f659(aoe, forceend = 0) {
 // Checksum 0x1f8aed2a, Offset: 0xe30
 // Size: 0xe8
 function private function_97d801ea(aoe, var_46f1b5eb, *var_a0739fc1) {
-    var_46f1b5eb.var_be1913ae.var_46f1b5eb = gettime() + var_a0739fc1.var_f2cd3aad;
+    var_46f1b5eb.var_be1913ae = gettime() + var_a0739fc1.var_f2cd3aad;
     if (is_true(var_46f1b5eb.var_a0739fc1)) {
         var_46f1b5eb.entity clientfield::set("aoe_state", 4);
-        var_46f1b5eb.state.var_46f1b5eb = 4;
+        var_46f1b5eb.state = 4;
         var_46f1b5eb notify(#"hash_16055baf8d7c453a");
     } else {
         var_46f1b5eb.entity clientfield::set("aoe_state", 3);
-        var_46f1b5eb.state.var_46f1b5eb = 3;
+        var_46f1b5eb.state = 3;
         var_46f1b5eb notify(#"hash_3913004963ca6fe4");
     }
 }
@@ -318,7 +318,7 @@ function function_3690781e() {
 // Checksum 0x2c292e54, Offset: 0x1090
 // Size: 0x2e
 function function_389bf7bf(aoe, var_a0739fc1) {
-    aoe.forceend.aoe = 1;
+    aoe.forceend = 1;
     aoe.var_a0739fc1 = var_a0739fc1;
 }
 

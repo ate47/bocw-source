@@ -148,9 +148,9 @@ function function_8d5f13fa() {
 // Size: 0x84
 function function_65f28890(entity) {
     entity setblackboardattribute("_locomotion_speed", "locomotion_speed_walk");
-    entity.fovcosine.entity = 0.5;
-    entity.maxsightdistsqrd.entity = function_a3f6cdac(1000);
-    entity.var_1267fdea.entity = 0;
+    entity.fovcosine = 0.5;
+    entity.maxsightdistsqrd = function_a3f6cdac(1000);
+    entity.var_1267fdea = 0;
     awareness::function_9c9d96b5(entity);
 }
 
@@ -159,9 +159,9 @@ function function_65f28890(entity) {
 // Checksum 0x6903cb79, Offset: 0x1130
 // Size: 0x5c
 function function_64072d21(entity) {
-    entity.fovcosine.entity = 0;
-    entity.maxsightdistsqrd.entity = function_a3f6cdac(1800);
-    entity.var_1267fdea.entity = 0;
+    entity.fovcosine = 0;
+    entity.maxsightdistsqrd = function_a3f6cdac(1800);
+    entity.var_1267fdea = 0;
     awareness::function_b41f0471(entity);
 }
 
@@ -186,12 +186,12 @@ function private function_cdbe8d0a(entity) {
 // Checksum 0x8487f745, Offset: 0x1208
 // Size: 0xc4
 function function_43c21e81(entity) {
-    entity.fovcosine.entity = 0;
-    entity.maxsightdistsqrd.entity = function_a3f6cdac(3000);
-    entity.var_1267fdea.entity = 0;
+    entity.fovcosine = 0;
+    entity.maxsightdistsqrd = function_a3f6cdac(3000);
+    entity.var_1267fdea = 0;
     entity setblackboardattribute("_locomotion_speed", "locomotion_speed_run");
-    entity.maxsightdistsqrd.entity = function_a3f6cdac(3000);
-    entity.var_972b23bb.entity = 1;
+    entity.maxsightdistsqrd = function_a3f6cdac(3000);
+    entity.var_972b23bb = 1;
     zm_ai_utility::function_4d22f6d1(entity);
     awareness::function_978025e4(entity);
 }
@@ -249,7 +249,7 @@ function function_3715dbff(entity) {
 // Checksum 0xe20f9f68, Offset: 0x1658
 // Size: 0x9c
 function function_dca46c2e(entity) {
-    entity.maxsightdistsqrd.entity = function_a3f6cdac(900);
+    entity.maxsightdistsqrd = function_a3f6cdac(900);
     entity.var_972b23bb = undefined;
     if (isdefined(entity.cluster) && entity.cluster.status === 0) {
         entity callback::callback(#"hash_10ab46b52df7967a");
@@ -349,9 +349,9 @@ function function_6e7d7d1(entity) {
         return;
     }
     if (isdefined(entity.favoriteenemy)) {
-        var_1f2328d0 = entity function_4794d6a3();
-        var_127a38a7 = distancesquared(var_1f2328d0.goalpos, entity.origin);
-        if (!namespace_3444cb7b::mechzisinsafezone(entity) || var_1f2328d0.isatgoal || var_127a38a7 < function_a3f6cdac(64)) {
+        goalinfo = entity function_4794d6a3();
+        var_127a38a7 = distancesquared(goalinfo.goalpos, entity.origin);
+        if (!namespace_3444cb7b::mechzisinsafezone(entity) || goalinfo.isatgoal || var_127a38a7 < function_a3f6cdac(64)) {
             awareness::set_state(entity, #"chase");
         }
     }

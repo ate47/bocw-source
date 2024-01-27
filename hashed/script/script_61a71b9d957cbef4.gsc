@@ -28,12 +28,12 @@ function autoexec function_8c49355e() {
     level.var_ebf9c160[#"tear_gas"] = #"hash_5f67f7b32b01ae53";
     level.var_ebf9c160[#"hash_455c48edddb3a457"] = #"perk_engineer_t9_item";
     level.var_ebf9c160[#"hash_457e3eedddd079bf"] = #"perk_engineer_t9_item";
-    level.var_ebf9c160[#"hash_22fd2b0ed330a3d4"] = #"perk_flakjacket_t9_item";
-    level.var_ebf9c160[#"hash_2348290ed3708be8"] = #"perk_flakjacket_t9_item";
+    level.var_ebf9c160[#"talent_flakjacket_wz"] = #"perk_flakjacket_t9_item";
+    level.var_ebf9c160[#"talent_flakjacket_mp"] = #"perk_flakjacket_t9_item";
     level.var_ebf9c160[#"hash_1b4c269b5a2c7cca"] = #"perk_medic_t9_item";
     level.var_ebf9c160[#"hash_1b02189b59ee2c86"] = #"perk_medic_t9_item";
-    level.var_ebf9c160[#"hash_2728af291a906d67"] = #"perk_tacticalmask_t9_item";
-    level.var_ebf9c160[#"hash_26dda5291a5070ef"] = #"perk_tacticalmask_t9_item";
+    level.var_ebf9c160[#"talent_resistance_wz"] = #"perk_tacticalmask_t9_item";
+    level.var_ebf9c160[#"talent_resistance_mp"] = #"perk_tacticalmask_t9_item";
     level.var_ebf9c160[#"hash_2189719c57fda8c5"] = #"perk_threatperception_t9_item";
     level.var_ebf9c160[#"hash_219e7b9c581015cd"] = #"perk_threatperception_t9_item";
     level.var_ebf9c160[#"hash_765b9959bc318ff8"] = #"perk_highvaluetarget_t9_item";
@@ -43,9 +43,9 @@ function autoexec function_8c49355e() {
     level.var_ebf9c160[#"hash_746873701fc96f8a"] = #"perk_quartermaster_t9_item";
     level.var_ebf9c160[#"hash_741d65701f896c46"] = #"perk_quartermaster_t9_item";
     level.var_ebf9c160[#"hash_375b41755865b990"] = #"perk_scavenger_t9_item";
-    level.var_ebf9c160[#"hash_376f4f7558767a64"] = #"perk_scavenger_t9_item";
+    level.var_ebf9c160[#"talent_scavenger_mp"] = #"perk_scavenger_t9_item";
     level.var_ebf9c160[#"hash_174fc52673f20b2c"] = #"perk_tracker_t9_item";
-    level.var_ebf9c160[#"hash_1764b326740448a0"] = #"perk_tracker_t9_item";
+    level.var_ebf9c160[#"talent_tracker_mp"] = #"perk_tracker_t9_item";
     level.var_ebf9c160[#"hash_5e421a41883cbedd"] = #"perk_coldblooded_t9_item";
     level.var_ebf9c160[#"hash_5e201441881fce45"] = #"perk_coldblooded_t9_item";
     level.var_ebf9c160[#"hash_2d0972cc34c8d313"] = #"perk_deadsilence_t9_item";
@@ -53,9 +53,9 @@ function autoexec function_8c49355e() {
     level.var_ebf9c160[#"hash_6e85dea4185486ab"] = #"perk_endurance_t9_item";
     level.var_ebf9c160[#"hash_6eded4a418a09e83"] = #"perk_endurance_t9_item";
     level.var_ebf9c160[#"hash_7de1f8b27833f161"] = #"perk_ghost_t9_item";
-    level.var_ebf9c160[#"hash_7d89f2b277e97159"] = #"perk_ghost_t9_item";
-    level.var_ebf9c160[#"hash_15e00b577a530dc6"] = #"perk_gungho_t9_item";
-    level.var_ebf9c160[#"hash_15e00b577a530dc6"] = #"perk_gungho_t9_item";
+    level.var_ebf9c160[#"talent_ghost_mp"] = #"perk_ghost_t9_item";
+    level.var_ebf9c160[#"talent_gungho_wz"] = #"perk_gungho_t9_item";
+    level.var_ebf9c160[#"talent_gungho_wz"] = #"perk_gungho_t9_item";
     level.var_ebf9c160[#"hash_571e7ec0302ceb28"] = #"perk_spycraft_t9_item";
     level.var_ebf9c160[#"hash_571e7ec0302ceb28"] = #"perk_spycraft_t9_item";
 }
@@ -115,7 +115,7 @@ function give_weapon(weaponname, attachmentnames) {
     }
     var_fa3df96 = self item_inventory::function_e66dcff5(weapon);
     if (isdefined(attachmentnames)) {
-        weapon.attachments.weapon = [];
+        weapon.attachments = [];
         foreach (attachmentname in attachmentnames) {
             if (!isstring(attachmentname) && !ishash(attachmentname)) {
                 /#
@@ -126,7 +126,7 @@ function give_weapon(weaponname, attachmentnames) {
             attachment = item_world_util::function_49ce7663(attachmentname + "_t9_item");
             namespace_a0d533d1::function_9e9c82a6(weapon, attachment);
         }
-        weapon.amount.weapon = self getweaponammoclipsize(namespace_a0d533d1::function_2b83d3ff(weapon));
+        weapon.amount = self getweaponammoclipsize(namespace_a0d533d1::function_2b83d3ff(weapon));
     }
     self item_world::function_de2018e3(weapon, self, var_fa3df96);
 }

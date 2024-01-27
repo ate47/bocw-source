@@ -95,7 +95,7 @@ function function_ff3d341d() {
     self.var_37db5cf = 0;
     self.var_c1b23abb = 2000;
     var_2ef9ada1 = self.var_fdec2822 zm_unitrigger::create(&function_89a0bd84, 64, &function_91f37293);
-    var_2ef9ada1.var_4326facc.var_2ef9ada1 = self;
+    var_2ef9ada1.var_4326facc = self;
     level flag::wait_till("power_on");
     self function_7265ebeb(0);
     self.var_d6b3b6e0 clientfield::set("" + #"hash_16e5e4d2ea0716b7", 1);
@@ -648,7 +648,7 @@ function turretscanning() {
     veh playsound(#"mpl_turret_startup");
     veh playloopsound(#"hash_69240c6db92da5bf");
     s_bundle = killstreaks::get_script_bundle("ultimate_turret");
-    veh.maxsightdistsqrd.veh = function_a3f6cdac(isdefined(s_bundle.var_2aeadfa0) ? s_bundle.var_2aeadfa0 : 3500);
+    veh.maxsightdistsqrd = function_a3f6cdac(isdefined(s_bundle.var_2aeadfa0) ? s_bundle.var_2aeadfa0 : 3500);
     veh thread function_9d831b2f();
 }
 

@@ -141,7 +141,7 @@ function function_1a4228a5(localclientnum, *oldval, newval, *bnewent, *binitials
 function on_localclient_connect(localclientnum) {
     player = function_27673a7(localclientnum);
     if (isdefined(player)) {
-        player.var_2cbc8a68.player = spawn(localclientnum, vectorscale((0, 0, -1), 10000), "script_model");
+        player.var_2cbc8a68 = spawn(localclientnum, vectorscale((0, 0, -1), 10000), "script_model");
         player.var_2cbc8a68 playrenderoverridebundle(level.var_74017fd2);
     }
     level thread function_382da026(localclientnum);
@@ -244,7 +244,7 @@ function private function_d69170b(localclientnum, intensity = 0) {
             }
             if (!isdefined(currentplayer.var_103fdf58)) {
                 playsound(localclientnum, #"hash_639f49c1fc950a5d", (0, 0, 0));
-                currentplayer.var_103fdf58.currentplayer = currentplayer playloopsound("evt_sr_fogofwar_1p_lp");
+                currentplayer.var_103fdf58 = currentplayer playloopsound("evt_sr_fogofwar_1p_lp");
             }
         }
         self.var_f6795a59 = postfx;

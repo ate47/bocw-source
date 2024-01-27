@@ -54,7 +54,7 @@ function startmicrowave() {
     if (isdefined(turret.trigger)) {
         turret.trigger delete();
     }
-    turret.trigger.turret = spawn("trigger_radius", turret.origin + (0, 0, 750 * -1), 4096 & 16384 & level.aitriggerspawnflags & level.vehicletriggerspawnflags, 750, 750 * 2);
+    turret.trigger = spawn("trigger_radius", turret.origin + (0, 0, 750 * -1), 4096 | 16384 | level.aitriggerspawnflags | level.vehicletriggerspawnflags, 750, 750 * 2);
     turret thread turretthink();
     /#
         turret thread turretdebugwatch();
@@ -124,7 +124,7 @@ function turretthink() {
     turret = self;
     turret endon(#"microwave_turret_shutdown", #"death");
     turret.trigger endon(#"death", #"delete");
-    turret.turret_vehicle_entnum.turret = turret getentitynumber();
+    turret.turret_vehicle_entnum = turret getentitynumber();
     while (1) {
         waitresult = undefined;
         waitresult = turret.trigger waittill(#"trigger");
@@ -133,7 +133,7 @@ function turretthink() {
             continue;
         }
         if (!isdefined(ent.beingmicrowavedby)) {
-            ent.beingmicrowavedby.ent = [];
+            ent.beingmicrowavedby = [];
         }
         if (!isdefined(ent.beingmicrowavedby[turret.turret_vehicle_entnum])) {
             turret thread microwaveentity(ent);
@@ -170,8 +170,8 @@ function microwaveentity(entity) {
     }
     turret thread microwaveentitypostshutdowncleanup(entity);
     entity.beingmicrowavedby[turret.turret_vehicle_entnum] = turret.owner;
-    entity.microwavedamageinitialdelay.entity = 1;
-    entity.microwaveeffect.entity = 0;
+    entity.microwavedamageinitialdelay = 1;
+    entity.microwaveeffect = 0;
     shellshockscalar = 1;
     viewkickscalar = 1;
     damagescalar = 1;
@@ -188,7 +188,7 @@ function microwaveentity(entity) {
             }
             entity.beingmicrowavedby[turret.turret_vehicle_entnum] = undefined;
             if (isdefined(entity.microwavepoisoning) && entity.microwavepoisoning) {
-                entity.microwavepoisoning.entity = 0;
+                entity.microwavepoisoning = 0;
             }
             entity notify(#"end_microwaveentitypostshutdowncleanup");
             return;
@@ -199,8 +199,8 @@ function microwaveentity(entity) {
         }
         if (!isai(entity) && entity util::mayapplyscreeneffect()) {
             if (!isdefined(entity.microwavepoisoning) || !entity.microwavepoisoning) {
-                entity.microwavepoisoning.entity = 1;
-                entity.microwaveeffect.entity = 0;
+                entity.microwavepoisoning = 1;
+                entity.microwaveeffect = 0;
             }
         }
         if (isdefined(entity.microwavedamageinitialdelay)) {
@@ -209,7 +209,7 @@ function microwaveentity(entity) {
         }
         entity dodamage(damage, turret.origin, turret.owner, turret, 0, "MOD_TRIGGER_HURT", 0, turretweapon);
         entity.microwaveeffect++;
-        entity.lastmicrowavedby.entity = turret.owner;
+        entity.lastmicrowavedby = turret.owner;
         time = gettime();
         if (isplayer(entity) && !entity isremotecontrolling()) {
             if (time - (isdefined(entity.microwaveshellshockandviewkicktime) ? entity.microwaveshellshockandviewkicktime : 0) > 950) {

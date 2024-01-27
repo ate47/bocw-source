@@ -55,7 +55,7 @@ function hero_weapon_power(*e_player) {
             player namespace_1b527536::function_6457e4cd(player.var_87f72f8);
             var_41db60bc = player.inventory.items[12].count;
             if (var_41db60bc == player.var_c9448182) {
-                player.var_8da24ed0.player = player.var_fc8023b4;
+                player.var_8da24ed0 = player.var_fc8023b4;
                 player clientfield::set_player_uimodel("hud_items.ammoCooldowns.fieldUpgrade", 1);
             }
             waitframe(1);

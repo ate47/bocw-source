@@ -445,8 +445,8 @@ function function_d9e95e32(var_2bebcf7a) {
         foreach (e_zombie in a_e_zombies) {
             if (isalive(e_zombie) && istouching(e_zombie.origin, var_2bebcf7a)) {
                 e_zombie hide();
-                e_zombie.marked_for_death.e_zombie = 1;
-                e_zombie.allowdeath.e_zombie = 1;
+                e_zombie.marked_for_death = 1;
+                e_zombie.allowdeath = 1;
                 e_zombie kill();
             }
         }
@@ -843,7 +843,7 @@ function function_5ea16763(state, var_cbc8cfb4) {
     var_aacbd881 = 0;
     foreach (player in all_players) {
         if (isdefined(player.var_2790fd8b)) {
-            player.var_91e83c57.player = player zm_fasttravel::function_c78572ab(player.var_388ee880);
+            player.var_91e83c57 = player zm_fasttravel::function_c78572ab(player.var_388ee880);
             player.var_2790fd8b notify(#"stop path");
             var_aacbd881 = 1;
         }
@@ -1257,7 +1257,7 @@ function function_eafe9d9f() {
         }
         if (isdefined(var_704c79ef)) {
             var_704c79ef.ai.var_4beb90f3 = 0;
-            var_704c79ef.ignore_enemy_count.var_704c79ef = 1;
+            var_704c79ef.ignore_enemy_count = 1;
         }
         level flag::set("spawn_zombies");
         level flag::wait_till_clear(#"dark_aether_active");

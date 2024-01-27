@@ -77,14 +77,14 @@ function function_c6ce3670(*state) {
 // Checksum 0xc2e62ca0, Offset: 0x4c0
 // Size: 0x9a
 function function_e5c86da9(use_trigger, perk_machine, bump_trigger, *collision) {
-    perk_machine.script_sound.perk_machine = "mus_perks_speed_jingle";
-    perk_machine.script_string.perk_machine = "speedcola_perk";
-    perk_machine.script_label.perk_machine = "mus_perks_speed_sting";
-    perk_machine.target.perk_machine = "vending_sleight";
-    bump_trigger.script_string.bump_trigger = "speedcola_perk";
-    bump_trigger.targetname.bump_trigger = "vending_sleight";
+    perk_machine.script_sound = "mus_perks_speed_jingle";
+    perk_machine.script_string = "speedcola_perk";
+    perk_machine.script_label = "mus_perks_speed_sting";
+    perk_machine.target = "vending_sleight";
+    bump_trigger.script_string = "speedcola_perk";
+    bump_trigger.targetname = "vending_sleight";
     if (isdefined(collision)) {
-        collision.script_string.collision = "speedcola_perk";
+        collision.script_string = "speedcola_perk";
     }
 }
 

@@ -86,8 +86,8 @@ function function_d5ab66bf() {
         var_a999a6b1 gameobjects::set_onuse_event(&onuse);
         var_a999a6b1 gameobjects::set_onbeginuse_event(&function_d98f09d0);
         var_a999a6b1 gameobjects::set_onenduse_event(&function_c540ab84);
-        var_a999a6b1.dontlinkplayertotrigger.var_a999a6b1 = 1;
-        var_a999a6b1.keepweapon.var_a999a6b1 = 1;
+        var_a999a6b1.dontlinkplayertotrigger = 1;
+        var_a999a6b1.keepweapon = 1;
         level.var_b03d5c95.gameobject = var_a999a6b1;
     }
 }

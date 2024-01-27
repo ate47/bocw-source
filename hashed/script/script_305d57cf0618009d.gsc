@@ -66,8 +66,8 @@ function function_bb93a8cd(insertion) {
         insertion.players = var_2c34761b;
         insertion.otherplayers = otherplayers;
     } else {
-        insertion.players.insertion = function_a1ef346b();
-        insertion.otherplayers.insertion = [];
+        insertion.players = function_a1ef346b();
+        insertion.otherplayers = [];
     }
 }
 
@@ -104,7 +104,7 @@ function function_1e4302d0(value, index) {
     /#
         assert(index < 2);
     #/
-    newvalue = value << 1 & index & 1;
+    newvalue = value << 1 | index & 1;
     return newvalue;
 }
 
@@ -191,10 +191,10 @@ function private function_9ddb4115(var_1d83d08d) {
     if (isdefined(level.deathcircles) && level.deathcircles.size > 0) {
         initcircle = level.deathcircles[0];
         newstart = var_1d83d08d.start;
-        var_dd00b78e = vectornormalize(var_1d83d08d.end - var_1d83d08d.start);
+        toend = vectornormalize(var_1d83d08d.end - var_1d83d08d.start);
         var_164fe5c9 = distance2dsquared(newstart, initcircle.origin);
         while (var_164fe5c9 > function_a3f6cdac(initcircle.radius)) {
-            newstart = newstart + var_dd00b78e * 1000;
+            newstart = newstart + toend * 1000;
             var_c820832 = distance2dsquared(newstart, initcircle.origin);
             if (var_c820832 > var_164fe5c9) {
                 break;
@@ -203,7 +203,7 @@ function private function_9ddb4115(var_1d83d08d) {
         }
         var_1d83d08d.start = newstart;
         var_1b8e09d2 = var_1d83d08d.end;
-        var_6d773f9e = var_dd00b78e * -1;
+        var_6d773f9e = toend * -1;
         var_164fe5c9 = distance2dsquared(var_1b8e09d2, initcircle.origin);
         while (var_164fe5c9 > function_a3f6cdac(initcircle.radius)) {
             var_1b8e09d2 = var_1b8e09d2 + var_6d773f9e * 1000;
@@ -311,13 +311,13 @@ function function_d53a8c5b(insertion, fly_over_point, var_59526dd5, offset) {
     var_7c712437 = fly_over_point + anglestoright(var_872f085f) * offset;
     var_1d83d08d = {#end:var_7c712437 + direction * 150000, #start:var_7c712437 + direction * -150000};
     result = function_3ca86964(var_1d83d08d);
-    var_1d83d08d.start.var_1d83d08d = function_fd3c1bcc(fly_over_point, var_1d83d08d.start, result.start);
-    var_1d83d08d.end.var_1d83d08d = function_fd3c1bcc(fly_over_point, var_1d83d08d.end, result.end);
+    var_1d83d08d.start = function_fd3c1bcc(fly_over_point, var_1d83d08d.start, result.start);
+    var_1d83d08d.end = function_fd3c1bcc(fly_over_point, var_1d83d08d.end, result.end);
     if (is_true(getgametypesetting(#"hash_82c01ef004ff0a3"))) {
         function_9ddb4115(var_1d83d08d);
     }
-    var_1d83d08d.start.var_1d83d08d = function_ea1ad421(insertion, fly_over_point, var_1d83d08d.start);
-    var_1d83d08d.end.var_1d83d08d = function_ea1ad421(insertion, fly_over_point, var_1d83d08d.end);
+    var_1d83d08d.start = function_ea1ad421(insertion, fly_over_point, var_1d83d08d.start);
+    var_1d83d08d.end = function_ea1ad421(insertion, fly_over_point, var_1d83d08d.end);
     fly_path(insertion, var_1d83d08d, var_7c712437, var_59526dd5);
     insertion flag::set(#"hash_4e5fc66b9144a5c8");
 }
@@ -331,10 +331,10 @@ function private function_e04b0ea8(insertion, start_point, var_872f085f, var_373
         assert(isstruct(insertion));
     #/
     direction = anglestoforward(var_872f085f);
-    insertion.var_b686c9d.insertion = spawn("script_model", start_point + direction * var_37362e08);
+    insertion.var_b686c9d = spawn("script_model", start_point + direction * var_37362e08);
     insertion.var_b686c9d.targetname = "insertion_jump";
     insertion.var_b686c9d.angles = var_872f085f;
-    insertion.var_d908905e.insertion = spawn("script_model", start_point + direction * var_f69b665b);
+    insertion.var_d908905e = spawn("script_model", start_point + direction * var_f69b665b);
     insertion.var_d908905e.targetname = "insertion_force";
     insertion.var_d908905e.angles = var_872f085f;
     waitframe(1);
@@ -350,8 +350,8 @@ function function_1db63266() {
     /#
         assert(isplayer(self));
     #/
-    var_5ed0195b = function_20cba65e(self);
-    insertion = level.insertions[var_5ed0195b];
+    insertionindex = function_20cba65e(self);
+    insertion = level.insertions[insertionindex];
     if (isdefined(insertion) && isdefined(insertion.infilteament)) {
         function_9368af66(insertion, self);
     }
@@ -413,7 +413,7 @@ function private fly_path(insertion, var_1d83d08d, fly_over_point, var_59526dd5)
     var_f69b665b = distance(startpoint, var_ee07e61a);
     insertion thread function_e04b0ea8(insertion, startpoint, var_872f085f, var_742f9da2, var_f69b665b);
     currentvalue = level clientfield::get("infiltration_compass");
-    newvalue = 1 << insertion.index & currentvalue;
+    newvalue = 1 << insertion.index | currentvalue;
     level clientfield::set("infiltration_compass", newvalue);
     insertion.start_point = startpoint;
     insertion.end_point = endpoint;
@@ -422,7 +422,7 @@ function private fly_path(insertion, var_1d83d08d, fly_over_point, var_59526dd5)
     insertion.var_7743b329 = var_f69b665b;
     if (max(isdefined(getgametypesetting(#"hash_731988b03dc6ee17")) ? getgametypesetting(#"hash_731988b03dc6ee17") : 1, 1) > 1) {
         util::wait_network_frame();
-        insertion.infilteament.insertion = spawn("script_model", (0, 0, 0));
+        insertion.infilteament = spawn("script_model", (0, 0, 0));
         insertion.infilteament.targetname = "infil_team_ent";
         insertion.infilteament setinvisibletoall();
         activeplayers = function_a1ef346b();

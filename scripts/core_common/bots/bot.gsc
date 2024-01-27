@@ -92,14 +92,14 @@ function add_bot(team, name = undefined, clanabbrev = undefined) {
     bot init_bot();
     if (is_true(level.disableclassselection)) {
         bot.pers[#"class"] = level.defaultclass;
-        bot.curclass.bot = level.defaultclass;
+        bot.curclass = level.defaultclass;
     }
     if (level.teambased && isdefined(team) && isdefined(level.teams[team])) {
         bot.botteam = team;
     } else if (isdefined(team) && team == #"spectator") {
-        bot.botteam.bot = #"spectator";
+        bot.botteam = #"spectator";
     } else {
-        bot.botteam.bot = "autoassign";
+        bot.botteam = "autoassign";
     }
     return bot;
 }
@@ -629,16 +629,16 @@ function private function_fc619485() {
     if (!isdefined(self.bot.var_383e17de)) {
         self.bot.var_383e17de = [];
     }
-    var_58371b37 = self.bot.var_383e17de;
-    var_58371b37[var_58371b37.size] = self.origin;
-    if (var_58371b37.size < level.var_38c34301) {
+    history = self.bot.var_383e17de;
+    history[history.size] = self.origin;
+    if (history.size < level.var_38c34301) {
         profileNamedStop();
         return;
-    } else if (var_58371b37.size > level.var_38c34301) {
-        arrayremoveindex(var_58371b37, 0);
+    } else if (history.size > level.var_38c34301) {
+        arrayremoveindex(history, 0);
     }
     var_ed68443 = 0;
-    foreach (point in var_58371b37) {
+    foreach (point in history) {
         distsq = distancesquared(self.origin, point);
         if (distsq > var_ed68443) {
             var_ed68443 = distsq;
@@ -654,7 +654,7 @@ function private function_fc619485() {
         function_af72dbc5(self.origin, self getmaxs(), self getmins(), self.angles[1], (1, 0, 1), "<unknown string>");
         function_af72dbc5(self.origin, (64, 64, 0), (64 * -1, 64 * -1, 0), 0, (1, 0, 1), "<unknown string>");
         recordline(self.origin, self.origin + movedir * 128, (1, 0, 1), "<unknown string>");
-        foreach (point in var_58371b37) {
+        foreach (point in history) {
             recordstar(point, (1, 0, 1), "<unknown string>", self);
         }
     #/
@@ -860,9 +860,9 @@ function add_fixed_spawn_bot(team, origin, yaw, roleindex = undefined) {
     bot = add_bot(team);
     if (isdefined(bot)) {
         if (isdefined(roleindex) && roleindex >= 0) {
-            bot.var_29b433bd.bot = int(roleindex);
+            bot.var_29b433bd = int(roleindex);
         }
-        bot.ignoreall.bot = 1;
+        bot.ignoreall = 1;
         bot function_bab12815(origin, yaw);
     }
     return bot;

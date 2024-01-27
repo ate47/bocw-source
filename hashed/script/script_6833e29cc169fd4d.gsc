@@ -107,7 +107,7 @@ function private function_c0251c1e(target, var_4f358117 = 1) {
         return 0;
     }
     if (!isdefined(target.var_25fa785)) {
-        target.var_25fa785.target = spawnstruct();
+        target.var_25fa785 = spawnstruct();
     }
     if (!isdefined(target.var_25fa785.lockon)) {
         target.var_25fa785.lockon = spawnstruct();
@@ -289,10 +289,10 @@ function function_568e9d1f(a, b) {
 function function_bb2cd3c1(target) {
     if (isdefined(target.var_b6268463) && target.var_b6268463 == self) {
         function_f9f09e3f(self);
-        target.var_7a48f1af.target = gettime() - target.var_6a1a4bf6;
+        target.var_7a48f1af = gettime() - target.var_6a1a4bf6;
         target thread function_ddd62d1c();
         target.var_6a1a4bf6 = undefined;
-        target.var_784d850f.target = gettime() + 150;
+        target.var_784d850f = gettime() + 150;
         target.var_b6268463 = undefined;
         target.var_6a1a4bf6 = undefined;
         target.var_3f53671 = undefined;
@@ -372,19 +372,19 @@ function function_5085f9ce(slot, target, maxrange, weapon, var_e06c789) {
             }
         }
         self weaponlockstart(newitem.target, newitem.var_feac9e76);
-        newitem.inrange.newitem = 1;
+        newitem.inrange = 1;
         if (!self function_397e4d13(newitem.target, maxrange, weapon)) {
-            newitem.inrange.newitem = 0;
+            newitem.inrange = 0;
             self weaponlocknoclearance(1, slot);
         }
         if (isdefined(newitem.target.var_3f53671)) {
             if (newitem.target.var_b6268463 == self) {
                 if (newitem.target.var_3f53671 != 1) {
-                    newitem.inrange.newitem = 2;
+                    newitem.inrange = 2;
                     self weaponlocknoclearance(1, slot);
                 }
             } else {
-                newitem.inrange.newitem = 0;
+                newitem.inrange = 0;
                 self weaponlocknoclearance(1, slot);
             }
         }
@@ -483,7 +483,7 @@ function function_dd8587b2(target, var_e06c789) {
             return i;
         }
         newitem = spawnstruct();
-        newitem.dot.newitem = vectordot(playerforward, vectornormalize(var_72c997a8.origin - self.origin));
+        newitem.dot = vectordot(playerforward, vectornormalize(var_72c997a8.origin - self.origin));
         var_3d797059 = isdefined(self.var_25fa785.lockon.var_3d797059) ? self.var_25fa785.lockon.var_3d797059 : 0.95;
         if (newitem.dot > var_3d797059) {
             newitem.target = var_72c997a8;
@@ -491,7 +491,7 @@ function function_dd8587b2(target, var_e06c789) {
         }
     }
     newitem = spawnstruct();
-    newitem.dot.newitem = vectordot(playerforward, vectornormalize(target.origin - self.origin));
+    newitem.dot = vectordot(playerforward, vectornormalize(target.origin - self.origin));
     newitem.target = target;
     array::add_sorted(dots, newitem, 0, &function_568e9d1f);
     var_fa05e32a = dots[dots.size - 1].target;
@@ -599,7 +599,7 @@ function function_d2bc8bb1(enemies, weapon, var_efb1ea62, var_6fb74c6f = 0) {
     foreach (enemy in enemies) {
         center = enemy getcentroid();
         dirtotarget = vectornormalize(center - var_9c8f2bcc);
-        enemy.var_5425b76c.enemy = vectordot(dirtotarget, playerforward);
+        enemy.var_5425b76c = vectordot(dirtotarget, playerforward);
         var_3d797059 = isdefined(self.var_25fa785.lockon.var_3d797059) ? self.var_25fa785.lockon.var_3d797059 : 0.95;
         if (enemy.var_5425b76c < var_3d797059) {
             continue;
@@ -694,7 +694,7 @@ function function_4b7f8060(slot, weapon, var_e06c789, var_e08793c0, var_efb1ea62
         foreach (enemy in enemies) {
             center = enemy getcentroid();
             dirtotarget = vectornormalize(center - var_9c8f2bcc);
-            enemy.var_5425b76c.enemy = vectordot(dirtotarget, playerforward);
+            enemy.var_5425b76c = vectordot(dirtotarget, playerforward);
             var_3d797059 = isdefined(self.var_25fa785.lockon.var_3d797059) ? self.var_25fa785.lockon.var_3d797059 : 0.95;
             if (enemy.var_5425b76c > var_3d797059) {
                 var_7bc97a0f[var_7bc97a0f.size] = enemy;
@@ -718,7 +718,7 @@ function function_4b7f8060(slot, weapon, var_e06c789, var_e08793c0, var_efb1ea62
         dots = [];
         foreach (target in validtargets) {
             newitem = spawnstruct();
-            newitem.dot.newitem = target.var_5425b76c;
+            newitem.dot = target.var_5425b76c;
             newitem.target = target;
             array::add_sorted(dots, newitem, 0, &function_568e9d1f);
         }

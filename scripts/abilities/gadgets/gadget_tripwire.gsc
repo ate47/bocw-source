@@ -80,12 +80,12 @@ function function_bff5c062(tripwire, attackingplayer) {
         tripwire.hacked = undefined;
     } else {
         tripwire clientfield::set("tripwire_state", 2);
-        tripwire.hacked.tripwire = 1;
+        tripwire.hacked = 1;
     }
     if (isdefined(tripwire.entityenemyinfluencer)) {
         tripwire influencers::remove_influencer(tripwire.entityenemyinfluencer);
     }
-    tripwire.entityenemyinfluencer.tripwire = tripwire influencers::create_entity_enemy_influencer("claymore", attackingplayer.team);
+    tripwire.entityenemyinfluencer = tripwire influencers::create_entity_enemy_influencer("claymore", attackingplayer.team);
     tripwire thread weaponobjects::function_6d8aa6a0(attackingplayer, tripwire.watcher);
     level function_d77f9442();
 }
@@ -103,18 +103,18 @@ function function_d863663f() {
 // Checksum 0xb2fe74c1, Offset: 0x6e0
 // Size: 0xfa
 function function_9f97e1a3(watcher) {
-    watcher.watchforfire.watcher = 1;
-    watcher.ondetonatecallback.watcher = &function_9e546fb3;
-    watcher.ownergetsassist.watcher = 1;
-    watcher.ignoredirection.watcher = 1;
-    watcher.immediatedetonation.watcher = 0;
-    watcher.onspawn.watcher = &on_tripwire_spawn;
-    watcher.ondamage.watcher = &function_7a905654;
-    watcher.ondestroyed.watcher = &function_9b3a657f;
-    watcher.var_994b472b.watcher = &function_9a98f669;
-    watcher.activatesound.watcher = #"hash_3185e3ad37d8b947";
-    watcher.ontimeout.watcher = &function_9b3a657f;
-    watcher.onfizzleout.watcher = &function_9b3a657f;
+    watcher.watchforfire = 1;
+    watcher.ondetonatecallback = &function_9e546fb3;
+    watcher.ownergetsassist = 1;
+    watcher.ignoredirection = 1;
+    watcher.immediatedetonation = 0;
+    watcher.onspawn = &on_tripwire_spawn;
+    watcher.ondamage = &function_7a905654;
+    watcher.ondestroyed = &function_9b3a657f;
+    watcher.var_994b472b = &function_9a98f669;
+    watcher.activatesound = #"hash_3185e3ad37d8b947";
+    watcher.ontimeout = &function_9b3a657f;
+    watcher.onfizzleout = &function_9b3a657f;
 }
 
 // Namespace gadget_tripwire/gadget_tripwire
@@ -165,7 +165,7 @@ function on_tripwire_spawn(watcher, player) {
     self.hitnormal = waitresult.normal;
     self.origin = function_ec88b3b9(waitresult.position);
     killcament = spawn("script_model", self.origin + self.hitnormal * 5);
-    killcament.targetname.killcament = "gadget_tripwire_killcament";
+    killcament.targetname = "gadget_tripwire_killcament";
     self.killcament = killcament;
     if (isdefined(waitresult.target) && (isvehicle(waitresult.target) || waitresult.target ismovingplatform() || waitresult.target.dynamicent === 1)) {
         self thread function_15566346(waitresult.target);
@@ -257,7 +257,7 @@ function function_b9549a9() {
     angles = vectortoangles(self.hitnormal);
     pos = self gettagorigin("tag_fx");
     fxorg = spawn("script_model", pos, 0, angles);
-    fxorg.targetname.fxorg = "gadget_tripwire_fxorg";
+    fxorg.targetname = "gadget_tripwire_fxorg";
     fxorg.angles = angles;
     fxorg setmodel(#"tag_origin");
     self.var_886bd8dc = fxorg;
@@ -415,10 +415,10 @@ function function_d334c3fa(endpoint) {
     enemyplayers = getplayers("all", self.origin, level.var_c72e8c51.var_831055cb);
     foreach (player in enemyplayers) {
         if (!isdefined(player.prev_origin)) {
-            player.prev_origin.player = player.origin;
+            player.prev_origin = player.origin;
         }
         if (!function_5b8dea90(player)) {
-            player.prev_origin.player = player.origin;
+            player.prev_origin = player.origin;
         } else {
             points = math::function_f16fbd66(self.var_db7f2def, endpoint, player.origin, player.prev_origin, 1);
             if (!isdefined(points)) {
@@ -430,7 +430,7 @@ function function_d334c3fa(endpoint) {
             if (result) {
                 return result;
             }
-            player.prev_origin.player = player.origin;
+            player.prev_origin = player.origin;
         }
     }
     return result;
@@ -544,7 +544,7 @@ function function_9e546fb3(attacker, weapon, *target, var_2f6adbe3, tripper) {
         self playsound(#"hash_1f0de5f27d29d3aa");
         self.detonating = 1;
         if (isdefined(var_2f6adbe3)) {
-            var_2f6adbe3.detonating.var_2f6adbe3 = 1;
+            var_2f6adbe3.detonating = 1;
         }
         wait(level.var_c72e8c51.var_7f1fc1ee);
         if (!isdefined(self)) {
@@ -552,14 +552,14 @@ function function_9e546fb3(attacker, weapon, *target, var_2f6adbe3, tripper) {
         }
         if (isdefined(var_2f6adbe3)) {
             explosiondist = isdefined(level.var_c72e8c51.var_e44a7667) ? level.var_c72e8c51.var_e44a7667 : 0;
-            var_15d2965b = isdefined(level.var_c72e8c51.var_b1f240d7) ? level.var_c72e8c51.var_b1f240d7 : 0;
-            var_36684ed2 = isdefined(level.var_c72e8c51.var_d484364c) ? level.var_c72e8c51.var_d484364c : 0;
+            nearradius = isdefined(level.var_c72e8c51.var_b1f240d7) ? level.var_c72e8c51.var_b1f240d7 : 0;
+            farradius = isdefined(level.var_c72e8c51.var_d484364c) ? level.var_c72e8c51.var_d484364c : 0;
             maxdamage = isdefined(level.var_c72e8c51.var_89d80d88) ? level.var_c72e8c51.var_89d80d88 : 0;
             mindamage = isdefined(level.var_c72e8c51.var_cd9b7eaf) ? level.var_c72e8c51.var_cd9b7eaf : 0;
         } else {
             explosiondist = isdefined(level.var_c72e8c51.var_13e9ceba) ? level.var_c72e8c51.var_13e9ceba : 0;
-            var_15d2965b = isdefined(level.var_c72e8c51.var_d0a598a5) ? level.var_c72e8c51.var_d0a598a5 : 0;
-            var_36684ed2 = isdefined(level.var_c72e8c51.var_fcb3348e) ? level.var_c72e8c51.var_fcb3348e : 0;
+            nearradius = isdefined(level.var_c72e8c51.var_d0a598a5) ? level.var_c72e8c51.var_d0a598a5 : 0;
+            farradius = isdefined(level.var_c72e8c51.var_fcb3348e) ? level.var_c72e8c51.var_fcb3348e : 0;
             maxdamage = isdefined(level.var_c72e8c51.var_aebac5e5) ? level.var_c72e8c51.var_aebac5e5 : 0;
             mindamage = isdefined(level.var_c72e8c51.var_69bf01c2) ? level.var_c72e8c51.var_69bf01c2 : 0;
         }
@@ -569,10 +569,10 @@ function function_9e546fb3(attacker, weapon, *target, var_2f6adbe3, tripper) {
             explosionsound = #"exp_tripwire";
             explosiondir = self.origin - var_2f6adbe3.origin;
             explosiondir = vectornormalize(explosiondir);
-            var_dcd20d50 = perpendicularvector(explosiondir);
+            perpvec = perpendicularvector(explosiondir);
             owner = isdefined(var_2f6adbe3.owner) && isentity(var_2f6adbe3.owner) ? var_2f6adbe3.owner : undefined;
-            var_2f6adbe3 cylinderdamage(explosiondir * explosiondist, var_2f6adbe3.origin, var_15d2965b, var_36684ed2, maxdamage, mindamage, owner, "MOD_EXPLOSIVE", self.weapon);
-            playfx(#"hash_69455dfeef0311c2", var_2f6adbe3.origin, explosiondir, var_dcd20d50);
+            var_2f6adbe3 cylinderdamage(explosiondir * explosiondist, var_2f6adbe3.origin, nearradius, farradius, maxdamage, mindamage, owner, "MOD_EXPLOSIVE", self.weapon);
+            playfx(#"hash_69455dfeef0311c2", var_2f6adbe3.origin, explosiondir, perpvec);
             playsoundatposition(explosionsound, self.origin);
             playsoundatposition(explosionsound, var_2f6adbe3.origin);
             var_2f6adbe3 ghost();
@@ -588,8 +588,8 @@ function function_9e546fb3(attacker, weapon, *target, var_2f6adbe3, tripper) {
                     explosiondir = (1, 0, 0);
                 }
             }
-            var_dcd20d50 = perpendicularvector(explosiondir);
-            playfx(#"hash_69455dfeef0311c2", self.origin, explosiondir, var_dcd20d50);
+            perpvec = perpendicularvector(explosiondir);
+            playfx(#"hash_69455dfeef0311c2", self.origin, explosiondir, perpvec);
             self playsound(explosionsound);
             if (!isdefined(self.hitnormal)) {
                 self.hitnormal = (0, 0, 1);
@@ -603,7 +603,7 @@ function function_9e546fb3(attacker, weapon, *target, var_2f6adbe3, tripper) {
             } else if (!isdefined(var_2f6adbe3)) {
                 self radiusdamage(self.origin + self.hitnormal * 5, explosiondist / 2, maxdamage, mindamage, self.owner, "MOD_EXPLOSIVE", self.weapon);
             } else {
-                self cylinderdamage(explosiondir * explosiondist, self.origin, var_15d2965b, var_36684ed2, maxdamage, mindamage, self.owner, "MOD_EXPLOSIVE", self.weapon);
+                self cylinderdamage(explosiondir * explosiondist, self.origin, nearradius, farradius, maxdamage, mindamage, self.owner, "MOD_EXPLOSIVE", self.weapon);
             }
         }
     }

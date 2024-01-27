@@ -317,16 +317,16 @@ function updatedevsettings() {
             } else if (getdvarstring(#"scr_devgui_spawn") != "<unknown string>") {
                 player = gethostplayer();
                 if (!isdefined(player.devgui_spawn_active)) {
-                    player.devgui_spawn_active.player = 0;
+                    player.devgui_spawn_active = 0;
                 }
                 if (!player.devgui_spawn_active) {
                     iprintln("<unknown string>");
                     iprintln("<unknown string>");
-                    player.devgui_spawn_active.player = 1;
+                    player.devgui_spawn_active = 1;
                     player thread devgui_spawn_think();
                 } else {
                     player notify(#"devgui_spawn_think");
-                    player.devgui_spawn_active.player = 0;
+                    player.devgui_spawn_active = 0;
                     player setactionslot(3, "<unknown string>");
                 }
                 setdvar(#"scr_devgui_spawn", "<unknown string>");
@@ -869,11 +869,11 @@ function set_hudelem(text, x, y, scale, alpha, sort, *debug_hudelem) {
             debug_hudelem = 20;
         }
         hud = newdebughudelem();
-        hud.debug_hudelem.hud = 1;
-        hud.location.hud = 0;
-        hud.alignx.hud = "<unknown string>";
-        hud.aligny.hud = "<unknown string>";
-        hud.foreground.hud = 1;
+        hud.debug_hudelem = 1;
+        hud.location = 0;
+        hud.alignx = "<unknown string>";
+        hud.aligny = "<unknown string>";
+        hud.foreground = 1;
         hud.fontscale = alpha;
         hud.sort = debug_hudelem;
         hud.alpha = sort;

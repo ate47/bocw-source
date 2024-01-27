@@ -670,12 +670,12 @@ function private function_e105d8c8(actionparams) {
             #/
             return undefined;
         }
-        actionparams.aimpoint.actionparams = self.enemy.origin;
+        actionparams.aimpoint = self.enemy.origin;
     } else {
-        actionparams.aimpoint.actionparams = self.enemylastseenpos;
+        actionparams.aimpoint = self.enemylastseenpos;
     }
     if (!isdefined(actionparams.aimpoint)) {
-        actionparams.aimpoint.actionparams = self.enemylastseenpos;
+        actionparams.aimpoint = self.enemylastseenpos;
     }
     if (!self function_4e17fb37(actionparams, 40) || !self function_98a9dad4(actionparams)) {
         return undefined;
@@ -714,9 +714,9 @@ function private function_16906804(actionparams) {
             #/
             return undefined;
         }
-        actionparams.aimpoint.actionparams = self.enemy.origin;
+        actionparams.aimpoint = self.enemy.origin;
     } else {
-        actionparams.aimpoint.actionparams = self.enemylastseenpos;
+        actionparams.aimpoint = self.enemylastseenpos;
     }
     if (!self function_4e17fb37(actionparams, 40) || !self function_98a9dad4(actionparams)) {
         return undefined;
@@ -754,9 +754,9 @@ function private function_8640f24(actionparams) {
             #/
             return undefined;
         }
-        actionparams.aimpoint.actionparams = self.enemy.origin;
+        actionparams.aimpoint = self.enemy.origin;
     } else {
-        actionparams.aimpoint.actionparams = self.enemylastseenpos;
+        actionparams.aimpoint = self.enemylastseenpos;
     }
     if (!self function_4e17fb37(actionparams, 40) || !self function_98a9dad4(actionparams)) {
         return undefined;
@@ -797,7 +797,7 @@ function private function_d3c685b8(actionparams) {
         }
         actionparams.aimpoint = undefined;
     } else {
-        actionparams.aimpoint.actionparams = self.enemylastseenpos;
+        actionparams.aimpoint = self.enemylastseenpos;
     }
     if (!self function_4e17fb37(actionparams, 40) || !self function_98a9dad4(actionparams)) {
         return undefined;
@@ -880,7 +880,7 @@ function private function_22630da6(actionparams) {
         #/
         return undefined;
     }
-    actionparams.aimpoint.actionparams = self.enemylastseenpos;
+    actionparams.aimpoint = self.enemylastseenpos;
     if (!self function_4e17fb37(actionparams, 40) || !self function_98a9dad4(actionparams)) {
         return undefined;
     }

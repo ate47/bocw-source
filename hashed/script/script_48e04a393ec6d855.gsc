@@ -14,7 +14,7 @@ function init() {
         if (dungeon.type == -1) {
             continue;
         }
-        level.doa.var_dfcf49f8 = level.doa.var_dfcf49f8 & 1 << dungeon.type;
+        level.doa.var_dfcf49f8 = level.doa.var_dfcf49f8 | 1 << dungeon.type;
     }
     /#
         var_663588d = "<unknown string>";

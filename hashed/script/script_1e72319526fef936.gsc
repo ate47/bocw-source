@@ -49,13 +49,13 @@ function private function_70a657d8() {
 // Size: 0x324
 function function_ea2db6a9(instance) {
     var_d4f4d124 = isdefined(instance.var_fe2612fe[#"hash_1381b446e6ab7a37"]) ? instance.var_fe2612fe[#"hash_1381b446e6ab7a37"] : [];
-    instance.var_75bfdd78.instance = isdefined(instance.var_fe2612fe[#"teleport"]) ? instance.var_fe2612fe[#"teleport"] : [];
-    instance.a_triggers.instance = [];
+    instance.var_75bfdd78 = isdefined(instance.var_fe2612fe[#"teleport"]) ? instance.var_fe2612fe[#"teleport"] : [];
+    instance.a_triggers = [];
     v_offset = vectorscale((0, 0, -1), 32);
     level.var_ff7bf48c = [];
     foreach (var_2b357ce9 in var_d4f4d124) {
         mdl_portal = namespace_8b6a9d79::function_f3d93ee9(var_2b357ce9, "tag_origin");
-        mdl_portal.fx_id.mdl_portal = playfxontag(#"hash_7312068ea6037f71", mdl_portal, "tag_origin");
+        mdl_portal.fx_id = playfxontag(#"hash_7312068ea6037f71", mdl_portal, "tag_origin");
         mdl_portal playloopsound(#"hash_15ff560465c71665");
         level.var_ff7bf48c[level.var_ff7bf48c.size] = mdl_portal;
         trigger = spawn("trigger_radius", var_2b357ce9.origin + v_offset, 0, 128, 64);
@@ -65,9 +65,9 @@ function function_ea2db6a9(instance) {
         trigger.mdl_portal = mdl_portal;
         trigger callback::on_trigger(&function_1c5803d9);
         if (!isdefined(instance.a_triggers)) {
-            instance.a_triggers.instance = [];
+            instance.a_triggers = [];
         } else if (!isarray(instance.a_triggers)) {
-            instance.a_triggers.instance = array(instance.a_triggers);
+            instance.a_triggers = array(instance.a_triggers);
         }
         instance.a_triggers[instance.a_triggers.size] = trigger;
     }
@@ -82,7 +82,7 @@ function function_16ee428c(*params) {
     if (isarray(level.var_ff7bf48c)) {
         foreach (mdl_portal in level.var_ff7bf48c) {
             if (isdefined(mdl_portal) && mdl_portal.instance.content_script_name !== #"hash_18be5193d8310f84") {
-                mdl_portal.fx_id.mdl_portal = playfxontag(#"hash_7312068ea6037f71", mdl_portal, "tag_origin");
+                mdl_portal.fx_id = playfxontag(#"hash_7312068ea6037f71", mdl_portal, "tag_origin");
             }
         }
     }
@@ -98,7 +98,7 @@ function function_1c5803d9(eventstruct) {
     mdl_portal = self.mdl_portal;
     var_85e930e6 = [];
     if (!isdefined(var_2b357ce9.s_teleport) && isarray(instance.var_75bfdd78)) {
-        var_2b357ce9.s_teleport.var_2b357ce9 = array::function_a3b0f814(instance.var_75bfdd78, 0);
+        var_2b357ce9.s_teleport = array::function_a3b0f814(instance.var_75bfdd78, 0);
     }
     s_teleport = var_2b357ce9.s_teleport;
     player = eventstruct.activator;
@@ -133,7 +133,7 @@ function function_1c5803d9(eventstruct) {
             }
         }
         if (!is_true(vehicle.var_b591d382)) {
-            vehicle.var_b591d382.vehicle = 1;
+            vehicle.var_b591d382 = 1;
             vehicle makevehicleunusable();
         }
         if (!isdefined(player) && var_85e930e6.size) {
@@ -145,7 +145,7 @@ function function_1c5803d9(eventstruct) {
     }
     var_2b357ce9 thread flag::set_for_time(0.5, #"hash_3492e2db103df124");
     if (!isdefined(s_teleport.v_launch)) {
-        s_teleport.v_launch.s_teleport = (1250, 0, 300);
+        s_teleport.v_launch = (1250, 0, 300);
     }
     self thread function_a41c43bd(var_2b357ce9, mdl_portal, vehicle);
     v_trigger_offset = vectorscale((0, 0, -1), 32);
@@ -212,8 +212,8 @@ function private function_dda69211(player, vehicle, var_2b357ce9) {
                 util::wait_network_frame();
                 if (isdefined(vehicle)) {
                     vehicle dontinterpolate();
-                    vehicle.origin.vehicle = self.origin;
-                    vehicle.angles.vehicle = self.angles;
+                    vehicle.origin = self.origin;
+                    vehicle.angles = self.angles;
                 }
             }
         }
@@ -266,7 +266,7 @@ function function_a41c43bd(var_2b357ce9, mdl_portal, *vehicle) {
     v_powerup = namespace_77bd50da::function_81cad6d6(s_teleport.v_launch / 35, s_teleport.angles[1]) + s_teleport.origin;
     powerup = util::spawn_model("tag_origin", v_powerup);
     if (isdefined(powerup)) {
-        powerup.var_5c6f6051.powerup = 384;
+        powerup.var_5c6f6051 = 384;
         powerup zm_powerups::powerup_init(powerup, undefined, undefined, undefined, 0, undefined, 0, 1, 0);
         if (!is_true(var_dfe9b4d8)) {
             powerup waittilltimeout(15, #"powerup_grabbed");

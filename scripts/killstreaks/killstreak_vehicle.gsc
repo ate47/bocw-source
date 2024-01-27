@@ -49,16 +49,16 @@ function init_vehicle(var_19e1140) {
     vehicle = self;
     vehicle clientfield::set("enemyvehicle", 1);
     vehicle clientfield::set("scorestreakActive", 1);
-    vehicle.allowfriendlyfiredamageoverride.vehicle = &function_e9da8b7d;
+    vehicle.allowfriendlyfiredamageoverride = &function_e9da8b7d;
     vehicle enableaimassist();
     vehicle setdrawinfrared(1);
-    vehicle.delete_on_death.vehicle = 1;
-    vehicle.death_enter_cb.vehicle = &function_3c6cec8b;
-    vehicle.disableremoteweaponswitch.vehicle = 1;
-    vehicle.overridevehicledamage.vehicle = &on_damage;
-    vehicle.overridevehiclekilled.vehicle = &on_death;
-    vehicle.watch_remote_weapon_death.vehicle = 1;
-    vehicle.watch_remote_weapon_death_duration.vehicle = 0.3;
+    vehicle.delete_on_death = 1;
+    vehicle.death_enter_cb = &function_3c6cec8b;
+    vehicle.disableremoteweaponswitch = 1;
+    vehicle.overridevehicledamage = &on_damage;
+    vehicle.overridevehiclekilled = &on_death;
+    vehicle.watch_remote_weapon_death = 1;
+    vehicle.watch_remote_weapon_death_duration = 0.3;
     vehicle.var_19e1140 = var_19e1140;
     vehicle util::make_sentient();
 }
@@ -179,17 +179,17 @@ function activate_vehicle(type) {
     vehicle deployable::function_dd266e08(player);
     vehicle killstreaks::configure_team(type, killstreak_id, player, "small_vehicle", undefined, &function_5e2ea3ef);
     vehicle killstreak_hacking::enable_hacking(type, &function_aba709c3, &function_2df6e3bf);
-    vehicle.damagetaken.vehicle = 0;
-    vehicle.abandoned.vehicle = 0;
+    vehicle.damagetaken = 0;
+    vehicle.abandoned = 0;
     vehicle.killstreak_id = killstreak_id;
-    vehicle.activatingkillstreak.vehicle = 1;
+    vehicle.activatingkillstreak = 1;
     vehicle ghost();
     vehicle thread watch_shutdown(player, type);
-    vehicle.health.vehicle = bundle.kshealth;
-    vehicle.maxhealth.vehicle = bundle.kshealth;
-    vehicle.hackedhealth.vehicle = bundle.kshackedhealth;
-    vehicle.hackedhealthupdatecallback.vehicle = &function_f07460c5;
-    vehicle.ignore_vehicle_underneath_splash_scalar.vehicle = 1;
+    vehicle.health = bundle.kshealth;
+    vehicle.maxhealth = bundle.kshealth;
+    vehicle.hackedhealth = bundle.kshackedhealth;
+    vehicle.hackedhealthupdatecallback = &function_f07460c5;
+    vehicle.ignore_vehicle_underneath_splash_scalar = 1;
     if (isdefined(weapon)) {
         vehicle setweapon(weapon);
         vehicle.weapon = weapon;
@@ -212,11 +212,11 @@ function activate_vehicle(type) {
         return 0;
     }
     vehicle show();
-    vehicle.activatingkillstreak.vehicle = 0;
+    vehicle.activatingkillstreak = 0;
     target_set(vehicle);
     ability_player::function_c22f319e(weapon);
     vehicle thread watch_game_ended();
-    vehicle.var_99178ae6.vehicle = player util::create_streamer_hint(player.origin, player.angles, 1, undefined, 0, 0);
+    vehicle.var_99178ae6 = player util::create_streamer_hint(player.origin, player.angles, 1, undefined, 0, 0);
     vehicle waittill(#"death");
     vehicle function_11fa7e00(type, vehicle.originalteam, killstreak_id);
     return 1;
@@ -240,7 +240,7 @@ function function_11fa7e00(killstreak_type, original_team, killstreak_id, start_
 function function_f07460c5(*hacker) {
     vehicle = self;
     if (vehicle.health > vehicle.hackedhealth) {
-        vehicle.health.vehicle = vehicle.hackedhealth;
+        vehicle.health = vehicle.hackedhealth;
     }
 }
 
@@ -390,7 +390,7 @@ function watch_timeout() {
 // Size: 0x34
 function function_822e1f64() {
     vehicle = self;
-    vehicle.abandoned.vehicle = 1;
+    vehicle.abandoned = 1;
     vehicle function_1f46c433();
 }
 
@@ -548,7 +548,7 @@ function watch_game_ended() {
     vehicle = self;
     vehicle endon(#"death");
     level waittill(#"game_ended");
-    vehicle.selfdestruct.vehicle = 1;
+    vehicle.selfdestruct = 1;
     vehicle function_822e1f64();
 }
 
@@ -680,7 +680,7 @@ function function_d75fbe15(origin, angles) {
         startpoint = origin + vectorscale(anglestoforward(startangles[i] + testangles[i]), 70);
         endpoint = startpoint - vectorscale((0, 0, 1), 100);
         startpoint = startpoint + (0, 0, startheight);
-        mask = 1 & 2;
+        mask = 1 | 2;
         trace = physicstrace(startpoint, endpoint, mins, maxs, self, mask);
         if (isdefined(trace[#"entity"]) && isplayer(trace[#"entity"])) {
             wheelcounts[i] = 0;
@@ -698,8 +698,8 @@ function function_d75fbe15(origin, angles) {
                 testcheck[i] = 1;
                 if (function_b4682bd6(startpoints[i], startangles[i])) {
                     placement = spawnstruct();
-                    placement.origin.placement = startpoints[i];
-                    placement.angles.placement = startangles[i];
+                    placement.origin = startpoints[i];
+                    placement.angles = startangles[i];
                     return placement;
                 }
             }
@@ -710,8 +710,8 @@ function function_d75fbe15(origin, angles) {
             if (wheelcounts[i] >= 2) {
                 if (function_b4682bd6(startpoints[i], startangles[i])) {
                     placement = spawnstruct();
-                    placement.origin.placement = startpoints[i];
-                    placement.angles.placement = startangles[i];
+                    placement.origin = startpoints[i];
+                    placement.angles = startangles[i];
                     return placement;
                 }
             }
@@ -764,7 +764,7 @@ function function_b4682bd6(origin, *angles) {
         return 0;
     }
     startheight = function_e94c2667();
-    mask = 1 & 2 & 4;
+    mask = 1 | 2 | 4;
     trace = physicstrace(liftedorigin, angles + (0, 0, 1), mins, maxs, self, mask);
     if (trace[#"fraction"] < 1) {
         return 0;

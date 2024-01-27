@@ -151,7 +151,7 @@ function private function_afb0648d(vehicle) {
                     if (isdefined(var_7450e8ac)) {
                         var_3ee3065f = getscriptbundle(var_7450e8ac);
                         if (isdefined(var_3ee3065f) && isdefined(var_3ee3065f.var_921a9ffa)) {
-                            vehicle.battletrack_active.vehicle = var_3ee3065f.var_921a9ffa;
+                            vehicle.battletrack_active = var_3ee3065f.var_921a9ffa;
                             vehicle playsoundwithnotify(vehicle.battletrack_active, "battletrack_complete");
                             vehicle clientfield::set("battletrack_active", 1);
                         }

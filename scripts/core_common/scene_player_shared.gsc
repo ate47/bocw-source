@@ -153,7 +153,7 @@ class csceneplayer : csceneobject {
             }
             foreach (player in a_players) {
                 self._str_camera = [[ self ]]->animation_lookup(animation, player, 1);
-                player.var_36fa161e.player = self._str_camera;
+                player.var_36fa161e = self._str_camera;
                 thread play_camera_on_player(player, n_start_time);
             }
             if (isdefined(self._str_camera)) {
@@ -291,7 +291,7 @@ class csceneplayer : csceneobject {
     // Size: 0x284
     function function_39ab0a6a(player, params) {
         if (player === self._e && player::is_valid_weapon(params.last_weapon)) {
-            player.var_d3d25842.player = params.last_weapon;
+            player.var_d3d25842 = params.last_weapon;
         }
         if (player === self._e && player::is_valid_weapon(params.weapon) && isdefined(player.str_current_anim) && player.var_d3d25842 !== params.weapon) {
             if (sessionmodeiscampaigngame() && player getcurrentweapon() == params.weapon) {
@@ -307,7 +307,7 @@ class csceneplayer : csceneobject {
                 player.var_d3d25842 = var_9cb7f1a6;
                 return;
             }
-            player.var_d3d25842.player = params.weapon;
+            player.var_d3d25842 = params.weapon;
             str_new_anim = csceneobject::function_9a43e31(player, csceneobject::get_animation_name(self._str_shot, 1), 0);
             if (str_new_anim != player.str_current_anim) {
                 n_current_time = player getanimtime(player.str_current_anim);
@@ -473,7 +473,7 @@ class csceneplayer : csceneobject {
         #/
         player notify(#"hash_7ba9e3058f933eb");
         player.var_c3a79d20 = undefined;
-        player.scene_set_visible_time.player = level.time;
+        player.scene_set_visible_time = level.time;
         player setvisibletoall();
         player val::reset(#"scene", "hide");
         player flag::clear(#"shared_igc");
@@ -736,12 +736,12 @@ class csceneplayer : csceneobject {
         self.var_a3cc5416 = undefined;
         var_ec50a0d3 = self._s.shots[csceneobject::get_shot(self._str_shot)];
         player flag::set(#"scene_interactive_shot");
-        player.player_anim_look_enabled.player = 1;
-        player.player_anim_clamp_right.player = isdefined(player.player_anim_clamp_right) ? player.player_anim_clamp_right : 75;
-        player.player_anim_clamp_left.player = isdefined(player.player_anim_clamp_left) ? player.player_anim_clamp_left : 75;
-        player.player_anim_clamp_top.player = isdefined(player.player_anim_clamp_top) ? player.player_anim_clamp_top : 180;
-        player.player_anim_clamp_bottom.player = isdefined(player.player_anim_clamp_bottom) ? player.player_anim_clamp_bottom : 60;
-        player.var_c3a79d20.player = 1;
+        player.player_anim_look_enabled = 1;
+        player.player_anim_clamp_right = isdefined(player.player_anim_clamp_right) ? player.player_anim_clamp_right : 75;
+        player.player_anim_clamp_left = isdefined(player.player_anim_clamp_left) ? player.player_anim_clamp_left : 75;
+        player.player_anim_clamp_top = isdefined(player.player_anim_clamp_top) ? player.player_anim_clamp_top : 180;
+        player.player_anim_clamp_bottom = isdefined(player.player_anim_clamp_bottom) ? player.player_anim_clamp_bottom : 60;
+        player.var_c3a79d20 = 1;
         thread function_bd3a7030(player, var_ec50a0d3.var_9532f6db);
         self._str_current_anim = csceneobject::get_animation_name(self._str_shot);
         while (1) {
@@ -760,9 +760,9 @@ class csceneplayer : csceneobject {
                 b_pressed = result;
             }
             foreach (o_obj in self._o_scene._a_objects) {
-                o_obj.var_efc540b6.o_obj = [[ o_obj ]]->function_376c9d87(var_ec50a0d3, n_movement, player);
+                o_obj.var_efc540b6 = [[ o_obj ]]->function_376c9d87(var_ec50a0d3, n_movement, player);
                 if (!isdefined(o_obj.var_efc540b6)) {
-                    o_obj.var_efc540b6.o_obj = isdefined(o_obj._str_current_anim) ? o_obj._str_current_anim : csceneobject::get_animation_name(self._str_shot);
+                    o_obj.var_efc540b6 = isdefined(o_obj._str_current_anim) ? o_obj._str_current_anim : csceneobject::get_animation_name(self._str_shot);
                     if (o_obj === self) {
                         var_f2b99dab = 1;
                     }
@@ -949,7 +949,7 @@ class csceneplayer : csceneobject {
                     }
                 }
                 foreach (o_obj in self._o_scene._a_objects) {
-                    o_obj._b_active_anim.o_obj = 0;
+                    o_obj._b_active_anim = 0;
                     o_obj flag::clear(#"scene_interactive_shot_active");
                 }
                 return;
@@ -976,13 +976,13 @@ class csceneplayer : csceneobject {
         if (!isplayer(player)) {
             return;
         }
-        player.player_anim_look_enabled.player = !is_true(self._s.lockview);
-        player.var_6f570bef.player = isdefined(self._s.var_a8972ec6) ? self._s.var_a8972ec6 : 0;
-        player.var_fcbf7c5a.player = isdefined(self._s.var_e8846003) ? self._s.var_e8846003 : 0;
-        player.player_anim_clamp_right.player = isdefined(isdefined(self.var_55b4f21e.viewclampright) ? self.var_55b4f21e.viewclampright : self._s.viewclampright) ? isdefined(self.var_55b4f21e.viewclampright) ? self.var_55b4f21e.viewclampright : self._s.viewclampright : 0;
-        player.player_anim_clamp_left.player = isdefined(isdefined(self.var_55b4f21e.viewclampleft) ? self.var_55b4f21e.viewclampleft : self._s.viewclampleft) ? isdefined(self.var_55b4f21e.viewclampleft) ? self.var_55b4f21e.viewclampleft : self._s.viewclampleft : 0;
-        player.player_anim_clamp_top.player = isdefined(isdefined(self.var_55b4f21e.viewclamptop) ? self.var_55b4f21e.viewclamptop : self._s.viewclamptop) ? isdefined(self.var_55b4f21e.viewclamptop) ? self.var_55b4f21e.viewclamptop : self._s.viewclamptop : 0;
-        player.player_anim_clamp_bottom.player = isdefined(isdefined(self.var_55b4f21e.viewclampbottom) ? self.var_55b4f21e.viewclampbottom : self._s.viewclampbottom) ? isdefined(self.var_55b4f21e.viewclampbottom) ? self.var_55b4f21e.viewclampbottom : self._s.viewclampbottom : 0;
+        player.player_anim_look_enabled = !is_true(self._s.lockview);
+        player.var_6f570bef = isdefined(self._s.var_a8972ec6) ? self._s.var_a8972ec6 : 0;
+        player.var_fcbf7c5a = isdefined(self._s.var_e8846003) ? self._s.var_e8846003 : 0;
+        player.player_anim_clamp_right = isdefined(isdefined(self.var_55b4f21e.viewclampright) ? self.var_55b4f21e.viewclampright : self._s.viewclampright) ? isdefined(self.var_55b4f21e.viewclampright) ? self.var_55b4f21e.viewclampright : self._s.viewclampright : 0;
+        player.player_anim_clamp_left = isdefined(isdefined(self.var_55b4f21e.viewclampleft) ? self.var_55b4f21e.viewclampleft : self._s.viewclampleft) ? isdefined(self.var_55b4f21e.viewclampleft) ? self.var_55b4f21e.viewclampleft : self._s.viewclampleft : 0;
+        player.player_anim_clamp_top = isdefined(isdefined(self.var_55b4f21e.viewclamptop) ? self.var_55b4f21e.viewclamptop : self._s.viewclamptop) ? isdefined(self.var_55b4f21e.viewclamptop) ? self.var_55b4f21e.viewclamptop : self._s.viewclamptop : 0;
+        player.player_anim_clamp_bottom = isdefined(isdefined(self.var_55b4f21e.viewclampbottom) ? self.var_55b4f21e.viewclampbottom : self._s.viewclampbottom) ? isdefined(self.var_55b4f21e.viewclampbottom) ? self.var_55b4f21e.viewclampbottom : self._s.viewclampbottom : 0;
     }
 
     // Namespace csceneplayer/scene_player_shared
@@ -1118,9 +1118,9 @@ class csceneplayer : csceneobject {
     // Size: 0x5a
     function first_init(s_objdef, o_scene) {
         if (isdefined(o_scene._str_team)) {
-            s_objdef.team.s_objdef = o_scene._str_team;
+            s_objdef.team = o_scene._str_team;
         }
-        s_objdef.nospawn.s_objdef = 1;
+        s_objdef.nospawn = 1;
         return csceneobject::first_init(s_objdef, o_scene);
     }
 
@@ -1219,10 +1219,10 @@ class csceneplayer : csceneobject {
         }
         if (isdefined(str_streamer_hint) && isplayer(player)) {
             if (!isdefined(player.var_231881b1)) {
-                player.var_231881b1.player = [];
+                player.var_231881b1 = [];
             }
             if (!isdefined(player.var_16672042)) {
-                player.var_16672042.player = [];
+                player.var_16672042 = [];
             }
             if (isdefined(player.var_16672042[self._o_scene._str_name]) && player.var_16672042[self._o_scene._str_name] != -1) {
                 self._n_streamer_req = player.var_16672042[self._o_scene._str_name];
@@ -1254,10 +1254,10 @@ class csceneplayer : csceneobject {
         if (getdvarint(#"scene_hide_player", 0)) {
             player val::set(#"scene", "hide");
         }
-        player._scene_object.player = self;
-        player.current_scene.player = self._o_scene._str_name;
-        player.var_e3d6d713.player = player.current_scene;
-        player.anim_debug_name.player = self._s.name;
+        player._scene_object = self;
+        player.current_scene = self._o_scene._str_name;
+        player.var_e3d6d713 = player.current_scene;
+        player.anim_debug_name = self._s.name;
         /#
             if (function_209522a0() && isplayer(player)) {
                 if (isdefined(self._s.model)) {
@@ -1358,7 +1358,7 @@ class csceneplayer : csceneobject {
     // Checksum 0x61b70905, Offset: 0x20a0
     // Size: 0xec
     function function_a2a183e7(player, var_79f81c6c = 0) {
-        player.var_d43badce.player = util::spawn_player_clone(player);
+        player.var_d43badce = util::spawn_player_clone(player);
         player.var_d43badce.anim_debug_name = player.name + " clone";
         player.var_d43badce hide();
         tag = "tag_player";
@@ -1399,7 +1399,7 @@ class csceneplayer : csceneobject {
                 player weapons::force_stowed_weapon_update();
             }
         } else {
-            player.var_313437ff.player = 1;
+            player.var_313437ff = 1;
             player clearstowedweapon();
         }
     }
@@ -1515,7 +1515,7 @@ class csceneplayer : csceneobject {
             s_waitresult = undefined;
             s_waitresult = player waittill(#"hash_940a817baf9765e");
             if (!isdefined(s_waitresult.str_input)) {
-                s_waitresult.str_input.s_waitresult = "";
+                s_waitresult.str_input = "";
             }
             switch (s_waitresult.str_input) {
             case #"move_up":
@@ -1790,7 +1790,7 @@ class csceneplayer : csceneobject {
             if (isarray(player.var_231881b1) && isdefined(player.var_231881b1[self._o_scene._str_name])) {
                 player playerstreamerrequest("play", player.var_231881b1[self._o_scene._str_name]);
                 player.var_16672042[self._o_scene._str_name] = -1;
-                player.streamer_hint_playing.player = 1;
+                player.streamer_hint_playing = 1;
             }
         }
         thread function_9339d69d(player);
@@ -1838,7 +1838,7 @@ class cscenefakeplayer : csceneobject {
     // Size: 0x2aa
     function animation_lookup(animation, ent, *b_camera = self._e) {
         if (isweapon(b_camera.weapon) && !isdefined(b_camera.var_777951c)) {
-            b_camera.var_777951c.b_camera = b_camera.weapon;
+            b_camera.var_777951c = b_camera.weapon;
         }
         if (isdefined(self._o_scene.var_58e5d094) && isplayer(b_camera.var_1ff8de20)) {
             if (self === self._o_scene.var_58e5d094 && isarray(self._o_scene._a_objects)) {
@@ -2031,7 +2031,7 @@ class cscenesharedplayer : csceneplayer, csceneobject {
                 if (!isdefined(player.var_59f4be9a)) {
                     if (!is_true(level.chyron_text_active)) {
                         if (!is_true(player.var_8a1a4ba)) {
-                            player.play_scene_transition_effect.player = 1;
+                            player.play_scene_transition_effect = 1;
                         }
                     }
                 }

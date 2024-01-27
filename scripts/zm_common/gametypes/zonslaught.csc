@@ -212,7 +212,7 @@ function orb_soul_capture_fx(localclientnum, *oldval, newval, *bnewent, *binitia
     if (bwasdemojump && isdefined(level.var_df7b46d1)) {
         e_fx = util::spawn_model(fieldname, "tag_origin", self.origin);
         e_fx playsound(fieldname, "zmb_onslaught_zsouls_start");
-        e_fx.sfx_id.e_fx = e_fx playloopsound(#"hash_58d856545ecf5e28");
+        e_fx.sfx_id = e_fx playloopsound(#"hash_58d856545ecf5e28");
         util::playfxontag(fieldname, level._effect[#"soul_fx"], e_fx, "tag_origin");
         wait(0.3);
         power = distance(e_fx.origin, level.var_df7b46d1.origin);

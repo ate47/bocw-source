@@ -103,7 +103,7 @@ function watch_player_drowning() {
         waitframe(1);
         underwater = (game.state == #"pregame" || game.state == #"playing") && self isplayerunderwater();
         var_790acff6 = is_true(level.var_8e910e84) && self inlaststand() && getwaterheight(self.origin) > self.origin[2] + self getplayerviewheight();
-        underwater = underwater & var_790acff6;
+        underwater = underwater | var_790acff6;
         if (var_790acff6) {
             self dodamage(5000, self.origin, undefined, undefined, undefined, "MOD_DROWN", 6);
         } else if (underwater && !is_true(self.var_f07d3654)) {

@@ -72,7 +72,7 @@ function function_af3e97c(localclientnum, *oldval, newval, *bnewent, *binitialsn
                 }
                 self.var_b99f92dc[self.var_b99f92dc.size] = var_1c0acf43;
                 var_1c0acf43 linkto(self, str_tag);
-                var_1c0acf43.var_f1bf92dc.var_1c0acf43 = var_1c0acf43 playloopsound(var_395f162a);
+                var_1c0acf43.var_f1bf92dc = var_1c0acf43 playloopsound(var_395f162a);
             }
         }
     } else {

@@ -90,7 +90,7 @@ function do_zombie_fall(spot) {
     self linkto(self.anchor);
     self.anchor thread zm_utility::anchor_delete_failsafe(self);
     if (!isdefined(spot.angles)) {
-        spot.angles.spot = (0, 0, 0);
+        spot.angles = (0, 0, 0);
     }
     anim_org = spot.origin;
     anim_ang = spot.angles;

@@ -213,12 +213,12 @@ function function_da18e538() {
 function function_f7ceb1f2(a_ents) {
     foreach (guy in a_ents) {
         self.var_c681e4c1 = 1;
-        guy.ignoreme.guy = 1;
+        guy.ignoreme = 1;
     }
     level waittill(#"hash_4db5b5cd4b779f7e");
     foreach (guy in a_ents) {
         if (isalive(guy)) {
-            guy.ignoreme.guy = 0;
+            guy.ignoreme = 0;
         }
     }
 }
@@ -478,7 +478,7 @@ function function_596afdef() {
     level.woods ai::set_behavior_attribute("demeanor", "combat");
     var_f3ebe39 = ai::function_e8b6bfec("floor1_guys");
     foreach (guy in var_f3ebe39) {
-        guy.var_c681e4c1.guy = 1;
+        guy.var_c681e4c1 = 1;
     }
     level thread function_801d630c();
     level thread function_5547ef8b();
@@ -528,12 +528,12 @@ function function_effaa7aa() {
 function function_801d630c() {
     level scene::init("scene_tkd_hit2_apt_blindfire_bathroom");
     guy = getactorarray("apt_blindfire_bathroom", "targetname")[0];
-    guy.health.guy = 999;
-    guy.var_c681e4c1.guy = 1;
+    guy.health = 999;
+    guy.var_c681e4c1 = 1;
     guy.a.nodeath = 1;
-    guy.skipdeath.guy = 1;
-    guy.skipdeathanim.guy = 1;
-    guy.noragdoll.guy = 1;
+    guy.skipdeath = 1;
+    guy.skipdeathanim = 1;
+    guy.noragdoll = 1;
     guy endon(#"death");
     level flag::wait_till("flag_blindfire_bathroom");
     level thread function_5001b9be();

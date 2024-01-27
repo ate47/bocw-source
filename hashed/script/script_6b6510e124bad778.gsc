@@ -248,12 +248,12 @@ function function_9aff0a25(var_9ba84610) {
 // Checksum 0xef772df9, Offset: 0x1c88
 // Size: 0xd4
 function function_55775bbc(var_9ba84610, set = 1) {
-    level.doa.var_25f4de97 = level.doa.var_25f4de97 & 1 << var_9ba84610;
+    level.doa.var_25f4de97 = level.doa.var_25f4de97 | 1 << var_9ba84610;
     if (set && isdefined(self.doa)) {
         if (!isdefined(self.doa.var_25f4de97)) {
             self.doa.var_25f4de97 = 0;
         }
-        self.doa.var_25f4de97 = self.doa.var_25f4de97 & 1 << var_9ba84610;
+        self.doa.var_25f4de97 = self.doa.var_25f4de97 | 1 << var_9ba84610;
     }
     self thread function_9aff0a25(var_9ba84610);
 }

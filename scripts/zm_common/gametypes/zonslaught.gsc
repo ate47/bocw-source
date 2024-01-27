@@ -264,10 +264,10 @@ function function_37d98bb7(entity) {
     if (is_true(entity.var_9d5d92ac)) {
         return;
     }
-    entity.var_9d5d92ac.entity = 1;
+    entity.var_9d5d92ac = 1;
     entity zm_laststand::function_3d685b5f(0);
     entity val::set(#"oob", "takedamage", 1);
-    entity.var_39c78617.entity = 1;
+    entity.var_39c78617 = 1;
     entity notify(#"instakill_player");
     if (is_true(entity.laststand)) {
         waitframe(4);
@@ -508,7 +508,7 @@ function overridespawn(*ispredictedspawn) {
         spawns = var_8fb1964e[#"ctf"];
     }
     var_8e971f37 = spawns[randomint(spawns.size)];
-    var_8e971f37.used.var_8e971f37 = 1;
+    var_8e971f37.used = 1;
     var_d16776ab = 1000000;
     foreach (spawnpt in spawns) {
         if (is_true(spawnpt.used)) {

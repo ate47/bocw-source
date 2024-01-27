@@ -307,8 +307,8 @@ function private function_36d63786(*objective) {
 // Checksum 0x67afd0d2, Offset: 0x1088
 // Size: 0x244
 function private function_91d9d948(*objective) {
-    var_1f2328d0 = self function_4794d6a3();
-    if (!self.bot.var_e8c84f98 || !isdefined(var_1f2328d0.regionid)) {
+    goalinfo = self function_4794d6a3();
+    if (!self.bot.var_e8c84f98 || !isdefined(goalinfo.regionid)) {
         self clear();
         return;
     }
@@ -316,13 +316,13 @@ function private function_91d9d948(*objective) {
     if (!isdefined(var_494658cd)) {
         return;
     }
-    if (var_494658cd.region != var_1f2328d0.regionid) {
+    if (var_494658cd.region != goalinfo.regionid) {
         return;
     }
     var_dae7049a = vectornormalize(self.enemy.origin - self.origin);
     var_6dc3b94d = [];
-    var_8cc7a4e = function_b507a336(var_1f2328d0.regionid);
-    foreach (var_3d52752a in var_8cc7a4e.neighbors) {
+    regioninfo = function_b507a336(goalinfo.regionid);
+    foreach (var_3d52752a in regioninfo.neighbors) {
         var_a110f1ae = function_b507a336(var_3d52752a);
         if (vectordot(var_dae7049a, var_a110f1ae.origin) <= 0.866) {
             var_6dc3b94d[var_6dc3b94d.size] = var_3d52752a;
@@ -684,7 +684,7 @@ function private function_db3a19e8() {
 function private function_b6e6a59b() {
     bounds = function_5ac49687();
     if (isdefined(bounds)) {
-        bounds.var_f521d351.bounds = (bounds.maxs[0], bounds.maxs[1], bounds.mins[2]);
+        bounds.var_f521d351 = (bounds.maxs[0], bounds.maxs[1], bounds.mins[2]);
     }
     return bounds;
 }

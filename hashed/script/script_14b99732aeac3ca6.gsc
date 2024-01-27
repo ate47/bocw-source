@@ -106,7 +106,7 @@ function function_ee0c0073(localclientnum, *oldval, newval, *bnewent, *binitials
     var_fcec724a = struct::get("bny_clb_strobe_fx");
     if (bwastimejump) {
         if (!isdefined(var_fcec724a.var_f01d5034)) {
-            var_fcec724a.var_f01d5034.var_fcec724a = playfx(fieldname, #"hash_ae69a5490ab1a42", var_fcec724a.origin, anglestoforward(var_fcec724a.angles), anglestoup(var_fcec724a.angles));
+            var_fcec724a.var_f01d5034 = playfx(fieldname, #"hash_ae69a5490ab1a42", var_fcec724a.origin, anglestoforward(var_fcec724a.angles), anglestoup(var_fcec724a.angles));
         }
     } else if (isdefined(var_fcec724a.var_f01d5034)) {
         stopfx(fieldname, var_fcec724a.var_f01d5034);
@@ -123,7 +123,7 @@ function function_411aa7f8(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwastimejump) {
         foreach (s_blocker in a_s_blockers) {
             if (!isdefined(s_blocker.mdl_fx)) {
-                s_blocker.mdl_fx.s_blocker = playfx(fieldname, #"hash_1209e5f15b93f9af", s_blocker.origin, anglestoforward(s_blocker.angles), anglestoup(s_blocker.angles));
+                s_blocker.mdl_fx = playfx(fieldname, #"hash_1209e5f15b93f9af", s_blocker.origin, anglestoforward(s_blocker.angles), anglestoup(s_blocker.angles));
             }
         }
     } else {

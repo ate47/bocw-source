@@ -72,7 +72,7 @@ function setstructblackboardattribute(struct, attributename, attributevalue) {
 // Size: 0x7c
 function createblackboardforentity(entity) {
     if (!isdefined(entity.__blackboard)) {
-        entity.__blackboard.entity = [];
+        entity.__blackboard = [];
         if (isentity(entity)) {
             entity createblackboardentries();
         }

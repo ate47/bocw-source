@@ -242,8 +242,8 @@ function private function_584fb7a3() {
         vehicle waittill(#"remote_weapon_end", #"hash_59b25025ce93a142");
     }
     attacker = isdefined(vehicle.owner) ? vehicle.owner : undefined;
-    vehicle.takedamage.vehicle = 1;
-    vehicle.allowdeath.vehicle = 1;
+    vehicle.takedamage = 1;
+    vehicle.allowdeath = 1;
     vehicle dodamage(vehicle.health + 666, vehicle.origin + vectorscale((0, 0, 1), 10), attacker, attacker, "none", "MOD_EXPLOSIVE", 8192);
 }
 

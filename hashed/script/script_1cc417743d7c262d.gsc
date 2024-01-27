@@ -184,7 +184,7 @@ function set_leader_gametype_dialog(startgamedialogkey, starthcgamedialogkey, of
 // Size: 0x82
 function function_ac2cb1bc() {
     foreach (player in level.players) {
-        player.leaderdialogqueue.player = [];
+        player.leaderdialogqueue = [];
     }
 }
 
@@ -305,15 +305,15 @@ function flush_leader_dialog_key_on_player(dialogkey) {
 // Params 7, eflags: 0x2 linked
 // Checksum 0xb1be0d4c, Offset: 0x11f0
 // Size: 0x64
-function play_taacom_dialog(dialogkey, killstreaktype, killstreakid, var_46bd7973, var_8a6b001a, weapon, priority) {
-    self killstreak_dialog_on_player(dialogkey, killstreaktype, killstreakid, undefined, var_46bd7973, var_8a6b001a, weapon, priority);
+function play_taacom_dialog(dialogkey, killstreaktype, killstreakid, soundevent, var_8a6b001a, weapon, priority) {
+    self killstreak_dialog_on_player(dialogkey, killstreaktype, killstreakid, undefined, soundevent, var_8a6b001a, weapon, priority);
 }
 
 // Namespace globallogic_audio/globallogic_audio
 // Params 8, eflags: 0x2 linked
 // Checksum 0xa082f42d, Offset: 0x1260
 // Size: 0x1b4
-function killstreak_dialog_on_player(dialogkey, killstreaktype, killstreakid, pilotindex, var_46bd7973, var_8a6b001a, weapon, priority) {
+function killstreak_dialog_on_player(dialogkey, killstreaktype, killstreakid, pilotindex, soundevent, var_8a6b001a, weapon, priority) {
     if (!isdefined(self)) {
         return;
     }
@@ -334,7 +334,7 @@ function killstreak_dialog_on_player(dialogkey, killstreaktype, killstreakid, pi
     newdialog.killstreaktype = killstreaktype;
     newdialog.pilotindex = pilotindex;
     newdialog.killstreakid = killstreakid;
-    newdialog.var_46bd7973 = var_46bd7973;
+    newdialog.soundevent = soundevent;
     newdialog.var_8a6b001a = var_8a6b001a;
     newdialog.weapon = weapon;
     if (priority === 1) {
@@ -416,9 +416,9 @@ function play_next_killstreak_dialog() {
         return;
     }
     waittime = 0;
-    if (isdefined(nextdialog.var_46bd7973) && isdefined(nextdialog.var_8a6b001a) && isalive(nextdialog.var_8a6b001a)) {
+    if (isdefined(nextdialog.soundevent) && isdefined(nextdialog.var_8a6b001a) && isalive(nextdialog.var_8a6b001a)) {
         waittime = waittime + battlechatter::mpdialog_value("taacomHackAndReplyDialogBuffer", 0);
-        self thread function_30f16f29(nextdialog.var_46bd7973, nextdialog.var_8a6b001a, nextdialog.weapon);
+        self thread function_30f16f29(nextdialog.soundevent, nextdialog.var_8a6b001a, nextdialog.weapon);
     } else {
         /#
             function_d9079fc1(dialogalias, "overwatchHelicopterHacked");
@@ -448,9 +448,9 @@ function wait_next_killstreak_dialog(waittime) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0xbcae2dc1, Offset: 0x18d0
 // Size: 0x5c
-function function_30f16f29(var_46bd7973, var_8a6b001a, weapon) {
+function function_30f16f29(soundevent, var_8a6b001a, weapon) {
     if (isdefined(var_8a6b001a) && isalive(var_8a6b001a)) {
-        var_8a6b001a function_18aba49d(var_46bd7973, weapon, self);
+        var_8a6b001a function_18aba49d(soundevent, weapon, self);
     }
 }
 
@@ -566,14 +566,14 @@ function leader_dialog_on_player(dialogkey, objectivekey, killstreakid, dialogbu
         }
     }
     newitem = spawnstruct();
-    newitem.priority.newitem = dialogkey_priority(dialogkey);
+    newitem.priority = dialogkey_priority(dialogkey);
     newitem.dialogkey = dialogkey;
-    newitem.multipledialogkey.newitem = level.multipledialogkeys[dialogkey];
+    newitem.multipledialogkey = level.multipledialogkeys[dialogkey];
     newitem.playmultiple = playmultiple;
     newitem.objectivekey = objectivekey;
     newitem.var_6ad14004 = var_6ad14004;
     if (isdefined(killstreakid)) {
-        newitem.killstreakids.newitem = [];
+        newitem.killstreakids = [];
         newitem.killstreakids[0] = killstreakid;
     }
     newitem.dialogbufferkey = dialogbufferkey;
@@ -653,7 +653,7 @@ function play_next_leader_dialog(dialogalias) {
         #/
         self playlocalsound(dialogalias);
     }
-    nextdialog.playtime.nextdialog = gettime();
+    nextdialog.playtime = gettime();
     self.currentleaderdialog = nextdialog;
     if (is_true(level.var_28ebc1e8)) {
         if (isdefined(level.var_9a1b7fdf)) {

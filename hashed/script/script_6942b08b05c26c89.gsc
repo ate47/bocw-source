@@ -46,7 +46,7 @@ function private function_59941838(localclientnum, *oldval, newval, *bnewent, *b
                         structs = struct::get_array(territory.target, "targetname");
                         foreach (struct in structs) {
                             if (isdefined(struct.variantname) && struct.variantname == "territory_circle") {
-                                territory.circle.territory = function_36a1028e(fieldname, struct.origin, struct.radius);
+                                territory.circle = function_36a1028e(fieldname, struct.origin, struct.radius);
                                 break;
                             }
                         }

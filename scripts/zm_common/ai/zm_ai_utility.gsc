@@ -162,7 +162,7 @@ function private function_a19d7104(settingsbundle) {
             level.var_532264f5[settingsbundle.name][var_e8d7c6d7.weaponid] = {#var_fac896db:var_e8d7c6d7.var_97b22faa, #var_8e22aa87:var_e8d7c6d7.var_fc420d71, #var_fff93f95:var_e8d7c6d7.var_628192b0, #var_c6cc6205:var_e8d7c6d7.damagescale};
         }
     }
-    settingsbundle.var_6199bcd5.settingsbundle = 1;
+    settingsbundle.var_6199bcd5 = 1;
 }
 
 // Namespace zm_ai_utility/zm_ai_utility
@@ -234,13 +234,13 @@ function get_pathnode_path(pathnode) {
             break;
         }
         if (isinarray(path_struct.path, var_592eaf7)) {
-            path_struct.loops.path_struct = 1;
+            path_struct.loops = 1;
             break;
         }
         if (!isdefined(path_struct.path)) {
-            path_struct.path.path_struct = [];
+            path_struct.path = [];
         } else if (!isarray(path_struct.path)) {
-            path_struct.path.path_struct = array(path_struct.path);
+            path_struct.path = array(path_struct.path);
         }
         path_struct.path[path_struct.path.size] = var_592eaf7;
     }
@@ -585,7 +585,7 @@ function make_zombie_target(entity) {
         return 0;
     }
     if (!isdefined(entity.am_i_valid)) {
-        entity.am_i_valid.entity = 1;
+        entity.am_i_valid = 1;
     }
     if (!isdefined(level.zombie_targets)) {
         level.zombie_targets = [];
@@ -745,7 +745,7 @@ function function_68ab868a(entity) {
         }
         entity.enemy.var_4ca11261 = gettime();
     }
-    entity.var_1fa24724.entity = 1;
+    entity.var_1fa24724 = 1;
 }
 
 // Namespace zm_ai_utility/zm_ai_utility

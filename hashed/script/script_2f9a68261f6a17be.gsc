@@ -51,8 +51,8 @@ function private on_begin() {
     a_ai = getaiteamarray(level.zombie_team);
     foreach (ai in a_ai) {
         if (isalive(ai) && (ai.var_6f84b820 === #"hash_72d4f2ad2e333eb4" || ai.var_6f84b820 === #"special")) {
-            ai.takedamage.ai = 1;
-            ai.allowdeath.ai = 1;
+            ai.takedamage = 1;
+            ai.allowdeath = 1;
             ai kill();
         }
     }

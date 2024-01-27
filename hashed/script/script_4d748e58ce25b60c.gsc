@@ -864,7 +864,7 @@ function function_ba8327d7() {
             self thread namespace_7f5aeb59::turnplayershieldon();
             forward = anglestoforward(self.angles);
             self namespace_e32bb68::function_3a59ec34("evt_doa_powerup_boost_activate");
-            self.doa.var_969ecddf = namespace_ec06fe4a::function_b5731057("trigger_radius", self.origin, 1 & 512 & 8, 80, 72);
+            self.doa.var_969ecddf = namespace_ec06fe4a::function_b5731057("trigger_radius", self.origin, 1 | 512 | 8, 80, 72);
             if (isdefined(self.doa.var_969ecddf)) {
                 self.doa.var_969ecddf.targetname = "triggerBoost";
                 self.doa.var_969ecddf enablelinkto();
@@ -968,11 +968,11 @@ function function_a34cf3fb() {
     foreach (guy in guys) {
         if (isdefined(guy)) {
             if (is_true(guy.var_c7121c91) || is_true(guy.boss)) {
-                guy.nuked.guy = gettime();
+                guy.nuked = gettime();
                 guy ai::stun(randomfloatrange(3, 7));
                 guy notify(#"nuked");
             } else {
-                guy.var_6dc6e670.guy = 1;
+                guy.var_6dc6e670 = 1;
                 if (isvehicle(guy)) {
                     guy dodamage(guy.health + 1, var_cc2c9bdb, self, self, "none", "MOD_EXPLOSIVE", 0, getweapon("none"));
                 } else if (guy.team != "axis") {

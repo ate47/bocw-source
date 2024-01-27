@@ -1202,7 +1202,7 @@ function updateteamstatus(var_bdfe75a7) {
             }
             if (player.sessionstate == "playing" && !is_true(player.var_bdfe75a7)) {
                 level.playerlives[team]++;
-                player.spawnqueueindex.player = -1;
+                player.spawnqueueindex = -1;
                 if (!isalive(player)) {
                     level.deadplayers[team][level.deadplayers[team].size] = player;
                 }
@@ -1364,7 +1364,7 @@ function graceperiod() {
         for (i = 0; i < players.size; i++) {
             player = players[i];
             if (!player.hasspawned && player.sessionteam != "spectator" && !isalive(player)) {
-                player.statusicon.player = "hud_status_dead";
+                player.statusicon = "hud_status_dead";
             }
         }
     }

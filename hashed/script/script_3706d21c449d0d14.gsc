@@ -133,33 +133,33 @@ function function_fe49c4b4() {
         for (i = 0; i < level.var_1c9484.size; i++) {
             key = level.var_1c9484[i];
             var_cabf91e7 = newdebughudelem();
-            var_cabf91e7.x.var_cabf91e7 = 150;
+            var_cabf91e7.x = 150;
             var_cabf91e7.y = y;
-            var_cabf91e7.alignx.var_cabf91e7 = "<unknown string>";
-            var_cabf91e7.aligny.var_cabf91e7 = "<unknown string>";
-            var_cabf91e7.horzalign.var_cabf91e7 = "<unknown string>";
-            var_cabf91e7.vertalign.var_cabf91e7 = "<unknown string>";
+            var_cabf91e7.alignx = "<unknown string>";
+            var_cabf91e7.aligny = "<unknown string>";
+            var_cabf91e7.horzalign = "<unknown string>";
+            var_cabf91e7.vertalign = "<unknown string>";
             var_cabf91e7 settext(key);
             var_c22d8d24 = newdebughudelem();
-            var_c22d8d24.x.var_c22d8d24 = 150 + 79;
-            var_c22d8d24.y.var_c22d8d24 = y + 1;
-            var_c22d8d24.z.var_c22d8d24 = 1;
-            var_c22d8d24.alignx.var_c22d8d24 = "<unknown string>";
-            var_c22d8d24.aligny.var_c22d8d24 = "<unknown string>";
-            var_c22d8d24.horzalign.var_c22d8d24 = "<unknown string>";
-            var_c22d8d24.vertalign.var_c22d8d24 = "<unknown string>";
-            var_c22d8d24.maxwidth.var_c22d8d24 = 3;
+            var_c22d8d24.x = 150 + 79;
+            var_c22d8d24.y = y + 1;
+            var_c22d8d24.z = 1;
+            var_c22d8d24.alignx = "<unknown string>";
+            var_c22d8d24.aligny = "<unknown string>";
+            var_c22d8d24.horzalign = "<unknown string>";
+            var_c22d8d24.vertalign = "<unknown string>";
+            var_c22d8d24.maxwidth = 3;
             var_c22d8d24 setshader(#"white", var_c22d8d24.maxwidth, 10);
-            var_c22d8d24.color.var_c22d8d24 = vectorscale((1, 1, 1), 0.5);
+            var_c22d8d24.color = vectorscale((1, 1, 1), 0.5);
             bar = newdebughudelem();
-            bar.x.bar = 150 + 80;
-            bar.y.bar = y + 2;
-            bar.alignx.bar = "<unknown string>";
-            bar.aligny.bar = "<unknown string>";
-            bar.horzalign.bar = "<unknown string>";
-            bar.vertalign.bar = "<unknown string>";
+            bar.x = 150 + 80;
+            bar.y = y + 2;
+            bar.alignx = "<unknown string>";
+            bar.aligny = "<unknown string>";
+            bar.horzalign = "<unknown string>";
+            bar.vertalign = "<unknown string>";
             bar setshader(#"black", 1, 8);
-            bar.sort.bar = 1;
+            bar.sort = 1;
             var_cabf91e7.bar = bar;
             var_cabf91e7.var_c22d8d24 = var_c22d8d24;
             var_cabf91e7.key = key;
@@ -188,9 +188,9 @@ function function_fe49c4b4() {
                 bar setshader(#"black", width, 8);
                 var_c22d8d24 = level.var_60023d69[key].var_c22d8d24;
                 if (width + 2 > var_c22d8d24.maxwidth) {
-                    var_c22d8d24.maxwidth.var_c22d8d24 = width + 2;
+                    var_c22d8d24.maxwidth = width + 2;
                     var_c22d8d24 setshader(#"white", var_c22d8d24.maxwidth, 10);
-                    var_c22d8d24.color.var_c22d8d24 = vectorscale((1, 1, 1), 0.5);
+                    var_c22d8d24.color = vectorscale((1, 1, 1), 0.5);
                 }
             }
         }
@@ -354,10 +354,10 @@ function function_57ba1474(var_648a2ef0) {
     level endon(#"hash_75a2e0ea99b6eba1");
     var_e074d966 = savegame::function_6440b06b(#"hash_e7d26541441cb9d");
     if (!isdefined(var_e074d966.var_9ac9bc79)) {
-        var_e074d966.var_9ac9bc79.var_e074d966 = 9999;
+        var_e074d966.var_9ac9bc79 = 9999;
     }
     if (!isdefined(var_e074d966.var_a0bc0e2c)) {
-        var_e074d966.var_a0bc0e2c.var_e074d966 = 0;
+        var_e074d966.var_a0bc0e2c = 0;
     }
     var_d92990c1 = -1;
     while (!isdefined(var_648a2ef0)) {
@@ -414,10 +414,10 @@ function function_57ba1474(var_648a2ef0) {
             setdvar(#"saved_gameskill", level.var_d2257418);
             setlocalprofilevar("g_gameskill", level.var_d2257418);
             if (level.var_d2257418 < var_e074d966.var_9ac9bc79) {
-                var_e074d966.var_9ac9bc79.var_e074d966 = level.var_d2257418;
+                var_e074d966.var_9ac9bc79 = level.var_d2257418;
             }
             if (level.var_d2257418 > var_e074d966.var_a0bc0e2c) {
-                var_e074d966.var_a0bc0e2c.var_e074d966 = level.var_d2257418;
+                var_e074d966.var_a0bc0e2c = level.var_d2257418;
             }
             level flag::wait_till("all_players_connected");
             foreach (player in getplayers()) {

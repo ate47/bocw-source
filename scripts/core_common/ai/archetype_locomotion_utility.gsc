@@ -581,7 +581,7 @@ function private function_7589776c(behaviortreeentity) {
 function private function_118d27ad(behaviortreeentity) {
     behaviortreeentity setblackboardattribute("_staircase_state", "staircase_start");
     behaviortreeentity.ai.var_4183a6fc.var_2b01e722 = behaviortreeentity.enableterrainik;
-    behaviortreeentity.enableterrainik.behaviortreeentity = 1;
+    behaviortreeentity.enableterrainik = 1;
     /#
         if (behaviortreeentity function_3b027260()) {
             println("<unknown string>", self.ai.var_4183a6fc.direction, "<unknown string>", behaviortreeentity.origin[0], "<unknown string>", behaviortreeentity.origin[1], "<unknown string>", behaviortreeentity.origin[2]);
@@ -595,7 +595,7 @@ function private function_118d27ad(behaviortreeentity) {
 // Checksum 0xf9ac0042, Offset: 0x3418
 // Size: 0xbe
 function private function_9948d7a(behaviortreeentity) {
-    behaviortreeentity.var_73e3e2aa.behaviortreeentity = 1;
+    behaviortreeentity.var_73e3e2aa = 1;
     if (!isdefined(behaviortreeentity getblackboardattribute("_staircase_state"))) {
         self function_118d27ad(behaviortreeentity);
     }
@@ -640,7 +640,7 @@ function private function_39c609a4(behaviortreeentity) {
 // Checksum 0x60474219, Offset: 0x37f8
 // Size: 0x148
 function private function_95b175c0(behaviortreeentity) {
-    behaviortreeentity.enableterrainik.behaviortreeentity = isdefined(behaviortreeentity.ai.var_4183a6fc.var_2b01e722) ? behaviortreeentity.ai.var_4183a6fc.var_2b01e722 : 0;
+    behaviortreeentity.enableterrainik = isdefined(behaviortreeentity.ai.var_4183a6fc.var_2b01e722) ? behaviortreeentity.ai.var_4183a6fc.var_2b01e722 : 0;
     behaviortreeentity.ai.var_4183a6fc = undefined;
     behaviortreeentity.var_73e3e2aa = undefined;
     /#
@@ -859,8 +859,8 @@ function traverseactionstart(behaviortreeentity, asmstatename) {
     if (!isdefined(asmstatename) && isdefined(self.ai.var_2b570fa6)) {
         asmstatename = self.ai.var_2b570fa6;
     }
-    behaviortreeentity.var_efe0efe7.behaviortreeentity = behaviortreeentity function_b7350442();
-    behaviortreeentity.var_846d7e33.behaviortreeentity = behaviortreeentity function_f650e40b();
+    behaviortreeentity.var_efe0efe7 = behaviortreeentity function_b7350442();
+    behaviortreeentity.var_846d7e33 = behaviortreeentity function_f650e40b();
     behaviortreeentity allowpitchangle(0);
     behaviortreeentity clearpitchorient();
     /#
@@ -901,7 +901,7 @@ function wpn_debug_bot_joinleave(behaviortreeentity, *asmstatename) {
 // Checksum 0xf9d70ad7, Offset: 0x46a0
 // Size: 0x1a
 function private disablerepath(entity) {
-    entity.disablerepath.entity = 1;
+    entity.disablerepath = 1;
 }
 
 // Namespace aiutility/archetype_locomotion_utility
@@ -909,7 +909,7 @@ function private disablerepath(entity) {
 // Checksum 0xc8739a83, Offset: 0x46c8
 // Size: 0x16
 function private enablerepath(entity) {
-    entity.disablerepath.entity = 0;
+    entity.disablerepath = 0;
 }
 
 // Namespace aiutility/archetype_locomotion_utility
@@ -1019,7 +1019,7 @@ function private shouldadjuststanceattacticalwalk(behaviortreeentity) {
 // Checksum 0x7624a2cc, Offset: 0x4a48
 // Size: 0x60
 function private adjuststancetofaceenemyinitialize(behaviortreeentity) {
-    behaviortreeentity.newenemyreaction.behaviortreeentity = 0;
+    behaviortreeentity.newenemyreaction = 0;
     behaviortreeentity setblackboardattribute("_desired_stance", "stand");
     behaviortreeentity orientmode("face enemy");
     return 1;

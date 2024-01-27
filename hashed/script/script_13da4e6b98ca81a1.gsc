@@ -434,8 +434,8 @@ function private codcaster_monitor_player_pucks(localclientnum) {
                     function_425a51a2(var_5854d8e);
                 } else {
                     angles = linkedent getplayerangles();
-                    var_5854d8e.angles.var_5854d8e = (-90, angles[1], 0);
-                    var_5854d8e.origin.var_5854d8e = linkedent.origin;
+                    var_5854d8e.angles = (-90, angles[1], 0);
+                    var_5854d8e.origin = linkedent.origin;
                 }
             }
         }

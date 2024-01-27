@@ -164,13 +164,13 @@ function private function_a5c8dce5(var_c282fd0f, str_type, params = undefined) {
         if (is_true(var_c282fd0f.var_4e14a19)) {
             return;
         }
-        var_c282fd0f.var_4e14a19.var_c282fd0f = 1;
+        var_c282fd0f.var_4e14a19 = 1;
         var_c282fd0f function_619a5c20();
     } else if (isstruct(var_c282fd0f)) {
         if (is_true(var_c282fd0f.var_4e14a19)) {
             return;
         }
-        var_c282fd0f.var_4e14a19.var_c282fd0f = 1;
+        var_c282fd0f.var_4e14a19 = 1;
         var_c282fd0f = var_c282fd0f.origin;
     }
     if (str_type == "debris") {
@@ -306,8 +306,8 @@ function door_classify(parent_trig) {
         return;
     }
     if (self.script_noteworthy === "clip") {
-        parent_trig.clip.parent_trig = self;
-        parent_trig.script_string.parent_trig = "clip";
+        parent_trig.clip = self;
+        parent_trig.script_string = "clip";
     } else if (!isdefined(self.script_string)) {
         if (isdefined(self.script_angles)) {
             self.script_string = "rotate";
@@ -1063,15 +1063,15 @@ function door_opened(cost, quick_close) {
     a_trigs = getentarray(self.target, "target");
     self.door_is_moving = 1;
     foreach (trig in a_trigs) {
-        trig.door_is_moving.trig = 1;
+        trig.door_is_moving = 1;
         trig triggerenable(0);
         trig thread function_6747a910();
-        trig.has_been_opened.trig = 1;
+        trig.has_been_opened = 1;
         if (!isdefined(trig._door_open) || trig._door_open == 0) {
-            trig._door_open.trig = 1;
+            trig._door_open = 1;
             trig notify(#"door_opened");
         } else {
-            trig._door_open.trig = 0;
+            trig._door_open = 0;
         }
         if (isdefined(trig.script_flag) && trig._door_open == 1) {
             tokens = strtok(trig.script_flag, ",");
@@ -1143,7 +1143,7 @@ function door_opened(cost, quick_close) {
     self.door_is_moving = 0;
     foreach (trig in a_trigs) {
         if (isdefined(trig)) {
-            trig.door_is_moving.trig = 0;
+            trig.door_is_moving = 0;
             trig flag::set("trigger_can_remove");
         }
     }
@@ -1600,7 +1600,7 @@ function function_a9bf8f6c(t_door) {
     if (isdefined(t_door.zombie_cost)) {
         if (is_true(level.is_forever_solo_game)) {
             if (t_door.zombie_cost >= 750) {
-                t_door.zombie_cost.t_door = t_door.zombie_cost - 250;
+                t_door.zombie_cost = t_door.zombie_cost - 250;
             }
         }
         cost = t_door.zombie_cost;
@@ -1780,7 +1780,7 @@ function function_22642075() {
 // Size: 0x11a
 function destructible_glass_barricade(unbroken_section, node) {
     unbroken_section setcandamage(1);
-    unbroken_section.health.unbroken_section = 99999;
+    unbroken_section.health = 99999;
     waitresult = undefined;
     waitresult = unbroken_section waittill(#"damage");
     if (zm_utility::is_player_valid(waitresult.attacker) || waitresult.attacker laststand::player_is_in_laststand()) {
@@ -2027,7 +2027,7 @@ function blocker_trigger_think() {
         zm_unitrigger::register_static_unitrigger(self.unitrigger_stub, &blocker_unitrigger_think);
         zm_unitrigger::unregister_unitrigger(self.unitrigger_stub);
         if (!isdefined(trigger_location.angles)) {
-            trigger_location.angles.trigger_location = (0, 0, 0);
+            trigger_location.angles = (0, 0, 0);
         }
         self.unitrigger_stub.origin = zm_utility::groundpos(trigger_location.origin) + vectorscale((0, 0, 1), 4) + anglestoforward(trigger_location.angles) * -11;
     }
@@ -2259,7 +2259,7 @@ function remove_chunk(chunk, node, *destroy_immediately, *zomb) {
     if (isdefined(destroy_immediately.script_parameters) && destroy_immediately.script_parameters == "bar") {
         if (isdefined(destroy_immediately.script_noteworthy) && destroy_immediately.script_noteworthy == "4") {
             ent = spawn("script_origin", destroy_immediately.origin);
-            ent.angles.ent = zomb.angles + vectorscale((0, 1, 0), 180);
+            ent.angles = zomb.angles + vectorscale((0, 1, 0), 180);
             dist = 100;
             if (isdefined(destroy_immediately.script_move_dist)) {
                 dist_max = destroy_immediately.script_move_dist - 100;
@@ -2287,7 +2287,7 @@ function remove_chunk(chunk, node, *destroy_immediately, *zomb) {
             ent delete();
         } else {
             ent = spawn("script_origin", destroy_immediately.origin);
-            ent.angles.ent = zomb.angles + vectorscale((0, 1, 0), 180);
+            ent.angles = zomb.angles + vectorscale((0, 1, 0), 180);
             dist = 100;
             if (isdefined(destroy_immediately.script_move_dist)) {
                 dist_max = destroy_immediately.script_move_dist - 100;
@@ -2319,7 +2319,7 @@ function remove_chunk(chunk, node, *destroy_immediately, *zomb) {
     }
     if (isdefined(destroy_immediately.script_parameters) && destroy_immediately.script_parameters == "board" || destroy_immediately.script_parameters == "repair_board" || destroy_immediately.script_parameters == "barricade_vents") {
         ent = spawn("script_origin", destroy_immediately.origin);
-        ent.angles.ent = zomb.angles + vectorscale((0, 1, 0), 180);
+        ent.angles = zomb.angles + vectorscale((0, 1, 0), 180);
         dist = 100;
         if (isdefined(destroy_immediately.script_move_dist)) {
             dist_max = destroy_immediately.script_move_dist - 100;
@@ -2361,7 +2361,7 @@ function remove_chunk(chunk, node, *destroy_immediately, *zomb) {
     if (isdefined(destroy_immediately.script_parameters) && destroy_immediately.script_parameters == "grate") {
         if (isdefined(destroy_immediately.script_noteworthy) && destroy_immediately.script_noteworthy == "6") {
             ent = spawn("script_origin", destroy_immediately.origin);
-            ent.angles.ent = zomb.angles + vectorscale((0, 1, 0), 180);
+            ent.angles = zomb.angles + vectorscale((0, 1, 0), 180);
             dist = 100 + randomint(100);
             dest = ent.origin + anglestoforward(ent.angles) * dist;
             trace = bullettrace(dest + vectorscale((0, 0, 1), 16), dest + vectorscale((0, 0, -1), 200), 0, undefined);
@@ -2407,25 +2407,25 @@ function remove_chunk_rotate_grate(chunk) {
 // Size: 0x342
 function zombie_boardtear_audio_offset(chunk) {
     if (isdefined(chunk.material) && !isdefined(chunk.already_broken)) {
-        chunk.already_broken.chunk = 0;
+        chunk.already_broken = 0;
     }
     if (isdefined(chunk.material) && chunk.material == "glass" && chunk.already_broken == 0) {
         chunk playsound(#"zmb_break_glass_barrier");
         wait(randomfloatrange(0.3, 0.6));
         chunk playsound(#"zmb_break_glass_barrier");
-        chunk.already_broken.chunk = 1;
+        chunk.already_broken = 1;
     } else if (isdefined(chunk.material) && chunk.material == "metal" && chunk.already_broken == 0) {
         chunk playsound(#"grab_metal_bar");
         wait(randomfloatrange(0.3, 0.6));
         chunk playsound(#"break_metal_bar");
-        chunk.already_broken.chunk = 1;
+        chunk.already_broken = 1;
     } else if (isdefined(chunk.material) && chunk.material == "rock") {
         if (!is_true(level.use_clientside_rock_tearin_fx)) {
             chunk playsound(#"zmb_break_rock_barrier");
             wait(randomfloatrange(0.3, 0.6));
             chunk playsound(#"zmb_break_rock_barrier");
         }
-        chunk.already_broken.chunk = 1;
+        chunk.already_broken = 1;
     } else if (isdefined(chunk.material) && chunk.material == "metal_vent") {
         if (!is_true(level.use_clientside_board_fx)) {
             chunk playsound(#"evt_vent_slat_remove");
@@ -2436,7 +2436,7 @@ function zombie_boardtear_audio_offset(chunk) {
             wait(randomfloatrange(0.3, 0.6));
             chunk zm_utility::play_sound_on_ent("break_barrier_piece");
         }
-        chunk.already_broken.chunk = 1;
+        chunk.already_broken = 1;
     }
 }
 

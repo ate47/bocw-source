@@ -67,7 +67,7 @@ function private function_642462dc(entity) {
     if (!is_true(entity.var_8f33d87a)) {
         ai::gun_remove();
         entity attach(entity.primaryweapon.worldmodel, "tag_stowed_back", 0);
-        entity.var_8f33d87a.entity = 1;
+        entity.var_8f33d87a = 1;
     }
 }
 
@@ -77,11 +77,11 @@ function private function_642462dc(entity) {
 // Size: 0x86
 function private function_776caa25(entity) {
     if (is_true(entity.var_8f33d87a)) {
-        entity.var_8f33d87a.entity = 0;
+        entity.var_8f33d87a = 0;
         entity detach(entity.primaryweapon.worldmodel, "tag_stowed_back");
     }
     ai::gun_recall();
-    entity.bulletsinclip.entity = entity.primaryweapon.clipsize;
+    entity.bulletsinclip = entity.primaryweapon.clipsize;
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
@@ -90,7 +90,7 @@ function private function_776caa25(entity) {
 // Size: 0x46
 function private function_f7e95a07(entity) {
     ai::gun_switchto(entity.sidearm, "right");
-    entity.bulletsinclip.entity = entity.sidearm.clipsize;
+    entity.bulletsinclip = entity.sidearm.clipsize;
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
@@ -144,7 +144,7 @@ function private notetrackdropguninternal(entity) {
             return;
         }
     }
-    entity.lastweapon.entity = entity.weapon;
+    entity.lastweapon = entity.weapon;
     primaryweapon = entity.primaryweapon;
     secondaryweapon = entity.secondaryweapon;
     entity thread shared::dropaiweapon();
@@ -157,7 +157,7 @@ function private notetrackdropguninternal(entity) {
 function private notetrackattachknife(entity) {
     if (!is_true(entity._ai_melee_attachedknife)) {
         entity attach(#"wpn_t7_knife_combat_prop", "TAG_WEAPON_LEFT");
-        entity._ai_melee_attachedknife.entity = 1;
+        entity._ai_melee_attachedknife = 1;
     }
 }
 
@@ -168,7 +168,7 @@ function private notetrackattachknife(entity) {
 function private notetrackdetachknife(entity) {
     if (is_true(entity._ai_melee_attachedknife)) {
         entity detach(#"wpn_t7_knife_combat_prop", "TAG_WEAPON_LEFT");
-        entity._ai_melee_attachedknife.entity = 0;
+        entity._ai_melee_attachedknife = 0;
     }
 }
 
@@ -211,8 +211,8 @@ function private notetrackshowai(entity) {
 function private notetrackstartragdoll(entity) {
     if (isactor(entity) && entity isinscriptedstate()) {
         entity.overrideactordamage = undefined;
-        entity.allowdeath.entity = 1;
-        entity.skipdeath.entity = 1;
+        entity.allowdeath = 1;
+        entity.skipdeath = 1;
         entity kill(entity.origin, undefined, undefined, undefined, undefined, 1);
     }
     notetrackdropguninternal(entity);
@@ -365,11 +365,11 @@ function private notetrackgibdisable(animationentity) {
 // Size: 0x76
 function private function_ed287fd1(animationentity) {
     result = {};
-    result.model.result = animationentity.weapon.clipmodel;
-    result.var_98bd9c20.result = "tag_clip";
-    result.var_c63463cb.result = "tag_clip_empty";
-    result.var_696fb09f.result = "tag_accessory_left";
-    result.var_86c2ede3.result = "tag_accessory_right";
+    result.model = animationentity.weapon.clipmodel;
+    result.var_98bd9c20 = "tag_clip";
+    result.var_c63463cb = "tag_clip_empty";
+    result.var_696fb09f = "tag_accessory_left";
+    result.var_86c2ede3 = "tag_accessory_right";
     return result;
 }
 
@@ -381,7 +381,7 @@ function private function_dab83a5a(animationentity, clip, visible) {
     if (isdefined(clip.var_c63463cb) && animationentity haspart(clip.var_c63463cb)) {
         if (!is_true(visible)) {
             animationentity hidepart(clip.var_c63463cb);
-            animationentity.var_91d2328b.animationentity = clip.var_c63463cb;
+            animationentity.var_91d2328b = clip.var_c63463cb;
         } else {
             animationentity showpart(clip.var_c63463cb);
             animationentity.var_91d2328b = undefined;
@@ -390,7 +390,7 @@ function private function_dab83a5a(animationentity, clip, visible) {
     if (isdefined(clip.var_98bd9c20) && animationentity haspart(clip.var_98bd9c20)) {
         if (!is_true(visible)) {
             animationentity hidepart(clip.var_98bd9c20);
-            animationentity.var_af41987d.animationentity = clip.var_98bd9c20;
+            animationentity.var_af41987d = clip.var_98bd9c20;
         } else {
             animationentity showpart(clip.var_98bd9c20);
             animationentity.var_af41987d = undefined;
@@ -405,7 +405,7 @@ function private function_dab83a5a(animationentity, clip, visible) {
 function private function_73e97c7d(animationentity, clip, attachtag) {
     if (isdefined(clip.model) && isdefined(attachtag) && animationentity haspart(attachtag) && !isdefined(animationentity.var_6622f75b)) {
         animationentity attach(clip.model, attachtag);
-        animationentity.var_6622f75b.animationentity = clip.model;
+        animationentity.var_6622f75b = clip.model;
         animationentity.var_bd5efde2 = attachtag;
     }
 }

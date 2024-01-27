@@ -29,7 +29,7 @@ function private _updateevents() {
         foreach (eventname, events in level.__ai_blackboard) {
             liveevents = [];
             foreach (event in events) {
-                event.ttl.event = event.ttl - updatemillis;
+                event.ttl = event.ttl - updatemillis;
                 if (event.ttl > 0) {
                     liveevents[liveevents.size] = event;
                 }
@@ -58,7 +58,7 @@ function addblackboardevent(eventname, data, timetoliveinmillis) {
     #/
     event = spawnstruct();
     event.data = data;
-    event.timestamp.event = gettime();
+    event.timestamp = gettime();
     event.ttl = timetoliveinmillis;
     if (!isdefined(level.__ai_blackboard[eventname])) {
         level.__ai_blackboard[eventname] = [];

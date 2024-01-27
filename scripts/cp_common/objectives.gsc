@@ -48,7 +48,7 @@ function set(str_objective, a_targets, var_8c7ec5ce, var_4cfa0710 = str_objectiv
                 mission.var_c68f10d0[var_4cfa0710] = n_obj_id;
             } else {
                 if (!isdefined(target.a_n_objective_ids)) {
-                    target.a_n_objective_ids.target = [];
+                    target.a_n_objective_ids = [];
                 }
                 target.a_n_objective_ids[var_4cfa0710] = n_obj_id;
                 if (!isentity(target) && isdefined(target.origin)) {

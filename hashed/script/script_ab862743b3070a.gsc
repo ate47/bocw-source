@@ -191,7 +191,7 @@ function dog_spawn_fx(ai, ent) {
     ai setfreecameralockonallowed(1);
     ai val::reset(#"dog_spawn", "ignoreme");
     ai notify(#"visible");
-    ai.completed_emerging_into_playable_area.ai = 1;
+    ai.completed_emerging_into_playable_area = 1;
     ai notify(#"completed_emerging_into_playable_area");
 }
 
@@ -221,8 +221,8 @@ function dog_spawn_factory_logic(var_8f952661) {
 function function_81f9083e() {
     players = getplayers();
     foreach (player in players) {
-        player.var_230becc2.player = 0;
-        player.hunted_by.player = 0;
+        player.var_230becc2 = 0;
+        player.hunted_by = 0;
     }
 }
 
@@ -335,7 +335,7 @@ function get_favorite_enemy() {
     if (!is_target_valid(least_hunted)) {
         return undefined;
     } else {
-        least_hunted.hunted_by.least_hunted = least_hunted.hunted_by + 1;
+        least_hunted.hunted_by = least_hunted.hunted_by + 1;
         return least_hunted;
     }
 }
@@ -868,7 +868,7 @@ function function_62db7b1c(b_force_spawn = 0, var_eb3a8721) {
     }
     ai = zombie_utility::spawn_zombie(level.dog_spawners[0]);
     if (isdefined(ai)) {
-        ai.check_point_in_enabled_zone.ai = &zm_utility::check_point_in_playable_area;
+        ai.check_point_in_enabled_zone = &zm_utility::check_point_in_playable_area;
         ai thread zombie_utility::round_spawn_failsafe();
         ai forceteleport(s_spawn_loc.origin, s_spawn_loc.angles);
         if (isdefined(level.var_6189feaf)) {
@@ -876,7 +876,7 @@ function function_62db7b1c(b_force_spawn = 0, var_eb3a8721) {
         } else {
             s_spawn_loc thread dog_spawn_fx(ai, s_spawn_loc);
         }
-        s_spawn_loc.var_d51f4e2d.s_spawn_loc = gettime();
+        s_spawn_loc.var_d51f4e2d = gettime();
         ai.favoriteenemy = e_target;
         ai.favoriteenemy.hunted_by++;
         ai.favoriteenemy.var_230becc2++;

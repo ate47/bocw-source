@@ -358,7 +358,7 @@ function function_1c4cd527(origin, owner, innerradius, outerradius, halfheight, 
                 if (distsq <= function_a3f6cdac(300)) {
                     /#
                         if (!isdefined(point._scoredebug)) {
-                            point._scoredebug.point = [];
+                            point._scoredebug = [];
                         }
                         if (!isdefined(point._scoredebug[#"no visibility"])) {
                             point._scoredebug[#"no visibility"] = spawnstruct();
@@ -366,7 +366,7 @@ function function_1c4cd527(origin, owner, innerradius, outerradius, halfheight, 
                         point._scoredebug[#"no visibility"].score = -1000;
                         point._scoredebug[#"no visibility"].scorename = "<unknown string>";
                     #/
-                    point.score.point = point.score + -1000;
+                    point.score = point.score + -1000;
                 }
             }
         }
@@ -375,7 +375,7 @@ function function_1c4cd527(origin, owner, innerradius, outerradius, halfheight, 
         if (!point.visibility) {
             /#
                 if (!isdefined(point._scoredebug)) {
-                    point._scoredebug.point = [];
+                    point._scoredebug = [];
                 }
                 if (!isdefined(point._scoredebug[#"no visibility"])) {
                     point._scoredebug[#"no visibility"] = spawnstruct();
@@ -383,7 +383,7 @@ function function_1c4cd527(origin, owner, innerradius, outerradius, halfheight, 
                 point._scoredebug[#"no visibility"].score = -5000;
                 point._scoredebug[#"no visibility"].scorename = "<unknown string>";
             #/
-            point.score.point = point.score + -5000;
+            point.score = point.score + -5000;
         }
     }
     if (queryresult.data.size > 0) {

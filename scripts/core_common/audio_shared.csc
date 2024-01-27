@@ -339,10 +339,10 @@ function snd_snapshot_think() {
 // Size: 0x280
 function soundrandom_thread(localclientnum, randsound) {
     if (!isdefined(randsound.script_wait_min)) {
-        randsound.script_wait_min.randsound = 1;
+        randsound.script_wait_min = 1;
     }
     if (!isdefined(randsound.script_wait_max)) {
-        randsound.script_wait_max.randsound = 3;
+        randsound.script_wait_max = 3;
     }
     notify_name = undefined;
     if (isdefined(randsound.script_string)) {
@@ -358,9 +358,9 @@ function soundrandom_thread(localclientnum, randsound) {
         }
         return;
     }
-    randsound.playing.randsound = 1;
+    randsound.playing = 1;
     if (isdefined(randsound.script_int)) {
-        randsound.playing.randsound = randsound.script_int != 0;
+        randsound.playing = randsound.script_int != 0;
     }
     level thread soundrandom_notifywait(notify_name, randsound);
     while (1) {
@@ -384,9 +384,9 @@ function soundrandom_notifywait(notify_name, randsound) {
     while (1) {
         level waittill(notify_name);
         if (is_true(randsound.playing)) {
-            randsound.playing.randsound = 0;
+            randsound.playing = 0;
         } else {
-            randsound.playing.randsound = 1;
+            randsound.playing = 1;
         }
     }
 }
@@ -647,11 +647,11 @@ function audio_material_trigger(*trig) {
 // Size: 0x6c
 function trig_enter_audio_material_trigger(player) {
     if (!isdefined(player.inmaterialoverridetrigger)) {
-        player.inmaterialoverridetrigger.player = 0;
+        player.inmaterialoverridetrigger = 0;
     }
     if (isdefined(self.script_label)) {
         player.inmaterialoverridetrigger++;
-        player.audiomaterialoverride.player = self.script_label;
+        player.audiomaterialoverride = self.script_label;
         player setmaterialoverride(self.script_label);
     }
 }
@@ -670,7 +670,7 @@ function trig_leave_audio_material_trigger(player) {
         #/
         if (player.inmaterialoverridetrigger <= 0) {
             player.audiomaterialoverride = undefined;
-            player.inmaterialoverridetrigger.player = 0;
+            player.inmaterialoverridetrigger = 0;
             player clearmaterialoverride();
         }
     }
@@ -683,15 +683,15 @@ function trig_leave_audio_material_trigger(player) {
 function trig_enter_audio_step_trigger(trigplayer) {
     localclientnum = self._localclientnum;
     if (!isdefined(trigplayer.insteptrigger)) {
-        trigplayer.insteptrigger.trigplayer = 0;
+        trigplayer.insteptrigger = 0;
     }
     suffix = "_npc";
     if (trigplayer function_21c0fa55()) {
         suffix = "_plr";
     }
     if (isdefined(self.script_step_alias)) {
-        trigplayer.step_sound.trigplayer = self.script_step_alias;
-        trigplayer.insteptrigger.trigplayer = trigplayer.insteptrigger + 1;
+        trigplayer.step_sound = self.script_step_alias;
+        trigplayer.insteptrigger = trigplayer.insteptrigger + 1;
         trigplayer setsteptriggersound(self.script_step_alias + suffix);
     }
     if (isdefined(self.script_step_alias_enter) && trigplayer getmovementtype() == "sprint") {
@@ -715,16 +715,16 @@ function trig_leave_audio_step_trigger(trigplayer) {
         trigplayer playsound(localclientnum, self.script_step_alias_exit + suffix, self.origin, volume);
     }
     if (isdefined(self.script_step_alias)) {
-        trigplayer.insteptrigger.trigplayer = trigplayer.insteptrigger - 1;
+        trigplayer.insteptrigger = trigplayer.insteptrigger - 1;
     }
     if (trigplayer.insteptrigger < 0) {
         /#
             println("<unknown string>");
         #/
-        trigplayer.insteptrigger.trigplayer = 0;
+        trigplayer.insteptrigger = 0;
     }
     if (trigplayer.insteptrigger == 0) {
-        trigplayer.step_sound.trigplayer = "none";
+        trigplayer.step_sound = "none";
         trigplayer clearsteptriggersound();
     }
 }

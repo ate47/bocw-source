@@ -30,8 +30,8 @@ function init_shared() {
 // Size: 0x1c2
 function function_a8a4341(watcher) {
     if (sessionmodeiszombiesgame()) {
-        watcher.onspawnretrievetriggers.watcher = &function_4ba658e5;
-        watcher.deleteonplayerspawn.watcher = 0;
+        watcher.onspawnretrievetriggers = &function_4ba658e5;
+        watcher.deleteonplayerspawn = 0;
     }
     if (isdefined(watcher.weapon.customsettings)) {
         var_6f1c6122 = getscriptbundle(watcher.weapon.customsettings);
@@ -40,21 +40,21 @@ function function_a8a4341(watcher) {
         #/
         level.var_ac78d00e.var_a74161cc = var_6f1c6122;
     }
-    watcher.altdetonate.watcher = 1;
-    watcher.hackertoolradius.watcher = level.equipmenthackertoolradius;
-    watcher.hackertooltimems.watcher = level.equipmenthackertooltimems;
-    watcher.ondetonatecallback.watcher = &function_b96af076;
-    watcher.onspawn.watcher = &function_af3365b5;
-    watcher.onstun.watcher = &weaponobjects::weaponstun;
-    watcher.stuntime.watcher = 1;
-    watcher.ownergetsassist.watcher = 1;
-    watcher.detonatestationary.watcher = 1;
-    watcher.detonationdelay.watcher = getdvarfloat(#"hash_6639441fa6223b36", 0);
-    watcher.immunespecialty.watcher = "specialty_immunetriggerc4";
-    watcher.var_296e14ab.watcher = 1;
-    watcher.var_2fd8b883.watcher = 1;
+    watcher.altdetonate = 1;
+    watcher.hackertoolradius = level.equipmenthackertoolradius;
+    watcher.hackertooltimems = level.equipmenthackertooltimems;
+    watcher.ondetonatecallback = &function_b96af076;
+    watcher.onspawn = &function_af3365b5;
+    watcher.onstun = &weaponobjects::weaponstun;
+    watcher.stuntime = 1;
+    watcher.ownergetsassist = 1;
+    watcher.detonatestationary = 1;
+    watcher.detonationdelay = getdvarfloat(#"hash_6639441fa6223b36", 0);
+    watcher.immunespecialty = "specialty_immunetriggerc4";
+    watcher.var_296e14ab = 1;
+    watcher.var_2fd8b883 = 1;
     if (function_a2f3d962()) {
-        watcher.var_e7ebbd38.watcher = &function_a39c62de;
+        watcher.var_e7ebbd38 = &function_a39c62de;
     }
 }
 
@@ -72,12 +72,12 @@ function function_af3365b5(watcher, owner) {
             owner thread [[ level.var_1f5cc2b4 ]]();
         }
         if (!isdefined(owner.var_1e593689)) {
-            owner.var_1e593689.owner = [];
+            owner.var_1e593689 = [];
         }
         if (!isdefined(owner.var_1e593689)) {
-            owner.var_1e593689.owner = [];
+            owner.var_1e593689 = [];
         } else if (!isarray(owner.var_1e593689)) {
-            owner.var_1e593689.owner = array(owner.var_1e593689);
+            owner.var_1e593689 = array(owner.var_1e593689);
         }
         owner.var_1e593689[owner.var_1e593689.size] = self;
     }
@@ -345,16 +345,16 @@ function onplayerkilled(params) {
     self.var_bf73db8c = undefined;
     if (weapon.name === #"satchel_charge" && eattacker util::isenemyplayer(self) && self isinvehicle()) {
         if (!isdefined(einflictor.var_3c0a7eef)) {
-            einflictor.var_3c0a7eef.einflictor = [];
+            einflictor.var_3c0a7eef = [];
         }
         var_71f7928d = spawnstruct();
-        var_71f7928d.player.var_71f7928d = self;
-        var_71f7928d.vehicle.var_71f7928d = self getvehicleoccupied();
-        var_71f7928d.var_33c9fbd5.var_71f7928d = gettime();
+        var_71f7928d.player = self;
+        var_71f7928d.vehicle = self getvehicleoccupied();
+        var_71f7928d.var_33c9fbd5 = gettime();
         if (!isdefined(einflictor.var_3c0a7eef)) {
-            einflictor.var_3c0a7eef.einflictor = [];
+            einflictor.var_3c0a7eef = [];
         } else if (!isarray(einflictor.var_3c0a7eef)) {
-            einflictor.var_3c0a7eef.einflictor = array(einflictor.var_3c0a7eef);
+            einflictor.var_3c0a7eef = array(einflictor.var_3c0a7eef);
         }
         einflictor.var_3c0a7eef[einflictor.var_3c0a7eef.size] = var_71f7928d;
     }

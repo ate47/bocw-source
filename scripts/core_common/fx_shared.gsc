@@ -42,12 +42,12 @@ function create_effect(type, fxid) {
         ent = level._fake_createfx_struct;
     }
     level.createfxent[level.createfxent.size] = ent;
-    ent.v.ent = [];
+    ent.v = [];
     ent.v[#"type"] = type;
     ent.v[#"fxid"] = fxid;
     ent.v[#"angles"] = (0, 0, 0);
     ent.v[#"origin"] = (0, 0, 0);
-    ent.drawn.ent = 1;
+    ent.drawn = 1;
     return ent;
 }
 

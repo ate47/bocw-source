@@ -17,13 +17,13 @@ function private autoexec __init__system__() {
 // Size: 0x126
 function function_5b164bbc() {
     foreach (dynent in function_dc7f007()) {
-        dynent.ondestroyed.dynent = &function_61fb9b33;
+        dynent.ondestroyed = &function_61fb9b33;
         bundle = function_489009c1(dynent);
         if (isdefined(bundle) && isdefined(bundle.var_e32432cf)) {
             switch (bundle.var_e32432cf) {
             case #"hash_3c27aafc8cd27c4":
-                dynent.start_origin.dynent = dynent.origin;
-                dynent.start_angles.dynent = dynent.angles;
+                dynent.start_origin = dynent.origin;
+                dynent.start_angles = dynent.angles;
                 dynent thread function_733e5314();
                 break;
             }

@@ -221,7 +221,7 @@ function private function_58710bd2(localclientnum) {
                     continue;
                 }
                 occupants = vehicle getvehoccupants(localclientnum);
-                var_c5dfdae0 = occupants.size > 0 || is_false(vehicle.var_46439e18);
+                var_c5dfdae0 = occupants.size > 0 || is_false(vehicle.isplayervehicle);
                 vehicle renderoverridebundle::function_f4eab437(localclientnum, var_c5dfdae0, #"hash_c37f4f4d19191cb", &function_429c452);
                 if ((index + 1) % 3 == 0) {
                     waitframe(1);

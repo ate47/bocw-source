@@ -78,7 +78,7 @@ function postinit() {
 // Checksum 0x9954158, Offset: 0x5d8
 // Size: 0x22
 function function_54881ba1(watcher) {
-    watcher.onspawn.watcher = &function_e38ab081;
+    watcher.onspawn = &function_e38ab081;
 }
 
 // Namespace namespace_71f583f0/namespace_71f583f0
@@ -125,18 +125,18 @@ function private function_600a82c(player) {
     waitframe(1);
     item = function_4ba8fde(#"black_hole_bomb_item_t9_sr");
     if (isdefined(item)) {
-        item.amount.item = 1;
+        item.amount = 1;
         var_fa3df96 = player item_inventory::function_e66dcff5(item);
         if (isdefined(var_fa3df96)) {
-            if (!item_world_util::function_db35e94f(item.var_bd027dd9)) {
-                item.var_bd027dd9.item = item_world_util::function_970b8d86(var_fa3df96);
+            if (!item_world_util::function_db35e94f(item.networkid)) {
+                item.networkid = item_world_util::function_970b8d86(var_fa3df96);
             }
             var_ddeb881e = item_inventory::function_2e711614(var_fa3df96);
             while (var_ddeb881e.var_a6762160 === item.var_a6762160) {
                 waitframe(1);
                 var_ddeb881e = item_inventory::function_2e711614(var_fa3df96);
             }
-            if (var_ddeb881e.var_bd027dd9 === 32767) {
+            if (var_ddeb881e.networkid === 32767) {
                 player item_world::function_de2018e3(item, player, var_fa3df96, 0);
             }
         }
@@ -282,7 +282,7 @@ function function_fa82badd(trig) {
 // Size: 0x44
 function function_8658dbc9(ent) {
     if (!isdefined(ent._triggers)) {
-        ent._triggers.ent = [];
+        ent._triggers = [];
     }
     ent._triggers[self getentitynumber()] = 1;
 }
@@ -397,7 +397,7 @@ function function_9c0c8ac3(v_vortex_origin, n_vortex_radius, n_start_time, n_vor
                 }
             } else {
                 ai_zombie clientfield::set("" + #"hash_399ab6541d717dc7", 1);
-                ai_zombie.blockingpain.ai_zombie = 1;
+                ai_zombie.blockingpain = 1;
                 ai_zombie thread function_fb7c4f41();
                 switch (ai_zombie.var_6f84b820) {
                 case #"normal":
@@ -406,14 +406,14 @@ function function_9c0c8ac3(v_vortex_origin, n_vortex_radius, n_start_time, n_vor
                         if (!isdefined(ai_zombie.var_56912e22) || time >= ai_zombie.var_56912e22) {
                             var_34e3b3f7 = ai_zombie.maxhealth * 0.4;
                             ai_zombie dodamage(var_34e3b3f7, v_vortex_origin, eattacker, svortex, undefined, "MOD_DOT", 0, weapon);
-                            ai_zombie.var_56912e22.ai_zombie = gettime() + 1000;
+                            ai_zombie.var_56912e22 = gettime() + 1000;
                         }
                         break;
                     }
-                    ai_zombie.var_db490292.ai_zombie = "blackholebomb_pull_fast";
-                    ai_zombie.var_92b78660.ai_zombie = 1024;
+                    ai_zombie.var_db490292 = "blackholebomb_pull_fast";
+                    ai_zombie.var_92b78660 = 1024;
                     if (is_true(ai_zombie._black_hole_bomb_collapse_death) && !zm_utility::is_magic_bullet_shield_enabled(ai_zombie)) {
-                        ai_zombie.skipautoragdoll.ai_zombie = 1;
+                        ai_zombie.skipautoragdoll = 1;
                         ai_zombie kill(ai_zombie.origin + vectorscale((0, 0, 1), 50), ai_zombie.interdimensional_gun_attacker, undefined, weapon, 0, 1);
                         level thread hud::function_c9800094(eattacker, ai_zombie.origin + vectorscale((0, 0, 1), 50), ai_zombie.maxhealth, 1);
                         if (is_true(ai_zombie.allowdeath)) {
@@ -423,7 +423,7 @@ function function_9c0c8ac3(v_vortex_origin, n_vortex_radius, n_start_time, n_vor
                     if (!is_true(ai_zombie.interdimensional_gun_kill) && !ai_zombie.ignorevortices) {
                         ai_zombie.var_ecd5b1b9 = svortex;
                         ai_zombie.damageorigin = v_vortex_origin;
-                        ai_zombie.interdimensional_gun_kill.ai_zombie = 1;
+                        ai_zombie.interdimensional_gun_kill = 1;
                         ai_zombie.interdimensional_gun_attacker = eattacker;
                         ai_zombie.interdimensional_gun_inflictor = eattacker;
                         ai_zombie.interdimensional_gun_weapon = weapon;
@@ -434,12 +434,12 @@ function function_9c0c8ac3(v_vortex_origin, n_vortex_radius, n_start_time, n_vor
                     if (!isdefined(ai_zombie.var_56912e22) || time >= ai_zombie.var_56912e22) {
                         var_34e3b3f7 = ai_zombie.maxhealth * 0.05;
                         ai_zombie dodamage(var_34e3b3f7, v_vortex_origin, eattacker, svortex, undefined, "MOD_DOT", 0, weapon);
-                        ai_zombie.var_56912e22.ai_zombie = gettime() + 1000;
+                        ai_zombie.var_56912e22 = gettime() + 1000;
                     }
                     if (!is_true(ai_zombie.interdimensional_gun_kill) && !ai_zombie.ignorevortices) {
                         ai_zombie.var_ecd5b1b9 = svortex;
                         ai_zombie.damageorigin = v_vortex_origin;
-                        ai_zombie.interdimensional_gun_kill.ai_zombie = 1;
+                        ai_zombie.interdimensional_gun_kill = 1;
                         ai_zombie.interdimensional_gun_attacker = eattacker;
                         ai_zombie.interdimensional_gun_inflictor = eattacker;
                         ai_zombie.interdimensional_gun_weapon = weapon;
@@ -454,12 +454,12 @@ function function_9c0c8ac3(v_vortex_origin, n_vortex_radius, n_start_time, n_vor
                     if (!isdefined(ai_zombie.var_56912e22) || time >= ai_zombie.var_56912e22) {
                         var_34e3b3f7 = ai_zombie.maxhealth * 0.02;
                         ai_zombie dodamage(var_34e3b3f7, v_vortex_origin, eattacker, svortex, undefined, "MOD_DOT", 0, weapon);
-                        ai_zombie.var_56912e22.ai_zombie = gettime() + 1000;
+                        ai_zombie.var_56912e22 = gettime() + 1000;
                     }
                     if (!is_true(ai_zombie.interdimensional_gun_kill) && !ai_zombie.ignorevortices) {
                         ai_zombie.var_ecd5b1b9 = svortex;
                         ai_zombie.damageorigin = v_vortex_origin;
-                        ai_zombie.interdimensional_gun_kill.ai_zombie = 1;
+                        ai_zombie.interdimensional_gun_kill = 1;
                         ai_zombie.interdimensional_gun_attacker = eattacker;
                         ai_zombie.interdimensional_gun_inflictor = eattacker;
                         ai_zombie.interdimensional_gun_weapon = weapon;

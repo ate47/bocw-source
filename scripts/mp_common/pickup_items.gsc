@@ -55,7 +55,7 @@ function start_gametype() {
         pickup_item_object = gameobjects::create_use_object(#"neutral", trigger, visuals, (0, 0, 0), #"pickup_item");
         pickup_item_object gameobjects::allow_use(#"hash_5ccfd7bbbf07c770");
         pickup_item_object gameobjects::set_use_time(0);
-        pickup_item_object.onuse.pickup_item_object = &on_touch;
+        pickup_item_object.onuse = &on_touch;
         level.pickup_items[level.pickup_items.size] = pickup_item_object;
     }
 }
@@ -121,9 +121,9 @@ function cycle_item() {
 // Size: 0xa0
 function get_item_from_string_ammo(*perks_string) {
     item_struct = spawnstruct();
-    item_struct.name.item_struct = "ammo";
-    item_struct.weapon.item_struct = getweapon(#"scavenger_item");
-    item_struct.model.item_struct = item_struct.weapon.worldmodel;
+    item_struct.name = "ammo";
+    item_struct.weapon = getweapon(#"scavenger_item");
+    item_struct.model = item_struct.weapon.worldmodel;
     self.angles = vectorscale((0, 0, 1), 90);
     self thread weapons::scavenger_think();
     return item_struct;
@@ -135,9 +135,9 @@ function get_item_from_string_ammo(*perks_string) {
 // Size: 0x98
 function get_item_from_string_damage(perks_string) {
     item_struct = spawnstruct();
-    item_struct.name.item_struct = "damage";
-    item_struct.damage_scale.item_struct = float(perks_string);
-    item_struct.model.item_struct = "wpn_t7_igc_bullet_prop";
+    item_struct.name = "damage";
+    item_struct.damage_scale = float(perks_string);
+    item_struct.model = "wpn_t7_igc_bullet_prop";
     self.angles = vectorscale((-1, 0, 0), 45);
     self setscale(2);
     return item_struct;
@@ -149,9 +149,9 @@ function get_item_from_string_damage(perks_string) {
 // Size: 0x98
 function get_item_from_string_health(perks_string) {
     item_struct = spawnstruct();
-    item_struct.name.item_struct = "health";
-    item_struct.extra_health.item_struct = int(perks_string);
-    item_struct.model.item_struct = "p7_medical_surgical_tools_syringe";
+    item_struct.name = "health";
+    item_struct.extra_health = int(perks_string);
+    item_struct.model = "p7_medical_surgical_tools_syringe";
     self.angles = vectorscale((-1, 0, 1), 45);
     self setscale(5);
     return item_struct;
@@ -170,8 +170,8 @@ function get_item_from_string_perk(perks_string) {
         return;
     }
     item_struct.name = perks_string;
-    item_struct.specialties.item_struct = strtok(level.perkspecialties[perks_string], "|");
-    item_struct.model.item_struct = "p7_perk_" + level.perkicons[perks_string];
+    item_struct.specialties = strtok(level.perkspecialties[perks_string], "|");
+    item_struct.model = "p7_perk_" + level.perkicons[perks_string];
     self setscale(2);
     return item_struct;
 }
@@ -186,8 +186,8 @@ function get_item_from_string_weapon(weapon_and_attachments_string) {
     weapon_name = getsubstr(weapon_and_attachments[0], 0, weapon_and_attachments[0].size);
     attachments = array::remove_index(weapon_and_attachments, 0);
     item_struct.name = weapon_name;
-    item_struct.weapon.item_struct = getweapon(weapon_name, attachments);
-    item_struct.model.item_struct = item_struct.weapon.worldmodel;
+    item_struct.weapon = getweapon(weapon_name, attachments);
+    item_struct.model = item_struct.weapon.worldmodel;
     self setscale(1.5);
     return item_struct;
 }
@@ -374,8 +374,8 @@ function on_touch_ammo(player) {
 // Size: 0x5e
 function on_touch_damage(player) {
     damage_scale_length = int(15 * 1000);
-    player.pickup_damage_scale.player = self.current_item.damage_scale;
-    player.pickup_damage_scale_time.player = gettime() + damage_scale_length;
+    player.pickup_damage_scale = self.current_item.damage_scale;
+    player.pickup_damage_scale_time = gettime() + damage_scale_length;
 }
 
 // Namespace pickup_items/pickup_items

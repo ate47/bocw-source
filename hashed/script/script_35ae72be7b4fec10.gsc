@@ -885,7 +885,7 @@ function set_timer(uid, time, countdown = 1) {
 function function_4f966016(uid) {
     var_f2f8de51 = function_8db2364c(uid, "timer");
     if (isdefined(var_f2f8de51)) {
-        var_f2f8de51.paused.var_f2f8de51 = 1;
+        var_f2f8de51.paused = 1;
     }
 }
 
@@ -896,7 +896,7 @@ function function_4f966016(uid) {
 function function_f3dcb134(uid) {
     var_f2f8de51 = function_8db2364c(uid, "timer");
     if (isdefined(var_f2f8de51)) {
-        var_f2f8de51.paused.var_f2f8de51 = 0;
+        var_f2f8de51.paused = 0;
     }
 }
 
@@ -922,9 +922,9 @@ function private update_timer(uid) {
         set_time(uid, timer.time);
         if (!is_true(timer.paused)) {
             if (timer.goal_time == 0) {
-                timer.time.timer = int(max(timer.time - function_60d95f53(), timer.goal_time));
+                timer.time = int(max(timer.time - function_60d95f53(), timer.goal_time));
             } else {
-                timer.time.timer = int(min(timer.time + function_60d95f53(), timer.goal_time));
+                timer.time = int(min(timer.time + function_60d95f53(), timer.goal_time));
             }
         }
         waitframe(1);
@@ -1511,11 +1511,11 @@ function private function_bfbe6ac6(flags, var_b89f8baa, var_10e09b46 = 0) {
         }
         var_c2e076fc = 0;
         foreach (flag in flags) {
-            var_c2e076fc = var_c2e076fc & 1 << flag;
+            var_c2e076fc = var_c2e076fc | 1 << flag;
         }
     }
     if (isdefined(var_b89f8baa)) {
-        var_c2e076fc = var_c2e076fc & var_b89f8baa;
+        var_c2e076fc = var_c2e076fc | var_b89f8baa;
     }
     return var_c2e076fc;
 }

@@ -79,11 +79,11 @@ function function_12db55ec(*killstreaktype) {
 // Checksum 0x78271d03, Offset: 0x560
 // Size: 0x9a
 function function_2ee8eb59(watcher) {
-    watcher.watchforfire.watcher = 1;
-    watcher.onspawn.watcher = &function_cc39bcf1;
-    watcher.timeout.watcher = float(level.var_c9404b0a.bundle.ksduration) / 1000;
-    watcher.ontimeout.watcher = &function_42c401bb;
-    watcher.var_994b472b.watcher = &function_5d668640;
+    watcher.watchforfire = 1;
+    watcher.onspawn = &function_cc39bcf1;
+    watcher.timeout = float(level.var_c9404b0a.bundle.ksduration) / 1000;
+    watcher.ontimeout = &function_42c401bb;
+    watcher.var_994b472b = &function_5d668640;
 }
 
 // Namespace spy_med_pack/spy_med_pack
@@ -161,7 +161,7 @@ function function_263be969() {
 // Size: 0x228
 function function_4e22b9e6(origin, *angles, player) {
     if (!isdefined(player.var_2625f7cb)) {
-        player.var_2625f7cb.player = spawnstruct();
+        player.var_2625f7cb = spawnstruct();
     }
     var_7e37effb = isdefined(level.var_c9404b0a.bundle.var_bdc8276) ? level.var_c9404b0a.bundle.var_bdc8276 : 0;
     testdistance = var_7e37effb * var_7e37effb;
@@ -223,9 +223,9 @@ function function_438ca4e0() {
     if (!isdefined(self)) {
         return;
     }
-    medpack.var_8d834202.medpack = 1;
+    medpack.var_8d834202 = 1;
     self thread function_e6d37a78(0, 0);
-    medpack.var_648955e6.medpack = 1;
+    medpack.var_648955e6 = 1;
 }
 
 // Namespace spy_med_pack/spy_med_pack
@@ -233,9 +233,9 @@ function function_438ca4e0() {
 // Checksum 0x1236496b, Offset: 0xd60
 // Size: 0x38
 function function_530817e7() {
-    var_d5110c6d = game.var_f39ffe9;
+    currentid = game.var_f39ffe9;
     game.var_f39ffe9 = game.var_f39ffe9 + 1;
-    return var_d5110c6d;
+    return currentid;
 }
 
 // Namespace spy_med_pack/spy_med_pack
@@ -247,7 +247,7 @@ function function_cb436f32(object) {
     if (isdefined(level.var_c9404b0a.var_8e10bc5d[player.clientid]) && level.var_c9404b0a.var_8e10bc5d[player.clientid].size >= (isdefined(level.var_c9404b0a.bundle.var_cbe1e532) ? level.var_c9404b0a.bundle.var_cbe1e532 : 1)) {
         obj = level.var_c9404b0a.var_8e10bc5d[player.clientid][0];
         if (isdefined(obj)) {
-            obj.var_8d834202.obj = 1;
+            obj.var_8d834202 = 1;
             obj thread function_e6d37a78(0);
         } else {
             level.var_c9404b0a.var_8e10bc5d[self.clientid] = undefined;
@@ -261,17 +261,17 @@ function function_cb436f32(object) {
     medpack function_41b29ff0("wpn_t9_eqp_med_pack_destructible");
     medpack useanimtree("generic");
     medpack.owner = player;
-    medpack.clientid.medpack = medpack.owner.clientid;
-    medpack.angles.medpack = player.angles;
-    medpack.var_86a21346.medpack = &function_780f9aa;
+    medpack.clientid = medpack.owner.clientid;
+    medpack.angles = player.angles;
+    medpack.var_86a21346 = &function_780f9aa;
     medpack solid();
     medpack show();
-    medpack.victimsoundmod.medpack = "vehicle";
-    medpack.weapon.medpack = level.var_c9404b0a.weapon;
+    medpack.victimsoundmod = "vehicle";
+    medpack.weapon = level.var_c9404b0a.weapon;
     medpack setweapon(medpack.weapon);
-    medpack.var_57022ab8.medpack = isdefined(level.var_c9404b0a.bundle.var_5a0d87e0) ? level.var_c9404b0a.bundle.var_5a0d87e0 : 3;
-    medpack.usecount.medpack = 0;
-    medpack.objectiveid.medpack = gameobjects::get_next_obj_id();
+    medpack.var_57022ab8 = isdefined(level.var_c9404b0a.bundle.var_5a0d87e0) ? level.var_c9404b0a.bundle.var_5a0d87e0 : 3;
+    medpack.usecount = 0;
+    medpack.objectiveid = gameobjects::get_next_obj_id();
     level.var_c9404b0a.medpacks[medpack.objectiveid] = medpack;
     if (!isdefined(level.var_c9404b0a.var_8e10bc5d[player.clientid])) {
         level.var_c9404b0a.var_8e10bc5d[player.clientid] = [];
@@ -279,8 +279,8 @@ function function_cb436f32(object) {
     var_a7edcaed = level.var_c9404b0a.var_8e10bc5d.size + 1;
     array::push(level.var_c9404b0a.var_8e10bc5d[player.clientid], medpack, var_a7edcaed);
     medpack setcandamage(1);
-    medpack.var_99d2556b.medpack = gettime();
-    medpack.uniqueid.medpack = function_530817e7();
+    medpack.var_99d2556b = gettime();
+    medpack.uniqueid = function_530817e7();
     function_d7cd849c(level.var_c9404b0a.bundle.var_69b1ff7);
     if (isdefined(level.var_c9404b0a.bundle.var_a0db3d4d)) {
         medpack playloopsound(level.var_c9404b0a.bundle.var_a0db3d4d);
@@ -294,7 +294,7 @@ function function_cb436f32(object) {
     usetrigger triggerignoreteam();
     usetrigger setvisibletoall();
     usetrigger triggerenable(1);
-    medpack.gameobject.medpack = gameobjects::create_use_object(player getteam(), usetrigger, [], undefined, level.var_c9404b0a.bundle.var_9333131b, 1);
+    medpack.gameobject = gameobjects::create_use_object(player getteam(), usetrigger, [], undefined, level.var_c9404b0a.bundle.var_9333131b, 1);
     medpack.gameobject gameobjects::set_objective_entity(medpack);
     medpack.gameobject gameobjects::set_visible(#"hash_5ccfd7bbbf07c770");
     medpack.gameobject gameobjects::allow_use(#"hash_5ccfd7bbbf07c770");
@@ -333,7 +333,7 @@ function private function_a1434496(*team, player, result) {
         return;
     }
     medpack = self.var_5ecd70;
-    medpack.isdisabled.medpack = 0;
+    medpack.isdisabled = 0;
     if (is_true(result)) {
         medpack.usecount++;
         medpack thread animation::play(#"hash_79647b3513fd2190");
@@ -415,7 +415,7 @@ function watchfordamage() {
     self endon(#"hash_523ddcbd662010e5");
     medpack = self;
     medpack endon(#"death");
-    medpack.health.medpack = level.var_c9404b0a.bundle.kshealth;
+    medpack.health = level.var_c9404b0a.bundle.kshealth;
     startinghealth = medpack.health;
     while (1) {
         waitresult = undefined;
@@ -434,14 +434,14 @@ function function_134ae768() {
     if (!isdefined(level.var_35814054.var_8e10bc5d[self.clientid])) {
         return;
     }
-    var_10432750 = undefined;
+    indextoremove = undefined;
     for (index = 0; index < level.var_35814054.var_8e10bc5d[self.clientid].size; index++) {
         if (level.var_35814054.var_8e10bc5d[self.clientid][index] == self) {
-            var_10432750 = index;
+            indextoremove = index;
         }
     }
-    if (isdefined(var_10432750)) {
-        level.var_35814054.var_8e10bc5d[self.clientid] = array::remove_index(level.var_35814054.var_8e10bc5d[self.clientid], var_10432750, 0);
+    if (isdefined(indextoremove)) {
+        level.var_35814054.var_8e10bc5d[self.clientid] = array::remove_index(level.var_35814054.var_8e10bc5d[self.clientid], indextoremove, 0);
     }
 }
 

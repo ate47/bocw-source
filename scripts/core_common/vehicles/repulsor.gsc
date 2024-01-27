@@ -122,7 +122,7 @@ function state_death_update(params) {
         switch (crash_style) {
         case 0:
             if (self.hijacked === 1) {
-                params.death_type.params = "gibbed";
+                params.death_type = "gibbed";
                 vehicle_ai::defaultstate_death_update(params);
             } else {
                 vehicle_death::barrel_rolling_crash();
@@ -323,9 +323,9 @@ function state_guard_update(*params) {
             self.vehaircraftcollisionenabled = 1;
             var_c4ec6105 = self vehicle_ai::getairfollowingposition(1);
             if (!isdefined(var_c4ec6105)) {
-                var_1f2328d0 = self function_4794d6a3();
+                goalinfo = self function_4794d6a3();
                 if (!is_true(self.isatgoal)) {
-                    var_c4ec6105 = function_649bd6d(var_1f2328d0);
+                    var_c4ec6105 = function_649bd6d(goalinfo);
                 }
             }
         }
@@ -356,8 +356,8 @@ function state_guard_update(*params) {
                 wait(0.2);
                 continue;
             }
-            var_1f2328d0 = self function_4794d6a3();
-            if (!isdefined(var_1f2328d0.var_9e404264) || is_true(var_1f2328d0.var_9e404264)) {
+            goalinfo = self function_4794d6a3();
+            if (!isdefined(goalinfo.var_9e404264) || is_true(goalinfo.var_9e404264)) {
                 if (self function_a57c34b7(self.current_pathto_pos, 1, usepathfinding)) {
                     self playsound(#"hash_32e1885f6441e661");
                     self vehclearlookat();
@@ -454,7 +454,7 @@ function function_649bd6d(goal) {
         if (point.inclaimedlocation) {
             /#
                 if (!isdefined(point._scoredebug)) {
-                    point._scoredebug.point = [];
+                    point._scoredebug = [];
                 }
                 if (!isdefined(point._scoredebug[#"inclaimedlocation"])) {
                     point._scoredebug[#"inclaimedlocation"] = spawnstruct();
@@ -462,12 +462,12 @@ function function_649bd6d(goal) {
                 point._scoredebug[#"inclaimedlocation"].score = -5000;
                 point._scoredebug[#"inclaimedlocation"].scorename = "<unknown string>";
             #/
-            point.score.point = point.score + -5000;
+            point.score = point.score + -5000;
         }
         score = randomfloatrange(0, 80);
         /#
             if (!isdefined(point._scoredebug)) {
-                point._scoredebug.point = [];
+                point._scoredebug = [];
             }
             if (!isdefined(point._scoredebug[#"random"])) {
                 point._scoredebug[#"random"] = spawnstruct();
@@ -475,7 +475,7 @@ function function_649bd6d(goal) {
             point._scoredebug[#"random"].score = score;
             point._scoredebug[#"random"].scorename = "<unknown string>";
         #/
-        point.score.point = point.score + score;
+        point.score = point.score + score;
     }
     if (queryresult.data.size > 0) {
         vehicle_ai::positionquery_postprocess_sortscore(queryresult);

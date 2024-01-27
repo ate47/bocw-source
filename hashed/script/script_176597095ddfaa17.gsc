@@ -52,7 +52,7 @@ function init() {
     }
     level.var_3814eac9 = getentarray("trigger_within_bounds", "classname");
     foreach (var_df0c0b31 in level.var_3814eac9) {
-        var_df0c0b31.activated.var_df0c0b31 = 0;
+        var_df0c0b31.activated = 0;
     }
     level.var_f2211522 = getentarray("survival_fow", "script_noteworthy");
     callback::on_connect(&on_connect);
@@ -124,20 +124,20 @@ function function_d4dec4e8(destination, str_targetname) {
             var_6c486d1a = destination.var_fe2612fe[#"hash_3460aae6bb799a99"][0];
         }
         if (isdefined(var_6c486d1a)) {
-            var_6c486d1a.activated.var_6c486d1a = 1;
+            var_6c486d1a.activated = 1;
             var_f6b2bc6f = getent(var_6c486d1a.targetname, "target");
             if (isdefined(var_f6b2bc6f)) {
-                var_f6b2bc6f.activated.var_f6b2bc6f = 1;
+                var_f6b2bc6f.activated = 1;
             }
             level clientfield::set("tile_id", var_6c486d1a.id);
             if (!isdefined(var_6c486d1a.var_5d62d655)) {
-                var_6c486d1a.var_5d62d655.var_6c486d1a = util::spawn_model(var_6c486d1a.model, var_6c486d1a.origin, var_6c486d1a.angles);
+                var_6c486d1a.var_5d62d655 = util::spawn_model(var_6c486d1a.model, var_6c486d1a.origin, var_6c486d1a.angles);
             } else {
                 var_6c486d1a.var_5d62d655 show();
             }
             if (isdefined(var_6c486d1a.script_noteworthy)) {
                 if (!isdefined(var_6c486d1a.var_47f0063b)) {
-                    var_6c486d1a.var_47f0063b.var_6c486d1a = util::spawn_model(var_6c486d1a.script_noteworthy, var_6c486d1a.origin, var_6c486d1a.angles);
+                    var_6c486d1a.var_47f0063b = util::spawn_model(var_6c486d1a.script_noteworthy, var_6c486d1a.origin, var_6c486d1a.angles);
                 } else {
                     var_6c486d1a.var_47f0063b show();
                 }
@@ -165,10 +165,10 @@ function function_f1ad7968(destination, str_targetname) {
             var_6c486d1a = destination.var_fe2612fe[#"hash_3460aae6bb799a99"][0];
         }
         if (isdefined(var_6c486d1a)) {
-            var_6c486d1a.activated.var_6c486d1a = 0;
+            var_6c486d1a.activated = 0;
             var_f6b2bc6f = getent(var_6c486d1a.targetname, "target");
             if (isdefined(var_f6b2bc6f)) {
-                var_f6b2bc6f.activated.var_f6b2bc6f = 0;
+                var_f6b2bc6f.activated = 0;
             }
             if (isdefined(var_6c486d1a.var_5d62d655)) {
                 var_6c486d1a.var_5d62d655 hide();
@@ -188,7 +188,7 @@ function function_ac8a88de(var_6874207, *var_d0c31a32) {
     level.var_973f0101 = 1;
     var_df0c0b31 = getent(var_d0c31a32, "targetname");
     if (isdefined(var_df0c0b31)) {
-        var_df0c0b31.activated.var_df0c0b31 = 1;
+        var_df0c0b31.activated = 1;
         foreach (var_ea0ed69c in level.var_ac22a760) {
             if (var_ea0ed69c.target == var_df0c0b31.targetname) {
                 level clientfield::set("tile_id", var_ea0ed69c.id);
@@ -267,7 +267,7 @@ function function_dc15ad60() {
         var_6effa129 = arraycombine(getplayers(), getvehiclearray());
         foreach (entity in var_6effa129) {
             if (!isdefined(entity.var_6a2e2f41)) {
-                entity.var_6a2e2f41.entity = gettime();
+                entity.var_6a2e2f41 = gettime();
             }
             if (isplayer(entity) && (!isalive(entity) || entity scene::is_igc_active())) {
                 entity clientfield::set("outsidetile", 0);
@@ -303,7 +303,7 @@ function function_dc15ad60() {
                         player function_bc82f900(#"damage_light");
                         if (time >= player.var_6a2e2f41) {
                             player thread globallogic_audio::play_taacom_dialog("fogOfWarTrappedPlayer");
-                            player.var_6a2e2f41.player = time + int(240 * 1000);
+                            player.var_6a2e2f41 = time + int(240 * 1000);
                         }
                     } else if (isvehicle(entity)) {
                         vehicle = entity;

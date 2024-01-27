@@ -55,24 +55,24 @@ function register() {
 // Size: 0x13a
 function function_5d95c1d() {
     watcher = self weaponobjects::createwatcher("electroball_grenade", undefined, 0);
-    watcher.watchforfire.watcher = 1;
-    watcher.hackable.watcher = 0;
-    watcher.hackertoolradius.watcher = level.equipmenthackertoolradius;
-    watcher.hackertooltimems.watcher = level.equipmenthackertooltimems;
-    watcher.headicon.watcher = 0;
-    watcher.activatefx.watcher = 1;
-    watcher.ownergetsassist.watcher = 1;
-    watcher.ignoredirection.watcher = 1;
-    watcher.immediatedetonation.watcher = 1;
-    watcher.detectiongraceperiod.watcher = 0.05;
-    watcher.detonateradius.watcher = 64;
-    watcher.onstun.watcher = &weaponobjects::weaponstun;
-    watcher.stuntime.watcher = 1;
-    watcher.ondetonatecallback.watcher = &proximitydetonate;
-    watcher.activationdelay.watcher = 0.05;
-    watcher.activatesound.watcher = "wpn_claymore_alert";
-    watcher.immunespecialty.watcher = "specialty_immunetriggershock";
-    watcher.onspawn.watcher = &function_5aeaf7bc;
+    watcher.watchforfire = 1;
+    watcher.hackable = 0;
+    watcher.hackertoolradius = level.equipmenthackertoolradius;
+    watcher.hackertooltimems = level.equipmenthackertooltimems;
+    watcher.headicon = 0;
+    watcher.activatefx = 1;
+    watcher.ownergetsassist = 1;
+    watcher.ignoredirection = 1;
+    watcher.immediatedetonation = 1;
+    watcher.detectiongraceperiod = 0.05;
+    watcher.detonateradius = 64;
+    watcher.onstun = &weaponobjects::weaponstun;
+    watcher.stuntime = 1;
+    watcher.ondetonatecallback = &proximitydetonate;
+    watcher.activationdelay = 0.05;
+    watcher.activatesound = "wpn_claymore_alert";
+    watcher.immunespecialty = "specialty_immunetriggershock";
+    watcher.onspawn = &function_5aeaf7bc;
 }
 
 // Namespace electroball_grenade/electroball_grenade
@@ -85,7 +85,7 @@ function function_5aeaf7bc(watcher, owner) {
         owner addweaponstat(self.weapon, "used", 1);
     }
     if (isdefined(self.weapon) && self.weapon.proximitydetonation > 0) {
-        watcher.detonateradius.watcher = self.weapon.proximitydetonation;
+        watcher.detonateradius = self.weapon.proximitydetonation;
     }
     weaponobjects::onspawnproximityweaponobject(watcher, owner);
     self thread function_8e671a22();

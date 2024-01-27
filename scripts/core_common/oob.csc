@@ -167,7 +167,7 @@ function function_52b5ffe3(localclientnum) {
 // Checksum 0xb3bf954f, Offset: 0x988
 // Size: 0x212
 function function_da2afac6(localclientnum, localplayer) {
-    localplayer.oob_effect_enabled.localplayer = 1;
+    localplayer.oob_effect_enabled = 1;
     function_52b5ffe3(localclientnum);
     oobmodel = getoobuimodel(localclientnum);
     if (level.var_dcb68d74) {
@@ -213,7 +213,7 @@ function stopoutofboundseffects(localclientnum, localplayer) {
         setuimodelvalue(oobmodel, 0);
     }
     if (isdefined(localplayer) && isdefined(localplayer.oob_effect_enabled)) {
-        localplayer.oob_effect_enabled.localplayer = 0;
+        localplayer.oob_effect_enabled = 0;
         localplayer.oob_effect_enabled = undefined;
     }
 }

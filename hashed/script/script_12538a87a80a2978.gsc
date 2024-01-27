@@ -93,23 +93,23 @@ function function_a92a93e9(var_c860e2f, v_angles, var_75b5cef0 = 0, n_delay = 1)
 // Checksum 0x2e01c121, Offset: 0xa80
 // Size: 0x38c
 function function_bdd95292(struct) {
-    struct.scriptmodel.struct = namespace_8b6a9d79::function_f3d93ee9(struct, "p8_fxanim_wz_supply_stash_01_glow_mod", 1);
-    struct.var_422ae63e.struct = #"hash_5657ee89257b06fe";
+    struct.scriptmodel = namespace_8b6a9d79::function_f3d93ee9(struct, "p8_fxanim_wz_supply_stash_01_glow_mod", 1);
+    struct.var_422ae63e = #"hash_5657ee89257b06fe";
     struct.scriptmodel fx::play("sr/fx9_chest_objective_amb", struct.origin, struct.angles, "death");
-    struct.state.struct = 0;
-    struct.var_9825cc78.struct = [];
-    struct.players.struct = [];
+    struct.state = 0;
+    struct.var_9825cc78 = [];
+    struct.players = [];
     players = getplayers();
     /#
         assert(players.size > 0, "<unknown string>");
     #/
     foreach (player in players) {
         if (!isdefined(player.var_524f43cb)) {
-            player.var_524f43cb.player = [];
+            player.var_524f43cb = [];
         }
         trigger = namespace_8b6a9d79::function_214737c7(struct, &function_b4f2a34e, #"hash_4703982104472957", undefined, 200);
         trigger.struct = struct;
-        trigger.origin.trigger = trigger.origin + vectorscale((0, 0, 1), 16);
+        trigger.origin = trigger.origin + vectorscale((0, 0, 1), 16);
         objid = zm_utility::function_f5a222a8(#"hash_52547cde15854dbf", struct.scriptmodel);
         trigger.var_7fadf788 = objid;
         player.var_524f43cb[objid] = objid;
@@ -117,15 +117,15 @@ function function_bdd95292(struct) {
         objective_setvisibletoplayer(player.var_524f43cb[objid], player);
         player clientclaimtrigger(trigger);
         if (!isdefined(struct.var_9825cc78)) {
-            struct.var_9825cc78.struct = [];
+            struct.var_9825cc78 = [];
         } else if (!isarray(struct.var_9825cc78)) {
-            struct.var_9825cc78.struct = array(struct.var_9825cc78);
+            struct.var_9825cc78 = array(struct.var_9825cc78);
         }
         struct.var_9825cc78[struct.var_9825cc78.size] = trigger;
         if (!isdefined(struct.players)) {
-            struct.players.struct = [];
+            struct.players = [];
         } else if (!isarray(struct.players)) {
-            struct.players.struct = array(struct.players);
+            struct.players = array(struct.players);
         }
         struct.players[struct.players.size] = player;
     }
@@ -178,22 +178,22 @@ function function_b4f2a34e(eventstruct) {
 // Checksum 0x20daa86a, Offset: 0x1060
 // Size: 0x34c
 function function_39340834(struct, trigger) {
-    var_2be3941a = #"sr_objective_rewards_guns_tier_1";
+    rewards = #"sr_objective_rewards_guns_tier_1";
     var_9c9943cf = 0;
     if (level.var_cf558bf < 1) {
-        var_2be3941a = #"sr_objective_rewards_guns_tier_1";
+        rewards = #"sr_objective_rewards_guns_tier_1";
     }
     if (level.var_cf558bf == 1) {
-        var_2be3941a = #"sr_objective_rewards_guns_tier_2";
+        rewards = #"sr_objective_rewards_guns_tier_2";
         var_9c9943cf = 1;
     }
     if (level.var_cf558bf >= 2) {
-        var_2be3941a = #"sr_objective_rewards_guns_tier_3";
+        rewards = #"sr_objective_rewards_guns_tier_3";
         var_9c9943cf = 2;
     }
     if (struct.state == 1) {
-        struct.state.struct = 2;
-        list = getscriptbundle(var_2be3941a);
+        struct.state = 2;
+        list = getscriptbundle(rewards);
         function_621d45bc(list, struct);
     }
     if (!level.var_30197c60 sr_objective_reward_menu::is_open(self)) {
@@ -230,16 +230,16 @@ function function_39340834(struct, trigger) {
 // Size: 0x1c0
 function function_621d45bc(list, struct) {
     players = getplayers();
-    struct.var_f0f92268.struct = [];
+    struct.var_f0f92268 = [];
     foreach (player in players) {
         var_2ab78386 = function_410c380(list.itemlist);
         var_ff082c28 = function_410c380(list.itemlist, var_2ab78386);
         var_d3ac88d = function_410c380(list.itemlist, var_2ab78386, var_ff082c28);
         var_c4aee6b4 = [2:var_d3ac88d, 1:var_ff082c28, 0:var_2ab78386];
         if (!isdefined(struct.var_f0f92268)) {
-            struct.var_f0f92268.struct = [];
+            struct.var_f0f92268 = [];
         } else if (!isarray(struct.var_f0f92268)) {
-            struct.var_f0f92268.struct = array(struct.var_f0f92268);
+            struct.var_f0f92268 = array(struct.var_f0f92268);
         }
         struct.var_f0f92268[struct.var_f0f92268.size] = var_c4aee6b4;
     }

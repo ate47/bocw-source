@@ -108,8 +108,8 @@ function private function_c96b0450() {
 // Checksum 0x34b48d75, Offset: 0x7b8
 // Size: 0x2e8
 function private function_74f41e14(entity) {
-    var_1f2328d0 = entity function_4794d6a3();
-    forcedgoal = is_true(var_1f2328d0.goalforced);
+    goalinfo = entity function_4794d6a3();
+    forcedgoal = is_true(goalinfo.goalforced);
     itsbeenawhile = gettime() > entity.nextfindbestcovertime;
     var_1ebff8de = itsbeenawhile;
     if (forcedgoal || !var_1ebff8de) {
@@ -118,37 +118,37 @@ function private function_74f41e14(entity) {
     if (isdefined(level.var_72b8905c)) {
         var_be34b5c6 = entity [[ level.var_72b8905c ]]();
         entity function_387a6908(var_be34b5c6);
-        entity.nextfindbestcovertime.entity = 2147483647;
+        entity.nextfindbestcovertime = 2147483647;
         return 1;
     }
     pickedpoint = undefined;
     var_cab884f3 = randomfloat(1);
     if ((is_true(entity.var_6fc509b9) || !function_9308c21b()) && var_cab884f3 < 0.5) {
         if (is_true(entity.var_ac4fe74b)) {
-            pickedpoint = function_251c139d(entity, var_1f2328d0, "civilian_region_exposed_cover_tacquery");
+            pickedpoint = function_251c139d(entity, goalinfo, "civilian_region_exposed_cover_tacquery");
         } else {
-            pickedpoint = function_251c139d(entity, var_1f2328d0, "civilian_exposed_cover_tacquery");
+            pickedpoint = function_251c139d(entity, goalinfo, "civilian_exposed_cover_tacquery");
         }
     }
     if (!isdefined(pickedpoint)) {
         if (is_true(entity.var_ac4fe74b)) {
-            pickedpoint = function_251c139d(entity, var_1f2328d0, "civilian_region_cover_tacquery");
+            pickedpoint = function_251c139d(entity, goalinfo, "civilian_region_cover_tacquery");
         } else {
-            pickedpoint = function_251c139d(entity, var_1f2328d0, "civilian_cover_tacquery");
+            pickedpoint = function_251c139d(entity, goalinfo, "civilian_cover_tacquery");
         }
     }
     if (isdefined(pickedpoint) && isdefined(pickedpoint.node)) {
         entity function_387a6908(pickedpoint.node);
-        entity.nextfindbestcovertime.entity = gettime() + 9999999;
+        entity.nextfindbestcovertime = gettime() + 9999999;
         if (isdefined(entity.var_5557ac4d)) {
             entity [[ entity.var_5557ac4d ]]();
         }
         if (is_true(entity.var_6fc509b9)) {
-            entity.var_6fc509b9.entity = 0;
+            entity.var_6fc509b9 = 0;
         }
         return 1;
     } else {
-        entity.nextfindbestcovertime.entity = gettime() + 3000;
+        entity.nextfindbestcovertime = gettime() + 3000;
     }
     return 0;
 }
@@ -161,7 +161,7 @@ function private function_ddb1fd83(var_d5020108, tacpoints, pickedpoint) {
     self notify("7fec587c06753641");
     self endon("7fec587c06753641");
     self endon(#"death");
-    var_1f2328d0 = self function_4794d6a3();
+    goalinfo = self function_4794d6a3();
     while (1) {
         waitframe(1);
         color = (1, 0.752941, 0.796078);
@@ -171,18 +171,18 @@ function private function_ddb1fd83(var_d5020108, tacpoints, pickedpoint) {
             var_f08d182b = " exposed goalpos";
         }
         /#
-            line(var_1f2328d0.goalpos, var_d5020108.origin, (1, 0.5, 0), 1, 0, 1);
-            print3d(var_1f2328d0.goalpos, "<unknown string>" + self getentitynumber() + var_f08d182b, color, 1, 1, 1);
+            line(goalinfo.goalpos, var_d5020108.origin, (1, 0.5, 0), 1, 0, 1);
+            print3d(goalinfo.goalpos, "<unknown string>" + self getentitynumber() + var_f08d182b, color, 1, 1, 1);
         #/
         foreach (tacpoint in tacpoints) {
             if (tacpoint != pickedpoint) {
                 /#
-                    line(var_1f2328d0.goalpos, tacpoint.origin, color, 1, 0, 1);
+                    line(goalinfo.goalpos, tacpoint.origin, color, 1, 0, 1);
                 #/
             } else {
                 /#
                     print3d(tacpoint.origin, "<unknown string>", (0, 1, 0), 1, 1, 1);
-                    line(var_1f2328d0.goalpos, tacpoint.origin, (0, 1, 0), 1, 0, 1);
+                    line(goalinfo.goalpos, tacpoint.origin, (0, 1, 0), 1, 0, 1);
                 #/
             }
         }
@@ -193,8 +193,8 @@ function private function_ddb1fd83(var_d5020108, tacpoints, pickedpoint) {
 // Params 3, eflags: 0x6 linked
 // Checksum 0xe923f42c, Offset: 0xd40
 // Size: 0x240
-function private function_251c139d(entity, var_1f2328d0, var_1fe38bcc) {
-    var_d5020108 = getnearestnode(var_1f2328d0.goalpos);
+function private function_251c139d(entity, goalinfo, var_1fe38bcc) {
+    var_d5020108 = getnearestnode(goalinfo.goalpos);
     tacpoints = undefined;
     pickedpoint = undefined;
     if (!isdefined(var_d5020108)) {
@@ -203,7 +203,7 @@ function private function_251c139d(entity, var_1f2328d0, var_1fe38bcc) {
     if (isdefined(var_d5020108)) {
         pixbeginevent(var_1fe38bcc);
         aiprofile_beginentry(var_1fe38bcc);
-        tacpoints = tacticalquery(var_1fe38bcc, entity.origin, entity, var_1f2328d0.goalpos, var_d5020108);
+        tacpoints = tacticalquery(var_1fe38bcc, entity.origin, entity, goalinfo.goalpos, var_d5020108);
         pixendevent();
         aiprofile_endentry();
     }
@@ -449,7 +449,7 @@ function private function_f1d19be1() {
                 continue;
             }
             if (event.type == "projectile_impact" && isdefined(event.entity.owner)) {
-                event.entity.event = event.entity.owner;
+                event.entity = event.entity.owner;
             }
             if (issentient(event.entity) && (event.entity.ignoreme || is_true(event.entity isnotarget()))) {
                 continue;

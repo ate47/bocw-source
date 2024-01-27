@@ -84,7 +84,7 @@ function add(skipto, var_e784b061, var_dde96e3b, var_48a6b9bd, var_a9e3715c, cle
         #/
     }
     struct = function_7d6f76df(skipto, var_e784b061, var_dde96e3b, var_48a6b9bd, var_a9e3715c, cleanup_func, var_672c77b1, undefined);
-    struct.public.struct = 1;
+    struct.public = 1;
     level flag::set("level_has_skiptos");
 }
 
@@ -127,7 +127,7 @@ function function_9c003a50(skipto, var_e784b061, var_dde96e3b, var_48a6b9bd, var
         #/
     }
     struct = function_7d6f76df(skipto, var_e784b061, var_dde96e3b, var_48a6b9bd, var_a9e3715c, cleanup_func, var_672c77b1, var_89f09f8d);
-    struct.public.struct = 1;
+    struct.public = 1;
     level flag::set("level_has_skiptos");
     level flag::set("level_has_skipto_branches");
 }
@@ -142,7 +142,7 @@ function function_67843f17(skipto, var_e784b061, var_dde96e3b, var_48a6b9bd, var
     }
     if (function_525a83cb(skipto)) {
         struct = function_7d6f76df(skipto, var_e784b061, var_dde96e3b, var_48a6b9bd, var_a9e3715c, cleanup_func, var_672c77b1, var_89f09f8d);
-        struct.var_f36d5247.struct = 1;
+        struct.var_f36d5247 = 1;
         return;
     }
     /#
@@ -187,15 +187,15 @@ function change(msg, var_e784b061, var_dde96e3b, var_48a6b9bd, var_a9e3715c, cle
     }
     if (isdefined(var_672c77b1)) {
         if (!isdefined(struct.var_672c77b1)) {
-            struct.var_672c77b1.struct = [];
+            struct.var_672c77b1 = [];
         } else if (!isarray(struct.var_672c77b1)) {
-            struct.var_672c77b1.struct = array(struct.var_672c77b1);
+            struct.var_672c77b1 = array(struct.var_672c77b1);
         }
         struct.var_672c77b1[struct.var_672c77b1.size] = var_672c77b1;
     }
     if (isdefined(var_89f09f8d)) {
-        struct.var_89f09f8d.struct = strtok(var_89f09f8d, ",");
-        struct.next.struct = struct.var_89f09f8d;
+        struct.var_89f09f8d = strtok(var_89f09f8d, ",");
+        struct.next = struct.var_89f09f8d;
     }
 }
 
@@ -219,24 +219,24 @@ function function_5d3e3cf9(msg, var_e784b061, var_dde96e3b, var_48a6b9bd, var_a9
     struct.var_48a6b9bd = var_48a6b9bd;
     struct.var_7dd8ffdb = var_a9e3715c;
     struct.cleanup_func = cleanup_func;
-    struct.next.struct = [];
-    struct.prev.struct = [];
-    struct.var_67ea79fe.struct = "";
-    struct.var_672c77b1.struct = [];
+    struct.next = [];
+    struct.prev = [];
+    struct.var_67ea79fe = "";
+    struct.var_672c77b1 = [];
     if (isdefined(var_672c77b1)) {
         if (!isdefined(struct.var_672c77b1)) {
-            struct.var_672c77b1.struct = [];
+            struct.var_672c77b1 = [];
         } else if (!isarray(struct.var_672c77b1)) {
-            struct.var_672c77b1.struct = array(struct.var_672c77b1);
+            struct.var_672c77b1 = array(struct.var_672c77b1);
         }
         struct.var_672c77b1[struct.var_672c77b1.size] = var_672c77b1;
     }
-    struct.var_89f09f8d.struct = [];
+    struct.var_89f09f8d = [];
     if (isdefined(var_89f09f8d)) {
-        struct.var_89f09f8d.struct = strtok(var_89f09f8d, ",");
-        struct.next.struct = struct.var_89f09f8d;
+        struct.var_89f09f8d = strtok(var_89f09f8d, ",");
+        struct.next = struct.var_89f09f8d;
     }
-    struct.var_80fa98d9.struct = [];
+    struct.var_80fa98d9 = [];
     return struct;
 }
 
@@ -291,9 +291,9 @@ function function_a59cd1c9() {
         if (is_true(struct.public)) {
             if (struct.next.size < 1) {
                 if (!isdefined(struct.next)) {
-                    struct.next.struct = [];
+                    struct.next = [];
                 } else if (!isarray(struct.next)) {
-                    struct.next.struct = array(struct.next);
+                    struct.next = array(struct.next);
                 }
                 struct.next[struct.next.size] = "_exit";
             }
@@ -497,7 +497,7 @@ function function_51726ac8(objectives, var_f9f06983) {
 function function_4b70d35f(*objectives) {
     foreach (skipto in level.var_c55064fd) {
         if (!is_true(skipto.var_a9880cee)) {
-            skipto.var_a9880cee.skipto = 1;
+            skipto.var_a9880cee = 1;
             if (isdefined(skipto.var_d177b2f)) {
                 thread [[ skipto.var_d177b2f ]](skipto.name);
             }
@@ -553,7 +553,7 @@ function private function_b7e9926c(name, var_f9f06983) {
 // Size: 0x82
 function function_fc434ec9() {
     foreach (skipto in level.var_c55064fd) {
-        skipto.var_a6ddf9d6.skipto = 0;
+        skipto.var_a6ddf9d6 = 0;
     }
 }
 

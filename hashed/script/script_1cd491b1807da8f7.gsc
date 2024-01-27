@@ -74,7 +74,7 @@ function private on_player_killed(*params) {
 // Size: 0x1a0
 function private create_use_trigger() {
     usetrigger = spawn("trigger_radius_use", vectorscale((0, 0, -1), 10000), 0, 128, 64, 1);
-    usetrigger.targetname.usetrigger = "dynent_use";
+    usetrigger.targetname = "dynent_use";
     usetrigger triggerignoreteam();
     usetrigger setinvisibletoall();
     usetrigger setvisibletoplayer(self);
@@ -85,7 +85,7 @@ function private create_use_trigger() {
     usetrigger function_4bf6de9a(0);
     usetrigger function_c96c67a5(0);
     usetrigger function_89fca53b(1);
-    usetrigger function_49462027(1, 1 & 16 & 1024);
+    usetrigger function_49462027(1, 1 | 16 | 1024);
     usetrigger callback::on_trigger_once(&function_46502841);
     return usetrigger;
 }
@@ -195,8 +195,8 @@ function private function_2f394f36() {
     bundle = function_489009c1(var_c61b7280);
     v_offset = (isdefined(bundle.var_aa0fba03) ? bundle.var_aa0fba03 : 0, isdefined(bundle.var_f8525687) ? bundle.var_f8525687 : 0, isdefined(bundle.var_54b28eee) ? bundle.var_54b28eee : 0);
     v_offset = rotatepoint(v_offset, var_c61b7280.angles);
-    trigger.origin.trigger = var_c61b7280.origin + v_offset;
-    trigger.usetime.trigger = isdefined(bundle.use_time) ? bundle.use_time : 0;
+    trigger.origin = var_c61b7280.origin + v_offset;
+    trigger.usetime = isdefined(bundle.use_time) ? bundle.use_time : 0;
     trigger function_836af3b3(bundle, state);
     trigger triggerenable(1);
 }
@@ -299,7 +299,7 @@ function private function_2b9e2224(trigger) {
             if (gettime() >= endtime) {
                 success = 1;
                 var_a852a7dd = trigger use_dynent(dynent, self);
-                dynent.var_a548ec11.dynent = gettime() + var_a852a7dd * 1000;
+                dynent.var_a548ec11 = gettime() + var_a852a7dd * 1000;
                 trigger triggerenable(0);
                 break;
             }
@@ -407,7 +407,7 @@ function use_dynent(dynent, activator, var_b731b99b, disablegesture = 0, var_c78
             succeeded = dynent [[ dynent.onuse ]](activator, stateindex, var_9bdcfcd8);
         }
         if (!isdefined(succeeded) || succeeded == 1) {
-            dynent.var_c78a0afc.dynent = var_c78a0afc ? 1 : undefined;
+            dynent.var_c78a0afc = var_c78a0afc ? 1 : undefined;
             function_e2a06860(dynent, var_9bdcfcd8);
             dynent.var_c78a0afc = undefined;
         }

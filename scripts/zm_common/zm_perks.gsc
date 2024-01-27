@@ -344,10 +344,10 @@ function turn_perk_off(ishidden) {
     self notify(#"stop_loopsound");
     if (!is_true(self.b_keep_when_turned_off)) {
         newmachine = spawn("script_model", self.origin);
-        newmachine.angles.newmachine = self.angles;
-        newmachine.targetname.newmachine = self.targetname;
+        newmachine.angles = self.angles;
+        newmachine.targetname = self.targetname;
         if (is_true(ishidden)) {
-            newmachine.ishidden.newmachine = 1;
+            newmachine.ishidden = 1;
             newmachine ghost();
             newmachine notsolid();
         }
@@ -966,7 +966,7 @@ function perk_pause(perk) {
             continue;
         }
         if (!isdefined(player.var_c4890291)) {
-            player.var_c4890291.player = [];
+            player.var_c4890291 = [];
         }
         player.var_c4890291[perk] = is_true(player.var_c4890291[perk]) || player hasperk(perk);
         if (player.var_c4890291[perk]) {
@@ -1208,10 +1208,10 @@ function perk_machine_spawn_init() {
         if (isdefined(perk) && isdefined(s_spawn_pos.model)) {
             if (is_true(level.randomize_perk_machine_location) && a_s_random_perk_locs.size > 0 && isdefined(s_spawn_pos.script_notify)) {
                 s_new_loc = a_s_random_perk_locs[n_random_perks_assigned];
-                s_spawn_pos.origin.s_spawn_pos = s_new_loc.origin;
-                s_spawn_pos.angles.s_spawn_pos = s_new_loc.angles;
+                s_spawn_pos.origin = s_new_loc.origin;
+                s_spawn_pos.angles = s_new_loc.angles;
                 if (isdefined(s_new_loc.script_int)) {
-                    s_spawn_pos.script_int.s_spawn_pos = s_new_loc.script_int;
+                    s_spawn_pos.script_int = s_new_loc.script_int;
                 }
                 if (isdefined(s_new_loc.target)) {
                     s_tell_location = struct::get(s_new_loc.target);
@@ -1228,28 +1228,28 @@ function perk_machine_spawn_init() {
             fwd = 20;
             forward = anglestoright(s_spawn_pos.angles) * fwd;
             unitrigger_stub = spawnstruct();
-            unitrigger_stub.origin.unitrigger_stub = s_spawn_pos.origin + (0, 0, up) + forward;
-            unitrigger_stub.angles.unitrigger_stub = s_spawn_pos.angles;
-            unitrigger_stub.script_unitrigger_type.unitrigger_stub = "unitrigger_box_use";
-            unitrigger_stub.cursor_hint.unitrigger_stub = "HINT_NOICON";
+            unitrigger_stub.origin = s_spawn_pos.origin + (0, 0, up) + forward;
+            unitrigger_stub.angles = s_spawn_pos.angles;
+            unitrigger_stub.script_unitrigger_type = "unitrigger_box_use";
+            unitrigger_stub.cursor_hint = "HINT_NOICON";
             unitrigger_stub.script_width = width;
             unitrigger_stub.script_height = height;
             unitrigger_stub.script_length = length;
-            unitrigger_stub.require_look_at.unitrigger_stub = 0;
-            unitrigger_stub.targetname.unitrigger_stub = "zombie_vending";
+            unitrigger_stub.require_look_at = 0;
+            unitrigger_stub.targetname = "zombie_vending";
             unitrigger_stub.script_noteworthy = perk;
-            unitrigger_stub.hint_string.unitrigger_stub = #"zombie/need_power";
+            unitrigger_stub.hint_string = #"zombie/need_power";
             unitrigger_stub.hint_parm1 = undefined;
             unitrigger_stub.hint_parm2 = undefined;
             if (isdefined(s_spawn_pos.script_int)) {
-                unitrigger_stub.script_int.unitrigger_stub = s_spawn_pos.script_int;
+                unitrigger_stub.script_int = s_spawn_pos.script_int;
             }
             zm_unitrigger::unitrigger_force_per_player_triggers(unitrigger_stub, 1);
-            unitrigger_stub.prompt_and_visibility_func.unitrigger_stub = &function_5296af32;
+            unitrigger_stub.prompt_and_visibility_func = &function_5296af32;
             zm_unitrigger::register_static_unitrigger(unitrigger_stub, &vending_trigger_think);
             perk_machine = util::spawn_model(s_spawn_pos.model, s_spawn_pos.origin, s_spawn_pos.angles);
             if (isdefined(s_spawn_pos.var_8d3fc50c) && s_spawn_pos.var_8d3fc50c > 0) {
-                perk_machine.var_8d3fc50c.perk_machine = s_spawn_pos.var_8d3fc50c;
+                perk_machine.var_8d3fc50c = s_spawn_pos.var_8d3fc50c;
             } else {
                 s_spawn_pos.var_8d3fc50c = undefined;
             }
@@ -1258,38 +1258,38 @@ function perk_machine_spawn_init() {
                 bump_trigger = undefined;
             } else {
                 bump_trigger = spawn("trigger_radius", s_spawn_pos.origin + vectorscale((0, 0, 1), 30), 0, 40, 80, 1);
-                bump_trigger.script_activated.bump_trigger = 1;
-                bump_trigger.script_sound.bump_trigger = "zmb_perks_bump_bottle";
-                bump_trigger.targetname.bump_trigger = "audio_bump_trigger";
+                bump_trigger.script_activated = 1;
+                bump_trigger.script_sound = "zmb_perks_bump_bottle";
+                bump_trigger.targetname = "audio_bump_trigger";
             }
             collision = undefined;
             unitrigger_stub.clip = collision;
             unitrigger_stub.machine = perk_machine;
             unitrigger_stub.bump = bump_trigger;
             if (isdefined(s_spawn_pos.script_notify)) {
-                perk_machine.script_notify.perk_machine = s_spawn_pos.script_notify;
+                perk_machine.script_notify = s_spawn_pos.script_notify;
             }
             if (isdefined(s_spawn_pos.target)) {
-                perk_machine.target.perk_machine = s_spawn_pos.target;
+                perk_machine.target = s_spawn_pos.target;
             }
             if (isdefined(s_spawn_pos.blocker_model)) {
-                unitrigger_stub.blocker_model.unitrigger_stub = s_spawn_pos.blocker_model;
+                unitrigger_stub.blocker_model = s_spawn_pos.blocker_model;
             }
             if (isdefined(s_spawn_pos.script_int)) {
-                perk_machine.script_int.perk_machine = s_spawn_pos.script_int;
+                perk_machine.script_int = s_spawn_pos.script_int;
             }
             if (isdefined(s_spawn_pos.turn_on_notify)) {
-                perk_machine.turn_on_notify.perk_machine = s_spawn_pos.turn_on_notify;
+                perk_machine.turn_on_notify = s_spawn_pos.turn_on_notify;
             }
-            unitrigger_stub.script_sound.unitrigger_stub = "mus_perks_speed_jingle";
-            unitrigger_stub.script_string.unitrigger_stub = "speedcola_perk";
-            unitrigger_stub.script_label.unitrigger_stub = "mus_perks_speed_sting";
-            unitrigger_stub.target.unitrigger_stub = "vending_sleight";
-            perk_machine.script_string.perk_machine = "speedcola_perk";
-            perk_machine.targetname.perk_machine = "vending_sleight";
+            unitrigger_stub.script_sound = "mus_perks_speed_jingle";
+            unitrigger_stub.script_string = "speedcola_perk";
+            unitrigger_stub.script_label = "mus_perks_speed_sting";
+            unitrigger_stub.target = "vending_sleight";
+            perk_machine.script_string = "speedcola_perk";
+            perk_machine.targetname = "vending_sleight";
             perk_machine.unitrigger_stub = unitrigger_stub;
             if (isdefined(bump_trigger)) {
-                bump_trigger.script_string.bump_trigger = "speedcola_perk";
+                bump_trigger.script_string = "speedcola_perk";
             }
             if (isdefined(level._custom_perks[perk]) && isdefined(level._custom_perks[perk].perk_machine_set_kvps)) {
                 [[ level._custom_perks[perk].perk_machine_set_kvps ]](unitrigger_stub, perk_machine, bump_trigger, collision);
@@ -2024,39 +2024,39 @@ function perk_vapor_altar_init() {
         if (isdefined(n_slot)) {
             forward = anglestoright(s_spawn_pos.angles) * 0;
             unitrigger_stub = spawnstruct();
-            unitrigger_stub.origin.unitrigger_stub = s_spawn_pos.origin + (0, 0, 0) + forward;
-            unitrigger_stub.angles.unitrigger_stub = s_spawn_pos.angles;
-            unitrigger_stub.script_unitrigger_type.unitrigger_stub = "unitrigger_box_use";
-            unitrigger_stub.cursor_hint.unitrigger_stub = "HINT_NOICON";
-            unitrigger_stub.script_width.unitrigger_stub = 64;
-            unitrigger_stub.script_height.unitrigger_stub = 64;
-            unitrigger_stub.script_length.unitrigger_stub = 64;
-            unitrigger_stub.require_look_at.unitrigger_stub = 0;
-            unitrigger_stub.targetname.unitrigger_stub = "perk_vapor_altar_stub";
+            unitrigger_stub.origin = s_spawn_pos.origin + (0, 0, 0) + forward;
+            unitrigger_stub.angles = s_spawn_pos.angles;
+            unitrigger_stub.script_unitrigger_type = "unitrigger_box_use";
+            unitrigger_stub.cursor_hint = "HINT_NOICON";
+            unitrigger_stub.script_width = 64;
+            unitrigger_stub.script_height = 64;
+            unitrigger_stub.script_length = 64;
+            unitrigger_stub.require_look_at = 0;
+            unitrigger_stub.targetname = "perk_vapor_altar_stub";
             unitrigger_stub.script_int = n_slot;
-            unitrigger_stub.hint_string.unitrigger_stub = #"zombie/need_power";
+            unitrigger_stub.hint_string = #"zombie/need_power";
             unitrigger_stub.hint_parm1 = undefined;
             unitrigger_stub.hint_parm2 = undefined;
             zm_unitrigger::unitrigger_force_per_player_triggers(unitrigger_stub, 1);
-            unitrigger_stub.prompt_and_visibility_func.unitrigger_stub = &function_b7f2c635;
+            unitrigger_stub.prompt_and_visibility_func = &function_b7f2c635;
             zm_unitrigger::register_static_unitrigger(unitrigger_stub, &function_f5da744e);
             zm_unitrigger::function_c4a5fdf5(unitrigger_stub, 1);
             if (!isdefined(s_spawn_pos.angles)) {
-                s_spawn_pos.angles.s_spawn_pos = (0, 0, 0);
+                s_spawn_pos.angles = (0, 0, 0);
             }
             if (is_true(level._no_vending_machine_bump_trigs)) {
                 bump_trigger = undefined;
             } else {
                 bump_trigger = spawn("trigger_radius", s_spawn_pos.origin + vectorscale((0, 0, 1), 30), 0, 40, 80, 1);
-                bump_trigger.script_activated.bump_trigger = 1;
-                bump_trigger.script_sound.bump_trigger = "zmb_perks_bump_bottle";
-                bump_trigger.targetname.bump_trigger = "audio_bump_trigger";
+                bump_trigger.script_activated = 1;
+                bump_trigger.script_sound = "zmb_perks_bump_bottle";
+                bump_trigger.targetname = "audio_bump_trigger";
             }
             collision = undefined;
             unitrigger_stub.clip = collision;
             unitrigger_stub.bump = bump_trigger;
             if (isdefined(s_spawn_pos.blocker_model)) {
-                unitrigger_stub.blocker_model.unitrigger_stub = s_spawn_pos.blocker_model;
+                unitrigger_stub.blocker_model = s_spawn_pos.blocker_model;
             }
             unitrigger_stub.var_3468124 = s_spawn_pos;
             unitrigger_stub.var_3468124.var_2977c27 = "off";
@@ -2860,11 +2860,11 @@ function function_8b413937(var_3468124) {
             level flag::wait_till("power_on" + var_4324192b);
         }
     }
-    var_3468124.var_2977c27.var_3468124 = "on";
+    var_3468124.var_2977c27 = "on";
     if (isdefined(var_b6b0d4b0)) {
         level scene::add_scene_func(var_b6b0d4b0.scriptbundlename, &function_72c30be7, "on", var_3468124);
         var_b6b0d4b0 thread scene::play("on");
-        var_3468124.var_2839b015.var_3468124 = var_b6b0d4b0.scriptbundlename;
+        var_3468124.var_2839b015 = var_b6b0d4b0.scriptbundlename;
     } else {
         var_3468124 function_a30c73b9("on");
         waitframe(1);
@@ -2881,7 +2881,7 @@ function function_8b413937(var_3468124) {
 // Checksum 0xd3f12f45, Offset: 0xb2d0
 // Size: 0x2e
 function function_72c30be7(var_dd74d130, var_3468124) {
-    var_3468124.var_73bd396b.var_3468124 = var_dd74d130[#"prop 1"];
+    var_3468124.var_73bd396b = var_dd74d130[#"prop 1"];
 }
 
 // Namespace zm_perks/zm_perks

@@ -49,7 +49,7 @@ function blind_apply(var_756fda07, weapon, applicant) {
         if (isdefined(weapon) && weapon == getweapon(#"hash_3f62a872201cd1ce")) {
             self.owner.var_ef9b6f0b = 1;
             level notify(#"hash_ac034f4f7553641");
-            applicant.var_a467e27f.applicant = (isdefined(applicant.var_a467e27f) ? applicant.var_a467e27f : 0) + 1;
+            applicant.var_a467e27f = (isdefined(applicant.var_a467e27f) ? applicant.var_a467e27f : 0) + 1;
             var_9194a036 = battlechatter::mpdialog_value("swatGrenadeSuccessLineCount", 0);
             if (applicant.var_a467e27f == (isdefined(var_9194a036) ? var_9194a036 : 0)) {
                 applicant thread battlechatter::play_gadget_success(getweapon(#"hash_3f62a872201cd1ce"), undefined, self.owner, undefined);

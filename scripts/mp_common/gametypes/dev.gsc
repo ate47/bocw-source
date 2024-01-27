@@ -448,16 +448,16 @@ function updatedevsettings() {
             } else if (getdvarstring(#"scr_devgui_spawn") != "<unknown string>") {
                 player = gethostplayer();
                 if (!isdefined(player.devgui_spawn_active)) {
-                    player.devgui_spawn_active.player = 0;
+                    player.devgui_spawn_active = 0;
                 }
                 if (!player.devgui_spawn_active) {
                     iprintln("<unknown string>");
                     iprintln("<unknown string>");
-                    player.devgui_spawn_active.player = 1;
+                    player.devgui_spawn_active = 1;
                     player thread devgui_spawn_think();
                 } else {
                     player notify(#"devgui_spawn_think");
-                    player.devgui_spawn_active.player = 0;
+                    player.devgui_spawn_active = 0;
                     player setactionslot(3, "<unknown string>");
                 }
                 setdvar(#"scr_devgui_spawn", "<unknown string>");
@@ -555,10 +555,10 @@ function updatedevsettings() {
                 players = getplayers();
                 host = gethostplayer();
                 if (!isdefined(host.devgui_health_debug)) {
-                    host.devgui_health_debug.host = 0;
+                    host.devgui_health_debug = 0;
                 }
                 if (host.devgui_health_debug) {
-                    host.devgui_health_debug.host = 0;
+                    host.devgui_health_debug = 0;
                     for (i = 0; i < players.size; i++) {
                         players[i] notify(#"devgui_health_debug");
                         if (isdefined(players[i].debug_health_bar)) {
@@ -569,7 +569,7 @@ function updatedevsettings() {
                         }
                     }
                 } else {
-                    host.devgui_health_debug.host = 1;
+                    host.devgui_health_debug = 1;
                     for (i = 0; i < players.size; i++) {
                         players[i] thread devgui_health_debug();
                     }
@@ -1170,7 +1170,7 @@ function getormakebot(team) {
         if (isdefined(ent)) {
             play_on_players("<unknown string>");
             ent waittill(#"spawned_player");
-            ent.ignoreall.ent = 1;
+            ent.ignoreall = 1;
         }
         return ent;
     #/
@@ -1328,45 +1328,45 @@ function weapon_engage_dists_init() {
     /#
         level.engagedists = [];
         genericpistol = spawnstruct();
-        genericpistol.engagedistmin.genericpistol = 125;
-        genericpistol.engagedistoptimal.genericpistol = 225;
-        genericpistol.engagedistmulligan.genericpistol = 50;
-        genericpistol.engagedistmax.genericpistol = 400;
+        genericpistol.engagedistmin = 125;
+        genericpistol.engagedistoptimal = 225;
+        genericpistol.engagedistmulligan = 50;
+        genericpistol.engagedistmax = 400;
         shotty = spawnstruct();
-        shotty.engagedistmin.shotty = 50;
-        shotty.engagedistoptimal.shotty = 200;
-        shotty.engagedistmulligan.shotty = 75;
-        shotty.engagedistmax.shotty = 350;
+        shotty.engagedistmin = 50;
+        shotty.engagedistoptimal = 200;
+        shotty.engagedistmulligan = 75;
+        shotty.engagedistmax = 350;
         genericsmg = spawnstruct();
-        genericsmg.engagedistmin.genericsmg = 100;
-        genericsmg.engagedistoptimal.genericsmg = 275;
-        genericsmg.engagedistmulligan.genericsmg = 100;
-        genericsmg.engagedistmax.genericsmg = 500;
+        genericsmg.engagedistmin = 100;
+        genericsmg.engagedistoptimal = 275;
+        genericsmg.engagedistmulligan = 100;
+        genericsmg.engagedistmax = 500;
         genericlmg = spawnstruct();
-        genericlmg.engagedistmin.genericlmg = 325;
-        genericlmg.engagedistoptimal.genericlmg = 550;
-        genericlmg.engagedistmulligan.genericlmg = 150;
-        genericlmg.engagedistmax.genericlmg = 850;
+        genericlmg.engagedistmin = 325;
+        genericlmg.engagedistoptimal = 550;
+        genericlmg.engagedistmulligan = 150;
+        genericlmg.engagedistmax = 850;
         genericriflesa = spawnstruct();
-        genericriflesa.engagedistmin.genericriflesa = 325;
-        genericriflesa.engagedistoptimal.genericriflesa = 550;
-        genericriflesa.engagedistmulligan.genericriflesa = 150;
-        genericriflesa.engagedistmax.genericriflesa = 850;
+        genericriflesa.engagedistmin = 325;
+        genericriflesa.engagedistoptimal = 550;
+        genericriflesa.engagedistmulligan = 150;
+        genericriflesa.engagedistmax = 850;
         genericriflebolt = spawnstruct();
-        genericriflebolt.engagedistmin.genericriflebolt = 350;
-        genericriflebolt.engagedistoptimal.genericriflebolt = 600;
-        genericriflebolt.engagedistmulligan.genericriflebolt = 150;
-        genericriflebolt.engagedistmax.genericriflebolt = 900;
+        genericriflebolt.engagedistmin = 350;
+        genericriflebolt.engagedistoptimal = 600;
+        genericriflebolt.engagedistmulligan = 150;
+        genericriflebolt.engagedistmax = 900;
         generichmg = spawnstruct();
-        generichmg.engagedistmin.generichmg = 390;
-        generichmg.engagedistoptimal.generichmg = 600;
-        generichmg.engagedistmulligan.generichmg = 100;
-        generichmg.engagedistmax.generichmg = 900;
+        generichmg.engagedistmin = 390;
+        generichmg.engagedistoptimal = 600;
+        generichmg.engagedistmulligan = 100;
+        generichmg.engagedistmax = 900;
         genericsniper = spawnstruct();
-        genericsniper.engagedistmin.genericsniper = 950;
-        genericsniper.engagedistoptimal.genericsniper = 1700;
-        genericsniper.engagedistmulligan.genericsniper = 300;
-        genericsniper.engagedistmax.genericsniper = 3000;
+        genericsniper.engagedistmin = 950;
+        genericsniper.engagedistoptimal = 1700;
+        genericsniper.engagedistmulligan = 300;
+        genericsniper.engagedistmax = 3000;
         engage_dists_add("<unknown string>", genericpistol);
         engage_dists_add("<unknown string>", genericpistol);
         engage_dists_add("<unknown string>", genericpistol);
@@ -1610,9 +1610,9 @@ function larry_init(larry) {
     /#
         level endon(#"kill_larry");
         larry_hud_init(larry);
-        larry.model.larry = spawn("<unknown string>", (0, 0, 0));
+        larry.model = spawn("<unknown string>", (0, 0, 0));
         larry.model setmodel(#"defaultactor");
-        larry.ai.larry = [];
+        larry.ai = [];
         wait(0.1);
         for (;;) {
             waitframe(1);
@@ -1755,7 +1755,7 @@ function larry_hud_init(larry) {
             x = -45;
             y = 275;
             menu_name = "<unknown string>";
-            larry.hud.larry = new_hud(menu_name, undefined, x, y, 1);
+            larry.hud = new_hud(menu_name, undefined, x, y, 1);
             larry.hud setshader(#"white", 135, 65);
             larry.hud.alignx = "<unknown string>";
             larry.hud.aligny = "<unknown string>";
@@ -1767,15 +1767,15 @@ function larry_hud_init(larry) {
             larry.menu[2] = new_hud(menu_name, "<unknown string>", x + 5, y + 30, 1);
             larry.menu[3] = new_hud(menu_name, "<unknown string>", x + 5, y + 40, 1);
             larry.menu[4] = new_hud(menu_name, "<unknown string>", x + 5, y + 50, 1);
-            larry.cleartextmarker.larry = newdebughudelem();
+            larry.cleartextmarker = newdebughudelem();
             larry.cleartextmarker.alpha = 0;
             larry.cleartextmarker settext("<unknown string>");
-            larry.menu_health.larry = larry.menu.size;
-            larry.menu_damage.larry = larry.menu.size + 1;
-            larry.menu_range.larry = larry.menu.size + 2;
-            larry.menu_hitloc.larry = larry.menu.size + 3;
-            larry.menu_weapon.larry = larry.menu.size + 4;
-            larry.menu_perks.larry = larry.menu.size + 5;
+            larry.menu_health = larry.menu.size;
+            larry.menu_damage = larry.menu.size + 1;
+            larry.menu_range = larry.menu.size + 2;
+            larry.menu_hitloc = larry.menu.size + 3;
+            larry.menu_weapon = larry.menu.size + 4;
+            larry.menu_perks = larry.menu.size + 5;
             x_offset = 70;
             larry.menu[larry.menu_health] = new_hud(menu_name, "<unknown string>", x + x_offset, y + 10, 1);
             larry.menu[larry.menu_damage] = new_hud(menu_name, "<unknown string>", x + x_offset, y + 20, 1);
@@ -1838,11 +1838,11 @@ function set_hudelem(text, x, y, scale, alpha, sort, *debug_hudelem) {
                 debug_hudelem = 20;
             }
             hud = newdebughudelem();
-            hud.debug_hudelem.hud = 1;
-            hud.location.hud = 0;
-            hud.alignx.hud = "<unknown string>";
-            hud.aligny.hud = "<unknown string>";
-            hud.foreground.hud = 1;
+            hud.debug_hudelem = 1;
+            hud.location = 0;
+            hud.alignx = "<unknown string>";
+            hud.aligny = "<unknown string>";
+            hud.foreground = 1;
             hud.fontscale = alpha;
             hud.sort = debug_hudelem;
             hud.alpha = sort;

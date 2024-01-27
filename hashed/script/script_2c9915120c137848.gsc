@@ -104,13 +104,13 @@ function function_de7fb95(var_c904ca7c, context = 0) {
         target.var_28a48bb3 = var_4af56c19;
         target.context = context;
         if (isdefined(target.model)) {
-            target.script_model.target = namespace_ec06fe4a::function_e22ae9b3(target.origin, target.model, target.angles, "pressure_plate_object");
+            target.script_model = namespace_ec06fe4a::function_e22ae9b3(target.origin, target.model, target.angles, "pressure_plate_object");
         }
         if (target.type == 2) {
             /#
                 assert(toks.size > 1, "<unknown string>");
             #/
-            target.var_76d13d03.target = int(toks[1]);
+            target.var_76d13d03 = int(toks[1]);
             /#
                 assert(target.var_76d13d03 >= 1 && target.var_76d13d03 <= 3, "<unknown string>");
             #/
@@ -122,15 +122,15 @@ function function_de7fb95(var_c904ca7c, context = 0) {
             /#
                 assert(toks.size > 2, "<unknown string>");
             #/
-            target.var_77e68c20.target = int(toks[1]);
-            target.var_edf3aca7.target = int(toks[2]);
+            target.var_77e68c20 = int(toks[1]);
+            target.var_edf3aca7 = int(toks[2]);
             if (toks.size > 3) {
                 switch (toks[3]) {
                 case #"loot":
                     /#
                         assert(isdefined(target.target), "<unknown string>");
                     #/
-                    target.var_33957191.target = struct::get_array(target.target, "targetname");
+                    target.var_33957191 = struct::get_array(target.target, "targetname");
                     /#
                         assert(target.var_33957191.size, "<unknown string>");
                     #/
@@ -142,11 +142,11 @@ function function_de7fb95(var_c904ca7c, context = 0) {
                 case #"hash_6b07679758a7acc":
                     if (target.var_33957191.size > 1) {
                         item = target.var_33957191[randomint(target.var_33957191.size)];
-                        target.var_33957191.target = [];
+                        target.var_33957191 = [];
                         if (!isdefined(target.var_33957191)) {
-                            target.var_33957191.target = [];
+                            target.var_33957191 = [];
                         } else if (!isarray(target.var_33957191)) {
-                            target.var_33957191.target = array(target.var_33957191);
+                            target.var_33957191 = array(target.var_33957191);
                         }
                         target.var_33957191[target.var_33957191.size] = item;
                     }

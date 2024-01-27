@@ -27,8 +27,8 @@ function function_df1ecefe(maxhealth, var_1263c72f, var_9653dad7 = 0, var_21a592
     function_f45ee99d();
     radiationlevel = spawnstruct();
     radiationlevel.maxhealth = maxhealth;
-    radiationlevel.sickness.radiationlevel = [];
-    radiationlevel.var_e8f27947.radiationlevel = int(var_1263c72f * 1000);
+    radiationlevel.sickness = [];
+    radiationlevel.var_e8f27947 = int(var_1263c72f * 1000);
     radiationlevel.var_9653dad7 = var_9653dad7;
     radiationlevel.var_21a59205 = var_21a59205;
     level.radiation.var_5e47ec2b[level.radiation.var_5e47ec2b.size] = radiationlevel;
@@ -63,7 +63,7 @@ function function_1cb3c52d(name, radiationlevel, duration, var_4267b283 = #"hash
         return;
     }
     var_46bdb64c = spawnstruct();
-    var_46bdb64c.duration.var_46bdb64c = int(duration * 1000);
+    var_46bdb64c.duration = int(duration * 1000);
     var_46bdb64c.var_4bd5611f = var_4267b283;
     radiation.sickness[name] = var_46bdb64c;
 }

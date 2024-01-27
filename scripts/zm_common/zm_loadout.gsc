@@ -1087,7 +1087,7 @@ function give_loadout() {
             init_player(isdefined(self.var_1fa95cc));
             function_f436358b(self.curclass);
             zm_weapons::give_start_weapons();
-            namespace_341c57b3::function_18135b72(#"hash_27cccc0731de1722", {#player:self});
+            telemetry::function_18135b72(#"hash_27cccc0731de1722", {#player:self});
         }
     } else if (isdefined(level.givecustomloadout)) {
         self [[ level.givecustomloadout ]]();
@@ -1180,7 +1180,7 @@ function private function_7a169290() {
         level.var_48bad54e = 1;
     }
     self globallogic_ui::function_f8f38932();
-    namespace_341c57b3::function_18135b72(#"hash_4481df211c9d18aa", {#player:self});
+    telemetry::function_18135b72(#"hash_4481df211c9d18aa", {#player:self});
 }
 
 // Namespace zm_loadout/zm_loadout

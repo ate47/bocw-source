@@ -891,13 +891,13 @@ function function_160366e9(centerorigin, dist, var_3c67b910, var_cbf878e6) {
     var_cbf878e6 = function_ea2f17d1(var_cbf878e6, 0);
     var_3c67b910 = var_3c67b910 + 180;
     var_cbf878e6 = var_cbf878e6 + 270;
-    var_8b98e431 = centerorigin[0];
-    var_7dcdc89b = centerorigin[1];
-    var_78163d2c = centerorigin[2];
-    var_8b98e431 = var_8b98e431 + dist * sin(var_cbf878e6) * cos(var_3c67b910);
-    var_7dcdc89b = var_7dcdc89b + dist * sin(var_cbf878e6) * sin(var_3c67b910);
-    var_78163d2c = var_78163d2c + dist * cos(var_cbf878e6);
-    position = (var_8b98e431, var_7dcdc89b, var_78163d2c);
+    posx = centerorigin[0];
+    posy = centerorigin[1];
+    posz = centerorigin[2];
+    posx = posx + dist * sin(var_cbf878e6) * cos(var_3c67b910);
+    posy = posy + dist * sin(var_cbf878e6) * sin(var_3c67b910);
+    posz = posz + dist * cos(var_cbf878e6);
+    position = (posx, posy, posz);
     return position;
 }
 
@@ -1419,7 +1419,7 @@ function function_cc1eeb91(var_f8a32d17) {
             var_59c6ddd3 = 15;
             break;
         }
-        var_89b1fb20 = int(var_89b1fb20 << 4 & int(var_59c6ddd3));
+        var_89b1fb20 = int(var_89b1fb20 << 4 | int(var_59c6ddd3));
     }
     return var_89b1fb20;
 }

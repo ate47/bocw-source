@@ -34,8 +34,8 @@ function private function_1c3e68dd(linenum) {
         if (var_d63a89fd < 0) {
             var_d63a89fd = var_c13d121d + var_d63a89fd;
         }
-        var_7dcdc89b = var_d63a89fd + 32 * linenum;
-        return var_7dcdc89b;
+        posy = var_d63a89fd + 32 * linenum;
+        return posy;
     #/
 }
 
@@ -162,7 +162,7 @@ function private function_7814c6ed(player, var_10c559cd, playerangles, var_6b0b4
         }
         if (dot > var_25f190e && (!isdefined(player.var_c84d8d23) || dot > player.var_c84d8d23)) {
             player.var_c84d8d23 = dot;
-            player.var_6d42228d.player = self;
+            player.var_6d42228d = self;
         }
         if (var_988f1f92 == 0) {
             return -1;

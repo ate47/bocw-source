@@ -33,7 +33,7 @@ function private on_begin() {
     callback::on_spawned(&function_dc856fd8);
     foreach (player in getplayers()) {
         player allowsprint(0);
-        player._allow_sprint.player = 0;
+        player._allow_sprint = 0;
         player thread function_dc856fd8();
         player thread function_31f500f();
     }

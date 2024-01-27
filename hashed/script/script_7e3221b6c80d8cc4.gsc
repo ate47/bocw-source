@@ -56,9 +56,9 @@ function function_1da4908c() {
     /#
         self endon(#"death");
         hudelem = newdebughudelem(self);
-        hudelem.x.hudelem = -50;
-        hudelem.y.hudelem = 450;
-        hudelem.color.hudelem = (0.5, 1, 0.5);
+        hudelem.x = -50;
+        hudelem.y = 450;
+        hudelem.color = (0.5, 1, 0.5);
         hudelem settext("<unknown string>");
         z = 0;
         space = 10;
@@ -67,9 +67,9 @@ function function_1da4908c() {
             if (function_852e4bbb() && getplayers().size > 0) {
                 player = getplayers()[0];
                 if (!isdefined(player.stealth) || !player get("<unknown string>")) {
-                    hudelem.alpha.hudelem = 0;
+                    hudelem.alpha = 0;
                 } else {
-                    hudelem.alpha.hudelem = 1;
+                    hudelem.alpha = 1;
                 }
                 function_84811192("<unknown string>", "<unknown string>");
                 function_84811192("<unknown string>", "<unknown string>" + self.var_d6319e36);
@@ -101,7 +101,7 @@ function function_1da4908c() {
                     function_84811192("<unknown string>", "<unknown string>");
                 }
             } else {
-                hudelem.alpha.hudelem = 0;
+                hudelem.alpha = 0;
             }
             function_ea707af9("<unknown string>");
             wait(0.05);
@@ -799,12 +799,12 @@ function function_65b21ab8(speaker, line) {
             return;
         }
         s = spawnstruct();
-        s.speaker.s = [0:speaker];
+        s.speaker = [0:speaker];
         s.text = line;
         s.time = curtime;
         stealth.var_8f448777[var_e4b759ea] = s;
         if (var_e4b759ea == stealth.var_855b67ea && stealth.var_42d9f5df > 0) {
-            stealth.var_855b67ea.stealth = (stealth.var_855b67ea + 1) % 16;
+            stealth.var_855b67ea = (stealth.var_855b67ea + 1) % 16;
         } else {
             stealth.var_42d9f5df++;
         }

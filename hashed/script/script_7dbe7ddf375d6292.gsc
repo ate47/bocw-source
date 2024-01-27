@@ -110,7 +110,7 @@ function function_8407e8ae(*notifyhash) {
 // Checksum 0xcead7667, Offset: 0x720
 // Size: 0x22
 function creategrenadewatcher(watcher) {
-    watcher.onspawn.watcher = &function_aa95d684;
+    watcher.onspawn = &function_aa95d684;
 }
 
 // Namespace namespace_7c1d0bac/namespace_7c1d0bac

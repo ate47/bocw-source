@@ -167,7 +167,7 @@ function private function_bfea3a77(var_f828a846, var_d89a17f3, var_5d8f50b0, var
     var_b9fe5640.var_16fc9737 = var_16fc9737;
     var_b9fe5640.var_f828a846 = var_f828a846;
     var_b9fe5640.var_d89a17f3 = var_d89a17f3;
-    var_b9fe5640.time.var_b9fe5640 = 0;
+    var_b9fe5640.time = 0;
     var_5a696c5d.var_404d1644 = var_b9fe5640;
     if (isdefined(level.var_28778381) == 0) {
         level.var_28778381 = [];
@@ -287,17 +287,17 @@ function private function_44a0fc4(var_af8e391e, var_48a9b1c9, var_a3fbfa71) {
                 var_b00eae99 = newdebughudelem();
                 var_b00eae99.x = x;
                 var_b00eae99.y = y;
-                var_b00eae99.alignx.var_b00eae99 = "<unknown string>";
-                var_b00eae99.aligny.var_b00eae99 = "<unknown string>";
-                var_b00eae99.horzalign.var_b00eae99 = "<unknown string>";
-                var_b00eae99.vertalign.var_b00eae99 = "<unknown string>";
+                var_b00eae99.alignx = "<unknown string>";
+                var_b00eae99.aligny = "<unknown string>";
+                var_b00eae99.horzalign = "<unknown string>";
+                var_b00eae99.vertalign = "<unknown string>";
                 var_b00eae99.alpha = alpha;
                 var_b00eae99.color = color;
-                var_b00eae99.sort.var_b00eae99 = 2;
-                var_b00eae99.font.var_b00eae99 = "<unknown string>";
+                var_b00eae99.sort = 2;
+                var_b00eae99.font = "<unknown string>";
                 var_b00eae99.fontscale = fontscale;
-                var_b00eae99.shadowed.var_b00eae99 = 1;
-                var_b00eae99.foreground.var_b00eae99 = 1;
+                var_b00eae99.shadowed = 1;
+                var_b00eae99.foreground = 1;
                 var_b00eae99.label = var_5ebf496b;
             } else if (var_c8c21635 == 0 && isdefined(var_b00eae99) == 1) {
                 var_b00eae99 destroy();

@@ -205,7 +205,7 @@ function private function_d6070ac5(localclientnum) {
 function function_64c47bbc(localclientnum) {
     var_4972e475 = util::spawn_model(localclientnum, #"p7_zm_power_up", self.origin);
     var_4972e475 function_619a5c20();
-    var_4972e475.var_fc558e74.var_4972e475 = isdefined(level.var_a0b1f787[self.model]) ? level.var_a0b1f787[self.model] : undefined;
+    var_4972e475.var_fc558e74 = isdefined(level.var_a0b1f787[self.model]) ? level.var_a0b1f787[self.model] : undefined;
     self.var_4972e475 = var_4972e475;
     callback::on_shutdown(&function_3c61c865);
 }

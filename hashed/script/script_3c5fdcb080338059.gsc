@@ -34,7 +34,7 @@ function private function_70a657d8() {
 function private on_begin(kill_count) {
     self.kill_count = zm_trial::function_5769f26a(kill_count);
     foreach (player in getplayers()) {
-        player.var_c957540c.player = 0;
+        player.var_c957540c = 0;
     }
     zm_spawner::register_zombie_death_event_callback(&function_138aec8e);
     zm_trial_util::function_c2cd0cba(self.kill_count);

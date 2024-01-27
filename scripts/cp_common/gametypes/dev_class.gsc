@@ -247,9 +247,9 @@ function dev_cac_cycle_body(forward, *tag) {
         player = level.dev_cac_player;
         keys = getarraykeys(level.cac_functions[#"set_body_model"]);
         if (tag) {
-            player.cac_body_type.player = next_in_list(player.cac_body_type, keys);
+            player.cac_body_type = next_in_list(player.cac_body_type, keys);
         } else {
-            player.cac_body_type.player = prev_in_list(player.cac_body_type, keys);
+            player.cac_body_type = prev_in_list(player.cac_body_type, keys);
         }
         player dev_cac_set_player_model();
     #/
@@ -267,11 +267,11 @@ function dev_cac_cycle_head(forward, *tag) {
         player = level.dev_cac_player;
         keys = getarraykeys(level.cac_functions[#"set_head_model"]);
         if (tag) {
-            player.cac_head_type.player = next_in_list(player.cac_head_type, keys);
+            player.cac_head_type = next_in_list(player.cac_head_type, keys);
         } else {
-            player.cac_head_type.player = prev_in_list(player.cac_head_type, keys);
+            player.cac_head_type = prev_in_list(player.cac_head_type, keys);
         }
-        player.cac_hat_type.player = "<unknown string>";
+        player.cac_hat_type = "<unknown string>";
         player dev_cac_set_player_model();
     #/
 }
@@ -288,11 +288,11 @@ function dev_cac_cycle_character(forward, *tag) {
         player = level.dev_cac_player;
         keys = getarraykeys(level.cac_functions[#"set_body_model"]);
         if (tag) {
-            player.cac_body_type.player = next_in_list(player.cac_body_type, keys);
+            player.cac_body_type = next_in_list(player.cac_body_type, keys);
         } else {
-            player.cac_body_type.player = prev_in_list(player.cac_body_type, keys);
+            player.cac_body_type = prev_in_list(player.cac_body_type, keys);
         }
-        player.cac_hat_type.player = "<unknown string>";
+        player.cac_hat_type = "<unknown string>";
         player dev_cac_set_player_model();
     #/
 }
@@ -401,11 +401,11 @@ function dev_cac_overlay_create() {
         menu_name = "<unknown string>";
         hud = new_hud(menu_name, undefined, x, y, 1);
         hud setshader(#"white", 185, 285);
-        hud.alignx.hud = "<unknown string>";
-        hud.aligny.hud = "<unknown string>";
-        hud.sort.hud = 10;
-        hud.alpha.hud = 0.6;
-        hud.color.hud = vectorscale((0, 0, 1), 0.5);
+        hud.alignx = "<unknown string>";
+        hud.aligny = "<unknown string>";
+        hud.sort = 10;
+        hud.alpha = 0.6;
+        hud.color = vectorscale((0, 0, 1), 0.5);
         x_offset = 100;
         hud.menu[0] = new_hud(menu_name, "<unknown string>", x + 5, y + 10, 1.3);
         hud.menu[1] = new_hud(menu_name, "<unknown string>", x + 5, y + 25, 1);
@@ -567,9 +567,9 @@ function dev_cac_set_model_range(sort_function, attribute) {
             return;
         }
         player = level.dev_cac_player;
-        player.cac_body_type.player = [[ sort_function ]]("<unknown string>", attribute);
-        player.cac_head_type.player = [[ sort_function ]]("<unknown string>", attribute);
-        player.cac_hat_type.player = [[ sort_function ]]("<unknown string>", attribute);
+        player.cac_body_type = [[ sort_function ]]("<unknown string>", attribute);
+        player.cac_head_type = [[ sort_function ]]("<unknown string>", attribute);
+        player.cac_hat_type = [[ sort_function ]]("<unknown string>", attribute);
         player dev_cac_set_player_model();
     #/
 }

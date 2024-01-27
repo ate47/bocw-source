@@ -492,7 +492,7 @@ function function_53bb1917(localclientnum, *oldval, newval, *bnewent, *binitials
         if (!isdefined(self.var_accb4770)) {
             weapon = self function_d2c2b168().rootweapon;
             var_accb4770 = util::spawn_model(fieldname, #"hash_62460e2f377db8bc");
-            var_accb4770.var_515e20e6.var_accb4770 = weapon.name === #"hash_2d0c14dce5a6ebed";
+            var_accb4770.var_515e20e6 = weapon.name === #"hash_2d0c14dce5a6ebed";
             var_accb4770 linktocamera();
             var_accb4770 setforcenocull();
             var_accb4770 thread scene::play(#"p9_fxanim_ww_mega_barrel_fullauto_copycat_circle_bundle", var_accb4770);

@@ -211,7 +211,7 @@ function private function_f5c01f5() {
     if (isdefined(ai)) {
         if (level.zombie_respawns > 0) {
             level.zombie_respawns--;
-            ai.var_a9b2d989.ai = 1;
+            ai.var_a9b2d989 = 1;
         }
         ai thread zombie_utility::round_spawn_failsafe();
         return 1;
@@ -338,7 +338,7 @@ function function_4e8157cd(var_404e4288, var_8dd554ee) {
         level.zombie_total--;
         if (level.zombie_respawns > 0) {
             level.zombie_respawns--;
-            ai.var_a9b2d989.ai = 1;
+            ai.var_a9b2d989 = 1;
         }
         ai thread zombie_utility::round_spawn_failsafe();
         var_404e4288++;

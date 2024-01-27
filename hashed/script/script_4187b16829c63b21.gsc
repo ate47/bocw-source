@@ -18,9 +18,9 @@ function init() {
     var_bbad5c42 = struct::get_array("turret_trigger_pos", "targetname");
     if (isdefined(var_bbad5c42)) {
         foreach (var_98b970a9 in var_bbad5c42) {
-            var_98b970a9.var_e12c4557.var_98b970a9 = 1;
-            var_98b970a9.activate.var_98b970a9 = 0;
-            var_98b970a9.in_use.var_98b970a9 = 0;
+            var_98b970a9.var_e12c4557 = 1;
+            var_98b970a9.activate = 0;
+            var_98b970a9.in_use = 0;
             var_a9504f50 = var_98b970a9 zm_unitrigger::create(&function_a5680385, 64, &function_5b0907b8);
             var_a9504f50.var_98b970a9 = var_98b970a9;
             var_51c78859 = getent(var_98b970a9.target, "targetname");

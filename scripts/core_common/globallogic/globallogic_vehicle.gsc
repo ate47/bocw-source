@@ -130,8 +130,8 @@ function callback_vehicledamage(einflictor, eattacker, idamage, idflags, smeanso
     params.modelindex = modelindex;
     params.partname = partname;
     params.vsurfacenormal = vsurfacenormal;
-    params.isselfdestruct.params = eattacker === self || eattacker === self.owner && self.selfdestruct === 1;
-    params.friendlyfire.params = !params.isselfdestruct && isfriendlyfire(self, eattacker);
+    params.isselfdestruct = eattacker === self || eattacker === self.owner && self.selfdestruct === 1;
+    params.friendlyfire = !params.isselfdestruct && isfriendlyfire(self, eattacker);
     if (!isdefined(self.maxhealth)) {
         self.maxhealth = self.healthdefault;
     }
@@ -148,7 +148,7 @@ function callback_vehicledamage(einflictor, eattacker, idamage, idflags, smeanso
         return;
     }
     if (!isdefined(vdir)) {
-        idflags = idflags & 4;
+        idflags = idflags | 4;
     }
     self.idflags = idflags;
     self.idflagstime = gettime();
@@ -213,8 +213,8 @@ function callback_vehicledamage(einflictor, eattacker, idamage, idflags, smeanso
     if (idamage < 1) {
         idamage = 1;
     }
-    params.idamage.params = int(idamage);
-    params.idflags.params = self.idflags;
+    params.idamage = int(idamage);
+    params.idflags = self.idflags;
     if (issentient(self)) {
         self callback::callback(#"on_ai_damage", params);
     }
@@ -363,7 +363,7 @@ function callback_vehiclekilled(einflictor, eattacker, idamage, smeansofdeath, w
     params.vdir = vdir;
     params.shitloc = shitloc;
     params.psoffsettime = psoffsettime;
-    params.occupants.params = self getvehoccupants();
+    params.occupants = self getvehoccupants();
     eattacker = globallogic_player::figureoutattacker(eattacker);
     if (isdefined(eattacker) && isplayer(eattacker) && !is_true(level.var_7c6454)) {
         globallogic_score::inctotalkills(eattacker.team);

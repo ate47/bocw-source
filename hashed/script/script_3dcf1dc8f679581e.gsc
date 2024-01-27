@@ -101,7 +101,7 @@ function function_fb584243(localclientnum, *oldval, newval, *bnewent, *binitials
     s_portal = struct::get("s_pap_portal_fx");
     if (bwastimejump) {
         if (!isdefined(s_portal.var_8eb4e749)) {
-            s_portal.var_8eb4e749.s_portal = playfx(fieldname, #"hash_7e0e122e235d355e", s_portal.origin, anglestoforward(s_portal.angles), anglestoup(s_portal.angles));
+            s_portal.var_8eb4e749 = playfx(fieldname, #"hash_7e0e122e235d355e", s_portal.origin, anglestoforward(s_portal.angles), anglestoup(s_portal.angles));
         }
         playsound(fieldname, #"hash_3a58ade572eb339e", s_portal.origin);
         soundloopemitter(#"hash_1b27cd2897a39322", s_portal.origin);
@@ -132,8 +132,8 @@ function pap_quest_beam_start(localclientnum, *oldval, newval, *bnewent, *biniti
         var_e64db026 = s_end.origin;
         v_start_angles = vectortoangles(v_start_origin - var_e64db026);
         v_end_angles = vectortoangles(var_e64db026 - v_start_origin);
-        s_start.var_360148.s_start = util::spawn_model(fieldname, #"tag_origin", v_start_origin, v_start_angles);
-        s_end.var_b5d35012.s_end = util::spawn_model(fieldname, #"tag_origin", var_e64db026, v_end_angles);
+        s_start.var_360148 = util::spawn_model(fieldname, #"tag_origin", v_start_origin, v_start_angles);
+        s_end.var_b5d35012 = util::spawn_model(fieldname, #"tag_origin", var_e64db026, v_end_angles);
         level beam::launch(s_start.var_360148, "tag_origin", s_end.var_b5d35012, "tag_origin", "beam9_zm_platinum_pap_beam", 1);
     }
 }

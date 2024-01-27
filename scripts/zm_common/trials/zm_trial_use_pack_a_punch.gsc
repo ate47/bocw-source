@@ -35,7 +35,7 @@ function private on_begin(n_count) {
     callback::function_aebeafc0(&function_aebeafc0);
     level.var_195590fb = zm_trial::function_5769f26a(n_count);
     foreach (player in getplayers()) {
-        player.var_92cd5237.player = [];
+        player.var_92cd5237 = [];
         player zm_trial_util::function_c2cd0cba(level.var_195590fb);
         player zm_trial_util::function_2190356a(0);
     }

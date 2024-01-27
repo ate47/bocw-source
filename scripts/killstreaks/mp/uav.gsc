@@ -240,11 +240,11 @@ function activateuav(killstreaktype) {
     bundle = killstreaks::get_script_bundle("uav");
     uav setmodel(bundle.var_c6eab8b5);
     uav setenemymodel(bundle.var_aa0b97e1);
-    uav.weapon.uav = getweapon("uav");
+    uav.weapon = getweapon("uav");
     uav setweapon(uav.weapon);
     uav function_619a5c20();
     uav setforcenocull();
-    uav.targetname.uav = "uav";
+    uav.targetname = "uav";
     uav util::make_sentient();
     uav killstreaks::configure_team(killstreaktype, killstreak_id, self, undefined, undefined, &configureteampost);
     uav killstreak_hacking::enable_hacking("uav", &hackedprefunction, undefined);
@@ -252,14 +252,14 @@ function activateuav(killstreaktype) {
     killstreak_detect::killstreaktargetset(uav);
     uav setdrawinfrared(1);
     uav.killstreak_id = killstreak_id;
-    uav.leaving.uav = 0;
-    uav.victimsoundmod.uav = "vehicle";
-    uav.var_48d842c3.uav = 1;
+    uav.leaving = 0;
+    uav.victimsoundmod = "vehicle";
+    uav.var_48d842c3 = 1;
     uav thread killstreaks::function_2b6aa9e8("uav", &destroyuav, &onlowhealth);
     uav thread function_f724cfe4(100000);
     bundle = killstreaks::get_script_bundle("uav");
     uav thread heatseekingmissile::missiletarget_proximitydetonateincomingmissile(bundle, "crashing", undefined, 1);
-    uav.rocketdamage.uav = uav.maxhealth + 1;
+    uav.rocketdamage = uav.maxhealth + 1;
     uav clientfield::set("uav_fx", 1);
     uav clientfield::set("scorestreakActive", 1);
     uav killstreaks::function_a781e8d2();
@@ -276,7 +276,7 @@ function activateuav(killstreaktype) {
         } else {
             var_5f8c899e = 5000;
         }
-        uav.var_b59e7114.uav = killstreaks::function_f3875fb0(self.origin, isdefined(level.var_eb2556e1) ? level.var_eb2556e1 : var_5f8c899e, 60, -1, 1);
+        uav.var_b59e7114 = killstreaks::function_f3875fb0(self.origin, isdefined(level.var_eb2556e1) ? level.var_eb2556e1 : var_5f8c899e, 60, -1, 1);
         uav killstreaks::function_67d553c4(uav.var_b59e7114, isdefined(level.uav_rotation_radius) ? level.uav_rotation_radius : 4000, isdefined(level.uav_rotation_random_offset) ? level.uav_rotation_random_offset : 1000, -1);
         uav.var_b59e7114 clientfield::set("uav", 1);
         uav.var_b59e7114 setteam(uav.team);
@@ -604,7 +604,7 @@ function uavtracker() {
                 var_376f7f8c = var_376f7f8c + (isdefined(level.var_eb10c6a7[player.entnum]) ? level.var_eb10c6a7[player.entnum] : 0);
             }
             player setclientuivisibilityflag("radar_client", var_376f7f8c > 0);
-            player.hasspyplane.player = var_376f7f8c > 0;
+            player.hasspyplane = var_376f7f8c > 0;
         }
     }
 }

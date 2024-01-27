@@ -398,7 +398,7 @@ function function_8a03d3f3(impactpos, startpos, normal, multiplier, rotation, te
     var_bf264593 = level.var_a88ac760.size;
     level.var_a88ac760[var_bf264593] = {};
     var_4b424bc1 = level.var_a88ac760[var_bf264593];
-    var_4b424bc1.var_46ee5246.var_4b424bc1 = int(gettime() + 5000);
+    var_4b424bc1.var_46ee5246 = int(gettime() + 5000);
     var_4b424bc1.origin = startpos;
     thread damageeffectarea(startpos, normal, var_aecaaa11, multiplier, var_e76400c0, wallnormal, var_693f108f, var_4b424bc1.var_46ee5246, customsettings, attacker, exploder);
     thread function_9464e4ad(startpos, normal, var_aecaaa11, multiplier, var_e76400c0, wallnormal, var_693f108f, var_4b424bc1.var_46ee5246, customsettings, attacker, exploder);
@@ -559,11 +559,11 @@ function function_9464e4ad(position, *normal, weapon, radius_multiplier, var_e76
     if (isdefined(var_e76400c0) && isdefined(wallnormal)) {
         var_21f4217c = var_e76400c0 + vectorscale(wallnormal, 12) - (0, 0, var_cbaaea69);
         var_289a74bc = spawn("trigger_radius", var_21f4217c, 0, 12, var_cbaaea69);
-        var_289a74bc.targetname.var_289a74bc = "fire_area";
+        var_289a74bc.targetname = "fire_area";
     }
     if (radius >= 0.04) {
         fireeffectarea = spawn("trigger_radius", trigger_radius_position, 0, radius, trigger_radius_height);
-        fireeffectarea.targetname.fireeffectarea = "fire_area";
+        fireeffectarea.targetname = "fire_area";
     }
     self.var_ebf0b1c9 = [];
     while (gettime() < damageendtime) {
@@ -614,7 +614,7 @@ function getpotentialtargets(origin) {
     }
     var_739bcc52 = [];
     foreach (vehicle in getvehiclearray()) {
-        if (is_true(vehicle.var_46439e18)) {
+        if (is_true(vehicle.isplayervehicle)) {
             var_739bcc52[var_739bcc52.size] = vehicle;
         }
     }
@@ -876,7 +876,7 @@ function function_59d981cc(origin, blast_radius, attacker, exploder) {
             if (target !== exploder && isalive(target) && isai(target)) {
                 var_9dea1e72 = int(var_9dea1e72);
                 if (var_9dea1e72 >= target.health && !is_true(target.var_865b1595)) {
-                    target.var_865b1595.target = 1;
+                    target.var_865b1595 = 1;
                     scoreevents::function_a1f450c2("hellhound_flame_killingblow", attacker, target);
                 }
                 scoreevents::function_82234b38(self, attacker, undefined, undefined, undefined, undefined);

@@ -281,7 +281,7 @@ function function_c8d97b8e(local_client_num, flag, var_166900a8) {
     } else if (var_80292ef8.var_1a5b7293 && isdefined(var_80292ef8.default_bundle)) {
         self stop_bundle(flag, var_80292ef8.bundle, 1);
         self start_bundle(flag + "_default", var_80292ef8.default_bundle);
-        var_80292ef8.var_1a5b7293.var_80292ef8 = 0;
+        var_80292ef8.var_1a5b7293 = 0;
     } else {
         self stop_bundle(flag, var_80292ef8.bundle, var_80292ef8.force_kill);
         if (isdefined(var_80292ef8.default_bundle)) {
@@ -317,7 +317,7 @@ function function_6803f977(local_client_num, bundle) {
     }
     player = function_5c10bd79(local_client_num);
     if (player.var_33b61b6f === 1) {
-        bundle.force_kill.bundle = 1;
+        bundle.force_kill = 1;
         return 0;
     }
     return 1;
@@ -336,7 +336,7 @@ function function_ce7fd1b9(local_client_num, bundle) {
     }
     player = function_5c10bd79(local_client_num);
     if (player.var_33b61b6f === 1) {
-        bundle.force_kill.bundle = 1;
+        bundle.force_kill = 1;
         return 0;
     }
     return 1;

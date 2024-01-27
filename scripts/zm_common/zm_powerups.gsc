@@ -200,7 +200,7 @@ function powerup_hud_monitor() {
                         powerup_on = zombie_utility::function_d2dfacfd(on_name);
                     }
                     if (isdefined(powerup_timer) && isdefined(powerup_on)) {
-                        var_eb020d2 = var_eb020d2 & powerup_on;
+                        var_eb020d2 = var_eb020d2 | powerup_on;
                         player set_clientfield_powerups(client_field_name, var_b79536ad, powerup_timer, powerup_on, flashing_timers, flashing_values);
                     } else {
                         player clientfield::set_player_uimodel(client_field_name, 0);
@@ -551,15 +551,15 @@ function add_zombie_powerup(powerup_name, model_name, hint, func_should_drop_wit
     struct = spawnstruct();
     struct.powerup_name = powerup_name;
     struct.model_name = model_name;
-    struct.weapon_classname.struct = "script_model";
+    struct.weapon_classname = "script_model";
     struct.hint = hint;
     struct.func_should_drop_with_regular_powerups = func_should_drop_with_regular_powerups;
     struct.only_affects_grabber = only_affects_grabber;
     struct.any_team = any_team;
     struct.zombie_grabbable = zombie_grabbable;
-    struct.hash_id.struct = function_129f6487(powerup_name);
+    struct.hash_id = function_129f6487(powerup_name);
     struct.player_specific = player_specific;
-    struct.can_pick_up_in_last_stand.struct = 1;
+    struct.can_pick_up_in_last_stand = 1;
     if (isdefined(fx)) {
         struct.fx = fx;
     }
@@ -885,7 +885,7 @@ function specific_powerup_drop(var_5a63971, powerup_location, powerup_team, pick
             return;
         }
     }
-    s_trace = physicstrace(powerup_location + vectorscale((0, 0, 1), 10), powerup_location + vectorscale((0, 0, -1), 100), (0, 0, 0), (0, 0, 0), undefined, 2 & 16);
+    s_trace = physicstrace(powerup_location + vectorscale((0, 0, 1), 10), powerup_location + vectorscale((0, 0, -1), 100), (0, 0, 0), (0, 0, 0), undefined, 2 | 16);
     hit_ent = s_trace[#"entity"];
     if (isdefined(hit_ent) && hit_ent ismovingplatform()) {
         powerup = spawn("script_model", powerup_location + vectorscale((0, 0, 1), 40));
@@ -1032,7 +1032,7 @@ function powerup_zombie_grab_trigger_cleanup(trigger) {
 // Size: 0x392
 function powerup_zombie_grab(powerup_team) {
     self endon(#"powerup_timedout", #"powerup_grabbed", #"hacked");
-    zombie_grab_trigger = spawn("trigger_radius", self.origin - vectorscale((0, 0, 1), 40), (512 & 1) + 8, 32, 72);
+    zombie_grab_trigger = spawn("trigger_radius", self.origin - vectorscale((0, 0, 1), 40), (512 | 1) + 8, 32, 72);
     zombie_grab_trigger enablelinkto();
     zombie_grab_trigger linkto(self);
     zombie_grab_trigger setteamfortrigger(level.zombie_team);
@@ -1920,9 +1920,9 @@ function weapon_powerup(ent_player, time, str_weapon, allow_cycling = 0) {
     str_weapon_on = "zombie_powerup_" + str_weapon + "_on";
     str_weapon_time_over = str_weapon + "_time_over";
     ent_player notify(#"replace_weapon_powerup");
-    ent_player._show_solo_hud.ent_player = 1;
+    ent_player._show_solo_hud = 1;
     ent_player.has_specific_powerup_weapon[str_weapon] = 1;
-    ent_player.has_powerup_weapon.ent_player = 1;
+    ent_player.has_powerup_weapon = 1;
     ent_player zm_utility::increment_is_drinking();
     if (allow_cycling) {
         ent_player enableweaponcycling();
@@ -1978,7 +1978,7 @@ function weapon_powerup_replace(ent_player, str_gun_return_notify, str_weapon) {
     ent_player takeweapon(level.zombie_powerup_weapon[str_weapon]);
     ent_player.zombie_vars[str_weapon_on] = 0;
     ent_player.has_specific_powerup_weapon[str_weapon] = 0;
-    ent_player.has_powerup_weapon.ent_player = 0;
+    ent_player.has_powerup_weapon = 0;
     ent_player zm_utility::decrement_is_drinking();
 }
 
@@ -1991,9 +1991,9 @@ function weapon_powerup_remove(ent_player, str_gun_return_notify, str_weapon, b_
     str_weapon_on = "zombie_powerup_" + str_weapon + "_on";
     ent_player takeweapon(level.zombie_powerup_weapon[str_weapon]);
     ent_player.zombie_vars[str_weapon_on] = 0;
-    ent_player._show_solo_hud.ent_player = 0;
+    ent_player._show_solo_hud = 0;
     ent_player.has_specific_powerup_weapon[str_weapon] = 0;
-    ent_player.has_powerup_weapon.ent_player = 0;
+    ent_player.has_powerup_weapon = 0;
     ent_player notify(str_gun_return_notify);
     ent_player zm_utility::decrement_is_drinking();
     if (b_switch_back_weapon) {

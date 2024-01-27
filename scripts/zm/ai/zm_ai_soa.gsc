@@ -129,7 +129,7 @@ function private function_dda06e36(entity) {
     /#
         if (getdvarint(#"hash_4ac64c7f46b01880", 0) > 0) {
             players = getplayers();
-            entity.var_93a62fe.entity = isdefined(players[1]) ? players[1] : players[0];
+            entity.var_93a62fe = isdefined(players[1]) ? players[1] : players[0];
         }
     #/
     if (!isdefined(entity.var_93a62fe)) {
@@ -187,7 +187,7 @@ function private function_dda06e36(entity) {
                 if (namespace_19c99142::function_264f914c(entity)) {
                     namespace_19c99142::function_1b2f34c9(entity);
                 } else if (!isplayer(entity.var_7418f498) || zm_utility::is_player_valid(entity.var_7418f498, 1)) {
-                    entity.var_93a62fe.entity = entity.var_7418f498;
+                    entity.var_93a62fe = entity.var_7418f498;
                 }
             }
         } else {
@@ -204,17 +204,17 @@ function private function_dda06e36(entity) {
         #/
         namespace_19c99142::function_ff6a04bc(entity);
         entity.favoriteenemy = var_cc7597dc;
-        entity.goalradius.entity = entity getpathfindingradius();
+        entity.goalradius = entity getpathfindingradius();
         entity zm_behavior::zombieupdategoal();
         break;
     case #"hash_685254f9ed0ce346":
-        entity.favoriteenemy.entity = entity.var_93a62fe;
+        entity.favoriteenemy = entity.var_93a62fe;
         break;
     case #"hash_4ec3ec4f06b9498f":
-        entity.favoriteenemy.entity = entity.var_93a62fe;
+        entity.favoriteenemy = entity.var_93a62fe;
         break;
     case #"hash_110ee879f18b605f":
-        entity.favoriteenemy.entity = entity.var_93a62fe;
+        entity.favoriteenemy = entity.var_93a62fe;
         break;
     case #"circle":
         namespace_19c99142::function_b046be53(entity);
@@ -262,7 +262,7 @@ function private function_7d1d7f3f(entity) {
         if (isplayer(soa.favoriteenemy) && is_true(entity.var_ff3cbd9e) && !getdvarint(#"hash_6f7afa24d5871b86", 0) > 0) {
             var_ce42b625 = zm_utility::function_d89330e6(soa.favoriteenemy);
             if (var_ce42b625 >= 0) {
-                entity.var_93a62fe.entity = soa.favoriteenemy;
+                entity.var_93a62fe = soa.favoriteenemy;
             }
         }
         zm_behavior::zombiefindflesh(entity);
@@ -325,7 +325,7 @@ function function_7a71cf9f(zone_path, player) {
     }
     zipline = function_4a3e695a(self, player);
     if (isdefined(zipline)) {
-        zipline.var_ec8356c8.zipline = 1;
+        zipline.var_ec8356c8 = 1;
         return zipline;
     }
     return player;
@@ -364,7 +364,7 @@ function function_4a3e695a(entity, player) {
             if (isdefined(var_2f9aedc0) && isdefined(zipline.target) && current_zone === var_2f9aedc0) {
                 var_b4a3c7c5 = struct::get(zipline.target, "targetname");
                 if (player.var_5da09c55 === zipline) {
-                    entity.var_ea989fd2.entity = {#var_b4a3c7c5:var_b4a3c7c5, #var_827228db:zipline};
+                    entity.var_ea989fd2 = {#var_b4a3c7c5:var_b4a3c7c5, #var_827228db:zipline};
                     return zipline;
                 }
                 var_fd1e4845 = isdefined(var_b4a3c7c5.var_9a8166e0) ? var_b4a3c7c5.var_9a8166e0 : zm_zonemgr::get_zone_from_position(var_b4a3c7c5.origin);
@@ -377,7 +377,7 @@ function function_4a3e695a(entity, player) {
                     if (isdefined(target_zone.a_loc_types[#"zombie_location"]) && isdefined(target_zone.a_loc_types[#"zombie_location"].size <= 0)) {
                         return undefined;
                     }
-                    entity.var_ea989fd2.entity = {#var_b4a3c7c5:var_b4a3c7c5, #var_827228db:zipline};
+                    entity.var_ea989fd2 = {#var_b4a3c7c5:var_b4a3c7c5, #var_827228db:zipline};
                     return zipline;
                 }
             }
@@ -502,10 +502,10 @@ function function_e803632f(b_force_spawn, var_eb3a8721 = 0, *var_bc66d64b) {
     }
     ai = spawnactor(#"spawner_bo5_soa", s_spawn_loc.origin, s_spawn_loc.angles);
     if (isdefined(ai)) {
-        ai.script_string.ai = s_spawn_loc.script_string;
-        ai.find_flesh_struct_string.ai = s_spawn_loc.find_flesh_struct_string;
-        ai.check_point_in_enabled_zone.ai = &zm_utility::check_point_in_playable_area;
-        ai.ignore_enemy_count.ai = 0;
+        ai.script_string = s_spawn_loc.script_string;
+        ai.find_flesh_struct_string = s_spawn_loc.find_flesh_struct_string;
+        ai.check_point_in_enabled_zone = &zm_utility::check_point_in_playable_area;
+        ai.ignore_enemy_count = 0;
         ai forceteleport(s_spawn_loc.origin, s_spawn_loc.angles);
     }
     return ai;

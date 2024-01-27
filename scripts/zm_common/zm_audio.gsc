@@ -742,7 +742,7 @@ function timer_actual(kills, time) {
 // Size: 0x2e
 function zmbvoxcreate() {
     vox = spawnstruct();
-    vox.speaker.vox = [];
+    vox.speaker = [];
     return vox;
 }
 
@@ -1296,9 +1296,9 @@ function isvoxoncooldown(player, category, subcategory) {
         return 0;
     }
     if (!isdefined(player.voxtimer)) {
-        player.voxtimer.player = [];
+        player.voxtimer = [];
     } else if (!isarray(player.voxtimer)) {
-        player.voxtimer.player = array(player.voxtimer);
+        player.voxtimer = array(player.voxtimer);
     }
     if (!isdefined(player.voxtimer[category])) {
         player.voxtimer[category] = [];
@@ -1571,7 +1571,7 @@ function playstate(state) {
         return;
     }
     mustoplay = musarray[randomintrange(0, musarray.size)];
-    m.currentplaytype.m = m.states[state].playtype;
+    m.currentplaytype = m.states[state].playtype;
     m.currentstate = state;
     wait(0.1);
     if (isdefined(level.sndplaystateoverride)) {
@@ -1591,7 +1591,7 @@ function playstate(state) {
     while (gettime() < var_6f451dc0) {
         wait(0.1);
     }
-    m.currentplaytype.m = 0;
+    m.currentplaytype = 0;
     m.currentstate = undefined;
 }
 
@@ -1606,17 +1606,17 @@ function sndmusicsystem_queuestate(state) {
     if (is_true(m.queue)) {
         return;
     } else {
-        m.queue.m = 1;
+        m.queue = 1;
         while (m.currentplaytype > 0) {
             wait(0.5);
             count++;
             if (count >= 50) {
-                m.queue.m = 0;
+                m.queue = 0;
                 return;
             }
         }
         level thread playstate(state);
-        m.queue.m = 0;
+        m.queue = 0;
     }
 }
 
@@ -1715,7 +1715,7 @@ function function_b9d832a0(var_790f33a7) {
         if (!var_790f33a7.b_repeat) {
             return;
         } else if (var_790f33a7.var_496a8f95 >= 3) {
-            var_790f33a7.b_played.var_790f33a7 = 0;
+            var_790f33a7.b_played = 0;
         } else {
             return;
         }
@@ -1725,8 +1725,8 @@ function function_b9d832a0(var_790f33a7) {
             struct.var_496a8f95++;
         }
     }
-    var_790f33a7.b_played.var_790f33a7 = 1;
-    var_790f33a7.var_496a8f95.var_790f33a7 = 0;
+    var_790f33a7.b_played = 1;
+    var_790f33a7.var_496a8f95 = 0;
     level thread sndmusicsystem_playstate(var_790f33a7.var_f9761829);
 }
 
@@ -2126,15 +2126,15 @@ function sndannouncerplayvox(type, player, str_sound, var_e08a84d6, b_wait_if_bu
     if (isplayer(player)) {
         player endon(#"disconnect");
         if (!isdefined(player.var_85ea4daf)) {
-            player.var_85ea4daf.player = [];
+            player.var_85ea4daf = [];
         }
         if (var_92885147) {
             arrayinsert(player.var_85ea4daf, str_sound, 0);
         } else {
             if (!isdefined(player.var_85ea4daf)) {
-                player.var_85ea4daf.player = [];
+                player.var_85ea4daf = [];
             } else if (!isarray(player.var_85ea4daf)) {
-                player.var_85ea4daf.player = array(player.var_85ea4daf);
+                player.var_85ea4daf = array(player.var_85ea4daf);
             }
             player.var_85ea4daf[player.var_85ea4daf.size] = str_sound;
         }
@@ -2144,7 +2144,7 @@ function sndannouncerplayvox(type, player, str_sound, var_e08a84d6, b_wait_if_bu
             } while(isdefined(player.var_85ea4daf[0]) && player.var_85ea4daf[0] != str_sound);
         }
         if (!is_true(player.zmannouncertalking)) {
-            player.zmannouncertalking.player = 1;
+            player.zmannouncertalking = 1;
             /#
                 if (getdvarint(#"debug_audio", 0)) {
                     if (!soundexists(str_sound)) {
@@ -2493,10 +2493,10 @@ function zmbaivox_playvox(zombie, type, override, priority, delayambientvox = 0)
         priority = 1;
     }
     if (!isdefined(zombie.talking)) {
-        zombie.talking.zombie = 0;
+        zombie.talking = 0;
     }
     if (!isdefined(zombie.currentvoxpriority)) {
-        zombie.currentvoxpriority.zombie = 1;
+        zombie.currentvoxpriority = 1;
     }
     if (!isdefined(self.delayambientvox)) {
         self.delayambientvox = 0;
@@ -2532,7 +2532,7 @@ function zmbaivox_playvox(zombie, type, override, priority, delayambientvox = 0)
         if (is_true(zombie.head_gibbed)) {
             return;
         }
-        zombie.talking.zombie = 1;
+        zombie.talking = 1;
         zombie.currentvox = alias;
         zombie.currentvoxpriority = priority;
         if (zombie haspart("tag_eye")) {
@@ -2542,9 +2542,9 @@ function zmbaivox_playvox(zombie, type, override, priority, delayambientvox = 0)
         }
         playbacktime = float(max(isdefined(soundgetplaybacktime(alias)) ? soundgetplaybacktime(alias) : 500, 500)) / 1000;
         wait(playbacktime);
-        zombie.talking.zombie = 0;
+        zombie.talking = 0;
         zombie.currentvox = undefined;
-        zombie.currentvoxpriority.zombie = 1;
+        zombie.currentvoxpriority = 1;
     }
 }
 

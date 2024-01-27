@@ -114,9 +114,9 @@ function vehiclespawnthread(veh_name, origin, angles, time_interval) {
         }
         vehicle.origin = origin;
         vehicle.angles = angles;
-        vehicle.nojumping.vehicle = 1;
-        vehicle.forcedamagefeedback.vehicle = 1;
-        vehicle.vehkilloccupantsondeath.vehicle = 1;
+        vehicle.nojumping = 1;
+        vehicle.forcedamagefeedback = 1;
+        vehicle.vehkilloccupantsondeath = 1;
         vehicle disableaimassist();
         vehicle thread vehicleteamthread();
         vehicle waittill(#"death");

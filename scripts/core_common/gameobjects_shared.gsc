@@ -97,9 +97,9 @@ class cinteractobj {
             mdl_gameobject = gameobjects::create_use_object(self.m_str_team, self.m_t_interact, self.m_a_keyline_objects, (0, 0, 0), self.m_str_objective, self.var_26a01d70, 0, self.e_object.script_enable_on_start);
             break;
         }
-        mdl_gameobject.single_use.mdl_gameobject = 0;
+        mdl_gameobject.single_use = 0;
         if (self.m_str_type == "carry" || self.m_str_type == "pack") {
-            mdl_gameobject.objectiveonself.mdl_gameobject = 1;
+            mdl_gameobject.objectiveonself = 1;
             if (isdefined(mdl_gameobject.objectiveid)) {
                 objective_setposition(mdl_gameobject.objectiveid, (0, 0, 0));
             }
@@ -121,8 +121,8 @@ class cinteractobj {
             }
         }
         mdl_gameobject gameobjects::set_identifier(self.m_str_identifier);
-        mdl_gameobject.origin.mdl_gameobject = self.m_t_interact.origin;
-        mdl_gameobject.angles.mdl_gameobject = self.m_t_interact.angles;
+        mdl_gameobject.origin = self.m_t_interact.origin;
+        mdl_gameobject.angles = self.m_t_interact.angles;
         mdl_gameobject gameobjects::set_owner_team(self.m_str_team);
         if (self.m_str_team == #"any") {
             mdl_gameobject gameobjects::allow_use(#"hash_5ccfd7bbbf07c770");
@@ -133,22 +133,22 @@ class cinteractobj {
         }
         mdl_gameobject gameobjects::set_use_time(self.m_n_trigger_use_time);
         mdl_gameobject gameobjects::function_86d3b442(self.var_14f4f0bc);
-        mdl_gameobject.str_player_scene_anim.mdl_gameobject = self.m_str_player_scene_anim;
-        mdl_gameobject.str_anim.mdl_gameobject = self.m_str_anim;
-        mdl_gameobject.b_reusable.mdl_gameobject = self.m_b_reusable;
-        mdl_gameobject.b_auto_reenable.mdl_gameobject = self.m_b_auto_reenable;
-        mdl_gameobject.allowweapons.mdl_gameobject = self.m_b_allow_weapons;
-        mdl_gameobject.b_scene_use_time_override.mdl_gameobject = self.m_b_scene_use_time_override;
-        mdl_gameobject.b_use_gameobject_for_alignment.mdl_gameobject = self.m_b_gameobject_scene_alignment;
-        mdl_gameobject.var_75ea46f6.mdl_gameobject = self.var_7abf2b16;
-        mdl_gameobject.var_a7ef92ac.mdl_gameobject = self.m_s_bundle.var_559e6e9f;
-        mdl_gameobject.b_allow_companion_command.mdl_gameobject = self.m_b_allow_companion_command;
+        mdl_gameobject.str_player_scene_anim = self.m_str_player_scene_anim;
+        mdl_gameobject.str_anim = self.m_str_anim;
+        mdl_gameobject.b_reusable = self.m_b_reusable;
+        mdl_gameobject.b_auto_reenable = self.m_b_auto_reenable;
+        mdl_gameobject.allowweapons = self.m_b_allow_weapons;
+        mdl_gameobject.b_scene_use_time_override = self.m_b_scene_use_time_override;
+        mdl_gameobject.b_use_gameobject_for_alignment = self.m_b_gameobject_scene_alignment;
+        mdl_gameobject.var_75ea46f6 = self.var_7abf2b16;
+        mdl_gameobject.var_a7ef92ac = self.m_s_bundle.var_559e6e9f;
+        mdl_gameobject.b_allow_companion_command = self.m_b_allow_companion_command;
         if (isdefined(self.m_str_obj_anim)) {
-            mdl_gameobject.str_obj_anim.mdl_gameobject = self.m_str_obj_anim;
+            mdl_gameobject.str_obj_anim = self.m_str_obj_anim;
         }
-        mdl_gameobject.t_interact.mdl_gameobject = self.m_t_interact;
+        mdl_gameobject.t_interact = self.m_t_interact;
         mdl_gameobject.t_interact enablelinkto();
-        mdl_gameobject.e_object.mdl_gameobject = self.e_object;
+        mdl_gameobject.e_object = self.e_object;
         if (isentity(mdl_gameobject.e_object)) {
             if (isdefined(self.m_str_tag)) {
                 mdl_gameobject.t_interact linkto(mdl_gameobject.e_object, self.m_str_tag);
@@ -157,7 +157,7 @@ class cinteractobj {
             }
         }
         if (isdefined(mdl_gameobject.str_player_scene_anim) || isdefined(mdl_gameobject.str_anim)) {
-            mdl_gameobject.dontlinkplayertotrigger.mdl_gameobject = 1;
+            mdl_gameobject.dontlinkplayertotrigger = 1;
         }
         if (!mdl_gameobject.e_object flag::exists("gameobject_end_use")) {
             mdl_gameobject.e_object flag::init("gameobject_end_use");
@@ -528,12 +528,12 @@ function function_71699fe2() {
     n_count = 1;
     foreach (s_radiant in level.a_s_gameobjects) {
         if (isdefined(s_radiant.targetname)) {
-            s_radiant.str_identifier.s_radiant = s_radiant.targetname + "_" + n_count;
+            s_radiant.str_identifier = s_radiant.targetname + "_" + n_count;
         } else {
-            s_radiant.str_identifier.s_radiant = "gameobject_" + n_count;
+            s_radiant.str_identifier = "gameobject_" + n_count;
         }
         n_count++;
-        s_radiant.var_c65066ad.s_radiant = 1;
+        s_radiant.var_c65066ad = 1;
         s_radiant init_flags();
     }
 }
@@ -560,7 +560,7 @@ function function_176070dc() {
         }
         s_radiant function_71479ff3();
         if (isdefined(s_radiant.script_paired_gameobject)) {
-            s_radiant.var_84d5c09e.s_radiant = struct::get_array(s_radiant.script_paired_gameobject, "script_paired_gameobject");
+            s_radiant.var_84d5c09e = struct::get_array(s_radiant.script_paired_gameobject, "script_paired_gameobject");
             s_radiant.mdl_gameobject.b_auto_reenable = 0;
         }
     }
@@ -676,9 +676,9 @@ function private function_2f3ba1ad() {
     foreach (s_key in struct::get_script_bundle_instances("gameobject")) {
         if (isdefined(s_key.script_carry_object_key_src)) {
             var_fac9218d = strtok(s_key.script_carry_object_key_src, " ");
-            s_key.a_s_locks.s_key = [];
+            s_key.a_s_locks = [];
             foreach (var_9d32a381 in var_fac9218d) {
-                s_key.a_s_locks.s_key = arraycombine(s_key.a_s_locks, struct::get_array(var_9d32a381, "script_carry_object_key_target"), 0, 0);
+                s_key.a_s_locks = arraycombine(s_key.a_s_locks, struct::get_array(var_9d32a381, "script_carry_object_key_target"), 0, 0);
             }
             foreach (s_lock in s_key.a_s_locks) {
                 if (isdefined(s_lock.mdl_gameobject)) {
@@ -708,7 +708,7 @@ function function_2e028a0e() {
                 s_lock function_924032a4();
             } else if (isdefined(s_lock.var_4cd30731)) {
                 s_lock notify(#"hash_58b8542ed702b2a5", {#player:self.mdl_gameobject.carrier, #var_36c9fd16:1});
-                s_lock.var_459e9174.s_lock = 1;
+                s_lock.var_459e9174 = 1;
             }
         }
         self.mdl_gameobject waittill(#"dropped");
@@ -758,9 +758,9 @@ function private function_d85d429b(var_7d01398c) {
     self.e_object.angles = var_7d01398c.e_object.angles;
     self.var_68d8f95e = var_7d01398c;
     if (!isdefined(var_7d01398c.var_bb7aca0c)) {
-        var_7d01398c.var_bb7aca0c.var_7d01398c = [];
+        var_7d01398c.var_bb7aca0c = [];
     } else if (!isarray(var_7d01398c.var_bb7aca0c)) {
-        var_7d01398c.var_bb7aca0c.var_7d01398c = array(var_7d01398c.var_bb7aca0c);
+        var_7d01398c.var_bb7aca0c = array(var_7d01398c.var_bb7aca0c);
     }
     var_7d01398c.var_bb7aca0c[var_7d01398c.var_bb7aca0c.size] = self;
     while (1) {
@@ -1006,16 +1006,16 @@ function function_4ea98a09() {
 // Size: 0x59e
 function create_carry_object(ownerteam, trigger, visuals, offset, objectivename, hitsound, allowinitialholddelay = 0, allowweaponcyclingduringhold = 0) {
     carryobject = spawn("script_model", trigger.origin);
-    carryobject.type.carryobject = "carryObject";
-    carryobject.curorigin.carryobject = trigger.origin;
-    carryobject.entnum.carryobject = trigger getentitynumber();
+    carryobject.type = "carryObject";
+    carryobject.curorigin = trigger.origin;
+    carryobject.entnum = trigger getentitynumber();
     carryobject.hitsound = hitsound;
     if (issubstr(trigger.classname, "use")) {
-        carryobject.triggertype.carryobject = "use";
+        carryobject.triggertype = "use";
     } else {
-        carryobject.triggertype.carryobject = "proximity";
+        carryobject.triggertype = "proximity";
     }
-    trigger.baseorigin.trigger = trigger.origin;
+    trigger.baseorigin = trigger.origin;
     carryobject.trigger = trigger;
     trigger enablelinkto();
     carryobject linkto(trigger);
@@ -1029,45 +1029,45 @@ function create_carry_object(ownerteam, trigger, visuals, offset, objectivename,
     }
     carryobject.visuals = visuals;
     carryobject _set_team(ownerteam);
-    carryobject.compassicons.carryobject = [];
-    carryobject.objidpingfriendly.carryobject = 0;
-    carryobject.objidpingenemy.carryobject = 0;
+    carryobject.compassicons = [];
+    carryobject.objidpingfriendly = 0;
+    carryobject.objidpingenemy = 0;
     if (carryobject function_4ea98a09()) {
         /#
             assert(isdefined(objectivename), "pack");
         #/
-        carryobject.objid.carryobject = [];
+        carryobject.objid = [];
         level.objidstart = level.objidstart + 2;
-        carryobject.objectiveid.carryobject = get_next_obj_id();
+        carryobject.objectiveid = get_next_obj_id();
         objective_add(carryobject.objectiveid, "invisible", carryobject.curorigin, objectivename);
     }
     carryobject.carrier = undefined;
-    carryobject.isresetting.carryobject = 0;
-    carryobject.interactteam.carryobject = #"hash_161f03feaadc9b8f";
-    carryobject.allowweapons.carryobject = 0;
+    carryobject.isresetting = 0;
+    carryobject.interactteam = #"hash_161f03feaadc9b8f";
+    carryobject.allowweapons = 0;
     carryobject.visiblecarriermodel = undefined;
-    carryobject.dropoffset.carryobject = 0;
-    carryobject.disallowremotecontrol.carryobject = 0;
-    carryobject.var_22389d70.carryobject = 1;
-    carryobject.worldicons.carryobject = [];
-    carryobject.carriervisible.carryobject = 0;
-    carryobject.visibleteam.carryobject = #"hash_161f03feaadc9b8f";
-    carryobject.worldiswaypoint.carryobject = [];
-    carryobject.worldicons_disabled.carryobject = [];
+    carryobject.dropoffset = 0;
+    carryobject.disallowremotecontrol = 0;
+    carryobject.var_22389d70 = 1;
+    carryobject.worldicons = [];
+    carryobject.carriervisible = 0;
+    carryobject.visibleteam = #"hash_161f03feaadc9b8f";
+    carryobject.worldiswaypoint = [];
+    carryobject.worldicons_disabled = [];
     carryobject.carryicon = undefined;
     carryobject.setdropped = undefined;
     carryobject.ondrop = undefined;
     carryobject.onpickup = undefined;
     carryobject.onreset = undefined;
-    carryobject.usetime.carryobject = 10000;
-    carryobject.var_9288c4c0.carryobject = carryobject.usetime;
-    carryobject.decayprogress.carryobject = 0;
-    carryobject.var_98bb0715.carryobject = 1;
-    carryobject.var_5c196da4.carryobject = 0;
+    carryobject.usetime = 10000;
+    carryobject.var_9288c4c0 = carryobject.usetime;
+    carryobject.decayprogress = 0;
+    carryobject.var_98bb0715 = 1;
+    carryobject.var_5c196da4 = 0;
     carryobject clear_progress();
     if (carryobject.triggertype == "use") {
         carryobject.trigger setcursorhint("HINT_INTERACTIVE_PROMPT");
-        carryobject.userate.carryobject = 1;
+        carryobject.userate = 1;
         carryobject thread use_object_use_think(!allowinitialholddelay, !allowweaponcyclingduringhold);
         if (!carryobject function_4ea98a09() && isdefined(carryobject.trigger.str_hint)) {
             carryobject.trigger setcursorhint("HINT_NOICON");
@@ -1077,13 +1077,13 @@ function create_carry_object(ownerteam, trigger, visuals, offset, objectivename,
         carryobject function_e553e480();
         carryobject thread use_object_prox_think();
     }
-    carryobject.getuseratemultiplier.carryobject = &defaultuseratescalercallback;
-    carryobject.allowweaponscallback.carryobject = &defaultallowweaponscallback;
+    carryobject.getuseratemultiplier = &defaultuseratescalercallback;
+    carryobject.allowweaponscallback = &defaultallowweaponscallback;
     if (carryobject function_4ea98a09()) {
         carryobject thread update_carry_object_objective_origin();
     }
     array::add(level.a_gameobjects, carryobject, 0);
-    carryobject.b_reusable.carryobject = 1;
+    carryobject.b_reusable = 1;
     return carryobject;
 }
 
@@ -1276,8 +1276,8 @@ function give_object(object) {
 // Size: 0xc0
 function move_visuals_to_base() {
     foreach (visual in self.visuals) {
-        visual.origin.visual = visual.baseorigin;
-        visual.angles.visual = visual.baseangles;
+        visual.origin = visual.baseorigin;
+        visual.angles = visual.baseangles;
         visual dontinterpolate();
         visual show();
     }
@@ -1361,7 +1361,7 @@ function is_object_away_from_home() {
 // Size: 0x24e
 function set_position(origin, angles) {
     mdl_gameobject = self function_fd4a5f2f();
-    mdl_gameobject.isresetting.mdl_gameobject = 1;
+    mdl_gameobject.isresetting = 1;
     foreach (visual in mdl_gameobject.visuals) {
         visual.origin = origin;
         visual.angles = angles;
@@ -1376,7 +1376,7 @@ function set_position(origin, angles) {
     }
     mdl_gameobject clear_carrier();
     mdl_gameobject update_objective();
-    mdl_gameobject.isresetting.mdl_gameobject = 0;
+    mdl_gameobject.isresetting = 0;
     if (isdefined(mdl_gameobject.var_bb7aca0c)) {
         foreach (var_1bae95c8 in mdl_gameobject.var_bb7aca0c) {
             if (isdefined(var_1bae95c8) && isdefined(var_1bae95c8.e_object)) {
@@ -1775,13 +1775,13 @@ function function_98c39cbc(b_enable) {
     mdl_gameobject.var_bee2a129 = b_enable;
     if (b_enable) {
         if (is_true(mdl_gameobject.droponusebutton)) {
-            mdl_gameobject.droponusebutton.mdl_gameobject = 0;
+            mdl_gameobject.droponusebutton = 0;
         }
         if (is_true(mdl_gameobject.droponusehasdelay)) {
-            mdl_gameobject.droponusehasdelay.mdl_gameobject = 0;
+            mdl_gameobject.droponusehasdelay = 0;
         }
         if (is_true(mdl_gameobject.var_97c7a495)) {
-            mdl_gameobject.var_97c7a495.mdl_gameobject = 0;
+            mdl_gameobject.var_97c7a495 = 0;
         }
     }
 }
@@ -1798,7 +1798,7 @@ function track_carrier(object) {
         if (self isonground()) {
             trace = bullettrace(self.origin + vectorscale((0, 0, 1), 20), self.origin - vectorscale((0, 0, 1), 20), 0, undefined);
             if (trace[#"fraction"] < 1) {
-                object.safeorigin.object = trace[#"position"];
+                object.safeorigin = trace[#"position"];
             }
         }
         waitframe(1);
@@ -1986,11 +1986,11 @@ function function_bee2a129() {
 // Size: 0x26e
 function create_generic_object(ownerteam, trigger, visuals, offset) {
     generic_object = spawn("script_model", trigger.origin);
-    generic_object.type.generic_object = "GenericObject";
-    generic_object.curorigin.generic_object = trigger.origin;
-    generic_object.entnum.generic_object = trigger getentitynumber();
+    generic_object.type = "GenericObject";
+    generic_object.curorigin = trigger.origin;
+    generic_object.entnum = trigger getentitynumber();
     generic_object.keyobject = undefined;
-    generic_object.triggertype.generic_object = "proximity";
+    generic_object.triggertype = "proximity";
     generic_object.trigger = trigger;
     generic_object linkto(trigger);
     for (index = 0; index < visuals.size; index++) {
@@ -2003,23 +2003,23 @@ function create_generic_object(ownerteam, trigger, visuals, offset) {
         offset = (0, 0, 0);
     }
     if (sessionmodeiscampaigngame()) {
-        generic_object.keepweapon.generic_object = 1;
+        generic_object.keepweapon = 1;
     }
-    generic_object.interactteam.generic_object = #"hash_161f03feaadc9b8f";
+    generic_object.interactteam = #"hash_161f03feaadc9b8f";
     generic_object.onuse = undefined;
     generic_object.oncantuse = undefined;
     generic_object.onresumeuse = undefined;
-    generic_object.usetime.generic_object = 10000;
-    generic_object.var_9288c4c0.generic_object = generic_object.usetime;
-    generic_object.decayprogress.generic_object = 0;
-    generic_object.var_98bb0715.generic_object = 1;
-    generic_object.var_5c196da4.generic_object = 0;
+    generic_object.usetime = 10000;
+    generic_object.var_9288c4c0 = generic_object.usetime;
+    generic_object.decayprogress = 0;
+    generic_object.var_98bb0715 = 1;
+    generic_object.var_5c196da4 = 0;
     generic_object clear_progress();
     if (generic_object.triggertype == "proximity") {
         generic_object function_e553e480();
     }
     array::add(level.a_gameobjects, generic_object, 0);
-    generic_object.b_reusable.generic_object = 1;
+    generic_object.b_reusable = 1;
     return generic_object;
 }
 
@@ -2029,17 +2029,17 @@ function create_generic_object(ownerteam, trigger, visuals, offset) {
 // Size: 0x4f6
 function create_use_object(ownerteam, trigger, visuals, var_da26a41 = (0, 0, 0), objectivename, allowinitialholddelay = 0, allowweaponcyclingduringhold = 0, start_enabled = 1, angles) {
     useobject = spawn("script_model", trigger.origin + var_da26a41);
-    useobject.type.useobject = "useObject";
-    useobject.curorigin.useobject = trigger.origin;
-    useobject.entnum.useobject = trigger getentitynumber();
+    useobject.type = "useObject";
+    useobject.curorigin = trigger.origin;
+    useobject.entnum = trigger getentitynumber();
     useobject.keyobject = undefined;
     if (issubstr(trigger.classname, "use")) {
-        useobject.triggertype.useobject = "use";
+        useobject.triggertype = "use";
     } else {
-        useobject.triggertype.useobject = "proximity";
+        useobject.triggertype = "proximity";
     }
     if (visuals.size > 0) {
-        useobject.angles.useobject = visuals[0].angles;
+        useobject.angles = visuals[0].angles;
     } else if (isdefined(angles)) {
         useobject.angles = angles;
     }
@@ -2052,16 +2052,16 @@ function create_use_object(ownerteam, trigger, visuals, var_da26a41 = (0, 0, 0),
     useobject.visuals = visuals;
     useobject _set_team(ownerteam);
     if (sessionmodeiscampaigngame()) {
-        useobject.keepweapon.useobject = 1;
+        useobject.keepweapon = 1;
     }
-    useobject.compassicons.useobject = [];
+    useobject.compassicons = [];
     if (useobject function_4ea98a09()) {
         /#
             assert(isdefined(objectivename), "<unknown string>");
         #/
-        useobject.objid.useobject = [];
+        useobject.objid = [];
         useobject.var_f23c87bd = objectivename;
-        useobject.var_25010336.useobject = &function_4d047b8d;
+        useobject.var_25010336 = &function_4d047b8d;
         if (is_true(start_enabled)) {
             useobject enable_object();
         }
@@ -2074,32 +2074,32 @@ function create_use_object(ownerteam, trigger, visuals, var_da26a41 = (0, 0, 0),
             allowinitialholddelay = 1;
         }
     }
-    useobject.interactteam.useobject = #"hash_161f03feaadc9b8f";
-    useobject.worldicons.useobject = [];
-    useobject.visibleteam.useobject = #"hash_161f03feaadc9b8f";
-    useobject.worldiswaypoint.useobject = [];
-    useobject.worldicons_disabled.useobject = [];
+    useobject.interactteam = #"hash_161f03feaadc9b8f";
+    useobject.worldicons = [];
+    useobject.visibleteam = #"hash_161f03feaadc9b8f";
+    useobject.worldiswaypoint = [];
+    useobject.worldicons_disabled = [];
     useobject.onuse = undefined;
     useobject.oncantuse = undefined;
     useobject.onresumeuse = undefined;
-    useobject.usetext.useobject = "default";
-    useobject.usetime.useobject = 10000;
-    useobject.var_9288c4c0.useobject = useobject.usetime;
-    useobject.decayprogress.useobject = 0;
-    useobject.var_98bb0715.useobject = 1;
-    useobject.var_5c196da4.useobject = 1;
-    useobject.curprogress.useobject = 0;
-    useobject.decayprogressmin.useobject = 0;
+    useobject.usetext = "default";
+    useobject.usetime = 10000;
+    useobject.var_9288c4c0 = useobject.usetime;
+    useobject.decayprogress = 0;
+    useobject.var_98bb0715 = 1;
+    useobject.var_5c196da4 = 1;
+    useobject.curprogress = 0;
+    useobject.decayprogressmin = 0;
     if (useobject.triggertype == "proximity") {
         useobject function_e553e480();
         useobject thread use_object_prox_think();
     } else {
-        useobject.userate.useobject = 1;
+        useobject.userate = 1;
         useobject thread use_object_use_think(!allowinitialholddelay, !allowweaponcyclingduringhold);
     }
     useobject clear_progress();
     array::add(level.a_gameobjects, useobject, 0);
-    useobject.b_reusable.useobject = 1;
+    useobject.b_reusable = 1;
     return useobject;
 }
 
@@ -2115,16 +2115,16 @@ function private function_4d047b8d() {
     /#
         assert(!isdefined(useobject.objectiveid));
     #/
-    useobject.objectiveid.useobject = get_next_obj_id();
+    useobject.objectiveid = get_next_obj_id();
     objective_add(useobject.objectiveid, "invisible", useobject, useobject.var_f23c87bd);
     requiredspecialty = objective_getrequiredspecialty(useobject.var_f23c87bd);
     if (isdefined(useobject.trigger) && isdefined(requiredspecialty) && requiredspecialty != "None") {
         useobject.trigger setperkfortrigger(requiredspecialty);
     }
-    var_af6e4895 = function_1fce1758(useobject.objectiveid);
-    if (isdefined(var_af6e4895)) {
-        useobject.var_af6e4895.useobject = getweapon(var_af6e4895);
-        useobject.trigger function_ca21f900(useobject.var_af6e4895);
+    requiredweapon = function_1fce1758(useobject.objectiveid);
+    if (isdefined(requiredweapon)) {
+        useobject.requiredweapon = getweapon(requiredweapon);
+        useobject.trigger function_ca21f900(useobject.requiredweapon);
     }
 }
 
@@ -2140,7 +2140,7 @@ function set_key_object(object) {
         return;
     }
     if (!isdefined(mdl_gameobject.keyobject)) {
-        mdl_gameobject.keyobject.mdl_gameobject = [];
+        mdl_gameobject.keyobject = [];
     }
     if (isarray(object)) {
         foreach (obj in object) {
@@ -2211,7 +2211,7 @@ function function_e7e3d146(b_enable = 1) {
 // Size: 0x8c
 function function_f4ccb04c(e_player, var_5098afd6 = 0) {
     mdl_gameobject = self function_fd4a5f2f();
-    e_player.var_17bc9194.e_player = 1;
+    e_player.var_17bc9194 = 1;
     mdl_gameobject.trigger notify(#"trigger", {#forced:var_5098afd6, #activator:e_player});
 }
 
@@ -2427,7 +2427,7 @@ function private function_72307b09(progress) {
     }
     if (0 > progress) {
         foreach (contributor in self.var_bac5b0cf[user].contributors) {
-            contributor.contribution.contributor = math::clamp(contributor.contribution + progress, 0, self.usetime);
+            contributor.contribution = math::clamp(contributor.contribution + progress, 0, self.usetime);
         }
     } else {
         keys = getarraykeys(self.var_bac5b0cf[user].touching.players);
@@ -2436,7 +2436,7 @@ function private function_72307b09(progress) {
             /#
                 assert(isdefined(contributor));
             #/
-            contributor.contribution.contributor = math::clamp(contributor.contribution + progress, 0, self.usetime);
+            contributor.contribution = math::clamp(contributor.contribution + progress, 0, self.usetime);
         }
     }
 }
@@ -2837,20 +2837,20 @@ function function_3510971a(enabled) {
 // Checksum 0xf107a991, Offset: 0x98e8
 // Size: 0x134
 function set_claim_team(newteam) {
-    var_380d5543 = newteam;
+    new_user = newteam;
     /#
-        assert(var_380d5543 != self.var_a4926509);
+        assert(new_user != self.var_a4926509);
     #/
     if (self.var_5083077c !== 1) {
         if (!self.decayprogress && !self function_350d0352() && gettime() - self.lastclaimtime > int(self.claimgraceperiod * 1000)) {
             self clear_progress();
-        } else if (function_7db44d1b(var_380d5543) && var_380d5543 != self.var_5f35f19a) {
+        } else if (function_7db44d1b(new_user) && new_user != self.var_5f35f19a) {
             self clear_progress();
         }
     }
     self.var_5f35f19a = self.var_a4926509;
     self.lastclaimtime = gettime();
-    self.var_a4926509 = var_380d5543;
+    self.var_a4926509 = new_user;
     self update_use_rate();
 }
 
@@ -2973,7 +2973,7 @@ function trigger_touch_think(object) {
         object [[ object.ontouchuse ]](self);
     }
     if (is_true(self.var_17bc9194)) {
-        object.curprogress.object = object.usetime + 1;
+        object.curprogress = object.usetime + 1;
         object.var_bac5b0cf[object.var_a4926509].touching.num = 1;
         self.var_17bc9194 = undefined;
         while (object.curprogress >= 1) {
@@ -3003,7 +3003,7 @@ function trigger_touch_think(object) {
         return;
     }
     if (isdefined(contribution)) {
-        contribution.var_e22ea52b.contribution = 0;
+        contribution.var_e22ea52b = 0;
     }
     object function_472b3c15(user, var_5717fa0c);
     object function_26237f3c(user);
@@ -3013,7 +3013,7 @@ function trigger_touch_think(object) {
     }
     if (object.usetime) {
         if (object get_num_touching(user) <= 0 && object.curprogress >= object.usetime) {
-            object.curprogress.object = object.usetime - 1;
+            object.curprogress = object.usetime - 1;
             object update_current_progress();
         }
     }
@@ -3076,7 +3076,7 @@ function use_hold_think(player, disableweaponcyclingduringhold) {
         }
     }
     player clientclaimtrigger(self.trigger);
-    player.claimtrigger.player = self.trigger;
+    player.claimtrigger = self.trigger;
     useweapon = self.useweapon;
     if (isdefined(useweapon)) {
         if (is_true(useweapon.var_d2751f9d)) {
@@ -3145,7 +3145,7 @@ function use_hold_think(player, disableweaponcyclingduringhold) {
             player unlink();
         }
         if (!isalive(player)) {
-            player.killedinuse.player = 1;
+            player.killedinuse = 1;
         }
         if (level.gameended) {
             player waitthenfreezeplayercontrolsifgameendedstill();
@@ -4064,7 +4064,7 @@ function disable_object(var_fa771a51, var_ffd61eb5 = 1, b_success = 0, b_destroy
     }
     if (var_ffd61eb5) {
         if (!isdefined(mdl_gameobject.str_restore_visible_team_after_disable)) {
-            mdl_gameobject.str_restore_visible_team_after_disable.mdl_gameobject = mdl_gameobject.visibleteam;
+            mdl_gameobject.str_restore_visible_team_after_disable = mdl_gameobject.visibleteam;
         }
         mdl_gameobject set_visible(#"hash_161f03feaadc9b8f");
         if (isdefined(mdl_gameobject.objectiveid)) {
@@ -4093,7 +4093,7 @@ function enable_object(var_13c260df, b_show_objective = 1) {
     if (isdefined(e_container) && is_true(e_container.var_c65066ad)) {
         e_container function_35a012bf();
     }
-    mdl_gameobject.b_enabled.mdl_gameobject = 1;
+    mdl_gameobject.b_enabled = 1;
     if (isdefined(mdl_gameobject.type) && (mdl_gameobject.type == "carryObject" || mdl_gameobject.type == "packObject") || is_true(var_13c260df)) {
         for (i = 0; i < mdl_gameobject.visuals.size; i++) {
             mdl_gameobject.visuals[i] show();
@@ -4200,12 +4200,12 @@ function can_interact_with(sentient) {
             return 1;
         }
     }
-    if (isdefined(self.var_af6e4895) && isplayer(sentient)) {
+    if (isdefined(self.requiredweapon) && isplayer(sentient)) {
         player = sentient;
-        if (!player hasweapon(self.var_af6e4895)) {
+        if (!player hasweapon(self.requiredweapon)) {
             return 0;
         }
-        ammocount = player getammocount(self.var_af6e4895);
+        ammocount = player getammocount(self.requiredweapon);
         if (ammocount == 0) {
             return 0;
         }
@@ -4278,7 +4278,7 @@ function set_absolute_visible_and_interact_team(team) {
 // Size: 0x4e
 function function_b03b5362(b_enable = 1) {
     mdl_gameobject = self function_fd4a5f2f();
-    mdl_gameobject.disallowvehicleusage.mdl_gameobject = !b_enable;
+    mdl_gameobject.disallowvehicleusage = !b_enable;
 }
 
 // Namespace gameobjects/gameobjects_shared
@@ -4435,15 +4435,15 @@ function create_pack_object(ownerteam, trigger, visuals, offset, objectivename, 
         offset = (0, 0, 0);
     }
     packobject = spawn("script_model", trigger.origin);
-    packobject.type.packobject = "packObject";
-    packobject.curorigin.packobject = trigger.origin;
-    packobject.entnum.packobject = trigger getentitynumber();
+    packobject.type = "packObject";
+    packobject.curorigin = trigger.origin;
+    packobject.entnum = trigger getentitynumber();
     if (issubstr(trigger.classname, "use")) {
-        packobject.triggertype.packobject = "use";
+        packobject.triggertype = "use";
     } else {
-        packobject.triggertype.packobject = "proximity";
+        packobject.triggertype = "proximity";
     }
-    trigger.baseorigin.trigger = trigger.origin;
+    trigger.baseorigin = trigger.origin;
     packobject.trigger = trigger;
     trigger enablelinkto();
     packobject linkto(trigger);
@@ -4454,52 +4454,52 @@ function create_pack_object(ownerteam, trigger, visuals, offset, objectivename, 
     }
     packobject.visuals = visuals;
     packobject _set_team(ownerteam);
-    packobject.compassicons.packobject = [];
-    packobject.objidpingfriendly.packobject = 0;
-    packobject.objidpingenemy.packobject = 0;
+    packobject.compassicons = [];
+    packobject.objidpingfriendly = 0;
+    packobject.objidpingenemy = 0;
     if (packobject function_4ea98a09()) {
         /#
             assert(isdefined(objectivename), "pack");
         #/
-        packobject.objid.packobject = [];
+        packobject.objid = [];
         level.objidstart = level.objidstart + 2;
-        packobject.objectiveid.packobject = get_next_obj_id();
+        packobject.objectiveid = get_next_obj_id();
         objective_add(packobject.objectiveid, "invisible", packobject.curorigin, objectivename);
         if (isdefined(var_6f828297)) {
             function_18fbab10(packobject.objectiveid, var_6f828297);
         }
     }
     packobject.carrier = undefined;
-    packobject.isresetting.packobject = 0;
-    packobject.interactteam.packobject = #"hash_161f03feaadc9b8f";
-    packobject.allowweapons.packobject = 1;
+    packobject.isresetting = 0;
+    packobject.interactteam = #"hash_161f03feaadc9b8f";
+    packobject.allowweapons = 1;
     packobject.visiblecarriermodel = undefined;
-    packobject.dropoffset.packobject = 0;
-    packobject.worldicons.packobject = [];
-    packobject.carriervisible.packobject = 0;
-    packobject.visibleteam.packobject = #"hash_161f03feaadc9b8f";
-    packobject.worldiswaypoint.packobject = [];
-    packobject.worldicons_disabled.packobject = [];
+    packobject.dropoffset = 0;
+    packobject.worldicons = [];
+    packobject.carriervisible = 0;
+    packobject.visibleteam = #"hash_161f03feaadc9b8f";
+    packobject.worldiswaypoint = [];
+    packobject.worldicons_disabled = [];
     packobject.packicon = undefined;
     packobject.setdropped = undefined;
     packobject.ondrop = undefined;
     packobject.onpickup = undefined;
     packobject.onreset = undefined;
-    packobject.usetime.packobject = 10000;
-    packobject.var_9288c4c0.packobject = packobject.usetime;
-    packobject.decayprogress.packobject = 0;
-    packobject.var_98bb0715.packobject = 1;
-    packobject.var_5c196da4.packobject = 0;
+    packobject.usetime = 10000;
+    packobject.var_9288c4c0 = packobject.usetime;
+    packobject.decayprogress = 0;
+    packobject.var_98bb0715 = 1;
+    packobject.var_5c196da4 = 0;
     if (packobject.triggertype == "use") {
         packobject.trigger setcursorhint("HINT_INTERACTIVE_PROMPT");
-        packobject.userate.packobject = 1;
+        packobject.userate = 1;
         packobject thread use_object_use_think(!allowinitialholddelay, !allowweaponcyclingduringhold);
     } else {
         packobject function_e553e480();
         packobject thread use_object_prox_think();
     }
     packobject thread update_carry_object_objective_origin();
-    packobject.b_reusable.packobject = 1;
+    packobject.b_reusable = 1;
     return packobject;
 }
 
@@ -4560,7 +4560,7 @@ function set_pack_icon(shader) {
 // Size: 0x108
 function init_game_objects(str_gameobject_bundle, str_team_override, b_allow_companion_command, t_override, a_keyline_objects, str_objective_override, str_tag_override, str_identifier_override) {
     c_interact_obj = new cinteractobj();
-    c_interact_obj.e_object.c_interact_obj = self;
+    c_interact_obj.e_object = self;
     str_bundle = undefined;
     if (isdefined(str_gameobject_bundle)) {
         str_bundle = str_gameobject_bundle;
@@ -4757,7 +4757,7 @@ function function_c6fa00c2() {
     foreach (contribution in var_1dbb2b2b) {
         contributor = contribution.player;
         percentage = 100 * contribution.contribution / self.usetime;
-        contributor.var_759a143b.contributor = int(0.5 + percentage);
+        contributor.var_759a143b = int(0.5 + percentage);
         if (contributor.var_759a143b > getgametypesetting(#"contributionmin")) {
             if (!isdefined(contributors)) {
                 contributors = [];

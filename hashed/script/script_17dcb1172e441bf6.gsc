@@ -337,12 +337,12 @@ function function_4e3cfad(text, color = (1, 1, 1), alpha = 1, scale = 1, duratio
         level.doa.var_3843f782 = [];
     }
     struct = spawnstruct();
-    struct.x.struct = 40;
+    struct.x = 40;
     struct.text = text;
     struct.color = color;
     struct.alpha = alpha;
     struct.scale = scale;
-    struct.var_3e2a561b.struct = gettime() + duration * 1000;
+    struct.var_3e2a561b = gettime() + duration * 1000;
     level.doa.var_3843f782[level.doa.var_3843f782.size] = struct;
     level thread function_8f04a649();
 }
@@ -351,7 +351,7 @@ function function_4e3cfad(text, color = (1, 1, 1), alpha = 1, scale = 1, duratio
 // Params 7, eflags: 0x2 linked
 // Checksum 0x160d086f, Offset: 0x14b8
 // Size: 0x10c
-function function_70e370a(var_8b98e431, var_7dcdc89b, text, color = (1, 1, 1), alpha = 1, scale = 1, var_47a8a420 = 3) {
+function function_70e370a(posx, posy, text, color = (1, 1, 1), alpha = 1, scale = 1, var_47a8a420 = 3) {
     /#
         if (!isdefined(text) || text == "<unknown string>") {
             return;
@@ -360,7 +360,7 @@ function function_70e370a(var_8b98e431, var_7dcdc89b, text, color = (1, 1, 1), a
         if (frames < 1) {
             frames = 1;
         }
-        debug2dtext((var_8b98e431, var_7dcdc89b, 0), text, color, alpha, (0, 0, 0), 0, scale, frames);
+        debug2dtext((posx, posy, 0), text, color, alpha, (0, 0, 0), 0, scale, frames);
     #/
 }
 

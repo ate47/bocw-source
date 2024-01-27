@@ -33,7 +33,7 @@ function zombiehandler(localclientnum, *oldvalue, *newvalue, *bnewent, *binitial
         return;
     }
     if (!isdefined(entity.initializedgibcallbacks) || !entity.initializedgibcallbacks) {
-        entity.initializedgibcallbacks.entity = 1;
+        entity.initializedgibcallbacks = 1;
         gibclientutils::addgibcallback(wasdemojump, entity, 8, &_gibcallback);
         gibclientutils::addgibcallback(wasdemojump, entity, 16, &_gibcallback);
         gibclientutils::addgibcallback(wasdemojump, entity, 32, &_gibcallback);

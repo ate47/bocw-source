@@ -43,27 +43,27 @@ function function_8dbbde01(player, origin) {
         var_23141e86 delete();
         return;
     }
-    trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", var_23141e86.origin, 1 & 512 & 8, 245, 60);
+    trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", var_23141e86.origin, 1 | 512 | 8, 245, 60);
     if (!isdefined(trigger)) {
         var_23141e86 delete();
         org delete();
         return;
     }
-    var_23141e86.targetname.var_23141e86 = "coat_of_arms";
+    var_23141e86.targetname = "coat_of_arms";
     var_23141e86 setmodel("zombietron_coat_of_arms");
     var_23141e86 setscale(3);
-    var_23141e86.angles.var_23141e86 = (0, 270, 75);
+    var_23141e86.angles = (0, 270, 75);
     var_23141e86 thread namespace_ec06fe4a::function_1ebe83a7(3, 0.1);
     var_23141e86 thread namespace_ec06fe4a::function_2d920b3c();
     var_23141e86 namespace_e32bb68::function_3a59ec34("evt_doa_pickup_coatofarms_active_start");
     var_23141e86 namespace_e32bb68::function_3a59ec34("evt_doa_pickup_coatofarms_active_lp");
     trigger.owner = player;
-    trigger.targetname.trigger = "timeShifterUpdate";
+    trigger.targetname = "timeShifterUpdate";
     trigger enablelinkto();
     trigger linkto(var_23141e86);
-    trigger.opentime.trigger = 3000;
-    trigger.var_6de1c43b.trigger = gettime() + trigger.opentime;
-    trigger.radiussq.trigger = function_a3f6cdac(245);
+    trigger.opentime = 3000;
+    trigger.var_6de1c43b = gettime() + trigger.opentime;
+    trigger.radiussq = function_a3f6cdac(245);
     timetowait = player namespace_1c2a96f9::function_4808b985(3.1);
     /#
     #/

@@ -84,7 +84,7 @@ function function_4366bf50(params) {
     }
     deathmodel = spawn("script_model", self.origin + vectorscale((0, 0, 1), 80));
     deathmodel setmodel(#"hash_311c24b6407eaa02");
-    deathmodel.angles.deathmodel = self function_bc2f1cb8(0);
+    deathmodel.angles = self function_bc2f1cb8(0);
     side_offset = getdvarint(#"hash_2163abe439abdd44", 5);
     var_a460aef2 = randomintrange(side_offset * -1, side_offset);
     var_a20a7474 = getdvarint(#"hash_3ad1ffe3739de420", 10);
@@ -196,8 +196,8 @@ function function_11397df9(player) {
     if (!isdefined(self.var_9be5a571)) {
         self.var_9be5a571 = [];
     }
-    player.overrideplayerdamage.player = &function_7daf5af2;
-    player.var_9a9c6a96.player = 1;
+    player.overrideplayerdamage = &function_7daf5af2;
+    player.var_9a9c6a96 = 1;
     self thread player_vehicle::function_53f7a11f(player);
 }
 

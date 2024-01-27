@@ -300,8 +300,8 @@ function function_1067f94c(var_c8a42ec) {
                 self.var_703fa168 = level.var_fee98522[var_d07d57b2];
                 self.var_58fb681e = level.var_5b46d961[var_d07d57b2];
             } else {
-                if (item.var_bd027dd9 != 32767) {
-                    item_inventory::remove_inventory_item(item.var_bd027dd9);
+                if (item.networkid != 32767) {
+                    item_inventory::remove_inventory_item(item.networkid);
                 }
                 self function_3ef3cec3(var_c8a42ec);
                 self function_460882e2();
@@ -316,7 +316,7 @@ function function_1067f94c(var_c8a42ec) {
 // Size: 0x62
 function function_9482f724() {
     item = self.inventory.items[12];
-    if (item.var_bd027dd9 != 32767) {
+    if (item.networkid != 32767) {
         self.var_6e3cb3d1 = item.var_a6762160.name;
         self.var_a4be9abe = item.count;
     }
@@ -477,7 +477,7 @@ function private function_f832427c(*s_params) {
             if (e_player isremotecontrolling()) {
                 return;
             }
-            e_player.var_8da24ed0.e_player = e_player.var_8da24ed0 + 1;
+            e_player.var_8da24ed0 = e_player.var_8da24ed0 + 1;
             if ((is_true(e_player.var_28107825) || e_player flag::get(#"hash_35735a804a34da04")) && isdefined(e_player.var_67aa3392)) {
                 e_player.var_67aa3392.var_5b5d9768 = e_player.var_8da24ed0;
             }
@@ -493,7 +493,7 @@ function private function_f832427c(*s_params) {
         }
     } else if (isplayer(self.attacker) && self.damageweapon.name === #"hash_6a4dd5ed56f6e3f6") {
         e_player = self.attacker;
-        e_player.var_8da24ed0.e_player = e_player.var_8da24ed0 + 1;
+        e_player.var_8da24ed0 = e_player.var_8da24ed0 + 1;
         if ((is_true(e_player.var_28107825) || e_player flag::get(#"hash_35735a804a34da04")) && isdefined(e_player.var_67aa3392)) {
             e_player.var_67aa3392.var_5b5d9768 = e_player.var_8da24ed0;
         }
@@ -636,8 +636,8 @@ function function_6457e4cd(item_name, count = 1) {
         item.count = count;
         var_fa3df96 = self item_inventory::function_e66dcff5(item);
         if (isdefined(var_fa3df96)) {
-            if (!item_world_util::function_db35e94f(item.var_bd027dd9)) {
-                item.var_bd027dd9.item = item_world_util::function_970b8d86(var_fa3df96);
+            if (!item_world_util::function_db35e94f(item.networkid)) {
+                item.networkid = item_world_util::function_970b8d86(var_fa3df96);
             }
             self item_world::function_de2018e3(item, self, var_fa3df96, 0);
             if (item_name === "field_upgrade_energy_mine_4_item_sr" || item_name === "field_upgrade_energy_mine_5_item_sr") {
@@ -677,9 +677,9 @@ function function_7281de4d(itemname, var_c940cca, weaponname, iconname, maxammo,
     var_874a73c4 = isdefined(self.inventory.items[12].count) ? self.inventory.items[12].count : 0;
     if (var_874a73c4 > 0) {
         item = self.inventory.items[12];
-        dropitem = self item_inventory::drop_inventory_item(item.var_bd027dd9);
+        dropitem = self item_inventory::drop_inventory_item(item.networkid);
         dropitem hide();
-        dropitem.var_864ea466.dropitem = 1;
+        dropitem.var_864ea466 = 1;
         self item_inventory::consume_item(dropitem);
     }
     if (!isdefined(level.var_1b527536)) {
@@ -720,10 +720,10 @@ function function_69303ed3() {
     var_874a73c4 = isdefined(self.inventory.items[12].count) ? self.inventory.items[12].count : 0;
     if (var_874a73c4 > 0) {
         item = self.inventory.items[12];
-        dropitem = self item_inventory::drop_inventory_item(item.var_bd027dd9);
+        dropitem = self item_inventory::drop_inventory_item(item.networkid);
         if (isentity(dropitem)) {
             dropitem hide();
-            dropitem.var_864ea466.dropitem = 1;
+            dropitem.var_864ea466 = 1;
             self item_inventory::consume_item(dropitem);
         }
     }
@@ -878,7 +878,7 @@ function function_35216077(params) {
         case #"hash_31bd3f1a2ffb2b7":
             foreach (player in getplayers()) {
                 if (isalive(player) && isdefined(player.var_8da24ed0) && isdefined(player.inventory) && isdefined(player.var_fc8023b4)) {
-                    player.var_8da24ed0.player = player.var_fc8023b4;
+                    player.var_8da24ed0 = player.var_fc8023b4;
                     player function_fe8d21ed();
                 }
             }

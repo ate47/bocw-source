@@ -194,7 +194,7 @@ function private dot_report(applicant) {
     }
     self.owner.var_dbffaa32 = 1;
     if (isplayer(applicant)) {
-        applicant.var_dbffaa32.applicant = 1;
+        applicant.var_dbffaa32 = 1;
     } else if (isdefined(applicant.owner) && isplayer(applicant.owner)) {
         applicant.owner.var_dbffaa32 = 1;
     }

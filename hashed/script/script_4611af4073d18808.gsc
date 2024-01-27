@@ -123,7 +123,7 @@ function function_1735c657(forced) {
         org = namespace_ec06fe4a::function_e22ae9b3(self.origin, "tag_origin");
         if (isdefined(org)) {
             org thread namespace_ec06fe4a::function_ae010bb4(self);
-            org.angles.org = self.angles;
+            org.angles = self.angles;
             self linkto(org);
             org rotateto(var_28e27203, 0.25);
             wait(0.25);

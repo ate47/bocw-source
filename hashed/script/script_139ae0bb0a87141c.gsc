@@ -34,15 +34,15 @@ function function_e4c62da6(groupname) {
     }
     var_9bd7a27 = level.stealth.var_9bd7a27;
     if (!isdefined(var_9bd7a27.groups)) {
-        var_9bd7a27.groups.var_9bd7a27 = [];
+        var_9bd7a27.groups = [];
     }
     var_db2f9de8 = var_9bd7a27.groups[groupname];
     if (!isdefined(var_db2f9de8)) {
         var_db2f9de8 = spawnstruct();
         var_9bd7a27.groups[groupname] = var_db2f9de8;
         var_db2f9de8.name = groupname;
-        var_db2f9de8.members.var_db2f9de8 = [];
-        var_db2f9de8.pods.var_db2f9de8 = [];
+        var_db2f9de8.members = [];
+        var_db2f9de8.pods = [];
     }
     level.stealth.var_9bd7a27 notify(groupname);
 }
@@ -177,7 +177,7 @@ function function_957fac82() {
 function function_92bed96c(var_9bd7a27, state, origin) {
     var_d04be568 = spawnstruct();
     var_d04be568.state = state;
-    var_d04be568.members.var_d04be568 = [];
+    var_d04be568.members = [];
     var_d04be568.var_5b37f889 = var_9bd7a27;
     var_9bd7a27.pods[var_9bd7a27.pods.size] = var_d04be568;
     if (isdefined(origin)) {
@@ -194,7 +194,7 @@ function function_f6ab9430(pod, origin, var_ccf5f27b) {
     /#
         assert(isdefined(origin));
     #/
-    pod.origin.pod = getclosestpointonnavmesh(origin, 500, 16);
+    pod.origin = getclosestpointonnavmesh(origin, 500, 16);
     if (!isdefined(pod.origin)) {
         pod.origin = origin;
     }
@@ -283,7 +283,7 @@ function function_91679cf9(var_9bd7a27, guy, var_844650da) {
     vol = level.stealth.var_65d8f1bf[self.var_d6319e36];
     if (isdefined(vol)) {
         var_d04be568.volume = vol;
-        var_d04be568.var_35becac4.var_d04be568 = vol istouching(var_844650da);
+        var_d04be568.var_35becac4 = vol istouching(var_844650da);
     }
     /#
         thread function_f0edd2ed(var_d04be568);
@@ -302,7 +302,7 @@ function function_6944c509(var_9bd7a27, guy, lastknownpos, *lastknowntime) {
             if (!isdefined(lastknownpos.enemy) || !isdefined(pod.target) || pod.target == lastknownpos.enemy) {
                 function_5e27aefe(pod, lastknownpos);
                 if (!isdefined(pod.target)) {
-                    pod.target.pod = lastknownpos.enemy;
+                    pod.target = lastknownpos.enemy;
                     if (isdefined(lastknowntime)) {
                         function_f6ab9430(pod, lastknowntime);
                     }
@@ -316,14 +316,14 @@ function function_6944c509(var_9bd7a27, guy, lastknownpos, *lastknowntime) {
     }
     var_d04be568 = function_92bed96c(guy, 2, lastknowntime);
     function_5e27aefe(var_d04be568, lastknownpos);
-    var_d04be568.target.var_d04be568 = lastknownpos.enemy;
+    var_d04be568.target = lastknownpos.enemy;
     function_4b33561d(var_d04be568, lastknownpos.var_d6319e36, lastknowntime);
     vol = level.stealth.var_d89f1312[self.var_d6319e36];
     if (isdefined(vol)) {
         var_d04be568.volume = vol;
-        var_d04be568.var_35becac4.var_d04be568 = vol istouching(lastknowntime);
+        var_d04be568.var_35becac4 = vol istouching(lastknowntime);
     }
-    var_d04be568.var_1e912fb5.var_d04be568 = gettime();
+    var_d04be568.var_1e912fb5 = gettime();
     level thread function_7b7042da();
     var_d04be568 thread function_d474dfcd();
     var_d04be568 thread function_2714d93c();
@@ -583,7 +583,7 @@ function function_4b33561d(pod, groupname, origin) {
     }
     var_c491acad = arraysortclosest(var_c491acad, origin);
     var_f5ea0eba = arraysortclosest(var_f5ea0eba, origin);
-    pod.var_5462c308.pod = arraycombine(var_c491acad, var_f5ea0eba);
+    pod.var_5462c308 = arraycombine(var_c491acad, var_f5ea0eba);
 }
 
 // Namespace namespace_3fc78cb6/group
@@ -612,7 +612,7 @@ function function_9fd1b21a(var_9bd7a27, guy) {
 // Size: 0x6c
 function function_172d6f0b(pod, point) {
     if (!isdefined(pod.var_239f0268)) {
-        pod.var_239f0268.pod = [];
+        pod.var_239f0268 = [];
     }
     pod.var_239f0268[pod.var_239f0268.size] = {#var_3e2a561b:gettime() + 5000, #origin:point};
 }
@@ -623,7 +623,7 @@ function function_172d6f0b(pod, point) {
 // Size: 0xdc
 function function_7c90914c(pod) {
     if (!isdefined(pod.var_239f0268)) {
-        pod.var_239f0268.pod = [];
+        pod.var_239f0268 = [];
     }
     curtime = gettime();
     var_e10e2e46 = 0;
@@ -673,7 +673,7 @@ function function_2e140491(guy, *volume) {
         data = spawnstruct();
         data.guy = member;
         var_5c185af = member.origin - pod.origin;
-        data.angle.data = function_2981bd91(var_5c185af);
+        data.angle = function_2981bd91(var_5c185af);
         dots[dots.size] = data;
         if (member == volume) {
             var_86a04485 = data.angle;
@@ -702,7 +702,7 @@ function function_2e140491(guy, *volume) {
             continue;
         }
         if (function_53cf9571(point, pod, var_941fad23, var_f2e0ace0, var_689e1c11, var_f64a59e)) {
-            point.var_b26d6449.point = gettime();
+            point.var_b26d6449 = gettime();
             return point.origin;
         }
     }
@@ -890,7 +890,7 @@ function function_e6ae3581(guy, var_4af4ea3d) {
     function_f6ab9430(pod, var_4af4ea3d);
     pod.var_b595bdc4 = undefined;
     if (isdefined(pod.volume)) {
-        pod.var_35becac4.pod = pod.volume istouching(pod.origin);
+        pod.var_35becac4 = pod.volume istouching(pod.origin);
     }
     return pod.origin;
 }

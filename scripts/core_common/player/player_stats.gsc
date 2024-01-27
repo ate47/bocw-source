@@ -962,14 +962,14 @@ function function_bcf9602(statname, value, var_4261ca42) {
 // Params 6, eflags: 0x2 linked
 // Checksum 0x508563a2, Offset: 0x2c48
 // Size: 0x13a
-function function_eec52333(weapon, statname, value, classnum, pickedup, var_9ade9f55) {
+function function_eec52333(weapon, statname, value, classnum, pickedup, forceads) {
     if (sessionmodeiszombiesgame() && level.zm_disable_recording_stats === 1) {
         return;
     }
     if (isdefined(level.var_b10e134d)) {
         [[ level.var_b10e134d ]](self, weapon, statname, value);
     }
-    self addweaponstat(weapon, statname, value, classnum, pickedup, var_9ade9f55);
+    self addweaponstat(weapon, statname, value, classnum, pickedup, forceads);
     switch (statname) {
     case #"shots":
     case #"used":

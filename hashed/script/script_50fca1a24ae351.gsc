@@ -107,7 +107,7 @@ function function_470f56e6(origin, ignore, var_fcfb8b8d = 1) {
         player notify(#"hash_279998c5df86c04d");
         vehicle = player getvehicleoccupied();
         if (isdefined(vehicle)) {
-            vehicle.var_3e742dc1.vehicle = 1;
+            vehicle.var_3e742dc1 = 1;
             vehicle usevehicle(player, 0);
         }
         if (var_fcfb8b8d) {
@@ -186,7 +186,7 @@ LOC_000004e6:
         if (isdefined(var_6788869b.script_noteworthy)) {
             var_2436e1b = namespace_ec06fe4a::function_e22ae9b3(var_6788869b.origin, var_6788869b.script_noteworthy);
             if (isdefined(var_2436e1b)) {
-                var_2436e1b.angles.var_2436e1b = var_6788869b.angles;
+                var_2436e1b.angles = var_6788869b.angles;
                 var_2436e1b solid();
                 level.doa.var_43cb2d40[level.doa.var_43cb2d40.size] = var_2436e1b;
                 self.var_6788869b = var_2436e1b;
@@ -228,7 +228,7 @@ function function_fe17d41e() {
                 if (isdefined(groundent)) {
                     groundent clientfield::set("dungeon_set_explore_state", 1);
                 }
-                groundent.var_ae9c1083.groundent = 1;
+                groundent.var_ae9c1083 = 1;
             }
         }
         wait(0.25);
@@ -313,19 +313,19 @@ function function_8790b64a() {
 // Size: 0x25e
 function function_4be92bcc(idx, seconds) {
     var_80d530a9 = {};
-    var_80d530a9.name.var_80d530a9 = function_56bd9d70(idx);
+    var_80d530a9.name = function_56bd9d70(idx);
     var_80d530a9.buildtime = seconds;
-    var_80d530a9.var_e032d230.var_80d530a9 = level.var_c97eeeb4.size;
-    var_80d530a9.var_b411e9f2.var_80d530a9 = level.var_d5561d56;
-    var_80d530a9.halls.var_80d530a9 = level.var_5d40e975;
-    var_80d530a9.players.var_80d530a9 = namespace_7f5aeb59::function_f08b75c1();
-    var_80d530a9.var_a98f4fd2.var_80d530a9 = [];
+    var_80d530a9.var_e032d230 = level.var_c97eeeb4.size;
+    var_80d530a9.var_b411e9f2 = level.var_d5561d56;
+    var_80d530a9.halls = level.var_5d40e975;
+    var_80d530a9.players = namespace_7f5aeb59::function_f08b75c1();
+    var_80d530a9.var_a98f4fd2 = [];
     foreach (var_a557de6c in level.doa.var_830f8412) {
         var_2e0252f2 = {#count:level.doa.var_4cdaff39[var_a557de6c], #name:var_a557de6c};
         if (!isdefined(var_80d530a9.var_a98f4fd2)) {
-            var_80d530a9.var_a98f4fd2.var_80d530a9 = [];
+            var_80d530a9.var_a98f4fd2 = [];
         } else if (!isarray(var_80d530a9.var_a98f4fd2)) {
-            var_80d530a9.var_a98f4fd2.var_80d530a9 = array(var_80d530a9.var_a98f4fd2);
+            var_80d530a9.var_a98f4fd2 = array(var_80d530a9.var_a98f4fd2);
         }
         var_80d530a9.var_a98f4fd2[var_80d530a9.var_a98f4fd2.size] = var_2e0252f2;
     }
@@ -439,7 +439,7 @@ function doaenemyfillerfodder() {
     level.doa.var_35c4260d = [];
     var_764338c3 = namespace_ec06fe4a::spawnorigin((0, 0, 0));
     if (isdefined(var_764338c3)) {
-        var_764338c3.targetname.var_764338c3 = "doaEnemyFillerFodder";
+        var_764338c3.targetname = "doaEnemyFillerFodder";
         var_764338c3 thread function_3574d58();
         var_764338c3 thread namespace_ec06fe4a::function_d55f042c(level, "dungeon_cleanup");
         var_764338c3 thread namespace_ec06fe4a::function_d55f042c(level, "dungeon_destroyed");

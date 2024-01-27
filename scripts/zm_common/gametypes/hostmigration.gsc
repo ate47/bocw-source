@@ -61,7 +61,7 @@ function private on_host_migration_end() {
     if (isdefined(self.inventory.items)) {
         for (i = 0; i < self.inventory.items.size; i++) {
             item = self.inventory.items[i];
-            if (item.var_bd027dd9 !== 32767) {
+            if (item.networkid !== 32767) {
                 self function_b00db06(4, item.id, item.count, i + 1);
             }
         }
@@ -169,7 +169,7 @@ function callback_hostmigration() {
         if (isdefined(zombies) && zombies.size > 0) {
             foreach (zombie in zombies) {
                 if (!isdefined(zombie._host_migration_link_entity)) {
-                    zombie._host_migration_link_entity.zombie = zombie [[ level.hostmigration_ai_link_entity_callback ]]();
+                    zombie._host_migration_link_entity = zombie [[ level.hostmigration_ai_link_entity_callback ]]();
                 }
             }
         }
@@ -177,9 +177,9 @@ function callback_hostmigration() {
         zombies = getaiteamarray(level.zombie_team);
         if (isdefined(zombies) && zombies.size > 0) {
             foreach (zombie in zombies) {
-                zombie.no_powerups.zombie = 1;
-                zombie.marked_for_recycle.zombie = 1;
-                zombie.has_been_damaged_by_player.zombie = 0;
+                zombie.no_powerups = 1;
+                zombie.marked_for_recycle = 1;
+                zombie.has_been_damaged_by_player = 0;
                 zombie dodamage(zombie.health + 1000, zombie.origin, zombie);
             }
         }
@@ -204,7 +204,7 @@ function callback_hostmigration() {
         foreach (zombie in zombies) {
             if (isdefined(zombie._host_migration_link_entity)) {
                 ent = spawn("script_origin", zombie.origin);
-                ent.angles.ent = zombie.angles;
+                ent.angles = zombie.angles;
                 zombie linkto(ent);
                 ent linkto(zombie._host_migration_link_entity, "tag_origin", zombie._host_migration_link_entity worldtolocalcoords(ent.origin), ent.angles + zombie._host_migration_link_entity.angles);
                 zombie._host_migration_link_helper = ent;
@@ -356,7 +356,7 @@ function hostmigrationtimerthink_internal() {
     }
     if (isdefined(self._host_migration_link_entity)) {
         ent = spawn("script_origin", self.origin);
-        ent.angles.ent = self.angles;
+        ent.angles = self.angles;
         self linkto(ent);
         ent linkto(self._host_migration_link_entity, "tag_origin", self._host_migration_link_entity worldtolocalcoords(ent.origin), ent.angles + self._host_migration_link_entity.angles);
         self._host_migration_link_helper = ent;

@@ -108,14 +108,14 @@ function set_clientfield(state) {
 // Checksum 0x2be3c07d, Offset: 0x980
 // Size: 0x9a
 function perk_machine_setup(use_trigger, perk_machine, bump_trigger, *collision) {
-    perk_machine.script_sound.perk_machine = "mus_perks_tombstone_jingle";
-    perk_machine.script_string.perk_machine = "marathon_perk";
-    perk_machine.script_label.perk_machine = "mus_perks_tombstone_sting";
-    perk_machine.target.perk_machine = "vending_tombstone";
-    bump_trigger.script_string.bump_trigger = "marathon_perk";
-    bump_trigger.targetname.bump_trigger = "vending_tombstone";
+    perk_machine.script_sound = "mus_perks_tombstone_jingle";
+    perk_machine.script_string = "marathon_perk";
+    perk_machine.script_label = "mus_perks_tombstone_sting";
+    perk_machine.target = "vending_tombstone";
+    bump_trigger.script_string = "marathon_perk";
+    bump_trigger.targetname = "vending_tombstone";
     if (isdefined(collision)) {
-        collision.script_string.collision = "marathon_perk";
+        collision.script_string = "marathon_perk";
     }
 }
 
@@ -190,23 +190,23 @@ function function_716834ed() {
                 var_fe58c446 = function_2e532eed(self.inventory.items[13]);
                 var_312d49ec = function_2e532eed(self.inventory.items[7]);
                 var_61bf1830 = function_2e532eed(self.inventory.items[17 + 1]);
-                var_61bf1830.hidetime.var_61bf1830 = 0;
+                var_61bf1830.hidetime = 0;
                 weapon1 = var_61bf1830.var_627c698b;
                 if (isdefined(weapon1)) {
-                    var_61bf1830.clipammo.var_61bf1830 = self getweaponammoclip(weapon1);
-                    var_61bf1830.stockammo.var_61bf1830 = self getweaponammostock(weapon1);
+                    var_61bf1830.clipammo = self getweaponammoclip(weapon1);
+                    var_61bf1830.stockammo = self getweaponammostock(weapon1);
                     if (is_true(weapon1.isdualwield) && isdefined(weapon1.dualwieldweapon) && weapon1.dualwieldweapon != level.weaponnone) {
-                        var_61bf1830.var_7fa2b50b.var_61bf1830 = self getweaponammoclip(weapon1.dualwieldweapon);
+                        var_61bf1830.var_7fa2b50b = self getweaponammoclip(weapon1.dualwieldweapon);
                     }
                 }
                 var_c6dd36cf = function_2e532eed(self.inventory.items[17 + 1 + 8 + 1]);
-                var_c6dd36cf.hidetime.var_c6dd36cf = 0;
+                var_c6dd36cf.hidetime = 0;
                 weapon2 = var_c6dd36cf.var_627c698b;
                 if (isdefined(weapon2)) {
-                    var_c6dd36cf.clipammo.var_c6dd36cf = self getweaponammoclip(weapon2);
-                    var_c6dd36cf.stockammo.var_c6dd36cf = self getweaponammostock(weapon2);
+                    var_c6dd36cf.clipammo = self getweaponammoclip(weapon2);
+                    var_c6dd36cf.stockammo = self getweaponammostock(weapon2);
                     if (is_true(weapon2.isdualwield) && isdefined(weapon2.dualwieldweapon) && weapon2.dualwieldweapon != level.weaponnone) {
-                        var_c6dd36cf.var_7fa2b50b.var_c6dd36cf = self getweaponammoclip(weapon2.dualwieldweapon);
+                        var_c6dd36cf.var_7fa2b50b = self getweaponammoclip(weapon2.dualwieldweapon);
                     }
                 }
                 var_42045b62 = {#weapon2:var_c6dd36cf, #weapon1:var_61bf1830, #lethal:var_312d49ec, #tactical:var_fe58c446, #scorestreak:var_16f12c31, #var_c7f20631:isdefined(self.var_72d64cfd) ? self.var_72d64cfd : 0, #var_5a4917d4:isdefined(self.var_595a11bc) ? self.var_595a11bc : 0, #var_6032cf15:self.armortier, #armor:self.armor};
@@ -366,7 +366,7 @@ function function_1fb0f83e() {
     playfx(#"hash_7338c45a04f946da", self.origin);
     corpse = util::spawn_player_clone(self, #"hash_7258182255087552", undefined, 0);
     corpse clientfield::set("" + #"hash_5d96e4c9a397fa0", 1);
-    corpse.owner.corpse = self;
+    corpse.owner = self;
     corpse thread revive_trigger_spawn();
     self.var_57b374b4 = gameobjects::get_next_obj_id();
     objective_add(self.var_57b374b4, "active", corpse, #"hash_6986c5321eb92948");
@@ -450,27 +450,27 @@ function revive_trigger_think(t_secondary) {
         foreach (e_player in getplayers()) {
             n_depth = 0;
             n_depth = self depthinwater();
-            e_player.var_88590b2.e_player = 0;
+            e_player.var_88590b2 = 0;
             if (e_player namespace_e86ffa8::function_33d837e4()) {
-                e_player.var_88590b2.e_player = 1;
+                e_player.var_88590b2 = 1;
             }
             if (isdefined(t_secondary)) {
                 if (e_player zm_laststand::can_revive(self, 1, 1) && e_player istouching(t_revive) || n_depth > 20) {
                     if (e_player.var_dc4f101 === e_player) {
-                        e_player.var_88590b2.e_player = 4;
+                        e_player.var_88590b2 = 4;
                     } else {
-                        e_player.var_88590b2.e_player = 3;
+                        e_player.var_88590b2 = 3;
                     }
                 }
             } else if (e_player zm_laststand::can_revive_via_override(self) || e_player zm_laststand::can_revive(self) || n_depth > 20) {
                 if (e_player.var_dc4f101 === self) {
-                    e_player.var_88590b2.e_player = 4;
+                    e_player.var_88590b2 = 4;
                 } else {
-                    e_player.var_88590b2.e_player = 3;
+                    e_player.var_88590b2 = 3;
                 }
             }
             if (e_player.var_dc4f101 === self && e_player.var_88590b2 !== 4) {
-                e_player.var_88590b2.e_player = 2;
+                e_player.var_88590b2 = 2;
             }
             e_player clientfield::set_player_uimodel("hud_items.tombstonePerkAvailable", e_player.var_88590b2);
         }
@@ -677,8 +677,8 @@ function function_26a6d33c() {
     a_aoe_ai = arraysortclosest(a_ai, self.origin, a_ai.size, 0, 200);
     foreach (ai in a_aoe_ai) {
         if (isactor(ai) && isalive(ai) && ai.var_6f84b820 === #"normal") {
-            ai.marked_for_recycle.ai = 1;
-            ai.has_been_damaged_by_player.ai = 0;
+            ai.marked_for_recycle = 1;
+            ai.has_been_damaged_by_player = 0;
             ai dodamage(ai.health, self.origin, self);
         }
     }
@@ -837,10 +837,10 @@ function function_8fddd50e() {
     stash = util::spawn_model(a_str_models[self.entity_num], var_dfa8eaa5 + vectorscale((0, 0, 1), 15));
     stash function_619a5c20();
     stash clientfield::set("" + #"hash_2897f04212a28873", 1);
-    stash.owner.stash = self;
+    stash.owner = self;
     stash thread function_330c66cc();
     stash thread function_f11599cf(self);
-    stash.var_eeef4e4.stash = gameobjects::get_next_obj_id();
+    stash.var_eeef4e4 = gameobjects::get_next_obj_id();
     objective_add(stash.var_eeef4e4, "active", stash, #"hash_4488235ae3df0e8a");
     stash bobbing((0, 0, 1), 2, 5);
     return stash;
@@ -854,9 +854,9 @@ function function_330c66cc() {
     s_unitrigger = zm_unitrigger::function_a7620bfb();
     zm_unitrigger::unitrigger_set_hint_string(s_unitrigger, #"hash_66e274e3eb59ecc9");
     zm_unitrigger::unitrigger_force_per_player_triggers(s_unitrigger, 1);
-    s_unitrigger.var_8d306e51.s_unitrigger = 1;
-    s_unitrigger.prompt_and_visibility_func.s_unitrigger = &function_c7f0270c;
-    s_unitrigger.related_parent.s_unitrigger = self;
+    s_unitrigger.var_8d306e51 = 1;
+    s_unitrigger.prompt_and_visibility_func = &function_c7f0270c;
+    s_unitrigger.related_parent = self;
     self.s_unitrigger = s_unitrigger;
     zm_unitrigger::register_static_unitrigger(s_unitrigger, &function_cde4678f);
 }

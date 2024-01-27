@@ -59,7 +59,7 @@ class cwz_revive_prompt : cluielem {
     // Params 6, eflags: 0x0
     // Checksum 0x9d6efcd9, Offset: 0x460
     // Size: 0xec
-    function setup_clientfields(var_c05c67e2, var_afaddf7a, var_d65e5a18, *var_f228b5fa, var_7cb8f98a, *var_bda3bf84) {
+    function setup_clientfields(var_c05c67e2, progresscallback, var_d65e5a18, *var_f228b5fa, var_7cb8f98a, *var_bda3bf84) {
         cluielem::setup_clientfields("wz_revive_prompt");
         cluielem::add_clientfield("clientnum", 1, 7, "int", var_d65e5a18);
         cluielem::add_clientfield("progress", 1, 5, "float", var_f228b5fa);
@@ -101,9 +101,9 @@ class cwz_revive_prompt : cluielem {
 // Params 6, eflags: 0x0
 // Checksum 0xedbd296d, Offset: 0x118
 // Size: 0x1a6
-function register(var_c05c67e2, var_afaddf7a, var_d65e5a18, var_f228b5fa, var_7cb8f98a, var_bda3bf84) {
+function register(var_c05c67e2, progresscallback, var_d65e5a18, var_f228b5fa, var_7cb8f98a, var_bda3bf84) {
     elem = new cwz_revive_prompt();
-    [[ elem ]]->setup_clientfields(var_c05c67e2, var_afaddf7a, var_d65e5a18, var_f228b5fa, var_7cb8f98a, var_bda3bf84);
+    [[ elem ]]->setup_clientfields(var_c05c67e2, progresscallback, var_d65e5a18, var_f228b5fa, var_7cb8f98a, var_bda3bf84);
     if (!isdefined(level.var_ae746e8f)) {
         level.var_ae746e8f = associativearray();
     }

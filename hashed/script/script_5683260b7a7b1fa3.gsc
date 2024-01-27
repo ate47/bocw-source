@@ -242,7 +242,7 @@ function function_e3871553(var_4d2ad93e) {
         if (isdefined(point.var_a6762160.var_a53e9db0)) {
             weapon = namespace_65181344::function_67456242(point.var_a6762160);
             dropitem = item_drop::drop_item(0, weapon, 1, weapon.maxammo, point.id, self.origin, self.angles);
-            dropitem.hidetime.dropitem = 1;
+            dropitem.hidetime = 1;
             dropitem hide();
             self zm_weapons::function_98776900(dropitem, 0, 0, 1);
         } else {
@@ -271,9 +271,9 @@ function function_e3871553(var_4d2ad93e) {
     } else {
         self clientfield::set_player_uimodel("hudItems.onslaught.lottoloadouts_atttype", 0);
     }
-    var_bd027dd9 = item_inventory::function_ec087745();
-    if (var_bd027dd9 != 32767) {
-        var_a781b3e1 = item_inventory::get_inventory_item(var_bd027dd9);
+    networkid = item_inventory::function_ec087745();
+    if (networkid != 32767) {
+        var_a781b3e1 = item_inventory::get_inventory_item(networkid);
         weapon = item_inventory::get_current_weapon();
         if (var_27751b99 > 0) {
             var_a781b3e1.var_a8bccf69 = var_27751b99;

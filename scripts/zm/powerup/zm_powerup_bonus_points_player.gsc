@@ -66,9 +66,9 @@ function bonus_points_player_powerup(item, player) {
     if (is_true(item.var_258c5fbc)) {
         points = item.var_258c5fbc;
         if (points == 100) {
-            item.var_df23dc7d.item = "essence_pickup_small";
+            item.var_df23dc7d = "essence_pickup_small";
         } else if (points == 250) {
-            item.var_df23dc7d.item = "essence_pickup_medium";
+            item.var_df23dc7d = "essence_pickup_medium";
         }
     } else if (is_true(level.var_a4c782b9)) {
         points = randomintrange(1, 25) * 100;

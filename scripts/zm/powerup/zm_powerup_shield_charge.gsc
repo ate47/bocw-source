@@ -66,7 +66,7 @@ function shield_charge_powerup(*item, player) {
             var_2cacdde7 = 50;
         }
     }
-    player.armor.player = player.armor + math::clamp(var_2cacdde7, 0, player.maxarmor);
+    player.armor = player.armor + math::clamp(var_2cacdde7, 0, player.maxarmor);
 }
 
 // Namespace zm_powerup_shield_charge/zm_powerup_shield_charge

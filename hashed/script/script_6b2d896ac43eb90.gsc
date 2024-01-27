@@ -65,14 +65,14 @@ function function_67dce9cd(var_beee4994) {
 function function_e28ce6d9(struct) {
     var_6afa034c = namespace_8b6a9d79::function_f3d93ee9(struct, #"hash_31be7c895b8fbf9b", 1);
     var_6afa034c thread scene::play(#"p9_fxanim_sv_tesla_tower_clean_bundle", var_6afa034c);
-    var_6afa034c.var_c7f10fc1.var_6afa034c = 1;
+    var_6afa034c.var_c7f10fc1 = 1;
     var_6afa034c hidepart("screen_portal_jnt");
     var_6afa034c hidepart("screen_exfil_jnt");
     var_6afa034c hidepart("screen_respond_jnt");
     var_6afa034c hidepart("screen_calling_jnt");
-    struct.objid.struct = zm_utility::function_f5a222a8(#"hash_788f637c735eb34d", var_6afa034c);
+    struct.objid = zm_utility::function_f5a222a8(#"hash_788f637c735eb34d", var_6afa034c);
     var_6afa034c clientfield::set("item_machine_spawn_rob", 1);
-    var_6afa034c.objectiveid.var_6afa034c = struct.objid;
+    var_6afa034c.objectiveid = struct.objid;
     if (zm_utility::is_survival()) {
         level thread zm_utility::function_232a7f41(var_6afa034c);
     }
@@ -83,7 +83,7 @@ function function_e28ce6d9(struct) {
     }
     v_trigger_offset = vectorscale((0, 0, 1), 32);
     trigger = namespace_8b6a9d79::function_214737c7(struct, &function_1fab9ee0, #"hash_48951800c1051da7", undefined, 100, undefined, undefined, v_trigger_offset);
-    trigger.var_9d7362a4.trigger = #"hash_48951800c1051da7";
+    trigger.var_9d7362a4 = #"hash_48951800c1051da7";
     trigger usetriggerrequirelookat(0);
     struct zm_utility::function_747180ea(struct.objid, undefined, trigger);
     trigger.scriptmodel = var_6afa034c;
@@ -286,7 +286,7 @@ function warp(var_6afa034c) {
             if (var_b2e24cfc.size > 1) {
                 arrayremoveindex(var_b2e24cfc, 0, 0);
             }
-            player.var_5d80a93b.player = player getcurrentweapon();
+            player.var_5d80a93b = player getcurrentweapon();
         }
     }
     var_e8f53400 = 1;

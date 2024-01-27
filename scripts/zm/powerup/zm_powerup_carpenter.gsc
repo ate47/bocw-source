@@ -50,7 +50,7 @@ function grab_carpenter(e_player) {
             e_player zm_utility::function_846eb7dd(#"hash_1d757d99eb407952", self.hint);
         }
         if (isdefined(e_player.armor) && isdefined(e_player.maxarmor)) {
-            e_player.armor.e_player = e_player.maxarmor;
+            e_player.armor = e_player.maxarmor;
         }
     } else {
         players = getplayers();
@@ -59,7 +59,7 @@ function grab_carpenter(e_player) {
                 e_player zm_utility::function_846eb7dd(#"hash_1d757d99eb407952", self.hint);
             }
             if (isdefined(e_player.armor) && isdefined(e_player.maxarmor)) {
-                e_player.armor.e_player = e_player.maxarmor;
+                e_player.armor = e_player.maxarmor;
             }
         }
     }

@@ -48,10 +48,10 @@ function private function_70a657d8() {
 function private function_30c3f95d(var_352058a) {
     corpse = self;
     if (isdefined(var_352058a.original.var_b9c0ade5)) {
-        corpse.var_b9c0ade5.corpse = var_352058a.original.var_b9c0ade5;
+        corpse.var_b9c0ade5 = var_352058a.original.var_b9c0ade5;
     }
     corpse setcontents(0);
-    corpse.var_a08ba405.corpse = var_352058a.original.var_a08ba405;
+    corpse.var_a08ba405 = var_352058a.original.var_a08ba405;
     corpse thread function_c74e98cb();
 }
 
@@ -154,7 +154,7 @@ function function_c4fe1ef2() {
     if (is_true(player.var_9ebbaa46.var_87788f85)) {
         return 0;
     }
-    player.var_ca6b6423.player = 1;
+    player.var_ca6b6423 = 1;
     setdvar(#"scr_door_player_gestures", 0);
     return 1;
 }
@@ -217,9 +217,9 @@ function function_5654f611(body) {
         var_46abe989 = body gettagorigin(body.var_3e95b88f.var_f48ab2e1[#"use"].tag);
     }
     result.var_ef504ed6 = var_46abe989;
-    result.origin.result = vectorlerp(self.origin, var_46abe989, 0.5);
-    result.origin.result = (result.origin[0], result.origin[1], self.origin[2]);
-    result.angles.result = (0, function_2981bd91(result.origin - self.origin), 0);
+    result.origin = vectorlerp(self.origin, var_46abe989, 0.5);
+    result.origin = (result.origin[0], result.origin[1], self.origin[2]);
+    result.angles = (0, function_2981bd91(result.origin - self.origin), 0);
     traceorigin = playerphysicstrace(self.origin, result.origin);
     /#
         if (distancesquared(traceorigin, result.origin) > 0.0001) {
@@ -253,8 +253,8 @@ function function_b8268bd6(action, victim, var_7318f7f0, var_65ff9d5a) {
         if (var_6fbe856d.var_ef504ed6[2] - self.origin[2] > 20) {
             scene = "bodycarry_pickup_high";
         }
-        var_17813638.origin.var_17813638 = var_6fbe856d.origin;
-        var_17813638.angles.var_17813638 = var_6fbe856d.angles;
+        var_17813638.origin = var_6fbe856d.origin;
+        var_17813638.angles = var_6fbe856d.angles;
         if (isdefined(self.var_9ebbaa46.var_e0a97ac8)) {
             var_17813638 = self.var_9ebbaa46.var_e0a97ac8;
         }
@@ -372,11 +372,11 @@ function private function_f1aa7603(*victim) {
 function function_32d8a3e0(victim) {
     var_ef713ee3 = util::spawn_model(victim.aitype, victim.origin, victim.angles);
     var_ef713ee3 setmodel(victim.model);
-    var_ef713ee3.modelname.var_ef713ee3 = victim.model;
-    var_ef713ee3.ai_type.var_ef713ee3 = victim.aitype;
-    var_ef713ee3.var_b9c0ade5.var_ef713ee3 = victim.var_b9c0ade5;
-    var_ef713ee3.animname.var_ef713ee3 = "generic";
-    var_ef713ee3.var_5b22d53.var_ef713ee3 = 0;
+    var_ef713ee3.modelname = victim.model;
+    var_ef713ee3.ai_type = victim.aitype;
+    var_ef713ee3.var_b9c0ade5 = victim.var_b9c0ade5;
+    var_ef713ee3.animname = "generic";
+    var_ef713ee3.var_5b22d53 = 0;
     var_ef713ee3 detachall();
     for (i = 0; i < victim getattachsize(); i++) {
         var_ef713ee3.var_cf230c0[i] = victim getattachmodelname(i);

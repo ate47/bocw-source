@@ -107,18 +107,18 @@ function function_15dea507(aoeid, type, var_5ff737c1) {
     #/
     var_46f1b5eb = new class_698343df();
     level.var_400ae143[type] = var_46f1b5eb;
-    var_46f1b5eb.startfx.var_46f1b5eb = var_6ec6e01.start_effect;
-    var_46f1b5eb.endfx.var_46f1b5eb = var_6ec6e01.end_effect;
-    var_46f1b5eb.loopfx.var_46f1b5eb = var_6ec6e01.loop_effect;
-    var_46f1b5eb.startsound.var_46f1b5eb = var_6ec6e01.var_e41627fe;
-    var_46f1b5eb.endsound.var_46f1b5eb = var_6ec6e01.var_99ec7d60;
-    var_46f1b5eb.loopsound.var_46f1b5eb = var_6ec6e01.var_1ee49376;
-    var_46f1b5eb.startrumble.var_46f1b5eb = var_6ec6e01.startrumble;
-    var_46f1b5eb.endrumble.var_46f1b5eb = var_6ec6e01.endrumble;
-    var_46f1b5eb.var_a8609f98.var_46f1b5eb = var_6ec6e01.var_a8609f98;
-    var_46f1b5eb.earthquakescale.var_46f1b5eb = var_6ec6e01.earthquakescale;
-    var_46f1b5eb.var_e4c85a5f.var_46f1b5eb = var_6ec6e01.var_e4c85a5f;
-    var_46f1b5eb.effectradius.var_46f1b5eb = var_6ec6e01.effectradius;
+    var_46f1b5eb.startfx = var_6ec6e01.start_effect;
+    var_46f1b5eb.endfx = var_6ec6e01.end_effect;
+    var_46f1b5eb.loopfx = var_6ec6e01.loop_effect;
+    var_46f1b5eb.startsound = var_6ec6e01.var_e41627fe;
+    var_46f1b5eb.endsound = var_6ec6e01.var_99ec7d60;
+    var_46f1b5eb.loopsound = var_6ec6e01.var_1ee49376;
+    var_46f1b5eb.startrumble = var_6ec6e01.startrumble;
+    var_46f1b5eb.endrumble = var_6ec6e01.endrumble;
+    var_46f1b5eb.var_a8609f98 = var_6ec6e01.var_a8609f98;
+    var_46f1b5eb.earthquakescale = var_6ec6e01.earthquakescale;
+    var_46f1b5eb.var_e4c85a5f = var_6ec6e01.var_e4c85a5f;
+    var_46f1b5eb.effectradius = var_6ec6e01.effectradius;
     var_46f1b5eb.aoeid = aoeid;
 }
 
@@ -138,8 +138,8 @@ function function_1b06433(type, var_2badd710) {
         return;
     }
     var_46f1b5eb = level.var_400ae143[type];
-    var_46f1b5eb.var_3eb74948.var_46f1b5eb = var_3d910b11.end_effect;
-    var_46f1b5eb.var_8f85134.var_46f1b5eb = var_3d910b11.var_99ec7d60;
+    var_46f1b5eb.var_3eb74948 = var_3d910b11.end_effect;
+    var_46f1b5eb.var_8f85134 = var_3d910b11.var_99ec7d60;
 }
 
 // Namespace zm_aoe/zm_aoe

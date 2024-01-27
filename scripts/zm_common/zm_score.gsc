@@ -713,10 +713,10 @@ function function_bc9de425(b_lowest_first = 0) {
     var_e8d2685c = 0;
     foreach (player in getplayers()) {
         if (!isdefined(player.var_9fc3ee66)) {
-            player.var_9fc3ee66.player = -1;
+            player.var_9fc3ee66 = -1;
         }
         if (!isdefined(player.var_a8da9faf)) {
-            player.var_a8da9faf.player = -1;
+            player.var_a8da9faf = -1;
         }
         if (!isdefined(var_5e8a44f9)) {
             var_5e8a44f9 = [];
@@ -740,7 +740,7 @@ function function_bc9de425(b_lowest_first = 0) {
         }
         foreach (player in getplayers()) {
             if (player.score == var_f0c1d3c2) {
-                player.var_a8da9faf.player = player.var_9fc3ee66;
+                player.var_a8da9faf = player.var_9fc3ee66;
                 player.var_9fc3ee66 = var_51639;
             } else {
                 continue;

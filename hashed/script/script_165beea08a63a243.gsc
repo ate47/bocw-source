@@ -193,7 +193,7 @@ function function_e1cd5954(v_origin, min_radius = 0, max_radius = 32, n_height =
     y_pos = var_9bd6c1ae[1] + radius * sin(angle);
     randompoint = (x_pos, y_pos, v_origin[2] + n_height);
     if (var_39262f2b) {
-        var_ae63be37 = 1;
+        flip = 1;
         checks = 0;
         if (level.var_288e4854.size <= 0) {
             if (!isdefined(level.var_288e4854)) {
@@ -204,11 +204,11 @@ function function_e1cd5954(v_origin, min_radius = 0, max_radius = 32, n_height =
             level.var_288e4854[level.var_288e4854.size] = randompoint;
         } else {
             while (function_1979a72e(randompoint)) {
-                randompoint = (x_pos, y_pos + var_ae63be37 * 16, v_origin[2] + n_height);
+                randompoint = (x_pos, y_pos + flip * 16, v_origin[2] + n_height);
                 if (checks < 2) {
-                    var_ae63be37 = var_ae63be37 * -1;
+                    flip = flip * -1;
                 } else {
-                    var_ae63be37++;
+                    flip++;
                     checks = 0;
                 }
                 checks++;

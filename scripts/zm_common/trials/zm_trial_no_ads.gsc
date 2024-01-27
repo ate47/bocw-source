@@ -37,7 +37,7 @@ function private on_begin() {
     foreach (player in getplayers()) {
         player zm_trial_util::function_8677ce00(1);
         player allowads(0);
-        player._allow_ads.player = 0;
+        player._allow_ads = 0;
         player thread function_dc856fd8();
         player thread function_16824dc3();
         player thread function_2d961b95();

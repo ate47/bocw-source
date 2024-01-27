@@ -60,7 +60,7 @@ function private function_70a657d8() {
     clientfield::register("toplayer", "catch_up_transition", 1, 1, "counter");
     clientfield::register("world", "set_last_map_dvar", 1, 1, "counter");
     level.map_name = getrootmapname();
-    level.var_bd14e861 = getmissionname();
+    level.mission_name = getmissionname();
     level.var_2b1b0a8b = &function_4e3ab877;
     level.var_f1eb9fe4 = &function_8722a51a;
     fields = getmapfields();
@@ -182,7 +182,7 @@ function add(skipto, var_e784b061, var_dde96e3b, str_name, cleanup_func, var_e53
         assert(isdefined(var_e784b061), "titlescreen");
     #/
     struct = function_7d6f76df(skipto, var_e784b061, var_dde96e3b, str_name, cleanup_func, var_672c77b1, undefined, var_4444a90d, var_e5301d70);
-    struct.public.struct = 1;
+    struct.public = 1;
     level flag::set("level_has_skiptos");
 }
 
@@ -230,7 +230,7 @@ function function_9c003a50(skipto, var_e784b061, var_dde96e3b, str_name, cleanup
         #/
     }
     struct = function_7d6f76df(skipto, var_e784b061, var_dde96e3b, str_name, cleanup_func, var_672c77b1, var_89f09f8d);
-    struct.public.struct = 1;
+    struct.public = 1;
     level flag::set("level_has_skiptos");
     level flag::set("level_has_skipto_branches");
     return struct;
@@ -243,7 +243,7 @@ function function_9c003a50(skipto, var_e784b061, var_dde96e3b, str_name, cleanup
 function function_faeed11(skipto, var_e784b061, var_dde96e3b, str_name, cleanup_func, var_672c77b1, var_89f09f8d) {
     struct = function_9c003a50(skipto, var_e784b061, var_dde96e3b, str_name, cleanup_func, var_672c77b1, var_89f09f8d);
     if (isdefined(struct)) {
-        struct.looping.struct = 1;
+        struct.looping = 1;
     }
 }
 
@@ -254,7 +254,7 @@ function function_faeed11(skipto, var_e784b061, var_dde96e3b, str_name, cleanup_
 function function_67843f17(skipto, var_e784b061, var_dde96e3b, str_name, cleanup_func, var_672c77b1, var_89f09f8d, var_e5301d70) {
     if (function_525a83cb(skipto)) {
         struct = function_7d6f76df(skipto, var_e784b061, var_dde96e3b, str_name, cleanup_func, var_672c77b1, var_89f09f8d, 0, var_e5301d70);
-        struct.var_f36d5247.struct = 1;
+        struct.var_f36d5247 = 1;
         return;
     }
     /#
@@ -283,11 +283,11 @@ function function_227d7faa(skipto) {
 // Params 5, eflags: 0x0
 // Checksum 0xca311a6c, Offset: 0x1718
 // Size: 0x70
-function function_94c5792c(skipto, event_name, var_48672d70, var_3f8dd1f9, var_e96e3d07) {
+function function_94c5792c(skipto, event_name, event_type, var_3f8dd1f9, var_e96e3d07) {
     if (!isdefined(level.var_373f187b)) {
         level.var_373f187b = [];
     }
-    level.var_373f187b[skipto] = array(event_name, var_48672d70, var_3f8dd1f9, var_e96e3d07);
+    level.var_373f187b[skipto] = array(event_name, event_type, var_3f8dd1f9, var_e96e3d07);
 }
 
 // Namespace skipto/skipto
@@ -325,11 +325,11 @@ function change(msg, var_e784b061, var_dde96e3b, str_name, cleanup_func, var_672
         struct.cleanup_func = cleanup_func;
     }
     if (isdefined(var_672c77b1)) {
-        struct.var_67ea79fe.struct = struct function_5579990(var_672c77b1);
+        struct.var_67ea79fe = struct function_5579990(var_672c77b1);
     }
     if (isdefined(var_89f09f8d)) {
-        struct.var_89f09f8d.struct = strtok(var_89f09f8d, ",");
-        struct.next.struct = struct.var_89f09f8d;
+        struct.var_89f09f8d = strtok(var_89f09f8d, ",");
+        struct.next = struct.var_89f09f8d;
     }
 }
 
@@ -348,26 +348,26 @@ function function_b0cce1ee(func) {
 function function_5d3e3cf9(msg, var_e784b061, var_dde96e3b, str_name, cleanup_func, var_672c77b1, var_89f09f8d, var_4444a90d = 0, var_e5301d70) {
     struct = spawnstruct();
     struct.name = msg;
-    struct.var_8a2e8898.struct = registerskipto(msg);
+    struct.var_8a2e8898 = registerskipto(msg);
     struct.var_2c183249 = var_e784b061;
     struct.var_4c644f8d = var_dde96e3b;
     struct.str_name = str_name;
     struct.cleanup_func = cleanup_func;
-    struct.next.struct = [];
-    struct.prev.struct = [];
-    struct.var_67ea79fe.struct = "";
-    struct.var_672c77b1.struct = [];
+    struct.next = [];
+    struct.prev = [];
+    struct.var_67ea79fe = "";
+    struct.var_672c77b1 = [];
     struct.var_4444a90d = var_4444a90d;
     struct.var_e5301d70 = var_e5301d70;
     if (isdefined(var_672c77b1)) {
-        struct.var_67ea79fe.struct = struct function_5579990(var_672c77b1);
+        struct.var_67ea79fe = struct function_5579990(var_672c77b1);
     }
-    struct.var_89f09f8d.struct = [];
+    struct.var_89f09f8d = [];
     if (isdefined(var_89f09f8d)) {
-        struct.var_89f09f8d.struct = strtok(var_89f09f8d, ",");
-        struct.next.struct = struct.var_89f09f8d;
+        struct.var_89f09f8d = strtok(var_89f09f8d, ",");
+        struct.next = struct.var_89f09f8d;
     }
-    struct.var_80fa98d9.struct = [];
+    struct.var_80fa98d9 = [];
     return struct;
 }
 
@@ -581,9 +581,9 @@ function function_a59cd1c9() {
         if (is_true(struct.public)) {
             if (struct.next.size < 1) {
                 if (!isdefined(struct.next)) {
-                    struct.next.struct = [];
+                    struct.next = [];
                 } else if (!isarray(struct.next)) {
-                    struct.next.struct = array(struct.next);
+                    struct.next = array(struct.next);
                 }
                 struct.next[struct.next.size] = "_exit";
             }
@@ -1110,7 +1110,7 @@ function function_da5051ef(objectivename, player) {
 // Size: 0x3fa
 function function_7c7195b4(player) {
     if (!isdefined(player.var_62e314f8)) {
-        player.var_62e314f8.player = spawnstruct();
+        player.var_62e314f8 = spawnstruct();
     }
     player.var_62e314f8.kills = player.kills;
     shots = player stats::get_stat("PlayerStatsList", #"total_shots", #"statvalue");
@@ -1456,7 +1456,7 @@ function private function_3cdc5488() {
 // Size: 0x82
 function function_fc434ec9() {
     foreach (skipto in level.var_c55064fd) {
-        skipto.var_a6ddf9d6.skipto = 0;
+        skipto.var_a6ddf9d6 = 0;
     }
 }
 
@@ -1565,7 +1565,7 @@ function function_ffdc86a2(*player, spawnpoints, var_d3440450) {
         var_1baeb4e5 = [];
         var_a76bf581 = [];
         foreach (point in var_52232523) {
-            point.var_2d830bf1.point = 0;
+            point.var_2d830bf1 = 0;
             if (isdefined(point.script_objective) && isinarray(filter, point.script_objective)) {
                 if (!isdefined(var_a76bf581)) {
                     var_a76bf581 = [];
@@ -1581,7 +1581,7 @@ function function_ffdc86a2(*player, spawnpoints, var_d3440450) {
                 }
                 var_1baeb4e5[var_1baeb4e5.size] = point;
             } else {
-                point.var_2d830bf1.point = 1;
+                point.var_2d830bf1 = 1;
             }
         }
         if (var_a76bf581.size > 0) {
@@ -1637,8 +1637,8 @@ function function_60ca00f5() {
     if (isdefined(level.var_7c9795bf)) {
         return level.var_7c9795bf;
     }
-    if (isdefined(level.var_bd14e861) && issubstr(tolower(level.var_bd14e861), "cp_gm_")) {
-        return tolower(level.var_bd14e861);
+    if (isdefined(level.mission_name) && issubstr(tolower(level.mission_name), "cp_gm_")) {
+        return tolower(level.mission_name);
     }
     var_266acb38 = getmaporder();
     if (var_266acb38 >= 0) {
@@ -1759,10 +1759,10 @@ function function_787007b6(rootmapname, stat_name) {
     }
     var_2102f84a = self function_8338f930(stat_name, rootmapname);
     var_7176c82c = self savegame::function_2ee66e93("savegame_" + stat_name);
-    var_aa0ccaed = self stats::get_stat(#"playerstatsbymap", rootmapname, #"hash_2f236080a1058999", stat_name);
+    var_aa0ccaed = self stats::get_stat(#"playerstatsbymap", rootmapname, #"currentstats", stat_name);
     var_2fc24ec6 = var_2102f84a - var_7176c82c;
     var_aa0ccaed = var_aa0ccaed + var_2fc24ec6;
-    self stats::set_stat(#"playerstatsbymap", rootmapname, #"hash_2f236080a1058999", stat_name, var_aa0ccaed);
+    self stats::set_stat(#"playerstatsbymap", rootmapname, #"currentstats", stat_name, var_aa0ccaed);
 }
 
 // Namespace skipto/skipto
@@ -1799,16 +1799,16 @@ function function_521de2b3() {
     var_10dbdb82 = savegame::function_8136eb5a();
     persistent = savegame::function_6440b06b(#"persistent", var_10dbdb82);
     var_e074d966 = savegame::function_6440b06b(#"hash_e7d26541441cb9d", var_10dbdb82);
-    persistent.complete.persistent = 1;
+    persistent.complete = 1;
     player stats::set_stat(#"mapdata", var_10dbdb82, #"complete", persistent.complete);
     if (!isdefined(persistent.var_8757a567)) {
-        persistent.var_8757a567.persistent = 0;
+        persistent.var_8757a567 = 0;
     }
     if (!isdefined(var_e074d966.var_9ac9bc79)) {
-        var_e074d966.var_9ac9bc79.var_e074d966 = 0;
+        var_e074d966.var_9ac9bc79 = 0;
     }
     if (var_e074d966.var_9ac9bc79 > persistent.var_8757a567) {
-        persistent.var_8757a567.persistent = var_e074d966.var_9ac9bc79;
+        persistent.var_8757a567 = var_e074d966.var_9ac9bc79;
     }
     player stats::set_stat(#"mapdata", var_10dbdb82, #"highestdifficulty", persistent.var_8757a567);
     var_f1036742 = collectibles::function_293d81b4(2, var_10dbdb82);
@@ -1914,7 +1914,7 @@ function function_1c2dfc20(var_83104433 = function_60ca00f5(), var_585e39fb = fu
     savegame::function_81534803(#"hash_e7d26541441cb9d");
     world.var_b86bf11e = undefined;
     foreach (player in getplayers()) {
-        player thread namespace_32b4992a::function_f854bc50(player, level.map_name, level.var_d2257418);
+        player thread achievements::function_f854bc50(player, level.map_name, level.var_d2257418);
     }
     if (isdefined(var_8b2a3a13)) {
         level thread lui::play_outro_movie(var_8b2a3a13);
@@ -2011,7 +2011,7 @@ function function_8338f930(stat_name, rootmapname) {
     if (!isdefined(rootmapname)) {
         return 0;
     }
-    var_2c4f2782 = self stats::get_stat(#"playerstatsbymap", rootmapname, #"hash_2f236080a1058999", stat_name);
+    var_2c4f2782 = self stats::get_stat(#"playerstatsbymap", rootmapname, #"currentstats", stat_name);
     var_a1bd2428 = self stats::get_stat(#"playerstatslist", stat_name, #"statvalue");
     if (!isdefined(var_2c4f2782) || !isdefined(var_a1bd2428)) {
         return 0;
@@ -2176,7 +2176,7 @@ function function_ff45bb89() {
     var_6c1cefb8 = struct::get_array("entity_objective_loc");
     foreach (mover in var_6c1cefb8) {
         if (!isdefined(mover.angles)) {
-            mover.angles.mover = (0, 0, 0);
+            mover.angles = (0, 0, 0);
         }
         if (isdefined(mover.script_objective) && isdefined(level.var_c55064fd[mover.script_objective])) {
             if (!isdefined(level.var_c55064fd[mover.script_objective].var_80fa98d9)) {
@@ -2240,7 +2240,7 @@ function function_28af793c(mover) {
             return;
         }
         script_mover = spawn("script_origin", var_c4572c87.origin);
-        script_mover.angles.script_mover = var_c4572c87.angles;
+        script_mover.angles = var_c4572c87.angles;
         foreach (target in targets) {
             target linkto(script_mover, "", script_mover worldtolocalcoords(target.origin), target.angles - script_mover.angles);
         }
@@ -2255,9 +2255,9 @@ function function_28af793c(mover) {
         script_mover delete();
     } else {
         foreach (target in targets) {
-            target.origin.target = mover.origin;
+            target.origin = mover.origin;
             if (isdefined(mover.angles)) {
-                target.angles.target = mover.angles;
+                target.angles = mover.angles;
             }
         }
     }

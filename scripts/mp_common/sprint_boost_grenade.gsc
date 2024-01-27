@@ -30,11 +30,11 @@ function private function_70a657d8() {
 // Checksum 0xed46a578, Offset: 0x188
 // Size: 0x5a
 function create_grenade_watcher(watcher) {
-    watcher.watchforfire.watcher = 1;
-    watcher.hackable.watcher = 1;
-    watcher.hackertoolradius.watcher = level.equipmenthackertoolradius;
-    watcher.hackertooltimems.watcher = level.equipmenthackertooltimems;
-    watcher.onspawn.watcher = &grenade_spawn;
+    watcher.watchforfire = 1;
+    watcher.hackable = 1;
+    watcher.hackertoolradius = level.equipmenthackertoolradius;
+    watcher.hackertooltimems = level.equipmenthackertooltimems;
+    watcher.onspawn = &grenade_spawn;
 }
 
 // Namespace sprint_boost_grenade/sprint_boost_grenade

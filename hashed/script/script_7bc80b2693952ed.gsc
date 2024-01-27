@@ -225,9 +225,9 @@ function ramprobsetting(localclientnum, from, to, ramptime, key) {
 // Params 8, eflags: 0x2 linked
 // Checksum 0x97a959f9, Offset: 0x10a0
 // Size: 0xc4
-function function_1126eb8c(*currenttime, elapsedtime, *localclientnum, duration, var_2347e08e, var_991d3376, key, rob) {
+function function_1126eb8c(*currenttime, elapsedtime, *localclientnum, duration, stagefrom, stageto, key, rob) {
     percent = localclientnum / duration;
-    amount = var_991d3376 * percent + var_2347e08e * (1 - percent);
+    amount = stageto * percent + stagefrom * (1 - percent);
     if (isdefined(self) && self function_d2cb869e(rob)) {
         self function_78233d29(rob, "", key, amount);
     }
@@ -329,7 +329,7 @@ function private player_splatter(localclientnum) {
                 }
             }
             if (blur > 0 || opacity > 0) {
-                splatter.var_9e4cc220.splatter = 1;
+                splatter.var_9e4cc220 = 1;
                 local_player = function_5c10bd79(localclientnum);
                 if (!local_player function_d2cb869e(#"hash_4a1db95d40ab50d")) {
                     function_a837926b(localclientnum, #"hash_4a1db95d40ab50d");
@@ -346,7 +346,7 @@ function private player_splatter(localclientnum) {
                     function_4238734d(localclientnum, #"hash_1502559766b0e08f", "Opacity", opacity);
                 }
             } else if (is_true(splatter.var_9e4cc220)) {
-                splatter.var_9e4cc220.splatter = 0;
+                splatter.var_9e4cc220 = 0;
                 local_player = function_5c10bd79(localclientnum);
                 if (function_148ccc79(localclientnum, #"hash_4a1db95d40ab50d")) {
                     codestoppostfxbundlelocal(localclientnum, #"hash_4a1db95d40ab50d");
@@ -393,7 +393,7 @@ function private splatter_postfx(localclientnum, player, damage, var_cd141ca2, d
     hold_time = 0;
     splatter = getsplatter(localclientnum);
     if (dot && !death) {
-        splatter.var_90495387.splatter = getservertime(localclientnum);
+        splatter.var_90495387 = getservertime(localclientnum);
         blur = level.blood.var_de10c136.dot.blur;
         opacity = level.blood.var_de10c136.dot.opacity;
         var_587ce5b0 = level.blood.var_de10c136.dot.var_587ce5b0;
@@ -429,22 +429,22 @@ function private splatter_postfx(localclientnum, player, damage, var_cd141ca2, d
 // Params 6, eflags: 0x2 linked
 // Checksum 0xb55887b5, Offset: 0x2018
 // Size: 0x9c
-function rampvalue(localclientnum, var_2347e08e, var_991d3376, ramptime, var_cd141ca2, key) {
+function rampvalue(localclientnum, stagefrom, stageto, ramptime, var_cd141ca2, key) {
     level notify(localclientnum + "rampValue" + var_cd141ca2 + key);
     level endon(localclientnum + "rampValue" + var_cd141ca2 + key);
-    util::lerp_generic(localclientnum, ramptime, &function_441ef0ca, var_2347e08e, var_991d3376, var_cd141ca2, key);
+    util::lerp_generic(localclientnum, ramptime, &function_441ef0ca, stagefrom, stageto, var_cd141ca2, key);
 }
 
 // Namespace blood/namespace_5d18774f
 // Params 8, eflags: 0x2 linked
 // Checksum 0xe049b1f, Offset: 0x20c0
 // Size: 0x138
-function function_441ef0ca(*currenttime, elapsedtime, localclientnum, duration, var_2347e08e, var_991d3376, var_cd141ca2, key) {
+function function_441ef0ca(*currenttime, elapsedtime, localclientnum, duration, stagefrom, stageto, var_cd141ca2, key) {
     percent = 1;
     if (duration > 0) {
         percent = elapsedtime / duration;
     }
-    amount = var_991d3376 * percent + var_2347e08e * (1 - percent);
+    amount = stageto * percent + stagefrom * (1 - percent);
     splatter = getsplatter(localclientnum);
     if (!isdefined(splatter.splatters[var_cd141ca2][key])) {
         splatter.splatters[var_cd141ca2][key] = 0;
@@ -846,7 +846,7 @@ function function_8fe966f4(localclientnum, var_bfd952c7, new_stage, ramptime, po
 // Params 6, eflags: 0x2 linked
 // Checksum 0xe8c78c47, Offset: 0x3d40
 // Size: 0x26c
-function function_c0cdd1f2(localclientnum, var_2347e08e, var_991d3376, ramptime, key, postfx) {
+function function_c0cdd1f2(localclientnum, stagefrom, stageto, ramptime, key, postfx) {
     self endon(#"death", #"hash_6bf3273fdaffc859", #"hash_6d50f64fe99aed76");
     var_97b5c837 = "rampPostFx" + key + postfx;
     self notify(var_97b5c837);
@@ -861,7 +861,7 @@ function function_c0cdd1f2(localclientnum, var_2347e08e, var_991d3376, ramptime,
     elapsedtime = 0;
     while (elapsedtime < ramptime) {
         percent = elapsedtime / ramptime;
-        amount = var_991d3376 * percent + var_2347e08e * (1 - percent);
+        amount = stageto * percent + stagefrom * (1 - percent);
         if (is_true(self.blood_enabled) || is_true(self.var_a3b3e5cc)) {
             self function_116b95e5(postfx, key, amount);
         }
@@ -878,7 +878,7 @@ function function_c0cdd1f2(localclientnum, var_2347e08e, var_991d3376, ramptime,
         elapsedtime = currenttime - starttime;
     }
     if (is_true(self.blood_enabled) || is_true(self.var_a3b3e5cc)) {
-        self function_116b95e5(postfx, key, var_991d3376);
+        self function_116b95e5(postfx, key, stageto);
     }
 }
 
@@ -1149,11 +1149,11 @@ function private function_dd830dee(var_3942c692) {
 // Size: 0x8c
 function private function_162fe6ec(localclientnum) {
     splatter = spawnstruct();
-    splatter.splatters.splatter = [];
+    splatter.splatters = [];
     for (j = 0; j < 4; j++) {
         splatter.splatters[j] = [];
     }
-    splatter.var_120a7b2c.splatter = 0;
+    splatter.var_120a7b2c = 0;
     level.blood.var_de10c136.var_51036e02[localclientnum] = splatter;
 }
 

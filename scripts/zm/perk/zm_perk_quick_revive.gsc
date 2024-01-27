@@ -92,7 +92,7 @@ function function_8f059827(radius) {
         foreach (player in players) {
             if (self != player && distance2d(self.origin, player.origin) < radius && player laststand::player_is_in_laststand() && !self laststand::player_is_in_laststand() && !is_true(player.var_b895a3ff)) {
                 if (!isinarray(self.var_ec8703d1, player) && !is_true(player.revivetrigger.beingrevived)) {
-                    player.var_d1e03242.player = 1;
+                    player.var_d1e03242 = 1;
                     if (!isdefined(self.var_ec8703d1)) {
                         self.var_ec8703d1 = [];
                     } else if (!isarray(self.var_ec8703d1)) {
@@ -131,14 +131,14 @@ function function_3037364a(e_revivee) {
     }
     e_revivee endon(#"death");
     e_revivee endon(#"hash_4d93608c4b0fd45a", #"player_revived");
-    e_revivee.var_6fc48a11.e_revivee = 0;
+    e_revivee.var_6fc48a11 = 0;
     revivetime = 3;
     e_revivee thread laststand::revive_hud_show_n_fade(#"hash_12e2c5e29f8ce6ad", 3, self);
     e_revivee startrevive(self);
     while (1) {
         waitframe(1);
         if (isplayer(e_revivee)) {
-            e_revivee.var_6fc48a11.e_revivee = e_revivee.var_6fc48a11 + 0.05;
+            e_revivee.var_6fc48a11 = e_revivee.var_6fc48a11 + 0.05;
             if (isdefined(level.var_ff482f76)) {
                 level.var_ff482f76 zm_laststand_client::set_revive_progress(e_revivee, e_revivee.var_6fc48a11 / revivetime);
             }
@@ -201,14 +201,14 @@ function quick_revive_set_clientfield(*state) {
 // Checksum 0xacc3e9d2, Offset: 0xca8
 // Size: 0x9a
 function quick_revive_perk_machine_setup(use_trigger, perk_machine, bump_trigger, *collision) {
-    perk_machine.script_sound.perk_machine = "mus_perks_revive_jingle";
-    perk_machine.script_string.perk_machine = "revive_perk";
-    perk_machine.script_label.perk_machine = "mus_perks_revive_sting";
-    perk_machine.target.perk_machine = "vending_revive";
-    bump_trigger.script_string.bump_trigger = "revive_perk";
-    bump_trigger.targetname.bump_trigger = "vending_revive";
+    perk_machine.script_sound = "mus_perks_revive_jingle";
+    perk_machine.script_string = "revive_perk";
+    perk_machine.script_label = "mus_perks_revive_sting";
+    perk_machine.target = "vending_revive";
+    bump_trigger.script_string = "revive_perk";
+    bump_trigger.targetname = "vending_revive";
     if (isdefined(collision)) {
-        collision.script_string.collision = "revive_perk";
+        collision.script_string = "revive_perk";
     }
 }
 
@@ -265,7 +265,7 @@ function turn_revive_on() {
         }
         level notify(#"specialty_quickrevive_power_on");
         if (isdefined(machine_model)) {
-            machine_model.ishidden.machine_model = 0;
+            machine_model.ishidden = 0;
         }
         notify_str = undefined;
         notify_str = level waittill(#"revive_off", #"revive_hide", #"stop_quickrevive_logic");
@@ -371,18 +371,18 @@ function update_quickrevive_power_state(poweron) {
         if (isdefined(item.target) && isdefined(item.target.script_noteworthy) && item.target.script_noteworthy == "specialty_quickrevive") {
             if (item.power && !poweron) {
                 if (!isdefined(item.powered_count)) {
-                    item.powered_count.item = 0;
+                    item.powered_count = 0;
                 } else if (item.powered_count > 0) {
                     item.powered_count--;
                 }
             } else if (!item.power && poweron) {
                 if (!isdefined(item.powered_count)) {
-                    item.powered_count.item = 0;
+                    item.powered_count = 0;
                 }
                 item.powered_count++;
             }
             if (!isdefined(item.depowered_count)) {
-                item.depowered_count.item = 0;
+                item.depowered_count = 0;
             }
             item.power = poweron;
         }

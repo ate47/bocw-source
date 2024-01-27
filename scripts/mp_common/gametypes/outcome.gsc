@@ -21,11 +21,11 @@ function autoexec main() {
 // Size: 0x66
 function function_a1a81955() {
     outcome = spawnstruct();
-    outcome.flags.outcome = 0;
-    outcome.var_c1e98979.outcome = 0;
-    outcome.team.outcome = #"none";
-    outcome.players.outcome = [];
-    outcome.var_f79c6bfc.outcome = [];
+    outcome.flags = 0;
+    outcome.var_c1e98979 = 0;
+    outcome.team = #"none";
+    outcome.players = [];
+    outcome.var_f79c6bfc = [];
     return outcome;
 }
 
@@ -79,7 +79,7 @@ function function_2e00fa44(outcome) {
     flags = 0;
     foreach (var_b4a9554f in level.var_9b671c3c) {
         if (outcome flag::get(var_b4a9554f.flag)) {
-            flags = flags & var_b4a9554f.code_flag;
+            flags = flags | var_b4a9554f.code_flag;
         }
     }
     return flags;
@@ -150,7 +150,7 @@ function set_winner(outcome, team_or_player) {
     }
     if (isplayer(team_or_player)) {
         outcome.players[outcome.players.size] = team_or_player;
-        outcome.team.outcome = team_or_player.team;
+        outcome.team = team_or_player.team;
     } else {
         outcome.team = team_or_player;
     }

@@ -139,7 +139,7 @@ class cdoor {
         if (isdefined(self.var_a2f96f78.targetname)) {
             a_structs = struct::get_array(self.var_a2f96f78.targetname, "target");
             foreach (struct in a_structs) {
-                struct.c_door.struct = self;
+                struct.c_door = self;
             }
         }
     }
@@ -1041,7 +1041,7 @@ class cdoor {
                         self.m_e_trigger = t_use;
                         self.m_e_trigger.var_2dbb0ac1 = 1;
                     } else {
-                        self.m_e_trigger = spawn("trigger_radius_use", v_pos, 16384 & 4096, n_radius, self.m_n_trigger_height);
+                        self.m_e_trigger = spawn("trigger_radius_use", v_pos, 16384 | 4096, n_radius, self.m_n_trigger_height);
                     }
                     self.m_e_trigger triggerignoreteam();
                     self.m_e_trigger setvisibletoall();
@@ -1056,7 +1056,7 @@ class cdoor {
                 } else if (isdefined(t_radius_or_multiple)) {
                     self.m_e_trigger = t_radius_or_multiple;
                 } else {
-                    self.m_e_trigger = spawn("trigger_radius", v_pos, 16384 & 4096 & 16 & 512, n_radius, self.m_n_trigger_height);
+                    self.m_e_trigger = spawn("trigger_radius", v_pos, 16384 | 4096 | 16 | 512, n_radius, self.m_n_trigger_height);
                 }
                 self.m_e_trigger.c_door = self;
             }
@@ -1268,7 +1268,7 @@ class cdoor {
             if (isdefined(self.m_e_door.var_4101ccab)) {
                 var_8d684abd = self.m_e_door.var_4101ccab;
                 if (self.m_e_door function_1bd32235() & 536870912) {
-                    var_8d684abd = var_8d684abd & 536870912;
+                    var_8d684abd = var_8d684abd | 536870912;
                 }
                 self.m_e_door setcontents(var_8d684abd);
             }
@@ -1277,14 +1277,14 @@ class cdoor {
             self.m_e_door function_df3a1348(0, 0);
         } else {
             var_1ce7d3b0 = self.m_e_door function_1bd32235();
-            if (var_1ce7d3b0 & 1 & 131072 & 16) {
+            if (var_1ce7d3b0 & (1 | 131072 | 16)) {
                 var_8d684abd = var_1ce7d3b0;
                 if (!isdefined(self.m_e_door.var_4101ccab)) {
                     self.m_e_door.var_4101ccab = var_1ce7d3b0;
                 }
                 if (var_1ce7d3b0 & 1) {
                     var_8d684abd = var_1ce7d3b0 & ~1;
-                    var_8d684abd = var_8d684abd & 64 & 128 & 512 & 1024 & 4096 & 8192 & 65536 & 1048576;
+                    var_8d684abd = var_8d684abd | 64 | 128 | 512 | 1024 | 4096 | 8192 | 65536 | 1048576;
                 }
                 if (var_1ce7d3b0 & 16) {
                     var_8d684abd = var_8d684abd & ~16;
@@ -1534,27 +1534,27 @@ function init() {
 function setup_door_info(s_door_bundle, s_door_instance, c_door) {
     if (!isdefined(s_door_bundle)) {
         s_door_bundle = spawnstruct();
-        s_door_bundle.door_open_method.s_door_bundle = s_door_instance.door_open_method;
-        s_door_bundle.door_slide_horizontal.s_door_bundle = s_door_instance.door_slide_horizontal;
-        s_door_bundle.door_slide_horizontal_y.s_door_bundle = s_door_instance.door_slide_horizontal_y;
-        s_door_bundle.door_open_time.s_door_bundle = s_door_instance.door_open_time;
-        s_door_bundle.door_slide_open_units.s_door_bundle = s_door_instance.door_slide_open_units;
-        s_door_bundle.door_swing_angle.s_door_bundle = s_door_instance.door_swing_angle;
-        s_door_bundle.var_f2943dab.s_door_bundle = s_door_instance.var_f2943dab;
-        s_door_bundle.door_closes.s_door_bundle = s_door_instance.door_closes;
-        s_door_bundle.var_d37e8f3e.s_door_bundle = s_door_instance.var_d37e8f3e;
-        s_door_bundle.door_start_open.s_door_bundle = s_door_instance.door_start_open;
-        s_door_bundle.door_triggeroffsetx.s_door_bundle = s_door_instance.door_triggeroffset[0];
-        s_door_bundle.door_triggeroffsety.s_door_bundle = s_door_instance.door_triggeroffset[1];
-        s_door_bundle.door_triggeroffsetz.s_door_bundle = s_door_instance.door_triggeroffset[2];
-        s_door_bundle.door_trigger_radius.s_door_bundle = s_door_instance.door_trigger_radius;
-        s_door_bundle.door_start_sound.s_door_bundle = s_door_instance.door_start_sound;
-        s_door_bundle.door_loop_sound.s_door_bundle = s_door_instance.door_loop_sound;
-        s_door_bundle.door_stop_sound.s_door_bundle = s_door_instance.door_stop_sound;
-        s_door_bundle.door_animated_open_bundle.s_door_bundle = s_door_instance.door_animated_open_bundle;
-        s_door_bundle.door_animated_close_bundle.s_door_bundle = s_door_instance.door_animated_close_bundle;
-        s_door_bundle.var_4123e857.s_door_bundle = s_door_instance.var_4123e857;
-        s_door_bundle.var_b24cba18.s_door_bundle = s_door_instance.var_b24cba18;
+        s_door_bundle.door_open_method = s_door_instance.door_open_method;
+        s_door_bundle.door_slide_horizontal = s_door_instance.door_slide_horizontal;
+        s_door_bundle.door_slide_horizontal_y = s_door_instance.door_slide_horizontal_y;
+        s_door_bundle.door_open_time = s_door_instance.door_open_time;
+        s_door_bundle.door_slide_open_units = s_door_instance.door_slide_open_units;
+        s_door_bundle.door_swing_angle = s_door_instance.door_swing_angle;
+        s_door_bundle.var_f2943dab = s_door_instance.var_f2943dab;
+        s_door_bundle.door_closes = s_door_instance.door_closes;
+        s_door_bundle.var_d37e8f3e = s_door_instance.var_d37e8f3e;
+        s_door_bundle.door_start_open = s_door_instance.door_start_open;
+        s_door_bundle.door_triggeroffsetx = s_door_instance.door_triggeroffset[0];
+        s_door_bundle.door_triggeroffsety = s_door_instance.door_triggeroffset[1];
+        s_door_bundle.door_triggeroffsetz = s_door_instance.door_triggeroffset[2];
+        s_door_bundle.door_trigger_radius = s_door_instance.door_trigger_radius;
+        s_door_bundle.door_start_sound = s_door_instance.door_start_sound;
+        s_door_bundle.door_loop_sound = s_door_instance.door_loop_sound;
+        s_door_bundle.door_stop_sound = s_door_instance.door_stop_sound;
+        s_door_bundle.door_animated_open_bundle = s_door_instance.door_animated_open_bundle;
+        s_door_bundle.door_animated_close_bundle = s_door_instance.door_animated_close_bundle;
+        s_door_bundle.var_4123e857 = s_door_instance.var_4123e857;
+        s_door_bundle.var_b24cba18 = s_door_instance.var_b24cba18;
         s_door_bundle.model = s_door_instance;
         s_door_instance.door_open_method = undefined;
         s_door_instance.door_slide_horizontal = undefined;
@@ -1644,10 +1644,10 @@ function setup_door_info(s_door_bundle, s_door_instance, c_door) {
         n_door_closes = 0;
     }
     if (isdefined(s_door_instance.script_obstruction_cover_open)) {
-        c_door.var_fb8a6fcc.c_door = getnodearray(s_door_instance.script_obstruction_cover_open, "script_obstruction_cover_open");
+        c_door.var_fb8a6fcc = getnodearray(s_door_instance.script_obstruction_cover_open, "script_obstruction_cover_open");
     }
     if (isdefined(s_door_instance.script_obstruction_cover_close)) {
-        c_door.var_e1a5a27e.c_door = getnodearray(s_door_instance.script_obstruction_cover_close, "script_obstruction_cover_close");
+        c_door.var_e1a5a27e = getnodearray(s_door_instance.script_obstruction_cover_close, "script_obstruction_cover_close");
     }
     [[ c_door ]]->function_7d2c33c4(0);
     if (is_true(c_door.m_s_bundle.door_start_open)) {
@@ -1984,7 +1984,7 @@ function private function_e173262f() {
     if (isdefined(self.m_e_door.mdl_gameobject)) {
         waitresult = undefined;
         waitresult = self.m_e_door.mdl_gameobject waittill(#"gameobject_end_use_player");
-        waitresult.activator.waitresult = waitresult.player;
+        waitresult.activator = waitresult.player;
     } else if (isdefined(self.m_e_trigger)) {
         waitresult = undefined;
         waitresult = self.m_e_trigger waittill(#"trigger");
@@ -2212,7 +2212,7 @@ function function_dc98f943(c_door) {
     e_door setteam(waitresult.player.team);
     if (isdefined(c_door.var_a2f96f78) && is_true(c_door.var_a2f96f78.script_make_full_sentient)) {
         e_door makesentient();
-        e_door.canbemeleed.e_door = 0;
+        e_door.canbemeleed = 0;
     } else {
         e_door util::function_5d36c37a();
     }
@@ -2221,12 +2221,12 @@ function function_dc98f943(c_door) {
     e_door val::set(#"hash_25bedd86747e41e1", "takedamage", 1);
     e_door val::set(#"hash_25bedd86747e41e1", "allowdeath", 1);
     if (isdefined(c_door.m_s_bundle.registersidestepshouldstun)) {
-        e_door.health.e_door = c_door.m_s_bundle.registersidestepshouldstun;
+        e_door.health = c_door.m_s_bundle.registersidestepshouldstun;
     } else {
-        e_door.health.e_door = 10000;
+        e_door.health = 10000;
     }
     if (isdefined(c_door.m_s_bundle.var_8bed02db)) {
-        e_door.script_health.e_door = e_door.health;
+        e_door.script_health = e_door.health;
         e_door thread scene::init(c_door.m_s_bundle.var_8bed02db, e_door);
         e_door waittill(#"hash_18be12558bc58fe");
     } else {
@@ -2243,7 +2243,7 @@ function function_dc98f943(c_door) {
     }
     e_door val::reset(#"hash_25bedd86747e41e1", "takedamage");
     e_door val::reset(#"hash_25bedd86747e41e1", "allowdeath");
-    e_door.health.e_door = 0;
+    e_door.health = 0;
     if (isdefined(c_door.m_s_bundle.var_ffb77aca)) {
         playfxontag(c_door.m_s_bundle.var_ffb77aca, e_door, "tag_origin");
     }
@@ -3351,29 +3351,29 @@ function private function_1e18148c() {
     var_80778410 = (var_33468886.var_e9da41b9 - 5) * function_98d85e14(var_33468886.var_b25124c7, (0, 0, 0)) + vectorscale((0, 0, 1), 47);
     var_fdd44597 = rotatepoint(var_80778410, var_69ede289);
     level namespace_e10de4ad::function_63673f23(s_minigame, "lockpick");
-    s_minigame.angles.s_minigame = self.angles;
-    s_minigame.classname.s_minigame = "scriptbundle_minigame_lockpick";
-    s_minigame.modelscale.s_minigame = 1;
-    s_minigame.origin.s_minigame = self.origin + var_fdd44597;
-    s_minigame.require_look_at.s_minigame = 1;
-    s_minigame.var_4e0f62f3.s_minigame = "Exclusive";
-    s_minigame.script_delete.s_minigame = 1;
-    s_minigame.var_730d113a.s_minigame = self.var_730d113a;
-    s_minigame.script_enable_on_start.s_minigame = 1;
-    s_minigame.var_42c5101.s_minigame = self.var_42c5101;
-    s_minigame.var_5ebe1cc1.s_minigame = 0;
-    s_minigame.var_3b6bc456.s_minigame = self.var_3b6bc456;
-    s_minigame.script_team.s_minigame = isdefined(self.script_team) ? self.script_team : #"any";
-    s_minigame.scriptbundlename.s_minigame = #"minigame_lockpick";
-    s_minigame.var_5350598b.s_minigame = self;
-    s_minigame.ent.s_minigame = self.c_door.m_e_door;
+    s_minigame.angles = self.angles;
+    s_minigame.classname = "scriptbundle_minigame_lockpick";
+    s_minigame.modelscale = 1;
+    s_minigame.origin = self.origin + var_fdd44597;
+    s_minigame.require_look_at = 1;
+    s_minigame.var_4e0f62f3 = "Exclusive";
+    s_minigame.script_delete = 1;
+    s_minigame.var_730d113a = self.var_730d113a;
+    s_minigame.script_enable_on_start = 1;
+    s_minigame.var_42c5101 = self.var_42c5101;
+    s_minigame.var_5ebe1cc1 = 0;
+    s_minigame.var_3b6bc456 = self.var_3b6bc456;
+    s_minigame.script_team = isdefined(self.script_team) ? self.script_team : #"any";
+    s_minigame.scriptbundlename = #"minigame_lockpick";
+    s_minigame.var_5350598b = self;
+    s_minigame.ent = self.c_door.m_e_door;
     s_minigame.var_80778410 = var_80778410;
-    s_minigame.var_ac5b22fa.s_minigame = self;
+    s_minigame.var_ac5b22fa = self;
     if (isdefined(self.targetname)) {
-        s_minigame.target.s_minigame = self.targetname;
+        s_minigame.target = self.targetname;
     } else {
         self.targetname = "auto_assigned_name: " + s_minigame.str_identifier;
-        s_minigame.target.s_minigame = self.targetname;
+        s_minigame.target = self.targetname;
     }
     return s_minigame;
 }
@@ -3405,12 +3405,12 @@ function function_191c5a63() {
     var_754bedbb = offset[2] <= 0;
     var_c29308f4 = {#var_531201f1:&function_82f0f91b, #groups:#"doors", #var_9a27c4ee:1, #var_8ce60046:1, #var_be77841a:0, #var_3c8a8153:1, #var_5e83875a:30, #var_71b9f0c0:240};
     if (isdefined(self.var_d1c4f848.c_door.m_e_door)) {
-        var_c29308f4.var_27a7ecaa.var_c29308f4 = self.var_d1c4f848.c_door.m_e_door;
-        var_c29308f4.var_1e4cbecf.var_c29308f4 = self.var_d1c4f848.c_door.m_e_door;
+        var_c29308f4.var_27a7ecaa = self.var_d1c4f848.c_door.m_e_door;
+        var_c29308f4.var_1e4cbecf = self.var_d1c4f848.c_door.m_e_door;
     }
     if (is_true(close)) {
-        var_c29308f4.var_4d98c3ce.var_c29308f4 = #"hash_13649de3a914d713";
-        var_c29308f4.var_de6f0004.var_c29308f4 = self.m_s_bundle.var_4123e857;
+        var_c29308f4.var_4d98c3ce = #"hash_13649de3a914d713";
+        var_c29308f4.var_de6f0004 = self.m_s_bundle.var_4123e857;
         self.m_e_door thread [[ level.var_6a7fb742 ]](#"use", var_c29308f4);
     } else {
         hint = #"hash_7b4d7f70e8bef419";
@@ -3421,17 +3421,17 @@ function function_191c5a63() {
             }
         }
         var_c29308f4.var_4d98c3ce = hint;
-        var_c29308f4.var_de6f0004.var_c29308f4 = self.m_s_bundle.var_4123e857;
+        var_c29308f4.var_de6f0004 = self.m_s_bundle.var_4123e857;
         self.m_e_door thread [[ level.var_6a7fb742 ]](#"use", var_c29308f4);
         if (!is_true(self.var_d587661f) && !is_true(self.var_c4c3fa39)) {
-            var_c29308f4.var_4d98c3ce.var_c29308f4 = #"hash_33182658cd3b9acf";
-            var_c29308f4.var_de6f0004.var_c29308f4 = 0;
-            var_c29308f4.var_4ac77177.var_c29308f4 = 0;
-            var_c29308f4.var_9cc6a78e.var_c29308f4 = 60;
-            var_c29308f4.var_5e83875a.var_c29308f4 = 75;
-            var_c29308f4.var_531201f1.var_c29308f4 = &function_cd4bfc24;
-            var_c29308f4.complete_callback.var_c29308f4 = &function_65028b88;
-            var_c29308f4.var_8cff8c16.var_c29308f4 = &function_8d016934;
+            var_c29308f4.var_4d98c3ce = #"hash_33182658cd3b9acf";
+            var_c29308f4.var_de6f0004 = 0;
+            var_c29308f4.var_4ac77177 = 0;
+            var_c29308f4.var_9cc6a78e = 60;
+            var_c29308f4.var_5e83875a = 75;
+            var_c29308f4.var_531201f1 = &function_cd4bfc24;
+            var_c29308f4.complete_callback = &function_65028b88;
+            var_c29308f4.var_8cff8c16 = &function_8d016934;
             self.m_e_door thread [[ level.var_6a7fb742 ]](#"melee", var_c29308f4);
         }
     }

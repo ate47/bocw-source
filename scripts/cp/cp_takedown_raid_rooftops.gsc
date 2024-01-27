@@ -126,8 +126,8 @@ function function_f7dbd7e1() {
     player val::function_e681e68e(#"hash_145f61f7ef6685a5");
     victim = player.takedown.var_b020d18d[0];
     if (isdefined(victim)) {
-        victim.takedamage.victim = 1;
-        victim.var_ab101371.victim = #"hash_10e2d6b9f9bef6a3";
+        victim.takedamage = 1;
+        victim.var_ab101371 = #"hash_10e2d6b9f9bef6a3";
         player.takedown.victim[#"takedown"] = victim;
         player.takedown.scene[#"takedown"] = victim.var_ab101371;
         player.takedown.victim[#"body_shield"] = victim;
@@ -200,7 +200,7 @@ function function_fb0dffdf() {
     level scene::init("scene_tkd_hit2_roof_chase_enemy_spawn_03");
     level flag::wait_till("flag_enemy_before_rooftop");
     ai_spawned = spawner::simple_spawn_single("dude_before_roof");
-    ai_spawned.var_c681e4c1.ai_spawned = 1;
+    ai_spawned.var_c681e4c1 = 1;
     var_23811abd = snd::play("vox_cp_tdwn_04200_irg2_fuckingamerican_9b", [1:"j_head", 0:ai_spawned]);
     slide_guy1 = getspawnerarray("slide_guy1", "script_noteworthy");
     array::run_all(slide_guy1, &spawner::add_spawn_function, &function_4ae05934);
@@ -219,7 +219,7 @@ function function_fb0dffdf() {
     savegame::function_904f733(0);
     var_3d1b4310 = function_baa0011d("rootop_ledge_guys");
     foreach (guy in var_3d1b4310) {
-        guy.ignoresuppression.guy = 1;
+        guy.ignoresuppression = 1;
     }
     level thread function_8ddafa22(var_3d1b4310, "trig_rooftop_combat_wave3", "trig_colors_roof1", 1);
     level flag::wait_till("flag_rooftop_combat_wave3");
@@ -227,7 +227,7 @@ function function_fb0dffdf() {
     wait(2);
     var_158599d4 = function_baa0011d("rootop_wave3_guys");
     foreach (guy in var_158599d4) {
-        guy.ignoresuppression.guy = 1;
+        guy.ignoresuppression = 1;
     }
     level thread function_29f2624a("rooftop_wave3a", "trig_colors_roof3a", undefined, 1);
     level flag::wait_till("flag_colors_roof3a");
@@ -236,7 +236,7 @@ function function_fb0dffdf() {
     wait(2);
     var_70b55036 = function_baa0011d("rootop_wave4_guys");
     foreach (guy in var_70b55036) {
-        guy.ignoresuppression.guy = 1;
+        guy.ignoresuppression = 1;
     }
     level thread function_8ddafa22(var_70b55036, "trig_colors_roof4");
 }

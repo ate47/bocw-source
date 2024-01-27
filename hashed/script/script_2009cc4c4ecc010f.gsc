@@ -35,7 +35,7 @@ function private function_70a657d8() {
 // Checksum 0x8005dfb, Offset: 0x450
 // Size: 0x3c
 function private on_vehicle_spawned(localclientnum) {
-    if (!is_true(self.var_46439e18)) {
+    if (!is_true(self.isplayervehicle)) {
         return;
     }
     self function_4edde887(localclientnum);
@@ -131,7 +131,7 @@ function function_3ec2efae(*localclientnum) {
         return 0;
     }
     if (!isdefined(vehicle.settings)) {
-        vehicle.settings.vehicle = getscriptbundle(vehicle.scriptbundlesettings);
+        vehicle.settings = getscriptbundle(vehicle.scriptbundlesettings);
     }
     if (isdefined(vehicle.settings) && is_true(vehicle.settings.var_2627e80a)) {
         var_1861e0b1 = vehicle clientfield::get("toggle_horn_sound");

@@ -544,9 +544,9 @@ function function_294b258e(localclientnum, var_1280faf3) {
                 waitframe(1);
             }
             if (!isdefined(var_1280faf3.var_e5a9ba3)) {
-                var_1280faf3.var_e5a9ba3.var_1280faf3 = [];
+                var_1280faf3.var_e5a9ba3 = [];
             } else if (!isarray(var_1280faf3.var_e5a9ba3)) {
-                var_1280faf3.var_e5a9ba3.var_1280faf3 = array(var_1280faf3.var_e5a9ba3);
+                var_1280faf3.var_e5a9ba3 = array(var_1280faf3.var_e5a9ba3);
             }
             var_1280faf3.var_e5a9ba3[var_1280faf3.var_e5a9ba3.size] = var_8999a4bf;
             if (i <= 0) {
@@ -562,7 +562,7 @@ function function_294b258e(localclientnum, var_1280faf3) {
         level beam::launch(var_969f45da, "tag_origin", var_96ce3194, "tag_origin", "beam9_zm_laser_cannon_electrical", 1);
     }
     var_1280faf3 playsound(localclientnum, #"hash_3aaa4313132aa95f");
-    var_1280faf3.var_d1c055ab.var_1280faf3 = var_1280faf3 playloopsound(#"hash_71b2b4f6127ebf2b");
+    var_1280faf3.var_d1c055ab = var_1280faf3 playloopsound(#"hash_71b2b4f6127ebf2b");
 }
 
 // Namespace namespace_95c839d1/namespace_95c839d1
@@ -600,7 +600,7 @@ function function_ec6e5c0f(var_ce34262e, localclientnum, newval, var_6613bb76, v
             util::playfxontag(localclientnum, #"hash_6ebb188a3ac0122b", var_ce34262e, "tag_origin");
             var_ce34262e playsound(localclientnum, #"hash_19df6934105bd84");
         }
-        var_ce34262e.var_1734c720.var_ce34262e = util::playfxontag(localclientnum, str_fx, var_ce34262e, "tag_origin");
+        var_ce34262e.var_1734c720 = util::playfxontag(localclientnum, str_fx, var_ce34262e, "tag_origin");
     }
 }
 
@@ -910,7 +910,7 @@ function function_d2fdf8e2(localclientnum, s_start, var_834347de) {
             }
             level.var_75a7d6.var_ad9650c2[level.var_75a7d6.var_ad9650c2.size] = s_beam.var_e5a9ba3[localclientnum];
             if (!isdefined(s_beam.var_ce4d95b6)) {
-                s_beam.var_ce4d95b6.s_beam = playfx(localclientnum, #"hash_2f2a371f59e4de3b", s_beam.origin, anglestoforward(s_beam.angles), anglestoup(s_beam.angles));
+                s_beam.var_ce4d95b6 = playfx(localclientnum, #"hash_2f2a371f59e4de3b", s_beam.origin, anglestoforward(s_beam.angles), anglestoup(s_beam.angles));
                 if (!isdefined(level.var_75a7d6.var_a8442f09[localclientnum])) {
                     level.var_75a7d6.var_a8442f09[localclientnum] = [];
                 } else if (!isarray(level.var_75a7d6.var_a8442f09[localclientnum])) {

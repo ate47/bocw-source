@@ -265,7 +265,7 @@ function function_f7d9bc34() {
 // Size: 0x4c4
 function function_7fe60e9e(entity) {
     var_d86ae1c4 = spawnstruct();
-    var_d86ae1c4.favoriteenemy.var_d86ae1c4 = entity.favoriteenemy;
+    var_d86ae1c4.favoriteenemy = entity.favoriteenemy;
     blackboard::addblackboardevent("geg_spear_attack", var_d86ae1c4, randomintrange(8500, 10000));
     if (!isactor(entity) || !isdefined(entity.favoriteenemy)) {
         return;
@@ -316,7 +316,7 @@ function function_7fe60e9e(entity) {
 function private function_a1fce938() {
     foreach (var_b12a43cc in level.var_8c5f46f1) {
         if (!is_true(var_b12a43cc.in_use)) {
-            var_b12a43cc.in_use.var_b12a43cc = 1;
+            var_b12a43cc.in_use = 1;
             return var_b12a43cc;
         }
     }
@@ -373,14 +373,14 @@ function private function_7d162bd0(projectile, entity) {
         if (isdefined(var_b12a43cc)) {
             if (isdefined(projectile.origin)) {
                 projectile thread function_7e633e59();
-                var_b12a43cc.origin.var_b12a43cc = projectile.origin;
+                var_b12a43cc.origin = projectile.origin;
             } else if (isdefined(entity) && isdefined(entity.favoriteenemy)) {
-                var_b12a43cc.origin.var_b12a43cc = entity.favoriteenemy.origin;
+                var_b12a43cc.origin = entity.favoriteenemy.origin;
             }
             util::wait_network_frame();
             var_b12a43cc clientfield::increment("gegenees_spear_miss_cf");
             wait(0.25);
-            var_b12a43cc.in_use.var_b12a43cc = 0;
+            var_b12a43cc.in_use = 0;
         }
     } else if (isdefined(result.player) && result.player.birthtime < gettime()) {
         result.player clientfield::increment_to_player("gegenees_damage_cf");
@@ -429,7 +429,7 @@ function private function_d344063a(entity) {
 // Checksum 0x22509411, Offset: 0x21b8
 // Size: 0x16
 function private function_47fdaf31(entity) {
-    entity.var_d64b7af0.entity = 0;
+    entity.var_d64b7af0 = 0;
 }
 
 // Namespace namespace_514c8ebc/namespace_514c8ebc
@@ -477,8 +477,8 @@ function private function_75db4aba(entity) {
 // Checksum 0xd6215354, Offset: 0x2310
 // Size: 0x2a
 function private function_3133f922(entity) {
-    entity.var_7b0667d9.entity = 1;
-    entity.locked_enemy.entity = entity.favoriteenemy;
+    entity.var_7b0667d9 = 1;
+    entity.locked_enemy = entity.favoriteenemy;
 }
 
 // Namespace namespace_514c8ebc/namespace_514c8ebc
@@ -487,7 +487,7 @@ function private function_3133f922(entity) {
 // Size: 0x372
 function private function_d82de95f(entity) {
     var_d7c9d429 = spawnstruct();
-    var_d7c9d429.favoriteenemy.var_d7c9d429 = entity.locked_enemy;
+    var_d7c9d429.favoriteenemy = entity.locked_enemy;
     blackboard::addblackboardevent("geg_shield_attack", var_d7c9d429, randomintrange(2000, 3000));
     entity notify(#"gegenees_shield_blast");
     entity clientfield::increment("gegenees_shield_blast_effect");
@@ -522,7 +522,7 @@ function private function_d82de95f(entity) {
             }
         }
     }
-    entity.shielddamage.entity = 0;
+    entity.shielddamage = 0;
     entity.locked_enemy = undefined;
 }
 
@@ -547,7 +547,7 @@ function private function_60164697() {
 // Checksum 0xff09aed3, Offset: 0x2748
 // Size: 0x16
 function private function_564b9cf5(entity) {
-    entity.var_7b0667d9.entity = 0;
+    entity.var_7b0667d9 = 0;
 }
 
 // Namespace namespace_514c8ebc/namespace_514c8ebc
@@ -555,12 +555,12 @@ function private function_564b9cf5(entity) {
 // Checksum 0xe1a396e2, Offset: 0x2768
 // Size: 0xf0
 function private function_2301c0a7(entity, asmstatename) {
-    entity.track_enemy.entity = 1;
-    entity.var_1ec6ea5d.entity = gettime() + int(entity ai::function_9139c839().var_3422adfd * 1000);
-    entity.var_292d3a3b.entity = gettime() + int(entity ai::function_9139c839().var_5d9f2696 * 1000);
+    entity.track_enemy = 1;
+    entity.var_1ec6ea5d = gettime() + int(entity ai::function_9139c839().var_3422adfd * 1000);
+    entity.var_292d3a3b = gettime() + int(entity ai::function_9139c839().var_5d9f2696 * 1000);
     entity clientfield::set("gegenees_shield_guard_effect", 1);
     /#
-        entity.var_89b5e1e.entity = 0;
+        entity.var_89b5e1e = 0;
     #/
     animationstatenetworkutility::requeststate(entity, asmstatename);
     return 5;
@@ -574,7 +574,7 @@ function private function_c2155e05(entity, *asmstatename) {
     if (is_true(asmstatename.track_enemy)) {
         if (isdefined(asmstatename.var_292d3a3b)) {
             if (gettime() > asmstatename.var_292d3a3b) {
-                asmstatename.track_enemy.asmstatename = 0;
+                asmstatename.track_enemy = 0;
             }
         }
     }
@@ -600,10 +600,10 @@ function private function_15502a5(entity, *asmstatename) {
 // Checksum 0x46dd7e76, Offset: 0x2928
 // Size: 0x5a
 function private function_7505908b(entity) {
-    entity.var_7b0667d9.entity = 1;
+    entity.var_7b0667d9 = 1;
     entity clientfield::set("gegenees_spear_tip_tell_effect", 1);
-    entity.tell_fx.entity = 1;
-    entity.tell_off.entity = gettime() + 250;
+    entity.tell_fx = 1;
+    entity.tell_off = gettime() + 250;
 }
 
 // Namespace namespace_514c8ebc/namespace_514c8ebc
@@ -613,7 +613,7 @@ function private function_7505908b(entity) {
 function private function_9175e656(entity) {
     if (is_true(entity.tell_fx)) {
         if (gettime() > entity.tell_off) {
-            entity.tell_fx.entity = 0;
+            entity.tell_fx = 0;
             entity clientfield::set("gegenees_spear_tip_tell_effect", 0);
         }
     }
@@ -624,7 +624,7 @@ function private function_9175e656(entity) {
 // Checksum 0xac846785, Offset: 0x2a00
 // Size: 0x16
 function private function_c81af561(entity) {
-    entity.var_7b0667d9.entity = 0;
+    entity.var_7b0667d9 = 0;
 }
 
 // Namespace namespace_514c8ebc/namespace_514c8ebc
@@ -676,7 +676,7 @@ function private function_a953d80d(entity) {
     zombiesarray = array::filter(zombiesarray, 0, &function_3d752709, entity);
     foreach (zombie in zombiesarray) {
         zombie namespace_250e9486::setup_zombie_knockdown(self);
-        zombie.knockdown_type.zombie = "knockdown_shoved";
+        zombie.knockdown_type = "knockdown_shoved";
     }
 }
 

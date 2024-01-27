@@ -45,9 +45,9 @@ function create(var_9d80e6ef = "", var_e0bc0661 = 64, func_unitrigger_logic = &f
     } else {
         unitrigger_set_hint_string(s_unitrigger, var_9d80e6ef);
     }
-    s_unitrigger.related_parent.s_unitrigger = self;
+    s_unitrigger.related_parent = self;
     self.s_unitrigger = s_unitrigger;
-    s_unitrigger.in_zone.s_unitrigger = self.in_zone;
+    s_unitrigger.in_zone = self.in_zone;
     register_static_unitrigger(s_unitrigger, func_unitrigger_logic);
     return s_unitrigger;
 }
@@ -171,38 +171,38 @@ function private register_unitrigger_internal(unitrigger_stub, trigger_func) {
         unitrigger_stub.trigger_func = trigger_func;
     }
     if (!isdefined(unitrigger_stub.trigger_per_player)) {
-        unitrigger_stub.trigger_per_player.unitrigger_stub = 0;
+        unitrigger_stub.trigger_per_player = 0;
     }
     if (!isdefined(unitrigger_stub.var_8d306e51)) {
-        unitrigger_stub.var_8d306e51.unitrigger_stub = 0;
+        unitrigger_stub.var_8d306e51 = 0;
     }
     switch (unitrigger_stub.script_unitrigger_type) {
     case #"unitrigger_radius":
     case #"unitrigger_radius_use":
         if (!isdefined(unitrigger_stub.radius)) {
-            unitrigger_stub.radius.unitrigger_stub = 32;
+            unitrigger_stub.radius = 32;
         }
         if (!isdefined(unitrigger_stub.script_height)) {
-            unitrigger_stub.script_height.unitrigger_stub = 64;
+            unitrigger_stub.script_height = 64;
         }
-        unitrigger_stub.test_radius_sq.unitrigger_stub = (unitrigger_stub.radius + 15) * (unitrigger_stub.radius + 15);
+        unitrigger_stub.test_radius_sq = (unitrigger_stub.radius + 15) * (unitrigger_stub.radius + 15);
         break;
     case #"unitrigger_box_use":
     case #"unitrigger_box":
         if (!isdefined(unitrigger_stub.script_width)) {
-            unitrigger_stub.script_width.unitrigger_stub = 64;
+            unitrigger_stub.script_width = 64;
         }
         if (!isdefined(unitrigger_stub.script_length)) {
-            unitrigger_stub.script_length.unitrigger_stub = 64;
+            unitrigger_stub.script_length = 64;
         }
         if (!isdefined(unitrigger_stub.script_height)) {
-            unitrigger_stub.script_height.unitrigger_stub = 64;
+            unitrigger_stub.script_height = 64;
         }
         box_radius = length((unitrigger_stub.script_width / 2, unitrigger_stub.script_length / 2, unitrigger_stub.script_height / 2));
         if (!isdefined(unitrigger_stub.radius) || unitrigger_stub.radius < box_radius) {
             unitrigger_stub.radius = box_radius;
         }
-        unitrigger_stub.test_radius_sq.unitrigger_stub = (box_radius + 15) * (box_radius + 15);
+        unitrigger_stub.test_radius_sq = (box_radius + 15) * (box_radius + 15);
         break;
     case #"hash_defdefdefdefdef0":
         /#
@@ -221,7 +221,7 @@ function private register_unitrigger_internal(unitrigger_stub, trigger_func) {
         }
     }
     level._unitriggers.trigger_stubs[level._unitriggers.trigger_stubs.size] = unitrigger_stub;
-    unitrigger_stub.registered.unitrigger_stub = 1;
+    unitrigger_stub.registered = 1;
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
@@ -251,7 +251,7 @@ function unregister_unitrigger_internal(unitrigger_stub, var_a68f8009 = 0) {
     if (var_a68f8009) {
         zm_lockdown_util::function_6b9e848(unitrigger_stub);
     }
-    unitrigger_stub.registered.unitrigger_stub = 0;
+    unitrigger_stub.registered = 0;
     if (is_true(unitrigger_stub.trigger_per_player)) {
         if (isdefined(unitrigger_stub.playertrigger) && unitrigger_stub.playertrigger.size > 0) {
             keys = getarraykeys(unitrigger_stub.playertrigger);
@@ -262,7 +262,7 @@ function unregister_unitrigger_internal(unitrigger_stub, var_a68f8009 = 0) {
                     trigger delete();
                 }
             }
-            unitrigger_stub.playertrigger.unitrigger_stub = [];
+            unitrigger_stub.playertrigger = [];
         }
     } else if (isdefined(unitrigger_stub.trigger)) {
         trigger = unitrigger_stub.trigger;
@@ -348,7 +348,7 @@ function register_static_unitrigger(unitrigger_stub, trigger_func, recalculate_z
         return;
     }
     level._unitriggers.dynamic_stubs[level._unitriggers.dynamic_stubs.size] = unitrigger_stub;
-    unitrigger_stub.registered.unitrigger_stub = 1;
+    unitrigger_stub.registered = 1;
     thread function_3c84a41e(unitrigger_stub, undefined);
 }
 
@@ -367,7 +367,7 @@ function register_dyn_unitrigger(unitrigger_stub, trigger_func, *recalculate_zon
     }
     register_unitrigger_internal(trigger_func, recalculate_zone);
     level._unitriggers.dynamic_stubs[level._unitriggers.dynamic_stubs.size] = trigger_func;
-    trigger_func.registered.trigger_func = 1;
+    trigger_func.registered = 1;
     thread function_3c84a41e(trigger_func, undefined);
 }
 
@@ -407,10 +407,10 @@ function function_a7620bfb(n_radius = 64, var_4478092b = 1) {
         s_trigger_type = "unitrigger_radius";
     }
     s_unitrigger = spawnstruct();
-    s_unitrigger.origin.s_unitrigger = self.origin;
-    s_unitrigger.angles.s_unitrigger = self.angles;
+    s_unitrigger.origin = self.origin;
+    s_unitrigger.angles = self.angles;
     s_unitrigger.script_unitrigger_type = s_trigger_type;
-    s_unitrigger.cursor_hint.s_unitrigger = "HINT_NOICON";
+    s_unitrigger.cursor_hint = "HINT_NOICON";
     s_unitrigger.radius = n_radius;
     return s_unitrigger;
 }
@@ -426,10 +426,10 @@ function function_9267812e(n_width = 64, n_length = 64, n_height = 64, var_44780
         s_trigger_type = "unitrigger_box";
     }
     s_unitrigger = spawnstruct();
-    s_unitrigger.origin.s_unitrigger = self.origin;
-    s_unitrigger.angles.s_unitrigger = self.angles;
+    s_unitrigger.origin = self.origin;
+    s_unitrigger.angles = self.angles;
     s_unitrigger.script_unitrigger_type = s_trigger_type;
-    s_unitrigger.cursor_hint.s_unitrigger = "HINT_NOICON";
+    s_unitrigger.cursor_hint = "HINT_NOICON";
     s_unitrigger.script_height = n_height;
     s_unitrigger.script_width = n_width;
     s_unitrigger.script_length = n_length;
@@ -515,7 +515,7 @@ function function_413f9fcf(s_stub, ent, default_ref, cost) {
     if (isdefined(ent.script_hint)) {
         ref = ent.script_hint;
     }
-    s_stub.hint_string.s_stub = zm_utility::get_zombie_hint(ref);
+    s_stub.hint_string = zm_utility::get_zombie_hint(ref);
     s_stub.var_464566e7 = cost;
     function_91a18523(s_stub, &function_5d7dd248);
 }
@@ -535,14 +535,14 @@ function function_2547d31f(s_stub, var_404301da) {
 // Size: 0xac
 function function_89380dda(s_stub, var_840cc2c8 = 1) {
     if (var_840cc2c8 == 2) {
-        s_stub.require_look_toward.s_stub = 1;
-        s_stub.require_look_at.s_stub = 0;
+        s_stub.require_look_toward = 1;
+        s_stub.require_look_at = 0;
     } else if (var_840cc2c8 == 0) {
-        s_stub.require_look_toward.s_stub = 0;
-        s_stub.require_look_at.s_stub = 0;
+        s_stub.require_look_toward = 0;
+        s_stub.require_look_at = 0;
     } else {
-        s_stub.require_look_toward.s_stub = 0;
-        s_stub.require_look_at.s_stub = 1;
+        s_stub.require_look_toward = 0;
+        s_stub.require_look_at = 1;
     }
     function_91a18523(s_stub, &function_2565f0b0);
 }
@@ -553,7 +553,7 @@ function function_89380dda(s_stub, var_840cc2c8 = 1) {
 // Size: 0x54
 function unitrigger_force_per_player_triggers(s_stub, opt_on_off = 1) {
     s_stub.trigger_per_player = opt_on_off;
-    s_stub.var_8d306e51.s_stub = 0;
+    s_stub.var_8d306e51 = 0;
     reregister_unitrigger(s_stub);
 }
 
@@ -563,7 +563,7 @@ function unitrigger_force_per_player_triggers(s_stub, opt_on_off = 1) {
 // Size: 0x54
 function function_c4a5fdf5(s_stub, opt_on_off = 1) {
     s_stub.trigger_per_player = opt_on_off;
-    s_stub.var_8d306e51.s_stub = 0;
+    s_stub.var_8d306e51 = 0;
     reregister_unitrigger(s_stub);
 }
 
@@ -612,9 +612,9 @@ function function_91a18523(s_stub, var_a6b7a40d) {
 // Checksum 0x172f49d2, Offset: 0x21d8
 // Size: 0x52
 function private function_699abf2(s_stub, trigger) {
-    trigger.origin.trigger = s_stub unitrigger_origin();
+    trigger.origin = s_stub unitrigger_origin();
     if (isdefined(s_stub.angles)) {
-        trigger.angles.trigger = s_stub.angles;
+        trigger.angles = s_stub.angles;
     }
 }
 
@@ -894,7 +894,7 @@ function private function_522794c2(stub) {
             return;
         }
         trigger = check_and_build_trigger_from_unitrigger_stub(stub, self);
-        trigger.parent_player.trigger = self;
+        trigger.parent_player = self;
         trigger.stub = stub;
         if (!isdefined(self.var_13a302d2)) {
             self.var_13a302d2 = [];
@@ -942,7 +942,7 @@ function assess_and_apply_visibility(trigger, stub, player, default_keep) {
         if (!is_true(trigger.thread_running)) {
             trigger thread trigger_thread(trigger.stub.trigger_func);
         }
-        trigger.thread_running.trigger = 1;
+        trigger.thread_running = 1;
         if (isdefined(trigger.reassess_time) && trigger.reassess_time <= 0) {
             trigger.reassess_time = undefined;
         }
@@ -950,11 +950,11 @@ function assess_and_apply_visibility(trigger, stub, player, default_keep) {
         if (is_true(trigger.thread_running)) {
             keep_thread = 0;
         }
-        trigger.thread_running.trigger = 0;
+        trigger.thread_running = 0;
         if (isdefined(stub.inactive_reassess_time)) {
-            trigger.reassess_time.trigger = stub.inactive_reassess_time;
+            trigger.reassess_time = stub.inactive_reassess_time;
         } else {
-            trigger.reassess_time.trigger = 1;
+            trigger.reassess_time = 1;
         }
     }
     return keep_thread;
@@ -978,7 +978,7 @@ function private check_and_build_trigger_from_unitrigger_stub(stub, player) {
     }
     if (is_true(stub.trigger_per_player)) {
         if (!isdefined(stub.playertrigger)) {
-            stub.playertrigger.stub = [];
+            stub.playertrigger = [];
         }
         if (!isdefined(stub.playertrigger[player getentitynumber()])) {
             trigger = build_trigger_from_unitrigger_stub(stub, player);
@@ -1020,7 +1020,7 @@ function private build_trigger_from_unitrigger_stub(s_stub, player) {
     trigger = undefined;
     origin = s_stub unitrigger_origin();
     if (!isdefined(s_stub.script_unitrigger_type)) {
-        s_stub.script_unitrigger_type.s_stub = "unitrigger_radius_use";
+        s_stub.script_unitrigger_type = "unitrigger_radius_use";
     }
     switch (s_stub.script_unitrigger_type) {
     case #"unitrigger_radius":
@@ -1057,14 +1057,14 @@ function private build_trigger_from_unitrigger_stub(s_stub, player) {
             trigger setinvisibletoall();
             trigger setvisibletoplayer(player);
             if (!isdefined(s_stub.playertrigger)) {
-                s_stub.playertrigger.s_stub = [];
+                s_stub.playertrigger = [];
             }
             s_stub.playertrigger[player getentitynumber()] = trigger;
         } else {
             s_stub.trigger = trigger;
         }
         trigger.player = player;
-        trigger.thread_running.trigger = 0;
+        trigger.thread_running = 0;
     }
     return trigger;
 }
@@ -1074,12 +1074,12 @@ function private build_trigger_from_unitrigger_stub(s_stub, player) {
 // Checksum 0xe93053e4, Offset: 0x3b78
 // Size: 0x76
 function private copy_zombie_keys_onto_trigger(trigger, s_stub) {
-    trigger.script_noteworthy.trigger = s_stub.script_noteworthy;
-    trigger.targetname.trigger = s_stub.targetname;
-    trigger.target.trigger = s_stub.target;
-    trigger.weapon.trigger = s_stub.weapon;
-    trigger.clientfieldname.trigger = s_stub.clientfieldname;
-    trigger.usetime.trigger = s_stub.usetime;
+    trigger.script_noteworthy = s_stub.script_noteworthy;
+    trigger.targetname = s_stub.targetname;
+    trigger.target = s_stub.target;
+    trigger.weapon = s_stub.weapon;
+    trigger.clientfieldname = s_stub.clientfieldname;
+    trigger.usetime = s_stub.usetime;
 }
 
 // Namespace zm_unitrigger/zm_unitrigger
@@ -1246,7 +1246,7 @@ function private function_bb454fe6() {
                 trigger_still_valid = 0;
                 if (distance2dsquared(player_origin, origin) < dst) {
                     if (isdefined(trigger.reassess_time)) {
-                        trigger.reassess_time.trigger = trigger.reassess_time - 0.05;
+                        trigger.reassess_time = trigger.reassess_time - 0.05;
                         if (trigger.reassess_time > 0) {
                             continue;
                         }

@@ -69,17 +69,17 @@ function function_8b014c60(trap, var_7c56394 = 0) {
         assert(isdefined(trap.script_parameters), "<unknown string>");
     #/
     args = strtok(trap.script_parameters, ";");
-    trap.var_b7a27a3a.trap = 0;
+    trap.var_b7a27a3a = 0;
     if (isdefined(trap.script_int)) {
-        trap.var_b7a27a3a.trap = int(trap.script_int);
+        trap.var_b7a27a3a = int(trap.script_int);
     }
     switch (args[0]) {
     case #"velocity":
         /#
             assert(args.size >= 4, "<unknown string>");
         #/
-        trap.var_88eccffa.trap = (float(args[1]), float(args[2]), float(args[3]));
-        trap.type.trap = 0;
+        trap.var_88eccffa = (float(args[1]), float(args[2]), float(args[3]));
+        trap.type = 0;
         break;
     case #"hash_defdefdefdefdef0":
         /#
@@ -87,7 +87,7 @@ function function_8b014c60(trap, var_7c56394 = 0) {
         #/
         break;
     }
-    trap.script_model.trap = namespace_ec06fe4a::function_e22ae9b3(trap.origin, trap.model, trap.angles);
+    trap.script_model = namespace_ec06fe4a::function_e22ae9b3(trap.origin, trap.model, trap.angles);
     if (isdefined(trap.script_model)) {
         trap.script_model.targetname = "hazard";
         trap.script_model.var_fd5301f9 = "physicsbox";
@@ -136,7 +136,7 @@ function function_e74a3df6() {
             if (isdefined(trap.var_eb9d64bb) && time < trap.var_eb9d64bb) {
                 continue;
             }
-            trap.var_eb9d64bb.trap = time + 2000 + randomint(600);
+            trap.var_eb9d64bb = time + 2000 + randomint(600);
             if (!isdefined(trap.script_model)) {
                 activate = 0;
                 if (isdefined(trap.var_f8660931)) {
@@ -146,18 +146,18 @@ function function_e74a3df6() {
                     }
                 }
                 if (!activate) {
-                    trap.var_f8660931.trap = namespace_ec06fe4a::function_6eacecf5(trap.origin, 3200);
+                    trap.var_f8660931 = namespace_ec06fe4a::function_6eacecf5(trap.origin, 3200);
                     if (isdefined(trap.var_f8660931)) {
                         activate = 1;
                     }
                 }
                 if (activate) {
                     function_8b014c60(trap, 1);
-                    trap.var_eb9d64bb.trap = trap.var_eb9d64bb + 5000;
+                    trap.var_eb9d64bb = trap.var_eb9d64bb + 5000;
                     namespace_1e25ad94::function_f5f0c0f8("Paging IN physics box trap at:" + trap.origin);
                 }
             } else {
-                trap.var_f8660931.trap = namespace_ec06fe4a::function_6eacecf5(trap.origin, 3600);
+                trap.var_f8660931 = namespace_ec06fe4a::function_6eacecf5(trap.origin, 3600);
                 if (!isdefined(trap.var_f8660931)) {
                     trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
                     namespace_1e25ad94::function_f5f0c0f8("Paging out physics box trap at:" + trap.origin);
@@ -244,7 +244,7 @@ LOC_000000c8:
                         continue;
                     }
                     if (!is_true(guy.var_e66cd6fb)) {
-                        guy.var_f055aa9b.guy = 1;
+                        guy.var_f055aa9b = 1;
                         guy thread namespace_ec06fe4a::function_b4ff2191(self.var_88eccffa, 180, 0.3);
                         guy namespace_e32bb68::function_3a59ec34("zmb_ragdoll_launched");
                         guy namespace_e32bb68::function_3a59ec34("evt_doa_springboard");

@@ -251,9 +251,9 @@ function function_e3af0084() {
     self endon(#"disconnect");
     weapon = self getcurrentweapon();
     while (1) {
-        var_bd027dd9 = item_inventory::function_ec087745();
-        if (var_bd027dd9 != 32767) {
-            var_d2648452 = item_inventory::get_inventory_item(var_bd027dd9);
+        networkid = item_inventory::function_ec087745();
+        if (networkid != 32767) {
+            var_d2648452 = item_inventory::get_inventory_item(networkid);
             if (isdefined(var_d2648452.var_a8bccf69)) {
                 self clientfield::set_player_uimodel("pap_current", var_d2648452.var_a8bccf69);
             } else {
@@ -537,7 +537,7 @@ function function_4609e67c(machine, trigger) {
                 var_42a3b8a3 = self function_10e802ad();
                 if (isdefined(item) && !killstreaks::is_killstreak_weapon(weapon) && !var_9f40587a) {
                     var_2bbbcbe = function_d2b370d7(aat_name, var_c3317960);
-                    if (!var_2bbbcbe && !is_true(item.var_a6762160.var_6e136726) && var_3069fe3 && !aat::is_exempt_weapon(weapon) && var_42a3b8a3 != aat_name && item.var_bd027dd9 != 32767) {
+                    if (!var_2bbbcbe && !is_true(item.var_a6762160.var_6e136726) && var_3069fe3 && !aat::is_exempt_weapon(weapon) && var_42a3b8a3 != aat_name && item.networkid != 32767) {
                         var_4f0c684c = zm_aat::function_296cde87(aat_name);
                         if (zm_weapons::function_89e5e7dd(var_4f0c684c)) {
                             switch (var_4f0c684c) {
@@ -579,7 +579,7 @@ function function_4609e67c(machine, trigger) {
                     var_a8bccf69 = intpayload;
                     var_340eb1b = level.var_af0de66[var_a8bccf69];
                     var_3069fe3 = self zm_score::can_player_purchase(var_340eb1b);
-                    if (isdefined(item) && var_3069fe3 && var_a8bccf69 <= 3 && item.var_bd027dd9 != 32767 && !killstreaks::is_killstreak_weapon(weapon)) {
+                    if (isdefined(item) && var_3069fe3 && var_a8bccf69 <= 3 && item.networkid != 32767 && !killstreaks::is_killstreak_weapon(weapon)) {
                         if (var_a8bccf69 >= 3 && isdefined(self.var_2cf223c3) && self.var_2cf223c3 >= 2) {
                             self zm_stats::increment_challenge_stat(#"hash_72a7b15d4ee25e8a");
                         }

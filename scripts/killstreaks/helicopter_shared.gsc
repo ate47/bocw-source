@@ -84,21 +84,21 @@ function function_1c601b99() {
 // Size: 0x184
 function function_bff5c062(helicopter, attackingplayer) {
     helicopter killstreaks::configure_team_internal(attackingplayer, 1);
-    helicopter.team.helicopter = attackingplayer.team;
+    helicopter.team = attackingplayer.team;
     helicopter setteam(attackingplayer.team);
     helicopter setowner(attackingplayer);
     helicopter.owner = attackingplayer;
     hackedcallbackpost(attackingplayer);
-    helicopter.loopcount.helicopter = 0;
+    helicopter.loopcount = 0;
     if (isdefined(level.var_f1edf93f)) {
         helicopter notify(#"cancel_timeout");
         var_eb79e7c3 = [[ level.var_f1edf93f ]]();
         starttime = gettime();
         duration = int(var_eb79e7c3 * 1000);
-        helicopter.halftime.helicopter = starttime + duration * 0.5;
-        helicopter.killstreakendtime.helicopter = starttime + duration;
-        helicopter.endtime.helicopter = starttime + duration;
-        helicopter.var_478039e8.helicopter = 0;
+        helicopter.halftime = starttime + duration * 0.5;
+        helicopter.killstreakendtime = starttime + duration;
+        helicopter.endtime = starttime + duration;
+        helicopter.var_478039e8 = 0;
         helicopter notify(#"abort_goal");
     }
     attackingplayer thread watchforearlyleave(helicopter);
@@ -281,7 +281,7 @@ function function_5145edd2(helicopter, pilot, tag, anim, positionoffset) {
 function function_eca18f00(helicopter, var_84c9052b, var_1286d1f7, var_299b0ed5, var_2ab382c7) {
     if (isdefined(var_84c9052b)) {
         pilot = util::spawn_anim_model(#"hash_1918a027c5c6ec0c", helicopter.origin);
-        helicopter.var_89cf7991.helicopter = [];
+        helicopter.var_89cf7991 = [];
         if (isdefined(pilot)) {
             helicopter.var_89cf7991[0] = pilot;
             pilot thread function_5145edd2(helicopter, pilot, "tag_driver", var_84c9052b, var_299b0ed5);
@@ -320,31 +320,31 @@ function spawn_helicopter(owner, origin, angles, vehicledef, target_offset, kill
     chopper setowner(owner);
     chopper.owner = owner;
     chopper clientfield::set("enemyvehicle", 1);
-    chopper.attackers.chopper = [];
-    chopper.attackerdata.chopper = [];
-    chopper.attackerdamage.chopper = [];
-    chopper.flareattackerdamage.chopper = [];
-    chopper.var_ae052a1c.chopper = &function_69a7aed9;
-    chopper.destroyfunc.chopper = &destroyhelicopter;
-    chopper.hardpointtype.chopper = killstreakbundle.name;
+    chopper.attackers = [];
+    chopper.attackerdata = [];
+    chopper.attackerdamage = [];
+    chopper.flareattackerdamage = [];
+    chopper.var_ae052a1c = &function_69a7aed9;
+    chopper.destroyfunc = &destroyhelicopter;
+    chopper.hardpointtype = killstreakbundle.name;
     chopper.killstreak_id = killstreak_id;
-    chopper.pilotistalking.chopper = 0;
+    chopper.pilotistalking = 0;
     chopper setdrawinfrared(1);
-    chopper.allowcontinuedlockonafterinvis.chopper = 1;
-    chopper.soundmod.chopper = "heli";
-    chopper.targetname.chopper = "chopper";
-    chopper.team.chopper = owner.team;
+    chopper.allowcontinuedlockonafterinvis = 1;
+    chopper.soundmod = "heli";
+    chopper.targetname = "chopper";
+    chopper.team = owner.team;
     chopper setteam(owner.team);
-    chopper.var_c31213a5.chopper = 1;
+    chopper.var_c31213a5 = 1;
     if (!isdefined(target_offset)) {
         target_offset = (0, 0, 0);
     }
     chopper.target_offset = target_offset;
     target_set(chopper, target_offset);
-    chopper.var_54b19f55.chopper = 1;
+    chopper.var_54b19f55 = 1;
     chopper killstreaks::function_2b6aa9e8(killstreakbundle.var_d3413870);
-    chopper.overridevehicledamage.chopper = &function_11038a4a;
-    chopper.overridevehiclekilled.chopper = &function_a459fae8;
+    chopper.overridevehicledamage = &function_11038a4a;
+    chopper.overridevehiclekilled = &function_a459fae8;
     chopper setrotorspeed(1);
     return chopper;
 }
@@ -564,34 +564,34 @@ function heli_think(owner, startnode, heli_team, protectlocation, var_6b4047f4, 
     chopper killstreak_hacking::enable_hacking("helicopter_comlink", undefined, &hackedcallbackpost);
     chopper thread watchforemp();
     chopper thread killstreaks::player_killstreak_threat_tracking(chopper.hardpointtype, 0.866025);
-    chopper.requireddeathcount.chopper = owner.deathcount;
+    chopper.requireddeathcount = owner.deathcount;
     minigun_snd_ent = spawn("script_origin", chopper gettagorigin("tag_flash"));
     minigun_snd_ent linkto(chopper, "tag_flash", (0, 0, 0), (0, 0, 0));
     chopper.minigun_snd_ent = minigun_snd_ent;
     minigun_snd_ent thread autostopsound();
     chopper thread heli_existance();
-    chopper.reached_dest.chopper = 0;
+    chopper.reached_dest = 0;
     if (armored) {
-        chopper.maxhealth.chopper = level.heli_amored_maxhealth;
+        chopper.maxhealth = level.heli_amored_maxhealth;
     } else {
-        chopper.maxhealth.chopper = level.heli_maxhealth;
+        chopper.maxhealth = level.heli_maxhealth;
     }
-    chopper.numflares.chopper = 1;
-    chopper.flareoffset.chopper = vectorscale((0, 0, -1), 256);
-    chopper.waittime.chopper = level.heli_dest_wait;
-    chopper.loopcount.chopper = 0;
-    chopper.evasive.chopper = 0;
-    chopper.health_bulletdamageble.chopper = level.heli_armor;
-    chopper.health_evasive.chopper = level.heli_armor;
-    chopper.targeting_delay.chopper = level.heli_targeting_delay;
+    chopper.numflares = 1;
+    chopper.flareoffset = vectorscale((0, 0, -1), 256);
+    chopper.waittime = level.heli_dest_wait;
+    chopper.loopcount = 0;
+    chopper.evasive = 0;
+    chopper.health_bulletdamageble = level.heli_armor;
+    chopper.health_evasive = level.heli_armor;
+    chopper.targeting_delay = level.heli_targeting_delay;
     chopper.primarytarget = undefined;
     chopper.var_9ddb1534 = undefined;
     chopper.secondarytarget = undefined;
     chopper.attacker = undefined;
-    chopper.missile_ammo.chopper = level.heli_missile_max;
-    chopper.currentstate.chopper = "ok";
-    chopper.lastrocketfiretime.chopper = -1;
-    chopper.var_aa1e3902.chopper = 1;
+    chopper.missile_ammo = level.heli_missile_max;
+    chopper.currentstate = "ok";
+    chopper.lastrocketfiretime = -1;
+    chopper.var_aa1e3902 = 1;
     chopper thread heli_protect(startnode, protectlocation, var_6b4047f4, heli_team);
     chopper clientfield::set("heli_comlink_bootup_anim", 1);
     chopper namespace_f9b02f80::play_pilot_dialog_on_owner("arrive", var_6b4047f4, killstreak_id);
@@ -965,9 +965,9 @@ function cantargetplayer_missile(player, hardpointtype) {
     heli_forward_norm = anglestoforward(self.angles);
     heli_turret_point = heli_centroid + 144 * heli_forward_norm;
     if (!isdefined(player.lasthit)) {
-        player.lasthit.player = 0;
+        player.lasthit = 0;
     }
-    player.lasthit.player = self heliturretsighttrace(heli_turret_point, player, player.lasthit);
+    player.lasthit = self heliturretsighttrace(heli_turret_point, player, player.lasthit);
     if (player.lasthit != 0) {
         return 0;
     }
@@ -999,9 +999,9 @@ function cantargetdog_turret(dog) {
     heli_forward_norm = anglestoforward(self.angles);
     heli_turret_point = heli_centroid + 144 * heli_forward_norm;
     if (!isdefined(dog.lasthit)) {
-        dog.lasthit.dog = 0;
+        dog.lasthit = 0;
     }
-    dog.lasthit.dog = self heliturretdogtrace(heli_turret_point, dog, dog.lasthit);
+    dog.lasthit = self heliturretdogtrace(heli_turret_point, dog, dog.lasthit);
     if (dog.lasthit != 0) {
         return 0;
     }
@@ -1033,9 +1033,9 @@ function cantargetdog_missile(dog) {
     heli_forward_norm = anglestoforward(self.angles);
     heli_turret_point = heli_centroid + 144 * heli_forward_norm;
     if (!isdefined(dog.lasthit)) {
-        dog.lasthit.dog = 0;
+        dog.lasthit = 0;
     }
-    dog.lasthit.dog = self heliturretdogtrace(heli_turret_point, dog, dog.lasthit);
+    dog.lasthit = self heliturretdogtrace(heli_turret_point, dog, dog.lasthit);
     if (dog.lasthit != 0) {
         return 0;
     }
@@ -1282,8 +1282,8 @@ function heli_damage_monitor(hardpointtype) {
     self.damagetaken = 0;
     last_hit_vo = 0;
     hit_vo_spacing = 6000;
-    helicopter.hackedhealthupdatecallback.helicopter = &heli_hacked_health_update;
-    helicopter.hackedhealth.helicopter = killstreak_bundles::get_hacked_health(hardpointtype);
+    helicopter.hackedhealthupdatecallback = &heli_hacked_health_update;
+    helicopter.hackedhealth = killstreak_bundles::get_hacked_health(hardpointtype);
     if (!isdefined(self.attackerdata)) {
         self.attackers = [];
         self.attackerdata = [];
@@ -1448,9 +1448,9 @@ function heli_damage_monitor(hardpointtype) {
 // Size: 0x7c
 function init_active_camo() {
     heli = self;
-    heli.active_camo_damage.heli = 0;
-    heli.active_camo_disabled.heli = 0;
-    heli.camo_state.heli = 0;
+    heli.active_camo_damage = 0;
+    heli.active_camo_disabled = 0;
+    heli.camo_state = 0;
     heli_set_active_camo_state(1);
     if (isdefined(heli.flak_drone)) {
         heli.flak_drone flak_drone::setcamostate(1);
@@ -1471,8 +1471,8 @@ function heli_set_active_camo_state(state) {
         if (heli.camo_state == 1) {
             heli playsound(#"veh_hind_cloak_off");
         }
-        heli.camo_state.heli = 0;
-        heli.camo_state_switch_time.heli = gettime();
+        heli.camo_state = 0;
+        heli.camo_state_switch_time = gettime();
     } else if (state == 1) {
         if (heli.active_camo_disabled) {
             return;
@@ -1481,14 +1481,14 @@ function heli_set_active_camo_state(state) {
         if (heli.camo_state == 0) {
             heli playsound(#"veh_hind_cloak_on");
         }
-        heli.camo_state.heli = 1;
-        heli.camo_state_switch_time.heli = gettime();
+        heli.camo_state = 1;
+        heli.camo_state_switch_time = gettime();
         if (isdefined(heli.owner)) {
             if (isdefined(heli.play_camo_dialog) && heli.play_camo_dialog) {
                 heli namespace_f9b02f80::play_pilot_dialog_on_owner("activateCounter", "helicopter_comlink", self.killstreak_id);
-                heli.play_camo_dialog.heli = 0;
+                heli.play_camo_dialog = 0;
             } else if (!isdefined(heli.play_camo_dialog)) {
-                heli.play_camo_dialog.heli = 1;
+                heli.play_camo_dialog = 1;
             }
         }
     } else if (state == 2) {
@@ -1507,9 +1507,9 @@ function heli_set_active_camo_state(state) {
 function heli_active_camo_damage_update(damage) {
     self endon(#"death", #"crashing");
     heli = self;
-    heli.active_camo_damage.heli = heli.active_camo_damage + damage;
+    heli.active_camo_damage = heli.active_camo_damage + damage;
     if (heli.active_camo_damage > 100) {
-        heli.active_camo_disabled.heli = 1;
+        heli.active_camo_disabled = 1;
         heli thread heli_active_camo_damage_disable();
     } else {
         heli heli_set_active_camo_state(2);
@@ -1529,8 +1529,8 @@ function heli_active_camo_damage_disable() {
     heli endon(#"heli_active_camo_damage_disable");
     heli heli_set_active_camo_state(0);
     wait(10);
-    heli.active_camo_damage.heli = 0;
-    heli.active_camo_disabled.heli = 0;
+    heli.active_camo_damage = 0;
+    heli.active_camo_disabled = 0;
     heli heli_set_active_camo_state(1);
 }
 
@@ -2470,11 +2470,11 @@ function fire_missile(ishots = 1, etarget) {
         emissile = magicbullet(weapon, self gettagorigin(tags[nextmissiletag]), etarget.origin, etarget);
         emissile thread function_644ef4bf(etarget);
         emissile missile_settarget(etarget);
-        emissile.team.emissile = self.team;
-        emissile.var_30dc969d.emissile = 1;
+        emissile.team = self.team;
+        emissile.var_30dc969d = 1;
         heatseekingmissile::initlockfield(etarget);
         etarget heatseekingmissile::function_a439ae56(emissile, weapon, self.owner);
-        emissile.killcament.emissile = self;
+        emissile.killcament = self;
         self.lastrocketfiretime = gettime();
         if (i < ishots - 1) {
             wait(weaponshoottime);

@@ -1957,7 +1957,7 @@ function private on_localplayer_shutdown(localclientnum) {
         if (isdefined(codelocalplayer)) {
             if (localplayer == codelocalplayer) {
                 localplayer.postfx_igc_on = undefined;
-                localplayer.pstfx_world_construction.localplayer = 0;
+                localplayer.pstfx_world_construction = 0;
             }
         }
     }
@@ -2193,7 +2193,7 @@ function function_585fb738(str_scene, var_79fe29db) {
         return;
     }
     if (function_7aa3d2c6(str_scene) || get_player_count(str_scene) || is_true(var_79fe29db)) {
-        s_bundle.igc.s_bundle = 1;
+        s_bundle.igc = 1;
     }
 }
 
@@ -2420,9 +2420,9 @@ function spawn(arg1, arg2, arg3, arg4, b_test_run) {
         v_angles = arg4;
     }
     s_instance = spawnstruct();
-    s_instance.origin.s_instance = isdefined(v_origin) ? v_origin : (0, 0, 0);
-    s_instance.angles.s_instance = isdefined(v_angles) ? v_angles : (0, 0, 0);
-    s_instance.classname.s_instance = "scriptbundle_scene";
+    s_instance.origin = isdefined(v_origin) ? v_origin : (0, 0, 0);
+    s_instance.angles = isdefined(v_angles) ? v_angles : (0, 0, 0);
+    s_instance.classname = "scriptbundle_scene";
     s_instance.scriptbundlename = str_scenedef;
     struct::init(s_instance);
     s_instance init(str_scenedef, a_ents, undefined, b_test_run);
@@ -2478,12 +2478,12 @@ function get_scenedefs(str_type = "scene") {
 function function_8d8ec9b5(str_scenedef, a_str_shot_names, s_instance) {
     if (isdefined(s_instance)) {
         s_instance.a_str_shot_names = a_str_shot_names;
-        s_instance.var_418c40ac.s_instance = a_str_shot_names[a_str_shot_names.size - 1];
+        s_instance.var_418c40ac = a_str_shot_names[a_str_shot_names.size - 1];
     } else {
         s_scenedef = get_scenedef(str_scenedef);
         s_scenedef.a_str_shot_names = a_str_shot_names;
         level.var_1e798f4c[str_scenedef] = a_str_shot_names;
-        s_scenedef.var_418c40ac.s_scenedef = a_str_shot_names[a_str_shot_names.size - 1];
+        s_scenedef.var_418c40ac = a_str_shot_names[a_str_shot_names.size - 1];
     }
 }
 
@@ -2532,7 +2532,7 @@ function get_all_shot_names(str_scenedef, s_instance, var_8c4d2266 = 0) {
         }
     }
     s_scenedef.a_str_shot_names = a_shots;
-    s_scenedef.var_418c40ac.s_scenedef = a_shots[a_shots.size - 1];
+    s_scenedef.var_418c40ac = a_shots[a_shots.size - 1];
     if (var_8c4d2266) {
         arrayremovevalue(a_shots, "init");
     }
@@ -2572,7 +2572,7 @@ function function_c9770402(str_scenedef, s_instance) {
         return s_scenedef.var_418c40ac;
     }
     a_shots = get_all_shot_names(str_scenedef, s_instance);
-    s_scenedef.var_418c40ac.s_scenedef = a_shots[a_shots.size - 1];
+    s_scenedef.var_418c40ac = a_shots[a_shots.size - 1];
     return a_shots[a_shots.size - 1];
 }
 
@@ -2691,7 +2691,7 @@ function function_d1abba8b(str_scenedef, str_shot, str_mode, n_time, var_5b51581
     if (issubstr(str_mode, "play_from_time_normalized")) {
         if (var_5b51581a) {
             var_8b21886e.var_ef711d04 = str_shot;
-            var_8b21886e.var_3486c904.var_8b21886e = float(n_time);
+            var_8b21886e.var_3486c904 = float(n_time);
             return var_8b21886e;
         } else {
             var_f3f679dd = float(n_time) * function_12479eba(str_scenedef);
@@ -2700,7 +2700,7 @@ function function_d1abba8b(str_scenedef, str_shot, str_mode, n_time, var_5b51581
         if (var_5b51581a) {
             var_c74251a4 = function_8582657c(str_scenedef, str_shot);
             var_8b21886e.var_ef711d04 = str_shot;
-            var_8b21886e.var_3486c904.var_8b21886e = float(n_time) / var_c74251a4;
+            var_8b21886e.var_3486c904 = float(n_time) / var_c74251a4;
             return var_8b21886e;
         } else {
             var_f3f679dd = float(n_time);
@@ -2759,13 +2759,13 @@ function function_dde5f483(str_scenedef, n_elapsed_time) {
         var_68790830 = var_219aac3f + var_958bccd3;
         if (n_elapsed_time >= var_219aac3f && n_elapsed_time < var_68790830) {
             var_8b21886e.var_ef711d04 = str_shot;
-            var_8b21886e.var_3486c904.var_8b21886e = (n_elapsed_time - var_219aac3f) / var_958bccd3;
+            var_8b21886e.var_3486c904 = (n_elapsed_time - var_219aac3f) / var_958bccd3;
             return var_8b21886e;
         }
         var_7a2504a = var_7a2504a + var_958bccd3;
     }
-    var_8b21886e.var_ef711d04.var_8b21886e = a_shots[a_shots.size - 1];
-    var_8b21886e.var_3486c904.var_8b21886e = 0.9;
+    var_8b21886e.var_ef711d04 = a_shots[a_shots.size - 1];
+    var_8b21886e.var_3486c904 = 0.9;
     return var_8b21886e;
 }
 
@@ -2822,7 +2822,7 @@ function function_67e52759(str_scenedef, s_instance, var_8c4d2266, startsearch, 
 // Size: 0x474
 function play(arg1, arg2, arg3, b_test_run = 0, str_mode = "", n_time, params) {
     s_tracker = spawnstruct();
-    s_tracker.n_scene_count.s_tracker = 1;
+    s_tracker.n_scene_count = 1;
     if (self == level) {
         a_instances = [];
         if (isstring(arg1) || ishash(arg1)) {
@@ -2857,7 +2857,7 @@ function play(arg1, arg2, arg3, b_test_run = 0, str_mode = "", n_time, params) {
             }
             a_instances = _get_scene_instances(str_value, str_key, str_scenedef);
             if (a_instances.size) {
-                s_tracker.n_scene_count.s_tracker = a_instances.size;
+                s_tracker.n_scene_count = a_instances.size;
                 foreach (s_instance in a_instances) {
                     if (isdefined(s_instance)) {
                         if (!is_true(var_583db6f0)) {
@@ -2903,7 +2903,7 @@ function function_46546b5c(s_tracker, str_scenedef) {
             /#
                 iprintlnbold("<unknown string>" + str_scenedef);
             #/
-            s_tracker.var_93ec5dde.s_tracker = 1;
+            s_tracker.var_93ec5dde = 1;
             return 1;
         }
     }
@@ -2938,7 +2938,7 @@ function _play_on_self(s_tracker, arg1, arg2, arg3, b_test_run = 0, str_mode = "
             a_ents = arg3;
         }
     }
-    s_tracker.n_scene_count.s_tracker = 1;
+    s_tracker.n_scene_count = 1;
     if (!isdefined(str_shot) && isdefined(str_scenedef)) {
         str_shot = function_de6a7579(str_scenedef, str_mode, self);
     } else if (isdefined(str_shot)) {

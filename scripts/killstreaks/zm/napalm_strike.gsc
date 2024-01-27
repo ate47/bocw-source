@@ -98,13 +98,13 @@ function function_53a0e7ce(var_b004174a) {
         forward = vectornormalize(forward);
         forward = vectorscale(forward, 190);
         forward = (forward[0], forward[1], forward[2]);
-        s_location.origin.s_location = s_location.origin + forward;
+        s_location.origin = s_location.origin + forward;
         right = anglestoright((0, s_location.angles[1], 0));
         right = vectornormalize(right);
         right = vectorscale(right, 256);
-        s_location.origin.s_location = s_location.origin + right;
-        s_location.yaw.s_location = s_location.angles[1] + 90;
-        s_location.height.s_location = 1500 + 3400 + randomfloatrange(-200, 200);
+        s_location.origin = s_location.origin + right;
+        s_location.yaw = s_location.angles[1] + 90;
+        s_location.height = 1500 + 3400 + randomfloatrange(-200, 200);
         killstreak_id = self killstreakrules::killstreakstart("napalm_strike_zm", self.team, 0, 1);
         if (killstreak_id == -1) {
             self notify("napalm_strike_failed" + var_b004174a);
@@ -150,15 +150,15 @@ function private event_handler[grenade_fire] function_4776caf4(eventstruct) {
             }
             projectile waittill(#"stationary");
             if (isdefined(projectile)) {
-                projectile.angles.projectile = vectorscale((-1, 0, 1), 90);
+                projectile.angles = vectorscale((-1, 0, 1), 90);
             }
             wait(1);
             if (isdefined(projectile) && isplayer(self)) {
                 projectile thread function_5673c107();
                 s_location = spawnstruct();
-                s_location.origin.s_location = projectile.origin;
-                s_location.yaw.s_location = self.angles[1] + 90;
-                s_location.height.s_location = 1500 + 3400 + randomfloatrange(-200, 200);
+                s_location.origin = projectile.origin;
+                s_location.yaw = self.angles[1] + 90;
+                s_location.height = 1500 + 3400 + randomfloatrange(-200, 200);
                 killstreak_id = self killstreakrules::killstreakstart("napalm_strike_zm", self.team, 0, 1);
                 if (killstreak_id == -1) {
                     self notify(#"napalm_strike_failed");

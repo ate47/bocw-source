@@ -287,7 +287,7 @@ function function_765cb1de(var_f4d3512f, player) {
     self linkto(self.anchor);
     self.anchor thread zm_utility::anchor_delete_failsafe(self);
     if (!isdefined(spot.angles)) {
-        spot.angles.spot = (0, 0, 0);
+        spot.angles = (0, 0, 0);
     }
     self ghost();
     self.anchor moveto(spot.origin, 0.05);
@@ -334,7 +334,7 @@ function function_3b2d308f(player, zone) {
     }
     if (var_e50a845c.size > 0) {
         var_ca2de8ef = array::random(var_e50a845c);
-        var_ca2de8ef.script_string.var_ca2de8ef = "find_flesh";
+        var_ca2de8ef.script_string = "find_flesh";
         foreach (player in level.players) {
             if (sighttracepassed(player geteye(), var_ca2de8ef.origin + vectorscale((0, 0, 1), 72), 0, player)) {
                 return undefined;
@@ -362,15 +362,15 @@ function function_f1ec5df(player, direction, var_ef0ae03b) {
     } else {
         var_c99b5df = function_34c58d6(player.origin, direction, 1000, 1);
         player.var_34b4e1a = var_c99b5df;
-        player.var_2bb1c157.player = gettime();
+        player.var_2bb1c157 = gettime();
     }
     if (var_c99b5df.size > 0) {
-        foreach (var_8cc7a4e in var_c99b5df) {
+        foreach (regioninfo in var_c99b5df) {
             foreach (zone in level.zones) {
                 if (var_ef0ae03b && !zm_zonemgr::zone_is_enabled(zone.name)) {
                     continue;
                 }
-                if (isinarray(zone.nodes, var_8cc7a4e.regionnode)) {
+                if (isinarray(zone.nodes, regioninfo.regionnode)) {
                     if (!isdefined(var_9521d651)) {
                         var_9521d651 = [];
                     } else if (!isarray(var_9521d651)) {
@@ -478,10 +478,10 @@ function private create_hudelem(y, x) {
             x = 0;
         }
         var_aa917a22 = newdebughudelem();
-        var_aa917a22.alignx.var_aa917a22 = "<unknown string>";
-        var_aa917a22.horzalign.var_aa917a22 = "<unknown string>";
-        var_aa917a22.aligny.var_aa917a22 = "<unknown string>";
-        var_aa917a22.vertalign.var_aa917a22 = "<unknown string>";
+        var_aa917a22.alignx = "<unknown string>";
+        var_aa917a22.horzalign = "<unknown string>";
+        var_aa917a22.aligny = "<unknown string>";
+        var_aa917a22.vertalign = "<unknown string>";
         var_aa917a22.y = y;
         var_aa917a22.x = x;
         return var_aa917a22;
@@ -518,9 +518,9 @@ function function_766c006e(debug_info) {
             return (debug_info.name + "<unknown string>");
         }
         time_left = max(self.var_d18573c9 - gettime(), 0);
-        var_7c831c6e = debug_info.name + "<unknown string>" + (time_left < 0 ? "<unknown string>" : "<unknown string>");
-        var_7c831c6e = var_7c831c6e + time_left;
-        return var_7c831c6e;
+        returnstring = debug_info.name + "<unknown string>" + (time_left < 0 ? "<unknown string>" : "<unknown string>");
+        returnstring = returnstring + time_left;
+        return returnstring;
     #/
 }
 
@@ -594,7 +594,7 @@ function function_af31614c() {
                         } else {
                             var_aa917a22 = create_hudelem(current_y);
                             var_aa917a22.debug_info = var_dc66eccb;
-                            var_aa917a22.target.var_aa917a22 = level;
+                            var_aa917a22.target = level;
                             if (!isdefined(level.var_3d62686d)) {
                                 level.var_3d62686d = [];
                             } else if (!isarray(level.var_3d62686d)) {
@@ -671,14 +671,14 @@ function function_497aad8f() {
                 }
                 var_c99b5df = function_34c58d6(player.origin, playerdirection, 1000, 1);
                 if (var_c99b5df.size > 0) {
-                    foreach (var_8cc7a4e in var_c99b5df) {
+                    foreach (regioninfo in var_c99b5df) {
                         foreach (zone in level.zones) {
-                            if (isinarray(zone.nodes, var_8cc7a4e.regionnode)) {
-                                print3d(var_8cc7a4e.regionnode.origin + vectorscale((0, 0, 1), 12), var_8cc7a4e.regionnode.targetname, (0, 1, 0), 1, 1, 1);
+                            if (isinarray(zone.nodes, regioninfo.regionnode)) {
+                                print3d(regioninfo.regionnode.origin + vectorscale((0, 0, 1), 12), regioninfo.regionnode.targetname, (0, 1, 0), 1, 1, 1);
                                 break;
                             }
                         }
-                        sphere(var_8cc7a4e.contactpoint, 5, (0, 1, 0), 1, 0, 12, 1);
+                        sphere(regioninfo.contactpoint, 5, (0, 1, 0), 1, 0, 12, 1);
                     }
                 }
             }

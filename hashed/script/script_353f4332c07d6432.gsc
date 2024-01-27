@@ -329,7 +329,7 @@ function function_ae62fd54(var_a276c861) {
     if (var_a276c861) {
         return;
     }
-    var_3a49bb20.b_reward.var_3a49bb20 = function_ef40fc60();
+    var_3a49bb20.b_reward = function_ef40fc60();
 }
 
 // Namespace namespace_958b287a/namespace_958b287a
@@ -789,7 +789,7 @@ function function_f93fd05a(b_return) {
             break;
         }
         door clientfield::set("" + #"hash_e4552abd8fb5506", 1);
-        door.var_9171844e.door = array::random(var_f07d7204);
+        door.var_9171844e = array::random(var_f07d7204);
         arrayremovevalue(var_f07d7204, door.var_9171844e, 0);
         door thread function_3d06cff4();
     }
@@ -888,7 +888,7 @@ function function_5ed2e797(var_854257c7, var_2cdf7adf, var_9171844e, b_return) {
             }
         }
     }
-    var_53313495.var_f3a3c164.var_53313495 = 1;
+    var_53313495.var_f3a3c164 = 1;
     var_53313495.scriptmodel solid();
     var_53313495 thread function_d81ba0fe();
     var_53313495 util::delay(50, undefined, &function_3076a002);
@@ -902,7 +902,7 @@ function function_e0b9a88e(var_2cdf7adf) {
     var_222825ae = struct::get("club_reward_ww_" + var_2cdf7adf);
     point = function_4ba8fde(#"ww_mega_barrel_fullauto_copycat_t9_item_sr");
     var_4d1c70f5 = item_drop::drop_item(0, getweapon(#"hash_386308ed987052a4"), 1, 0, point.id, var_222825ae.origin, var_222825ae.angles, 0);
-    var_4d1c70f5.var_dd21aec2.var_4d1c70f5 = 1 & 16;
+    var_4d1c70f5.var_dd21aec2 = 1 | 16;
     var_4d1c70f5 moveto(var_222825ae.origin - vectorscale((0, 0, 1), 62), 10, 0.05, 0.05);
 }
 
@@ -1313,8 +1313,8 @@ function function_db3d8ac(mdl_target, var_d8f1c196, var_411cc8d4) {
     level endon(#"hash_7c8a1026b606ae9c");
     mdl_target ghost();
     util::wait_network_frame();
-    mdl_target.origin.mdl_target = var_d8f1c196.origin;
-    mdl_target.angles.mdl_target = var_d8f1c196.angles + vectorscale((0, 0, 1), 90);
+    mdl_target.origin = var_d8f1c196.origin;
+    mdl_target.angles = var_d8f1c196.angles + vectorscale((0, 0, 1), 90);
     util::wait_network_frame();
     mdl_target show();
     mdl_target rotateroll(-90, 0.5);

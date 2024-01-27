@@ -76,7 +76,7 @@ function function_1085f2e2(oldval, newval) {
         newtarget = getentbynum(var_b80b7c6b);
         if (isplayer(newtarget)) {
             if (!isdefined(newtarget.var_50575fa8)) {
-                newtarget.var_50575fa8.newtarget = [];
+                newtarget.var_50575fa8 = [];
             }
             newtarget.var_50575fa8[var_f6536836] = 1;
             self.var_a7185e8f[var_b80b7c6b] = -1;
@@ -245,11 +245,11 @@ function function_a7e7bda0() {
             }
             if (function_796e0334(player)) {
                 if (!isdefined(player.var_7241f6e3)) {
-                    player.var_7241f6e3.player = gettime() + 100;
+                    player.var_7241f6e3 = gettime() + 100;
                 }
                 if (player.var_7241f6e3 <= gettime()) {
                     player clientfield::set_player_uimodel("huditems.isExposedOnMinimap", 1);
-                    player.var_99811216.player = gettime() + 100;
+                    player.var_99811216 = gettime() + 100;
                 }
             } else if (isdefined(player.var_99811216) && gettime() > player.var_99811216 && player clientfield::get_player_uimodel("huditems.isExposedOnMinimap")) {
                 player clientfield::set_player_uimodel("huditems.isExposedOnMinimap", 0);

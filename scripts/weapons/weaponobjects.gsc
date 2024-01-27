@@ -219,13 +219,13 @@ function private function_db765b94() {
 // Size: 0x72
 function private setupretrievablewatcher(watcher) {
     if (!isdefined(watcher.onspawnretrievetriggers)) {
-        watcher.onspawnretrievetriggers.watcher = &function_23b0aea9;
+        watcher.onspawnretrievetriggers = &function_23b0aea9;
     }
     if (!isdefined(watcher.ondestroyed)) {
-        watcher.ondestroyed.watcher = &ondestroyed;
+        watcher.ondestroyed = &ondestroyed;
     }
     if (!isdefined(watcher.pickup)) {
-        watcher.pickup.watcher = &function_db70257;
+        watcher.pickup = &function_db70257;
     }
 }
 
@@ -342,7 +342,7 @@ function waitanddetonate(object, delay, attacker, weapon) {
         if (is_true(object.armed_detonation_wait)) {
             return;
         }
-        object.armed_detonation_wait.object = 1;
+        object.armed_detonation_wait = 1;
         while (!is_true(object.proximity_deployed)) {
             waitframe(1);
         }
@@ -350,11 +350,11 @@ function waitanddetonate(object, delay, attacker, weapon) {
     if (is_true(object.detonated)) {
         return;
     }
-    object.detonated.object = 1;
+    object.detonated = 1;
     object notify(#"detonating");
     isempdetonated = isdefined(weapon) && weapon.isemp;
     if (isempdetonated && object.weapon.doempdestroyfx) {
-        object.stun_fx.object = 1;
+        object.stun_fx = 1;
         randangle = randomfloat(360);
         playfx(level._equipment_emp_destroy_fx, object.origin + vectorscale((0, 0, 1), 5), (cos(randangle), sin(randangle), 0), anglestoup(object.angles));
         empfxdelay = 1.1;
@@ -399,7 +399,7 @@ function waitandfizzleout(object, delay) {
     if (isdefined(object.detonated) && object.detonated == 1) {
         return;
     }
-    object.detonated.object = 1;
+    object.detonated = 1;
     object notify(#"fizzleout");
     if (delay > 0) {
         wait(delay);
@@ -469,16 +469,16 @@ function addweaponobject(watcher, weapon_instance, weapon) {
     if (!isdefined(weapon)) {
         weapon = watcher.weapon;
     }
-    weapon_instance.owner.weapon_instance = self;
-    weapon_instance.detonated.weapon_instance = 0;
+    weapon_instance.owner = self;
+    weapon_instance.detonated = 0;
     weapon_instance.weapon = weapon;
     if (isdefined(watcher.ondamage)) {
         weapon_instance thread [[ watcher.ondamage ]](watcher);
     } else {
         weapon_instance thread weaponobjectdamage(watcher);
     }
-    weapon_instance.ownergetsassist.weapon_instance = watcher.ownergetsassist;
-    weapon_instance.destroyedbyemp.weapon_instance = watcher.destroyedbyemp;
+    weapon_instance.ownergetsassist = watcher.ownergetsassist;
+    weapon_instance.destroyedbyemp = watcher.destroyedbyemp;
     if (isdefined(watcher.onspawn)) {
         weapon_instance thread [[ watcher.onspawn ]](watcher, self);
     }
@@ -551,7 +551,7 @@ function function_b9ade2b() {
     weapon_instance = self;
     weapon_instance endon(#"death");
     weapon_instance waittill(#"picked_up");
-    weapon_instance.playdialog.weapon_instance = 0;
+    weapon_instance.playdialog = 0;
     weapon_instance delete();
 }
 
@@ -968,32 +968,32 @@ function private createweaponobjectwatcher(weaponname, ownerteam) {
         weaponobjectwatcher = spawnstruct();
         self.weaponobjectwatcherarray[self.weaponobjectwatcherarray.size] = weaponobjectwatcher;
         weaponobjectwatcher.name = weaponname;
-        weaponobjectwatcher.type.weaponobjectwatcher = "use";
-        weaponobjectwatcher.weapon.weaponobjectwatcher = getweapon(weaponname);
-        weaponobjectwatcher.watchforfire.weaponobjectwatcher = 0;
-        weaponobjectwatcher.hackable.weaponobjectwatcher = 0;
-        weaponobjectwatcher.altdetonate.weaponobjectwatcher = 0;
-        weaponobjectwatcher.detectable.weaponobjectwatcher = 1;
-        weaponobjectwatcher.stuntime.weaponobjectwatcher = 0;
-        weaponobjectwatcher.timeout.weaponobjectwatcher = getweapon(weaponname).lifetime;
-        weaponobjectwatcher.destroyedbyemp.weaponobjectwatcher = 1;
+        weaponobjectwatcher.type = "use";
+        weaponobjectwatcher.weapon = getweapon(weaponname);
+        weaponobjectwatcher.watchforfire = 0;
+        weaponobjectwatcher.hackable = 0;
+        weaponobjectwatcher.altdetonate = 0;
+        weaponobjectwatcher.detectable = 1;
+        weaponobjectwatcher.stuntime = 0;
+        weaponobjectwatcher.timeout = getweapon(weaponname).lifetime;
+        weaponobjectwatcher.destroyedbyemp = 1;
         weaponobjectwatcher.activatesound = undefined;
         weaponobjectwatcher.ignoredirection = undefined;
         weaponobjectwatcher.immediatedetonation = undefined;
-        weaponobjectwatcher.deploysound.weaponobjectwatcher = weaponobjectwatcher.weapon.firesound;
-        weaponobjectwatcher.deploysoundplayer.weaponobjectwatcher = weaponobjectwatcher.weapon.firesoundplayer;
-        weaponobjectwatcher.pickupsound.weaponobjectwatcher = weaponobjectwatcher.weapon.pickupsound;
-        weaponobjectwatcher.pickupsoundplayer.weaponobjectwatcher = weaponobjectwatcher.weapon.pickupsoundplayer;
-        weaponobjectwatcher.altweapon.weaponobjectwatcher = weaponobjectwatcher.weapon.altweapon;
-        weaponobjectwatcher.ownergetsassist.weaponobjectwatcher = 0;
-        weaponobjectwatcher.playdestroyeddialog.weaponobjectwatcher = 1;
-        weaponobjectwatcher.deleteonkillbrush.weaponobjectwatcher = 1;
-        weaponobjectwatcher.deleteondifferentobjectspawn.weaponobjectwatcher = 1;
-        weaponobjectwatcher.enemydestroy.weaponobjectwatcher = 0;
-        weaponobjectwatcher.deleteonplayerspawn.weaponobjectwatcher = weaponobjectwatcher.weapon.dieonrespawn;
-        weaponobjectwatcher.ignorevehicles.weaponobjectwatcher = 0;
-        weaponobjectwatcher.ignoreai.weaponobjectwatcher = 0;
-        weaponobjectwatcher.activationdelay.weaponobjectwatcher = 0;
+        weaponobjectwatcher.deploysound = weaponobjectwatcher.weapon.firesound;
+        weaponobjectwatcher.deploysoundplayer = weaponobjectwatcher.weapon.firesoundplayer;
+        weaponobjectwatcher.pickupsound = weaponobjectwatcher.weapon.pickupsound;
+        weaponobjectwatcher.pickupsoundplayer = weaponobjectwatcher.weapon.pickupsoundplayer;
+        weaponobjectwatcher.altweapon = weaponobjectwatcher.weapon.altweapon;
+        weaponobjectwatcher.ownergetsassist = 0;
+        weaponobjectwatcher.playdestroyeddialog = 1;
+        weaponobjectwatcher.deleteonkillbrush = 1;
+        weaponobjectwatcher.deleteondifferentobjectspawn = 1;
+        weaponobjectwatcher.enemydestroy = 0;
+        weaponobjectwatcher.deleteonplayerspawn = weaponobjectwatcher.weapon.dieonrespawn;
+        weaponobjectwatcher.ignorevehicles = 0;
+        weaponobjectwatcher.ignoreai = 0;
+        weaponobjectwatcher.activationdelay = 0;
         weaponobjectwatcher.onspawn = undefined;
         weaponobjectwatcher.onspawnfx = undefined;
         weaponobjectwatcher.onspawnretrievetriggers = undefined;
@@ -1001,13 +1001,13 @@ function private createweaponobjectwatcher(weaponname, ownerteam) {
         weaponobjectwatcher.onstun = undefined;
         weaponobjectwatcher.onstunfinished = undefined;
         weaponobjectwatcher.ondestroyed = undefined;
-        weaponobjectwatcher.onfizzleout.weaponobjectwatcher = &weaponobjectfizzleout;
+        weaponobjectwatcher.onfizzleout = &weaponobjectfizzleout;
         weaponobjectwatcher.var_34400f36 = undefined;
         weaponobjectwatcher.onsupplementaldetonatecallback = undefined;
         weaponobjectwatcher.ontimeout = undefined;
         weaponobjectwatcher.var_994b472b = undefined;
         if (!isdefined(weaponobjectwatcher.objectarray)) {
-            weaponobjectwatcher.objectarray.weaponobjectwatcher = [];
+            weaponobjectwatcher.objectarray = [];
         }
     }
     resetweaponobjectwatcher(weaponobjectwatcher, ownerteam);
@@ -1020,8 +1020,8 @@ function private createweaponobjectwatcher(weaponname, ownerteam) {
 // Size: 0x5e
 function private createuseweaponobjectwatcher(weaponname, ownerteam) {
     weaponobjectwatcher = createweaponobjectwatcher(weaponname, ownerteam);
-    weaponobjectwatcher.type.weaponobjectwatcher = "use";
-    weaponobjectwatcher.onspawn.weaponobjectwatcher = &onspawnuseweaponobject;
+    weaponobjectwatcher.type = "use";
+    weaponobjectwatcher.onspawn = &onspawnuseweaponobject;
     return weaponobjectwatcher;
 }
 
@@ -1031,13 +1031,13 @@ function private createuseweaponobjectwatcher(weaponname, ownerteam) {
 // Size: 0x126
 function private createproximityweaponobjectwatcher(weaponname, ownerteam) {
     weaponobjectwatcher = createweaponobjectwatcher(weaponname, ownerteam);
-    weaponobjectwatcher.type.weaponobjectwatcher = "proximity";
-    weaponobjectwatcher.onspawn.weaponobjectwatcher = &onspawnproximityweaponobject;
+    weaponobjectwatcher.type = "proximity";
+    weaponobjectwatcher.onspawn = &onspawnproximityweaponobject;
     detectionconeangle = getdvarint(#"scr_weaponobject_coneangle", 70);
-    weaponobjectwatcher.detectiondot.weaponobjectwatcher = cos(detectionconeangle);
-    weaponobjectwatcher.detectionmindist.weaponobjectwatcher = getdvarint(#"scr_weaponobject_mindist", 20);
-    weaponobjectwatcher.detectiongraceperiod.weaponobjectwatcher = getdvarfloat(#"scr_weaponobject_graceperiod", 0.6);
-    weaponobjectwatcher.detonateradius.weaponobjectwatcher = getdvarint(#"scr_weaponobject_radius", 180);
+    weaponobjectwatcher.detectiondot = cos(detectionconeangle);
+    weaponobjectwatcher.detectionmindist = getdvarint(#"scr_weaponobject_mindist", 20);
+    weaponobjectwatcher.detectiongraceperiod = getdvarfloat(#"scr_weaponobject_graceperiod", 0.6);
+    weaponobjectwatcher.detonateradius = getdvarint(#"scr_weaponobject_radius", 180);
     return weaponobjectwatcher;
 }
 
@@ -1511,9 +1511,9 @@ function weaponobjectdetectionmovable(*ownerteam) {
 // Checksum 0xce70fed0, Offset: 0x50a8
 // Size: 0x66
 function seticonpos(item, icon, heightincrease) {
-    icon.x.icon = item.origin[0];
-    icon.y.icon = item.origin[1];
-    icon.z.icon = item.origin[2] + heightincrease;
+    icon.x = item.origin[0];
+    icon.y = item.origin[1];
+    icon.z = item.origin[2] + heightincrease;
 }
 
 // Namespace weaponobjects/weaponobjects
@@ -1532,7 +1532,7 @@ function weaponobjectdetectiontrigger_wait(ownerteam) {
 // Size: 0x12c
 function weaponobjectdetectiontrigger(*ownerteam) {
     trigger = spawn("trigger_radius", self.origin - vectorscale((0, 0, 1), 128), 0, 512, 256);
-    trigger.detectid.trigger = "trigger" + gettime() + randomint(1000000);
+    trigger.detectid = "trigger" + gettime() + randomint(1000000);
     trigger sethintlowpriority(1);
     self waittill(#"death", #"hacked", #"detonating");
     trigger notify(#"end_detection");
@@ -1857,7 +1857,7 @@ function hackerremoveweapon(weapon_instance) {
 // Checksum 0x12470770, Offset: 0x62a0
 // Size: 0xd0
 function proximityweaponobject_createdamagearea(watcher) {
-    damagearea = spawn("trigger_radius", self.origin + (0, 0, 0 - watcher.detonateradius), 4096 & 16384 & level.aitriggerspawnflags & level.vehicletriggerspawnflags, watcher.detonateradius, watcher.detonateradius * 2);
+    damagearea = spawn("trigger_radius", self.origin + (0, 0, 0 - watcher.detonateradius), 4096 | 16384 | level.aitriggerspawnflags | level.vehicletriggerspawnflags, watcher.detonateradius, watcher.detonateradius * 2);
     damagearea enablelinkto();
     damagearea linkto(self);
     self thread deleteondeath(damagearea);
@@ -2265,9 +2265,9 @@ function function_ac7c2bf9(*params) {
     for (watcher = 0; watcher < self.weaponobjectwatcherarray.size; watcher++) {
         weaponobjectwatcher = spawnstruct();
         watchers[watchers.size] = weaponobjectwatcher;
-        weaponobjectwatcher.objectarray.weaponobjectwatcher = [];
+        weaponobjectwatcher.objectarray = [];
         if (isdefined(self.weaponobjectwatcherarray[watcher].objectarray)) {
-            weaponobjectwatcher.objectarray.weaponobjectwatcher = self.weaponobjectwatcherarray[watcher].objectarray;
+            weaponobjectwatcher.objectarray = self.weaponobjectwatcherarray[watcher].objectarray;
         }
     }
     waitframe(1);
@@ -2439,7 +2439,7 @@ function function_42e13419(pweapons, weapon) {
 // Size: 0xa0
 function function_3eca329f(pweapons, weapon) {
     foreach (pweapon in pweapons) {
-        if (pweapon.var_fc3be15e == weapon.var_fc3be15e) {
+        if (pweapon.clipindex == weapon.clipindex) {
             return pweapon;
         }
     }
@@ -2976,7 +2976,7 @@ function onspawnproximitygrenadeweaponobject(watcher, owner) {
         owner stats::function_e24eec31(self.weapon, #"used", 1);
     }
     if (isdefined(self.weapon) && self.weapon.proximitydetonation > 0) {
-        watcher.detonateradius.watcher = self.weapon.proximitydetonation;
+        watcher.detonateradius = self.weapon.proximitydetonation;
     }
     onspawnproximityweaponobject(watcher, owner);
     self function_931041f8(self.owner);
@@ -3027,7 +3027,7 @@ function function_931041f8(owner) {
             return;
         }
         if (!isdefined(owner.activeproximitygrenades)) {
-            owner.activeproximitygrenades.owner = [];
+            owner.activeproximitygrenades = [];
         } else {
             arrayremovevalue(owner.activeproximitygrenades, undefined);
         }

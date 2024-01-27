@@ -85,16 +85,16 @@ function function_bff5c062(listening_device, attackingplayer) {
 // Checksum 0xd4c56b5e, Offset: 0x5e8
 // Size: 0x1c2
 function function_2111cf41(watcher) {
-    watcher.watchforfire.watcher = 1;
-    watcher.activatesound.watcher = #"wpn_claymore_alert";
-    watcher.hackable.watcher = 1;
-    watcher.hackertoolradius.watcher = level.equipmenthackertoolradius;
-    watcher.hackertooltimems.watcher = level.equipmenthackertooltimems;
-    watcher.ownergetsassist.watcher = 1;
+    watcher.watchforfire = 1;
+    watcher.activatesound = #"wpn_claymore_alert";
+    watcher.hackable = 1;
+    watcher.hackertoolradius = level.equipmenthackertoolradius;
+    watcher.hackertooltimems = level.equipmenthackertooltimems;
+    watcher.ownergetsassist = 1;
     watcher.ignoredirection = undefined;
-    watcher.immediatedetonation.watcher = 1;
-    watcher.immunespecialty.watcher = "specialty_immunetriggerbetty";
-    watcher.var_8eda8949.watcher = (0, 0, 0);
+    watcher.immediatedetonation = 1;
+    watcher.immunespecialty = "specialty_immunetriggerbetty";
+    watcher.var_8eda8949 = (0, 0, 0);
     var_167da8cf = getweapon(#"listening_device");
     if (isdefined(var_167da8cf.customsettings)) {
         var_e6fbac16 = getscriptbundle(var_167da8cf.customsettings);
@@ -102,14 +102,14 @@ function function_2111cf41(watcher) {
             assert(isdefined(var_e6fbac16));
         #/
     }
-    watcher.stuntime.watcher = 1;
-    watcher.ondetonatecallback.watcher = &function_ad011f90;
-    watcher.onfizzleout.watcher = &weaponobjects::weaponobjectfizzleout;
-    watcher.onspawn.watcher = &function_8bdff396;
-    watcher.stun.watcher = &weaponobjects::weaponstun;
-    watcher.var_994b472b.watcher = &function_7b26afb;
-    watcher.var_10efd558.watcher = "switched_field_upgrade";
-    watcher.ondestroyed.watcher = &function_8af865a6;
+    watcher.stuntime = 1;
+    watcher.ondetonatecallback = &function_ad011f90;
+    watcher.onfizzleout = &weaponobjects::weaponobjectfizzleout;
+    watcher.onspawn = &function_8bdff396;
+    watcher.stun = &weaponobjects::weaponstun;
+    watcher.var_994b472b = &function_7b26afb;
+    watcher.var_10efd558 = "switched_field_upgrade";
+    watcher.ondestroyed = &function_8af865a6;
 }
 
 // Namespace listening_device/listening_device
@@ -192,11 +192,11 @@ function function_23fef963() {
             continue;
         }
         var_48b7953 = spawnstruct();
-        var_48b7953.origin.var_48b7953 = device.origin;
-        var_48b7953.angles.var_48b7953 = device.angles;
-        var_48b7953.owner.var_48b7953 = device.owner;
-        var_48b7953.isjammed.var_48b7953 = device.isjammed;
-        var_48b7953.ishacked.var_48b7953 = device.ishacked;
+        var_48b7953.origin = device.origin;
+        var_48b7953.angles = device.angles;
+        var_48b7953.owner = device.owner;
+        var_48b7953.isjammed = device.isjammed;
+        var_48b7953.ishacked = device.ishacked;
         if (!isdefined(var_bf170232)) {
             var_bf170232 = [];
         } else if (!isarray(var_bf170232)) {
@@ -263,7 +263,7 @@ function function_d993c135() {
                 }
                 if (var_92c9c085 > var_daf9a500) {
                     player.var_3ab8ccc9 = now;
-                    player.var_5550488a.player = player.origin;
+                    player.var_5550488a = player.origin;
                 }
             } else {
                 if (var_92c9c085 < var_24fcb2d) {
@@ -271,7 +271,7 @@ function function_d993c135() {
                 }
                 if (var_92c9c085 > 62500) {
                     player.var_e5a19e3d = now;
-                    player.var_50703880.player = player.origin;
+                    player.var_50703880 = player.origin;
                 } else {
                     minspeedsq = var_af989ae4;
                     if (player hasperk(#"specialty_sixthsensejammer")) {
@@ -279,7 +279,7 @@ function function_d993c135() {
                     }
                     if (var_92c9c085 > minspeedsq) {
                         player.var_3ab8ccc9 = now;
-                        player.var_5550488a.player = player.origin;
+                        player.var_5550488a = player.origin;
                     }
                 }
             }
@@ -329,10 +329,10 @@ function function_f38fc2a8(data) {
     var_dcea0aa7 = function_a3f6cdac(range);
     var_d6ff0766 = 0;
     if (!isdefined(data.var_a73da413)) {
-        data.var_a73da413.data = 0;
+        data.var_a73da413 = 0;
     }
     if (!isdefined(data.var_c23ee432)) {
-        data.var_c23ee432.data = 0;
+        data.var_c23ee432 = 0;
     }
     if (data.time - data.var_a73da413 < 6000) {
         var_d6ff0766 = bundle.var_a8e88375 * range;
@@ -352,7 +352,7 @@ function function_f38fc2a8(data) {
         var_a8d3770f = data.var_dbbf805a;
     }
     if (!isdefined(data.var_9c16cd22)) {
-        data.var_9c16cd22.data = 0;
+        data.var_9c16cd22 = 0;
     }
     if (data.time - data.var_9c16cd22 < 6000) {
         var_f57f785b = bundle.var_abea5dd8 * range;
@@ -385,7 +385,7 @@ function function_f38fc2a8(data) {
         if (bundle.var_b060dd0c < 180) {
             var_fa4e3cfc = vectornormalize((disttovictim[0], disttovictim[1], 0));
             if (!isdefined(var_48b7953.var_fa4e3cfc)) {
-                var_48b7953.var_2a5aebad.var_48b7953 = anglestoforward((0, var_48b7953.angles[1], 0));
+                var_48b7953.var_2a5aebad = anglestoforward((0, var_48b7953.angles[1], 0));
             }
             dot = vectordot(var_fa4e3cfc, var_48b7953.var_2a5aebad);
             jumpcmp(dot > cos(bundle.var_b060dd0c)) LOC_00000600;
@@ -414,15 +414,15 @@ function function_f38fc2a8(data) {
                 }
                 if (attacker.var_fa9604fd !== 1) {
                     if (!isdefined(attacker.var_90df1936)) {
-                        attacker.var_90df1936.attacker = 0;
+                        attacker.var_90df1936 = 0;
                     }
                     if (data.time - attacker.var_90df1936 < 4000) {
                         scoreevents::processscoreevent(#"hash_293351f0ab09e08e", attacker, victim, var_52b5458f);
                         attacker contracts::increment_contract(#"hash_3ae2c7adca1852f3");
                         attacker stats::function_622feb0d(var_52b5458f.name, #"hash_7bf29fa438d54aad", 1);
-                        attacker.var_fa9604fd.attacker = 1;
+                        attacker.var_fa9604fd = 1;
                     }
-                    attacker.var_90df1936.attacker = data.time;
+                    attacker.var_90df1936 = data.time;
                 }
                 var_a07d912f = 0;
             }

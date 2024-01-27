@@ -234,7 +234,7 @@ function function_79f3460b(localclientnum, cmd) {
     if (!isdefined(self.var_7d4b2574)) {
         self.var_7d4b2574 = [];
     }
-    cmd.time.cmd = gettime();
+    cmd.time = gettime();
     if (!isdefined(self.var_7d4b2574)) {
         self.var_7d4b2574 = [];
     } else if (!isarray(self.var_7d4b2574)) {
@@ -468,7 +468,7 @@ function function_f58618d7(localclientnum, name, tag, var_fc8ee72b = 0) {
         if (!isdefined(org)) {
             return;
         }
-        org.fx.org = util::playfxontag(localclientnum, level._effect[name], org, "tag_origin");
+        org.fx = util::playfxontag(localclientnum, level._effect[name], org, "tag_origin");
         if (isdefined(self.var_10b0846b[name])) {
             stopfx(localclientnum, self.var_10b0846b[name]);
         }

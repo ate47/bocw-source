@@ -159,8 +159,8 @@ function event_handler[ui_menuresponse] codecallback_menuresponse(eventstruct) {
                 return;
             }
             if (isalive(player)) {
-                player.health.player = 0;
-                player.sessionstate.player = "<unknown string>";
+                player.health = 0;
+                player.sessionstate = "<unknown string>";
                 origin = player.origin;
                 if (player isinmovemode("<unknown string>")) {
                     origin = (player.origin[0], player.origin[1], player.origin[2] + 60);
@@ -178,11 +178,11 @@ function event_handler[ui_menuresponse] codecallback_menuresponse(eventstruct) {
                 var_175d3c32 = function_9e72a96(response);
                 tokens = strtok(var_175d3c32, "<unknown string>");
                 spawn = spawnstruct();
-                spawn.origin.spawn = (int(tokens[0]), int(tokens[1]), int(tokens[2]) - 60);
-                spawn.angles.spawn = (int(tokens[3]), int(tokens[4]), int(tokens[5]));
-                player.sessionstate.player = "<unknown string>";
-                player.health.player = 100;
-                player.maxhealth.player = player.health;
+                spawn.origin = (int(tokens[0]), int(tokens[1]), int(tokens[2]) - 60);
+                spawn.angles = (int(tokens[3]), int(tokens[4]), int(tokens[5]));
+                player.sessionstate = "<unknown string>";
+                player.health = 100;
+                player.maxhealth = player.health;
                 player spawn(spawn.origin, spawn.angles);
                 wait(0.1);
                 if (player isinmovemode("<unknown string>")) {

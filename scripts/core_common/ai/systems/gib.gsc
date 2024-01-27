@@ -66,14 +66,14 @@ function private function_3aa023f1(entity, var_c3317960) {
             #/
         } else {
             gibstruct = spawnstruct();
-            gibstruct.gibmodel.gibstruct = definition.(gibpiece + "_gibmodel");
-            gibstruct.gibtag.gibstruct = definition.(gibpiece + "_gibtag");
-            gibstruct.gibfx.gibstruct = definition.(gibpiece + "_gibfx");
-            gibstruct.gibfxtag.gibstruct = definition.(gibpiece + "_gibeffecttag");
-            gibstruct.gibdynentfx.gibstruct = definition.(gibpiece + "_gibdynentfx");
-            gibstruct.var_42c89fa1.gibstruct = definition.(gibpiece + "_gibcinematicfx");
-            gibstruct.gibsound.gibstruct = definition.(gibpiece + "_gibsound");
-            gibstruct.gibhidetag.gibstruct = definition.(gibpiece + "_gibhidetag");
+            gibstruct.gibmodel = definition.(gibpiece + "_gibmodel");
+            gibstruct.gibtag = definition.(gibpiece + "_gibtag");
+            gibstruct.gibfx = definition.(gibpiece + "_gibfx");
+            gibstruct.gibfxtag = definition.(gibpiece + "_gibeffecttag");
+            gibstruct.gibdynentfx = definition.(gibpiece + "_gibdynentfx");
+            gibstruct.var_42c89fa1 = definition.(gibpiece + "_gibcinematicfx");
+            gibstruct.gibsound = definition.(gibpiece + "_gibsound");
+            gibstruct.gibhidetag = definition.(gibpiece + "_gibhidetag");
             gibpieces[gibflag] = gibstruct;
         }
     }
@@ -97,7 +97,7 @@ function private function_69db754(entity, gibflag, var_c3317960) {
 function private _annihilate(entity) {
     if (isdefined(entity)) {
         entity notsolid();
-        entity.var_9a6fcc.entity = 1;
+        entity.var_9a6fcc = 1;
         waitframe(5);
         if (isdefined(entity)) {
             entity delete();
@@ -147,7 +147,7 @@ function private _gibextrainternal(entity, gibflag, var_c3317960) {
     if (!isdefined(entity)) {
         return;
     }
-    entity.gib_time.entity = gettime();
+    entity.gib_time = gettime();
     if (isgibbed(entity, gibflag)) {
         return 0;
     }
@@ -193,7 +193,7 @@ function private _gibentityinternal(entity, gibflag, var_c3317960) {
     if (!isdefined(entity)) {
         return;
     }
-    entity.gib_time.entity = gettime();
+    entity.gib_time = gettime();
     if (isgibbed(entity, gibflag)) {
         return;
     }
@@ -282,7 +282,7 @@ function private _hasgibpieces(entity, gibflag, var_c3317960) {
     }
     hasgibpieces = 0;
     gibstate = _getgibbedstate(entity);
-    entity.gib_state.entity = (gibstate & 512 - 1 & gibflag & 512 - 1) + (var_c3317960 << 9);
+    entity.gib_state = (gibstate & 512 - 1 | gibflag & 512 - 1) + (var_c3317960 << 9);
     if (isdefined(_getgibbedtorsomodel(entity)) && isdefined(_getgibbedlegmodel(entity))) {
         hasgibpieces = 1;
     }
@@ -302,11 +302,11 @@ function private _setgibbed(entity, gibflag, gibdir, var_c3317960) {
         angles = vectortoangles(gibdir);
         yaw = angles[1];
         yaw_bits = getbitsforangle(yaw, 3);
-        entity.gib_state.entity = (_getgibbedstate(entity) & 512 - 1 & gibflag & 512 - 1) + (var_c3317960 << 9) + (yaw_bits << 14);
+        entity.gib_state = (_getgibbedstate(entity) & 512 - 1 | gibflag & 512 - 1) + (var_c3317960 << 9) + (yaw_bits << 14);
     } else {
-        entity.gib_state.entity = (_getgibbedstate(entity) & 512 - 1 & gibflag & 512 - 1) + (var_c3317960 << 9);
+        entity.gib_state = (_getgibbedstate(entity) & 512 - 1 | gibflag & 512 - 1) + (var_c3317960 << 9);
     }
-    entity.gibbed.entity = 1;
+    entity.gibbed = 1;
     entity clientfield::set("gib_state", entity.gib_state);
 }
 
@@ -334,7 +334,7 @@ function annihilate(entity) {
 // Checksum 0x545ad488, Offset: 0x12c8
 // Size: 0x8c
 function copygibstate(originalentity, newentity) {
-    newentity.gib_state.newentity = _getgibbedstate(originalentity);
+    newentity.gib_state = _getgibbedstate(originalentity);
     togglespawngibs(newentity, 0);
     var_c3317960 = newentity.gib_state >> 9 & 32 - 1;
     reapplyhiddengibpieces(newentity, var_c3317960);
@@ -550,9 +550,9 @@ function showhiddengibpieces(entity, var_c3317960) {
 // Size: 0x94
 function togglespawngibs(entity, shouldspawngibs) {
     if (!shouldspawngibs) {
-        entity.gib_state.entity = _getgibbedstate(entity) & 1;
+        entity.gib_state = _getgibbedstate(entity) | 1;
     } else {
-        entity.gib_state.entity = _getgibbedstate(entity) & -2;
+        entity.gib_state = _getgibbedstate(entity) & -2;
     }
     entity clientfield::set("gib_state", entity.gib_state);
 }

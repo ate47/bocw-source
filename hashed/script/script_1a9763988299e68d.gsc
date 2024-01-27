@@ -139,17 +139,17 @@ function init() {
     level.doa.var_5b088fde = getweapon("zombietron_launcher_secondary");
     level.doa.var_c6e5e8d9 = getweapon("zombietron_lmg");
     var_16e2303b = getweapon("zombietron_impaler");
-    var_16e2303b.var_a8e39382.var_16e2303b = 5;
-    var_16e2303b.var_69baf44a.var_16e2303b = 2;
-    var_16e2303b.var_f9fc5587.var_16e2303b = getweapon("zombietron_ray_gun");
+    var_16e2303b.var_a8e39382 = 5;
+    var_16e2303b.var_69baf44a = 2;
+    var_16e2303b.var_f9fc5587 = getweapon("zombietron_ray_gun");
     var_16e2303b = getweapon("zombietron_impaler_1");
-    var_16e2303b.var_a8e39382.var_16e2303b = 5;
-    var_16e2303b.var_69baf44a.var_16e2303b = 2;
-    var_16e2303b.var_f9fc5587.var_16e2303b = getweapon("zombietron_ray_gun_1");
+    var_16e2303b.var_a8e39382 = 5;
+    var_16e2303b.var_69baf44a = 2;
+    var_16e2303b.var_f9fc5587 = getweapon("zombietron_ray_gun_1");
     var_16e2303b = getweapon("zombietron_impaler_2");
-    var_16e2303b.var_a8e39382.var_16e2303b = 5;
-    var_16e2303b.var_69baf44a.var_16e2303b = 2;
-    var_16e2303b.var_f9fc5587.var_16e2303b = getweapon("zombietron_ray_gun_2");
+    var_16e2303b.var_a8e39382 = 5;
+    var_16e2303b.var_69baf44a = 2;
+    var_16e2303b.var_f9fc5587 = getweapon("zombietron_ray_gun_2");
 }
 
 // Namespace namespace_41cb996/missile_fire

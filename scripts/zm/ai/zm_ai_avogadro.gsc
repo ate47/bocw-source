@@ -204,8 +204,8 @@ function function_f59c1777(params) {
         if (isplayer(entity)) {
             entity status_effect::status_effect_apply(level.var_2ea60515, undefined, self, 0);
         } else if (isalive(entity) && isactor(entity)) {
-            entity.isjammed.entity = 1;
-            entity.emped.entity = 1;
+            entity.isjammed = 1;
+            entity.emped = 1;
         }
     }
 }
@@ -379,10 +379,10 @@ function spawn_single(b_force_spawn, var_eb3a8721 = 0, *var_bc66d64b) {
     }
     ai = spawnactor(#"spawner_bo5_avogadro_sr", s_spawn_loc.origin, s_spawn_loc.angles);
     if (isdefined(ai)) {
-        ai.script_string.ai = s_spawn_loc.script_string;
-        ai.find_flesh_struct_string.ai = s_spawn_loc.find_flesh_struct_string;
-        ai.check_point_in_enabled_zone.ai = &zm_utility::check_point_in_playable_area;
-        ai.ignore_enemy_count.ai = 1;
+        ai.script_string = s_spawn_loc.script_string;
+        ai.find_flesh_struct_string = s_spawn_loc.find_flesh_struct_string;
+        ai.check_point_in_enabled_zone = &zm_utility::check_point_in_playable_area;
+        ai.ignore_enemy_count = 1;
         ai forceteleport(s_spawn_loc.origin, s_spawn_loc.angles);
     }
     return ai;

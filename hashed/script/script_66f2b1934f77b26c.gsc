@@ -374,13 +374,13 @@ function function_bc64a2fc(*var_a276c861) {
     var_6d9ae982 = struct::get_array("gd_bny_rm_spn");
     foreach (player in function_a1ef346b()) {
         if (player zm_zonemgr::is_player_in_zone(level.var_4b35561a, 0)) {
-            player.var_740db6b6.player = "firebase";
+            player.var_740db6b6 = "firebase";
         } else {
-            player.var_740db6b6.player = "village";
+            player.var_740db6b6 = "village";
         }
         n_index = zm_fasttravel::get_player_index(player);
         var_3c1597cb = var_6d9ae982[n_index];
-        var_3c1597cb.origin.var_3c1597cb = var_3c1597cb.origin + vectorscale((0, 0, 1), 50);
+        var_3c1597cb.origin = var_3c1597cb.origin + vectorscale((0, 0, 1), 50);
         player thread zm_fasttravel::function_66d020b0(undefined, undefined, undefined, undefined, var_3c1597cb, undefined, "bunny_room_teleport", 0, 0, 0, 1);
     }
     wait(3);
@@ -406,7 +406,7 @@ function function_bc64a2fc(*var_a276c861) {
     foreach (player in function_a1ef346b()) {
         n_index = zm_fasttravel::get_player_index(player);
         if (!isdefined(player.var_740db6b6)) {
-            player.var_740db6b6.player = "village";
+            player.var_740db6b6 = "village";
         }
         var_4cfd3626 = struct::get(player.var_740db6b6 + "_end_" + n_index);
         player thread zm_fasttravel::function_66d020b0(undefined, undefined, undefined, undefined, var_4cfd3626, undefined, "bunny_room_teleport", 0, 0, 0, 1);
@@ -695,30 +695,30 @@ function function_8bde8ea6() {
 // Size: 0x44e
 function private set_zombie(e_zombie) {
     if (isdefined(e_zombie)) {
-        e_zombie.var_126d7bef.e_zombie = 1;
-        e_zombie.ignore_round_spawn_failsafe.e_zombie = 1;
-        e_zombie.b_ignore_cleanup.e_zombie = 1;
-        e_zombie.ignore_enemy_count.e_zombie = 1;
-        e_zombie.no_powerups.e_zombie = 1;
+        e_zombie.var_126d7bef = 1;
+        e_zombie.ignore_round_spawn_failsafe = 1;
+        e_zombie.b_ignore_cleanup = 1;
+        e_zombie.ignore_enemy_count = 1;
+        e_zombie.no_powerups = 1;
         if (level.round_number >= e_zombie ai::function_9139c839().var_15c336d1[6].start_round) {
-            e_zombie.health.e_zombie = e_zombie.health + int(e_zombie ai::function_9139c839().var_15c336d1[6].var_928e93a0 * 5);
+            e_zombie.health = e_zombie.health + int(e_zombie ai::function_9139c839().var_15c336d1[6].var_928e93a0 * 5);
         } else if (level.round_number >= e_zombie ai::function_9139c839().var_15c336d1[5].start_round) {
-            e_zombie.health.e_zombie = e_zombie.health + int(e_zombie ai::function_9139c839().var_15c336d1[5].var_928e93a0 * 5);
+            e_zombie.health = e_zombie.health + int(e_zombie ai::function_9139c839().var_15c336d1[5].var_928e93a0 * 5);
         } else if (level.round_number >= e_zombie ai::function_9139c839().var_15c336d1[4].start_round) {
-            e_zombie.health.e_zombie = e_zombie.health + int(e_zombie ai::function_9139c839().var_15c336d1[4].var_928e93a0 * 5);
+            e_zombie.health = e_zombie.health + int(e_zombie ai::function_9139c839().var_15c336d1[4].var_928e93a0 * 5);
         } else if (level.round_number >= e_zombie ai::function_9139c839().var_15c336d1[3].start_round) {
-            e_zombie.health.e_zombie = e_zombie.health + int(e_zombie ai::function_9139c839().var_15c336d1[3].var_928e93a0 * 5);
+            e_zombie.health = e_zombie.health + int(e_zombie ai::function_9139c839().var_15c336d1[3].var_928e93a0 * 5);
         } else if (level.round_number >= e_zombie ai::function_9139c839().var_15c336d1[2].start_round) {
-            e_zombie.health.e_zombie = e_zombie.health + int(e_zombie ai::function_9139c839().var_15c336d1[2].var_928e93a0 * 5);
+            e_zombie.health = e_zombie.health + int(e_zombie ai::function_9139c839().var_15c336d1[2].var_928e93a0 * 5);
         } else if (level.round_number >= e_zombie ai::function_9139c839().var_15c336d1[1].start_round) {
-            e_zombie.health.e_zombie = e_zombie.health + int(e_zombie ai::function_9139c839().var_15c336d1[1].var_928e93a0 * 5);
+            e_zombie.health = e_zombie.health + int(e_zombie ai::function_9139c839().var_15c336d1[1].var_928e93a0 * 5);
         } else {
-            e_zombie.health.e_zombie = e_zombie.health + int(e_zombie ai::function_9139c839().var_15c336d1[0].var_928e93a0 * 5);
+            e_zombie.health = e_zombie.health + int(e_zombie ai::function_9139c839().var_15c336d1[0].var_928e93a0 * 5);
         }
-        e_zombie.zombie_move_speed.e_zombie = "sprint";
+        e_zombie.zombie_move_speed = "sprint";
         e_zombie pathmode("move allowed");
-        e_zombie.completed_emerging_into_playable_area.e_zombie = 1;
-        e_zombie.zombie_think_done.e_zombie = 1;
+        e_zombie.completed_emerging_into_playable_area = 1;
+        e_zombie.zombie_think_done = 1;
     }
 }
 
@@ -780,7 +780,7 @@ function function_f68bd85b(*var_a276c861) {
     while (var_1a874f11 < 63) {
         s_result = undefined;
         s_result = level waittill(#"hash_cb2d8c59ec2fc84");
-        var_1a874f11 = var_1a874f11 & 1 << s_result.var_b8e13043 - 1;
+        var_1a874f11 = var_1a874f11 | 1 << s_result.var_b8e13043 - 1;
     }
 }
 
@@ -1156,7 +1156,7 @@ function function_bd8fd5ea(var_a276c861, var_19e802fa) {
 function private function_1f14f16f(v_position, v_angles = (0, 0, 0)) {
     point = function_4ba8fde(#"hash_1680835628ff9442");
     e_head = item_drop::drop_item(0, undefined, 1, 0, point.id, v_position, v_angles, 0);
-    e_head.var_dd21aec2.e_head = 1 & 16;
+    e_head.var_dd21aec2 = 1 | 16;
     /#
         e_head thread function_363c7e7e();
     #/
@@ -1580,7 +1580,7 @@ function private function_faf4646f(&var_500164d9) {
     str_zone = math::cointoss(33) ? "zone_colonel_office" : "zone_chopper_gunner3";
     ai = zm_utility::function_cce73165("dog_location", #"hash_7a8b592728eec95d", str_zone);
     if (isdefined(ai)) {
-        ai.ignore_enemy_count.ai = 1;
+        ai.ignore_enemy_count = 1;
         if (!isdefined(var_500164d9)) {
             var_500164d9 = [];
         } else if (!isarray(var_500164d9)) {

@@ -404,17 +404,17 @@ function zone_init(zone_name, zone_tag) {
     level.zones[zone_name] = spawnstruct();
     zone = level.zones[zone_name];
     zone.name = zone_name;
-    zone.is_enabled.zone = 0;
-    zone.is_occupied.zone = 0;
-    zone.is_active.zone = 0;
-    zone.adjacent_zones.zone = [];
-    zone.is_spawning_allowed.zone = 0;
+    zone.is_enabled = 0;
+    zone.is_occupied = 0;
+    zone.is_active = 0;
+    zone.adjacent_zones = [];
+    zone.is_spawning_allowed = 0;
     if (isdefined(zone_tag)) {
         zone_name_tokens = strtok(zone_name, "_");
-        zone.district.zone = zone_name_tokens[1];
+        zone.district = zone_name_tokens[1];
         zone.area = zone_tag;
     }
-    zone.nodes.zone = getnodearray(zone_name, "targetname");
+    zone.nodes = getnodearray(zone_name, "targetname");
     /#
         var_a44786e4 = 0;
         foreach (node in zone.nodes) {
@@ -439,7 +439,7 @@ function zone_init(zone_name, zone_tag) {
             }
         }
     }
-    zone.volumes.zone = [];
+    zone.volumes = [];
     volumes = getentarray(zone_name, "targetname");
     /#
         println("<unknown string>" + volumes.size + "<unknown string>" + zone.nodes.size);
@@ -459,13 +459,13 @@ function zone_init(zone_name, zone_tag) {
         assert(isdefined(zone.volumes[0]) || isdefined(zone.nodes[0]), "<unknown string>" + zone_name);
     #/
     /#
-        zone.total_spawn_count.zone = 0;
-        zone.round_spawn_count.zone = 0;
+        zone.total_spawn_count = 0;
+        zone.round_spawn_count = 0;
     #/
-    zone.a_loc_types.zone = [];
+    zone.a_loc_types = [];
     zone.a_loc_types[#"zombie_location"] = [];
-    zone.zbarriers.zone = [];
-    zone.magic_boxes.zone = [];
+    zone.zbarriers = [];
+    zone.magic_boxes = [];
     if (zm_utility::function_21f4ac36() && zone.nodes.size > 0) {
         zone_target = zone.nodes[0].target;
     } else if (zm_utility::function_c85ebbbc() && zone.volumes.size > 0) {
@@ -477,9 +477,9 @@ function zone_init(zone_name, zone_tag) {
         foreach (spot in spots) {
             spot.zone_name = zone_name;
             if (!is_true(spot.is_blocked)) {
-                spot.is_enabled.spot = 1;
+                spot.is_enabled = 1;
             } else {
-                spot.is_enabled.spot = 0;
+                spot.is_enabled = 0;
             }
             tokens = strtok(spot.script_noteworthy, " ");
             foreach (token in tokens) {
@@ -488,7 +488,7 @@ function zone_init(zone_name, zone_tag) {
                 case #"spawn_location":
                 case #"riser_location":
                 case #"faller_location":
-                    spot.var_d51f4e2d.spot = gettime();
+                    spot.var_d51f4e2d = gettime();
                     if (!isdefined(zone.a_loc_types[#"zombie_location"])) {
                         zone.a_loc_types[#"zombie_location"] = [];
                     } else if (!isarray(zone.a_loc_types[#"zombie_location"])) {
@@ -516,7 +516,7 @@ function zone_init(zone_name, zone_tag) {
                         nodes = getnodearray(barricades[k].target, "targetname");
                         for (j = 0; j < nodes.size; j++) {
                             if (isdefined(nodes[j].type) && nodes[j].type == #"begin") {
-                                spot.target.spot = nodes[j].targetname;
+                                spot.target = nodes[j].targetname;
                             }
                         }
                     }
@@ -528,9 +528,9 @@ function zone_init(zone_name, zone_tag) {
             for (j = 0; j < targets.size; j++) {
                 if (targets[j] iszbarrier() && isdefined(targets[j].script_string) && targets[j].script_string == zone_name) {
                     if (!isdefined(zone.zbarriers)) {
-                        zone.zbarriers.zone = [];
+                        zone.zbarriers = [];
                     } else if (!isarray(zone.zbarriers)) {
-                        zone.zbarriers.zone = array(zone.zbarriers);
+                        zone.zbarriers = array(zone.zbarriers);
                     }
                     zone.zbarriers[zone.zbarriers.size] = targets[j];
                 }
@@ -549,9 +549,9 @@ function function_4ad63e8(s_zone) {
     foreach (s_chest in level.chests) {
         if (s_chest.zbarrier entity_in_zone(s_zone.name, 1)) {
             if (!isdefined(s_zone.magic_boxes)) {
-                s_zone.magic_boxes.s_zone = [];
+                s_zone.magic_boxes = [];
             } else if (!isarray(s_zone.magic_boxes)) {
-                s_zone.magic_boxes.s_zone = array(s_zone.magic_boxes);
+                s_zone.magic_boxes = array(s_zone.magic_boxes);
             }
             s_zone.magic_boxes[s_zone.magic_boxes.size] = s_chest;
         }
@@ -566,7 +566,7 @@ function reinit_zone_spawners() {
     zkeys = getarraykeys(level.zones);
     for (i = 0; i < level.zones.size; i++) {
         zone = level.zones[zkeys[i]];
-        zone.a_loc_types.zone = [];
+        zone.a_loc_types = [];
         zone.a_loc_types[#"zombie_location"] = [];
         if (zm_utility::function_21f4ac36() && zone.nodes.size > 0) {
             zone_target = zone.nodes[0].target;
@@ -576,11 +576,11 @@ function reinit_zone_spawners() {
         if (isdefined(zone_target)) {
             spots = struct::get_array(zone_target, "targetname");
             foreach (n_index, spot in spots) {
-                spot.zone_name.spot = zkeys[n_index];
+                spot.zone_name = zkeys[n_index];
                 if (!is_true(spot.is_blocked)) {
-                    spot.is_enabled.spot = 1;
+                    spot.is_enabled = 1;
                 } else {
-                    spot.is_enabled.spot = 0;
+                    spot.is_enabled = 0;
                 }
                 tokens = strtok(spot.script_noteworthy, " ");
                 foreach (token in tokens) {
@@ -664,8 +664,8 @@ function make_zone_adjacent(main_zone_name, adj_zone_name, flag_name) {
     if (!isdefined(main_zone.adjacent_zones[adj_zone_name])) {
         main_zone.adjacent_zones[adj_zone_name] = spawnstruct();
         adj_zone = main_zone.adjacent_zones[adj_zone_name];
-        adj_zone.is_connected.adj_zone = 0;
-        adj_zone.flags_do_or_check.adj_zone = 0;
+        adj_zone.is_connected = 0;
+        adj_zone.flags_do_or_check = 0;
         if (isarray(flag_name)) {
             adj_zone.flags = flag_name;
         } else {
@@ -677,7 +677,7 @@ function make_zone_adjacent(main_zone_name, adj_zone_name, flag_name) {
         #/
         adj_zone = main_zone.adjacent_zones[adj_zone_name];
         size = adj_zone.flags.size;
-        adj_zone.flags_do_or_check.adj_zone = 1;
+        adj_zone.flags_do_or_check = 1;
         adj_zone.flags[size] = flag_name;
     }
 }
@@ -825,7 +825,7 @@ function zone_flag_wait(flag_name) {
                 }
                 if (flags_set) {
                     enable_zone(level.zones[zkeys[z]].name);
-                    azone.is_connected.azone = 1;
+                    azone.is_connected = 1;
                     if (!level.zones[azkeys[az]].is_enabled) {
                         enable_zone(level.zones[azkeys[az]].name);
                         zone_flag_wait_throttle();
@@ -1020,12 +1020,12 @@ function manage_zones(initial_zone) {
                 continue;
             }
             if (isdefined(level.var_cc984236)) {
-                newzone.is_occupied.newzone = [[ level.var_cc984236 ]](zkeys[z]);
+                newzone.is_occupied = [[ level.var_cc984236 ]](zkeys[z]);
             } else {
-                newzone.is_occupied.newzone = any_player_in_zone(zkeys[z]);
+                newzone.is_occupied = any_player_in_zone(zkeys[z]);
             }
             if (newzone.is_occupied) {
-                newzone.is_active.newzone = 1;
+                newzone.is_active = 1;
                 a_zone_is_active = 1;
                 if (zone.is_spawning_allowed) {
                     a_zone_is_spawning_allowed = 1;
@@ -1065,9 +1065,9 @@ function manage_zones(initial_zone) {
                         continue;
                     }
                     s_zone = level.zones[var_bdf9e3c2];
-                    s_zone.is_active.s_zone = 1;
-                    s_zone.is_occupied.s_zone = 1;
-                    s_zone.is_spawning_allowed.s_zone = 1;
+                    s_zone.is_active = 1;
+                    s_zone.is_occupied = 1;
+                    s_zone.is_spawning_allowed = 1;
                     foreach (str_zone_name, var_c714ccfe in s_zone.adjacent_zones) {
                         if (var_c714ccfe.is_connected && level.zones[str_zone_name].is_enabled) {
                             level.zones[str_zone_name].is_active = 1;
@@ -1085,9 +1085,9 @@ function manage_zones(initial_zone) {
                     level.zones[level.var_ad5e81fe[0]].is_spawning_allowed = 1;
                 } else {
                     s_zone = level.zones[isarray(initial_zone) ? initial_zone[0] : initial_zone];
-                    s_zone.is_active.s_zone = 1;
-                    s_zone.is_occupied.s_zone = 1;
-                    s_zone.is_spawning_allowed.s_zone = 1;
+                    s_zone.is_active = 1;
+                    s_zone.is_occupied = 1;
+                    s_zone.is_spawning_allowed = 1;
                     foreach (str_zone_name, var_c714ccfe in s_zone.adjacent_zones) {
                         if (var_c714ccfe.is_connected && level.zones[str_zone_name].is_enabled) {
                             level.zones[str_zone_name].is_active = 1;
@@ -1150,7 +1150,7 @@ function create_spawner_list(zkeys) {
                         continue;
                     }
                     if (!isdefined(loc.tokens)) {
-                        loc.tokens.loc = strtok(loc.script_noteworthy, " ");
+                        loc.tokens = strtok(loc.script_noteworthy, " ");
                     }
                     foreach (token in loc.tokens) {
                         switch (token) {
@@ -1450,7 +1450,7 @@ function function_d4cf2b9b(force_update = 0) {
                 zone = level.zones[var_c6bd50df];
                 var_23ca4e6e = [];
                 zone_info = spawnstruct();
-                zone_info.cost.zone_info = 0;
+                zone_info.cost = 0;
                 var_23ca4e6e[zone.name] = zone_info;
                 var_51c813e9 = 0;
                 zone_queue = [];
@@ -1468,8 +1468,8 @@ function function_d4cf2b9b(force_update = 0) {
                         }
                         if (adjacent_zone.is_connected) {
                             var_658cf985 = spawnstruct();
-                            var_658cf985.to_zone.var_658cf985 = zone.name;
-                            var_658cf985.cost.var_658cf985 = zone_info.cost + 1;
+                            var_658cf985.to_zone = zone.name;
+                            var_658cf985.cost = zone_info.cost + 1;
                             var_23ca4e6e[var_4a52ff35] = var_658cf985;
                             zone_queue[zone_queue.size] = var_4a52ff35;
                         }

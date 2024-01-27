@@ -34,24 +34,24 @@ function function_5947d757(type) {
 // Checksum 0xf3f2e725, Offset: 0x178
 // Size: 0x208
 function function_44806bba(type) {
-    var_13b70b57 = function_5947d757(type);
-    if (var_13b70b57 == -1) {
+    pool = function_5947d757(type);
+    if (pool == -1) {
         return getdvarint(#"hash_135ab15dc980084b", 2);
-    } else if (var_13b70b57 == -2) {
+    } else if (pool == -2) {
         return getdvarint(#"hash_5ef51cd5a0446de9", 2);
-    } else if (var_13b70b57 == 0) {
+    } else if (pool == 0) {
         return getdvarint(#"hash_4b0a67e50aeacdee", 1);
-    } else if (var_13b70b57 == 4) {
+    } else if (pool == 4) {
         return getdvarint(#"hash_4685d89a104a6860", 1);
-    } else if (var_13b70b57 == 5) {
+    } else if (pool == 5) {
         return getdvarint(#"hash_60e62eecbe40e4ee", 1);
-    } else if (var_13b70b57 == 8 || var_13b70b57 == 9) {
+    } else if (pool == 8 || pool == 9) {
         return getdvarint(#"hash_37085d816592dbe3", 2);
-    } else if (var_13b70b57 == 12) {
+    } else if (pool == 12) {
         return getdvarint(#"hash_37085d816592dbe3", 2);
     } else {
         /#
-            assertmsg("<unknown string>" + type + "<unknown string>" + var_13b70b57 + "<unknown string>");
+            assertmsg("<unknown string>" + type + "<unknown string>" + pool + "<unknown string>");
         #/
     }
     return 1;

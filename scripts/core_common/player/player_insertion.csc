@@ -236,9 +236,9 @@ function function_7bac6764(localclientnum, *oldval, newval, *bnewent, *binitials
     if (!isdefined(self)) {
         return;
     }
-    var_5ed0195b = function_20cba65e(player);
+    insertionindex = function_20cba65e(player);
     var_1e7db62f = function_a4c14f8c(bwastimejump);
-    if (var_5ed0195b != var_1e7db62f) {
+    if (insertionindex != var_1e7db62f) {
         return;
     }
     value = function_76a4b21e(bwastimejump);
@@ -297,21 +297,21 @@ function function_cbe63de1(localclientnum, *delta_t) {
         player camerasetlookat(player.angles);
         return;
     }
-    var_c9c16c96 = level.var_88a92c26.origin;
-    var_6775ae79 = level.var_88a92c26.angles;
+    focuspos = level.var_88a92c26.origin;
+    focusangles = level.var_88a92c26.angles;
     /#
-        assert(isdefined(var_6775ae79), "<unknown string>");
+        assert(isdefined(focusangles), "<unknown string>");
     #/
-    if (!isdefined(var_6775ae79)) {
-        var_6775ae79 = player getcamangles();
-        if (!isdefined(var_6775ae79)) {
-            var_6775ae79 = isdefined(player.angles) ? player.angles : (0, 0, 0);
+    if (!isdefined(focusangles)) {
+        focusangles = player getcamangles();
+        if (!isdefined(focusangles)) {
+            focusangles = isdefined(player.angles) ? player.angles : (0, 0, 0);
         }
     }
-    cameravec = anglestoforward(var_6775ae79);
-    camerapos = var_c9c16c96 - (isdefined(level.var_427d6976.("insertionCameraFollowDistance")) ? level.var_427d6976.("insertionCameraFollowDistance") : 1600) * cameravec;
+    cameravec = anglestoforward(focusangles);
+    camerapos = focuspos - (isdefined(level.var_427d6976.("insertionCameraFollowDistance")) ? level.var_427d6976.("insertionCameraFollowDistance") : 1600) * cameravec;
     player camerasetposition(camerapos);
-    player camerasetlookat(var_6775ae79);
+    player camerasetlookat(focusangles);
 }
 
 // Namespace player_insertion/player_insertion
@@ -328,19 +328,19 @@ function function_c8ea4bcc(localclientnum, *delta_t) {
         player camerasetlookat(player.angles);
         return;
     }
-    var_c9c16c96 = level.var_88a92c26.origin;
-    var_6775ae79 = player getcamangles();
-    if (!isdefined(var_6775ae79)) {
+    focuspos = level.var_88a92c26.origin;
+    focusangles = player getcamangles();
+    if (!isdefined(focusangles)) {
         player camerasetlookat(player.angles);
-        var_6775ae79 = player getcamangles();
-        if (!isdefined(var_6775ae79)) {
-            var_6775ae79 = isdefined(player.angles) ? player.angles : (0, 0, 0);
+        focusangles = player getcamangles();
+        if (!isdefined(focusangles)) {
+            focusangles = isdefined(player.angles) ? player.angles : (0, 0, 0);
         }
     }
-    cameravec = anglestoforward(var_6775ae79);
-    camerapos = var_c9c16c96 - (isdefined(level.var_427d6976.("insertionCameraFollowDistance")) ? level.var_427d6976.("insertionCameraFollowDistance") : 1600) * cameravec;
+    cameravec = anglestoforward(focusangles);
+    camerapos = focuspos - (isdefined(level.var_427d6976.("insertionCameraFollowDistance")) ? level.var_427d6976.("insertionCameraFollowDistance") : 1600) * cameravec;
     player camerasetposition(camerapos);
-    player camerasetlookat(var_6775ae79);
+    player camerasetlookat(focusangles);
     player function_36b630a3(0);
     player callback::add_entity_callback(#"freefall", &function_c9a18304);
     player callback::add_entity_callback(#"on_start_gametype", &function_c9a18304);

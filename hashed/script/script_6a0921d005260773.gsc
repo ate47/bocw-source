@@ -104,7 +104,7 @@ function function_23c1f0b0() {
         }
         flag = function_f9b48b95(ability.name);
         if (isdefined(flag)) {
-            self.abilities.var_b10e8797 = self.abilities.var_b10e8797 & flag;
+            self.abilities.var_b10e8797 = self.abilities.var_b10e8797 | flag;
         }
     }
 }
@@ -122,7 +122,7 @@ function function_f204ea98(name) {
         return;
     }
     self function_6d4cf28e();
-    self.abilities.var_b10e8797 = self.abilities.var_b10e8797 & flag;
+    self.abilities.var_b10e8797 = self.abilities.var_b10e8797 | flag;
 }
 
 // Namespace abilities/namespace_c78c9cc2

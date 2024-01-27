@@ -372,7 +372,7 @@ function private function_c62b5591(insertion) {
         assert(isstruct(insertion));
     #/
     if (!isdefined(insertion.cameraent)) {
-        insertion.cameraent.insertion = [];
+        insertion.cameraent = [];
     }
     var_163b0077 = 0;
     foreach (i, plane in insertion.var_41091905) {
@@ -397,7 +397,7 @@ function private function_c62b5591(insertion) {
 // Size: 0x60
 function function_57fe9b21(*insertion, origin) {
     camera = spawn("script_model", origin);
-    camera.targetname.camera = "insertion_camera";
+    camera.targetname = "insertion_camera";
     camera setinvisibletoall();
     return camera;
 }
@@ -412,7 +412,7 @@ function function_ca5b6591(insertion, *startorigin, endorigin, var_872f085f) {
     #/
     self notify("7bc1bb0ca243e89f");
     self endon("7bc1bb0ca243e89f");
-    startorigin.cameraent.startorigin = [];
+    startorigin.cameraent = [];
     var_21e6b5ae = anglestoforward(var_872f085f);
     var_1978c281 = isdefined(level.var_427d6976.("insertionCameraFollowPitch")) ? level.var_427d6976.("insertionCameraFollowPitch") : 35;
     var_8b5e86f4 = (var_1978c281, var_872f085f[1], var_872f085f[2]);
@@ -556,7 +556,7 @@ function function_f795bf83(insertion, vehicle, yaw) {
     #/
     self notify(#"insertion_starting");
     if (!isdefined(insertion.passengercount)) {
-        insertion.passengercount.insertion = 0;
+        insertion.passengercount = 0;
     }
     insertion.passengercount++;
     self function_8cf53a19();
@@ -734,21 +734,21 @@ function private function_e59d879f(insertion, var_cf46aa72) {
     var_872f085f = insertion.var_f253731f;
     var_37362e08 = insertion.var_37362e08;
     var_7743b329 = insertion.var_7743b329;
-    insertion.leadplane.insertion = spawnvehicle(var_69f4f44c, startpoint, var_872f085f, "insertion_plane");
+    insertion.leadplane = spawnvehicle(var_69f4f44c, startpoint, var_872f085f, "insertion_plane");
     insertion.leadplane.takedamage = 0;
-    insertion.passengercount.insertion = 0;
+    insertion.passengercount = 0;
     insertion.var_ef5094f9 = undefined;
-    insertion.var_dfaba736.insertion = [];
-    insertion.var_27d17f06.insertion = [];
-    insertion.var_41091905.insertion = [];
+    insertion.var_dfaba736 = [];
+    insertion.var_27d17f06 = [];
+    insertion.var_41091905 = [];
     if (!isdefined(insertion.var_41091905)) {
-        insertion.var_41091905.insertion = [];
+        insertion.var_41091905 = [];
     } else if (!isarray(insertion.var_41091905)) {
-        insertion.var_41091905.insertion = array(insertion.var_41091905);
+        insertion.var_41091905 = array(insertion.var_41091905);
     }
     insertion.var_41091905[insertion.var_41091905.size] = insertion.leadplane;
     if (1) {
-        insertion.var_dfaba736.insertion = [];
+        insertion.var_dfaba736 = [];
         insertion thread function_45b56b0a(insertion, startpoint, endpoint, var_872f085f, var_d2f40e2f);
         if (var_cf46aa72) {
             insertion thread function_f87ddcf0(insertion, startpoint, endpoint, var_872f085f, var_d2f40e2f);
@@ -756,35 +756,35 @@ function private function_e59d879f(insertion, var_cf46aa72) {
         s_formation = function_d9dfa25();
         for (i = 0; i < s_formation.var_c85ebc15; i++) {
             spawner::global_spawn_throttle(1);
-            var_61b1034d = startpoint + rotatepoint(s_formation.var_86cb4eb8[i], var_872f085f);
+            rotatedstart = startpoint + rotatepoint(s_formation.var_86cb4eb8[i], var_872f085f);
             var_4875d958 = var_d2f40e2f[s_formation.var_f5cff63[i]];
-            vehicle = spawnvehicle(var_4875d958, var_61b1034d, var_872f085f, "insertion_secondary");
+            vehicle = spawnvehicle(var_4875d958, rotatedstart, var_872f085f, "insertion_secondary");
             if (isdefined(vehicle)) {
                 vehicle notsolid();
-                vehicle.takedamage.vehicle = 0;
-                vehicle.startorigin = var_61b1034d;
+                vehicle.takedamage = 0;
+                vehicle.startorigin = rotatedstart;
                 if (!isdefined(insertion.var_dfaba736)) {
-                    insertion.var_dfaba736.insertion = [];
+                    insertion.var_dfaba736 = [];
                 } else if (!isarray(insertion.var_dfaba736)) {
-                    insertion.var_dfaba736.insertion = array(insertion.var_dfaba736);
+                    insertion.var_dfaba736 = array(insertion.var_dfaba736);
                 }
                 insertion.var_dfaba736[insertion.var_dfaba736.size] = vehicle;
                 if (s_formation.var_f5cff63[i] == "vehicle_t9_mil_helicopter_care_package") {
                     if (!isdefined(insertion.var_41091905)) {
-                        insertion.var_41091905.insertion = [];
+                        insertion.var_41091905 = [];
                     } else if (!isarray(insertion.var_41091905)) {
-                        insertion.var_41091905.insertion = array(insertion.var_41091905);
+                        insertion.var_41091905 = array(insertion.var_41091905);
                     }
                     insertion.var_41091905[insertion.var_41091905.size] = vehicle;
                 }
                 if (i == s_formation.var_84f704f) {
                     insertion.var_ef5094f9 = vehicle;
-                    vehicle.forwardoffset.vehicle = s_formation.var_86cb4eb8[i][0];
+                    vehicle.forwardoffset = s_formation.var_86cb4eb8[i][0];
                 }
             }
         }
         if (!isdefined(insertion.var_ef5094f9)) {
-            insertion.var_ef5094f9.insertion = insertion.leadplane;
+            insertion.var_ef5094f9 = insertion.leadplane;
             insertion.var_ef5094f9.startorigin = startpoint;
             insertion.var_ef5094f9.endorigin = endpoint;
             insertion.var_ef5094f9.forwardoffset = 0;
@@ -793,13 +793,13 @@ function private function_e59d879f(insertion, var_cf46aa72) {
             if (!isdefined(insertion.var_dfaba736[i])) {
                 continue;
             }
-            var_45a4b34b = endpoint + rotatepoint(s_formation.var_86cb4eb8[i], var_872f085f);
-            insertion.var_dfaba736[i].endorigin = var_45a4b34b;
+            rotatedend = endpoint + rotatepoint(s_formation.var_86cb4eb8[i], var_872f085f);
+            insertion.var_dfaba736[i].endorigin = rotatedend;
             insertion.var_dfaba736[i] setneargoalnotifydist(512);
-            insertion.var_dfaba736[i] thread function_ea6a4f96(insertion.var_dfaba736[i].startorigin, var_45a4b34b, var_872f085f, s_formation.hoverparams[i], s_formation.var_86255b48[i]);
+            insertion.var_dfaba736[i] thread function_ea6a4f96(insertion.var_dfaba736[i].startorigin, rotatedend, var_872f085f, s_formation.hoverparams[i], s_formation.var_86255b48[i]);
         }
     } else {
-        insertion.var_ef5094f9.insertion = insertion.leadplane;
+        insertion.var_ef5094f9 = insertion.leadplane;
         insertion.var_ef5094f9.startorigin = startpoint;
         insertion.var_ef5094f9.endorigin = endpoint;
         insertion.var_ef5094f9.forwardoffset = 0;
@@ -849,21 +849,21 @@ function private function_7341cc88(insertion, *var_cf46aa72) {
     var_872f085f = var_cf46aa72.var_f253731f;
     var_37362e08 = var_cf46aa72.var_37362e08;
     var_7743b329 = var_cf46aa72.var_7743b329;
-    var_cf46aa72.leadplane.var_cf46aa72 = spawnvehicle(var_69f4f44c, startpoint, var_872f085f, "insertion_plane");
+    var_cf46aa72.leadplane = spawnvehicle(var_69f4f44c, startpoint, var_872f085f, "insertion_plane");
     var_cf46aa72.leadplane.takedamage = 0;
-    var_cf46aa72.passengercount.var_cf46aa72 = 0;
+    var_cf46aa72.passengercount = 0;
     var_cf46aa72.var_ef5094f9 = undefined;
-    var_cf46aa72.var_dfaba736.var_cf46aa72 = [];
-    var_cf46aa72.var_27d17f06.var_cf46aa72 = [];
-    var_cf46aa72.var_41091905.var_cf46aa72 = [];
+    var_cf46aa72.var_dfaba736 = [];
+    var_cf46aa72.var_27d17f06 = [];
+    var_cf46aa72.var_41091905 = [];
     if (!isdefined(var_cf46aa72.var_41091905)) {
-        var_cf46aa72.var_41091905.var_cf46aa72 = [];
+        var_cf46aa72.var_41091905 = [];
     } else if (!isarray(var_cf46aa72.var_41091905)) {
-        var_cf46aa72.var_41091905.var_cf46aa72 = array(var_cf46aa72.var_41091905);
+        var_cf46aa72.var_41091905 = array(var_cf46aa72.var_41091905);
     }
     var_cf46aa72.var_41091905[var_cf46aa72.var_41091905.size] = var_cf46aa72.leadplane;
     level thread function_663e35b8();
-    var_cf46aa72.var_ef5094f9.var_cf46aa72 = var_cf46aa72.leadplane;
+    var_cf46aa72.var_ef5094f9 = var_cf46aa72.leadplane;
     var_cf46aa72.var_ef5094f9.startorigin = startpoint;
     var_cf46aa72.var_ef5094f9.endorigin = endpoint;
     var_cf46aa72.var_ef5094f9.forwardoffset = 0;
@@ -947,11 +947,11 @@ function function_d9dfa25() {
     var_86cb4eb8[#"right"] = array((1200, 2300, 0), (-200, 2300, 0), (-1600, 2300, 0), (-3000, 2300, 0));
     var_5637e595 = {#var_86255b48:array(2, 2, 2, 2), #hoverparams:array(vectorscale((1, 1, 1), 192), vectorscale((1, 1, 1), 192), vectorscale((1, 1, 1), 192), vectorscale((1, 1, 1), 192)), #var_f5cff63:array("vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration", "vehicle_t8_mil_helicopter_gunship_wz_infiltration"), #var_c85ebc15:4};
     s_formation = array::random(a_formations);
-    s_formation.var_c85ebc15.s_formation = s_formation.var_c85ebc15 + var_5637e595.var_c85ebc15;
-    s_formation.var_f5cff63.s_formation = arraycombine(s_formation.var_f5cff63, var_5637e595.var_f5cff63, 1, 0);
-    s_formation.var_86cb4eb8.s_formation = arraycombine(s_formation.var_86cb4eb8, var_86cb4eb8[s_formation.alignment], 1, 0);
-    s_formation.hoverparams.s_formation = arraycombine(s_formation.hoverparams, var_5637e595.hoverparams, 1, 0);
-    s_formation.var_86255b48.s_formation = arraycombine(s_formation.var_86255b48, var_5637e595.var_86255b48, 1, 0);
+    s_formation.var_c85ebc15 = s_formation.var_c85ebc15 + var_5637e595.var_c85ebc15;
+    s_formation.var_f5cff63 = arraycombine(s_formation.var_f5cff63, var_5637e595.var_f5cff63, 1, 0);
+    s_formation.var_86cb4eb8 = arraycombine(s_formation.var_86cb4eb8, var_86cb4eb8[s_formation.alignment], 1, 0);
+    s_formation.hoverparams = arraycombine(s_formation.hoverparams, var_5637e595.hoverparams, 1, 0);
+    s_formation.var_86255b48 = arraycombine(s_formation.var_86255b48, var_5637e595.var_86255b48, 1, 0);
     return s_formation;
 }
 
@@ -962,24 +962,24 @@ function function_d9dfa25() {
 function function_45b56b0a(insertion, startpoint, endpoint, var_872f085f, var_d2f40e2f) {
     offset = (500, -50, 600);
     goaloffset = vectorscale((0, 0, -1), 400);
-    var_61b1034d = startpoint + rotatepoint(offset, var_872f085f);
+    rotatedstart = startpoint + rotatepoint(offset, var_872f085f);
     var_31e5487a = var_d2f40e2f[#"vehicle_t8_mil_helicopter_light_transport_wz_infil"];
-    insertion.var_933bdcf2.insertion = spawnvehicle(var_31e5487a, var_61b1034d, var_872f085f, "insertion_presentation");
+    insertion.var_933bdcf2 = spawnvehicle(var_31e5487a, rotatedstart, var_872f085f, "insertion_presentation");
     if (!isdefined(insertion.var_933bdcf2)) {
         /#
             assert(0);
         #/
         return;
     }
-    insertion.var_933bdcf2.startorigin = var_61b1034d;
-    var_45a4b34b = endpoint + rotatepoint(goaloffset, var_872f085f);
-    insertion.var_933bdcf2.endorigin = var_45a4b34b;
+    insertion.var_933bdcf2.startorigin = rotatedstart;
+    rotatedend = endpoint + rotatepoint(goaloffset, var_872f085f);
+    insertion.var_933bdcf2.endorigin = rotatedend;
     wait(0.5);
     insertion.var_933bdcf2 setrotorspeed(1);
     insertion.var_933bdcf2 setspeedimmediate(level.var_c7f8ccf6 + 20);
     insertion.var_933bdcf2 setneargoalnotifydist(512);
-    insertion.var_933bdcf2 vehlookat(var_45a4b34b);
-    insertion.var_933bdcf2 function_a57c34b7(var_45a4b34b, 0, 0);
+    insertion.var_933bdcf2 vehlookat(rotatedend);
+    insertion.var_933bdcf2 function_a57c34b7(rotatedend, 0, 0);
     insertion.var_933bdcf2.takedamage = 0;
 }
 
@@ -991,31 +991,31 @@ function function_f87ddcf0(insertion, startpoint, endpoint, var_872f085f, var_d2
     offset = array((500, -100, 800), (500, 100, 800));
     goaloffset = array((0, 60000, -10000), (0, -60000, -10000));
     var_5b967418 = array("vehicle_t8_mil_helicopter_light_transport_wz_infil", "vehicle_t8_mil_helicopter_light_transport_wz_infil");
-    insertion.var_27d17f06.insertion = [];
+    insertion.var_27d17f06 = [];
     for (i = 0; i < 2; i++) {
         waitframe(1);
-        var_61b1034d = startpoint + rotatepoint(offset[i], var_872f085f);
+        rotatedstart = startpoint + rotatepoint(offset[i], var_872f085f);
         var_31e5487a = var_d2f40e2f[var_5b967418[i]];
-        vehicle = spawnvehicle(var_31e5487a, var_61b1034d, var_872f085f, "insertion_presentation");
-        vehicle.origin = var_61b1034d;
+        vehicle = spawnvehicle(var_31e5487a, rotatedstart, var_872f085f, "insertion_presentation");
+        vehicle.origin = rotatedstart;
         vehicle.angles = var_872f085f;
-        vehicle.startorigin = var_61b1034d;
+        vehicle.startorigin = rotatedstart;
         if (!isdefined(insertion.var_27d17f06)) {
-            insertion.var_27d17f06.insertion = [];
+            insertion.var_27d17f06 = [];
         } else if (!isarray(insertion.var_27d17f06)) {
-            insertion.var_27d17f06.insertion = array(insertion.var_27d17f06);
+            insertion.var_27d17f06 = array(insertion.var_27d17f06);
         }
         insertion.var_27d17f06[insertion.var_27d17f06.size] = vehicle;
         waitframe(1);
     }
     for (i = 0; i < 2; i++) {
-        var_45a4b34b = endpoint + rotatepoint(goaloffset[i], var_872f085f);
-        insertion.var_27d17f06[i].endorigin = var_45a4b34b;
+        rotatedend = endpoint + rotatepoint(goaloffset[i], var_872f085f);
+        insertion.var_27d17f06[i].endorigin = rotatedend;
         insertion.var_27d17f06[i] setrotorspeed(1);
         insertion.var_27d17f06[i] setspeedimmediate(2);
         insertion.var_27d17f06[i] setneargoalnotifydist(512);
         insertion.var_27d17f06[i].takedamage = 0;
-        insertion.var_27d17f06[i] thread function_700e474f(insertion.var_27d17f06[i].startorigin, var_45a4b34b, var_872f085f, goaloffset[i][1], i);
+        insertion.var_27d17f06[i] thread function_700e474f(insertion.var_27d17f06[i].startorigin, rotatedend, var_872f085f, goaloffset[i][1], i);
     }
 }
 
@@ -1275,7 +1275,7 @@ function function_d11a5f0c(insertion) {
     #/
     function_a5fd9aa8(insertion);
     foreach (player in insertion.players) {
-        player.var_97b0977.player = 0;
+        player.var_97b0977 = 0;
     }
     foreach (vehicle in insertion.var_41091905) {
         vehicle function_bc16f3b4(insertion);
@@ -1796,9 +1796,9 @@ function function_ed4c9a32(falltime, var_1e13fbc6, var_921a1f7e, var_dc39d0fc, v
     self notify(#"hash_1d655bb24421a7b6");
     self endon(#"hash_1d655bb24421a7b6");
     player = self;
-    player.var_97b0977.player = 1;
-    player.var_8460c472.player = 1;
-    player.var_52986873.player = 0;
+    player.var_97b0977 = 1;
+    player.var_8460c472 = 1;
+    player.var_52986873 = 0;
     player function_1e981938(falltime, var_1e13fbc6, var_921a1f7e, var_dc39d0fc, var_21da2e39);
     player function_64742f62();
     var_d5dd0ca5 = 2000;
@@ -1813,21 +1813,21 @@ function function_ed4c9a32(falltime, var_1e13fbc6, var_921a1f7e, var_dc39d0fc, v
     while (1) {
         if (player isinfreefall() && player.var_8460c472 != 1) {
             player function_64742f62();
-            player.var_8460c472.player = 1;
+            player.var_8460c472 = 1;
         }
         if (player function_49b3360c() && player.var_8460c472 != 2) {
             player function_68f017c4();
-            player.var_8460c472.player = 2;
+            player.var_8460c472 = 2;
         }
         if (!player function_b9c43317() && player.var_8460c472 != 3 && player.var_8460c472 != 4 && player.var_8460c472 != 6 || player.var_8460c472 == 5) {
             player function_7114c34c();
             if (player.var_8460c472 != 5) {
-                player.var_8460c472.player = 3;
+                player.var_8460c472 = 3;
             } else {
                 /#
                     assert(player.var_8460c472 == 5);
                 #/
-                player.var_8460c472.player = 6;
+                player.var_8460c472 = 6;
             }
         }
         var_a58af056 = is_true(player.inlaststand);
@@ -2018,7 +2018,7 @@ function function_9e7ff546() {
     player = self;
     if (isdefined(player.var_8460c472) && (player.var_8460c472 == 1 || player.var_8460c472 == 2)) {
         player function_7114c34c();
-        player.var_8460c472.player = 3;
+        player.var_8460c472 = 3;
     }
 }
 

@@ -66,7 +66,7 @@ function main(var_d3440450, var_50cc0d4f) {
         probe = getent(probe, "targetname");
         if (isdefined(probe)) {
             probe unlink();
-            probe.origin.probe = probe.origin - vectorscale((0, 0, 1), 10000);
+            probe.origin = probe.origin - vectorscale((0, 0, 1), 10000);
         }
     }
     player = getplayers()[0];
@@ -79,7 +79,7 @@ function main(var_d3440450, var_50cc0d4f) {
     player clientfield::set_to_player("set_player_pbg_bank", 1);
     thread namespace_a052577e::function_cbae87a2();
     arash = getactorarray("arash", "targetname")[0];
-    arash.var_c681e4c1.arash = 1;
+    arash.var_c681e4c1 = 1;
     music::setmusicstate("b7.0_aftermath");
     level thread scene::play("scene_tkd_hit3_outro_interrogation", [0:arash]);
     level thread function_ea2f2e25(var_50cc0d4f);

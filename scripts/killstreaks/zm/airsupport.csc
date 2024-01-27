@@ -8,9 +8,9 @@
 function function_fc85e1a(killstreaktype, var_68f473e3, var_5be6ed28, var_56d8a98d, var_d8860ecf) {
     var_512049f7 = {};
     if (!isdefined(var_512049f7.var_6fe38827)) {
-        var_512049f7.var_6fe38827.var_512049f7 = [];
+        var_512049f7.var_6fe38827 = [];
     } else if (!isarray(var_512049f7.var_6fe38827)) {
-        var_512049f7.var_6fe38827.var_512049f7 = array(var_512049f7.var_6fe38827);
+        var_512049f7.var_6fe38827 = array(var_512049f7.var_6fe38827);
     }
     var_512049f7.var_bcc0d9a6 = var_68f473e3;
     var_512049f7.var_20549f15 = var_5be6ed28;

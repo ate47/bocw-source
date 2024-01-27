@@ -36,7 +36,7 @@ function dropaiammo() {
     droppedweapon = shared::throwweapon(self.ammopouch, "tag_stowed_back", 1, 0);
     if (isdefined(droppedweapon)) {
         droppedweapon thread ammo_pouch_think();
-        droppedweapon setcontents(droppedweapon setcontents(0) & ~(32768 & 16777216 & 2097152 & 8388608));
+        droppedweapon setcontents(droppedweapon setcontents(0) & ~(32768 | 16777216 | 2097152 | 8388608));
     }
 }
 
@@ -99,7 +99,7 @@ function ammo_pouch_think() {
                     ammo = maxammo;
                 }
                 player setweaponammostock(weapon, ammo);
-                player.scavenged.player = 1;
+                player.scavenged = 1;
             } else if (stock < maxammo) {
                 ammo = stock + 1;
                 if (ammo > maxammo) {
@@ -110,7 +110,7 @@ function ammo_pouch_think() {
                     }
                 }
                 player setweaponammostock(weapon, ammo);
-                player.scavenged.player = 1;
+                player.scavenged = 1;
             }
         }
     }

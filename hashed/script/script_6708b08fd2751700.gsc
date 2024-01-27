@@ -172,7 +172,7 @@ function function_31980089(params) {
 function function_89684f6a(*params) {
     /#
         player = [[ level.rat.common.gethostplayer ]]();
-        return player.inventory.items[5].var_bd027dd9 != 32767;
+        return player.inventory.items[5].networkid != 32767;
     #/
 }
 

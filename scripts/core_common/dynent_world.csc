@@ -24,7 +24,7 @@ function event_handler[event_9673dc9a] function_3981d015(eventstruct) {
             }
         }
         teleport = eventstruct.teleport;
-        var_718063b0 = eventstruct.var_f29ec684;
+        var_718063b0 = eventstruct.rootorigin;
         var_c286a1ae = eventstruct.var_f2f9b257;
         if (!is_true(bundle.var_f710132b)) {
             pos = (isdefined(newstate.pos_x) ? newstate.pos_x : 0, isdefined(newstate.pos_y) ? newstate.pos_y : 0, isdefined(newstate.pos_z) ? newstate.pos_z : 0);
@@ -80,7 +80,7 @@ function event_handler[event_9673dc9a] function_3981d015(eventstruct) {
                 dynent.fx = undefined;
             }
             if (newstate.statefx !== #"hash_633319dd8957ddbb") {
-                dynent.fx.dynent = playfxondynent(newstate.statefx, dynent);
+                dynent.fx = playfxondynent(newstate.statefx, dynent);
             }
         }
         var_ceeada02 = is_true(newstate.var_fd3b5e91);

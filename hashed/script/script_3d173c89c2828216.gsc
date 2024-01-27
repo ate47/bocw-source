@@ -33,7 +33,7 @@
 // Size: 0x174
 function function_f44fbe7c() {
     if (!isdefined(self.doa.var_121de807)) {
-        self.doa.var_121de807 = namespace_ec06fe4a::function_b5731057("trigger_radius", self.origin, 1 & 512 & 8, 130, 50);
+        self.doa.var_121de807 = namespace_ec06fe4a::function_b5731057("trigger_radius", self.origin, 1 | 512 | 8, 130, 50);
         if (isdefined(self.doa.var_121de807)) {
             self.doa.var_121de807.targetname = "stunBear";
             self.doa.var_121de807 enablelinkto();

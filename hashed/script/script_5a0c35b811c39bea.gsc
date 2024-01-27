@@ -222,7 +222,7 @@ function function_b28bc84e(entity) {
     self.maxsightdistsqrd = function_a3f6cdac(3000);
     self.var_1267fdea = 0;
     entity namespace_85745671::function_9758722("run");
-    entity.maxsightdistsqrd.entity = function_a3f6cdac(2000);
+    entity.maxsightdistsqrd = function_a3f6cdac(2000);
     awareness::function_978025e4(entity);
 }
 
@@ -232,7 +232,7 @@ function function_b28bc84e(entity) {
 // Size: 0x10c
 function function_f8aa7ab9(entity) {
     if (function_7436ece2(entity.favoriteenemy)) {
-        entity.var_972b23bb.entity = 1;
+        entity.var_972b23bb = 1;
         function_a756bd8e(entity);
         return;
     }
@@ -266,7 +266,7 @@ function function_cea6c5e9(entity) {
         entity callback::callback(#"hash_10ab46b52df7967a");
         return;
     }
-    entity.maxsightdistsqrd.entity = function_a3f6cdac(1000);
+    entity.maxsightdistsqrd = function_a3f6cdac(1000);
     awareness::function_b9f81e8b(entity);
 }
 
@@ -296,7 +296,7 @@ function avogadrodespawn(entity) {
 function onallcracks(entity) {
     entity endon(#"death");
     entity.var_8a96267d = undefined;
-    entity.is_digging.entity = 1;
+    entity.is_digging = 1;
     entity pathmode("dont move", 1);
     timeout = getanimlength("ai_t9_zm_avogadro_exit");
     entity animscripted("avogadro_exit_finished", self.origin, self.angles, "ai_t9_zm_avogadro_exit", "normal", "root", 1, 0);
@@ -369,7 +369,7 @@ function function_175d123b(vehicle) {
     self endon(#"death");
     vehicle endon(#"death");
     if (!isdefined(vehicle.var_7cdc3732)) {
-        vehicle.var_7cdc3732.vehicle = [];
+        vehicle.var_7cdc3732 = [];
     }
     vehicle.var_7cdc3732[vehicle.var_7cdc3732.size] = self;
     while (vehicle getspeed() >= 100 && isplayer(self.favoriteenemy) && isdefined(vehicle getoccupantseat(self.favoriteenemy))) {
@@ -411,7 +411,7 @@ function function_5871bcf8(entity) {
     if (!isdefined(var_37cf85c7)) {
         return;
     }
-    entity.var_78dd7804.entity = archetype_avogadro::function_205c9932(entity);
+    entity.var_78dd7804 = archetype_avogadro::function_205c9932(entity);
     if (!isdefined(entity.var_78dd7804)) {
         return;
     }
@@ -456,7 +456,7 @@ function function_5871bcf8(entity) {
     entity.var_78dd7804.array[1].origin = var_546d115 + var_dd695160;
     entity thread archetype_avogadro::function_d979c854(entity);
     entity forceteleport(var_546d115, vectortoangles(var_baa2a8c4));
-    entity.var_4cc2bf28.entity = gettime() + int(3.5 * 1000);
+    entity.var_4cc2bf28 = gettime() + int(3.5 * 1000);
 }
 
 // Namespace namespace_9f3d3e9/namespace_9f3d3e9
@@ -628,8 +628,8 @@ function private function_b8c5ab9c(player) {
     player notify(#"hash_4f2e183cc0ec68bd");
     player endon(#"death", #"hash_4f2e183cc0ec68bd");
     player clientfield::set_to_player("isJammed", 1);
-    player.isjammed.player = 1;
-    player.var_fe1ebada.player = self;
+    player.isjammed = 1;
+    player.var_fe1ebada = self;
     player setempjammed(1);
     wait(5);
     if (!isdefined(player)) {

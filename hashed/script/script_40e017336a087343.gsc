@@ -83,7 +83,7 @@ class cluielemtext : cluielem {
     // Params 10, eflags: 0x0
     // Checksum 0xb23feb96, Offset: 0x5d8
     // Size: 0x1fc
-    function setup_clientfields(xcallback, ycallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, *var_f5852d69, horizontal_alignmentcallback) {
+    function setup_clientfields(xcallback, ycallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, *textcallback, horizontal_alignmentcallback) {
         cluielem::setup_clientfields("LUIelemText");
         cluielem::add_clientfield("x", 1, 7, "int", ycallback);
         cluielem::add_clientfield("y", 1, 6, "int", heightcallback);
@@ -92,7 +92,7 @@ class cluielemtext : cluielem {
         cluielem::add_clientfield("alpha", 1, 4, "float", redcallback);
         cluielem::add_clientfield("red", 1, 4, "float", greencallback);
         cluielem::add_clientfield("green", 1, 4, "float", bluecallback);
-        cluielem::add_clientfield("blue", 1, 4, "float", var_f5852d69);
+        cluielem::add_clientfield("blue", 1, 4, "float", textcallback);
         cluielem::function_dcb34c80("string", "text", 1);
         cluielem::add_clientfield("horizontal_alignment", 1, 2, "int", horizontal_alignmentcallback);
     }
@@ -161,9 +161,9 @@ class cluielemtext : cluielem {
 // Params 10, eflags: 0x0
 // Checksum 0x7684b2bf, Offset: 0x148
 // Size: 0x1ce
-function register(xcallback, ycallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, var_f5852d69, horizontal_alignmentcallback) {
+function register(xcallback, ycallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, textcallback, horizontal_alignmentcallback) {
     elem = new cluielemtext();
-    [[ elem ]]->setup_clientfields(xcallback, ycallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, var_f5852d69, horizontal_alignmentcallback);
+    [[ elem ]]->setup_clientfields(xcallback, ycallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, textcallback, horizontal_alignmentcallback);
     if (!isdefined(level.var_ae746e8f)) {
         level.var_ae746e8f = associativearray();
     }

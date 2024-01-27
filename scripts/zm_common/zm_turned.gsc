@@ -366,7 +366,7 @@ function get_farthest_available_zombie(player) {
         for (x = 0; x < zombies.size; x++) {
             zombie = zombies[x];
             if (isdefined(zombie) && isalive(zombie) && !is_true(zombie.in_the_ground) && !is_true(zombie.gibbed) && !is_true(zombie.head_gibbed) && !is_true(zombie.is_being_used_as_spawnpoint) && zombie zm_utility::in_playable_area()) {
-                zombie.is_being_used_as_spawnpoint.zombie = 1;
+                zombie.is_being_used_as_spawnpoint = 1;
                 return zombie;
             }
         }

@@ -15,21 +15,21 @@
 function enable_hacking(*killstreakname, prehackfunction, posthackfunction) {
     killstreak = self;
     level.challenge_scorestreaksenabled = 1;
-    killstreak.challenge_isscorestreak.killstreak = 1;
-    killstreak.killstreak_hackedcallback.killstreak = &_hacked_callback;
+    killstreak.challenge_isscorestreak = 1;
+    killstreak.killstreak_hackedcallback = &_hacked_callback;
     killstreak.killstreakprehackfunction = prehackfunction;
     killstreak.killstreakposthackfunction = posthackfunction;
-    killstreak.hackertoolinnertimems.killstreak = killstreak killstreak_bundles::get_hack_tool_inner_time();
-    killstreak.hackertooloutertimems.killstreak = killstreak killstreak_bundles::get_hack_tool_outer_time();
-    killstreak.hackertoolinnerradius.killstreak = killstreak killstreak_bundles::get_hack_tool_inner_radius();
-    killstreak.hackertoolouterradius.killstreak = killstreak killstreak_bundles::get_hack_tool_outer_radius();
-    killstreak.hackertoolradius.killstreak = killstreak.hackertoolouterradius;
-    killstreak.killstreakhackloopfx.killstreak = killstreak killstreak_bundles::get_hack_loop_fx();
-    killstreak.killstreakhackfx.killstreak = killstreak killstreak_bundles::get_hack_fx();
-    killstreak.killstreakhackscoreevent.killstreak = killstreak killstreak_bundles::get_hack_scoreevent();
-    killstreak.killstreakhacklostlineofsightlimitms.killstreak = killstreak killstreak_bundles::get_lost_line_of_sight_limit_msec();
-    killstreak.killstreakhacklostlineofsighttimems.killstreak = killstreak killstreak_bundles::get_hack_tool_no_line_of_sight_time();
-    killstreak.killstreak_hackedprotection.killstreak = killstreak killstreak_bundles::get_hack_protection();
+    killstreak.hackertoolinnertimems = killstreak killstreak_bundles::get_hack_tool_inner_time();
+    killstreak.hackertooloutertimems = killstreak killstreak_bundles::get_hack_tool_outer_time();
+    killstreak.hackertoolinnerradius = killstreak killstreak_bundles::get_hack_tool_inner_radius();
+    killstreak.hackertoolouterradius = killstreak killstreak_bundles::get_hack_tool_outer_radius();
+    killstreak.hackertoolradius = killstreak.hackertoolouterradius;
+    killstreak.killstreakhackloopfx = killstreak killstreak_bundles::get_hack_loop_fx();
+    killstreak.killstreakhackfx = killstreak killstreak_bundles::get_hack_fx();
+    killstreak.killstreakhackscoreevent = killstreak killstreak_bundles::get_hack_scoreevent();
+    killstreak.killstreakhacklostlineofsightlimitms = killstreak killstreak_bundles::get_lost_line_of_sight_limit_msec();
+    killstreak.killstreakhacklostlineofsighttimems = killstreak killstreak_bundles::get_hack_tool_no_line_of_sight_time();
+    killstreak.killstreak_hackedprotection = killstreak killstreak_bundles::get_hack_protection();
 }
 
 // Namespace killstreak_hacking/killstreak_hacking
@@ -200,7 +200,7 @@ function killstreak_switch_team(owner) {
                     return;
                 }
                 killstreakentity notify(#"killstreak_hacked", {#hacker:player});
-                killstreakentity.previouslyhacked.killstreakentity = 1;
+                killstreakentity.previouslyhacked = 1;
                 killstreakentity [[ killstreakentity.killstreak_hackedcallback ]](player);
                 wait(0.5);
                 setdvar(#"scr_killstreak_switch_team", 0);

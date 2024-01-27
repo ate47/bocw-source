@@ -165,7 +165,7 @@ function function_c6f81aa1(time) {
     }
     player = self;
     player endon(#"disconnect", #"spawned");
-    player.var_686890d5.player = 1;
+    player.var_686890d5 = 1;
     if (time <= 0) {
         time = 0.1;
     }
@@ -174,12 +174,12 @@ function function_c6f81aa1(time) {
         return;
     }
     player.var_686890d5 = undefined;
-    player.sessionstate.player = "spectator";
-    player.spectatorclient.player = -1;
-    player.killcamentity.player = -1;
-    player.archivetime.player = 0;
-    player.psoffsettime.player = 0;
-    player.spectatekillcam.player = 0;
+    player.sessionstate = "spectator";
+    player.spectatorclient = -1;
+    player.killcamentity = -1;
+    player.archivetime = 0;
+    player.psoffsettime = 0;
+    player.spectatekillcam = 0;
 }
 
 // Namespace display_transition/display_transition
@@ -231,7 +231,7 @@ function function_1caf5c87(team) {
     player::function_4dcd9a89(players, &function_3f65d5d3);
     foreach (player in players) {
         if (player != self) {
-            player.var_58f00ca2.player = 1;
+            player.var_58f00ca2 = 1;
             player thread function_61d01718(level.var_d1455682.eliminateddisplaytransition, #"hash_4a3306cfce6719bc");
         }
     }

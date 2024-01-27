@@ -646,7 +646,7 @@ function rscsimulatescripterror(params) {
                 assertmsg("<unknown string>");
             #/
         } else {
-            thisdoesntexist.orthis.thisdoesntexist = 0;
+            thisdoesntexist.orthis = 0;
         }
     #/
 }

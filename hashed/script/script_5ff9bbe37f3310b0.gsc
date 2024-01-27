@@ -55,17 +55,17 @@ function private function_8ba92985(s_instance) {
     s_instance callback::function_d8abfc3d(#"hash_345e9169ebba28fb", &function_db97f0ee);
     s_chest = s_instance.var_fe2612fe[#"hash_6b1e5d8f9e70a70e"][0];
     var_3ba64fe9 = s_instance.var_fe2612fe[#"hash_18c54e641c89f8eb"][0];
-    s_instance.var_e234ef47.s_instance = zm_utility::function_f5a222a8(#"hash_3475619554ec3ac2", s_chest.origin, &function_a1ca0279);
+    s_instance.var_e234ef47 = zm_utility::function_f5a222a8(#"hash_3475619554ec3ac2", s_chest.origin, &function_a1ca0279);
     wait(10);
     if (!isdefined(var_3ba64fe9.height)) {
-        var_3ba64fe9.height.var_3ba64fe9 = 5000;
+        var_3ba64fe9.height = 5000;
     }
     if (!isdefined(var_3ba64fe9.radius)) {
-        var_3ba64fe9.radius.var_3ba64fe9 = 10000;
+        var_3ba64fe9.radius = 10000;
     }
     var_8e27c3fd = spawn("trigger_radius", var_3ba64fe9.origin, 256, var_3ba64fe9.radius, var_3ba64fe9.height);
     s_instance.var_8e27c3fd = var_8e27c3fd;
-    var_8e27c3fd.target.var_8e27c3fd = s_chest.targetname;
+    var_8e27c3fd.target = s_chest.targetname;
     var_69b86a0a = spawn("trigger_radius", s_chest.origin - (0, 0, var_3ba64fe9.height / 2), 0, 1000, var_3ba64fe9.height);
     var_69b86a0a thread function_4dccab86(var_8e27c3fd);
     while (1) {
@@ -146,8 +146,8 @@ function function_9212e29c(s_instance, s_chest) {
     level flag::set(#"hash_68097fc64a08e557");
     ex_elevator_overlight_indicator_ = vectorscale((1, 0, 0), 270);
     struct = spawnstruct();
-    struct.origin.struct = s_chest.origin + (0, 0, 5000);
-    struct.angles.struct = s_chest.angles;
+    struct.origin = s_chest.origin + (0, 0, 5000);
+    struct.angles = s_chest.angles;
     struct.instance = s_instance;
     array::thread_all(function_a1ef346b(), &function_b05e27da, 0.5, 6, "buzz_high");
     mdl_fx = util::spawn_model("tag_origin", s_chest.origin);
@@ -156,8 +156,8 @@ function function_9212e29c(s_instance, s_chest) {
     mdl_fx playsound(#"hash_149945a98c1798a6");
     mdl_fx playloopsound(#"hash_3b2e8e212c9bfb8a");
     wait(1);
-    s_chest.scriptmodel.s_chest = namespace_8b6a9d79::function_f3d93ee9(struct, #"hash_401a47741ffd646f", 1);
-    s_chest.var_422ae63e.s_chest = #"p9_fxanim_zm_gp_chest_01_lrg_bundle";
+    s_chest.scriptmodel = namespace_8b6a9d79::function_f3d93ee9(struct, #"hash_401a47741ffd646f", 1);
+    s_chest.var_422ae63e = #"p9_fxanim_zm_gp_chest_01_lrg_bundle";
     var_31919730 = s_chest.scriptmodel;
     var_31919730 notsolid();
     var_31919730 function_619a5c20();
@@ -172,12 +172,12 @@ function function_9212e29c(s_instance, s_chest) {
     mdl_fx util::deleteaftertime(3);
     trigger = namespace_8b6a9d79::function_214737c7(s_chest, &function_19490940, #"hash_409a53f32f7cae42", undefined, 96, undefined, undefined, vectorscale((0, 0, 1), 16));
     trigger.struct = s_chest;
-    trigger.var_cc1fb2d0.trigger = namespace_58949729::function_fd5e77fa(#"gold");
+    trigger.var_cc1fb2d0 = namespace_58949729::function_fd5e77fa(#"gold");
     var_31919730.trigger = trigger;
     if (!isdefined(s_instance.var_f46ace2)) {
-        s_instance.var_f46ace2.s_instance = [];
+        s_instance.var_f46ace2 = [];
     } else if (!isarray(s_instance.var_f46ace2)) {
-        s_instance.var_f46ace2.s_instance = array(s_instance.var_f46ace2);
+        s_instance.var_f46ace2 = array(s_instance.var_f46ace2);
     }
     if (!isinarray(s_instance.var_f46ace2, struct)) {
         s_instance.var_f46ace2[s_instance.var_f46ace2.size] = struct;

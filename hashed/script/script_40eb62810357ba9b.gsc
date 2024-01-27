@@ -162,7 +162,7 @@ function private function_3bda3c55(entity) {
         return 1;
     }
     if (!isdefined(entity.var_9329a57c)) {
-        entity.var_9329a57c.entity = 0;
+        entity.var_9329a57c = 0;
     }
     if (entity.var_9329a57c > gettime()) {
         return 0;
@@ -184,7 +184,7 @@ function private function_3bda3c55(entity) {
 // Checksum 0xd61ff217, Offset: 0xac8
 // Size: 0x4e
 function private function_f4a61e6a(entity) {
-    entity.var_9329a57c.entity = gettime() + int(entity ai::function_9139c839().var_d5427206 * 1000);
+    entity.var_9329a57c = gettime() + int(entity ai::function_9139c839().var_d5427206 * 1000);
 }
 
 // Namespace namespace_df4fbf0/namespace_df4fbf0

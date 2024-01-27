@@ -203,15 +203,15 @@ function private function_29305761(s_teleport, var_dad37549, var_b095575e = 0) {
     if (distancesquared(s_teleport.origin, self.origin) < var_dad37549 * var_dad37549) {
         return;
     }
-    s_teleport.b_used.s_teleport = 1;
+    s_teleport.b_used = 1;
     if (!var_b095575e) {
         self thread lui::screen_flash(0, 0.3, 0.3);
     }
     if (self isinvehicle()) {
         vehicle = self getvehicleoccupied();
         if (is_true(s_teleport.script_allow_vehicle)) {
-            vehicle.origin.vehicle = s_teleport.origin;
-            vehicle.angles.vehicle = s_teleport.angles;
+            vehicle.origin = s_teleport.origin;
+            vehicle.angles = s_teleport.angles;
             self notify(#"teleported");
             vehicle notify(#"teleported");
             return;
@@ -239,7 +239,7 @@ function function_df1911b9(s_teleport, var_dad37549) {
     if (distancesquared(s_teleport.origin, self.origin) < var_dad37549 * var_dad37549) {
         return;
     }
-    s_teleport.b_used.s_teleport = 1;
+    s_teleport.b_used = 1;
     self forceteleport(s_teleport.origin, s_teleport.angles);
     if (isdefined(s_teleport.target)) {
         e_target = struct::get(s_teleport.target);

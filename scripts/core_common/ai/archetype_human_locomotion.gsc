@@ -215,7 +215,7 @@ function private shouldtacticalwalkpain(entity) {
 // Checksum 0xaa3a9f62, Offset: 0x1578
 // Size: 0x1a
 function private begintacticalwalkpain(entity) {
-    entity.startpaintime.entity = gettime();
+    entity.startpaintime = gettime();
     return 1;
 }
 
@@ -277,7 +277,7 @@ function private shouldplanarrivalintocover(behaviortreeentity) {
                 exitdir = vectornormalize(behaviortreeentity.predictedexitpos - behaviortreeentity.exitpos);
                 currentdir = vectornormalize(behaviortreeentity.origin - behaviortreeentity.exitpos);
                 if (lengthsquared(exitdir) > 0.0001 && lengthsquared(currentdir) > 0.0001 && vectordot(exitdir, currentdir) < cos(30)) {
-                    behaviortreeentity.predictedarrivaldirectionvalid.behaviortreeentity = 0;
+                    behaviortreeentity.predictedarrivaldirectionvalid = 0;
                     return 1;
                 }
                 var_f4f4457e = function_15a5703b(#"human", behaviortreeentity function_28e7d252());
@@ -341,8 +341,8 @@ function private function_4937d436(behaviortreeentity) {
     behaviortreeentity setblackboardattribute("_desired_stance", "stand");
     behaviortreeentity function_ed7c3705("run_n_gun");
     behaviortreeentity ai::function_fc7bd6c7();
-    behaviortreeentity.var_f334caee.behaviortreeentity = 1;
-    behaviortreeentity.var_e62db63f.behaviortreeentity = 0;
+    behaviortreeentity.var_f334caee = 1;
+    behaviortreeentity.var_e62db63f = 0;
     randomchance = randomint(100);
     if (randomchance > 50) {
         behaviortreeentity setblackboardattribute("_run_n_gun_variation", "variation_forward");
@@ -363,7 +363,7 @@ function private function_4937d436(behaviortreeentity) {
 function private function_145df88b(entity) {
     if (is_true(entity.var_f334caee)) {
         if (!entity asmistransitionrunning()) {
-            entity.var_d4a1d7ed.entity = gettime() + 2000;
+            entity.var_d4a1d7ed = gettime() + 2000;
             entity.var_f334caee = undefined;
         }
     }
@@ -381,7 +381,7 @@ function private function_145df88b(entity) {
 function private function_2985b5fa(behaviortreeentity) {
     behaviortreeentity ai::function_f6060793();
     behaviortreeentity function_ed7c3705("none");
-    behaviortreeentity.var_d4a1d7ed.behaviortreeentity = 0;
+    behaviortreeentity.var_d4a1d7ed = 0;
     return 1;
 }
 
@@ -706,7 +706,7 @@ function private planhumanarrivalatcover(behaviortreeentity, arrivalanim) {
                 return 0;
             }
             if (ispointonnavmesh(coverenterpos, behaviortreeentity)) {
-                behaviortreeentity.var_2dc0ed5e.behaviortreeentity = function_15a5703b(#"human", behaviortreeentity function_28e7d252());
+                behaviortreeentity.var_2dc0ed5e = function_15a5703b(#"human", behaviortreeentity function_28e7d252());
                 /#
                     recordcircle(coverenterpos, 2, (1, 0, 0), "<unknown string>");
                 #/
@@ -846,10 +846,10 @@ function private function_631d7179() {
 function private function_cb9c22a2(entity) {
     if (entity haspath() && !isdefined(entity.traversestartnode) && !entity function_3c566724()) {
         if (entity getorientmode("script") != "face enemy strafe") {
-            entity.var_6a36b46d.entity = 1;
+            entity.var_6a36b46d = 1;
             entity animmode("zonly_physics");
             entity orientmode("face enemy strafe");
-            entity.var_6a36b46d.entity = 0;
+            entity.var_6a36b46d = 0;
         }
     }
     var_55a3f1d3 = entity function_144f21ef();
@@ -1009,7 +1009,7 @@ function function_7ba867a8(entity) {
     if (var_422d3ed4 >= 45 && var_422d3ed4 <= 315) {
         return 1;
     } else {
-        entity.var_3b77553e.entity = -1;
+        entity.var_3b77553e = -1;
         return 0;
     }
 }

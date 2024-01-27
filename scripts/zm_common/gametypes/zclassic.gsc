@@ -222,7 +222,7 @@ function private intro_cinematic() {
     level flag::wait_till("initial_blackscreen_passed");
     if (isdefined(level.var_dfee7fc2) && !getdvarint(#"hash_39af51993585a73e", 0)) {
         foreach (player in getplayers()) {
-            player.var_f4e33249.player = 1;
+            player.var_f4e33249 = 1;
         }
         namespace_66d6aa44::function_bb17da18();
         level.var_3dfa8db4 = 1;
@@ -263,21 +263,21 @@ function on_round_end() {
     var_370ac26d = zm::function_d3113f01().var_bd588afd;
     foreach (player in getplayers()) {
         if (!isdefined(player.var_8d41c907)) {
-            player.var_8d41c907.player = 0;
+            player.var_8d41c907 = 0;
         }
         if (!zm_utility::function_1a01f2f7(player)) {
             player luinotifyevent(#"hash_3e6dd0ad7b864154", 1, var_370ac26d);
             player addrankxpvalue("round_end_xp", var_370ac26d, 4);
-            player.var_8d41c907.player = player.var_8d41c907 - var_370ac26d;
+            player.var_8d41c907 = player.var_8d41c907 - var_370ac26d;
         }
         if (!isdefined(player.var_a160c21d) || player.var_a160c21d === 0) {
             /#
                 println("<unknown string>" + player getentitynumber() + "<unknown string>");
             #/
-            player.var_a160c21d.player = 0;
+            player.var_a160c21d = 0;
         }
-        player.var_8d41c907.player = player.var_8d41c907 + player zm_round_logic::function_f4c57bbe();
-        player.var_a160c21d.player = 0;
+        player.var_8d41c907 = player.var_8d41c907 + player zm_round_logic::function_f4c57bbe();
+        player.var_a160c21d = 0;
     }
     if (level.round_number % 5 == 0 && level.round_number > 5) {
         foreach (player in getplayers()) {
@@ -325,7 +325,7 @@ function function_809241a9() {
         var_22ba849f = getdvarint(#"hash_3f0689f4ecc2fbab", 0);
         var_900d44db = zm::function_d3113f01();
         if (!isdefined(player.var_8d41c907)) {
-            player.var_8d41c907.player = 0;
+            player.var_8d41c907 = 0;
         }
         var_370ac26d = player.var_8d41c907;
         var_370ac26d = var_370ac26d + player zm_round_logic::function_f4c57bbe();
@@ -415,22 +415,22 @@ function function_1c2ce6a() {
                 }
             #/
             if (!isdefined(player.var_fdf8af77)) {
-                player.var_fdf8af77.player = player.origin;
+                player.var_fdf8af77 = player.origin;
             }
             if (!isdefined(player.var_d386fe5)) {
-                player.var_d386fe5.player = gettime();
+                player.var_d386fe5 = gettime();
             }
             if (!isdefined(player.var_eb31aed8)) {
-                player.var_eb31aed8.player = 0;
+                player.var_eb31aed8 = 0;
             }
             var_b1812947 = !zm_utility::check_point_in_playable_area(player.origin);
             if (player.origin === player.var_fdf8af77 || var_b1812947) {
-                player.var_eb31aed8.player = player.var_eb31aed8 + gettime() - player.var_d386fe5;
+                player.var_eb31aed8 = player.var_eb31aed8 + gettime() - player.var_d386fe5;
             } else {
-                player.var_eb31aed8.player = 0;
+                player.var_eb31aed8 = 0;
             }
-            player.var_fdf8af77.player = player.origin;
-            player.var_d386fe5.player = gettime();
+            player.var_fdf8af77 = player.origin;
+            player.var_d386fe5 = gettime();
             var_5a5450d4 = arraygetclosest(player.origin, level.var_9678e62d);
             var_aed141de = function_d6eaf8b0(player getvelocity()) <= 0 && !ispointonnavmesh(player.origin);
             var_f02558eb = var_b1812947 || var_aed141de ? 300 : 50;
@@ -444,7 +444,7 @@ function function_1c2ce6a() {
                     if (!is_true(var_f2587e64)) {
                         level.var_9678e62d[level.var_9678e62d.size] = player.origin;
                     }
-                    namespace_341c57b3::function_18135b72(#"hash_42d03088c9b0534b", {#spot:player.origin, #player:player});
+                    telemetry::function_18135b72(#"hash_42d03088c9b0534b", {#spot:player.origin, #player:player});
                     closest_point = getclosestpointonnavmesh(player.origin, 100);
                     if (isdefined(closest_point) && zm_utility::check_point_in_playable_area(closest_point)) {
                         player dontinterpolate();

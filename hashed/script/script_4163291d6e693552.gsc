@@ -466,7 +466,7 @@ function function_f10301b0() {
 function function_1e45b156(s_instance) {
     var_c18c5f = isdefined(s_instance.var_fe2612fe[#"hash_5819d8571ea7c838"]) ? s_instance.var_fe2612fe[#"hash_5819d8571ea7c838"] : [];
     if (var_c18c5f.size > 0) {
-        s_instance.var_44a675fe.s_instance = level.var_b3e433ae;
+        s_instance.var_44a675fe = level.var_b3e433ae;
         var_f3433c5b = [];
         var_2bcc2765 = [];
         foreach (var_cdce8e6f in var_c18c5f) {

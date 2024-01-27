@@ -45,48 +45,48 @@ function function_c5343206(eattacker, einflictor, idamage, smeansofdeath, weapon
         }
         var_d72bd991 = self.var_ea1458aa.attackerdamage[attackerclientid];
         var_d72bd991.meansofdeath = smeansofdeath;
-        var_d72bd991.idflags.var_d72bd991 = self.idflags;
-        var_d72bd991.isads.var_d72bd991 = eattacker playerads();
-        var_d72bd991.class_num.var_d72bd991 = eattacker.class_num;
-        var_d72bd991.var_121392a1.var_d72bd991 = isdefined(eattacker.var_121392a1) ? arraycopy(eattacker.var_121392a1) : undefined;
-        var_d72bd991.ismantling.var_d72bd991 = eattacker ismantling();
-        var_d72bd991.isjumping.var_d72bd991 = !eattacker isonground() && !eattacker isonladder() && !eattacker isplayerswimming();
-        var_d72bd991.var_bd77a1eb.var_d72bd991 = (isdefined(eattacker.var_6f3f5189) ? eattacker.var_6f3f5189 : 0) + 2500 >= time;
-        var_d72bd991.var_e8072c8d.var_d72bd991 = eattacker issprinting() || (isdefined(eattacker.challenge_sprint_end) ? eattacker.challenge_sprint_end : 0) + 2000 > time;
-        var_d72bd991.var_14f058c7.var_d72bd991 = isdefined(eattacker.lastreloadtime) && eattacker.lastreloadtime + 5000 >= time;
-        var_d72bd991.var_8e35fb71.var_d72bd991 = function_ce33e204(eattacker);
-        var_d72bd991.var_5745c480.var_d72bd991 = function_5af0c53c(eattacker);
-        var_d72bd991.var_54433d4b.var_d72bd991 = eattacker.scavenged === 1;
-        var_d72bd991.sensordarts.var_d72bd991 = isdefined(eattacker.sensor_darts) ? arraycopy(eattacker.sensor_darts) : undefined;
-        var_d72bd991.var_85997af0.var_d72bd991 = distance2dsquared(self.origin, eattacker.origin);
-        var_d72bd991.var_53611a9c.var_d72bd991 = eattacker function_d210981e(self.origin);
-        var_d72bd991.var_9a5c07a.var_d72bd991 = self.ispulsed === 1;
-        var_d72bd991.var_79eb9a59.var_d72bd991 = self.var_5379bee8;
-        var_d72bd991.var_2acdce3e.var_d72bd991 = isdefined(self.var_121392a1) ? arraycopy(self.var_121392a1) : undefined;
-        var_d72bd991.var_b535f1ea.var_d72bd991 = self.lastconcussedby;
-        var_d72bd991.var_f91a4dd6.var_d72bd991 = self.recentkillcountsameweapon;
+        var_d72bd991.idflags = self.idflags;
+        var_d72bd991.isads = eattacker playerads();
+        var_d72bd991.class_num = eattacker.class_num;
+        var_d72bd991.var_121392a1 = isdefined(eattacker.var_121392a1) ? arraycopy(eattacker.var_121392a1) : undefined;
+        var_d72bd991.ismantling = eattacker ismantling();
+        var_d72bd991.isjumping = !eattacker isonground() && !eattacker isonladder() && !eattacker isplayerswimming();
+        var_d72bd991.var_bd77a1eb = (isdefined(eattacker.var_6f3f5189) ? eattacker.var_6f3f5189 : 0) + 2500 >= time;
+        var_d72bd991.var_e8072c8d = eattacker issprinting() || (isdefined(eattacker.challenge_sprint_end) ? eattacker.challenge_sprint_end : 0) + 2000 > time;
+        var_d72bd991.var_14f058c7 = isdefined(eattacker.lastreloadtime) && eattacker.lastreloadtime + 5000 >= time;
+        var_d72bd991.var_8e35fb71 = function_ce33e204(eattacker);
+        var_d72bd991.var_5745c480 = function_5af0c53c(eattacker);
+        var_d72bd991.var_54433d4b = eattacker.scavenged === 1;
+        var_d72bd991.sensordarts = isdefined(eattacker.sensor_darts) ? arraycopy(eattacker.sensor_darts) : undefined;
+        var_d72bd991.var_85997af0 = distance2dsquared(self.origin, eattacker.origin);
+        var_d72bd991.var_53611a9c = eattacker function_d210981e(self.origin);
+        var_d72bd991.var_9a5c07a = self.ispulsed === 1;
+        var_d72bd991.var_79eb9a59 = self.var_5379bee8;
+        var_d72bd991.var_2acdce3e = isdefined(self.var_121392a1) ? arraycopy(self.var_121392a1) : undefined;
+        var_d72bd991.var_b535f1ea = self.lastconcussedby;
+        var_d72bd991.var_f91a4dd6 = self.recentkillcountsameweapon;
         if (eattacker function_6c32d092(#"talent_teamlink") && !(var_d72bd991.var_53611a9c === 1) && level.teambased) {
-            var_d72bd991.var_ec93e5f2.var_d72bd991 = function_43084f6c(self);
+            var_d72bd991.var_ec93e5f2 = function_43084f6c(self);
         }
         if (eattacker function_6c32d092(#"talent_ghost") && !(var_d72bd991.var_8e35fb71 === 1)) {
-            var_d72bd991.var_efc9cf4d.var_d72bd991 = function_eddea888(eattacker);
+            var_d72bd991.var_efc9cf4d = function_eddea888(eattacker);
         }
         var_98a6bdf5 = eattacker.var_ea1458aa;
         if (isdefined(var_98a6bdf5)) {
             var_46a82df0 = isdefined(var_98a6bdf5.var_a440c10) && var_98a6bdf5.var_a440c10 + 3000 > time;
             var_d72bd991.var_46a82df0 = var_46a82df0;
-            var_d72bd991.var_69b66e8e.var_d72bd991 = var_46a82df0 && var_98a6bdf5.var_55a37dc7 === 1 && (isdefined(var_ca60c93e.lastdamagetime) ? var_ca60c93e.lastdamagetime : 0) + 10000 > var_98a6bdf5.var_a440c10;
+            var_d72bd991.var_69b66e8e = var_46a82df0 && var_98a6bdf5.var_55a37dc7 === 1 && (isdefined(var_ca60c93e.lastdamagetime) ? var_ca60c93e.lastdamagetime : 0) + 10000 > var_98a6bdf5.var_a440c10;
             if (isdefined(var_98a6bdf5.attackerdamage)) {
                 var_8bc6e971 = var_98a6bdf5.attackerdamage[self.clientid];
                 if (isdefined(var_8bc6e971)) {
                     if (isdefined(var_8bc6e971.var_a74d2db8) && var_8bc6e971.var_a74d2db8 + 2500 > time) {
-                        var_d72bd991.var_d7bd6f9b.var_d72bd991 = 1;
+                        var_d72bd991.var_d7bd6f9b = 1;
                     }
                 }
             }
         }
     }
-    var_ca60c93e.damage.var_ca60c93e = var_ca60c93e.damage + idamage;
+    var_ca60c93e.damage = var_ca60c93e.damage + idamage;
     var_ca60c93e.einflictor = einflictor;
     var_ca60c93e.weapon = weapon;
     var_ca60c93e.lastdamagetime = time;
@@ -122,7 +122,7 @@ function function_43084f6c(player) {
             }
             if (enemy function_d210981e(player.origin)) {
                 if (!isdefined(player.var_c676db5f)) {
-                    player.var_c676db5f.player = [];
+                    player.var_c676db5f = [];
                 }
                 if (!isdefined(player.var_c676db5f[player getentitynumber()])) {
                     player.var_c676db5f[player getentitynumber()] = spawnstruct();
@@ -231,7 +231,7 @@ function private function_5af0c53c(player) {
                 continue;
             }
             if (!isdefined(enemy.entnum)) {
-                enemy.entnum.enemy = enemy getentitynumber();
+                enemy.entnum = enemy getentitynumber();
             }
             if (isdefined(level.activecounteruavs[enemy.entnum]) && level.activecounteruavs[enemy.entnum] > 0) {
                 return 1;
@@ -290,7 +290,7 @@ function trackattackerdamage(eattacker, idamage, smeansofdeath, weapon, shitloc)
         self.attackersthisspawn[attackerclientid] = eattacker;
     }
     var_ca60c93e = self.attackerdamage[attackerclientid];
-    var_ca60c93e.damage.var_ca60c93e = var_ca60c93e.damage + idamage;
+    var_ca60c93e.damage = var_ca60c93e.damage + idamage;
     var_ca60c93e.meansofdeath = smeansofdeath;
     var_ca60c93e.weapon = weapon;
     var_ca60c93e.shitloc = shitloc;

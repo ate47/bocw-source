@@ -67,16 +67,16 @@ function private function_70a657d8() {
 // Size: 0x156
 function private function_49695e98(center, mins, maxs, origin) {
     if (mins[0] + origin[0] < center.mins[0]) {
-        center.mins.center = (mins[0] + origin[0], center.mins[1], 0);
+        center.mins = (mins[0] + origin[0], center.mins[1], 0);
     }
     if (mins[1] + origin[1] < center.mins[1]) {
-        center.mins.center = (center.mins[0], mins[1] + origin[1], 0);
+        center.mins = (center.mins[0], mins[1] + origin[1], 0);
     }
     if (maxs[0] + origin[0] > center.maxs[0]) {
-        center.maxs.center = (maxs[0] + origin[0], center.maxs[1], 0);
+        center.maxs = (maxs[0] + origin[0], center.maxs[1], 0);
     }
     if (maxs[1] + origin[1] > center.maxs[1]) {
-        center.maxs.center = (center.maxs[0], maxs[1] + origin[1], 0);
+        center.maxs = (center.maxs[0], maxs[1] + origin[1], 0);
     }
 }
 
@@ -95,19 +95,19 @@ function private function_7904ef68(territory) {
         waitframe(1);
     }
     level clientfield::set("territory_id", territory.id);
-    territory.bounds.territory = [];
+    territory.bounds = [];
     if (isdefined(territory.target)) {
         entities = getentarray(territory.target, "targetname");
         center = spawnstruct();
-        center.mins.center = vectorscale((1, 1, 0), 2.14748e+09);
-        center.maxs.center = vectorscale((-1, -1, 0), 2.14748e+09);
+        center.mins = vectorscale((1, 1, 0), 2.14748e+09);
+        center.maxs = vectorscale((-1, -1, 0), 2.14748e+09);
         foreach (entity in entities) {
             if (isdefined(entity.classname) && entity.classname == #"trigger_within_bounds") {
                 territory.bounds[territory.bounds.size] = entity;
                 function_49695e98(center, entity.mins, entity.maxs, entity.origin);
             }
         }
-        center.origin.center = ((center.mins[0] + center.maxs[0]) / 2, (center.mins[1] + center.maxs[1]) / 2, 0);
+        center.origin = ((center.mins[0] + center.maxs[0]) / 2, (center.mins[1] + center.maxs[1]) / 2, 0);
         if (territory.bounds.size > 0) {
             oob::function_5e18416d(territory.bounds);
         }
@@ -118,9 +118,9 @@ function private function_7904ef68(territory) {
                 oob::function_376ddafd(struct.origin, struct.radius);
                 halfwidth = struct.radius * 1.02;
                 compass::function_d6cba2e9("", struct.origin[0] - halfwidth, struct.origin[1] + halfwidth, struct.origin[0] + halfwidth, struct.origin[1] - halfwidth);
-                center.origin.center = struct.origin;
-                center.mins.center = center.origin - (struct.radius, struct.radius, 0);
-                center.maxs.center = center.origin + (struct.radius, struct.radius, 0);
+                center.origin = struct.origin;
+                center.mins = center.origin - (struct.radius, struct.radius, 0);
+                center.maxs = center.origin + (struct.radius, struct.radius, 0);
                 break;
             }
         }

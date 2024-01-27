@@ -100,7 +100,7 @@ function function_84235351(var_ff716a93, var_edc20efd) {
     closest_target_dist_squared = undefined;
     foreach (target in targets) {
         if (!isdefined(target.hunted_by)) {
-            target.hunted_by.target = 0;
+            target.hunted_by = 0;
         }
         attackedrecently = 0;
         if (issentient(target)) {
@@ -135,7 +135,7 @@ function function_84235351(var_ff716a93, var_edc20efd) {
     if (!self is_target_valid(least_hunted)) {
         return undefined;
     } else {
-        least_hunted.hunted_by.least_hunted = least_hunted.hunted_by + 1;
+        least_hunted.hunted_by = least_hunted.hunted_by + 1;
         return least_hunted;
     }
 }

@@ -40,36 +40,36 @@ function function_df8c20ce(s_params) {
     ai_type = self.aitype;
     if (isplayer(e_player)) {
         if (!isdefined(e_player.var_f96ce53f)) {
-            e_player.var_f96ce53f.e_player = 0;
+            e_player.var_f96ce53f = 0;
         }
         if (isdefined(weapon) && weapon.inventorytype != #"offhand" && !is_true(e_player.var_df6978da)) {
             if (!is_true(e_player.var_f96ce53f)) {
                 if (ai_type === "spawner_zm_steiner_split_radiation_bomb" || ai_type === "spawner_zm_steiner_split_radiation_blast") {
                     switch (ai_type) {
                     case #"spawner_zm_steiner_split_radiation_bomb":
-                        e_player.var_287dbab8.e_player = "spawner_zm_steiner_split_radiation_blast";
+                        e_player.var_287dbab8 = "spawner_zm_steiner_split_radiation_blast";
                         break;
                     case #"spawner_zm_steiner_split_radiation_blast":
-                        e_player.var_287dbab8.e_player = "spawner_zm_steiner_split_radiation_bomb";
+                        e_player.var_287dbab8 = "spawner_zm_steiner_split_radiation_bomb";
                         break;
                     }
-                    e_player.var_f96ce53f.e_player = 1;
+                    e_player.var_f96ce53f = 1;
                     e_player thread function_735fa731();
                 }
             } else if (e_player.var_287dbab8 === ai_type) {
-                e_player.var_df6978da.e_player = 1;
+                e_player.var_df6978da = 1;
                 e_player zm_utility::function_659819fa(#"zm_silver_mega");
             }
         }
         if (!isdefined(e_player.kill_count)) {
-            e_player.kill_count.e_player = 0;
+            e_player.kill_count = 0;
         }
         if (!is_true(e_player.var_12445983)) {
             if (e_player.kill_count < level.var_d8104f84 && e_player istouching(level.var_4b8d723f)) {
                 e_player.kill_count++;
             }
             if (e_player.kill_count >= level.var_d8104f84) {
-                e_player.var_12445983.e_player = 1;
+                e_player.var_12445983 = 1;
                 e_player zm_utility::function_659819fa(#"zm_silver_wing");
             }
         }

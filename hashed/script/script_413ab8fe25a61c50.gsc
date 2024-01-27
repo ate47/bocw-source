@@ -34,7 +34,7 @@
 // Checksum 0x3be7856d, Offset: 0x330
 // Size: 0xa28
 function function_93e7ee52(challengetype = 0, name) {
-    level.doa.var_e5ef2ab4 = level.doa.var_e5ef2ab4 & 1 << challengetype;
+    level.doa.var_e5ef2ab4 = level.doa.var_e5ef2ab4 | 1 << challengetype;
     level.doa.var_a598a835 = undefined;
     level.doa.var_a77e4601 = [];
     level flag::clear("challenge_round_spawnOverride");
@@ -130,7 +130,7 @@ function function_93e7ee52(challengetype = 0, name) {
             if (isdefined(def)) {
                 pickup = level namespace_dfc652ee::itemspawn(def, loot.origin, undefined, undefined, 1);
                 if (isdefined(pickup)) {
-                    pickup.origin.pickup = loot.origin;
+                    pickup.origin = loot.origin;
                     pickup notify(#"hash_2a866f50cc161ca8");
                     if (isdefined(pickup.var_6863e853) && pickup.var_6863e853 !== "glow_yellow") {
                         util::wait_network_frame();
@@ -422,17 +422,17 @@ function function_17f47e92() {
 function function_201a7d58() {
     spawnloc = spawnstruct();
     if (randomint(100) < 60) {
-        spawnloc.origin.spawnloc = [[ level.doa.var_39e3fa99 ]]->function_70fb5745().origin + vectorscale((0, 0, 1), 1600);
-        spawnloc.angles.spawnloc = [[ level.doa.var_39e3fa99 ]]->function_70fb5745().angles;
+        spawnloc.origin = [[ level.doa.var_39e3fa99 ]]->function_70fb5745().origin + vectorscale((0, 0, 1), 1600);
+        spawnloc.angles = [[ level.doa.var_39e3fa99 ]]->function_70fb5745().angles;
     } else {
         players = getplayers();
         if (players.size) {
             player = players[randomint(players.size)];
-            spawnloc.origin.spawnloc = player.origin + vectorscale((0, 0, 1), 1600);
-            spawnloc.angles.spawnloc = player.angles;
+            spawnloc.origin = player.origin + vectorscale((0, 0, 1), 1600);
+            spawnloc.angles = player.angles;
         } else {
-            spawnloc.origin.spawnloc = [[ level.doa.var_39e3fa99 ]]->function_70fb5745().origin + vectorscale((0, 0, 1), 1600);
-            spawnloc.angles.spawnloc = [[ level.doa.var_39e3fa99 ]]->function_70fb5745().angles;
+            spawnloc.origin = [[ level.doa.var_39e3fa99 ]]->function_70fb5745().origin + vectorscale((0, 0, 1), 1600);
+            spawnloc.angles = [[ level.doa.var_39e3fa99 ]]->function_70fb5745().angles;
         }
     }
     return spawnloc;

@@ -56,7 +56,7 @@ function zodcompanionheadgibfx(localclientnum, entity, *gibflag) {
         stopfx(entity, gibflag.mindcontrolheadfx);
         gibflag.mindcontrolheadfx = undefined;
     }
-    gibflag.headgibfx.gibflag = util::playfxontag(entity, level._effect[#"fx_dest_robot_head_sparks"], gibflag, "j_neck");
+    gibflag.headgibfx = util::playfxontag(entity, level._effect[#"fx_dest_robot_head_sparks"], gibflag, "j_neck");
     playsound(0, #"prj_bullet_impact_robot_headshot", gibflag.origin);
 }
 
@@ -68,7 +68,7 @@ function zodcompaniondamagedfx(localclientnum, entity) {
     if (!isdefined(entity) || !entity isai() || !isalive(entity)) {
         return;
     }
-    entity.damagedfx.entity = util::playfxontag(localclientnum, level._effect[#"fx_dest_robot_body_sparks"], entity, "j_spine4");
+    entity.damagedfx = util::playfxontag(localclientnum, level._effect[#"fx_dest_robot_body_sparks"], entity, "j_spine4");
 }
 
 // Namespace zodcompanionclientutils/archetype_zod_companion

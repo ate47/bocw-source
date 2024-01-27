@@ -94,8 +94,8 @@ function function_b926dcfd(item) {
 // Checksum 0x61402514, Offset: 0x588
 // Size: 0x32
 function function_c3a836cd(watcher) {
-    watcher.altdetonate.watcher = 1;
-    watcher.var_e7ebbd38.watcher = &function_eb6180c9;
+    watcher.altdetonate = 1;
+    watcher.var_e7ebbd38 = &function_eb6180c9;
 }
 
 // Namespace namespace_33c196c8/namespace_33c196c8
@@ -352,8 +352,8 @@ function function_e7136ed2(e_player) {
     if (item.var_a6762160.weapon === e_player getcurrentoffhand()) {
         e_player val::set_for_time(0.2, #"hash_7f812cfd98c00a7b", "disable_offhand_weapons", 1);
     }
-    if (item.var_bd027dd9 != 32767 && e_player item_inventory::function_c48cd17f(item.var_bd027dd9) != 32767) {
-        while (!e_player item_inventory::remove_inventory_item(item.var_bd027dd9)) {
+    if (item.networkid != 32767 && e_player item_inventory::function_c48cd17f(item.networkid) != 32767) {
+        while (!e_player item_inventory::remove_inventory_item(item.networkid)) {
             waitframe(1);
         }
         if (isdefined(item.count) && item.count > 0) {
@@ -389,7 +389,7 @@ function function_2d3ad651(e_player) {
         if (item.var_a6762160.weapon === e_player getcurrentoffhand()) {
             e_player val::set_for_time(0.2, #"hash_e1a1061308a8a71", "disable_offhand_weapons", 1);
         }
-        while (!e_player item_inventory::remove_inventory_item(item.var_bd027dd9)) {
+        while (!e_player item_inventory::remove_inventory_item(item.networkid)) {
             waitframe(1);
         }
         waitframe(1);

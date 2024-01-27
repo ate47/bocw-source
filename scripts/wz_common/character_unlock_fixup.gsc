@@ -33,16 +33,16 @@ function register_character_unlock(unlock_name, unlock_stat, item, var_f27097cc,
     var_9ba1646c = {#activation_func:undefined, #var_849d923d:var_f27097cc, #var_3845495:[], #required_item:item, #var_2b469a7d:unlock_stat};
     for (i = 0; i < vararg.size; i++) {
         if (!isdefined(var_9ba1646c.var_3845495)) {
-            var_9ba1646c.var_3845495.var_9ba1646c = [];
+            var_9ba1646c.var_3845495 = [];
         } else if (!isarray(var_9ba1646c.var_3845495)) {
-            var_9ba1646c.var_3845495.var_9ba1646c = array(var_9ba1646c.var_3845495);
+            var_9ba1646c.var_3845495 = array(var_9ba1646c.var_3845495);
         }
         var_9ba1646c.var_3845495[var_9ba1646c.var_3845495.size] = vararg[i];
     }
     if (!isdefined(var_9ba1646c.var_3845495)) {
-        var_9ba1646c.var_3845495.var_9ba1646c = [];
+        var_9ba1646c.var_3845495 = [];
     } else if (!isarray(var_9ba1646c.var_3845495)) {
-        var_9ba1646c.var_3845495.var_9ba1646c = array(var_9ba1646c.var_3845495);
+        var_9ba1646c.var_3845495 = array(var_9ba1646c.var_3845495);
     }
     var_9ba1646c.var_3845495[var_9ba1646c.var_3845495.size] = #"hash_3f07579f66b464e8";
     level.var_7d8da246[unlock_name] = var_9ba1646c;

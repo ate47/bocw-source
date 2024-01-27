@@ -103,7 +103,7 @@ function function_5e443ed1() {
     zm::init();
     level._loadstarted = 1;
     register_clientfields();
-    level.aitriggerspawnflags = getaitriggerflags() & 8192;
+    level.aitriggerspawnflags = getaitriggerflags() | 8192;
     level.vehicletriggerspawnflags = getvehicletriggerflags();
     level thread start_intro_screen_zm();
     system::function_c11b0642();

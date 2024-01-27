@@ -196,18 +196,18 @@ function default_rules() {
 function sessionadvertismentcreatedebughud(linenum, alignx) {
     /#
         debug_hud = new_hud("<unknown string>", "<unknown string>", 0, 0, 1);
-        debug_hud.hidewheninmenu.debug_hud = 1;
-        debug_hud.horzalign.debug_hud = "<unknown string>";
-        debug_hud.vertalign.debug_hud = "<unknown string>";
-        debug_hud.alignx.debug_hud = "<unknown string>";
-        debug_hud.aligny.debug_hud = "<unknown string>";
+        debug_hud.hidewheninmenu = 1;
+        debug_hud.horzalign = "<unknown string>";
+        debug_hud.vertalign = "<unknown string>";
+        debug_hud.alignx = "<unknown string>";
+        debug_hud.aligny = "<unknown string>";
         debug_hud.x = alignx;
-        debug_hud.y.debug_hud = -50 + linenum * 15;
-        debug_hud.foreground.debug_hud = 1;
-        debug_hud.font.debug_hud = "<unknown string>";
-        debug_hud.fontscale.debug_hud = 1.5;
-        debug_hud.color.debug_hud = (1, 1, 1);
-        debug_hud.alpha.debug_hud = 1;
+        debug_hud.y = -50 + linenum * 15;
+        debug_hud.foreground = 1;
+        debug_hud.font = "<unknown string>";
+        debug_hud.fontscale = 1.5;
+        debug_hud.color = (1, 1, 1);
+        debug_hud.alpha = 1;
         debug_hud settext("<unknown string>");
         return debug_hud;
     #/
@@ -287,10 +287,10 @@ function sessionadvertismentupdatedebughud() {
                 sessionadverthud_3b = host sessionadvertismentcreatedebughud(3, 0);
                 sessionadverthud_4a = host sessionadvertismentcreatedebughud(4, -20);
                 sessionadverthud_4b = host sessionadvertismentcreatedebughud(4, 0);
-                sessionadverthud_1a.color.sessionadverthud_1a = vectorscale((0, 1, 0), 0.5);
-                sessionadverthud_1b.color.sessionadverthud_1b = vectorscale((0, 1, 0), 0.5);
-                sessionadverthud_2a.color.sessionadverthud_2a = vectorscale((0, 1, 0), 0.5);
-                sessionadverthud_2b.color.sessionadverthud_2b = vectorscale((0, 1, 0), 0.5);
+                sessionadverthud_1a.color = vectorscale((0, 1, 0), 0.5);
+                sessionadverthud_1b.color = vectorscale((0, 1, 0), 0.5);
+                sessionadverthud_2a.color = vectorscale((0, 1, 0), 0.5);
+                sessionadverthud_2b.color = vectorscale((0, 1, 0), 0.5);
             }
             if (isdefined(sessionadverthud_0)) {
                 if (showdebughud == 0) {
@@ -314,9 +314,9 @@ function sessionadvertismentupdatedebughud() {
                     sessionadverthud_4b = undefined;
                 } else {
                     if (level.sessionadvertstatus == 1) {
-                        sessionadverthud_0.color.sessionadverthud_0 = (1, 1, 1);
+                        sessionadverthud_0.color = (1, 1, 1);
                     } else {
-                        sessionadverthud_0.color.sessionadverthud_0 = vectorscale((1, 0, 0), 0.9);
+                        sessionadverthud_0.color = vectorscale((1, 0, 0), 0.9);
                     }
                     sessionadverthud_0 settext(level.sessionadverthud_0_text);
                     if (level.sessionadverthud_1a_text != "<unknown string>") {

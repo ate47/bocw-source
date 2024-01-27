@@ -199,7 +199,7 @@ function private function_1975f7db() {
         }
         var_6067a19c = var_a3c51b07[i - 1];
         if (isdefined(var_6067a19c.var_e859e591[#"hash_401d37614277df42"])) {
-            var_6067a19c.var_473c9869.var_6067a19c = 1;
+            var_6067a19c.var_473c9869 = 1;
         }
         level.var_7d45d0d4.var_d60029a6 = var_a3c51b07;
         if (var_4191df0e) {

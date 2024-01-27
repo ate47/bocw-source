@@ -26,11 +26,11 @@ function init() {
             /#
                 assert(args.size >= 4);
             #/
-            shot.var_dd65e804.shot = float(args[0]);
-            shot.var_411d90d0.shot = float(args[1]);
-            shot.var_3e552258.shot = float(args[2]);
-            shot.var_1c75c5b0.shot = int(args[3]);
-            shot.var_cdf089b4.shot = struct::get(shot.target, "targetname");
+            shot.var_dd65e804 = float(args[0]);
+            shot.var_411d90d0 = float(args[1]);
+            shot.var_3e552258 = float(args[2]);
+            shot.var_1c75c5b0 = int(args[3]);
+            shot.var_cdf089b4 = struct::get(shot.target, "targetname");
             if (!isdefined(level.doa.var_258d537d.var_a6b0949b)) {
                 level.doa.var_258d537d.var_a6b0949b = [];
             } else if (!isarray(level.doa.var_258d537d.var_a6b0949b)) {
@@ -72,8 +72,8 @@ function function_8d4cb2b(localclientnum) {
         }
         self.doa.cameramode = 7;
         foreach (shot in level.doa.var_258d537d.var_a6b0949b) {
-            var_3dbe949b.origin.var_3dbe949b = shot.origin;
-            var_3dbe949b.angles.var_3dbe949b = shot.angles;
+            var_3dbe949b.origin = shot.origin;
+            var_3dbe949b.angles = shot.angles;
             if (isdefined(level.localclients[localclientnum].full_screen_black)) {
                 s_menu = level.localclients[localclientnum].full_screen_black;
                 if ([[ s_menu.lui_menu ]]->is_open(localclientnum)) {

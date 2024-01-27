@@ -78,7 +78,7 @@ function function_96a48049() {
 function function_3dbef270(*params) {
     self namespace_83eb6304::function_3ecfde67("nova_crawler_burst");
     self namespace_e32bb68::function_3a59ec34("zmb_doa_ai_crawler_explo");
-    trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", self.origin, 2 & 1 & 512, 40, 50);
+    trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", self.origin, 2 | 1 | 512, 40, 50);
     if (isdefined(trigger)) {
         trigger thread namespace_ec06fe4a::function_52afe5df(3);
         trigger thread function_86555fba();

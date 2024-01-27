@@ -102,15 +102,15 @@ function function_d84b2bab(localclientnum) {
     n_range = player namespace_e86ffa8::function_cd6787b(localclientnum, 2) ? 288 : 144;
     zombies = getentitiesinradius(localclientnum, self.origin, n_range, 15);
     waittime = float(150) / 1000;
-    var_6e75c10a = "beam9_zm_aat_dead_wire_arc";
+    beamname = "beam9_zm_aat_dead_wire_arc";
     pos = (self.origin[0], self.origin[1], self.origin[2] + 50);
     foreach (zombie in zombies) {
         if (zombie != self && distance2d(self.origin, zombie.origin) < n_range && isalive(zombie)) {
-            var_ccfd8635 = zombie.origin;
-            trace = beamtrace(pos, var_ccfd8635, 1, self, 1);
+            otherpos = zombie.origin;
+            trace = beamtrace(pos, otherpos, 1, self, 1);
             str_fx_tag = isdefined(self gettagorigin("j_spine4")) ? "j_spine4" : "tag_origin";
             if (self function_a4b3da97(trace)) {
-                beam_id = self beam::launch(self, str_fx_tag, zombie, str_fx_tag, var_6e75c10a);
+                beam_id = self beam::launch(self, str_fx_tag, zombie, str_fx_tag, beamname);
                 level thread function_149bbdd9(localclientnum, waittime, beam_id);
             }
         }

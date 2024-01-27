@@ -138,11 +138,11 @@ function zone_init() {
     namespace_f0b43eb5::create_challenge(#"hash_79a18115e7a94cdd", 90, "zone_korber_stairs", undefined, #"hash_5cee7e17aff44d7e", "s_obj_challenge_zone_korber_stairs", &namespace_f0b43eb5::function_1d60215, &namespace_f0b43eb5::function_6be352fc);
     s_challenge = namespace_f0b43eb5::create_challenge(#"hash_23841799ddb023fe", 90, "zone_korber_sewing_room", undefined, #"hash_5cee7e17aff44d7e", "s_obj_challenge_zone_korber_sewing_room", &namespace_f0b43eb5::function_1d60215, &namespace_f0b43eb5::function_6be352fc);
     s_challenge = namespace_f0b43eb5::create_challenge(#"hash_30b2182903bf4a9", 90, "zone_room_304", undefined, #"hash_5cee7e17aff44d7e", "s_obj_challenge_zone_room_304", &namespace_f0b43eb5::function_1d60215, &namespace_f0b43eb5::function_6be352fc);
-    s_challenge.var_4e0096cd.s_challenge = #"hash_2f701c656c4a37e0";
+    s_challenge.var_4e0096cd = #"hash_2f701c656c4a37e0";
     s_challenge = namespace_f0b43eb5::create_challenge(#"hash_30b2482903bf9c2", 90, "zone_room_301", undefined, #"hash_5cee7e17aff44d7e", "s_obj_challenge_zone_room_301", &namespace_f0b43eb5::function_1d60215, &namespace_f0b43eb5::function_6be352fc);
-    s_challenge.var_4e0096cd.s_challenge = #"hash_3b15d4ce09e80704";
+    s_challenge.var_4e0096cd = #"hash_3b15d4ce09e80704";
     s_challenge = namespace_f0b43eb5::create_challenge(#"hash_7bd66f77ab96b799", 90, "zone_front_desk", undefined, #"hash_5cee7e17aff44d7e", "s_obj_challenge_zone_front_desk", &namespace_f0b43eb5::function_1d60215, &namespace_f0b43eb5::function_6be352fc);
-    s_challenge.var_4e0096cd.s_challenge = #"hash_125b84bfef4e5ff0";
+    s_challenge.var_4e0096cd = #"hash_125b84bfef4e5ff0";
     namespace_f0b43eb5::create_challenge(#"hash_6d988452168d217a", 90, "zone_rooftops_interior", undefined, #"hash_5cee7e17aff44d7e", "s_obj_challenge_zone_rooftops_interior", &namespace_f0b43eb5::function_1d60215, &namespace_f0b43eb5::function_6be352fc);
     namespace_f0b43eb5::function_f528e34a("s_obj_challenge_zone_american_sector_street");
     namespace_f0b43eb5::create_challenge(#"hash_449daf451df68085", 90, "zone_american_sector_left_building", undefined, #"hash_5cee7e17aff44d7e", "s_obj_challenge_zone_american_sector_left_building", &namespace_f0b43eb5::function_1d60215, &namespace_f0b43eb5::function_6be352fc);

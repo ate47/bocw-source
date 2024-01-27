@@ -208,7 +208,7 @@ function function_232f3acf(local_client_num, bundle) {
         if (function_5778f82(local_client_num, #"specialty_showenemyequipment")) {
             return 1;
         }
-        bundle.var_1a5b7293.bundle = 1;
+        bundle.var_1a5b7293 = 1;
     }
     return 0;
 }

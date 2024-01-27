@@ -411,8 +411,8 @@ function function_895ead7c() {
 function function_8c36f50() {
     /#
         var_16e5e46 = function_228558fd();
-        foreach (var_bd14e861 in var_16e5e46) {
-            self set_stat(#"playerstatsbymap", var_bd14e861, #"hasbeencompleted", 1);
+        foreach (mission_name in var_16e5e46) {
+            self set_stat(#"playerstatsbymap", mission_name, #"hasbeencompleted", 1);
         }
     #/
 }
@@ -1084,7 +1084,7 @@ function private function_57edec18() {
                     continue;
                 }
                 drone_camera = spawnvehicle("<unknown string>", player.origin + vectorscale((0, 0, 1), 150), player.angles, "<unknown string>");
-                drone_camera.ignoreme.drone_camera = 1;
+                drone_camera.ignoreme = 1;
                 drone_camera usevehicle(player, 0);
                 level.drone_camera = drone_camera;
             } else if (isdefined(level.drone_camera)) {

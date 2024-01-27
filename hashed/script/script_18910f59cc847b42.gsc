@@ -195,8 +195,8 @@ function function_14f1aa2b(localclientnum, var_facb5140) {
             var_e1d2ab75 = maxs - mins;
             var_8cc62135 = (mins + maxs) * 0.5;
         } else if (isdefined(level.doa.var_72b899ad)) {
-            var_e7993c63 = level.doa.var_72b899ad.origin - localplayer.origin;
-            var_8cc62135 = localplayer.origin + var_e7993c63 * 0.25;
+            dirtocenter = level.doa.var_72b899ad.origin - localplayer.origin;
+            var_8cc62135 = localplayer.origin + dirtocenter * 0.25;
         }
     }
     if (is_true(level.var_fb0679ad)) {
@@ -207,10 +207,10 @@ function function_14f1aa2b(localclientnum, var_facb5140) {
         facing = anglestoforward(localplayer getplayerangles());
         var_91e98520 = var_88389b8f + facing * (130 + abs(facing[0] * 30)) + localplayer getvelocity() * 0.5;
         if (isdefined(level.var_145dec4f)) {
-            var_55e8085c = 3;
+            lerp_rate = 3;
             dir = var_91e98520 - level.var_145dec4f;
             if (lengthsquared(dir) < 1000000) {
-                var_91e98520 = level.var_145dec4f + dir * var_55e8085c * var_facb5140;
+                var_91e98520 = level.var_145dec4f + dir * lerp_rate * var_facb5140;
                 var_88389b8f = var_91e98520;
             }
         }
@@ -263,17 +263,17 @@ function function_14f1aa2b(localclientnum, var_facb5140) {
         var_88389b8f = var_88389b8f + var_be529a4e * level.var_fa5416a8;
     }
     if (isdefined(localplayer.var_45c6f27d)) {
-        var_55e8085c = 2;
+        lerp_rate = 2;
         dir = var_88389b8f - localplayer.var_45c6f27d;
         if (lengthsquared(dir) < 1000000) {
-            var_88389b8f = localplayer.var_45c6f27d + dir * var_55e8085c * var_facb5140;
+            var_88389b8f = localplayer.var_45c6f27d + dir * lerp_rate * var_facb5140;
         }
     }
     localplayer.var_ca14ee83 = angles;
     if (isdefined(localplayer.var_2d592f5b)) {
-        var_55e8085c = 3;
+        lerp_rate = 3;
         dir = angles - localplayer.var_2d592f5b;
-        angles = localplayer.var_2d592f5b + dir * var_55e8085c * var_facb5140;
+        angles = localplayer.var_2d592f5b + dir * lerp_rate * var_facb5140;
     }
     zoffset = 0;
     if (isdefined(localplayer.doa.var_c544c883)) {

@@ -386,10 +386,10 @@ function function_252dff4d(name, aitype, var_d240d5de, var_41157a40, unlocklevel
     struct.var_41157a40 = var_41157a40;
     struct.var_c8ceaddf = var_c8ceaddf;
     struct.var_9f19fcb6 = chance;
-    struct.unlocklevel.struct = isdefined(unlocklevel) ? unlocklevel : -1;
-    struct.var_71e54e3a.struct = [];
+    struct.unlocklevel = isdefined(unlocklevel) ? unlocklevel : -1;
+    struct.var_71e54e3a = [];
     if (aitype != -1 && aitype <= 29) {
-        level.doa.var_695258a5 = level.doa.var_695258a5 & 1 << aitype;
+        level.doa.var_695258a5 = level.doa.var_695258a5 | 1 << aitype;
         level.doa.var_4eb7c3f0++;
     }
     foreach (spawner in level.doa.var_3a73503f) {
@@ -794,7 +794,7 @@ function function_25b2c8a9(*spawner, *str_targetname, *force_spawn) {
         base = struct::get(self.target);
         if (isdefined(base)) {
             if (!isdefined(base.radius)) {
-                base.radius.base = 1024;
+                base.radius = 1024;
             }
             self thread function_e1f7a9a0(int(base.radius), base.origin);
         }
@@ -1127,17 +1127,17 @@ function function_622f5b91(var_77cbeb28) {
     i = 8;
     var_a8bd6ee9 = function_a3f6cdac(128);
     foreach (ally in var_77cbeb28) {
-        ally.rank.ally = i * 50;
+        ally.rank = i * 50;
         if (self.favoriteenemy === ally) {
-            ally.rank.ally = ally.rank + 100;
+            ally.rank = ally.rank + 100;
         }
         if (self.lastattacker === ally) {
-            ally.rank.ally = ally.rank + 40;
+            ally.rank = ally.rank + 40;
         }
         distsq = distancesquared(self.origin, ally.origin);
         if (distsq < var_a8bd6ee9) {
             amount = 300 - int(mapfloat(0, var_a8bd6ee9, 0, 300, distsq));
-            ally.rank.ally = ally.rank + amount;
+            ally.rank = ally.rank + amount;
         }
         i--;
     }
@@ -1148,7 +1148,7 @@ function function_622f5b91(var_77cbeb28) {
         }
         foreach (ally in var_77cbeb28) {
             if (guy.favoriteenemy === ally) {
-                ally.rank.ally = ally.rank - 20;
+                ally.rank = ally.rank - 20;
             }
         }
     }
@@ -1564,7 +1564,7 @@ function function_b87b3fef(behaviortreeentity) {
 // Checksum 0xc9764f4e, Offset: 0x63a0
 // Size: 0x33c
 function function_21ef174b(s_params) {
-    self.var_cd8354e0 = undefined;
+    self.meleeinfo = undefined;
     if (!is_true(self.var_63f6a059)) {
         roll = randomint(200);
         if (roll == 0) {
@@ -1762,7 +1762,7 @@ function private function_5c82fd66(*entity) {
 // Size: 0x88
 function zombietraverseaction(behaviortreeentity, asmstatename) {
     aiutility::traverseactionstart(behaviortreeentity, asmstatename);
-    behaviortreeentity.var_9ed3cc11.behaviortreeentity = behaviortreeentity function_e827fc0e();
+    behaviortreeentity.var_9ed3cc11 = behaviortreeentity function_e827fc0e();
     behaviortreeentity pushplayer(1);
     behaviortreeentity callback::callback(#"hash_1518febf00439d5");
     return 5;
@@ -1777,7 +1777,7 @@ function zombietraverseactionterminate(behaviortreeentity, asmstatename) {
     if (behaviortreeentity asmgetstatus() == "asm_status_complete") {
         if (!is_true(behaviortreeentity.missinglegs)) {
             behaviortreeentity collidewithactors(0);
-            behaviortreeentity.enablepushtime.behaviortreeentity = gettime() + 1000;
+            behaviortreeentity.enablepushtime = gettime() + 1000;
         }
         if (isdefined(behaviortreeentity.var_9ed3cc11)) {
             behaviortreeentity pushplayer(behaviortreeentity.var_9ed3cc11);
@@ -1796,14 +1796,14 @@ function function_abb6c18a(entity) {
     if (!is_true(entity.var_e5ad72a0)) {
         if (isdefined(entity.var_d1bf288)) {
             if (!isdefined(entity.var_9bf0b279)) {
-                entity.var_9bf0b279.entity = gettime() + entity.var_d1bf288;
+                entity.var_9bf0b279 = gettime() + entity.var_d1bf288;
             }
         }
         if (isdefined(entity.var_1038c5e0)) {
             entity namespace_83eb6304::function_3ecfde67(entity.var_1038c5e0);
         }
         entity.var_c0bd8c06 = undefined;
-        entity.var_e5ad72a0.entity = 1;
+        entity.var_e5ad72a0 = 1;
         entity pathmode("dont move", 1);
     }
     return 4;
@@ -2028,7 +2028,7 @@ function function_9b31d191(einflictor, eattacker, idamage, smeansofdeath, weapon
             owner = isvehicle(vdir) ? vdir getvehicleowner() : isdefined(vdir.owner) ? vdir.owner : undefined;
             vehicle = isdefined(owner) && isdefined(owner.doa) ? owner.doa.vehicle : isvehicle(vdir) ? vdir : undefined;
             if (isdefined(vehicle)) {
-                if (is_true(vehicle.var_b9bb0656) || is_true(vehicle.var_46439e18)) {
+                if (is_true(vehicle.var_b9bb0656) || is_true(vehicle.isplayervehicle)) {
                     if (isdefined(owner) && isplayer(owner)) {
                         owner namespace_d2efac9a::vehiclekill();
                     }
@@ -2211,7 +2211,7 @@ function zombieknockdownactionstart(behaviortreeentity) {
     behaviortreeentity setblackboardattribute("_knockdown_type", behaviortreeentity.knockdown_type);
     behaviortreeentity setblackboardattribute("_getup_direction", behaviortreeentity.getup_direction);
     behaviortreeentity collidewithactors(0);
-    behaviortreeentity.blockingpain.behaviortreeentity = 1;
+    behaviortreeentity.blockingpain = 1;
 }
 
 // Namespace namespace_250e9486/namespace_250e9486
@@ -2219,9 +2219,9 @@ function zombieknockdownactionstart(behaviortreeentity) {
 // Checksum 0x1abf75df, Offset: 0x8678
 // Size: 0x3e
 function private function_c8939973(behaviortreeentity) {
-    behaviortreeentity.knockdown.behaviortreeentity = 0;
+    behaviortreeentity.knockdown = 0;
     behaviortreeentity collidewithactors(1);
-    behaviortreeentity.blockingpain.behaviortreeentity = 0;
+    behaviortreeentity.blockingpain = 0;
 }
 
 // Namespace namespace_250e9486/namespace_250e9486
@@ -2229,7 +2229,7 @@ function private function_c8939973(behaviortreeentity) {
 // Checksum 0xba9e8885, Offset: 0x86c0
 // Size: 0x34
 function private zombiegetupactionterminate(behaviortreeentity) {
-    behaviortreeentity.knockdown.behaviortreeentity = 0;
+    behaviortreeentity.knockdown = 0;
     behaviortreeentity collidewithactors(1);
 }
 
@@ -2243,7 +2243,7 @@ function function_e2da0652(entity) {
     enemies = array::filter(enemies, 0, &function_3d752709, entity);
     foreach (enemy in enemies) {
         enemy setup_zombie_knockdown(entity);
-        enemy.knockdown_type.enemy = "knockdown_shoved";
+        enemy.knockdown_type = "knockdown_shoved";
     }
 }
 

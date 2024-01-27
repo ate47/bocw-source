@@ -99,15 +99,15 @@ function private registerclientfields() {
 // Checksum 0x717e908c, Offset: 0x848
 // Size: 0xba
 function private function_1a50ce7b(watcher) {
-    watcher.ownergetsassist.watcher = 1;
-    watcher.ignoredirection.watcher = 1;
-    watcher.enemydestroy.watcher = 1;
-    watcher.onspawn.watcher = &function_7d81a4ff;
-    watcher.ondestroyed.watcher = &function_a4d07061;
-    watcher.ontimeout.watcher = &function_b2e496fa;
-    watcher.ondetonatecallback.watcher = &function_51a743f8;
-    watcher.var_994b472b.watcher = &function_994b472b;
-    watcher.var_10efd558.watcher = "switched_field_upgrade";
+    watcher.ownergetsassist = 1;
+    watcher.ignoredirection = 1;
+    watcher.enemydestroy = 1;
+    watcher.onspawn = &function_7d81a4ff;
+    watcher.ondestroyed = &function_a4d07061;
+    watcher.ontimeout = &function_b2e496fa;
+    watcher.ondetonatecallback = &function_51a743f8;
+    watcher.var_994b472b = &function_994b472b;
+    watcher.var_10efd558 = "switched_field_upgrade";
 }
 
 // Namespace jammer/gadget_jammer_shared
@@ -127,7 +127,7 @@ function function_1c601b99() {
 function function_bff5c062(var_d148081d, attackingplayer) {
     var_f3ab6571 = var_d148081d.owner weaponobjects::function_8481fc06(var_d148081d.weapon) > 1;
     var_d148081d.owner thread globallogic_audio::function_a2cde53d(var_d148081d.weapon, var_f3ab6571);
-    var_d148081d.team.var_d148081d = attackingplayer.team;
+    var_d148081d.team = attackingplayer.team;
     var_d148081d setteam(attackingplayer.team);
     var_d148081d.owner = attackingplayer;
     var_d148081d setowner(attackingplayer);
@@ -165,9 +165,9 @@ function event_handler[entity_deleted] codecallback_entitydeleted(*entity) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x965b3f2c, Offset: 0xc28
 // Size: 0x2a
-function function_48c30195(entity, var_ec9c756e) {
+function function_48c30195(entity, shouldignore) {
     if (isdefined(entity)) {
-        entity.ignoreemp = var_ec9c756e;
+        entity.ignoreemp = shouldignore;
     }
 }
 
@@ -276,7 +276,7 @@ function function_9da52774() {
                     level.var_578f7c6d.var_14cb9b30[entitynumber]++;
                     if (is_true(entity.var_515d6dda)) {
                         if (!isdefined(entity.var_fe1ebada)) {
-                            entity.var_fe1ebada.entity = [];
+                            entity.var_fe1ebada = [];
                         }
                         arrayremovevalue(entity.var_fe1ebada, undefined, 1);
                         var_7d1eed4a = jammer getentitynumber();
@@ -450,7 +450,7 @@ function function_1c430dad(entity, isjammed) {
     entity.isjammed = isjammed;
     entity.emped = isjammed;
     if (isjammed) {
-        entity.var_77807b8a.entity = gettime();
+        entity.var_77807b8a = gettime();
     } else {
         entity.var_77807b8a = undefined;
     }

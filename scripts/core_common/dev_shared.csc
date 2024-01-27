@@ -42,7 +42,7 @@ function function_b49b1b6b(localclientnum) {
                 v_pos = getcamposbylocalclientnum(localclientnum);
                 v_ang = getcamanglesbylocalclientnum(localclientnum);
                 v_forward = anglestoforward(v_ang);
-                var_39073e7a.origin.var_39073e7a = v_pos + v_forward * n_dist;
+                var_39073e7a.origin = v_pos + v_forward * n_dist;
                 var_39073e7a.angles = v_ang;
             } else if (isdefined(var_39073e7a)) {
                 killfx(localclientnum, var_b49b1b6b);

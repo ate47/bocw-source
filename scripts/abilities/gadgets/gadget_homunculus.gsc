@@ -129,11 +129,11 @@ function private event_handler[grenade_fire] function_4776caf4(eventstruct) {
     if (eventstruct.weapon.name == #"homunculus") {
         grenade = eventstruct.projectile;
         grenade ghost();
-        grenade.angles.grenade = self.angles;
+        grenade.angles = self.angles;
         homunculus = util::spawn_model(grenade.model, grenade.origin, grenade.angles);
-        homunculus.spawning.homunculus = 1;
-        homunculus.identifier_weapon.homunculus = grenade.item;
-        homunculus.player.homunculus = grenade.thrower;
+        homunculus.spawning = 1;
+        homunculus.identifier_weapon = grenade.item;
+        homunculus.player = grenade.thrower;
         grenade.homunculus = homunculus;
         grenade.homunculus linkto(grenade);
         grenade.homunculus.team = grenade.team;
@@ -151,14 +151,14 @@ function private event_handler[grenade_fire] function_4776caf4(eventstruct) {
             homunculus unlink();
             grenade delete();
             if (isdefined(homunculus)) {
-                homunculus.var_acdc8d71.homunculus = getclosestpointonnavmesh(homunculus.origin, 360, 15.1875);
+                homunculus.var_acdc8d71 = getclosestpointonnavmesh(homunculus.origin, 360, 15.1875);
                 if (!isdefined(level.var_2da60c10)) {
                     level.var_2da60c10 = [];
                 } else if (!isarray(level.var_2da60c10)) {
                     level.var_2da60c10 = array(level.var_2da60c10);
                 }
                 level.var_2da60c10[level.var_2da60c10.size] = homunculus;
-                homunculus.despawn_time.homunculus = gettime() + int(120 * 1000);
+                homunculus.despawn_time = gettime() + int(120 * 1000);
                 playfx(#"zm_weapons/fx8_equip_homunc_spawn", homunculus.origin);
                 homunculus playsound(#"hash_21206f1b7fb27f81");
                 if (math::cointoss() && math::cointoss() && !var_66ae7054) {

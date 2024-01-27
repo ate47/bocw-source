@@ -138,7 +138,7 @@ function state_death_update(params) {
         switch (crash_style) {
         case 0:
             if (self.hijacked === 1) {
-                params.death_type.params = "gibbed";
+                params.death_type = "gibbed";
                 vehicle_ai::defaultstate_death_update(params);
             } else {
                 vehicle_death::barrel_rolling_crash();
@@ -654,7 +654,7 @@ function turretfireupdate() {
         if (isdefined(self.enemy) && self cansee(self.enemy) && isalive(self)) {
             if (isdefined(self.wing_drone)) {
                 foreach (drone in self.wing_drone) {
-                    drone.favoriteenemy.drone = self.enemy;
+                    drone.favoriteenemy = self.enemy;
                 }
             }
             if (distancesquared(self.enemy.origin, self.origin) < function_a3f6cdac(0.5 * (self.settings.engagementdistmin + self.settings.engagementdistmax) * 3)) {
@@ -832,7 +832,7 @@ function update_leader() {
                 continue;
             }
             if (!isdefined(guy.followers)) {
-                guy.followers.guy = [];
+                guy.followers = [];
             }
             if (guy.followers.size >= 2) {
                 continue;
@@ -877,11 +877,11 @@ function function_739ac4a0(*params) {
     self endon(#"change_state", #"death");
     self setspeed(self.settings.defaultmovespeed);
     for (;;) {
-        var_1f2328d0 = self function_4794d6a3();
+        goalinfo = self function_4794d6a3();
         newpos = undefined;
-        isatgoal = is_true(var_1f2328d0.isatgoal) || isdefined(self.overridegoalpos) && self isapproachinggoal();
+        isatgoal = is_true(goalinfo.isatgoal) || isdefined(self.overridegoalpos) && self isapproachinggoal();
         if (!isatgoal) {
-            goalpos = var_1f2328d0.goalpos;
+            goalpos = goalinfo.goalpos;
         }
         if (isdefined(goalpos)) {
             self setgoal(goalpos, 1, 0);
@@ -1029,10 +1029,10 @@ function getnextmoveposition_wander() {
     foreach (point in queryresult.data) {
         randomscore = randomfloatrange(0, 100);
         disttooriginscore = point.disttoorigin2d * 0.2;
-        point.score.point = point.score + randomscore + disttooriginscore;
+        point.score = point.score + randomscore + disttooriginscore;
         /#
             if (!isdefined(point._scoredebug)) {
-                point._scoredebug.point = [];
+                point._scoredebug = [];
             }
             if (!isdefined(point._scoredebug[#"disttoorigin"])) {
                 point._scoredebug[#"disttoorigin"] = spawnstruct();
@@ -1040,7 +1040,7 @@ function getnextmoveposition_wander() {
             point._scoredebug[#"disttoorigin"].score = disttooriginscore;
             point._scoredebug[#"disttoorigin"].scorename = "<unknown string>";
         #/
-        point.score.point = point.score + disttooriginscore;
+        point.score = point.score + disttooriginscore;
         if (point.score > best_score) {
             best_score = point.score;
             best_point = point;
@@ -1084,7 +1084,7 @@ function getnextmoveposition_tactical() {
                     if (point.visowner === 1) {
                         /#
                             if (!isdefined(point._scoredebug)) {
-                                point._scoredebug.point = [];
+                                point._scoredebug = [];
                             }
                             if (!isdefined(point._scoredebug[#"visowner"])) {
                                 point._scoredebug[#"visowner"] = spawnstruct();
@@ -1092,12 +1092,12 @@ function getnextmoveposition_tactical() {
                             point._scoredebug[#"visowner"].score = 300;
                             point._scoredebug[#"visowner"].scorename = "<unknown string>";
                         #/
-                        point.score.point = point.score + 300;
+                        point.score = point.score + 300;
                     }
                     if (point.visenemy === 1) {
                         /#
                             if (!isdefined(point._scoredebug)) {
-                                point._scoredebug.point = [];
+                                point._scoredebug = [];
                             }
                             if (!isdefined(point._scoredebug[#"visenemy"])) {
                                 point._scoredebug[#"visenemy"] = spawnstruct();
@@ -1105,7 +1105,7 @@ function getnextmoveposition_tactical() {
                             point._scoredebug[#"visenemy"].score = 300;
                             point._scoredebug[#"visenemy"].scorename = "<unknown string>";
                         #/
-                        point.score.point = point.score + 300;
+                        point.score = point.score + 300;
                     }
                 }
             }
@@ -1137,7 +1137,7 @@ function getnextmoveposition_tactical() {
     foreach (point in queryresult.data) {
         /#
             if (!isdefined(point._scoredebug)) {
-                point._scoredebug.point = [];
+                point._scoredebug = [];
             }
             if (!isdefined(point._scoredebug[#"random"])) {
                 point._scoredebug[#"random"] = spawnstruct();
@@ -1145,10 +1145,10 @@ function getnextmoveposition_tactical() {
             point._scoredebug[#"random"].score = randomfloatrange(0, randomness);
             point._scoredebug[#"random"].scorename = "<unknown string>";
         #/
-        point.score.point = point.score + randomfloatrange(0, randomness);
+        point.score = point.score + randomfloatrange(0, randomness);
         /#
             if (!isdefined(point._scoredebug)) {
-                point._scoredebug.point = [];
+                point._scoredebug = [];
             }
             if (!isdefined(point._scoredebug[#"engagementdist"])) {
                 point._scoredebug[#"engagementdist"] = spawnstruct();
@@ -1156,10 +1156,10 @@ function getnextmoveposition_tactical() {
             point._scoredebug[#"engagementdist"].score = point.distawayfromengagementarea * -1;
             point._scoredebug[#"engagementdist"].scorename = "<unknown string>";
         #/
-        point.score.point = point.score + point.distawayfromengagementarea * -1;
+        point.score = point.score + point.distawayfromengagementarea * -1;
         /#
             if (!isdefined(point._scoredebug)) {
-                point._scoredebug.point = [];
+                point._scoredebug = [];
             }
             if (!isdefined(point._scoredebug[#"height"])) {
                 point._scoredebug[#"height"] = spawnstruct();
@@ -1167,11 +1167,11 @@ function getnextmoveposition_tactical() {
             point._scoredebug[#"height"].score = point.distengagementheight * -1 * 1.4;
             point._scoredebug[#"height"].scorename = "<unknown string>";
         #/
-        point.score.point = point.score + point.distengagementheight * -1 * 1.4;
+        point.score = point.score + point.distengagementheight * -1 * 1.4;
         if (point.disttoorigin2d < 120) {
             /#
                 if (!isdefined(point._scoredebug)) {
-                    point._scoredebug.point = [];
+                    point._scoredebug = [];
                 }
                 if (!isdefined(point._scoredebug[#"tooclosetoself"])) {
                     point._scoredebug[#"tooclosetoself"] = spawnstruct();
@@ -1179,13 +1179,13 @@ function getnextmoveposition_tactical() {
                 point._scoredebug[#"tooclosetoself"].score = (120 - point.disttoorigin2d) * -1.5;
                 point._scoredebug[#"tooclosetoself"].scorename = "<unknown string>";
             #/
-            point.score.point = point.score + (120 - point.disttoorigin2d) * -1.5;
+            point.score = point.score + (120 - point.disttoorigin2d) * -1.5;
         }
         foreach (location in avoid_locations) {
             if (distancesquared(point.origin, location) < function_a3f6cdac(avoid_radius)) {
                 /#
                     if (!isdefined(point._scoredebug)) {
-                        point._scoredebug.point = [];
+                        point._scoredebug = [];
                     }
                     if (!isdefined(point._scoredebug[#"tooclosetoothers"])) {
                         point._scoredebug[#"tooclosetoothers"] = spawnstruct();
@@ -1193,13 +1193,13 @@ function getnextmoveposition_tactical() {
                     point._scoredebug[#"tooclosetoothers"].score = avoid_radius * -1;
                     point._scoredebug[#"tooclosetoothers"].scorename = "<unknown string>";
                 #/
-                point.score.point = point.score + avoid_radius * -1;
+                point.score = point.score + avoid_radius * -1;
             }
         }
         if (point.inclaimedlocation) {
             /#
                 if (!isdefined(point._scoredebug)) {
-                    point._scoredebug.point = [];
+                    point._scoredebug = [];
                 }
                 if (!isdefined(point._scoredebug[#"inclaimedlocation"])) {
                     point._scoredebug[#"inclaimedlocation"] = spawnstruct();
@@ -1207,7 +1207,7 @@ function getnextmoveposition_tactical() {
                 point._scoredebug[#"inclaimedlocation"].score = -500;
                 point._scoredebug[#"inclaimedlocation"].scorename = "<unknown string>";
             #/
-            point.score.point = point.score + -500;
+            point.score = point.score + -500;
         }
         if (point.score > best_score) {
             best_score = point.score;
@@ -1314,12 +1314,12 @@ function private _wasp_tower_init(wasp_tower, n_spawn_count) {
     if (isdefined(n_spawn_count)) {
         wasp_tower.script_wasp_tower_spawn_count = n_spawn_count;
     }
-    wasp_tower.a_fxanims.wasp_tower = struct::get_array(wasp_tower.target, "targetname");
+    wasp_tower.a_fxanims = struct::get_array(wasp_tower.target, "targetname");
     foreach (s_fxanim in wasp_tower.a_fxanims) {
         scene::add_scene_func(s_fxanim.scriptbundlename, &function_bbe2568c, "done");
         s_fxanim scene::init();
     }
-    wasp_tower.b_wasp_tower_init.wasp_tower = 1;
+    wasp_tower.b_wasp_tower_init = 1;
 }
 
 // Namespace wasp/wasp
@@ -1440,7 +1440,7 @@ function wasp_tower_destroy(str_targetname, str_fxanim_destruction) {
                     }
                 }
             }
-            sp_wasp_tower.b_is_destroyed.sp_wasp_tower = 1;
+            sp_wasp_tower.b_is_destroyed = 1;
             if (isdefined(str_fxanim_destruction)) {
                 level scene::play(str_fxanim_destruction);
             }

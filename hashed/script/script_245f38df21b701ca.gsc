@@ -52,11 +52,11 @@ function function_32d5e898(*localclientnum) {
             /#
                 assert(args.size == 4);
             #/
-            arena.var_13ea8aea.arena = (float(args[1]), float(args[2]), float(args[3]));
+            arena.var_13ea8aea = (float(args[1]), float(args[2]), float(args[3]));
         } else {
-            arena.var_13ea8aea.arena = vectorscale((1, 0, 0), 75);
+            arena.var_13ea8aea = vectorscale((1, 0, 0), 75);
         }
-        arena.var_46f3a17d.arena = arena.var_13ea8aea + vectorscale((0, 1, 0), 180);
+        arena.var_46f3a17d = arena.var_13ea8aea + vectorscale((0, 1, 0), 180);
         var_7f6c6c04[order] = arena;
     }
     id = 0;

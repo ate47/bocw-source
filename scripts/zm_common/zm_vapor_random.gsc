@@ -94,7 +94,7 @@ function function_7d881772() {
             level.var_8feb4083[level.var_8feb4083.size] = var_eed5ca85;
         }
         var_eed5ca85 thread function_1a038e0b();
-        var_eed5ca85.b_is_active.var_eed5ca85 = 1;
+        var_eed5ca85.b_is_active = 1;
     }
 }
 
@@ -106,19 +106,19 @@ function function_1a038e0b() {
     self.var_bee7fa0b = 0;
     self.var_756caeac = randomintrange(3, 7);
     unitrigger_stub = spawnstruct();
-    unitrigger_stub.origin.unitrigger_stub = self.origin;
-    unitrigger_stub.angles.unitrigger_stub = self.angles;
-    unitrigger_stub.script_unitrigger_type.unitrigger_stub = "unitrigger_box_use";
-    unitrigger_stub.cursor_hint.unitrigger_stub = "HINT_NOICON";
-    unitrigger_stub.script_height.unitrigger_stub = 32;
-    unitrigger_stub.script_width.unitrigger_stub = 64;
-    unitrigger_stub.script_length.unitrigger_stub = 72;
-    unitrigger_stub.require_look_at.unitrigger_stub = 0;
-    unitrigger_stub.targetname.unitrigger_stub = "random_vapor_altar_stub";
-    unitrigger_stub.hint_string.unitrigger_stub = #"zombie/need_power";
-    unitrigger_stub.script_struct.unitrigger_stub = self;
+    unitrigger_stub.origin = self.origin;
+    unitrigger_stub.angles = self.angles;
+    unitrigger_stub.script_unitrigger_type = "unitrigger_box_use";
+    unitrigger_stub.cursor_hint = "HINT_NOICON";
+    unitrigger_stub.script_height = 32;
+    unitrigger_stub.script_width = 64;
+    unitrigger_stub.script_length = 72;
+    unitrigger_stub.require_look_at = 0;
+    unitrigger_stub.targetname = "random_vapor_altar_stub";
+    unitrigger_stub.hint_string = #"zombie/need_power";
+    unitrigger_stub.script_struct = self;
     zm_unitrigger::unitrigger_force_per_player_triggers(unitrigger_stub, 1);
-    unitrigger_stub.prompt_and_visibility_func.unitrigger_stub = &function_6842bdd7;
+    unitrigger_stub.prompt_and_visibility_func = &function_6842bdd7;
     zm_unitrigger::register_static_unitrigger(unitrigger_stub, &function_20fe0559);
     zm_unitrigger::function_c4a5fdf5(unitrigger_stub, 1);
     self.unitrigger_stub = unitrigger_stub;
@@ -131,9 +131,9 @@ function function_1a038e0b() {
     a_s_interacts = struct::get_array(self.target);
     foreach (s_interact in a_s_interacts) {
         if (s_interact.script_int === 3) {
-            s_interact.n_cost.s_interact = 5000;
+            s_interact.n_cost = 5000;
         } else {
-            s_interact.n_cost.s_interact = 2000;
+            s_interact.n_cost = 2000;
         }
     }
 }
@@ -326,7 +326,7 @@ function function_20fe0559() {
         if (!isdefined(player.perks_active) || isdefined(player.perks_active) && player.perks_active.size < 4) {
             continue;
         }
-        s_altar.b_in_use.s_altar = 1;
+        s_altar.b_in_use = 1;
         s_altar.var_bee7fa0b++;
         s_altar.var_125b20f8 = player;
         sound = "evt_bottle_dispense";
@@ -352,7 +352,7 @@ function function_20fe0559() {
             player thread zm_perks::function_4acf7b43(n_slot, var_62fef0f1);
             self thread zm_perks::taking_cover_tanks_(player, var_62fef0f1, n_slot);
         } else {
-            s_altar.b_in_use.s_altar = 0;
+            s_altar.b_in_use = 0;
         }
         s_altar.var_125b20f8 = undefined;
         s_altar.var_62fef0f1 = undefined;
@@ -376,7 +376,7 @@ function function_44481969() {
     if (var_8dd5d69f.size) {
         var_eed5ca85 = array::random(var_8dd5d69f);
         var_eed5ca85 thread function_1a038e0b();
-        var_eed5ca85.b_is_active.var_eed5ca85 = 1;
+        var_eed5ca85.b_is_active = 1;
         if (!isdefined(level.var_8feb4083)) {
             level.var_8feb4083 = [];
         } else if (!isarray(level.var_8feb4083)) {
@@ -473,10 +473,10 @@ function perk_bottle_motion() {
 // Size: 0x9c
 function function_42171e41(player) {
     s_altar = self.stub.script_struct;
-    s_altar.var_46fe01e2.s_altar = 1;
+    s_altar.var_46fe01e2 = 1;
     s_result = undefined;
     s_result = self waittilltimeout(10, #"trigger");
-    s_altar.var_46fe01e2.s_altar = 0;
+    s_altar.var_46fe01e2 = 0;
     if (s_result._notify == "trigger" && s_result.activator === player) {
         return 1;
     } else {
@@ -490,7 +490,7 @@ function function_42171e41(player) {
 // Size: 0x5e
 function function_bb1ac745(s_altar) {
     self waittill(#"perk_acquired", #"death", #"disconnect", #"player_downed");
-    s_altar.b_in_use.s_altar = 0;
+    s_altar.b_in_use = 0;
 }
 
 // Namespace zm_vapor_random/zm_vapor_random

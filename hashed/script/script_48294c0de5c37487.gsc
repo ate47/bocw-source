@@ -74,7 +74,7 @@ function on_player_spawned() {
 function function_5795b52b(ent = self, var_393cf5b7, var_3551e3b9 = 250000, var_c6ab6ff5 = 10) {
     if (!isinarray(level.var_f9c9c0[var_393cf5b7].var_13b85955, ent)) {
         array::add(level.var_f9c9c0[var_393cf5b7].var_13b85955, ent, 0);
-        ent.var_11019442.ent = {#var_c6ab6ff5:var_c6ab6ff5, #var_3551e3b9:var_3551e3b9};
+        ent.var_11019442 = {#var_c6ab6ff5:var_c6ab6ff5, #var_3551e3b9:var_3551e3b9};
     }
 }
 

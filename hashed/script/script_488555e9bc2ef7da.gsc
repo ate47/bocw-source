@@ -279,7 +279,7 @@ function function_f73f4bc2() {
             var_abd93a24 = item_drop::drop_item(0, undefined, 1, 0, point.id, waitresult.position, undefined, 2);
             level flag::set(#"hash_3877401081b5e296");
             var_abd93a24 thread function_6d277ee2();
-            var_abd93a24.var_dd21aec2.var_abd93a24 = 1 & 16;
+            var_abd93a24.var_dd21aec2 = 1 | 16;
         } else {
             level thread function_f4f15fc();
         }
@@ -297,7 +297,7 @@ function function_f4f15fc() {
         var_6df640be = array::random(var_ff0a4380);
         var_c155f005 = spawnactor("spawner_bo5_avogadro_sr", var_6df640be.origin, var_6df640be.angles, undefined, 1);
         if (isdefined(var_c155f005)) {
-            var_c155f005.var_93057265.var_c155f005 = 1;
+            var_c155f005.var_93057265 = 1;
             break;
         }
         wait(1);
@@ -545,7 +545,7 @@ function cmd(cmd) {
             foreach (player in var_dfe526e8) {
                 point = function_4ba8fde(#"item_zmquest_platinum_power_quest_fuse");
                 var_752753e1 = drop_item(0, undefined, 1, 0, point.id, player.origin, undefined, 2);
-                var_752753e1.var_dd21aec2.var_752753e1 = 1 & 16;
+                var_752753e1.var_dd21aec2 = 1 | 16;
             }
             break;
         }

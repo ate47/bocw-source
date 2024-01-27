@@ -98,7 +98,7 @@ function function_bff5c062(supplypod, attackingplayer) {
     supplypod.owner = attackingplayer;
     supplypod setowner(attackingplayer);
     supplypod setteam(attackingplayer getteam());
-    supplypod.team.supplypod = attackingplayer getteam();
+    supplypod.team = attackingplayer getteam();
     supplypod.gameobject gameobjects::set_owner_team(attackingplayer.team);
     supplypod.gameobject gameobjects::set_visible(#"hash_150a20fa4efc5c7a");
     supplypod.gameobject gameobjects::allow_use(#"hash_150a20fa4efc5c7a");
@@ -229,12 +229,12 @@ function function_8d653231(params) {
 // Checksum 0x538d56c4, Offset: 0x1088
 // Size: 0xaa
 function function_f579e72b(watcher) {
-    watcher.watchforfire.watcher = 1;
-    watcher.onspawn.watcher = &supplypod_spawned;
-    watcher.timeout.watcher = float(level.var_934fb97.bundle.ksduration) / 1000;
-    watcher.ontimeout.watcher = &function_7c0d095c;
-    watcher.var_994b472b.watcher = &function_f7d9ebce;
-    watcher.var_10efd558.watcher = "switched_field_upgrade";
+    watcher.watchforfire = 1;
+    watcher.onspawn = &supplypod_spawned;
+    watcher.timeout = float(level.var_934fb97.bundle.ksduration) / 1000;
+    watcher.ontimeout = &function_7c0d095c;
+    watcher.var_994b472b = &function_f7d9ebce;
+    watcher.var_10efd558 = "switched_field_upgrade";
 }
 
 // Namespace supplypod/supplypod
@@ -287,8 +287,8 @@ function supplypod_spawned(watcher, owner) {
         owner.var_3823265d = undefined;
         owner function_63c23d02(watcher, self);
         supplypod = self.supplypod;
-        supplypod.var_48d842c3.supplypod = 1;
-        supplypod.var_515d6dda.supplypod = 1;
+        supplypod.var_48d842c3 = 1;
+        supplypod.var_515d6dda = 1;
     }
 }
 
@@ -352,7 +352,7 @@ function private setupcallbacks() {
 // Size: 0x1c4
 function on_player_spawned() {
     player = self;
-    player.var_2383a10c.player = [];
+    player.var_2383a10c = [];
     self function_46d74bb7(0);
     changedteam = isdefined(player.var_29fdd9dd) && player.team != player.var_29fdd9dd;
     if ((isdefined(player.var_228b6835) ? player.var_228b6835 : 0) || changedteam || (isdefined(level.var_934fb97.bundle.var_18ede0bb) ? level.var_934fb97.bundle.var_18ede0bb : 0)) {
@@ -366,7 +366,7 @@ function on_player_spawned() {
             player.var_57de9100.trigger setinvisibletoplayer(player);
         }
         player thread function_18f999b5(float(player.var_17d74a5c) / 1000);
-        player.var_17d74a5c.player = player.var_17d74a5c + gettime();
+        player.var_17d74a5c = player.var_17d74a5c + gettime();
         player function_3ea286();
     }
 }
@@ -452,14 +452,14 @@ function deleteobjective(objectiveid) {
 // Checksum 0x6e6eb67, Offset: 0x1b88
 // Size: 0xcc
 function function_890b2784() {
-    var_10432750 = undefined;
+    indextoremove = undefined;
     for (index = 0; index < level.var_934fb97.var_27fce4c0[self.clientid].size; index++) {
         if (level.var_934fb97.var_27fce4c0[self.clientid][index] == self) {
-            var_10432750 = index;
+            indextoremove = index;
         }
     }
-    if (isdefined(var_10432750)) {
-        level.var_934fb97.var_27fce4c0[self.clientid] = array::remove_index(level.var_934fb97.var_27fce4c0[self.clientid], var_10432750, 0);
+    if (isdefined(indextoremove)) {
+        level.var_934fb97.var_27fce4c0[self.clientid] = array::remove_index(level.var_934fb97.var_27fce4c0[self.clientid], indextoremove, 0);
     }
 }
 
@@ -616,7 +616,7 @@ function watchfordamage() {
     self endon(#"hash_523ddcbd662010e5");
     supplypod = self;
     supplypod endon(#"death");
-    supplypod.health.supplypod = level.var_934fb97.bundle.kshealth;
+    supplypod.health = level.var_934fb97.bundle.kshealth;
     startinghealth = supplypod.health;
     while (1) {
         waitresult = undefined;
@@ -661,9 +661,9 @@ function function_438ca4e0() {
     if (!isdefined(self)) {
         return;
     }
-    supplypod.var_8d834202.supplypod = 1;
+    supplypod.var_8d834202 = 1;
     self thread function_827486aa(0, 0);
-    supplypod.var_648955e6.supplypod = 1;
+    supplypod.var_648955e6 = 1;
 }
 
 // Namespace supplypod/supplypod
@@ -671,9 +671,9 @@ function function_438ca4e0() {
 // Checksum 0xe75c6ae2, Offset: 0x2a18
 // Size: 0x38
 function function_fec0924() {
-    var_d5110c6d = game.var_6ccfdacd;
+    currentid = game.var_6ccfdacd;
     game.var_6ccfdacd = game.var_6ccfdacd + 1;
-    return var_d5110c6d;
+    return currentid;
 }
 
 // Namespace supplypod/supplypod
@@ -685,7 +685,7 @@ function function_9abdee8c(*watcher, object) {
     if (isdefined(level.var_934fb97.var_27fce4c0[player.clientid]) && level.var_934fb97.var_27fce4c0[player.clientid].size >= (isdefined(level.var_934fb97.bundle.var_cbe1e532) ? level.var_934fb97.bundle.var_cbe1e532 : 1)) {
         obj = level.var_934fb97.var_27fce4c0[player.clientid][0];
         if (isdefined(obj)) {
-            obj.var_8d834202.obj = 1;
+            obj.var_8d834202 = 1;
             obj thread function_827486aa(0);
         } else {
             level.var_934fb97.var_27fce4c0[self.clientid] = undefined;
@@ -702,19 +702,19 @@ function function_9abdee8c(*watcher, object) {
     supplypod function_41b29ff0("wpn_t9_eqp_supply_pod_destructible");
     supplypod useanimtree("generic");
     supplypod.owner = player;
-    supplypod.clientid.supplypod = supplypod.owner.clientid;
-    supplypod.angles.supplypod = player.angles;
+    supplypod.clientid = supplypod.owner.clientid;
+    supplypod.angles = player.angles;
     supplypod clientfield::set("supplypod_placed", 1);
     supplypod setteam(player getteam());
-    supplypod.var_86a21346.supplypod = &function_8d362deb;
+    supplypod.var_86a21346 = &function_8d362deb;
     supplypod solid();
     supplypod show();
-    supplypod.victimsoundmod.supplypod = "vehicle";
-    supplypod.weapon.supplypod = level.var_934fb97.weapon;
+    supplypod.victimsoundmod = "vehicle";
+    supplypod.weapon = level.var_934fb97.weapon;
     supplypod setweapon(supplypod.weapon);
-    supplypod.var_57022ab8.supplypod = isdefined(level.var_934fb97.bundle.var_5a0d87e0) ? level.var_934fb97.bundle.var_5a0d87e0 : 20;
-    supplypod.usecount.supplypod = 0;
-    supplypod.objectiveid.supplypod = getobjectiveid();
+    supplypod.var_57022ab8 = isdefined(level.var_934fb97.bundle.var_5a0d87e0) ? level.var_934fb97.bundle.var_5a0d87e0 : 20;
+    supplypod.usecount = 0;
+    supplypod.objectiveid = getobjectiveid();
     level.var_934fb97.supplypods[supplypod.objectiveid] = supplypod;
     if (!isdefined(level.var_934fb97.var_27fce4c0[player.clientid])) {
         level.var_934fb97.var_27fce4c0[player.clientid] = [];
@@ -723,16 +723,16 @@ function function_9abdee8c(*watcher, object) {
     array::push(level.var_934fb97.var_27fce4c0[player.clientid], supplypod, var_a7edcaed);
     supplypod setcandamage(1);
     supplypod clientfield::set("enemyequip", 1);
-    supplypod.var_99d2556b.supplypod = gettime();
-    supplypod.uniqueid.supplypod = function_fec0924();
+    supplypod.var_99d2556b = gettime();
+    supplypod.uniqueid = function_fec0924();
     function_d7cd849c(level.var_934fb97.bundle.var_69b1ff7, player getteam());
     function_d7cd849c(level.var_934fb97.bundle.var_4f37dfe9, util::getotherteam(player getteam()));
     if (isdefined(level.var_934fb97.bundle.var_a0db3d4d)) {
         supplypod playloopsound(level.var_934fb97.bundle.var_a0db3d4d);
     }
     if (isdefined(level.var_934fb97.bundle.var_4f845dc4) ? level.var_934fb97.bundle.var_4f845dc4 : 0) {
-        supplypod.var_134eefb9.supplypod = getobjectiveid();
-        supplypod.var_7b7607df.supplypod = [];
+        supplypod.var_134eefb9 = getobjectiveid();
+        supplypod.var_7b7607df = [];
         objective_add(supplypod.var_134eefb9, "active", supplypod.origin, level.var_934fb97.bundle.var_ce75f65c);
         objective_setprogress(supplypod.var_134eefb9, 1);
         objective_setinvisibletoall(supplypod.var_134eefb9);
@@ -744,10 +744,10 @@ function function_9abdee8c(*watcher, object) {
     var_40989bda = supplypod.origin + upangle;
     usetrigger = spawn("trigger_radius_use", var_40989bda, 0, triggerradius, triggerheight);
     usetrigger setcursorhint("HINT_INTERACTIVE_PROMPT");
-    usetrigger function_49462027(1, 1 & 4096 & 2 & 2097152 & 2048);
+    usetrigger function_49462027(1, 1 | 4096 | 2 | 2097152 | 2048);
     usetrigger function_cb5cf7cb();
     usetrigger usetriggerignoreuseholdtime();
-    supplypod.gameobject.supplypod = gameobjects::create_use_object(#"any", usetrigger, [], undefined, level.var_934fb97.bundle.var_9333131b, 1, 1);
+    supplypod.gameobject = gameobjects::create_use_object(#"any", usetrigger, [], undefined, level.var_934fb97.bundle.var_9333131b, 1, 1);
     supplypod.gameobject gameobjects::set_use_time(var_b1a6d849);
     supplypod.gameobject.onbeginuse = &function_8c8fb7b5;
     supplypod.gameobject.onenduse = &function_a1434496;
@@ -795,7 +795,7 @@ function private function_a1434496(*team, player, result, var_d862c76d) {
     if (!isdefined(supplypod)) {
         return;
     }
-    supplypod.isdisabled.supplypod = 0;
+    supplypod.isdisabled = 0;
     if (is_true(result)) {
         var_8a0724f7 = supplypod.team !== player.team;
         supplypod.usecount++;
@@ -820,23 +820,23 @@ function private function_a1434496(*team, player, result, var_d862c76d) {
         if (!(isdefined(level.var_934fb97.bundle.var_82fccdb8) ? level.var_934fb97.bundle.var_82fccdb8 : 0) && player.var_2383a10c[self.entnum] >= level.var_934fb97.bundle.var_186e07b5) {
             self.trigger setinvisibletoplayer(player);
         }
-        player.var_57de9100.player = self;
-        player.var_29fdd9dd.player = self.team;
-        player.var_bfeea3dd.player = supplypod.owner;
+        player.var_57de9100 = self;
+        player.var_29fdd9dd = self.team;
+        player.var_bfeea3dd = supplypod.owner;
         player notify(#"hash_69dbfbd660f8c53e");
         if (!(isdefined(level.var_934fb97.bundle.var_18ede0bb) ? level.var_934fb97.bundle.var_18ede0bb : 0)) {
             self.trigger setinvisibletoplayer(player);
             duration = isdefined(level.var_934fb97.bundle.var_84471829) ? level.var_934fb97.bundle.var_84471829 : 30;
-            player.var_17d74a5c.player = gettime() + int(duration * 1000);
+            player.var_17d74a5c = gettime() + int(duration * 1000);
             player thread function_18f999b5(duration);
         } else {
-            player.var_48107b1c.player = 1;
+            player.var_48107b1c = 1;
         }
         if (var_8a0724f7) {
             supplypod.var_846acfcf = player;
             supplypod thread function_827486aa(1);
         } else if (supplypod.usecount == supplypod.var_57022ab8) {
-            supplypod.var_8d834202.supplypod = 1;
+            supplypod.var_8d834202 = 1;
             supplypod thread function_827486aa(0);
         }
     } else {
@@ -878,7 +878,7 @@ function function_18f999b5(waittime) {
 // Size: 0x228
 function function_1f8cd247(origin, *angles, player) {
     if (!isdefined(player.var_3823265d)) {
-        player.var_3823265d.player = spawnstruct();
+        player.var_3823265d = spawnstruct();
     }
     var_1898acdc = isdefined(level.var_934fb97.bundle.var_bdc8276) ? level.var_934fb97.bundle.var_bdc8276 : 0;
     testdistance = var_1898acdc * var_1898acdc;
@@ -955,8 +955,8 @@ function function_5bc9564e(weapon) {
         var_2f9ea2b9 = weapons::getbaseweapon(weapon);
         baseweaponindex = getbaseweaponitemindex(var_2f9ea2b9);
         if (is_true(player.pod_ammo[baseweaponindex])) {
-            var_831b3584 = player getweaponammostock(weapon);
-            if (var_831b3584 == 0) {
+            curammo = player getweaponammostock(weapon);
+            if (curammo == 0) {
                 player setweaponammostock(weapon, int(player.pod_ammo[baseweaponindex]));
                 player.pod_ammo[baseweaponindex] = undefined;
                 player thread function_452147b1(weapon, baseweaponindex);
@@ -989,9 +989,9 @@ function function_bcf0dd99() {
     player = self;
     primary_weapons = player getweaponslistprimaries();
     foreach (weapon in primary_weapons) {
-        var_831b3584 = player getweaponammostock(weapon);
+        curammo = player getweaponammostock(weapon);
         bonusammo = (isdefined(getgametypesetting(#"hash_1441f7ad44e1cfd4")) ? getgametypesetting(#"hash_1441f7ad44e1cfd4") : 0) * weapon.clipsize;
-        player setweaponammostock(weapon, int(var_831b3584 + bonusammo));
+        player setweaponammostock(weapon, int(curammo + bonusammo));
     }
     player function_3ea286();
 }

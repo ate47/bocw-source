@@ -124,17 +124,17 @@ function function_fc664fc6(challengestat, var_2c59fe94, var_21bccb49 = 1, var_ca
 function actorkilled(einflictor, attacker, idamage, smeansofdeath, weapon = level.weaponnone, shitloc) {
     attacker endon(#"disconnect");
     data = spawnstruct();
-    data.victim.data = self;
+    data.victim = self;
     data.einflictor = einflictor;
     data.attacker = attacker;
     data.idamage = idamage;
     data.smeansofdeath = smeansofdeath;
     data.weapon = weapon;
     data.shitloc = shitloc;
-    data.time.data = gettime();
-    data.victimweapon.data = data.victim.currentweapon;
+    data.time = gettime();
+    data.victimweapon = data.victim.currentweapon;
     if (einflictor === attacker.body_shield_grenade) {
-        data.var_2a0adc57.data = 1;
+        data.var_2a0adc57 = 1;
     }
     function_ff5f9a00(data);
     data.attacker notify(#"hash_63bd9f951d975b7");
@@ -160,14 +160,14 @@ function function_ff5f9a00(data) {
 function actordamaged(einflictor, attacker, idamage, weapon = level.weaponnone, shitloc) {
     attacker endon(#"disconnect");
     data = spawnstruct();
-    data.victim.data = self;
+    data.victim = self;
     data.einflictor = einflictor;
     data.attacker = attacker;
     data.idamage = idamage;
     data.weapon = weapon;
     data.shitloc = shitloc;
-    data.time.data = gettime();
-    data.victimweapon.data = data.victim.currentweapon;
+    data.time = gettime();
+    data.victimweapon = data.victim.currentweapon;
     function_5e9d4ad3(data);
     data.attacker notify(#"hash_1c23cf76970db631");
 }
@@ -198,15 +198,15 @@ function vehiclekilled(einflictor, attacker, idamage, smeansofdeath, weapon, shi
     }
     attacker endon(#"disconnect");
     data = spawnstruct();
-    data.victim.data = self;
+    data.victim = self;
     data.einflictor = einflictor;
     data.attacker = attacker;
     data.idamage = idamage;
     data.smeansofdeath = smeansofdeath;
     data.weapon = weapon;
     data.shitloc = shitloc;
-    data.time.data = gettime();
-    data.victimweapon.data = data.victim.currentweapon;
+    data.time = gettime();
+    data.victimweapon = data.victim.currentweapon;
     function_94d6aade(data);
     data.attacker notify(#"hash_56b121e50d70ac18");
 }
@@ -231,14 +231,14 @@ function function_94d6aade(data) {
 function vehicledamaged(einflictor, attacker, idamage, weapon = level.weaponnone, shitloc) {
     attacker endon(#"disconnect");
     data = spawnstruct();
-    data.victim.data = self;
+    data.victim = self;
     data.einflictor = einflictor;
     data.attacker = attacker;
     data.idamage = idamage;
     data.weapon = weapon;
     data.shitloc = shitloc;
-    data.time.data = gettime();
-    data.victimweapon.data = data.victim.currentweapon;
+    data.time = gettime();
+    data.victimweapon = data.victim.currentweapon;
     function_2de75dbd(data);
     data.attacker notify(#"hash_324a232de36f6e68");
 }
@@ -413,7 +413,7 @@ function function_7b4387e1(*rewardxp, maxval, row, tablenumber, challengetype, i
     case 1:
         if (itemindex != 0) {
             self stats::set_stat(#"itemstats", itemindex, #"hash_798921f18e351b13", tier, 1);
-            self namespace_32b4992a::function_c3541c14(tier);
+            self achievements::function_c3541c14(tier);
         }
         break;
     case 4:

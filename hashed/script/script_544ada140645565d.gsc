@@ -38,7 +38,7 @@ function function_a53db30e(owner, origin) {
         return;
     }
     monkey_bomb.owner = owner;
-    monkey_bomb.var_7f3187c5.monkey_bomb = function_a3f6cdac(300);
+    monkey_bomb.var_7f3187c5 = function_a3f6cdac(300);
     arrayremovevalue(level.doa.var_af6d47dd, undefined);
     level.doa.var_af6d47dd[level.doa.var_af6d47dd.size] = monkey_bomb;
     monkey_bomb namespace_e32bb68::function_3a59ec34("evt_doa_pickup_monkeybomb_music");

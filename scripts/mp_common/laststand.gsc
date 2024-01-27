@@ -931,8 +931,8 @@ function laststand_bleedout(bleedouttime, var_969fabf4) {
                 self.var_bcba8155 = time;
             }
             waitframe(1);
-            var_cebeb781 = var_cebeb781 & !self usebuttonpressed();
-            var_3e5a068a = var_3e5a068a & !self buttonbitstate(var_1b4f5d73);
+            var_cebeb781 = var_cebeb781 | !self usebuttonpressed();
+            var_3e5a068a = var_3e5a068a | !self buttonbitstate(var_1b4f5d73);
             self.var_eb33efbc = 0;
             while (!is_true(self.var_1cc38de0) && (self is_being_revived() || self function_72e0c544())) {
                 waitframe(1);
@@ -1499,14 +1499,14 @@ function revive_do_revive(playerbeingrevived) {
     self clientfield::set_player_uimodel("hudItems.laststand.revivingClientNum", playerbeingrevived getentitynumber());
     while (self is_reviving(playerbeingrevived)) {
         if (self laststand::player_is_in_laststand() || self function_5673fb61() || playerbeingrevived function_5673fb61()) {
-            playerbeingrevived.reviveprogress.playerbeingrevived = 0;
+            playerbeingrevived.reviveprogress = 0;
             break;
         }
         if (is_true(playerbeingrevived.revivetrigger.auto_revive)) {
-            playerbeingrevived.reviveprogress.playerbeingrevived = 0;
+            playerbeingrevived.reviveprogress = 0;
             break;
         }
-        playerbeingrevived.reviveprogress.playerbeingrevived = min(timer / revivetime, 1);
+        playerbeingrevived.reviveprogress = min(timer / revivetime, 1);
         if (timer >= revivetime) {
             revived = 1;
             break;
@@ -1521,7 +1521,7 @@ function revive_do_revive(playerbeingrevived) {
     self clientfield::set_player_uimodel("hudItems.laststand.revivingClientNum", int(pow(2, 7) - 2));
     if (isdefined(playerbeingrevived) && playerbeingrevived laststand::player_is_in_laststand()) {
         playerbeingrevived clientfield::set_player_uimodel("hudItems.laststand.beingRevived", 0);
-        playerbeingrevived.reviveprogress.playerbeingrevived = 0;
+        playerbeingrevived.reviveprogress = 0;
         if (!is_true(playerbeingrevived.revivetrigger.auto_revive) && !revived) {
             playerbeingrevived function_6bf621ea(#"hash_c21960dae38833d", 1, playerbeingrevived getentitynumber());
             if (isplayer(playerbeingrevived)) {

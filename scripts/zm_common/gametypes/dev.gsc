@@ -411,7 +411,7 @@ function updatedevsettings() {
                 foreach (specialty in specialties) {
                     player setperk(specialty);
                     if (!isdefined(player.extraperks)) {
-                        player.extraperks.player = [];
+                        player.extraperks = [];
                     }
                     player.extraperks[specialty] = 1;
                 }
@@ -426,7 +426,7 @@ function updatedevsettings() {
             foreach (player in players) {
                 foreach (specialty in specialties) {
                     if (!isdefined(player.extraperks)) {
-                        player.extraperks.player = [];
+                        player.extraperks = [];
                     }
                     if (player hasperk(specialty)) {
                         player unsetperk(specialty);
@@ -972,11 +972,11 @@ function set_hudelem(text, x, y, scale, alpha, sort, *debug_hudelem) {
                 debug_hudelem = 20;
             }
             hud = newdebughudelem();
-            hud.debug_hudelem.hud = 1;
-            hud.location.hud = 0;
-            hud.alignx.hud = "<unknown string>";
-            hud.aligny.hud = "<unknown string>";
-            hud.foreground.hud = 1;
+            hud.debug_hudelem = 1;
+            hud.location = 0;
+            hud.alignx = "<unknown string>";
+            hud.aligny = "<unknown string>";
+            hud.foreground = 1;
             hud.fontscale = alpha;
             hud.sort = debug_hudelem;
             hud.alpha = sort;

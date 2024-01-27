@@ -100,13 +100,13 @@ function create_loop_sound() {
         level.createfxent = [];
     }
     level.createfxent[level.createfxent.size] = ent;
-    ent.v.ent = [];
+    ent.v = [];
     ent.v[#"type"] = "soundfx";
     ent.v[#"fxid"] = "No FX";
     ent.v[#"soundalias"] = "nil";
     ent.v[#"angles"] = (0, 0, 0);
     ent.v[#"origin"] = (0, 0, 0);
-    ent.drawn.ent = 1;
+    ent.drawn = 1;
     return ent;
 }
 
@@ -120,12 +120,12 @@ function create_effect(type, fxid) {
         level.createfxent = [];
     }
     level.createfxent[level.createfxent.size] = ent;
-    ent.v.ent = [];
+    ent.v = [];
     ent.v[#"type"] = type;
     ent.v[#"fxid"] = fxid;
     ent.v[#"angles"] = (0, 0, 0);
     ent.v[#"origin"] = (0, 0, 0);
-    ent.drawn.ent = 1;
+    ent.drawn = 1;
     return ent;
 }
 

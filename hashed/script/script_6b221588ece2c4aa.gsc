@@ -25,16 +25,16 @@ function function_b455d5d8() {
 // Checksum 0xdb83d73e, Offset: 0x218
 // Size: 0xe2
 function createspecialcrossbowwatchertypes(watcher) {
-    watcher.ondetonatecallback.watcher = &delete;
-    watcher.ondamage.watcher = &util::void;
+    watcher.ondetonatecallback = &delete;
+    watcher.ondamage = &util::void;
     if (is_true(level.b_crossbow_bolt_destroy_on_impact)) {
-        watcher.onspawn.watcher = &onspawncrossbowboltimpact;
-        watcher.onspawnretrievetriggers.watcher = &util::void;
-        watcher.pickup.watcher = &util::void;
+        watcher.onspawn = &onspawncrossbowboltimpact;
+        watcher.onspawnretrievetriggers = &util::void;
+        watcher.pickup = &util::void;
     } else {
-        watcher.onspawn.watcher = &onspawncrossbowbolt;
-        watcher.onspawnretrievetriggers.watcher = &function_23b0aea9;
-        watcher.pickup.watcher = &function_d9219ce2;
+        watcher.onspawn = &onspawncrossbowbolt;
+        watcher.onspawnretrievetriggers = &function_23b0aea9;
+        watcher.pickup = &function_d9219ce2;
     }
 }
 
@@ -54,7 +54,7 @@ function function_f297d773() {
 // Checksum 0x2d0d3606, Offset: 0x3a0
 // Size: 0x26
 function function_1eaa3e20(watcher) {
-    watcher.notequipment.watcher = 1;
+    watcher.notequipment = 1;
     watcher.onfizzleout = undefined;
 }
 
@@ -63,7 +63,7 @@ function function_1eaa3e20(watcher) {
 // Checksum 0xa1d684d7, Offset: 0x3d0
 // Size: 0x16
 function createtactinsertwatcher(watcher) {
-    watcher.playdestroyeddialog.watcher = 0;
+    watcher.playdestroyeddialog = 0;
 }
 
 // Namespace weaponobjects/namespace_4c668920
@@ -71,14 +71,14 @@ function createtactinsertwatcher(watcher) {
 // Checksum 0xd1f245f6, Offset: 0x3f0
 // Size: 0x6e
 function creatercbombwatcher(watcher) {
-    watcher.altdetonate.watcher = 0;
-    watcher.ismovable.watcher = 1;
-    watcher.ownergetsassist.watcher = 1;
-    watcher.playdestroyeddialog.watcher = 0;
-    watcher.deleteonkillbrush.watcher = 0;
-    watcher.ondetonatecallback.watcher = level.rcbombonblowup;
-    watcher.stuntime.watcher = 1;
-    watcher.notequipment.watcher = 1;
+    watcher.altdetonate = 0;
+    watcher.ismovable = 1;
+    watcher.ownergetsassist = 1;
+    watcher.playdestroyeddialog = 0;
+    watcher.deleteonkillbrush = 0;
+    watcher.ondetonatecallback = level.rcbombonblowup;
+    watcher.stuntime = 1;
+    watcher.notequipment = 1;
 }
 
 // Namespace weaponobjects/namespace_4c668920
@@ -86,15 +86,15 @@ function creatercbombwatcher(watcher) {
 // Checksum 0x145f32a0, Offset: 0x468
 // Size: 0x7e
 function createqrdronewatcher(watcher) {
-    watcher.altdetonate.watcher = 0;
-    watcher.ismovable.watcher = 1;
-    watcher.ownergetsassist.watcher = 1;
-    watcher.playdestroyeddialog.watcher = 0;
-    watcher.deleteonkillbrush.watcher = 0;
-    watcher.ondetonatecallback.watcher = level.qrdroneonblowup;
-    watcher.ondamage.watcher = level.qrdroneondamage;
-    watcher.stuntime.watcher = 5;
-    watcher.notequipment.watcher = 1;
+    watcher.altdetonate = 0;
+    watcher.ismovable = 1;
+    watcher.ownergetsassist = 1;
+    watcher.playdestroyeddialog = 0;
+    watcher.deleteonkillbrush = 0;
+    watcher.ondetonatecallback = level.qrdroneonblowup;
+    watcher.ondamage = level.qrdroneondamage;
+    watcher.stuntime = 5;
+    watcher.notequipment = 1;
 }
 
 // Namespace weaponobjects/namespace_4c668920
@@ -149,21 +149,21 @@ function spikesdetonating(watcher) {
 // Checksum 0x4e5c4b2a, Offset: 0x6e8
 // Size: 0x11a
 function createspikelauncherwatcher(watcher) {
-    watcher.altname.watcher = #"spike_charge";
-    watcher.altweapon.watcher = getweapon(#"spike_charge");
-    watcher.altdetonate.watcher = 0;
-    watcher.watchforfire.watcher = 1;
-    watcher.hackable.watcher = 1;
-    watcher.hackertoolradius.watcher = level.equipmenthackertoolradius;
-    watcher.hackertooltimems.watcher = level.equipmenthackertooltimems;
-    watcher.ondetonatecallback.watcher = &spikedetonate;
-    watcher.onstun.watcher = &weaponstun;
-    watcher.stuntime.watcher = 1;
-    watcher.ownergetsassist.watcher = 1;
-    watcher.detonatestationary.watcher = 0;
-    watcher.detonationdelay.watcher = 0;
-    watcher.detonationsound.watcher = #"wpn_claymore_alert";
-    watcher.ondetonationhandle.watcher = &spikesdetonating;
+    watcher.altname = #"spike_charge";
+    watcher.altweapon = getweapon(#"spike_charge");
+    watcher.altdetonate = 0;
+    watcher.watchforfire = 1;
+    watcher.hackable = 1;
+    watcher.hackertoolradius = level.equipmenthackertoolradius;
+    watcher.hackertooltimems = level.equipmenthackertooltimems;
+    watcher.ondetonatecallback = &spikedetonate;
+    watcher.onstun = &weaponstun;
+    watcher.stuntime = 1;
+    watcher.ownergetsassist = 1;
+    watcher.detonatestationary = 0;
+    watcher.detonationdelay = 0;
+    watcher.detonationsound = #"wpn_claymore_alert";
+    watcher.ondetonationhandle = &spikesdetonating;
 }
 
 // Namespace weaponobjects/namespace_4c668920
@@ -171,8 +171,8 @@ function createspikelauncherwatcher(watcher) {
 // Checksum 0x3534eb35, Offset: 0x810
 // Size: 0x26
 function createplayerhelicopterwatcher(watcher) {
-    watcher.altdetonate.watcher = 1;
-    watcher.notequipment.watcher = 1;
+    watcher.altdetonate = 1;
+    watcher.notequipment = 1;
 }
 
 // Namespace weaponobjects/namespace_4c668920
@@ -180,10 +180,10 @@ function createplayerhelicopterwatcher(watcher) {
 // Checksum 0x86bf94a6, Offset: 0x840
 // Size: 0x42
 function function_50d4198b(watcher) {
-    watcher.hackable.watcher = 0;
-    watcher.headicon.watcher = 0;
-    watcher.enemydestroy.watcher = 0;
-    watcher.onspawn.watcher = &function_f0e307a2;
+    watcher.hackable = 0;
+    watcher.headicon = 0;
+    watcher.enemydestroy = 0;
+    watcher.onspawn = &function_f0e307a2;
 }
 
 // Namespace weaponobjects/namespace_4c668920
@@ -222,7 +222,7 @@ function function_5742754c() {
     station = self;
     station endon(#"death");
     if (!isdefined(station.ammo_resupplies_given)) {
-        station.ammo_resupplies_given.station = 0;
+        station.ammo_resupplies_given = 0;
     }
     /#
         assert(isdefined(station.ammo_trigger));
@@ -253,13 +253,13 @@ function function_e98cee52(player, station) {
     primary_weapons = player getweaponslistprimaries();
     var_c20b09e1 = 0;
     foreach (weapon in primary_weapons) {
-        var_c20b09e1 = var_c20b09e1 & player function_61bdb626(weapon);
+        var_c20b09e1 = var_c20b09e1 | player function_61bdb626(weapon);
     }
     if (!var_c20b09e1) {
         return;
     }
     if (!isdefined(station.last_ammo_resupply_time)) {
-        station.last_ammo_resupply_time.station = [];
+        station.last_ammo_resupply_time = [];
     }
     station.last_ammo_resupply_time[player getentitynumber()] = gettime();
     station.ammo_resupplies_given++;
@@ -314,7 +314,7 @@ function delayedspikedetonation(attacker, weapon) {
     self.owner.spikedelay = self.owner.spikedelay + 0.3;
     waittillframeend();
     wait(delaytime);
-    owner.spikedelay.owner = owner.spikedelay - 0.3;
+    owner.spikedelay = owner.spikedelay - 0.3;
     if (isdefined(self)) {
         self weapondetonate(attacker, weapon);
     }

@@ -35,7 +35,7 @@ function private function_70a657d8() {
 function private on_begin(var_49106f6b) {
     level.var_60aa7ebf = zm_trial::function_5769f26a(var_49106f6b);
     foreach (player in getplayers()) {
-        player.var_e47444a5.player = [];
+        player.var_e47444a5 = [];
         player zm_trial_util::function_2190356a(0);
         player zm_trial_util::function_c2cd0cba(level.var_60aa7ebf);
     }
@@ -107,9 +107,9 @@ function private on_ai_killed(params) {
     }
     if (!isinarray(player.var_e47444a5, w_root)) {
         if (!isdefined(player.var_e47444a5)) {
-            player.var_e47444a5.player = [];
+            player.var_e47444a5 = [];
         } else if (!isarray(player.var_e47444a5)) {
-            player.var_e47444a5.player = array(player.var_e47444a5);
+            player.var_e47444a5 = array(player.var_e47444a5);
         }
         player.var_e47444a5[player.var_e47444a5.size] = w_root;
         if (player.var_e47444a5.size == level.var_60aa7ebf) {

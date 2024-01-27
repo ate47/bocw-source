@@ -175,7 +175,7 @@ function function_be5ba736(enemy) {
     foreach (point in queryresult.data) {
         /#
             if (!isdefined(point._scoredebug)) {
-                point._scoredebug.point = [];
+                point._scoredebug = [];
             }
             if (!isdefined(point._scoredebug[#"disttoorigin"])) {
                 point._scoredebug[#"disttoorigin"] = spawnstruct();
@@ -183,11 +183,11 @@ function function_be5ba736(enemy) {
             point._scoredebug[#"disttoorigin"].score = mapfloat(0, prefereddistawayfromorigin, 0, 300, point.disttoorigin2d);
             point._scoredebug[#"disttoorigin"].scorename = "<unknown string>";
         #/
-        point.score.point = point.score + mapfloat(0, prefereddistawayfromorigin, 0, 300, point.disttoorigin2d);
+        point.score = point.score + mapfloat(0, prefereddistawayfromorigin, 0, 300, point.disttoorigin2d);
         if (point.inclaimedlocation) {
             /#
                 if (!isdefined(point._scoredebug)) {
-                    point._scoredebug.point = [];
+                    point._scoredebug = [];
                 }
                 if (!isdefined(point._scoredebug[#"inclaimedlocation"])) {
                     point._scoredebug[#"inclaimedlocation"] = spawnstruct();
@@ -195,11 +195,11 @@ function function_be5ba736(enemy) {
                 point._scoredebug[#"inclaimedlocation"].score = -500;
                 point._scoredebug[#"inclaimedlocation"].scorename = "<unknown string>";
             #/
-            point.score.point = point.score + -500;
+            point.score = point.score + -500;
         }
         /#
             if (!isdefined(point._scoredebug)) {
-                point._scoredebug.point = [];
+                point._scoredebug = [];
             }
             if (!isdefined(point._scoredebug[#"random"])) {
                 point._scoredebug[#"random"] = spawnstruct();
@@ -207,10 +207,10 @@ function function_be5ba736(enemy) {
             point._scoredebug[#"random"].score = randomfloatrange(0, randomness);
             point._scoredebug[#"random"].scorename = "<unknown string>";
         #/
-        point.score.point = point.score + randomfloatrange(0, randomness);
+        point.score = point.score + randomfloatrange(0, randomness);
         /#
             if (!isdefined(point._scoredebug)) {
-                point._scoredebug.point = [];
+                point._scoredebug = [];
             }
             if (!isdefined(point._scoredebug[#"engagementdist"])) {
                 point._scoredebug[#"engagementdist"] = spawnstruct();
@@ -218,7 +218,7 @@ function function_be5ba736(enemy) {
             point._scoredebug[#"engagementdist"].score = point.distawayfromengagementarea * -1;
             point._scoredebug[#"engagementdist"].scorename = "<unknown string>";
         #/
-        point.score.point = point.score + point.distawayfromengagementarea * -1;
+        point.score = point.score + point.distawayfromengagementarea * -1;
         if (point.score > best_score) {
             best_score = point.score;
             best_point = point;
@@ -299,7 +299,7 @@ function function_aea2bda3() {
     self endon(#"death");
     for (;;) {
         state_params = spawnstruct();
-        state_params.var_cc308559.state_params = 1;
+        state_params.var_cc308559 = 1;
         self vehicle_ai::evaluate_connections(undefined, state_params);
         if (!isdefined(self.enemy)) {
             wait(0.1);
@@ -454,7 +454,7 @@ function function_aebf9e0f(*params) {
                         foreach (point in queryresult.data) {
                             /#
                                 if (!isdefined(point._scoredebug)) {
-                                    point._scoredebug.point = [];
+                                    point._scoredebug = [];
                                 }
                                 if (!isdefined(point._scoredebug[#"disttoorigin"])) {
                                     point._scoredebug[#"disttoorigin"] = spawnstruct();
@@ -462,10 +462,10 @@ function function_aebf9e0f(*params) {
                                 point._scoredebug[#"disttoorigin"].score = mapfloat(0, 200, 0, -200, distance(point.origin, queryresult.origin));
                                 point._scoredebug[#"disttoorigin"].scorename = "<unknown string>";
                             #/
-                            point.score.point = point.score + mapfloat(0, 200, 0, -200, distance(point.origin, queryresult.origin));
+                            point.score = point.score + mapfloat(0, 200, 0, -200, distance(point.origin, queryresult.origin));
                             /#
                                 if (!isdefined(point._scoredebug)) {
-                                    point._scoredebug.point = [];
+                                    point._scoredebug = [];
                                 }
                                 if (!isdefined(point._scoredebug[#"heighttoorigin"])) {
                                     point._scoredebug[#"heighttoorigin"] = spawnstruct();
@@ -473,11 +473,11 @@ function function_aebf9e0f(*params) {
                                 point._scoredebug[#"heighttoorigin"].score = mapfloat(50, 200, 0, -200, abs(point.origin[2] - queryresult.origin[2]));
                                 point._scoredebug[#"heighttoorigin"].scorename = "<unknown string>";
                             #/
-                            point.score.point = point.score + mapfloat(50, 200, 0, -200, abs(point.origin[2] - queryresult.origin[2]));
+                            point.score = point.score + mapfloat(50, 200, 0, -200, abs(point.origin[2] - queryresult.origin[2]));
                             if (point.inclaimedlocation === 1) {
                                 /#
                                     if (!isdefined(point._scoredebug)) {
-                                        point._scoredebug.point = [];
+                                        point._scoredebug = [];
                                     }
                                     if (!isdefined(point._scoredebug[#"inclaimedlocation"])) {
                                         point._scoredebug[#"inclaimedlocation"] = spawnstruct();
@@ -485,7 +485,7 @@ function function_aebf9e0f(*params) {
                                     point._scoredebug[#"inclaimedlocation"].score = -500;
                                     point._scoredebug[#"inclaimedlocation"].scorename = "<unknown string>";
                                 #/
-                                point.score.point = point.score + -500;
+                                point.score = point.score + -500;
                             }
                             if (point.score > best_score) {
                                 best_score = point.score;
@@ -539,7 +539,7 @@ function function_8a699cff() {
     self endon(#"death");
     for (;;) {
         state_params = spawnstruct();
-        state_params.var_cc308559.state_params = 1;
+        state_params.var_cc308559 = 1;
         if (!isdefined(self.enemy)) {
             wait(0.1);
             self vehicle_ai::evaluate_connections(undefined, state_params);

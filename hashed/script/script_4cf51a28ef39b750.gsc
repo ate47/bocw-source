@@ -302,7 +302,7 @@ function function_1fad5dd0() {
                         s_fasttravel.unitrigger_stub.var_4eadb6a8 clientfield::set("" + #"hash_56ce10c39906bf70", 2);
                     }
                     s_fasttravel.unitrigger_stub.b_play = 1;
-                    s_fasttravel.n_obj_id.s_fasttravel = zm_utility::function_4a4cf79a(#"hash_2a0965272d69a37b", s_fasttravel.origin);
+                    s_fasttravel.n_obj_id = zm_utility::function_4a4cf79a(#"hash_2a0965272d69a37b", s_fasttravel.origin);
                     var_7f26d025++;
                 }
             }

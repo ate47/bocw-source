@@ -186,14 +186,14 @@ function private spawnplane(startnode, owner, killstreak_id, killstreakbundle, k
     plane.var_94162b64 = var_94162b64;
     plane.angles = angles;
     plane linkto(var_94162b64);
-    plane.weapon.plane = getweapon(bundlename);
+    plane.weapon = getweapon(bundlename);
     plane setweapon(plane.weapon);
     plane setowner(owner);
     plane.owner = owner;
     team = owner.team;
     plane.team = team;
     plane setteam(team);
-    plane.targetname.plane = "napalm_strike";
+    plane.targetname = "napalm_strike";
     plane playloopsound(#"hash_44d9bd79e59735d5");
     plane playsound(#"hash_77c59806b7c6a576");
     plane setmodel(#"hash_8cd82152094d2a0");
@@ -260,7 +260,7 @@ function private function_c248485(plane, targetpoint, team, owner, var_3892c0b0 
     self endon(#"death");
     bundlename = sessionmodeiszombiesgame() ? "napalm_strike_zm" : "napalm_strike";
     killstreakbundle = killstreaks::get_script_bundle(bundlename);
-    plane.var_42d5aa88.plane = [];
+    plane.var_42d5aa88 = [];
     for (i = 0; i < killstreakbundle.var_2df25e4a; i++) {
         var_5496c504 = util::spawn_model(#"hash_5958f8fe5e577540", self.origin);
         var_5496c504 ghost();
@@ -317,20 +317,20 @@ function private function_c4cbfac7(plane, team, killstreakbundle, var_8be94730, 
         return;
     }
     bomb thread function_4947d695();
-    var_5496c504.origin.var_5496c504 = bomb.origin;
-    var_5496c504.angles.var_5496c504 = bomb.angles;
+    var_5496c504.origin = bomb.origin;
+    var_5496c504.angles = bomb.angles;
     var_5496c504 linkto(bomb);
     var_5496c504 show();
     bomb ghost();
     bomb.angles = angles;
-    bomb.soundmod.bomb = "heli";
+    bomb.soundmod = "heli";
     bomb playsound(#"hash_136cf29747992813");
     bomb.team = team;
     bomb setteam(team);
     bomb.killcament = killcament;
-    bomb.takedamage.bomb = 0;
-    bomb.killstreakid.bomb = plane.killstreakid;
-    bomb.var_813987b5.bomb = plane.birthtime;
+    bomb.takedamage = 0;
+    bomb.killstreakid = plane.killstreakid;
+    bomb.var_813987b5 = plane.birthtime;
     shot = level.var_ea918548[randomint(level.var_ea918548.size)];
     bomb thread scene::play(#"p9_fxanim_mp_napalm_strike_spin", shot, array(var_5496c504));
     killcament unlink();
@@ -377,7 +377,7 @@ function function_a7d56780(killstreakbundle) {
         killcament = spawn("script_model", self.origin + vectorscale(var_f61b5e7d, -1500));
         killcament setweapon(getweapon(bundlename));
         killcament util::deleteaftertime(killstreakbundle.var_b5f47b94 + 10);
-        killcament.starttime.killcament = gettime();
+        killcament.starttime = gettime();
         killcament.angles = var_7ab8be7d;
         killcament linkto(self);
         self.var_1bb01d48[i] = killcament;
@@ -397,7 +397,7 @@ function private function_77ba1651(position, owner, normal, direction, killcamen
     if (normal[2] < 0.5) {
         var_36c22d1d = position + vectorscale(var_493d36f9, 2);
         var_8ae62b02 = var_36c22d1d - vectorscale((0, 0, 1), 20);
-        var_69d15ad0 = physicstrace(var_36c22d1d, var_8ae62b02, vectorscale((-1, -1, -1), 0.5), vectorscale((1, 1, 1), 0.5), self, 1 & 4);
+        var_69d15ad0 = physicstrace(var_36c22d1d, var_8ae62b02, vectorscale((-1, -1, -1), 0.5), vectorscale((1, 1, 1), 0.5), self, 1 | 4);
         if (var_69d15ad0[#"fraction"] < 1) {
             position = var_36c22d1d;
             if (var_69d15ad0[#"fraction"] > 0) {
@@ -411,7 +411,7 @@ function private function_77ba1651(position, owner, normal, direction, killcamen
         wall_normal = normal;
         var_36c22d1d = originalposition + vectorscale(var_493d36f9, 8);
         var_8ae62b02 = var_36c22d1d - (0, 0, var_8a11dbc7);
-        var_69d15ad0 = physicstrace(var_36c22d1d, var_8ae62b02, vectorscale((-1, -1, -1), 3), vectorscale((1, 1, 1), 3), self, 1 & 4);
+        var_69d15ad0 = physicstrace(var_36c22d1d, var_8ae62b02, vectorscale((-1, -1, -1), 3), vectorscale((1, 1, 1), 3), self, 1 | 4);
         var_693f108f = var_69d15ad0[#"fraction"] * var_8a11dbc7;
         if (var_693f108f > 10) {
             var_e76400c0 = originalposition;
@@ -668,7 +668,7 @@ function function_4cf0607d(var_93057333, weapon, killstreakbundle) {
     self endon(#"death");
     if (candofiredamage(self, killstreakbundle.var_f5f02f46)) {
         params = getstatuseffect("dot_napalm_strike");
-        params.killcament.params = var_93057333.killcament;
+        params.killcament = var_93057333.killcament;
         self status_effect::status_effect_apply(params, weapon, var_93057333.owner, 0, undefined, undefined, var_93057333.var_d1bb98ed);
         self thread sndfiredamage();
     }

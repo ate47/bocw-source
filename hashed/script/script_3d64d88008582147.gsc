@@ -179,13 +179,13 @@ function private function_5928d77d() {
 // Size: 0x234
 function function_b1c6ca30(var_d13d4980) {
     var_7580ce3e = spawnstruct();
-    var_7580ce3e.angles.var_7580ce3e = var_d13d4980.angles;
-    var_7580ce3e.scriptmodel.var_7580ce3e = self;
+    var_7580ce3e.angles = var_d13d4980.angles;
+    var_7580ce3e.scriptmodel = self;
     var_a7bd1c53 = getclosestpointonnavmesh(var_d13d4980.origin, 32, 8);
     if (isdefined(var_a7bd1c53)) {
         var_7580ce3e.origin = var_a7bd1c53;
     } else {
-        var_7580ce3e.origin.var_7580ce3e = var_d13d4980.origin - vectorscale((0, 0, 1), 42);
+        var_7580ce3e.origin = var_d13d4980.origin - vectorscale((0, 0, 1), 42);
     }
     scriptmodel = var_7580ce3e.scriptmodel;
     reward_origin = var_7580ce3e.origin;

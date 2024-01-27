@@ -127,7 +127,7 @@ function smokedetonate(owner, statweapon, smokeweapon, position, radius, effectl
     } else if (level.var_5712bc1c === 1) {
         if (isdefined(owner)) {
             if (!isdefined(owner.var_e0e2e070)) {
-                owner.var_e0e2e070.owner = [];
+                owner.var_e0e2e070 = [];
             }
             var_d6b53fbd = now - 14000;
             foreach (key, var_96138b54 in owner.var_e0e2e070) {
@@ -141,9 +141,9 @@ function smokedetonate(owner, statweapon, smokeweapon, position, radius, effectl
             arrayremovevalue(owner.var_e0e2e070, #"hash_6e7f9aad45ca109e");
             var_86142949 = {#position:position, #var_6f327e4a:now};
             if (!isdefined(owner.var_e0e2e070)) {
-                owner.var_e0e2e070.owner = [];
+                owner.var_e0e2e070 = [];
             } else if (!isarray(owner.var_e0e2e070)) {
-                owner.var_e0e2e070.owner = array(owner.var_e0e2e070);
+                owner.var_e0e2e070 = array(owner.var_e0e2e070);
             }
             owner.var_e0e2e070[owner.var_e0e2e070.size] = var_86142949;
         }
@@ -230,7 +230,7 @@ function spawnsmokegrenadetrigger(smokeweapon, duration, owner) {
     self.smoketrigger = trigger;
     if (isdefined(owner.team)) {
         trigger setteamfortrigger(owner.team);
-        trigger.team.trigger = owner.team;
+        trigger.team = owner.team;
     }
     if (!isdefined(level.smoke_grenade_triggers)) {
         level.smoke_grenade_triggers = [];
@@ -264,11 +264,11 @@ function private function_aff603b2(attacker, victim, *weapon, attackerweapon, *m
         if (weapon === smoketrigger.owner) {
             if (isdefined(meansofdeath) && meansofdeath !== level.var_8e2aec59) {
                 if (!isdefined(smoketrigger.var_25db02aa)) {
-                    smoketrigger.kills.smoketrigger = (isdefined(smoketrigger.kills) ? smoketrigger.kills : 0) + 1;
+                    smoketrigger.kills = (isdefined(smoketrigger.kills) ? smoketrigger.kills : 0) + 1;
                     var_9194a036 = battlechatter::mpdialog_value("muteSmokeSuccessLineCount", 0);
                     if (smoketrigger.kills == (isdefined(var_9194a036) ? var_9194a036 : 3)) {
                         weapon battlechatter::play_gadget_success(getweapon(#"willy_pete"), undefined, attackerweapon, undefined);
-                        smoketrigger.var_25db02aa.smoketrigger = 1;
+                        smoketrigger.var_25db02aa = 1;
                     }
                 }
             }
@@ -447,9 +447,9 @@ function function_8b6ddd71(grenadeent, smokeweapon) {
             }
             if (isdefined(grenadeent.smoketrigger) && player istouching(grenadeent.smoketrigger) && waitresult._notify == #"timeout") {
                 if (player util::isenemyteam(grenadeteam)) {
-                    player clientfield::set("insmoke", curval & 1);
+                    player clientfield::set("insmoke", curval | 1);
                 } else {
-                    player clientfield::set("insmoke", curval & 2);
+                    player clientfield::set("insmoke", curval | 2);
                 }
             } else {
                 if (player util::isenemyteam(grenadeteam)) {

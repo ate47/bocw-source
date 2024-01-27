@@ -77,10 +77,10 @@ function private on_player_connect() {
 function arc_damage(source_enemy, player, arc_num, params = level.default_lightning_chain_params) {
     player endon(#"disconnect");
     if (!isdefined(player.tesla_network_death_choke)) {
-        player.tesla_network_death_choke.player = 0;
+        player.tesla_network_death_choke = 0;
     }
     if (!isdefined(player.tesla_enemies_hit)) {
-        player.tesla_enemies_hit.player = 0;
+        player.tesla_enemies_hit = 0;
     }
     /#
         function_df47c3e8("<unknown string>" + arc_num + "<unknown string>" + player.tesla_enemies_hit);
@@ -158,9 +158,9 @@ function private lc_get_enemies_in_area(origin, distance, player) {
     distance_squared = distance * distance;
     enemies = [];
     if (!isdefined(player.tesla_enemies)) {
-        player.tesla_enemies.player = zombie_utility::get_round_enemy_array();
+        player.tesla_enemies = zombie_utility::get_round_enemy_array();
         if (player.tesla_enemies.size > 0) {
-            player.tesla_enemies.player = array::get_all_closest(origin, player.tesla_enemies);
+            player.tesla_enemies = array::get_all_closest(origin, player.tesla_enemies);
         }
     }
     zombies = player.tesla_enemies;
@@ -245,7 +245,7 @@ function private lc_do_damage(source_enemy, arc_num, player, params) {
     if (isdefined(source_enemy) && source_enemy != self) {
         if (player.tesla_arc_count > 3) {
             util::wait_network_frame();
-            player.tesla_arc_count.player = 0;
+            player.tesla_arc_count = 0;
         }
         player.tesla_arc_count++;
         source_enemy lc_play_arc_fx(self, params);
@@ -255,7 +255,7 @@ function private lc_do_damage(source_enemy, arc_num, player, params) {
             function_df47c3e8("<unknown string>" + player.tesla_network_death_choke);
         #/
         util::wait_network_frame(2);
-        player.tesla_network_death_choke.player = 0;
+        player.tesla_network_death_choke = 0;
     }
     if (!isalive(self)) {
         return;

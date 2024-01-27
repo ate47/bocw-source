@@ -183,7 +183,7 @@ function function_a8501d78(action) {
     #/
     self flag::clear("body_shield_gun_up");
     self namespace_594b67e::function_e2fcacb2(3);
-    namespace_32b4992a::function_533e57d6(self, 1);
+    achievements::function_533e57d6(self, 1);
     override = self actions::function_abaa32c("body_shield");
     var_df227d8a = actions::function_1028d928(action.name, "a");
     if (var_df227d8a) {

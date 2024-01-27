@@ -196,8 +196,8 @@ function private function_11a51c07() {
 // Checksum 0x7c1bb0a, Offset: 0xe10
 // Size: 0x98
 function private function_54e23559(entity, asmstatename) {
-    entity.allowpain.entity = 0;
-    entity.blockingpain.entity = 1;
+    entity.allowpain = 0;
+    entity.blockingpain = 1;
     if (!isdefined(entity.var_660aa59f)) {
         entity setblackboardattribute("_zipline_state", "ZIPLINE_ATTACH");
         animationstatenetworkutility::requeststate(entity, asmstatename);
@@ -266,11 +266,11 @@ function private function_f5e4c85b(entity, *asmstatename) {
     result = 5;
     asmstatename notify(#"hash_4c1bc0b351b4a76f");
     if (isdefined(asmstatename.var_660aa59f)) {
-        asmstatename.zipline_start.asmstatename = getvehiclenode(asmstatename.traversestartnode.var_9a26509a, "targetname");
-        asmstatename.var_4be77411.asmstatename = asmstatename.zipline_start.var_cf56bb8f.var_afbab71e;
+        asmstatename.zipline_start = getvehiclenode(asmstatename.traversestartnode.var_9a26509a, "targetname");
+        asmstatename.var_4be77411 = asmstatename.zipline_start.var_cf56bb8f.var_afbab71e;
         result = 4;
     } else if (isdefined(asmstatename.var_a4d91a0d) && isdefined(asmstatename.traversestartnode.var_9a26509a) && !is_true(asmstatename.var_a4d91a0d.var_14e53eac)) {
-        asmstatename.zipline_start.asmstatename = getvehiclenode(asmstatename.traversestartnode.var_9a26509a, "targetname");
+        asmstatename.zipline_start = getvehiclenode(asmstatename.traversestartnode.var_9a26509a, "targetname");
         if (isdefined(asmstatename.zipline_start.var_cf56bb8f)) {
             var_cf56bb8f = asmstatename.zipline_start.var_cf56bb8f;
             if (is_true(var_cf56bb8f.var_1b1aded2) && isdefined(var_cf56bb8f.var_d9c9a508) && var_cf56bb8f.var_d9c9a508.size > 2) {
@@ -333,10 +333,10 @@ function private function_85ce22b4() {
 function private function_8956c060(entity, asmstatename) {
     entity setblackboardattribute("_zipline_state", "ZIPLINE_IDLE");
     animationstatenetworkutility::requeststate(entity, asmstatename);
-    entity.is_ziplining.entity = 1;
-    entity.var_c681e4c1.entity = 1;
+    entity.is_ziplining = 1;
+    entity.var_c681e4c1 = 1;
     entity notify(#"hash_65134449cd95c3cb");
-    entity.var_b30ec151.entity = (0, 0, 0);
+    entity.var_b30ec151 = (0, 0, 0);
     entity.var_b20b0960 = undefined;
     entity thread function_85ce22b4();
     return 5;
@@ -482,8 +482,8 @@ function private function_c4cfe0f5() {
 // Size: 0x80
 function private function_11b30321(entity, *asmstatename) {
     asmstatename unlink();
-    asmstatename.var_c681e4c1.asmstatename = 0;
-    asmstatename.is_ziplining.asmstatename = 0;
+    asmstatename.var_c681e4c1 = 0;
+    asmstatename.is_ziplining = 0;
     asmstatename notify(#"hash_4c7ded9d08b15793");
     if (isdefined(self.var_b20b0960)) {
         asmstatename.var_b20b0960 delete();
@@ -498,7 +498,7 @@ function private function_11b30321(entity, *asmstatename) {
 function private function_dd8aadf1(entity, asmstatename) {
     entity setblackboardattribute("_zipline_state", "ZIPLINE_FALL");
     animationstatenetworkutility::requeststate(entity, asmstatename);
-    entity.var_39601f96.entity = 1;
+    entity.var_39601f96 = 1;
     var_50588787 = entity.var_b30ec151 * (1, 1, 0) * 0.4;
     entity.var_b30ec151 = var_50588787;
     return 5;
@@ -536,7 +536,7 @@ function private function_28c69db4(entity, *asmstatename) {
 // Checksum 0x1932c21d, Offset: 0x2280
 // Size: 0x22
 function private function_97a75ffc(entity, *asmstatename) {
-    asmstatename.var_39601f96.asmstatename = 0;
+    asmstatename.var_39601f96 = 0;
     return 4;
 }
 
@@ -559,7 +559,7 @@ function function_63d01c33() {
         if (var_de68568b) {
             var_de68568b = 0;
         } else {
-            var_9681c147.angles.var_9681c147 = (var_398bbe57 * n_pitch, var_9681c147.angles[1], var_eb102f19 * n_roll);
+            var_9681c147.angles = (var_398bbe57 * n_pitch, var_9681c147.angles[1], var_eb102f19 * n_roll);
             if (n_pitch > 1) {
                 n_pitch = n_pitch - 0.5;
             }
@@ -596,8 +596,8 @@ function private function_574f0280(entity, asmstatename) {
 // Checksum 0x5e0364b3, Offset: 0x2518
 // Size: 0x32
 function private function_c0a3f837(entity, *asmstatename) {
-    asmstatename.allowpain.asmstatename = 1;
-    asmstatename.blockingpain.asmstatename = 0;
+    asmstatename.allowpain = 1;
+    asmstatename.blockingpain = 0;
     return 4;
 }
 

@@ -316,7 +316,7 @@ function trystoppingcompanionservice(entity) {
 // Checksum 0xfc3049cd, Offset: 0x1e80
 // Size: 0x74
 function private mocompignorepainfaceenemyinit(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
-    mocompduration.blockingpain.mocompduration = 1;
+    mocompduration.blockingpain = 1;
     mocompduration orientmode("face enemy");
     mocompduration animmode("pos deltas");
 }
@@ -326,7 +326,7 @@ function private mocompignorepainfaceenemyinit(entity, *mocompanim, *mocompanimb
 // Checksum 0xb079c321, Offset: 0x1f00
 // Size: 0x36
 function private mocompignorepainfaceenemyterminate(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
-    mocompduration.blockingpain.mocompduration = 0;
+    mocompduration.blockingpain = 0;
 }
 
 // Namespace zodcompanionbehavior/archetype_zod_companion
@@ -335,7 +335,7 @@ function private mocompignorepainfaceenemyterminate(entity, *mocompanim, *mocomp
 // Size: 0x74
 function private archetypezodcompanionblackboardinit() {
     entity = self;
-    entity.pushable.entity = 1;
+    entity.pushable = 1;
     blackboard::createblackboardforentity(entity);
     ai::createinterfaceforentity(entity);
     self setblackboardattribute("_locomotion_speed", "locomotion_speed_sprint");
@@ -479,7 +479,7 @@ function private zodcompaniontargetservice(entity) {
         return;
     }
     if (isdefined(entity.attackable)) {
-        entity.nexttargetserviceupdate.entity = 0;
+        entity.nexttargetserviceupdate = 0;
         return;
     }
     if (is_true(entity.enemy.aat_turned)) {
@@ -488,7 +488,7 @@ function private zodcompaniontargetservice(entity) {
     if (isdefined(entity.nexttargetserviceupdate) && entity.nexttargetserviceupdate > gettime() && isalive(entity.favoriteenemy) && !is_true(entity.favoriteenemy.aat_turned)) {
         return 0;
     }
-    entity.nexttargetserviceupdate.entity = gettime() + randomintrange(500, 1000);
+    entity.nexttargetserviceupdate = gettime() + randomintrange(500, 1000);
     aienemies = [];
     playerenemies = [];
     ais = getactorteamarray("axis", "team3");
@@ -524,15 +524,15 @@ function private zodcompaniontargetservice(entity) {
         entity.favoriteenemy = undefined;
         return;
     } else if (isdefined(self.var_135f3e2e)) {
-        entity.favoriteenemy.entity = [[ self.var_135f3e2e ]](closestai, closestplayer);
+        entity.favoriteenemy = [[ self.var_135f3e2e ]](closestai, closestplayer);
     } else if (!isdefined(closestai.entity)) {
-        entity.favoriteenemy.entity = closestplayer.entity;
+        entity.favoriteenemy = closestplayer.entity;
     } else if (!isdefined(closestplayer.entity)) {
-        entity.favoriteenemy.entity = closestai.entity;
+        entity.favoriteenemy = closestai.entity;
     } else if (closestai.distancesquared < closestplayer.distancesquared) {
-        entity.favoriteenemy.entity = closestai.entity;
+        entity.favoriteenemy = closestai.entity;
     } else {
-        entity.favoriteenemy.entity = closestplayer.entity;
+        entity.favoriteenemy = closestplayer.entity;
     }
 }
 
@@ -571,7 +571,7 @@ function private zodcompanionjukeinitialize(entity) {
     aiutility::choosejukedirection(entity);
     entity clearpath();
     jukeinfo = spawnstruct();
-    jukeinfo.origin.jukeinfo = entity.origin;
+    jukeinfo.origin = entity.origin;
     jukeinfo.entity = entity;
     blackboard::addblackboardevent("robot_juke", jukeinfo, 2000);
 }
@@ -581,8 +581,8 @@ function private zodcompanionjukeinitialize(entity) {
 // Checksum 0xdcc5d7ed, Offset: 0x2db0
 // Size: 0x5a
 function private zodcompanionpreemptivejuketerminate(entity) {
-    entity.nextpreemptivejuke.entity = gettime() + randomintrange(4000, 6000);
-    entity.nextpreemptivejukeads.entity = randomfloatrange(0.5, 0.95);
+    entity.nextpreemptivejuke = gettime() + randomintrange(4000, 6000);
+    entity.nextpreemptivejukeads = randomfloatrange(0.5, 0.95);
 }
 
 // Namespace zodcompanionbehavior/archetype_zod_companion
@@ -599,10 +599,10 @@ function private zodcompanionleapterminate(entity) {
 // Size: 0x2b6
 function private zodcompaniontryreacquireservice(entity) {
     if (!isdefined(entity.reacquire_state)) {
-        entity.reacquire_state.entity = 0;
+        entity.reacquire_state = 0;
     }
     if (!isdefined(entity.enemy)) {
-        entity.reacquire_state.entity = 0;
+        entity.reacquire_state = 0;
         return 0;
     }
     if (entity haspath()) {
@@ -612,13 +612,13 @@ function private zodcompaniontryreacquireservice(entity) {
         return 0;
     }
     if (entity cansee(entity.enemy) && entity canshootenemy()) {
-        entity.reacquire_state.entity = 0;
+        entity.reacquire_state = 0;
         return 0;
     }
     dirtoenemy = vectornormalize(entity.enemy.origin - entity.origin);
     forward = anglestoforward(entity.angles);
     if (vectordot(dirtoenemy, forward) < 0.5) {
-        entity.reacquire_state.entity = 0;
+        entity.reacquire_state = 0;
         return 0;
     }
     switch (entity.reacquire_state) {
@@ -635,7 +635,7 @@ function private zodcompaniontryreacquireservice(entity) {
         break;
     case #"hash_defdefdefdefdef0":
         if (entity.reacquire_state > 15) {
-            entity.reacquire_state.entity = 0;
+            entity.reacquire_state = 0;
             return 0;
         }
         break;
@@ -664,7 +664,7 @@ function private manage_companion_movement(entity) {
         self.leader = level.var_1a612d42;
     }
     if (!isdefined(entity.var_5f694f04)) {
-        entity.var_5f694f04.entity = 0;
+        entity.var_5f694f04 = 0;
     }
     if (isdefined(entity.ai.bulletsinclip) && entity.ai.bulletsinclip < entity.weapon.clipsize) {
         entity.ai.bulletsinclip = entity.weapon.clipsize;
@@ -696,7 +696,7 @@ function private manage_companion_movement(entity) {
                 if (isdefined(player.var_7d960eaa) && player.var_7d960eaa > gettime()) {
                     continue;
                 }
-                entity.reviving_a_player.entity = 1;
+                entity.reviving_a_player = 1;
                 entity zod_companion_revive_player(player);
                 return;
             }
@@ -710,8 +710,8 @@ function private manage_companion_movement(entity) {
         if (distancesquared(entity.origin, var_ad1c1da4) <= function_a3f6cdac(entity getpathfindingradius())) {
             entity clearpath();
         } else {
-            var_1f2328d0 = entity function_4794d6a3();
-            if (!isdefined(var_1f2328d0.goalpos) || entity.var_5db9cc48 !== var_1f2328d0.goalpos) {
+            goalinfo = entity function_4794d6a3();
+            if (!isdefined(goalinfo.goalpos) || entity.var_5db9cc48 !== goalinfo.goalpos) {
                 if (distancesquared(entity.origin, var_ad1c1da4) > function_a3f6cdac(64)) {
                     if (is_true(entity.var_b238ef38.slot.on_navmesh)) {
                         positiononnavmesh = var_ad1c1da4;
@@ -733,19 +733,19 @@ function private manage_companion_movement(entity) {
     }
     if (isdefined(entity.var_9140144d)) {
         if (isdefined(entity.var_a72ffc1e) && entity namespace_47c5b560::function_72371f2a() && isdefined(entity.v_zombie_custom_goal_pos)) {
-            var_1f2328d0 = entity function_4794d6a3();
-            if (!isdefined(var_1f2328d0.goalpos) || entity.v_zombie_custom_goal_pos !== var_1f2328d0.goalpos) {
+            goalinfo = entity function_4794d6a3();
+            if (!isdefined(goalinfo.goalpos) || entity.v_zombie_custom_goal_pos !== goalinfo.goalpos) {
                 entity setgoal(entity.v_zombie_custom_goal_pos, 1);
             }
         }
         return;
     }
     if (!isdefined(entity.var_f4fb31fe)) {
-        entity.var_f4fb31fe.entity = gettime();
+        entity.var_f4fb31fe = gettime();
     }
     if (gettime() >= entity.var_f4fb31fe && isdefined(level.active_powerups) && level.active_powerups.size > 0) {
         if (!isdefined(entity.var_345d40)) {
-            entity.var_345d40.entity = 0;
+            entity.var_345d40 = 0;
         }
         foreach (powerup in level.active_powerups) {
             if (isdefined(powerup)) {
@@ -753,20 +753,20 @@ function private manage_companion_movement(entity) {
                     dist = distancesquared(entity.origin, powerup.origin);
                     if (dist <= 147456 && randomint(100) < 50 + 10 * entity.var_345d40) {
                         entity setgoal(powerup.origin, 1);
-                        entity.var_f4fb31fe.entity = gettime() + randomintrange(2500, 3500);
-                        entity.next_move_time.entity = gettime() + randomintrange(2500, 3500);
-                        entity.var_345d40.entity = 0;
+                        entity.var_f4fb31fe = gettime() + randomintrange(2500, 3500);
+                        entity.next_move_time = gettime() + randomintrange(2500, 3500);
+                        entity.var_345d40 = 0;
                         return;
                     }
-                    entity.var_345d40.entity = entity.var_345d40 + 1;
+                    entity.var_345d40 = entity.var_345d40 + 1;
                 }
             }
         }
-        entity.var_f4fb31fe.entity = gettime() + randomintrange(333, 666);
+        entity.var_f4fb31fe = gettime() + randomintrange(333, 666);
     }
     follow_radius_squared = function_a3f6cdac(isdefined(entity.var_397796ce) ? entity.var_397796ce : 256);
     if (isdefined(entity.leader)) {
-        entity.companion_anchor_point.entity = entity.leader.origin;
+        entity.companion_anchor_point = entity.leader.origin;
     }
     if (isdefined(entity.pathgoalpos)) {
         dist_check_start_point = entity.pathgoalpos;
@@ -814,7 +814,7 @@ function private zodcompanioncollisionservice(entity) {
     }
     if (var_26cddecd) {
         entity collidewithactors(0);
-        entity.dontpushtime.entity = gettime() + 2000;
+        entity.dontpushtime = gettime() + 2000;
         return 1;
     }
     entity collidewithactors(1);
@@ -888,8 +888,8 @@ function private function_d5390a05(var_33d955f9) {
 // Size: 0x4c6
 function private pick_new_movement_point() {
     if (isdefined(self.v_zombie_custom_goal_pos)) {
-        var_1f2328d0 = self function_4794d6a3();
-        if (var_1f2328d0.goalpos === self.v_zombie_custom_goal_pos) {
+        goalinfo = self function_4794d6a3();
+        if (goalinfo.goalpos === self.v_zombie_custom_goal_pos) {
             return;
         }
         /#
@@ -982,7 +982,7 @@ function zod_companion_revive_player(player) {
         self.reviving_a_player = 1;
     }
     self flag::set(#"reviving_a_player");
-    player.being_revived_by_robot.player = 0;
+    player.being_revived_by_robot = 0;
     self thread zod_companion_monitor_revive_attempt(player);
     self val::set(#"zod_companion", "ignoreall", 1);
     pathmode = self getpathmode();
@@ -1006,7 +1006,7 @@ function zod_companion_revive_player(player) {
                     /#
                         println("<unknown string>" + target_point);
                     #/
-                    player.var_7d960eaa.player = gettime() + 1000;
+                    player.var_7d960eaa = gettime() + 1000;
                     self.var_90b19379 = 1;
                     return;
                 }
@@ -1029,9 +1029,9 @@ function zod_companion_revive_player(player) {
     target_point = is_true(player.var_b895a3ff) ? player.var_dc4f101.origin : player.origin;
     if (isplayer(player) && isdefined(var_4ac740f2)) {
         level.var_ee623e8 = 1;
-        var_4ac740f2.beingrevived.var_4ac740f2 = 1;
-        player.being_revived_by_robot.player = 1;
-        player.var_c6a6f334.player = 1;
+        var_4ac740f2.beingrevived = 1;
+        player.being_revived_by_robot = 1;
+        player.var_c6a6f334 = 1;
         vector = vectornormalize(target_point - self.origin);
         angles = vectortoangles(vector);
         angles = (0, angles[1], 0);
@@ -1132,12 +1132,12 @@ function zod_companion_revive_cleanup(player) {
     self flag::clear(#"reviving_a_player");
     if (isplayer(player)) {
         if (player.being_revived_by_robot === 1) {
-            player.being_revived_by_robot.player = 0;
+            player.being_revived_by_robot = 0;
         }
         if (isdefined(player.revivetrigger) && player.revivetrigger.beingrevived === 1) {
             player.revivetrigger.beingrevived = 0;
         }
-        player.var_c6a6f334.player = 0;
+        player.var_c6a6f334 = 0;
         player clientfield::set("" + #"being_robot_revived", 0);
         player val::reset(#"hash_78da69acddea21c2", "allow_movement");
     }
@@ -1149,7 +1149,7 @@ function zod_companion_revive_cleanup(player) {
 // Checksum 0x63c9358a, Offset: 0x5410
 // Size: 0xd4
 function private zodcompanionfinishedsprinttransition(behaviortreeentity) {
-    behaviortreeentity.sprint_transition_happening.behaviortreeentity = 0;
+    behaviortreeentity.sprint_transition_happening = 0;
     if (behaviortreeentity getblackboardattribute("_locomotion_speed") == "locomotion_speed_walk") {
         behaviortreeentity ai::set_behavior_attribute("sprint", 1);
         behaviortreeentity setblackboardattribute("_locomotion_speed", "locomotion_speed_sprint");
@@ -1215,11 +1215,11 @@ function zodcompanionexhaustedbehaviorservice(behaviortreeentity) {
     if (!is_true(behaviortreeentity.var_2a757d07)) {
         return;
     }
-    var_1f2328d0 = behaviortreeentity function_4794d6a3();
-    if (isdefined(behaviortreeentity.var_342791dd) && var_1f2328d0.goalpos === behaviortreeentity.var_342791dd && behaviortreeentity isatgoal()) {
+    goalinfo = behaviortreeentity function_4794d6a3();
+    if (isdefined(behaviortreeentity.var_342791dd) && goalinfo.goalpos === behaviortreeentity.var_342791dd && behaviortreeentity isatgoal()) {
         behaviortreeentity pathmode("dont move", 1);
         behaviortreeentity.var_342791dd = undefined;
-        behaviortreeentity.pushable.behaviortreeentity = 0;
+        behaviortreeentity.pushable = 0;
     }
 }
 
@@ -1300,7 +1300,7 @@ function zodcompanionclearobstacleservice(behaviortreeentity) {
         behaviortreeentity val::reset(#"hash_6b00cd63706305ff", "prioritize_target_near_leader");
         behaviortreeentity function_d4c687c9();
         behaviortreeentity.var_879af1ac = undefined;
-        behaviortreeentity.var_2c14b3fd.behaviortreeentity = 0;
+        behaviortreeentity.var_2c14b3fd = 0;
     }
     if (!var_126918fc) {
         return;
@@ -1314,18 +1314,18 @@ function zodcompanionclearobstacleservice(behaviortreeentity) {
             var_545a671 = distancesquared(behaviortreeentity.var_3c07378c, behaviortreeentity.origin);
             is_blocked = var_545a671 < 4;
         }
-        behaviortreeentity.var_43933fca.behaviortreeentity = time + 1000;
-        behaviortreeentity.var_3c07378c.behaviortreeentity = behaviortreeentity.origin;
+        behaviortreeentity.var_43933fca = time + 1000;
+        behaviortreeentity.var_3c07378c = behaviortreeentity.origin;
         if (is_blocked && !behaviortreeentity function_dd070839()) {
             var_d32424f1 = getentitiesinradius(behaviortreeentity.origin, 80, 15);
             var_d32424f1 = array::exclude(var_d32424f1, behaviortreeentity);
             if (var_d32424f1.size > 0) {
                 if (!isdefined(behaviortreeentity.var_2c14b3fd)) {
-                    behaviortreeentity.var_2c14b3fd.behaviortreeentity = 0;
+                    behaviortreeentity.var_2c14b3fd = 0;
                 }
                 behaviortreeentity.var_2c14b3fd++;
                 if (behaviortreeentity.var_2c14b3fd >= 3) {
-                    behaviortreeentity.var_879af1ac.behaviortreeentity = time + 3000;
+                    behaviortreeentity.var_879af1ac = time + 3000;
                     behaviortreeentity val::set(#"hash_6b00cd63706305ff", "ignoreall", 0);
                     behaviortreeentity val::set(#"hash_6b00cd63706305ff", "prioritize_target_near_leader", 0);
                     /#
@@ -1335,7 +1335,7 @@ function zodcompanionclearobstacleservice(behaviortreeentity) {
                 return;
             }
         }
-        behaviortreeentity.var_2c14b3fd.behaviortreeentity = 0;
+        behaviortreeentity.var_2c14b3fd = 0;
     }
 }
 
@@ -1394,15 +1394,15 @@ function private zodcalcproceduraltraversal(entity) {
     } else {
         return;
     }
-    entity.traversal.entity = spawnstruct();
+    entity.traversal = spawnstruct();
     traversal = entity.traversal;
-    traversal.landingdistance.traversal = 24;
-    traversal.minimumspeed.traversal = 18;
+    traversal.landingdistance = 24;
+    traversal.minimumspeed = 18;
     traversal.startpoint1 = startpos;
     traversal.endpoint1 = endpos;
-    traversal.distancetoend.traversal = distance(traversal.startpoint1, traversal.endpoint1);
-    traversal.absheighttoend.traversal = abs(traversal.startpoint1[2] - traversal.endpoint1[2]);
-    traversal.abslengthtoend.traversal = distance2d(traversal.startpoint1, traversal.endpoint1);
+    traversal.distancetoend = distance(traversal.startpoint1, traversal.endpoint1);
+    traversal.absheighttoend = abs(traversal.startpoint1[2] - traversal.endpoint1[2]);
+    traversal.abslengthtoend = distance2d(traversal.startpoint1, traversal.endpoint1);
     speedboost = 0;
     if (traversal.abslengthtoend > 200) {
         speedboost = 16;
@@ -1414,14 +1414,14 @@ function private zodcalcproceduraltraversal(entity) {
     if (isdefined(entity.traversalspeedboost)) {
         speedboost = entity [[ entity.traversalspeedboost ]]();
     }
-    traversal.speedoncurve.traversal = (traversal.minimumspeed + speedboost) * 12;
+    traversal.speedoncurve = (traversal.minimumspeed + speedboost) * 12;
     heightoffset = min(96, max(traversal.absheighttoend * 0.6, traversal.abslengthtoend));
-    traversal.startpoint2.traversal = entity.origin + (0, 0, heightoffset);
-    traversal.endpoint2.traversal = traversal.endpoint1 + (0, 0, heightoffset);
+    traversal.startpoint2 = entity.origin + (0, 0, heightoffset);
+    traversal.endpoint2 = traversal.endpoint1 + (0, 0, heightoffset);
     if (traversal.startpoint1[2] < traversal.endpoint1[2]) {
-        traversal.startpoint2.traversal = traversal.startpoint2 + (0, 0, traversal.absheighttoend);
+        traversal.startpoint2 = traversal.startpoint2 + (0, 0, traversal.absheighttoend);
     } else {
-        traversal.endpoint2.traversal = traversal.endpoint2 + (0, 0, traversal.absheighttoend);
+        traversal.endpoint2 = traversal.endpoint2 + (0, 0, traversal.absheighttoend);
     }
     /#
         recordline(traversal.startpoint1, traversal.startpoint2, (1, 0.5, 0), "neck", entity);
@@ -1432,20 +1432,20 @@ function private zodcalcproceduraltraversal(entity) {
     #/
     segments = 10;
     previouspoint = traversal.startpoint1;
-    traversal.curvelength.traversal = 0;
+    traversal.curvelength = 0;
     for (index = 1; index <= segments; index++) {
         t = index / segments;
         nextpoint = calculatecubicbezier(t, traversal.startpoint1, traversal.startpoint2, traversal.endpoint2, traversal.endpoint1);
         /#
             recordline(previouspoint, nextpoint, (0, 1, 0), "neck", entity);
         #/
-        traversal.curvelength.traversal = traversal.curvelength + distance(previouspoint, nextpoint);
+        traversal.curvelength = traversal.curvelength + distance(previouspoint, nextpoint);
         previouspoint = nextpoint;
     }
-    traversal.starttime.traversal = gettime();
-    traversal.endtime.traversal = traversal.starttime + traversal.curvelength * 1000 / traversal.speedoncurve;
-    traversal.totaltime.traversal = traversal.endtime - traversal.starttime;
-    traversal.landing.traversal = 0;
+    traversal.starttime = gettime();
+    traversal.endtime = traversal.starttime + traversal.curvelength * 1000 / traversal.speedoncurve;
+    traversal.totaltime = traversal.endtime - traversal.starttime;
+    traversal.landing = 0;
     return 1;
 }
 
@@ -1454,11 +1454,11 @@ function private zodcalcproceduraltraversal(entity) {
 // Checksum 0x89a530cc, Offset: 0x6470
 // Size: 0xa8
 function private function_72edbea6(entity, asmstatename) {
-    entity.skipdeath.entity = 1;
+    entity.skipdeath = 1;
     traversal = entity.traversal;
-    traversal.starttime.traversal = gettime();
-    traversal.endtime.traversal = traversal.starttime + traversal.curvelength * 1000 / traversal.speedoncurve;
-    traversal.totaltime.traversal = traversal.endtime - traversal.starttime;
+    traversal.starttime = gettime();
+    traversal.endtime = traversal.starttime + traversal.curvelength * 1000 / traversal.speedoncurve;
+    traversal.totaltime = traversal.endtime - traversal.starttime;
     animationstatenetworkutility::requeststate(entity, asmstatename);
     return 5;
 }
@@ -1475,7 +1475,7 @@ function private function_7598aa02(entity, *asmstatename) {
     t = min((gettime() - traversal.starttime) / traversal.totaltime, 1);
     curveremaining = traversal.curvelength * (1 - t);
     if (curveremaining < traversal.landingdistance) {
-        traversal.landing.traversal = 1;
+        traversal.landing = 1;
         return 4;
     }
     return 5;
@@ -1509,7 +1509,7 @@ function private function_74ffdef5(entity, *asmstatename) {
 // Size: 0x54
 function private zodtraverseend(entity) {
     function_74ffdef5(entity);
-    entity.skipdeath.entity = 0;
+    entity.skipdeath = 0;
     entity.traversal = undefined;
     entity notify(#"traverse_end");
     return 4;
@@ -1525,8 +1525,8 @@ function private function_26cc92cd(entity, *mocompanim, *mocompanimblendouttime,
     mocompduration orientmode("face angle", mocompduration.angles[1]);
     mocompduration setrepairpaths(0);
     mocompduration animmode("noclip", 0);
-    mocompduration.blockingpain.mocompduration = 1;
-    mocompduration.clamptonavmesh.mocompduration = 0;
+    mocompduration.blockingpain = 1;
+    mocompduration.clamptonavmesh = 0;
     if (isdefined(traversal) && traversal.landing) {
         mocompduration animmode("angle deltas", 0);
     }
@@ -1540,7 +1540,7 @@ function private function_7d1f506(entity, *mocompanim, *mocompanimblendouttime, 
     traversal = mocompduration.traversal;
     if (isdefined(traversal)) {
         if (mocompduration ispaused()) {
-            traversal.starttime.traversal = traversal.starttime + int(float(function_60d95f53()) / 1000 * 1000);
+            traversal.starttime = traversal.starttime + int(float(function_60d95f53()) / 1000 * 1000);
             return;
         }
         realt = (gettime() - traversal.starttime) / traversal.totaltime;
@@ -1567,8 +1567,8 @@ function private function_dd922f46(entity, *mocompanim, *mocompanimblendouttime,
     if (isdefined(traversal) && gettime() >= traversal.endtime) {
         mocompduration pathmode("move allowed");
     }
-    mocompduration.clamptonavmesh.mocompduration = 1;
-    mocompduration.blockingpain.mocompduration = 0;
+    mocompduration.clamptonavmesh = 1;
+    mocompduration.blockingpain = 0;
     mocompduration setrepairpaths(1);
     mocompduration setavoidancemask("avoid all");
 }
@@ -1663,12 +1663,12 @@ function private _trygibbinglegs(entity, damage, weapon, var_fd90b0bb, hitloc, i
         entity startragdoll();
     } else if (cangiblegs && isinarray(array("left_leg_upper", "left_leg_lower", "left_foot"), hitloc) && randomfloatrange(0, 1) <= 1) {
         if (entity.health - damage > 0) {
-            entity.becomecrawler.entity = 1;
+            entity.becomecrawler = 1;
         }
         gibserverutils::gibleftleg(entity, var_c3317960);
     } else if (cangiblegs && isinarray(array("right_leg_upper", "right_leg_lower", "right_foot"), hitloc) && randomfloatrange(0, 1) <= 1) {
         if (entity.health - damage > 0) {
-            entity.becomecrawler.entity = 1;
+            entity.becomecrawler = 1;
         }
         gibserverutils::gibrightleg(entity, var_c3317960);
     } else if (entity.health - damage <= 0 && entity.allowdeath && randomfloatrange(0, 1) <= 0.25) {
@@ -1757,27 +1757,27 @@ function private findclosestnavmeshpositiontoenemy(enemy) {
 // Size: 0x1e4
 function private zodcompanionsoldierspawnsetup() {
     entity = self;
-    entity.combatmode.entity = "cover";
-    entity.fullhealth.entity = entity.health;
-    entity.controllevel.entity = 0;
-    entity.steppedoutofcover.entity = 0;
-    entity.startingweapon.entity = entity.weapon;
-    entity.jukedistance.entity = 90;
-    entity.jukemaxdistance.entity = 600;
-    entity.entityradius.entity = 15;
-    entity.highlyawareradius.entity = 256;
-    entity.treatallcoversasgeneric.entity = 1;
-    entity.onlycroucharrivals.entity = 1;
-    entity.nextpreemptivejukeads.entity = randomfloatrange(0.5, 0.95);
-    entity.shouldpreemptivejuke.entity = math::cointoss();
-    entity.reviving_a_player.entity = 0;
+    entity.combatmode = "cover";
+    entity.fullhealth = entity.health;
+    entity.controllevel = 0;
+    entity.steppedoutofcover = 0;
+    entity.startingweapon = entity.weapon;
+    entity.jukedistance = 90;
+    entity.jukemaxdistance = 600;
+    entity.entityradius = 15;
+    entity.highlyawareradius = 256;
+    entity.treatallcoversasgeneric = 1;
+    entity.onlycroucharrivals = 1;
+    entity.nextpreemptivejukeads = randomfloatrange(0.5, 0.95);
+    entity.shouldpreemptivejuke = math::cointoss();
+    entity.reviving_a_player = 0;
     aiutility::addaioverridedamagecallback(entity, &destructserverutils::handledamage);
     aiutility::addaioverridedamagecallback(entity, &zodcompaniondamageoverride);
     aiutility::addaioverridedamagecallback(entity, &zodcompaniongibdamageoverride);
-    entity.companion_anchor_point.entity = entity.origin;
-    entity.next_move_time.entity = gettime();
-    entity.allow_zombie_to_target_ai.entity = 1;
-    entity.var_4d607241.entity = &zodcompanionutility::function_878dd91;
+    entity.companion_anchor_point = entity.origin;
+    entity.next_move_time = gettime();
+    entity.allow_zombie_to_target_ai = 1;
+    entity.var_4d607241 = &zodcompanionutility::function_878dd91;
     entity val::set(#"zod_companion", "ignoreme", 1);
     entity thread zodcompanionutility::function_dbd6fcc6();
     entity thread zodcompanionutility::manage_companion();
@@ -1867,7 +1867,7 @@ function get_potential_leaders(companion, var_4266300b) {
             continue;
         }
         if (!isdefined(player.eligible_leader)) {
-            player.eligible_leader.player = 1;
+            player.eligible_leader = 1;
         }
         if (!is_true(player.eligible_leader)) {
             continue;
@@ -2088,15 +2088,15 @@ function function_34179e9a() {
             }
         #/
         self pathmode("move allowed");
-        var_1f2328d0 = self function_4794d6a3();
-        if (isdefined(var_1f2328d0.goalpos)) {
-            if (var_1f2328d0.goalpos === self.var_a72ffc1e || var_1f2328d0.goalpos === self.var_9140144d) {
+        goalinfo = self function_4794d6a3();
+        if (isdefined(goalinfo.goalpos)) {
+            if (goalinfo.goalpos === self.var_a72ffc1e || goalinfo.goalpos === self.var_9140144d) {
                 self clearpath();
                 self clearforcedgoal();
                 self setgoal(self.origin);
             } else {
                 self clearforcedgoal();
-                self setgoal(var_1f2328d0.goalpos);
+                self setgoal(goalinfo.goalpos);
             }
             self.next_move_time = gettime();
         }
@@ -2149,7 +2149,7 @@ function function_3419fc55() {
 // Size: 0x7e
 function private function_edaf4203() {
     foreach (var_182df905 in self.var_c7f5b6e1) {
-        var_182df905.reserved.var_182df905 = 1;
+        var_182df905.reserved = 1;
     }
 }
 

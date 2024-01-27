@@ -139,7 +139,7 @@ function function_5eeaa168() {
     while (1) {
         foreach (player in getplayers()) {
             if (!isdefined(player.var_b8783de6)) {
-                player.var_b8783de6.player = 0;
+                player.var_b8783de6 = 0;
             }
             currentweapon = player getcurrentweapon();
             if (!self function_baef2915(player, currentweapon)) {
@@ -149,7 +149,7 @@ function function_5eeaa168() {
                 }
             } else {
                 var_1c7e95e9 = 0;
-                player.var_d30f56e4.player = self;
+                player.var_d30f56e4 = self;
                 weapon1 = player namespace_a0d533d1::function_2b83d3ff(player item_inventory::function_2e711614(17 + 1));
                 weapon1 = zm_weapons::function_ec62a449(weapon1);
                 weapon2 = player namespace_a0d533d1::function_2b83d3ff(player item_inventory::function_2e711614(17 + 1 + 8 + 1));
@@ -167,21 +167,21 @@ function function_5eeaa168() {
                 }
                 if (isdefined(var_5df29481)) {
                     if (killstreaks::is_killstreak_weapon(currentweapon)) {
-                        player.var_b8783de6.player = 3;
+                        player.var_b8783de6 = 3;
                         self sethintstringforplayer(player, #"hash_56425e74a921890d");
                     } else if (weapon1.weapclass == "melee" && weapon2.weapclass == "melee" && var_5df29481.weapclass == "melee") {
-                        player.var_b8783de6.player = 3;
+                        player.var_b8783de6 = 3;
                         self sethintstringforplayer(player, #"hash_56425e74a921890d");
                     } else if (var_5df29481.weapclass != "melee" && weapon1.weapclass == "melee" && weapon2.weapclass == "melee") {
                         cost = function_adb75323(var_ae70df3a);
                         if (player zm_score::can_player_purchase(cost) && !player function_f300168a(var_5df29481)) {
-                            player.var_b8783de6.player = 4;
+                            player.var_b8783de6 = 4;
                             self sethintstringforplayer(player, #"hash_47f37dccf2dfd164", cost, var_5df29481.displayname);
                         } else if (player zm_score::can_player_purchase(cost) && player function_f300168a(var_5df29481)) {
-                            player.var_b8783de6.player = 3;
+                            player.var_b8783de6 = 3;
                             self sethintstringforplayer(player, #"hash_36de8d628bb52fe9", var_5df29481.displayname);
                         } else {
-                            player.var_b8783de6.player = 3;
+                            player.var_b8783de6 = 3;
                             var_1c7e95e9 = 1;
                             self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, var_5df29481.displayname);
                         }
@@ -189,13 +189,13 @@ function function_5eeaa168() {
                         item = player item_inventory::function_230ceec4(weapon1);
                         cost = function_adb75323(item);
                         if (player zm_score::can_player_purchase(cost) && !player function_f300168a(weapon1)) {
-                            player.var_b8783de6.player = 1;
+                            player.var_b8783de6 = 1;
                             self sethintstringforplayer(player, #"hash_47f37dccf2dfd164", cost, weapon1.displayname);
                         } else if (player zm_score::can_player_purchase(cost) && player function_f300168a(weapon1)) {
-                            player.var_b8783de6.player = 3;
+                            player.var_b8783de6 = 3;
                             self sethintstringforplayer(player, #"hash_36de8d628bb52fe9", weapon1.displayname);
                         } else {
-                            player.var_b8783de6.player = 3;
+                            player.var_b8783de6 = 3;
                             var_1c7e95e9 = 1;
                             self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, var_5df29481.displayname);
                         }
@@ -203,13 +203,13 @@ function function_5eeaa168() {
                         item = player item_inventory::function_230ceec4(weapon2);
                         cost = function_adb75323(item);
                         if (player zm_score::can_player_purchase(cost) && !player function_f300168a(weapon2)) {
-                            player.var_b8783de6.player = 2;
+                            player.var_b8783de6 = 2;
                             self sethintstringforplayer(player, #"hash_47f37dccf2dfd164", cost, weapon2.displayname);
                         } else if (player zm_score::can_player_purchase(cost) && player function_f300168a(weapon2)) {
-                            player.var_b8783de6.player = 3;
+                            player.var_b8783de6 = 3;
                             self sethintstringforplayer(player, #"hash_36de8d628bb52fe9", weapon2.displayname);
                         } else {
-                            player.var_b8783de6.player = 3;
+                            player.var_b8783de6 = 3;
                             var_1c7e95e9 = 1;
                             self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, weapon2.displayname);
                         }
@@ -218,13 +218,13 @@ function function_5eeaa168() {
                             item = player item_inventory::function_230ceec4(weapon1);
                             cost = function_adb75323(item);
                             if (player zm_score::can_player_purchase(cost) && !player function_f300168a(weapon1)) {
-                                player.var_b8783de6.player = 1;
+                                player.var_b8783de6 = 1;
                                 self sethintstringforplayer(player, #"hash_47f37dccf2dfd164", cost, weapon1.displayname);
                             } else if (player zm_score::can_player_purchase(cost) && player function_f300168a(weapon1)) {
-                                player.var_b8783de6.player = 3;
+                                player.var_b8783de6 = 3;
                                 self sethintstringforplayer(player, #"hash_36de8d628bb52fe9", weapon1.displayname);
                             } else {
-                                player.var_b8783de6.player = 3;
+                                player.var_b8783de6 = 3;
                                 var_1c7e95e9 = 1;
                                 self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, weapon1.displayname);
                             }
@@ -232,13 +232,13 @@ function function_5eeaa168() {
                             item = player item_inventory::function_230ceec4(weapon2);
                             cost = function_adb75323(item);
                             if (player zm_score::can_player_purchase(cost) && !player function_f300168a(weapon2)) {
-                                player.var_b8783de6.player = 2;
+                                player.var_b8783de6 = 2;
                                 self sethintstringforplayer(player, #"hash_47f37dccf2dfd164", cost, weapon2.displayname);
                             } else if (player zm_score::can_player_purchase(cost) && player function_f300168a(weapon2)) {
-                                player.var_b8783de6.player = 3;
+                                player.var_b8783de6 = 3;
                                 self sethintstringforplayer(player, #"hash_36de8d628bb52fe9", weapon2.displayname);
                             } else {
-                                player.var_b8783de6.player = 3;
+                                player.var_b8783de6 = 3;
                                 var_1c7e95e9 = 1;
                                 self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, weapon2.displayname);
                             }
@@ -247,32 +247,32 @@ function function_5eeaa168() {
                         item = player item_inventory::function_230ceec4(currentweapon);
                         cost = function_adb75323(item);
                         if (player zm_score::can_player_purchase(cost) && !player function_f300168a(currentweapon)) {
-                            player.var_b8783de6.player = 0;
+                            player.var_b8783de6 = 0;
                             self sethintstringforplayer(player, #"hash_47f37dccf2dfd164", cost, currentweapon.displayname);
                         } else if (player zm_score::can_player_purchase(cost) && player function_f300168a(currentweapon)) {
-                            player.var_b8783de6.player = 3;
+                            player.var_b8783de6 = 3;
                             self sethintstringforplayer(player, #"hash_36de8d628bb52fe9", currentweapon.displayname);
                         } else {
-                            player.var_b8783de6.player = 3;
+                            player.var_b8783de6 = 3;
                             var_1c7e95e9 = 1;
                             self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, currentweapon.displayname);
                         }
                     }
                 } else if ((weapon1 == var_f945fa92 || weapon1 == var_a9bb683c || weapon1.weapclass == "melee") && weapon2 != var_f945fa92 && weapon2 != var_a9bb683c && weapon2.weapclass != "melee" || (weapon2 == var_f945fa92 || weapon2 == var_a9bb683c || weapon2.weapclass == "melee") && weapon1 != var_f945fa92 && weapon1 != var_a9bb683c && weapon1.weapclass != "melee") {
                     if (killstreaks::is_killstreak_weapon(currentweapon)) {
-                        player.var_b8783de6.player = 3;
+                        player.var_b8783de6 = 3;
                         self sethintstringforplayer(player, #"hash_3f91b2cf51b00772");
                     } else if ((weapon1 == var_f945fa92 || weapon1 == var_a9bb683c || weapon1.weapclass == "melee") && weapon2 != var_f945fa92 && weapon2 != var_a9bb683c && weapon2.weapclass != "melee") {
                         item = player item_inventory::function_230ceec4(weapon2);
                         cost = function_adb75323(item);
                         if (player zm_score::can_player_purchase(cost) && !player function_f300168a(weapon2)) {
-                            player.var_b8783de6.player = 2;
+                            player.var_b8783de6 = 2;
                             self sethintstringforplayer(player, #"hash_47f37dccf2dfd164", cost, weapon2.displayname);
                         } else if (player zm_score::can_player_purchase(cost) && player function_f300168a(weapon2)) {
-                            player.var_b8783de6.player = 3;
+                            player.var_b8783de6 = 3;
                             self sethintstringforplayer(player, #"hash_36de8d628bb52fe9", weapon2.displayname);
                         } else {
-                            player.var_b8783de6.player = 3;
+                            player.var_b8783de6 = 3;
                             var_1c7e95e9 = 1;
                             self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, weapon2.displayname);
                         }
@@ -280,38 +280,38 @@ function function_5eeaa168() {
                         item = player item_inventory::function_230ceec4(weapon1);
                         cost = function_adb75323(item);
                         if (player zm_score::can_player_purchase(cost) && !player function_f300168a(weapon1)) {
-                            player.var_b8783de6.player = 1;
+                            player.var_b8783de6 = 1;
                             self sethintstringforplayer(player, #"hash_47f37dccf2dfd164", cost, weapon1.displayname);
                         } else if (player zm_score::can_player_purchase(cost) && player function_f300168a(weapon1)) {
-                            player.var_b8783de6.player = 3;
+                            player.var_b8783de6 = 3;
                             self sethintstringforplayer(player, #"hash_36de8d628bb52fe9", weapon1.displayname);
                         } else {
-                            player.var_b8783de6.player = 3;
+                            player.var_b8783de6 = 3;
                             var_1c7e95e9 = 1;
                             self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, weapon1.displayname);
                         }
                     }
                 } else if (weapon1 != var_f945fa92 && weapon1 != var_a9bb683c && weapon1.weapclass != "melee" && weapon2 != var_f945fa92 && weapon2 != var_a9bb683c && weapon2.weapclass != "melee") {
                     if (killstreaks::is_killstreak_weapon(currentweapon)) {
-                        player.var_b8783de6.player = 3;
+                        player.var_b8783de6 = 3;
                         self sethintstringforplayer(player, #"hash_56425e74a921890d");
                     } else {
                         item = player item_inventory::function_230ceec4(currentweapon);
                         cost = function_adb75323(item);
                         if (player zm_score::can_player_purchase(cost) && !player function_f300168a(currentweapon)) {
-                            player.var_b8783de6.player = 0;
+                            player.var_b8783de6 = 0;
                             self sethintstringforplayer(player, #"hash_47f37dccf2dfd164", cost, currentweapon.displayname);
                         } else if (player zm_score::can_player_purchase(cost) && player function_f300168a(currentweapon)) {
-                            player.var_b8783de6.player = 3;
+                            player.var_b8783de6 = 3;
                             self sethintstringforplayer(player, #"hash_36de8d628bb52fe9", currentweapon.displayname);
                         } else {
-                            player.var_b8783de6.player = 3;
+                            player.var_b8783de6 = 3;
                             var_1c7e95e9 = 1;
                             self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, currentweapon.displayname);
                         }
                     }
                 } else {
-                    player.var_b8783de6.player = 3;
+                    player.var_b8783de6 = 3;
                     self sethintstringforplayer(player, #"hash_56425e74a921890d");
                 }
                 if (var_1c7e95e9) {
@@ -447,7 +447,7 @@ function function_7c1cc13c(player, weapon, model) {
                 player setweaponammoclip(weapon, var_53b14ebf);
                 player setweaponammostock(weapon, maxammo);
             }
-            player.var_b6cd4a03.player = gettime();
+            player.var_b6cd4a03 = gettime();
             player playsoundtoplayer(#"hash_3d571b980c703675", player);
             player zm_score::minus_to_player_score(cost);
             if (zm_weapons::is_wonder_weapon(weapon) || weapon.statname === #"ray_gun") {

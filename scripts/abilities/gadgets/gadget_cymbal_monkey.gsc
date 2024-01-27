@@ -116,7 +116,7 @@ function private event_handler[grenade_fire] function_4776caf4(eventstruct) {
     if (eventstruct.weapon.name == #"cymbal_monkey") {
         e_grenade = eventstruct.projectile;
         e_grenade ghost();
-        e_grenade.angles.e_grenade = self.angles;
+        e_grenade.angles = self.angles;
         var_bdd70f6a = util::spawn_model(e_grenade.model, e_grenade.origin, e_grenade.angles);
         e_grenade.var_bdd70f6a = var_bdd70f6a;
         e_grenade.var_bdd70f6a linkto(e_grenade);

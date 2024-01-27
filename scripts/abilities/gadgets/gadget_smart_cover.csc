@@ -78,9 +78,9 @@ function smartcover_placed(localclientnum, *oldval, newval, *bnewent, *binitials
     if (fieldname == 1) {
         self setanimrestart(level.smartcoversettings.bundle.deployanim, 1, 0, 1);
     } else if (bwastimejump) {
-        var_e72a224a = self getanimtime(level.smartcoversettings.bundle.deployanim);
+        currentanimtime = self getanimtime(level.smartcoversettings.bundle.deployanim);
         var_f56117a2 = 1 - fieldname;
-        if (var_f56117a2 < var_e72a224a) {
+        if (var_f56117a2 < currentanimtime) {
             self setanimtime(level.smartcoversettings.bundle.deployanim, var_f56117a2);
         }
     }
@@ -170,7 +170,7 @@ function function_17d973ec(localclientnum) {
     player notify(#"hash_5c39bdc22418d792");
     player endon(#"hash_5c39bdc22418d792");
     if (!isdefined(player.smartcover)) {
-        player.smartcover.player = spawnstruct();
+        player.smartcover = spawnstruct();
     }
 }
 
@@ -264,8 +264,8 @@ function function_dbaf4647(localclientnum) {
     smartcover = self;
     for (rowindex = 0; rowindex < level.smartcoversettings.bundle.rowcount; rowindex++) {
         for (colindex = 1; colindex <= level.smartcoversettings.bundle.var_b118698f; colindex++) {
-            var_c4027b0a = function_d66a0190(rowindex, colindex);
-            smartcover showpart(localclientnum, var_c4027b0a);
+            celllabel = function_d66a0190(rowindex, colindex);
+            smartcover showpart(localclientnum, celllabel);
         }
     }
 }
@@ -276,25 +276,25 @@ function function_dbaf4647(localclientnum) {
 // Size: 0x444
 function function_5a8becdc(localclientnum, *player, buildinfo, *var_4b1c8937) {
     smartcover = self;
-    var_59cc3b18 = level.smartcoversettings.bundle.maxheight / level.smartcoversettings.bundle.rowcount;
+    cellheight = level.smartcoversettings.bundle.maxheight / level.smartcoversettings.bundle.rowcount;
     cellwidth = level.smartcoversettings.bundle.maxwidth / level.smartcoversettings.bundle.var_b118698f;
     var_b963136f = int(var_4b1c8937.width / cellwidth);
     var_227adab7 = var_4b1c8937.width - cellwidth * var_b963136f;
     if (var_227adab7 > 0 && var_227adab7 / 2 < level.smartcoversettings.bundle.var_3dfbdbeb && var_b963136f + 2 <= level.smartcoversettings.bundle.var_b118698f) {
         var_b963136f = var_b963136f + 2;
     }
-    var_9de92bd5 = int(var_4b1c8937.height / var_59cc3b18);
-    var_2582dbd = var_4b1c8937.height - var_59cc3b18 * var_9de92bd5;
+    var_9de92bd5 = int(var_4b1c8937.height / cellheight);
+    var_2582dbd = var_4b1c8937.height - cellheight * var_9de92bd5;
     if (var_2582dbd > 0 && var_2582dbd < level.smartcoversettings.bundle.var_3dfbdbeb && var_2582dbd < level.smartcoversettings.bundle.rowcount) {
         var_9de92bd5++;
     }
-    var_5e91d5a8 = [];
+    cellstoremove = [];
     var_e465f403 = level.smartcoversettings.bundle.rowcount - var_9de92bd5;
     for (rowindex = 0; rowindex < var_e465f403; rowindex++) {
         rownum = level.smartcoversettings.bundle.rowcount - rowindex - 1;
         for (colindex = 1; colindex < level.smartcoversettings.bundle.var_b118698f; colindex++) {
-            var_c4027b0a = function_d66a0190(rownum, colindex);
-            smartcover hidepart(buildinfo, var_c4027b0a);
+            celllabel = function_d66a0190(rownum, colindex);
+            smartcover hidepart(buildinfo, celllabel);
         }
     }
     var_f636c423 = level.smartcoversettings.bundle.var_b118698f - var_b963136f;
@@ -334,21 +334,21 @@ function startmicrowavefx(localclientnum) {
     turret = self;
     turret endon(#"death");
     turret endon(#"beam_stop");
-    turret.should_update_fx.turret = 1;
+    turret.should_update_fx = 1;
     angles = turret.angles;
     origin = turret.origin + vectorscale((0, 0, 1), 30);
     microwavefxent = spawn(localclientnum, origin, "script_model");
     microwavefxent setmodel(#"tag_microwavefx");
     microwavefxent.angles = angles;
-    microwavefxent.fxhandles.microwavefxent = [];
-    microwavefxent.fxnames.microwavefxent = [];
-    microwavefxent.fxhashs.microwavefxent = [];
+    microwavefxent.fxhandles = [];
+    microwavefxent.fxnames = [];
+    microwavefxent.fxhashs = [];
     self thread cleanupfx(localclientnum, microwavefxent);
     wait(0.3);
     while (1) {
         /#
             if (getdvarint(#"scr_microwave_turret_fx_debug", 0)) {
-                turret.should_update_fx.turret = 1;
+                turret.should_update_fx = 1;
                 microwavefxent.fxhashs[#"center"] = 0;
             }
         #/
@@ -377,8 +377,8 @@ function startmicrowavefx(localclientnum) {
             }
         #/
         need_to_rebuild = microwavefxent microwavefxhash(trace, origin, "center");
-        need_to_rebuild = need_to_rebuild & microwavefxent microwavefxhash(traceright, origin, "right");
-        need_to_rebuild = need_to_rebuild & microwavefxent microwavefxhash(traceleft, origin, "left");
+        need_to_rebuild = need_to_rebuild | microwavefxent microwavefxhash(traceright, origin, "right");
+        need_to_rebuild = need_to_rebuild | microwavefxent microwavefxhash(traceleft, origin, "left");
         level.last_microwave_turret_fx_trace = gettime();
         if (!need_to_rebuild) {
             wait(1);
@@ -386,7 +386,7 @@ function startmicrowavefx(localclientnum) {
         }
         wait(0.1);
         microwavefxent playmicrowavefx(localclientnum, trace, traceright, traceleft, origin, turret.team);
-        turret.should_update_fx.turret = 0;
+        turret.should_update_fx = 0;
         wait(1);
     }
 }

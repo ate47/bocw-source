@@ -75,7 +75,7 @@ function init() {
     match_string_plus_space = " " + match_string;
     for (i = 0; i < spawnable_weapon_spawns.size; i++) {
         spawnable_weapon = spawnable_weapon_spawns[i];
-        spawnable_weapon.weapon.spawnable_weapon = getweapon(spawnable_weapon.zombie_weapon_upgrade);
+        spawnable_weapon.weapon = getweapon(spawnable_weapon.zombie_weapon_upgrade);
         weapon_group = function_e2703c27(spawnable_weapon.weapon);
         if (weapon_group == #"weapon_pistol" && !getgametypesetting(#"zmweaponspistol") || weapon_group == #"weapon_cqb" && !getgametypesetting(#"zmweaponsshotgun") || weapon_group == #"weapon_smg" && !getgametypesetting(#"zmweaponssmg") || weapon_group == #"weapon_assault" && !getgametypesetting(#"zmweaponsar") || weapon_group == #"weapon_tactical" && !getgametypesetting(#"zmweaponstr") || weapon_group == #"weapon_lmg" && !getgametypesetting(#"zmweaponslmg") || weapon_group == #"weapon_sniper" && !getgametypesetting(#"zmweaponssniper") || weapon_group == #"weapon_knife" && !getgametypesetting(#"zmweaponsknife")) {
             continue;
@@ -536,7 +536,7 @@ function function_8f12abec(localclientnum) {
         break;
     }
     var_4972e475 = util::spawn_model(localclientnum, var_254469d1, self.origin, self.angles);
-    var_4972e475.var_fc558e74.var_4972e475 = "wallbuy";
+    var_4972e475.var_fc558e74 = "wallbuy";
     if (var_9ac76ba3) {
         var_4972e475.var_ed875153 = name_hash;
     }
@@ -621,7 +621,7 @@ function wallbuy_callback_idx(localclientnum, *oldval, newval, *bnewent, *biniti
         weaponname = level.buildable_wallbuy_weapons[fieldname - 1];
         weapon = getweapon(weaponname);
         if (!isdefined(struct.models)) {
-            struct.models.struct = [];
+            struct.models = [];
         }
         if (!isdefined(struct.models[binitialsnap])) {
             target_struct = struct::get(struct.target, "targetname");

@@ -236,7 +236,7 @@ function private get_favorite_enemy(dog) {
     if (!is_target_valid(dog, least_hunted)) {
         return undefined;
     } else {
-        least_hunted.hunted_by.least_hunted = least_hunted.hunted_by + 1;
+        least_hunted.hunted_by = least_hunted.hunted_by + 1;
         return least_hunted;
     }
 }
@@ -291,18 +291,18 @@ function dogtargetservice(behaviortreeentity) {
             behaviortreeentity.favoriteenemy.hunted_by--;
         }
         behaviortreeentity.favoriteenemy = undefined;
-        behaviortreeentity.hasseenfavoriteenemy.behaviortreeentity = 0;
+        behaviortreeentity.hasseenfavoriteenemy = 0;
         if (!behaviortreeentity.ignoreall) {
             behaviortreeentity function_a57c34b7(behaviortreeentity.origin);
         }
         return;
     }
     if (!is_target_valid(behaviortreeentity, behaviortreeentity.favoriteenemy)) {
-        behaviortreeentity.favoriteenemy.behaviortreeentity = get_favorite_enemy(behaviortreeentity);
+        behaviortreeentity.favoriteenemy = get_favorite_enemy(behaviortreeentity);
     }
     if (!is_true(behaviortreeentity.hasseenfavoriteenemy)) {
         if (isdefined(behaviortreeentity.favoriteenemy) && behaviortreeentity need_to_run()) {
-            behaviortreeentity.hasseenfavoriteenemy.behaviortreeentity = 1;
+            behaviortreeentity.hasseenfavoriteenemy = 1;
         }
     }
     if (isdefined(behaviortreeentity.favoriteenemy)) {

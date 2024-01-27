@@ -72,34 +72,34 @@ function function_81853592() {
 function function_ecfc6c75(trap, var_7c56394 = 0) {
     hazard = namespace_ec06fe4a::function_e22ae9b3(trap.origin, "p8_fxanim_mp_zmuseum_flogger_trap_mod");
     if (isdefined(hazard)) {
-        hazard.targetname.hazard = "hazard";
-        hazard.var_fd5301f9.hazard = "flogger";
-        hazard.angles.hazard = trap.angles;
+        hazard.targetname = "hazard";
+        hazard.var_fd5301f9 = "flogger";
+        hazard.angles = trap.angles;
         hazard enablelinkto();
     }
     trap.script_model = hazard;
     trap.var_7c56394 = var_7c56394;
-    trap.trigger.trap = [];
-    trap.spinrate.trap = 1;
-    trap.var_d736690e.trap = 3;
-    trap.var_4180202d.trap = 5;
-    trap.var_c27181d9.trap = 3;
+    trap.trigger = [];
+    trap.spinrate = 1;
+    trap.var_d736690e = 3;
+    trap.var_4180202d = 5;
+    trap.var_c27181d9 = 3;
     if (isdefined(trap.script_parameters)) {
         args = strtok(trap.script_parameters, ";");
         if (args.size > 0) {
-            trap.spinrate.trap = float(args[0]);
+            trap.spinrate = float(args[0]);
         }
         if (args.size > 1) {
-            trap.var_d736690e.trap = float(args[1]);
+            trap.var_d736690e = float(args[1]);
         }
         if (args.size > 2) {
-            trap.var_4180202d.trap = float(args[2]);
+            trap.var_4180202d = float(args[2]);
         }
         if (args.size > 3) {
-            trap.var_c27181d9.trap = float(args[3]);
+            trap.var_c27181d9 = float(args[3]);
         }
     }
-    trap.spinrate.trap = 1;
+    trap.spinrate = 1;
     trap thread function_80eed528();
     return trap;
 }
@@ -142,7 +142,7 @@ function function_9d10940b() {
             if (isdefined(trap.var_eb9d64bb) && time < trap.var_eb9d64bb) {
                 continue;
             }
-            trap.var_eb9d64bb.trap = time + 1500 + randomint(600);
+            trap.var_eb9d64bb = time + 1500 + randomint(600);
             if (!isdefined(trap.script_model)) {
                 activate = 0;
                 if (isdefined(trap.var_f8660931)) {
@@ -152,11 +152,11 @@ function function_9d10940b() {
                     }
                 }
                 if (!activate) {
-                    trap.var_f8660931.trap = namespace_ec06fe4a::function_6eacecf5(trap.origin, 3200);
+                    trap.var_f8660931 = namespace_ec06fe4a::function_6eacecf5(trap.origin, 3200);
                     if (isdefined(trap.var_f8660931)) {
                         activate = 1;
                     } else {
-                        trap.var_f8660931.trap = namespace_ec06fe4a::function_bd3709ce(trap.origin, 1200);
+                        trap.var_f8660931 = namespace_ec06fe4a::function_bd3709ce(trap.origin, 1200);
                         if (isdefined(trap.var_f8660931)) {
                             activate = 1;
                         }
@@ -164,11 +164,11 @@ function function_9d10940b() {
                 }
                 if (activate) {
                     function_ecfc6c75(trap, 1);
-                    trap.var_eb9d64bb.trap = trap.var_eb9d64bb + 5000;
+                    trap.var_eb9d64bb = trap.var_eb9d64bb + 5000;
                     namespace_1e25ad94::function_f5f0c0f8("Paging IN flogger trap at:" + trap.origin);
                 }
             } else {
-                trap.var_f8660931.trap = namespace_ec06fe4a::function_f3eab80e(trap.origin, 3600);
+                trap.var_f8660931 = namespace_ec06fe4a::function_f3eab80e(trap.origin, 3600);
                 if (!isdefined(trap.var_f8660931)) {
                     namespace_1e25ad94::function_f5f0c0f8("Paging out flogger trap at:" + trap.origin);
                     trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
@@ -192,7 +192,7 @@ function function_a76494d5() {
         traps = [[ level.doa.var_39e3fa99 ]]->function_242886d5("flogger");
     }
     foreach (trap in traps) {
-        trap.var_13c99cf7.trap = 0;
+        trap.var_13c99cf7 = 0;
         function_7fb58446(trap, page);
     }
 }
@@ -289,10 +289,10 @@ function function_ab141bd8(model, trap) {
         guy = result.activator;
         if (isdefined(guy)) {
             if (!isdefined(guy.var_62abb118)) {
-                guy.var_62abb118.guy = 0;
+                guy.var_62abb118 = 0;
             }
             if (guy.var_62abb118 < gettime()) {
-                guy.var_62abb118.guy = gettime() + 500;
+                guy.var_62abb118 = gettime() + 500;
                 guy namespace_83eb6304::function_3ecfde67("pungi_damage");
                 model namespace_e32bb68::function_3a59ec34("evt_doa_hazard_flogger_impact");
             }

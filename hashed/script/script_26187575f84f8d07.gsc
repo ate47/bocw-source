@@ -541,8 +541,8 @@ function function_904efdb8() {
                 var_9bbce2cd thread function_f8afee63(var_9bbce2cd.var_261dd536 - 2);
             }
             var_9bbce2cd.var_261dd536++;
-            var_9bbce2cd.var_a2d52f9d.var_9bbce2cd = 20 * var_9bbce2cd.var_bf5103a8;
-            var_9bbce2cd.var_3dde41e2.var_9bbce2cd = 1;
+            var_9bbce2cd.var_a2d52f9d = 20 * var_9bbce2cd.var_bf5103a8;
+            var_9bbce2cd.var_3dde41e2 = 1;
             var_9bbce2cd thread function_87a78a13();
         }
         wait(20.1);
@@ -632,8 +632,8 @@ function function_c6ce0ef0(structs) {
     /#
         foreach (struct in structs) {
             level.var_ac7be286[level.var_ac7be286.size] = struct;
-            struct.var_8e392e0f.struct = struct.script_radius - 1200;
-            struct.var_261dd536.struct = 0;
+            struct.var_8e392e0f = struct.script_radius - 1200;
+            struct.var_261dd536 = 0;
             struct function_cd602d73();
             var_b4ab8086 = struct.var_8e392e0f / level.var_cd139dc0 / 10;
             if (var_b4ab8086 > 10) {

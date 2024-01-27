@@ -86,18 +86,18 @@ function function_3bea16f1(trap, var_7c56394 = 0, origin = trap.origin) {
     }
     hazard = namespace_ec06fe4a::function_e22ae9b3(origin, "zombietron_electrical_pole");
     if (isdefined(hazard)) {
-        hazard.targetname.hazard = "hazard";
-        hazard.var_fd5301f9.hazard = "pole";
+        hazard.targetname = "hazard";
+        hazard.var_fd5301f9 = "pole";
         hazard solid();
         hazard thread function_4eec8432();
         if (isdefined(trap)) {
             if (!isdefined(trap.var_759f42bf)) {
-                trap.var_759f42bf.trap = [];
+                trap.var_759f42bf = [];
             }
             if (!isdefined(trap.var_759f42bf)) {
-                trap.var_759f42bf.trap = [];
+                trap.var_759f42bf = [];
             } else if (!isarray(trap.var_759f42bf)) {
-                trap.var_759f42bf.trap = array(trap.var_759f42bf);
+                trap.var_759f42bf = array(trap.var_759f42bf);
             }
             trap.var_759f42bf[trap.var_759f42bf.size] = hazard;
         }
@@ -303,7 +303,7 @@ function function_16abf3d3() {
             if (isdefined(trap.var_eb9d64bb) && time < trap.var_eb9d64bb) {
                 continue;
             }
-            trap.var_eb9d64bb.trap = time + 2000 + randomint(600);
+            trap.var_eb9d64bb = time + 2000 + randomint(600);
             if (!isdefined(trap.var_759f42bf)) {
                 activate = 0;
                 if (isdefined(trap.var_f8660931)) {
@@ -313,11 +313,11 @@ function function_16abf3d3() {
                     }
                 }
                 if (!activate) {
-                    trap.var_f8660931.trap = namespace_ec06fe4a::function_6eacecf5(trap.origin, 1600);
+                    trap.var_f8660931 = namespace_ec06fe4a::function_6eacecf5(trap.origin, 1600);
                     if (isdefined(trap.var_f8660931)) {
                         activate = 1;
                     } else {
-                        trap.var_f8660931.trap = namespace_ec06fe4a::function_bd3709ce(trap.origin, 600);
+                        trap.var_f8660931 = namespace_ec06fe4a::function_bd3709ce(trap.origin, 600);
                         if (isdefined(trap.var_f8660931)) {
                             activate = 1;
                         }
@@ -325,11 +325,11 @@ function function_16abf3d3() {
                 }
                 if (activate && !is_true(trap.var_9760b617)) {
                     function_3bea16f1(trap, 1);
-                    trap.var_eb9d64bb.trap = trap.var_eb9d64bb + 5000;
+                    trap.var_eb9d64bb = trap.var_eb9d64bb + 5000;
                     namespace_1e25ad94::function_f5f0c0f8("Paging IN pole trap at:" + trap.origin);
                 }
             } else {
-                trap.var_f8660931.trap = namespace_ec06fe4a::function_f3eab80e(trap.origin, 1800);
+                trap.var_f8660931 = namespace_ec06fe4a::function_f3eab80e(trap.origin, 1800);
                 if (!isdefined(trap.var_f8660931)) {
                     trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
                     namespace_1e25ad94::function_f5f0c0f8("Paging out pole trap at:" + trap.origin);

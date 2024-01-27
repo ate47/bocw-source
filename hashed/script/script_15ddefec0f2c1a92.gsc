@@ -172,7 +172,7 @@ function function_b4b1df9c(*params) {
     self namespace_e32bb68::function_ae271c0b("zmb_doa_ai_plaguehound_vocal_sprint");
     self namespace_e32bb68::function_3a59ec34("zmb_doa_ai_plaguehound_explode");
     self namespace_83eb6304::function_3ecfde67("nova_crawler_burst");
-    trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", self.origin, 2 & 1 & 512, 40, 50);
+    trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", self.origin, 2 | 1 | 512, 40, 50);
     if (isdefined(trigger)) {
         trigger thread namespace_ec06fe4a::function_52afe5df(3);
         trigger thread function_86555fba();
@@ -261,7 +261,7 @@ function function_df18852() {
 function function_47c86b9e(ai) {
     ai endon(#"death");
     ai namespace_ec06fe4a::function_8c808737();
-    ai.takedamage.ai = 0;
+    ai.takedamage = 0;
     ai setfreecameralockonallowed(0);
     if (isdefined(ai.favoriteenemy)) {
         angle = vectortoangles(ai.favoriteenemy.origin - ai.origin);
@@ -276,7 +276,7 @@ function function_47c86b9e(ai) {
     } else {
         ai namespace_83eb6304::function_3ecfde67("lightningStrike");
     }
-    ai.takedamage.ai = 1;
+    ai.takedamage = 1;
     wait(0.4);
     ai namespace_ec06fe4a::function_4f72130c();
     ai setfreecameralockonallowed(1);
@@ -341,8 +341,8 @@ function function_2e6b2ca9() {
                 self.lasttargetposition = var_86faa86d;
             }
         } else {
-            var_1f2328d0 = self function_4794d6a3();
-            if (is_true(var_1f2328d0.isatgoal)) {
+            goalinfo = self function_4794d6a3();
+            if (is_true(goalinfo.isatgoal)) {
                 function_a47b7e79(randomint(100) > 80);
             }
         }

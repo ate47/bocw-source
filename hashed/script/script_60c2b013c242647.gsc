@@ -62,7 +62,7 @@ function function_d275f769(player, origin) {
     if (!isdefined(sprinkler)) {
         return;
     }
-    sprinkler.targetname.sprinkler = "sprinkler";
+    sprinkler.targetname = "sprinkler";
     sprinkler notsolid();
     target = player.origin;
     if (isdefined(player.doa.vehicle)) {

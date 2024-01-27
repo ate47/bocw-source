@@ -281,7 +281,7 @@ function private function_dae80de6() {
     a_str_zones = getarraykeys(level.var_c8b84806);
     zm_zonemgr::function_8caa21df(a_str_zones);
     var_3dbf02b9 = [];
-    s_result.data.s_result = array::randomize(s_result.data);
+    s_result.data = array::randomize(s_result.data);
     foreach (var_c310df8c in s_result.data) {
         foreach (str_zone in a_str_zones) {
             if (zm_zonemgr::function_adc70eee(var_c310df8c.origin, str_zone)) {

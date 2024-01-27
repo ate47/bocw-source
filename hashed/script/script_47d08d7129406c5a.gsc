@@ -78,7 +78,7 @@ function private function_727338d1(var_7d32de2) {
     trace = bullettrace(var_38c235fa, var_e5b7c28e, 0, vehicle, 1, 1);
     if (trace[#"fraction"] == 1) {
         killer = isdefined(vehicle getseatoccupant(0)) ? vehicle getseatoccupant(0) : vehicle;
-        victim.var_f5dc0dbf.victim = 1;
+        victim.var_f5dc0dbf = 1;
         victim dodamage(victim.health, var_38c235fa, killer, vehicle, "", "MOD_CRUSH", 0, vehicle.settings.var_81a2bc21);
     }
 }
@@ -754,7 +754,7 @@ function private function_6258a76c(params) {
 function private function_dce84927() {
     if (!is_true(self.var_52e23e90)) {
         params = spawnstruct();
-        params.var_30a04b16.params = 1;
+        params.var_30a04b16 = 1;
         player_vehicle::turn_on(params);
         /#
             if (getdvarint(#"hash_26be05fed16f7abd", 0) > 0) {
@@ -980,7 +980,7 @@ function private function_479389f3() {
     var_d643c4fc = 0;
     var_e10b67f7 = [];
     var_b0e8278f = (0, 0, 0);
-    var_683999d6 = (0, 0, 0);
+    avgnormal = (0, 0, 0);
     var_4c962569 = 0;
     foreach (tag, trace in var_df47b913) {
         if (isdefined(trace[#"entity"])) {
@@ -988,7 +988,7 @@ function private function_479389f3() {
         } else if (trace[#"fraction"] < 1) {
             var_b0e8278f = var_b0e8278f + var_33a206d0[tag];
             var_4c962569 = var_4c962569 + trace[#"position"][2] - var_33a206d0[tag][2];
-            var_683999d6 = var_683999d6 + trace[#"normal"];
+            avgnormal = avgnormal + trace[#"normal"];
             var_e10b67f7[tag] = trace;
         }
     }
@@ -999,15 +999,15 @@ function private function_479389f3() {
         } else if (trace[#"fraction"] < 1) {
             var_b0e8278f = var_b0e8278f + var_8fc02d3b[tag];
             var_4c962569 = var_4c962569 + trace[#"position"][2] - var_8fc02d3b[tag][2];
-            var_683999d6 = var_683999d6 + trace[#"normal"];
+            avgnormal = avgnormal + trace[#"normal"];
             var_d3532cfe[tag] = trace;
         }
     }
     if (var_e10b67f7.size > 0 || var_d3532cfe.size > 0) {
-        var_683999d6 = var_683999d6 / (var_d3532cfe.size + var_e10b67f7.size);
-        self.var_eb4e4182 = var_683999d6;
+        avgnormal = avgnormal / (var_d3532cfe.size + var_e10b67f7.size);
+        self.var_eb4e4182 = avgnormal;
     }
-    if (var_683999d6[2] < 0.94) {
+    if (avgnormal[2] < 0.94) {
         return 0;
     }
     if (var_e10b67f7.size == 0 || var_d3532cfe.size == 0 || var_d3532cfe.size + var_e10b67f7.size < 3) {
@@ -1023,7 +1023,7 @@ function private function_479389f3() {
     var_b0e8278f = var_b0e8278f / (var_d3532cfe.size + var_e10b67f7.size);
     self.helilandingorigin = var_b0e8278f;
     self.var_6fac6f50 = var_4c962569;
-    self.var_67136cb0 = var_683999d6;
+    self.var_67136cb0 = avgnormal;
     return 1;
 }
 

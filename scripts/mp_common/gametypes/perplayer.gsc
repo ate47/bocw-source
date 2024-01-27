@@ -10,8 +10,8 @@ function init(id, playerbegincallback, playerendcallback) {
     handler.id = id;
     handler.playerbegincallback = playerbegincallback;
     handler.playerendcallback = playerendcallback;
-    handler.enabled.handler = 0;
-    handler.players.handler = [];
+    handler.enabled = 0;
+    handler.players = [];
     thread onplayerconnect(handler);
     level.handlerglobalflagval = 0;
     return handler;
@@ -25,7 +25,7 @@ function enable(handler) {
     if (handler.enabled) {
         return;
     }
-    handler.enabled.handler = 1;
+    handler.enabled = 1;
     level.handlerglobalflagval++;
     players = getplayers();
     for (i = 0; i < players.size; i++) {
@@ -50,7 +50,7 @@ function disable(handler) {
     if (!handler.enabled) {
         return;
     }
-    handler.enabled.handler = 0;
+    handler.enabled = 0;
     level.handlerglobalflagval++;
     players = getplayers();
     for (i = 0; i < players.size; i++) {
@@ -77,12 +77,12 @@ function onplayerconnect(handler) {
         waitresult = level waittill(#"connecting");
         player = waitresult.player;
         if (!isdefined(player.handlers)) {
-            player.handlers.player = [];
+            player.handlers = [];
         }
         player.handlers[handler.id] = spawnstruct();
         player.handlers[handler.id].ready = 0;
         player.handlers[handler.id].handled = 0;
-        player.handlerflagval.player = -1;
+        player.handlerflagval = -1;
         handler.players[handler.players.size] = player;
         player thread onplayerdisconnect(handler);
         player thread onplayerspawned(handler);

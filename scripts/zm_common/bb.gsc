@@ -52,22 +52,22 @@ function logplayerevent(player, eventname) {
         beastmodeactive = player.beastmode;
     }
     zmplayerevents = {};
-    zmplayerevents.gametime.zmplayerevents = function_f8d53445();
-    zmplayerevents.roundnumber.zmplayerevents = level.round_number;
+    zmplayerevents.gametime = function_f8d53445();
+    zmplayerevents.roundnumber = level.round_number;
     zmplayerevents.eventname = eventname;
-    zmplayerevents.spawnid.zmplayerevents = getplayerspawnid(player);
-    zmplayerevents.username.zmplayerevents = player.name;
-    zmplayerevents.originx.zmplayerevents = player.origin[0];
-    zmplayerevents.originy.zmplayerevents = player.origin[1];
-    zmplayerevents.originz.zmplayerevents = player.origin[2];
-    zmplayerevents.health.zmplayerevents = player.health;
-    zmplayerevents.beastlives.zmplayerevents = player.beastlives;
+    zmplayerevents.spawnid = getplayerspawnid(player);
+    zmplayerevents.username = player.name;
+    zmplayerevents.originx = player.origin[0];
+    zmplayerevents.originy = player.origin[1];
+    zmplayerevents.originz = player.origin[2];
+    zmplayerevents.health = player.health;
+    zmplayerevents.beastlives = player.beastlives;
     zmplayerevents.currentweapon = currentweapon;
-    zmplayerevents.kills.zmplayerevents = player.kills;
-    zmplayerevents.zone_name.zmplayerevents = player.zone_name;
-    zmplayerevents.sessionstate.zmplayerevents = player.sessionstate;
-    zmplayerevents.currentscore.zmplayerevents = player.score;
-    zmplayerevents.totalscore.zmplayerevents = player.score_total;
+    zmplayerevents.kills = player.kills;
+    zmplayerevents.zone_name = player.zone_name;
+    zmplayerevents.sessionstate = player.sessionstate;
+    zmplayerevents.currentscore = player.score;
+    zmplayerevents.totalscore = player.score_total;
     zmplayerevents.beastmodeon = beastmodeactive;
     function_92d1707f(#"hash_5bd2a2e3f75111c8", zmplayerevents);
 }
@@ -78,25 +78,25 @@ function logplayerevent(player, eventname) {
 // Size: 0x1cc
 function logpurchaseevent(player, sellerent, cost, itemname, itemupgraded, itemtype, *eventname) {
     zmpurchases = {};
-    zmpurchases.gametime.zmpurchases = function_f8d53445();
-    zmpurchases.roundnumber.zmpurchases = level.round_number;
-    zmpurchases.playerspawnid.zmpurchases = getplayerspawnid(sellerent);
-    zmpurchases.username.zmpurchases = sellerent.name;
+    zmpurchases.gametime = function_f8d53445();
+    zmpurchases.roundnumber = level.round_number;
+    zmpurchases.playerspawnid = getplayerspawnid(sellerent);
+    zmpurchases.username = sellerent.name;
     zmpurchases.itemname = itemupgraded;
     zmpurchases.isupgraded = itemtype;
     zmpurchases.itemtype = eventname;
     zmpurchases.purchasecost = itemname;
-    zmpurchases.playeroriginx.zmpurchases = sellerent.origin[0];
-    zmpurchases.playeroriginy.zmpurchases = sellerent.origin[1];
-    zmpurchases.playeroriginz.zmpurchases = sellerent.origin[2];
-    zmpurchases.selleroriginx.zmpurchases = cost.origin[0];
-    zmpurchases.selleroriginy.zmpurchases = cost.origin[1];
-    zmpurchases.selleroriginz.zmpurchases = cost.origin[2];
-    zmpurchases.playerkills.zmpurchases = sellerent.kills;
-    zmpurchases.playerhealth.zmpurchases = sellerent.health;
-    zmpurchases.playercurrentscore.zmpurchases = sellerent.score;
-    zmpurchases.playertotalscore.zmpurchases = sellerent.score_total;
-    zmpurchases.zone_name.zmpurchases = sellerent.zone_name;
+    zmpurchases.playeroriginx = sellerent.origin[0];
+    zmpurchases.playeroriginy = sellerent.origin[1];
+    zmpurchases.playeroriginz = sellerent.origin[2];
+    zmpurchases.selleroriginx = cost.origin[0];
+    zmpurchases.selleroriginy = cost.origin[1];
+    zmpurchases.selleroriginz = cost.origin[2];
+    zmpurchases.playerkills = sellerent.kills;
+    zmpurchases.playerhealth = sellerent.health;
+    zmpurchases.playercurrentscore = sellerent.score;
+    zmpurchases.playertotalscore = sellerent.score_total;
+    zmpurchases.zone_name = sellerent.zone_name;
     function_92d1707f(#"hash_22cb254982ca97dc", zmpurchases);
 }
 
@@ -112,12 +112,12 @@ function logpowerupevent(powerup, optplayer, eventname) {
         playername = optplayer.name;
     }
     zmpowerups = {};
-    zmpowerups.gametime.zmpowerups = function_f8d53445();
-    zmpowerups.roundnumber.zmpowerups = level.round_number;
-    zmpowerups.powerupname.zmpowerups = powerup.powerup_name;
-    zmpowerups.powerupx.zmpowerups = powerup.origin[0];
-    zmpowerups.powerupy.zmpowerups = powerup.origin[1];
-    zmpowerups.powerupz.zmpowerups = powerup.origin[2];
+    zmpowerups.gametime = function_f8d53445();
+    zmpowerups.roundnumber = level.round_number;
+    zmpowerups.powerupname = powerup.powerup_name;
+    zmpowerups.powerupx = powerup.origin[0];
+    zmpowerups.powerupy = powerup.origin[1];
+    zmpowerups.powerupz = powerup.origin[2];
     zmpowerups.eventname = eventname;
     zmpowerups.playerspawnid = playerspawnid;
     zmpowerups.playername = playername;

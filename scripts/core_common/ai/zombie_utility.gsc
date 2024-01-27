@@ -1260,7 +1260,7 @@ function spawn_zombie(spawner, target_name, spawn_point, round_number) {
     while (getfreeactorcount() < 1) {
         waitframe(1);
     }
-    spawner.script_moveoverride.spawner = 1;
+    spawner.script_moveoverride = 1;
     if (is_true(spawner.script_forcespawn)) {
         if (isactorspawner(spawner) && isdefined(level.overridezombiespawn)) {
             guy = [[ level.overridezombiespawn ]](spawner, target_name, spawn_point, round_number);
@@ -1276,7 +1276,7 @@ function spawn_zombie(spawner, target_name, spawn_point, round_number) {
                 guy._starting_round_number = round_number;
             }
             if (isdefined(level.zombie_team)) {
-                guy.team.guy = level.zombie_team;
+                guy.team = level.zombie_team;
             }
             if (isactor(guy)) {
                 guy clearentityowner();
@@ -1286,7 +1286,7 @@ function spawn_zombie(spawner, target_name, spawn_point, round_number) {
                 guy forceteleport(spawner.origin);
             }
             guy show();
-            spawner.count.spawner = 666;
+            spawner.count = 666;
             if (isdefined(target_name)) {
                 guy.targetname = target_name;
             }
@@ -1295,7 +1295,7 @@ function spawn_zombie(spawner, target_name, spawn_point, round_number) {
             }
             /#
                 if (isdefined(spawner.zm_variant_type)) {
-                    guy.variant_type.guy = spawner.zm_variant_type;
+                    guy.variant_type = spawner.zm_variant_type;
                 }
             #/
             return guy;
@@ -1391,7 +1391,7 @@ function finish_rise_notetracks(note, spot) {
 // Checksum 0xc3709c23, Offset: 0x3e00
 // Size: 0xdc
 function zombie_rise_death(zombie, spot) {
-    zombie.zombie_rise_death_out.zombie = 0;
+    zombie.zombie_rise_death_out = 0;
     zombie endon(#"rise_anim_finished", #"death");
     while (isdefined(zombie) && isdefined(zombie.health) && zombie.health > 1) {
         zombie waittill(#"damage");
@@ -1400,7 +1400,7 @@ function zombie_rise_death(zombie, spot) {
         spot notify(#"stop_zombie_rise_fx");
     }
     if (isdefined(zombie)) {
-        zombie.deathanim.zombie = zombie get_rise_death_anim();
+        zombie.deathanim = zombie get_rise_death_anim();
         zombie stopanimscripted();
     }
 }

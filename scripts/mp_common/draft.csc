@@ -318,12 +318,12 @@ function function_b139ecfb(localclientnum) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x41c663b7, Offset: 0x3d58
 // Size: 0xdc
-function function_1cf2437c(localclientnum, draftcharacter, *var_c0286f82, *var_121d6e9a) {
+function function_1cf2437c(localclientnum, draftcharacter, *oldcharacterindex, *var_121d6e9a) {
     if (!isdefined([[ var_121d6e9a ]]->function_82e05d64().player)) {
         return;
     }
-    if ([[ var_121d6e9a ]]->function_82e05d64().localclientnum === var_c0286f82 && isdefined([[ var_121d6e9a ]]->function_82e05d64().var_c018da16) && player_role::is_valid([[ var_121d6e9a ]]->function_82e05d64().var_c018da16.charactertype)) {
-        [[ var_121d6e9a ]]->function_82e05d64().player battlechatter::play_dialog("characterSelect", var_c0286f82);
+    if ([[ var_121d6e9a ]]->function_82e05d64().localclientnum === oldcharacterindex && isdefined([[ var_121d6e9a ]]->function_82e05d64().var_c018da16) && player_role::is_valid([[ var_121d6e9a ]]->function_82e05d64().var_c018da16.charactertype)) {
+        [[ var_121d6e9a ]]->function_82e05d64().player battlechatter::play_dialog("characterSelect", oldcharacterindex);
     }
 }
 
@@ -387,11 +387,11 @@ function function_6b532f83(localclientnum, var_de58f286, sessionmode) {
                 var_177782dd = weapongroupanim[#"readyidle"][gender];
                 anim_name = var_177782dd[var_7eb5dfe9 % var_177782dd.size];
             }
-            var_de58f286.var_3afd181d.var_de58f286 = var_de58f286.var_91065a59;
+            var_de58f286.var_3afd181d = var_de58f286.var_91065a59;
         } else if (player_role::is_valid(var_de58f286.focusedcharacterindex)) {
             if (var_de58f286.selected) {
                 anim_intro_name = weapongroupanim[#"hash_2fe61241a25ee67c"][gender];
-                var_de58f286.selected.var_de58f286 = 0;
+                var_de58f286.selected = 0;
             }
             anim_name = weapongroupanim[#"select"][gender];
         } else {
@@ -407,7 +407,7 @@ function function_6b532f83(localclientnum, var_de58f286, sessionmode) {
                 var_177782dd = weapongroupanim[#"readyidle"][gender];
                 anim_name = var_177782dd[var_7eb5dfe9 % var_177782dd.size];
             }
-            var_de58f286.selected.var_de58f286 = 1;
+            var_de58f286.selected = 1;
         }
     } else {
         anim_name = array("pb_rifle_male_draft_preready_1", "pb_rifle_male_draft_preready_2", "pb_rifle_male_draft_preready_3", "pb_rifle_male_draft_preready_4", "pb_rifle_male_draft_preready_5")[var_7eb5dfe9 % array("pb_rifle_male_draft_preready_1", "pb_rifle_male_draft_preready_2", "pb_rifle_male_draft_preready_3", "pb_rifle_male_draft_preready_4", "pb_rifle_male_draft_preready_5").size];
@@ -431,7 +431,7 @@ function function_93a4f3c5(localclientnum, draftcharacter) {
         [[ draftcharacter ]]->function_82e05d64().var_625ec6da = var_3f83e0ee;
     } else if (!isdefined(var_de58f286.var_625ec6da) || character_customization::function_aa5382ed(var_de58f286.var_625ec6da, var_de58f286.var_c018da16)) {
         function_1cf2437c(localclientnum, draftcharacter, var_de58f286.var_625ec6da, var_de58f286.var_c018da16);
-        var_de58f286.var_625ec6da.var_de58f286 = var_de58f286.var_c018da16;
+        var_de58f286.var_625ec6da = var_de58f286.var_c018da16;
     }
     if (isdefined(var_de58f286.var_625ec6da) && player_role::is_valid(var_de58f286.var_625ec6da.charactertype)) {
         [[ draftcharacter ]]->function_1ec9448d(0);
@@ -555,8 +555,8 @@ function update_team(localclientnum, var_4123f2c1) {
             positionmodel = getuimodel(positiondraftclientsmodel, string(luaindex));
             clientnum = getuimodelvalue(getuimodel(positionmodel, "clientNum"));
             [[ draftcharacter ]]->function_82e05d64().islocalclient = getuimodelvalue(getuimodel(positionmodel, "isLocalClient"));
-            [[ draftcharacter ]]->function_82e05d64().var_90ba8f6f = createuimodel(positionmodel, "entNum");
-            setuimodelvalue([[ draftcharacter ]]->function_82e05d64().var_90ba8f6f, [[ draftcharacter ]]->function_47cb6b19());
+            [[ draftcharacter ]]->function_82e05d64().entnummodel = createuimodel(positionmodel, "entNum");
+            setuimodelvalue([[ draftcharacter ]]->function_82e05d64().entnummodel, [[ draftcharacter ]]->function_47cb6b19());
             if (clientnum >= 0) {
                 player = getentbynum(localclientnum, clientnum);
                 if (isdefined(player) && player function_e4f35989()) {
@@ -620,8 +620,8 @@ function update_team(localclientnum, var_4123f2c1) {
 // Checksum 0x7f1a659e, Offset: 0x6af8
 // Size: 0x64
 function function_9e9e1117(*localclientnum, draftcharacter) {
-    if (isdefined([[ draftcharacter ]]->function_82e05d64().var_90ba8f6f)) {
-        setuimodelvalue([[ draftcharacter ]]->function_82e05d64().var_90ba8f6f, [[ draftcharacter ]]->function_47cb6b19());
+    if (isdefined([[ draftcharacter ]]->function_82e05d64().entnummodel)) {
+        setuimodelvalue([[ draftcharacter ]]->function_82e05d64().entnummodel, [[ draftcharacter ]]->function_47cb6b19());
     }
 }
 
@@ -650,19 +650,19 @@ function setup_team(localclientnum) {
         for (i = 0; i < level.playerscriptstructs[team].size; i++) {
             if (!isdefined(level.draftcharacters[localclientnum][team][i])) {
                 model = util::spawn_model(localclientnum, "tag_origin", level.playerscriptstructs[team][i].origin, level.playerscriptstructs[team][i].angles);
-                model.targetname.model = level.playerscriptstructs[team][i].targetname;
+                model.targetname = level.playerscriptstructs[team][i].targetname;
                 draftcharacter = character_customization::function_dd295310(model, localclientnum, 0);
                 [[ draftcharacter ]]->function_184a4d2e(&function_9e9e1117);
                 [[ draftcharacter ]]->set_character_mode(currentsessionmode());
                 var_de58f286 = [[ draftcharacter ]]->function_82e05d64();
                 var_de58f286.positionindex = i;
-                var_de58f286.var_3afd181d.var_de58f286 = 0;
-                var_de58f286.var_91065a59.var_de58f286 = 0;
-                var_de58f286.selected.var_de58f286 = 0;
-                var_de58f286.params.var_de58f286 = spawnstruct();
+                var_de58f286.var_3afd181d = 0;
+                var_de58f286.var_91065a59 = 0;
+                var_de58f286.selected = 0;
+                var_de58f286.params = spawnstruct();
                 var_de58f286.params.sessionmode = currentsessionmode();
-                var_de58f286.islocalclient.var_de58f286 = 0;
-                var_de58f286.showmodel.var_de58f286 = teambased || i == 1;
+                var_de58f286.islocalclient = 0;
+                var_de58f286.showmodel = teambased || i == 1;
                 level.draftcharacters[localclientnum][team][i] = draftcharacter;
             }
         }

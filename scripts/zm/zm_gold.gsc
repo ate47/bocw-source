@@ -186,13 +186,13 @@ function event_handler[level_init] main(*eventstruct) {
     setdvar(#"hkai_pathfinditerationlimit", 1500);
     setdvar(#"hash_4c706136b82e86a5", -50);
     var_98b2fbc9 = spawnstruct();
-    var_98b2fbc9.var_fc96f513.var_98b2fbc9 = "aib_t9_zm_vign_rav_seated_01";
-    var_98b2fbc9.lod.var_98b2fbc9 = 2;
-    var_98b2fbc9.var_7d8cef45.var_98b2fbc9 = 2;
+    var_98b2fbc9.var_fc96f513 = "aib_t9_zm_vign_rav_seated_01";
+    var_98b2fbc9.lod = 2;
+    var_98b2fbc9.var_7d8cef45 = 2;
     var_43b94aa4 = spawnstruct();
-    var_43b94aa4.var_fc96f513.var_43b94aa4 = "aib_t9_zm_vign_peck_seated_01";
-    var_43b94aa4.lod.var_43b94aa4 = 2;
-    var_43b94aa4.var_7d8cef45.var_43b94aa4 = 2;
+    var_43b94aa4.var_fc96f513 = "aib_t9_zm_vign_peck_seated_01";
+    var_43b94aa4.lod = 2;
+    var_43b94aa4.var_7d8cef45 = 2;
     function_596712a4([0:var_98b2fbc9], [3:"zone_peck_quarters", 2:"zone_scientist", 1:"zone_village2", 0:"zone_atrium"]);
     function_596712a4([0:var_43b94aa4], [0:"zone_napalm_strike2"]);
     zm_spawner::function_97ee316((-49732, -19891, 673), "spawn_location");
@@ -277,7 +277,7 @@ function function_d4738f46() {
             if (!player zm_player::in_life_brush() && (player zm_player::in_kill_brush() || !player zm_player::in_enabled_playable_area() || isdefined(level.player_out_of_playable_area_override) && is_true(player [[ level.player_out_of_playable_area_override ]]())) && !is_true(player.var_2c27f919) && !player scene::is_igc_active()) {
                 if (!istouching(player.origin, var_417f8343) && !istouching(player.origin, var_f27ded04)) {
                     if (!isdefined(player.var_42b83e3e)) {
-                        player.var_42b83e3e.player = 1;
+                        player.var_42b83e3e = 1;
                     } else {
                         if (player.var_42b83e3e >= 3) {
                             continue;
@@ -1462,7 +1462,7 @@ function function_d349e956() {
                         player function_f81475ae(bundle);
                         iprintln("raz_location" + bundle);
                     }
-                    player.var_6f6efa4c.player = [];
+                    player.var_6f6efa4c = [];
                 }
             }
         }

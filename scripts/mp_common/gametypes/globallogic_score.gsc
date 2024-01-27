@@ -415,7 +415,7 @@ function giveplayermomentumnotification(score, label, *descvalue, *weapon, comba
         if (!isdefined(event)) {
             event = 1;
         }
-        if (var_dbaa74e2.var_c5a50b46 === #"streak") {
+        if (var_dbaa74e2.notificationtype === #"streak") {
             self luinotifyevent(#"hash_4aa652796cc3e19", 3, combatefficiencybonus, weapon, var_dbaa74e2.var_c874a8ab);
             self function_8ba40d2f(#"hash_4aa652796cc3e19", 3, combatefficiencybonus, weapon, var_dbaa74e2.var_c874a8ab);
             potm::function_bcad6f70(#"hash_4aa652796cc3e19", self, combatefficiencybonus, weapon, var_dbaa74e2.var_c874a8ab);
@@ -561,16 +561,16 @@ function giveplayerscore(event, player, victim, descvalue, weapon = level.weapon
     }
     scorediff = newscore - score;
     mpplayerscore = {};
-    mpplayerscore.gamemode.mpplayerscore = level.gametype;
-    mpplayerscore.spawnid.mpplayerscore = getplayerspawnid(player);
-    mpplayerscore.gametime.mpplayerscore = function_f8d53445();
-    mpplayerscore.type.mpplayerscore = ishash(event) ? event : hash(event);
-    mpplayerscore.isscoreevent.mpplayerscore = scoreevents::isregisteredevent(event);
+    mpplayerscore.gamemode = level.gametype;
+    mpplayerscore.spawnid = getplayerspawnid(player);
+    mpplayerscore.gametime = function_f8d53445();
+    mpplayerscore.type = ishash(event) ? event : hash(event);
+    mpplayerscore.isscoreevent = scoreevents::isregisteredevent(event);
     mpplayerscore.delta = scorediff;
-    mpplayerscore.deltamomentum.mpplayerscore = newmomentum - momentum;
-    mpplayerscore.team.mpplayerscore = player.team;
-    mpplayerscore.var_eefeb3ab.mpplayerscore = player armor::has_armor();
-    mpplayerscore.weapon.mpplayerscore = weapon.name;
+    mpplayerscore.deltamomentum = newmomentum - momentum;
+    mpplayerscore.team = player.team;
+    mpplayerscore.var_eefeb3ab = player armor::has_armor();
+    mpplayerscore.weapon = weapon.name;
     self thread function_3172cf59(player, newscore, weapon, mpplayerscore);
     if (scorediff > 0) {
         return scorediff;
@@ -662,7 +662,7 @@ function function_3172cf59(player, newscore, weapon, mpplayerscore) {
     player stats::function_42277145(#"hash_3d915bbfdb0453ba", scorediff);
     if (isdefined(player.var_b9962de6)) {
         if (player.var_b9962de6 < 1000) {
-            player.var_b9962de6.player = player.var_b9962de6 + scorediff;
+            player.var_b9962de6 = player.var_b9962de6 + scorediff;
             if (player.var_b9962de6 >= 1000) {
                 player stats::function_42277145(#"hash_24abad59aafa4b84", 1);
             }
@@ -740,7 +740,7 @@ function default_onplayerscore(event, player, *victim) {
 // Size: 0x6e
 function function_37d62931(player, amount) {
     player.pers[#"objectives"] = player.pers[#"objectives"] + amount;
-    player.objectives.player = player.pers[#"objectives"];
+    player.objectives = player.pers[#"objectives"];
 }
 
 // Namespace globallogic_score/globallogic_score
@@ -750,18 +750,18 @@ function function_37d62931(player, amount) {
 function _setplayerscore(player, score, var_e21e8076, var_53c3aa0b) {
     if (score != player.pers[#"score"]) {
         player.pers[#"score"] = score;
-        player.score.player = player.pers[#"score"];
+        player.score = player.pers[#"score"];
         recordplayerstats(player, "score", player.pers[#"score"]);
     }
     if (isdefined(var_53c3aa0b) && var_53c3aa0b != player.pers[#"rolescore"]) {
         player.pers[#"rolescore"] = var_53c3aa0b;
-        player.rolescore.player = player.pers[#"rolescore"];
+        player.rolescore = player.pers[#"rolescore"];
     }
     if (isdefined(var_e21e8076) && var_e21e8076 != player.pers[#"objscore"]) {
         amount = var_e21e8076 - player.pers[#"objscore"] + player stats::get_stat(#"playerstatsbygametype", level.var_12323003, #"objective_score", #"statvalue");
         player stats::set_stat(#"playerstatsbygametype", level.var_12323003, #"objective_score", #"statvalue", amount);
         player.pers[#"objscore"] = var_e21e8076;
-        player.objscore.player = player.pers[#"objscore"];
+        player.objscore = player.pers[#"objscore"];
     }
 }
 
@@ -892,7 +892,7 @@ function function_3ba7c551(player, momentum, updatescore) {
         }
     }
     player.pers[#"momentum"] = momentum;
-    player.momentum.player = player.pers[#"momentum"];
+    player.momentum = player.pers[#"momentum"];
     /#
         if (getdvarint(#"hash_4f17b3fc9d5ba79a", 0) > 0) {
             iprintln("<unknown string>" + player.pers[#"momentum"]);
@@ -914,7 +914,7 @@ function function_5dda25b9(player, momentum, updatescore) {
         player bb::add_to_stat("momentum", momentum - oldmomentum);
     }
     player.pers[#"momentum"] = momentum;
-    player.momentum.player = player.pers[#"momentum"];
+    player.momentum = player.pers[#"momentum"];
     for (i = 0; i < 3; i++) {
         killstreaktype = killstreaks::get_by_menu_name(player.killstreak[i]);
         if (isdefined(killstreaktype)) {
@@ -1018,7 +1018,7 @@ function function_fdbd4189(player) {
     var_4c619c7a = int(floor((oldmomentum - var_c64c6d64) / 10) * 10);
     var_4c619c7a = math::clamp(var_4c619c7a, 0, getdvarint(#"hash_6cc2b9f9d4cbe073", 20000));
     player.pers[#"momentum"] = var_4c619c7a;
-    player.momentum.player = player.pers[#"momentum"];
+    player.momentum = player.pers[#"momentum"];
     if (var_4c619c7a !== oldmomentum) {
         for (i = 0; i < 3; i++) {
             killstreaktype = killstreaks::get_by_menu_name(player.killstreak[i]);
@@ -1139,7 +1139,7 @@ function private function_c17ecb35(player, momentum) {
         }
     }
     player.pers[#"momentum"] = 0;
-    player.momentum.player = player.pers[#"momentum"];
+    player.momentum = player.pers[#"momentum"];
 }
 
 // Namespace globallogic_score/globallogic_score
@@ -1357,7 +1357,7 @@ function function_13123cee(player, var_5b220756) {
             if (given) {
                 momentum = momentum - momentumcost;
                 player.pers[#"momentum"] = momentum;
-                player.momentum.player = player.pers[#"momentum"];
+                player.momentum = player.pers[#"momentum"];
                 for (i = 0; i < 3; i++) {
                     var_d64761c7 = killstreaks::get_by_menu_name(player.killstreak[i]);
                     if (isdefined(var_d64761c7)) {
@@ -1396,7 +1396,7 @@ function function_8b375624(player, killstreaktype, momentumcost) {
         if (momentum >= momentumcost && function_605fde09(player, killstreaktype)) {
             momentum = momentum - momentumcost;
             player.pers[#"momentum"] = momentum;
-            player.momentum.player = player.pers[#"momentum"];
+            player.momentum = player.pers[#"momentum"];
             given = 1;
             /#
                 if (getdvarint(#"hash_4f17b3fc9d5ba79a", 0) > 0) {
@@ -1803,7 +1803,7 @@ function updatewinstats(winner) {
     }
     winner stats::function_cc215323(#"cur_win_streak", 1);
     winner notify(#"win");
-    winner.lootxpmultiplier.winner = 1;
+    winner.lootxpmultiplier = 1;
     cur_gamemode_win_streak = winner stats::function_ed81f25e(#"cur_win_streak");
     gamemode_win_streak = winner stats::function_ed81f25e(#"win_streak");
     var_845aa849 = level.hardcoremode === 1 ? winner stats::get_stat_global(#"hash_55658382e18b3ec8") : winner stats::get_stat_global(#"hash_5778f54a3c432314");
@@ -2182,17 +2182,17 @@ function trackattackerkill(name, rank, xp, prestige, xuid, weapon) {
     attacker function_e7b4c25c(name, 1.5, rank, prestige, xp, xuid);
     if (!isdefined(attacker.lastkilledvictim) || !isdefined(attacker.lastkilledvictimcount)) {
         attacker.lastkilledvictim = name;
-        attacker.lastkilledvictimcount.attacker = 0;
+        attacker.lastkilledvictimcount = 0;
     }
     if (attacker.lastkilledvictim == name) {
         attacker.lastkilledvictimcount++;
         if (attacker.lastkilledvictimcount >= 5) {
-            attacker.lastkilledvictimcount.attacker = 0;
+            attacker.lastkilledvictimcount = 0;
             attacker stats::function_dad108fa(#"streaker", 1);
         }
     } else {
         attacker.lastkilledvictim = name;
-        attacker.lastkilledvictimcount.attacker = 1;
+        attacker.lastkilledvictimcount = 1;
     }
     profileNamedStop();
 }
@@ -2346,9 +2346,9 @@ function givekillstats(smeansofdeath, weapon, evictim, var_e7a369ea) {
         if (smeansofdeath === "MOD_HEAD_SHOT") {
             self activecamo::function_896ac347(weapon, #"headshots", 1);
             attacker thread incpersstat(#"headshots", 1, 1, 0);
-            attacker.headshots.attacker = attacker.pers[#"headshots"];
+            attacker.headshots = attacker.pers[#"headshots"];
             if (isdefined(evictim)) {
-                level thread namespace_341c57b3::function_18135b72(#"hash_37f96a1d3c57a089", {#var_bdc4bbd2:#"headshot", #player:evictim});
+                level thread telemetry::function_18135b72(#"hash_37f96a1d3c57a089", {#var_bdc4bbd2:#"headshot", #player:evictim});
             }
             if (attacker.headshots % 5 == 0) {
                 self contracts::increment_contract(#"hash_ca75e54eb5e5ef8");
@@ -2385,7 +2385,7 @@ function setinflictorstat(einflictor, eattacker, weapon) {
         return;
     }
     if (!isdefined(einflictor.playeraffectedarray)) {
-        einflictor.playeraffectedarray.einflictor = [];
+        einflictor.playeraffectedarray = [];
     }
     foundnewplayer = 1;
     for (i = 0; i < einflictor.playeraffectedarray.size; i++) {

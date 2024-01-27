@@ -40,7 +40,7 @@ function function_6b0f6eb8(localclientnum, *oldval, newval, *bnewent, *binitials
 function function_955683ea(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump == 1) {
         var_2674d143 = util::spawn_model(fieldname, #"hash_a1de313e4f9a99b", self.origin, self.angles);
-        var_2674d143.rob.var_2674d143 = #"hash_30a0a9539339983f";
+        var_2674d143.rob = #"hash_30a0a9539339983f";
         if (!isdefined(level.var_1a3fe1eb)) {
             level.var_1a3fe1eb = [];
         } else if (!isarray(level.var_1a3fe1eb)) {

@@ -169,7 +169,7 @@ function private function_d1dabace(n_time = 30) {
     level.var_7f7fd2ac = gettime() + int(n_time * 1000);
     foreach (player in getplayers()) {
         player zm_trial_util::function_128378c9(n_time);
-        player.var_838c00de.player = 1;
+        player.var_838c00de = 1;
     }
     wait(n_time);
     function_59d771f7();

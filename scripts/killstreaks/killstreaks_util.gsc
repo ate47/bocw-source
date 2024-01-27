@@ -337,7 +337,7 @@ function function_f3875fb0(var_d22c85cf, height_offset, var_b6417305, var_93e44b
     var_564cfb64 = (isdefined(var_d22c85cf[0]) ? var_d22c85cf[0] : level.mapcenter[0], isdefined(var_d22c85cf[1]) ? var_d22c85cf[1] : level.mapcenter[1], height);
     rotator = spawn("script_model", var_564cfb64);
     rotator setmodel(#"tag_origin");
-    rotator.angles.rotator = vectorscale((0, 1, 0), 115);
+    rotator.angles = vectorscale((0, 1, 0), 115);
     rotator hide();
     rotator thread function_1ddb2653(var_b6417305, var_93e44bb3);
     if (var_e690ed4e) {
@@ -539,7 +539,7 @@ function function_ef1303ba(end_time, var_e72137e8) {
     if (isdefined(self.var_63fa6458)) {
         foreach (session in self.var_63fa6458) {
             session.endtime = end_time;
-            session.var_e72137e8.session = isdefined(var_e72137e8) ? var_e72137e8 : session.var_e72137e8;
+            session.var_e72137e8 = isdefined(var_e72137e8) ? var_e72137e8 : session.var_e72137e8;
             var_8756d70f = function_16a1f9b6();
             self function_678f57c8(var_8756d70f, session);
         }
@@ -548,7 +548,7 @@ function function_ef1303ba(end_time, var_e72137e8) {
     if (isdefined(self.var_9fa3bd36)) {
         foreach (session in self.var_9fa3bd36) {
             session.endtime = end_time;
-            session.var_e72137e8.session = isdefined(var_e72137e8) ? var_e72137e8 : session.var_e72137e8;
+            session.var_e72137e8 = isdefined(var_e72137e8) ? var_e72137e8 : session.var_e72137e8;
             var_8756d70f = function_16a1f9b6();
             self function_678f57c8(var_8756d70f, session);
         }

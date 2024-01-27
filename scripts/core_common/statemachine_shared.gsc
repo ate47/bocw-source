@@ -8,7 +8,7 @@
 function create(name, owner, change_notify = "change_state") {
     state_machine = spawnstruct();
     state_machine.name = name;
-    state_machine.states.state_machine = [];
+    state_machine.states = [];
     state_machine.previous_state = undefined;
     state_machine.current_state = undefined;
     state_machine.next_state = undefined;
@@ -16,7 +16,7 @@ function create(name, owner, change_notify = "change_state") {
     if (isdefined(owner)) {
         state_machine.owner = owner;
     } else {
-        state_machine.owner.state_machine = level;
+        state_machine.owner = level;
     }
     if (!isdefined(state_machine.owner.state_machines)) {
         state_machine.owner.state_machines = [];
@@ -91,7 +91,7 @@ function add_interrupt_connection(from_state_name, to_state_name, on_notify, che
     to_state = get_state(to_state_name);
     connection = spawnstruct();
     connection.to_state = to_state;
-    connection.type.connection = 0;
+    connection.type = 0;
     connection.on_notify = on_notify;
     connection.checkfunc = checkfunc;
     from_state.connections_notify[on_notify] = connection;
@@ -107,16 +107,16 @@ function add_utility_connection(from_state_name, to_state_name, checkfunc, defau
     to_state = get_state(to_state_name);
     connection = spawnstruct();
     connection.to_state = to_state;
-    connection.type.connection = 1;
+    connection.type = 1;
     connection.checkfunc = checkfunc;
     connection.score = defaultscore;
     if (!isdefined(connection.score)) {
-        connection.score.connection = 100;
+        connection.score = 100;
     }
     if (!isdefined(from_state.connections_utility)) {
-        from_state.connections_utility.from_state = [];
+        from_state.connections_utility = [];
     } else if (!isarray(from_state.connections_utility)) {
-        from_state.connections_utility.from_state = array(from_state.connections_utility);
+        from_state.connections_utility = array(from_state.connections_utility);
     }
     from_state.connections_utility[from_state.connections_utility.size] = connection;
     return from_state.connections_utility[from_state.connections_utility.size - 1];

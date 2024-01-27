@@ -376,7 +376,7 @@ function init_states(localclientnum) {
             continue;
         }
         if (!isdefined(v.state)) {
-            v.state.v = [];
+            v.state = [];
         }
         v.state[localclientnum] = spawnstruct();
         v.state[localclientnum].prev_slot = v.info[level.vsmgr_default_info_name].slot_index;

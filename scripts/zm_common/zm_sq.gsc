@@ -140,9 +140,9 @@ function register(name, step_name, var_e788cdd7, setup_func, cleanup_func, var_d
         previous_step.next_step = new_step;
     }
     if (!isdefined(ee.steps)) {
-        ee.steps.ee = [];
+        ee.steps = [];
     } else if (!isarray(ee.steps)) {
-        ee.steps.ee = array(ee.steps);
+        ee.steps = array(ee.steps);
     }
     ee.steps[ee.steps.size] = new_step;
     self flag::init(var_e788cdd7 + "_completed");
@@ -192,7 +192,7 @@ function start(name, var_9d8cf7f = 0) {
             if (0 < ee.skip_to_step) {
                 var_5ea5c94d = 1;
             } else if (0 == ee.skip_to_step) {
-                ee.skip_to_step.ee = -1;
+                ee.skip_to_step = -1;
             }
         }
     #/
@@ -254,8 +254,8 @@ function private run_step(ee, step, var_5ea5c94d) {
             println(function_9e72a96(ee.name) + "<unknown string>" + function_9e72a96(step.name) + "<unknown string>");
         }
     #/
-    ee.started.ee = 1;
-    step.started.step = 1;
+    ee.started = 1;
+    step.started = 1;
     self thread function_3f795dc3(ee, step, var_5ea5c94d);
     if (!step.completed) {
         waitresult = undefined;
@@ -278,7 +278,7 @@ function private run_step(ee, step, var_5ea5c94d) {
             println(function_9e72a96(ee.name) + "<unknown string>" + function_9e72a96(step.name) + "<unknown string>");
         }
     #/
-    step.cleaned_up.step = 1;
+    step.cleaned_up = 1;
     if (game.state === #"postgame") {
         return;
     }
@@ -289,7 +289,7 @@ function private run_step(ee, step, var_5ea5c94d) {
         } else {
             players = getplayers();
             foreach (player in players) {
-                player.var_897fa11b.player = 1;
+                player.var_897fa11b = 1;
             }
         }
     }
@@ -304,7 +304,7 @@ function private run_step(ee, step, var_5ea5c94d) {
                 if (var_7f1ec3f3 < ee.skip_to_step) {
                     var_5ea5c94d = 1;
                 } else if (var_7f1ec3f3 == ee.skip_to_step) {
-                    ee.skip_to_step.ee = -1;
+                    ee.skip_to_step = -1;
                 }
                 wait(0.5);
             }
@@ -312,7 +312,7 @@ function private run_step(ee, step, var_5ea5c94d) {
         ee.current_step++;
         self thread run_step(ee, step.next_step, var_5ea5c94d);
     } else {
-        ee.completed.ee = 1;
+        ee.completed = 1;
         self flag::set(ee.name + "_completed");
         if (sessionmodeisonlinegame() && is_true(ee.record_stat)) {
             players = [];
@@ -366,7 +366,7 @@ function private function_3f795dc3(*ee, step, var_5ea5c94d) {
         level function_266d66eb(step.var_6cc77d4e, step.a_targets, undefined, step.var_441061cd);
     }
     [[ step.setup_func ]](var_5ea5c94d);
-    step.completed.step = 1;
+    step.completed = 1;
     if (isdefined(step.var_6cc77d4e)) {
         level function_53d0d99(step.var_6cc77d4e, step.a_targets);
     }
@@ -1173,10 +1173,10 @@ function private create_hudelem(y, x) {
             x = 0;
         }
         var_aa917a22 = newdebughudelem();
-        var_aa917a22.alignx.var_aa917a22 = "<unknown string>";
-        var_aa917a22.horzalign.var_aa917a22 = "<unknown string>";
-        var_aa917a22.aligny.var_aa917a22 = "<unknown string>";
-        var_aa917a22.vertalign.var_aa917a22 = "<unknown string>";
+        var_aa917a22.alignx = "<unknown string>";
+        var_aa917a22.horzalign = "<unknown string>";
+        var_aa917a22.aligny = "<unknown string>";
+        var_aa917a22.vertalign = "<unknown string>";
         var_aa917a22.y = y;
         var_aa917a22.x = x;
         return var_aa917a22;
@@ -1193,7 +1193,7 @@ function function_5df75220() {
         foreach (ee in level._ee) {
             current_x = 30;
             if (!isdefined(ee.debug_hudelem)) {
-                ee.debug_hudelem.ee = create_hudelem(current_y, current_x);
+                ee.debug_hudelem = create_hudelem(current_y, current_x);
             }
             ee.debug_hudelem settext(function_9e72a96(ee.name));
             ee.debug_hudelem.fontscale = 1.5;
@@ -1202,7 +1202,7 @@ function function_5df75220() {
             foreach (step in ee.steps) {
                 current_y = current_y + 15;
                 if (!isdefined(step.debug_hudelem)) {
-                    step.debug_hudelem.step = create_hudelem(current_y, current_x);
+                    step.debug_hudelem = create_hudelem(current_y, current_x);
                 }
                 step.debug_hudelem settext(step_string + function_9e72a96(step.name));
                 step.debug_hudelem.fontscale = 1.5;

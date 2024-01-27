@@ -236,7 +236,7 @@ function jump_pad_start(ent_player, endon_condition) {
     if (!isdefined(self.script_index)) {
         ent_player.script_index = undefined;
     } else {
-        ent_player.script_index.ent_player = self.script_index;
+        ent_player.script_index = self.script_index;
     }
     if (isdefined(self.script_start) && self.script_start == 1) {
         if (!is_true(ent_player._padded)) {

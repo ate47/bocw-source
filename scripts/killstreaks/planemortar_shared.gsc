@@ -282,7 +282,7 @@ function private function_ac3ad2f8(ents) {
     weapon = getweapon("planemortar");
     killcament = spawn("script_model", var_5496c504 gettagorigin("tag_killcam") + vectorscale(direction, -1500));
     killcament util::deleteaftertime(scenelength * 2);
-    killcament.starttime.killcament = gettime();
+    killcament.starttime = gettime();
     killcament.angles = angles;
     killcament linkto(var_5496c504, "tag_killcam");
     killcament setweapon(weapon);
@@ -291,7 +291,7 @@ function private function_ac3ad2f8(ents) {
     var_5496c504 waittill(#"magic_missile");
     if (isdefined(self.owner)) {
         bomb = self.owner magicmissile(weapon, self.origin + vectorscale((0, 0, 1), 100), vectorscale((0, 0, -1), 5000));
-        bomb.killstreakid.bomb = self.killstreakid;
+        bomb.killstreakid = self.killstreakid;
         bomb.killcament = killcament;
     }
 }
@@ -341,7 +341,7 @@ function function_77ed0e9b(var_5496c504, fxanim) {
 function function_83e61117(position, var_8bcd2218, killstreakid) {
     yaw = var_8bcd2218 + randomfloatrange(-1, 1);
     var_81c41c6e = util::spawn_model("tag_origin", position, (0, var_8bcd2218, 0));
-    var_81c41c6e.owner.var_81c41c6e = self;
+    var_81c41c6e.owner = self;
     var_81c41c6e.killstreakid = killstreakid;
     var_81c41c6e scene::play(#"p9_fxanim_mp_planemortar_01_bundle");
     wait(0.5);
@@ -369,13 +369,13 @@ function function_4ef32baf(position, yaw, team) {
     position = (position[0], position[1], height);
     endpoint = (endpoint[0], endpoint[1], height);
     plane = spawn("script_model", startpoint);
-    plane.weapon.plane = getweapon("planemortar");
+    plane.weapon = getweapon("planemortar");
     plane setweapon(plane.weapon);
     plane.team = team;
     plane setteam(team);
-    plane.targetname.plane = "plane_mortar";
+    plane.targetname = "plane_mortar";
     plane setowner(self);
-    plane.owner.plane = self;
+    plane.owner = self;
     plane endon(#"delete", #"death");
     plane.angles = angles;
     plane setmodel("veh_t8_mil_air_jet_fighter_mp_light");
@@ -384,7 +384,7 @@ function function_4ef32baf(position, yaw, team) {
     plane clientfield::set("enemyvehicle", 1);
     plane playsound(#"mpl_lightning_flyover_boom");
     plane setdrawinfrared(1);
-    plane.killcament.plane = spawn("script_model", plane.origin + vectorscale((0, 0, 1), 700) + vectorscale(direction, -1500));
+    plane.killcament = spawn("script_model", plane.origin + vectorscale((0, 0, 1), 700) + vectorscale(direction, -1500));
     plane.killcament util::deleteaftertime(2 * 3);
     plane.killcament.angles = (15, yaw, 0);
     plane.killcament.starttime = gettime();
@@ -467,9 +467,9 @@ function dropbomb(plane, bombposition) {
     }
     bombposition = (bombposition[0], bombposition[1], z - 100);
     bomb = self magicmissile(getweapon("planemortar"), bombposition, vectorscale((0, 0, -1), 5000));
-    bomb.soundmod.bomb = "heli";
+    bomb.soundmod = "heli";
     bomb playsound(#"mpl_lightning_bomb_incoming");
-    bomb.killcament.bomb = plane.killcament;
+    bomb.killcament = plane.killcament;
     plane.killcament thread lookatexplosion(bomb);
 }
 

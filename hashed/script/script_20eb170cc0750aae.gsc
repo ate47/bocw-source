@@ -336,12 +336,12 @@ function function_34459363(var_e9724d01, var_d2b863b2) {
         player val::set(#"hash_12e8539788b7d534", "show_hud", 0);
         bb::function_47cb52f6(level.var_b28c2c3a, player, "restart");
         player val::set(#"hash_5677fd1c5f50cf38", "freezecontrols");
-        player.var_c071a13e.player = 1;
+        player.var_c071a13e = 1;
         if (!isdefined(level.var_59f4be9a)) {
             level thread lui::screen_fade(0, 0.001, 0.001, "black", 0);
             waitframe(1);
         }
-        player.var_c341be0e.player = player openluimenu("CPMissionFailed");
+        player.var_c341be0e = player openluimenu("CPMissionFailed");
         player setluimenudata(player.var_c341be0e, #"hash_6437862a5ea9ee0d", var_e9724d01);
         globallogic_ui::function_9ed5232e("hudItems.cpMissionFailedEntry.MissionFailHint", var_d2b863b2, 0, 1);
         globallogic_ui::function_9ed5232e("hudItems.cpMissionFailedEntry.MissionFailReason", var_e9724d01, 0, 1);

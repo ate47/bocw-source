@@ -82,7 +82,7 @@ function private function_88b2dd98(numpoints) {
             spawnx = self.origin[0] + var_9b178666 * cos(var_61187803);
             spawny = self.origin[1] + var_9b178666 * sin(var_61187803);
             spawnz = self.origin[2];
-            var_812bc6e0.origin.var_812bc6e0 = (spawnx, spawny, spawnz);
+            var_812bc6e0.origin = (spawnx, spawny, spawnz);
             var_99a3ff38 = 1;
             foreach (var_a4e6f42c in goal_points) {
                 if (distance2dsquared(var_812bc6e0.origin, var_a4e6f42c.origin) < 2500) {
@@ -92,7 +92,7 @@ function private function_88b2dd98(numpoints) {
             attempts++;
         }
         var_812bc6e0.zombie = undefined;
-        var_812bc6e0.offset.var_812bc6e0 = self.origin - var_812bc6e0.origin;
+        var_812bc6e0.offset = self.origin - var_812bc6e0.origin;
         goal_points[i] = var_812bc6e0;
     }
     self.goal_points = goal_points;
@@ -109,8 +109,8 @@ function function_11280436(var_f9289185, origin, angles, radius, var_aae3fc82) {
         var_812bc6e0 = var_31f1a7be.goal_points[i];
         spawn_angles = (0, randomint(360), 0);
         zombie = spawnactor("spawner_boct_zombie_wz", var_812bc6e0.origin, spawn_angles, "radial_zombie");
-        zombie.variant_type.zombie = randomint(level.var_9ee73630[zombie.zombie_move_speed][zombie.zombie_arms_position]);
-        zombie.ignoreall.zombie = 1;
+        zombie.variant_type = randomint(level.var_9ee73630[zombie.zombie_move_speed][zombie.zombie_arms_position]);
+        zombie.ignoreall = 1;
         zombie pathmode("dont move", 1);
         var_812bc6e0.zombie = zombie;
     }
@@ -170,7 +170,7 @@ function private function_3e88b567() {
 // Size: 0x1d0
 function private function_18ca9034() {
     foreach (var_812bc6e0 in self.goal_points) {
-        var_812bc6e0.origin.var_812bc6e0 = getclosestpointonnavmesh(self.origin - var_812bc6e0.offset, 200, 32);
+        var_812bc6e0.origin = getclosestpointonnavmesh(self.origin - var_812bc6e0.offset, 200, 32);
         zombie = var_812bc6e0.zombie;
         if (!isdefined(zombie) || !isalive(zombie)) {
             continue;

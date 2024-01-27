@@ -40,8 +40,8 @@ function barrelupdate(model_name = "zombietron_barrel") {
     self endon(#"hash_3e2226cc328d43a7", #"hash_562d458e34274132");
     org = namespace_ec06fe4a::function_e22ae9b3(self.origin, "tag_origin");
     if (isdefined(org)) {
-        org.targetname.org = "barrelUpdate";
-        org.angles.org = (0, randomint(180), 0);
+        org.targetname = "barrelUpdate";
+        org.angles = (0, randomint(180), 0);
         self.doa.var_ba83e9 = org;
         if (isplayer(self)) {
             org thread namespace_ec06fe4a::function_ae010bb4(self);
@@ -51,18 +51,18 @@ function barrelupdate(model_name = "zombietron_barrel") {
     }
     barrel = namespace_ec06fe4a::function_e22ae9b3(self.origin + vectorscale((0, 1, 0), 90), model_name);
     if (isdefined(barrel)) {
-        barrel.targetname.barrel = "barrel1";
+        barrel.targetname = "barrel1";
         barrel setplayercollision(0);
         barrel linkto(org, "tag_origin", vectorscale((0, 1, 0), 90));
         if (isplayer(self)) {
             barrel thread namespace_ec06fe4a::function_ae010bb4(self);
         }
-        trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", barrel.origin, 1 & 512 & 8, 40, 50);
+        trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", barrel.origin, 1 | 512 | 8, 40, 50);
         if (isdefined(trigger)) {
             if (isplayer(self)) {
                 trigger thread namespace_ec06fe4a::function_ae010bb4(self);
             }
-            trigger.targetname.trigger = "barrel1";
+            trigger.targetname = "barrel1";
             trigger enablelinkto();
             trigger linkto(barrel);
             trigger thread function_7c757878(self);
@@ -75,16 +75,16 @@ function barrelupdate(model_name = "zombietron_barrel") {
         if (isplayer(self)) {
             barrel thread namespace_ec06fe4a::function_ae010bb4(self);
         }
-        barrel.targetname.barrel = "barrel2";
+        barrel.targetname = "barrel2";
         barrel setmodel(model_name);
         barrel setplayercollision(0);
         barrel linkto(org, "tag_origin", vectorscale((0, -1, 0), 90));
-        trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", barrel.origin, 1 & 512 & 8, 40, 50);
+        trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", barrel.origin, 1 | 512 | 8, 40, 50);
         if (isdefined(trigger)) {
             if (isplayer(self)) {
                 trigger thread namespace_ec06fe4a::function_ae010bb4(self);
             }
-            trigger.targetname.trigger = "barrel2";
+            trigger.targetname = "barrel2";
             trigger enablelinkto();
             trigger linkto(barrel);
             trigger thread function_7c757878(self);
@@ -98,7 +98,7 @@ function barrelupdate(model_name = "zombietron_barrel") {
     self thread function_f0855523(org);
     org thread function_6ad92846(self);
     while (isdefined(org) && isdefined(self)) {
-        org.origin.org = self.origin;
+        org.origin = self.origin;
         org rotateto(org.angles + vectorscale((0, 1, 0), 180), 1.2);
         wait(1.2);
     }

@@ -488,8 +488,8 @@ function function_d5766919(killstreaktype) {
             return;
         }
         var_1120bf0 = self.inventory.items[17];
-        if (var_1120bf0.var_bd027dd9 != 32767) {
-            self item_inventory::drop_inventory_item(var_1120bf0.var_bd027dd9);
+        if (var_1120bf0.networkid != 32767) {
+            self item_inventory::drop_inventory_item(var_1120bf0.networkid);
         }
         itempoint = function_4ba8fde(var_16f12c31);
         if (isdefined(itempoint)) {
@@ -1500,14 +1500,14 @@ function actor_damage_override(inflictor, attacker, damage, flags, meansofdeath,
         if (attacker === inflictor) {
             if (meansofdeath == "MOD_HEAD_SHOT" || meansofdeath == "MOD_PISTOL_BULLET" || meansofdeath == "MOD_RIFLE_BULLET") {
                 if (!isdefined(attacker.hits)) {
-                    attacker.hits.attacker = 0;
+                    attacker.hits = 0;
                 }
                 attacker.hits++;
             }
         }
         if (isalive(attacker) && (meansofdeath === "MOD_GRENADE" || meansofdeath === "MOD_GRENADE_SPLASH")) {
             attacker.grenade_multiattack_count++;
-            attacker.grenade_multiattack_ent.attacker = self;
+            attacker.grenade_multiattack_ent = self;
         }
         final_damage = self zm_powerups::function_fe6d6eac(attacker, meansofdeath, shitloc, weapon, final_damage);
         self.has_been_damaged_by_player = 1;
@@ -1723,7 +1723,7 @@ function actor_damage_override_wrapper(inflictor, attacker, damage, flags, means
                 if (is_true(self.var_426947c4)) {
                     var_e2e301c8 = "armorBroke";
                 }
-                flags = flags & 2048;
+                flags = flags | 2048;
             } else if (var_ebcff177 === 2) {
                 level.var_d7e2833c = 1;
             }
@@ -1752,11 +1752,11 @@ function actor_damage_override_wrapper(inflictor, attacker, damage, flags, means
         }
         if (is_true(level.var_d7e2833c)) {
             level.var_d7e2833c = undefined;
-            flags = flags & 131072;
+            flags = flags | 131072;
         }
         if (is_true(level.var_d921ba10)) {
             level.var_d921ba10 = undefined;
-            flags = flags & 262144;
+            flags = flags | 262144;
         }
         self finishactordamage(inflictor, attacker, int(final_damage), flags, meansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, vdamageorigin, psoffsettime, boneindex, surfacetype, vsurfacenormal);
         if (isplayer(attacker) && (damage_override > 0 || var_ebcff177 === 4) && !is_true(self.var_265cb589) && !is_true(level.var_dc60105c) && (!attacker issplitscreen() || getplayers().size < 4)) {
@@ -1764,7 +1764,7 @@ function actor_damage_override_wrapper(inflictor, attacker, damage, flags, means
         }
     }
     if (!isdefined(attacker.var_e7b05e99) && zm_utility::is_player_valid(attacker) && meansofdeath !== "MOD_MELEE") {
-        attacker.var_e7b05e99.attacker = 1;
+        attacker.var_e7b05e99 = 1;
     }
     if ((shitloc === "head" || shitloc === "helmet") && !zm_ai_utility::hashelmet(shitloc, self) && self.archetype !== #"zombie_dog" && meansofdeath != "MOD_MELEE") {
         level scoreevents::doscoreeventcallback("scoreEventZM", {#weapon:weapon, #hitloc:shitloc, #enemy:self, #scoreevent:"hit_weak_point_zm", #attacker:attacker});
@@ -1842,17 +1842,17 @@ function actor_killed_override(einflictor, attacker, idamage, smeansofdeath, wea
         perks = [];
         killstreaks = [];
         rounds = level.round_number;
-        var_65e76577 = #"";
+        bookmarkname = #"";
         if (isdefined(self.archetype) && (self.archetype == #"tiger" || self.archetype == #"brutus" || self.archetype == #"zombie_dog" || self.archetype == #"catalyst" || self.archetype == #"stoker" || self.archetype == #"blight_father")) {
-            var_65e76577 = #"hash_1553fcea4f6a00e";
+            bookmarkname = #"hash_1553fcea4f6a00e";
         } else {
-            var_65e76577 = #"hash_37300d83d8e6f1fc";
+            bookmarkname = #"hash_37300d83d8e6f1fc";
         }
-        if (var_65e76577 == #"hash_1553fcea4f6a00e") {
-            demo::bookmark(var_65e76577, gettime(), player);
+        if (bookmarkname == #"hash_1553fcea4f6a00e") {
+            demo::bookmark(bookmarkname, gettime(), player);
         }
-        potm::bookmark(var_65e76577, gettime(), player);
-        level thread potm::function_5523a49a(var_65e76577, player getentitynumber(), player getxuid(), self, killcam_entity_info, weapon, smeansofdeath, deathtime, deathtimeoffset, psoffsettime, perks, killstreaks, player);
+        potm::bookmark(bookmarkname, gettime(), player);
+        level thread potm::function_5523a49a(bookmarkname, player getentitynumber(), player getxuid(), self, killcam_entity_info, weapon, smeansofdeath, deathtime, deathtimeoffset, psoffsettime, perks, killstreaks, player);
     }
     if (isai(attacker) && isdefined(attacker.script_owner)) {
         if (attacker.script_owner.team != self.team) {
@@ -1912,16 +1912,16 @@ function actor_killed_override(einflictor, attacker, idamage, smeansofdeath, wea
         zm_custom::function_9be9c072("zmKillCap");
     }
     if (isdefined(einflictor.var_443d78cc)) {
-        params.var_a3660fca.params = einflictor.var_443d78cc;
+        params.var_a3660fca = einflictor.var_443d78cc;
         scoreevents::function_82234b38(self, attacker, weapon, undefined, params.var_a3660fca, einflictor);
     } else if (isdefined(attacker.var_443d78cc)) {
-        params.var_a3660fca.params = attacker.var_443d78cc;
-        params.eattacker.params = attacker.var_443d78cc;
+        params.var_a3660fca = attacker.var_443d78cc;
+        params.eattacker = attacker.var_443d78cc;
         scoreevents::function_82234b38(self, attacker, weapon, undefined, params.var_a3660fca, attacker);
     }
-    params.enemy.params = self;
+    params.enemy = self;
     if (smeansofdeath !== "MOD_MELEE" && (shitloc === "head" || shitloc === "helmet") && !zm_ai_utility::hashelmet(shitloc, self) && self.archetype !== #"zombie_dog") {
-        params.var_3fb48d9c.params = 1;
+        params.var_3fb48d9c = 1;
     }
     if (isdefined(attacker) && isplayer(attacker)) {
         attacker function_9dd8ba0b(weapon.name);
@@ -1940,14 +1940,14 @@ function actor_killed_override(einflictor, attacker, idamage, smeansofdeath, wea
         }
         if (einflictor.item.name === #"hatchet") {
             if (isdefined(attacker.var_8ff34f45)) {
-                einflictor.var_8ff34f45.einflictor = attacker.var_8ff34f45;
+                einflictor.var_8ff34f45 = attacker.var_8ff34f45;
             } else {
-                einflictor.var_8ff34f45.einflictor = 0;
+                einflictor.var_8ff34f45 = 0;
             }
             einflictor.var_8ff34f45++;
             if (einflictor.var_8ff34f45 >= 5) {
-                einflictor.var_8ff34f45.einflictor = 0;
-                attacker.var_8ff34f45.attacker = 0;
+                einflictor.var_8ff34f45 = 0;
+                attacker.var_8ff34f45 = 0;
                 attacker zm_stats::increment_challenge_stat(#"hash_b023b1e339c3ab");
             }
         }
@@ -1972,7 +1972,7 @@ function function_df94f87e(weapon) {
                 self zm_stats::increment_challenge_stat(#"hash_6dfaf1d66eb666ae");
             }
         } else {
-            killstreak_item.kills.killstreak_item = 1;
+            killstreak_item.kills = 1;
         }
         if (weapon.name == #"remote_missile_missile" || weapon.name == #"remote_missile_bomblet") {
             if (!isdefined(self.remotemissilebda)) {
@@ -2105,8 +2105,8 @@ function function_6c369691() {
 function function_2a49523d(winner) {
     outcome = {#players:[], #team:#"axis", #var_14f94126:game.strings[#"defeat"], #var_277c7d47:1, #var_7d5c2c5f:0, #var_68c25772:1, #var_c1e98979:0};
     if (isdefined(winner) && winner == #"allies") {
-        outcome.var_14f94126.outcome = game.strings[#"victory"];
-        outcome.team.outcome = #"allies";
+        outcome.var_14f94126 = game.strings[#"victory"];
+        outcome.team = #"allies";
     }
     display_transition::function_e6b4f2f7(outcome);
     display_transition::function_15e28b1a(outcome);
@@ -2245,9 +2245,9 @@ function end_game() {
         player val::set(#"end_game", "ignoreme", 1);
         player enableinvulnerability();
         if (!isdefined(player.score_total)) {
-            player.score_total.player = 0;
+            player.score_total = 0;
         }
-        player.score.player = player.score_total;
+        player.score = player.score_total;
         player notify(#"stop_ammo_tracking");
         player clientfield::set("zmbLastStand", 0);
     }
@@ -3156,7 +3156,7 @@ function private function_85ea1f60(item) {
         break;
     case #"equipment":
         lethal = self.inventory.items[7];
-        if (lethal.var_bd027dd9 != 32767) {
+        if (lethal.networkid != 32767) {
             if (item.var_a6762160.name === lethal.var_a6762160.name && lethal.count >= lethal.var_a6762160.stackcount) {
                 return 0;
             } else {
@@ -3168,7 +3168,7 @@ function private function_85ea1f60(item) {
         break;
     case #"tactical":
         tactical = self.inventory.items[13];
-        if (tactical.var_bd027dd9 != 32767) {
+        if (tactical.networkid != 32767) {
             if (item.var_a6762160.name === tactical.var_a6762160.name && tactical.count >= tactical.var_a6762160.stackcount) {
                 return 0;
             } else {

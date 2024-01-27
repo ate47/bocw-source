@@ -406,9 +406,9 @@ function monitor_detectnearbyenemies(localclientnum) {
                     bundle = var_c394e130;
                 }
                 params.bundle = bundle;
-                params.range.params = bundle.var_151e2c9b + 30;
-                params.var_dcea0aa7.params = function_a3f6cdac(params.range);
-                params.speed.params = sixthsenseent getspeed();
+                params.range = bundle.var_151e2c9b + 30;
+                params.var_dcea0aa7 = function_a3f6cdac(params.range);
+                params.speed = sixthsenseent getspeed();
                 var_7aeac1e7 = sixthsenseent function_60b0e73f(device, params);
                 if (var_7aeac1e7) {
                     sixthsenseent function_c1903d9d();
@@ -416,7 +416,7 @@ function monitor_detectnearbyenemies(localclientnum) {
                     if (gettime() - (isdefined(sixthsenseent.var_6766ff79) ? sixthsenseent.var_6766ff79 : 0) > (isdefined(bundle.var_10ad1e72) ? bundle.var_10ad1e72 : 0)) {
                         playsound(localclientnum, #"hash_3f3c18deefb8a1b9");
                     }
-                    sixthsenseent.var_6766ff79.sixthsenseent = gettime();
+                    sixthsenseent.var_6766ff79 = gettime();
                 }
             }
         }
@@ -442,9 +442,9 @@ function monitor_detectnearbyenemies(localclientnum) {
                         bundle = var_c394e130;
                     }
                     params.bundle = bundle;
-                    params.range.params = bundle.var_151e2c9b + 30;
-                    params.var_dcea0aa7.params = function_a3f6cdac(params.range);
-                    params.speed.params = sixthsenseent getspeed();
+                    params.range = bundle.var_151e2c9b + 30;
+                    params.var_dcea0aa7 = function_a3f6cdac(params.range);
+                    params.speed = sixthsenseent getspeed();
                     var_7aeac1e7 = sixthsenseent function_60b0e73f(device, params);
                     if (var_7aeac1e7) {
                         sixthsenseent function_c1903d9d();
@@ -474,7 +474,7 @@ function private function_60b0e73f(device, params) {
     var_a8eeaacb = sixthsenseent.origin - device.origin;
     var_9f639ea5 = vectornormalize((var_a8eeaacb[0], var_a8eeaacb[1], 0));
     if (!isdefined(device.var_2a5aebad)) {
-        device.var_2a5aebad.device = anglestoforward((0, device.angles[1], 0));
+        device.var_2a5aebad = anglestoforward((0, device.angles[1], 0));
     }
     if (bundle.var_b060dd0c < 180) {
         dot = vectordot(var_9f639ea5, device.var_2a5aebad);
@@ -596,7 +596,7 @@ function private function_3f62f7c4(localclientnum) {
                 if (gettime() - (isdefined(nightingale.var_6766ff79) ? nightingale.var_6766ff79 : 0) > (isdefined(bundle.var_10ad1e72) ? bundle.var_10ad1e72 : 0)) {
                     playsound(localclientnum, #"hash_3f3c18deefb8a1b9");
                 }
-                nightingale.var_6766ff79.nightingale = gettime();
+                nightingale.var_6766ff79 = gettime();
             }
         }
         wait(0.05);
@@ -626,7 +626,7 @@ function function_c2b5b27c() {
         if (isdefined(waitresult.var_53714565)) {
             var_9f19a239 = waitresult.var_53714565;
             if (!isdefined(var_9f19a239.var_629d0f94)) {
-                var_9f19a239.var_629d0f94.var_9f19a239 = [];
+                var_9f19a239.var_629d0f94 = [];
             }
             var_9f19a239.var_629d0f94[waitresult.action] = gettime();
         }
@@ -766,9 +766,9 @@ function function_b6dacb5a(localclientnum) {
                     bundle = var_c394e130;
                 }
                 params.bundle = bundle;
-                params.range.params = bundle.var_151e2c9b + 30;
-                params.var_dcea0aa7.params = function_a3f6cdac(params.range);
-                params.speed.params = sixthsenseent getspeed();
+                params.range = bundle.var_151e2c9b + 30;
+                params.var_dcea0aa7 = function_a3f6cdac(params.range);
+                params.speed = sixthsenseent getspeed();
                 var_7aeac1e7 = sixthsenseent function_60b0e73f(device, params);
                 if (var_7aeac1e7) {
                     var_aa51be56[sixthsenseent getentitynumber()] = 1;
@@ -777,7 +777,7 @@ function function_b6dacb5a(localclientnum) {
                             playsound(localclientnum, #"hash_aecd0fa1fde77a8");
                         }
                     }
-                    sixthsenseent.var_130d4592.sixthsenseent = gettime();
+                    sixthsenseent.var_130d4592 = gettime();
                 }
             }
         }

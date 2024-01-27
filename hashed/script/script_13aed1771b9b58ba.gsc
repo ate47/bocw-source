@@ -56,7 +56,7 @@ function function_c0dc7220() {
 // Checksum 0x84c5c1ea, Offset: 0x508
 // Size: 0x16
 function set_target(zombie) {
-    zombie.enemy_override.zombie = self;
+    zombie.enemy_override = self;
 }
 
 // Namespace namespace_ce9594c1/namespace_ce9594c1
@@ -135,11 +135,11 @@ function function_6f97b981(tier = 0, radius = 1000, duration = 10) {
         var_6c77565b = getentitiesinradius(self.origin, radius, 15);
         foreach (zombie in var_6c77565b) {
             if (isalive(zombie) && zombie.team === level.zombie_team) {
-                zombie.var_8a3828c6.zombie = self;
+                zombie.var_8a3828c6 = self;
                 zombie thread function_95558618();
                 if (tier >= 5) {
                     if (!is_true(zombie.var_4439c2d9)) {
-                        zombie.var_4439c2d9.zombie = 1;
+                        zombie.var_4439c2d9 = 1;
                         zombie clientfield::set("fx_frenzied_guard_actor_clientfield", 1);
                         zombie zombie_utility::set_zombie_run_cycle_override_value("walk");
                     }
@@ -322,7 +322,7 @@ function function_7995eedf(s_params) {
             if (!player function_1072c231() && player function_d87329b7()) {
                 var_2cacdde7 = 0.1 * player.maxarmor;
                 var_2cacdde7 = int(var_2cacdde7);
-                player.armor.player = player.armor + math::clamp(var_2cacdde7, 0, player.maxarmor);
+                player.armor = player.armor + math::clamp(var_2cacdde7, 0, player.maxarmor);
                 player playsoundtoplayer(#"hash_271353dc9677cad3", player);
             }
         }

@@ -73,7 +73,7 @@ function private function_2f2d0057() {
         waitresult = self waittill(#"trigger");
         other = waitresult.activator;
         if (!is_true(other.var_a8f2b553)) {
-            other.var_a8f2b553.other = 1;
+            other.var_a8f2b553 = 1;
             other thread function_168bc21c(self);
         }
     }
@@ -721,7 +721,7 @@ function private function_d5f8b410(entity) {
 // Size: 0x74
 function private function_7d7cd25d(entity) {
     if (!isdefined(entity.var_b01e0de4)) {
-        entity.var_b01e0de4.entity = randomintrange(0, 5) / 8;
+        entity.var_b01e0de4 = randomintrange(0, 5) / 8;
         entity asmsetanimationrate(0.1);
         entity thread function_405a8025();
     }
@@ -756,7 +756,7 @@ function private function_4e71bfb4(entity) {
     if (!isdefined(entity.var_8061b3cd)) {
         var_7894038a = randomintrange(0, 9) * 250;
         var_7894038a = var_7894038a + 4000;
-        entity.var_8061b3cd.entity = gettime() + var_7894038a;
+        entity.var_8061b3cd = gettime() + var_7894038a;
     } else if (gettime() >= entity.var_8061b3cd) {
         entity.var_8061b3cd = undefined;
         return 0;

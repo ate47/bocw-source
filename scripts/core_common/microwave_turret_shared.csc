@@ -140,7 +140,7 @@ function startmicrowavefx(localclientnum) {
     turret = self;
     turret endon(#"death");
     turret endon(#"beam_stop");
-    turret.should_update_fx.turret = 1;
+    turret.should_update_fx = 1;
     self thread turret_microwave_sound_start(localclientnum);
     origin = turret gettagorigin("tag_flash");
     angles = turret gettagangles("tag_flash");
@@ -148,16 +148,16 @@ function startmicrowavefx(localclientnum) {
     microwavefxent setmodel(#"tag_microwavefx");
     microwavefxent.angles = angles;
     microwavefxent linkto(turret, "tag_flash");
-    microwavefxent.fxhandles.microwavefxent = [];
-    microwavefxent.fxnames.microwavefxent = [];
-    microwavefxent.fxhashs.microwavefxent = [];
+    microwavefxent.fxhandles = [];
+    microwavefxent.fxnames = [];
+    microwavefxent.fxhashs = [];
     self thread updatemicrowaveaim(microwavefxent);
     self thread cleanupfx(localclientnum, microwavefxent);
     wait(0.3);
     while (1) {
         /#
             if (getdvarint(#"scr_microwave_turret_fx_debug", 0)) {
-                turret.should_update_fx.turret = 1;
+                turret.should_update_fx = 1;
                 microwavefxent.fxhashs[#"center"] = 0;
             }
         #/
@@ -186,8 +186,8 @@ function startmicrowavefx(localclientnum) {
             }
         #/
         need_to_rebuild = microwavefxent microwavefxhash(trace, origin, "center");
-        need_to_rebuild = need_to_rebuild & microwavefxent microwavefxhash(traceright, origin, "right");
-        need_to_rebuild = need_to_rebuild & microwavefxent microwavefxhash(traceleft, origin, "left");
+        need_to_rebuild = need_to_rebuild | microwavefxent microwavefxhash(traceright, origin, "right");
+        need_to_rebuild = need_to_rebuild | microwavefxent microwavefxhash(traceleft, origin, "left");
         level.last_microwave_turret_fx_trace = gettime();
         if (!need_to_rebuild) {
             wait(1);
@@ -195,7 +195,7 @@ function startmicrowavefx(localclientnum) {
         }
         wait(0.1);
         microwavefxent playmicrowavefx(localclientnum, trace, traceright, traceleft, origin);
-        turret.should_update_fx.turret = 0;
+        turret.should_update_fx = 0;
         wait(1);
     }
 }
@@ -212,7 +212,7 @@ function updatemicrowaveaim(*microwavefxent) {
     while (1) {
         angles = turret gettagangles("tag_flash");
         if (last_angles != angles) {
-            turret.should_update_fx.turret = 1;
+            turret.should_update_fx = 1;
             last_angles = angles;
         }
         wait(0.1);

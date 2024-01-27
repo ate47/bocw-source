@@ -91,7 +91,7 @@ class cluielemimage : cluielem {
     // Params 10, eflags: 0x0
     // Checksum 0x9125d2ea, Offset: 0x5c0
     // Size: 0x1fc
-    function setup_clientfields(xcallback, ycallback, widthcallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, *var_e6b6b84b) {
+    function setup_clientfields(xcallback, ycallback, widthcallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, *materialcallback) {
         cluielem::setup_clientfields("LUIelemImage");
         cluielem::add_clientfield("x", 1, 7, "int", ycallback);
         cluielem::add_clientfield("y", 1, 6, "int", widthcallback);
@@ -101,7 +101,7 @@ class cluielemimage : cluielem {
         cluielem::add_clientfield("alpha", 1, 4, "float", redcallback);
         cluielem::add_clientfield("red", 1, 4, "float", greencallback);
         cluielem::add_clientfield("green", 1, 4, "float", bluecallback);
-        cluielem::add_clientfield("blue", 1, 4, "float", var_e6b6b84b);
+        cluielem::add_clientfield("blue", 1, 4, "float", materialcallback);
         cluielem::function_dcb34c80("material", "material", 1);
     }
 
@@ -161,9 +161,9 @@ class cluielemimage : cluielem {
 // Params 10, eflags: 0x0
 // Checksum 0x5b81ad06, Offset: 0x130
 // Size: 0x1ce
-function register(xcallback, ycallback, widthcallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, var_e6b6b84b) {
+function register(xcallback, ycallback, widthcallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, materialcallback) {
     elem = new cluielemimage();
-    [[ elem ]]->setup_clientfields(xcallback, ycallback, widthcallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, var_e6b6b84b);
+    [[ elem ]]->setup_clientfields(xcallback, ycallback, widthcallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, materialcallback);
     if (!isdefined(level.var_ae746e8f)) {
         level.var_ae746e8f = associativearray();
     }

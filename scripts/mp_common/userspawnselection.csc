@@ -83,7 +83,7 @@ function function_bc7ec9a1(spawngroup) {
 // Checksum 0xd278a38d, Offset: 0x880
 // Size: 0x6c
 function setupspawngroup(spawngroup) {
-    spawngroup.uiindex.spawngroup = level.next_spawngroup_index;
+    spawngroup.uiindex = level.next_spawngroup_index;
     level.next_spawngroup_index++;
     level.spawngroups[spawngroup.uiindex] = spawngroup;
     function_bc7ec9a1(spawngroup);

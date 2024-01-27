@@ -27,9 +27,9 @@ function init() {
 // Checksum 0xeabaf86e, Offset: 0x120
 // Size: 0x46
 function private function_1679806a(s_watcher) {
-    s_watcher.onspawnretrievetriggers.s_watcher = &function_4ba658e5;
-    s_watcher.pickup.s_watcher = &function_4ba658e5;
-    s_watcher.deleteonplayerspawn.s_watcher = 0;
+    s_watcher.onspawnretrievetriggers = &function_4ba658e5;
+    s_watcher.pickup = &function_4ba658e5;
+    s_watcher.deleteonplayerspawn = 0;
 }
 
 // Namespace namespace_c6f8b01/namespace_cd0ada25
@@ -49,7 +49,7 @@ function private function_e879ee6d(hatchet) {
         }
         hatchet unlink();
         waitframe(1);
-        hatchet.angles.hatchet = (hatchet.angles[0] + 90, 0, 0);
+        hatchet.angles = (hatchet.angles[0] + 90, 0, 0);
         hatchet launch(vectorscale((0, 0, -1), 0.5));
     }
 }

@@ -1258,7 +1258,7 @@ function function_b5d668a4(passenger) {
     self endon(#"death");
     level endon(#"af_start_rc_car");
     passenger endon(#"death");
-    passenger.dontdropweapon.passenger = 1;
+    passenger.dontdropweapon = 1;
     passenger.var_ec30f5da.ridedeathanim = undefined;
     passenger notify(#"new_death_anim");
     self thread function_868edfac(passenger);
@@ -1351,7 +1351,7 @@ function function_9535c641() {
     level.var_55e62e4f = arraycombine(level.var_55e62e4f, vehicle::simple_spawn_and_drive("af_enemy_deploy_veh_f"));
     level.var_57c220b5 = 0;
     foreach (veh in level.var_55e62e4f) {
-        veh.script_noteworthy.veh = "rc_enemy";
+        veh.script_noteworthy = "rc_enemy";
         level.var_d18d2af9[veh.script_noteworthy] = 0;
         veh thread function_40c45b6();
         veh thread function_e6320cb3();
@@ -1535,18 +1535,18 @@ function function_e652a247() {
     #/
     var_ca688dc9 = spawn("script_model", (self.origin[0], self.origin[1], var_74fc3359.origin[2]));
     var_ca688dc9 hide();
-    var_ca688dc9.angles.var_ca688dc9 = (0, randomfloatrange(0, 360), 0);
+    var_ca688dc9.angles = (0, randomfloatrange(0, 360), 0);
     var_ca688dc9 setmodel("p8_zm_esc_spawn_cap_crater");
     snd::play("wpn_tkd_chase_rpg_imp", self);
     var_ca688dc9 setscale(0.15);
     var_ca688dc9 show();
     clip = getent("crater_clip", "targetname");
     if (isdefined(clip) && isdefined(var_ca688dc9)) {
-        clip.origin.clip = var_ca688dc9.origin;
-        clip.angles.clip = var_ca688dc9.angles;
+        clip.origin = var_ca688dc9.origin;
+        clip.angles = var_ca688dc9.angles;
         level waittill(#"starting_crash_seq");
         var_ca688dc9 delete();
-        clip.origin.clip = clip.origin - vectorscale((0, 0, 1), 20);
+        clip.origin = clip.origin - vectorscale((0, 0, 1), 20);
     }
 }
 

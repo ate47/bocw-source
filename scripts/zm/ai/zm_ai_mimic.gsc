@@ -414,12 +414,12 @@ function spawn_single(var_eb3a8721) {
     }
     ai = spawnactor(#"spawner_bo5_mimic", s_spawn_loc.origin, s_spawn_loc.angles);
     if (isdefined(ai)) {
-        ai.var_7a5e475.ai = 0;
-        ai.var_43c4bc66.ai = 1;
+        ai.var_7a5e475 = 0;
+        ai.var_43c4bc66 = 1;
         ai.b_ignore_cleanup = undefined;
-        ai.script_string.ai = s_spawn_loc.script_string;
-        ai.find_flesh_struct_string.ai = s_spawn_loc.find_flesh_struct_string;
-        ai.check_point_in_enabled_zone.ai = &zm_utility::check_point_in_playable_area;
+        ai.script_string = s_spawn_loc.script_string;
+        ai.find_flesh_struct_string = s_spawn_loc.find_flesh_struct_string;
+        ai.check_point_in_enabled_zone = &zm_utility::check_point_in_playable_area;
         ai forceteleport(s_spawn_loc.origin, s_spawn_loc.angles);
     }
     return ai;
@@ -549,7 +549,7 @@ function function_218c4ce8() {
                     if (!is_true(struct.b_spawned)) {
                         continue;
                     }
-                    struct.lure_prop_type.struct = info.type;
+                    struct.lure_prop_type = info.type;
                     level.var_6e175eb[level.var_6e175eb.size] = struct;
                 }
             }
@@ -558,7 +558,7 @@ function function_218c4ce8() {
     }
     if (isdefined(level.var_976841f)) {
         foreach (trigger_stub in level.var_976841f) {
-            trigger_stub.lure_prop_type.trigger_stub = 1;
+            trigger_stub.lure_prop_type = 1;
             level.var_6e175eb[level.var_6e175eb.size] = trigger_stub;
         }
         mimic_prop_spawn::function_da3be96b(1, &function_c4a57e80, &function_9542c864);
@@ -617,7 +617,7 @@ function function_9542c864(var_e663e7c5) {
         if (!isdefined(var_994bab50)) {
             return 0;
         }
-        var_e663e7c5.zone_name.var_e663e7c5 = zm_zonemgr::get_zone_from_position(var_994bab50 + vectorscale((0, 0, 1), 15), 1);
+        var_e663e7c5.zone_name = zm_zonemgr::get_zone_from_position(var_994bab50 + vectorscale((0, 0, 1), 15), 1);
     }
     if (!zm_zonemgr::zone_is_enabled(var_e663e7c5.zone_name)) {
         return 0;
@@ -645,7 +645,7 @@ function function_b703696e(var_e9aa3e9c, var_374304ac, var_e06892e6, trigger_fun
     var_1386d828.stub = var_e9aa3e9c;
     var_1386d828.spawn_loc = var_e9aa3e9c;
     var_1386d828.var_3c964886 = var_374304ac;
-    var_1386d828.var_5faf570.var_1386d828 = var_e9aa3e9c.trigger_func;
+    var_1386d828.var_5faf570 = var_e9aa3e9c.trigger_func;
     var_1386d828.var_9e9b72eb = var_e06892e6;
     var_e9aa3e9c.trigger_func = trigger_func;
     zm_unitrigger::reregister_unitrigger(var_e9aa3e9c);

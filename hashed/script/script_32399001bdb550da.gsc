@@ -33,8 +33,8 @@ function private function_70a657d8() {
     if (!isdefined(world.mapdata)) {
         world.mapdata = [];
     }
-    if (!isdefined(world.var_db44b078)) {
-        world.var_db44b078 = [];
+    if (!isdefined(world.playerdata)) {
+        world.playerdata = [];
     }
     level.var_9d48137b = &function_81534803;
     level.var_8fe8980a = &function_9797184c;
@@ -90,7 +90,7 @@ function save(var_116ab377, var_296c7056) {
         return;
     }
     var_8670e6a3 = function_6440b06b(#"persistent", var_116ab377);
-    var_8670e6a3.unlocked.var_8670e6a3 = 1;
+    var_8670e6a3.unlocked = 1;
     player stats::set_stat(#"mapdata", var_116ab377, #"unlocked", 1);
     var_116ab377 = function_8136eb5a();
     player stats::set_stat(#"hash_19d9ddd673699368", hash(var_116ab377));
@@ -296,13 +296,13 @@ function function_7396472d() {
 // Size: 0x7e
 function function_6d003cb9(name, value) {
     campaignmode = "CP";
-    if (!isdefined(world.var_db44b078)) {
-        world.var_db44b078 = [];
+    if (!isdefined(world.playerdata)) {
+        world.playerdata = [];
     }
-    if (!isdefined(world.var_db44b078[campaignmode])) {
-        world.var_db44b078[campaignmode] = [];
+    if (!isdefined(world.playerdata[campaignmode])) {
+        world.playerdata[campaignmode] = [];
     }
-    world.var_db44b078[campaignmode][name] = value;
+    world.playerdata[campaignmode][name] = value;
 }
 
 // Namespace savegame/save
@@ -311,8 +311,8 @@ function function_6d003cb9(name, value) {
 // Size: 0x54
 function function_2ee66e93(name, var_d5308097) {
     campaignmode = "CP";
-    if (isdefined(world.var_db44b078[campaignmode][name])) {
-        return world.var_db44b078[campaignmode][name];
+    if (isdefined(world.playerdata[campaignmode][name])) {
+        return world.playerdata[campaignmode][name];
     }
     return var_d5308097;
 }
@@ -323,8 +323,8 @@ function function_2ee66e93(name, var_d5308097) {
 // Size: 0x4c
 function function_8d95e71c() {
     campaignmode = "CP";
-    if (isdefined(world.var_db44b078) && isdefined(world.var_db44b078[campaignmode])) {
-        world.var_db44b078[campaignmode] = [];
+    if (isdefined(world.playerdata) && isdefined(world.playerdata[campaignmode])) {
+        world.playerdata[campaignmode] = [];
     }
 }
 

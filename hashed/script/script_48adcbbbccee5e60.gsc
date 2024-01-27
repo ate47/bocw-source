@@ -43,7 +43,7 @@ class cinteractive_shot : cluielem {
     // Params 1, eflags: 0x2 linked
     // Checksum 0x5ac555af, Offset: 0x368
     // Size: 0x4c
-    function setup_clientfields(*var_f5852d69) {
+    function setup_clientfields(*textcallback) {
         cluielem::setup_clientfields("interactive_shot");
         cluielem::function_dcb34c80("string", "text", 1);
     }
@@ -71,9 +71,9 @@ class cinteractive_shot : cluielem {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xe6ea3d70, Offset: 0xe0
 // Size: 0x176
-function register(var_f5852d69) {
+function register(textcallback) {
     elem = new cinteractive_shot();
-    [[ elem ]]->setup_clientfields(var_f5852d69);
+    [[ elem ]]->setup_clientfields(textcallback);
     if (!isdefined(level.var_ae746e8f)) {
         level.var_ae746e8f = associativearray();
     }

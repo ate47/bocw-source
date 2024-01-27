@@ -125,7 +125,7 @@ function private function_9d59692c(var_33e339fe, var_551c6a0e) {
                     var_101bb183 = array(var_101bb183);
                 }
                 var_101bb183[var_101bb183.size] = var_33e339fe;
-                var_33e339fe.instance.var_33e339fe = self.instance;
+                var_33e339fe.instance = self.instance;
             }
             if (isdefined(var_551c6a0e)) {
                 if (!isdefined(var_101bb183)) {
@@ -134,7 +134,7 @@ function private function_9d59692c(var_33e339fe, var_551c6a0e) {
                     var_101bb183 = array(var_101bb183);
                 }
                 var_101bb183[var_101bb183.size] = var_551c6a0e;
-                var_551c6a0e.instance.var_551c6a0e = self.instance;
+                var_551c6a0e.instance = self.instance;
             }
         }
         return;
@@ -176,9 +176,9 @@ function private function_1915f8d6(params, *hotzone) {
 // Checksum 0xa14e48a7, Offset: 0x908
 // Size: 0x1bc
 function private setup_awareness(entity) {
-    entity.has_awareness.entity = 1;
-    entity.ignorelaststandplayers.entity = 1;
-    entity.var_1267fdea.entity = 1;
+    entity.has_awareness = 1;
+    entity.ignorelaststandplayers = 1;
+    entity.var_1267fdea = 1;
     self callback::function_d8abfc3d(#"on_ai_damage", &awareness::function_5f511313);
     awareness::register_state(entity, #"wander", &function_7cdb2c4c, &awareness::function_4ebe4a6d, &awareness::function_b264a0bc, undefined, &awareness::function_555d960b);
     awareness::register_state(entity, #"investigate", &function_ba66485e, &awareness::function_9eefc327, &awareness::function_34162a25, undefined, &awareness::function_a360dd00);
@@ -232,7 +232,7 @@ function private function_9ffae104(entity) {
     }
     if (isdefined(entity.attackable) && !isdefined(entity.var_b238ef38)) {
         if (!isdefined(entity.var_3f8ea75c)) {
-            entity.var_3f8ea75c.entity = namespace_85745671::function_12d90bae(entity, 150, 500, entity.attackable);
+            entity.var_3f8ea75c = namespace_85745671::function_12d90bae(entity, 150, 500, entity.attackable);
         }
         if (isdefined(entity.var_3f8ea75c)) {
             if (!entity isingoal(entity.var_3f8ea75c)) {

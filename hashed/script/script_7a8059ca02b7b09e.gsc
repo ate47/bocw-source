@@ -2,9 +2,9 @@
 #using scripts\core_common\system_shared.gsc;
 #using scripts\core_common\callbacks_shared.gsc;
 
-#namespace namespace_341c57b3;
+#namespace telemetry;
 
-// Namespace namespace_341c57b3/namespace_f4a96b08
+// Namespace telemetry/namespace_f4a96b08
 // Params 2, eflags: 0x0
 // Checksum 0x4549a9cc, Offset: 0x90
 // Size: 0x2c
@@ -12,7 +12,7 @@ function add_callback(var_8c8ba9e1, var_f71e2d8f) {
     callback::add_callback(var_8c8ba9e1, var_f71e2d8f);
 }
 
-// Namespace namespace_341c57b3/namespace_f4a96b08
+// Namespace telemetry/namespace_f4a96b08
 // Params 2, eflags: 0x0
 // Checksum 0xa32be86a, Offset: 0xc8
 // Size: 0x7a
@@ -26,7 +26,7 @@ function function_98df8818(callback, func) {
     level.var_1bebdc8e[callback][level.var_1bebdc8e[callback].size] = func;
 }
 
-// Namespace namespace_341c57b3/namespace_f4a96b08
+// Namespace telemetry/namespace_f4a96b08
 // Params 2, eflags: 0x2 linked
 // Checksum 0x7221740b, Offset: 0x150
 // Size: 0xc8
@@ -48,7 +48,7 @@ function function_18135b72(callback, data) {
     }
 }
 
-// Namespace namespace_341c57b3/namespace_f4a96b08
+// Namespace telemetry/namespace_f4a96b08
 // Params 0, eflags: 0x0
 // Checksum 0xe602d453, Offset: 0x220
 // Size: 0x2c

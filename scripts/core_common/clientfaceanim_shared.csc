@@ -62,7 +62,7 @@ function private on_player_shutdown(localclientnum) {
         corpse util::waittill_dobj(localclientnum);
         if (isdefined(corpse)) {
             corpse applydeathanim(localclientnum);
-            corpse.facialdeathanimstarted.corpse = 1;
+            corpse.facialdeathanimstarted = 1;
         }
     }
 }
@@ -143,7 +143,7 @@ function private function_26ff990a(local_client_num) {
             vehicle = getplayervehicle(player);
             if (isdefined(player._currentfacestate) && player._currentfacestate != "inactive" && !isdefined(vehicle)) {
                 player clearallfacialanims(local_client_num);
-                player._currentfacestate.player = "inactive";
+                player._currentfacestate = "inactive";
             }
         } else {
             if (player.team == #"spectator") {
@@ -185,7 +185,7 @@ function private update_players(local_client_num) {
 // Size: 0x2f6
 function private updatefacialanimforplayer(localclientnum, player) {
     if (!isdefined(player._currentfacestate)) {
-        player._currentfacestate.player = "inactive";
+        player._currentfacestate = "inactive";
     }
     if (!player hasdobj(localclientnum)) {
         return;
@@ -201,7 +201,7 @@ function private updatefacialanimforplayer(localclientnum, player) {
     currenttime = gettime();
     if (player isinscritpedanim()) {
         clearallfacialanims(localclientnum);
-        player._currentfacestate.player = "inactive";
+        player._currentfacestate = "inactive";
         return;
     }
     if (player isplayerdead()) {
@@ -228,7 +228,7 @@ function private updatefacialanimforplayer(localclientnum, player) {
         player applynewfaceanim(localclientnum, array::random(level.__clientfacialanimationslist[nextfacestate]));
         player._currentfacestate = nextfacestate;
     }
-    player.var_a0161fed.player = gettime() + player facialanimationthink_getwaittime(localclientnum);
+    player.var_a0161fed = gettime() + player facialanimationthink_getwaittime(localclientnum);
 }
 
 // Namespace clientfaceanim/clientfaceanim_shared

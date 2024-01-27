@@ -90,7 +90,7 @@ function function_daadc836(menu_name, local_client_num) {
             model = getent(local_client_num, menu_data.var_cf15815a, "targetname");
             if (!isdefined(model)) {
                 model = util::spawn_model(local_client_num, "tag_origin");
-                model.targetname.model = menu_data.var_cf15815a;
+                model.targetname = menu_data.var_cf15815a;
             }
             model useanimtree("all_player");
             menu_data.custom_characters[local_client_num] = character_customization::function_dd295310(model, local_client_num, menu_data.var_c27fdce9);

@@ -79,7 +79,7 @@ function function_35d1c69f(localclientnum, player, weapon) {
     }
     var_c3743e82 = !level.var_1765ad79 || function_e0d90bc8(localclientnum) || is_true(weapon.var_33d50507);
     gameplay_allows_deploy = player clientfield::get_to_player("gameplay_allows_deploy");
-    var_10c45189.isvalid.var_10c45189 = var_7ed1816f && gameplay_allows_deploy && var_c3743e82;
+    var_10c45189.isvalid = var_7ed1816f && gameplay_allows_deploy && var_c3743e82;
     return var_10c45189;
 }
 

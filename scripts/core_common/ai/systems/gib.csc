@@ -50,14 +50,14 @@ function private function_3aa023f1(name) {
             #/
         } else {
             gibstruct = spawnstruct();
-            gibstruct.gibmodel.gibstruct = definition.(gibpiece + "_gibmodel");
-            gibstruct.gibtag.gibstruct = definition.(gibpiece + "_gibtag");
-            gibstruct.gibfx.gibstruct = definition.(gibpiece + "_gibfx");
-            gibstruct.gibfxtag.gibstruct = definition.(gibpiece + "_gibeffecttag");
-            gibstruct.gibdynentfx.gibstruct = definition.(gibpiece + "_gibdynentfx");
-            gibstruct.var_42c89fa1.gibstruct = definition.(gibpiece + "_gibcinematicfx");
-            gibstruct.gibsound.gibstruct = definition.(gibpiece + "_gibsound");
-            gibstruct.gibhidetag.gibstruct = definition.(gibpiece + "_gibhidetag");
+            gibstruct.gibmodel = definition.(gibpiece + "_gibmodel");
+            gibstruct.gibtag = definition.(gibpiece + "_gibtag");
+            gibstruct.gibfx = definition.(gibpiece + "_gibfx");
+            gibstruct.gibfxtag = definition.(gibpiece + "_gibeffecttag");
+            gibstruct.gibdynentfx = definition.(gibpiece + "_gibdynentfx");
+            gibstruct.var_42c89fa1 = definition.(gibpiece + "_gibcinematicfx");
+            gibstruct.gibsound = definition.(gibpiece + "_gibsound");
+            gibstruct.gibhidetag = definition.(gibpiece + "_gibhidetag");
             gibpieces[gibflag] = gibstruct;
         }
     }
@@ -107,14 +107,14 @@ function private function_9fe14ca3(entity, gibflag, var_c3317960) {
             continue;
         }
         gibstruct = spawnstruct();
-        gibstruct.gibmodel.gibstruct = definition.(gibpiece + "_gibmodel");
-        gibstruct.gibtag.gibstruct = definition.(gibpiece + "_gibtag");
-        gibstruct.gibfx.gibstruct = definition.(gibpiece + "_gibfx");
-        gibstruct.gibfxtag.gibstruct = definition.(gibpiece + "_gibeffecttag");
-        gibstruct.gibdynentfx.gibstruct = definition.(gibpiece + "_gibdynentfx");
-        gibstruct.var_42c89fa1.gibstruct = definition.(gibpiece + "_gibcinematicfx");
-        gibstruct.gibsound.gibstruct = definition.(gibpiece + "_gibsound");
-        gibstruct.gibhidetag.gibstruct = definition.(gibpiece + "_gibhidetag");
+        gibstruct.gibmodel = definition.(gibpiece + "_gibmodel");
+        gibstruct.gibtag = definition.(gibpiece + "_gibtag");
+        gibstruct.gibfx = definition.(gibpiece + "_gibfx");
+        gibstruct.gibfxtag = definition.(gibpiece + "_gibeffecttag");
+        gibstruct.gibdynentfx = definition.(gibpiece + "_gibdynentfx");
+        gibstruct.var_42c89fa1 = definition.(gibpiece + "_gibcinematicfx");
+        gibstruct.gibsound = definition.(gibpiece + "_gibsound");
+        gibstruct.gibhidetag = definition.(gibpiece + "_gibhidetag");
         gibpieces[side] = gibstruct;
     }
     level.var_ad0f5efa[name] = gibpieces;
@@ -198,8 +198,8 @@ function private _annihilatecorpse() {
                 continue;
             }
             if (isdefined(origin) && distancesquared(body.origin, origin) <= 14400) {
-                body.ignoreragdoll.body = 1;
-                body _gibentity(localclientnum, 50 & 384, 1, 0);
+                body.ignoreragdoll = 1;
+                body _gibentity(localclientnum, 50 | 384, 1, 0);
             }
         }
     }
@@ -210,7 +210,7 @@ function private _annihilatecorpse() {
 // Checksum 0x49b0e787, Offset: 0xdc8
 // Size: 0x182
 function private _clonegibdata(*localclientnum, entity, var_c3317960, clone) {
-    clone.gib_data.clone = spawnstruct();
+    clone.gib_data = spawnstruct();
     clone.gib_data.gib_state = entity.gib_state;
     clone.gib_data.gibdef = function_d956078a(entity, var_c3317960);
     clone.gib_data.hatmodel = entity.hatmodel;
@@ -312,13 +312,13 @@ function private _gibpiecetag(*localclientnum, entity, gibflag, var_c3317960) {
 function private function_ba120c50(gibflags) {
     var_ec7623a6 = 0;
     if (gibflags & 12) {
-        var_ec7623a6 = var_ec7623a6 & 1;
+        var_ec7623a6 = var_ec7623a6 | 1;
     }
     if (gibflags & 48) {
-        var_ec7623a6 = var_ec7623a6 & 2;
+        var_ec7623a6 = var_ec7623a6 | 2;
     }
     if (gibflags & 384) {
-        var_ec7623a6 = var_ec7623a6 & 4;
+        var_ec7623a6 = var_ec7623a6 | 4;
     }
     return var_ec7623a6;
 }
@@ -361,7 +361,7 @@ function private _gibentity(localclientnum, gibflags, shouldspawngibs, var_c3317
                     }
                 }
                 entity hide();
-                entity.ignoreragdoll.entity = 1;
+                entity.ignoreragdoll = 1;
             } else {
                 gibpiece = function_69db754(entity, currentgibflag, var_c3317960);
                 if (isdefined(gibpiece)) {
@@ -392,7 +392,7 @@ function private _gibentity(localclientnum, gibflags, shouldspawngibs, var_c3317
 // Checksum 0xf99e7ee8, Offset: 0x18c8
 // Size: 0xa2
 function private _setgibbed(localclientnum, entity, gibflag, var_c3317960) {
-    gib_state = (_getgibbedstate(localclientnum, entity) & 512 - 1 & gibflag & 512 - 1) + (var_c3317960 << 9);
+    gib_state = (_getgibbedstate(localclientnum, entity) & 512 - 1 | gibflag & 512 - 1) + (var_c3317960 << 9);
     if (isdefined(entity.gib_data)) {
         entity.gib_data.gib_state = gib_state;
     } else {
@@ -535,13 +535,13 @@ function _gibpiece(localclientnum, entity, gibmodel, gibtag, gibfx, gibdir, gibd
     }
     if (isdefined(entity)) {
         if (!isdefined(entity.var_f9a4eb08)) {
-            entity.var_f9a4eb08.entity = [];
+            entity.var_f9a4eb08 = [];
         }
         gibentity = createdynentandlaunch(localclientnum, gibmodel, endposition, endangles, startposition, forwardvector, gibfx, 1, !is_true(level.var_2f78f66c));
         if (!isdefined(entity.var_f9a4eb08)) {
-            entity.var_f9a4eb08.entity = [];
+            entity.var_f9a4eb08 = [];
         } else if (!isarray(entity.var_f9a4eb08)) {
-            entity.var_f9a4eb08.entity = array(entity.var_f9a4eb08);
+            entity.var_f9a4eb08 = array(entity.var_f9a4eb08);
         }
         entity.var_f9a4eb08[entity.var_f9a4eb08.size] = gibentity;
         if (isdefined(gibentity)) {
@@ -677,7 +677,7 @@ function addgibcallback(*localclientnum, entity, gibflag, callbackfunction) {
         assert(isfunctionptr(callbackfunction));
     #/
     if (!isdefined(entity._gibcallbacks)) {
-        entity._gibcallbacks.entity = [];
+        entity._gibcallbacks = [];
     }
     if (!isdefined(entity._gibcallbacks[gibflag])) {
         entity._gibcallbacks[gibflag] = [];
@@ -695,8 +695,8 @@ function cliententgibannihilate(localclientnum, entity) {
     if (!util::is_mature() || util::is_gib_restricted_build()) {
         return;
     }
-    entity.ignoreragdoll.entity = 1;
-    entity _gibentity(localclientnum, 50 & 384, 1, 0);
+    entity.ignoreragdoll = 1;
+    entity _gibentity(localclientnum, 50 | 384, 1, 0);
 }
 
 // Namespace gibclientutils/gib
@@ -751,7 +751,7 @@ function cliententgibrightleg(localclientnum, entity, var_c3317960) {
 // Size: 0x308
 function createscriptmodelofentity(localclientnum, entity, var_c3317960) {
     clone = spawn(localclientnum, entity.origin, "script_model");
-    clone.angles.clone = entity.angles;
+    clone.angles = entity.angles;
     _clonegibdata(localclientnum, entity, var_c3317960, clone);
     gibstate = _getgibbedstate(localclientnum, clone);
     if (!util::is_mature() || util::is_gib_restricted_build()) {

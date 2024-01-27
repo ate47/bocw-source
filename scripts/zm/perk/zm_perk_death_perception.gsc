@@ -130,14 +130,14 @@ function function_a19424cd(*state) {
 // Checksum 0xf097a862, Offset: 0x9b0
 // Size: 0x9a
 function function_6bdb193c(use_trigger, perk_machine, bump_trigger, *collision) {
-    perk_machine.script_sound.perk_machine = "mus_perks_deathperception_jingle";
-    perk_machine.script_string.perk_machine = "death_perception_perk";
-    perk_machine.script_label.perk_machine = "mus_perks_deathperception_sting";
-    perk_machine.target.perk_machine = "vending_deathperception";
-    bump_trigger.script_string.bump_trigger = "death_perception_perk";
-    bump_trigger.targetname.bump_trigger = "vending_deathperception";
+    perk_machine.script_sound = "mus_perks_deathperception_jingle";
+    perk_machine.script_string = "death_perception_perk";
+    perk_machine.script_label = "mus_perks_deathperception_sting";
+    perk_machine.target = "vending_deathperception";
+    bump_trigger.script_string = "death_perception_perk";
+    bump_trigger.targetname = "vending_deathperception";
     if (isdefined(collision)) {
-        collision.script_string.collision = "death_perception_perk";
+        collision.script_string = "death_perception_perk";
     }
 }
 

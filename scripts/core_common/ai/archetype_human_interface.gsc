@@ -47,19 +47,19 @@ function useanimationoverridecallback(entity, *attribute, *oldvalue, value) {
 function vignettemodecallback(entity, *attribute, *oldvalue, value) {
     switch (value) {
     case #"off":
-        oldvalue.pushable.oldvalue = 1;
+        oldvalue.pushable = 1;
         oldvalue collidewithactors(0);
         oldvalue pushplayer(0);
         oldvalue setavoidancemask("avoid all");
         break;
     case #"slow":
-        oldvalue.pushable.oldvalue = 0;
+        oldvalue.pushable = 0;
         oldvalue collidewithactors(0);
         oldvalue pushplayer(1);
         oldvalue setavoidancemask("avoid ai");
         break;
     case #"fast":
-        oldvalue.pushable.oldvalue = 0;
+        oldvalue.pushable = 0;
         oldvalue collidewithactors(1);
         oldvalue pushplayer(1);
         oldvalue setavoidancemask("avoid none");

@@ -55,7 +55,7 @@ function function_bff5c062(var_8a3384f2, attackingplayer) {
     var_8a3384f2.owner thread globallogic_audio::function_a2cde53d(var_8a3384f2.weapon, var_f3ab6571);
     var_8a3384f2.owner weaponobjects::hackerremoveweapon(var_8a3384f2);
     var_8a3384f2 weaponobjects::function_fb7b0024(var_8a3384f2.owner);
-    var_8a3384f2.team.var_8a3384f2 = attackingplayer.team;
+    var_8a3384f2.team = attackingplayer.team;
     var_8a3384f2 setteam(attackingplayer.team);
     var_8a3384f2.owner = attackingplayer;
     var_8a3384f2 setowner(attackingplayer);
@@ -79,30 +79,30 @@ function function_bff5c062(var_8a3384f2, attackingplayer) {
 // Checksum 0x3c61b833, Offset: 0x650
 // Size: 0x1ca
 function function_db9e3adb(watcher) {
-    watcher.watchforfire.watcher = 1;
-    watcher.hackertoolradius.watcher = level.equipmenthackertoolradius;
-    watcher.hackertooltimems.watcher = level.equipmenthackertooltimems;
-    watcher.ownergetsassist.watcher = 1;
-    watcher.ignoredirection.watcher = 1;
-    watcher.immediatedetonation.watcher = 1;
-    watcher.immunespecialty.watcher = "specialty_immunegastrap";
-    watcher.var_8eda8949.watcher = (0, 0, 0);
-    watcher.stuntime.watcher = 1;
-    watcher.var_10efd558.watcher = "switched_field_upgrade";
+    watcher.watchforfire = 1;
+    watcher.hackertoolradius = level.equipmenthackertoolradius;
+    watcher.hackertooltimems = level.equipmenthackertooltimems;
+    watcher.ownergetsassist = 1;
+    watcher.ignoredirection = 1;
+    watcher.immediatedetonation = 1;
+    watcher.immunespecialty = "specialty_immunegastrap";
+    watcher.var_8eda8949 = (0, 0, 0);
+    watcher.stuntime = 1;
+    watcher.var_10efd558 = "switched_field_upgrade";
     if (isdefined(watcher.weapon.customsettings)) {
         var_e6fbac16 = getscriptbundle(watcher.weapon.customsettings);
-        watcher.var_20d0363e.watcher = var_e6fbac16.var_af22b5dc;
-        watcher.activationdelay.watcher = var_e6fbac16.var_a3fd61e7;
-        watcher.detectiongraceperiod.watcher = isdefined(var_e6fbac16.var_88b0248b) ? var_e6fbac16.var_88b0248b : 0;
+        watcher.var_20d0363e = var_e6fbac16.var_af22b5dc;
+        watcher.activationdelay = var_e6fbac16.var_a3fd61e7;
+        watcher.detectiongraceperiod = isdefined(var_e6fbac16.var_88b0248b) ? var_e6fbac16.var_88b0248b : 0;
         if (isdefined(var_e6fbac16.var_29467698) && var_e6fbac16.var_29467698 != 0) {
-            watcher.detonateradius.watcher = var_e6fbac16.var_29467698;
+            watcher.detonateradius = var_e6fbac16.var_29467698;
         }
     }
-    watcher.ondetonatecallback.watcher = &function_f82566e8;
-    watcher.onfizzleout.watcher = &weaponobjects::weaponobjectfizzleout;
-    watcher.onspawn.watcher = &function_7641afa6;
-    watcher.var_994b472b.watcher = &function_5192d9d6;
-    watcher.stun.watcher = &weaponobjects::weaponstun;
+    watcher.ondetonatecallback = &function_f82566e8;
+    watcher.onfizzleout = &weaponobjects::weaponobjectfizzleout;
+    watcher.onspawn = &function_7641afa6;
+    watcher.var_994b472b = &function_5192d9d6;
+    watcher.stun = &weaponobjects::weaponstun;
 }
 
 // Namespace namespace_8a3384f2/namespace_8a3384f2
@@ -192,14 +192,14 @@ function function_f82566e8(attacker, weapon, target) {
     dir_up = (0, 0, 1);
     ent = spawn("script_model", position);
     ent setteam(self.team);
-    ent.team.ent = self.team;
+    ent.team = self.team;
     owner = self.owner;
-    ent.killcament.ent = self.killcament;
-    ent.ishacked.ent = self.ishacked;
+    ent.killcament = self.killcament;
+    ent.ishacked = self.ishacked;
     if (isdefined(owner)) {
         ent setowner(owner);
         ent.owner = owner;
-        owner.var_d56524fc.owner = gettime();
+        owner.var_d56524fc = gettime();
         owner.var_2af14143 = position;
     }
     ent thread function_2f37f73e(var_7e6e7f9f, duration, radius);
@@ -293,9 +293,9 @@ function function_516794d8(grenadeent, var_7e6e7f9f) {
             }
             if (waitresult._notify == #"timeout" && isdefined(var_160d2855) && player istouching(var_160d2855) && bullettracepassed(grenadeent.origin, player.origin + vectorscale((0, 0, 1), 12), 0, player)) {
                 if (!isdefined(player.var_2ee59975)) {
-                    player.var_2ee59975.player = [];
+                    player.var_2ee59975 = [];
                 } else if (!isarray(player.var_2ee59975)) {
-                    player.var_2ee59975.player = array(player.var_2ee59975);
+                    player.var_2ee59975 = array(player.var_2ee59975);
                 }
                 if (!isinarray(player.var_2ee59975, var_160d2855)) {
                     player.var_2ee59975[var_160d2855 getentitynumber()] = var_160d2855;
@@ -342,7 +342,7 @@ function private function_78d7002(var_7e6e7f9f, owner, grenadeent) {
     } else {
         dot = getstatuseffect(#"hash_69c2a47bf2322b6b");
     }
-    dot.killcament.dot = grenadeent.killcament;
+    dot.killcament = grenadeent.killcament;
     dot.var_3fc27996 = grenadeent;
     self thread status_effect::status_effect_apply(dot, var_7e6e7f9f, owner, 0, undefined, undefined, grenadeent.origin);
     self playsoundtoplayer(#"hash_569fa11d8a4005ba", self);

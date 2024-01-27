@@ -204,10 +204,10 @@ function private function_d8f0d6ea() {
 // Size: 0x224
 function function_e415c864(var_5da09c55) {
     if (!isdefined(var_5da09c55.radius)) {
-        var_5da09c55.radius.var_5da09c55 = 96;
+        var_5da09c55.radius = 96;
     }
     if (!isdefined(var_5da09c55.height)) {
-        var_5da09c55.height.var_5da09c55 = 128;
+        var_5da09c55.height = 128;
     }
     var_912fa366 = spawn("trigger_radius_use", var_5da09c55.origin + vectorscale((0, 0, 1), 16), 0, var_5da09c55.radius, var_5da09c55.height);
     var_912fa366.var_5da09c55 = var_5da09c55;
@@ -297,14 +297,14 @@ function function_2a1bd467(struct) {
     }
     level.var_8e1ba65f[struct.target] = struct;
     if (sessionmodeiszombiesgame()) {
-        struct.inuse.struct = 0;
-        struct.cooldown.struct = [];
+        struct.inuse = 0;
+        struct.cooldown = [];
         if (isdefined(struct.script_string)) {
-            struct.clip.struct = getent(struct.script_string, "targetname");
+            struct.clip = getent(struct.script_string, "targetname");
         }
     }
     struct.var_b53569ae = var_b53569ae;
-    struct.trigger.struct = function_e415c864(struct);
+    struct.trigger = function_e415c864(struct);
 }
 
 // Namespace namespace_9cf4c697/namespace_9cf4c697
@@ -356,11 +356,11 @@ function zipline_use(var_df401071) {
             player.var_7bc01517 = var_7bc01517;
         }
         if (isdefined(var_5da09c55.trigger)) {
-            player.var_c09c6e0a.player = var_5da09c55.trigger;
+            player.var_c09c6e0a = var_5da09c55.trigger;
             player.var_c09c6e0a setinvisibletoplayer(player);
         }
         if (isdefined(var_7bc01517.trigger)) {
-            player.var_30b41973.player = var_7bc01517.trigger;
+            player.var_30b41973 = var_7bc01517.trigger;
             player.var_30b41973 setinvisibletoplayer(player);
         }
     }

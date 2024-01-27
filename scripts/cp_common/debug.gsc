@@ -553,9 +553,9 @@ function function_d851fc3c() {
         ais = getactorarray();
         foreach (ai in ais) {
             if (var_cb0c64e2) {
-                ai.enableterrainik.ai = 1;
+                ai.enableterrainik = 1;
             } else {
-                ai.enableterrainik.ai = 0;
+                ai.enableterrainik = 0;
             }
             if (var_e429284b) {
                 ai lookatentity(level.players[0]);
@@ -957,12 +957,12 @@ function function_38439dea(animname) {
 function function_90b2a0b0(x, y, msg) {
     /#
         var_5e39fc46 = newdebughudelem();
-        var_5e39fc46.alignx.var_5e39fc46 = "<unknown string>";
-        var_5e39fc46.aligny.var_5e39fc46 = "<unknown string>";
+        var_5e39fc46.alignx = "<unknown string>";
+        var_5e39fc46.aligny = "<unknown string>";
         var_5e39fc46.x = x;
         var_5e39fc46.y = y;
-        var_5e39fc46.alpha.var_5e39fc46 = 1;
-        var_5e39fc46.fontscale.var_5e39fc46 = 1;
+        var_5e39fc46.alpha = 1;
+        var_5e39fc46.fontscale = 1;
         var_5e39fc46.label = msg;
         level.var_e8a7658[level.var_e8a7658.size] = var_5e39fc46;
         return var_5e39fc46;
@@ -999,31 +999,31 @@ function function_b03ecdf3() {
             level.var_bf8f879e.alpha = 0;
             for (i = 0; i < level.var_7a31c7d; i++) {
                 var_5e39fc46 = newdebughudelem();
-                var_5e39fc46.alignx.var_5e39fc46 = "<unknown string>";
-                var_5e39fc46.aligny.var_5e39fc46 = "<unknown string>";
-                var_5e39fc46.x.var_5e39fc46 = 10;
-                var_5e39fc46.y.var_5e39fc46 = 200 + i * 10;
-                var_5e39fc46.alpha.var_5e39fc46 = 1;
-                var_5e39fc46.fontscale.var_5e39fc46 = 1;
-                var_5e39fc46.label.var_5e39fc46 = "<unknown string>";
+                var_5e39fc46.alignx = "<unknown string>";
+                var_5e39fc46.aligny = "<unknown string>";
+                var_5e39fc46.x = 10;
+                var_5e39fc46.y = 200 + i * 10;
+                var_5e39fc46.alpha = 1;
+                var_5e39fc46.fontscale = 1;
+                var_5e39fc46.label = "<unknown string>";
                 level.var_100db28b[level.var_100db28b.size] = var_5e39fc46;
                 var_5e39fc46 = newdebughudelem();
-                var_5e39fc46.alignx.var_5e39fc46 = "<unknown string>";
-                var_5e39fc46.aligny.var_5e39fc46 = "<unknown string>";
-                var_5e39fc46.x.var_5e39fc46 = -10;
-                var_5e39fc46.y.var_5e39fc46 = 200 + i * 10;
-                var_5e39fc46.alpha.var_5e39fc46 = 1;
-                var_5e39fc46.fontscale.var_5e39fc46 = 1;
-                var_5e39fc46.label.var_5e39fc46 = "<unknown string>";
+                var_5e39fc46.alignx = "<unknown string>";
+                var_5e39fc46.aligny = "<unknown string>";
+                var_5e39fc46.x = -10;
+                var_5e39fc46.y = 200 + i * 10;
+                var_5e39fc46.alpha = 1;
+                var_5e39fc46.fontscale = 1;
+                var_5e39fc46.label = "<unknown string>";
                 level.var_eef171c[level.var_eef171c.size] = var_5e39fc46;
                 var_5e39fc46 = newdebughudelem();
-                var_5e39fc46.alignx.var_5e39fc46 = "<unknown string>";
-                var_5e39fc46.aligny.var_5e39fc46 = "<unknown string>";
-                var_5e39fc46.x.var_5e39fc46 = 210;
-                var_5e39fc46.y.var_5e39fc46 = 200 + i * 10;
-                var_5e39fc46.alpha.var_5e39fc46 = 1;
-                var_5e39fc46.fontscale.var_5e39fc46 = 1;
-                var_5e39fc46.label.var_5e39fc46 = "<unknown string>";
+                var_5e39fc46.alignx = "<unknown string>";
+                var_5e39fc46.aligny = "<unknown string>";
+                var_5e39fc46.x = 210;
+                var_5e39fc46.y = 200 + i * 10;
+                var_5e39fc46.alpha = 1;
+                var_5e39fc46.fontscale = 1;
+                var_5e39fc46.label = "<unknown string>";
                 level.var_c22fdb8f[level.var_c22fdb8f.size] = var_5e39fc46;
             }
             level.var_100db28b[0].color = (1, 1, 0);
@@ -1062,14 +1062,14 @@ function function_b03ecdf3() {
         if (level.var_969ba98a) {
             for (i = 0; i < level.var_b19c1dfd.size; i++) {
                 var_d357ff0e = level.var_b19c1dfd[i];
-                var_d357ff0e.var_cdbf6838.var_d357ff0e = vectorscale((1, 1, 1), 0.5);
+                var_d357ff0e.var_cdbf6838 = vectorscale((1, 1, 1), 0.5);
             }
         } else if (players.size > 0) {
             dot = 0.85;
             forward = anglestoforward(players[0] getplayerangles());
             for (i = 0; i < level.var_b19c1dfd.size; i++) {
                 var_d357ff0e = level.var_b19c1dfd[i];
-                var_d357ff0e.var_cdbf6838.var_d357ff0e = (0.25, 1, 0.5);
+                var_d357ff0e.var_cdbf6838 = (0.25, 1, 0.5);
                 difference = vectornormalize(var_d357ff0e.origin + vectorscale((0, 0, 1), 40) - players[0].origin + vectorscale((0, 0, 1), 55));
                 var_a25004a9 = vectordot(forward, difference);
                 if (var_a25004a9 < dot) {
@@ -1134,14 +1134,14 @@ function function_21619947() {
         }
         for (i = 0; i < level.var_7a31c7d; i++) {
             var_5e39fc46 = level.var_100db28b[i];
-            var_5e39fc46.label.var_5e39fc46 = "<unknown string>";
-            var_5e39fc46.color.var_5e39fc46 = (1, 1, 1);
+            var_5e39fc46.label = "<unknown string>";
+            var_5e39fc46.color = (1, 1, 1);
             var_5e39fc46 = level.var_eef171c[i];
-            var_5e39fc46.label.var_5e39fc46 = "<unknown string>";
-            var_5e39fc46.color.var_5e39fc46 = (1, 1, 1);
+            var_5e39fc46.label = "<unknown string>";
+            var_5e39fc46.color = (1, 1, 1);
             var_5e39fc46 = level.var_c22fdb8f[i];
-            var_5e39fc46.label.var_5e39fc46 = "<unknown string>";
-            var_5e39fc46.color.var_5e39fc46 = (1, 1, 1);
+            var_5e39fc46.label = "<unknown string>";
+            var_5e39fc46.color = (1, 1, 1);
         }
         keys = getarraykeys(var_15dfe17e);
         highest = -1;
@@ -1180,14 +1180,14 @@ function function_21619947() {
             var_d357ff0e = var_15dfe17e[key];
             var_5e39fc46 = level.var_100db28b[key];
             soundalias = function_788f7656(var_d357ff0e);
-            var_5e39fc46.label.var_5e39fc46 = key + 1 + "<unknown string>" + var_d357ff0e.notetrack;
+            var_5e39fc46.label = key + 1 + "<unknown string>" + var_d357ff0e.notetrack;
             var_5e39fc46 = level.var_eef171c[key];
-            var_5e39fc46.label.var_5e39fc46 = int((time - var_d357ff0e.end_time - 60000) * 0.001);
+            var_5e39fc46.label = int((time - var_d357ff0e.end_time - 60000) * 0.001);
             if (isdefined(soundalias)) {
                 var_5e39fc46 = level.var_c22fdb8f[key];
                 var_5e39fc46.label = soundalias;
                 if (!function_564b1bcf(var_d357ff0e.animname, var_d357ff0e.var_6d60fb23, var_d357ff0e.notetrack)) {
-                    var_5e39fc46.color.var_5e39fc46 = vectorscale((1, 1, 1), 0.7);
+                    var_5e39fc46.color = vectorscale((1, 1, 1), 0.7);
                 }
             }
         }
@@ -1447,57 +1447,57 @@ function new_hud(hud_name, msg, x, y, scale) {
 function debug_show_viewpos() {
     /#
         var_1071292 = newdebughudelem();
-        var_1071292.x.var_1071292 = 10;
-        var_1071292.y.var_1071292 = 300;
-        var_1071292.alpha.var_1071292 = 0;
-        var_1071292.alignx.var_1071292 = "<unknown string>";
-        var_1071292.fontscale.var_1071292 = 1.2;
+        var_1071292.x = 10;
+        var_1071292.y = 300;
+        var_1071292.alpha = 0;
+        var_1071292.alignx = "<unknown string>";
+        var_1071292.fontscale = 1.2;
         var_1071292 settext(#"hash_59d12e465ccbab9a");
         x_pos = var_1071292.x + 50;
         var_2a7875e1 = newdebughudelem();
         var_2a7875e1.x = x_pos;
-        var_2a7875e1.y.var_2a7875e1 = 300;
-        var_2a7875e1.alpha.var_2a7875e1 = 0;
-        var_2a7875e1.alignx.var_2a7875e1 = "<unknown string>";
-        var_2a7875e1.fontscale.var_2a7875e1 = 1.2;
+        var_2a7875e1.y = 300;
+        var_2a7875e1.alpha = 0;
+        var_2a7875e1.alignx = "<unknown string>";
+        var_2a7875e1.fontscale = 1.2;
         var_2a7875e1 setvalue(0);
         var_8ef03ed3 = newdebughudelem();
-        var_8ef03ed3.x.var_8ef03ed3 = 10;
-        var_8ef03ed3.y.var_8ef03ed3 = 300;
-        var_8ef03ed3.alpha.var_8ef03ed3 = 0;
-        var_8ef03ed3.alignx.var_8ef03ed3 = "<unknown string>";
-        var_8ef03ed3.fontscale.var_8ef03ed3 = 1.2;
+        var_8ef03ed3.x = 10;
+        var_8ef03ed3.y = 300;
+        var_8ef03ed3.alpha = 0;
+        var_8ef03ed3.alignx = "<unknown string>";
+        var_8ef03ed3.fontscale = 1.2;
         var_8ef03ed3 setvalue(0);
         var_7125033d = newdebughudelem();
-        var_7125033d.x.var_7125033d = 10;
-        var_7125033d.y.var_7125033d = 300;
-        var_7125033d.alpha.var_7125033d = 0;
-        var_7125033d.alignx.var_7125033d = "<unknown string>";
-        var_7125033d.fontscale.var_7125033d = 1.2;
+        var_7125033d.x = 10;
+        var_7125033d.y = 300;
+        var_7125033d.alpha = 0;
+        var_7125033d.alignx = "<unknown string>";
+        var_7125033d.fontscale = 1.2;
         var_7125033d setvalue(0);
         setdvar(#"debug_show_viewpos", 0);
         players = getplayers();
         while (1) {
             if (getdvarint(#"debug_show_viewpos", 0) > 0) {
-                var_1071292.alpha.var_1071292 = 1;
-                var_2a7875e1.alpha.var_2a7875e1 = 1;
-                var_8ef03ed3.alpha.var_8ef03ed3 = 1;
-                var_7125033d.alpha.var_7125033d = 1;
+                var_1071292.alpha = 1;
+                var_2a7875e1.alpha = 1;
+                var_8ef03ed3.alpha = 1;
+                var_7125033d.alpha = 1;
                 x = players[0].origin[0];
                 y = players[0].origin[1];
                 z = players[0].origin[2];
                 var_41568b91 = (2 + function_d2d39ee5(x)) * 8 + 10;
                 var_b2c0ee64 = (2 + function_d2d39ee5(y)) * 8 + 10;
-                var_8ef03ed3.x.var_8ef03ed3 = x_pos + var_41568b91;
-                var_7125033d.x.var_7125033d = x_pos + var_41568b91 + var_b2c0ee64;
+                var_8ef03ed3.x = x_pos + var_41568b91;
+                var_7125033d.x = x_pos + var_41568b91 + var_b2c0ee64;
                 var_2a7875e1 setvalue(function_6334846f(x, 100));
                 var_8ef03ed3 setvalue(function_6334846f(y, 100));
                 var_7125033d setvalue(function_6334846f(z, 100));
             } else {
-                var_1071292.alpha.var_1071292 = 0;
-                var_2a7875e1.alpha.var_2a7875e1 = 0;
-                var_8ef03ed3.alpha.var_8ef03ed3 = 0;
-                var_7125033d.alpha.var_7125033d = 0;
+                var_1071292.alpha = 0;
+                var_2a7875e1.alpha = 0;
+                var_8ef03ed3.alpha = 0;
+                var_7125033d.alpha = 0;
             }
             wait(0.5);
         }
@@ -1647,35 +1647,35 @@ function weapon_engage_dists_init() {
     /#
         level.engagedists = [];
         genericpistol = spawnstruct();
-        genericpistol.engagedistmin.genericpistol = 125;
-        genericpistol.engagedistoptimal.genericpistol = 400;
-        genericpistol.engagedistmulligan.genericpistol = 100;
-        genericpistol.engagedistmax.genericpistol = 600;
+        genericpistol.engagedistmin = 125;
+        genericpistol.engagedistoptimal = 400;
+        genericpistol.engagedistmulligan = 100;
+        genericpistol.engagedistmax = 600;
         shotty = spawnstruct();
-        shotty.engagedistmin.shotty = 0;
-        shotty.engagedistoptimal.shotty = 300;
-        shotty.engagedistmulligan.shotty = 100;
-        shotty.engagedistmax.shotty = 600;
+        shotty.engagedistmin = 0;
+        shotty.engagedistoptimal = 300;
+        shotty.engagedistmulligan = 100;
+        shotty.engagedistmax = 600;
         genericsmg = spawnstruct();
-        genericsmg.engagedistmin.genericsmg = 100;
-        genericsmg.engagedistoptimal.genericsmg = 500;
-        genericsmg.engagedistmulligan.genericsmg = 150;
-        genericsmg.engagedistmax.genericsmg = 1000;
+        genericsmg.engagedistmin = 100;
+        genericsmg.engagedistoptimal = 500;
+        genericsmg.engagedistmulligan = 150;
+        genericsmg.engagedistmax = 1000;
         genericriflesa = spawnstruct();
-        genericriflesa.engagedistmin.genericriflesa = 325;
-        genericriflesa.engagedistoptimal.genericriflesa = 800;
-        genericriflesa.engagedistmulligan.genericriflesa = 300;
-        genericriflesa.engagedistmax.genericriflesa = 1600;
+        genericriflesa.engagedistmin = 325;
+        genericriflesa.engagedistoptimal = 800;
+        genericriflesa.engagedistmulligan = 300;
+        genericriflesa.engagedistmax = 1600;
         generichmg = spawnstruct();
-        generichmg.engagedistmin.generichmg = 500;
-        generichmg.engagedistoptimal.generichmg = 700;
-        generichmg.engagedistmulligan.generichmg = 300;
-        generichmg.engagedistmax.generichmg = 1400;
+        generichmg.engagedistmin = 500;
+        generichmg.engagedistoptimal = 700;
+        generichmg.engagedistmulligan = 300;
+        generichmg.engagedistmax = 1400;
         genericsniper = spawnstruct();
-        genericsniper.engagedistmin.genericsniper = 950;
-        genericsniper.engagedistoptimal.genericsniper = 2000;
-        genericsniper.engagedistmulligan.genericsniper = 500;
-        genericsniper.engagedistmax.genericsniper = 3000;
+        genericsniper.engagedistmin = 950;
+        genericsniper.engagedistoptimal = 2000;
+        genericsniper.engagedistmulligan = 500;
+        genericsniper.engagedistmax = 3000;
         engage_dists_add("<unknown string>", genericpistol);
         engage_dists_add("<unknown string>", genericsmg);
         engage_dists_add("<unknown string>", shotty);
@@ -1936,8 +1936,8 @@ function function_3171027d() {
                 classname = spawner.classname;
                 vehicletype = spawner.vehicletype;
                 if (issubstr(classname, "<unknown string>")) {
-                    struct.radius.struct = 64;
-                    struct.isvehicle.struct = 0;
+                    struct.radius = 64;
+                    struct.isvehicle = 0;
                     classname = getsubstr(classname, 6);
                 } else {
                     continue;
@@ -1993,10 +1993,10 @@ function function_90edec37() {
                 }
                 var_ec8949ef = getdvarint(#"hash_3021082919420d0e", 0);
                 var_a127c98a = getdvarint(#"hash_2db0e1d5ff98140b", 0);
-                spawn.pacifist.spawn = getdvarint(#"hash_75bbef09faabea97", 0);
+                spawn.pacifist = getdvarint(#"hash_75bbef09faabea97", 0);
                 spawn set(#"hash_624cb07df0cbb198", "<unknown string>", var_ec8949ef);
                 spawn set(#"hash_624cb07df0cbb198", "<unknown string>", var_a127c98a);
-                spawn.fixednode.spawn = 0;
+                spawn.fixednode = 0;
                 wait(0.3);
             } else if (self buttonpressed("<unknown string>") || self buttonpressed("<unknown string>")) {
                 level.dynamic_spawn_dummy_model hide();

@@ -103,7 +103,7 @@ function function_e1dad5f7(var_c886f650 = 0) {
                 self stats::function_622feb0d(#"hash_7b5a77a85b0ffab7", #"hash_6104ccb8b9cd1659", 1);
                 self stats::function_6fb0b113(#"hash_7b5a77a85b0ffab7", #"hash_6b473078d990e6b2");
             }
-            player.health.player = player.var_66cb03ad;
+            player.health = player.var_66cb03ad;
             if (!player scene::is_igc_active()) {
                 player clientfield::increment_to_player("fx_heal_aoe_player_clientfield", 1);
             }
@@ -181,7 +181,7 @@ function function_451de831(var_c360c10f) {
         foreach (player in getplayers()) {
             var_6c77565b = getentitiesinradius(player.origin, 128, 15);
             foreach (zombie in var_6c77565b) {
-                zombie.var_3f87fe17.zombie = {#player:self, #var_f05cc9a3:gettime()};
+                zombie.var_3f87fe17 = {#player:self, #var_f05cc9a3:gettime()};
                 if (zombie.var_6f84b820 == #"normal") {
                     zombie zombie_utility::setup_zombie_knockdown(self);
                 } else if (zombie.var_6f84b820 == #"special" || zombie.var_6f84b820 == #"hash_72d4f2ad2e333eb4") {
@@ -330,12 +330,12 @@ function function_4a8d5852(params) {
         LOC_00000104:
             var_bf135e90 = spawn("script_model", player.origin);
             var_6af41078 = spawn("script_model", (player.origin[0], player.origin[1], player.origin[2] + 10));
-            var_6af41078.angles.var_6af41078 = vectorscale((1, 0, 0), 270);
+            var_6af41078.angles = vectorscale((1, 0, 0), 270);
             var_bf135e90 setmodel("tag_origin");
             var_6af41078 setmodel("tag_origin");
             var_bf135e90 clientfield::set("fx_heal_aoe_bubble_clientfield", 1);
             var_bf135e90.player = player;
-            var_bf135e90.owner.var_bf135e90 = self;
+            var_bf135e90.owner = self;
             var_bf135e90 thread function_6f2ddf8e();
             var_bf135e90 thread function_93b178ae();
             var_6af41078 thread function_93b178ae();

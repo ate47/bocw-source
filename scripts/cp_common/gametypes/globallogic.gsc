@@ -814,9 +814,9 @@ function sendafteractionreport(winner) {
         player stats::function_7a850245(#"demofileid", getdemofileid());
         player stats::function_7a850245(#"matchid", getmatchid());
         if (isdefined(winner) && winner == player.pers[#"team"]) {
-            player stats::function_7a850245(#"hash_18f8a178f6083a8e", 1);
+            player stats::function_7a850245(#"matchwon", 1);
         } else {
-            player stats::function_7a850245(#"hash_18f8a178f6083a8e", 0);
+            player stats::function_7a850245(#"matchwon", 0);
         }
         var_f5f2abb6 = 0;
         var_8d14d7e = 0;
@@ -845,7 +845,7 @@ function sendafteractionreport(winner) {
             }
         }
         player stats::function_7a850245(#"valid", 1);
-        player stats::function_7a850245(#"hash_372ebbc622aaa659", 0);
+        player stats::function_7a850245(#"viewed", 0);
         if (isdefined(player.pers[#"matchesplayedstatstracked"])) {
             gamemode = util::getcurrentgamemode();
             player incrementmatchcompletionstat(gamemode, "played", "completed");
@@ -1529,7 +1529,7 @@ function function_2905c18e() {
             level.playercount[team]++;
             if (player.sessionstate == "playing") {
                 level.playerlives[team]++;
-                player.spawnqueueindex.player = -1;
+                player.spawnqueueindex = -1;
                 if (isalive(player)) {
                     if (isdefined(player.laststand) && player.laststand) {
                         level.laststandcount[team]++;
@@ -1776,7 +1776,7 @@ function graceperiod() {
         for (i = 0; i < players.size; i++) {
             player = players[i];
             if (!player.hasspawned && player.sessionteam != #"spectator" && !isalive(player)) {
-                player.statusicon.player = "hud_status_dead";
+                player.statusicon = "hud_status_dead";
             }
         }
     }

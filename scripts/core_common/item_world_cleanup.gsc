@@ -213,7 +213,7 @@ function private function_b7c5f376(*var_11f2ba1f, *var_c5a0bed8, previous_origin
             var_da05d0b2 = supplydrop getlinkedent();
             jumpiffalse(isdefined(var_da05d0b2) && is_true(var_da05d0b2.var_5d0810d7)) LOC_0000015a;
         } else if (function_3703bc36(dropitem, previous_origin, var_7c597200, 1)) {
-            dropitem.hidetime.dropitem = gettime();
+            dropitem.hidetime = gettime();
             item_world::function_a54d07e6(dropitem, undefined);
             dropitem delete();
             waitframe(1);
@@ -284,7 +284,7 @@ function private function_ada16428(var_11f2ba1f, var_c5a0bed8, *previous_origin,
                 if (isdefined(vehicle.var_8e382c5f)) {
                     delay = delay + 300000;
                 }
-                vehicle.var_a6b3cbdc.vehicle = time + delay;
+                vehicle.var_a6b3cbdc = time + delay;
             }
             if (vehicle.var_a6b3cbdc > time) {
                 continue;

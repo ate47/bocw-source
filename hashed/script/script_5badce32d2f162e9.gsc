@@ -484,7 +484,7 @@ function private stealthreactcondition(entity) {
 // Checksum 0x3bbaa02a, Offset: 0x29b8
 // Size: 0x1a
 function private stealthreactstart(behaviortreeentity) {
-    behaviortreeentity.stealth_reacting.behaviortreeentity = 1;
+    behaviortreeentity.stealth_reacting = 1;
 }
 
 // Namespace namespace_dba1ec08/namespace_186a1392
@@ -519,7 +519,7 @@ function private stealthidleterminate(behaviortreeentity) {
     behaviortreeentity notify(#"stealthidleterminate");
     if (is_true(behaviortreeentity.stealth_resume_after_idle)) {
         behaviortreeentity.stealth_resume_after_idle = undefined;
-        behaviortreeentity.stealth_resume.behaviortreeentity = 1;
+        behaviortreeentity.stealth_resume = 1;
     }
 }
 

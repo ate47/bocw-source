@@ -523,7 +523,7 @@ function function_f92e23de() {
         level waittill(#"save_restore");
         var_eeb08e4 = self getnoncheckpointdata("INCAPS");
         var_397a145d = self stats::get_stat(#"playerstatslist", #"incaps", #"statvalue");
-        var_ebf6c5c6 = self stats::get_stat(#"playerstatsbymap", var_11ffb46, #"hash_2f236080a1058999", #"incaps");
+        var_ebf6c5c6 = self stats::get_stat(#"playerstatsbymap", var_11ffb46, #"currentstats", #"incaps");
         if (isdefined(var_eeb08e4)) {
             /#
                 assert(var_eeb08e4 >= var_397a145d, "<unknown string>");
@@ -532,12 +532,12 @@ function function_f92e23de() {
                 assert(var_eeb08e4 >= var_ebf6c5c6, "<unknown string>");
             #/
             self stats::set_stat(#"playerstatslist", #"incaps", #"statvalue", var_eeb08e4);
-            self.incaps = var_eeb08e4 - self stats::get_stat(#"playerstatsbymap", var_11ffb46, #"hash_2f236080a1058999", #"incaps");
+            self.incaps = var_eeb08e4 - self stats::get_stat(#"playerstatsbymap", var_11ffb46, #"currentstats", #"incaps");
             self.pers[#"incaps"] = self.incaps;
         }
         var_cb9c2ac2 = self getnoncheckpointdata("REVIVES");
         var_a25504c0 = self stats::get_stat(#"playerstatslist", #"revives", #"statvalue");
-        var_939d065a = self stats::get_stat(#"playerstatsbymap", var_11ffb46, #"hash_2f236080a1058999", #"revives");
+        var_939d065a = self stats::get_stat(#"playerstatsbymap", var_11ffb46, #"currentstats", #"revives");
         if (isdefined(var_cb9c2ac2)) {
             /#
                 assert(var_cb9c2ac2 >= var_a25504c0, "<unknown string>");
@@ -546,7 +546,7 @@ function function_f92e23de() {
                 assert(var_cb9c2ac2 >= var_939d065a, "<unknown string>");
             #/
             self stats::set_stat(#"playerstatslist", #"revives", #"statvalue", var_cb9c2ac2);
-            self.revives = var_cb9c2ac2 - self stats::get_stat(#"playerstatsbymap", var_11ffb46, #"hash_2f236080a1058999", #"revives");
+            self.revives = var_cb9c2ac2 - self stats::get_stat(#"playerstatsbymap", var_11ffb46, #"currentstats", #"revives");
             /#
                 assert(self.revives >= 0);
             #/
@@ -832,7 +832,7 @@ function callback_playerdamage(einflictor, eattacker, idamage, idflags, smeansof
     idamage = int(idamage);
     profileNamedStart(#"");
     if (!isdefined(vdir)) {
-        idflags = idflags & 4;
+        idflags = idflags | 4;
     }
     friendly = 0;
     if (self.health != self.maxhealth && !self util::function_a1d6293()) {
@@ -890,8 +890,8 @@ function callback_playerdamage(einflictor, eattacker, idamage, idflags, smeansof
         if ((smeansofdeath == "MOD_PISTOL_BULLET" || smeansofdeath == "MOD_RIFLE_BULLET") && !attackerishittingteammate) {
             if (self.hasriotshieldequipped) {
                 if (isplayer(eattacker)) {
-                    eattacker.lastattackedshieldplayer.eattacker = self;
-                    eattacker.lastattackedshieldtime.eattacker = gettime();
+                    eattacker.lastattackedshieldplayer = self;
+                    eattacker.lastattackedshieldtime = gettime();
                 }
                 previous_shield_damage = self.shielddamageblocked;
                 self.shielddamageblocked = self.shielddamageblocked + idamage;
@@ -1017,8 +1017,8 @@ function callback_playerdamage(einflictor, eattacker, idamage, idflags, smeansof
                     idamage = 1;
                 }
                 if (level.friendlyfiredelay && level.friendlyfiredelaytime >= (gettime() - level.starttime - level.discardtime) / 1000) {
-                    eattacker.lastdamagewasfromenemy.eattacker = 0;
-                    eattacker.friendlydamage.eattacker = 1;
+                    eattacker.lastdamagewasfromenemy = 0;
+                    eattacker.friendlydamage = 1;
                     eattacker finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, vdamageorigin, psoffsettime, boneindex, vsurfacenormal);
                     eattacker.friendlydamage = undefined;
                 } else {
@@ -1030,8 +1030,8 @@ function callback_playerdamage(einflictor, eattacker, idamage, idflags, smeansof
                 if (idamage < 1) {
                     idamage = 1;
                 }
-                eattacker.lastdamagewasfromenemy.eattacker = 0;
-                eattacker.friendlydamage.eattacker = 1;
+                eattacker.lastdamagewasfromenemy = 0;
+                eattacker.friendlydamage = 1;
                 eattacker finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, vdamageorigin, psoffsettime, boneindex, vsurfacenormal);
                 eattacker.friendlydamage = undefined;
             } else if (level.friendlyfire == 3 && isalive(eattacker)) {
@@ -1040,9 +1040,9 @@ function callback_playerdamage(einflictor, eattacker, idamage, idflags, smeansof
                     idamage = 1;
                 }
                 self.lastdamagewasfromenemy = 0;
-                eattacker.lastdamagewasfromenemy.eattacker = 0;
+                eattacker.lastdamagewasfromenemy = 0;
                 self finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, vdamageorigin, psoffsettime, boneindex, vsurfacenormal);
-                eattacker.friendlydamage.eattacker = 1;
+                eattacker.friendlydamage = 1;
                 eattacker finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, vdamageorigin, psoffsettime, boneindex, vsurfacenormal);
                 eattacker.friendlydamage = undefined;
             }
@@ -1315,14 +1315,14 @@ function function_6f08b381(idamage, smeansofdeath) {
 // Size: 0xee
 function private function_39ab832f(var_a5ddf15c) {
     player = self;
-    player.var_d11f7daf.player = 0;
+    player.var_d11f7daf = 0;
     var_d3eb1bf1 = [2:-90, 1:90, 0:0];
     if (math::cointoss()) {
         var_d3eb1bf1 = [2:90, 1:-90, 0:0];
     }
     for (i = 0; i < var_d3eb1bf1.size; i++) {
         if (player function_bb371c3(var_d3eb1bf1[i], var_a5ddf15c)) {
-            player.var_d11f7daf.player = var_d3eb1bf1[i];
+            player.var_d11f7daf = var_d3eb1bf1[i];
             return 1;
         }
     }
@@ -1441,8 +1441,8 @@ function private function_7abbea8e(params) {
     player namespace_61e6d095::function_4279fd02(#"hash_6bf3273fdaffc859");
     player val::function_e681e68e(#"hash_38a6778d2daddc56");
     if (!var_5d3a3f89) {
-        player.allowdeath.player = 1;
-        player kill(undefined, undefined, undefined, undefined, 4 & 16384 & 8192 & 32768);
+        player.allowdeath = 1;
+        player kill(undefined, undefined, undefined, undefined, 4 | 16384 | 8192 | 32768);
     }
 }
 
@@ -1626,11 +1626,11 @@ function function_2a11f244(einflictor, attacker, smeansofdeath, weapon, *shitloc
         if (level.rankedmatch && !level.disablestattracking) {
             smeansofdeath stats::set_stat(#"higheststats", #"kill_streak", smeansofdeath.pers[#"totalkillstreakcount"]);
         }
-        smeansofdeath.kill_streak.smeansofdeath = smeansofdeath.pers[#"cur_kill_streak"];
+        smeansofdeath.kill_streak = smeansofdeath.pers[#"cur_kill_streak"];
     }
     if (smeansofdeath.pers[#"cur_kill_streak"] > smeansofdeath.gametype_kill_streak) {
         smeansofdeath stats::function_baa25a23(#"kill_streak", smeansofdeath.pers[#"cur_kill_streak"]);
-        smeansofdeath.gametype_kill_streak.smeansofdeath = smeansofdeath.pers[#"cur_kill_streak"];
+        smeansofdeath.gametype_kill_streak = smeansofdeath.pers[#"cur_kill_streak"];
     }
     if (weapon == "MOD_HEAD_SHOT") {
         goto LOC_00000422;
@@ -2416,11 +2416,11 @@ function function_ff093620(attacker, weapon) {
         attacker notify(#"killed", {#victim:self});
     }
     if (isdefined(self.capturinglastflag) && self.capturinglastflag == 1) {
-        attacker.lastcapkiller.attacker = 1;
+        attacker.lastcapkiller = 1;
     }
     if (isdefined(attacker) && isdefined(weapon) && weapon.statname == #"planemortar") {
         if (!isdefined(attacker.planemortarbda)) {
-            attacker.planemortarbda.attacker = 0;
+            attacker.planemortarbda = 0;
         }
         attacker.planemortarbda++;
     }
@@ -2486,7 +2486,7 @@ function function_4d3e38fb() {
 // Checksum 0x401114b3, Offset: 0xae18
 // Size: 0x94
 function private function_c674fc77(statname) {
-    var_c0b8f5fd = self stats::get_stat(#"playerstatsbymap", getrootmapname(), #"hash_2f236080a1058999", statname);
+    var_c0b8f5fd = self stats::get_stat(#"playerstatsbymap", getrootmapname(), #"currentstats", statname);
     var_65442406 = self stats::get_stat(#"playerstatslist", statname, #"statvalue");
     return var_65442406 - var_c0b8f5fd;
 }
@@ -2495,8 +2495,8 @@ function private function_c674fc77(statname) {
 // Params 1, eflags: 0x0
 // Checksum 0xf18a2264, Offset: 0xaeb8
 // Size: 0x40c
-function function_4b78690e(var_8c0308ed) {
-    if (!isdefined(var_8c0308ed)) {
+function function_4b78690e(current_map) {
+    if (!isdefined(current_map)) {
         return;
     }
     for (i = 1; i < 58; i++) {
@@ -2516,13 +2516,13 @@ function function_4b78690e(var_8c0308ed) {
     array::add(var_797451ed, "REVIVES");
     foreach (stat in var_797451ed) {
         statvalue = self stats::get_stat(#"playerstatslist", stat, #"statvalue");
-        self stats::set_stat(#"playerstatsbymap", var_8c0308ed, #"hash_2f236080a1058999", stat, statvalue);
+        self stats::set_stat(#"playerstatsbymap", current_map, #"currentstats", stat, statvalue);
     }
     for (i = 0; i < 6; i++) {
-        var_b69c01aa = self stats::get_stat(#"playerstatsbymap", var_8c0308ed, #"hash_1e0160af4fd80dff", i);
-        self stats::set_stat(#"playerstatsbymap", var_8c0308ed, #"hash_518113a79b08988", i, var_b69c01aa);
-        var_3f6b581d = self stats::get_stat(#"playerstatsbymap", var_8c0308ed, #"hash_657891d65d881524", i);
-        self stats::set_stat(#"playerstatsbymap", var_8c0308ed, #"hash_233621878f97486b", i, var_3f6b581d);
+        var_b69c01aa = self stats::get_stat(#"playerstatsbymap", current_map, #"hash_1e0160af4fd80dff", i);
+        self stats::set_stat(#"playerstatsbymap", current_map, #"hash_518113a79b08988", i, var_b69c01aa);
+        var_3f6b581d = self stats::get_stat(#"playerstatsbymap", current_map, #"hash_657891d65d881524", i);
+        self stats::set_stat(#"playerstatsbymap", current_map, #"hash_233621878f97486b", i, var_3f6b581d);
     }
     for (i = 0; i < 20; i++) {
         var_d8bb48fd = self stats::get_stat(#"playercpdecorations", i);

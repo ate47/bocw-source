@@ -140,8 +140,8 @@ function function_744f2a2(struct, var_a0f07ebc, modelname, hint_string, var_c024
     trigger = namespace_8b6a9d79::function_214737c7(struct, callbackfunction, hint_string, undefined, 64, 128, undefined, offset);
     trigger.scriptmodel = scriptmodel;
     if (var_1b39aebe) {
-        trigger.var_be22b2f0.trigger = 1;
-        trigger.power_on.trigger = 0;
+        trigger.var_be22b2f0 = 1;
+        trigger.power_on = 0;
         trigger thread wait_for_power(var_386a4480);
     }
     trigger.var_a0f07ebc = var_a0f07ebc;

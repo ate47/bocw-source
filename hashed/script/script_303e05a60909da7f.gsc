@@ -58,7 +58,7 @@ function onplayerkilled(*einflictor, attacker, *idamage, *smeansofdeath, weapon,
         var_f5d993e3 = isdefined(psoffsettime.pers[#"cur_kill_streak"]) ? psoffsettime.pers[#"cur_kill_streak"] : 0;
         if (var_f5d993e3 >= level.var_8d51c9b1 && psoffsettime clientfield::get("high_value_target") !== 1) {
             psoffsettime clientfield::set("high_value_target", 1);
-            psoffsettime.var_366e280d.psoffsettime = 1;
+            psoffsettime.var_366e280d = 1;
         }
     }
     if (isdefined(self) && self.var_366e280d === 1) {

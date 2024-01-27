@@ -40,8 +40,8 @@ function function_d28e9b17() {
     self endon(#"hash_1e2c098e8231a30f", #"hash_562d458e34274132");
     org = namespace_ec06fe4a::function_e22ae9b3(self.origin, "tag_origin");
     if (isdefined(org)) {
-        org.targetname.org = "boxingPickupUpdate";
-        org.angles.org = (0, randomint(180), 0);
+        org.targetname = "boxingPickupUpdate";
+        org.angles = (0, randomint(180), 0);
         org setmodel("tag_origin");
         self.doa.var_c3159deb = org;
     } else {
@@ -49,12 +49,12 @@ function function_d28e9b17() {
     }
     leftglove = namespace_ec06fe4a::function_e22ae9b3(self.origin + (0, 60, 32), "zombietron_boxing_gloves_lt");
     if (isdefined(leftglove)) {
-        leftglove.targetname.leftglove = "leftglove";
+        leftglove.targetname = "leftglove";
         leftglove setplayercollision(0);
         leftglove linkto(org, "tag_origin", (0, 60, 32), vectorscale((1, 0, 0), 90));
-        trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", leftglove.origin, 1 & 512 & 8, 40, 50);
+        trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", leftglove.origin, 1 | 512 | 8, 40, 50);
         if (isdefined(trigger)) {
-            trigger.targetname.trigger = "leftGlove";
+            trigger.targetname = "leftGlove";
             trigger enablelinkto();
             trigger linkto(leftglove);
             trigger thread function_7c757878(self, "MOD_IMPACT", &function_c2d94d61);
@@ -64,12 +64,12 @@ function function_d28e9b17() {
     org.trigger1 = trigger;
     rightglove = namespace_ec06fe4a::function_e22ae9b3(self.origin + (0, -60, 32), "zombietron_boxing_gloves_rt");
     if (isdefined(rightglove)) {
-        rightglove.targetname.rightglove = "rightGlove";
+        rightglove.targetname = "rightGlove";
         rightglove setplayercollision(0);
         rightglove linkto(org, "tag_origin", (0, -60, 32), vectorscale((1, 0, 0), 90));
-        trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", rightglove.origin, 1 & 512 & 8, 40, 50);
+        trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", rightglove.origin, 1 | 512 | 8, 40, 50);
         if (isdefined(trigger)) {
-            trigger.targetname.trigger = "rightGlove";
+            trigger.targetname = "rightGlove";
             trigger enablelinkto();
             trigger linkto(rightglove);
             trigger thread function_7c757878(self, "MOD_IMPACT", &function_c2d94d61);

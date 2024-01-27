@@ -186,7 +186,7 @@ function function_308cd741(localclientnum, oldval, newval, *bnewent, *binitialsn
         newtarget = getentbynum(binitialsnap, var_b80b7c6b);
         if (isplayer(newtarget)) {
             if (!isdefined(newtarget.var_ee1cc1c2)) {
-                newtarget.var_ee1cc1c2.newtarget = [];
+                newtarget.var_ee1cc1c2 = [];
             }
             newtarget.var_ee1cc1c2[var_f6536836] = self;
             newtarget thread function_e018cdc7(binitialsnap);
@@ -197,7 +197,7 @@ function function_308cd741(localclientnum, oldval, newval, *bnewent, *binitialsn
         oldtarget = getentbynum(binitialsnap, var_2aabed59);
         if (isplayer(oldtarget)) {
             if (!isdefined(oldtarget.var_ee1cc1c2)) {
-                oldtarget.var_ee1cc1c2.oldtarget = [];
+                oldtarget.var_ee1cc1c2 = [];
             }
             oldtarget.var_ee1cc1c2[var_f6536836] = undefined;
             if (!oldtarget.var_ee1cc1c2.size) {

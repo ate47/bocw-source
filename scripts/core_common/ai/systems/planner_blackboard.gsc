@@ -19,7 +19,7 @@ function clearundostack(blackboard) {
     /#
         assert(isstruct(blackboard));
     #/
-    blackboard.undostack.blackboard = [];
+    blackboard.undostack = [];
 }
 
 // Namespace plannerblackboard/planner_blackboard
@@ -31,7 +31,7 @@ function create(&blackboardvalues) {
         assert(isarray(blackboardvalues));
     #/
     blackboard = spawnstruct();
-    blackboard.undostack.blackboard = [];
+    blackboard.undostack = [];
     blackboard.values = blackboardvalues;
     setreadmode(blackboard);
     return blackboard;
@@ -108,7 +108,7 @@ function setattribute(blackboard, attribute, value, readonly = 0) {
     #/
     stackvalue = spawnstruct();
     stackvalue.attribute = attribute;
-    stackvalue.value.stackvalue = blackboard.values[attribute];
+    stackvalue.value = blackboard.values[attribute];
     blackboard.undostack[blackboard.undostack.size] = stackvalue;
     blackboard.values[attribute] = value;
 }
@@ -118,7 +118,7 @@ function setattribute(blackboard, attribute, value, readonly = 0) {
 // Checksum 0x7cc370cf, Offset: 0x5d0
 // Size: 0x1a
 function setreadmode(blackboard) {
-    blackboard.mode.blackboard = "r";
+    blackboard.mode = "r";
 }
 
 // Namespace plannerblackboard/planner_blackboard
@@ -126,7 +126,7 @@ function setreadmode(blackboard) {
 // Checksum 0xd68b0840, Offset: 0x5f8
 // Size: 0x1a
 function setreadwritemode(blackboard) {
-    blackboard.mode.blackboard = "rw";
+    blackboard.mode = "rw";
 }
 
 // Namespace plannerblackboard/planner_blackboard

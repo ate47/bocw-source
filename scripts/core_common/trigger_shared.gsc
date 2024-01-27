@@ -92,7 +92,7 @@ function trigger_think() {
 // Size: 0x4c
 function add_flags(flags) {
     trigger_flags = function_27f2ef17(self);
-    function_4e3bb793(self, trigger_flags & flags);
+    function_4e3bb793(self, trigger_flags | flags);
 }
 
 // Namespace trigger/trigger_shared
@@ -316,7 +316,7 @@ function script_flag_set_touching(trigger) {
     trigger thread _detect_touched();
     while (1) {
         var_b26d1711 = trigger.script_touched;
-        trigger.script_touched.trigger = 0;
+        trigger.script_touched = 0;
         waitframe(1);
         waittillframeend();
         if (!trigger.script_touched) {
@@ -441,7 +441,7 @@ function wait_till(str_name, str_key = "targetname", e_entity, b_assert = 1) {
                 waitresult = undefined;
                 waitresult = s_tracker waittill(#"trigger");
                 trigger_hit = waitresult.trigger;
-                trigger_hit.who.trigger_hit = waitresult.activator;
+                trigger_hit.who = waitresult.activator;
             }
             return trigger_hit;
         }
@@ -802,11 +802,11 @@ function function_thread(ent, on_enter_payload, on_exit_payload) {
     if (!isdefined(self)) {
         return;
     }
-    var_f911c758 = self getentitynumber();
-    if (ent ent_already_in(var_f911c758)) {
+    myentnum = self getentitynumber();
+    if (ent ent_already_in(myentnum)) {
         return;
     }
-    add_to_ent(ent, var_f911c758);
+    add_to_ent(ent, myentnum);
     if (isdefined(on_enter_payload)) {
         [[ on_enter_payload ]](ent);
     }
@@ -817,7 +817,7 @@ function function_thread(ent, on_enter_payload, on_exit_payload) {
         if (isdefined(on_exit_payload)) {
             [[ on_exit_payload ]](ent);
         }
-        remove_from_ent(ent, var_f911c758);
+        remove_from_ent(ent, myentnum);
     }
 }
 
@@ -844,7 +844,7 @@ function ent_already_in(var_d35ff8d8) {
 // Size: 0x40
 function add_to_ent(ent, var_d35ff8d8) {
     if (!isdefined(ent._triggers)) {
-        ent._triggers.ent = [];
+        ent._triggers = [];
     }
     ent._triggers[var_d35ff8d8] = 1;
 }

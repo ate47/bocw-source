@@ -91,7 +91,7 @@ class class_df106b1 : cluielem {
     // Params 13, eflags: 0x0
     // Checksum 0xb7169364, Offset: 0x990
     // Size: 0x28c
-    function setup_clientfields(xcallback, ycallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, *var_f5852d69, horizontal_alignmentcallback, var_9194fd72, *var_3d17213, var_766e2bbb) {
+    function setup_clientfields(xcallback, ycallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, *textcallback, horizontal_alignmentcallback, var_9194fd72, *var_3d17213, var_766e2bbb) {
         cluielem::setup_clientfields("DOA_TextElement");
         cluielem::add_clientfield("x", 1, 7, "int", heightcallback);
         cluielem::add_clientfield("y", 1, 6, "int", fadeovertimecallback);
@@ -99,7 +99,7 @@ class class_df106b1 : cluielem {
         cluielem::add_clientfield("fadeOverTime", 1, 5, "int", redcallback);
         cluielem::add_clientfield("alpha", 1, 4, "float", greencallback);
         cluielem::add_clientfield("red", 1, 4, "float", bluecallback);
-        cluielem::add_clientfield("green", 1, 4, "float", var_f5852d69);
+        cluielem::add_clientfield("green", 1, 4, "float", textcallback);
         cluielem::add_clientfield("blue", 1, 4, "float", horizontal_alignmentcallback);
         cluielem::function_dcb34c80("string", "text", 1);
         cluielem::add_clientfield("horizontal_alignment", 1, 2, "int", var_9194fd72);
@@ -261,9 +261,9 @@ function function_f50d5765(localclientnum, text) {
 // Params 13, eflags: 0x0
 // Checksum 0xa3084496, Offset: 0x450
 // Size: 0x1ee
-function register(xcallback, ycallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, var_f5852d69, horizontal_alignmentcallback, var_9194fd72, var_3d17213, var_766e2bbb) {
+function register(xcallback, ycallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, textcallback, horizontal_alignmentcallback, var_9194fd72, var_3d17213, var_766e2bbb) {
     elem = new class_df106b1();
-    [[ elem ]]->setup_clientfields(xcallback, ycallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, var_f5852d69, horizontal_alignmentcallback, var_9194fd72, var_3d17213, var_766e2bbb);
+    [[ elem ]]->setup_clientfields(xcallback, ycallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, textcallback, horizontal_alignmentcallback, var_9194fd72, var_3d17213, var_766e2bbb);
     if (!isdefined(level.var_ae746e8f)) {
         level.var_ae746e8f = associativearray();
     }

@@ -24,7 +24,7 @@ function launch(ent_1, str_tag1, ent_2, str_tag2, str_beam_type, var_ee0708f0) {
             }
         }
     } else if (isdefined(s_beam)) {
-        s_beam.beam_id.s_beam = beamlaunch(self.localclientnum, ent_1, str_tag1, ent_2, str_tag2, str_beam_type);
+        s_beam.beam_id = beamlaunch(self.localclientnum, ent_1, str_tag1, ent_2, str_tag2, str_beam_type);
         self thread _kill_on_ent_death(self.localclientnum, s_beam, ent_1, ent_2);
         return s_beam.beam_id;
     }
@@ -40,7 +40,7 @@ function function_cfb2f62a(localclientnum, ent_1, str_tag1, ent_2, str_tag2, str
         s_beam = _new_beam(ent_1, str_tag1, ent_2, str_tag2, str_beam_type);
     }
     if (isdefined(s_beam)) {
-        s_beam.beam_id.s_beam = beamlaunch(localclientnum, ent_1, str_tag1, ent_2, str_tag2, str_beam_type);
+        s_beam.beam_id = beamlaunch(localclientnum, ent_1, str_tag1, ent_2, str_tag2, str_beam_type);
         self thread _kill_on_ent_death(localclientnum, s_beam, ent_1, ent_2);
         return s_beam.beam_id;
     }

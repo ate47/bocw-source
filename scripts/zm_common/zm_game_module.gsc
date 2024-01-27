@@ -172,7 +172,7 @@ function zombie_goto_round(target_round) {
             if (zm_utility::is_magic_bullet_shield_enabled(enemy)) {
                 enemy util::stop_magic_bullet_shield();
             }
-            enemy.allowdeath.enemy = 1;
+            enemy.allowdeath = 1;
             enemy kill(undefined, undefined, undefined, undefined, undefined, 1);
         }
     }

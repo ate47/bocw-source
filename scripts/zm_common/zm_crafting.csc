@@ -52,8 +52,8 @@ function function_60a6c623() {
 function setup_craftfoundry(craftfoundry) {
     if (isdefined(craftfoundry)) {
         if (!is_true(craftfoundry.loaded)) {
-            craftfoundry.loaded.craftfoundry = 1;
-            craftfoundry.blueprints.craftfoundry = [];
+            craftfoundry.loaded = 1;
+            craftfoundry.blueprints = [];
             switch (craftfoundry.var_2a2adea3) {
             case 8:
                 craftfoundry.blueprints[7] = function_b18074d0(craftfoundry.var_b81b4995);
@@ -85,10 +85,10 @@ function function_b18074d0(name) {
     blueprint = getscriptbundle(name);
     if (isdefined(blueprint)) {
         if (!is_true(blueprint.loaded)) {
-            blueprint.loaded.blueprint = 1;
+            blueprint.loaded = 1;
             blueprint.name = name;
-            blueprint.components.blueprint = [];
-            switch (blueprint.var_f4a82731) {
+            blueprint.components = [];
+            switch (blueprint.componentcount) {
             case 8:
                 blueprint.components[7] = get_component(blueprint.var_f4d434cb);
             case 7:
@@ -107,10 +107,10 @@ function function_b18074d0(name) {
                 blueprint.components[0] = get_component(blueprint.var_99577dd3);
                 break;
             }
-            blueprint.var_54a97edd.blueprint = get_component(blueprint.result);
+            blueprint.var_54a97edd = get_component(blueprint.result);
             level.var_5df2581a[name] = blueprint;
             if (!isdefined(blueprint.var_4dbc4aee)) {
-                blueprint.var_4dbc4aee.blueprint = "ERROR: Missing Prompt String";
+                blueprint.var_4dbc4aee = "ERROR: Missing Prompt String";
             }
         }
     } else {

@@ -42,9 +42,9 @@ function init() {
     namespace_250e9486::function_252dff4d("blood_riser", 24, &function_1eb8e7ef, undefined, 41, &function_c291edbd);
     registration = namespace_250e9486::function_3dd94c25("barreler_zombie");
     if (!isdefined(registration.var_71e54e3a)) {
-        registration.var_71e54e3a.registration = [];
+        registration.var_71e54e3a = [];
     } else if (!isarray(registration.var_71e54e3a)) {
-        registration.var_71e54e3a.registration = array(registration.var_71e54e3a);
+        registration.var_71e54e3a = array(registration.var_71e54e3a);
     }
     registration.var_71e54e3a[registration.var_71e54e3a.size] = "kgb";
     registerbehaviorscriptfunctions();
@@ -179,9 +179,9 @@ function function_ef2758f9() {
         barrel enablelinkto();
         self enablelinkto();
         barrel disableaimassist();
-        barrel.carried.barrel = 1;
-        barrel.takedamage.barrel = 1;
-        barrel.health.barrel = 99999;
+        barrel.carried = 1;
+        barrel.takedamage = 1;
+        barrel.health = 99999;
         barrel linkto(self, "j_head", vectorscale((0, 0, 1), 15), vectorscale((1, 0, 0), 90));
         barrel thread function_bd3de922(self);
         barrel thread namespace_ec06fe4a::function_52afe5df(120);
@@ -244,8 +244,8 @@ function function_711927a1(origin) {
     }
     org thread namespace_ec06fe4a::function_52afe5df(3.4);
     trap = {};
-    trap.origin.trap = origin + vectorscale((0, 0, -1), 100);
-    trap.angles.trap = (0, 0, 0);
+    trap.origin = origin + vectorscale((0, 0, -1), 100);
+    trap.angles = (0, 0, 0);
     pole = namespace_53f73cda::function_28826539(trap, 0);
     if (!isdefined(pole)) {
         return;
@@ -466,7 +466,7 @@ function function_e6634b0c(var_11b86a4c = 45) {
 // Checksum 0xf7d2f94d, Offset: 0x1f70
 // Size: 0x32
 function function_f637b05d(behaviortreeentity) {
-    behaviortreeentity.var_93a62fe.behaviortreeentity = namespace_7f5aeb59::function_7781556b(behaviortreeentity.origin, 1);
+    behaviortreeentity.var_93a62fe = namespace_7f5aeb59::function_7781556b(behaviortreeentity.origin, 1);
 }
 
 // Namespace namespace_b5ca279a/namespace_b5ca279a
@@ -506,7 +506,7 @@ function private function_4402c40a(entity) {
             entity namespace_83eb6304::function_3ecfde67(entity.var_1038c5e0);
         }
         entity.var_c0bd8c06 = undefined;
-        entity.var_e5ad72a0.entity = 1;
+        entity.var_e5ad72a0 = 1;
         entity disableaimassist();
         entity pathmode("dont move", 1);
     }
@@ -536,7 +536,7 @@ function private function_55b7ea22(entity) {
             entity namespace_83eb6304::function_3ecfde67(entity.var_596fb6ed);
         }
         entity pathmode("dont move");
-        entity.var_1f2d0447.entity = 1;
+        entity.var_1f2d0447 = 1;
         entity.shouldspawn = undefined;
         entity disableaimassist();
     }

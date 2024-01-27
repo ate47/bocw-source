@@ -61,7 +61,7 @@ function function_2c3d65c4(platform) {
         assert(isdefined(platform.target), "<unknown string>");
     #/
     if (!isdefined(platform.original_origin)) {
-        platform.original_origin.platform = platform.origin;
+        platform.original_origin = platform.origin;
         toks = strtok(platform.script_parameters, ";");
         /#
             assert(toks.size >= 2, "<unknown string>");
@@ -69,23 +69,23 @@ function function_2c3d65c4(platform) {
         /#
             assert(toks[0] == "<unknown string>" || toks[0] == "<unknown string>", "<unknown string>");
         #/
-        platform.type.platform = toks[0] == "mover" ? 1 : 0;
-        platform.duration.platform = int(toks[1]);
+        platform.type = toks[0] == "mover" ? 1 : 0;
+        platform.duration = int(toks[1]);
         target = struct::get(platform.target, "targetname");
         if (platform.type == 0) {
             var_146bc1e6 = target.origin[2] - platform.origin[2];
-            platform.destination.platform = platform.origin + (0, 0, var_146bc1e6);
+            platform.destination = platform.origin + (0, 0, var_146bc1e6);
         } else if (platform.type == 1) {
             var_ffc8189f = target.origin[0] - platform.origin[0];
             var_289dea4a = target.origin[1] - platform.origin[1];
             if (var_ffc8189f > var_289dea4a) {
-                platform.destination.platform = platform.origin + (var_ffc8189f, 0, 0);
+                platform.destination = platform.origin + (var_ffc8189f, 0, 0);
             } else {
-                platform.destination.platform = platform.origin + (0, var_289dea4a, 0);
+                platform.destination = platform.origin + (0, var_289dea4a, 0);
             }
         }
     }
-    platform.origin.platform = platform.original_origin;
+    platform.origin = platform.original_origin;
     platform setmovingplatformenabled(1);
     platform thread function_27b409b9();
     return platform;

@@ -808,10 +808,10 @@ class class_7da27482 {
             var_ff704b7c = 1;
             [[ self ]]->function_39a68bf2(0);
             if (is_true(var_61ef988d) && !isdefined(params.var_f5332569)) {
-                params.var_f5332569.params = [[ self ]]->function_98d70bef();
+                params.var_f5332569 = [[ self ]]->function_98d70bef();
             }
             if (!isdefined(params.var_b1e821c5)) {
-                params.var_b1e821c5.params = spawnstruct();
+                params.var_b1e821c5 = spawnstruct();
             }
             params.var_b1e821c5.blend = 0;
             if (isdefined(base_model)) {
@@ -948,7 +948,7 @@ class class_7da27482 {
             #/
         #/
         if (self.var_f5c0467b[item_type] != item_index) {
-            self.var_b627749c = self.var_b627749c & (item_type == 0 || item_type == 2 || item_type == 3 || item_type == 4 || item_type == 6);
+            self.var_b627749c = self.var_b627749c | (item_type == 0 || item_type == 2 || item_type == 3 || item_type == 4 || item_type == 6);
             self.var_f5c0467b[item_type] = item_index;
         }
     }
@@ -1451,8 +1451,8 @@ class class_7da27482 {
                     if (!ent hasanimtree()) {
                         ent useanimtree("generic");
                     }
-                    ent.origin.ent = self._origin;
-                    ent.angles.ent = self._angles;
+                    ent.origin = self._origin;
+                    ent.angles = self._angles;
                     ent thread character_customization::play_intro_and_animation(self._origin, self._angles, model_intro_anim, model_anim, 1);
                 } else if (!self.var_228f64da isattached(self.var_45210dc7[slot], bone)) {
                     self.var_228f64da attach(self.var_45210dc7[slot], bone);
@@ -1507,19 +1507,19 @@ class class_7da27482 {
             params = {};
         }
         if (!isdefined(params.exploder_id)) {
-            params.exploder_id.params = self.var_266b2ff0;
+            params.exploder_id = self.var_266b2ff0;
         }
         align_changed = 0;
         if (isdefined(self.var_9a4a8ea)) {
             if (!isdefined(params.align_struct)) {
-                params.align_struct.params = struct::get(self.var_9a4a8ea);
+                params.align_struct = struct::get(self.var_9a4a8ea);
             }
         }
         if (isdefined(params.align_struct) && (params.align_struct.origin !== self._origin || params.align_struct.angles !== self._angles)) {
             self._origin = params.align_struct.origin;
             self._angles = params.align_struct.angles;
             if (!isdefined(params.anim_name)) {
-                params.anim_name.params = self.var_cbcee022;
+                params.anim_name = self.var_cbcee022;
             }
             align_changed = 1;
         }
@@ -1627,7 +1627,7 @@ function function_6aee5a4e(character) {
     if (isdefined(level.var_6963abdb)) {
         var_2d0192e5 = [[ character ]]->function_82e05d64();
         if (isdefined(var_2d0192e5) && isdefined(var_2d0192e5.xuid)) {
-            xuid = function_baf6cb99(var_2d0192e5.xuid);
+            xuid = xuidtostring(var_2d0192e5.xuid);
             return level.var_6963abdb[xuid];
         }
         if (isdefined(character._xuid)) {
@@ -1645,7 +1645,7 @@ function function_bee62aa1(character) {
     if (isdefined(level.var_6963abdb)) {
         var_2d0192e5 = [[ character ]]->function_82e05d64();
         if (isdefined(var_2d0192e5) && isdefined(var_2d0192e5.xuid)) {
-            xuid = function_baf6cb99(var_2d0192e5.xuid);
+            xuid = xuidtostring(var_2d0192e5.xuid);
             level.var_6963abdb[xuid] = 0;
         }
         if (isdefined(character._xuid)) {
@@ -1932,7 +1932,7 @@ function update_locked_shader(localclientnum, params) {
 // Checksum 0xa39a2ef2, Offset: 0x7620
 // Size: 0x3a
 function function_bcc8bdf4(*localclientnum, var_d0b01271, *waitresult, params) {
-    params.anim_name.params = [[ waitresult ]]->function_8144231c();
+    params.anim_name = [[ waitresult ]]->function_8144231c();
 }
 
 // Namespace character_customization/character_customization
@@ -1965,7 +1965,7 @@ function updateeventthread(localclientnum, var_d0b01271, notifyname, var_1d7f159
         case #"refresh_anim":
             params = {};
             [[ var_1d7f1597 ]](localclientnum, var_d0b01271, waitresult, params);
-            params.var_99a89f83.params = 1;
+            params.var_99a89f83 = 1;
             if (is_true(params.var_c76f3e47)) {
                 [[ var_d0b01271 ]]->function_27945cb8(1);
             }
@@ -2052,7 +2052,7 @@ function updateeventthread(localclientnum, var_d0b01271, notifyname, var_1d7f159
             params = {};
             [[ var_1d7f1597 ]](localclientnum, var_d0b01271, waitresult, params);
             if (waitresult.event_name == "previewShopFace") {
-                params.align_struct.params = struct::get(#"tag_align_quartermaster_character_head");
+                params.align_struct = struct::get(#"tag_align_quartermaster_character_head");
             }
             if (is_true(params.var_c76f3e47)) {
                 [[ var_d0b01271 ]]->function_27945cb8(1);
@@ -2186,9 +2186,9 @@ function private update_model_rotation_for_right_stick(localclientnum, var_d0b01
                 if (isdefined(var_cd34be2e.str_scene)) {
                     if (isdefined(var_cd34be2e.var_c76d5a0b) && isdefined(var_cd34be2e.var_e982dc6b) && change < -0.5) {
                         function_3d131a(localclientnum);
-                        var_d0b01271.var_c492e538.var_d0b01271 = var_cd34be2e.var_c76d5a0b;
-                        var_d0b01271.var_ae32b908.var_d0b01271 = model.origin;
-                        var_d0b01271.var_aba63ea.var_d0b01271 = model.angles;
+                        var_d0b01271.var_c492e538 = var_cd34be2e.var_c76d5a0b;
+                        var_d0b01271.var_ae32b908 = model.origin;
+                        var_d0b01271.var_aba63ea = model.angles;
                         if (isdefined(level.var_6365df1f)) {
                             params = [[ level.var_6365df1f ]](localclientnum, var_d0b01271);
                             params = function_923a14da(params, var_d0b01271);
@@ -2204,9 +2204,9 @@ function private update_model_rotation_for_right_stick(localclientnum, var_d0b01
                         var_d0b01271 notify(#"hash_6b33c66d373ab370");
                     } else if (isdefined(var_cd34be2e.var_3480dd47) && isdefined(var_cd34be2e.var_1aa99c8b) && change > 0.5) {
                         function_3d131a(localclientnum);
-                        var_d0b01271.var_c492e538.var_d0b01271 = var_cd34be2e.var_3480dd47;
-                        var_d0b01271.var_ae32b908.var_d0b01271 = model.origin;
-                        var_d0b01271.var_aba63ea.var_d0b01271 = model.angles;
+                        var_d0b01271.var_c492e538 = var_cd34be2e.var_3480dd47;
+                        var_d0b01271.var_ae32b908 = model.origin;
+                        var_d0b01271.var_aba63ea = model.angles;
                         if (isdefined(level.var_6365df1f)) {
                             params = [[ level.var_6365df1f ]](localclientnum, var_d0b01271);
                             params = function_923a14da(params, var_d0b01271);
@@ -2223,7 +2223,7 @@ function private update_model_rotation_for_right_stick(localclientnum, var_d0b01
                     }
                 } else if (abs(change) > 0.0001) {
                     function_3d131a(localclientnum);
-                    model.angles.model = (model.angles[0], absangleclamp360(model.angles[1] + change * 3), model.angles[2]);
+                    model.angles = (model.angles[0], absangleclamp360(model.angles[1] + change * 3), model.angles[2]);
                 }
             }
         }
@@ -2245,7 +2245,7 @@ function function_f40eb809() {
 // Size: 0xa6
 function private function_923a14da(params = spawnstruct(), var_d0b01271) {
     if (!isdefined(params.var_b1e821c5)) {
-        params.var_b1e821c5.params = spawnstruct();
+        params.var_b1e821c5 = spawnstruct();
     }
     if ([[ var_d0b01271 ]]->function_ea4ac9f8() && [[ var_d0b01271 ]]->is_visible()) {
         params.var_b1e821c5.blend = 0.5;

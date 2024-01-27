@@ -44,7 +44,7 @@ function function_50634409(*params) {
         team = player.team == #"allies" ? #"axis" : #"allies";
         bot = level add_bot(team);
         if (isdefined(bot)) {
-            bot.ignoreall.bot = 1;
+            bot.ignoreall = 1;
         }
     #/
 }

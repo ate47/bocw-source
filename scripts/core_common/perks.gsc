@@ -136,9 +136,9 @@ function private event_handler[gadget_on] function_7d697841(eventstruct) {
     } else if (isplayer(player) && player hasperk("specialty_equipmentrecharge") && weapon.name == #"hash_364914e1708cb629") {
         var_e0ca50e9 = {#var_acddd81e:0, #weapon:weapon, #slot:weapon.offhandslot};
         if (!isdefined(player.var_7cedc725)) {
-            player.var_7cedc725.player = [];
+            player.var_7cedc725 = [];
         } else if (!isarray(player.var_7cedc725)) {
-            player.var_7cedc725.player = array(player.var_7cedc725);
+            player.var_7cedc725 = array(player.var_7cedc725);
         }
         player.var_7cedc725[player.var_7cedc725.size] = var_e0ca50e9;
         var_2b9b7c0f = var_e0ca50e9.slot == "Lethal grenade" ? "hudItems.ammoCooldowns.equipment.lethal" : "hudItems.ammoCooldowns.equipment.tactical";

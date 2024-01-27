@@ -64,8 +64,8 @@ function function_27779784() {
     }
     foreach (activecamo in self.pers[#"activecamo"]) {
         foreach (var_dd54a13b in activecamo.var_dd54a13b) {
-            activecamo.weapon.activecamo = var_dd54a13b.weapon;
-            activecamo.baseweapon.activecamo = function_c14cb514(activecamo.weapon);
+            activecamo.weapon = var_dd54a13b.weapon;
+            activecamo.baseweapon = function_c14cb514(activecamo.weapon);
             self init_stages(activecamo, 0, 1);
         }
     }
@@ -108,14 +108,14 @@ function init_activecamo(weapon, var_f4eb4a50, owned) {
             self.pers[#"activecamo"][var_f4eb4a50.name] = {};
         }
         activecamo = self.pers[#"activecamo"][var_f4eb4a50.name];
-        activecamo.var_13949c61.activecamo = function_8a6ced15(var_f4eb4a50);
+        activecamo.var_13949c61 = function_8a6ced15(var_f4eb4a50);
         /#
             assert(isdefined(activecamo.var_13949c61));
         #/
         activecamo.weapon = weapon;
-        activecamo.baseweapon.activecamo = function_c14cb514(activecamo.weapon);
+        activecamo.baseweapon = function_c14cb514(activecamo.weapon);
         if (!isdefined(activecamo.var_dd54a13b)) {
-            activecamo.var_dd54a13b.activecamo = [];
+            activecamo.var_dd54a13b = [];
         }
         if (!isdefined(activecamo.var_dd54a13b[activecamo.baseweapon])) {
             activecamo.var_dd54a13b[activecamo.baseweapon] = {};
@@ -125,7 +125,7 @@ function init_activecamo(weapon, var_f4eb4a50, owned) {
         if (!isdefined(activecamo.var_dd54a13b[activecamo.baseweapon].owned)) {
             activecamo.var_dd54a13b[activecamo.baseweapon].owned = 0;
         }
-        activecamo.var_dd54a13b[activecamo.baseweapon].owned = activecamo.var_dd54a13b[activecamo.baseweapon].owned & owned;
+        activecamo.var_dd54a13b[activecamo.baseweapon].owned = activecamo.var_dd54a13b[activecamo.baseweapon].owned | owned;
         self init_stages(activecamo, 0, 0);
         self callback::on_death(&on_player_death);
     }
@@ -145,22 +145,22 @@ function function_8a6ced15(var_f4eb4a50) {
             level.activecamoinfo[var_f4eb4a50.name] = {};
         }
         var_13949c61 = level.activecamoinfo[var_f4eb4a50.name];
-        var_13949c61.name.var_13949c61 = var_f4eb4a50.name;
-        var_13949c61.var_e639aa37.var_13949c61 = var_f4eb4a50.var_e639aa37;
-        var_13949c61.istiered.var_13949c61 = var_f4eb4a50.istiered;
-        var_13949c61.var_ed6f91d5.var_13949c61 = var_f4eb4a50.var_ed6f91d5;
-        var_13949c61.var_bd863267.var_13949c61 = var_f4eb4a50.var_bd863267;
-        var_13949c61.var_26c1d493.var_13949c61 = var_f4eb4a50.var_26c1d493;
-        var_13949c61.var_fa0465c6.var_13949c61 = var_f4eb4a50.var_fa0465c6;
-        var_13949c61.var_2034fabe.var_13949c61 = var_f4eb4a50.var_2034fabe;
-        var_13949c61.var_9ae5a2b8.var_13949c61 = var_f4eb4a50.var_9ae5a2b8;
-        var_13949c61.var_5f38b34e.var_13949c61 = var_f4eb4a50.var_5f38b34e;
+        var_13949c61.name = var_f4eb4a50.name;
+        var_13949c61.isasync = var_f4eb4a50.isasync;
+        var_13949c61.istiered = var_f4eb4a50.istiered;
+        var_13949c61.var_ed6f91d5 = var_f4eb4a50.var_ed6f91d5;
+        var_13949c61.var_bd863267 = var_f4eb4a50.var_bd863267;
+        var_13949c61.var_26c1d493 = var_f4eb4a50.var_26c1d493;
+        var_13949c61.var_fa0465c6 = var_f4eb4a50.var_fa0465c6;
+        var_13949c61.var_2034fabe = var_f4eb4a50.var_2034fabe;
+        var_13949c61.var_9ae5a2b8 = var_f4eb4a50.var_9ae5a2b8;
+        var_13949c61.var_5f38b34e = var_f4eb4a50.var_5f38b34e;
         var_d3daabe = 0;
         if (isdefined(var_f4eb4a50.stages)) {
             if (!isdefined(var_13949c61.stages)) {
-                var_13949c61.stages.var_13949c61 = [];
+                var_13949c61.stages = [];
             }
-            var_13949c61.var_ae601515.var_13949c61 = [];
+            var_13949c61.var_ae601515 = [];
             foreach (key, var_3594168e in var_f4eb4a50.stages) {
                 if (is_true(var_3594168e.disabled)) {
                     var_d3daabe++;
@@ -169,12 +169,12 @@ function function_8a6ced15(var_f4eb4a50) {
                         var_13949c61.stages[key - var_d3daabe] = {};
                     }
                     stage = var_13949c61.stages[key - var_d3daabe];
-                    if (isdefined(var_3594168e.var_879c8798)) {
-                        stage.var_19b6044e.stage = function_8b51d9d1(var_3594168e.var_879c8798);
+                    if (isdefined(var_3594168e.camooption)) {
+                        stage.var_19b6044e = function_8b51d9d1(var_3594168e.camooption);
                     }
                     /#
                         if (!isdefined(stage.var_19b6044e)) {
-                            self debug_error("<unknown string>" + var_13949c61.name + "<unknown string>" + function_9e72a96(isdefined(var_3594168e.var_879c8798) ? var_3594168e.var_879c8798 : "<unknown string>") + "<unknown string>" + key);
+                            self debug_error("<unknown string>" + var_13949c61.name + "<unknown string>" + function_9e72a96(isdefined(var_3594168e.camooption) ? var_3594168e.camooption : "<unknown string>") + "<unknown string>" + key);
                         } else {
                             activecamoname = getactivecamo(stage.var_19b6044e);
                             var_7216636e = undefined;
@@ -190,23 +190,23 @@ function function_8a6ced15(var_f4eb4a50) {
                             var_7216636e = undefined;
                         }
                     #/
-                    stage.permanent.stage = var_3594168e.permanent;
-                    stage.statname.stage = var_3594168e.statname;
-                    stage.var_d2eac588.stage = var_3594168e.var_d2eac588;
-                    stage.var_e2dbd42d.stage = function_54f0afd2(var_3594168e);
-                    stage.resettimer.stage = isdefined(var_3594168e.resettimer) ? var_3594168e.resettimer : 0;
-                    stage.resetnotify.stage = var_3594168e.resetnotify;
-                    stage.resetondeath.stage = var_3594168e.resetondeath;
-                    stage.var_825ae630.stage = var_3594168e.var_c43b3dd3;
-                    stage.var_c33fcb85.stage = isdefined(var_3594168e.var_c33fcb85) ? var_3594168e.var_c33fcb85 : 0;
+                    stage.permanent = var_3594168e.permanent;
+                    stage.statname = var_3594168e.statname;
+                    stage.permanentstatname = var_3594168e.permanentstatname;
+                    stage.var_e2dbd42d = function_54f0afd2(var_3594168e);
+                    stage.resettimer = isdefined(var_3594168e.resettimer) ? var_3594168e.resettimer : 0;
+                    stage.resetnotify = var_3594168e.resetnotify;
+                    stage.resetondeath = var_3594168e.resetondeath;
+                    stage.var_825ae630 = var_3594168e.var_c43b3dd3;
+                    stage.var_c33fcb85 = isdefined(var_3594168e.var_c33fcb85) ? var_3594168e.var_c33fcb85 : 0;
                     if (isdefined(stage.statname)) {
                         if (!isdefined(var_13949c61.var_ae601515[stage.statname])) {
                             var_13949c61.var_ae601515[stage.statname] = 1;
                         }
                     }
-                    if (isdefined(stage.var_d2eac588)) {
-                        if (!isdefined(var_13949c61.var_ae601515[stage.var_d2eac588])) {
-                            var_13949c61.var_ae601515[stage.var_d2eac588] = 1;
+                    if (isdefined(stage.permanentstatname)) {
+                        if (!isdefined(var_13949c61.var_ae601515[stage.permanentstatname])) {
+                            var_13949c61.var_ae601515[stage.permanentstatname] = 1;
                         }
                     }
                     /#
@@ -260,7 +260,7 @@ function init_stages(activecamo, var_3a8a1e00, isdeath) {
             }
         }
         if (!isdefined(activecamo.stages)) {
-            activecamo.stages.activecamo = [];
+            activecamo.stages = [];
         }
         foreach (stagenum, var_62b564ee in activecamo.var_13949c61.stages) {
             if (!isdefined(activecamo.stages[stagenum])) {
@@ -272,7 +272,7 @@ function init_stages(activecamo, var_3a8a1e00, isdeath) {
                 assert(isdefined(stage.var_62b564ee));
             #/
             if (!isdefined(stage.var_dd54a13b)) {
-                stage.var_dd54a13b.stage = [];
+                stage.var_dd54a13b = [];
             }
             if (!isdefined(stage.var_dd54a13b[activecamo.baseweapon])) {
                 stage.var_dd54a13b[activecamo.baseweapon] = {};
@@ -292,14 +292,14 @@ function init_stages(activecamo, var_3a8a1e00, isdeath) {
                     reset = 1;
                 }
             }
-            if (isdefined(stage.var_62b564ee.var_d2eac588)) {
-                camo_stat = self stats::get_stat_global(stage.var_62b564ee.var_d2eac588);
+            if (isdefined(stage.var_62b564ee.permanentstatname)) {
+                camo_stat = self stats::get_stat_global(stage.var_62b564ee.permanentstatname);
                 if (isdefined(camo_stat) && camo_stat < stage.var_62b564ee.var_e2dbd42d) {
-                    var_7dfd59c3 = isdefined(stats::function_af5584ca(stage.var_62b564ee.var_d2eac588)) ? stats::function_af5584ca(stage.var_62b564ee.var_d2eac588) : 0;
+                    var_7dfd59c3 = isdefined(stats::function_af5584ca(stage.var_62b564ee.permanentstatname)) ? stats::function_af5584ca(stage.var_62b564ee.permanentstatname) : 0;
                     if (var_7dfd59c3 > 0) {
                         camo_stat = stage.var_62b564ee.var_e2dbd42d;
-                        self stats::set_stat_global(stage.var_62b564ee.var_d2eac588, camo_stat);
-                        self stats::set_stat_challenge(stage.var_62b564ee.var_d2eac588, camo_stat);
+                        self stats::set_stat_global(stage.var_62b564ee.permanentstatname, camo_stat);
+                        self stats::set_stat_challenge(stage.var_62b564ee.permanentstatname, camo_stat);
                     }
                 }
                 if (isdefined(camo_stat)) {
@@ -318,7 +318,7 @@ function init_stages(activecamo, var_3a8a1e00, isdeath) {
                     }
                 }
                 if (is_true(activecamo.var_13949c61.var_2034fabe)) {
-                    if (isdefined(stage.var_62b564ee.var_d2eac588)) {
+                    if (isdefined(stage.var_62b564ee.permanentstatname)) {
                         if (weaponstage > stagenum) {
                             stage.var_dd54a13b[activecamo.baseweapon].statvalue = stage.var_62b564ee.var_e2dbd42d;
                         }
@@ -340,7 +340,7 @@ function init_stages(activecamo, var_3a8a1e00, isdeath) {
             } else if (var_7491ec51) {
                 if (is_true(activecamo.var_13949c61.istiered)) {
                     if (weaponstage > stagenum) {
-                        if (isdefined(stage.var_62b564ee.var_d2eac588)) {
+                        if (isdefined(stage.var_62b564ee.permanentstatname)) {
                             stage.var_dd54a13b[activecamo.baseweapon].statvalue = stage.var_62b564ee.var_e2dbd42d;
                         } else if (is_true(stage.var_62b564ee.permanent) && isdefined(stage.var_62b564ee.statname)) {
                             stage.var_dd54a13b[activecamo.baseweapon].statvalue = stage.var_62b564ee.var_e2dbd42d;
@@ -348,7 +348,7 @@ function init_stages(activecamo, var_3a8a1e00, isdeath) {
                     }
                 }
                 if (is_true(activecamo.var_13949c61.var_2034fabe)) {
-                    if (isdefined(stage.var_62b564ee.var_d2eac588)) {
+                    if (isdefined(stage.var_62b564ee.permanentstatname)) {
                         if (weaponstage > stagenum) {
                             stage.var_dd54a13b[activecamo.baseweapon].statvalue = stage.var_62b564ee.var_e2dbd42d;
                         }
@@ -361,7 +361,7 @@ function init_stages(activecamo, var_3a8a1e00, isdeath) {
                     }
                 }
             }
-            if (is_true(activecamo.var_13949c61.var_e639aa37)) {
+            if (is_true(activecamo.var_13949c61.isasync)) {
                 self thread function_f0d83504(activecamo, stage, stagenum);
             }
         }
@@ -408,7 +408,7 @@ function function_896ac347(oweapon, statname, value) {
                 return;
             }
             activecamo.weapon = weapon;
-            activecamo.baseweapon.activecamo = function_c14cb514(activecamo.weapon);
+            activecamo.baseweapon = function_c14cb514(activecamo.weapon);
             if (!isdefined(activecamo.baseweapon)) {
                 /#
                     /#
@@ -432,10 +432,10 @@ function function_896ac347(oweapon, statname, value) {
                         continue;
                     }
                     lastvalue = stage.var_dd54a13b[activecamo.baseweapon].statvalue;
-                    if (isdefined(stage.var_62b564ee.var_d2eac588) && activecamo.var_dd54a13b[activecamo.baseweapon].owned === 1) {
+                    if (isdefined(stage.var_62b564ee.permanentstatname) && activecamo.var_dd54a13b[activecamo.baseweapon].owned === 1) {
                         if (stage.var_62b564ee.statname == statname) {
-                            if (self stats::function_dad108fa(stage.var_62b564ee.var_d2eac588, value)) {
-                                stage.var_dd54a13b[activecamo.baseweapon].statvalue = self stats::get_stat_global(stage.var_62b564ee.var_d2eac588);
+                            if (self stats::function_dad108fa(stage.var_62b564ee.permanentstatname, value)) {
+                                stage.var_dd54a13b[activecamo.baseweapon].statvalue = self stats::get_stat_global(stage.var_62b564ee.permanentstatname);
                             }
                         }
                     } else if (isdefined(stage.var_62b564ee.statname)) {
@@ -600,7 +600,7 @@ function function_8eac065(activecamo) {
     if (!is_true(activecamo.var_dd54a13b[activecamo.baseweapon].var_8fc208a8)) {
         var_8fc208a8 = 1;
         foreach (key, stage in activecamo.stages) {
-            if (isdefined(stage.var_62b564ee.var_d2eac588)) {
+            if (isdefined(stage.var_62b564ee.permanentstatname)) {
                 if (!isdefined(stage.var_dd54a13b[activecamo.baseweapon])) {
                     continue;
                 }
@@ -632,7 +632,7 @@ function function_8eac065(activecamo) {
             }
         }
         foreach (key, stage in activecamo.stages) {
-            if (isdefined(stage.var_62b564ee.var_d2eac588)) {
+            if (isdefined(stage.var_62b564ee.permanentstatname)) {
                 continue;
             }
             if (var_42d9b149 == key) {
@@ -1088,7 +1088,7 @@ function function_779a9561(stagenum) {
             activecamo = self.pers[#"activecamo"][activecamoname];
             if (isdefined(activecamo) && isdefined(activecamo.stages) && stagenum < activecamo.stages.size) {
                 activecamo.weapon = weapon;
-                activecamo.baseweapon.activecamo = function_c14cb514(activecamo.weapon);
+                activecamo.baseweapon = function_c14cb514(activecamo.weapon);
                 if (isdefined(activecamo.var_13949c61.var_5f38b34e)) {
                     setdvar(activecamo.var_13949c61.var_5f38b34e, stagenum);
                 }
@@ -1098,8 +1098,8 @@ function function_779a9561(stagenum) {
                         if (key < stagenum) {
                             statcount = stage.var_62b564ee.var_e2dbd42d;
                         }
-                        if (isdefined(stage.var_62b564ee.var_d2eac588)) {
-                            self set_stat_global(stage.var_62b564ee.var_d2eac588, statcount);
+                        if (isdefined(stage.var_62b564ee.permanentstatname)) {
+                            self set_stat_global(stage.var_62b564ee.permanentstatname, statcount);
                         } else if (isdefined(stage.var_62b564ee.statname)) {
                             if (is_true(stage.var_62b564ee.permanent)) {
                                 self set_stat_global(stage.var_62b564ee.statname, statcount);
@@ -1115,8 +1115,8 @@ function function_779a9561(stagenum) {
                         if (key < stagenum) {
                             statcount = stage.var_62b564ee.var_e2dbd42d;
                         }
-                        if (isdefined(stage.var_62b564ee.var_d2eac588)) {
-                            self set_stat_global(stage.var_62b564ee.var_d2eac588, statcount);
+                        if (isdefined(stage.var_62b564ee.permanentstatname)) {
+                            self set_stat_global(stage.var_62b564ee.permanentstatname, statcount);
                         } else if (isdefined(stage.var_62b564ee.statname)) {
                             statcount = 0;
                             if (key == stagenum) {
@@ -1176,16 +1176,16 @@ function function_633fbf17(weapon, back) {
                 if (isdefined(activecamo)) {
                     if (isdefined(activecamo.stages)) {
                         activecamo.weapon = weapon;
-                        activecamo.baseweapon.activecamo = function_c14cb514(activecamo.weapon);
+                        activecamo.baseweapon = function_c14cb514(activecamo.weapon);
                         if (isdefined(activecamo.var_13949c61.var_5f38b34e)) {
-                            var_ee939e0c = getdvarint(activecamo.var_13949c61.var_5f38b34e, 0);
+                            currentstage = getdvarint(activecamo.var_13949c61.var_5f38b34e, 0);
                         } else {
-                            var_ee939e0c = isdefined(activecamo.var_dd54a13b[activecamo.baseweapon].stagenum) ? activecamo.var_dd54a13b[activecamo.baseweapon].stagenum : -1;
+                            currentstage = isdefined(activecamo.var_dd54a13b[activecamo.baseweapon].stagenum) ? activecamo.var_dd54a13b[activecamo.baseweapon].stagenum : -1;
                         }
                         if (back) {
-                            nextstage = (var_ee939e0c - 1 + activecamo.stages.size) % activecamo.stages.size;
+                            nextstage = (currentstage - 1 + activecamo.stages.size) % activecamo.stages.size;
                         } else {
-                            nextstage = (var_ee939e0c + 1) % activecamo.stages.size;
+                            nextstage = (currentstage + 1) % activecamo.stages.size;
                         }
                         self function_779a9561(nextstage);
                     }
@@ -1220,7 +1220,7 @@ function function_3d928fb4(weapon) {
                 activecamo = self.pers[#"activecamo"][activecamoname];
                 if (isdefined(activecamo)) {
                     activecamo.weapon = weapon;
-                    activecamo.baseweapon.activecamo = function_c14cb514(activecamo.weapon);
+                    activecamo.baseweapon = function_c14cb514(activecamo.weapon);
                     self function_9fc8a57c(activecamo);
                 }
             }
@@ -1254,8 +1254,8 @@ function function_9fc8a57c(activecamo) {
 // Size: 0xbc
 function function_dc6014e8(stage) {
     /#
-        if (isdefined(stage.var_62b564ee.var_d2eac588)) {
-            self set_stat_global(stage.var_62b564ee.var_d2eac588, 0);
+        if (isdefined(stage.var_62b564ee.permanentstatname)) {
+            self set_stat_global(stage.var_62b564ee.permanentstatname, 0);
         } else if (isdefined(stage.var_62b564ee.statname)) {
             if (is_true(stage.var_62b564ee.permanent)) {
                 self set_stat_global(stage.var_62b564ee.statname, 0);

@@ -286,7 +286,7 @@ function getotherteamsmask(skip_team) {
         if (team == skip_team) {
             continue;
         }
-        mask = mask & getteammask(team);
+        mask = mask | getteammask(team);
     }
     return mask;
 }
@@ -327,7 +327,7 @@ function getfx(fx) {
 // Size: 0x44
 function add_trigger_to_ent(ent) {
     if (!isdefined(ent._triggers)) {
-        ent._triggers.ent = [];
+        ent._triggers = [];
     }
     ent._triggers[self getentitynumber()] = 1;
 }

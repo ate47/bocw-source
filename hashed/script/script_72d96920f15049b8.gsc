@@ -311,7 +311,7 @@ function function_dede0607(*isowner, killstreaktype) {
             var_5b220756 = self killstreaks::function_a2c375bb(killstreaktype);
             self killstreaks::function_a831f92c(var_5b220756, 0, 0);
         }
-        choppergunner.failed2enter.choppergunner = 1;
+        choppergunner.failed2enter = 1;
         choppergunner function_71c46904(0);
         choppergunner function_f1d43cb2();
         return 0;
@@ -604,7 +604,7 @@ function function_bfb33872(choppergunner, eattacker, weapon) {
     if (issentient(choppergunner)) {
         choppergunner function_60d50ea4();
     }
-    choppergunner.shuttingdown.choppergunner = 1;
+    choppergunner.shuttingdown = 1;
     eattacker = self [[ level.figure_out_attacker ]](eattacker);
     if (isdefined(eattacker) && (!isdefined(choppergunner.owner) || choppergunner.owner util::isenemyplayer(eattacker))) {
         luinotifyevent(#"player_callout", 2, #"hash_5f3bf967cd47a97f", eattacker.entnum);
@@ -622,7 +622,7 @@ function function_bfb33872(choppergunner, eattacker, weapon) {
 // Params 6, eflags: 0x0
 // Checksum 0x183a8ebd, Offset: 0x2b68
 // Size: 0x4c
-function function_aecfdb77(*brokennotify, eattacker, weapon, *var_b1f9d94f, *dir, *mod) {
+function function_aecfdb77(*brokennotify, eattacker, weapon, *pieceindex, *dir, *mod) {
     function_bfb33872(self, dir, mod);
 }
 

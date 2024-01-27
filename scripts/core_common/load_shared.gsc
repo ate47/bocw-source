@@ -613,11 +613,11 @@ function art_review() {
         /#
             hud = function_f5a689d("<unknown string>", 1.2);
             hud setpoint("<unknown string>", "<unknown string>", 0, -200);
-            hud.sort.hud = 1001;
-            hud.color.hud = (1, 0, 0);
+            hud.sort = 1001;
+            hud.color = (1, 0, 0);
             hud settext("<unknown string>");
-            hud.foreground.hud = 0;
-            hud.hidewheninmenu.hud = 0;
+            hud.foreground = 0;
+            hud.hidewheninmenu = 0;
         #/
         if (sessionmodeiszombiesgame()) {
             /#

@@ -54,9 +54,9 @@ function private function_9cc6a162(localclientnum, sickness, var_46bdb64c) {
     setuimodelvalue(var_43df2991, var_46bdb64c.var_4bd5611f);
     var_8e2253bd = {};
     var_8e2253bd.var_a2c3987d = sickness;
-    var_8e2253bd.var_3a94cbe6.var_8e2253bd = gettime();
-    var_8e2253bd.var_cb9fc1f3.var_8e2253bd = gettime() + var_46bdb64c.duration;
-    var_8e2253bd.var_4bd5611f.var_8e2253bd = var_46bdb64c.var_4bd5611f;
+    var_8e2253bd.var_3a94cbe6 = gettime();
+    var_8e2253bd.var_cb9fc1f3 = gettime() + var_46bdb64c.duration;
+    var_8e2253bd.var_4bd5611f = var_46bdb64c.var_4bd5611f;
     var_8e2253bd.itemuimodel = itemuimodel;
     level.var_96929d7f[localclientnum].sickness[level.var_96929d7f[localclientnum].sickness.size] = var_8e2253bd;
     var_a25538fb = createuimodel(var_9ad901c3, "count");

@@ -113,7 +113,7 @@ function function_bff5c062(smartcover, attackingplayer) {
     function_375cfa56(smartcover, original_owner);
     smartcover.owner = attackingplayer;
     smartcover setowner(attackingplayer);
-    smartcover.team.smartcover = attackingplayer.team;
+    smartcover.team = attackingplayer.team;
     if (isdefined(smartcover.var_40bfd9cf)) {
         smartcover influencers::remove_influencer(smartcover.var_40bfd9cf);
     }
@@ -123,7 +123,7 @@ function function_bff5c062(smartcover, attackingplayer) {
             smartcover.var_2d045452 thread weaponobjects::function_6d8aa6a0(attackingplayer, watcher);
         }
     }
-    smartcover.var_40bfd9cf.smartcover = smartcover influencers::create_entity_enemy_influencer("turret_close", attackingplayer.team);
+    smartcover.var_40bfd9cf = smartcover influencers::create_entity_enemy_influencer("turret_close", attackingplayer.team);
     smartcover thread function_37f1dcd1();
     array::add(attackingplayer.smartcover.var_19e1ea69, smartcover);
     var_26c9fcc2 = function_57f553e9(attackingplayer.smartcover.var_19e1ea69, level.smartcoversettings.bundle.var_a0b69d8b);
@@ -137,11 +137,11 @@ function function_bff5c062(smartcover, attackingplayer) {
     }
     if (is_true(smartcover.smartcoverjammed)) {
         smartcover startmicrowave();
-        smartcover.smartcoverjammed.smartcover = 0;
+        smartcover.smartcoverjammed = 0;
         if (isdefined(level.var_fc1bbaef)) {
             [[ level.var_fc1bbaef ]](smartcover);
         }
-        smartcover.smartcoverjammed.smartcover = 0;
+        smartcover.smartcoverjammed = 0;
     }
 }
 
@@ -241,7 +241,7 @@ function function_bd071599(player, smartcover) {
     player endon(#"death", #"disconnect", #"joined_team", #"changed_specialist");
     smartcover endon(#"death");
     var_f5929597 = gettime() + int((isdefined(level.smartcoversettings.bundle.var_fee887dc) ? level.smartcoversettings.bundle.var_fee887dc : 0) * 1000);
-    player.var_622765b5.player = 1;
+    player.var_622765b5 = 1;
     currenttime = gettime();
     timeelapsed = 0;
     while (var_f5929597 > gettime()) {
@@ -250,7 +250,7 @@ function function_bd071599(player, smartcover) {
         }
         if (!player offhandspecialbuttonpressed()) {
             player clientfield::set_player_uimodel("huditems.abilityDelayProgress", 0);
-            player.var_622765b5.player = 0;
+            player.var_622765b5 = 0;
             return;
         }
         timeelapsed = gettime() - currenttime;
@@ -265,8 +265,8 @@ function function_bd071599(player, smartcover) {
     player clientfield::set_player_uimodel("huditems.abilityHoldToActivate", 0);
     player clientfield::set_player_uimodel("huditems.abilityDelayProgress", 0);
     wait(isdefined(level.smartcoversettings.bundle.detonationtime) ? level.smartcoversettings.bundle.detonationtime : 0);
-    player.var_622765b5.player = 0;
-    player.var_d3bf8986.player = 1;
+    player.var_622765b5 = 0;
+    player.var_d3bf8986 = 1;
     smartcover function_2a494565(1);
 }
 
@@ -314,7 +314,7 @@ function function_7ecb04ff(player) {
                     break;
                 }
             } else if (!player offhandspecialbuttonpressed() && (isdefined(player.var_d3bf8986) ? player.var_d3bf8986 : 0)) {
-                player.var_d3bf8986.player = 0;
+                player.var_d3bf8986 = 0;
             }
         }
     }
@@ -434,11 +434,11 @@ function function_3b96637(watcher, owner) {
     profilestart();
     var_bf2bf1a = player createsmartcover(watcher, self, player.smartcover.lastvalid.var_83050ca1, player.smartcover.lastvalid.angles, 1);
     profilestop();
-    var_bf2bf1a.var_48d842c3.var_bf2bf1a = 1;
-    var_bf2bf1a.var_515d6dda.var_bf2bf1a = 1;
-    var_bf2bf1a.angles.var_bf2bf1a = player.angles;
-    var_bf2bf1a.var_8120c266.var_bf2bf1a = [];
-    var_bf2bf1a.var_9a3bd50f.var_bf2bf1a = 0;
+    var_bf2bf1a.var_48d842c3 = 1;
+    var_bf2bf1a.var_515d6dda = 1;
+    var_bf2bf1a.angles = player.angles;
+    var_bf2bf1a.var_8120c266 = [];
+    var_bf2bf1a.var_9a3bd50f = 0;
     array::add(player.smartcover.var_19e1ea69, var_bf2bf1a);
     var_26c9fcc2 = function_57f553e9(player.smartcover.var_19e1ea69, level.smartcoversettings.bundle.var_a0b69d8b);
     if (isdefined(var_26c9fcc2)) {
@@ -453,7 +453,7 @@ function function_3b96637(watcher, owner) {
     if (isdefined(level.smartcoversettings.bundle.var_ad7084b4) ? level.smartcoversettings.bundle.var_ad7084b4 : 0) {
         player clientfield::set_player_uimodel("huditems.abilityHoldToActivate", 2);
     }
-    var_bf2bf1a.var_40bfd9cf.var_bf2bf1a = var_bf2bf1a influencers::create_entity_enemy_influencer("turret_close", owner.team);
+    var_bf2bf1a.var_40bfd9cf = var_bf2bf1a influencers::create_entity_enemy_influencer("turret_close", owner.team);
     var_bf2bf1a util::make_sentient();
     if (isdefined(level.smartcoversettings.var_8d86ade8.var_414fa79e)) {
         player playrumbleonentity(level.smartcoversettings.var_8d86ade8.var_414fa79e);
@@ -484,10 +484,10 @@ function function_670cd4a3() {
 // Checksum 0xb8e5decf, Offset: 0x2518
 // Size: 0x5a
 function function_21e722f6(watcher) {
-    watcher.watchforfire.watcher = 1;
-    watcher.onspawn.watcher = &function_3b96637;
-    watcher.var_994b472b.watcher = &function_46f4e542;
-    watcher.var_10efd558.watcher = "switched_field_upgrade";
+    watcher.watchforfire = 1;
+    watcher.onspawn = &function_3b96637;
+    watcher.var_994b472b = &function_46f4e542;
+    watcher.var_10efd558 = "switched_field_upgrade";
 }
 
 // Namespace smart_cover/gadget_smart_cover
@@ -621,7 +621,7 @@ function onkilled(var_c946c04c) {
             smartcover.owner thread globallogic_audio::function_6daffa93(smartcover.weapon, var_f3ab6571);
         }
     }
-    smartcover.var_d02ddb8e.smartcover = var_c946c04c.weapon;
+    smartcover.var_d02ddb8e = var_c946c04c.weapon;
     if (isdefined(level.var_a430cceb)) {
         smartcover [[ level.var_a430cceb ]](var_c946c04c.attacker, smartcover.var_d02ddb8e);
     }
@@ -667,7 +667,7 @@ function function_d2368084(*einflictor, eattacker, idamage, idflags, smeansofdea
 // Checksum 0xcf742919, Offset: 0x3150
 // Size: 0x204
 function function_20be77a3(smartcover) {
-    smartcover.var_eda9690f.smartcover = [];
+    smartcover.var_eda9690f = [];
     forwardangles = anglestoforward(smartcover.angles);
     var_2358ae9 = anglestoright(smartcover.angles);
     var_526ec5aa = smartcover.origin + (0, 0, 1) * getdvarfloat(#"hash_4d17057924212aa9", 1);
@@ -712,7 +712,7 @@ function private function_d2d0a813(var_24e0878b) {
 function createsmartcover(watcher, var_5ebbec19, origin, angles, var_796be15d) {
     player = self;
     var_89b6fd44 = spawn("script_model", origin);
-    var_89b6fd44.targetname.var_89b6fd44 = "smart_cover";
+    var_89b6fd44.targetname = "smart_cover";
     var_5ebbec19.smartcover = var_89b6fd44;
     var_89b6fd44.grenade = var_5ebbec19;
     var_89b6fd44 setmodel(player getmodel(var_796be15d));
@@ -723,19 +723,19 @@ function createsmartcover(watcher, var_5ebbec19, origin, angles, var_796be15d) {
     }
     var_89b6fd44.angles = angles;
     var_89b6fd44.owner = player;
-    var_89b6fd44.takedamage.var_89b6fd44 = 1;
-    var_89b6fd44.startinghealth.var_89b6fd44 = isdefined(level.smartcoversettings.bundle.var_4d358e2d) ? level.smartcoversettings.bundle.var_4d358e2d : var_796be15d ? isdefined(level.smartcoversettings.bundle.var_d9317c6b) ? level.smartcoversettings.bundle.var_d9317c6b : 100 : 100;
-    var_89b6fd44.health.var_89b6fd44 = var_89b6fd44.startinghealth;
+    var_89b6fd44.takedamage = 1;
+    var_89b6fd44.startinghealth = isdefined(level.smartcoversettings.bundle.var_4d358e2d) ? level.smartcoversettings.bundle.var_4d358e2d : var_796be15d ? isdefined(level.smartcoversettings.bundle.var_d9317c6b) ? level.smartcoversettings.bundle.var_d9317c6b : 100 : 100;
+    var_89b6fd44.health = var_89b6fd44.startinghealth;
     var_89b6fd44 solid();
     var_89b6fd44 function_d2d0a813();
     var_89b6fd44 setteam(player getteam());
-    var_89b6fd44.var_86a21346.var_89b6fd44 = &function_d2368084;
-    var_89b6fd44.weapon.var_89b6fd44 = level.smartcoversettings.var_8d86ade8;
+    var_89b6fd44.var_86a21346 = &function_d2368084;
+    var_89b6fd44.weapon = level.smartcoversettings.var_8d86ade8;
     var_89b6fd44 setweapon(var_89b6fd44.weapon);
     player.smartcover.var_58e8b64d[player.smartcover.var_58e8b64d.size] = var_89b6fd44;
     var_c892a9a = var_796be15d ? level.smartcoversettings.var_546a220c : level.smartcoversettings.var_ac3f76c7;
     if (isdefined(var_c892a9a)) {
-        var_89b6fd44.objectiveid.var_89b6fd44 = gameobjects::get_next_obj_id();
+        var_89b6fd44.objectiveid = gameobjects::get_next_obj_id();
         objective_add(var_89b6fd44.objectiveid, "active", var_89b6fd44, var_c892a9a);
         function_6da98133(var_89b6fd44.objectiveid);
         objective_setteam(var_89b6fd44.objectiveid, player.team);
@@ -749,17 +749,17 @@ function createsmartcover(watcher, var_5ebbec19, origin, angles, var_796be15d) {
     function_20be77a3(var_89b6fd44);
     var_89b6fd44 clientfield::set("friendlyequip", 1);
     var_89b6fd44 clientfield::set("enemyequip", 1);
-    var_89b6fd44.var_24ac884b.var_89b6fd44 = 1;
+    var_89b6fd44.var_24ac884b = 1;
     var_89b6fd44 thread ondamage();
     var_89b6fd44 thread function_37f1dcd1();
     thread function_18dd6b22(var_89b6fd44);
     player deployable::function_6ec9ee30(var_89b6fd44, level.smartcoversettings.var_8d86ade8);
-    var_89b6fd44.victimsoundmod.var_89b6fd44 = "vehicle";
+    var_89b6fd44.victimsoundmod = "vehicle";
     if (is_true(level.smartcoversettings.bundle.var_f4e0e7d7)) {
         var_89b6fd44 thread startmicrowave();
     }
     killcament = spawn("script_model", var_89b6fd44.origin + (isdefined(level.smartcoversettings.bundle.var_eb9150a5) ? level.smartcoversettings.bundle.var_eb9150a5 : 0, isdefined(level.smartcoversettings.bundle.var_26a346c8) ? level.smartcoversettings.bundle.var_26a346c8 : 0, isdefined(level.smartcoversettings.bundle.var_d0fb9b7a) ? level.smartcoversettings.bundle.var_d0fb9b7a : 0));
-    killcament.targetname.killcament = "smart_cover_killcament";
+    killcament.targetname = "smart_cover_killcament";
     var_89b6fd44.killcament = killcament;
     watcher.objectarray[watcher.objectarray.size] = killcament;
     return var_89b6fd44;
@@ -774,7 +774,7 @@ function function_127fb8f3(smartcover, attackingplayer) {
         smartcover stopmicrowave();
         smartcover clientfield::set("enemyequip", 0);
     }
-    smartcover.smartcoverjammed.smartcover = 1;
+    smartcover.smartcoverjammed = 1;
     if (isdefined(level.var_86e3d17a)) {
         smartcover notify(#"cancel_timeout");
         var_77b9f495 = [[ level.var_86e3d17a ]]();
@@ -912,14 +912,14 @@ function private function_4e6d9621(smartcover, origins, radii) {
         for (index = 0; index < origins.size; index++) {
             distance = distancesquared(origins[index], var_592587c3);
             radius = isarray(radii) ? radii[index] : radii;
-            var_d3892c92 = radius + getdvarfloat(#"hash_4d17057924212aa9", 1);
+            combinedradius = radius + getdvarfloat(#"hash_4d17057924212aa9", 1);
             if (getdvarint(#"hash_686a676b28ae0af4", 0) == 1) {
                 /#
                     sphere(origins[index], radius, (0, 0, 1), 0.5, 0, 10, 500);
                     sphere(var_592587c3, getdvarfloat(#"hash_4d17057924212aa9", 1), (1, 0, 0), 0.5, 0, 10, 500);
                 #/
             }
-            radiussqr = var_d3892c92 * var_d3892c92;
+            radiussqr = combinedradius * combinedradius;
             if (distance < radiussqr) {
                 return 1;
             }
@@ -965,7 +965,7 @@ function startmicrowave() {
         self.trigger delete();
     }
     self clientfield::set("start_smartcover_microwave", 1);
-    self.trigger = spawn("trigger_radius", self.origin + (0, 0, (isdefined(level.smartcoversettings.bundle.var_b345c668) ? level.smartcoversettings.bundle.var_b345c668 : 0) * -1), 4096 & 16384 & level.aitriggerspawnflags & level.vehicletriggerspawnflags, isdefined(level.smartcoversettings.bundle.var_b345c668) ? level.smartcoversettings.bundle.var_b345c668 : 0, (isdefined(level.smartcoversettings.bundle.var_b345c668) ? level.smartcoversettings.bundle.var_b345c668 : 0) * 2);
+    self.trigger = spawn("trigger_radius", self.origin + (0, 0, (isdefined(level.smartcoversettings.bundle.var_b345c668) ? level.smartcoversettings.bundle.var_b345c668 : 0) * -1), 4096 | 16384 | level.aitriggerspawnflags | level.vehicletriggerspawnflags, isdefined(level.smartcoversettings.bundle.var_b345c668) ? level.smartcoversettings.bundle.var_b345c668 : 0, (isdefined(level.smartcoversettings.bundle.var_b345c668) ? level.smartcoversettings.bundle.var_b345c668 : 0) * 2);
     self thread turretthink();
     /#
         self thread turretdebugwatch();
@@ -1035,7 +1035,7 @@ function turretthink() {
     turret endon(#"microwave_turret_shutdown");
     turret endon(#"death");
     turret.trigger endon(#"death");
-    turret.turret_vehicle_entnum.turret = turret getentitynumber();
+    turret.turret_vehicle_entnum = turret getentitynumber();
     while (1) {
         waitresult = undefined;
         waitresult = turret.trigger waittill(#"trigger");
@@ -1044,7 +1044,7 @@ function turretthink() {
             continue;
         }
         if (!isdefined(ent.beingmicrowavedby)) {
-            ent.beingmicrowavedby.ent = [];
+            ent.beingmicrowavedby = [];
         }
         if (turret microwaveturretaffectsentity(ent) && !isdefined(ent.beingmicrowavedby[turret.turret_vehicle_entnum])) {
             turret thread microwaveentity(ent);
@@ -1082,8 +1082,8 @@ function microwaveentity(entity) {
     }
     turret thread microwaveentitypostshutdowncleanup(entity);
     entity.beingmicrowavedby[turret.turret_vehicle_entnum] = turret.owner;
-    entity.microwavedamageinitialdelay.entity = 1;
-    entity.microwaveeffect.entity = 0;
+    entity.microwavedamageinitialdelay = 1;
+    entity.microwaveeffect = 0;
     shellshockscalar = 1;
     viewkickscalar = 1;
     damagescalar = 1;
@@ -1116,7 +1116,7 @@ function microwaveentity(entity) {
             }
             entity.beingmicrowavedby[turret_vehicle_entnum] = undefined;
             if (isdefined(entity.microwavepoisoning) && entity.microwavepoisoning) {
-                entity.microwavepoisoning.entity = 0;
+                entity.microwavepoisoning = 0;
             }
             entity notify(#"end_microwaveentitypostshutdowncleanup");
             return;
@@ -1127,8 +1127,8 @@ function microwaveentity(entity) {
         }
         if (!isai(entity) && entity util::mayapplyscreeneffect()) {
             if (!isdefined(entity.microwavepoisoning) || !entity.microwavepoisoning) {
-                entity.microwavepoisoning.entity = 1;
-                entity.microwaveeffect.entity = 0;
+                entity.microwavepoisoning = 1;
+                entity.microwaveeffect = 0;
             }
         }
         if (isdefined(entity.microwavedamageinitialdelay)) {
@@ -1137,7 +1137,7 @@ function microwaveentity(entity) {
         }
         entity thread status_effect::status_effect_apply(var_2b29cf8c, level.smartcoversettings.var_8d86ade8, self, 0);
         entity.microwaveeffect++;
-        entity.lastmicrowavedby.entity = turret.owner;
+        entity.lastmicrowavedby = turret.owner;
         time = gettime();
         if (isplayer(entity) && isdefined(entity.clientid)) {
             entity playsoundtoplayer(#"hash_5eecc78116b1fc85", entity);
@@ -1154,7 +1154,7 @@ function microwaveentity(entity) {
                 }
             }
             if (!isdefined(turret.playersdamaged)) {
-                turret.playersdamaged.turret = [];
+                turret.playersdamaged = [];
             }
             turret.playersdamaged[entity.clientid] = 1;
             if (!(isdefined(level.smartcoversettings.bundle.var_74dcfa31) ? level.smartcoversettings.bundle.var_74dcfa31 : 0) && entity.microwaveeffect % 3 == 2) {
@@ -1196,8 +1196,8 @@ function microwaveturretaffectsentity(entity) {
         return 0;
     }
     if (isai(entity)) {
-        var_caf90a7c = entity.maxs[2] - entity.mins[2] + entity.origin[2];
-        if (var_caf90a7c < turret.origin[2]) {
+        entityheight = entity.maxs[2] - entity.mins[2] + entity.origin[2];
+        if (entityheight < turret.origin[2]) {
             return 0;
         }
     }

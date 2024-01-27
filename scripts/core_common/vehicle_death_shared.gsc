@@ -992,11 +992,11 @@ function loop_fx_on_vehicle_tag(effect, looptime, tag) {
 function deathfx_ent() {
     if (!isdefined(self.deathfx_ent)) {
         ent = spawn("script_model", (0, 0, 0));
-        ent.targetname.ent = "vehicle_deathfx";
+        ent.targetname = "vehicle_deathfx";
         emodel = vehicle::get_dummy();
         ent setmodel(self.model);
-        ent.origin.ent = emodel.origin;
-        ent.angles.ent = emodel.angles;
+        ent.origin = emodel.origin;
+        ent.angles = emodel.angles;
         ent notsolid();
         ent hide();
         ent linkto(emodel);
@@ -1777,7 +1777,7 @@ function function_933d48a2() {
             if (speed / maxspeed < 0.75) {
                 continue;
             }
-            vehiclecorpse.var_3acf1c07.vehiclecorpse = 1;
+            vehiclecorpse.var_3acf1c07 = 1;
             vehiclecorpse corpse_explode_fx();
             vehiclecorpse vehicle::do_death_dynents();
             vehiclecorpse deletewhensafe();

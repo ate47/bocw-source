@@ -66,13 +66,13 @@ function private postinit() {
 function private function_13d7bba(xoffset, yoffset) {
     /#
         elem = newdebughudelem();
-        elem.alignx.elem = "<unknown string>";
-        elem.horzalign.elem = "<unknown string>";
-        elem.x.elem = xoffset + 0;
+        elem.alignx = "<unknown string>";
+        elem.horzalign = "<unknown string>";
+        elem.x = xoffset + 0;
         elem.y = yoffset;
-        elem.fontscale.elem = 1;
-        elem.color.elem = (1, 1, 1);
-        elem.fontstyle3d.elem = "<unknown string>";
+        elem.fontscale = 1;
+        elem.color = (1, 1, 1);
+        elem.fontstyle3d = "<unknown string>";
         return elem;
     #/
 }
@@ -914,7 +914,7 @@ function private function_cdd9b388() {
                 var_f4b807cb = function_2e3efdda(origin, undefined, 128, 2000);
                 foreach (item in var_f4b807cb) {
                     hidden = item.hidetime < 0 ? "<unknown string>" : "<unknown string>";
-                    print3d(item.origin + vectorscale((0, 0, 1), 10), "<unknown string>" + item.var_bd027dd9 + hidden + "<unknown string>" + item.var_a6762160.name, (1, 0.5, 0), 1, 0.4);
+                    print3d(item.origin + vectorscale((0, 0, 1), 10), "<unknown string>" + item.networkid + hidden + "<unknown string>" + item.var_a6762160.name, (1, 0.5, 0), 1, 0.4);
                 }
             }
             if (getdvarint(#"hash_52c63fdd1c1d96ac", 0)) {
@@ -1415,7 +1415,7 @@ function function_9cc59537() {
                                 }
                                 var_796ab805[drop.var_a6762160.name][var_796ab805[drop.var_a6762160.name].size] = drop.var_a6762160.name;
                             }
-                            drop.var_49d5e215.drop = 1;
+                            drop.var_49d5e215 = 1;
                         }
                     }
                     var_bd9acc19 = 150;
@@ -1433,10 +1433,10 @@ function function_9cc59537() {
                 }
                 var_1d9375fc = get_array("<unknown string>", "<unknown string>");
                 foreach (group in var_1d9375fc) {
-                    group.debug_spawnpoints.group = [];
+                    group.debug_spawnpoints = [];
                     var_f0179f4a = getdvarstring(#"hash_230734aeaaf8671", "<unknown string>");
                     if (isstring(group.target) && (var_f0179f4a == "<unknown string>" || function_d72aa67e(var_f0179f4a, group.target))) {
-                        group.debug_spawnpoints.group = function_91b29d2a(group.target);
+                        group.debug_spawnpoints = function_91b29d2a(group.target);
                     }
                 }
                 var_7cb887a8 = [];

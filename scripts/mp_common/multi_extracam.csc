@@ -31,7 +31,7 @@ function multi_extracam_init(localclientnum) {
         camerastruct = struct::get("extracam" + i, "targetname");
         if (isdefined(camerastruct)) {
             camera_ent = spawn(localclientnum, camerastruct.origin, "script_origin");
-            camera_ent.angles.camera_ent = camerastruct.angles;
+            camera_ent.angles = camerastruct.angles;
             width = isdefined(camerastruct.extracam_width) ? camerastruct.extracam_width : -1;
             height = isdefined(camerastruct.extracam_height) ? camerastruct.extracam_height : -1;
             camera_ent setextracam(i - 1, width, height);

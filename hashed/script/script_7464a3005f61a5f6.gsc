@@ -122,10 +122,10 @@ function private function_8aefaae3(s_burn) {
                 n_dps = level.var_981dd9cf[#"burn"][str_type].n_dps;
             }
             if (n_time_remaining > 1) {
-                var_39d0f0a8.n_time_remaining.var_39d0f0a8 = var_39d0f0a8.n_time_remaining - 1;
+                var_39d0f0a8.n_time_remaining = var_39d0f0a8.n_time_remaining - 1;
                 n_damage = n_dps * 1;
             } else if (n_time_remaining > 0) {
-                var_39d0f0a8.n_time_remaining.var_39d0f0a8 = 0;
+                var_39d0f0a8.n_time_remaining = 0;
                 n_damage = n_dps * n_time_remaining;
             }
             if (n_damage > var_25c61d06) {

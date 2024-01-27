@@ -305,7 +305,7 @@ function function_ed6d34fb() {
         level flag::set("open_fasttravel_to_hill");
         var_73524bb4 = getentarray("portal_fx", "targetname");
         foreach (portal_fx in var_73524bb4) {
-            portal_fx.var_2c517d4c.portal_fx = util::spawn_model("tag_origin", portal_fx.origin, portal_fx.angles);
+            portal_fx.var_2c517d4c = util::spawn_model("tag_origin", portal_fx.origin, portal_fx.angles);
             level clientfield::set("" + #"hash_666ad912cb4541f1", 1);
             playsoundatposition(#"hash_5f27432854b069c9", portal_fx.var_2c517d4c.origin);
         }

@@ -111,12 +111,12 @@ function function_952f1795(localclientnum) {
     while (1) {
         foreach (player in getplayers(localclientnum)) {
             if (distance2d(self.origin, player.origin) < 64) {
-                var_6e75c10a = "beam9_zm_fld_healing_aura_pulse";
+                beamname = "beam9_zm_fld_healing_aura_pulse";
                 pos = self.origin;
-                var_ccfd8635 = player.origin;
-                trace = beamtrace(pos, var_ccfd8635, 1, self, 1);
+                otherpos = player.origin;
+                trace = beamtrace(pos, otherpos, 1, self, 1);
                 if (self function_a4b3da97(trace)) {
-                    beam_id = self beam::launch(self, "tag_origin", player, "j_spine4", var_6e75c10a);
+                    beam_id = self beam::launch(self, "tag_origin", player, "j_spine4", beamname);
                     level thread function_d7031739(localclientnum, beam_id);
                 }
             }

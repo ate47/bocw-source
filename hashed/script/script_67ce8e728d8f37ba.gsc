@@ -141,7 +141,7 @@ function function_db62d086() {
     foreach (models in var_759f42bf) {
         models show();
         if (models.targetname === "destructible" && isdefined(models.var_93f58b6d)) {
-            models.takedamage.models = models.var_93f58b6d;
+            models.takedamage = models.var_93f58b6d;
             models.var_93f58b6d = undefined;
         }
     }
@@ -158,8 +158,8 @@ function function_bb17da18() {
     var_759f42bf = arraycombine(var_759f42bf, var_4e756c46);
     foreach (models in var_759f42bf) {
         if (models.targetname === "destructible" && !isdefined(models.var_93f58b6d)) {
-            models.var_93f58b6d.models = models.takedamage;
-            models.takedamage.models = 0;
+            models.var_93f58b6d = models.takedamage;
+            models.takedamage = 0;
         }
         models hide();
     }

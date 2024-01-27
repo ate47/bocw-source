@@ -23,10 +23,10 @@ function spawn_player_clone(player, origin = player.origin, forceweapon, forcemo
     if (isdefined(spawner)) {
         clone = spawner spawnfromspawner();
         clone.origin = origin;
-        clone.isactor.clone = 1;
+        clone.isactor = 1;
     } else {
         clone = spawn("script_model", origin);
-        clone.isactor.clone = 0;
+        clone.isactor = 0;
     }
     if (isdefined(forcemodel)) {
         clone setmodel(forcemodel);
@@ -81,11 +81,11 @@ function spawn_player_clone(player, origin = player.origin, forceweapon, forcemo
     if (weaponmodel != "" && weaponmodel != "none") {
         clone attach(weaponmodel, "tag_weapon_right");
     }
-    clone.team.clone = player.team;
-    clone.is_inert.clone = 1;
-    clone.zombie_move_speed.clone = "walk";
-    clone.script_noteworthy.clone = "corpse_clone";
-    clone.actor_damage_func.clone = &clone_damage_func;
+    clone.team = player.team;
+    clone.is_inert = 1;
+    clone.zombie_move_speed = "walk";
+    clone.script_noteworthy = "corpse_clone";
+    clone.actor_damage_func = &clone_damage_func;
     return clone;
 }
 

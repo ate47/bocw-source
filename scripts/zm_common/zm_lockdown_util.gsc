@@ -425,7 +425,7 @@ function private function_66941fc3(stub) {
         var_2943f1ec = level.var_85c076ab[var_77f297ef];
         for (index = 0; index < var_2943f1ec.var_f6d13e1b.size; index++) {
             if (var_2943f1ec.var_f6d13e1b[index].stub == stub) {
-                var_2943f1ec.var_f6d13e1b.var_2943f1ec = array::remove_index(var_2943f1ec.var_f6d13e1b, index);
+                var_2943f1ec.var_f6d13e1b = array::remove_index(var_2943f1ec.var_f6d13e1b, index);
                 break;
             }
         }
@@ -529,7 +529,7 @@ function private function_9c7d5271(entity, &registerlotus_right, range) {
             if (!function_d3fbb5ec(entity, stub, current_zone)) {
                 continue;
             }
-            stub.lockdowntype.stub = "lockdown_stub_type_wallbuys";
+            stub.lockdowntype = "lockdown_stub_type_wallbuys";
             if (!isdefined(registerlotus_right)) {
                 registerlotus_right = [];
             } else if (!isarray(registerlotus_right)) {
@@ -582,7 +582,7 @@ function private function_db989a2a(entity, &registerlotus_right, range) {
             if (!function_fea6f0c0(entity, stub, current_zone)) {
                 continue;
             }
-            stub.lockdowntype.stub = "lockdown_stub_type_perks";
+            stub.lockdowntype = "lockdown_stub_type_perks";
             if (!isdefined(registerlotus_right)) {
                 registerlotus_right = [];
             } else if (!isarray(registerlotus_right)) {
@@ -629,7 +629,7 @@ function private function_d0e1d38c(entity, &registerlotus_right, range) {
             if (!function_ea677a9a(entity, stub, current_zone)) {
                 continue;
             }
-            stub.lockdowntype.stub = "lockdown_stub_type_crafting_tables";
+            stub.lockdowntype = "lockdown_stub_type_crafting_tables";
             if (!isdefined(registerlotus_right)) {
                 registerlotus_right = [];
             } else if (!isarray(registerlotus_right)) {
@@ -748,7 +748,7 @@ function private function_165e2bd6(entity, &registerlotus_right, *range) {
                     function_78eae22a(registerlotus_right, stub, 0);
                 #/
             } else {
-                stub.lockdowntype.stub = "lockdown_stub_type_pap";
+                stub.lockdowntype = "lockdown_stub_type_pap";
                 if (!isdefined(range)) {
                     range = [];
                 } else if (!isarray(range)) {
@@ -796,7 +796,7 @@ function private function_8850974b(entity, &registerlotus_right, range) {
                 function_78eae22a(entity, blocker, 12);
             #/
         } else {
-            blocker.lockdowntype.blocker = "lockdown_stub_type_boards";
+            blocker.lockdowntype = "lockdown_stub_type_boards";
             if (!isdefined(registerlotus_right)) {
                 registerlotus_right = [];
             } else if (!isarray(registerlotus_right)) {
@@ -838,7 +838,7 @@ function private function_d2ce5ac1(entity, &registerlotus_right, range) {
             if (!function_387fd27e(entity, trap_trig)) {
                 continue;
             }
-            trap_trig.lockdowntype.trap_trig = "lockdown_stub_type_traps";
+            trap_trig.lockdowntype = "lockdown_stub_type_traps";
             if (!isdefined(registerlotus_right)) {
                 registerlotus_right = [];
             } else if (!isarray(registerlotus_right)) {
@@ -903,7 +903,7 @@ function function_50ba1eb0(entity, stub) {
         var_f1e20c7f = new class_6fde4e6();
         var_f1e20c7f.stub = stub;
         var_f1e20c7f.owner = entity;
-        var_f1e20c7f.claimed.var_f1e20c7f = 1;
+        var_f1e20c7f.claimed = 1;
         array::add(var_2943f1ec.var_f6d13e1b, var_f1e20c7f);
         /#
             function_78eae22a(entity, stub, 10);
@@ -919,7 +919,7 @@ function function_50ba1eb0(entity, stub) {
 function function_9b84bb88(entity, stubtypes, var_d05e79c8, var_c7455683) {
     /#
         if (getdvarint(#"hash_3ec02cda135af40f", 0) == 1 && getdvarint(#"recorder_enablerec", 0) == 1) {
-            entity.var_d187874c.entity = [];
+            entity.var_d187874c = [];
         }
     #/
     registerlotus_right = [];
@@ -960,11 +960,11 @@ function function_7258b5cc(entity, var_410a8c7, var_2baba799, unlockfunc) {
         return;
     } else if (!isentity(stub)) {
         if (!isdefined(stub.var_a0fc37f6)) {
-            stub.var_a0fc37f6.stub = stub.prompt_and_visibility_func;
+            stub.var_a0fc37f6 = stub.prompt_and_visibility_func;
         }
         stub.prompt_and_visibility_func = var_410a8c7;
         if (!isdefined(stub.var_492080a5)) {
-            stub.var_492080a5.stub = stub.trigger_func;
+            stub.var_492080a5 = stub.trigger_func;
         }
         stub.trigger_func = var_2baba799;
         zm_unitrigger::reregister_unitrigger(stub);
@@ -973,8 +973,8 @@ function function_7258b5cc(entity, var_410a8c7, var_2baba799, unlockfunc) {
         newstub = stub zm_unitrigger::function_9267812e(stub.maxs[0] - stub.mins[0], stub.maxs[1] - stub.mins[1], stub.maxs[2] - stub.mins[2]);
         newstub.prompt_and_visibility_func = var_410a8c7;
         newstub.var_6f08706b = stub;
-        newstub.lockdowntype.newstub = stub.lockdowntype;
-        newstub.script_string.newstub = stub.script_string;
+        newstub.lockdowntype = stub.lockdowntype;
+        newstub.script_string = stub.script_string;
         stub.lockdowntype = undefined;
         stub.lockdownstub = newstub;
         var_a0692a89.stub = newstub;
@@ -986,8 +986,8 @@ function function_7258b5cc(entity, var_410a8c7, var_2baba799, unlockfunc) {
         stub.var_3468124 zm_perks::function_efd2c9e6();
     }
     stub.unlockfunc = unlockfunc;
-    var_a0692a89.var_4f0ea1b5.var_a0692a89 = 1;
-    var_a0692a89.claimed.var_a0692a89 = 0;
+    var_a0692a89.var_4f0ea1b5 = 1;
+    var_a0692a89.claimed = 0;
     return stub;
 }
 
@@ -1047,7 +1047,7 @@ function function_c9105448(entity, stub) {
 function function_ac6907ec() {
     var_a0692a89 = function_fd31eb92(self);
     if (isdefined(var_a0692a89)) {
-        var_a0692a89.var_4f0ea1b5.var_a0692a89 = 2;
+        var_a0692a89.var_4f0ea1b5 = 2;
     }
     if (isdefined(self) && isdefined(self.unlockfunc)) {
         [[ self.unlockfunc ]](self);
@@ -1070,7 +1070,7 @@ function function_ac6907ec() {
 function function_4de23f77() {
     var_a0692a89 = function_fd31eb92(self);
     if (isdefined(var_a0692a89)) {
-        var_a0692a89.var_4f0ea1b5.var_a0692a89 = 2;
+        var_a0692a89.var_4f0ea1b5 = 2;
     }
     self.var_6f08706b.lockdownstub = undefined;
     if (isdefined(self) && isdefined(self.unlockfunc)) {
@@ -1107,9 +1107,9 @@ function function_78eae22a(entity, stub, reason, ...) {
     /#
         if (getdvarint(#"hash_3ec02cda135af40f", 0) == 1 && getdvarint(#"recorder_enablerec", 0) == 1) {
             if (!isdefined(entity.var_d187874c)) {
-                entity.var_d187874c.entity = [];
+                entity.var_d187874c = [];
             } else if (!isarray(entity.var_d187874c)) {
-                entity.var_d187874c.entity = array(entity.var_d187874c);
+                entity.var_d187874c = array(entity.var_d187874c);
             }
             entity.var_d187874c[entity.var_d187874c.size] = {#args:vararg, #reason:reason, #stub:stub};
         }

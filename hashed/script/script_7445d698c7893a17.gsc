@@ -306,8 +306,8 @@ function function_a22e41ec(*_hash) {
     ai_zombies = getaiteamarray(#"axis");
     foreach (ai in ai_zombies) {
         if (is_true(ai.aat_turned) && isalive(ai)) {
-            ai.takedamage.ai = 1;
-            ai.allowdeath.ai = 1;
+            ai.takedamage = 1;
+            ai.allowdeath = 1;
             waitframe(1);
             ai kill();
         }

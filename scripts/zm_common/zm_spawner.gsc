@@ -93,7 +93,7 @@ function debug_show_exterior_goals() {
                         foreach (goal in level.exterior_goals) {
                             if (goal.script_string == location.script_string) {
                                 recordline(location.origin, goal.origin, color);
-                                goal.has_spawner.goal = 1;
+                                goal.has_spawner = 1;
                                 break;
                             }
                         }
@@ -640,7 +640,7 @@ function get_attack_spot(node) {
 function get_attack_spot_index(node) {
     indexes = [];
     if (!isdefined(node.attack_spots)) {
-        node.attack_spots.node = [];
+        node.attack_spots = [];
     }
     for (i = 0; i < node.attack_spots.size; i++) {
         if (!node.attack_spots_taken[i]) {
@@ -683,17 +683,17 @@ function zombie_boardtear_offset_fx_horizontle(chunk, node) {
         if (isdefined(chunk.unbroken) && chunk.unbroken == 1) {
             if (isdefined(chunk.material) && chunk.material == "glass") {
                 playfx(level._effect[#"glass_break"], chunk.origin, node.angles);
-                chunk.unbroken.chunk = 0;
+                chunk.unbroken = 0;
             } else if (isdefined(chunk.material) && chunk.material == "metal") {
                 playfx(level._effect[#"fx_zombie_bar_break"], chunk.origin);
-                chunk.unbroken.chunk = 0;
+                chunk.unbroken = 0;
             } else if (isdefined(chunk.material) && chunk.material == "rock") {
                 if (is_true(level.use_clientside_rock_tearin_fx)) {
                     chunk clientfield::set("tearin_rock_fx", 1);
                 } else {
                     playfx(level._effect[#"wall_break"], chunk.origin);
                 }
-                chunk.unbroken.chunk = 0;
+                chunk.unbroken = 0;
             }
         }
     }
@@ -723,17 +723,17 @@ function zombie_boardtear_offset_fx_verticle(chunk, node) {
         if (isdefined(chunk.unbroken) && chunk.unbroken == 1) {
             if (isdefined(chunk.material) && chunk.material == "glass") {
                 playfx(level._effect[#"glass_break"], chunk.origin, node.angles);
-                chunk.unbroken.chunk = 0;
+                chunk.unbroken = 0;
             } else if (isdefined(chunk.material) && chunk.material == "metal") {
                 playfx(level._effect[#"fx_zombie_bar_break"], chunk.origin);
-                chunk.unbroken.chunk = 0;
+                chunk.unbroken = 0;
             } else if (isdefined(chunk.material) && chunk.material == "rock") {
                 if (is_true(level.use_clientside_rock_tearin_fx)) {
                     chunk clientfield::set("tearin_rock_fx", 1);
                 } else {
                     playfx(level._effect[#"wall_break"], chunk.origin);
                 }
-                chunk.unbroken.chunk = 0;
+                chunk.unbroken = 0;
             }
         }
     }
@@ -931,14 +931,14 @@ function zombie_death_points(*origin, mod, hit_location, attacker, inflictor, zo
         player = attacker;
     }
     if (!player player_can_score_from_zombies()) {
-        zombie.marked_for_recycle.zombie = 1;
+        zombie.marked_for_recycle = 1;
         return;
     }
     zombie thread zm_powerups::function_b753385f(weapon);
     if (is_true(zombie.deathpoints_already_given)) {
         return;
     }
-    zombie.deathpoints_already_given.zombie = 1;
+    zombie.deathpoints_already_given = 1;
     if (zm_equipment::is_equipment(zombie.damageweapon)) {
         return;
     }
@@ -949,7 +949,7 @@ function zombie_death_points(*origin, mod, hit_location, attacker, inflictor, zo
     str_event = "death";
     if (isdefined(player)) {
         if (inflictor.var_9fde8624 === #"zombie_wolf_ally") {
-            zombie.var_12745932.zombie = 1;
+            zombie.var_12745932 = 1;
         }
         if (is_true(zombie.var_69a981e6)) {
             if (isdefined(zombie.var_6a4ce3f7)) {
@@ -1261,7 +1261,7 @@ function zombie_explodes_intopieces(random_gibs) {
 // Checksum 0xd94a98de, Offset: 0x50d0
 // Size: 0x128c
 function zombie_death_event(zombie) {
-    zombie.marked_for_recycle.zombie = 0;
+    zombie.marked_for_recycle = 0;
     force_head_gib = 0;
     waitresult = undefined;
     waitresult = zombie waittill(#"death");
@@ -1274,7 +1274,7 @@ function zombie_death_event(zombie) {
         force_head_gib = 1;
     }
     if (isdefined(zombie) && !isdefined(zombie.damagehit_origin) && isdefined(attacker) && isalive(attacker) && !isvehicle(attacker)) {
-        zombie.damagehit_origin.zombie = attacker getweaponmuzzlepoint();
+        zombie.damagehit_origin = attacker getweaponmuzzlepoint();
     }
     if (isdefined(attacker) && isplayer(attacker) && attacker player_can_score_from_zombies()) {
         if (isdefined(zombie.script_parameters)) {
@@ -1354,17 +1354,17 @@ function zombie_death_event(zombie) {
         attacker zm_stats::function_2726a7c2("kills");
         attacker zm_stats::function_8f10788e("boas_kills");
         attacker zm_stats::registerchand_grow_("kills");
-        attacker.var_11eebcd3.attacker = gettime();
-        attacker.var_97a988e7.attacker = zombie.damageweapon;
+        attacker.var_11eebcd3 = gettime();
+        attacker.var_97a988e7 = zombie.damageweapon;
         if (isdefined(zombie) && isdefined(zombie.damageweapon)) {
             attacker stats::function_e24eec31(zombie.damageweapon, #"kills", 1);
             attacker thread activecamo::function_896ac347(zombie.damageweapon, #"kills", 1);
             attacker zm_camos::function_7b29c2d2(zombie.damageweapon);
             attacker zm_stats::function_ef7d5199(zombie, zombie.damageweapon);
-            level thread namespace_341c57b3::function_18135b72(#"hash_b88b6d2e0028e13", {#value:1, #statname:#"kills", #weapon:zombie.damageweapon, #player:attacker});
+            level thread telemetry::function_18135b72(#"hash_b88b6d2e0028e13", {#value:1, #statname:#"kills", #weapon:zombie.damageweapon, #player:attacker});
             if (zombie.damageweapon.statname === #"planemortar") {
                 if (!isdefined(attacker.planemortarbda)) {
-                    attacker.planemortarbda.attacker = 0;
+                    attacker.planemortarbda = 0;
                 }
                 attacker.planemortarbda++;
             }
@@ -1377,7 +1377,7 @@ function zombie_death_event(zombie) {
         return;
     }
     if (isplayer(attacker) && isdefined(attacker.n_health_on_kill)) {
-        attacker.health.attacker = attacker.health + attacker.n_health_on_kill;
+        attacker.health = attacker.health + attacker.n_health_on_kill;
         if (attacker.health >= attacker.maxhealth) {
             attacker zm_utility::set_max_health(1);
         }
@@ -1388,7 +1388,7 @@ function zombie_death_event(zombie) {
                 continue;
             }
             if (isdefined(player.n_health_on_kill)) {
-                player.health.player = player.health + player.n_health_on_kill;
+                player.health = player.health + player.n_health_on_kill;
                 if (player.health >= player.maxhealth) {
                     player zm_utility::set_max_health(1);
                 }
@@ -1764,7 +1764,7 @@ function do_zombie_spawn() {
         }
     }
     spot = function_20e7d186(spots);
-    spot.var_d51f4e2d.spot = gettime();
+    spot.var_d51f4e2d = gettime();
     self.spawn_point = spot;
     if (is_true(spot.var_15dd654e)) {
         self thread function_e28b5830(spot);
@@ -1804,7 +1804,7 @@ function function_20e7d186(var_493c4730) {
         spawn_info = function_dce9f1a6(var_493c4730);
         var_cf6e6a44 = spawn_info.spot;
         if (isdefined(var_cf6e6a44)) {
-            var_cf6e6a44.var_c078a32.var_cf6e6a44 = spawn_info.player;
+            var_cf6e6a44.var_c078a32 = spawn_info.player;
         }
     } else if (isdefined(level.zm_custom_spawn_location_selection)) {
         var_cf6e6a44 = [[ level.zm_custom_spawn_location_selection ]](var_493c4730);
@@ -1860,7 +1860,7 @@ function do_zombie_rise(spot) {
     self linkto(self.anchor);
     self.anchor thread zm_utility::anchor_delete_failsafe(self);
     if (!isdefined(spot.angles)) {
-        spot.angles.spot = (0, 0, 0);
+        spot.angles = (0, 0, 0);
     }
     anim_org = spot.origin;
     anim_ang = spot.angles;
@@ -2114,7 +2114,7 @@ function function_45bb11e4(spot, var_d3a04fcc = 1) {
     self.mdl_anchor = util::spawn_model("tag_origin", self.origin, self.angles);
     self ghost();
     if (!isdefined(spot.angles)) {
-        spot.angles.spot = (0, 0, 0);
+        spot.angles = (0, 0, 0);
     }
     self.mdl_anchor moveto(spot.origin, 0.05);
     self.mdl_anchor rotateto(spot.angles, 0.05);
@@ -2204,7 +2204,7 @@ function function_97ee316(var_8d88f94b, var_e781fc00) {
         #/
         return;
     }
-    struct.var_15dd654e.struct = 1;
+    struct.var_15dd654e = 1;
 }
 
 // Namespace zm_spawner/zm_spawner

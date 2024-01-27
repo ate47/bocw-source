@@ -419,7 +419,7 @@ function function_768f9ea9(*name, *var_f9f06983, *direct, *player) {
     if (isdefined(level.var_40b02b72)) {
         foreach (veh in level.var_40b02b72) {
             if (isalive(veh)) {
-                veh.delete_on_death.veh = 1;
+                veh.delete_on_death = 1;
                 veh delete();
             }
         }

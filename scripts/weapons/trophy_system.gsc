@@ -55,7 +55,7 @@ function function_bff5c062(trophysystem, attackingplayer) {
     var_f3ab6571 = trophysystem.owner weaponobjects::function_7cdcc8ba(trophysystem.var_2d045452) > 1;
     trophysystem.owner thread globallogic_audio::function_a2cde53d(trophysystem.weapon, var_f3ab6571);
     trophysystem.owner weaponobjects::hackerremoveweapon(trophysystem);
-    trophysystem.team.trophysystem = attackingplayer.team;
+    trophysystem.team = attackingplayer.team;
     trophysystem setteam(attackingplayer.team);
     trophysystem.owner = attackingplayer;
     trophysystem setowner(attackingplayer);
@@ -114,22 +114,22 @@ function on_player_killed(s_params) {
 // Checksum 0x743ce7a2, Offset: 0x708
 // Size: 0x132
 function createtrophysystemwatcher(watcher) {
-    watcher.ondetonatecallback.watcher = &trophysystemdetonate;
-    watcher.activatesound.watcher = #"wpn_claymore_alert";
-    watcher.hackertoolradius.watcher = level.equipmenthackertoolradius;
-    watcher.hackertooltimems.watcher = level.equipmenthackertooltimems;
-    watcher.ownergetsassist.watcher = 1;
-    watcher.ignoredirection.watcher = 1;
-    watcher.activationdelay.watcher = 0.1;
-    watcher.enemydestroy.watcher = 1;
-    watcher.var_10efd558.watcher = "switched_field_upgrade";
-    watcher.onspawn.watcher = &ontrophysystemspawn;
-    watcher.ondamage.watcher = &watchtrophysystemdamage;
-    watcher.ondestroyed.watcher = &ontrophysystemsmashed;
-    watcher.var_994b472b.watcher = &function_5a4f1e1e;
-    watcher.onstun.watcher = &weaponobjects::weaponstun;
-    watcher.stuntime.watcher = 1;
-    watcher.ontimeout.watcher = &ontrophysystemsmashed;
+    watcher.ondetonatecallback = &trophysystemdetonate;
+    watcher.activatesound = #"wpn_claymore_alert";
+    watcher.hackertoolradius = level.equipmenthackertoolradius;
+    watcher.hackertooltimems = level.equipmenthackertooltimems;
+    watcher.ownergetsassist = 1;
+    watcher.ignoredirection = 1;
+    watcher.activationdelay = 0.1;
+    watcher.enemydestroy = 1;
+    watcher.var_10efd558 = "switched_field_upgrade";
+    watcher.onspawn = &ontrophysystemspawn;
+    watcher.ondamage = &watchtrophysystemdamage;
+    watcher.ondestroyed = &ontrophysystemsmashed;
+    watcher.var_994b472b = &function_5a4f1e1e;
+    watcher.onstun = &weaponobjects::weaponstun;
+    watcher.stuntime = 1;
+    watcher.ontimeout = &ontrophysystemsmashed;
 }
 
 // Namespace trophy_system/trophy_system
@@ -250,7 +250,7 @@ function trophyactive(owner) {
             } else {
             LOC_0000022a:
                 if (!isdefined(grenade.owner)) {
-                    grenade.owner.grenade = getmissileowner(grenade);
+                    grenade.owner = getmissileowner(grenade);
                 }
                 if (!isdefined(grenade.owner)) {
                     continue;
@@ -389,7 +389,7 @@ function function_3170d645(projectile, trophy) {
             if (!isdefined(useobj) || !_the_root_zurich_spawners(useobj, trophy)) {
                 continue;
             }
-            var_2e36557f = var_2e36557f & (useobj.userate && (useobj gameobjects::function_4b64b7fd(player.team) || useobj.interactteam === #"hash_33c49a99551acae7"));
+            var_2e36557f = var_2e36557f | (useobj.userate && (useobj gameobjects::function_4b64b7fd(player.team) || useobj.interactteam === #"hash_33c49a99551acae7"));
             if (var_2e36557f) {
                 break;
             }
@@ -405,7 +405,7 @@ function function_3170d645(projectile, trophy) {
             if (!isdefined(useobj) || !_the_root_zurich_spawners(useobj, trophy)) {
                 continue;
             }
-            var_2e36557f = var_2e36557f & (useobj.userate && (useobj gameobjects::function_4b64b7fd(player.team) || useobj.interactteam === #"hash_33c49a99551acae7"));
+            var_2e36557f = var_2e36557f | (useobj.userate && (useobj gameobjects::function_4b64b7fd(player.team) || useobj.interactteam === #"hash_33c49a99551acae7"));
             if (var_2e36557f) {
                 break;
             }
@@ -420,7 +420,7 @@ function function_3170d645(projectile, trophy) {
             if (!isdefined(useobj) || !_the_root_zurich_spawners(useobj, trophy)) {
                 continue;
             }
-            var_2e36557f = var_2e36557f & (useobj.userate && (useobj gameobjects::function_4b64b7fd(player.team) || useobj.interactteam === #"hash_33c49a99551acae7"));
+            var_2e36557f = var_2e36557f | (useobj.userate && (useobj gameobjects::function_4b64b7fd(player.team) || useobj.interactteam === #"hash_33c49a99551acae7"));
             if (var_2e36557f) {
                 break;
             }

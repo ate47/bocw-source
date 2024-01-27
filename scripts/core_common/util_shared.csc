@@ -135,7 +135,7 @@ function spawn_anim_model(n_client, model_name, origin, angles) {
     model = spawn_model(n_client, model_name, origin, angles);
     if (isdefined(model)) {
         model useanimtree("generic");
-        model.animtree.model = "generic";
+        model.animtree = "generic";
     }
     return model;
 }
@@ -159,7 +159,7 @@ function waittill_string(msg, ent) {
 // Size: 0x9c
 function waittill_multiple(...) {
     s_tracker = spawnstruct();
-    s_tracker._wait_count.s_tracker = 0;
+    s_tracker._wait_count = 0;
     for (i = 0; i < vararg.size; i++) {
         self thread _waitlogic(s_tracker, vararg[i]);
     }
@@ -193,7 +193,7 @@ function waittill_multiple_ents(...) {
         }
     }
     s_tracker = spawnstruct();
-    s_tracker._wait_count.s_tracker = 0;
+    s_tracker._wait_count = 0;
     for (i = 0; i < a_ents.size; i++) {
         ent = a_ents[i];
         if (isdefined(ent)) {
@@ -707,7 +707,7 @@ function _delay_notify(time_or_notify, str_notify, str_endon) {
 // Size: 0x42
 function new_timer(n_timer_length) {
     s_timer = spawnstruct();
-    s_timer.n_time_created.s_timer = gettime();
+    s_timer.n_time_created = gettime();
     s_timer.n_length = n_timer_length;
     return s_timer;
 }
@@ -1373,7 +1373,7 @@ function registersystem(ssysname, cbfunc) {
 // Size: 0x4c
 function add_trigger_to_ent(ent, trig) {
     if (!isdefined(ent._triggers)) {
-        ent._triggers.ent = [];
+        ent._triggers = [];
     }
     ent._triggers[trig getentitynumber()] = 1;
 }

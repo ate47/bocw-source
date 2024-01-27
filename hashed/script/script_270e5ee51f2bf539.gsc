@@ -88,7 +88,7 @@ function onallplayersready() {
         players = getplayers();
         player_count_actual = 0;
         foreach (player in players) {
-            player.var_200b0850.player = 1;
+            player.var_200b0850 = 1;
             if ((player.sessionstate == "playing" || player.sessionstate == "spectator") && !isbot(player)) {
                 player_count_actual++;
             }

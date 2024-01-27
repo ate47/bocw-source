@@ -167,7 +167,7 @@ function function_eb8c5f46() {
         var_4ac4d617 = corpse getentitynumber();
         if (isdefined(level.stealth.var_a9e01a52) && isdefined(level.stealth.var_a9e01a52[var_4ac4d617]) && distancesquared(level.stealth.var_a9e01a52[var_4ac4d617], var_2501cbe2) < function_a3f6cdac(100)) {
             level.stealth.var_a9e01a52[var_4ac4d617] = undefined;
-            corpse.found.corpse = 1;
+            corpse.found = 1;
         }
         if (isdefined(corpse.found)) {
             continue;
@@ -218,7 +218,7 @@ function function_eb8c5f46() {
         }
     }
     if (isdefined(found_corpse)) {
-        found_corpse.found.found_corpse = 1;
+        found_corpse.found = 1;
         if (is_true(found_corpse.var_17022cd4) && isdefined(self.stealth.corpse.ent) && self.stealth.corpse.ent == found_corpse) {
             self.stealth.var_e72a0096 = gettime();
         }
@@ -271,7 +271,7 @@ function function_94ebd1f5(corpse) {
     if (isdefined(self.stealth.corpse.ent)) {
         self.stealth.corpse.ent.var_17022cd4 = undefined;
     }
-    corpse.var_17022cd4.corpse = 1;
+    corpse.var_17022cd4 = 1;
     self.stealth.corpse.ent = corpse;
     self waittill(#"death");
     if (isdefined(corpse)) {
@@ -373,7 +373,7 @@ function function_808b81d8() {
         }
     }
     if (isdefined(var_e51f89c2)) {
-        var_e51f89c2.found.var_e51f89c2 = 1;
+        var_e51f89c2.found = 1;
         spot = undefined;
         if (is_true(var_e51f89c2.var_17022cd4) && isdefined(self.stealth.suspicious_door.ent) && self.stealth.suspicious_door.ent == var_e51f89c2) {
             self.stealth.var_e72a0096 = gettime();
@@ -396,7 +396,7 @@ function function_bd918ca2(event) {
     if (isdefined(door.var_c1969778)) {
         return;
     }
-    door.var_c1969778.door = self;
+    door.var_c1969778 = self;
     if (isdefined(door.var_2fd025b) && isdefined(door.var_2fd025b[0])) {
         spot = door.var_2fd025b[0].origin;
     } else {
@@ -406,10 +406,10 @@ function function_bd918ca2(event) {
     if (!isdefined(point)) {
         point = spot;
     }
-    event.origin.event = spot + anglestoforward((0, randomfloatrange(0, 360), 0)) * 75;
-    event.var_ce3a18c7.event = getclosestpointonnavmesh(event.origin, 500, 16);
+    event.origin = spot + anglestoforward((0, randomfloatrange(0, 360), 0)) * 75;
+    event.var_ce3a18c7 = getclosestpointonnavmesh(event.origin, 500, 16);
     if (!isdefined(event.var_ce3a18c7)) {
-        event.var_ce3a18c7.event = event.origin;
+        event.var_ce3a18c7 = event.origin;
     }
     self namespace_f1f700ac::function_52839330("investigate", event);
 }

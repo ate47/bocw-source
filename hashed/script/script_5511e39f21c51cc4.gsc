@@ -104,7 +104,7 @@ function function_d45a1f8d(einflictor, attacker, *idamage, *smeansofdeath, weapo
     }
     if (shitloc.owner == psoffsettime && deathanimduration == getweapon(#"cobra_20mm_comlink") && (isdefined(shitloc.lastkillvo) ? shitloc.lastkillvo : 0) < gettime()) {
         shitloc namespace_f9b02f80::play_pilot_dialog_on_owner("kill", "helicopter_guard", shitloc.killstreak_id);
-        shitloc.lastkillvo.shitloc = gettime() + 5000;
+        shitloc.lastkillvo = gettime() + 5000;
     }
 }
 

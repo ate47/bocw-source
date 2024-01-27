@@ -90,10 +90,10 @@ function private on_player_loadout() {
 // Params 7, eflags: 0x4
 // Checksum 0x7969a433, Offset: 0x5b0
 // Size: 0xf0
-function private function_e74225a7(item, player, *var_bd027dd9, *itemid, itemcount, *var_aec6fa7f, *slot) {
+function private function_e74225a7(item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, *slot) {
     if (itemcount.var_a6762160.itemtype == #"armor_shard") {
         var_82da4e0 = int(min(slot, self.var_c52363ab - var_aec6fa7f.var_7d7d976a));
-        var_aec6fa7f.var_7d7d976a.var_aec6fa7f = var_aec6fa7f.var_7d7d976a + var_82da4e0;
+        var_aec6fa7f.var_7d7d976a = var_aec6fa7f.var_7d7d976a + var_82da4e0;
         var_aec6fa7f clientfield::set_player_uimodel("hudItems.armorPlateCount", var_aec6fa7f.var_7d7d976a);
         return (slot - var_82da4e0);
     }

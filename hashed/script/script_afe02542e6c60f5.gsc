@@ -44,22 +44,22 @@ function timeshifterupdate(player, origin) {
         return;
     }
     org setmodel("tag_origin");
-    trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", clock.origin, 1 & 512 & 8, 245, 60);
+    trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", clock.origin, 1 | 512 | 8, 245, 60);
     if (!isdefined(trigger)) {
         clock delete();
         org delete();
         return;
     }
-    clock.targetname.clock = "clock";
+    clock.targetname = "clock";
     clock setmodel("zombietron_clock");
     clock namespace_e32bb68::function_3a59ec34("evt_doa_pickup_clock_active_lp");
     clock playloopsound("zmb_pwup_clock_loop", 2);
-    trigger.targetname.trigger = "timeShifterUpdate";
+    trigger.targetname = "timeShifterUpdate";
     trigger enablelinkto();
     trigger linkto(clock);
-    trigger.opentime.trigger = 3000;
-    trigger.var_6de1c43b.trigger = gettime() + trigger.opentime;
-    trigger.radiussq.trigger = function_a3f6cdac(245);
+    trigger.opentime = 3000;
+    trigger.var_6de1c43b = gettime() + trigger.opentime;
+    trigger.radiussq = function_a3f6cdac(245);
     timetowait = player namespace_1c2a96f9::function_4808b985(20);
     /#
     #/

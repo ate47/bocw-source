@@ -702,7 +702,7 @@ function private function_cd07a2bb(localclientnum, *oldval, newval, *bnewent, *b
             }
         }
         var_e09ff13a = util::spawn_model(fieldname, "tag_origin", self.origin);
-        var_e09ff13a.var_cc0e9e52.var_e09ff13a = util::playfxontag(fieldname, #"hash_4b9be18c0ce06e50", var_e09ff13a, "tag_origin");
+        var_e09ff13a.var_cc0e9e52 = util::playfxontag(fieldname, #"hash_4b9be18c0ce06e50", var_e09ff13a, "tag_origin");
         var_e09ff13a linkto(self, fx_tag);
         var_e09ff13a thread function_bf22dbf0(fieldname, self);
     } else {

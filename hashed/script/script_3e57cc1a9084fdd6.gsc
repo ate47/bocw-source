@@ -189,9 +189,9 @@ function function_c2400b01() {
 // Checksum 0xc3d4ca68, Offset: 0xde8
 // Size: 0x84
 function private function_9f9d7a80(entity) {
-    entity.fovcosine.entity = 0.5;
-    entity.maxsightdistsqrd.entity = function_a3f6cdac(1400);
-    entity.var_1267fdea.entity = 0;
+    entity.fovcosine = 0.5;
+    entity.maxsightdistsqrd = function_a3f6cdac(1400);
+    entity.var_1267fdea = 0;
     entity namespace_85745671::function_9758722(#"walk");
     self.var_6daa6190 = 1;
     awareness::function_9c9d96b5(entity);
@@ -202,9 +202,9 @@ function private function_9f9d7a80(entity) {
 // Checksum 0x794a5e48, Offset: 0xe78
 // Size: 0xac
 function private function_461711c2(entity) {
-    entity.fovcosine.entity = 0;
-    entity.maxsightdistsqrd.entity = function_a3f6cdac(2000);
-    entity.var_1267fdea.entity = 0;
+    entity.fovcosine = 0;
+    entity.maxsightdistsqrd = function_a3f6cdac(2000);
+    entity.var_1267fdea = 0;
     util::delay(randomfloatrange(0.1, 1), "state_changed", &namespace_85745671::function_9758722, #"run");
     awareness::function_b41f0471(entity);
 }
@@ -222,9 +222,9 @@ function private function_2114b12b(entity) {
 // Checksum 0x310cd77f, Offset: 0xf60
 // Size: 0x7c
 function private function_6f207918(entity) {
-    entity.fovcosine.entity = 0;
-    entity.maxsightdistsqrd.entity = function_a3f6cdac(3000);
-    entity.var_1267fdea.entity = 0;
+    entity.fovcosine = 0;
+    entity.maxsightdistsqrd = function_a3f6cdac(3000);
+    entity.var_1267fdea = 0;
     self namespace_85745671::function_9758722(#"super_sprint");
     awareness::function_978025e4(entity);
 }

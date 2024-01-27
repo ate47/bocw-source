@@ -79,9 +79,9 @@ function spawn_single(b_force_spawn, var_eb3a8721 = 0, *var_bc66d64b) {
     }
     ai = spawnactor(#"hash_4f87aa2a203d37d0", s_spawn_loc.origin, s_spawn_loc.angles);
     if (isdefined(ai)) {
-        ai.script_string.ai = s_spawn_loc.script_string;
-        ai.find_flesh_struct_string.ai = s_spawn_loc.find_flesh_struct_string;
-        ai.check_point_in_enabled_zone.ai = &zm_utility::check_point_in_playable_area;
+        ai.script_string = s_spawn_loc.script_string;
+        ai.find_flesh_struct_string = s_spawn_loc.find_flesh_struct_string;
+        ai.check_point_in_enabled_zone = &zm_utility::check_point_in_playable_area;
         ai forceteleport(s_spawn_loc.origin, s_spawn_loc.angles);
     }
     return ai;

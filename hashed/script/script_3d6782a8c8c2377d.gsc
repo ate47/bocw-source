@@ -156,7 +156,7 @@ function state_death_update(params) {
     streamermodelhint(self.deathmodel, 6);
     death_type = vehicle_ai::get_death_type(params);
     if (!isdefined(death_type)) {
-        params.death_type.params = "gibbed";
+        params.death_type = "gibbed";
         death_type = params.death_type;
     }
     self function_6352daec();
@@ -411,10 +411,10 @@ function function_308a3c0e(params) {
         goal = trace[#"position"];
     }
     self.jump.goal = goal;
-    params.var_faabd95e.params = 40;
-    params.var_81456956.params = vectorscale((0, 0, -1), 6);
-    params.var_83ccad16.params = 50;
-    params.var_d49112b7.params = "land@jump";
+    params.var_faabd95e = 40;
+    params.var_81456956 = vectorscale((0, 0, -1), 6);
+    params.var_83ccad16 = 50;
+    params.var_d49112b7 = "land@jump";
     self function_f779b6d9(0);
     self function_2d43c374();
 }

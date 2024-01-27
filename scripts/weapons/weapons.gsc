@@ -334,7 +334,7 @@ function update_last_held_weapon_timings(newtime, var_d75fdbe3 = self.currentwea
                 weaponpickedup = 1;
             }
             self stats::function_eec52333(var_d75fdbe3, #"timeused", totaltime, self.class_num, weaponpickedup);
-            level thread namespace_341c57b3::function_18135b72(#"hash_b88b6d2e0028e13", {#weaponpickedup:weaponpickedup, #value:totaltime, #statname:#"timeused", #weapon:var_d75fdbe3, #player:self});
+            level thread telemetry::function_18135b72(#"hash_b88b6d2e0028e13", {#weaponpickedup:weaponpickedup, #value:totaltime, #statname:#"timeused", #weapon:var_d75fdbe3, #player:self});
             self.currentweaponstarttime = newtime;
         }
     }
@@ -476,8 +476,8 @@ function drop_for_death(attacker, sweapon, smeansofdeath, damage, var_1940b58e =
             return;
         }
         var_cef01b32 = {};
-        var_cef01b32.time.var_cef01b32 = gettime();
-        var_cef01b32.victim.var_cef01b32 = self;
+        var_cef01b32.time = gettime();
+        var_cef01b32.victim = self;
         var_cef01b32.attacker = attacker;
         var_cef01b32.sweapon = sweapon;
         var_cef01b32.smeansofdeath = smeansofdeath;
@@ -486,9 +486,9 @@ function drop_for_death(attacker, sweapon, smeansofdeath, damage, var_1940b58e =
         lastdroppableweapon = self.lastdroppableweapon;
         if (isdefined(lastdroppableweapon)) {
             var_cef01b32.lastdroppableweapon = lastdroppableweapon;
-            var_cef01b32.weaponammoclip.var_cef01b32 = self getweaponammoclip(lastdroppableweapon);
-            var_cef01b32.var_bf0fb76a.var_cef01b32 = self getweaponammostock(lastdroppableweapon);
-            var_cef01b32.anyammoforweaponmodes.var_cef01b32 = self anyammoforweaponmodes(lastdroppableweapon);
+            var_cef01b32.weaponammoclip = self getweaponammoclip(lastdroppableweapon);
+            var_cef01b32.var_bf0fb76a = self getweaponammostock(lastdroppableweapon);
+            var_cef01b32.anyammoforweaponmodes = self anyammoforweaponmodes(lastdroppableweapon);
         }
         if (!isdefined(level.var_c5a37526)) {
             level.var_c5a37526 = [];
@@ -603,7 +603,7 @@ function private function_6cf6f3fb(attacker, *sweapon, smeansofdeath, damage, va
     if (var_1940b58e) {
         item itemweaponsetammo(clipammo, stockammo);
     }
-    item.owner.item = self;
+    item.owner = self;
     item.ownersattacker = sweapon;
     item.weapon = weapon;
     item.smeansofdeath = smeansofdeath;
@@ -690,10 +690,10 @@ function watch_pickup() {
             if (isdefined(player.weaponpickupscount)) {
                 player.weaponpickupscount++;
             } else {
-                player.weaponpickupscount.player = 1;
+                player.weaponpickupscount = 1;
             }
             if (!isdefined(player.pickedupweapons)) {
-                player.pickedupweapons.player = [];
+                player.pickedupweapons = [];
             }
             if (isdefined(self.owner)) {
                 player.pickedupweapons[weapon] = self.owner getentitynumber();
@@ -714,10 +714,10 @@ function watch_pickup() {
         assert(isdefined(player.pickedupweaponkills));
     #/
     if (!isdefined(player.tookweaponfrom)) {
-        player.tookweaponfrom.player = [];
+        player.tookweaponfrom = [];
     }
     if (!isdefined(player.pickedupweaponkills)) {
-        player.pickedupweaponkills.player = [];
+        player.pickedupweaponkills = [];
     }
     if (isdefined(droppeditem)) {
         for (i = 0; i < droppeditem.size; i++) {
@@ -851,8 +851,8 @@ function track_fire(curweapon) {
     if (isdefined(self.pickedupweapons) && isdefined(self.pickedupweapons[curweapon])) {
         weaponpickedup = 1;
     } else {
-        level thread namespace_341c57b3::function_18135b72(#"hash_b88b6d2e0028e13", {#weaponpickedup:weaponpickedup, #value:shotsfired, #statname:#"shots", #weapon:curweapon, #player:self});
-        level thread namespace_341c57b3::function_18135b72(#"hash_b88b6d2e0028e13", {#weaponpickedup:weaponpickedup, #value:isdefined(self.hits) ? self.hits : 0, #statname:#"hits", #weapon:curweapon, #player:self});
+        level thread telemetry::function_18135b72(#"hash_b88b6d2e0028e13", {#weaponpickedup:weaponpickedup, #value:shotsfired, #statname:#"shots", #weapon:curweapon, #player:self});
+        level thread telemetry::function_18135b72(#"hash_b88b6d2e0028e13", {#weaponpickedup:weaponpickedup, #value:isdefined(self.hits) ? self.hits : 0, #statname:#"hits", #weapon:curweapon, #player:self});
     }
     self trackweaponfirenative(curweapon, shotsfired, isdefined(self.hits) ? self.hits : 0, isdefined(self.headshothits) ? self.headshothits : 0, 1, self.class_num, weaponpickedup);
     if (isdefined(self.var_fd243db7) && isdefined(self.var_fd243db7.var_245ad74)) {
@@ -1091,7 +1091,7 @@ function begin_grenade_tracking() {
     }
     weapon = waitresult.weapon;
     cooktime = waitresult.cook_time;
-    grenade.originalowner.grenade = self;
+    grenade.originalowner = self;
     /#
         /#
             assert(isdefined(grenade));
@@ -1121,7 +1121,7 @@ function begin_grenade_tracking() {
     function_92d1707f(eventname, var_e121e24, {#weaponname:weapon.name, #spawnid:getplayerspawnid(self), #gametime:gettime()});
     cookedtime = gettime() - starttime;
     if (cookedtime > 1000) {
-        grenade.iscooked.grenade = 1;
+        grenade.iscooked = 1;
     }
     if (isdefined(self.grenadesused)) {
         self.grenadesused++;
@@ -1134,7 +1134,7 @@ function begin_grenade_tracking() {
         grenade setteam(self.pers[#"team"]);
         grenade setowner(self);
     case #"explosive_bolt":
-        grenade.originalowner.grenade = self;
+        grenade.originalowner = self;
         break;
     case #"satchel_charge":
         level.globalsatchelchargefired++;
@@ -1167,7 +1167,7 @@ function event_handler[grenade_fire] function_e2b6d5a5(eventstruct) {
     }
     grenade = eventstruct.projectile;
     weapon = eventstruct.weapon;
-    grenade.var_c6c56953.grenade = grenade.origin;
+    grenade.var_c6c56953 = grenade.origin;
     if (grenade util::ishacked()) {
         return;
     }
@@ -1187,7 +1187,7 @@ function event_handler[grenade_fire] function_e2b6d5a5(eventstruct) {
         grenade thread check_stuck_to_player(1, 0, weapon);
         break;
     case #"hatchet":
-        grenade.lastweaponbeforetoss.grenade = self function_fe1f5cc();
+        grenade.lastweaponbeforetoss = self function_fe1f5cc();
         grenade thread check_hatchet_bounce();
         grenade thread check_stuck_to_player(0, 0, weapon, 0);
         self stats::function_e24eec31(weapon, #"used", 1);
@@ -1262,7 +1262,7 @@ function check_stuck_to_player(deleteonteamchange, awardscoreevent, weapon, var_
     self endon(#"death");
     if (function_3238d10d(self.origin) && !sessionmodeiscampaigngame()) {
         killcament = spawn("script_model", self.origin);
-        killcament.targetname.killcament = "killcament_" + weapon.name;
+        killcament.targetname = "killcament_" + weapon.name;
         killcament setweapon(weapon);
         self.killcament = killcament;
         killcament thread function_5ed178fd(self);
@@ -1276,7 +1276,7 @@ function check_stuck_to_player(deleteonteamchange, awardscoreevent, weapon, var_
         if (isdefined(player)) {
             dir = player.origin - pos;
             dir = vectornormalize(dir);
-            killcament.angles.killcament = vectortoangles(dir);
+            killcament.angles = vectortoangles(dir);
         }
         if (function_3238d10d(pos)) {
             killcament.origin = pos;
@@ -1440,11 +1440,11 @@ function get_damageable_ents(pos, radius, dolos, startradius) {
         distsq = distancesquared(pos, playerpos);
         if (distsq < radius * radius && (!dolos || damage_trace_passed(pos, playerpos, startradius, undefined))) {
             newent = spawnstruct();
-            newent.isplayer.newent = 1;
-            newent.isadestructable.newent = 0;
-            newent.isadestructible.newent = 0;
-            newent.isactor.newent = 0;
-            newent.entity.newent = players[i];
+            newent.isplayer = 1;
+            newent.isadestructable = 0;
+            newent.isadestructible = 0;
+            newent.isactor = 0;
+            newent.entity = players[i];
             newent.damagecenter = playerpos;
             ents[ents.size] = newent;
         }
@@ -1455,11 +1455,11 @@ function get_damageable_ents(pos, radius, dolos, startradius) {
         distsq = distancesquared(pos, entpos);
         if (distsq < radius * radius && (!dolos || damage_trace_passed(pos, entpos, startradius, grenades[i]))) {
             newent = spawnstruct();
-            newent.isplayer.newent = 0;
-            newent.isadestructable.newent = 0;
-            newent.isadestructible.newent = 0;
-            newent.isactor.newent = 0;
-            newent.entity.newent = grenades[i];
+            newent.isplayer = 0;
+            newent.isadestructable = 0;
+            newent.isadestructible = 0;
+            newent.isactor = 0;
+            newent.entity = grenades[i];
             newent.damagecenter = entpos;
             ents[ents.size] = newent;
         }
@@ -1470,11 +1470,11 @@ function get_damageable_ents(pos, radius, dolos, startradius) {
         distsq = distancesquared(pos, entpos);
         if (distsq < radius * radius && (!dolos || damage_trace_passed(pos, entpos, startradius, destructibles[i]))) {
             newent = spawnstruct();
-            newent.isplayer.newent = 0;
-            newent.isadestructable.newent = 0;
-            newent.isadestructible.newent = 1;
-            newent.isactor.newent = 0;
-            newent.entity.newent = destructibles[i];
+            newent.isplayer = 0;
+            newent.isadestructable = 0;
+            newent.isadestructible = 1;
+            newent.isactor = 0;
+            newent.entity = destructibles[i];
             newent.damagecenter = entpos;
             ents[ents.size] = newent;
         }
@@ -1485,11 +1485,11 @@ function get_damageable_ents(pos, radius, dolos, startradius) {
         distsq = distancesquared(pos, entpos);
         if (distsq < radius * radius && (!dolos || damage_trace_passed(pos, entpos, startradius, destructables[i]))) {
             newent = spawnstruct();
-            newent.isplayer.newent = 0;
-            newent.isadestructable.newent = 1;
-            newent.isadestructible.newent = 0;
-            newent.isactor.newent = 0;
-            newent.entity.newent = destructables[i];
+            newent.isplayer = 0;
+            newent.isadestructable = 1;
+            newent.isadestructible = 0;
+            newent.isactor = 0;
+            newent.entity = destructables[i];
             newent.damagecenter = entpos;
             ents[ents.size] = newent;
         }
@@ -1583,7 +1583,7 @@ function on_damage(eattacker, einflictor, weapon, meansofdeath, damage) {
 function play_concussion_sound(duration) {
     self endon(#"death", #"disconnect");
     concussionsound = spawn("script_origin", (0, 0, 1));
-    concussionsound.origin.concussionsound = self.origin;
+    concussionsound.origin = self.origin;
     concussionsound linkto(self);
     concussionsound thread delete_ent_on_owner_death(self);
     concussionsound playsound(#"");
@@ -1615,7 +1615,7 @@ function delete_ent_on_owner_death(owner) {
 function function_1e2ad832(weapon) {
     player = self;
     if (!isdefined(player.var_9c4683a0)) {
-        player.var_9c4683a0.player = [];
+        player.var_9c4683a0 = [];
     }
     array::add(player.var_9c4683a0, weapon);
     force_stowed_weapon_update();
@@ -1630,16 +1630,16 @@ function function_8f148257(weapon) {
     if (!isdefined(player.var_9c4683a0)) {
         return;
     }
-    var_56fe74d4 = undefined;
+    foundindex = undefined;
     for (index = 0; index < player.var_9c4683a0.size; index++) {
         if (player.var_9c4683a0[index] == weapon) {
-            var_56fe74d4 = index;
+            foundindex = index;
         }
     }
-    if (!isdefined(var_56fe74d4)) {
+    if (!isdefined(foundindex)) {
         return;
     }
-    player.var_9c4683a0.player = array::remove_index(player.var_9c4683a0, var_56fe74d4);
+    player.var_9c4683a0 = array::remove_index(player.var_9c4683a0, foundindex);
     force_stowed_weapon_update();
 }
 
@@ -1736,7 +1736,7 @@ function scavenger_think() {
         offhand_weapons_and_alts = array::exclude(player getweaponslist(1), primary_weapons);
         arrayremovevalue(offhand_weapons_and_alts, level.weaponbasemelee);
         offhand_weapons_and_alts = array::reverse(offhand_weapons_and_alts);
-        player.scavenged.player = 0;
+        player.scavenged = 0;
         for (i = 0; i < offhand_weapons_and_alts.size; i++) {
             weapon = offhand_weapons_and_alts[i];
             if (!weapon.isscavengable || killstreaks::is_killstreak_weapon(weapon)) {
@@ -1772,7 +1772,7 @@ function scavenger_think() {
                         ammo = maxammo;
                     }
                     player setweaponammostock(weapon, ammo);
-                    player.scavenged.player = 1;
+                    player.scavenged = 1;
                     player thread challenges::scavengedgrenade(weapon);
                 }
             }
@@ -1792,10 +1792,10 @@ function scavenger_think() {
         if (stock < maxammo - clip) {
             ammo = stock + clip;
             player setweaponammostock(weapon, ammo);
-            player.scavenged.player = 1;
+            player.scavenged = 1;
         } else {
             player setweaponammostock(weapon, maxammo);
-            player.scavenged.player = 1;
+            player.scavenged = 1;
         }
     }
     if (player.scavenged) {
@@ -1883,7 +1883,7 @@ function drop_limited_weapon(weapon, owner, item) {
     if (limited_info.weapon != weapon) {
         return;
     }
-    limited_info.drops.limited_info = limited_info.drops - 1;
+    limited_info.drops = limited_info.drops - 1;
     owner.limited_info = undefined;
     item thread limited_pickup(limited_info);
 }

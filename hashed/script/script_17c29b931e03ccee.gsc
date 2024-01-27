@@ -82,9 +82,9 @@ function private function_65cd04d7(killstreak_id) {
     level childthread function_cf719322(bundle.var_32d43333);
     level childthread function_67753fb9(bundle.var_ab95dfc6, bundle.var_fe584224);
     var_b39c9060 = util::spawn_model("tag_origin", self.origin, self.angles);
-    var_b39c9060.team.var_b39c9060 = self.team;
+    var_b39c9060.team = self.team;
     var_b39c9060.killstreak_id = killstreak_id;
-    var_b39c9060.owner.var_b39c9060 = self;
+    var_b39c9060.owner = self;
     playsoundatposition(#"hash_7d507d7d8807c64d", (0, 0, 0));
     level thread function_5649bd08();
     level.var_e4c3d310++;

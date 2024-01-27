@@ -268,7 +268,7 @@ function event_handler[actor_killed] function_a94f4749(eventstruct) {
             close_ai = function_c17c8a8e(self);
             if (isdefined(close_ai) && !is_true(close_ai.var_ff22950d)) {
                 if (sniper) {
-                    attacker.var_e598a03f.attacker = 1;
+                    attacker.var_e598a03f = 1;
                     close_ai thread function_bd51deb1("sniperthreat");
                 } else {
                     close_ai thread function_bd51deb1("friendlydown");
@@ -403,7 +403,7 @@ function event_handler[grenade_stuck] function_2a82bb92(eventstruct) {
     }
     grenade = eventstruct.projectile;
     if (isdefined(grenade)) {
-        grenade.stucktoplayer.grenade = self;
+        grenade.stucktoplayer = self;
     }
     if (isalive(self)) {
         self thread function_bd51deb1("stickyincoming");

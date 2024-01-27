@@ -175,9 +175,9 @@ function function_db619336(hardpointtype, killstreak_id, location) {
         var_8a05f7da thread explode();
         return 0;
     }
-    var_8a05f7da.var_14494df9.var_8a05f7da = 1;
+    var_8a05f7da.var_14494df9 = 1;
     var_8a05f7da.var_3971b935 = var_5b779abe;
-    var_5b779abe.pilotindex.var_5b779abe = var_8a05f7da.pilotindex;
+    var_5b779abe.pilotindex = var_8a05f7da.pilotindex;
     if (!isdefined(level.var_fda44f3d)) {
         level.var_fda44f3d = [];
     }
@@ -225,35 +225,35 @@ function function_1e30e51e(hardpointtype, killstreak_id, location, var_a6b1bda0,
     plane clientfield::set("scorestreakActive", 1);
     plane.var_739aa202 = var_a6b1bda0;
     var_6f0661aa = plane.var_739aa202 == #"hash_1dfff61be0d43f2d";
-    plane.attackers.plane = [];
-    plane.attackerdata.plane = [];
-    plane.attackerdamage.plane = [];
-    plane.flareattackerdamage.plane = [];
+    plane.attackers = [];
+    plane.attackerdata = [];
+    plane.attackerdamage = [];
+    plane.flareattackerdamage = [];
     plane killstreaks::configure_team(hardpointtype, killstreak_id, self);
     plane setenemymodel(level.straferunmodelenemy);
     plane makevehicleunusable();
     plane thread cleanupondeath(plane.team, hardpointtype);
-    plane.health.plane = 999999;
-    plane.maxhealth.plane = 999999;
+    plane.health = 999999;
+    plane.maxhealth = 999999;
     plane clientfield::set("enemyvehicle", 1);
-    plane.targetname.plane = "strafePlane";
-    plane.identifier_weapon.plane = getweapon("straferun");
-    plane.numstrafes.plane = 0;
-    plane.numflares.plane = 1;
-    plane.soundmod.plane = "straferun";
+    plane.targetname = "strafePlane";
+    plane.identifier_weapon = getweapon("straferun");
+    plane.numstrafes = 0;
+    plane.numflares = 1;
+    plane.soundmod = "straferun";
     plane setdrawinfrared(1);
     plane setforcenocull();
     self.straferunkills = 0;
     self.straferunbda = 0;
     plane thread function_d4896942();
     target_set(plane, (0, 0, 0));
-    plane.gunsoundentity.plane = spawn("script_model", plane gettagorigin("tag_flash"));
+    plane.gunsoundentity = spawn("script_model", plane gettagorigin("tag_flash"));
     plane.gunsoundentity linkto(plane, "tag_flash", (0, 0, 0), (0, 0, 0));
     if (!issentient(plane)) {
         plane util::make_sentient();
-        plane.ignoreme.plane = 1;
+        plane.ignoreme = 1;
     }
-    plane.killcament.plane = spawn("script_model", plane.origin + vectorscale((0, 0, 1), 700));
+    plane.killcament = spawn("script_model", plane.origin + vectorscale((0, 0, 1), 700));
     plane.killcament setfovforkillcam(25);
     plane.killcament.angles = vectorscale((1, 0, 0), 15);
     plane.killcament.starttime = gettime();
@@ -281,9 +281,9 @@ function function_1e30e51e(hardpointtype, killstreak_id, location, var_a6b1bda0,
         var_dda93e6c = vectorscale((0, 1, 0), 90);
     }
     var_b818f98a = function_2e532eed(location);
-    var_b818f98a.origin.var_b818f98a = var_b818f98a.origin + var_49d19de7;
+    var_b818f98a.origin = var_b818f98a.origin + var_49d19de7;
     plane vehicle::function_bb9b43a9(startnode, var_1c847d0f, var_dda93e6c, var_b818f98a, var_e4c839a6);
-    plane.killbox.plane = [];
+    plane.killbox = [];
     plane.killbox[#"origin"] = var_b818f98a.origin;
     plane.killbox[#"angles"] = (0, var_b818f98a.yaw, 0);
     plane thread vehicle::get_on_and_go_path(startnode);
@@ -685,7 +685,7 @@ function firerockets() {
         rocket = magicbullet(level.straferunrocketweapon, rocketorigin, rocketorigin + forward, self);
         self.var_577f39f7++;
         rocket missile_settarget(best_target, (0, 0, 0));
-        rocket.soundmod.rocket = "straferun";
+        rocket.soundmod = "straferun";
         rocket attachkillcamtorocket(level.straferunkillcams[self.var_739aa202].rockets[rocketindex], best_target, targetorigin);
         /#
             if (getdvarint(#"scr_devstraferunkillcamsdebugdraw", 0)) {
@@ -750,7 +750,7 @@ function function_1fb394ba(owner) {
     if (isdefined(bdadialog) && !is_true(self.leavenexttime)) {
         self namespace_f9b02f80::play_pilot_dialog_on_owner(bdadialog, "straferun", self.killstreakid);
     }
-    owner.straferunbda.owner = 0;
+    owner.straferunbda = 0;
     owner.("straferun" + "_killAircraft") = undefined;
     owner.("straferun" + "_killGroundVehicle") = undefined;
     owner.("straferun" + "_hitconfirmed") = undefined;
@@ -1082,7 +1082,7 @@ function unlinkkillcams() {
 // Size: 0x60
 function createkillcament() {
     killcament = spawn("script_model", (0, 0, 0));
-    killcament.targetname.killcament = "createKillcamEnt";
+    killcament.targetname = "createKillcamEnt";
     killcament setfovforkillcam(25);
     return killcament;
 }
@@ -1148,8 +1148,8 @@ function attachkillcamtorocket(killcament, selectedtarget, targetorigin) {
     right = vectorscale(anglestoright(self.angles), offset_y);
     up = vectorscale(anglestoup(self.angles), offset_z);
     killcament unlink();
-    killcament.angles.killcament = (0, 0, 0);
-    killcament.origin.killcament = self.origin;
+    killcament.angles = (0, 0, 0);
+    killcament.origin = self.origin;
     killcament linkto(self, "", (offset_x, offset_y, offset_z), vectorscale((1, 0, 0), 9));
     killcament thread unlinkwhenclose(selectedtarget, targetorigin, self);
 }

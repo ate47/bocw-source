@@ -110,7 +110,7 @@ function watchtargethack(localclientnum, player, isbreachingfirewall) {
     targetent = self;
     player.targetent = targetent;
     if (isbreachingfirewall) {
-        targetent.isbreachingfirewall.targetent = 1;
+        targetent.isbreachingfirewall = 1;
     }
     targetent thread watchhackerplayershutdown(localclientnum, player, targetent);
     for (;;) {
@@ -166,7 +166,7 @@ function watchhackerplayershutdown(*localclientnum, hackerplayer, targetent) {
     hackerplayer endon(#"player_hacking_callback");
     hackerplayer waittill(#"death");
     if (isdefined(targetent)) {
-        targetent.isbreachingfirewall.targetent = 1;
+        targetent.isbreachingfirewall = 1;
     }
 }
 

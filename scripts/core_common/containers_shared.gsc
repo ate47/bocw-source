@@ -79,7 +79,7 @@ function init() {
 function setup_container_scriptbundle(s_bundle, s_container_instance) {
     c_container = new ccontainer();
     c_container.m_s_container_bundle = s_bundle;
-    c_container.m_s_fxanim_bundle.c_container = getscriptbundle(s_bundle.theeffectbundle);
+    c_container.m_s_fxanim_bundle = getscriptbundle(s_bundle.theeffectbundle);
     c_container.m_s_container_instance = s_container_instance;
     self scene::init(s_bundle.theeffectbundle, c_container.m_e_container);
     level thread container_update(c_container);

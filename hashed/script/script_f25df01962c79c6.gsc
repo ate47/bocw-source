@@ -400,15 +400,15 @@ function function_52be2241() {
     silverback endon(#"death");
     silverback forceteleport(silverback.origin, var_9ef53658.angles);
     silverback thread namespace_ec06fe4a::function_d55f042c(level, "podiumAllDone");
-    silverback.takedamage.silverback = 0;
-    silverback.ignoreall.silverback = 1;
+    silverback.takedamage = 0;
+    silverback.ignoreall = 1;
     silverback linkto(org);
     wait(0.5);
     org namespace_83eb6304::function_3ecfde67("lightningStrike");
     org namespace_e32bb68::function_3a59ec34("evt_doa_lightning_bolt");
     silverback thread namespace_6e90e490::function_47e11416(47, 3, 1);
     wait(3);
-    silverback.var_ba88972.silverback = 1;
+    silverback.var_ba88972 = 1;
     silverback waittilltimeout(3, #"hash_73d8763ded66b7c9", #"death");
     level notify(#"hash_6b71fd0ed387fe82");
     silverback thread namespace_6e90e490::function_47e11416(47, 3, 1);
@@ -417,8 +417,8 @@ function function_52be2241() {
     org namespace_83eb6304::function_3ecfde67("turret_impact");
     org namespace_e32bb68::function_3a59ec34("evt_doa_outro_mamaback_takeoff");
     wait(2);
-    org.origin.org = var_48fff83e.origin + vectorscale((0, 0, 1), 1500);
-    org.angles.org = var_48fff83e.angles;
+    org.origin = var_48fff83e.origin + vectorscale((0, 0, 1), 1500);
+    org.angles = var_48fff83e.angles;
     org moveto(var_48fff83e.origin, 2);
     wait(2);
     org namespace_83eb6304::function_3ecfde67("turret_impact");
@@ -430,7 +430,7 @@ function function_52be2241() {
     wait(4);
     silverback thread namespace_6e90e490::function_47e11416(47, 3, 1);
     wait(2);
-    silverback.var_ba88972.silverback = 1;
+    silverback.var_ba88972 = 1;
     silverback waittilltimeout(3, #"hash_73d8763ded66b7c9", #"death");
     wait(2);
     level notify(#"hash_691cb7b4a4340202");
@@ -447,7 +447,7 @@ function function_52be2241() {
     level thread function_c6630cce(weapon, org, level.doa.var_258d537d.var_b969d349[0], "momaBackWinner");
     wait(0.25);
     level notify(#"hash_749ca0969fe37f63");
-    org.origin.org = var_dde0062d.origin + vectorscale((0, 0, 1), 1500);
+    org.origin = var_dde0062d.origin + vectorscale((0, 0, 1), 1500);
     org moveto(var_dde0062d.origin, 2);
     org namespace_83eb6304::function_3ecfde67("turret_impact");
     if (namespace_ec06fe4a::function_a8975c67()) {
@@ -456,10 +456,10 @@ function function_52be2241() {
     wait(2);
     org namespace_e32bb68::function_3a59ec34("evt_doa_outro_mamaback_land_last");
     level notify(#"momabackwinner");
-    silverback.var_ba88972.silverback = 1;
+    silverback.var_ba88972 = 1;
     silverback thread namespace_6e90e490::function_47e11416(47, 3, 1);
     wait(3);
-    silverback.var_ba88972.silverback = 1;
+    silverback.var_ba88972 = 1;
     silverback thread namespace_6e90e490::function_47e11416(47, 3, 1);
     silverback waittilltimeout(3, #"hash_73d8763ded66b7c9", #"death");
     silverback thread namespace_6e90e490::function_47e11416(47, 3, 1);
@@ -506,7 +506,7 @@ function function_c6630cce(weapon, org, var_ec941905, killnote) {
     var_ec941905.var_6c5d23f4 hide();
     chicken = namespace_ec06fe4a::function_e22ae9b3(var_ec941905.origin, "zombietron_chicken", var_ec941905.angles, "chickenBlast chicken");
     var_ec941905.chicken = chicken;
-    chicken.angles.chicken = chicken.angles + (0, randomintrange(-90, 90), 0);
+    chicken.angles = chicken.angles + (0, randomintrange(-90, 90), 0);
     chicken thread namespace_ec06fe4a::function_d55f042c(level, "podiumAllDone");
     chicken setscale(3);
     chicken useanimtree("generic");
@@ -522,7 +522,7 @@ function function_c6630cce(weapon, org, var_ec941905, killnote) {
         if (!is_true(self.var_cd7dffa1) && randomint(100) < 25) {
             chicken thread namespace_6e90e490::function_47e11416(48, 2);
         }
-        chicken.origin.chicken = var_ec941905.origin;
+        chicken.origin = var_ec941905.origin;
         animlength = getanimlength(var_bef82893);
         chicken thread animation::play(var_bef82893);
         wait(animlength);
@@ -576,7 +576,7 @@ function function_258d537d() {
         /#
             assert(!isdefined(prop.scriptmodel));
         #/
-        prop.scriptmodel.prop = namespace_ec06fe4a::function_e22ae9b3(prop.origin, prop.model, prop.angles, "podium prop");
+        prop.scriptmodel = namespace_ec06fe4a::function_e22ae9b3(prop.origin, prop.model, prop.angles, "podium prop");
         if (isdefined(prop.script_noteworthy)) {
             prop.scriptmodel setscale(float(prop.script_noteworthy));
         }
@@ -585,7 +585,7 @@ function function_258d537d() {
         /#
             assert(!isdefined(guy.scriptmodel));
         #/
-        guy.scriptmodel.guy = namespace_ec06fe4a::function_e22ae9b3(guy.origin, guy.model, guy.angles, "podium crowd");
+        guy.scriptmodel = namespace_ec06fe4a::function_e22ae9b3(guy.origin, guy.model, guy.angles, "podium crowd");
         guy.scriptmodel thread function_13281cbd(guy.script_int);
     }
     players = function_29309b72();
@@ -599,9 +599,9 @@ function function_258d537d() {
         player = players[idx];
         clone = namespace_7f5aeb59::function_f98b7b5f(player);
         if (isdefined(clone)) {
-            clone.origin.clone = spot.origin;
-            clone.angles.clone = spot.angles;
-            clone.color.clone = player.doa.color;
+            clone.origin = spot.origin;
+            clone.angles = spot.angles;
+            clone.color = player.doa.color;
             level.doa.var_89d17662[level.doa.var_89d17662.size] = clone;
             clone clientfield::set("setPlayerOwner", player.entnum + 1);
             clone thread function_879d4ceb(idx);

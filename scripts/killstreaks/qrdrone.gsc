@@ -114,23 +114,23 @@ function givecarryqrdrone(lifeid, streakname) {
 // Size: 0x248
 function createcarryqrdrone(*streakname, owner) {
     pos = owner.origin + anglestoforward(owner.angles) * 4 + anglestoup(owner.angles) * 50;
-    carryqrdrone.turrettype.carryqrdrone = "sentry";
+    carryqrdrone.turrettype = "sentry";
     carryqrdrone.origin = pos;
-    carryqrdrone.angles.carryqrdrone = owner.angles;
-    carryqrdrone.canbeplaced.carryqrdrone = 1;
+    carryqrdrone.angles = owner.angles;
+    carryqrdrone.canbeplaced = 1;
     carryqrdrone makeunusable();
     carryqrdrone.owner = owner;
     carryqrdrone setowner(carryqrdrone.owner);
-    carryqrdrone.scale.carryqrdrone = 3;
-    carryqrdrone.inheliproximity.carryqrdrone = 0;
+    carryqrdrone.scale = 3;
+    carryqrdrone.inheliproximity = 0;
     carryqrdrone thread carryqrdrone_handleexistence();
-    carryqrdrone.rangetrigger.carryqrdrone = getent("qrdrone_range", "targetname");
+    carryqrdrone.rangetrigger = getent("qrdrone_range", "targetname");
     if (!isdefined(carryqrdrone.rangetrigger)) {
-        carryqrdrone.maxheight.carryqrdrone = int(killstreaks::function_43f4782d());
-        carryqrdrone.maxdistance.carryqrdrone = 3600;
+        carryqrdrone.maxheight = int(killstreaks::function_43f4782d());
+        carryqrdrone.maxdistance = 3600;
     }
-    carryqrdrone.minheight.carryqrdrone = level.mapcenter[2] - 800;
-    carryqrdrone.soundent.carryqrdrone = spawn("script_origin", carryqrdrone.origin);
+    carryqrdrone.minheight = level.mapcenter[2] - 800;
+    carryqrdrone.soundent = spawn("script_origin", carryqrdrone.origin);
     carryqrdrone.soundent.angles = carryqrdrone.angles;
     carryqrdrone.soundent.origin = carryqrdrone.origin;
     carryqrdrone.soundent linkto(carryqrdrone);
@@ -183,7 +183,7 @@ function carryqrdrone_setcarried(carrier) {
     self setcandamage(0);
     self setcontents(0);
     self.carriedby = carrier;
-    carrier.iscarrying.carrier = 1;
+    carrier.iscarrying = 1;
     carrier thread updatecarryqrdroneplacement(self);
     self notify(#"carried");
 }
@@ -211,7 +211,7 @@ function updatecarryqrdroneplacement(carryqrdrone) {
     self endon(#"death", #"disconnect");
     level endon(#"game_ended");
     carryqrdrone endon(#"placed", #"death");
-    carryqrdrone.canbeplaced.carryqrdrone = 1;
+    carryqrdrone.canbeplaced = 1;
     lastcanplacecarryqrdrone = -1;
     for (;;) {
         heightoffset = 18;
@@ -227,9 +227,9 @@ function updatecarryqrdroneplacement(carryqrdrone) {
             break;
         }
         placement = self canplayerplacevehicle(22, 22, 50, heightoffset, 0, 0);
-        carryqrdrone.origin.carryqrdrone = placement[#"origin"] + anglestoup(self.angles) * 27;
-        carryqrdrone.angles.carryqrdrone = placement[#"angles"];
-        carryqrdrone.canbeplaced.carryqrdrone = self isonground() && placement[#"result"] && carryqrdrone qrdrone_in_range() && !carryqrdrone isinremotenodeploy();
+        carryqrdrone.origin = placement[#"origin"] + anglestoup(self.angles) * 27;
+        carryqrdrone.angles = placement[#"angles"];
+        carryqrdrone.canbeplaced = self isonground() && placement[#"result"] && carryqrdrone qrdrone_in_range() && !carryqrdrone isinremotenodeploy();
         if (carryqrdrone.canbeplaced != lastcanplacecarryqrdrone) {
             if (carryqrdrone.canbeplaced) {
                 if (self attackbuttonpressed() && self killstreaks::function_59e2c378()) {
@@ -342,22 +342,22 @@ function createqrdrone(lifeid, owner, streakname, origin, angles, killstreak_id)
         return undefined;
     }
     qrdrone.lifeid = lifeid;
-    qrdrone.team.qrdrone = owner.team;
+    qrdrone.team = owner.team;
     qrdrone setowner(owner);
     qrdrone clientfield::set("enemyvehicle", 1);
-    qrdrone.health.qrdrone = 999999;
-    qrdrone.maxhealth.qrdrone = 250;
-    qrdrone.damagetaken.qrdrone = 0;
-    qrdrone.destroyed.qrdrone = 0;
+    qrdrone.health = 999999;
+    qrdrone.maxhealth = 250;
+    qrdrone.damagetaken = 0;
+    qrdrone.destroyed = 0;
     qrdrone setcandamage(1);
     qrdrone enableaimassist();
-    qrdrone.smoking.qrdrone = 0;
-    qrdrone.inheliproximity.qrdrone = 0;
-    qrdrone.helitype.qrdrone = "qrdrone";
-    qrdrone.markedplayers.qrdrone = [];
-    qrdrone.isstunned.qrdrone = 0;
+    qrdrone.smoking = 0;
+    qrdrone.inheliproximity = 0;
+    qrdrone.helitype = "qrdrone";
+    qrdrone.markedplayers = [];
+    qrdrone.isstunned = 0;
     qrdrone setdrawinfrared(1);
-    qrdrone.killcament.qrdrone = qrdrone.owner;
+    qrdrone.killcament = qrdrone.owner;
     owner weaponobjects::addweaponobjecttowatcher("qrdrone", qrdrone);
     qrdrone thread qrdrone_explode_on_notify(killstreak_id);
     qrdrone thread qrdrone_explode_on_game_end();
@@ -366,11 +366,11 @@ function createqrdrone(lifeid, owner, streakname, origin, angles, killstreak_id)
     qrdrone thread qrdrone_watch_for_exit();
     qrdrone thread deleteonkillbrush(owner);
     target_set(qrdrone, (0, 0, 0));
-    qrdrone.numflares.qrdrone = 0;
-    qrdrone.flareoffset.qrdrone = vectorscale((0, 0, -1), 100);
+    qrdrone.numflares = 0;
+    qrdrone.flareoffset = vectorscale((0, 0, -1), 100);
     qrdrone thread heatseekingmissile::missiletarget_lockonmonitor(self, "end_remote");
     qrdrone thread heatseekingmissile::missiletarget_proximitydetonateincomingmissile(undefined, "crashing");
-    qrdrone.emp_fx.qrdrone = spawn("script_model", self.origin);
+    qrdrone.emp_fx = spawn("script_model", self.origin);
     qrdrone.emp_fx setmodel(#"tag_origin");
     qrdrone.emp_fx linkto(self, "tag_origin", vectorscale((0, 0, -1), 20) + anglestoforward(self.angles) * 6);
     qrdrone influencers::create_entity_enemy_influencer("small_vehicle", qrdrone.team);
@@ -383,7 +383,7 @@ function createqrdrone(lifeid, owner, streakname, origin, angles, killstreak_id)
 // Checksum 0xa15493ad, Offset: 0x1c28
 // Size: 0x174
 function qrdrone_ride(lifeid, qrdrone, *streakname) {
-    streakname.playerlinked.streakname = 1;
+    streakname.playerlinked = 1;
     self.restoreangles = self.angles;
     streakname usevehicle(self, 0);
     self util::clientnotify("qrfutz");
@@ -417,7 +417,7 @@ function qrdrone_delaylaunchdialog(qrdrone) {
 // Size: 0x9c
 function qrdrone_unlink(qrdrone) {
     if (isdefined(qrdrone)) {
-        qrdrone.playerlinked.qrdrone = 0;
+        qrdrone.playerlinked = 0;
         self destroyhud();
         if (isdefined(self.viewlockedentity)) {
             self unlink();
@@ -1021,11 +1021,11 @@ function qrdrone_leave_on_timeout(killstreakname) {
     if (!level.vehiclestimed) {
         return;
     }
-    qrdrone.flytime.qrdrone = 60;
+    qrdrone.flytime = 60;
     waittime = self.flytime - 10;
     /#
         function_5ac4dc99("<unknown string>", qrdrone.flytime);
-        qrdrone.flytime.qrdrone = getdvarint(#"scr_qrdroneflytime", 0);
+        qrdrone.flytime = getdvarint(#"scr_qrdroneflytime", 0);
         waittime = self.flytime - 10;
         if (waittime < 0) {
             wait(qrdrone.flytime);

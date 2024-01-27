@@ -222,7 +222,7 @@ function function_aa443b97(attacker, weapon, *shitloc, vpoint, tier, extra = 0) 
             damage = zm_equipment::function_379f6b5d(damage, undefined, zombie.var_6f84b820, zombie.maxhealth);
         }
         if (damage >= zombie.health) {
-            zombie.var_531d35d4.zombie = 1;
+            zombie.var_531d35d4 = 1;
         }
         if (tier >= 2) {
             if (zombie.var_6f84b820 === #"normal") {

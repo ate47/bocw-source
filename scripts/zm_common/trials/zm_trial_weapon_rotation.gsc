@@ -120,7 +120,7 @@ function take_player_weapons(n_interval, e_player) {
         }
         e_player takeweapon(weapon);
     }
-    e_player.var_a14d2a24.e_player = 1;
+    e_player.var_a14d2a24 = 1;
     self thread function_413cffae(n_interval, e_player);
 }
 

@@ -137,7 +137,7 @@ class csceneobject {
             }
         }
         if (!sessionmodeiscampaigngame() && is_true(weapon.isdualwield) && player haspart("tag_weapon_left") && !b_camera) {
-            player.var_dd38a3bc.player = 1;
+            player.var_dd38a3bc = 1;
         }
         return isdefined(var_c4a23d1d) ? var_c4a23d1d : var_6410e385;
     }
@@ -340,7 +340,7 @@ class csceneobject {
         if (isdefined(self._o_scene._e_root) && isdefined(self._o_scene._e_root.target)) {
             var_c17a3b30 = getnode(self._o_scene._e_root.target, "targetname");
             if (isdefined(var_c17a3b30) && is_true(var_c17a3b30.interact_node)) {
-                var_c17a3b30.var_31c05612.var_c17a3b30 = 1;
+                var_c17a3b30.var_31c05612 = 1;
             }
         }
         if (is_true(self._s.var_d318cc2c)) {
@@ -1026,7 +1026,7 @@ class csceneobject {
             var_520e99b5 = 0;
         } else {
             if (is_true(s_shot.var_132c9791)) {
-                s_shot.damagethreshold.s_shot = 0;
+                s_shot.damagethreshold = 0;
             }
             if (isdefined(self._e.n_health)) {
                 n_current_health = self._e.n_health;
@@ -1751,11 +1751,11 @@ class csceneobject {
             s_align = [[ self._o_scene ]]->function_bc0facbb();
             if (isentity(s_align.ent) && !isdefined(s_align.tag)) {
                 if (isdefined(self.var_55b4f21e.aligntargettag) && !is_true(self.var_55b4f21e.var_ab59a015)) {
-                    s_align.tag.s_align = self.var_55b4f21e.aligntargettag;
+                    s_align.tag = self.var_55b4f21e.aligntargettag;
                 } else if (isdefined(self._s.aligntargettag)) {
-                    s_align.tag.s_align = self._s.aligntargettag;
+                    s_align.tag = self._s.aligntargettag;
                 } else if (isdefined(self._o_scene._s.aligntargettag)) {
-                    s_align.tag.s_align = self._o_scene._s.aligntargettag;
+                    s_align.tag = self._o_scene._s.aligntargettag;
                 }
             }
             return s_align;
@@ -2401,7 +2401,7 @@ class cscene {
         }
         remove_from_sync_list(str_shot);
         s_scene_request = spawnstruct();
-        s_scene_request.o_scene.s_scene_request = self;
+        s_scene_request.o_scene = self;
         s_scene_request.str_shot = str_shot;
         if (!isdefined(level.scene_sync_list[get_request_time(str_shot)])) {
             level.scene_sync_list[get_request_time(str_shot)] = [];
@@ -2735,7 +2735,7 @@ class cscene {
             var_1bdb1cc6 = struct::get_array(s_instance.target, "targetname");
             foreach (struct in var_1bdb1cc6) {
                 if (isdefined(struct.script_animname) && tolower(struct.script_animname) === tolower(s_obj.name)) {
-                    s_obj.var_50f52c5b.s_obj = 1;
+                    s_obj.var_50f52c5b = 1;
                     return struct;
                 }
             }
@@ -3028,7 +3028,7 @@ class cscene {
             }
         #/
         s_scenedef scene::function_585fb738();
-        s_scenedef.var_418c40ac.s_scenedef = scene::function_c9770402(str_scenedef);
+        s_scenedef.var_418c40ac = scene::function_c9770402(str_scenedef);
         self.var_355308d8 = s_scenedef.var_418c40ac;
         self.var_232738b3 = scene::function_c3a1b36a(str_scenedef);
         self.var_5a2219f0 = scene::get_all_shot_names(str_scenedef);
@@ -3050,7 +3050,7 @@ class cscene {
             self._e_root = e_align;
             a_objs = get_valid_object_defs();
             foreach (s_obj in a_objs) {
-                s_obj.type.s_obj = function_85ed339(s_obj);
+                s_obj.type = function_85ed339(s_obj);
                 if (isdefined(s_obj.name) && self._e_root scene::function_9503138e() && isdefined(self._e_root.target)) {
                     if (!isdefined(self._e_root.var_1505fed6)) {
                         self._e_root.var_1505fed6 = [];
@@ -3919,7 +3919,7 @@ class cscene {
 function prepare_player_model_anim(ent) {
     if (ent.animtree !== "all_player") {
         ent useanimtree("all_player");
-        ent.animtree.ent = "all_player";
+        ent.animtree = "all_player";
     }
 }
 
@@ -3930,7 +3930,7 @@ function prepare_player_model_anim(ent) {
 function prepare_generic_model_anim(ent) {
     if (ent.animtree !== "generic") {
         ent useanimtree("generic");
-        ent.animtree.ent = "generic";
+        ent.animtree = "generic";
     }
 }
 

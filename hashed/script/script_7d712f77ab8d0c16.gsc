@@ -78,7 +78,7 @@ function function_df47057f(*team, label, var_2f64048d, spawnpoints) {
             return;
         }
         var_2e980658 = spawnstruct();
-        var_2e980658.name.var_2e980658 = label + var_2f64048d;
+        var_2e980658.name = label + var_2f64048d;
         var_2e980658.spawns = spawnpoints;
         if (!isdefined(level.var_94f4ca81.dataset)) {
             level.var_94f4ca81.dataset = [];

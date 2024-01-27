@@ -91,7 +91,7 @@ function private function_dad360dc(c_door) {
         if (c_door.var_d0ca7119.size == 0) {
             return;
         }
-        c_door.var_d0ca7119.c_door = arraysortclosest(c_door.var_d0ca7119, c_door.m_e_door.origin);
+        c_door.var_d0ca7119 = arraysortclosest(c_door.var_d0ca7119, c_door.m_e_door.origin);
         var_da089436 = c_door.var_d0ca7119[0];
         /#
             if (getdvarint(#"hash_33928bcf1b3e5487", 0)) {
@@ -187,7 +187,7 @@ function private function_15306cfa(c_door) {
     }
     self.ai.var_c04898fc = c_door;
     if (!isdefined(c_door.var_d0ca7119)) {
-        c_door.var_d0ca7119.c_door = [];
+        c_door.var_d0ca7119 = [];
     }
     c_door.var_d0ca7119[c_door.var_d0ca7119.size] = self;
 }
@@ -313,12 +313,12 @@ function function_b0731097(var_59e58a96, var_d5edc9c) {
     var_f7a50e76 = undefined;
     results = undefined;
     distance = 0;
-    var_1f2328d0 = self function_4794d6a3();
-    goalpos = var_1f2328d0.goalpos;
+    goalinfo = self function_4794d6a3();
+    goalpos = goalinfo.goalpos;
     if (self isinscriptedstate()) {
         return undefined;
     }
-    if (isdefined(var_1f2328d0.goalvolume)) {
+    if (isdefined(goalinfo.goalvolume)) {
         var_3d43e297 = self findbestcovernode();
         if (isdefined(var_3d43e297)) {
             goalpos = var_3d43e297.origin;
@@ -405,7 +405,7 @@ function private function_5eaa8292() {
         var_3e8fb6d0 = undefined;
         while (1) {
             results = self function_a847c61f(4096);
-            doorloc = results.var_dfe61703[0];
+            doorloc = results.entrypoint[0];
             var_3e8fb6d0 = function_13f8cd4c(results.entity[0]);
             if (isdefined(doorloc)) {
                 if (isdefined(var_3e8fb6d0)) {

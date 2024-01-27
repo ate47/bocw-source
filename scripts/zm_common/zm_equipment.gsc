@@ -97,12 +97,12 @@ function function_f1e8c2f7() {
     while (isdefined(row)) {
         weapon_name = checkstringvalid(row[0]);
         var_68b4c58a = spawnstruct();
-        var_68b4c58a.var_4321cafd.var_68b4c58a = [];
-        var_68b4c58a.var_909a6c96.var_68b4c58a = row[1];
-        var_68b4c58a.var_aff13429.var_68b4c58a = row[9];
-        var_68b4c58a.var_e9cf20bf.var_68b4c58a = row[10];
-        var_68b4c58a.var_867d16a0.var_68b4c58a = row[11];
-        var_68b4c58a.var_e53a0e14.var_68b4c58a = row[12];
+        var_68b4c58a.var_4321cafd = [];
+        var_68b4c58a.var_909a6c96 = row[1];
+        var_68b4c58a.var_aff13429 = row[9];
+        var_68b4c58a.var_e9cf20bf = row[10];
+        var_68b4c58a.var_867d16a0 = row[11];
+        var_68b4c58a.var_e53a0e14 = row[12];
         var_98decf84 = 0;
         var_74f162ea = row[2];
         var_81142c5 = row[3];
@@ -265,9 +265,9 @@ function register(equipment_name, hint, howto_hint, hint_icon, equipmentvo) {
     struct.howto_hint = howto_hint;
     struct.hint_icon = hint_icon;
     struct.vox = equipmentvo;
-    struct.triggers.struct = [];
-    struct.models.struct = [];
-    struct.notify_strings.struct = spawnstruct();
+    struct.triggers = [];
+    struct.models = [];
+    struct.notify_strings = spawnstruct();
     struct.notify_strings.activate = equipment.name + "_activate";
     struct.notify_strings.deactivate = equipment.name + "_deactivate";
     struct.notify_strings.taken = equipment.name + "_taken";
@@ -428,8 +428,8 @@ function equipment_spawn_think() {
                     new_pos = array::random(level.hacker_tool_positions);
                     self.origin = new_pos.trigger_org;
                     model = getent(self.target, "targetname");
-                    model.origin.model = new_pos.model_org;
-                    model.angles.model = new_pos.model_ang;
+                    model.origin = new_pos.model_org;
+                    model.angles = new_pos.model_ang;
                 }
             }
             player give(self.equipment);

@@ -497,7 +497,7 @@ function private function_6badca5(var_de8de22d, str_item_name) {
     if (isdefined(var_de3fad27)) {
         point = function_4ba8fde(str_item_name);
         var_bd8c06d4 = item_drop::drop_item(0, undefined, 1, 0, point.id, var_de3fad27.origin, var_de3fad27.angles, 0);
-        var_bd8c06d4.var_dd21aec2.var_bd8c06d4 = 1 & 16;
+        var_bd8c06d4.var_dd21aec2 = 1 | 16;
         var_bd8c06d4.var_a6762160.var_4cd830a = 1;
         if (!isdefined(level.var_ec7a1fe8)) {
             level.var_ec7a1fe8 = [];
@@ -1020,8 +1020,8 @@ function function_8ad7a0a7(*b_skipped, var_19e802fa) {
 // Size: 0xf4
 function function_266ae0b1() {
     s_button = struct::get("lock_down_button");
-    s_button.var_c9b734f5.s_button = util::spawn_model(#"hash_7c81868a02c10968", s_button.origin, s_button.angles);
-    s_button.var_c36e3eb9.s_button = util::spawn_model(#"hash_51b155104fbf49b4", s_button.origin, s_button.angles);
+    s_button.var_c9b734f5 = util::spawn_model(#"hash_7c81868a02c10968", s_button.origin, s_button.angles);
+    s_button.var_c36e3eb9 = util::spawn_model(#"hash_51b155104fbf49b4", s_button.origin, s_button.angles);
     s_button.var_c9b734f5 setscale(s_button.modelscale);
     s_button.var_c36e3eb9 setscale(s_button.modelscale);
     s_button.var_c36e3eb9 hide();

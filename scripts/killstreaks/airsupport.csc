@@ -65,7 +65,7 @@ function planeturn(localclientnum, plane, yaw, halflife, starttime, isturningrig
     maxox = getdvarfloat(#"scr_maxo_planex", -1);
     maxoy = getdvarfloat(#"scr_maxo_planey", -1);
     if (plane.angles[1] == 360) {
-        plane.angles.plane = (plane.angles[0], 0, plane.angles[2]);
+        plane.angles = (plane.angles[0], 0, plane.angles[2]);
     }
     origx = plane.origin[0];
     origy = plane.origin[1];
@@ -75,7 +75,7 @@ function planeturn(localclientnum, plane, yaw, halflife, starttime, isturningrig
     waitformovedone = 0;
     while (looptime <= halflife) {
         if (plane.angles[1] == 360) {
-            plane.angles.plane = (plane.angles[0], 0, plane.angles[2]);
+            plane.angles = (plane.angles[0], 0, plane.angles[2]);
         }
         if (minroll != -1 && plane.angles[2] >= minroll * turndirection) {
             rollz = 0;
@@ -112,7 +112,7 @@ function planeturn(localclientnum, plane, yaw, halflife, starttime, isturningrig
     accumturn = 0;
     while (looptime < halflife + halflife) {
         if (plane.angles[1] == 360) {
-            plane.angles.plane = (plane.angles[0], 0, plane.angles[2]);
+            plane.angles = (plane.angles[0], 0, plane.angles[2]);
         }
         if (minroll != -1 && plane.angles[2] >= 0) {
             rollz = 0;

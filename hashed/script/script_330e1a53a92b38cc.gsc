@@ -59,9 +59,9 @@ class cmp_revive_prompt : cluielem {
     // Params 4, eflags: 0x0
     // Checksum 0xedc1a32f, Offset: 0x410
     // Size: 0xb4
-    function setup_clientfields(var_c05c67e2, var_afaddf7a, var_d65e5a18, *var_f228b5fa) {
+    function setup_clientfields(var_c05c67e2, progresscallback, var_d65e5a18, *var_f228b5fa) {
         cluielem::setup_clientfields("mp_revive_prompt");
-        cluielem::add_clientfield("clientnum", 1, 7, "int", var_afaddf7a);
+        cluielem::add_clientfield("clientnum", 1, 7, "int", progresscallback);
         cluielem::add_clientfield("progress", 1, 5, "float", var_d65e5a18);
         cluielem::add_clientfield("reviveProgress", 1, 5, "float", var_f228b5fa);
     }
@@ -91,9 +91,9 @@ class cmp_revive_prompt : cluielem {
 // Params 4, eflags: 0x0
 // Checksum 0x5dccf323, Offset: 0x108
 // Size: 0x196
-function register(var_c05c67e2, var_afaddf7a, var_d65e5a18, var_f228b5fa) {
+function register(var_c05c67e2, progresscallback, var_d65e5a18, var_f228b5fa) {
     elem = new cmp_revive_prompt();
-    [[ elem ]]->setup_clientfields(var_c05c67e2, var_afaddf7a, var_d65e5a18, var_f228b5fa);
+    [[ elem ]]->setup_clientfields(var_c05c67e2, progresscallback, var_d65e5a18, var_f228b5fa);
     if (!isdefined(level.var_ae746e8f)) {
         level.var_ae746e8f = associativearray();
     }

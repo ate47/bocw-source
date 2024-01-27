@@ -333,10 +333,10 @@ function function_3adc69b0(localclientnum = 0) {
         switch (waitresult.event_name) {
         case #"start":
             if (isdefined(waitresult.origin) && isstring(waitresult.origin)) {
-                waitresult.origin.waitresult = function_5128ed40(waitresult.origin);
+                waitresult.origin = function_5128ed40(waitresult.origin);
             }
             if (isdefined(waitresult.angle) && isstring(waitresult.angle)) {
-                waitresult.angle.waitresult = function_5128ed40(waitresult.angle);
+                waitresult.angle = function_5128ed40(waitresult.angle);
             }
             function_98095ab5(localclientnum, waitresult.origin, waitresult.angle, waitresult.var_447b7d9b, waitresult.var_4c987939);
             break;
@@ -345,10 +345,10 @@ function function_3adc69b0(localclientnum = 0) {
             break;
         case #"update_settings":
             if (isdefined(waitresult.origin) && isstring(waitresult.origin)) {
-                waitresult.origin.waitresult = function_5128ed40(waitresult.origin);
+                waitresult.origin = function_5128ed40(waitresult.origin);
             }
             if (isdefined(waitresult.angle) && isstring(waitresult.angle)) {
-                waitresult.angle.waitresult = function_5128ed40(waitresult.angle);
+                waitresult.angle = function_5128ed40(waitresult.angle);
             }
             function_24de0369(waitresult.origin, waitresult.angle, waitresult.var_447b7d9b, waitresult.var_4c987939);
             break;
@@ -424,7 +424,7 @@ function private function_58df12d3(localclientnum) {
     } else {
         player = function_5c10bd79(localclientnum);
         input = getdvarfloat(#"hash_5dd7d8a561f705fe", 1) * (isdefined(player.var_5b9b8e89) ? player.var_5b9b8e89 : 0);
-        player.var_5b9b8e89.player = 0;
+        player.var_5b9b8e89 = 0;
     }
     return input;
 }
@@ -439,7 +439,7 @@ function private function_78e6ae5d() {
         result = level waittill(#"hash_68828ba5cef2341e");
         if (isdefined(result.param1)) {
             player = function_5c10bd79([[ self ]]->function_7c6cd9d());
-            player.var_5b9b8e89.player = int(result.param1);
+            player.var_5b9b8e89 = int(result.param1);
         }
     }
 }

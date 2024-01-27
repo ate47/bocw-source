@@ -76,11 +76,11 @@ function function_f18b95c7() {
 // Checksum 0x77fb7634, Offset: 0x3d0
 // Size: 0x204
 function private setup_awareness(entity) {
-    entity.has_awareness.entity = 1;
-    entity.ignorelaststandplayers.entity = 1;
-    entity.var_e453bcfa.entity = 10;
-    entity.var_91a026f2.entity = 10;
-    entity.var_7ee943e1.entity = 10;
+    entity.has_awareness = 1;
+    entity.ignorelaststandplayers = 1;
+    entity.var_e453bcfa = 10;
+    entity.var_91a026f2 = 10;
+    entity.var_7ee943e1 = 10;
     self callback::function_d8abfc3d(#"on_ai_damage", &awareness::function_5f511313);
     awareness::register_state(entity, #"wander", &function_bbabdf2, &function_21eb9d09, &awareness::function_b264a0bc, undefined, &awareness::function_555d960b);
     awareness::register_state(entity, #"investigate", &awareness::function_b41f0471, &awareness::function_9eefc327, &awareness::function_34162a25, undefined, &awareness::function_a360dd00);
@@ -204,7 +204,7 @@ function private function_21eb9d09(entity) {
 // Size: 0x572
 function function_440337c2(entity) {
     var_cc7597dc = namespace_19c99142::function_3d972f3(entity);
-    entity.goalradius.entity = entity getpathfindingradius() * 2;
+    entity.goalradius = entity getpathfindingradius() * 2;
     var_6d4f3481 = entity.team !== level.zombie_team;
     var_2929f2e0 = isdefined(entity.attackable);
     var_4d21f369 = namespace_19c99142::function_da71e09a(entity);
@@ -256,7 +256,7 @@ function function_440337c2(entity) {
                     namespace_19c99142::function_1b2f34c9(entity);
                     awareness::function_5c40e824(entity);
                 } else {
-                    entity.favoriteenemy.entity = entity.var_7418f498;
+                    entity.favoriteenemy = entity.var_7418f498;
                 }
             }
         } else {

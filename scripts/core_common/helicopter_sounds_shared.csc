@@ -580,8 +580,8 @@ function terrain_trace_brass() {
         if (!self.isfiring) {
             pre_trace_real_ent stopallloopsounds(0.5);
         }
-        trace_real_ent.origin.trace_real_ent = trace[#"position"];
-        pre_trace_real_ent.origin.pre_trace_real_ent = trace[#"position"];
+        trace_real_ent.origin = trace[#"position"];
+        pre_trace_real_ent.origin = trace[#"position"];
         if (isdefined(surf_type) && self.isfiring) {
             if (surf_type == pre_surf_type && pre_trace_real_ent isplayingloopsound()) {
                 continue;
@@ -636,8 +636,8 @@ function terrain_trace() {
             }
             continue;
         }
-        trace_real_ent.origin.trace_real_ent = trace[#"position"];
-        pre_trace_real_ent.origin.pre_trace_real_ent = trace[#"position"];
+        trace_real_ent.origin = trace[#"position"];
+        pre_trace_real_ent.origin = trace[#"position"];
         if (isdefined(surf_type)) {
             if (surf_type == pre_surf_type && pre_trace_real_ent isplayingloopsound()) {
                 continue;

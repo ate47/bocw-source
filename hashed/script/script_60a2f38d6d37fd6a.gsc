@@ -99,7 +99,7 @@ function function_9a237f2f(localclientnum, var_e8cccaf8, entity) {
 // Size: 0x6c
 function announce(localclientnum, var_fa5e0d11) {
     line = level.doa.var_f5ac1256[var_fa5e0d11];
-    line.var_2c036085.line = gettime() + line.cooldown;
+    line.var_2c036085 = gettime() + line.cooldown;
     function_9a237f2f(localclientnum, line.audio);
 }
 

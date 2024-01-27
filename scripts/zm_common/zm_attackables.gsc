@@ -32,15 +32,15 @@ function private function_70a657d8() {
     level.attackablecallback = &attackable_callback;
     level.attackables = struct::get_array("scriptbundle_attackables", "classname");
     foreach (attackable in level.attackables) {
-        attackable.bundle.attackable = getscriptbundle(attackable.scriptbundlename);
+        attackable.bundle = getscriptbundle(attackable.scriptbundlename);
         if (isdefined(attackable.target)) {
-            attackable.slot.attackable = struct::get_array(attackable.target, "targetname");
+            attackable.slot = struct::get_array(attackable.target, "targetname");
         }
-        attackable.is_active.attackable = 0;
-        attackable.health.attackable = attackable.bundle.max_health;
+        attackable.is_active = 0;
+        attackable.health = attackable.bundle.max_health;
         if (getdvarint(#"zm_attackables", 0) > 0) {
-            attackable.is_active.attackable = 1;
-            attackable.health.attackable = 1000;
+            attackable.is_active = 1;
+            attackable.health = 1000;
         }
     }
 }

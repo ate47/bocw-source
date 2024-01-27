@@ -305,7 +305,7 @@ function activatecounteruav(killstreaktype) {
     counteruav clientfield::set("scorestreakActive", 1);
     counteruav killstreaks::function_a781e8d2();
     counteruav.killstreak_id = killstreak_id;
-    counteruav.var_48d842c3.counteruav = 1;
+    counteruav.var_48d842c3 = 1;
     counteruav thread killstreaks::waittillemp(&destroycounteruavbyemp);
     counteruav thread killstreaks::waitfortimeout("counteruav", 20000, &ontimeout, "delete", "death", "crashing");
     counteruav thread killstreaks::waitfortimecheck(20000 / 2, &ontimecheck, "delete", "death", "crashing");
@@ -325,7 +325,7 @@ function activatecounteruav(killstreaktype) {
         } else {
             var_5f8c899e = 6000;
         }
-        counteruav.var_f6bf445b.counteruav = killstreaks::function_f3875fb0(self.origin, isdefined(level.var_8ac94558) ? level.var_8ac94558 : var_5f8c899e, 60, 1, 1);
+        counteruav.var_f6bf445b = killstreaks::function_f3875fb0(self.origin, isdefined(level.var_8ac94558) ? level.var_8ac94558 : var_5f8c899e, 60, 1, 1);
         counteruav killstreaks::function_67d553c4(counteruav.var_f6bf445b, isdefined(level.uav_rotation_radius) ? level.uav_rotation_radius : 4000, isdefined(level.uav_rotation_random_offset) ? level.uav_rotation_random_offset : 1000, 1);
         counteruav.var_f6bf445b clientfield::set("counteruav", 1);
         counteruav.var_f6bf445b setteam(counteruav.team);
@@ -373,11 +373,11 @@ function spawncounteruav(owner, killstreak_id, bundle, killstreaktype) {
     cuav assignfirstavailableoffsetindex();
     cuav killstreaks::configure_team(killstreaktype, killstreak_id, owner, undefined, undefined, &configureteampost);
     cuav killstreak_hacking::enable_hacking("counteruav", &hackedprefunction, undefined);
-    cuav.targetname.cuav = "counteruav";
+    cuav.targetname = "counteruav";
     cuav util::make_sentient();
-    cuav.weapon.cuav = getweapon("counteruav");
+    cuav.weapon = getweapon("counteruav");
     cuav setweapon(cuav.weapon);
-    cuav.victimsoundmod.cuav = "vehicle";
+    cuav.victimsoundmod = "vehicle";
     cuav function_619a5c20();
     cuav setforcenocull();
     killstreak_detect::killstreaktargetset(cuav);
@@ -613,7 +613,7 @@ function removeactivecounteruav() {
     profilestart();
     cuav resetactivecounteruav();
     cuav killstreakrules::killstreakstop(cuav.killstreaktype, self.originalteam, self.killstreak_id);
-    cuav.var_f52c102f.cuav = 1;
+    cuav.var_f52c102f = 1;
     profilestop();
 }
 

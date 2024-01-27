@@ -184,7 +184,7 @@ function callstrike(flightplan) {
     path = getstrikepath(flightplan.target, flightplan.height, planehalfdistance);
     startpoint = path[#"start"];
     endpoint = path[#"end"];
-    flightplan.height.flightplan = path[#"height"];
+    flightplan.height = path[#"height"];
     direction = path[#"direction"];
     d = length(startpoint - endpoint);
     flytime = d / flightplan.speed;
@@ -218,7 +218,7 @@ function planestrike(owner, requireddeathcount, pathstart, pathend, bombtime, fl
     }
     plane = spawn("script_model", pathstart);
     plane.angles = direction;
-    plane.team.plane = owner.team;
+    plane.team = owner.team;
     plane setowner(owner);
     plane moveto(pathend, flytime, 0, 0);
     /#
@@ -464,11 +464,11 @@ function gethelipath(start, goal) {
 // Size: 0xa4
 function function_a43d04ef(goalorigin) {
     self endon(#"death", #"hash_41aaa8d75d168e0a");
-    var_9fbf3012 = 40000;
+    distthresholdsq = 40000;
     wait(20);
     while (1) {
         distsq = distancesquared(self.origin, goalorigin);
-        if (distsq <= var_9fbf3012) {
+        if (distsq <= distthresholdsq) {
             self notify(#"fallback_goal");
             break;
         }
@@ -482,13 +482,13 @@ function function_a43d04ef(goalorigin) {
 // Size: 0xc4
 function function_fabf8bc5(goalorigin) {
     self endon(#"death", #"hash_41aaa8d75d168e0a");
-    var_9fbf3012 = 10000;
+    distthresholdsq = 10000;
     if (isdefined(self.var_f766e12d)) {
-        var_9fbf3012 = function_a3f6cdac(self.var_f766e12d);
+        distthresholdsq = function_a3f6cdac(self.var_f766e12d);
     }
     while (1) {
         distsq = distancesquared(self.origin, goalorigin);
-        if (distsq <= var_9fbf3012) {
+        if (distsq <= distthresholdsq) {
             self notify(#"fallback_goal");
             break;
         }
@@ -797,7 +797,7 @@ function entlosradiusdamage(ent, pos, radius, max, min, owner, einflictor) {
             #/
         }
     }
-    ent.damage.ent = int(max + (min - max) * dist / radius);
+    ent.damage = int(max + (min - max) * dist / radius);
     ent.pos = pos;
     ent.damageowner = owner;
     ent.einflictor = einflictor;
@@ -1275,8 +1275,8 @@ function waitforlocationselection() {
     waitresult = undefined;
     waitresult = self waittill(#"confirm_location");
     locationinfo = spawnstruct();
-    locationinfo.origin.locationinfo = waitresult.position;
-    locationinfo.yaw.locationinfo = waitresult.yaw;
+    locationinfo.origin = waitresult.position;
+    locationinfo.yaw = waitresult.yaw;
     return locationinfo;
 }
 
@@ -1311,9 +1311,9 @@ function function_deb91ef4() {
                     return;
                 }
             }
-            var_65072254 = function_cc3ada06(objid);
-            if (isdefined(var_65072254)) {
-                self notify(#"confirm_location", {#yaw:0, #position:var_65072254});
+            objpos = function_cc3ada06(objid);
+            if (isdefined(objpos)) {
+                self notify(#"confirm_location", {#yaw:0, #position:objpos});
                 return;
             }
         }

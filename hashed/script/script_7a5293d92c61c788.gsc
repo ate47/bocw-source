@@ -114,14 +114,14 @@ function function_93a99046(struct) {
     offset = (offset[0], offset[1], offset[2] + 50);
     if (scriptmodel.script_noteworthy === "power") {
         trigger = namespace_8b6a9d79::function_214737c7(struct, &function_fe5f8894, #"zombie/need_power", undefined, 64, 128, undefined, offset);
-        scriptmodel.var_49d94d8a.scriptmodel = &function_38ac8b73;
-        scriptmodel.var_7cf0a191.scriptmodel = &function_e255b251;
+        scriptmodel.var_49d94d8a = &function_38ac8b73;
+        scriptmodel.var_7cf0a191 = &function_e255b251;
         scriptmodel thread zm_power::function_da4a8c05(#"hash_614130df578d98f0", struct.script_int);
     } else {
         trigger = namespace_8b6a9d79::function_214737c7(struct, &function_fe5f8894, #"hash_614130df578d98f0", undefined, 64, 128, undefined, offset);
         scriptmodel function_38ac8b73();
         if (is_true(level.var_53bc31ad)) {
-            scriptmodel.var_7cf0a191.scriptmodel = &function_e255b251;
+            scriptmodel.var_7cf0a191 = &function_e255b251;
         }
     }
     trigger.scriptmodel = scriptmodel;
@@ -568,8 +568,8 @@ function give_armor(var_cc87b623) {
 // Size: 0x7c
 function function_b2f69241() {
     var_416640e8 = self.inventory.items[6];
-    if (var_416640e8.var_bd027dd9 != 32767) {
-        var_4d7e11d8 = self item_inventory::drop_inventory_item(var_416640e8.var_bd027dd9);
+    if (var_416640e8.networkid != 32767) {
+        var_4d7e11d8 = self item_inventory::drop_inventory_item(var_416640e8.networkid);
         if (isdefined(var_4d7e11d8)) {
             item_world::consume_item(var_4d7e11d8);
         }

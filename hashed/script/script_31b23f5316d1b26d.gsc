@@ -61,17 +61,17 @@ function function_2ff463e2(name) {
     #/
     level.var_a40e1682[name] = var_64f87a02;
     var_64f87a02 hide();
-    var_64f87a02.var_d19720ad.var_64f87a02 = function_a06dcd8b(var_64f87a02.origin);
-    var_64f87a02.var_66b667b0.var_64f87a02 = function_a06dcd8b(var_64f87a02.angles);
-    var_64f87a02.tags.var_64f87a02 = [];
+    var_64f87a02.var_d19720ad = function_a06dcd8b(var_64f87a02.origin);
+    var_64f87a02.var_66b667b0 = function_a06dcd8b(var_64f87a02.angles);
+    var_64f87a02.tags = [];
     var_e8da8fdb = struct::get_array(name, "rg_room");
     foreach (var_324df575 in var_e8da8fdb) {
         if (isdefined(var_324df575.rg_tag_type)) {
             var_4a14890d = spawnstruct();
-            var_4a14890d.type.var_4a14890d = var_324df575.rg_tag_type;
-            var_4a14890d.id.var_4a14890d = var_324df575.var_d0971441;
-            var_4a14890d.origin.var_4a14890d = coordtransformtranspose(var_324df575.origin, var_64f87a02.var_d19720ad, var_64f87a02.var_66b667b0);
-            var_4a14890d.angles.var_4a14890d = function_bdd10bae(var_324df575.angles, var_64f87a02.var_66b667b0);
+            var_4a14890d.type = var_324df575.rg_tag_type;
+            var_4a14890d.id = var_324df575.var_d0971441;
+            var_4a14890d.origin = coordtransformtranspose(var_324df575.origin, var_64f87a02.var_d19720ad, var_64f87a02.var_66b667b0);
+            var_4a14890d.angles = function_bdd10bae(var_324df575.angles, var_64f87a02.var_66b667b0);
             function_e667ba34(var_4a14890d, var_324df575);
             var_64f87a02.tags[var_64f87a02.tags.size] = var_4a14890d;
         }
@@ -107,22 +107,22 @@ function private function_8396377c(var_57617236, origin, angles) {
         assert(isdefined(var_57617236));
     #/
     door = spawnstruct();
-    door.targetname.door = function_2f65cd89();
+    door.targetname = function_2f65cd89();
     door.origin = origin;
     door.angles = angles;
-    door.var_d19720ad.door = function_a06dcd8b(origin);
-    door.var_66b667b0.door = function_a06dcd8b(angles);
+    door.var_d19720ad = function_a06dcd8b(origin);
+    door.var_66b667b0 = function_a06dcd8b(angles);
     door.var_a1152600 = var_57617236;
-    door.neighbors.door = [];
-    door.var_12650ad6.door = [];
-    door.tags.door = [];
+    door.neighbors = [];
+    door.var_12650ad6 = [];
+    door.tags = [];
     foreach (var_5cf84433 in var_57617236.tags) {
         var_df2b5097 = spawnstruct();
-        var_df2b5097.id.var_df2b5097 = var_5cf84433.id;
+        var_df2b5097.id = var_5cf84433.id;
         var_df2b5097.owner = door;
-        var_df2b5097.origin.var_df2b5097 = coordtransform(var_5cf84433.origin, door.var_d19720ad, door.var_66b667b0);
-        var_df2b5097.angles.var_df2b5097 = combineangles(door.var_66b667b0, var_5cf84433.angles);
-        var_df2b5097.type.var_df2b5097 = var_5cf84433.type;
+        var_df2b5097.origin = coordtransform(var_5cf84433.origin, door.var_d19720ad, door.var_66b667b0);
+        var_df2b5097.angles = combineangles(door.var_66b667b0, var_5cf84433.angles);
+        var_df2b5097.type = var_5cf84433.type;
         function_e667ba34(var_df2b5097, var_5cf84433);
         door.tags[door.tags.size] = var_df2b5097;
     }
@@ -139,26 +139,26 @@ function private function_9a75d6e9(var_64f87a02, origin, angles) {
         assert(isdefined(var_64f87a02));
     #/
     room = spawnstruct();
-    room.targetname.room = function_2f65cd89();
+    room.targetname = function_2f65cd89();
     room.origin = origin;
     room.angles = angles;
-    room.var_d19720ad.room = function_a06dcd8b(origin);
-    room.var_66b667b0.room = function_a06dcd8b(angles);
+    room.var_d19720ad = function_a06dcd8b(origin);
+    room.var_66b667b0 = function_a06dcd8b(angles);
     room.var_a1152600 = var_64f87a02;
-    room.neighbors.room = [];
-    room.var_12650ad6.room = [];
-    room.tags.room = [];
+    room.neighbors = [];
+    room.var_12650ad6 = [];
+    room.tags = [];
     foreach (var_103a1f3b in var_64f87a02.tags) {
         var_4a14890d = spawnstruct();
-        var_4a14890d.id.var_4a14890d = var_103a1f3b.id;
+        var_4a14890d.id = var_103a1f3b.id;
         var_4a14890d.owner = room;
-        var_4a14890d.origin.var_4a14890d = coordtransform(var_103a1f3b.origin, room.var_d19720ad, room.var_66b667b0);
-        var_4a14890d.angles.var_4a14890d = combineangles(room.var_66b667b0, var_103a1f3b.angles);
-        var_4a14890d.type.var_4a14890d = var_103a1f3b.type;
+        var_4a14890d.origin = coordtransform(var_103a1f3b.origin, room.var_d19720ad, room.var_66b667b0);
+        var_4a14890d.angles = combineangles(room.var_66b667b0, var_103a1f3b.angles);
+        var_4a14890d.type = var_103a1f3b.type;
         function_e667ba34(var_4a14890d, var_103a1f3b);
         room.tags[room.tags.size] = var_4a14890d;
         if (var_4a14890d.type === "room_center") {
-            room.var_5f5fe462.room = var_4a14890d.origin;
+            room.var_5f5fe462 = var_4a14890d.origin;
         }
     }
     if (isdefined(level.var_40450ea6)) {
@@ -300,9 +300,9 @@ function function_3a9f29b2(room) {
         tag.neighbors = undefined;
         tag.owner = undefined;
     }
-    room.tags.room = [];
-    room.neighbors.room = [];
-    room.var_12650ad6.room = [];
+    room.tags = [];
+    room.neighbors = [];
+    room.var_12650ad6 = [];
     room.var_dbb4ff9a = undefined;
     room.var_a1152600 = undefined;
     function_f4b7f348("Room Cleanup:" + room.targetname + " done");
@@ -391,14 +391,14 @@ function init(name) {
         level.var_60f6aaec = [];
         foreach (start_tag in var_60f6aaec) {
             start_node = spawnstruct();
-            start_node.origin.start_node = start_tag.origin;
-            start_node.angles.start_node = start_tag.angles;
-            start_node.type.start_node = start_tag.rg_tag_type;
-            start_node.name.start_node = start_tag.targetname;
-            start_node.target.start_node = start_tag.target;
-            start_node.script_int.start_node = start_tag.script_int;
-            start_node.script_string.start_node = start_tag.script_string;
-            start_node.script_noteworthy.start_node = start_tag.script_noteworty;
+            start_node.origin = start_tag.origin;
+            start_node.angles = start_tag.angles;
+            start_node.type = start_tag.rg_tag_type;
+            start_node.name = start_tag.targetname;
+            start_node.target = start_tag.target;
+            start_node.script_int = start_tag.script_int;
+            start_node.script_string = start_tag.script_string;
+            start_node.script_noteworthy = start_tag.script_noteworty;
             level.var_60f6aaec[level.var_60f6aaec.size] = start_node;
         }
     }

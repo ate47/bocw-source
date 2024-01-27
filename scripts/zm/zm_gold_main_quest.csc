@@ -63,11 +63,11 @@ function function_48f7c5e6(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwasdemojump == 1) {
         self.var_358ffe83 = playfx(fieldname, #"hash_4b0034bfed0b13a0", self.origin, anglestoup(self.angles), anglestoforward(self.angles));
         foreach (sub_satellite_fx_pos in var_eb1526b6) {
-            sub_satellite_fx_pos.tag_fx.sub_satellite_fx_pos = sub_satellite_fx_pos util::spawn_model(fieldname, "tag_origin", sub_satellite_fx_pos.origin, sub_satellite_fx_pos.angles);
+            sub_satellite_fx_pos.tag_fx = sub_satellite_fx_pos util::spawn_model(fieldname, "tag_origin", sub_satellite_fx_pos.origin, sub_satellite_fx_pos.angles);
             if (sub_satellite_fx_pos.script_noteworthy === "a") {
-                sub_satellite_fx_pos.fx.sub_satellite_fx_pos = util::playfxontag(fieldname, #"hash_4142f503f17f18c4", sub_satellite_fx_pos.tag_fx, "tag_origin");
+                sub_satellite_fx_pos.fx = util::playfxontag(fieldname, #"hash_4142f503f17f18c4", sub_satellite_fx_pos.tag_fx, "tag_origin");
             } else if (sub_satellite_fx_pos.script_noteworthy === "b") {
-                sub_satellite_fx_pos.fx.sub_satellite_fx_pos = util::playfxontag(fieldname, #"hash_4142f803f17f1ddd", sub_satellite_fx_pos.tag_fx, "tag_origin");
+                sub_satellite_fx_pos.fx = util::playfxontag(fieldname, #"hash_4142f803f17f1ddd", sub_satellite_fx_pos.tag_fx, "tag_origin");
             }
         }
         soundlineemitter(#"hash_243e8130bf816d5a", (478, -15202, 7913), (-2140, -15285, 8125));
@@ -275,7 +275,7 @@ function function_db150da1(localclientnum, *oldval, newval, *bnewent, *binitials
         var_3c563df1.var_85d0a40f = undefined;
     } else if (bwasdemojump == 1) {
         function_3385d776(#"hash_52628b1a34838199");
-        var_3c563df1.var_85d0a40f.var_3c563df1 = playfx(fieldname, #"hash_52628b1a34838199", var_3c563df1.origin, anglestoforward(var_3c563df1.angles), anglestoup(var_3c563df1.angles));
+        var_3c563df1.var_85d0a40f = playfx(fieldname, #"hash_52628b1a34838199", var_3c563df1.origin, anglestoforward(var_3c563df1.angles), anglestoup(var_3c563df1.angles));
     }
 }
 
@@ -408,7 +408,7 @@ function function_b66e99f1(localclientnum, *oldval, newval, *bnewent, *binitials
                     str_fx = #"zm_ai/fx9_steiner_rad_bomb_spot_lg_loop";
                     break;
                 }
-                s_fx.var_bdfdbc4d.s_fx = playfx(fieldname, str_fx, s_fx.origin, anglestoforward(s_fx.angles), anglestoup(s_fx.angles));
+                s_fx.var_bdfdbc4d = playfx(fieldname, str_fx, s_fx.origin, anglestoforward(s_fx.angles), anglestoup(s_fx.angles));
             }
         }
         if (!isdefined(self.var_636b7150)) {

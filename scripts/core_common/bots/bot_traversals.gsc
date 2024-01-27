@@ -97,11 +97,11 @@ function private function_c8aebd21(eventstruct) {
     var_15dca465 = checknavmeshdirection(endpos, var_695ff8a6, tracedist, 0);
     eventstruct.var_15dca465 = var_15dca465;
     var_492af6a = physicstrace(startpos, var_883d42a7, (-15, -15, 18), (15, 15, 72), self, 32);
-    eventstruct.var_75f5c2cb.eventstruct = var_492af6a[#"position"];
+    eventstruct.var_75f5c2cb = var_492af6a[#"position"];
     normal = vectornormalize((var_695ff8a6[0], var_695ff8a6[1], 0));
     eventstruct.normal = normal;
-    eventstruct.var_d9db209e.eventstruct = vectordot(normal, var_883d42a7 - var_15dca465);
-    eventstruct.var_c15a5a25.eventstruct = eventstruct.var_15dca465[2] - eventstruct.var_883d42a7[2];
+    eventstruct.var_d9db209e = vectordot(normal, var_883d42a7 - var_15dca465);
+    eventstruct.var_c15a5a25 = eventstruct.var_15dca465[2] - eventstruct.var_883d42a7[2];
 }
 
 // Namespace bot_traversals/bot_traversals
@@ -131,7 +131,7 @@ function private function_38db71f(eventstruct) {
     #/
     var_924b2657 = groundtrace(var_74433575, var_1582cba2, 0, self, 1, 1);
     toppos = var_924b2657[#"position"];
-    eventstruct.var_a8cc518d.eventstruct = (var_1582cba2[0], var_1582cba2[1], toppos[2]);
+    eventstruct.var_a8cc518d = (var_1582cba2[0], var_1582cba2[1], toppos[2]);
 }
 
 // Namespace bot_traversals/bot_traversals

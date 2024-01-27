@@ -109,7 +109,7 @@ function private control_start() {
             } else {
                 objectives = level function_574923ee(info);
                 foreach (objective in objectives) {
-                    objective.var_89068add.objective = function_84750938(object, objective.team);
+                    objective.var_89068add = function_84750938(object, objective.team);
                 }
             }
         }
@@ -173,7 +173,7 @@ function private dom_start() {
                     weight = var_654bc2bc[order];
                     level function_8f96464(team, info, order, #"assault", weight);
                 }
-                objective.var_89068add.objective = function_84750938(object, team);
+                objective.var_89068add = function_84750938(object, team);
             }
         }
         waitframe(1);
@@ -437,8 +437,8 @@ function private function_5f64ef84(target) {
     info = {#target:target};
     regions = level function_5c2d40ff(target);
     neighbors = level function_323a3bdf(regions);
-    info.var_dd2331cb.info = level function_8d2aa32e(regions);
-    info.var_23f1621e.info = level function_8d2aa32e(neighbors);
+    info.var_dd2331cb = level function_8d2aa32e(regions);
+    info.var_23f1621e = level function_8d2aa32e(neighbors);
     return info;
 }
 
@@ -517,8 +517,8 @@ function private function_84750938(object, team) {
 // Size: 0x14a
 function private function_323a3bdf(regions) {
     neighbors = [];
-    foreach (var_8cc7a4e in regions) {
-        foreach (id in var_8cc7a4e.neighbors) {
+    foreach (regioninfo in regions) {
+        foreach (id in regioninfo.neighbors) {
             if (isdefined(regions[id])) {
                 continue;
             }
@@ -560,7 +560,7 @@ function private function_8f96464(team, info, var_a1980fcb, var_5e99151a, weight
 // Checksum 0xdeed110, Offset: 0x2490
 // Size: 0x4c
 function private function_80af6d(objective) {
-    objective.active.objective = 0;
+    objective.active = 0;
     objectives = level.var_774ed7e9[objective.team];
     arrayremovevalue(objectives, objective);
 }

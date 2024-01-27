@@ -85,9 +85,9 @@ function play_taacom_dialog_response(dialogkey, killstreaktype, killstreakid, pi
 // Params 7, eflags: 0x2 linked
 // Checksum 0xb61125e1, Offset: 0x420
 // Size: 0x6c
-function play_taacom_dialog(dialogkey, killstreaktype, killstreakid, var_46bd7973, var_8a6b001a, weapon, priority) {
+function play_taacom_dialog(dialogkey, killstreaktype, killstreakid, soundevent, var_8a6b001a, weapon, priority) {
     if (isdefined(level.play_taacom_dialog)) {
-        self [[ level.play_taacom_dialog ]](dialogkey, killstreaktype, killstreakid, var_46bd7973, var_8a6b001a, weapon, priority);
+        self [[ level.play_taacom_dialog ]](dialogkey, killstreaktype, killstreakid, soundevent, var_8a6b001a, weapon, priority);
     }
 }
 
@@ -247,7 +247,7 @@ function function_1110a5de(killstreaktype) {
         taacombundles = getscriptbundles("mpdialog_taacom");
         foreach (bundle in taacombundles) {
             if (!isdefined(bundle.pilotbundles)) {
-                bundle.pilotbundles.bundle = [];
+                bundle.pilotbundles = [];
             }
             bundle.pilotbundles[killstreaktype] = [];
             i = 0;

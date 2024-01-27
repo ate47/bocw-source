@@ -135,15 +135,15 @@ function function_a710e34a(*state) {
 // Checksum 0x61d638d1, Offset: 0x720
 // Size: 0xa6
 function function_1ff28887(use_trigger, perk_machine, bump_trigger, *collision) {
-    perk_machine.script_sound.perk_machine = "mus_perks_jugganog_jingle";
-    perk_machine.script_string.perk_machine = "jugg_perk";
-    perk_machine.script_label.perk_machine = "mus_perks_jugganog_sting";
-    perk_machine.var_7619f1b6.perk_machine = 1;
-    perk_machine.target.perk_machine = "vending_jugg";
-    bump_trigger.script_string.bump_trigger = "jugg_perk";
-    bump_trigger.targetname.bump_trigger = "vending_jugg";
+    perk_machine.script_sound = "mus_perks_jugganog_jingle";
+    perk_machine.script_string = "jugg_perk";
+    perk_machine.script_label = "mus_perks_jugganog_sting";
+    perk_machine.var_7619f1b6 = 1;
+    perk_machine.target = "vending_jugg";
+    bump_trigger.script_string = "jugg_perk";
+    bump_trigger.targetname = "vending_jugg";
     if (isdefined(collision)) {
-        collision.script_string.collision = "jugg_perk";
+        collision.script_string = "jugg_perk";
     }
 }
 

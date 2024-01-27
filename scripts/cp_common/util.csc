@@ -165,11 +165,11 @@ function force_stream_weapons(localclientnum, var_941cbfdd) {
         var_941cbfdd = array(var_941cbfdd);
     }
     while (var_941cbfdd.size > 0) {
-        foreach (var_493cfe65 in var_941cbfdd) {
-            if (isweapon(var_493cfe65)) {
-                var_57fe74e5 = self getbuildkitweaponoptions(localclientnum, var_493cfe65);
-                var_fd90b0bb = self function_1744e243(localclientnum, var_493cfe65);
-                function_d780f794(localclientnum, var_493cfe65, var_57fe74e5, var_fd90b0bb);
+        foreach (streamweapon in var_941cbfdd) {
+            if (isweapon(streamweapon)) {
+                var_57fe74e5 = self getbuildkitweaponoptions(localclientnum, streamweapon);
+                var_fd90b0bb = self function_1744e243(localclientnum, streamweapon);
+                function_d780f794(localclientnum, streamweapon, var_57fe74e5, var_fd90b0bb);
             }
         }
         waitframe(1);
@@ -338,7 +338,7 @@ function function_8e4d84eb(localclientnum, bundlename) {
                     player playsound(localclientnum, var_2c46fc48.var_2afe6ba0);
                 }
                 if (!isdefined(player.var_8bbff4f8) && isdefined(var_2c46fc48.var_9cbc1120)) {
-                    player.var_8bbff4f8.player = player playloopsound(var_2c46fc48.var_9cbc1120);
+                    player.var_8bbff4f8 = player playloopsound(var_2c46fc48.var_9cbc1120);
                 }
             }
         } else if (var_c846ce25) {

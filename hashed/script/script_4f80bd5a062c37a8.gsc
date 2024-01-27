@@ -44,22 +44,22 @@ function function_86bd7962(player, spot = player.origin, mg = 1) {
     }
     sentry endon(#"death");
     team = player.team;
-    sentry.ismissile.sentry = !mg;
+    sentry.ismissile = !mg;
     sentry.var_540d3e16 = var_540d3e16;
     if (isdefined(sentry.var_540d3e16)) {
         sentry.var_540d3e16 thread namespace_ec06fe4a::function_d55f042c(sentry, "death");
     }
-    sentry.origin.sentry = spot + vectorscale((0, 0, 1), 2200);
-    sentry.angles.sentry = (player.angles[0], player.angles[1], 0);
-    sentry.weapon.sentry = sentry seatgetweapon(0);
+    sentry.origin = spot + vectorscale((0, 0, 1), 2200);
+    sentry.angles = (player.angles[0], player.angles[1], 0);
+    sentry.weapon = sentry seatgetweapon(0);
     sentry turretsetontargettolerance(0, 10);
     sentry namespace_83eb6304::function_3ecfde67("player_trail_" + player.doa.color);
     sentry thread namespace_ec06fe4a::function_1a117d29(spot, 0.5);
     sentry waittill(#"movedone");
-    sentry.angles.sentry = (sentry.angles[0], sentry.angles[1], 0);
+    sentry.angles = (sentry.angles[0], sentry.angles[1], 0);
     sentry.owner = player;
-    sentry.ignoreme.sentry = 1;
-    sentry.takedamage.sentry = 0;
+    sentry.ignoreme = 1;
+    sentry.takedamage = 0;
     sentry setteam(team);
     sentry notsolid();
     sentry namespace_83eb6304::function_3ecfde67("turret_impact");
@@ -198,7 +198,7 @@ function function_5945a362() {
             enemy = self.favoriteenemy;
             if (isdefined(self.var_540d3e16)) {
                 enemy = self.var_540d3e16;
-                enemy.var_c80846be.enemy = self.favoriteenemy;
+                enemy.var_c80846be = self.favoriteenemy;
             }
             if (!is_true(self.ismissile)) {
                 while (gettime() < expiretime) {

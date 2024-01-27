@@ -40,17 +40,17 @@ function init_spawn_system() {
     level.spawnsystem = spawnstruct();
     spawnsystem = level.spawnsystem;
     if (!isdefined(spawnsystem.unifiedsideswitching)) {
-        spawnsystem.unifiedsideswitching.spawnsystem = 1;
+        spawnsystem.unifiedsideswitching = 1;
     }
-    spawnsystem.objective_facing_bonus.spawnsystem = 0;
-    spawnsystem.ispawn_teammask.spawnsystem = [];
-    spawnsystem.ispawn_teammask_free.spawnsystem = 1;
+    spawnsystem.objective_facing_bonus = 0;
+    spawnsystem.ispawn_teammask = [];
+    spawnsystem.ispawn_teammask_free = 1;
     spawnsystem.ispawn_teammask[#"none"] = spawnsystem.ispawn_teammask_free;
     all = spawnsystem.ispawn_teammask_free;
     count = 1;
     foreach (team, _ in level.teams) {
         spawnsystem.ispawn_teammask[team] = 1 << count;
-        all = all & spawnsystem.ispawn_teammask[team];
+        all = all | spawnsystem.ispawn_teammask[team];
         count++;
     }
     spawnsystem.ispawn_teammask[#"all"] = all;
@@ -353,7 +353,7 @@ function create_grenade_influencers(parent_team, weapon, grenade) {
         } else {
             weapon_team_mask = util::getotherteamsmask(parent_team);
             if (level.friendlyfire) {
-                weapon_team_mask = weapon_team_mask & util::getteammask(parent_team);
+                weapon_team_mask = weapon_team_mask | util::getteammask(parent_team);
             }
         }
         grenade create_entity_masked_enemy_influencer(spawn_influencer, weapon_team_mask);
@@ -458,7 +458,7 @@ function getspawnpoint(player_entity, predictedspawn = 0) {
     }
     best_spawn = get_best_spawnpoint(point_team, influencer_team, player_entity, predictedspawn);
     if (!predictedspawn) {
-        player_entity.last_spawn_origin.player_entity = best_spawn[#"origin"];
+        player_entity.last_spawn_origin = best_spawn[#"origin"];
     }
     return best_spawn;
 }
@@ -528,9 +528,9 @@ function gatherspawnpoints(player_team) {
         return level.unified_spawn_points[player_team];
     }
     spawn_entities_s = util::spawn_array_struct();
-    spawn_entities_s.a.spawn_entities_s = spawnlogic::getteamspawnpoints(player_team);
+    spawn_entities_s.a = spawnlogic::getteamspawnpoints(player_team);
     if (!isdefined(spawn_entities_s.a)) {
-        spawn_entities_s.a.spawn_entities_s = [];
+        spawn_entities_s.a = [];
     }
     level.unified_spawn_points[player_team] = spawn_entities_s;
     return spawn_entities_s;

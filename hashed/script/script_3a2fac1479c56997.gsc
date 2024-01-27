@@ -43,9 +43,9 @@ class czm_build_progress : cluielem {
     // Params 1, eflags: 0x0
     // Checksum 0xf50dc720, Offset: 0x368
     // Size: 0x4c
-    function setup_clientfields(var_afaddf7a) {
+    function setup_clientfields(progresscallback) {
         cluielem::setup_clientfields("zm_build_progress");
-        cluielem::add_clientfield("progress", 1, 6, "float", var_afaddf7a);
+        cluielem::add_clientfield("progress", 1, 6, "float", progresscallback);
     }
 
     // Namespace czm_build_progress/zm_build_progress
@@ -71,9 +71,9 @@ class czm_build_progress : cluielem {
 // Params 1, eflags: 0x0
 // Checksum 0xd2173cf8, Offset: 0xe0
 // Size: 0x176
-function register(var_afaddf7a) {
+function register(progresscallback) {
     elem = new czm_build_progress();
-    [[ elem ]]->setup_clientfields(var_afaddf7a);
+    [[ elem ]]->setup_clientfields(progresscallback);
     if (!isdefined(level.var_ae746e8f)) {
         level.var_ae746e8f = associativearray();
     }

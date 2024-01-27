@@ -47,7 +47,7 @@ function vehgetpredictedyawtoenemy(entity, lookaheadtime) {
     yaw = vectortoangles(entity.enemy.origin - selfpredictedpos)[1] - entity.angles[1];
     yaw = absangleclamp360(yaw);
     entity.predictedyawtoenemy = yaw;
-    entity.predictedyawtoenemytime.entity = gettime();
+    entity.predictedyawtoenemytime = gettime();
     return yaw;
 }
 

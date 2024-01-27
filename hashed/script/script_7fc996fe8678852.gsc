@@ -65,7 +65,7 @@ function function_b3464a7c(var_524c3d6e, var_946ffae7, var_99021fa0 = 0) {
         }
         level.var_7d45d0d4.var_ab00156[level.var_7d45d0d4.var_ab00156.size] = var_524c3d6e;
     } else if (var_524c3d6e === #"safehouse") {
-        script.var_b4fae213.script = 9;
+        script.var_b4fae213 = 9;
     }
     return script;
 }
@@ -412,10 +412,10 @@ function function_cfa4f1a0(var_832fa4bc, modelname, var_bfbc537c = 0, var_619a5c
 function function_f3d93ee9(struct, modelname, var_bfbc537c = 0, var_619a5c20 = 1) {
     model = util::spawn_model(modelname, struct.origin, struct.angles);
     if (isdefined(struct.targetname)) {
-        model.targetname.model = struct.targetname;
+        model.targetname = struct.targetname;
     }
     if (isdefined(struct.script_noteworthy)) {
-        model.script_noteworthy.model = struct.script_noteworthy;
+        model.script_noteworthy = struct.script_noteworthy;
     }
     if (var_bfbc537c) {
         model disconnectpaths();
@@ -427,9 +427,9 @@ function function_f3d93ee9(struct, modelname, var_bfbc537c = 0, var_619a5c20 = 1
     while (1) {
         if (parent.variantname === #"hash_60feba77d317eb4") {
             if (!isdefined(parent.var_344a6a1a)) {
-                parent.var_344a6a1a.parent = [];
+                parent.var_344a6a1a = [];
             } else if (!isarray(parent.var_344a6a1a)) {
-                parent.var_344a6a1a.parent = array(parent.var_344a6a1a);
+                parent.var_344a6a1a = array(parent.var_344a6a1a);
             }
             if (!isinarray(parent.var_344a6a1a, model)) {
                 parent.var_344a6a1a[parent.var_344a6a1a.size] = model;
@@ -450,7 +450,7 @@ function function_f3d93ee9(struct, modelname, var_bfbc537c = 0, var_619a5c20 = 1
 // Size: 0x182
 function function_94974eef(struct, var_145b9057, var_e546275c = 0) {
     zbarrier = spawn(var_145b9057, struct.origin);
-    zbarrier.angles.zbarrier = struct.angles;
+    zbarrier.angles = struct.angles;
     if (var_e546275c) {
         zbarrier disconnectpaths();
     }
@@ -458,9 +458,9 @@ function function_94974eef(struct, var_145b9057, var_e546275c = 0) {
     while (1) {
         if (parent.variantname === #"hash_60feba77d317eb4") {
             if (!isdefined(parent.var_344a6a1a)) {
-                parent.var_344a6a1a.parent = [];
+                parent.var_344a6a1a = [];
             } else if (!isarray(parent.var_344a6a1a)) {
-                parent.var_344a6a1a.parent = array(parent.var_344a6a1a);
+                parent.var_344a6a1a = array(parent.var_344a6a1a);
             }
             if (!isinarray(parent.var_344a6a1a, zbarrier)) {
                 parent.var_344a6a1a[parent.var_344a6a1a.size] = zbarrier;

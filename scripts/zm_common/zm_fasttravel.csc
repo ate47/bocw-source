@@ -299,7 +299,7 @@ function fasttravel_rail_fx(localclientnum, *oldval, newval, *bnewent, *binitial
 function private function_dddf661d(localclientnum, str_fx, str_tag, v_origin, v_angles) {
     mdl_fx = util::spawn_model(localclientnum, "tag_origin", v_origin, v_angles);
     mdl_fx linkto(self, str_tag);
-    mdl_fx.n_fx.mdl_fx = util::playfxontag(localclientnum, level._effect[str_fx], mdl_fx, "tag_origin");
+    mdl_fx.n_fx = util::playfxontag(localclientnum, level._effect[str_fx], mdl_fx, "tag_origin");
     return mdl_fx;
 }
 

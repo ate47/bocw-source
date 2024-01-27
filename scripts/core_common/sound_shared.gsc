@@ -61,8 +61,8 @@ function loop_on_tag(alias, tag, bstopsoundondeath) {
     if (isdefined(tag)) {
         org linkto(self, tag, (0, 0, 0), (0, 0, 0));
     } else {
-        org.origin.org = self.origin;
-        org.angles.org = self.angles;
+        org.origin = self.origin;
+        org.angles = self.angles;
         org linkto(self);
     }
     org playloopsound(alias);
@@ -85,8 +85,8 @@ function play_on_tag(alias, tag, ends_on_death, var_50bba55f, *var_82ea274f) {
     if (isdefined(ends_on_death)) {
         org linkto(self, ends_on_death, (0, 0, 0), (0, 0, 0));
     } else {
-        org.origin.org = self.origin;
-        org.angles.org = self.angles;
+        org.origin = self.origin;
+        org.angles = self.angles;
         org linkto(self);
     }
     /#
@@ -165,12 +165,12 @@ function loop_on_entity(alias, offset) {
     org endon(#"death");
     thread util::delete_on_death(org);
     if (isdefined(offset)) {
-        org.origin.org = self.origin + offset;
-        org.angles.org = self.angles;
+        org.origin = self.origin + offset;
+        org.angles = self.angles;
         org linkto(self);
     } else {
-        org.origin.org = self.origin;
-        org.angles.org = self.angles;
+        org.origin = self.origin;
+        org.angles = self.angles;
         org linkto(self);
     }
     org playloopsound(alias);

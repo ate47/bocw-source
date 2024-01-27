@@ -75,16 +75,16 @@ function function_a2e3342e(trap, var_7c56394 = 0) {
     /#
         assert(isdefined(trap.target), "<unknown string>");
     #/
-    trap.script_model.trap = namespace_ec06fe4a::function_e22ae9b3(trap.origin, "zombietron_pressure_plate", trap.angles);
+    trap.script_model = namespace_ec06fe4a::function_e22ae9b3(trap.origin, "zombietron_pressure_plate", trap.angles);
     if (isdefined(trap.script_model)) {
         trap.script_model.targetname = "hazard";
         trap.script_model.var_fd5301f9 = "pressureplate";
     }
-    trap.var_1de20e4f.trap = namespace_ec06fe4a::function_e22ae9b3(trap.origin, "zombietron_pressure_plate_holder", trap.angles);
+    trap.var_1de20e4f = namespace_ec06fe4a::function_e22ae9b3(trap.origin, "zombietron_pressure_plate_holder", trap.angles);
     trap.var_7c56394 = var_7c56394;
-    trap.var_84a0207b.trap = getentarray(trap.target, "targetname");
+    trap.var_84a0207b = getentarray(trap.target, "targetname");
     if (trap.var_84a0207b.size == 0) {
-        trap.var_84a0207b.trap = struct::get_array(trap.target, "targetname");
+        trap.var_84a0207b = struct::get_array(trap.target, "targetname");
     }
     /#
         assert(trap.var_84a0207b.size > 0, "<unknown string>");
@@ -133,7 +133,7 @@ function function_865e002e() {
             if (isdefined(trap.var_eb9d64bb) && time < trap.var_eb9d64bb) {
                 continue;
             }
-            trap.var_eb9d64bb.trap = time + 2000 + randomint(600);
+            trap.var_eb9d64bb = time + 2000 + randomint(600);
             if (!isdefined(trap.script_model)) {
                 activate = 0;
                 if (isdefined(trap.var_f8660931)) {
@@ -143,18 +143,18 @@ function function_865e002e() {
                     }
                 }
                 if (!activate) {
-                    trap.var_f8660931.trap = namespace_ec06fe4a::function_6eacecf5(trap.origin, 800);
+                    trap.var_f8660931 = namespace_ec06fe4a::function_6eacecf5(trap.origin, 800);
                     if (isdefined(trap.var_f8660931)) {
                         activate = 1;
                     }
                 }
                 if (activate) {
                     function_a2e3342e(trap, 1);
-                    trap.var_eb9d64bb.trap = trap.var_eb9d64bb + 5000;
+                    trap.var_eb9d64bb = trap.var_eb9d64bb + 5000;
                     namespace_1e25ad94::function_f5f0c0f8("Paging IN pressure plate trap at:" + trap.origin);
                 }
             } else {
-                trap.var_f8660931.trap = namespace_ec06fe4a::function_6eacecf5(trap.origin, 1200);
+                trap.var_f8660931 = namespace_ec06fe4a::function_6eacecf5(trap.origin, 1200);
                 if (!isdefined(trap.var_f8660931)) {
                     trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
                     namespace_1e25ad94::function_f5f0c0f8("Paging out pressure plate trap at:" + trap.origin);

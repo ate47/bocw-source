@@ -32,7 +32,7 @@ function private function_70a657d8() {
 // Checksum 0x699ed066, Offset: 0x1b0
 // Size: 0x22
 function function_422f24cc(watcher) {
-    watcher.ondamage.watcher = &function_1987d583;
+    watcher.ondamage = &function_1987d583;
 }
 
 // Namespace grapple/grapple

@@ -40,8 +40,8 @@ function private function_bf06b7aa(victim, *attacker, on_use_function, var_f75dc
     }
     if (is_true(getgametypesetting("dogTagPooling"))) {
         arrayremovevalue(level.dogtags, undefined, 0);
-        var_1bcc6d7e = isdefined(getgametypesetting("dogTagPoolSize")) ? getgametypesetting("dogTagPoolSize") : 0;
-        if (var_1bcc6d7e > 0 && level.dogtags.size > var_1bcc6d7e) {
+        poolsize = isdefined(getgametypesetting("dogTagPoolSize")) ? getgametypesetting("dogTagPoolSize") : 0;
+        if (poolsize > 0 && level.dogtags.size > poolsize) {
             level.dogtags[0] reset_tags();
         }
     } else {
@@ -56,17 +56,17 @@ function private function_bf06b7aa(victim, *attacker, on_use_function, var_f75dc
         trigger = spawn("trigger_radius", (0, 0, 0), 0, 32, 32);
     }
     if (!level.var_f9800416) {
-        trigger.var_a865c2cd.trigger = 0;
+        trigger.var_a865c2cd = 0;
     }
     objectivename = isdefined(level.var_febab1ea) ? level.var_febab1ea : #"conf_dogtags";
     dogtag = gameobjects::create_use_object(attacker.team, trigger, visuals, (0, 0, 0), objectivename);
     trigger.dogtag = dogtag;
     dogtag gameobjects::set_use_time(0);
-    dogtag.onuse.dogtag = &onuse;
+    dogtag.onuse = &onuse;
     dogtag.custom_onuse = on_use_function;
     dogtag.victim = attacker;
-    dogtag.victimteam.dogtag = attacker.team;
-    dogtag.var_5ee49ea8.dogtag = attacker getspecialistindex();
+    dogtag.victimteam = attacker.team;
+    dogtag.var_5ee49ea8 = attacker getspecialistindex();
     dogtag clientfield::set("dogtag_clientnum", attacker getentitynumber() + 1);
     if (level.var_70e5d775 === 1) {
         dogtag gameobjects::set_flags(1);
@@ -151,11 +151,11 @@ function spawn_dog_tag(victim, attacker, on_use_function, objectives_for_attacke
     dogtag.curorigin = pos;
     dogtag.trigger.origin = pos;
     dogtag function_9b289986(dogtag.var_5ee49ea8);
-    dogtag.team.dogtag = victim.team;
+    dogtag.team = victim.team;
     dogtag.attacker = attacker;
-    dogtag.attackerteam.dogtag = attacker.team;
+    dogtag.attackerteam = attacker.team;
     dogtag.unreachable = undefined;
-    dogtag.tacinsert.dogtag = 0;
+    dogtag.tacinsert = 0;
     dogtag.var_d3faea9b = var_1c1cfb90;
     if (level.var_70e5d775 === 1) {
         dogtag playloopsound(#"hash_68969eb52942d6a4");
@@ -297,7 +297,7 @@ function onuse(player) {
         if (!util::function_fbce7263(player.team, self.victimteam)) {
             player stats::function_dad108fa(#"killsdenied", 1);
             player recordgameevent("return");
-            level thread namespace_341c57b3::function_18135b72(#"hash_540cddd637f71a5e", {#eventtype:#"return", #player:player});
+            level thread telemetry::function_18135b72(#"hash_540cddd637f71a5e", {#eventtype:#"return", #player:player});
             event = "kill_denied";
             if (self.victim == player) {
                 if (self.tacinsert == 0) {
@@ -308,7 +308,7 @@ function onuse(player) {
             }
             if (!tacinsertboost) {
                 player.pers[#"killsdenied"]++;
-                player.killsdenied.player = player.pers[#"killsdenied"];
+                player.killsdenied = player.pers[#"killsdenied"];
             }
         } else {
             event = "kill_confirmed";
@@ -317,7 +317,7 @@ function onuse(player) {
             }
             player stats::function_dad108fa(#"killsconfirmed", 1);
             player recordgameevent("capture");
-            level thread namespace_341c57b3::function_18135b72(#"hash_540cddd637f71a5e", {#eventtype:#"capture", #player:player});
+            level thread telemetry::function_18135b72(#"hash_540cddd637f71a5e", {#eventtype:#"capture", #player:player});
             if (isdefined(self.attacker) && self.attacker != player && !util::function_fbce7263(player.team, self.attacker.team)) {
                 self.attacker onpickup("teammate_kill_confirmed");
             }
@@ -404,7 +404,7 @@ function on_spawn_player() {
             }
             distsqr = distancesquared(self.origin, dogtag.curorigin);
             if (distsqr < mindistsqr) {
-                dogtag.tacinsert.dogtag = 1;
+                dogtag.tacinsert = 1;
             }
         }
     }
@@ -451,7 +451,7 @@ function team_updater(tags) {
     self endon(#"disconnect");
     while (1) {
         self waittill(#"joined_team");
-        tags.victimteam.tags = self.team;
+        tags.victimteam = self.team;
         tags reset_tags();
     }
 }

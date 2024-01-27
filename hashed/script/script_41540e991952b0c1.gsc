@@ -83,7 +83,7 @@ class class_1bec696c : cluielem {
     // Params 11, eflags: 0x0
     // Checksum 0xa7fe1ed2, Offset: 0x8c8
     // Size: 0x22c
-    function setup_clientfields(xcallback, ycallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, *var_f5852d69, horizontal_alignmentcallback, var_766e2bbb) {
+    function setup_clientfields(xcallback, ycallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, *textcallback, horizontal_alignmentcallback, var_766e2bbb) {
         cluielem::setup_clientfields("DOA_BannerElement");
         cluielem::add_clientfield("x", 1, 7, "int", ycallback);
         cluielem::add_clientfield("y", 1, 6, "int", heightcallback);
@@ -92,7 +92,7 @@ class class_1bec696c : cluielem {
         cluielem::add_clientfield("alpha", 1, 4, "float", redcallback);
         cluielem::add_clientfield("red", 1, 4, "float", greencallback);
         cluielem::add_clientfield("green", 1, 4, "float", bluecallback);
-        cluielem::add_clientfield("blue", 1, 4, "float", var_f5852d69);
+        cluielem::add_clientfield("blue", 1, 4, "float", textcallback);
         cluielem::function_dcb34c80("string", "text", 1);
         cluielem::add_clientfield("horizontal_alignment", 1, 2, "int", horizontal_alignmentcallback);
         cluielem::add_clientfield("scale", 1, 6, "float", var_766e2bbb);
@@ -231,9 +231,9 @@ function function_f97e9049(localclientnum, var_c6572d9b, var_d390c80e) {
 // Params 11, eflags: 0x0
 // Checksum 0x2bceab7b, Offset: 0x3f8
 // Size: 0x1de
-function register(xcallback, ycallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, var_f5852d69, horizontal_alignmentcallback, var_766e2bbb) {
+function register(xcallback, ycallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, textcallback, horizontal_alignmentcallback, var_766e2bbb) {
     elem = new class_1bec696c();
-    [[ elem ]]->setup_clientfields(xcallback, ycallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, var_f5852d69, horizontal_alignmentcallback, var_766e2bbb);
+    [[ elem ]]->setup_clientfields(xcallback, ycallback, heightcallback, fadeovertimecallback, alphacallback, redcallback, greencallback, bluecallback, textcallback, horizontal_alignmentcallback, var_766e2bbb);
     if (!isdefined(level.var_ae746e8f)) {
         level.var_ae746e8f = associativearray();
     }

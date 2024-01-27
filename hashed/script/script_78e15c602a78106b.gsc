@@ -103,7 +103,7 @@ function function_f13155cb() {
 // Size: 0x4a
 function function_3c3b85e6() {
     var_9779f8c5 = self zm_unitrigger::create(&function_5db5b22e, 32, &function_477e5e68);
-    var_9779f8c5.var_4326facc.var_9779f8c5 = self;
+    var_9779f8c5.var_4326facc = self;
 }
 
 // Namespace namespace_471b2690/namespace_471b2690
@@ -141,7 +141,7 @@ function function_5db5b22e(e_player) {
             self sethintstring(#"hash_2629a4ab98a94d73", 2000);
             if (!e_player zm_score::can_player_purchase(2000)) {
                 e_player globallogic::function_d1924f29(#"hash_6e3ae7967dc5d414");
-                e_player.var_e62ad24a.e_player = self;
+                e_player.var_e62ad24a = self;
             }
             return 1;
         }

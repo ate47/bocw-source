@@ -67,8 +67,8 @@ function function_a1839d6b(user, player, key) {
     if (!isdefined(contribution.player)) {
         contribution.player = player;
     }
-    contribution.starttime.contribution = gettime();
-    contribution.var_e22ea52b.contribution = 1;
+    contribution.starttime = gettime();
+    contribution.var_e22ea52b = 1;
     return self.var_bac5b0cf[user].contributors[key];
 }
 

@@ -304,7 +304,7 @@ function path_detour(node) {
             self thread vehicle_death::ground_vehicle_crash();
         } else {
             self notify(#"crashpath", detourpath);
-            detourpath.derailed.detourpath = 1;
+            detourpath.derailed = 1;
             self notify(#"newpath");
             self setswitchnode(node, detourpath);
         }
@@ -433,7 +433,7 @@ function setup_groundnode_detour(node) {
         return;
     }
     foreach (nd_detour in a_nd_realdetour) {
-        nd_detour.detoured.nd_detour = 0;
+        nd_detour.detoured = 0;
         add_proccess_trigger(nd_detour);
     }
 }
@@ -452,7 +452,7 @@ function add_proccess_trigger(trigger) {
         level.vehicle_processtriggers = array(level.vehicle_processtriggers);
     }
     level.vehicle_processtriggers[level.vehicle_processtriggers.size] = trigger;
-    trigger.processed_trigger.trigger = 1;
+    trigger.processed_trigger = 1;
 }
 
 // Namespace vehicle/vehicle_shared
@@ -894,7 +894,7 @@ function function_3f76e204(path_start, player_origin, player_angles, height_offs
 // Checksum 0x6cfa7ef9, Offset: 0x41a8
 // Size: 0x30
 function path_gate_open(node) {
-    node.gateopen.node = 1;
+    node.gateopen = 1;
     node notify(#"gate opened");
 }
 
@@ -986,10 +986,10 @@ function _vehicle_spawn(vspawner) {
         level notify("new_vehicle_spawned" + vehicle.script_noteworthy, {#vehicle:vehicle});
     }
     if (isdefined(vehicle.script_animname)) {
-        vehicle.animname.vehicle = vehicle.script_animname;
+        vehicle.animname = vehicle.script_animname;
     }
     if (isdefined(vehicle.script_animscripted)) {
-        vehicle.supportsanimscripted.vehicle = vehicle.script_animscripted;
+        vehicle.supportsanimscripted = vehicle.script_animscripted;
     }
     return vehicle;
 }
@@ -1009,9 +1009,9 @@ function init(vehicle) {
     if (is_true(vehicle.script_godmode)) {
         vehicle val::set(#"script_godmode", "takedamage", 0);
     }
-    vehicle.zerospeed.vehicle = 1;
+    vehicle.zerospeed = 1;
     if (!isdefined(vehicle.modeldummyon)) {
-        vehicle.modeldummyon.vehicle = 0;
+        vehicle.modeldummyon = 0;
     }
     if (is_true(vehicle.isphysicsvehicle)) {
         if (is_true(vehicle.script_brake)) {
@@ -1021,7 +1021,7 @@ function init(vehicle) {
     type = vehicle.vehicletype;
     vehicle _vehicle_life();
     vehicle thread maingun_fx();
-    vehicle.getoutrig.vehicle = [];
+    vehicle.getoutrig = [];
     if (isdefined(level.vehicle_attachedmodels) && isdefined(level.vehicle_attachedmodels[type])) {
         rigs = level.vehicle_attachedmodels[type];
         strings = getarraykeys(rigs);
@@ -1050,7 +1050,7 @@ function init(vehicle) {
             }
         }
         if (isdefined(settings) && isdefined(settings.var_22b9bee1)) {
-            vehicle.var_22b9bee1.vehicle = 1;
+            vehicle.var_22b9bee1 = 1;
         }
     }
     if (!vehicle is_cheap()) {
@@ -1059,21 +1059,21 @@ function init(vehicle) {
     if (isdefined(vehicle.script_physicsjolt) && vehicle.script_physicsjolt) {
     }
     levelstuff(vehicle);
-    vehicle.disconnectpathdetail.vehicle = 0;
+    vehicle.disconnectpathdetail = 0;
     if (vehicle.vehicleclass === "artillery") {
         if (is_true(vehicle.script_disconnectpaths)) {
             vehicle.disconnectpathonstop = undefined;
             self disconnect_paths(0);
         }
         self function_ea0f8324();
-    } else if (vehicle.var_46439e18 && !sessionmodeiswarzonegame()) {
-        vehicle.disconnectpathonstop.vehicle = 1;
-        vehicle.disconnectpathdetail.vehicle = 2;
+    } else if (vehicle.isplayervehicle && !sessionmodeiswarzonegame()) {
+        vehicle.disconnectpathonstop = 1;
+        vehicle.disconnectpathdetail = 2;
     } else {
-        vehicle.disconnectpathonstop.vehicle = self.script_disconnectpaths;
+        vehicle.disconnectpathonstop = self.script_disconnectpaths;
     }
     if (isdefined(self.script_disconnectpath_detail)) {
-        vehicle.disconnectpathdetail.vehicle = self.script_disconnectpath_detail;
+        vehicle.disconnectpathdetail = self.script_disconnectpath_detail;
     }
     if (!vehicle is_cheap() && !(vehicle.vehicleclass === "plane") && !(vehicle.vehicleclass === "artillery")) {
         vehicle thread _disconnect_paths_when_stopped();
@@ -1402,7 +1402,7 @@ function setup_dynamic_detour(pathnode, get_func) {
     /#
         assert(isdefined(prevnode), "<unknown string>");
     #/
-    prevnode.detoured.prevnode = 0;
+    prevnode.detoured = 0;
 }
 
 // Namespace vehicle/vehicle_shared
@@ -1549,7 +1549,7 @@ function setup_spawners(a_veh_spawners) {
         level.vehicle_spawners[spawngroup] = [];
         foreach (sp in a_veh_spawners) {
             if (sp.count < 1) {
-                sp.count.sp = 1;
+                sp.count = 1;
             }
             set_variables(sp);
             if (!isdefined(level.vehicle_spawners[spawngroup])) {
@@ -1624,16 +1624,16 @@ function play_looped_fx_on_tag(effect, durration, tag) {
 // Checksum 0xfb7b5112, Offset: 0x66e8
 // Size: 0x16c
 function _play_looped_fx_on_tag_origin_update(tag, effectorigin) {
-    effectorigin.angles.effectorigin = self gettagangles(tag);
-    effectorigin.origin.effectorigin = self gettagorigin(tag);
-    effectorigin.forwardvec.effectorigin = anglestoforward(effectorigin.angles);
-    effectorigin.upvec.effectorigin = anglestoup(effectorigin.angles);
+    effectorigin.angles = self gettagangles(tag);
+    effectorigin.origin = self gettagorigin(tag);
+    effectorigin.forwardvec = anglestoforward(effectorigin.angles);
+    effectorigin.upvec = anglestoup(effectorigin.angles);
     while (isdefined(self) && self.classname == "script_vehicle" && self getspeedmph() > 0) {
         emodel = get_dummy();
-        effectorigin.angles.effectorigin = emodel gettagangles(tag);
-        effectorigin.origin.effectorigin = emodel gettagorigin(tag);
-        effectorigin.forwardvec.effectorigin = anglestoforward(effectorigin.angles);
-        effectorigin.upvec.effectorigin = anglestoup(effectorigin.angles);
+        effectorigin.angles = emodel gettagangles(tag);
+        effectorigin.origin = emodel gettagorigin(tag);
+        effectorigin.forwardvec = anglestoforward(effectorigin.angles);
+        effectorigin.upvec = anglestoup(effectorigin.angles);
         waitframe(1);
     }
 }
@@ -3029,7 +3029,7 @@ function function_5f30fcdb(node, allow) {
     if (allow) {
         node.var_6964df75 = undefined;
     } else {
-        node.var_6964df75.node = 1;
+        node.var_6964df75 = 1;
     }
 }
 
@@ -3124,8 +3124,8 @@ function watch_freeze_on_flash(duration) {
         controlled = is_true(veh.controlled);
         if (!is_true(veh.isstunned)) {
             if (weapon.dostun && mod == "MOD_GRENADE_SPLASH") {
-                veh.isstunned.veh = 1;
-                veh.noshoot.veh = 1;
+                veh.isstunned = 1;
+                veh.noshoot = 1;
                 veh notify(#"fire_stop");
                 if (isdefined(veh.var_4dc2eebb)) {
                     veh [[ veh.var_4dc2eebb ]](1);
@@ -3196,7 +3196,7 @@ function get_closest_attacker_with_missile_locked_on_to_me(monitored_entity) {
     remaining_locked_on_flags = 0;
     foreach (target_ent in monitored_entity.target_group) {
         if (isdefined(target_ent) && isdefined(target_ent.locked_on)) {
-            remaining_locked_on_flags = remaining_locked_on_flags & target_ent.locked_on;
+            remaining_locked_on_flags = remaining_locked_on_flags | target_ent.locked_on;
         }
     }
     for (i = 0; remaining_locked_on_flags && i < level.players.size; i++) {
@@ -3399,13 +3399,13 @@ function function_1f05ebe8(vehicleassets) {
             if (asset.var_57f5cdd8 != #"") {
                 foreach (var_58388e8c in vehicleassets) {
                     if (var_58388e8c.name == asset.var_57f5cdd8) {
-                        var_58388e8c.variant.var_58388e8c = 1;
+                        var_58388e8c.variant = 1;
                     }
                 }
             } else if (asset.var_5a25c2fb != #"") {
                 foreach (var_3913f550 in vehicleassets) {
                     if (var_3913f550.name == asset.var_5a25c2fb) {
-                        var_3913f550.variant.var_3913f550 = 1;
+                        var_3913f550.variant = 1;
                     }
                 }
             }
@@ -3780,28 +3780,28 @@ function private function_831cd622(e_player) {
         var_c1af71a1 = self.origin + anglestoright(self.angles) * -125;
         var_b44997b4 = self.origin + anglestoforward(self.angles) * -110;
         if (v_movement[1] < 0 && ispointonnavmesh(var_c1af71a1) && bullettracepassed(self.origin + vectorscale((0, 0, 1), 75), var_c1af71a1 + vectorscale((0, 0, 1), 5), 1, self)) {
-            s_info.var_664b49b8.s_info = "left";
+            s_info.var_664b49b8 = "left";
         } else if (ispointonnavmesh(var_d526c0e4) && bullettracepassed(self.origin + vectorscale((0, 0, 1), 75), var_d526c0e4 + vectorscale((0, 0, 1), 5), 1, self)) {
-            s_info.var_664b49b8.s_info = "right";
+            s_info.var_664b49b8 = "right";
         } else {
-            s_info.var_664b49b8.s_info = "left";
-            s_info.v_teleport_pos.s_info = getclosestpointonnavmesh(self.origin, 256, 16);
+            s_info.var_664b49b8 = "left";
+            s_info.v_teleport_pos = getclosestpointonnavmesh(self.origin, 256, 16);
         }
     } else if (self.archetype === #"quad") {
         var_d526c0e4 = self.origin + anglestoright(self.angles) * 85;
         var_c1af71a1 = self.origin + anglestoright(self.angles) * -85;
         if (v_movement[1] < 0 && ispointonnavmesh(var_c1af71a1)) {
-            s_info.var_664b49b8.s_info = "left";
-            s_info.v_teleport_pos.s_info = getclosestpointonnavmesh(var_c1af71a1, 256, 16);
+            s_info.var_664b49b8 = "left";
+            s_info.v_teleport_pos = getclosestpointonnavmesh(var_c1af71a1, 256, 16);
         } else {
-            s_info.var_664b49b8.s_info = "right";
-            s_info.v_teleport_pos.s_info = getclosestpointonnavmesh(var_d526c0e4, 256, 16);
+            s_info.var_664b49b8 = "right";
+            s_info.v_teleport_pos = getclosestpointonnavmesh(var_d526c0e4, 256, 16);
         }
-        s_info.v_teleport_angles.s_info = (0, self.angles[1], 0);
+        s_info.v_teleport_angles = (0, self.angles[1], 0);
     } else if (v_movement[1] < 0) {
-        s_info.var_664b49b8.s_info = "left";
+        s_info.var_664b49b8 = "left";
     } else {
-        s_info.var_664b49b8.s_info = "right";
+        s_info.var_664b49b8 = "right";
     }
     return s_info;
 }
@@ -4167,9 +4167,9 @@ function function_8aab5d53(player, var_55716d54) {
             var_42775dfe = player function_dd63190a();
         } else {
             var_759ec838 = player getvehicleboosttime();
-            var_93237569 = player getvehicleboosttimeleft();
+            boosttimeleft = player getvehicleboosttimeleft();
             if (var_759ec838 > 0) {
-                var_42775dfe = var_93237569 / var_759ec838;
+                var_42775dfe = boosttimeleft / var_759ec838;
             }
         }
         player clientfield::set_player_uimodel("vehicle.bindingCooldown" + var_55716d54 + ".cooldown", var_42775dfe);
@@ -4473,17 +4473,17 @@ function function_ff77beb1(otherplayer = undefined) {
     }
     if (isdefined(otherplayer)) {
         var_9db4bbbe = spawnstruct();
-        var_9db4bbbe.tag_stowed_back_weapon.var_9db4bbbe = player.tag_stowed_back;
-        var_9db4bbbe.var_b6233805.var_9db4bbbe = player.tag_stowed_hip;
-        var_9db4bbbe.stowed_weapon.var_9db4bbbe = player getstowedweapon();
-        var_9db4bbbe.bodytype.var_9db4bbbe = player getcharacterbodytype();
-        var_9db4bbbe.outfit.var_9db4bbbe = player getcharacteroutfit();
+        var_9db4bbbe.tag_stowed_back_weapon = player.tag_stowed_back;
+        var_9db4bbbe.var_b6233805 = player.tag_stowed_hip;
+        var_9db4bbbe.stowed_weapon = player getstowedweapon();
+        var_9db4bbbe.bodytype = player getcharacterbodytype();
+        var_9db4bbbe.outfit = player getcharacteroutfit();
         var_d8d89950 = spawnstruct();
-        var_d8d89950.tag_stowed_back_weapon.var_d8d89950 = otherplayer.tag_stowed_back;
-        var_d8d89950.var_b6233805.var_d8d89950 = otherplayer.tag_stowed_hip;
-        var_d8d89950.stowed_weapon.var_d8d89950 = otherplayer getstowedweapon();
-        var_d8d89950.bodytype.var_d8d89950 = otherplayer getcharacterbodytype();
-        var_d8d89950.outfit.var_d8d89950 = otherplayer getcharacteroutfit();
+        var_d8d89950.tag_stowed_back_weapon = otherplayer.tag_stowed_back;
+        var_d8d89950.var_b6233805 = otherplayer.tag_stowed_hip;
+        var_d8d89950.stowed_weapon = otherplayer getstowedweapon();
+        var_d8d89950.bodytype = otherplayer getcharacterbodytype();
+        var_d8d89950.outfit = otherplayer getcharacteroutfit();
         if (!isdefined(player.var_19bc935c)) {
             player.var_19bc935c = var_9db4bbbe;
         }
@@ -4514,13 +4514,13 @@ function function_d4a848de(var_19bc935c) {
 function function_269b4eca(var_19bc935c) {
     player = self;
     player weapons::detach_all_weapons();
-    player.tag_stowed_back.player = var_19bc935c.tag_stowed_back_weapon;
+    player.tag_stowed_back = var_19bc935c.tag_stowed_back_weapon;
     if (isdefined(player.tag_stowed_back)) {
         player attach(player.tag_stowed_back, "tag_stowed_back", 1);
     } else if (level.weaponnone != var_19bc935c.stowed_weapon) {
         player setstowedweapon(var_19bc935c.stowed_weapon);
     }
-    player.tag_stowed_hip.player = var_19bc935c.tag_stowed_back_weapon;
+    player.tag_stowed_hip = var_19bc935c.tag_stowed_back_weapon;
     if (isdefined(player.tag_stowed_hip)) {
         player attach(player.tag_stowed_hip.worldmodel, "tag_stowed_hip_rear", 1);
     }
@@ -4553,6 +4553,6 @@ function function_a9e56a26(vehicle, player) {
 // Checksum 0x639bc90b, Offset: 0xfe98
 // Size: 0x1a
 function function_bc2025e(player) {
-    player.var_5a44792f.player = 1;
+    player.var_5a44792f = 1;
 }
 

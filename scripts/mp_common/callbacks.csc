@@ -249,28 +249,28 @@ function airsupport(*localclientnum, x, y, z, type, yaw, team, teamfaction, owne
     if (yaw == "a") {
         planehalfdistance = 12000;
         data.planehalfdistance = planehalfdistance;
-        data.startpoint.data = pos + vectorscale(anglestoforward(direction), -1 * planehalfdistance);
-        data.endpoint.data = pos + vectorscale(anglestoforward(direction), planehalfdistance);
-        data.planemodel.data = "t5_veh_air_b52";
-        data.flybysound.data = "null";
-        data.washsound.data = #"veh_b52_flyby_wash";
-        data.apextime.data = 6145;
-        data.exittype.data = -1;
-        data.flyspeed.data = 2000;
-        data.flytime.data = planehalfdistance * 2 / data.flyspeed;
+        data.startpoint = pos + vectorscale(anglestoforward(direction), -1 * planehalfdistance);
+        data.endpoint = pos + vectorscale(anglestoforward(direction), planehalfdistance);
+        data.planemodel = "t5_veh_air_b52";
+        data.flybysound = "null";
+        data.washsound = #"veh_b52_flyby_wash";
+        data.apextime = 6145;
+        data.exittype = -1;
+        data.flyspeed = 2000;
+        data.flytime = planehalfdistance * 2 / data.flyspeed;
         planetype = "airstrike";
     } else if (yaw == "n") {
         planehalfdistance = 24000;
         data.planehalfdistance = planehalfdistance;
-        data.startpoint.data = pos + vectorscale(anglestoforward(direction), -1 * planehalfdistance);
-        data.endpoint.data = pos + vectorscale(anglestoforward(direction), planehalfdistance);
-        data.planemodel.data = airsupport::getplanemodel(owner);
-        data.flybysound.data = "null";
-        data.washsound.data = #"evt_us_napalm_wash";
-        data.apextime.data = 2362;
+        data.startpoint = pos + vectorscale(anglestoforward(direction), -1 * planehalfdistance);
+        data.endpoint = pos + vectorscale(anglestoforward(direction), planehalfdistance);
+        data.planemodel = airsupport::getplanemodel(owner);
+        data.flybysound = "null";
+        data.washsound = #"evt_us_napalm_wash";
+        data.apextime = 2362;
         data.exittype = time;
-        data.flyspeed.data = 7000;
-        data.flytime.data = planehalfdistance * 2 / data.flyspeed;
+        data.flyspeed = 7000;
+        data.flytime = planehalfdistance * 2 / data.flyspeed;
         planetype = "napalm";
     } else {
         /#
@@ -291,8 +291,8 @@ function creating_corpse(localclientnum, player) {
     params = spawnstruct();
     params.player = player;
     if (isdefined(player)) {
-        params.playername.params = player getplayername();
-        params.playernum.params = player getentitynumber();
+        params.playername = player getplayername();
+        params.playernum = player getentitynumber();
     }
     self callback(#"on_player_corpse", localclientnum, params);
 }

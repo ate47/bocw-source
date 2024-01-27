@@ -142,9 +142,9 @@ function private function_54b5f203(*entity, *traversal, animation, starttime, en
     #/
     section = spawnstruct();
     section.starttime = starttime;
-    section.starttimenormalized.section = section.starttime / animlength;
+    section.starttimenormalized = section.starttime / animlength;
     section.endtime = endtime;
-    section.length.section = section.endtime - section.starttime;
+    section.length = section.endtime - section.starttime;
     section.startangles = startangles;
     section.startposition = startposition;
     section.endposition = endposition;
@@ -168,10 +168,10 @@ function private function_54b5f203(*entity, *traversal, animation, starttime, en
             }
         }
     }
-    section.mocomptimelength.section = section.mocompendtime - section.mocompstarttime;
-    section.mocomptimeinframes.section = floor(section.mocomptimelength / float(function_60d95f53()) / 1000);
+    section.mocomptimelength = section.mocompendtime - section.mocompstarttime;
+    section.mocomptimeinframes = floor(section.mocomptimelength / float(function_60d95f53()) / 1000);
     if (section.mocomptimeinframes <= 0) {
-        section.mocomptimeinframes.section = 1;
+        section.mocomptimeinframes = 1;
     }
     endtime = 1;
     if (animlength > 0) {
@@ -179,38 +179,38 @@ function private function_54b5f203(*entity, *traversal, animation, starttime, en
     }
     endtime = math::clamp(endtime, 0, 1);
     movedelta = getmovedelta(animation, section.starttimenormalized, endtime);
-    section.mocompstartposition.section = section.startposition + rotatepoint(movedelta, section.startangles);
+    section.mocompstartposition = section.startposition + rotatepoint(movedelta, section.startangles);
     endtime = 1;
     if (animlength > 0) {
         endtime = section.mocompendtime / animlength;
     }
     endtime = math::clamp(endtime, 0, 1);
     movedelta = getmovedelta(animation, section.starttimenormalized, endtime);
-    section.mocompendposition.section = section.startposition + rotatepoint(movedelta, section.startangles);
+    section.mocompendposition = section.startposition + rotatepoint(movedelta, section.startangles);
     endtime = 1;
     if (animlength > 0) {
         endtime = section.endtime / animlength;
     }
     endtime = math::clamp(endtime, 0, 1);
-    section.animationendposition.section = section.startposition + rotatepoint(getmovedelta(animation, section.starttimenormalized, endtime), section.startangles);
-    section.deltatoendposition.section = section.endposition - section.animationendposition;
-    section.deltatoendmocompposition.section = section.mocompendposition - section.mocompstartposition;
-    section.adjustedmocompendposition.section = section.mocompendposition + section.deltatoendposition;
-    section.adjusteddeltaperframe.section = section.deltatoendposition / section.mocomptimeinframes;
-    section.deltatoendmocomplength.section = length(section.deltatoendmocompposition);
-    section.deltatoendmocomplengthdesired.section = length(section.deltatoendposition + section.deltatoendmocompposition);
-    section.deltatoendmocompmultiplier.section = 1;
+    section.animationendposition = section.startposition + rotatepoint(getmovedelta(animation, section.starttimenormalized, endtime), section.startangles);
+    section.deltatoendposition = section.endposition - section.animationendposition;
+    section.deltatoendmocompposition = section.mocompendposition - section.mocompstartposition;
+    section.adjustedmocompendposition = section.mocompendposition + section.deltatoendposition;
+    section.adjusteddeltaperframe = section.deltatoendposition / section.mocomptimeinframes;
+    section.deltatoendmocomplength = length(section.deltatoendmocompposition);
+    section.deltatoendmocomplengthdesired = length(section.deltatoendposition + section.deltatoendmocompposition);
+    section.deltatoendmocompmultiplier = 1;
     if (timescale && section.deltatoendmocomplength > 0 && section.deltatoendmocomplengthdesired > 0) {
         if (section.deltatoendmocomplengthdesired > section.deltatoendmocomplength) {
-            section.deltatoendmocompmultiplier.section = section.deltatoendmocomplengthdesired / section.deltatoendmocomplength;
-            section.deltatoendmocompmultiplier.section = max(0.01, float(int(section.deltatoendmocompmultiplier * 10)) / 10);
+            section.deltatoendmocompmultiplier = section.deltatoendmocomplengthdesired / section.deltatoendmocomplength;
+            section.deltatoendmocompmultiplier = max(0.01, float(int(section.deltatoendmocompmultiplier * 10)) / 10);
         } else {
-            section.deltatoendmocompmultiplier.section = 1;
+            section.deltatoendmocompmultiplier = 1;
         }
     } else {
-        section.deltatoendmocompmultiplier.section = 1;
+        section.deltatoendmocompmultiplier = 1;
     }
-    section.deltatoendtotal.section = (0, 0, 0);
+    section.deltatoendtotal = (0, 0, 0);
     return section;
 }
 
@@ -225,9 +225,9 @@ function private calculatetraveralsection(*entity, traversal, animation, startti
     animlength = getanimlength(animation);
     section = spawnstruct();
     section.starttime = starttime;
-    section.starttimenormalized.section = section.starttime / animlength;
+    section.starttimenormalized = section.starttime / animlength;
     section.endtime = endtime;
-    section.length.section = section.endtime - section.starttime;
+    section.length = section.endtime - section.starttime;
     section.startangles = startangles;
     section.startposition = startposition;
     section.endposition = endposition;
@@ -254,10 +254,10 @@ function private calculatetraveralsection(*entity, traversal, animation, startti
             }
         }
     }
-    section.mocomptimelength.section = section.mocompendtime - section.mocompstarttime;
-    section.mocomptimeinframes.section = floor(section.mocomptimelength / float(function_60d95f53()) / 1000);
+    section.mocomptimelength = section.mocompendtime - section.mocompstarttime;
+    section.mocomptimeinframes = floor(section.mocomptimelength / float(function_60d95f53()) / 1000);
     if (section.mocomptimeinframes <= 0) {
-        section.mocomptimeinframes.section = 1;
+        section.mocomptimeinframes = 1;
     }
     endtime = 1;
     if (animlength > 0) {
@@ -265,32 +265,32 @@ function private calculatetraveralsection(*entity, traversal, animation, startti
     }
     endtime = math::clamp(endtime, 0, 1);
     movedelta = getmovedelta(animation, section.starttimenormalized, endtime);
-    section.mocompstartposition.section = section.startposition + rotatepoint(movedelta, section.startangles);
+    section.mocompstartposition = section.startposition + rotatepoint(movedelta, section.startangles);
     endtime = 1;
     if (animlength > 0) {
         endtime = section.mocompendtime / animlength;
     }
     endtime = math::clamp(endtime, 0, 1);
     movedelta = getmovedelta(animation, section.starttimenormalized, endtime);
-    section.mocompendposition.section = section.startposition + rotatepoint(movedelta, section.startangles);
+    section.mocompendposition = section.startposition + rotatepoint(movedelta, section.startangles);
     endtime = 1;
     if (animlength > 0) {
         endtime = section.endtime / animlength;
     }
     endtime = math::clamp(endtime, 0, 1);
-    section.animationendposition.section = section.startposition + rotatepoint(getmovedelta(animation, section.starttimenormalized, endtime), section.startangles);
-    section.deltatoendposition.section = section.endposition - section.animationendposition;
-    section.deltatoendmocompposition.section = section.mocompendposition - section.mocompstartposition;
-    section.adjustedmocompendposition.section = section.mocompendposition + section.deltatoendposition;
-    section.adjusteddeltaperframe.section = section.deltatoendposition / section.mocomptimeinframes;
-    section.deltatoendmocomplength.section = length(section.deltatoendmocompposition);
-    section.deltatoendmocomplengthdesired.section = length(section.deltatoendposition + section.deltatoendmocompposition);
-    section.deltatoendmocompmultiplier.section = 1;
+    section.animationendposition = section.startposition + rotatepoint(getmovedelta(animation, section.starttimenormalized, endtime), section.startangles);
+    section.deltatoendposition = section.endposition - section.animationendposition;
+    section.deltatoendmocompposition = section.mocompendposition - section.mocompstartposition;
+    section.adjustedmocompendposition = section.mocompendposition + section.deltatoendposition;
+    section.adjusteddeltaperframe = section.deltatoendposition / section.mocomptimeinframes;
+    section.deltatoendmocomplength = length(section.deltatoendmocompposition);
+    section.deltatoendmocomplengthdesired = length(section.deltatoendposition + section.deltatoendmocompposition);
+    section.deltatoendmocompmultiplier = 1;
     if (timescale && section.deltatoendmocomplength > 0 && section.deltatoendmocomplengthdesired > 0) {
-        section.deltatoendmocompmultiplier.section = section.deltatoendmocomplength / section.deltatoendmocomplengthdesired;
-        section.deltatoendmocompmultiplier.section = max(0.01, float(int(section.deltatoendmocompmultiplier * 10)) / 10);
+        section.deltatoendmocompmultiplier = section.deltatoendmocomplength / section.deltatoendmocomplengthdesired;
+        section.deltatoendmocompmultiplier = max(0.01, float(int(section.deltatoendmocompmultiplier * 10)) / 10);
     }
-    section.deltatoendtotal.section = (0, 0, 0);
+    section.deltatoendtotal = (0, 0, 0);
     if (isdefined(traversal.pivotorigin) && isdefined(traversal.pivottime)) {
         startposition = section.startposition;
         endposition = section.endposition;
@@ -300,10 +300,10 @@ function private calculatetraveralsection(*entity, traversal, animation, startti
             startposition = traversal.pivotorigin;
         }
         if ((endposition - startposition)[2] <= 0 && section.deltatoendmocompmultiplier < 1) {
-            section.deltatoendmocompmultiplier.section = 1;
+            section.deltatoendmocompmultiplier = 1;
         }
     } else if ((section.endposition - section.startposition)[2] <= 0 && section.deltatoendmocompmultiplier < 1) {
-        section.deltatoendmocompmultiplier.section = 1;
+        section.deltatoendmocompmultiplier = 1;
     }
     return section;
 }
@@ -442,37 +442,37 @@ function function_5f0e6de2(entity, mocompanim, mocompanimblendouttime, mocompani
 // Size: 0x49c
 function mocomptraversalproceduralinit(entity, mocompanim, mocompanimblendouttime, mocompanimflag, mocompduration, timescale = 1) {
     traversal = spawnstruct();
-    traversal.startnode.traversal = entity.traversestartnode;
-    traversal.endnode.traversal = entity.traverseendnode;
-    traversal.initialanimationrate.traversal = isactor(entity) ? isdefined(entity function_ebbebf56()) ? entity function_ebbebf56() : 1 : 1;
-    traversal.animlength.traversal = getanimlength(mocompanim);
-    traversal.actualanimlength.traversal = traversal.animlength - mocompanimblendouttime;
-    traversal.var_98d8ca66.traversal = (0, 0, 0);
-    traversal.startposition.traversal = entity.origin;
-    traversal.adjustedendposition.traversal = isdefined(entity.var_e4615d76) ? entity.var_e4615d76 : entity.traversalendpos;
-    traversal.traversalforward.traversal = traversal.adjustedendposition - traversal.startposition;
-    traversal.traversalforward.traversal = (traversal.traversalforward[0], traversal.traversalforward[1], 0);
-    traversal.startangles.traversal = vectortoangles(traversal.traversalforward);
+    traversal.startnode = entity.traversestartnode;
+    traversal.endnode = entity.traverseendnode;
+    traversal.initialanimationrate = isactor(entity) ? isdefined(entity function_ebbebf56()) ? entity function_ebbebf56() : 1 : 1;
+    traversal.animlength = getanimlength(mocompanim);
+    traversal.actualanimlength = traversal.animlength - mocompanimblendouttime;
+    traversal.var_98d8ca66 = (0, 0, 0);
+    traversal.startposition = entity.origin;
+    traversal.adjustedendposition = isdefined(entity.var_e4615d76) ? entity.var_e4615d76 : entity.traversalendpos;
+    traversal.traversalforward = traversal.adjustedendposition - traversal.startposition;
+    traversal.traversalforward = (traversal.traversalforward[0], traversal.traversalforward[1], 0);
+    traversal.startangles = vectortoangles(traversal.traversalforward);
     end_time = math::clamp(traversal.actualanimlength / traversal.animlength, 0, 1);
-    traversal.endposition.traversal = traversal.startposition + rotatepoint(getmovedelta(mocompanim, 0, end_time), traversal.startangles);
+    traversal.endposition = traversal.startposition + rotatepoint(getmovedelta(mocompanim, 0, end_time), traversal.startangles);
     if (isdefined(traversal.endnode) && isdefined(traversal.endnode.script_linkname)) {
-        traversal.endnodeparent.traversal = getent(traversal.endnode.script_linkname, "targetname");
+        traversal.endnodeparent = getent(traversal.endnode.script_linkname, "targetname");
         if (isdefined(traversal.endnodeparent)) {
-            traversal.origincontents.traversal = entity setcontents(8192);
-            traversal.lastendnodeparentorigin.traversal = traversal.endnodeparent.origin;
-            traversal.adjustedendposition.traversal = physicstraceex(entity.traversalendpos + vectorscale((0, 0, 1), 24), entity.traversalendpos - vectorscale((0, 0, 1), 24), (0, 0, 0), (0, 0, 0), entity)[#"position"];
+            traversal.origincontents = entity setcontents(8192);
+            traversal.lastendnodeparentorigin = traversal.endnodeparent.origin;
+            traversal.adjustedendposition = physicstraceex(entity.traversalendpos + vectorscale((0, 0, 1), 24), entity.traversalendpos - vectorscale((0, 0, 1), 24), (0, 0, 0), (0, 0, 0), entity)[#"position"];
         }
     }
-    traversal.sections.traversal = [];
+    traversal.sections = [];
     traversal.sections[traversal.sections.size] = calculatetraveralsection(entity, traversal, mocompanim, 0, traversal.actualanimlength, traversal.startposition, traversal.adjustedendposition, traversal.startangles, timescale);
-    traversal.lastanimtime.traversal = 0;
+    traversal.lastanimtime = 0;
     entity.traversal = traversal;
-    entity.blockingpain.entity = 1;
-    entity.usegoalanimweight.entity = 1;
+    entity.blockingpain = 1;
+    entity.usegoalanimweight = 1;
     entity.lasttraversalanimation = mocompanim;
     entity.lasttraversalblendout = mocompanimblendouttime;
-    entity.lasttraversalstartpos.entity = traversal.startposition;
-    entity.lasttraversalendpos.entity = traversal.adjustedendposition;
+    entity.lasttraversalstartpos = traversal.startposition;
+    entity.lasttraversalendpos = traversal.adjustedendposition;
     entity.lasttraversalpivot = undefined;
     if (isactor(entity)) {
         entity setrepairpaths(0);
@@ -496,35 +496,35 @@ function function_41323d2(entity, mocompanim, mocompanimblendouttime, mocompanim
 // Size: 0x814
 function mocomptraversalproceduralpivotinit(entity, mocompanim, mocompanimblendouttime, mocompanimflag, mocompduration, timescale = 1) {
     traversal = spawnstruct();
-    traversal.startnode.traversal = entity.traversestartnode;
-    traversal.endnode.traversal = entity.traverseendnode;
-    traversal.mantlenode.traversal = entity.traversemantlenode;
-    traversal.initialanimationrate.traversal = isactor(entity) ? isdefined(entity function_ebbebf56()) ? entity function_ebbebf56() : 1 : 1;
-    traversal.animlength.traversal = getanimlength(mocompanim);
-    traversal.actualanimlength.traversal = traversal.animlength - mocompanimblendouttime;
-    traversal.var_98d8ca66.traversal = (0, 0, 0);
-    traversal.startposition.traversal = entity.origin;
-    traversal.adjustedendposition.traversal = isdefined(entity.var_e4615d76) ? entity.var_e4615d76 : entity.traversalendpos;
-    traversal.traversalforward.traversal = traversal.adjustedendposition - traversal.startposition;
-    traversal.traversalforward.traversal = (traversal.traversalforward[0], traversal.traversalforward[1], 0);
-    traversal.startangles.traversal = vectortoangles(traversal.traversalforward);
+    traversal.startnode = entity.traversestartnode;
+    traversal.endnode = entity.traverseendnode;
+    traversal.mantlenode = entity.traversemantlenode;
+    traversal.initialanimationrate = isactor(entity) ? isdefined(entity function_ebbebf56()) ? entity function_ebbebf56() : 1 : 1;
+    traversal.animlength = getanimlength(mocompanim);
+    traversal.actualanimlength = traversal.animlength - mocompanimblendouttime;
+    traversal.var_98d8ca66 = (0, 0, 0);
+    traversal.startposition = entity.origin;
+    traversal.adjustedendposition = isdefined(entity.var_e4615d76) ? entity.var_e4615d76 : entity.traversalendpos;
+    traversal.traversalforward = traversal.adjustedendposition - traversal.startposition;
+    traversal.traversalforward = (traversal.traversalforward[0], traversal.traversalforward[1], 0);
+    traversal.startangles = vectortoangles(traversal.traversalforward);
     end_time = math::clamp(traversal.actualanimlength / traversal.animlength, 0, 1);
-    traversal.endposition.traversal = traversal.startposition + rotatepoint(getmovedelta(mocompanim, 0, end_time), traversal.startangles);
+    traversal.endposition = traversal.startposition + rotatepoint(getmovedelta(mocompanim, 0, end_time), traversal.startangles);
     if (isdefined(traversal.endnode) && isdefined(traversal.endnode.script_linkname)) {
-        traversal.endnodeparent.traversal = getent(traversal.endnode.script_linkname, "targetname");
+        traversal.endnodeparent = getent(traversal.endnode.script_linkname, "targetname");
         if (isdefined(traversal.endnodeparent)) {
-            traversal.origincontents.traversal = entity setcontents(8192);
-            traversal.lastendnodeparentorigin.traversal = traversal.endnodeparent.origin;
-            traversal.adjustedendposition.traversal = physicstraceex(entity.traversalendpos + vectorscale((0, 0, 1), 24), entity.traversalendpos - vectorscale((0, 0, 1), 24), (0, 0, 0), (0, 0, 0), entity)[#"position"];
+            traversal.origincontents = entity setcontents(8192);
+            traversal.lastendnodeparentorigin = traversal.endnodeparent.origin;
+            traversal.adjustedendposition = physicstraceex(entity.traversalendpos + vectorscale((0, 0, 1), 24), entity.traversalendpos - vectorscale((0, 0, 1), 24), (0, 0, 0), (0, 0, 0), entity)[#"position"];
         }
     }
     pivottimes = getnotetracktimes(mocompanim, "pivot_procedural");
-    traversal.pivottime.traversal = traversal.actualanimlength / 2;
+    traversal.pivottime = traversal.actualanimlength / 2;
     if (isdefined(pivottimes) && pivottimes.size > 0) {
-        traversal.pivottime.traversal = pivottimes[0] * traversal.animlength;
+        traversal.pivottime = pivottimes[0] * traversal.animlength;
     }
-    traversal.pivottime.traversal = floor(traversal.pivottime / float(function_60d95f53()) / 1000) * float(function_60d95f53()) / 1000;
-    traversal.pivotorigin.traversal = calculatepivotoriginfromedge(entity, traversal.mantlenode, traversal.startposition);
+    traversal.pivottime = floor(traversal.pivottime / float(function_60d95f53()) / 1000) * float(function_60d95f53()) / 1000;
+    traversal.pivotorigin = calculatepivotoriginfromedge(entity, traversal.mantlenode, traversal.startposition);
     pivottagorigin = getanimtagorigin(mocompanim, 0, "tag_sync");
     animpivotorigin = traversal.pivotorigin;
     if (lengthsquared(pivottagorigin) > 0) {
@@ -543,21 +543,21 @@ function mocomptraversalproceduralpivotinit(entity, mocompanim, mocompanimblendo
             recordsphere(traversal.pivotorigin, 2, (1, 0, 0), "<unknown string>", entity);
         }
     #/
-    traversal.sections.traversal = [];
+    traversal.sections = [];
     traversal.sections[traversal.sections.size] = calculatetraveralsection(entity, traversal, mocompanim, 0, traversal.pivottime, traversal.startposition, pivotorigin, traversal.startangles, timescale);
     traversal.sections[traversal.sections.size] = calculatetraveralsection(entity, traversal, mocompanim, traversal.pivottime, traversal.actualanimlength, pivotorigin, traversal.adjustedendposition, traversal.startangles, timescale);
     if (traversal.sections[0].deltatoendmocompmultiplier != 1) {
         traversal.sections[1].deltatoendmocompmultiplier = 1;
     }
-    traversal.lastanimtime.traversal = 0;
+    traversal.lastanimtime = 0;
     entity.traversal = traversal;
-    entity.blockingpain.entity = 1;
-    entity.usegoalanimweight.entity = 1;
+    entity.blockingpain = 1;
+    entity.usegoalanimweight = 1;
     entity.lasttraversalanimation = mocompanim;
     entity.lasttraversalblendout = mocompanimblendouttime;
-    entity.lasttraversalstartpos.entity = traversal.startposition;
-    entity.lasttraversalendpos.entity = traversal.adjustedendposition;
-    entity.lasttraversalpivot.entity = traversal.pivotorigin;
+    entity.lasttraversalstartpos = traversal.startposition;
+    entity.lasttraversalendpos = traversal.adjustedendposition;
+    entity.lasttraversalpivot = traversal.pivotorigin;
     if (isactor(entity)) {
         entity setrepairpaths(0);
         entity animmode("angle deltas noclip", 0);
@@ -601,7 +601,7 @@ function mocomptraversalproceduralpivotupdate(entity, mocompanim, mocompanimblen
     if (traversal.lastanimtime >= section.mocompstarttime && lengthsquared(section.deltatoendtotal) < lengthsquared(section.deltatoendposition)) {
         animationtimedelta = (animationnextsteptime - traversal.lastanimtime) / float(function_60d95f53()) / 1000;
         adjusteddeltaperframe = section.adjusteddeltaperframe * animationtimedelta;
-        section.deltatoendtotal.section = section.deltatoendtotal + adjusteddeltaperframe;
+        section.deltatoendtotal = section.deltatoendtotal + adjusteddeltaperframe;
         if (traversal.lastanimtime <= section.mocompendtime && section.deltatoendmocompmultiplier < 1 && !is_true(level.var_881e464e)) {
             animationrate = traversal.initialanimationrate * section.deltatoendmocompmultiplier;
         }
@@ -610,11 +610,11 @@ function mocomptraversalproceduralpivotupdate(entity, mocompanim, mocompanimblen
         }
     }
     traversal.lastanimtime = animationnextsteptime;
-    traversal.var_98d8ca66.traversal = traversal.var_98d8ca66 + adjusteddeltaperframe;
+    traversal.var_98d8ca66 = traversal.var_98d8ca66 + adjusteddeltaperframe;
     newentityorigin = traversal.startposition + rotatepoint(movedelta, traversal.startangles) + traversal.var_98d8ca66;
     if (isdefined(traversal.endnodeparent)) {
         parentdelta = traversal.endnodeparent.origin - traversal.lastendnodeparentorigin;
-        traversal.lastendnodeparentorigin.traversal = traversal.endnodeparent.origin;
+        traversal.lastendnodeparentorigin = traversal.endnodeparent.origin;
         newentityorigin = newentityorigin + parentdelta;
     }
     if (isactor(entity)) {
@@ -648,8 +648,8 @@ function mocomptraversalproceduralpivotterminate(entity, mocompanim, mocompanimb
             entity asmsetanimationrate(traversal.initialanimationrate);
         }
     }
-    entity.blockingpain.entity = 0;
-    entity.usegoalanimweight.entity = 0;
+    entity.blockingpain = 0;
+    entity.usegoalanimweight = 0;
     entity.traversal = undefined;
     if (isactor(entity)) {
         entity animmode("normal", 0);
@@ -669,40 +669,40 @@ function function_f8a10630(entity, mocompanim, mocompanimblendouttime, mocompani
         assert(isactor(mocompanim));
     #/
     traversal = spawnstruct();
-    traversal.startnode.traversal = mocompanim.traversestartnode;
-    traversal.endnode.traversal = mocompanim.traverseendnode;
-    traversal.mantlenode.traversal = mocompanim.traversemantlenode;
-    traversal.initialanimationrate.traversal = isactor(mocompanim) ? isdefined(mocompanim function_ebbebf56()) ? mocompanim function_ebbebf56() : 1 : 1;
-    traversal.animlength.traversal = getanimlength(mocompanimblendouttime);
+    traversal.startnode = mocompanim.traversestartnode;
+    traversal.endnode = mocompanim.traverseendnode;
+    traversal.mantlenode = mocompanim.traversemantlenode;
+    traversal.initialanimationrate = isactor(mocompanim) ? isdefined(mocompanim function_ebbebf56()) ? mocompanim function_ebbebf56() : 1 : 1;
+    traversal.animlength = getanimlength(mocompanimblendouttime);
     var_4843d198 = traversal.animlength - mocompanimflag;
     endtimes = getnotetracktimes(mocompanimblendouttime, "stop_procedural");
     if (isdefined(endtimes) && endtimes.size > 1) {
         var_4843d198 = endtimes[1] * traversal.animlength;
     }
     traversal.actualanimlength = var_4843d198;
-    traversal.var_98d8ca66.traversal = (0, 0, 0);
-    traversal.startposition.traversal = mocompanim.origin;
-    traversal.adjustedendposition.traversal = mocompanim.traversalendpos;
-    traversal.traversalforward.traversal = traversal.adjustedendposition - traversal.startposition;
-    traversal.traversalforward.traversal = (traversal.traversalforward[0], traversal.traversalforward[1], 0);
-    traversal.startangles.traversal = vectortoangles(traversal.traversalforward);
+    traversal.var_98d8ca66 = (0, 0, 0);
+    traversal.startposition = mocompanim.origin;
+    traversal.adjustedendposition = mocompanim.traversalendpos;
+    traversal.traversalforward = traversal.adjustedendposition - traversal.startposition;
+    traversal.traversalforward = (traversal.traversalforward[0], traversal.traversalforward[1], 0);
+    traversal.startangles = vectortoangles(traversal.traversalforward);
     end_time = math::clamp(traversal.actualanimlength / traversal.animlength, 0, 1);
-    traversal.endposition.traversal = traversal.startposition + rotatepoint(getmovedelta(mocompanimblendouttime, 0, end_time), traversal.startangles);
+    traversal.endposition = traversal.startposition + rotatepoint(getmovedelta(mocompanimblendouttime, 0, end_time), traversal.startangles);
     if (isdefined(traversal.endnode) && isdefined(traversal.endnode.script_linkname)) {
-        traversal.endnodeparent.traversal = getent(traversal.endnode.script_linkname, "targetname");
+        traversal.endnodeparent = getent(traversal.endnode.script_linkname, "targetname");
         if (isdefined(traversal.endnodeparent)) {
-            traversal.origincontents.traversal = mocompanim setcontents(8192);
-            traversal.lastendnodeparentorigin.traversal = traversal.endnodeparent.origin;
-            traversal.adjustedendposition.traversal = physicstraceex(mocompanim.traversalendpos + vectorscale((0, 0, 1), 24), mocompanim.traversalendpos - vectorscale((0, 0, 1), 24), (0, 0, 0), (0, 0, 0), mocompanim)[#"position"];
+            traversal.origincontents = mocompanim setcontents(8192);
+            traversal.lastendnodeparentorigin = traversal.endnodeparent.origin;
+            traversal.adjustedendposition = physicstraceex(mocompanim.traversalendpos + vectorscale((0, 0, 1), 24), mocompanim.traversalendpos - vectorscale((0, 0, 1), 24), (0, 0, 0), (0, 0, 0), mocompanim)[#"position"];
         }
     }
     pivottimes = getnotetracktimes(mocompanimblendouttime, "pivot_procedural");
-    traversal.pivottime.traversal = traversal.actualanimlength / 2;
+    traversal.pivottime = traversal.actualanimlength / 2;
     if (isdefined(pivottimes) && pivottimes.size > 0) {
-        traversal.pivottime.traversal = pivottimes[0] * traversal.animlength;
+        traversal.pivottime = pivottimes[0] * traversal.animlength;
     }
-    traversal.pivottime.traversal = floor(traversal.pivottime / float(function_60d95f53()) / 1000) * float(function_60d95f53()) / 1000;
-    traversal.pivotorigin.traversal = calculatepivotoriginfromedge(mocompanim, traversal.mantlenode, traversal.startposition);
+    traversal.pivottime = floor(traversal.pivottime / float(function_60d95f53()) / 1000) * float(function_60d95f53()) / 1000;
+    traversal.pivotorigin = calculatepivotoriginfromedge(mocompanim, traversal.mantlenode, traversal.startposition);
     pivottagorigin = getanimtagorigin(mocompanimblendouttime, 0, "tag_sync");
     animpivotorigin = traversal.pivotorigin;
     if (lengthsquared(pivottagorigin) > 0) {
@@ -721,21 +721,21 @@ function function_f8a10630(entity, mocompanim, mocompanimblendouttime, mocompani
             recordsphere(traversal.pivotorigin, 2, (1, 0, 0), "<unknown string>", mocompanim);
         }
     #/
-    traversal.sections.traversal = [];
+    traversal.sections = [];
     traversal.sections[traversal.sections.size] = function_54b5f203(mocompanim, traversal, mocompanimblendouttime, 0, traversal.pivottime, traversal.startposition, pivotorigin, traversal.startangles, 0, traversal.animlength);
     traversal.sections[traversal.sections.size] = function_54b5f203(mocompanim, traversal, mocompanimblendouttime, traversal.pivottime, traversal.actualanimlength, pivotorigin, traversal.adjustedendposition, traversal.startangles, 1, traversal.animlength);
     if (traversal.sections[0].deltatoendmocompmultiplier != 1) {
         traversal.sections[1].deltatoendmocompmultiplier = 1;
     }
-    traversal.lastanimtime.traversal = 0;
+    traversal.lastanimtime = 0;
     mocompanim.traversal = traversal;
-    mocompanim.blockingpain.mocompanim = 1;
-    mocompanim.usegoalanimweight.mocompanim = 1;
+    mocompanim.blockingpain = 1;
+    mocompanim.usegoalanimweight = 1;
     mocompanim.lasttraversalanimation = mocompanimblendouttime;
     mocompanim.lasttraversalblendout = mocompanimflag;
-    mocompanim.lasttraversalstartpos.mocompanim = traversal.startposition;
-    mocompanim.lasttraversalendpos.mocompanim = traversal.adjustedendposition;
-    mocompanim.lasttraversalpivot.mocompanim = traversal.pivotorigin;
+    mocompanim.lasttraversalstartpos = traversal.startposition;
+    mocompanim.lasttraversalendpos = traversal.adjustedendposition;
+    mocompanim.lasttraversalpivot = traversal.pivotorigin;
     mocompanim setrepairpaths(0);
     mocompanim animmode("angle deltas noclip", 0);
     function_74ff11d0(mocompanim, mocompanimblendouttime, mocompanimflag, mocompduration, timescale);
@@ -774,23 +774,23 @@ function function_74ff11d0(entity, mocompanim, mocompanimblendouttime, mocompani
         }
     }
     if (!isdefined(section.var_9bcea3fe)) {
-        section.var_9bcea3fe.section = 0;
+        section.var_9bcea3fe = 0;
     }
     if (traversal.lastanimtime >= section.mocompstarttime && section.var_9bcea3fe <= section.mocomptimeinframes) {
         animationtimedelta = (animationnextsteptime - traversal.lastanimtime) / float(function_60d95f53()) / 1000;
         adjusteddeltaperframe = section.adjusteddeltaperframe * animationtimedelta;
-        section.deltatoendtotal.section = section.deltatoendtotal + adjusteddeltaperframe;
+        section.deltatoendtotal = section.deltatoendtotal + adjusteddeltaperframe;
         section.var_9bcea3fe++;
         if (lengthsquared(section.deltatoendtotal) > lengthsquared(section.deltatoendposition)) {
             adjusteddeltaperframe = adjusteddeltaperframe - section.deltatoendtotal - section.deltatoendposition;
         }
     }
     traversal.lastanimtime = animationnextsteptime;
-    traversal.var_98d8ca66.traversal = traversal.var_98d8ca66 + adjusteddeltaperframe;
+    traversal.var_98d8ca66 = traversal.var_98d8ca66 + adjusteddeltaperframe;
     newentityorigin = traversal.startposition + rotatepoint(movedelta, traversal.startangles) + traversal.var_98d8ca66;
     if (isdefined(traversal.endnodeparent)) {
         parentdelta = traversal.endnodeparent.origin - traversal.lastendnodeparentorigin;
-        traversal.lastendnodeparentorigin.traversal = traversal.endnodeparent.origin;
+        traversal.lastendnodeparentorigin = traversal.endnodeparent.origin;
         newentityorigin = newentityorigin + parentdelta;
     }
     entity forceteleport(newentityorigin, traversal.startangles, 0, 0);
@@ -808,8 +808,8 @@ function function_56a2bbe4(entity, mocompanim, mocompanimblendouttime, mocompani
             entity setcontents(traversal.origincontents);
         }
     }
-    entity.blockingpain.entity = 0;
-    entity.usegoalanimweight.entity = 0;
+    entity.blockingpain = 0;
+    entity.usegoalanimweight = 0;
     entity function_af554597(mocompanim);
     entity finishtraversal();
     entity setrepairpaths(1);
@@ -978,28 +978,28 @@ function private mocomplocoexplosioninit(entity, *mocompanim, *mocompanimblendou
 function private mocompadjusttocoverinit(entity, mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
     mocompanimflag orientmode("face current");
     mocompanimflag animmode("angle deltas", 0);
-    mocompanimflag.blockingpain.mocompanimflag = 1;
+    mocompanimflag.blockingpain = 1;
     if (isdefined(mocompanimflag.node)) {
-        mocompanimflag.adjustnode.mocompanimflag = mocompanimflag.node;
-        mocompanimflag.nodeoffsetorigin.mocompanimflag = mocompanimflag getnodeoffsetposition(mocompanimflag.node);
-        mocompanimflag.nodeoffsetangles.mocompanimflag = mocompanimflag getnodeoffsetangles(mocompanimflag.node);
-        mocompanimflag.nodeoffsetforward.mocompanimflag = anglestoforward(mocompanimflag.nodeoffsetangles);
-        mocompanimflag.nodeforward.mocompanimflag = anglestoforward(mocompanimflag.node.angles);
-        mocompanimflag.nodefinalstance.mocompanimflag = mocompanimflag getblackboardattribute("_desired_stance");
+        mocompanimflag.adjustnode = mocompanimflag.node;
+        mocompanimflag.nodeoffsetorigin = mocompanimflag getnodeoffsetposition(mocompanimflag.node);
+        mocompanimflag.nodeoffsetangles = mocompanimflag getnodeoffsetangles(mocompanimflag.node);
+        mocompanimflag.nodeoffsetforward = anglestoforward(mocompanimflag.nodeoffsetangles);
+        mocompanimflag.nodeforward = anglestoforward(mocompanimflag.node.angles);
+        mocompanimflag.nodefinalstance = mocompanimflag getblackboardattribute("_desired_stance");
         covertype = mocompanimflag getblackboardattribute("_cover_type");
         if (!isdefined(mocompanimflag.nodefinalstance)) {
-            mocompanimflag.nodefinalstance.mocompanimflag = mocompanimflag aiutility::gethighestnodestance(mocompanimflag.adjustnode);
+            mocompanimflag.nodefinalstance = mocompanimflag aiutility::gethighestnodestance(mocompanimflag.adjustnode);
         }
         angledifference = floor(absangleclamp360(mocompanimflag.angles[1] - mocompanimflag.node.angles[1]));
         var_c9145b1d = mocompanimflag.archetype;
         if (var_c9145b1d == #"civilian") {
             var_c9145b1d = #"human";
         }
-        mocompanimflag.mocompanglestarttime.mocompanimflag = _getadjusttocoverrotation(var_c9145b1d, covertype, mocompanimflag.nodefinalstance, angledifference);
+        mocompanimflag.mocompanglestarttime = _getadjusttocoverrotation(var_c9145b1d, covertype, mocompanimflag.nodefinalstance, angledifference);
         var_ad846680 = distance(mocompanimflag.nodeoffsetorigin, mocompanimflag.origin);
         var_2de266f0 = mocompanimflag.mocompanglestarttime * getanimlength(mocompduration);
         var_cf67af1 = max(1, floor(var_2de266f0 / float(function_60d95f53()) / 1000));
-        mocompanimflag.var_26b7e15a.mocompanimflag = var_ad846680 / var_cf67af1;
+        mocompanimflag.var_26b7e15a = var_ad846680 / var_cf67af1;
     }
 }
 
@@ -1045,7 +1045,7 @@ function private mocompadjusttocoverupdate(entity, mocompanim, mocompanimblendou
 // Checksum 0xe09d5604, Offset: 0x5fa8
 // Size: 0x20a
 function private mocompadjusttocoverterminate(entity, mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
-    mocompanimflag.blockingpain.mocompanimflag = 0;
+    mocompanimflag.blockingpain = 0;
     mocompanimflag.nodeoffsetangle = undefined;
     mocompanimflag.nodeoffsetforward = undefined;
     mocompanimflag.nodeforward = undefined;
@@ -1120,10 +1120,10 @@ function function_9b568914(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 // Size: 0xa6
 function function_7ea5e21f(entity, mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
     mocompanimflag animmode("gravity", 1);
-    mocompanimflag.var_82d6d030.mocompanimflag = 0.5;
+    mocompanimflag.var_82d6d030 = 0.5;
     notetrack_times = getnotetracktimes(mocompduration, "face_react");
     if (isdefined(notetrack_times) && notetrack_times.size > 0) {
-        mocompanimflag.var_82d6d030.mocompanimflag = notetrack_times[0];
+        mocompanimflag.var_82d6d030 = notetrack_times[0];
     }
 }
 
@@ -1180,7 +1180,7 @@ function function_116f8e5(entity, mocompanim, mocompanimblendouttime, mocompanim
         entity orientmode("face default");
         entity animmode("zonly_physics");
     }
-    entity.var_beed19f5.entity = {#var_e14d27e8:getanimlength(mocompanim), #var_ac20d725:getnotetracktimes(mocompanim, "stop_turning"), #var_df5d6edc:getnotetracktimes(mocompanim, "start_turning")};
+    entity.var_beed19f5 = {#var_e14d27e8:getanimlength(mocompanim), #var_ac20d725:getnotetracktimes(mocompanim, "stop_turning"), #var_df5d6edc:getnotetracktimes(mocompanim, "start_turning")};
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility
@@ -1211,19 +1211,19 @@ function function_6fd3b59(entity, mocompanim, mocompanimblendouttime, mocompanim
 // Size: 0x2e4
 function function_fe81623b(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
     if (!isdefined(mocompduration.var_24594a06)) {
-        mocompduration.var_24594a06.mocompduration = 400;
+        mocompduration.var_24594a06 = 400;
     }
     if (!isdefined(mocompduration.var_d8481de)) {
-        mocompduration.var_d8481de.mocompduration = 1;
+        mocompduration.var_d8481de = 1;
     }
     if (!isdefined(mocompduration.var_9f536dbe)) {
-        mocompduration.var_9f536dbe.mocompduration = 1;
+        mocompduration.var_9f536dbe = 1;
     }
     if (!isdefined(mocompduration.var_331c8e1b)) {
-        mocompduration.var_331c8e1b.mocompduration = 1;
+        mocompduration.var_331c8e1b = 1;
     }
     if (!isdefined(mocompduration.var_b98d64dc)) {
-        mocompduration.var_b98d64dc.mocompduration = 0;
+        mocompduration.var_b98d64dc = 0;
     }
     resistance = mocompduration.var_9f536dbe;
     /#
@@ -1231,14 +1231,14 @@ function function_fe81623b(entity, *mocompanim, *mocompanimblendouttime, *mocomp
             resistance = getdvarfloat(#"hash_47f178a6f202647", -1);
         }
     #/
-    mocompduration.var_a94d73fa.mocompduration = mocompduration.var_24594a06 * mocompduration.var_d8481de * 1 / resistance;
-    mocompduration.var_faf3d7c1.mocompduration = anglestoforward(mocompduration.angles) * -1 * mocompduration.var_a94d73fa;
+    mocompduration.var_a94d73fa = mocompduration.var_24594a06 * mocompduration.var_d8481de * 1 / resistance;
+    mocompduration.var_faf3d7c1 = anglestoforward(mocompduration.angles) * -1 * mocompduration.var_a94d73fa;
     if (!is_true(mocompduration.var_d667c9b7)) {
         var_9efb1605 = mocompduration.var_b98d64dc;
         var_9efb1605 = var_9efb1605 + min(getdvarfloat(#"hash_554109ca6ea62d2a", 250), mocompduration.var_24594a06 * mocompduration.var_d8481de * 1 / resistance * getdvarfloat(#"hash_1b2914f9c8ff0bca", 0.5)) * mocompduration.var_331c8e1b;
         var_9efb1605 = max(var_9efb1605, getdvarfloat(#"hash_555bf3ca6ebccf80", 40));
-        mocompduration.var_efe6f3a3.mocompduration = (0, 0, 1) * var_9efb1605;
-        mocompduration.var_d667c9b7.mocompduration = 1;
+        mocompduration.var_efe6f3a3 = (0, 0, 1) * var_9efb1605;
+        mocompduration.var_d667c9b7 = 1;
     }
     mocompduration animmode(getdvarstring(#"hash_6e6346c189807dc8", "normal_nogravity"), 0);
 }
@@ -1273,18 +1273,18 @@ function function_c95a9f41(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 // Size: 0x4a4
 function private function_c0c49b7f(entity) {
     if (!isdefined(entity.var_d4da163b)) {
-        entity.var_d4da163b.entity = 1;
+        entity.var_d4da163b = 1;
     }
     var_2a59a682 = 0;
     var_64a2a5c = 10;
     var_f7e89156 = -40;
     if (is_true(entity.var_d4da163b)) {
-        entity.var_d4da163b.entity = 0;
+        entity.var_d4da163b = 0;
         if (is_true(entity.var_d667c9b7) && entity.var_efe6f3a3[2] < var_f7e89156 && abs(entity.origin[2] - entity.var_9600fb93[2]) < var_64a2a5c) {
             var_2a59a682 = 1;
             trace = physicstraceex(entity.origin, entity.origin + (0, 0, var_64a2a5c * -1), vectorscale((-1, -1, 0), 15), (15, 15, 72), entity);
             if (trace[#"fraction"] !== 1) {
-                entity.var_d667c9b7.entity = 0;
+                entity.var_d667c9b7 = 0;
             }
         }
     }
@@ -1293,7 +1293,7 @@ function private function_c0c49b7f(entity) {
     }
     var_a95ca3fd = vectornormalize(entity.var_faf3d7c1);
     if (!is_true(entity.var_d4da163b) && !is_true(var_2a59a682)) {
-        entity.var_d4da163b.entity = 1;
+        entity.var_d4da163b = 1;
         var_cb67bd59 = lengthsquared(entity.var_faf3d7c1);
         var_97d0d061 = entity getpathfindingradius() * 2;
         if (var_cb67bd59 > function_a3f6cdac(var_97d0d061)) {
@@ -1306,10 +1306,10 @@ function private function_c0c49b7f(entity) {
     }
     var_facb5140 = float(function_60d95f53()) / 1000;
     var_9efb1605 = max(getdvarfloat(#"hash_76bec38f9a9d6b0d", -400), entity.var_efe6f3a3[2] - getdvarfloat(#"hash_d6605b567299ef9", 800) * var_facb5140);
-    entity.var_efe6f3a3.entity = (0, 0, var_9efb1605);
-    entity.var_faf3d7c1.entity = var_a95ca3fd * max(0, length(entity.var_faf3d7c1) - getdvarfloat(#"hash_4d1ccba5efdca6f0", 50) * var_facb5140);
+    entity.var_efe6f3a3 = (0, 0, var_9efb1605);
+    entity.var_faf3d7c1 = var_a95ca3fd * max(0, length(entity.var_faf3d7c1) - getdvarfloat(#"hash_4d1ccba5efdca6f0", 50) * var_facb5140);
     var_47a5b3d2 = (entity.var_faf3d7c1 + entity.var_efe6f3a3) * var_facb5140;
-    entity.var_9600fb93.entity = entity.origin;
+    entity.var_9600fb93 = entity.origin;
     entity forceteleport(entity.origin + var_47a5b3d2, entity.angles, 0, 0);
 }
 
@@ -1318,7 +1318,7 @@ function private function_c0c49b7f(entity) {
 // Checksum 0xc911c990, Offset: 0x72f8
 // Size: 0x74
 function function_59fe75e2(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
-    mocompduration.blockingpain.mocompduration = 1;
+    mocompduration.blockingpain = 1;
     mocompduration orientmode("face current");
     mocompduration animmode("zonly_physics", 1);
 }
@@ -1328,7 +1328,7 @@ function function_59fe75e2(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 // Checksum 0x86186090, Offset: 0x7378
 // Size: 0x74
 function function_8559a6cd(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
-    mocompduration.blockingpain.mocompduration = 1;
+    mocompduration.blockingpain = 1;
     mocompduration orientmode("face current");
     mocompduration animmode("zonly_physics", 1);
 }
@@ -1338,7 +1338,7 @@ function function_8559a6cd(entity, *mocompanim, *mocompanimblendouttime, *mocomp
 // Checksum 0x64d96ef3, Offset: 0x73f8
 // Size: 0x74
 function function_4b95cde(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
-    mocompduration.blockingpain.mocompduration = 0;
+    mocompduration.blockingpain = 0;
     mocompduration orientmode("face current");
     mocompduration animmode("normal", 0);
 }
@@ -1348,7 +1348,7 @@ function function_4b95cde(entity, *mocompanim, *mocompanimblendouttime, *mocompa
 // Checksum 0x7c445d5a, Offset: 0x7478
 // Size: 0xa4
 function private mocompignorepainfaceenemyinit(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
-    mocompduration.blockingpain.mocompduration = 1;
+    mocompduration.blockingpain = 1;
     if (isdefined(mocompduration.enemy)) {
         mocompduration orientmode("face enemy");
     } else {
@@ -1374,6 +1374,6 @@ function private mocompignorepainfaceenemyupdate(entity, mocompanim, *mocompanim
 // Checksum 0x52f8b4f9, Offset: 0x75d0
 // Size: 0x36
 function private mocompignorepainfaceenemyterminate(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
-    mocompduration.blockingpain.mocompduration = 0;
+    mocompduration.blockingpain = 0;
 }
 

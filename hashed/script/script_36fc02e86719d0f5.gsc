@@ -281,11 +281,11 @@ class class_744b99c {
         loc.chance = chance;
         loc.count = count;
         loc.permanent = permanent;
-        loc.activated.loc = 0;
-        loc.var_a3192b0f.loc = 0;
-        loc.var_82725140.loc = 0;
+        loc.activated = 0;
+        loc.var_a3192b0f = 0;
+        loc.var_82725140 = 0;
         loc.scale = scale;
-        loc.var_e3d90223.loc = randomint(100) < loc.chance;
+        loc.var_e3d90223 = randomint(100) < loc.chance;
         function_d52481d0(loc);
     }
 
@@ -362,13 +362,13 @@ class class_744b99c {
             assert(self.var_af27fdee.size > 0);
         #/
         foreach (section in self.var_af27fdee) {
-            section.id.section = int(section.script_int);
+            section.id = int(section.script_int);
             /#
                 assert(isdefined(section.id));
             #/
-            section.flipcamera.section = 0;
-            section.var_9045aedc.section = 1;
-            section.playerstarts.section = struct::get_array(section.target);
+            section.flipcamera = 0;
+            section.var_9045aedc = 1;
+            section.playerstarts = struct::get_array(section.target);
             /#
                 assert(section.playerstarts.size == 4);
             #/
@@ -379,13 +379,13 @@ class class_744b99c {
             /#
                 assert(params.size >= 2);
             #/
-            section.flipcamera.section = int(params[0]);
-            section.var_9045aedc.section = int(params[1]);
+            section.flipcamera = int(params[0]);
+            section.var_9045aedc = int(params[1]);
             if (params.size > 2) {
-                section.exit.section = struct::get(params[2]);
+                section.exit = struct::get(params[2]);
             }
             if (params.size > 3) {
-                section.var_b52bc3a8.section = params[3];
+                section.var_b52bc3a8 = params[3];
             }
         }
         self.var_a1fa7529 = arraycombine(getentarray(self.m_name + "_wild_hazard", "targetname"), struct::get_array(self.m_name + "_wild_hazard", "targetname"));
@@ -397,14 +397,14 @@ class class_744b99c {
             /#
                 assert(params.size == 7, "<unknown string>" + self.m_name + "<unknown string>");
             #/
-            dungeon.name.dungeon = params[0];
-            dungeon.type.dungeon = params[1];
-            dungeon.var_c9569a5c.dungeon = params[2];
-            dungeon.var_27264bb4.dungeon = params[3];
-            dungeon.var_a69f4ab4.dungeon = params[4];
-            dungeon.var_efa6dcc2.dungeon = params[5];
-            dungeon.var_7efce95.dungeon = params[6];
-            dungeon.var_93ed3009.dungeon = struct::get_array(dungeon.name + "_dungeon_player_exits");
+            dungeon.name = params[0];
+            dungeon.type = params[1];
+            dungeon.var_c9569a5c = params[2];
+            dungeon.var_27264bb4 = params[3];
+            dungeon.var_a69f4ab4 = params[4];
+            dungeon.var_efa6dcc2 = params[5];
+            dungeon.var_7efce95 = params[6];
+            dungeon.var_93ed3009 = struct::get_array(dungeon.name + "_dungeon_player_exits");
             /#
                 assert(dungeon.var_93ed3009.size >= 4, "<unknown string>");
             #/
@@ -415,7 +415,7 @@ class class_744b99c {
         self.var_e2a6dd61 = getentarray(self.m_name + "_wild_camera_tweak", "targetname");
         self.var_3fe6d9f7 = getentarray(self.m_name + "_wild_room", "targetname");
         foreach (room in self.var_3fe6d9f7) {
-            room.var_472c86f9.room = 0;
+            room.var_472c86f9 = 0;
         }
     }
 
@@ -683,8 +683,8 @@ class class_744b99c {
         }
         self.var_45e27b4f = [];
         foreach (npc in self.var_c7395a06) {
-            npc.activated.npc = 0;
-            npc.count.npc = isdefined(npc.script_int) ? int(npc.script_int) : 1;
+            npc.activated = 0;
+            npc.count = isdefined(npc.script_int) ? int(npc.script_int) : 1;
         }
         foreach (room in self.var_3fe6d9f7) {
             if (isdefined(room)) {
@@ -716,7 +716,7 @@ class class_744b99c {
         level.doa.var_997a0313++;
         level.doa.var_8dc464fe = gettime();
         foreach (dungeon in self.var_2a0f52f3) {
-            dungeon.trigger.dungeon = namespace_ec06fe4a::function_b5731057("trigger_box", dungeon.origin, 2, dungeon.var_27264bb4, dungeon.var_efa6dcc2, dungeon.var_a69f4ab4);
+            dungeon.trigger = namespace_ec06fe4a::function_b5731057("trigger_box", dungeon.origin, 2, dungeon.var_27264bb4, dungeon.var_efa6dcc2, dungeon.var_a69f4ab4);
         }
         function_c4836f01();
         function_98a61f4e(section);
@@ -731,50 +731,50 @@ class class_744b99c {
             trig thread function_4a266c60();
         }
         foreach (loc in self.var_7c1b05a1) {
-            loc.chance.loc = 100;
+            loc.chance = 100;
             if (isdefined(loc.script_parameters)) {
                 args = strtok(loc.script_parameters, ";");
                 if (args.size > 0) {
-                    loc.chance.loc = int(args[0]);
+                    loc.chance = int(args[0]);
                 }
                 if (args.size > 1) {
-                    loc.scale.loc = int(args[1]);
+                    loc.scale = int(args[1]);
                 }
                 if (args.size > 2 && loc.script_noteworthy === #"hash_6b07679758a7acc") {
-                    loc.parameters.loc = [];
+                    loc.parameters = [];
                     for (i = 2; i < args.size; i++) {
                         if (!isdefined(loc.parameters)) {
-                            loc.parameters.loc = [];
+                            loc.parameters = [];
                         } else if (!isarray(loc.parameters)) {
-                            loc.parameters.loc = array(loc.parameters);
+                            loc.parameters = array(loc.parameters);
                         }
                         loc.parameters[loc.parameters.size] = args[i];
                     }
                 }
             }
             if (is_true(level.doa.var_318aa67a) && loc.script_noteworthy === "zombietron_firstperson") {
-                loc.chance.loc = 0;
+                loc.chance = 0;
             }
             if (loc.script_noteworthy === "zombietron_skeleton_key") {
-                loc.chance.loc = loc.chance - 25 * level.doa.var_be74bf2c;
+                loc.chance = loc.chance - 25 * level.doa.var_be74bf2c;
                 if (loc.chance < 1) {
-                    loc.chance.loc = 1;
+                    loc.chance = 1;
                 }
             }
-            loc.var_e3d90223.loc = randomint(100) < loc.chance;
-            loc.count.loc = isdefined(loc.script_int) ? int(loc.script_int) : 1;
-            loc.activated.loc = 0;
-            loc.var_a3192b0f.loc = 0;
-            loc.var_82725140.loc = 0;
-            loc.permanent.loc = 0;
+            loc.var_e3d90223 = randomint(100) < loc.chance;
+            loc.count = isdefined(loc.script_int) ? int(loc.script_int) : 1;
+            loc.activated = 0;
+            loc.var_a3192b0f = 0;
+            loc.var_82725140 = 0;
+            loc.permanent = 0;
             if (isdefined(loc.script_noteworthy) && issubstr(loc.script_noteworthy, "world_")) {
-                loc.permanent.loc = 1;
+                loc.permanent = 1;
             }
         }
         foreach (npc in self.var_c7395a06) {
-            npc.activated.npc = 0;
-            npc.permanent.npc = 0;
-            npc.chance.npc = 100;
+            npc.activated = 0;
+            npc.permanent = 0;
+            npc.chance = 100;
             /#
                 assert(isdefined(npc.script_parameters));
             #/
@@ -784,26 +784,26 @@ class class_744b99c {
                     assert(args.size > 0, "<unknown string>");
                 #/
                 if (args.size > 0) {
-                    npc.type.npc = args[0];
+                    npc.type = args[0];
                 }
                 if (args.size > 1) {
-                    npc.chance.npc = int(args[1]);
+                    npc.chance = int(args[1]);
                 }
                 if (args.size > 2) {
-                    npc.radius.npc = int(args[2]);
+                    npc.radius = int(args[2]);
                 }
                 if (args.size > 3) {
-                    npc.permanent.npc = int(args[3]) ? 1 : 0;
+                    npc.permanent = int(args[3]) ? 1 : 0;
                 }
                 if (args.size > 4) {
-                    npc.var_c7121c91.npc = int(args[4]) ? 1 : 0;
+                    npc.var_c7121c91 = int(args[4]) ? 1 : 0;
                 }
                 if (args.size > 5) {
-                    npc.var_a4c4ac53.npc = args[5];
+                    npc.var_a4c4ac53 = args[5];
                 }
             }
-            npc.var_e3d90223.npc = randomint(100) < npc.chance;
-            npc.count.npc = isdefined(npc.script_int) ? int(npc.script_int) : 1;
+            npc.var_e3d90223 = randomint(100) < npc.chance;
+            npc.count = isdefined(npc.script_int) ? int(npc.script_int) : 1;
         }
         foreach (var_f0ce243e in self.var_e2a6dd61) {
             var_f0ce243e thread function_e7bbc8d1();
@@ -845,7 +845,7 @@ class class_744b99c {
                     var_b458883a setmovingplatformenabled(1, 1);
                     var_b458883a disconnectpaths();
                     var_b458883a thread namespace_ec06fe4a::function_f506b4c7();
-                    var_b458883a.trigger.var_b458883a = namespace_ec06fe4a::function_b5731057("trigger_radius", var_b458883a.origin, 0, 40, 80);
+                    var_b458883a.trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", var_b458883a.origin, 0, 40, 80);
                     var_b458883a thread function_40ee47dc(var_b458883a.var_d1fc07a7);
                 }
             }
@@ -942,15 +942,15 @@ class class_744b99c {
 function function_2828aa1() {
     if (isinarray([[ level.doa.var_a77e6349 ]]->function_d9ad5c49(), level.doa.var_c0036bbd) == 0) {
         loc = level.doa.var_c0036bbd;
-        loc.chance.loc = 100;
-        loc.var_e3d90223.loc = 1;
-        loc.count.loc = 1;
-        loc.activated.loc = 0;
-        loc.var_a3192b0f.loc = 0;
-        loc.var_82725140.loc = 0;
-        loc.permanent.loc = 1;
-        loc.script_string.loc = "arcade_machine1";
-        loc.radius.loc = 40;
+        loc.chance = 100;
+        loc.var_e3d90223 = 1;
+        loc.count = 1;
+        loc.activated = 0;
+        loc.var_a3192b0f = 0;
+        loc.var_82725140 = 0;
+        loc.permanent = 1;
+        loc.script_string = "arcade_machine1";
+        loc.radius = 40;
         [[ level.doa.var_a77e6349 ]]->function_d52481d0(loc);
     }
 }
@@ -1174,7 +1174,7 @@ function function_c6dcd966(item) {
 // Checksum 0x70c263cc, Offset: 0x59e0
 // Size: 0xba
 function function_a1832a08(item) {
-    item.var_aa1b5d45.item = level.doa.var_aa1b5d45;
+    item.var_aa1b5d45 = level.doa.var_aa1b5d45;
     if (isdefined(item.var_aa1b5d45)) {
         item notify(#"hash_2a866f50cc161ca8");
         level.doa.var_aa1b5d45.pickups[level.doa.var_aa1b5d45.pickups.size] = item;
@@ -1190,8 +1190,8 @@ function spawnitem(item) {
     if (is_true(item.activated)) {
         return;
     }
-    item.pickups.item = [];
-    item.activated.item = 1;
+    item.pickups = [];
+    item.activated = 1;
     level.doa.var_aa1b5d45 = item;
     var_e9e24bda = 1600;
     if (is_true(level.doa.var_318aa67a)) {
@@ -1235,7 +1235,7 @@ function spawnitem(item) {
     if (!item.permanent) {
         level thread function_612fa49c(item, var_e9e24bda);
     } else {
-        item.var_e3d90223.item = 0;
+        item.var_e3d90223 = 0;
     }
     level.doa.var_aa1b5d45 = undefined;
 }
@@ -1262,7 +1262,7 @@ function function_612fa49c(item, distance = 1600) {
         remove = 0;
     }
     if (remove) {
-        item.var_e3d90223.item = 0;
+        item.var_e3d90223 = 0;
     }
     if (isdefined(item.pickups)) {
         arrayremovevalue(item.pickups, undefined);
@@ -1270,7 +1270,7 @@ function function_612fa49c(item, distance = 1600) {
             pickup delete();
         }
     }
-    item.pickups.item = [];
+    item.pickups = [];
 }
 
 // Namespace doa_wild/doa_wild
@@ -1393,10 +1393,10 @@ function function_72405345(npc) {
         profilestop();
         return;
     }
-    npc.var_2b5ed682.npc = [];
-    npc.activated.npc = 1;
+    npc.var_2b5ed682 = [];
+    npc.activated = 1;
     if (!isdefined(npc.var_49a15185)) {
-        npc.var_49a15185.npc = doa_enemy::function_d7c5adee(npc.type);
+        npc.var_49a15185 = doa_enemy::function_d7c5adee(npc.type);
     }
     npc thread function_d81916f4();
     radius = 0;
@@ -1436,7 +1436,7 @@ function function_7d406bae(npc, distance = 2400) {
         var_a5a975dd = var_a5a975dd + item.count;
     }
     arrayremovevalue(npc.var_2b5ed682, undefined);
-    npc.count.npc = npc.count + npc.var_2b5ed682.size + var_a5a975dd;
+    npc.count = npc.count + npc.var_2b5ed682.size + var_a5a975dd;
     foreach (guy in npc.var_2b5ed682) {
         if (is_true(guy.boss)) {
             guy thread namespace_ec06fe4a::function_52afe5df();
@@ -1444,7 +1444,7 @@ function function_7d406bae(npc, distance = 2400) {
             guy thread namespace_ec06fe4a::function_570729f0(0.1);
         }
     }
-    npc.var_2b5ed682.npc = [];
+    npc.var_2b5ed682 = [];
     if (npc.count <= 0) {
         arrayremovevalue(level.doa.var_95cc492a, npc);
     }

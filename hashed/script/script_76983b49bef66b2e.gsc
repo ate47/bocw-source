@@ -45,11 +45,11 @@ function function_6ec0595a() {
             return;
         }
         org enablelinkto();
-        org.targetname.org = "tesla_org";
-        org.angles.org = (0, randomint(180), 0);
+        org.targetname = "tesla_org";
+        org.angles = (0, randomint(180), 0);
         self.doa.tesla_org = org;
-        org.owner.org = self;
-        org.objects.org = [];
+        org.owner = self;
+        org.objects = [];
         org linkto(self, undefined, vectorscale((0, 0, 1), 30));
         org thread namespace_ec06fe4a::function_f506b4c7(1);
         org thread function_3be74620(self);
@@ -78,14 +78,14 @@ function function_9b8a196a() {
     }
     ball setplayercollision(0);
     ball enablelinkto();
-    ball.targetname.ball = "teslaBall";
+    ball.targetname = "teslaBall";
     ball thread function_453dcc55();
-    trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", ball.origin, 1 & 512 & 8, 18, 50);
+    trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", ball.origin, 1 | 512 | 8, 18, 50);
     if (!isdefined(trigger)) {
         ball delete();
         return;
     }
-    trigger.targetname.trigger = "teslaTrigger";
+    trigger.targetname = "teslaTrigger";
     trigger enablelinkto();
     trigger linkto(ball);
     trigger thread function_49ee8def();
@@ -238,7 +238,7 @@ function function_8d45f3be(guy, attacker) {
         return 0;
     }
     if (function_5d21013(attacker)) {
-        guy.var_44824562.guy = "tesla";
+        guy.var_44824562 = "tesla";
         guy thread function_957d23cc(attacker);
         return 1;
     }
@@ -272,12 +272,12 @@ function function_957d23cc(player) {
     }
     player endon(#"death");
     player.tesla_enemies = undefined;
-    player.tesla_enemies_hit.player = 1;
-    player.var_b740173a.player = 0;
+    player.tesla_enemies_hit = 1;
+    player.var_b740173a = 0;
     player notify(#"hash_45f6a84f01d669d5");
     self namespace_83eb6304::function_3ecfde67("tesla_shock");
     self function_d9c75d31(self, player, 0);
-    player.tesla_enemies_hit.player = 0;
+    player.tesla_enemies_hit = 0;
 }
 
 // Namespace namespace_9038b9d9/namespace_22bc97b1
@@ -343,8 +343,8 @@ function function_2513a3f2(origin, distance, player) {
     enemies = [];
     if (!isdefined(player.tesla_enemies)) {
         team = util::getotherteam(player.team);
-        player.tesla_enemies.player = getaiteamarray(team);
-        player.tesla_enemies.player = arraysortclosest(player.tesla_enemies, origin);
+        player.tesla_enemies = getaiteamarray(team);
+        player.tesla_enemies = arraysortclosest(player.tesla_enemies, origin);
     }
     foreach (zombie in player.tesla_enemies) {
         if (!isdefined(zombie)) {

@@ -124,9 +124,9 @@ function debug_missile(missile) {
         while (1) {
             if (isdefined(missile)) {
                 missile_info = spawnstruct();
-                missile_info.origin.missile_info = missile.origin;
+                missile_info.origin = missile.origin;
                 target = missile missile_gettarget();
-                missile_info.targetentnum.missile_info = isdefined(target) ? target getentitynumber() : undefined;
+                missile_info.targetentnum = isdefined(target) ? target getentitynumber() : undefined;
                 if (!isdefined(level.debug_missile_dots)) {
                     level.debug_missile_dots = [];
                 } else if (!isarray(level.debug_missile_dots)) {
@@ -749,9 +749,9 @@ function initlockfield(target) {
     if (isdefined(target.locking_on)) {
         return;
     }
-    target.locking_on.target = 0;
-    target.locked_on.target = 0;
-    target.locking_on_hacking.target = 0;
+    target.locking_on = 0;
+    target.locked_on = 0;
+    target.locking_on_hacking = 0;
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
@@ -765,17 +765,17 @@ function lockingon(target, lock) {
     clientnum = self getentitynumber();
     if (lock) {
         if ((target.locking_on & 1 << clientnum) == 0) {
-            target.locking_on.target = target.locking_on & 1 << clientnum;
+            target.locking_on = target.locking_on | 1 << clientnum;
             target notify(#"locking on");
             self thread watchclearlockingon(target, clientnum);
             if (!isdefined(target.team) || !isdefined(target.killstreaktype) && util::function_fbce7263(self.team, target.team) && !is_true(target.var_9ee835dc)) {
-                target.var_9ee835dc.target = 1;
+                target.var_9ee835dc = 1;
                 self battlechatter::playkillstreakthreat(target.killstreaktype);
             }
         }
     } else {
         self notify(#"locking_on_cleared");
-        target.locking_on.target = target.locking_on & ~(1 << clientnum);
+        target.locking_on = target.locking_on & ~(1 << clientnum);
     }
 }
 
@@ -787,7 +787,7 @@ function watchclearlockingon(target, clientnum) {
     target endon(#"death");
     self endon(#"locking_on_cleared");
     self waittill(#"death", #"disconnect");
-    target.locking_on.target = target.locking_on & ~(1 << clientnum);
+    target.locking_on = target.locking_on & ~(1 << clientnum);
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
@@ -806,7 +806,7 @@ function lockedon(target, lock) {
             }
         }
         if ((target.locked_on & 1 << clientnum) == 0) {
-            target.locked_on.target = target.locked_on & 1 << clientnum;
+            target.locked_on = target.locked_on | 1 << clientnum;
             self notify(#"lock_on_acquired");
             self thread watchclearlockedon(target, clientnum);
             if (isdefined(self.var_96e63c65)) {
@@ -818,7 +818,7 @@ function lockedon(target, lock) {
         if (isdefined(self.var_ce532710)) {
             self [[ self.var_ce532710 ]]();
         }
-        target.locked_on.target = target.locked_on & ~(1 << clientnum);
+        target.locked_on = target.locked_on & ~(1 << clientnum);
         if (!target enemylockedon()) {
             if (isdefined(target.var_43384efb)) {
                 target [[ target.var_43384efb ]]();
@@ -893,11 +893,11 @@ function targetinghacking(target, lock) {
     clientnum = self getentitynumber();
     if (lock) {
         target notify(#"locking on hacking");
-        target.locking_on_hacking.target = target.locking_on_hacking & 1 << clientnum;
+        target.locking_on_hacking = target.locking_on_hacking | 1 << clientnum;
         self thread watchclearhacking(target, clientnum);
     } else {
         self notify(#"locking_on_hacking_cleared");
-        target.locking_on_hacking.target = target.locking_on_hacking & ~(1 << clientnum);
+        target.locking_on_hacking = target.locking_on_hacking & ~(1 << clientnum);
     }
 }
 
@@ -909,7 +909,7 @@ function watchclearhacking(target, clientnum) {
     target endon(#"death");
     self endon(#"locking_on_hacking_cleared");
     self waittill(#"death", #"disconnect");
-    target.locking_on_hacking.target = target.locking_on_hacking & ~(1 << clientnum);
+    target.locking_on_hacking = target.locking_on_hacking & ~(1 << clientnum);
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
@@ -1053,7 +1053,7 @@ function watchclearlockedon(target, clientnum) {
     self endon(#"locked_on_cleared");
     self waittill(#"death", #"disconnect");
     if (isdefined(target)) {
-        target.locked_on.target = target.locked_on & ~(1 << clientnum);
+        target.locked_on = target.locked_on & ~(1 << clientnum);
         if (!target enemylockedon()) {
             if (isdefined(target.var_43384efb)) {
                 target [[ target.var_43384efb ]]();
@@ -1366,7 +1366,7 @@ function missiletarget_deployflares(origin, angles) {
         flareorigin = flareorigin + self.flareoffset;
     }
     flareobject = spawn("script_origin", flareorigin);
-    flareobject.angles.flareobject = self.angles;
+    flareobject.angles = self.angles;
     flareobject setmodel(#"tag_origin");
     flareobject movegravity(velocity, 5);
     flareobject thread util::deleteaftertime(5);

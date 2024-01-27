@@ -36,16 +36,16 @@ function function_124c1a34(player, model, note) {
     if (!isdefined(blade)) {
         return 0;
     }
-    blade.targetname.blade = "blade";
+    blade.targetname = "blade";
     blade setplayercollision(0);
     blade enablelinkto();
     blade linkto(self, undefined, vectorscale((0, -1, 0), 70));
-    trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", blade.origin, 1 & 512 & 8, 30, 50);
+    trigger = namespace_ec06fe4a::function_b5731057("trigger_radius", blade.origin, 1 | 512 | 8, 30, 50);
     if (!isdefined(trigger)) {
         blade delete();
         return 0;
     }
-    trigger.targetname.trigger = "blade";
+    trigger.targetname = "blade";
     trigger enablelinkto();
     trigger linkto(blade);
     trigger thread function_7daf5356(player, note);
@@ -74,8 +74,8 @@ function sawbladeupdate(model = "zombietron_sawblade") {
     if (!isdefined(org)) {
         return;
     }
-    org.targetname.org = "sawbladeUpdate";
-    org.angles.org = (0, randomint(180), 0);
+    org.targetname = "sawbladeUpdate";
+    org.angles = (0, randomint(180), 0);
     org enablelinkto();
     self.doa.var_1739bd8e[self.doa.var_1739bd8e.size] = org;
     org linkto(self, undefined, vectorscale((0, 0, 1), 32));

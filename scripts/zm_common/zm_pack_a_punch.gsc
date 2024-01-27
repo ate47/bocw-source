@@ -168,9 +168,9 @@ function private spawn_init() {
             }
         } else {
             collision = spawn("script_model", zbarriers[i].origin, 1);
-            collision.angles.collision = zbarriers[i].angles;
+            collision.angles = zbarriers[i].angles;
             collision setmodel(#"zm_collision_perks1");
-            collision.script_noteworthy.collision = "clip";
+            collision.script_noteworthy = "clip";
             collision disconnectpaths();
         }
         zbarriers[i].unitrigger_stub.clip = collision;
@@ -536,9 +536,9 @@ function private function_72cf5db2() {
                     if (!b_result) {
                         continue;
                     }
-                    pap_machine.b_weapon_supports_aat.pap_machine = zm_weapons::weapon_supports_aat(current_weapon);
-                    pap_machine.var_a86430cb.pap_machine = zm_weapons::is_weapon_upgraded(current_weapon);
-                    pap_machine.var_9c076b6.pap_machine = pap_machine function_ec9ac3b2(player, current_weapon);
+                    pap_machine.b_weapon_supports_aat = zm_weapons::weapon_supports_aat(current_weapon);
+                    pap_machine.var_a86430cb = zm_weapons::is_weapon_upgraded(current_weapon);
+                    pap_machine.var_9c076b6 = pap_machine function_ec9ac3b2(player, current_weapon);
                     var_376755db = pap_machine zm_pap_util::function_aaf2d8(player, current_weapon, pap_machine.b_weapon_supports_aat, pap_machine.var_a86430cb);
                     if (!player zm_score::can_player_purchase(var_376755db)) {
                         self playsound(#"zmb_perks_packa_deny");
@@ -607,7 +607,7 @@ function private function_8a5fe651(pap_machine, current_weapon) {
 // Checksum 0x336b23fc, Offset: 0x2810
 // Size: 0x80c
 function private function_222c0292(current_weapon, packa_rollers, pap_machine, var_376755db, var_9c076b6 = 0) {
-    pap_machine.pack_player.pap_machine = self;
+    pap_machine.pack_player = self;
     pap_machine flag::clear("pap_waiting_for_user");
     self.var_9b0383f5 = 1;
     self.var_655c0753 = undefined;
@@ -814,15 +814,15 @@ function private wait_for_player_to_take(player, weapon, packa_timer, var_a86430
                 level notify(#"pap_taken", {#e_player:player, #var_5e879929:pap_machine});
                 pap_machine notify(#"pap_taken", {#e_player:player});
                 player notify(#"pap_taken", {#var_5e879929:pap_machine});
-                player.pap_used.player = 1;
+                player.pap_used = 1;
                 weapon_limit = zm_utility::get_player_weapon_limit(player);
                 player zm_weapons::take_fallback_weapon();
                 /#
                     if (is_true(pap_machine.unitrigger_stub.var_16aa21d4)) {
                         if (!isdefined(player.var_8d5839f4)) {
-                            player.var_8d5839f4.player = [];
+                            player.var_8d5839f4 = [];
                         } else if (!isarray(player.var_8d5839f4)) {
-                            player.var_8d5839f4.player = array(player.var_8d5839f4);
+                            player.var_8d5839f4 = array(player.var_8d5839f4);
                         }
                         player.var_8d5839f4[player.var_8d5839f4.size] = upgrade_weapon;
                     }
@@ -971,15 +971,15 @@ function private function_f0fe4bae(s_unitrigger_stub) {
     if (original_weapon != level.weaponnone && !zm_loadout::is_placeable_mine(original_weapon) && !zm_equipment::is_equipment(original_weapon)) {
         s_aat = self aat::getaatonweapon(original_weapon);
         if (isdefined(s_aat)) {
-            s_unitrigger_stub.var_da1ddb37.s_unitrigger_stub = s_aat.name;
+            s_unitrigger_stub.var_da1ddb37 = s_aat.name;
         }
-        s_unitrigger_stub.var_3ae1dddb.s_unitrigger_stub = self zm_pap_util::function_83c29ddb(original_weapon);
+        s_unitrigger_stub.var_3ae1dddb = self zm_pap_util::function_83c29ddb(original_weapon);
         if (s_unitrigger_stub.var_3ae1dddb == 0) {
-            s_unitrigger_stub.var_59f1d079.s_unitrigger_stub = 1;
+            s_unitrigger_stub.var_59f1d079 = 1;
         }
         self notify(#"packing_weapon", {#w_current:original_weapon});
         weaponitem = item_inventory::function_230ceec4(self.currentweapon);
-        self thread item_inventory::remove_inventory_item(weaponitem.var_bd027dd9);
+        self thread item_inventory::remove_inventory_item(weaponitem.networkid);
     }
     if (!is_true(self.intermission) && !is_true(self.is_drinking)) {
         self zm_weapons::switch_back_primary_weapon();

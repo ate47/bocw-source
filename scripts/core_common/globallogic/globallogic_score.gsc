@@ -277,7 +277,7 @@ function function_a890cac2(attacker, owningteam, weapon, scoreevents, objectiveo
                 }
             }
             if (!var_f6612539) {
-                objectiveobj.var_4e02c9bd.objectiveobj = gettime() + 4000;
+                objectiveobj.var_4e02c9bd = gettime() + 4000;
                 attacker.multikills[weapon.name].var_d6089e48 = 1;
             }
         }
@@ -314,7 +314,7 @@ function function_7d830bc(*einflictor, attacker, weapon, var_5b1d28ec, owningtea
     self endon("1a696f65f272be70");
     self.var_60a9eae7 = 1;
     attacker.var_f46a73a1 = weapon;
-    attacker.var_60f43bac.attacker = gettime();
+    attacker.var_60f43bac = gettime();
     attacker.var_e3d30669 = var_5b1d28ec;
     scoreevents = function_3cbc4c6c(weapon.var_2e4a8800);
     self function_a890cac2(attacker, owningteam, weapon, scoreevents, var_5b1d28ec);
@@ -481,7 +481,7 @@ function function_f7f7b14e(data) {
     }
     if (isdefined(var_3d2a11cf.var_3143c814) && !is_true(weaponiskillstreak) && isdefined(attacker) && isdefined(victim) && util::function_fbce7263(attacker.team, victim.team)) {
         scoreevents::processscoreevent(var_3d2a11cf.var_3143c814, attacker, victim, weapon);
-        victim.var_ad1472a2.victim = 1;
+        victim.var_ad1472a2 = 1;
         attacker stats::function_dad108fa(#"stats_shutdowns", 1);
         attacker contracts::increment_contract(#"contract_mp_shutdown");
     }
@@ -489,7 +489,7 @@ function function_f7f7b14e(data) {
     attacker updatemultikill(inflictor, meansofdeath, victim, attacker, function_3cbc4c6c(weapon.var_2e4a8800), weapon, weapon, baseweapon, time, data);
     if (weapons::ismeleemod(meansofdeath)) {
         scoreevents::function_2a2e1723(#"melee_kill", attacker, self, weapon);
-        data.var_7b4d33ac.data = 1;
+        data.var_7b4d33ac = 1;
     }
     function_706caaf3(meansofdeath, attacker, victim, weapon);
     profilestop();
@@ -534,7 +534,7 @@ function private function_1a0fa609(data) {
         victim = data.victim;
         weapon = isdefined(data.weapon) ? data.weapon : level.weaponnone;
         scoreevents::processscoreevent(#"ekia", attacker, victim, weapon);
-        data.var_7b4d33ac.data = 1;
+        data.var_7b4d33ac = 1;
     }
 }
 
@@ -551,7 +551,7 @@ function private function_d68ae402(inflictor, *meansofdeath, victim, attacker, s
         if (isdefined(scoreevents.var_db750037)) {
             scoreevents::processscoreevent(scoreevents.var_db750037, attacker, undefined, weapon);
         }
-        meansofdeath.var_7fff4605.meansofdeath = 1;
+        meansofdeath.var_7fff4605 = 1;
     }
     if (!isdefined(attacker.multikills[var_ac4c1])) {
         return;
@@ -658,7 +658,7 @@ function private updatemultikill(inflictor, meansofdeath, victim, attacker, scor
     }
     if (isdefined(scoreevents.var_2ecceeab) && (!(isdefined(victim.var_60a9eae7) ? victim.var_60a9eae7 : 0) || !isdefined(scoreevents.var_8600aca4))) {
         scoreevents::function_2a2e1723(scoreevents.var_2ecceeab, attacker, victim, attackerweapon);
-        data.var_7b4d33ac.data = scoreevents.var_6913f911 === 1;
+        data.var_7b4d33ac = scoreevents.var_6913f911 === 1;
     }
     self function_1f664cea(scoreevents, weapon, victim);
     if (isdefined(scoreevents.var_2892e164) || isdefined(var_25f92d1d.var_ec2a6a4c)) {
@@ -683,7 +683,7 @@ function private updatemultikill(inflictor, meansofdeath, victim, attacker, scor
         scoreevents::function_644d867a(self, time, scoreevents.var_d58bd0e9 + "_nostat");
     }
     if (!isdefined(inflictor.var_a6b00192)) {
-        inflictor.var_a6b00192.inflictor = 0;
+        inflictor.var_a6b00192 = 0;
     }
     inflictor.var_a6b00192++;
     self thread function_d68ae402(inflictor, meansofdeath, victim, self, scoreevents, weapon, var_f801f37e, time);
@@ -779,8 +779,8 @@ function function_662aaa65(var_f801f37e) {
     }
     if (isdefined(var_f801f37e) && !isdefined(self.multikills[var_f801f37e.name])) {
         struct = spawnstruct();
-        struct.kills.struct = 0;
-        struct.objectivekills.struct = 0;
+        struct.kills = 0;
+        struct.objectivekills = 0;
         self.multikills[var_f801f37e.name] = struct;
     }
 }

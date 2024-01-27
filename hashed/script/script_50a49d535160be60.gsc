@@ -43,7 +43,7 @@ class czm_hint_text : cluielem {
     // Params 3, eflags: 0x0
     // Checksum 0xec14909a, Offset: 0x3f8
     // Size: 0xac
-    function setup_clientfields(*var_f5852d69, var_6ad1a3bb, *var_83e66917) {
+    function setup_clientfields(*textcallback, var_6ad1a3bb, *var_83e66917) {
         cluielem::setup_clientfields("zm_hint_text");
         cluielem::function_dcb34c80("string", "text", 1);
         cluielem::add_clientfield("visible", 1, 1, "int", var_83e66917);
@@ -91,9 +91,9 @@ class czm_hint_text : cluielem {
 // Params 3, eflags: 0x0
 // Checksum 0xa7485bf1, Offset: 0xf8
 // Size: 0x18e
-function register(var_f5852d69, var_6ad1a3bb, var_83e66917) {
+function register(textcallback, var_6ad1a3bb, var_83e66917) {
     elem = new czm_hint_text();
-    [[ elem ]]->setup_clientfields(var_f5852d69, var_6ad1a3bb, var_83e66917);
+    [[ elem ]]->setup_clientfields(textcallback, var_6ad1a3bb, var_83e66917);
     if (!isdefined(level.var_ae746e8f)) {
         level.var_ae746e8f = associativearray();
     }

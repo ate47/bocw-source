@@ -300,7 +300,7 @@ function ai_puppet_cursor_tracker() {
             forward_vector = vectorscale(forward, 4000);
             physicsbox = vectorscale((1, 1, 1), 10);
             playereye = self getplayercamerapos();
-            level.playercursor = physicstrace(playereye, playereye + forward_vector, -1 * physicsbox, physicsbox, self, 64 & 2);
+            level.playercursor = physicstrace(playereye, playereye + forward_vector, -1 * physicsbox, physicsbox, self, 64 | 2);
             level.playercursorai = undefined;
             level.playercursornode = undefined;
             cursorcolor = (0, 1, 1);

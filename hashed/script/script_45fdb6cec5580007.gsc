@@ -77,7 +77,7 @@ function function_59396fe8(squad) {
 // Checksum 0x142954bf, Offset: 0x3c0
 // Size: 0xe2
 function function_fc04a299(party) {
-    foreach (member in party.var_d77ed5eb) {
+    foreach (member in party.party_members) {
         if (self == member) {
             continue;
         }
@@ -302,9 +302,9 @@ function function_ff3321ee(var_bdb3f6a6) {
         status = self player::function_3d288f14();
         if (!isdefined(squad.voip) || status != squad.voip && status == #"game") {
             if (status == #"game") {
-                squad.voip.squad = #"game";
+                squad.voip = #"game";
             } else {
-                squad.voip.squad = #"none";
+                squad.voip = #"none";
             }
         }
     }
@@ -339,13 +339,13 @@ function private function_114b9455(var_58d1e914, start_index) {
 // Size: 0xfa
 function private function_80d5f55(var_58d1e914, party) {
     var_c63f18d8 = 1;
-    foreach (var_52ec371a in party.var_d77ed5eb) {
-        if (var_52ec371a.teammateindex > 0) {
-            var_c63f18d8 = var_52ec371a.teammateindex;
+    foreach (party_member in party.party_members) {
+        if (party_member.teammateindex > 0) {
+            var_c63f18d8 = party_member.teammateindex;
         } else {
             var_c63f18d8 = function_114b9455(var_58d1e914, var_c63f18d8);
         }
-        if (self == var_52ec371a) {
+        if (self == party_member) {
             return var_c63f18d8;
         }
     }

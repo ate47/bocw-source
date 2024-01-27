@@ -106,8 +106,8 @@ function function_1e0fa475(weapon, var_2b003a39, var_5baceff5, n_duration) {
             if (self function_6c7755f9(player)) {
                 player thread function_5bcee875(self, weapon, var_5baceff5, var_2b003a39);
             } else if (self function_6c7755f9(player, 1) && !isdefined(player.var_65a13a0f)) {
-                player.var_23fa23a9.player = 1;
-                player.var_65a13a0f.player = self;
+                player.var_23fa23a9 = 1;
+                player.var_65a13a0f = self;
                 player clientfield::set("" + #"hash_1668fcf85f7c231", 3);
             } else if (!self function_6c7755f9(player, 1, 0) && is_true(player.var_60b31640) && is_true(player.var_23fa23a9) && player.var_65a13a0f === self) {
                 n_current_time = gettime();

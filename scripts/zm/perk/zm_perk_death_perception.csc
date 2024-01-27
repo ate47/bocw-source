@@ -80,7 +80,7 @@ function function_95ed7b4a() {
 // Params 4, eflags: 0x0
 // Checksum 0x49d5199c, Offset: 0x700
 // Size: 0x53c
-function function_fcfd6064(localclientnum, var_a6762160, clientdata, var_bd027dd9) {
+function function_fcfd6064(localclientnum, var_a6762160, clientdata, networkid) {
     player = function_27673a7(localclientnum);
     if (isdefined(player) && is_true(level.var_1c1febec[localclientnum]) && !function_65b9eb0f(localclientnum) && player function_6c32d092(localclientnum, #"hash_7082a9127deb8f95")) {
         var_8ad7f92f = "rob_sr_item_white_dp";
@@ -120,8 +120,8 @@ function function_fcfd6064(localclientnum, var_a6762160, clientdata, var_bd027dd
                 var_8ad7f92f = var_a6762160.var_599225da;
             }
         }
-        if (isdefined(var_bd027dd9) && isdefined(clientdata) && isdefined(clientdata.var_ffc1c0e1)) {
-            if (isdefined(clientdata.var_ffc1c0e1[var_bd027dd9]) && clientdata.var_ffc1c0e1[var_bd027dd9].servertime > getservertime(localclientnum, 1)) {
+        if (isdefined(networkid) && isdefined(clientdata) && isdefined(clientdata.var_ffc1c0e1)) {
+            if (isdefined(clientdata.var_ffc1c0e1[networkid]) && clientdata.var_ffc1c0e1[networkid].servertime > getservertime(localclientnum, 1)) {
                 var_8ad7f92f = #"hash_3d6eb4b9bbc74fbd";
             }
         }
@@ -164,8 +164,8 @@ function function_fcfd6064(localclientnum, var_a6762160, clientdata, var_bd027dd
                 var_8ad7f92f = var_a6762160.var_599225da;
             }
         }
-        if (isdefined(var_bd027dd9) && isdefined(clientdata) && isdefined(clientdata.var_ffc1c0e1)) {
-            if (isdefined(clientdata.var_ffc1c0e1[var_bd027dd9]) && clientdata.var_ffc1c0e1[var_bd027dd9].servertime > getservertime(localclientnum, 1)) {
+        if (isdefined(networkid) && isdefined(clientdata) && isdefined(clientdata.var_ffc1c0e1)) {
+            if (isdefined(clientdata.var_ffc1c0e1[networkid]) && clientdata.var_ffc1c0e1[networkid].servertime > getservertime(localclientnum, 1)) {
                 var_8ad7f92f = #"hash_3d6eb4b9bbc74fbd";
             }
         }

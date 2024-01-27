@@ -289,8 +289,8 @@ function function_a94fc02e(entity) {
     } else if (entity.zombie_move_speed === "run") {
         entity zombie_utility::set_zombie_run_cycle("sprint");
     }
-    entity.var_a2691e6b.entity = gettime() + randomintrange(5000, 7500);
-    entity.is_charging.entity = 1;
+    entity.var_a2691e6b = gettime() + randomintrange(5000, 7500);
+    entity.is_charging = 1;
     var_b7eca892 = {#enemy:entity.enemy};
     blackboard::addblackboardevent("skeleton_speed_update", var_b7eca892, randomintrange(1000, 2000));
     if (isdefined(level.var_a5007a40)) {
@@ -303,8 +303,8 @@ function function_a94fc02e(entity) {
 // Checksum 0xa121800d, Offset: 0x1250
 // Size: 0xd0
 function function_9f7eb359(entity) {
-    entity.is_charging.entity = 0;
-    entity.var_a9bb453f.entity = gettime() + randomintrange(5000, 7500);
+    entity.is_charging = 0;
+    entity.var_a9bb453f = gettime() + randomintrange(5000, 7500);
     if (entity.zombie_move_speed === "run") {
         entity zombie_utility::set_zombie_run_cycle("walk");
     } else if (entity.zombie_move_speed === "sprint") {

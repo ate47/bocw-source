@@ -89,20 +89,20 @@ function function_b974aa72(origin, player) {
     player.doa.var_36cc2d9a = 1;
     player namespace_7f5aeb59::function_77785447(1);
     player function_fee48e9e();
-    siegebot.var_8c05c51a.siegebot = &function_ba7e9b89;
+    siegebot.var_8c05c51a = &function_ba7e9b89;
     siegebot thread namespace_ec06fe4a::function_ae010bb4(player);
     player.doa.var_36cc2d9a = undefined;
     player.doa.vehicle = siegebot;
-    siegebot.team.siegebot = player.team;
+    siegebot.team = player.team;
     siegebot.owner = player;
-    siegebot.playercontrolled.siegebot = 1;
-    siegebot.var_7efce95.siegebot = 0;
+    siegebot.playercontrolled = 1;
+    siegebot.var_7efce95 = 0;
     siegebot setmodel("zombietron_siegebot_mini_" + player.doa.color);
     siegebot usevehicle(player, 0);
     siegebot makeunusable();
-    siegebot.health.siegebot = 9999999;
+    siegebot.health = 9999999;
     siegebot thread function_7980d69c();
-    siegebot.var_b9bb0656.siegebot = 1;
+    siegebot.var_b9bb0656 = 1;
     siegebot function_d733412a(0);
     timeout = player namespace_1c2a96f9::function_4808b985(40);
     if (isdefined(level.doa.var_a77e6349)) {
@@ -139,7 +139,7 @@ function function_b974aa72(origin, player) {
 function function_9b3b2351(*var_f3fd3234, vehicle) {
     self endon(#"disconnect");
     if (isdefined(vehicle)) {
-        vehicle.var_3e742dc1.vehicle = 1;
+        vehicle.var_3e742dc1 = 1;
         vehicle usevehicle(self, 0);
     }
     if (namespace_4dae815d::function_59a9cf1d() == 0 && isdefined(level.doa.var_39e3fa99)) {

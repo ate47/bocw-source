@@ -16,16 +16,16 @@ function autoexec main() {
         effectcount = isdefined(fxbundle.effectcount) ? fxbundle.effectcount : 0;
         processedfxbundle = spawnstruct();
         processedfxbundle.effectcount = effectcount;
-        processedfxbundle.fx.processedfxbundle = [];
-        processedfxbundle.name.processedfxbundle = fxbundle.name;
+        processedfxbundle.fx = [];
+        processedfxbundle.name = fxbundle.name;
         for (index = 1; index <= effectcount; index++) {
             fx = fxbundle.("effect" + index + "_fx");
             if (isdefined(fx)) {
                 fxstruct = spawnstruct();
-                fxstruct.attachtag.fxstruct = fxbundle.("effect" + index + "_attachtag");
-                fxstruct.fx.fxstruct = fxbundle.("effect" + index + "_fx");
-                fxstruct.stopongib.fxstruct = fxclientutils::_gibpartnametogibflag(fxbundle.("effect" + index + "_stopongib"));
-                fxstruct.stoponpiecedestroyed.fxstruct = fxbundle.("effect" + index + "_stoponpiecedestroyed");
+                fxstruct.attachtag = fxbundle.("effect" + index + "_attachtag");
+                fxstruct.fx = fxbundle.("effect" + index + "_fx");
+                fxstruct.stopongib = fxclientutils::_gibpartnametogibflag(fxbundle.("effect" + index + "_stopongib"));
+                fxstruct.stoponpiecedestroyed = fxbundle.("effect" + index + "_stoponpiecedestroyed");
                 processedfxbundle.fx[processedfxbundle.fx.size] = fxstruct;
             }
         }
@@ -50,7 +50,7 @@ function private _getfxbundle(name) {
 // Size: 0x13c
 function private _configentity(localclientnum, entity) {
     if (!isdefined(entity._fxcharacter)) {
-        entity._fxcharacter.entity = [];
+        entity._fxcharacter = [];
         handledgibs = array(8, 16, 32, 128, 256);
         foreach (gibflag in handledgibs) {
             gibclientutils::addgibcallback(localclientnum, entity, gibflag, &_gibhandler);

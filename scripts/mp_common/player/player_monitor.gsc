@@ -94,10 +94,10 @@ function private function_43e771ee(died = 0) {
         timeused = function_f8d53445() - self.var_3dc66299.starttime;
         if (self.var_3dc66299.shots > 0 || timeused >= 2000) {
             longesthitdist = 0;
-            var_e0ba2ec1 = self match_record::get_player_stat(#"hash_ec4aea1a8bbd82");
-            if (isdefined(var_e0ba2ec1)) {
-                longesthitdist = self match_record::get_stat(#"lives", var_e0ba2ec1, "longest_hit_distance");
-                self match_record::set_stat(#"lives", var_e0ba2ec1, "longest_hit_distance", 0);
+            currentlifeindex = self match_record::get_player_stat(#"hash_ec4aea1a8bbd82");
+            if (isdefined(currentlifeindex)) {
+                longesthitdist = self match_record::get_stat(#"lives", currentlifeindex, "longest_hit_distance");
+                self match_record::set_stat(#"lives", currentlifeindex, "longest_hit_distance", 0);
             }
             if (self.var_3dc66299.deathsduringuse > 0) {
                 died = 1;
@@ -106,22 +106,22 @@ function private function_43e771ee(died = 0) {
             attachments = bb::function_285f8efd(self.var_3dc66299.currentweapon);
             reticle = hash(self getweaponoptic(self.var_3dc66299.currentweapon));
             var_178db383 = spawnstruct();
-            var_178db383.shots.var_178db383 = self.var_3dc66299.shots;
-            var_178db383.hits.var_178db383 = self.var_3dc66299.hits;
-            var_178db383.kills.var_178db383 = self.var_3dc66299.kills;
-            var_178db383.headshots.var_178db383 = self.var_3dc66299.headshots;
+            var_178db383.shots = self.var_3dc66299.shots;
+            var_178db383.hits = self.var_3dc66299.hits;
+            var_178db383.kills = self.var_3dc66299.kills;
+            var_178db383.headshots = self.var_3dc66299.headshots;
             var_178db383.died = died;
             var_178db383.time_used_s = var_27047881;
             var_178db383.longest_hit_distance = longesthitdist;
-            var_178db383.attachment1.var_178db383 = attachments.attachment0;
-            var_178db383.attachment2.var_178db383 = attachments.attachment1;
-            var_178db383.attachment3.var_178db383 = attachments.attachment2;
-            var_178db383.attachment4.var_178db383 = attachments.attachment3;
-            var_178db383.attachment5.var_178db383 = attachments.attachment4;
-            var_178db383.attachment6.var_178db383 = attachments.attachment5;
-            var_178db383.attachment7.var_178db383 = attachments.attachment6;
+            var_178db383.attachment1 = attachments.attachment0;
+            var_178db383.attachment2 = attachments.attachment1;
+            var_178db383.attachment3 = attachments.attachment2;
+            var_178db383.attachment4 = attachments.attachment3;
+            var_178db383.attachment5 = attachments.attachment4;
+            var_178db383.attachment6 = attachments.attachment5;
+            var_178db383.attachment7 = attachments.attachment6;
             var_178db383.reticle = reticle;
-            var_178db383.weapon.var_178db383 = self.var_3dc66299.currentweapon.name;
+            var_178db383.weapon = self.var_3dc66299.currentweapon.name;
             function_92d1707f(#"hash_618e6178a21f0b3d", var_178db383);
             self.var_3dc66299.currentweapon = undefined;
         }
@@ -201,7 +201,7 @@ function private breadcrumbs() {
     }
     while (1) {
         if (isalive(self)) {
-            lifeindex = isdefined(self.pers[#"hash_2042ab53f67e07c0"].life.var_2824e826) ? self.pers[#"hash_2042ab53f67e07c0"].life.var_2824e826 : -1;
+            lifeindex = isdefined(self.pers[#"telemetry"].life.var_2824e826) ? self.pers[#"telemetry"].life.var_2824e826 : -1;
             recordbreadcrumbdataforplayer(self, lifeindex);
         }
         wait(waittime);

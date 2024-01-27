@@ -34,8 +34,8 @@ function on_vehicle_spawned() {
     if (isalive(vehicle) && isdefined(vehicle.target)) {
         start_spawn = struct::get(vehicle.target);
         if (isdefined(start_spawn)) {
-            vehicle.origin.vehicle = start_spawn.origin;
-            vehicle.angles.vehicle = start_spawn.angles;
+            vehicle.origin = start_spawn.origin;
+            vehicle.angles = start_spawn.angles;
         }
     }
 }

@@ -60,9 +60,9 @@ function private function_67189b6b(localclientnum, newval) {
     newval = newval & -5;
     self.falling = self clientfield::get("dynamic_item_drop_falling");
     if (newval == 0) {
-        if (isdefined(self) && isdefined(self.var_bd027dd9) && isdefined(level.item_spawn_drops[self.var_bd027dd9])) {
-            arrayremoveindex(level.item_spawn_drops, self.var_bd027dd9, 1);
-            arrayremoveindex(level.var_2b5a36e1, self.var_bd027dd9, 1);
+        if (isdefined(self) && isdefined(self.networkid) && isdefined(level.item_spawn_drops[self.networkid])) {
+            arrayremoveindex(level.item_spawn_drops, self.networkid, 1);
+            arrayremoveindex(level.var_2b5a36e1, self.networkid, 1);
         }
     } else if (newval == 1) {
         /#
@@ -71,7 +71,7 @@ function private function_67189b6b(localclientnum, newval) {
         if (self.id >= 2048) {
             return;
         }
-        self.var_bd027dd9 = item_world_util::function_1f0def85(self);
+        self.networkid = item_world_util::function_1f0def85(self);
         self.hidetime = 0;
         if (stashitem) {
             self.hidetime = -1;
@@ -81,23 +81,23 @@ function private function_67189b6b(localclientnum, newval) {
             self function_1fe1281(localclientnum, clientfield::get("dynamic_item_drop_count"));
         }
         arrayremovevalue(level.item_spawn_drops, undefined, 1);
-        level.item_spawn_drops[self.var_bd027dd9] = self;
+        level.item_spawn_drops[self.networkid] = self;
         item_world::function_b78a9820(localclientnum);
         player = function_5c10bd79(localclientnum);
-        player item_world::show_item(localclientnum, self.var_bd027dd9, !stashitem);
+        player item_world::show_item(localclientnum, self.networkid, !stashitem);
         if (isplayer(player) && distance2dsquared(self.origin, player.origin) <= function_a3f6cdac(1350)) {
-            player.var_506495f9.player = 1;
+            player.var_506495f9 = 1;
             clientdata = item_world::function_a7e98a1a(localclientnum);
             model = self item_world::function_7731d23c(clientdata);
             if (isdefined(model)) {
                 model show();
-                item_world::function_84964a9e(localclientnum, self.var_a6762160, model, self.var_bd027dd9);
+                item_world::function_84964a9e(localclientnum, self.var_a6762160, model, self.networkid);
             }
         }
         item_inventory::function_b1136fc8(localclientnum, self);
     } else if (newval == 2 || newval == 3) {
         self.hidetime = gettime();
-        self.var_bd027dd9 = item_world_util::function_1f0def85(self);
+        self.networkid = item_world_util::function_1f0def85(self);
         if (newval == 2) {
             item_world::play_pickup_fx(localclientnum, self);
             item_inventory::function_31868137(localclientnum, self);
@@ -106,11 +106,11 @@ function private function_67189b6b(localclientnum, newval) {
         }
         item_world::function_b78a9820(localclientnum);
         item_world::function_2990e5f(localclientnum, self);
-        if (isdefined(self.var_bd027dd9) && getdvarint(#"hash_99bb0233e482c77", 0)) {
-            level.item_spawn_drops[self.var_bd027dd9] = undefined;
+        if (isdefined(self.networkid) && getdvarint(#"hash_99bb0233e482c77", 0)) {
+            level.item_spawn_drops[self.networkid] = undefined;
         }
         player = function_5c10bd79(localclientnum);
-        player item_world::hide_item(localclientnum, self.var_bd027dd9);
+        player item_world::hide_item(localclientnum, self.networkid);
     }
 }
 
@@ -228,10 +228,10 @@ function function_63226f88(*localclientnum, *oldval, newval, *bnewent, *binitial
 function function_45f94325(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self endon(#"death");
     item_world::function_1b11e73c();
-    if (!isdefined(self.var_bd027dd9)) {
-        self.var_bd027dd9 = item_world_util::function_1f0def85(self);
+    if (!isdefined(self.networkid)) {
+        self.networkid = item_world_util::function_1f0def85(self);
     }
-    level.var_2b5a36e1[self.var_bd027dd9] = self;
+    level.var_2b5a36e1[self.networkid] = self;
     self.var_f4522f8c = getservertime(bwastimejump) + randomintrange(0, 500);
 }
 

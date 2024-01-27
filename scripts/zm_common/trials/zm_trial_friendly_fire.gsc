@@ -71,7 +71,7 @@ function private on_begin(var_9e0a2a85 = 1) {
         do {
             bot = bot::add_bot(var_be33ceec);
         } while(!isdefined(bot));
-        bot.var_247fdf5.bot = 1;
+        bot.var_247fdf5 = 1;
         wait(1);
         if (bot util::is_spectating()) {
             bot zm_player::spectator_respawn_player();

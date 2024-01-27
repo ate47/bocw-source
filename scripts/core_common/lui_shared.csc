@@ -329,7 +329,7 @@ function private _screen_fade(localclientnum, n_time, n_target_alpha, n_start_al
     s_menu.n_start_alpha = n_start_alpha;
     s_menu.n_target_alpha = n_target_alpha;
     s_menu.n_target_time = n_time_ms;
-    s_menu.n_start_time.s_menu = gettime();
+    s_menu.n_start_time = gettime();
     [[ s_menu.lui_menu ]]->open(localclientnum);
     [[ s_menu.lui_menu ]]->set_red(localclientnum, v_color[0]);
     [[ s_menu.lui_menu ]]->set_green(localclientnum, v_color[1]);

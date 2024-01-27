@@ -44,7 +44,7 @@ function init_shared() {
 // Checksum 0xb91b5a58, Offset: 0x3c0
 // Size: 0x22
 function function_853f8cff(watcher) {
-    watcher.onspawn.watcher = &function_f37c777a;
+    watcher.onspawn = &function_f37c777a;
 }
 
 // Namespace molotov/molotov
@@ -82,7 +82,7 @@ function function_1cdbb1e5(owner, weapon) {
     var_3e7a440 = getscriptbundle(weapon.customsettings);
     killcament = spawn("script_model", self.origin);
     killcament util::deleteaftertime(var_3e7a440.var_b79d64a9 + 5);
-    killcament.starttime.killcament = gettime();
+    killcament.starttime = gettime();
     killcament linkto(self);
     killcament setweapon(self.weapon);
     killcament killcam::store_killcam_entity_on_entity(self);
@@ -458,7 +458,7 @@ function function_8a03d3f3(owner, impactpos, startpos, normal, multiplier, rotat
     var_bf264593 = level.var_a88ac760.size;
     level.var_a88ac760[var_bf264593] = {};
     var_4b424bc1 = level.var_a88ac760[var_bf264593];
-    var_4b424bc1.var_46ee5246.var_4b424bc1 = int(gettime() + customsettings.var_b79d64a9 * 1000);
+    var_4b424bc1.var_46ee5246 = int(gettime() + customsettings.var_b79d64a9 * 1000);
     var_4b424bc1.origin = startpos;
     var_d58f4be = {};
     thread damageeffectarea(owner, startpos, killcament, normal, var_aecaaa11, customsettings, multiplier, var_e76400c0, wallnormal, var_693f108f, var_4b424bc1.var_46ee5246, var_d58f4be);
@@ -555,7 +555,7 @@ function private damageeffectarea(owner, position, killcament, *normal, weapon, 
     while (gettime() < damageendtime && (!isdefined(position) || position.team == originalteam) && level.gameended !== 1) {
         potential_targets = self getpotentialtargets(position, customsettings);
         if (isdefined(position)) {
-            position.var_52dceca.position = [];
+            position.var_52dceca = [];
         }
         foreach (target in potential_targets) {
             self trytoapplyfiredamage(target, position, killcament, fireeffectarea, var_289a74bc, normal, weapon, customsettings);
@@ -584,7 +584,7 @@ function private damageeffectarea(owner, position, killcament, *normal, weapon, 
         target status_effect::function_408158ef(level.var_5d450296, level.var_e6a4f161);
     }
     if (isdefined(position)) {
-        position.var_52dceca.position = [];
+        position.var_52dceca = [];
     }
     if (isdefined(normal)) {
         normal entityheadicons::destroyentityheadicons();

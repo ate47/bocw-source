@@ -240,7 +240,7 @@ function function_eccc5dbd() {
         spot = spawn("<unknown string>", player.origin);
         spot setmodel("<unknown string>");
         if (isdefined(var_770ed480) && var_770ed480.data.size > 0) {
-            spot.origin.spot = var_770ed480.data[0].origin;
+            spot.origin = var_770ed480.data[0].origin;
         }
         println("<unknown string>" + spot.origin);
         level thread function_47187ffc(spot);

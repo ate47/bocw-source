@@ -164,7 +164,7 @@ function main() {
 // Checksum 0x6341dd74, Offset: 0xd30
 // Size: 0x1f8
 function function_3111b4b2(var_d748f8af, triggertype = "trigger_box", var_bacb72c4, height, width, var_7946c1f6 = 0) {
-    trigger = namespace_ec06fe4a::function_b5731057(triggertype, (0, 0, 0), 1 & 2 & 4 & 4096 & 512 & var_7946c1f6, var_bacb72c4, height, width);
+    trigger = namespace_ec06fe4a::function_b5731057(triggertype, (0, 0, 0), 1 | 2 | 4 | 4096 | 512 | var_7946c1f6, var_bacb72c4, height, width);
     if (isdefined(trigger)) {
         trigger enablelinkto();
         trigger.type = var_d748f8af;
@@ -234,7 +234,7 @@ function function_5bfa98c9(type, var_2e120d02, var_a3ea8b6f = 1024, flush = 0, v
         level.doa.var_90dc2431[var_e831ee92] = array(level.doa.var_90dc2431[var_e831ee92]);
     }
     level.doa.var_90dc2431[var_e831ee92][level.doa.var_90dc2431[var_e831ee92].size] = trigger;
-    trigger.var_a09cdd4f.trigger = gettime();
+    trigger.var_a09cdd4f = gettime();
     trigger triggerenable(1);
     return trigger;
 }

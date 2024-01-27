@@ -88,14 +88,14 @@ function init(weapon_name, flourish_weapon_name, cost, wallbuy_targetname, hint_
 function prepare_stub(stub, weapon, flourish_weapon, cost, *wallbuy_targetname, hint_string, vo_dialog_id, flourish_fn) {
     if (isdefined(weapon)) {
         weapon.hint_string = hint_string;
-        weapon.cursor_hint.weapon = "HINT_WEAPON";
+        weapon.cursor_hint = "HINT_WEAPON";
         weapon.cursor_hint_weapon = flourish_weapon;
         weapon.cost = wallbuy_targetname;
         weapon.weapon = flourish_weapon;
         weapon.vo_dialog_id = vo_dialog_id;
         weapon.flourish_weapon = cost;
-        weapon.trigger_func.weapon = &melee_weapon_think;
-        weapon.prompt_and_visibility_func.weapon = &function_e5bf8f08;
+        weapon.trigger_func = &melee_weapon_think;
+        weapon.prompt_and_visibility_func = &function_e5bf8f08;
         weapon.flourish_fn = flourish_fn;
     }
 }
@@ -151,7 +151,7 @@ function add_melee_weapon(weapon, flourish_weapon, cost, wallbuy_targetname, hin
 function set_fallback_weapon(weapon_name, fallback_weapon_name) {
     melee_weapon = find_melee_weapon(getweapon(weapon_name));
     if (isdefined(melee_weapon)) {
-        melee_weapon.fallback_weapon.melee_weapon = getweapon(fallback_weapon_name);
+        melee_weapon.fallback_weapon = getweapon(fallback_weapon_name);
     }
 }
 

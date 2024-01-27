@@ -652,7 +652,7 @@ function function_a432e633() {
                     continue;
                 }
                 player clear_gesture();
-                player.loadoutgesture.player = getweapon(gesture);
+                player.loadoutgesture = getweapon(gesture);
                 if (isdefined(player.loadoutgesture) && player.loadoutgesture != level.weaponnone) {
                     player give_gesture(player.loadoutgesture);
                 }
@@ -890,8 +890,8 @@ function function_a4ccb933(var_b008e583, var_d7016d06) {
 function function_df0b6f84(spiral) {
     /#
         degrees = spiral.spacing * 360 / 6.28319 * spiral.radius;
-        spiral.angle.spiral = spiral.angle + degrees;
-        spiral.radius.spiral = function_b1820790(spiral.a, spiral.b, spiral.c, spiral.angle);
+        spiral.angle = spiral.angle + degrees;
+        spiral.radius = function_b1820790(spiral.a, spiral.b, spiral.c, spiral.angle);
     #/
 }
 

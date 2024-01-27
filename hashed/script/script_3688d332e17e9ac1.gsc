@@ -36,7 +36,7 @@ function private on_begin(var_59803fa8) {
     level.var_3c453815 = zm_trial::function_5769f26a(var_59803fa8);
     foreach (player in getplayers()) {
         player zm_trial_util::function_8677ce00(1);
-        player.b_hit.player = 0;
+        player.b_hit = 0;
         player callback::on_weapon_fired(&on_weapon_fired);
         foreach (var_5a1e3e5b in level.hero_weapon) {
             foreach (w_hero in var_5a1e3e5b) {

@@ -339,9 +339,9 @@ function function_f1bc8a08(player) {
 // Size: 0x1aa
 function function_e9bd72e8(var_7d0e37f8, instance) {
     scriptmodel = namespace_8b6a9d79::function_f3d93ee9(var_7d0e37f8, "tag_origin");
-    scriptmodel.origin.scriptmodel = scriptmodel.origin + vectorscale((0, 0, 1), 40);
+    scriptmodel.origin = scriptmodel.origin + vectorscale((0, 0, 1), 40);
     scriptmodel clientfield::set("safehouse_claim_fx", 1);
-    scriptmodel.targetname.scriptmodel = "unclaimed_safehouse";
+    scriptmodel.targetname = "unclaimed_safehouse";
     trigger = namespace_8b6a9d79::function_214737c7(var_7d0e37f8, &function_d9ea0e09, #"hash_5ecd49cccca29d87", 0, undefined, undefined, undefined, vectorscale((0, 0, 1), 40));
     trigger.instance = instance;
     trigger.scriptmodel = scriptmodel;
@@ -420,7 +420,7 @@ function private function_9d178321() {
             a_structs = struct::get_array(safehouse.targetname, "target");
             foreach (struct in a_structs) {
                 if (struct.content_key === #"hash_4e5c1619877bed34") {
-                    safehouse.var_8947b368.safehouse = namespace_8b6a9d79::function_f3d93ee9(struct, #"toy_stuffed_animal_monkey_01");
+                    safehouse.var_8947b368 = namespace_8b6a9d79::function_f3d93ee9(struct, #"toy_stuffed_animal_monkey_01");
                     safehouse.var_8947b368 val::set(#"hash_4e5c1619877bed34", "allowdeath", 0);
                     safehouse.s_ee = struct;
                     return;
@@ -452,7 +452,7 @@ function private function_98715738(*instance) {
             weapon = player getcurrentweapon();
             wait(5);
             if (isalive(player) && player getstance() === "prone" && weapon !== player getcurrentweapon()) {
-                s_ee.angles.s_ee = s_ee.angles + vectorscale((0, 1, 0), 90);
+                s_ee.angles = s_ee.angles + vectorscale((0, 1, 0), 90);
                 s_ee thread namespace_65181344::function_fd87c780(#"survival_ee_special_drops", 1, 2);
             }
         }

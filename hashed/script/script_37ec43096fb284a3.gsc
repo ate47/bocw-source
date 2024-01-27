@@ -168,7 +168,7 @@ function private function_d45dd62(localclientnum, intensity = 0, currentplayer) 
         self.var_7bd7bdc8 = postfx;
         if (!isdefined(currentplayer.var_103fdf58)) {
             playsound(localclientnum, #"hash_7b5289d48cc02d77", (0, 0, 0));
-            currentplayer.var_103fdf58.currentplayer = currentplayer playloopsound("evt_sr_phase_player_lp");
+            currentplayer.var_103fdf58 = currentplayer playloopsound("evt_sr_phase_player_lp");
         }
     }
 }

@@ -246,19 +246,19 @@ function private function_3e9077b(localclientnum) {
             if (isdefined(var_7cefa3dc) && isdefined(player)) {
                 if (var_2c01c01e >= function_a3f6cdac(800) && var_1b477698) {
                     if (!isdefined(player.var_a25a6a6)) {
-                        player.var_a25a6a6.player = 0;
+                        player.var_a25a6a6 = 0;
                     }
                     if (player.var_a25a6a6 < gettime()) {
                         var_32fc4c15 = player gettagorigin("tag_barrel");
                         if (isdefined(var_32fc4c15)) {
                             util::playfxontag(localclientnum, "lensflares/fx9_lf_sniper_glint", player, "tag_barrel");
-                            player.var_a25a6a6.player = gettime() + randomintrange(200, 700);
+                            player.var_a25a6a6 = gettime() + randomintrange(200, 700);
                         }
                     }
                 }
                 if (var_a0364f90 && !player hasperk(localclientnum, #"specialty_immuneparanoia") && !self isremotecontrolling(localclientnum)) {
                     if (!is_true(player.var_1627fdd)) {
-                        player.var_1627fdd.player = 1;
+                        player.var_1627fdd = 1;
                         player playsound(localclientnum, #"hash_74faa2aaae4a8737");
                         player thread util::delay(15, "disconnect", &function_c97460c6);
                     }
@@ -267,7 +267,7 @@ function private function_3e9077b(localclientnum) {
                         var_5c9c06a3 = vectordot(anglestoforward(var_b8258f8d), player_forward);
                         var_8bafe2ec = var_5c9c06a3 > var_92434aad;
                         if (var_8bafe2ec) {
-                            player.var_315c7748.player = 1;
+                            player.var_315c7748 = 1;
                             if (var_5c9c06a3 > var_92434aad * -1 + 0.3) {
                                 postfx = #"hash_757fef94cde1aea2";
                             } else {

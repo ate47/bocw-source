@@ -469,7 +469,7 @@ function private function_8239a941(struct, instance, hintstring) {
     }
     scriptmodel = namespace_8b6a9d79::function_f3d93ee9(struct, #"tag_origin");
     trigger = namespace_8b6a9d79::function_214737c7(struct, &function_cec3c94c, hintstring);
-    trigger.origin.trigger = trigger.origin + (0, 0, 0);
+    trigger.origin = trigger.origin + (0, 0, 0);
     trigger.instance = instance;
     trigger.scriptmodel = scriptmodel;
     instance.var_4272a188 = trigger;

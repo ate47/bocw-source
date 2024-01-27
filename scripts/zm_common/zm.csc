@@ -281,11 +281,11 @@ function function_218c0417(localclientnum, var_a6762160) {
         data = item_world::function_a7e98a1a(localclientnum);
         lethal = data.inventory.items[7];
         tactical = data.inventory.items[13];
-        if (var_a6762160.itemtype == #"equipment" && lethal.var_bd027dd9 != 32767) {
+        if (var_a6762160.itemtype == #"equipment" && lethal.networkid != 32767) {
             if (lethal.var_a6762160.name === var_a6762160.name && lethal.count >= var_a6762160.stackcount) {
                 return 0;
             }
-        } else if (var_a6762160.itemtype == #"tactical" && tactical.var_bd027dd9 != 32767) {
+        } else if (var_a6762160.itemtype == #"tactical" && tactical.networkid != 32767) {
             if (tactical.var_a6762160.name === var_a6762160.name && tactical.count >= var_a6762160.stackcount) {
                 return 0;
             }
@@ -373,9 +373,9 @@ function function_7e3a43c3() {
             player = function_5c10bd79(localclientnum);
             if (isdefined(player)) {
                 if (!isdefined(player.last_state)) {
-                    player.last_state.player = 0;
+                    player.last_state = 0;
                 }
-                player.new_state.player = util::function_cd6c95db(localclientnum);
+                player.new_state = util::function_cd6c95db(localclientnum);
                 if (player.new_state != player.last_state) {
                     if (player.new_state == 1) {
                         player postfx::playpostfxbundle(#"hash_6f0522f3d84f18df");
@@ -383,7 +383,7 @@ function function_7e3a43c3() {
                         player postfx::stoppostfxbundle(#"hash_6f0522f3d84f18df");
                     }
                 }
-                player.last_state.player = player.new_state;
+                player.last_state = player.new_state;
             }
         }
         waitframe(1);
@@ -1519,7 +1519,7 @@ function function_f73c3352() {
     if (!isdefined(var_5caa3d5b)) {
         return;
     }
-    foreach (struct in var_5caa3d5b.var_616a2f60) {
+    foreach (struct in var_5caa3d5b.assets) {
         switch (struct.type) {
         case #"character":
             var_2d9402be = &function_47dd41e8;

@@ -308,7 +308,7 @@ function private function_fccfb0af(var_87ee1a5d, &var_19546df5, var_38e0e278, co
         }
         if (self [[ var_1b426c77 ]](var_87ee1a5d, attachment, attachmentindex)) {
             var_b8a59e38++;
-            var_41a600fd = var_41a600fd & groupname == #"optic";
+            var_41a600fd = var_41a600fd | groupname == #"optic";
             arrayremoveindex(var_c1b02801, groupindex, 0);
         } else if (attachments.size <= 0) {
             arrayremoveindex(var_c1b02801, groupindex, 0);
@@ -365,17 +365,17 @@ function private function_73e20080(var_87ee1a5d, &var_44518c47, count, var_89003
 function private function_13aa0d3(bonuscard, var_89003f51) {
     switch (bonuscard) {
     case #"hash_44e17bf715d7ac82":
-        var_89003f51.var_1c89585f.var_89003f51 = 1;
+        var_89003f51.var_1c89585f = 1;
         break;
     case #"hash_639ebbcda56447e7":
-        var_89003f51.var_c38351d8.var_89003f51 = 1;
-        var_89003f51.var_3f5d0ded.var_89003f51 = 1;
+        var_89003f51.var_c38351d8 = 1;
+        var_89003f51.var_3f5d0ded = 1;
         break;
     case #"bonuscard_primary_gunfighter":
-        var_89003f51.var_e22b188d.var_89003f51 = 1;
+        var_89003f51.var_e22b188d = 1;
         break;
     case #"hash_4c417275f7523978":
-        var_89003f51.extraperks.var_89003f51 = 1;
+        var_89003f51.extraperks = 1;
         break;
     }
 }
@@ -384,7 +384,7 @@ function private function_13aa0d3(bonuscard, var_89003f51) {
 // Params 3, eflags: 0x6 linked
 // Checksum 0xe3618ebb, Offset: 0x18c8
 // Size: 0x22a
-function private function_20d254c4(var_543fda24, var_e91f2e90, overridedvar = undefined) {
+function private function_20d254c4(var_543fda24, statindexoffset, overridedvar = undefined) {
     /#
         if (isdefined(overridedvar)) {
             dvarstr = getdvarstring(overridedvar, "<unknown string>");
@@ -407,7 +407,7 @@ function private function_20d254c4(var_543fda24, var_e91f2e90, overridedvar = un
         } else if (function_f83425a6(item.name) && !isitemrestricted(item.name)) {
             itemindex = getitemindexfromref(item.name);
             if (itemindex > 0) {
-                iteminfo = getunlockableiteminfofromindex(itemindex, var_e91f2e90);
+                iteminfo = getunlockableiteminfofromindex(itemindex, statindexoffset);
                 if (!is_true(iteminfo.var_134a0917)) {
                     names[names.size] = item.name;
                 }

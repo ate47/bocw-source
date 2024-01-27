@@ -136,7 +136,7 @@ function private function_7f8d6723(localclientnum, victim, var_d21483a5) {
     setdvar(#"hash_54ba0940783c91c", 0);
     var_ef954e24 = spawn(localclientnum, parms.startpos, "script_model");
     bullet = util::spawn_model(localclientnum, "attach_t9_bullet_762_tip_view", parms.startpos, parms.angles);
-    var_ef954e24.angles.var_ef954e24 = parms.angles;
+    var_ef954e24.angles = parms.angles;
     bullet linkto(var_ef954e24);
     bullet rotatevelocity(vectorscale((0, 0, 1), 4000), 9999);
     var_ef954e24 moveto(parms.targetpos, parms.time);

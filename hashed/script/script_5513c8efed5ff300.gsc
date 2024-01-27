@@ -141,18 +141,18 @@ function private function_64892fd7() {
         player = self;
         player endoncallback(&function_9e5a1627, #"hash_2988c621f7fe6406");
         var_d29ad73d = 8;
-        player.var_b9da7d3.player = [];
+        player.var_b9da7d3 = [];
         for (i = 0; i < var_d29ad73d; i++) {
             hudelem = newdebughudelem(player);
-            hudelem.alignx.hudelem = "<unknown string>";
-            hudelem.aligny.hudelem = "<unknown string>";
-            hudelem.x.hudelem = 400;
-            hudelem.y.hudelem = 60 + i * 14;
-            hudelem.foreground.hudelem = 1;
-            hudelem.fontscale.hudelem = 1;
+            hudelem.alignx = "<unknown string>";
+            hudelem.aligny = "<unknown string>";
+            hudelem.x = 400;
+            hudelem.y = 60 + i * 14;
+            hudelem.foreground = 1;
+            hudelem.fontscale = 1;
             hudelem settext("<unknown string>");
-            hudelem.var_75b1e6b7.hudelem = "<unknown string>";
-            hudelem.color.hudelem = vectorscale((1, 1, 1), 0.75);
+            hudelem.var_75b1e6b7 = "<unknown string>";
+            hudelem.color = vectorscale((1, 1, 1), 0.75);
             player.var_b9da7d3[i] = hudelem;
         }
         player.var_b9da7d3[0] settext("<unknown string>");
@@ -168,35 +168,35 @@ function private function_64892fd7() {
             var_913a3f00 = "<unknown string>" + player function_2ee66e93(#"hash_69e7b14384f0405b", 0);
             var_94bd8e48 = player.var_b9da7d3[3];
             if (skintone + var_913a3f00 != var_94bd8e48.var_75b1e6b7) {
-                var_94bd8e48.var_75b1e6b7.var_94bd8e48 = skintone + var_913a3f00;
+                var_94bd8e48.var_75b1e6b7 = skintone + var_913a3f00;
                 var_94bd8e48 settext("<unknown string>" + skintone + "<unknown string>" + var_913a3f00 + "<unknown string>");
             }
             gender = function_33bf99f8(0);
             var_9ef6c180 = "<unknown string>" + player function_2ee66e93(#"hash_57be239af33ccdc3", 0);
             var_46e7de58 = player.var_b9da7d3[4];
             if (gender + var_9ef6c180 != var_46e7de58.var_75b1e6b7) {
-                var_46e7de58.var_75b1e6b7.var_46e7de58 = gender + var_9ef6c180;
+                var_46e7de58.var_75b1e6b7 = gender + var_9ef6c180;
                 var_46e7de58 settext("<unknown string>" + gender + "<unknown string>" + var_9ef6c180 + "<unknown string>");
             }
             var_41d928c1 = function_b6a02677();
             var_3a4e7e97 = "<unknown string>" + player function_2ee66e93(#"hash_353e9f2516585cdc", 0);
             var_ffd421b = player.var_b9da7d3[5];
             if (var_41d928c1 + var_3a4e7e97 != var_ffd421b.var_75b1e6b7) {
-                var_ffd421b.var_75b1e6b7.var_ffd421b = var_41d928c1 + var_3a4e7e97;
+                var_ffd421b.var_75b1e6b7 = var_41d928c1 + var_3a4e7e97;
                 var_ffd421b settext("<unknown string>" + var_41d928c1 + "<unknown string>" + var_3a4e7e97 + "<unknown string>");
             }
             var_3f2d7dac = function_c005cf32();
             var_5a4c49ae = player function_2ee66e93(#"hash_25264c7bd6d77125", "<unknown string>");
             var_9ed75cd6 = player.var_b9da7d3[6];
             if (var_3f2d7dac + var_5a4c49ae != var_9ed75cd6.var_75b1e6b7) {
-                var_9ed75cd6.var_75b1e6b7.var_9ed75cd6 = var_3f2d7dac + var_5a4c49ae;
+                var_9ed75cd6.var_75b1e6b7 = var_3f2d7dac + var_5a4c49ae;
                 var_9ed75cd6 settext("<unknown string>" + var_3f2d7dac + "<unknown string>" + var_5a4c49ae + "<unknown string>");
             }
             var_2c7fd851 = function_a24493b0();
             var_8d21fbc2 = player function_2ee66e93(#"hash_2526497bd6d76c0c", "<unknown string>");
             var_52f46486 = player.var_b9da7d3[7];
             if (var_2c7fd851 + var_8d21fbc2 != var_52f46486.var_75b1e6b7) {
-                var_52f46486.var_75b1e6b7.var_52f46486 = var_2c7fd851 + var_8d21fbc2;
+                var_52f46486.var_75b1e6b7 = var_2c7fd851 + var_8d21fbc2;
                 var_52f46486 settext("<unknown string>" + var_2c7fd851 + "<unknown string>" + var_8d21fbc2 + "<unknown string>");
             }
         }

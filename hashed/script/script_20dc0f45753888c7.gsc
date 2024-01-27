@@ -62,7 +62,7 @@ function function_a6c93300(*params) {
         self.exploded = 1;
         self clientfield::set("" + #"hash_584428de7fdfefe2", 1);
         var_659d1778 = spawn("script_origin", self.origin);
-        var_659d1778.targetname.var_659d1778 = "zombie_dog_toxic_cloud";
+        var_659d1778.targetname = "zombie_dog_toxic_cloud";
         var_659d1778 thread function_659d1778(self.attacker);
         self.var_7a68cd0c = 1;
         self ghost();
@@ -103,7 +103,7 @@ function function_659d1778(attacker) {
         }
         var_739bcc52 = [];
         foreach (vehicle in getvehiclearray()) {
-            if (is_true(vehicle.var_46439e18)) {
+            if (is_true(vehicle.isplayervehicle)) {
                 var_739bcc52[var_739bcc52.size] = vehicle;
             }
         }
@@ -132,7 +132,7 @@ function function_659d1778(attacker) {
                 if (isalive(ai)) {
                     if (damage >= ai.health && !is_true(ai.var_b70158b5)) {
                         scoreevents::function_a1f450c2("plaguehound_toxic_killingblow", attacker, ai);
-                        ai.var_b70158b5.ai = 1;
+                        ai.var_b70158b5 = 1;
                         ai.killed_by = attacker;
                     }
                     ai dodamage(damage, self.origin, undefined, undefined, "none", "MOD_BURNED", 0, undefined);

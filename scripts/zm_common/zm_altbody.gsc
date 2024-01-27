@@ -376,17 +376,17 @@ function function_f5e5eac2(kiosk, name, trigger_hint, notrigger_hint) {
     height = 128;
     length = 128;
     unitrigger_stub = spawnstruct();
-    unitrigger_stub.origin.unitrigger_stub = kiosk.origin + vectorscale((0, 0, 1), 32);
-    unitrigger_stub.angles.unitrigger_stub = kiosk.angles;
-    unitrigger_stub.script_unitrigger_type.unitrigger_stub = "unitrigger_radius_use";
-    unitrigger_stub.cursor_hint.unitrigger_stub = "HINT_NOICON";
-    unitrigger_stub.radius.unitrigger_stub = 64;
-    unitrigger_stub.require_look_at.unitrigger_stub = 0;
+    unitrigger_stub.origin = kiosk.origin + vectorscale((0, 0, 1), 32);
+    unitrigger_stub.angles = kiosk.angles;
+    unitrigger_stub.script_unitrigger_type = "unitrigger_radius_use";
+    unitrigger_stub.cursor_hint = "HINT_NOICON";
+    unitrigger_stub.radius = 64;
+    unitrigger_stub.require_look_at = 0;
     unitrigger_stub.kiosk = kiosk;
     unitrigger_stub.altbody_name = name;
     unitrigger_stub.trigger_hint = trigger_hint;
     unitrigger_stub.notrigger_hint = notrigger_hint;
-    unitrigger_stub.prompt_and_visibility_func.unitrigger_stub = &kiosk_trigger_visibility;
+    unitrigger_stub.prompt_and_visibility_func = &kiosk_trigger_visibility;
     zm_unitrigger::register_static_unitrigger(unitrigger_stub, &kiosk_trigger_think);
 }
 

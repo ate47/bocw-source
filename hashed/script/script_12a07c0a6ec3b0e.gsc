@@ -65,7 +65,7 @@ function function_3bab499f(localclientnum, *oldval, newval, *bnewent, *binitials
         var_328baab5 = struct::get_array("s_portal_pos", "targetname");
         s_portal = function_80fdd2aa(var_328baab5, bwasdemojump);
         if (isdefined(s_portal)) {
-            s_portal.fx_tag.s_portal = util::spawn_model(fieldname, "tag_origin", s_portal.origin, s_portal.angles);
+            s_portal.fx_tag = util::spawn_model(fieldname, "tag_origin", s_portal.origin, s_portal.angles);
             s_portal.fx_tag playsound(fieldname, #"hash_61bdec1c1b35a33a");
             s_portal.fx_tag.var_68cf83c = s_portal.fx_tag playloopsound(#"hash_e94363edb1efe");
             s_portal.fx_tag.var_fa63b371 = playfx(fieldname, #"hash_57ae7e6f9140093f", s_portal.fx_tag.origin, anglestoforward(s_portal.fx_tag.angles), anglestoup(s_portal.fx_tag.angles));
@@ -195,7 +195,7 @@ function function_e03501a6(localclientnum, *oldval, newval, *bnewent, *binitials
         }
         s_little_girl = function_80fdd2aa(var_b510e160, bwasdemojump);
         if (!isdefined(s_little_girl.var_8bb0303a.var_5d2af675)) {
-            s_little_girl.var_8bb0303a.s_little_girl = util::spawn_model(fieldname, "tag_origin", s_little_girl.origin, s_little_girl.angles);
+            s_little_girl.var_8bb0303a = util::spawn_model(fieldname, "tag_origin", s_little_girl.origin, s_little_girl.angles);
             s_little_girl.var_8bb0303a.var_5d2af675 = util::playfxontag(fieldname, #"hash_76394ace7e94981f", s_little_girl.var_8bb0303a, "tag_origin");
             s_little_girl.var_8bb0303a.var_13c71aed = s_little_girl.var_8bb0303a playloopsound(#"hash_b3b9bf3b225b9ae");
         }
@@ -227,7 +227,7 @@ function function_b6ea5740(localclientnum, *oldval, *newval, *bnewent, *binitial
     e_fx = util::spawn_model(bwasdemojump, "tag_origin", self gettagorigin("J_Spine4"));
     util::playfxontag(bwasdemojump, #"hash_61e3c7a179d7cdfb", e_fx, "tag_origin");
     e_fx playsound(bwasdemojump, #"hash_14182939d9e547b2");
-    e_fx.var_1398d03.e_fx = e_fx playloopsound(#"hash_20b1d2b1a7ca4646");
+    e_fx.var_1398d03 = e_fx playloopsound(#"hash_20b1d2b1a7ca4646");
     e_fx moveto(e_fx.origin + vectorscale((0, 0, 1), 40), 0.8);
     wait(0.75);
     var_5f90c92a = struct::get("side_quest_gp_machine_screen");
@@ -368,7 +368,7 @@ function function_30aa821d(localclientnum, *oldval, newval, *bnewent, *binitials
         var_30e5780e = struct::get_array("side_quest_gp_fire_work_fx_pos_1", "targetname");
         foreach (var_2b30e4c7 in var_30e5780e) {
             if (!isdefined(var_2b30e4c7.fx_tag) && !isdefined(var_2b30e4c7.fx_tag.var_a3701ec9)) {
-                var_2b30e4c7.fx_tag.var_2b30e4c7 = util::spawn_model(fieldname, "tag_origin", var_2b30e4c7.origin, var_2b30e4c7.angles);
+                var_2b30e4c7.fx_tag = util::spawn_model(fieldname, "tag_origin", var_2b30e4c7.origin, var_2b30e4c7.angles);
                 var_2b30e4c7.fx_tag.var_a3701ec9 = util::playfxontag(fieldname, #"hash_860f2d43123c954", var_2b30e4c7.fx_tag, "tag_origin");
             }
             playsound(fieldname, #"hash_5147e3b5f415d707", var_2b30e4c7.origin + vectorscale((0, 0, 1), 20));
@@ -378,7 +378,7 @@ function function_30aa821d(localclientnum, *oldval, newval, *bnewent, *binitials
         var_6a116a65 = struct::get_array("side_quest_gp_fire_work_fx_pos_2", "targetname");
         foreach (var_2b30e4c7 in var_6a116a65) {
             if (!isdefined(var_2b30e4c7.fx_tag) && !isdefined(var_2b30e4c7.fx_tag.var_a3701ec9)) {
-                var_2b30e4c7.fx_tag.var_2b30e4c7 = util::spawn_model(fieldname, "tag_origin", var_2b30e4c7.origin, var_2b30e4c7.angles);
+                var_2b30e4c7.fx_tag = util::spawn_model(fieldname, "tag_origin", var_2b30e4c7.origin, var_2b30e4c7.angles);
                 var_2b30e4c7.fx_tag.var_a3701ec9 = util::playfxontag(fieldname, #"hash_860f2d43123c954", var_2b30e4c7.fx_tag, "tag_origin");
             }
             playsound(fieldname, #"hash_5147e3b5f415d707", var_2b30e4c7.origin + vectorscale((0, 0, 1), 20));
@@ -388,7 +388,7 @@ function function_30aa821d(localclientnum, *oldval, newval, *bnewent, *binitials
         var_fc690f16 = struct::get_array("side_quest_gp_fire_work_fx_pos_3", "targetname");
         foreach (var_2b30e4c7 in var_fc690f16) {
             if (!isdefined(var_2b30e4c7.fx_tag)) {
-                var_2b30e4c7.fx_tag.var_2b30e4c7 = util::spawn_model(fieldname, "tag_origin", var_2b30e4c7.origin, var_2b30e4c7.angles);
+                var_2b30e4c7.fx_tag = util::spawn_model(fieldname, "tag_origin", var_2b30e4c7.origin, var_2b30e4c7.angles);
             }
             var_2b30e4c7.fx_tag.var_a3701ec9 = util::playfxontag(fieldname, #"hash_43eb5c945959b06f", var_2b30e4c7.fx_tag, "tag_origin");
             playsound(fieldname, #"hash_1b4eb6b7b24acdaf", var_2b30e4c7.origin + vectorscale((0, 0, 1), 20));
@@ -575,7 +575,7 @@ function function_69ffb9e7(localclientnum, e_vehicle, var_e15e9f2a) {
 function function_53f2d015(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         var_e8557e87 = struct::get("fx_jump_platform_pos", "targetname");
-        var_e8557e87.fx_tag.var_e8557e87 = util::spawn_model(fieldname, "tag_origin", var_e8557e87.origin, var_e8557e87.angles);
+        var_e8557e87.fx_tag = util::spawn_model(fieldname, "tag_origin", var_e8557e87.origin, var_e8557e87.angles);
         var_e8557e87.fx_tag.fx = util::playfxontag(fieldname, #"hash_1a297fe50dbf9f3e", var_e8557e87.fx_tag, "tag_origin");
     } else {
         var_e8557e87 = struct::get("fx_jump_platform_pos", "targetname");

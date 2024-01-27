@@ -25,33 +25,33 @@ function private function_70a657d8() {
     processedbundles = [];
     foreach (destructible in destructibles) {
         destructbundle = spawnstruct();
-        destructbundle.piececount.destructbundle = destructible.piececount;
-        destructbundle.pieces.destructbundle = [];
-        destructbundle.name.destructbundle = destructible.name;
+        destructbundle.piececount = destructible.piececount;
+        destructbundle.pieces = [];
+        destructbundle.name = destructible.name;
         for (index = 1; index <= destructbundle.piececount; index++) {
             piecestruct = spawnstruct();
-            piecestruct.gibmodel.piecestruct = destructible.("piece" + index + "_gibmodel");
-            piecestruct.gibtag.piecestruct = destructible.("piece" + index + "_gibtag");
+            piecestruct.gibmodel = destructible.("piece" + index + "_gibmodel");
+            piecestruct.gibtag = destructible.("piece" + index + "_gibtag");
             if (isdefined(destructible.("piece" + index + "_gibdirX")) || isdefined(destructible.("piece" + index + "_gibdirY")) || isdefined(destructible.("piece" + index + "_gibdirZ"))) {
-                piecestruct.gibdir.piecestruct = (isdefined(destructible.("piece" + index + "_gibdirX")) ? destructible.("piece" + index + "_gibdirX") : 0, isdefined(destructible.("piece" + index + "_gibdirY")) ? destructible.("piece" + index + "_gibdirY") : 0, isdefined(destructible.("piece" + index + "_gibdirZ")) ? destructible.("piece" + index + "_gibdirZ") : 0);
+                piecestruct.gibdir = (isdefined(destructible.("piece" + index + "_gibdirX")) ? destructible.("piece" + index + "_gibdirX") : 0, isdefined(destructible.("piece" + index + "_gibdirY")) ? destructible.("piece" + index + "_gibdirY") : 0, isdefined(destructible.("piece" + index + "_gibdirZ")) ? destructible.("piece" + index + "_gibdirZ") : 0);
             }
-            piecestruct.gibdirscale.piecestruct = destructible.("piece" + index + "_gibdirscale");
-            piecestruct.gibdynentfx.piecestruct = destructible.("piece" + index + "_gibdynentfx");
-            piecestruct.gibfx.piecestruct = destructible.("piece" + index + "_gibfx");
-            piecestruct.gibfxtag.piecestruct = destructible.("piece" + index + "_gibeffecttag");
-            piecestruct.var_ed372a00.piecestruct = destructible.("piece" + index + "_gibfx2");
-            piecestruct.var_e230b617.piecestruct = destructible.("piece" + index + "_gibeffecttag2");
-            piecestruct.gibsound.piecestruct = destructible.("piece" + index + "_gibsound");
-            piecestruct.hitlocation.piecestruct = destructible.("piece" + index + "_hitlocation");
-            piecestruct.hidetag.piecestruct = destructible.("piece" + index + "_hidetag");
-            piecestruct.detachmodel.piecestruct = destructible.("piece" + index + "_detachmodel");
+            piecestruct.gibdirscale = destructible.("piece" + index + "_gibdirscale");
+            piecestruct.gibdynentfx = destructible.("piece" + index + "_gibdynentfx");
+            piecestruct.gibfx = destructible.("piece" + index + "_gibfx");
+            piecestruct.gibfxtag = destructible.("piece" + index + "_gibeffecttag");
+            piecestruct.var_ed372a00 = destructible.("piece" + index + "_gibfx2");
+            piecestruct.var_e230b617 = destructible.("piece" + index + "_gibeffecttag2");
+            piecestruct.gibsound = destructible.("piece" + index + "_gibsound");
+            piecestruct.hitlocation = destructible.("piece" + index + "_hitlocation");
+            piecestruct.hidetag = destructible.("piece" + index + "_hidetag");
+            piecestruct.detachmodel = destructible.("piece" + index + "_detachmodel");
             if (isdefined(destructible.("piece" + index + "_hittags"))) {
-                piecestruct.hittags.piecestruct = [];
+                piecestruct.hittags = [];
                 foreach (var_5440c126 in destructible.("piece" + index + "_hittags")) {
                     if (!isdefined(piecestruct.hittags)) {
-                        piecestruct.hittags.piecestruct = [];
+                        piecestruct.hittags = [];
                     } else if (!isarray(piecestruct.hittags)) {
-                        piecestruct.hittags.piecestruct = array(piecestruct.hittags);
+                        piecestruct.hittags = array(piecestruct.hittags);
                     }
                     piecestruct.hittags[piecestruct.hittags.size] = var_5440c126.hittag;
                 }
@@ -112,7 +112,7 @@ function private _destructpiece(localclientnum, entity, piecenumber, shouldspawn
         if (shouldspawngibs) {
             gibclientutils::_playgibfx(localclientnum, entity, piece.gibfx, piece.gibfxtag);
             gibclientutils::_playgibfx(localclientnum, entity, piece.var_ed372a00, piece.var_e230b617);
-            entity thread gibclientutils::_gibpiece(localclientnum, entity, piece.gibmodel, piece.gibtag, piece.gibdynentfx, piece.gibdir, piece.gibdirscale, 1 & 2 & 4);
+            entity thread gibclientutils::_gibpiece(localclientnum, entity, piece.gibmodel, piece.gibtag, piece.gibdynentfx, piece.gibdir, piece.gibdirscale, 1 | 2 | 4);
             gibclientutils::_playgibsound(localclientnum, entity, piece.gibsound);
         } else if (isdefined(piece.gibfx) && function_9229eb67(piece.gibfx)) {
             gibclientutils::_playgibfx(localclientnum, entity, piece.gibfx, piece.gibfxtag);
@@ -155,7 +155,7 @@ function adddestructpiececallback(*localclientnum, entity, piecenumber, callback
         assert(isfunctionptr(callbackfunction));
     #/
     if (!isdefined(entity._destructcallbacks)) {
-        entity._destructcallbacks.entity = [];
+        entity._destructcallbacks = [];
     }
     if (!isdefined(entity._destructcallbacks[piecenumber])) {
         entity._destructcallbacks[piecenumber] = [];

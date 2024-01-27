@@ -227,7 +227,7 @@ function function_fb2bc4ac(eventstruct) {
         currentweapon = player getcurrentweapon();
         itemweapon = player item_inventory::function_230ceec4(currentweapon);
         if (isdefined(itemweapon) && function_165e54c9(itemweapon)) {
-            model.opening.model = 1;
+            model.opening = 1;
             switch (var_e57cfd4a) {
             case #"cryo":
                 model thread function_8d9ddc22(player, "NITROGEN");
@@ -494,7 +494,7 @@ function function_8d9ddc22(player, var_e7772c37) {
         }
         if (isalive(player) && !player inlaststand()) {
             if (!isdefined(player.var_1ad4cede)) {
-                player.var_1ad4cede.player = [];
+                player.var_1ad4cede = [];
             }
             var_e533256d = player.var_1ad4cede[var_963f7bc9.name];
             player giveweapon(var_963f7bc9);
@@ -512,8 +512,8 @@ function function_8d9ddc22(player, var_e7772c37) {
             var_981d2438.var_627c698b = var_963f7bc9;
             var_3383cd4e = function_4ba8fde(var_963f7bc9.name + "_item_sr");
             if (isdefined(var_3383cd4e)) {
-                var_981d2438.var_a6762160.var_981d2438 = var_3383cd4e.var_a6762160;
-                var_981d2438.id.var_981d2438 = var_3383cd4e.id;
+                var_981d2438.var_a6762160 = var_3383cd4e.var_a6762160;
+                var_981d2438.id = var_3383cd4e.id;
             } else {
                 /#
                     /#

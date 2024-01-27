@@ -264,12 +264,12 @@ function function_f9d22968() {
         clone thread namespace_ec06fe4a::function_203591b7(level, "arena_completed", "clone_shutdown");
         clone thread namespace_ec06fe4a::function_203591b7(level, "game_over", "clone_shutdown");
         clone thread namespace_ec06fe4a::function_52afe5df(timeout + 2);
-        clone.team.clone = self.team;
-        clone.var_c497caa3.clone = 1;
+        clone.team = self.team;
+        clone.var_c497caa3 = 1;
         function_241f12a1(clone, self);
         clone pathmode("move delayed", 1, var_37c06a3d.var_c1ddc2[i]);
-        clone.var_539ad42b.clone = 1;
-        clone.doa.clone = spawnstruct();
+        clone.var_539ad42b = 1;
+        clone.doa = spawnstruct();
         clone.doa.var_484cc88b = 0;
         self thread function_5d01145(clone, self, anglestoforward(var_37c06a3d.var_e9fa8058[i]), var_37c06a3d.var_c1ddc2[i]);
         self function_4e0fa155(clone);
@@ -372,14 +372,14 @@ function function_241f12a1(clone, player) {
 // Size: 0x3ec
 function private function_5d01145(clone, player, forward, spawntime) {
     player endon(#"disconnect");
-    clone.isaiclone.clone = 1;
-    clone.ignoretriggerdamage.clone = 1;
-    clone.minwalkdistance.clone = 125;
-    clone.overrideactordamage.clone = &clonedamageoverride;
-    clone.spawntime.clone = gettime();
+    clone.isaiclone = 1;
+    clone.ignoretriggerdamage = 1;
+    clone.minwalkdistance = 125;
+    clone.overrideactordamage = &clonedamageoverride;
+    clone.spawntime = gettime();
     clone setmaxhealth(600);
     if (isdefined(clone.pathablematerial)) {
-        clone.pathablematerial.clone = clone.pathablematerial & ~2;
+        clone.pathablematerial = clone.pathablematerial & ~2;
     }
     clone collidewithactors(1);
     clone pushplayer(1);
@@ -389,8 +389,8 @@ function private function_5d01145(clone, player, forward, spawntime) {
     clone setclone();
     clone thread function_227f283d(player);
     clone thread function_1b998c04();
-    clone._goal_center_point.clone = forward * 1000 + clone.origin;
-    clone._goal_center_point.clone = getclosestpointonnavmesh(clone._goal_center_point, 600);
+    clone._goal_center_point = forward * 1000 + clone.origin;
+    clone._goal_center_point = getclosestpointonnavmesh(clone._goal_center_point, 600);
     queryresult = undefined;
     if (isdefined(clone._goal_center_point) && clone findpath(clone.origin, clone._goal_center_point, 1, 0)) {
         queryresult = positionquery_source_navigation(clone._goal_center_point, 0, 450, 450, 100, clone);
@@ -399,10 +399,10 @@ function private function_5d01145(clone, player, forward, spawntime) {
     }
     if (queryresult.data.size > 0) {
         clone setgoal(queryresult.data[0].origin, 1);
-        clone.var_ef51fb4c.clone = queryresult.data[0].origin;
-        clone.var_49e3c1d3.clone = 450;
+        clone.var_ef51fb4c = queryresult.data[0].origin;
+        clone.var_49e3c1d3 = 450;
     } else {
-        clone._goal_center_point.clone = clone.origin;
+        clone._goal_center_point = clone.origin;
     }
     clone namespace_ec06fe4a::function_8c808737();
     clone thread function_d1b2df66(spawntime, player);
@@ -442,12 +442,12 @@ function private _configurecloneteam(clone, player, ishacked) {
         return;
     }
     if (ishacked == 0) {
-        clone.originalteam.clone = player.team;
+        clone.originalteam = player.team;
     }
     clone val::set(#"hash_41154f7fe6ac52b6", "ignoreall", 1);
     clone.owner = player;
     clone setteam(player.team);
-    clone.team.clone = player.team;
+    clone.team = player.team;
     clone setentityowner(player);
 }
 

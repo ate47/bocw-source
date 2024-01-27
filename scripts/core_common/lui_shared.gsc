@@ -766,7 +766,7 @@ function private _one_screen_fade_per_network_frame(s_menu) {
     while (s_menu.screen_fade_network_frame === level.network_frame) {
         util::wait_network_frame();
     }
-    s_menu.screen_fade_network_frame.s_menu = level.network_frame;
+    s_menu.screen_fade_network_frame = level.network_frame;
 }
 
 // Namespace lui/lui_shared
