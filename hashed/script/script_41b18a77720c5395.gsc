@@ -455,11 +455,11 @@ function private function_6b33e951() {
     if (winning_team == #"none") {
         winning_team = #"allies";
     }
-    var_5986770f = getplayers(winning_team);
-    var_5986770f = array::merge_sort(var_5986770f, &function_7285f7e1, 0);
+    winners = getplayers(winning_team);
+    winners = array::merge_sort(winners, &function_7285f7e1, 0);
     var_860af94a = array();
     for (i = 0; i < var_9a829482; i++) {
-        client_num = isdefined(var_5986770f[i]) ? var_5986770f[i].entnum : -1;
+        client_num = isdefined(winners[i]) ? winners[i].entnum : -1;
         array::add(var_860af94a, client_num);
     }
     luinotifyevent(#"top_squad", var_9a829482, var_860af94a[0], var_860af94a[1], var_860af94a[2], var_860af94a[3], var_860af94a[4], var_860af94a[5]);

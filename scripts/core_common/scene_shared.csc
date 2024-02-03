@@ -1103,7 +1103,7 @@ class csceneobject : cscriptbundleobjectbase {
                 self._e_array[clientnum] show();
             }
         }
-        if (is_true(self._s.var_e2360d85)) {
+        if (is_true(self._s.forcenocull)) {
             self._e_array[clientnum] setforcenocull();
         }
     }
@@ -1718,7 +1718,7 @@ class csceneobject : cscriptbundleobjectbase {
                 self._e_array[clientnum] show();
             }
         }
-        if (is_true(self._s.var_e2360d85)) {
+        if (is_true(self._s.forcenocull)) {
             self._e_array[clientnum] removeforcenocull();
         }
     }

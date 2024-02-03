@@ -283,17 +283,17 @@ function private function_952d97dc(localclientnum) {
     objective_add(localclientnum, level.var_d9beffb9, "invisible", #"weapon_pickup");
     level.var_383edf80 = util::getnextobjid(localclientnum);
     objective_add(localclientnum, level.var_383edf80, "invisible", #"multi_item_pickup");
-    var_acc39f5a = function_1df4c3b0(localclientnum, #"hash_6f4b11a0bee9b73d");
-    level.showpickuphintmodel[localclientnum] = createuimodel(var_acc39f5a, "showPickupHint");
-    level.var_89f832ca[localclientnum] = createuimodel(var_acc39f5a, "pickupHintText");
-    level.var_62c91473[localclientnum] = createuimodel(var_acc39f5a, "pickupHintTextOverride");
-    level.var_ce95aace[localclientnum] = createuimodel(var_acc39f5a, "weapon3dHintState");
-    level.var_7e2f5883[localclientnum] = createuimodel(var_acc39f5a, "weapon3dForcedHintItem");
-    level.var_19cf0be9[localclientnum] = createuimodel(var_acc39f5a, "pickupHintImage");
-    level.var_d42ffee1[localclientnum] = createuimodel(var_acc39f5a, "cursorHintIcon");
-    level.var_437da950[localclientnum] = createuimodel(var_acc39f5a, "pickupRarity");
-    level.var_d2215e8f[localclientnum] = createuimodel(var_acc39f5a, "pickupType");
-    level.pickupcount[localclientnum] = createuimodel(var_acc39f5a, "pickupCount");
+    huditemsmodel = function_1df4c3b0(localclientnum, #"hash_6f4b11a0bee9b73d");
+    level.showpickuphintmodel[localclientnum] = createuimodel(huditemsmodel, "showPickupHint");
+    level.var_89f832ca[localclientnum] = createuimodel(huditemsmodel, "pickupHintText");
+    level.var_62c91473[localclientnum] = createuimodel(huditemsmodel, "pickupHintTextOverride");
+    level.var_ce95aace[localclientnum] = createuimodel(huditemsmodel, "weapon3dHintState");
+    level.var_7e2f5883[localclientnum] = createuimodel(huditemsmodel, "weapon3dForcedHintItem");
+    level.var_19cf0be9[localclientnum] = createuimodel(huditemsmodel, "pickupHintImage");
+    level.var_d42ffee1[localclientnum] = createuimodel(huditemsmodel, "cursorHintIcon");
+    level.var_437da950[localclientnum] = createuimodel(huditemsmodel, "pickupRarity");
+    level.var_d2215e8f[localclientnum] = createuimodel(huditemsmodel, "pickupType");
+    level.pickupcount[localclientnum] = createuimodel(huditemsmodel, "pickupCount");
     callback::callback(#"hash_2127e02e6728950d", localclientnum);
 }
 
@@ -643,8 +643,8 @@ function private function_e2c19e6b(localclientnum) {
             continue;
         }
         timeoutlength = servertime - var_b7d66c97.var_f4522f8c;
-        var_8cc6abc2 = int(floor(timeoutlength / 400)) % 2 == 0;
-        if (var_8cc6abc2) {
+        shouldhide = int(floor(timeoutlength / 400)) % 2 == 0;
+        if (shouldhide) {
             model show();
         } else {
             model hide();

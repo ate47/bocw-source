@@ -275,15 +275,15 @@ function aileapgoalservice(entity) {
                     passed = 0;
                     break;
                 }
-                var_55853a47 = function_9cc082d2(traceresult[#"position"], 2 * 39.3701);
-                if (!isdefined(var_55853a47)) {
+                pointonnavmesh = function_9cc082d2(traceresult[#"position"], 2 * 39.3701);
+                if (!isdefined(pointonnavmesh)) {
                     /#
                         recordline(prev_origin, pos, (1, 0, 0), "<unknown string>", entity);
                     #/
                     passed = 0;
                     break;
                 }
-                if (isdefined(entity.var_e9a867e0) && !entity [[ entity.var_e9a867e0 ]](var_55853a47[#"point"])) {
+                if (isdefined(entity.var_e9a867e0) && !entity [[ entity.var_e9a867e0 ]](pointonnavmesh[#"point"])) {
                     /#
                         recordline(prev_origin, pos, (1, 0, 0), "<unknown string>", entity);
                     #/
@@ -1290,19 +1290,19 @@ function private function_af3889fa(zone_name, path) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x19f68bfb, Offset: 0x4ef0
 // Size: 0x25a
-function function_a6b0387d(str_start, var_bee7a3d9, var_73b17dd3 = 0, var_f6e819e4 = 1) {
-    if (is_true(var_73b17dd3)) {
+function function_a6b0387d(str_start, var_bee7a3d9, is_point = 0, var_f6e819e4 = 1) {
+    if (is_true(is_point)) {
         radius = self getpathfindingradius();
-        var_55853a47 = getclosestpointonnavmesh(str_start, radius * 2, radius * 1.2);
-        if (!isdefined(var_55853a47)) {
+        pointonnavmesh = getclosestpointonnavmesh(str_start, radius * 2, radius * 1.2);
+        if (!isdefined(pointonnavmesh)) {
             return 0;
         }
-        var_8787728e = zm_zonemgr::get_zone_from_position(var_55853a47, 1);
-        var_55853a47 = getclosestpointonnavmesh(var_bee7a3d9, radius * 2, radius * 1.2);
-        if (!isdefined(var_55853a47)) {
+        var_8787728e = zm_zonemgr::get_zone_from_position(pointonnavmesh, 1);
+        pointonnavmesh = getclosestpointonnavmesh(var_bee7a3d9, radius * 2, radius * 1.2);
+        if (!isdefined(pointonnavmesh)) {
             return 0;
         }
-        var_266a0de8 = zm_zonemgr::get_zone_from_position(var_55853a47, 1);
+        var_266a0de8 = zm_zonemgr::get_zone_from_position(pointonnavmesh, 1);
     } else {
         var_8787728e = str_start;
         var_266a0de8 = var_bee7a3d9;

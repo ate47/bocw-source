@@ -2,7 +2,7 @@
     "option_dependencies": [
         {
             "var_1643d946": "1",
-            "var_6825bdb": "#is_player_online",
+            "optionname": "#is_player_online",
             "operator": "=="
         }
     ],
@@ -37,7 +37,7 @@
     "name": "pc_display_ping",
     "displayname": "#hash_72a31b79aae3fc5a",
     "var_500458ac": 10,
-    "var_926d1be9": 0.01,
+    "decimalplace": 0.01,
     "var_66faec87": 2,
     "statname": "com_show_ping",
     "var_8b80386": 1,

@@ -3,9 +3,9 @@
 #using scripts\cp_common\gametypes\globallogic_ui.gsc;
 #using scripts\core_common\util_shared.gsc;
 
-#namespace namespace_b2b6266a;
+#namespace entname;
 
-// Namespace namespace_b2b6266a/ent_name
+// Namespace entname/ent_name
 // Params 2, eflags: 0x2 linked
 // Checksum 0x512f45b, Offset: 0xb0
 // Size: 0x134
@@ -28,7 +28,7 @@ function add(name, team = 1) {
     self thread function_ef33f38e();
 }
 
-// Namespace namespace_b2b6266a/ent_name
+// Namespace entname/ent_name
 // Params 0, eflags: 0x2 linked
 // Checksum 0xe8863206, Offset: 0x1f0
 // Size: 0x72
@@ -42,16 +42,16 @@ function remove() {
     }
 }
 
-// Namespace namespace_b2b6266a/ent_name
+// Namespace entname/ent_name
 // Params 0, eflags: 0x2 linked
 // Checksum 0xbd8cfd5c, Offset: 0x270
 // Size: 0x20
-function function_15d47899() {
+function remove_all() {
     level.var_479cdca1 = undefined;
     level notify(#"hash_5c4bc066a7176a66");
 }
 
-// Namespace namespace_b2b6266a/ent_name
+// Namespace entname/ent_name
 // Params 0, eflags: 0x6 linked
 // Checksum 0xdfe1a5f7, Offset: 0x298
 // Size: 0x54
@@ -62,7 +62,7 @@ function private function_ef33f38e() {
     self thread remove();
 }
 
-// Namespace namespace_b2b6266a/ent_name
+// Namespace entname/ent_name
 // Params 1, eflags: 0x6 linked
 // Checksum 0x5ef7a039, Offset: 0x2f8
 // Size: 0x3c
@@ -71,7 +71,7 @@ function private _cleanup(*eventstruct) {
     function_7a4ff65b("cg_maxActorNameDist", &function_e65ba67);
 }
 
-// Namespace namespace_b2b6266a/ent_name
+// Namespace entname/ent_name
 // Params 0, eflags: 0x6 linked
 // Checksum 0xa2924b39, Offset: 0x340
 // Size: 0x2ec
@@ -85,35 +85,35 @@ function private function_7d76b3ac() {
     player endoncallback(&_cleanup, #"death");
     level.var_435c3a22 = [];
     util::init_dvar("cg_maxActorNameDist", 500, &function_e65ba67);
-    namespace_61e6d095::create(#"hash_36d05d91757bc581", #"hash_1624d8814bab0c71");
+    namespace_61e6d095::create(#"entname", #"hash_1624d8814bab0c71");
     name = #"";
     team = 0;
-    namespace_61e6d095::set_text(#"hash_36d05d91757bc581", name);
-    namespace_61e6d095::set_state(#"hash_36d05d91757bc581", team);
+    namespace_61e6d095::set_text(#"entname", name);
+    namespace_61e6d095::set_state(#"entname", team);
     while (isdefined(level.var_479cdca1)) {
-        var_a1da1699 = #"";
+        new_name = #"";
         var_5002c793 = 0;
         if (isdefined(player.lookatent) && distancesquared(player.origin, player.lookatent.origin) <= level.var_435c3a22[#"hash_71b8f2363319bff4"]) {
             var_4b6c578e = player.lookatent getentitynumber();
             ent_name = level.var_479cdca1[var_4b6c578e];
             if (isdefined(ent_name)) {
-                var_a1da1699 = ent_name.name;
+                new_name = ent_name.name;
                 var_5002c793 = ent_name.team;
             }
         }
-        if (name != var_a1da1699) {
-            name = var_a1da1699;
+        if (name != new_name) {
+            name = new_name;
             team = var_5002c793;
-            namespace_61e6d095::set_text(#"hash_36d05d91757bc581", name);
-            namespace_61e6d095::set_state(#"hash_36d05d91757bc581", team);
+            namespace_61e6d095::set_text(#"entname", name);
+            namespace_61e6d095::set_state(#"entname", team);
         }
         waitframe(1);
     }
-    namespace_61e6d095::remove(#"hash_36d05d91757bc581");
+    namespace_61e6d095::remove(#"entname");
     _cleanup();
 }
 
-// Namespace namespace_b2b6266a/ent_name
+// Namespace entname/ent_name
 // Params 1, eflags: 0x6 linked
 // Checksum 0xd3be33b0, Offset: 0x638
 // Size: 0x60

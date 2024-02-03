@@ -464,7 +464,7 @@ function function_f58618d7(localclientnum, name, tag, var_fc8ee72b = 0) {
     if (tag == "special") {
         self thread function_d8c789b8(localclientnum, name);
     } else if (tag == "fakelink") {
-        org = namespace_ec06fe4a::function_e22ae9b3(localclientnum, self.origin, "tag_origin", self.angles, "fx fakelink");
+        org = namespace_ec06fe4a::spawnmodel(localclientnum, self.origin, "tag_origin", self.angles, "fx fakelink");
         if (!isdefined(org)) {
             return;
         }

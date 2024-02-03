@@ -64,13 +64,13 @@ function private fake_ads(localclientnum, oldval, newval, *bnewent, *binitialsna
 // Params 2, eflags: 0x6 linked
 // Checksum 0x223fb46b, Offset: 0x448
 // Size: 0x124
-function private function_bd9c7275(var_192ca300, var_f8c670cd) {
+function private function_bd9c7275(oldtype, newtype) {
     self notify(#"hash_97425a408a077df");
     self endon(#"hash_97425a408a077df");
-    if (is_true(var_192ca300) && is_true(var_f8c670cd) && var_192ca300 != var_f8c670cd) {
+    if (is_true(oldtype) && is_true(newtype) && oldtype != newtype) {
         self function_a052b638();
     }
-    if ((isdefined(var_f8c670cd) ? var_f8c670cd : 1) == 2) {
+    if ((isdefined(newtype) ? newtype : 1) == 2) {
         self linktocamera(4, (0, 0, 0));
     } else {
         self linktocamera(4, vectorscale((0, 0, -1), 60));

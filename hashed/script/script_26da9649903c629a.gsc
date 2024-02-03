@@ -114,7 +114,7 @@ function function_4b0f12f6(level_notify) {
     player_damage = 20;
     while (1) {
         var_867b0f45 = level.var_7466d419 getspeedmph();
-        var_3bc8eb8c = randomintrange(10, 12);
+        shot_count = randomintrange(10, 12);
         var_b7fd7ab4 = 0;
         var_aa2fdf19 = randomintrange(1000, 1500);
         var_b9421e4 = randomintrange(400, 600);
@@ -129,7 +129,7 @@ function function_4b0f12f6(level_notify) {
         var_5a3aa491 = (var_aa2fdf19, var_b7fd7ab4, var_b9421e4);
         var_f4d3e08a = rotatepoint(var_5a3aa491, level.var_7466d419.angles) + level.var_7466d419.origin;
         thread function_f4567c7c("stop");
-        while (var_3bc8eb8c > 0) {
+        while (shot_count > 0) {
             if (var_867b0f45 > 20) {
                 offset = vectorscale((1, 0, 0), 1200);
                 var_6d32c483 = rotatepoint(offset, level.var_7466d419.angles) + var_9d5321a;
@@ -137,7 +137,7 @@ function function_4b0f12f6(level_notify) {
             } else if (var_867b0f45 <= 20) {
                 magicbullet(weapon, var_f4d3e08a, var_9d5321a);
             }
-            var_3bc8eb8c--;
+            shot_count--;
             wait(0.075);
             var_2ff447b6 = snd::play("tmp_impacts_metal", level.players[0]);
         }
@@ -245,15 +245,15 @@ function function_f4567c7c(distance, level_notify) {
     yaw = [1:0.5, 0:0.1];
     roll = [1:0.5, 0:0.25];
     duration = [1:0.3, 0:0.7];
-    var_2038a0d5 = 4;
-    var_f6383e50 = 4;
-    var_8d1b2625 = 4;
+    freqpitch = 4;
+    freqyaw = 4;
+    freqroll = 4;
     if (distance < 1000) {
         level.players[0] playrumbleonentity("damage_heavy");
-        screenshake(source, pitch[1], yaw[1], roll[1], duration[1], 0, 0, 0, var_2038a0d5, var_f6383e50);
+        screenshake(source, pitch[1], yaw[1], roll[1], duration[1], 0, 0, 0, freqpitch, freqyaw);
     } else if (distance < 1500) {
         level.players[0] playrumbleonentity("damage_light");
-        screenshake(source, pitch[0], yaw[0], roll[0], duration[0], 0, 0, 0, var_2038a0d5, var_f6383e50);
+        screenshake(source, pitch[0], yaw[0], roll[0], duration[0], 0, 0, 0, freqpitch, freqyaw);
     }
 }
 

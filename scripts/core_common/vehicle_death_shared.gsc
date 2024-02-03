@@ -78,7 +78,7 @@ function function_bb5aa794() {
     if (isdefined(self.deathmodel) && self.deathmodel != "") {
         return 1;
     }
-    if (isdefined(self.var_13c5ef5f)) {
+    if (isdefined(self.vehicleassembly)) {
         return 1;
     }
     return 0;
@@ -291,7 +291,7 @@ function play_spinning_plane_sound() {
 // Checksum 0x40755971, Offset: 0x1098
 // Size: 0x184
 function set_death_model(smodel, fdelay) {
-    if (isdefined(self.var_13c5ef5f)) {
+    if (isdefined(self.vehicleassembly)) {
         self clientfield::increment("vehicle_assembly_death_hint");
         if (isdefined(fdelay) && fdelay > 0) {
             wait(fdelay);

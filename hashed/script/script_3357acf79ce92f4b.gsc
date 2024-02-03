@@ -190,7 +190,7 @@ function resume(entity) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x3d6c3a48, Offset: 0xa78
 // Size: 0x2a
-function function_49170ec2(entity) {
+function is_paused(entity) {
     return entity flag::get(#"hash_624e5d5dfb7f742b");
 }
 

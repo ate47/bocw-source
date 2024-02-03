@@ -165,7 +165,7 @@ function scripted(var_4cfa0710, a_ents, var_690561dc, var_87dc4de8, var_bfcac307
 // Params 2, eflags: 0x0
 // Checksum 0xdb122a37, Offset: 0xa60
 // Size: 0x5c
-function function_1aa29bcf(var_4cfa0710, var_c3056ba3) {
+function convert(var_4cfa0710, var_c3056ba3) {
     if (isdefined(mission.var_c68f10d0[var_4cfa0710])) {
         objective_add(mission.var_c68f10d0[var_4cfa0710], "active", (0, 0, 0), var_c3056ba3);
     }

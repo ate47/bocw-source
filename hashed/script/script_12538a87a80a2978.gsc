@@ -26,7 +26,7 @@
 // Checksum 0xd0008ec3, Offset: 0x350
 // Size: 0x54
 function private autoexec __init__system__() {
-    system::register(#"hash_57d1b71f57332413", &function_70a657d8, undefined, &function_5700f119, #"hash_f81b9dea74f0ee");
+    system::register(#"hash_57d1b71f57332413", &function_70a657d8, undefined, &finalize, #"hash_f81b9dea74f0ee");
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
@@ -41,7 +41,7 @@ function function_70a657d8() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0xf91a50ba, Offset: 0x3c0
 // Size: 0x1c
-function function_5700f119() {
+function finalize() {
     /#
         level thread init_devgui();
     #/
@@ -232,10 +232,10 @@ function function_621d45bc(list, struct) {
     players = getplayers();
     struct.var_f0f92268 = [];
     foreach (player in players) {
-        var_2ab78386 = function_410c380(list.itemlist);
-        var_ff082c28 = function_410c380(list.itemlist, var_2ab78386);
-        var_d3ac88d = function_410c380(list.itemlist, var_2ab78386, var_ff082c28);
-        var_c4aee6b4 = [2:var_d3ac88d, 1:var_ff082c28, 0:var_2ab78386];
+        item1 = function_410c380(list.itemlist);
+        var_ff082c28 = function_410c380(list.itemlist, item1);
+        var_d3ac88d = function_410c380(list.itemlist, item1, var_ff082c28);
+        var_c4aee6b4 = [2:var_d3ac88d, 1:var_ff082c28, 0:item1];
         if (!isdefined(struct.var_f0f92268)) {
             struct.var_f0f92268 = [];
         } else if (!isarray(struct.var_f0f92268)) {
@@ -313,37 +313,37 @@ function private function_410c380(list, var_523adf97, var_5fe37ae8) {
         item_index = var_f00ca053[random_index];
         return list[item_index].var_a6762160;
     } else if (isdefined(var_523adf97) && isdefined(var_5fe37ae8)) {
-        var_b4bf88aa = [];
+        new_list = [];
         foreach (item in list) {
             if (item.var_a6762160 != var_523adf97 && item.var_a6762160 != var_5fe37ae8) {
-                if (!isdefined(var_b4bf88aa)) {
-                    var_b4bf88aa = [];
-                } else if (!isarray(var_b4bf88aa)) {
-                    var_b4bf88aa = array(var_b4bf88aa);
+                if (!isdefined(new_list)) {
+                    new_list = [];
+                } else if (!isarray(new_list)) {
+                    new_list = array(new_list);
                 }
-                if (!isinarray(var_b4bf88aa, item.var_a6762160)) {
-                    var_b4bf88aa[var_b4bf88aa.size] = item.var_a6762160;
+                if (!isinarray(new_list, item.var_a6762160)) {
+                    new_list[new_list.size] = item.var_a6762160;
                 }
             }
         }
-        random_index = randomint(var_b4bf88aa.size);
-        return var_b4bf88aa[random_index];
+        random_index = randomint(new_list.size);
+        return new_list[random_index];
     } else if (isdefined(var_523adf97)) {
-        var_b4bf88aa = [];
+        new_list = [];
         foreach (item in list) {
             if (item.var_a6762160 != var_523adf97) {
-                if (!isdefined(var_b4bf88aa)) {
-                    var_b4bf88aa = [];
-                } else if (!isarray(var_b4bf88aa)) {
-                    var_b4bf88aa = array(var_b4bf88aa);
+                if (!isdefined(new_list)) {
+                    new_list = [];
+                } else if (!isarray(new_list)) {
+                    new_list = array(new_list);
                 }
-                if (!isinarray(var_b4bf88aa, item.var_a6762160)) {
-                    var_b4bf88aa[var_b4bf88aa.size] = item.var_a6762160;
+                if (!isinarray(new_list, item.var_a6762160)) {
+                    new_list[new_list.size] = item.var_a6762160;
                 }
             }
         }
-        random_index = randomint(var_b4bf88aa.size);
-        return var_b4bf88aa[random_index];
+        random_index = randomint(new_list.size);
+        return new_list[random_index];
     } else {
         random_index = randomint(list.size);
         return list[random_index].var_a6762160;

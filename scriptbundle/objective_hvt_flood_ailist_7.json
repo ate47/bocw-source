@@ -1,41 +1,41 @@
 {
     "var_210a8489": [
         {
-            "var_37d9fb07": "survival_ai_zombie",
+            "entryname": "survival_ai_zombie",
             "var_a949845f": -1,
             "var_857deb66": 35
         },
         {
-            "var_37d9fb07": "survival_ai_zombie_armor_medium",
+            "entryname": "survival_ai_zombie_armor_medium",
             "var_a949845f": -1,
             "var_857deb66": 34
         },
         {
-            "var_37d9fb07": "survival_ai_zombie_armor_heavy",
+            "entryname": "survival_ai_zombie_armor_heavy",
             "var_857deb66": 15
         },
         {
-            "var_37d9fb07": "survival_ai_mimic",
+            "entryname": "survival_ai_mimic",
             "var_a949845f": -1,
             "var_857deb66": 5
         },
         {
-            "var_37d9fb07": "survival_ai_raz",
+            "entryname": "survival_ai_raz",
             "var_a949845f": -1,
             "var_857deb66": 4
         },
         {
-            "var_37d9fb07": "survival_ai_steiner",
+            "entryname": "survival_ai_steiner",
             "var_a949845f": -1,
             "var_857deb66": 3
         },
         {
-            "var_37d9fb07": "survival_ai_mechz",
+            "entryname": "survival_ai_mechz",
             "var_a949845f": -1,
             "var_857deb66": 1
         },
         {
-            "var_37d9fb07": "survival_ai_abomination",
+            "entryname": "survival_ai_abomination",
             "var_a949845f": -1,
             "var_857deb66": 3
         }

@@ -58,7 +58,7 @@ function function_922745a1(player) {
 // Size: 0x2d4
 function function_d275f769(player, origin) {
     var_497e327b = origin + vectorscale((0, 0, 1), 800);
-    sprinkler = namespace_ec06fe4a::function_e22ae9b3(var_497e327b, "zombietron_sprinkler");
+    sprinkler = namespace_ec06fe4a::spawnmodel(var_497e327b, "zombietron_sprinkler");
     if (!isdefined(sprinkler)) {
         return;
     }

@@ -1924,7 +1924,7 @@ function function_41e8018f() {
     level flag::set(#"hash_4ae22bd566ad08c3");
     var_32c3c05c = getaiarchetypearray(#"hash_7c0d83ac1e845ac2");
     foreach (steiner in var_32c3c05c) {
-        steiner.ai.var_4beb90f3 = 0;
+        steiner.ai.cansplit = 0;
     }
     a_zombies = getaispeciesarray(level.zombie_team);
     if (isdefined(level.var_24de243e)) {
@@ -3109,7 +3109,7 @@ function function_cf8d916f(var_14fd7c9) {
     level.var_704c79ef = zm_utility::function_cce73165("steiner_location", #"hash_53f4e0daa341a161", "zone_center_upper");
     function_480605d8(level.var_704c79ef, 1);
     if (isdefined(level.var_704c79ef)) {
-        level.var_704c79ef.ai.var_4beb90f3 = 0;
+        level.var_704c79ef.ai.cansplit = 0;
         level.var_704c79ef thread function_106bc9f8(var_14fd7c9);
         level.var_704c79ef thread function_d76cb937(var_14fd7c9);
     }
@@ -3971,7 +3971,7 @@ function function_8f85d169(var_dbd74b22 = 1) {
 function function_9afd3ea2(var_1784db6) {
     var_32c3c05c = getaiarchetypearray(#"hash_7c0d83ac1e845ac2");
     foreach (steiner in var_32c3c05c) {
-        steiner.ai.var_4beb90f3 = 0;
+        steiner.ai.cansplit = 0;
     }
     level zm_utility::function_9ad5aeb1(0, 1, 0, var_1784db6);
 }

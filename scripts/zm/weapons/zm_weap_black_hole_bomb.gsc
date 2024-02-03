@@ -61,7 +61,7 @@ function function_995359b9(inflictor, attacker, *damage, *flags, *meansofdeath, 
 // Size: 0xbc
 function function_ca505fd3(params) {
     if (params.weapon === level.var_2e1abf5f && isplayer(params.eattacker) && params.smeansofdeath === "MOD_GRENADE_SPLASH" && isdefined(self.var_87b962fc) && gettime() < self.var_87b962fc) {
-        self namespace_cc411409::function_706a56ae(isdefined(self.var_22e8a925) ? self.var_22e8a925 : params.einflictor.origin, 2);
+        self namespace_cc411409::ragdoll_launch(isdefined(self.var_22e8a925) ? self.var_22e8a925 : params.einflictor.origin, 2);
     }
 }
 

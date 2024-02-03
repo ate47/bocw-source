@@ -238,7 +238,7 @@ function function_9bca3cb6() {
 // Checksum 0xd318b9a0, Offset: 0x1130
 // Size: 0x148
 function function_711927a1(origin) {
-    org = namespace_ec06fe4a::function_e22ae9b3(origin);
+    org = namespace_ec06fe4a::spawnmodel(origin);
     if (!isdefined(org)) {
         return;
     }
@@ -314,7 +314,7 @@ function function_83a2d68c() {
         #/
         self.spawnloc = [[ level.doa.var_39e3fa99 ]]->function_70fb5745();
     }
-    self.org = namespace_ec06fe4a::function_e22ae9b3(self.spawnloc.origin + vectorscale((0, 0, 1), 40), "tag_origin");
+    self.org = namespace_ec06fe4a::spawnmodel(self.spawnloc.origin + vectorscale((0, 0, 1), 40), "tag_origin");
     if (isdefined(self.org)) {
         self.org.takedamage = 0;
         self.org.targetname = "shadowTeleportMeNow";
@@ -403,11 +403,11 @@ function function_a86c6bf8(*einflictor, *eattacker, idamage, *idflags, *smeansof
         self namespace_ec06fe4a::function_4f72130c();
         self.takedamage = 0;
         self.aioverridedamage = undefined;
-        var_956de39f = namespace_ec06fe4a::function_e22ae9b3(self.origin);
-        if (isdefined(var_956de39f)) {
-            var_956de39f thread namespace_ec06fe4a::function_52afe5df(0.4);
-            var_956de39f namespace_83eb6304::function_3ecfde67("shadow_die");
-            var_956de39f namespace_e32bb68::function_3a59ec34("zmb_doa_ai_smokeman_death");
+        orb = namespace_ec06fe4a::spawnmodel(self.origin);
+        if (isdefined(orb)) {
+            orb thread namespace_ec06fe4a::function_52afe5df(0.4);
+            orb namespace_83eb6304::function_3ecfde67("shadow_die");
+            orb namespace_e32bb68::function_3a59ec34("zmb_doa_ai_smokeman_death");
         }
     }
     return surfacenormal;
@@ -451,13 +451,13 @@ function function_e6634b0c(var_11b86a4c = 45) {
     } else {
         self.var_860a34b9 = self.startposition;
     }
-    self.var_25881e65 = self.goalradius;
+    self.oldradius = self.goalradius;
     self.goalradius = 256;
     self.var_72283e28 = 0;
     self namespace_250e9486::function_41354e51(self.var_860a34b9, 1, 1);
     self waittilltimeout(10, #"goal");
     self.var_860a34b9 = undefined;
-    self.goalradius = self.var_25881e65;
+    self.goalradius = self.oldradius;
     self thread function_e6634b0c(var_11b86a4c);
 }
 

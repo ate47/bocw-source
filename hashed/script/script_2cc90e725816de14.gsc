@@ -200,11 +200,11 @@ function function_43c21e81(entity) {
 // Params 3, eflags: 0x6 linked
 // Checksum 0x5079b884, Offset: 0x12d8
 // Size: 0xc0
-function private function_f7c8ccf5(entity, var_42902fba, point2) {
+function private function_f7c8ccf5(entity, point1, point2) {
     if (isdefined(entity.var_a8eff0f2) && gettime() - entity.var_a8eff0f2 < int(1 * 1000)) {
         return 0;
     }
-    trace = physicstraceex(var_42902fba, point2, entity getmins(), entity getmaxs(), entity);
+    trace = physicstraceex(point1, point2, entity getmins(), entity getmaxs(), entity);
     return trace[#"fraction"] >= 1;
 }
 
@@ -397,13 +397,13 @@ function function_d3f3bff7(params) {
     }
     if (!isdefined(self.favoriteenemy) && isdefined(params.einflictor) && !isdefined(self.var_4b559171)) {
         awareness::function_c241ef9a(self, params.einflictor, 8);
-        var_55853a47 = getclosestpointonnavmesh(params.einflictor.origin, 256, self getpathfindingradius() * 1.2);
+        pointonnavmesh = getclosestpointonnavmesh(params.einflictor.origin, 256, self getpathfindingradius() * 1.2);
         var_f2f7ce25 = getclosestpointonnavmesh(self.origin, 256, self getpathfindingradius() * 1.2);
-        if (!isdefined(var_55853a47) || !isdefined(var_f2f7ce25)) {
+        if (!isdefined(pointonnavmesh) || !isdefined(var_f2f7ce25)) {
             return;
         }
-        to_origin = self.origin - var_55853a47;
-        goalpos = checknavmeshdirection(var_55853a47, to_origin, 96, self getpathfindingradius() * 1.2);
+        to_origin = self.origin - pointonnavmesh;
+        goalpos = checknavmeshdirection(pointonnavmesh, to_origin, 96, self getpathfindingradius() * 1.2);
         self.var_4b559171 = goalpos;
     }
 }

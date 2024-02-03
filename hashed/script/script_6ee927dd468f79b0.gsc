@@ -109,7 +109,7 @@ function function_b9c75c0(trap, var_7c56394 = 0) {
     if (isdefined(trap.var_dc3a5332) && level.doa.roundnumber < trap.var_dc3a5332) {
         return;
     }
-    hazard = namespace_ec06fe4a::function_e22ae9b3(trap.origin, "zombietron_fireball_trap");
+    hazard = namespace_ec06fe4a::spawnmodel(trap.origin, "zombietron_fireball_trap");
     if (isdefined(hazard)) {
         hazard.targetname = "hazard";
         hazard.var_fd5301f9 = "fireball";
@@ -239,8 +239,8 @@ function function_14a55bfa() {
     var_7ceb92b = self.velocity;
     var_c36bfa20 = self.velocity * 0.08;
     var_ac885920 = is_true(self.var_5a546472) && !isdefined(level.doa.var_182fb75a);
-    var_d736690e = isdefined(self.var_f92c74e) ? self.var_f92c74e : 5;
-    var_4180202d = isdefined(self.var_f92c74e) ? self.var_f92c74e << 1 : 10;
+    minwait = isdefined(self.var_f92c74e) ? self.var_f92c74e : 5;
+    maxwait = isdefined(self.var_f92c74e) ? self.var_f92c74e << 1 : 10;
     while (1) {
         var_37deefd = namespace_7f5aeb59::function_aab26933(self.origin, 1800);
         if (var_37deefd == 0) {
@@ -262,7 +262,7 @@ function function_14a55bfa() {
             }
             wait(randomfloatrange(1, 4));
         }
-        wait(randomfloatrange(var_d736690e, var_4180202d));
+        wait(randomfloatrange(minwait, maxwait));
     }
 }
 

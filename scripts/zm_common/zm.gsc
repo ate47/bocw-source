@@ -452,11 +452,11 @@ function function_b0613540() {
                     var_655d056a = self.var_c069e1cd;
                     self iprintlnbold("zmb_music_box" + self.var_c069e1cd);
                 }
-                var_88344afd = (50, 200, 0);
+                text_pos = (50, 200, 0);
                 var_609025d8 = vectorscale((0, 1, 0), 30);
                 var_6fbe10c9 = self getentitynumber();
                 text = "dog_round" + var_6fbe10c9 + "zombie_riser_fx_lowg" + (isdefined(self.var_c069e1cd) ? self.var_c069e1cd : 0);
-                debug2dtext(var_88344afd + var_609025d8 * var_6fbe10c9, text, function_1a01f2f7(self) ? (1, 0, 0) : (0, 1, 0), 1, (0, 0, 0), 1);
+                debug2dtext(text_pos + var_609025d8 * var_6fbe10c9, text, function_1a01f2f7(self) ? (1, 0, 0) : (0, 1, 0), 1, (0, 0, 0), 1);
                 if (var_655d056a !== self.var_c069e1cd) {
                     println(text);
                 }
@@ -2190,7 +2190,7 @@ function end_game() {
     globallogic::function_6c8d7c31(level.winningteam);
     globallogic_player::recordactiveplayersendgamematchrecordstats();
     players = getplayers();
-    var_488472e0 = [];
+    clientnums = [];
     foreach (player in players) {
         player globallogic_player::freezeplayerforroundend();
         if (isbot(player)) {
@@ -2209,7 +2209,7 @@ function end_game() {
         player persistence::set_recent_stat(0, 0, #"score", player.pers[#"score"]);
         player persistence::set_recent_stat(0, 0, #"damage", int(isdefined(player.pers[#"damagedone"]) ? player.pers[#"damagedone"] : 0));
         clientnum = player getentitynumber();
-        var_488472e0[clientnum] = clientnum;
+        clientnums[clientnum] = clientnum;
         player zm_stats::function_9daadcaa(#"clientnum", clientnum);
         characterindex = player getcharacterbodytype();
         player zm_stats::function_9daadcaa(#"characterindex", characterindex);
@@ -2226,7 +2226,7 @@ function end_game() {
             function_31f24041();
         }
     }
-    function_c5c3929(var_488472e0);
+    function_c5c3929(clientnums);
     if (!is_true(level.host_ended_game)) {
         level callback::callback(#"hash_3b7d3ed9e484ef72");
     }
@@ -2966,10 +2966,10 @@ function private function_ad7bd142(*item) {
 // Size: 0x1a8
 function private function_be26a3f3(*item) {
     var_e20637be = 1;
-    var_a9bb683c = getweapon(#"none");
+    nullweapon = getweapon(#"none");
     var_f945fa92 = getweapon(#"bare_hands");
     currentweapon = self getcurrentweapon();
-    if (currentweapon != var_a9bb683c && currentweapon != var_f945fa92 && !array::contains(level.var_faabb06f, currentweapon.name)) {
+    if (currentweapon != nullweapon && currentweapon != var_f945fa92 && !array::contains(level.var_faabb06f, currentweapon.name)) {
         maxammo = currentweapon.maxammo;
         currentammostock = self getweaponammostock(currentweapon);
         if (currentammostock < maxammo) {
@@ -2977,7 +2977,7 @@ function private function_be26a3f3(*item) {
         }
     }
     var_824ff7c7 = self getstowedweapon();
-    if (var_824ff7c7 != var_a9bb683c && var_824ff7c7 != var_f945fa92 && !array::contains(level.var_faabb06f, var_824ff7c7.name)) {
+    if (var_824ff7c7 != nullweapon && var_824ff7c7 != var_f945fa92 && !array::contains(level.var_faabb06f, var_824ff7c7.name)) {
         maxammo = var_824ff7c7.maxammo;
         var_22baab7c = self getweaponammostock(var_824ff7c7);
         if (var_22baab7c < maxammo) {

@@ -240,11 +240,11 @@ function fake_physicslaunch(start_pos, target_pos, power) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xb985ea11, Offset: 0xe98
 // Size: 0xa6
-function function_86edc85c(target_pos, var_4180202d = 2) {
+function function_86edc85c(target_pos, maxwait = 2) {
     self endon(#"death");
     var_1dd010d6 = gettime();
     while (1) {
-        if (self.origin[2] < target_pos[2] || float(gettime() - var_1dd010d6) / 1000 > var_4180202d) {
+        if (self.origin[2] < target_pos[2] || float(gettime() - var_1dd010d6) / 1000 > maxwait) {
             break;
         }
         waitframe(1);

@@ -15,7 +15,7 @@
     "name": "pc_snd_output_device",
     "displayname": "#hash_58099a0a529b43ba",
     "var_500458ac": 10,
-    "var_926d1be9": 0.01,
+    "decimalplace": 0.01,
     "var_66faec87": 1,
     "statname": "snd_outputDevice",
     "var_8b80386": 1,

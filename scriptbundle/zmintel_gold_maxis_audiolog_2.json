@@ -1,49 +1,49 @@
 {
     "var_1ad142ee": [
         {
-            "var_46bd7973": "#hash_38770ed088d639bb",
+            "soundevent": "#hash_38770ed088d639bb",
             "var_f35c5951": 0.8,
             "var_5d4b5964": 2.88,
             "var_36bf8e05": "#hash_40a0526296b252e8"
         },
         {
-            "var_46bd7973": "#hash_38770dd088d63808",
+            "soundevent": "#hash_38770dd088d63808",
             "var_f35c5951": 0.8,
             "var_5d4b5964": 9.58,
             "var_36bf8e05": "#hash_6562c919ea3899a1"
         },
         {
-            "var_46bd7973": "#hash_387710d088d63d21",
+            "soundevent": "#hash_387710d088d63d21",
             "var_f35c5951": 0.8,
             "var_5d4b5964": 10.37,
             "var_36bf8e05": "#hash_32dba1e1b55dfaee"
         },
         {
-            "var_46bd7973": "#hash_38770fd088d63b6e",
+            "soundevent": "#hash_38770fd088d63b6e",
             "var_f35c5951": 0.8,
             "var_5d4b5964": 15.72,
             "var_36bf8e05": "#hash_6144a58665beb627"
         },
         {
-            "var_46bd7973": "#hash_387712d088d64087",
+            "soundevent": "#hash_387712d088d64087",
             "var_f35c5951": 0.8,
             "var_5d4b5964": 16.55,
             "var_36bf8e05": "#hash_7f44144aec6eaa5c"
         },
         {
-            "var_46bd7973": "#hash_387711d088d63ed4",
+            "soundevent": "#hash_387711d088d63ed4",
             "var_f35c5951": 0.8,
             "var_5d4b5964": 13.1,
             "var_36bf8e05": "#hash_560562b0f4ec6e45"
         },
         {
-            "var_46bd7973": "#hash_387714d088d643ed",
+            "soundevent": "#hash_387714d088d643ed",
             "var_f35c5951": 0.8,
             "var_5d4b5964": 11.26,
             "var_36bf8e05": "#hash_20628e475a84b562"
         },
         {
-            "var_46bd7973": "#hash_387713d088d6423a",
+            "soundevent": "#hash_387713d088d6423a",
             "var_f35c5951": 0.5,
             "var_5d4b5964": 1.92,
             "var_36bf8e05": "#hash_74a4252f9e0793db"
@@ -57,7 +57,7 @@
     "uimodel": "#hash_43c3b478e6bb838",
     "type": "zmintel",
     "season": 1,
-    "var_ad4ad686": "#hash_5ad2dea4c296de59",
+    "var_ad4ad686": "#maxis",
     "soundloop": "#hash_2e77024e1f0a29f1",
     "name": "zmintel_gold_maxis_audiolog_2",
     "var_9be0526e": "#audiolog",

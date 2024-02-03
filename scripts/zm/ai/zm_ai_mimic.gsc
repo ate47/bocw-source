@@ -193,13 +193,13 @@ function function_5c2b66f6(*prop) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xb47643b4, Offset: 0xc28
 // Size: 0x130
-function function_9832759c(origin, var_1167c93b) {
-    points = namespace_85745671::function_e4791424(origin, int(max(10, var_1167c93b)), 50, 1000, 0, undefined, 0);
+function function_9832759c(origin, num_points) {
+    points = namespace_85745671::function_e4791424(origin, int(max(10, num_points)), 50, 1000, 0, undefined, 0);
     spawn_points = [];
     foreach (point in points) {
         if (!isdefined(arraygetclosest(point.origin, level.var_5fafe5ac, 32))) {
             spawn_points[spawn_points.size] = point;
-            if (spawn_points.size >= var_1167c93b) {
+            if (spawn_points.size >= num_points) {
                 break;
             }
         }
@@ -244,7 +244,7 @@ function function_7a3d3a78(zone_name, spawn_points) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x45042a08, Offset: 0xfd8
 // Size: 0x350
-function function_64aa9d51(origin, var_1167c93b = 1, zone = undefined) {
+function function_64aa9d51(origin, num_points = 1, zone = undefined) {
     players = function_a1ef346b();
     foreach (index, player in players) {
         if (!zm_utility::is_player_valid(player) || is_true(player.var_16735873)) {
@@ -280,7 +280,7 @@ function function_64aa9d51(origin, var_1167c93b = 1, zone = undefined) {
             origin = zone.nodes[randomint(zone.nodes.size)].origin;
         }
         if (isdefined(origin)) {
-            spawn_points = function_9832759c(origin, var_1167c93b);
+            spawn_points = function_9832759c(origin, num_points);
         }
     }
     spawn_points = function_7a3d3a78(zone.name, spawn_points);

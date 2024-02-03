@@ -21,7 +21,7 @@ function private autoexec function_4047919b() {
         level._snd._callbacks = [];
         level._snd.var_3cc765a3 = [];
         level._snd.var_92f63ad0 = [];
-        level._snd.var_d37e94ca = #"hash_26f47d82e3ac7591";
+        level._snd.var_d37e94ca = #"centity";
         level._snd.var_90903fc0 = 0;
         level._snd._callbacks[#"hash_48cf16f271a9efa6"] = &function_6f94855d;
         level._snd._callbacks[#"hash_2e4f12f2aa75ce4a"] = &function_679011ab;
@@ -45,7 +45,7 @@ function private autoexec function_4047919b() {
         dvar("<unknown string>", "<unknown string>", &function_360bb421);
     #/
     waittillframeend();
-    level._snd.var_a203d643 = 1;
+    level._snd.isinitialized = 1;
 }
 
 // Namespace snd/snd
@@ -185,7 +185,7 @@ function private function_cc4bf5ee(player, cmd, args) {
         }
     }
     ent = undefined;
-    var_3b5a35c4 = 0;
+    framecount = 0;
     while (1) {
         ent = getentbynum(player.localclientnum, entitynumber);
         if (isentity(ent)) {
@@ -224,9 +224,9 @@ function private function_cc4bf5ee(player, cmd, args) {
             }
             break;
         }
-        var_3b5a35c4++;
-        if (function_81fac19d(var_3b5a35c4 % 60 == 0, "snd: client voice entity not found '" + soundalias + "' (" + entitynumber + ")")) {
-            if (function_81fac19d(var_3b5a35c4 % 1800 == 0, "snd: client soundalias ABORTED '" + soundalias + "' (" + entitynumber + ")")) {
+        framecount++;
+        if (function_81fac19d(framecount % 60 == 0, "snd: client voice entity not found '" + soundalias + "' (" + entitynumber + ")")) {
+            if (function_81fac19d(framecount % 1800 == 0, "snd: client soundalias ABORTED '" + soundalias + "' (" + entitynumber + ")")) {
                 return;
             }
         }
@@ -258,7 +258,7 @@ function function_c5463db2(*localclientnum, *oldval, newval, *bnewent, *binitial
     if (isdefined(ent) && bwasdemojump == 0) {
         return;
     }
-    var_3b5a35c4 = 0;
+    framecount = 0;
     while (isdefined(ent)) {
         targetname = level._snd.var_cd3159ba["" + entitynumber];
         if (isentity(ent) && isstring(targetname)) {
@@ -267,9 +267,9 @@ function function_c5463db2(*localclientnum, *oldval, newval, *bnewent, *binitial
             level thread function_3c94cf0c(ent);
             return;
         }
-        var_3b5a35c4++;
-        if (function_81fac19d(var_3b5a35c4 % 60 == 0, "snd: client targetname not found for $e" + entitynumber)) {
-            if (function_81fac19d(var_3b5a35c4 % 1800 == 0, "snd: client targetname ABORTED for $e" + entitynumber)) {
+        framecount++;
+        if (function_81fac19d(framecount % 60 == 0, "snd: client targetname not found for $e" + entitynumber)) {
+            if (function_81fac19d(framecount % 1800 == 0, "snd: client targetname ABORTED for $e" + entitynumber)) {
                 return;
             }
         }
@@ -393,7 +393,7 @@ function function_5275752c(soundalias, var_1d25915, var_605838f4, var_e330010e) 
         assert(isdefined(ent), "<unknown string>");
     #/
     ent.var_90c86b97 = var_605838f4;
-    ent.var_317c7400 = #"hash_26f47d82e3ac7591";
+    ent.soundtype = #"centity";
     ent.soundkey = ent getentitynumber();
     ent.targetname = "snd " + soundalias;
     return ent;
@@ -437,7 +437,7 @@ function function_bdc44456(ent) {
 // Size: 0x27e
 function function_bb749fc3(var_afe43979, soundalias, var_99e65ecf, delaytime) {
     ent = var_afe43979;
-    var_fe3be304 = undefined;
+    currentvolume = undefined;
     ent endon(#"death");
     /#
         assert(isdefined(ent));
@@ -445,17 +445,17 @@ function function_bb749fc3(var_afe43979, soundalias, var_99e65ecf, delaytime) {
     /#
         assert(isstring(soundalias) || ishash(soundalias));
     #/
-    var_fe3be304 = 1;
-    if (!isdefined(var_99e65ecf) && isdefined(var_fe3be304)) {
-        var_99e65ecf = var_fe3be304;
+    currentvolume = 1;
+    if (!isdefined(var_99e65ecf) && isdefined(currentvolume)) {
+        var_99e65ecf = currentvolume;
     }
     if (snd::did_init() == 0) {
-        var_cd7344db = !isdefined(delaytime) || snd::function_90a7316b(delaytime) && delaytime == 0;
+        var_cd7344db = !isdefined(delaytime) || snd::isnumber(delaytime) && delaytime == 0;
         if (snd::function_81fac19d(var_cd7344db, "snd: delayed due to first frame!")) {
             delaytime = 0.05;
         }
     }
-    if (snd::function_90a7316b(delaytime) && delaytime > 0) {
+    if (snd::isnumber(delaytime) && delaytime > 0) {
         wait(delaytime);
     }
     soundhandle = -1;
@@ -500,7 +500,7 @@ function function_273d939b(var_afe43979, var_24ea4e17) {
             ent.soundalias = undefined;
             ent.soundhandle = undefined;
         }
-        ent.var_317c7400 = undefined;
+        ent.soundtype = undefined;
         function_bdc44456(ent);
     }
 }
@@ -734,8 +734,8 @@ function private function_48e190dd(curve, scale, time, var_9cecf99a, callbackfun
         assert(var_7c87e4f1 > 0, "<unknown string>");
     #/
     frametime = float(function_6cfa7975());
-    var_dbc35c6c = function_a18ae88f(float(time), frametime);
-    time = float(time) + frametime - var_dbc35c6c;
+    timeremainder = function_a18ae88f(float(time), frametime);
+    time = float(time) + frametime - timeremainder;
     var_eb07c1fa = float(time) / float(var_7c87e4f1);
     var_aeb0a629 = function_a18ae88f(var_eb07c1fa, frametime);
     var_eb07c1fa = var_eb07c1fa + frametime - var_aeb0a629;
@@ -786,14 +786,14 @@ function private function_48e190dd(curve, scale, time, var_9cecf99a, callbackfun
         }
         waittime = min(var_eb07c1fa, remainingtime);
         var_5bd40646 = var_5bd40646 + int(waittime * 1000 + 0.5);
-        var_1007824a = float(var_5bd40646) / float(timems);
+        timefrac = float(var_5bd40646) / float(timems);
         var_91b884ae = 1;
         if (var_71659f7c > 0) {
-            var_1007824a = math::clamp(1 - var_1007824a, 0, 1);
-            var_642b24ce = function_b918d683(var_1007824a, curve);
+            timefrac = math::clamp(1 - timefrac, 0, 1);
+            var_642b24ce = function_b918d683(timefrac, curve);
             var_91b884ae = lerpfloat(scale, var_45dc, var_642b24ce);
         } else {
-            var_642b24ce = function_b918d683(var_1007824a, curve);
+            var_642b24ce = function_b918d683(timefrac, curve);
             var_91b884ae = lerpfloat(var_45dc, scale, var_642b24ce);
         }
         /#
@@ -987,21 +987,21 @@ function private function_360bb421(key, value) {
     /#
         values = strtok(value, "<unknown string>");
         if (isarray(values) && values.size > 0) {
-            var_864d2972 = values[0];
+            contextkey = values[0];
             contextvalue = function_ea2f17d1(values[1], "<unknown string>");
             var_23614cc2 = function_ea2f17d1(values[2], 0);
             if (key == "<unknown string>") {
-                iprintlnbold("<unknown string>" + "<unknown string>" + var_864d2972 + "<unknown string>" + contextvalue + "<unknown string>");
-                setsoundcontext(var_864d2972, contextvalue);
+                iprintlnbold("<unknown string>" + "<unknown string>" + contextkey + "<unknown string>" + contextvalue + "<unknown string>");
+                setsoundcontext(contextkey, contextvalue);
             } else if (key == "<unknown string>") {
-                iprintlnbold("<unknown string>" + "<unknown string>" + var_864d2972 + "<unknown string>" + contextvalue + "<unknown string>");
+                iprintlnbold("<unknown string>" + "<unknown string>" + contextkey + "<unknown string>" + contextvalue + "<unknown string>");
                 foreach (player in function_2b2b83dc()) {
-                    player setsoundentcontext(var_864d2972, contextvalue);
+                    player setsoundentcontext(contextkey, contextvalue);
                 }
             } else if (key == "<unknown string>") {
-                iprintlnbold("<unknown string>" + "<unknown string>" + var_864d2972 + "<unknown string>" + contextvalue + "<unknown string>");
+                iprintlnbold("<unknown string>" + "<unknown string>" + contextkey + "<unknown string>" + contextvalue + "<unknown string>");
                 foreach (ent in getentarray(0)) {
-                    ent setsoundentcontext(var_864d2972, contextvalue);
+                    ent setsoundentcontext(contextkey, contextvalue);
                 }
             }
         }

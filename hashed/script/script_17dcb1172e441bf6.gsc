@@ -148,13 +148,13 @@ function function_75ebaff2(var_4e2d590d, timesec, entity) {
 // Params 7, eflags: 0x2 linked
 // Checksum 0x29cbb364, Offset: 0x780
 // Size: 0x11e
-function function_b57a9d84(var_f893e8d1, yaw, length, width, height, timesec = 1, color = (1, 0, 0)) {
+function function_b57a9d84(vcenter, yaw, length, width, height, timesec = 1, color = (1, 0, 0)) {
     /#
         end = gettime() + timesec * 1000;
         mins = (length * -1 / 2, width * -1 / 2, height * -1 / 2);
         maxs = (length / 2, width / 2, height / 2);
         while (end > gettime()) {
-            box(var_f893e8d1, mins, maxs, yaw, color, 1, 0, 1);
+            box(vcenter, mins, maxs, yaw, color, 1, 0, 1);
             waitframe(1);
         }
     #/
@@ -316,7 +316,7 @@ function function_8f04a649() {
             var_4c600979 = 800;
             time = gettime();
             foreach (line in level.doa.var_3843f782) {
-                if (time > line.var_3e2a561b && !isdefined(line.var_633e9e48)) {
+                if (time > line.expire && !isdefined(line.var_633e9e48)) {
                     line thread function_ee689179();
                 }
                 line.y = var_4c600979;
@@ -342,7 +342,7 @@ function function_4e3cfad(text, color = (1, 1, 1), alpha = 1, scale = 1, duratio
     struct.color = color;
     struct.alpha = alpha;
     struct.scale = scale;
-    struct.var_3e2a561b = gettime() + duration * 1000;
+    struct.expire = gettime() + duration * 1000;
     level.doa.var_3843f782[level.doa.var_3843f782.size] = struct;
     level thread function_8f04a649();
 }

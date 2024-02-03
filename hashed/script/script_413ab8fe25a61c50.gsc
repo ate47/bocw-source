@@ -38,8 +38,8 @@ function function_93e7ee52(challengetype = 0, name) {
     level.doa.var_a598a835 = undefined;
     level.doa.var_a77e4601 = [];
     level flag::clear("challenge_round_spawnOverride");
-    var_72ef2333 = gettime();
-    namespace_1e25ad94::function_f5f0c0f8("Challenge (" + name + ") starting at: " + var_72ef2333 + " RoundNumber: " + level.doa.roundnumber);
+    timestart = gettime();
+    namespace_1e25ad94::function_f5f0c0f8("Challenge (" + name + ") starting at: " + timestart + " RoundNumber: " + level.doa.roundnumber);
     waitframe(1);
     var_af104f33 = function_fa798421(name);
     level namespace_a6ddb172::function_7a0e5387(var_af104f33);
@@ -283,7 +283,7 @@ function function_d1dc367c() {
     players = namespace_7f5aeb59::function_23e1f90f();
     var_58bd90cd = 2;
     while (waves) {
-        for (var_ce00d2da = var_87b290c9; var_ce00d2da > 0; var_ce00d2da--) {
+        for (numai = var_87b290c9; numai > 0; numai--) {
             doa_enemy::function_a6b807ea(var_a1c7d06b, 1, origin, 0, undefined, players[0], undefined, level.doa.var_39e3fa99, undefined, undefined, -1);
         }
         while (level.doa.var_dcbded2.size || namespace_ec06fe4a::function_9788bacc() > 5) {
@@ -300,7 +300,7 @@ function function_d1dc367c() {
             level.doa.var_13e8f9c9 = namespace_250e9486::function_bb0817aa(level.doa.var_13e8f9c9);
         }
     }
-    [[ level.doa.var_39e3fa99 ]]->function_4aca7529(0);
+    [[ level.doa.var_39e3fa99 ]]->setpaused(0);
     level.doa.var_ccbf8c33 = undefined;
     level.doa.var_2020337e = undefined;
     level.doa.var_a598a835 = undefined;

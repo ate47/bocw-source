@@ -13,7 +13,7 @@
 // Checksum 0x4dcae982, Offset: 0x490
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"blood", &preload, &function_3469610d, undefined, undefined);
+    system::register(#"blood", &preload, &postload, undefined, undefined);
 }
 
 // Namespace blood/namespace_5d18774f
@@ -30,7 +30,7 @@ function preload() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0xa30a14f0, Offset: 0x5e0
 // Size: 0x6c
-function function_3469610d() {
+function postload() {
     function_dd830dee();
     callback::on_localplayer_spawned(&function_e79ccfd8);
     callback::on_localclient_connect(&localclient_connect);
@@ -1412,7 +1412,7 @@ function function_11057a7d(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Checksum 0x7665b406, Offset: 0x85e8
 // Size: 0x158
 function function_6ad98c9c() {
-    level.blood.var_d2257418 = 1;
+    level.blood.gameskill = 1;
     if (!isdefined(level.blood.var_286fcc75)) {
         level.blood.var_286fcc75 = [];
         level.blood.var_286fcc75[0] = getscriptbundle(#"gamedifficulty_recruit");
@@ -1441,8 +1441,8 @@ function private function_17323bb3(localclientnum) {
     self notify("7fdb2f58d63647d4");
     self endon("7fdb2f58d63647d4");
     self endon(#"death", #"hash_6bf3273fdaffc859", #"disconnect");
-    var_d2257418 = util::function_5a407dc8(localclientnum);
-    shieldtime = level.blood.var_286fcc75[var_d2257418].player_deathinvulnerabletime;
+    gameskill = util::function_5a407dc8(localclientnum);
+    shieldtime = level.blood.var_286fcc75[gameskill].player_deathinvulnerabletime;
     ramptime = 0.25;
     while (!isdefined(self.pstfx_blood)) {
         waitframe(1);

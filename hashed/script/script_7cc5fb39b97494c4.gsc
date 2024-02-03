@@ -120,7 +120,7 @@ class class_9e71c1a2 {
     // Params 1, eflags: 0x2 linked
     // Checksum 0xc9f9b492, Offset: 0x2bb0
     // Size: 0xc
-    function function_27940f1f(*team) {
+    function _reset(*team) {
         
     }
 
@@ -249,7 +249,7 @@ class class_9e71c1a2 {
         if (!self.var_bb0d53c3.size) {
             self.var_b5a03b21 flag::clear("playing");
         }
-        [[ self ]]->function_27940f1f(str_team);
+        [[ self ]]->_reset(str_team);
     }
 
     // Namespace namespace_9e71c1a2/namespace_435e13ec

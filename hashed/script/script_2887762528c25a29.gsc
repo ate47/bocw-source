@@ -75,12 +75,12 @@ function function_a2e3342e(trap, var_7c56394 = 0) {
     /#
         assert(isdefined(trap.target), "<unknown string>");
     #/
-    trap.script_model = namespace_ec06fe4a::function_e22ae9b3(trap.origin, "zombietron_pressure_plate", trap.angles);
+    trap.script_model = namespace_ec06fe4a::spawnmodel(trap.origin, "zombietron_pressure_plate", trap.angles);
     if (isdefined(trap.script_model)) {
         trap.script_model.targetname = "hazard";
         trap.script_model.var_fd5301f9 = "pressureplate";
     }
-    trap.var_1de20e4f = namespace_ec06fe4a::function_e22ae9b3(trap.origin, "zombietron_pressure_plate_holder", trap.angles);
+    trap.var_1de20e4f = namespace_ec06fe4a::spawnmodel(trap.origin, "zombietron_pressure_plate_holder", trap.angles);
     trap.var_7c56394 = var_7c56394;
     trap.var_84a0207b = getentarray(trap.target, "targetname");
     if (trap.var_84a0207b.size == 0) {

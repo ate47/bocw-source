@@ -401,8 +401,8 @@ function function_7b4387e1(*rewardxp, maxval, row, tablenumber, challengetype, i
     tier = int(tablelookup(#"gamedata/stats/cp/statsmilestones1.csv", 0, challengeindex, 1));
     switch (challengetype) {
     case 0:
-        var_56f53a52 = function_f752d6a9(challengeindex);
-        switch (var_56f53a52) {
+        challengename = function_f752d6a9(challengeindex);
+        switch (challengename) {
         case #"hash_20faf480b8f9146a":
             break;
         case #"hash_381ccf00b363923d":

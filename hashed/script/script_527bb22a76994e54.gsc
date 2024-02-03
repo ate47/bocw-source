@@ -173,7 +173,7 @@ function function_a69227f8(var_f587343a) {
     foreach (trigger in var_f587343a.a_triggers) {
         trigger.var_f90e2591 = &function_e976f5d3;
         trigger.var_938b0e9b = &function_cab79d7e;
-        trigger.var_d9b5c896 = level.var_3cb3ede5[trigger.script_noteworthy].var_bf26b910;
+        trigger.var_d9b5c896 = level.var_3cb3ede5[trigger.script_noteworthy].levelname;
         trigger.var_94ca2a30 = level.var_3cb3ede5[trigger.script_noteworthy].var_2dd3e7b0;
         trigger interactive_map::function_b5c2702b(#"confirm", var_96b6affa);
     }
@@ -345,7 +345,7 @@ function function_c23b1611() {
         namespace_61e6d095::function_9ade1d9b(#"hash_3ccc1702bc979da8", "AlignRight", var_9f97b0c5);
         namespace_61e6d095::function_9ade1d9b(#"hash_3ccc1702bc979da8", "MapName", level.var_8d26dee2);
         namespace_61e6d095::function_9ade1d9b(#"hash_3ccc1702bc979da8", "Year", evidence.var_2200aced);
-        namespace_61e6d095::function_9ade1d9b(#"hash_3ccc1702bc979da8", "LevelName", evidence.var_bf26b910);
+        namespace_61e6d095::function_9ade1d9b(#"hash_3ccc1702bc979da8", "LevelName", evidence.levelname);
         namespace_61e6d095::function_9ade1d9b(#"hash_3ccc1702bc979da8", "LongDescription", evidence.var_47b1727b);
         namespace_61e6d095::function_9ade1d9b(#"hash_3ccc1702bc979da8", "LevelPresence", evidence.var_4d8b459b);
         foreach (index, var_e8c1b531 in evidence.var_4458275e) {
@@ -395,10 +395,10 @@ function function_c469b424() {
             namespace_61e6d095::function_f2a9266(#"hash_afc09dfd34bcde0", index, "Title", collectible.title);
             namespace_61e6d095::function_f2a9266(#"hash_afc09dfd34bcde0", index, "SubTitle", collectible.subtitle);
             namespace_61e6d095::function_f2a9266(#"hash_afc09dfd34bcde0", index, "Description", collectible.description);
-            namespace_61e6d095::function_f2a9266(#"hash_afc09dfd34bcde0", index, "Thumbnail", collectible.var_115998e3);
+            namespace_61e6d095::function_f2a9266(#"hash_afc09dfd34bcde0", index, "Thumbnail", collectible.thumbnail);
         }
         namespace_61e6d095::function_73c9a490(#"hash_afc09dfd34bcde0", 1);
-        namespace_61e6d095::function_9ade1d9b(#"hash_afc09dfd34bcde0", "text", evidence.var_bf26b910);
+        namespace_61e6d095::function_9ade1d9b(#"hash_afc09dfd34bcde0", "text", evidence.levelname);
         namespace_c8e236da::function_ebf737f8(#"hash_5b42bcce1de4f193");
         namespace_c8e236da::function_ebf737f8(#"hash_480d246174c7faa7");
     }
@@ -450,10 +450,10 @@ function function_c38c0276() {
         } else if (option.var_70b35161 == 2) {
             level notify(#"hash_3e8dc841ce47f8fd");
         } else {
-            var_7d4cba46 = is_true(savegame::function_6440b06b(#"persistent", level.var_8d26dee2).complete);
-            if (var_7d4cba46) {
+            iscomplete = is_true(savegame::function_6440b06b(#"persistent", level.var_8d26dee2).complete);
+            if (iscomplete) {
             }
-            savegame::function_81534803(#"hash_e7d26541441cb9d", level.var_8d26dee2);
+            savegame::function_81534803(#"transient", level.var_8d26dee2);
             load::function_c9154eb7(level.var_8d26dee2);
         }
     }

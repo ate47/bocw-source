@@ -1,31 +1,31 @@
 {
     "var_1ad142ee": [
         {
-            "var_46bd7973": "#hash_4f3535077c47d938",
+            "soundevent": "#hash_4f3535077c47d938",
             "var_f35c5951": 0.8,
             "var_5d4b5964": 4.99,
             "var_36bf8e05": "#hash_2d19ad752967f4b7"
         },
         {
-            "var_46bd7973": "#hash_4f3536077c47daeb",
+            "soundevent": "#hash_4f3536077c47daeb",
             "var_f35c5951": 0.8,
             "var_5d4b5964": 3.71,
             "var_36bf8e05": "#hash_1ad628d37767ae66"
         },
         {
-            "var_46bd7973": "#hash_4f3537077c47dc9e",
+            "soundevent": "#hash_4f3537077c47dc9e",
             "var_f35c5951": 0.8,
             "var_5d4b5964": 5.18,
             "var_36bf8e05": "#hash_11ebdce503705de1"
         },
         {
-            "var_46bd7973": "#hash_4f3538077c47de51",
+            "soundevent": "#hash_4f3538077c47de51",
             "var_f35c5951": 0.8,
             "var_5d4b5964": 11.8,
             "var_36bf8e05": "#hash_2e1f82c0a07f5bb0"
         },
         {
-            "var_46bd7973": "#hash_4f3539077c47e004",
+            "soundevent": "#hash_4f3539077c47e004",
             "var_f35c5951": 0.8,
             "var_5d4b5964": 3.24,
             "var_36bf8e05": "#hash_f3bf326cc1c1f9b"
@@ -39,7 +39,7 @@
     "uimodel": "#hash_43c3b478e6bb838",
     "type": "zmintel",
     "season": 2,
-    "var_ad4ad686": "#hash_5ad2dea4c296de59",
+    "var_ad4ad686": "#maxis",
     "soundloop": "#hash_2e77024e1f0a29f1",
     "name": "zmintel_gold_maxis_audiolog_4",
     "var_9be0526e": "#audiolog",

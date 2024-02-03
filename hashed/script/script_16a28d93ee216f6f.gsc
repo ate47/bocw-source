@@ -154,10 +154,10 @@ function function_eb8c5f46() {
     var_9f3728b2 = function_a3f6cdac(var_4aaee197);
     var_1adb66c8 = function_a3f6cdac(var_2a6bd4de);
     var_3ff1021a = function_a3f6cdac(var_64df9187);
-    var_e69a8d31 = max(var_4aaee197, max(var_2a6bd4de, var_64df9187));
+    check_dist = max(var_4aaee197, max(var_2a6bd4de, var_64df9187));
     corpses = [];
     if (isdefined(level.var_d3a7bebd)) {
-        corpses = [[ level.var_d3a7bebd ]](self.origin, var_e69a8d31);
+        corpses = [[ level.var_d3a7bebd ]](self.origin, check_dist);
     }
     level.stealth.var_69fc8bf2++;
     found_corpse = undefined;
@@ -175,7 +175,7 @@ function function_eb8c5f46() {
         distsq = distancesquared(self.origin, var_2501cbe2);
         if (corpse function_c40851c(var_2501cbe2)) {
             /#
-                assert(level.stealth.corpse.dists[#"hash_67ecb968e26f1dee"] <= var_e69a8d31);
+                assert(level.stealth.corpse.dists[#"hash_67ecb968e26f1dee"] <= check_dist);
             #/
             var_1adb66c8 = function_a3f6cdac(level.stealth.corpse.dists[#"hash_67ecb968e26f1dee"]);
             var_3ff1021a = var_1adb66c8;

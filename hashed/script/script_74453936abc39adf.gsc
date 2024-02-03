@@ -54,7 +54,7 @@ function private function_72b9b674() {
         return &function_35d61d4;
     case #"gun":
         return &function_13821498;
-    case #"hash_c5acc1898a61b54":
+    case #"gunfight_3v3":
     case #"gunfight":
         return &function_8d249e99;
     case #"koth":
@@ -83,10 +83,10 @@ function private control_start() {
     while (!isdefined(level.zones) || level.zones.size <= 0) {
         waitframe(1);
     }
-    var_5c6dcdf9 = [];
+    controlinfo = [];
     foreach (zone in level.zones) {
         info = level function_5f64ef84(zone.gameobject);
-        var_5c6dcdf9[var_5c6dcdf9.size] = info;
+        controlinfo[controlinfo.size] = info;
         foreach (team in level.teams) {
             order = #"defend";
             weight = &function_e8d188ad;
@@ -102,20 +102,20 @@ function private control_start() {
     }
     while (1) {
         var_23c361c9 = [];
-        foreach (info in var_5c6dcdf9) {
+        foreach (info in controlinfo) {
             object = info.target;
             if (!object.trigger istriggerenabled()) {
                 var_23c361c9[var_23c361c9.size] = info;
             } else {
                 objectives = level function_574923ee(info);
                 foreach (objective in objectives) {
-                    objective.var_89068add = function_84750938(object, objective.team);
+                    objective.secure = function_84750938(object, objective.team);
                 }
             }
         }
         foreach (info in var_23c361c9) {
             level function_add82897(info);
-            arrayremovevalue(var_5c6dcdf9, info);
+            arrayremovevalue(controlinfo, info);
         }
         waitframe(1);
     }
@@ -173,7 +173,7 @@ function private dom_start() {
                     weight = var_654bc2bc[order];
                     level function_8f96464(team, info, order, #"assault", weight);
                 }
-                objective.var_89068add = function_84750938(object, team);
+                objective.secure = function_84750938(object, team);
             }
         }
         waitframe(1);
@@ -216,7 +216,7 @@ function private function_35d61d4() {
         waitframe(1);
     }
     var_b84a8f51 = function_5f64ef84(level.var_bb695b91);
-    var_9c4aa862 = {#var_23f1621e:var_b84a8f51.var_23f1621e, #var_dd2331cb:var_b84a8f51.var_dd2331cb};
+    var_9c4aa862 = {#neighborids:var_b84a8f51.neighborids, #var_dd2331cb:var_b84a8f51.var_dd2331cb};
     while (1) {
         foreach (team in level.teams) {
             level function_8f96464(team, var_b84a8f51, #"capture", #"assault");
@@ -299,16 +299,16 @@ function private function_8d249e99() {
     foreach (team in level.teams) {
         level function_8f96464(team, var_a5e6be6d, #"hash_2fc0534d4a96a7ea", #"hash_35137090e8395dd4", &function_b4c402b);
     }
-    var_5145cea = undefined;
+    zoneinfo = undefined;
     while (!isdefined(level.zones) || level.zones.size <= 0 || !isdefined(level.zones[0].gameobject)) {
         waitframe(1);
     }
-    var_5145cea = function_5f64ef84(level.zones[0].gameobject);
-    while (var_5145cea.target.interactteam != #"hash_5ccfd7bbbf07c770") {
+    zoneinfo = function_5f64ef84(level.zones[0].gameobject);
+    while (zoneinfo.target.interactteam != #"hash_5ccfd7bbbf07c770") {
         waitframe(1);
     }
     foreach (team in level.teams) {
-        level function_8f96464(team, var_5145cea, #"capture", #"assault", undefined);
+        level function_8f96464(team, zoneinfo, #"capture", #"assault", undefined);
     }
     level function_add82897(var_f0ed42da);
     foreach (team in level.teams) {
@@ -394,9 +394,9 @@ function private koth_start() {
                 var_c0121fed[team] = function_84750938(object, team);
             }
             foreach (objective in objectives) {
-                var_89068add = var_c0121fed[objective.team];
-                objective.var_89068add = var_89068add;
-                objective.var_89068add = var_89068add;
+                secure = var_c0121fed[objective.team];
+                objective.secure = secure;
+                objective.secure = secure;
             }
         }
         waitframe(1);
@@ -438,7 +438,7 @@ function private function_5f64ef84(target) {
     regions = level function_5c2d40ff(target);
     neighbors = level function_323a3bdf(regions);
     info.var_dd2331cb = level function_8d2aa32e(regions);
-    info.var_23f1621e = level function_8d2aa32e(neighbors);
+    info.neighborids = level function_8d2aa32e(neighbors);
     return info;
 }
 
@@ -456,15 +456,15 @@ function private function_e58e3486(info) {
     }
     var_dd2331cb = level function_8d2aa32e(regions);
     if (var_dd2331cb.size == info.var_dd2331cb.size) {
-        var_6bc080e3 = arrayintersect(var_dd2331cb, info.var_dd2331cb);
-        if (var_dd2331cb.size == var_6bc080e3.size) {
+        intersect = arrayintersect(var_dd2331cb, info.var_dd2331cb);
+        if (var_dd2331cb.size == intersect.size) {
             return;
         }
     }
     neighbors = level function_323a3bdf(regions);
-    var_23f1621e = level function_8d2aa32e(neighbors);
+    neighborids = level function_8d2aa32e(neighbors);
     info.var_dd2331cb = var_dd2331cb;
-    info.var_23f1621e = var_23f1621e;
+    info.neighborids = neighborids;
 }
 
 // Namespace namespace_38ee089b/namespace_38ee089b
@@ -598,7 +598,7 @@ function private function_574923ee(info) {
 // Size: 0xfa
 function private function_994c497(objective) {
     count = objective.count;
-    players = objective.info.target.var_bac5b0cf[objective.team].touching.players;
+    players = objective.info.target.users[objective.team].touching.players;
     if (!isdefined(players)) {
         return count;
     }

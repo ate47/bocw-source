@@ -422,7 +422,7 @@ function function_5871bcf8(entity) {
         return;
     }
     points = array(nextpos + vectorscale((1, 0, 0), 150), nextpos + vectorscale((1, 0, 0), 300), nextpos - vectorscale((1, 0, 0), 150), nextpos - vectorscale((1, 0, 0), 300), nextpos + vectorscale((0, 1, 0), 150), nextpos + vectorscale((0, 1, 0), 300), nextpos - vectorscale((0, 1, 0), 150), nextpos - vectorscale((0, 1, 0), 300));
-    var_546d115 = undefined;
+    bestpoint = undefined;
     var_fa442d4c = entity function_6a9ae71();
     points = array::randomize(points);
     foreach (point in points) {
@@ -433,7 +433,7 @@ function function_5871bcf8(entity) {
             #/
         } else {
             if (bullettracepassed(nextpos + (0, 0, var_fa442d4c), vehicle.origin + (0, 0, var_fa442d4c), 0, vehicle)) {
-                var_546d115 = nextpos;
+                bestpoint = nextpos;
                 break;
             }
             /#
@@ -441,21 +441,21 @@ function function_5871bcf8(entity) {
             #/
         }
     }
-    if (!isdefined(var_546d115)) {
+    if (!isdefined(bestpoint)) {
         archetype_avogadro::function_c6e09354(entity.var_78dd7804);
         entity.var_78dd7804 = undefined;
         return;
     }
-    var_baa2a8c4 = vehicle.origin - var_546d115;
+    var_baa2a8c4 = vehicle.origin - bestpoint;
     /#
-        recordsphere(var_546d115, 15, (0, 0, 1), "<unknown string>");
-        recordline(entity.origin, var_546d115, (0, 0, 1), "<unknown string>");
+        recordsphere(bestpoint, 15, (0, 0, 1), "<unknown string>");
+        recordline(entity.origin, bestpoint, (0, 0, 1), "<unknown string>");
     #/
     var_dd695160 = entity gettagorigin("j_spine4") - entity.origin;
     entity.var_78dd7804.array[0].origin = entity.origin + var_dd695160;
-    entity.var_78dd7804.array[1].origin = var_546d115 + var_dd695160;
+    entity.var_78dd7804.array[1].origin = bestpoint + var_dd695160;
     entity thread archetype_avogadro::function_d979c854(entity);
-    entity forceteleport(var_546d115, vectortoangles(var_baa2a8c4));
+    entity forceteleport(bestpoint, vectortoangles(var_baa2a8c4));
     entity.var_4cc2bf28 = gettime() + int(3.5 * 1000);
 }
 

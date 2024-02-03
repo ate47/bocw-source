@@ -2,7 +2,7 @@
     "option_dependencies": [
         {
             "var_1643d946": "0",
-            "var_6825bdb": "#kbm_aim_down_sight_behavior",
+            "optionname": "#kbm_aim_down_sight_behavior",
             "operator": "=="
         }
     ],
@@ -29,7 +29,7 @@
     "displayname": "#hash_39189d2d9bcc046d",
     "var_4a4760c0": 60,
     "var_500458ac": 10,
-    "var_926d1be9": 1,
+    "decimalplace": 1,
     "var_66faec87": 120,
     "statname": "toggle_ads_persistent_kbm",
     "var_6f00a61a": 1.1,

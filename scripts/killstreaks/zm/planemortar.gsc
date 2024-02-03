@@ -259,7 +259,7 @@ function function_5673c107() {
 // Params 3, eflags: 0x6 linked
 // Checksum 0xb4082de8, Offset: 0xeb0
 // Size: 0x280
-function private function_8f181838(var_5b276012, params, var_50a76fc3) {
+function private function_8f181838(var_5b276012, params, targetposition) {
     self endon(#"disconnect");
     self.planemortarpilotindex = self namespace_f9b02f80::get_random_pilot_index("planemortar");
     self thread function_16f87e96(8);
@@ -274,7 +274,7 @@ function private function_8f181838(var_5b276012, params, var_50a76fc3) {
         }
         n_radius = 500 * randomfloat(1);
         n_angle = randomintrange(0, 360);
-        v_position = var_50a76fc3 + (n_radius * cos(n_angle), n_radius * sin(n_angle), 0);
+        v_position = targetposition + (n_radius * cos(n_angle), n_radius * sin(n_angle), 0);
         var_86f8b2c9 = (0, 0, getheliheightlockheight(v_position));
         a_trace = groundtrace(v_position + var_86f8b2c9, v_position - var_86f8b2c9, 1, undefined);
         var_5acfe25f = a_trace[#"position"];

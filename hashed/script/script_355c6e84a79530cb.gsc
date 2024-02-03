@@ -34,7 +34,7 @@
 // Checksum 0x1b9b7430, Offset: 0x298
 // Size: 0x54
 function private autoexec __init__system__() {
-    system::register(#"hash_5ff56dba9074b0b4", &function_70a657d8, undefined, &function_5700f119, #"hash_f81b9dea74f0ee");
+    system::register(#"hash_5ff56dba9074b0b4", &function_70a657d8, undefined, &finalize, #"hash_f81b9dea74f0ee");
 }
 
 // Namespace namespace_73df937d/namespace_73df937d
@@ -52,7 +52,7 @@ function function_70a657d8() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x3148add1, Offset: 0x3c8
 // Size: 0x5c
-function function_5700f119() {
+function finalize() {
     level.var_7d45d0d4.var_a4bccdb2 = [];
     level.var_7d45d0d4.var_bb7e7804 = 1;
     level thread function_9d178321();

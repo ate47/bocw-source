@@ -359,8 +359,8 @@ function function_995e01b6(localclientnum, player) {
     var_1762ffa = util::spawn_model(localclientnum, #"hash_445c4aedaf62d3b9", player.origin, player.angles - vectorscale((1, 0, 0), 90));
     teamcolor = function_1f84bb65(localclientnum, player.team, 3);
     if (player function_21c0fa55() && !function_4af9029c(localclientnum)) {
-        var_3a0f5e49 = getdvarfloat(#"hash_595a2f8a298ab607", 1);
-        teamcolor = teamcolor * var_3a0f5e49;
+        gradient = getdvarfloat(#"hash_595a2f8a298ab607", 1);
+        teamcolor = teamcolor * gradient;
     }
     var_1762ffa playrenderoverridebundle(rob);
     if (var_1762ffa postfx::function_556665f2(postfx)) {

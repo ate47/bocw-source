@@ -294,10 +294,10 @@ function private function_400826e(*zombie) {
 // Checksum 0x68bc832c, Offset: 0x1258
 // Size: 0x2aa
 function private function_65ee50ba() {
-    var_e69a8d31 = 10;
+    check_dist = 10;
     var_1a055edd = [];
-    var_a99c2bf3 = self.origin;
-    var_2eefd050 = groundtrace(var_a99c2bf3 + vectorscale((0, 0, 1), 8), var_a99c2bf3 + vectorscale((0, 0, -1), 100000), 0, self)[#"position"];
+    basepos = self.origin;
+    var_2eefd050 = groundtrace(basepos + vectorscale((0, 0, 1), 8), basepos + vectorscale((0, 0, -1), 100000), 0, self)[#"position"];
     if (!isdefined(var_1a055edd)) {
         var_1a055edd = [];
     } else if (!isarray(var_1a055edd)) {
@@ -308,7 +308,7 @@ function private function_65ee50ba() {
     while (xoffset <= 1) {
         yoffset = -1;
         while (yoffset <= 1) {
-            checkpos = var_a99c2bf3 + (xoffset * var_e69a8d31, yoffset * var_e69a8d31, 0);
+            checkpos = basepos + (xoffset * check_dist, yoffset * check_dist, 0);
             groundpos = groundtrace(checkpos + vectorscale((0, 0, 1), 8), checkpos + vectorscale((0, 0, -1), 100000), 0, self)[#"position"];
             if (!isdefined(var_1a055edd)) {
                 var_1a055edd = [];
@@ -320,8 +320,8 @@ function private function_65ee50ba() {
         }
         xoffset = xoffset + 2;
     }
-    var_9c637566 = arraygetfarthest(var_a99c2bf3, var_1a055edd);
-    if (abs(var_9c637566[2] - var_2eefd050[2]) <= var_e69a8d31) {
+    var_9c637566 = arraygetfarthest(basepos, var_1a055edd);
+    if (abs(var_9c637566[2] - var_2eefd050[2]) <= check_dist) {
         var_9c637566 = var_2eefd050;
     }
     /#

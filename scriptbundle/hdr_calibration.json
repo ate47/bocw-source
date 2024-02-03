@@ -2,7 +2,7 @@
     "option_dependencies": [
         {
             "var_1643d946": "1",
-            "var_6825bdb": "#pc_hdr",
+            "optionname": "#pc_hdr",
             "operator": "=="
         }
     ],

@@ -720,15 +720,15 @@ function private set_goal(botarg, force = 0) {
         bot setgoal(pos, force);
         bot.goalradius = 512;
         if (bot isinvehicle()) {
-            var_d0efda = bot getvehicleoccupied();
-            if (vehicle === var_d0efda) {
+            currentvehicle = bot getvehicleoccupied();
+            if (vehicle === currentvehicle) {
                 seatindex = vehicle function_d1409e38(pos);
                 if (!vehicle isvehicleseatoccupied(seatindex)) {
                     vehicle function_1090ca(bot, seatindex);
                 }
             } else {
-                var_c3eee21b = var_d0efda getoccupantseat(bot);
-                var_d0efda usevehicle(bot, var_c3eee21b);
+                var_c3eee21b = currentvehicle getoccupantseat(bot);
+                currentvehicle usevehicle(bot, var_c3eee21b);
             }
         } else if (isdefined(vehicle)) {
             seatindex = vehicle function_eee09f16(pos);
@@ -854,11 +854,11 @@ function private function_6a4a272b(host, botarg, cmdarg, toggle) {
         if (!isdefined(bot.bot.var_458ddbc0)) {
             bot.bot.var_458ddbc0 = [];
         }
-        var_c3974b2d = bot.bot.var_458ddbc0;
+        forcebits = bot.bot.var_458ddbc0;
         if (toggle) {
-            var_c3974b2d[cmdarg] = is_true(var_c3974b2d[cmdarg]) ? undefined : 1;
+            forcebits[cmdarg] = is_true(forcebits[cmdarg]) ? undefined : 1;
         } else {
-            var_c3974b2d[cmdarg] = 2;
+            forcebits[cmdarg] = 2;
         }
     }
 }
@@ -1006,8 +1006,8 @@ function private function_2e08087e(player) {
     self endon(#"death", #"disconnect", #"hash_1fc88ab5756d805", #"hash_6280ac8ed281ce3c");
     while (isdefined(player) && isalive(player)) {
         angles = player getplayerangles();
-        var_944f41ea = getdvarint(#"hash_68c18f3309126669", 0) * 15;
-        var_6cd5d6b6 = angles + (0, var_944f41ea, 0);
+        yawoffset = getdvarint(#"hash_68c18f3309126669", 0) * 15;
+        var_6cd5d6b6 = angles + (0, yawoffset, 0);
         self.bot.var_5efe88e4 = angleclamp180(var_6cd5d6b6);
         waitframe(1);
     }

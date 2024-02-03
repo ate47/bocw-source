@@ -181,7 +181,7 @@ function function_a20133bd() {
     player notify(#"hash_7ad75056b30c451a");
     player endon(#"hash_7ad75056b30c451a", #"death", #"disconnect");
     level endon(#"hash_7ad75056b30c451a");
-    var_7aa3570f = getdvarfloat(#"hash_5a9d5543cb5829b3", 3);
+    min_time = getdvarfloat(#"hash_5a9d5543cb5829b3", 3);
     max_time = getdvarfloat(#"hash_5ab96b43cb70c9cd", 15);
     var_88701456 = 0;
     while (1) {
@@ -197,7 +197,7 @@ function function_a20133bd() {
             if (isentity(ent) && !ent ishidden()) {
                 head = ent.head;
                 if (isdefined(head) && head != "" && !isdefined(ent.var_2de4672c)) {
-                    ent thread snd::function_9299618(&function_c26120ff, [1:max_time, 0:var_7aa3570f]);
+                    ent thread snd::function_9299618(&function_c26120ff, [1:max_time, 0:min_time]);
                 }
             }
             var_dcf355d7++;
@@ -341,15 +341,15 @@ function function_bc76873() {
 // Checksum 0xece3ba7d, Offset: 0x1748
 // Size: 0x3ac
 function function_38a8c5b0() {
-    var_8a410fc2 = snd::function_5f9d291a("vox_walla_dutch_panic_male_01", (20908, 15773, 384), [1:18, 0:9]);
-    var_4f6c19d9 = snd::function_5f9d291a("vox_walla_dutch_panic_male_01", (21149, 15036, 431), [1:18, 0:9]);
-    var_d846afb3 = snd::function_5f9d291a("vox_walla_dutch_panic_male_02", (21149, 15036, 431), [1:16, 0:8]);
-    var_58582fd4 = snd::function_5f9d291a("vox_walla_dutch_panic_male_02", (20374, 13316, 562), [1:16, 0:8]);
-    var_ad0660af = snd::function_5f9d291a("vox_walla_dutch_panic_fem_01", (21090, 15610, 389), [1:12, 0:4]);
-    var_44428f29 = snd::function_5f9d291a("vox_walla_dutch_panic_fem_01", (20287, 15342, 293), [1:12, 0:4]);
-    var_f6ad3b43 = snd::function_5f9d291a("vox_walla_dutch_panic_fem_02", (20684, 13376, 562), [1:20, 0:8]);
-    var_7651ba9a = snd::function_5f9d291a("vox_walla_dutch_panic_fem_02", (20888, 12627, 819), [1:20, 0:8]);
-    var_5774b41c = snd::function_5f9d291a("emt_border_collie_barking_dist", (20799, 15776, 369), [1:30, 0:15]);
+    var_8a410fc2 = snd::emitter("vox_walla_dutch_panic_male_01", (20908, 15773, 384), [1:18, 0:9]);
+    var_4f6c19d9 = snd::emitter("vox_walla_dutch_panic_male_01", (21149, 15036, 431), [1:18, 0:9]);
+    var_d846afb3 = snd::emitter("vox_walla_dutch_panic_male_02", (21149, 15036, 431), [1:16, 0:8]);
+    var_58582fd4 = snd::emitter("vox_walla_dutch_panic_male_02", (20374, 13316, 562), [1:16, 0:8]);
+    var_ad0660af = snd::emitter("vox_walla_dutch_panic_fem_01", (21090, 15610, 389), [1:12, 0:4]);
+    var_44428f29 = snd::emitter("vox_walla_dutch_panic_fem_01", (20287, 15342, 293), [1:12, 0:4]);
+    var_f6ad3b43 = snd::emitter("vox_walla_dutch_panic_fem_02", (20684, 13376, 562), [1:20, 0:8]);
+    var_7651ba9a = snd::emitter("vox_walla_dutch_panic_fem_02", (20888, 12627, 819), [1:20, 0:8]);
+    var_5774b41c = snd::emitter("emt_border_collie_barking_dist", (20799, 15776, 369), [1:30, 0:15]);
     level flag::wait_till("raid_roof_complete");
     snd::stop(var_8a410fc2);
     snd::stop(var_4f6c19d9);

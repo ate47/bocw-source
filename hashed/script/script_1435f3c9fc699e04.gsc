@@ -6,8 +6,8 @@
 // Checksum 0x775985e3, Offset: 0x80
 // Size: 0xa2
 function function_e553e480() {
-    if (!isdefined(self.var_bac5b0cf)) {
-        self.var_bac5b0cf = [];
+    if (!isdefined(self.users)) {
+        self.users = [];
     }
     self.var_a0ff5eb8 = 0;
     self.curprogress = 0;
@@ -26,11 +26,11 @@ function function_e553e480() {
 // Checksum 0x266e0eeb, Offset: 0x130
 // Size: 0x92
 function function_818d69ee(user) {
-    if (!isdefined(self.var_bac5b0cf[user])) {
-        self.var_bac5b0cf[user] = {};
+    if (!isdefined(self.users[user])) {
+        self.users[user] = {};
     }
-    if (!isdefined(self.var_bac5b0cf[user].touching)) {
-        self.var_bac5b0cf[user].touching = {#players:[], #rate:0, #num:0};
+    if (!isdefined(self.users[user].touching)) {
+        self.users[user].touching = {#players:[], #rate:0, #num:0};
     }
 }
 
@@ -39,11 +39,11 @@ function function_818d69ee(user) {
 // Checksum 0x7d969afd, Offset: 0x1d0
 // Size: 0x62
 function function_136c2270(user) {
-    if (!isdefined(self.var_bac5b0cf[user])) {
-        self.var_bac5b0cf[user] = {};
+    if (!isdefined(self.users[user])) {
+        self.users[user] = {};
     }
-    if (!isdefined(self.var_bac5b0cf[user].contributors)) {
-        self.var_bac5b0cf[user].contributors = [];
+    if (!isdefined(self.users[user].contributors)) {
+        self.users[user].contributors = [];
     }
 }
 
@@ -53,23 +53,23 @@ function function_136c2270(user) {
 // Size: 0x134
 function function_a1839d6b(user, player, key) {
     /#
-        assert(isdefined(self.var_bac5b0cf[user]));
+        assert(isdefined(self.users[user]));
     #/
     /#
-        assert(isdefined(self.var_bac5b0cf[user].contributors));
+        assert(isdefined(self.users[user].contributors));
     #/
-    if (!isdefined(self.var_bac5b0cf[user].contributors[key])) {
+    if (!isdefined(self.users[user].contributors[key])) {
         contribution = {#contribution:0, #player:player};
-        self.var_bac5b0cf[user].contributors[key] = contribution;
+        self.users[user].contributors[key] = contribution;
     } else {
-        contribution = self.var_bac5b0cf[user].contributors[key];
+        contribution = self.users[user].contributors[key];
     }
     if (!isdefined(contribution.player)) {
         contribution.player = player;
     }
     contribution.starttime = gettime();
     contribution.var_e22ea52b = 1;
-    return self.var_bac5b0cf[user].contributors[key];
+    return self.users[user].contributors[key];
 }
 
 // Namespace gameobjects/namespace_87a60c47
@@ -77,7 +77,7 @@ function function_a1839d6b(user, player, key) {
 // Checksum 0xc0104ace, Offset: 0x380
 // Size: 0x7e
 function function_98aae7cf() {
-    foreach (user in self.var_bac5b0cf) {
+    foreach (user in self.users) {
         user.contributors = undefined;
     }
 }
@@ -88,7 +88,7 @@ function function_98aae7cf() {
 // Size: 0x14c
 function function_bd47b0c7() {
     function_98aae7cf();
-    foreach (user_name, user in self.var_bac5b0cf) {
+    foreach (user_name, user in self.users) {
         if (user.touching.num > 0) {
             function_136c2270(user_name);
             foreach (var_5717fa0c, player in user.touching.players) {
@@ -103,8 +103,8 @@ function function_bd47b0c7() {
 // Checksum 0xe4c8d7ab, Offset: 0x560
 // Size: 0x5c
 function function_f30290b(user, key) {
-    if (isdefined(self.var_bac5b0cf[user]) && isdefined(self.var_bac5b0cf[user].contributors)) {
-        self.var_bac5b0cf[user].contributors[key] = undefined;
+    if (isdefined(self.users[user]) && isdefined(self.users[user].contributors)) {
+        self.users[user].contributors[key] = undefined;
     }
 }
 
@@ -114,7 +114,7 @@ function function_f30290b(user, key) {
 // Size: 0xa0
 function function_339d0e91() {
     total = 0;
-    foreach (var_b2dad138 in self.var_bac5b0cf) {
+    foreach (var_b2dad138 in self.users) {
         total = total + var_b2dad138.touching.num;
     }
     return total;
@@ -126,7 +126,7 @@ function function_339d0e91() {
 // Size: 0xb4
 function function_3a7a2963(var_77efb18) {
     total = 0;
-    foreach (user_name, var_b2dad138 in self.var_bac5b0cf) {
+    foreach (user_name, var_b2dad138 in self.users) {
         if (user_name == var_77efb18) {
             continue;
         }
@@ -140,7 +140,7 @@ function function_3a7a2963(var_77efb18) {
 // Checksum 0x767beebf, Offset: 0x730
 // Size: 0xa8
 function function_3a29539b(var_77efb18) {
-    foreach (user_name, var_b2dad138 in self.var_bac5b0cf) {
+    foreach (user_name, var_b2dad138 in self.users) {
         if (user_name == var_77efb18) {
             continue;
         }
@@ -156,10 +156,10 @@ function function_3a29539b(var_77efb18) {
 // Checksum 0xe16d1337, Offset: 0x7e0
 // Size: 0x3e
 function get_num_touching(user) {
-    if (!isdefined(self.var_bac5b0cf[user])) {
+    if (!isdefined(self.users[user])) {
         return 0;
     }
-    return self.var_bac5b0cf[user].touching.num;
+    return self.users[user].touching.num;
 }
 
 // Namespace gameobjects/namespace_87a60c47
@@ -168,7 +168,7 @@ function get_num_touching(user) {
 // Size: 0xea
 function function_e4cad37() {
     var_95e19dc6 = [];
-    foreach (user, var_c4f3dc93 in self.var_bac5b0cf) {
+    foreach (user, var_c4f3dc93 in self.users) {
         if (var_c4f3dc93.touching.num > 0) {
             if (!isdefined(var_95e19dc6)) {
                 var_95e19dc6 = [];
@@ -203,10 +203,10 @@ function function_167d3a40() {
 // Size: 0x5a
 function function_b64fb43d() {
     user = self function_167d3a40();
-    if (!isdefined(self.var_bac5b0cf[user])) {
+    if (!isdefined(self.users[user])) {
         return 0;
     }
-    return self.var_bac5b0cf[user].touching.num;
+    return self.users[user].touching.num;
 }
 
 // Namespace gameobjects/namespace_87a60c47
@@ -215,12 +215,12 @@ function function_b64fb43d() {
 // Size: 0xa6
 function function_22c9de38(user, count = 1) {
     /#
-        assert(isdefined(self.var_bac5b0cf[user]));
+        assert(isdefined(self.users[user]));
     #/
     /#
-        assert(isdefined(self.var_bac5b0cf[user].touching));
+        assert(isdefined(self.users[user].touching));
     #/
-    self.var_bac5b0cf[user].touching.num = self.var_bac5b0cf[user].touching.num + count;
+    self.users[user].touching.num = self.users[user].touching.num + count;
 }
 
 // Namespace gameobjects/namespace_87a60c47
@@ -229,14 +229,14 @@ function function_22c9de38(user, count = 1) {
 // Size: 0xe6
 function function_26237f3c(user, count = 1) {
     /#
-        assert(isdefined(self.var_bac5b0cf[user]));
+        assert(isdefined(self.users[user]));
     #/
     /#
-        assert(isdefined(self.var_bac5b0cf[user].touching));
+        assert(isdefined(self.users[user].touching));
     #/
-    self.var_bac5b0cf[user].touching.num = self.var_bac5b0cf[user].touching.num - count;
-    if (self.var_bac5b0cf[user].touching.num < 1) {
-        self.var_bac5b0cf[user].touching.num = 0;
+    self.users[user].touching.num = self.users[user].touching.num - count;
+    if (self.users[user].touching.num < 1) {
+        self.users[user].touching.num = 0;
     }
 }
 
@@ -253,7 +253,7 @@ function function_5ea37c7c(func) {
 // Checksum 0xfab40c4b, Offset: 0xb80
 // Size: 0x4a
 function function_83eda4c0(user) {
-    var_5b1365c0 = self.var_bac5b0cf[user].touching.num;
+    var_5b1365c0 = self.users[user].touching.num;
     return self function_ce47d61c(var_5b1365c0);
 }
 
@@ -265,11 +265,11 @@ function function_ce47d61c(var_5b1365c0 = 0) {
     /#
         assert(self.var_9288c4c0 <= self.usetime);
     #/
-    if (self.var_2084ae03 > 0) {
-        var_5b1365c0 = min(var_5b1365c0, self.var_2084ae03);
+    if (self.maxusers > 0) {
+        var_5b1365c0 = min(var_5b1365c0, self.maxusers);
     }
     if (var_5b1365c0 > 1) {
-        var_b13b89f5 = (var_5b1365c0 - 1) / (self.var_2084ae03 - 1);
+        var_b13b89f5 = (var_5b1365c0 - 1) / (self.maxusers - 1);
         var_e2f3a95a = 1 / self.var_9288c4c0 / self.usetime - 1;
         rate = 1 + var_b13b89f5 * var_e2f3a95a;
         return rate;
@@ -282,7 +282,7 @@ function function_ce47d61c(var_5b1365c0 = 0) {
 // Checksum 0xa6276cc2, Offset: 0xcd8
 // Size: 0x152
 function function_9f894584(user) {
-    if (!isdefined(self.var_bac5b0cf[user])) {
+    if (!isdefined(self.users[user])) {
         return 0;
     }
     if (isdefined(self.var_270e1029)) {
@@ -290,8 +290,8 @@ function function_9f894584(user) {
     }
     if (self.var_a0ff5eb8) {
         userate = 0;
-        if (self.var_bac5b0cf[user].touching.players.size > 0) {
-            foreach (var_142bcc32 in self.var_bac5b0cf[user].touching.players) {
+        if (self.users[user].touching.players.size > 0) {
+            foreach (var_142bcc32 in self.users[user].touching.players) {
                 if (isdefined(var_142bcc32.rate) && var_142bcc32.rate > userate) {
                     userate = var_142bcc32.rate;
                 }
@@ -299,7 +299,7 @@ function function_9f894584(user) {
         }
         return userate;
     }
-    return self.var_bac5b0cf[user].touching.rate;
+    return self.users[user].touching.rate;
 }
 
 // Namespace gameobjects/namespace_87a60c47
@@ -308,7 +308,7 @@ function function_9f894584(user) {
 // Size: 0xb8
 function function_a7dbb00b(var_77efb18) {
     rate = 0;
-    foreach (user_name, _ in self.var_bac5b0cf) {
+    foreach (user_name, _ in self.users) {
         if (user_name == var_77efb18) {
             continue;
         }
@@ -335,12 +335,12 @@ function function_21db7d02(numclaimants = 0, numother = 0) {
 // Size: 0x96
 function function_f1342bb2(user, rate) {
     /#
-        assert(isdefined(self.var_bac5b0cf[user]));
+        assert(isdefined(self.users[user]));
     #/
     /#
-        assert(isdefined(self.var_bac5b0cf[user].touching));
+        assert(isdefined(self.users[user].touching));
     #/
-    self.var_bac5b0cf[user].touching.rate = self.var_bac5b0cf[user].touching.rate + rate;
+    self.users[user].touching.rate = self.users[user].touching.rate + rate;
 }
 
 // Namespace gameobjects/namespace_87a60c47
@@ -349,14 +349,14 @@ function function_f1342bb2(user, rate) {
 // Size: 0xd6
 function function_27b84c22(user, rate) {
     /#
-        assert(isdefined(self.var_bac5b0cf[user]));
+        assert(isdefined(self.users[user]));
     #/
     /#
-        assert(isdefined(self.var_bac5b0cf[user].touching));
+        assert(isdefined(self.users[user].touching));
     #/
-    self.var_bac5b0cf[user].touching.rate = self.var_bac5b0cf[user].touching.rate - rate;
-    if (self.var_bac5b0cf[user].touching.num < 1) {
-        self.var_bac5b0cf[user].touching.rate = 0;
+    self.users[user].touching.rate = self.users[user].touching.rate - rate;
+    if (self.users[user].touching.num < 1) {
+        self.users[user].touching.rate = 0;
     }
 }
 
@@ -366,12 +366,12 @@ function function_27b84c22(user, rate) {
 // Size: 0xb8
 function function_fdf87288(user, player, var_8a3ae0a0, var_5717fa0c) {
     /#
-        assert(isdefined(self.var_bac5b0cf[user]));
+        assert(isdefined(self.users[user]));
     #/
     /#
-        assert(isdefined(self.var_bac5b0cf[user].touching));
+        assert(isdefined(self.users[user].touching));
     #/
-    self.var_bac5b0cf[user].touching.players[var_5717fa0c] = {#starttime:gettime(), #rate:var_8a3ae0a0, #player:player};
+    self.users[user].touching.players[var_5717fa0c] = {#starttime:gettime(), #rate:var_8a3ae0a0, #player:player};
 }
 
 // Namespace gameobjects/namespace_87a60c47
@@ -380,12 +380,12 @@ function function_fdf87288(user, player, var_8a3ae0a0, var_5717fa0c) {
 // Size: 0x78
 function function_472b3c15(user, var_5717fa0c) {
     /#
-        assert(isdefined(self.var_bac5b0cf[user]));
+        assert(isdefined(self.users[user]));
     #/
     /#
-        assert(isdefined(self.var_bac5b0cf[user].touching));
+        assert(isdefined(self.users[user].touching));
     #/
-    self.var_bac5b0cf[user].touching.players[var_5717fa0c] = undefined;
+    self.users[user].touching.players[var_5717fa0c] = undefined;
 }
 
 // Namespace gameobjects/namespace_87a60c47

@@ -53,7 +53,7 @@ function private init() {
     level.ping.var_bef12f79 = [];
     for (i = 0; i < getmaxlocalclients(); i++) {
         level.ping.var_bef12f79[i] = spawnstruct();
-        level.ping.var_bef12f79[i].var_75c86e0e = spawnstruct();
+        level.ping.var_bef12f79[i].lastping = spawnstruct();
         level.ping.var_bef12f79[i].count = 0;
         level.var_907386c0[i] = [];
         for (j = 0; j < getdvarint(#"com_maxclients", 0); j++) {
@@ -118,18 +118,18 @@ function private function_c81ef836() {
 // Params 2, eflags: 0x6 linked
 // Checksum 0x28a68dba, Offset: 0xec8
 // Size: 0xe6
-function private function_4d08e9ce(var_7ec57290, var_1f050749) {
-    if (!is_true(var_7ec57290)) {
+function private function_4d08e9ce(doubletap, pingdata) {
+    if (!is_true(doubletap)) {
         return 0;
     }
-    if (!isdefined(var_1f050749.var_75c86e0e.count)) {
+    if (!isdefined(pingdata.lastping.count)) {
         return 0;
     }
-    if (var_1f050749.var_75c86e0e.count != var_1f050749.count - 1) {
+    if (pingdata.lastping.count != pingdata.count - 1) {
         return 0;
     }
     var_8ff6cd30 = 1;
-    switch (var_1f050749.var_75c86e0e.eventtype) {
+    switch (pingdata.lastping.eventtype) {
     case 0:
     case 5:
         var_8ff6cd30 = 0;
@@ -147,16 +147,16 @@ function private function_4d08e9ce(var_7ec57290, var_1f050749) {
 function private function_94eab4fb(params) {
     local_client_num = params.localclientnum;
     level notify("newPing" + local_client_num);
-    var_7ec57290 = params.var_7ec57290;
+    doubletap = params.doubletap;
     event_type = 0;
     param = undefined;
     remove = 0;
-    danger = params.var_42ad7eb4 || params.var_7ec57290;
-    var_1f050749 = level.ping.var_bef12f79[local_client_num];
+    danger = params.var_42ad7eb4 || params.doubletap;
+    pingdata = level.ping.var_bef12f79[local_client_num];
     /#
-        assert(isdefined(var_1f050749));
+        assert(isdefined(pingdata));
     #/
-    var_1f050749.count++;
+    pingdata.count++;
     if (isdefined(level.var_38c7030b)) {
         shoulddisable = [[ level.var_38c7030b ]](local_client_num);
         if (shoulddisable) {
@@ -164,7 +164,7 @@ function private function_94eab4fb(params) {
         }
     }
     var_656750cb = params.var_44a5df === params.var_89c7e02;
-    if (!var_656750cb && function_4d08e9ce(var_7ec57290, var_1f050749)) {
+    if (!var_656750cb && function_4d08e9ce(doubletap, pingdata)) {
         return;
     }
     var_b5a47119 = 0;
@@ -216,17 +216,17 @@ function private function_94eab4fb(params) {
             param = params.var_44a5df getentitynumber();
         }
     }
-    if (!is_true(handled) && isdefined(params.var_4137e8c0)) {
-        dynent = function_8608b8fd(params.var_4137e8c0);
+    if (!is_true(handled) && isdefined(params.dynentid)) {
+        dynent = function_8608b8fd(params.dynentid);
         if (isdefined(level.var_a0b1f787[dynent.var_15d44120]) && !isdefined(dynent.var_fc558e74)) {
             dynent.var_fc558e74 = level.var_a0b1f787[dynent.var_15d44120];
         }
         if (isdefined(dynent.var_fc558e74)) {
-            param = params.var_4137e8c0;
+            param = params.dynentid;
             event_type = 9;
             handled = 1;
         } else if (isdefined(dynent.var_b91441dd)) {
-            param = params.var_4137e8c0;
+            param = params.dynentid;
             event_type = 11;
             handled = 1;
         }
@@ -286,11 +286,11 @@ function private function_94eab4fb(params) {
             }
         }
     }
-    function_c7db1f99(var_1f050749, params, event_type, param, remove, loc, var_7ec57290);
+    function_c7db1f99(pingdata, params, event_type, param, remove, loc, doubletap);
     if (function_113e718c(params.localclientnum) && event_type == 0) {
         level thread function_aa517465(params.localclientnum, params.var_89c7e02);
     } else {
-        function_f20c0762(var_1f050749);
+        function_f20c0762(pingdata);
     }
 }
 
@@ -298,8 +298,8 @@ function private function_94eab4fb(params) {
 // Params 7, eflags: 0x6 linked
 // Checksum 0x26cde986, Offset: 0x1ab8
 // Size: 0x1a2
-function private function_c7db1f99(var_1f050749, params, event_type, param, remove, loc, var_7ec57290) {
-    var_1f050749.var_75c86e0e.var_237e3e32 = undefined;
+function private function_c7db1f99(pingdata, params, event_type, param, remove, loc, doubletap) {
+    pingdata.lastping.var_237e3e32 = undefined;
     if (1) {
         if (event_type < 13) {
             var_237e3e32 = function_2e532eed(params);
@@ -310,17 +310,17 @@ function private function_c7db1f99(var_1f050749, params, event_type, param, remo
             var_237e3e32.var_a0bf56ac = var_237e3e32.var_89c7e02 getentitynumber();
             var_237e3e32.var_dcc5aade = 1;
             var_237e3e32.location = loc;
-            var_1f050749.var_75c86e0e.var_237e3e32 = var_237e3e32;
+            pingdata.lastping.var_237e3e32 = var_237e3e32;
         }
     }
-    var_1f050749.var_75c86e0e.eventtype = event_type;
-    var_1f050749.var_75c86e0e.remove = remove;
-    var_1f050749.var_75c86e0e.loc = loc;
-    var_1f050749.var_75c86e0e.param = param;
-    var_1f050749.var_75c86e0e.var_7ec57290 = var_7ec57290;
-    var_1f050749.var_75c86e0e.localclientnum = params.localclientnum;
-    var_1f050749.var_75c86e0e.count = var_1f050749.count;
-    var_1f050749.localclientnum = params.localclientnum;
+    pingdata.lastping.eventtype = event_type;
+    pingdata.lastping.remove = remove;
+    pingdata.lastping.loc = loc;
+    pingdata.lastping.param = param;
+    pingdata.lastping.doubletap = doubletap;
+    pingdata.lastping.localclientnum = params.localclientnum;
+    pingdata.lastping.count = pingdata.count;
+    pingdata.localclientnum = params.localclientnum;
 }
 
 // Namespace ping/ping
@@ -343,12 +343,12 @@ function private function_aa517465(localclientnum, var_89c7e02) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0xe4f30da2, Offset: 0x1d90
 // Size: 0x84
-function private function_f20c0762(var_1f050749) {
-    var_75c86e0e = var_1f050749.var_75c86e0e;
-    if (isdefined(var_75c86e0e.var_237e3e32)) {
-        function_78827e7f(var_75c86e0e.var_237e3e32);
+function private function_f20c0762(pingdata) {
+    lastping = pingdata.lastping;
+    if (isdefined(lastping.var_237e3e32)) {
+        function_78827e7f(lastping.var_237e3e32);
     }
-    function_40c4bce(var_75c86e0e.localclientnum, var_75c86e0e.eventtype, var_75c86e0e.remove, var_75c86e0e.loc, var_75c86e0e.param);
+    function_40c4bce(lastping.localclientnum, lastping.eventtype, lastping.remove, lastping.loc, lastping.param);
 }
 
 // Namespace ping/ping
@@ -1071,9 +1071,9 @@ function private function_b7306aa(local_client_num, unique_id, event_type, locat
             ent.var_10434c60 = 1;
             ent callback::add_entity_callback(#"death", &function_652f5160);
         }
-        var_2c122f02 = ent function_7f0363e8(local_client_num, 1);
-        if (var_2c122f02 != "") {
-            name = var_2c122f02;
+        ainame = ent function_7f0363e8(local_client_num, 1);
+        if (ainame != "") {
+            name = ainame;
         }
         if (ent.archetype === #"hash_da8fcc11dab30f") {
             image = #"hash_12a4d0d59ce480e5";
@@ -1167,10 +1167,10 @@ function private clear_all_pings(local_client_num) {
 // Checksum 0xde47facd, Offset: 0x5708
 // Size: 0x178
 function private function_9b79b59f(local_client_num, var_56bcf423) {
-    var_57841975 = getuimodelvalue(getuimodel(function_1df4c3b0(local_client_num, #"hash_6f4b11a0bee9b73d"), "yaw"));
-    var_7a6279d3 = getlocalclientangles(local_client_num)[1];
-    if (isdefined(var_7a6279d3) && isdefined(var_57841975) && isdefined(var_56bcf423.angles)) {
-        var_5bc88636 = var_7a6279d3 - var_57841975;
+    compassyaw = getuimodelvalue(getuimodel(function_1df4c3b0(local_client_num, #"hash_6f4b11a0bee9b73d"), "yaw"));
+    localyaw = getlocalclientangles(local_client_num)[1];
+    if (isdefined(localyaw) && isdefined(compassyaw) && isdefined(var_56bcf423.angles)) {
+        var_5bc88636 = localyaw - compassyaw;
         var_e0fab70 = var_56bcf423.angles[1] - var_5bc88636;
         if (var_e0fab70 < 0) {
             var_e0fab70 = abs(var_e0fab70);

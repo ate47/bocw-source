@@ -91,7 +91,7 @@ function function_417fd9b() {
                     if (!isdefined(loot.var_3f97a9a6)) {
                         loot.item = namespace_41f5b853::function_cd388232(loot.origin, loot.angles, loot.script_string, loot.radius, 2);
                     } else {
-                        loot.item = namespace_ec06fe4a::function_e22ae9b3(loot.var_3f97a9a6.origin, loot.var_3f97a9a6.modelname);
+                        loot.item = namespace_ec06fe4a::spawnmodel(loot.var_3f97a9a6.origin, loot.var_3f97a9a6.modelname);
                         if (!isdefined(loot.item)) {
                             namespace_1e25ad94::function_f5f0c0f8("FAILED TO SPAWN MODEL (" + loot.var_3f97a9a6.modelname + ") at " + loot.var_3f97a9a6.origin);
                             continue;

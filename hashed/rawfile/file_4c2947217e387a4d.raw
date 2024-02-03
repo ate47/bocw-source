@@ -1,0 +1,15 @@
+                                                        
+CheckPrestigeFeatureBan
+
+exec gamedata/configs/zm/zm_reset_loadouts_online.cfg
+
+                         
+                                                                
+PrestigeStatsReset 0
+
+     
+statwritemode zm PlayerStatsList rankxp statValue 0
+statwritemode zm PlayerStatsList rank statValue 0
+
+updategamerprofile
+uploadstats 0

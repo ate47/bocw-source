@@ -326,13 +326,13 @@ function function_72f3a888(point, enemy, var_b8bc109d) {
     self.var_b5e3fb00.origin = point;
     self turretsettarget(0, self.var_b5e3fb00);
     self waittill(#"turret_on_target");
-    var_72ef2333 = gettime();
+    timestart = gettime();
     offset = (0, 0, 0);
     if (issentient(enemy)) {
         offset = enemy geteye() - enemy.origin;
     }
-    while (gettime() < var_72ef2333 + int(var_b8bc109d * 1000)) {
-        self.var_b5e3fb00.origin = lerpvector(point, enemy.origin + offset, (gettime() - var_72ef2333) / int(var_b8bc109d * 1000));
+    while (gettime() < timestart + int(var_b8bc109d * 1000)) {
+        self.var_b5e3fb00.origin = lerpvector(point, enemy.origin + offset, (gettime() - timestart) / int(var_b8bc109d * 1000));
         waitframe(1);
     }
     self.var_b5e3fb00.origin = enemy.origin + offset;
@@ -673,10 +673,10 @@ function function_14a42022() {
         if (driver jumpbuttonpressed()) {
             var_32d09ad1 = self.var_a6252c84[0];
             var_977d6429 = self.var_a6252c84[1];
-            var_e9298d20 = self gettagorigin(var_32d09ad1);
+            origin0 = self gettagorigin(var_32d09ad1);
             origin1 = self gettagorigin(var_977d6429);
             target = self turretgettarget(0);
-            magicbullet(weapon, var_e9298d20, target);
+            magicbullet(weapon, origin0, target);
             magicbullet(weapon, origin1, target);
             wait(firetime);
         }

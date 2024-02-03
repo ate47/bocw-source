@@ -111,7 +111,7 @@ function pickupsettype(localclientnum, *oldval, newval, *bnewent, *binitialsnap,
     if (!isdefined(def) || !isdefined(def.modelname)) {
         return;
     }
-    self.var_f3b82c6d = namespace_ec06fe4a::function_e22ae9b3(fieldname, self.origin, "tag_origin", self.angles, "pickup fakemodel");
+    self.var_f3b82c6d = namespace_ec06fe4a::spawnmodel(fieldname, self.origin, "tag_origin", self.angles, "pickup fakemodel");
     if (isdefined(self.var_f3b82c6d)) {
         self.var_f3b82c6d setmodel(def.modelname);
         self.var_f3b82c6d notsolid();

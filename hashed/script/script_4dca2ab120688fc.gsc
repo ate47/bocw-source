@@ -134,7 +134,7 @@ function function_7c591227(params) {
 function function_7c29f2ef(entity) {
     entity endon(#"death");
     entity setblackboardattribute("_locomotion_speed", "locomotion_speed_walk");
-    if (is_true(entity.var_2ca2d270) || awareness::function_49170ec2(entity)) {
+    if (is_true(entity.var_2ca2d270) || awareness::is_paused(entity)) {
         return;
     }
     entity.should_hide = 1;

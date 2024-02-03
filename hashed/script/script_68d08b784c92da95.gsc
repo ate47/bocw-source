@@ -300,13 +300,13 @@ function light_off() {
 function function_51dea76e(var_4efdd43) {
     entnum = self getentitynumber();
     var_bcd4dcab = function_a3f6cdac(isdefined(self.var_1c936867) ? self.var_1c936867 : 850);
-    var_6b0b485e = 0.866;
+    cosfov = 0.866;
     if (is_true(self.var_3d84fa3e.on)) {
         var_78601034 = var_4efdd43 geteye();
         var_4a15e24e = self gettagorigin(self.var_3d84fa3e.tag);
         var_72902a5c = self gettagangles(self.var_3d84fa3e.tag);
         if (isdefined(var_4a15e24e) && isdefined(var_72902a5c) && distancesquared(var_4a15e24e, var_78601034) < var_bcd4dcab) {
-            if (self util::function_aae7d83d(var_4a15e24e, var_72902a5c, var_78601034, var_6b0b485e)) {
+            if (self util::function_aae7d83d(var_4a15e24e, var_72902a5c, var_78601034, cosfov)) {
                 if (sighttracepassed(var_4a15e24e + anglestoforward(var_72902a5c) * 20, var_78601034, 0, var_4efdd43)) {
                     return 1;
                 }

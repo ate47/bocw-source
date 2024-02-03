@@ -564,7 +564,7 @@ function round_start() {
     if (!isdefined(level.round_think_func)) {
         level.round_think_func = &round_think;
     }
-    level.var_15d17eb2 = 1;
+    level.realm = 1;
     level.var_b48509f9 = 1;
     level thread [[ level.round_think_func ]]();
 }

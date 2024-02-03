@@ -23,14 +23,14 @@ function private function_70a657d8() {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x5bd4bdfd, Offset: 0xe0
 // Size: 0x114
-function function_65299180(localclientnum, var_e69b15f0, var_ba0dbe09) {
-    var_683a6ce = function_1df4c3b0(localclientnum, #"script_notify");
-    for (i = 0; i < var_ba0dbe09.size; i++) {
-        setuimodelvalue(getuimodel(var_683a6ce, #"arg" + i + 1), var_ba0dbe09[i]);
+function function_65299180(localclientnum, var_e69b15f0, arglist) {
+    scriptnotifymodel = function_1df4c3b0(localclientnum, #"script_notify");
+    for (i = 0; i < arglist.size; i++) {
+        setuimodelvalue(getuimodel(scriptnotifymodel, #"arg" + i + 1), arglist[i]);
     }
-    setuimodelvalue(getuimodel(var_683a6ce, #"numargs"), var_ba0dbe09.size);
-    if (!setuimodelvalue(var_683a6ce, var_e69b15f0)) {
-        forcenotifyuimodel(var_683a6ce);
+    setuimodelvalue(getuimodel(scriptnotifymodel, #"numargs"), arglist.size);
+    if (!setuimodelvalue(scriptnotifymodel, var_e69b15f0)) {
+        forcenotifyuimodel(scriptnotifymodel);
     }
 }
 

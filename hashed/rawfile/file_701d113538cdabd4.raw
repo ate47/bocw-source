@@ -1,0 +1,140 @@
+              
+unbindall
+
+                
+bind w	"+forward"
+bind s	"+back"
+bind a	"+moveleft"
+bind d	"+moveright"
+bind h 	"autorun"
+
+          
+bind LCTRL	"toggleprone"
+bind c		"+stance"
+bind SPACE	"+gostand"
+
+                  
+bind LSHIFT			"+breath_sprint"
+bind MOUSE1			"+attack"
+bind MOUSE2			"+toggleads_throw"             
+bind v				"+melee"
+bind MWHEELUP		"weapnext"
+bind x				"weapnext"
+bind MWHEELDOWN		"weapprev"
+bind r				"+reload"
+bind 5				"flourish"                  
+
+                      
+bind g				"+frag"             
+bind MOUSE3			"+frag"                 
+bind e				"+smoke"                
+bind q				"+weapoffhandspecial"                   
+
+              
+bind f			"+activate"
+bind TAB		"+scores"
+bind TAB    	"+inventory"
+bind TAB		"+inventoryzm"	     
+bind CAPSLOCK 	"+map"			          
+bind CAPSLOCK	"+scoreszm"		     
+bind m			"togglemap"
+
+               
+bind 1 		"scorestreak1"
+bind 2 		"scorestreak2"
+bind 3 		"scorestreak3"
+bind 4 		"scorestreak4"
+
+                                  
+bind LALT	"+calloutwheel"
+bind j		"quickspray"
+bind k		"+spraygesturewheel"
+
+          
+bind 1 		"usebgb1"
+bind 2 		"usebgb2"
+bind 3 		"usebgb3"
+bind 4 		"usebgb4"
+
+           
+bind b 		"+pickup"
+bind 1		"quickcycle_health"
+bind 2		"quickcycle_equipment"
+bind q 		"+armorrepair"
+
+       
+bind t			"chatmodepublic"
+bind y			"chatmodeteam"
+bind p			"chatmodeparty"
+bind z			"+talk"
+bind ENTER 		"chatmodelast"
+bind KP_ENTER 	"chatmodelast"
+
+          
+bind MOUSE3			"+vehiclealtcontrol"
+bind LSHIFT			"+vehicleboost"
+bind c				"+vehiclemovedown"
+bind SPACE			"+vehiclemoveup"
+bind v				"+handbrake"
+bind n				"+switchseat"
+bind KP_END			"+vehicleseat1"
+bind KP_DOWNARROW	"+vehicleseat2"
+bind KP_PGDN		"+vehicleseat3"
+bind KP_LEFTARROW	"+vehicleseat4"
+bind KP_5			"+vehicleseat5"
+bind g				"+vehiclehorn"
+
+                       
+set sensitivity		"5"
+set cl_freelook		"1"
+set ui_mousePitch	"0"
+set m_filter		"0"
+set cl_mouseAccel	"0"
+
+        
+bind PAUSE			"pause"
+bind ESCAPE			"togglemenu"
+bind ~				"toggleconsole"
+bind `				"toggleconsole"
+bind F9				"devgui"
+bind PRINTSCREEN 	"screenshotJPEG"
+
+                   
+set gpad_enabled			"1"
+bind BUTTON_START			"togglemenu"
+bind BUTTON_BACK			"togglescores"
+
+                     
+bind KP_END			"chooseclass_1"
+bind KP_DOWNARROW	"chooseclass_2"
+bind KP_PGDN		"chooseclass_3"
+bind KP_LEFTARROW	"chooseclass_4"
+bind KP_5			"chooseclass_5"
+bind KP_RIGHTARROW	"chooseclass_6"
+
+               
+bind F1 "ui_openfriends"
+bind F2 "ui_opensocial"
+bind o 	"ui_opensocial"
+bind F3 "ui_opensettings"
+bind F4 "ui_openplayeraccount"
+bind F7	"ui_acceptinvite"
+bind F8	"ui_declineinvite"
+bind F10 	"ui_muteall"
+
+bind UPARROW	"ui_navup"
+bind w	        "ui_navup"
+bind DOWNARROW	"ui_navdown"
+bind s	        "ui_navdown"
+bind LEFTARROW	"ui_navleft"
+bind a	        "ui_navleft"
+bind RIGHTARROW	"ui_navright"
+bind d	        "ui_navright"
+bind q 			"ui_prevtab"
+bind MOUSE4		"ui_prevtab"
+bind e 			"ui_nexttab"
+bind MOUSE5		"ui_nexttab"
+bind SPACE      "ui_confirm"
+
+bind R			"ui_remove"
+bind DEL		"ui_remove"

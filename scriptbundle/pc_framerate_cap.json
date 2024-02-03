@@ -2,7 +2,7 @@
     "option_dependencies": [
         {
             "var_1643d946": "1",
-            "var_6825bdb": "#pc_framerate_uncapped",
+            "optionname": "#pc_framerate_uncapped",
             "operator": "=="
         }
     ],

@@ -478,11 +478,11 @@ function private function_44456e3f(var_e83c664a) {
             self rotateyaw(self.var_9d435bb6, float(function_60d95f53()) / 1000);
             break;
         case #"tail_rotor":
-            var_32d3b1bf = level.var_e0c7b4b2.var_df4d758d.var_3b09f1e2.chopper.angles[1];
-            if (absangleclamp180(self.angles[1] - var_32d3b1bf) < 3) {
-                var_32d3b1bf = self.angles[1];
+            target_yaw = level.var_e0c7b4b2.var_df4d758d.var_3b09f1e2.chopper.angles[1];
+            if (absangleclamp180(self.angles[1] - target_yaw) < 3) {
+                target_yaw = self.angles[1];
             }
-            self rotateto((self.angles[0] + self.var_9d435bb6, var_32d3b1bf, 0), float(function_60d95f53()) / 1000);
+            self rotateto((self.angles[0] + self.var_9d435bb6, target_yaw, 0), float(function_60d95f53()) / 1000);
             break;
         default:
             self rotateyaw(self.var_9d435bb6, float(function_60d95f53()) / 1000);
@@ -512,11 +512,11 @@ function private function_c60c6664(var_e83c664a) {
             self rotateyaw(self.var_9d435bb6, float(function_60d95f53()) / 1000);
             break;
         case #"tail_rotor":
-            var_32d3b1bf = level.var_e0c7b4b2.var_df4d758d.var_3b09f1e2.chopper.angles[1];
-            if (absangleclamp180(self.angles[1] - var_32d3b1bf) < 3) {
-                var_32d3b1bf = self.angles[1];
+            target_yaw = level.var_e0c7b4b2.var_df4d758d.var_3b09f1e2.chopper.angles[1];
+            if (absangleclamp180(self.angles[1] - target_yaw) < 3) {
+                target_yaw = self.angles[1];
             }
-            self rotateto((self.angles[0] + self.var_9d435bb6, var_32d3b1bf, 0), float(function_60d95f53()) / 1000);
+            self rotateto((self.angles[0] + self.var_9d435bb6, target_yaw, 0), float(function_60d95f53()) / 1000);
             break;
         default:
             self rotateyaw(self.var_9d435bb6, float(function_60d95f53()) / 1000);

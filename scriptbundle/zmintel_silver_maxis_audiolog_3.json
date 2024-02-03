@@ -1,48 +1,48 @@
 {
     "var_1ad142ee": [
         {
-            "var_46bd7973": "#hash_1dc8a9808cd3ce40",
+            "soundevent": "#hash_1dc8a9808cd3ce40",
             "var_5d4b5964": 1.26,
             "var_36bf8e05": "#hash_198551f12f453191"
         },
         {
-            "var_46bd7973": "#hash_1dc8aa808cd3cff3",
+            "soundevent": "#hash_1dc8aa808cd3cff3",
             "var_f35c5951": 4.82,
             "var_5d4b5964": 3.22,
             "var_36bf8e05": "#hash_41842e248c1f72e0"
         },
         {
-            "var_46bd7973": "#hash_4718d3fefba598d1",
+            "soundevent": "#hash_4718d3fefba598d1",
             "var_f35c5951": 10.33,
             "var_5d4b5964": 5.38,
             "var_36bf8e05": "#hash_1546f4659ab7c108"
         },
         {
-            "var_46bd7973": "#hash_4718d2fefba5971e",
+            "soundevent": "#hash_4718d2fefba5971e",
             "var_f35c5951": 15.93,
             "var_5d4b5964": 5.25,
             "var_36bf8e05": "#hash_43aff80a4b187c41"
         },
         {
-            "var_46bd7973": "#hash_4718d5fefba59c37",
+            "soundevent": "#hash_4718d5fefba59c37",
             "var_f35c5951": 21.98,
             "var_5d4b5964": 12.91,
             "var_36bf8e05": "#hash_7eb0bd37bb664b02"
         },
         {
-            "var_46bd7973": "#hash_4718d4fefba59a84",
+            "soundevent": "#hash_4718d4fefba59a84",
             "var_f35c5951": 35.67,
             "var_5d4b5964": 9.92,
             "var_36bf8e05": "#hash_2610541b1405a27b"
         },
         {
-            "var_46bd7973": "#hash_4718d7fefba59f9d",
+            "soundevent": "#hash_4718d7fefba59f9d",
             "var_f35c5951": 46.58,
             "var_5d4b5964": 7.79,
             "var_36bf8e05": "#hash_821d8750a21ea7c"
         },
         {
-            "var_46bd7973": "#hash_4718d6fefba59dea",
+            "soundevent": "#hash_4718d6fefba59dea",
             "var_f35c5951": 55.31,
             "var_5d4b5964": 13.18,
             "var_36bf8e05": "#hash_21d99f2a0a70de5"
@@ -56,7 +56,7 @@
     "uimodel": "#hash_43c3b478e6bb838",
     "var_2a12d36": 1,
     "type": "zmintel",
-    "var_ad4ad686": "#hash_5ad2dea4c296de59",
+    "var_ad4ad686": "#maxis",
     "soundloop": "#hash_2e77024e1f0a29f1",
     "name": "zmintel_silver_maxis_audiolog_3",
     "var_9be0526e": "#audiolog",

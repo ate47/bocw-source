@@ -60,18 +60,18 @@ function private function_fe8cf253(localclientnum) {
         self.var_87259100 = playfxoncamera(localclientnum, bundle.var_492662d7);
     }
     if (isdefined(bundle.var_39b6fcfb)) {
-        var_d736690e = isdefined(bundle.var_472be987) ? bundle.var_472be987 : 0.25;
-        var_4180202d = isdefined(bundle.var_bce2eec7) ? bundle.var_bce2eec7 : 0.25;
+        minwait = isdefined(bundle.var_472be987) ? bundle.var_472be987 : 0.25;
+        maxwait = isdefined(bundle.var_bce2eec7) ? bundle.var_bce2eec7 : 0.25;
         while (1) {
             playfxoncamera(localclientnum, bundle.var_39b6fcfb);
             /#
-                var_d736690e = isdefined(bundle.var_472be987) ? bundle.var_472be987 : 0.25;
-                var_4180202d = isdefined(bundle.var_bce2eec7) ? bundle.var_bce2eec7 : 0.25;
+                minwait = isdefined(bundle.var_472be987) ? bundle.var_472be987 : 0.25;
+                maxwait = isdefined(bundle.var_bce2eec7) ? bundle.var_bce2eec7 : 0.25;
             #/
-            if (var_d736690e <= var_4180202d) {
-                wait(randomfloatrange(var_d736690e, var_4180202d));
+            if (minwait <= maxwait) {
+                wait(randomfloatrange(minwait, maxwait));
             } else {
-                wait(min(var_d736690e, var_4180202d));
+                wait(min(minwait, maxwait));
             }
         }
     }

@@ -362,7 +362,7 @@ function function_86df3ee8(str_objective_name) {
     case #"holdout":
         var_366f09af = "survival_objective_hold_0";
         break;
-    case #"hash_65660aeee07403d0":
+    case #"secure":
         var_366f09af = "survival_objective_secure_0";
         break;
     case #"mq4":

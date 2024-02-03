@@ -395,17 +395,17 @@ function private function_4fb21bb4() {
     }
     profileNamedStart(#"");
     if (self.combatstate == #"combat_state_idle" || !isdefined(self.enemy) || !isalive(self.enemy) || self.bot.flashed || self function_ce3dfcfc(self.enemy)) {
-        self.bot.var_2cf887f8 = 0;
+        self.bot.enemyvisible = 0;
         self.bot.var_e8c84f98 = 0;
     } else if (isplayer(self.enemy) && self.enemy isinvehicle() && !self.enemy isremotecontrolling()) {
         vehicle = self.enemy getvehicleoccupied();
         visible = self cansee(vehicle, 250);
-        self.bot.var_2cf887f8 = visible;
+        self.bot.enemyvisible = visible;
         self.bot.var_e8c84f98 = visible;
     } else if (isplayer(self.enemy) && isdefined(self.enemy.prop)) {
         prop = self.enemy.prop;
         visible = self cansee(prop, 250);
-        self.bot.var_2cf887f8 = visible;
+        self.bot.enemyvisible = visible;
         if (visible) {
             self.bot.var_b73d5099 = gettime() + 4500;
             self.bot.var_e8c84f98 = 1;
@@ -415,16 +415,16 @@ function private function_4fb21bb4() {
         }
         self.bot.var_e8c84f98 = visible || self cansee(prop, 4500);
     } else if (self cansee(self.enemy, 250)) {
-        self.bot.var_2cf887f8 = 1;
+        self.bot.enemyvisible = 1;
         self.bot.var_e8c84f98 = 1;
     } else if (isdefined(self.enemylastseentime)) {
-        self.bot.var_2cf887f8 = 0;
+        self.bot.enemyvisible = 0;
         self.bot.var_e8c84f98 = self.enemylastseentime + 4500 >= gettime();
     } else {
-        self.bot.var_2cf887f8 = 0;
+        self.bot.enemyvisible = 0;
         self.bot.var_e8c84f98 = 0;
     }
-    if (!self.bot.var_e8c84f98 || self.bot.var_2cf887f8 || !isdefined(self.enemylastseenpos)) {
+    if (!self.bot.var_e8c84f98 || self.bot.enemyvisible || !isdefined(self.enemylastseenpos)) {
         self.bot.var_a0b6205e = undefined;
     } else if (self.bot.var_e8c84f98) {
         if (!isdefined(self.bot.var_a0b6205e) || isdefined(self.enemy) && self.bot.lastenemy !== self.enemy) {
@@ -473,12 +473,12 @@ function private function_ce3dfcfc(enemy) {
 // Checksum 0x198f3ed7, Offset: 0x1c70
 // Size: 0xb2
 function private function_7d5bb412() {
-    if (self.bot.var_2cf887f8) {
-        self.bot.var_c51625a9 = distance(self.origin, self.enemy.origin);
+    if (self.bot.enemyvisible) {
+        self.bot.enemydist = distance(self.origin, self.enemy.origin);
     } else if (self.bot.var_e8c84f98) {
-        self.bot.var_c51625a9 = distance(self.origin, self.enemylastseenpos);
+        self.bot.enemydist = distance(self.origin, self.enemylastseenpos);
     } else {
-        self.bot.var_c51625a9 = 1000;
+        self.bot.enemydist = 1000;
     }
 }
 
@@ -712,13 +712,13 @@ function private function_fc619485() {
 function private function_ef59c9e() {
     self endon(#"death", #"hash_3525e39d3694d0a9");
     level endon(#"game_ended");
-    self.bot.var_3edc9d4d = undefined;
+    self.bot.glasstouch = undefined;
     while (1) {
         result = undefined;
         result = self waittill(#"glass");
-        self.bot.var_3edc9d4d = result.position;
+        self.bot.glasstouch = result.position;
         wait(0.2);
-        self.bot.var_3edc9d4d = undefined;
+        self.bot.glasstouch = undefined;
     }
 }
 
@@ -1070,7 +1070,7 @@ function private function_4c0124cd() {
         rolefields = getplayerrolefields(characterindex, sessionmode);
         var_270eb160 = is_true(rolefields.var_ae8ab113) ? (0, 1, 0) : (1, 0, 0);
         record3dtext(characterindex + "<unknown string>" + function_9e72a96(assetname) + "<unknown string>" + displayname, self.origin, var_270eb160, "<unknown string>", self);
-        var_fcc7a2e2 = (1, 1, 1);
+        factioncolor = (1, 1, 1);
         var_99dffb44 = isdefined(characterfields.var_306f8f14) ? characterfields.var_306f8f14 : "<unknown string>";
         teamfaction = undefined;
         var_501b8f06 = "<unknown string>";
@@ -1079,10 +1079,10 @@ function private function_4c0124cd() {
         }
         if (isdefined(teamfaction.var_306f8f14)) {
             var_501b8f06 = teamfaction.var_306f8f14;
-            var_fcc7a2e2 = var_501b8f06 == var_99dffb44 ? (0, 1, 0) : (1, 0, 0);
+            factioncolor = var_501b8f06 == var_99dffb44 ? (0, 1, 0) : (1, 0, 0);
         }
-        record3dtext("<unknown string>" + function_9e72a96(var_99dffb44), self.origin, var_fcc7a2e2, "<unknown string>", self);
-        record3dtext(function_9e72a96(self.team) + "<unknown string>" + function_9e72a96(var_501b8f06), self.origin, var_fcc7a2e2, "<unknown string>", self);
+        record3dtext("<unknown string>" + function_9e72a96(var_99dffb44), self.origin, factioncolor, "<unknown string>", self);
+        record3dtext(function_9e72a96(self.team) + "<unknown string>" + function_9e72a96(var_501b8f06), self.origin, factioncolor, "<unknown string>", self);
     #/
 }
 
@@ -1090,7 +1090,7 @@ function private function_4c0124cd() {
 // Params 3, eflags: 0x40
 // Checksum 0xdd5f46cf, Offset: 0x42f0
 // Size: 0xdc
-function function_f86de15e(val, maxval, ...) {
+function map_color(val, maxval, ...) {
     /#
         if (val <= 0) {
             return vararg[0];

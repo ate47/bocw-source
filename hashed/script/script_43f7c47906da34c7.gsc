@@ -224,8 +224,8 @@ function function_330029b4(objective, contested) {
 function function_cd2a2af2(objective, contested = 0) {
     var_464f0169 = isdefined(objective.var_edbf7cb7) ? objective.var_edbf7cb7 : 0;
     objective.var_edbf7cb7 = contested;
-    if (isdefined(objective.var_bac5b0cf)) {
-        foreach (user in objective.var_bac5b0cf) {
+    if (isdefined(objective.users)) {
+        foreach (user in objective.users) {
             foreach (struct in user.touching.players) {
                 player = struct.player;
                 if (level.var_247906a9 === 1) {

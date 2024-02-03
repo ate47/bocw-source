@@ -913,18 +913,18 @@ function function_cbb11679() {
 function function_23675a9d(index) {
     switch (index) {
     case 1:
-        var_afcc03f4 = 4;
+        new_index = 4;
         break;
     case 2:
-        var_afcc03f4 = 5;
+        new_index = 5;
         break;
     case 3:
-        var_afcc03f4 = 6;
+        new_index = 6;
         break;
     default:
         break;
     }
-    level clientfield::set("" + #"hash_241bea7b7373e633", var_afcc03f4);
+    level clientfield::set("" + #"hash_241bea7b7373e633", new_index);
     level zm_ui_inventory::function_7df6bb60(#"hash_2de8d60719124b8" + index, 1);
 }
 

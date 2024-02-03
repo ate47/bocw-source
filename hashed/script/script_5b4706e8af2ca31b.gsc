@@ -281,7 +281,7 @@ function function_731b9325(struct, dir) {
         }
     }
     struct.exitangle = struct.angles + vectorscale((0, 1, 0), 180);
-    struct.var_820d830d = struct.angles;
+    struct.startangle = struct.angles;
     struct.dir = dir;
     struct.trigger = function_c487f6c0(struct);
 }
@@ -354,8 +354,8 @@ function private function_28a2f589(inuse) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x1f5b2d15, Offset: 0x1418
 // Size: 0x294
-function function_4945d10b(var_df401071) {
-    player = var_df401071.activator;
+function function_4945d10b(trigger_info) {
+    player = trigger_info.activator;
     level endon(#"game_ended");
     player endon(#"death");
     player endon(#"disconnect");

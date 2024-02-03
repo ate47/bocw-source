@@ -172,19 +172,19 @@ function function_53150079(hidden, spotted) {
         level.stealth.var_33b5cf8f.range[#"hidden"][#"prone"] = hidden[#"prone"];
         level.stealth.var_33b5cf8f.range[#"hidden"][#"crouch"] = hidden[#"crouch"];
         level.stealth.var_33b5cf8f.range[#"hidden"][#"stand"] = hidden[#"stand"];
-        if (!isdefined(hidden[#"hash_48996f6e7b2a8a21"])) {
-            hidden[#"hash_48996f6e7b2a8a21"] = var_250a510c;
+        if (!isdefined(hidden[#"shadow"])) {
+            hidden[#"shadow"] = var_250a510c;
         }
-        level.stealth.var_33b5cf8f.range[#"hidden"][#"hash_48996f6e7b2a8a21"] = hidden[#"hash_48996f6e7b2a8a21"];
+        level.stealth.var_33b5cf8f.range[#"hidden"][#"shadow"] = hidden[#"shadow"];
     }
     if (isdefined(spotted)) {
         level.stealth.var_33b5cf8f.range[#"spotted"][#"prone"] = spotted[#"prone"];
         level.stealth.var_33b5cf8f.range[#"spotted"][#"crouch"] = spotted[#"crouch"];
         level.stealth.var_33b5cf8f.range[#"spotted"][#"stand"] = spotted[#"stand"];
-        if (!isdefined(spotted[#"hash_48996f6e7b2a8a21"])) {
-            spotted[#"hash_48996f6e7b2a8a21"] = var_250a510c;
+        if (!isdefined(spotted[#"shadow"])) {
+            spotted[#"shadow"] = var_250a510c;
         }
-        level.stealth.var_33b5cf8f.range[#"spotted"][#"hash_48996f6e7b2a8a21"] = spotted[#"hash_48996f6e7b2a8a21"];
+        level.stealth.var_33b5cf8f.range[#"spotted"][#"shadow"] = spotted[#"shadow"];
     }
 }
 

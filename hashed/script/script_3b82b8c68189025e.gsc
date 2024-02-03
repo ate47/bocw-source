@@ -183,7 +183,7 @@ function function_bc7c03bf(var_e728c53 = self.options.size - 1) {
 // Params 5, eflags: 0x2 linked
 // Checksum 0xb6941ff5, Offset: 0xfd0
 // Size: 0x25e
-function function_46f25b65(var_e728c53 = self.options.size - 1, var_a5bdf9c0 = 0, var_cfd168ce = "loop", var_2f04fa05 = 1, var_dc27586e = 1) {
+function function_46f25b65(var_e728c53 = self.options.size - 1, var_a5bdf9c0 = 0, var_cfd168ce = "loop", var_2f04fa05 = 1, anims = 1) {
     self.options[var_e728c53].var_cfd168ce = var_cfd168ce;
     if (var_2f04fa05) {
         if (isdefined(self.options[var_e728c53].var_f8340c5b)) {
@@ -197,7 +197,7 @@ function function_46f25b65(var_e728c53 = self.options.size - 1, var_a5bdf9c0 = 0
             }
         }
     }
-    if (var_dc27586e) {
+    if (anims) {
         if (isdefined(self.options[var_e728c53].var_25b61283)) {
             if (!isarray(self.options[var_e728c53].var_25b61283)) {
                 self.options[var_e728c53].var_25b61283 = [0:self.options[var_e728c53].var_25b61283];
@@ -372,7 +372,7 @@ function private function_a92530c0(var_34b21e8e, var_6a8278e5) {
             player thread clientfield::set_to_player("dt_set_dof", level.var_22817c8a[var_bb76606c.var_7e3f39f5]);
         }
         if (isai(var_34b21e8e)) {
-            var_34b21e8e thread ai::function_ccc923fb(player);
+            var_34b21e8e thread ai::look_at(player);
         }
         var_39f18b85 = self.var_bc205c58 gettagorigin("tag_origin");
         if (var_39f18b85 == (0, 0, 0) || distance(player.origin, var_39f18b85) > 256) {
@@ -456,7 +456,7 @@ function private function_86a1bed2(var_34b21e8e, struct, player_pos) {
     if (isdefined(player_pos)) {
         bundle = self.scriptbundle;
         if (isai(var_34b21e8e)) {
-            var_34b21e8e thread ai::function_ccc923fb(undefined);
+            var_34b21e8e thread ai::look_at(undefined);
             var_34b21e8e lookatentity();
         }
         if (isdefined(player_pos.fov)) {
@@ -1017,24 +1017,24 @@ function private function_49048365(var_a1a8b237) {
 // Params 5, eflags: 0x6 linked
 // Checksum 0x4aad74c6, Offset: 0x48e0
 // Size: 0x184
-function private function_c331410b(var_34b21e8e, var_dc27586e, var_3470066f, struct, scriptbundle) {
+function private function_c331410b(var_34b21e8e, anims, anim_loop, struct, scriptbundle) {
     self endon(#"dialog_tree_end");
     var_34b21e8e endon(#"hash_727216e12f8e4bc0");
-    if (isdefined(scriptbundle) && isdefined(var_dc27586e)) {
-        if (!isarray(var_dc27586e)) {
-            var_dc27586e = [0:var_dc27586e];
+    if (isdefined(scriptbundle) && isdefined(anims)) {
+        if (!isarray(anims)) {
+            anims = [0:anims];
         }
         self thread function_a5ba53f8(var_34b21e8e);
-        for (i = 0; i < var_dc27586e.size; i++) {
-            self thread function_c4ae7ee0(var_34b21e8e, var_dc27586e[i], struct, scriptbundle);
+        for (i = 0; i < anims.size; i++) {
+            self thread function_c4ae7ee0(var_34b21e8e, anims[i], struct, scriptbundle);
             self waittill(#"hash_222d1d96d3da9edb", #"hash_711653fb95598c66");
         }
     }
     var_34b21e8e notify(#"hash_12324459eb2bc76d");
     self.var_ebacf97b = undefined;
     var_34b21e8e flag::clear("_dialog_anim_playing");
-    if (isdefined(scriptbundle) && isdefined(var_3470066f)) {
-        struct thread scene::play(scriptbundle, var_3470066f, [0:var_34b21e8e]);
+    if (isdefined(scriptbundle) && isdefined(anim_loop)) {
+        struct thread scene::play(scriptbundle, anim_loop, [0:var_34b21e8e]);
     }
 }
 
@@ -1140,13 +1140,13 @@ function private function_8b61aa4c(var_d9d52a9d, var_34b21e8e, var_cf6d95c9 = 4)
     var_1c35d027 = function_b85d5a3a(var_d9d52a9d, var_cf6d95c9);
     index = 0;
     var_8447108b = [];
-    foreach (var_62950536 in var_1c35d027) {
-        if (isdefined(var_62950536.string)) {
-            namespace_61e6d095::function_f2a9266(#"dialog_tree", index, "dialogString", var_62950536.string);
-            namespace_61e6d095::function_f2a9266(#"dialog_tree", index, "important", var_62950536.important);
-            namespace_61e6d095::function_f2a9266(#"dialog_tree", index, "unImportant", var_62950536.locked);
+    foreach (choice in var_1c35d027) {
+        if (isdefined(choice.string)) {
+            namespace_61e6d095::function_f2a9266(#"dialog_tree", index, "dialogString", choice.string);
+            namespace_61e6d095::function_f2a9266(#"dialog_tree", index, "important", choice.important);
+            namespace_61e6d095::function_f2a9266(#"dialog_tree", index, "unImportant", choice.locked);
             namespace_61e6d095::function_f2a9266(#"dialog_tree", index, "kbmShortcut", function_985e8e32(index));
-            var_8447108b[index] = var_62950536;
+            var_8447108b[index] = choice;
             index++;
         }
     }

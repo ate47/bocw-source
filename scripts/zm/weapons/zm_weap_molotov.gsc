@@ -35,7 +35,7 @@ function private function_70a657d8() {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x4e28e0c2, Offset: 0x240
 // Size: 0x13c
-function function_b107b600(position, var_efa24ea4, damageendtime, var_ac892ba9) {
+function function_b107b600(position, var_efa24ea4, damageendtime, updateinterval) {
     level endon(#"game_ended");
     while (gettime() < damageendtime) {
         var_808239f1 = self.var_8928bbff[!self.var_87dae7f1];
@@ -45,7 +45,7 @@ function function_b107b600(position, var_efa24ea4, damageendtime, var_ac892ba9) 
                 var_808239f1[var_808239f1.size] = actor;
             }
         }
-        wait(var_ac892ba9);
+        wait(updateinterval);
     }
 }
 

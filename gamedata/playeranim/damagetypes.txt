@@ -1,0 +1,11 @@
+normal
+electrified
+annihilator
+bow_partial_charge
+bow_full_charge
+fireflies
+energy_weapon
+radiation
+ninja_blade
+dogcinmelee
+gassed

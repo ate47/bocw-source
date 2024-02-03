@@ -164,14 +164,14 @@ function private function_8528a766(var_fc96f513) {
                 var_1d5a6fd3.actions[actionname] = 1;
             }
         }
-        var_1d5a6fd3.var_ad61bf60 = isdefined(takedown.var_4ea70c9e) && takedown.var_4ea70c9e < 180 ? anglestoforward((0, isdefined(takedown.yaw) ? takedown.yaw : 0, 0)) : undefined;
-        var_1d5a6fd3.var_8f4fda5a = isdefined(takedown.var_4ea70c9e) && takedown.var_4ea70c9e < 180 ? cos(takedown.var_4ea70c9e) : undefined;
+        var_1d5a6fd3.var_ad61bf60 = isdefined(takedown.yawrange) && takedown.yawrange < 180 ? anglestoforward((0, isdefined(takedown.yaw) ? takedown.yaw : 0, 0)) : undefined;
+        var_1d5a6fd3.var_8f4fda5a = isdefined(takedown.yawrange) && takedown.yawrange < 180 ? cos(takedown.yawrange) : undefined;
         var_1d5a6fd3.var_4c067ed7 = isdefined(takedown.minrange) && takedown.minrange > 0 ? function_a3f6cdac(takedown.minrange) : undefined;
         var_1d5a6fd3.var_6465622a = isdefined(takedown.maxrange) ? function_a3f6cdac(takedown.maxrange) : undefined;
         var_1d5a6fd3.minheight = isdefined(takedown.minheight) ? takedown.minheight : undefined;
         var_1d5a6fd3.maxheight = isdefined(takedown.maxheight) ? takedown.maxheight : undefined;
         var_1d5a6fd3.trace = is_true(takedown.trace) ? 1 : undefined;
-        var_1d5a6fd3.var_726afa1f = is_true(takedown.trace) ? takedown.var_726afa1f : undefined;
+        var_1d5a6fd3.traceheight = is_true(takedown.trace) ? takedown.traceheight : undefined;
         var_1d5a6fd3.var_72970ce2 = is_true(takedown.var_72970ce2) ? 1 : undefined;
         var_1d5a6fd3.var_38190f69 = is_true(takedown.var_38190f69) ? 1 : undefined;
         var_1d5a6fd3.var_a1aba651 = is_true(takedown.var_a1aba651) ? 1 : undefined;
@@ -282,7 +282,7 @@ function function_7395fe24(action, fullbody, victim, scene) {
         if (isdefined(level.var_ab828d57)) {
             victim util::delay(0.1, undefined, level.var_ab828d57);
         }
-        victim ai::function_ccc923fb(undefined, 0);
+        victim ai::look_at(undefined, 0);
         victim util::delay(0.5, "takedown_executed", &namespace_594b67e::function_71180c30, 0);
         if (isdefined(level.var_b19e4f0a)) {
             victim util::delay(1, undefined, level.var_b19e4f0a, "ally_damaged", "ally_hurt_peripheral", self, 50, 500);
@@ -373,12 +373,12 @@ function function_41abe76e(*action) {
         if (!self isstanceallowed("stand")) {
             self.takedown.var_41abe76e = 0;
         } else {
-            var_25b46261 = 5;
-            endz = var_25b46261 + 0.1;
-            traceresult = playerphysicstrace(self.origin + (0, 0, var_25b46261), self.origin + (0, 0, endz));
+            startz = 5;
+            endz = startz + 0.1;
+            traceresult = playerphysicstrace(self.origin + (0, 0, startz), self.origin + (0, 0, endz));
             if (traceresult[2] < self.origin[2] + endz) {
                 /#
-                    box(self.origin + (0, 0, var_25b46261), vectorscale((-1, -1, 0), 15), (15, 15, 70), 0, (1, 0, 0), 1, 1, 1);
+                    box(self.origin + (0, 0, startz), vectorscale((-1, -1, 0), 15), (15, 15, 70), 0, (1, 0, 0), 1, 1, 1);
                 #/
                 self.takedown.var_41abe76e = 0;
             }
@@ -538,7 +538,7 @@ function function_5ca78f5a(action) {
         fwd = anglestoforward(self getplayerangles());
         var_e3cd155d = vectornormalize((fwd[0], fwd[1], 0));
         playereye = self getplayercamerapos();
-        var_a219ed08 = -1;
+        best_dot = -1;
         foreach (enemy in self.takedown.var_b020d18d) {
             if (!isalive(enemy)) {
                 continue;
@@ -561,8 +561,8 @@ function function_5ca78f5a(action) {
             } else if (isdefined(var_2dcf841c.scene)) {
                 dir = self function_146a3d56(enemy);
                 dot = vectordot(fwd, dir);
-                if (dot > var_a219ed08) {
-                    var_a219ed08 = dot;
+                if (dot > best_dot) {
+                    best_dot = dot;
                     if (isdefined(enemy.var_ab101371)) {
                         var_2dcf841c.scene = enemy.var_ab101371;
                     } else if (isdefined(enemy.var_d3f0031c) || isdefined(enemy.var_59212ad0)) {
@@ -727,22 +727,22 @@ function function_c943b729(*action, takedown, player) {
         var_d96cb66d = anglestoright(self gettagangles("j_head")) * -1;
         var_a15c1f47 = anglestoforward(self.angles);
         var_da1c47f = lerpvector(var_d96cb66d, var_a15c1f47, 0.5);
-        var_582b05a9 = rotatepoint(takedown.var_ad61bf60, (0, function_2981bd91(var_da1c47f), 0));
-        if (vectordot(var_582b05a9, self.var_97e2c0da.var_fe50a481) < takedown.var_8f4fda5a) {
+        worlddir = rotatepoint(takedown.var_ad61bf60, (0, function_2981bd91(var_da1c47f), 0));
+        if (vectordot(worlddir, self.var_97e2c0da.var_fe50a481) < takedown.var_8f4fda5a) {
             return 0;
         }
     }
-    var_c15a5a25 = self.origin[2] - player.origin[2];
-    if (isdefined(takedown.minheight) && var_c15a5a25 < takedown.minheight) {
+    deltaz = self.origin[2] - player.origin[2];
+    if (isdefined(takedown.minheight) && deltaz < takedown.minheight) {
         return 0;
     }
-    if (isdefined(takedown.maxheight) && var_c15a5a25 > takedown.maxheight) {
+    if (isdefined(takedown.maxheight) && deltaz > takedown.maxheight) {
         return 0;
     }
     if (is_true(takedown.trace)) {
         zoffset = vectorscale((0, 0, 1), 24);
-        if (isdefined(takedown.var_726afa1f)) {
-            zoffset = (0, 0, takedown.var_726afa1f);
+        if (isdefined(takedown.traceheight)) {
+            zoffset = (0, 0, takedown.traceheight);
         }
         start = player.origin + zoffset;
         end = self.var_97e2c0da.check_origin + zoffset;
@@ -835,17 +835,17 @@ function function_dce515a6(guy, modelname, var_cf230c0, var_8afc2ef3, var_5f373d
         }
     }
     if (!isdefined(self.takedown.body) || is_true(var_a18e300c)) {
-        var_ef713ee3 = spawn("script_model", self.origin);
-        var_ef713ee3.angles = self.angles;
-        var_ef713ee3.team = "axis";
-        var_ef713ee3.animname = "generic";
-        var_ef713ee3 setmodel(modelname);
-        var_ef713ee3.modelname = modelname;
-        var_ef713ee3.ai_type = aitype;
-        var_ef713ee3 namespace_594b67e::function_77af90aa(var_cf230c0, var_8afc2ef3);
-        var_ef713ee3 useanimtree("generic");
-        var_ef713ee3 namespace_594b67e::function_30b535ff(1);
-        self.takedown.body = var_ef713ee3;
+        bodymodel = spawn("script_model", self.origin);
+        bodymodel.angles = self.angles;
+        bodymodel.team = "axis";
+        bodymodel.animname = "generic";
+        bodymodel setmodel(modelname);
+        bodymodel.modelname = modelname;
+        bodymodel.ai_type = aitype;
+        bodymodel namespace_594b67e::function_77af90aa(var_cf230c0, var_8afc2ef3);
+        bodymodel useanimtree("generic");
+        bodymodel namespace_594b67e::function_30b535ff(1);
+        self.takedown.body = bodymodel;
     }
     if (isdefined(var_5f373dfe)) {
     }
@@ -967,18 +967,18 @@ function function_7a061b23(enabled, action_name) {
         #/
         self.takedown.var_9871533[action_name] = self.takedown.var_9871533.size;
     }
-    var_48af221d = 0;
+    bitmask = 0;
     if (isdefined(action_name)) {
-        var_48af221d = 1 << self.takedown.var_9871533[action_name];
+        bitmask = 1 << self.takedown.var_9871533[action_name];
     } else {
         foreach (bitindex in self.takedown.var_9871533) {
-            var_48af221d = var_48af221d | 1 << bitindex;
+            bitmask = bitmask | 1 << bitindex;
         }
     }
     if (enabled) {
-        self.takedown.var_d4da26de = self.takedown.var_d4da26de & ~var_48af221d;
+        self.takedown.var_d4da26de = self.takedown.var_d4da26de & ~bitmask;
     } else {
-        self.takedown.var_d4da26de = self.takedown.var_d4da26de | var_48af221d;
+        self.takedown.var_d4da26de = self.takedown.var_d4da26de | bitmask;
     }
     var_b381ae79 = !self.takedown.var_d4da26de;
     self.takedown.allow_melee = var_b381ae79;
@@ -1007,8 +1007,8 @@ function function_f8af9078(action_name) {
         if (!isdefined(self.takedown.var_9871533) || !isdefined(self.takedown.var_9871533[action_name])) {
             return 1;
         }
-        var_48af221d = 1 << self.takedown.var_9871533[action_name];
-        return ((self.takedown.var_d4da26de & var_48af221d) == 0);
+        bitmask = 1 << self.takedown.var_9871533[action_name];
+        return ((self.takedown.var_d4da26de & bitmask) == 0);
     }
     return self.takedown.var_d4da26de == 0;
 }
@@ -1086,10 +1086,10 @@ function function_8c04a084(player) {
             self.var_97e2c0da = {};
         }
         tag = "tag_origin";
-        var_13e23952 = self gettagangles(tag);
+        tagangles = self gettagangles(tag);
         tagpos = self gettagorigin(tag);
-        var_da4521b5 = anglestoright(var_13e23952);
-        var_a38620f = anglestoforward(var_13e23952);
+        var_da4521b5 = anglestoright(tagangles);
+        var_a38620f = anglestoforward(tagangles);
         var_b6db82af = player.origin - tagpos;
         var_b6db82af = (var_b6db82af[0], var_b6db82af[1], 0);
         var_b6db82af = vectornormalize(var_b6db82af);
@@ -1120,7 +1120,7 @@ function function_8c04a084(player) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xaebda895, Offset: 0x5490
 // Size: 0x184
-function function_945b4efe(takedown, var_a07aacf8) {
+function function_945b4efe(takedown, advance) {
     /#
         assert(isplayer(self));
     #/
@@ -1137,7 +1137,7 @@ function function_945b4efe(takedown, var_a07aacf8) {
         return undefined;
     }
     result = var_ab3c9923[var_ab3c9923.size - 1];
-    if (is_true(var_a07aacf8)) {
+    if (is_true(advance)) {
         var_ab3c9923[var_ab3c9923.size - 1] = undefined;
     }
     return result;

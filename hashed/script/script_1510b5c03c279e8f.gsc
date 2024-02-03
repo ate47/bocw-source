@@ -255,7 +255,7 @@ function function_ae36dd9f(*params) {
     self thread function_aea2bda3();
     self setspeed(self.settings.defaultmovespeed);
     self asmrequestsubstate("locomotion@movement");
-    self.var_fef6e688 = undefined;
+    self.dont_move = undefined;
     for (;;) {
         for (;;) {
             if (!isdefined(self.enemy)) {
@@ -267,7 +267,7 @@ function function_ae36dd9f(*params) {
                 self force_get_enemies();
                 wait(0.1);
                 continue;
-            } else if (self.var_fef6e688 === 1) {
+            } else if (self.dont_move === 1) {
                 wait(0.1);
                 continue;
             }
@@ -336,18 +336,18 @@ function function_c7208b7d(enemy) {
     self notify(#"near_goal");
     self endon(#"death");
     self vehicle_ai::clearallmovement(1);
-    self.var_fef6e688 = 1;
+    self.dont_move = 1;
     self vehlookat(enemy);
     self turretsettarget(0, enemy);
     self function_a57c34b7(enemy.origin, 0, 0);
     self setgoal(enemy.origin, 0, 0);
     var_2fd0e338 = 30;
     v_to_enemy = ((enemy.origin - self.origin)[0], (enemy.origin - self.origin)[1], 0);
-    var_3e4d601a = vectortoangles(v_to_enemy);
-    anglediff = absangleclamp180(self.angles[1] - var_3e4d601a[1]);
+    goalangles = vectortoangles(v_to_enemy);
+    anglediff = absangleclamp180(self.angles[1] - goalangles[1]);
     var_29b2c7c7 = gettime();
     while (anglediff > var_2fd0e338 && util::timesince(var_29b2c7c7) < 0.8) {
-        anglediff = absangleclamp180(self.angles[1] - var_3e4d601a[1]);
+        anglediff = absangleclamp180(self.angles[1] - goalangles[1]);
         waitframe(1);
     }
     self vehicle_ai::clearallmovement(1);
@@ -364,7 +364,7 @@ function function_c7208b7d(enemy) {
         }
     }
     self asmrequestsubstate("locomotion@movement");
-    self.var_fef6e688 = undefined;
+    self.dont_move = undefined;
 }
 
 // Namespace namespace_7457b8d5/namespace_7457b8d5
@@ -417,7 +417,7 @@ function function_aebf9e0f(*params) {
     self.var_fb7f416c = undefined;
     self setspeed(self.settings.defaultmovespeed * 1.5);
     self asmrequestsubstate("locomotion@movement");
-    self.var_fef6e688 = undefined;
+    self.dont_move = undefined;
     wait(0.5);
     for (;;) {
         foreach (player in getplayers()) {
@@ -434,7 +434,7 @@ function function_aebf9e0f(*params) {
                 self force_get_enemies();
                 wait(0.1);
                 continue;
-            } else if (self.var_fef6e688 === 1) {
+            } else if (self.dont_move === 1) {
                 wait(0.1);
                 continue;
             }
@@ -567,7 +567,7 @@ function function_8a699cff() {
 function function_f7dc8837(enemy) {
     self notify(#"near_goal");
     self vehicle_ai::clearallmovement(1);
-    self.var_fef6e688 = 1;
+    self.dont_move = 1;
     self asmrequestsubstate("melee@stationary");
     timedout = undefined;
     timedout = self waittilltimeout(3, #"hash_30146e30dbd0d26b");
@@ -578,7 +578,7 @@ function function_f7dc8837(enemy) {
         self vehicle_ai::waittill_asm_complete("melee@stationary", 2);
     }
     self asmrequestsubstate("locomotion@movement");
-    self.var_fef6e688 = undefined;
+    self.dont_move = undefined;
 }
 
 // Namespace namespace_7457b8d5/namespace_7457b8d5

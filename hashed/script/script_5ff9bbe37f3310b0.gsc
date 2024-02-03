@@ -244,7 +244,7 @@ function function_19490940(*eventstruct) {
 // Checksum 0x7b4783d4, Offset: 0x1288
 // Size: 0xa6
 function private function_873ab308() {
-    var_18d554fc = int(min(level.var_15d17eb2, 4));
+    var_18d554fc = int(min(level.realm, 4));
     var_aa19ae = #"hash_31755cceac541303" + var_18d554fc + "_variant_" + randomintrange(1, 4);
     if (isdefined(getscriptbundle(var_aa19ae))) {
         return var_aa19ae;

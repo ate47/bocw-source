@@ -53,7 +53,7 @@ function function_f3143608(localclientnum) {
     namespace_6e90e490::function_9c238883(self getentitynumber(), self getlocalclientnumber(), 0);
     self camerasetupdatecallback(&namespace_ac2a80f5::function_14f1aa2b);
     self function_4d692cc4(localclientnum, self.var_88a2ff29);
-    self.fxorigin = namespace_ec06fe4a::function_e22ae9b3(localclientnum, self.origin, undefined, undefined, "playerfxOrigin");
+    self.fxorigin = namespace_ec06fe4a::spawnmodel(localclientnum, self.origin, undefined, undefined, "playerfxOrigin");
     if (isdefined(self.fxorigin)) {
         self.fxorigin thread namespace_ec06fe4a::function_d55f042c(self, "disconnect");
         self.fxorigin thread namespace_ec06fe4a::function_73d79e7d(self, vectorscale((0, 0, 1), 6));
@@ -108,10 +108,10 @@ function function_ce6420c(localclientnum) {
     if (!isdefined(self.doa.var_4aa817ed)) {
         self.doa.var_4aa817ed = (0, 0, 0);
     }
-    var_35fc2c8e = 0;
+    lastyaw = 0;
     yaw = 0;
     var_183aaf3c = 0;
-    var_c39bdff9 = 1;
+    latch = 1;
     while (1) {
         wait(var_f3e30707);
         if (!isdefined(self)) {
@@ -119,9 +119,9 @@ function function_ce6420c(localclientnum) {
         }
         self.doa.var_4aa817ed = util::function_11f127f0(localclientnum, 0);
         if (self.doa.var_4aa817ed.length > 0) {
-            var_35fc2c8e = yaw;
+            lastyaw = yaw;
             yaw = self.doa.var_4aa817ed.degrees;
-            var_9756b1d4 = abs(yaw - var_35fc2c8e);
+            var_9756b1d4 = abs(yaw - lastyaw);
             if (var_9756b1d4 <= 1) {
                 var_183aaf3c = var_183aaf3c + var_f3e30707;
             } else {
@@ -130,8 +130,8 @@ function function_ce6420c(localclientnum) {
             }
             if (var_183aaf3c > 1) {
                 var_183aaf3c = var_183aaf3c - 1;
-                self serverfield::set("rstick_input_inc", var_c39bdff9);
-                var_c39bdff9 = var_c39bdff9 == 1 ? 2 : 1;
+                self serverfield::set("rstick_input_inc", latch);
+                latch = latch == 1 ? 2 : 1;
             }
         } else {
             var_183aaf3c = 0;
@@ -154,10 +154,10 @@ function function_4fa1ee4f(localclientnum) {
     if (!isdefined(self.doa.var_c8b6bcb0)) {
         self.doa.var_c8b6bcb0 = (0, 0, 0);
     }
-    var_35fc2c8e = 0;
+    lastyaw = 0;
     yaw = 0;
     var_183aaf3c = 0;
-    var_c39bdff9 = 1;
+    latch = 1;
     while (1) {
         wait(var_f3e30707);
         if (!isdefined(self)) {
@@ -165,9 +165,9 @@ function function_4fa1ee4f(localclientnum) {
         }
         self.doa.var_c8b6bcb0 = util::function_17bf631a(localclientnum, 0);
         if (self.doa.var_c8b6bcb0.length > 0) {
-            var_35fc2c8e = yaw;
+            lastyaw = yaw;
             yaw = self.doa.var_c8b6bcb0.degrees;
-            var_9756b1d4 = abs(yaw - var_35fc2c8e);
+            var_9756b1d4 = abs(yaw - lastyaw);
             if (var_9756b1d4 <= 1) {
                 var_183aaf3c = var_183aaf3c + var_f3e30707;
             } else {
@@ -176,8 +176,8 @@ function function_4fa1ee4f(localclientnum) {
             }
             if (var_183aaf3c > 1) {
                 var_183aaf3c = var_183aaf3c - 1;
-                self serverfield::set("lstick_input_inc", var_c39bdff9);
-                var_c39bdff9 = var_c39bdff9 == 1 ? 2 : 1;
+                self serverfield::set("lstick_input_inc", latch);
+                latch = latch == 1 ? 2 : 1;
             }
         } else {
             var_183aaf3c = 0;
@@ -241,7 +241,7 @@ function function_fcc90081(localclientnum) {
         return;
     }
     if (!isdefined(self.fxorigin)) {
-        self.fxorigin = namespace_ec06fe4a::function_e22ae9b3(localclientnum, self.origin, undefined, undefined, "playerfxOrigin");
+        self.fxorigin = namespace_ec06fe4a::spawnmodel(localclientnum, self.origin, undefined, undefined, "playerfxOrigin");
         if (isdefined(self.fxorigin)) {
             self.fxorigin thread namespace_ec06fe4a::function_d55f042c(self, "disconnect");
             self.fxorigin thread namespace_ec06fe4a::function_73d79e7d(self, vectorscale((0, 0, 1), 6));

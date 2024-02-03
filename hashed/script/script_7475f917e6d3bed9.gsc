@@ -132,13 +132,13 @@ function function_88e2e18a(killstreaktype, location, team, killstreak_id, startd
             } else {
                 height = killstreaks::function_43f4782d();
                 height = height + 3400 + randomfloatrange(-100, 100);
-                var_726afa1f = trace[#"position"][2];
-                height = height + var_726afa1f - level.mapcenter[2];
+                traceheight = trace[#"position"][2];
+                height = height + traceheight - level.mapcenter[2];
             }
         }
     }
     killstreakbundle = killstreaks::get_script_bundle(bundlename);
-    var_6f0781c6 = killstreakbundle.var_aadafb41 / 2;
+    planeoffset = killstreakbundle.var_aadafb41 / 2;
     var_81384d54 = getvehiclenodearray(var_e0d1e239, "targetname");
     /#
         assert(var_81384d54.size, "<unknown string>");
@@ -305,10 +305,10 @@ function private function_c248485(plane, targetpoint, team, owner, var_3892c0b0 
 // Size: 0x464
 function private function_c4cbfac7(plane, team, killstreakbundle, var_8be94730, var_1d6434c4, var_c3aa02d8, location, killcament, var_5496c504) {
     bombspeedscale = killstreakbundle.var_e72831e2;
-    var_14199a71 = bombspeedscale * 4800 * var_1d6434c4;
+    forwardspeed = bombspeedscale * 4800 * var_1d6434c4;
     angles = (0, plane.angles[1], 0);
     forward = anglestoforward(angles);
-    var_12bba076 = vectorscale(forward, var_14199a71) + (0, 0, killstreakbundle.var_b938e27c * -1 * var_c3aa02d8);
+    var_12bba076 = vectorscale(forward, forwardspeed) + (0, 0, killstreakbundle.var_b938e27c * -1 * var_c3aa02d8);
     startposition = plane.origin + vectorscale((0, 0, -1), 40) + var_8be94730;
     weapon = getweapon("napalm_strike");
     bomb = self magicmissile(weapon, startposition, var_12bba076);

@@ -50,9 +50,9 @@
 #using scripts\core_common\array_shared.gsc;
 #using script_165beea08a63a243;
 
-#namespace namespace_6d6a0ac2;
+#namespace zonslaught;
 
-// Namespace namespace_6d6a0ac2/gametype_init
+// Namespace zonslaught/gametype_init
 // Params 1, eflags: 0x20
 // Checksum 0xb3a252a9, Offset: 0x4a8
 // Size: 0xc24
@@ -177,7 +177,7 @@ function event_handler[gametype_init] main(*eventstruct) {
     }
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 0, eflags: 0x0
 // Checksum 0x92f86543, Offset: 0x10d8
 // Size: 0x1e0
@@ -199,7 +199,7 @@ function tu21_t9_onslaught_gold_zm_firebase_fixedup() {
     }
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 0, eflags: 0x0
 // Checksum 0xb8b1de06, Offset: 0x12c0
 // Size: 0x200
@@ -222,7 +222,7 @@ function function_d2211917() {
     }
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 0, eflags: 0x0
 // Checksum 0xcb7048f0, Offset: 0x14c8
 // Size: 0x172
@@ -243,7 +243,7 @@ function function_8f3357bd() {
     }
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 0, eflags: 0x1
 // Checksum 0x7bb95fe0, Offset: 0x1648
 // Size: 0x74
@@ -254,7 +254,7 @@ function autoexec function_31a760fa() {
     }
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 1, eflags: 0x0
 // Checksum 0xf2837f02, Offset: 0x16c8
 // Size: 0x1de
@@ -286,7 +286,7 @@ function function_37d98bb7(entity) {
     }
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 1, eflags: 0x0
 // Checksum 0x17c65f00, Offset: 0x18b0
 // Size: 0x7c
@@ -296,7 +296,7 @@ function on_player_damage(params) {
     }
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 0, eflags: 0x0
 // Checksum 0xb896ac66, Offset: 0x1938
 // Size: 0x228
@@ -330,7 +330,7 @@ function on_bleedout() {
     }
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 0, eflags: 0x0
 // Checksum 0x44b3b3db, Offset: 0x1b68
 // Size: 0x238
@@ -366,7 +366,7 @@ function function_6398c8cb() {
     }
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 0, eflags: 0x0
 // Checksum 0x39700fe2, Offset: 0x1da8
 // Size: 0x144
@@ -384,7 +384,7 @@ function function_3fd71c32() {
     self thread val::set_for_time(3, #"player_spawn_protection", "ignoreme");
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 1, eflags: 0x0
 // Checksum 0x1f586172, Offset: 0x1ef8
 // Size: 0x2c
@@ -393,7 +393,7 @@ function function_2c482e69(*params) {
     self thread function_acafdd66();
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 0, eflags: 0x0
 // Checksum 0x3d51fd1f, Offset: 0x1f30
 // Size: 0x4c
@@ -406,7 +406,7 @@ function function_acafdd66() {
     }
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 1, eflags: 0x0
 // Checksum 0x11892e9f, Offset: 0x1f88
 // Size: 0x730
@@ -425,7 +425,7 @@ function overridespawn(*ispredictedspawn) {
             self.resurrect_angles = level.var_2492c7f.angles;
         }
     }
-    var_3f9c4a4 = 800;
+    checkdist = 800;
     var_273a84a9 = [];
     if (!isdefined(var_273a84a9)) {
         var_273a84a9 = [];
@@ -520,7 +520,7 @@ function overridespawn(*ispredictedspawn) {
             var_d16776ab = distsq;
             level.var_2492c7f = spawnpt;
         }
-        if (distsq < var_3f9c4a4 * var_3f9c4a4) {
+        if (distsq < checkdist * checkdist) {
             level.var_4d75ad83 = spawnpt;
             level.var_4d75ad83.used = 1;
             break;
@@ -534,7 +534,7 @@ function overridespawn(*ispredictedspawn) {
     return 1;
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 1, eflags: 0x0
 // Checksum 0x5be6774d, Offset: 0x26c0
 // Size: 0x16c
@@ -553,7 +553,7 @@ function function_b20199e0(var_57ade5da) {
     }
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 0, eflags: 0x0
 // Checksum 0xf6895103, Offset: 0x2838
 // Size: 0x14
@@ -561,7 +561,7 @@ function function_8af3b312() {
     spawning::addspawns();
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 1, eflags: 0x0
 // Checksum 0x8d2cd234, Offset: 0x2858
 // Size: 0x24
@@ -569,7 +569,7 @@ function function_716def93(predictedspawn) {
     self spawning::onspawnplayer(predictedspawn);
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0x2888
 // Size: 0x4
@@ -577,7 +577,7 @@ function onprecachegametype() {
     
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 1, eflags: 0x0
 // Checksum 0xe32172c1, Offset: 0x2898
 // Size: 0xb4
@@ -593,7 +593,7 @@ function function_6878d990(ai_zombie) {
     }
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 0, eflags: 0x0
 // Checksum 0x2ae4cea9, Offset: 0x2958
 // Size: 0x11c
@@ -609,7 +609,7 @@ function function_a755769f() {
     return var_884f5b32;
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 0, eflags: 0x0
 // Checksum 0x68abbeca, Offset: 0x2a80
 // Size: 0x45c
@@ -663,7 +663,7 @@ function onstartgametype() {
     level.var_b813f909 = &function_6878d990;
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 0, eflags: 0x0
 // Checksum 0x321017d3, Offset: 0x2ee8
 // Size: 0x8c
@@ -677,28 +677,28 @@ function on_player_spawn() {
     self val::reset(#"oob", "takedamage");
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 2, eflags: 0x4
 // Checksum 0xaf584750, Offset: 0x2f80
 // Size: 0x4c
-function private function_6e4a862f(var_49f265db, var_c0e8e1e0) {
-    if (isdefined(var_49f265db) && isdefined(var_c0e8e1e0)) {
-        self luinotifyevent(#"hash_68afc2d59b92c95c", 2, var_49f265db, var_c0e8e1e0);
+function private function_6e4a862f(medalindex, var_c0e8e1e0) {
+    if (isdefined(medalindex) && isdefined(var_c0e8e1e0)) {
+        self luinotifyevent(#"hash_68afc2d59b92c95c", 2, medalindex, var_c0e8e1e0);
     }
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 0, eflags: 0x0
 // Checksum 0x217387b4, Offset: 0x2fd8
 // Size: 0x5a
 function function_26bd1471() {
-    if (util::get_game_type() === #"hash_1065e6adeeb8ed5a" || util::get_game_type() === #"hash_35d5e49c19d9cf09") {
+    if (util::get_game_type() === #"zonslaught" || util::get_game_type() === #"hash_35d5e49c19d9cf09") {
         return 1;
     }
     return 0;
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 1, eflags: 0x0
 // Checksum 0xdb5d22d6, Offset: 0x3040
 // Size: 0x166a
@@ -1002,7 +1002,7 @@ function function_e88957df(var_a0168ed5 = 0) {
     }
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 2, eflags: 0x0
 // Checksum 0xb8f58116, Offset: 0x46b8
 // Size: 0x21e
@@ -1015,7 +1015,7 @@ function function_d400d613(targetname, typesarray) {
             if (!function_82ca1565(spawn, supportedspawntype)) {
                 continue;
             }
-            if (oob::chr_party(spawn.origin) && territory::function_83ad4d2b(spawn.origin)) {
+            if (oob::chr_party(spawn.origin) && territory::is_inside(spawn.origin)) {
                 break;
             }
             if (!isdefined(returnarray[supportedspawntype])) {
@@ -1032,7 +1032,7 @@ function function_d400d613(targetname, typesarray) {
     return returnarray;
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 2, eflags: 0x0
 // Checksum 0x8e866e2c, Offset: 0x48e0
 // Size: 0x2c4

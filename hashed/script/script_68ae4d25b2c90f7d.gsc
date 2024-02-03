@@ -129,9 +129,9 @@ function function_952f1795(localclientnum) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xd6e1108d, Offset: 0x958
 // Size: 0x4c
-function function_d7031739(localclientnum, var_2bd718aa) {
+function function_d7031739(localclientnum, beamid) {
     level endon(#"game_ended");
     wait(1);
-    beam::function_47deed80(localclientnum, var_2bd718aa);
+    beam::function_47deed80(localclientnum, beamid);
 }
 

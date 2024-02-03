@@ -1,55 +1,55 @@
 {
     "var_1ad142ee": [
         {
-            "var_46bd7973": "#hash_a90d94f47c3b9d9",
+            "soundevent": "#hash_a90d94f47c3b9d9",
             "var_f35c5951": 1.6,
             "var_5d4b5964": 11.56,
             "var_36bf8e05": "#hash_3aabd98017d4cf72"
         },
         {
-            "var_46bd7973": "#hash_a90d84f47c3b826",
+            "soundevent": "#hash_a90d84f47c3b826",
             "var_f35c5951": 14,
             "var_5d4b5964": 13.33,
             "var_36bf8e05": "#hash_675a8e2f8e063b2b"
         },
         {
-            "var_46bd7973": "#hash_a90d74f47c3b673",
+            "soundevent": "#hash_a90d74f47c3b673",
             "var_f35c5951": 27.6,
             "var_5d4b5964": 4.25,
             "var_36bf8e05": "#hash_1d202808882b8dec"
         },
         {
-            "var_46bd7973": "#hash_a90d64f47c3b4c0",
+            "soundevent": "#hash_a90d64f47c3b4c0",
             "var_f35c5951": 33.4,
             "var_5d4b5964": 10.47,
             "var_36bf8e05": "#hash_1b59da78de32a015"
         },
         {
-            "var_46bd7973": "#hash_a90dd4f47c3c0a5",
+            "soundevent": "#hash_a90dd4f47c3c0a5",
             "var_f35c5951": 44.1,
             "var_5d4b5964": 8.38,
             "var_36bf8e05": "#hash_7a9a5121168d8d3e"
         },
         {
-            "var_46bd7973": "#hash_a90dc4f47c3bef2",
+            "soundevent": "#hash_a90dc4f47c3bef2",
             "var_f35c5951": 53,
             "var_5d4b5964": 4.99,
             "var_36bf8e05": "#hash_5212f0ba3b102537"
         },
         {
-            "var_46bd7973": "#hash_a90db4f47c3bd3f",
+            "soundevent": "#hash_a90db4f47c3bd3f",
             "var_f35c5951": 58.9,
             "var_5d4b5964": 2.11,
             "var_36bf8e05": "#hash_59276e76682a1478"
         },
         {
-            "var_46bd7973": "#hash_a90da4f47c3bb8c",
+            "soundevent": "#hash_a90da4f47c3bb8c",
             "var_f35c5951": 62.5,
             "var_5d4b5964": 3.8,
             "var_36bf8e05": "#hash_30a00e0f8cacac71"
         },
         {
-            "var_46bd7973": "#hash_6dae3ed24e0ca4d7",
+            "soundevent": "#hash_6dae3ed24e0ca4d7",
             "var_f35c5951": 66.5,
             "var_5d4b5964": 0.1
         }
@@ -63,7 +63,7 @@
     "var_2a12d36": 1,
     "type": "zmintel",
     "season": 3,
-    "var_ad4ad686": "#hash_5ad2dea4c296de59",
+    "var_ad4ad686": "#maxis",
     "soundloop": "#hash_2e77024e1f0a29f1",
     "name": "zmintel_survival_maxis_audiolog_8",
     "var_9be0526e": "#audiolog",

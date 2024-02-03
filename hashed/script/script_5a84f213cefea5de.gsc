@@ -100,8 +100,8 @@ function private function_898628ef(item, player, *networkid, *itemid, itemcount,
             if (!weapon.iscliponly) {
                 ammo = ammo + itemcount getweaponammostock(weapon);
             }
-            var_dc24c62 = ammo > 0;
-            if (var_dc24c62) {
+            hasammo = ammo > 0;
+            if (hasammo) {
                 itempoint = function_4ba8fde(var_16f12c31);
                 var_390fc2d8 = getscriptbundle(itempoint.var_a6762160.killstreak);
                 if (var_390fc2d8.var_fc0c8eae.name == #"inventory_planemortar") {
@@ -146,9 +146,9 @@ function private function_a712496a(item, player, *networkid, *itemid, itemcount,
     primaryweapon = isdefined(primaryweapons[0]) ? primaryweapons[0] : level.weaponnone;
     stowedweapon = isdefined(primaryweapons[1]) ? primaryweapons[1] : level.weaponnone;
     if (primaryweapon != var_aec6fa7f getcurrentweapon() || stowedweapon == getweapon(#"bare_hands")) {
-        var_d3b74270 = stowedweapon;
+        tempweapon = stowedweapon;
         stowedweapon = primaryweapon;
-        primaryweapon = var_d3b74270;
+        primaryweapon = tempweapon;
     }
     var_4f3ed40 = function_9f1cc9a9(primaryweapon) != 0;
     var_8b94e68d = function_9f1cc9a9(stowedweapon) != 0;
@@ -162,7 +162,7 @@ function private function_a712496a(item, player, *networkid, *itemid, itemcount,
         weapon = function_eeddea9a(weapon, 0);
     }
     var_24835ffe = primaryweapon == weapon && (isdefined(itemcount.var_e91aba42) ? itemcount.var_e91aba42 : 0) === var_aec6fa7f function_8cbd254d(primaryweapon);
-    var_aec6fa7f function_84172a80(0, primaryweapon);
+    var_aec6fa7f drop_weapon(0, primaryweapon);
     if (var_24835ffe) {
         if (isdefined(itemcount.stockammo)) {
             var_aec6fa7f setweaponammoclip(primaryweapon, itemcount.amount);
@@ -191,7 +191,7 @@ function private function_a712496a(item, player, *networkid, *itemid, itemcount,
 // Params 2, eflags: 0x2 linked
 // Checksum 0xb68437db, Offset: 0xdf0
 // Size: 0x164
-function function_84172a80(var_4c42f7cf, weapon) {
+function drop_weapon(var_4c42f7cf, weapon) {
     ammo = self getweaponammoclip(weapon) + self getweaponammostock(weapon);
     weaponitem = item_world_util::function_86cb6f2(weapon.name);
     if (isdefined(weaponitem)) {
@@ -209,13 +209,13 @@ function function_84172a80(var_4c42f7cf, weapon) {
 // Checksum 0xe361743, Offset: 0xf60
 // Size: 0x2d2
 function private function_2eebeff5(item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, *slotid) {
-    var_9ef8e72f = var_aec6fa7f getweaponslist();
+    heldweapons = var_aec6fa7f getweaponslist();
     weapon = namespace_a0d533d1::function_2b83d3ff(itemcount);
     heldweapon = level.var_34d27b26;
     if (itemcount.var_a6762160.itemtype == #"equipment") {
-        heldweapon = isdefined(var_9ef8e72f[2]) ? var_9ef8e72f[2] : level.var_34d27b26;
+        heldweapon = isdefined(heldweapons[2]) ? heldweapons[2] : level.var_34d27b26;
     } else if (itemcount.var_a6762160.itemtype == #"tactical") {
-        heldweapon = isdefined(var_9ef8e72f[3]) ? var_9ef8e72f[3] : level.var_6388e216;
+        heldweapon = isdefined(heldweapons[3]) ? heldweapons[3] : level.var_6388e216;
     } else {
         return slotid;
     }
@@ -255,9 +255,9 @@ function function_79270eec(var_4c42f7cf, weapon) {
 // Checksum 0x53171a8f, Offset: 0x1358
 // Size: 0x1c6
 function private function_8c369ecb(item, player, *networkid, *itemid, itemcount, *var_aec6fa7f, *slotid) {
-    var_9ef8e72f = var_aec6fa7f getweaponslist();
+    heldweapons = var_aec6fa7f getweaponslist();
     weapon = namespace_a0d533d1::function_2b83d3ff(itemcount);
-    heldweapon = isdefined(var_9ef8e72f[4]) ? var_9ef8e72f[4] : level.var_43a51921;
+    heldweapon = isdefined(heldweapons[4]) ? heldweapons[4] : level.var_43a51921;
     ammo = var_aec6fa7f getweaponammoclip(heldweapon);
     if (heldweapon != level.var_43a51921 && ammo > 0) {
         var_aec6fa7f function_3af40ef4(0, heldweapon);

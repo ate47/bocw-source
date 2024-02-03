@@ -56,8 +56,8 @@ function init_shared(bundlename, var_bbc86faf) {
         level.missileremotelaunchtargetdist = 1500;
         level.remote_missile_targets = remote_missile_targets::register();
         level.var_aac98621 = [];
-        for (var_3eaf95a4 = 0; var_3eaf95a4 < 2; var_3eaf95a4++) {
-            level.var_aac98621[var_3eaf95a4] = remote_missile_target_lockon::register();
+        for (lockonindex = 0; lockonindex < 2; lockonindex++) {
+            level.var_aac98621[lockonindex] = remote_missile_target_lockon::register();
         }
         callback::on_spawned(&on_player_spawned);
         callback::on_laststand(&on_player_laststand);
@@ -943,8 +943,8 @@ function gettarget(rocket, trace) {
                 continue;
             }
             var_4ef4e267 = target getentitynumber();
-            var_3eaf95a4 = self.var_ebf52bbc[var_4ef4e267];
-            if (!(isdefined(var_3eaf95a4) && self.var_bbe80eed[var_3eaf95a4].state === 1)) {
+            lockonindex = self.var_ebf52bbc[var_4ef4e267];
+            if (!(isdefined(lockonindex) && self.var_bbe80eed[lockonindex].state === 1)) {
                 continue;
             }
             dir = target.origin - campos;
@@ -977,10 +977,10 @@ function create_missile_hud(rocket) {
     player.var_bbe80eed = [];
     player.var_ebf52bbc = [];
     player_entnum = player getentitynumber();
-    for (var_3eaf95a4 = 0; var_3eaf95a4 < 2; var_3eaf95a4++) {
-        player.var_bbe80eed[var_3eaf95a4] = spawnstruct();
-        player.var_bbe80eed[var_3eaf95a4].state = 0;
-        uifield = level.var_aac98621[var_3eaf95a4];
+    for (lockonindex = 0; lockonindex < 2; lockonindex++) {
+        player.var_bbe80eed[lockonindex] = spawnstruct();
+        player.var_bbe80eed[lockonindex].state = 0;
+        uifield = level.var_aac98621[lockonindex];
         if (!uifield remote_missile_target_lockon::is_open(player)) {
             uifield remote_missile_target_lockon::open(player, 1);
         }
@@ -1004,9 +1004,9 @@ function destroy_missile_hud() {
     if (level.remote_missile_targets remote_missile_targets::is_open(self)) {
         level.remote_missile_targets remote_missile_targets::close(self);
     }
-    for (var_3eaf95a4 = 0; var_3eaf95a4 < 2; var_3eaf95a4++) {
-        if (level.var_aac98621[var_3eaf95a4] remote_missile_target_lockon::is_open(self)) {
-            level.var_aac98621[var_3eaf95a4] remote_missile_target_lockon::close(self);
+    for (lockonindex = 0; lockonindex < 2; lockonindex++) {
+        if (level.var_aac98621[lockonindex] remote_missile_target_lockon::is_open(self)) {
+            level.var_aac98621[lockonindex] remote_missile_target_lockon::close(self);
         }
     }
 }
@@ -1101,11 +1101,11 @@ function targeting_hud_think(rocket) {
                 }
             }
         }
-        foreach (var_3eaf95a4, var_8712c5b8 in player.var_bbe80eed) {
+        foreach (lockonindex, var_8712c5b8 in player.var_bbe80eed) {
             if (var_8712c5b8.state == 0) {
-                level.var_aac98621[var_3eaf95a4] remote_missile_target_lockon::set_clientnum(player, player getentitynumber());
-                level.var_aac98621[var_3eaf95a4] remote_missile_target_lockon::function_7c227f6d(player, 0);
-                level.var_aac98621[var_3eaf95a4] remote_missile_target_lockon::set_target_locked(player, 0);
+                level.var_aac98621[lockonindex] remote_missile_target_lockon::set_clientnum(player, player getentitynumber());
+                level.var_aac98621[lockonindex] remote_missile_target_lockon::function_7c227f6d(player, 0);
+                level.var_aac98621[lockonindex] remote_missile_target_lockon::set_target_locked(player, 0);
             }
         }
         waitframe(1);
@@ -1118,26 +1118,26 @@ function targeting_hud_think(rocket) {
 // Size: 0x244
 function function_758dc2c8(targets, target, entnum) {
     if (isdefined(self.var_ebf52bbc[entnum])) {
-        var_3eaf95a4 = self.var_ebf52bbc[entnum];
+        lockonindex = self.var_ebf52bbc[entnum];
     } else if (self.var_ebf52bbc.size >= 2) {
         foreach (var_5195fb14 in getarraykeys(self.var_ebf52bbc)) {
             if (!isdefined(targets[var_5195fb14])) {
-                var_3eaf95a4 = self.var_ebf52bbc[var_5195fb14];
-                if (isdefined(self.var_bbe80eed[var_3eaf95a4].state) && self.var_bbe80eed[var_3eaf95a4].state == 0) {
+                lockonindex = self.var_ebf52bbc[var_5195fb14];
+                if (isdefined(self.var_bbe80eed[lockonindex].state) && self.var_bbe80eed[lockonindex].state == 0) {
                     arrayremoveindex(self.var_ebf52bbc, var_5195fb14, 1);
-                    self.var_ebf52bbc[entnum] = var_3eaf95a4;
+                    self.var_ebf52bbc[entnum] = lockonindex;
                 }
             }
         }
     } else {
-        var_3eaf95a4 = self.var_ebf52bbc.size;
-        self.var_ebf52bbc[entnum] = var_3eaf95a4;
+        lockonindex = self.var_ebf52bbc.size;
+        self.var_ebf52bbc[entnum] = lockonindex;
     }
-    self.var_bbe80eed[var_3eaf95a4].state = 1;
-    self.var_bbe80eed[var_3eaf95a4].target = target;
-    level.var_aac98621[var_3eaf95a4] remote_missile_target_lockon::set_clientnum(self, entnum);
-    level.var_aac98621[var_3eaf95a4] remote_missile_target_lockon::function_7c227f6d(self, is_true(target.usingvehicle));
-    level.var_aac98621[var_3eaf95a4] remote_missile_target_lockon::set_target_locked(self, 1);
+    self.var_bbe80eed[lockonindex].state = 1;
+    self.var_bbe80eed[lockonindex].target = target;
+    level.var_aac98621[lockonindex] remote_missile_target_lockon::set_clientnum(self, entnum);
+    level.var_aac98621[lockonindex] remote_missile_target_lockon::function_7c227f6d(self, is_true(target.usingvehicle));
+    level.var_aac98621[lockonindex] remote_missile_target_lockon::set_target_locked(self, 1);
 }
 
 // Namespace remotemissile/remotemissile_shared
@@ -1265,9 +1265,9 @@ function function_5cdeb64a(player, target, team) {
         target.var_f85f9b4d[team] = undefined;
     } else {
         var_4ef4e267 = target getentitynumber();
-        var_3eaf95a4 = player.var_ebf52bbc[var_4ef4e267];
-        if (isdefined(var_3eaf95a4) && isdefined(player.var_bbe80eed[var_3eaf95a4])) {
-            level.var_aac98621[var_3eaf95a4] remote_missile_target_lockon::set_killed(player, 1);
+        lockonindex = player.var_ebf52bbc[var_4ef4e267];
+        if (isdefined(lockonindex) && isdefined(player.var_bbe80eed[lockonindex])) {
+            level.var_aac98621[lockonindex] remote_missile_target_lockon::set_killed(player, 1);
         }
     }
 }

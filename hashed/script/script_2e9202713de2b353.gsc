@@ -95,7 +95,7 @@ function function_cb06f399() {
 // Checksum 0x158a2588, Offset: 0x6d8
 // Size: 0xf30
 function function_e71841a() {
-    level.doa.var_4cdaff39[self.var_a1152600.rg_room]++;
+    level.doa.var_4cdaff39[self.template.rg_room]++;
     self.var_d8d445c4 = &function_cb06f399;
     self.walldecor = [];
     self.floordecor = [];
@@ -144,13 +144,13 @@ function function_e71841a() {
             if (!isdefined(var_f6198c5b.script_string)) {
                 continue;
             }
-            var_49a15185 = doa_enemy::function_d7c5adee(var_f6198c5b.script_string);
-            if (isdefined(var_49a15185)) {
+            spawndef = doa_enemy::function_d7c5adee(var_f6198c5b.script_string);
+            if (isdefined(spawndef)) {
                 goalradius = 40;
                 if (isdefined(var_f6198c5b.script_int)) {
                     goalradius = int(var_f6198c5b.script_int);
                 }
-                ai = doa_enemy::function_db55a448(var_49a15185, var_f6198c5b.origin);
+                ai = doa_enemy::function_db55a448(spawndef, var_f6198c5b.origin);
                 if (isdefined(ai)) {
                     ai.var_f906062a = 1;
                     ai.var_76cb41b3 = 1;
@@ -220,7 +220,7 @@ function function_e71841a() {
                 assert(isdefined(var_5e62902b.room), "<unknown string>");
             #/
             if (isdefined(args[4])) {
-                var_5e62902b.trigger.var_ee2cd39c = namespace_ec06fe4a::function_e22ae9b3(var_5e62902b.origin, args[4], var_f6198c5b.angles, "room_warp" + var_5e62902b.origin);
+                var_5e62902b.trigger.var_ee2cd39c = namespace_ec06fe4a::spawnmodel(var_5e62902b.origin, args[4], var_f6198c5b.angles, "room_warp" + var_5e62902b.origin);
                 if (isdefined(var_5e62902b.trigger.var_ee2cd39c)) {
                     var_5e62902b.trigger.var_ee2cd39c notsolid();
                     var_5e62902b.trigger.var_ee2cd39c hide();
@@ -230,7 +230,7 @@ function function_e71841a() {
                     }
                 }
             }
-            var_5e62902b.trigger.var_472c86f9 = 0;
+            var_5e62902b.trigger.visited = 0;
             var_5e62902b.trigger.var_4200bfbf = [];
             foreach (var_6d929c4c in var_c9bdb63f) {
                 if (isdefined(var_6d929c4c.script_parameters)) {

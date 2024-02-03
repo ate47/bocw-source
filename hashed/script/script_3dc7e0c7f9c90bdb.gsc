@@ -61,19 +61,19 @@ function soul_capture_leave(localclientnum, *oldval, newval, *bnewent, *binitial
             self.var_c2310a57 = playfx(fieldname, #"zm_ai/fx9_orda_spawn_portal_c", var_70609425, (1, 0, 0), (0, 0, 1));
             self playrumbleonentity(fieldname, "sr_world_event_soul_capture_crystal_leave_rumble");
         }
-        if (!isdefined(self.var_b8f825a3)) {
-            self.var_b8f825a3 = self.origin;
-            playsound(fieldname, #"hash_46461ba72b8ab7a2", self.var_b8f825a3);
-            soundloopemitter("evt_sur_we_portal_common_lp", self.var_b8f825a3);
+        if (!isdefined(self.soundorigin)) {
+            self.soundorigin = self.origin;
+            playsound(fieldname, #"hash_46461ba72b8ab7a2", self.soundorigin);
+            soundloopemitter("evt_sur_we_portal_common_lp", self.soundorigin);
         }
     } else {
         if (isdefined(self.var_c2310a57)) {
             stopfx(fieldname, self.var_c2310a57);
         }
-        if (isdefined(self.var_b8f825a3)) {
-            playsound(fieldname, #"hash_3c03699766f040c7", self.var_b8f825a3);
-            soundstoploopemitter("evt_sur_we_portal_common_lp", self.var_b8f825a3);
-            self.var_b8f825a3 = undefined;
+        if (isdefined(self.soundorigin)) {
+            playsound(fieldname, #"hash_3c03699766f040c7", self.soundorigin);
+            soundstoploopemitter("evt_sur_we_portal_common_lp", self.soundorigin);
+            self.soundorigin = undefined;
         }
         self stoprumble(fieldname, "sr_world_event_soul_capture_crystal_leave_rumble");
     }

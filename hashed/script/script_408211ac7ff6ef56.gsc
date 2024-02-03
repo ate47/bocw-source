@@ -269,12 +269,12 @@ function function_f6480a82(time) {
     /#
         var_e011538a = 2000;
         self endon(#"death");
-        var_e31d75d6 = self.origin;
+        last_origin = self.origin;
         end_time = gettime() + int(time * 1000);
         while (gettime() < end_time) {
             waitframe(1);
-            line(var_e31d75d6, self.origin, (0, 1, 0), 1, 1, var_e011538a);
-            var_e31d75d6 = self.origin;
+            line(last_origin, self.origin, (0, 1, 0), 1, 1, var_e011538a);
+            last_origin = self.origin;
         }
     #/
 }

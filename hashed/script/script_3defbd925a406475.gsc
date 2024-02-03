@@ -51,12 +51,12 @@ function main() {
 function function_a1b3a24d(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         function_ffe15984(fieldname);
-        if (!function_8c683062() && !level.var_32616828 namespace_20a120d7::is_open(fieldname)) {
+        if (!iskeyboardconnected() && !level.var_32616828 namespace_20a120d7::is_open(fieldname)) {
             level.var_32616828 namespace_20a120d7::open(fieldname);
         }
         wait(5);
     } else {
-        if (!function_8c683062() && level.var_32616828 namespace_20a120d7::is_open(fieldname)) {
+        if (!iskeyboardconnected() && level.var_32616828 namespace_20a120d7::is_open(fieldname)) {
             level.var_32616828 namespace_20a120d7::close(fieldname);
         }
         function_f80646f3(fieldname);

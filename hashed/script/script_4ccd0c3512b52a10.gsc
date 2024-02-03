@@ -319,7 +319,7 @@ function function_80af6d(obj_id) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x6112022b, Offset: 0x1188
 // Size: 0xac
-function function_15d47899() {
+function remove_all() {
     for (i = 0; i < 64; i++) {
         globallogic_ui::function_6db5e620("_DataSources.cp_objectives_list", i, undefined, 1);
         objective_delete(i);

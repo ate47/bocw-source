@@ -658,8 +658,8 @@ function can_pick_up(item, servertime = undefined) {
         if (isarray(item.var_699c6bfb) && isdefined(self) && isinarray(item.var_699c6bfb, self)) {
             return 0;
         }
-        var_e9d710c1 = item getentitytype();
-        if (var_e9d710c1 == 6 || var_e9d710c1 == 4 || var_e9d710c1 == 12 || var_e9d710c1 == 1) {
+        entitytype = item getentitytype();
+        if (entitytype == 6 || entitytype == 4 || entitytype == 12 || entitytype == 1) {
             if (isdefined(level.var_578f7c6d) && item clientfield::get("isJammed")) {
                 return 0;
             }

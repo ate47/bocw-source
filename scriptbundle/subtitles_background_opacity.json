@@ -2,7 +2,7 @@
     "option_dependencies": [
         {
             "var_1643d946": "0",
-            "var_6825bdb": "#pc_subtitles",
+            "optionname": "#pc_subtitles",
             "operator": "=="
         }
     ],
@@ -30,7 +30,7 @@
     "displayname": "#hash_590b2ae848f67647",
     "var_d6897f56": 1,
     "var_500458ac": 10,
-    "var_926d1be9": 1,
+    "decimalplace": 1,
     "var_66faec87": 100,
     "statname": "subtitles_background_opacity",
     "var_6f00a61a": 5,

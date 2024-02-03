@@ -44,14 +44,14 @@ function private function_3c3e40b6() {
         #/
         return;
     }
-    if (level.radiation.var_5e47ec2b.size <= 0) {
+    if (level.radiation.levels.size <= 0) {
         /#
             assertmsg("<unknown string>");
         #/
         return;
     }
     self.radiation = {};
-    self.radiation.var_abd7d46a = level.radiation.var_5e47ec2b[0].maxhealth;
+    self.radiation.var_abd7d46a = level.radiation.levels[0].maxhealth;
     self.radiation.var_32adf91d = 0;
     self.radiation.sickness = [];
     self.radiation.var_393e0e31 = 0;
@@ -116,7 +116,7 @@ function private function_1e3ac913() {
                 }
                 var_56bea7c = 0;
                 if (player.sessionstate != "playing" || !isalive(player)) {
-                    player.radiation.var_abd7d46a = level.radiation.var_5e47ec2b[0].maxhealth;
+                    player.radiation.var_abd7d46a = level.radiation.levels[0].maxhealth;
                     var_56bea7c = player.radiation.var_32adf91d != 0;
                     player.radiation.var_32adf91d = 0;
                     player.radiation.var_f1c51b06 = 0;
@@ -145,7 +145,7 @@ function private function_1e3ac913() {
                             player.radiation.var_abd7d46a = player.radiation.var_abd7d46a - var_cad9861a;
                             while (player.radiation.var_abd7d46a < 0 && player.radiation.var_32adf91d < level.var_c43aac04) {
                                 player.radiation.var_32adf91d++;
-                                player.radiation.var_abd7d46a = player.radiation.var_abd7d46a + level.radiation.var_5e47ec2b[player.radiation.var_32adf91d].maxhealth;
+                                player.radiation.var_abd7d46a = player.radiation.var_abd7d46a + level.radiation.levels[player.radiation.var_32adf91d].maxhealth;
                                 var_56bea7c = 1;
                             }
                             if (player.radiation.var_abd7d46a < 0) {
@@ -167,7 +167,7 @@ function private function_1e3ac913() {
                         }
                     }
                     if (var_cad9861a <= 0) {
-                        if (player.radiation.var_32adf91d == 0 && player.radiation.var_abd7d46a >= level.radiation.var_5e47ec2b[0].maxhealth) {
+                        if (player.radiation.var_32adf91d == 0 && player.radiation.var_abd7d46a >= level.radiation.levels[0].maxhealth) {
                             if (is_true(player.var_cfc4949c)) {
                                 player.var_cfc4949c = undefined;
                                 player thread function_6ade1bbf(0);
@@ -182,13 +182,13 @@ function private function_1e3ac913() {
                             }
                             var_ac8e5dcc = level.var_f569833a * (1 - var_4a34487);
                             player.radiation.var_abd7d46a = player.radiation.var_abd7d46a + var_ac8e5dcc;
-                            while (player.radiation.var_32adf91d > 0 && player.radiation.var_abd7d46a > level.radiation.var_5e47ec2b[player.radiation.var_32adf91d].maxhealth) {
-                                player.radiation.var_abd7d46a = player.radiation.var_abd7d46a - level.radiation.var_5e47ec2b[player.radiation.var_32adf91d].maxhealth;
+                            while (player.radiation.var_32adf91d > 0 && player.radiation.var_abd7d46a > level.radiation.levels[player.radiation.var_32adf91d].maxhealth) {
+                                player.radiation.var_abd7d46a = player.radiation.var_abd7d46a - level.radiation.levels[player.radiation.var_32adf91d].maxhealth;
                                 player.radiation.var_32adf91d--;
                                 var_56bea7c = 1;
                             }
-                            if (player.radiation.var_abd7d46a > level.radiation.var_5e47ec2b[player.radiation.var_32adf91d].maxhealth) {
-                                player.radiation.var_abd7d46a = level.radiation.var_5e47ec2b[player.radiation.var_32adf91d].maxhealth;
+                            if (player.radiation.var_abd7d46a > level.radiation.levels[player.radiation.var_32adf91d].maxhealth) {
+                                player.radiation.var_abd7d46a = level.radiation.levels[player.radiation.var_32adf91d].maxhealth;
                             }
                             player function_3c1f8280();
                             if (var_56bea7c) {
@@ -267,7 +267,7 @@ LOC_0000009e:
 // Size: 0xb4
 function function_3c1f8280() {
     namespace_6615ea91::function_137e7814(self, self.radiation.var_32adf91d);
-    var_60ece81c = level.radiation.var_5e47ec2b[self.radiation.var_32adf91d].maxhealth;
+    var_60ece81c = level.radiation.levels[self.radiation.var_32adf91d].maxhealth;
     percenthealth = self.radiation.var_abd7d46a / var_60ece81c;
     namespace_6615ea91::function_835a6746(self, percenthealth);
     namespace_6615ea91::function_36a2c924(self, 1 - percenthealth);

@@ -407,8 +407,8 @@ function function_a2261724(weapon) {
 // Size: 0x20c
 function function_a431be09(weapon) {
     statweapon = function_a2261724(weapon);
-    var_a3884983 = self loadout::function_8435f729(statweapon);
-    if (var_a3884983 === "primarygrenade" || var_a3884983 === "secondarygrenade" || var_a3884983 === "specialgrenade") {
+    loadout_slot_index = self loadout::function_8435f729(statweapon);
+    if (loadout_slot_index === "primarygrenade" || loadout_slot_index === "secondarygrenade" || loadout_slot_index === "specialgrenade") {
         weaponname = function_3f64434(statweapon);
         self function_622feb0d(weaponname, #"destructions", 1);
         self function_6fb0b113(weaponname, #"hash_98b8582b08abfa5");
@@ -461,11 +461,11 @@ function function_561716e6(weapon, statname, value) {
 // Params 3, eflags: 0x0
 // Checksum 0x53c38f51, Offset: 0x1470
 // Size: 0x78
-function function_6cdd992f(weapon, var_dfed5ae8, value) {
+function function_6cdd992f(weapon, bucket, value) {
     if (!function_f94325d3()) {
         return 0;
     }
-    self inc_stat(#"hash_3713686a5fc7b39e", weapon, #"hash_2a1ce63d60556431", var_dfed5ae8, #"statvalue", value);
+    self inc_stat(#"hash_3713686a5fc7b39e", weapon, #"hash_2a1ce63d60556431", bucket, #"statvalue", value);
     return 1;
 }
 

@@ -354,8 +354,8 @@ function function_add63876(vehicletypes, var_4b43f3d = 1, var_e72444ee = 30, min
                 do {
                     var_d9c4a78c = (var_d9c4a78c + 1) % var_9fb224d1.size;
                     var_c4e86af5 = var_9fb224d1[var_d9c4a78c];
-                    for (var_28a68bf6 = 0; var_28a68bf6 < level.var_3f771530.size; var_28a68bf6++) {
-                        vehicle = level.var_3f771530[var_28a68bf6];
+                    for (vehicleindex = 0; vehicleindex < level.var_3f771530.size; vehicleindex++) {
+                        vehicle = level.var_3f771530[vehicleindex];
                         if (!isalive(vehicle)) {
                             continue;
                         }

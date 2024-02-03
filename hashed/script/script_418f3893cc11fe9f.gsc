@@ -83,19 +83,19 @@ function private function_9874b8cd(localclientnum) {
         self setanim(var_25dd550a, 1, 0.2, 1);
         self setanim(var_43aa83b8, 1, 0.2, 1);
     }
-    self.var_13c7aee1 = [];
-    self.var_13c7aee1[1] = spawnstruct();
-    self.var_13c7aee1[1].index = 1;
-    self.var_13c7aee1[1].var_90d98881 = #"hash_60bac319c9abb540";
-    self.var_13c7aee1[1].var_64883f29 = "ai_margwa_jaw_l_";
-    self.var_13c7aee1[2] = spawnstruct();
-    self.var_13c7aee1[2].index = 2;
-    self.var_13c7aee1[2].var_90d98881 = #"hash_3a0441f1951d769d";
-    self.var_13c7aee1[2].var_64883f29 = "ai_margwa_jaw_m_";
-    self.var_13c7aee1[3] = spawnstruct();
-    self.var_13c7aee1[3].index = 3;
-    self.var_13c7aee1[3].var_90d98881 = #"hash_14a02ee57f9109ba";
-    self.var_13c7aee1[3].var_64883f29 = "ai_margwa_jaw_r_";
+    self.heads = [];
+    self.heads[1] = spawnstruct();
+    self.heads[1].index = 1;
+    self.heads[1].var_90d98881 = #"hash_60bac319c9abb540";
+    self.heads[1].var_64883f29 = "ai_margwa_jaw_l_";
+    self.heads[2] = spawnstruct();
+    self.heads[2].index = 2;
+    self.heads[2].var_90d98881 = #"hash_3a0441f1951d769d";
+    self.heads[2].var_64883f29 = "ai_margwa_jaw_m_";
+    self.heads[3] = spawnstruct();
+    self.heads[3].index = 3;
+    self.heads[3].var_90d98881 = #"hash_14a02ee57f9109ba";
+    self.heads[3].var_64883f29 = "ai_margwa_jaw_r_";
 }
 
 // Namespace namespace_a204c0f4/namespace_a204c0f4
@@ -107,12 +107,12 @@ function private function_7f774ede(localclientnum, *oldvalue, newvalue, *bnewent
         stopfx(fieldname, self.var_fd694760);
     }
     self util::waittill_dobj(fieldname);
-    if (!isdefined(self) || !isdefined(self.var_13c7aee1)) {
+    if (!isdefined(self) || !isdefined(self.heads)) {
         return;
     }
     switch (wasdemojump) {
     case 1:
-        self.var_13c7aee1[1].var_90d98881 = #"hash_521e8e871b9a68b0";
+        self.heads[1].var_90d98881 = #"hash_521e8e871b9a68b0";
         self setanim(#"hash_521e8e871b9a68b0", 1, 0.1, 1);
         self clearanim(#"hash_60bac319c9abb540", 0.1);
         var_60a180bc = level._effect[#"hash_3ff64a095c3c339a"];
@@ -126,13 +126,13 @@ function private function_7f774ede(localclientnum, *oldvalue, newvalue, *bnewent
         }
         break;
     case 2:
-        self.var_13c7aee1[1].var_90d98881 = #"hash_60bac319c9abb540";
+        self.heads[1].var_90d98881 = #"hash_60bac319c9abb540";
         self setanim(#"hash_60bac319c9abb540", 1, 0.1, 1);
         self clearanim(#"hash_521e8e871b9a68b0", 0.1);
         self clearanim(#"hash_51cfcc94518cf8d5", 0.1);
         break;
     case 3:
-        self.var_13c7aee1[1].var_90d98881 = #"hash_51cfcc94518cf8d5";
+        self.heads[1].var_90d98881 = #"hash_51cfcc94518cf8d5";
         self clearanim(#"hash_521e8e871b9a68b0", 0.1);
         self clearanim(#"hash_60bac319c9abb540", 0.1);
         self setanimrestart(#"hash_51cfcc94518cf8d5", 1, 0.1, 1);
@@ -460,8 +460,8 @@ function private function_1d106112(localclientnum, *oldvalue, newvalue, *bnewent
 // Checksum 0xedde30d, Offset: 0x2880
 // Size: 0x82
 function private function_5a1be0a8(*localclientnum, *oldvalue, newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
-    if (wasdemojump && isdefined(self.var_13c7aee1) && isdefined(self.var_13c7aee1[wasdemojump])) {
-        self.var_13c7aee1[wasdemojump].killed = 1;
+    if (wasdemojump && isdefined(self.heads) && isdefined(self.heads[wasdemojump])) {
+        self.heads[wasdemojump].killed = 1;
     }
 }
 
@@ -471,7 +471,7 @@ function private function_5a1be0a8(*localclientnum, *oldvalue, newvalue, *bnewen
 // Size: 0x1a0
 function private function_8cba01dd(*localclientnum, *oldvalue, newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
     if (wasdemojump) {
-        foreach (head in self.var_13c7aee1) {
+        foreach (head in self.heads) {
             if (is_true(head.killed)) {
                 if (isdefined(head.var_3cdae679)) {
                     self clearanim(head.var_3cdae679, 0.2);

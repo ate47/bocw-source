@@ -418,7 +418,7 @@ function function_ca5b6591(insertion, *startorigin, endorigin, var_872f085f) {
     var_8b5e86f4 = (var_1978c281, var_872f085f[1], var_872f085f[2]);
     var_65537f6d = anglestoforward(var_8b5e86f4);
     var_9cade497 = isdefined(level.var_427d6976.("insertionCameraFollowDistance")) ? level.var_427d6976.("insertionCameraFollowDistance") : 1600;
-    var_2e670241 = var_9cade497 * -1 * var_65537f6d + var_21e6b5ae * level.var_c7f8ccf6 * 17.6 * 3;
+    camera_offset = var_9cade497 * -1 * var_65537f6d + var_21e6b5ae * level.var_c7f8ccf6 * 17.6 * 3;
     for (index = 0; index <= startorigin.var_41091905.size; index++) {
         plane = startorigin.var_41091905[index];
         if (!isdefined(plane)) {
@@ -1444,14 +1444,14 @@ function function_598b7862(aircraft) {
     var_989bbf05 = anglestoforward(aircraft.angles);
     var_af8631b3 = anglestoright(aircraft.angles);
     playerforward = anglestoforward(self getplayerangles());
-    var_aa327741 = vectordot(var_989bbf05, playerforward);
-    if (var_aa327741 > 0.707107) {
+    forwarddot = vectordot(var_989bbf05, playerforward);
+    if (forwarddot > 0.707107) {
         if (math::cointoss()) {
             anim = #"hash_49be5b5409a97147";
         } else {
             anim = #"hash_49be415409a94519";
         }
-    } else if (var_aa327741 < -0.707107) {
+    } else if (forwarddot < -0.707107) {
         anim = #"hash_d6c9fa8235b69f8";
     } else {
         var_1006dafa = vectordot(var_af8631b3, playerforward);

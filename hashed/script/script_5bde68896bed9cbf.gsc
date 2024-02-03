@@ -40,7 +40,7 @@ function function_6e338a1c() {
         namespace_1c7b37c6::item_replacer(var_f8a4c541, #"zombie_armor_level6_resource_list", #"zombie_armor_level6_noammo_resource_list");
         namespace_1c7b37c6::item_replacer(var_f8a4c541, #"sr_explore_chest_ammo_mods", #"sr_explore_chest_perk_bottles");
     }
-    var_c200446c = function_be90acca(str_gametype) === #"hash_1065e6adeeb8ed5a";
+    var_c200446c = function_be90acca(str_gametype) === #"zonslaught";
     if (var_c200446c) {
         namespace_1c7b37c6::item_replacer(var_f8a4c541, #"zombie_level1_scrap_list", #"sr_zombie_drop_ammo");
         namespace_1c7b37c6::item_replacer(var_f8a4c541, #"zombie_level2_scrap_list", #"sr_zombie_drop_ammo");

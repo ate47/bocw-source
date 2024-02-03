@@ -101,7 +101,7 @@ function function_9caeb2f3(var_a4a310f7) {
         return var_2bce48e0;
     }
     foreach (entry in var_a4a310f7) {
-        if (isdefined(entry.type) && is_true(entry.var_4d90aaec)) {
+        if (isdefined(entry.type) && is_true(entry.weakness)) {
             var_2bce48e0[entry.type] = 1;
         }
     }

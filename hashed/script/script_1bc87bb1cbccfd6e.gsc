@@ -14,14 +14,14 @@
 // Checksum 0x395245fb, Offset: 0x228
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"chopper", &function_c7f33cce, undefined, undefined, undefined);
+    system::register(#"chopper", &_preload, undefined, undefined, undefined);
 }
 
 // Namespace helicopter/namespace_dd60787e
 // Params 0, eflags: 0x6 linked
 // Checksum 0x80f724d1, Offset: 0x270
 // Size: 0x4
-function private function_c7f33cce() {
+function private _preload() {
     
 }
 
@@ -36,7 +36,7 @@ function function_2b057725() {
     }
     level.player val::set(#"helicopter", "show_weapon_hud", 0);
     level.player thread function_3cc2b159();
-    namespace_b2b6266a::function_15d47899();
+    entname::remove_all();
 }
 
 // Namespace helicopter/namespace_dd60787e

@@ -31,7 +31,7 @@ function private function_45ed4ebd(eventstruct) {
         self thread function_e48afac9(eventstruct);
     } else if (isdefined(eventstruct.var_a8cc518d)) {
         self thread function_9bd9969f(eventstruct);
-    } else if (eventstruct.var_c15a5a25 > 0 || eventstruct.var_d9db209e > 30) {
+    } else if (eventstruct.deltaz > 0 || eventstruct.var_d9db209e > 30) {
         self thread function_adeef583(eventstruct);
     } else {
         self thread function_b2ff3887(eventstruct);
@@ -76,7 +76,7 @@ function private function_5186819c(eventstruct) {
 // Checksum 0x5ee1d292, Offset: 0x3b8
 // Size: 0xaa
 function private function_51cbae24(eventstruct) {
-    if (eventstruct.var_c15a5a25 < 18 || isdefined(eventstruct.var_921d19f9) || isdefined(eventstruct.var_a8cc518d) || !isdefined(eventstruct.start_node) || !isdefined(eventstruct.end_node)) {
+    if (eventstruct.deltaz < 18 || isdefined(eventstruct.var_921d19f9) || isdefined(eventstruct.var_a8cc518d) || !isdefined(eventstruct.start_node) || !isdefined(eventstruct.end_node)) {
         return 0;
     }
     return eventstruct.start_node.spawnflags & 4194304 || eventstruct.end_node.spawnflags & 4194304;
@@ -90,8 +90,8 @@ function private function_c8aebd21(eventstruct) {
     startpos = eventstruct.start_position;
     endpos = eventstruct.end_position;
     tracedist = distance2d(startpos, endpos);
-    var_d4659617 = endpos - startpos;
-    var_883d42a7 = checknavmeshdirection(startpos, var_d4659617, tracedist, 0);
+    traversaldir = endpos - startpos;
+    var_883d42a7 = checknavmeshdirection(startpos, traversaldir, tracedist, 0);
     eventstruct.var_883d42a7 = var_883d42a7;
     var_695ff8a6 = startpos - endpos;
     var_15dca465 = checknavmeshdirection(endpos, var_695ff8a6, tracedist, 0);
@@ -101,7 +101,7 @@ function private function_c8aebd21(eventstruct) {
     normal = vectornormalize((var_695ff8a6[0], var_695ff8a6[1], 0));
     eventstruct.normal = normal;
     eventstruct.var_d9db209e = vectordot(normal, var_883d42a7 - var_15dca465);
-    eventstruct.var_c15a5a25 = eventstruct.var_15dca465[2] - eventstruct.var_883d42a7[2];
+    eventstruct.deltaz = eventstruct.var_15dca465[2] - eventstruct.var_883d42a7[2];
 }
 
 // Namespace bot_traversals/bot_traversals
@@ -109,7 +109,7 @@ function private function_c8aebd21(eventstruct) {
 // Checksum 0x8d2608c, Offset: 0x658
 // Size: 0x1da
 function private function_38db71f(eventstruct) {
-    if (eventstruct.var_c15a5a25 >= 18 || eventstruct.var_c15a5a25 < -18) {
+    if (eventstruct.deltaz >= 18 || eventstruct.deltaz < -18) {
         return;
     }
     start = eventstruct.start_position + (0, 0, 9);
@@ -190,10 +190,10 @@ function private function_9bd9969f(eventstruct) {
         waitframe(1);
     }
     endpos = eventstruct.end_position;
-    var_9c688a0c = vectordot(self.origin - endpos, normal);
-    while (var_2166cb2[2] - self.origin[2] < 18 && var_9c688a0c > 15) {
+    enddist = vectordot(self.origin - endpos, normal);
+    while (var_2166cb2[2] - self.origin[2] < 18 && enddist > 15) {
         waitframe(1);
-        var_9c688a0c = vectordot(self.origin - endpos, normal);
+        enddist = vectordot(self.origin - endpos, normal);
     }
     if (!self isonground() && !self isplayerswimming()) {
         self botsetmovemagnitude(0);
@@ -227,8 +227,8 @@ function private function_adeef583(eventstruct) {
         self bottapbutton(10);
         self bottapbutton(64);
         waitframe(1);
-        var_9c688a0c = vectordot(self.origin - endpos, normal);
-    } while(!self ismantling() && var_9c688a0c > 0);
+        enddist = vectordot(self.origin - endpos, normal);
+    } while(!self ismantling() && enddist > 0);
     landed = self isplayerswimming() || self isonground();
     while (self ismantling() || !landed) {
         waitframe(1);
@@ -293,11 +293,11 @@ function private function_c3452ef9(eventstruct) {
 function private function_c20f7b00(eventstruct, str) {
     /#
         self endon(#"death", #"hash_3525e39d3694d0a9", #"hash_72f42e7610533d49", #"entering_last_stand", #"animscripted_start");
-        var_e8569bb4 = vectorlerp(eventstruct.start_position, eventstruct.end_position, 0.5);
+        textpos = vectorlerp(eventstruct.start_position, eventstruct.end_position, 0.5);
         yaw = vectortoangles(eventstruct.normal)[1];
         do {
             if (self should_record("<unknown string>")) {
-                record3dtext(str, var_e8569bb4, (1, 1, 1), "<unknown string>", self, 0.5);
+                record3dtext(str, textpos, (1, 1, 1), "<unknown string>", self, 0.5);
                 recordstar(eventstruct.start_position, (0, 1, 0), "<unknown string>", self);
                 function_af72dbc5(eventstruct.start_position, vectorscale((0, -1, 0), 64), vectorscale((0, 1, 0), 64), yaw, (0, 1, 0), "<unknown string>", self);
                 recordstar(eventstruct.end_position, (1, 0, 0), "<unknown string>", self);

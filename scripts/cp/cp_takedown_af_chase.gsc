@@ -47,7 +47,7 @@
 // Params 1, eflags: 0x2 linked
 // Checksum 0x54f3b82c, Offset: 0x13a0
 // Size: 0x1bc
-function function_f9f06983(var_d3440450) {
+function starting(var_d3440450) {
     level.player = getplayers()[0];
     tkdn_af_hill::function_a2015343(var_d3440450);
     plane = namespace_b100dd86::function_5431431d();
@@ -94,7 +94,7 @@ function function_614083bb(var_d3440450) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x40152261, Offset: 0x1760
 // Size: 0x24
-function cleanup(*name, *var_f9f06983, *direct, *player) {
+function cleanup(*name, *starting, *direct, *player) {
     
 }
 
@@ -102,7 +102,7 @@ function cleanup(*name, *var_f9f06983, *direct, *player) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0xd5151b9d, Offset: 0x1790
 // Size: 0x64
-function function_cca97e77(*name, *var_f9f06983, *direct, *player) {
+function function_cca97e77(*name, *starting, *direct, *player) {
     level flag::set("rc_car_on_ground");
     level flag::set("no_more_truck_chase");
 }
@@ -556,18 +556,18 @@ function function_f8223b2e() {
         yaw = randomfloatrange(0, 0.15) * scalar;
         roll = 0;
         duration = randomfloatrange(0.25, 1);
-        var_2038a0d5 = randomfloatrange(2.5, 3.5);
-        var_f6383e50 = randomfloatrange(2.5, 3.5);
+        freqpitch = randomfloatrange(2.5, 3.5);
+        freqyaw = randomfloatrange(2.5, 3.5);
         if (var_93eeb60a == "shake_med") {
             pitch = randomfloatrange(0.02, 0.35) * scalar;
             yaw = randomfloatrange(0.02, 0.25) * scalar;
             roll = randomfloatrange(0.02, 0.1) * scalar;
             duration = 1;
-            var_2038a0d5 = 10;
-            var_f6383e50 = 7;
+            freqpitch = 10;
+            freqyaw = 7;
         }
         if (pitch + yaw > 0.025) {
-            screenshake(source, pitch, yaw, roll, duration, 0, 0, 0, var_2038a0d5, var_f6383e50);
+            screenshake(source, pitch, yaw, roll, duration, 0, 0, 0, freqpitch, freqyaw);
         }
         wait(duration);
     }
@@ -603,7 +603,7 @@ function function_9d8f5cd3() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xed7fef6a, Offset: 0x4040
 // Size: 0x40c
-function function_4c87c5cf(var_f9f06983) {
+function function_4c87c5cf(starting) {
     level.player endon(#"death");
     plane = level.af_plane;
     org = level.plane_mover;
@@ -614,7 +614,7 @@ function function_4c87c5cf(var_f9f06983) {
     level thread function_e234cffa(plane);
     exploder::exploder_stop("hit3_prop_mist");
     var_884f0a8e = 0;
-    if (var_f9f06983) {
+    if (starting) {
         var_884f0a8e = 3;
     }
     org moveto(start_pos.origin, 20, var_884f0a8e, 0);
@@ -876,7 +876,7 @@ function function_b90ebd9a() {
         anim = #"hash_697f6a68b0ce4e60";
     }
     level.player val::set(#"hash_75a1889a425fe6fc", "allowdeath", 0);
-    savegame::function_904f733(1);
+    savegame::checkpoint_save(1);
     level.var_49a5d2a4 thread scene::play("scene_tkd_hit3_chase_getin", "get_in");
     level.var_49a5d2a4 clientfield::set("4x4_getin_door", 1);
     level.var_49a5d2a4 setanim(#"hash_7e2b806a227352d0", 1, 0, 1);
@@ -1475,8 +1475,8 @@ function function_53e16f01(params) {
             return;
         }
     #/
-    if (!isdefined(self.var_1b3a6aa9)) {
-        self.var_1b3a6aa9 = 0;
+    if (!isdefined(self.damage_timer)) {
+        self.damage_timer = 0;
     }
     var_d1148f2f = 1000;
     screenshake(self.origin, 2, 2, 6, 1, 0, -1, 0, 8, 4, 2, 2);
@@ -1491,9 +1491,9 @@ function function_53e16f01(params) {
         knockback = -5;
         self launchvehicle(params.normal * knockback, (0, 0, 0), 1, 0);
     }
-    if (isdefined(params.entity) && gettime() > self.var_1b3a6aa9) {
+    if (isdefined(params.entity) && gettime() > self.damage_timer) {
         self namespace_db2381c4::function_6bd3950d(25);
-        self.var_1b3a6aa9 = gettime() + var_d1148f2f;
+        self.damage_timer = gettime() + var_d1148f2f;
     }
 }
 
@@ -1947,7 +1947,7 @@ function function_e6320cb3() {
 // Params 5, eflags: 0x2 linked
 // Checksum 0x1657ddc6, Offset: 0x9e38
 // Size: 0x3b4
-function function_b9613eb(right = 1, var_50cef2f8 = 1, var_4c7dbda9 = 10, var_6466f659 = 100, var_28ec8367 = 2000) {
+function function_b9613eb(right = 1, speed_pct = 1, var_4c7dbda9 = 10, var_6466f659 = 100, var_28ec8367 = 2000) {
     level.player endon(#"death");
     level endon(#"failed_chase");
     self endon(#"death");
@@ -1967,7 +1967,7 @@ function function_b9613eb(right = 1, var_50cef2f8 = 1, var_4c7dbda9 = 10, var_64
     n_current_speed = self getspeedmph();
     v_goal = self.origin + anglestoforward(self.angles + (0, n_modifier * var_4c7dbda9, 0)) * var_6466f659;
     a_trace = physicstraceex(v_goal + vectorscale((0, 0, 1), 200), v_goal - vectorscale((0, 0, 1), 200));
-    self setspeed(n_current_speed * var_50cef2f8);
+    self setspeed(n_current_speed * speed_pct);
     /#
     #/
     self function_a57c34b7(a_trace[#"position"], 0);

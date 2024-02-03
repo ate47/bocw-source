@@ -577,7 +577,7 @@ function function_2973e587() {
 // Size: 0x64
 function function_7b732419(text) {
     /#
-        self notify(#"hash_5381b19c7fd35852");
+        self notify(#"modified");
         waitframe(1);
         level.var_311b1407 settext(text);
         level.var_311b1407 thread function_57ab061();
@@ -590,7 +590,7 @@ function function_7b732419(text) {
 // Size: 0x3c
 function function_57ab061() {
     /#
-        self endon(#"hash_5381b19c7fd35852");
+        self endon(#"modified");
         wait(10);
         level.var_311b1407 settext("<unknown string>");
     #/

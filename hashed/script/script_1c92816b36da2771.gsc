@@ -74,10 +74,10 @@ function function_d47881a3() {
     counters = array(0, 0);
     timeout_time = gettime();
     var_686cf729 = undefined;
-    var_e31d75d6 = self.origin;
+    last_origin = self.origin;
     while (1) {
-        var_686cf729 = var_e31d75d6 == self.origin ? var_686cf729 : undefined;
-        var_e31d75d6 = self.origin;
+        var_686cf729 = last_origin == self.origin ? var_686cf729 : undefined;
+        last_origin = self.origin;
         while (self isplayinganimscripted() || is_true(self.var_8dd8140a)) {
             counters = array(0, 0);
             wait(1);
@@ -103,7 +103,7 @@ function function_d47881a3() {
             var_686cf729 = undefined;
         default:
             if (gettime() - timeout_time >= 2000) {
-                if (var_e31d75d6 == self.origin) {
+                if (last_origin == self.origin) {
                     counters[0]++;
                 } else {
                     counters[0] = 0;
@@ -1286,8 +1286,8 @@ function private function_8d8c6876() {
                 if (getdvarint(#"hash_2090a496be9714aa", 0)) {
                     iprintln("<unknown string>" + level get(#"hash_6d16c284cbb301d1") + "<unknown string>" + "<unknown string>" + level get(#"hash_279a97271de2b7e1") + "<unknown string>" + "<unknown string>" + level get(#"hash_57651acabc979ef4"));
                     iprintln("<unknown string>" + level get(#"hash_66eb1b5632f46da8") + "<unknown string>" + "<unknown string>" + level get(#"hash_75f07aed08b6bb5e"));
-                    if (isdefined(level.var_56e22cfa.var_2a757d07)) {
-                        iprintln("<unknown string>" + level.var_56e22cfa.var_2a757d07);
+                    if (isdefined(level.var_56e22cfa.exhausted)) {
+                        iprintln("<unknown string>" + level.var_56e22cfa.exhausted);
                     } else {
                         iprintln("<unknown string>");
                     }

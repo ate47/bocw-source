@@ -21,7 +21,7 @@
 // Checksum 0x6632b5f6, Offset: 0x1a0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_2b9efbad11308e02", &function_70a657d8, undefined, &function_5700f119, undefined);
+    system::register(#"hash_2b9efbad11308e02", &function_70a657d8, undefined, &finalize, undefined);
 }
 
 // Namespace namespace_6a37ec38/namespace_6a37ec38
@@ -44,7 +44,7 @@ function function_70a657d8() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x65e963ea, Offset: 0x2d8
 // Size: 0x50
-function function_5700f119() {
+function finalize() {
     if (isdefined(level.var_1b900c1d)) {
         [[ level.var_1b900c1d ]](getweapon(#"hash_2b9efbad11308e02"), &function_bff5c062);
     }

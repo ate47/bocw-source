@@ -1364,7 +1364,7 @@ function function_d8bd5eb9(player, var_e76fd8fa) {
 function event_handler[event_8da88658] function_382adb6c(params) {
     self endon(#"death");
     level endon(#"game_ended");
-    if (!(isdefined(self) && isdefined(params)) || !isplayer(self) || params.var_d9fcc302 !== 1) {
+    if (!(isdefined(self) && isdefined(params)) || !isplayer(self) || params.isattacker !== 1) {
         return;
     }
     dialogbundle = function_58c93260(self);

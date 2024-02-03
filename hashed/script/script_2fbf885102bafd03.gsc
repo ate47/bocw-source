@@ -776,8 +776,8 @@ function function_5a3210ac() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x65fe85fc, Offset: 0x2eb8
 // Size: 0x17a
-function function_4d2e3eaa(var_faac7e8b) {
-    switch (var_faac7e8b) {
+function function_4d2e3eaa(roomtype) {
+    switch (roomtype) {
     case 26:
         return #"hash_4c5468285fb9d826";
     case 27:
@@ -808,8 +808,8 @@ function function_4d2e3eaa(var_faac7e8b) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xfe028215, Offset: 0x3040
 // Size: 0x112
-function function_59dbb042(var_faac7e8b) {
-    switch (var_faac7e8b) {
+function function_59dbb042(roomtype) {
+    switch (roomtype) {
     case 26:
         return 13;
     case 27:
@@ -840,8 +840,8 @@ function function_59dbb042(var_faac7e8b) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x48d354f2, Offset: 0x3160
 // Size: 0x1da
-function function_b6e2bc81(var_faac7e8b) {
-    switch (var_faac7e8b) {
+function function_b6e2bc81(roomtype) {
+    switch (roomtype) {
     case 32:
         return #"hash_365152316e8cfc0";
     case 42:
@@ -976,7 +976,7 @@ function function_9a92c603(localclientnum, var_150143d0) {
         self doa_textelement::function_f97e9049(localclientnum, x, y);
         self doa_textelement::set_alpha(localclientnum, 0);
         self doa_textelement::set_color(localclientnum, color[0], color[1], color[2]);
-        self doa_textelement::function_bede6f52(localclientnum, scale);
+        self doa_textelement::set_scale(localclientnum, scale);
         if (isdefined(var_6dcbe6ee)) {
             self thread function_c11d702b(localclientnum, var_6dcbe6ee, var_42f603e1, var_a5866ebf);
         } else {

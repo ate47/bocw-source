@@ -38,7 +38,7 @@ function function_d28e9b17() {
     self notify(#"hash_562d458e34274132");
     waitframe(1);
     self endon(#"hash_1e2c098e8231a30f", #"hash_562d458e34274132");
-    org = namespace_ec06fe4a::function_e22ae9b3(self.origin, "tag_origin");
+    org = namespace_ec06fe4a::spawnmodel(self.origin, "tag_origin");
     if (isdefined(org)) {
         org.targetname = "boxingPickupUpdate";
         org.angles = (0, randomint(180), 0);
@@ -47,7 +47,7 @@ function function_d28e9b17() {
     } else {
         return;
     }
-    leftglove = namespace_ec06fe4a::function_e22ae9b3(self.origin + (0, 60, 32), "zombietron_boxing_gloves_lt");
+    leftglove = namespace_ec06fe4a::spawnmodel(self.origin + (0, 60, 32), "zombietron_boxing_gloves_lt");
     if (isdefined(leftglove)) {
         leftglove.targetname = "leftglove";
         leftglove setplayercollision(0);
@@ -62,7 +62,7 @@ function function_d28e9b17() {
     }
     org.var_f9c2f48c = leftglove;
     org.trigger1 = trigger;
-    rightglove = namespace_ec06fe4a::function_e22ae9b3(self.origin + (0, -60, 32), "zombietron_boxing_gloves_rt");
+    rightglove = namespace_ec06fe4a::spawnmodel(self.origin + (0, -60, 32), "zombietron_boxing_gloves_rt");
     if (isdefined(rightglove)) {
         rightglove.targetname = "rightGlove";
         rightglove setplayercollision(0);
@@ -141,7 +141,7 @@ function private function_7c757878(player, mod = "MOD_UNKNOWN", var_70c63791) {
             dir = guy.origin - self.origin;
             guy thread namespace_ec06fe4a::function_b4ff2191(dir, 50, undefined, player);
         } else {
-            guy dodamage(guy.health + 1, guy.origin, player, player, "none", mod, 0, level.doa.var_c6e5e8d9);
+            guy dodamage(guy.health + 1, guy.origin, player, player, "none", mod, 0, level.doa.default_weapon);
         }
         player playrumbleonentity("damage_light");
     }

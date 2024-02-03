@@ -156,7 +156,7 @@ function private radiation(localclientnum, oldval, newval, *bnewent, *binitialsn
         return;
     }
     var_9ad901c3 = createuimodel(var_5e7fb773, "sickness");
-    var_7720923c = level.radiation.var_5e47ec2b[radiationlevel];
+    var_7720923c = level.radiation.levels[radiationlevel];
     if (isdefined(var_7720923c.sickness)) {
         keys = getarraykeys(var_7720923c.sickness);
     } else {

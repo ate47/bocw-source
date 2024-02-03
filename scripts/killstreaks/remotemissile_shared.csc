@@ -211,17 +211,17 @@ function private function_298565db() {
 // Params 4, eflags: 0x2 linked
 // Checksum 0xc67f7254, Offset: 0x1048
 // Size: 0xec
-function function_20fff7ed(var_70cc0d15, var_4dad59c0, starttime, duration) {
+function function_20fff7ed(startscale, endscale, starttime, duration) {
     self endon(#"death");
     while (isdefined(self.var_7ec0e2d1) && gettime() < starttime + duration) {
         currtime = gettime();
         ratio = (currtime - starttime) / duration;
-        scale = lerpfloat(var_70cc0d15, var_4dad59c0, ratio);
+        scale = lerpfloat(startscale, endscale, ratio);
         self.var_7ec0e2d1 function_5e00861(scale);
         wait(0.1);
     }
     if (isdefined(self.var_7ec0e2d1)) {
-        self.var_7ec0e2d1 function_5e00861(var_4dad59c0);
+        self.var_7ec0e2d1 function_5e00861(endscale);
     }
 }
 

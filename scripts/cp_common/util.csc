@@ -64,8 +64,8 @@ function private function_2e48b28e(*localclientnum, *oldval, newval, *bnewent, *
     while (self.var_86c3a9a2 != target) {
         waitframe(1);
         time_now = self getclienttime();
-        var_d0e6f7ed = time_now - var_2e1d5239;
-        coef = math::clamp(var_d0e6f7ed / time_total, 0, 1);
+        time_delta = time_now - var_2e1d5239;
+        coef = math::clamp(time_delta / time_total, 0, 1);
         self.var_86c3a9a2 = start + (target - start) * coef;
         self function_97c2dab8(self.var_86c3a9a2);
     }
@@ -149,23 +149,23 @@ function function_70df4eb1(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Params 2, eflags: 0x2 linked
 // Checksum 0x84a70dfa, Offset: 0x7a8
 // Size: 0x1ba
-function force_stream_weapons(localclientnum, var_941cbfdd) {
+function force_stream_weapons(localclientnum, weaponarray) {
     /#
         assert(isplayer(self));
     #/
     self notify("1fa5700010347000");
     self endon("1fa5700010347000");
     self endon(#"death");
-    if (!isdefined(var_941cbfdd)) {
+    if (!isdefined(weaponarray)) {
         return;
     }
-    if (!isdefined(var_941cbfdd)) {
-        var_941cbfdd = [];
-    } else if (!isarray(var_941cbfdd)) {
-        var_941cbfdd = array(var_941cbfdd);
+    if (!isdefined(weaponarray)) {
+        weaponarray = [];
+    } else if (!isarray(weaponarray)) {
+        weaponarray = array(weaponarray);
     }
-    while (var_941cbfdd.size > 0) {
-        foreach (streamweapon in var_941cbfdd) {
+    while (weaponarray.size > 0) {
+        foreach (streamweapon in weaponarray) {
             if (isweapon(streamweapon)) {
                 var_57fe74e5 = self getbuildkitweaponoptions(localclientnum, streamweapon);
                 var_fd90b0bb = self function_1744e243(localclientnum, streamweapon);

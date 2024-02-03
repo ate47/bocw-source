@@ -24,7 +24,7 @@
 // Checksum 0x42d7749c, Offset: 0x150
 // Size: 0x54
 function private autoexec __init__system__() {
-    system::register(#"zm_destination_manager", &function_70a657d8, undefined, &function_5700f119, #"hash_f81b9dea74f0ee");
+    system::register(#"zm_destination_manager", &function_70a657d8, undefined, &finalize, #"hash_f81b9dea74f0ee");
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
@@ -41,7 +41,7 @@ function private function_70a657d8() {
 // Params 0, eflags: 0x6 linked
 // Checksum 0x257420ce, Offset: 0x200
 // Size: 0x2c
-function private function_5700f119() {
+function private finalize() {
     if (!zm_utility::function_c200446c()) {
         level thread function_1975f7db();
     }
@@ -97,7 +97,7 @@ function function_f3be07d7(destination) {
     if (!isdefined(var_58b02068)) {
         var_58b02068 = namespace_8b6a9d79::function_31e8da78(destination, #"start_spawn");
     }
-    level.var_7d45d0d4.var_994ca8b9 = var_58b02068;
+    level.var_7d45d0d4.nextspawn = var_58b02068;
     level flag::set(#"hash_10679ff0bf4d6c8d");
     var_842cdacd = namespace_8b6a9d79::function_f703a5a(var_58b02068);
     return array::randomize(var_842cdacd);

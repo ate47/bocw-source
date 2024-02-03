@@ -1,8 +1,8 @@
 {
-    "var_2be3941a": [
+    "rewards": [
         {
             "unlockdescription": "#hash_1488b821812f67af",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_47fca50269df283b",
             "var_b4ab831a": "#hash_6d7c37ff99be2aaa",
             "var_57554d43": 1,
@@ -10,14 +10,14 @@
         },
         {
             "unlockdescription": "#hash_12b6e1062094a4f7",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_47c9900269b3aaf3",
             "var_b4ab831a": "#hash_6dbd1cff99f593be",
             "var_270fa547": "#weapons_mastery"
         },
         {
             "unlockdescription": "#hash_4dd786986af52964",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_4c9f91130128f8a5",
             "var_b4ab831a": "#hash_2e4a9b351d4df06a",
             "var_57554d43": 1,
@@ -25,14 +25,14 @@
         },
         {
             "unlockdescription": "#hash_7644b5f06538b404",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_4ccb8413014e1d79",
             "var_b4ab831a": "#hash_2e8a80351d83a67e",
             "var_270fa547": "#hash_7f0ce2a2e0a76e67"
         },
         {
             "unlockdescription": "#hash_541e695a3a0634da",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_46ed1593bc948e5a",
             "var_b4ab831a": "#hash_2244de406b25b6a7",
             "stattype": "#weapon_assault",
@@ -41,7 +41,7 @@
         },
         {
             "unlockdescription": "#hash_5057a7d3afa8f04e",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_46c11a93bc6f5bee",
             "var_b4ab831a": "#hash_21f6e1406ae39a6f",
             "stattype": "#weapon_assault",
@@ -49,7 +49,7 @@
         },
         {
             "unlockdescription": "#hash_66036262325ba404",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_227b284bffd8ecad",
             "var_b4ab831a": "#hash_705fc2f572020c4",
             "stattype": "#weapon_smg",
@@ -58,7 +58,7 @@
         },
         {
             "unlockdescription": "#hash_810848b65cf84cc",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_223b0b4bffa2d771",
             "var_b4ab831a": "#hash_6cc012f56eeb0fc",
             "stattype": "#weapon_smg",
@@ -66,7 +66,7 @@
         },
         {
             "unlockdescription": "#hash_5333624af9185521",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_65b5b2614e7ed7bc",
             "var_b4ab831a": "#hash_74a47d2b3fc2b845",
             "stattype": "#weapon_lmg",
@@ -75,7 +75,7 @@
         },
         {
             "unlockdescription": "#hash_5aff22925ceb57d9",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_65e8a7614eaa1ea4",
             "var_b4ab831a": "#hash_74d0702b3fe7dd19",
             "stattype": "#weapon_lmg",
@@ -83,7 +83,7 @@
         },
         {
             "unlockdescription": "#hash_22b14603d3ebbf74",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_5c059fbb5bdfd595",
             "var_b4ab831a": "#hash_27568c95b22500fe",
             "stattype": "#weapon_sniper",
@@ -92,7 +92,7 @@
         },
         {
             "unlockdescription": "#hash_59bbce904a3d297c",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_5bc5b2bb5baa11e9",
             "var_b4ab831a": "#hash_270f7995b1e8de12",
             "stattype": "#weapon_sniper",
@@ -100,7 +100,7 @@
         },
         {
             "unlockdescription": "#hash_26dd374945409583",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_14c6f19d54e3ea4a",
             "var_b4ab831a": "#hash_28ff51088fd252ff",
             "stattype": "#weapon_cqb",
@@ -109,7 +109,7 @@
         },
         {
             "unlockdescription": "#hash_611a43a0666dfbd7",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_1507d69d551b535e",
             "var_b4ab831a": "#hash_28b144088f901b97",
             "stattype": "#weapon_cqb",
@@ -117,7 +117,7 @@
         },
         {
             "unlockdescription": "#hash_5c788465d3198936",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_70af410d52098c52",
             "var_b4ab831a": "#hash_6eda6bdb8644dd45",
             "stattype": "#weapon_tactical",
@@ -126,7 +126,7 @@
         },
         {
             "unlockdescription": "#hash_17b3a2d661fa435a",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_7082560d51e2c216",
             "var_b4ab831a": "#hash_6f065edb866a0219",
             "stattype": "#weapon_tactical",
@@ -134,7 +134,7 @@
         },
         {
             "unlockdescription": "#hash_5a81c37c9395a738",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_3cd7ac42b3c557d5",
             "var_b4ab831a": "#hash_3b9e279bfcbec55e",
             "stattype": "#weapon_pistol",
@@ -143,7 +143,7 @@
         },
         {
             "unlockdescription": "#hash_2a82b8fbabdb2cf0",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_3c96bf42b38de129",
             "var_b4ab831a": "#hash_3b57149bfc82a272",
             "stattype": "#weapon_pistol",
@@ -151,7 +151,7 @@
         },
         {
             "unlockdescription": "#hash_188f5c13c48ef817",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_70a7cceb7d2dd1f",
             "var_b4ab831a": "#hash_5d9cf3e7ad2e3f65",
             "stattype": "#weapon_launcher",
@@ -160,7 +160,7 @@
         },
         {
             "unlockdescription": "#hash_218ec5c92c6ef9cb",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_6bc6fceb790a5b7",
             "var_b4ab831a": "#hash_5dc9e6e7ad551739",
             "stattype": "#weapon_launcher",
@@ -168,84 +168,84 @@
         },
         {
             "unlockdescription": "#hash_7f78705d1e9457d",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_771a06fdff1585b4",
             "var_b4ab831a": "#hash_2732b38a54af3805",
             "var_270fa547": "#hash_3a1e0f80bb1fc682"
         },
         {
             "unlockdescription": "#hash_7f78705d1e9457d",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_ace90cf7b02f980",
             "var_b4ab831a": "#hash_7d0630e8397a21a9",
             "var_270fa547": "#hash_3a1e0f80bb1fc682"
         },
         {
             "unlockdescription": "#hash_35aaeb6bbf09cb84",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_45f2676e9cbb1ce",
             "var_b4ab831a": "#hash_697d1057ef352b19",
             "var_270fa547": "#hash_55555c9902aaba01"
         },
         {
             "unlockdescription": "#hash_35aaeb6bbf09cb84",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_2edb05184482714",
             "var_b4ab831a": "#hash_71688f2dfbbc2081",
             "var_270fa547": "#hash_55555c9902aaba01"
         },
         {
             "unlockdescription": "#hash_e70121086a6c27d",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_2614e7c2c1a1c0be",
             "var_b4ab831a": "#hash_7db6e52ffdf869d5",
             "var_270fa547": "#hash_29dfe2453ddf80ae"
         },
         {
             "unlockdescription": "#hash_e70121086a6c27d",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_559ae5dc41639380",
             "var_b4ab831a": "#hash_7346464c80d02355",
             "var_270fa547": "#hash_29dfe2453ddf80ae"
         },
         {
             "unlockdescription": "#hash_1b8673136b9e443",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_3b2e3280d2c7eeeb",
             "var_b4ab831a": "#hash_41abda99b94eb65e",
             "var_270fa547": "#hash_4b37fc756befb798"
         },
         {
             "unlockdescription": "#hash_1b8673136b9e443",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_3b0678e93c9a229b",
             "var_b4ab831a": "#hash_32821a456e0c813a",
             "var_270fa547": "#hash_4b37fc756befb798"
         },
         {
             "unlockdescription": "#hash_34dc4bec450bc4d2",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_6d8131d1d7c9abfe",
             "var_b4ab831a": "#hash_31e46605b0964d97",
             "var_270fa547": "#hash_5be51e5d5cd87967"
         },
         {
             "unlockdescription": "#hash_34dc4bec450bc4d2",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_a45eda4910faad9",
             "var_b4ab831a": "#hash_675f281547ff65c4",
             "var_270fa547": "#hash_5be51e5d5cd87967"
         },
         {
             "unlockdescription": "#hash_1a03b3d7c8c387e",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_60308e821875b088",
             "var_b4ab831a": "#hash_1d993311b91ba053",
             "var_270fa547": "#hash_42135ae3e30a83ab"
         },
         {
             "unlockdescription": "#hash_1a03b3d7c8c387e",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "image": "#hash_3960580f451f6f34",
             "var_b4ab831a": "#hash_74adf06b77585a11",
             "var_270fa547": "#hash_42135ae3e30a83ab"

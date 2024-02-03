@@ -18,6 +18,9 @@ All the dumped files are using the correct name, if a file name is unknown, the 
 Pools dumped:
 | name              | id  |        path              |
 |-------------------|-----|--------------------------|
+| rawfile           | 59  | `/`                      |
+| rawfilepreproc    | 60  | `/`                      |
+| rawtextfile       | 61  | `/`                      |
 | stringtable       | 63  | `/`                      |
 | scriptparsetree   | 68  | `/`                      |
 | scriptbundle      | 87  | `/scriptbundle/`         |

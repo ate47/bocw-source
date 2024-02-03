@@ -1,0 +1,25 @@
+                                                         
+set cg_hudGrenadeIconMaxRangeFrag	250
+
+                                
+reset ragdoll_explode_force
+reset ragdoll_explode_upbias
+
+reset jump_height
+reset jump_slowdownEnable
+reset bg_fallDamageMinHeight
+reset bg_fallDamageMaxHeight
+                                    
+
+                            
+set xblive_wagermatch 0
+set sidebet_made ""
+                                
+
+                               
+set scr_disable_cac 0
+set scr_disable_weapondrop 0
+set actionslotshide 0
+set ammoCounterHide 0
+set player_sprintUnlimited 0
+                                   

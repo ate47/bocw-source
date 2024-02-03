@@ -23,7 +23,7 @@ function private autoexec __init__system__() {
 // Params 3, eflags: 0x2 linked
 // Checksum 0xb43c2ceb, Offset: 0x1e0
 // Size: 0xd4
-function function_6e29b7f1(enabled, on_damage = 0, var_895878e1 = 3) {
+function set_enabled(enabled, on_damage = 0, var_895878e1 = 3) {
     /#
         assert(isactor(self));
     #/
@@ -84,7 +84,7 @@ function private function_4ad903f4(einflictor, eattacker, idamage, idflags, smea
             if (distancesquared(self.origin, attacker.origin) > function_a3f6cdac(mindist)) {
                 if (self.var_fa99a047 || !self.var_fa99a047 && self.health - idflags <= 0) {
                     var_afe2c3af = !is_true(self.var_fa99a047);
-                    self function_6e29b7f1(0);
+                    self set_enabled(0);
                     self thread function_856a28c3(var_afe2c3af, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, psoffsettime, boneindex, modelindex);
                     return 0;
                 }

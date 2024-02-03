@@ -2114,25 +2114,25 @@ function remove_devgui(localclientnum, menu_path) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x1aea04fa, Offset: 0x5bf8
 // Size: 0x9e
-function function_b5338ccb(value, var_942bd604 = 0.2) {
+function function_b5338ccb(value, deadzone = 0.2) {
     /#
-        assert(var_942bd604 < 1);
+        assert(deadzone < 1);
     #/
-    if (abs(value) < var_942bd604) {
+    if (abs(value) < deadzone) {
         return 0;
     }
-    return (value - var_942bd604 * math::sign(value)) / (1 - var_942bd604);
+    return (value - deadzone * math::sign(value)) / (1 - deadzone);
 }
 
 // Namespace util/util_shared
 // Params 3, eflags: 0x2 linked
 // Checksum 0x1bf18197, Offset: 0x5ca0
 // Size: 0xac
-function function_63320ea1(vector, var_942bd604, var_edfc4672 = 0) {
+function function_63320ea1(vector, deadzone, var_edfc4672 = 0) {
     if (var_edfc4672) {
-        return (function_b5338ccb(vector[0], var_942bd604), function_b5338ccb(vector[1], var_942bd604), 0);
+        return (function_b5338ccb(vector[0], deadzone), function_b5338ccb(vector[1], deadzone), 0);
     }
-    return vectornormalize(vector) * function_b5338ccb(length(vector), var_942bd604);
+    return vectornormalize(vector) * function_b5338ccb(length(vector), deadzone);
 }
 
 // Namespace util/util_shared
@@ -2147,14 +2147,14 @@ function function_5ff170ee() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xc66f1db5, Offset: 0x5d88
 // Size: 0x9c
-function function_8d617b62(color, var_577d323a) {
-    if (isdefined(color) || isdefined(var_577d323a)) {
+function function_8d617b62(color, stops) {
+    if (isdefined(color) || isdefined(stops)) {
         setdvar(#"hash_19b5d46719678445", 1);
         if (isdefined(color)) {
             setdvar(#"r_suncolor", color);
         }
-        if (isdefined(var_577d323a)) {
-            setdvar(#"r_sunstops", var_577d323a);
+        if (isdefined(stops)) {
+            setdvar(#"r_sunstops", stops);
         }
     }
 }
@@ -2272,13 +2272,13 @@ function init_dvar(str_dvar, default_val, func_callback) {
 // Params 6, eflags: 0x2 linked
 // Checksum 0x15ba25ed, Offset: 0x6440
 // Size: 0x39e
-function function_6f326f49(hour, minute, var_6ca69c11, day, month, var_7323307b) {
+function function_6f326f49(hour, minute, second, day, month, var_7323307b) {
     for (;;) {
-        setdvar(#"hash_dfcfdb3bf28da5e", string(hour, 2) + ":" + string(minute, 2) + ":" + string(var_6ca69c11, 2) + " " + string(month, 2) + "/" + string(day, 2) + "/" + string(var_7323307b % 100, 2));
+        setdvar(#"hash_dfcfdb3bf28da5e", string(hour, 2) + ":" + string(minute, 2) + ":" + string(second, 2) + " " + string(month, 2) + "/" + string(day, 2) + "/" + string(var_7323307b % 100, 2));
         wait(1);
-        var_6ca69c11 = var_6ca69c11 + 1;
-        if (var_6ca69c11 > 59) {
-            var_6ca69c11 = 0;
+        second = second + 1;
+        if (second > 59) {
+            second = 0;
             minute = minute + 1;
         }
         if (minute > 59) {
@@ -2346,7 +2346,7 @@ function function_6f326f49(hour, minute, var_6ca69c11, day, month, var_7323307b)
 // Params 6, eflags: 0x0
 // Checksum 0xdbd14722, Offset: 0x67e8
 // Size: 0x31c
-function function_a9ea7ad4(hour, minute, var_6ca69c11, day, month, var_7323307b) {
+function function_a9ea7ad4(hour, minute, second, day, month, var_7323307b) {
     if (hour < 0) {
         hour = 0;
     } else if (hour > 23) {
@@ -2357,10 +2357,10 @@ function function_a9ea7ad4(hour, minute, var_6ca69c11, day, month, var_7323307b)
     } else if (minute > 59) {
         minute = 59;
     }
-    if (var_6ca69c11 < 0) {
-        var_6ca69c11 = 0;
-    } else if (var_6ca69c11 > 59) {
-        var_6ca69c11 = 59;
+    if (second < 0) {
+        second = 0;
+    } else if (second > 59) {
+        second = 59;
     }
     if (month < 1) {
         month = 1;
@@ -2419,6 +2419,6 @@ function function_a9ea7ad4(hour, minute, var_6ca69c11, day, month, var_7323307b)
     } else if (day > var_8bf17cd8) {
         day = var_8bf17cd8;
     }
-    thread function_6f326f49(hour, minute, var_6ca69c11, day, month, var_7323307b);
+    thread function_6f326f49(hour, minute, second, day, month, var_7323307b);
 }
 

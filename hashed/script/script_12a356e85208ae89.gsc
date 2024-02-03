@@ -32,7 +32,7 @@
 function init() {
     clientfield::register("world", "setWild", 1, 2, "int", &setwild, 0, 0);
     clientfield::register("world", "setWildTOD", 1, 3, "int", &settod, 0, 0);
-    clientfield::register("world", "setWildSection", 1, 3, "int", &function_68800b79, 0, 0);
+    clientfield::register("world", "setWildSection", 1, 3, "int", &setsection, 0, 0);
     clientfield::register("world", "wilddeactivated", 1, 1, "counter", &wilddeactivated, 0, 0);
     var_581c8f9a = struct::get_array("doa_wild");
     level.doa.var_581c8f9a = [];
@@ -85,7 +85,7 @@ function setwild(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fie
 // Params 7, eflags: 0x2 linked
 // Checksum 0x57841d66, Offset: 0x630
 // Size: 0x56
-function function_68800b79(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
+function setsection(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     level.doa.var_f9d8fba5 = bwastimejump + 1;
 }
 

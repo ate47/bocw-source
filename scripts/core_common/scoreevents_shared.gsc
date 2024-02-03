@@ -157,13 +157,13 @@ function processscoreevent(event, player, victim, weapon, var_36f23f1f, var_dbaa
             var_6b09455c = [[ level.var_e7152385 ]]({#victim:victim});
         }
         if (isdefined(weapon) && !pickedup) {
-            var_a0af8e8f = getbaseweaponitemindex(weapon);
-            var_38f824bb = isdefined(player function_5ab9855c(var_a0af8e8f)) ? player function_5ab9855c(var_a0af8e8f) : 0;
+            weaponitemindex = getbaseweaponitemindex(weapon);
+            gunxp = isdefined(player function_5ab9855c(weaponitemindex)) ? player function_5ab9855c(weaponitemindex) : 0;
         }
         player addrankxp(event, 0, weapon, player.class_num, pickedup, xp_difficulty_multiplier, var_6b09455c, var_50e404bf);
         if (isdefined(weapon) && !pickedup) {
-            var_8e0fb6fa = isdefined(player function_5ab9855c(var_a0af8e8f)) ? player function_5ab9855c(var_a0af8e8f) : 0;
-            var_de0c8b34 = var_8e0fb6fa - var_38f824bb;
+            newgunxp = isdefined(player function_5ab9855c(weaponitemindex)) ? player function_5ab9855c(weaponitemindex) : 0;
+            var_de0c8b34 = newgunxp - gunxp;
             if (var_de0c8b34 > 0) {
                 level thread telemetry::function_18135b72(#"hash_b88b6d2e0028e13", {#weaponpickedup:pickedup, #value:var_de0c8b34, #statname:#"xpearned", #weapon:weapon, #player:player});
             }
@@ -596,16 +596,16 @@ function function_644d867a(attacker, time, statname, weapon, inflictor) {
 // Params 6, eflags: 0x2 linked
 // Checksum 0xb3709e66, Offset: 0x20d0
 // Size: 0x184
-function function_31eb1b07(player, statname, var_26568428, var_cdbd6bf3, weapon, inflictor) {
+function function_31eb1b07(player, statname, var_26568428, timetoplay, weapon, inflictor) {
     attackerentnum = player getentitynumber();
     var_46604f00 = level.var_648e79b7[attackerentnum];
     if (isdefined(var_46604f00)) {
         var_30ffb0d9 = isdefined(level.var_42648a02[var_46604f00.statname][0]) ? level.var_42648a02[var_46604f00.statname][0] : 0;
         if (var_26568428 >= var_30ffb0d9) {
-            level.var_648e79b7[attackerentnum] = {#einflictor:inflictor, #weapon:weapon, #timestamp:gettime() + var_cdbd6bf3, #statname:statname};
+            level.var_648e79b7[attackerentnum] = {#einflictor:inflictor, #weapon:weapon, #timestamp:gettime() + timetoplay, #statname:statname};
         }
     } else {
-        level.var_648e79b7[attackerentnum] = {#einflictor:inflictor, #weapon:weapon, #timestamp:gettime() + var_cdbd6bf3, #statname:statname};
+        level.var_648e79b7[attackerentnum] = {#einflictor:inflictor, #weapon:weapon, #timestamp:gettime() + timetoplay, #statname:statname};
     }
 }
 

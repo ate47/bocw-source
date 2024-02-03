@@ -15,7 +15,7 @@
 // Checksum 0x2907d96, Offset: 0x120
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_7aac5c09cf9461e3", &function_70a657d8, undefined, &function_5700f119, undefined);
+    system::register(#"hash_7aac5c09cf9461e3", &function_70a657d8, undefined, &finalize, undefined);
 }
 
 // Namespace namespace_2ed67032/namespace_2ed67032
@@ -36,7 +36,7 @@ function private function_70a657d8() {
 // Params 0, eflags: 0x4
 // Checksum 0xb0a75533, Offset: 0x2a0
 // Size: 0x34
-function private function_5700f119() {
+function private finalize() {
     item_world::function_861f348d(#"generic_pickup", &function_e74225a7);
 }
 

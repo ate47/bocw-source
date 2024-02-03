@@ -1895,7 +1895,7 @@ function event_handler[event_5d98e413] function_81d4b0fe(eventstruct) {
         player = getplayers()[0];
     }
     if (isdefined(player)) {
-        player setviewclamp(eventstruct.var_242557e2, eventstruct.maxyaw, eventstruct.var_de2f36df, eventstruct.maxpitch, 0, 0, eventstruct.blend);
+        player setviewclamp(eventstruct.minyaw, eventstruct.maxyaw, eventstruct.minpitch, eventstruct.maxpitch, 0, 0, eventstruct.blend);
     }
 }
 

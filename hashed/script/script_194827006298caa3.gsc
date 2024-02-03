@@ -144,7 +144,7 @@ function private function_deefa538(instance) {
     var_ea63e380 = isdefined(instance.var_fe2612fe[#"hash_55507f11db488717"]) ? instance.var_fe2612fe[#"hash_55507f11db488717"] : [];
     function_283f2fb3(var_eb92deab);
     function_283f2fb3(var_ea63e380);
-    var_18d554fc = int(min(level.var_15d17eb2, 3));
+    var_18d554fc = int(min(level.realm, 3));
     var_b6947716 = "horde_hunt_realm_" + var_18d554fc + "_leader_" + n_variant;
     var_532e237f = "horde_hunt_realm_" + var_18d554fc + "_follower_" + n_variant;
     var_74714668 = "horde_hunt_realm_" + var_18d554fc + "_ambush_" + n_variant;
@@ -201,7 +201,7 @@ function private function_8a9ecf71(instance, var_842cdacd, var_aa19ae, spawn_fun
             ai.var_7496eca2 = 1;
             ai.instance = instance;
             ai.spawn = spawn;
-            namespace_679a22ba::function_266ee075(var_4bf95f4c.var_29459a31, var_ccd67daa);
+            namespace_679a22ba::function_266ee075(var_4bf95f4c.list_name, var_ccd67daa);
             if (!isdefined(a_ai)) {
                 a_ai = [];
             } else if (!isarray(a_ai)) {

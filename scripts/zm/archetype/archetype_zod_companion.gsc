@@ -299,7 +299,7 @@ function private zodshouldattackenemy(entity) {
 // Checksum 0xd39f32e, Offset: 0x1db8
 // Size: 0xbe
 function trystoppingcompanionservice(entity) {
-    if (is_true(entity.var_2a757d07) || isdefined(entity.var_9140144d) || isdefined(entity.v_zombie_custom_goal_pos) || is_true(self.reviving_a_player)) {
+    if (is_true(entity.exhausted) || isdefined(entity.var_9140144d) || isdefined(entity.v_zombie_custom_goal_pos) || is_true(self.reviving_a_player)) {
         return 0;
     }
     enemy = function_a8bce123(entity);
@@ -654,7 +654,7 @@ function private zodcompaniontryreacquireservice(entity) {
 // Size: 0xba4
 function private manage_companion_movement(entity) {
     self endon(#"death");
-    if (is_true(entity.var_2a757d07)) {
+    if (is_true(entity.exhausted)) {
         return;
     }
     if (zodcompanioniscarryingbomb(entity)) {
@@ -1204,7 +1204,7 @@ function private zodcompanionsprinttransitioning(behaviortreeentity) {
 // Checksum 0x9a09f14c, Offset: 0x5678
 // Size: 0x22
 function zodcompanionisexhausted(behaviortreeentity) {
-    return is_true(behaviortreeentity.var_2a757d07);
+    return is_true(behaviortreeentity.exhausted);
 }
 
 // Namespace zodcompanionbehavior/archetype_zod_companion
@@ -1212,7 +1212,7 @@ function zodcompanionisexhausted(behaviortreeentity) {
 // Checksum 0xfc3d3c9a, Offset: 0x56a8
 // Size: 0xc2
 function zodcompanionexhaustedbehaviorservice(behaviortreeentity) {
-    if (!is_true(behaviortreeentity.var_2a757d07)) {
+    if (!is_true(behaviortreeentity.exhausted)) {
         return;
     }
     goalinfo = behaviortreeentity function_4794d6a3();
@@ -1310,12 +1310,12 @@ function zodcompanionclearobstacleservice(behaviortreeentity) {
             return;
         }
         is_blocked = 0;
-        if (isdefined(behaviortreeentity.var_3c07378c)) {
-            var_545a671 = distancesquared(behaviortreeentity.var_3c07378c, behaviortreeentity.origin);
+        if (isdefined(behaviortreeentity.previous_pos)) {
+            var_545a671 = distancesquared(behaviortreeentity.previous_pos, behaviortreeentity.origin);
             is_blocked = var_545a671 < 4;
         }
         behaviortreeentity.var_43933fca = time + 1000;
-        behaviortreeentity.var_3c07378c = behaviortreeentity.origin;
+        behaviortreeentity.previous_pos = behaviortreeentity.origin;
         if (is_blocked && !behaviortreeentity function_dd070839()) {
             var_d32424f1 = getentitiesinradius(behaviortreeentity.origin, 80, 15);
             var_d32424f1 = array::exclude(var_d32424f1, behaviortreeentity);
@@ -1920,8 +1920,8 @@ function function_14f3d97b(goalpos, var_ff1d11ed = 0) {
         }
     }
     if (is_true(var_5a7117fb)) {
-        self.var_2a757d07 = 1;
-        self val::set(#"hash_1a7538cd129f838c", "ignoreall", 1);
+        self.exhausted = 1;
+        self val::set(#"exhausted", "ignoreall", 1);
         aiutility::releaseclaimnode(self);
         self clearforcedgoal();
         self setgoal(self.var_342791dd);
@@ -1949,8 +1949,8 @@ function function_633d6f7b(var_ff1d11ed = 1) {
     if (is_true(var_ff1d11ed) && zodcompanionbehavior::zodcompanionhasdefendlocation(self)) {
         self function_34179e9a();
     }
-    self.var_2a757d07 = undefined;
-    self val::reset(#"hash_1a7538cd129f838c", "ignoreall");
+    self.exhausted = undefined;
+    self val::reset(#"exhausted", "ignoreall");
     self.pushable = 1;
     self pathmode("move allowed");
 }

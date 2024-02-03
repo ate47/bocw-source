@@ -2,7 +2,7 @@
     "option_dependencies": [
         {
             "var_1643d946": "1",
-            "var_6825bdb": "#is_player_online",
+            "optionname": "#is_player_online",
             "operator": "=="
         }
     ],
@@ -27,7 +27,7 @@
     "name": "pc_show_friends_notifications",
     "displayname": "#hash_4720feb8029a2747",
     "var_500458ac": 10,
-    "var_926d1be9": 0.01,
+    "decimalplace": 0.01,
     "var_66faec87": 2,
     "statname": "show_friends_notifications",
     "var_6f00a61a": 1.1,

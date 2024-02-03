@@ -137,7 +137,7 @@ function init() {
     level.doa.var_d7e090f7[#"zombietron_impaler_1"] = &function_3d40d138;
     level.doa.var_d7e090f7[#"zombietron_impaler_2"] = &function_bcd45061;
     level.doa.var_5b088fde = getweapon("zombietron_launcher_secondary");
-    level.doa.var_c6e5e8d9 = getweapon("zombietron_lmg");
+    level.doa.default_weapon = getweapon("zombietron_lmg");
     var_16e2303b = getweapon("zombietron_impaler");
     var_16e2303b.var_a8e39382 = 5;
     var_16e2303b.var_69baf44a = 2;
@@ -169,7 +169,7 @@ function event_handler[missile_fire] function_55af2576(eventstruct) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0xa0ca41c7, Offset: 0xb30
 // Size: 0x3fc
-function function_61c84fc9() {
+function updateweapon() {
     if (!isdefined(self.doa) || !isdefined(self.doa.var_fd5fcb75) || isdefined(self.doa.vehicle)) {
         return;
     }
@@ -224,15 +224,15 @@ function function_51e99bc7(amount = 1) {
     self.doa.var_d8955419 = self.doa.var_d8955419 + int(64 * amount);
     if (self.doa.var_d8955419 >= 1024) {
         if (self.doa.weaponlevel < 2) {
-            var_fe38469a = self.doa.weaponlevel;
+            oldlevel = self.doa.weaponlevel;
             self.doa.weaponlevel = self.doa.weaponlevel + int(self.doa.var_d8955419 / 1024);
             if (self.doa.weaponlevel > 2) {
                 self.doa.weaponlevel = 2;
             }
-            if (var_fe38469a == 1 && self.doa.weaponlevel == 2) {
+            if (oldlevel == 1 && self.doa.weaponlevel == 2) {
                 self thread namespace_6e90e490::function_47e11416(5);
             }
-            self.doa.var_d8955419 = self.doa.var_d8955419 - (self.doa.weaponlevel - var_fe38469a) * 1024;
+            self.doa.var_d8955419 = self.doa.var_d8955419 - (self.doa.weaponlevel - oldlevel) * 1024;
             time = gettime() + 2000;
             if (self.doa.var_909a4dd5 < time) {
                 self.doa.var_909a4dd5 = time;
@@ -270,7 +270,7 @@ function function_d5bd34b4() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x9b3a891a, Offset: 0x13c0
 // Size: 0x4d6
-function function_6c4d9896(var_9de8aead, var_462e473e = 0) {
+function function_6c4d9896(var_9de8aead, weaponpickup = 0) {
     profilestart();
     if (!isdefined(self.doa)) {
         profilestop();
@@ -280,7 +280,7 @@ function function_6c4d9896(var_9de8aead, var_462e473e = 0) {
         profilestop();
         return;
     }
-    if (is_true(var_462e473e)) {
+    if (is_true(weaponpickup)) {
         fill = 1;
         if (self.doa.var_fd5fcb75 === var_9de8aead) {
             if (var_9de8aead === self.doa.var_ed8fde10 && self.doa.var_d8955419 == 0) {

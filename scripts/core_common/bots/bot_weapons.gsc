@@ -263,10 +263,10 @@ function private use_ar(actionparams) {
         self function_bbef6e21();
         self function_411e397e();
         if (self.bot.var_9931c7dc) {
-            if (!(self.bot.var_c51625a9 <= 200) && self botgetlookdot() >= 0.766) {
+            if (!(self.bot.enemydist <= 200) && self botgetlookdot() >= 0.766) {
                 self bottapbutton(11);
             }
-            if (self.bot.var_2cf887f8 && self botgetlookdot() >= lerpfloat(0.996195, 0.999962, self.bot.var_c51625a9 / 500)) {
+            if (self.bot.enemyvisible && self botgetlookdot() >= lerpfloat(0.996195, 0.999962, self.bot.enemydist / 500)) {
                 if (self function_d8b388a6()) {
                     self fire_weapon(weapon);
                 }
@@ -305,10 +305,10 @@ function private function_82ebbce(actionparams) {
         self function_bbef6e21();
         self function_411e397e();
         if (self.bot.var_9931c7dc) {
-            if (!(self.bot.var_c51625a9 <= 200) && self botgetlookdot() >= 0.766) {
+            if (!(self.bot.enemydist <= 200) && self botgetlookdot() >= 0.766) {
                 self bottapbutton(11);
             }
-            if (self.bot.var_2cf887f8 && self botgetlookdot() >= lerpfloat(0.996195, 0.999962, self.bot.var_c51625a9 / 500)) {
+            if (self.bot.enemyvisible && self botgetlookdot() >= lerpfloat(0.996195, 0.999962, self.bot.enemydist / 500)) {
                 if (self function_d8b388a6()) {
                     self fire_weapon(weapon);
                 }
@@ -350,7 +350,7 @@ function private use_tr(actionparams) {
             if (self botgetlookdot() >= 0.766) {
                 self bottapbutton(11);
             }
-            if (self.bot.var_2cf887f8 && self botgetlookdot() >= lerpfloat(0.996195, 0.999962, self.bot.var_c51625a9 / 500)) {
+            if (self.bot.enemyvisible && self botgetlookdot() >= lerpfloat(0.996195, 0.999962, self.bot.enemydist / 500)) {
                 if (self function_d8b388a6()) {
                     self fire_weapon(weapon);
                 }
@@ -392,7 +392,7 @@ function private function_d6921803(actionparams) {
             if (self botgetlookdot() >= 0.766) {
                 self bottapbutton(11);
             }
-            if (self.bot.var_2cf887f8 && self playerads() >= 1 && self botgetlookdot() >= lerpfloat(0.996195, 0.999962, self.bot.var_c51625a9 / 500)) {
+            if (self.bot.enemyvisible && self playerads() >= 1 && self botgetlookdot() >= lerpfloat(0.996195, 0.999962, self.bot.enemydist / 500)) {
                 if (self function_d8b388a6()) {
                     self fire_weapon(weapon);
                 }
@@ -431,10 +431,10 @@ function private function_b3992b0(actionparams) {
         self function_bbef6e21();
         self function_411e397e();
         if (self.bot.var_9931c7dc) {
-            if (!(self.bot.var_c51625a9 <= 200) && self botgetlookdot() >= 0.766) {
+            if (!(self.bot.enemydist <= 200) && self botgetlookdot() >= 0.766) {
                 self bottapbutton(11);
             }
-            if (self.bot.var_2cf887f8 && self botgetlookdot() >= lerpfloat(0.996195, 0.999962, self.bot.var_c51625a9 / 500)) {
+            if (self.bot.enemyvisible && self botgetlookdot() >= lerpfloat(0.996195, 0.999962, self.bot.enemydist / 500)) {
                 if (self function_d8b388a6()) {
                     self fire_weapon(weapon);
                 }
@@ -473,10 +473,10 @@ function private function_3f4d56d1(actionparams) {
         self function_bbef6e21();
         self function_411e397e();
         if (self.bot.var_9931c7dc) {
-            if (!(self.bot.var_c51625a9 <= 200) && self botgetlookdot() >= 0.766) {
+            if (!(self.bot.enemydist <= 200) && self botgetlookdot() >= 0.766) {
                 self bottapbutton(11);
             }
-            if (self.bot.var_2cf887f8 && self botgetlookdot() >= lerpfloat(0.996195, 0.999962, self.bot.var_c51625a9 / 500)) {
+            if (self.bot.enemyvisible && self botgetlookdot() >= lerpfloat(0.996195, 0.999962, self.bot.enemydist / 500)) {
                 if (self function_d8b388a6()) {
                     self fire_weapon(weapon);
                 }
@@ -523,10 +523,10 @@ function private function_78135f4c(actionparams) {
         self function_bbef6e21();
         self function_411e397e();
         if (self.bot.var_9931c7dc) {
-            if (!(self.bot.var_c51625a9 <= 200) && self botgetlookdot() >= 0.766) {
+            if (!(self.bot.enemydist <= 200) && self botgetlookdot() >= 0.766) {
                 self bottapbutton(11);
             }
-            if (self.bot.var_2cf887f8 && self botgetlookdot() >= lerpfloat(0.996195, 0.999962, self.bot.var_c51625a9 / 500)) {
+            if (self.bot.enemyvisible && self botgetlookdot() >= lerpfloat(0.996195, 0.999962, self.bot.enemydist / 500)) {
                 if (self function_d8b388a6()) {
                     self fire_weapon(weapon);
                 }
@@ -599,12 +599,12 @@ function private use_launcher(actionparams) {
         }
         if (self.bot.var_9931c7dc && self botgetlookdot() >= 0.766) {
             self bottapbutton(11);
-            if (self.bot.var_2cf887f8 && self playerads() >= 1 && self botgetlookdot() >= lerpfloat(0.996195, 0.999962, self.bot.var_c51625a9 / 500) && !self isfiring()) {
+            if (self.bot.enemyvisible && self playerads() >= 1 && self botgetlookdot() >= lerpfloat(0.996195, 0.999962, self.bot.enemydist / 500) && !self isfiring()) {
                 if (lockon) {
                     if (isdefined(self.stingertarget) && isdefined(self.stingertarget.locked_on) && self.stingertarget.locked_on & lockedflag) {
                         self bottapbutton(0);
                     }
-                } else if (!(self.bot.var_c51625a9 <= var_677906a4)) {
+                } else if (!(self.bot.enemydist <= var_677906a4)) {
                     if (self function_d8b388a6()) {
                         self fire_weapon(weapon);
                     }
@@ -657,13 +657,13 @@ function private function_e105d8c8(actionparams) {
     if (self function_64f2e29(actionparams) || self function_a469c9cd(actionparams)) {
         return undefined;
     }
-    if (self.bot.var_c51625a9 <= 600) {
+    if (self.bot.enemydist <= 600) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_71800c4878bd026d";
         #/
         return undefined;
     }
-    if (self.bot.var_2cf887f8) {
+    if (self.bot.enemyvisible) {
         if (!self function_754cc239(actionparams)) {
             /#
                 actionparams.debug[actionparams.debug.size] = #"hash_7ff8e322102305fd";
@@ -701,13 +701,13 @@ function private function_16906804(actionparams) {
         return undefined;
     }
     weapon = actionparams.weapon;
-    if (self.bot.var_c51625a9 <= weapon.explosionradius * 1.2) {
+    if (self.bot.enemydist <= weapon.explosionradius * 1.2) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_71800c4878bd026d";
         #/
         return undefined;
     }
-    if (self.bot.var_2cf887f8) {
+    if (self.bot.enemyvisible) {
         if (!self function_754cc239(actionparams)) {
             /#
                 actionparams.debug[actionparams.debug.size] = #"hash_7ff8e322102305fd";
@@ -741,13 +741,13 @@ function private function_8640f24(actionparams) {
     if (self function_64f2e29(actionparams) || self function_a469c9cd(actionparams)) {
         return undefined;
     }
-    if (self.bot.var_c51625a9 <= 600) {
+    if (self.bot.enemydist <= 600) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_71800c4878bd026d";
         #/
         return undefined;
     }
-    if (self.bot.var_2cf887f8) {
+    if (self.bot.enemyvisible) {
         if (!self function_754cc239(actionparams)) {
             /#
                 actionparams.debug[actionparams.debug.size] = #"hash_7ff8e322102305fd";
@@ -782,13 +782,13 @@ function private function_d3c685b8(actionparams) {
         return undefined;
     }
     weapon = actionparams.weapon;
-    if (self.bot.var_c51625a9 <= weapon.explosionradius * 0.6) {
+    if (self.bot.enemydist <= weapon.explosionradius * 0.6) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_71800c4878bd026d";
         #/
         return undefined;
     }
-    if (self.bot.var_2cf887f8) {
+    if (self.bot.enemyvisible) {
         if (!self function_754cc239(actionparams)) {
             /#
                 actionparams.debug[actionparams.debug.size] = #"hash_7ff8e322102305fd";
@@ -829,7 +829,7 @@ function private function_bd46948a(actionparams) {
     /#
         actionparams.debug[actionparams.debug.size] = #"hash_203858dc9db13ce9";
     #/
-    if (self.bot.var_2cf887f8) {
+    if (self.bot.enemyvisible) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_7ff8e322102305fd";
         #/
@@ -867,14 +867,14 @@ function private function_22630da6(actionparams) {
     if (self function_64f2e29(actionparams) || self function_a469c9cd(actionparams)) {
         return undefined;
     }
-    if (self.bot.var_2cf887f8) {
+    if (self.bot.enemyvisible) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_7ff8e322102305fd";
         #/
         return undefined;
     }
     weapon = actionparams.weapon;
-    if (self.bot.var_c51625a9 <= weapon.explosionradius * 0.6) {
+    if (self.bot.enemydist <= weapon.explosionradius * 0.6) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_71800c4878bd026d";
         #/
@@ -895,7 +895,7 @@ function private function_643065f9(actionparams) {
     if (!self function_303bbccf(actionparams)) {
         return undefined;
     }
-    if (!self.bot.var_2cf887f8) {
+    if (!self.bot.enemyvisible) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_53aa4f678b9a027c";
         #/
@@ -904,7 +904,7 @@ function private function_643065f9(actionparams) {
     if (self function_64f2e29(actionparams) || self function_a469c9cd(actionparams)) {
         return undefined;
     }
-    if (self.bot.var_c51625a9 <= 200) {
+    if (self.bot.enemydist <= 200) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_71800c4878bd026d";
         #/
@@ -1015,7 +1015,7 @@ function private function_f54e11c8(actionparams) {
             if (self botgetlookdot() >= 0.766) {
                 self bottapbutton(11);
             }
-            if (self.bot.var_2cf887f8 && self playerads() >= 1 && self botgetlookdot() >= lerpfloat(0.996195, 0.999962, self.bot.var_c51625a9 / 500) && self function_d8b388a6()) {
+            if (self.bot.enemyvisible && self playerads() >= 1 && self botgetlookdot() >= lerpfloat(0.996195, 0.999962, self.bot.enemydist / 500) && self function_d8b388a6()) {
                 self fire_weapon(weapon);
             }
         }
@@ -1032,7 +1032,7 @@ function private function_2bbdd2b4(actionparams) {
     weapon = actionparams.weapon;
     self function_185a3c39(weapon);
     while (1) {
-        if (self botgetlookdot() >= lerpfloat(0.996195, 0.999962, self.bot.var_c51625a9 / 500)) {
+        if (self botgetlookdot() >= lerpfloat(0.996195, 0.999962, self.bot.enemydist / 500)) {
             self fire_weapon(weapon);
         }
         self waittill(#"hash_77f2882ff9140e86");
@@ -1065,12 +1065,12 @@ function private function_27ae97ef(actionparams) {
         self function_bbef6e21();
         self function_411e397e();
         if (self.bot.var_9931c7dc) {
-            if (!(self.bot.var_c51625a9 <= 200) && self botgetlookdot() >= 0.766) {
+            if (!(self.bot.enemydist <= 200) && self botgetlookdot() >= 0.766) {
                 self bottapbutton(11);
             }
-            if (!(self.bot.var_c51625a9 <= var_677906a4) && self botgetlookdot() >= lerpfloat(0.996195, 0.999962, self.bot.var_c51625a9 / 500) && self function_d8b388a6()) {
+            if (!(self.bot.enemydist <= var_677906a4) && self botgetlookdot() >= lerpfloat(0.996195, 0.999962, self.bot.enemydist / 500) && self function_d8b388a6()) {
                 trace = self function_6e8a2d86(weapon, self getplayerangles());
-                if (function_e63ee3e8(trace, self.bot.var_c51625a9 - 40)) {
+                if (function_e63ee3e8(trace, self.bot.enemydist - 40)) {
                     self fire_weapon(weapon);
                 }
             }
@@ -1365,21 +1365,21 @@ function private function_5d035c24(actionparams) {
         self function_bbef6e21();
         self function_411e397e();
         if (self.bot.var_9931c7dc) {
-            if (!(self.bot.var_c51625a9 <= 200) && self botgetlookdot() >= 0.766) {
+            if (!(self.bot.enemydist <= 200) && self botgetlookdot() >= 0.766) {
                 self bottapbutton(11);
             }
-            if (self botgetlookdot() >= lerpfloat(0.996195, 0.999962, self.bot.var_c51625a9 / 500)) {
+            if (self botgetlookdot() >= lerpfloat(0.996195, 0.999962, self.bot.enemydist / 500)) {
                 if (self function_a39f313c()) {
                     if (!self attackbuttonpressed()) {
-                        self.bot.var_519dbc7d = gettime() + int(0.25 * 1000);
+                        self.bot.chargetime = gettime() + int(0.25 * 1000);
                     }
                     self bottapbutton(0);
                 }
-                if (self.bot.var_2cf887f8 && self attackbuttonpressed() && (!isdefined(self.bot.var_519dbc7d) || self.bot.var_519dbc7d <= gettime()) && self function_d8b388a6()) {
+                if (self.bot.enemyvisible && self attackbuttonpressed() && (!isdefined(self.bot.chargetime) || self.bot.chargetime <= gettime()) && self function_d8b388a6()) {
                     self botreleasebutton(0);
                 }
             } else if (self attackbuttonpressed()) {
-                self.bot.var_519dbc7d = undefined;
+                self.bot.chargetime = undefined;
                 self bottapbutton(49);
             }
         }
@@ -1392,7 +1392,7 @@ function private function_5d035c24(actionparams) {
 // Checksum 0x6aaf6d74, Offset: 0x6ac8
 // Size: 0x44
 function private function_5e217f4d(*notifyhash) {
-    self.bot.var_519dbc7d = undefined;
+    self.bot.chargetime = undefined;
     if (self attackbuttonpressed()) {
         self bottapbutton(49);
     }
@@ -1422,10 +1422,10 @@ function private function_397a1c0a(actionparams) {
         self function_bbef6e21();
         self function_411e397e();
         if (self.bot.var_9931c7dc) {
-            if (!(self.bot.var_c51625a9 <= 200) && self botgetlookdot() >= 0.866) {
+            if (!(self.bot.enemydist <= 200) && self botgetlookdot() >= 0.866) {
                 self bottapbutton(11);
             }
-            if (self.bot.var_2cf887f8 && self botgetlookdot() >= 0.965) {
+            if (self.bot.enemyvisible && self botgetlookdot() >= 0.965) {
                 self fire_weapon(weapon);
             }
         }
@@ -1683,7 +1683,7 @@ function private function_5c276034(actionparams) {
     if (!self function_303bbccf(actionparams)) {
         return undefined;
     }
-    if (!self.bot.var_2cf887f8 && !self function_6faf985b()) {
+    if (!self.bot.enemyvisible && !self function_6faf985b()) {
         /#
             actionparams.debug[actionparams.debug.size] = #"no enemy";
         #/
@@ -1952,14 +1952,14 @@ function private function_4e17fb37(actionparams, var_b7fbe51b) {
         }
         aimpoint = self.enemy getcentroid();
     }
-    var_9643a434 = self botgetprojectileaimangles(weapon, aimpoint);
-    if (!isdefined(var_9643a434)) {
+    aimangles = self botgetprojectileaimangles(weapon, aimpoint);
+    if (!isdefined(aimangles)) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_4861201ac3ea229e";
         #/
         return 0;
     }
-    trace = self function_6e8a2d86(weapon, var_9643a434.var_478aeacd);
+    trace = self function_6e8a2d86(weapon, aimangles.var_478aeacd);
     dist = distance2d(self.origin, aimpoint) - var_b7fbe51b;
     if (!function_e63ee3e8(trace, dist)) {
         /#
@@ -2029,13 +2029,13 @@ function private function_a469c9cd(actionparams) {
 // Checksum 0x8d108cb7, Offset: 0x8d40
 // Size: 0xa6
 function private function_6b54ab21(weapon) {
-    dist = self.bot.var_c51625a9;
+    dist = self.bot.enemydist;
     if (weapon.weapclass == "spread" && dist > weapon.mindamagerange) {
         return 0;
     }
     damage = function_2cf16636(weapon, dist);
-    var_adf57279 = function_bfb63695(weapon, dist);
-    return var_adf57279 + damage * weapon.shotcount;
+    multishotbasedamage = function_bfb63695(weapon, dist);
+    return multishotbasedamage + damage * weapon.shotcount;
 }
 
 // Namespace namespace_d9f3dd47/namespace_d9f3dd47
@@ -2046,8 +2046,8 @@ function private min_damage(weapon) {
     var_2d276877 = weapon.var_2d276877;
     var_89a5bdab = weapon.var_72960e43;
     damage = var_2d276877[var_2d276877.size - 1];
-    var_adf57279 = var_89a5bdab[var_89a5bdab.size - 1];
-    return var_adf57279 + damage;
+    multishotbasedamage = var_89a5bdab[var_89a5bdab.size - 1];
+    return multishotbasedamage + damage;
 }
 
 // Namespace namespace_d9f3dd47/namespace_d9f3dd47
@@ -2056,8 +2056,8 @@ function private min_damage(weapon) {
 // Size: 0x4e
 function private max_damage(weapon) {
     damage = weapon.var_2d276877[0];
-    var_adf57279 = weapon.var_72960e43[0];
-    return var_adf57279 + damage * weapon.shotcount;
+    multishotbasedamage = weapon.var_72960e43[0];
+    return multishotbasedamage + damage * weapon.shotcount;
 }
 
 // Namespace namespace_d9f3dd47/namespace_d9f3dd47
@@ -2065,12 +2065,12 @@ function private max_damage(weapon) {
 // Checksum 0xf098ea46, Offset: 0x8ec8
 // Size: 0xdc
 function private function_4b1db2f8(actionparams, var_f97fefd9, var_f7b379b8, var_edd1b764) {
-    if (self.bot.var_c51625a9 <= 500) {
+    if (self.bot.enemydist <= 500) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_22d191cc118ae2f5";
         #/
         return var_f97fefd9;
-    } else if (self.bot.var_c51625a9 <= 1500) {
+    } else if (self.bot.enemydist <= 1500) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_29c69b288d5c7dbc";
         #/
@@ -2253,7 +2253,7 @@ function private function_90c011d5(actionparams, var_dd95d559) {
     while (1) {
         self.bot.var_87751145 = actionparams.aimpoint;
         self function_e1e3b64c(0);
-        while (!self function_d911b948() || !(self botgetlookdot() >= lerpfloat(0.996195, 0.999962, self.bot.var_c51625a9 / 500))) {
+        while (!self function_d911b948() || !(self botgetlookdot() >= lerpfloat(0.996195, 0.999962, self.bot.enemydist / 500))) {
             if (self botgetlookdot() >= 0.866) {
                 self bottapbutton(var_dd95d559);
             } else if (self isthrowinggrenade()) {
@@ -2305,7 +2305,7 @@ function private function_bbef6e21() {
     if (!isdefined(self.bot.difficulty) || is_true(self.bot.difficulty.var_33be320f)) {
         return;
     }
-    stop = self.bot.var_9931c7dc && self.bot.var_2cf887f8;
+    stop = self.bot.var_9931c7dc && self.bot.enemyvisible;
     self.bot.var_6bea1d82 = stop;
 }
 
@@ -2323,7 +2323,7 @@ function private function_411e397e() {
         self.bot.var_a9c00d70 = undefined;
         self.bot.var_32d8dabe = undefined;
     }
-    if (!self.bot.var_9931c7dc || !self.bot.var_2cf887f8) {
+    if (!self.bot.var_9931c7dc || !self.bot.enemyvisible) {
         return;
     }
     if (!isdefined(self.bot.var_32d8dabe)) {
@@ -2337,7 +2337,7 @@ function private function_411e397e() {
     }
     delaytime = isdefined(self.bot.difficulty.var_d70788cb) ? self.bot.difficulty.var_d70788cb : 0;
     var_8a2cf681 = self function_7067eabd();
-    if (var_8a2cf681 >= 2.5 || !(self.bot.var_c51625a9 <= var_8a2cf681 * 500)) {
+    if (var_8a2cf681 >= 2.5 || !(self.bot.enemydist <= var_8a2cf681 * 500)) {
         delaytime = delaytime + self function_957aa281();
     }
     totaltime = delaytime + var_a9c00d70;
@@ -2366,7 +2366,7 @@ function private function_e1e3b64c(currentweapon) {
     var_776afa50 = -10;
     zmax = 10;
     if (self function_9160a207(currentweapon)) {
-        if (self.bot.var_2cf887f8 && self function_e3b275f0(self.enemy, "j_head")) {
+        if (self.bot.enemyvisible && self function_e3b275f0(self.enemy, "j_head")) {
             self.bot.var_2d563ebf = "j_head";
         } else {
             self.bot.var_2d563ebf = undefined;
@@ -2398,11 +2398,11 @@ function private function_9160a207(currentweapon) {
         return 1;
     }
     var_f519fbc6 = isdefined(self.bot.difficulty.var_d20ff29c) ? self.bot.difficulty.var_d20ff29c : 0;
-    if (currentweapon && !(self.bot.var_c51625a9 <= 200)) {
-        if (!(self.bot.var_c51625a9 <= 500)) {
+    if (currentweapon && !(self.bot.enemydist <= 200)) {
+        if (!(self.bot.enemydist <= 500)) {
             var_8a2cf681 = self function_7067eabd();
             mindist = var_8a2cf681 * 500;
-            var_e99f12e5 = self.bot.var_c51625a9 - mindist;
+            var_e99f12e5 = self.bot.enemydist - mindist;
             var_f4b40c21 = var_8a2cf681 * 2500 - mindist;
             var_66a04f11 = isdefined(self.bot.difficulty.var_65a25108) ? self.bot.difficulty.var_65a25108 : 0;
             var_7e2f0732 = isdefined(self.bot.difficulty.var_e0e4be1b) ? self.bot.difficulty.var_e0e4be1b : 0;

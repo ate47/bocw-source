@@ -65,7 +65,7 @@ function function_49caf2d6() {
 // Size: 0xd8
 function function_4acf40a(trap, var_7c56394 = 0, modelname) {
     if (isdefined(modelname)) {
-        hazard = namespace_ec06fe4a::function_e22ae9b3(trap.origin, modelname);
+        hazard = namespace_ec06fe4a::spawnmodel(trap.origin, modelname);
         if (isdefined(hazard)) {
             hazard.targetname = "hazard";
             hazard.var_fd5301f9 = "killzone";

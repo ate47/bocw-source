@@ -31,7 +31,7 @@ function think() {
         self.bot.var_9931c7dc = 0;
     } else if (isdefined(self.bot.var_87751145)) {
         self.bot.var_9931c7dc = self function_2f110827();
-    } else if (self.bot.var_2cf887f8) {
+    } else if (self.bot.enemyvisible) {
         entity = self.enemy;
         if (isplayer(self.enemy)) {
             if (self.enemy isinvehicle() && !self.enemy isremotecontrolling()) {
@@ -40,7 +40,7 @@ function think() {
                 entity = self.enemy.prop;
             }
         }
-        self.bot.var_9931c7dc = self function_58d48e86(entity, self.bot.var_c51625a9, self.bot.var_2d563ebf);
+        self.bot.var_9931c7dc = self function_58d48e86(entity, self.bot.enemydist, self.bot.var_2d563ebf);
     } else if (self.bot.var_e8c84f98 && self function_204b5b9c() && self function_8174b063(self.enemylastseenpos)) {
         self.bot.var_9931c7dc = self function_e958519b();
     } else if (self function_b21ea513()) {
@@ -80,7 +80,7 @@ function private function_37d408b6(traversal) {
     if (!isdefined(traversal)) {
         return 0;
     }
-    return traversal.type == #"ladder" || traversal.type == #"jump" || traversal.var_c15a5a25 >= 50;
+    return traversal.type == #"ladder" || traversal.type == #"jump" || traversal.deltaz >= 50;
 }
 
 // Namespace namespace_87549638/namespace_87549638
@@ -309,8 +309,8 @@ function private function_eb94f73e() {
 // Size: 0xfc
 function private function_23401de9() {
     traversal = self.bot.traversal;
-    var_9c688a0c = vectordot(self.origin - traversal.var_15dca465, traversal.normal);
-    if (var_9c688a0c > 15) {
+    enddist = vectordot(self.origin - traversal.var_15dca465, traversal.normal);
+    if (enddist > 15) {
         endpoint = traversal.end_position + (0, 0, self getplayerviewheight());
         self function_b5460039(endpoint, #"hash_7d35f3d861b9ec10", (1, 1, 0));
     } else {

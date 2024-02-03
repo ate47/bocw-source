@@ -612,16 +612,16 @@ function function_a514a080(player) {
     self endon(#"death", #"ac130_shutdown", #"hash_70be1b524e0ab533");
     player endon(#"disconnect");
     self.var_7917e5a1 = 1;
-    var_9f057f72 = 1;
+    turretindex = 1;
     while (1) {
         target = function_7ec0bdc(player);
         if (isalive(target)) {
             self turretsettarget(0, target);
-            weapon = self seatgetweapon(var_9f057f72);
-            self vehicle_ai::fire_for_rounds(weapon.clipsize, var_9f057f72, target);
-            var_9f057f72++;
-            if (var_9f057f72 > 3) {
-                var_9f057f72 = 1;
+            weapon = self seatgetweapon(turretindex);
+            self vehicle_ai::fire_for_rounds(weapon.clipsize, turretindex, target);
+            turretindex++;
+            if (turretindex > 3) {
+                turretindex = 1;
                 wait(2);
             }
         }

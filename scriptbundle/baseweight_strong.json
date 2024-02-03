@@ -1,9 +1,9 @@
 {
-    "var_a9fb697a": "baseweight_strong_friendly",
+    "friendlyinfluencer": "baseweight_strong_friendly",
     "var_922067c4": "scriptbundle",
     "var_ee89b13f": "baseweight_strong",
     "type": "spawnfilter",
     "vmtype": "both",
     "name": "baseweight_strong",
-    "var_39a3f6e1": "baseweight_strong_enemy"
+    "enemyinfluencer": "baseweight_strong_enemy"
 }

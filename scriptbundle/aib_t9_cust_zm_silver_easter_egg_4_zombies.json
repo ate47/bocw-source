@@ -14,7 +14,7 @@
             ],
             "model": "#spawner_zm_zombie_silver",
             "type": "actor",
-            "var_e2360d85": 1,
+            "forcenocull": 1,
             "var_db255011": 1,
             "name": "zombie1",
             "removeweapon": 1
@@ -33,7 +33,7 @@
             ],
             "model": "#spawner_zm_zombie_silver",
             "type": "actor",
-            "var_e2360d85": 1,
+            "forcenocull": 1,
             "var_db255011": 1,
             "name": "prop 1",
             "removeweapon": 1
@@ -52,7 +52,7 @@
             ],
             "model": "#spawner_zm_zombie_silver",
             "type": "actor",
-            "var_e2360d85": 1,
+            "forcenocull": 1,
             "var_db255011": 1,
             "name": "prop 3",
             "removeweapon": 1
@@ -71,7 +71,7 @@
             ],
             "model": "#spawner_zm_zombie_silver",
             "type": "actor",
-            "var_e2360d85": 1,
+            "forcenocull": 1,
             "var_db255011": 1,
             "name": "prop 4",
             "removeweapon": 1

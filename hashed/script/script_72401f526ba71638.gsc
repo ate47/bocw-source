@@ -177,14 +177,14 @@ function function_94d18799(var_40e28ba) {
 // Checksum 0x9304cf11, Offset: 0xf30
 // Size: 0x100
 function function_e41a11bf(var_40e28ba, tier) {
-    var_88bc8e7e = function_94d18799(var_40e28ba);
+    base_name = function_94d18799(var_40e28ba);
     /#
         var_8c590502 = isdefined(getgametypesetting(#"hash_3c2c78e639bfd3c6")) ? getgametypesetting(#"hash_3c2c78e639bfd3c6") : 0;
         if (var_8c590502 > 0) {
             tier = var_8c590502;
         }
     #/
-    var_50846129 = level.var_d98fc25e[var_88bc8e7e];
+    var_50846129 = level.var_d98fc25e[base_name];
     if (!isdefined(var_50846129)) {
         return #"weapon_null";
     }

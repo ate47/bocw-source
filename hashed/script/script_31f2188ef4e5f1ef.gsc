@@ -166,7 +166,7 @@ LOC_0000016c:
         var_486f31cd = 108;
     }
     if (!isdefined(var_e9f7aace)) {
-        var_2038a0d5 = 1;
+        freqpitch = 1;
     }
     thread function_d48e9844(var_486f31cd, var_e9f7aace);
 }

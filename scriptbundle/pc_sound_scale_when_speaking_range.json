@@ -2,12 +2,12 @@
     "option_dependencies": [
         {
             "var_1643d946": "0",
-            "var_6825bdb": "#pc_sound_scale_when_speaking_enable",
+            "optionname": "#pc_sound_scale_when_speaking_enable",
             "operator": "=="
         },
         {
             "var_1643d946": "1",
-            "var_6825bdb": "#voice_chat_enable",
+            "optionname": "#voice_chat_enable",
             "operator": "=="
         }
     ],

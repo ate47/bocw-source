@@ -12,7 +12,7 @@ function function_f45ee99d() {
         return;
     }
     level.radiation = {};
-    level.radiation.var_5e47ec2b = [];
+    level.radiation.levels = [];
     level.radiation.sickness = [];
 }
 
@@ -31,7 +31,7 @@ function function_df1ecefe(maxhealth, var_1263c72f, var_9653dad7 = 0, var_21a592
     radiationlevel.var_e8f27947 = int(var_1263c72f * 1000);
     radiationlevel.var_9653dad7 = var_9653dad7;
     radiationlevel.var_21a59205 = var_21a59205;
-    level.radiation.var_5e47ec2b[level.radiation.var_5e47ec2b.size] = radiationlevel;
+    level.radiation.levels[level.radiation.levels.size] = radiationlevel;
 }
 
 // Namespace namespace_956bd4dd/namespace_956bd4dd
@@ -49,13 +49,13 @@ function function_1cb3c52d(name, radiationlevel, duration, var_4267b283 = #"hash
         #/
         return;
     }
-    if (level.radiation.var_5e47ec2b.size <= radiationlevel) {
+    if (level.radiation.levels.size <= radiationlevel) {
         /#
             assertmsg("<unknown string>" + radiationlevel + "<unknown string>");
         #/
         return;
     }
-    radiation = level.radiation.var_5e47ec2b[radiationlevel];
+    radiation = level.radiation.levels[radiationlevel];
     if (isdefined(radiation.sickness[name])) {
         /#
             assertmsg("<unknown string>" + name + "<unknown string>");
@@ -73,7 +73,7 @@ function function_1cb3c52d(name, radiationlevel, duration, var_4267b283 = #"hash
 // Checksum 0xe8ae75b4, Offset: 0x3f0
 // Size: 0x94
 function function_6b384c0f(radiationlevel, sickness) {
-    var_7720923c = level.radiation.var_5e47ec2b[radiationlevel];
+    var_7720923c = level.radiation.levels[radiationlevel];
     keys = getarraykeys(var_7720923c.sickness);
     for (index = 0; index < keys.size; index++) {
         if (keys[index] == sickness) {

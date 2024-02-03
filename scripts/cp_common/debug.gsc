@@ -775,11 +775,11 @@ function vecscale(vec, scalar) {
 // Size: 0x10c
 function function_e05e43c3(origin) {
     /#
-        var_1315834e = vectornormalize(origin - self getshootatpos());
+        normalvec = vectornormalize(origin - self getshootatpos());
         var_b9593434 = vectornormalize(origin - vectorscale((0, 0, 1), 24) - self getshootatpos());
-        var_c2a09695 = vectordot(var_1315834e, var_b9593434);
+        var_c2a09695 = vectordot(normalvec, var_b9593434);
         var_8194ae5a = anglestoforward(self getplayerangles());
-        vectordot = vectordot(var_8194ae5a, var_1315834e);
+        vectordot = vectordot(var_8194ae5a, normalvec);
         if (vectordot > var_c2a09695) {
             return 1;
         } else {
@@ -902,13 +902,13 @@ function function_745ba438() {
         level.var_b64806bf = [];
         waittillframeend();
         waittillframeend();
-        var_955de774 = getarraykeys(level.var_cb586b64);
-        for (i = 0; i < var_955de774.size; i++) {
-            function_f3405436(var_955de774[i]);
+        animnames = getarraykeys(level.var_cb586b64);
+        for (i = 0; i < animnames.size; i++) {
+            function_f3405436(animnames[i]);
         }
-        var_955de774 = getarraykeys(level.var_506f1d55);
-        for (i = 0; i < var_955de774.size; i++) {
-            function_38439dea(var_955de774[i]);
+        animnames = getarraykeys(level.var_506f1d55);
+        for (i = 0; i < animnames.size; i++) {
+            function_38439dea(animnames[i]);
         }
     #/
 }
@@ -1071,11 +1071,11 @@ function function_b03ecdf3() {
                 var_d357ff0e = level.var_b19c1dfd[i];
                 var_d357ff0e.var_cdbf6838 = (0.25, 1, 0.5);
                 difference = vectornormalize(var_d357ff0e.origin + vectorscale((0, 0, 1), 40) - players[0].origin + vectorscale((0, 0, 1), 55));
-                var_a25004a9 = vectordot(forward, difference);
-                if (var_a25004a9 < dot) {
+                newdot = vectordot(forward, difference);
+                if (newdot < dot) {
                     continue;
                 }
-                dot = var_a25004a9;
+                dot = newdot;
                 level.var_972b7c53 = var_d357ff0e;
             }
         }
@@ -1340,22 +1340,22 @@ function function_eaaa729a(file) {
         fprintln(file, "<unknown string>");
         fprintln(file, "<unknown string>");
         fprintln(file, tab + "<unknown string>");
-        var_955de774 = getarraykeys(level.var_b64806bf);
-        for (i = 0; i < var_955de774.size; i++) {
-            var_60f23c42 = getarraykeys(level.var_b64806bf[var_955de774[i]]);
+        animnames = getarraykeys(level.var_b64806bf);
+        for (i = 0; i < animnames.size; i++) {
+            var_60f23c42 = getarraykeys(level.var_b64806bf[animnames[i]]);
             for (p = 0; p < var_60f23c42.size; p++) {
                 var_6d60fb23 = var_60f23c42[p];
-                notetracks = getarraykeys(level.var_b64806bf[var_955de774[i]][var_6d60fb23]);
+                notetracks = getarraykeys(level.var_b64806bf[animnames[i]][var_6d60fb23]);
                 for (z = 0; z < notetracks.size; z++) {
                     notetrack = notetracks[z];
-                    if (!function_564b1bcf(var_955de774[i], var_6d60fb23, notetrack)) {
+                    if (!function_564b1bcf(animnames[i], var_6d60fb23, notetrack)) {
                         continue;
                     }
-                    alias = level.var_b64806bf[var_955de774[i]][var_6d60fb23][notetrack][#"soundalias"];
+                    alias = level.var_b64806bf[animnames[i]][var_6d60fb23][notetrack][#"soundalias"];
                     if (notetrack == "<unknown string>" + var_6d60fb23) {
-                        fprintln(file, tab + "<unknown string>" + function_4414bb5a(var_955de774[i]) + "<unknown string>" + function_4414bb5a(var_6d60fb23) + "<unknown string>" + function_4414bb5a(alias) + "<unknown string>");
+                        fprintln(file, tab + "<unknown string>" + tostr(animnames[i]) + "<unknown string>" + tostr(var_6d60fb23) + "<unknown string>" + tostr(alias) + "<unknown string>");
                     } else {
-                        fprintln(file, tab + "<unknown string>" + function_4414bb5a(var_955de774[i]) + "<unknown string>" + function_4414bb5a(var_6d60fb23) + "<unknown string>" + function_4414bb5a(notetrack) + "<unknown string>" + function_4414bb5a(alias) + "<unknown string>");
+                        fprintln(file, tab + "<unknown string>" + tostr(animnames[i]) + "<unknown string>" + tostr(var_6d60fb23) + "<unknown string>" + tostr(notetrack) + "<unknown string>" + tostr(alias) + "<unknown string>");
                     }
                     println("<unknown string>" + alias + "<unknown string>" + notetrack);
                 }
@@ -1392,7 +1392,7 @@ function function_f48a99b9() {
                 fprintln(file, "<unknown string>");
             }
             foreach (var_1f53424f in level.var_31c87253) {
-                fprintln(file, var_1f53424f.var_8c76324 + "<unknown string>" + var_1f53424f.var_f93778dc + "<unknown string>" + var_1f53424f.var_d8daf812 + "<unknown string>" + var_1f53424f.var_23ba749);
+                fprintln(file, var_1f53424f.var_8c76324 + "<unknown string>" + var_1f53424f.icount + "<unknown string>" + var_1f53424f.var_d8daf812 + "<unknown string>" + var_1f53424f.var_23ba749);
             }
             fprintln(file, "<unknown string>");
             iprintlnbold("<unknown string>" + filename);
@@ -1406,19 +1406,19 @@ function function_f48a99b9() {
 // Params 1, eflags: 0x0
 // Checksum 0xc4bd0071, Offset: 0x5448
 // Size: 0x9e
-function function_4414bb5a(str) {
+function tostr(str) {
     /#
-        var_bd930832 = "<unknown string>";
+        newstr = "<unknown string>";
         for (i = 0; i < str.size; i++) {
             if (str[i] == "<unknown string>") {
-                var_bd930832 = var_bd930832 + "<unknown string>";
-                var_bd930832 = var_bd930832 + "<unknown string>";
+                newstr = newstr + "<unknown string>";
+                newstr = newstr + "<unknown string>";
             } else {
-                var_bd930832 = var_bd930832 + str[i];
+                newstr = newstr + str[i];
             }
         }
-        var_bd930832 = var_bd930832 + "<unknown string>";
-        return var_bd930832;
+        newstr = newstr + "<unknown string>";
+        return newstr;
     #/
 }
 
@@ -1866,30 +1866,30 @@ function function_16b58d7f() {
                     var_a4e8803e = ai geteye();
                     if (sighttracepassed(playereye, var_a4e8803e, 0, player) && !isvehicle(ai)) {
                         dist = distance(playereye, var_a4e8803e);
-                        var_69b566f3 = (1, 1, 1);
+                        drawcolor = (1, 1, 1);
                         var_751b53d5 = "<unknown string>";
                         engagedistmin = ai.engagemindist;
                         var_686e2a66 = ai.engageminfalloffdist;
                         var_109383f6 = ai.engagemaxfalloffdist;
                         engagedistmax = ai.engagemaxdist;
                         if (dist >= engagedistmin && dist <= engagedistmax) {
-                            var_69b566f3 = (0, 1, 0);
+                            drawcolor = (0, 1, 0);
                             var_751b53d5 = "<unknown string>";
                         } else if (dist < engagedistmin && dist >= var_686e2a66) {
-                            var_69b566f3 = (1, 1, 0);
+                            drawcolor = (1, 1, 0);
                             var_751b53d5 = "<unknown string>";
                         } else if (dist > engagedistmax && dist <= var_109383f6) {
-                            var_69b566f3 = (1, 1, 0);
+                            drawcolor = (1, 1, 0);
                             var_751b53d5 = "<unknown string>";
                         } else if (dist > var_109383f6) {
-                            var_69b566f3 = (1, 0, 0);
+                            drawcolor = (1, 0, 0);
                             var_751b53d5 = "<unknown string>";
                         } else if (dist < var_686e2a66) {
-                            var_69b566f3 = (1, 0, 0);
+                            drawcolor = (1, 0, 0);
                             var_751b53d5 = "<unknown string>";
                         }
                         scale = dist / 1000;
-                        print3d(ai.origin + vectorscale((0, 0, 1), 67), var_751b53d5 + "<unknown string>" + dist, var_69b566f3, 1, scale);
+                        print3d(ai.origin + vectorscale((0, 0, 1), 67), var_751b53d5 + "<unknown string>" + dist, drawcolor, 1, scale);
                     }
                 }
             }
@@ -2102,8 +2102,8 @@ function function_feb182a2() {
     /#
         guys = getaiarray();
         for (i = 0; i < guys.size; i++) {
-            var_88da7656 = guys[i].engageminfalloffdist + "<unknown string>" + guys[i].engagemindist + "<unknown string>" + guys[i].engagemaxdist + "<unknown string>" + guys[i].engagemaxfalloffdist;
-            recordenttext(var_88da7656, guys[i], level.var_99e12d63[guys[i].team], "<unknown string>");
+            diststring = guys[i].engageminfalloffdist + "<unknown string>" + guys[i].engagemindist + "<unknown string>" + guys[i].engagemaxdist + "<unknown string>" + guys[i].engagemaxfalloffdist;
+            recordenttext(diststring, guys[i], level.var_99e12d63[guys[i].team], "<unknown string>");
         }
     #/
 }

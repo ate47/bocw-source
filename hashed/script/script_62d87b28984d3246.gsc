@@ -2,9 +2,9 @@
 #using scripts\core_common\util_shared.gsc;
 #using script_35ae72be7b4fec10;
 
-#namespace namespace_aa1fe617;
+#namespace warning_message;
 
-// Namespace namespace_aa1fe617/namespace_aa1fe617
+// Namespace warning_message/warning_message
 // Params 4, eflags: 0x2 linked
 // Checksum 0x9a957734, Offset: 0x90
 // Size: 0x224
@@ -34,7 +34,7 @@ function create(message, var_400e244b, pulse, endons) {
     remove();
 }
 
-// Namespace namespace_aa1fe617/namespace_aa1fe617
+// Namespace warning_message/warning_message
 // Params 1, eflags: 0x0
 // Checksum 0x91309edf, Offset: 0x2c0
 // Size: 0x54
@@ -44,7 +44,7 @@ function set_message(message) {
     }
 }
 
-// Namespace namespace_aa1fe617/namespace_aa1fe617
+// Namespace warning_message/warning_message
 // Params 1, eflags: 0x2 linked
 // Checksum 0xc3b075e6, Offset: 0x320
 // Size: 0xac
@@ -58,7 +58,7 @@ function function_b4af2e7(pulse) {
     }
 }
 
-// Namespace namespace_aa1fe617/namespace_aa1fe617
+// Namespace warning_message/warning_message
 // Params 1, eflags: 0x2 linked
 // Checksum 0xa89a8ada, Offset: 0x3d8
 // Size: 0x4c

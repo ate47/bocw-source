@@ -40,7 +40,7 @@ function function_9a7edbff(origin, magnitude) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x13b5a664, Offset: 0x338
 // Size: 0x1f4
-function function_706a56ae(var_ed6db408, magnitude) {
+function ragdoll_launch(var_ed6db408, magnitude) {
     if (!(isdefined(self) && isdefined(magnitude)) || is_true(self.var_873d65bd)) {
         return;
     }

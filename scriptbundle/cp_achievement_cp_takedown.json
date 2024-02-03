@@ -1,7 +1,7 @@
 {
-    "var_bc83573f": [
+    "filters": [
         {
-            "var_bc83573f": "#campaign"
+            "filters": "#campaign"
         }
     ],
     "description": "#hash_c91ffc6c5e0b16b",

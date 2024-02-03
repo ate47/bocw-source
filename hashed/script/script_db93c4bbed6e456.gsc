@@ -127,9 +127,9 @@ function is_falling(position) {
 // Params 11, eflags: 0x2 linked
 // Checksum 0xabd776c1, Offset: 0x8a8
 // Size: 0x8c4
-function function_33141024(vdir, var_78efa1b4, var_c69fe125, var_eebc8ec0, var_3cbc1198, var_d7e15204, var_f2499291, var_dda415f2, lookdir, var_a571008b, var_eea7b52e) {
+function function_33141024(vdir, tweentime, var_c69fe125, var_eebc8ec0, var_3cbc1198, var_d7e15204, var_f2499291, var_dda415f2, lookdir, var_a571008b, var_eea7b52e) {
     self endon(#"disconnect", #"hash_eb0317ca3976bf9");
-    var_7c6308ad = getdvarint(#"hash_7dce5a6d3fbfa376", 2);
+    epsilon = getdvarint(#"hash_7dce5a6d3fbfa376", 2);
     var_5458e746 = self getplayercamerapos();
     position = var_5458e746;
     angles = self getplayerangles();
@@ -183,7 +183,7 @@ function function_33141024(vdir, var_78efa1b4, var_c69fe125, var_eebc8ec0, var_3
                 var_8abc8992 = 1;
             }
             new_position = position - vectorscale(forwardvec, var_fdb8844a);
-            var_d2ca9e9b = position - vectorscale(forwardvec, var_fdb8844a + var_7c6308ad);
+            var_d2ca9e9b = position - vectorscale(forwardvec, var_fdb8844a + epsilon);
             if (function_b7f367ed(position, var_d2ca9e9b)) {
                 position = new_position;
             } else {
@@ -198,7 +198,7 @@ function function_33141024(vdir, var_78efa1b4, var_c69fe125, var_eebc8ec0, var_3
                 var_39a26763 = 1;
             }
             new_position = (position[0], position[1], position[2] - var_35187b11);
-            var_d2ca9e9b = (position[0], position[1], position[2] - var_35187b11 - var_7c6308ad);
+            var_d2ca9e9b = (position[0], position[1], position[2] - var_35187b11 - epsilon);
             if (function_b7f367ed(position, var_d2ca9e9b)) {
                 position = new_position;
             } else {
@@ -212,10 +212,10 @@ function function_33141024(vdir, var_78efa1b4, var_c69fe125, var_eebc8ec0, var_3
     self cameraactivate(1);
     is_falling = is_falling(position);
     if (is_true(var_a571008b) || !is_true(is_falling)) {
-        if (var_78efa1b4 > 0) {
-            self startcameratween(var_78efa1b4, 1);
+        if (tweentime > 0) {
+            self startcameratween(tweentime, 1);
             self camerasetposition(position, angles);
-            wait(var_78efa1b4);
+            wait(tweentime);
         } else {
             thread function_992fb1fd(position, angles, var_eea7b52e);
         }
@@ -223,7 +223,7 @@ function function_33141024(vdir, var_78efa1b4, var_c69fe125, var_eebc8ec0, var_3
     if (is_true(is_falling)) {
         player_speed = self getvelocity()[2];
         var_eb5d6347 = length(position - var_5458e746);
-        var_40fa243f = var_eb5d6347 * var_78efa1b4;
+        var_40fa243f = var_eb5d6347 * tweentime;
         player_speed = max(player_speed, var_40fa243f);
         var_63bee101 = getdvarint(#"hash_382786cbe040485d", -2000);
         var_abbbc8f5 = getdvarint(#"hash_348a9bee991e8abf", 500);

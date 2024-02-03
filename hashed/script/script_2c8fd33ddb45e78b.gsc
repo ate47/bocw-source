@@ -52,7 +52,7 @@ function function_7bd1ca93(localclientnum, str_targetname, player) {
         }
         if (var_99bf2e73.var_bdb97676.var_2b372cf6 === #"audiolog") {
             switch (var_99bf2e73.var_bdb97676.var_fd5d9570) {
-            case #"hash_5ad2dea4c296de59":
+            case #"maxis":
                 var_99bf2e73.var_bdb97676 setmodel(#"hash_4c7e76f2c17678e3");
                 var_99bf2e73.var_bdb97676.str_client_scene = #"p9_zm_ndu_audiolog_player_bundle";
                 break;

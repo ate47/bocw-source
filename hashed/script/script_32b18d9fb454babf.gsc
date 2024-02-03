@@ -143,8 +143,8 @@ function function_74c76da9(destination) {
 // Size: 0x2b4
 function private function_cef826da(destination) {
     var_df4a4d76 = destination.locations;
-    if (isdefined(level.var_7d45d0d4.var_994ca8b9)) {
-        var_df4a4d76 = arraysortclosest(var_df4a4d76, level.var_7d45d0d4.var_994ca8b9.origin);
+    if (isdefined(level.var_7d45d0d4.nextspawn)) {
+        var_df4a4d76 = arraysortclosest(var_df4a4d76, level.var_7d45d0d4.nextspawn.origin);
     }
     foreach (location in var_df4a4d76) {
         var_7ca1bc80 = location.instances[#"explore_chests_large"];

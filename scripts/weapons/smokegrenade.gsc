@@ -135,10 +135,10 @@ function smokedetonate(owner, statweapon, smokeweapon, position, radius, effectl
                     continue;
                 }
                 if (var_96138b54.var_6f327e4a < var_d6b53fbd) {
-                    owner.var_e0e2e070[key] = #"hash_6e7f9aad45ca109e";
+                    owner.var_e0e2e070[key] = #"stale";
                 }
             }
-            arrayremovevalue(owner.var_e0e2e070, #"hash_6e7f9aad45ca109e");
+            arrayremovevalue(owner.var_e0e2e070, #"stale");
             var_86142949 = {#position:position, #var_6f327e4a:now};
             if (!isdefined(owner.var_e0e2e070)) {
                 owner.var_e0e2e070 = [];
@@ -341,8 +341,8 @@ function function_65fc89ee(*weapon) {
     foreach (trigger in level.smoke_grenade_triggers) {
         if (self istouching(trigger)) {
             var_125b3ffe = function_a3f6cdac(function_36d48dce(trigger.smokeweapon));
-            var_6f320631 = isdefined(self gettagorigin("j_head")) ? self gettagorigin("j_head") : self.origin;
-            distsq = distance2dsquared(trigger.origin, var_6f320631);
+            headorigin = isdefined(self gettagorigin("j_head")) ? self gettagorigin("j_head") : self.origin;
+            distsq = distance2dsquared(trigger.origin, headorigin);
             if (distsq < var_125b3ffe) {
                 return 1;
             }

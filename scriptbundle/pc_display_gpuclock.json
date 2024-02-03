@@ -22,7 +22,7 @@
     "name": "pc_display_gpuclock",
     "displayname": "#hash_3ee46084115b2d22",
     "var_500458ac": 10,
-    "var_926d1be9": 0.01,
+    "decimalplace": 0.01,
     "var_66faec87": 2,
     "statname": "com_show_gpu_clock",
     "var_8b80386": 1,

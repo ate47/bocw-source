@@ -260,15 +260,15 @@ function function_77fde59c(var_5da09c55) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x605d81e9, Offset: 0xef8
 // Size: 0x1e4
-function function_5abc3f1f(var_df401071) {
-    player = var_df401071.activator;
+function function_5abc3f1f(trigger_info) {
+    player = trigger_info.activator;
     if (!isplayer(player)) {
         return;
     }
     if (player function_e128a831()) {
         return;
     }
-    if (!player function_77d8d4fc()) {
+    if (!player isinair()) {
         return;
     }
     velocity = player getvelocity();
@@ -341,8 +341,8 @@ function function_f8e9f7d7(player, var_5da09c55) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x835110f8, Offset: 0x1370
 // Size: 0x184
-function zipline_use(var_df401071) {
-    player = var_df401071.activator;
+function zipline_use(trigger_info) {
+    player = trigger_info.activator;
     var_5da09c55 = self.var_5da09c55;
     if (!function_f8e9f7d7(player, var_5da09c55)) {
         return;

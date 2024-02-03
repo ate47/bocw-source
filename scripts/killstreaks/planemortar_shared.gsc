@@ -181,9 +181,9 @@ function function_fd2f978f(params, position, team, yaw, killstreakid) {
     }
     var_b0490eb9 = getheliheightlockheight(position);
     trace = groundtrace(position + (0, 0, var_b0490eb9), position + (0, 0, var_b0490eb9 * -1), 1, undefined);
-    var_c5e0ca9e = trace[#"position"];
-    level influencers::create_enemy_influencer("artillery", var_c5e0ca9e, team);
-    self thread function_83e61117(var_c5e0ca9e, yaw, killstreakid);
+    hitposition = trace[#"position"];
+    level influencers::create_enemy_influencer("artillery", hitposition, team);
+    self thread function_83e61117(hitposition, yaw, killstreakid);
 }
 
 // Namespace planemortar/planemortar_shared
@@ -338,9 +338,9 @@ function function_77ed0e9b(var_5496c504, fxanim) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0xdeca253b, Offset: 0x17d0
 // Size: 0xd4
-function function_83e61117(position, var_8bcd2218, killstreakid) {
-    yaw = var_8bcd2218 + randomfloatrange(-1, 1);
-    var_81c41c6e = util::spawn_model("tag_origin", position, (0, var_8bcd2218, 0));
+function function_83e61117(position, baseyaw, killstreakid) {
+    yaw = baseyaw + randomfloatrange(-1, 1);
+    var_81c41c6e = util::spawn_model("tag_origin", position, (0, baseyaw, 0));
     var_81c41c6e.owner = self;
     var_81c41c6e.killstreakid = killstreakid;
     var_81c41c6e scene::play(#"p9_fxanim_mp_planemortar_01_bundle");

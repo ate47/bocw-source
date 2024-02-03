@@ -167,17 +167,17 @@ function function_144d0392(event, player, victim, *descvalue, var_dbaa74e2) {
     }
     if (var_89b2d9e4 && !level.gameended && isdefined(label)) {
         if (isdefined(descvalue.var_14e19734)) {
-            var_66c1748e = descvalue.var_14e19734;
+            actor_name = descvalue.var_14e19734;
         } else if (isactor(descvalue)) {
-            var_66c1748e = descvalue function_7f0363e8(1);
+            actor_name = descvalue function_7f0363e8(1);
         } else if (ishash(descvalue.var_c7e611ea)) {
-            var_66c1748e = descvalue.var_c7e611ea;
-        } else if (ishash(descvalue.var_66c1748e)) {
-            var_66c1748e = descvalue.var_66c1748e;
+            actor_name = descvalue.var_c7e611ea;
+        } else if (ishash(descvalue.actor_name)) {
+            actor_name = descvalue.actor_name;
         }
         var_3fb48d9c = isdefined(var_dbaa74e2) && is_true(var_dbaa74e2.var_3fb48d9c);
-        if (ishash(var_66c1748e)) {
-            victim luinotifyevent(#"score_event", 5, label, var_89b2d9e4, var_66c1748e, -1, var_3fb48d9c);
+        if (ishash(actor_name)) {
+            victim luinotifyevent(#"score_event", 5, label, var_89b2d9e4, actor_name, -1, var_3fb48d9c);
         } else {
             victim luinotifyevent(#"score_event", 5, label, var_89b2d9e4, #"", -1, var_3fb48d9c);
         }

@@ -182,16 +182,16 @@ function function_5160bb1e(killstreaktype) {
             var_e31d6cb1 = position;
         } else {
             position = self.origin;
-            var_6ec39c6f = isdefined(level.var_e8fd1435) ? level.var_e8fd1435 : 0;
+            clampdistance = isdefined(level.var_e8fd1435) ? level.var_e8fd1435 : 0;
             /#
                 var_9972a46c = getdvarint(#"hash_3214d6c00531a24f", 0);
                 if (var_9972a46c) {
-                    var_6ec39c6f = var_9972a46c;
+                    clampdistance = var_9972a46c;
                 }
             #/
-            if (var_6ec39c6f) {
+            if (clampdistance) {
                 var_ceaada96 = distance2d(position, level.mapcenter);
-                if (var_ceaada96 > var_6ec39c6f) {
+                if (var_ceaada96 > clampdistance) {
                     var_1ce870a0 = vectornormalize(level.mapcenter - position);
                     var_1ce870a0 = (var_1ce870a0[0], var_1ce870a0[1], 0);
                     var_a338f16a = isdefined(level.var_782b91f2) ? level.var_782b91f2 : 1;
@@ -239,13 +239,13 @@ function function_5160bb1e(killstreaktype) {
 // Checksum 0x36dbd046, Offset: 0x16c8
 // Size: 0x1b8
 function private function_26e7fb55(var_d44b8c3e, var_1838351, startangles) {
-    var_4b25f3c8 = anglestoforward(startangles);
-    var_4b25f3c8 = (var_4b25f3c8[0], var_4b25f3c8[1], 0);
+    startforward = anglestoforward(startangles);
+    startforward = (startforward[0], startforward[1], 0);
     var_51cabd75 = 180 / 30;
     var_c8e01926 = undefined;
     var_37db735d = [];
     var_51c6fb78 = 0;
-    forward = var_4b25f3c8;
+    forward = startforward;
     angles = startangles;
     var_f4f791a2 = startangles[1];
     while (var_51c6fb78 < var_51cabd75) {

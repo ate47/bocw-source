@@ -260,10 +260,10 @@ function badplace_think(badplace) {
     if (isdefined(badplace.radius)) {
         badplace_box("badplace" + level.badplaces, -1, badplace.origin, badplace.radius, "all");
     } else {
-        var_d5d73152 = badplace getpointinbounds(1, 1, 1);
-        var_c7691d56 = badplace getpointinbounds(-1, -1, -1);
+        aabb_max = badplace getpointinbounds(1, 1, 1);
+        aabb_min = badplace getpointinbounds(-1, -1, -1);
         var_9a490e0c = badplace getpointinbounds(0, 0, 0);
-        var_856c0347 = (var_d5d73152 - var_c7691d56) * 0.5;
+        var_856c0347 = (aabb_max - aabb_min) * 0.5;
         badplace_box("badplace" + level.badplaces, -1, var_9a490e0c, var_856c0347, "all");
     }
 }

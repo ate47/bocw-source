@@ -2334,9 +2334,9 @@ function get_earliest_claim_player() {
     #/
     earliestplayer = self.claimplayer;
     user = self.var_a4926509;
-    if (self.var_bac5b0cf[user].touching.players.size > 0) {
+    if (self.users[user].touching.players.size > 0) {
         earliesttime = undefined;
-        foreach (touchdata in self.var_bac5b0cf[user].touching.players) {
+        foreach (touchdata in self.users[user].touching.players) {
             if (!isdefined(earliesttime) || touchdata.starttime < earliesttime) {
                 earliestplayer = touchdata.player;
                 earliesttime = touchdata.starttime;
@@ -2422,17 +2422,17 @@ function private function_72307b09(progress) {
         return;
     }
     user = self.var_a4926509;
-    if (!isdefined(user) || !isdefined(self.var_bac5b0cf[user]) || !isdefined(self.var_bac5b0cf[user].contributors)) {
+    if (!isdefined(user) || !isdefined(self.users[user]) || !isdefined(self.users[user].contributors)) {
         return;
     }
     if (0 > progress) {
-        foreach (contributor in self.var_bac5b0cf[user].contributors) {
+        foreach (contributor in self.users[user].contributors) {
             contributor.contribution = math::clamp(contributor.contribution + progress, 0, self.usetime);
         }
     } else {
-        keys = getarraykeys(self.var_bac5b0cf[user].touching.players);
+        keys = getarraykeys(self.users[user].touching.players);
         for (i = 0; i < keys.size; i++) {
-            contributor = self.var_bac5b0cf[user].contributors[keys[i]];
+            contributor = self.users[user].contributors[keys[i]];
             /#
                 assert(isdefined(contributor));
             #/
@@ -2974,7 +2974,7 @@ function trigger_touch_think(object) {
     }
     if (is_true(self.var_17bc9194)) {
         object.curprogress = object.usetime + 1;
-        object.var_bac5b0cf[object.var_a4926509].touching.num = 1;
+        object.users[object.var_a4926509].touching.num = 1;
         self.var_17bc9194 = undefined;
         while (object.curprogress >= 1) {
             waitframe(1);
@@ -3662,7 +3662,7 @@ function function_e887a9d0(time) {
 // Checksum 0x4d450fdc, Offset: 0xc320
 // Size: 0x1a
 function function_3dc7107c(var_aad2b0a1) {
-    self.var_2084ae03 = var_aad2b0a1;
+    self.maxusers = var_aad2b0a1;
 }
 
 // Namespace gameobjects/gameobjects_shared
@@ -4746,12 +4746,12 @@ function function_c6fa00c2() {
     contributors = [];
     var_1dbb2b2b = [];
     user = function_167d3a40();
-    if (isdefined(self.var_bac5b0cf[user]) && isdefined(self.var_bac5b0cf[user].contributors) && self.var_bac5b0cf[user].contributors.size > 0) {
-        var_1dbb2b2b = self.var_bac5b0cf[user].contributors;
+    if (isdefined(self.users[user]) && isdefined(self.users[user].contributors) && self.users[user].contributors.size > 0) {
+        var_1dbb2b2b = self.users[user].contributors;
     } else {
         user = self.var_a4926509;
-        if (isdefined(self.var_bac5b0cf[user]) && isdefined(self.var_bac5b0cf[user].contributors) && self.var_bac5b0cf[user].contributors.size > 0) {
-            var_1dbb2b2b = self.var_bac5b0cf[user].contributors;
+        if (isdefined(self.users[user]) && isdefined(self.users[user].contributors) && self.users[user].contributors.size > 0) {
+            var_1dbb2b2b = self.users[user].contributors;
         }
     }
     foreach (contribution in var_1dbb2b2b) {

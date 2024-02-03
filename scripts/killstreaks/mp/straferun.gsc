@@ -166,18 +166,18 @@ function function_db619336(hardpointtype, killstreak_id, location) {
         bundle = killstreaks::get_script_bundle("straferun");
         var_8cdd01c7 = var_6be9958b + (var_b0490eb9 - var_6be9958b) * bundle.var_ff73e08c;
     }
-    var_8a05f7da = function_1e30e51e(hardpointtype, killstreak_id, location, #"hash_1dfff61be0d43f2d", "warthog_strafe1_a_start", "warthog_strafe1_pivot_a", (0, 0, 0), var_8cdd01c7);
-    if (!isdefined(var_8a05f7da)) {
+    planea = function_1e30e51e(hardpointtype, killstreak_id, location, #"hash_1dfff61be0d43f2d", "warthog_strafe1_a_start", "warthog_strafe1_pivot_a", (0, 0, 0), var_8cdd01c7);
+    if (!isdefined(planea)) {
         return 0;
     }
-    var_5b779abe = function_1e30e51e(hardpointtype, killstreak_id, location, #"hash_1dfff31be0d43a14", "warthog_strafe1_b_start", "warthog_strafe1_pivot_b", (200, 200, 50), var_8cdd01c7);
-    if (!isdefined(var_5b779abe)) {
-        var_8a05f7da thread explode();
+    planeb = function_1e30e51e(hardpointtype, killstreak_id, location, #"hash_1dfff31be0d43a14", "warthog_strafe1_b_start", "warthog_strafe1_pivot_b", (200, 200, 50), var_8cdd01c7);
+    if (!isdefined(planeb)) {
+        planea thread explode();
         return 0;
     }
-    var_8a05f7da.var_14494df9 = 1;
-    var_8a05f7da.var_3971b935 = var_5b779abe;
-    var_5b779abe.pilotindex = var_8a05f7da.pilotindex;
+    planea.var_14494df9 = 1;
+    planea.var_3971b935 = planeb;
+    planeb.pilotindex = planea.pilotindex;
     if (!isdefined(level.var_fda44f3d)) {
         level.var_fda44f3d = [];
     }
@@ -191,7 +191,7 @@ function function_db619336(hardpointtype, killstreak_id, location) {
     level.var_996bc142[killstreak_id] = 2;
     level.var_32934cf9[killstreak_id] = 0;
     self stats::function_e24eec31(getweapon(#"straferun"), #"used", 1);
-    var_8a05f7da thread function_51f5c557(self);
+    planea thread function_51f5c557(self);
     return 1;
 }
 
@@ -616,8 +616,8 @@ function function_ec6320ce(bundle, var_a6b1bda0) {
     self.strafing = 1;
     self.var_23493b54++;
     var_6a6f2e87 = self.killbox[#"origin"];
-    var_2ea5f1f3 = bullettrace((var_6a6f2e87[0], var_6a6f2e87[1], 5000), (var_6a6f2e87[0], var_6a6f2e87[1], -5000), 0, undefined, 0, 1);
-    var_6a6f2e87 = (var_6a6f2e87[0], var_6a6f2e87[1], var_2ea5f1f3[#"position"][2]);
+    trace_results = bullettrace((var_6a6f2e87[0], var_6a6f2e87[1], 5000), (var_6a6f2e87[0], var_6a6f2e87[1], -5000), 0, undefined, 0, 1);
+    var_6a6f2e87 = (var_6a6f2e87[0], var_6a6f2e87[1], trace_results[#"position"][2]);
     var_5455cb95 = anglestoforward((0, self.angles[1], 0));
     var_f6fe02b9 = vectorcross(var_5455cb95, (0, 0, 1));
     var_b01435f6 = vectorscale(var_5455cb95, isdefined(bundle.var_a2daa406) ? bundle.var_a2daa406 : 1000);

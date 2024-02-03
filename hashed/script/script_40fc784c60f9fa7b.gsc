@@ -845,13 +845,13 @@ function function_5fb139ea(*params) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x2bfc972c, Offset: 0x3738
 // Size: 0xa4
-function private function_5fb6b45c(var_23eccda7) {
-    if (isdefined(self.var_f7c3ca97) && self.var_f7c3ca97 == var_23eccda7) {
+function private function_5fb6b45c(presetname) {
+    if (isdefined(self.var_f7c3ca97) && self.var_f7c3ca97 == presetname) {
         return;
     }
     oldhealth = self.health;
-    self.var_f7c3ca97 = var_23eccda7;
-    self function_9e96f231(var_23eccda7);
+    self.var_f7c3ca97 = presetname;
+    self function_9e96f231(presetname);
     damage = self.healthdefault - oldhealth;
     if (damage > 0) {
         self dodamage(damage, self.origin);
@@ -875,17 +875,17 @@ function private function_b5220c3c(var_b6cebec7) {
 // Checksum 0x221e4a52, Offset: 0x3848
 // Size: 0x124
 function private function_92bb5a6f(vehicle, oldseatindex) {
-    if (!isdefined(vehicle.var_13c5ef5f)) {
+    if (!isdefined(vehicle.vehicleassembly)) {
         return;
     }
     if (isdefined(vehicle.var_260e3593) && isdefined(oldseatindex) && oldseatindex == vehicle.var_260e3593) {
         return;
     }
-    var_a90d69df = self function_1e0b31cf(vehicle.var_13c5ef5f);
+    var_a90d69df = self function_1e0b31cf(vehicle.vehicleassembly);
     if (isdefined(var_a90d69df) && var_a90d69df != #"") {
         vehicle function_5fb6b45c(var_a90d69df);
     }
-    var_b6cebec7 = self function_9497b7cb(vehicle.var_13c5ef5f);
+    var_b6cebec7 = self function_9497b7cb(vehicle.vehicleassembly);
     if (isdefined(var_b6cebec7) && var_b6cebec7 != #"") {
         vehicle function_b5220c3c(var_b6cebec7);
     }

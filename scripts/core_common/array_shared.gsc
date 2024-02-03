@@ -89,14 +89,14 @@ function remove_index(array, index, b_keep_keys) {
 // Size: 0x1ea
 function function_b1d17853(&array) {
     remove = [];
-    var_2c64587b = [];
+    checked = [];
     foreach (key, item in array) {
         if (!isdefined(item)) {
             add(remove, key);
         } else {
-            var_2c64587b[key] = 1;
+            checked[key] = 1;
             foreach (var_279de89e, var_cc6c9b0a in array) {
-                if (var_279de89e != key && var_cc6c9b0a == item && !isdefined(var_2c64587b[var_279de89e])) {
+                if (var_279de89e != key && var_cc6c9b0a == item && !isdefined(checked[var_279de89e])) {
                     add(remove, key);
                     break;
                 }

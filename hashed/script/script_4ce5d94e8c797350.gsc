@@ -716,7 +716,7 @@ function private function_cc254d94(params) {
 // Params 8, eflags: 0x2 linked
 // Checksum 0xa2dd43a0, Offset: 0x3fb0
 // Size: 0x360
-function create_challenge(var_38f795c7, var_6346e7b, var_f6e73813, weaponname, var_e09af826, var_3df4e085, var_205fe3e6, func_end) {
+function create_challenge(var_38f795c7, var_6346e7b, zonenames, weaponname, var_e09af826, var_3df4e085, var_205fe3e6, func_end) {
     if (is_true(level.var_6ff1cc71[var_38f795c7])) {
         return;
     }
@@ -726,7 +726,7 @@ function create_challenge(var_38f795c7, var_6346e7b, var_f6e73813, weaponname, v
             n_count = var_17dd988a;
         }
     }
-    s_challenge = {#var_3e17832:func_end, #var_c376bcd5:var_205fe3e6, #var_3df4e085:var_3df4e085, #var_8edbca81:weaponname, #var_4365b81b:var_e09af826, #n_count:isdefined(n_count) ? n_count : 0, #var_6346e7b:var_6346e7b, #var_4427ebb1:var_f6e73813, #str_name:var_38f795c7};
+    s_challenge = {#var_3e17832:func_end, #var_c376bcd5:var_205fe3e6, #var_3df4e085:var_3df4e085, #var_8edbca81:weaponname, #var_4365b81b:var_e09af826, #n_count:isdefined(n_count) ? n_count : 0, #var_6346e7b:var_6346e7b, #var_4427ebb1:zonenames, #str_name:var_38f795c7};
     if (!isdefined(level.var_94b8d201)) {
         level.var_94b8d201 = [];
     } else if (!isarray(level.var_94b8d201)) {

@@ -2913,16 +2913,16 @@ function function_c6ff0aa2(localclientnum, networkid) {
             }
         }
     }
-    var_6177806b = 0;
+    hasdefault = 0;
     if (item_world_util::function_a57773a4(item.var_a6762160)) {
         slotid = item_world_util::function_808be9a3(networkid);
         foreach (var_204192a2 in array(14, 15, 16)) {
             if (slotid == var_204192a2) {
-                var_6177806b = 1;
+                hasdefault = 1;
                 break;
             }
         }
-        if (var_6177806b) {
+        if (hasdefault) {
             point = function_4ba8fde(#"hash_383a1390efa15e8a");
             var_6fd9b15e = point.id;
             var_904ed6d7 = point.id;
@@ -2930,13 +2930,13 @@ function function_c6ff0aa2(localclientnum, networkid) {
     } else if (item.var_a6762160.itemtype == #"scorestreak") {
         slotid = item_world_util::function_808be9a3(networkid);
         if (slotid == 17) {
-            var_6177806b = 1;
+            hasdefault = 1;
             point = function_4ba8fde(#"scorestreak_item_t9");
             var_6fd9b15e = point.id;
             var_904ed6d7 = point.id;
         }
     }
-    if (var_6177806b) {
+    if (hasdefault) {
         function_1a99656a(localclientnum, item, var_6fd9b15e, var_904ed6d7, 0, 0, 0, 1, 0, 0);
     } else {
         function_1a99656a(localclientnum, item, 32767, 32767, 0, 0, 0, 1, 0, 0);

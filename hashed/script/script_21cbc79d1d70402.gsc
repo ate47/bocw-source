@@ -40,7 +40,7 @@ function main() {
         self thread function_985c93ef();
     }
     /#
-        self childthread function_1da4908c();
+        self childthread debug_player();
     #/
 }
 
@@ -92,7 +92,7 @@ function function_5fee4f6() {
     }
     range = level.stealth.var_33b5cf8f.range[var_334eb858][stance];
     if (self flag::get("stealth_in_shadow")) {
-        range = range * level.stealth.var_33b5cf8f.range[var_334eb858][#"hash_48996f6e7b2a8a21"];
+        range = range * level.stealth.var_33b5cf8f.range[var_334eb858][#"shadow"];
         range = max(range, level.stealth.var_33b5cf8f.var_67773281[var_334eb858][stance]);
     }
     if (isdefined(self.stealth.var_f6c2537d) && self.stealth.var_f6c2537d.size > 0) {

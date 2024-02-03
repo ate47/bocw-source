@@ -3,35 +3,35 @@
         {
             "type": "#audiolog",
             "image": "#hash_755ce672bf83ff43",
-            "var_e5119d1b": "#hash_822d98a9a3c51dd",
+            "imagelarge": "#hash_822d98a9a3c51dd",
             "displayname": "#hash_1b90e5f0b9cc41af",
             "var_a4f2dd9e": "#none"
         },
         {
             "type": "#hash_daeb8129dc8e394",
             "image": "#hash_75ebac3faebfe873",
-            "var_e5119d1b": "#hash_4ff090c872aa2a30",
+            "imagelarge": "#hash_4ff090c872aa2a30",
             "displayname": "#hash_5408e6800be6cb27",
             "var_a4f2dd9e": "#none"
         },
         {
             "type": "#hash_20ea75a25d912949",
             "image": "#hash_4e8a15ea6670a2d2",
-            "var_e5119d1b": "#hash_281eb61c34a89050",
+            "imagelarge": "#hash_281eb61c34a89050",
             "displayname": "#hash_185503b5ed146b",
             "var_a4f2dd9e": "#none"
         },
         {
             "type": "#artifact",
             "image": "#hash_d3f63f893390ede",
-            "var_e5119d1b": "#hash_79ea1d07b299fc8f",
+            "imagelarge": "#hash_79ea1d07b299fc8f",
             "displayname": "#hash_430a25752f677909",
             "var_a4f2dd9e": "#none"
         }
     ],
     "var_6bb475c1": 1,
     "var_72ef398b": 1,
-    "var_ebb12613": "#hash_49ddaeade859cf0f",
+    "typetable": "#hash_49ddaeade859cf0f",
     "var_2f050ffa": 1,
     "var_922067c4": "SCRIPTBUNDLE",
     "var_a77ed948": "#hash_3069f93c4e1e6bd8",

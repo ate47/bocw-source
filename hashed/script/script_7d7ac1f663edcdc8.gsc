@@ -85,25 +85,25 @@ function function_7c97e961(var_661691aa) {
     setroundsplayed(var_661691aa);
     switch (level.var_b48509f9) {
     case 1:
-        level.var_15d17eb2 = 1;
+        level.realm = 1;
         break;
     case 2:
-        level.var_15d17eb2 = 2;
+        level.realm = 2;
         break;
     case 3:
     case 4:
-        level.var_15d17eb2 = 3;
+        level.realm = 3;
         break;
     case 5:
     case 6:
     case 7:
-        level.var_15d17eb2 = 4;
+        level.realm = 4;
         break;
     default:
-        level.var_15d17eb2 = 5;
+        level.realm = 5;
         break;
     }
-    namespace_ce1f29cc::function_15bf0b91(level.var_15d17eb2);
+    namespace_ce1f29cc::function_15bf0b91(level.realm);
     callback::callback(#"hash_564379c43286f074");
 }
 

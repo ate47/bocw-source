@@ -487,7 +487,7 @@ function function_acf692e() {
     self endon("39b4056ae436c62e");
     self endon(#"complete", #"hash_3c93c17d2bec4686", #"cleanup", #"times_up");
     var_2eb61c8a = arraycopy(self.spawn_points);
-    str_list = "default_ambush_list_realm_" + level.var_15d17eb2;
+    str_list = "default_ambush_list_realm_" + level.realm;
     var_6443acc = namespace_679a22ba::function_77be8a83(str_list);
     while (1) {
         wait(randomfloatrange(0.25, 0.5));

@@ -435,7 +435,7 @@ function private function_ba3be344() {
 // Size: 0x90
 function private function_3c597e8d() {
     if (territory::function_c0de0601()) {
-        return territory::function_142b1c24();
+        return territory::get_center();
     }
     var_6024133d = getentarray("map_corner", "targetname");
     if (var_6024133d.size) {
@@ -570,7 +570,7 @@ function private function_546afbb6() {
 // Params 4, eflags: 0x4
 // Checksum 0xf15481c5, Offset: 0x2e38
 // Size: 0x254
-function private function_a3832aa0(var_d91c179d, vehicletype, dropangles, var_b48a7d49) {
+function private function_a3832aa0(var_d91c179d, vehicletype, dropangles, vehicleangles) {
     supplydrop = spawn("script_model", vectorscale((0, 0, -1), 64000));
     supplydrop setmodel("tag_origin");
     supplydrop useanimtree("generic");
@@ -584,7 +584,7 @@ function private function_a3832aa0(var_d91c179d, vehicletype, dropangles, var_b4
         dropangles = (0, 0, 0);
     }
     var_da7d45d1 = vectorscale((0, 1, 0), 90);
-    dropangles = dropangles - var_b48a7d49 + var_da7d45d1;
+    dropangles = dropangles - vehicleangles + var_da7d45d1;
     var_d5552131 linkto(supplydrop, "tag_origin", (0, 0, 0), dropangles);
     var_d5552131.var_b9b5403c = var_d5552131.health * 0.5;
     var_d5552131.overridevehicledamage = &function_9a275b1f;
@@ -654,7 +654,7 @@ function private function_6eb3f7bb() {
 function private function_16bbdd8b(point) {
     if (territory::function_c0de0601()) {
         testpoint = (point[0], point[1], point[2]);
-        return territory::function_83ad4d2b(testpoint, 1);
+        return territory::is_inside(testpoint, 1);
     }
     function_6eb3f7bb();
     testpoint = (point[0], point[1], 0);
@@ -1113,8 +1113,8 @@ function function_47ec98c4(startpoint, endpoint, droppoint, var_d91c179d = 0, ve
     #/
     startpoint = var_57e06aea[0];
     endpoint = var_57e06aea[var_57e06aea.size - 1];
-    var_3aa5a1b = endpoint - startpoint;
-    var_ce19c689 = vectortoangles(var_3aa5a1b);
+    toendpoint = endpoint - startpoint;
+    var_ce19c689 = vectortoangles(toendpoint);
     if (!var_d91c179d) {
         supplydropveh = spawnvehicle("vehicle_t9_mil_helicopter_care_package", startpoint, vectortoangles(vectornormalize(endpoint - startpoint)));
     } else {

@@ -907,7 +907,7 @@ function screen_fade_in(n_time, var_c615ad76 = "black", str_menu_id) {
 // Params 9, eflags: 0x2 linked
 // Checksum 0x2b1de01e, Offset: 0x2d58
 // Size: 0x17c
-function function_2fd0ed09(var_f695d653, var_fc366442, *shader, *var_87e158ef, *var_cfeb7a77, *fdelay, *x, *y, var_286a6310 = 1) {
+function function_2fd0ed09(var_f695d653, var_fc366442, *shader, *iwidth, *var_cfeb7a77, *fdelay, *x, *y, var_286a6310 = 1) {
     if (level.missionfailed || level.var_5be43b2d === 1) {
         return;
     }
@@ -1223,8 +1223,8 @@ function private function_79e25924() {
     var_826fad97 = 0;
     while (1) {
         if (!self function_495bdc7b(self.var_acac2f93)) {
-            var_daab3ee6 = self getcurrentweapon() === level.weaponnone;
-            if (!var_daab3ee6) {
+            isweaponnone = self getcurrentweapon() === level.weaponnone;
+            if (!isweaponnone) {
                 if (var_826fad97) {
                     waitframe(1);
                 }
@@ -1236,7 +1236,7 @@ function private function_79e25924() {
                     self playgestureviewmodel(self.var_acac2f93, undefined, undefined, undefined, undefined, undefined, 1);
                 }
             }
-            var_826fad97 = var_daab3ee6;
+            var_826fad97 = isweaponnone;
         }
         waitframe(1);
     }
@@ -1623,7 +1623,7 @@ function can_see_ai(var_428cf68a, ai, latency, var_593afcc1, var_8230ceac) {
 // Params 13, eflags: 0x2 linked
 // Checksum 0xb28c6af1, Offset: 0x5598
 // Size: 0x1dc
-function function_cf42fd2f(tag, originoffset = (0, 0, 0), hintstring, var_2b3af0de = 85, var_2625ed95 = 0.25, var_49394206, prompt = #"use", var_42dabd79, var_b42660a4, var_3a0702cc, var_c781ea71, var_a9618cc5, var_7a4ce25) {
+function function_cf42fd2f(tag, originoffset = (0, 0, 0), hintstring, var_2b3af0de = 85, var_2625ed95 = 0.25, var_49394206, prompt = #"use", var_42dabd79, var_b42660a4, var_3a0702cc, ignorecollision, var_a9618cc5, var_7a4ce25) {
     if (isdefined(tag) && (tag == #"" || !isdefined(self gettagorigin(tag)))) {
         tag = undefined;
     }
@@ -1639,7 +1639,7 @@ function function_cf42fd2f(tag, originoffset = (0, 0, 0), hintstring, var_2b3af0
     var_248cbbcf.var_71b9f0c0 = var_42dabd79;
     var_248cbbcf.var_5e83875a = var_b42660a4;
     var_248cbbcf.var_8ce60046 = var_3a0702cc;
-    var_248cbbcf.var_9a27c4ee = var_c781ea71;
+    var_248cbbcf.var_9a27c4ee = ignorecollision;
     var_248cbbcf.var_be77841a = var_a9618cc5;
     var_248cbbcf.var_531201f1 = var_7a4ce25;
     self namespace_f48ab2e1::function_c97a48c7(prompt, var_248cbbcf);

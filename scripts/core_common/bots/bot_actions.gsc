@@ -302,8 +302,8 @@ function private function_97bc2873(actionparams) {
     if (self bot_action::function_ed7b2f42(actionparams) && self.bot.traversal.type != #"drop") {
         return undefined;
     }
-    if (isdefined(self.bot.var_3edc9d4d)) {
-        point = self.bot.var_3edc9d4d;
+    if (isdefined(self.bot.glasstouch)) {
+        point = self.bot.glasstouch;
         point = (point[0], point[1], self.origin[2] + self getplayerviewheight());
         actionparams.var_bd773dde = point;
         return 96;
@@ -323,7 +323,7 @@ function private function_97bc2873(actionparams) {
         #/
         return undefined;
     }
-    if (!self.bot.var_2cf887f8) {
+    if (!self.bot.enemyvisible) {
         /#
             actionparams.debug[actionparams.debug.size] = #"no enemy";
         #/
@@ -340,7 +340,7 @@ function private function_97bc2873(actionparams) {
             actionparams.debug[actionparams.debug.size] = #"hash_28145be29cdebb73";
         #/
     }
-    if (self.bot.var_c51625a9 > weapon.var_bfbec33f * 0.95) {
+    if (self.bot.enemydist > weapon.var_bfbec33f * 0.95) {
         /#
             actionparams.debug[actionparams.debug.size] = #"hash_1d62b754bc2de90";
         #/
@@ -530,9 +530,9 @@ function private function_f60b48cd(*actionparams) {
 // Checksum 0x5cf41de2, Offset: 0x2100
 // Size: 0x118
 function private use_trigger(trigger) {
-    var_19fee601 = trigger triggerrequireslookat();
+    lookat = trigger triggerrequireslookat();
     while (1) {
-        if (var_19fee601) {
+        if (lookat) {
             center = trigger getcentroid();
             self.bot.var_87751145 = center;
         }
@@ -540,7 +540,7 @@ function private use_trigger(trigger) {
         if (!isdefined(trigger)) {
             return;
         }
-        if (var_19fee601 && !!self botgetlookdot() >= 0.5) {
+        if (lookat && !!self botgetlookdot() >= 0.5) {
             continue;
         }
         self bottapbutton(3);
@@ -571,9 +571,9 @@ function private function_e02bffcd(trigger) {
 // Size: 0x178
 function private use_gameobject(object) {
     trigger = object.trigger;
-    var_19fee601 = trigger triggerrequireslookat();
+    lookat = trigger triggerrequireslookat();
     while (1) {
-        if (var_19fee601) {
+        if (lookat) {
             center = trigger getcentroid();
             self.bot.var_87751145 = center;
         }
@@ -581,7 +581,7 @@ function private use_gameobject(object) {
         if (!isdefined(object) || !isdefined(trigger)) {
             return;
         }
-        if (var_19fee601 && !!self botgetlookdot() >= 0.5) {
+        if (lookat && !!self botgetlookdot() >= 0.5) {
             continue;
         }
         self bottapbutton(3);

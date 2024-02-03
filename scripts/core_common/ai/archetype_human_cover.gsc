@@ -197,8 +197,8 @@ function function_9d8b22d8(entity, throwifpossible = 0, var_f06df42 = 1) {
     } else {
         enemyorigin = entity lastknownpos(entity.enemy);
         accuracy = 1;
-        if (isdefined(level.var_21347b32) && isdefined(level.var_d2257418)) {
-            accuracy = level.var_21347b32[level.var_d2257418].var_da7e542b;
+        if (isdefined(level.var_21347b32) && isdefined(level.gameskill)) {
+            accuracy = level.var_21347b32[level.gameskill].var_da7e542b;
         }
         maxdistance = 128 / accuracy;
         var_4748f6aa = (enemyorigin[0] + maxdistance * randomfloatrange(-1, 1), enemyorigin[1] + maxdistance * randomfloatrange(-1, 1), enemyorigin[2]);

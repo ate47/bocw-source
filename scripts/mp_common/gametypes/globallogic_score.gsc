@@ -2049,8 +2049,8 @@ function updatewinlossstats() {
         var_96974d12 = min(function_d68cdc5d(), level.var_eed7c027.size);
         foreach (team, ranking in level.var_eed7c027) {
             if (ranking <= var_96974d12) {
-                var_5986770f = getplayers(team);
-                foreach (winner in var_5986770f) {
+                winners = getplayers(team);
+                foreach (winner in winners) {
                     updatewinstats(winner);
                 }
             }

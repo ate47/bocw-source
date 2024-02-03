@@ -73,7 +73,7 @@ function function_49caf2d6() {
 // Checksum 0x2dd066f7, Offset: 0x460
 // Size: 0x128
 function function_54989f74(trap, var_7c56394 = 0) {
-    hazard = namespace_ec06fe4a::function_e22ae9b3(trap.origin, "tag_origin");
+    hazard = namespace_ec06fe4a::spawnmodel(trap.origin, "tag_origin");
     if (isdefined(hazard)) {
         hazard clientfield::set("dragonTrapState", 1);
         hazard.targetname = "hazard";

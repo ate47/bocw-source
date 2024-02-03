@@ -118,11 +118,11 @@ function function_ee85e4e3(localclientnum) {
     }
     while (n_timer > 0) {
         if (n_timer <= 5) {
-            var_d71c11ca = abs(n_timer - 6) / 5;
-            if (!isdefined(var_d71c11ca)) {
-                var_d71c11ca = 0;
+            blendscale = abs(n_timer - 6) / 5;
+            if (!isdefined(blendscale)) {
+                blendscale = 0;
             }
-            function_672403ca("zmb_cranked_neardeath", 1, var_d71c11ca);
+            function_672403ca("zmb_cranked_neardeath", 1, blendscale);
             self.var_5a72f7c9 = 1;
             str_alias = #"hash_37a0bf7f61bc3362" + n_timer;
             self playrumbleonentity(localclientnum, #"infiltration_rumble");

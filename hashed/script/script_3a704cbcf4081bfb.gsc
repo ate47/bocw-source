@@ -536,8 +536,8 @@ function function_8f0687e(prop) {
     }
     var_8b84b3ce = groundtrace(loc.origin + vectorscale((0, 0, 1), 32) + vectorscale((0, 0, 1), 8), loc.origin + vectorscale((0, 0, 1), 32) + vectorscale((0, 0, -1), 100000), 0, undefined)[#"position"];
     var_8d3beb7f = #"hash_1f82e1c70fdc8f38";
-    var_d2e276cb = #"hash_70a7cdb502d88088";
-    var_d661f9f1 = util::spawn_model(array::random([1:var_d2e276cb, 0:var_8d3beb7f]), var_8b84b3ce, (0, 0, 0));
+    model2 = #"hash_70a7cdb502d88088";
+    var_d661f9f1 = util::spawn_model(array::random([1:model2, 0:var_8d3beb7f]), var_8b84b3ce, (0, 0, 0));
     if (isdefined(var_d661f9f1)) {
         var_d661f9f1 clientfield::set("mimic_prop_lure_fx", 1);
         prop.var_d661f9f1 = var_d661f9f1;
@@ -1027,8 +1027,8 @@ function function_7826507(params) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x967abc6a, Offset: 0x3fe0
 // Size: 0x48
-function function_55d49380(var_df401071, var_1386d828) {
-    var_1386d828 notify(#"hash_1e8aabc2641542e", {#activator:var_df401071.activator});
+function function_55d49380(trigger_info, var_1386d828) {
+    var_1386d828 notify(#"hash_1e8aabc2641542e", {#activator:trigger_info.activator});
 }
 
 // Namespace mimic_prop_spawn/namespace_4aff7b6b

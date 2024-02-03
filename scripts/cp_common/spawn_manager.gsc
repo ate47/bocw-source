@@ -76,17 +76,17 @@ function function_21b5cb9e() {
 // Checksum 0x7332916, Offset: 0x4e0
 // Size: 0x16e
 function function_7051aeac(var_21472c04) {
-    var_e6bd8201 = self.count >= 0 ? self.count : level.var_539b11be;
+    totalfree = self.count >= 0 ? self.count : level.var_539b11be;
     var_54642189 = self.var_b02a42f7 - self.var_5ee53e3.size;
-    var_514ec5ff = var_54642189 >= var_21472c04 && var_e6bd8201 >= var_21472c04 && var_21472c04 > 0;
+    var_514ec5ff = var_54642189 >= var_21472c04 && totalfree >= var_21472c04 && var_21472c04 > 0;
     var_7d4f7444 = level.var_539b11be - level.var_e4fdd7dd;
     /#
         assert(self.enable == level get("<unknown string>" + self.sm_id + "<unknown string>"), "<unknown string>");
     #/
     if (self.script_forcespawn == 0) {
-        return (var_e6bd8201 > 0 && var_54642189 > 0 && var_7d4f7444 > 0 && var_514ec5ff && self.enable);
+        return (totalfree > 0 && var_54642189 > 0 && var_7d4f7444 > 0 && var_514ec5ff && self.enable);
     } else {
-        return (var_e6bd8201 > 0 && var_54642189 > 0 && self.enable);
+        return (totalfree > 0 && var_54642189 > 0 && self.enable);
     }
 }
 
@@ -358,7 +358,7 @@ function function_b574e20c() {
     self.enable = 0;
     self.var_5ee53e3 = [];
     self.spawncount = 0;
-    var_8f5fa93b = 1;
+    isfirsttime = 1;
     self.var_e6c22a54 = getentarray(self.target, "targetname");
     /#
         assert(self.var_e6c22a54.size, "<unknown string>" + self.sm_id + "<unknown string>");
@@ -428,10 +428,10 @@ function function_b574e20c() {
                     if (!(isdefined(spawner.spawnflags) && (spawner.spawnflags & 64) == 64) && spawner.count < self.var_ed3f1bbb) {
                         self.var_ed3f1bbb = spawner.count;
                     }
-                    if (!var_8f5fa93b) {
+                    if (!isfirsttime) {
                         function_26374d3f();
                     } else {
-                        var_8f5fa93b = 0;
+                        isfirsttime = 0;
                     }
                     if (!self.enable) {
                         continue;

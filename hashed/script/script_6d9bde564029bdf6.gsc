@@ -328,8 +328,8 @@ function function_5e1705fa(thrower, projectile, weapon) {
         if (isplayer(player) && isalive(player) && !player hasperk(#"specialty_quieter") && isdefined(weapon)) {
             var_55ed76f0 = player.origin + var_3c0b0429;
             var_f8a966ea = projectile.origin - var_55ed76f0;
-            var_c5a12157 = anglestoforward(player getplayerangles());
-            dotproduct = vectordot(var_f8a966ea, var_c5a12157);
+            dirforward = anglestoforward(player getplayerangles());
+            dotproduct = vectordot(var_f8a966ea, dirforward);
             if (dotproduct > 0) {
                 if (sighttracepassed(var_55ed76f0, projectile.origin, 1, player, projectile)) {
                     if (player function_bafe1ee4(weapon)) {

@@ -360,8 +360,8 @@ function private function_187bcbe() {
                     debugstar(var_c4fa78f6, 20, (0, 1, 0));
                 }
             #/
-            var_8e05c13a = (0, 0, var_6575092a);
-            var_dc77dd5c = vectorcross(var_8a380e81, var_8e05c13a);
+            z_axis = (0, 0, var_6575092a);
+            var_dc77dd5c = vectorcross(var_8a380e81, z_axis);
             target_pos = var_c4fa78f6 + var_dc77dd5c * self.var_88b20e7f;
             self function_c9bcf1cb(target_pos);
             if (gettime() > self.var_a7882c19) {
@@ -516,8 +516,8 @@ function private function_d321dcc8(var_af0000ca, to_target) {
     var_817b26d2 = var_af0000ca;
     var_dc77dd5c = vectorcross(to_target, (0, 0, var_817b26d2));
     var_d01d9a4b = to_target * 100 + var_dc77dd5c * 100 + self.origin;
-    var_f32706ec = bullettrace(self.origin, var_d01d9a4b, 0, self);
-    fraction = var_f32706ec[#"fraction"];
+    bullet_trace = bullettrace(self.origin, var_d01d9a4b, 0, self);
+    fraction = bullet_trace[#"fraction"];
     result = (0, 0, 0);
     if (fraction > 0 && fraction < 1) {
         result = var_dc77dd5c * -1 * (1 - fraction) * self.var_88b20e7f;
@@ -538,9 +538,9 @@ function private function_d321dcc8(var_af0000ca, to_target) {
 // Checksum 0xf97d845c, Offset: 0x2b28
 // Size: 0xb8
 function private function_4e15ba87(var_2f769fb1) {
-    var_d7c0ff27 = var_2f769fb1[2] - self.origin[2];
+    delta_z = var_2f769fb1[2] - self.origin[2];
     multiplier = 0.05;
-    var_22570ba9 = (0, 0, var_d7c0ff27 * multiplier);
+    var_22570ba9 = (0, 0, delta_z * multiplier);
     /#
         if (getdvarint(#"hash_7b1300b093008e51", 0) > 0) {
             recordline(self.origin, self.origin + var_22570ba9, (1, 0, 1));
@@ -562,8 +562,8 @@ function private function_3a260c9e(var_af0000ca, to_target, spawn_pos, var_93b10
     t = var_815a5910 / var_269a05;
     var_500bdd34 = pow(100, -1 * pow(t - 0.5, 2));
     var_dc77dd5c = vectorcross(to_target, (0, 0, var_af0000ca));
-    var_9e760d8e = 50;
-    var_22570ba9 = var_dc77dd5c * var_9e760d8e * var_500bdd34;
+    push_length = 50;
+    var_22570ba9 = var_dc77dd5c * push_length * var_500bdd34;
     /#
         if (getdvarint(#"hash_7b1300b093008e51", 0) > 0) {
             recordline(self.origin, self.origin + var_22570ba9, (0, 0, 1));

@@ -13,7 +13,7 @@
 // Checksum 0x4d9d43e8, Offset: 0xf0
 // Size: 0x54
 function private autoexec __init__system__() {
-    system::register(#"cymbal_monkey", &function_70a657d8, &postinit, &function_5700f119, undefined);
+    system::register(#"cymbal_monkey", &function_70a657d8, &postinit, &finalize, undefined);
 }
 
 // Namespace gadget_cymbal_monkey/gadget_cymbal_monkey
@@ -39,7 +39,7 @@ function private postinit() {
 // Params 0, eflags: 0x6 linked
 // Checksum 0xf91cef69, Offset: 0x1e0
 // Size: 0x50
-function private function_5700f119() {
+function private finalize() {
     if (isdefined(level.var_a5dacbea)) {
         [[ level.var_a5dacbea ]](getweapon(#"cymbal_monkey"), &function_127fb8f3);
     }

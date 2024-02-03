@@ -520,7 +520,7 @@
             ],
             "model": 0,
             "type": "vehicle",
-            "var_e2360d85": 1,
+            "forcenocull": 1,
             "var_db255011": 1,
             "deletewhenfinished": 1,
             "name": "helicopter"

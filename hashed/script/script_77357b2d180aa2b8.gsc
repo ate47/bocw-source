@@ -55,7 +55,7 @@ function function_94c7c0d9(type = 1, var_5653e2ee = 2, context) {
 // Checksum 0xae4d244b, Offset: 0x420
 // Size: 0x2fc
 function function_2a1e5c1f(origin, angles, modelname, type = 1, var_5653e2ee = 2, context, var_fc5f2aa0) {
-    var_56d14168 = namespace_ec06fe4a::function_e22ae9b3(origin, modelname);
+    var_56d14168 = namespace_ec06fe4a::spawnmodel(origin, modelname);
     if (!isdefined(var_56d14168)) {
         return;
     }

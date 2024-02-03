@@ -189,7 +189,7 @@ function private function_6003bca8(var_55e11aa9, v_player) {
 function private function_491bb6b7(instance, var_cf21a49f) {
     instance endon(#"cleanup");
     wait(1.5);
-    var_18d554fc = int(max(2, min(5, level.var_15d17eb2)));
+    var_18d554fc = int(max(2, min(5, level.realm)));
     var_e7c0ea90 = #"hash_3f4bb6758c283d17" + var_18d554fc;
     if (isdefined(getscriptbundle(var_e7c0ea90))) {
         level thread namespace_2c949ef8::function_8b6ae460(var_cf21a49f, var_e7c0ea90, 64, 256, undefined, undefined, 0, "demented_echo_zombie");

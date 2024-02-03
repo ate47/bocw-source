@@ -1256,7 +1256,7 @@ function function_eafe9d9f() {
             var_704c79ef = spawnactor(#"hash_53f4e0daa341a161", var_bca19f66[0].origin, var_bca19f66[0].angles);
         }
         if (isdefined(var_704c79ef)) {
-            var_704c79ef.ai.var_4beb90f3 = 0;
+            var_704c79ef.ai.cansplit = 0;
             var_704c79ef.ignore_enemy_count = 1;
         }
         level flag::set("spawn_zombies");

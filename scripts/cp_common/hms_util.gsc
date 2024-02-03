@@ -405,10 +405,10 @@ function function_ee1d1df6(var_98b4b8a9, var_4aac0a03, var_243c68ce, var_715f6e0
 // Checksum 0xb4ddb99a, Offset: 0x19f0
 // Size: 0x102
 function function_8a58fd9c(str_targetname) {
-    var_43d072e0 = getentarray(str_targetname, "targetname");
+    splist = getentarray(str_targetname, "targetname");
     sp = undefined;
     ai = undefined;
-    foreach (spawner in var_43d072e0) {
+    foreach (spawner in splist) {
         if (isspawner(spawner)) {
             sp = spawner;
             break;
@@ -444,8 +444,8 @@ function function_36e9db45(var_5207b7a8) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x40465665, Offset: 0x1bc8
 // Size: 0x7c
-function function_53531f27(str_trigger_name, var_9413aa11 = "targetname") {
-    trig = getent(str_trigger_name, var_9413aa11);
+function function_53531f27(str_trigger_name, str_val = "targetname") {
+    trig = getent(str_trigger_name, str_val);
     if (isdefined(trig) && trig istriggerenabled()) {
         trig trigger::use();
     }
@@ -897,8 +897,8 @@ function function_8b562a1(target, pickedpoint) {
         var_7aeb1d95 = target.origin - pickedpoint;
     }
     var_7aeb1d95 = vectornormalize((var_7aeb1d95[0], var_7aeb1d95[1], 0));
-    var_28e27203 = vectortoangles(var_7aeb1d95);
-    self setgoal(pickedpoint, 1, undefined, undefined, var_28e27203);
+    faceangles = vectortoangles(var_7aeb1d95);
+    self setgoal(pickedpoint, 1, undefined, undefined, faceangles);
 }
 
 // Namespace hms_util/hms_util
@@ -915,15 +915,15 @@ function function_c68d3621(target, var_7b23aa51) {
         if (!isalive(target)) {
             break;
         }
-        var_9bbf2d1a = distance2dsquared(startposition, target.origin);
+        distancetotargetsq = distance2dsquared(startposition, target.origin);
         if (util::function_33e5d0ac(var_b7c3473e, 1.5)) {
             var_713b0ea4 = generatenavmeshpath(startposition, target.origin, self);
             if (isdefined(var_713b0ea4) && isdefined(var_713b0ea4.pathdistance)) {
-                var_9bbf2d1a = var_713b0ea4.pathdistance * var_713b0ea4.pathdistance;
+                distancetotargetsq = var_713b0ea4.pathdistance * var_713b0ea4.pathdistance;
             }
             var_b7c3473e = gettime();
         }
-        if (var_9bbf2d1a > var_7b23aa51 * var_7b23aa51) {
+        if (distancetotargetsq > var_7b23aa51 * var_7b23aa51) {
             self notify(#"hash_4f2aaaef2327c2a9");
             startposition = target.origin;
             continue;
@@ -1195,9 +1195,9 @@ function function_2f50100e(var_ce6e52bd, var_c412903e, var_b7925ab5 = "shutoff_a
                 #/
                 str_current = var_f8a9678c;
                 if (var_f8a9678c == "sprint") {
-                    self function_2ce879d2(265);
+                    self setdesiredspeed(265);
                 } else {
-                    self function_2ce879d2(var_f8a9678c);
+                    self setdesiredspeed(var_f8a9678c);
                 }
             }
         }

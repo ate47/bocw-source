@@ -122,7 +122,7 @@ function private function_57172b7() {
         [[ level.var_551ace8a ]](self.origin);
     }
     self.var_261dd536++;
-    while (self.var_261dd536 < self.var_bf5103a8) {
+    while (self.var_261dd536 < self.numrings) {
         self function_87a78a13();
         self.var_261dd536++;
     }
@@ -148,7 +148,7 @@ function private function_57172b7() {
         self function_5c839f44();
         self.var_261dd536--;
     }
-    var_a8c6fd3b = level.var_de7aa071 / (self.var_bf5103a8 + 1);
+    var_a8c6fd3b = level.var_de7aa071 / (self.numrings + 1);
     wait(var_a8c6fd3b);
     self function_ea7ab3a9();
     for (i = 0; i < level.var_ac7be286.size; i++) {
@@ -189,40 +189,40 @@ function private function_218080fb() {
     } else {
         maxradius = randomintrange(level.var_d18d7655, level.var_67432513);
     }
-    self.var_bf5103a8 = int((maxradius - initialradius) / 800 + 0.5) + self.var_a96d0116;
+    self.numrings = int((maxradius - initialradius) / 800 + 0.5) + self.var_a96d0116;
     var_92d713c7 = level.var_aa6b51f5;
-    var_4c3b9a16 = maxradius - initialradius;
+    totaldelta = maxradius - initialradius;
     if (isdefined(self.script_radius) && !isdefined(level.var_e1206a08)) {
-        var_4c3b9a16 = var_4c3b9a16 + 1600;
+        totaldelta = totaldelta + 1600;
     }
-    self.var_91017512 = var_4c3b9a16 / (self.var_bf5103a8 - 1 - self.var_a96d0116);
+    self.var_91017512 = totaldelta / (self.numrings - 1 - self.var_a96d0116);
     self.circleradius = 800;
-    for (i = 0; i < self.var_bf5103a8; i++) {
+    for (i = 0; i < self.numrings; i++) {
         self.var_fa06c0e[i] = [];
         self.var_e17ae8be[i] = [];
         self.var_3401d807[i] = [];
         var_4fc3d1c0 = initialradius + self.var_91017512 * i;
         var_f79106a4 = int(var_4fc3d1c0 * 2 * 3.14159 / self.circleradius / 1 / (1 + var_92d713c7) + 0.5);
-        var_5845cb8a = 360 / var_f79106a4;
+        angledelta = 360 / var_f79106a4;
         for (j = 0; j < var_f79106a4; j++) {
-            angle = var_5845cb8a * j;
+            angle = angledelta * j;
             vector = (cos(angle), sin(angle), 0);
             origin = self.origin + vectorscale(vector, var_4fc3d1c0);
             if (level.var_380f7d22 > 0) {
                 offsetangle = randomint(360);
-                var_c31c90fd = (cos(offsetangle), sin(offsetangle), 0);
+                offsetvector = (cos(offsetangle), sin(offsetangle), 0);
                 var_3413960f = randomint(level.var_380f7d22);
-                origin = origin + vectorscale(var_c31c90fd, var_3413960f);
+                origin = origin + vectorscale(offsetvector, var_3413960f);
             }
             self.var_fa06c0e[i][j] = origin;
         }
     }
     if (isdefined(level.var_36cba6d6)) {
-        for (i = 1; self.var_bf5103a8 - i > 3; i++) {
-            self function_7a12a868(self.var_bf5103a8 - i, level.var_36cba6d6);
+        for (i = 1; self.numrings - i > 3; i++) {
+            self function_7a12a868(self.numrings - i, level.var_36cba6d6);
         }
     }
-    self.var_bf5103a8 = self.var_bf5103a8 - self.var_a96d0116;
+    self.numrings = self.numrings - self.var_a96d0116;
 }
 
 // Namespace namespace_b77e8eb1/namespace_b77e8eb1
@@ -266,7 +266,7 @@ function private function_cd602d73() {
     self.var_b06ed2fa.team = #"neutral";
     self.var_b06ed2fa setmodel("tag_origin");
     self.var_b06ed2fa clientfield::set("ftdb_zoneCircle", 2);
-    self.var_b06ed2fa.var_bf5103a8 = self.var_bf5103a8;
+    self.var_b06ed2fa.numrings = self.numrings;
     self.var_b06ed2fa.var_2c8491dd = self;
     self.var_b06ed2fa setforcenocull();
     self.var_b06ed2fa setscale(0.1);
@@ -308,12 +308,12 @@ function private function_2020d6b0() {
 // Checksum 0xe58fa219, Offset: 0x1510
 // Size: 0x334
 function private function_87a78a13() {
-    var_b75abae3 = isdefined(self.var_a2d52f9d) ? self.var_a2d52f9d / self.var_bf5103a8 : level.var_7108bd31 / self.var_bf5103a8;
+    var_b75abae3 = isdefined(self.var_a2d52f9d) ? self.var_a2d52f9d / self.numrings : level.var_7108bd31 / self.numrings;
     if (self.var_261dd536 >= 2) {
-        var_95db50bf = self.var_8e392e0f + self.var_91017512;
-        var_9ef53eb3 = self.var_8e392e0f / level.var_cd139dc0;
-        var_ac2ef1c2 = var_95db50bf / level.var_cd139dc0;
-        self thread function_6941b393(var_9ef53eb3, var_ac2ef1c2, var_b75abae3);
+        nextradius = self.var_8e392e0f + self.var_91017512;
+        currentscale = self.var_8e392e0f / level.var_cd139dc0;
+        var_ac2ef1c2 = nextradius / level.var_cd139dc0;
+        self thread function_6941b393(currentscale, var_ac2ef1c2, var_b75abae3);
     }
     maxindex = 0;
     for (i = 0; i < self.var_261dd536; i++) {
@@ -354,15 +354,15 @@ function private function_87a78a13() {
 // Checksum 0xe9fc05d2, Offset: 0x1850
 // Size: 0x204
 function private function_5c839f44() {
-    var_b75abae3 = level.var_de7aa071 / (self.var_bf5103a8 + 1);
-    if (self.var_261dd536 + 1 < self.var_bf5103a8) {
-        var_95db50bf = self.var_8e392e0f - self.var_91017512;
-        var_9ef53eb3 = self.var_8e392e0f / level.var_cd139dc0;
-        var_ac2ef1c2 = var_95db50bf / level.var_cd139dc0;
+    var_b75abae3 = level.var_de7aa071 / (self.numrings + 1);
+    if (self.var_261dd536 + 1 < self.numrings) {
+        nextradius = self.var_8e392e0f - self.var_91017512;
+        currentscale = self.var_8e392e0f / level.var_cd139dc0;
+        var_ac2ef1c2 = nextradius / level.var_cd139dc0;
         if (self.var_261dd536 > 0) {
-            self thread function_6941b393(var_9ef53eb3, var_ac2ef1c2, var_b75abae3);
+            self thread function_6941b393(currentscale, var_ac2ef1c2, var_b75abae3);
         } else {
-            self thread function_6941b393(var_9ef53eb3, var_ac2ef1c2, var_b75abae3 * 2);
+            self thread function_6941b393(currentscale, var_ac2ef1c2, var_b75abae3 * 2);
         }
     }
     maxindex = self.var_e17ae8be[self.var_261dd536].size;
@@ -447,18 +447,18 @@ function private function_b4c74561(origin) {
 // Params 4, eflags: 0x6 linked
 // Checksum 0xb6de32a3, Offset: 0x1f38
 // Size: 0x1f4
-function private function_60c3117b(var_70cc0d15, var_5ad0dc76, duration, var_8253fe22) {
+function private function_60c3117b(startscale, var_5ad0dc76, duration, var_8253fe22) {
     self endon(#"death");
     level endon(#"game_ended");
     starttime = gettime();
-    if (var_70cc0d15 < 0.1) {
-        var_70cc0d15 = 0.1;
+    if (startscale < 0.1) {
+        startscale = 0.1;
     }
-    self setscale(var_8253fe22 ? var_70cc0d15 / 10 : var_70cc0d15);
+    self setscale(var_8253fe22 ? startscale / 10 : startscale);
     waitframe(1);
     while (gettime() < starttime + int(duration * 1000)) {
-        var_1007824a = (gettime() - starttime) / int(duration * 1000);
-        scale = var_70cc0d15 + var_1007824a * (var_5ad0dc76 - var_70cc0d15);
+        timefrac = (gettime() - starttime) / int(duration * 1000);
+        scale = startscale + timefrac * (var_5ad0dc76 - startscale);
         if (scale < 0.1) {
             self setscale(0.1);
             return;
@@ -478,16 +478,16 @@ function private function_60c3117b(var_70cc0d15, var_5ad0dc76, duration, var_825
 // Params 3, eflags: 0x6 linked
 // Checksum 0xb983d76d, Offset: 0x2138
 // Size: 0xc4
-function private function_6941b393(var_70cc0d15, var_4dad59c0, duration) {
+function private function_6941b393(startscale, endscale, duration) {
     self endon(#"death");
     level endon(#"game_ended");
     if (is_true(self.var_3dde41e2)) {
-        self.var_b06ed2fa function_60c3117b(var_70cc0d15, var_4dad59c0, duration, 1);
+        self.var_b06ed2fa function_60c3117b(startscale, endscale, duration, 1);
         return;
     }
     var_65bcb0ae = duration / 2;
     wait(var_65bcb0ae);
-    self.var_b06ed2fa function_60c3117b(var_70cc0d15, var_4dad59c0, var_65bcb0ae, 1);
+    self.var_b06ed2fa function_60c3117b(startscale, endscale, var_65bcb0ae, 1);
 }
 
 // Namespace namespace_b77e8eb1/namespace_b77e8eb1
@@ -541,7 +541,7 @@ function function_904efdb8() {
                 var_9bbce2cd thread function_f8afee63(var_9bbce2cd.var_261dd536 - 2);
             }
             var_9bbce2cd.var_261dd536++;
-            var_9bbce2cd.var_a2d52f9d = 20 * var_9bbce2cd.var_bf5103a8;
+            var_9bbce2cd.var_a2d52f9d = 20 * var_9bbce2cd.numrings;
             var_9bbce2cd.var_3dde41e2 = 1;
             var_9bbce2cd thread function_87a78a13();
         }
@@ -635,12 +635,12 @@ function function_c6ce0ef0(structs) {
             struct.var_8e392e0f = struct.script_radius - 1200;
             struct.var_261dd536 = 0;
             struct function_cd602d73();
-            var_b4ab8086 = struct.var_8e392e0f / level.var_cd139dc0 / 10;
-            if (var_b4ab8086 > 10) {
-                var_b4ab8086 = 10;
+            targetscale = struct.var_8e392e0f / level.var_cd139dc0 / 10;
+            if (targetscale > 10) {
+                targetscale = 10;
                 level.players[0] iprintlnbold("<unknown string>");
             }
-            struct.var_b06ed2fa setscale(var_b4ab8086);
+            struct.var_b06ed2fa setscale(targetscale);
         }
     #/
 }

@@ -136,16 +136,16 @@ function function_8b5bbd69(*params) {
     self endon(#"hash_7aba28bf3e3cf9cd", #"death");
     traversalstartpos = self.traversalstartpos;
     traversalendpos = self.traversalendpos;
-    var_6398df28 = self.traversestartnode;
+    traversalstartnode = self.traversestartnode;
     aitype = self.aitype;
     wait(10);
     if (isdefined(traversalendpos)) {
         self forceteleport(traversalendpos);
     }
     if (getdvarint(#"hash_704243ad84566af7", 1) && isdefined(traversalendpos) && isdefined(traversalstartpos) && isdefined(aitype)) {
-        var_96c5333a = !isdefined(var_6398df28);
+        var_96c5333a = !isdefined(traversalstartnode);
         if (!var_96c5333a) {
-            eventparams = {#var_23deb7ad:var_6398df28.origin[2], #var_3524da39:var_6398df28.origin[1], #var_b5b65b52:var_6398df28.origin[0], #var_340139b7:traversalendpos[2], #var_40385225:traversalendpos[1], #var_f774409e:traversalendpos[0], #var_83cf29c8:traversalstartpos[2], #var_753e8ca7:traversalstartpos[1], #var_83e229fa:traversalstartpos[0], #spawner_name:hash(aitype)};
+            eventparams = {#var_23deb7ad:traversalstartnode.origin[2], #var_3524da39:traversalstartnode.origin[1], #var_b5b65b52:traversalstartnode.origin[0], #var_340139b7:traversalendpos[2], #var_40385225:traversalendpos[1], #var_f774409e:traversalendpos[0], #var_83cf29c8:traversalstartpos[2], #var_753e8ca7:traversalstartpos[1], #var_83e229fa:traversalstartpos[0], #spawner_name:hash(aitype)};
             function_92d1707f(#"hash_6ec90ea3ba426491", eventparams);
         } else {
             eventparams = {#var_340139b7:traversalendpos[2], #var_40385225:traversalendpos[1], #var_f774409e:traversalendpos[0], #var_83cf29c8:traversalstartpos[2], #var_753e8ca7:traversalstartpos[1], #var_83e229fa:traversalstartpos[0], #spawner_name:hash(aitype)};
@@ -3249,27 +3249,27 @@ function function_95578a3c(*willbekilled, *inflictor, attacker, damage, *flags, 
 function function_92dcde87(start_pos, end_pos, velocity, var_781a6f9a, enemy) {
     gravity = getdvarfloat(#"bg_lowgravity");
     if (velocity[2] > 0) {
-        var_67fdba7f = velocity[2] / gravity;
-        var_dd8c8ac8 = var_67fdba7f * 0.5;
-        var_f334075d = var_67fdba7f * var_67fdba7f + 2 * (start_pos[2] - end_pos[2]) / gravity;
-        if (var_f334075d <= 0) {
+        tapex = velocity[2] / gravity;
+        tmidnear = tapex * 0.5;
+        tdiscriminant = tapex * tapex + 2 * (start_pos[2] - end_pos[2]) / gravity;
+        if (tdiscriminant <= 0) {
             return 0;
         }
-        var_3ebd279c = 0.5 * sqrt(var_f334075d);
+        var_3ebd279c = 0.5 * sqrt(tdiscriminant);
     } else {
-        var_67fdba7f = 0;
-        var_dd8c8ac8 = 0;
-        var_f334075d = velocity[2] * velocity[2] + 2 * (start_pos[2] - end_pos[2]) * gravity;
-        if (var_f334075d <= 0) {
+        tapex = 0;
+        tmidnear = 0;
+        tdiscriminant = velocity[2] * velocity[2] + 2 * (start_pos[2] - end_pos[2]) * gravity;
+        if (tdiscriminant <= 0) {
             return 0;
         }
-        var_3ebd279c = 0.5 * (velocity[2] + sqrt(var_f334075d)) / gravity;
+        var_3ebd279c = 0.5 * (velocity[2] + sqrt(tdiscriminant)) / gravity;
     }
-    var_dcd60882 = var_67fdba7f + var_3ebd279c;
+    tmidfar = tapex + var_3ebd279c;
     if (!isdefined(var_781a6f9a)) {
-        var_781a6f9a = var_dcd60882;
+        var_781a6f9a = tmidfar;
     }
-    times = [2:var_dcd60882, 1:var_67fdba7f, 0:var_dd8c8ac8];
+    times = [2:tmidfar, 1:tapex, 0:tmidnear];
     points = [0:start_pos];
     for (i = 0; i < times.size; i++) {
         if (var_781a6f9a < times[i]) {
@@ -3292,9 +3292,9 @@ function function_92dcde87(start_pos, end_pos, velocity, var_781a6f9a, enemy) {
                 if (!var_48f09bdb) {
                     traceresults = bullettrace(points[i], points[i + 1], 0, self);
                     if (traceresults[#"fraction"] < 1) {
-                        var_84423b52 = vectorlerp(points[i], points[i + 1], traceresults[#"fraction"]);
-                        recordline(points[i], var_84423b52, (0, 1, 0), "<unknown string>");
-                        recordline(var_84423b52, points[i + 1], (1, 0, 0), "<unknown string>");
+                        hit_point = vectorlerp(points[i], points[i + 1], traceresults[#"fraction"]);
+                        recordline(points[i], hit_point, (0, 1, 0), "<unknown string>");
+                        recordline(hit_point, points[i + 1], (1, 0, 0), "<unknown string>");
                         var_48f09bdb = 1;
                     } else {
                         recordline(points[i], points[i + 1], (0, 1, 0), "<unknown string>");

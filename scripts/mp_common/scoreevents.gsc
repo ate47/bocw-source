@@ -216,7 +216,7 @@ function scoreeventplayerkill(data, time) {
         level.var_e5595d9d = level.lastkilltime;
         level.lastkilltime = time;
     }
-    var_7bc13b17 = 0;
+    explosivedamage = 0;
     weapon = level.weaponnone;
     inflictor = data.einflictor;
     isgrenade = 0;
@@ -238,7 +238,7 @@ function scoreeventplayerkill(data, time) {
         if (weapon == level.weaponnone && isdefined(data.victim.explosiveinfo[#"weapon"])) {
             weapon = data.victim.explosiveinfo[#"weapon"];
         }
-        var_7bc13b17 = 1;
+        explosivedamage = 1;
     }
     attacker.cur_kill_streak++;
     if (attacker.cur_kill_streak % 5 == 0) {
@@ -350,7 +350,7 @@ function scoreeventplayerkill(data, time) {
             attacker contracts::increment_contract(#"hash_47ca0c4002f709e5");
             attacker contracts::increment_contract(#"hash_30ea14a4ce0e5d04");
         }
-        if (var_7bc13b17) {
+        if (explosivedamage) {
             if (victimwasunderwater) {
                 processscoreevent(#"kill_underwater_enemy_explosive", attacker, victim, weapon);
             }
@@ -423,9 +423,9 @@ function scoreeventplayerkill(data, time) {
             attacker contracts::increment_contract(#"hash_61c7d530de491c8d");
             globallogic::function_3305e557(attacker, "firstBlood", 0);
             attacker function_ef823e71(6, attacker.pers[#"firstblood"]);
-            if (isdefined(victim.pers[#"hash_375a7d44ce729499"])) {
-                victim.pers[#"hash_375a7d44ce729499"]++;
-                victim function_ef823e71(9, victim.pers[#"hash_375a7d44ce729499"]);
+            if (isdefined(victim.pers[#"firstdeath"])) {
+                victim.pers[#"firstdeath"]++;
+                victim function_ef823e71(9, victim.pers[#"firstdeath"]);
             }
             util::function_a3f7de13(22, attacker.team, attacker getentitynumber());
             data.results.var_a5aabf71 = 1;
@@ -487,9 +487,9 @@ function scoreeventplayerkill(data, time) {
                 processscoreevent(#"hash_56ede06b1821a561", attacker, victim, weapon);
                 challenges::function_ffdecc69(attacker, weapon, weaponclass);
                 if (weaponclass === #"weapon_pistol") {
-                    var_51e175db = var_5fceefd4[1];
+                    victimyaw = var_5fceefd4[1];
                     var_a48ab0d6 = function_2981bd91(victimorigin - attackerorigin);
-                    anglediff = angleclamp180(var_51e175db - var_a48ab0d6);
+                    anglediff = angleclamp180(victimyaw - var_a48ab0d6);
                     if (85 > anglediff && anglediff > -55) {
                         attacker stats::function_dad108fa(#"hash_383d73e35a0c6d17", 1);
                     }
@@ -554,9 +554,9 @@ function scoreeventplayerkill(data, time) {
                 processscoreevent(#"hash_7036af264dd467b", attacker, victim, weapon);
                 attacker stats::function_42277145(#"hash_5135a4983fb81980", 1);
             }
-            var_51e175db = var_5fceefd4[1];
-            var_125aa2ea = data.var_83634238[1];
-            anglediff = angleclamp180(var_51e175db - var_125aa2ea);
+            victimyaw = var_5fceefd4[1];
+            attackeryaw = data.var_83634238[1];
+            anglediff = angleclamp180(victimyaw - attackeryaw);
             if (is_true(weapon.var_cfc07f04) && anglediff > -30 && anglediff < 70) {
                 level.globalbackstabs++;
                 processscoreevent(#"backstabber_kill", attacker, victim, weapon);
@@ -751,7 +751,7 @@ function scoreeventplayerkill(data, time) {
             }
         }
     }
-    if (var_7bc13b17 && getdvarint(#"hash_5c49df97f4f82e12", 0)) {
+    if (explosivedamage && getdvarint(#"hash_5c49df97f4f82e12", 0)) {
         processscoreevent(#"hash_595de4bb132a8e1", attacker, victim, weapon);
         attacker stats::function_42277145(#"hash_3d48d424c78e2c71", 1);
     }

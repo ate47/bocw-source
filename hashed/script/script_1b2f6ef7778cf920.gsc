@@ -124,13 +124,13 @@ function function_fefe581c(localclientnum, oldval, newval, *bnewent, *binitialsn
 // Size: 0x124
 function function_5b2f0c51(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     level.doa.roundnumber = bwastimejump;
-    var_dd2c6e79 = function_1df4c3b0(fieldname, #"hash_2ea8961f59d263ac");
-    if (isdefined(var_dd2c6e79)) {
-        var_8cde191 = getuimodel(var_dd2c6e79, #"hash_7c6ed19dcbb33bcb");
+    rootmodel = function_1df4c3b0(fieldname, #"hash_2ea8961f59d263ac");
+    if (isdefined(rootmodel)) {
+        var_8cde191 = getuimodel(rootmodel, #"hash_7c6ed19dcbb33bcb");
         if (isdefined(var_8cde191)) {
             setuimodelvalue(var_8cde191, bwastimejump);
         }
-        var_2c531ea2 = getuimodel(var_dd2c6e79, #"hash_6c6869e61a797192");
+        var_2c531ea2 = getuimodel(rootmodel, #"hash_6c6869e61a797192");
         if (isdefined(var_2c531ea2)) {
             setuimodelvalue(var_2c531ea2, bwastimejump);
         }

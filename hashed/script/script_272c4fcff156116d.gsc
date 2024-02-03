@@ -25,7 +25,7 @@ function private function_70a657d8() {
 // Checksum 0x7cbecd74, Offset: 0x138
 // Size: 0x22
 function function_b73af3c(name) {
-    level.var_643f86fe.var_bf26b910 = name;
+    level.var_643f86fe.levelname = name;
 }
 
 // Namespace namespace_643f86fe/namespace_1ef8852a
@@ -36,11 +36,11 @@ function function_59e67711(objective) {
     /#
         assert(!issubstr(objective, "<unknown string>"), "<unknown string>");
     #/
-    if (isdefined(level.var_643f86fe.var_bf26b910)) {
-        clientsyssetstate(level.var_643f86fe.var_7e507488, "0," + objective + "," + level.var_d2257418 + "," + level.var_1c5d2bf4 + "," + level.var_643f86fe.var_bf26b910);
-        level.var_643f86fe.var_bf26b910 = undefined;
+    if (isdefined(level.var_643f86fe.levelname)) {
+        clientsyssetstate(level.var_643f86fe.var_7e507488, "0," + objective + "," + level.gameskill + "," + level.var_1c5d2bf4 + "," + level.var_643f86fe.levelname);
+        level.var_643f86fe.levelname = undefined;
     } else {
-        clientsyssetstate(level.var_643f86fe.var_7e507488, "1," + objective + "," + level.var_d2257418 + "," + level.var_1c5d2bf4);
+        clientsyssetstate(level.var_643f86fe.var_7e507488, "1," + objective + "," + level.gameskill + "," + level.var_1c5d2bf4);
     }
 }
 

@@ -205,7 +205,7 @@ function function_8ef296ea() {
     self endon(#"death");
     while (1) {
         level waittill(#"hash_11f6c6a82650cca2");
-        if (is_true(self.var_8f5d982f)) {
+        if (is_true(self.collector)) {
             return;
         }
         function_1eaaceab(level.doa.var_5598fe58);
@@ -260,7 +260,7 @@ function function_2fdfff05() {
 // Size: 0x1b0
 function function_12462f60() {
     self endon(#"death");
-    if (!is_true(self.var_8f5d982f)) {
+    if (!is_true(self.collector)) {
         self thread function_11e05208();
         self thread function_d1183a88();
     }
@@ -341,11 +341,11 @@ function function_11e05208() {
     self endon(#"death");
     wait(3);
     var_a3750609 = 5;
-    var_246fe6ee = self.origin;
+    lastpos = self.origin;
     while (var_a3750609) {
         wait(1);
-        var_514d0c45 = distancesquared(var_246fe6ee, self.origin);
-        if (var_514d0c45 < function_a3f6cdac(12)) {
+        deltasq = distancesquared(lastpos, self.origin);
+        if (deltasq < function_a3f6cdac(12)) {
             var_a3750609--;
         } else {
             self thread function_11e05208();
@@ -498,7 +498,7 @@ function function_ddfdaf41() {
 // Checksum 0x962f7ed7, Offset: 0x24b8
 // Size: 0x108
 function function_7ff8a49e(*inflictor, eattacker, idamage, *idflags, *smeansofdeath, *weapon, *var_fd90b0bb, vpoint, *vdir, *shitloc, *timeoffset, *boneindex, *modelindex) {
-    if (is_false(self.takedamage) || is_true(self.var_8f5d982f)) {
+    if (is_false(self.takedamage) || is_true(self.collector)) {
         return 0;
     }
     var_799e18e5 = modelindex;
@@ -784,13 +784,13 @@ function function_89406011() {
             }
             timeout = 20;
             while (timeout > 0 && isdefined(currenttarget) && !is_true(currenttarget.pickedup)) {
-                var_b5a2be68 = self.origin;
+                lastorigin = self.origin;
                 result = undefined;
                 result = self waittilltimeout(0.5, #"near_goal", #"picked_up");
                 if (result._notify == #"timeout") {
                     timeout--;
                 }
-                if (isdefined(self.var_860a34b9) && distancesquared(self.var_860a34b9, self.origin) > function_a3f6cdac(12) && distancesquared(var_b5a2be68, self.origin) < function_a3f6cdac(8)) {
+                if (isdefined(self.var_860a34b9) && distancesquared(self.var_860a34b9, self.origin) > function_a3f6cdac(12) && distancesquared(lastorigin, self.origin) < function_a3f6cdac(8)) {
                     if (isdefined(currenttarget)) {
                         currenttarget.var_23b495d = 1;
                     }
@@ -969,7 +969,7 @@ function function_396fbf53(var_febfd0, numattacks = 1) {
         var_49e4e4be = trace[#"position"] + forward * -64;
         distsq = distancesquared(var_febfd0.origin, var_49e4e4be);
         var_e1f43424 = math::clamp(int(distsq / var_accea2d5), 1, 9999);
-        var_7162689c = math::clamp(var_e1f43424 * 0.005, 0, 0.7);
+        traveltime = math::clamp(var_e1f43424 * 0.005, 0, 0.7);
         if (getdvarint(#"hash_370090a969cdbc39", 0)) {
             level thread namespace_1e25ad94::function_5af86e1d(var_49e4e4be + vectorscale((0, 0, 1), 20), 30, 3, (1, 0, 0));
             level thread namespace_1e25ad94::debugline(var_49e4e4be + vectorscale((0, 0, 1), 20), self.origin + vectorscale((0, 0, 1), 20), 3, (1, 0, 0));
@@ -977,8 +977,8 @@ function function_396fbf53(var_febfd0, numattacks = 1) {
         }
         var_febfd0 thread function_51226983(self.enemy);
         self.boosting = 1;
-        var_febfd0 moveto(var_49e4e4be, var_7162689c);
-        var_febfd0 waittilltimeout(var_7162689c + 2, #"movedone");
+        var_febfd0 moveto(var_49e4e4be, traveltime);
+        var_febfd0 waittilltimeout(traveltime + 2, #"movedone");
         self.boosting = undefined;
         var_febfd0 notify(#"hash_531e95963631c569");
         if (getdvarint(#"hash_370090a969cdbc39", 0)) {
@@ -1182,7 +1182,7 @@ function function_36e94670(destination, timems, var_fbe64ccb) {
     stoptime = gettime() + timems;
     var_9843db1b = 0;
     if (isdefined(var_fbe64ccb)) {
-        var_c15a5a25 = var_fbe64ccb / frames / 2;
+        deltaz = var_fbe64ccb / frames / 2;
         var_aa3b6b10 = gettime() + timems / 2;
         while (1) {
             time = gettime();
@@ -1190,7 +1190,7 @@ function function_36e94670(destination, timems, var_fbe64ccb) {
                 break;
             }
             if (time < var_aa3b6b10) {
-                var_9b7b5074 = delta + (0, 0, var_c15a5a25);
+                var_9b7b5074 = delta + (0, 0, deltaz);
                 var_9843db1b = 1;
             } else {
                 if (is_true(var_9843db1b)) {
@@ -1203,7 +1203,7 @@ function function_36e94670(destination, timems, var_fbe64ccb) {
                     #/
                 }
                 var_9843db1b = 0;
-                var_9b7b5074 = delta - (0, 0, var_c15a5a25);
+                var_9b7b5074 = delta - (0, 0, deltaz);
             }
             newspot = self.origin + var_9b7b5074;
             if (!var_9843db1b && newspot[2] < destination[2]) {
@@ -1250,7 +1250,7 @@ function private function_ea163d5b(entity, asmstatename) {
     animationstatenetworkutility::requeststate(entity, asmstatename);
     self thread function_36f40887();
     if (function_1d0310f4()) {
-        banana1 = namespace_ec06fe4a::function_e22ae9b3(self.origin, "zombietron_banana");
+        banana1 = namespace_ec06fe4a::spawnmodel(self.origin, "zombietron_banana");
         if (isdefined(banana1)) {
             banana1.targetname = "banana1";
             banana1 setmodel("zombietron_banana");
@@ -1260,7 +1260,7 @@ function private function_ea163d5b(entity, asmstatename) {
         }
     }
     if (function_1d0310f4()) {
-        banana2 = namespace_ec06fe4a::function_e22ae9b3(self.origin, "zombietron_banana");
+        banana2 = namespace_ec06fe4a::spawnmodel(self.origin, "zombietron_banana");
         if (isdefined(banana2)) {
             banana2.targetname = "banana2";
             banana2 setmodel("zombietron_banana");
@@ -1318,15 +1318,15 @@ function function_36f40887() {
 // Size: 0xfe
 function function_bf9a2a1d(number = 5) {
     self endon(#"death");
-    var_a8660f81 = self.angles;
+    baseangle = self.angles;
     increment = (0, 360 / (number + 1), 80);
     while (number) {
-        banana1 = namespace_ec06fe4a::function_e22ae9b3(self.origin, "zombietron_banana");
+        banana1 = namespace_ec06fe4a::spawnmodel(self.origin, "zombietron_banana");
         if (isdefined(banana1)) {
             banana1.targetname = "banana1";
             banana1 setmodel("zombietron_banana");
-            banana1 thread function_bcfd19b2(self, undefined, var_a8660f81);
-            var_a8660f81 = var_a8660f81 + increment;
+            banana1 thread function_bcfd19b2(self, undefined, baseangle);
+            baseangle = baseangle + increment;
         }
         number--;
     }

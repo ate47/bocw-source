@@ -1,13 +1,13 @@
 {
     "var_1ad142ee": [
         {
-            "var_46bd7973": "#f"
+            "soundevent": "#f"
         },
         {
-            "var_46bd7973": "#hash_716ba3cc519a0428"
+            "soundevent": "#hash_716ba3cc519a0428"
         },
         {
-            "var_46bd7973": "#hash_5fb3ba71ebcb5098"
+            "soundevent": "#hash_5fb3ba71ebcb5098"
         }
     ],
     "description": "#hash_6220ed930f9dc9da",
@@ -18,7 +18,7 @@
     "var_824079e7": "#hash_a00be196107a0fd",
     "uimodel": "#hash_7171ca8337ee5831",
     "type": "zmintel",
-    "var_ad4ad686": "#hash_5ad2dea4c296de59",
+    "var_ad4ad686": "#maxis",
     "var_217aec15": "#hash_5162a6fc4090b465",
     "name": "zmintel_silver_maxis_document_1",
     "var_9be0526e": "#hash_daeb8129dc8e394",

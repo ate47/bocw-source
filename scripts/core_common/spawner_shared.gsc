@@ -19,7 +19,7 @@
 // Checksum 0x58dc71bf, Offset: 0x1f8
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"spawner", &function_70a657d8, undefined, &function_5700f119, undefined);
+    system::register(#"spawner", &function_70a657d8, undefined, &finalize, undefined);
 }
 
 // Namespace spawner/spawner_shared
@@ -58,7 +58,7 @@ function private function_70a657d8() {
 // Params 0, eflags: 0x6 linked
 // Checksum 0x3acffadd, Offset: 0x4e8
 // Size: 0xf4
-function private function_5700f119() {
+function private finalize() {
     ai = getaispeciesarray("all");
     array::thread_all(ai, &living_ai_prethink);
     foreach (ai_guy in ai) {
@@ -1119,7 +1119,7 @@ function spawn(b_force = 0, str_targetname, v_origin, v_angles, bignorespawningl
     self endon(#"death");
     e_spawned = undefined;
     force_spawn = 0;
-    var_82818228 = 0;
+    isdrone = 0;
     makeroom = 0;
     infinitespawn = 0;
     deleteonzerocount = 0;
@@ -1158,8 +1158,8 @@ function spawn(b_force = 0, str_targetname, v_origin, v_angles, bignorespawningl
     if (b_force || isdefined(self.spawnflags) && (self.spawnflags & 16) == 16 || isdefined(self.script_forcespawn)) {
         force_spawn = 1;
     }
-    if (isdefined(self.var_16e6680f) && self.var_16e6680f != 0) {
-        var_82818228 = 1;
+    if (isdefined(self.script_drone) && self.script_drone != 0) {
+        isdrone = 1;
     }
     if (isdefined(self.script_accuracy)) {
         /#
@@ -1269,13 +1269,13 @@ function spawn(b_force = 0, str_targetname, v_origin, v_angles, bignorespawningl
                 override_aitype = [[ level.override_spawned_aitype_func ]](self);
             }
             if (isdefined(override_aitype)) {
-                e_spawned = self spawnfromspawner(str_targetname, force_spawn, makeroom, infinitespawn, override_aitype, 0, var_82818228);
+                e_spawned = self spawnfromspawner(str_targetname, force_spawn, makeroom, infinitespawn, override_aitype, 0, isdrone);
             } else {
-                e_spawned = self spawnfromspawner(str_targetname, force_spawn, makeroom, infinitespawn, undefined, 0, var_82818228);
+                e_spawned = self spawnfromspawner(str_targetname, force_spawn, makeroom, infinitespawn, undefined, 0, isdrone);
             }
         }
     }
-    if (var_82818228 && isdefined(e_spawned)) {
+    if (isdrone && isdefined(e_spawned)) {
         if (is_true(self.var_60a43fc7)) {
             e_spawned makesentient();
         }
@@ -1300,7 +1300,7 @@ function spawn(b_force = 0, str_targetname, v_origin, v_angles, bignorespawningl
     if ((deleteonzerocount || is_true(self.script_delete_on_zero)) && var_e331297b) {
         self thread function_d4a13039();
     }
-    if (issentient(e_spawned) && !var_82818228) {
+    if (issentient(e_spawned) && !isdrone) {
         result = spawn_failed(e_spawned);
         if (isdefined(result) && result == 0) {
             if (isdefined(self.radius)) {

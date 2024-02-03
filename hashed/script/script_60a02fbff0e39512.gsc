@@ -125,8 +125,8 @@ function function_160e40a2() {
                         playerdir = vectornormalize((playerdir[0], playerdir[1], 0));
                         var_f8682cca = vectordot(anglestoforward(player.angles), playerdir);
                         var_772fc240 = distance2dsquared(playerorigin, var_dea242aa);
-                        var_6bcc2b9b = var_772fc240 <= var_2c51fa57;
-                        if (!var_6bcc2b9b && var_f8682cca <= cosangle || var_6bcc2b9b && var_f8682cca <= var_3393f5fe) {
+                        isnear = var_772fc240 <= var_2c51fa57;
+                        if (!isnear && var_f8682cca <= cosangle || isnear && var_f8682cca <= var_3393f5fe) {
                             continue;
                         }
                         var_df2e06ad = distance2dsquared(var_40676129, var_dea242aa);

@@ -33,7 +33,7 @@
 // Params 1, eflags: 0x2 linked
 // Checksum 0x5f7b85f6, Offset: 0x468
 // Size: 0xc4
-function function_f9f06983(*var_d3440450) {
+function starting(*var_d3440450) {
     namespace_b100dd86::function_5aabc3fb();
     flag::set("af_skid_complete");
     level.arash = spawner::simple_spawn_single("arash");
@@ -124,7 +124,7 @@ function function_fa3409bb() {
 // Params 4, eflags: 0x2 linked
 // Checksum 0xa0ed6efa, Offset: 0xcb8
 // Size: 0x24
-function cleanup(*name, *var_f9f06983, *direct, *player) {
+function cleanup(*name, *starting, *direct, *player) {
     
 }
 

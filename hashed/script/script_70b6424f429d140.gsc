@@ -31,7 +31,7 @@
 // Params 1, eflags: 0x0
 // Checksum 0xa5ce39e3, Offset: 0x7c0
 // Size: 0xc
-function function_f9f06983(*var_d3440450) {
+function starting(*var_d3440450) {
     
 }
 
@@ -58,7 +58,7 @@ function main(var_d3440450, *var_50cc0d4f) {
         wait(0.5);
     }
     snd::function_7db65a93("intro_trans_out");
-    thread function_34076424();
+    thread flyin();
     level flag::wait_till("heli_intro_complete");
     if (isdefined(var_50cc0d4f)) {
         skipto::function_4e3ab877(var_50cc0d4f);
@@ -80,7 +80,7 @@ function function_77438329() {
 // Params 4, eflags: 0x0
 // Checksum 0x692597e8, Offset: 0xa20
 // Size: 0x24
-function cleanup(*name, *var_f9f06983, *direct, *player) {
+function cleanup(*name, *starting, *direct, *player) {
     
 }
 
@@ -333,18 +333,18 @@ function function_8227f24e() {
         yaw = randomfloatrange(0, 0.15);
         roll = 0;
         duration = randomfloatrange(0.25, 1);
-        var_2038a0d5 = randomfloatrange(2.5, 3.5);
-        var_f6383e50 = randomfloatrange(2.5, 3.5);
+        freqpitch = randomfloatrange(2.5, 3.5);
+        freqyaw = randomfloatrange(2.5, 3.5);
         if (level.var_8f8dc88e == "shake_med") {
             pitch = randomfloatrange(0.02, 0.35);
             yaw = randomfloatrange(0.02, 0.25);
             roll = randomfloatrange(0.02, 0.1);
             duration = 1;
-            var_2038a0d5 = 10;
-            var_f6383e50 = 7;
+            freqpitch = 10;
+            freqyaw = 7;
         }
         if (pitch + yaw > 0.025) {
-            screenshake(source, pitch, yaw, roll, duration, 0, 0, 0, var_2038a0d5, var_f6383e50);
+            screenshake(source, pitch, yaw, roll, duration, 0, 0, 0, freqpitch, freqyaw);
         }
         wait(duration);
     }
@@ -354,7 +354,7 @@ function function_8227f24e() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0xc500ca42, Offset: 0x1d48
 // Size: 0x24
-function function_34076424() {
+function flyin() {
     function_3d66ebcc("intro_heli_player", 1);
 }
 

@@ -1,124 +1,124 @@
 {
-    "var_2be3941a": [
+    "rewards": [
         {
-            "var_5f79ee71": "#playerroletemplate",
+            "rewardtype": "#playerroletemplate",
             "image": "#ui_icon_operators_cub_dgi",
-            "var_e5119d1b": "#ui_icon_operators_cub_dgi",
+            "imagelarge": "#ui_icon_operators_cub_dgi",
             "var_b4ab831a": "#hash_4cc3c84feeb4b041",
             "var_57554d43": 1,
             "var_270fa547": "#hash_730e8686137b90ed"
         },
         {
-            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "rewardtype": "#hash_178ab01368762c8b",
             "var_b4ab831a": "#mtx_outfit_mp_cub_dgi_infiltration_mtxitem",
             "var_57554d43": 1,
             "var_270fa547": "#hash_730e8686137b90ed"
         },
         {
-            "var_5f79ee71": "#playerroletemplate",
+            "rewardtype": "#playerroletemplate",
             "image": "#ui_icon_operators_usa_navy_seal",
-            "var_e5119d1b": "#ui_icon_operators_usa_navy_seal",
+            "imagelarge": "#ui_icon_operators_usa_navy_seal",
             "var_b4ab831a": "#hash_3d3ba2ecf4d30874",
             "var_57554d43": 1,
             "var_270fa547": "#hash_1593f24b861eb245"
         },
         {
-            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "rewardtype": "#hash_178ab01368762c8b",
             "var_b4ab831a": "#mtx_outfit_mp_usa_navy_seal_infiltration_mtxitem",
             "var_57554d43": 1,
             "var_270fa547": "#hash_1593f24b861eb245"
         },
         {
-            "var_5f79ee71": "#playerroletemplate",
+            "rewardtype": "#playerroletemplate",
             "image": "#ui_icon_operators_usa_cia_sog",
-            "var_e5119d1b": "#ui_icon_operators_usa_cia_sog",
+            "imagelarge": "#ui_icon_operators_usa_cia_sog",
             "var_b4ab831a": "#hash_10d99c51363d023b",
             "var_57554d43": 1,
             "var_270fa547": "#hash_450f99ce50083544"
         },
         {
-            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "rewardtype": "#hash_178ab01368762c8b",
             "var_b4ab831a": "#mtx_outfit_mp_usa_cia_infiltration_mtxitem",
             "var_57554d43": 1,
             "var_270fa547": "#hash_450f99ce50083544"
         },
         {
-            "var_5f79ee71": "#playerroletemplate",
+            "rewardtype": "#playerroletemplate",
             "image": "#ui_icon_operators_rus_kgb",
-            "var_e5119d1b": "#ui_icon_operators_rus_kgb",
+            "imagelarge": "#ui_icon_operators_rus_kgb",
             "var_b4ab831a": "#hash_35640e9ffafb0a55",
             "var_57554d43": 1,
             "var_270fa547": "#hash_4808274db2565c0d"
         },
         {
-            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "rewardtype": "#hash_178ab01368762c8b",
             "var_b4ab831a": "#mtx_outfit_mp_rus_kgb_infiltration_mtxitem",
             "var_57554d43": 1,
             "var_270fa547": "#hash_4808274db2565c0d"
         },
         {
-            "var_5f79ee71": "#playerroletemplate",
+            "rewardtype": "#playerroletemplate",
             "image": "#ui_icon_operators_usa_hero_woods",
-            "var_e5119d1b": "#ui_icon_operators_usa_hero_woods",
+            "imagelarge": "#ui_icon_operators_usa_hero_woods",
             "var_b4ab831a": "#hash_70a73affe7ecd67a",
             "var_57554d43": 1,
             "var_270fa547": "#hash_6f392a12f973aea5"
         },
         {
-            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "rewardtype": "#hash_178ab01368762c8b",
             "var_b4ab831a": "#mtx_outfit_mp_usa_woods_infiltration_mtxitem",
             "var_57554d43": 1,
             "var_270fa547": "#hash_6f392a12f973aea5"
         },
         {
-            "var_5f79ee71": "#playerroletemplate",
+            "rewardtype": "#playerroletemplate",
             "image": "#ui_icon_operators_usa_hero_adler",
-            "var_e5119d1b": "#ui_icon_operators_usa_hero_adler",
+            "imagelarge": "#ui_icon_operators_usa_hero_adler",
             "var_b4ab831a": "#hash_46ddf1f925e6a50b",
             "var_57554d43": 1,
             "var_270fa547": "#hash_4693318a66e8a0b7"
         },
         {
-            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "rewardtype": "#hash_178ab01368762c8b",
             "var_b4ab831a": "#mtx_outfit_mp_usa_hero_adler_infiltration_mtxitem",
             "var_57554d43": 1,
             "var_270fa547": "#hash_4693318a66e8a0b7"
         },
         {
-            "var_5f79ee71": "#playerroletemplate",
+            "rewardtype": "#playerroletemplate",
             "image": "#ui_icon_operators_gen_starter3",
-            "var_e5119d1b": "#ui_icon_operators_gen_starter3",
+            "imagelarge": "#ui_icon_operators_gen_starter3",
             "var_b4ab831a": "#hash_1c4d491d9ce522d7",
             "var_57554d43": 1,
             "var_270fa547": "#hash_7397ba07e9e0325d"
         },
         {
-            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "rewardtype": "#hash_178ab01368762c8b",
             "var_b4ab831a": "#mtx_outfit_prt_mp_gen_starter3_default_mtxitem",
             "var_57554d43": 1,
             "var_270fa547": "#hash_7397ba07e9e0325d"
         },
         {
-            "var_5f79ee71": "#playerroletemplate",
+            "rewardtype": "#playerroletemplate",
             "image": "#ui_icon_operators_beck",
-            "var_e5119d1b": "#ui_icon_operators_beck",
+            "imagelarge": "#ui_icon_operators_beck",
             "var_b4ab831a": "#hash_7a22dc6feec296b4",
             "var_270fa547": "#hash_3171d9bb6e1519ac"
         },
         {
-            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "rewardtype": "#hash_178ab01368762c8b",
             "var_b4ab831a": "#mtx_outfit_mp_ger_west_infiltration_mtxitem",
             "var_270fa547": "#hash_3171d9bb6e1519ac"
         },
         {
-            "var_5f79ee71": "#playerroletemplate",
+            "rewardtype": "#playerroletemplate",
             "image": "#ui_icon_operators_park",
-            "var_e5119d1b": "#ui_icon_operators_park",
+            "imagelarge": "#ui_icon_operators_park",
             "var_b4ab831a": "#hash_7f9f7a55a86777c3",
             "var_270fa547": "#hash_3c8e09a04082db5e"
         },
         {
-            "var_5f79ee71": "#hash_178ab01368762c8b",
+            "rewardtype": "#hash_178ab01368762c8b",
             "var_b4ab831a": "#mtx_outfit_mp_uk_mi6_infiltration_mtxitem",
             "var_270fa547": "#hash_3c8e09a04082db5e"
         }

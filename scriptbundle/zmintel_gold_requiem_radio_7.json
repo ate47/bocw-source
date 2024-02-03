@@ -1,19 +1,19 @@
 {
     "var_1ad142ee": [
         {
-            "var_46bd7973": "#hash_45aa9713cc0091f",
+            "soundevent": "#hash_45aa9713cc0091f",
             "var_f35c5951": 1.5,
             "var_5d4b5964": 11.99,
             "var_36bf8e05": "#hash_5820a9fa680fa68c"
         },
         {
-            "var_46bd7973": "#hash_45aa8713cc0076c",
+            "soundevent": "#hash_45aa8713cc0076c",
             "var_f35c5951": 1.5,
             "var_5d4b5964": 17.71,
             "var_36bf8e05": "#hash_7ee63fcdaf70d3fd"
         },
         {
-            "var_46bd7973": "#hash_45aab713cc00c85",
+            "soundevent": "#hash_45aab713cc00c85",
             "var_f35c5951": 1,
             "var_5d4b5964": 10.09,
             "var_36bf8e05": "#hash_71718c0da08cda2e"

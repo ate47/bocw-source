@@ -93,7 +93,7 @@ function function_1735c657(forced) {
     }
     angles = absangleclamp360(self.angles);
     angles = (0, angles[1], 0);
-    var_28e27203 = isdefined(result.var_28e27203) ? result.var_28e27203 : angles;
+    faceangles = isdefined(result.faceangles) ? result.faceangles : angles;
     self notify(#"hash_7893364bd228d63e");
     self namespace_ec06fe4a::function_a4b3f184(1);
     if (is_true(self.doa.var_f583234e)) {
@@ -119,13 +119,13 @@ function function_1735c657(forced) {
     self clientfield::increment_to_player("setCompassVis");
     self notify(#"critical_health_end");
     org = undefined;
-    if (isdefined(var_28e27203)) {
-        org = namespace_ec06fe4a::function_e22ae9b3(self.origin, "tag_origin");
+    if (isdefined(faceangles)) {
+        org = namespace_ec06fe4a::spawnmodel(self.origin, "tag_origin");
         if (isdefined(org)) {
             org thread namespace_ec06fe4a::function_ae010bb4(self);
             org.angles = self.angles;
             self linkto(org);
-            org rotateto(var_28e27203, 0.25);
+            org rotateto(faceangles, 0.25);
             wait(0.25);
         }
     }
@@ -154,7 +154,7 @@ function function_1735c657(forced) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x385fb497, Offset: 0xaf8
 // Size: 0x61c
-function function_1f704cee(force = 0, var_28e27203 = 1) {
+function function_1f704cee(force = 0, faceangles = 1) {
     namespace_1e25ad94::function_f5f0c0f8("+++++++++++++++++++++++++++++++ PLAYER ENTERING FP : " + self.name);
     if (is_true(level.doa.var_318aa67a)) {
         force = 1;
@@ -202,11 +202,11 @@ function function_1f704cee(force = 0, var_28e27203 = 1) {
     if (is_true(self.doa.var_f583234e)) {
         self clientfield::set_to_player("toggleflashlight", 1);
     }
-    if (is_true(var_28e27203)) {
+    if (is_true(faceangles)) {
         if (isdefined(self.doa.var_5d4bd96f)) {
             self.doa.var_5d4bd96f delete();
         }
-        self.doa.var_5d4bd96f = namespace_ec06fe4a::function_e22ae9b3(self.origin, "tag_origin");
+        self.doa.var_5d4bd96f = namespace_ec06fe4a::spawnmodel(self.origin, "tag_origin");
         if (isdefined(self.doa.var_5d4bd96f)) {
             self.doa.var_5d4bd96f thread namespace_ec06fe4a::function_ae010bb4(self);
             self.doa.var_5d4bd96f.angles = self.angles;

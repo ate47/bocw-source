@@ -135,9 +135,9 @@ function function_25ac512() {
     absmaxs = var_8cf55682.absmaxs;
     if (isstruct(level.territory) && isarray(level.territory.bounds)) {
         var_8cf55682.bounds = level.territory.bounds;
-        foreach (var_cdb05658 in level.territory.bounds) {
-            var_f3ba0cb3 = var_cdb05658.origin + var_cdb05658.mins;
-            var_cd8bd6d = var_cdb05658.origin + var_cdb05658.maxs;
+        foreach (bound in level.territory.bounds) {
+            var_f3ba0cb3 = bound.origin + bound.mins;
+            var_cd8bd6d = bound.origin + bound.maxs;
             for (i = 0; i < 3; i++) {
                 if (!isdefined(absmins[i])) {
                     absmins[i] = var_f3ba0cb3[i];
@@ -207,9 +207,9 @@ function function_9bea1c04(var_8cf55682) {
     if (!isarray(var_8cf55682.bounds) || var_8cf55682.bounds.size <= 0) {
         return (x, y, 0);
     }
-    foreach (var_cdb05658 in var_8cf55682.bounds) {
-        point = (x, y, var_cdb05658.origin[2]);
-        if (istouching(point, var_cdb05658)) {
+    foreach (bound in var_8cf55682.bounds) {
+        point = (x, y, bound.origin[2]);
+        if (istouching(point, bound)) {
             return point;
         }
     }

@@ -2,7 +2,7 @@
     "option_dependencies": [
         {
             "var_1643d946": "1",
-            "var_6825bdb": "#voice_chat_enable",
+            "optionname": "#voice_chat_enable",
             "operator": "=="
         }
     ],
@@ -19,7 +19,7 @@
     "displayname": "#hash_3ae57573306de549",
     "var_d6897f56": 1,
     "var_500458ac": 10,
-    "var_926d1be9": 2,
+    "decimalplace": 2,
     "var_66faec87": 4,
     "statname": "voice_output_volume",
     "var_6f00a61a": 1.1,

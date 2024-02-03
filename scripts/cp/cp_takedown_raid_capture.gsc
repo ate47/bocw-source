@@ -9,7 +9,7 @@
 #using script_4ae261b2785dda9f;
 #using scripts\cp_common\collectibles.gsc;
 #using scripts\core_common\fx_shared.gsc;
-#using script_7b4396f5e8e35b28;
+#using scripts\core_common\districts.gsc;
 #using script_671f58f0b7aa833d;
 #using scripts\core_common\ai\archetype_utility.gsc;
 #using script_61cfc2ab8e60625;
@@ -43,7 +43,7 @@
 // Params 1, eflags: 0x2 linked
 // Checksum 0x805c37ef, Offset: 0x9a8
 // Size: 0x394
-function function_f9f06983(*var_d3440450) {
+function starting(*var_d3440450) {
     thread objectives::scripted("obj_takedown_capture", undefined, #"hash_49c1d860c97e3792");
     player = getplayers()[0];
     var_8a3bb97c = getspawnerarray("raid_adler", "targetname");
@@ -309,7 +309,7 @@ function function_86b6bafa() {
     level thread namespace_a052577e::function_e88f8edb();
     self waittill(#"hash_12324459eb2bc76d");
     level.var_58759087 thread dialog_tree::run(level.var_2fef04d8);
-    level namespace_f49eaa8b::function_a7d79fcb([1:"airfield_base", 0:"airfield_intro"]);
+    level districts::function_a7d79fcb([1:"airfield_base", 0:"airfield_intro"]);
     level thread slide_enemy2_clip();
     if (isdefined(level.raid_adler.model) && level.raid_adler.model != #"c_t9_usa_hero_adler_civ_amsterdam_body") {
         level.raid_adler thread namespace_b100dd86::function_f82142f8(undefined, "c_t9_usa_hero_adler_civ_amsterdam_body");
@@ -599,7 +599,7 @@ function function_2ed341fb() {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x8b038066, Offset: 0x30d8
 // Size: 0x41c
-function cleanup(*name, *var_f9f06983, *direct, *player) {
+function cleanup(*name, *starting, *direct, *player) {
     if (isdefined(level.raid_qasim)) {
         if (isdefined(level.raid_qasim.magic_bullet_shield)) {
             level thread util::stop_magic_bullet_shield(level.raid_qasim);

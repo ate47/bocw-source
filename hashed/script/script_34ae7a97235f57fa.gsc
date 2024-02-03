@@ -41,7 +41,7 @@ function function_92cf5632(name, model, callback) {
 // Params 2, eflags: 0x0
 // Checksum 0xd2d23ad5, Offset: 0x248
 // Size: 0x9a
-function function_cd458f49(name, var_be1d9a19) {
+function function_cd458f49(name, dropchance) {
     if (!isdefined(level.item_drops)) {
         level.item_drops = [];
     }
@@ -49,7 +49,7 @@ function function_cd458f49(name, var_be1d9a19) {
         level.item_drops[name] = spawnstruct();
     }
     level.item_drops[name].name = name;
-    level.item_drops[name].var_d8b51b9f = var_be1d9a19;
+    level.item_drops[name].var_d8b51b9f = dropchance;
 }
 
 // Namespace item_drop/item_drop

@@ -161,10 +161,10 @@ function function_5a35d482(weapon) {
         var_dd403630 = weapon;
     }
     maxammo = var_dd403630.maxammo;
-    var_53b14ebf = var_dd403630.clipsize;
+    maxclip = var_dd403630.clipsize;
     currentammostock = self getweaponammostock(var_dd403630);
     var_d678ba0b = self getweaponammoclip(var_dd403630);
-    if (currentammostock < maxammo || var_d678ba0b < var_53b14ebf) {
+    if (currentammostock < maxammo || var_d678ba0b < maxclip) {
         var_769cba68 = 0;
     } else {
         var_769cba68 = 1;
@@ -622,7 +622,7 @@ function private axe_throw_start(weapon, start_origin) {
     if (var_2b94b479 < 0.01) {
         var_2b94b479 = 0.01;
     }
-    var_c5165568.var_e31d75d6 = var_c5165568.origin;
+    var_c5165568.last_origin = var_c5165568.origin;
     var_c5165568.var_50a7653b = self;
     var_c5165568.var_cc327795 = self;
     var_c5165568 moveto(end_position, var_2b94b479);
@@ -634,11 +634,11 @@ function private axe_throw_start(weapon, start_origin) {
             return;
         }
         var_11a5ceb4 = var_11a5ceb4 + float(function_60d95f53()) / 1000;
-        var_525a6081 = self function_28a475cb(var_c5165568.var_e31d75d6, var_c5165568.origin, 50, weapon, var_55b935c, var_d97e2ed7);
+        var_525a6081 = self function_28a475cb(var_c5165568.last_origin, var_c5165568.origin, 50, weapon, var_55b935c, var_d97e2ed7);
         if (var_525a6081 && is_true(self.var_92188e6b)) {
             break;
         }
-        var_c5165568.var_e31d75d6 = var_c5165568.origin;
+        var_c5165568.last_origin = var_c5165568.origin;
     }
     if (is_true(self.var_92188e6b) && isdefined(var_c5165568)) {
         var_c5165568 moveto(var_c5165568.origin, float(function_60d95f53()) / 1000);
@@ -676,8 +676,8 @@ function private axe_throw_start(weapon, start_origin) {
             travel_time = 0.01;
         }
         var_c5165568 moveto(var_173eb60b, travel_time);
-        self function_28a475cb(var_c5165568.var_e31d75d6, var_c5165568.origin, 50, weapon, var_55b935c, var_d97e2ed7);
-        var_c5165568.var_e31d75d6 = var_c5165568.origin;
+        self function_28a475cb(var_c5165568.last_origin, var_c5165568.origin, 50, weapon, var_55b935c, var_d97e2ed7);
+        var_c5165568.last_origin = var_c5165568.origin;
     }
     if (isdefined(var_c5165568)) {
         if (var_d97e2ed7) {

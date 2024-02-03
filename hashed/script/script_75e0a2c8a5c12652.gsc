@@ -136,7 +136,7 @@ class class_df106b1 : cluielem {
     // Params 2, eflags: 0x0
     // Checksum 0xb8a88d12, Offset: 0x10f8
     // Size: 0x30
-    function function_bede6f52(localclientnum, value) {
+    function set_scale(localclientnum, value) {
         [[ self ]]->set_data(localclientnum, "scale", value);
     }
 
@@ -412,7 +412,7 @@ function function_1a98dac6(localclientnum, value) {
 // Params 2, eflags: 0x0
 // Checksum 0xac3dff3e, Offset: 0x940
 // Size: 0x28
-function function_bede6f52(localclientnum, value) {
-    [[ self ]]->function_bede6f52(localclientnum, value);
+function set_scale(localclientnum, value) {
+    [[ self ]]->set_scale(localclientnum, value);
 }
 

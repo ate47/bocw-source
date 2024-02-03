@@ -65,14 +65,14 @@ class class_38f05ef0 {
     // Size: 0x184
     __constructor() {
         self.var_f7688f8b = "";
-        self.var_82953f8a = 0;
-        self.var_cafa7e0c = 1;
+        self.m_variant = 0;
+        self.m_scale = 1;
         self.m_type = 0;
         self.m_timeout = 10;
-        self.var_2e39f9a9 = vectorscale((0, 0, 1), 70);
+        self.m_angles = vectorscale((0, 0, 1), 70);
         self.var_9453b0c1 = &think;
         self.var_5d9462ef = &idle;
-        self.var_12094064 = 0;
+        self.m_data = 0;
         self.var_45b48e54 = 0;
         self.var_6269b9a1 = &function_91c693d3;
         self.var_6269b9a1 = &function_91c693d3;
@@ -87,7 +87,7 @@ class class_38f05ef0 {
         self.var_f360c9a6 = "evt_doa_pickup_default_lp";
         self.var_480dae1c = "evt_doa_pickup_default_despawn";
         self.var_6ea99c7a = "evt_doa_pickup_default_consumed";
-        self.var_2b20fb3b = 1;
+        self.m_entries = 1;
         function_f8694033();
     }
 
@@ -192,7 +192,7 @@ class class_38f05ef0 {
     // Checksum 0xe004f4f7, Offset: 0x26a8
     // Size: 0xa
     function function_55b7a101() {
-        return self.var_2b20fb3b;
+        return self.m_entries;
     }
 
     // Namespace namespace_38f05ef0/namespace_dfc652ee
@@ -216,7 +216,7 @@ class class_38f05ef0 {
     // Checksum 0x22b19042, Offset: 0x24e0
     // Size: 0xa
     function getheight() {
-        return self.var_b24182b5;
+        return self.m_height;
     }
 
     // Namespace namespace_38f05ef0/namespace_dfc652ee
@@ -280,18 +280,18 @@ class class_38f05ef0 {
     // Size: 0x142
     function init(var_49d95ac1, variant, var_44dbff18, rarity, scale, type, timeout, angles = vectorscale((0, 0, 1), 70), data = 0, entries = 1) {
         self.var_f7688f8b = var_49d95ac1;
-        self.var_82953f8a = variant;
+        self.m_variant = variant;
         self.var_9453b0c1 = isdefined(var_44dbff18) ? var_44dbff18 : &think;
-        self.var_cafa7e0c = scale;
+        self.m_scale = scale;
         self.m_type = type;
         self.m_timeout = timeout;
-        self.var_2e39f9a9 = angles;
-        self.var_12094064 = data;
+        self.m_angles = angles;
+        self.m_data = data;
         self.var_45b48e54 = rarity;
         self.var_3b17d6fc = 0;
         self.var_7248a65a = 0;
         self.var_f3072bed = 0;
-        self.var_2b20fb3b = entries;
+        self.m_entries = entries;
     }
 
     // Namespace namespace_38f05ef0/namespace_dfc652ee
@@ -299,7 +299,7 @@ class class_38f05ef0 {
     // Checksum 0x2fd1e222, Offset: 0x24c8
     // Size: 0xa
     function getwidth() {
-        return self.var_5bcecdc5;
+        return self.m_width;
     }
 
     // Namespace namespace_38f05ef0/namespace_dfc652ee
@@ -315,7 +315,7 @@ class class_38f05ef0 {
     // Checksum 0xb99a8656, Offset: 0x24b0
     // Size: 0xa
     function function_a0da66ec() {
-        return self.var_82953f8a;
+        return self.m_variant;
     }
 
     // Namespace namespace_38f05ef0/namespace_dfc652ee
@@ -385,7 +385,7 @@ class class_38f05ef0 {
     // Checksum 0x8e003dbb, Offset: 0x2530
     // Size: 0xa
     function getangles() {
-        return self.var_2e39f9a9;
+        return self.m_angles;
     }
 
     // Namespace namespace_38f05ef0/namespace_dfc652ee
@@ -417,7 +417,7 @@ class class_38f05ef0 {
     // Checksum 0x748911c0, Offset: 0x24f8
     // Size: 0x18
     function function_ce67f5d4() {
-        return function_ed9402ec() != -1;
+        return gettimeout() != -1;
     }
 
     // Namespace namespace_38f05ef0/namespace_dfc652ee
@@ -448,7 +448,7 @@ class class_38f05ef0 {
     // Params 0, eflags: 0x2 linked
     // Checksum 0xe5310105, Offset: 0x2518
     // Size: 0xa
-    function function_ed9402ec() {
+    function gettimeout() {
         return self.m_timeout;
     }
 
@@ -465,7 +465,7 @@ class class_38f05ef0 {
     // Checksum 0xb20fd3e9, Offset: 0x2590
     // Size: 0xa
     function getscale() {
-        return self.var_cafa7e0c;
+        return self.m_scale;
     }
 
     // Namespace namespace_38f05ef0/namespace_dfc652ee
@@ -473,8 +473,8 @@ class class_38f05ef0 {
     // Checksum 0xdf4b7488, Offset: 0x2380
     // Size: 0x4e
     function function_f8694033(width = 42, height = 72) {
-        self.var_5bcecdc5 = width;
-        self.var_b24182b5 = height;
+        self.m_width = width;
+        self.m_height = height;
     }
 
     // Namespace namespace_38f05ef0/namespace_dfc652ee
@@ -482,7 +482,7 @@ class class_38f05ef0 {
     // Checksum 0xb4a530d7, Offset: 0x25d8
     // Size: 0xa
     function getdata() {
-        return self.var_12094064;
+        return self.m_data;
     }
 
 }
@@ -548,13 +548,13 @@ class class_a08a1bec {
     // Size: 0x534
     function init(itemdef, origin, angles = [[ itemdef ]]->getangles(), data = [[ itemdef ]]->getdata(), width = [[ itemdef ]]->getwidth(), height = [[ itemdef ]]->getheight(), scale = [[ itemdef ]]->getscale(), clientside = 1) {
         self.var_ff66dbc5 = itemdef;
-        self.var_1c13332c = function_65ee50ba(origin) + vectorscale((0, 0, 1), 18);
-        if (abs(self.var_1c13332c[2] - origin[2]) > 40) {
-            self.var_1c13332c = (self.var_1c13332c[0], self.var_1c13332c[1], origin[2]);
+        self.m_origin = function_65ee50ba(origin) + vectorscale((0, 0, 1), 18);
+        if (abs(self.m_origin[2] - origin[2]) > 40) {
+            self.m_origin = (self.m_origin[0], self.m_origin[1], origin[2]);
         }
-        self.var_12094064 = data;
+        self.m_data = data;
         self.var_9453b0c1 = [[ self.var_ff66dbc5 ]]->function_63c67234();
-        self.var_a116600e = namespace_ec06fe4a::function_e22ae9b3(self.var_1c13332c);
+        self.var_a116600e = namespace_ec06fe4a::spawnmodel(self.m_origin);
         if (!isdefined(self.var_a116600e)) {
             return 0;
         }
@@ -584,7 +584,7 @@ class class_a08a1bec {
         self.var_a116600e.var_b20c0bc5 = [[ itemdef ]]->function_32b47cc3();
         self.var_a116600e thread [[ [[ self.var_ff66dbc5 ]]->function_1e4ba7d0() ]]();
         self.var_a116600e thread [[ self.var_9453b0c1 ]]();
-        self.var_a116600e thread namespace_dfc652ee::pickuptimeout(function_ed9402ec());
+        self.var_a116600e thread namespace_dfc652ee::pickuptimeout(gettimeout());
         self.var_a116600e.var_2f0b512f = level.doa.var_3902985f;
         if (isdefined(level.doa.var_a71b0305)) {
             [[ level.doa.var_a71b0305 ]](self.var_a116600e);
@@ -622,8 +622,8 @@ class class_a08a1bec {
     // Params 0, eflags: 0x2 linked
     // Checksum 0x949b0d42, Offset: 0x3938
     // Size: 0x16
-    function function_ed9402ec() {
-        return [[ self.var_ff66dbc5 ]]->function_ed9402ec();
+    function gettimeout() {
+        return [[ self.var_ff66dbc5 ]]->gettimeout();
     }
 
     // Namespace namespace_a08a1bec/namespace_dfc652ee
@@ -631,7 +631,7 @@ class class_a08a1bec {
     // Checksum 0x612f1f01, Offset: 0x38b8
     // Size: 0x12
     function getdata(*data) {
-        return self.var_12094064;
+        return self.m_data;
     }
 
 }
@@ -709,7 +709,7 @@ function init() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x85f23373, Offset: 0x3bf0
 // Size: 0x160
-function function_8cf6a668(type, var_a63abfbe) {
+function function_8cf6a668(type, itemdata) {
     items = [];
     foreach (def in level.doa.pickups.var_8b9e74df) {
         if ([[ def ]]->gettype() == type) {
@@ -717,7 +717,7 @@ function function_8cf6a668(type, var_a63abfbe) {
         }
     }
     foreach (itemdef in items) {
-        [[ itemdef ]]->function_799a63cf(var_a63abfbe.var_d266c0d8, var_a63abfbe.var_2aa68449, var_a63abfbe.var_860ac8be, var_a63abfbe.var_9f6d7ee9);
+        [[ itemdef ]]->function_799a63cf(itemdata.var_d266c0d8, itemdata.var_2aa68449, itemdata.var_860ac8be, itemdata.var_9f6d7ee9);
     }
 }
 
@@ -1296,8 +1296,8 @@ function function_ae609287(var_4d842336, origin) {
             if (!isdefined(item)) {
                 continue;
             }
-            var_7048016d = [[ item.pickup ]]->gettype();
-            if (var_7048016d === 3 || var_7048016d === 5 || var_7048016d === 4 || var_7048016d === 40) {
+            thistype = [[ item.pickup ]]->gettype();
+            if (thistype === 3 || thistype === 5 || thistype === 4 || thistype === 40) {
                 distsq = distancesquared(origin, item.origin);
                 if (distsq < function_a3f6cdac(80)) {
                     return 0;
@@ -1526,7 +1526,7 @@ function function_2ebebd0c() {
                                 if (guy.doa.score.bombs < guy namespace_eccff4fb::function_4091beb5()) {
                                     guy thread namespace_6e90e490::function_47e11416(4);
                                     guy.doa.score.bombs++;
-                                    model = namespace_ec06fe4a::function_e22ae9b3(self.origin, "zombietron_nuke");
+                                    model = namespace_ec06fe4a::spawnmodel(self.origin, "zombietron_nuke");
                                     if (isdefined(model)) {
                                         model.angles = self.angles;
                                         model setscale(self.scale);
@@ -1589,7 +1589,7 @@ function function_2ebebd0c() {
                         if (guy.doa.score.lives < guy namespace_eccff4fb::function_77cbfb85()) {
                             guy thread namespace_6e90e490::function_47e11416(4);
                             guy.doa.score.lives++;
-                            model = namespace_ec06fe4a::function_e22ae9b3(self.origin, "zombietron_extra_life");
+                            model = namespace_ec06fe4a::spawnmodel(self.origin, "zombietron_extra_life");
                             if (isdefined(model)) {
                                 model.angles = self.angles;
                                 model setscale(self.scale);
@@ -2069,9 +2069,9 @@ function pickuptimeout(timetowait) {
 // Size: 0xe2
 function function_18372b20() {
     function_19fa261e();
-    foreach (var_956de39f in level.doa.var_537a3e29) {
-        if (isdefined(var_956de39f)) {
-            var_956de39f delete();
+    foreach (orb in level.doa.var_537a3e29) {
+        if (isdefined(orb)) {
+            orb delete();
         }
     }
     function_b950ecde();
@@ -2110,7 +2110,7 @@ function function_69cafbe0() {
 // Checksum 0x406f7bce, Offset: 0x9628
 // Size: 0x1b4
 function function_2735024b() {
-    ent = namespace_ec06fe4a::function_e22ae9b3((0, 0, 0));
+    ent = namespace_ec06fe4a::spawnmodel((0, 0, 0));
     if (isdefined(ent)) {
         ent namespace_e32bb68::function_3a59ec34("evt_doa_pickup_umbrella_storm_2d_lp");
     }
@@ -2144,7 +2144,7 @@ function function_32370b0d(timeout = 120) {
     if (isdefined(self.doa.var_ad639ebd)) {
         return;
     }
-    self.doa.var_ad639ebd = namespace_ec06fe4a::function_e22ae9b3(self.origin, "tag_origin", self.angles, "player lanternOrg");
+    self.doa.var_ad639ebd = namespace_ec06fe4a::spawnmodel(self.origin, "tag_origin", self.angles, "player lanternOrg");
     if (isdefined(self.doa.var_ad639ebd)) {
         self.doa.var_ad639ebd thread namespace_ec06fe4a::function_d55f042c(self, "lantern_terminated");
     }

@@ -97,7 +97,7 @@ function private function_32ab045(ent, name) {
 // Checksum 0xb934bb2, Offset: 0xb80
 // Size: 0xda
 function private _trigger(player, trigger, *var_ec80d14b) {
-    trigger_name = snd::function_ea2f17d1(var_ec80d14b.var_fd537616, "$default");
+    trigger_name = snd::function_ea2f17d1(var_ec80d14b.script_ambientroom, "$default");
     switch (trigger_name) {
     case #"$default":
         snd::function_645c2f9b(trigger, trigger_name);
@@ -366,15 +366,15 @@ function function_952e21e3(ent, name) {
         waitframe(1);
     }
     waittillframeend();
-    var_cf780239 = level.var_28b99ea7;
-    var_1ebbcab = level.var_2de628a1[name][var_cf780239];
-    if (!isdefined(var_1ebbcab)) {
-        var_1ebbcab = level.var_2de628a1[name][#"default"];
+    visit = level.var_28b99ea7;
+    contexts = level.var_2de628a1[name][visit];
+    if (!isdefined(contexts)) {
+        contexts = level.var_2de628a1[name][#"default"];
     }
-    if (snd::function_81fac19d(!isarray(var_1ebbcab), "allies_context_init '" + name + "' has no default context!")) {
+    if (snd::function_81fac19d(!isarray(contexts), "allies_context_init '" + name + "' has no default context!")) {
         return;
     } else {
-        foreach (context in var_1ebbcab) {
+        foreach (context in contexts) {
             type = context[0];
             value = context[1];
             ent setsoundentcontext(type, value);
@@ -512,10 +512,10 @@ function function_5af45515() {
     snd::play("emt_generator_room_tone_cp_ger_hub_lp", (-362, 463, -80));
     snd::play("emt_fan_industrial_cp_ger_hub_lp", (-257, 415, 145));
     snd::play("emt_safehouse_night_crickets_lp", (302, -395, 72));
-    snd::function_5f9d291a("emt_safehouse_garage_door_rattles", (281, -161, 123), [3:14, 2:8, 1:15, 0:14]);
-    snd::function_5f9d291a("emt_safehouse_metal_building_groans", (-253, 560, 334), [3:17, 2:8, 1:15, 0:14]);
-    snd::function_5f9d291a("emt_safehouse_metal_building_groans", (73, -512, 286), [3:16, 2:9, 1:17, 0:16]);
-    snd::function_5f9d291a("emt_safehouse_metal_building_groans", (-789, -176, 283), [3:18, 2:10, 1:15, 0:14]);
+    snd::emitter("emt_safehouse_garage_door_rattles", (281, -161, 123), [3:14, 2:8, 1:15, 0:14]);
+    snd::emitter("emt_safehouse_metal_building_groans", (-253, 560, 334), [3:17, 2:8, 1:15, 0:14]);
+    snd::emitter("emt_safehouse_metal_building_groans", (73, -512, 286), [3:16, 2:9, 1:17, 0:16]);
+    snd::emitter("emt_safehouse_metal_building_groans", (-789, -176, 283), [3:18, 2:10, 1:15, 0:14]);
 }
 
 // Namespace namespace_4ed3ce47/namespace_9d055984
@@ -538,10 +538,10 @@ function function_f4c3ff4f() {
     snd::play("emt_rain_metal_door_closed_int_lp", (-228, -1532, 54));
     snd::play("evt_fan_portable_idle_armada_lp", (73, 61, 54));
     snd::play("evt_fan_portable_idle_armada_lp", (94, 567, 56));
-    snd::function_5f9d291a("emt_safehouse_garage_door_rattles", (281, -161, 123), [3:14, 2:8, 1:15, 0:14]);
-    snd::function_5f9d291a("emt_safehouse_metal_building_groans", (-253, 560, 334), [3:17, 2:8, 1:15, 0:14]);
-    snd::function_5f9d291a("emt_safehouse_metal_building_groans", (73, -512, 286), [3:16, 2:9, 1:17, 0:16]);
-    snd::function_5f9d291a("emt_safehouse_metal_building_groans", (-789, -176, 283), [3:18, 2:10, 1:15, 0:14]);
+    snd::emitter("emt_safehouse_garage_door_rattles", (281, -161, 123), [3:14, 2:8, 1:15, 0:14]);
+    snd::emitter("emt_safehouse_metal_building_groans", (-253, 560, 334), [3:17, 2:8, 1:15, 0:14]);
+    snd::emitter("emt_safehouse_metal_building_groans", (73, -512, 286), [3:16, 2:9, 1:17, 0:16]);
+    snd::emitter("emt_safehouse_metal_building_groans", (-789, -176, 283), [3:18, 2:10, 1:15, 0:14]);
 }
 
 // Namespace namespace_4ed3ce47/namespace_9d055984
@@ -555,10 +555,10 @@ function function_d701d197() {
     snd::play("evt_fan_portable_idle_armada_lp", (94, 567, 56));
     snd::play("evt_fridge_hum_low", (-63, 177, 10));
     snd::play("emt_safehouse_morning_birds_lp", (302, -395, 72));
-    snd::function_5f9d291a("emt_safehouse_garage_door_rattles", (281, -161, 123), [3:14, 2:8, 1:30, 0:27]);
-    snd::function_5f9d291a("emt_safehouse_metal_building_groans", (-253, 560, 334), [3:17, 2:8, 1:30, 0:27]);
-    snd::function_5f9d291a("emt_safehouse_metal_building_groans", (73, -512, 286), [3:16, 2:9, 1:30, 0:27]);
-    snd::function_5f9d291a("emt_safehouse_metal_building_groans", (-789, -176, 283), [3:18, 2:10, 1:30, 0:27]);
+    snd::emitter("emt_safehouse_garage_door_rattles", (281, -161, 123), [3:14, 2:8, 1:30, 0:27]);
+    snd::emitter("emt_safehouse_metal_building_groans", (-253, 560, 334), [3:17, 2:8, 1:30, 0:27]);
+    snd::emitter("emt_safehouse_metal_building_groans", (73, -512, 286), [3:16, 2:9, 1:30, 0:27]);
+    snd::emitter("emt_safehouse_metal_building_groans", (-789, -176, 283), [3:18, 2:10, 1:30, 0:27]);
 }
 
 // Namespace namespace_4ed3ce47/namespace_9d055984
@@ -573,10 +573,10 @@ function function_91962847() {
     snd::play("evt_fluorescent_light", (-240, -810, 118));
     snd::play("evt_fluorescent_light", (-81, -577, 145));
     snd::play("emt_projector_idle_lp", (72, 261, 46));
-    snd::function_5f9d291a("emt_safehouse_garage_door_rattles", (281, -161, 123), [3:14, 2:8, 1:15, 0:14]);
-    snd::function_5f9d291a("emt_safehouse_metal_building_groans", (-253, 560, 334), [3:17, 2:8, 1:15, 0:14]);
-    snd::function_5f9d291a("emt_safehouse_metal_building_groans", (73, -512, 286), [3:16, 2:9, 1:17, 0:16]);
-    snd::function_5f9d291a("emt_safehouse_metal_building_groans", (-789, -176, 283), [3:18, 2:10, 1:15, 0:14]);
+    snd::emitter("emt_safehouse_garage_door_rattles", (281, -161, 123), [3:14, 2:8, 1:15, 0:14]);
+    snd::emitter("emt_safehouse_metal_building_groans", (-253, 560, 334), [3:17, 2:8, 1:15, 0:14]);
+    snd::emitter("emt_safehouse_metal_building_groans", (73, -512, 286), [3:16, 2:9, 1:17, 0:16]);
+    snd::emitter("emt_safehouse_metal_building_groans", (-789, -176, 283), [3:18, 2:10, 1:15, 0:14]);
 }
 
 // Namespace namespace_4ed3ce47/namespace_9d055984
@@ -592,10 +592,10 @@ function function_351d940() {
     snd::play("evt_fluorescent_light", (-81, -577, 145));
     snd::play("evt_fluorescent_light", (76, -580, 146));
     snd::play("evt_fridge_hum_low", (-63, 177, 10));
-    snd::function_5f9d291a("emt_safehouse_garage_door_rattles", (281, -161, 123), [3:14, 2:8, 1:15, 0:14]);
-    snd::function_5f9d291a("emt_safehouse_metal_building_groans", (-253, 560, 334), [3:17, 2:8, 1:15, 0:14]);
-    snd::function_5f9d291a("emt_safehouse_metal_building_groans", (73, -512, 286), [3:16, 2:9, 1:17, 0:16]);
-    snd::function_5f9d291a("emt_safehouse_metal_building_groans", (-789, -176, 283), [3:18, 2:10, 1:15, 0:14]);
+    snd::emitter("emt_safehouse_garage_door_rattles", (281, -161, 123), [3:14, 2:8, 1:15, 0:14]);
+    snd::emitter("emt_safehouse_metal_building_groans", (-253, 560, 334), [3:17, 2:8, 1:15, 0:14]);
+    snd::emitter("emt_safehouse_metal_building_groans", (73, -512, 286), [3:16, 2:9, 1:17, 0:16]);
+    snd::emitter("emt_safehouse_metal_building_groans", (-789, -176, 283), [3:18, 2:10, 1:15, 0:14]);
 }
 
 // Namespace namespace_4ed3ce47/namespace_9d055984
@@ -618,10 +618,10 @@ function function_ef8c9b18() {
     snd::play("emt_fire_messageboard_hvy_01_lp", (42, 90, 15));
     snd::play("emt_fire_wood_hvy_01_lp", (-395, -275, 14));
     snd::play("emt_fire_wood_med_01_lp", (-281, 100, 47));
-    snd::function_5f9d291a("emt_safehouse_garage_door_rattles", (281, -161, 123), [3:14, 2:8, 1:15, 0:14]);
-    snd::function_5f9d291a("emt_safehouse_metal_building_groans", (-253, 560, 334), [3:17, 2:8, 1:15, 0:14]);
-    snd::function_5f9d291a("emt_safehouse_metal_building_groans", (73, -512, 286), [3:16, 2:9, 1:17, 0:16]);
-    snd::function_5f9d291a("emt_safehouse_metal_building_groans", (-789, -176, 283), [3:18, 2:10, 1:15, 0:14]);
+    snd::emitter("emt_safehouse_garage_door_rattles", (281, -161, 123), [3:14, 2:8, 1:15, 0:14]);
+    snd::emitter("emt_safehouse_metal_building_groans", (-253, 560, 334), [3:17, 2:8, 1:15, 0:14]);
+    snd::emitter("emt_safehouse_metal_building_groans", (73, -512, 286), [3:16, 2:9, 1:17, 0:16]);
+    snd::emitter("emt_safehouse_metal_building_groans", (-789, -176, 283), [3:18, 2:10, 1:15, 0:14]);
 }
 
 // Namespace namespace_4ed3ce47/namespace_9d055984

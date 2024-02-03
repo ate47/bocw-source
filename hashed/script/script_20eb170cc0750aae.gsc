@@ -311,7 +311,7 @@ function onplayerkilled(*einflictor, *attacker, *idamage, *smeansofdeath, *weapo
             self waittilltimeout(5, #"hash_eb0317ca3976bf9");
         }
         level thread function_34459363(var_f695d653, level.var_30eb363);
-    } else if (level.var_d2257418 >= 2) {
+    } else if (level.gameskill >= 2) {
         playsoundatposition(#"hash_7dcd120ea369ea68", (0, 0, 0));
         level thread function_34459363(var_f695d653, level.var_30eb363);
     }

@@ -2,12 +2,12 @@
     "option_dependencies": [
         {
             "var_1643d946": "1",
-            "var_6825bdb": "#pc_display_mode",
+            "optionname": "#pc_display_mode",
             "operator": "=="
         },
         {
             "var_1643d946": "2",
-            "var_6825bdb": "#pc_display_mode",
+            "optionname": "#pc_display_mode",
             "operator": "=="
         }
     ],

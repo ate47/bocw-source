@@ -124,7 +124,7 @@ function private function_afe6cbc4(victim) {
 // Params 8, eflags: 0x0
 // Checksum 0x6c5bc577, Offset: 0x9e0
 // Size: 0x564
-function spawn_dog_tag(victim, attacker, on_use_function, objectives_for_attacker_and_victim_only, var_2636e48, var_f75dca66, var_1c1cfb90, var_78bc5595) {
+function spawn_dog_tag(victim, attacker, on_use_function, objectives_for_attacker_and_victim_only, posoffset, var_f75dca66, var_1c1cfb90, var_78bc5595) {
     dogtag = function_afe6cbc4(victim);
     if (isdefined(dogtag)) {
         playfx("ui/fx_kill_confirmed_vanish", dogtag.curorigin);
@@ -144,8 +144,8 @@ function spawn_dog_tag(victim, attacker, on_use_function, objectives_for_attacke
     dogtag gameobjects::allow_use(#"hash_5ccfd7bbbf07c770");
     baseoffset = vectorscale((0, 0, 1), 14);
     pos = victim.origin + baseoffset;
-    if (isvec(var_2636e48)) {
-        pos = pos + var_2636e48;
+    if (isvec(posoffset)) {
+        pos = pos + posoffset;
     }
     dogtag.origin = pos;
     dogtag.curorigin = pos;

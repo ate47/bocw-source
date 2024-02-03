@@ -21,7 +21,7 @@ function private autoexec __init__() {
 // Params 16, eflags: 0x0
 // Checksum 0x618bd06c, Offset: 0x110
 // Size: 0x696
-function function_80d28d77(localclientnum, var_7b70989a, var_4b30f907, var_9cb23c3, endnotify, tracenormal, tracedist, var_b6a0baae, culldist, var_1d1675b, var_d500b38d, var_d06c0cef, var_434f3a56, var_740a6a07, var_17e9e56c, var_40f7123c) {
+function function_80d28d77(localclientnum, impactfx, var_4b30f907, var_9cb23c3, endnotify, tracenormal, tracedist, var_b6a0baae, culldist, var_1d1675b, var_d500b38d, var_d06c0cef, var_434f3a56, var_740a6a07, var_17e9e56c, var_40f7123c) {
     self endon(#"death", #"hash_63c6fa848f448e22");
     if (isdefined(endnotify)) {
         self endon(endnotify);
@@ -84,9 +84,9 @@ function function_80d28d77(localclientnum, var_7b70989a, var_4b30f907, var_9cb23
         playerangles = getlocalclientangles(localclientnum);
         playerorigin = getlocalclientpos(localclientnum);
         playerfov = getlocalclientfov(localclientnum);
-        var_c760e88e = playerfov * 0.5;
+        halffov = playerfov * 0.5;
         bounds = function_c440d28e(self.model);
-        var_a6448197 = self function_4b2f0374(playereyepos, playerangles, var_c760e88e, culldist);
+        var_a6448197 = self function_4b2f0374(playereyepos, playerangles, halffov, culldist);
         if (var_a6448197) {
             for (i = 0; i < var_70bdcaa; i++) {
                 var_40bdbb30 = randomfloatrange(var_d06c0cef, var_d500b38d);
@@ -102,10 +102,10 @@ function function_80d28d77(localclientnum, var_7b70989a, var_4b30f907, var_9cb23
                 if (trace[#"entity"] === self) {
                     dot = vectordot(tracenormal, trace[#"normal"]) * -1;
                     if (dot >= var_b6a0baae) {
-                        if (isarray(var_7b70989a)) {
-                            fx = var_7b70989a[randomintrange(0, var_7b70989a.size)];
+                        if (isarray(impactfx)) {
+                            fx = impactfx[randomintrange(0, impactfx.size)];
                         } else {
-                            fx = var_7b70989a;
+                            fx = impactfx;
                         }
                         self thread function_7355defa(localclientnum, fx, var_9cb23c3, trace[#"position"], trace[#"normal"], var_1d1675b);
                         /#
@@ -141,21 +141,21 @@ function function_adb04672() {
 // Params 6, eflags: 0x4
 // Checksum 0xf02ba0f4, Offset: 0x7d0
 // Size: 0x11c
-function private function_7355defa(localclientnum, var_7b70989a, var_9cb23c3, var_c5e0ca9e, hitnormal, var_1d1675b) {
+function private function_7355defa(localclientnum, impactfx, var_9cb23c3, hitposition, hitnormal, var_1d1675b) {
     if (!isdefined(self)) {
         return;
     }
     if (!is_true(var_1d1675b)) {
-        playfx(localclientnum, var_7b70989a, var_c5e0ca9e, hitnormal);
+        playfx(localclientnum, impactfx, hitposition, hitnormal);
         return;
     }
-    impact = util::spawn_model(localclientnum, "tag_origin", var_c5e0ca9e, vectortoangles(hitnormal));
+    impact = util::spawn_model(localclientnum, "tag_origin", hitposition, vectortoangles(hitnormal));
     if (!isdefined(impact)) {
         return;
     }
     impact linkto(self);
     waitframe(1);
-    util::playfxontag(localclientnum, var_7b70989a, impact, "tag_origin");
+    util::playfxontag(localclientnum, impactfx, impact, "tag_origin");
     wait(var_9cb23c3);
     impact delete();
 }

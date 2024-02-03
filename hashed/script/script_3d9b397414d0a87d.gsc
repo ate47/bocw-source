@@ -73,11 +73,11 @@ function private function_70a657d8() {
 // Checksum 0xdb2cae67, Offset: 0x940
 // Size: 0x60
 function function_8d2c5f27(array) {
-    var_67a93196 = [];
+    new_array = [];
     for (i = 0; i < array.size; i++) {
-        var_67a93196[i] = hash(array[i]);
+        new_array[i] = hash(array[i]);
     }
-    return var_67a93196;
+    return new_array;
 }
 
 // Namespace namespace_4b798cb0/namespace_4b798cb0

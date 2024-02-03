@@ -232,7 +232,7 @@ function event_handler[gametype_init] main(*eventstruct) {
     }
     var_cc6e64ae = int(max(var_cc6e64ae, 1));
     namespace_553954de::function_7c97e961(var_cc6e64ae);
-    namespace_ce1f29cc::function_15bf0b91(level.var_15d17eb2);
+    namespace_ce1f29cc::function_15bf0b91(level.realm);
     setdvar(#"hash_50b18a791b1b5d34", 6);
     setdvar(#"hash_6e5f4d21ec1124ec", 4);
     setdvar(#"hash_51d59b9e94c5ff87", 1);
@@ -1197,10 +1197,10 @@ function private function_a37a8258() {
 function function_37c1c391(params) {
     completed = params.completed;
     instance = params.instance;
-    var_524c3d6e = instance.content_script_name;
+    scriptname = instance.content_script_name;
     var_5fc990bf = 0;
-    if (isdefined(var_524c3d6e)) {
-        var_5fc990bf = namespace_f3a74bbc::function_ae039b4(var_524c3d6e);
+    if (isdefined(scriptname)) {
+        var_5fc990bf = namespace_f3a74bbc::function_ae039b4(scriptname);
     }
     foreach (player in getplayers()) {
         player luinotifyevent(#"hash_5b1ff06d07e9002a", 3, completed, 0, var_5fc990bf);

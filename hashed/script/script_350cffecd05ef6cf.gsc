@@ -219,7 +219,7 @@ function function_86515c3b(player, var_191ca105, banner = 1) {
         level thread namespace_9fc66ac::announce(var_191ca105.announce, 1 << player.entnum);
     }
     player namespace_d2efac9a::function_9d3fe107();
-    var_f1bda869 = namespace_ec06fe4a::function_e22ae9b3(player.origin + vectorscale((0, 0, 1), 1500), var_191ca105.var_3831681e);
+    var_f1bda869 = namespace_ec06fe4a::spawnmodel(player.origin + vectorscale((0, 0, 1), 1500), var_191ca105.var_3831681e);
     if (isdefined(var_f1bda869)) {
         var_f1bda869.angles = var_191ca105.var_d75b5b21;
         var_f1bda869 thread namespace_dfc652ee::function_7e4e4b8a(player, 0);
@@ -516,7 +516,7 @@ function function_11463552() {
                 level.doa.var_4ebe1b74 = 0;
             }
         }
-        var_ea5e17f4 = namespace_ec06fe4a::function_e22ae9b3(var_7f432780[i].origin + vectorscale((0, 0, 1), 1500), model);
+        var_ea5e17f4 = namespace_ec06fe4a::spawnmodel(var_7f432780[i].origin + vectorscale((0, 0, 1), 1500), model);
         if (isdefined(var_ea5e17f4)) {
             var_ea5e17f4 solid();
             var_ea5e17f4.data = var_7f2666c4;
@@ -552,9 +552,9 @@ function function_11463552() {
     }
     warning = timeout - 15000;
     lasttime = gettime();
-    var_f5a8d3a4 = 0;
+    alldone = 0;
     level thread namespace_9fc66ac::announce(8);
-    while (!var_f5a8d3a4) {
+    while (!alldone) {
         time = gettime();
         if (time > timeout) {
             break;
@@ -565,10 +565,10 @@ function function_11463552() {
         }
         lasttime = time;
         wait(1);
-        var_f5a8d3a4 = 1;
+        alldone = 1;
         foreach (player in namespace_7f5aeb59::function_23e1f90f()) {
             if (!isdefined(player.doa.rof)) {
-                var_f5a8d3a4 = 0;
+                alldone = 0;
                 break;
             }
         }
@@ -721,7 +721,7 @@ function function_41d66855(var_419d3eb7 = 0) {
         #/
         var_7f2666c4 = var_fe92efd8[i];
         model = var_419d3eb7 ? var_7f2666c4.var_3831681e : "zombietron_fate_rock_default";
-        var_ea5e17f4 = namespace_ec06fe4a::function_e22ae9b3(var_7f432780[i].origin + vectorscale((0, 0, 1), 1500), model);
+        var_ea5e17f4 = namespace_ec06fe4a::spawnmodel(var_7f432780[i].origin + vectorscale((0, 0, 1), 1500), model);
         if (isdefined(var_ea5e17f4)) {
             var_ea5e17f4 solid();
             var_ea5e17f4.data = var_7f2666c4;
@@ -742,9 +742,9 @@ function function_41d66855(var_419d3eb7 = 0) {
     }
     warning = timeout - 15000;
     lasttime = gettime();
-    var_f5a8d3a4 = 0;
+    alldone = 0;
     level thread namespace_9fc66ac::announce(8);
-    while (!var_f5a8d3a4) {
+    while (!alldone) {
         time = gettime();
         if (time > timeout) {
             break;
@@ -755,10 +755,10 @@ function function_41d66855(var_419d3eb7 = 0) {
         }
         lasttime = time;
         wait(1);
-        var_f5a8d3a4 = 1;
+        alldone = 1;
         foreach (player in namespace_7f5aeb59::function_23e1f90f()) {
             if (!isdefined(player.doa.roj)) {
-                var_f5a8d3a4 = 0;
+                alldone = 0;
                 break;
             }
         }

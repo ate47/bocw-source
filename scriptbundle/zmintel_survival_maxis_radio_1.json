@@ -1,25 +1,25 @@
 {
     "var_1ad142ee": [
         {
-            "var_46bd7973": "#hash_37b324e63d1aac93",
+            "soundevent": "#hash_37b324e63d1aac93",
             "var_f35c5951": 0.7,
             "var_5d4b5964": 7.36,
             "var_36bf8e05": "#hash_1e9d7aafc52663c8"
         },
         {
-            "var_46bd7973": "#hash_37b323e63d1aaae0",
+            "soundevent": "#hash_37b323e63d1aaae0",
             "var_f35c5951": 0.7,
             "var_5d4b5964": 11.31,
             "var_36bf8e05": "#hash_1abe53d7233b4601"
         },
         {
-            "var_46bd7973": "#hash_37b326e63d1aaff9",
+            "soundevent": "#hash_37b326e63d1aaff9",
             "var_f35c5951": 0.8,
             "var_5d4b5964": 4.03,
             "var_36bf8e05": "#hash_11c65f7273879b4e"
         },
         {
-            "var_46bd7973": "#hash_37b325e63d1aae46",
+            "soundevent": "#hash_37b325e63d1aae46",
             "var_f35c5951": 0.5,
             "var_5d4b5964": 9.07,
             "var_36bf8e05": "#hash_68bdcdd87c332507"
@@ -33,7 +33,7 @@
     "uimodel": "#hash_7dcfe35ccda755f1",
     "type": "zmintel",
     "season": 2,
-    "var_ad4ad686": "#hash_5ad2dea4c296de59",
+    "var_ad4ad686": "#maxis",
     "soundloop": "#hash_5db0167d85d70c82",
     "name": "zmintel_survival_maxis_radio_1",
     "var_9be0526e": "#hash_20ea75a25d912949",

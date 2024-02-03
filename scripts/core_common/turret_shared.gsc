@@ -599,10 +599,10 @@ function private function_2c718f9e(var_34b21e8e, n_index) {
                 if (isdefined(s_turret.var_bf6d793d.var_81610bb0[i])) {
                     var_1e713ee7 = s_turret.var_bf6d793d.var_81610bb0[i].xanim;
                     if (isdefined(var_1e713ee7)) {
-                        var_9d3ee67e = var_34b21e8e getanimtime(var_1e713ee7);
-                        if (var_9d3ee67e > 0) {
+                        anim_time = var_34b21e8e getanimtime(var_1e713ee7);
+                        if (anim_time > 0) {
                             var_73a9738e = getanimlength(var_1e713ee7);
-                            var_d8c89de3 = (1 - var_9d3ee67e) * var_73a9738e;
+                            var_d8c89de3 = (1 - anim_time) * var_73a9738e;
                             break;
                         }
                     }

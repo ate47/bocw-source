@@ -181,8 +181,8 @@ function private on_connect() {
     if (!isdefined(self.var_b21b857[#"hash_1303dcb8d0e80e33"])) {
         self.var_b21b857[#"hash_1303dcb8d0e80e33"] = 0;
     }
-    if (!isdefined(self.var_b21b857[#"hash_5ad2dea4c296de59"])) {
-        self.var_b21b857[#"hash_5ad2dea4c296de59"] = 0;
+    if (!isdefined(self.var_b21b857[#"maxis"])) {
+        self.var_b21b857[#"maxis"] = 0;
     }
     if (!isdefined(self.var_b21b857[#"omega"])) {
         self.var_b21b857[#"omega"] = 0;
@@ -269,7 +269,7 @@ function function_aa317cfe() {
             var_bed5445b = #"hash_4fe1a0b748461f0f";
             var_32edbef9 = #"hash_405e81feb85c5162";
             break;
-        case #"hash_5ad2dea4c296de59":
+        case #"maxis":
             var_bed5445b = #"hash_2a2df769d600b242";
             var_32edbef9 = #"hash_6fec31948ca2058c";
             break;

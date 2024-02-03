@@ -357,20 +357,20 @@ function private function_8160dc33() {
     var_416fb9cc = 0;
     var_a2def763 = 0;
     var_d28d4ba5 = 0;
-    var_44351b64 = 0;
+    notifytime = 0;
     while (1) {
         waitframe(1);
         vehiclespeed = length(self.velocity);
         var_97f17bbd = vehiclespeed - var_b343ef50;
         var_db4c6b3d = var_97f17bbd - var_416fb9cc;
-        if (util::function_33e5d0ac(var_44351b64, 0.5) || var_db4c6b3d > 0 != var_d28d4ba5 > 0) {
+        if (util::function_33e5d0ac(notifytime, 0.5) || var_db4c6b3d > 0 != var_d28d4ba5 > 0) {
             if (var_db4c6b3d > 30 && var_97f17bbd > 0) {
                 self notify(#"vehicle_starting");
-                var_44351b64 = gettime();
+                notifytime = gettime();
                 var_d28d4ba5 = var_db4c6b3d;
             } else if (var_db4c6b3d < -30 && var_97f17bbd < 0) {
                 self notify(#"vehicle_stopping");
-                var_44351b64 = gettime();
+                notifytime = gettime();
                 var_d28d4ba5 = var_db4c6b3d;
             }
         }
@@ -984,20 +984,20 @@ function exit_ground(ai, var_b67230a6) {
     if (isdefined(deathanim)) {
         ai animation::set_death_anim(deathanim);
     }
-    var_81cd1130 = ai.var_ec30f5da.exitgroundanim;
+    exitanim = ai.var_ec30f5da.exitgroundanim;
     if (var_b67230a6 && isdefined(ai.var_ec30f5da.var_adf2b93b)) {
-        var_81cd1130 = ai.var_ec30f5da.var_adf2b93b;
+        exitanim = ai.var_ec30f5da.var_adf2b93b;
     }
     /#
-        assert(isdefined(var_81cd1130), "<unknown string>" + ai.var_ec30f5da.position + "<unknown string>");
+        assert(isdefined(exitanim), "<unknown string>" + ai.var_ec30f5da.position + "<unknown string>");
     #/
-    if (isdefined(var_81cd1130)) {
+    if (isdefined(exitanim)) {
         tagorigin = ai.vehicle gettagorigin(ai.var_ec30f5da.aligntag);
-        var_13e23952 = ai.vehicle gettagangles(ai.var_ec30f5da.aligntag);
-        startorigin = getstartorigin(tagorigin, var_13e23952, var_81cd1130);
-        startangles = getstartangles(tagorigin, var_13e23952, var_81cd1130);
-        movedelta = getmovedelta(var_81cd1130, 0, 1);
-        anglesdelta = getangledelta(var_81cd1130, 0, 1);
+        tagangles = ai.vehicle gettagangles(ai.var_ec30f5da.aligntag);
+        startorigin = getstartorigin(tagorigin, tagangles, exitanim);
+        startangles = getstartangles(tagorigin, tagangles, exitanim);
+        movedelta = getmovedelta(exitanim, 0, 1);
+        anglesdelta = getangledelta(exitanim, 0, 1);
         targetorigin = rotatepoint(movedelta, startangles) + startorigin;
         targetangles = (startangles[0], absangleclamp360(startangles[1] + anglesdelta), startangles[2]);
         result = groundtrace(targetorigin + vectorscale((0, 0, 1), 100), targetorigin + vectorscale((0, 0, -1), 100), 0, ai.vehicle);
@@ -1013,9 +1013,9 @@ function exit_ground(ai, var_b67230a6) {
         }
         ai unlink();
         if (!isdefined(deathanim)) {
-            ai thread function_6f25a21f(ai, ai.vehicle, var_81cd1130, startorigin, startangles);
+            ai thread function_6f25a21f(ai, ai.vehicle, exitanim, startorigin, startangles);
         }
-        animation::play(var_81cd1130, startorigin, startangles, 1, 0.2, 0.2, getanimlength(var_81cd1130));
+        animation::play(exitanim, startorigin, startangles, 1, 0.2, 0.2, getanimlength(exitanim));
     }
 }
 
@@ -1056,8 +1056,8 @@ function function_9c50e6ce(vehicle, seat) {
         assert(isdefined(var_4aedb29c), "<unknown string>");
     #/
     tagorigin = vehicle gettagorigin(attachtag);
-    var_13e23952 = vehicle gettagangles(attachtag);
-    var_80fd8136 = util::spawn_anim_model(var_4aedb29c, tagorigin, var_13e23952);
+    tagangles = vehicle gettagangles(attachtag);
+    var_80fd8136 = util::spawn_anim_model(var_4aedb29c, tagorigin, tagangles);
     var_80fd8136 linkto(vehicle, attachtag);
     if (isdefined(deployanim)) {
         var_80fd8136 animation::play(deployanim, vehicle, attachtag);
@@ -1072,8 +1072,8 @@ function function_9c50e6ce(vehicle, seat) {
     if (isdefined(dropanim)) {
         var_80fd8136 unlink();
         tagorigin = vehicle gettagorigin(attachtag);
-        var_13e23952 = vehicle gettagangles(attachtag);
-        var_80fd8136 animation::play(dropanim, tagorigin, var_13e23952);
+        tagangles = vehicle gettagangles(attachtag);
+        var_80fd8136 animation::play(dropanim, tagorigin, tagangles);
         wait(10);
     }
     var_80fd8136 delete();
@@ -1481,8 +1481,8 @@ function private function_8a1b8aa0(ai, vehicle) {
     while (1) {
         result = undefined;
         result = vehicle waittill(#"vehicle_starting", #"vehicle_stopping");
-        if (result._notify == "vehicle_starting" && isdefined(ai.var_ec30f5da.var_1493a803)) {
-            self childthread function_1585495a(ai, ai.var_ec30f5da.var_1493a803);
+        if (result._notify == "vehicle_starting" && isdefined(ai.var_ec30f5da.startanim)) {
+            self childthread function_1585495a(ai, ai.var_ec30f5da.startanim);
         } else if (result._notify == "vehicle_stopping" && isdefined(ai.var_ec30f5da.var_95e10146)) {
             self childthread function_1585495a(ai, ai.var_ec30f5da.var_95e10146);
         }
@@ -1561,9 +1561,9 @@ function private function_15dbe5e9(*params) {
 // Params 5, eflags: 0x6 linked
 // Checksum 0xf7cf61e8, Offset: 0x6308
 // Size: 0x21c
-function private function_6f25a21f(ai, *vehicle, var_81cd1130, startorigin, startangles) {
-    var_1f4955d3 = getnotetracktimes(var_81cd1130, "allow_death");
-    if (!(isdefined(var_1f4955d3) && isdefined(var_1f4955d3[0]))) {
+function private function_6f25a21f(ai, *vehicle, exitanim, startorigin, startangles) {
+    notes = getnotetracktimes(exitanim, "allow_death");
+    if (!(isdefined(notes) && isdefined(notes[0]))) {
         self thread ragdoll_dead_exit_rider(vehicle);
         return;
     }
@@ -1575,15 +1575,15 @@ function private function_6f25a21f(ai, *vehicle, var_81cd1130, startorigin, star
     if (!isdefined(vehicle)) {
         return;
     }
-    currenttime = vehicle getanimtime(var_81cd1130);
-    var_46ea0aaf = var_1f4955d3[0];
+    currenttime = vehicle getanimtime(exitanim);
+    var_46ea0aaf = notes[0];
     if (currenttime >= var_46ea0aaf) {
         return;
     }
     vehicle.var_4a438c2b = 1;
     vehicle val::set(#"hash_57a9b73feb55bb0c", "ignoreme", 1);
-    vehicle thread animation::play(var_81cd1130, startorigin, startangles, 1, 0.1, 0.1, 0, currenttime);
-    animlength = getanimlength(var_81cd1130);
+    vehicle thread animation::play(exitanim, startorigin, startangles, 1, 0.1, 0.1, 0, currenttime);
+    animlength = getanimlength(exitanim);
     waittime = animlength * (var_46ea0aaf - currenttime);
     wait(waittime);
     if (!isdefined(vehicle)) {

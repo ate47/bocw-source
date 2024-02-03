@@ -385,13 +385,13 @@ function function_8294e9b3() {
 function function_5a7ecb6b(var_56422be = 0.01) {
     self endon(#"death");
     scale = 0.1;
-    var_e78462ea = 0.1;
+    scalestep = 0.1;
     while (scale < 1) {
         self setscale(scale);
         waitframe(1);
-        scale = scale + var_e78462ea;
-        if (var_e78462ea > var_56422be + 0.01) {
-            var_e78462ea = var_e78462ea - var_56422be;
+        scale = scale + scalestep;
+        if (scalestep > var_56422be + 0.01) {
+            scalestep = scalestep - var_56422be;
         }
     }
     self setscale(1);
@@ -410,13 +410,13 @@ function function_3696d106(var_56422be = 0.001) {
         self function_60d50ea4();
     }
     scale = 0.99;
-    var_e78462ea = 0.01;
+    scalestep = 0.01;
     while (scale > 0.01) {
         self setscale(scale);
         waitframe(1);
-        scale = scale - var_e78462ea;
-        if (var_e78462ea < 0.1) {
-            var_e78462ea = var_e78462ea + var_56422be;
+        scale = scale - scalestep;
+        if (scalestep < 0.1) {
+            scalestep = scalestep + var_56422be;
         }
     }
     self hide();

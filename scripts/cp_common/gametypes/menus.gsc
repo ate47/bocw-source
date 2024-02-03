@@ -208,7 +208,7 @@ function private function_c35a1bfc() {
     player savegame::function_6d003cb9("savegame_assists", undefined);
     player savegame::function_6d003cb9("savegame_incaps", undefined);
     player savegame::function_6d003cb9("savegame_revives", undefined);
-    player savegame::function_81534803(#"hash_e7d26541441cb9d");
+    player savegame::function_81534803(#"transient");
     player clearallnoncheckpointdata();
     world.var_b86bf11e = undefined;
     globallogic_ui::function_760546ce();

@@ -2,7 +2,7 @@
     "option_dependencies": [
         {
             "var_1643d946": "1",
-            "var_6825bdb": "#pc_gamepad_haptics",
+            "optionname": "#pc_gamepad_haptics",
             "operator": "=="
         }
     ],
@@ -23,7 +23,7 @@
     "var_4a4760c0": 0.01,
     "var_d6897f56": 1,
     "var_500458ac": 10,
-    "var_926d1be9": 0.1,
+    "decimalplace": 0.1,
     "var_66faec87": 0.99,
     "statname": "gpad_trigger_deadzone",
     "var_8b80386": 1,

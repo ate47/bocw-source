@@ -1,19 +1,19 @@
 {
     "var_89aed911": [
         {
-            "var_26bb4f8a": "Competition Stage 1",
+            "datacentername": "Competition Stage 1",
             "var_45bf5108": "cdl-stage-01"
         },
         {
-            "var_26bb4f8a": "Competition Stage 2",
+            "datacentername": "Competition Stage 2",
             "var_45bf5108": "cdl-stage-02"
         },
         {
-            "var_26bb4f8a": "Player Practice Area 1",
+            "datacentername": "Player Practice Area 1",
             "var_45bf5108": "cdl-ppa-01"
         },
         {
-            "var_26bb4f8a": "Player Practice Area 2",
+            "datacentername": "Player Practice Area 2",
             "var_45bf5108": "cdl-ppa-02"
         }
     ],

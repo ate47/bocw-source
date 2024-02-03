@@ -65,7 +65,7 @@ function function_c6453062() {
 // Checksum 0xb99c1384, Offset: 0x3c0
 // Size: 0x100
 function function_cb1b5203(trap, var_7c56394 = 0) {
-    hazard = namespace_ec06fe4a::function_e22ae9b3(trap.origin, "p8_fxanim_zm_towers_trap_blade_01_mod");
+    hazard = namespace_ec06fe4a::spawnmodel(trap.origin, "p8_fxanim_zm_towers_trap_blade_01_mod");
     if (isdefined(hazard)) {
         hazard.targetname = "hazard";
         hazard.var_fd5301f9 = "logdrop";

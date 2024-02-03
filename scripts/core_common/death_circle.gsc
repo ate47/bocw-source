@@ -130,8 +130,8 @@ function private function_130c92ab(var_8e3c3c5b) {
     if (var_f20eaa57.size <= 0) {
         if (isdefined(var_8e3c3c5b.var_c8e8809e)) {
             var_8e3c3c5b.var_3b9f4abf = var_8e3c3c5b.var_c8e8809e;
-            var_8e3c3c5b.mapwidth = var_8e3c3c5b.var_add6f3a8;
-            var_8e3c3c5b.mapheight = var_8e3c3c5b.var_9b9cf80d;
+            var_8e3c3c5b.mapwidth = var_8e3c3c5b.defaultwidth;
+            var_8e3c3c5b.mapheight = var_8e3c3c5b.defaultheight;
         }
         return;
     }
@@ -144,8 +144,8 @@ function private function_130c92ab(var_8e3c3c5b) {
     #/
     if (!isdefined(var_8e3c3c5b.var_c8e8809e)) {
         var_8e3c3c5b.var_c8e8809e = var_8e3c3c5b.var_3b9f4abf;
-        var_8e3c3c5b.var_add6f3a8 = var_8e3c3c5b.mapwidth;
-        var_8e3c3c5b.var_9b9cf80d = var_8e3c3c5b.mapheight;
+        var_8e3c3c5b.defaultwidth = var_8e3c3c5b.mapwidth;
+        var_8e3c3c5b.defaultheight = var_8e3c3c5b.mapheight;
     }
     var_8e3c3c5b.var_3b9f4abf = var_32607106.origin;
     var_8e3c3c5b.mapwidth = var_32607106.width;
@@ -1307,11 +1307,11 @@ function private debug_loop() {
                 minimaporigins = getentarray("<unknown string>", "<unknown string>");
                 foreach (corner in minimaporigins) {
                     origin = corner.origin;
-                    var_5a5e6b6a = (origin[0], origin[1], 0);
+                    origin2d = (origin[0], origin[1], 0);
                     var_c3685153 = function_507ec82a(host, origin, 500);
                     sphere(origin, 16 * var_c3685153, (0, 1, 1));
                     print3d(origin, "<unknown string>", (1, 1, 1), 1, var_c3685153, 1, 1);
-                    line(var_5a5e6b6a + vectorscale((0, 0, 1), 20000), var_5a5e6b6a + vectorscale((0, 0, -1), 10000), (0, 1, 1));
+                    line(origin2d + vectorscale((0, 0, 1), 20000), origin2d + vectorscale((0, 0, -1), 10000), (0, 1, 1));
                 }
                 foreach (center in level.var_47947565) {
                     line(center, center + vectorscale((0, 0, 1), 500), (1, 0, 1));
@@ -1562,16 +1562,16 @@ function circle_color(circleindex, maxindex) {
 // Params 4, eflags: 0x0
 // Checksum 0x3bb93a8c, Offset: 0x6a38
 // Size: 0x7c
-function function_507ec82a(host, origin, mindist, var_2f127807) {
+function function_507ec82a(host, origin, mindist, defaultscale) {
     /#
-        if (!isdefined(var_2f127807)) {
-            var_2f127807 = 1;
+        if (!isdefined(defaultscale)) {
+            defaultscale = 1;
         }
         dist = distance(host.origin, origin);
         if (dist <= mindist) {
-            return var_2f127807;
+            return defaultscale;
         }
-        return var_2f127807 * dist / mindist;
+        return defaultscale * dist / mindist;
     #/
 }
 

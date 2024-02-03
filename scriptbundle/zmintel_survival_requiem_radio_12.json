@@ -1,55 +1,55 @@
 {
     "var_1ad142ee": [
         {
-            "var_46bd7973": "#hash_275bff7c10d2313e",
+            "soundevent": "#hash_275bff7c10d2313e",
             "var_f35c5951": 0.5,
             "var_5d4b5964": 4.86,
             "var_36bf8e05": "#hash_6118c1d047e5d42"
         },
         {
-            "var_46bd7973": "#hash_275c007c10d232f1",
+            "soundevent": "#hash_275c007c10d232f1",
             "var_f35c5951": 0.9,
             "var_5d4b5964": 12.78,
             "var_36bf8e05": "#hash_46c069885b64169b"
         },
         {
-            "var_46bd7973": "#hash_275bfd7c10d22dd8",
+            "soundevent": "#hash_275bfd7c10d22dd8",
             "var_f35c5951": 0.7,
             "var_5d4b5964": 6.55,
             "var_36bf8e05": "#hash_23a1fe713dc9b690"
         },
         {
-            "var_46bd7973": "#hash_275bfe7c10d22f8b",
+            "soundevent": "#hash_275bfe7c10d22f8b",
             "var_f35c5951": 1,
             "var_5d4b5964": 12.19,
             "var_36bf8e05": "#hash_4ec1be59bd92c301"
         },
         {
-            "var_46bd7973": "#hash_275c037c10d2380a",
+            "soundevent": "#hash_275c037c10d2380a",
             "var_f35c5951": 0.9,
             "var_5d4b5964": 12.05,
             "var_36bf8e05": "#hash_5df04e04460af506"
         },
         {
-            "var_46bd7973": "#hash_275c047c10d239bd",
+            "soundevent": "#hash_275c047c10d239bd",
             "var_f35c5951": 0.7,
             "var_5d4b5964": 6.1,
             "var_36bf8e05": "#hash_4ba3ad966b0026df"
         },
         {
-            "var_46bd7973": "#hash_275c017c10d234a4",
+            "soundevent": "#hash_275c017c10d234a4",
             "var_f35c5951": 0.8,
             "var_5d4b5964": 3.73,
             "var_36bf8e05": "#hash_2cd84b8ae61c2b54"
         },
         {
-            "var_46bd7973": "#hash_275c027c10d23657",
+            "soundevent": "#hash_275c027c10d23657",
             "var_f35c5951": 0.8,
             "var_5d4b5964": 10.86,
             "var_36bf8e05": "#hash_2e208873dd9f2445"
         },
         {
-            "var_46bd7973": "#hash_275bf77c10d223a6",
+            "soundevent": "#hash_275bf77c10d223a6",
             "var_5d4b5964": 0.98,
             "var_36bf8e05": "#hash_34d9a05c484ad7ba"
         }

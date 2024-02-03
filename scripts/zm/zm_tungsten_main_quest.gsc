@@ -785,7 +785,7 @@ function function_7a47935c(a_ents) {
 // Checksum 0x3b16c770, Offset: 0x5610
 // Size: 0x194
 function function_c8622ee6(a_ents) {
-    var_2644aca3 = a_ents[#"hash_5ad2dea4c296de59"];
+    var_2644aca3 = a_ents[#"maxis"];
     if (!isdefined(var_2644aca3)) {
         return;
     }
@@ -2702,9 +2702,9 @@ function function_3b0cf79() {
     level waittill(#"hash_3e765c26047c9f54");
     self flag::clear(#"hash_60b2f597116f5ae");
     self flag::set(#"hash_454130aa51c71a1a");
-    foreach (var_956de39f in self.var_3758c43e) {
-        if (isdefined(var_956de39f)) {
-            var_956de39f dodamage(var_956de39f.health, var_956de39f.origin);
+    foreach (orb in self.var_3758c43e) {
+        if (isdefined(orb)) {
+            orb dodamage(orb.health, orb.origin);
         }
     }
     wait(0.5);

@@ -280,7 +280,7 @@ function precache_mp_leaderboards() {
     if (!level.rankedmatch) {
         return;
     }
-    if (is_true(level.var_1238b6e0)) {
+    if (is_true(level.isdoa)) {
         return;
     }
     mapname = util::get_map_name();
@@ -2020,8 +2020,8 @@ function callback_startgametype() {
     if (getdvarint(#"custom_killstreak_mode", 0) == 1) {
         level.killstreaksenabled = 0;
     }
-    if (isdefined(level.var_d2257418)) {
-        matchrecordsetleveldifficultyforindex(0, level.var_d2257418);
+    if (isdefined(level.gameskill)) {
+        matchrecordsetleveldifficultyforindex(0, level.gameskill);
     }
     /#
         if (getdvarint(#"scr_writeconfigstrings", 0) == 1) {

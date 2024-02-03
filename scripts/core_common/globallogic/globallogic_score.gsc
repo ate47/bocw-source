@@ -697,8 +697,8 @@ function function_1f664cea(scoreevents, weapon, victim) {
     if (scoreevents.var_4f57d8be === 1 && (sessionmodeismultiplayergame() || sessionmodeiswarzonegame())) {
         var_ccec6846 = isdefined(scoreevents.var_c2dbdf39) ? scoreevents.var_c2dbdf39 : "kills";
         statweapon = stats::function_a2261724(weapon);
-        var_a3884983 = self loadout::function_8435f729(statweapon);
-        if (var_a3884983 === "primarygrenade" || var_a3884983 === "secondarygrenade" || var_a3884983 === "specialgrenade") {
+        loadout_slot_index = self loadout::function_8435f729(statweapon);
+        if (loadout_slot_index === "primarygrenade" || loadout_slot_index === "secondarygrenade" || loadout_slot_index === "specialgrenade") {
             weaponname = stats::function_3f64434(statweapon);
             self stats::function_622feb0d(weaponname, var_ccec6846, 1);
             self stats::function_6fb0b113(weaponname, #"hash_37c6a5ea231ad08" + var_ccec6846);
@@ -722,8 +722,8 @@ function function_bac4b0de(scoreevents, weapon) {
     if (scoreevents.var_4f57d8be === 1 && (sessionmodeismultiplayergame() || sessionmodeiswarzonegame())) {
         var_601e335c = isdefined(scoreevents.var_f23a2b7c) ? scoreevents.var_f23a2b7c : "assists";
         statweapon = stats::function_a2261724(weapon);
-        var_a3884983 = self loadout::function_8435f729(statweapon);
-        if (var_a3884983 === "primarygrenade" || var_a3884983 === "secondarygrenade" || var_a3884983 === "specialgrenade") {
+        loadout_slot_index = self loadout::function_8435f729(statweapon);
+        if (loadout_slot_index === "primarygrenade" || loadout_slot_index === "secondarygrenade" || loadout_slot_index === "specialgrenade") {
             weaponname = stats::function_3f64434(statweapon);
             self stats::function_622feb0d(weaponname, var_601e335c, 1);
             self stats::function_6fb0b113(weaponname, #"hash_37c6a5ea231ad08" + var_601e335c);

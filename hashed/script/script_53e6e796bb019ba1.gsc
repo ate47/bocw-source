@@ -89,7 +89,7 @@ function function_15482148(localclientnum, *oldval, *newval, *bnewent, *binitial
 // Params 4, eflags: 0x2 linked
 // Checksum 0x36145a08, Offset: 0x13c8
 // Size: 0xc2
-function function_c487d6b1(archetype, fx, var_1167eff2, gibflag) {
+function function_c487d6b1(archetype, fx, joint, gibflag) {
     if (!isdefined(level.var_fd6cbce7)) {
         level.var_fd6cbce7 = [];
     }
@@ -97,7 +97,7 @@ function function_c487d6b1(archetype, fx, var_1167eff2, gibflag) {
         level.var_fd6cbce7[archetype] = [];
     }
     level.var_fd6cbce7[archetype][fx] = spawnstruct();
-    level.var_fd6cbce7[archetype][fx].var_1167eff2 = var_1167eff2;
+    level.var_fd6cbce7[archetype][fx].joint = joint;
     level.var_fd6cbce7[archetype][fx].gibflag = gibflag;
 }
 
@@ -154,8 +154,8 @@ function function_a681160a(localclientnum, is_vehicle = 0) {
             if (isarray(level.var_fd6cbce7[self.archetype])) {
                 foreach (i, fx in level.var_fd6cbce7[self.archetype]) {
                     if (isdefined(fx.gibflag)) {
-                        if (isdefined(self gettagorigin(fx.var_1167eff2)) && !gibclientutils::isgibbed(localclientnum, self, fx.gibflag)) {
-                            fxid = util::playfxontag(localclientnum, i, self, fx.var_1167eff2);
+                        if (isdefined(self gettagorigin(fx.joint)) && !gibclientutils::isgibbed(localclientnum, self, fx.gibflag)) {
+                            fxid = util::playfxontag(localclientnum, i, self, fx.joint);
                             if (!isdefined(self.var_9bdf44ae)) {
                                 self.var_9bdf44ae = [];
                             } else if (!isarray(self.var_9bdf44ae)) {
@@ -163,8 +163,8 @@ function function_a681160a(localclientnum, is_vehicle = 0) {
                             }
                             self.var_9bdf44ae[self.var_9bdf44ae.size] = fxid;
                         }
-                    } else if (isdefined(self gettagorigin(fx.var_1167eff2))) {
-                        fxid = util::playfxontag(localclientnum, i, self, fx.var_1167eff2);
+                    } else if (isdefined(self gettagorigin(fx.joint))) {
+                        fxid = util::playfxontag(localclientnum, i, self, fx.joint);
                         if (!isdefined(self.var_9bdf44ae)) {
                             self.var_9bdf44ae = [];
                         } else if (!isarray(self.var_9bdf44ae)) {

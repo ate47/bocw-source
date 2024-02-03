@@ -317,15 +317,15 @@ function function_6c71e778(machine, trigger) {
 // Checksum 0x58b32835, Offset: 0x15d8
 // Size: 0x14c
 function refill_ammo() {
-    var_a9bb683c = getweapon(#"none");
+    nullweapon = getweapon(#"none");
     var_f945fa92 = getweapon(#"bare_hands");
     currentweapon = self getcurrentweapon();
-    if (currentweapon != var_a9bb683c && currentweapon != var_f945fa92) {
+    if (currentweapon != nullweapon && currentweapon != var_f945fa92) {
         maxammo = currentweapon.maxammo;
         self setweaponammostock(currentweapon, int(maxammo));
     }
     var_824ff7c7 = self getstowedweapon();
-    if (var_824ff7c7 != var_a9bb683c && var_824ff7c7 != var_f945fa92) {
+    if (var_824ff7c7 != nullweapon && var_824ff7c7 != var_f945fa92) {
         maxammo = var_824ff7c7.maxammo;
         self setweaponammostock(var_824ff7c7, int(maxammo));
     }

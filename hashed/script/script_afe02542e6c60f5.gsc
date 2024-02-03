@@ -34,11 +34,11 @@
 function timeshifterupdate(player, origin) {
     var_d98803e1 = namespace_ec06fe4a::function_65ee50ba(origin);
     origin = (origin[0], origin[1], var_d98803e1[2]);
-    clock = namespace_ec06fe4a::function_e22ae9b3(origin + vectorscale((0, 0, 1), 12));
+    clock = namespace_ec06fe4a::spawnmodel(origin + vectorscale((0, 0, 1), 12));
     if (!isdefined(clock)) {
         return;
     }
-    org = namespace_ec06fe4a::function_e22ae9b3(origin + vectorscale((0, 0, 1), 12), "tag_origin");
+    org = namespace_ec06fe4a::spawnmodel(origin + vectorscale((0, 0, 1), 12), "tag_origin");
     if (!isdefined(org)) {
         clock delete();
         return;

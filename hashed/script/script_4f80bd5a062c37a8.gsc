@@ -38,7 +38,7 @@ function function_86bd7962(player, spot = player.origin, mg = 1) {
     } else {
         sentry = level.doa.pickups.var_9eec57e8 spawner::spawn(1, "zombietron_grenade_spawner");
     }
-    var_540d3e16 = namespace_ec06fe4a::function_e22ae9b3(sentry.origin);
+    var_540d3e16 = namespace_ec06fe4a::spawnmodel(sentry.origin);
     if (!isdefined(sentry)) {
         return;
     }
@@ -155,17 +155,17 @@ function function_5945a362() {
             if (!is_true(self.ismissile)) {
                 distsq = distancesquared(enemyorigin, v_origin);
                 if (distsq > function_a3f6cdac(512)) {
-                    var_fd809cca = 0.96;
+                    dotrange = 0.96;
                 } else if (distsq > function_a3f6cdac(256)) {
-                    var_fd809cca = 0.93;
+                    dotrange = 0.93;
                 } else if (distsq > function_a3f6cdac(128)) {
-                    var_fd809cca = 0.9;
+                    dotrange = 0.9;
                 } else {
-                    var_fd809cca = 0.8;
+                    dotrange = 0.8;
                 }
                 to_obj = vectornormalize(enemyorigin - v_origin);
                 dot = vectordot(to_obj, forward);
-                if (dot < var_fd809cca) {
+                if (dot < dotrange) {
                     continue;
                 }
                 time = gettime();

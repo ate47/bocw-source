@@ -91,7 +91,7 @@ function expand_maxs(maxs, point) {
 function function_fe4f9da3(point, center, var_3824bcad, forward_angles) {
     var_812741a5 = point - center;
     result = center;
-    var_11288466 = function_237971e2(forward_angles);
+    var_11288466 = anglestoaxis(forward_angles);
     var_eaee1b51 = [2:var_11288466.up, 1:var_11288466.right, 0:var_11288466.forward];
     for (i = 0; i <= 2; i++) {
         dist = vectordot(var_eaee1b51[i], var_812741a5);
@@ -142,9 +142,9 @@ function function_e673fc92(oldangle, newangle, var_f3747178) {
             assert(var_f3747178 > 0, "<unknown string>");
         #/
     #/
-    var_6b2e389a = angleclamp180(newangle - oldangle);
-    var_6b2e389a = sign(var_6b2e389a) * min(abs(var_6b2e389a), var_f3747178);
-    return absangleclamp360(oldangle + var_6b2e389a);
+    angle_diff = angleclamp180(newangle - oldangle);
+    angle_diff = sign(angle_diff) * min(abs(angle_diff), var_f3747178);
+    return absangleclamp360(oldangle + angle_diff);
 }
 
 // Namespace math/math_shared
@@ -538,7 +538,7 @@ function function_a4184f52(var_71129b42, var_83593fcf, var_7e18701b) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x43c70c53, Offset: 0x1b38
 // Size: 0x34
-function function_f0546652(var_36119b66, var_57c7aaff, var_d3fd1d40) {
-    return var_57c7aaff * var_d3fd1d40 + var_36119b66 * (1 - var_d3fd1d40);
+function function_f0546652(var_36119b66, max_val, var_d3fd1d40) {
+    return max_val * var_d3fd1d40 + var_36119b66 * (1 - var_d3fd1d40);
 }
 

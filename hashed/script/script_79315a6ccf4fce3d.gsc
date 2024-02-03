@@ -236,7 +236,7 @@ function function_3dd2c543(trap, page = 0) {
 // Checksum 0x98f201b6, Offset: 0x1130
 // Size: 0x138
 function function_f1ca69a7(model, var_639facc4, origin, angles, disconnect = 1) {
-    hazard = namespace_ec06fe4a::function_e22ae9b3(origin, model);
+    hazard = namespace_ec06fe4a::spawnmodel(origin, model);
     if (isdefined(hazard)) {
         hazard setmodel(model);
         hazard.var_82190347 = var_639facc4;

@@ -137,7 +137,7 @@ class class_df106b1 : cluielem {
     // Params 2, eflags: 0x0
     // Checksum 0x4b14e63f, Offset: 0xde0
     // Size: 0x44
-    function function_bede6f52(player, value) {
+    function set_scale(player, value) {
         player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "scale", value);
     }
 
@@ -361,7 +361,7 @@ function function_1a98dac6(player, value) {
 // Params 2, eflags: 0x0
 // Checksum 0x340ec536, Offset: 0x728
 // Size: 0x28
-function function_bede6f52(player, value) {
-    [[ self ]]->function_bede6f52(player, value);
+function set_scale(player, value) {
+    [[ self ]]->set_scale(player, value);
 }
 

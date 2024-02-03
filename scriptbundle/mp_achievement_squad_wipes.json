@@ -1,7 +1,7 @@
 {
-    "var_bc83573f": [
+    "filters": [
         {
-            "var_bc83573f": "#multiplayer"
+            "filters": "#multiplayer"
         }
     ],
     "description": "#hash_629a2f8f085110a7",

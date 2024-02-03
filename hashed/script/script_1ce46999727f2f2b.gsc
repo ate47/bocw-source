@@ -129,7 +129,7 @@ function function_4ae6488b() {
         var_bf384b50[i] = 0;
     }
     idx = 0;
-    var_18f7f8fe = idx + 1;
+    nextidx = idx + 1;
     loops = 0;
     var_6399b44b = 0;
     var_9225fc4e = 0;
@@ -154,13 +154,13 @@ function function_4ae6488b() {
             continue;
         }
         var_49787e19[idx] = var_d7ab2705;
-        var_6399b44b = var_6399b44b - var_49787e19[var_18f7f8fe];
+        var_6399b44b = var_6399b44b - var_49787e19[nextidx];
         var_6399b44b = var_6399b44b + var_49787e19[idx];
         var_bf384b50[idx] = var_ebf015ab;
-        var_9225fc4e = var_9225fc4e - var_bf384b50[var_18f7f8fe];
+        var_9225fc4e = var_9225fc4e - var_bf384b50[nextidx];
         var_9225fc4e = var_9225fc4e + var_bf384b50[idx];
         idx = (idx + 1) % 60;
-        var_18f7f8fe = (idx + 1) % 60;
+        nextidx = (idx + 1) % 60;
         samples++;
         if (var_6399b44b > self.doa.score.var_a4105a25) {
             self.doa.score.var_a4105a25 = var_6399b44b;
@@ -181,24 +181,24 @@ function function_4ae6488b() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x8d5f086d, Offset: 0xc88
 // Size: 0xc4
-function function_6c15a74e(amount = 1, var_96326d51 = 1) {
+function function_6c15a74e(amount = 1, commit = 1) {
     self.doa.score.keys = self.doa.score.keys + amount;
     /#
         assert(self.doa.score.keys <= self function_9d6bf0a9(), "<unknown string>");
     #/
-    namespace_d2efac9a::function_6c15a74e(amount, var_96326d51);
+    namespace_d2efac9a::function_6c15a74e(amount, commit);
 }
 
 // Namespace namespace_eccff4fb/namespace_eccff4fb
 // Params 2, eflags: 0x2 linked
 // Checksum 0x2aa833b1, Offset: 0xd58
 // Size: 0xb4
-function function_849a9028(amount = 1, var_96326d51 = 1) {
+function function_849a9028(amount = 1, commit = 1) {
     self.doa.score.keys = self.doa.score.keys - amount;
     /#
         assert(self.doa.score.keys >= 0, "<unknown string>");
     #/
-    namespace_d2efac9a::function_849a9028(amount, var_96326d51);
+    namespace_d2efac9a::function_849a9028(amount, commit);
 }
 
 // Namespace namespace_eccff4fb/namespace_eccff4fb

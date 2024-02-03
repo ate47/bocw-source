@@ -51,13 +51,13 @@ function function_76a18acc(var_8fb24641) {
         function_de7ee873(spawnfilter.handle, var_8ad31d96.id);
     }
     foreach (spawnfilter in var_571293f) {
-        if (isdefined(var_8fb24641.var_a9fb697a)) {
-            spawnfilter.var_a9fb697a = influencers::create_friendly_influencer(var_8fb24641.var_a9fb697a, (0, 0, 0), spawnfilter.team);
-            function_964b011(spawnfilter.var_a9fb697a, spawnfilter.handle);
+        if (isdefined(var_8fb24641.friendlyinfluencer)) {
+            spawnfilter.friendlyinfluencer = influencers::create_friendly_influencer(var_8fb24641.friendlyinfluencer, (0, 0, 0), spawnfilter.team);
+            function_964b011(spawnfilter.friendlyinfluencer, spawnfilter.handle);
         }
-        if (isdefined(var_8fb24641.var_a9fb697a)) {
-            spawnfilter.var_39a3f6e1 = influencers::create_enemy_influencer(var_8fb24641.var_39a3f6e1, (0, 0, 0), spawnfilter.team);
-            function_964b011(spawnfilter.var_39a3f6e1, spawnfilter.handle);
+        if (isdefined(var_8fb24641.friendlyinfluencer)) {
+            spawnfilter.enemyinfluencer = influencers::create_enemy_influencer(var_8fb24641.enemyinfluencer, (0, 0, 0), spawnfilter.team);
+            function_964b011(spawnfilter.enemyinfluencer, spawnfilter.handle);
         }
     }
 }
@@ -90,23 +90,23 @@ function function_fbff01ea() {
 // Size: 0x19c
 function function_9b36f6dc(spawnfilter, team) {
     if (team == #"none" || team == #"neutral") {
-        if (isdefined(spawnfilter.var_a9fb697a)) {
-            enableinfluencer(spawnfilter.var_a9fb697a, 0);
+        if (isdefined(spawnfilter.friendlyinfluencer)) {
+            enableinfluencer(spawnfilter.friendlyinfluencer, 0);
         }
-        if (isdefined(spawnfilter.var_39a3f6e1)) {
-            enableinfluencer(spawnfilter.var_39a3f6e1, 0);
+        if (isdefined(spawnfilter.enemyinfluencer)) {
+            enableinfluencer(spawnfilter.enemyinfluencer, 0);
         }
         if (isdefined(spawnfilter.var_c9150907)) {
             enableinfluencer(spawnfilter.var_c9150907, 1);
         }
     } else {
-        if (isdefined(spawnfilter.var_a9fb697a)) {
-            enableinfluencer(spawnfilter.var_a9fb697a, 1);
-            function_a32c3352(spawnfilter.var_a9fb697a, team, 0);
+        if (isdefined(spawnfilter.friendlyinfluencer)) {
+            enableinfluencer(spawnfilter.friendlyinfluencer, 1);
+            function_a32c3352(spawnfilter.friendlyinfluencer, team, 0);
         }
-        if (isdefined(spawnfilter.var_39a3f6e1)) {
-            enableinfluencer(spawnfilter.var_39a3f6e1, 1);
-            function_a32c3352(spawnfilter.var_39a3f6e1, team, 1);
+        if (isdefined(spawnfilter.enemyinfluencer)) {
+            enableinfluencer(spawnfilter.enemyinfluencer, 1);
+            function_a32c3352(spawnfilter.enemyinfluencer, team, 1);
         }
         if (isdefined(spawnfilter.var_c9150907)) {
             enableinfluencer(spawnfilter.var_c9150907, 0);
@@ -136,13 +136,13 @@ function function_245cb231(var_8fb24641, objectiveid) {
         function_de7ee873(spawnfilter.handle, var_8ad31d96.id);
     }
     var_7c69bb09 = objective_team(objectiveid);
-    if (isdefined(var_8fb24641.var_a9fb697a)) {
-        spawnfilter.var_a9fb697a = influencers::create_friendly_influencer(var_8fb24641.var_a9fb697a, (0, 0, 0), var_7c69bb09);
-        function_964b011(spawnfilter.var_a9fb697a, spawnfilter.handle);
+    if (isdefined(var_8fb24641.friendlyinfluencer)) {
+        spawnfilter.friendlyinfluencer = influencers::create_friendly_influencer(var_8fb24641.friendlyinfluencer, (0, 0, 0), var_7c69bb09);
+        function_964b011(spawnfilter.friendlyinfluencer, spawnfilter.handle);
     }
-    if (isdefined(var_8fb24641.var_39a3f6e1)) {
-        spawnfilter.var_39a3f6e1 = influencers::create_enemy_influencer(var_8fb24641.var_39a3f6e1, (0, 0, 0), var_7c69bb09);
-        function_964b011(spawnfilter.var_39a3f6e1, spawnfilter.handle);
+    if (isdefined(var_8fb24641.enemyinfluencer)) {
+        spawnfilter.enemyinfluencer = influencers::create_enemy_influencer(var_8fb24641.enemyinfluencer, (0, 0, 0), var_7c69bb09);
+        function_964b011(spawnfilter.enemyinfluencer, spawnfilter.handle);
     }
     if (isdefined(var_8fb24641.var_c9150907)) {
         spawnfilter.var_c9150907 = influencers::create_influencer_generic(var_8fb24641.var_c9150907, (0, 0, 0), #"all");

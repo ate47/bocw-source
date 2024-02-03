@@ -49,7 +49,7 @@ function init() {
     clientfield::register("actor", "gegenees_helmet_explosion_cf", 16000, 1, "int");
     level.var_8c5f46f1 = [];
     for (i = 0; i < 2; i++) {
-        level.var_8c5f46f1[level.var_8c5f46f1.size] = namespace_ec06fe4a::function_e22ae9b3((0, 0, 0), "tag_origin", (0, 0, 0), "gegenees impact");
+        level.var_8c5f46f1[level.var_8c5f46f1.size] = namespace_ec06fe4a::spawnmodel((0, 0, 0), "tag_origin", (0, 0, 0), "gegenees impact");
     }
     /#
         assert(isscriptfunctionptr(&function_d5d3aa77));

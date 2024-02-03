@@ -252,13 +252,13 @@ function function_de70888a(bosskills = 1, var_f906062a = 0) {
     self notify("3b9e4824698b6816");
     self endon("3b9e4824698b6816");
     level.doa.var_1b8c7044 = 1;
-    var_36793870 = function_9788bacc();
+    numleft = function_9788bacc();
     attempts = 20;
-    while (var_36793870 > 0 && attempts > 0) {
+    while (numleft > 0 && attempts > 0) {
         level.doa.var_dcbded2 = [];
         enemies = function_8ff7f92c();
         foreach (var_fd93c973 in enemies) {
-            var_36793870--;
+            numleft--;
             if (is_true(var_fd93c973.boss) && bosskills == 0) {
                 continue;
             }
@@ -267,7 +267,7 @@ function function_de70888a(bosskills = 1, var_f906062a = 0) {
             }
             if (isdefined(var_fd93c973.var_d1fac34a)) {
                 var_fd93c973.var_d1fac34a.count++;
-                arrayremovevalue(var_fd93c973.var_d1fac34a.var_2b5ed682, var_fd93c973);
+                arrayremovevalue(var_fd93c973.var_d1fac34a.enemylist, var_fd93c973);
                 var_fd93c973.var_d1fac34a = undefined;
             }
             var_fd93c973.takedamage = 1;
@@ -277,7 +277,7 @@ function function_de70888a(bosskills = 1, var_f906062a = 0) {
         waitframe(1);
         if (attempts) {
             attempts--;
-            var_36793870 = function_9788bacc();
+            numleft = function_9788bacc();
         }
     }
     level.doa.var_1b8c7044 = 0;
@@ -308,16 +308,16 @@ function function_445bad70(frozen = 1) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xcde3c696, Offset: 0x1088
 // Size: 0xc4
-function function_2552a0a0(var_d736690e = 90) {
+function function_2552a0a0(minwait = 90) {
     self endon(#"death", #"hash_71199e509f750629");
     while (flag::get("doa_round_spawning")) {
         wait(1);
-        if (var_d736690e > 0) {
-            var_d736690e--;
+        if (minwait > 0) {
+            minwait--;
         }
     }
-    if (var_d736690e > 0) {
-        wait(var_d736690e);
+    if (minwait > 0) {
+        wait(minwait);
     }
     self.takedamage = 1;
     self.allowdeath = 1;
@@ -328,16 +328,16 @@ function function_2552a0a0(var_d736690e = 90) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xd17c45c3, Offset: 0x1158
 // Size: 0x1a4
-function function_aef7e3f6(var_d736690e = 10, var_6ee47b60 = 30) {
+function function_aef7e3f6(minwait = 10, var_6ee47b60 = 30) {
     self endon(#"death", #"hash_71199e509f750629");
     while (flag::get("doa_round_spawning")) {
         wait(1);
-        if (var_d736690e > 0) {
-            var_d736690e--;
+        if (minwait > 0) {
+            minwait--;
         }
     }
-    if (var_d736690e > 0) {
-        wait(var_d736690e);
+    if (minwait > 0) {
+        wait(minwait);
     }
     reset = var_6ee47b60;
     while (var_6ee47b60) {
@@ -694,10 +694,10 @@ function function_8b1ae345(time = 2, dist = 24, killnote) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x4ceff6ed, Offset: 0x2190
 // Size: 0xd6
-function function_1ebe83a7(var_70cc0d15, var_4dad59c0 = 1, timems = 3000) {
+function function_1ebe83a7(startscale, endscale = 1, timems = 3000) {
     self endon(#"death");
-    var_44bf347e = var_70cc0d15;
-    var_c7fbfa53 = (var_4dad59c0 - var_70cc0d15) / timems / 50;
+    var_44bf347e = startscale;
+    var_c7fbfa53 = (endscale - startscale) / timems / 50;
     endtime = gettime() + timems;
     while (isdefined(self) && gettime() < endtime) {
         var_44bf347e = var_44bf347e + var_c7fbfa53;
@@ -883,8 +883,8 @@ function function_f1e8ce76(vector, angle) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x9fcf6d8f, Offset: 0x29b0
 // Size: 0x86
-function function_65ee50ba(start, var_e22b9651 = 48, var_51a8354e = -1024) {
-    s_trace = groundtrace(start + (0, 0, var_e22b9651), start + (0, 0, var_51a8354e), 0, self);
+function function_65ee50ba(start, updelta = 48, var_51a8354e = -1024) {
+    s_trace = groundtrace(start + (0, 0, updelta), start + (0, 0, var_51a8354e), 0, self);
     return s_trace[#"position"];
 }
 
@@ -919,17 +919,17 @@ function function_1a117d29(location, timesec = 1) {
 function function_ecec1794() {
     self endon(#"death");
     sticks = 0;
-    var_b5a2be68 = self.origin;
-    var_566fb668 = self.angles;
+    lastorigin = self.origin;
+    lastangles = self.angles;
     while (sticks < 20) {
         waitframe(1);
-        var_bcb6ea2 = lengthsquared(var_566fb668 - self.angles);
-        var_4d6917c7 = distancesquared(var_b5a2be68, self.origin);
+        var_bcb6ea2 = lengthsquared(lastangles - self.angles);
+        var_4d6917c7 = distancesquared(lastorigin, self.origin);
         if (var_4d6917c7 < function_a3f6cdac(4) && var_bcb6ea2 < 0.1) {
             sticks++;
         } else {
-            var_b5a2be68 = self.origin;
-            var_566fb668 = self.angles;
+            lastorigin = self.origin;
+            lastangles = self.angles;
             sticks = 0;
         }
     }
@@ -1047,7 +1047,7 @@ function spawnorigin(origin) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x6a4db763, Offset: 0x3190
 // Size: 0xea
-function function_e22ae9b3(origin, modelname = "tag_origin", angles, targetname) {
+function spawnmodel(origin, modelname = "tag_origin", angles, targetname) {
     if (!function_a8975c67()) {
         return;
     }

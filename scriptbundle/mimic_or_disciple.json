@@ -1,12 +1,12 @@
 {
     "var_210a8489": [
         {
-            "var_37d9fb07": "survival_ai_disciple",
+            "entryname": "survival_ai_disciple",
             "var_a949845f": -1,
             "var_857deb66": 66
         },
         {
-            "var_37d9fb07": "survival_ai_mimic",
+            "entryname": "survival_ai_mimic",
             "var_a949845f": -1,
             "var_857deb66": 100
         }

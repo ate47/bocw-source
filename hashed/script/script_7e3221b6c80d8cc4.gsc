@@ -52,7 +52,7 @@ function function_4334ac55() {
 // Params 0, eflags: 0x0
 // Checksum 0x6e4916a2, Offset: 0x2e8
 // Size: 0x550
-function function_1da4908c() {
+function debug_player() {
     /#
         self endon(#"death");
         hudelem = newdebughudelem(self);
@@ -354,7 +354,7 @@ function function_ea707af9(type) {
 // Params 2, eflags: 0x0
 // Checksum 0xea239e25, Offset: 0x1240
 // Size: 0x124
-function function_bf41d34b(points, endonevent) {
+function debug_points(points, endonevent) {
     /#
         if (!function_852e4bbb()) {
             return;
@@ -452,14 +452,14 @@ function function_314b7255(text, color, alpha, scale, offset, life) {
         self.stealth.var_7555e1a1++;
         var_bd61e087 = self.stealth.var_7555e1a1;
         self.stealth.var_81c53854[var_bd61e087] = offset;
-        var_fab1e0aa = var_bd61e087 - 1;
-        while (isdefined(self.stealth.var_81c53854[var_fab1e0aa])) {
-            delta = self.stealth.var_81c53854[var_fab1e0aa][2] - self.stealth.var_81c53854[var_fab1e0aa + 1][2];
+        previd = var_bd61e087 - 1;
+        while (isdefined(self.stealth.var_81c53854[previd])) {
+            delta = self.stealth.var_81c53854[previd][2] - self.stealth.var_81c53854[previd + 1][2];
             if (delta >= spacing) {
                 break;
             }
-            self.stealth.var_81c53854[var_fab1e0aa] = (self.stealth.var_81c53854[var_fab1e0aa][0], self.stealth.var_81c53854[var_fab1e0aa][1], self.stealth.var_81c53854[var_fab1e0aa + 1][2] + spacing + delta);
-            var_fab1e0aa = var_fab1e0aa - 1;
+            self.stealth.var_81c53854[previd] = (self.stealth.var_81c53854[previd][0], self.stealth.var_81c53854[previd][1], self.stealth.var_81c53854[previd + 1][2] + spacing + delta);
+            previd = previd - 1;
         }
         draworigin = self.stealth.var_81c53854[var_bd61e087];
         while (gettime() - start < life * 1000) {
@@ -626,17 +626,17 @@ function function_3e6e06ae(baseangles, angle, var_875fcd86) {
 // Params 8, eflags: 0x0
 // Checksum 0xefed9505, Offset: 0x2340
 // Size: 0x16c
-function function_391d248f(origin, var_820d830d, var_ca063ce0, baseangles, var_48ff4b02, var_875fcd86, var_6246c419, color) {
+function function_391d248f(origin, startangle, endangle, baseangles, var_48ff4b02, var_875fcd86, var_6246c419, color) {
     /#
         /#
-            assert(var_820d830d < var_ca063ce0);
+            assert(startangle < endangle);
         #/
-        var_4b9eed7f = origin + var_48ff4b02 * function_3e6e06ae(baseangles, var_820d830d, var_875fcd86);
+        var_4b9eed7f = origin + var_48ff4b02 * function_3e6e06ae(baseangles, startangle, var_875fcd86);
         var_ae402dfe = var_4b9eed7f;
         line(origin, var_4b9eed7f, color);
-        var_5845cb8a = (var_ca063ce0 - var_820d830d) / var_6246c419;
+        angledelta = (endangle - startangle) / var_6246c419;
         for (i = 1; i < var_6246c419 + 1; i++) {
-            angle = var_820d830d + var_5845cb8a * i;
+            angle = startangle + angledelta * i;
             var_ae402dfe = origin + var_48ff4b02 * function_3e6e06ae(baseangles, angle, var_875fcd86);
             line(var_4b9eed7f, var_ae402dfe, color);
             var_4b9eed7f = var_ae402dfe;
@@ -662,19 +662,19 @@ function function_29356708() {
         } else {
             var_62729df5 = self gettagangles("<unknown string>")[1];
         }
-        var_15cc2e42 = getplayers()[0].maxvisibledist;
+        viewdist = getplayers()[0].maxvisibledist;
         if (isai(self)) {
             start = self gettagorigin("<unknown string>");
         } else {
             start = self gettagorigin("<unknown string>");
         }
         var_16d2c066 = 10;
-        function_391d248f(start, -1 * var_7f663bfb, var_7f663bfb, (0, var_62729df5, 0), var_15cc2e42, 1, var_16d2c066, color);
+        function_391d248f(start, -1 * var_7f663bfb, var_7f663bfb, (0, var_62729df5, 0), viewdist, 1, var_16d2c066, color);
         if (self.fovcosinez > dot) {
             color = color * 0.5;
             var_3deb2d7d = acos(self.fovcosinez);
             var_8b97ee98 = 0;
-            function_391d248f(start, -1 * var_3deb2d7d, var_3deb2d7d, (var_8b97ee98, var_62729df5, 0), var_15cc2e42, 0, var_16d2c066, color);
+            function_391d248f(start, -1 * var_3deb2d7d, var_3deb2d7d, (var_8b97ee98, var_62729df5, 0), viewdist, 0, var_16d2c066, color);
         }
         var_346c7ea3 = acos(self.var_6068813f);
         function_391d248f(start, -1 * var_346c7ea3, var_346c7ea3, (0, var_62729df5, 0), sqrt(self.var_c06e76e7), 1, var_16d2c066, vectorscale((1, 1, 0), 0.5));
@@ -754,25 +754,25 @@ function function_f5dd6400() {
                 var_12febe81 = gettime() - var_9d1f58f3;
                 if (var_1caac9f9.var_42d9f5df > 0) {
                     cury = var_c6f9544b;
-                    var_fe8e6e30 = var_1caac9f9.var_855b67ea;
-                    for (var_1ea0399e = 0; var_1ea0399e < var_1caac9f9.var_42d9f5df; var_1ea0399e++) {
-                        if (!isdefined(var_1caac9f9.var_8f448777[var_fe8e6e30]) || var_1caac9f9.var_8f448777[var_fe8e6e30].time > var_12febe81) {
+                    curline = var_1caac9f9.var_855b67ea;
+                    for (iline = 0; iline < var_1caac9f9.var_42d9f5df; iline++) {
+                        if (!isdefined(var_1caac9f9.var_8f448777[curline]) || var_1caac9f9.var_8f448777[curline].time > var_12febe81) {
                             text = "<unknown string>";
-                            if (isstring(var_1caac9f9.var_8f448777[var_fe8e6e30].speaker)) {
-                                text = text + var_1caac9f9.var_8f448777[var_fe8e6e30].speaker;
+                            if (isstring(var_1caac9f9.var_8f448777[curline].speaker)) {
+                                text = text + var_1caac9f9.var_8f448777[curline].speaker;
                             } else {
-                                foreach (speaker in var_1caac9f9.var_8f448777[var_fe8e6e30].speaker) {
+                                foreach (speaker in var_1caac9f9.var_8f448777[curline].speaker) {
                                     if (isdefined(speaker)) {
                                         text = text + "<unknown string>" + speaker getentitynumber();
                                     }
                                 }
-                                var_1caac9f9.var_8f448777[var_fe8e6e30].speaker = text;
+                                var_1caac9f9.var_8f448777[curline].speaker = text;
                             }
-                            text = text + "<unknown string>" + var_1caac9f9.var_8f448777[var_fe8e6e30].text;
+                            text = text + "<unknown string>" + var_1caac9f9.var_8f448777[curline].text;
                             debug2dtext((var_b5a9b1ac, cury, 0), text, textcolor, 1, undefined, undefined, var_4c0b606b);
                             cury = cury + var_1dccd487;
                         }
-                        var_fe8e6e30 = (var_fe8e6e30 + 1) % 16;
+                        curline = (curline + 1) % 16;
                     }
                 }
             }
@@ -839,7 +839,7 @@ function function_bd9767df(message, duration) {
 // Size: 0x104
 function function_41282cc9(origin, angles, length) {
     /#
-        var_413e029e = function_237971e2(angles);
+        var_413e029e = anglestoaxis(angles);
         forward = var_413e029e.forward * length;
         right = var_413e029e.right * length;
         up = var_413e029e.up * length;
@@ -862,21 +862,21 @@ function function_613009e2() {
         if (var_cfd8b974 == 0) {
             return;
         }
-        var_63c3727f = (0.5, 0.7, 0.5);
-        var_b45e0b0a = (0.7, 0.1, 0.1);
-        var_4de0746b = vectorscale((1, 1, 1), 0.7);
+        colorgreen = (0.5, 0.7, 0.5);
+        colorred = (0.7, 0.1, 0.1);
+        colorgray = vectorscale((1, 1, 1), 0.7);
         foreach (obj in level.var_1ccc840f) {
             angles = (0, 0, 0);
             if (isdefined(obj.angles)) {
                 angles = obj.angles;
             }
             canuse = can_use(obj);
-            claimed = isdefined(obj.var_5c4a504d);
-            color = var_4de0746b;
+            claimed = isdefined(obj.claimer);
+            color = colorgray;
             if (claimed) {
-                color = var_63c3727f;
+                color = colorgreen;
             } else if (!canuse) {
-                color = var_b45e0b0a;
+                color = colorred;
             }
             function_41282cc9(obj.origin, angles, 12);
             print3d(obj.origin - vectorscale((0, 0, 1), 12), function_9e72a96(obj.scriptbundlename), color, 1, 0.3, 1);
@@ -889,8 +889,8 @@ function function_613009e2() {
                 function_391d248f(obj.origin, 0, 360, angles, r, 1, 8, color);
             }
             if (claimed) {
-                print3d(obj.origin - vectorscale((0, 0, 1), 18), "<unknown string>" + obj.var_5c4a504d getentitynumber(), color, 1, 0.3, 1);
-                line(obj.origin, obj.var_5c4a504d.origin, color, 1, 0, 1);
+                print3d(obj.origin - vectorscale((0, 0, 1), 18), "<unknown string>" + obj.claimer getentitynumber(), color, 1, 0.3, 1);
+                line(obj.origin, obj.claimer.origin, color, 1, 0, 1);
             }
         }
     #/

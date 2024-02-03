@@ -44,7 +44,7 @@
 // Checksum 0x4d20460a, Offset: 0x950
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"mechz", &init, undefined, &function_5700f119, undefined);
+    system::register(#"mechz", &init, undefined, &finalize, undefined);
 }
 
 // Namespace namespace_3444cb7b/mechz
@@ -72,7 +72,7 @@ function init() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0xc824d46a, Offset: 0xc28
 // Size: 0xe4
-function function_5700f119() {
+function finalize() {
     level thread aat::register_immunity("ammomod_brainrot", #"mechz", 1, 1, 1);
     level thread aat::register_immunity("ammomod_cryofreeze", #"mechz", 1, 1, 1);
     level thread aat::register_immunity("ammomod_deadwire", #"mechz", 1, 1, 1);
@@ -1131,7 +1131,7 @@ function private function_3b8b6e80() {
     self.zombie_move_speed = "run";
     self setblackboardattribute("_locomotion_speed", "locomotion_speed_run");
     self.var_cccb0ad2 = 1;
-    self.var_270a22e2 = 3;
+    self.grenadecount = 3;
     self.var_e05f2c0a = gettime();
     self.var_57fca545 = gettime();
     self.var_9329a57c = gettime();
@@ -1414,7 +1414,7 @@ function show_hit_marker() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x206d351, Offset: 0x53e8
 // Size: 0x3c
-function function_1780a22f(var_7527000) {
+function hide_part(var_7527000) {
     if (self haspart(var_7527000)) {
         self hidepart(var_7527000);
     }
@@ -1466,7 +1466,7 @@ function function_39d47bef(attacker, weapon, mod, inflictor) {
 // Checksum 0xfa889c4, Offset: 0x5658
 // Size: 0xf4
 function function_4c489c31(attacker) {
-    self function_1780a22f("j_jetpack");
+    self hide_part("j_jetpack");
     self clientfield::set("mechz_jetpack_explosion", 1);
     self.var_7c4488fd = 0;
     self.var_97601164 = 1;

@@ -1,35 +1,35 @@
 {
     "var_1ad142ee": [
         {
-            "var_46bd7973": "#hash_4abcca618157b98c",
+            "soundevent": "#hash_4abcca618157b98c",
             "var_f35c5951": 0.5,
             "var_5d4b5964": 8.36,
             "var_36bf8e05": "#hash_2c85c2aabf8eed37"
         },
         {
-            "var_46bd7973": "#hash_4abccb618157bb3f",
+            "soundevent": "#hash_4abccb618157bb3f",
             "var_f35c5951": 0.65,
             "var_5d4b5964": 6.74,
             "var_36bf8e05": "#hash_507fe138cf462076"
         },
         {
-            "var_46bd7973": "#hash_4abccc618157bcf2",
+            "soundevent": "#hash_4abccc618157bcf2",
             "var_5d4b5964": 6.95,
             "var_36bf8e05": "#hash_427d11c0d8fbd045"
         },
         {
-            "var_46bd7973": "#hash_4abccd618157bea5",
+            "soundevent": "#hash_4abccd618157bea5",
             "var_5d4b5964": 12.1,
             "var_36bf8e05": "#hash_5571afc061b8da1c"
         },
         {
-            "var_46bd7973": "#hash_4abcc6618157b2c0",
+            "soundevent": "#hash_4abcc6618157b2c0",
             "var_f35c5951": 0.4,
             "var_5d4b5964": 13.78,
             "var_36bf8e05": "#hash_6fe23b09c3a27583"
         },
         {
-            "var_46bd7973": "#hash_4abcc7618157b473",
+            "soundevent": "#hash_4abcc7618157b473",
             "var_5d4b5964": 2.97,
             "var_36bf8e05": "#hash_2b7fad9dd9af7242"
         }

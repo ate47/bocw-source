@@ -297,7 +297,7 @@ function private function_d3379a31() {
 function debug_spawns() {
     /#
         var_da0b6672 = 50;
-        var_3f9c4a4 = 1000;
+        checkdist = 1000;
         while (1) {
             player1 = getplayers()[0];
             var_273a84a9 = [];
@@ -1008,7 +1008,7 @@ function function_33ac9c9e() {
     players = getplayers();
     foreach (player in players) {
         player function_a7a4f67f(level.var_9b7bd0e8);
-        player namespace_6d6a0ac2::function_e88957df(getdvarint(#"hash_4683cbe4c9d162eb", 1));
+        player zonslaught::function_e88957df(getdvarint(#"hash_4683cbe4c9d162eb", 1));
         player clientfield::set_player_uimodel("hudItems.onslaught.bosskill_count", level.var_9b7bd0e8);
     }
     level callback::callback(#"hash_7852c3cae4d4082a");
@@ -1123,7 +1123,7 @@ function function_b33a5cf4(var_ba65b6cb) {
     players = getplayers();
     foreach (player in players) {
         player function_a7a4f67f(level.var_9b7bd0e8);
-        player namespace_6d6a0ac2::function_e88957df(1);
+        player zonslaught::function_e88957df(1);
         player clientfield::set_player_uimodel("hudItems.onslaught.bosskill_count", level.var_9b7bd0e8);
     }
     level callback::callback(#"hash_7852c3cae4d4082a");
@@ -1214,7 +1214,7 @@ function function_a371376() {
     players = getplayers();
     foreach (player in players) {
         player function_a7a4f67f(level.var_9b7bd0e8);
-        player namespace_6d6a0ac2::function_e88957df(1);
+        player zonslaught::function_e88957df(1);
         player clientfield::set_player_uimodel("hudItems.onslaught.bosskill_count", level.var_9b7bd0e8);
     }
     level callback::callback(#"hash_7852c3cae4d4082a");
@@ -1755,7 +1755,7 @@ function function_54fc66c6() {
 // Params 1, eflags: 0x0
 // Checksum 0x99308ff3, Offset: 0x7a90
 // Size: 0x156
-function function_33824ce9(var_f048a71a) {
+function function_33824ce9(maxpoint) {
     /#
         while (1) {
             foreach (var_d13f3ba2 in self) {
@@ -1763,7 +1763,7 @@ function function_33824ce9(var_f048a71a) {
                     circle(point.origin, 5, (1, 0, 0), 1, 1, 1);
                 }
             }
-            circle(var_f048a71a.origin, 3, (1, 1, 0), 1, 1, 1);
+            circle(maxpoint.origin, 3, (1, 1, 0), 1, 1, 1);
             waitframe(1);
         }
     #/
@@ -2227,8 +2227,8 @@ function function_81c192d() {
         }
         var_9c387409 = var_aa93fa5f.origin;
     } else {
-        var_e2086fe4 = anglestoforward(var_f21608fd);
-        spawnpoint = var_bb96c5ab + var_e2086fe4 * 300;
+        fwdvec = anglestoforward(var_f21608fd);
+        spawnpoint = var_bb96c5ab + fwdvec * 300;
         var_56045f3b = groundtrace(spawnpoint + vectorscale((0, 0, 1), 200), spawnpoint + vectorscale((0, 0, -1), 1000), 0, undefined);
         var_9c387409 = var_56045f3b[#"position"];
     }

@@ -21,7 +21,7 @@ function private autoexec function_4047919b() {
         level._snd._callbacks = [];
         level._snd.var_3cc765a3 = [];
         level._snd.var_92f63ad0 = [];
-        level._snd.var_d37e94ca = #"hash_72d0c119f969b755";
+        level._snd.var_d37e94ca = #"gentity";
         level._snd.var_90903fc0 = 0;
         level._snd._callbacks[#"hash_212a61da2a09cf0"] = &function_9d361345;
         level._snd._callbacks[#"player_angles"] = &function_d33afb70;
@@ -37,7 +37,7 @@ function private autoexec function_4047919b() {
         level thread function_ce893a25();
     #/
     waittillframeend();
-    level._snd.var_a203d643 = 1;
+    level._snd.isinitialized = 1;
 }
 
 // Namespace snd/snd
@@ -254,7 +254,7 @@ function function_85daf9f0(soundalias, var_1d25915, var_605838f4, var_e330010e) 
     #/
     if (isentity(ent)) {
         ent.var_90c86b97 = var_605838f4;
-        ent.var_317c7400 = #"hash_72d0c119f969b755";
+        ent.soundtype = #"gentity";
         ent.soundkey = ent getentitynumber();
         ent.targetname = "snd " + soundalias;
     }
@@ -299,7 +299,7 @@ function function_6ac5b570(ent) {
 // Size: 0x312
 function function_2dde45d9(var_afe43979, soundalias, var_99e65ecf, delaytime) {
     ent = var_afe43979;
-    var_fe3be304 = undefined;
+    currentvolume = undefined;
     ent endon(#"death");
     /#
         assert(isdefined(ent));
@@ -307,17 +307,17 @@ function function_2dde45d9(var_afe43979, soundalias, var_99e65ecf, delaytime) {
     /#
         assert(isstring(soundalias));
     #/
-    var_fe3be304 = snd::function_92d3587(ent);
-    if (!isdefined(var_99e65ecf) && isdefined(var_fe3be304)) {
-        var_99e65ecf = var_fe3be304;
+    currentvolume = snd::function_92d3587(ent);
+    if (!isdefined(var_99e65ecf) && isdefined(currentvolume)) {
+        var_99e65ecf = currentvolume;
     }
     if (snd::did_init() == 0) {
-        var_cd7344db = !isdefined(delaytime) || snd::function_90a7316b(delaytime) && delaytime == 0;
+        var_cd7344db = !isdefined(delaytime) || snd::isnumber(delaytime) && delaytime == 0;
         if (snd::function_81fac19d(var_cd7344db, "snd: delayed due to first frame!")) {
             delaytime = 0.05;
         }
     }
-    if (snd::function_90a7316b(delaytime) && delaytime > 0) {
+    if (snd::isnumber(delaytime) && delaytime > 0) {
         wait(delaytime);
     }
     /#
@@ -374,7 +374,7 @@ function function_9f156b27(var_afe43979, var_24ea4e17) {
             waitframe(1);
             ent.soundalias = undefined;
         }
-        ent.var_317c7400 = undefined;
+        ent.soundtype = undefined;
         function_6ac5b570(ent);
     }
 }
@@ -524,7 +524,7 @@ function function_13246855(soundalias, notifystring, *player_or_team) {
 // Size: 0x44
 function function_fb9b8ef4(soundalias) {
     ent = function_7f94241b(self);
-    function_1ac5032(soundalias, ent);
+    stop_alias(soundalias, ent);
 }
 
 // Namespace snd/snd

@@ -32,7 +32,7 @@
 // Checksum 0x17154cfa, Offset: 0x310
 // Size: 0x54
 function private autoexec __init__system__() {
-    system::register(#"supplypod", &function_70a657d8, undefined, &function_5700f119, #"killstreaks");
+    system::register(#"supplypod", &function_70a657d8, undefined, &finalize, #"killstreaks");
 }
 
 // Namespace supplypod/supplypod
@@ -63,7 +63,7 @@ function private function_70a657d8() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0xc1b1cfe5, Offset: 0x558
 // Size: 0x40
-function function_5700f119() {
+function finalize() {
     if (isdefined(level.var_1b900c1d)) {
         [[ level.var_1b900c1d ]](level.var_934fb97.weapon, &function_bff5c062);
     }

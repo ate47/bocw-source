@@ -87,7 +87,7 @@ function function_8b014c60(trap, var_7c56394 = 0) {
         #/
         break;
     }
-    trap.script_model = namespace_ec06fe4a::function_e22ae9b3(trap.origin, trap.model, trap.angles);
+    trap.script_model = namespace_ec06fe4a::spawnmodel(trap.origin, trap.model, trap.angles);
     if (isdefined(trap.script_model)) {
         trap.script_model.targetname = "hazard";
         trap.script_model.var_fd5301f9 = "physicsbox";
@@ -220,11 +220,11 @@ LOC_000000c8:
             default:
                 if (isplayer(guy)) {
                     self.script_model namespace_e32bb68::function_3a59ec34("zmb_physicsBoxVelocity");
-                    var_c84aa3c4 = guy getvelocity() + self.var_88eccffa;
+                    localvelocity = guy getvelocity() + self.var_88eccffa;
                     guy setorigin(guy.origin + vectorscale((0, 0, 1), 30));
                     waitframe(1);
                     if (isdefined(guy)) {
-                        guy setvelocity(var_c84aa3c4);
+                        guy setvelocity(localvelocity);
                         if (namespace_4dae815d::function_59a9cf1d() != 0) {
                             guy thread namespace_7f5aeb59::function_a74228bc();
                         }

@@ -272,7 +272,7 @@ function function_732dcb56(killstreaktype) {
 function function_98e60435(var_d44b8c3e, bundle) {
     var_6e3ae51a = randomfloatrange(isdefined(level.var_84f1b20f) ? level.var_84f1b20f : 90, isdefined(level.var_26837e34) ? level.var_26837e34 : 180);
     startangles = (0, var_6e3ae51a, 0);
-    var_4b25f3c8 = anglestoforward(startangles);
+    startforward = anglestoforward(startangles);
     if (sessionmodeiswarzonegame()) {
         var_12306a94 = 25000;
         zoffset = var_d44b8c3e[2] + 9500;
@@ -286,7 +286,7 @@ function function_98e60435(var_d44b8c3e, bundle) {
         var_c8e01926 = undefined;
         var_37db735d = [];
         var_51c6fb78 = 0;
-        forward = var_4b25f3c8;
+        forward = startforward;
         angles = startangles;
         while (var_51c6fb78 < var_51cabd75) {
             var_59a518e1 = [];
@@ -330,8 +330,8 @@ function function_98e60435(var_d44b8c3e, bundle) {
             return var_af2fe365;
         }
     }
-    adjustedpath[#"startposition"] = var_d44b8c3e + vectorscale(var_4b25f3c8, -1 * var_12306a94) + (0, 0, zoffset);
-    adjustedpath[#"endposition"] = var_d44b8c3e + vectorscale(var_4b25f3c8, var_12306a94) + (0, 0, zoffset);
+    adjustedpath[#"startposition"] = var_d44b8c3e + vectorscale(startforward, -1 * var_12306a94) + (0, 0, zoffset);
+    adjustedpath[#"endposition"] = var_d44b8c3e + vectorscale(startforward, var_12306a94) + (0, 0, zoffset);
     adjustedpath[#"angles"] = startangles;
     return adjustedpath;
 }

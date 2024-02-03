@@ -156,18 +156,18 @@ function function_b1543a9d(anim_name, animset) {
         assert(isdefined(level.var_f467e5b0));
     #/
     foreach (group in var_4f3681cc.animset) {
-        foreach (index, var_d2d4d426 in group.var_dc27586e) {
-            var_37d9fb07 = anim_name + "_" + group.name;
-            if (group.var_dc27586e.size > 1) {
-                var_37d9fb07 = var_37d9fb07 + "_" + index + 1;
+        foreach (index, animentry in group.anims) {
+            entryname = anim_name + "_" + group.name;
+            if (group.anims.size > 1) {
+                entryname = entryname + "_" + index + 1;
             }
-            level.var_f467e5b0.var_dc27586e[group.animname][var_37d9fb07] = var_d2d4d426.xanim;
+            level.var_f467e5b0.anims[group.animname][entryname] = animentry.xanim;
             if (group.blend !== 0.2) {
-                level.var_f467e5b0.blend[group.animname][var_37d9fb07] = isdefined(group.blend) ? group.blend : 0;
+                level.var_f467e5b0.blend[group.animname][entryname] = isdefined(group.blend) ? group.blend : 0;
             }
-            if (group.animname == "generic" && !isdefined(level.var_f467e5b0.var_dc27586e[#"player"][var_37d9fb07])) {
-                level.var_f467e5b0.var_dc27586e[#"player"][var_37d9fb07] = var_d2d4d426.xanim;
-                level.var_f467e5b0.blend[#"player"][var_37d9fb07] = group.blend;
+            if (group.animname == "generic" && !isdefined(level.var_f467e5b0.anims[#"player"][entryname])) {
+                level.var_f467e5b0.anims[#"player"][entryname] = animentry.xanim;
+                level.var_f467e5b0.blend[#"player"][entryname] = group.blend;
             }
         }
     }

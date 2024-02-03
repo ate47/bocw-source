@@ -329,26 +329,26 @@ function private weight_actions(&paramslist) {
             if (!isdefined(var_3a4035f3)) {
                 record3dtext("<unknown string>", self.origin, (1, 0, 1), "<unknown string>", self, 0.5);
             }
-            var_37c2490e = [];
+            sortedlist = [];
             foreach (actionparams in paramslist) {
                 if (!isdefined(actionparams.weight)) {
-                    var_37c2490e[var_37c2490e.size] = actionparams;
+                    sortedlist[sortedlist.size] = actionparams;
                 } else {
-                    for (i = 0; i < var_37c2490e.size; i++) {
-                        var_fd5e06c8 = var_37c2490e[i].weight;
+                    for (i = 0; i < sortedlist.size; i++) {
+                        var_fd5e06c8 = sortedlist[i].weight;
                         if (!isdefined(var_fd5e06c8) || var_fd5e06c8 < actionparams.weight) {
                             break;
                         }
                     }
-                    arrayinsert(var_37c2490e, actionparams, i);
+                    arrayinsert(sortedlist, actionparams, i);
                 }
             }
-            foreach (actionparams in var_37c2490e) {
+            foreach (actionparams in sortedlist) {
                 color = vectorscale((1, 1, 1), 0.75);
                 headerstr = "<unknown string>";
                 recordweight = "<unknown string>";
                 if (isdefined(actionparams.weight)) {
-                    color = function_f86de15e(actionparams.weight, 100, (1, 0, 0), (1, 0.5, 0), (1, 1, 0), (0, 1, 0));
+                    color = map_color(actionparams.weight, 100, (1, 0, 0), (1, 0.5, 0), (1, 1, 0), (0, 1, 0));
                     recordweight = actionparams.weight;
                     if (actionparams === var_3a4035f3) {
                         headerstr = "<unknown string>";

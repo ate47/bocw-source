@@ -1957,8 +1957,8 @@ function on_item_pickup(params) {
                 }
                 if (zm_weapons::get_base_weapon(var_28f1804e).name === var_12a61de4) {
                     maxammo = var_28f1804e.maxammo;
-                    var_53b14ebf = self function_b7f1fd2c(var_28f1804e);
-                    self setweaponammoclip(var_28f1804e, var_53b14ebf);
+                    maxclip = self function_b7f1fd2c(var_28f1804e);
+                    self setweaponammoclip(var_28f1804e, maxclip);
                     self setweaponammostock(var_28f1804e, maxammo);
                 } else {
                     if (math::cointoss(35)) {
@@ -2724,14 +2724,14 @@ function function_80fdbf85(player) {
     if (isdefined(player)) {
         player endon(#"blazer_beam_extending");
     }
-    var_caa82e2d = 3000 - self.var_843dba81;
-    v_target_pos = self.origin + var_caa82e2d * self.var_c3467a5d;
+    left_distance = 3000 - self.var_843dba81;
+    v_target_pos = self.origin + left_distance * self.var_c3467a5d;
     trace = beamtrace(self.origin, v_target_pos, 0, player);
     if (trace[#"fraction"] < 1) {
         v_target_pos = trace[#"position"];
-        var_caa82e2d = distance(self.origin, trace[#"position"]);
+        left_distance = distance(self.origin, trace[#"position"]);
     }
-    time = var_caa82e2d / 1200 + 0.1;
+    time = left_distance / 1200 + 0.1;
     if (time > 0) {
         self moveto(v_target_pos, time);
         wait(time);

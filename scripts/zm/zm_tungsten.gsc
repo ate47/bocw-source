@@ -2395,8 +2395,8 @@ function function_749d2cfc(str_item_name, var_27751b99) {
         if (isdefined(var_27751b99)) {
             self function_d92c6b5b(self.currentweapon, 0);
             maxammo = self.currentweapon.maxammo;
-            var_53b14ebf = self function_b7f1fd2c(self.currentweapon);
-            self setweaponammoclip(self.currentweapon, var_53b14ebf);
+            maxclip = self function_b7f1fd2c(self.currentweapon);
+            self setweaponammoclip(self.currentweapon, maxclip);
             self setweaponammostock(self.currentweapon, maxammo);
             self notify(#"hash_75ec9942d2d5fd0f");
         }

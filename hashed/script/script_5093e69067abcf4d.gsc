@@ -101,9 +101,9 @@ function function_d921e776() {
     }
     waitframe(1);
     if (is_true(var_309bea08)) {
-        level.var_7466d419 namespace_14fe71f8::function_adf2ea57();
+        level.var_7466d419 orbit::function_adf2ea57();
     } else {
-        level.var_7466d419 namespace_14fe71f8::function_4db7a747();
+        level.var_7466d419 orbit::function_4db7a747();
     }
     level flag::set("flag_bamboo_player_on_ground");
     if (!is_true(var_309bea08) && isdefined(var_da00db64)) {
@@ -1245,11 +1245,11 @@ function function_dfdba661(params) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x2af8ed72, Offset: 0x7638
 // Size: 0xc8
-function function_c6968b8f(nodename, var_35752b8c, var_76d52688) {
-    nodes = getnodearray(nodename, var_35752b8c);
+function function_c6968b8f(nodename, nodekey, benabled) {
+    nodes = getnodearray(nodename, nodekey);
     if (isdefined(nodes)) {
         foreach (node in nodes) {
-            setenablenode(node, var_76d52688);
+            setenablenode(node, benabled);
         }
     }
 }
@@ -1308,12 +1308,12 @@ function function_ddac4979(var_d3440450, var_50cc0d4f) {
     level thread function_85ddf842();
     level thread function_aebe91ed();
     level flag::wait_till("flag_bamboo_end_end");
-    var_e074d966 = savegame::function_6440b06b(#"hash_e7d26541441cb9d");
-    var_e074d966.var_8ffe00b6 = 1;
+    transient = savegame::function_6440b06b(#"transient");
+    transient.var_8ffe00b6 = 1;
     namespace_b7cfe907::function_d777fe61(0);
     level skipto::function_4e3ab877(var_d3440450, 0);
     var_ef3c5ef7 = "armada_fly_bamboo_to_mortar";
-    if (is_true(var_e074d966.var_32839ab6)) {
+    if (is_true(transient.var_32839ab6)) {
         var_ef3c5ef7 = "armada_fly_bamboo_to_firebase";
     }
     level skipto::function_51726ac8([0:var_ef3c5ef7], 0, level.player);

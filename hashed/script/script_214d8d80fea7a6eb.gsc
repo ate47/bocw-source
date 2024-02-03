@@ -18,14 +18,14 @@
 // Checksum 0x215000b9, Offset: 0x910
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"hash_4ddffaa090d81227", &function_c7f33cce, &function_fa076c68, undefined, undefined);
+    system::register(#"hash_4ddffaa090d81227", &_preload, &function_fa076c68, undefined, undefined);
 }
 
 // Namespace namespace_db2381c4/namespace_db2381c4
 // Params 0, eflags: 0x6 linked
 // Checksum 0xb4de7bc2, Offset: 0x968
 // Size: 0x34
-function private function_c7f33cce() {
+function private _preload() {
     if (!isdefined(level._fx)) {
         level._fx = {};
     }
@@ -696,12 +696,12 @@ function private function_23f6671d() {
         var_69954662 = max(-1, min(1, var_69954662));
         var_69954662 = var_69954662 * 0.5;
         var_50bfab0d = level._fx.rc_car.origin + anglestoforward(level._fx.rc_car.angles) * 100 + vectorscale((0, 0, 1), 15);
-        var_2233e093 = self function_a6a764a9(var_50bfab0d, 1);
-        if (isdefined(var_2233e093)) {
-            self postfx::function_c8b5f318("pstfx_speedblur", "X Offset", var_2233e093[0]);
-            self postfx::function_c8b5f318("pstfx_speedblur", "Y Offset", var_2233e093[1]);
-            self postfx::function_c8b5f318("pstfx_rain_loop_tkdn_rccar", "Origin X", var_2233e093[0] + var_69954662);
-            self postfx::function_c8b5f318("pstfx_rain_loop_tkdn_rccar", "Origin Y", var_2233e093[1]);
+        screenpos = self function_a6a764a9(var_50bfab0d, 1);
+        if (isdefined(screenpos)) {
+            self postfx::function_c8b5f318("pstfx_speedblur", "X Offset", screenpos[0]);
+            self postfx::function_c8b5f318("pstfx_speedblur", "Y Offset", screenpos[1]);
+            self postfx::function_c8b5f318("pstfx_rain_loop_tkdn_rccar", "Origin X", screenpos[0] + var_69954662);
+            self postfx::function_c8b5f318("pstfx_rain_loop_tkdn_rccar", "Origin Y", screenpos[1]);
         }
         self postfx::function_c8b5f318("pstfx_speedblur", "Blur", 0.05 * function_a3f6cdac(scalar));
         self postfx::function_c8b5f318("pstfx_rain_loop_tkdn_rccar", "Sprite Count Squash", function_a3f6cdac(var_75128a58));

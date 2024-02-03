@@ -185,8 +185,8 @@ function function_ab921f3d(var_2a51713) {
         assert(isplayer(player));
     #/
     if (isplayer(player)) {
-        var_4f84589e = is_true(player stats::get_stat(#"collectibles", var_2a51713 - 1));
-        return var_4f84589e;
+        isunlocked = is_true(player stats::get_stat(#"collectibles", var_2a51713 - 1));
+        return isunlocked;
     }
     return 0;
 }
@@ -229,8 +229,8 @@ function function_1fe63475(var_d13a0347, var_28c9f917) {
     /#
         assert(isplayer(player));
     #/
-    var_4f84589e = is_true(player stats::get_stat(#"mapdata", var_d13a0347, #"evidence", var_28c9f917));
-    return var_4f84589e;
+    isunlocked = is_true(player stats::get_stat(#"mapdata", var_d13a0347, #"evidence", var_28c9f917));
+    return isunlocked;
 }
 
 // Namespace collectibles/collectibles
@@ -248,8 +248,8 @@ function function_ee216b9e(var_d13a0347, var_28c9f917) {
     /#
         assert(isplayer(player));
     #/
-    var_335de244 = is_true(player stats::get_stat(#"mapdata", var_d13a0347, #"hash_42b984266100b32", var_28c9f917));
-    return var_335de244;
+    isnew = is_true(player stats::get_stat(#"mapdata", var_d13a0347, #"hash_42b984266100b32", var_28c9f917));
+    return isnew;
 }
 
 // Namespace collectibles/collectibles

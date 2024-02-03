@@ -231,7 +231,7 @@ class cscenefakeactor : csceneobject, csceneactor {
         if (isdefined(str_model)) {
             self._e = util::spawn_anim_model(str_model, csceneobject::function_d2039b28(), csceneobject::function_f9936b53());
             self._e makefakeai();
-            if (!is_true(self._s.removeweapon) && !is_true(self._s.var_4251c9c6)) {
+            if (!is_true(self._s.removeweapon) && !is_true(self._s.hideweapon)) {
                 if (isdefined(weapon)) {
                     self._e animation::attach_weapon(weapon);
                 } else {

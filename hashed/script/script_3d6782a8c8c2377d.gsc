@@ -203,16 +203,16 @@ function function_ddee0896(*params) {
 // Size: 0x14e
 function function_660b79d2() {
     self endon(#"death", #"exit_vehicle");
-    var_2caba700 = 0;
+    tilecount = 0;
     while (1) {
         var_a95a42b4 = anglestoup(self.angles);
         worldup = (0, 0, 1);
         if (vectordot(var_a95a42b4, worldup) < 0.64) {
-            var_2caba700 = var_2caba700 + 1;
+            tilecount = tilecount + 1;
         } else {
-            var_2caba700 = 0;
+            tilecount = 0;
         }
-        if (var_2caba700 > 20) {
+        if (tilecount > 20) {
             driver = self getseatoccupant(0);
             if (isdefined(driver)) {
                 self usevehicle(driver, 0);
@@ -345,8 +345,8 @@ function function_a3efd2ac(*params) {
 // Checksum 0x9bbee34c, Offset: 0x16f0
 // Size: 0x44
 function function_6352daec() {
-    if (isdefined(self.jump) && isdefined(self.jump.var_3de7d10f)) {
-        self.jump.var_3de7d10f delete();
+    if (isdefined(self.jump) && isdefined(self.jump.linkent)) {
+        self.jump.linkent delete();
     }
 }
 
@@ -367,12 +367,12 @@ function function_fba89ed6(enttowatch) {
 function function_ce40686c() {
     if (isdefined(self.jump)) {
         self unlink();
-        self.jump.var_3de7d10f delete();
+        self.jump.linkent delete();
         self.jump delete();
     }
     self.jump = spawnstruct();
-    self.jump.var_3de7d10f = spawn("script_origin", self.origin);
-    self.jump.var_3de7d10f thread function_fba89ed6(self);
+    self.jump.linkent = spawn("script_origin", self.origin);
+    self.jump.linkent thread function_fba89ed6(self);
     self.jump.var_a3fc817e = 0;
     self.jump.var_f2204696 = struct::get_array("balcony_point");
     self.jump.var_6a753c2c = struct::get_array("ground_point");
@@ -427,10 +427,10 @@ function function_aa1e85d2(params) {
     self endon(#"change_state", #"death");
     goal = self.jump.goal;
     self face_target(goal);
-    self.jump.var_3de7d10f.origin = self.origin;
-    self.jump.var_3de7d10f.angles = self.angles;
+    self.jump.linkent.origin = self.origin;
+    self.jump.linkent.angles = self.angles;
     waitframe(1);
-    self linkto(self.jump.var_3de7d10f);
+    self linkto(self.jump.linkent);
     self.jump.var_a3fc817e = 1;
     if (0) {
         /#
@@ -443,8 +443,8 @@ function function_aa1e85d2(params) {
             line(goal, goal + vectorscale((0, 0, 1), 100), (0, 1, 0), 1, 0, 60000);
         #/
     }
-    totaldistance = distance2d(goal, self.jump.var_3de7d10f.origin);
-    forward = (((goal - self.jump.var_3de7d10f.origin) / totaldistance)[0], ((goal - self.jump.var_3de7d10f.origin) / totaldistance)[1], 0);
+    totaldistance = distance2d(goal, self.jump.linkent.origin);
+    forward = (((goal - self.jump.linkent.origin) / totaldistance)[0], ((goal - self.jump.linkent.origin) / totaldistance)[1], 0);
     var_c367134b = mapfloat(500, 2000, 46, 52, totaldistance);
     var_36e6a14e = 0;
     var_c6492813 = (0, 0, 1) * (var_c367134b + params.var_83ccad16);
@@ -459,20 +459,20 @@ function function_aa1e85d2(params) {
     self waittill(#"hash_6155f993349506c6");
     self vehicle::impact_fx(self.settings.var_a596f383);
     while (1) {
-        var_ecf0b2da = distance2d(self.jump.var_3de7d10f.origin, goal);
+        distancetogoal = distance2d(self.jump.linkent.origin, goal);
         var_e985f88e = 1;
         var_bcf8dac0 = 1;
         var_b1a7dcb1 = (0, 0, 0);
         if (0) {
             /#
-                line(self.jump.var_3de7d10f.origin, self.jump.var_3de7d10f.origin + var_b1a7dcb1, (0, 1, 0), 1, 0, 60000);
+                line(self.jump.linkent.origin, self.jump.linkent.origin + var_b1a7dcb1, (0, 1, 0), 1, 0, 60000);
             #/
         }
-        var_d15137d8 = mapfloat(self.radius * 1, self.radius * 4, 0.2, 1, var_ecf0b2da);
+        var_d15137d8 = mapfloat(self.radius * 1, self.radius * 4, 0.2, 1, distancetogoal);
         var_130db229 = var_712641e2 * var_d15137d8;
         if (0) {
             /#
-                line(self.jump.var_3de7d10f.origin, self.jump.var_3de7d10f.origin + var_130db229, (0, 1, 0), 1, 0, 60000);
+                line(self.jump.linkent.origin, self.jump.linkent.origin + var_130db229, (0, 1, 0), 1, 0, 60000);
             #/
         }
         var_73b3a48 = velocity[2];
@@ -481,24 +481,24 @@ function function_aa1e85d2(params) {
         if (var_73b3a48 > 0 && velocity[2] < 0) {
             self asmrequestsubstate(#"hash_7ed8f3dbe3df1eec");
         }
-        if (velocity[2] < 0 && self.jump.var_3de7d10f.origin[2] + velocity[2] < goal[2]) {
+        if (velocity[2] < 0 && self.jump.linkent.origin[2] + velocity[2] < goal[2]) {
             break;
         }
         var_f3ba37c7 = goal[2] + 110;
-        var_8157eba2 = self.jump.var_3de7d10f.origin[2];
-        self.jump.var_3de7d10f.origin = self.jump.var_3de7d10f.origin + velocity;
-        if (self.jump.var_3de7d10f.origin[2] < var_f3ba37c7 && (var_8157eba2 > var_f3ba37c7 || var_73b3a48 > 0 && velocity[2] < 0)) {
+        var_8157eba2 = self.jump.linkent.origin[2];
+        self.jump.linkent.origin = self.jump.linkent.origin + velocity;
+        if (self.jump.linkent.origin[2] < var_f3ba37c7 && (var_8157eba2 > var_f3ba37c7 || var_73b3a48 > 0 && velocity[2] < 0)) {
             self notify(#"hash_528b934eace9e5db");
             self asmrequestsubstate(params.var_d49112b7);
         }
         if (0) {
             /#
-                debugstar(self.jump.var_3de7d10f.origin, 60000, (1, 0, 0));
+                debugstar(self.jump.linkent.origin, 60000, (1, 0, 0));
             #/
         }
         waitframe(1);
     }
-    self.jump.var_3de7d10f.origin = (self.jump.var_3de7d10f.origin[0], self.jump.var_3de7d10f.origin[1], 0) + (0, 0, goal[2]);
+    self.jump.linkent.origin = (self.jump.linkent.origin[0], self.jump.linkent.origin[1], 0) + (0, 0, goal[2]);
     self notify(#"hash_67349195c967de78");
     foreach (player in level.players) {
         player val::set(#"hash_1199035500d4ef6a", "takedamage", 0);
@@ -578,14 +578,14 @@ function function_533f0e89() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x952dd489, Offset: 0x27e0
 // Size: 0x94
-function function_7815c554(var_6a9ca9e6, waittime = 0) {
+function function_7815c554(isopen, waittime = 0) {
     self endon(#"death");
     self notify(#"hash_6d82c41ff7554815");
     self endon(#"hash_6d82c41ff7554815");
     if (isdefined(waittime) && waittime > 0) {
         wait(waittime);
     }
-    self vehicle::toggle_ambient_anim_group(1, var_6a9ca9e6);
+    self vehicle::toggle_ambient_anim_group(1, isopen);
 }
 
 // Namespace siegebot/siegebot
@@ -670,8 +670,8 @@ function function_2d43c374() {
 function face_target(position, var_2fd0e338 = 30) {
     v_to_enemy = ((position - self.origin)[0], (position - self.origin)[1], 0);
     v_to_enemy = vectornormalize(v_to_enemy);
-    var_3e4d601a = vectortoangles(v_to_enemy);
-    anglediff = absangleclamp180(self.angles[1] - var_3e4d601a[1]);
+    goalangles = vectortoangles(v_to_enemy);
+    anglediff = absangleclamp180(self.angles[1] - goalangles[1]);
     if (anglediff <= var_2fd0e338) {
         return;
     }
@@ -680,7 +680,7 @@ function face_target(position, var_2fd0e338 = 30) {
     self function_533f0e89();
     var_29b2c7c7 = gettime();
     while (anglediff > var_2fd0e338 && util::timesince(var_29b2c7c7) < 4) {
-        anglediff = absangleclamp180(self.angles[1] - var_3e4d601a[1]);
+        anglediff = absangleclamp180(self.angles[1] - goalangles[1]);
         waitframe(1);
     }
     self function_d4c687c9();
@@ -701,8 +701,8 @@ function scan() {
         angles = angles + vectorscale((0, 1, 0), 30);
         rotate = rotate - 30;
         forward = anglestoforward(angles);
-        var_b99f524e = self.origin + forward * 1000;
-        self turretsettarget(0, var_b99f524e);
+        aimpos = self.origin + forward * 1000;
+        self turretsettarget(0, aimpos);
         self waittilltimeout(0.5, #"turret_on_target");
         wait(0.1);
         if (isdefined(self.enemy) && self cansee(self.enemy)) {
@@ -713,8 +713,8 @@ function scan() {
         }
     }
     forward = anglestoforward(self.angles);
-    var_b99f524e = self.origin + forward * 1000;
-    self turretsettarget(0, var_b99f524e);
+    aimpos = self.origin + forward * 1000;
+    self turretsettarget(0, aimpos);
     self waittilltimeout(3, #"turret_on_target");
     self turretcleartarget(0);
 }

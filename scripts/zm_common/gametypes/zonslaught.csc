@@ -22,9 +22,9 @@
 #using scripts\core_common\clientfield_shared.csc;
 #using scripts\core_common\callbacks_shared.csc;
 
-#namespace namespace_6d6a0ac2;
+#namespace zonslaught;
 
-// Namespace namespace_6d6a0ac2/gametype_init
+// Namespace zonslaught/gametype_init
 // Params 1, eflags: 0x20
 // Checksum 0xe2c377c2, Offset: 0x370
 // Size: 0x4ac
@@ -63,7 +63,7 @@ function event_handler[gametype_init] main(*eventstruct) {
     #/
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 1, eflags: 0x0
 // Checksum 0xef8afd02, Offset: 0x828
 // Size: 0x8c
@@ -75,7 +75,7 @@ function on_player_spawned(localclientnum) {
     }
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 0, eflags: 0x0
 // Checksum 0xd5183446, Offset: 0x8c0
 // Size: 0x24
@@ -85,7 +85,7 @@ function onprecachegametype() {
     #/
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 0, eflags: 0x0
 // Checksum 0x6bc0607d, Offset: 0x8f0
 // Size: 0x24
@@ -95,7 +95,7 @@ function onstartgametype() {
     #/
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 7, eflags: 0x0
 // Checksum 0x3f3932f6, Offset: 0x920
 // Size: 0x74
@@ -107,7 +107,7 @@ function enemy_on_radar(*local_client_num, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 7, eflags: 0x0
 // Checksum 0x8adef76, Offset: 0x9a0
 // Size: 0x2f6
@@ -140,7 +140,7 @@ function function_bed6f88d(local_client_num, *oldval, newval, *bnewent, *binitia
     }
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 7, eflags: 0x0
 // Checksum 0x21e23d95, Offset: 0xca0
 // Size: 0x19c
@@ -158,7 +158,7 @@ function orb_spawn(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *f
     }
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 7, eflags: 0x0
 // Checksum 0x9322824f, Offset: 0xe48
 // Size: 0x21c
@@ -187,7 +187,7 @@ function bot_claim_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, 
     }
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 3, eflags: 0x0
 // Checksum 0xd2309a63, Offset: 0x1070
 // Size: 0x130
@@ -204,7 +204,7 @@ function fake_physicslaunch(target_pos, power, var_4862f668) {
     return time;
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 7, eflags: 0x0
 // Checksum 0x98a104fe, Offset: 0x11a8
 // Size: 0x23c
@@ -226,7 +226,7 @@ function orb_soul_capture_fx(localclientnum, *oldval, newval, *bnewent, *binitia
     }
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 7, eflags: 0x0
 // Checksum 0x2a570e0a, Offset: 0x13f0
 // Size: 0xf4
@@ -241,7 +241,7 @@ function function_ace38635(localclientnum, *oldval, newval, *bnewent, *binitials
     }
 }
 
-// Namespace namespace_6d6a0ac2/namespace_6d6a0ac2
+// Namespace zonslaught/zonslaught
 // Params 1, eflags: 0x0
 // Checksum 0x3eeee07b, Offset: 0x14f0
 // Size: 0x160

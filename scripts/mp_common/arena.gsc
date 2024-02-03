@@ -190,16 +190,16 @@ function match_end() {
         for (index = 0; index < level.players.size; index++) {
             player = level.players[index];
             if (isdefined(player.pers[#"arenainit"]) && player.pers[#"arenainit"] == 1) {
-                var_affb66b5 = undefined;
+                matchresult = undefined;
                 var_74386ffc = -1;
                 if (match::get_flag("tie")) {
-                    var_affb66b5 = 1;
+                    matchresult = 1;
                     player arenaendmatch(0, level.var_ba92f0a8);
                 } else if (match::function_a2b53e17(player)) {
-                    var_affb66b5 = 2;
+                    matchresult = 2;
                     player arenaendmatch(1, level.var_ba92f0a8);
                 } else {
-                    var_affb66b5 = 0;
+                    matchresult = 0;
                     player arenaendmatch(-1, level.var_ba92f0a8);
                 }
                 if (getdvarint(#"hash_5a49cb3f6a18c3a6", 0) && player function_4ded3935()) {
@@ -218,11 +218,11 @@ function match_end() {
                     }
                 }
                 if (isdefined(player.pers[#"hash_1b5251cc167039c8"])) {
-                    if (isdefined(var_affb66b5)) {
+                    if (isdefined(matchresult)) {
                         if (var_74386ffc != -1) {
-                            player function_cce105c8(#"hash_4e13b2889185a48d", 1, player.pers[#"hash_1b5251cc167039c8"], 2, var_affb66b5, 3, var_74386ffc, 4, level.var_ba92f0a8, 5, getdvarint(#"hash_6e07431d7a79d00f", 0));
+                            player function_cce105c8(#"hash_4e13b2889185a48d", 1, player.pers[#"hash_1b5251cc167039c8"], 2, matchresult, 3, var_74386ffc, 4, level.var_ba92f0a8, 5, getdvarint(#"hash_6e07431d7a79d00f", 0));
                         } else {
-                            player function_cce105c8(#"hash_4e13b2889185a48d", 1, player.pers[#"hash_1b5251cc167039c8"], 2, var_affb66b5, 4, level.var_ba92f0a8, 5, getdvarint(#"hash_6e07431d7a79d00f", 0));
+                            player function_cce105c8(#"hash_4e13b2889185a48d", 1, player.pers[#"hash_1b5251cc167039c8"], 2, matchresult, 4, level.var_ba92f0a8, 5, getdvarint(#"hash_6e07431d7a79d00f", 0));
                         }
                     }
                 }

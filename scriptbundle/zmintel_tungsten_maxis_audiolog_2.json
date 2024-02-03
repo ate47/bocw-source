@@ -1,87 +1,87 @@
 {
     "var_1ad142ee": [
         {
-            "var_46bd7973": "#hash_3c84f58c0681c38e",
+            "soundevent": "#hash_3c84f58c0681c38e",
             "var_5d4b5964": 7.45
         },
         {
-            "var_46bd7973": "#hash_5f9a57a7e1381dab",
+            "soundevent": "#hash_5f9a57a7e1381dab",
             "var_f35c5951": 0.5,
             "var_5d4b5964": 1.07,
             "var_36bf8e05": "#hash_6ef90a81b1af9c92"
         },
         {
-            "var_46bd7973": "#hash_48e7334709eaf9ee",
+            "soundevent": "#hash_48e7334709eaf9ee",
             "var_f35c5951": 1,
             "var_5d4b5964": 7.21,
             "var_36bf8e05": "#hash_25b3809f34895ac5"
         },
         {
-            "var_46bd7973": "#hash_5f9a59a7e1382111",
+            "soundevent": "#hash_5f9a59a7e1382111",
             "var_f35c5951": 0.4,
             "var_5d4b5964": 2.33,
             "var_36bf8e05": "#hash_722e61653cde6e0c"
         },
         {
-            "var_46bd7973": "#hash_5f9a58a7e1381f5e",
+            "soundevent": "#hash_5f9a58a7e1381f5e",
             "var_f35c5951": 1,
             "var_5d4b5964": 2.67,
             "var_36bf8e05": "#hash_4fa80b7a780f2035"
         },
         {
-            "var_46bd7973": "#hash_48e7384709eb026d",
+            "soundevent": "#hash_48e7384709eb026d",
             "var_5d4b5964": 6.34,
             "var_36bf8e05": "#hash_1b34f69c94b3ed10"
         },
         {
-            "var_46bd7973": "#hash_5f9a5aa7e13822c4",
+            "soundevent": "#hash_5f9a5aa7e13822c4",
             "var_5d4b5964": 5.93,
             "var_36bf8e05": "#hash_7e92bf55977836d7"
         },
         {
-            "var_46bd7973": "#hash_48e7364709eaff07",
+            "soundevent": "#hash_48e7364709eaff07",
             "var_f35c5951": 1.5,
             "var_5d4b5964": 10.01,
             "var_36bf8e05": "#hash_7da484485b6893c2"
         },
         {
-            "var_46bd7973": "#hash_5f9a5ca7e138262a",
+            "soundevent": "#hash_5f9a5ca7e138262a",
             "var_f35c5951": 1.3,
             "var_5d4b5964": 2.86,
             "var_36bf8e05": "#hash_5ae476c415f8c91"
         },
         {
-            "var_46bd7973": "#hash_48e72c4709eaee09",
+            "soundevent": "#hash_48e72c4709eaee09",
             "var_f35c5951": 1.4,
             "var_5d4b5964": 1.09,
             "var_36bf8e05": "#hash_2979aa35d8d0ea0c"
         },
         {
-            "var_46bd7973": "#hash_5f9a4ea7e1380e60",
+            "soundevent": "#hash_5f9a4ea7e1380e60",
             "var_f35c5951": 1,
             "var_5d4b5964": 2.2,
             "var_36bf8e05": "#hash_1cf8e3f492b0f493"
         },
         {
-            "var_46bd7973": "#hash_4bd5ffb5da46943a",
+            "soundevent": "#hash_4bd5ffb5da46943a",
             "var_f35c5951": 2.5,
             "var_5d4b5964": 1.56,
             "var_36bf8e05": "#hash_18b317cfa2e868cf"
         },
         {
-            "var_46bd7973": "#hash_2b5d0843b257368b",
+            "soundevent": "#hash_2b5d0843b257368b",
             "var_f35c5951": 0.5,
             "var_5d4b5964": 1.79,
             "var_36bf8e05": "#hash_26ce0e1651a5149c"
         },
         {
-            "var_46bd7973": "#hash_2b5d0943b257383e",
+            "soundevent": "#hash_2b5d0943b257383e",
             "var_f35c5951": 0.8,
             "var_5d4b5964": 1.81,
             "var_36bf8e05": "#hash_1e1c16a4ca9e441b"
         },
         {
-            "var_46bd7973": "#hash_4bd5feb5da469287",
+            "soundevent": "#hash_4bd5feb5da469287",
             "var_5d4b5964": 1.13,
             "var_36bf8e05": "#hash_568f6d6cafb8ec84"
         }
@@ -94,7 +94,7 @@
     "uimodel": "#hash_43c3b478e6bb838",
     "type": "zmintel",
     "season": 6,
-    "var_ad4ad686": "#hash_5ad2dea4c296de59",
+    "var_ad4ad686": "#maxis",
     "soundloop": "#hash_2e77024e1f0a29f1",
     "name": "zmintel_tungsten_maxis_audiolog_2",
     "var_9be0526e": "#audiolog",

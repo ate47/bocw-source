@@ -2,7 +2,7 @@
     "option_dependencies": [
         {
             "var_1643d946": "0",
-            "var_6825bdb": "#pc_gamepad_sprint_behavior",
+            "optionname": "#pc_gamepad_sprint_behavior",
             "operator": "=="
         }
     ],
@@ -29,7 +29,7 @@
     "displayname": "#hash_6b8a2994917bf93a",
     "var_4a4760c0": 60,
     "var_500458ac": 10,
-    "var_926d1be9": 1,
+    "decimalplace": 1,
     "var_66faec87": 120,
     "statname": "auto_sprint_gpad",
     "var_6f00a61a": 1.1,

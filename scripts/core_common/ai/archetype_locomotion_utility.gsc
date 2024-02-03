@@ -479,8 +479,8 @@ function private function_37ae0b11() {
     dirtogoal = self.ai.var_4183a6fc.endpos - startorigin;
     var_a0bb1f9c = self.ai.var_4183a6fc.startpos - startorigin;
     var_95c1be9 = (var_25f63bae[1], var_25f63bae[0] * -1, 0);
-    var_babaf3f3 = startorigin - self.ai.var_4183a6fc.startpos;
-    dot = vectordot(var_babaf3f3, var_95c1be9);
+    dirtoorigin = startorigin - self.ai.var_4183a6fc.startpos;
+    dot = vectordot(dirtoorigin, var_95c1be9);
     if (var_c0292a97) {
         if (dot < -12) {
             dot = -12;
@@ -786,24 +786,24 @@ function traversesetup(behaviortreeentity, asmstatename) {
     }
     if (sessionmodeiszombiesgame() && getdvar(#"hash_4c976cea98296e41", 1)) {
         if (isdefined(asmstatename)) {
-            var_19a84c26 = asmstatename;
+            asmname = asmstatename;
         } else if (locomotionshouldparametrictraverse(behaviortreeentity)) {
-            var_19a84c26 = "";
+            asmname = "";
             if (function_b375c36c(behaviortreeentity)) {
-                var_19a84c26 = "mantle_vault_jump_up";
+                asmname = "mantle_vault_jump_up";
             } else if (function_39c7ce7f(behaviortreeentity)) {
-                var_19a84c26 = "mantle_vault_jump_down";
+                asmname = "mantle_vault_jump_down";
             } else if (function_459c5ea7(behaviortreeentity)) {
-                var_19a84c26 = "mantle_vault_over";
+                asmname = "mantle_vault_over";
             } else {
-                var_19a84c26 = "jump_up_down_across";
+                asmname = "jump_up_down_across";
             }
-            var_19a84c26 = var_19a84c26 + "@traversal";
+            asmname = asmname + "@traversal";
         } else if (isdefined(self.ai.var_2b570fa6)) {
-            var_19a84c26 = self.ai.var_2b570fa6;
+            asmname = self.ai.var_2b570fa6;
         }
-        if (isdefined(var_19a84c26)) {
-            result = behaviortreeentity astsearch(var_19a84c26);
+        if (isdefined(asmname)) {
+            result = behaviortreeentity astsearch(asmname);
         }
         if (!isdefined(result[#"animation"])) {
             /#
@@ -917,16 +917,16 @@ function private enablerepath(entity) {
 // Checksum 0x729814d2, Offset: 0x46e8
 // Size: 0xb8
 function shouldstartarrivalcondition(behaviortreeentity) {
-    var_e05332cd = 0;
+    shouldstart = 0;
     if (function_c94f0d1(behaviortreeentity)) {
-        var_e05332cd = behaviortreeentity shouldstartarrival();
+        shouldstart = behaviortreeentity shouldstartarrival();
         /#
-            if (var_e05332cd && getdvarint(#"ai_debugarrivals", 0)) {
+            if (shouldstart && getdvarint(#"ai_debugarrivals", 0)) {
                 record3dtext("<unknown string>", behaviortreeentity.origin, (1, 0.5, 0), "<unknown string>", behaviortreeentity);
             }
         #/
     }
-    return var_e05332cd;
+    return shouldstart;
 }
 
 // Namespace aiutility/archetype_locomotion_utility

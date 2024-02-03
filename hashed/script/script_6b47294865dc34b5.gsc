@@ -27,7 +27,7 @@
 // Params 1, eflags: 0x0
 // Checksum 0x50dcb360, Offset: 0x398
 // Size: 0x34
-function function_f9f06983(*var_d3440450) {
+function starting(*var_d3440450) {
     level.var_aece851d = [];
     flag::set("heli_door_opening");
 }
@@ -50,7 +50,7 @@ function main(var_d3440450, *var_50cc0d4f) {
 // Params 4, eflags: 0x0
 // Checksum 0x95c9a269, Offset: 0x468
 // Size: 0x24
-function cleanup(*name, *var_f9f06983, *direct, *player) {
+function cleanup(*name, *starting, *direct, *player) {
     
 }
 

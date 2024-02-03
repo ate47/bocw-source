@@ -50,15 +50,15 @@ function function_90cdf7ba(type, origin) {
         #/
         break;
     }
-    var_49a15185 = doa_enemy::function_d7c5adee(name);
-    if (isdefined(var_49a15185)) {
+    spawndef = doa_enemy::function_d7c5adee(name);
+    if (isdefined(spawndef)) {
         while (count) {
             count--;
             var_1c446dd6 = namespace_ec06fe4a::function_38de0ce8();
             if (var_1c446dd6 >= 44) {
                 continue;
             }
-            ai = doa_enemy::function_db55a448(var_49a15185, origin + (randomintrange(-40, 40), randomintrange(-40, 40), 0));
+            ai = doa_enemy::function_db55a448(spawndef, origin + (randomintrange(-40, 40), randomintrange(-40, 40), 0));
             if (isdefined(ai)) {
                 ai.owner = self;
                 if (isdefined(var_2d8ae5ef)) {

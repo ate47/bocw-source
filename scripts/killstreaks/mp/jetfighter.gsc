@@ -192,15 +192,15 @@ function private function_6ff76fc6() {
 // Checksum 0x7d94c8ec, Offset: 0xe90
 // Size: 0x454
 function private function_8f304847(var_d44b8c3e, startangles) {
-    var_4b25f3c8 = anglestoforward(startangles);
-    var_4b25f3c8 = (var_4b25f3c8[0], var_4b25f3c8[1], 0);
+    startforward = anglestoforward(startangles);
+    startforward = (startforward[0], startforward[1], 0);
     if (sessionmodeiswarzonegame()) {
         var_51cabd75 = 180 / 30;
         var_ddd8ddab = 20000 * 2.5 / (3 - 1);
         var_c8e01926 = undefined;
         var_37db735d = [];
         var_51c6fb78 = 0;
-        forward = var_4b25f3c8;
+        forward = startforward;
         angles = startangles;
         while (var_51c6fb78 < var_51cabd75) {
             var_59a518e1 = [];
@@ -244,8 +244,8 @@ function private function_8f304847(var_d44b8c3e, startangles) {
             return var_af2fe365;
         }
     }
-    adjustedpath[#"startposition"] = var_d44b8c3e + vectorscale(var_4b25f3c8, -1 * 20000);
-    adjustedpath[#"forward"] = var_4b25f3c8;
+    adjustedpath[#"startposition"] = var_d44b8c3e + vectorscale(startforward, -1 * 20000);
+    adjustedpath[#"forward"] = startforward;
     adjustedpath[#"angles"] = startangles;
     return adjustedpath;
 }

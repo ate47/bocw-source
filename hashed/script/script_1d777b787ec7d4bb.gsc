@@ -818,8 +818,8 @@ function function_9fed0352(var_32f76af8) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0xc99a7aa5, Offset: 0x3ad8
 // Size: 0x158
-function sndonoverride_eye_(var_c8d0baba, var_cfcfe495, var_a80d5874) {
-    progress = var_c8d0baba / var_cfcfe495;
+function sndonoverride_eye_(var_c8d0baba, max_points, var_a80d5874) {
+    progress = var_c8d0baba / max_points;
     if (progress < 0.025) {
         progress = 0.025;
     } else if (progress > 1) {

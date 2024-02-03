@@ -48,7 +48,7 @@ class class_744b99c {
     // Size: 0xce
     __constructor() {
         self.var_be31d6d6 = undefined;
-        self.var_af599afa = undefined;
+        self.m_center = undefined;
         self.m_name = undefined;
         self.var_45e27b4f = [];
         self.var_dc9b8143 = [];
@@ -56,7 +56,7 @@ class class_744b99c {
         self.var_7c1b05a1 = undefined;
         self.var_a1fa7529 = [];
         self.var_767ea0af = [];
-        self.var_af27fdee = [];
+        self.m_sections = [];
         self.var_6c9ec3e8 = undefined;
         self.var_c7395a06 = undefined;
         self.var_e2a6dd61 = [];
@@ -90,7 +90,7 @@ class class_744b99c {
     // Checksum 0xb470021c, Offset: 0xeb8
     // Size: 0xa
     function function_1e9525b8() {
-        return self.var_af599afa;
+        return self.m_center;
     }
 
     // Namespace namespace_744b99c/doa_wild
@@ -218,7 +218,7 @@ class class_744b99c {
     function function_33300d38() {
         self notify("110d38ab25f2dcd0");
         self endon("110d38ab25f2dcd0");
-        self triggerenable(!is_true(self.var_472c86f9));
+        self triggerenable(!is_true(self.visited));
         result = undefined;
         result = self waittill(#"hash_7626a6770055d63c", #"deactivate", #"trigger");
         self triggerenable(0);
@@ -250,7 +250,7 @@ class class_744b99c {
                     player namespace_e32bb68::function_3a59ec34("evt_doa_lightning_bolt");
                 }
             }
-            self.var_472c86f9 = 1;
+            self.visited = 1;
             level thread namespace_7f5aeb59::function_67f054d7();
             level waittill(#"hash_1b322de3d2e3e781");
             level thread namespace_5a917022::function_898ca25f(room);
@@ -286,7 +286,7 @@ class class_744b99c {
         loc.var_82725140 = 0;
         loc.scale = scale;
         loc.var_e3d90223 = randomint(100) < loc.chance;
-        function_d52481d0(loc);
+        addobject(loc);
     }
 
     // Namespace namespace_744b99c/doa_wild
@@ -350,18 +350,18 @@ class class_744b99c {
     // Checksum 0x3a3423f9, Offset: 0x7f0
     // Size: 0x6be
     function initialize(var_96c645bc) {
-        self.var_af599afa = var_96c645bc;
+        self.m_center = var_96c645bc;
         self.m_name = var_96c645bc.script_noteworthy;
         self.var_be31d6d6 = int(var_96c645bc.script_int);
         /#
             assert(isdefined(self.m_name) && isdefined(self.var_be31d6d6), "doa_wild_section_j2_visited");
         #/
         self.var_6c9ec3e8 = undefined;
-        self.var_af27fdee = struct::get_array(var_96c645bc.target);
+        self.m_sections = struct::get_array(var_96c645bc.target);
         /#
-            assert(self.var_af27fdee.size > 0);
+            assert(self.m_sections.size > 0);
         #/
-        foreach (section in self.var_af27fdee) {
+        foreach (section in self.m_sections) {
             section.id = int(section.script_int);
             /#
                 assert(isdefined(section.id));
@@ -415,7 +415,7 @@ class class_744b99c {
         self.var_e2a6dd61 = getentarray(self.m_name + "_wild_camera_tweak", "targetname");
         self.var_3fe6d9f7 = getentarray(self.m_name + "_wild_room", "targetname");
         foreach (room in self.var_3fe6d9f7) {
-            room.var_472c86f9 = 0;
+            room.visited = 0;
         }
     }
 
@@ -497,7 +497,7 @@ class class_744b99c {
     // Checksum 0x89495e1f, Offset: 0x11f8
     // Size: 0x94
     function function_60ca2154(id) {
-        foreach (section in self.var_af27fdee) {
+        foreach (section in self.m_sections) {
             if (section.id == id) {
                 return section;
             }
@@ -509,7 +509,7 @@ class class_744b99c {
     // Params 0, eflags: 0x2 linked
     // Checksum 0x32d077ad, Offset: 0x2a00
     // Size: 0xa
-    function function_660eca7a() {
+    function getid() {
         return self.var_be31d6d6;
     }
 
@@ -518,7 +518,7 @@ class class_744b99c {
     // Checksum 0x3a4aeb8c, Offset: 0x1298
     // Size: 0x9c
     function function_70111aa4(id) {
-        foreach (section in self.var_af27fdee) {
+        foreach (section in self.m_sections) {
             if (section.id == id) {
                 return section.playerstarts[0];
             }
@@ -811,7 +811,7 @@ class class_744b99c {
         foreach (room in self.var_3fe6d9f7) {
             room thread function_33300d38();
         }
-        while (!function_6a6f39a2(self.m_name)) {
+        while (!loadnavvolume(self.m_name)) {
             waitframe(1);
         }
         if (!isnavvolumeloaded()) {
@@ -829,14 +829,14 @@ class class_744b99c {
     // Checksum 0x4f63d3, Offset: 0x1588
     // Size: 0x240
     function function_c4836f01() {
-        foreach (section in self.var_af27fdee) {
+        foreach (section in self.m_sections) {
             if (isdefined(section.exit)) {
                 var_8f38b15f = 1;
                 if (isdefined(section.var_b52bc3a8) && level flag::get(section.var_b52bc3a8) == 0) {
                     var_8f38b15f = 0;
                 }
                 if (var_8f38b15f) {
-                    var_b458883a = namespace_ec06fe4a::function_e22ae9b3(section.exit.origin, "zombietron_teleporter");
+                    var_b458883a = namespace_ec06fe4a::spawnmodel(section.exit.origin, "zombietron_teleporter");
                     section.exit.teleporter = var_b458883a;
                     self.var_45e27b4f[self.var_45e27b4f.size] = var_b458883a;
                     var_b458883a namespace_83eb6304::function_3ecfde67("teleporter_dungeon_light");
@@ -856,8 +856,8 @@ class class_744b99c {
     // Params 0, eflags: 0x2 linked
     // Checksum 0xa6db65f9, Offset: 0x27f0
     // Size: 0xc
-    function function_c547fa0e() {
-        return self.var_af27fdee.size;
+    function getnumsections() {
+        return self.m_sections.size;
     }
 
     // Namespace namespace_744b99c/doa_wild
@@ -865,7 +865,7 @@ class class_744b99c {
     // Checksum 0x80e503cd, Offset: 0x1340
     // Size: 0x9a
     function function_c8fbcc3f(id) {
-        foreach (section in self.var_af27fdee) {
+        foreach (section in self.m_sections) {
             if (section.id == id) {
                 return section.var_9045aedc;
             }
@@ -888,7 +888,7 @@ class class_744b99c {
     // Params 1, eflags: 0x2 linked
     // Checksum 0xe90a928b, Offset: 0x2820
     // Size: 0x74
-    function function_d52481d0(loc) {
+    function addobject(loc) {
         if (!isdefined(self.var_7c1b05a1)) {
             self.var_7c1b05a1 = [];
         } else if (!isarray(self.var_7c1b05a1)) {
@@ -951,7 +951,7 @@ function function_2828aa1() {
         loc.permanent = 1;
         loc.script_string = "arcade_machine1";
         loc.radius = 40;
-        [[ level.doa.var_a77e6349 ]]->function_d52481d0(loc);
+        [[ level.doa.var_a77e6349 ]]->addobject(loc);
     }
 }
 
@@ -976,15 +976,15 @@ function init() {
         [[ var_3d2cc936 ]]->initialize(var_46058269);
         level.doa.var_d7dbacba[level.doa.var_d7dbacba.size] = var_3d2cc936;
         var_663588d = "Zombietron/Wilds/";
-        sections = [[ var_3d2cc936 ]]->function_c547fa0e();
+        sections = [[ var_3d2cc936 ]]->getnumsections();
         if (sections > 1) {
             for (i = 0; i < sections; i++) {
                 cmdline = "scr_wild_activate " + [[ var_3d2cc936 ]]->getname() + "@" + i + "; zombie_devgui wild";
-                util::add_devgui(var_663588d + [[ var_3d2cc936 ]]->getname() + "    Section " + i + 1 + ":" + [[ var_3d2cc936 ]]->function_660eca7a(), cmdline);
+                util::add_devgui(var_663588d + [[ var_3d2cc936 ]]->getname() + "    Section " + i + 1 + ":" + [[ var_3d2cc936 ]]->getid(), cmdline);
             }
         } else {
             cmdline = "scr_wild_activate " + [[ var_3d2cc936 ]]->getname() + "; zombie_devgui wild";
-            util::add_devgui(var_663588d + [[ var_3d2cc936 ]]->getname() + ":" + [[ var_3d2cc936 ]]->function_660eca7a(), cmdline);
+            util::add_devgui(var_663588d + [[ var_3d2cc936 ]]->getname() + ":" + [[ var_3d2cc936 ]]->getid(), cmdline);
         }
     }
 }
@@ -1052,7 +1052,7 @@ function function_7c5bc025(name, section) {
     }
     namespace_8c04284b::function_a70ff03e([[ level.doa.var_a77e6349 ]]->function_31ca9ed1());
     level util::set_lighting_state([[ level.doa.var_a77e6349 ]]->function_39f259cc());
-    level clientfield::set("setWild", [[ level.doa.var_a77e6349 ]]->function_660eca7a());
+    level clientfield::set("setWild", [[ level.doa.var_a77e6349 ]]->getid());
     level clientfield::set("setWildSection", section);
     foreach (player in getplayers()) {
         player notify(#"hash_279998c5df86c04d");
@@ -1066,10 +1066,10 @@ function function_7c5bc025(name, section) {
     level.doa.var_a71b0305 = &function_a1832a08;
     level thread function_715ea8aa(level.doa.var_a77e6349);
     level thread function_3efbdeb3(level.doa.var_a77e6349);
-    var_ecacf04b = [[ level.doa.var_a77e6349 ]]->function_5dfb6d67();
+    starts = [[ level.doa.var_a77e6349 ]]->function_5dfb6d67();
     players = getplayers();
     for (i = 0; i < players.size; i++) {
-        spot = var_ecacf04b[i];
+        spot = starts[i];
         players[i] setorigin(spot.origin + vectorscale((0, 0, 1), 60));
         players[i] setplayerangles(spot.angles);
         players[i].doa.var_3cf36932 = 0;
@@ -1149,7 +1149,7 @@ function function_d5e7454f(name) {
 // Size: 0xc4
 function function_87922476(name, section) {
     foreach (var_46058269 in level.doa.var_d7dbacba) {
-        if ([[ var_46058269 ]]->getname() === name && [[ var_46058269 ]]->function_660eca7a() === section) {
+        if ([[ var_46058269 ]]->getname() === name && [[ var_46058269 ]]->getid() === section) {
             return var_46058269;
         }
     }
@@ -1357,11 +1357,11 @@ function function_d81916f4() {
         result = undefined;
         result = self waittill(#"hash_4c72e79bdad8315e");
         namespace_1e25ad94::function_f5f0c0f8("ai_queue_spawned notify recieved for ent:" + result.ai getentitynumber() + " at: " + gettime() + " note typestamp:" + result.time);
-        if (isdefined(result.ai) && !isinarray(self.var_2b5ed682, result.ai)) {
+        if (isdefined(result.ai) && !isinarray(self.enemylist, result.ai)) {
             result.ai.boss = isdefined(self.boss) ? self.boss : result.ai.boss;
             result.ai.script_noteworthy = self.script_noteworthy;
             result.ai forceteleport(self.origin, self.angles);
-            self.var_2b5ed682[self.var_2b5ed682.size] = result.ai;
+            self.enemylist[self.enemylist.size] = result.ai;
             if (isdefined(self.var_a4c4ac53)) {
                 level notify(self.var_a4c4ac53, {#ai:result.ai});
             }
@@ -1393,17 +1393,17 @@ function function_72405345(npc) {
         profilestop();
         return;
     }
-    npc.var_2b5ed682 = [];
+    npc.enemylist = [];
     npc.activated = 1;
-    if (!isdefined(npc.var_49a15185)) {
-        npc.var_49a15185 = doa_enemy::function_d7c5adee(npc.type);
+    if (!isdefined(npc.spawndef)) {
+        npc.spawndef = doa_enemy::function_d7c5adee(npc.type);
     }
     npc thread function_d81916f4();
     radius = 0;
     if (npc.count > 1) {
         radius = 30;
     }
-    doa_enemy::function_a6b807ea(npc.var_49a15185, npc.count, npc.origin, radius, undefined, undefined, npc);
+    doa_enemy::function_a6b807ea(npc.spawndef, npc.count, npc.origin, radius, undefined, undefined, npc);
     if (!npc.permanent) {
         level thread function_7d406bae(npc);
     } else {
@@ -1435,16 +1435,16 @@ function function_7d406bae(npc, distance = 2400) {
     foreach (item in items) {
         var_a5a975dd = var_a5a975dd + item.count;
     }
-    arrayremovevalue(npc.var_2b5ed682, undefined);
-    npc.count = npc.count + npc.var_2b5ed682.size + var_a5a975dd;
-    foreach (guy in npc.var_2b5ed682) {
+    arrayremovevalue(npc.enemylist, undefined);
+    npc.count = npc.count + npc.enemylist.size + var_a5a975dd;
+    foreach (guy in npc.enemylist) {
         if (is_true(guy.boss)) {
             guy thread namespace_ec06fe4a::function_52afe5df();
         } else {
             guy thread namespace_ec06fe4a::function_570729f0(0.1);
         }
     }
-    npc.var_2b5ed682 = [];
+    npc.enemylist = [];
     if (npc.count <= 0) {
         arrayremovevalue(level.doa.var_95cc492a, npc);
     }

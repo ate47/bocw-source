@@ -50,7 +50,7 @@ function function_3c5d1e97(enabled, var_6d949755) {
     if (is_true(var_6d949755)) {
         self childthread function_3b54da5f(1);
     }
-    var_8652fcd1 = function_21d2aa1e();
+    contents = function_21d2aa1e();
     while (1) {
         level flag::wait_till("stealth_enabled");
         level flag::wait_till_clear("stealth_spotted");
@@ -252,7 +252,7 @@ function private function_bb5769fe(eventname, target, var_78a2f9b6, delay) {
     if (eventname == "aim") {
         eye = self getplayercamerapos();
         var_a74a4e75 = anglestoforward(self getplayerangles());
-        var_8652fcd1 = function_21d2aa1e();
+        contents = function_21d2aa1e();
         foreach (ent in self.stealth.var_999115c7) {
             var_dfc74aa8 = ent function_55b0a099();
             dir = vectornormalize(var_dfc74aa8 - eye);
@@ -316,9 +316,9 @@ function private function_1e099116() {
             eventname = var_7f729179.event;
             var_e6eef508 = var_7f729179.targets;
             if (getdvarint(#"hash_3ca672bc9412d156")) {
-                foreach (var_65b3dce8 in var_e6eef508) {
-                    if (isdefined(var_65b3dce8)) {
-                        iprintln("<unknown string>" + eventname + "<unknown string>" + var_65b3dce8 getentitynumber());
+                foreach (subject in var_e6eef508) {
+                    if (isdefined(subject)) {
+                        iprintln("<unknown string>" + eventname + "<unknown string>" + subject getentitynumber());
                     } else {
                         iprintln("<unknown string>" + eventname + "<unknown string>");
                     }

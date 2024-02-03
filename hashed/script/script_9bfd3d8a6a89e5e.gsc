@@ -229,7 +229,7 @@ function function_756e29bb(action, anim_name, var_c09e9b1c, var_d60fb210, var_2e
     }
     self.var_de5476af = undefined;
     self.var_a7f1f0d6 = undefined;
-    var_7e8992c4 = isdefined(var_7369af2b) ? var_7369af2b : 0.05;
+    transtime = isdefined(var_7369af2b) ? var_7369af2b : 0.05;
     weapon = self getcurrentweapon();
     var_36a368e3 = "ges_body_shield";
     if (isdefined(var_c09e9b1c)) {
@@ -247,18 +247,18 @@ function function_756e29bb(action, anim_name, var_c09e9b1c, var_d60fb210, var_2e
     while (1) {
         var_2ec5b92f = self namespace_594b67e::function_29fd0abd();
         var_fcd67307 = self namespace_594b67e::function_bda1ed48();
-        var_bd287b18 = self function_1dcff2c3(weapon);
-        if (!var_bd287b18 && (var_2ec5b92f !== self.var_de5476af || var_fcd67307 !== self.var_a7f1f0d6)) {
+        doreload = self function_1dcff2c3(weapon);
+        if (!doreload && (var_2ec5b92f !== self.var_de5476af || var_fcd67307 !== self.var_a7f1f0d6)) {
             var_adb7de30 = undefined;
             if (var_2ec5b92f !== self.var_de5476af) {
                 if (var_2ec5b92f) {
-                    self namespace_594b67e::function_3ceda691(var_991552e7, undefined, 1, var_7e8992c4);
+                    self namespace_594b67e::function_3ceda691(var_991552e7, undefined, 1, transtime);
                     self.takedown.gesture = var_991552e7;
                     if (isdefined(self.var_de5476af)) {
                         var_adb7de30 = "_ads_in";
                     }
                 } else {
-                    self namespace_594b67e::function_3ceda691(gesture, undefined, 1, var_7e8992c4);
+                    self namespace_594b67e::function_3ceda691(gesture, undefined, 1, transtime);
                     self.takedown.gesture = gesture;
                     if (isdefined(self.var_de5476af)) {
                         var_adb7de30 = "_ads_out";
@@ -268,7 +268,7 @@ function function_756e29bb(action, anim_name, var_c09e9b1c, var_d60fb210, var_2e
             self.var_de5476af = var_2ec5b92f;
             self.var_a7f1f0d6 = var_fcd67307;
             if (!is_true(var_2e7da7fb)) {
-                var_7e8992c4 = 0.2;
+                transtime = 0.2;
                 if (firstframe) {
                     firstframe = 0;
                     waitframe(1);
@@ -279,7 +279,7 @@ function function_756e29bb(action, anim_name, var_c09e9b1c, var_d60fb210, var_2e
                         self.takedown.body thread namespace_594b67e::function_3f4de57b(anim_name + var_adb7de30);
                     }
                     if (isdefined(self.var_6639d45b)) {
-                        if (var_bd287b18) {
+                        if (doreload) {
                             self.var_6639d45b thread namespace_594b67e::function_3f4de57b(anim_name + var_adb7de30);
                         } else {
                             self.var_6639d45b namespace_594b67e::function_3f4de57b(anim_name + var_adb7de30);
@@ -289,7 +289,7 @@ function function_756e29bb(action, anim_name, var_c09e9b1c, var_d60fb210, var_2e
                 }
             }
         }
-        if (var_bd287b18) {
+        if (doreload) {
             self function_501ef65d(weapon);
             self namespace_594b67e::function_e4d5a38c(var_991552e7, 0, 1);
             self namespace_594b67e::function_e4d5a38c(gesture, 0, 1);
@@ -438,8 +438,8 @@ function function_1dcff2c3(weapon) {
     } else {
         self.takedown.var_6cf436f = 0;
     }
-    var_bd287b18 = var_b8b29a85 && (self.takedown.var_6cf436f > 0.2 || self reloadbuttonpressed());
-    return var_bd287b18;
+    doreload = var_b8b29a85 && (self.takedown.var_6cf436f > 0.2 || self reloadbuttonpressed());
+    return doreload;
 }
 
 // Namespace namespace_6cecf2d8/namespace_6cecf2d8
@@ -520,9 +520,9 @@ function function_c13ab5c7(action) {
     while (1) {
         result = undefined;
         result = self waittill(#"body_shield_damage");
-        var_7aa3570f = 2;
+        min_time = 2;
         var_365d33af = 300;
-        var_6f8dfb10 = self.takedown.body_shield.var_82bfd108 / var_7aa3570f;
+        var_6f8dfb10 = self.takedown.body_shield.var_82bfd108 / min_time;
         var_7ac1bcf6 = var_6f8dfb10 / 1000 / float(var_365d33af);
         new_health = self.takedown.body_shield.health - result.idamage;
         new_health = max(new_health, self.takedown.body_shield.var_70faf312 - var_7ac1bcf6);

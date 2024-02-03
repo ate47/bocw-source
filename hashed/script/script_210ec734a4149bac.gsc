@@ -87,9 +87,9 @@ function private function_c96b0450() {
                 var_49122837 = distance2dsquared(self.origin, player.origin);
                 if (var_49122837 < function_a3f6cdac(300)) {
                     player_angles = player getplayerangles();
-                    var_d8b07ab4 = anglestoforward(player_angles);
+                    player_facing = anglestoforward(player_angles);
                     var_3495bfe6 = self.origin - player.origin;
-                    if (vectordot(var_3495bfe6, var_d8b07ab4) > 0) {
+                    if (vectordot(var_3495bfe6, player_facing) > 0) {
                         self.var_ce60d915 = self.var_ce60d915 + float(function_60d95f53()) / 1000;
                         if (self.var_ce60d915 > 1.5 && self.nextfindbestcovertime > gettime()) {
                             self.nextfindbestcovertime = gettime();
@@ -257,28 +257,28 @@ function private civilianpaniccoverservice(entity) {
 // Checksum 0x84c48b4e, Offset: 0x1070
 // Size: 0x194
 function private function_9cefbbde(var_5f60ac6c) {
-    var_45d1a411 = var_5f60ac6c.origin;
-    var_d6713e16 = (0, 0, -1);
+    contact_point = var_5f60ac6c.origin;
+    initial_force = (0, 0, -1);
     switch (var_5f60ac6c.var_2e23b67d) {
     case #"umbrella_left":
-        var_d6713e16 = (0, 0.25, 0.5);
-        var_d6713e16 = rotatepoint(var_d6713e16, self.angles);
+        initial_force = (0, 0.25, 0.5);
+        initial_force = rotatepoint(initial_force, self.angles);
         var_9fa53333 = (0, -10, 10);
         var_9fa53333 = rotatepoint(var_9fa53333, self.angles);
-        var_45d1a411 = var_45d1a411 + var_9fa53333;
+        contact_point = contact_point + var_9fa53333;
         break;
     case #"umbrella_right":
-        var_d6713e16 = (0, -0.25, 0.5);
-        var_d6713e16 = rotatepoint(var_d6713e16, self.angles);
+        initial_force = (0, -0.25, 0.5);
+        initial_force = rotatepoint(initial_force, self.angles);
         var_9fa53333 = (0, 10, 10);
         var_9fa53333 = rotatepoint(var_9fa53333, self.angles);
-        var_45d1a411 = var_45d1a411 + var_9fa53333;
+        contact_point = contact_point + var_9fa53333;
         break;
     default:
         break;
     }
     var_5f60ac6c unlink();
-    var_5f60ac6c physicslaunch(var_45d1a411, var_d6713e16);
+    var_5f60ac6c physicslaunch(contact_point, initial_force);
 }
 
 // Namespace namespace_f592a7b/namespace_45b9dd6a

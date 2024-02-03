@@ -1402,14 +1402,14 @@ function function_21ad06d5(b_active, var_7dfc932e = array(#"axis", #"allies")) {
 // Params 5, eflags: 0x0
 // Checksum 0x8f8ed46c, Offset: 0x5ba8
 // Size: 0x194
-function function_c9800094(eattacker, vpoint, damage, type, var_64e1375e = 0) {
-    if (!(isdefined(type) && isdefined(damage) && isdefined(vpoint) && isdefined(eattacker) && isdefined(var_64e1375e))) {
+function function_c9800094(eattacker, vpoint, damage, type, elementtype = 0) {
+    if (!(isdefined(type) && isdefined(damage) && isdefined(vpoint) && isdefined(eattacker) && isdefined(elementtype))) {
         return;
     }
     if (is_true(getgametypesetting(#"hash_a564dde6ee3c657"))) {
         if (isplayer(eattacker)) {
-            eattacker luinotifyevent(#"hash_49cd322df9ace483", 6, int(vpoint[0]), int(vpoint[1]), int(vpoint[2]), damage, type, var_64e1375e);
-            eattacker luinotifyeventtospectators(#"hash_49cd322df9ace483", 6, int(vpoint[0]), int(vpoint[1]), int(vpoint[2]), damage, type, var_64e1375e);
+            eattacker luinotifyevent(#"hash_49cd322df9ace483", 6, int(vpoint[0]), int(vpoint[1]), int(vpoint[2]), damage, type, elementtype);
+            eattacker luinotifyeventtospectators(#"hash_49cd322df9ace483", 6, int(vpoint[0]), int(vpoint[1]), int(vpoint[2]), damage, type, elementtype);
         }
     }
 }

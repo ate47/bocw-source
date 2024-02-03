@@ -2,12 +2,12 @@
     "option_dependencies": [
         {
             "var_1643d946": "1",
-            "var_6825bdb": "#pc_pushtotalk",
+            "optionname": "#pc_pushtotalk",
             "operator": "=="
         },
         {
             "var_1643d946": "1",
-            "var_6825bdb": "#voice_chat_enable",
+            "optionname": "#voice_chat_enable",
             "operator": "=="
         }
     ],

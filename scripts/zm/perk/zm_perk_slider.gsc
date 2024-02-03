@@ -325,14 +325,14 @@ function function_4d806c6a(var_a25d1f0 = 25, explosion_radius = 64, var_8b77e4de
             }
             zombie namespace_42457a0::function_601fabe9(#"explosive", var_a25d1f0, zombie.origin, self, undefined, "none", "MOD_UNKNOWN", 0, level.weaponnone);
             if (var_4ce7aa6d) {
-                zombie namespace_cc411409::function_706a56ae(var_55f73ce6, var_c37cb40);
+                zombie namespace_cc411409::ragdoll_launch(var_55f73ce6, var_c37cb40);
                 zombie thread function_3fb4ce3b();
             } else if (var_8b77e4de) {
                 zombie zombie_utility::setup_zombie_knockdown(var_55f73ce6);
             }
         }
-        var_be7c9b40 = {};
-        [[ level.var_bc9564f4 ]]->waitinqueue(var_be7c9b40);
+        dummy_struct = {};
+        [[ level.var_bc9564f4 ]]->waitinqueue(dummy_struct);
     }
     if (var_8b77e4de) {
         var_6c77565b = self getenemiesinradius(self.origin, explosion_radius * 2);

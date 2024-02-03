@@ -138,8 +138,8 @@ function private function_afb0648d(vehicle) {
         if (self isinvehicle()) {
             vehicle function_fe45d0ae();
             vehicle.battletrack_active = undefined;
-            if (isdefined(vehicle.var_13c5ef5f)) {
-                var_e273c985 = self function_18df0fba(vehicle.var_13c5ef5f);
+            if (isdefined(vehicle.vehicleassembly)) {
+                var_e273c985 = self function_18df0fba(vehicle.vehicleassembly);
                 var_45750595 = getscriptbundle(var_e273c985);
                 if (isdefined(var_45750595)) {
                     if (!isdefined(self.var_7b87b98c)) {

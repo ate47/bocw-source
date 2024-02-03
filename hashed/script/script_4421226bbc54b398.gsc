@@ -168,9 +168,9 @@ function private function_6e4a862f(type, amount) {
     level endon(#"game_ended");
     self endon(#"death");
     wait(5);
-    var_c9a4d88a = function_6daf57e7(type);
-    if (isdefined(var_c9a4d88a)) {
-        self luinotifyevent(#"hash_519f4dd76b2e3e49", 2, var_c9a4d88a, amount);
+    typeindex = function_6daf57e7(type);
+    if (isdefined(typeindex)) {
+        self luinotifyevent(#"hash_519f4dd76b2e3e49", 2, typeindex, amount);
     }
 }
 
@@ -738,8 +738,8 @@ function function_b03d7dd0(var_8f426cc8) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x76ad2eb1, Offset: 0x2558
 // Size: 0x512
-function function_4f5dff62(var_23720377 = 1, type = #"rare") {
-    switch (var_23720377) {
+function function_4f5dff62(starlevel = 1, type = #"rare") {
+    switch (starlevel) {
     case 1:
         switch (type) {
         case #"rare":

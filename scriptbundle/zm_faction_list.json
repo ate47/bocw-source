@@ -20,7 +20,7 @@
         },
         {
             "description": "#hash_483a5939e0ea2645",
-            "type": "#hash_5ad2dea4c296de59",
+            "type": "#maxis",
             "image": "#hash_64a8b32daac451aa",
             "displayname": "#hash_532a46bfdb304524",
             "var_a4f2dd9e": "#hash_3069f93c4e1e6bd8",
@@ -39,7 +39,7 @@
     ],
     "var_88c0037d": 1,
     "var_72ef398b": 1,
-    "var_ebb12613": "#factionlist",
+    "typetable": "#factionlist",
     "var_2f050ffa": 1,
     "var_922067c4": "SCRIPTBUNDLE",
     "var_a77ed948": "#hash_3069f93c4e1e6bd8",

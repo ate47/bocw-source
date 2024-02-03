@@ -858,15 +858,15 @@ function go_path() {
 function function_bb9b43a9(path_start, var_1c847d0f, var_dda93e6c, location, var_e4c839a6) {
     var_6d0cd4d7 = (var_1c847d0f[0], var_1c847d0f[1], 0);
     var_92d9eea1 = (0, isdefined(location.yaw) ? location.yaw : location.angles[1], 0);
-    var_b63019ab = var_92d9eea1 - var_dda93e6c;
+    delta_angles = var_92d9eea1 - var_dda93e6c;
     var_b38f0c63 = (path_start.origin[0], path_start.origin[1], 0) - var_6d0cd4d7;
-    var_1d7df545 = rotatepoint(var_b38f0c63, var_b63019ab);
+    var_1d7df545 = rotatepoint(var_b38f0c63, delta_angles);
     var_9a100b12 = (location.origin[0], location.origin[1], 0) - var_6d0cd4d7;
     height_offset = (0, 0, 0);
     if (isdefined(var_e4c839a6)) {
         height_offset = (0, 0, var_e4c839a6) - (0, 0, var_1c847d0f[2]);
     }
-    self pathmove(path_start, path_start.origin - var_b38f0c63 + var_1d7df545 + var_9a100b12 + height_offset, path_start.angles + var_b63019ab);
+    self pathmove(path_start, path_start.origin - var_b38f0c63 + var_1d7df545 + var_9a100b12 + height_offset, path_start.angles + delta_angles);
 }
 
 // Namespace vehicle/vehicle_shared
@@ -2599,7 +2599,7 @@ function debug_vehicle_paths() {
 // Checksum 0xa48a1deb, Offset: 0x9308
 // Size: 0x50
 function get_dummy() {
-    if (is_true(self.modeldummyon) && !isdefined(self.var_13c5ef5f)) {
+    if (is_true(self.modeldummyon) && !isdefined(self.vehicleassembly)) {
         emodel = self.modeldummy;
     } else {
         emodel = self;
@@ -3336,14 +3336,14 @@ function private function_3624d1c8() {
                     }
                     if (isdefined(var_d4862d39)) {
                         var_31caf8f0 = function_951b4205();
-                        var_e9833bc8 = undefined;
+                        foundvehicle = undefined;
                         foreach (asset in var_31caf8f0) {
                             if (asset.name == hash(var_d4862d39)) {
-                                var_e9833bc8 = 1;
+                                foundvehicle = 1;
                                 continue;
                             }
                         }
-                        if (is_true(var_e9833bc8)) {
+                        if (is_true(foundvehicle)) {
                             vehicle setvehicletype(var_d4862d39);
                         } else {
                             println("<unknown string>" + var_d4862d39 + "<unknown string>");
@@ -3906,8 +3906,8 @@ function function_feea068b(var_8730ee3e, vehicle) {
 // Checksum 0xf08517cc, Offset: 0xd880
 // Size: 0xec
 function function_700512f1(vehicle) {
-    var_c2ffd916 = anglestoup(vehicle.angles);
-    var_2dd1b16a = vehicle.origin + var_c2ffd916 * 20;
+    vehicleup = anglestoup(vehicle.angles);
+    var_2dd1b16a = vehicle.origin + vehicleup * 20;
     angles = (0, vehicle.angles[1], 0);
     rightvecdot = vectordot(anglestoright(angles), vectornormalize(self.origin - var_2dd1b16a));
     if (rightvecdot > 0) {

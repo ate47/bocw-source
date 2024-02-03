@@ -105,8 +105,8 @@ function private function_142b2d59(var_572eedec) {
         var_572eedec = array(var_572eedec);
     }
     player = getplayers()[0];
-    for (var_b6feac88 = 0; var_b6feac88 < var_572eedec.size; var_b6feac88++) {
-        data = var_572eedec[var_b6feac88];
+    for (line_num = 0; line_num < var_572eedec.size; line_num++) {
+        data = var_572eedec[line_num];
         title = data.title;
         options = data.options;
         var_88c2ece = data.var_88c2ece;
@@ -114,14 +114,14 @@ function private function_142b2d59(var_572eedec) {
         /#
             assert(isarray(options), "<unknown string>");
         #/
-        namespace_61e6d095::function_f2a9266(#"hint_tutorial", var_b6feac88, "text", title);
+        namespace_61e6d095::function_f2a9266(#"hint_tutorial", line_num, "text", title);
         if (!player flag::get(var_cb93cf14) || !isdefined(var_88c2ece)) {
-            namespace_61e6d095::function_f2a9266(#"hint_tutorial", var_b6feac88, "button_text", options);
+            namespace_61e6d095::function_f2a9266(#"hint_tutorial", line_num, "button_text", options);
         } else {
-            namespace_61e6d095::function_f2a9266(#"hint_tutorial", var_b6feac88, "button_text", var_88c2ece);
+            namespace_61e6d095::function_f2a9266(#"hint_tutorial", line_num, "button_text", var_88c2ece);
         }
         if (isdefined(var_cb93cf14) && isdefined(var_88c2ece)) {
-            player thread function_feebc7c2(data, var_b6feac88);
+            player thread function_feebc7c2(data, line_num);
         }
     }
 }
@@ -130,7 +130,7 @@ function private function_142b2d59(var_572eedec) {
 // Params 2, eflags: 0x6 linked
 // Checksum 0xb07a2bb9, Offset: 0xa60
 // Size: 0x160
-function private function_feebc7c2(data, var_b6feac88) {
+function private function_feebc7c2(data, line_num) {
     self endon(#"death", #"hash_79da7f3e8e35f82d");
     var_6d381b22 = self flag::get(data.var_cb93cf14);
     while (namespace_61e6d095::exists(#"hint_tutorial")) {
@@ -141,9 +141,9 @@ function private function_feebc7c2(data, var_b6feac88) {
         }
         var_6d381b22 = self flag::get(data.var_cb93cf14);
         if (var_6d381b22) {
-            namespace_61e6d095::function_f2a9266(#"hint_tutorial", var_b6feac88, "button_text", data.var_88c2ece);
+            namespace_61e6d095::function_f2a9266(#"hint_tutorial", line_num, "button_text", data.var_88c2ece);
         } else {
-            namespace_61e6d095::function_f2a9266(#"hint_tutorial", var_b6feac88, "button_text", data.options);
+            namespace_61e6d095::function_f2a9266(#"hint_tutorial", line_num, "button_text", data.options);
         }
     }
 }

@@ -12,17 +12,17 @@
 #using scripts\core_common\scene_shared.gsc;
 #using scripts\core_common\flag_shared.gsc;
 
-#namespace namespace_ef6e5556;
+#namespace hub_post_yamantau;
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 1, eflags: 0x2 linked
 // Checksum 0x8bfff931, Offset: 0xbe8
 // Size: 0xc
-function function_f9f06983(*var_d3440450) {
+function starting(*var_d3440450) {
     
 }
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 2, eflags: 0x2 linked
 // Checksum 0x1bd6353e, Offset: 0xc00
 // Size: 0x1d4
@@ -46,7 +46,7 @@ function main(var_d3440450, *var_50cc0d4f) {
     }
 }
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 0, eflags: 0x2 linked
 // Checksum 0x48ee1a27, Offset: 0xde0
 // Size: 0x24
@@ -54,7 +54,7 @@ function function_f84afd22() {
     level thread scene::play("scene_hub_env_reel_to_reel");
 }
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 0, eflags: 0x2 linked
 // Checksum 0xbfa8ad21, Offset: 0xe10
 // Size: 0x9c
@@ -62,12 +62,12 @@ function function_cfce0b24() {
     clip = getent("clip_post_yamantau_briefing", "script_string");
     wait(46);
     clip delete();
-    var_e074d966 = savegame::function_6440b06b(#"hash_e7d26541441cb9d");
-    var_e074d966.var_16e4161b = 1;
+    transient = savegame::function_6440b06b(#"transient");
+    transient.var_16e4161b = 1;
     level thread savegame::function_7790f03();
 }
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 0, eflags: 0x0
 // Checksum 0x80f724d1, Offset: 0xeb8
 // Size: 0x4
@@ -75,7 +75,7 @@ function function_ae2b72b9() {
     
 }
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 0, eflags: 0x2 linked
 // Checksum 0x2d4ee757, Offset: 0xec8
 // Size: 0x94
@@ -88,7 +88,7 @@ function function_4a614026() {
     level thread function_fa0444c9();
 }
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 0, eflags: 0x2 linked
 // Checksum 0x5b4c849f, Offset: 0xf68
 // Size: 0x7bc
@@ -133,7 +133,7 @@ function function_d16e71e6() {
     self thread namespace_31c67f6d::function_7b0516d7();
 }
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 0, eflags: 0x2 linked
 // Checksum 0xe816eede, Offset: 0x1730
 // Size: 0x64
@@ -145,7 +145,7 @@ function function_958c2188() {
     }
 }
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 0, eflags: 0x2 linked
 // Checksum 0xdd19ee00, Offset: 0x17a0
 // Size: 0x44
@@ -155,7 +155,7 @@ function function_1bc95f5c() {
     }
 }
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 0, eflags: 0x2 linked
 // Checksum 0xe02695dd, Offset: 0x17f0
 // Size: 0x9c
@@ -166,7 +166,7 @@ function function_91258c81() {
     level.var_7256f687 thread dialog_tree::run(level.adler);
 }
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 0, eflags: 0x2 linked
 // Checksum 0xf37d5234, Offset: 0x1898
 // Size: 0x64
@@ -175,7 +175,7 @@ function function_70185d79() {
     level.adler.var_ba1eee16.s_tree thread dialog_tree::run(level.adler);
 }
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 0, eflags: 0x2 linked
 // Checksum 0x1b1aae4c, Offset: 0x1908
 // Size: 0x744
@@ -216,7 +216,7 @@ function function_f5cec8cd() {
     self thread namespace_31c67f6d::function_7b0516d7();
 }
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 0, eflags: 0x2 linked
 // Checksum 0x8055c415, Offset: 0x2058
 // Size: 0xa4
@@ -231,7 +231,7 @@ function function_f09c19a() {
     }
 }
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 0, eflags: 0x2 linked
 // Checksum 0x224bd493, Offset: 0x2108
 // Size: 0x44
@@ -241,7 +241,7 @@ function function_62d9689d() {
     }
 }
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 0, eflags: 0x2 linked
 // Checksum 0x30971da5, Offset: 0x2158
 // Size: 0x9c
@@ -252,7 +252,7 @@ function function_42091602() {
     level.var_b91aa91b thread dialog_tree::run(level.park);
 }
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 0, eflags: 0x2 linked
 // Checksum 0xc57e9616, Offset: 0x2200
 // Size: 0x64
@@ -261,7 +261,7 @@ function function_93672bfc() {
     level.park.var_ba1eee16.s_tree thread dialog_tree::run(level.park);
 }
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 0, eflags: 0x2 linked
 // Checksum 0x15a83768, Offset: 0x2270
 // Size: 0x224
@@ -282,7 +282,7 @@ function function_eb65bc98() {
     self thread namespace_31c67f6d::function_7b0516d7("j_knee_ri");
 }
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 0, eflags: 0x2 linked
 // Checksum 0xee95ccff, Offset: 0x24a0
 // Size: 0x5e4
@@ -320,7 +320,7 @@ function function_db46f2d7() {
     self thread namespace_31c67f6d::function_7b0516d7();
 }
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 0, eflags: 0x2 linked
 // Checksum 0xe86467ba, Offset: 0x2a90
 // Size: 0x4c
@@ -332,7 +332,7 @@ function function_53d6abef() {
     }
 }
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 0, eflags: 0x2 linked
 // Checksum 0x581ccac9, Offset: 0x2ae8
 // Size: 0x3c
@@ -342,7 +342,7 @@ function function_bac07041() {
     }
 }
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 0, eflags: 0x2 linked
 // Checksum 0xeaa3fb53, Offset: 0x2b30
 // Size: 0x8c
@@ -353,7 +353,7 @@ function function_708ca96d() {
     level.var_ba909cc8 thread dialog_tree::run(level.lazar);
 }
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 0, eflags: 0x2 linked
 // Checksum 0x6617da6e, Offset: 0x2bc8
 // Size: 0x64
@@ -362,7 +362,7 @@ function function_67105bb3() {
     level.lazar.var_ba1eee16.s_tree thread dialog_tree::run(level.lazar);
 }
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 0, eflags: 0x2 linked
 // Checksum 0xf0bac637, Offset: 0x2c38
 // Size: 0x5ec
@@ -396,7 +396,7 @@ function function_72ecde0e() {
     self thread namespace_31c67f6d::function_7b0516d7();
 }
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 0, eflags: 0x2 linked
 // Checksum 0x80dcb8e2, Offset: 0x3230
 // Size: 0x1c
@@ -404,7 +404,7 @@ function function_f50bc4b9() {
     flag::init("flag_post_yamantau_complete");
 }
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 1, eflags: 0x2 linked
 // Checksum 0x49a6fc8f, Offset: 0x3258
 // Size: 0x134
@@ -423,7 +423,7 @@ function function_6b03a78e(*var_d3440450) {
     level thread function_bbf2586d();
 }
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 0, eflags: 0x2 linked
 // Checksum 0x28ff932, Offset: 0x3398
 // Size: 0x4c
@@ -433,7 +433,7 @@ function function_81c3adaf() {
     level thread namespace_4ed3ce47::function_d701d197();
 }
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 2, eflags: 0x2 linked
 // Checksum 0x724c57ae, Offset: 0x33f0
 // Size: 0x4c
@@ -444,7 +444,7 @@ function function_29390787(var_d3440450, *var_50cc0d4f) {
     }
 }
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 0, eflags: 0x2 linked
 // Checksum 0x7d1cae1e, Offset: 0x3448
 // Size: 0x11c
@@ -459,7 +459,7 @@ function function_bbf2586d() {
     level thread scene::play("scene_hub_post_yamantau_dialog_hudson", "zone_idle");
 }
 
-// Namespace namespace_ef6e5556/cp_ger_hub_post_yamantau
+// Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
 // Params 0, eflags: 0x2 linked
 // Checksum 0x900749a0, Offset: 0x3570
 // Size: 0x154

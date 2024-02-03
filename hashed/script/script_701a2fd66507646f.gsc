@@ -67,8 +67,8 @@ function private function_db698ba5(dvar) {
             setdvar(#"hash_2db6dee0f1729341", 0);
         }
         if (dvar.name == "<unknown string>" && is_true(level.var_455ccc8b[#"hash_24e6120d6a8d655d"])) {
-            var_97ddd152 = max(4, level.var_455ccc8b[#"hash_24e6120d6a8d655d"]);
-            thread function_53df1610(var_97ddd152);
+            num_entries = max(4, level.var_455ccc8b[#"hash_24e6120d6a8d655d"]);
+            thread function_53df1610(num_entries);
             setdvar(#"hash_24e6120d6a8d655d", 0);
         }
         if (dvar.name == "<unknown string>" && is_true(level.var_455ccc8b[#"hash_1412afe4a2259541"])) {
@@ -257,7 +257,7 @@ function function_bcb9896f() {
     }
     player thread function_8b02e139(vox, #"hash_af0385a1ce3480a");
     wait(0.5);
-    namespace_61e6d095::set_state(uid, #"hash_4c5803d8a5526c67");
+    namespace_61e6d095::set_state(uid, #"highlight");
     /#
         if (is_true(level.var_455ccc8b[#"hash_2db6dee0f1729341"])) {
             function_29703592(uid);
@@ -273,7 +273,7 @@ function function_bcb9896f() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x534ef592, Offset: 0x1be8
 // Size: 0x874
-function function_53df1610(params, var_97ddd152 = 10) {
+function function_53df1610(params, num_entries = 10) {
     player = getplayers()[0];
     player endon(#"death");
     player thread function_8b02e139("vox_cp_chao_01300_sims_youdidgoodfindi_15", #"hash_1a4a28d720563dea");
@@ -289,7 +289,7 @@ function function_53df1610(params, var_97ddd152 = 10) {
     var_28ddca2c = [];
     var_28ddca2c[var_28ddca2c.size] = {#vox:var_9487875.var_a417e28e[var_e9ef7dab].var_21d92d5d, #code:var_2d96435a, #var_a34b4160:var_9487875.var_a417e28e[var_e9ef7dab].var_d0354c50};
     var_28ddca2c[var_28ddca2c.size] = {#vox:var_9487875.var_a417e28e[var_bf871b87].var_21d92d5d, #code:code, #var_a34b4160:var_9487875.var_a417e28e[var_bf871b87].var_d0354c50};
-    for (i = 3; i <= var_97ddd152; i++) {
+    for (i = 3; i <= num_entries; i++) {
         var_c5973dea = 10000;
         if (i <= 4) {
             var_c5973dea = var_c5973dea / 100;
@@ -590,7 +590,7 @@ function function_af235cd2() {
                         wait(0.1);
                         player globallogic_ui::function_9ed5232e("OperationChaos.floppyEntry.authenticate", 1, undefined, 1, undefined, undefined, 1);
                         result = undefined;
-                        result = player waittillmatch({#response:#"hash_1e266dba2d077c81", #menu:#"hash_20ed03061e0850f3"}, #"menuresponse");
+                        result = player waittillmatch({#response:#"authentication", #menu:#"hash_20ed03061e0850f3"}, #"menuresponse");
                         if (result.intpayload == 0) {
                             player playsound(#"hash_3582a6ca8d3b7d86");
                             namespace_6f1d35e1::function_d599de13(0);

@@ -17,7 +17,7 @@
 // Checksum 0xf1d5cf45, Offset: 0x1d8
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"weapon_cache", &function_70a657d8, undefined, &function_5700f119, undefined);
+    system::register(#"weapon_cache", &function_70a657d8, undefined, &finalize, undefined);
 }
 
 // Namespace weapon_cache/weapon_cache
@@ -49,7 +49,7 @@ function onplayerconnect() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0xa1527727, Offset: 0x388
 // Size: 0xe8
-function function_5700f119() {
+function finalize() {
     if (!is_true(getgametypesetting(#"hash_6143c4e1e18f08fd"))) {
         return;
     }

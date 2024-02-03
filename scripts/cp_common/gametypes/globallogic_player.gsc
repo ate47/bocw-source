@@ -291,7 +291,7 @@ function callback_playerconnect() {
     self.statusicon = "";
     self.guid = self getguid();
     checkpointclear();
-    savegame::function_904f733();
+    savegame::checkpoint_save();
     self function_d4d27d5b();
     self thread function_f92e23de();
     profilelog_begintiming(4, "ship");
@@ -575,7 +575,7 @@ function callback_playermigrated() {
 function callback_playerdisconnect() {
     profilestart();
     checkpointclear();
-    savegame::function_904f733();
+    savegame::checkpoint_save();
     arrayremovevalue(level.players, self);
     [[ level.onplayerdisconnect ]]();
     self clearallnoncheckpointdata();
@@ -637,9 +637,9 @@ function function_c2a2b500(victim, dir, smeansofdeath) {
         if (smeansofdeath == "MOD_PISTOL_BULLET" || smeansofdeath == "MOD_RIFLE_BULLET") {
             axis = undefined;
             if (isplayer(victim)) {
-                axis = function_237971e2(victim getplayerangles());
+                axis = anglestoaxis(victim getplayerangles());
             } else {
-                axis = function_237971e2(victim.angles);
+                axis = anglestoaxis(victim.angles);
             }
             if (vectordot(dir, axis.forward * -1) > var_e3dbc335) {
                 return 1;
@@ -809,8 +809,8 @@ function callback_playerdamage(einflictor, eattacker, idamage, idflags, smeansof
     self.var_a1653258 = level.time;
     self callback::callback(#"on_player_damage", params);
     if (self hasperk(#"specialty_immuneparanoia")) {
-        var_fa50ba5f = self getvelocity();
-        if (lengthsquared(var_fa50ba5f) < 2500) {
+        movementvector = self getvelocity();
+        if (lengthsquared(movementvector) < 2500) {
             idamage = idamage * 0.7;
         }
     }
@@ -1313,7 +1313,7 @@ function function_6f08b381(idamage, smeansofdeath) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x1df9ed7b, Offset: 0x62f0
 // Size: 0xee
-function private function_39ab832f(var_a5ddf15c) {
+function private function_39ab832f(debugdraw) {
     player = self;
     player.var_d11f7daf = 0;
     var_d3eb1bf1 = [2:-90, 1:90, 0:0];
@@ -1321,7 +1321,7 @@ function private function_39ab832f(var_a5ddf15c) {
         var_d3eb1bf1 = [2:90, 1:-90, 0:0];
     }
     for (i = 0; i < var_d3eb1bf1.size; i++) {
-        if (player function_bb371c3(var_d3eb1bf1[i], var_a5ddf15c)) {
+        if (player function_bb371c3(var_d3eb1bf1[i], debugdraw)) {
             player.var_d11f7daf = var_d3eb1bf1[i];
             return 1;
         }
@@ -1333,10 +1333,10 @@ function private function_39ab832f(var_a5ddf15c) {
 // Params 2, eflags: 0x6 linked
 // Checksum 0x110ee558, Offset: 0x63e8
 // Size: 0x514
-function private function_bb371c3(var_b1630ef, var_a5ddf15c) {
+function private function_bb371c3(var_b1630ef, debugdraw) {
     player = self;
-    var_ab72d73f = (0, isdefined(var_b1630ef) ? var_b1630ef : 0, 0);
-    var_be9b9194 = function_237971e2(player.angles + var_ab72d73f);
+    angleoffset = (0, isdefined(var_b1630ef) ? var_b1630ef : 0, 0);
+    var_be9b9194 = anglestoaxis(player.angles + angleoffset);
     var_6ee16314 = 16;
     var_2ae934a0 = 12;
     var_c440a44e = 1;
@@ -1350,7 +1350,7 @@ function private function_bb371c3(var_b1630ef, var_a5ddf15c) {
     }
     if (!var_c440a44e) {
         /#
-            if (is_true(var_a5ddf15c)) {
+            if (is_true(debugdraw)) {
                 cylinder(var_fd0c9f1c, var_6e0e1c32, var_68e0f9e9[0], (1, 0, 0), 1, 400);
             }
         #/
@@ -1367,7 +1367,7 @@ function private function_bb371c3(var_b1630ef, var_a5ddf15c) {
         var_f3002d70 = 0;
     }
     /#
-        if (is_true(var_a5ddf15c)) {
+        if (is_true(debugdraw)) {
             var_1c1cfbe7 = (var_c8e0e024[0], var_c8e0e024[1], endoffset[2]);
             var_d42e62c7 = (var_288b287b[0], var_288b287b[1], startoffset[2]);
             var_974e8d59 = (0, 1, 0);
@@ -1475,12 +1475,12 @@ function private function_39727d8d() {
 function private function_d2b1e36d(var_463ffce7) {
     player = self;
     var_f735a43 = 0;
-    var_944f41ea = isdefined(player.var_d11f7daf) ? player.var_d11f7daf : 0;
+    yawoffset = isdefined(player.var_d11f7daf) ? player.var_d11f7daf : 0;
     pitch = abs(angleclamp180(player getplayerangles()[0]));
-    if (pitch != var_f735a43 || var_944f41ea != 0) {
+    if (pitch != var_f735a43 || yawoffset != 0) {
         max_duration = max(var_463ffce7 - 0.15, 0.1);
-        var_2bec8e32 = util::spawn_model("tag_origin", player.origin, player.angles + (0, var_944f41ea, 0));
-        duration = max(pitch / 180, abs(var_944f41ea) / 180);
+        var_2bec8e32 = util::spawn_model("tag_origin", player.origin, player.angles + (0, yawoffset, 0));
+        duration = max(pitch / 180, abs(yawoffset) / 180);
         duration = min(duration, max_duration);
         player playerlinktoblend(var_2bec8e32, "tag_origin", duration, duration * 0.5, duration * 0.5);
         wait(duration + float(function_60d95f53()) / 1000);
@@ -1706,7 +1706,7 @@ function callback_playerkilled(einflictor, attacker, idamage, smeansofdeath, wea
             }
         }
     }
-    weapon = function_61c84fc9(einflictor, weapon);
+    weapon = updateweapon(einflictor, weapon);
     profileNamedStart(#"");
     wasinlaststand = 0;
     deathtimeoffset = 0;
@@ -2336,8 +2336,8 @@ function function_7434d61c(ent, shitloc, vdir, *weapon, *einflictor, smeansofdea
         if (!isdefined(einflictor)) {
             einflictor = (0, 0, 0);
         }
-        var_755ec840 = vdir.origin + (0, 0, globallogic_utils::gethitlocheight(weapon));
-        var_755ec840 = var_755ec840 - einflictor * 20;
+        explosionpos = vdir.origin + (0, 0, globallogic_utils::gethitlocheight(weapon));
+        explosionpos = explosionpos - einflictor * 20;
         explosionradius = 40;
         var_10fb361d = 0.75;
         if (smeansofdeath == "MOD_IMPACT" || smeansofdeath == "MOD_EXPLOSIVE" || issubstr(smeansofdeath, "MOD_GRENADE") || issubstr(smeansofdeath, "MOD_PROJECTILE") || weapon == "head" || weapon == "helmet") {
@@ -2348,7 +2348,7 @@ function function_7434d61c(ent, shitloc, vdir, *weapon, *einflictor, smeansofdea
         if (!isdefined(vdir)) {
             return;
         }
-        physicsexplosionsphere(var_755ec840, explosionradius, explosionradius / 2, var_10fb361d);
+        physicsexplosionsphere(explosionpos, explosionradius, explosionradius / 2, var_10fb361d);
         return;
     }
     wait(0.2);
@@ -2450,7 +2450,7 @@ function function_f67af024(einflictor) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x63c30e34, Offset: 0xab80
 // Size: 0xe2
-function function_61c84fc9(einflictor, weapon) {
+function updateweapon(einflictor, weapon) {
     if (weapon == level.weaponnone && isdefined(einflictor)) {
         if (isdefined(einflictor.targetname) && einflictor.targetname == "explodable_barrel") {
             weapon = getweapon(#"explodable_barrel");

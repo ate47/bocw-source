@@ -476,7 +476,7 @@ function function_7569c0fb() {
     case #"fireteam_elimination":
     case #"oic":
     case #"tdm10v10":
-    case #"hash_c5acc1898a61b54":
+    case #"gunfight_3v3":
     case #"scream":
     case #"conf":
     case #"dm":

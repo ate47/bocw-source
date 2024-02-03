@@ -2,7 +2,7 @@
     "option_dependencies": [
         {
             "var_1643d946": "0",
-            "var_6825bdb": "#pc_master_volume_mute",
+            "optionname": "#pc_master_volume_mute",
             "operator": "=="
         }
     ],

@@ -773,7 +773,7 @@ function waitandspawnclient(timealreadypassed) {
     }
     if (!isdefined(self.firstspawn)) {
         self.firstspawn = 1;
-        savegame::function_904f733();
+        savegame::checkpoint_save();
     }
     if (!isbot(self)) {
         self function_eb0dd56(2);

@@ -1,9 +1,9 @@
 {
-    "var_2be3941a": [
+    "rewards": [
         {
             "statvalue": 10,
             "unlockdescription": "#hash_306148a982a9e37e",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "var_b4ab831a": "#hash_7b2935067905646a",
             "statname": "#hash_1639560caf3318d0",
             "var_98484e89": 5000
@@ -11,21 +11,21 @@
         {
             "statvalue": 10,
             "unlockdescription": "#hash_306148a982a9e37e",
-            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "rewardtype": "#craftweaponsticker",
             "var_b4ab831a": "#hash_50f274c528b6c0c",
             "statname": "#hash_1639560caf3318d0"
         },
         {
             "statvalue": 10,
             "unlockdescription": "#hash_306148a982a9e37e",
-            "var_5f79ee71": "#weaponcharm",
+            "rewardtype": "#weaponcharm",
             "var_b4ab831a": "#t9_charm_roman_coin",
             "statname": "#hash_1639560caf3318d0"
         },
         {
             "statvalue": 10,
             "unlockdescription": "#hash_715e3c2aac17e942",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "var_b4ab831a": "#hash_6f491c2f3d3ef907",
             "statname": "#hash_595f3df089e81cd5",
             "var_98484e89": 5000
@@ -33,21 +33,21 @@
         {
             "statvalue": 10,
             "unlockdescription": "#hash_715e3c2aac17e942",
-            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "rewardtype": "#craftweaponsticker",
             "var_b4ab831a": "#hash_62563ae9ac1cb64a",
             "statname": "#hash_595f3df089e81cd5"
         },
         {
             "statvalue": 10,
             "unlockdescription": "#hash_715e3c2aac17e942",
-            "var_5f79ee71": "#weaponcharm",
+            "rewardtype": "#weaponcharm",
             "var_b4ab831a": "#t9_charm_jewel_advanced",
             "statname": "#hash_595f3df089e81cd5"
         },
         {
             "statvalue": 10,
             "unlockdescription": "#hash_3bf0d7efd6ec0fa0",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "var_b4ab831a": "#hash_27cab6e5c176ce2d",
             "statname": "#hash_6d58e1ca3f2a5b7e",
             "var_98484e89": 5000
@@ -55,21 +55,21 @@
         {
             "statvalue": 10,
             "unlockdescription": "#hash_3bf0d7efd6ec0fa0",
-            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "rewardtype": "#craftweaponsticker",
             "var_b4ab831a": "#hash_422a37c5ed3f6998",
             "statname": "#hash_6d58e1ca3f2a5b7e"
         },
         {
             "statvalue": 10,
             "unlockdescription": "#hash_3bf0d7efd6ec0fa0",
-            "var_5f79ee71": "#weaponcharm",
+            "rewardtype": "#weaponcharm",
             "var_b4ab831a": "#t9_charm_jewel_expert",
             "statname": "#hash_6d58e1ca3f2a5b7e"
         },
         {
             "statvalue": 10,
             "unlockdescription": "#hash_42a0b3d448cb4675",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "var_b4ab831a": "#hash_77f54c3e72e18c0",
             "statname": "#hash_1f1dea6e82a5e8e3",
             "var_98484e89": 5000
@@ -77,21 +77,21 @@
         {
             "statvalue": 10,
             "unlockdescription": "#hash_42a0b3d448cb4675",
-            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "rewardtype": "#craftweaponsticker",
             "var_b4ab831a": "#hash_1586974e5debdd83",
             "statname": "#hash_1f1dea6e82a5e8e3"
         },
         {
             "statvalue": 10,
             "unlockdescription": "#hash_42a0b3d448cb4675",
-            "var_5f79ee71": "#weaponcharm",
+            "rewardtype": "#weaponcharm",
             "var_b4ab831a": "#t9_charm_jewel_elite",
             "statname": "#hash_1f1dea6e82a5e8e3"
         },
         {
             "statvalue": 10,
             "unlockdescription": "#hash_5b98793ad20bad56",
-            "var_5f79ee71": "#crafticon",
+            "rewardtype": "#crafticon",
             "var_b4ab831a": "#hash_6a9062a7d7553f0f",
             "statname": "#hash_4c1aae48d8293e0c",
             "var_98484e89": 5000
@@ -99,14 +99,14 @@
         {
             "statvalue": 10,
             "unlockdescription": "#hash_5b98793ad20bad56",
-            "var_5f79ee71": "#hash_61ad58badbd6c984",
+            "rewardtype": "#craftweaponsticker",
             "var_b4ab831a": "#hash_70e6fca2cc2f7d2e",
             "statname": "#hash_4c1aae48d8293e0c"
         },
         {
             "statvalue": 10,
             "unlockdescription": "#hash_5b98793ad20bad56",
-            "var_5f79ee71": "#weaponcharm",
+            "rewardtype": "#weaponcharm",
             "var_b4ab831a": "#t9_charm_jewel_master",
             "statname": "#hash_4c1aae48d8293e0c"
         }

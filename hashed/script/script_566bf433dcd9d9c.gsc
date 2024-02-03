@@ -142,11 +142,11 @@ function private function_71aeadad() {
     var_45047e1c = distance2dsquared(var_d3ddd16e, self.origin);
     var_ef6b3fab = 64;
     if (self.archetype == #"human" && self haspath()) {
-        var_b6c99040 = self function_28e7d252();
+        currentspeed = self function_28e7d252();
         var_a3bb43c4 = function_f002dade(#"human", #"run");
-        if (var_b6c99040 > 0 && var_a3bb43c4 > 0) {
-            var_a58e06ee = var_b6c99040 / var_a3bb43c4;
-            var_ef6b3fab = var_ef6b3fab * var_a58e06ee;
+        if (currentspeed > 0 && var_a3bb43c4 > 0) {
+            speedratio = currentspeed / var_a3bb43c4;
+            var_ef6b3fab = var_ef6b3fab * speedratio;
         }
     }
     var_476078dd = function_a3f6cdac(var_ef6b3fab);
@@ -235,7 +235,7 @@ function private function_f1af5306(var_91fea62e) {
             var_d9bc30fb = 1;
             var_33ed28f7 = 160;
             var_bc68bda9 = 2;
-            var_d2997f16 = function_3a0a7a8(self getvelocity());
+            targetspeed = function_3a0a7a8(self getvelocity());
             if (!is_true(var_91fea62e)) {
                 var_f06b1c92 = self astsearch(var_636f02cd);
             }
@@ -245,7 +245,7 @@ function private function_f1af5306(var_91fea62e) {
             if (var_56f2236d < var_70e679e1) {
                 self thread function_a985d3d9(door);
                 var_93519869 = function_60d95f53() / 1000;
-                if (is_true(var_91fea62e) || var_56f2236d < var_70e679e1 - var_d2997f16 * 2 * var_93519869) {
+                if (is_true(var_91fea62e) || var_56f2236d < var_70e679e1 - targetspeed * 2 * var_93519869) {
                     /#
                         assert(isdefined(self.var_6ceb6369));
                     #/

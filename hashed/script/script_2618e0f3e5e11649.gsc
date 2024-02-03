@@ -78,8 +78,8 @@ function function_61f56bb6(var_f804b293) {
             var_be6053fa[var_be6053fa.size] = array::pop_front(group, 0);
         }
     }
-    if (isdefined(level.var_7d45d0d4.var_994ca8b9)) {
-        var_be6053fa = arraysortclosest(var_be6053fa, level.var_7d45d0d4.var_994ca8b9.origin, undefined, 2000);
+    if (isdefined(level.var_7d45d0d4.nextspawn)) {
+        var_be6053fa = arraysortclosest(var_be6053fa, level.var_7d45d0d4.nextspawn.origin, undefined, 2000);
     }
     return var_be6053fa;
 }
@@ -102,7 +102,7 @@ function function_4aca4e83(var_89bd79c0) {
     var_89bd79c0.instance.var_ee69e628 = [];
     var_89bd79c0.instance.var_ac7b2365 = [];
     /#
-        var_89bd79c0.instance.var_b4e1804a = [];
+        var_89bd79c0.instance.priority_debug = [];
     #/
     function_3c977c4f(var_89bd79c0, 0);
 }
@@ -284,10 +284,10 @@ function function_3c977c4f(hotzone, state) {
         #/
         hotzone.instance.var_1fb426c4 = function_e670bffd(hotzone.scriptbundlename, state);
         hotzone.instance.var_735d3a6b = function_d0e4a026(hotzone.scriptbundlename);
-        var_29459a31 = function_47ae367f(hotzone, hotzone.instance.tier, state);
-        if (isdefined(var_29459a31)) {
+        list_name = function_47ae367f(hotzone, hotzone.instance.tier, state);
+        if (isdefined(list_name)) {
             if (!isdefined(hotzone.instance.var_bb0c9afd[state])) {
-                hotzone.instance.var_bb0c9afd[state] = namespace_679a22ba::function_77be8a83(var_29459a31);
+                hotzone.instance.var_bb0c9afd[state] = namespace_679a22ba::function_77be8a83(list_name);
             }
         }
         hotzone.instance.var_d36a24ed = hotzone.instance.var_bb0c9afd[state];
@@ -650,7 +650,7 @@ function function_ffbebde3(&var_f804b293) {
         hotzone.instance.priority = hotzone.instance.var_8fa06b8e;
         hotzone.instance.var_8fa06b8e = undefined;
         /#
-            hotzone.instance.var_b4e1804a = hotzone.instance.var_19b23216;
+            hotzone.instance.priority_debug = hotzone.instance.var_19b23216;
             hotzone.instance.var_19b23216 = undefined;
         #/
     }
@@ -843,7 +843,7 @@ function function_9e0aba37() {
                         continue;
                     }
                     instance.var_743c45a5[instance.var_743c45a5.size] = var_944250d2;
-                    namespace_679a22ba::function_266ee075(var_944250d2.var_29459a31, var_944250d2.var_89592ba7);
+                    namespace_679a22ba::function_266ee075(var_944250d2.list_name, var_944250d2.var_89592ba7);
                     instance.var_e09d0b51++;
                     if (hotzone.instance.current_state == 1) {
                         var_944250d2.var_722e942 = 1;
@@ -886,12 +886,12 @@ function function_9e2396e0(hotzone) {
         assert(hotzone.instance.current_state == 1 || hotzone.instance.current_state == 2, "<unknown string>");
     #/
     instance = hotzone.instance;
-    var_29459a31 = function_47ae367f(hotzone, instance.tier, instance.current_state);
+    list_name = function_47ae367f(hotzone, instance.tier, instance.current_state);
     var_e592e473 = function_6d39329f(hotzone, instance.current_state);
     if (!var_e592e473.size) {
         return undefined;
     }
-    spawn_info = namespace_679a22ba::function_ca209564(var_29459a31, instance.var_d36a24ed);
+    spawn_info = namespace_679a22ba::function_ca209564(list_name, instance.var_d36a24ed);
     if (!isdefined(spawn_info)) {
         return;
     }
@@ -906,7 +906,7 @@ function function_9e2396e0(hotzone) {
     var_944250d2 = spawnactor(var_9f9ede51, spawn_point.origin, spawn_point.angles, undefined, 1);
     if (isdefined(var_944250d2)) {
         var_944250d2.spawn_point = spawn_point;
-        var_944250d2.var_29459a31 = spawn_info.var_29459a31;
+        var_944250d2.list_name = spawn_info.list_name;
         var_944250d2.var_89592ba7 = instance.var_d36a24ed;
         var_944250d2.var_341387d5 = hotzone.origin;
         var_944250d2.var_b518f045 = 3000;
@@ -1037,11 +1037,11 @@ function function_2b886fac(params, hotzone, var_679c4943 = 0) {
     var_26b5ea9d = var_679c4943;
     if (!var_26b5ea9d && isdefined(self.var_813a079f)) {
         var_26b5ea9d = self [[ self.var_813a079f ]](params, hotzone);
-    } else if (!var_26b5ea9d && isdefined(params) && !isplayer(params.eattacker) && isdefined(self.var_29459a31) && isdefined(self.var_89592ba7) && !is_true(self.var_7a68cd0c)) {
+    } else if (!var_26b5ea9d && isdefined(params) && !isplayer(params.eattacker) && isdefined(self.list_name) && isdefined(self.var_89592ba7) && !is_true(self.var_7a68cd0c)) {
         var_26b5ea9d = 1;
     }
     if (var_26b5ea9d) {
-        namespace_679a22ba::function_898aced0(self.var_29459a31, self.var_89592ba7);
+        namespace_679a22ba::function_898aced0(self.list_name, self.var_89592ba7);
         hotzone.instance.var_e09d0b51--;
         hotzone.instance.var_98957c00 = 0;
     }
@@ -1596,7 +1596,7 @@ function function_af798ce8(index, scale, alpha, color, var_5ab1a705, hotzone) {
         }
         print3d(hotzone.origin + (0, 0, index), "<unknown string>" + hotzone.instance.priority, color, alpha, scale * 1, 1);
         index = index + 17 * scale * 1;
-        foreach (key, value in hotzone.instance.var_b4e1804a) {
+        foreach (key, value in hotzone.instance.priority_debug) {
             print3d(hotzone.origin + (0, 0, index), function_9e72a96(key) + "<unknown string>" + value, color, alpha, scale * 1, 1);
             index = index + 17 * scale * 1;
         }
@@ -1618,7 +1618,7 @@ function function_af798ce8(index, scale, alpha, color, var_5ab1a705, hotzone) {
 // Size: 0x590
 function function_d937ea12(index, scale, alpha, color, hotzone, options) {
     /#
-        var_29459a31 = function_47ae367f(hotzone, hotzone.instance.tier, hotzone.instance.current_state);
+        list_name = function_47ae367f(hotzone, hotzone.instance.tier, hotzone.instance.current_state);
         print3d(hotzone.origin + (0, 0, index), "<unknown string>" + (is_true(hotzone.instance.var_98957c00) ? "<unknown string>" : "<unknown string>"), color, alpha, scale * 0.75, 1);
         index = index + 17 * scale * 0.75;
         print3d(hotzone.origin + (0, 0, index), "<unknown string>" + (is_true(hotzone.instance.var_4188d7c8) ? "<unknown string>" : "<unknown string>"), color, alpha, scale * 0.75, 1);
@@ -1640,7 +1640,7 @@ function function_d937ea12(index, scale, alpha, color, hotzone, options) {
                 }
             }
         }
-        print3d(hotzone.origin + (0, 0, index), "<unknown string>" + (isdefined(var_29459a31) ? var_29459a31 : "<unknown string>"), (0, 1, 1), alpha, scale * 0.75, 1);
+        print3d(hotzone.origin + (0, 0, index), "<unknown string>" + (isdefined(list_name) ? list_name : "<unknown string>"), (0, 1, 1), alpha, scale * 0.75, 1);
         index = index + 17 * scale * 0.75;
         return index;
     #/

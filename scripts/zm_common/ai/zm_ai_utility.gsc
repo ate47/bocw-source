@@ -793,7 +793,7 @@ function function_e9209002(var_1e8f7ccf, amount = 2, var_d4ece4fd = 0, eattacker
         self.allowdeath = 1;
         self kill(self.origin, eattacker, undefined, undefined, undefined, 1);
     }
-    self namespace_cc411409::function_706a56ae(var_1e8f7ccf, amount);
+    self namespace_cc411409::ragdoll_launch(var_1e8f7ccf, amount);
     self thread function_3fb4ce3b();
 }
 

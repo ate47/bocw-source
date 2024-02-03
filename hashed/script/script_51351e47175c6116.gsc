@@ -33,7 +33,7 @@
 // Checksum 0xfd98cab6, Offset: 0x208
 // Size: 0x4dc
 function function_32160152(player, modelname, origin, angles, scale = 1) {
-    model = namespace_ec06fe4a::function_e22ae9b3(origin, modelname, angles);
+    model = namespace_ec06fe4a::spawnmodel(origin, modelname, angles);
     if (isdefined(model)) {
         model setscale(scale);
         scenedef = #"hash_30c46dd666dd7707";

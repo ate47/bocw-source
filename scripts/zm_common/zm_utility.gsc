@@ -137,7 +137,7 @@ function is_survival() {
 // Size: 0x6a
 function function_c200446c() {
     if (!isdefined(level.var_e9ff2970)) {
-        level.var_e9ff2970 = util::get_game_type() == #"hash_1065e6adeeb8ed5a" || is_true(level.var_ce3ac5b6);
+        level.var_e9ff2970 = util::get_game_type() == #"zonslaught" || is_true(level.var_ce3ac5b6);
     }
     return level.var_e9ff2970;
 }

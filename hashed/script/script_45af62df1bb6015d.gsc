@@ -128,7 +128,7 @@ function private function_64609828() {
     self.var_e10de4ad.enabled = 1;
     self.var_e10de4ad.running = 1;
     self.var_e10de4ad.complete = 0;
-    self.var_e10de4ad.var_dd2c6e79 = function_80847fa6(self.localclientnum);
+    self.var_e10de4ad.rootmodel = function_80847fa6(self.localclientnum);
     self.var_e10de4ad.var_c393c6bc = getscriptbundle("minigame_lockpick");
     /#
         assert(self.var_e10de4ad.difficulty > 0 && self.var_e10de4ad.difficulty <= 5);
@@ -229,18 +229,18 @@ function private function_bef7a7e6(localclientnum) {
 // Checksum 0xb0aa96a7, Offset: 0x12d8
 // Size: 0x182
 function function_969d3dfa() {
-    if (!isdefined(self.var_e10de4ad.scratch.var_c17cd87c)) {
-        self.var_e10de4ad.scratch.var_c17cd87c = getrealtime();
+    if (!isdefined(self.var_e10de4ad.scratch.framestart)) {
+        self.var_e10de4ad.scratch.framestart = getrealtime();
     }
     self.var_e10de4ad.currenttime = getrealtime();
-    self.var_e10de4ad.scratch.frametime = self.var_e10de4ad.currenttime - self.var_e10de4ad.scratch.var_c17cd87c;
+    self.var_e10de4ad.scratch.frametime = self.var_e10de4ad.currenttime - self.var_e10de4ad.scratch.framestart;
     if (self.var_e10de4ad.scratch.frametime < 1) {
         self.var_e10de4ad.scratch.frametime = 1;
     } else if (self.var_e10de4ad.scratch.frametime > 100) {
         self.var_e10de4ad.scratch.frametime = 100;
     }
     self.var_e10de4ad.scratch.var_e0861271 = self.var_e10de4ad.scratch.frametime / 1000;
-    self.var_e10de4ad.scratch.var_c17cd87c = self.var_e10de4ad.currenttime;
+    self.var_e10de4ad.scratch.framestart = self.var_e10de4ad.currenttime;
 }
 
 // Namespace lockpick/lockpick
@@ -530,8 +530,8 @@ function private function_80847fa6(localclientnum) {
 // Checksum 0x2b160bbe, Offset: 0x2b40
 // Size: 0x64
 function private function_ef02d214(localclientnum, active) {
-    var_dd2c6e79 = function_80847fa6(localclientnum);
-    setuimodelvalue(getuimodel(var_dd2c6e79, "active"), active);
+    rootmodel = function_80847fa6(localclientnum);
+    setuimodelvalue(getuimodel(rootmodel, "active"), active);
 }
 
 // Namespace lockpick/lockpick
@@ -542,8 +542,8 @@ function private function_90b8720(localclientnum, var_83e465eb) {
     /#
         assert(var_83e465eb > 0 && var_83e465eb <= 5);
     #/
-    var_dd2c6e79 = function_80847fa6(localclientnum);
-    setuimodelvalue(getuimodel(var_dd2c6e79, "numPins"), var_83e465eb);
+    rootmodel = function_80847fa6(localclientnum);
+    setuimodelvalue(getuimodel(rootmodel, "numPins"), var_83e465eb);
 }
 
 // Namespace lockpick/lockpick
@@ -551,8 +551,8 @@ function private function_90b8720(localclientnum, var_83e465eb) {
 // Checksum 0xc8b959a4, Offset: 0x2c50
 // Size: 0x64
 function private function_2c6a1130(localclientnum, var_8b0a564b) {
-    var_dd2c6e79 = function_80847fa6(localclientnum);
-    setuimodelvalue(getuimodel(var_dd2c6e79, "lockDataAsset"), var_8b0a564b);
+    rootmodel = function_80847fa6(localclientnum);
+    setuimodelvalue(getuimodel(rootmodel, "lockDataAsset"), var_8b0a564b);
 }
 
 // Namespace lockpick/lockpick
@@ -560,8 +560,8 @@ function private function_2c6a1130(localclientnum, var_8b0a564b) {
 // Checksum 0x21181c3c, Offset: 0x2cc0
 // Size: 0x1ae
 function private function_28ef17b1(localclientnum, angle) {
-    var_dd2c6e79 = function_80847fa6(localclientnum);
-    setuimodelvalue(getuimodel(var_dd2c6e79, "pickAngle"), angle);
+    rootmodel = function_80847fa6(localclientnum);
+    setuimodelvalue(getuimodel(rootmodel, "pickAngle"), angle);
     diff = abs(self.var_e10de4ad.audio.var_6dc5be9f - angle);
     if (diff > 1) {
         if (!self.var_e10de4ad.audio.var_cf3d2929) {
@@ -583,8 +583,8 @@ function private function_28ef17b1(localclientnum, angle) {
 // Checksum 0x8a496087, Offset: 0x2e78
 // Size: 0x64
 function private function_192c93dd(localclientnum, state) {
-    var_dd2c6e79 = function_80847fa6(localclientnum);
-    setuimodelvalue(getuimodel(var_dd2c6e79, "pickState"), state);
+    rootmodel = function_80847fa6(localclientnum);
+    setuimodelvalue(getuimodel(rootmodel, "pickState"), state);
 }
 
 // Namespace lockpick/lockpick
@@ -592,8 +592,8 @@ function private function_192c93dd(localclientnum, state) {
 // Checksum 0xc6fd38ad, Offset: 0x2ee8
 // Size: 0x256
 function private function_59f6b71c(localclientnum, angle) {
-    var_dd2c6e79 = function_80847fa6(localclientnum);
-    setuimodelvalue(getuimodel(var_dd2c6e79, "wrenchAngle"), angle);
+    rootmodel = function_80847fa6(localclientnum);
+    setuimodelvalue(getuimodel(rootmodel, "wrenchAngle"), angle);
     if (abs(self.var_e10de4ad.audio.var_d1d4a588 - angle) > 1) {
         if (!self.var_e10de4ad.audio.var_6a7c9466) {
             self.var_e10de4ad.audio.var_6a7c9466 = 1;
@@ -621,8 +621,8 @@ function private function_59f6b71c(localclientnum, angle) {
 // Checksum 0xf1f8e22d, Offset: 0x3148
 // Size: 0x13e
 function private function_efaef15b(localclientnum, state) {
-    var_dd2c6e79 = function_80847fa6(localclientnum);
-    setuimodelvalue(getuimodel(var_dd2c6e79, "wrenchState"), state);
+    rootmodel = function_80847fa6(localclientnum);
+    setuimodelvalue(getuimodel(rootmodel, "wrenchState"), state);
     if (state == 1 && self.var_e10de4ad.audio.var_78430c0a == 0) {
         self.var_e10de4ad.audio.var_f1ed0ff0 = snd::play("evt_lockpick_wrench_tension_loop", self);
     } else if (state == 0 && self.var_e10de4ad.audio.var_78430c0a == 1) {
@@ -636,8 +636,8 @@ function private function_efaef15b(localclientnum, state) {
 // Checksum 0x476fa7e7, Offset: 0x3290
 // Size: 0x64
 function private function_ef54083f(localclientnum, unlocked) {
-    var_dd2c6e79 = function_80847fa6(localclientnum);
-    setuimodelvalue(getuimodel(var_dd2c6e79, "unlocked"), unlocked);
+    rootmodel = function_80847fa6(localclientnum);
+    setuimodelvalue(getuimodel(rootmodel, "unlocked"), unlocked);
 }
 
 // Namespace lockpick/lockpick
@@ -648,8 +648,8 @@ function private function_5a89af80(localclientnum, pin) {
     /#
         assert(pin > 0 && pin <= 5);
     #/
-    var_dd2c6e79 = function_80847fa6(localclientnum);
-    var_8ec71e64 = getuimodel(var_dd2c6e79, "pin" + pin);
+    rootmodel = function_80847fa6(localclientnum);
+    var_8ec71e64 = getuimodel(rootmodel, "pin" + pin);
     return var_8ec71e64;
 }
 

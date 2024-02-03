@@ -179,7 +179,7 @@ function function_e9608fd3() {
     self.zombie_move_speed = "walk";
     self.var_1c8b76d3 = 1;
     self.overrideactordamage = &function_239ee36;
-    self.var_ea4696bd = 1;
+    self.candamage = 1;
     self.var_887aaf49 = 3;
     self.var_a5d387bf = 0;
     if (randomint(100) > 50) {
@@ -326,8 +326,8 @@ function margwashouldswipeattack(entity) {
 // Size: 0x10a
 function private margwashouldshowpain(entity) {
     if (isdefined(entity.headdestroyed)) {
-        var_130114d2 = entity.head[entity.headdestroyed];
-        switch (var_130114d2.var_2b9b7c0f) {
+        headinfo = entity.head[entity.headdestroyed];
+        switch (headinfo.var_2b9b7c0f) {
         case #"margwa_head_left":
             self setblackboardattribute("_margwa_head", "left");
             break;
@@ -515,7 +515,7 @@ function private margwapainstart(entity) {
     }
     entity.headdestroyed = undefined;
     entity.var_aef14ab3 = 0;
-    entity.var_ea4696bd = 0;
+    entity.candamage = 0;
 }
 
 // Namespace namespace_a204c0f4/namespace_a204c0f4
@@ -525,7 +525,7 @@ function private margwapainstart(entity) {
 function private margwapainterminate(entity) {
     entity.headdestroyed = undefined;
     entity.var_aef14ab3 = 1;
-    entity.var_ea4696bd = 1;
+    entity.candamage = 1;
     entity function_e146597a(5000);
     entity clearpath();
 }
@@ -593,7 +593,7 @@ function function_729da05c() {
         trigger thread namespace_ec06fe4a::function_52afe5df(10);
         trigger thread namespace_f6712ec9::function_86555fba();
     }
-    obj = namespace_ec06fe4a::function_e22ae9b3(groundpos);
+    obj = namespace_ec06fe4a::spawnmodel(groundpos);
     if (isdefined(obj)) {
         obj thread namespace_ec06fe4a::function_52afe5df(10);
         obj namespace_83eb6304::function_3ecfde67("nova_crawler_burst");
@@ -699,7 +699,7 @@ function private function_195ee8be(headmodel, var_755136c1) {
     self.head[model].model = model;
     self.head[model].tag = var_755136c1;
     self.head[model].health = 70000 + int(50000 * namespace_ec06fe4a::function_ef369bae()) + level.doa.var_6c58d51 * 150000;
-    self.head[model].var_ea4696bd = 0;
+    self.head[model].candamage = 0;
     self.head[model].open = 1;
     self.head[model].closed = 2;
     self.head[model].var_e08e3957 = 3;
@@ -777,49 +777,49 @@ function private function_d150bac6() {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x305d2723, Offset: 0x32a0
 // Size: 0x298
-function private function_81b6b294(var_130114d2) {
+function private function_81b6b294(headinfo) {
     self endon(#"death", #"hash_28b17b286ff6e084");
-    var_130114d2 notify(#"hash_28b17b286ff6e084");
-    var_130114d2 endon(#"hash_28b17b286ff6e084");
+    headinfo notify(#"hash_28b17b286ff6e084");
+    headinfo endon(#"hash_28b17b286ff6e084");
     while (1) {
         if (self ispaused()) {
             util::wait_network_frame();
             continue;
         }
-        if (!isdefined(var_130114d2.closetime)) {
+        if (!isdefined(headinfo.closetime)) {
             if (self.var_887aaf49 == 1) {
-                var_130114d2.closetime = function_4a60d0c7(500, 1000);
+                headinfo.closetime = function_4a60d0c7(500, 1000);
             } else {
-                var_130114d2.closetime = function_4a60d0c7(1500, 3500);
+                headinfo.closetime = function_4a60d0c7(1500, 3500);
             }
         }
-        if (gettime() > var_130114d2.closetime && self function_d150bac6()) {
+        if (gettime() > headinfo.closetime && self function_d150bac6()) {
             self.var_a5d387bf++;
-            var_130114d2.closetime = undefined;
+            headinfo.closetime = undefined;
         } else {
             util::wait_network_frame();
             continue;
         }
-        self function_efe04de1(var_130114d2, 1);
-        self clientfield::set(var_130114d2.var_2b9b7c0f, var_130114d2.open);
+        self function_efe04de1(headinfo, 1);
+        self clientfield::set(headinfo.var_2b9b7c0f, headinfo.open);
         if (namespace_ec06fe4a::function_a8975c67()) {
-            self playsoundontag("zmb_vocals_margwa_ambient", var_130114d2.tag);
+            self playsoundontag("zmb_vocals_margwa_ambient", headinfo.tag);
         }
         while (1) {
-            if (!isdefined(var_130114d2.opentime)) {
-                var_130114d2.opentime = function_4a60d0c7(3000, 5000);
+            if (!isdefined(headinfo.opentime)) {
+                headinfo.opentime = function_4a60d0c7(3000, 5000);
             }
-            if (gettime() > var_130114d2.opentime) {
+            if (gettime() > headinfo.opentime) {
                 self.var_a5d387bf--;
-                var_130114d2.opentime = undefined;
+                headinfo.opentime = undefined;
                 break;
             } else {
                 util::wait_network_frame();
                 continue;
             }
         }
-        self function_efe04de1(var_130114d2, 0);
-        self clientfield::set(var_130114d2.var_2b9b7c0f, var_130114d2.closed);
+        self function_efe04de1(headinfo, 0);
+        self clientfield::set(headinfo.var_2b9b7c0f, headinfo.closed);
     }
 }
 
@@ -827,10 +827,10 @@ function private function_81b6b294(var_130114d2) {
 // Params 2, eflags: 0x6 linked
 // Checksum 0x10c8c881, Offset: 0x3540
 // Size: 0x3e
-function private function_efe04de1(var_130114d2, var_ea4696bd) {
+function private function_efe04de1(headinfo, candamage) {
     self endon(#"death");
     wait(0.1);
-    var_130114d2.var_ea4696bd = var_ea4696bd;
+    headinfo.candamage = candamage;
 }
 
 // Namespace namespace_a204c0f4/namespace_a204c0f4
@@ -849,7 +849,7 @@ function private function_59b4caf4() {
     open = 0;
     foreach (head in var_f04f8dd5) {
         if (!open) {
-            head.var_ea4696bd = 1;
+            head.candamage = 1;
             self clientfield::set(head.var_2b9b7c0f, head.var_e08e3957);
             open = 1;
         } else {
@@ -862,9 +862,9 @@ function private function_59b4caf4() {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x51c34429, Offset: 0x3728
 // Size: 0x3c
-function private function_c6899c2b(var_130114d2) {
-    var_130114d2.var_ea4696bd = 0;
-    self clientfield::set(var_130114d2.var_2b9b7c0f, var_130114d2.closed);
+function private function_c6899c2b(headinfo) {
+    headinfo.candamage = 0;
+    self clientfield::set(headinfo.var_2b9b7c0f, headinfo.closed);
 }
 
 // Namespace namespace_a204c0f4/namespace_a204c0f4
@@ -894,21 +894,21 @@ function private function_e146597a(closetime) {
 // Checksum 0x4933abce, Offset: 0x3888
 // Size: 0x16c
 function function_a6af900e(var_71938d68, attacker) {
-    var_130114d2 = self.head[var_71938d68];
-    if (is_true(var_130114d2.killed)) {
+    headinfo = self.head[var_71938d68];
+    if (is_true(headinfo.killed)) {
         return;
     }
-    var_130114d2.health = 0;
-    var_130114d2.killed = 1;
-    var_130114d2 notify(#"hash_28b17b286ff6e084");
-    if (is_true(var_130114d2.var_ea4696bd)) {
-        self function_c6899c2b(var_130114d2);
+    headinfo.health = 0;
+    headinfo.killed = 1;
+    headinfo notify(#"hash_28b17b286ff6e084");
+    if (is_true(headinfo.candamage)) {
+        self function_c6899c2b(headinfo);
         self.var_a5d387bf--;
     }
     self function_e140363d();
-    self clientfield::set("margwa_head_killed", var_130114d2.var_d3879c8e);
-    self detach(var_130114d2.model);
-    self attach(var_130114d2.var_a74031e);
+    self clientfield::set("margwa_head_killed", headinfo.var_d3879c8e);
+    self detach(headinfo.model);
+    self attach(headinfo.var_a74031e);
     self.var_887aaf49--;
     if (self.var_887aaf49 <= 0) {
         self.var_f2bf0700 = attacker;
@@ -925,7 +925,7 @@ function function_a6af900e(var_71938d68, attacker) {
 // Size: 0xb4
 function function_71c049c4() {
     foreach (head in self.head) {
-        if (isdefined(head) && head.health > 0 && is_true(head.var_ea4696bd)) {
+        if (isdefined(head) && head.health > 0 && is_true(head.candamage)) {
             return 1;
         }
     }
@@ -937,7 +937,7 @@ function function_71c049c4() {
 // Checksum 0xa2250dbe, Offset: 0x3ac0
 // Size: 0x40
 function function_bbaf72a2() {
-    if (isdefined(self) && self.health > 0 && is_true(self.var_ea4696bd)) {
+    if (isdefined(self) && self.health > 0 && is_true(self.candamage)) {
         return 1;
     }
     return 0;

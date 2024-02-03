@@ -646,11 +646,11 @@ function private function_41cea16c(var_e5a03c2d) {
     }
     centroid = centroid / var_e5a03c2d.size;
     startnode = var_e5a03c2d[0];
-    var_cffcaa9b = distance2dsquared(centroid, startnode.origin);
+    bestdist = distance2dsquared(centroid, startnode.origin);
     foreach (node in var_e5a03c2d) {
         dist = distance2dsquared(centroid, node.origin);
-        if (dist < var_cffcaa9b) {
-            var_cffcaa9b = dist;
+        if (dist < bestdist) {
+            bestdist = dist;
             startnode = node;
         }
     }
@@ -670,41 +670,41 @@ function function_ad3c4c28(left, right) {
 // Checksum 0x15658cc4, Offset: 0x31b8
 // Size: 0xd4
 function private function_42d4c400(edge, var_b17324f2) {
-    var_10819d42 = spawnstruct();
+    membership = spawnstruct();
     if (var_b17324f2.size == 0) {
-        return var_10819d42;
+        return membership;
     }
     for (i = 0; i < var_b17324f2.size; i++) {
         if (isdefined(var_b17324f2[i][edge.starti])) {
-            var_10819d42.start = i;
+            membership.start = i;
         }
         if (isdefined(var_b17324f2[i][edge.aizm])) {
-            var_10819d42.end = i;
+            membership.end = i;
         }
-        if (isdefined(var_10819d42.start) && isdefined(var_10819d42.end)) {
-            return var_10819d42;
+        if (isdefined(membership.start) && isdefined(membership.end)) {
+            return membership;
         }
     }
-    return var_10819d42;
+    return membership;
 }
 
 // Namespace namespace_21dd166c/namespace_21dd166c
 // Params 3, eflags: 0x6 linked
 // Checksum 0xf036b3a7, Offset: 0x3298
 // Size: 0x1e6
-function private function_d10d1a39(var_10819d42, edge, var_b17324f2) {
-    if (isdefined(var_10819d42.start)) {
-        if (isdefined(var_10819d42.end)) {
-            keys = getarraykeys(var_b17324f2[var_10819d42.end]);
+function private function_d10d1a39(membership, edge, var_b17324f2) {
+    if (isdefined(membership.start)) {
+        if (isdefined(membership.end)) {
+            keys = getarraykeys(var_b17324f2[membership.end]);
             foreach (key in keys) {
-                var_b17324f2[var_10819d42.start][key] = 1;
+                var_b17324f2[membership.start][key] = 1;
             }
-            var_b17324f2 = array::remove_index(var_b17324f2, var_10819d42.end);
+            var_b17324f2 = array::remove_index(var_b17324f2, membership.end);
         } else {
-            var_b17324f2[var_10819d42.start][edge.aizm] = 1;
+            var_b17324f2[membership.start][edge.aizm] = 1;
         }
-    } else if (isdefined(var_10819d42.end)) {
-        var_b17324f2[var_10819d42.end][edge.starti] = 1;
+    } else if (isdefined(membership.end)) {
+        var_b17324f2[membership.end][edge.starti] = 1;
     } else {
         var_a8af105 = [];
         var_a8af105[edge.starti] = 1;
@@ -724,7 +724,7 @@ function private function_d10d1a39(var_10819d42, edge, var_b17324f2) {
 // Checksum 0xe6a01df2, Offset: 0x3488
 // Size: 0x276
 function private function_6544fed5(var_e5a03c2d) {
-    var_bd794594 = [];
+    edgelist = [];
     var_b17324f2 = [];
     for (i = 0; i < var_e5a03c2d.size; i++) {
         for (j = i + 1; j < var_e5a03c2d.size; j++) {
@@ -734,27 +734,27 @@ function private function_6544fed5(var_e5a03c2d) {
             edge.starti = i;
             edge.aizm = j;
             edge.distsqr = distance2dsquared(var_e5a03c2d[i].origin, var_e5a03c2d[j].origin);
-            if (!isdefined(var_bd794594)) {
-                var_bd794594 = [];
-            } else if (!isarray(var_bd794594)) {
-                var_bd794594 = array(var_bd794594);
+            if (!isdefined(edgelist)) {
+                edgelist = [];
+            } else if (!isarray(edgelist)) {
+                edgelist = array(edgelist);
             }
-            var_bd794594[var_bd794594.size] = edge;
+            edgelist[edgelist.size] = edge;
         }
     }
-    var_b93b110a = array::quick_sort(var_bd794594, &function_ad3c4c28);
+    var_b93b110a = array::quick_sort(edgelist, &function_ad3c4c28);
     var_d25551a8 = [];
     while (var_b93b110a.size > 0) {
         edge = array::pop_front(var_b93b110a);
-        var_10819d42 = function_42d4c400(edge, var_b17324f2);
-        if (!isdefined(var_10819d42.start) || !isdefined(var_10819d42.end) || var_10819d42.start != var_10819d42.end) {
+        membership = function_42d4c400(edge, var_b17324f2);
+        if (!isdefined(membership.start) || !isdefined(membership.end) || membership.start != membership.end) {
             if (!isdefined(var_d25551a8)) {
                 var_d25551a8 = [];
             } else if (!isarray(var_d25551a8)) {
                 var_d25551a8 = array(var_d25551a8);
             }
             var_d25551a8[var_d25551a8.size] = edge;
-            var_b17324f2 = function_d10d1a39(var_10819d42, edge, var_b17324f2);
+            var_b17324f2 = function_d10d1a39(membership, edge, var_b17324f2);
         }
     }
     return var_d25551a8;
@@ -766,22 +766,22 @@ function private function_6544fed5(var_e5a03c2d) {
 // Size: 0x28e
 function private function_edc68cbd(var_adda5a0) {
     /#
-        var_9efeb213 = (1, 1, 1);
+        boxcolor = (1, 1, 1);
         while (1) {
             if (!isdefined(var_adda5a0)) {
                 return;
             }
             for (i = 0; i < 25; i++) {
-                line(var_adda5a0[i][0].origin + vectorscale((-1, 1, 0), 512), var_adda5a0[i][24].origin + vectorscale((1, 1, 0), 512), var_9efeb213);
+                line(var_adda5a0[i][0].origin + vectorscale((-1, 1, 0), 512), var_adda5a0[i][24].origin + vectorscale((1, 1, 0), 512), boxcolor);
             }
-            line(var_adda5a0[24][0].origin + vectorscale((-1, -1, 0), 512), var_adda5a0[24][24].origin + vectorscale((1, -1, 0), 512), var_9efeb213);
+            line(var_adda5a0[24][0].origin + vectorscale((-1, -1, 0), 512), var_adda5a0[24][24].origin + vectorscale((1, -1, 0), 512), boxcolor);
             for (j = 0; j < 25; j++) {
-                line(var_adda5a0[0][j].origin + vectorscale((-1, 1, 0), 512), var_adda5a0[24][j].origin + vectorscale((-1, -1, 0), 512), var_9efeb213);
+                line(var_adda5a0[0][j].origin + vectorscale((-1, 1, 0), 512), var_adda5a0[24][j].origin + vectorscale((-1, -1, 0), 512), boxcolor);
             }
-            line(var_adda5a0[0][24].origin + vectorscale((1, 1, 0), 512), var_adda5a0[24][24].origin + vectorscale((1, -1, 0), 512), var_9efeb213);
+            line(var_adda5a0[0][24].origin + vectorscale((1, 1, 0), 512), var_adda5a0[24][24].origin + vectorscale((1, -1, 0), 512), boxcolor);
             for (i = 0; i < 25; i++) {
                 for (j = 0; j < 25; j++) {
-                    print3d(var_adda5a0[i][j].origin + vectorscale((0, 0, 1), 12), "<unknown string>" + i + "<unknown string>" + j + "<unknown string>", var_9efeb213, 1, 5);
+                    print3d(var_adda5a0[i][j].origin + vectorscale((0, 0, 1), 12), "<unknown string>" + i + "<unknown string>" + j + "<unknown string>", boxcolor, 1, 5);
                 }
             }
             waitframe(1);

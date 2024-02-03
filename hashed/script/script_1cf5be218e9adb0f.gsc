@@ -537,13 +537,13 @@ function private function_80847fa6(localclientnum) {
 // Checksum 0x11ee5d1b, Offset: 0x26f0
 // Size: 0xac
 function private function_ef02d214(localclientnum, active) {
-    var_dd2c6e79 = function_80847fa6(localclientnum);
-    var_9d9ad8f1 = getuimodel(var_dd2c6e79, "active");
+    rootmodel = function_80847fa6(localclientnum);
+    var_9d9ad8f1 = getuimodel(rootmodel, "active");
     if (isdefined(var_9d9ad8f1)) {
         setuimodelvalue(var_9d9ad8f1, active);
     } else {
         /#
-            iprintlnbold("<unknown string>" + var_dd2c6e79 + "<unknown string>");
+            iprintlnbold("<unknown string>" + rootmodel + "<unknown string>");
         #/
     }
 }
@@ -565,13 +565,13 @@ function private function_612f81a4(localclientnum, hide) {
 // Checksum 0xc6b7300d, Offset: 0x2838
 // Size: 0xac
 function private function_65b4e0a9(localclientnum, state) {
-    var_dd2c6e79 = function_80847fa6(localclientnum);
-    var_9d9ad8f1 = getuimodel(var_dd2c6e79, "focusState");
+    rootmodel = function_80847fa6(localclientnum);
+    var_9d9ad8f1 = getuimodel(rootmodel, "focusState");
     if (isdefined(var_9d9ad8f1)) {
         setuimodelvalue(var_9d9ad8f1, state);
     } else {
         /#
-            iprintlnbold("<unknown string>" + var_dd2c6e79 + "<unknown string>");
+            iprintlnbold("<unknown string>" + rootmodel + "<unknown string>");
         #/
     }
 }

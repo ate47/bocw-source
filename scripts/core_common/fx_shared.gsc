@@ -168,9 +168,9 @@ function function_70ba68f1(target, var_486f31cd, var_bef008a5, var_e9f7aace, var
     }
     entnum = self getentitynumber();
     setdvar(#"_internal_dof_i_playernum", entnum);
-    var_d4c23ff = getdvarint(#"_internal_dof_i_refcounter", 0);
-    var_d4c23ff++;
-    setdvar(#"_internal_dof_i_refcounter", var_d4c23ff);
+    refcount = getdvarint(#"_internal_dof_i_refcounter", 0);
+    refcount++;
+    setdvar(#"_internal_dof_i_refcounter", refcount);
     self thread function_13fa0731();
 }
 
@@ -197,9 +197,9 @@ function function_82104e32(var_486f31cd, var_e9f7aace) {
     }
     entnum = self getentitynumber();
     setdvar(#"_internal_fob_i_playernum", entnum);
-    var_d4c23ff = getdvarint(#"_internal_fob_i_refcounter", 0);
-    var_d4c23ff++;
-    setdvar(#"_internal_fob_i_refcounter", var_d4c23ff);
+    refcount = getdvarint(#"_internal_fob_i_refcounter", 0);
+    refcount++;
+    setdvar(#"_internal_fob_i_refcounter", refcount);
     self thread function_13fa0731();
 }
 

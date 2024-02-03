@@ -149,9 +149,9 @@ function private registerbehaviorscriptfunctions() {
     #/
     behaviortreenetworkutility::registerbehaviortreescriptapi(#"hash_28725784491067a5", &function_4755155f);
     /#
-        assert(iscodefunctionptr(&function_95b98edf));
+        assert(iscodefunctionptr(&btapi_refillammo));
     #/
-    behaviortreenetworkutility::registerbehaviortreescriptapi(#"btapi_refillammoifneededservice", &function_95b98edf);
+    behaviortreenetworkutility::registerbehaviortreescriptapi(#"btapi_refillammoifneededservice", &btapi_refillammo);
     /#
         assert(isscriptfunctionptr(&function_43a090a8));
     #/
@@ -793,7 +793,7 @@ function function_7a62f47d() {
     /#
         assert(isscriptfunctionptr(&function_865ea8e6));
     #/
-    behaviorstatemachine::registerbsmscriptapiinternal(#"hash_59f41dfd5931bd64", &function_865ea8e6);
+    behaviorstatemachine::registerbsmscriptapiinternal(#"alwaystrue", &function_865ea8e6);
 }
 
 // Namespace aiutility/archetype_utility
@@ -1349,8 +1349,8 @@ function actorgetpredictedyawtoenemy(entity, lookaheadtime) {
     selfpredictedpos = entity.origin;
     moveangle = entity.angles[1] + entity getmotionangle();
     selfpredictedpos = selfpredictedpos + (cos(moveangle), sin(moveangle), 0) * 200 * lookaheadtime;
-    var_b99f524e = entity function_c709ce88();
-    yaw = vectortoangles(var_b99f524e - selfpredictedpos)[1] - entity.angles[1];
+    aimpos = entity function_c709ce88();
+    yaw = vectortoangles(aimpos - selfpredictedpos)[1] - entity.angles[1];
     yaw = absangleclamp360(yaw);
     entity.predictedyawtoenemy = yaw;
     entity.predictedyawtoenemytime = gettime();
@@ -1440,13 +1440,13 @@ function function_19574f85() {
     var_a003c4d6 = math::vec_to_angles(var_f56439f);
     var_93b76ac5 = var_203b2da1 - self.origin;
     var_3ea61d84 = math::vec_to_angles(var_93b76ac5);
-    var_6b2e389a = var_a003c4d6 - var_3ea61d84;
-    var_6b2e389a = angleclamp180(var_6b2e389a);
+    angle_diff = var_a003c4d6 - var_3ea61d84;
+    angle_diff = angleclamp180(angle_diff);
     var_deeb5ea3 = undefined;
-    if (var_6b2e389a < 0) {
-        var_deeb5ea3 = var_6b2e389a + 90;
+    if (angle_diff < 0) {
+        var_deeb5ea3 = angle_diff + 90;
     } else {
-        var_deeb5ea3 = var_6b2e389a - 90;
+        var_deeb5ea3 = angle_diff - 90;
     }
     return var_deeb5ea3;
 }
@@ -1884,13 +1884,13 @@ function function_6ecd367e() {
 // Checksum 0x6d27aa53, Offset: 0x8a98
 // Size: 0xd2
 function function_b51ae338() {
-    if (!isdefined(self.var_15d45247)) {
-        self.var_15d45247 = -1;
+    if (!isdefined(self.lastfootsteptime)) {
+        self.lastfootsteptime = -1;
         self.var_82a8657 = "";
     }
     currenttime = gettime();
-    if (currenttime != self.var_15d45247) {
-        self.var_15d45247 = currenttime;
+    if (currenttime != self.lastfootsteptime) {
+        self.lastfootsteptime = currenttime;
         var_ddf4687a = self function_502c064();
         self.var_82a8657 = isdefined(var_ddf4687a.name) ? var_ddf4687a.name : "";
         self.var_5476bfce = isdefined(var_ddf4687a.percentage) ? var_ddf4687a.percentage : 0;
@@ -1903,13 +1903,13 @@ function function_b51ae338() {
 // Checksum 0x7e5b536e, Offset: 0x8b78
 // Size: 0xd2
 function function_4dbfd949() {
-    if (!isdefined(self.var_15d45247)) {
-        self.var_15d45247 = -1;
+    if (!isdefined(self.lastfootsteptime)) {
+        self.lastfootsteptime = -1;
         self.var_5476bfce = 0;
     }
     currenttime = gettime();
-    if (currenttime != self.var_15d45247) {
-        self.var_15d45247 = currenttime;
+    if (currenttime != self.lastfootsteptime) {
+        self.lastfootsteptime = currenttime;
         var_ddf4687a = self function_502c064();
         self.var_82a8657 = isdefined(var_ddf4687a.name) ? var_ddf4687a.name : "";
         self.var_5476bfce = isdefined(var_ddf4687a.percentage) ? var_ddf4687a.percentage : 0;
@@ -2164,8 +2164,8 @@ function trygoingtoclosestnodetoenemybehavior(entity) {
                 nodes = var_e416dc99;
             }
             var_abe95912 = min(nodes.size, 15);
-            var_5bfaa930 = array::slice(nodes, 0, var_abe95912 - 1);
-            var_1a11849e = arraysortclosest(var_5bfaa930, lastknownpositionofenemy, 1);
+            bestnodes = array::slice(nodes, 0, var_abe95912 - 1);
+            var_1a11849e = arraysortclosest(bestnodes, lastknownpositionofenemy, 1);
             closestrandomnode = var_1a11849e[0];
         }
         if (isdefined(closestrandomnode) && entity isingoal(closestrandomnode.origin)) {
@@ -2231,7 +2231,7 @@ function private function_106ea3ab(entity, origin) {
 // Params 2, eflags: 0x6 linked
 // Checksum 0xb88a8767, Offset: 0x9b48
 // Size: 0x140
-function private function_97d5dde9(entity, var_c305dbc8) {
+function private function_97d5dde9(entity, currentenemy) {
     entity endon(#"death", #"hash_29b88049dcac8bb3");
     self notify("676a46e517cf5043");
     self endon("676a46e517cf5043");
@@ -2240,9 +2240,9 @@ function private function_97d5dde9(entity, var_c305dbc8) {
             entity function_d4c687c9();
             return;
         }
-        if (entity.enemy != var_c305dbc8) {
+        if (entity.enemy != currentenemy) {
             function_106ea3ab(entity, entity.enemy.origin);
-            var_c305dbc8 = entity.enemy;
+            currentenemy = entity.enemy;
         }
         if (gettime() > entity.nextfindbestcovertime) {
             entity function_d4c687c9();
@@ -2620,7 +2620,7 @@ function function_43a090a8(entity) {
 // Checksum 0xfdd090e1, Offset: 0xab40
 // Size: 0xfc
 function function_dc44803c(entity) {
-    function_95b98edf(entity);
+    btapi_refillammo(entity);
     entity.ai.reloading = 0;
     if (isdefined(entity.var_bd5efde2)) {
         animationstatenetwork::function_9d41000(entity);
@@ -3631,14 +3631,14 @@ function private function_bcbf3f38(*entity) {
     }
     animation = self asmgetcurrentdeltaanimation();
     currenttime = self getanimtime(animation);
-    var_1f4955d3 = getnotetracktimes(animation, "melee_fire");
-    if (!isdefined(var_1f4955d3)) {
+    notes = getnotetracktimes(animation, "melee_fire");
+    if (!isdefined(notes)) {
         if (!isalive(self.enemy)) {
             return 1;
         }
         return 0;
     }
-    meleetime = var_1f4955d3[0];
+    meleetime = notes[0];
     if (meleetime > currenttime && meleetime - currenttime < 0.05) {
         weapon = self.weapon;
         if (isdefined(self.meleeweapon) && self.meleeweapon != getweapon(#"none")) {

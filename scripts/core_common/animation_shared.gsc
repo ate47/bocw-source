@@ -380,9 +380,9 @@ function function_a23b2a60(animation, var_f9e56773 = 0, var_d7b4a07c = 1) {
     /#
         assert(var_d7b4a07c > var_f9e56773);
     #/
-    var_16e3f434 = getmovedelta(animation, var_f9e56773, var_d7b4a07c);
+    localdelta = getmovedelta(animation, var_f9e56773, var_d7b4a07c);
     animtime = getanimlength(animation);
-    length = function_3a0a7a8(var_16e3f434);
+    length = function_3a0a7a8(localdelta);
     speed = length / animtime * (var_d7b4a07c - var_f9e56773);
     return speed;
 }
@@ -477,7 +477,7 @@ function function_d7627522(animation, v_goal, radius = 100) {
     while (distance2dsquared(self.origin, v_goal) > radiussq) {
         waitframe(1);
     }
-    self function_2ce879d2(var_f11838cd);
+    self setdesiredspeed(var_f11838cd);
     s_waitresult = undefined;
     s_waitresult = self waittill(#"goal", #"new_anim_reach", #"new_scripted_anim", #"stop_scripted_anim", #"reach_timed_out");
     self function_9ae1c50();

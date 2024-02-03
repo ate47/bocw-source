@@ -111,7 +111,7 @@ function function_8ad03874(var_86dfea16, var_3ec8d9e9) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x90e63f74, Offset: 0xb20
 // Size: 0x142
-function function_cc2b72fd(var_a30478b5, direction) {
+function function_cc2b72fd(severity, direction) {
     /#
         assert(isdefined(level.stealth));
     #/
@@ -119,27 +119,27 @@ function function_cc2b72fd(var_a30478b5, direction) {
         assert(isdefined(level.stealth.var_1ffc1de6));
     #/
     /#
-        assert(isdefined(level.stealth.var_1ffc1de6[var_a30478b5]));
+        assert(isdefined(level.stealth.var_1ffc1de6[severity]));
     #/
-    priority = level.stealth.var_1ffc1de6[var_a30478b5] + direction;
+    priority = level.stealth.var_1ffc1de6[severity] + direction;
     foreach (var_64cba2ea, var_7b0f2b7f in level.stealth.var_1ffc1de6) {
         if (var_7b0f2b7f == priority) {
             return var_64cba2ea;
         }
     }
-    return var_a30478b5;
+    return severity;
 }
 
 // Namespace namespace_cf88f507/event
 // Params 5, eflags: 0x2 linked
 // Checksum 0x139bafe, Offset: 0xc70
 // Size: 0x1ac
-function function_9b9a90d8(var_a30478b5, eventname, var_b9f01157, var_4cca9730, var_af2ae264) {
+function function_9b9a90d8(severity, eventname, var_b9f01157, var_4cca9730, var_af2ae264) {
     /#
-        assert(!(var_a30478b5 == "<unknown string>" && isdefined(var_af2ae264)));
+        assert(!(severity == "<unknown string>" && isdefined(var_af2ae264)));
     #/
     /#
-        assert(!(var_a30478b5 == "<unknown string>" && isdefined(var_b9f01157)));
+        assert(!(severity == "<unknown string>" && isdefined(var_b9f01157)));
     #/
     if (!isdefined(var_b9f01157)) {
         var_b9f01157 = 0;
@@ -159,7 +159,7 @@ function function_9b9a90d8(var_a30478b5, eventname, var_b9f01157, var_4cca9730, 
     if (!isdefined(level.stealth.var_c6229ec2)) {
         level.stealth.var_c6229ec2 = [];
     }
-    level.stealth.var_8f03d564[eventname] = var_a30478b5;
+    level.stealth.var_8f03d564[eventname] = severity;
     level.stealth.var_bb59b418[eventname] = var_b9f01157;
     level.stealth.var_d93663f6[eventname] = var_4cca9730;
     level.stealth.var_c6229ec2[eventname] = var_af2ae264;
@@ -358,12 +358,12 @@ function function_51e96563(eventtype, var_fafdc97e, enemy, var_b2a2de70, var_a3d
 // Params 4, eflags: 0x2 linked
 // Checksum 0x44b6e6e1, Offset: 0x19a0
 // Size: 0x170
-function function_ebe9cc50(eventtype, var_ef1d27a1, var_82ca3ad4, var_d3429c8c) {
+function function_ebe9cc50(eventtype, var_ef1d27a1, eventradius, var_d3429c8c) {
     ais = getactorteamarray("axis", "team3");
     if (!isdefined(var_d3429c8c)) {
         var_d3429c8c = getplayers()[0];
     }
-    var_1e5aa1c5 = function_a3f6cdac(var_82ca3ad4);
+    var_1e5aa1c5 = function_a3f6cdac(eventradius);
     foreach (ai in ais) {
         if (!isalive(ai)) {
             continue;
@@ -381,9 +381,9 @@ function function_ebe9cc50(eventtype, var_ef1d27a1, var_82ca3ad4, var_d3429c8c) 
 // Params 7, eflags: 0x0
 // Checksum 0x5d36280a, Offset: 0x1b18
 // Size: 0x1f0
-function function_24d4358e(eventtype, enemy, var_ef1d27a1, var_82ca3ad4, var_c5108979, var_a2b0f54d, var_683e4bdc) {
+function function_24d4358e(eventtype, enemy, var_ef1d27a1, eventradius, var_c5108979, var_a2b0f54d, var_683e4bdc) {
     ais = getactorteamarray("axis", "team3");
-    var_4ab7d8de = var_82ca3ad4 * var_82ca3ad4;
+    var_4ab7d8de = eventradius * eventradius;
     if (!isdefined(var_c5108979)) {
         var_c5108979 = 1;
     }
@@ -420,17 +420,17 @@ function function_24d4358e(eventtype, enemy, var_ef1d27a1, var_82ca3ad4, var_c51
 // Params 7, eflags: 0x0
 // Checksum 0x30c0e301, Offset: 0x1d10
 // Size: 0x5c
-function function_81ea83c5(eventtype, enemy, var_ef1d27a1, var_82ca3ad4, var_c5108979, var_a2b0f54d, var_aae03dee) {
-    thread function_557b6ee1(eventtype, enemy, var_ef1d27a1, var_82ca3ad4, var_c5108979, var_a2b0f54d, var_aae03dee);
+function function_81ea83c5(eventtype, enemy, var_ef1d27a1, eventradius, var_c5108979, var_a2b0f54d, var_aae03dee) {
+    thread function_557b6ee1(eventtype, enemy, var_ef1d27a1, eventradius, var_c5108979, var_a2b0f54d, var_aae03dee);
 }
 
 // Namespace namespace_cf88f507/event
 // Params 7, eflags: 0x2 linked
 // Checksum 0x73dca09b, Offset: 0x1d78
 // Size: 0x278
-function function_557b6ee1(eventtype, enemy, var_ef1d27a1, var_82ca3ad4, var_c5108979, var_a2b0f54d, var_aae03dee) {
+function function_557b6ee1(eventtype, enemy, var_ef1d27a1, eventradius, var_c5108979, var_a2b0f54d, var_aae03dee) {
     ais = getactorteamarray("axis", "team3");
-    var_4ab7d8de = var_82ca3ad4 * var_82ca3ad4;
+    var_4ab7d8de = eventradius * eventradius;
     if (!isdefined(var_c5108979)) {
         var_c5108979 = 1;
     }

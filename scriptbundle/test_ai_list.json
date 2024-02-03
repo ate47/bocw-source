@@ -1,17 +1,17 @@
 {
     "var_210a8489": [
         {
-            "var_37d9fb07": "test_mechz_list",
+            "entryname": "test_mechz_list",
             "var_a949845f": 1,
             "var_857deb66": 10
         },
         {
-            "var_37d9fb07": "test_raz_list",
+            "entryname": "test_raz_list",
             "var_a949845f": 1,
             "var_857deb66": 50
         },
         {
-            "var_37d9fb07": "test_avo_list",
+            "entryname": "test_avo_list",
             "var_a949845f": 1,
             "var_857deb66": 40
         }

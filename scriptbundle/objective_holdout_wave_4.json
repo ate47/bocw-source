@@ -1,32 +1,32 @@
 {
     "var_210a8489": [
         {
-            "var_37d9fb07": "survival_ai_zombie",
+            "entryname": "survival_ai_zombie",
             "var_a949845f": -1,
             "var_857deb66": 35
         },
         {
-            "var_37d9fb07": "survival_ai_dog_molotov",
+            "entryname": "survival_ai_dog_molotov",
             "var_a949845f": -1,
             "var_857deb66": 5
         },
         {
-            "var_37d9fb07": "survival_ai_zombie_armor_medium",
+            "entryname": "survival_ai_zombie_armor_medium",
             "var_a949845f": -1,
             "var_857deb66": 25
         },
         {
-            "var_37d9fb07": "survival_ai_dog_plague",
+            "entryname": "survival_ai_dog_plague",
             "var_a949845f": -1,
             "var_857deb66": 5
         },
         {
-            "var_37d9fb07": "survival_ai_mimic",
+            "entryname": "survival_ai_mimic",
             "var_a949845f": -1,
             "var_857deb66": 5
         },
         {
-            "var_37d9fb07": "survival_ai_raz",
+            "entryname": "survival_ai_raz",
             "var_a949845f": -1,
             "var_857deb66": 5
         }

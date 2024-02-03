@@ -746,7 +746,7 @@ class csceneobject {
             self._e scene::synced_delete(self._o_scene._str_name);
             return;
         }
-        if (is_true(self._s.var_e2360d85)) {
+        if (is_true(self._s.forcenocull)) {
             self._e setforcenocull();
         }
         if (is_true(self._s.touchtriggers)) {
@@ -1273,7 +1273,7 @@ class csceneobject {
             if (!error(self._e.classname !== "script_model", "makeFakeAI must be applied to a script_model")) {
                 self._e makefakeai();
             }
-            if (!is_true(self._s.removeweapon) && !is_true(self._s.var_4251c9c6)) {
+            if (!is_true(self._s.removeweapon) && !is_true(self._s.hideweapon)) {
                 self._e animation::attach_weapon(getweapon(#"ar_accurate_t9"));
             }
         }
@@ -2258,7 +2258,7 @@ class csceneobject {
             thread function_2035b6d6(self._e);
             return;
         }
-        if (is_true(self._s.var_e2360d85)) {
+        if (is_true(self._s.forcenocull)) {
             self._e removeforcenocull();
         }
         if (is_true(self._s.touchtriggers)) {

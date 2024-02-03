@@ -22,7 +22,7 @@ function event_handler[gametype_init] init(*eventstruct) {
 function event_handler[gametype_start] main(*eventstruct) {
     level thread function_5089875d();
     /#
-        level thread function_bcce4bc0();
+        level thread devgui_init();
     #/
     if (!function_a23c96ea()) {
         return;
@@ -162,7 +162,7 @@ function function_a23c96ea() {
 // Params 0, eflags: 0x0
 // Checksum 0x14f80859, Offset: 0x888
 // Size: 0x94
-function function_bcce4bc0() {
+function devgui_init() {
     /#
         waitframe(1);
         mapname = get_map_name();

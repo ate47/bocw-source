@@ -65,7 +65,7 @@ function function_8d4cb2b(localclientnum) {
     level endon(#"terminatecutscene");
     self endon(#"disconnect");
     if (level.doa.var_258d537d.var_a6b0949b.size) {
-        var_3dbe949b = namespace_ec06fe4a::function_e22ae9b3(localclientnum, self.origin, "tag_origin", self.angles, "outro dolly cam");
+        var_3dbe949b = namespace_ec06fe4a::spawnmodel(localclientnum, self.origin, "tag_origin", self.angles, "outro dolly cam");
         var_3dbe949b thread namespace_ec06fe4a::function_d55f042c(level, "terminateCutScene");
         if (localclientnum == 0) {
             level thread function_650e4410(var_3dbe949b);
@@ -83,15 +83,15 @@ function function_8d4cb2b(localclientnum) {
             if (shot.var_dd65e804 > 0) {
                 wait(shot.var_dd65e804);
             }
-            var_7162689c = shot.var_411d90d0;
+            traveltime = shot.var_411d90d0;
             if (shot.var_3e552258 == 0) {
-                var_7162689c = var_7162689c - 0.5;
+                traveltime = traveltime - 0.5;
             }
             if (isdefined(shot.var_cdf089b4)) {
                 var_3dbe949b moveto(shot.var_cdf089b4.origin, shot.var_411d90d0);
                 var_3dbe949b rotateto(shot.var_cdf089b4.angles, shot.var_411d90d0);
             }
-            wait(var_7162689c);
+            wait(traveltime);
             if (shot.var_3e552258 > 0) {
                 wait(shot.var_3e552258);
             }

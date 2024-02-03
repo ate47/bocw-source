@@ -66,7 +66,7 @@
     "var_f1c52016": "wpn_satchel_armed",
     "var_f29418f1": 1,
     "var_e1b418c1": "satchel charge",
-    "var_55e8085c": 5,
+    "lerp_rate": 5,
     "var_28f86309": "wpn_satchel_beep_loop",
     "var_bd063370": 300,
     "var_372c1abf": 1,

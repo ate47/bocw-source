@@ -33,7 +33,7 @@ function init() {
 // Checksum 0xbffda7c0, Offset: 0x2d8
 // Size: 0x204
 function setupclientfields() {
-    clientfield::register_clientuimodel("hudItems.squadSpawnOnStatus", #"hash_6f4b11a0bee9b73d", #"hash_7105404fe72ff3f", 1, 3, "int", undefined, 0, 0);
+    clientfield::register_clientuimodel("hudItems.squadSpawnOnStatus", #"hash_6f4b11a0bee9b73d", #"squadspawnonstatus", 1, 3, "int", undefined, 0, 0);
     clientfield::register_clientuimodel("hudItems.squadSpawnActive", #"hash_6f4b11a0bee9b73d", #"squadspawnactive", 1, 1, "int", &function_cc03b772, 0, 0);
     clientfield::register_clientuimodel("hudItems.squadSpawnRespawnStatus", #"hash_6f4b11a0bee9b73d", #"hash_6b8b915fbdeaa722", 1, 2, "int", undefined, 0, 0);
     clientfield::register_clientuimodel("hudItems.squadSpawnViewType", #"hash_6f4b11a0bee9b73d", #"hash_2d210ef59c073abd", 1, 1, "int", undefined, 0, 0);

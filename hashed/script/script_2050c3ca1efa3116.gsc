@@ -63,7 +63,7 @@ function function_be14ecd2() {
 // Checksum 0xf5f28192, Offset: 0x420
 // Size: 0xb8
 function function_c5cbd3bf(trap, var_7c56394 = 0) {
-    hazard = namespace_ec06fe4a::function_e22ae9b3(trap.origin, "zombietron_pungi_sticks");
+    hazard = namespace_ec06fe4a::spawnmodel(trap.origin, "zombietron_pungi_sticks");
     if (isdefined(hazard)) {
         hazard.targetname = "hazard";
         hazard.var_fd5301f9 = "pungi";

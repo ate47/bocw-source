@@ -94,12 +94,12 @@ function function_465aaf09(player, origin) {
     }
     var_d98803e1 = namespace_ec06fe4a::function_65ee50ba(origin);
     origin = (origin[0], origin[1], var_d98803e1[2]);
-    var_c95d22c = namespace_ec06fe4a::function_e22ae9b3(origin + vectorscale((0, 0, 1), 12), "zombietron_arcademachine", player.angles + vectorscale((0, 1, 0), 180), "zombietron_arcademachine");
+    var_c95d22c = namespace_ec06fe4a::spawnmodel(origin + vectorscale((0, 0, 1), 12), "zombietron_arcademachine", player.angles + vectorscale((0, 1, 0), 180), "zombietron_arcademachine");
     if (!isdefined(var_c95d22c)) {
         return;
     }
     var_c95d22c endon(#"death");
-    var_c95d22c.org = namespace_ec06fe4a::function_e22ae9b3(origin + vectorscale((0, 0, 1), 12), "tag_origin", (0, 0, 0), "zombietron_arcademachine_org");
+    var_c95d22c.org = namespace_ec06fe4a::spawnmodel(origin + vectorscale((0, 0, 1), 12), "tag_origin", (0, 0, 0), "zombietron_arcademachine_org");
     if (!isdefined(var_c95d22c.org)) {
         var_c95d22c delete();
         return;

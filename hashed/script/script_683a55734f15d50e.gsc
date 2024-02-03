@@ -154,12 +154,12 @@ function function_cd388232(origin, angles, var_1360e692, radius, context) {
         assert(isdefined(def), "extraLife");
     #/
     namespace_1e25ad94::function_f5f0c0f8("Spawning Loot (" + def.modelname + ") at " + origin);
-    var_a1f88ae1 = namespace_ec06fe4a::function_e22ae9b3(origin, def.modelname);
+    var_a1f88ae1 = namespace_ec06fe4a::spawnmodel(origin, def.modelname);
     if (!isdefined(var_a1f88ae1)) {
         return;
     }
-    var_9d93653e = {#var_e254c3ed:def.var_e254c3ed, #var_cbff4088:def.var_cbff4088, #context:context, #radius:radius, #var_8cbdb71:def.name, #locked:def.locked, #data:def.data, #var_9673febe:def.type, #var_d6118311:def.var_d6118311, #script_noteworthy:"world_loot", #targetname:namespace_ec06fe4a::function_3390402b(), #origin:origin, #angles:angles, #modelname:def.modelname};
-    var_a1f88ae1 function_60eeb02c(var_9d93653e);
+    initinfo = {#var_e254c3ed:def.var_e254c3ed, #var_cbff4088:def.var_cbff4088, #context:context, #radius:radius, #var_8cbdb71:def.name, #locked:def.locked, #data:def.data, #var_9673febe:def.type, #var_d6118311:def.var_d6118311, #script_noteworthy:"world_loot", #targetname:namespace_ec06fe4a::function_3390402b(), #origin:origin, #angles:angles, #modelname:def.modelname};
+    var_a1f88ae1 function_60eeb02c(initinfo);
     level.doa.var_b8ef1466[level.doa.var_b8ef1466.size] = var_a1f88ae1.var_3f97a9a6;
     return var_a1f88ae1;
 }

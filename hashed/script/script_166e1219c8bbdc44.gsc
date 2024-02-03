@@ -859,13 +859,13 @@ function function_aaa79dd8(localclientnum, newval) {
             waitframe(1);
         }
     } else {
-        var_88389b8f = self getcampos();
-        target_location = (isdefined(var_88389b8f) ? var_88389b8f : self.origin) + 1000 * anglestoforward(self getplayerangles());
+        cam_pos = self getcampos();
+        target_location = (isdefined(cam_pos) ? cam_pos : self.origin) + 1000 * anglestoforward(self getplayerangles());
         self.var_f28be0bb = util::spawn_model(localclientnum, "tag_origin", target_location);
         self.var_59e057ab = level beam::function_cfb2f62a(localclientnum, self, "tag_flash", self.var_f28be0bb, "tag_origin", str_beam);
         while (isdefined(self.var_f28be0bb)) {
-            var_88389b8f = self getcampos();
-            target_location = (isdefined(var_88389b8f) ? var_88389b8f : self.origin) + 1000 * anglestoforward(self getplayerangles());
+            cam_pos = self getcampos();
+            target_location = (isdefined(cam_pos) ? cam_pos : self.origin) + 1000 * anglestoforward(self getplayerangles());
             self.var_f28be0bb.origin = target_location;
             waitframe(1);
         }

@@ -272,7 +272,7 @@ function function_a68304b6(inflictor, attacker, *damage, *flags, meansofdeath, w
 // Size: 0xc4
 function private function_9b6145a(params) {
     if (function_39aea6b8(params.weapon.name) && isplayer(params.eattacker) && self.var_6f84b820 === #"normal" && isvec(self.var_6d683e5a)) {
-        self namespace_cc411409::function_706a56ae(self.var_6d683e5a, 2);
+        self namespace_cc411409::ragdoll_launch(self.var_6d683e5a, 2);
         self thread function_3fb4ce3b();
     }
 }

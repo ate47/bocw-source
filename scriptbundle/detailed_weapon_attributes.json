@@ -4,7 +4,7 @@
             "var_49ca763b": "#hash_59f8ad8c56d63fb5",
             "var_6b12a72c": "#hash_59f8ad8c56d63fb5",
             "var_c2ba79d6": "#hash_59f8ad8c56d63fb5",
-            "var_c37814a2": "#hash_13b9dc1f0c558dc2",
+            "property": "#hash_13b9dc1f0c558dc2",
             "var_31d8e93f": "#hash_515e7fd9eb1452a0"
         },
         {
@@ -12,28 +12,28 @@
             "var_ea916885": 1,
             "var_6b12a72c": "#hash_58e33749ce2dfb4c",
             "var_c2ba79d6": "#hash_58e33749ce2dfb4c",
-            "var_c37814a2": "#reloadtime",
+            "property": "#reloadtime",
             "var_31d8e93f": "#hash_3edf6ead8551a3ef"
         },
         {
             "var_49ca763b": "#hash_20aab9e89974cdf6",
             "var_6b12a72c": "#hash_20aab9e89974cdf6",
             "var_c2ba79d6": "#hash_20aab9e89974cdf6",
-            "var_c37814a2": "#startammo",
+            "property": "#startammo",
             "var_31d8e93f": "#hash_515e7fd9eb1452a0"
         },
         {
             "var_49ca763b": "#hash_2af9f1e47e9e7b6e",
             "var_6b12a72c": "#hash_2af9f1e47e9e7b6e",
             "var_c2ba79d6": "#hash_2af9f1e47e9e7b6e",
-            "var_c37814a2": "#maxammo",
+            "property": "#maxammo",
             "var_31d8e93f": "#hash_515e7fd9eb1452a0"
         },
         {
             "var_49ca763b": "#hash_742457cd434135a6",
             "var_6b12a72c": "#hash_39a6d691b437a3e1",
             "var_c2ba79d6": "#hash_4807da3ffd506c92",
-            "var_c37814a2": "#hash_5754cc96dbcde98b",
+            "property": "#hash_5754cc96dbcde98b",
             "isfloat": 1,
             "var_31d8e93f": "#hash_7278ed7e7d483dd5"
         },
@@ -42,7 +42,7 @@
             "var_ea916885": 1,
             "var_6b12a72c": "#hash_6f3cbba0a19b3f8c",
             "var_c2ba79d6": "#hash_6e7bac85a018d69d",
-            "var_c37814a2": "#hash_9db1f97fc0da8a3",
+            "property": "#hash_9db1f97fc0da8a3",
             "isfloat": 1,
             "var_31d8e93f": "#hash_3edf6ead8551a3ef"
         }
@@ -52,7 +52,7 @@
             "var_49ca763b": "#hash_2ee3a7fa073e9a7c",
             "var_6b12a72c": "#hash_2ee3a7fa073e9a7c",
             "var_c2ba79d6": "#hash_2ee3a7fa073e9a7c",
-            "var_c37814a2": "#movespeed",
+            "property": "#movespeed",
             "isfloat": 1,
             "var_31d8e93f": "#hash_6c70c2e99a84ea75"
         },
@@ -60,7 +60,7 @@
             "var_49ca763b": "#hash_5b6ef33d3dbbdbf",
             "var_6b12a72c": "#hash_5b6ef33d3dbbdbf",
             "var_c2ba79d6": "#hash_5b6ef33d3dbbdbf",
-            "var_c37814a2": "#hash_754c167fd4b41d90",
+            "property": "#hash_754c167fd4b41d90",
             "isfloat": 1,
             "var_31d8e93f": "#hash_6c70c2e99a84ea75"
         },
@@ -68,7 +68,7 @@
             "var_49ca763b": "#hash_367fabd3cc811d94",
             "var_6b12a72c": "#hash_367fabd3cc811d94",
             "var_c2ba79d6": "#hash_367fabd3cc811d94",
-            "var_c37814a2": "#hash_294582346571d852",
+            "property": "#hash_294582346571d852",
             "isfloat": 1,
             "var_31d8e93f": "#hash_6c70c2e99a84ea75"
         },
@@ -77,14 +77,14 @@
             "var_ea916885": 1,
             "var_6b12a72c": "#hash_6ce964d1da15922a",
             "var_c2ba79d6": "#hash_6ce964d1da15922a",
-            "var_c37814a2": "#sprintout",
+            "property": "#sprintout",
             "var_31d8e93f": "#hash_4bb933eee1c0c112"
         },
         {
             "var_49ca763b": "#hash_44d51b8455b1b3ce",
             "var_6b12a72c": "#hash_44d51b8455b1b3ce",
             "var_c2ba79d6": "#hash_44d51b8455b1b3ce",
-            "var_c37814a2": "#hash_36a8be73aad66222",
+            "property": "#hash_36a8be73aad66222",
             "isfloat": 1,
             "var_31d8e93f": "#hash_6c70c2e99a84ea75"
         },
@@ -93,7 +93,7 @@
             "var_ea916885": 1,
             "var_6b12a72c": "#hash_37c4b5cdbbf1f7d2",
             "var_c2ba79d6": "#hash_37c4b5cdbbf1f7d2",
-            "var_c37814a2": "#hash_1acced3c8ddc163d",
+            "property": "#hash_1acced3c8ddc163d",
             "isfloat": 1,
             "var_31d8e93f": "#hash_4bb933eee1c0c112"
         }
@@ -103,14 +103,14 @@
             "var_49ca763b": "#hash_2b2abfc38fa18778",
             "var_6b12a72c": "#hash_2b2abfc38fa18778",
             "var_c2ba79d6": "#hash_2b2abfc38fa18778",
-            "var_c37814a2": "#damage",
+            "property": "#damage",
             "var_31d8e93f": "#hash_515e7fd9eb1452a0"
         },
         {
             "var_49ca763b": "#hash_67f1093386c8dbe3",
             "var_6b12a72c": "#hash_67f1093386c8dbe3",
             "var_c2ba79d6": "#hash_67f1093386c8dbe3",
-            "var_c37814a2": "#hash_57196866126b35b2",
+            "property": "#hash_57196866126b35b2",
             "isfloat": 1,
             "var_31d8e93f": "#hash_7278ed7e7d483dd5"
         },
@@ -118,14 +118,14 @@
             "var_49ca763b": "#hash_7ffef4f466cca1f8",
             "var_6b12a72c": "#hash_7ffef4f466cca1f8",
             "var_c2ba79d6": "#hash_7ffef4f466cca1f8",
-            "var_c37814a2": "#hash_6b56f36e469d696b",
+            "property": "#firerate",
             "var_31d8e93f": "#hash_6a8252e950ec9a2f"
         },
         {
             "var_49ca763b": "#hash_14f5ddd8e52c8266",
             "var_6b12a72c": "#hash_14f5ddd8e52c8266",
             "var_c2ba79d6": "#hash_14f5ddd8e52c8266",
-            "var_c37814a2": "#hash_c6e45e0cbe8db07",
+            "property": "#hash_c6e45e0cbe8db07",
             "isfloat": 1,
             "var_31d8e93f": "#hash_e114085a877f52f"
         },
@@ -133,7 +133,7 @@
             "var_49ca763b": "#hash_3e65ae82c3e2659",
             "var_6b12a72c": "#hash_3ea4adcd9367d61d",
             "var_c2ba79d6": "#hash_3e65ae82c3e2659",
-            "var_c37814a2": "#hash_3c2d77efaf43909e",
+            "property": "#hash_3c2d77efaf43909e",
             "isfloat": 1,
             "var_31d8e93f": "#hash_515e7fd9eb1452a0"
         },
@@ -142,7 +142,7 @@
             "var_ea916885": 1,
             "var_6b12a72c": "#hash_158e8551fc7cd5a8",
             "var_c2ba79d6": "#hash_158e8551fc7cd5a8",
-            "var_c37814a2": "#hash_21b9bf616085c7de",
+            "property": "#hash_21b9bf616085c7de",
             "var_31d8e93f": "#hash_4bb933eee1c0c112"
         }
     ],
@@ -151,21 +151,21 @@
             "var_49ca763b": "#hash_4d8c0dfa937857f8",
             "var_6b12a72c": "#hash_4d8c0dfa937857f8",
             "var_c2ba79d6": "#hash_4d8c0dfa937857f8",
-            "var_c37814a2": "#hash_57dd5a7d56ec705b",
+            "property": "#hash_57dd5a7d56ec705b",
             "var_31d8e93f": "#hash_515e7fd9eb1452a0"
         },
         {
             "var_49ca763b": "#hash_f00348048033a2e",
             "var_6b12a72c": "#hash_f00348048033a2e",
             "var_c2ba79d6": "#hash_f00348048033a2e",
-            "var_c37814a2": "#hash_7a08c28eb84b018d",
+            "property": "#hash_7a08c28eb84b018d",
             "var_31d8e93f": "#hash_515e7fd9eb1452a0"
         },
         {
             "var_49ca763b": "#hash_7f63aea204757bc1",
             "var_6b12a72c": "#hash_7f63aea204757bc1",
             "var_c2ba79d6": "#hash_7f63aea204757bc1",
-            "var_c37814a2": "#hash_4ea008185b46237f",
+            "property": "#hash_4ea008185b46237f",
             "isfloat": 1,
             "var_31d8e93f": "#hash_515e7fd9eb1452a0"
         },
@@ -173,7 +173,7 @@
             "var_49ca763b": "#hash_6e546ad2bb58c449",
             "var_6b12a72c": "#hash_6e546ad2bb58c449",
             "var_c2ba79d6": "#hash_6e546ad2bb58c449",
-            "var_c37814a2": "#hash_2c4a603a4c06755a",
+            "property": "#hash_2c4a603a4c06755a",
             "isfloat": 1,
             "var_31d8e93f": "#hash_515e7fd9eb1452a0"
         },
@@ -181,7 +181,7 @@
             "var_49ca763b": "#hash_4fd6ce6f69974fb6",
             "var_6b12a72c": "#hash_4fd6ce6f69974fb6",
             "var_c2ba79d6": "#hash_4fd6ce6f69974fb6",
-            "var_c37814a2": "#hash_1af7c7fed5e3c5ac",
+            "property": "#hash_1af7c7fed5e3c5ac",
             "isfloat": 1,
             "var_31d8e93f": "#hash_515e7fd9eb1452a0"
         }
@@ -192,7 +192,7 @@
             "var_ea916885": 1,
             "var_6b12a72c": "#hash_4e9425414448f382",
             "var_c2ba79d6": "#hash_4e9425414448f382",
-            "var_c37814a2": "#hash_7277b21c0af27669",
+            "property": "#hash_7277b21c0af27669",
             "isfloat": 1,
             "var_31d8e93f": "#hash_730321ca87d03f28"
         },
@@ -201,7 +201,7 @@
             "var_ea916885": 1,
             "var_6b12a72c": "#hash_3a6c966a7e297ef4",
             "var_c2ba79d6": "#hash_3a6c966a7e297ef4",
-            "var_c37814a2": "#hash_670691e92274d533",
+            "property": "#hash_670691e92274d533",
             "isfloat": 1,
             "var_31d8e93f": "#hash_730321ca87d03f28"
         },
@@ -209,7 +209,7 @@
             "var_49ca763b": "#hash_5fe7b1cb2fd07044",
             "var_6b12a72c": "#hash_5fe7b1cb2fd07044",
             "var_c2ba79d6": "#hash_5fe7b1cb2fd07044",
-            "var_c37814a2": "#hash_45d6d09c4169d75f",
+            "property": "#hash_45d6d09c4169d75f",
             "var_31d8e93f": "#hash_71e72c7359e8532f"
         },
         {
@@ -217,7 +217,7 @@
             "var_ea916885": 1,
             "var_6b12a72c": "#hash_797b1ec139aaed4c",
             "var_c2ba79d6": "#hash_797b1ec139aaed4c",
-            "var_c37814a2": "#hash_78b7b96d089c555f",
+            "property": "#hash_78b7b96d089c555f",
             "isfloat": 1,
             "var_31d8e93f": "#hash_1d6d41a49dd75467"
         },
@@ -226,7 +226,7 @@
             "var_ea916885": 1,
             "var_6b12a72c": "#hash_4e4b81bc9c6243ee",
             "var_c2ba79d6": "#hash_4e4b81bc9c6243ee",
-            "var_c37814a2": "#flinch",
+            "property": "#flinch",
             "isfloat": 1,
             "var_31d8e93f": "#hash_7278ea7e7d4838bc"
         },
@@ -235,7 +235,7 @@
             "var_ea916885": 1,
             "var_6b12a72c": "#hash_84cdf2ac0503f00",
             "var_c2ba79d6": "#hash_84cdf2ac0503f00",
-            "var_c37814a2": "#hash_45bb5f160ae71a69",
+            "property": "#hash_45bb5f160ae71a69",
             "isfloat": 1,
             "var_31d8e93f": "#hash_321f82362f65e6ed"
         }

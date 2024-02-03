@@ -45,10 +45,10 @@ function private function_538c9c9b(params) {
         /#
             assert(var_c4b99a18.size == 2);
         #/
-        var_e662d59 = var_c4b99a18[0];
+        notetype = var_c4b99a18[0];
         var_ae85e32 = var_c4b99a18[1];
         player = getplayers()[0];
-        player thread function_32402e29(var_e662d59, var_ae85e32);
+        player thread function_32402e29(notetype, var_ae85e32);
     #/
 }
 
@@ -56,7 +56,7 @@ function private function_538c9c9b(params) {
 // Params 2, eflags: 0x4
 // Checksum 0x8d358aa7, Offset: 0x2b0
 // Size: 0x14c
-function private function_32402e29(*var_e662d59, *var_ae85e32) {
+function private function_32402e29(*notetype, *var_ae85e32) {
     player = self;
     if (namespace_61e6d095::exists(#"hash_5903f7e85045920f")) {
         /#

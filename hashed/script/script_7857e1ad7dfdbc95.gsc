@@ -134,9 +134,9 @@ function private function_27745f02(entity) {
 // Size: 0x26c
 function private function_b11208a(entity) {
     if (!namespace_250e9486::function_60f6a9e()) {
-        var_2b5ed682 = getaiteamarray("axis");
+        enemylist = getaiteamarray("axis");
         targets = [];
-        foreach (enemy in var_2b5ed682) {
+        foreach (enemy in enemylist) {
             if (is_true(enemy.boss) || !is_true(enemy.var_d55f22cb)) {
                 continue;
             }
@@ -604,7 +604,7 @@ function private function_af85a094(inflictor, attacker, damage, idflags, meansof
         attacker util::show_hit_marker(!isalive(self));
     }
     if (self.health <= damage) {
-        org = namespace_ec06fe4a::function_e22ae9b3(self.origin, "tag_origin", self.angles, "skeleton_org");
+        org = namespace_ec06fe4a::spawnmodel(self.origin, "tag_origin", self.angles, "skeleton_org");
         if (isdefined(org)) {
             org thread namespace_ec06fe4a::function_52afe5df(1);
             if (is_true(self.boss)) {

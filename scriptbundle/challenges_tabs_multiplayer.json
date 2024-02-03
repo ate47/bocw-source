@@ -3,7 +3,7 @@
         {
             "type": "#none",
             "image": "#hash_2d5763efd0940486",
-            "var_e5119d1b": "#hash_6064348118754b76",
+            "imagelarge": "#hash_6064348118754b76",
             "displayname": "#challenge/career",
             "var_1a50db25": "#hash_5e7e1736f89fd8c5",
             "var_a4f2dd9e": "#none",
@@ -13,7 +13,7 @@
         {
             "type": "#none",
             "image": "#hash_2c92d3847d79b859",
-            "var_e5119d1b": "#hash_4d29cb0d7d1af6fd",
+            "imagelarge": "#hash_4d29cb0d7d1af6fd",
             "displayname": "#hash_a8eacfc7218e6f8",
             "var_1a50db25": "#hash_5e7e1736f89fd8c5",
             "var_a4f2dd9e": "#none",
@@ -23,7 +23,7 @@
         {
             "type": "#hash_798212a6fd4ab166",
             "image": "#hash_1d103f1bce12eb6c",
-            "var_e5119d1b": "#hash_3341babf8fbca1b8",
+            "imagelarge": "#hash_3341babf8fbca1b8",
             "displayname": "#challenge/darkops",
             "var_1a50db25": "#hash_4a8cef046ae0d4c1",
             "var_a4f2dd9e": "#none",

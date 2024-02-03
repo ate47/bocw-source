@@ -388,7 +388,7 @@ function function_52be2241() {
     var_3cc1c35e = struct::get_array("podium_playerpos", "targetname");
     var_dde0062d = var_3cc1c35e[0];
     weapon = getweapon("zombietron_ray_gun");
-    org = namespace_ec06fe4a::function_e22ae9b3(var_9ef53658.origin, "tag_origin", var_9ef53658.angles, "outromamaback org");
+    org = namespace_ec06fe4a::spawnmodel(var_9ef53658.origin, "tag_origin", var_9ef53658.angles, "outromamaback org");
     org thread namespace_ec06fe4a::function_d55f042c(level, "podiumAllDone");
     level waittill(#"hash_7ac935b0f48034c9");
     org namespace_e32bb68::function_3a59ec34("evt_doa_lightning_bolt");
@@ -504,13 +504,13 @@ function function_c6630cce(weapon, org, var_ec941905, killnote) {
     var_ec941905.var_6c5d23f4 namespace_e32bb68::function_3a59ec34("evt_doa_outro_raygun_impact");
     util::wait_network_frame();
     var_ec941905.var_6c5d23f4 hide();
-    chicken = namespace_ec06fe4a::function_e22ae9b3(var_ec941905.origin, "zombietron_chicken", var_ec941905.angles, "chickenBlast chicken");
+    chicken = namespace_ec06fe4a::spawnmodel(var_ec941905.origin, "zombietron_chicken", var_ec941905.angles, "chickenBlast chicken");
     var_ec941905.chicken = chicken;
     chicken.angles = chicken.angles + (0, randomintrange(-90, 90), 0);
     chicken thread namespace_ec06fe4a::function_d55f042c(level, "podiumAllDone");
     chicken setscale(3);
     chicken useanimtree("generic");
-    var_bef82893 = "a_chicken_idle_a";
+    curanim = "a_chicken_idle_a";
     chicken namespace_83eb6304::function_3ecfde67("chicken_explode");
     chicken namespace_83eb6304::function_3ecfde67(glow);
     chicken endon(#"death");
@@ -523,18 +523,18 @@ function function_c6630cce(weapon, org, var_ec941905, killnote) {
             chicken thread namespace_6e90e490::function_47e11416(48, 2);
         }
         chicken.origin = var_ec941905.origin;
-        animlength = getanimlength(var_bef82893);
-        chicken thread animation::play(var_bef82893);
+        animlength = getanimlength(curanim);
+        chicken thread animation::play(curanim);
         wait(animlength);
         switch (randomint(3)) {
         case 0:
-            var_bef82893 = "a_chicken_idle_peck";
+            curanim = "a_chicken_idle_peck";
             break;
         case 1:
-            var_bef82893 = "a_chicken_idle_a";
+            curanim = "a_chicken_idle_a";
             break;
         case 2:
-            var_bef82893 = "a_chicken_idle";
+            curanim = "a_chicken_idle";
             break;
         }
     }
@@ -576,7 +576,7 @@ function function_258d537d() {
         /#
             assert(!isdefined(prop.scriptmodel));
         #/
-        prop.scriptmodel = namespace_ec06fe4a::function_e22ae9b3(prop.origin, prop.model, prop.angles, "podium prop");
+        prop.scriptmodel = namespace_ec06fe4a::spawnmodel(prop.origin, prop.model, prop.angles, "podium prop");
         if (isdefined(prop.script_noteworthy)) {
             prop.scriptmodel setscale(float(prop.script_noteworthy));
         }
@@ -585,7 +585,7 @@ function function_258d537d() {
         /#
             assert(!isdefined(guy.scriptmodel));
         #/
-        guy.scriptmodel = namespace_ec06fe4a::function_e22ae9b3(guy.origin, guy.model, guy.angles, "podium crowd");
+        guy.scriptmodel = namespace_ec06fe4a::spawnmodel(guy.origin, guy.model, guy.angles, "podium crowd");
         guy.scriptmodel thread function_13281cbd(guy.script_int);
     }
     players = function_29309b72();

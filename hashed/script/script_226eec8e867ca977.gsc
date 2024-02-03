@@ -70,7 +70,7 @@ function function_81853592() {
 // Checksum 0x87153a42, Offset: 0x558
 // Size: 0x210
 function function_ecfc6c75(trap, var_7c56394 = 0) {
-    hazard = namespace_ec06fe4a::function_e22ae9b3(trap.origin, "p8_fxanim_mp_zmuseum_flogger_trap_mod");
+    hazard = namespace_ec06fe4a::spawnmodel(trap.origin, "p8_fxanim_mp_zmuseum_flogger_trap_mod");
     if (isdefined(hazard)) {
         hazard.targetname = "hazard";
         hazard.var_fd5301f9 = "flogger";
@@ -81,22 +81,22 @@ function function_ecfc6c75(trap, var_7c56394 = 0) {
     trap.var_7c56394 = var_7c56394;
     trap.trigger = [];
     trap.spinrate = 1;
-    trap.var_d736690e = 3;
-    trap.var_4180202d = 5;
-    trap.var_c27181d9 = 3;
+    trap.minwait = 3;
+    trap.maxwait = 5;
+    trap.maxloops = 3;
     if (isdefined(trap.script_parameters)) {
         args = strtok(trap.script_parameters, ";");
         if (args.size > 0) {
             trap.spinrate = float(args[0]);
         }
         if (args.size > 1) {
-            trap.var_d736690e = float(args[1]);
+            trap.minwait = float(args[1]);
         }
         if (args.size > 2) {
-            trap.var_4180202d = float(args[2]);
+            trap.maxwait = float(args[2]);
         }
         if (args.size > 3) {
-            trap.var_c27181d9 = float(args[3]);
+            trap.maxloops = float(args[3]);
         }
     }
     trap.spinrate = 1;
@@ -254,7 +254,7 @@ function function_80eed528() {
         trigger namespace_268747c0::function_54f185a();
     }
     self.trigger = [];
-    wait(randomfloatrange(self.var_d736690e, self.var_4180202d));
+    wait(randomfloatrange(self.minwait, self.maxwait));
     self thread function_80eed528();
 }
 

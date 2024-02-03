@@ -1,0 +1,56 @@
+                                  
+                                      
+                             
+
+              
+set cg_hudMapPlayerHeight						20
+set cg_hudMapPlayerWidth						20
+set waypointIconHeight							36
+set waypointIconWidth							36
+set waypointOffscreenPointerDistance			20
+reset cg_drawCrosshair
+reset cg_drawCrosshairNames
+
+     
+set cg_headIconMinScreenRadius					0.015
+
+                           
+
+           
+set scr_disable_air_death_ragdoll				0
+set com_pauseSupported							0
+
+             
+set scr_hardpoint_allowdogs						1
+
+        
+set scr_team_teamkillerplaylistbanquantum 		0
+set scr_team_teamkillerplaylistbanpenalty 		0
+
+     
+set ui_hud_hardcore								0
+
+                                                                       
+                            
+                              
+
+set scr_min_prestige 0
+
+       
+set bot_supported	1
+
+                      
+set scr_showperksonspawn 1
+
+              
+set com_maxclients	4
+set party_maxplayers	4
+
+       
+set bot_supported	0
+
+set com_pauseSupported	1
+
+                                                                       
+                            
+                              

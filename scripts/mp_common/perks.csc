@@ -509,8 +509,8 @@ function function_365c39ef(awareness_action, bundle) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0xd942577e, Offset: 0x1d78
 // Size: 0x120
-function function_255fe01d(var_bf36ab55, var_56a8d7eb, playerforward, playerright) {
-    vector = var_bf36ab55 - var_56a8d7eb;
+function function_255fe01d(var_bf36ab55, localplayerorigin, playerforward, playerright) {
+    vector = var_bf36ab55 - localplayerorigin;
     vectorflat = vectornormalize((vector[0], vector[1], 0));
     var_451ea257 = vectordot(vectorflat, playerforward);
     var_2f93b65 = var_451ea257 > 0;
@@ -518,16 +518,16 @@ function function_255fe01d(var_bf36ab55, var_56a8d7eb, playerforward, playerrigh
     var_b1d7b2f5 = var_8add8d51 > 0;
     if (var_2f93b65) {
         if (var_b1d7b2f5) {
-            var_394f7b38 = 0;
+            quadindex = 0;
         } else {
-            var_394f7b38 = 3;
+            quadindex = 3;
         }
     } else if (var_b1d7b2f5) {
-        var_394f7b38 = 1;
+        quadindex = 1;
     } else {
-        var_394f7b38 = 2;
+        quadindex = 2;
     }
-    return var_394f7b38;
+    return quadindex;
 }
 
 // Namespace perks/perks

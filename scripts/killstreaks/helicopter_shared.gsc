@@ -477,26 +477,26 @@ function function_9d99f54c(dest, var_3f25aa93, var_aea79ccc = 1) {
         return undefined;
     }
     if (var_aea79ccc) {
-        var_a219ed08 = -1;
+        best_dot = -1;
         var_bd6b66d6 = undefined;
         foreach (node in level.heli_startnodes) {
             if (!isdefined(airsupport::crossesnoflyzone(node.origin, dest))) {
                 var_d9273cbc = vectornormalize(node.origin - dest);
                 dot = var_d9273cbc[0] * var_3f25aa93[0] + var_d9273cbc[1] * var_3f25aa93[1];
-                if (dot > var_a219ed08) {
-                    var_a219ed08 = dot;
+                if (dot > best_dot) {
+                    best_dot = dot;
                     var_bd6b66d6 = node;
                 }
             }
         }
     } else {
-        var_a219ed08 = -1;
+        best_dot = -1;
         var_bd6b66d6 = undefined;
         foreach (node in level.heli_startnodes) {
             var_d9273cbc = vectornormalize(node.origin - dest);
             dot = var_d9273cbc[0] * var_3f25aa93[0] + var_d9273cbc[1] * var_3f25aa93[1];
-            if (dot > var_a219ed08) {
-                var_a219ed08 = dot;
+            if (dot > best_dot) {
+                best_dot = dot;
                 var_bd6b66d6 = node;
             }
         }

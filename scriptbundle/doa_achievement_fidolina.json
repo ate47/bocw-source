@@ -1,7 +1,7 @@
 {
-    "var_bc83573f": [
+    "filters": [
         {
-            "var_bc83573f": "#zombie"
+            "filters": "#zombie"
         }
     ],
     "description": "#hash_635274e43e90aef7",

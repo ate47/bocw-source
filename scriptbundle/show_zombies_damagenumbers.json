@@ -20,7 +20,7 @@
     "name": "show_zombies_damagenumbers",
     "displayname": "#hash_2c59c582091dbbc4",
     "var_500458ac": 10,
-    "var_926d1be9": 0.01,
+    "decimalplace": 0.01,
     "var_66faec87": 2,
     "statname": "zm_damage_numbers",
     "var_5d7c916": 1,

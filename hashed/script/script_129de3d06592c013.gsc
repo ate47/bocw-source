@@ -326,7 +326,7 @@ function function_f38fc2a8(data) {
         bundle = var_c394e130;
     }
     range = bundle.var_151e2c9b + 30;
-    var_dcea0aa7 = function_a3f6cdac(range);
+    rangesq = function_a3f6cdac(range);
     var_d6ff0766 = 0;
     if (!isdefined(data.var_a73da413)) {
         data.var_a73da413 = 0;
@@ -378,7 +378,7 @@ function function_f38fc2a8(data) {
             continue;
         }
         distcurrentsq = distance2dsquared(var_a8d3770f, var_48b7953.origin);
-        if (distcurrentsq > var_dcea0aa7) {
+        if (distcurrentsq > rangesq) {
             continue;
         }
         disttovictim = var_a8d3770f - var_48b7953.origin;

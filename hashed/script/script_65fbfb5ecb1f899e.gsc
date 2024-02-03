@@ -275,23 +275,23 @@ function private function_d4923609(var_b3160f0) {
 // Params 3, eflags: 0x6 linked
 // Checksum 0xba0546e6, Offset: 0x1428
 // Size: 0x7c
-function private function_c426caa9(var_b3160f0, var_36119b66 = 0.01, var_57c7aaff = 2147483647) {
-    self function_49cdf043(math::clamp(var_b3160f0.var_872a88cd, var_36119b66, var_57c7aaff), 0);
+function private function_c426caa9(var_b3160f0, var_36119b66 = 0.01, max_val = 2147483647) {
+    self function_49cdf043(math::clamp(var_b3160f0.var_872a88cd, var_36119b66, max_val), 0);
 }
 
 // Namespace namespace_ca99987f/namespace_ca99987f
 // Params 3, eflags: 0x6 linked
 // Checksum 0x35d4b347, Offset: 0x14b0
 // Size: 0x7c
-function private function_dd427b21(var_b3160f0, var_36119b66 = 0.01, var_57c7aaff = 2147483647) {
-    self function_d7be9a9f(math::clamp(var_b3160f0.var_872a88cd, var_36119b66, var_57c7aaff), 0);
+function private function_dd427b21(var_b3160f0, var_36119b66 = 0.01, max_val = 2147483647) {
+    self function_d7be9a9f(math::clamp(var_b3160f0.var_872a88cd, var_36119b66, max_val), 0);
 }
 
 // Namespace namespace_ca99987f/namespace_ca99987f
 // Params 3, eflags: 0x6 linked
 // Checksum 0xbd083057, Offset: 0x1538
 // Size: 0x7c
-function private function_9f966a98(var_b3160f0, var_36119b66 = 0.01, var_57c7aaff = 2147483647) {
-    self function_1816c600(math::clamp(var_b3160f0.var_872a88cd, var_36119b66, var_57c7aaff), 0);
+function private function_9f966a98(var_b3160f0, var_36119b66 = 0.01, max_val = 2147483647) {
+    self function_1816c600(math::clamp(var_b3160f0.var_872a88cd, var_36119b66, max_val), 0);
 }
 

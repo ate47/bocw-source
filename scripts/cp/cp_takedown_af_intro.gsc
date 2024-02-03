@@ -39,7 +39,7 @@
 // Params 1, eflags: 0x2 linked
 // Checksum 0x4e4b5fa3, Offset: 0x348
 // Size: 0x9c
-function function_f9f06983(*var_d3440450) {
+function starting(*var_d3440450) {
     player = getplayers()[0];
     /#
         if (!isdefined(player)) {
@@ -172,7 +172,7 @@ function function_cc5aa221() {
 // Params 4, eflags: 0x2 linked
 // Checksum 0xfc6b5c22, Offset: 0xc30
 // Size: 0x64
-function cleanup(*name, *var_f9f06983, *direct, *player) {
+function cleanup(*name, *starting, *direct, *player) {
     level clientfield::set("crash_models", 1);
     level clientfield::set("crash_models", 0);
 }

@@ -254,10 +254,10 @@ function private function_21cfd4a(index, position, angles, var_71a7bf18) {
     var_f4b807cb = item_world::function_2e3efdda(position, undefined, undefined, checkdistance, undefined, 1);
     randomindex = randomintrange(index, maxindex + 1);
     var_5625a073 = undefined;
-    for (var_b14af3be = index; var_b14af3be <= maxindex; var_b14af3be++) {
-        var_135ae3f7 = namespace_b637a3ed::function_350c0e2b(var_b14af3be, position, angles, var_71a7bf18);
+    for (dropindex = index; dropindex <= maxindex; dropindex++) {
+        var_135ae3f7 = namespace_b637a3ed::function_350c0e2b(dropindex, position, angles, var_71a7bf18);
         var_e37d8974 = var_135ae3f7.end_origin;
-        if (var_b14af3be == randomindex) {
+        if (dropindex == randomindex) {
             var_5625a073 = var_135ae3f7;
         }
         var_d154a9ba = 0;
@@ -274,11 +274,11 @@ function private function_21cfd4a(index, position, angles, var_71a7bf18) {
             break;
         }
     }
-    if (var_b14af3be > maxindex) {
-        var_b14af3be = randomindex;
+    if (dropindex > maxindex) {
+        dropindex = randomindex;
         var_135ae3f7 = var_5625a073;
     }
-    var_135ae3f7.var_9c2afd24 = var_b14af3be;
+    var_135ae3f7.var_9c2afd24 = dropindex;
     return var_135ae3f7;
 }
 
@@ -1002,8 +1002,8 @@ function function_30f75868(index = 0, weapon = undefined, count = 0, amount = 0,
         var_2e8786e2 = 250;
     }
     if (level.var_18dc9d17.size > var_2e8786e2) {
-        for (var_ab45d001 = 0; var_ab45d001 < level.var_18dc9d17.size; var_ab45d001++) {
-            var_53b9fe70 = level.var_18dc9d17[var_ab45d001];
+        for (deleteindex = 0; deleteindex < level.var_18dc9d17.size; deleteindex++) {
+            var_53b9fe70 = level.var_18dc9d17[deleteindex];
             if (isdefined(var_53b9fe70) && isdefined(var_53b9fe70.var_a6762160) && is_true(var_53b9fe70.var_a6762160.var_4cd830a)) {
                 continue;
             }
@@ -1012,7 +1012,7 @@ function function_30f75868(index = 0, weapon = undefined, count = 0, amount = 0,
             var_53b9fe70 delete();
             break;
         }
-        if (var_ab45d001 >= level.var_18dc9d17.size) {
+        if (deleteindex >= level.var_18dc9d17.size) {
             level.var_18dc9d17[0].hidetime = gettime();
             item_world::function_a54d07e6(level.var_18dc9d17[0]);
             level.var_18dc9d17[0] delete();

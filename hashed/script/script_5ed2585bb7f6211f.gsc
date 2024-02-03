@@ -2186,8 +2186,8 @@ function function_ceb0a340() {
     }
     fieldupgrade = var_12a9e30a.fieldupgrade;
     if (fieldupgrade.networkid != 32767) {
-        var_8886adf6 = item_world_util::get_itemtype(fieldupgrade.var_a6762160);
-        self namespace_1b527536::function_6457e4cd(var_8886adf6, fieldupgrade.count);
+        fieldupgradename = item_world_util::get_itemtype(fieldupgrade.var_a6762160);
+        self namespace_1b527536::function_6457e4cd(fieldupgradename, fieldupgrade.count);
     }
     scorestreak = var_12a9e30a.scorestreak;
     if (scorestreak.networkid != 32767) {

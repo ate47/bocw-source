@@ -71,8 +71,8 @@ function private function_727338d1(var_7d32de2) {
             line(var_38c235fa, var_38c235fa + var_38609e65 * 100, (1, 0, 0));
         }
     #/
-    var_3140b529 = vectorprojection(var_e5b7c28e - var_38c235fa, var_38609e65);
-    if (lengthsquared(var_3140b529) > function_a3f6cdac(40)) {
+    projected = vectorprojection(var_e5b7c28e - var_38c235fa, var_38609e65);
+    if (lengthsquared(projected) > function_a3f6cdac(40)) {
         return;
     }
     trace = bullettrace(var_38c235fa, var_e5b7c28e, 0, vehicle, 1, 1);
@@ -669,8 +669,8 @@ function function_9ffa5fd(var_92eb9b7d, var_6d872cea) {
 function function_60bfc90(player, var_92eb9b7d, var_6d872cea) {
     self endon(#"death");
     player function_a61cb23e(1);
-    var_78efa1b4 = self function_ff1bf59c(var_92eb9b7d, var_6d872cea);
-    wait(var_78efa1b4 * 2);
+    tweentime = self function_ff1bf59c(var_92eb9b7d, var_6d872cea);
+    wait(tweentime * 2);
     if (isdefined(player)) {
         player function_a61cb23e(0);
     }

@@ -84,7 +84,7 @@ function function_3bea16f1(trap, var_7c56394 = 0, origin = trap.origin) {
     if (!namespace_ec06fe4a::function_a8975c67()) {
         return;
     }
-    hazard = namespace_ec06fe4a::function_e22ae9b3(origin, "zombietron_electrical_pole");
+    hazard = namespace_ec06fe4a::spawnmodel(origin, "zombietron_electrical_pole");
     if (isdefined(hazard)) {
         hazard.targetname = "hazard";
         hazard.var_fd5301f9 = "pole";

@@ -42,7 +42,7 @@
 // Params 1, eflags: 0x2 linked
 // Checksum 0xd2e51276, Offset: 0xb20
 // Size: 0x164
-function function_f9f06983(var_d3440450) {
+function starting(var_d3440450) {
     function_a2015343(var_d3440450);
     plane = namespace_b100dd86::function_5431431d();
     namespace_b100dd86::function_c8381339(plane, 0);
@@ -218,9 +218,9 @@ function function_ca9dd78b() {
     level endon(#"hash_1a8ccb31e7a09c0e");
     while (1) {
         level flag::wait_till_clear("perfect_sniper_spot");
-        level.arash snipercam::function_6e29b7f1(1, 1, 2);
+        level.arash snipercam::set_enabled(1, 1, 2);
         level flag::wait_till("perfect_sniper_spot");
-        level.arash snipercam::function_6e29b7f1(0, 1, 2);
+        level.arash snipercam::set_enabled(0, 1, 2);
     }
 }
 
@@ -384,7 +384,7 @@ function function_ef1d8a47() {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x53cc913e, Offset: 0x2788
 // Size: 0xa4
-function cleanup(*name, *var_f9f06983, *direct, *player) {
+function cleanup(*name, *starting, *direct, *player) {
     level flag::set("end_binocs");
     level.var_49a5d2a4 = getvehiclearray("af_chase_veh", "targetname")[0];
     level.var_49a5d2a4 val::set(#"hash_57927fe94524d139", "allowdeath", 0);

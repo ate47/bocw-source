@@ -191,7 +191,7 @@ function function_156560eb(var_cf21a49f, var_aa19ae, var_437c9d8d = 1500, var_f2
     var_5b660261 = undefined;
     var_42c6e7d2 = [];
     if (!isdefined(var_aa19ae)) {
-        var_aa19ae = "default_ambush_list_realm_" + level.var_15d17eb2;
+        var_aa19ae = "default_ambush_list_realm_" + level.realm;
     }
     var_6443acc = namespace_679a22ba::function_77be8a83(var_aa19ae);
     var_11a3ade0 = var_cf21a49f;
@@ -235,8 +235,8 @@ function function_156560eb(var_cf21a49f, var_aa19ae, var_437c9d8d = 1500, var_f2
                             var_42c6e7d2[var_42c6e7d2.size] = ai_spawned;
                             ai_spawned.var_42c6e7d2 = var_42c6e7d2;
                             ai_spawned.var_9602c8b2 = &function_12db74f8;
-                            ai_spawned thread function_1c491c2b(var_6cd49f50, var_4bf95f4c.var_29459a31, var_6443acc);
-                            namespace_679a22ba::function_266ee075(var_4bf95f4c.var_29459a31, var_6443acc);
+                            ai_spawned thread function_1c491c2b(var_6cd49f50, var_4bf95f4c.list_name, var_6443acc);
+                            namespace_679a22ba::function_266ee075(var_4bf95f4c.list_name, var_6443acc);
                             if (str_targetname === "demented_echo_zombie") {
                                 playfxontag(#"hash_7f6d176eb7cc63dc", ai_spawned, "tag_origin");
                             } else if (str_targetname === "black_chest_zombie") {
@@ -385,7 +385,7 @@ function function_39ee3b21(eventstruct, a_spawns) {
     if (!is_true(self.var_83523415) && isplayer(eventstruct.activator) && level flag::get(#"hash_44074059e3987765")) {
         self.var_83523415 = 1;
         self callback::remove_on_trigger(&function_39ee3b21);
-        str_bundle = "default_zombies_realm_" + level.var_15d17eb2;
+        str_bundle = "default_zombies_realm_" + level.realm;
         if ((!isdefined(a_spawns) || !a_spawns.size) && isdefined(self.spawn_struct)) {
             if (isalive(self.vehicle) && self.var_ed5e226b === self.vehicle.origin) {
                 a_spawns = array(self.spawn_struct);

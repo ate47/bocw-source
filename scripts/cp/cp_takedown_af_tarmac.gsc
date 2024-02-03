@@ -26,7 +26,7 @@
 // Params 1, eflags: 0x2 linked
 // Checksum 0x2903a8b8, Offset: 0x518
 // Size: 0x2c4
-function function_f9f06983(var_d3440450) {
+function starting(var_d3440450) {
     namespace_b100dd86::function_5aabc3fb();
     tkdn_af_hill::function_a2015343(var_d3440450);
     plane = namespace_b100dd86::function_5431431d();
@@ -94,7 +94,7 @@ function main(var_d3440450, *var_50cc0d4f) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x94eafaab, Offset: 0xcc0
 // Size: 0x24
-function cleanup(*name, *var_f9f06983, *direct, *player) {
+function cleanup(*name, *starting, *direct, *player) {
     
 }
 

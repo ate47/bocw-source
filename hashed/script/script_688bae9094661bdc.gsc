@@ -150,7 +150,7 @@ function function_3c3f1684(statename) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0xebaa2e63, Offset: 0x860
 // Size: 0x97c
-function function_7f381bc5(var_56a7a731, var_dee4cb7d, var_2107b994) {
+function function_7f381bc5(var_56a7a731, maxthreat, var_2107b994) {
     var_999aef6a = 180;
     var_4d4a8597 = 0.01;
     var_f41a2c65 = 0.05;
@@ -166,9 +166,9 @@ function function_7f381bc5(var_56a7a731, var_dee4cb7d, var_2107b994) {
     #/
     aliases = [2:"ui_stealth_threat_high_lp", 1:"ui_stealth_threat_med_lp", 0:"ui_stealth_threat_low_lp"];
     if (!getdvarint(#"hash_28758912434b7866", 0)) {
-        var_dee4cb7d = 0;
+        maxthreat = 0;
     }
-    if (!isdefined(self.stealth.var_728ac6b1) && var_56a7a731 && var_dee4cb7d > 0) {
+    if (!isdefined(self.stealth.var_728ac6b1) && var_56a7a731 && maxthreat > 0) {
         self.stealth.var_728ac6b1 = [];
         self.stealth.var_1ae70b7f = 0;
         self.stealth.var_9331310 = 0;
@@ -184,23 +184,23 @@ function function_7f381bc5(var_56a7a731, var_dee4cb7d, var_2107b994) {
     }
     /#
         if (var_2107b994) {
-            debug2dtext((32, 492, 0), "<unknown string>" + var_dee4cb7d + "<unknown string>" + var_56a7a731 + "<unknown string>", (1, 1, 1), 1.5);
+            debug2dtext((32, 492, 0), "<unknown string>" + maxthreat + "<unknown string>" + var_56a7a731 + "<unknown string>", (1, 1, 1), 1.5);
         }
     #/
     if (isdefined(self.stealth.var_728ac6b1)) {
         self.stealth.var_9331310 = self.stealth.var_9331310 - self.stealth.var_9331310 * var_c7f21015;
-        self.stealth.var_9331310 = self.stealth.var_9331310 + var_dee4cb7d * var_c7f21015;
+        self.stealth.var_9331310 = self.stealth.var_9331310 + maxthreat * var_c7f21015;
         if (self.stealth.var_9331310 < 0.0001) {
             self.stealth.var_9331310 = 0;
         }
-        var_dee4cb7d = self.stealth.var_9331310;
+        maxthreat = self.stealth.var_9331310;
     }
     while (isdefined(self.stealth.var_728ac6b1)) {
         index = 0;
         var_7fe1c557 = 0;
-        if (var_dee4cb7d > 0) {
-            if (var_dee4cb7d < var_f41a2c65) {
-                var_9afcb603 = math::clamp(var_dee4cb7d, 0, var_f41a2c65);
+        if (maxthreat > 0) {
+            if (maxthreat < var_f41a2c65) {
+                var_9afcb603 = math::clamp(maxthreat, 0, var_f41a2c65);
                 var_4cda4e44 = var_9afcb603 / var_f41a2c65;
                 var_61543340 = 1 - var_4d4a8597;
                 var_e425bbd0 = var_4d4a8597 + var_61543340 * var_4cda4e44;
@@ -223,26 +223,26 @@ function function_7f381bc5(var_56a7a731, var_dee4cb7d, var_2107b994) {
             coef = 1;
             switch (index) {
             case 0:
-                if (var_dee4cb7d < 0.75) {
-                    coef = cos(var_999aef6a * var_dee4cb7d * 0.666);
+                if (maxthreat < 0.75) {
+                    coef = cos(var_999aef6a * maxthreat * 0.666);
                 } else {
                     coef = 0;
                 }
                 break;
             case 1:
-                if (var_dee4cb7d < 0.75) {
-                    coef = sin(var_999aef6a * var_dee4cb7d * 0.666);
-                } else if (var_dee4cb7d < 1) {
-                    coef = sin(var_999aef6a * (1 - var_dee4cb7d) * 2);
+                if (maxthreat < 0.75) {
+                    coef = sin(var_999aef6a * maxthreat * 0.666);
+                } else if (maxthreat < 1) {
+                    coef = sin(var_999aef6a * (1 - maxthreat) * 2);
                 } else {
                     coef = 0;
                 }
                 break;
             case 2:
-                if (var_dee4cb7d < 0.75) {
+                if (maxthreat < 0.75) {
                     coef = 0;
                 } else {
-                    coef = cos(var_999aef6a * (1 - var_dee4cb7d) * 2);
+                    coef = cos(var_999aef6a * (1 - maxthreat) * 2);
                 }
                 break;
             }
@@ -285,7 +285,7 @@ function function_fc882f9f(*var_47983f3e, eventtype, modifier, *delay, *eventstr
         assert(isdefined(force));
     #/
     alias = undefined;
-    var_f3b65be4 = undefined;
+    responses = undefined;
     switch (force) {
     case #"idle":
     case #"idle_alert":

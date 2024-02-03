@@ -588,7 +588,7 @@ function function_e1c90bb4() {
 // Params 4, eflags: 0x2 linked
 // Checksum 0xe1ae7062, Offset: 0x2858
 // Size: 0x13c
-function function_7c23816d(goalpos, stop, var_bb10b9b7 = 1, setgoal = 0) {
+function function_7c23816d(goalpos, stop, usepath = 1, setgoal = 0) {
     if (!isdefined(self) || !isdefined(goalpos)) {
         return;
     }
@@ -603,7 +603,7 @@ function function_7c23816d(goalpos, stop, var_bb10b9b7 = 1, setgoal = 0) {
             sphere(goalpos, self.var_cb55c804, (0, 1, 0), 0.5, 0, 10, 1000);
         }
     #/
-    self function_a57c34b7(goal, stop, var_bb10b9b7);
+    self function_a57c34b7(goal, stop, usepath);
     if (setgoal) {
         self setgoal(goal, stop);
     }
@@ -870,8 +870,8 @@ function function_79c4d29d() {
             nextnode = var_6cfa3712[0];
             if (vectordot(nextnode.origin - self.origin, self getvelocity()) < 0) {
                 var_904ef016 = array::find(loop, currentnode);
-                var_bf5ac4e3 = var_904ef016 < 0 ? var_904ef016 - 1 : loop.size - 1;
-                nextnode = loop[var_bf5ac4e3];
+                nextnodeidx = var_904ef016 < 0 ? var_904ef016 - 1 : loop.size - 1;
+                nextnode = loop[nextnodeidx];
             }
         } else {
             var_76e4c4ab = [];

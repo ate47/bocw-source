@@ -3506,18 +3506,18 @@ function function_52b3c7ca(weapon, item, var_b2e08916, clipsize, var_9839b3b1, v
         if (isdefined(var_b2e08916) && !isdefined(var_6bcacc0c)) {
             weaponstatname = weapon.statname;
             var_c4af33 = function_f62a996b(weaponstatname, var_b2e08916);
-            var_d7e6e192 = var_c4af33.weapon;
-            attachments = var_d7e6e192.attachments;
+            blueprint_weapon = var_c4af33.weapon;
+            attachments = blueprint_weapon.attachments;
             var_e91aba42 = var_c4af33.var_fd90b0bb;
-            rootweapon = var_d7e6e192.rootweapon;
+            rootweapon = blueprint_weapon.rootweapon;
         } else if (isdefined(var_6bcacc0c)) {
             var_ecf677cd = 1;
-            var_d7e6e192 = var_6bcacc0c.weapon;
-            attachments = var_d7e6e192.attachments;
+            blueprint_weapon = var_6bcacc0c.weapon;
+            attachments = blueprint_weapon.attachments;
             weaponoptions = var_6bcacc0c.var_57fe74e5;
             var_e91aba42 = var_6bcacc0c.var_fd90b0bb;
             var_908f65ca = var_6bcacc0c.var_b23a1a88;
-            rootweapon = var_d7e6e192.rootweapon;
+            rootweapon = blueprint_weapon.rootweapon;
         }
         var_a0cc02cf = 0;
         var_96c71057 = 0;
@@ -3596,7 +3596,7 @@ function function_52b3c7ca(weapon, item, var_b2e08916, clipsize, var_9839b3b1, v
                 while (self item_inventory::function_4d426f94(self item_inventory::get_current_weapon())) {
                     waitframe(1);
                 }
-                var_c3317960 = gibserverutils::function_de4d9d(var_d7e6e192, var_e91aba42);
+                var_c3317960 = gibserverutils::function_de4d9d(blueprint_weapon, var_e91aba42);
                 var_a6d31447 = undefined;
                 foreach (inventory_item in self.inventory.items) {
                     if (inventory_item.id === point.id && inventory_item.networkid === point.networkid) {

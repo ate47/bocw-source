@@ -29,7 +29,7 @@
 // Params 1, eflags: 0x2 linked
 // Checksum 0xd4122eae, Offset: 0x2e0
 // Size: 0x19c
-function function_f9f06983(*var_d3440450) {
+function starting(*var_d3440450) {
     namespace_b100dd86::function_5aabc3fb();
     level.af_plane = namespace_b100dd86::function_5431431d();
     namespace_b100dd86::function_c8381339(level.af_plane, 1);
@@ -75,7 +75,7 @@ function main(var_d3440450, *var_50cc0d4f) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x5c5190cd, Offset: 0x668
 // Size: 0x44
-function cleanup(*name, *var_f9f06983, *direct, *player) {
+function cleanup(*name, *starting, *direct, *player) {
     level clientfield::set("crash_models", 0);
 }
 

@@ -23,15 +23,15 @@ function event_handler[ui_menuresponse] codecallback_menuresponse(eventstruct) {
     var_53227942 = self;
     menu = eventstruct.menu;
     response = eventstruct.response;
-    var_8893508d = eventstruct.intpayload;
+    targetclientnum = eventstruct.intpayload;
     if (!isdefined(menu)) {
         menu = "";
     }
     if (!isdefined(response)) {
         response = "";
     }
-    if (!isdefined(var_8893508d)) {
-        var_8893508d = 0;
+    if (!isdefined(targetclientnum)) {
+        targetclientnum = 0;
     }
     if (menu == "Hud_NavigableUI") {
         if (self.sessionstate === "playing") {

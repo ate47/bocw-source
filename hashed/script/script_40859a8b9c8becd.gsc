@@ -15,7 +15,7 @@ function function_93c5a24() {
         if (!is_true(getgametypesetting(#"hash_34c2c463f81af043"))) {
             return;
         }
-        if (randomintrangeinclusive(1, 100) > level.var_15d17eb2 * 3) {
+        if (randomintrangeinclusive(1, 100) > level.realm * 3) {
             return;
         }
     }

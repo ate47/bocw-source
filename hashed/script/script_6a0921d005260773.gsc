@@ -337,7 +337,7 @@ function function_edf9c875(note, ent) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x5d5f3d38, Offset: 0xe50
 // Size: 0xb4
-function function_23de7dc6() {
+function getentitypose() {
     /#
         assert(isactor(self) || isplayer(self), "<unknown string>");
     #/
@@ -356,7 +356,7 @@ function function_650c0f8f() {
     /#
         assert(isactor(self) || isplayer(self), "<unknown string>");
     #/
-    stance = self function_23de7dc6();
+    stance = self getentitypose();
     if (stance == "stand") {
         return "stn";
     }

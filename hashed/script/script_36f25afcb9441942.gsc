@@ -48,8 +48,8 @@ function init() {
 // Checksum 0x665eb532, Offset: 0x6a8
 // Size: 0x5a
 function function_4e886036(room) {
-    if (isdefined(level.doa.var_e4d7094b[room.var_a1152600.rg_room])) {
-        return level.doa.var_e4d7094b[room.var_a1152600.rg_room];
+    if (isdefined(level.doa.var_e4d7094b[room.template.rg_room])) {
+        return level.doa.var_e4d7094b[room.template.rg_room];
     }
 }
 
@@ -57,18 +57,18 @@ function function_4e886036(room) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x9048bb4f, Offset: 0x710
 // Size: 0x134
-function function_4f9f7687(var_a3cec0fb, iconname) {
-    if (!isinarray(level.doa.var_830f8412, var_a3cec0fb)) {
+function function_4f9f7687(roomname, iconname) {
+    if (!isinarray(level.doa.var_830f8412, roomname)) {
         if (!isdefined(level.doa.var_830f8412)) {
             level.doa.var_830f8412 = [];
         } else if (!isarray(level.doa.var_830f8412)) {
             level.doa.var_830f8412 = array(level.doa.var_830f8412);
         }
-        level.doa.var_830f8412[level.doa.var_830f8412.size] = var_a3cec0fb;
-        level.doa.var_4cdaff39[var_a3cec0fb] = 0;
-        level.doa.var_e4d7094b[var_a3cec0fb] = iconname;
+        level.doa.var_830f8412[level.doa.var_830f8412.size] = roomname;
+        level.doa.var_4cdaff39[roomname] = 0;
+        level.doa.var_e4d7094b[roomname] = iconname;
     }
-    namespace_f27a9d0d::function_2ff463e2(var_a3cec0fb);
+    namespace_f27a9d0d::function_2ff463e2(roomname);
 }
 
 // Namespace namespace_c004634e/namespace_c004634e
@@ -122,13 +122,13 @@ function function_1648f5a1(name = "") {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x9fa43435, Offset: 0xcd8
 // Size: 0xcd0
-function function_1a3f9fe1(var_27253eb5) {
+function function_1a3f9fe1(expanded) {
     level.var_e1daf6fe[0] = [];
     level.var_e1daf6fe[1] = array({#orientation:3, #var_fef51edb:"room_1_exit_1024x1024"});
     level.var_e1daf6fe[2] = array({#orientation:2, #var_fef51edb:"room_1_exit_1024x1024"});
     level.var_e1daf6fe[4] = array({#orientation:1, #var_fef51edb:"room_1_exit_1024x1024"});
     level.var_e1daf6fe[8] = array({#orientation:0, #var_fef51edb:"room_1_exit_1024x1024"});
-    if (is_true(var_27253eb5)) {
+    if (is_true(expanded)) {
         level.var_e1daf6fe[10] = array({#orientation:0, #var_fef51edb:"room_2i_exit_1024x1024"}, {#orientation:0, #var_fef51edb:"room_2b_exit_1024x1024"});
         level.var_e1daf6fe[5] = array({#orientation:1, #var_fef51edb:"room_2i_exit_1024x1024"}, {#orientation:1, #var_fef51edb:"room_2b_exit_1024x1024"});
     } else {
@@ -143,7 +143,7 @@ function function_1a3f9fe1(var_27253eb5) {
     level.var_e1daf6fe[7] = array({#orientation:2, #var_fef51edb:"room_3_exit_1024x1024"});
     level.var_e1daf6fe[14] = array({#orientation:1, #var_fef51edb:"room_3_exit_1024x1024"});
     level.var_e1daf6fe[13] = array({#orientation:0, #var_fef51edb:"room_3_exit_1024x1024"});
-    if (is_true(var_27253eb5)) {
+    if (is_true(expanded)) {
         level.var_e1daf6fe[15] = array({#orientation:0, #var_fef51edb:"room_4_exit_1024x1024"}, {#orientation:0, #var_fef51edb:"room_5_exit_1024x1024"}, {#orientation:0, #var_fef51edb:"room_5_exit_1024x1024"});
     } else {
         level.var_e1daf6fe[15] = array({#orientation:0, #var_fef51edb:"room_4_exit_1024x1024"});
@@ -153,7 +153,7 @@ function function_1a3f9fe1(var_27253eb5) {
     level.var_86fb599e[2] = array({#orientation:2, #var_fef51edb:"hall_1_exit_1024x1024"});
     level.var_86fb599e[4] = array({#orientation:1, #var_fef51edb:"hall_1_exit_1024x1024"});
     level.var_86fb599e[8] = array({#orientation:0, #var_fef51edb:"hall_1_exit_1024x1024"});
-    if (is_true(var_27253eb5)) {
+    if (is_true(expanded)) {
         level.var_86fb599e[10] = array({#orientation:0, #var_fef51edb:"hall_dirt_2_exit_ver1_1024x1024"}, {#orientation:0, #var_fef51edb:"hall_dirt_2_exit_ver2_1024x1024"}, {#orientation:0, #var_fef51edb:"hall_dirt_2iflogger_exit_1024x1024"});
         level.var_86fb599e[5] = array({#orientation:1, #var_fef51edb:"hall_dirt_2_exit_ver1_1024x1024"}, {#orientation:1, #var_fef51edb:"hall_dirt_2_exit_ver2_1024x1024"}, {#orientation:1, #var_fef51edb:"hall_dirt_2iflogger_exit_1024x1024"});
     } else {
@@ -222,22 +222,22 @@ function function_9df20e11() {
 // Size: 0x1e2
 function function_a4c07e18(name) {
     playercount = getplayers(0).size;
-    var_46082893 = math::clamp(3 + playercount, 4, 6);
+    gridsize = math::clamp(3 + playercount, 4, 6);
     var_5d3143fb = math::clamp(7 + playercount, 8, 12);
     switch (name) {
     case #"jungle_1_dungeon4":
         setdvar(#"hash_4c2ff1f11662c879", var_5d3143fb);
-        setdvar(#"hash_788fb3bfb03132f", var_46082893);
+        setdvar(#"hash_788fb3bfb03132f", gridsize);
         function_1a3f9fe1(1);
         break;
     case #"cellar":
         setdvar(#"hash_4c2ff1f11662c879", var_5d3143fb);
-        setdvar(#"hash_788fb3bfb03132f", var_46082893);
+        setdvar(#"hash_788fb3bfb03132f", gridsize);
         function_1a3f9fe1();
         break;
     default:
         setdvar(#"hash_4c2ff1f11662c879", var_5d3143fb);
-        setdvar(#"hash_788fb3bfb03132f", var_46082893);
+        setdvar(#"hash_788fb3bfb03132f", gridsize);
         function_9df20e11();
         break;
     }
@@ -357,21 +357,21 @@ function function_6a09928b(location, type) {
     if (isdefined(location.script_parameters)) {
         modelname = location.script_parameters;
     } else {
-        var_95734d8b = function_1f81f464(type, location.script_noteworthy);
-        modelname = var_95734d8b.model;
+        modelinfo = function_1f81f464(type, location.script_noteworthy);
+        modelname = modelinfo.model;
     }
     model = undefined;
     if (isdefined(modelname)) {
         /#
             function_f5f0c0f8("<unknown string>" + function_9e72a96(type) + "<unknown string>" + modelname + "<unknown string>" + location.origin);
         #/
-        model = namespace_ec06fe4a::function_e22ae9b3(0, location.origin, modelname, location.angles, "dungeon floor decor " + modelname);
+        model = namespace_ec06fe4a::spawnmodel(0, location.origin, modelname, location.angles, "dungeon floor decor " + modelname);
         if (isdefined(model)) {
-            if (isdefined(var_95734d8b)) {
-                model setscale(var_95734d8b.scale);
-                model.angles = model.angles + (0, var_95734d8b.yaw_offset, 0);
-                if (isdefined(var_95734d8b.fx)) {
-                    model.fx = util::playfxontag(0, level._effect[var_95734d8b.fx], model, "tag_fx");
+            if (isdefined(modelinfo)) {
+                model setscale(modelinfo.scale);
+                model.angles = model.angles + (0, modelinfo.yaw_offset, 0);
+                if (isdefined(modelinfo.fx)) {
+                    model.fx = util::playfxontag(0, level._effect[modelinfo.fx], model, "tag_fx");
                 }
                 model solid();
             }

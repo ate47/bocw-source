@@ -2009,7 +2009,7 @@ function proximityweaponobject_activationdelay(watcher) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x9626e440, Offset: 0x6a18
 // Size: 0xd4
-function proximityweaponobject_waittillframeendanddodetonation(watcher, ent, var_b99ea079) {
+function proximityweaponobject_waittillframeendanddodetonation(watcher, ent, entityorigin) {
     self endon(#"death");
     dist = distance(ent.origin, self.origin);
     if (isdefined(self.activated_entity_distance)) {
@@ -2022,7 +2022,7 @@ function proximityweaponobject_waittillframeendanddodetonation(watcher, ent, var
     self endon(#"better_target");
     self.activated_entity_distance = dist;
     waitframe(1);
-    proximityweaponobject_dodetonation(watcher, ent, var_b99ea079);
+    proximityweaponobject_dodetonation(watcher, ent, entityorigin);
 }
 
 // Namespace weaponobjects/weaponobjects
@@ -2033,10 +2033,10 @@ function proximityweaponobjectdetonation(s_watcher) {
     self endon(#"death", #"hacked", #"kill_target_detection");
     proximityweaponobject_activationdelay(s_watcher);
     var_6e4025f7 = proximityweaponobject_createdamagearea(s_watcher);
-    var_20d0363e = isdefined(s_watcher.var_20d0363e) ? s_watcher.var_20d0363e : 0;
-    if (var_20d0363e) {
-        var_20d0363e = int(var_20d0363e * 1000);
-        self thread function_f5b8ea19(s_watcher, var_6e4025f7, var_20d0363e);
+    triggertime = isdefined(s_watcher.triggertime) ? s_watcher.triggertime : 0;
+    if (triggertime) {
+        triggertime = int(triggertime * 1000);
+        self thread function_f5b8ea19(s_watcher, var_6e4025f7, triggertime);
         return;
     }
     while (1) {
@@ -2053,7 +2053,7 @@ function proximityweaponobjectdetonation(s_watcher) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0xf0490d64, Offset: 0x6c68
 // Size: 0x1b2
-function function_f5b8ea19(s_watcher, *var_6e4025f7, var_20d0363e) {
+function function_f5b8ea19(s_watcher, *var_6e4025f7, triggertime) {
     self endon(#"death", #"hacked", #"kill_target_detection");
     var_bccce0e1 = undefined;
     detonating = 0;
@@ -2061,19 +2061,19 @@ function function_f5b8ea19(s_watcher, *var_6e4025f7, var_20d0363e) {
         if (isdefined(var_bccce0e1)) {
             var_8dc1cd0d = gettime() - var_bccce0e1;
         }
-        var_92f5ab2c = 0;
+        triggered = 0;
         foreach (ent in self getenemiesinradius(self.origin, var_6e4025f7.detonateradius)) {
             if (function_5b0e3a9e(var_6e4025f7, ent)) {
-                var_92f5ab2c = 1;
+                triggered = 1;
                 if (!isdefined(var_bccce0e1)) {
                     var_bccce0e1 = gettime();
-                } else if (var_8dc1cd0d >= var_20d0363e) {
+                } else if (var_8dc1cd0d >= triggertime) {
                     self thread proximityweaponobject_waittillframeendanddodetonation(var_6e4025f7, ent, self.origin);
                     detonating = 1;
                 }
             }
         }
-        if (!var_92f5ab2c) {
+        if (!triggered) {
             var_bccce0e1 = undefined;
         }
         if (detonating) {

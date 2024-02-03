@@ -18,7 +18,7 @@ function private function_20b6bc92() {
         assert(isdefined(level.var_a00c303b), "<unknown string>");
     #/
     level endon(#"hash_20f3988ee2416a3d");
-    level.var_a00c303b.var_43f854c3 = 1;
+    level.var_a00c303b.mainthread = 1;
     while (isdefined(level.var_a00c303b)) {
         foreach (var_dfd5412c in level.var_a00c303b.objects) {
             if (isfunctionptr(var_dfd5412c.callbackfunc)) {
@@ -44,7 +44,7 @@ function function_b009fcc9(x, y, w, h, target, callbackfunc, callbackdata, var_b
     var_dfd5412c = spawnstruct();
     var_dfd5412c.var_b1332cff = var_b1332cff;
     var_dfd5412c.var_36dfeb2e = array(x, y);
-    var_dfd5412c.var_1734a02c = array(w, h);
+    var_dfd5412c.screensize = array(w, h);
     var_dfd5412c.var_ca1ec566 = function_da7b7c0e(array(x, y));
     var_dfd5412c.var_708cbe39 = function_df9f894b(array(w, h));
     var_dfd5412c.var_4a70ec60 = var_a2dbe44f;
@@ -73,7 +73,7 @@ function function_b009fcc9(x, y, w, h, target, callbackfunc, callbackdata, var_b
         level.var_a00c303b.objects = array();
     }
     level.var_a00c303b.objects[level.var_a00c303b.objects.size] = var_dfd5412c;
-    if (!isdefined(level.var_a00c303b.var_43f854c3)) {
+    if (!isdefined(level.var_a00c303b.mainthread)) {
         level.var_a00c303b thread function_20b6bc92();
     }
     return var_dfd5412c;
@@ -264,7 +264,7 @@ function private function_2f282ca2(posx, posy, text, color, alpha, scale, durati
         hud.xoffset = 0;
         hud.yoffset = 0;
         hud.var_531a3195 = 0;
-        hud.var_4c418518 = 0;
+        hud.ypadding = 0;
     #/
 }
 

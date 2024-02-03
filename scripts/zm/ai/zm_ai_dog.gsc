@@ -1164,9 +1164,9 @@ function function_70daebd0(entity) {
                 return 0;
             }
             var_9b757147 = rotatepointaroundaxis((0, 1, 0), (0, 0, 1), vehicle.angles[1]);
-            var_3140b529 = vectorprojection(entity.favoriteenemy.origin - vehicle.origin, var_9b757147);
-            if (lengthsquared(var_3140b529) > 2) {
-                dot = vectordot(entity.origin - entity.favoriteenemy.origin, var_3140b529);
+            projected = vectorprojection(entity.favoriteenemy.origin - vehicle.origin, var_9b757147);
+            if (lengthsquared(projected) > 2) {
+                dot = vectordot(entity.origin - entity.favoriteenemy.origin, projected);
                 if (dot <= 0) {
                     return 0;
                 }
@@ -2308,8 +2308,8 @@ function function_71b1652b() {
     self forceteleport(self.origin, self.var_47d9e0ed);
     self animmode("gravity");
     self animscripted(#"ai_t9_zm_zombie_dog_com_pet_intro", self.origin, self.angles, #"ai_t9_zm_zombie_dog_com_pet_intro", "custom", undefined, 1, 0.2);
-    var_9d3ee67e = getanimlength("ai_t9_zm_zombie_dog_com_pet_intro");
-    self waittillmatchtimeout(var_9d3ee67e, {#notetrack:"end"}, #"ai_t9_zm_zombie_dog_com_pet_intro");
+    anim_time = getanimlength("ai_t9_zm_zombie_dog_com_pet_intro");
+    self waittillmatchtimeout(anim_time, {#notetrack:"end"}, #"ai_t9_zm_zombie_dog_com_pet_intro");
     self animscripted(#"hash_2fdc6d4cc63c0d4c", self.origin, self.angles, #"hash_2fdc6d4cc63c0d4c", "custom", undefined, 1, 0.2);
     wait(20);
 }
@@ -2334,8 +2334,8 @@ function function_ba44fcfa() {
 function function_82cc0356() {
     self endon(#"death");
     self animscripted(#"hash_2591bae3caaef873", self.origin, self.angles, #"hash_2591bae3caaef873", "custom", undefined, 1, 0.2);
-    var_9d3ee67e = getanimlength(#"hash_2591bae3caaef873");
-    self waittillmatchtimeout(var_9d3ee67e, {#notetrack:"end"}, #"hash_2591bae3caaef873");
+    anim_time = getanimlength(#"hash_2591bae3caaef873");
+    self waittillmatchtimeout(anim_time, {#notetrack:"end"}, #"hash_2591bae3caaef873");
     self clientfield::set("ZombieDogVocals", 2);
     self.var_bb8bba59 = undefined;
     self notify(#"hash_18c50031a3a3c6cd");

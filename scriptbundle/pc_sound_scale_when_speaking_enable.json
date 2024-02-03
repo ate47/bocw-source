@@ -2,7 +2,7 @@
     "option_dependencies": [
         {
             "var_1643d946": "1",
-            "var_6825bdb": "#voice_chat_enable",
+            "optionname": "#voice_chat_enable",
             "operator": "=="
         }
     ],
@@ -31,7 +31,7 @@
     "name": "pc_sound_scale_when_speaking_enable",
     "displayname": "#hash_3ba1ee6907483471",
     "var_500458ac": 10,
-    "var_926d1be9": 0.01,
+    "decimalplace": 0.01,
     "var_66faec87": 1,
     "statname": "snd_scale_when_speaking_enabled",
     "var_8b80386": 1,

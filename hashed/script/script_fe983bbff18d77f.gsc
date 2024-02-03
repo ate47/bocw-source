@@ -86,14 +86,14 @@ function private function_a4b83b6a(var_b1f9c3ce, space, var_72cc3c18, var_465a4f
         var_dfdc1e6f = function_a3f6cdac(var_78b09589);
         var_fdba779a = [];
         foreach (var_3f3095e in tacpoints) {
-            var_afb497ff = 0;
+            ignored = 0;
             foreach (point in var_56d24f04) {
                 if (distancesquared(point.origin, var_3f3095e.origin) < var_dfdc1e6f) {
-                    var_afb497ff = 1;
+                    ignored = 1;
                     break;
                 }
             }
-            if (!var_afb497ff) {
+            if (!ignored) {
                 var_fdba779a[var_fdba779a.size] = var_3f3095e;
             }
         }

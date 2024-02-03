@@ -73,25 +73,25 @@ function private event_handler[systemstatechange] function_406f0371(eventstruct)
         s = strtok(eventstruct.state, ",");
         switch (s[0]) {
         case #"0":
-            var_bf26b910 = s[4];
+            levelname = s[4];
         case #"1":
             task = s[1];
-            world.var_d2257418 = int(s[2]);
+            world.gameskill = int(s[2]);
             var_6dfed201 = int(s[3]);
             break;
         default:
             return;
         }
         if (!isdefined(level.var_643f86fe)) {
-            if (!isdefined(var_bf26b910)) {
-                var_bf26b910 = util::get_map_name();
+            if (!isdefined(levelname)) {
+                levelname = util::get_map_name();
             }
-            level.var_643f86fe = {#gametype:getdvar(#"g_gametype"), #mapname:var_bf26b910};
+            level.var_643f86fe = {#gametype:getdvar(#"g_gametype"), #mapname:levelname};
         }
         if (!isdefined(level.var_643f86fe.difficulty)) {
-            level.var_643f86fe.difficulty = world.var_d2257418;
-        } else if (world.var_d2257418 != level.var_643f86fe.difficulty) {
-            level.var_643f86fe.difficulty = world.var_d2257418;
+            level.var_643f86fe.difficulty = world.gameskill;
+        } else if (world.gameskill != level.var_643f86fe.difficulty) {
+            level.var_643f86fe.difficulty = world.gameskill;
             function_2c46b6f9("failed");
             function_1c01a227(level.var_643f86fe.var_31ac96bc);
         }

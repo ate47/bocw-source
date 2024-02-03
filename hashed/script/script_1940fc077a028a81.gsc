@@ -722,8 +722,8 @@ function function_da99776f(entity) {
         toenemy = entity.var_5aaa7f76 - entity.origin;
         toenemyyaw = vectortoangles(toenemy)[1];
         var_a438f695 = entity.angles[1];
-        var_5872e8ad = angleclamp180(toenemyyaw - var_a438f695);
-        var_a94379e2 = abs(var_5872e8ad) > 45 ? 0 : var_5872e8ad - math::sign(var_5872e8ad) * 45;
+        deltayaw = angleclamp180(toenemyyaw - var_a438f695);
+        var_a94379e2 = abs(deltayaw) > 45 ? 0 : deltayaw - math::sign(deltayaw) * 45;
         targetyaw = toenemyyaw - ceil(abs(var_a94379e2) / 90) * 90 * math::sign(var_a94379e2);
         newangles = (entity.angles[0], targetyaw, entity.angles[2]);
         entity teleport(entity.origin, newangles);
@@ -1080,9 +1080,9 @@ function zombieupdategoal(goalpos) {
     if (getdvarint(#"hash_6e49c9088d49cb70", 1) > 0) {
         var_20edce9c = isdefined(self.var_62561fdc) ? self.var_62561fdc : getdvarfloat(#"hash_53b69693de5913be", 1250);
         if (var_e24852e1 > function_a3f6cdac(var_20edce9c)) {
-            var_514268b6 = goalpos - self.origin;
+            vectogoal = goalpos - self.origin;
             disttogoal = sqrt(var_c7dee8e5);
-            dirtogoal = vectorscale(var_514268b6, 1 / disttogoal);
+            dirtogoal = vectorscale(vectogoal, 1 / disttogoal);
             var_625d15c1 = getdvarint(#"hash_2d576274bf096bb1", 5);
             var_e8b40f42 = isdefined(self.var_cfb82e92) ? self.var_cfb82e92 : 2;
             var_2a45598f = isdefined(self.var_a44ca810) ? self.var_a44ca810 : getdvarfloat(#"hash_70d5ce88e4373b4a", 500);
@@ -1289,14 +1289,14 @@ function zombieupdategoal(goalpos) {
 // Params 7, eflags: 0x2 linked
 // Checksum 0xa94c32b5, Offset: 0x58e0
 // Size: 0x1c4
-function function_bc777234(position, forward, var_cfcfe495, inner_radius, outer_radius, max_height, var_5e95f317) {
+function function_bc777234(position, forward, max_points, inner_radius, outer_radius, max_height, var_5e95f317) {
     points = [];
     var_467c5362 = getclosestpointonnavmesh(position, 256);
     var_8bd451f5 = function_a3f6cdac(inner_radius);
     angles = vectortoangles(forward);
-    var_8e05c13a = (0, 0, 1);
+    z_axis = (0, 0, 1);
     if (isdefined(var_467c5362)) {
-        for (i = 0; i < var_cfcfe495; i++) {
+        for (i = 0; i < max_points; i++) {
             var_436b8c8c = namespace_85745671::function_4ed3741d(var_467c5362, angles, 0, outer_radius, inner_radius, 45, 135);
             traceresult = checknavmeshdirection(var_467c5362, var_436b8c8c, randomfloatrange(inner_radius, outer_radius), var_5e95f317);
             if (abs(traceresult[2] - var_467c5362[2]) <= max_height && distancesquared(traceresult, var_467c5362) < var_8bd451f5) {

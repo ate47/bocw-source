@@ -32,7 +32,7 @@
 // Checksum 0x207bbcbc, Offset: 0x240
 // Size: 0x1aa
 function function_124c1a34(player, model, note) {
-    blade = namespace_ec06fe4a::function_e22ae9b3(self.origin, model);
+    blade = namespace_ec06fe4a::spawnmodel(self.origin, model);
     if (!isdefined(blade)) {
         return 0;
     }
@@ -70,7 +70,7 @@ function sawbladeupdate(model = "zombietron_sawblade") {
     if (!isdefined(self.doa.var_1739bd8e)) {
         self.doa.var_1739bd8e = [];
     }
-    org = namespace_ec06fe4a::function_e22ae9b3(self.origin, "tag_origin");
+    org = namespace_ec06fe4a::spawnmodel(self.origin, "tag_origin");
     if (!isdefined(org)) {
         return;
     }

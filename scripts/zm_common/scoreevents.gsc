@@ -38,9 +38,9 @@ function private function_70a657d8() {
     registerscoreeventcallback("killingBlow", &function_970a97b2);
     level.var_c90fb58a = [];
     for (i = 0; i < 4; i++) {
-        var_dae19230 = new class_c6c0e94();
-        [[ var_dae19230 ]]->initialize(#"hash_489786730d0b07be", 2, float(function_60d95f53()) / 1000);
-        level.var_c90fb58a[level.var_c90fb58a.size] = var_dae19230;
+        new_throttle = new class_c6c0e94();
+        [[ new_throttle ]]->initialize(#"hash_489786730d0b07be", 2, float(function_60d95f53()) / 1000);
+        level.var_c90fb58a[level.var_c90fb58a.size] = new_throttle;
     }
     level.var_1acb0192 = &function_7d26a389;
     level.var_4bcd94b = [];
@@ -214,7 +214,7 @@ function function_970a97b2(params) {
         var_a0345f37.origin = params.enemy.origin;
         var_a0345f37.angles = params.enemy.angles;
         var_a0345f37.archetype = params.enemy.archetype;
-        var_a0345f37.var_66c1748e = params.enemy function_7f0363e8(1);
+        var_a0345f37.actor_name = params.enemy function_7f0363e8(1);
         var_a0345f37.var_24f0cbe0 = params.enemy.var_24f0cbe0;
         var_a0345f37.var_c588eb = params.enemy.var_c588eb;
         var_a0345f37.var_14e19734 = params.enemy.var_14e19734;

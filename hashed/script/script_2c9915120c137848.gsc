@@ -104,7 +104,7 @@ function function_de7fb95(var_c904ca7c, context = 0) {
         target.var_28a48bb3 = var_4af56c19;
         target.context = context;
         if (isdefined(target.model)) {
-            target.script_model = namespace_ec06fe4a::function_e22ae9b3(target.origin, target.model, target.angles, "pressure_plate_object");
+            target.script_model = namespace_ec06fe4a::spawnmodel(target.origin, target.model, target.angles, "pressure_plate_object");
         }
         if (target.type == 2) {
             /#
@@ -122,7 +122,7 @@ function function_de7fb95(var_c904ca7c, context = 0) {
             /#
                 assert(toks.size > 2, "<unknown string>");
             #/
-            target.var_77e68c20 = int(toks[1]);
+            target.verticaldistance = int(toks[1]);
             target.var_edf3aca7 = int(toks[2]);
             if (toks.size > 3) {
                 switch (toks[3]) {
@@ -204,8 +204,8 @@ function function_9592df27() {
             }
         }
     }
-    self.var_cb52058d = self.origin + (0, 0, self.var_77e68c20);
-    var_d893beb9 = abs(self.var_77e68c20);
+    self.var_cb52058d = self.origin + (0, 0, self.verticaldistance);
+    var_d893beb9 = abs(self.verticaldistance);
     while (1) {
         self waittill(#"plate_activated");
         self function_1efdf194(self.var_cb52058d[2], self.var_edf3aca7, var_d893beb9);
@@ -220,15 +220,15 @@ function function_9592df27() {
 // Size: 0x12c
 function function_1efdf194(var_705bb15a, totaltime, totaldist) {
     if (var_705bb15a == self.origin[2]) {
-        var_c15a5a25 = abs(self.origin[2] - self.script_model.origin[2]);
-        var_cee92a66 = self.origin;
+        deltaz = abs(self.origin[2] - self.script_model.origin[2]);
+        desiredpos = self.origin;
     }
     if (var_705bb15a == self.var_cb52058d[2]) {
-        var_c15a5a25 = abs(self.script_model.origin[2] - self.var_cb52058d[2]);
-        var_cee92a66 = self.var_cb52058d;
+        deltaz = abs(self.script_model.origin[2] - self.var_cb52058d[2]);
+        desiredpos = self.var_cb52058d;
     }
-    timedelta = math::clamp(var_c15a5a25 / totaldist * totaltime, 0.05, totaltime);
-    self.script_model moveto(var_cee92a66, timedelta);
+    timedelta = math::clamp(deltaz / totaldist * totaltime, 0.05, totaltime);
+    self.script_model moveto(desiredpos, timedelta);
 }
 
 // Namespace namespace_a6056a45/namespace_a6056a45
@@ -269,8 +269,8 @@ function function_92bae57c() {
         }
     }
     self.startpos = self.origin;
-    self.var_cb52058d = self.origin + (0, 0, self.var_77e68c20);
-    var_d893beb9 = abs(self.var_77e68c20);
+    self.var_cb52058d = self.origin + (0, 0, self.verticaldistance);
+    var_d893beb9 = abs(self.verticaldistance);
     while (1) {
         self waittill(#"plate_activated");
         dest = self.var_cb52058d[2];
@@ -286,15 +286,15 @@ function function_92bae57c() {
 // Size: 0x11c
 function function_4b059395(var_705bb15a, totaltime, totaldist) {
     if (var_705bb15a == self.startpos[2]) {
-        var_c15a5a25 = abs(self.startpos[2] - self.origin[2]);
-        var_cee92a66 = self.startpos;
+        deltaz = abs(self.startpos[2] - self.origin[2]);
+        desiredpos = self.startpos;
     }
     if (var_705bb15a == self.var_cb52058d[2]) {
-        var_c15a5a25 = abs(self.origin[2] - self.var_cb52058d[2]);
-        var_cee92a66 = self.var_cb52058d;
+        deltaz = abs(self.origin[2] - self.var_cb52058d[2]);
+        desiredpos = self.var_cb52058d;
     }
-    timedelta = math::clamp(var_c15a5a25 / totaldist * totaltime, 0.05, totaltime);
-    self moveto(var_cee92a66, timedelta);
+    timedelta = math::clamp(deltaz / totaldist * totaltime, 0.05, totaltime);
+    self moveto(desiredpos, timedelta);
 }
 
 // Namespace namespace_a6056a45/namespace_a6056a45

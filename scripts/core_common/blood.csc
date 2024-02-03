@@ -13,14 +13,14 @@
 // Checksum 0x432a7dd5, Offset: 0x3a0
 // Size: 0x3c
 function private autoexec __init__system__() {
-    system::register(#"blood", undefined, &function_3469610d, undefined, undefined);
+    system::register(#"blood", undefined, &postload, undefined, undefined);
 }
 
 // Namespace blood/blood
 // Params 0, eflags: 0x2 linked
 // Checksum 0xa5174293, Offset: 0x3e8
 // Size: 0x6c
-function function_3469610d() {
+function postload() {
     function_22302b4b();
     callback::on_localplayer_spawned(&function_e79ccfd8);
     callback::on_localclient_connect(&localclient_connect);

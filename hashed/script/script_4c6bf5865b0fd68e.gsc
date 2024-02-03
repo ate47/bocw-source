@@ -73,7 +73,7 @@ function function_c1c47eb6(inflictor, attacker, *damage, *flags, *meansofdeath, 
 // Size: 0xc4
 function function_c58f9108(params) {
     if (params.weapon.name === #"cymbal_monkey" && isplayer(params.eattacker) && self.var_6f84b820 === #"normal" && isvec(self.var_9a4dd099)) {
-        self namespace_cc411409::function_706a56ae(self.var_9a4dd099, 2);
+        self namespace_cc411409::ragdoll_launch(self.var_9a4dd099, 2);
         self thread function_3fb4ce3b();
     }
 }

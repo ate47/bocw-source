@@ -60,14 +60,14 @@ function function_78d34bcb(localclientnum, *oldval, *newval, *bnewent, *binitial
         #/
         foreach (decal in a_decals) {
             if (decal.script_noteworthy === "tens") {
-                var_d4cc6f3d = n_tens;
+                digit = n_tens;
             } else if (decal.script_noteworthy === "ones") {
-                var_d4cc6f3d = n_ones;
+                digit = n_ones;
             } else {
                 continue;
             }
             var_4db59adc = util::spawn_model(bwasdemojump, #"hash_5b0706c194ab1d75", decal.origin, decal.angles);
-            var_4db59adc.rob = #"hash_5ee04cd58e027952" + var_d4cc6f3d;
+            var_4db59adc.rob = #"hash_5ee04cd58e027952" + digit;
             if (!isdefined(level.var_455f7b8c)) {
                 level.var_455f7b8c = [];
             } else if (!isarray(level.var_455f7b8c)) {

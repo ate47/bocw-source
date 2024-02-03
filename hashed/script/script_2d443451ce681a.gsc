@@ -499,7 +499,7 @@ function function_11149e48(var_c62e2503, var_d9530aee, goal, stop_notify) {
     self.var_11149e48.move = var_c62e2503;
     self.var_11149e48.idle = var_d9530aee;
     self.var_11149e48.goal = goal;
-    self.var_11149e48.var_74f06087 = self.angles[1];
+    self.var_11149e48.face_angle = self.angles[1];
     self.var_11149e48.stop_notify = stop_notify;
     if (!isdefined(self.var_11149e48.goal)) {
         self.var_11149e48.goal = self.origin;
@@ -525,7 +525,7 @@ function private function_66d43d96() {
     self endon(#"death", #"killanimscript", #"hash_6a866dd840198982", self.var_11149e48.stop_notify);
     var_cd6d7e01 = undefined;
     var_bee8f197 = float(function_60d95f53()) / 1000;
-    var_245cbb2e = undefined;
+    lastangle = undefined;
     self animmode("gravity");
     while (1) {
         while (self.var_11149e48.path.pathpoints.size > self.var_11149e48.path.index) {
@@ -542,11 +542,11 @@ function private function_66d43d96() {
             var_436b8c8c = self.var_11149e48.path.pathpoints[self.var_11149e48.path.index];
             var_436b8c8c = (var_436b8c8c[0], var_436b8c8c[1], self.origin[2]);
             delta = vectornormalize(var_436b8c8c - self.origin);
-            self.var_11149e48.var_74f06087 = function_2981bd91(delta);
+            self.var_11149e48.face_angle = function_2981bd91(delta);
         }
-        if (var_245cbb2e !== self.var_11149e48.var_74f06087) {
-            self orientmode("face angle", self.var_11149e48.var_74f06087);
-            var_245cbb2e = self.var_11149e48.var_74f06087;
+        if (lastangle !== self.var_11149e48.face_angle) {
+            self orientmode("face angle", self.var_11149e48.face_angle);
+            lastangle = self.var_11149e48.face_angle;
         }
         if (self.var_11149e48.moving !== var_cd6d7e01) {
             if (self.var_11149e48.moving) {
@@ -567,11 +567,11 @@ function private function_66d43d96() {
 // Params 3, eflags: 0x6 linked
 // Checksum 0x42f92df8, Offset: 0x2058
 // Size: 0xec
-function private function_f3a8861e(var_dc27586e, loop, mode = "custom") {
+function private function_f3a8861e(anims, loop, mode = "custom") {
     self notify("15ea8c5841d3bd17");
     self endon("15ea8c5841d3bd17");
-    while (var_dc27586e.size > 0) {
-        animation = array::random(var_dc27586e);
+    while (anims.size > 0) {
+        animation = array::random(anims);
         self animscripted(animation, self.origin, self.angles, animation, mode, undefined, 1, 0.2);
         wait(getanimlength(animation));
         if (!is_true(loop)) {

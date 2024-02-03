@@ -13,7 +13,7 @@
 // Checksum 0x21e75237, Offset: 0xd0
 // Size: 0x44
 function private autoexec __init__system__() {
-    system::register(#"hash_7bb41176a4b58056", &function_70a657d8, undefined, &function_5700f119, undefined);
+    system::register(#"hash_7bb41176a4b58056", &function_70a657d8, undefined, &finalize, undefined);
 }
 
 // Namespace namespace_dbb31ff3/namespace_dbb31ff3
@@ -31,7 +31,7 @@ function private function_70a657d8() {
 // Params 0, eflags: 0x6 linked
 // Checksum 0x80f724d1, Offset: 0x200
 // Size: 0x4
-function private function_5700f119() {
+function private finalize() {
     
 }
 

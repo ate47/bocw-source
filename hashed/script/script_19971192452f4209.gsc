@@ -108,11 +108,11 @@ function function_12e3ea01() {
 // Size: 0x274
 function init_flags() {
     level thread flag::init("flag_wait_forever");
-    level thread namespace_ac459569::function_f50bc4b9();
-    level thread namespace_44d6c351::function_f50bc4b9();
-    level thread namespace_ef6e5556::function_f50bc4b9();
-    level thread namespace_cd0dee07::function_f50bc4b9();
-    level thread namespace_ba621c15::function_f50bc4b9();
+    level thread hub_post_takedown::function_f50bc4b9();
+    level thread hub_post_armada::function_f50bc4b9();
+    level thread hub_post_yamantau::function_f50bc4b9();
+    level thread hub_post_kgb::function_f50bc4b9();
+    level thread hub_post_cuba::function_f50bc4b9();
     level thread namespace_fdde5f3d::function_f50bc4b9();
     level flag::init("flag_hub_large_complete");
     level flag::init("flag_hub_small_complete");
@@ -370,30 +370,30 @@ function function_13fc27ea(var_d3440450, *var_50cc0d4f) {
         level flag::wait_till("flag_wait_forever");
     }
     if (var_7a191936 == "cp_ger_hub_post_cuba") {
-        level namespace_ba621c15::main();
+        level hub_post_cuba::main();
         level flag::wait_till("flag_wait_forever");
     }
     if (var_7a191936 == "cp_ger_hub_post_kgb") {
-        level namespace_cd0dee07::main();
-        level namespace_cd0dee07::function_223f05aa();
+        level hub_post_kgb::main();
+        level hub_post_kgb::function_223f05aa();
         level flag::wait_till("flag_wait_forever");
     }
     if (var_7a191936 == "cp_ger_hub_post_yamantau") {
-        level namespace_ef6e5556::main();
-        level namespace_ef6e5556::function_29390787();
+        level hub_post_yamantau::main();
+        level hub_post_yamantau::function_29390787();
         level flag::wait_till("flag_wait_forever");
     }
     if (var_7a191936 == "cp_ger_hub_post_armada") {
-        level namespace_44d6c351::main();
-        level namespace_44d6c351::function_428d9889();
-        level namespace_44d6c351::function_d3875afa();
+        level hub_post_armada::main();
+        level hub_post_armada::function_428d9889();
+        level hub_post_armada::function_d3875afa();
         level flag::wait_till("flag_wait_forever");
     }
     if (var_7a191936 == "cp_ger_hub") {
         if (namespace_70eba6e6::function_8de25d9c()) {
-            level namespace_ac459569::main();
-            level namespace_ac459569::function_e695c6d4();
-            level namespace_ac459569::function_7fb12c66();
+            level hub_post_takedown::main();
+            level hub_post_takedown::function_e695c6d4();
+            level hub_post_takedown::function_7fb12c66();
             level flag::wait_till("flag_wait_forever");
         }
     }
@@ -1215,8 +1215,8 @@ function function_7b0516d7(var_5fc1b24e) {
             msg = self waittill(#"trigger", #"death", #"hash_15ec42f1846ef9d0", #"deleted", #"kill_dialog");
             if (msg._notify == "trigger") {
                 if (self.var_ba1eee16.s_tree dialog_tree::function_6a2674b8() > 1) {
-                    var_62950536 = self.var_ba1eee16.s_tree dialog_tree::run(self, level);
-                    if (var_62950536 != self.var_ba1eee16.var_cb67e512) {
+                    choice = self.var_ba1eee16.s_tree dialog_tree::run(self, level);
+                    if (choice != self.var_ba1eee16.var_cb67e512) {
                         function_53eb4779(self.var_ba1eee16.challenge_id);
                     }
                 } else {
@@ -1428,15 +1428,15 @@ function function_29699066() {
     ret = level waittill(#"hash_727216e12f8e4bc0", #"hash_286884e81482304b");
     if (ret._notify == "dialog_tree_choice_made") {
         self flag::set("dialog_wait_for_animation");
-        var_bef82893 = self._scene_object._str_current_anim;
+        curanim = self._scene_object._str_current_anim;
         var_e7bc5dc8 = 0.25;
-        animlength = getanimlength(var_bef82893);
+        animlength = getanimlength(curanim);
         var_8fb6b354 = (animlength - var_e7bc5dc8) / animlength;
-        curtime = self getanimtime(var_bef82893);
+        curtime = self getanimtime(curanim);
         if (curtime < var_8fb6b354) {
-            angle_delta = getangledelta(var_bef82893, curtime, var_8fb6b354);
+            angle_delta = getangledelta(curanim, curtime, var_8fb6b354);
             new_angles = (self.angles[0], self.angles[1] + angle_delta, self.angles[2]);
-            var_8ed3320d = getmovedelta(var_bef82893, curtime, var_8fb6b354);
+            var_8ed3320d = getmovedelta(curanim, curtime, var_8fb6b354);
             self teleport(self.origin + var_8ed3320d, new_angles);
             level scene::play_from_time(self.var_ba1eee16.var_f2190d3d, var_ffb43fb8, undefined, animlength - var_e7bc5dc8, 0, 1);
         } else {

@@ -190,7 +190,7 @@ function private function_3a22c4f4() {
 function private function_a77f3600(instance) {
     instance endon(#"cleanup");
     while (1) {
-        namespace_2c949ef8::function_8b6ae460(instance.var_8b241b32, "monster_house_ambush_list_realm_" + level.var_15d17eb2, 500, 1500, undefined, undefined, 0, "monster_house_ai");
+        namespace_2c949ef8::function_8b6ae460(instance.var_8b241b32, "monster_house_ambush_list_realm_" + level.realm, 500, 1500, undefined, undefined, 0, "monster_house_ai");
     }
 }
 

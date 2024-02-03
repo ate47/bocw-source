@@ -29,9 +29,9 @@
 #using scripts\core_common\array_shared.gsc;
 #using scripts\core_common\ai_shared.gsc;
 
-#namespace namespace_489e2b6c;
+#namespace armada_mortar;
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 2, eflags: 0x2 linked
 // Checksum 0x60b8e3f1, Offset: 0x2a30
 // Size: 0xaf4
@@ -133,7 +133,7 @@ function function_6ad1ac64(var_d3440450, var_50cc0d4f) {
     level clientfield::set("toggle_dynsignage_mortartown", 0);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x53bd913a, Offset: 0x3530
 // Size: 0x2e
@@ -143,7 +143,7 @@ function function_e59c6d2a() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xb22ad33e, Offset: 0x3568
 // Size: 0x84
@@ -160,7 +160,7 @@ function function_5985d444() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0x2990d859, Offset: 0x35f8
 // Size: 0x5c
@@ -174,7 +174,7 @@ function function_d96fcf75(n_index) {
     self function_b0db9d0f();
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x6fa52b95, Offset: 0x3660
 // Size: 0x1bc
@@ -193,7 +193,7 @@ function function_b0db9d0f() {
     self clearpath();
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 15, eflags: 0x2 linked
 // Checksum 0xd9d4ec3c, Offset: 0x3828
 // Size: 0x2b0
@@ -231,14 +231,14 @@ function function_c343823c(einflictor, eattacker, idamage, idflags, smeansofdeat
     return var_83af05db;
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x7795a30f, Offset: 0x3ae0
 // Size: 0x96
 function function_d8afd6c7() {
     n_health = 800;
-    if (isdefined(level.var_d2257418)) {
-        switch (level.var_d2257418) {
+    if (isdefined(level.gameskill)) {
+        switch (level.gameskill) {
         case 0:
             n_health = 1000;
             break;
@@ -253,7 +253,7 @@ function function_d8afd6c7() {
     return n_health;
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xd6f5f9ee, Offset: 0x3b80
 // Size: 0x3a
@@ -264,7 +264,7 @@ function function_902ac76() {
     level.var_1a2a8b6f.var_b0bffa0a = 0;
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x14bf0833, Offset: 0x3bc8
 // Size: 0x180
@@ -294,7 +294,7 @@ function function_8feeb0be() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x7cfaae38, Offset: 0x3d50
 // Size: 0xfa
@@ -317,7 +317,7 @@ function function_e7152de8() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 12, eflags: 0x2 linked
 // Checksum 0x7b82797b, Offset: 0x3e58
 // Size: 0x9c
@@ -329,18 +329,18 @@ function function_6760b772(*einflictor, eattacker, idamage, *idflags, *smeansofd
     return boneindex;
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 4, eflags: 0x2 linked
 // Checksum 0xf5e0c028, Offset: 0x3f00
 // Size: 0x9c
-function function_e160f453(*name, *var_f9f06983, *direct, *player) {
+function function_e160f453(*name, *starting, *direct, *player) {
     level flag::set("flag_mortar_orbit_complete");
     level flag::set("flag_mortar_orbit_rappel_start");
     level thread function_2e52b6f9();
     callback::remove_on_ai_spawned(&function_e59c6d2a);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x0
 // Checksum 0xcbd35948, Offset: 0x3fa8
 // Size: 0x7c
@@ -351,7 +351,7 @@ function function_234b1ce() {
     level.var_7466d419 makevehicleunusable();
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xdcb6c81b, Offset: 0x4030
 // Size: 0x18c
@@ -370,7 +370,7 @@ function function_e1c02ad2() {
     var_d231fd39 show();
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x350f763, Offset: 0x41c8
 // Size: 0x138
@@ -392,7 +392,7 @@ function function_9ca7e163() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x46f4dd48, Offset: 0x4308
 // Size: 0x94
@@ -407,7 +407,7 @@ function function_7ed7f625() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x38988762, Offset: 0x43a8
 // Size: 0x15c
@@ -424,7 +424,7 @@ function function_2c4d7184() {
     level clientfield::set("" + #"hash_147afd2c82d374fe", 0);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xfade653e, Offset: 0x4510
 // Size: 0x314
@@ -455,7 +455,7 @@ function function_19288a46() {
     level savegame::function_7790f03();
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xac6fc0cc, Offset: 0x4830
 // Size: 0x198
@@ -477,7 +477,7 @@ function function_e4c44785() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0xab6fda63, Offset: 0x49d0
 // Size: 0x6c
@@ -485,7 +485,7 @@ function function_713a956d(var_1728e1fe = vectortoangles(level.vip.origin - leve
     level.player setplayerangles(var_1728e1fe);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x7293abf9, Offset: 0x4a48
 // Size: 0x11c
@@ -502,7 +502,7 @@ function function_6cce8b8e() {
     self setspeed(15, 20, 20);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x1a5dd244, Offset: 0x4b70
 // Size: 0xd4
@@ -516,7 +516,7 @@ function function_97a20289() {
     level scene::init(#"hash_32b809763b13c282", a_ents);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0x7bc36c51, Offset: 0x4c50
 // Size: 0x674
@@ -578,7 +578,7 @@ function function_6acbfbb1(var_50cc0d4f = 0) {
     level.var_7466d419 scene::stop(#"hash_65f973650bb861a3", 1);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0xb8d422e6, Offset: 0x52d0
 // Size: 0x7c
@@ -588,7 +588,7 @@ function function_27b92aed(n_delay) {
     self startcameratween(0.5, 0, 0);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xf33fa144, Offset: 0x5358
 // Size: 0x94
@@ -600,7 +600,7 @@ function function_2ee152cc() {
     self setviewclamp(0, 0, 0, 0, 0, 1, 1);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0x422076a4, Offset: 0x53f8
 // Size: 0x74
@@ -609,7 +609,7 @@ function function_4ca07f70(*a_ents) {
     level.player val::reset(#"hash_60e4a6089561f03e", "takedamage");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x8456e00c, Offset: 0x5478
 // Size: 0x9c
@@ -622,7 +622,7 @@ function function_15739fec() {
     self function_cb48cddd();
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x74cc307f, Offset: 0x5520
 // Size: 0x6c
@@ -632,7 +632,7 @@ function function_5f51bebf() {
     level.player val::function_e681e68e(#"armada_intro");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x27a56d7c, Offset: 0x5598
 // Size: 0x64
@@ -643,7 +643,7 @@ function function_7b3aab80() {
     level flag::set("flag_orbit_mortar_player_on_ground");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xd0a79966, Offset: 0x5608
 // Size: 0xa4
@@ -657,7 +657,7 @@ function function_d380c058() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x39d4613e, Offset: 0x56b8
 // Size: 0x9c
@@ -669,14 +669,14 @@ function function_5901663e() {
     level flag::set("flag_vo_mortar_orbit_landing_requested");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x7c90bfc7, Offset: 0x5760
 // Size: 0xc4
 function function_40972ba8() {
     self endon(#"death");
     self val::set("mortart_orbit_ai", "ignoreme", 1);
-    if (level.var_d2257418 === 0) {
+    if (level.gameskill === 0) {
         return;
     }
     if (isdefined(self.var_99b46f13) && isdefined(level.var_7466d419)) {
@@ -687,7 +687,7 @@ function function_40972ba8() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xc6891246, Offset: 0x5830
 // Size: 0xf0
@@ -701,7 +701,7 @@ function function_4d73a251() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xcce1af6a, Offset: 0x5928
 // Size: 0x94
@@ -712,7 +712,7 @@ function function_1eb807e1() {
     level.player thread namespace_a635adb1::queue("vox_cp_armd_00004_plt2_visualonlztakin_f1");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x8500ff77, Offset: 0x59c8
 // Size: 0x364
@@ -762,7 +762,7 @@ function function_428180d() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x71b8f88f, Offset: 0x5d38
 // Size: 0x248
@@ -779,7 +779,7 @@ function function_6610ecb5() {
         var_54a395f8 thread function_48ac87db();
         wait(0.1);
     }
-    if (level.var_d2257418 === 0) {
+    if (level.gameskill === 0) {
         return;
     }
     trigger::wait_till("mortar_orbit_courtyard");
@@ -790,7 +790,7 @@ function function_6610ecb5() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x9a50e8fb, Offset: 0x5f88
 // Size: 0x2c
@@ -800,7 +800,7 @@ function function_48ac87db() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 2, eflags: 0x2 linked
 // Checksum 0x18deec01, Offset: 0x5fc0
 // Size: 0x61c
@@ -853,7 +853,7 @@ function function_94a21d8b(var_d3440450, var_50cc0d4f) {
     level skipto::function_51726ac8([0:"armada_mortar_exfil"], 0, level.player);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x487ad495, Offset: 0x65e8
 // Size: 0x34c
@@ -892,7 +892,7 @@ function function_a65af49d() {
     level.var_3ff4669d namespace_a635adb1::queue("vox_cp_armd_00004_sims_gobellimrightbe_12");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x7c22a27c, Offset: 0x6940
 // Size: 0xf6
@@ -909,7 +909,7 @@ function function_1f0a8cc0() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0x7ec81d21, Offset: 0x6a40
 // Size: 0x48
@@ -920,20 +920,20 @@ function function_a02983f8(s_params) {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xab5e32f6, Offset: 0x6a90
 // Size: 0xa4
 function function_b2d38e15() {
     level endon(#"hash_85243554b3f96e1");
-    level savegame::function_904f733();
+    level savegame::checkpoint_save();
     level flag::wait_till("flag_set_teahouse_checkpoint");
-    level savegame::function_904f733();
+    level savegame::checkpoint_save();
     level flag::wait_till("flag_mortar_reached_red_door");
-    level savegame::function_904f733();
+    level savegame::checkpoint_save();
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x23d723ef, Offset: 0x6b40
 // Size: 0x84
@@ -948,7 +948,7 @@ function function_5cce18fe() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x0
 // Checksum 0x54388df9, Offset: 0x6bd0
 // Size: 0x94
@@ -959,7 +959,7 @@ function function_11e2bd76() {
     self val::reset(#"hash_fbe5c5727eb30d7", "ignoreme");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x67b26ebd, Offset: 0x6c70
 // Size: 0x54
@@ -970,7 +970,7 @@ function function_17cadeb1() {
     self thread function_ab1c35d7();
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0x50dfc47f, Offset: 0x6cd0
 // Size: 0x134
@@ -988,7 +988,7 @@ function function_97519340(nd_start) {
     self setneargoalnotifydist(self.var_cb55c804);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x4b515dfe, Offset: 0x6e10
 // Size: 0x3a2
@@ -1048,7 +1048,7 @@ function function_ab1c35d7() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0x96032b78, Offset: 0x71c0
 // Size: 0x15a
@@ -1078,7 +1078,7 @@ function function_ba67d417(s_anchor) {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 2, eflags: 0x2 linked
 // Checksum 0x8a528daa, Offset: 0x7328
 // Size: 0x238
@@ -1103,7 +1103,7 @@ function function_f1b25856(s_anchor, var_d94e669c = 1) {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x9ea131a2, Offset: 0x7568
 // Size: 0x110
@@ -1120,7 +1120,7 @@ function function_5ebe746e() {
     level notify(#"hash_6d5dee70f2cbd555");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x859d4ec, Offset: 0x7680
 // Size: 0xf4
@@ -1135,7 +1135,7 @@ function function_382a326a() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 2, eflags: 0x2 linked
 // Checksum 0x7e5d6560, Offset: 0x7780
 // Size: 0xb8
@@ -1154,7 +1154,7 @@ function function_478310c9(var_777b7e33, var_a9ad8d56) {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 2, eflags: 0x2 linked
 // Checksum 0x67e84aed, Offset: 0x7840
 // Size: 0x25a
@@ -1192,7 +1192,7 @@ function function_506eaf20(var_777b7e33, var_a9ad8d56) {
     return s_anchor;
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0x806c1436, Offset: 0x7aa8
 // Size: 0x1c
@@ -1200,7 +1200,7 @@ function function_e7ff3aa4(e_ent) {
     return e_ent.var_99b46f13 === 1;
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 4, eflags: 0x2 linked
 // Checksum 0xca4f2051, Offset: 0x7ad0
 // Size: 0x126
@@ -1219,7 +1219,7 @@ function function_f7dc2ff0(var_90df9642, s_anchor, var_777b7e33, var_a9ad8d56) {
     self notify(#"hash_3a86066a301e90fc");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 3, eflags: 0x2 linked
 // Checksum 0x3e3a1f01, Offset: 0x7c00
 // Size: 0xf8
@@ -1237,7 +1237,7 @@ function function_7882569f(s_anchor, var_777b7e33, var_a9ad8d56) {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x0
 // Checksum 0xca2cd97a, Offset: 0x7d00
 // Size: 0x1c4
@@ -1265,7 +1265,7 @@ function function_82ba400e(s_target) {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 2, eflags: 0x2 linked
 // Checksum 0x86cd7e46, Offset: 0x7ed0
 // Size: 0x174
@@ -1288,7 +1288,7 @@ function function_8060162f(v_target, n_index = 1) {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x4bc7dd89, Offset: 0x8050
 // Size: 0x94
@@ -1298,7 +1298,7 @@ function function_1e3fd6e0() {
     self turret::set_burst_parameters(0.25, 0.5, 0.25, 0.5, 1);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 2, eflags: 0x2 linked
 // Checksum 0xc496db73, Offset: 0x80f0
 // Size: 0x1d2
@@ -1320,7 +1320,7 @@ function function_67565f43(n_index, var_2e91c04f) {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 2, eflags: 0x2 linked
 // Checksum 0xa466f5e2, Offset: 0x82d0
 // Size: 0x1a2
@@ -1337,7 +1337,7 @@ function function_536cff7e(start_node, n_speed = 40) {
     self waittill(#"goal", #"near_goal", #"reached_end_node", #"reached_node", #"stop path");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x5d3549ae, Offset: 0x8480
 // Size: 0xec
@@ -1352,7 +1352,7 @@ function function_24c9e377() {
     self setspeed(30, 20, 20);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 2, eflags: 0x2 linked
 // Checksum 0xfde5609e, Offset: 0x8578
 // Size: 0x32c
@@ -1385,7 +1385,7 @@ function function_5a365113(var_7e2d8151, var_1eea8080 = 0) {
     self function_d4c687c9();
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xaacaa640, Offset: 0x88b0
 // Size: 0x104
@@ -1400,7 +1400,7 @@ function function_8199c444() {
     level thread function_5ebe746e();
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x9758a7d3, Offset: 0x89c0
 // Size: 0xa4
@@ -1411,7 +1411,7 @@ function function_114d3739() {
     array::delete_all(spawner::get_ai_group_ai("mortar_team_e"));
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xbfec574, Offset: 0x8a70
 // Size: 0xec
@@ -1425,7 +1425,7 @@ function function_fb965703() {
     spawner::simple_spawn("mortar_enemy_landing_ground");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xfe4b2bd8, Offset: 0x8b68
 // Size: 0x74
@@ -1437,7 +1437,7 @@ function function_a807976b() {
     self setpersonalthreatbias(level.player, 2000);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xf0d3be0a, Offset: 0x8be8
 // Size: 0x19c
@@ -1469,7 +1469,7 @@ function function_ded27710() {
     level thread function_529acf84();
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x7993bc49, Offset: 0x8d90
 // Size: 0x11c
@@ -1484,7 +1484,7 @@ function function_c6c2c276() {
     level scene::init(#"hash_4e497ef04688df0e");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0x21f94e09, Offset: 0x8eb8
 // Size: 0x264
@@ -1515,7 +1515,7 @@ function function_469dbbc4(a_ents) {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0xc177e725, Offset: 0x9128
 // Size: 0x80
@@ -1529,7 +1529,7 @@ function function_119bac80(attacker) {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0xa56f8c19, Offset: 0x91b0
 // Size: 0x54
@@ -1539,7 +1539,7 @@ function function_c1a275eb(attacker) {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x2f0e77d6, Offset: 0x9210
 // Size: 0x18e
@@ -1561,7 +1561,7 @@ function function_aad3f658() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x69ee8376, Offset: 0x93a8
 // Size: 0xbc
@@ -1574,7 +1574,7 @@ function function_77ff9ff2() {
     level scene::stop(#"hash_47c1f9bed49aef1b", 1);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0x4de11a33, Offset: 0x9470
 // Size: 0xc4
@@ -1587,7 +1587,7 @@ function function_ecf10386(a_ents) {
     level scene::play(#"hash_4e497ef04688df0e", "react", enemy);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0xb555fcbb, Offset: 0x9540
 // Size: 0xbc
@@ -1600,7 +1600,7 @@ function function_b6a33802(a_ents) {
     level scene::remove_scene_func(#"hash_4e497ef04688df0e", &function_b6a33802, "play");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x56d3a183, Offset: 0x9608
 // Size: 0xa4
@@ -1611,7 +1611,7 @@ function function_9a05c498() {
     level scene::play(#"hash_4e497df04688dd5b");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0xf9821112, Offset: 0x96b8
 // Size: 0xac
@@ -1624,7 +1624,7 @@ function function_a2024273(a_ents) {
     level scene::remove_scene_func(#"hash_4e497df04688dd5b", &function_a2024273, "done");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x3b54f751, Offset: 0x9770
 // Size: 0x94
@@ -1635,7 +1635,7 @@ function function_6b05b315() {
     level scene::play(#"hash_d6565e31fc629f2");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0x85199ab0, Offset: 0x9810
 // Size: 0xbc
@@ -1648,7 +1648,7 @@ function function_32447d79(a_ents) {
     level scene::remove_scene_func(#"hash_d6565e31fc629f2", &function_32447d79, "done");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x789086f2, Offset: 0x98d8
 // Size: 0x54
@@ -1658,7 +1658,7 @@ function function_e79a5a5d() {
     spawner::simple_spawn_single("vign_peaking_window_spawner", &function_ce14c867);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xa81ceed1, Offset: 0x9938
 // Size: 0x16c
@@ -1677,7 +1677,7 @@ function function_ce14c867() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x13bdc8f8, Offset: 0x9ab0
 // Size: 0xcc
@@ -1690,7 +1690,7 @@ function function_ded00ef3() {
     level flag::set("flag_aib_t9_vign_cust_arm_peaking_window_react");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xc0235b5f, Offset: 0x9b88
 // Size: 0x8c
@@ -1701,7 +1701,7 @@ function function_fd33933d() {
     level scene::stop(#"hash_667342d5ad8c3596", 1);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x0
 // Checksum 0xbfaa96f3, Offset: 0x9c20
 // Size: 0x74
@@ -1711,7 +1711,7 @@ function function_6dfe5db1() {
     level scene::play(#"hash_6be70ccea1f54709");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0x26651c18, Offset: 0x9ca0
 // Size: 0x11c
@@ -1727,7 +1727,7 @@ function function_41c74d6e(ents) {
     level scene::remove_scene_func("aib_t9_vign_tplt_ent_around_corner_l_2_stnd_spray_shoot_01", &function_41c74d6e, "play");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x1cd25368, Offset: 0x9dc8
 // Size: 0x7c
@@ -1738,7 +1738,7 @@ function function_4a54e325() {
     level scene::play(#"hash_775ef8a4a603e0c0");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0x15cbeb83, Offset: 0x9e50
 // Size: 0x16c
@@ -1758,7 +1758,7 @@ function function_67118793(ents) {
     level scene::remove_scene_func("aib_t9_vign_cust_arm_mortar_first_battle_1st_wave", &function_67118793, "play");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xb9b47e02, Offset: 0x9fc8
 // Size: 0x4c
@@ -1768,7 +1768,7 @@ function function_6ca545eb() {
     level.var_52874eb2 thread function_8060162f(self.origin, 1);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x7bb2fdd2, Offset: 0xa020
 // Size: 0x2c
@@ -1776,7 +1776,7 @@ function function_f2cbcaaa() {
     spawner::simple_spawn_single("mortar_landing_dth_fall_over_railing_f_01_guy", &function_291146ea);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x5646954e, Offset: 0xa058
 // Size: 0xbc
@@ -1792,7 +1792,7 @@ function function_291146ea() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x507f6c5e, Offset: 0xa120
 // Size: 0x5c
@@ -1802,7 +1802,7 @@ function function_aaf84792() {
     spawner::simple_spawn_single("mortar_brks_wndw_1_base_1_guy", &function_c25d3a03);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xab8fd1b, Offset: 0xa188
 // Size: 0x1cc
@@ -1824,7 +1824,7 @@ function function_c25d3a03() {
     self kill();
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x8ece48f8, Offset: 0xa360
 // Size: 0x6c
@@ -1834,7 +1834,7 @@ function function_c728f547() {
     spawner::simple_spawn_single("vign_scan_for_heli_balcony_guy", &function_d64dcfe2);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xfd03212e, Offset: 0xa3d8
 // Size: 0x12c
@@ -1850,7 +1850,7 @@ function function_d64dcfe2() {
     self thread ai::function_e09d210c(var_6fd474cd);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xaab100d6, Offset: 0xa510
 // Size: 0xd4
@@ -1864,7 +1864,7 @@ function function_2136dc79() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x45f0e781, Offset: 0xa5f0
 // Size: 0x6c
@@ -1874,7 +1874,7 @@ function function_529acf84() {
     spawner::simple_spawn_single("vign_startled_ent_balcony_death_guy", &function_7f4a10e5);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x9d49e5f5, Offset: 0xa668
 // Size: 0x17e
@@ -1898,7 +1898,7 @@ function function_7f4a10e5() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x9490a8ca, Offset: 0xa7f0
 // Size: 0x4c
@@ -1907,7 +1907,7 @@ function function_81654d37() {
     spawner::simple_spawn_single("vign_dth_against_wall_2_stairs_guy", &function_c98cbd4e);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xfa6c6d7, Offset: 0xa848
 // Size: 0x7c
@@ -1918,7 +1918,7 @@ function function_c98cbd4e() {
     self thread ai::force_goal(var_cc827aa1, 0, undefined, 0, 1);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0x849e713e, Offset: 0xa8d0
 // Size: 0x17c
@@ -1941,7 +1941,7 @@ function function_558f59db(var_cc827aa1) {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x8265998f, Offset: 0xaa58
 // Size: 0x11c
@@ -1955,7 +1955,7 @@ function function_d250e19f() {
     level scene::play(#"hash_3da87aac371213c7", "play");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0xaa146278, Offset: 0xab80
 // Size: 0xc4
@@ -1965,7 +1965,7 @@ function function_28a8f735(ents) {
     level flag::set("start_vignette_react_surprise_doorway");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0x44d02a39, Offset: 0xac50
 // Size: 0x1bc
@@ -1987,7 +1987,7 @@ function function_e9a58f7a(ents) {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xad99c54f, Offset: 0xae18
 // Size: 0x24
@@ -1995,7 +1995,7 @@ function function_1aeb0a0a() {
     self setpersonalthreatbias(level.player, 2000);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x1e54e8, Offset: 0xae48
 // Size: 0xd4
@@ -2007,7 +2007,7 @@ function function_eb90b3e8() {
     level scene::remove_scene_func(#"hash_28a87063776ee7d0", &function_6c337113, "init");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0xd3089771, Offset: 0xaf28
 // Size: 0x11c
@@ -2025,7 +2025,7 @@ function function_6c337113(a_ents) {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x741be43c, Offset: 0xb050
 // Size: 0xe4
@@ -2043,7 +2043,7 @@ function function_be0c7630() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x8115fbe1, Offset: 0xb140
 // Size: 0x114
@@ -2061,7 +2061,7 @@ function function_566d3929() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xca246661, Offset: 0xb260
 // Size: 0x1ec
@@ -2084,7 +2084,7 @@ function function_e12e064f() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xf0ead255, Offset: 0xb458
 // Size: 0x84
@@ -2100,7 +2100,7 @@ function function_c1a89a46() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xde7a2d5f, Offset: 0xb4e8
 // Size: 0x1b4
@@ -2122,7 +2122,7 @@ function function_5e509636() {
     level scene::play(#"hash_784dfc24afdbcdbc", self);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0x194b0eb2, Offset: 0xb6a8
 // Size: 0xc4
@@ -2135,7 +2135,7 @@ function function_a3bea266(a_ents) {
     level scene::remove_scene_func(#"hash_784dfc24afdbcdbc", &function_a3bea266, "play");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x1bc568e, Offset: 0xb778
 // Size: 0x12c
@@ -2152,7 +2152,7 @@ function function_dcf0253() {
     level thread function_d0039deb();
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xc7ea58de, Offset: 0xb8b0
 // Size: 0x148
@@ -2167,7 +2167,7 @@ function function_2f56897b() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xbed639db, Offset: 0xba00
 // Size: 0xe4
@@ -2182,7 +2182,7 @@ function function_696dc659() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x9e6ef25f, Offset: 0xbaf0
 // Size: 0x11c
@@ -2198,7 +2198,7 @@ function function_ebdd60f9() {
     level scene::remove_scene_func(#"hash_42257f84442daa06", &function_cbca12b3, "play");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0xd6acb8cd, Offset: 0xbc18
 // Size: 0x1a0
@@ -2225,7 +2225,7 @@ function function_cbca12b3(a_ents) {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 3, eflags: 0x2 linked
 // Checksum 0x4dd68c89, Offset: 0xbdc0
 // Size: 0xdc
@@ -2241,7 +2241,7 @@ function function_9f638ce0(str_trigger, var_d1f6ccc2, str_flag) {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xeb64862, Offset: 0xbea8
 // Size: 0xfc
@@ -2256,7 +2256,7 @@ function function_320d2594() {
     level thread function_6d64338f();
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x9044f7de, Offset: 0xbfb0
 // Size: 0x54
@@ -2266,7 +2266,7 @@ function function_6f2bf98c() {
     self ai::set_goal("mortar_tea_house_vol");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x4efe4b9, Offset: 0xc010
 // Size: 0x23c
@@ -2289,7 +2289,7 @@ function function_d0039deb() {
     ai_enemy setignoreent(level.var_3ff4669d, 0);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x7d1bd55e, Offset: 0xc258
 // Size: 0x144
@@ -2307,7 +2307,7 @@ function function_cee5e544() {
     level flag::set("flag_sims_reached_tea_house_vo");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x8387fd62, Offset: 0xc3a8
 // Size: 0x13c
@@ -2325,7 +2325,7 @@ function function_6d64338f() {
     level flag::set("mortar_ai_wave_3_cleared");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x63b95671, Offset: 0xc4f0
 // Size: 0x94
@@ -2338,7 +2338,7 @@ function function_287230c8() {
     self kill();
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x8fb14daa, Offset: 0xc590
 // Size: 0xdc
@@ -2355,7 +2355,7 @@ function function_de2d35ad() {
     var_2c462f31[0] thread function_ce707a4(var_2c462f31[1]);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x34caef50, Offset: 0xc678
 // Size: 0xa0
@@ -2368,7 +2368,7 @@ function function_ac42a1bb() {
     return [1:var_d93ed883, 0:var_1280faf3];
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x71144c08, Offset: 0xc720
 // Size: 0x4c
@@ -2379,7 +2379,7 @@ function function_8ed36c06() {
     self kill();
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x6bc2fbd0, Offset: 0xc778
 // Size: 0x60
@@ -2390,7 +2390,7 @@ function function_250de527() {
     level notify(#"hash_2ddc22588860a7a5");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0x89caff8f, Offset: 0xc7e0
 // Size: 0x28c
@@ -2422,7 +2422,7 @@ function function_ce707a4(var_d93ed883) {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0x2d493f82, Offset: 0xca78
 // Size: 0x120
@@ -2444,7 +2444,7 @@ function function_7b37dd50(var_d93ed883) {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0xd21af146, Offset: 0xcba0
 // Size: 0xa4
@@ -2459,7 +2459,7 @@ function function_ad03d12c(b_used) {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x80f724d1, Offset: 0xcc50
 // Size: 0x4
@@ -2467,7 +2467,7 @@ function function_af189a4c() {
     
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x9532363d, Offset: 0xcc60
 // Size: 0x5c
@@ -2477,7 +2477,7 @@ function function_80089cc9() {
     level objectives::complete("armada_obj_mortar_orbit_clear_mortar");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xb5147478, Offset: 0xccc8
 // Size: 0x75c
@@ -2536,7 +2536,7 @@ function function_3d691322() {
     level savegame::function_7790f03();
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0xfecbb3ea, Offset: 0xd430
 // Size: 0x8c
@@ -2548,7 +2548,7 @@ function function_a6fea06f(*params) {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x78759f7f, Offset: 0xd4c8
 // Size: 0x164
@@ -2563,7 +2563,7 @@ function function_e49e80d4() {
     level objectives::complete("armada_obj_meet_adler");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xc8fd1d86, Offset: 0xd638
 // Size: 0xac
@@ -2577,7 +2577,7 @@ function function_ca649730() {
     level thread function_4c8e7a76(0);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0x49f5b690, Offset: 0xd6f0
 // Size: 0x174
@@ -2602,7 +2602,7 @@ function function_4c8e7a76(var_7e2c51d8) {
     namespace_b7cfe907::function_f1a80dd();
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0x9dc178f3, Offset: 0xd870
 // Size: 0x14c
@@ -2621,7 +2621,7 @@ function function_110866d(var_e37d454 = 0) {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x371974c8, Offset: 0xd9c8
 // Size: 0xc4
@@ -2633,7 +2633,7 @@ function function_766af271() {
     level thread scene::play(#"hash_5705e398ad93ac99", a_ents);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x1167a6af, Offset: 0xda98
 // Size: 0xf4
@@ -2648,7 +2648,7 @@ function function_4bf5cfff() {
     self clientfield::set_to_player("" + #"hash_7474973a37272b2c", 0);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0x16c41cb8, Offset: 0xdb98
 // Size: 0x1fc
@@ -2671,7 +2671,7 @@ function function_a1de7ea2(var_e37d454 = 0) {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0x80dec50d, Offset: 0xdda0
 // Size: 0x5c
@@ -2680,7 +2680,7 @@ function function_e8f2d444(a_ents) {
     level scene::remove_scene_func(#"hash_5705e398ad93ac99", &function_e8f2d444, "play");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0xbc105294, Offset: 0xde08
 // Size: 0x7c
@@ -2691,7 +2691,7 @@ function function_ce1faca(a_ents) {
     level scene::remove_scene_func(#"hash_5705e398ad93ac99", &function_ce1faca, "stop");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0xc8b403e4, Offset: 0xde90
 // Size: 0xec
@@ -2706,7 +2706,7 @@ function function_262e8906(var_50cc0d4f) {
     level thread scene::play(#"hash_7d15d57d22684df", "sims_stairs_exit", a_ents);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0xebf03fa2, Offset: 0xdf88
 // Size: 0x10c
@@ -2723,7 +2723,7 @@ function function_cd1dcfed(ents) {
     level scene::remove_scene_func(#"hash_7d15d57d22684df", &function_cd1dcfed, "sims_exit");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x0
 // Checksum 0xa2779f8d, Offset: 0xe0a0
 // Size: 0x34
@@ -2731,7 +2731,7 @@ function function_6896ea8a(var_43baa908) {
     spawner::simple_spawn_single("aib_t9_vign_cust_arm_run_2_cover_guy", &function_cb65a5e8, var_43baa908);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0x4e7bf1cb, Offset: 0xe0e0
 // Size: 0xd4
@@ -2745,7 +2745,7 @@ function function_cb65a5e8(var_43baa908) {
     self val::reset(#"hash_2cb3bfd28a6ec1d8", "ignoreme");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x724efd7e, Offset: 0xe1c0
 // Size: 0xb8
@@ -2756,7 +2756,7 @@ function function_315508be() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 2, eflags: 0x2 linked
 // Checksum 0xcb94c6e5, Offset: 0xe280
 // Size: 0x3f4
@@ -2774,7 +2774,7 @@ function function_997dda5e(var_d3440450, var_50cc0d4f) {
         level.var_3ff4669d thread colors::set_force_color("g");
         level thread function_92d60a9d();
         level function_6b5096fe();
-        level thread savegame::function_904f733();
+        level thread savegame::checkpoint_save();
     }
     spawner::add_spawn_function_ai_group("exfil_ambush_ai", &function_d4168442);
     level thread function_b2b6c923();
@@ -2796,7 +2796,7 @@ function function_997dda5e(var_d3440450, var_50cc0d4f) {
     level.player util::delay(5, "death", &show);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x9324bd3c, Offset: 0xe680
 // Size: 0x1bc
@@ -2818,7 +2818,7 @@ function function_a4b20ce7() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x0
 // Checksum 0xacbeb8c6, Offset: 0xe848
 // Size: 0x184
@@ -2839,11 +2839,11 @@ function function_b74e1deb() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 4, eflags: 0x2 linked
 // Checksum 0x3b1c5a8f, Offset: 0xe9d8
 // Size: 0x124
-function function_a11d0dcc(*name, *var_f9f06983, *direct, *player) {
+function function_a11d0dcc(*name, *starting, *direct, *player) {
     level flag::set("flag_mortar_village_complete");
     level flag::set("flag_bamboo_end_end");
     level thread function_a4b20ce7();
@@ -2851,14 +2851,14 @@ function function_a11d0dcc(*name, *var_f9f06983, *direct, *player) {
         getent("mortar_courtyard_sign_model", "targetname") delete();
     }
     if (isdefined(level.var_52874eb2)) {
-        level.var_52874eb2 namespace_b2b6266a::remove();
+        level.var_52874eb2 entname::remove();
     }
     if (isdefined(level.var_7466d419)) {
-        level.var_7466d419 namespace_b2b6266a::remove();
+        level.var_7466d419 entname::remove();
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xb0c7b3a6, Offset: 0xeb08
 // Size: 0xc4
@@ -2873,7 +2873,7 @@ function function_b2b6c923() {
     level flag::set("flag_mortar_exfil_fly_finished");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x347675c9, Offset: 0xebd8
 // Size: 0xdc
@@ -2887,7 +2887,7 @@ function function_e6ca6b4d() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0x9d7efed0, Offset: 0xecc0
 // Size: 0x14c
@@ -2905,7 +2905,7 @@ function function_9c91c0b5(a_ents) {
     level scene::remove_scene_func(#"hash_8c22a80935b1a86", &function_9c91c0b5, "done");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xccd47e6a, Offset: 0xee18
 // Size: 0x9c
@@ -2917,7 +2917,7 @@ function function_79299255() {
     level scene::play(#"hash_15f9f35b939d1d86", self);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x1f895f61, Offset: 0xeec0
 // Size: 0x96
@@ -2930,7 +2930,7 @@ function function_7cbced04() {
     self notify(#"hash_254e7fb941cc8d9d");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 3, eflags: 0x2 linked
 // Checksum 0x9cd84e89, Offset: 0xef60
 // Size: 0xfc
@@ -2947,7 +2947,7 @@ function function_7c644fb3(ai, var_9114191, var_8b118adb) {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x48061cd, Offset: 0xf068
 // Size: 0x9c
@@ -2960,7 +2960,7 @@ function function_be014f32() {
     self stoploopsound(1);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x121c0631, Offset: 0xf110
 // Size: 0x694
@@ -3016,7 +3016,7 @@ function function_58771ad7() {
     function_e9339cdf();
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x310079c6, Offset: 0xf7b0
 // Size: 0xdc
@@ -3031,7 +3031,7 @@ function function_e9339cdf() {
     level.var_7466d419 turretsettargetangles(1, (0, 0, 0));
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x101c746, Offset: 0xf898
 // Size: 0xec
@@ -3044,7 +3044,7 @@ function function_cdf5e193() {
     objectives::complete("armada_obj_board_exfil_huey");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xbe7404f4, Offset: 0xf990
 // Size: 0xa6
@@ -3056,7 +3056,7 @@ function function_c09e7d39() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xab081cbb, Offset: 0xfa40
 // Size: 0xac
@@ -3069,7 +3069,7 @@ function function_9290ebb3() {
     level.player hide();
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xd3de7826, Offset: 0xfaf8
 // Size: 0x124
@@ -3084,7 +3084,7 @@ function function_f89fbd1e() {
     self setgoalyaw((0, var_48236d2c.angles[1], 0)[1]);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xd0af3940, Offset: 0xfc28
 // Size: 0x44
@@ -3093,7 +3093,7 @@ function function_bd16430c() {
     util::stop_magic_bullet_shield(level.var_7466d419);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xee2ef5ee, Offset: 0xfc78
 // Size: 0x8c
@@ -3105,7 +3105,7 @@ function function_d4168442() {
     self val::reset("exfil_ambush", "ignoreme");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x38522d30, Offset: 0xfd10
 // Size: 0x71c
@@ -3143,7 +3143,7 @@ function function_6b5096fe() {
     level vehicle::get_in(level.vip, level.var_52874eb2, "crew", 1);
     level vehicle::get_in(level.gunner, level.var_52874eb2, "gunner1", 1);
     level.var_52874eb2 turretsettargetangles(1, (0, 0, 0));
-    level.var_52874eb2 thread namespace_b2b6266a::add(#"hash_2dac672dcc262015", #"allies");
+    level.var_52874eb2 thread entname::add(#"hash_2dac672dcc262015", #"allies");
     level.var_52874eb2 setteam(#"allies");
     util::magic_bullet_shield(level.var_52874eb2);
     level.var_52874eb2.drivepath = 1;
@@ -3167,7 +3167,7 @@ function function_6b5096fe() {
     level.var_52874eb2 turret::disable(4);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x7d3480da, Offset: 0x10438
 // Size: 0xe4
@@ -3183,7 +3183,7 @@ function function_73b45723() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0xdfe252b0, Offset: 0x10528
 // Size: 0x1ac
@@ -3195,7 +3195,7 @@ function function_2d9dc4d1() {
         level.var_7466d419 namespace_b7cfe907::function_5677b6eb();
     }
     level function_73b45723();
-    level.var_7466d419 thread namespace_b2b6266a::add(#"hash_681bce072c58be1f", #"allies");
+    level.var_7466d419 thread entname::add(#"hash_681bce072c58be1f", #"allies");
     level.var_7466d419 cleartargetyaw();
     level.var_7466d419 cleargoalyaw();
     level.var_7466d419 setyawspeed(40, 20, 20);
@@ -3207,7 +3207,7 @@ function function_2d9dc4d1() {
     level namespace_b7cfe907::function_37fc8bb();
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x3e32b3ce, Offset: 0x106e0
 // Size: 0xd4
@@ -3220,7 +3220,7 @@ function function_ba10e034() {
     self turret::enable(1, 0);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x0
 // Checksum 0xe5a6d553, Offset: 0x107c0
 // Size: 0x5c
@@ -3230,7 +3230,7 @@ function function_285ff4e4() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0x15dc7f7f, Offset: 0x10828
 // Size: 0x14c
@@ -3248,7 +3248,7 @@ function function_13d13395(n_index) {
     self function_cb48cddd();
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x330b816d, Offset: 0x10980
 // Size: 0xdc
@@ -3264,7 +3264,7 @@ function function_92d60a9d() {
     hidemiscmodels("p9_fxanim_cp_armada_town_court_02_static_mod");
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 7, eflags: 0x2 linked
 // Checksum 0xf3c14e3, Offset: 0x10a68
 // Size: 0x4ca
@@ -3326,7 +3326,7 @@ function function_1df2273d(*destructible_event, attacker, *weapon, *piece_index,
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0x214daf4b, Offset: 0x10f40
 // Size: 0x2c
@@ -3334,7 +3334,7 @@ function function_97bcc0e9(var_22702838) {
     level scene::stop(var_22702838, 1);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x1053f5af, Offset: 0x10f78
 // Size: 0x44
@@ -3342,7 +3342,7 @@ function function_2e52b6f9() {
     array::run_all(getentarray("mortar_orbit_barrels", "script_barrel_group"), &delete);
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 0, eflags: 0x2 linked
 // Checksum 0x13e71db, Offset: 0x10fc8
 // Size: 0x64
@@ -3352,7 +3352,7 @@ function function_91c4756f() {
     }
 }
 
-// Namespace namespace_489e2b6c/namespace_e6855491
+// Namespace armada_mortar/namespace_e6855491
 // Params 1, eflags: 0x2 linked
 // Checksum 0x74f3ca8e, Offset: 0x11038
 // Size: 0x194

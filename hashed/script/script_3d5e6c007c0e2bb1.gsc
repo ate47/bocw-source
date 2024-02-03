@@ -38,7 +38,7 @@ function barrelupdate(model_name = "zombietron_barrel") {
     }
     waitframe(1);
     self endon(#"hash_3e2226cc328d43a7", #"hash_562d458e34274132");
-    org = namespace_ec06fe4a::function_e22ae9b3(self.origin, "tag_origin");
+    org = namespace_ec06fe4a::spawnmodel(self.origin, "tag_origin");
     if (isdefined(org)) {
         org.targetname = "barrelUpdate";
         org.angles = (0, randomint(180), 0);
@@ -49,7 +49,7 @@ function barrelupdate(model_name = "zombietron_barrel") {
     } else {
         return;
     }
-    barrel = namespace_ec06fe4a::function_e22ae9b3(self.origin + vectorscale((0, 1, 0), 90), model_name);
+    barrel = namespace_ec06fe4a::spawnmodel(self.origin + vectorscale((0, 1, 0), 90), model_name);
     if (isdefined(barrel)) {
         barrel.targetname = "barrel1";
         barrel setplayercollision(0);
@@ -70,7 +70,7 @@ function barrelupdate(model_name = "zombietron_barrel") {
     }
     org.barrel1 = barrel;
     org.trigger1 = trigger;
-    barrel = namespace_ec06fe4a::function_e22ae9b3(self.origin + vectorscale((0, -1, 0), 90), model_name);
+    barrel = namespace_ec06fe4a::spawnmodel(self.origin + vectorscale((0, -1, 0), 90), model_name);
     if (isdefined(barrel)) {
         if (isplayer(self)) {
             barrel thread namespace_ec06fe4a::function_ae010bb4(self);
@@ -146,7 +146,7 @@ function private function_7c757878(player, mod = "MOD_UNKNOWN", var_70c63791) {
             dir = guy.origin - self.origin;
             guy thread namespace_ec06fe4a::function_b4ff2191(dir, 50, undefined, player);
         } else {
-            guy dodamage(guy.health + 1, guy.origin, player, player, "none", mod, 0, level.doa.var_c6e5e8d9);
+            guy dodamage(guy.health + 1, guy.origin, player, player, "none", mod, 0, level.doa.default_weapon);
         }
         player playrumbleonentity("damage_light");
     }

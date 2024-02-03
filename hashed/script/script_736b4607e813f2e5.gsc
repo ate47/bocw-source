@@ -312,7 +312,7 @@ function private function_d6ccc9e9(entity, *asmstate) {
 // Size: 0x7c
 function private blightfathercreatecrawleregg() {
     if (randomint(100) < 15) {
-        egg = namespace_ec06fe4a::function_e22ae9b3(self.var_cacacf22, "zombietron_crawler_egg", undefined, "blightFatherCreateCrawlerEgg");
+        egg = namespace_ec06fe4a::spawnmodel(self.var_cacacf22, "zombietron_crawler_egg", undefined, "blightFatherCreateCrawlerEgg");
         if (isdefined(egg)) {
             egg thread function_7512b675(self.var_e2724436);
         }
@@ -365,12 +365,12 @@ function function_475aaa85() {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x2b38a544, Offset: 0x20a8
 // Size: 0x2cc
-function private function_7512b675(var_5d8c76b6) {
+function private function_7512b675(launchdir) {
     self notify("4a3e218ccbf4897a");
     self endon("4a3e218ccbf4897a");
     self endon(#"death");
     self enableaimassist();
-    self physicslaunch(self.origin, var_5d8c76b6);
+    self physicslaunch(self.origin, launchdir);
     self.takedamage = 1;
     self.health = 500;
     self thread namespace_ec06fe4a::function_ad852085(level, "arena_completed");
@@ -850,7 +850,7 @@ function private blightfatherlaunchchaosmissile(var_f794172e, var_61622673, var_
         self.var_6ee32f47 = 0;
     }
     self namespace_e32bb68::function_3a59ec34("zmb_doa_ai_bfather_vocal_missile");
-    var_892397fd = namespace_ec06fe4a::function_e22ae9b3(var_ced3ec54, "tag_origin");
+    var_892397fd = namespace_ec06fe4a::spawnmodel(var_ced3ec54, "tag_origin");
     if (!isdefined(var_892397fd)) {
         return;
     }

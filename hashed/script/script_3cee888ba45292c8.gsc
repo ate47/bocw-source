@@ -142,10 +142,10 @@ function private function_9730c48d(*params) {
 // Checksum 0x2aebca68, Offset: 0x7e8
 // Size: 0x114
 function private function_53bc3572(*soa) {
-    if (!self awareness::function_b3810444(self, #"hash_22b607b27e57a68b")) {
-        self awareness::register_state(self, #"hash_22b607b27e57a68b", &function_916e0825, &function_1ea26b11, &function_a08dd1de, &function_39ab6f8d, undefined);
+    if (!self awareness::function_b3810444(self, #"bound")) {
+        self awareness::register_state(self, #"bound", &function_916e0825, &function_1ea26b11, &function_a08dd1de, &function_39ab6f8d, undefined);
     }
-    self awareness::set_state(self, #"hash_22b607b27e57a68b");
+    self awareness::set_state(self, #"bound");
     namespace_19c99142::function_7d12a873(self, #"attacking", &function_f024bc97);
     self callback::function_d8abfc3d(#"awareness_event", &function_2bcd6c38);
 }

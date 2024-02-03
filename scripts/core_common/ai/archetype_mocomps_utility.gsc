@@ -997,8 +997,8 @@ function private mocompadjusttocoverinit(entity, mocompanim, *mocompanimblendout
         }
         mocompanimflag.mocompanglestarttime = _getadjusttocoverrotation(var_c9145b1d, covertype, mocompanimflag.nodefinalstance, angledifference);
         var_ad846680 = distance(mocompanimflag.nodeoffsetorigin, mocompanimflag.origin);
-        var_2de266f0 = mocompanimflag.mocompanglestarttime * getanimlength(mocompduration);
-        var_cf67af1 = max(1, floor(var_2de266f0 / float(function_60d95f53()) / 1000));
+        slidetime = mocompanimflag.mocompanglestarttime * getanimlength(mocompduration);
+        var_cf67af1 = max(1, floor(slidetime / float(function_60d95f53()) / 1000));
         mocompanimflag.var_26b7e15a = var_ad846680 / var_cf67af1;
     }
 }
@@ -1304,13 +1304,13 @@ function private function_c0c49b7f(entity) {
             }
         }
     }
-    var_facb5140 = float(function_60d95f53()) / 1000;
-    var_9efb1605 = max(getdvarfloat(#"hash_76bec38f9a9d6b0d", -400), entity.var_efe6f3a3[2] - getdvarfloat(#"hash_d6605b567299ef9", 800) * var_facb5140);
+    delta_time = float(function_60d95f53()) / 1000;
+    var_9efb1605 = max(getdvarfloat(#"hash_76bec38f9a9d6b0d", -400), entity.var_efe6f3a3[2] - getdvarfloat(#"hash_d6605b567299ef9", 800) * delta_time);
     entity.var_efe6f3a3 = (0, 0, var_9efb1605);
-    entity.var_faf3d7c1 = var_a95ca3fd * max(0, length(entity.var_faf3d7c1) - getdvarfloat(#"hash_4d1ccba5efdca6f0", 50) * var_facb5140);
-    var_47a5b3d2 = (entity.var_faf3d7c1 + entity.var_efe6f3a3) * var_facb5140;
+    entity.var_faf3d7c1 = var_a95ca3fd * max(0, length(entity.var_faf3d7c1) - getdvarfloat(#"hash_4d1ccba5efdca6f0", 50) * delta_time);
+    delta_velocity = (entity.var_faf3d7c1 + entity.var_efe6f3a3) * delta_time;
     entity.var_9600fb93 = entity.origin;
-    entity forceteleport(entity.origin + var_47a5b3d2, entity.angles, 0, 0);
+    entity forceteleport(entity.origin + delta_velocity, entity.angles, 0, 0);
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility

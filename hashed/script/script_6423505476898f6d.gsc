@@ -100,8 +100,8 @@ function private function_a35f798(var_85b47952, increment, var_b6cc4c20) {
     self.m_e_door endon(#"hash_29b88049dcac8bb3");
     var_5f70cf61 = 0;
     finished = 0;
-    var_a6406def = 0;
-    var_8652fcd1 = 65536 | 1 | 268435456;
+    cycles = 0;
+    contents = 65536 | 1 | 268435456;
     var_338875fc = 179;
     if (isdefined(self.m_s_bundle.door_swing_angle)) {
         var_338875fc = abs(self.m_s_bundle.door_swing_angle);
@@ -110,7 +110,7 @@ function private function_a35f798(var_85b47952, increment, var_b6cc4c20) {
         if (var_85b47952 > var_338875fc) {
             return var_338875fc;
         }
-        var_dd88fc59 = self function_1d47f826(var_85b47952, var_b6cc4c20, var_8652fcd1);
+        var_dd88fc59 = self function_1d47f826(var_85b47952, var_b6cc4c20, contents);
         if (var_dd88fc59) {
             if (var_5f70cf61) {
                 finish = 1;
@@ -123,9 +123,9 @@ function private function_a35f798(var_85b47952, increment, var_b6cc4c20) {
             var_85b47952 = var_85b47952 - increment;
             finished = 1;
         }
-        var_a6406def++;
-        if (var_a6406def == 3) {
-            var_a6406def = 0;
+        cycles++;
+        if (cycles == 3) {
+            cycles = 0;
             wait(0.05);
         }
     }
@@ -143,12 +143,12 @@ function private function_1d47f826(yaw, var_b6cc4c20, *var_43119537) {
     var_3b412bef = vectorscale((0, 0, 1), 10);
     var_ded121f8 = self.var_85f2454d.origin + var_3b412bef;
     if (var_43119537) {
-        var_f9770d53 = [[ self ]]->function_d36318ad(0, 1, 0, self.m_s_bundle.var_16a4e229, self.m_s_bundle.var_16e3e29b, var_b6cc4c20, 1);
+        trace_angles = [[ self ]]->function_d36318ad(0, 1, 0, self.m_s_bundle.var_16a4e229, self.m_s_bundle.var_16e3e29b, var_b6cc4c20, 1);
     } else {
-        var_f9770d53 = [[ self ]]->function_d36318ad(0, 1, 1, self.m_s_bundle.var_16a4e229, self.m_s_bundle.var_16e3e29b, var_b6cc4c20, 1);
+        trace_angles = [[ self ]]->function_d36318ad(0, 1, 1, self.m_s_bundle.var_16a4e229, self.m_s_bundle.var_16e3e29b, var_b6cc4c20, 1);
     }
     var_39764a55 = max(self.var_e9da41b9 * 0.2, 16);
-    start = var_ded121f8 + self doors::function_eea7cdb4(var_f9770d53) * var_39764a55;
+    start = var_ded121f8 + self doors::function_eea7cdb4(trace_angles) * var_39764a55;
     end = var_ded121f8 + self doors::function_eea7cdb4(1) * self.var_e9da41b9;
     mins = vectorscale((-1, -1, 0), 6);
     maxs = (6, 6, 40);
@@ -170,7 +170,7 @@ function private function_1d47f826(yaw, var_b6cc4c20, *var_43119537) {
             } else if (var_fe34498d < 50) {
                 color = (1, 1, 0);
             }
-            var_5bdd16d1 = var_ded121f8 + self function_eea7cdb4(var_f9770d53) * self.var_e9da41b9;
+            var_5bdd16d1 = var_ded121f8 + self function_eea7cdb4(trace_angles) * self.var_e9da41b9;
             line(var_ded121f8, var_5bdd16d1, (1, 1, 1), 1, 0, var_816ef68c);
             print3d(var_5bdd16d1, var_b6cc4c20 + "<unknown string>", color, 1, 0.05, var_816ef68c);
             line(start, var_84a65cf6[#"position"], color, 0.5, 0, var_816ef68c);
@@ -181,7 +181,7 @@ function private function_1d47f826(yaw, var_b6cc4c20, *var_43119537) {
         }
     #/
     if (var_fe34498d > 3) {
-        start = var_ded121f8 + self doors::function_eea7cdb4(var_f9770d53) * self.var_e9da41b9 * 0.9;
+        start = var_ded121f8 + self doors::function_eea7cdb4(trace_angles) * self.var_e9da41b9 * 0.9;
         var_5124c314 = physicstrace(start, end, mins, maxs, self.m_e_door, 1 | 8);
         var_17a48baf = distance2d(start, var_5124c314[#"position"]);
         /#
@@ -220,17 +220,17 @@ function private function_1d47f826(yaw, var_b6cc4c20, *var_43119537) {
 // Size: 0x194
 function function_169d561(var_b6cc4c20) {
     /#
-        var_f9770d53 = undefined;
+        trace_angles = undefined;
         color = undefined;
         if (var_b6cc4c20) {
-            var_f9770d53 = [[ self ]]->function_d36318ad(0, 1, 0, self.m_s_bundle.var_16a4e229, self.m_s_bundle.var_16e3e29b);
+            trace_angles = [[ self ]]->function_d36318ad(0, 1, 0, self.m_s_bundle.var_16a4e229, self.m_s_bundle.var_16e3e29b);
             color = (0, 1, 1);
         } else {
-            var_f9770d53 = [[ self ]]->function_d36318ad(0, 1, 1, self.m_s_bundle.var_16a4e229, self.m_s_bundle.var_16e3e29b);
+            trace_angles = [[ self ]]->function_d36318ad(0, 1, 1, self.m_s_bundle.var_16a4e229, self.m_s_bundle.var_16e3e29b);
             color = (0, 0.5, 0.5);
         }
         start = self.var_85f2454d.origin;
-        line_end = start + self function_eea7cdb4(var_f9770d53) * self.var_e9da41b9;
+        line_end = start + self function_eea7cdb4(trace_angles) * self.var_e9da41b9;
         line(start, line_end, color, 1, 0, 1);
         angle = [[ self ]]->function_85fe0c35(!var_b6cc4c20);
         print3d(line_end, angle + "<unknown string>", color, 1, 0.05);
@@ -476,17 +476,17 @@ function function_dbcccc08(e_who, var_5991aa24) {
 function private function_cf52c50f() {
     var_e17e8d14 = self doors::function_d38f4479() - self doors::function_d38f4479(1);
     var_e17e8d14 = angleclamp180(var_e17e8d14);
-    var_6b2e389a = var_e17e8d14[0] + var_e17e8d14[1] + var_e17e8d14[2];
-    if (math::sign(var_6b2e389a) == math::sign(self.var_15695d13)) {
-        if (var_6b2e389a > 0) {
-            return (var_6b2e389a >= self.var_15695d13 / 2);
+    angle_diff = var_e17e8d14[0] + var_e17e8d14[1] + var_e17e8d14[2];
+    if (math::sign(angle_diff) == math::sign(self.var_15695d13)) {
+        if (angle_diff > 0) {
+            return (angle_diff >= self.var_15695d13 / 2);
         } else {
-            return (var_6b2e389a <= self.var_15695d13 / 2);
+            return (angle_diff <= self.var_15695d13 / 2);
         }
-    } else if (var_6b2e389a > 0) {
-        return (var_6b2e389a >= self.var_ca91d615 / 2);
+    } else if (angle_diff > 0) {
+        return (angle_diff >= self.var_ca91d615 / 2);
     } else {
-        return (var_6b2e389a <= self.var_ca91d615 / 2);
+        return (angle_diff <= self.var_ca91d615 / 2);
     }
     return 0;
 }
@@ -495,17 +495,17 @@ function private function_cf52c50f() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x43f7190d, Offset: 0x1c98
 // Size: 0xea
-function function_deb602a1(var_d9acc9e2) {
+function function_deb602a1(checkangle) {
     /#
-        assert(var_d9acc9e2 >= 0, "<unknown string>" + var_d9acc9e2 + "<unknown string>");
+        assert(checkangle >= 0, "<unknown string>" + checkangle + "<unknown string>");
     #/
     var_e17e8d14 = self doors::function_d38f4479() - self doors::function_d38f4479(1);
     var_e17e8d14 = angleclamp180(var_e17e8d14);
-    var_6b2e389a = var_e17e8d14[0] + var_e17e8d14[1] + var_e17e8d14[2];
-    if (var_6b2e389a > 0) {
-        return (var_6b2e389a >= var_d9acc9e2);
+    angle_diff = var_e17e8d14[0] + var_e17e8d14[1] + var_e17e8d14[2];
+    if (angle_diff > 0) {
+        return (angle_diff >= checkangle);
     } else {
-        return (var_6b2e389a <= -1 * var_d9acc9e2);
+        return (angle_diff <= -1 * checkangle);
     }
     return 0;
 }
@@ -579,7 +579,7 @@ function private function_8fc67f7d() {
 // Params 2, eflags: 0x4
 // Checksum 0x22c053e4, Offset: 0x2040
 // Size: 0x3a
-function private function_6b2e389a(value1, value2) {
+function private angle_diff(value1, value2) {
     diff = angleclamp180(value1 - value2);
     return diff;
 }

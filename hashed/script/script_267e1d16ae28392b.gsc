@@ -86,8 +86,8 @@ function on_player_connect() {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x34616dd1, Offset: 0x468
 // Size: 0x4c
-function function_20254235(var_7607ad3, var_bf26b910, *difficulty) {
-    var_bf26b910 function_659819fa(hash("cp_achievement_" + difficulty));
+function function_20254235(var_7607ad3, levelname, *difficulty) {
+    levelname function_659819fa(hash("cp_achievement_" + difficulty));
 }
 
 // Namespace achievements/achievements
@@ -125,8 +125,8 @@ function function_cc2216e2(var_7607ad3) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x23472d41, Offset: 0x6d0
 // Size: 0x4c
-function function_f854bc50(var_7607ad3, var_bf26b910, difficulty) {
-    function_20254235(var_7607ad3, var_bf26b910, difficulty);
+function function_f854bc50(var_7607ad3, levelname, difficulty) {
+    function_20254235(var_7607ad3, levelname, difficulty);
     function_cc2216e2(var_7607ad3);
 }
 
@@ -207,8 +207,8 @@ function private function_4239da84(player, *var_6d2d969a, *weapon) {
 // Checksum 0x5071de4e, Offset: 0xa80
 // Size: 0x16c
 function private function_b25a404e(player, weapon) {
-    var_890c323c = getbaseweaponitemindex(weapon);
-    if (!isdefined(var_890c323c) || var_890c323c < 1 || var_890c323c > 60) {
+    baseindex = getbaseweaponitemindex(weapon);
+    if (!isdefined(baseindex) || baseindex < 1 || baseindex > 60) {
         return;
     }
     player.var_8e5e0541.var_f79c95f9[weapon.rootweapon.name] = gettime();

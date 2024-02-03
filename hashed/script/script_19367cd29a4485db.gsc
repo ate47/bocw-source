@@ -1155,12 +1155,12 @@ function function_70e877d7(spawn_points) {
         player = getplayers()[0];
         player_vec = vectornormalize(anglestoforward(player getplayerangles()));
         var_167af5ff = undefined;
-        var_a219ed08 = 0.707;
+        best_dot = 0.707;
         foreach (spawn_point in spawn_points) {
             var_a9944b6 = vectornormalize(spawn_point.origin - player.origin);
             dot = vectordot(player_vec, var_a9944b6);
-            if (dot > var_a219ed08 && distancesquared(spawn_point.origin, player.origin) < var_d610cbe2) {
-                var_a219ed08 = dot;
+            if (dot > best_dot && distancesquared(spawn_point.origin, player.origin) < var_d610cbe2) {
+                best_dot = dot;
                 var_167af5ff = spawn_point;
             }
         }

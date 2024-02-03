@@ -153,8 +153,8 @@ function need_to_run() {
         return 0;
     }
     lastknownpostime = self lastknowntime(self.enemy);
-    var_474944f9 = gettime() - lastknownpostime < 20000;
-    if (!self cansee(self.enemy) && !var_474944f9) {
+    isfullyaware = gettime() - lastknownpostime < 20000;
+    if (!self cansee(self.enemy) && !isfullyaware) {
         return 0;
     }
     dist = distancesquared(self.origin, self.enemy.origin);

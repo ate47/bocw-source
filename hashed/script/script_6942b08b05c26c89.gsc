@@ -70,7 +70,7 @@ function function_1deaf019(name, key, territory = level.territory) {
         if (!is_valid(entity, territory)) {
             continue;
         }
-        if (function_83ad4d2b(entity.origin, undefined, territory)) {
+        if (is_inside(entity.origin, undefined, territory)) {
             var_3e8b00df[var_3e8b00df.size] = entity;
         }
     }

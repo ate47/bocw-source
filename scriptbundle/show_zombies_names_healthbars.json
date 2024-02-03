@@ -27,7 +27,7 @@
     "name": "show_zombies_names_healthbars",
     "displayname": "#hash_3d68f8fd5f7fa883",
     "var_500458ac": 10,
-    "var_926d1be9": 0.01,
+    "decimalplace": 0.01,
     "var_66faec87": 2,
     "statname": "zm_names_health_bars",
     "var_5d7c916": 1,

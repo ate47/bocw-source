@@ -34,11 +34,11 @@
 function function_8dbbde01(player, origin) {
     var_d98803e1 = namespace_ec06fe4a::function_65ee50ba(origin);
     origin = (origin[0], origin[1], var_d98803e1[2]);
-    var_23141e86 = namespace_ec06fe4a::function_e22ae9b3(origin + vectorscale((0, 0, 1), 36));
+    var_23141e86 = namespace_ec06fe4a::spawnmodel(origin + vectorscale((0, 0, 1), 36));
     if (!isdefined(var_23141e86)) {
         return;
     }
-    org = namespace_ec06fe4a::function_e22ae9b3(origin + vectorscale((0, 0, 1), 36), "tag_origin");
+    org = namespace_ec06fe4a::spawnmodel(origin + vectorscale((0, 0, 1), 36), "tag_origin");
     if (!isdefined(org)) {
         var_23141e86 delete();
         return;

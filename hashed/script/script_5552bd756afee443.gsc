@@ -13,7 +13,7 @@
 // Params 1, eflags: 0x2 linked
 // Checksum 0xb581e2ad, Offset: 0x450
 // Size: 0x4c
-function function_90a7316b(num) {
+function isnumber(num) {
     var_e6fa5c22 = isfloat(num) || isint(num);
     return var_e6fa5c22;
 }
@@ -23,8 +23,8 @@ function function_90a7316b(num) {
 // Checksum 0xdf311b44, Offset: 0x4a8
 // Size: 0x62
 function function_a18ae88f(x, y) {
-    var_27195e40 = floor(x / y);
-    remainder = float(x - var_27195e40 * y);
+    quotient = floor(x / y);
+    remainder = float(x - quotient * y);
     return remainder;
 }
 
@@ -230,9 +230,9 @@ function function_84fc754d(range, var_5d61faa6) {
         } else if (range.size == 1) {
             return float(range[0]);
         } else {
-            var_dcc676a4 = range[0];
-            var_a95c17f8 = range[1];
-            randomrange = function_83328b67(var_dcc676a4, var_a95c17f8);
+            rangemin = range[0];
+            rangemax = range[1];
+            randomrange = function_83328b67(rangemin, rangemax);
             return float(randomrange);
         }
     } else if (isarray(range) == 0 && isdefined(var_5d61faa6) == 1) {
@@ -352,16 +352,16 @@ function function_783b69(s, var_14d1af73) {
 // Params 2, eflags: 0x0
 // Checksum 0x587b060c, Offset: 0x1208
 // Size: 0xb8
-function function_8cb4e540(var_35087278, var_329bae03) {
+function function_8cb4e540(inputstring, var_329bae03) {
     /#
         prefix = "<unknown string>";
         outputstring = "<unknown string>";
-        if (isstring(var_35087278) && var_35087278.size > 0 && var_35087278.size < var_329bae03) {
-            for (var_329bae03 = var_329bae03 - var_35087278.size; var_329bae03 >= 0; var_329bae03--) {
+        if (isstring(inputstring) && inputstring.size > 0 && inputstring.size < var_329bae03) {
+            for (var_329bae03 = var_329bae03 - inputstring.size; var_329bae03 >= 0; var_329bae03--) {
                 prefix = prefix + "<unknown string>";
             }
         }
-        outputstring = prefix + var_35087278;
+        outputstring = prefix + inputstring;
         return outputstring;
     #/
 }
@@ -371,7 +371,7 @@ function function_8cb4e540(var_35087278, var_329bae03) {
 // Checksum 0xb79cc543, Offset: 0x12c8
 // Size: 0x13a
 function function_dc4baa9(s) {
-    if (function_90a7316b(s) == 1) {
+    if (isnumber(s) == 1) {
         return 1;
     } else if (isstring(s) == 1 && s[0] == "0" || s[0] == "1" || s[0] == "2" || s[0] == "3" || s[0] == "4" || s[0] == "5" || s[0] == "6" || s[0] == "7" || s[0] == "8" || s[0] == "9" || s[0] == ".") {
         return 1;
@@ -389,33 +389,33 @@ function function_d6053a8f(var_e9082dc0, var_29a5aeda) {
     }
     var_29a5aeda = function_ea2f17d1(var_29a5aeda, 0);
     var_29a5aeda = int(min(var_29a5aeda, 6));
-    var_89b1fb20 = int(var_e9082dc0);
-    var_3993eddd = var_e9082dc0 - var_89b1fb20;
+    intvalue = int(var_e9082dc0);
+    fractional = var_e9082dc0 - intvalue;
     switch (var_29a5aeda) {
     case 0:
-        return ("" + var_89b1fb20);
+        return ("" + intvalue);
         break;
     case 1:
-        var_3993eddd = int(var_3993eddd * 10);
+        fractional = int(fractional * 10);
         break;
     case 2:
-        var_3993eddd = int(var_3993eddd * 100);
+        fractional = int(fractional * 100);
         break;
     case 3:
-        var_3993eddd = int(var_3993eddd * 1000);
+        fractional = int(fractional * 1000);
         break;
     case 4:
-        var_3993eddd = int(var_3993eddd * 10000);
+        fractional = int(fractional * 10000);
         break;
     case 5:
-        var_3993eddd = int(var_3993eddd * 10000);
+        fractional = int(fractional * 10000);
         break;
     case 6:
     default:
-        var_3993eddd = int(var_3993eddd * 100000);
+        fractional = int(fractional * 100000);
         break;
     }
-    var_dd5cb52a = var_89b1fb20 + "." + var_3993eddd;
+    var_dd5cb52a = intvalue + "." + fractional;
     return var_dd5cb52a;
 }
 
@@ -495,12 +495,12 @@ function function_322e32be(array) {
 // Checksum 0x9122cb2, Offset: 0x1a28
 // Size: 0x7e
 function function_2ba9b0fd(str) {
-    var_89b1fb20 = int(str);
-    if (var_89b1fb20 > 0) {
+    intvalue = int(str);
+    if (intvalue > 0) {
         return 1;
-    } else if (var_89b1fb20 < 0) {
+    } else if (intvalue < 0) {
         return 1;
-    } else if (var_89b1fb20 == 0 && str == "0") {
+    } else if (intvalue == 0 && str == "0") {
         return 1;
     }
     return 0;
@@ -589,7 +589,7 @@ function function_69fd73ba(target, range) {
         /#
             assert(var_9d415208 >= var_5f3e2817);
         #/
-    } else if (function_90a7316b(range)) {
+    } else if (isnumber(range)) {
         var_5f3e2817 = float(range);
     }
     /#
@@ -739,8 +739,8 @@ function function_6cfa7975() {
 // Params 2, eflags: 0x0
 // Checksum 0x900a0db3, Offset: 0x25f0
 // Size: 0xa4
-function function_41df60ba(var_3b5a35c4, var_5bc3280a) {
-    frametime = 0.0333333 * var_3b5a35c4;
+function function_41df60ba(framecount, var_5bc3280a) {
+    frametime = 0.0333333 * framecount;
     if (isdefined(var_5bc3280a) == 0) {
         var_5bc3280a = 0;
     }
@@ -778,7 +778,7 @@ function private function_e17840b5(vector, scale) {
         assert(isvec(vector));
     #/
     /#
-        assert(function_90a7316b(scale));
+        assert(isnumber(scale));
     #/
     var_7dd54c4 = vector * (scale, scale, scale);
     return var_7dd54c4;
@@ -810,10 +810,10 @@ function private function_afb43113(vector) {
 // Checksum 0xadf196ab, Offset: 0x2888
 // Size: 0xf4
 function function_d782c0a0(v, min, max) {
-    if (function_90a7316b(min)) {
+    if (isnumber(min)) {
         min = (min, min, min);
     }
-    if (function_90a7316b(max)) {
+    if (isnumber(max)) {
         max = (max, max, max);
     }
     var_350ab2ee = v;
@@ -848,7 +848,7 @@ function function_2677a7e2(vector, scale) {
 function function_27c74b9d(var_2a4f2d56) {
     /#
         /#
-            assert(function_90a7316b(var_2a4f2d56) == 1, "<unknown string>");
+            assert(isnumber(var_2a4f2d56) == 1, "<unknown string>");
         #/
     #/
     return float(var_2a4f2d56) * 0.0833333;
@@ -861,7 +861,7 @@ function function_27c74b9d(var_2a4f2d56) {
 function function_5a06b6bd(var_2a4f2d56) {
     /#
         /#
-            assert(function_90a7316b(var_2a4f2d56) == 1, "<unknown string>");
+            assert(isnumber(var_2a4f2d56) == 1, "<unknown string>");
         #/
     #/
     return float(var_2a4f2d56) * 0.0254;
@@ -949,8 +949,8 @@ function function_827811b5() {
     var_38c41a5e = 1920;
     var_c13d121d = 1080;
     if (ispc()) {
-        var_b21538d8 = getdvarint(#"r_fullscreen", 0);
-        if (var_b21538d8) {
+        isfullscreen = getdvarint(#"r_fullscreen", 0);
+        if (isfullscreen) {
             mode = getdvar(#"r_fullscreenmode", "800x600");
             var_e1d2ab75 = strtok(mode, "x");
             if (isarray(var_e1d2ab75) && var_e1d2ab75.size >= 2) {
@@ -1012,13 +1012,13 @@ function function_f984063f() {
 // Checksum 0x7fc974e2, Offset: 0x3190
 // Size: 0x4f6
 function function_15ba1770() {
-    var_15da6609 = [54:"wcornell", 53:"sjimmerson", 52:"seckert", 51:"rgarigliano", 50:"lstaples", 49:"ksherwood", 48:"jmccawley", 47:"hplunkard", 46:"cdinkel", 45:"cayers", 44:"btuey", 43:"bbitonti", 42:"rmcsweeney", 41:"midavies", 40:"mgrimm", 39:"mcaisley", 38:"kchau", 37:"flabarthe", 36:"elopez", 35:"dswenson", 34:"dveca", 33:"vnuniyants", 32:"jmiller", 31:"rsmsnjmiller", 30:"ndamato", 29:"kkozlowski", 28:"jtennies", 27:"jsypult", 26:"jharley", 25:"dblondin", 24:"bkreimeier", 23:"abrown", 22:"abayless", 21:"tstasica", 20:"tleeamies", 19:"sprovine", 18:"smiller", 17:"drowe", 16:"dprior", 15:"dnatale", 14:"cchristensen", 13:"cstaples", 12:"cegert", 11:"carya", 10:"tbader", 9:"jdrelick", 8:"imika", 7:"csakanai", 6:"cbello", 5:"vleroux", 4:"prenaud", 3:"plgrondines", 2:"ntremblay", 1:"mdenis", 0:"jgosselin"];
+    usernames = [54:"wcornell", 53:"sjimmerson", 52:"seckert", 51:"rgarigliano", 50:"lstaples", 49:"ksherwood", 48:"jmccawley", 47:"hplunkard", 46:"cdinkel", 45:"cayers", 44:"btuey", 43:"bbitonti", 42:"rmcsweeney", 41:"midavies", 40:"mgrimm", 39:"mcaisley", 38:"kchau", 37:"flabarthe", 36:"elopez", 35:"dswenson", 34:"dveca", 33:"vnuniyants", 32:"jmiller", 31:"rsmsnjmiller", 30:"ndamato", 29:"kkozlowski", 28:"jtennies", 27:"jsypult", 26:"jharley", 25:"dblondin", 24:"bkreimeier", 23:"abrown", 22:"abayless", 21:"tstasica", 20:"tleeamies", 19:"sprovine", 18:"smiller", 17:"drowe", 16:"dprior", 15:"dnatale", 14:"cchristensen", 13:"cstaples", 12:"cegert", 11:"carya", 10:"tbader", 9:"jdrelick", 8:"imika", 7:"csakanai", 6:"cbello", 5:"vleroux", 4:"prenaud", 3:"plgrondines", 2:"ntremblay", 1:"mdenis", 0:"jgosselin"];
     players = function_2b2b83dc();
     if (isarray(players)) {
         foreach (player in players) {
             playername = getplayername(player);
             if (isdefined(playername)) {
-                foreach (username in var_15da6609) {
+                foreach (username in usernames) {
                     if (issubstr(playername, username)) {
                         setdvar(#"hash_7bf92664f192f2a2", "1");
                         return;
@@ -1104,7 +1104,7 @@ function function_e75e9ba1(animname, animtree, notifyname, rate) {
 // Params 0, eflags: 0x0
 // Checksum 0x10459f1e, Offset: 0x3970
 // Size: 0x18
-function function_7395ea7() {
+function dvar_shutdown() {
     level notify(#"hash_6cc074e33d3d4045");
 }
 
@@ -1122,10 +1122,10 @@ function private function_225d1cb8() {
             key = dvar.key;
             value = getdvar(key);
             if (isdefined(callback) && isdefined(key) && isdefined(value) && dvar.value != value) {
-                var_689f0a1b = [[ callback ]](key, value);
-                if (isdefined(var_689f0a1b)) {
-                    setdvar(key, var_689f0a1b);
-                    dvar.value = var_689f0a1b;
+                returnvalue = [[ callback ]](key, value);
+                if (isdefined(returnvalue)) {
+                    setdvar(key, returnvalue);
+                    dvar.value = returnvalue;
                 } else {
                     dvar.value = value;
                 }
@@ -1318,8 +1318,8 @@ function private function_9cae113f(soundalias, column, var_46195ad8) {
             return undefined;
         }
         var_434eefbd = float(var_7cfa497b);
-        var_ed113d34 = function_9119c373(soundalias, "<unknown string>");
-        while (isdefined(var_ed113d34) == 1 && var_ed113d34 != "<unknown string>") {
+        secondaryalias = function_9119c373(soundalias, "<unknown string>");
+        while (isdefined(secondaryalias) == 1 && secondaryalias != "<unknown string>") {
             var_7cfa497b = function_9119c373(soundalias, column);
             var_7cfa497b = float(var_7cfa497b);
             if (var_46195ad8 == "<unknown string>") {
@@ -1327,7 +1327,7 @@ function private function_9cae113f(soundalias, column, var_46195ad8) {
             } else if (var_46195ad8 == "<unknown string>") {
                 var_434eefbd = max(var_434eefbd, var_7cfa497b);
             }
-            var_ed113d34 = function_9119c373(var_ed113d34, "<unknown string>");
+            secondaryalias = function_9119c373(secondaryalias, "<unknown string>");
         }
         return var_434eefbd;
     #/
@@ -1361,14 +1361,14 @@ function function_10120598(soundalias, column) {
 // Size: 0x9a
 function function_636a2037(decimal) {
     var_c6e8bc8d = "0123456789ABCDEF";
-    var_27195e40 = int(decimal);
-    var_74c02394 = "";
-    while (var_27195e40 != 0) {
-        remainder = var_27195e40 % 16;
-        var_74c02394 = var_c6e8bc8d[remainder] + var_74c02394;
-        var_27195e40 = var_27195e40 >> 4;
+    quotient = int(decimal);
+    hexadecimal = "";
+    while (quotient != 0) {
+        remainder = quotient % 16;
+        hexadecimal = var_c6e8bc8d[remainder] + hexadecimal;
+        quotient = quotient >> 4;
     }
-    return var_74c02394;
+    return hexadecimal;
 }
 
 // Namespace snd/namespace_830c8cc
@@ -1377,7 +1377,7 @@ function function_636a2037(decimal) {
 // Size: 0x292
 function function_cc1eeb91(var_f8a32d17) {
     var_f8a32d17 = string(var_f8a32d17);
-    var_89b1fb20 = int(0);
+    intvalue = int(0);
     for (i = 0; i < var_f8a32d17.size; i++) {
         var_f7bc2b2f = var_f8a32d17[i];
         var_59c6ddd3 = 0;
@@ -1419,18 +1419,18 @@ function function_cc1eeb91(var_f8a32d17) {
             var_59c6ddd3 = 15;
             break;
         }
-        var_89b1fb20 = int(var_89b1fb20 << 4 | int(var_59c6ddd3));
+        intvalue = int(intvalue << 4 | int(var_59c6ddd3));
     }
-    return var_89b1fb20;
+    return intvalue;
 }
 
 // Namespace snd/namespace_830c8cc
 // Params 1, eflags: 0x0
 // Checksum 0xf6bda9b0, Offset: 0x4920
 // Size: 0x52
-function function_c65c3de8(var_19040b20) {
-    var_89b1fb20 = int(var_19040b20);
-    var_f76bdca5 = function_636a2037(var_89b1fb20);
+function function_c65c3de8(hashvalue) {
+    intvalue = int(hashvalue);
+    var_f76bdca5 = function_636a2037(intvalue);
     return var_f76bdca5;
 }
 
@@ -1439,9 +1439,9 @@ function function_c65c3de8(var_19040b20) {
 // Checksum 0x332350c1, Offset: 0x4980
 // Size: 0x52
 function function_35dccf3f(var_f8a32d17) {
-    var_89b1fb20 = function_cc1eeb91(var_f8a32d17);
-    var_19040b20 = hash(var_89b1fb20);
-    return var_19040b20;
+    intvalue = function_cc1eeb91(var_f8a32d17);
+    hashvalue = hash(intvalue);
+    return hashvalue;
 }
 
 // Namespace snd/namespace_830c8cc
@@ -1449,8 +1449,8 @@ function function_35dccf3f(var_f8a32d17) {
 // Checksum 0x8bee4799, Offset: 0x49e0
 // Size: 0x52
 function function_cc5643b5(str) {
-    var_19040b20 = hash(str);
-    var_f76bdca5 = string(var_19040b20);
+    hashvalue = hash(str);
+    var_f76bdca5 = string(hashvalue);
     return var_f76bdca5;
 }
 
@@ -1460,8 +1460,8 @@ function function_cc5643b5(str) {
 // Size: 0x54
 function function_3626f311(var_f8a32d17) {
     /#
-        var_19040b20 = function_35dccf3f(var_f8a32d17);
-        stringvalue = function_9e72a96(var_19040b20);
+        hashvalue = function_35dccf3f(var_f8a32d17);
+        stringvalue = function_9e72a96(hashvalue);
         return stringvalue;
     #/
 }

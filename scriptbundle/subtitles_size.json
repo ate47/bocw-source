@@ -2,7 +2,7 @@
     "option_dependencies": [
         {
             "var_1643d946": "0",
-            "var_6825bdb": "#pc_subtitles",
+            "optionname": "#pc_subtitles",
             "operator": "=="
         }
     ],
@@ -28,7 +28,7 @@
     "name": "subtitles_size",
     "displayname": "#hash_3aa4855a8478b384",
     "var_500458ac": 10,
-    "var_926d1be9": 0.01,
+    "decimalplace": 0.01,
     "var_66faec87": 1,
     "statname": "subtitles_size",
     "var_6f00a61a": 1.1,

@@ -8,9 +8,9 @@
 // Params 2, eflags: 0x2 linked
 // Checksum 0x6cd5ccb7, Offset: 0x90
 // Size: 0x40
-function function_fbb3b7ed(*_notify, var_cc1545d8) {
-    if (isdefined(var_cc1545d8)) {
-        self stoploopsound(var_cc1545d8);
+function function_fbb3b7ed(*_notify, _handle) {
+    if (isdefined(_handle)) {
+        self stoploopsound(_handle);
         level.var_2b64ba11--;
     }
 }

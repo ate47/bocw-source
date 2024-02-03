@@ -16,14 +16,14 @@
 // Checksum 0xad3d5f5, Offset: 0x100
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"hash_38469cb55dd6355a", &function_c7f33cce, &function_fa076c68, undefined, undefined);
+    system::register(#"hash_38469cb55dd6355a", &_preload, &function_fa076c68, undefined, undefined);
 }
 
 // Namespace namespace_9fe28d6e/namespace_9fe28d6e
 // Params 0, eflags: 0x6 linked
 // Checksum 0xba7a07ee, Offset: 0x158
 // Size: 0x34
-function private function_c7f33cce() {
+function private _preload() {
     function_ad272ef4();
     function_90ceecf8();
     function_7c9b0132();
@@ -321,12 +321,12 @@ function private function_be6420e7(selection) {
 // Params 3, eflags: 0x6 linked
 // Checksum 0x6718497d, Offset: 0x1560
 // Size: 0xc4
-function private function_20e12458(location, var_81f8182f, dist_max) {
+function private function_20e12458(location, dist_min, dist_max) {
     if (!isdefined(level._fx.player.origin)) {
         return 0;
     }
     var_629011b4 = distance2dsquared(level._fx.player.origin, location.origin);
-    return var_629011b4 >= function_a3f6cdac(var_81f8182f) && var_629011b4 <= function_a3f6cdac(dist_max) ? 1 : 0;
+    return var_629011b4 >= function_a3f6cdac(dist_min) && var_629011b4 <= function_a3f6cdac(dist_max) ? 1 : 0;
 }
 
 // Namespace namespace_9fe28d6e/namespace_9fe28d6e

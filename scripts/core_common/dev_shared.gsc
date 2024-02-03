@@ -485,7 +485,7 @@ function function_986c93f0() {
         if (!isalive(v)) {
             return;
         }
-        if (isdefined(v) && isdefined(v.var_13c5ef5f)) {
+        if (isdefined(v) && isdefined(v.vehicleassembly)) {
             rolecount = v function_545738a();
             if (rolecount > 0 && roleindex < rolecount) {
                 var_8de3e761 = v function_b655eac6();

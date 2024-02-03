@@ -134,7 +134,7 @@ function function_baef2915(player, currentweapon) {
 function function_5eeaa168() {
     level endon(#"game_ended");
     self endon(#"death");
-    var_a9bb683c = getweapon(#"none");
+    nullweapon = getweapon(#"none");
     var_f945fa92 = getweapon(#"bare_hands");
     while (1) {
         foreach (player in getplayers()) {
@@ -258,11 +258,11 @@ function function_5eeaa168() {
                             self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, currentweapon.displayname);
                         }
                     }
-                } else if ((weapon1 == var_f945fa92 || weapon1 == var_a9bb683c || weapon1.weapclass == "melee") && weapon2 != var_f945fa92 && weapon2 != var_a9bb683c && weapon2.weapclass != "melee" || (weapon2 == var_f945fa92 || weapon2 == var_a9bb683c || weapon2.weapclass == "melee") && weapon1 != var_f945fa92 && weapon1 != var_a9bb683c && weapon1.weapclass != "melee") {
+                } else if ((weapon1 == var_f945fa92 || weapon1 == nullweapon || weapon1.weapclass == "melee") && weapon2 != var_f945fa92 && weapon2 != nullweapon && weapon2.weapclass != "melee" || (weapon2 == var_f945fa92 || weapon2 == nullweapon || weapon2.weapclass == "melee") && weapon1 != var_f945fa92 && weapon1 != nullweapon && weapon1.weapclass != "melee") {
                     if (killstreaks::is_killstreak_weapon(currentweapon)) {
                         player.var_b8783de6 = 3;
                         self sethintstringforplayer(player, #"hash_3f91b2cf51b00772");
-                    } else if ((weapon1 == var_f945fa92 || weapon1 == var_a9bb683c || weapon1.weapclass == "melee") && weapon2 != var_f945fa92 && weapon2 != var_a9bb683c && weapon2.weapclass != "melee") {
+                    } else if ((weapon1 == var_f945fa92 || weapon1 == nullweapon || weapon1.weapclass == "melee") && weapon2 != var_f945fa92 && weapon2 != nullweapon && weapon2.weapclass != "melee") {
                         item = player item_inventory::function_230ceec4(weapon2);
                         cost = function_adb75323(item);
                         if (player zm_score::can_player_purchase(cost) && !player function_f300168a(weapon2)) {
@@ -276,7 +276,7 @@ function function_5eeaa168() {
                             var_1c7e95e9 = 1;
                             self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, weapon2.displayname);
                         }
-                    } else if ((weapon2 == var_f945fa92 || weapon2 == var_a9bb683c || weapon2.weapclass == "melee") && weapon1 != var_f945fa92 && weapon1 != var_a9bb683c && weapon1.weapclass != "melee") {
+                    } else if ((weapon2 == var_f945fa92 || weapon2 == nullweapon || weapon2.weapclass == "melee") && weapon1 != var_f945fa92 && weapon1 != nullweapon && weapon1.weapclass != "melee") {
                         item = player item_inventory::function_230ceec4(weapon1);
                         cost = function_adb75323(item);
                         if (player zm_score::can_player_purchase(cost) && !player function_f300168a(weapon1)) {
@@ -291,7 +291,7 @@ function function_5eeaa168() {
                             self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, weapon1.displayname);
                         }
                     }
-                } else if (weapon1 != var_f945fa92 && weapon1 != var_a9bb683c && weapon1.weapclass != "melee" && weapon2 != var_f945fa92 && weapon2 != var_a9bb683c && weapon2.weapclass != "melee") {
+                } else if (weapon1 != var_f945fa92 && weapon1 != nullweapon && weapon1.weapclass != "melee" && weapon2 != var_f945fa92 && weapon2 != nullweapon && weapon2.weapclass != "melee") {
                     if (killstreaks::is_killstreak_weapon(currentweapon)) {
                         player.var_b8783de6 = 3;
                         self sethintstringforplayer(player, #"hash_56425e74a921890d");
@@ -365,7 +365,7 @@ function function_e4ff673(eventstruct) {
         assert(isdefined(model), "<unknown string>");
     #/
     if (isplayer(player)) {
-        var_a9bb683c = getweapon(#"none");
+        nullweapon = getweapon(#"none");
         var_f945fa92 = getweapon(#"bare_hands");
         currentweapon = player getcurrentweapon();
         weapon1 = player namespace_a0d533d1::function_2b83d3ff(player item_inventory::function_2e711614(17 + 1));
@@ -428,11 +428,11 @@ function function_7c1cc13c(player, weapon, model) {
     var_3069fe3 = player zm_score::can_player_purchase(cost);
     var_cd27cff2 = player getweaponammoclip(weapon);
     maxammo = weapon.maxammo;
-    var_53b14ebf = weapon.clipsize;
+    maxclip = weapon.clipsize;
     player playrumbleonentity(#"zm_interact_rumble");
     if (var_cd27cff2 < weapon.clipsize && (maxammo == 0 || is_true(weapon.cliponly)) && var_3069fe3) {
         if (player hasweapon(weapon)) {
-            player setweaponammoclip(weapon, var_53b14ebf);
+            player setweaponammoclip(weapon, maxclip);
             player playsoundtoplayer(#"hash_3d571b980c703675", player);
             player zm_score::minus_to_player_score(cost);
             if (zm_weapons::is_wonder_weapon(weapon)) {
@@ -444,7 +444,7 @@ function function_7c1cc13c(player, weapon, model) {
             if (isdefined(level.var_3216bc47[weapon.name])) {
                 player [[ level.var_3216bc47[weapon.name] ]](weapon);
             } else {
-                player setweaponammoclip(weapon, var_53b14ebf);
+                player setweaponammoclip(weapon, maxclip);
                 player setweaponammostock(weapon, maxammo);
             }
             player.var_b6cd4a03 = gettime();
@@ -471,14 +471,14 @@ function private function_f300168a(weapon) {
         return [[ level.var_299abeff[weapon.name] ]](weapon);
     }
     var_e20637be = 1;
-    var_a9bb683c = getweapon(#"none");
+    nullweapon = getweapon(#"none");
     var_f945fa92 = getweapon(#"bare_hands");
-    if (weapon != var_a9bb683c && weapon != var_f945fa92) {
+    if (weapon != nullweapon && weapon != var_f945fa92) {
         maxammo = weapon.maxammo;
-        var_53b14ebf = weapon.clipsize;
+        maxclip = weapon.clipsize;
         currentammostock = self getweaponammostock(weapon);
         var_d678ba0b = self getweaponammoclip(weapon);
-        if (currentammostock < maxammo || var_d678ba0b < var_53b14ebf) {
+        if (currentammostock < maxammo || var_d678ba0b < maxclip) {
             var_e20637be = 0;
         }
     }

@@ -363,8 +363,8 @@ function function_5085f9ce(slot, target, maxrange, weapon, var_e06c789) {
                 newitem.target.var_6a1a4bf6 = gettime() - newitem.target.var_7a48f1af;
                 newitem.target.var_b6268463 = self;
                 newitem.target notify(#"hash_4e379ec4e6f3cb69");
-                var_838217dd = newitem.target.var_7a48f1af / newitem.target.var_fedddeb8[self.var_25fa785.lockon.var_50087796.name] * 1000;
-                function_ea7b2cb3(self, newitem.target.var_fedddeb8[self.var_25fa785.lockon.var_50087796.name], var_838217dd);
+                curstart = newitem.target.var_7a48f1af / newitem.target.var_fedddeb8[self.var_25fa785.lockon.var_50087796.name] * 1000;
+                function_ea7b2cb3(self, newitem.target.var_fedddeb8[self.var_25fa785.lockon.var_50087796.name], curstart);
                 level thread function_eeb4c5eb(self);
             }
             if (isdefined(newitem.target.var_b6268463) && newitem.target.var_b6268463 == self) {
@@ -589,7 +589,7 @@ function function_80119fb6(*weapon) {
 // Params 4, eflags: 0x0
 // Checksum 0x51b994e9, Offset: 0x2338
 // Size: 0x32a
-function function_d2bc8bb1(enemies, weapon, var_efb1ea62, var_6fb74c6f = 0) {
+function function_d2bc8bb1(enemies, weapon, var_efb1ea62, earlyout = 0) {
     var_5c118373 = [];
     if (!isdefined(enemies) || enemies.size == 0) {
         return var_5c118373;
@@ -616,7 +616,7 @@ function function_d2bc8bb1(enemies, weapon, var_efb1ea62, var_6fb74c6f = 0) {
             passed = bullettracepassed(eyepos, pos, 0, enemy, undefined, 1, 1);
             jumpiffalse(passed) LOC_000002b0;
             var_5c118373[var_5c118373.size] = enemy;
-            if (var_6fb74c6f) {
+            if (earlyout) {
                 break;
             }
         } else {
@@ -626,7 +626,7 @@ function function_d2bc8bb1(enemies, weapon, var_efb1ea62, var_6fb74c6f = 0) {
                 passed = bullettracepassed(eyepos, pos, 0, enemy, undefined, 1, 1);
                 if (passed) {
                     var_5c118373[var_5c118373.size] = enemy;
-                    if (var_6fb74c6f) {
+                    if (earlyout) {
                         break;
                     }
                     continue;

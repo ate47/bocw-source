@@ -40,7 +40,7 @@ function function_6ec0595a() {
     self endon(#"death");
     self endon(#"player_died");
     if (!isdefined(self.doa.tesla_org)) {
-        org = namespace_ec06fe4a::function_e22ae9b3(self.origin, "tag_origin");
+        org = namespace_ec06fe4a::spawnmodel(self.origin, "tag_origin");
         if (!isdefined(org)) {
             return;
         }
@@ -72,7 +72,7 @@ function function_6ec0595a() {
 // Checksum 0x8d8e1e1f, Offset: 0x568
 // Size: 0x1c0
 function function_9b8a196a() {
-    ball = namespace_ec06fe4a::function_e22ae9b3(self.origin, "zombietron_tesla_ball");
+    ball = namespace_ec06fe4a::spawnmodel(self.origin, "zombietron_tesla_ball");
     if (!isdefined(ball)) {
         return;
     }
@@ -459,7 +459,7 @@ function tesla_play_arc_fx(target) {
     if (var_1c220176 < 0.2) {
         var_1c220176 = 0.2;
     }
-    fxorg = namespace_ec06fe4a::function_e22ae9b3(origin, "tag_origin", undefined, "doa_tesla_fxOrg");
+    fxorg = namespace_ec06fe4a::spawnmodel(origin, "tag_origin", undefined, "doa_tesla_fxOrg");
     if (isdefined(fxorg)) {
         fxorg namespace_83eb6304::function_3ecfde67("tesla_trail");
         fxorg moveto(target_origin, var_1c220176);

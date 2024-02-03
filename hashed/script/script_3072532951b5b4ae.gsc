@@ -50,7 +50,7 @@ function main() {
 function function_5d397b07() {
     self.var_d26a48de = &function_e5b8ad1b;
     self.var_c92102aa = &function_5a3580b6;
-    self.var_c6018f4 = &function_e1241434;
+    self.var_c6018f4 = &isidle;
     self.var_cd774402 = &function_8289d9b9;
     self.var_678afc31 = &function_34f554e4;
     self.var_1e36e368 = &function_e5113f65;
@@ -72,18 +72,18 @@ function function_5d397b07() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xea8a2022, Offset: 0x6d8
 // Size: 0xfe
-function function_db1c5a52(var_fb16d5c1, layer = "task") {
+function gettaskid(newtask, layer = "task") {
     if (!isdefined(self.var_d3364a1a.taskid)) {
         self.var_d3364a1a.taskid = [];
     }
     if (!isdefined(self.var_d3364a1a.taskid[layer])) {
-        if (is_true(var_fb16d5c1)) {
+        if (is_true(newtask)) {
             self.var_d3364a1a.taskid[layer] = 0;
         } else {
             return undefined;
         }
     }
-    if (is_true(var_fb16d5c1)) {
+    if (is_true(newtask)) {
         self.var_d3364a1a.taskid[layer]++;
     }
     return self.unique_id + "_" + layer + self.var_d3364a1a.taskid[layer];
@@ -118,7 +118,7 @@ function function_ba0a486b(behaviortreeentity) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0xc78e92e1, Offset: 0x878
 // Size: 0x24
-function function_e1241434() {
+function isidle() {
     return isdefined(self.stealth) && self.stealth.var_abf79234 == 0;
 }
 
@@ -383,7 +383,7 @@ function function_809e1001(behaviortreeentity) {
     }
     self function_d19483ee();
     self namespace_cc4354b9::function_eb8c5f46();
-    self ai::function_ccc923fb(self.var_806dc35e);
+    self ai::look_at(self.var_806dc35e);
     return function_455c4d2d(behaviortreeentity);
 }
 
@@ -506,7 +506,7 @@ function function_42f7ecd1(instancedata) {
 function private function_d19483ee() {
     entnum = self getentitynumber();
     range = isdefined(self.var_1c936867) ? self.var_1c936867 : 850;
-    var_6b0b485e = 0.866;
+    cosfov = 0.866;
     foreach (player in getplayers()) {
         if (!isdefined(player.stealth)) {
             continue;
@@ -601,9 +601,9 @@ function function_de39aecb(instancedata) {
 // Checksum 0x7e257693, Offset: 0x1b18
 // Size: 0xea
 function function_efc17e1a(*behaviortreeentity) {
-    var_e4ef5000 = self function_4794d6a3();
-    if (isdefined(var_e4ef5000.var_3e4d601a) && !self haspath() && (self ai::get_behavior_attribute("demeanor") === "patrol" || self ai::get_behavior_attribute("demeanor") === "alert")) {
-        if (absangleclamp180(self.angles[1] - var_e4ef5000.var_3e4d601a[1]) > 45) {
+    codegoal = self function_4794d6a3();
+    if (isdefined(codegoal.goalangles) && !self haspath() && (self ai::get_behavior_attribute("demeanor") === "patrol" || self ai::get_behavior_attribute("demeanor") === "alert")) {
+        if (absangleclamp180(self.angles[1] - codegoal.goalangles[1]) > 45) {
             return 1;
         }
     }
@@ -807,7 +807,7 @@ function function_73d5430d(var_f25d7cda) {
 // Checksum 0x269a104b, Offset: 0x2430
 // Size: 0x31a
 function function_b26d5148(behaviortreeentity) {
-    taskid = behaviortreeentity function_db1c5a52(1, "idle");
+    taskid = behaviortreeentity gettaskid(1, "idle");
     self.var_d3364a1a.instancedata[taskid] = spawnstruct();
     self.favoriteenemy = undefined;
     self.var_bcf995f7 = 1;
@@ -852,7 +852,7 @@ function function_b26d5148(behaviortreeentity) {
 // Size: 0x1e0
 function function_bf092f1f(behaviortreeentity) {
     self endon(#"hash_7945dfa248c037db");
-    taskid = behaviortreeentity function_db1c5a52(0, "idle");
+    taskid = behaviortreeentity gettaskid(0, "idle");
     if (is_true(self.stealth.blind)) {
         self function_73d5430d("blind");
     } else {
@@ -878,7 +878,7 @@ function function_bf092f1f(behaviortreeentity) {
 // Size: 0x100
 function function_447588f7(behaviortreeentity) {
     self notify(#"hash_7945dfa248c037db");
-    taskid = behaviortreeentity function_db1c5a52(0, "idle");
+    taskid = behaviortreeentity gettaskid(0, "idle");
     self.diequietly = 0;
     self.stealth.var_d912499a = undefined;
     self.stealth.var_b4d69693 = undefined;
@@ -934,13 +934,13 @@ function function_8d09672b(*behaviortreeentity) {
 // Size: 0x17a
 function function_76b15e5c(pod, var_72cc3c18, var_465a4fd5, vol, var_ba41ef8, var_f9817e78, var_caa9db69) {
     if (isdefined(vol)) {
-        pos = namespace_206491b4::function_2d5bae57(vol, var_72cc3c18, var_465a4fd5, isdefined(pod) ? pod.var_239f0268 : undefined, 48);
+        pos = namespace_206491b4::function_2d5bae57(vol, var_72cc3c18, var_465a4fd5, isdefined(pod) ? pod.usedpoints : undefined, 48);
         if (isdefined(pos) && isdefined(var_caa9db69) && var_caa9db69 && !function_d6a6e300(var_72cc3c18, pos)) {
             return undefined;
         }
         return pos;
     } else if (var_f9817e78 > 64 && isdefined(var_ba41ef8)) {
-        pos = namespace_206491b4::function_3237777a(var_ba41ef8, var_f9817e78, var_72cc3c18, var_465a4fd5, isdefined(pod) ? pod.var_239f0268 : undefined, 48);
+        pos = namespace_206491b4::function_3237777a(var_ba41ef8, var_f9817e78, var_72cc3c18, var_465a4fd5, isdefined(pod) ? pod.usedpoints : undefined, 48);
         if (isdefined(pos) && isdefined(var_caa9db69) && var_caa9db69 && !function_d6a6e300(var_72cc3c18, pos)) {
             return undefined;
         }
@@ -953,9 +953,9 @@ function function_76b15e5c(pod, var_72cc3c18, var_465a4fd5, vol, var_ba41ef8, va
 // Params 2, eflags: 0x2 linked
 // Checksum 0x7e2aeb76, Offset: 0x2d60
 // Size: 0xb6
-function function_d6a6e300(var_844650da, var_99400a59) {
+function function_d6a6e300(var_844650da, searchpos) {
     var_f578e91a = vectornormalize(var_844650da - self.origin);
-    var_ea982379 = var_99400a59 - self.origin;
+    var_ea982379 = searchpos - self.origin;
     var_de013700 = length(var_ea982379);
     if (var_de013700 > 256) {
         var_ea982379 = var_ea982379 / var_de013700;
@@ -972,9 +972,9 @@ function function_d6a6e300(var_844650da, var_99400a59) {
 // Size: 0x72
 function function_c0a17592(var_a6448663) {
     var_c1edb9e5 = var_a6448663 - self.origin;
-    var_842df015 = var_a6448663 - vectornormalize(var_c1edb9e5) * 32;
-    var_842df015 = getclosestpointonnavmesh(var_842df015, 500);
-    return var_842df015;
+    offsetpos = var_a6448663 - vectornormalize(var_c1edb9e5) * 32;
+    offsetpos = getclosestpointonnavmesh(offsetpos, 500);
+    return offsetpos;
 }
 
 // Namespace namespace_77fd5d41/namespace_77fd5d41
@@ -982,7 +982,7 @@ function function_c0a17592(var_a6448663) {
 // Checksum 0xd6cf21f9, Offset: 0x2ea0
 // Size: 0x7bc
 function function_de0542ee() {
-    var_8747f6cc = 1;
+    shouldupdate = 1;
     event = self.stealth.var_aa593a83;
     if (isdefined(self.stealth.investigate_point)) {
         if (isvec(self.stealth.investigate_point)) {
@@ -999,16 +999,16 @@ function function_de0542ee() {
         var_d40c8280 = anglestoforward(self.angles);
         var_93a2516c = vectornormalize(pos - self.origin);
         if (isplayer(event.entity) && !isplayer(self.stealth.var_23203165)) {
-            var_8747f6cc = 1;
+            shouldupdate = 1;
         } else if (vectordot(var_39725a4e, var_93a2516c) < 0 && vectordot(var_d40c8280, var_93a2516c) < 0) {
-            var_8747f6cc = 1;
+            shouldupdate = 1;
         } else if (event.var_dd29a83a == "saw_corpse") {
-            var_8747f6cc = 1;
-        } else if (var_8747f6cc && distancesquared(self.goalpos, pos) < function_a3f6cdac(300)) {
-            var_8747f6cc = 0;
+            shouldupdate = 1;
+        } else if (shouldupdate && distancesquared(self.goalpos, pos) < function_a3f6cdac(300)) {
+            shouldupdate = 0;
         }
     }
-    if (var_8747f6cc) {
+    if (shouldupdate) {
         var_5f25f38e = level.stealth.var_65d8f1bf[self.var_d6319e36];
         var_9bd7a27 = namespace_3fc78cb6::getgroup(self.var_d6319e36);
         pod = namespace_3fc78cb6::function_9fd1b21a(var_9bd7a27, self);
@@ -1025,59 +1025,59 @@ function function_de0542ee() {
         } else if (pod.members.size > 1 && pod.members[1] == self) {
             var_f6fb36e9 = 1;
         }
-        var_99400a59 = undefined;
+        searchpos = undefined;
         if (var_ca361e0e) {
             if (event.var_dd29a83a == "saw_corpse" || distance2dsquared(self.origin, event.var_ce3a18c7) < 4096) {
-                var_99400a59 = event.var_ce3a18c7;
+                searchpos = event.var_ce3a18c7;
                 if (event.var_dd29a83a == "saw_corpse") {
-                    var_99400a59 = function_c0a17592(var_99400a59);
+                    searchpos = function_c0a17592(searchpos);
                 }
                 if (isdefined(var_5f25f38e)) {
-                    var_2279f286 = self function_a93cf25c(var_99400a59, var_5f25f38e);
+                    var_2279f286 = self function_a93cf25c(searchpos, var_5f25f38e);
                     if (isdefined(var_2279f286)) {
-                        var_99400a59 = var_2279f286;
+                        searchpos = var_2279f286;
                     }
                 }
             }
             if (event.var_dd29a83a == "sight" && isdefined(event.entity) && self cansee(event.entity)) {
-                var_99400a59 = event.entity.origin;
+                searchpos = event.entity.origin;
             }
-            if (!isdefined(var_99400a59)) {
-                var_99400a59 = function_76b15e5c(pod, event.var_ce3a18c7, event.var_ce3a18c7, var_5f25f38e, self.var_ba41ef8, self.goalradius, 1);
-                if (!isdefined(var_99400a59)) {
+            if (!isdefined(searchpos)) {
+                searchpos = function_76b15e5c(pod, event.var_ce3a18c7, event.var_ce3a18c7, var_5f25f38e, self.var_ba41ef8, self.goalradius, 1);
+                if (!isdefined(searchpos)) {
                     if (isdefined(var_5f25f38e)) {
-                        var_99400a59 = self function_a93cf25c(event.var_ce3a18c7, var_5f25f38e);
+                        searchpos = self function_a93cf25c(event.var_ce3a18c7, var_5f25f38e);
                     }
-                    if (!isdefined(var_99400a59)) {
-                        var_99400a59 = function_76b15e5c(pod, event.var_ce3a18c7, self.origin, var_5f25f38e, self.var_ba41ef8, self.goalradius, 1);
+                    if (!isdefined(searchpos)) {
+                        searchpos = function_76b15e5c(pod, event.var_ce3a18c7, self.origin, var_5f25f38e, self.var_ba41ef8, self.goalradius, 1);
                     }
-                    if (!isdefined(var_99400a59)) {
-                        var_99400a59 = self.origin;
+                    if (!isdefined(searchpos)) {
+                        searchpos = self.origin;
                     }
                 }
             }
         } else if (var_f6fb36e9) {
             f = randomfloatrange(0.7, 0.85);
-            var_99400a59 = vectorlerp(self.origin, event.var_ce3a18c7, f);
-            var_99400a59 = function_76b15e5c(pod, var_99400a59, var_99400a59, var_5f25f38e, self.var_ba41ef8, self.goalradius);
+            searchpos = vectorlerp(self.origin, event.var_ce3a18c7, f);
+            searchpos = function_76b15e5c(pod, searchpos, searchpos, var_5f25f38e, self.var_ba41ef8, self.goalradius);
         } else if (!var_d5379974) {
-            var_99400a59 = function_76b15e5c(pod, event.var_ce3a18c7, self.origin, var_5f25f38e, self.var_ba41ef8, self.goalradius);
+            searchpos = function_76b15e5c(pod, event.var_ce3a18c7, self.origin, var_5f25f38e, self.var_ba41ef8, self.goalradius);
         }
-        if (isdefined(var_99400a59) && !function_d6a6e300(event.var_ce3a18c7, var_99400a59)) {
-            var_99400a59 = undefined;
+        if (isdefined(searchpos) && !function_d6a6e300(event.var_ce3a18c7, searchpos)) {
+            searchpos = undefined;
         }
-        if (!isdefined(var_99400a59)) {
-            var_99400a59 = function_b92e4cdd();
+        if (!isdefined(searchpos)) {
+            searchpos = function_b92e4cdd();
         } else {
-            namespace_3fc78cb6::function_172d6f0b(pod, var_99400a59);
+            namespace_3fc78cb6::function_172d6f0b(pod, searchpos);
         }
-        if (isvec(var_99400a59)) {
-            var_99400a59 = util::ground_position(var_99400a59, 100);
-        } else if (!smart_object::function_1631909f(var_99400a59)) {
-            var_99400a59.origin = util::ground_position(var_99400a59.origin, 100);
+        if (isvec(searchpos)) {
+            searchpos = util::ground_position(searchpos, 100);
+        } else if (!smart_object::function_1631909f(searchpos)) {
+            searchpos.origin = util::ground_position(searchpos.origin, 100);
         }
-        self.stealth.var_627b2039 = var_99400a59;
-        return var_99400a59;
+        self.stealth.var_627b2039 = searchpos;
+        return searchpos;
     }
 }
 
@@ -1089,18 +1089,18 @@ function function_b92e4cdd() {
     var_9bd7a27 = namespace_3fc78cb6::getgroup(self.var_d6319e36);
     pod = namespace_3fc78cb6::function_9fd1b21a(var_9bd7a27, self);
     if (isdefined(pod.var_67bd7875) && pod.var_67bd7875 == self) {
-        var_99400a59 = undefined;
+        searchpos = undefined;
         if (isdefined(pod.volume)) {
-            var_99400a59 = self function_a93cf25c(pod.origin, pod.volume);
+            searchpos = self function_a93cf25c(pod.origin, pod.volume);
         }
-        if (!isdefined(var_99400a59)) {
-            var_99400a59 = getclosestpointonnavmesh(pod.origin, 500);
+        if (!isdefined(searchpos)) {
+            searchpos = getclosestpointonnavmesh(pod.origin, 500);
         }
         pod.var_67bd7875 = undefined;
     } else {
-        var_99400a59 = namespace_3fc78cb6::function_2e140491(self);
+        searchpos = namespace_3fc78cb6::function_2e140491(self);
     }
-    return var_99400a59;
+    return searchpos;
 }
 
 // Namespace namespace_77fd5d41/namespace_77fd5d41
@@ -1167,8 +1167,8 @@ function function_d004e2c7(event) {
     }
     self.stealth.investigate_point = self function_de0542ee();
     if (isdefined(self.stealth.investigate_point)) {
-        var_28e27203 = self namespace_206491b4::function_24b5e32(self.stealth.investigate_point);
-        self namespace_979752dc::set_goal(self.stealth.investigate_point, var_28e27203);
+        faceangles = self namespace_206491b4::function_24b5e32(self.stealth.investigate_point);
+        self namespace_979752dc::set_goal(self.stealth.investigate_point, faceangles);
     }
 }
 
@@ -1199,8 +1199,8 @@ function function_6241c1ec() {
     }
     self.stealth.investigate_point = self function_de0542ee();
     if (isdefined(self.stealth.investigate_point)) {
-        var_28e27203 = self namespace_206491b4::function_24b5e32(self.stealth.investigate_point);
-        self namespace_979752dc::set_goal(self.stealth.investigate_point, var_28e27203);
+        faceangles = self namespace_206491b4::function_24b5e32(self.stealth.investigate_point);
+        self namespace_979752dc::set_goal(self.stealth.investigate_point, faceangles);
     }
 }
 
@@ -1287,7 +1287,7 @@ function function_eca00d7f(instancedata, pos, var_5fda80c8) {
 // Checksum 0xdd5968b4, Offset: 0x4120
 // Size: 0x27e
 function function_98fb391c(behaviortreeentity) {
-    taskid = behaviortreeentity function_db1c5a52(1);
+    taskid = behaviortreeentity gettaskid(1);
     self.var_8c9988c5 = self.alertlevelint <= 2;
     curtime = gettime();
     instancedata = spawnstruct();
@@ -1295,8 +1295,8 @@ function function_98fb391c(behaviortreeentity) {
     instancedata.var_814094b6 = curtime + randomintrange(2000, 4000);
     self.var_d3364a1a.instancedata[taskid] = instancedata;
     var_dd29a83a = self.stealth.var_aa593a83.var_dd29a83a;
-    var_1d1f100 = hash(self.stealth.var_aa593a83.type);
-    switch (var_1d1f100) {
+    hashtype = hash(self.stealth.var_aa593a83.type);
+    switch (hashtype) {
     case #"investigate":
         style = self.awarenesslevelcurrent == "unaware" ? "patrol" : "alert";
         self namespace_979752dc::set_patrol_style(style);
@@ -1359,19 +1359,19 @@ function function_11ad9ad4(instancedata) {
         goalpos = function_b92e4cdd();
         var_9bd7a27 = namespace_3fc78cb6::getgroup(self.var_d6319e36);
         pod = namespace_3fc78cb6::function_9fd1b21a(var_9bd7a27, self);
-        if (isdefined(pod.var_9d82663e)) {
-            arrayremovevalue(pod.var_9d82663e, self);
+        if (isdefined(pod.needsupdate)) {
+            arrayremovevalue(pod.needsupdate, self);
         }
     }
-    if (isdefined(pod.var_9d82663e)) {
-        arrayremovevalue(pod.var_9d82663e, self);
+    if (isdefined(pod.needsupdate)) {
+        arrayremovevalue(pod.needsupdate, self);
     }
     if (isdefined(pod.var_67bd7875) && pod.var_67bd7875 == self) {
         pod.var_67bd7875 = undefined;
     }
     if (isdefined(goalpos)) {
         self.stealth.investigate_point = goalpos;
-        var_28e27203 = undefined;
+        faceangles = undefined;
         self.stealth.var_627b2039 = goalpos;
         if (self.stealth.var_fb5a13e0 && isdefined(instancedata)) {
             instancedata.var_b4b8dca2 = 0;
@@ -1380,22 +1380,22 @@ function function_11ad9ad4(instancedata) {
                 function_eca00d7f(instancedata, goalpos, 1);
             } else if (var_dd29a83a == "bulletwhizby" || var_dd29a83a == "grenade danger") {
                 self namespace_979752dc::set_patrol_style("cqb");
-                var_28e27203 = self namespace_206491b4::function_24b5e32(goalpos);
+                faceangles = self namespace_206491b4::function_24b5e32(goalpos);
             } else {
                 self namespace_979752dc::set_patrol_style("alert");
-                var_2008a9a5 = self.stealth.var_aa593a83.var_199a4f52;
-                if (!isdefined(var_2008a9a5)) {
-                    var_2008a9a5 = self.stealth.var_aa593a83.var_ce3a18c7;
+                lookpos = self.stealth.var_aa593a83.var_199a4f52;
+                if (!isdefined(lookpos)) {
+                    lookpos = self.stealth.var_aa593a83.var_ce3a18c7;
                 }
-                function_8bd5a605(instancedata, var_2008a9a5, var_dd29a83a);
-                var_28e27203 = self namespace_206491b4::function_24b5e32(goalpos);
+                function_8bd5a605(instancedata, lookpos, var_dd29a83a);
+                faceangles = self namespace_206491b4::function_24b5e32(goalpos);
             }
         } else {
             self namespace_979752dc::set_patrol_style("alert");
             self.moveplaybackrate = 1;
-            var_28e27203 = self namespace_206491b4::function_24b5e32(goalpos);
+            faceangles = self namespace_206491b4::function_24b5e32(goalpos);
         }
-        self namespace_979752dc::set_goal(goalpos, var_28e27203, 24);
+        self namespace_979752dc::set_goal(goalpos, faceangles, 24);
     }
 }
 
@@ -1556,7 +1556,7 @@ function function_36915a04(behaviortreeentity) {
     /#
         assert(!isdefined(self.var_d3364a1a.var_98919459));
     #/
-    self.var_d3364a1a.var_98919459 = behaviortreeentity function_db1c5a52(1, "move");
+    self.var_d3364a1a.var_98919459 = behaviortreeentity gettaskid(1, "move");
     self.var_d3364a1a.instancedata[self.var_d3364a1a.var_98919459] = self.stealth.var_abf79234;
     function_d6c9b118();
     [[ level.stealth.var_f67fe42c[self.stealth.var_abf79234][0] ]](behaviortreeentity);
@@ -1631,7 +1631,7 @@ function function_445c5acf(behaviortreeentity) {
 // Checksum 0xd7c381b, Offset: 0x55e0
 // Size: 0x6aa
 function function_8e428cdb(behaviortreeentity) {
-    taskid = behaviortreeentity function_db1c5a52();
+    taskid = behaviortreeentity gettaskid();
     if (isdefined(self getlinkedent())) {
         return 1;
     }
@@ -1645,15 +1645,15 @@ function function_8e428cdb(behaviortreeentity) {
     /#
         assert(isdefined(pod));
     #/
-    if (isdefined(pod.var_9d82663e) && array::contains(pod.var_9d82663e, self)) {
+    if (isdefined(pod.needsupdate) && array::contains(pod.needsupdate, self)) {
         goalpos = function_b92e4cdd();
         goalorigin = goalpos;
         if (isdefined(goalpos)) {
             if (!isvec(goalorigin)) {
                 goalorigin = goalorigin.origin;
             }
-            arrayremovevalue(pod.var_9d82663e, self);
-            var_28e27203 = undefined;
+            arrayremovevalue(pod.needsupdate, self);
+            faceangles = undefined;
             var_16721ebf = self.stealth.var_aa593a83.var_dd29a83a;
             if (var_16721ebf == "saw_corpse" || var_16721ebf == "found_corpse") {
                 function_eca00d7f(instancedata, goalorigin, 0);
@@ -1669,15 +1669,15 @@ function function_8e428cdb(behaviortreeentity) {
                     var_ff42b0fb = 0;
                 }
                 namespace_979752dc::set_patrol_style(demeanor, var_ff42b0fb, goalorigin, var_148608c8);
-                var_2008a9a5 = self.stealth.var_aa593a83.var_199a4f52;
-                if (!isdefined(var_2008a9a5)) {
-                    var_2008a9a5 = self.stealth.var_aa593a83.var_ce3a18c7;
+                lookpos = self.stealth.var_aa593a83.var_199a4f52;
+                if (!isdefined(lookpos)) {
+                    lookpos = self.stealth.var_aa593a83.var_ce3a18c7;
                 }
-                function_8bd5a605(instancedata, var_2008a9a5, var_16721ebf);
-                var_28e27203 = namespace_206491b4::function_24b5e32(goalorigin);
+                function_8bd5a605(instancedata, lookpos, var_16721ebf);
+                faceangles = namespace_206491b4::function_24b5e32(goalorigin);
                 instancedata.var_fdf9ee19 = undefined;
             }
-            self namespace_979752dc::set_goal(goalpos, var_28e27203);
+            self namespace_979752dc::set_goal(goalpos, faceangles);
         }
     }
     if (isdefined(instancedata.var_fdf9ee19) && curtime > instancedata.var_fdf9ee19) {
@@ -1708,11 +1708,11 @@ function function_8e428cdb(behaviortreeentity) {
         return 1;
     }
     if (isdefined(instancedata.var_d2936343) && curtime >= instancedata.var_d2936343) {
-        var_3f9c4a4 = 512;
+        checkdist = 512;
         if (isdefined(instancedata.var_cb7fd255)) {
-            var_3f9c4a4 = instancedata.var_cb7fd255;
+            checkdist = instancedata.var_cb7fd255;
         }
-        if (self getpathlength() > var_3f9c4a4) {
+        if (self getpathlength() > checkdist) {
             interval = 1000;
             if (isdefined(instancedata.var_d0ce4bb8)) {
                 interval = instancedata.var_d0ce4bb8;
@@ -1731,7 +1731,7 @@ function function_8e428cdb(behaviortreeentity) {
 // Checksum 0x3e126109, Offset: 0x5c98
 // Size: 0xbc
 function function_a6497ddc(behaviortreeentity) {
-    taskid = behaviortreeentity function_db1c5a52();
+    taskid = behaviortreeentity gettaskid();
     self.var_8c9988c5 = 0;
     if (is_true(self.stealth.var_fb5a13e0)) {
         self.stealth.var_fb5a13e0 = 0;
@@ -1764,7 +1764,7 @@ function function_cb942647() {
 // Checksum 0xa624b91e, Offset: 0x5e18
 // Size: 0x1b8
 function function_7b0493d0(behaviortreeentity) {
-    taskid = behaviortreeentity function_db1c5a52(1);
+    taskid = behaviortreeentity gettaskid(1);
     data = spawnstruct();
     data.var_2f6fb34a = gettime() + 8000;
     if (isdefined(self.stealth.var_e7177364)) {
@@ -1790,7 +1790,7 @@ function function_7b0493d0(behaviortreeentity) {
 // Checksum 0x5b37f7c7, Offset: 0x5fd8
 // Size: 0x25c
 function function_b1ec5a57(behaviortreeentity) {
-    taskid = behaviortreeentity function_db1c5a52();
+    taskid = behaviortreeentity gettaskid();
     if (!isdefined(self.var_d3364a1a.instancedata[taskid].var_2f6fb34a) || gettime() > self.var_d3364a1a.instancedata[taskid].var_2f6fb34a) {
         return 0;
     }
@@ -1801,8 +1801,8 @@ function function_b1ec5a57(behaviortreeentity) {
     }
     var_9bd7a27 = namespace_3fc78cb6::getgroup(self.var_d6319e36);
     pod = namespace_3fc78cb6::function_9fd1b21a(var_9bd7a27, self);
-    if (isdefined(pod) && isdefined(pod.var_9d82663e) && array::contains(pod.var_9d82663e, self)) {
-        arrayremovevalue(pod.var_9d82663e, self);
+    if (isdefined(pod) && isdefined(pod.needsupdate) && array::contains(pod.needsupdate, self)) {
+        arrayremovevalue(pod.needsupdate, self);
         return 1;
     }
     foreach (player in getplayers()) {
@@ -1818,7 +1818,7 @@ function function_b1ec5a57(behaviortreeentity) {
 // Checksum 0x85730500, Offset: 0x6240
 // Size: 0x5a
 function function_9fddcfcb(behaviortreeentity) {
-    taskid = behaviortreeentity function_db1c5a52();
+    taskid = behaviortreeentity gettaskid();
     self.var_d3364a1a.instancedata[taskid] = undefined;
     self.stealth.var_4e0cbc53 = 0;
     return 1;
@@ -1976,8 +1976,8 @@ function function_578c1573() {
     var_22016eea = function_2e532eed(self.stealth.var_bd106aaa.var_64a52bf3);
     var_6e87d6b2 = 0;
     var_9bf11123 = undefined;
-    var_dabfef2a = 0;
-    while (var_dabfef2a < 2) {
+    numtries = 0;
+    while (numtries < 2) {
         result = self namespace_5cd4acd8::function_784b4e1e(self.origin, var_bd106aaa.var_64a52bf3, var_bd106aaa.var_dd7b7a67, var_bd106aaa.var_daaf8b01);
         if (isdefined(result)) {
             var_9bf11123 = result[0];
@@ -1989,7 +1989,7 @@ function function_578c1573() {
             }
             return self function_4efdd16b(var_9bf11123);
         } else {
-            if (var_dabfef2a == 1) {
+            if (numtries == 1) {
                 break;
             }
             var_64a52bf3 = var_bd106aaa.var_64a52bf3;
@@ -2008,7 +2008,7 @@ function function_578c1573() {
                 }
                 var_6e87d6b2 = 1;
             }
-            var_dabfef2a++;
+            numtries++;
         }
     }
     fallback = var_355a0ab5;
@@ -2056,31 +2056,31 @@ function function_95e7edb1() {
     }
     var_9bd7a27 = namespace_3fc78cb6::getgroup(self.var_d6319e36);
     pod = namespace_3fc78cb6::function_9fd1b21a(var_9bd7a27, self);
-    var_99400a59 = undefined;
+    searchpos = undefined;
     if (isdefined(self.stealth.var_a22914d1)) {
-        var_99400a59 = self.stealth.var_a22914d1;
+        searchpos = self.stealth.var_a22914d1;
         self.stealth.var_a22914d1 = undefined;
         self function_4c52cac6();
     }
-    if (!isdefined(var_99400a59) && isdefined(pod) && isdefined(pod.origin) && !isdefined(pod.var_b595bdc4)) {
+    if (!isdefined(searchpos) && isdefined(pod) && isdefined(pod.origin) && !isdefined(pod.var_b595bdc4)) {
         if (function_18ef8551(pod, self)) {
-            var_99400a59 = pod.origin;
+            searchpos = pod.origin;
             pod.var_b595bdc4 = 1;
             self function_4c52cac6();
         }
     }
-    if (!isdefined(var_99400a59)) {
+    if (!isdefined(searchpos)) {
         self function_3edb59e9();
         if (isdefined(self.stealth.var_bd106aaa)) {
-            var_99400a59 = self function_578c1573();
+            searchpos = self function_578c1573();
         } else if (isdefined(pod) && isdefined(pod.var_5462c308)) {
-            var_99400a59 = namespace_3fc78cb6::function_2e140491(self, level.stealth.var_d89f1312[self.var_d6319e36]);
+            searchpos = namespace_3fc78cb6::function_2e140491(self, level.stealth.var_d89f1312[self.var_d6319e36]);
         }
     }
-    if (!isdefined(var_99400a59) && getplayers().size > 0) {
-        var_99400a59 = getplayers()[0].origin;
+    if (!isdefined(searchpos) && getplayers().size > 0) {
+        searchpos = getplayers()[0].origin;
     }
-    var_88427393 = isvec(var_99400a59) ? var_99400a59 : var_99400a59.origin;
+    var_88427393 = isvec(searchpos) ? searchpos : searchpos.origin;
     var_ed142a01 = getclosestpointonnavmesh(var_88427393);
     if (isdefined(var_ed142a01)) {
         self.stealth.var_b997a50 = var_ed142a01;
@@ -2088,10 +2088,10 @@ function function_95e7edb1() {
         self.stealth.var_b997a50 = var_88427393;
     }
     self.stealth.var_d4a1eb27 = gettime() + 500;
-    if (isdefined(var_99400a59)) {
-        self namespace_979752dc::set_goal(var_99400a59);
+    if (isdefined(searchpos)) {
+        self namespace_979752dc::set_goal(searchpos);
     }
-    return var_99400a59;
+    return searchpos;
 }
 
 // Namespace namespace_77fd5d41/namespace_77fd5d41
@@ -2151,7 +2151,7 @@ function function_12e4ae14(*behaviortreeentity) {
 // Checksum 0xb8537cef, Offset: 0x75c8
 // Size: 0x68
 function function_ae010fd5(behaviortreeentity) {
-    taskid = behaviortreeentity function_db1c5a52(1, "Hunt_Delay");
+    taskid = behaviortreeentity gettaskid(1, "Hunt_Delay");
     self.var_d3364a1a.instancedata[taskid] = randomintrange(500, 1500);
 }
 
@@ -2160,7 +2160,7 @@ function function_ae010fd5(behaviortreeentity) {
 // Checksum 0xaacab081, Offset: 0x7638
 // Size: 0xcc
 function function_27a91ca9(behaviortreeentity) {
-    taskid = behaviortreeentity function_db1c5a52(0, "Hunt_Delay");
+    taskid = behaviortreeentity gettaskid(0, "Hunt_Delay");
     if (!behaviortreeentity haspath() && isdefined(self.var_d3364a1a.instancedata[taskid])) {
         self.var_d3364a1a.instancedata[taskid] = self.var_d3364a1a.instancedata[taskid] - function_60d95f53();
         if (self.var_d3364a1a.instancedata[taskid] <= 0) {
@@ -2175,7 +2175,7 @@ function function_27a91ca9(behaviortreeentity) {
 // Checksum 0xa81f8f3f, Offset: 0x7710
 // Size: 0x4c
 function function_91aca790(behaviortreeentity) {
-    taskid = behaviortreeentity function_db1c5a52(0, "Hunt_Delay");
+    taskid = behaviortreeentity gettaskid(0, "Hunt_Delay");
     self.var_d3364a1a.instancedata[taskid] = undefined;
 }
 
@@ -2223,7 +2223,7 @@ function function_af1feb45(*behaviortreeentity) {
 // Size: 0xc4
 function function_84d939b2(behaviortreeentity) {
     if (function_af1feb45(behaviortreeentity)) {
-        taskid = behaviortreeentity function_db1c5a52(0, "Hunt_Delay");
+        taskid = behaviortreeentity gettaskid(0, "Hunt_Delay");
         if (!(isdefined(taskid) && isdefined(self.var_d3364a1a.instancedata[taskid]))) {
             function_ae010fd5(behaviortreeentity);
         }
@@ -2242,7 +2242,7 @@ function function_84d939b2(behaviortreeentity) {
 // Checksum 0x8cdff968, Offset: 0x7a58
 // Size: 0x88
 function function_25281284(behaviortreeentity) {
-    taskid = behaviortreeentity function_db1c5a52(0, "Hunt_Hunker");
+    taskid = behaviortreeentity gettaskid(0, "Hunt_Hunker");
     if (!(isdefined(taskid) && isdefined(self.var_d3364a1a.instancedata[taskid]))) {
         function_658c9f29(behaviortreeentity);
     }
@@ -2255,7 +2255,7 @@ function function_25281284(behaviortreeentity) {
 // Checksum 0x8c2dd849, Offset: 0x7ae8
 // Size: 0x234
 function function_658c9f29(behaviortreeentity) {
-    taskid = behaviortreeentity function_db1c5a52(1, "Hunt_Hunker");
+    taskid = behaviortreeentity gettaskid(1, "Hunt_Hunker");
     curtime = gettime();
     instancedata = spawnstruct();
     instancedata.var_ab0aff56 = curtime + randomintrange(4000, 6000);
@@ -2289,7 +2289,7 @@ function function_658c9f29(behaviortreeentity) {
 // Checksum 0x85116639, Offset: 0x7d28
 // Size: 0x270
 function hunt_hunker(behaviortreeentity) {
-    taskid = behaviortreeentity function_db1c5a52(0, "Hunt_Hunker");
+    taskid = behaviortreeentity gettaskid(0, "Hunt_Hunker");
     if (!isdefined(self.var_d3364a1a.instancedata[taskid])) {
         return;
     }
@@ -2322,7 +2322,7 @@ function hunt_hunker(behaviortreeentity) {
 // Checksum 0x41c7d601, Offset: 0x7fa0
 // Size: 0x54
 function function_d7e2a7d9(behaviortreeentity) {
-    taskid = behaviortreeentity function_db1c5a52(0, "Hunt_Hunker");
+    taskid = behaviortreeentity gettaskid(0, "Hunt_Hunker");
     if (isdefined(taskid)) {
         self.var_d3364a1a.instancedata[taskid] = undefined;
     }
@@ -2348,7 +2348,7 @@ function function_e376a4b6(*behaviortreeentity) {
 // Checksum 0xe1d4edb0, Offset: 0x8070
 // Size: 0x9e
 function function_352c6578(behaviortreeentity) {
-    taskid = behaviortreeentity function_db1c5a52(1);
+    taskid = behaviortreeentity gettaskid(1);
     instancedata = spawnstruct();
     instancedata.endtime = gettime() + 4000;
     instancedata.var_5e610f0f = 0;
@@ -2362,7 +2362,7 @@ function function_352c6578(behaviortreeentity) {
 // Checksum 0xb1d95ae9, Offset: 0x8118
 // Size: 0x74
 function function_e6cce524(behaviortreeentity) {
-    taskid = behaviortreeentity function_db1c5a52();
+    taskid = behaviortreeentity gettaskid();
     curtime = gettime();
     instancedata = self.var_d3364a1a.instancedata[taskid];
     if (curtime > instancedata.endtime) {
@@ -2376,7 +2376,7 @@ function function_e6cce524(behaviortreeentity) {
 // Checksum 0x7b5a8cc9, Offset: 0x8198
 // Size: 0x6a
 function function_fe6a490d(behaviortreeentity) {
-    taskid = behaviortreeentity function_db1c5a52();
+    taskid = behaviortreeentity gettaskid();
     self.var_806dc35e = undefined;
     self.var_d3364a1a.instancedata[taskid] = undefined;
     self.stealth.var_ca970171 = undefined;
@@ -2420,7 +2420,7 @@ function function_82233242(*behaviortreeentity) {
 // Checksum 0xfe8b16ce, Offset: 0x8310
 // Size: 0x13e
 function function_c643bbbb(behaviortreeentity) {
-    taskid = behaviortreeentity function_db1c5a52(1);
+    taskid = behaviortreeentity gettaskid(1);
     curtime = gettime();
     instancedata = spawnstruct();
     self.var_d3364a1a.instancedata[taskid] = instancedata;
@@ -2456,9 +2456,9 @@ function function_81eedb5c(instancedata) {
         self.var_f8f1706d = undefined;
     }
     if (!isdefined(instancedata.var_9d029bb) && !is_true(self.isarriving) && self.lookaheaddist > 32 && self getpathlength() > 128) {
-        var_bef4dbd7 = self function_b4f1b019(var_843ecdc0);
+        lookaheadpos = self function_b4f1b019(var_843ecdc0);
         var_a0e80ff2 = anglestoforward(self.angles);
-        var_273da0db = getnodesinradius(var_bef4dbd7, var_bea9b15e, 0, 60, "Cover");
+        var_273da0db = getnodesinradius(lookaheadpos, var_bea9b15e, 0, 60, "Cover");
         if (var_273da0db.size > 0) {
             foreach (node in var_273da0db) {
                 if (!doesnodeallowstance(node, "stand")) {
@@ -2482,9 +2482,9 @@ function function_81eedb5c(instancedata) {
                 /#
                     if (function_852e4bbb()) {
                         var_861ee216 = anglestoforward(node.angles);
-                        circle(var_bef4dbd7, var_bea9b15e, (0, 1, 0), 1, 0, 1);
+                        circle(lookaheadpos, var_bea9b15e, (0, 1, 0), 1, 0, 1);
                         box(node.origin, vectorscale((-1, -1, 0), 16), (16, 16, 8), node.angles[1], (1, 1, 0), 1, 0, 1);
-                        line(var_bef4dbd7, var_bef4dbd7 + var_861ee216 * var_2be49714, (0, 1, 1), 1, 0, 1);
+                        line(lookaheadpos, lookaheadpos + var_861ee216 * var_2be49714, (0, 1, 1), 1, 0, 1);
                     }
                 #/
                 if (abs(angleclamp180(self.angles[1] - node.angles[1])) < 45) {
@@ -2507,7 +2507,7 @@ function function_81eedb5c(instancedata) {
             }
         #/
         checkpos = undefined;
-        var_ffe01b4a = function_237971e2(var_9d029bb.angles);
+        var_ffe01b4a = anglestoaxis(var_9d029bb.angles);
         var_e531995e = var_ffe01b4a.right;
         if (var_9d029bb.type == "Cover Left") {
             var_e531995e = -1 * var_e531995e;
@@ -2536,7 +2536,7 @@ function function_81eedb5c(instancedata) {
 // Checksum 0xcdc3fabd, Offset: 0x8ba8
 // Size: 0x270
 function function_843b5351(behaviortreeentity) {
-    taskid = behaviortreeentity function_db1c5a52();
+    taskid = behaviortreeentity gettaskid();
     instancedata = self.var_d3364a1a.instancedata[taskid];
     curtime = gettime();
     var_13e10c61 = isdefined(self.smart_object);
@@ -2574,7 +2574,7 @@ function function_843b5351(behaviortreeentity) {
 // Checksum 0xbf5cb32d, Offset: 0x8e20
 // Size: 0xa4
 function function_f874d2f1(behaviortreeentity) {
-    taskid = behaviortreeentity function_db1c5a52();
+    taskid = behaviortreeentity gettaskid();
     self.var_d3364a1a.instancedata[taskid] = undefined;
     if (isdefined(self.stealth.var_4b0080e1)) {
         self.stealth.var_40a89c9f = 1;
@@ -2646,7 +2646,7 @@ function function_df9a9513(behaviortreeentity) {
 // Checksum 0xf3a52e49, Offset: 0x9148
 // Size: 0x13a
 function function_527c1100(behaviortreeentity) {
-    taskid = behaviortreeentity function_db1c5a52(1, "Hunt_LookAround");
+    taskid = behaviortreeentity gettaskid(1, "Hunt_LookAround");
     timeout = 8000;
     instancedata = spawnstruct();
     instancedata.endtime = gettime() + timeout;
@@ -2670,7 +2670,7 @@ function function_527c1100(behaviortreeentity) {
 // Checksum 0xb2aec905, Offset: 0x9290
 // Size: 0x1c8
 function hunt_lookaround(behaviortreeentity) {
-    taskid = behaviortreeentity function_db1c5a52(0, "Hunt_LookAround");
+    taskid = behaviortreeentity gettaskid(0, "Hunt_LookAround");
     if (isdefined(self.stealth.var_40a89c9f)) {
         return 1;
     }
@@ -2702,7 +2702,7 @@ function hunt_lookaround(behaviortreeentity) {
 // Checksum 0x99ac39d0, Offset: 0x9460
 // Size: 0x88
 function function_6fda969(behaviortreeentity) {
-    taskid = behaviortreeentity function_db1c5a52(0, "Hunt_LookAround");
+    taskid = behaviortreeentity gettaskid(0, "Hunt_LookAround");
     self.var_d3364a1a.instancedata[taskid] = undefined;
     self.stealth.var_4e0cbc53 = undefined;
     if (!self haspath()) {
@@ -2829,7 +2829,7 @@ function function_ce3d25a0() {
     if (self namespace_3d84fa3e::function_47df32b8()) {
         self thread function_e6aa814a();
     }
-    self ai::function_ccc923fb(undefined);
+    self ai::look_at(undefined);
     self namespace_979752dc::function_6792b1eb();
     self namespace_979752dc::function_adf02a98(undefined);
     self namespace_cf88f507::function_a5831502();
@@ -3067,7 +3067,7 @@ function function_7f39428a(*behaviortreeentity) {
 // Checksum 0xca68e4bb, Offset: 0xa870
 // Size: 0x15e
 function function_9d71c469(behaviortreeentity) {
-    taskid = behaviortreeentity function_db1c5a52(1, "smart_object");
+    taskid = behaviortreeentity gettaskid(1, "smart_object");
     var_9bf11123 = self.smart_object;
     if (!isdefined(var_9bf11123)) {
         return 0;
@@ -3090,7 +3090,7 @@ function function_9d71c469(behaviortreeentity) {
 // Checksum 0x4392e8b3, Offset: 0xa9d8
 // Size: 0x7c
 function function_78d21c9b(behaviortreeentity) {
-    taskid = behaviortreeentity function_db1c5a52(0, "smart_object");
+    taskid = behaviortreeentity gettaskid(0, "smart_object");
     if (self.var_d3364a1a.instancedata[taskid].smart_object !== self.smart_object || !isdefined(behaviortreeentity.var_c48f9f7d)) {
         return 0;
     }
@@ -3102,7 +3102,7 @@ function function_78d21c9b(behaviortreeentity) {
 // Checksum 0x97a0ed4e, Offset: 0xaa60
 // Size: 0x74
 function function_c543bf14(behaviortreeentity) {
-    taskid = behaviortreeentity function_db1c5a52(0, "smart_object");
+    taskid = behaviortreeentity gettaskid(0, "smart_object");
     self.var_d9b2b7af = self.var_d3364a1a.instancedata[taskid].var_d9b2b7af;
     self.var_d3364a1a.instancedata[taskid] = undefined;
     return 1;

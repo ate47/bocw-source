@@ -37,7 +37,7 @@
 // Params 1, eflags: 0x2 linked
 // Checksum 0x4674856e, Offset: 0x848
 // Size: 0x344
-function function_f9f06983(*var_d3440450) {
+function starting(*var_d3440450) {
     player = getplayers()[0];
     var_8a3bb97c = getspawnerarray("raid_adler", "targetname");
     var_8a3bb97c[0] spawner::add_spawn_function(&namespace_b100dd86::function_9109a1fe);
@@ -306,7 +306,7 @@ function function_6178ec8f() {
     var_2397b823 = getweapon(#"smg_heavy_t9", "steadyaim", "reflex");
     self giveweapon(var_2397b823);
     self switchtoweapon(var_2397b823);
-    self val::set(#"hash_5ac5827ce61e8e00", "disable_weapon_cycling", 1);
+    self val::set(#"trailer", "disable_weapon_cycling", 1);
 }
 
 // Namespace tkdn_raid_slide/namespace_7747d072
@@ -408,7 +408,7 @@ function function_bc2abab3() {
 // Params 4, eflags: 0x2 linked
 // Checksum 0xd989aad7, Offset: 0x24c8
 // Size: 0x24
-function cleanup(*name, *var_f9f06983, *direct, *player) {
+function cleanup(*name, *starting, *direct, *player) {
     
 }
 

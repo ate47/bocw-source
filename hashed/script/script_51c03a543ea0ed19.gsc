@@ -29,7 +29,7 @@
 // Params 1, eflags: 0x0
 // Checksum 0xf182eda1, Offset: 0x788
 // Size: 0x28
-function function_f9f06983(*var_d3440450) {
+function starting(*var_d3440450) {
     level.var_aece851d = [];
     level.var_33621ea7 = 1;
 }
@@ -396,7 +396,7 @@ function function_ba2c935e(mover, var_a44bbc63) {
 // Params 4, eflags: 0x0
 // Checksum 0x533b7b51, Offset: 0x2068
 // Size: 0x24
-function cleanup(*name, *var_f9f06983, *direct, *player) {
+function cleanup(*name, *starting, *direct, *player) {
     
 }
 
@@ -404,7 +404,7 @@ function cleanup(*name, *var_f9f06983, *direct, *player) {
 // Params 4, eflags: 0x0
 // Checksum 0xfdd91cc9, Offset: 0x2098
 // Size: 0x2b4
-function function_768f9ea9(*name, *var_f9f06983, *direct, *player) {
+function function_768f9ea9(*name, *starting, *direct, *player) {
     level thread scene::stop("scene_tkd_hit1_intro_fly_in_trucks");
     wait(1);
     if (isdefined(level.var_eaf95d92)) {

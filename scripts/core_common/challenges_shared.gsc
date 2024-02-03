@@ -633,7 +633,7 @@ function roundend(winner) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xac209813, Offset: 0x22b8
 // Size: 0x90c
-function function_90185171(totaltimeplayed, var_9cd35d35) {
+function function_90185171(totaltimeplayed, iswinner) {
     if (!sessionmodeisonlinegame() || !is_true(level.rankedmatch)) {
         return;
     }
@@ -642,7 +642,7 @@ function function_90185171(totaltimeplayed, var_9cd35d35) {
         return;
     }
     if (function_472b5be3() && isdefined(level.var_52b0a80d) && isdefined(level.var_512c31e)) {
-        var_9b4de29 = isdefined(var_9cd35d35) ? var_9cd35d35 : 0;
+        var_9b4de29 = isdefined(iswinner) ? iswinner : 0;
         player function_cce105c8(#"hash_71f20af4235ff7fe", 1, getdvarint(#"hash_54d4176b43d29535", 0), 2, int(max(level.var_52b0a80d, 0)), 3, int(max(level.var_512c31e, 0)), 4, var_9b4de29);
     }
     /#
@@ -729,12 +729,12 @@ function function_90185171(totaltimeplayed, var_9cd35d35) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xa7777e09, Offset: 0x2bd0
 // Size: 0x94
-function function_659f7dc(var_3e34c8a4, var_9cd35d35) {
+function function_659f7dc(var_3e34c8a4, iswinner) {
     self util::function_22bf0a4a();
     if (isdefined(var_3e34c8a4) && var_3e34c8a4 > 0) {
         var_5024088b = float(var_3e34c8a4) / 1000;
         if (var_5024088b > 0) {
-            self function_90185171(var_5024088b, var_9cd35d35);
+            self function_90185171(var_5024088b, iswinner);
         }
     }
 }
@@ -749,8 +749,8 @@ function private function_d6f929d6(winner) {
     foreach (player in level.players) {
         if (isdefined(player.pers[#"hash_150795bee4d46ce4"])) {
             var_28ee869a = gettime() - player.pers[#"hash_150795bee4d46ce4"];
-            var_9cd35d35 = player function_9cd35d35(winner);
-            player function_659f7dc(var_28ee869a, var_9cd35d35);
+            iswinner = player iswinner(winner);
+            player function_659f7dc(var_28ee869a, iswinner);
         }
     }
     function_f4f6d8a1();
@@ -760,7 +760,7 @@ function private function_d6f929d6(winner) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x532bd295, Offset: 0x2da8
 // Size: 0xaa
-function function_9cd35d35(winner) {
+function iswinner(winner) {
     player = self;
     if (level.teambased) {
         if (isdefined(player) && isdefined(player.team) && isdefined(winner) && isdefined(level.teams[winner])) {

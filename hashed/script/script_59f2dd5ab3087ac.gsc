@@ -214,8 +214,8 @@ function private function_2cf636b5(localclientnum) {
 // Checksum 0x20e08c16, Offset: 0xdd0
 // Size: 0x14c
 function private function_f3b7c879(localclientnum) {
-    var_acc39f5a = function_1df4c3b0(localclientnum, #"hash_6f4b11a0bee9b73d");
-    var_56436909 = getuimodel(var_acc39f5a, "weaponCachePromptState");
+    huditemsmodel = function_1df4c3b0(localclientnum, #"hash_6f4b11a0bee9b73d");
+    var_56436909 = getuimodel(huditemsmodel, "weaponCachePromptState");
     var_559f3f0d = is_true(level.var_2e44d000[localclientnum]);
     var_1d992cd3 = is_true(level.var_745f6ccb[localclientnum]);
     if (var_559f3f0d && var_1d992cd3) {

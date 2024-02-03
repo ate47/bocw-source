@@ -32,7 +32,7 @@ function function_2e9b6265(var_afe43979, var_1ed3fdf1, var_24ea4e17) {
 // Params 3, eflags: 0x0
 // Checksum 0x72853d4a, Offset: 0x140
 // Size: 0x34
-function function_b33d1cfe(var_afe43979, volume, var_3e12323c) {
-    function_db78159d(var_afe43979, volume, var_3e12323c);
+function function_b33d1cfe(var_afe43979, volume, timeinseconds) {
+    function_db78159d(var_afe43979, volume, timeinseconds);
 }
 

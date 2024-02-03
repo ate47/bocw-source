@@ -19,7 +19,7 @@
 #using scripts\core_common\ai_shared.gsc;
 #using scripts\core_common\ai\archetype_utility.gsc;
 #using scripts\core_common\animation_shared.gsc;
-#using script_7b4396f5e8e35b28;
+#using scripts\core_common\districts.gsc;
 #using scripts\core_common\lui_shared.gsc;
 #using scripts\core_common\music_shared.gsc;
 #using scripts\core_common\values_shared.gsc;
@@ -50,7 +50,7 @@ function function_f50bc4b9() {
 // Params 1, eflags: 0x0
 // Checksum 0x5e4bcede, Offset: 0xf78
 // Size: 0xc
-function function_f9f06983(*var_d3440450) {
+function starting(*var_d3440450) {
     
 }
 
@@ -68,7 +68,7 @@ function main(var_d3440450, *var_50cc0d4f) {
     if (level.var_b28c2c3a == "dev_post_prisoner_no_survivors") {
         level.player player_decision::function_ff7e19cb(2);
     }
-    level.player namespace_f49eaa8b::function_a7d79fcb("safehouse", 1);
+    level.player districts::function_a7d79fcb("safehouse", 1);
     level thread scene::init_streamer(#"hash_70ddb2bd2755b3f6", getplayers());
     level thread scene::init_streamer(#"hash_203b0513592c4f28", getplayers());
     level thread scene::init_streamer(#"hash_46c2976baaaa055", getplayers());
@@ -235,7 +235,7 @@ function function_92141ec2() {
     snd::function_7db65a93(#"hash_1b78b54c338981ad");
     level thread namespace_4ed3ce47::function_a59705f8();
     wait(0.75);
-    level.player namespace_f49eaa8b::function_a7d79fcb("airstrip", 1);
+    level.player districts::function_a7d79fcb("airstrip", 1);
     level flag::set("af_player_start_ride");
     level scene::stop(level.str_scene_name);
     level.var_20047fb0 = getdvar(#"hash_62b11f12963c68d4");
@@ -248,7 +248,7 @@ function function_92141ec2() {
     setdvar(#"hash_62b11f12963c68d4", level.var_20047fb0);
     setdvar(#"hash_4af7f2a3b5e31c77", level.var_f9247f8c);
     setdvar(#"hash_7b06b8037c26b99b", level.var_3b87c282);
-    level.player namespace_f49eaa8b::function_a7d79fcb("safehouse", 1);
+    level.player districts::function_a7d79fcb("safehouse", 1);
 }
 
 // Namespace namespace_fdde5f3d/namespace_db1ba63f
@@ -781,16 +781,16 @@ function function_f1eacff2() {
     level notify(#"hash_7c4cadf8854821e0");
     level scene::play(level.str_scene_name, "dt_6b", level.var_58ccee4);
     level thread function_5662c89e("str_lie");
-    level.adler thread namespace_b2b6266a::add(#"hash_7edabf22111a04da", #"axis");
+    level.adler thread entname::add(#"hash_7edabf22111a04da", #"axis");
     level.adler setteam(#"axis");
-    level.sims thread namespace_b2b6266a::add(#"hash_726674254495739e", #"axis");
+    level.sims thread entname::add(#"hash_726674254495739e", #"axis");
     level.sims setteam(#"axis");
     if (isdefined(level.lazar)) {
-        level.lazar thread namespace_b2b6266a::add(#"hash_6a46f5c74f586cb6", #"axis");
+        level.lazar thread entname::add(#"hash_6a46f5c74f586cb6", #"axis");
         level.lazar setteam(#"axis");
     }
     if (isdefined(level.park)) {
-        level.park thread namespace_b2b6266a::add(#"hash_a0d642b09afc71a", #"axis");
+        level.park thread entname::add(#"hash_a0d642b09afc71a", #"axis");
         level.park setteam(#"axis");
     }
     wait(14);

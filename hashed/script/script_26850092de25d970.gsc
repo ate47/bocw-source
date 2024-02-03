@@ -33,7 +33,7 @@
 // Params 1, eflags: 0x2 linked
 // Checksum 0xd7ee6d75, Offset: 0x600
 // Size: 0x324
-function function_f9f06983(*var_d3440450) {
+function starting(*var_d3440450) {
     player = getplayers()[0];
     var_8a3bb97c = getspawnerarray("raid_adler", "targetname");
     var_8a3bb97c[0] spawner::add_spawn_function(&namespace_b100dd86::function_9109a1fe);
@@ -239,7 +239,7 @@ function function_709cb1b3() {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x90aa2026, Offset: 0x1610
 // Size: 0x24
-function cleanup(*name, *var_f9f06983, *direct, *player) {
+function cleanup(*name, *starting, *direct, *player) {
     
 }
 

@@ -64,7 +64,7 @@ function private function_8991ddb4(localclientnum) {
     #/
     self.threat_sight.var_1911547e = [[ level.var_6c0cd084 ]]->function_65cdd2df(self);
     if (!isdefined(self.threat_sight.var_1911547e)) {
-        var_afda3384 = self function_ac3d4bc();
+        myscore = self function_ac3d4bc();
         lowest = undefined;
         var_5b9574e0 = undefined;
         foreach (guy in [[ level.var_6c0cd084 ]]->function_85a5add5()) {
@@ -80,7 +80,7 @@ function private function_8991ddb4(localclientnum) {
                 var_5b9574e0 = guy;
             }
         }
-        if (isdefined(lowest) && lowest < var_afda3384) {
+        if (isdefined(lowest) && lowest < myscore) {
             var_5b9574e0 function_a2d377b5(localclientnum);
             self.threat_sight.var_1911547e = [[ level.var_6c0cd084 ]]->function_65cdd2df(self);
         }

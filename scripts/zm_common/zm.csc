@@ -234,13 +234,13 @@ function private function_96330020(var_23e48c77, var_4685950c) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0xfc1bc7b5, Offset: 0x1350
 // Size: 0xe8
-function private function_865bd624(var_f49eaa8b) {
-    if (!isdefined(var_f49eaa8b)) {
-        var_f49eaa8b = [];
-    } else if (!isarray(var_f49eaa8b)) {
-        var_f49eaa8b = array(var_f49eaa8b);
+function private function_865bd624(districts) {
+    if (!isdefined(districts)) {
+        districts = [];
+    } else if (!isarray(districts)) {
+        districts = array(districts);
     }
-    foreach (district in var_f49eaa8b) {
+    foreach (district in districts) {
         function_5873c54a(district);
         function_1c8e9f18(district);
     }

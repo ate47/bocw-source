@@ -213,8 +213,8 @@ function private function_54e23559(entity, asmstatename) {
 // Size: 0x64
 function private function_6d7d599e() {
     var_4fa6735c = function_4fa6735c();
-    var_2e0bd94f = rotatepoint(vectorscale((0, 0, -1), 72), var_4fa6735c);
-    return self.zipline_start.origin + var_2e0bd94f;
+    rotated_offset = rotatepoint(vectorscale((0, 0, -1), 72), var_4fa6735c);
+    return self.zipline_start.origin + rotated_offset;
 }
 
 // Namespace zipline/zipline

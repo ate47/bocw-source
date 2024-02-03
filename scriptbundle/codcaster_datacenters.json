@@ -1,47 +1,47 @@
 {
     "var_89aed911": [
         {
-            "var_26bb4f8a": "Atlanta (GS)",
+            "datacentername": "Atlanta (GS)",
             "var_45bf5108": "gs-atlanta"
         },
         {
-            "var_26bb4f8a": "Chicago (GS)",
+            "datacentername": "Chicago (GS)",
             "var_45bf5108": "gs-chicago"
         },
         {
-            "var_26bb4f8a": "Chicago (MP)",
+            "datacentername": "Chicago (MP)",
             "var_45bf5108": "mp-chicago"
         },
         {
-            "var_26bb4f8a": "Dallas (MP)",
+            "datacentername": "Dallas (MP)",
             "var_45bf5108": "mp-dallas"
         },
         {
-            "var_26bb4f8a": "Denver (FX)",
+            "datacentername": "Denver (FX)",
             "var_45bf5108": "flexential-denver"
         },
         {
-            "var_26bb4f8a": "Iowa (GCP)",
+            "datacentername": "Iowa (GCP)",
             "var_45bf5108": "gcp-us-central1"
         },
         {
-            "var_26bb4f8a": "Ohio (AWS)",
+            "datacentername": "Ohio (AWS)",
             "var_45bf5108": "aws-us-east-2"
         },
         {
-            "var_26bb4f8a": "Los Angeles (GCP)",
+            "datacentername": "Los Angeles (GCP)",
             "var_45bf5108": "gcp-us-west2"
         },
         {
-            "var_26bb4f8a": "Saint Louis (GS)",
+            "datacentername": "Saint Louis (GS)",
             "var_45bf5108": "gs-st-louis"
         },
         {
-            "var_26bb4f8a": "Salt Lake City (MP)",
+            "datacentername": "Salt Lake City (MP)",
             "var_45bf5108": "mp-salt-lake-city"
         },
         {
-            "var_26bb4f8a": "Virginia (AWS)",
+            "datacentername": "Virginia (AWS)",
             "var_45bf5108": "aws-us-east-1"
         }
     ],

@@ -8,8 +8,8 @@
 // Params 2, eflags: 0x0
 // Checksum 0x4549a9cc, Offset: 0x90
 // Size: 0x2c
-function add_callback(var_8c8ba9e1, var_f71e2d8f) {
-    callback::add_callback(var_8c8ba9e1, var_f71e2d8f);
+function add_callback(callback_id, var_f71e2d8f) {
+    callback::add_callback(callback_id, var_f71e2d8f);
 }
 
 // Namespace telemetry/namespace_f4a96b08

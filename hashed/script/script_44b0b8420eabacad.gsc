@@ -483,8 +483,8 @@ function function_6325a7c5() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0xc396e8c3, Offset: 0x18a0
 // Size: 0x90
-function function_923afc2e(var_39881676) {
-    foreach (spawn in var_39881676) {
+function function_923afc2e(spawnpointarray) {
+    foreach (spawn in spawnpointarray) {
         placespawnpoint(spawn);
     }
 }
@@ -515,12 +515,12 @@ function function_fac242d0(var_9be0d23f, var_f64fe0e3, var_efb263ee) {
                 if (!isdefined(var_a6155878[index])) {
                     var_a6155878[index] = [];
                 }
-                if (!isdefined(var_a6155878[index][spawn.var_575417a4])) {
-                    var_a6155878[index][spawn.var_575417a4] = [];
-                } else if (!isarray(var_a6155878[index][spawn.var_575417a4])) {
-                    var_a6155878[index][spawn.var_575417a4] = array(var_a6155878[index][spawn.var_575417a4]);
+                if (!isdefined(var_a6155878[index][spawn.group_index])) {
+                    var_a6155878[index][spawn.group_index] = [];
+                } else if (!isarray(var_a6155878[index][spawn.group_index])) {
+                    var_a6155878[index][spawn.group_index] = array(var_a6155878[index][spawn.group_index]);
                 }
-                var_a6155878[index][spawn.var_575417a4][var_a6155878[index][spawn.var_575417a4].size] = spawn;
+                var_a6155878[index][spawn.group_index][var_a6155878[index][spawn.group_index].size] = spawn;
             }
         }
     }
@@ -548,7 +548,7 @@ function function_90dee50d() {
         if (!territory::is_valid(spawn)) {
             continue;
         }
-        if (territory::function_83ad4d2b(spawn.origin)) {
+        if (territory::is_inside(spawn.origin)) {
             if (!isdefined(var_637da63f)) {
                 var_637da63f = [];
             } else if (!isarray(var_637da63f)) {
@@ -568,7 +568,7 @@ function function_c24e290c(spawn) {
     if (!territory::is_valid(spawn)) {
         return 0;
     }
-    return !territory::function_83ad4d2b(spawn.origin);
+    return !territory::is_inside(spawn.origin);
 }
 
 // Namespace spawning/namespace_48f955ce

@@ -39,7 +39,7 @@
 // Params 1, eflags: 0x2 linked
 // Checksum 0x26036695, Offset: 0xb40
 // Size: 0x474
-function function_f9f06983(*var_d3440450) {
+function starting(*var_d3440450) {
     var_8a3bb97c = getspawnerarray("raid_adler", "targetname");
     var_8a3bb97c[0] spawner::add_spawn_function(&namespace_b100dd86::function_9109a1fe);
     var_6534f716 = getspawnerarray("raid_woods", "targetname");
@@ -89,7 +89,7 @@ function main(var_d3440450, var_50cc0d4f) {
         var_efac709f delete();
         level battlechatter::function_2ab9360b(1);
     }
-    level thread savegame::function_904f733(1);
+    level thread savegame::checkpoint_save(1);
     level.woods.script_accuracy = 1;
     level.adler.script_accuracy = 1;
     player = getplayers()[0];
@@ -216,14 +216,14 @@ function function_fb0dffdf() {
     var_8c129dc2 = function_baa0011d("initial_rooftop_guys");
     level thread function_8ddafa22(var_8c129dc2, "trig_rooftop_combat", undefined);
     level flag::wait_till("flag_rooftop_combat_wave2");
-    savegame::function_904f733(0);
+    savegame::checkpoint_save(0);
     var_3d1b4310 = function_baa0011d("rootop_ledge_guys");
     foreach (guy in var_3d1b4310) {
         guy.ignoresuppression = 1;
     }
     level thread function_8ddafa22(var_3d1b4310, "trig_rooftop_combat_wave3", "trig_colors_roof1", 1);
     level flag::wait_till("flag_rooftop_combat_wave3");
-    savegame::function_904f733(0);
+    savegame::checkpoint_save(0);
     wait(2);
     var_158599d4 = function_baa0011d("rootop_wave3_guys");
     foreach (guy in var_158599d4) {
@@ -460,7 +460,7 @@ function function_6d063272() {
 // Params 4, eflags: 0x2 linked
 // Checksum 0xbe9b855f, Offset: 0x2c18
 // Size: 0x24
-function cleanup(*name, *var_f9f06983, *direct, *player) {
+function cleanup(*name, *starting, *direct, *player) {
     
 }
 

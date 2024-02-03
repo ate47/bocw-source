@@ -81,9 +81,9 @@ function function_f3143608() {
     }
     self thread function_d09d2055();
     spawn_points = struct::get_array("info_player_start", "targetname");
-    var_834f8efc = self getentitynumber();
-    if (spawn_points.size > var_834f8efc) {
-        self setorigin(spawn_points[var_834f8efc].origin);
+    entnumber = self getentitynumber();
+    if (spawn_points.size > entnumber) {
+        self setorigin(spawn_points[entnumber].origin);
     }
     self thread function_c0310e2a();
 }
@@ -263,7 +263,7 @@ function function_bb0408ca() {
     self.doa.var_e45f072b = gettime();
     while (1) {
         /#
-            var_4674ef10 = self.doa.var_8f47d882;
+            lastlevel = self.doa.var_8f47d882;
         #/
         wait(var_f3e30707);
         if (level.doa.world_state !== 0) {
@@ -298,7 +298,7 @@ function function_bb0408ca() {
             self.doa.var_8f47d882 = self.doa.var_8f47d882 + int(self.doa.var_7f8d38c2 / 100);
         }
         /#
-            if (var_4674ef10 < var_af82a000 && self.doa.var_8f47d882 >= var_af82a000) {
+            if (lastlevel < var_af82a000 && self.doa.var_8f47d882 >= var_af82a000) {
                 self iprintlnbold(#"hash_59bd89e170a924ac");
                 function_f5f0c0f8("zombietron_boxing_glove" + self.name);
             }
@@ -344,7 +344,7 @@ function function_fcc90081(var_45b95f80 = 0) {
         self.doa.var_3e81d24c = undefined;
         self.doa.var_370ac26d = 0;
         self.doa.var_e940d370 = 0;
-        self.doa.var_d748ac3f = 0;
+        self.doa.camera_yaw = 0;
         self.doa.weapontype = 0;
         self.doa.weaponlevel = 0;
         self.doa.var_fd5fcb75 = "";
@@ -354,7 +354,7 @@ function function_fcc90081(var_45b95f80 = 0) {
         self.doa.roj = undefined;
         self.doa.color = function_83fe843d(self);
         self.doa.var_d6b75dff = 0;
-        self.doa.var_1106edda = 0;
+        self.doa.weapontime = 0;
         self.doa.var_d8955419 = 0;
         self.doa.var_e5805edb = 1;
         self.doa.var_77c8b9d4 = 0;
@@ -688,12 +688,12 @@ function function_519ae1ed(origin, &entarray, maxdist = 2048) {
 // Checksum 0xe2ce37f7, Offset: 0x2ec8
 // Size: 0x15a
 function function_b9e8248(origin, var_af6dcc26 = 1024) {
-    var_f4770584 = function_a3f6cdac(var_af6dcc26);
+    sqrdist = function_a3f6cdac(var_af6dcc26);
     var_631202d0 = [];
     players = getplayers();
     foreach (player in players) {
         distsq = distancesquared(origin, player.origin);
-        if (distsq < var_f4770584) {
+        if (distsq < sqrdist) {
             if (!isdefined(var_631202d0)) {
                 var_631202d0 = [];
             } else if (!isarray(var_631202d0)) {
@@ -934,13 +934,13 @@ function function_19f387a(player, var_ca85cba1, thresh, boosting = 0) {
                     guy namespace_e32bb68::function_3a59ec34("zmb_ragdoll_launched");
                 } else {
                     guy.annihilate = 1;
-                    guy dodamage(guy.health, player.origin, player, player, "none", "MOD_EXPLOSIVE", 0, level.doa.var_c6e5e8d9);
+                    guy dodamage(guy.health, player.origin, player, player, "none", "MOD_EXPLOSIVE", 0, level.doa.default_weapon);
                 }
             } else {
-                guy dodamage(guy.health, player.origin, player, player, "none", "MOD_EXPLOSIVE", 0, level.doa.var_c6e5e8d9);
+                guy dodamage(guy.health, player.origin, player, player, "none", "MOD_EXPLOSIVE", 0, level.doa.default_weapon);
             }
         } else {
-            guy dodamage(guy.health, player.origin, player, player, "none", "MOD_EXPLOSIVE", 0, level.doa.var_c6e5e8d9);
+            guy dodamage(guy.health, player.origin, player, player, "none", "MOD_EXPLOSIVE", 0, level.doa.default_weapon);
         }
     }
     self delete();
@@ -1610,7 +1610,7 @@ function function_f98b7b5f(player) {
     headmodel = player function_44a7328f();
     var_b4d88433 = player function_cde23658();
     var_1749f1e8 = player function_92ea4100();
-    clone = namespace_ec06fe4a::function_e22ae9b3(player.origin, "tag_origin", player.angles, "player clone model");
+    clone = namespace_ec06fe4a::spawnmodel(player.origin, "tag_origin", player.angles, "player clone model");
     if (isdefined(var_41206ae3)) {
         clone setmodel(var_41206ae3);
     }

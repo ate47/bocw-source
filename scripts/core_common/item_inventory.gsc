@@ -579,7 +579,7 @@ function private function_ce3288cf(damage) {
     if (!isdefined(self.inventory)) {
         return damage;
     }
-    var_ef60bf87 = damage;
+    originaldamage = damage;
     var_e67d2721 = 0;
     foreach (item in self.inventory.items) {
         if (item.id == 32767) {
@@ -590,10 +590,10 @@ function private function_ce3288cf(damage) {
         }
         var_babbb09b = item.var_a6762160.var_dba54111;
         var_e67d2721 = var_e67d2721 + var_babbb09b;
-        if (var_e67d2721 > var_ef60bf87) {
-            var_babbb09b = var_e67d2721 - var_ef60bf87;
+        if (var_e67d2721 > originaldamage) {
+            var_babbb09b = var_e67d2721 - originaldamage;
         }
-        var_e67d2721 = min(var_e67d2721, var_ef60bf87);
+        var_e67d2721 = min(var_e67d2721, originaldamage);
         if (isdefined(item.var_1181c08b) && item.var_1181c08b > 0) {
             item.var_1181c08b = item.var_1181c08b - var_babbb09b;
             if (item.var_1181c08b <= 0) {
@@ -2553,18 +2553,18 @@ function function_854cf2c3(item) {
     if (!isdefined(slotid)) {
         return;
     }
-    var_6e21f2cd = namespace_a0d533d1::function_417ec8b9(var_a6762160);
-    if (!isdefined(var_6e21f2cd)) {
+    perkslot = namespace_a0d533d1::function_417ec8b9(var_a6762160);
+    if (!isdefined(perkslot)) {
         return;
     }
     self function_db2abc4(item);
-    function_26c87da8(slotid, var_6e21f2cd);
+    function_26c87da8(slotid, perkslot);
     if (item.var_a6762160.name == #"hash_6ac2848a2f6492ac") {
         backpack = item_world_util::function_49ce7663(#"hash_6a677bcb21d4432b");
         var_fa3df96 = self function_e66dcff5(backpack);
         self item_world::function_de2018e3(backpack, self, var_fa3df96);
     }
-    self.inventory.items[var_6e21f2cd] = inventoryitem;
+    self.inventory.items[perkslot] = inventoryitem;
     self function_b00db06(6, item.networkid);
 }
 
@@ -4850,8 +4850,8 @@ function function_b579540e(item, aat_name) {
 function function_6af1ccad() {
     weapon = self getcurrentweapon();
     maxammo = weapon.maxammo;
-    var_53b14ebf = self function_b7f1fd2c(weapon);
-    self setweaponammoclip(weapon, var_53b14ebf);
+    maxclip = self function_b7f1fd2c(weapon);
+    self setweaponammoclip(weapon, maxclip);
     self setweaponammostock(weapon, maxammo);
     if (is_true(weapon.isdualwield) && isdefined(weapon.dualwieldweapon) && weapon.dualwieldweapon != level.weaponnone) {
         var_c6eb5dd0 = self function_b7f1fd2c(weapon.dualwieldweapon);
@@ -4879,7 +4879,7 @@ function function_73ae3380(item, var_a8bccf69) {
         return 0;
     }
     var_b72ef6d2 = item.var_a6762160.weapon.displayname;
-    var_446d6236 = item_world_util::function_f4a8d375(item.id);
+    originalweapon = item_world_util::function_f4a8d375(item.id);
     if (item.var_a6762160.rarity === #"loadout" || is_true(item.var_b3546c09)) {
         var_beeb02d3 = 1;
     }
@@ -4910,7 +4910,7 @@ function function_73ae3380(item, var_a8bccf69) {
             new_item.weaponoptions = item.weaponoptions;
             new_item.var_e91aba42 = item.var_e91aba42;
             new_item.var_908f65ca = item.var_908f65ca;
-            new_item.weaponoptions = self function_fc04b237(var_446d6236, new_item.weaponoptions);
+            new_item.weaponoptions = self function_fc04b237(originalweapon, new_item.weaponoptions);
             var_bd31d7b2 = function_ec087745();
             new_item.hidetime = 0;
             new_item.var_5b4ae99d = 1;

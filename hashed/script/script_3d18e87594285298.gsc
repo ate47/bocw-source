@@ -410,8 +410,8 @@ function function_7ead73b1(*action, *body, *var_d1b14335, scene, gesture) {
     ai::setaiattribute(self.takedown.body_shield.actor, "useGrenades", 0);
     self thread function_58980558(self.takedown.body_shield.actor);
     self.takedown.body_shield.actor.var_f6639ad8 = function_11b042fc(scene, "victim");
-    var_1f4955d3 = getnotetracktimes(self.takedown.body_shield.actor.var_f6639ad8, "push_enable");
-    self.takedown.body_shield.actor.var_1a1dd1a0 = var_1f4955d3[0];
+    notes = getnotetracktimes(self.takedown.body_shield.actor.var_f6639ad8, "push_enable");
+    self.takedown.body_shield.actor.var_1a1dd1a0 = notes[0];
     if (isdefined(gesture)) {
         self.var_621f8539 = gesture;
         self thread namespace_594b67e::function_3ceda691(gesture);
@@ -550,8 +550,8 @@ function function_13841987() {
     }
     player = getplayers()[0];
     if (self scene::function_c935c42()) {
-        var_49f0de73 = arraycopy(self._scene_object._o_scene._a_objects);
-        foreach (object in var_49f0de73) {
+        objectlist = arraycopy(self._scene_object._o_scene._a_objects);
+        foreach (object in objectlist) {
             if (object._e !== player && isdefined(object._e._scene_object)) {
                 [[ object._e._scene_object ]]->stop();
             }
@@ -649,7 +649,7 @@ function function_306feb88(*guy) {
     self notify(#"hash_2860a6b03ec878f6");
     self.var_306feb88 = 1;
     self endoncallback(&function_e69bc894, #"hash_2860a6b03ec878f6", #"death", #"killanimscript");
-    var_afbec8c = self.origin;
+    last_position = self.origin;
     anim_name = undefined;
     player = getplayers()[0];
     player endon(#"disconnect");
@@ -657,9 +657,9 @@ function function_306feb88(*guy) {
     var_29fbf4b0 = max(60, max(80, 32));
     while (1) {
         waitframe(1);
-        var_dece365 = self.origin - var_afbec8c;
+        var_dece365 = self.origin - last_position;
         var_dece365 = (var_dece365[0], var_dece365[1], 0);
-        var_afbec8c = self.origin;
+        last_position = self.origin;
         if (lengthsquared(var_dece365) < 0.01) {
             continue;
         }
@@ -699,7 +699,7 @@ function function_306feb88(*guy) {
                         dir = rotatepoint(var_c3467a5d, vectorscale((0, 1, 0), 45));
                     }
                     var_ba580a85 = "body_shield_push" + "_push_" + randomintrange(1, 5);
-                    interact.var_f6639ad8 = level.var_f467e5b0.var_dc27586e[#"generic"][var_ba580a85];
+                    interact.var_f6639ad8 = level.var_f467e5b0.anims[#"generic"][var_ba580a85];
                     interact.var_475b4bbe = vectortoangles(dir)[1] + 180;
                     interact animcustom(&function_adf3cfb0, &function_9e4f9044);
                 }
@@ -730,13 +730,13 @@ function function_306feb88(*guy) {
         var_c3548f43 = var_dece365 * 3;
         var_858fa287 = var_dece365 * 5;
         zoffset = vectorscale((0, 0, 1), 16);
-        var_9dade54f = vectorscale((-1, -1, 0), 16);
-        var_7179020a = (16, 16, 40);
+        boundsmin = vectorscale((-1, -1, 0), 16);
+        boundsmax = (16, 16, 40);
         mask = 1 | 8 | 2;
         tracestart = self.origin + zoffset;
         traceend = tracestart + var_c3548f43;
         var_ddac030a = tracestart + var_858fa287;
-        trace = physicstrace(tracestart, traceend, var_9dade54f, var_7179020a, self, mask);
+        trace = physicstrace(tracestart, traceend, boundsmin, boundsmax, self, mask);
         movedir = vectornormalize(var_dece365);
         facingdir = anglestoforward(self.angles);
         facingdir = vectornormalize((facingdir[0], facingdir[1], 0));
@@ -746,11 +746,11 @@ function function_306feb88(*guy) {
         if (!isdefined(trace[#"entity"]) && trace[#"fraction"] < 1) {
             anim_name = "body_shield_push" + (var_53c12a4 < 0 ? "_bounce_front_" : "_bounce_back_") + randomintrange(1, 3);
         } else if (trace[#"fraction"] >= 1) {
-            trace = physicstrace(traceend, var_ddac030a, var_9dade54f, var_7179020a, self, mask);
+            trace = physicstrace(traceend, var_ddac030a, boundsmin, boundsmax, self, mask);
             if (trace[#"fraction"] >= 1) {
                 tracestart = var_ddac030a;
                 traceend = tracestart + zoffset * -3;
-                trace = physicstrace(tracestart, traceend, var_9dade54f, var_7179020a, self, mask);
+                trace = physicstrace(tracestart, traceend, boundsmin, boundsmax, self, mask);
                 if (trace[#"fraction"] >= 1) {
                     anim_name = "body_shield_push" + (var_53c12a4 < 0 ? "_fall_front" : "_fall_back");
                     var_92d26b7c = 1;
@@ -763,7 +763,7 @@ function function_306feb88(*guy) {
             }
         }
         if (isdefined(anim_name)) {
-            animtoplay = level.var_f467e5b0.var_dc27586e[#"generic"][anim_name];
+            animtoplay = level.var_f467e5b0.anims[#"generic"][anim_name];
             if (isdefined(animtoplay)) {
                 self animscripted(animtoplay, self.origin, self.angles, animtoplay, "custom", undefined, undefined, 0.1);
                 self endon(#"death");

@@ -52,7 +52,7 @@ function private function_db698ba5(dvar) {
 // Checksum 0x9228ed78, Offset: 0x308
 // Size: 0xa8
 function private function_4f0f89(var_6176a8ab, var_de282b38) {
-    var_6c8b1954 = savegame::function_6440b06b(#"hash_e7d26541441cb9d");
+    var_6c8b1954 = savegame::function_6440b06b(#"transient");
     if (!isdefined(var_6c8b1954.var_6e64bcd)) {
         var_6c8b1954.var_6e64bcd = [];
     } else if (!isarray(var_6c8b1954.var_6e64bcd)) {
@@ -66,7 +66,7 @@ function private function_4f0f89(var_6176a8ab, var_de282b38) {
 // Checksum 0x39837c0e, Offset: 0x3b8
 // Size: 0x7c
 function private function_9240114e(var_6176a8ab, default_value) {
-    var_6c8b1954 = savegame::function_6440b06b(#"hash_e7d26541441cb9d");
+    var_6c8b1954 = savegame::function_6440b06b(#"transient");
     if (isdefined(var_6c8b1954.var_6e64bcd[var_6176a8ab])) {
         return var_6c8b1954.var_6e64bcd[var_6176a8ab];
     } else {
@@ -79,7 +79,7 @@ function private function_9240114e(var_6176a8ab, default_value) {
 // Checksum 0xe0443ffb, Offset: 0x440
 // Size: 0xc8
 function function_d04c220e() {
-    var_6c8b1954 = savegame::function_6440b06b(#"hash_e7d26541441cb9d");
+    var_6c8b1954 = savegame::function_6440b06b(#"transient");
     if (!isdefined(var_6c8b1954.var_6e64bcd)) {
         return;
     }
@@ -338,7 +338,7 @@ function function_8c0836dd(var_2b7725a) {
     /#
         assert(var_2b7725a >= 0 && var_2b7725a < 10);
     #/
-    var_6c8b1954 = savegame::function_6440b06b(#"hash_e7d26541441cb9d");
+    var_6c8b1954 = savegame::function_6440b06b(#"transient");
     if (!isdefined(var_6c8b1954.var_f4d7790b)) {
         var_6c8b1954.var_f4d7790b = [];
     } else if (!isarray(var_6c8b1954.var_f4d7790b)) {
@@ -374,7 +374,7 @@ function function_6efc0ff8(var_3740aa91, var_2b7725a) {
     #/
     var_a268cecc = savegame::function_8136eb5a();
     if (var_3740aa91 == var_a268cecc) {
-        var_6c8b1954 = savegame::function_6440b06b(#"hash_e7d26541441cb9d");
+        var_6c8b1954 = savegame::function_6440b06b(#"transient");
         if (isdefined(var_6c8b1954.var_f4d7790b) && isinarray(var_6c8b1954.var_f4d7790b, var_2b7725a)) {
             return 1;
         }
@@ -388,7 +388,7 @@ function function_6efc0ff8(var_3740aa91, var_2b7725a) {
 // Checksum 0xf766b484, Offset: 0x1188
 // Size: 0x15c
 function function_ef22e409() {
-    var_6c8b1954 = savegame::function_6440b06b(#"hash_e7d26541441cb9d");
+    var_6c8b1954 = savegame::function_6440b06b(#"transient");
     if (!isdefined(var_6c8b1954.var_f4d7790b)) {
         return;
     }
@@ -412,7 +412,7 @@ function function_ef22e409() {
 function private function_d0c3d0ce() {
     player = self;
     var_a268cecc = savegame::function_8136eb5a();
-    var_6c8b1954 = savegame::function_6440b06b(#"hash_e7d26541441cb9d");
+    var_6c8b1954 = savegame::function_6440b06b(#"transient");
     if (var_a268cecc == #"cp_ger_stakeout") {
         if (!isinarray(var_6c8b1954.var_f4d7790b, 4)) {
             player stats::set_stat(#"mapdata", #"cp_rus_kgb", #"hash_43a738b893199779", 2, 0);

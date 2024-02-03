@@ -1243,7 +1243,7 @@ class cdoor {
     // Params 2, eflags: 0x2 linked
     // Checksum 0x5fda255c, Offset: 0xbb0
     // Size: 0x37c
-    function function_f584b243(var_2b08c4ad, var_297e1b79) {
+    function function_f584b243(do_block, var_297e1b79) {
         if (!is_true(var_297e1b79) && !is_true(self.m_s_bundle.door_connect_paths)) {
             return;
         }
@@ -1251,7 +1251,7 @@ class cdoor {
             if (isdefined(self.var_4882ff02) && self.var_4882ff02 == 2 && var_297e1b79 == 1) {
                 goto LOC_000000f8;
             }
-            if (var_2b08c4ad) {
+            if (do_block) {
                 if (var_297e1b79 == 3) {
                     self.var_4882ff02 = 1;
                 } else {
@@ -1264,10 +1264,10 @@ class cdoor {
         LOC_000000f8:
         }
     LOC_000000f8:
-        if (var_2b08c4ad || is_true(self.var_4882ff02)) {
+        if (do_block || is_true(self.var_4882ff02)) {
             if (isdefined(self.m_e_door.var_4101ccab)) {
                 var_8d684abd = self.m_e_door.var_4101ccab;
-                if (self.m_e_door function_1bd32235() & 536870912) {
+                if (self.m_e_door getcontents() & 536870912) {
                     var_8d684abd = var_8d684abd | 536870912;
                 }
                 self.m_e_door setcontents(var_8d684abd);
@@ -1276,7 +1276,7 @@ class cdoor {
             self.m_e_door function_881077b4(32, 1);
             self.m_e_door function_df3a1348(0, 0);
         } else {
-            var_1ce7d3b0 = self.m_e_door function_1bd32235();
+            var_1ce7d3b0 = self.m_e_door getcontents();
             if (var_1ce7d3b0 & (1 | 131072 | 16)) {
                 var_8d684abd = var_1ce7d3b0;
                 if (!isdefined(self.m_e_door.var_4101ccab)) {
@@ -1807,11 +1807,11 @@ function function_75697b7d(var_4b6c578e) {
             }
         }
         if (var_4b6c578e === level.var_8e7ad5cb) {
-            var_248c5e86 = level.var_1def7d37[#"hash_5171254138328d84"];
+            before = level.var_1def7d37[#"hash_5171254138328d84"];
             level.var_1def7d37[#"hash_5171254138328d84"] = 2;
             self function_868158();
             level.var_8e7ad5cb = undefined;
-            level.var_1def7d37[#"hash_5171254138328d84"] = var_248c5e86;
+            level.var_1def7d37[#"hash_5171254138328d84"] = before;
         }
     #/
 }

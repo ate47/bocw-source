@@ -75,31 +75,31 @@
                 {
                     "var_469173ee": "none",
                     "var_a25963d3": "ui_icon_callingcards_mp_league_scorpion",
-                    "var_5f79ee71": "craftbackground",
+                    "rewardtype": "craftbackground",
                     "var_b4ab831a": "callingcards_mp_league_scorpion"
                 },
                 {
                     "var_469173ee": "bronze",
                     "var_a25963d3": "ui_icon_mp_league_05_01_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_05_01_large"
                 },
                 {
                     "var_469173ee": "silver",
                     "var_a25963d3": "ui_icon_mp_league_05_02_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_05_02_large"
                 },
                 {
                     "var_469173ee": "silver_gold",
                     "var_a25963d3": "ui_icon_mp_league_05_02b_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_05_02b_large"
                 },
                 {
                     "var_469173ee": "gold",
                     "var_a25963d3": "ui_icon_mp_league_05_03_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_05_03_large"
                 }
             ],
@@ -187,37 +187,37 @@
                 {
                     "var_469173ee": "none",
                     "var_a25963d3": "ui_icon_callingcards_mp_league_eagle",
-                    "var_5f79ee71": "craftbackground",
+                    "rewardtype": "craftbackground",
                     "var_b4ab831a": "callingcards_mp_league_eagle"
                 },
                 {
                     "var_469173ee": "bronze",
                     "var_a25963d3": "ui_icon_mp_league_10_01_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_10_01_large"
                 },
                 {
                     "var_469173ee": "silver",
                     "var_a25963d3": "ui_icon_mp_league_10_02_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_10_02_large"
                 },
                 {
                     "var_469173ee": "silver_gold",
                     "var_a25963d3": "ui_icon_mp_league_10_02b_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_10_02b_large"
                 },
                 {
                     "var_469173ee": "gold",
                     "var_a25963d3": "ui_icon_mp_league_10_03_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_10_03_large"
                 },
                 {
                     "var_469173ee": "diamond",
                     "var_a25963d3": "ui_icon_mp_league_10_04_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_10_04_large"
                 }
             ],
@@ -305,37 +305,37 @@
                 {
                     "var_469173ee": "none",
                     "var_a25963d3": "ui_icon_callingcards_mp_league_cobra",
-                    "var_5f79ee71": "craftbackground",
+                    "rewardtype": "craftbackground",
                     "var_b4ab831a": "callingcards_mp_league_cobra"
                 },
                 {
                     "var_469173ee": "bronze",
                     "var_a25963d3": "ui_icon_mp_league_15_01_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_15_01_large"
                 },
                 {
                     "var_469173ee": "silver",
                     "var_a25963d3": "ui_icon_mp_league_15_02_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_15_02_large"
                 },
                 {
                     "var_469173ee": "silver_gold",
                     "var_a25963d3": "ui_icon_mp_league_15_02b_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_15_02b_large"
                 },
                 {
                     "var_469173ee": "gold",
                     "var_a25963d3": "ui_icon_mp_league_15_03_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_15_03_large"
                 },
                 {
                     "var_469173ee": "diamond",
                     "var_a25963d3": "ui_icon_mp_league_15_04_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_15_04_large"
                 }
             ],
@@ -423,37 +423,37 @@
                 {
                     "var_469173ee": "none",
                     "var_a25963d3": "ui_icon_callingcards_mp_league_bear",
-                    "var_5f79ee71": "craftbackground",
+                    "rewardtype": "craftbackground",
                     "var_b4ab831a": "callingcards_mp_league_bear"
                 },
                 {
                     "var_469173ee": "bronze",
                     "var_a25963d3": "ui_icon_mp_league_20_01_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_20_01_large"
                 },
                 {
                     "var_469173ee": "silver",
                     "var_a25963d3": "ui_icon_mp_league_20_02_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_20_02_large"
                 },
                 {
                     "var_469173ee": "silver_gold",
                     "var_a25963d3": "ui_icon_mp_league_20_02b_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_20_02b_large"
                 },
                 {
                     "var_469173ee": "gold",
                     "var_a25963d3": "ui_icon_mp_league_20_03_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_20_03_large"
                 },
                 {
                     "var_469173ee": "diamond",
                     "var_a25963d3": "ui_icon_mp_league_20_04_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_20_04_large"
                 }
             ],
@@ -541,37 +541,37 @@
                 {
                     "var_469173ee": "none",
                     "var_a25963d3": "ui_icon_callingcards_mp_league_lion",
-                    "var_5f79ee71": "craftbackground",
+                    "rewardtype": "craftbackground",
                     "var_b4ab831a": "callingcards_mp_league_lion"
                 },
                 {
                     "var_469173ee": "bronze",
                     "var_a25963d3": "ui_icon_mp_league_25_01_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_25_01_large"
                 },
                 {
                     "var_469173ee": "silver",
                     "var_a25963d3": "ui_icon_mp_league_25_02_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_25_02_large"
                 },
                 {
                     "var_469173ee": "silver_gold",
                     "var_a25963d3": "ui_icon_mp_league_25_02b_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_25_02b_large"
                 },
                 {
                     "var_469173ee": "gold",
                     "var_a25963d3": "ui_icon_mp_league_25_03_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_25_03_large"
                 },
                 {
                     "var_469173ee": "diamond",
                     "var_a25963d3": "ui_icon_mp_league_25_04_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_25_04_large"
                 }
             ],
@@ -659,37 +659,37 @@
                 {
                     "var_469173ee": "none",
                     "var_a25963d3": "ui_icon_callingcards_mp_league_dragon",
-                    "var_5f79ee71": "craftbackground",
+                    "rewardtype": "craftbackground",
                     "var_b4ab831a": "callingcards_mp_league_dragon"
                 },
                 {
                     "var_469173ee": "bronze",
                     "var_a25963d3": "ui_icon_mp_league_30_01_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_30_01_large"
                 },
                 {
                     "var_469173ee": "silver",
                     "var_a25963d3": "ui_icon_mp_league_30_02_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_30_02_large"
                 },
                 {
                     "var_469173ee": "silver_gold",
                     "var_a25963d3": "ui_icon_mp_league_30_02b_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_30_02b_large"
                 },
                 {
                     "var_469173ee": "gold",
                     "var_a25963d3": "ui_icon_mp_league_30_03_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_30_03_large"
                 },
                 {
                     "var_469173ee": "diamond",
                     "var_a25963d3": "ui_icon_mp_league_30_04_large",
-                    "var_5f79ee71": "crafticon",
+                    "rewardtype": "crafticon",
                     "var_b4ab831a": "mp_league_30_04_large"
                 }
             ],

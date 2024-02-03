@@ -43,11 +43,11 @@ function function_9f4eb444(text, scale) {
         var_1790a507 = function_827811b5();
         var_38c41a5e = var_1790a507[0];
         var_c13d121d = var_1790a507[1];
-        var_50813ca = text.size;
-        var_d94c3e22 = var_50813ca * 11 * scale;
-        var_2cfe365a = var_38c41a5e * 0.5 - var_d94c3e22 * 0.5;
-        var_fac551e9 = var_c13d121d * 0.5 - 12;
-        center = array(var_2cfe365a, var_fac551e9);
+        textlength = text.size;
+        textwidth = textlength * 11 * scale;
+        centerx = var_38c41a5e * 0.5 - textwidth * 0.5;
+        centery = var_c13d121d * 0.5 - 12;
+        center = array(centerx, centery);
         return center;
     #/
 }
@@ -62,8 +62,8 @@ function function_409c06e5(text, scale) {
         var_fad221f1 = centerpos[0];
         var_ec8f856c = centerpos[1];
         var_ec8f856c = var_ec8f856c * 0.5 + 12;
-        var_6411df1b = array(var_fad221f1, var_ec8f856c);
-        return var_6411df1b;
+        defaultpos = array(var_fad221f1, var_ec8f856c);
+        return defaultpos;
     #/
 }
 
@@ -76,7 +76,7 @@ function private function_ac3c5285(posx, posy, text, color, scale, var_24ea4e17,
         var_d6f54187 = 24 * scale;
         frametime = function_6cfa7975();
         var_48c93ed9 = int(var_24ea4e17 / frametime);
-        var_3b5a35c4 = 0;
+        framecount = 0;
         var_1c57e012 = int(var_45b08b81 / frametime);
         var_9a0d8dab = 1;
         var_206c3ebf = 0;
@@ -99,23 +99,23 @@ function private function_ac3c5285(posx, posy, text, color, scale, var_24ea4e17,
             }
         }
         level.var_89c4a5f0[level.var_89c4a5f0.size] = posy;
-        while (var_3b5a35c4 < var_48c93ed9) {
-            if (var_3b5a35c4 < var_1c57e012) {
-                var_78aff59a = int(float(var_3b5a35c4) / float(var_9a0d8dab));
+        while (framecount < var_48c93ed9) {
+            if (framecount < var_1c57e012) {
+                var_78aff59a = int(float(framecount) / float(var_9a0d8dab));
                 var_78aff59a = var_78aff59a % 2;
                 if (var_78aff59a) {
-                    var_3b5a35c4 = var_3b5a35c4 + 1;
+                    framecount = framecount + 1;
                     waitframe(1);
                     continue;
                 }
             }
-            var_53d7cee7 = float(var_3b5a35c4) / float(var_48c93ed9);
-            var_53d7cee7 = clamp(var_53d7cee7, 0, 1);
-            alpha = function_b918d683(1 - var_53d7cee7, "<unknown string>");
+            framefrac = float(framecount) / float(var_48c93ed9);
+            framefrac = clamp(framefrac, 0, 1);
+            alpha = function_b918d683(1 - framefrac, "<unknown string>");
             var_8b9208e = alpha * alpha;
             colorscale = function_2677a7e2(color, alpha);
             function_65bb0ccd(text, posx, posy, scale, "<unknown string>", colorscale, alpha, (0, 0, 0), var_8b9208e, (1, 1, 1), var_8b9208e, 1);
-            var_3b5a35c4 = var_3b5a35c4 + 1;
+            framecount = framecount + 1;
             waitframe(1);
         }
         if (isarray(level.var_89c4a5f0)) {
@@ -138,12 +138,12 @@ function function_3ba3cecb(text, posx, posy, color, scale, var_24ea4e17, var_45b
         var_24ea4e17 = function_ea2f17d1(var_24ea4e17, 4);
         var_45b08b81 = function_ea2f17d1(var_45b08b81, 1);
         if (isdefined(posx) == 0 || isdefined(posy) == 0) {
-            var_6411df1b = function_409c06e5(text, scale);
+            defaultpos = function_409c06e5(text, scale);
             if (isdefined(posx) == 0) {
-                posx = var_6411df1b[0];
+                posx = defaultpos[0];
             }
             if (isdefined(posy) == 0) {
-                posy = var_6411df1b[1];
+                posy = defaultpos[1];
             }
         }
         level thread function_ac3c5285(posx, posy, text, color, scale, var_24ea4e17, var_45b08b81);
@@ -175,7 +175,7 @@ function function_4e22152d(origin, text, color, alpha, scale, duration, *right) 
 // Params 12, eflags: 0x0
 // Checksum 0x26c5b635, Offset: 0xab0
 // Size: 0x3c4
-function function_65bb0ccd(text, x, y, scale, var_6c897a55, color, alpha, var_44982be2, var_7389333f, var_2aee873b, var_c16d003f, duration) {
+function function_65bb0ccd(text, x, y, scale, var_6c897a55, color, alpha, shadowcolor, var_7389333f, lightcolor, var_c16d003f, duration) {
     /#
         color = function_ea2f17d1(color, (1, 1, 1));
         alpha = function_ea2f17d1(alpha, 1);
@@ -202,20 +202,20 @@ function function_65bb0ccd(text, x, y, scale, var_6c897a55, color, alpha, var_44
             offset = offset + (width * -1, 0, 0);
             break;
         }
-        if (isdefined(var_44982be2) == 1) {
+        if (isdefined(shadowcolor) == 1) {
             var_9aa20b4e = 1;
             if (!isdefined(var_7389333f)) {
                 var_7389333f = alpha * 0.7333;
             }
             position = (x + 1 * scale, y + 1 * scale, 0) + offset;
-            function_669c57bc(position[0], position[1], text, var_44982be2, var_7389333f, scale, duration);
+            function_669c57bc(position[0], position[1], text, shadowcolor, var_7389333f, scale, duration);
         }
-        if (isdefined(var_2aee873b) == 1) {
+        if (isdefined(lightcolor) == 1) {
             if (!isdefined(var_c16d003f)) {
                 var_c16d003f = alpha * 0.7333;
             }
             position = (x + -0.666 * scale, y + -0.666 * scale, 0) + offset;
-            function_669c57bc(position[0], position[1], text, var_2aee873b, var_c16d003f, scale, duration);
+            function_669c57bc(position[0], position[1], text, lightcolor, var_c16d003f, scale, duration);
         }
         position = (x, y, 0) + offset;
         function_669c57bc(position[0], position[1], text, color, alpha, scale, duration);
@@ -226,7 +226,7 @@ function function_65bb0ccd(text, x, y, scale, var_6c897a55, color, alpha, var_44
 // Params 11, eflags: 0x0
 // Checksum 0x745c490, Offset: 0xe80
 // Size: 0x6b4
-function function_ac033c46(text, origin, scale, var_6c897a55, color, alpha, var_44982be2, var_7389333f, var_2aee873b, var_c16d003f, duration) {
+function function_ac033c46(text, origin, scale, var_6c897a55, color, alpha, shadowcolor, var_7389333f, lightcolor, var_c16d003f, duration) {
     /#
         color = function_ea2f17d1(color, (1, 1, 1));
         alpha = function_ea2f17d1(alpha, 1);
@@ -239,13 +239,13 @@ function function_ac033c46(text, origin, scale, var_6c897a55, color, alpha, var_
         if (issubstr(text, "<unknown string>")) {
             lines = strtok(text, "<unknown string>");
             if (isarray(lines) && lines.size > 1) {
-                var_f21d2070 = 0;
+                longest = 0;
                 foreach (line in lines) {
-                    if (line.size > var_f21d2070) {
-                        var_f21d2070 = line.size;
+                    if (line.size > longest) {
+                        longest = line.size;
                     }
                 }
-                textsize = var_f21d2070;
+                textsize = longest;
             }
         }
         var_e9588a4 = (1, 0, 0);
@@ -286,23 +286,23 @@ function function_ac033c46(text, origin, scale, var_6c897a55, color, alpha, var_
             offset = offset + (width * -1, 0, 0);
             break;
         }
-        if (isdefined(var_44982be2) == 1) {
+        if (isdefined(shadowcolor) == 1) {
             if (!isdefined(var_7389333f)) {
                 var_7389333f = alpha * 0.72974;
             }
             var_9aa20b4e = var_e9588a4 * 1 * scale + var_3e836530 * -1 * scale;
             position = origin + var_e9588a4 * offset[0] + var_3e836530 * offset[2];
             position = position + var_9aa20b4e;
-            print3d(position, text, var_44982be2, var_7389333f, scale, duration, centered);
+            print3d(position, text, shadowcolor, var_7389333f, scale, duration, centered);
         }
-        if (isdefined(var_2aee873b) == 1) {
+        if (isdefined(lightcolor) == 1) {
             if (!isdefined(var_c16d003f)) {
                 var_c16d003f = alpha * 0.72974;
             }
             var_6a4ad33c = var_e9588a4 * -0.666 * scale + var_3e836530 * 0.666 * scale;
             position = origin + var_e9588a4 * offset[0] + var_3e836530 * offset[2];
             position = position + var_6a4ad33c;
-            print3d(position, text, var_2aee873b, var_c16d003f, scale, duration, centered);
+            print3d(position, text, lightcolor, var_c16d003f, scale, duration, centered);
         }
         position = origin + var_e9588a4 * offset[0] + var_3e836530 * offset[2];
         print3d(position, text, color, alpha, scale, duration, centered);
@@ -354,13 +354,13 @@ function private function_6ee9efa7(color, depthtest, duration, offset) {
         /#
             assert(isdefined(duration) == 1, "<unknown string>");
         #/
-        var_3b5a35c4 = 0;
+        framecount = 0;
         var_5c8bd7d0 = array();
         var_5c8bd7d0[0] = self.origin;
         self endon(#"hash_2605f8ddd93ed8f9");
         while (var_5c8bd7d0.size > 0) {
             var_c6150a06 = array();
-            if (var_3b5a35c4 >= duration) {
+            if (framecount >= duration) {
                 for (i = 1; i < var_5c8bd7d0.size; i++) {
                     var_c6150a06[i - 1] = var_5c8bd7d0[i];
                 }
@@ -372,7 +372,7 @@ function private function_6ee9efa7(color, depthtest, duration, offset) {
             }
             var_5c8bd7d0 = var_c6150a06;
             function_bfdce45f(color, depthtest, var_5c8bd7d0, offset);
-            var_3b5a35c4++;
+            framecount++;
             waitframe(1);
         }
     #/
@@ -535,8 +535,8 @@ function function_8aaa798e(origin, angles, length, var_e3c3c3d9, color, alpha, d
 // Params 1, eflags: 0x2 linked
 // Checksum 0xda089e8e, Offset: 0x2508
 // Size: 0x26
-function function_79f31114(var_9ea95be0) {
-    var_bfd4f22d = 480 / var_9ea95be0;
+function function_79f31114(screenheight) {
+    var_bfd4f22d = 480 / screenheight;
     return var_bfd4f22d;
 }
 
@@ -544,9 +544,9 @@ function function_79f31114(var_9ea95be0) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xd0525f8b, Offset: 0x2538
 // Size: 0xca
-function function_df9f894b(var_841c640a, var_1734a02c) {
-    var_1734a02c = function_ea2f17d1(var_1734a02c, function_827811b5());
-    var_bfd4f22d = function_79f31114(var_1734a02c[1]);
+function function_df9f894b(var_841c640a, screensize) {
+    screensize = function_ea2f17d1(screensize, function_827811b5());
+    var_bfd4f22d = function_79f31114(screensize[1]);
     var_a6a4856f = var_841c640a[0] * var_bfd4f22d;
     var_81ae8d4d = var_841c640a[1] * var_bfd4f22d;
     return array(int(var_a6a4856f), int(var_81ae8d4d));
@@ -556,13 +556,13 @@ function function_df9f894b(var_841c640a, var_1734a02c) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xcf8267c0, Offset: 0x2610
 // Size: 0x10a
-function function_da7b7c0e(var_841c640a, var_1734a02c) {
-    var_1734a02c = function_ea2f17d1(var_1734a02c, function_827811b5());
-    var_bfd4f22d = function_79f31114(var_1734a02c[1]);
+function function_da7b7c0e(var_841c640a, screensize) {
+    screensize = function_ea2f17d1(screensize, function_827811b5());
+    var_bfd4f22d = function_79f31114(screensize[1]);
     var_11ea799a = var_841c640a[0] * var_bfd4f22d;
     var_39fdd05 = var_841c640a[1] * var_bfd4f22d;
-    var_63960741 = var_1734a02c[0] / var_1734a02c[1];
-    var_73ea373d = var_63960741 * 480;
+    screenaspect = screensize[0] / screensize[1];
+    var_73ea373d = screenaspect * 480;
     var_d8976fdf = -0.5 * (var_73ea373d - 640);
     var_11ea799a = var_11ea799a + var_d8976fdf;
     return array(var_11ea799a, var_39fdd05);

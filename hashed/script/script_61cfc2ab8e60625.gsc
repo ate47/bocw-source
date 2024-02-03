@@ -152,7 +152,7 @@ function function_6578b894() {
     self.forcesprint = 1;
     self disableaimassist();
     self function_854b5376(1);
-    self function_2ce879d2(260);
+    self setdesiredspeed(260);
     lmg = getweapon(#"lmg_light_t9");
     self setweapon(lmg);
     self thread function_8f7f7a0();

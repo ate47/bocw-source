@@ -70,7 +70,7 @@ function private function_b604ec09(vehicletype, spawnpos, spawnangles, var_946ff
 // Checksum 0xab847e70, Offset: 0x378
 // Size: 0xaa
 function private function_f7bb1527(var_1957bf22, vehicle) {
-    var_1957bf22.var_2bc6fbf6 = function_f77a9b1b(vehicle);
+    var_1957bf22.respawntime = function_f77a9b1b(vehicle);
     var_1957bf22.timeouttime = function_e674d71a(vehicle);
     var_1957bf22.radius = vehicle.radius;
     var_1957bf22.origin = vehicle.origin;
@@ -136,10 +136,10 @@ function function_f863c07e(vehicletype, spawnpos, spawnangles, var_946ffae7, par
 // Size: 0x13a
 function private function_76e9830e(vehicletype, spawnpos, spawnangles, index, callback, params) {
     if (isdefined(params.var_45e1ab0)) {
-        var_23eccda7 = params.var_45e1ab0.var_23eccda7;
+        presetname = params.var_45e1ab0.presetname;
         var_389eb4d4 = params.var_45e1ab0.var_389eb4d4;
         var_6900386f = params.var_45e1ab0.var_6900386f;
-        vehicle = spawnvehicle(vehicletype, spawnpos, spawnangles, undefined, 0, undefined, var_23eccda7, var_389eb4d4, var_6900386f);
+        vehicle = spawnvehicle(vehicletype, spawnpos, spawnangles, undefined, 0, undefined, presetname, var_389eb4d4, var_6900386f);
     } else {
         vehicle = spawnvehicle(vehicletype, spawnpos, spawnangles);
     }
@@ -163,14 +163,14 @@ function private function_a20b03ed(vs) {
     if (vs.alive) {
         return 0;
     }
-    if (!vs.var_2bc6fbf6) {
+    if (!vs.respawntime) {
         return 0;
     }
     if (isdefined(vs.var_e7f51a60) && vs.spawncount >= vs.var_e7f51a60) {
         return 0;
     }
     time = gettime();
-    if (time < vs.var_93438377 + vs.var_2bc6fbf6) {
+    if (time < vs.var_93438377 + vs.respawntime) {
         return 0;
     }
     if (isdefined(vs.vehicle)) {
@@ -316,8 +316,8 @@ function function_6ecd8f13(vs) {
 function function_7955100c() {
     while (1) {
         if (isdefined(level.var_9fd4b8f) && isdefined(level.var_9fd4b8f.vehicles)) {
-            var_34d35b1c = level.var_9fd4b8f.vehicles.size;
-            var_cefe19ce = int(var_34d35b1c * float(function_60d95f53()) / 1000);
+            vehiclecount = level.var_9fd4b8f.vehicles.size;
+            var_cefe19ce = int(vehiclecount * float(function_60d95f53()) / 1000);
             count = 0;
             foreach (vs in level.var_9fd4b8f.vehicles) {
                 count++;
@@ -357,73 +357,73 @@ function function_2265d46b(deathmodel) {
 // Checksum 0x6fea60c7, Offset: 0x11e8
 // Size: 0x4a2
 function private function_e674d71a(vehicle) {
-    var_2bc6fbf6 = 60;
+    respawntime = 60;
     if (isdefined(vehicle.scriptvehicletype)) {
         switch (vehicle.scriptvehicletype) {
         case #"player_atv":
-            var_2bc6fbf6 = getgametypesetting(#"hash_25d72112144c5ea0");
+            respawntime = getgametypesetting(#"hash_25d72112144c5ea0");
             break;
         case #"player_tank":
-            var_2bc6fbf6 = getgametypesetting(#"hash_4725de6afe873b87");
+            respawntime = getgametypesetting(#"hash_4725de6afe873b87");
             break;
         case #"helicopter_light":
-            var_2bc6fbf6 = getgametypesetting(#"hash_7f190c8839d3f05c");
+            respawntime = getgametypesetting(#"hash_7f190c8839d3f05c");
             break;
         case #"helicopter_heavy":
-            var_2bc6fbf6 = getgametypesetting(#"hash_4f00f3f568c284af");
+            respawntime = getgametypesetting(#"hash_4f00f3f568c284af");
             break;
         case #"hash_2212824fabcc986c":
-            var_2bc6fbf6 = getgametypesetting(#"hash_7d53c8bab3db8122");
+            respawntime = getgametypesetting(#"hash_7d53c8bab3db8122");
             break;
         case #"player_motorcycle_2wd":
         case #"player_motorcycle":
-            var_2bc6fbf6 = getgametypesetting(#"hash_b30022a9302a5a6");
+            respawntime = getgametypesetting(#"hash_b30022a9302a5a6");
             break;
         case #"player_fav":
-            var_2bc6fbf6 = getgametypesetting(#"hash_28005bb885acabc3");
+            respawntime = getgametypesetting(#"hash_28005bb885acabc3");
             break;
         case #"player_btr40":
-            var_2bc6fbf6 = getgametypesetting(#"hash_3eeb8cb5c84b1939");
+            respawntime = getgametypesetting(#"hash_3eeb8cb5c84b1939");
             break;
         case #"player_fav_light":
-            var_2bc6fbf6 = getgametypesetting(#"hash_3d5a87878a3bef28");
+            respawntime = getgametypesetting(#"hash_3d5a87878a3bef28");
             break;
         case #"cargo_truck_wz":
-            var_2bc6fbf6 = getgametypesetting(#"hash_4201d2890785fb14");
+            respawntime = getgametypesetting(#"hash_4201d2890785fb14");
             break;
         case #"hash_5b215c4eff8f5759":
-            var_2bc6fbf6 = getgametypesetting(#"hash_22c53ddb2cb67f13");
+            respawntime = getgametypesetting(#"hash_22c53ddb2cb67f13");
             break;
         case #"player_pbr":
-            var_2bc6fbf6 = getgametypesetting(#"hash_39cfd81268504039");
+            respawntime = getgametypesetting(#"hash_39cfd81268504039");
             break;
         case #"tactical_raft_wz":
         case #"player_tactical_raft":
-            var_2bc6fbf6 = getgametypesetting(#"hash_53fd9a3e9a0e78e1");
+            respawntime = getgametypesetting(#"hash_53fd9a3e9a0e78e1");
             break;
         case #"player_muscle":
-            var_2bc6fbf6 = getgametypesetting(#"hash_5f116b8cfbdbc3fe");
+            respawntime = getgametypesetting(#"hash_5f116b8cfbdbc3fe");
             break;
         case #"player_suv":
-            var_2bc6fbf6 = getgametypesetting(#"hash_208071125a2b0b0b");
+            respawntime = getgametypesetting(#"hash_208071125a2b0b0b");
             break;
         case #"player_uaz":
-            var_2bc6fbf6 = getgametypesetting(#"hash_52ef5b12764c8139");
+            respawntime = getgametypesetting(#"hash_52ef5b12764c8139");
             break;
         case #"player_jetski":
-            var_2bc6fbf6 = getgametypesetting(#"hash_76f686986e1a58b");
+            respawntime = getgametypesetting(#"hash_76f686986e1a58b");
             break;
         case #"player_sedan":
-            var_2bc6fbf6 = getgametypesetting(#"hash_9c266bdf9cad7fa");
+            respawntime = getgametypesetting(#"hash_9c266bdf9cad7fa");
             break;
         default:
             break;
         }
     }
     /#
-        assert(isdefined(var_2bc6fbf6));
+        assert(isdefined(respawntime));
     #/
-    return int(var_2bc6fbf6 * 1000);
+    return int(respawntime * 1000);
 }
 
 // Namespace namespace_d0eacb0d/namespace_d0eacb0d
@@ -436,72 +436,72 @@ function private function_f77a9b1b(vehicle) {
             return int(1 * 1000);
         }
     #/
-    var_2bc6fbf6 = 0;
+    respawntime = 0;
     if (isdefined(vehicle.scriptvehicletype)) {
         switch (vehicle.scriptvehicletype) {
         case #"player_atv":
-            var_2bc6fbf6 = getgametypesetting(#"hash_42b840c668fd2c85");
+            respawntime = getgametypesetting(#"hash_42b840c668fd2c85");
             break;
         case #"player_tank":
-            var_2bc6fbf6 = getgametypesetting(#"hash_46f0ae82f5c2f7d4");
+            respawntime = getgametypesetting(#"hash_46f0ae82f5c2f7d4");
             break;
         case #"helicopter_light":
-            var_2bc6fbf6 = getgametypesetting(#"hash_2a02614601829003");
+            respawntime = getgametypesetting(#"hash_2a02614601829003");
             break;
         case #"helicopter_heavy":
-            var_2bc6fbf6 = getgametypesetting(#"hash_5598d36d6b224c9a");
+            respawntime = getgametypesetting(#"hash_5598d36d6b224c9a");
             break;
         case #"hash_2212824fabcc986c":
-            var_2bc6fbf6 = getgametypesetting(#"hash_7353bbc24d72ec59");
+            respawntime = getgametypesetting(#"hash_7353bbc24d72ec59");
             break;
         case #"player_motorcycle_2wd":
         case #"player_motorcycle":
-            var_2bc6fbf6 = getgametypesetting(#"hash_5a4fde688cbf1a01");
+            respawntime = getgametypesetting(#"hash_5a4fde688cbf1a01");
             break;
         case #"player_fav":
-            var_2bc6fbf6 = getgametypesetting(#"hash_6b2754246df1bc7c");
+            respawntime = getgametypesetting(#"hash_6b2754246df1bc7c");
             break;
         case #"player_btr40":
-            var_2bc6fbf6 = getgametypesetting(#"hash_6773166f56896564");
+            respawntime = getgametypesetting(#"hash_6773166f56896564");
             break;
         case #"player_fav_light":
-            var_2bc6fbf6 = getgametypesetting(#"hash_54d908d6273c8893");
+            respawntime = getgametypesetting(#"hash_54d908d6273c8893");
             break;
         case #"cargo_truck_wz":
-            var_2bc6fbf6 = getgametypesetting(#"hash_1974892bc7266bab");
+            respawntime = getgametypesetting(#"hash_1974892bc7266bab");
             break;
         case #"hash_5b215c4eff8f5759":
-            var_2bc6fbf6 = getgametypesetting(#"hash_273d049136c76afa");
+            respawntime = getgametypesetting(#"hash_273d049136c76afa");
             break;
         case #"player_pbr":
-            var_2bc6fbf6 = getgametypesetting(#"hash_44f0b1c6b2d3b6f8");
+            respawntime = getgametypesetting(#"hash_44f0b1c6b2d3b6f8");
             break;
         case #"tactical_raft_wz":
         case #"player_tactical_raft":
-            var_2bc6fbf6 = getgametypesetting(#"hash_56f6d77da3124af2");
+            respawntime = getgametypesetting(#"hash_56f6d77da3124af2");
             break;
         case #"player_muscle":
-            var_2bc6fbf6 = getgametypesetting(#"hash_7c33e5bebaf05afb");
+            respawntime = getgametypesetting(#"hash_7c33e5bebaf05afb");
             break;
         case #"player_suv":
-            var_2bc6fbf6 = getgametypesetting(#"hash_5dc620c6c0919d82");
+            respawntime = getgametypesetting(#"hash_5dc620c6c0919d82");
             break;
         case #"player_uaz":
-            var_2bc6fbf6 = getgametypesetting(#"hash_2aea36c6a4135574");
+            respawntime = getgametypesetting(#"hash_2aea36c6a4135574");
             break;
         case #"player_jetski":
-            var_2bc6fbf6 = getgametypesetting(#"hash_38a8f601ab8388d0");
+            respawntime = getgametypesetting(#"hash_38a8f601ab8388d0");
             break;
         case #"player_sedan":
-            var_2bc6fbf6 = getgametypesetting(#"hash_9c266bdf9cad7fa");
+            respawntime = getgametypesetting(#"hash_9c266bdf9cad7fa");
             break;
         default:
             break;
         }
     }
     /#
-        assert(isdefined(var_2bc6fbf6));
+        assert(isdefined(respawntime));
     #/
-    return int(var_2bc6fbf6 * 1000);
+    return int(respawntime * 1000);
 }
 

@@ -205,17 +205,17 @@ function function_56d29b42() {
     for (i = 0; i < 12; i++) {
         if (!isdefined(var_c81221ac) && isdefined(level.doa.clones[i])) {
             var_c81221ac = level.doa.clones[i];
-            var_8038bb7f = i;
+            oldestindex = i;
         } else if (isdefined(level.doa.clones[i]) && level.doa.clones[i].spawntime < var_c81221ac.spawntime) {
             var_c81221ac = level.doa.clones[i];
-            var_8038bb7f = i;
+            oldestindex = i;
         }
     }
     /#
         function_f5f0c0f8("<unknown string>" + i + "<unknown string>" + level.doa.clones.size);
     #/
-    level.doa.clones[var_8038bb7f] notify(#"clone_shutdown");
-    level.doa.clones[var_8038bb7f] = undefined;
+    level.doa.clones[oldestindex] notify(#"clone_shutdown");
+    level.doa.clones[oldestindex] = undefined;
     arrayremovevalue(level.doa.clones, undefined);
 }
 
@@ -317,8 +317,8 @@ function private _updateclonepathing(player) {
             } else {
                 forward = anglestoforward(self getangles());
             }
-            var_1c649e76 = self.origin + forward * 256;
-            self._goal_center_point = var_1c649e76;
+            searchorigin = self.origin + forward * 256;
+            self._goal_center_point = searchorigin;
             queryresult = positionquery_source_navigation(self._goal_center_point, 128, 256, 256, 100, self);
             if (queryresult.data.size == 0) {
                 queryresult = positionquery_source_navigation(self.origin, 128, 256, 256, 100, self);
@@ -338,19 +338,19 @@ function private _updateclonepathing(player) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x2caec976, Offset: 0x17a0
 // Size: 0x124
-function function_7e6356ef(endpos, var_7162689c) {
+function function_7e6356ef(endpos, traveltime) {
     spawnpos = self gettagorigin("j_spine4");
     if (!isdefined(spawnpos)) {
         return;
     }
-    fxorg = namespace_ec06fe4a::function_e22ae9b3(spawnpos, "tag_origin");
+    fxorg = namespace_ec06fe4a::spawnmodel(spawnpos, "tag_origin");
     if (!isdefined(fxorg)) {
         return;
     }
     fxorg namespace_83eb6304::function_3ecfde67("clone_orb");
     var_ab91afbe = endpos + (0, 0, 35);
-    fxorg moveto(var_ab91afbe, var_7162689c);
-    self waittilltimeout(var_7162689c, #"player_died", #"disconnect");
+    fxorg moveto(var_ab91afbe, traveltime);
+    self waittilltimeout(traveltime, #"player_died", #"disconnect");
     if (isdefined(self)) {
         self notify(#"hash_5f82250ecd4b484c");
     }

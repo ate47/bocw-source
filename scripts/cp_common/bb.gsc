@@ -449,17 +449,17 @@ function function_cd497743(notificationtype, player = getplayers()[0]) {
     }
     playerid = -1;
     var_d28ba0cd = "";
-    var_61d8ae42 = (0, 0, 0);
+    playerposition = (0, 0, 0);
     playername = "";
-    var_6ff6df98 = player.angles[1];
+    playeryaw = player.angles[1];
     if (isai(player)) {
         playerid = player.actor_id;
         var_d28ba0cd = "_ai";
-        var_61d8ae42 = player.origin;
+        playerposition = player.origin;
     } else if (isplayer(player)) {
         playerid = getplayerspawnid(player);
         var_d28ba0cd = "_player";
-        var_61d8ae42 = player.origin;
+        playerposition = player.origin;
         playername = player.name;
     }
     var_2084f739 = function_bb412e85();
@@ -467,10 +467,10 @@ function function_cd497743(notificationtype, player = getplayers()[0]) {
     var_2084f739.spawnid = playerid;
     var_2084f739.username = playername;
     var_2084f739.spawnidtype = var_d28ba0cd;
-    var_2084f739.originx = var_61d8ae42[0];
-    var_2084f739.originy = var_61d8ae42[1];
-    var_2084f739.originz = var_61d8ae42[2];
-    var_2084f739.angleyaw = var_6ff6df98;
+    var_2084f739.originx = playerposition[0];
+    var_2084f739.originy = playerposition[1];
+    var_2084f739.originz = playerposition[2];
+    var_2084f739.angleyaw = playeryaw;
     function_92d1707f(#"hash_a2e7d42c6175a49", var_2084f739);
 }
 
@@ -483,7 +483,7 @@ function function_7977c093(scriptbundle, selection, player) {
         return;
     }
     var_2084f739 = function_bb412e85();
-    var_2084f739.var_62950536 = selection;
+    var_2084f739.choice = selection;
     var_2084f739.scriptbundle = scriptbundle;
     var_2084f739.originx = player.origin[0];
     var_2084f739.originy = player.origin[1];
@@ -543,7 +543,7 @@ function function_141c945e(action, weapon, player) {
         return;
     }
     var_2084f739 = function_bb412e85();
-    var_2084f739.var_6c46f7fc = weapon.name;
+    var_2084f739.weapname = weapon.name;
     var_2084f739.action = action;
     var_2084f739.originx = player.origin[0];
     var_2084f739.originy = player.origin[1];

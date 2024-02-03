@@ -1268,9 +1268,9 @@ function private function_37c7f369() {
 // Params 2, eflags: 0x6 linked
 // Checksum 0x387aea2, Offset: 0x5030
 // Size: 0x64
-function private function_1780a22f(var_7527000, var_9c5eab68 = 1) {
+function private hide_part(var_7527000, bapplytochildren = 1) {
     if (self haspart(var_7527000)) {
-        self hidepart(var_7527000, "", var_9c5eab68);
+        self hidepart(var_7527000, "", bapplytochildren);
     }
 }
 
@@ -1280,32 +1280,32 @@ function private function_1780a22f(var_7527000, var_9c5eab68 = 1) {
 // Size: 0x294
 function private function_7428d843() {
     if (!is_true(self.var_5c09e990)) {
-        self function_1780a22f("j_shouldertwist_ri_attach");
-        self function_1780a22f("j_shoulder_ri_attach", 0);
+        self hide_part("j_shouldertwist_ri_attach");
+        self hide_part("j_shoulder_ri_attach", 0);
     }
     if (!is_true(self.var_8e205014)) {
-        self function_1780a22f("j_spine4_attach");
-        self function_1780a22f("j_spineupper_attach");
-        self function_1780a22f("j_spinelower_attach");
-        self function_1780a22f("j_mainroot_attach");
-        self function_1780a22f("j_clavicle_ri_attachbp");
-        self function_1780a22f("j_clavicle_le_attachbp");
+        self hide_part("j_spine4_attach");
+        self hide_part("j_spineupper_attach");
+        self hide_part("j_spinelower_attach");
+        self hide_part("j_mainroot_attach");
+        self hide_part("j_clavicle_ri_attachbp");
+        self hide_part("j_clavicle_le_attachbp");
     }
     if (!is_true(self.var_9f71af13)) {
-        self function_1780a22f("j_shouldertwist_le_attach");
-        self function_1780a22f("j_shoulder_le_attach");
-        self function_1780a22f("j_clavicle_le_attach");
+        self hide_part("j_shouldertwist_le_attach");
+        self hide_part("j_shoulder_le_attach");
+        self hide_part("j_clavicle_le_attach");
     }
     if (!is_true(self.var_c0a83965)) {
-        self function_1780a22f("j_hiptwist_ri_attach");
-        self function_1780a22f("j_hip_ri_attach");
+        self hide_part("j_hiptwist_ri_attach");
+        self hide_part("j_hip_ri_attach");
     }
     if (!is_true(self.var_cb66dfbf)) {
-        self function_1780a22f("j_hiptwist_le_attach");
-        self function_1780a22f("j_hip_le_attach");
+        self hide_part("j_hiptwist_le_attach");
+        self hide_part("j_hip_le_attach");
     }
     if (!is_true(self.var_e4fc6a2f)) {
-        self function_1780a22f("j_head_attach");
+        self hide_part("j_head_attach");
     }
 }
 
@@ -1468,8 +1468,8 @@ function private function_550f17ad(entity, hitloc, point, location, var_971b8272
 // Checksum 0xb2f0ab91, Offset: 0x5df8
 // Size: 0xf6
 function function_30df6d2b(entity) {
-    self function_1780a22f("j_shouldertwist_ri_attach");
-    self function_1780a22f("j_shoulder_ri_attach", 0);
+    self hide_part("j_shouldertwist_ri_attach");
+    self hide_part("j_shoulder_ri_attach", 0);
     entity setblackboardattribute("_locomotion_speed", "locomotion_speed_sprint");
     if (!isdefined(self.var_19ec2cc3)) {
         entity asmsetanimationrate(1);
@@ -1539,12 +1539,12 @@ function function_2eb802f5(attacker) {
 // Size: 0x144
 function function_50c2a59e(*attacker) {
     entity = self;
-    entity function_1780a22f("j_spine4_attach");
-    entity function_1780a22f("j_spineupper_attach");
-    entity function_1780a22f("j_spinelower_attach");
-    entity function_1780a22f("j_mainroot_attach");
-    entity function_1780a22f("j_clavicle_ri_attachbp");
-    entity function_1780a22f("j_clavicle_le_attachbp");
+    entity hide_part("j_spine4_attach");
+    entity hide_part("j_spineupper_attach");
+    entity hide_part("j_spinelower_attach");
+    entity hide_part("j_mainroot_attach");
+    entity hide_part("j_clavicle_ri_attachbp");
+    entity hide_part("j_clavicle_le_attachbp");
     entity.var_8e205014 = 0;
     entity setblackboardattribute("_gib_location", "arms");
     entity.var_5ed30918 = gettime();
@@ -1560,9 +1560,9 @@ function function_50c2a59e(*attacker) {
 // Size: 0xae
 function function_597f31c9(*attacker) {
     entity = self;
-    entity function_1780a22f("j_shouldertwist_le_attach");
-    entity function_1780a22f("j_shoulder_le_attach");
-    entity function_1780a22f("j_clavicle_le_attach");
+    entity hide_part("j_shouldertwist_le_attach");
+    entity hide_part("j_shoulder_le_attach");
+    entity hide_part("j_clavicle_le_attach");
     entity.var_9f71af13 = 0;
     entity setblackboardattribute("_gib_location", "left_arm");
     entity.var_5ed30918 = gettime();
@@ -1574,8 +1574,8 @@ function function_597f31c9(*attacker) {
 // Size: 0x8e
 function function_50f53d3b(*attacker) {
     entity = self;
-    entity function_1780a22f("j_hiptwist_le_attach");
-    entity function_1780a22f("j_hip_le_attach");
+    entity hide_part("j_hiptwist_le_attach");
+    entity hide_part("j_hip_le_attach");
     entity.var_cb66dfbf = 0;
     entity setblackboardattribute("_gib_location", "left_leg");
     entity.var_5ed30918 = gettime();
@@ -1587,8 +1587,8 @@ function function_50f53d3b(*attacker) {
 // Size: 0x8e
 function function_578362e9(*attacker) {
     entity = self;
-    entity function_1780a22f("j_hiptwist_ri_attach");
-    entity function_1780a22f("j_hip_ri_attach");
+    entity hide_part("j_hiptwist_ri_attach");
+    entity hide_part("j_hip_ri_attach");
     entity.var_c0a83965 = 0;
     entity setblackboardattribute("_gib_location", "right_leg");
     entity.var_5ed30918 = gettime();

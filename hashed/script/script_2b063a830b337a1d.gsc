@@ -118,7 +118,7 @@ class class_fb1bfa12 : cluielem {
 // Checksum 0x53d0fb53, Offset: 0x168
 // Size: 0x34
 function function_326329cb(player, var_ba420c60) {
-    function_c063a71c(player, var_ba420c60.var_bf26b910);
+    function_c063a71c(player, var_ba420c60.levelname);
 }
 
 // Namespace namespace_8f760a1e/namespace_8f760a1e

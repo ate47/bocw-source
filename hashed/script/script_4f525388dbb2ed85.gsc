@@ -15,14 +15,14 @@
 // Checksum 0x3908f5f2, Offset: 0xc0
 // Size: 0x4c
 function private autoexec __init__system__() {
-    system::register(#"hash_1a7d629e99e37eda", &function_c7f33cce, &function_fa076c68, undefined, undefined);
+    system::register(#"hash_1a7d629e99e37eda", &_preload, &function_fa076c68, undefined, undefined);
 }
 
 // Namespace namespace_d395170f/namespace_d395170f
 // Params 0, eflags: 0x6 linked
 // Checksum 0x12fb60fd, Offset: 0x118
 // Size: 0x34
-function private function_c7f33cce() {
+function private _preload() {
     function_ad272ef4();
     function_90ceecf8();
     function_7c9b0132();
@@ -382,9 +382,9 @@ function private function_8cd46b76() {
         var_38fcd26f = level._fx.var_7b96a5ce.data[7].value;
         var_1ef3c0f = level._fx.var_7b96a5ce.data[8].value;
         var_74e9b7eb = level._fx.var_7b96a5ce.data[9].value;
-        var_5724eabf = level._fx.var_7b96a5ce.data[10].value;
-        screenshake(var_4f5ffab2, var_3f56d066, var_1ccf696c, var_1ef3c0f, duration, var_3fa2cc2f, var_83ccc1d1, radius, var_e0be7076, var_38fcd26f, var_74e9b7eb, var_5724eabf);
-        function_4e1b4554(var_4f5ffab2, var_3f56d066, var_1ccf696c, var_1ef3c0f, duration, var_3fa2cc2f, var_83ccc1d1, radius, var_e0be7076, var_38fcd26f, var_74e9b7eb, var_5724eabf);
+        exponent = level._fx.var_7b96a5ce.data[10].value;
+        screenshake(var_4f5ffab2, var_3f56d066, var_1ccf696c, var_1ef3c0f, duration, var_3fa2cc2f, var_83ccc1d1, radius, var_e0be7076, var_38fcd26f, var_74e9b7eb, exponent);
+        function_4e1b4554(var_4f5ffab2, var_3f56d066, var_1ccf696c, var_1ef3c0f, duration, var_3fa2cc2f, var_83ccc1d1, radius, var_e0be7076, var_38fcd26f, var_74e9b7eb, exponent);
         if (is_true(level._fx.var_7b96a5ce.var_fb619bb2)) {
             physicsexplosionsphere(var_4f5ffab2, int(radius), 0, 1);
         }
@@ -448,10 +448,10 @@ function private function_f46326c5() {
 // Params 12, eflags: 0x4
 // Checksum 0x548c3232, Offset: 0x2020
 // Size: 0x1bc
-function private function_4e1b4554(origin, var_3f56d066, var_1ccf696c, var_1ef3c0f, duration, var_3fa2cc2f, var_83ccc1d1, radius, var_e0be7076, var_38fcd26f, var_74e9b7eb, var_5724eabf) {
+function private function_4e1b4554(origin, var_3f56d066, var_1ccf696c, var_1ef3c0f, duration, var_3fa2cc2f, var_83ccc1d1, radius, var_e0be7076, var_38fcd26f, var_74e9b7eb, exponent) {
     /#
         header = "<unknown string>";
-        var_3d1aa1bc = "<unknown string>";
+        footer = "<unknown string>";
         comma = "<unknown string>";
         output = "<unknown string>" + origin + "<unknown string>";
         output = output + var_3f56d066 + comma;
@@ -464,10 +464,10 @@ function private function_4e1b4554(origin, var_3f56d066, var_1ccf696c, var_1ef3c
         output = output + var_e0be7076 + comma;
         output = output + var_38fcd26f + comma;
         output = output + var_74e9b7eb + comma;
-        output = output + var_5724eabf + "<unknown string>";
+        output = output + exponent + "<unknown string>";
         println(header);
         println(output);
-        println(var_3d1aa1bc);
+        println(footer);
     #/
 }
 

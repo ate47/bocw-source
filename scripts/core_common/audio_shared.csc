@@ -1790,18 +1790,18 @@ function event_handler[event_edffbf97] function_ee6f0c88(var_c75c63c) {
 // Size: 0x184
 function function_abd4ca1(var_c75c63c) {
     /#
-        var_984110e5 = var_c75c63c.var_b6ce262a;
+        soundrandom = var_c75c63c.var_b6ce262a;
         if (isdefined(level.randoms)) {
             for (i = 0; i < level.randoms.size; i++) {
                 if (!isdefined(level.randoms[i].script_sound)) {
-                    level.randoms[i].origin = var_984110e5.origin;
-                    level.randoms[i].script_sound = var_984110e5.script_sound;
+                    level.randoms[i].origin = soundrandom.origin;
+                    level.randoms[i].script_sound = soundrandom.script_sound;
                     level.randoms[i] thread soundrandom_thread(0, level.randoms[i]);
                     return;
                 }
             }
             index = level.randoms.size;
-            arrayinsert(level.randoms, var_984110e5, index);
+            arrayinsert(level.randoms, soundrandom, index);
             level.randoms[index].angles = undefined;
             level.randoms[index].script_label = undefined;
             level.randoms[index] thread soundrandom_thread(0, level.randoms[index]);
@@ -1815,7 +1815,7 @@ function function_abd4ca1(var_c75c63c) {
 // Size: 0xce
 function event_handler[event_bfb86175] function_464598c8(var_c75c63c) {
     /#
-        var_984110e5 = var_c75c63c.var_b6ce262a;
+        soundrandom = var_c75c63c.var_b6ce262a;
         if (isdefined(level.randoms)) {
             index = var_c75c63c.index;
             if (index >= 0 && index < level.randoms.size) {
@@ -1837,18 +1837,18 @@ LOC_000000cc:
 // Size: 0x1b4
 function event_handler[event_43494658] function_12dface6(var_c75c63c) {
     /#
-        var_984110e5 = var_c75c63c.var_b6ce262a;
+        soundrandom = var_c75c63c.var_b6ce262a;
         if (isdefined(level.randoms)) {
             index = var_c75c63c.index;
             neworigin = var_c75c63c.neworigin;
             if (index >= 0 && index < level.randoms.size) {
-                if (isdefined(var_984110e5.script_wait_min)) {
-                    level.randoms[index].script_wait_min = var_984110e5.script_wait_min;
+                if (isdefined(soundrandom.script_wait_min)) {
+                    level.randoms[index].script_wait_min = soundrandom.script_wait_min;
                 }
-                if (isdefined(var_984110e5.script_wait_max)) {
-                    level.randoms[index].script_wait_max = var_984110e5.script_wait_max;
+                if (isdefined(soundrandom.script_wait_max)) {
+                    level.randoms[index].script_wait_max = soundrandom.script_wait_max;
                 }
-                level.randoms[index].script_sound = var_984110e5.script_sound;
+                level.randoms[index].script_sound = soundrandom.script_sound;
                 function_12dface6(level.randoms[index].origin, neworigin, level.randoms[index].script_sound, level.randoms[index].script_wait_min, level.randoms[index].script_wait_max);
                 level.randoms[index].origin = neworigin;
             } else if (index == -2) {
@@ -1865,11 +1865,11 @@ function event_handler[event_43494658] function_12dface6(var_c75c63c) {
 // Size: 0xb2
 function event_handler[event_8c00f89] function_8673317e(var_c75c63c) {
     /#
-        var_984110e5 = var_c75c63c.var_b6ce262a;
+        soundrandom = var_c75c63c.var_b6ce262a;
         level.var_7acea05a = -1;
         if (isdefined(level.randoms)) {
             for (i = 0; i < level.randoms.size; i++) {
-                if (distancesquared(level.randoms[i].origin, var_984110e5.origin) < 1) {
+                if (distancesquared(level.randoms[i].origin, soundrandom.origin) < 1) {
                     level.var_7acea05a = i;
                     return;
                 }

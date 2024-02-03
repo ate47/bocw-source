@@ -15,7 +15,7 @@ function function_c0de0601() {
 // Params 1, eflags: 0x0
 // Checksum 0x1f46dbc5, Offset: 0xd0
 // Size: 0xf6
-function function_142b1c24(territory = level.territory) {
+function get_center(territory = level.territory) {
     center = (0, 0, 0);
     if (!function_c0de0601() || territory.bounds.size <= 0) {
         return center;
@@ -36,9 +36,9 @@ function function_64c37ade(territory = level.territory) {
     if (!isstruct(territory) || !isarray(territory.bounds)) {
         return;
     }
-    foreach (var_cdb05658 in territory.bounds) {
-        var_f3ba0cb3 = var_cdb05658.origin + var_cdb05658.mins;
-        var_cd8bd6d = var_cdb05658.origin + var_cdb05658.maxs;
+    foreach (bound in territory.bounds) {
+        var_f3ba0cb3 = bound.origin + bound.mins;
+        var_cd8bd6d = bound.origin + bound.maxs;
         for (i = 0; i < 3; i++) {
             if (!isdefined(absmins[i])) {
                 absmins[i] = var_f3ba0cb3[i];
@@ -59,7 +59,7 @@ function function_64c37ade(territory = level.territory) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x3f260c19, Offset: 0x408
 // Size: 0x18a
-function function_83ad4d2b(point, var_73362d27 = 0, territory = level.territory) {
+function is_inside(point, var_73362d27 = 0, territory = level.territory) {
     if (!function_c0de0601()) {
         return 1;
     }
@@ -89,7 +89,7 @@ function function_83ad4d2b(point, var_73362d27 = 0, territory = level.territory)
 // Checksum 0xa4729fd2, Offset: 0x5a0
 // Size: 0x6a
 function is_valid(object, territory = level.territory) {
-    if (isdefined(territory.var_87da0e2c) && isdefined(object.var_87da0e2c) && territory.var_87da0e2c != object.var_87da0e2c) {
+    if (isdefined(territory.script_territory) && isdefined(object.script_territory) && territory.script_territory != object.script_territory) {
         return 0;
     }
     return 1;
@@ -108,9 +108,9 @@ function function_b3791221(var_d1373160 = 10, territory = level.territory) {
     if (!isstruct(territory) || !isarray(territory.bounds)) {
         return;
     }
-    foreach (var_cdb05658 in territory.bounds) {
-        var_f3ba0cb3 = var_cdb05658.origin + var_cdb05658.mins;
-        var_cd8bd6d = var_cdb05658.origin + var_cdb05658.maxs;
+    foreach (bound in territory.bounds) {
+        var_f3ba0cb3 = bound.origin + bound.mins;
+        var_cd8bd6d = bound.origin + bound.maxs;
         for (i = 0; i < 3; i++) {
             if (!isdefined(absmins[i])) {
                 absmins[i] = var_f3ba0cb3[i];
@@ -131,7 +131,7 @@ function function_b3791221(var_d1373160 = 10, territory = level.territory) {
             point[i] = randomfloatrange(absmins[i], absmaxs[i]);
         }
         randompoint = (point[0], point[1], point[2]);
-        if (function_83ad4d2b(randompoint, undefined, territory)) {
+        if (is_inside(randompoint, undefined, territory)) {
             return randompoint;
         }
     }
@@ -154,7 +154,7 @@ function function_39dd704c(objects, territory) {
     validobjects = [];
     if (!isdefined(territory) || !isdefined(territory.name) || territory.name == "") {
         foreach (object in objects) {
-            if (!isdefined(object.var_87da0e2c)) {
+            if (!isdefined(object.script_territory)) {
                 validobjects[validobjects.size] = object;
             }
         }
@@ -163,7 +163,7 @@ function function_39dd704c(objects, territory) {
             if (!is_valid(object, territory)) {
                 continue;
             }
-            if (!function_83ad4d2b(object.origin, undefined, territory)) {
+            if (!is_inside(object.origin, undefined, territory)) {
                 continue;
             }
             validobjects[validobjects.size] = object;

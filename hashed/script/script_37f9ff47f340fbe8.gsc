@@ -21,11 +21,11 @@ function function_810d6d3a() {
     level.var_b649495c = [];
     level.var_b649495c[#"linear"] = &function_a9f5c57d;
     level.var_b649495c[#"power"] = &function_492ef475;
-    level.var_b649495c[#"hash_4441e56be6725141"] = &function_db98dad1;
+    level.var_b649495c[#"quadratic"] = &function_db98dad1;
     level.var_b649495c[#"hash_7a17b3d575c1b565"] = &function_237ad8ca;
     level.var_b649495c[#"hash_7fcb2d60a826eca8"] = &function_79315b1d;
     level.var_b649495c[#"hash_2080bcb1cad7945c"] = &function_858ecd2d;
-    level.var_b649495c[#"hash_66948f68af1a4b68"] = &function_95a842a;
+    level.var_b649495c[#"exponential"] = &function_95a842a;
     level.var_b649495c[#"hash_2de1684e2167ada4"] = &function_eec2a804;
     level.var_b649495c[#"sine"] = &function_aab5c503;
     level.var_b649495c[#"back"] = &function_da7df29;
@@ -126,8 +126,8 @@ function function_da7df29(start, end, var_600ff81f, ease_in, ease_out, var_2d741
 // Params 8, eflags: 0x2 linked
 // Checksum 0x172af3ce, Offset: 0x780
 // Size: 0x82
-function function_d912ff48(start, end, var_600ff81f, ease_in, ease_out, amplitude, var_b1502487, var_6fe616d0) {
-    var_600ff81f = function_95dcecc(var_600ff81f, amplitude, var_b1502487, var_6fe616d0, ease_in, ease_out);
+function function_d912ff48(start, end, var_600ff81f, ease_in, ease_out, amplitude, frequency, var_6fe616d0) {
+    var_600ff81f = function_95dcecc(var_600ff81f, amplitude, frequency, var_6fe616d0, ease_in, ease_out);
     return (1 - var_600ff81f) * start + var_600ff81f * end;
 }
 
@@ -135,8 +135,8 @@ function function_d912ff48(start, end, var_600ff81f, ease_in, ease_out, amplitud
 // Params 7, eflags: 0x2 linked
 // Checksum 0x18a33bbf, Offset: 0x810
 // Size: 0x7a
-function function_6aeb681d(start, end, var_600ff81f, ease_in, ease_out, var_6c524ba6, var_574c3289) {
-    var_600ff81f = function_7f894fd3(var_600ff81f, var_6c524ba6, var_574c3289, ease_in, ease_out);
+function function_6aeb681d(start, end, var_600ff81f, ease_in, ease_out, bounces, var_574c3289) {
+    var_600ff81f = function_7f894fd3(var_600ff81f, bounces, var_574c3289, ease_in, ease_out);
     return (1 - var_600ff81f) * start + var_600ff81f * end;
 }
 

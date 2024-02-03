@@ -43,7 +43,7 @@ function function_cd089b2e(*killstreaktype) {
         assert(isdefined(level.var_44018194));
     #/
     player = self;
-    if (player function_77d8d4fc() || player isplayerunderwater() || player isplayerswimming() || player isplayerwallrunning()) {
+    if (player isinair() || player isplayerunderwater() || player isplayerswimming() || player isplayerwallrunning()) {
         return 0;
     }
     player callback::add_callback(#"underwater", &function_84845e32);

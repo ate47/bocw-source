@@ -917,8 +917,8 @@ function function_c3ceb539(entity) {
         var_5494b2e9 = 1;
         test_points = array();
         slots = array::randomize(entity.attackable.var_b79a8ac7.slots);
-        var_c51aeb32 = int(min(slots.size, 3));
-        for (i = 0; i < var_c51aeb32; i++) {
+        point_count = int(min(slots.size, 3));
+        for (i = 0; i < point_count; i++) {
             slot = slots[i];
             angles = vectortoangles(slot.origin - entity.attackable.origin);
             test_points[test_points.size] = entity.attackable.origin + anglestoforward((0, angles[1], 0)) * randomfloatrange(150, 500);
@@ -948,33 +948,33 @@ function function_c3ceb539(entity) {
     enemy = target;
     test_points = array::randomize(test_points);
     if (var_5494b2e9) {
-        var_546d115 = undefined;
+        bestpoint = undefined;
         foreach (point in test_points) {
-            var_546d115 = function_3d3ee1a4(entity, point, enemy);
-            if (isdefined(var_546d115)) {
+            bestpoint = function_3d3ee1a4(entity, point, enemy);
+            if (isdefined(bestpoint)) {
                 break;
             }
         }
     } else {
-        var_546d115 = test_points[0];
+        bestpoint = test_points[0];
     }
     /#
-        if (isdefined(var_546d115)) {
-            recordsphere(var_546d115, 15, (0, 0, 1), "<unknown string>");
-            recordline(entity.origin, var_546d115, (0, 0, 1), "<unknown string>");
+        if (isdefined(bestpoint)) {
+            recordsphere(bestpoint, 15, (0, 0, 1), "<unknown string>");
+            recordline(entity.origin, bestpoint, (0, 0, 1), "<unknown string>");
         }
         if (isplayer(entity.favoriteenemy)) {
             player_angles = entity.favoriteenemy getplayerangles();
-            if (isdefined(player_angles) && isdefined(var_546d115)) {
+            if (isdefined(player_angles) && isdefined(bestpoint)) {
                 var_891a94cf = anglestoforward(player_angles);
-                var_e4529f5f = acos(vectordot(var_891a94cf, vectornormalize(var_546d115 - entity.favoriteenemy.origin)));
-                distsqrd = distancesquared(var_546d115, entity.favoriteenemy.origin);
+                var_e4529f5f = acos(vectordot(var_891a94cf, vectornormalize(bestpoint - entity.favoriteenemy.origin)));
+                distsqrd = distancesquared(bestpoint, entity.favoriteenemy.origin);
                 dist = sqrt(distsqrd);
             }
         }
     #/
-    self.can_phase = isdefined(var_546d115);
-    return var_546d115;
+    self.can_phase = isdefined(bestpoint);
+    return bestpoint;
 }
 
 // Namespace archetype_avogadro/archetype_avogadro
@@ -1357,8 +1357,8 @@ function function_de781d41(entity) {
     if (!isdefined(entity.var_e8a7f45d)) {
         entity.var_e8a7f45d = {#var_a5afe5a1:gettime(), #state:#"hash_24e69bf779de4940"};
     }
-    if (!isdefined(entity.var_e8a7f45d.var_4311258f)) {
-        entity.var_e8a7f45d.var_4311258f = entity.origin;
+    if (!isdefined(entity.var_e8a7f45d.center_point)) {
+        entity.var_e8a7f45d.center_point = entity.origin;
     }
     if (gettime() < entity.var_e8a7f45d.var_a5afe5a1) {
         return;
@@ -1404,7 +1404,7 @@ function function_598bf886(entity) {
             dir = anglestoright(angles);
             movepos = entity.origin + dir * randomintrange(100, 300);
         } else {
-            movepos = entity.var_e8a7f45d.var_4311258f;
+            movepos = entity.var_e8a7f45d.center_point;
         }
         if (isdefined(movepos)) {
             var_37c56a35 = getclosestpointonnavmesh(movepos, 128, entity getpathfindingradius() * 1.2);

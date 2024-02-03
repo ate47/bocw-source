@@ -174,7 +174,7 @@ function private function_32ab045(ent, name) {
 // Checksum 0x4cdc9af7, Offset: 0xfc0
 // Size: 0x1c2
 function private _trigger(*player, trigger, *var_ec80d14b) {
-    trigger_name = snd::function_ea2f17d1(var_ec80d14b.var_fd537616, "$default");
+    trigger_name = snd::function_ea2f17d1(var_ec80d14b.script_ambientroom, "$default");
     switch (trigger_name) {
     case #"$default":
         break;

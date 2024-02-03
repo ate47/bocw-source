@@ -1041,9 +1041,9 @@ function function_94c1298b(*localclientnum, *oldval, newval, *bnewent, *binitial
 // Checksum 0x6297405f, Offset: 0x67f8
 // Size: 0xd4
 function function_9ed77fee(entnum, *localclientnum, on = 0) {
-    var_dd2c6e79 = function_5f72e972(#"hash_365a974a1df27ef4");
-    var_dcef6ae = getuimodel(var_dd2c6e79, hash("player" + localclientnum + 1));
-    uimodel = getuimodel(var_dcef6ae, #"hash_5ac52f4c96170158");
+    rootmodel = function_5f72e972(#"hash_365a974a1df27ef4");
+    playermodel = getuimodel(rootmodel, hash("player" + localclientnum + 1));
+    uimodel = getuimodel(playermodel, #"hash_5ac52f4c96170158");
     setuimodelvalue(uimodel, on);
 }
 
@@ -1052,9 +1052,9 @@ function function_9ed77fee(entnum, *localclientnum, on = 0) {
 // Checksum 0x72ec6d35, Offset: 0x68d8
 // Size: 0xd4
 function function_9c238883(entnum, *localclientnum, on = 0) {
-    var_dd2c6e79 = function_5f72e972(#"hash_365a974a1df27ef4");
-    var_dcef6ae = getuimodel(var_dd2c6e79, hash("player" + localclientnum + 1));
-    uimodel = getuimodel(var_dcef6ae, #"hash_78aaeb246b2751b3");
+    rootmodel = function_5f72e972(#"hash_365a974a1df27ef4");
+    playermodel = getuimodel(rootmodel, hash("player" + localclientnum + 1));
+    uimodel = getuimodel(playermodel, #"hash_78aaeb246b2751b3");
     setuimodelvalue(uimodel, on);
 }
 

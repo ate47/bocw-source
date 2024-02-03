@@ -136,8 +136,8 @@ function private function_91a832bb(entity, animation) {
     splittime = function_382b0cfb(animation);
     localdeltavector = getmovedelta(animation, 0, splittime);
     var_773216e9 = length(localdeltavector);
-    var_62f5df14 = distance2d(entity.origin, entity.var_14b548c5);
-    if (var_773216e9 >= var_62f5df14 && var_773216e9 < var_62f5df14 * 1.2) {
+    disttocorner = distance2d(entity.origin, entity.var_14b548c5);
+    if (var_773216e9 >= disttocorner && var_773216e9 < disttocorner * 1.2) {
         return 1;
     }
     return 0;

@@ -65,7 +65,7 @@ function function_d55f042c(other, note) {
 // Params 5, eflags: 0x2 linked
 // Checksum 0xbb401297, Offset: 0x2b0
 // Size: 0xc2
-function function_e22ae9b3(localclientnum, origin, modelname = "tag_origin", angles, targetname) {
+function spawnmodel(localclientnum, origin, modelname = "tag_origin", angles, targetname) {
     if (!function_3238d10d(origin)) {
         return;
     }

@@ -69,7 +69,7 @@ function function_71347d32(*var_d3440450, *var_50cc0d4f) {
     }
     level thread objectives::follow("armada_obj_intro_follow_vip", level.vip, #"hash_33eb8fa6e913e996");
     level clientfield::set("" + #"hash_7705eee7a483781a", 0);
-    level savegame::function_904f733();
+    level savegame::checkpoint_save();
     level flag::wait_till("flag_intro_base_tent_leave");
     level flag::set("flag_intro_ambient_vehicles_start");
     level function_fba221f2();
@@ -2007,9 +2007,9 @@ function function_e0598f16(input, var_aff9d4d0, var_8c5bec46) {
     level.var_7466d419 endon(#"death", #"crashing");
     if (input == "left_stick" || input == "right_stick") {
         if (input == "left_stick") {
-            var_7d0e0dac = &namespace_14fe71f8::function_b7ead280;
+            var_7d0e0dac = &orbit::function_b7ead280;
         } else if (input == "right_stick") {
-            var_7d0e0dac = &namespace_14fe71f8::function_5cf12924;
+            var_7d0e0dac = &orbit::function_5cf12924;
         }
         var_2e35e6c1 = [[ var_7d0e0dac ]]();
         while (var_2e35e6c1[0] == 0 && var_2e35e6c1[1] == 0) {
@@ -2043,7 +2043,7 @@ function function_216af582(*var_d3440450, *var_50cc0d4f) {
     level flag::set("flag_orbit_mortar_started");
     level flag::set("flag_vo_mortar_orbit_start");
     var_ef3c5ef7 = "armada_mortar_orbit";
-    level thread namespace_489e2b6c::function_110866d(1);
+    level thread armada_mortar::function_110866d(1);
     level thread objectives::complete("armada_obj_fly_to_mortar");
     level skipto::function_4e3ab877("armada_fly_to_branch_reached", 0);
     level skipto::function_51726ac8([0:var_ef3c5ef7], 0, level.player);

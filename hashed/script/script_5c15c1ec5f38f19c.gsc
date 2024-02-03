@@ -95,12 +95,12 @@ function private function_5dc2c463(reset) {
     /#
         assert(var_4abd20f4.size > var_8c5afe89.size);
     #/
-    var_4952b1fc = function_cd12badd(seed, getarraykeys(var_8c5afe89));
-    seed = var_4952b1fc.seed;
-    var_74a258da = var_4952b1fc.var_854ee795;
-    var_4952b1fc = function_cd12badd(seed, var_687f51a8);
-    seed = var_4952b1fc.seed;
-    var_9b5a7338 = var_4952b1fc.var_854ee795;
+    randresult = function_cd12badd(seed, getarraykeys(var_8c5afe89));
+    seed = randresult.seed;
+    var_74a258da = randresult.var_854ee795;
+    randresult = function_cd12badd(seed, var_687f51a8);
+    seed = randresult.seed;
+    var_9b5a7338 = randresult.var_854ee795;
     /#
         assert(var_9b5a7338.size >= 9);
     #/
@@ -143,9 +143,9 @@ function private function_5dc2c463(reset) {
         function_3029b4d5(var_9af06a57, var_fe37e068[0]);
         function_3029b4d5(var_9af06a57, var_fe37e068[1]);
     }
-    var_4952b1fc = function_cd12badd(seed, var_df0623ff);
-    seed = var_4952b1fc.seed;
-    var_4c3294fc = var_4952b1fc.var_854ee795;
+    randresult = function_cd12badd(seed, var_df0623ff);
+    seed = randresult.seed;
+    var_4c3294fc = randresult.var_854ee795;
     var_c39fbc24 = 0;
     for (i = 0; i < var_8c5afe89.size; i++) {
         var_9af06a57 = var_8c5afe89[i];
@@ -300,7 +300,7 @@ function function_eadf5d0b(var_fc34020f) {
         }
         namespace_61e6d095::function_f2a9266(#"hash_34f10865afcf9af7", index, "Gender", var_835e07cd);
         namespace_61e6d095::function_f2a9266(#"hash_34f10865afcf9af7", index, "DateOfBirth", var_7253f96e.dateofbirth);
-        namespace_61e6d095::function_f2a9266(#"hash_34f10865afcf9af7", index, "Thumbnail", var_7253f96e.var_115998e3);
+        namespace_61e6d095::function_f2a9266(#"hash_34f10865afcf9af7", index, "Thumbnail", var_7253f96e.thumbnail);
         namespace_61e6d095::function_f2a9266(#"hash_34f10865afcf9af7", index, "Ref", var_7253f96e.collectible);
         foreach (list_index, var_4f9f94d8 in var_7253f96e.var_19c811ef) {
             var_f80ba8cb = var_8c78fd5a[var_4f9f94d8];
@@ -492,32 +492,32 @@ function private function_c83dffcf() {
             continue;
         }
         var_38f902ab = level.var_60eee92e.var_e4ce3b05[var_9af06a57.var_11faa37b];
-        var_ae9a6808 = {};
+        keyinfo = {};
         if (var_9af06a57.gender == 0) {
-            var_ae9a6808.var_8ef24e96 = var_38f902ab.var_12e0f108;
-            var_ae9a6808.var_dcdae085 = var_38f902ab.var_be82420e;
+            keyinfo.var_8ef24e96 = var_38f902ab.var_12e0f108;
+            keyinfo.var_dcdae085 = var_38f902ab.var_be82420e;
         } else {
-            var_ae9a6808.var_8ef24e96 = var_38f902ab.var_389ce4eb;
-            var_ae9a6808.var_dcdae085 = var_38f902ab.var_aa6ddc85;
+            keyinfo.var_8ef24e96 = var_38f902ab.var_389ce4eb;
+            keyinfo.var_dcdae085 = var_38f902ab.var_aa6ddc85;
         }
         for (var_3bca6920 = 0; var_3bca6920 < var_9af06a57.var_19c811ef.size; var_3bca6920++) {
             var_6cbd0d9c = var_9af06a57.var_19c811ef[var_3bca6920];
             var_b7a77c7e = level.var_60eee92e.locations[var_6cbd0d9c];
             if (is_true(var_b7a77c7e.var_59a4d624)) {
-                if (!isdefined(var_ae9a6808.var_45f26a8c)) {
-                    var_ae9a6808.var_45f26a8c = var_b7a77c7e.var_2f94fe81;
+                if (!isdefined(keyinfo.var_45f26a8c)) {
+                    keyinfo.var_45f26a8c = var_b7a77c7e.var_2f94fe81;
                 } else {
                     /#
-                        assert(!isdefined(var_ae9a6808.var_ae185984));
+                        assert(!isdefined(keyinfo.var_ae185984));
                     #/
-                    var_ae9a6808.var_ae185984 = var_b7a77c7e.var_2f94fe81;
+                    keyinfo.var_ae185984 = var_b7a77c7e.var_2f94fe81;
                 }
             }
         }
         /#
             assert(!isdefined(var_9bd695ca[var_9af06a57.var_11faa37b]));
         #/
-        var_9bd695ca[var_9af06a57.var_11faa37b] = var_ae9a6808;
+        var_9bd695ca[var_9af06a57.var_11faa37b] = keyinfo;
     }
     return var_9bd695ca;
 }

@@ -60,7 +60,7 @@ function private debug() {
 // Checksum 0x339a4373, Offset: 0x468
 // Size: 0xa4
 function function_86d29fe1(var_f9289185, origin, angles, radius) {
-    var_31f1a7be = {#var_ad2e81ea:0, #var_91fc28f4:-1, #path:undefined, #radius:radius, #angles:angles, #origin:origin, #name:var_f9289185};
+    var_31f1a7be = {#at_goal:0, #var_91fc28f4:-1, #path:undefined, #radius:radius, #angles:angles, #origin:origin, #name:var_f9289185};
     return var_31f1a7be;
 }
 
@@ -132,7 +132,7 @@ function private think() {
             } else if (isdefined(var_31f1a7be.path)) {
                 var_31f1a7be function_3e88b567();
                 var_31f1a7be function_18ca9034();
-            } else if (var_31f1a7be.var_ad2e81ea == 1) {
+            } else if (var_31f1a7be.at_goal == 1) {
                 var_31f1a7be function_684b4879();
             }
         }
@@ -152,7 +152,7 @@ function private function_3e88b567() {
             self.path = undefined;
             self.var_91fc28f4 = -1;
             self.origin = goal;
-            self.var_ad2e81ea = 1;
+            self.at_goal = 1;
             return;
         }
         goal = self.path.pathpoints[self.var_91fc28f4];

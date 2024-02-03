@@ -85,7 +85,7 @@ function function_a485d734() {
     self.var_216935f8 = 1;
     self.var_c7121c91 = 1;
     self.var_32c5c724 = 1;
-    self.org = namespace_ec06fe4a::function_e22ae9b3(self.origin, "tag_origin", (0, 0, 0), "steiner org");
+    self.org = namespace_ec06fe4a::spawnmodel(self.origin, "tag_origin", (0, 0, 0), "steiner org");
     if (isdefined(self.org)) {
         self.org thread namespace_ec06fe4a::function_d55f042c(self, "death");
     }
@@ -438,7 +438,7 @@ function private function_3aa93442(entity) {
                 target_origin = enemy.origin + vectorscale((0, 0, 1), 8);
                 velocity = enemy getvelocity();
                 target_origin = target_origin + velocity;
-                org = namespace_ec06fe4a::function_e22ae9b3(target_origin, "tag_origin", (0, 0, 0), "steiner blast org");
+                org = namespace_ec06fe4a::spawnmodel(target_origin, "tag_origin", (0, 0, 0), "steiner blast org");
                 if (isdefined(org)) {
                     org thread namespace_ec06fe4a::function_52afe5df(2);
                     org thread function_f7d9bc34();
@@ -688,7 +688,7 @@ function private function_a56050b0() {
         if (trace[#"fraction"] < 1) {
             origin = trace[#"position"];
         }
-        var_b308e59c = namespace_ec06fe4a::function_e22ae9b3(origin, "tag_origin");
+        var_b308e59c = namespace_ec06fe4a::spawnmodel(origin, "tag_origin");
         if (isdefined(var_b308e59c)) {
             var_b308e59c.targetname = "steinerBomb";
             var_b308e59c.owner = owner;
@@ -842,11 +842,11 @@ function private function_ac56fb75() {
 // Params 5, eflags: 0x6 linked
 // Checksum 0x1b9f19b0, Offset: 0x3448
 // Size: 0x194
-function private function_eafb4701(var_49a15185, location, health, offset, enemy) {
-    if (!isdefined(var_49a15185)) {
+function private function_eafb4701(spawndef, location, health, offset, enemy) {
+    if (!isdefined(spawndef)) {
         return;
     }
-    entity = doa_enemy::function_db55a448(var_49a15185, location, enemy);
+    entity = doa_enemy::function_db55a448(spawndef, location, enemy);
     if (!isdefined(entity)) {
         return;
     }
@@ -1063,8 +1063,8 @@ function function_dab44559(behaviortreeentity) {
 // Size: 0x1ba
 function private function_21746f2d(var_eab3f54a) {
     var_533af8f8 = !is_true(self.ai.var_e93366a) && var_eab3f54a > 722500;
-    var_6f83ac80 = self.zombie_move_speed == "run";
-    if (var_533af8f8 && !var_6f83ac80) {
+    isrunning = self.zombie_move_speed == "run";
+    if (var_533af8f8 && !isrunning) {
         if (!isdefined(self.ai.var_775c2bfe)) {
             self.ai.var_775c2bfe = gettime() + randomintrange(1000, 2000);
         }
@@ -1072,11 +1072,11 @@ function private function_21746f2d(var_eab3f54a) {
             var_533af8f8 = 0;
         }
     }
-    if (self.ai.var_3dbed9a0 < gettime() && var_533af8f8 != var_6f83ac80) {
+    if (self.ai.var_3dbed9a0 < gettime() && var_533af8f8 != isrunning) {
         if (var_533af8f8) {
             currentvelocity = self getvelocity();
-            var_b6c99040 = length(currentvelocity);
-            if (!var_6f83ac80 || var_b6c99040 > 0) {
+            currentspeed = length(currentvelocity);
+            if (!isrunning || currentspeed > 0) {
                 self.ai.var_3dbed9a0 = gettime() + 2000;
                 self.zombie_move_speed = "run";
                 self.ai.var_775c2bfe = undefined;

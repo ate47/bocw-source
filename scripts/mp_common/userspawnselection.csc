@@ -47,14 +47,14 @@ function setupclientfields() {
 // Checksum 0x6c00f114, Offset: 0x558
 // Size: 0x1ec
 function private setupstaticmodelfieldsforspawngroup(spawngroup) {
-    var_1585eabf = getuimodel(function_5f72e972(#"hash_5e10ae8c08eeb04b"), isdefined(spawngroup.uiindex) ? "" + spawngroup.uiindex : "");
+    basemodel = getuimodel(function_5f72e972(#"hash_5e10ae8c08eeb04b"), isdefined(spawngroup.uiindex) ? "" + spawngroup.uiindex : "");
     spawngroupname = "";
     if (isdefined(spawngroup.ui_label)) {
         spawngroupname = spawngroup.ui_label;
     }
-    setuimodelvalue(getuimodel(var_1585eabf, "regionName"), spawngroupname);
-    setuimodelvalue(getuimodel(var_1585eabf, "team"), spawngroup.script_team);
-    var_1de19812 = getuimodel(var_1585eabf, "origin");
+    setuimodelvalue(getuimodel(basemodel, "regionName"), spawngroupname);
+    setuimodelvalue(getuimodel(basemodel, "team"), spawngroup.script_team);
+    var_1de19812 = getuimodel(basemodel, "origin");
     setuimodelvalue(getuimodel(var_1de19812, "x"), spawngroup.origin[0]);
     setuimodelvalue(getuimodel(var_1de19812, "y"), spawngroup.origin[1]);
     setuimodelvalue(getuimodel(var_1de19812, "z"), spawngroup.origin[2]);

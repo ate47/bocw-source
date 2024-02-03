@@ -860,8 +860,8 @@ function function_ec4525c8() {
                 namespace_1e25ad94::function_70e370a(x + 460, y, text, color, 1, 1, 0.05);
             }
             duration = gettime() - room.var_5bbf26b8;
-            var_decda8e8 = function_71719130(duration);
-            text = "LAST SEEN: " + var_decda8e8 + "    COOLDOWN: " + (room.var_a702483f != 9999999 ? room.var_a702483f : "Infinite");
+            timetext = function_71719130(duration);
+            text = "LAST SEEN: " + timetext + "    COOLDOWN: " + (room.var_a702483f != 9999999 ? room.var_a702483f : "Infinite");
             namespace_1e25ad94::function_70e370a(x + 550, y, text, color, 1, 1, 0.05);
             y = y + 20;
         }
@@ -893,8 +893,8 @@ function function_e25eba77() {
         } else {
             return;
         }
-        var_decda8e8 = function_71719130(duration);
-        text = "WILD DURATION: " + var_decda8e8;
+        timetext = function_71719130(duration);
+        text = "WILD DURATION: " + timetext;
         namespace_1e25ad94::function_70e370a(x, y, text, (1, 1, 1), 1, 1, 0.05);
         y = y + 20;
         text = "TOTAL GENERATORS: " + level.doa.var_8acd67ef.size;
@@ -927,12 +927,12 @@ function function_e25eba77() {
         text = "WORLD ACTIVATED: " + level.doa.var_c793b1bb.size + " MODELS ALIVE: " + count;
         namespace_1e25ad94::function_70e370a(x, y, text, (1, 1, 1), 1, 1, 0.05);
         y = y + 20;
-        var_decda8e8 = gettime();
-        text = "GAME TIME: " + var_decda8e8;
+        timetext = gettime();
+        text = "GAME TIME: " + timetext;
         namespace_1e25ad94::function_70e370a(x, y, text, (1, 1, 1), 1, 1, 0.05);
         y = y + 20;
-        var_decda8e8 = function_71719130(gettime() - level.doa.gamestarttime);
-        text = "GAME DURATION: " + var_decda8e8;
+        timetext = function_71719130(gettime() - level.doa.gamestarttime);
+        text = "GAME DURATION: " + timetext;
         namespace_1e25ad94::function_70e370a(x, y, text, (1, 1, 1), 1, 1, 0.05);
         y = y + 20;
         text = "TOTAL PLAYER DEATHS: " + level.doa.var_bcc1fc05;
@@ -952,8 +952,8 @@ function function_e25eba77() {
                 y = y + 20;
                 text = "PLAYER (" + player.doa.color + ") PELTMASK: ";
                 for (i = level.doa.var_4eb7c3f0 - 1; i >= 0; i--) {
-                    var_5159caf4 = 1 << i;
-                    set = player.doa.var_f240d1a5 & var_5159caf4;
+                    typemask = 1 << i;
+                    set = player.doa.var_f240d1a5 & typemask;
                     text = text + (set ? "1" : "0");
                 }
                 namespace_1e25ad94::function_70e370a(x, y, text, (1, 1, 1), 1, 1, 0.05);
@@ -992,7 +992,7 @@ function function_8f024d05() {
     var_f956d12 = 150;
     while (1) {
         waitframe(1);
-        if (!isdefined(level.doa.var_46ba1186)) {
+        if (!isdefined(level.doa.roundstarttime)) {
             continue;
         }
         if (namespace_4dae815d::function_59a9cf1d() != 0) {
@@ -1031,10 +1031,10 @@ function function_8f024d05() {
         if (level.doa.var_f66b524a !== 0) {
             duration = level.doa.var_f66b524a;
         } else {
-            duration = gettime() - level.doa.var_46ba1186;
+            duration = gettime() - level.doa.roundstarttime;
         }
-        var_decda8e8 = function_71719130(duration);
-        text = "DURATION: " + var_decda8e8;
+        timetext = function_71719130(duration);
+        text = "DURATION: " + timetext;
         namespace_1e25ad94::function_70e370a(x, y, text, (1, 1, 1), 1, 1, 0.05);
         y = y + 20;
         if (isdefined(level.doa.var_a8834e17)) {
@@ -1099,12 +1099,12 @@ function function_8f024d05() {
         text = "ROUND PLAYER DEATHS: " + level.doa.var_465867b;
         namespace_1e25ad94::function_70e370a(x, y, text, (1, 1, 1), 1, 1, 0.05);
         y = y + 40;
-        var_decda8e8 = gettime();
-        text = "GAME TIME: " + var_decda8e8;
+        timetext = gettime();
+        text = "GAME TIME: " + timetext;
         namespace_1e25ad94::function_70e370a(x, y, text, (1, 1, 1), 1, 1, 0.05);
         y = y + 20;
-        var_decda8e8 = function_71719130(gettime() - level.doa.gamestarttime);
-        text = "GAME DURATION: " + var_decda8e8;
+        timetext = function_71719130(gettime() - level.doa.gamestarttime);
+        text = "GAME DURATION: " + timetext;
         namespace_1e25ad94::function_70e370a(x, y, text, (1, 1, 1), 1, 1, 0.05);
         y = y + 20;
         text = "TOTAL PLAYER DEATHS: " + level.doa.var_bcc1fc05;
@@ -1124,8 +1124,8 @@ function function_8f024d05() {
                 y = y + 20;
                 text = "PLAYER (" + player.doa.color + ") PELTMASK: ";
                 for (i = level.doa.var_4eb7c3f0 - 1; i >= 0; i--) {
-                    var_5159caf4 = 1 << i;
-                    set = player.doa.var_f240d1a5 & var_5159caf4;
+                    typemask = 1 << i;
+                    set = player.doa.var_f240d1a5 & typemask;
                     text = text + (set ? "1" : "0");
                 }
                 namespace_1e25ad94::function_70e370a(x, y, text, (1, 1, 1), 1, 1, 0.05);
@@ -1212,8 +1212,8 @@ function function_1a837918() {
             text = "PB = percentage of builds";
             namespace_1e25ad94::function_70e370a(x, y, text, vectorscale((1, 1, 1), 0.5), 1, 1, 0.05);
             y = y + 30;
-            foreach (var_a557de6c in level.doa.var_830f8412) {
-                var_2e0252f2 = {#count:level.doa.var_4cdaff39[var_a557de6c], #name:var_a557de6c};
+            foreach (tileid in level.doa.var_830f8412) {
+                var_2e0252f2 = {#count:level.doa.var_4cdaff39[tileid], #name:tileid};
                 if (var_2e0252f2.count == 0) {
                     continue;
                 }
@@ -1396,17 +1396,17 @@ function function_1552e594() {
             result = level waittill(#"hash_5c97c4241ba01be4");
             name = [[ level.doa.var_a77e6349 ]]->getname();
             section = [[ level.doa.var_a77e6349 ]]->function_7c246362();
-            var_42dc1483 = function_6d6477c9(name, section.id);
-            if (isdefined(var_42dc1483)) {
+            estimate = function_6d6477c9(name, section.id);
+            if (isdefined(estimate)) {
                 foreach (guy in guys) {
                     if (!isdefined(guy)) {
                         continue;
                     }
                     guy.doa.var_d524abd8 = 0;
                 }
-                level thread namespace_6e90e490::function_c937e51f(var_42dc1483.time);
+                level thread namespace_6e90e490::function_c937e51f(estimate.time);
                 result = undefined;
-                result = level waittilltimeout(var_42dc1483.time, #"hash_7626a6770055d63c");
+                result = level waittilltimeout(estimate.time, #"hash_7626a6770055d63c");
                 level thread namespace_6e90e490::function_fa6f7ba7();
                 if (result._notify == #"timeout") {
                     while (isdefined(level.doa.var_6f3d327) || isdefined(level.doa.var_182fb75a)) {
@@ -1421,7 +1421,7 @@ function function_1552e594() {
                             [[ level.doa.var_a77e6349 ]]->function_411b63ca();
                         }
                     }
-                    namespace_7f5aeb59::function_f8645db3(var_42dc1483.xp);
+                    namespace_7f5aeb59::function_f8645db3(estimate.xp);
                 }
             }
         } else if (isdefined(level.doa.teleporter) && randomint(5) == 0) {
@@ -1489,9 +1489,9 @@ function function_1552e594() {
 function function_b255a702() {
     level endon(#"hash_12d79bc0fed4ee5a");
     while (1) {
-        arena = getdvar(#"hash_12134c95f194c7e4", "");
+        arena = getdvar(#"skipto_jump", "");
         if (arena != "") {
-            setdvar(#"hash_12134c95f194c7e4", "");
+            setdvar(#"skipto_jump", "");
             arena = int(arena);
             if (arena < 0 || arena >= level.doa.var_422d359d.size) {
                 arena = 0;
@@ -1871,7 +1871,7 @@ function function_598305fe() {
         function_a70ff03e(level.doa.var_ecff3871);
         function_7a0e5387();
         level notify(#"hash_40a4d01c20db352c");
-        [[ level.doa.var_39e3fa99 ]]->function_4aca7529(1);
+        [[ level.doa.var_39e3fa99 ]]->setpaused(1);
         level set_lighting_state(3, 0);
         level set("<unknown string>", 3);
         player1 = getplayers()[0];
@@ -1879,8 +1879,8 @@ function function_598305fe() {
             level.doa.dev = spawnstruct();
             var_6d450e1e = get("<unknown string>");
             var_e2fdda78 = get("<unknown string>");
-            level.doa.dev.playerorg = function_e22ae9b3(var_6d450e1e.origin, "<unknown string>", var_6d450e1e.angles, "<unknown string>");
-            level.doa.dev.var_85d6cfdf = function_e22ae9b3(var_e2fdda78.origin, "<unknown string>", var_e2fdda78.angles, "<unknown string>");
+            level.doa.dev.playerorg = spawnmodel(var_6d450e1e.origin, "<unknown string>", var_6d450e1e.angles, "<unknown string>");
+            level.doa.dev.var_85d6cfdf = spawnmodel(var_e2fdda78.origin, "<unknown string>", var_e2fdda78.angles, "<unknown string>");
             player1 linkto(level.doa.dev.playerorg);
             player1.doa.var_57eaec6e = 1;
         }

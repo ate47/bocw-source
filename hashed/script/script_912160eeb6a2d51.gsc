@@ -502,7 +502,7 @@ function function_ca2b6f35() {
             if (now < var_ece722e0.end && issentient(var_ece722e0.ent) && !self cansee(var_ece722e0.ent)) {
                 var_c24fdf79 = self function_a884a736(var_ece722e0.ent);
                 if (isplayer(var_ece722e0.ent)) {
-                    var_ece722e0.ent thread function_7f381bc5(1, max(var_ece722e0.ent.stealth.var_dee4cb7d, var_c24fdf79));
+                    var_ece722e0.ent thread function_7f381bc5(1, max(var_ece722e0.ent.stealth.maxthreat, var_c24fdf79));
                 }
                 if (var_c24fdf79 + delta < level.var_53ad6e22[#"ai_threatforcedmax"]) {
                     var_c24fdf79 = var_c24fdf79 + delta;
@@ -545,7 +545,7 @@ function function_40733f9f() {
     var_94603cb7 = 0;
     while (1) {
         var_6330dd7b = 0;
-        self.stealth.var_dee4cb7d = 0;
+        self.stealth.maxthreat = 0;
         self.stealth.var_96052c58 = -1;
         playereye = self getplayercamerapos();
         var_2efc79ea = 0.2588;
@@ -590,10 +590,10 @@ function function_40733f9f() {
                         entity namespace_979752dc::function_64608a78();
                     }
                 }
-                var_8735c97f = self.stealth.var_dee4cb7d;
-                self.stealth.var_dee4cb7d = max(self.stealth.var_dee4cb7d, entity function_a884a736(self));
-                if (self.stealth.var_dee4cb7d > 0.05) {
-                    if (!isdefined(self.stealth.var_2a34ee37) || self.stealth.var_dee4cb7d !== var_8735c97f) {
+                var_8735c97f = self.stealth.maxthreat;
+                self.stealth.maxthreat = max(self.stealth.maxthreat, entity function_a884a736(self));
+                if (self.stealth.maxthreat > 0.05) {
+                    if (!isdefined(self.stealth.var_2a34ee37) || self.stealth.maxthreat !== var_8735c97f) {
                         self.stealth.var_2a34ee37 = entity;
                     }
                 }
@@ -604,7 +604,7 @@ function function_40733f9f() {
         }
         var_56a7a731 = !var_6330dd7b && var_94603cb7 > 0 && gettime() - var_94603cb7 < 250;
         if (level.var_53ad6e22[#"ai_threatsightfakethreat"] <= 0) {
-            self thread function_7f381bc5(var_56a7a731, self.stealth.var_dee4cb7d);
+            self thread function_7f381bc5(var_56a7a731, self.stealth.maxthreat);
         }
         self.stealth.var_bb1e2d94 = var_56a7a731;
         wait(0.05);
@@ -639,23 +639,23 @@ function function_5ea66bc2(origin, amount) {
     setsaveddvar(#"ai_threatsightfakex", origin[0]);
     setsaveddvar(#"ai_threatsightfakey", origin[1]);
     setsaveddvar(#"ai_threatsightfakez", origin[2]);
-    if (!isdefined(self.stealth.var_dee4cb7d)) {
-        self.stealth.var_dee4cb7d = 0;
+    if (!isdefined(self.stealth.maxthreat)) {
+        self.stealth.maxthreat = 0;
     }
     while (amount > 0) {
-        self thread function_7f381bc5(1, max(self.stealth.var_dee4cb7d, amount));
+        self thread function_7f381bc5(1, max(self.stealth.maxthreat, amount));
         wait(0.05);
     }
-    self thread function_7f381bc5(0, max(self.stealth.var_dee4cb7d, amount));
+    self thread function_7f381bc5(0, max(self.stealth.maxthreat, amount));
 }
 
 // Namespace namespace_6c0cd084/threat_sight
 // Params 3, eflags: 0x2 linked
 // Checksum 0xe5b0c426, Offset: 0x2998
 // Size: 0x68
-function function_7f381bc5(var_56a7a731, var_dee4cb7d, var_2107b994) {
+function function_7f381bc5(var_56a7a731, maxthreat, var_2107b994) {
     if (isdefined(level.stealth) && isdefined(level.stealth.var_32a3a19)) {
-        self thread [[ level.stealth.var_32a3a19 ]](var_56a7a731, var_dee4cb7d, var_2107b994);
+        self thread [[ level.stealth.var_32a3a19 ]](var_56a7a731, maxthreat, var_2107b994);
     }
 }
 

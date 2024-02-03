@@ -255,10 +255,10 @@ function function_42d1d544(instance) {
         self thread function_35bafcde(instance, var_b61e50f0);
         if (var_b61e50f0 === var_3875a0bb) {
             self.b_set = 1;
-            instance notify(#"hash_2277cbc7a1c6b43", {#var_e43750de:self, #var_3219b3cb:1});
+            instance notify(#"hash_2277cbc7a1c6b43", {#var_e43750de:self, #increase:1});
         } else if (is_true(self.b_set)) {
             self.b_set = 0;
-            instance notify(#"hash_2277cbc7a1c6b43", {#var_e43750de:self, #var_3219b3cb:0});
+            instance notify(#"hash_2277cbc7a1c6b43", {#var_e43750de:self, #increase:0});
         }
         wait(0.5);
         usetrigger sethintstring(#"hash_62ab4ca34f5b97d6");
@@ -293,7 +293,7 @@ function function_2c1d994f(instance) {
     while (1) {
         result = undefined;
         result = instance waittill(#"hash_2277cbc7a1c6b43");
-        if (is_true(result.var_3219b3cb)) {
+        if (is_true(result.increase)) {
             n_count++;
             if (n_count === 3) {
                 instance flag::set("correct_frequencies");

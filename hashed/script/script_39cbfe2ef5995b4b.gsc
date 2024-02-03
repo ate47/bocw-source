@@ -317,13 +317,13 @@ function private function_24dc1d12(*item, *player, *networkid, *itemid, *itemcou
 // Size: 0x2ea
 function private function_c3f4d281(item, *player, *networkid, *itemid, *itemcount, *var_aec6fa7f, *slotid) {
     self hud::function_4a4de0de();
-    var_a9bb683c = getweapon(#"none");
+    nullweapon = getweapon(#"none");
     var_f945fa92 = getweapon(#"bare_hands");
     var_f934814c = getweapon(#"ww_ieu_electric_t9");
     var_92587dd3 = getweapon(#"hash_4ee16eb0581e4646");
     foreach (weaponslot in namespace_a0d533d1::function_4905dddf()) {
         inventoryweapon = self namespace_a0d533d1::function_2b83d3ff(self item_inventory::function_2e711614(weaponslot));
-        if (isdefined(inventoryweapon) && inventoryweapon != var_a9bb683c && inventoryweapon != var_f945fa92 && inventoryweapon.weapclass != "melee" && inventoryweapon.rootweapon != var_f934814c && inventoryweapon.rootweapon != var_92587dd3) {
+        if (isdefined(inventoryweapon) && inventoryweapon != nullweapon && inventoryweapon != var_f945fa92 && inventoryweapon.weapclass != "melee" && inventoryweapon.rootweapon != var_f934814c && inventoryweapon.rootweapon != var_92587dd3) {
             var_1326fcc7 = isdefined(slotid.var_a6762160.amount) ? slotid.var_a6762160.amount : 20;
             maxammo = inventoryweapon.maxammo;
             var_e6527384 = maxammo * var_1326fcc7 / 100;

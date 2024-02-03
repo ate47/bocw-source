@@ -98,7 +98,7 @@ function function_a6101b7() {
         level flag::wait_till("first_player_spawned");
         util::set_lighting_state(1);
         exploder::exploder("fxexp_holiday");
-        if (util::get_game_type() === #"hash_1065e6adeeb8ed5a") {
+        if (util::get_game_type() === #"zonslaught") {
             hidemiscmodels("nt6_xmas_props_no_zm");
             array::delete_all(getentarray("nt6_xmas_props_no_zm", "targetname"));
         }
@@ -107,7 +107,7 @@ function function_a6101b7() {
         level flag::wait_till("first_player_spawned");
         util::set_lighting_state(1);
         exploder::exploder("fxexp_halloween");
-        if (util::get_game_type() === #"hash_1065e6adeeb8ed5a") {
+        if (util::get_game_type() === #"zonslaught") {
             hidemiscmodels("nt6_halloween_props_no_zm");
             array::delete_all(getentarray("nt6_halloween_props_no_zm", "targetname"));
         }
@@ -128,7 +128,7 @@ function function_a6101b7() {
 // Checksum 0xdca2d179, Offset: 0xba0
 // Size: 0x9c
 function function_21acba11() {
-    if (util::get_game_type() !== #"hash_1065e6adeeb8ed5a" && util::get_game_type() !== #"hash_321225a5ce1eb35") {
+    if (util::get_game_type() !== #"zonslaught" && util::get_game_type() !== #"hash_321225a5ce1eb35") {
         hidemiscmodels("nt6_onslaught_props");
         array::delete_all(getentarray("nt6_onslaught_props", "targetname"));
     }

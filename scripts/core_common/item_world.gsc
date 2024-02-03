@@ -969,8 +969,8 @@ function private function_3f63e44f(itemdef) {
     if (isdefined(itemdef.var_afda6972) && gettime() < itemdef.var_afda6972) {
         return 0;
     }
-    var_104eb1a8 = itemdef.origin - self.origin;
-    if (lengthsquared(var_104eb1a8) > function_a3f6cdac(itemdef.var_a6762160.var_16e34ef4)) {
+    usedir = itemdef.origin - self.origin;
+    if (lengthsquared(usedir) > function_a3f6cdac(itemdef.var_a6762160.var_16e34ef4)) {
         return 0;
     }
     if (!self item_world_util::can_pick_up(itemdef)) {

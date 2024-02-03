@@ -1,31 +1,31 @@
 {
     "var_1ad142ee": [
         {
-            "var_46bd7973": "#hash_39c33d9f9bc18892",
+            "soundevent": "#hash_39c33d9f9bc18892",
             "var_f35c5951": 1,
             "var_5d4b5964": 6.1,
             "var_36bf8e05": "#hash_15fe6f984686cb47"
         },
         {
-            "var_46bd7973": "#hash_39c33e9f9bc18a45",
+            "soundevent": "#hash_39c33e9f9bc18a45",
             "var_f35c5951": 8,
             "var_5d4b5964": 16.7,
             "var_36bf8e05": "#hash_47c0f8dc0b01d98e"
         },
         {
-            "var_46bd7973": "#hash_39c33b9f9bc1852c",
+            "soundevent": "#hash_39c33b9f9bc1852c",
             "var_f35c5951": 26,
             "var_5d4b5964": 16.58,
             "var_36bf8e05": "#hash_23c3201927db2341"
         },
         {
-            "var_46bd7973": "#hash_39c33c9f9bc186df",
+            "soundevent": "#hash_39c33c9f9bc186df",
             "var_f35c5951": 43.27,
             "var_5d4b5964": 12.89,
             "var_36bf8e05": "#hash_755a1c74777a6808"
         },
         {
-            "var_46bd7973": "#hash_39c3399f9bc181c6",
+            "soundevent": "#hash_39c3399f9bc181c6",
             "var_f35c5951": 57.5,
             "var_5d4b5964": 13.35,
             "var_36bf8e05": "#hash_6237c29f0c8497b"
@@ -39,7 +39,7 @@
     "uimodel": "#hash_7dcfe35ccda755f1",
     "var_2a12d36": 1,
     "type": "zmintel",
-    "var_ad4ad686": "#hash_5ad2dea4c296de59",
+    "var_ad4ad686": "#maxis",
     "soundloop": "#hash_5db0167d85d70c82",
     "name": "zmintel_silver_maxis_radio_2",
     "var_9be0526e": "#hash_20ea75a25d912949",

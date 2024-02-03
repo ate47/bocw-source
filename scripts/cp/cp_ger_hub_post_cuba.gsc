@@ -13,17 +13,17 @@
 #using scripts\core_common\clientfield_shared.gsc;
 #using scripts\core_common\array_shared.gsc;
 
-#namespace namespace_ba621c15;
+#namespace hub_post_cuba;
 
-// Namespace namespace_ba621c15/cp_ger_hub_post_cuba
+// Namespace hub_post_cuba/cp_ger_hub_post_cuba
 // Params 1, eflags: 0x2 linked
 // Checksum 0xf21bb987, Offset: 0x240
 // Size: 0xc
-function function_f9f06983(*var_d3440450) {
+function starting(*var_d3440450) {
     
 }
 
-// Namespace namespace_ba621c15/cp_ger_hub_post_cuba
+// Namespace hub_post_cuba/cp_ger_hub_post_cuba
 // Params 2, eflags: 0x2 linked
 // Checksum 0xb00cc22f, Offset: 0x258
 // Size: 0x214
@@ -53,7 +53,7 @@ function main(var_d3440450, *var_50cc0d4f) {
     skipto::function_1c2dfc20("cp_nam_prisoner");
 }
 
-// Namespace namespace_ba621c15/cp_ger_hub_post_cuba
+// Namespace hub_post_cuba/cp_ger_hub_post_cuba
 // Params 0, eflags: 0x2 linked
 // Checksum 0x851b895e, Offset: 0x478
 // Size: 0x34
@@ -62,7 +62,7 @@ function function_26282537() {
     level thread namespace_4ed3ce47::function_dbf416c4();
 }
 
-// Namespace namespace_ba621c15/cp_ger_hub_post_cuba
+// Namespace hub_post_cuba/cp_ger_hub_post_cuba
 // Params 0, eflags: 0x2 linked
 // Checksum 0xe5b4781b, Offset: 0x4b8
 // Size: 0x34
@@ -71,7 +71,7 @@ function function_eeb6e2e1() {
     level thread namespace_4ed3ce47::function_c05156e2();
 }
 
-// Namespace namespace_ba621c15/cp_ger_hub_post_cuba
+// Namespace hub_post_cuba/cp_ger_hub_post_cuba
 // Params 0, eflags: 0x2 linked
 // Checksum 0x3bb51ad4, Offset: 0x4f8
 // Size: 0x34
@@ -80,7 +80,7 @@ function function_d2e1f6b8() {
     level thread namespace_4ed3ce47::function_97d155da();
 }
 
-// Namespace namespace_ba621c15/cp_ger_hub_post_cuba
+// Namespace hub_post_cuba/cp_ger_hub_post_cuba
 // Params 0, eflags: 0x2 linked
 // Checksum 0xe06be658, Offset: 0x538
 // Size: 0xf2
@@ -102,7 +102,7 @@ function function_107195fb() {
     }
 }
 
-// Namespace namespace_ba621c15/cp_ger_hub_post_cuba
+// Namespace hub_post_cuba/cp_ger_hub_post_cuba
 // Params 1, eflags: 0x2 linked
 // Checksum 0x110ffe3, Offset: 0x638
 // Size: 0x1a2
@@ -125,7 +125,7 @@ function function_276264f4(str_scene) {
     wait(5);
 }
 
-// Namespace namespace_ba621c15/cp_ger_hub_post_cuba
+// Namespace hub_post_cuba/cp_ger_hub_post_cuba
 // Params 0, eflags: 0x2 linked
 // Checksum 0xcdbef977, Offset: 0x7e8
 // Size: 0x24
@@ -133,7 +133,7 @@ function function_f50bc4b9() {
     level flag::init("flag_post_cuba_complete");
 }
 
-// Namespace namespace_ba621c15/cp_ger_hub_post_cuba
+// Namespace hub_post_cuba/cp_ger_hub_post_cuba
 // Params 0, eflags: 0x2 linked
 // Checksum 0x97312fcd, Offset: 0x818
 // Size: 0x4c

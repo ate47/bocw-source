@@ -1254,8 +1254,8 @@ function function_e0a4ccda() {
 // Checksum 0x735b5d12, Offset: 0x60e8
 // Size: 0x44
 function private function_76c00f63(a_ents) {
-    level.var_2915c81 = a_ents[#"prop 1"];
-    level.var_2915c81 thread function_e77d33cb();
+    level.mixer = a_ents[#"prop 1"];
+    level.mixer thread function_e77d33cb();
 }
 
 // Namespace zm_gold/zm_gold

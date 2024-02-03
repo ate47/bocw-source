@@ -67,7 +67,7 @@ function function_ccdf77da(uid, ent, var_a9e3715c, max_dist = 500) {
     data.max_dist = max_dist;
     data.var_c42ac92 = &function_73b1e949;
     data.var_f03d5bb1 = &function_136c1375;
-    function_64126649(uid, data);
+    _register(uid, data);
     ent thread function_50676d1(uid);
 }
 
@@ -84,7 +84,7 @@ function function_eb5d0a02(uid, trigger, var_a9e3715c, max_dist = 500, var_36247
     data.var_c42ac92 = &function_fc5ed81d;
     data.var_f03d5bb1 = &function_f56da461;
     data.var_774d5d03 = var_774d5d03;
-    function_64126649(uid, data);
+    _register(uid, data);
 }
 
 // Namespace namespace_93648050/namespace_93648050
@@ -94,7 +94,7 @@ function function_eb5d0a02(uid, trigger, var_a9e3715c, max_dist = 500, var_36247
 function function_23e7a30a(uid, center, angles, width, height, var_a9e3715c, max_dist = 500, var_206eca0c, var_36247bfb, var_774d5d03 = 1) {
     data = {};
     data.center = center;
-    data.axis = function_237971e2(angles);
+    data.axis = anglestoaxis(angles);
     data.width = width / 2;
     data.height = height / 2;
     data.var_a9e3715c = var_a9e3715c;
@@ -114,7 +114,7 @@ function function_23e7a30a(uid, center, angles, width, height, var_a9e3715c, max
         data.var_1321588e = angleclamp180(angles - var_206eca0c.angles);
         data.var_206eca0c thread function_50676d1(uid);
     }
-    function_64126649(uid, data);
+    _register(uid, data);
 }
 
 // Namespace namespace_93648050/namespace_93648050
@@ -124,7 +124,7 @@ function function_23e7a30a(uid, center, angles, width, height, var_a9e3715c, max
 function function_39142278(uid, center, angles, radius, var_a9e3715c, max_dist = 500, var_206eca0c, var_36247bfb, var_774d5d03 = 1) {
     data = {};
     data.center = center;
-    data.axis = function_237971e2(angles);
+    data.axis = anglestoaxis(angles);
     data.radius = radius;
     data.var_a9e3715c = var_a9e3715c;
     data.max_dist = max_dist;
@@ -142,7 +142,7 @@ function function_39142278(uid, center, angles, radius, var_a9e3715c, max_dist =
         data.var_1321588e = angleclamp180(angles - var_206eca0c.angles);
         data.var_206eca0c thread function_50676d1(uid);
     }
-    function_64126649(uid, data);
+    _register(uid, data);
 }
 
 // Namespace namespace_93648050/namespace_93648050
@@ -163,7 +163,7 @@ function remove(uid) {
 // Params 0, eflags: 0x0
 // Checksum 0xf1ed3898, Offset: 0xb68
 // Size: 0x7e
-function function_15d47899() {
+function remove_all() {
     level notify(#"hash_54c689354421dd79");
     level.var_93648050.objects = [];
     level.var_93648050.ents = [];
@@ -176,7 +176,7 @@ function function_15d47899() {
 // Params 2, eflags: 0x6 linked
 // Checksum 0xbebd0381, Offset: 0xbf0
 // Size: 0x184
-function private function_64126649(uid, data) {
+function private _register(uid, data) {
     if (!isdefined(data.var_774d5d03)) {
         data.var_774d5d03 = 0;
     }
@@ -298,7 +298,7 @@ function private function_975e779f(data) {
         if (lengthsquared(angle_delta) > 1) {
             data.var_9a145184 = rotatepoint(data.var_9a145184, angle_delta);
             data.angles = data.var_206eca0c.angles + data.var_1321588e;
-            data.axis = function_237971e2(data.angles);
+            data.axis = anglestoaxis(data.angles);
         }
         data.center = data.var_206eca0c.origin + data.var_9a145184;
     }

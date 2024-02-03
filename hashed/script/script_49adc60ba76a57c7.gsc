@@ -330,7 +330,7 @@ function elephantstartdeath(elephant) {
     phase = elephant.ai.phase;
     elephant.skipdeath = 1;
     elephant.diedinscriptedanim = 1;
-    elephant.entrailsmodel = namespace_ec06fe4a::function_e22ae9b3(elephant.origin);
+    elephant.entrailsmodel = namespace_ec06fe4a::spawnmodel(elephant.origin);
     elephant.entrailsmodel thread namespace_ec06fe4a::function_52afe5df(10);
     elephant.entrailsmodel setmodel(model);
     elephant.entrailsmodel useanimtree("generic");
@@ -376,7 +376,7 @@ function function_4b28fc8c(entity) {
     if (!isdefined(landpos)) {
         landpos = entity.favoriteenemy.origin;
     }
-    headproj = namespace_ec06fe4a::function_e22ae9b3(launchpos, "tag_origin");
+    headproj = namespace_ec06fe4a::spawnmodel(launchpos, "tag_origin");
     vectorfromenemy = vectornormalize(entity.origin - landpos);
     vectorfromenemy = vectorscale(vectorfromenemy, 250);
     targetpos = landpos + vectorfromenemy + vectorscale((0, 0, 1), 200);

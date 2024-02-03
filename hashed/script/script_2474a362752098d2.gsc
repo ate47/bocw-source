@@ -141,7 +141,7 @@ function function_bcedb01d() {
                 }
                 if (var_10316202) {
                     namespace_1e25ad94::function_f5f0c0f8("Paging IN Loot (" + item.modelname + ") at " + item.origin);
-                    var_a1f88ae1 = namespace_ec06fe4a::function_e22ae9b3(item.origin, item.modelname);
+                    var_a1f88ae1 = namespace_ec06fe4a::spawnmodel(item.origin, item.modelname);
                     if (!isdefined(var_a1f88ae1)) {
                         namespace_1e25ad94::function_f5f0c0f8("FAILED TO SPAWN MODEL (" + item.modelname + ") at " + item.origin);
                         continue;
@@ -197,8 +197,8 @@ function function_ebbc302() {
         }
         if (isdefined(closest)) {
             if (closest !== self.doa.var_96175d8a) {
-                var_c15a5a25 = abs(self.origin[2] - closest.origin[2]);
-                if (var_c15a5a25 > 128) {
+                deltaz = abs(self.origin[2] - closest.origin[2]);
+                if (deltaz > 128) {
                     closest = undefined;
                 }
                 if (isdefined(closest)) {
@@ -284,7 +284,7 @@ function function_8328d4bc(item) {
     if (!isdefined(item.var_950bcf12)) {
         item.var_950bcf12 = item.var_cbff4088;
     }
-    self.var_b57ccc47 = self.var_806ce8f;
+    self.lastitem = self.var_806ce8f;
     self.var_806ce8f = item;
     self sethintstring(#"hash_bf1faaf9f4ab783");
     switch (item.var_d6118311) {
@@ -350,7 +350,7 @@ function function_8328d4bc(item) {
             if (self.player.doa.score.keys == 0) {
                 self sethintstring(#"hash_39ebdbb0226b329f");
                 if (namespace_ec06fe4a::function_a8975c67()) {
-                    if (isdefined(self.var_b57ccc47) && self.var_b57ccc47 != self.var_806ce8f) {
+                    if (isdefined(self.lastitem) && self.lastitem != self.var_806ce8f) {
                         self.player playsoundtoplayer(#"hash_69cbee6dafb05bae", self.player);
                     }
                 }

@@ -33,7 +33,7 @@
 // Checksum 0xce6c13d9, Offset: 0x228
 // Size: 0x114
 function function_a53db30e(owner, origin) {
-    monkey_bomb = namespace_ec06fe4a::function_e22ae9b3(origin, "zombietron_monkey_bomb");
+    monkey_bomb = namespace_ec06fe4a::spawnmodel(origin, "zombietron_monkey_bomb");
     if (!isdefined(monkey_bomb)) {
         return;
     }

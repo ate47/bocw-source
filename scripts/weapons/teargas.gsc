@@ -91,7 +91,7 @@ function function_db9e3adb(watcher) {
     watcher.var_10efd558 = "switched_field_upgrade";
     if (isdefined(watcher.weapon.customsettings)) {
         var_e6fbac16 = getscriptbundle(watcher.weapon.customsettings);
-        watcher.var_20d0363e = var_e6fbac16.var_af22b5dc;
+        watcher.triggertime = var_e6fbac16.var_af22b5dc;
         watcher.activationdelay = var_e6fbac16.var_a3fd61e7;
         watcher.detectiongraceperiod = isdefined(var_e6fbac16.var_88b0248b) ? var_e6fbac16.var_88b0248b : 0;
         if (isdefined(var_e6fbac16.var_29467698) && var_e6fbac16.var_29467698 != 0) {

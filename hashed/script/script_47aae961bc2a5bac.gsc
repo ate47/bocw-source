@@ -129,7 +129,7 @@ function private function_738e0260() {
 // Params 5, eflags: 0x4
 // Checksum 0xaffd7506, Offset: 0x5f8
 // Size: 0x30c
-function private function_7814c6ed(player, var_10c559cd, playerangles, var_6b0b485e, maxdistance) {
+function private function_7814c6ed(player, playerview, playerangles, cosfov, maxdistance) {
     /#
         var_1e686756 = level._snd.var_88612b20.filter;
         soundalias = self function_738e0260();
@@ -150,11 +150,11 @@ function private function_7814c6ed(player, var_10c559cd, playerangles, var_6b0b4
         if (isdefined(origin) == 0) {
             return -1;
         }
-        deltapos = origin - var_10c559cd;
+        deltapos = origin - playerview;
         normal = vectornormalize(deltapos);
         playerforward = anglestoforward(playerangles);
         dot = vectordot(playerforward, normal);
-        var_988f1f92 = dot >= var_6b0b485e;
+        var_988f1f92 = dot >= cosfov;
         var_25f190e = level._snd.var_88612b20.dot;
         if (isdefined(player.var_6d42228d) && player.var_6d42228d == self && isdefined(player.var_c84d8d23) && player.var_c84d8d23 != dot) {
             player.var_c84d8d23 = dot;
@@ -167,7 +167,7 @@ function private function_7814c6ed(player, var_10c559cd, playerangles, var_6b0b4
         if (var_988f1f92 == 0) {
             return -1;
         }
-        dist = distance(var_10c559cd, origin);
+        dist = distance(playerview, origin);
         if (dist < 1) {
             return -1;
         }
@@ -182,10 +182,10 @@ function private function_7814c6ed(player, var_10c559cd, playerangles, var_6b0b4
 // Params 7, eflags: 0x4
 // Checksum 0xc95053ad, Offset: 0x910
 // Size: 0x216
-function private function_a3b46281(var_22a4e6a0, array, player, var_10c559cd, playerangles, *var_6b0b485e, maxdistance) {
+function private function_a3b46281(var_22a4e6a0, array, player, playerview, playerangles, *cosfov, maxdistance) {
     /#
-        playerforward = anglestoforward(var_6b0b485e);
-        playerfov = var_10c559cd function_731299e5();
+        playerforward = anglestoforward(cosfov);
+        playerfov = playerview function_731299e5();
         visible = [];
         /#
             assert(isarray(array));
@@ -222,15 +222,15 @@ function private function_9386ad03(player, var_977d0bf3) {
         /#
             assert(isdefined(var_977d0bf3) == 1);
         #/
-        var_10c559cd = player function_efda2d6d();
+        playerview = player function_efda2d6d();
         playerangles = player function_3d31768f();
         fov = player function_731299e5();
-        var_6b0b485e = cos(fov);
+        cosfov = cos(fov);
         if (isdefined(level.var_b7d2deb) == 1 && var_977d0bf3 >= 3) {
-            var_22a4e6a0 = function_a3b46281(var_22a4e6a0, level.var_b7d2deb, player, var_10c559cd, playerangles, var_6b0b485e, maxdistance);
+            var_22a4e6a0 = function_a3b46281(var_22a4e6a0, level.var_b7d2deb, player, playerview, playerangles, cosfov, maxdistance);
         }
         if (isdefined(level._snd) == 1 && isdefined(level._snd.var_3cc765a3) == 1) {
-            var_22a4e6a0 = function_a3b46281(var_22a4e6a0, level._snd.var_3cc765a3, player, var_10c559cd, playerangles, var_6b0b485e, maxdistance);
+            var_22a4e6a0 = function_a3b46281(var_22a4e6a0, level._snd.var_3cc765a3, player, playerview, playerangles, cosfov, maxdistance);
         }
         return var_22a4e6a0;
     #/
@@ -254,17 +254,17 @@ function private function_bf58f58b() {
         }
         if (soundalias != "<unknown string>") {
             angle = function_9119c373(soundalias, "<unknown string>");
-            var_81f8182f = function_7139f5ae(soundalias, "<unknown string>");
-            if (isdefined(var_81f8182f) == 1 && var_81f8182f > 0) {
-                radius = var_81f8182f;
+            dist_min = function_7139f5ae(soundalias, "<unknown string>");
+            if (isdefined(dist_min) == 1 && dist_min > 0) {
+                radius = dist_min;
             } else {
                 var_6d59b8a9 = 1;
             }
         }
         var_e3eb0c85 = 0;
         foreach (player in function_2b2b83dc()) {
-            var_10c559cd = player function_efda2d6d();
-            var_e3eb0c85 = function_c8caaab4(var_10c559cd, origin, radius);
+            playerview = player function_efda2d6d();
+            var_e3eb0c85 = function_c8caaab4(playerview, origin, radius);
             if (var_e3eb0c85 == 1) {
                 radius = var_3c7a802b;
                 break;
@@ -298,16 +298,16 @@ function private function_17547f34(player, var_22a4e6a0, *var_977d0bf3) {
         }
         var_623f1012 = level._snd.var_88612b20.var_4b824b64;
         fov = var_22a4e6a0 function_731299e5();
-        var_10c559cd = var_22a4e6a0 function_efda2d6d();
+        playerview = var_22a4e6a0 function_efda2d6d();
         playerangles = var_22a4e6a0 function_3d31768f();
         playerforward = anglestoforward(playerangles);
         var_25f190e = level._snd.var_88612b20.dot;
         var_f45e7cd0 = 0;
         var_2ae8ee02 = undefined;
-        var_574dfdc3 = function_9ade037c(var_10c559cd, playerforward, var_977d0bf3);
+        var_574dfdc3 = function_9ade037c(playerview, playerforward, var_977d0bf3);
         if (isdefined(var_574dfdc3)) {
             origin = var_574dfdc3 function_43c85ce2();
-            deltapos = origin - var_10c559cd;
+            deltapos = origin - playerview;
             normal = vectornormalize(deltapos);
             dot = vectordot(playerforward, normal);
             if (dot > var_25f190e && dot > var_f45e7cd0) {
@@ -331,35 +331,35 @@ function private function_b78b1ab1(player, *var_977d0bf3) {
         fov = var_977d0bf3 function_731299e5();
         origin = self function_43c85ce2();
         soundalias = self function_738e0260();
-        var_931f6be4 = "<unknown string>";
-        var_7760ab3f = "<unknown string>";
+        radiusmin = "<unknown string>";
+        radiusmax = "<unknown string>";
         /#
             assert(isdefined(var_977d0bf3) == 1);
         #/
-        var_10c559cd = var_977d0bf3 function_efda2d6d();
+        playerview = var_977d0bf3 function_efda2d6d();
         playerangles = var_977d0bf3 function_3d31768f();
         playerright = anglestoright(playerangles);
         if (soundalias != "<unknown string>") {
-            var_81f8182f = function_7139f5ae(soundalias, "<unknown string>");
+            dist_min = function_7139f5ae(soundalias, "<unknown string>");
             dist_max = function_10120598(soundalias, "<unknown string>");
-            if (isdefined(var_81f8182f) == 1 && var_81f8182f > 0) {
-                var_931f6be4 = var_81f8182f;
+            if (isdefined(dist_min) == 1 && dist_min > 0) {
+                radiusmin = dist_min;
             }
             if (isdefined(dist_max) == 1 && dist_max > 0) {
-                var_7760ab3f = dist_max;
+                radiusmax = dist_max;
             }
         }
         if (isdefined(soundalias) == 1) {
             var_c75cd11f = level._snd.var_88612b20.var_29cb2b81;
-            dist = distance(origin, var_10c559cd);
+            dist = distance(origin, playerview);
             alpha = 1;
             var_8b9208e = alpha * alpha;
-            if (function_90a7316b(var_931f6be4) == 1 && var_931f6be4 > 0 && function_90a7316b(var_7760ab3f) == 1 && var_7760ab3f > 0) {
+            if (isnumber(radiusmin) == 1 && radiusmin > 0 && isnumber(radiusmax) == 1 && radiusmax > 0) {
                 var_72d23dae = 0;
-                if (var_931f6be4 == var_7760ab3f) {
+                if (radiusmin == radiusmax) {
                     var_72d23dae = 0.001;
                 }
-                mapfloat(var_931f6be4, var_7760ab3f + var_72d23dae, 1, 0.5, dist);
+                mapfloat(radiusmin, radiusmax + var_72d23dae, 1, 0.5, dist);
             }
             var_7295dcac = dist * 0.00133333;
             function_ac033c46(soundalias, origin + (0, 0, -1.666 * var_7295dcac * var_c75cd11f * 24), -1.666 * var_c75cd11f, "<unknown string>", var_ff7397dc, alpha, (0, 0, 0), var_8b9208e, (1, 1, 1), var_8b9208e, 1);
@@ -370,15 +370,15 @@ function private function_b78b1ab1(player, *var_977d0bf3) {
             if (is_true(level._snd.var_8c37ff34)) {
                 var_69ea3b2c = "<unknown string>";
             }
-            var_69ea3b2c = var_69ea3b2c + "<unknown string>" + function_d6053a8f(var_931f6be4) + "<unknown string>" + function_d6053a8f(dist) + "<unknown string>" + function_d6053a8f(var_7760ab3f);
+            var_69ea3b2c = var_69ea3b2c + "<unknown string>" + function_d6053a8f(radiusmin) + "<unknown string>" + function_d6053a8f(dist) + "<unknown string>" + function_d6053a8f(radiusmax);
             function_ac033c46(var_69ea3b2c, origin + (0, 0, -2.666 * var_7295dcac * var_c75cd11f * 24), -1.333 * var_c75cd11f, "<unknown string>", var_ff7397dc, alpha, (0, 0, 0), var_8b9208e, (1, 1, 1), var_8b9208e, 1);
         }
-        if (isdefined(var_7760ab3f) == 1 && function_90a7316b(var_7760ab3f) == 1 && var_7760ab3f > 0) {
+        if (isdefined(radiusmax) == 1 && isnumber(radiusmax) == 1 && radiusmax > 0) {
             color = vectorscale(var_ff7397dc, 1);
             var_63d57cb2 = 1;
             angles = self function_cb457f5b();
-            function_81183b3(origin, var_7760ab3f * 2, angles, color, var_63d57cb2);
-            function_b95b9a60(origin, var_7760ab3f, vectorscale(var_ff7397dc, 0.72974), var_63d57cb2, 0, 1);
+            function_81183b3(origin, radiusmax * 2, angles, color, var_63d57cb2);
+            function_b95b9a60(origin, radiusmax, vectorscale(var_ff7397dc, 0.72974), var_63d57cb2, 0, 1);
         }
     #/
 }
@@ -491,7 +491,7 @@ function private function_3d58f598(var_977d0bf3) {
         if (is_true(level._snd.var_8c37ff34)) {
             player = function_2b2b83dc()[0];
             trigger = player.var_9a8a4923;
-            trigger_name = function_ea2f17d1(trigger.var_fd537616, "<unknown string>");
+            trigger_name = function_ea2f17d1(trigger.script_ambientroom, "<unknown string>");
             trigger_name = function_8cb4e540(trigger_name, 24);
             function_d34c1a24(0, row, trigger_name);
         }
@@ -783,15 +783,15 @@ function private function_fa2bfbd1() {
                 dist = distance(pos, eyeorigin);
                 fontscale = 1.5;
                 var_d2376cf8 = "<unknown string>" + pos[0] + "<unknown string>" + pos[1] + "<unknown string>" + pos[2] + "<unknown string>";
-                var_3518873e = 1 * fontscale * 24;
-                function_65bb0ccd(var_d2376cf8, var_9e35ce44, var_749dfb19 + var_3518873e, fontscale, "<unknown string>", (1, 1, 1), 0.854248, (0, 0, 0), 0.72974, (1, 1, 1), 0.72974);
-                var_88da7656 = "<unknown string>" + dist;
-                var_3518873e = 2 * fontscale * 24;
-                function_65bb0ccd(var_88da7656, var_9e35ce44, var_749dfb19 + var_3518873e, fontscale, "<unknown string>", (1, 1, 1), 0.854248, (0, 0, 0), 0.72974, (1, 1, 1), 0.72974);
+                hoffset = 1 * fontscale * 24;
+                function_65bb0ccd(var_d2376cf8, var_9e35ce44, var_749dfb19 + hoffset, fontscale, "<unknown string>", (1, 1, 1), 0.854248, (0, 0, 0), 0.72974, (1, 1, 1), 0.72974);
+                diststring = "<unknown string>" + dist;
+                hoffset = 2 * fontscale * 24;
+                function_65bb0ccd(diststring, var_9e35ce44, var_749dfb19 + hoffset, fontscale, "<unknown string>", (1, 1, 1), 0.854248, (0, 0, 0), 0.72974, (1, 1, 1), 0.72974);
                 if (isdefined(surfacetype) == 1) {
                     var_674c09af = "<unknown string>" + surfacetype + "<unknown string>";
-                    var_3518873e = 3 * fontscale * 24;
-                    function_65bb0ccd(var_674c09af, var_9e35ce44, var_749dfb19 + var_3518873e, fontscale, "<unknown string>", (1, 1, 1), 0.854248, (0, 0, 0), 0.72974, (1, 1, 1), 0.72974);
+                    hoffset = 3 * fontscale * 24;
+                    function_65bb0ccd(var_674c09af, var_9e35ce44, var_749dfb19 + hoffset, fontscale, "<unknown string>", (1, 1, 1), 0.854248, (0, 0, 0), 0.72974, (1, 1, 1), 0.72974);
                 }
                 function_81183b3(pos, 4, (0, 0, 0), (1, 1, 1), 1, 1);
             }
@@ -807,11 +807,11 @@ function private function_fa2bfbd1() {
 function private function_53489ad(*key, value) {
     /#
         if (is_true(level._snd.var_8c37ff34)) {
-            var_89b1fb20 = int(value);
+            intvalue = int(value);
             waitforplayers();
             players = function_2b2b83dc();
             foreach (player in players) {
-                if (var_89b1fb20 > 0) {
+                if (intvalue > 0) {
                     player thread function_fa2bfbd1();
                 } else {
                     player notify(#"hash_1c8039ff7519235");
@@ -838,17 +838,17 @@ function private function_27e49109(distance) {
         while (!function_3132f113(player)) {
             scale = -1 * level._snd.var_88612b20.var_29cb2b81;
             var_edbb6afa = 6 * level._snd.var_88612b20.var_29cb2b81;
-            var_f2d189e2 = player function_efda2d6d();
+            playervieworg = player function_efda2d6d();
             playerangles = player function_3d31768f();
             playerforward = anglestoforward(playerangles);
             playerfov = player function_731299e5();
             ents = [];
             if (is_true(level._snd.var_8c37ff34)) {
-                ents = getentitiesinradius(0, var_f2d189e2, distance);
+                ents = getentitiesinradius(0, playervieworg, distance);
             } else {
-                ents = getentitiesinradius(var_f2d189e2, distance, undefined);
+                ents = getentitiesinradius(playervieworg, distance, undefined);
             }
-            var_8230c52b = function_ada64c98(ents, var_f2d189e2, playerforward, playerfov, distance);
+            var_8230c52b = function_ada64c98(ents, playervieworg, playerforward, playerfov, distance);
             foreach (ent in var_8230c52b) {
                 row = 0;
                 if (is_true(level._snd.var_2dd09170)) {
@@ -909,10 +909,10 @@ function private function_3261cc72(*key, value) {
     /#
         waitforplayers();
         players = function_2b2b83dc();
-        var_89b1fb20 = int(value);
+        intvalue = int(value);
         foreach (player in players) {
-            if (var_89b1fb20 > 0) {
-                player thread function_27e49109(var_89b1fb20);
+            if (intvalue > 0) {
+                player thread function_27e49109(intvalue);
             } else {
                 player notify(#"hash_4d6bc2c72c2fe097");
             }
@@ -958,8 +958,8 @@ function private function_40f589b7() {
 // Size: 0x76
 function private function_1dddb5c2(*key, value) {
     /#
-        var_89b1fb20 = int(value);
-        if (var_89b1fb20 > 0) {
+        intvalue = int(value);
+        if (intvalue > 0) {
             level thread function_40f589b7();
         } else {
             level notify(#"hash_2036f819b394154");

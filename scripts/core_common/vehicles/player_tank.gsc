@@ -90,13 +90,13 @@ function function_4366bf50(params) {
     var_a20a7474 = getdvarint(#"hash_3ad1ffe3739de420", 10);
     forward = anglestoforward(deathmodel.angles);
     right = anglestoright(deathmodel.angles);
-    var_45d1a411 = deathmodel.origin;
-    var_45d1a411 = var_45d1a411 + forward * var_a20a7474;
-    var_45d1a411 = var_45d1a411 + right * var_a460aef2;
+    contact_point = deathmodel.origin;
+    contact_point = contact_point + forward * var_a20a7474;
+    contact_point = contact_point + right * var_a460aef2;
     var_f0436c8a = getdvarint(#"hash_7a9d06ee19067d4f", 150);
     var_da0636d8 = getdvarint(#"hash_7a81f4ee18ef9701", 180);
     var_9a1e332d = randomintrange(var_f0436c8a, var_da0636d8);
-    deathmodel physicslaunch(var_45d1a411, (0, 0, var_9a1e332d));
+    deathmodel physicslaunch(contact_point, (0, 0, var_9a1e332d));
     deathmodel clientfield::set("tank_deathfx", 1);
     deathmodel waittilltimeout(20, #"death");
     if (isdefined(deathmodel)) {

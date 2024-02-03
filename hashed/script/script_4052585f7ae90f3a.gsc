@@ -350,11 +350,11 @@ function function_c26120ff(ent) {
 // Checksum 0xdd886f2c, Offset: 0x1a50
 // Size: 0x120
 function function_8a58b4f() {
-    var_7aa3570f = getdvarfloat(#"hash_5a9d5543cb5829b3", 4);
+    min_time = getdvarfloat(#"hash_5a9d5543cb5829b3", 4);
     max_time = getdvarfloat(#"hash_5ab96b43cb70c9cd", 40);
     foreach (ally in level.var_dafd41b2) {
         if (!isdefined(ally.var_2de4672c)) {
-            ally thread snd::function_9299618(&function_c26120ff, [1:max_time, 0:var_7aa3570f]);
+            ally thread snd::function_9299618(&function_c26120ff, [1:max_time, 0:min_time]);
         }
     }
 }

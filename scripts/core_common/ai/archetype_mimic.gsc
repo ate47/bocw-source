@@ -96,9 +96,9 @@ function function_6a99dcd1(*params) {
     if (self isplayinganimscripted() && !self isragdoll()) {
         self stopanimscripted(0, 1);
         self notsolid();
-        var_9d3ee67e = getanimlength(#"hash_5e5bb6d5393f508e");
+        anim_time = getanimlength(#"hash_5e5bb6d5393f508e");
         self animscripted(#"hash_f4dc819c820cb3f", self.origin, self.angles, #"hash_5e5bb6d5393f508e", "normal", undefined, 1, 0.2);
-        self waittillmatchtimeout(var_9d3ee67e, {#notetrack:"end"}, #"hash_5e5bb6d5393f508e");
+        self waittillmatchtimeout(anim_time, {#notetrack:"end"}, #"hash_5e5bb6d5393f508e");
         if (isdefined(self)) {
             self function_cb48cddd();
         }
@@ -627,8 +627,8 @@ function function_d291b5a9(player, var_1b024168, var_52a75904, var_191562de) {
     }
     self animscripted(var_1b024168, origin, angles, var_1b024168, "normal", undefined, 1, var_52a75904);
     player thread function_224f342a(var_191562de, self, origin, angles);
-    var_9d3ee67e = getanimlength(var_1b024168);
-    self waittillmatchtimeout(var_9d3ee67e, {#notetrack:"end"}, var_1b024168);
+    anim_time = getanimlength(var_1b024168);
+    self waittillmatchtimeout(anim_time, {#notetrack:"end"}, var_1b024168);
     if (isplayer(player)) {
         self.favoriteenemy = player;
     }
@@ -653,8 +653,8 @@ function private function_224f342a(var_191562de, mimic, origin, angles) {
     player.var_7342424d = mimic;
     mimic.var_d6c08ac = player;
     player animscripted(var_191562de, origin, angles, var_191562de, "normal", undefined, 1, 0.2, 0.3, 0, 1, 1, undefined, 0, "linear", 0);
-    var_9d3ee67e = getanimlength(var_191562de);
-    player waittillmatchtimeout(var_9d3ee67e, {#notetrack:"end"}, var_191562de);
+    anim_time = getanimlength(var_191562de);
+    player waittillmatchtimeout(anim_time, {#notetrack:"end"}, var_191562de);
     while (isdefined(player) && player isplayinganimscripted()) {
         waitframe(1);
     }

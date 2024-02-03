@@ -85,9 +85,9 @@ function autoexec registerbehaviorscriptfunctions() {
     #/
     behaviorstatemachine::registerbsmscriptapiinternal(#"hash_4de6a3a7ccc9d8f6", &function_3a4e776);
     /#
-        assert(isscriptfunctionptr(&function_52dfff39));
+        assert(isscriptfunctionptr(&outofammo));
     #/
-    behaviorstatemachine::registerbsmscriptapiinternal(#"hash_235249277c9d92c4", &function_52dfff39);
+    behaviorstatemachine::registerbsmscriptapiinternal(#"outofammo", &outofammo);
     /#
         assert(isscriptfunctionptr(&function_56512b87));
     #/
@@ -142,7 +142,7 @@ function private exposedupdateservice(entity) {
 function private exposedshootstart(entity) {
     aiutility::releaseclaimnode(entity);
     entity.var_b636f23b = 0;
-    entity.var_a4f84a7f = entity.var_c67bb799;
+    entity.var_a4f84a7f = entity.lastshottime;
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
@@ -153,9 +153,9 @@ function private exposedshootupdate(entity) {
     if (entity asmistransitionrunning()) {
         return;
     }
-    if (entity.var_c67bb799 > entity.var_a4f84a7f) {
+    if (entity.lastshottime > entity.var_a4f84a7f) {
         entity.var_b636f23b = 0;
-        entity.var_a4f84a7f = entity.var_c67bb799;
+        entity.var_a4f84a7f = entity.lastshottime;
     }
     if (isdefined(entity.enemy) && entity cansee(entity.enemy)) {
         entity.var_b636f23b = entity.var_b636f23b + 0.05;
@@ -255,12 +255,12 @@ function private function_56512b87(entity) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x1da5f859, Offset: 0xf70
 // Size: 0x36
-function private function_52dfff39(entity) {
-    var_52dfff39 = 0;
+function private outofammo(entity) {
+    outofammo = 0;
     if (entity.bulletsinclip <= 0) {
-        var_52dfff39 = 1;
+        outofammo = 1;
     }
-    return var_52dfff39;
+    return outofammo;
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed

@@ -407,7 +407,7 @@ function monitor_detectnearbyenemies(localclientnum) {
                 }
                 params.bundle = bundle;
                 params.range = bundle.var_151e2c9b + 30;
-                params.var_dcea0aa7 = function_a3f6cdac(params.range);
+                params.rangesq = function_a3f6cdac(params.range);
                 params.speed = sixthsenseent getspeed();
                 var_7aeac1e7 = sixthsenseent function_60b0e73f(device, params);
                 if (var_7aeac1e7) {
@@ -443,7 +443,7 @@ function monitor_detectnearbyenemies(localclientnum) {
                     }
                     params.bundle = bundle;
                     params.range = bundle.var_151e2c9b + 30;
-                    params.var_dcea0aa7 = function_a3f6cdac(params.range);
+                    params.rangesq = function_a3f6cdac(params.range);
                     params.speed = sixthsenseent getspeed();
                     var_7aeac1e7 = sixthsenseent function_60b0e73f(device, params);
                     if (var_7aeac1e7) {
@@ -467,7 +467,7 @@ function private function_60b0e73f(device, params) {
         return 0;
     }
     distcurrentsq = distance2dsquared(sixthsenseent.origin, device.origin);
-    if (distcurrentsq > params.var_dcea0aa7) {
+    if (distcurrentsq > params.rangesq) {
         return 0;
     }
     bundle = params.bundle;
@@ -767,7 +767,7 @@ function function_b6dacb5a(localclientnum) {
                 }
                 params.bundle = bundle;
                 params.range = bundle.var_151e2c9b + 30;
-                params.var_dcea0aa7 = function_a3f6cdac(params.range);
+                params.rangesq = function_a3f6cdac(params.range);
                 params.speed = sixthsenseent getspeed();
                 var_7aeac1e7 = sixthsenseent function_60b0e73f(device, params);
                 if (var_7aeac1e7) {

@@ -1,22 +1,22 @@
 {
     "var_210a8489": [
         {
-            "var_37d9fb07": "default_zombies_realm_5",
+            "entryname": "default_zombies_realm_5",
             "var_a949845f": 10,
             "var_857deb66": 100
         },
         {
-            "var_37d9fb07": "inf_dogs",
+            "entryname": "inf_dogs",
             "var_a949845f": 5,
             "var_857deb66": 100
         },
         {
-            "var_37d9fb07": "inf_specials",
+            "entryname": "inf_specials",
             "var_a949845f": 2,
             "var_857deb66": 50
         },
         {
-            "var_37d9fb07": "inf_elites",
+            "entryname": "inf_elites",
             "var_a949845f": 2,
             "var_857deb66": 50
         }

@@ -34,7 +34,7 @@ class class_d28acd06 : class_9e71c1a2 {
     // Params 1, eflags: 0x2 linked
     // Checksum 0x42a5ba89, Offset: 0x878
     // Size: 0xc4
-    function function_27940f1f(*str_team) {
+    function _reset(*str_team) {
         if (isdefined(self.var_b5a03b21.last_player)) {
             self.var_b5a03b21.last_player flag::clear("lockpicking");
             self.var_b5a03b21.last_player val::function_e681e68e(#"lockpicking");
@@ -87,7 +87,7 @@ class class_d28acd06 : class_9e71c1a2 {
     // Size: 0x34
     function function_6084622f(e_player) {
         bb::function_cd497743("lockpick_fail", e_player);
-        [[ self ]]->function_27940f1f();
+        [[ self ]]->_reset();
     }
 
     // Namespace namespace_d28acd06/lockpick
@@ -177,7 +177,7 @@ class class_d28acd06 : class_9e71c1a2 {
         bb::function_cd497743("lockpick_success", e_player);
         e_player notify(#"minigame_tutorial_complete");
         [[ self ]]->function_89999e9c(e_player, 0);
-        [[ self ]]->function_27940f1f();
+        [[ self ]]->_reset();
     }
 
 }

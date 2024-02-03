@@ -1,55 +1,55 @@
 {
     "var_1ad142ee": [
         {
-            "var_46bd7973": "#hash_77aeb93d09d56a5c",
+            "soundevent": "#hash_77aeb93d09d56a5c",
             "var_f35c5951": 0.5,
             "var_5d4b5964": 5.5,
             "var_36bf8e05": "#hash_34da294f533b57f"
         },
         {
-            "var_46bd7973": "#hash_77aeba3d09d56c0f",
+            "soundevent": "#hash_77aeba3d09d56c0f",
             "var_f35c5951": 7.7,
             "var_5d4b5964": 5.42,
             "var_36bf8e05": "#hash_14801efcf425ca6"
         },
         {
-            "var_46bd7973": "#hash_77aebb3d09d56dc2",
+            "soundevent": "#hash_77aebb3d09d56dc2",
             "var_f35c5951": 14.5,
             "var_5d4b5964": 1.51,
             "var_36bf8e05": "#hash_34cdf76080667b39"
         },
         {
-            "var_46bd7973": "#hash_77aebc3d09d56f75",
+            "soundevent": "#hash_77aebc3d09d56f75",
             "var_f35c5951": 17,
             "var_5d4b5964": 2.33,
             "var_36bf8e05": "#hash_5fd51f4520dee3e0"
         },
         {
-            "var_46bd7973": "#hash_77aeb53d09d56390",
+            "soundevent": "#hash_77aeb53d09d56390",
             "var_f35c5951": 19.8,
             "var_5d4b5964": 0.7,
             "var_36bf8e05": "#hash_448d3ef95ebc5f93"
         },
         {
-            "var_46bd7973": "#hash_77aeb63d09d56543",
+            "soundevent": "#hash_77aeb63d09d56543",
             "var_f35c5951": 22.3,
             "var_5d4b5964": 1.45,
             "var_36bf8e05": "#hash_6fcddc8df0b2cd5a"
         },
         {
-            "var_46bd7973": "#hash_77aeb73d09d566f6",
+            "soundevent": "#hash_77aeb73d09d566f6",
             "var_f35c5951": 24.9,
             "var_5d4b5964": 1.19,
             "var_36bf8e05": "#hash_7a10aa37e8ea32fd"
         },
         {
-            "var_46bd7973": "#hash_77aeb83d09d568a9",
+            "soundevent": "#hash_77aeb83d09d568a9",
             "var_f35c5951": 27.2,
             "var_5d4b5964": 1.07,
             "var_36bf8e05": "#hash_1e7a012d769d24b4"
         },
         {
-            "var_46bd7973": "#hash_77aec13d09d577f4",
+            "soundevent": "#hash_77aec13d09d577f4",
             "var_f35c5951": 29,
             "var_5d4b5964": 0.62,
             "var_36bf8e05": "#hash_26271a5a6383a1d7"
@@ -64,7 +64,7 @@
     "var_2a12d36": 1,
     "type": "zmintel",
     "season": 1,
-    "var_ad4ad686": "#hash_5ad2dea4c296de59",
+    "var_ad4ad686": "#maxis",
     "soundloop": "#hash_5db0167d85d70c82",
     "name": "zmintel_gold_maxis_radio_7",
     "var_9be0526e": "#hash_20ea75a25d912949",

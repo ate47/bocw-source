@@ -27,7 +27,7 @@
 // Checksum 0xa617d521, Offset: 0x258
 // Size: 0x54
 function private autoexec __init__system__() {
-    system::register(#"hash_11ee2f7201f8ce6c", &function_70a657d8, undefined, &function_5700f119, #"hash_f81b9dea74f0ee");
+    system::register(#"hash_11ee2f7201f8ce6c", &function_70a657d8, undefined, &finalize, #"hash_f81b9dea74f0ee");
 }
 
 // Namespace namespace_f3a74bbc/namespace_f3a74bbc
@@ -53,7 +53,7 @@ function private function_70a657d8() {
 // Params 0, eflags: 0x6 linked
 // Checksum 0xe0936ad6, Offset: 0x4d0
 // Size: 0x1c
-function private function_5700f119() {
+function private finalize() {
     /#
         level thread init_devgui();
     #/
@@ -63,9 +63,9 @@ function private function_5700f119() {
 // Params 9, eflags: 0x2 linked
 // Checksum 0x7bd2b5cd, Offset: 0x4f8
 // Size: 0x1ea
-function function_b3464a7c(var_524c3d6e, var_946ffae7, startcallback, category, waypoint, var_4b7d58a, var_b4fae213, var_3fc9b09f = #"hash_248bfcefe7e51481", var_549cb6f6 = undefined) {
+function function_b3464a7c(scriptname, var_946ffae7, startcallback, category, waypoint, var_4b7d58a, var_b4fae213, var_3fc9b09f = #"hash_248bfcefe7e51481", var_549cb6f6 = undefined) {
     /#
-        assert(isstring(var_524c3d6e) || ishash(var_524c3d6e));
+        assert(isstring(scriptname) || ishash(scriptname));
     #/
     /#
         assert(isfunctionptr(startcallback));
@@ -76,7 +76,7 @@ function function_b3464a7c(var_524c3d6e, var_946ffae7, startcallback, category, 
     /#
         assert(isinarray(level.var_4e996a3f, category), "<unknown string>" + function_9e72a96(category) + "<unknown string>");
     #/
-    script = namespace_8b6a9d79::function_b3464a7c(var_524c3d6e, isdefined(var_549cb6f6) ? var_549cb6f6 : &function_4e8b29ac);
+    script = namespace_8b6a9d79::function_b3464a7c(scriptname, isdefined(var_549cb6f6) ? var_549cb6f6 : &function_4e8b29ac);
     script.var_32523552 = var_946ffae7;
     script.var_11dcc37e = startcallback;
     script.objectivecategory = category;
@@ -387,8 +387,8 @@ function function_ef3a1d04(&destinations, &categories) {
             if (namespace_8b6a9d79::function_fe9fb6fd(location)) {
                 continue;
             }
-            foreach (var_524c3d6e, instance in location.instances) {
-                script = namespace_8b6a9d79::function_85255d0f(var_524c3d6e);
+            foreach (scriptname, instance in location.instances) {
+                script = namespace_8b6a9d79::function_85255d0f(scriptname);
                 category = script.objectivecategory;
                 if (!isdefined(category)) {
                     continue;
@@ -515,7 +515,7 @@ function function_3e365c4f(instance, activator = undefined) {
     }
     level notify(#"hash_17028f0b9883e5be");
     level callback::callback(#"hash_17028f0b9883e5be", {#activator:activator, #instance:instance});
-    level thread function_fa47c63e(script.var_524c3d6e);
+    level thread function_fa47c63e(script.scriptname);
     return 1;
 }
 
@@ -607,10 +607,10 @@ function private function_2fe379cd() {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x37a7cb04, Offset: 0x2848
 // Size: 0x150
-function private function_fa47c63e(var_524c3d6e) {
+function private function_fa47c63e(scriptname) {
     level endon(#"game_ended");
     level flag::wait_till(#"all_players_connected");
-    script_struct = namespace_8b6a9d79::function_85255d0f(var_524c3d6e);
+    script_struct = namespace_8b6a9d79::function_85255d0f(scriptname);
     var_5fc990bf = isdefined(script_struct.var_b4fae213) ? script_struct.var_b4fae213 : 0;
     players = getplayers();
     foreach (player in players) {
@@ -773,13 +773,13 @@ function function_7bfeebe3() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x2f370ff8, Offset: 0x32b0
 // Size: 0x138
-function function_9d4e6125(var_524c3d6e) {
+function function_9d4e6125(scriptname) {
     wait(5);
     level endon(#"game_ended");
     level flag::wait_till(#"all_players_connected");
     var_5fc990bf = 0;
-    if (isdefined(var_524c3d6e)) {
-        var_5fc990bf = function_ae039b4(var_524c3d6e);
+    if (isdefined(scriptname)) {
+        var_5fc990bf = function_ae039b4(scriptname);
     } else {
         return;
     }

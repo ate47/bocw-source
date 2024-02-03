@@ -39,7 +39,7 @@
 // Params 1, eflags: 0x2 linked
 // Checksum 0x80ff7f69, Offset: 0x9c8
 // Size: 0x51c
-function function_f9f06983(*var_d3440450) {
+function starting(*var_d3440450) {
     player = getplayers()[0];
     var_8a3bb97c = getspawnerarray("raid_adler", "targetname");
     var_8a3bb97c[0] spawner::add_spawn_function(&namespace_b100dd86::function_9109a1fe);
@@ -473,7 +473,7 @@ function function_a6a40606() {
 // Checksum 0x69e80154, Offset: 0x2698
 // Size: 0x164
 function function_596afdef() {
-    savegame::function_904f733(1);
+    savegame::checkpoint_save(1);
     level.adler ai::set_behavior_attribute("demeanor", "combat");
     level.woods ai::set_behavior_attribute("demeanor", "combat");
     var_f3ebe39 = ai::function_e8b6bfec("floor1_guys");
@@ -591,7 +591,7 @@ function function_5547ef8b() {
 // Params 4, eflags: 0x2 linked
 // Checksum 0xf0cca630, Offset: 0x2de0
 // Size: 0x24
-function cleanup(*name, *var_f9f06983, *direct, *player) {
+function cleanup(*name, *starting, *direct, *player) {
     
 }
 

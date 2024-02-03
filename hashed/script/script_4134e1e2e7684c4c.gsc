@@ -120,8 +120,8 @@ function function_5d2e6f6a(var_eac515a1) {
 // Size: 0xf4
 function function_4951a2c8(line, var_1eb4675d = 120, var_80d5359e = 0) {
     if (namespace_61e6d095::exists(#"hash_15363747d8cbf71f")) {
-        var_f81a44a5 = line - 1;
-        var_c1deb575 = level.var_deff0f73[var_f81a44a5];
+        dataindex = line - 1;
+        var_c1deb575 = level.var_deff0f73[dataindex];
         namespace_61e6d095::function_f2a9266(#"hash_15363747d8cbf71f", line, "ActiveIndex", line);
         namespace_61e6d095::function_f2a9266(#"hash_15363747d8cbf71f", line, "TypeSpeed", var_1eb4675d, undefined, var_80d5359e);
     }

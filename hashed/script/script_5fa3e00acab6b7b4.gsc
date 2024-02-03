@@ -68,7 +68,7 @@ function function_72c32279() {
         matchstart.var_c8019fa4 = sessionmodeisprivateonlinegame();
         matchstart.var_137fea24 = sessionmodeissystemlink();
         matchstart.is_dedicated = isdedicated();
-        matchstart.playlist_id = function_cd124b7c();
+        matchstart.playlist_id = currentplaylistid();
         matchstart.playlist_name = hash(function_970f37d1());
         matchstart.var_65dcfd4a = getdvarint(#"hash_4c63a0806012e032", 0);
         matchstart.var_a14949d8 = getdvarstring(#"hash_164a9a28628343ef", "");
@@ -107,14 +107,14 @@ function function_d519e318() {
         matchend.is_dedicated = isdedicated();
         matchend.player_count = 0;
         matchend.life_count = 0;
-        matchend.playlist_id = function_cd124b7c();
+        matchend.playlist_id = currentplaylistid();
         matchend.playlist_name = hash(function_970f37d1());
         matchend.var_65dcfd4a = getdvarint(#"hash_4c63a0806012e032", 0);
         matchend.var_a14949d8 = getdvarstring(#"hash_164a9a28628343ef", "");
         matchend.var_d21c921d = isdefined(game.stat[#"teamscores"]) ? game.stat[#"teamscores"] : [];
         matchend.var_ffa674c = gamemodeisarena();
         teams = [];
-        foreach (var_3ac79a83, var_4c905113 in level.teams) {
+        foreach (var_3ac79a83, teamstring in level.teams) {
             teams[teams.size] = var_3ac79a83;
         }
         matchend.teams = teams;
@@ -147,7 +147,7 @@ function function_d519e318() {
                 matchend.var_c517822c = isdefined(var_3b7c8f8c.votesforprev) ? var_3b7c8f8c.votesforprev : 0;
                 matchend.var_5bdd51ff = isdefined(var_3b7c8f8c.votesfornext) ? var_3b7c8f8c.votesfornext : 0;
                 matchend.var_b1f1e8df = isdefined(var_3b7c8f8c.votesforrandom) ? var_3b7c8f8c.votesforrandom : 0;
-                matchend.var_33f196e0 = isdefined(var_3b7c8f8c.var_bc0c5ed6) ? var_3b7c8f8c.var_bc0c5ed6 : 0;
+                matchend.var_33f196e0 = isdefined(var_3b7c8f8c.didntvote) ? var_3b7c8f8c.didntvote : 0;
                 matchend.var_c35af8bc = isdefined(var_3b7c8f8c.var_f6de7b09) ? var_3b7c8f8c.var_f6de7b09 : 0;
                 matchend.var_cc8e62ce = isdefined(var_3b7c8f8c.var_6441c8d) ? var_3b7c8f8c.var_6441c8d : 0;
                 matchend.var_467db155 = isdefined(var_3b7c8f8c.var_d6c36da7) ? var_3b7c8f8c.var_d6c36da7 : 0;
@@ -589,95 +589,95 @@ function function_607901f4(data) {
 // Checksum 0x48708ecc, Offset: 0x3d80
 // Size: 0x6f4
 function function_6d57b52a(player, var_6165a2d8, var_cc4bc1dd) {
-    var_2153b0fe = {};
-    var_2153b0fe.var_5bf208a0 = var_6165a2d8;
+    loadoutdata = {};
+    loadoutdata.var_5bf208a0 = var_6165a2d8;
     primaryweapon = player loadout::function_18a77b37("primary");
     if (isdefined(primaryweapon)) {
-        var_2153b0fe.primary_weapon = primaryweapon.name;
-        var_2153b0fe.var_70eb2c9d = function_8d2c5f27(isdefined(primaryweapon.attachments) ? primaryweapon.attachments : []);
+        loadoutdata.primary_weapon = primaryweapon.name;
+        loadoutdata.var_70eb2c9d = function_8d2c5f27(isdefined(primaryweapon.attachments) ? primaryweapon.attachments : []);
         var_df9e1af5 = player function_e601ff48(player.class_num, 0);
         var_ff1e2369 = function_69031255(primaryweapon, var_df9e1af5);
-        var_2153b0fe.var_4be85015 = isdefined(var_ff1e2369.var_a6b3fd45) ? var_ff1e2369.var_a6b3fd45 : 0;
+        loadoutdata.var_4be85015 = isdefined(var_ff1e2369.weaponblueprint) ? var_ff1e2369.weaponblueprint : 0;
         primaryweaponoptions = player function_ade49959(primaryweapon);
         var_6df37b82 = getcamoindex(primaryweaponoptions);
         var_cc073e42 = function_6f89999e(var_6df37b82);
-        var_2153b0fe.var_5eb8cc7c = isdefined(var_cc073e42) ? var_cc073e42 : 0;
+        loadoutdata.var_5eb8cc7c = isdefined(var_cc073e42) ? var_cc073e42 : 0;
     }
     secondaryweapon = player loadout::function_18a77b37("secondary");
     if (isdefined(secondaryweapon)) {
-        var_2153b0fe.secondary_weapon = secondaryweapon.name;
-        var_2153b0fe.var_85aac3ff = function_8d2c5f27(isdefined(secondaryweapon.attachments) ? secondaryweapon.attachments : []);
+        loadoutdata.secondary_weapon = secondaryweapon.name;
+        loadoutdata.var_85aac3ff = function_8d2c5f27(isdefined(secondaryweapon.attachments) ? secondaryweapon.attachments : []);
         var_48d617f1 = player function_e601ff48(player.class_num, 14);
         var_96a1671e = function_69031255(secondaryweapon, var_48d617f1);
-        var_2153b0fe.var_61e93312 = isdefined(var_96a1671e.var_a6b3fd45) ? var_96a1671e.var_a6b3fd45 : 0;
+        loadoutdata.var_61e93312 = isdefined(var_96a1671e.weaponblueprint) ? var_96a1671e.weaponblueprint : 0;
         secondaryweaponoptions = player function_ade49959(secondaryweapon);
         var_b65500f8 = getcamoindex(secondaryweaponoptions);
         var_e1e3c149 = function_6f89999e(var_b65500f8);
-        var_2153b0fe.var_a656d9c6 = isdefined(var_e1e3c149) ? var_e1e3c149 : 0;
+        loadoutdata.var_a656d9c6 = isdefined(var_e1e3c149) ? var_e1e3c149 : 0;
     }
     primarygrenade = player loadout::function_18a77b37("primarygrenade");
     if (isdefined(primarygrenade)) {
-        var_2153b0fe.primary_grenade = primarygrenade.name;
+        loadoutdata.primary_grenade = primarygrenade.name;
     }
     secondarygrenade = player loadout::function_18a77b37("secondarygrenade");
     if (isdefined(secondarygrenade)) {
-        var_2153b0fe.var_68f5c0ed = secondarygrenade.name;
+        loadoutdata.var_68f5c0ed = secondarygrenade.name;
     }
     fieldupgrade = player loadout::function_18a77b37("specialgrenade");
     if (isdefined(fieldupgrade)) {
-        var_2153b0fe.field_upgrade = fieldupgrade.name;
+        loadoutdata.field_upgrade = fieldupgrade.name;
     }
     if (isdefined(var_cc4bc1dd)) {
-        var_2153b0fe.perks = [];
+        loadoutdata.perks = [];
         switch (var_cc4bc1dd.size) {
         case 6:
         default:
-            var_2153b0fe.perks[5] = var_cc4bc1dd[5].namehash;
+            loadoutdata.perks[5] = var_cc4bc1dd[5].namehash;
         case 5:
-            var_2153b0fe.perks[4] = var_cc4bc1dd[4].namehash;
+            loadoutdata.perks[4] = var_cc4bc1dd[4].namehash;
         case 4:
-            var_2153b0fe.perks[3] = var_cc4bc1dd[3].namehash;
+            loadoutdata.perks[3] = var_cc4bc1dd[3].namehash;
         case 3:
-            var_2153b0fe.perks[2] = var_cc4bc1dd[2].namehash;
+            loadoutdata.perks[2] = var_cc4bc1dd[2].namehash;
         case 2:
-            var_2153b0fe.perks[1] = var_cc4bc1dd[1].namehash;
+            loadoutdata.perks[1] = var_cc4bc1dd[1].namehash;
         case 1:
-            var_2153b0fe.perks[0] = var_cc4bc1dd[0].namehash;
+            loadoutdata.perks[0] = var_cc4bc1dd[0].namehash;
         case 0:
             break;
         }
     }
     wildcards = player function_6f2c0492(player.class_num);
     if (isdefined(wildcards)) {
-        var_2153b0fe.wildcards = [];
+        loadoutdata.wildcards = [];
         switch (wildcards.size) {
         case 3:
         default:
-            var_2153b0fe.wildcards[2] = wildcards[2];
+            loadoutdata.wildcards[2] = wildcards[2];
         case 2:
-            var_2153b0fe.wildcards[1] = wildcards[1];
+            loadoutdata.wildcards[1] = wildcards[1];
         case 1:
-            var_2153b0fe.wildcards[0] = wildcards[0];
+            loadoutdata.wildcards[0] = wildcards[0];
         case 0:
             break;
         }
     }
     killstreaks = player.killstreak;
     if (isdefined(killstreaks)) {
-        var_2153b0fe.killstreaks = [];
+        loadoutdata.killstreaks = [];
         switch (killstreaks.size) {
         case 3:
         default:
-            var_2153b0fe.killstreaks[2] = killstreaks[2];
+            loadoutdata.killstreaks[2] = killstreaks[2];
         case 2:
-            var_2153b0fe.killstreaks[1] = killstreaks[1];
+            loadoutdata.killstreaks[1] = killstreaks[1];
         case 1:
-            var_2153b0fe.killstreaks[0] = killstreaks[0];
+            loadoutdata.killstreaks[0] = killstreaks[0];
         case 0:
             break;
         }
     }
-    player function_678f57c8(#"hash_46722c5c0abe049f", var_2153b0fe);
+    player function_678f57c8(#"hash_46722c5c0abe049f", loadoutdata);
 }
 
 // Namespace namespace_a77a81df/namespace_a77a81df
@@ -700,11 +700,11 @@ function function_abbc84ad(data) {
             }
             data.player.pers[#"weaponstats"][key] = {#var_6165a2d8:data.player.pers[#"telemetry"].var_ee8d3324, #weapon:data.weapon, #stats:[]};
         }
-        var_ae601515 = data.player.pers[#"weaponstats"][key].stats;
-        if (!isdefined(var_ae601515[data.statname])) {
-            var_ae601515[data.statname] = 0;
+        statscache = data.player.pers[#"weaponstats"][key].stats;
+        if (!isdefined(statscache[data.statname])) {
+            statscache[data.statname] = 0;
         }
-        var_ae601515[data.statname] = var_ae601515[data.statname] + data.value;
+        statscache[data.statname] = statscache[data.statname] + data.value;
     }
 }
 
@@ -714,8 +714,8 @@ function function_abbc84ad(data) {
 // Size: 0x3d8
 function function_792e6d18() {
     foreach (weaponinfo in self.pers[#"weaponstats"]) {
-        var_a0af8e8f = getbaseweaponitemindex(weaponinfo.weapon);
-        weaponstats = {#var_2b43b7a2:isdefined(weaponinfo.stats[#"hash_30756c193f03f009"]) ? weaponinfo.stats[#"hash_30756c193f03f009"] : 0, #var_fbed9c9c:(isdefined(self getcurrentgunrank(var_a0af8e8f)) ? self getcurrentgunrank(var_a0af8e8f) : 0) + 1, #var_9239f70f:isdefined(weaponinfo.stats[#"xpearned"]) ? weaponinfo.stats[#"xpearned"] : 0, #time_used_s:isdefined(weaponinfo.stats[#"timeused"]) ? weaponinfo.stats[#"timeused"] : 0, #var_7e2968cc:isdefined(weaponinfo.stats[#"deathsduringuse"]) ? weaponinfo.stats[#"deathsduringuse"] : 0, #headshots:isdefined(weaponinfo.stats[#"headshots"]) ? weaponinfo.stats[#"headshots"] : 0, #kills:isdefined(weaponinfo.stats[#"kills"]) ? weaponinfo.stats[#"kills"] : 0, #hits:isdefined(weaponinfo.stats[#"hits"]) ? weaponinfo.stats[#"hits"] : 0, #shots:isdefined(weaponinfo.stats[#"shots"]) ? weaponinfo.stats[#"shots"] : 0, #var_5bf208a0:weaponinfo.var_6165a2d8, #weapon_name:weaponinfo.weapon.name};
+        weaponitemindex = getbaseweaponitemindex(weaponinfo.weapon);
+        weaponstats = {#var_2b43b7a2:isdefined(weaponinfo.stats[#"hash_30756c193f03f009"]) ? weaponinfo.stats[#"hash_30756c193f03f009"] : 0, #var_fbed9c9c:(isdefined(self getcurrentgunrank(weaponitemindex)) ? self getcurrentgunrank(weaponitemindex) : 0) + 1, #var_9239f70f:isdefined(weaponinfo.stats[#"xpearned"]) ? weaponinfo.stats[#"xpearned"] : 0, #time_used_s:isdefined(weaponinfo.stats[#"timeused"]) ? weaponinfo.stats[#"timeused"] : 0, #var_7e2968cc:isdefined(weaponinfo.stats[#"deathsduringuse"]) ? weaponinfo.stats[#"deathsduringuse"] : 0, #headshots:isdefined(weaponinfo.stats[#"headshots"]) ? weaponinfo.stats[#"headshots"] : 0, #kills:isdefined(weaponinfo.stats[#"kills"]) ? weaponinfo.stats[#"kills"] : 0, #hits:isdefined(weaponinfo.stats[#"hits"]) ? weaponinfo.stats[#"hits"] : 0, #shots:isdefined(weaponinfo.stats[#"shots"]) ? weaponinfo.stats[#"shots"] : 0, #var_5bf208a0:weaponinfo.var_6165a2d8, #weapon_name:weaponinfo.weapon.name};
         self function_678f57c8(#"hash_71e24083d5b3f555", weaponstats);
     }
 }
@@ -780,10 +780,10 @@ function function_9cac835e(data) {
 // Checksum 0x4346a1e3, Offset: 0x4de8
 // Size: 0x60
 function function_8d2c5f27(array) {
-    var_67a93196 = [];
+    new_array = [];
     for (i = 0; i < array.size; i++) {
-        var_67a93196[i] = hash(array[i]);
+        new_array[i] = hash(array[i]);
     }
-    return var_67a93196;
+    return new_array;
 }
 

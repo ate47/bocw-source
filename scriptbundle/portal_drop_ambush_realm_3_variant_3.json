@@ -1,22 +1,22 @@
 {
     "var_210a8489": [
         {
-            "var_37d9fb07": "default_zombies_realm_3",
+            "entryname": "default_zombies_realm_3",
             "var_a949845f": 12,
             "var_857deb66": 100
         },
         {
-            "var_37d9fb07": "survival_ai_dog_molotov",
+            "entryname": "survival_ai_dog_molotov",
             "var_a949845f": 5,
             "var_857deb66": 30
         },
         {
-            "var_37d9fb07": "survival_ai_raz",
+            "entryname": "survival_ai_raz",
             "var_a949845f": 2,
             "var_857deb66": 30
         },
         {
-            "var_37d9fb07": "inf_elites",
+            "entryname": "inf_elites",
             "var_a949845f": 1,
             "var_857deb66": 30
         }

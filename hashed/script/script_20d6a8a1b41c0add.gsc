@@ -73,7 +73,7 @@ function function_74359dc(localclientnum, *oldval, *newval, *bnewent, *binitials
         y = 0;
         spot = var_bff754c6.origin + (x, y, 0);
         scale = 2;
-        var_639727b6 = namespace_ec06fe4a::function_e22ae9b3(bwastimejump, spot, "tag_origin", var_bff754c6.angles, "dungeon start room");
+        var_639727b6 = namespace_ec06fe4a::spawnmodel(bwastimejump, spot, "tag_origin", var_bff754c6.angles, "dungeon start room");
         if (isdefined(var_639727b6)) {
             iconname = "doa_hud_icon_dungeon_room_square_reveal";
             var_639727b6 setcompassicon(iconname);

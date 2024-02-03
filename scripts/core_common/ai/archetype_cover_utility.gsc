@@ -326,7 +326,7 @@ function private coverleaninitialize(entity) {
     entity setblackboardattribute("_cover_mode", "cover_lean");
     choosecoverdirection(entity);
     entity.var_1a0b2452 = 0;
-    entity.var_a4f84a7f = entity.var_c67bb799;
+    entity.var_a4f84a7f = entity.lastshottime;
 }
 
 // Namespace aiutility/archetype_cover_utility
@@ -337,9 +337,9 @@ function private function_bbe42083(entity) {
     if (entity asmistransitionrunning()) {
         return;
     }
-    if (entity.var_c67bb799 > entity.var_a4f84a7f) {
+    if (entity.lastshottime > entity.var_a4f84a7f) {
         entity.var_1a0b2452 = 0;
-        entity.var_a4f84a7f = entity.var_c67bb799;
+        entity.var_a4f84a7f = entity.lastshottime;
     }
     if (isdefined(entity.enemy) && entity cansee(entity.enemy)) {
         entity.var_1a0b2452 = entity.var_1a0b2452 + 0.05;
@@ -452,7 +452,7 @@ function private coveroverinitialize(entity) {
     keepclaimnode(entity);
     entity setblackboardattribute("_cover_mode", "cover_over");
     entity.var_d9884655 = 0;
-    entity.var_a4f84a7f = entity.var_c67bb799;
+    entity.var_a4f84a7f = entity.lastshottime;
 }
 
 // Namespace aiutility/archetype_cover_utility
@@ -463,9 +463,9 @@ function private function_2f4d2a0a(entity) {
     if (entity asmistransitionrunning()) {
         return;
     }
-    if (entity.var_c67bb799 > entity.var_a4f84a7f) {
+    if (entity.lastshottime > entity.var_a4f84a7f) {
         entity.var_d9884655 = 0;
-        entity.var_a4f84a7f = entity.var_c67bb799;
+        entity.var_a4f84a7f = entity.lastshottime;
     }
     if (isdefined(entity.enemy) && entity cansee(entity.enemy)) {
         entity.var_d9884655 = entity.var_d9884655 + 0.05;
@@ -574,12 +574,12 @@ function function_1d3ee45b(entity) {
 // Size: 0x8a
 function function_3fe92ec8(entity) {
     if (isdefined(entity.enemy)) {
-        var_5872e8ad = entity bb_actorgettrackingturnyaw();
+        deltayaw = entity bb_actorgettrackingturnyaw();
     } else {
-        var_5872e8ad = entity bb_getyawtocovernode();
+        deltayaw = entity bb_getyawtocovernode();
     }
-    var_18a7cba2 = absangleclamp180(var_5872e8ad);
-    if (var_18a7cba2 > 45) {
+    absdeltayaw = absangleclamp180(deltayaw);
+    if (absdeltayaw > 45) {
         return 0;
     }
     return 1;
@@ -839,8 +839,8 @@ function function_4ec57157(entity) {
         wait(0.05);
     }
     wait(0.25);
-    entity.var_5aff3a1d = 0;
-    entity.var_5fd4f34e = 0;
+    entity.lastcanshootenemytime = 0;
+    entity.lastcanshootlastsightpostime = 0;
 }
 
 // Namespace aiutility/archetype_cover_utility

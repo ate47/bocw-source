@@ -4,13 +4,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_26ab1ffc2b456a72",
+                    "soundevent": "#hash_26ab1ffc2b456a72",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 8.73
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_70e5c21928227aa6",
+                    "soundevent": "#hash_70e5c21928227aa6",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 4.52
                 }
@@ -21,13 +21,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_9b26a71a4541799",
+                    "soundevent": "#hash_9b26a71a4541799",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 5.95
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_1d874032fc18c355",
+                    "soundevent": "#hash_1d874032fc18c355",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 6.02
                 }
@@ -38,13 +38,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_61845b6a7a41ecc0",
+                    "soundevent": "#hash_61845b6a7a41ecc0",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 9.56
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_c9c1e6ceed6dc88",
+                    "soundevent": "#hash_c9c1e6ceed6dc88",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 4.54
                 }
@@ -55,13 +55,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_637d3f2e16bdb370",
+                    "soundevent": "#hash_637d3f2e16bdb370",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 9.47
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_8d0b69a5ca3fa0c",
+                    "soundevent": "#hash_8d0b69a5ca3fa0c",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 4.71
                 }
@@ -72,13 +72,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_7b17cd9ae4f3bcbb",
+                    "soundevent": "#hash_7b17cd9ae4f3bcbb",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 4.25
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_776031f89266d70f",
+                    "soundevent": "#hash_776031f89266d70f",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 3.97
                 }
@@ -89,13 +89,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_2911ac2493f8401a",
+                    "soundevent": "#hash_2911ac2493f8401a",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 11.14
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_42df8aebc9a65a0a",
+                    "soundevent": "#hash_42df8aebc9a65a0a",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 8.75
                 }
@@ -106,13 +106,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_6d2a0dc214eb4d2b",
+                    "soundevent": "#hash_6d2a0dc214eb4d2b",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 10.37
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_3219798c9b239c2c",
+                    "soundevent": "#hash_3219798c9b239c2c",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 2.77
                 }
@@ -123,13 +123,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_6e2b62ec4fdeac58",
+                    "soundevent": "#hash_6e2b62ec4fdeac58",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 6.1
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_77a7ea9de5116faf",
+                    "soundevent": "#hash_77a7ea9de5116faf",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 4.52
                 }
@@ -140,13 +140,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_34c7f7d20cc9aba1",
+                    "soundevent": "#hash_34c7f7d20cc9aba1",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 5.42
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_6e1888ba07acce2a",
+                    "soundevent": "#hash_6e1888ba07acce2a",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 8.23
                 }
@@ -157,17 +157,17 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_6243c4cb9356477d",
+                    "soundevent": "#hash_6243c4cb9356477d",
                     "var_5d4b5964": 8.13
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_6243c3cb935645ca",
+                    "soundevent": "#hash_6243c3cb935645ca",
                     "var_5d4b5964": 5.59
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_6243c2cb93564417",
+                    "soundevent": "#hash_6243c2cb93564417",
                     "var_5d4b5964": 6.14
                 }
             ],
@@ -178,17 +178,17 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_485f07a74589eeb1",
+                    "soundevent": "#hash_485f07a74589eeb1",
                     "var_5d4b5964": 2.56
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_485f06a74589ecfe",
+                    "soundevent": "#hash_485f06a74589ecfe",
                     "var_5d4b5964": 4.99
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_485f05a74589eb4b",
+                    "soundevent": "#hash_485f05a74589eb4b",
                     "var_5d4b5964": 4.03
                 }
             ],
@@ -199,17 +199,17 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_4207f50442521afa",
+                    "soundevent": "#hash_4207f50442521afa",
                     "var_5d4b5964": 5.65
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_4207f60442521cad",
+                    "soundevent": "#hash_4207f60442521cad",
                     "var_5d4b5964": 5.87
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_4207f30442521794",
+                    "soundevent": "#hash_4207f30442521794",
                     "var_5d4b5964": 7.06
                 }
             ],
@@ -220,13 +220,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_34e636c8dffbacb0",
+                    "soundevent": "#hash_34e636c8dffbacb0",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 10.43
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_5a38c5d7cb921fc9",
+                    "soundevent": "#hash_5a38c5d7cb921fc9",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 12.46
                 }
@@ -237,13 +237,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_2d85a22b5ee80c53",
+                    "soundevent": "#hash_2d85a22b5ee80c53",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 7.36
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_1625e68a723ec20b",
+                    "soundevent": "#hash_1625e68a723ec20b",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 16.38
                 }
@@ -254,13 +254,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_4df51288c3ab0891",
+                    "soundevent": "#hash_4df51288c3ab0891",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 13.63
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_61c9e84a1b6fb44d",
+                    "soundevent": "#hash_61c9e84a1b6fb44d",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 5.59
                 }
@@ -271,19 +271,19 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_6449516371879d6b",
+                    "soundevent": "#hash_6449516371879d6b",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 11.84
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_762e3281402fadbf",
+                    "soundevent": "#hash_762e3281402fadbf",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 13.65
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_762e3381402faf72",
+                    "soundevent": "#hash_762e3381402faf72",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 2.05
                 }
@@ -294,13 +294,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_64906473742339ef",
+                    "soundevent": "#hash_64906473742339ef",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 4.76
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_547a079db62acf13",
+                    "soundevent": "#hash_547a079db62acf13",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 10.5
                 }
@@ -311,13 +311,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_77d4c24ba9ea9781",
+                    "soundevent": "#hash_77d4c24ba9ea9781",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 7.04
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_627eeb3ab349a4c9",
+                    "soundevent": "#hash_627eeb3ab349a4c9",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 7.62
                 }
@@ -328,13 +328,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_6d4fef4f639cd194",
+                    "soundevent": "#hash_6d4fef4f639cd194",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 9.47
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_308b0f73356a4d83",
+                    "soundevent": "#hash_308b0f73356a4d83",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 12.99
                 }
@@ -345,13 +345,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_522a8422a02a01f3",
+                    "soundevent": "#hash_522a8422a02a01f3",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 7.83
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_ff0de81e7543084",
+                    "soundevent": "#hash_ff0de81e7543084",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 12.39
                 }
@@ -362,13 +362,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_2b06e129a6a32ff6",
+                    "soundevent": "#hash_2b06e129a6a32ff6",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 5.48
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_57c8daa00b5c846d",
+                    "soundevent": "#hash_57c8daa00b5c846d",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 10.01
                 }
@@ -379,13 +379,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_5999ae7d2450e4cb",
+                    "soundevent": "#hash_5999ae7d2450e4cb",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 4.39
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_14d12757d0f74a03",
+                    "soundevent": "#hash_14d12757d0f74a03",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 12.74
                 }
@@ -396,13 +396,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_64d502990fbce5b",
+                    "soundevent": "#hash_64d502990fbce5b",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 11.46
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_4439886ad4f9d27b",
+                    "soundevent": "#hash_4439886ad4f9d27b",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 5.76
                 }
@@ -413,13 +413,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_59bab00d83e58882",
+                    "soundevent": "#hash_59bab00d83e58882",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 8.68
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_12df943a455f8436",
+                    "soundevent": "#hash_12df943a455f8436",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 5.14
                 }
@@ -430,13 +430,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_6918b9909eef7412",
+                    "soundevent": "#hash_6918b9909eef7412",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 9.34
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_468ff74b3911b402",
+                    "soundevent": "#hash_468ff74b3911b402",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 4.54
                 }
@@ -447,13 +447,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_5f4dd44ac08315fe",
+                    "soundevent": "#hash_5f4dd44ac08315fe",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 3.31
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_22ee0943b726ed16",
+                    "soundevent": "#hash_22ee0943b726ed16",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 8.83
                 }
@@ -464,13 +464,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_56cc654ff04c29a8",
+                    "soundevent": "#hash_56cc654ff04c29a8",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 6.76
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_f8df42cea0f4464",
+                    "soundevent": "#hash_f8df42cea0f4464",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 6.34
                 }
@@ -481,13 +481,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_53d8e9363c059efd",
+                    "soundevent": "#hash_53d8e9363c059efd",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 3.39
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_710dd6495924a78e",
+                    "soundevent": "#hash_710dd6495924a78e",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 9.71
                 }
@@ -498,13 +498,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_4d9f56ad4f44bdda",
+                    "soundevent": "#hash_4d9f56ad4f44bdda",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 11.37
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_7732488db5314a99",
+                    "soundevent": "#hash_7732488db5314a99",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 2.05
                 }
@@ -515,13 +515,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_544bff93af782a4b",
+                    "soundevent": "#hash_544bff93af782a4b",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 11.52
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_42ca9e31bad76d4c",
+                    "soundevent": "#hash_42ca9e31bad76d4c",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 5.82
                 }
@@ -532,13 +532,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_1fb46bc7fea46dff",
+                    "soundevent": "#hash_1fb46bc7fea46dff",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 2.97
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_6777c99c21a9971c",
+                    "soundevent": "#hash_6777c99c21a9971c",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 3.84
                 }
@@ -549,13 +549,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_1fb46ac7fea46c4c",
+                    "soundevent": "#hash_1fb46ac7fea46c4c",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 3.18
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_6777ca9c21a998cf",
+                    "soundevent": "#hash_6777ca9c21a998cf",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 6.93
                 }
@@ -566,13 +566,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_1fb46dc7fea47165",
+                    "soundevent": "#hash_1fb46dc7fea47165",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 4.29
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_6777cb9c21a99a82",
+                    "soundevent": "#hash_6777cb9c21a99a82",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 5.25
                 }
@@ -583,13 +583,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_70835de83e79ed7b",
+                    "soundevent": "#hash_70835de83e79ed7b",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 4.59
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_6777cb9c21a99a82",
+                    "soundevent": "#hash_6777cb9c21a99a82",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 5.25
                 }
@@ -600,13 +600,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_70835ce83e79ebc8",
+                    "soundevent": "#hash_70835ce83e79ebc8",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 3.5
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_6777ca9c21a998cf",
+                    "soundevent": "#hash_6777ca9c21a998cf",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 6.93
                 }
@@ -617,13 +617,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_70835fe83e79f0e1",
+                    "soundevent": "#hash_70835fe83e79f0e1",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 2.47
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_6777c99c21a9971c",
+                    "soundevent": "#hash_6777c99c21a9971c",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 3.84
                 }
@@ -634,13 +634,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_30cb186d3e7e06f8",
+                    "soundevent": "#hash_30cb186d3e7e06f8",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 3.37
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_6777ca9c21a998cf",
+                    "soundevent": "#hash_6777ca9c21a998cf",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 6.93
                 }
@@ -651,13 +651,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_30cb196d3e7e08ab",
+                    "soundevent": "#hash_30cb196d3e7e08ab",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 2.37
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_6777c99c21a9971c",
+                    "soundevent": "#hash_6777c99c21a9971c",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 3.84
                 }
@@ -668,13 +668,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_30cb1a6d3e7e0a5e",
+                    "soundevent": "#hash_30cb1a6d3e7e0a5e",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 2.71
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_6777cb9c21a99a82",
+                    "soundevent": "#hash_6777cb9c21a99a82",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 5.25
                 }
@@ -685,19 +685,19 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_3c950160b161fa91",
+                    "soundevent": "#hash_3c950160b161fa91",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 3.78
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_3c950060b161f8de",
+                    "soundevent": "#hash_3c950060b161f8de",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 5.95
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_3c94ff60b161f72b",
+                    "soundevent": "#hash_3c94ff60b161f72b",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 4.65
                 }
@@ -709,19 +709,19 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_1839b2cd5bd6a0a",
+                    "soundevent": "#hash_1839b2cd5bd6a0a",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 6.72
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_1839c2cd5bd6bbd",
+                    "soundevent": "#hash_1839c2cd5bd6bbd",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 6.19
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_183992cd5bd66a4",
+                    "soundevent": "#hash_183992cd5bd66a4",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 12.89
                 }
@@ -733,19 +733,19 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_6cf7a08c6aa2bfee",
+                    "soundevent": "#hash_6cf7a08c6aa2bfee",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 2.62
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_6cf7a18c6aa2c1a1",
+                    "soundevent": "#hash_6cf7a18c6aa2c1a1",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 6.81
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_6cf79e8c6aa2bc88",
+                    "soundevent": "#hash_6cf79e8c6aa2bc88",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 4.35
                 }
@@ -757,19 +757,19 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_5bb2d826ad99a45d",
+                    "soundevent": "#hash_5bb2d826ad99a45d",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 13.18
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_5bb2d726ad99a2aa",
+                    "soundevent": "#hash_5bb2d726ad99a2aa",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 8.53
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_5bb2d626ad99a0f7",
+                    "soundevent": "#hash_5bb2d626ad99a0f7",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 7.36
                 }
@@ -781,13 +781,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_7965c73b83a57bc2",
+                    "soundevent": "#hash_7965c73b83a57bc2",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 15.21
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_7965c83b83a57d75",
+                    "soundevent": "#hash_7965c83b83a57d75",
                     "var_f35c5951": 0.5
                 }
             ],
@@ -797,13 +797,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_37bf0c5f0c4a69e6",
+                    "soundevent": "#hash_37bf0c5f0c4a69e6",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 6.95
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_37bf0d5f0c4a6b99",
+                    "soundevent": "#hash_37bf0d5f0c4a6b99",
                     "var_f35c5951": 0.5
                 }
             ],
@@ -813,13 +813,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_3673201531b22065",
+                    "soundevent": "#hash_3673201531b22065",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 7.66
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_36731f1531b21eb2",
+                    "soundevent": "#hash_36731f1531b21eb2",
                     "var_f35c5951": 0.5
                 }
             ],
@@ -829,7 +829,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_3f4c08fa10c6a712",
+                    "soundevent": "#hash_3f4c08fa10c6a712",
                     "var_5d4b5964": 8.77
                 }
             ],
@@ -839,7 +839,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_5476d6bf7a0844a9",
+                    "soundevent": "#hash_5476d6bf7a0844a9",
                     "var_5d4b5964": 2.54
                 }
             ],
@@ -849,7 +849,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_f5033f39a7f220f",
+                    "soundevent": "#hash_f5033f39a7f220f",
                     "var_5d4b5964": 11.65
                 }
             ],
@@ -859,7 +859,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_8347bffc527d8ec",
+                    "soundevent": "#hash_8347bffc527d8ec",
                     "var_5d4b5964": 8.21
                 }
             ],
@@ -869,7 +869,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_78a862dfa924c62b",
+                    "soundevent": "#hash_78a862dfa924c62b",
                     "var_5d4b5964": 5.53
                 }
             ],
@@ -879,7 +879,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_3ccc5709c09da369",
+                    "soundevent": "#hash_3ccc5709c09da369",
                     "var_5d4b5964": 7.77
                 }
             ],
@@ -889,7 +889,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_6a53939d085290d7",
+                    "soundevent": "#hash_6a53939d085290d7",
                     "var_5d4b5964": 7.53
                 }
             ],
@@ -899,7 +899,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_11f12605551f1020",
+                    "soundevent": "#hash_11f12605551f1020",
                     "var_5d4b5964": 9.13
                 }
             ],
@@ -909,7 +909,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_38df3082413016a6",
+                    "soundevent": "#hash_38df3082413016a6",
                     "var_5d4b5964": 7.77
                 }
             ],
@@ -919,7 +919,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_143c616aa4645ef6",
+                    "soundevent": "#hash_143c616aa4645ef6",
                     "var_5d4b5964": 6.63
                 }
             ],
@@ -929,7 +929,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_34daf30e3974536d",
+                    "soundevent": "#hash_34daf30e3974536d",
                     "var_5d4b5964": 5.89
                 }
             ],
@@ -939,7 +939,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_170bbded75b1b3bb",
+                    "soundevent": "#hash_170bbded75b1b3bb",
                     "var_5d4b5964": 9.02
                 }
             ],
@@ -949,7 +949,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_861197c98316e0e",
+                    "soundevent": "#hash_861197c98316e0e",
                     "var_5d4b5964": 6.19
                 }
             ],
@@ -959,7 +959,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_d9b46fd4d0a1325",
+                    "soundevent": "#hash_d9b46fd4d0a1325",
                     "var_5d4b5964": 7.3
                 }
             ],
@@ -969,7 +969,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_7f52c5ff19ea1583",
+                    "soundevent": "#hash_7f52c5ff19ea1583",
                     "var_5d4b5964": 6.53
                 }
             ],
@@ -979,7 +979,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_1edf70279a3dd59b",
+                    "soundevent": "#hash_1edf70279a3dd59b",
                     "var_5d4b5964": 12.42
                 }
             ],
@@ -989,7 +989,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_59da1cab5c039e74",
+                    "soundevent": "#hash_59da1cab5c039e74",
                     "var_5d4b5964": 6.89
                 }
             ],
@@ -999,7 +999,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_2616a5b6bc3f9782",
+                    "soundevent": "#hash_2616a5b6bc3f9782",
                     "var_5d4b5964": 11.97
                 }
             ],
@@ -1009,7 +1009,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_2a4204ee0f98e413",
+                    "soundevent": "#hash_2a4204ee0f98e413",
                     "var_5d4b5964": 7.66
                 }
             ],
@@ -1019,7 +1019,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_3cb893fce4c8758c",
+                    "soundevent": "#hash_3cb893fce4c8758c",
                     "var_5d4b5964": 5.06
                 }
             ],
@@ -1029,7 +1029,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_319408b86504a9ca",
+                    "soundevent": "#hash_319408b86504a9ca",
                     "var_5d4b5964": 9.19
                 }
             ],
@@ -1039,7 +1039,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_15150c32633c1ac2",
+                    "soundevent": "#hash_15150c32633c1ac2",
                     "var_5d4b5964": 10.47
                 }
             ],
@@ -1049,7 +1049,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_536e5255ebe10a99",
+                    "soundevent": "#hash_536e5255ebe10a99",
                     "var_5d4b5964": 7.68
                 }
             ],
@@ -1059,7 +1059,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_5222630c1148bbff",
+                    "soundevent": "#hash_5222630c1148bbff",
                     "var_5d4b5964": 6.29
                 }
             ],
@@ -1069,7 +1069,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_2fe328dacf681e95",
+                    "soundevent": "#hash_2fe328dacf681e95",
                     "var_5d4b5964": 12.59
                 }
             ],
@@ -1079,7 +1079,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_15cf6a7bb1863f56",
+                    "soundevent": "#hash_15cf6a7bb1863f56",
                     "var_5d4b5964": 4.61
                 }
             ],
@@ -1089,7 +1089,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_46e4fc774f4170fc",
+                    "soundevent": "#hash_46e4fc774f4170fc",
                     "var_5d4b5964": 8.55
                 }
             ],
@@ -1099,7 +1099,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_7ddb341d875d4b48",
+                    "soundevent": "#hash_7ddb341d875d4b48",
                     "var_5d4b5964": 8.53
                 }
             ],
@@ -1109,7 +1109,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_6bcf4c1ec7d04407",
+                    "soundevent": "#hash_6bcf4c1ec7d04407",
                     "var_5d4b5964": 6.27
                 }
             ],
@@ -1119,7 +1119,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_3f98a01bc56f21ed",
+                    "soundevent": "#hash_3f98a01bc56f21ed",
                     "var_5d4b5964": 6.57
                 }
             ],
@@ -1128,7 +1128,7 @@
         {
             "var_aa02f35a": [
                 {
-                    "var_46bd7973": "#hash_6d907d6921a5eb66",
+                    "soundevent": "#hash_6d907d6921a5eb66",
                     "var_5d4b5964": 2.9
                 }
             ],
@@ -1137,7 +1137,7 @@
         {
             "var_aa02f35a": [
                 {
-                    "var_46bd7973": "#hash_63ceaa51f8489a50",
+                    "soundevent": "#hash_63ceaa51f8489a50",
                     "var_5d4b5964": 2.92
                 }
             ],
@@ -1147,13 +1147,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_19919f2e37242cf4",
+                    "soundevent": "#hash_19919f2e37242cf4",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 4.16
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_5f6e8baf33aec024",
+                    "soundevent": "#hash_5f6e8baf33aec024",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 8.32
                 }
@@ -1164,13 +1164,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_19919f2e37242cf4",
+                    "soundevent": "#hash_19919f2e37242cf4",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 4.16
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_70c2217807b4639",
+                    "soundevent": "#hash_70c2217807b4639",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 6.14
                 }
@@ -1181,13 +1181,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_19919f2e37242cf4",
+                    "soundevent": "#hash_19919f2e37242cf4",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 4.16
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_2dfa2a946c8c4959",
+                    "soundevent": "#hash_2dfa2a946c8c4959",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 6.98
                 }
@@ -1198,13 +1198,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_5a2af3a1abd940c5",
+                    "soundevent": "#hash_5a2af3a1abd940c5",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 9.47
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_5ea145437ed0c9b1",
+                    "soundevent": "#hash_5ea145437ed0c9b1",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 6.81
                 }
@@ -1215,13 +1215,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_5a2af3a1abd940c5",
+                    "soundevent": "#hash_5a2af3a1abd940c5",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 9.47
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_6d235ec738ef247c",
+                    "soundevent": "#hash_6d235ec738ef247c",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 7.3
                 }
@@ -1232,13 +1232,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_5a2af3a1abd940c5",
+                    "soundevent": "#hash_5a2af3a1abd940c5",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 9.47
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_45291ba62708cc40",
+                    "soundevent": "#hash_45291ba62708cc40",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 7.94
                 }
@@ -1249,19 +1249,19 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_1765214dcb8a46d4",
+                    "soundevent": "#hash_1765214dcb8a46d4",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 8.62
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_5d428dcec815b384",
+                    "soundevent": "#hash_5d428dcec815b384",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 16.75
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_5d4290cec815b89d",
+                    "soundevent": "#hash_5d4290cec815b89d",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 3.09
                 }
@@ -1272,19 +1272,19 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_6135ec56b3edfb58",
+                    "soundevent": "#hash_6135ec56b3edfb58",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 4.78
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_213e2972b50d98c4",
+                    "soundevent": "#hash_213e2972b50d98c4",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 12.54
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_213e2c72b50d9ddd",
+                    "soundevent": "#hash_213e2c72b50d9ddd",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 3.09
                 }
@@ -1295,19 +1295,19 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_1fe2b0cb1f737854",
+                    "soundevent": "#hash_1fe2b0cb1f737854",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 8.53
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_5ddaed04da035ed3",
+                    "soundevent": "#hash_5ddaed04da035ed3",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 5.16
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_5ddaee04da036086",
+                    "soundevent": "#hash_5ddaee04da036086",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 7.81
                 }
@@ -1318,13 +1318,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_2a26eefe7f0639a9",
+                    "soundevent": "#hash_2a26eefe7f0639a9",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 6.25
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_79e633e816baca65",
+                    "soundevent": "#hash_79e633e816baca65",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 7.4
                 }
@@ -1335,13 +1335,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_702c29e84a231a7d",
+                    "soundevent": "#hash_702c29e84a231a7d",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 8.04
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_32af81116dd277b5",
+                    "soundevent": "#hash_32af81116dd277b5",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 7.38
                 }
@@ -1352,13 +1352,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_2328e4d9df6f930a",
+                    "soundevent": "#hash_2328e4d9df6f930a",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 7.17
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_536c6accfda954c9",
+                    "soundevent": "#hash_536c6accfda954c9",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 9.98
                 }
@@ -1369,7 +1369,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_7f19b69aef2c88e2",
+                    "soundevent": "#hash_7f19b69aef2c88e2",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 5.82
                 }
@@ -1380,7 +1380,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_159749eaf41cf2b9",
+                    "soundevent": "#hash_159749eaf41cf2b9",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 3.39
                 }
@@ -1391,7 +1391,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_3c278d749d3a039f",
+                    "soundevent": "#hash_3c278d749d3a039f",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 4.2
                 }
@@ -1401,7 +1401,7 @@
         {
             "var_aa02f35a": [
                 {
-                    "var_46bd7973": "#hash_c05c36c26d47a27",
+                    "soundevent": "#hash_c05c36c26d47a27",
                     "var_5d4b5964": 7.49
                 }
             ],
@@ -1410,19 +1410,19 @@
         {
             "var_aa02f35a": [
                 {
-                    "var_46bd7973": "#hash_11e55f322833de43",
+                    "soundevent": "#hash_11e55f322833de43",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 6.29
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_140e5b341cd68812",
+                    "soundevent": "#hash_140e5b341cd68812",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 3.48
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_1884aad5efce0d98",
+                    "soundevent": "#hash_1884aad5efce0d98",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 13.12
                 }
@@ -1432,19 +1432,19 @@
         {
             "var_aa02f35a": [
                 {
-                    "var_46bd7973": "#hash_11e55f322833de43",
+                    "soundevent": "#hash_11e55f322833de43",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 6.29
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_140e5b341cd68812",
+                    "soundevent": "#hash_140e5b341cd68812",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 3.48
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_2706c859a9ec6f2f",
+                    "soundevent": "#hash_2706c859a9ec6f2f",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 7
                 }
@@ -1454,19 +1454,19 @@
         {
             "var_aa02f35a": [
                 {
-                    "var_46bd7973": "#hash_11e55f322833de43",
+                    "soundevent": "#hash_11e55f322833de43",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 6.29
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_140e5b341cd68812",
+                    "soundevent": "#hash_140e5b341cd68812",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 3.48
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_7f0c8b3898062125",
+                    "soundevent": "#hash_7f0c8b3898062125",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 9.94
                 }
@@ -1476,7 +1476,7 @@
         {
             "var_aa02f35a": [
                 {
-                    "var_46bd7973": "#hash_2263cb4ca12a315f",
+                    "soundevent": "#hash_2263cb4ca12a315f",
                     "var_5d4b5964": 5.38
                 }
             ],
@@ -1485,19 +1485,19 @@
         {
             "var_aa02f35a": [
                 {
-                    "var_46bd7973": "#hash_7b5f54942429ae57",
+                    "soundevent": "#hash_7b5f54942429ae57",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 7.36
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_456307d2e80149be",
+                    "soundevent": "#hash_456307d2e80149be",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 11.2
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_c05209f0dcf2584",
+                    "soundevent": "#hash_c05209f0dcf2584",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 10.18
                 }
@@ -1507,19 +1507,19 @@
         {
             "var_aa02f35a": [
                 {
-                    "var_46bd7973": "#hash_7b5f54942429ae57",
+                    "soundevent": "#hash_7b5f54942429ae57",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 7.36
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_456307d2e80149be",
+                    "soundevent": "#hash_456307d2e80149be",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 11.2
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_48d059d70e68879b",
+                    "soundevent": "#hash_48d059d70e68879b",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 9.02
                 }
@@ -1529,19 +1529,19 @@
         {
             "var_aa02f35a": [
                 {
-                    "var_46bd7973": "#hash_7b5f54942429ae57",
+                    "soundevent": "#hash_7b5f54942429ae57",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 7.36
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_456307d2e80149be",
+                    "soundevent": "#hash_456307d2e80149be",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 11.2
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_6480db98e438ee71",
+                    "soundevent": "#hash_6480db98e438ee71",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 9.09
                 }
@@ -1552,13 +1552,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_3953dbaaf1359d0",
+                    "soundevent": "#hash_3953dbaaf1359d0",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 3.95
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_28f472cf53ad566e",
+                    "soundevent": "#hash_28f472cf53ad566e",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 6.25
                 }
@@ -1569,13 +1569,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_3953dbaaf1359d0",
+                    "soundevent": "#hash_3953dbaaf1359d0",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 3.95
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_649f605341d2c32d",
+                    "soundevent": "#hash_649f605341d2c32d",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 4.89
                 }
@@ -1586,13 +1586,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_3953dbaaf1359d0",
+                    "soundevent": "#hash_3953dbaaf1359d0",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 3.95
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_10c6d6d276daa17b",
+                    "soundevent": "#hash_10c6d6d276daa17b",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 10.52
                 }
@@ -1603,13 +1603,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_74e1525c38e3dca6",
+                    "soundevent": "#hash_74e1525c38e3dca6",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 1.13
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_2aa6ae3f3c06c90c",
+                    "soundevent": "#hash_2aa6ae3f3c06c90c",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 3.01
                 }
@@ -1620,13 +1620,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_74e1525c38e3dca6",
+                    "soundevent": "#hash_74e1525c38e3dca6",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 1.13
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_3e1e7c04a3d6d223",
+                    "soundevent": "#hash_3e1e7c04a3d6d223",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 2.92
                 }
@@ -1637,13 +1637,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_74e1525c38e3dca6",
+                    "soundevent": "#hash_74e1525c38e3dca6",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 1.13
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_7aaad938c5bf4409",
+                    "soundevent": "#hash_7aaad938c5bf4409",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 5.21
                 }
@@ -1654,13 +1654,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_602aad0bc407bd10",
+                    "soundevent": "#hash_602aad0bc407bd10",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 8.36
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_7b64035d923a673e",
+                    "soundevent": "#hash_7b64035d923a673e",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 2.22
                 }
@@ -1671,13 +1671,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_4b1be126522eb96f",
+                    "soundevent": "#hash_4b1be126522eb96f",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 1.6
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_7b64035d923a673e",
+                    "soundevent": "#hash_7b64035d923a673e",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 2.22
                 }
@@ -1688,13 +1688,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_7f73bf79d0cabd25",
+                    "soundevent": "#hash_7f73bf79d0cabd25",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 1.96
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_7b64035d923a673e",
+                    "soundevent": "#hash_7b64035d923a673e",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 2.22
                 }
@@ -1704,23 +1704,23 @@
         {
             "var_aa02f35a": [
                 {
-                    "var_46bd7973": "#hash_7fed594de1c12933",
+                    "soundevent": "#hash_7fed594de1c12933",
                     "var_5d4b5964": 21.27
                 },
                 {
-                    "var_46bd7973": "#hash_7fed584de1c12780",
+                    "soundevent": "#hash_7fed584de1c12780",
                     "var_5d4b5964": 17.28
                 },
                 {
-                    "var_46bd7973": "#hash_7fed5b4de1c12c99",
+                    "soundevent": "#hash_7fed5b4de1c12c99",
                     "var_5d4b5964": 5.12
                 },
                 {
-                    "var_46bd7973": "#hash_7fed5a4de1c12ae6",
+                    "soundevent": "#hash_7fed5a4de1c12ae6",
                     "var_5d4b5964": 5.89
                 },
                 {
-                    "var_46bd7973": "#hash_7fed5d4de1c12fff",
+                    "soundevent": "#hash_7fed5d4de1c12fff",
                     "var_5d4b5964": 7.4
                 }
             ],
@@ -1731,13 +1731,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_48c69bf9f32e02ba",
+                    "soundevent": "#hash_48c69bf9f32e02ba",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 3.05
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_63d4f0b5ead3b9fe",
+                    "soundevent": "#hash_63d4f0b5ead3b9fe",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 7.81
                 }
@@ -1748,13 +1748,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_48c69bf9f32e02ba",
+                    "soundevent": "#hash_48c69bf9f32e02ba",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 3.05
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_2faea2bfe3e6a2cf",
+                    "soundevent": "#hash_2faea2bfe3e6a2cf",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 4.86
                 }
@@ -1765,13 +1765,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_48c69bf9f32e02ba",
+                    "soundevent": "#hash_48c69bf9f32e02ba",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 3.05
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_1c04a2838e74ae43",
+                    "soundevent": "#hash_1c04a2838e74ae43",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 7.74
                 }
@@ -1781,7 +1781,7 @@
         {
             "var_aa02f35a": [
                 {
-                    "var_46bd7973": "#hash_717ac87ac16d7f03",
+                    "soundevent": "#hash_717ac87ac16d7f03",
                     "var_5d4b5964": 4.52
                 }
             ],
@@ -1790,7 +1790,7 @@
         {
             "var_aa02f35a": [
                 {
-                    "var_46bd7973": "#hash_6df0119875036f21",
+                    "soundevent": "#hash_6df0119875036f21",
                     "var_5d4b5964": 7.94
                 }
             ],
@@ -1800,13 +1800,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_5d00e435876920dc",
+                    "soundevent": "#hash_5d00e435876920dc",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 9
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_40816c4d7a575de0",
+                    "soundevent": "#hash_40816c4d7a575de0",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 6.14
                 }
@@ -1817,13 +1817,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_carver",
-                    "var_46bd7973": "#hash_36e122ac23e4071",
+                    "soundevent": "#hash_36e122ac23e4071",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 6.36
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_40816c4d7a575de0",
+                    "soundevent": "#hash_40816c4d7a575de0",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 6.14
                 }
@@ -1834,13 +1834,13 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_grey",
-                    "var_46bd7973": "#hash_321f5e8c6b091261",
+                    "soundevent": "#hash_321f5e8c6b091261",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 9.19
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_40816c4d7a575de0",
+                    "soundevent": "#hash_40816c4d7a575de0",
                     "var_f35c5951": 0.5,
                     "var_5d4b5964": 6.14
                 }
@@ -1850,7 +1850,7 @@
         {
             "var_aa02f35a": [
                 {
-                    "var_46bd7973": "#hash_285ac8d3d37a8088"
+                    "soundevent": "#hash_285ac8d3d37a8088"
                 }
             ],
             "var_f34d52cb": "#hash_7856d6d508b98f55"
@@ -1858,7 +1858,7 @@
         {
             "var_aa02f35a": [
                 {
-                    "var_46bd7973": "#hash_a0bc9894e7b19a6"
+                    "soundevent": "#hash_a0bc9894e7b19a6"
                 }
             ],
             "var_f34d52cb": "#hash_50739ef25ce8eb68"
@@ -1866,7 +1866,7 @@
         {
             "var_aa02f35a": [
                 {
-                    "var_46bd7973": "#hash_5e67bc8b78576b44"
+                    "soundevent": "#hash_5e67bc8b78576b44"
                 }
             ],
             "var_f34d52cb": "#hash_898a2ece2e63db5"
@@ -1875,7 +1875,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_weaver",
-                    "var_46bd7973": "#hash_70b81d7b5af5c380",
+                    "soundevent": "#hash_70b81d7b5af5c380",
                     "var_f35c5951": 1,
                     "var_5d4b5964": 4.44
                 }
@@ -1886,7 +1886,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_raptor_one_pilot",
-                    "var_46bd7973": "#hash_6c2236cd12de72e8",
+                    "soundevent": "#hash_6c2236cd12de72e8",
                     "var_5d4b5964": 2.41
                 }
             ],
@@ -1896,7 +1896,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_raptor_one_pilot",
-                    "var_46bd7973": "#hash_6141a12f345db7ae",
+                    "soundevent": "#hash_6141a12f345db7ae",
                     "var_5d4b5964": 3.69
                 }
             ],
@@ -1906,7 +1906,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_raptor_one_pilot",
-                    "var_46bd7973": "#hash_4ac0e47a653af9ce",
+                    "soundevent": "#hash_4ac0e47a653af9ce",
                     "var_5d4b5964": 2.65
                 }
             ],
@@ -1916,7 +1916,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_raptor_one_pilot",
-                    "var_46bd7973": "#hash_68df705eab78b153",
+                    "soundevent": "#hash_68df705eab78b153",
                     "var_5d4b5964": 3.52
                 }
             ],
@@ -1926,17 +1926,17 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_raptor_one_pilot",
-                    "var_46bd7973": "#hash_1738accc3ed4478e",
+                    "soundevent": "#hash_1738accc3ed4478e",
                     "var_5d4b5964": 1.64
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_raptor_one_pilot",
-                    "var_46bd7973": "#hash_1738adcc3ed44941",
+                    "soundevent": "#hash_1738adcc3ed44941",
                     "var_5d4b5964": 1.32
                 },
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_raptor_one_pilot",
-                    "var_46bd7973": "#hash_1738aacc3ed44428",
+                    "soundevent": "#hash_1738aacc3ed44428",
                     "var_5d4b5964": 2.45
                 }
             ],
@@ -1947,7 +1947,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_raptor_one_pilot",
-                    "var_46bd7973": "#hash_2ed24588f3be6e25",
+                    "soundevent": "#hash_2ed24588f3be6e25",
                     "var_5d4b5964": 3.05
                 }
             ],
@@ -1957,7 +1957,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_raptor_one_pilot",
-                    "var_46bd7973": "#hash_192be6dab0aacf60",
+                    "soundevent": "#hash_192be6dab0aacf60",
                     "var_5d4b5964": 4.25
                 }
             ],
@@ -1967,7 +1967,7 @@
             "var_aa02f35a": [
                 {
                     "var_aebcb4b1": "#zmdialog_speaker_strauss",
-                    "var_46bd7973": "#hash_1b650527b1e61c0d",
+                    "soundevent": "#hash_1b650527b1e61c0d",
                     "var_5d4b5964": 6.23
                 }
             ],

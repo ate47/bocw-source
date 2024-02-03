@@ -41,7 +41,7 @@ function event_handler[level_init] main(*eventstruct) {
     clientfield::register("world", "" + #"hash_71f053fa597abb52", 1, 1, "int");
     callback::on_item_pickup(&function_a6ee18e5);
     level.sr_objective_secure_hud = sr_objective_secure_hud::register();
-    namespace_f3a74bbc::function_b3464a7c(#"hash_65660aeee07403d0", &init, &function_fb9dff2f, #"hash_65660aeee07403d0", #"hash_2764807c1ab1eabd", #"hash_bdf13864e52da12", 8, #"hash_582ab7cd393c5d47");
+    namespace_f3a74bbc::function_b3464a7c(#"secure", &init, &function_fb9dff2f, #"secure", #"hash_2764807c1ab1eabd", #"hash_bdf13864e52da12", 8, #"hash_582ab7cd393c5d47");
 }
 
 // Namespace namespace_24fd6413/namespace_24fd6413
@@ -306,7 +306,7 @@ function function_c93067d3(instance) {
 function function_f62e3f66(instance) {
     instance endon(#"objective_ended", #"hash_8202877a3aadac8");
     self endon(#"death");
-    self waittill(#"hash_5c5acc99ad3b58f4");
+    self waittill(#"perimeter");
     self thread function_dc79011b(instance);
 }
 
@@ -618,7 +618,7 @@ function function_b076be86(instance) {
                 }
             }
             wait(4);
-            self notify(#"hash_5c5acc99ad3b58f4");
+            self notify(#"perimeter");
             foreach (player in getplayers()) {
                 if (distance2dsquared(self.origin, player.origin) <= function_a3f6cdac(1000) && isalive(player)) {
                     player thread zm_vo::function_c4303dda(#"hash_21a2a9746be5c204");

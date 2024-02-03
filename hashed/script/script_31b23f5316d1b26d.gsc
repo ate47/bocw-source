@@ -112,7 +112,7 @@ function private function_8396377c(var_57617236, origin, angles) {
     door.angles = angles;
     door.var_d19720ad = function_a06dcd8b(origin);
     door.var_66b667b0 = function_a06dcd8b(angles);
-    door.var_a1152600 = var_57617236;
+    door.template = var_57617236;
     door.neighbors = [];
     door.var_12650ad6 = [];
     door.tags = [];
@@ -144,7 +144,7 @@ function private function_9a75d6e9(var_64f87a02, origin, angles) {
     room.angles = angles;
     room.var_d19720ad = function_a06dcd8b(origin);
     room.var_66b667b0 = function_a06dcd8b(angles);
-    room.var_a1152600 = var_64f87a02;
+    room.template = var_64f87a02;
     room.neighbors = [];
     room.var_12650ad6 = [];
     room.tags = [];
@@ -218,13 +218,13 @@ function function_b3f5992c() {
             continue;
         }
         /#
-            if (issubstr(room.var_a1152600.targetname, "<unknown string>")) {
+            if (issubstr(room.template.targetname, "<unknown string>")) {
                 if (!isdefined(level.var_5d40e975)) {
                     level.var_5d40e975 = 0;
                 }
                 level.var_5d40e975++;
             }
-            if (issubstr(room.var_a1152600.targetname, "<unknown string>")) {
+            if (issubstr(room.template.targetname, "<unknown string>")) {
                 if (!isdefined(level.var_d5561d56)) {
                     level.var_d5561d56 = 0;
                 }
@@ -304,7 +304,7 @@ function function_3a9f29b2(room) {
     room.neighbors = [];
     room.var_12650ad6 = [];
     room.var_dbb4ff9a = undefined;
-    room.var_a1152600 = undefined;
+    room.template = undefined;
     function_f4b7f348("Room Cleanup:" + room.targetname + " done");
     room struct::delete();
 }
@@ -588,13 +588,13 @@ function function_40681754(var_da1a882e, x, y, var_603479c6) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0xf34ca591, Offset: 0x2668
 // Size: 0x29a
-function function_6dbc9ea5(origin, var_816442c9, var_272260e3) {
+function function_6dbc9ea5(origin, var_816442c9, distancetolerance) {
     if (!isarray(var_816442c9)) {
         var_816442c9 = array(var_816442c9);
     }
     result = [];
     foreach (var_7758b4f0 in var_816442c9) {
-        var_21a0f66a = function_a3f6cdac(var_272260e3);
+        var_21a0f66a = function_a3f6cdac(distancetolerance);
         foreach (room in level.var_c97eeeb4) {
             if (!isdefined(room)) {
                 continue;

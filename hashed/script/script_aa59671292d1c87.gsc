@@ -75,7 +75,7 @@ function function_e71841a() {
             self.tweakcam = 1;
         }
     }
-    self.var_cd42b9c0 = namespace_ec06fe4a::function_e22ae9b3(0, var_f445d580.origin, "tag_origin", var_f445d580.angles, "dungeon mapObject");
+    self.var_cd42b9c0 = namespace_ec06fe4a::spawnmodel(0, var_f445d580.origin, "tag_origin", var_f445d580.angles, "dungeon mapObject");
     if (isdefined(self.var_cd42b9c0)) {
         iconname = namespace_c004634e::function_4e886036(self);
         if (isdefined(iconname)) {

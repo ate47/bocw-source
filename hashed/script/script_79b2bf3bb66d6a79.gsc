@@ -110,8 +110,8 @@ function private function_51f065c3(parms) {
             }
         }
         if (isdefined(side_cam_start)) {
-            var_c4c9ccaf = 0;
-            while (var_c4c9ccaf < 6000) {
+            frame_count = 0;
+            while (frame_count < 6000) {
                 sphere(side_cam_start.origin, 4, (0.2, 1, 0.2), 1, 0, 24, 1);
                 sphere(var_52c1d392.origin, 4, (0.2, 1, 0.2), 1, 0, 24, 1);
                 var_c3df7dfc = parms.var_b21e26bd;
@@ -119,7 +119,7 @@ function private function_51f065c3(parms) {
                     var_c3df7dfc = var_61437df7.origin;
                 }
                 sphere(var_c3df7dfc, 4, (1, 0.2, 0.2), 1, 0, 24, 1);
-                var_c4c9ccaf++;
+                frame_count++;
                 waitframe(1);
             }
         }
@@ -196,9 +196,9 @@ function private function_7f8d6723(localclientnum, victim, var_d21483a5) {
             if (math::cointoss()) {
                 var_a4607150 = parms.angles + vectorscale((0, -1, 0), 90);
             }
-            var_69c3f11 = anglestoforward(var_a4607150);
-            var_b630415d = var_69c3f11 * -125;
-            var_fa3c8b18 = parms.var_b21e26bd + parms.forward * 20 + var_b630415d;
+            offset_dir = anglestoforward(var_a4607150);
+            offset_vec = offset_dir * -125;
+            var_fa3c8b18 = parms.var_b21e26bd + parms.forward * 20 + offset_vec;
         }
         var_ac259dff = spawn(localclientnum, var_fa3c8b18, "script_model");
         var_ac259dff.angles = var_a4607150;
@@ -319,9 +319,9 @@ function private function_3992911(localclientnum, parms) {
     var_433df30c = level.var_be173d94[randomint(level.var_be173d94.size)];
     parms.victim function_8e5138f0(localclientnum, var_433df30c);
     parms.victim._currentfacestate = "death";
-    var_c5fd72fd = parms.victim gettagorigin("j_head");
-    playfx(localclientnum, "impacts/fx9_bul_blood_head_fatal", var_c5fd72fd, parms.forward * -1);
-    playfx(localclientnum, "impacts/fx9_bul_blood_head_fatal_exit", var_c5fd72fd, parms.forward);
+    headpos = parms.victim gettagorigin("j_head");
+    playfx(localclientnum, "impacts/fx9_bul_blood_head_fatal", headpos, parms.forward * -1);
+    playfx(localclientnum, "impacts/fx9_bul_blood_head_fatal_exit", headpos, parms.forward);
     util::playfxontag(localclientnum, "impacts/fx9_snipercam_headshot_trail", parms.victim, "j_head");
 }
 

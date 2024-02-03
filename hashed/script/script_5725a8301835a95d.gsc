@@ -15,7 +15,7 @@
 // Checksum 0xb7b3acad, Offset: 0x100
 // Size: 0x54
 function private autoexec __init__system__() {
-    system::register(#"hash_4e995bd55f8098d6", &function_70a657d8, undefined, &function_5700f119, #"hash_f81b9dea74f0ee");
+    system::register(#"hash_4e995bd55f8098d6", &function_70a657d8, undefined, &finalize, #"hash_f81b9dea74f0ee");
 }
 
 // Namespace namespace_1ab3fb7b/namespace_1ab3fb7b
@@ -32,7 +32,7 @@ function private function_70a657d8() {
 // Params 0, eflags: 0x6 linked
 // Checksum 0x863bc0fa, Offset: 0x1e8
 // Size: 0x1c
-function private function_5700f119() {
+function private finalize() {
     /#
         level thread init_devgui();
     #/

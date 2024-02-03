@@ -16,7 +16,7 @@
 #using script_74940ab70a48ee4e;
 #using script_6eea75edd4d830a;
 #using script_37f9ff47f340fbe8;
-#using script_7b4396f5e8e35b28;
+#using scripts\core_common\districts.gsc;
 #using script_7d0013bbc05623b9;
 #using script_32399001bdb550da;
 #using scripts\cp_common\hms_util.gsc;
@@ -42,7 +42,7 @@
 // Params 1, eflags: 0x2 linked
 // Checksum 0x733b8a67, Offset: 0xe48
 // Size: 0x64
-function function_f9f06983(*var_d3440450) {
+function starting(*var_d3440450) {
     level.var_c0c469ea = 1.75;
     level thread scene::init_streamer(#"scene_tkd_hit2_intro_bar_v2", getplayers());
     namespace_a052577e::function_b9b9189c();
@@ -90,7 +90,7 @@ function main(var_d3440450, *var_50cc0d4f) {
     wait(1);
     level thread function_d8e3ce93();
     level thread function_ac208f44();
-    player util::delay(5, undefined, &namespace_f49eaa8b::function_a7d79fcb, "amsterdam_main");
+    player util::delay(5, undefined, &districts::function_a7d79fcb, "amsterdam_main");
     level util::delay(4.2, undefined, &globallogic_ui::function_7bc0e4b9, 0, 0);
     level waittill(#"hash_4aade1e09ed49814");
     snd::function_7db65a93(#"hash_1ef4e0d9441579d");
@@ -689,7 +689,7 @@ function function_d8e3ce93() {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x5775204c, Offset: 0x3e18
 // Size: 0x24
-function cleanup(*name, *var_f9f06983, *direct, *player) {
+function cleanup(*name, *starting, *direct, *player) {
     
 }
 

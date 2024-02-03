@@ -127,8 +127,8 @@ function function_aee99628(player) {
             if (isalive(zombie) && zombie.team === level.zombie_team) {
                 var_6e084471 = vectornormalize(zombie.origin - self.origin);
                 var_1006dafa = vectordot(right, var_6e084471);
-                var_fe29bd3f = vectordot(left, var_6e084471);
-                if (var_1006dafa <= 0.866025 && var_1006dafa > 0 || var_fe29bd3f <= 0.866025 && var_fe29bd3f > 0) {
+                leftdot = vectordot(left, var_6e084471);
+                if (var_1006dafa <= 0.866025 && var_1006dafa > 0 || leftdot <= 0.866025 && leftdot > 0) {
                     damage = zm_equipment::function_379f6b5d(150, undefined, zombie.var_6f84b820, zombie.maxhealth);
                     zombie dodamage(damage, zombie.origin, player, player, "torso_upper", "MOD_RIFLE_BULLET");
                     if (damage >= zombie.health) {

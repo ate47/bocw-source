@@ -46,7 +46,7 @@ function function_558ac85a(inflictor, attacker, *damage, *flags, *meansofdeath, 
 // Size: 0xc4
 function function_7c8d1738(params) {
     if (params.weapon.name === #"satchel_charge" && isplayer(params.eattacker) && self.var_6f84b820 === #"normal" && isvec(self.var_8efbca7e)) {
-        self namespace_cc411409::function_706a56ae(self.var_8efbca7e, 2);
+        self namespace_cc411409::ragdoll_launch(self.var_8efbca7e, 2);
         self thread function_3fb4ce3b();
     }
 }
