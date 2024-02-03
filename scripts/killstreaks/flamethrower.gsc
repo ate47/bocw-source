@@ -14,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace flamethrower/flamethrower
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x86fe5802, Offset: 0x148
 // Size: 0x9c
 function __init__() {

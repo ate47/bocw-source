@@ -330,7 +330,7 @@ function annihilate(entity) {
 }
 
 // Namespace gibserverutils/gib
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x545ad488, Offset: 0x12c8
 // Size: 0x8c
 function copygibstate(originalentity, newentity) {

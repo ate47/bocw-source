@@ -530,7 +530,7 @@ function clearaioverridedamagecallbacks(entity) {
 }
 
 // Namespace aiutility/namespace_7d3e8f59
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x6802345f, Offset: 0x1eb0
 // Size: 0x11c
 function addaioverridekilledcallback(entity, callback) {

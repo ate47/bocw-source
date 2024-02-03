@@ -79,7 +79,7 @@ function private event_handler[systemstatechange] function_406f0371(eventstruct)
             world.var_d2257418 = int(s[2]);
             var_6dfed201 = int(s[3]);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             return;
         }
         if (!isdefined(level.var_643f86fe)) {

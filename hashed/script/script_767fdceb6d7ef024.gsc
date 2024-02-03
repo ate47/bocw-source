@@ -9,7 +9,7 @@
 #namespace ammomod_electriccherry;
 
 // Namespace ammomod_electriccherry/ammomod_electriccherry
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x211b4fdc, Offset: 0x168
 // Size: 0x9c
 function function_4b66248d() {
@@ -21,7 +21,7 @@ function function_4b66248d() {
 }
 
 // Namespace ammomod_electriccherry/ammomod_electriccherry
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x47f782ca, Offset: 0x210
 // Size: 0xa4
 function electric_cherry_explode(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

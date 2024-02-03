@@ -235,7 +235,7 @@ function function_3e65ae71(str_name, value) {
 }
 
 // Namespace val/values_shared
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xe7195e80, Offset: 0x1b50
 // Size: 0x74
 function set_for_time(n_time, str_id, str_name, value) {

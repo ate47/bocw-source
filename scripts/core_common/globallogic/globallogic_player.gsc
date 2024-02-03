@@ -318,7 +318,7 @@ function allowedassistweapon(weapon) {
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0x7187c5a9, Offset: 0x1578
 // Size: 0x11c
 function giveattackerandinflictorownerassist(eattacker, einflictor, idamage, smeansofdeath, weapon, shitloc) {
@@ -374,7 +374,7 @@ function function_efd02c1d(einflictor) {
 }
 
 // Namespace globallogic_player/globallogic_player
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x3d3fc953, Offset: 0x1798
 // Size: 0x156
 function figureoutattacker(eattacker) {

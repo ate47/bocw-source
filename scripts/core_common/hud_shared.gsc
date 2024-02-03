@@ -1014,7 +1014,7 @@ function function_426b1c79(str_identifier, str_winning_team = #"none", var_f30c6
 }
 
 // Namespace hud/hud_shared
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x7245df97, Offset: 0x41b8
 // Size: 0x234
 function function_b825bd3d(str_team, var_ba9a7af4, *var_b002585c = 1) {

@@ -26,7 +26,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_loadout/zm_loadout
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xb565f678, Offset: 0x178
 // Size: 0x3c
 function private function_70a657d8() {
@@ -60,7 +60,7 @@ function on_localplayer_spawned(localclientnum) {
 }
 
 // Namespace zm_loadout/zm_loadout
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xcc7227ac, Offset: 0x3b8
 // Size: 0x40
 function function_622d8349(localclientnum) {
@@ -71,7 +71,7 @@ function function_622d8349(localclientnum) {
 }
 
 // Namespace zm_loadout/zm_loadout
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xf7bdb001, Offset: 0x400
 // Size: 0x92
 function get_loadout_item(localclientnum, slot) {
@@ -88,7 +88,7 @@ function get_loadout_item(localclientnum, slot) {
 }
 
 // Namespace zm_loadout/zm_loadout
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x1d935ce0, Offset: 0x4a0
 // Size: 0x92
 function function_439b009a(localclientnum, slot) {

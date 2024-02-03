@@ -17,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xd05b7ecd, Offset: 0x170
 // Size: 0x16c
 function function_70a657d8() {
@@ -34,7 +34,7 @@ function function_70a657d8() {
 }
 
 // Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x161bbe36, Offset: 0x2e8
 // Size: 0x94
 function supply_drop_parachute(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -46,7 +46,7 @@ function supply_drop_parachute(*localclientnum, *oldval, newval, *bnewent, *bini
 }
 
 // Namespace namespace_dedc3cb9/namespace_2291eec4
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xfab92085, Offset: 0x388
 // Size: 0x52
 function on_vehicle_spawned(*localclientnum) {

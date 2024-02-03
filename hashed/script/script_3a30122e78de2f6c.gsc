@@ -23,7 +23,7 @@ function event_handler[level_init] main(*eventstruct) {
 }
 
 // Namespace namespace_24fd6413/namespace_24fd6413
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xa75e861, Offset: 0x588
 // Size: 0x64
 function function_c4893dbf(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -31,7 +31,7 @@ function function_c4893dbf(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace namespace_24fd6413/namespace_24fd6413
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x4a6a6616, Offset: 0x5f8
 // Size: 0x1b6
 function function_9c4c4f14(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -54,7 +54,7 @@ function function_9c4c4f14(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace namespace_24fd6413/namespace_24fd6413
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x54988b3, Offset: 0x7b8
 // Size: 0xae
 function function_10ea3e76(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -67,7 +67,7 @@ function function_10ea3e76(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace namespace_24fd6413/namespace_24fd6413
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xc7386a8a, Offset: 0x870
 // Size: 0x284
 function function_bb5d646a(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -98,7 +98,7 @@ function function_bb5d646a(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace namespace_24fd6413/namespace_24fd6413
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xb636319d, Offset: 0xb00
 // Size: 0xa4
 function function_fd381218(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -110,7 +110,7 @@ function function_fd381218(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace namespace_24fd6413/namespace_24fd6413
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x95c6b2ef, Offset: 0xbb0
 // Size: 0x212
 function function_55b89b40(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -141,7 +141,7 @@ function function_55b89b40(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace namespace_24fd6413/namespace_24fd6413
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x7a74b26f, Offset: 0xdd0
 // Size: 0xd4
 function function_a2e43552(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

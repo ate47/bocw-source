@@ -101,7 +101,7 @@ function function_d47881a3() {
             }
             counters[1] = 0;
             var_686cf729 = undefined;
-        case #"hash_defdefdefdefdef0":
+        default:
             if (gettime() - timeout_time >= 2000) {
                 if (var_e31d75d6 == self.origin) {
                     counters[0]++;

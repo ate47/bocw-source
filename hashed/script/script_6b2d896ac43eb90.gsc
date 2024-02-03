@@ -385,7 +385,7 @@ function function_21ba74a1(machine, trigger) {
             case #"hash_383c519d3bdac984":
                 self notify(#"hash_11ed79645f6768e1");
                 self function_6c71e778(machine, trigger);
-            case #"hash_defdefdefdefdef0":
+            default:
                 var_3f5e47c5 = level.var_47926ab6[response];
                 if (isfunctionptr(var_3f5e47c5)) {
                     self notify(#"hash_11ed79645f6768e1");

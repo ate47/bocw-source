@@ -226,7 +226,7 @@ function function_8106e2e1() {
     case #"tkdn_af_skid":
         function_43593d7d();
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         function_95b5afc9();
         break;
     }

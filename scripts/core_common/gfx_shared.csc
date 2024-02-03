@@ -67,7 +67,7 @@ function setstage(localclientnum, bundle, filterid, stageprefix, stagelength, ac
                 case #"sin":
                     lerpratio = 0.5 - 0.5 * cos(360 * timeratio);
                     break;
-                case #"hash_defdefdefdefdef0":
+                default:
                     break;
                 }
                 lerpratio = math::clamp(lerpratio, 0, 1);

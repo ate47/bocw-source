@@ -26,7 +26,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xd0f8827a, Offset: 0x240
 // Size: 0x60
 function init_shared() {
@@ -37,7 +37,7 @@ function init_shared() {
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x546dc927, Offset: 0x2a8
 // Size: 0x22
 function function_5545649e(watcher) {
@@ -45,7 +45,7 @@ function function_5545649e(watcher) {
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x7ee2cc05, Offset: 0x2d8
 // Size: 0x74
 function function_77344457(*watcher, ent) {
@@ -55,7 +55,7 @@ function function_77344457(*watcher, ent) {
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x98a06eea, Offset: 0x358
 // Size: 0x2e
 function function_bba54dca() {
@@ -65,7 +65,7 @@ function function_bba54dca() {
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xd7c1ab6c, Offset: 0x390
 // Size: 0x184
 function function_1cdbb1e5(owner, weapon) {
@@ -88,7 +88,7 @@ function function_1cdbb1e5(owner, weapon) {
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x524fd64b, Offset: 0x520
 // Size: 0x74
 function function_462c8632(owner, origin, normal, velocity, weapon, team, customsettings) {
@@ -97,7 +97,7 @@ function function_462c8632(owner, origin, normal, velocity, weapon, team, custom
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x5c9a5688, Offset: 0x5a0
 // Size: 0x42
 function is_under_water(position) {
@@ -106,7 +106,7 @@ function is_under_water(position) {
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xa12ee061, Offset: 0x5f0
 // Size: 0x24
 function function_a66ba8cc(water_depth) {
@@ -114,7 +114,7 @@ function function_a66ba8cc(water_depth) {
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd804055, Offset: 0x620
 // Size: 0x2c
 function get_water_depth(position) {
@@ -122,7 +122,7 @@ function get_water_depth(position) {
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x6d84dbda, Offset: 0x658
 // Size: 0x7a
 function function_71c73ece() {
@@ -134,7 +134,7 @@ function function_71c73ece() {
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd57f63c6, Offset: 0x6e0
 // Size: 0x84
 function function_7cbeb2f0(normal) {
@@ -147,7 +147,7 @@ function function_7cbeb2f0(normal) {
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x38ccad7b, Offset: 0x770
 // Size: 0x8d4
 function function_e8ad1d81(position, owner, normal, velocity, weapon, team, customsettings) {
@@ -257,7 +257,7 @@ function function_e8ad1d81(position, owner, normal, velocity, weapon, team, cust
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xef1a728c, Offset: 0x1050
 // Size: 0x8c
 function function_523961e2(startpos, normal, var_4997e17c, fxindex, fxcount, defaultdistance, rotation) {
@@ -267,7 +267,7 @@ function function_523961e2(startpos, normal, var_4997e17c, fxindex, fxcount, def
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x66100384, Offset: 0x10e8
 // Size: 0xe4
 function function_31cc6bd9() {
@@ -284,7 +284,7 @@ function function_31cc6bd9() {
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xe2f5f7e6, Offset: 0x11d8
 // Size: 0xfe
 function function_31f342a2(origin, var_9c7e3678) {
@@ -303,7 +303,7 @@ function function_31f342a2(origin, var_9c7e3678) {
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 12, eflags: 0x0
+// Params 12, eflags: 0x2 linked
 // Checksum 0x45bf7936, Offset: 0x12e0
 // Size: 0xe70
 function function_8a03d3f3(owner, impactpos, startpos, normal, multiplier, rotation, weapon, customsettings, team, var_e76400c0, wallnormal, var_693f108f) {
@@ -444,7 +444,7 @@ function function_8a03d3f3(owner, impactpos, startpos, normal, multiplier, rotat
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x7f40d227, Offset: 0x2158
 // Size: 0x7c
 function function_42b9fdbe(weapon, loc, normal, duration, team) {
@@ -473,7 +473,7 @@ function incendiary_debug_line(from, to, color, depthtest, time) {
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 10, eflags: 0x0
+// Params 10, eflags: 0x2 linked
 // Checksum 0x82100e0, Offset: 0x22a0
 // Size: 0x660
 function damageeffectarea(owner, position, *normal, weapon, customsettings, radius_multiplier, var_e76400c0, wallnormal, var_cbaaea69, damageendtime) {
@@ -560,7 +560,7 @@ function damageeffectarea(owner, position, *normal, weapon, customsettings, radi
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x48a0bd54, Offset: 0x2908
 // Size: 0x54
 function stopfiresound() {
@@ -573,7 +573,7 @@ function stopfiresound() {
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 10, eflags: 0x0
+// Params 10, eflags: 0x2 linked
 // Checksum 0x4b173870, Offset: 0x2968
 // Size: 0x3bc
 function function_9464e4ad(owner, position, *normal, weapon, customsettings, radius_multiplier, var_e76400c0, wallnormal, var_cbaaea69, damageendtime) {
@@ -622,7 +622,7 @@ function function_9464e4ad(owner, position, *normal, weapon, customsettings, rad
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x1424e64, Offset: 0x2d30
 // Size: 0x346
 function getpotentialtargets(owner, customsettings) {
@@ -717,7 +717,7 @@ function function_5a49ebd3(team) {
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x39ca25df, Offset: 0x31f0
 // Size: 0x2e4
 function trytoapplyfiredamage(target, owner, position, fireeffectarea, var_289a74bc, weapon, customsettings) {
@@ -766,7 +766,7 @@ function trytoapplyfiredamage(target, owner, position, fireeffectarea, var_289a7
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0x49cbaa37, Offset: 0x34e0
 // Size: 0x18c
 function damageinfirearea(origin, *trace, *position, weapon, customsettings, owner) {
@@ -795,7 +795,7 @@ function damageinfirearea(origin, *trace, *position, weapon, customsettings, own
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x17dcef32, Offset: 0x3678
 // Size: 0x118
 function function_f8f4d9fc(damageendtime, owner, position, fireeffectarea, var_289a74bc, weapon, customsettings) {
@@ -813,7 +813,7 @@ function function_f8f4d9fc(damageendtime, owner, position, fireeffectarea, var_2
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0xedc05038, Offset: 0x3798
 // Size: 0x112
 function function_37ddab3(*origin, *trace, *position, weapon, customsettings, owner) {
@@ -831,7 +831,7 @@ function function_37ddab3(*origin, *trace, *position, weapon, customsettings, ow
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xca56f4c8, Offset: 0x38b8
 // Size: 0x166
 function sndfiredamage() {
@@ -854,7 +854,7 @@ function sndfiredamage() {
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x1e356317, Offset: 0x3a28
 // Size: 0x4c
 function sndfiredamage_deleteent(ent) {
@@ -865,7 +865,7 @@ function sndfiredamage_deleteent(ent) {
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xd4108398, Offset: 0x3a80
 // Size: 0xe0
 function hitpos(start, end, color) {
@@ -881,7 +881,7 @@ function hitpos(start, end, color) {
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xdaf2c52a, Offset: 0x3b68
 // Size: 0x13c
 function candofiredamage(victim, resetfiretime) {
@@ -905,7 +905,7 @@ function candofiredamage(victim, resetfiretime) {
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x24e05a0e, Offset: 0x3cb0
 // Size: 0x40
 function resetfiredamage(entnum, time) {
@@ -916,7 +916,7 @@ function resetfiredamage(entnum, time) {
 }
 
 // Namespace mechzfirebomb/mechz_firebomb
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x870a8507, Offset: 0x3cf8
 // Size: 0xac
 function function_1493c734(origin, radius, color, alpha, time) {

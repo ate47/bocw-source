@@ -27,7 +27,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_1b527536/namespace_1b527536
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xe7c7eede, Offset: 0x228
 // Size: 0x4ac
 function private function_70a657d8() {
@@ -43,7 +43,7 @@ function private function_70a657d8() {
 }
 
 // Namespace namespace_1b527536/namespace_1b527536
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xb33b4d00, Offset: 0x6e0
 // Size: 0x10c
 function function_473fedfd(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -60,7 +60,7 @@ function function_473fedfd(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace namespace_1b527536/namespace_1b527536
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x6aad873, Offset: 0x7f8
 // Size: 0x352
 function function_1079747f(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

@@ -26,8 +26,8 @@ function init() {
     namespace_dfc652ee::function_c1018360(#"hash_287eb96070cafdc2", 6, 3, 0, 2);
     namespace_dfc652ee::function_c1018360(#"hash_3d69c1499ba384f3", 6, 4, 0, 3);
     namespace_dfc652ee::function_c1018360(#"hash_42a24362c2bc55fa", 6, 5, 0, 3);
-    namespace_dfc652ee::function_c1018360(#"hash_1442e08a3f223090", 6, 6, 0, 2);
-    namespace_dfc652ee::function_c1018360(#"hash_3d065b43957360d1", 6, 7, 1, 2.5);
+    namespace_dfc652ee::function_c1018360(#"wpn_t7_mingun_world", 6, 6, 0, 2);
+    namespace_dfc652ee::function_c1018360(#"wpn_t8_crossbow_special_world", 6, 7, 1, 2.5);
     namespace_dfc652ee::function_c1018360(#"zombietron_ammo", 20, 0, 0, 1, undefined, undefined, 3);
     namespace_dfc652ee::function_c1018360(#"hash_583a497cd4bc1057", 22, 0, 0, 1);
     namespace_dfc652ee::function_c1018360(#"zombietron_boots", 24, 0, 0, 1, (0, 0, 0));

@@ -2,7 +2,7 @@
 #namespace targetting_delay;
 
 // Namespace targetting_delay/targetting_delay
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x45ff3b1a, Offset: 0x80
 // Size: 0x3fa
 function function_7e1a12ce(radius) {
@@ -105,7 +105,7 @@ function function_568d5de9(radius, var_2770319) {
 }
 
 // Namespace targetting_delay/targetting_delay
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x2b837881, Offset: 0x7a8
 // Size: 0x12a
 function function_1c169b3a(enemy, defaultdelay = 250) {
@@ -128,7 +128,7 @@ function function_1c169b3a(enemy, defaultdelay = 250) {
 }
 
 // Namespace targetting_delay/targetting_delay
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xfeebc27e, Offset: 0x8e0
 // Size: 0x144
 function function_a4d6d6d8(enemy, var_2770319) {

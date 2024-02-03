@@ -147,7 +147,7 @@ function function_f9e445ee(localclientnum, *oldval, newval, *bnewent, *binitials
     case 2:
         setdepthoffield(fieldname, 0, 128, 512, 4000, 6, 1.8);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
 }

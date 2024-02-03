@@ -16,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_perk_slider/zm_perk_slider
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x4c001ed0, Offset: 0x1f8
 // Size: 0x4c
 function private function_70a657d8() {
@@ -27,7 +27,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_perk_slider/zm_perk_slider
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x1f80976d, Offset: 0x250
 // Size: 0x9c
 function enable_slider_perk_for_level() {
@@ -37,7 +37,7 @@ function enable_slider_perk_for_level() {
 }
 
 // Namespace zm_perk_slider/zm_perk_slider
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x80f724d1, Offset: 0x2f8
 // Size: 0x4
 function init_slider() {
@@ -45,7 +45,7 @@ function init_slider() {
 }
 
 // Namespace zm_perk_slider/zm_perk_slider
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xce502978, Offset: 0x308
 // Size: 0xec
 function function_4bb29d61() {
@@ -57,7 +57,7 @@ function function_4bb29d61() {
 }
 
 // Namespace zm_perk_slider/zm_perk_slider
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x80f724d1, Offset: 0x400
 // Size: 0x4
 function function_90b5e96c() {
@@ -65,7 +65,7 @@ function function_90b5e96c() {
 }
 
 // Namespace zm_perk_slider/zm_perk_slider
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xd5a8bae2, Offset: 0x410
 // Size: 0x104
 function slide_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -81,7 +81,7 @@ function slide_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fie
 }
 
 // Namespace zm_perk_slider/zm_perk_slider
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x4d3a6317, Offset: 0x520
 // Size: 0x154
 function phd_slider_machine_rob_purchase(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -101,7 +101,7 @@ function phd_slider_machine_rob_purchase(*localclientnum, *oldval, newval, *bnew
 }
 
 // Namespace zm_perk_slider/zm_perk_slider
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xa45df0b1, Offset: 0x680
 // Size: 0xa4
 function phd_slider_machine_rob_poweron(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

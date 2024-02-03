@@ -14,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_ca99987f/namespace_df0c90a5
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x9917cae6, Offset: 0xe0
 // Size: 0x1ec
 function function_810d6d3a() {
@@ -34,7 +34,7 @@ function function_810d6d3a() {
 }
 
 // Namespace namespace_ca99987f/namespace_df0c90a5
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x942ea4c6, Offset: 0x2d8
 // Size: 0x46
 function function_a9f5c57d(start, end, var_600ff81f, *ease_in, *ease_out) {
@@ -42,7 +42,7 @@ function function_a9f5c57d(start, end, var_600ff81f, *ease_in, *ease_out) {
 }
 
 // Namespace namespace_ca99987f/namespace_df0c90a5
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0x45352c1a, Offset: 0x328
 // Size: 0x72
 function function_492ef475(start, end, var_600ff81f, ease_in, ease_out, power) {
@@ -51,7 +51,7 @@ function function_492ef475(start, end, var_600ff81f, ease_in, ease_out, power) {
 }
 
 // Namespace namespace_ca99987f/namespace_df0c90a5
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x77a481f4, Offset: 0x3a8
 // Size: 0x6a
 function function_db98dad1(start, end, var_600ff81f, ease_in, ease_out) {
@@ -60,7 +60,7 @@ function function_db98dad1(start, end, var_600ff81f, ease_in, ease_out) {
 }
 
 // Namespace namespace_ca99987f/namespace_df0c90a5
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x7b58c7d5, Offset: 0x420
 // Size: 0x6a
 function function_237ad8ca(start, end, var_600ff81f, ease_in, ease_out) {
@@ -69,7 +69,7 @@ function function_237ad8ca(start, end, var_600ff81f, ease_in, ease_out) {
 }
 
 // Namespace namespace_ca99987f/namespace_df0c90a5
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x27a296c4, Offset: 0x498
 // Size: 0x6a
 function function_79315b1d(start, end, var_600ff81f, ease_in, ease_out) {
@@ -78,7 +78,7 @@ function function_79315b1d(start, end, var_600ff81f, ease_in, ease_out) {
 }
 
 // Namespace namespace_ca99987f/namespace_df0c90a5
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x411f381d, Offset: 0x510
 // Size: 0x6a
 function function_858ecd2d(start, end, var_600ff81f, ease_in, ease_out) {
@@ -87,7 +87,7 @@ function function_858ecd2d(start, end, var_600ff81f, ease_in, ease_out) {
 }
 
 // Namespace namespace_ca99987f/namespace_df0c90a5
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0x7f95290d, Offset: 0x588
 // Size: 0x72
 function function_95a842a(start, end, var_600ff81f, ease_in, ease_out, scale) {
@@ -96,7 +96,7 @@ function function_95a842a(start, end, var_600ff81f, ease_in, ease_out, scale) {
 }
 
 // Namespace namespace_ca99987f/namespace_df0c90a5
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0x3617640, Offset: 0x608
 // Size: 0x72
 function function_eec2a804(start, end, var_600ff81f, ease_in, ease_out, var_18da63b) {
@@ -105,7 +105,7 @@ function function_eec2a804(start, end, var_600ff81f, ease_in, ease_out, var_18da
 }
 
 // Namespace namespace_ca99987f/namespace_df0c90a5
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0xf26468c7, Offset: 0x688
 // Size: 0x62
 function function_aab5c503(start, end, var_600ff81f, ease_in, ease_out) {
@@ -114,7 +114,7 @@ function function_aab5c503(start, end, var_600ff81f, ease_in, ease_out) {
 }
 
 // Namespace namespace_ca99987f/namespace_df0c90a5
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xc93d2fdd, Offset: 0x6f8
 // Size: 0x7a
 function function_da7df29(start, end, var_600ff81f, ease_in, ease_out, var_2d741986, power) {
@@ -123,7 +123,7 @@ function function_da7df29(start, end, var_600ff81f, ease_in, ease_out, var_2d741
 }
 
 // Namespace namespace_ca99987f/namespace_df0c90a5
-// Params 8, eflags: 0x0
+// Params 8, eflags: 0x2 linked
 // Checksum 0x172af3ce, Offset: 0x780
 // Size: 0x82
 function function_d912ff48(start, end, var_600ff81f, ease_in, ease_out, amplitude, var_b1502487, var_6fe616d0) {
@@ -132,7 +132,7 @@ function function_d912ff48(start, end, var_600ff81f, ease_in, ease_out, amplitud
 }
 
 // Namespace namespace_ca99987f/namespace_df0c90a5
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x18a33bbf, Offset: 0x810
 // Size: 0x7a
 function function_6aeb681d(start, end, var_600ff81f, ease_in, ease_out, var_6c524ba6, var_574c3289) {
@@ -141,7 +141,7 @@ function function_6aeb681d(start, end, var_600ff81f, ease_in, ease_out, var_6c52
 }
 
 // Namespace namespace_ca99987f/namespace_df0c90a5
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x31d74d8d, Offset: 0x898
 // Size: 0x74
 function function_8ff186e5(var_b3160f0, dvar, var_c7ec7d60) {
@@ -153,7 +153,7 @@ function function_8ff186e5(var_b3160f0, dvar, var_c7ec7d60) {
 }
 
 // Namespace namespace_ca99987f/namespace_df0c90a5
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xb834334e, Offset: 0x918
 // Size: 0x112
 function function_54354e4e(var_b3160f0, axis) {
@@ -167,14 +167,14 @@ function function_54354e4e(var_b3160f0, axis) {
     case 2:
         self.origin = (self.origin[0], self.origin[1], var_b3160f0.var_872a88cd);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         self.origin = var_b3160f0.var_872a88cd;
         break;
     }
 }
 
 // Namespace namespace_ca99987f/namespace_df0c90a5
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xa8f6574e, Offset: 0xa38
 // Size: 0xfa
 function function_92b063ff(var_b3160f0, axis) {
@@ -188,14 +188,14 @@ function function_92b063ff(var_b3160f0, axis) {
     case 2:
         self.origin = self.origin + (0, 0, var_b3160f0.delta);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         self.origin = self.origin + var_b3160f0.delta;
         break;
     }
 }
 
 // Namespace namespace_ca99987f/namespace_df0c90a5
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x604f605, Offset: 0xb40
 // Size: 0x104
 function function_3b3f9801(var_b3160f0, axis) {
@@ -216,7 +216,7 @@ function function_3b3f9801(var_b3160f0, axis) {
 }
 
 // Namespace namespace_ca99987f/namespace_df0c90a5
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xee04c8c4, Offset: 0xc50
 // Size: 0x16e
 function function_faea843b(var_b3160f0, axis) {
@@ -230,7 +230,7 @@ function function_faea843b(var_b3160f0, axis) {
     case 2:
         self.angles = self.angles + (0, 0, var_b3160f0.delta);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         self.angles = self.angles + var_b3160f0.delta;
         break;
     }

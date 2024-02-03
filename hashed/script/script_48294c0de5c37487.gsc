@@ -391,7 +391,7 @@ function do_damage(str_name, n_damage, e_ent, disable_ui) {
         str_mod = "MOD_GAS";
         n_delay = 3.5;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         str_mod = "MOD_UNKNOWN";
         break;
     }

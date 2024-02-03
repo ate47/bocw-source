@@ -93,7 +93,7 @@ function function_43655604() {
         str_vo_alias = #"hash_6ee5ba966ea32498";
         var_88c20a4 = #"zone_rocky_slope_defend";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         return;
     }
     while (1) {
@@ -271,7 +271,7 @@ function function_20df51b5() {
             self.var_c92e501c = "interrupt_p3";
             break;
         case #"hash_5db01307981fabd1":
-        case #"hash_defdefdefdefdef0":
+        default:
             self.var_c92e501c = "interrupt_p4";
             break;
         }
@@ -409,7 +409,7 @@ function function_891da57a() {
     case 3:
         level function_78cc0d39(#"hash_628725c2bb754829");
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
     if (!is_true(level.var_c52dc4d4)) {
@@ -446,7 +446,7 @@ function function_65937665() {
     case #"grey":
         var_d0767760 = #"hash_359dd066218ec563";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_d0767760 = array::random([2:#"hash_359dd066218ec563", 1:#"hash_359dd466218ecc2f", 0:#"hash_359dc466218eb0ff"]);
         break;
     }
@@ -518,7 +518,7 @@ function private function_543f9e02() {
         case #"grey":
             var_b3b54a4 = #"hash_4c3eea3dc6d2104a";
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             var_b3b54a4 = #"hash_66dcd6a30312f825";
             break;
         }
@@ -571,7 +571,7 @@ function private function_a6c9ee49() {
     case #"grey":
         var_4b8c1ea7 = #"hash_5688a462847552b9";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_4b8c1ea7 = #"hash_4271010934d7ff16";
         break;
     }
@@ -596,7 +596,7 @@ function private on_actor_killed(*params) {
         case #"grey":
             var_b3b54a4 = #"hash_3f74c72c2033c1c5";
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             var_b3b54a4 = #"hash_74270a8581b4849a";
             break;
         }
@@ -623,7 +623,7 @@ function on_ai_spawned() {
         case #"grey":
             var_b3b54a4 = #"hash_32dd8255ea06555";
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             var_b3b54a4 = #"hash_62001c8ac133172a";
             break;
         }
@@ -676,7 +676,7 @@ function function_421f7a59() {
     case #"grey":
         var_b3b54a4 = array::random([2:#"hash_4b4645adb2992a36", 1:#"hash_4b4646adb2992be9", 0:#"hash_4b4643adb29926d0"]);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_b3b54a4 = array::random([2:#"hash_4b1d5dadb2764dea", 1:#"hash_4b1d5eadb2764f9d", 0:#"hash_4b1d5badb2764a84"]);
         break;
     }
@@ -698,7 +698,7 @@ function function_f314c888() {
     case #"grey":
         var_b3b54a4 = #"hash_e354edc28791e2f";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_b3b54a4 = #"hash_e353adc2878fc33";
         break;
     }
@@ -812,7 +812,7 @@ function function_68c6149e() {
     case #"grey":
         var_b3b54a4 = array::random([2:#"hash_1b9f1d733d160412", 1:#"hash_1b9f1e733d1605c5", 0:#"hash_1b9f1b733d1600ac"]);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_b3b54a4 = array::random([2:#"hash_1b5b25733cdc44de", 1:#"hash_1b5b26733cdc4691", 0:#"hash_1b5b23733cdc4178"]);
         break;
     }
@@ -834,7 +834,7 @@ function function_a71f7322() {
     case #"grey":
         var_b3b54a4 = #"hash_4a84539c88de3866";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_b3b54a4 = #"hash_4a84679c88de5a62";
         break;
     }
@@ -857,7 +857,7 @@ function private function_d50a530() {
     case #"grey":
         var_b3b54a4 = #"hash_4b8dd3d9627009ca";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_b3b54a4 = #"hash_4b8ddfd962701e2e";
         break;
     }
@@ -879,7 +879,7 @@ function function_7930927d() {
     case #"grey":
         var_b3b54a4 = #"hash_7c4c63063a9dd7b4";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_b3b54a4 = #"hash_7c4c4f063a9db5b8";
         break;
     }
@@ -910,7 +910,7 @@ function function_8cc97115() {
     case #"grey":
         var_3e86fd2e = #"hash_6dee97d4efe257fd";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_3e86fd2e = #"hash_6dc5d7d4efbfbfa9";
         break;
     }

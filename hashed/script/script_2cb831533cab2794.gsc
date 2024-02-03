@@ -9,7 +9,7 @@
 class czm_hint_text : cluielem {
 
     // Namespace czm_hint_text/zm_hint_text
-    // Params 0, eflags: 0x8
+    // Params 0, eflags: 0xa linked
     // Checksum 0x85a85551, Offset: 0x260
     // Size: 0x14
     __constructor() {
@@ -17,7 +17,7 @@ class czm_hint_text : cluielem {
     }
 
     // Namespace czm_hint_text/zm_hint_text
-    // Params 0, eflags: 0x90 class_linked
+    // Params 0, eflags: 0x92 linked class_linked
     // Checksum 0x8f77fb0, Offset: 0x488
     // Size: 0x14
     __destructor() {
@@ -25,7 +25,7 @@ class czm_hint_text : cluielem {
     }
 
     // Namespace czm_hint_text/zm_hint_text
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x1c7fc189, Offset: 0x320
     // Size: 0x3c
     function open(player, flags = 0) {
@@ -33,7 +33,7 @@ class czm_hint_text : cluielem {
     }
 
     // Namespace czm_hint_text/zm_hint_text
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x7e7fd193, Offset: 0x368
     // Size: 0x24
     function close(player) {
@@ -41,7 +41,7 @@ class czm_hint_text : cluielem {
     }
 
     // Namespace czm_hint_text/zm_hint_text
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0xeeed0bd5, Offset: 0x280
     // Size: 0x94
     function setup_clientfields() {
@@ -52,7 +52,7 @@ class czm_hint_text : cluielem {
     }
 
     // Namespace czm_hint_text/zm_hint_text
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0xba34c195, Offset: 0x398
     // Size: 0x44
     function set_text(player, value) {
@@ -60,7 +60,7 @@ class czm_hint_text : cluielem {
     }
 
     // Namespace czm_hint_text/zm_hint_text
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x4efbfeb5, Offset: 0x3e8
     // Size: 0x44
     function set_visible(player, value) {
@@ -68,7 +68,7 @@ class czm_hint_text : cluielem {
     }
 
     // Namespace czm_hint_text/zm_hint_text
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0xd2a7d5e2, Offset: 0x438
     // Size: 0x44
     function function_f2cb39c0(player, value) {
@@ -78,7 +78,7 @@ class czm_hint_text : cluielem {
 }
 
 // Namespace zm_hint_text/zm_hint_text
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xd49e306b, Offset: 0x100
 // Size: 0x34
 function register() {
@@ -88,7 +88,7 @@ function register() {
 }
 
 // Namespace zm_hint_text/zm_hint_text
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x3a6790e3, Offset: 0x140
 // Size: 0x38
 function open(player, flags = 0) {
@@ -96,7 +96,7 @@ function open(player, flags = 0) {
 }
 
 // Namespace zm_hint_text/zm_hint_text
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x2ad0b106, Offset: 0x180
 // Size: 0x1c
 function close(player) {
@@ -104,7 +104,7 @@ function close(player) {
 }
 
 // Namespace zm_hint_text/zm_hint_text
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x1e0592ea, Offset: 0x1a8
 // Size: 0x1a
 function is_open(player) {
@@ -112,7 +112,7 @@ function is_open(player) {
 }
 
 // Namespace zm_hint_text/zm_hint_text
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xcc6c0c8b, Offset: 0x1d0
 // Size: 0x28
 function set_text(player, value) {
@@ -120,7 +120,7 @@ function set_text(player, value) {
 }
 
 // Namespace zm_hint_text/zm_hint_text
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xef6d6fbb, Offset: 0x200
 // Size: 0x28
 function set_visible(player, value) {
@@ -128,7 +128,7 @@ function set_visible(player, value) {
 }
 
 // Namespace zm_hint_text/zm_hint_text
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xb779ee8d, Offset: 0x230
 // Size: 0x28
 function function_f2cb39c0(player, value) {

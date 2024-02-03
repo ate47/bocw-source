@@ -129,7 +129,7 @@ function function_681e8519() {
         a_grenades = [];
         a_equipment = [];
         for (i = 0; i < a_weapons.size; i++) {
-            if (strstartswith(function_a16a090d(a_weapons[i]), "<unknown string>")) {
+            if (strstartswith(getweaponname(a_weapons[i]), "<unknown string>")) {
                 arrayinsert(a_equipment, a_weapons[i], 0);
             } else if (is_true(a_weapons[i].isprimary) && isdefined(a_weapons[i].worldmodel)) {
                 arrayinsert(var_cab50ba0, a_weapons[i], 0);
@@ -154,7 +154,7 @@ function function_30285c9c(root, pname, a_weapons, weapon_type) {
         player_devgui_root = root + pname + "<unknown string>";
         if (isdefined(a_weapons)) {
             for (i = 0; i < a_weapons.size; i++) {
-                name = function_a16a090d(a_weapons[i]);
+                name = getweaponname(a_weapons[i]);
                 displayname = a_weapons[i].displayname;
                 if (displayname == #"") {
                     displayname = "<unknown string>";

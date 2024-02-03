@@ -31,7 +31,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x7892e54a, Offset: 0x270
 // Size: 0x164
 function private function_70a657d8() {
@@ -54,7 +54,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x35279f20, Offset: 0x3e0
 // Size: 0x14
 function private postinit() {
@@ -62,7 +62,7 @@ function private postinit() {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x2026bd4d, Offset: 0x400
 // Size: 0x88
 function function_4ae718c3(weapon_name) {
@@ -75,7 +75,7 @@ function function_4ae718c3(weapon_name) {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x3444188d, Offset: 0x490
 // Size: 0x24
 function checkstringvalid(hash_or_str) {
@@ -86,7 +86,7 @@ function checkstringvalid(hash_or_str) {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x3cbe3553, Offset: 0x4c0
 // Size: 0x31a
 function function_f1e8c2f7() {
@@ -136,7 +136,7 @@ function function_f1e8c2f7() {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x7ea9f9c0, Offset: 0x7e8
 // Size: 0xea
 function function_dfaf0bad() {
@@ -337,7 +337,7 @@ function limit(equipment_name, limited) {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xa04473a6, Offset: 0x1b08
 // Size: 0x144
 function init_upgrade() {
@@ -355,7 +355,7 @@ function init_upgrade() {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xb24a7a70, Offset: 0x1c58
 // Size: 0x5a
 function get_hint(equipment) {
@@ -366,7 +366,7 @@ function get_hint(equipment) {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xbdd64dc2, Offset: 0x1cc0
 // Size: 0x5a
 function get_howto_hint(equipment) {
@@ -388,7 +388,7 @@ function get_icon(equipment) {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x454ba64f, Offset: 0x1d90
 // Size: 0x5a
 function get_notify_strings(equipment) {
@@ -399,7 +399,7 @@ function get_notify_strings(equipment) {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x3d945913, Offset: 0x1df8
 // Size: 0xcc
 function add_to_trigger_list(equipment) {
@@ -411,7 +411,7 @@ function add_to_trigger_list(equipment) {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xf770ed5d, Offset: 0x1ed0
 // Size: 0x1ac
 function equipment_spawn_think() {
@@ -440,7 +440,7 @@ function equipment_spawn_think() {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x20f22018, Offset: 0x2088
 // Size: 0xdc
 function set_equipment_invisibility_to_player(equipment, invisible) {
@@ -459,7 +459,7 @@ function set_equipment_invisibility_to_player(equipment, invisible) {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x5d91c006, Offset: 0x2170
 // Size: 0x2cc
 function take(equipment = self get_player_equipment()) {
@@ -481,7 +481,7 @@ function take(equipment = self get_player_equipment()) {
         current_weapon = 1;
     }
     /#
-        println("<unknown string>" + self.name + "<unknown string>" + function_a16a090d(equipment) + "<unknown string>");
+        println("<unknown string>" + self.name + "<unknown string>" + getweaponname(equipment) + "<unknown string>");
     #/
     notify_strings = get_notify_strings(equipment);
     if (is_true(self.current_equipment_active[equipment])) {
@@ -507,7 +507,7 @@ function take(equipment = self get_player_equipment()) {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x4a9a53b, Offset: 0x2448
 // Size: 0x1ee
 function give(equipment) {
@@ -521,7 +521,7 @@ function give(equipment) {
         return;
     }
     /#
-        println("<unknown string>" + self.name + "<unknown string>" + function_a16a090d(equipment) + "<unknown string>");
+        println("<unknown string>" + self.name + "<unknown string>" + getweaponname(equipment) + "<unknown string>");
     #/
     curr_weapon = self getcurrentweapon();
     curr_weapon_was_curr_equipment = self is_player_equipment(curr_weapon);
@@ -546,7 +546,7 @@ function buy(equipment) {
         equipment = getweapon(equipment);
     }
     /#
-        println("<unknown string>" + self.name + "<unknown string>" + function_a16a090d(equipment) + "<unknown string>");
+        println("<unknown string>" + self.name + "<unknown string>" + getweaponname(equipment) + "<unknown string>");
     #/
     if (isdefined(self.current_equipment) && equipment != self.current_equipment && self.current_equipment != level.weaponnone) {
         self take(self.current_equipment);
@@ -559,7 +559,7 @@ function buy(equipment) {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x6f18ef49, Offset: 0x2780
 // Size: 0x204
 function slot_watcher(equipment) {
@@ -594,7 +594,7 @@ function slot_watcher(equipment) {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x5c913d61, Offset: 0x2990
 // Size: 0x66
 function is_limited(equipment) {
@@ -609,7 +609,7 @@ function is_limited(equipment) {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x8b4189b1, Offset: 0x2a00
 // Size: 0xb0
 function limited_in_use(equipment) {
@@ -627,7 +627,7 @@ function limited_in_use(equipment) {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x1824476f, Offset: 0x2ab8
 // Size: 0x94
 function setup_limited(equipment) {
@@ -640,7 +640,7 @@ function setup_limited(equipment) {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xf6e8e777, Offset: 0x2b58
 // Size: 0xb4
 function release_limited_on_taken(equipment) {
@@ -654,7 +654,7 @@ function release_limited_on_taken(equipment) {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x9070037d, Offset: 0x2c18
 // Size: 0xc4
 function release_limited_on_disconnect(equipment) {
@@ -670,7 +670,7 @@ function release_limited_on_disconnect(equipment) {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xbb0ce4d8, Offset: 0x2ce8
 // Size: 0x44
 function is_active(equipment) {
@@ -723,7 +723,7 @@ function setup_client_hintelem(ypos, font_scale) {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x6a5950e4, Offset: 0x2f60
 // Size: 0x9c
 function show_hint(equipment) {
@@ -738,7 +738,7 @@ function show_hint(equipment) {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x2da886a, Offset: 0x3008
 // Size: 0x254
 function show_hint_text(text, show_for_time, *font_scale, *ypos = 3.2, var_28bccc8a) {
@@ -770,7 +770,7 @@ function show_hint_text(text, show_for_time, *font_scale, *ypos = 3.2, var_28bcc
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x76d4b6a4, Offset: 0x3268
 // Size: 0xc0
 function function_57fbff5c(*str_notify) {
@@ -782,7 +782,7 @@ function function_57fbff5c(*str_notify) {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x3e84f05a, Offset: 0x3330
 // Size: 0xc6
 function start_ammo(equipment) {
@@ -833,7 +833,7 @@ function register_for_level(weaponname) {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xfcf64526, Offset: 0x35c0
 // Size: 0x9e
 function is_equipment(weapon, var_1a9b98ca = 0) {
@@ -844,7 +844,7 @@ function is_equipment(weapon, var_1a9b98ca = 0) {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xd634fcc8, Offset: 0x3668
 // Size: 0x3a
 function is_equipment_that_blocks_purchase(weapon, var_1a9b98ca = 0) {
@@ -852,7 +852,7 @@ function is_equipment_that_blocks_purchase(weapon, var_1a9b98ca = 0) {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x4e58d1e5, Offset: 0x36b0
 // Size: 0x38
 function is_player_equipment(weapon) {
@@ -863,7 +863,7 @@ function is_player_equipment(weapon) {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x52b67e7c, Offset: 0x36f0
 // Size: 0x86
 function has_deployed_equipment(weapon) {
@@ -879,7 +879,7 @@ function has_deployed_equipment(weapon) {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x6d2aece9, Offset: 0x3780
 // Size: 0x3c
 function has_player_equipment(weapon) {
@@ -887,7 +887,7 @@ function has_player_equipment(weapon) {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xd2e59ec2, Offset: 0x37c8
 // Size: 0x36
 function get_player_equipment() {
@@ -899,7 +899,7 @@ function get_player_equipment() {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x9b762e5a, Offset: 0x3808
 // Size: 0x32
 function hacker_active() {
@@ -907,7 +907,7 @@ function hacker_active() {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x6a98042f, Offset: 0x3848
 // Size: 0x92
 function set_player_equipment(weapon) {
@@ -950,14 +950,14 @@ function function_7d948481(n_boss = 0.1, var_5765a72a = 0.25, var_d5866834 = 0.5
         return var_5765a72a;
     case #"special":
         return var_d5866834;
-    case #"hash_defdefdefdefdef0":
+    default:
         return n_basic;
         break;
     }
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xd4445a93, Offset: 0x3a20
 // Size: 0x62
 function function_739fbb72(n_base_damage, weapon, aicategory, maxhealth) {
@@ -966,7 +966,7 @@ function function_739fbb72(n_base_damage, weapon, aicategory, maxhealth) {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xfb8e13d6, Offset: 0x3a90
 // Size: 0x272
 function function_379f6b5d(n_base_damage, weapon, aicategory = #"normal", maxhealth) {
@@ -1019,7 +1019,7 @@ function function_379f6b5d(n_base_damage, weapon, aicategory = #"normal", maxhea
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x6bc34a95, Offset: 0x3d10
 // Size: 0x100
 function function_76beede2(str_weapon_name, str_means_of_death) {
@@ -1038,7 +1038,7 @@ function function_76beede2(str_weapon_name, str_means_of_death) {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x8fc9355c, Offset: 0x3e18
 // Size: 0x110
 function function_4f51b6ea(weapon, str_means_of_death) {
@@ -1094,7 +1094,7 @@ function function_1d34b98d(equipment) {
         level wait_till("<unknown string>");
         waitframe(1);
         if (isdefined(equipment)) {
-            equipment_id = function_a16a090d(equipment);
+            equipment_id = getweaponname(equipment);
             str_cmd = "<unknown string>" + equipment_id + "<unknown string>" + equipment_id + "<unknown string>";
             adddebugcommand(str_cmd);
         }

@@ -204,7 +204,7 @@ function function_467efa7b(var_9f3fb329 = 0) {
     case #"elephant":
         str_tag = "j_head";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         str_tag = "tag_origin";
         break;
     }

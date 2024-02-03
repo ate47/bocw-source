@@ -44,7 +44,7 @@ function function_90cdf7ba(type, origin) {
         var_4d5cf4b2 = level;
         namespace_e32bb68::function_3a59ec34("guardian_type_skeleton");
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assert(0, "<unknown string>");
         #/

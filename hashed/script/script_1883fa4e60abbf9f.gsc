@@ -272,7 +272,7 @@ function function_b33dc82f(msg) {
     case #"warning1":
         num = 1;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         num = 0;
         break;
     }
@@ -943,7 +943,7 @@ function function_34345b79() {
 }
 
 // Namespace namespace_979752dc/utility
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x930c4d63, Offset: 0x3028
 // Size: 0x224
 function function_6891681b() {
@@ -1181,7 +1181,7 @@ function function_569a126(enabled, distance = 2000) {
 }
 
 // Namespace namespace_979752dc/utility
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd28a0ecb, Offset: 0x3ad0
 // Size: 0x32
 function function_2324f175(enabled) {

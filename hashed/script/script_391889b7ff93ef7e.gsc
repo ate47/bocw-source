@@ -16,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_9f3d3e9/namespace_9f3d3e9
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x87380bd0, Offset: 0xf0
 // Size: 0x34
 function function_70a657d8() {
@@ -24,7 +24,7 @@ function function_70a657d8() {
 }
 
 // Namespace namespace_9f3d3e9/namespace_9f3d3e9
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xf99ceef9, Offset: 0x130
 // Size: 0xc
 function private function_1caf705e(*localclientnum) {

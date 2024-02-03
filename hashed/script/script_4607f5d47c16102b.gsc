@@ -9,7 +9,7 @@
 class cluielemimage : cluielem {
 
     // Namespace cluielemimage/luielemimage
-    // Params 0, eflags: 0x8
+    // Params 0, eflags: 0xa linked
     // Checksum 0xf6507b99, Offset: 0x720
     // Size: 0x14
     __constructor() {
@@ -17,7 +17,7 @@ class cluielemimage : cluielem {
     }
 
     // Namespace cluielemimage/luielemimage
-    // Params 0, eflags: 0x90 class_linked
+    // Params 0, eflags: 0x92 linked class_linked
     // Checksum 0xd20ca314, Offset: 0xc90
     // Size: 0x14
     __destructor() {
@@ -25,7 +25,7 @@ class cluielemimage : cluielem {
     }
 
     // Namespace cluielemimage/luielemimage
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x21fa0bde, Offset: 0x8f8
     // Size: 0x3c
     function open(player, flags = 0) {
@@ -33,7 +33,7 @@ class cluielemimage : cluielem {
     }
 
     // Namespace cluielemimage/luielemimage
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0xa1c92449, Offset: 0xba0
     // Size: 0x44
     function set_green(player, value) {
@@ -41,7 +41,7 @@ class cluielemimage : cluielem {
     }
 
     // Namespace cluielemimage/luielemimage
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x8d113850, Offset: 0xab0
     // Size: 0x44
     function set_fadeovertime(player, value) {
@@ -49,7 +49,7 @@ class cluielemimage : cluielem {
     }
 
     // Namespace cluielemimage/luielemimage
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0xf16b23dc, Offset: 0x940
     // Size: 0x24
     function close(player) {
@@ -57,7 +57,7 @@ class cluielemimage : cluielem {
     }
 
     // Namespace cluielemimage/luielemimage
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0xe5ddb341, Offset: 0xa60
     // Size: 0x44
     function set_height(player, value) {
@@ -65,7 +65,7 @@ class cluielemimage : cluielem {
     }
 
     // Namespace cluielemimage/luielemimage
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x94cfc89c, Offset: 0xc40
     // Size: 0x44
     function set_material(player, value) {
@@ -73,7 +73,7 @@ class cluielemimage : cluielem {
     }
 
     // Namespace cluielemimage/luielemimage
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x482d38eb, Offset: 0xbf0
     // Size: 0x44
     function set_blue(player, value) {
@@ -81,7 +81,7 @@ class cluielemimage : cluielem {
     }
 
     // Namespace cluielemimage/luielemimage
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x96f1a05d, Offset: 0xa10
     // Size: 0x44
     function set_width(player, value) {
@@ -89,7 +89,7 @@ class cluielemimage : cluielem {
     }
 
     // Namespace cluielemimage/luielemimage
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0x91507839, Offset: 0x740
     // Size: 0x1ac
     function setup_clientfields() {
@@ -107,7 +107,7 @@ class cluielemimage : cluielem {
     }
 
     // Namespace cluielemimage/luielemimage
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x5b859552, Offset: 0x9c0
     // Size: 0x44
     function set_y(player, value) {
@@ -115,7 +115,7 @@ class cluielemimage : cluielem {
     }
 
     // Namespace cluielemimage/luielemimage
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x561639e, Offset: 0xb00
     // Size: 0x44
     function set_alpha(player, value) {
@@ -123,7 +123,7 @@ class cluielemimage : cluielem {
     }
 
     // Namespace cluielemimage/luielemimage
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0xa7878c3d, Offset: 0x970
     // Size: 0x44
     function set_x(player, value) {
@@ -131,7 +131,7 @@ class cluielemimage : cluielem {
     }
 
     // Namespace cluielemimage/luielemimage
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x4d89fdd8, Offset: 0xb50
     // Size: 0x44
     function set_red(player, value) {
@@ -151,7 +151,7 @@ function set_color(player, red, green, blue) {
 }
 
 // Namespace luielemimage/luielemimage
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xf2bc6a92, Offset: 0x1b0
 // Size: 0x7c
 function fade(player, var_1a92607f, duration = 0) {
@@ -176,7 +176,7 @@ function hide(player, duration = 0) {
 }
 
 // Namespace luielemimage/luielemimage
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x8fc88791, Offset: 0x2d0
 // Size: 0x4c
 function function_e5898fd7(player, var_c6572d9b) {
@@ -184,7 +184,7 @@ function function_e5898fd7(player, var_c6572d9b) {
 }
 
 // Namespace luielemimage/luielemimage
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x65c66481, Offset: 0x328
 // Size: 0x4c
 function function_58a135d3(player, var_d390c80e) {
@@ -210,7 +210,7 @@ function function_35f52fe9(player, width, height) {
 }
 
 // Namespace luielemimage/luielemimage
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x73dec662, Offset: 0x470
 // Size: 0x34
 function register() {
@@ -244,7 +244,7 @@ function is_open(player) {
 }
 
 // Namespace luielemimage/luielemimage
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xd3842c5d, Offset: 0x540
 // Size: 0x28
 function set_x(player, value) {
@@ -252,7 +252,7 @@ function set_x(player, value) {
 }
 
 // Namespace luielemimage/luielemimage
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x2001dd15, Offset: 0x570
 // Size: 0x28
 function set_y(player, value) {
@@ -260,7 +260,7 @@ function set_y(player, value) {
 }
 
 // Namespace luielemimage/luielemimage
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x2ed28c09, Offset: 0x5a0
 // Size: 0x28
 function set_width(player, value) {
@@ -268,7 +268,7 @@ function set_width(player, value) {
 }
 
 // Namespace luielemimage/luielemimage
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x11ddfdf5, Offset: 0x5d0
 // Size: 0x28
 function set_height(player, value) {
@@ -276,7 +276,7 @@ function set_height(player, value) {
 }
 
 // Namespace luielemimage/luielemimage
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xfb25f7e5, Offset: 0x600
 // Size: 0x28
 function set_fadeovertime(player, value) {
@@ -284,7 +284,7 @@ function set_fadeovertime(player, value) {
 }
 
 // Namespace luielemimage/luielemimage
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x13d43460, Offset: 0x630
 // Size: 0x28
 function set_alpha(player, value) {
@@ -292,7 +292,7 @@ function set_alpha(player, value) {
 }
 
 // Namespace luielemimage/luielemimage
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xcd6839a1, Offset: 0x660
 // Size: 0x28
 function set_red(player, value) {
@@ -300,7 +300,7 @@ function set_red(player, value) {
 }
 
 // Namespace luielemimage/luielemimage
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x7e853fe7, Offset: 0x690
 // Size: 0x28
 function set_green(player, value) {
@@ -308,7 +308,7 @@ function set_green(player, value) {
 }
 
 // Namespace luielemimage/luielemimage
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x504ce79, Offset: 0x6c0
 // Size: 0x28
 function set_blue(player, value) {

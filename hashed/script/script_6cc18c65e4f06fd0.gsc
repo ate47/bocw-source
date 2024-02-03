@@ -563,7 +563,7 @@ function function_17836c63() {
     while (1) {
         switch (level.var_41afa8f) {
         case 1:
-        case #"hash_defdefdefdefdef0":
+        default:
             self function_9f1469b5();
             break;
         case 2:
@@ -675,7 +675,7 @@ function function_aa6f0550(str_state, var_a013c644) {
     #/
     switch (str_state) {
     case #"idle":
-    case #"hash_defdefdefdefdef0":
+    default:
         self.ai_state = "idle";
         self function_133bf8a7();
         break;
@@ -1712,7 +1712,7 @@ function cmd(cmd) {
             level notify(#"hash_38f29f9cb03586ea");
             level notify(#"hash_3807e7b1086e4aa0");
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     #/

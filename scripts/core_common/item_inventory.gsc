@@ -943,7 +943,7 @@ function private function_9d805044(itemtype, var_ab9610ad = undefined) {
     case #"perk_tier_1":
         function_714fce55(hash(itemtype), var_ab9610ad);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
 }
@@ -2674,7 +2674,7 @@ function equip_item(networkid, quickequip = 0, weaponid = 0) {
         case #"weapon":
             self equip_weapon(item);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             /#
                 assertmsg("<unknown string>" + (isdefined(item.var_a6762160.itemtype) ? item.var_a6762160.itemtype : "<unknown string>") + "<unknown string>");
             #/

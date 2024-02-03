@@ -73,7 +73,7 @@ function function_4013aee1(status_effect, var_3bc85d80) {
         processscoreevent(#"concussed_enemy", status_effect.var_4b22e697, status_effect.owner, status_effect.var_3d1ed4bd);
         status_effect.var_4b22e697.var_9d19aa30 = (isdefined(status_effect.var_4b22e697.var_9d19aa30) ? status_effect.var_4b22e697.var_9d19aa30 : 0) + 1;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
     LOC_00000124:
         break;
     }
@@ -746,7 +746,7 @@ function scoreeventplayerkill(data, time) {
                     attacker.var_a0c11592 = {#time:gettime(), #weapon:weapon};
                 }
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 break;
             }
         }
@@ -889,7 +889,7 @@ function heavyweaponkill(attacker, victim, weapon) {
             event = "minigun_kill";
         }
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         return;
     }
     processscoreevent(event, attacker, victim, weapon);
@@ -929,7 +929,7 @@ function killedheavyweaponenemy(attacker, victim, weapon, victim_weapon, victim_
     case #"hero_bowlauncher":
         event = "killed_bowlauncher_enemy";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         return;
     }
     processscoreevent(event, attacker, victim, weapon);
@@ -997,7 +997,7 @@ function specificweaponkill(attacker, victim, weapon, killstreak, inflictor) {
             attacker stats::function_42277145(#"hash_122768477016f4e5", 1);
             break;
         }
-    case #"hash_defdefdefdefdef0":
+    default:
     LOC_000001dc:
         return;
     }
@@ -1198,7 +1198,7 @@ function updatemultikills(weapon, weaponclass, killstreak, victim, time, *meanso
         case #"weapon_tactical":
             self.var_a6c2c80f++;
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     }
@@ -1590,7 +1590,7 @@ function get_distance_for_weapon(weapon, weaponclass) {
     LOC_00000126:
         jumpiffalse(weapon.rootweapon.name == "hatchet") LOC_0000014e;
         return 2250000;
-    case #"hash_defdefdefdefdef0":
+    default:
     LOC_0000014e:
         break;
     }

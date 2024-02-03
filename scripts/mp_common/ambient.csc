@@ -247,7 +247,7 @@ function ambient_fakefire_think(point) {
         soundchance = 95;
         weaptype = "turret";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assertmsg("<unknown string>" + point.weaponinfo + "<unknown string>");
         #/

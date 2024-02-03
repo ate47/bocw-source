@@ -19,7 +19,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace electroball_grenade/electroball_grenade
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x1f6966e6, Offset: 0x2c0
 // Size: 0x1dc
 function function_70a657d8() {
@@ -36,7 +36,7 @@ function function_70a657d8() {
 }
 
 // Namespace electroball_grenade/electroball_grenade
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x61f0bff2, Offset: 0x4a8
 // Size: 0xc2
 function proximity_spawned(localclientnum) {
@@ -49,7 +49,7 @@ function proximity_spawned(localclientnum) {
 }
 
 // Namespace electroball_grenade/electroball_grenade
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x16761530, Offset: 0x578
 // Size: 0x7e
 function function_7ec61d7a(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -57,7 +57,7 @@ function function_7ec61d7a(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace electroball_grenade/electroball_grenade
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x49189282, Offset: 0x600
 // Size: 0x134
 function function_7b605b7b(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -81,7 +81,7 @@ function function_7b605b7b(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace electroball_grenade/electroball_grenade
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xa99a4431, Offset: 0x740
 // Size: 0x2c
 function function_76787bb(*params) {
@@ -89,7 +89,7 @@ function function_76787bb(*params) {
 }
 
 // Namespace electroball_grenade/electroball_grenade
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xc8598c3e, Offset: 0x778
 // Size: 0xbe
 function electroball_play_landed_fx(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

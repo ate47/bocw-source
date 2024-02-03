@@ -138,7 +138,7 @@ function private function_2c098ccc(localclientnum, *oldval, newval, *bnewent, *b
     case 4:
         self.var_32caa02 = util::playfxontag(fieldname, level._effect[#"fx8_blightfather_vomit_craft_purchase"], self, "tag_origin");
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         if (isdefined(self.var_32caa02)) {
             stopfx(fieldname, self.var_32caa02);
             self.var_32caa02 = undefined;

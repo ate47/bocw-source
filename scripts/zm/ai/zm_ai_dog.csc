@@ -17,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_ai_dog/zm_ai_dog
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x63163aba, Offset: 0x120
 // Size: 0x7c
 function private function_70a657d8() {
@@ -26,7 +26,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_ai_dog/zm_ai_dog
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x46b8707d, Offset: 0x1a8
 // Size: 0x24
 function function_3b0e8b8b(localclientnum) {
@@ -34,7 +34,7 @@ function function_3b0e8b8b(localclientnum) {
 }
 
 // Namespace zm_ai_dog/zm_ai_dog
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xbb6a0d7a, Offset: 0x1d8
 // Size: 0x172
 function zombiedogvocals(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {

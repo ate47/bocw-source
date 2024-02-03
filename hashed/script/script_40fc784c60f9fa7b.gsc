@@ -111,7 +111,7 @@ function private function_4edde887() {
 }
 
 // Namespace player_vehicle/player_vehicle
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x9e61770b, Offset: 0xb10
 // Size: 0xc2
 function function_bc79899e() {
@@ -1222,7 +1222,7 @@ function private function_85aaed19(seat_index) {
         return "overheat_fx3";
     case 4:
         return "overheat_fx4";
-    case #"hash_defdefdefdefdef0":
+    default:
         return undefined;
         break;
     }
@@ -1262,7 +1262,7 @@ function private function_41cb03eb(seat_index) {
         return "tag_gunner_turret3";
     case 4:
         return "tag_gunner_turret4";
-    case #"hash_defdefdefdefdef0":
+    default:
         return undefined;
         break;
     }

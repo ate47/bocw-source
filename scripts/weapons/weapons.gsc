@@ -23,7 +23,7 @@
 #namespace weapons;
 
 // Namespace weapons/weapons
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x7a8ddca4, Offset: 0x2c0
 // Size: 0x394
 function init_shared() {
@@ -259,7 +259,7 @@ function function_2be39078(last_weapon) {
 }
 
 // Namespace weapons/weapons
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x6c83e361, Offset: 0xe80
 // Size: 0x3c4
 function function_d571ac59(last_weapon = undefined, immediate = 0, awayfromball = 0, var_81af68a5 = 0) {
@@ -467,7 +467,7 @@ function private function_c44bf23e(info) {
 }
 
 // Namespace weapons/weapons
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x1163b363, Offset: 0x1a90
 // Size: 0x22c
 function drop_for_death(attacker, sweapon, smeansofdeath, damage, var_1940b58e = 1) {
@@ -809,7 +809,7 @@ function function_f2c53bb2(curweapon) {
         case #"grenade":
             self stats::function_eec52333(curweapon, #"shots", 1, self.class_num, 0);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     }
@@ -1192,7 +1192,7 @@ function event_handler[grenade_fire] function_e2b6d5a5(eventstruct) {
         grenade thread check_stuck_to_player(0, 0, weapon, 0);
         self stats::function_e24eec31(weapon, #"used", 1);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
 }
@@ -1552,7 +1552,7 @@ function damage_ent(einflictor, eattacker, idamage, smeansofdeath, weapon, damag
 }
 
 // Namespace weapons/weapons
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x9211ec2d, Offset: 0x5628
 // Size: 0x132
 function on_damage(eattacker, einflictor, weapon, meansofdeath, damage) {
@@ -1568,7 +1568,7 @@ function on_damage(eattacker, einflictor, weapon, meansofdeath, damage) {
     case #"concussion_grenade":
         self.lastconcussedby = eattacker;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         if (isdefined(level.shellshockonplayerdamage) && isplayer(self)) {
             [[ level.shellshockonplayerdamage ]](eattacker, einflictor, weapon, meansofdeath, damage);
         }
@@ -1678,7 +1678,7 @@ function on_weapon_change(params) {
         case #"m32":
         case #"minigun":
             continue;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
         if (!hasstowed || currentstowed == weaponslist[idx]) {
@@ -1813,7 +1813,7 @@ function scavenger_think() {
 }
 
 // Namespace weapons/weapons
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x198a4ad3, Offset: 0x6538
 // Size: 0x14c
 function drop_scavenger_for_death(attacker) {

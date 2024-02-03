@@ -99,7 +99,7 @@ function private function_c81cdba2() {
         }
         return 0;
     case #"movement":
-    case #"hash_defdefdefdefdef0":
+    default:
         v_velocity = self getvelocity();
         if (length(v_velocity) != 0) {
             return 1;

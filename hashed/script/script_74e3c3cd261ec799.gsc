@@ -8,7 +8,7 @@
 class class_b5586f52 : cluielem {
 
     // Namespace class_b5586f52/sr_objective_timer
-    // Params 0, eflags: 0x8
+    // Params 0, eflags: 0xa linked
     // Checksum 0x32030c36, Offset: 0x300
     // Size: 0x14
     __constructor() {
@@ -16,7 +16,7 @@ class class_b5586f52 : cluielem {
     }
 
     // Namespace class_b5586f52/sr_objective_timer
-    // Params 0, eflags: 0x90 class_linked
+    // Params 0, eflags: 0x92 linked class_linked
     // Checksum 0xf8ec7c3a, Offset: 0x3d0
     // Size: 0x14
     __destructor() {
@@ -24,7 +24,7 @@ class class_b5586f52 : cluielem {
     }
 
     // Namespace namespace_b5586f52/sr_objective_timer
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x986df31b, Offset: 0x3a0
     // Size: 0x24
     function open(localclientnum) {
@@ -32,7 +32,7 @@ class class_b5586f52 : cluielem {
     }
 
     // Namespace namespace_b5586f52/sr_objective_timer
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0x909e9eb7, Offset: 0x348
     // Size: 0x1c
     function register_clientside() {
@@ -40,7 +40,7 @@ class class_b5586f52 : cluielem {
     }
 
     // Namespace namespace_b5586f52/sr_objective_timer
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0xab8374e, Offset: 0x320
     // Size: 0x1c
     function setup_clientfields() {
@@ -48,7 +48,7 @@ class class_b5586f52 : cluielem {
     }
 
     // Namespace namespace_b5586f52/sr_objective_timer
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0xe84c49c8, Offset: 0x370
     // Size: 0x24
     function function_fa582112(localclientnum) {
@@ -58,7 +58,7 @@ class class_b5586f52 : cluielem {
 }
 
 // Namespace sr_objective_timer/sr_objective_timer
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x6118bdc2, Offset: 0xd0
 // Size: 0x16e
 function register() {

@@ -5,7 +5,7 @@
 #namespace catalystinterface;
 
 // Namespace catalystinterface/archetype_catalyst_interface
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xda08dd19, Offset: 0xa8
 // Size: 0x6c
 function registercatalystinterfaceattributes() {

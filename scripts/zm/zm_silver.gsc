@@ -383,7 +383,7 @@ function function_cd3a65e0() {
     case 4:
         level.next_dog_round = level.round_number + randomintrangeinclusive(7, 9);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         level.next_dog_round = level.round_number + randomintrangeinclusive(8, 10);
         break;
     }
@@ -517,7 +517,7 @@ function function_1401e135() {
     case 19:
     case 20:
         return randomintrange(35, 45);
-    case #"hash_defdefdefdefdef0":
+    default:
         return randomintrange(35, 45);
         break;
     }
@@ -555,7 +555,7 @@ function function_7040caed() {
         case 19:
         case 20:
             return 8;
-        case #"hash_defdefdefdefdef0":
+        default:
             return 8;
             break;
         }
@@ -871,7 +871,7 @@ function private function_3ab942cb(cmd) {
         case #"hash_fc3b784a3c0b31d":
             level.var_61a89694 = 1;
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     #/

@@ -7,7 +7,7 @@
 #namespace planemortar;
 
 // Namespace planemortar/planemortar_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xc7bb9693, Offset: 0x110
 // Size: 0xb4
 function init_shared() {
@@ -19,7 +19,7 @@ function init_shared() {
 }
 
 // Namespace planemortar/planemortar_shared
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x52bbbcc0, Offset: 0x1d0
 // Size: 0xf2
 function planemortar_contrail(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

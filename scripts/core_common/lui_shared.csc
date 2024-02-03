@@ -308,7 +308,7 @@ function private _screen_fade(localclientnum, n_time, n_target_alpha, n_start_al
         case #"white":
             v_color = (1, 1, 1);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             /#
                 assertmsg("<unknown string>");
             #/

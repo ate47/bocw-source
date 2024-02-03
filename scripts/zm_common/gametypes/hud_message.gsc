@@ -11,7 +11,7 @@
 #namespace hud_message;
 
 // Namespace hud_message/hud_message
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xa5131289, Offset: 0xc0
 // Size: 0x20c
 function init() {

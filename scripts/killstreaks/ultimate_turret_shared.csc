@@ -5,7 +5,7 @@
 #namespace ultimate_turret;
 
 // Namespace ultimate_turret/ultimate_turret_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xc299e103, Offset: 0x118
 // Size: 0x144
 function init_shared() {
@@ -19,7 +19,7 @@ function init_shared() {
 }
 
 // Namespace ultimate_turret/ultimate_turret_shared
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x963dbd6a, Offset: 0x268
 // Size: 0xec
 function turret_init_anim(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -34,7 +34,7 @@ function turret_init_anim(localclientnum, *oldval, newval, *bnewent, *binitialsn
 }
 
 // Namespace ultimate_turret/ultimate_turret_shared
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xf20ace2d, Offset: 0x360
 // Size: 0xc4
 function turret_open(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -48,7 +48,7 @@ function turret_open(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *
 }
 
 // Namespace ultimate_turret/ultimate_turret_shared
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x1e034281, Offset: 0x430
 // Size: 0x3c
 function turret_close_anim(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

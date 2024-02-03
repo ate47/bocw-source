@@ -21,7 +21,7 @@
 #namespace napalm_strike;
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xb4dc9451, Offset: 0x280
 // Size: 0x1a0
 function init_shared(bundlename, var_b083dcd0) {
@@ -37,7 +37,7 @@ function init_shared(bundlename, var_b083dcd0) {
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x411fc580, Offset: 0x428
 // Size: 0x6a
 function function_aad649e1(killstreaktype) {
@@ -49,7 +49,7 @@ function function_aad649e1(killstreaktype) {
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xc5e11c08, Offset: 0x4a0
 // Size: 0xac
 function function_3457a31e() {
@@ -61,7 +61,7 @@ function function_3457a31e() {
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x6cbbf20e, Offset: 0x558
 // Size: 0x18a
 function function_7ae3f138(killstreaktype) {
@@ -85,7 +85,7 @@ function function_7ae3f138(killstreaktype) {
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x2fc07047, Offset: 0x6f0
 // Size: 0x78
 function function_3d070ab6(location, killstreak_id, killstreaktype) {
@@ -96,7 +96,7 @@ function function_3d070ab6(location, killstreak_id, killstreaktype) {
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0x98fedc3c, Offset: 0x770
 // Size: 0x5e4
 function function_88e2e18a(killstreaktype, location, team, killstreak_id, startdelay, var_e0d1e239 = "napalm_strike_path_start") {
@@ -163,7 +163,7 @@ function function_88e2e18a(killstreaktype, location, team, killstreak_id, startd
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x99865f23, Offset: 0xd60
 // Size: 0x64
 function private function_6f537b95(killstreak_id) {
@@ -173,7 +173,7 @@ function private function_6f537b95(killstreak_id) {
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 5, eflags: 0x4
+// Params 5, eflags: 0x6 linked
 // Checksum 0xe3529443, Offset: 0xdd0
 // Size: 0x378
 function private spawnplane(startnode, owner, killstreak_id, killstreakbundle, killstreaktype) {
@@ -215,7 +215,7 @@ function private spawnplane(startnode, owner, killstreak_id, killstreakbundle, k
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0x78ba4ad7, Offset: 0x1150
 // Size: 0x180
 function cleanup(killstreaktype, plane, killstreak_id, team, owner, location) {
@@ -239,7 +239,7 @@ function cleanup(killstreaktype, plane, killstreak_id, team, owner, location) {
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 10, eflags: 0x4
+// Params 10, eflags: 0x6 linked
 // Checksum 0x11ac7a49, Offset: 0x12d8
 // Size: 0x10c
 function private function_888e0e9f(killstreaktype, killstreak_id, plane, startnode, pivot, location, height, targetpoint, team, var_3892c0b0) {
@@ -253,7 +253,7 @@ function private function_888e0e9f(killstreaktype, killstreak_id, plane, startno
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 6, eflags: 0x4
+// Params 6, eflags: 0x6 linked
 // Checksum 0xc6c6384a, Offset: 0x13f0
 // Size: 0x398
 function private function_c248485(plane, targetpoint, team, owner, var_3892c0b0 = 0, location) {
@@ -300,7 +300,7 @@ function private function_c248485(plane, targetpoint, team, owner, var_3892c0b0 
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 9, eflags: 0x4
+// Params 9, eflags: 0x6 linked
 // Checksum 0x41d49e75, Offset: 0x1790
 // Size: 0x464
 function private function_c4cbfac7(plane, team, killstreakbundle, var_8be94730, var_1d6434c4, var_c3aa02d8, location, killcament, var_5496c504) {
@@ -354,7 +354,7 @@ function private function_c4cbfac7(plane, team, killstreakbundle, var_8be94730, 
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xc97bb782, Offset: 0x1c00
 // Size: 0x44
 function function_4947d695() {
@@ -365,7 +365,7 @@ function function_4947d695() {
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xf513075f, Offset: 0x1c50
 // Size: 0x18c
 function function_a7d56780(killstreakbundle) {
@@ -385,7 +385,7 @@ function function_a7d56780(killstreakbundle) {
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 6, eflags: 0x4
+// Params 6, eflags: 0x6 linked
 // Checksum 0x2125e277, Offset: 0x1de8
 // Size: 0x314
 function private function_77ba1651(position, owner, normal, direction, killcament, team) {
@@ -430,7 +430,7 @@ function private function_77ba1651(position, owner, normal, direction, killcamen
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xe585819a, Offset: 0x2108
 // Size: 0x740
 function function_985141f2(owner, startpos, normal, direction, killcament, team, killstreakbundle) {
@@ -499,7 +499,7 @@ function function_985141f2(owner, startpos, normal, direction, killcament, team,
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 3, eflags: 0x4
+// Params 3, eflags: 0x6 linked
 // Checksum 0xb1aae378, Offset: 0x2850
 // Size: 0x84
 function private function_660d94c3(firesound, killcament, var_51589eb4) {
@@ -512,7 +512,7 @@ function private function_660d94c3(firesound, killcament, var_51589eb4) {
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xdd4dd1b3, Offset: 0x28e0
 // Size: 0xd4
 function private function_f712ec5e() {
@@ -542,7 +542,7 @@ function private function_3b402cdd(water_depth) {
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xef759b75, Offset: 0x2a28
 // Size: 0x42
 function private isunderwater(position) {
@@ -551,7 +551,7 @@ function private isunderwater(position) {
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xfed4828a, Offset: 0x2a78
 // Size: 0x626
 function private function_e3bc95f2(killstreakbundle) {
@@ -611,7 +611,7 @@ function private function_e3bc95f2(killstreakbundle) {
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xb6433749, Offset: 0x30a8
 // Size: 0x4c
 function function_1db9aa5e() {
@@ -620,7 +620,7 @@ function function_1db9aa5e() {
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x10d90d87, Offset: 0x3100
 // Size: 0x54
 function private stopfiresound() {
@@ -633,7 +633,7 @@ function private stopfiresound() {
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0xb5580aee, Offset: 0x3160
 // Size: 0x230
 function private getpotentialtargets(var_93057333, var_e9c2375d) {
@@ -661,7 +661,7 @@ function private getpotentialtargets(var_93057333, var_e9c2375d) {
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xac0a898, Offset: 0x3398
 // Size: 0xcc
 function function_4cf0607d(var_93057333, weapon, killstreakbundle) {
@@ -675,7 +675,7 @@ function function_4cf0607d(var_93057333, weapon, killstreakbundle) {
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xca4690c1, Offset: 0x3470
 // Size: 0xbc
 function function_2f66cd96(var_93057333, weapon, killstreakbundle) {
@@ -687,7 +687,7 @@ function function_2f66cd96(var_93057333, weapon, killstreakbundle) {
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0x287a3fdd, Offset: 0x3538
 // Size: 0xbc
 function private candofiredamage(victim, resetfiretime) {
@@ -704,7 +704,7 @@ function private candofiredamage(victim, resetfiretime) {
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0xd86a11cd, Offset: 0x3600
 // Size: 0x40
 function private resetfiredamage(entnum, time) {
@@ -715,7 +715,7 @@ function private resetfiredamage(entnum, time) {
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xaeb64cc4, Offset: 0x3648
 // Size: 0x13e
 function private sndfiredamage() {
@@ -736,7 +736,7 @@ function private sndfiredamage() {
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xea155e1b, Offset: 0x3790
 // Size: 0x3c
 function private sndfiredamage_deleteent(ent) {
@@ -747,7 +747,7 @@ function private sndfiredamage_deleteent(ent) {
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0x9bea6eb1, Offset: 0x37d8
 // Size: 0x11c
 function private function_5e2b9745(*attacker, *weapon) {
@@ -766,7 +766,7 @@ function private function_5e2b9745(*attacker, *weapon) {
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0xebb37b5, Offset: 0x3900
 // Size: 0x9c
 function private function_7f88b108(*attacker, *weapon) {

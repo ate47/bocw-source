@@ -35,7 +35,7 @@ function set_difficulty(difficulty) {
             case #"fu":
                 difficulty = "fu";
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 continue;
             }
         }

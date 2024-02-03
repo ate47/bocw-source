@@ -594,7 +594,7 @@ function private rioterreaquireservice(entity) {
             entity flagenemyunattackable();
         }
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         if (entity.reacquire_state > 15) {
             entity.reacquire_state = 0;
             return 0;

@@ -719,7 +719,7 @@ function function_c943b729(*action, takedown, player) {
             return 0;
         }
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         return 0;
         break;
     }

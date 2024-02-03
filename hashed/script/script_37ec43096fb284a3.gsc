@@ -17,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_d0ab5955/namespace_d0ab5955
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x643390bb, Offset: 0x248
 // Size: 0x278
 function function_70a657d8() {
@@ -40,7 +40,7 @@ function function_70a657d8() {
 }
 
 // Namespace namespace_d0ab5955/namespace_d0ab5955
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x80f724d1, Offset: 0x4c8
 // Size: 0x4
 function postinit() {
@@ -48,7 +48,7 @@ function postinit() {
 }
 
 // Namespace namespace_d0ab5955/namespace_d0ab5955
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xe7399e15, Offset: 0x4d8
 // Size: 0x23c
 function function_a380fe5(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -74,7 +74,7 @@ function function_a380fe5(*localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace namespace_d0ab5955/namespace_d0ab5955
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x145fbd73, Offset: 0x720
 // Size: 0x160
 function function_ec0b7087(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -92,7 +92,7 @@ function function_ec0b7087(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace namespace_d0ab5955/namespace_d0ab5955
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xe2020aac, Offset: 0x888
 // Size: 0x74
 function on_localclient_connect(localclientnum) {
@@ -101,7 +101,7 @@ function on_localclient_connect(localclientnum) {
 }
 
 // Namespace namespace_d0ab5955/namespace_d0ab5955
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x703c2509, Offset: 0x908
 // Size: 0x114
 function private function_347f52dd(localclientnum) {
@@ -126,7 +126,7 @@ function private function_347f52dd(localclientnum) {
 }
 
 // Namespace namespace_d0ab5955/namespace_d0ab5955
-// Params 7, eflags: 0x4
+// Params 7, eflags: 0x6 linked
 // Checksum 0xab0e4b34, Offset: 0xa28
 // Size: 0xe4
 function private function_947e99a9(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -139,7 +139,7 @@ function private function_947e99a9(localclientnum, *oldval, newval, *bnewent, *b
 }
 
 // Namespace namespace_d0ab5955/namespace_d0ab5955
-// Params 3, eflags: 0x4
+// Params 3, eflags: 0x6 linked
 // Checksum 0x28c1c824, Offset: 0xb18
 // Size: 0x21a
 function private function_d45dd62(localclientnum, intensity = 0, currentplayer) {

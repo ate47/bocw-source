@@ -311,7 +311,7 @@ function function_7ff60ccf(star_level = 1) {
     case 6:
         return #"level_6_resource_list";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         return #"level_6_resource_list";
         break;
     }
@@ -529,7 +529,7 @@ function function_6e72c1e2(instance) {
         return 5;
     case #"destination_zoo":
         return 5;
-    case #"hash_defdefdefdefdef0":
+    default:
         return 5;
         break;
     }
@@ -560,7 +560,7 @@ function function_933f4c09(instance) {
         return 10;
     case #"destination_zoo":
         return 10;
-    case #"hash_defdefdefdefdef0":
+    default:
         return 10;
         break;
     }
@@ -591,7 +591,7 @@ function function_7cd90066(instance) {
         return 10;
     case #"destination_zoo":
         return 10;
-    case #"hash_defdefdefdefdef0":
+    default:
         return 10;
         break;
     }

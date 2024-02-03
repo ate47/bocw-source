@@ -12,7 +12,7 @@
 #namespace globallogic_actor;
 
 // Namespace globallogic_actor/globallogic_actor
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x77d31302, Offset: 0xc8
 // Size: 0x3c
 function callback_actorspawned(spawner) {
@@ -21,7 +21,7 @@ function callback_actorspawned(spawner) {
 }
 
 // Namespace globallogic_actor/globallogic_actor
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x51c00440, Offset: 0x110
 // Size: 0x3c
 function callback_actorcloned(original) {

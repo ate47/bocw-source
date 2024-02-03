@@ -24,7 +24,7 @@ function autoexec main() {
 #namespace zombieclientutils;
 
 // Namespace zombieclientutils/zombie
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x84999387, Offset: 0x250
 // Size: 0x174
 function zombiehandler(localclientnum, *oldvalue, *newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
@@ -43,7 +43,7 @@ function zombiehandler(localclientnum, *oldvalue, *newvalue, *bnewent, *binitial
 }
 
 // Namespace zombieclientutils/zombie
-// Params 3, eflags: 0x4
+// Params 3, eflags: 0x6 linked
 // Checksum 0x47be14f, Offset: 0x3d0
 // Size: 0xfa
 function private _gibcallback(*localclientnum, *entity, gibflag) {
@@ -61,7 +61,7 @@ function private _gibcallback(*localclientnum, *entity, gibflag) {
 }
 
 // Namespace zombieclientutils/zombie
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xc635aa05, Offset: 0x4d8
 // Size: 0x1c4
 function zombie_override_burn_fx(*localclientnum) {
@@ -83,7 +83,7 @@ function zombie_override_burn_fx(*localclientnum) {
 }
 
 // Namespace zombieclientutils/zombie
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x4ef5d58b, Offset: 0x6a8
 // Size: 0xf4
 function function_a846c43c(ai) {
@@ -102,7 +102,7 @@ function function_a846c43c(ai) {
 }
 
 // Namespace zombieclientutils/zombie
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x69114c4b, Offset: 0x7a8
 // Size: 0xf4
 function function_55aaf3b(ai) {
@@ -121,7 +121,7 @@ function function_55aaf3b(ai) {
 }
 
 // Namespace zombieclientutils/zombie
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x276814dd, Offset: 0x8a8
 // Size: 0xb6
 function function_9a725f16(model) {
@@ -141,7 +141,7 @@ function function_9a725f16(model) {
 }
 
 // Namespace zombieclientutils/zombie
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xe06e1789, Offset: 0x968
 // Size: 0x9c
 function function_2e973803(model) {
@@ -190,7 +190,7 @@ function function_fd2b858e(localclientnum) {
 }
 
 // Namespace zombieclientutils/zombie
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xb9625f56, Offset: 0xc20
 // Size: 0x44
 function function_a0a0fbea(*localclientnum) {
@@ -201,7 +201,7 @@ function function_a0a0fbea(*localclientnum) {
 }
 
 // Namespace zombieclientutils/zombie
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xb91a3ccf, Offset: 0xc70
 // Size: 0x2c
 function zombiespawnsetup(localclientnum) {
@@ -209,7 +209,7 @@ function zombiespawnsetup(localclientnum) {
 }
 
 // Namespace zombieclientutils/zombie
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xb0ff6aec, Offset: 0xca8
 // Size: 0x26c
 function function_a17af3df(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -237,7 +237,7 @@ function function_a17af3df(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zombieclientutils/zombie
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x43a46da5, Offset: 0xf20
 // Size: 0xbc
 function function_c88acbea(localclientnum) {
@@ -252,7 +252,7 @@ function function_c88acbea(localclientnum) {
 }
 
 // Namespace zombieclientutils/zombie
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xe8ef7ed5, Offset: 0xfe8
 // Size: 0xf6
 function function_d2f27d26(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

@@ -159,7 +159,7 @@ function get_safehouse_position_struct() {
     position = spawnstruct();
     position.angles = (0, 0, 0);
     switch (util::get_map_name()) {
-    case #"hash_defdefdefdefdef0":
+    default:
         position.origin = (191, 113, -2550);
         break;
     }

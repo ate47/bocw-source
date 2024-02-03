@@ -319,7 +319,7 @@ function function_ef580a0c(round) {
     case 25:
         return 4;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         return 5;
         break;
     }
@@ -343,7 +343,7 @@ function function_b03d7dd0(round) {
     case 20:
         return 4;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         return 5;
         break;
     }

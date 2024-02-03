@@ -19,7 +19,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_trial_headshots_only/zm_trial_headshots_only
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xbdaa25d, Offset: 0x138
 // Size: 0x5c
 function private function_70a657d8() {
@@ -30,7 +30,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_trial_headshots_only/zm_trial_headshots_only
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x44981bea, Offset: 0x1a0
 // Size: 0x234
 function private on_begin(*weapon_name) {
@@ -52,7 +52,7 @@ function private on_begin(*weapon_name) {
 }
 
 // Namespace zm_trial_headshots_only/zm_trial_headshots_only
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x71a525dc, Offset: 0x3e0
 // Size: 0x2cc
 function private on_end(*round_reset) {
@@ -79,7 +79,7 @@ function private on_end(*round_reset) {
 }
 
 // Namespace zm_trial_headshots_only/zm_trial_headshots_only
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x5fe6b073, Offset: 0x6b8
 // Size: 0x32
 function is_active() {
@@ -88,7 +88,7 @@ function is_active() {
 }
 
 // Namespace zm_trial_headshots_only/zm_trial_headshots_only
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xc5e78d69, Offset: 0x6f8
 // Size: 0x6c
 function private function_33f0ddd3(s_event) {

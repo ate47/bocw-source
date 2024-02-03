@@ -9,7 +9,7 @@
 #namespace zm_cleanup;
 
 // Namespace zm_cleanup/zm_cleanup_mgr
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7f951653, Offset: 0xd8
 // Size: 0x40
 function function_70a657d8() {
@@ -20,7 +20,7 @@ function function_70a657d8() {
 }
 
 // Namespace zm_cleanup/zm_cleanup_mgr
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x7fadd017, Offset: 0x120
 // Size: 0x1c
 function postinit() {
@@ -425,7 +425,7 @@ function private get_wait_locations_in_zone(zone) {
 }
 
 // Namespace zm_cleanup/zm_cleanup_mgr
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x5f13dc39, Offset: 0x1440
 // Size: 0x92
 function get_escape_position_in_current_zone() {

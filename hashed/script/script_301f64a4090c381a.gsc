@@ -24,7 +24,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_e38c57c1/namespace_e38c57c1
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x7b1f219a, Offset: 0x170
 // Size: 0x4c
 function private function_70a657d8() {
@@ -36,7 +36,7 @@ function private function_70a657d8() {
 }
 
 // Namespace namespace_e38c57c1/namespace_e38c57c1
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x303466c0, Offset: 0x1c8
 // Size: 0x44
 function private postinit() {
@@ -121,7 +121,7 @@ function function_2a94cd59() {
 }
 
 // Namespace namespace_e38c57c1/namespace_e38c57c1
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xe14415f4, Offset: 0x5e8
 // Size: 0x18
 function function_6a7a1533(var_c5b25bc5) {
@@ -165,7 +165,7 @@ function function_183814d3() {
 }
 
 // Namespace namespace_e38c57c1/namespace_e38c57c1
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xd8ed5fec, Offset: 0x7f8
 // Size: 0x24
 function function_c3f3716() {
@@ -173,7 +173,7 @@ function function_c3f3716() {
 }
 
 // Namespace namespace_e38c57c1/namespace_e38c57c1
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x45163ba4, Offset: 0x828
 // Size: 0x60
 function function_863dc0ef(n_cost) {
@@ -203,7 +203,7 @@ function function_cbf286b0() {
 }
 
 // Namespace namespace_e38c57c1/namespace_e38c57c1
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xca4a146b, Offset: 0x8f8
 // Size: 0x46
 function function_3da195ec(weapon) {
@@ -217,7 +217,7 @@ function function_3da195ec(weapon) {
 }
 
 // Namespace namespace_e38c57c1/namespace_e38c57c1
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0xfff562de, Offset: 0x948
 // Size: 0x5c
 function private function_68992377(var_c5b25bc5, var_97f3fbb7) {
@@ -302,7 +302,7 @@ function devgui() {
                 n_player = int(strtok(str_command, "<unknown string>")[1]);
                 function_c1ccd7f3(&function_2a94cd59, n_player);
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 break;
             }
             setdvar(#"hash_443a451d4b2f9de2", "<unknown string>");

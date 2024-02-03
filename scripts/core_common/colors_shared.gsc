@@ -246,7 +246,7 @@ function _get_debug_color(str_color) {
         case #"p":
             return (1, 0, 1);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             println("<unknown string>" + str_color + "<unknown string>");
             return (0, 0, 0);
             break;
@@ -620,7 +620,7 @@ function activate_color_trigger(var_cc966c56) {
     case #"team3":
         str_color = self.var_15eb6ad5;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         return;
     }
     self thread get_colorcodes_and_activate_trigger(str_color, var_cc966c56);
@@ -714,7 +714,7 @@ function function_f06ea88(node, var_f9350db6, var_cc966c56) {
     case #"team3":
         str_color = node.var_15eb6ad5;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         return;
     }
     if (issubstr(str_color, var_f9350db6)) {
@@ -1339,7 +1339,7 @@ function removespawnerfromcolornumberarray() {
     case #"team3":
         str_color = self.var_15eb6ad5;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         return;
     }
     if (!isdefined(str_color)) {

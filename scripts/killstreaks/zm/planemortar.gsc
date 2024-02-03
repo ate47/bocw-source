@@ -25,7 +25,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace planemortar/planemortar
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x63fd79f, Offset: 0x338
 // Size: 0xe4
 function private function_70a657d8() {
@@ -40,7 +40,7 @@ function private function_70a657d8() {
 }
 
 // Namespace planemortar/planemortar
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x3f81cd5e, Offset: 0x428
 // Size: 0x34
 function private function_3675de8b() {
@@ -49,7 +49,7 @@ function private function_3675de8b() {
 }
 
 // Namespace planemortar/planemortar
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x7ada4948, Offset: 0x468
 // Size: 0x26
 function function_269fec2() {
@@ -59,7 +59,7 @@ function function_269fec2() {
 }
 
 // Namespace planemortar/planemortar
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x3ed7c82b, Offset: 0x498
 // Size: 0x1de
 function plane_mortar_bda_dialog() {
@@ -92,7 +92,7 @@ function plane_mortar_bda_dialog() {
 }
 
 // Namespace planemortar/planemortar
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xcd2f71a0, Offset: 0x680
 // Size: 0x12a
 function function_c9ca313b(*killstreaktype) {
@@ -188,7 +188,7 @@ function private event_handler[grenade_fire] function_4776caf4(eventstruct) {
 }
 
 // Namespace planemortar/planemortar
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xafeb3a7c, Offset: 0xb58
 // Size: 0x224
 function function_66133f8b(var_5b276012) {
@@ -214,7 +214,7 @@ function function_66133f8b(var_5b276012) {
 }
 
 // Namespace planemortar/planemortar
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xe0c98171, Offset: 0xd88
 // Size: 0x24
 function private function_142c133b() {
@@ -222,7 +222,7 @@ function private function_142c133b() {
 }
 
 // Namespace planemortar/planemortar
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xfab33981, Offset: 0xdb8
 // Size: 0x24
 function private function_c6fe946e() {
@@ -230,7 +230,7 @@ function private function_c6fe946e() {
 }
 
 // Namespace planemortar/planemortar
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x46eecd68, Offset: 0xde8
 // Size: 0x24
 function private function_f2cd26bf() {
@@ -238,7 +238,7 @@ function private function_f2cd26bf() {
 }
 
 // Namespace planemortar/planemortar
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xe4020f74, Offset: 0xe18
 // Size: 0x4c
 function private function_fa592333(b_valid) {
@@ -246,7 +246,7 @@ function private function_fa592333(b_valid) {
 }
 
 // Namespace planemortar/planemortar
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xedfa3920, Offset: 0xe70
 // Size: 0x34
 function function_5673c107() {
@@ -256,7 +256,7 @@ function function_5673c107() {
 }
 
 // Namespace planemortar/planemortar
-// Params 3, eflags: 0x4
+// Params 3, eflags: 0x6 linked
 // Checksum 0xb4082de8, Offset: 0xeb0
 // Size: 0x280
 function private function_8f181838(var_5b276012, params, var_50a76fc3) {
@@ -286,7 +286,7 @@ function private function_8f181838(var_5b276012, params, var_50a76fc3) {
 }
 
 // Namespace planemortar/planemortar
-// Params 10, eflags: 0x4
+// Params 10, eflags: 0x6 linked
 // Checksum 0xca6f8b6b, Offset: 0x1138
 // Size: 0x8c
 function private function_5e7e3e86(*einflictor, eattacker, *idamage, *idflags, *smeansofdeath, weapon, *vpoint, *vdir, *shitloc, *psoffsettime) {

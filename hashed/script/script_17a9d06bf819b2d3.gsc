@@ -13,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_5b1144e/namespace_5b1144e
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x11eea6b, Offset: 0x670
 // Size: 0x17d4
 function private function_70a657d8() {
@@ -90,7 +90,7 @@ function private function_70a657d8() {
 }
 
 // Namespace namespace_5b1144e/namespace_5b1144e
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xa8d15a29, Offset: 0x1e50
 // Size: 0x56
 function function_3ed2984b(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -98,7 +98,7 @@ function function_3ed2984b(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace namespace_5b1144e/namespace_5b1144e
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xef533afa, Offset: 0x1eb0
 // Size: 0x5a
 function function_1bcf5171(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -106,7 +106,7 @@ function function_1bcf5171(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace namespace_5b1144e/namespace_5b1144e
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x7535074b, Offset: 0x1f18
 // Size: 0x1cc
 function function_5ae4a10c(modelname, targetname, displayname, var_7382ea8b, icon, var_b5a47119 = 0, zoffset = 0) {
@@ -140,7 +140,7 @@ function function_5ae4a10c(modelname, targetname, displayname, var_7382ea8b, ico
 }
 
 // Namespace namespace_5b1144e/namespace_5b1144e
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xc70f1360, Offset: 0x20f0
 // Size: 0x46
 function private function_d1852e75(ent) {

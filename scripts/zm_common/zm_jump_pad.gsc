@@ -498,7 +498,7 @@ function jump_pad_player_overrides(st_behavior, int_clean) {
         }
     LOC_00000060:
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         if (isdefined(level._jump_pad_level_behavior)) {
             self [[ level._jump_pad_level_behavior ]](st_behavior, int_clean);
             goto LOC_0000008e;

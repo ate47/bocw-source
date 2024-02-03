@@ -47,7 +47,7 @@ function function_f94325d3() {
 }
 
 // Namespace stats/player_stats
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x3c4d70d5, Offset: 0x2c8
 // Size: 0x6c
 function function_ca76d4a() {
@@ -357,7 +357,7 @@ function function_ed81f25e(statname) {
 }
 
 // Namespace stats/player_stats
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x1b5ed2ec, Offset: 0xf60
 // Size: 0x78
 function function_baa25a23(statname, value) {
@@ -668,7 +668,7 @@ function function_7fd36562(vehicle, statname, value) {
 }
 
 // Namespace stats/player_stats
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xcb54a69, Offset: 0x1e08
 // Size: 0x52
 function function_7a850245(statname, value) {

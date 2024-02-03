@@ -518,7 +518,7 @@ function function_83fe843d(player) {
         return "red";
     case 3:
         return "yellow";
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assert(0, "<unknown string>");
         #/
@@ -1254,7 +1254,7 @@ function function_5934bbc8() {
         return (1, 0, 0);
     case #"yellow":
         return (1, 1, 0);
-    case #"hash_defdefdefdefdef0":
+    default:
         return (1, 1, 1);
         break;
     }
@@ -1655,7 +1655,7 @@ function function_6c074975() {
     case 5:
         lookahead = 0.55;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         lookahead = 0.45;
         break;
     }

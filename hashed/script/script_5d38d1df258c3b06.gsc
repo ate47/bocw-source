@@ -16,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_7c1d0bac/namespace_7c1d0bac
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xf4a5b64b, Offset: 0x148
 // Size: 0x94
 function private function_70a657d8() {
@@ -26,7 +26,7 @@ function private function_70a657d8() {
 }
 
 // Namespace namespace_7c1d0bac/namespace_7c1d0bac
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x67487cd9, Offset: 0x1e8
 // Size: 0x74
 function on_localclient_connect(localclientnum) {
@@ -36,7 +36,7 @@ function on_localclient_connect(localclientnum) {
 }
 
 // Namespace namespace_7c1d0bac/namespace_7c1d0bac
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x981fe978, Offset: 0x268
 // Size: 0x5dc
 function function_b6992be(localclientnum) {

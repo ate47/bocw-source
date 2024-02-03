@@ -701,7 +701,7 @@ class csceneplayer : csceneobject {
         case #"dpad_right":
             return (player actionslotfourbuttonpressed() ? 1 : 0);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             v_movement = player getnormalizedmovement();
             return v_movement[0];
             break;
@@ -1582,7 +1582,7 @@ class csceneplayer : csceneobject {
             case #"dpad_right":
                 level.interactive_shot interactive_shot::set_text(player, #"hash_2c841879f1d933ef");
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 level.interactive_shot interactive_shot::set_text(player, #"");
                 break;
             }

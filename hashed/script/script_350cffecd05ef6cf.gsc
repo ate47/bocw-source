@@ -277,7 +277,7 @@ function function_86515c3b(player, var_191ca105, banner = 1) {
         }
         player thread namespace_b754744b::function_b784c6bd(46);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assert(0, "<unknown string>");
         #/

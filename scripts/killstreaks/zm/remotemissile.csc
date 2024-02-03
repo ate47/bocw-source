@@ -16,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace remotemissile/remotemissile
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xd463f1b, Offset: 0x118
 // Size: 0x11c
 function private function_70a657d8() {
@@ -27,7 +27,7 @@ function private function_70a657d8() {
 }
 
 // Namespace remotemissile/remotemissile
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x338c0004, Offset: 0x240
 // Size: 0xcc
 function function_c668b489(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -41,7 +41,7 @@ function function_c668b489(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace remotemissile/remotemissile
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x1dfebbfd, Offset: 0x318
 // Size: 0x3c
 function function_3815e8dc(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -49,7 +49,7 @@ function function_3815e8dc(*localclientnum, *oldval, *newval, *bnewent, *binitia
 }
 
 // Namespace remotemissile/remotemissile
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x550b347e, Offset: 0x360
 // Size: 0x1d0
 function function_73155fe5(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -72,7 +72,7 @@ function function_73155fe5(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace remotemissile/remotemissile
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x47857e53, Offset: 0x538
 // Size: 0xcc
 function private function_4fe8eba6(newval) {

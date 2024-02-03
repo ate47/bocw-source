@@ -89,7 +89,7 @@ function function_d04c220e() {
 }
 
 // Namespace player_decision/player_decision
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xdfe3945c, Offset: 0x510
 // Size: 0xe4
 function function_ff7e19cb(var_6aeabb95) {
@@ -128,7 +128,7 @@ function function_1c4fb6d4() {
 }
 
 // Namespace player_decision/player_decision
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xc5fdb2e3, Offset: 0x708
 // Size: 0x9c
 function function_cde4f4e9(var_fda79bf3) {
@@ -269,7 +269,7 @@ function function_fc8e281d() {
 }
 
 // Namespace player_decision/player_decision
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xe1a846cb, Offset: 0xc70
 // Size: 0x4c
 function function_e0bd7f7a(var_b8291d8f) {
@@ -280,7 +280,7 @@ function function_e0bd7f7a(var_b8291d8f) {
 }
 
 // Namespace player_decision/player_decision
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x48f2bd6f, Offset: 0xcc8
 // Size: 0x7a
 function function_e40c7d56() {
@@ -296,7 +296,7 @@ function function_e40c7d56() {
 }
 
 // Namespace player_decision/player_decision
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x876ae659, Offset: 0xd50
 // Size: 0x64
 function function_557c31b1() {
@@ -305,7 +305,7 @@ function function_557c31b1() {
 }
 
 // Namespace player_decision/player_decision
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xfc31cb68, Offset: 0xdc0
 // Size: 0x62
 function function_ee124ba3() {
@@ -365,7 +365,7 @@ function function_430ebd4b(var_2b7725a, var_2a51713) {
 }
 
 // Namespace player_decision/player_decision
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x5fa076ef, Offset: 0x1058
 // Size: 0x122
 function function_6efc0ff8(var_3740aa91, var_2b7725a) {

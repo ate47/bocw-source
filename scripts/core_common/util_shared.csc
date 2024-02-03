@@ -43,7 +43,7 @@ function empty(*a, *b, *c, *d, *e) {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xf377e02e, Offset: 0x2d8
 // Size: 0x84
 function waitforallclients() {
@@ -257,7 +257,7 @@ function waittill_any_ents(ent1, string1, ent2, string2, ent3, string3, ent4, st
 }
 
 // Namespace util/util_shared
-// Params b, eflags: 0x0
+// Params b, eflags: 0x2 linked
 // Checksum 0x7cfa15c0, Offset: 0xb90
 // Size: 0x11a
 function function_e532f5da(n_timeout, ent1, string1, ent2, string2, ent3, string3, ent4, string4, ent5, string5) {
@@ -388,7 +388,7 @@ function _single_func(entity, func, a_vars) {
             return [[ func ]]();
         }
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assertmsg("<unknown string>");
         #/
@@ -473,7 +473,7 @@ function single_thread_argarray(entity, func, &a_vars) {
 }
 
 // Namespace util/util_shared
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x10abd708, Offset: 0x15d0
 // Size: 0x44
 function function_50f54b6f(entity, func, arg1, &a_vars) {
@@ -531,7 +531,7 @@ function _single_thread(entity, func, arg1, arg2, &a_vars) {
         case 0:
             entity thread [[ func ]](arg1, arg2);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             /#
                 assertmsg("<unknown string>");
             #/
@@ -566,7 +566,7 @@ function _single_thread(entity, func, arg1, arg2, &a_vars) {
         case 0:
             entity thread [[ func ]](arg1);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             /#
                 assertmsg("<unknown string>");
             #/
@@ -601,7 +601,7 @@ function _single_thread(entity, func, arg1, arg2, &a_vars) {
         case 0:
             entity thread [[ func ]]();
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             /#
                 assertmsg("<unknown string>");
             #/
@@ -652,7 +652,7 @@ function create_flags_and_return_tokens(flags) {
 }
 
 // Namespace util/util_shared
-// Params 9, eflags: 0x0
+// Params 9, eflags: 0x2 linked
 // Checksum 0x87185480, Offset: 0x20d8
 // Size: 0x74
 function delay(time_or_notify, str_endon, func, arg1, arg2, arg3, arg4, arg5, arg6) {
@@ -861,7 +861,7 @@ function is_valid_type_for_callback(type) {
     case #"vehicle":
     case #"plane":
         return 1;
-    case #"hash_defdefdefdefdef0":
+    default:
         return 0;
         break;
     }
@@ -972,7 +972,7 @@ function playfxontag(localclientnum, effect, entity, tagname) {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xc1b2271, Offset: 0x2d60
 // Size: 0x34
 function function_6d0694af() {
@@ -1072,7 +1072,7 @@ function isenemyplayer(player) {
 }
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x4f8e87b2, Offset: 0x30e0
 // Size: 0xd2
 function function_50ed1561(localclientnum) {
@@ -1096,7 +1096,7 @@ function function_50ed1561(localclientnum) {
 }
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x41a97619, Offset: 0x31c0
 // Size: 0x4e
 function is_player_view_linked_to_entity(localclientnum) {
@@ -1110,7 +1110,7 @@ function is_player_view_linked_to_entity(localclientnum) {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x37a44135, Offset: 0x3218
 // Size: 0x12
 function get_start_time() {
@@ -1151,7 +1151,7 @@ function function_d11b3582(var_43692bd4, label = "unspecified") {
 }
 
 // Namespace util/util_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xdb6a15cb, Offset: 0x33b8
 // Size: 0x92
 function record_elapsed_time(start_time, &elapsed_time_array) {
@@ -1165,7 +1165,7 @@ function record_elapsed_time(start_time, &elapsed_time_array) {
 }
 
 // Namespace util/util_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x3f065d82, Offset: 0x3458
 // Size: 0x1bc
 function note_elapsed_times(&elapsed_time_array, label = "unspecified") {
@@ -1279,7 +1279,7 @@ function function_fa1da5cb() {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x59cfae9f, Offset: 0x39b8
 // Size: 0x12
 function function_2c435484() {
@@ -1343,7 +1343,7 @@ function function_f5b24d2d(localclientnum, entity, var_d0ada253, state) {
 }
 
 // Namespace util/util_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x87b524fd, Offset: 0x3d78
 // Size: 0xda
 function registersystem(ssysname, cbfunc) {
@@ -1790,7 +1790,7 @@ function cf_team_mapping(*localclientnum, *oldval, newval, *bnewent, *binitialsn
     case 1:
         set_team_mapping(#"allies", #"axis");
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         set_team_mapping(#"allies", #"axis");
         break;
     }
@@ -1936,7 +1936,7 @@ function function_26489405() {
     case #"mp_casino":
         isnightmap = 1;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
     return isnightmap;
@@ -2169,7 +2169,7 @@ function function_21aef83c() {
 }
 
 // Namespace util/util_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x2d8d1bdb, Offset: 0x5e90
 // Size: 0x54
 function function_8eb5d4b0(var_b5b0042e, var_aba8f86c) {
@@ -2186,7 +2186,7 @@ function function_3ec868ea(localclientnum, var_7bb490d6 = 1) {
 }
 
 // Namespace util/util_shared
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x3ecc3d4d, Offset: 0x5f40
 // Size: 0x1ec
 function function_ca4b4e19(localclientnum, var_b5338ccb = 1, var_7bb490d6 = 1) {

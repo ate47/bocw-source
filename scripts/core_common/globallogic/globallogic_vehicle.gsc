@@ -23,7 +23,7 @@
 #namespace globallogic_vehicle;
 
 // Namespace globallogic_vehicle/globallogic_vehicle
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x298a7e55, Offset: 0x258
 // Size: 0x344
 function callback_vehiclespawned(spawner) {
@@ -67,7 +67,7 @@ function callback_vehiclespawned(spawner) {
 }
 
 // Namespace globallogic_vehicle/globallogic_vehicle
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xdaddcbb4, Offset: 0x5a8
 // Size: 0x92
 function function_a8f929b0() {
@@ -81,7 +81,7 @@ function function_a8f929b0() {
 }
 
 // Namespace globallogic_vehicle/globallogic_vehicle
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x2fe818ea, Offset: 0x648
 // Size: 0x194
 function isfriendlyfire(eself, eattacker) {
@@ -108,7 +108,7 @@ function isfriendlyfire(eself, eattacker) {
 }
 
 // Namespace globallogic_vehicle/globallogic_vehicle
-// Params 16, eflags: 0x0
+// Params 16, eflags: 0x2 linked
 // Checksum 0x62f8c7e9, Offset: 0x7e8
 // Size: 0xefc
 function callback_vehicledamage(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, vdamageorigin, psoffsettime, damagefromunderneath, modelindex, partname, vsurfacenormal) {
@@ -302,7 +302,7 @@ function callback_vehicledamage(einflictor, eattacker, idamage, idflags, smeanso
 }
 
 // Namespace globallogic_vehicle/globallogic_vehicle
-// Params 13, eflags: 0x0
+// Params 13, eflags: 0x2 linked
 // Checksum 0x678cbcba, Offset: 0x16f0
 // Size: 0x2dc
 function callback_vehicleradiusdamage(einflictor, eattacker, idamage, finnerdamage, fouterdamage, idflags, smeansofdeath, weapon, vpoint, fradius, fconeanglecos, vconedir, psoffsettime) {
@@ -347,7 +347,7 @@ function callback_vehicleradiusdamage(einflictor, eattacker, idamage, finnerdama
 }
 
 // Namespace globallogic_vehicle/globallogic_vehicle
-// Params 8, eflags: 0x0
+// Params 8, eflags: 0x2 linked
 // Checksum 0xd14a5e0f, Offset: 0x19d8
 // Size: 0x8bc
 function callback_vehiclekilled(einflictor, eattacker, idamage, smeansofdeath, weapon, vdir, shitloc, psoffsettime) {
@@ -463,7 +463,7 @@ function callback_vehiclekilled(einflictor, eattacker, idamage, smeansofdeath, w
 }
 
 // Namespace globallogic_vehicle/globallogic_vehicle
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x93692883, Offset: 0x22a0
 // Size: 0x48
 function function_67e86f71(vec) {
@@ -472,7 +472,7 @@ function function_67e86f71(vec) {
 }
 
 // Namespace globallogic_vehicle/globallogic_vehicle
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x195d3a1, Offset: 0x22f0
 // Size: 0x2bc
 function function_621234f9(eattacker, einflictor) {
@@ -504,7 +504,7 @@ function function_621234f9(eattacker, einflictor) {
 }
 
 // Namespace globallogic_vehicle/globallogic_vehicle
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x5d33dc3d, Offset: 0x25b8
 // Size: 0xcc
 function vehiclecrush(eattacker, einflictor) {
@@ -517,7 +517,7 @@ function vehiclecrush(eattacker, einflictor) {
 }
 
 // Namespace globallogic_vehicle/globallogic_vehicle
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x3d30e8b2, Offset: 0x2690
 // Size: 0x9a
 function allowfriendlyfiredamage(einflictor, eattacker, smeansofdeath, weapon) {
@@ -534,7 +534,7 @@ function allowfriendlyfiredamage(einflictor, eattacker, smeansofdeath, weapon) {
 }
 
 // Namespace globallogic_vehicle/globallogic_vehicle
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xc8c58c04, Offset: 0x2738
 // Size: 0x184
 function vehiclekilled_awardassists(*einflictor, eattacker, *weapon, lpattackteam) {

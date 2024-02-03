@@ -46,7 +46,7 @@ function function_6ee35a0a(rarity) {
     case #"ultra":
         return #"hash_3dad79ca7ca879b5";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         return #"hash_20b3d352fb23155c";
         break;
     }

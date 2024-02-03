@@ -77,7 +77,7 @@ function initialize_stat_tracking() {
 }
 
 // Namespace persistence/persistence_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xbb59480f, Offset: 0x390
 // Size: 0x74
 function adjust_recent_stats() {

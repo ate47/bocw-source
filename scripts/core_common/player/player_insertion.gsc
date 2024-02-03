@@ -615,7 +615,7 @@ function private function_7d880672(original_origin, var_9f8395cb, refly) {
         var_cc56f8da = getdvarint(#"hash_380d8ae5bfc8f45b", 1);
         switch (var_cc56f8da) {
         case 0:
-        case #"hash_defdefdefdefdef0":
+        default:
             var_59526dd5 = 0;
             break;
         case 1:
@@ -1712,7 +1712,7 @@ function private function_943c98fb(insertion) {
                 break;
             case #"repath_flight":
                 insertion on_finalize_initialization();
-            case #"hash_defdefdefdefdef0":
+            default:
                 break;
             }
             if (start_insertion) {

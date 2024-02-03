@@ -29,7 +29,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace world_event_orb_follow/world_event_orb_follow
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xdcd8a0fc, Offset: 0x1f8
 // Size: 0xe4
 function function_70a657d8() {
@@ -46,7 +46,7 @@ function function_70a657d8() {
 }
 
 // Namespace world_event_orb_follow/world_event_orb_follow
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x32515215, Offset: 0x2e8
 // Size: 0x10b4
 function private function_cc775529(s_instance) {
@@ -225,7 +225,7 @@ function private function_cc775529(s_instance) {
 }
 
 // Namespace world_event_orb_follow/world_event_orb_follow
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xda4b030d, Offset: 0x13a8
 // Size: 0x128
 function private function_7d88cc57() {
@@ -241,7 +241,7 @@ function private function_7d88cc57() {
 }
 
 // Namespace world_event_orb_follow/world_event_orb_follow
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xa8182376, Offset: 0x14d8
 // Size: 0x34
 function function_b95aa184(*params) {
@@ -251,7 +251,7 @@ function function_b95aa184(*params) {
 }
 
 // Namespace world_event_orb_follow/world_event_orb_follow
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x8ff92a3b, Offset: 0x1518
 // Size: 0x9c
 function function_eda98f63(*var_273eefec) {

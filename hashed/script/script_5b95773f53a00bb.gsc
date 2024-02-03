@@ -29,7 +29,7 @@ function autoexec __init__() {
     case #"zsurvival":
         function_bcd11f83();
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
     namespace_1c7b37c6::item_replacer(&item_world_fixup::function_6991057, #"hash_5de6b5f9e52cac08", #"t9_empty_global");

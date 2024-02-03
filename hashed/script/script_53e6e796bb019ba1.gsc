@@ -8,7 +8,7 @@
 #namespace ammomod_napalmburst;
 
 // Namespace ammomod_napalmburst/ammomod_napalmburst
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xc4a340ce, Offset: 0x650
 // Size: 0xcfc
 function function_4e4244c1() {
@@ -78,7 +78,7 @@ function function_4e4244c1() {
 }
 
 // Namespace ammomod_napalmburst/ammomod_napalmburst
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x13958838, Offset: 0x1358
 // Size: 0x64
 function function_15482148(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -86,7 +86,7 @@ function function_15482148(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace ammomod_napalmburst/ammomod_napalmburst
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x36145a08, Offset: 0x13c8
 // Size: 0xc2
 function function_c487d6b1(archetype, fx, var_1167eff2, gibflag) {
@@ -102,7 +102,7 @@ function function_c487d6b1(archetype, fx, var_1167eff2, gibflag) {
 }
 
 // Namespace ammomod_napalmburst/ammomod_napalmburst
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x56d616d6, Offset: 0x1498
 // Size: 0xd4
 function function_c8e3a0dc(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -114,7 +114,7 @@ function function_c8e3a0dc(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace ammomod_napalmburst/ammomod_napalmburst
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xdeb81d87, Offset: 0x1578
 // Size: 0x74
 function function_f3b43353(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -126,7 +126,7 @@ function function_f3b43353(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace ammomod_napalmburst/ammomod_napalmburst
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xae6a33da, Offset: 0x15f8
 // Size: 0x7c
 function function_2d64f265(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -138,7 +138,7 @@ function function_2d64f265(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace ammomod_napalmburst/ammomod_napalmburst
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x142524fd, Offset: 0x1680
 // Size: 0x382
 function function_a681160a(localclientnum, is_vehicle = 0) {
@@ -183,7 +183,7 @@ function function_a681160a(localclientnum, is_vehicle = 0) {
 }
 
 // Namespace ammomod_napalmburst/ammomod_napalmburst
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xa93e8d67, Offset: 0x1a10
 // Size: 0x102
 function function_725a593f(localclientnum) {

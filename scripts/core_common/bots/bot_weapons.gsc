@@ -1601,7 +1601,7 @@ function private function_c329e7cf(actionparams) {
     foreach (ent in ents) {
         if (ent.team == self.team && ent.item == weapon) {
             /#
-                actionparams.debug[actionparams.debug.size] = #"hash_4ba65c4749a07103" + function_a16a090d(weapon);
+                actionparams.debug[actionparams.debug.size] = #"hash_4ba65c4749a07103" + getweaponname(weapon);
             #/
             return undefined;
         }
@@ -1664,7 +1664,7 @@ function private function_d6e71e28(actionparams) {
     foreach (ent in ents) {
         if (ent.team == self.team && ent.item == weapon) {
             /#
-                actionparams.debug[actionparams.debug.size] = #"hash_4ba65c4749a07103" + function_a16a090d(weapon);
+                actionparams.debug[actionparams.debug.size] = #"hash_4ba65c4749a07103" + getweaponname(weapon);
             #/
             return undefined;
         }
@@ -1744,7 +1744,7 @@ function private function_126a6787(actionparams) {
     foreach (ent in ents) {
         if (ent.team == self.team && ent.item == weapon) {
             /#
-                actionparams.debug[actionparams.debug.size] = #"hash_4ba65c4749a07103" + function_a16a090d(weapon);
+                actionparams.debug[actionparams.debug.size] = #"hash_4ba65c4749a07103" + getweaponname(weapon);
             #/
             return undefined;
         }
@@ -1780,7 +1780,7 @@ function private function_69624ba2(actionparams) {
     foreach (ent in ents) {
         if (ent.team == self.team && ent.item == weapon) {
             /#
-                actionparams.debug[actionparams.debug.size] = #"hash_4ba65c4749a07103" + function_a16a090d(weapon);
+                actionparams.debug[actionparams.debug.size] = #"hash_4ba65c4749a07103" + getweaponname(weapon);
             #/
             return undefined;
         }

@@ -454,7 +454,7 @@ function go_to_node(node, goal_type, optional_arrived_at_node_func) {
 }
 
 // Namespace spawner/spawner_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xee262a70, Offset: 0x18a8
 // Size: 0x2a
 function function_461ce3e9() {
@@ -944,7 +944,7 @@ function function_5c5e2093(node) {
 }
 
 // Namespace spawner/spawner_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x8c4b26cd, Offset: 0x3148
 // Size: 0xba
 function get_goal(str_goal, str_key = "targetname") {
@@ -1425,7 +1425,7 @@ function waittill_ai_group_cleared(aigroup) {
 }
 
 // Namespace spawner/spawner_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xd61661d8, Offset: 0x5200
 // Size: 0x6a
 function waittill_ai_group_count(aigroup, count) {
@@ -1435,7 +1435,7 @@ function waittill_ai_group_count(aigroup, count) {
 }
 
 // Namespace spawner/spawner_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x10d50f29, Offset: 0x5278
 // Size: 0x5a
 function waittill_ai_group_ai_count(aigroup, count) {
@@ -1455,7 +1455,7 @@ function waittill_ai_group_spawner_count(aigroup, count) {
 }
 
 // Namespace spawner/spawner_shared
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x46fa12f5, Offset: 0x5348
 // Size: 0xf2
 function waittill_ai_group_amount_killed(aigroup, amount_killed, timeout) {
@@ -1503,7 +1503,7 @@ function get_ai_group_spawner_count(aigroup) {
 }
 
 // Namespace spawner/spawner_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xae3fe843, Offset: 0x5588
 // Size: 0xa8
 function get_ai_group_ai(aigroup) {
@@ -1578,7 +1578,7 @@ function function_932006d1(func) {
 }
 
 // Namespace spawner/spawner_shared
-// Params 3, eflags: 0x40
+// Params 3, eflags: 0x42 linked
 // Checksum 0xe61f8059, Offset: 0x5a08
 // Size: 0x13a
 function add_archetype_spawn_function(archetype, spawn_func, ...) {
@@ -1622,7 +1622,7 @@ function function_89a2cd87(archetype, spawn_func, ...) {
 }
 
 // Namespace spawner/spawner_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x3a1a8de2, Offset: 0x5cf0
 // Size: 0xc8
 function remove_global_spawn_function(team, func) {
@@ -1677,7 +1677,7 @@ function remove_spawn_function(func) {
 }
 
 // Namespace spawner/spawner_shared
-// Params 8, eflags: 0x0
+// Params 8, eflags: 0x2 linked
 // Checksum 0x5afaee20, Offset: 0x5fa0
 // Size: 0xe4
 function add_spawn_function_group(str_value, str_key = "targetname", func_spawn, param_1, param_2, param_3, param_4, param_5) {
@@ -1707,7 +1707,7 @@ function function_ec9f109a(str_value, str_key = "targetname", func_spawn) {
 }
 
 // Namespace spawner/spawner_shared
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x28810f83, Offset: 0x6150
 // Size: 0xd4
 function add_spawn_function_ai_group(str_aigroup, func_spawn, param_1, param_2, param_3, param_4, param_5) {
@@ -1722,7 +1722,7 @@ function add_spawn_function_ai_group(str_aigroup, func_spawn, param_1, param_2, 
 }
 
 // Namespace spawner/spawner_shared
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xa14aaf54, Offset: 0x6230
 // Size: 0xcc
 function remove_spawn_function_ai_group(str_aigroup, func_spawn, *param_1, *param_2, *param_3, *param_4, *param_5) {
@@ -1775,7 +1775,7 @@ function simple_spawn(name_or_spawners, spawn_func, ...) {
 }
 
 // Namespace spawner/spawner_shared
-// Params 3, eflags: 0x40
+// Params 3, eflags: 0x42 linked
 // Checksum 0x7ca169f3, Offset: 0x6518
 // Size: 0xc6
 function simple_spawn_single(name_or_spawner, spawn_func, ...) {

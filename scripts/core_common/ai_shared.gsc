@@ -149,7 +149,7 @@ function waittill_dead(guys, num, timeoutlength) {
 }
 
 // Namespace ai/ai_shared
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x727af70, Offset: 0x870
 // Size: 0x1a0
 function waittill_dead_or_dying(guys, num, timeoutlength, var_76f40c79) {
@@ -585,7 +585,7 @@ function painwaitinterval(msec) {
 }
 
 // Namespace ai/ai_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x33f53790, Offset: 0x1ec8
 // Size: 0x2bc
 function bloody_death(n_delay, hit_loc) {
@@ -866,7 +866,7 @@ function function_71919555(var_45302432, fieldname) {
 }
 
 // Namespace ai/ai_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x79cc5f8e, Offset: 0x2d58
 // Size: 0x80
 function function_fc7bd6c7(var_80292228) {
@@ -880,7 +880,7 @@ function function_fc7bd6c7(var_80292228) {
 }
 
 // Namespace ai/ai_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x65f4c2c6, Offset: 0x2de0
 // Size: 0x30
 function function_f6060793() {
@@ -901,7 +901,7 @@ function function_2783d8cb() {
 }
 
 // Namespace ai/ai_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xc5a7a428, Offset: 0x2e68
 // Size: 0x4e
 function function_8eca0691() {
@@ -913,7 +913,7 @@ function function_8eca0691() {
 }
 
 // Namespace ai/ai_shared
-// Params 11, eflags: 0x0
+// Params 11, eflags: 0x2 linked
 // Checksum 0x5e37ef4a, Offset: 0x2ec0
 // Size: 0x340
 function function_ccc923fb(var_ccc923fb, priority = 2, var_9e364106 = 1, duration = 0, var_152044ef, var_71e42546, var_a806de0b = 1, no_head = 0, var_3777d080 = 0, blend_time = 0.5, weight = 1) {

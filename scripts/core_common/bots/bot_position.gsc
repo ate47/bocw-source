@@ -54,7 +54,7 @@ function private handle_path_failed() {
             break;
         case 7:
         case 8:
-        case #"hash_defdefdefdefdef0":
+        default:
             self function_f894a675();
             break;
         }

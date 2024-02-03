@@ -40,7 +40,7 @@ function on_spawned(*localclientnum) {
     self endon(#"death", #"disconnect");
     waitframe(1);
     util::function_8eb5d4b0(3000, 0.23);
-    self thread namespace_260f8380::function_d9475fc(0.6, undefined, undefined, undefined);
+    self thread cp_post::function_d9475fc(0.6, undefined, undefined, undefined);
 }
 
 // Namespace cp_takedown/cp_takedown
@@ -396,7 +396,7 @@ function function_f48f6d3(*localclientnum, *oldval, newval, *bnewent, *binitials
             unhidestaticmodel(model);
         }
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
 }
@@ -418,7 +418,7 @@ function function_7f111718(*localclientnum, *oldval, newval, *bnewent, *binitial
             unhidestaticmodel(model);
         }
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
 }
@@ -466,7 +466,7 @@ function force_stream_weapons(localclientnum, *oldval, newval, *bnewent, *biniti
     case 2:
         weapons[weapons.size] = getweapon(#"ar_standard_t9", array("holo", "steadyaim", "grip", "extclip"));
         weapons[weapons.size] = getweapon(#"sniper_quickscope_t9");
-    case #"hash_defdefdefdefdef0":
+    default:
         weapons[weapons.size] = getweapon(#"smg_standard_t9", "steadyaim", "elo2");
         weapons[weapons.size] = getweapon(#"smg_handling_t9", "steadyaim", "reflex", "grip");
         weapons[weapons.size] = getweapon(#"smg_heavy_t9", "acog");

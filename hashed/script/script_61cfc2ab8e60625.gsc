@@ -407,7 +407,7 @@ function function_19919872() {
 // Size: 0x32
 function setup_objectives(var_567f1ddd) {
     switch (var_567f1ddd) {
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
 }

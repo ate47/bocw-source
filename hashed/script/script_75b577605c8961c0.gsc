@@ -48,7 +48,7 @@ function function_7a20f9a3(*watcher, *owner) {
     var_cd04f695 = namespace_85745671::function_e4791424(self.origin, 8, 32, 512, 256);
     switch (getplayers().size) {
     case 1:
-    case #"hash_defdefdefdefdef0":
+    default:
         var_a244d61b = 3;
         break;
     case 2:

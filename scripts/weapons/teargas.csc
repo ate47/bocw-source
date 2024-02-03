@@ -34,7 +34,7 @@ function function_9810ebc(localclientnum, *oldval, newval, *bnewent, *binitialsn
     case 3:
         targetvalue = 0.8;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         targetvalue = 0;
         break;
     }

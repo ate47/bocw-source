@@ -8,7 +8,7 @@
 class czm_hint_text : cluielem {
 
     // Namespace czm_hint_text/zm_hint_text
-    // Params 0, eflags: 0x8
+    // Params 0, eflags: 0xa linked
     // Checksum 0xe4b0dd50, Offset: 0x3d8
     // Size: 0x14
     __constructor() {
@@ -16,7 +16,7 @@ class czm_hint_text : cluielem {
     }
 
     // Namespace czm_hint_text/zm_hint_text
-    // Params 0, eflags: 0x90 class_linked
+    // Params 0, eflags: 0x92 linked class_linked
     // Checksum 0xa796518f, Offset: 0x650
     // Size: 0x14
     __destructor() {
@@ -24,7 +24,7 @@ class czm_hint_text : cluielem {
     }
 
     // Namespace czm_hint_text/zm_hint_text
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0xc32853f4, Offset: 0x578
     // Size: 0x24
     function open(localclientnum) {
@@ -32,7 +32,7 @@ class czm_hint_text : cluielem {
     }
 
     // Namespace czm_hint_text/zm_hint_text
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0x624da644, Offset: 0x4b0
     // Size: 0x1c
     function register_clientside() {
@@ -40,7 +40,7 @@ class czm_hint_text : cluielem {
     }
 
     // Namespace czm_hint_text/zm_hint_text
-    // Params 3, eflags: 0x0
+    // Params 3, eflags: 0x2 linked
     // Checksum 0xec14909a, Offset: 0x3f8
     // Size: 0xac
     function setup_clientfields(*textcallback, var_6ad1a3bb, *var_83e66917) {
@@ -51,7 +51,7 @@ class czm_hint_text : cluielem {
     }
 
     // Namespace czm_hint_text/zm_hint_text
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x31e1fb11, Offset: 0x5a8
     // Size: 0x30
     function set_text(localclientnum, value) {
@@ -59,7 +59,7 @@ class czm_hint_text : cluielem {
     }
 
     // Namespace czm_hint_text/zm_hint_text
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x1fa9bcf, Offset: 0x5e0
     // Size: 0x30
     function set_visible(localclientnum, value) {
@@ -67,7 +67,7 @@ class czm_hint_text : cluielem {
     }
 
     // Namespace czm_hint_text/zm_hint_text
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x3c1ebfe7, Offset: 0x618
     // Size: 0x30
     function function_f2cb39c0(localclientnum, value) {
@@ -75,7 +75,7 @@ class czm_hint_text : cluielem {
     }
 
     // Namespace czm_hint_text/zm_hint_text
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x90cf5c77, Offset: 0x4d8
     // Size: 0x94
     function function_fa582112(localclientnum) {
@@ -88,7 +88,7 @@ class czm_hint_text : cluielem {
 }
 
 // Namespace zm_hint_text/zm_hint_text
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xa7485bf1, Offset: 0xf8
 // Size: 0x18e
 function register(textcallback, var_6ad1a3bb, var_83e66917) {

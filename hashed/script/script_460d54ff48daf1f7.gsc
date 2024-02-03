@@ -7,7 +7,7 @@
 #namespace namespace_af5c1c0c;
 
 // Namespace namespace_af5c1c0c/namespace_af5c1c0c
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xef2bebd8, Offset: 0x118
 // Size: 0x154
 function init() {

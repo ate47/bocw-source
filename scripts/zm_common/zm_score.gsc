@@ -249,7 +249,7 @@ function player_add_points(event, mod, hit_location, e_target, zombie_team, dama
             }
             player_points = zombie_utility::function_d2dfacfd(#"hash_68aa9b4c8de33261");
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             /#
                 assert(0, "<unknown string>");
             #/
@@ -343,7 +343,7 @@ function player_add_points_kill_bonus(mod, hit_location, weapon, player_points =
             self score_cf_increment_info("death_head", var_e6e61503);
             score = zombie_utility::function_d2dfacfd(#"zombie_score_bonus_head");
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     }
@@ -412,7 +412,7 @@ function player_reduce_points(event, n_amount) {
     case #"points_lost_on_hit_value":
         points = n_amount;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assert(0, "<unknown string>");
         #/
@@ -604,7 +604,7 @@ function on_item_pickup(s_params) {
         case #"hash_69a628368f8263f":
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"essence_pickup_large", #attacker:e_player});
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"essence_pickup_small", #attacker:e_player});
             break;
         }

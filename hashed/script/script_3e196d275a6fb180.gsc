@@ -82,7 +82,7 @@ function function_100e84f() {
         case 1:
             function_ce9f81ee(spawnentitytype);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     }

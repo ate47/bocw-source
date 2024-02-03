@@ -349,7 +349,7 @@ function stop_exhaust(localclientnum) {
 }
 
 // Namespace vehicle/vehicle_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x758d0d65, Offset: 0x28f8
 // Size: 0xa0
 function boost_think(localclientnum) {

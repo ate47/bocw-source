@@ -501,7 +501,7 @@ function zombie_devgui_validation_commands() {
                     break;
                 case #"pathing":
                     thread zombie_pathing_validation();
-                case #"hash_defdefdefdefdef0":
+                default:
                     break;
                 }
                 setdvar(#"validation_devgui_command", "<unknown string>");
@@ -978,7 +978,7 @@ function function_bcc8843e(weapon_name, up, root) {
 // Size: 0x274
 function devgui_add_weapon_entry(weapon, root, n_order) {
     /#
-        weapon_name = function_a16a090d(weapon);
+        weapon_name = getweaponname(weapon);
         if (isdefined(root) && root.size) {
             adddebugcommand("<unknown string>" + root + "<unknown string>" + n_order + "<unknown string>" + weapon_name + "<unknown string>" + weapon_name + "<unknown string>");
         } else if (getdvarint(#"zm_debug_attachments", 0)) {
@@ -1006,7 +1006,7 @@ function devgui_add_weapon(weapon, *upgrade, in_box, *cost, *weaponvo, *weaponvo
     /#
         level endon(#"game_ended");
         if (ammo_cost) {
-            level thread function_bcc8843e(function_a16a090d(weaponvoresp), "<unknown string>", "<unknown string>");
+            level thread function_bcc8843e(getweaponname(weaponvoresp), "<unknown string>", "<unknown string>");
         }
         waittill_can_add_debug_command();
         if (is_offhand_weapon(weaponvoresp) && !is_melee_weapon(weaponvoresp)) {
@@ -1101,7 +1101,7 @@ function zombie_devgui_weapon_give(weapon_name) {
         split = strtok(function_9e72a96(weapon_name), "<unknown string>");
         switch (split.size) {
         case 1:
-        case #"hash_defdefdefdefdef0":
+        default:
             weapon = getweapon(split[0]);
             break;
         case 2:
@@ -2115,7 +2115,7 @@ function zombie_devgui_think() {
                 break;
             case 0:
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 if (isdefined(level.custom_devgui)) {
                     if (isarray(level.custom_devgui)) {
                         foreach (devgui in level.custom_devgui) {

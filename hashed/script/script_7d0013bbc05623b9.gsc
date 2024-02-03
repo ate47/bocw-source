@@ -368,7 +368,7 @@ function function_dade5b1a(name, team) {
 }
 
 // Namespace namespace_f48ab2e1/namespace_f48ab2e1
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd3b2ccd, Offset: 0x21d8
 // Size: 0xf4
 function set_objective(str_objective) {
@@ -1123,7 +1123,7 @@ function private function_eee54dd8(var_248cbbcf) {
         return var_248cbbcf.player namespace_61e6d095::function_e4d62f9a();
     case #"alt2":
         return var_248cbbcf.player namespace_61e6d095::function_728aec47();
-    case #"hash_defdefdefdefdef0":
+    default:
         model = undefined;
         if (var_248cbbcf.player gamepadusedlast()) {
             /#

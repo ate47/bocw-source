@@ -7,7 +7,7 @@
 #namespace ammomod_cryofreeze;
 
 // Namespace ammomod_cryofreeze/ammomod_cryofreeze
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x3a18a4ab, Offset: 0x430
 // Size: 0x2ac
 function function_ab6c8a0b() {
@@ -28,7 +28,7 @@ function function_ab6c8a0b() {
 }
 
 // Namespace ammomod_cryofreeze/ammomod_cryofreeze
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xb692e679, Offset: 0x6e8
 // Size: 0x64
 function function_b43ea396(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -36,7 +36,7 @@ function function_b43ea396(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace ammomod_cryofreeze/ammomod_cryofreeze
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xd6c76499, Offset: 0x758
 // Size: 0x58c
 function function_a7a5e842(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -91,7 +91,7 @@ function function_a7a5e842(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace ammomod_cryofreeze/ammomod_cryofreeze
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xd3adf7b, Offset: 0xcf0
 // Size: 0x3d8
 function function_bfdbfcd(localclientnum, b_freeze) {
@@ -150,7 +150,7 @@ function function_bfdbfcd(localclientnum, b_freeze) {
 }
 
 // Namespace ammomod_cryofreeze/ammomod_cryofreeze
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xc189bd0c, Offset: 0x10d0
 // Size: 0x102
 function function_2734889d() {
@@ -167,7 +167,7 @@ function function_2734889d() {
 }
 
 // Namespace ammomod_cryofreeze/ammomod_cryofreeze
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x843bfa90, Offset: 0x11e0
 // Size: 0x7c
 function function_a565490f(localclientnum) {
@@ -182,7 +182,7 @@ function function_a565490f(localclientnum) {
 }
 
 // Namespace ammomod_cryofreeze/ammomod_cryofreeze
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x7bd88a6f, Offset: 0x1268
 // Size: 0xcc
 function function_de7bde57(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

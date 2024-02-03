@@ -8,7 +8,7 @@
 class class_a19c3039 : cluielem {
 
     // Namespace class_a19c3039/sr_perk_machine_choice
-    // Params 0, eflags: 0x8
+    // Params 0, eflags: 0xa linked
     // Checksum 0x680be4e1, Offset: 0x1a0
     // Size: 0x14
     __constructor() {
@@ -16,7 +16,7 @@ class class_a19c3039 : cluielem {
     }
 
     // Namespace class_a19c3039/sr_perk_machine_choice
-    // Params 0, eflags: 0x90 class_linked
+    // Params 0, eflags: 0x92 linked class_linked
     // Checksum 0xa8daa590, Offset: 0x260
     // Size: 0x14
     __destructor() {
@@ -24,7 +24,7 @@ class class_a19c3039 : cluielem {
     }
 
     // Namespace namespace_a19c3039/sr_perk_machine_choice
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x55526f87, Offset: 0x1e8
     // Size: 0x3c
     function open(player, flags = 0) {
@@ -32,7 +32,7 @@ class class_a19c3039 : cluielem {
     }
 
     // Namespace namespace_a19c3039/sr_perk_machine_choice
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0xb2d9649, Offset: 0x230
     // Size: 0x24
     function close(player) {
@@ -40,7 +40,7 @@ class class_a19c3039 : cluielem {
     }
 
     // Namespace namespace_a19c3039/sr_perk_machine_choice
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0xb439a2bf, Offset: 0x1c0
     // Size: 0x1c
     function setup_clientfields() {
@@ -50,7 +50,7 @@ class class_a19c3039 : cluielem {
 }
 
 // Namespace sr_perk_machine_choice/sr_perk_machine_choice
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xf6e2f525, Offset: 0xd0
 // Size: 0x34
 function register() {
@@ -60,7 +60,7 @@ function register() {
 }
 
 // Namespace sr_perk_machine_choice/sr_perk_machine_choice
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x40d59cb0, Offset: 0x110
 // Size: 0x38
 function open(player, flags = 0) {
@@ -68,7 +68,7 @@ function open(player, flags = 0) {
 }
 
 // Namespace sr_perk_machine_choice/sr_perk_machine_choice
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x6221b1b7, Offset: 0x150
 // Size: 0x1c
 function close(player) {
@@ -76,7 +76,7 @@ function close(player) {
 }
 
 // Namespace sr_perk_machine_choice/sr_perk_machine_choice
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd7920db2, Offset: 0x178
 // Size: 0x1a
 function is_open(player) {

@@ -337,7 +337,7 @@ function function_27b4c2be(var_35200797 = 1) {
                 case #"symbol_front_debris":
                     var_6c61edec thread function_214563e(var_35200797, var_6c61edec.objectid);
                     break;
-                case #"hash_defdefdefdefdef0":
+                default:
                     break;
                 }
             }
@@ -815,7 +815,7 @@ function function_33798535(var_31721422, a_str_zones, var_ed1db1a7, var_6cc77d4e
     case 2:
         n_wait_time = 10;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         n_wait_time = 12;
         break;
     }
@@ -873,7 +873,7 @@ function function_3b09971f(var_ed1db1a7, var_de0f1997, a_str_zones) {
             case 4:
                 var_959457a1 = function_a1ef346b().size * 2;
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 var_959457a1 = function_a1ef346b().size * 3;
                 break;
             }
@@ -1190,7 +1190,7 @@ function player_left_zone(a_str_zones, var_8e2567b1, var_9faecc20) {
                 case 1:
                     n_damage = int(self.maxhealth * 45 / self.maxhealth);
                     break;
-                case #"hash_defdefdefdefdef0":
+                default:
                     n_damage = int(self.maxhealth * 150 / self.maxhealth);
                     break;
                 }

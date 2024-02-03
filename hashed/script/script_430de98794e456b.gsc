@@ -34,7 +34,7 @@ function function_9f1f304b(localclientnum, *oldval, newval, *bnewent, *binitials
             level.var_e2a95e85 = undefined;
         }
     case 1:
-    case #"hash_defdefdefdefdef0":
+    default:
         str_loc = #"hash_4036f38ad60f61f";
         break;
     case 2:

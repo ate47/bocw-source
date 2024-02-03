@@ -24,7 +24,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_powerup_bonfire_sale/zm_powerup_bonfire_sale
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x868cbb46, Offset: 0x220
 // Size: 0x9c
 function private function_70a657d8() {
@@ -35,7 +35,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_powerup_bonfire_sale/zm_powerup_bonfire_sale
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x80f724d1, Offset: 0x2c8
 // Size: 0x4
 function private postinit() {
@@ -43,7 +43,7 @@ function private postinit() {
 }
 
 // Namespace zm_powerup_bonfire_sale/zm_powerup_bonfire_sale
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x51ee1dcb, Offset: 0x2d8
 // Size: 0x124
 function grab_bonfire_sale(player) {
@@ -58,7 +58,7 @@ function grab_bonfire_sale(player) {
 }
 
 // Namespace zm_powerup_bonfire_sale/zm_powerup_bonfire_sale
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xe0ee7f97, Offset: 0x408
 // Size: 0x26c
 function start_bonfire_sale(*item) {
@@ -86,7 +86,7 @@ function start_bonfire_sale(*item) {
 }
 
 // Namespace zm_powerup_bonfire_sale/zm_powerup_bonfire_sale
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x2dcb01f8, Offset: 0x680
 // Size: 0x9c
 function toggle_bonfire_sale_on() {
@@ -124,7 +124,7 @@ function setup_bonfiresale_audio() {
 }
 
 // Namespace zm_powerup_bonfire_sale/zm_powerup_bonfire_sale
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x4bcd3f59, Offset: 0x830
 // Size: 0xb4
 function play_bonfiresale_audio() {

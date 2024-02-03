@@ -48,7 +48,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_gametype/zm_gametype
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x8c241de9, Offset: 0x640
 // Size: 0x24
 function private function_70a657d8() {
@@ -56,7 +56,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_gametype/zm_gametype
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xabd425ab, Offset: 0x670
 // Size: 0x5e4
 function main() {
@@ -131,7 +131,7 @@ function main() {
 }
 
 // Namespace zm_gametype/zm_gametype
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xe258420c, Offset: 0xc60
 // Size: 0x4bc
 function globallogic_setupdefault_zombiecallbacks() {
@@ -201,7 +201,7 @@ function do_game_mode_shellshock() {
 }
 
 // Namespace zm_gametype/zm_gametype
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x17a439af, Offset: 0x1190
 // Size: 0x6
 function canplayersuicide() {
@@ -209,7 +209,7 @@ function canplayersuicide() {
 }
 
 // Namespace zm_gametype/zm_gametype
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xfecf6c77, Offset: 0x11a0
 // Size: 0x24
 function on_host_migration_end(*params) {
@@ -217,7 +217,7 @@ function on_host_migration_end(*params) {
 }
 
 // Namespace zm_gametype/zm_gametype
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x1ec46eb7, Offset: 0x11d0
 // Size: 0x5c
 function onplayerdisconnect() {
@@ -231,7 +231,7 @@ function onplayerdisconnect() {
 }
 
 // Namespace zm_gametype/zm_gametype
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x1be7ea4f, Offset: 0x1238
 // Size: 0x2c
 function ondeadevent(*team) {
@@ -239,7 +239,7 @@ function ondeadevent(*team) {
 }
 
 // Namespace zm_gametype/zm_gametype
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x9cf781f9, Offset: 0x1270
 // Size: 0xd4
 function onspawnintermission() {
@@ -258,7 +258,7 @@ function onspawnintermission() {
 }
 
 // Namespace zm_gametype/zm_gametype
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x6e7b5b17, Offset: 0x1350
 // Size: 0x14
 function onspawnspectator(*origin, *angles) {
@@ -266,7 +266,7 @@ function onspawnspectator(*origin, *angles) {
 }
 
 // Namespace zm_gametype/zm_gametype
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x96e32da1, Offset: 0x1370
 // Size: 0x76
 function mayspawn() {
@@ -282,7 +282,7 @@ function mayspawn() {
 }
 
 // Namespace zm_gametype/zm_gametype
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xac95cadb, Offset: 0x13f0
 // Size: 0x17c
 function onstartgametype() {
@@ -300,7 +300,7 @@ function onstartgametype() {
 }
 
 // Namespace zm_gametype/zm_gametype
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x489ef00c, Offset: 0x1578
 // Size: 0x1c
 function onspawnplayerunified() {
@@ -308,7 +308,7 @@ function onspawnplayerunified() {
 }
 
 // Namespace zm_gametype/zm_gametype
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xec0816c3, Offset: 0x15a0
 // Size: 0x2f2
 function onfindvalidspawnpoint() {
@@ -356,7 +356,7 @@ function onfindvalidspawnpoint() {
 }
 
 // Namespace zm_gametype/zm_gametype
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x610d497, Offset: 0x18a0
 // Size: 0x3bc
 function onspawnplayer(predictedspawn = 0) {
@@ -419,7 +419,7 @@ function onspawnplayer(predictedspawn = 0) {
 }
 
 // Namespace zm_gametype/zm_gametype
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xb5e1641e, Offset: 0x1c68
 // Size: 0x202
 function get_player_spawns_for_gametype() {
@@ -451,7 +451,7 @@ function get_player_spawns_for_gametype() {
 }
 
 // Namespace zm_gametype/zm_gametype
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x6dea1b37, Offset: 0x1e78
 // Size: 0xc
 function onendgame(*winningteam) {
@@ -459,7 +459,7 @@ function onendgame(*winningteam) {
 }
 
 // Namespace zm_gametype/zm_gametype
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x4803ef65, Offset: 0x1e90
 // Size: 0x102
 function onroundendgame(*roundwinner) {
@@ -474,7 +474,7 @@ function onroundendgame(*roundwinner) {
 }
 
 // Namespace zm_gametype/zm_gametype
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x2abd2a4a, Offset: 0x1fa0
 // Size: 0x1ec
 function menu_init() {
@@ -497,7 +497,7 @@ function menu_init() {
 }
 
 // Namespace zm_gametype/zm_gametype
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xffdce6a, Offset: 0x2198
 // Size: 0x1c
 function menu_onplayerconnect() {
@@ -505,7 +505,7 @@ function menu_onplayerconnect() {
 }
 
 // Namespace zm_gametype/zm_gametype
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xab381645, Offset: 0x21c0
 // Size: 0x4c
 function zm_map_restart() {
@@ -517,7 +517,7 @@ function zm_map_restart() {
 }
 
 // Namespace zm_gametype/zm_gametype
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xfae50020, Offset: 0x2218
 // Size: 0x8bc
 function menu_onmenuresponse() {
@@ -628,7 +628,7 @@ function menu_onmenuresponse() {
 }
 
 // Namespace zm_gametype/zm_gametype
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xb060d0b1, Offset: 0x2ae0
 // Size: 0x1ee
 function menuallieszombies() {
@@ -658,7 +658,7 @@ function menuallieszombies() {
 }
 
 // Namespace zm_gametype/zm_gametype
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xb580db49, Offset: 0x2cd8
 // Size: 0x34
 function custom_spawn_init_func() {
@@ -676,7 +676,7 @@ function init() {
 }
 
 // Namespace zm_gametype/zm_gametype
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xd1bba0a1, Offset: 0x2d80
 // Size: 0x78
 function onplayerconnect() {
@@ -691,7 +691,7 @@ function onplayerconnect() {
 }
 
 // Namespace zm_gametype/zm_gametype
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xd00fb5b3, Offset: 0x2e00
 // Size: 0x234
 function onplayerspawned() {
@@ -733,7 +733,7 @@ function onplayerspawned() {
 }
 
 // Namespace zm_gametype/zm_gametype
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x35d2779f, Offset: 0x3040
 // Size: 0x13c
 function onplayerconnect_check_for_hotjoin() {
@@ -758,7 +758,7 @@ function onplayerconnect_check_for_hotjoin() {
 }
 
 // Namespace zm_gametype/zm_gametype
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x679eeaeb, Offset: 0x3188
 // Size: 0x304
 function player_hotjoin() {
@@ -799,7 +799,7 @@ function player_hotjoin() {
 }
 
 // Namespace zm_gametype/zm_gametype
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x5907ae42, Offset: 0x3498
 // Size: 0x24
 function initialblackend() {

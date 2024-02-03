@@ -14,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_powerup_double_points/zm_powerup_double_points
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x226953e8, Offset: 0x110
 // Size: 0x4c
 function private function_70a657d8() {

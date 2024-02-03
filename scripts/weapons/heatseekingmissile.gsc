@@ -1212,7 +1212,7 @@ function missiletarget_handleincomingmissile(responsefunc, endon1, endon2, allow
 }
 
 // Namespace heatseekingmissile/heatseekingmissile
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xd0549b3, Offset: 0x4018
 // Size: 0xe4
 function missiletarget_proximitydetonateincomingmissile(killstreakbundle, endon1, endon2, allowdirectdamage) {

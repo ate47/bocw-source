@@ -30,7 +30,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x84486b2d, Offset: 0x1bf8
 // Size: 0xd40
 function private function_70a657d8() {
@@ -48,7 +48,7 @@ function private function_70a657d8() {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd337d482, Offset: 0x2940
 // Size: 0x144
 function function_7d26a389(var_42648a02) {
@@ -74,7 +74,7 @@ function function_7d26a389(var_42648a02) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xc175ee6f, Offset: 0x2a90
 // Size: 0x14
 function init() {
@@ -82,7 +82,7 @@ function init() {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x6d342b09, Offset: 0x2ab0
 // Size: 0xb64
 function function_af57ad40() {
@@ -141,7 +141,7 @@ function function_af57ad40() {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x5413b970, Offset: 0x3620
 // Size: 0xdc
 function function_9451b95c(equipment_name, var_92746e82, var_f3af4e17, var_5ef88cf) {
@@ -154,7 +154,7 @@ function function_9451b95c(equipment_name, var_92746e82, var_f3af4e17, var_5ef88
 }
 
 // Namespace scoreevents/scoreevents
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xcc68ec89, Offset: 0x3708
 // Size: 0x13c
 function scoreeventzm(params) {
@@ -173,7 +173,7 @@ function scoreeventzm(params) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x52040a9f, Offset: 0x3850
 // Size: 0x274
 function function_a1f450c2(event, attacker, enemy, weapon) {
@@ -202,7 +202,7 @@ function function_a1f450c2(event, attacker, enemy, weapon) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x34e6c83d, Offset: 0x3ad0
 // Size: 0x36b8
 function function_970a97b2(params) {
@@ -519,7 +519,7 @@ function function_970a97b2(params) {
                 case #"frag_grenade":
                     params.eattacker stats::function_622feb0d(#"eq_frag_grenade", #"kills", 1);
                     break;
-                case #"hash_defdefdefdefdef0":
+                default:
                     params.eattacker stats::function_622feb0d(params.weapon.statname, #"kills", 1);
                     break;
                 }
@@ -712,7 +712,7 @@ function function_970a97b2(params) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x34107f7c, Offset: 0x7190
 // Size: 0xe2
 function function_841e454b(var_f6537fa9, enemy, weapon, params) {
@@ -730,7 +730,7 @@ function function_841e454b(var_f6537fa9, enemy, weapon, params) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xa21a0e7, Offset: 0x7280
 // Size: 0x484
 function function_82234b38(victim, attacker, weapon, meansofdeath, var_a3660fca, einflictor, var_b7a35db0) {
@@ -758,7 +758,7 @@ function function_82234b38(victim, attacker, weapon, meansofdeath, var_a3660fca,
 }
 
 // Namespace scoreevents/scoreevents
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x94b75887, Offset: 0x7710
 // Size: 0x5e
 function function_46e3cf42(zombie, player) {
@@ -780,7 +780,7 @@ function function_513fa6e4(zombie, player) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xaf7bbc73, Offset: 0x7828
 // Size: 0x18b8
 function function_f2ce8b86(params) {
@@ -796,7 +796,7 @@ function function_f2ce8b86(params) {
                         case #"frag_grenade":
                             var_c2dcab66.player stats::function_6fb0b113(#"eq_frag_grenade", #"hash_695f66aa9455e172");
                             break;
-                        case #"hash_defdefdefdefdef0":
+                        default:
                             var_c2dcab66.player stats::function_6fb0b113(var_c2dcab66.weapon.statname, #"hash_695f66aa9455e172");
                             break;
                         }
@@ -914,7 +914,7 @@ function function_f2ce8b86(params) {
                     case #"recon_car":
                         var_c2dcab66.player stats::function_8fb23f94(#"hash_3c8b385a76cbfe83", #"kills", 1);
                         var_c2dcab66.player stats::function_b04e7184(#"hash_3c8b385a76cbfe83", #"best_kills");
-                    case #"hash_defdefdefdefdef0":
+                    default:
                         var_c2dcab66.player stats::function_8fb23f94(var_c2dcab66.weapon.statname, #"kills", 1);
                         break;
                     }
@@ -1023,7 +1023,7 @@ function function_f2ce8b86(params) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x53f59314, Offset: 0x90e8
 // Size: 0x1c4
 function function_4ffff5df(attacker, weapon, var_9c448324, enemy) {
@@ -1034,7 +1034,7 @@ function function_4ffff5df(attacker, weapon, var_9c448324, enemy) {
                 case #"frag_grenade":
                     attacker stats::function_622feb0d(#"eq_frag_grenade", #"assists", 1);
                     break;
-                case #"hash_defdefdefdefdef0":
+                default:
                     attacker stats::function_622feb0d(weapon.statname, #"assists", 1);
                     break;
                 }
@@ -1051,7 +1051,7 @@ function function_4ffff5df(attacker, weapon, var_9c448324, enemy) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x20d34f2a, Offset: 0x92b8
 // Size: 0xdc
 function is_equipment(weapon) {
@@ -1069,7 +1069,7 @@ function is_equipment(weapon) {
     case #"cymbal_monkey":
         return 1;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         return 0;
         break;
     }
@@ -1077,7 +1077,7 @@ function is_equipment(weapon) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x32ab61dd, Offset: 0x93a0
 // Size: 0x71d4
 function updatemultikill(params) {
@@ -1372,7 +1372,7 @@ function updatemultikill(params) {
                             params.eattacker zm_stats::function_fbce465a(#"hash_3a26c3202d86e874");
                             params.eattacker.var_4927d3d[params.weapon.name].var_81be4996 = gettime();
                             break;
-                        case #"hash_defdefdefdefdef0":
+                        default:
                             break;
                         }
                     } else if (params.eattacker.var_4927d3d[params.weapon.name].oneshotmultikills === 3 && (params.weapon.statname !== #"launcher_freefire_t9" || params.weapon.statname !== #"special_grenadelauncher_t9" || params.weapon.statname !== #"launcher_standard_t9")) {
@@ -1417,7 +1417,7 @@ function updatemultikill(params) {
                             params.eattacker.var_4927d3d[#"frost_blast"] = {#var_e1ebf0a8:undefined, #oneshotmultikills:1, #var_510ca9f9:undefined, #var_1c91bc3c:undefined, #var_ba244c35:0, #multikills:1, #weapon:params.weapon, #var_9ccfda84:gettime(), #var_81be4996:gettime(), #time:gettime(), #player:params.eattacker};
                         }
                         break;
-                    case #"hash_defdefdefdefdef0":
+                    default:
                         params.eattacker.var_4927d3d[params.weapon.name].multikills++;
                         params.eattacker.var_4927d3d[params.weapon.name].time = gettime() + 2000;
                         break;
@@ -1917,7 +1917,7 @@ function updatemultikill(params) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x6680019d, Offset: 0x10580
 // Size: 0x6c
 function function_5fb97568(amount = 1) {
@@ -1926,7 +1926,7 @@ function function_5fb97568(amount = 1) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x6f7f687b, Offset: 0x105f8
 // Size: 0x6c
 function function_529d54aa(amount = 1) {
@@ -1935,7 +1935,7 @@ function function_529d54aa(amount = 1) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x23addd2e, Offset: 0x10670
 // Size: 0x4c
 function function_deb933ff(amount = 1) {
@@ -1951,7 +1951,7 @@ function event_handler[reload] function_b4174270(*eventstruct) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x607b7627, Offset: 0x106e8
 // Size: 0x2ee
 function function_2bf1d1bb(var_2f19890e, eattacker, weapon_name, weapon, var_5c5dff23, var_c7381107, var_6ccf95ba = 0) {
@@ -1976,7 +1976,7 @@ function function_2bf1d1bb(var_2f19890e, eattacker, weapon_name, weapon, var_5c5
 }
 
 // Namespace scoreevents/scoreevents
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x3756a489, Offset: 0x109e0
 // Size: 0x216
 function get_distance_for_weapon(weapon, weaponclass = util::getweaponclass(weapon)) {
@@ -2020,7 +2020,7 @@ function get_distance_for_weapon(weapon, weaponclass = util::getweaponclass(weap
             distance = 2250000;
         }
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         distance = 0;
         break;
     }
@@ -2028,7 +2028,7 @@ function get_distance_for_weapon(weapon, weaponclass = util::getweaponclass(weap
 }
 
 // Namespace scoreevents/scoreevents
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x1954d1c7, Offset: 0x10c00
 // Size: 0x264
 function function_8fb658e2(params) {
@@ -2049,7 +2049,7 @@ function function_8fb658e2(params) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0x640c46d6, Offset: 0x10e70
 // Size: 0x9a
 function private function_39571ae(player, enemy) {
@@ -2064,7 +2064,7 @@ function private function_39571ae(player, enemy) {
 }
 
 // Namespace scoreevents/scoreevents
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x66cfbbec, Offset: 0x10f18
 // Size: 0xc2
 function function_f5c2c1ec() {

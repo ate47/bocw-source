@@ -8,7 +8,7 @@
 #namespace namespace_bf7415ae;
 
 // Namespace namespace_bf7415ae/airsupport
-// Params 8, eflags: 0x0
+// Params 8, eflags: 0x2 linked
 // Checksum 0xc1d09f87, Offset: 0x148
 // Size: 0xc4
 function function_890b3889(killstreaktype, killstreakweapon, maxrange, var_f6825ff2, var_c7502f87, var_7551540f, var_d89073fc, var_d3deec73) {
@@ -22,7 +22,7 @@ function function_890b3889(killstreaktype, killstreakweapon, maxrange, var_f6825
 }
 
 // Namespace namespace_bf7415ae/airsupport
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x3b9cf557, Offset: 0x218
 // Size: 0x88
 function private function_4b1634b2(*killstreakweapon) {
@@ -36,7 +36,7 @@ function private function_4b1634b2(*killstreakweapon) {
 }
 
 // Namespace namespace_bf7415ae/airsupport
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x118c09d3, Offset: 0x2a8
 // Size: 0x80
 function private function_469dabd0(killstreaktype) {
@@ -52,7 +52,7 @@ function private function_469dabd0(killstreaktype) {
 }
 
 // Namespace namespace_bf7415ae/airsupport
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0x7c63fbe3, Offset: 0x330
 // Size: 0x2ce
 function private function_a2eec6c2(killstreaktype, killstreakweapon) {
@@ -89,7 +89,7 @@ function private function_a2eec6c2(killstreaktype, killstreakweapon) {
 }
 
 // Namespace namespace_bf7415ae/airsupport
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x79b64a10, Offset: 0x608
 // Size: 0xec
 function function_be6de952(killstreaktype, var_94fe38b6) {
@@ -111,7 +111,7 @@ function function_be6de952(killstreaktype, var_94fe38b6) {
 }
 
 // Namespace namespace_bf7415ae/airsupport
-// Params 3, eflags: 0x4
+// Params 3, eflags: 0x6 linked
 // Checksum 0xa2a02919, Offset: 0x700
 // Size: 0xd4
 function private function_f3305d7f(killstreaktype, var_c7502f87, var_7551540f) {
@@ -127,7 +127,7 @@ function private function_f3305d7f(killstreaktype, var_c7502f87, var_7551540f) {
 }
 
 // Namespace namespace_bf7415ae/airsupport
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0xc8d9c02, Offset: 0x7e0
 // Size: 0x74
 function private function_ecb58f93(killstreaktype, var_c7502f87) {
@@ -142,7 +142,7 @@ function private function_ecb58f93(killstreaktype, var_c7502f87) {
 }
 
 // Namespace namespace_bf7415ae/airsupport
-// Params 6, eflags: 0x4
+// Params 6, eflags: 0x6 linked
 // Checksum 0xb23c1d37, Offset: 0x860
 // Size: 0x370
 function private function_b66d4fac(killstreaktype, maxrange, var_f6825ff2, var_c7502f87, var_d89073fc, var_d3deec73) {

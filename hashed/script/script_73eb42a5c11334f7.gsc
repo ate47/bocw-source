@@ -134,7 +134,7 @@ function private function_4d08e9ce(var_7ec57290, var_1f050749) {
     case 5:
         var_8ff6cd30 = 0;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
     return var_8ff6cd30;

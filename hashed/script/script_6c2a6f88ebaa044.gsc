@@ -66,7 +66,7 @@ function function_92dd9a20(param) {
     case #"hash_1f2699a2ce6d07a4":
         self clientfield::set_to_player("cinematicMotion", 11);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
 }

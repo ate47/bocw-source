@@ -64,7 +64,7 @@ function set_current_game_module(game_module_index) {
 }
 
 // Namespace zm_game_module/zm_game_module
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x8989e945, Offset: 0x430
 // Size: 0x1a
 function get_current_game_module() {
@@ -72,7 +72,7 @@ function get_current_game_module() {
 }
 
 // Namespace zm_game_module/zm_game_module
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x6c379243, Offset: 0x458
 // Size: 0x74
 function get_game_module(game_module_index) {
@@ -142,7 +142,7 @@ function damage_callback_no_pvp_damage(*einflictor, eattacker, idamage, *idflags
 }
 
 // Namespace zm_game_module/zm_game_module
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xbc911f1f, Offset: 0x730
 // Size: 0x9c
 function respawn_players() {
@@ -153,7 +153,7 @@ function respawn_players() {
 }
 
 // Namespace zm_game_module/zm_game_module
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xf0f960ed, Offset: 0x7d8
 // Size: 0x238
 function zombie_goto_round(target_round) {
@@ -212,7 +212,7 @@ function create_fireworks(launch_spots, min_wait, max_wait, randomize) {
 }
 
 // Namespace zm_game_module/zm_game_module
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xbe3131d8, Offset: 0xb78
 // Size: 0x2bc
 function fireworks_launch(launch_spot) {

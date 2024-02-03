@@ -1120,7 +1120,7 @@ function function_db3c4c69(localclientnum) {
         }
         a_weapons = filter(a_weapons, 1, &function_d583ca36);
         foreach (weapon in a_weapons) {
-            name = function_a16a090d(weapon);
+            name = getweaponname(weapon);
             var_ee63b362 = root_weapon + "<unknown string>" + name;
             adddebugcommand(localclientnum, "<unknown string>" + var_ee63b362 + "<unknown string>" + "<unknown string>" + "<unknown string>" + name + "<unknown string>");
         }
@@ -1136,7 +1136,7 @@ function function_db3c4c69(localclientnum) {
                 weapon_name = getdvarstring(#"hash_1311d7636a782655");
                 if (weapon_name != "<unknown string>") {
                     foreach (weapon in a_weapons) {
-                        name = function_a16a090d(weapon);
+                        name = getweaponname(weapon);
                         if (name != weapon_name) {
                             continue;
                         }
@@ -1938,7 +1938,7 @@ function function_c033e4cc(localclientnum, var_2451e8ac, var_87c045d1, index, va
             level thread function_c47e078a(1, index, var_87c045d1, localclientnum, xuid);
             break;
         case #"hash_6694e35791dc104e":
-        case #"hash_defdefdefdefdef0":
+        default:
             if (isdefined(var_7f395102)) {
                 [[ var_87c045d1 ]]->function_15a8906a(var_7f395102);
             }
@@ -2080,7 +2080,7 @@ function function_f00ff0c7(localclientnum) {
             break;
         case 0:
         case 1:
-        case #"hash_defdefdefdefdef0":
+        default:
             var_7d79d4fb = function_5f165f36();
             break;
         }
@@ -2426,7 +2426,7 @@ function function_cfb00e7d(n_index, localclientnum, character) {
         case 5:
             str_scene = #"scene_frontend_t9_lobby_player6_s7";
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             /#
                 assertmsg("<unknown string>" + n_index);
             #/
@@ -2456,7 +2456,7 @@ function function_cfb00e7d(n_index, localclientnum, character) {
         case 5:
             str_scene = #"scene_frontend_t9_lobby_player6_s6";
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             /#
                 assertmsg("<unknown string>" + n_index);
             #/
@@ -2486,7 +2486,7 @@ function function_cfb00e7d(n_index, localclientnum, character) {
         case 5:
             str_scene = #"hash_1f53242a8a682d34";
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             /#
                 assertmsg("<unknown string>" + n_index);
             #/
@@ -2516,7 +2516,7 @@ function function_cfb00e7d(n_index, localclientnum, character) {
         case 5:
             str_scene = #"hash_1f53252a8a682ee7";
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             /#
                 assertmsg("<unknown string>" + n_index);
             #/
@@ -2546,7 +2546,7 @@ function function_cfb00e7d(n_index, localclientnum, character) {
         case 5:
             str_scene = #"hash_1f53222a8a6829ce";
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             /#
                 assertmsg("<unknown string>" + n_index);
             #/
@@ -2577,7 +2577,7 @@ function function_cfb00e7d(n_index, localclientnum, character) {
         case 5:
             str_scene = #"scene_frontend_t9_lobby_player4";
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             /#
                 assertmsg("<unknown string>" + n_index);
             #/
@@ -3067,7 +3067,7 @@ function function_97b4eb2c(localclientnum, *var_2a4208a4, str_state = #"lobby_po
     case #"private_lobby_pose":
     case #"cdl_hub":
     case #"lobby_pose":
-    case #"hash_defdefdefdefdef0":
+    default:
         if (!(getdvarint(#"hash_7f0099222a51b5f6", 7) == 3) && !(getdvarint(#"hash_7f0099222a51b5f6", 7) == 4) && !(getdvarint(#"hash_7f0099222a51b5f6", 7) == 5) && !(getdvarint(#"hash_7f0099222a51b5f6", 7) == 6) && !(getdvarint(#"hash_7f0099222a51b5f6", 7) == 7)) {
             str_rumble = #"hash_795b2f3495784147";
             var_58b22097 = 2;
@@ -3172,7 +3172,7 @@ function function_49efdec6(localclientnum, *menu_name, str_state) {
     case #"room1":
     case #"mode_select":
     case #"directorselect":
-    case #"hash_defdefdefdefdef0":
+    default:
         function_672403ca("amb_frontend_armory", 0.25, 1);
         function_672403ca("amb_frontend_lobby", 0.25, 1);
         function_672403ca("amb_frontend_mtx", 0.25, 1);

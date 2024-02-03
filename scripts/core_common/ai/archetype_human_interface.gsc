@@ -64,7 +64,7 @@ function vignettemodecallback(entity, *attribute, *oldvalue, value) {
         oldvalue pushplayer(1);
         oldvalue setavoidancemask("avoid none");
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
 }
@@ -91,7 +91,7 @@ function function_20fdb709(entity, *attribute, oldvalue, value) {
     case #"alert":
         attribute setblackboardattribute("_human_demeanor", "ALERT");
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         attribute setblackboardattribute("_human_demeanor", "COMBAT");
         break;
     }
@@ -116,7 +116,7 @@ function function_beabbc97(entity, *attribute, oldvalue, value) {
         attribute setblackboardattribute("_aim_overlay", "DOWN");
         break;
     case #"none":
-    case #"hash_defdefdefdefdef0":
+    default:
         attribute setblackboardattribute("_aim_overlay", "NONE");
         break;
     }

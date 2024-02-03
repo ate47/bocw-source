@@ -5,7 +5,7 @@
 #namespace ammomod_shatterblast;
 
 // Namespace ammomod_shatterblast/ammomod_shatterblast
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xabbbb3a6, Offset: 0x198
 // Size: 0x18c
 function function_4e14a881() {
@@ -22,7 +22,7 @@ function function_4e14a881() {
 }
 
 // Namespace ammomod_shatterblast/ammomod_shatterblast
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xe361c8b6, Offset: 0x330
 // Size: 0x64
 function function_d28d723d(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

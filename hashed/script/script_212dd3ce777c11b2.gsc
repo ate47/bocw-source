@@ -20,7 +20,7 @@ function event_handler[level_init] main(*eventstruct) {
 }
 
 // Namespace namespace_d592c983/namespace_d592c983
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x2a7b2002, Offset: 0x1f8
 // Size: 0x102
 function zm_round_accelerant_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

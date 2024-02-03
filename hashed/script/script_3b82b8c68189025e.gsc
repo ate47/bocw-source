@@ -96,7 +96,7 @@ function function_58d27b23(var_394cd6af, var_cfef5030 = undefined, var_88ab04e5 
 }
 
 // Namespace dialog_tree/dialog_tree
-// Params 11, eflags: 0x0
+// Params 11, eflags: 0x2 linked
 // Checksum 0xed629975, Offset: 0x9a0
 // Size: 0xb2
 function function_6bbbf87(var_9ddc06f5, var_394cd6af, var_cfef5030, var_88ab04e5, var_a0ee58ce, end_dialog, set_flag, var_a16c9b3f, var_3fa65bba, var_d3d10c6d, var_a1a8b237 = undefined) {
@@ -105,7 +105,7 @@ function function_6bbbf87(var_9ddc06f5, var_394cd6af, var_cfef5030, var_88ab04e5
 }
 
 // Namespace dialog_tree/dialog_tree
-// Params 13, eflags: 0x0
+// Params 13, eflags: 0x2 linked
 // Checksum 0x1a5b1c53, Offset: 0xa60
 // Size: 0xe2
 function function_7fe78745(var_84fa2307, var_c275310d, reset = 1, var_394cd6af, var_cfef5030, var_88ab04e5, var_a0ee58ce, end_dialog, set_flag, var_a16c9b3f, var_3fa65bba, var_d3d10c6d, var_a1a8b237 = undefined) {
@@ -114,7 +114,7 @@ function function_7fe78745(var_84fa2307, var_c275310d, reset = 1, var_394cd6af, 
 }
 
 // Namespace dialog_tree/dialog_tree
-// Params 10, eflags: 0x0
+// Params 10, eflags: 0x2 linked
 // Checksum 0x742cd31e, Offset: 0xb50
 // Size: 0xda
 function function_9e36808(var_394cd6af, var_cfef5030, var_88ab04e5, var_a0ee58ce, end_dialog, set_flag, var_a16c9b3f, var_3fa65bba, var_d3d10c6d, var_a1a8b237 = undefined) {
@@ -125,7 +125,7 @@ function function_9e36808(var_394cd6af, var_cfef5030, var_88ab04e5, var_a0ee58ce
 }
 
 // Namespace dialog_tree/dialog_tree
-// Params 11, eflags: 0x0
+// Params 11, eflags: 0x2 linked
 // Checksum 0x8f7f542c, Offset: 0xc38
 // Size: 0xc2
 function function_ad98a815(var_1307f204, var_394cd6af, var_cfef5030, var_88ab04e5, var_a0ee58ce, end_dialog, set_flag, var_a16c9b3f, var_3fa65bba, var_d3d10c6d, var_a1a8b237 = undefined) {
@@ -156,7 +156,7 @@ function function_da884b08(var_1307f204, var_9ddc06f5, var_394cd6af, var_cfef503
 }
 
 // Namespace dialog_tree/dialog_tree
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x333e11e7, Offset: 0xed0
 // Size: 0x56
 function function_6cbfa3d2(var_e728c53 = self.options.size - 1, end_dialog = 1) {
@@ -180,7 +180,7 @@ function function_bc7c03bf(var_e728c53 = self.options.size - 1) {
 }
 
 // Namespace dialog_tree/dialog_tree
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0xb6941ff5, Offset: 0xfd0
 // Size: 0x25e
 function function_46f25b65(var_e728c53 = self.options.size - 1, var_a5bdf9c0 = 0, var_cfd168ce = "loop", var_2f04fa05 = 1, var_dc27586e = 1) {
@@ -246,7 +246,7 @@ function function_21780fc5(dialog_tree, var_a9b0cfdc) {
 }
 
 // Namespace dialog_tree/dialog_tree
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x4ecff83c, Offset: 0x1360
 // Size: 0x1a
 function function_6bb91351(var_9c958fe3) {
@@ -764,7 +764,7 @@ function function_bfcc8f29() {
 }
 
 // Namespace dialog_tree/dialog_tree
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xa64a5b96, Offset: 0x3980
 // Size: 0x2c
 function function_6a2674b8() {

@@ -20,7 +20,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_cdc318b3/namespace_cdc318b3
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x7439de07, Offset: 0x210
 // Size: 0x194
 function private function_70a657d8() {
@@ -40,7 +40,7 @@ function private function_70a657d8() {
 }
 
 // Namespace namespace_cdc318b3/namespace_cdc318b3
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x1b80d885, Offset: 0x3b0
 // Size: 0x58c
 function function_5e5224f3(localclientnum) {
@@ -99,7 +99,7 @@ function function_5e5224f3(localclientnum) {
 }
 
 // Namespace namespace_cdc318b3/namespace_cdc318b3
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x6c495296, Offset: 0x948
 // Size: 0x3ae
 function private function_7b3ef3da(localclientnum) {
@@ -148,7 +148,7 @@ function private function_7b3ef3da(localclientnum) {
 }
 
 // Namespace namespace_cdc318b3/namespace_cdc318b3
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x5eaa6745, Offset: 0xd00
 // Size: 0x9a
 function private function_bf305894(localclientnum) {
@@ -164,7 +164,7 @@ function private function_bf305894(localclientnum) {
 }
 
 // Namespace namespace_cdc318b3/namespace_cdc318b3
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xa9404a9b, Offset: 0xda8
 // Size: 0x33c
 function function_f7aa12ff(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -213,7 +213,7 @@ function function_f7aa12ff(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace namespace_cdc318b3/namespace_cdc318b3
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x7aafeab3, Offset: 0x10f0
 // Size: 0xd44
 function function_8452bba2(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -356,7 +356,7 @@ function function_8452bba2(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace namespace_cdc318b3/namespace_cdc318b3
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xc57dae48, Offset: 0x1e40
 // Size: 0x1f4
 function function_8a645569() {

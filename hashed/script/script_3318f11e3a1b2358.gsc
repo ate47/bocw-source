@@ -81,7 +81,7 @@ function private function_8610d024(localclientnum, _cmd) {
         case #"v":
             level thread function_cc4bf5ee(player, cmd, args);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             /#
                 function_81fac19d(function_d78e3644(), "<unknown string>" + cmd + "<unknown string>");
             #/

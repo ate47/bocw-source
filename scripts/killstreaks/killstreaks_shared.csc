@@ -387,7 +387,7 @@ function private function_bd2d5a8e(killstreakweaponname) {
     case #"inventory_remote_missile":
         bundle = getscriptbundle("killstreak_remote_missile");
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
     return bundle;

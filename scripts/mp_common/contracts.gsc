@@ -225,7 +225,7 @@ function contract_kills(data) {
         case #"satchel_charge":
             attacker function_fd9fb79b(#"hash_21d156cd866d1a31");
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     case #"weapon_sniper":
@@ -234,7 +234,7 @@ function contract_kills(data) {
             attacker function_fd9fb79b(#"hash_51b6e9ab0fafc1d3");
         }
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
     if (weapon.statname == #"hash_2b9efbad11308e02") {
@@ -299,7 +299,7 @@ function contract_kills(data) {
         case #"killstreak_straferun":
             attacker function_fd9fb79b(#"hash_6efdce6f0a3f1ab3");
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
         if (weapon.issupplydropweapon === 1) {
@@ -370,7 +370,7 @@ function on_ekia(weapon, victim) {
     case #"weapon_tactical":
         var_6b9aa5a0 = #"hash_1a4fe101c7aab2d";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
     if (isdefined(var_6b9aa5a0)) {
@@ -586,7 +586,7 @@ function function_90a854d2(slot) {
                 return {#var_59cb904f:195, #target_value:200, #contract_id:10004, #var_38280f2f:#"hash_2173bc0bfcbdf90f"};
             case 2:
                 return {#var_59cb904f:48, #target_value:50, #contract_id:10009, #var_38280f2f:#"hash_250c2d8ef2261723"};
-            case #"hash_defdefdefdefdef0":
+            default:
                 break;
             }
             return undefined;
@@ -674,7 +674,7 @@ function contract_win(winner) {
     case #"vip":
         var_831b642b = #"hash_769fc475cca99231";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
     if (isdefined(var_831b642b)) {
@@ -752,7 +752,7 @@ function function_c5958b54() {
     case #"fireteam_dirty_bomb":
         var_c421e6b = #"hash_445752ece698bef2";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
     if (isdefined(var_c421e6b)) {
@@ -800,7 +800,7 @@ function on_headshot_kill(weapon) {
     case #"weapon_tactical":
         var_6b9aa5a0 = #"hash_52862bdba426ec21";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
     if (isdefined(var_6b9aa5a0)) {

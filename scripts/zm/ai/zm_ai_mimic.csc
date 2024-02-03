@@ -16,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_ai_mimic/zm_ai_mimic
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x977ca8f1, Offset: 0x180
 // Size: 0xdc
 function private function_70a657d8() {
@@ -26,7 +26,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_ai_mimic/zm_ai_mimic
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x1d6d6284, Offset: 0x268
 // Size: 0x74
 function function_78505cdf(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -38,7 +38,7 @@ function function_78505cdf(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace zm_ai_mimic/zm_ai_mimic
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xe1af24b5, Offset: 0x2e8
 // Size: 0x6c
 function mimic_cleanup_teleport(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -48,7 +48,7 @@ function mimic_cleanup_teleport(localclientnum, *oldval, *newval, *bnewent, *bin
 }
 
 // Namespace zm_ai_mimic/zm_ai_mimic
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x805f0fa3, Offset: 0x360
 // Size: 0xcc
 function function_4bc65819(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -64,7 +64,7 @@ function function_4bc65819(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace zm_ai_mimic/zm_ai_mimic
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xc25c2a8f, Offset: 0x438
 // Size: 0x54
 function function_119c2eb0() {

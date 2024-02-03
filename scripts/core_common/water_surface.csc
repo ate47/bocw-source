@@ -14,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace water_surface/water_surface
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x32c56510, Offset: 0x110
 // Size: 0x94
 function private function_70a657d8() {
@@ -27,7 +27,7 @@ function private function_70a657d8() {
 }
 
 // Namespace water_surface/water_surface
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x3e24c72f, Offset: 0x1b0
 // Size: 0x74
 function localplayer_spawned(*localclientnum) {
@@ -42,7 +42,7 @@ function localplayer_spawned(*localclientnum) {
 }
 
 // Namespace water_surface/water_surface
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x1792b785, Offset: 0x230
 // Size: 0x90
 function underwaterwatchbegin() {
@@ -60,7 +60,7 @@ function underwaterwatchbegin() {
 }
 
 // Namespace water_surface/water_surface
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x609b2ad1, Offset: 0x2c8
 // Size: 0x90
 function underwaterwatchend() {
@@ -78,7 +78,7 @@ function underwaterwatchend() {
 }
 
 // Namespace water_surface/water_surface
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x92d433da, Offset: 0x360
 // Size: 0x11c
 function underwaterbegin() {
@@ -95,7 +95,7 @@ function underwaterbegin() {
 }
 
 // Namespace water_surface/water_surface
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x18a85e48, Offset: 0x488
 // Size: 0xdc
 function underwaterend() {

@@ -917,7 +917,7 @@ function function_b370e26e() {
     case 3:
         self.var_53be7e08 = 0.9;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         self.var_53be7e08 = 0.8;
         break;
     }
@@ -1921,7 +1921,7 @@ function function_a71b2318(n_wave, var_ddd156dd) {
         }
         level.var_7ab74a80[level.var_7ab74a80.size] = self;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         self.health = 100;
         self namespace_85745671::function_9758722("walk");
         break;
@@ -2158,7 +2158,7 @@ function function_ceb0a340() {
         } else {
             switch (var_12a9e30a.var_6032cf15) {
             case 1:
-            case #"hash_defdefdefdefdef0":
+            default:
                 var_65b6e624 = #"armor_item_lv1_t9_sr";
                 break;
             case 2:

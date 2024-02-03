@@ -90,7 +90,7 @@ function init() {
 // Checksum 0x37c4932b, Offset: 0xdb8
 // Size: 0xdc
 function function_f13155cb() {
-    self.var_fdec2822 = util::spawn_model(#"hash_6f7dd26aa6690f61", self gettagorigin("tag_up"), self.angles);
+    self.var_fdec2822 = util::spawn_model(#"p8_zm_off_trap_switch_handle", self gettagorigin("tag_up"), self.angles);
     self function_7265ebeb(undefined);
     level flag::wait_till("power_on");
     self function_7265ebeb(1);
@@ -484,7 +484,7 @@ function private function_44456e3f(var_e83c664a) {
             }
             self rotateto((self.angles[0] + self.var_9d435bb6, var_32d3b1bf, 0), float(function_60d95f53()) / 1000);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             self rotateyaw(self.var_9d435bb6, float(function_60d95f53()) / 1000);
             break;
         }
@@ -518,7 +518,7 @@ function private function_c60c6664(var_e83c664a) {
             }
             self rotateto((self.angles[0] + self.var_9d435bb6, var_32d3b1bf, 0), float(function_60d95f53()) / 1000);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             self rotateyaw(self.var_9d435bb6, float(function_60d95f53()) / 1000);
             break;
         }
@@ -541,7 +541,7 @@ function private function_d4782b16() {
     case 0:
         level.var_9e7b0d9 = getweapon(#"hash_2eaef6ae3b6fee65");
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         level.var_9e7b0d9 = getweapon(#"hash_2eaef6ae3b6fee65");
         break;
     }

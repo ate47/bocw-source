@@ -5,7 +5,7 @@
 #namespace trapd;
 
 // Namespace trapd/trapd
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xfcf00259, Offset: 0xb0
 // Size: 0x15e
 function function_ae7e49da(watcher) {
@@ -33,7 +33,7 @@ function function_ae7e49da(watcher) {
 }
 
 // Namespace trapd/trapd
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xe4b7c022, Offset: 0x218
 // Size: 0x146
 function function_1daa29fc(watcher) {
@@ -60,7 +60,7 @@ function function_1daa29fc(watcher) {
 }
 
 // Namespace trapd/trapd
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x708e08a4, Offset: 0x368
 // Size: 0x146
 function function_d8d3b49b(watcher) {
@@ -87,7 +87,7 @@ function function_d8d3b49b(watcher) {
 }
 
 // Namespace trapd/trapd
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xb6445b43, Offset: 0x4b8
 // Size: 0x146
 function function_518130e(watcher) {
@@ -114,7 +114,7 @@ function function_518130e(watcher) {
 }
 
 // Namespace trapd/trapd
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x18ecd8b6, Offset: 0x608
 // Size: 0xc4
 function function_367f94ba(*attacker, *weapon, *target) {

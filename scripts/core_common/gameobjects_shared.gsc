@@ -93,7 +93,7 @@ class cinteractobj {
             mdl_gameobject = gameobjects::create_generic_object(self.m_str_team, self.m_t_interact, self.m_a_keyline_objects, (0, 0, 0));
             break;
         case #"use":
-        case #"hash_defdefdefdefdef0":
+        default:
             mdl_gameobject = gameobjects::create_use_object(self.m_str_team, self.m_t_interact, self.m_a_keyline_objects, (0, 0, 0), self.m_str_objective, self.var_26a01d70, 0, self.e_object.script_enable_on_start);
             break;
         }
@@ -314,7 +314,7 @@ class cinteractobj {
             case #"trigger_radius":
             case #"trigger_multiple":
                 return 1;
-            case #"hash_defdefdefdefdef0":
+            default:
                 return 0;
                 break;
             }
@@ -323,7 +323,7 @@ class cinteractobj {
             case #"trigger_radius_use":
             case #"trigger_use":
                 return 1;
-            case #"hash_defdefdefdefdef0":
+            default:
                 return 0;
                 break;
             }
@@ -396,7 +396,7 @@ function private function_70a657d8() {
 }
 
 // Namespace gameobjects/gameobjects_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x8467094c, Offset: 0x7f0
 // Size: 0x1ac
 function main() {
@@ -422,7 +422,7 @@ function main() {
 }
 
 // Namespace gameobjects/gameobjects_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x41b759d5, Offset: 0x9a8
 // Size: 0x44
 function register_allowed_gameobject(gameobject) {
@@ -2206,7 +2206,7 @@ function function_e7e3d146(b_enable = 1) {
 }
 
 // Namespace gameobjects/gameobjects_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x519286e4, Offset: 0x7380
 // Size: 0x8c
 function function_f4ccb04c(e_player, var_5098afd6 = 0) {
@@ -3693,7 +3693,7 @@ function set_use_text(text) {
 }
 
 // Namespace gameobjects/gameobjects_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x8fe6d7ae, Offset: 0xc410
 // Size: 0x24
 function set_use_hint_text(text) {
@@ -4232,7 +4232,7 @@ function can_interact_with(sentient) {
             goto LOC_000001f8;
         }
         return 0;
-    case #"hash_defdefdefdefdef0":
+    default:
     LOC_000001f8:
         /#
             assert(0, "<unknown string>");
@@ -4254,7 +4254,7 @@ function is_relative_team(relativeteam) {
     case #"hash_5ccfd7bbbf07c770":
         return 1;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         return 0;
         break;
     }
@@ -4594,7 +4594,7 @@ function set_onbeginuse_event(func) {
 }
 
 // Namespace gameobjects/gameobjects_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xbeb832f9, Offset: 0x10510
 // Size: 0x32
 function set_onuse_event(func) {

@@ -292,7 +292,7 @@ class phalanx {
                 break;
             }
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             /#
                 assert("<unknown string>" + phalanxtype + "<unknown string>");
             #/

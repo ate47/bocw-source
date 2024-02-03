@@ -181,7 +181,7 @@ function power_gain_event(slot, *eattacker, val, source) {
 }
 
 // Namespace ability_power/ability_power
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0xd82ac0c5, Offset: 0x958
 // Size: 0x16c
 function power_loss_event_took_damage(eattacker, *einflictor, *weapon, *smeansofdeath, idamage) {

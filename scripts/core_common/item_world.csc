@@ -1032,7 +1032,7 @@ function private function_9160538(localclientnum, eventtype, eventdata, var_c5a6
         var_2ccf7a1c = var_c5a66313;
         function_d2f95c1a(localclientnum, vehicleentnum, var_2ccf7a1c);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assertmsg("<unknown string>" + eventtype);
         #/

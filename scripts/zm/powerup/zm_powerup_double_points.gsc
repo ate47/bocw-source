@@ -22,7 +22,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_powerup_double_points/zm_powerup_double_points
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x77163ea1, Offset: 0x1d0
 // Size: 0xa4
 function private function_70a657d8() {
@@ -33,7 +33,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_powerup_double_points/zm_powerup_double_points
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x71de011e, Offset: 0x280
 // Size: 0x8c
 function grab_double_points(player) {
@@ -46,7 +46,7 @@ function grab_double_points(player) {
 }
 
 // Namespace zm_powerup_double_points/zm_powerup_double_points
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xe30feb95, Offset: 0x318
 // Size: 0x1ac
 function function_6fd6ae61(e_powerup, player) {
@@ -69,7 +69,7 @@ function function_6fd6ae61(e_powerup, player) {
 }
 
 // Namespace zm_powerup_double_points/zm_powerup_double_points
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xce31ebcb, Offset: 0x4d0
 // Size: 0x344
 function double_points_powerup(drop_item, player) {

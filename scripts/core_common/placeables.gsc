@@ -108,7 +108,7 @@ function function_df4e6283(placeable) {
 }
 
 // Namespace placeables/placeables
-// Params 14, eflags: 0x0
+// Params 14, eflags: 0x2 linked
 // Checksum 0x5bbaccd, Offset: 0x718
 // Size: 0x2c0
 function function_f872b831(onplacecallback, oncancelcallback, onmovecallback, onshutdowncallback, ondeathcallback, onempcallback, ondamagecallback, var_d0dd7e76, var_c6d99e09, weapon, pickupstring, placehintstring, invalidlocationhintstring, timeout) {
@@ -402,7 +402,7 @@ function watchplacement(placeable) {
 }
 
 // Namespace placeables/placeables
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xc4d646dd, Offset: 0x17d8
 // Size: 0x1a
 function function_613a226a(allow_alt) {

@@ -15,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_98decc78/namespace_98decc78
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xf9c52dfc, Offset: 0x158
 // Size: 0x5c
 function private function_70a657d8() {
@@ -23,7 +23,7 @@ function private function_70a657d8() {
 }
 
 // Namespace namespace_98decc78/namespace_98decc78
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x1bd1f27, Offset: 0x1c0
 // Size: 0x29c
 function function_d5270d1a(localclientnum, oldval, newval, bnewent, binitialsnap, fieldname, bwastimejump) {
@@ -53,7 +53,7 @@ function function_d5270d1a(localclientnum, oldval, newval, bnewent, binitialsnap
 }
 
 // Namespace namespace_98decc78/namespace_98decc78
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x1a006604, Offset: 0x468
 // Size: 0x1a4
 function function_28efdb7f(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -68,7 +68,7 @@ function function_28efdb7f(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace namespace_98decc78/namespace_98decc78
-// Params 8, eflags: 0x0
+// Params 8, eflags: 0x2 linked
 // Checksum 0x73153c95, Offset: 0x618
 // Size: 0xec
 function function_606248f8(*currenttime, elapsedtime, *localclientnum, duration, stagefrom, stageto, *constant, *postfx) {

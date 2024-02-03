@@ -17,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_demo/zm_demo
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xf12c2de1, Offset: 0x130
 // Size: 0x54
 function private function_70a657d8() {
@@ -30,7 +30,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_demo/zm_demo
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x35966292, Offset: 0x190
 // Size: 0x24
 function player_on_connect(localclientnum) {
@@ -38,7 +38,7 @@ function player_on_connect(localclientnum) {
 }
 
 // Namespace zm_demo/zm_demo
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xdcc83561, Offset: 0x1c0
 // Size: 0x278
 function watch_predicted_player_changes(localclientnum) {

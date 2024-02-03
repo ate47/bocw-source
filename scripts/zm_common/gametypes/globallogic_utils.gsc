@@ -51,7 +51,7 @@ function timeuntilroundend() {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x19f3aecf, Offset: 0x270
 // Size: 0x4c
 function gettimeremaining() {
@@ -62,7 +62,7 @@ function gettimeremaining() {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x132d68f9, Offset: 0x2c8
 // Size: 0x44
 function registerpostroundevent(eventfunc) {
@@ -125,7 +125,7 @@ function assertproperplacement() {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xdf9ae564, Offset: 0x588
 // Size: 0x22
 function isvalidclass(vclass) {
@@ -168,7 +168,7 @@ function stoptickingsound() {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x88c8fe4, Offset: 0x6f8
 // Size: 0xec
 function gametimer() {
@@ -191,7 +191,7 @@ function gametimer() {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xe88906a9, Offset: 0x7f0
 // Size: 0x66
 function gettimepassed() {
@@ -230,7 +230,7 @@ function resumetimer() {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xf88daf1e, Offset: 0x8e8
 // Size: 0x9e
 function getscoreremaining(team) {
@@ -246,7 +246,7 @@ function getscoreremaining(team) {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xca6985f5, Offset: 0x990
 // Size: 0xea
 function getscoreperminute(team) {
@@ -264,7 +264,7 @@ function getscoreperminute(team) {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x71eb87c5, Offset: 0xa88
 // Size: 0x96
 function getestimatedtimeuntilscorelimit(team) {
@@ -292,7 +292,7 @@ function rumbler() {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x4722de7a, Offset: 0xb78
 // Size: 0x24
 function waitfortimeornotify(time, notifyname) {
@@ -364,7 +364,7 @@ function debugline(start, end) {
 }
 
 // Namespace globallogic_utils/globallogic_utils
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x21da9363, Offset: 0xde8
 // Size: 0x10c
 function logteamwinstring(wintype, winner) {

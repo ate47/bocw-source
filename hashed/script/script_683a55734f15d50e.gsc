@@ -297,7 +297,7 @@ function function_7df596c3(item) {
         level thread namespace_5a917022::function_a9f78bf(var_4200bfbf, room);
         level waittill(#"hash_1b322de3d2e3e781");
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assert(0);
         #/
@@ -512,7 +512,7 @@ function function_d2c582ec(origin, var_9e20508c, radius, reward, *flag) {
         namespace_dfc652ee::itemspawn(var_d7d0ebdd, var_9e20508c + (randomintrange(-60, 60), randomintrange(-60, 60), 0), undefined, undefined, 1);
         namespace_dfc652ee::itemspawn(var_d7d0ebdd, var_9e20508c + (randomintrange(-60, 60), randomintrange(-60, 60), 0), undefined, undefined, 1);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         namespace_dfc652ee::function_ad7ac41b(var_9e20508c, radius, reward, flag, 1);
         break;
     }

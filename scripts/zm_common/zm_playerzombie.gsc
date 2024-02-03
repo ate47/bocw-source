@@ -58,7 +58,7 @@
 #namespace zm_playerzombie;
 
 // Namespace zm_playerzombie/zm_playerzombie
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xcba0c98a, Offset: 0x2e0
 // Size: 0x2a4
 function zombify_player() {
@@ -98,7 +98,7 @@ function zombify_player() {
 }
 
 // Namespace zm_playerzombie/zm_playerzombie
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x574c3a42, Offset: 0x590
 // Size: 0x136
 function playerzombie_player_damage() {
@@ -124,7 +124,7 @@ function playerzombie_player_damage() {
 }
 
 // Namespace zm_playerzombie/zm_playerzombie
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xf6fad052, Offset: 0x6d0
 // Size: 0x166
 function playerzombie_downed_state() {
@@ -150,7 +150,7 @@ function playerzombie_downed_state() {
 }
 
 // Namespace zm_playerzombie/zm_playerzombie
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xec82665a, Offset: 0x840
 // Size: 0x17e
 function playerzombie_downed_hud() {
@@ -180,7 +180,7 @@ function playerzombie_downed_hud() {
 }
 
 // Namespace zm_playerzombie/zm_playerzombie
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xa794e280, Offset: 0x9c8
 // Size: 0x6c
 function playerzombie_infinite_health() {
@@ -195,7 +195,7 @@ function playerzombie_infinite_health() {
 }
 
 // Namespace zm_playerzombie/zm_playerzombie
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xae08b255, Offset: 0xa40
 // Size: 0x2a4
 function playerzombie_soundboard() {
@@ -243,7 +243,7 @@ function playerzombie_soundboard() {
 }
 
 // Namespace zm_playerzombie/zm_playerzombie
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xff04d49f, Offset: 0xcf0
 // Size: 0x126
 function can_do_input(inputtype) {
@@ -267,7 +267,7 @@ function can_do_input(inputtype) {
             cando = 1;
         }
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assertmsg("<unknown string>" + inputtype);
         #/
@@ -277,7 +277,7 @@ function can_do_input(inputtype) {
 }
 
 // Namespace zm_playerzombie/zm_playerzombie
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x95bb4714, Offset: 0xe20
 // Size: 0x24
 function playerzombie_play_sound(alias) {
@@ -285,7 +285,7 @@ function playerzombie_play_sound(alias) {
 }
 
 // Namespace zm_playerzombie/zm_playerzombie
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x1723d682, Offset: 0xe50
 // Size: 0x182
 function playerzombie_waitfor_buttonrelease(inputtype) {

@@ -18,7 +18,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_32e85820/namespace_32e85820
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x34242d50, Offset: 0x2e0
 // Size: 0xdc
 function private function_70a657d8() {
@@ -28,7 +28,7 @@ function private function_70a657d8() {
 }
 
 // Namespace namespace_32e85820/namespace_32e85820
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xaee1bf54, Offset: 0x3c8
 // Size: 0xcc
 function function_4d38c566(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -42,7 +42,7 @@ function function_4d38c566(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace namespace_32e85820/namespace_32e85820
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x74f01275, Offset: 0x4a0
 // Size: 0x12c
 function function_813dcaec(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -57,7 +57,7 @@ function function_813dcaec(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace namespace_32e85820/namespace_32e85820
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xc18b368d, Offset: 0x5d8
 // Size: 0xd4
 function function_76b749e1(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -70,7 +70,7 @@ function function_76b749e1(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace namespace_32e85820/namespace_32e85820
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x72b6f9b1, Offset: 0x6b8
 // Size: 0x4c
 function function_a1ae5a24() {
@@ -81,7 +81,7 @@ function function_a1ae5a24() {
 }
 
 // Namespace namespace_32e85820/namespace_32e85820
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x9157fe7b, Offset: 0x710
 // Size: 0x4c
 function function_93b178ae() {
@@ -92,7 +92,7 @@ function function_93b178ae() {
 }
 
 // Namespace namespace_32e85820/namespace_32e85820
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xcfe21054, Offset: 0x768
 // Size: 0x2e
 function function_a4b3da97(trace) {
@@ -126,7 +126,7 @@ function function_952f1795(localclientnum) {
 }
 
 // Namespace namespace_32e85820/namespace_32e85820
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xd6e1108d, Offset: 0x958
 // Size: 0x4c
 function function_d7031739(localclientnum, var_2bd718aa) {

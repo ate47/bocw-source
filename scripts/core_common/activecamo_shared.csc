@@ -243,7 +243,7 @@ function private function_e1b6707f(localclientnum, weapon, exitstage, enterstage
         case #"pistol":
             fx = enterstage.var_bafc7841;
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             fx = enterstage.var_9828c877;
             break;
         }

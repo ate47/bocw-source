@@ -21,7 +21,7 @@ function autoexec main() {
 }
 
 // Namespace ammo/ammo_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xe8b5cc3a, Offset: 0x138
 // Size: 0xf4
 function dropaiammo() {
@@ -41,7 +41,7 @@ function dropaiammo() {
 }
 
 // Namespace ammo/ammo_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x4ea8fa67, Offset: 0x238
 // Size: 0x624
 function ammo_pouch_think() {

@@ -5,7 +5,7 @@
 #namespace zm_ai_dog_interface;
 
 // Namespace zm_ai_dog_interface/zm_ai_dog_interface
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x19da6908, Offset: 0xa8
 // Size: 0x134
 function registerzombiedoginterfaceattributes() {

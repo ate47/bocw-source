@@ -14,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_traps/zm_traps
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x62e43719, Offset: 0x100
 // Size: 0xe4
 function private function_70a657d8() {
@@ -30,7 +30,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_traps/zm_traps
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x75db15b2, Offset: 0x1f0
 // Size: 0x18
 function is_trap_registered(a_registered_traps) {

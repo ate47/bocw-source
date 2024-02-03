@@ -16,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_equipment/zm_equipment
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xb1591d2f, Offset: 0xf0
 // Size: 0x34
 function private function_70a657d8() {

@@ -14,7 +14,7 @@
 #namespace ammomod_deadwire;
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xdd58fb17, Offset: 0x268
 // Size: 0xa84
 function function_af1f180() {
@@ -105,7 +105,7 @@ function function_af1f180() {
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x7aa45a27, Offset: 0xcf8
 // Size: 0xcc
 function private function_832f84f6(aat_name = "ammomod_deadwire") {
@@ -133,7 +133,7 @@ function private function_832f84f6(aat_name = "ammomod_deadwire") {
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 8, eflags: 0x0
+// Params 8, eflags: 0x2 linked
 // Checksum 0x8ee194f7, Offset: 0xdd0
 // Size: 0x40c
 function result(*death, attacker, *mod, weapon, *var_fd90b0bb, vpoint, *shitloc, *boneindex = self.origin) {
@@ -201,7 +201,7 @@ function result(*death, attacker, *mod, weapon, *var_fd90b0bb, vpoint, *shitloc,
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xe652af5c, Offset: 0x11e8
 // Size: 0xc2
 function function_b686c867(e_attacker) {
@@ -217,7 +217,7 @@ function function_b686c867(e_attacker) {
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xf0d3e54f, Offset: 0x12b8
 // Size: 0xdc
 function function_e0e02bed(attacker, s_params, tier) {
@@ -236,7 +236,7 @@ function function_e0e02bed(attacker, s_params, tier) {
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xba95f931, Offset: 0x13a0
 // Size: 0x1c4
 function function_5e4b580b(player, s_params, tier) {
@@ -262,7 +262,7 @@ function function_5e4b580b(player, s_params, tier) {
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x7efb632f, Offset: 0x1570
 // Size: 0x19c
 function function_de99f2ad(player, var_fb0999c0, s_params, tier, var_ebf63dce = 0) {
@@ -287,7 +287,7 @@ function function_de99f2ad(player, var_fb0999c0, s_params, tier, var_ebf63dce = 
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xb250a954, Offset: 0x1718
 // Size: 0x11c
 function function_13d4bcdf(*origin, player, params) {
@@ -302,7 +302,7 @@ function function_13d4bcdf(*origin, player, params) {
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xc375d4c0, Offset: 0x1840
 // Size: 0x23e
 function function_2bd8c11(player, damage_percent, weapon, var_871d3454) {
@@ -332,7 +332,7 @@ function function_2bd8c11(player, damage_percent, weapon, var_871d3454) {
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xf871d4d6, Offset: 0x1a88
 // Size: 0x134
 function function_30c7f12c(player, s_params, tier, *var_ebf63dce = 0) {
@@ -352,7 +352,7 @@ function function_30c7f12c(player, s_params, tier, *var_ebf63dce = 0) {
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x73223b05, Offset: 0x1bc8
 // Size: 0xc4
 function function_ffe2bb2f() {
@@ -368,7 +368,7 @@ function function_ffe2bb2f() {
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xe05b0c2f, Offset: 0x1c98
 // Size: 0x7c
 function function_742f2da3(damage = 0, attacker, weapon) {
@@ -379,7 +379,7 @@ function function_742f2da3(damage = 0, attacker, weapon) {
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x3fc7d39e, Offset: 0x1d20
 // Size: 0xb4
 function function_851db518(attacker, weapon) {

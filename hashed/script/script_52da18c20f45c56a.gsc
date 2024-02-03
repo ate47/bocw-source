@@ -1198,7 +1198,7 @@ function function_1fac6486(weapon) {
 }
 
 // Namespace namespace_594b67e/namespace_594b67e
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xbcb1dc98, Offset: 0x4b40
 // Size: 0x1b8
 function function_396e2076(var_860605de = 1, var_4170b151 = 1, var_e4647bb3 = 0) {

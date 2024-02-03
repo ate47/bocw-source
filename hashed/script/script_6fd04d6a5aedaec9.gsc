@@ -318,7 +318,7 @@ function function_c1bb3b65(*var_ebcbedc1, *var_86690ce9, str_weapon_type, var_bc
             level.var_d352f703 = undefined;
             var_f0480b84 = #"hash_2ee9d427cbd6bd9";
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             return 0;
             break;
         }
@@ -1279,7 +1279,7 @@ function function_1cb31d02(e_player, var_24b25ceb, n_round) {
         case 6:
             var_43678191 = 2;
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             var_43678191 = 2;
             break;
         }

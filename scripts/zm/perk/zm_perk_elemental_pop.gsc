@@ -272,7 +272,7 @@ function function_a26b7152() {
             case 4:
                 n_zombie_limit = 2;
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 n_zombie_limit = 0;
                 break;
             }

@@ -428,7 +428,7 @@ function cmd(cmd) {
         case #"hash_53a8b6448d2d9f11":
             function_f4e829d6();
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     #/

@@ -12,7 +12,7 @@
 #namespace airsupport;
 
 // Namespace airsupport/airsupport
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x5d7937b1, Offset: 0x200
 // Size: 0x18c
 function init_shared() {
@@ -44,7 +44,7 @@ function init_shared() {
 }
 
 // Namespace airsupport/airsupport
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xf0ec00ff, Offset: 0x398
 // Size: 0x12c
 function function_83904681(location, usedcallback, killstreakname) {
@@ -70,7 +70,7 @@ function function_83904681(location, usedcallback, killstreakname) {
 }
 
 // Namespace airsupport/airsupport
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xc6d217d8, Offset: 0x4d0
 // Size: 0x7e
 function endselectionongameend() {
@@ -80,7 +80,7 @@ function endselectionongameend() {
 }
 
 // Namespace airsupport/airsupport
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xb181b899, Offset: 0x558
 // Size: 0x7e
 function endselectiononhostmigration() {
@@ -90,7 +90,7 @@ function endselectiononhostmigration() {
 }
 
 // Namespace airsupport/airsupport
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x22946dea, Offset: 0x5e0
 // Size: 0x1f6
 function endselectionthink() {
@@ -124,7 +124,7 @@ function endselectionthink() {
 }
 
 // Namespace airsupport/airsupport
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xfa3824fc, Offset: 0x7e0
 // Size: 0xd4
 function clearuplocationselection() {
@@ -146,7 +146,7 @@ function stoploopsoundaftertime(time) {
 }
 
 // Namespace airsupport/airsupport
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xaed93a1, Offset: 0x908
 // Size: 0x6a
 function calculatefalltime(flyheight) {
@@ -156,7 +156,7 @@ function calculatefalltime(flyheight) {
 }
 
 // Namespace airsupport/airsupport
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0xd407cd50, Offset: 0x980
 // Size: 0xc8
 function calculatereleasetime(flytime, flyheight, flyspeed, bombspeedscale, var_60b3d9e1 = 0.5) {
@@ -209,7 +209,7 @@ function callstrike(flightplan) {
 }
 
 // Namespace airsupport/airsupport
-// Params 10, eflags: 0x0
+// Params 10, eflags: 0x2 linked
 // Checksum 0x5adf0f5f, Offset: 0xdb0
 // Size: 0x154
 function planestrike(owner, requireddeathcount, pathstart, pathend, bombtime, flytime, flyspeed, bombspeedscale, direction, planespawnedfunction) {
@@ -233,7 +233,7 @@ function planestrike(owner, requireddeathcount, pathstart, pathend, bombtime, fl
 }
 
 // Namespace airsupport/airsupport
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x5afdb918, Offset: 0xf10
 // Size: 0x86
 function determinegroundpoint(player, position) {
@@ -252,7 +252,7 @@ function determinetargetpoint(player, position) {
 }
 
 // Namespace airsupport/airsupport
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xc96a9b09, Offset: 0xff8
 // Size: 0x1a
 function getmintargetheight() {
@@ -260,7 +260,7 @@ function getmintargetheight() {
 }
 
 // Namespace airsupport/airsupport
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x596dbef7, Offset: 0x1020
 // Size: 0x1a
 function getmaxtargetheight() {
@@ -268,7 +268,7 @@ function getmaxtargetheight() {
 }
 
 // Namespace airsupport/airsupport
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x3180791f, Offset: 0x1048
 // Size: 0x86
 function clamptarget(target) {
@@ -284,7 +284,7 @@ function clamptarget(target) {
 }
 
 // Namespace airsupport/airsupport
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x797ed2ac, Offset: 0x10d8
 // Size: 0x7e
 function _insidecylinder(point, base, radius, height) {
@@ -301,7 +301,7 @@ function _insidecylinder(point, base, radius, height) {
 }
 
 // Namespace airsupport/airsupport
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xf018eac7, Offset: 0x1160
 // Size: 0x8a
 function _insidenoflyzonebyindex(point, index, disregardheight) {
@@ -313,7 +313,7 @@ function _insidenoflyzonebyindex(point, index, disregardheight) {
 }
 
 // Namespace airsupport/airsupport
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd887cd07, Offset: 0x11f8
 // Size: 0xde
 function getnoflyzoneheight(point) {
@@ -334,7 +334,7 @@ function getnoflyzoneheight(point) {
 }
 
 // Namespace airsupport/airsupport
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x932df8eb, Offset: 0x12e0
 // Size: 0x76
 function insidenoflyzones(point, disregardheight) {
@@ -348,7 +348,7 @@ function insidenoflyzones(point, disregardheight) {
 }
 
 // Namespace airsupport/airsupport
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xbbd5648d, Offset: 0x1360
 // Size: 0x12a
 function crossesnoflyzone(start, end) {
@@ -366,7 +366,7 @@ function crossesnoflyzone(start, end) {
 }
 
 // Namespace airsupport/airsupport
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x4c10b65c, Offset: 0x1498
 // Size: 0x11a
 function crossesnoflyzones(start, end) {
@@ -385,7 +385,7 @@ function crossesnoflyzones(start, end) {
 }
 
 // Namespace airsupport/airsupport
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x63ff8d23, Offset: 0x15c0
 // Size: 0x102
 function getnoflyzoneheightcrossed(start, end, minheight) {
@@ -403,7 +403,7 @@ function getnoflyzoneheightcrossed(start, end, minheight) {
 }
 
 // Namespace airsupport/airsupport
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xd738992b, Offset: 0x16d0
 // Size: 0x68
 function _shouldignorenoflyzone(noflyzone, noflyzones) {
@@ -419,7 +419,7 @@ function _shouldignorenoflyzone(noflyzone, noflyzones) {
 }
 
 // Namespace airsupport/airsupport
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x3fb5893f, Offset: 0x1740
 // Size: 0x6e
 function _shouldignorestartgoalnoflyzone(noflyzone, startnoflyzones, goalnoflyzones) {
@@ -436,7 +436,7 @@ function _shouldignorestartgoalnoflyzone(noflyzone, startnoflyzones, goalnoflyzo
 }
 
 // Namespace airsupport/airsupport
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x58acbefc, Offset: 0x17b8
 // Size: 0x100
 function gethelipath(start, goal) {
@@ -459,7 +459,7 @@ function gethelipath(start, goal) {
 }
 
 // Namespace airsupport/airsupport
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x52a7e032, Offset: 0x18c0
 // Size: 0xa4
 function function_a43d04ef(goalorigin) {
@@ -477,7 +477,7 @@ function function_a43d04ef(goalorigin) {
 }
 
 // Namespace airsupport/airsupport
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x827eba04, Offset: 0x1970
 // Size: 0xc4
 function function_fabf8bc5(goalorigin) {
@@ -497,7 +497,7 @@ function function_fabf8bc5(goalorigin) {
 }
 
 // Namespace airsupport/airsupport
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x47372a38, Offset: 0x1a40
 // Size: 0x194
 function function_e0e908c3(var_dbd23dc, path, stopatgoal) {
@@ -573,7 +573,7 @@ function function_f1b7b432(path, donenotify, stopatgoal, var_135dc5d1, var_96e5d
 }
 
 // Namespace airsupport/airsupport
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xfe651b69, Offset: 0x1eb8
 // Size: 0x14a
 function followpath(path, donenotify, stopatgoal) {
@@ -638,7 +638,7 @@ function append_array(dst, src) {
 }
 
 // Namespace airsupport/airsupport
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0x9155348, Offset: 0x2198
 // Size: 0xda
 function calculatepath_r(start, end, points, startnoflyzones, goalnoflyzones, depth) {
@@ -659,7 +659,7 @@ function calculatepath_r(start, end, points, startnoflyzones, goalnoflyzones, de
 }
 
 // Namespace airsupport/airsupport
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x9d48e143, Offset: 0x2280
 // Size: 0x14a
 function calculatepath(start, end, startnoflyzones, goalnoflyzones) {
@@ -686,7 +686,7 @@ function calculatepath(start, end, startnoflyzones, goalnoflyzones) {
 }
 
 // Namespace airsupport/airsupport
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x507a6d17, Offset: 0x23d8
 // Size: 0x19c
 function _getstrikepathstartandend(goal, yaw, halfdistance) {
@@ -709,7 +709,7 @@ function _getstrikepathstartandend(goal, yaw, halfdistance) {
 }
 
 // Namespace airsupport/airsupport
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x4f19a5f2, Offset: 0x2580
 // Size: 0x164
 function getstrikepath(target, height, halfdistance, yaw) {
@@ -840,7 +840,7 @@ function getmaxmapwidth() {
 }
 
 // Namespace airsupport/airsupport
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xa28ac852, Offset: 0x2df0
 // Size: 0x3c
 function stoprotation(time) {
@@ -850,7 +850,7 @@ function stoprotation(time) {
 }
 
 // Namespace airsupport/airsupport
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xac342e85, Offset: 0x2e38
 // Size: 0xb8
 function flattenyaw(goal) {
@@ -866,7 +866,7 @@ function flattenyaw(goal) {
 }
 
 // Namespace airsupport/airsupport
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xaeac01b4, Offset: 0x2ef8
 // Size: 0x6c
 function flattenroll() {
@@ -1197,7 +1197,7 @@ function getpointonline(startpoint, endpoint, ratio) {
 }
 
 // Namespace airsupport/airsupport
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xca2083dd, Offset: 0x3fc0
 // Size: 0x8a
 function cantargetplayerwithspecialty() {
@@ -1210,7 +1210,7 @@ function cantargetplayerwithspecialty() {
 }
 
 // Namespace airsupport/airsupport
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x1fa448b5, Offset: 0x4058
 // Size: 0x1d0
 function monitorspeed(spawnprotectiontime) {
@@ -1244,7 +1244,7 @@ function monitorspeed(spawnprotectiontime) {
 }
 
 // Namespace airsupport/airsupport
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xe0386b5e, Offset: 0x4230
 // Size: 0x1a
 function clearmonitoredspeed() {
@@ -1254,7 +1254,7 @@ function clearmonitoredspeed() {
 }
 
 // Namespace airsupport/airsupport
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x8687de4b, Offset: 0x4258
 // Size: 0x94
 function function_9e2054b0(var_65885f89) {
@@ -1267,7 +1267,7 @@ function function_9e2054b0(var_65885f89) {
 }
 
 // Namespace airsupport/airsupport
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xbc45d41b, Offset: 0x42f8
 // Size: 0x8a
 function waitforlocationselection() {
@@ -1281,7 +1281,7 @@ function waitforlocationselection() {
 }
 
 // Namespace airsupport/airsupport
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xb826429, Offset: 0x4390
 // Size: 0x2c2
 function function_deb91ef4() {
@@ -1322,7 +1322,7 @@ function function_deb91ef4() {
 }
 
 // Namespace airsupport/airsupport
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xe9e7615b, Offset: 0x4660
 // Size: 0x74
 function singleradarsweep() {
@@ -1335,7 +1335,7 @@ function singleradarsweep() {
 }
 
 // Namespace airsupport/airsupport
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xb7c476f2, Offset: 0x46e0
 // Size: 0x4c
 function radarsweep() {

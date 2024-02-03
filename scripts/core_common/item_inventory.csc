@@ -788,7 +788,7 @@ function private function_53854c4(localclientnum) {
         case #"health":
             swap = 1;
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
         if (!swap) {
@@ -1824,7 +1824,7 @@ function function_a243ddd6(localclientnum, var_a6762160) {
     case #"generic":
     case #"killstreak":
     case #"cash":
-    case #"hash_defdefdefdefdef0":
+    default:
         return 0;
         break;
     }
@@ -1854,7 +1854,7 @@ function function_d768ea30(localclientnum) {
     case 2:
         return (17 + 1 + 8 + 1 + 8 + 1);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
     return 17 + 1;

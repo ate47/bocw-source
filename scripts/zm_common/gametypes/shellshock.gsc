@@ -16,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace shellshock/shellshock
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x92286180, Offset: 0x168
 // Size: 0x3c
 function private function_70a657d8() {
@@ -25,7 +25,7 @@ function private function_70a657d8() {
 }
 
 // Namespace shellshock/shellshock
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x80f724d1, Offset: 0x1b0
 // Size: 0x4
 function main() {
@@ -33,7 +33,7 @@ function main() {
 }
 
 // Namespace shellshock/shellshock
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0xdba3e5f0, Offset: 0x1c0
 // Size: 0x12c
 function on_damage(eattacker, einflictor, weapon, smeansofdeath, idamage) {

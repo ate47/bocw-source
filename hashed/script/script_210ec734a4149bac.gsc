@@ -274,7 +274,7 @@ function private function_9cefbbde(var_5f60ac6c) {
         var_9fa53333 = rotatepoint(var_9fa53333, self.angles);
         var_45d1a411 = var_45d1a411 + var_9fa53333;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
     var_5f60ac6c unlink();
@@ -409,7 +409,7 @@ function function_b0876f77(value) {
         function_5c56272f("par_umbrella_open_01", "tag_accessory_right", "UMBRELLA_RIGHT");
         break;
     case #"none":
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
 }

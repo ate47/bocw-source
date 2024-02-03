@@ -15,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_780aaec4/namespace_780aaec4
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x7fb0d482, Offset: 0x188
 // Size: 0xfc
 function function_70a657d8() {
@@ -32,7 +32,7 @@ function function_70a657d8() {
 }
 
 // Namespace namespace_780aaec4/namespace_780aaec4
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x318f3c9c, Offset: 0x290
 // Size: 0x3e4
 function sr_demented_echo_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

@@ -23,7 +23,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_73df937d/namespace_73df937d
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xa3c52749, Offset: 0x1a0
 // Size: 0x4c
 function function_70a657d8() {
@@ -31,7 +31,7 @@ function function_70a657d8() {
 }
 
 // Namespace namespace_73df937d/namespace_73df937d
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x37097271, Offset: 0x1f8
 // Size: 0x15c
 function safehouse_claim_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

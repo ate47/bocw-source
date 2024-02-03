@@ -20,7 +20,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xdd4b0446, Offset: 0x140
 // Size: 0xe4
 function private function_70a657d8() {
@@ -33,7 +33,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x5efe235f, Offset: 0x230
 // Size: 0x354
 function function_675f0963(*localclientnum) {
@@ -87,7 +87,7 @@ function function_675f0963(*localclientnum) {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x4f34a8ac, Offset: 0x590
 // Size: 0x296
 function function_3b11146f(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -111,7 +111,7 @@ function function_3b11146f(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x159fbd1f, Offset: 0x830
 // Size: 0x194
 function function_ff03ce49() {
@@ -128,7 +128,7 @@ function function_ff03ce49() {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 3, eflags: 0x4
+// Params 3, eflags: 0x6 linked
 // Checksum 0x9e618c75, Offset: 0x9d0
 // Size: 0x5c
 function private force_stream_model(var_618821b1, var_9940b166, mip) {
@@ -138,7 +138,7 @@ function private force_stream_model(var_618821b1, var_9940b166, mip) {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x18f5b578, Offset: 0xa38
 // Size: 0x2c
 function private on_localclient_connect(localclientnum) {

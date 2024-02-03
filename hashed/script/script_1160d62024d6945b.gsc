@@ -416,7 +416,7 @@ function private function_e674d71a(vehicle) {
         case #"player_sedan":
             var_2bc6fbf6 = getgametypesetting(#"hash_9c266bdf9cad7fa");
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     }
@@ -495,7 +495,7 @@ function private function_f77a9b1b(vehicle) {
         case #"player_sedan":
             var_2bc6fbf6 = getgametypesetting(#"hash_9c266bdf9cad7fa");
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     }

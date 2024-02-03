@@ -153,7 +153,7 @@ function stoppostfxbundle(bundlename) {
 }
 
 // Namespace postfx/postfx_shared
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xddba3009, Offset: 0x790
 // Size: 0x34
 function function_c8b5f318(bundlename, constname, constvalue) {

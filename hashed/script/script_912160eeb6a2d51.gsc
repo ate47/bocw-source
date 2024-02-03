@@ -170,7 +170,7 @@ function function_13bd3fad(statename) {
     case #"death":
         self.threatsight = 0;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             iprintlnbold("<unknown string>" + statename + "<unknown string>");
         #/
@@ -341,7 +341,7 @@ function function_6f46c787(ai, statename) {
         self.stealth.var_2818e780[entid] = undefined;
         self.stealth.var_a4965d8[entid] = undefined;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         self.stealth.var_2818e780[entid] = ai;
         break;
     }

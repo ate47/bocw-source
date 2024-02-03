@@ -369,7 +369,7 @@ function private function_2138c62(var_1e5d913d, var_5479bede, var_b33be77) {
             data.var_33c88c75[data.var_33c88c75.size] = var_5479bede.var_7c5043e3;
             forward = function_f80632da(isdefined(var_2cc6e886.var_39f04272) ? var_2cc6e886.var_39f04272 : 0, cos(isdefined(var_2cc6e886.var_ef1ee44c) ? var_2cc6e886.var_ef1ee44c : 0), var_5479bede.attacker, var_5479bede.position, trace_result[#"normal"]);
             if ((isdefined(var_2cc6e886.var_f9ac1f46) ? var_2cc6e886.var_f9ac1f46 : 0) > 0 && forward == trace_result[#"normal"]) {
-                offset = forward + perpendicularvector(forward) * function_4ed01f1b(var_2cc6e886.var_f9ac1f46) * randomfloat(1);
+                offset = forward + perpendicularvector(forward) * tan(var_2cc6e886.var_f9ac1f46) * randomfloat(1);
                 offset = rotatepointaroundaxis(offset, forward, randomfloatrange(0, 360));
                 forward = vectornormalize(offset);
                 /#

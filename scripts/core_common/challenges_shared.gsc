@@ -41,7 +41,7 @@ function private function_70a657d8() {
 }
 
 // Namespace challenges/challenges_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x80f724d1, Offset: 0x578
 // Size: 0x4
 function init_shared() {
@@ -153,7 +153,7 @@ function addflyswatterstat(weapon, aircraft) {
 }
 
 // Namespace challenges/challenges_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x8237b8b3, Offset: 0xb58
 // Size: 0xa0
 function canprocesschallenges() {
@@ -189,7 +189,7 @@ function initteamchallenges(team) {
 }
 
 // Namespace challenges/challenges_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x4ee21be6, Offset: 0xce0
 // Size: 0x7a
 function registerchallengescallback(callback, func) {
@@ -223,7 +223,7 @@ function dochallengecallback(var_838fbbf5, data) {
 }
 
 // Namespace challenges/challenges_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x31619e61, Offset: 0xea0
 // Size: 0x34
 function on_player_connect() {
@@ -587,7 +587,7 @@ function challengeroundend(data) {
             }
         }
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
 }
@@ -1532,7 +1532,7 @@ function holdflagentirematch(team, label) {
     case #"_c":
         event = "hold_c_entire_match";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         return;
     }
     teamcompletedchallenge(team, event);
@@ -1762,7 +1762,7 @@ function destroyedaircraft(attacker, weapon, playercontrolled, vehicle, var_91d2
 }
 
 // Namespace challenges/challenges_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x8d9a308e, Offset: 0x6d38
 // Size: 0x1a4
 function killstreakten() {
@@ -1818,7 +1818,7 @@ function stunnedtankwithempgrenade(*attacker) {
 }
 
 // Namespace challenges/challenges_shared
-// Params 9, eflags: 0x0
+// Params 9, eflags: 0x2 linked
 // Checksum 0x886bfc1f, Offset: 0x6fc8
 // Size: 0x1ea8
 function playerkilled(einflictor, attacker, idamage, smeansofdeath, weapon, shitloc, attackerstance, bledout, var_f3c114a7) {
@@ -2102,7 +2102,7 @@ function playerkilled(einflictor, attacker, idamage, smeansofdeath, weapon, shit
                 var_5e93fb70 = 262144;
                 var_f09a5f22 = 1;
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 break;
             }
             if (var_f09a5f22) {
@@ -2422,7 +2422,7 @@ function eventreceived(eventname) {
             self stats::function_d40764f3(#"killed_bomb_defuser", 1);
         }
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
 }

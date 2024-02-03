@@ -174,7 +174,7 @@ function function_b1543a9d(anim_name, animset) {
 }
 
 // Namespace actions/actions
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x5d3bf9dd, Offset: 0xd68
 // Size: 0xc0
 function function_df6077(action_name, enabled) {
@@ -594,7 +594,7 @@ function function_9cb5ca63(action, command) {
         self notifyonplayercommand(triggername, "+lowerstance");
         self notifyonplayercommand(triggername, "+prone");
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         return 0;
         break;
     }

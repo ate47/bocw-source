@@ -9,7 +9,7 @@
 class czm_game_timer : cluielem {
 
     // Namespace czm_game_timer/zm_game_timer
-    // Params 0, eflags: 0x8
+    // Params 0, eflags: 0xa linked
     // Checksum 0x250a77e9, Offset: 0x258
     // Size: 0x14
     __constructor() {
@@ -17,7 +17,7 @@ class czm_game_timer : cluielem {
     }
 
     // Namespace czm_game_timer/zm_game_timer
-    // Params 0, eflags: 0x90 class_linked
+    // Params 0, eflags: 0x92 linked class_linked
     // Checksum 0xb85dd4ed, Offset: 0x480
     // Size: 0x14
     __destructor() {
@@ -25,7 +25,7 @@ class czm_game_timer : cluielem {
     }
 
     // Namespace czm_game_timer/zm_game_timer
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x820b6cde, Offset: 0x318
     // Size: 0x3c
     function open(player, flags = 0) {
@@ -33,7 +33,7 @@ class czm_game_timer : cluielem {
     }
 
     // Namespace czm_game_timer/zm_game_timer
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0xd177f5aa, Offset: 0x3e0
     // Size: 0x44
     function set_minutes(player, value) {
@@ -41,7 +41,7 @@ class czm_game_timer : cluielem {
     }
 
     // Namespace czm_game_timer/zm_game_timer
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0xf144ff53, Offset: 0x360
     // Size: 0x24
     function close(player) {
@@ -49,7 +49,7 @@ class czm_game_timer : cluielem {
     }
 
     // Namespace czm_game_timer/zm_game_timer
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x2e858fbf, Offset: 0x430
     // Size: 0x44
     function set_showzero(player, value) {
@@ -57,7 +57,7 @@ class czm_game_timer : cluielem {
     }
 
     // Namespace czm_game_timer/zm_game_timer
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0x954214a3, Offset: 0x278
     // Size: 0x94
     function setup_clientfields() {
@@ -68,7 +68,7 @@ class czm_game_timer : cluielem {
     }
 
     // Namespace czm_game_timer/zm_game_timer
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x8867289a, Offset: 0x390
     // Size: 0x44
     function set_seconds(player, value) {

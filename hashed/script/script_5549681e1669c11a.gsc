@@ -332,7 +332,7 @@ function function_b3411080(name) {
         return 14;
     case #"roj":
         return 15;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assert(0, "doom door bomb");
         #/
@@ -374,7 +374,7 @@ function function_d496f180(name) {
         return 24;
     case #"roj":
         return 52;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assert(0, "<unknown string>");
         #/
@@ -432,14 +432,14 @@ function function_3db4a0b1(roundnumber = level.doa.roundnumber) {
         }
     }
     if (var_851aa222.size > 0) {
-        var_aa973631 = [];
+        selection = [];
         var_ea838841 = var_851aa222[0].var_6959a8a9;
         foreach (room in var_851aa222) {
             if (room.var_6959a8a9 == var_ea838841) {
-                var_aa973631[var_aa973631.size] = room;
+                selection[selection.size] = room;
             }
         }
-        return var_aa973631[randomint(var_aa973631.size)];
+        return selection[randomint(selection.size)];
     }
 }
 
@@ -1003,7 +1003,7 @@ function function_92f612b2(def, pickup) {
         break;
     case 6:
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
 }

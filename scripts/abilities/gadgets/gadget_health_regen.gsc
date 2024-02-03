@@ -181,7 +181,7 @@ function function_a1a8b5e5() {
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xce9dd830, Offset: 0x920
 // Size: 0x10e
 function function_ef6c7869(now) {

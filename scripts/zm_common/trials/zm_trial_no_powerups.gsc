@@ -18,7 +18,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_trial_no_powerups/zm_trial_no_powerups
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xac3bdc6f, Offset: 0x100
 // Size: 0x5c
 function private function_70a657d8() {
@@ -29,7 +29,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_trial_no_powerups/zm_trial_no_powerups
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x3de33f9c, Offset: 0x168
 // Size: 0xb0
 function private on_begin() {
@@ -44,7 +44,7 @@ function private on_begin() {
 }
 
 // Namespace zm_trial_no_powerups/zm_trial_no_powerups
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xbb04ef05, Offset: 0x220
 // Size: 0xb4
 function private on_end(*round_reset) {
@@ -56,7 +56,7 @@ function private on_end(*round_reset) {
 }
 
 // Namespace zm_trial_no_powerups/zm_trial_no_powerups
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xce5508f8, Offset: 0x2e0
 // Size: 0x54
 function is_active() {
@@ -65,7 +65,7 @@ function is_active() {
 }
 
 // Namespace zm_trial_no_powerups/zm_trial_no_powerups
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xa329c57c, Offset: 0x340
 // Size: 0xf2
 function function_2fc5f13() {
@@ -80,7 +80,7 @@ function function_2fc5f13() {
 }
 
 // Namespace zm_trial_no_powerups/zm_trial_no_powerups
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x4f0e4ad0, Offset: 0x440
 // Size: 0xa0
 function private function_138aec8e(attacker) {

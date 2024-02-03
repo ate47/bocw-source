@@ -17,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_trial_damage_drains_points/zm_trial_damage_drains_points
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xbcf0cba1, Offset: 0xf8
 // Size: 0x5c
 function private function_70a657d8() {
@@ -28,7 +28,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_trial_damage_drains_points/zm_trial_damage_drains_points
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0x70bf768, Offset: 0x160
 // Size: 0xb8
 function private on_begin(var_66fe7443, var_ec90b685) {
@@ -44,7 +44,7 @@ function private on_begin(var_66fe7443, var_ec90b685) {
 }
 
 // Namespace zm_trial_damage_drains_points/zm_trial_damage_drains_points
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x7dadcb96, Offset: 0x220
 // Size: 0x76
 function private on_end(*round_reset) {
@@ -59,7 +59,7 @@ function private on_end(*round_reset) {
 }
 
 // Namespace zm_trial_damage_drains_points/zm_trial_damage_drains_points
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xcaf5152b, Offset: 0x2a0
 // Size: 0x86
 function is_active(var_a32bbdd = 0) {
@@ -74,7 +74,7 @@ function is_active(var_a32bbdd = 0) {
 }
 
 // Namespace zm_trial_damage_drains_points/zm_trial_damage_drains_points
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xc21b3754, Offset: 0x330
 // Size: 0xec
 function private function_8e0401ab(params) {

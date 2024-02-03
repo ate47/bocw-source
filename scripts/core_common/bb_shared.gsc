@@ -4,7 +4,7 @@
 #namespace bb;
 
 // Namespace bb/bb_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x20d21263, Offset: 0x88
 // Size: 0x84
 function init_shared() {
@@ -108,7 +108,7 @@ function function_a7ba460f(reason) {
 }
 
 // Namespace bb/bb_shared
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x9ee7a36c, Offset: 0x510
 // Size: 0x94
 function function_afcc007d(name, clientnum, xuid) {

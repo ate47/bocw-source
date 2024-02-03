@@ -92,7 +92,7 @@ function function_cbeeecf() {
 }
 
 // Namespace music/music_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x90e11088, Offset: 0x3f0
 // Size: 0x44
 function function_edda155f(str_alias, n_delay) {
@@ -100,7 +100,7 @@ function function_edda155f(str_alias, n_delay) {
 }
 
 // Namespace music/music_shared
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x3335a243, Offset: 0x440
 // Size: 0x12c
 function function_2af5f0ec(str_alias, var_e08a84d6, n_delay) {

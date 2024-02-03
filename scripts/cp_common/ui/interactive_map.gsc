@@ -31,7 +31,7 @@ function private function_70a657d8() {
 }
 
 // Namespace interactive_map/interactive_map
-// Params 10, eflags: 0x0
+// Params 10, eflags: 0x2 linked
 // Checksum 0x3c47994d, Offset: 0x398
 // Size: 0x68c
 function open(var_738a6265, top_left, bottom_right, var_879505e1 = 1, var_ff0f9714 = 1, var_3031d93b, var_3e6ff5b7, var_f754e046, var_7cf4cc67, var_7ec0800f) {
@@ -414,7 +414,7 @@ function function_fce63823(uid, name) {
 }
 
 // Namespace interactive_map/interactive_map
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x8a75026b, Offset: 0x20f0
 // Size: 0x34
 function function_835fb58e(scale) {
@@ -564,7 +564,7 @@ function function_e2b5e638(description) {
 }
 
 // Namespace interactive_map/interactive_map
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x90fbc2ab, Offset: 0x2930
 // Size: 0x144
 function function_b5c2702b(prompt, var_248cbbcf) {
@@ -597,7 +597,7 @@ function function_4b1a5235(prompt) {
 }
 
 // Namespace interactive_map/interactive_map
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x12543637, Offset: 0x2ac8
 // Size: 0x1d4
 function close(cleanup) {

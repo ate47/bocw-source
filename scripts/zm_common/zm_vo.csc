@@ -13,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_vo/zm_vo
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xc1106831, Offset: 0x100
 // Size: 0x6c
 function private function_70a657d8() {
@@ -22,7 +22,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_vo/zm_vo
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0xd1972938, Offset: 0x178
 // Size: 0x5d2
 function private function_d1711916(var_332276f2, dialogkey) {

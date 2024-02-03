@@ -17,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xc22dbd76, Offset: 0x148
 // Size: 0x74
 function function_70a657d8() {
@@ -27,7 +27,7 @@ function function_70a657d8() {
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x80f724d1, Offset: 0x1c8
 // Size: 0x4
 function postinit() {
@@ -35,7 +35,7 @@ function postinit() {
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x5f739dfa, Offset: 0x1d8
 // Size: 0xae
 function weapon_machine_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

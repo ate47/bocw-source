@@ -66,7 +66,7 @@ function rotating_object_think() {
             self rotatepitch(direction * revolutions, rotate_time * revolutions);
             break;
         case #"yaw":
-        case #"hash_defdefdefdefdef0":
+        default:
             self rotateyaw(direction * revolutions, rotate_time * revolutions);
             break;
         }

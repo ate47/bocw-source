@@ -156,7 +156,7 @@ function function_bed1b789(menuname, var_5f9bb54b, var_a216857c, modelvalue) {
 }
 
 // Namespace lui/lui_shared
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0xaa8a445f, Offset: 0x428
 // Size: 0x128
 function function_bb6bcb89(menuname, var_5f9bb54b, var_a216857c, modelvalue, var_97c4b88a) {
@@ -431,7 +431,7 @@ function private _play_movie_for_player(str_movie, str_type, show_black_screen, 
     case #"pip":
         str_menu = "pip_menu";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assertmsg("<unknown string>" + str_type + "<unknown string>");
         #/
@@ -479,7 +479,7 @@ function private _play_movie_for_player(str_movie, str_type, show_black_screen, 
 }
 
 // Namespace lui/lui_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x85b33fc0, Offset: 0x19e0
 // Size: 0x400
 function play_outro_movie(outro_movie = getmapoutromovie()) {
@@ -616,7 +616,7 @@ function function_a6eb5334(n_time, v_color, str_menu_id, var_b675738a) {
 }
 
 // Namespace lui/lui_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x43176a8e, Offset: 0x2388
 // Size: 0xb4
 function screen_close_menu() {
@@ -810,7 +810,7 @@ function close_generic_script_dialog() {
 }
 
 // Namespace lui/lui_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x92cff311, Offset: 0x2e68
 // Size: 0xc4
 function open_script_dialog(dialog_name) {

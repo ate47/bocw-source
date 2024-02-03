@@ -295,7 +295,7 @@ function devgui_think() {
                     break;
                 case 0:
                     break;
-                case #"hash_defdefdefdefdef0":
+                default:
                     if (isdefined(level.custom_devgui)) {
                         if (isarray(level.custom_devgui)) {
                             foreach (devgui in level.custom_devgui) {
@@ -715,7 +715,7 @@ function devgui_add_player_weapons(root, pname, index, a_weapons, weapon_type) {
                 } else {
                     attachments = a_weapons[i].supportedattachments;
                 }
-                name = function_a16a090d(a_weapons[i]);
+                name = getweaponname(a_weapons[i]);
                 if (attachments.size) {
                     devgui_add_player_weap_command(player_devgui_root + name + "<unknown string>", pid, name, i + 1);
                     foreach (att in attachments) {
@@ -799,7 +799,7 @@ function devgui_weapon_asset_name_display_think() {
                 continue;
             }
             if (!printlnbold_counter) {
-                iprintlnbold(function_a16a090d(level.players[0] getcurrentweapon()));
+                iprintlnbold(getweaponname(level.players[0] getcurrentweapon()));
             }
             printlnbold_counter++;
             if (printlnbold_counter >= printlnbold_update) {
@@ -812,7 +812,7 @@ function devgui_weapon_asset_name_display_think() {
                 if (!isdefined(weapon) || level.weaponnone == weapon) {
                     continue;
                 }
-                print3d(player gettagorigin("<unknown string>"), function_a16a090d(weapon), colors[color_index], 1, 0.15, print_duration);
+                print3d(player gettagorigin("<unknown string>"), getweaponname(weapon), colors[color_index], 1, 0.15, print_duration);
                 color_index++;
                 if (color_index >= colors.size) {
                     color_index = 0;
@@ -830,7 +830,7 @@ function devgui_weapon_asset_name_display_think() {
                 if (!isdefined(weapon) || level.weaponnone == weapon) {
                     continue;
                 }
-                print3d(ai gettagorigin("<unknown string>"), function_a16a090d(weapon), colors[color_index], 1, 0.15, print_duration);
+                print3d(ai gettagorigin("<unknown string>"), getweaponname(weapon), colors[color_index], 1, 0.15, print_duration);
                 color_index++;
                 if (color_index >= colors.size) {
                     color_index = 0;
@@ -861,7 +861,7 @@ function devgui_give_weapon(weapon_name) {
         split = strtok(weapon_name, "<unknown string>");
         switch (split.size) {
         case 1:
-        case #"hash_defdefdefdefdef0":
+        default:
             weapon = getweapon(split[0]);
             break;
         case 2:
@@ -913,7 +913,7 @@ function function_848084d4(var_b0f63180) {
         self endon(#"hash_1db87c450e38d18f");
         currentweapon = self getcurrentweapon();
         var_aa9cebb1 = 0;
-        split = strtok(function_a16a090d(currentweapon), "<unknown string>");
+        split = strtok(getweaponname(currentweapon), "<unknown string>");
         foreach (attachment in currentweapon.supportedattachments) {
             if (attachment == var_b0f63180) {
                 var_aa9cebb1 = 1;
@@ -933,7 +933,7 @@ function function_848084d4(var_b0f63180) {
         }
         foreach (currentattachment in split) {
             if (currentattachment == var_b0f63180) {
-                iprintlnbold("<unknown string>" + var_b0f63180 + "<unknown string>" + function_a16a090d(currentweapon));
+                iprintlnbold("<unknown string>" + var_b0f63180 + "<unknown string>" + getweaponname(currentweapon));
                 return;
             }
         }

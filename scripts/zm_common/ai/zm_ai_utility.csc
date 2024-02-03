@@ -14,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_ai_utility/zm_ai_utility
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x4a7e8393, Offset: 0x110
 // Size: 0x6c
 function private function_70a657d8() {
@@ -23,7 +23,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_ai_utility/zm_ai_utility
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xe49e4e12, Offset: 0x188
 // Size: 0xc
 function private function_f3a051c6(*localclientnum) {
@@ -31,7 +31,7 @@ function private function_f3a051c6(*localclientnum) {
 }
 
 // Namespace zm_ai_utility/zm_ai_utility
-// Params 7, eflags: 0x4
+// Params 7, eflags: 0x6 linked
 // Checksum 0x7e689727, Offset: 0x1a0
 // Size: 0x74
 function private function_4a09edeb(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

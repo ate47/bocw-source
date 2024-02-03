@@ -9,7 +9,7 @@
 #namespace ammomod_brainrot;
 
 // Namespace ammomod_brainrot/ammomod_brainrot
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xc4598ab3, Offset: 0x380
 // Size: 0x2ac
 function function_9384b521() {
@@ -30,7 +30,7 @@ function function_9384b521() {
 }
 
 // Namespace ammomod_brainrot/ammomod_brainrot
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x1e97dc0c, Offset: 0x638
 // Size: 0x64
 function function_e437bd26(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -38,7 +38,7 @@ function function_e437bd26(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace ammomod_brainrot/ammomod_brainrot
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x8fb64855, Offset: 0x6a8
 // Size: 0x544
 function function_d500905a(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -73,7 +73,7 @@ function function_d500905a(localclientnum, *oldval, newval, *bnewent, *binitials
                         }
                     }
                     break;
-                case #"hash_defdefdefdefdef0":
+                default:
                     if (isdefined(self gettagorigin("j_eyeball_le"))) {
                         self.var_d59aa7bb = util::playfxontag(fieldname, "zm_weapons/fx9_aat_brain_rot_lvl1_mc_eye", self, "j_eyeball_le");
                     }
@@ -129,7 +129,7 @@ function function_b9c917cc(localclientnum, *str_bundle) {
 }
 
 // Namespace ammomod_brainrot/ammomod_brainrot
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x6c5b2cf4, Offset: 0xc70
 // Size: 0xa4
 function function_1d8434b9(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

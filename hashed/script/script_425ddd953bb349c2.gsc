@@ -15,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_7ec6ae9f/namespace_9c181b10
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x61d3f89, Offset: 0x138
 // Size: 0x11c
 function private function_70a657d8() {
@@ -30,7 +30,7 @@ function private function_70a657d8() {
 }
 
 // Namespace namespace_7ec6ae9f/namespace_9c181b10
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x2c8a420c, Offset: 0x260
 // Size: 0x1bc
 function phase_rift_player_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -57,7 +57,7 @@ function phase_rift_player_fx(localclientnum, *oldval, newval, *bnewent, *biniti
 }
 
 // Namespace namespace_7ec6ae9f/namespace_9c181b10
-// Params 7, eflags: 0x4
+// Params 7, eflags: 0x6 linked
 // Checksum 0xe63e7322, Offset: 0x428
 // Size: 0x10c
 function private function_1f107cad(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

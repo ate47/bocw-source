@@ -135,7 +135,7 @@ function error(msg) {
 }
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xeb0c9ded, Offset: 0x8e8
 // Size: 0x34
 function warning(msg) {
@@ -307,7 +307,7 @@ function function_20120d2a(n_stream_request_id, str_scenedef) {
 }
 
 // Namespace util/util_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xad5da9cf, Offset: 0x1090
 // Size: 0x18c
 function function_8b0c9d28(n_wait_frames = 3, var_5d93c5f1 = 15) {
@@ -749,7 +749,7 @@ function waittill_level_string(msg, ent, otherent) {
 }
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x40
+// Params 1, eflags: 0x42 linked
 // Checksum 0xd771258e, Offset: 0x27a8
 // Size: 0x9c
 function waittill_multiple(...) {
@@ -926,7 +926,7 @@ function waittill_any_ents_two(ent1, string1, ent2, string2) {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xbba37b1c, Offset: 0x2f70
 // Size: 0x20
 function isflashed() {
@@ -1033,7 +1033,7 @@ function _single_func(entity, func, a_vars) {
             return [[ func ]]();
         }
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assertmsg("<unknown string>");
         #/
@@ -1154,7 +1154,7 @@ function _single_thread(entity, func, arg1, arg2, &a_vars) {
         case 0:
             entity thread [[ func ]](arg1, arg2);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             /#
                 assertmsg("<unknown string>");
             #/
@@ -1189,7 +1189,7 @@ function _single_thread(entity, func, arg1, arg2, &a_vars) {
         case 0:
             entity thread [[ func ]](arg1);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             /#
                 assertmsg("<unknown string>");
             #/
@@ -1224,7 +1224,7 @@ function _single_thread(entity, func, arg1, arg2, &a_vars) {
         case 0:
             entity thread [[ func ]]();
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             /#
                 assertmsg("<unknown string>");
             #/
@@ -1465,7 +1465,7 @@ function fileprint_radiant_vec(vector) {
 }
 
 // Namespace util/util_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x6a7b11a4, Offset: 0x4a60
 // Size: 0x8e
 function death_notify_wrapper(attacker, damagetype) {
@@ -1817,7 +1817,7 @@ function is_ads() {
 }
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd89defdd, Offset: 0x59c8
 // Size: 0x2c
 function function_e05fc3fb(isplaying) {
@@ -2063,7 +2063,7 @@ function delete_on_death(ent) {
 }
 
 // Namespace util/util_shared
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x59075131, Offset: 0x6370
 // Size: 0xa4
 function delete_on_death_or_notify(e_to_delete, str_notify, str_clientfield = undefined) {
@@ -2163,7 +2163,7 @@ function function_e387bcd() {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x3a8ada09, Offset: 0x6788
 // Size: 0xbc
 function function_4b93f9c2() {
@@ -2207,7 +2207,7 @@ function script_wait() {
 }
 
 // Namespace util/util_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x197951ad, Offset: 0x69b8
 // Size: 0x34
 function function_90dafe5(msg, var_3ef206a8) {
@@ -2378,7 +2378,7 @@ function within_fov(start_origin, start_angles, end_origin, fov) {
 }
 
 // Namespace util/util_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x8d5fd657, Offset: 0x72e8
 // Size: 0xca
 function function_748809fc(target, var_2e4f087a) {
@@ -2954,7 +2954,7 @@ function note_raw_time(label = "unspecified") {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x1556b594, Offset: 0x8670
 // Size: 0x4e
 function mayapplyscreeneffect() {
@@ -3575,7 +3575,7 @@ function positionquery_pointarray(origin, minsearchradius, maxsearchradius, half
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xf0298f83, Offset: 0xa3e0
 // Size: 0x9a
 function totalplayercount() {
@@ -3843,7 +3843,7 @@ function isroundbased() {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x2d217a87, Offset: 0xad78
 // Size: 0x26
 function getcurrentgamemode() {
@@ -3885,7 +3885,7 @@ function function_97cf7eb0(v_start, n_max_dist = 5000, n_ground_offset = 0, e_ig
 }
 
 // Namespace util/util_shared
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0x71894ac3, Offset: 0xaf98
 // Size: 0x92
 function ground_position(v_start, n_max_dist = 5000, n_ground_offset = 0, e_ignore, b_ignore_water = 0, b_ignore_glass = 0) {
@@ -3933,7 +3933,7 @@ function is_safehouse() {
 function is_new_cp_map() {
     mapname = get_map_name();
     switch (mapname) {
-    case #"hash_defdefdefdefdef0":
+    default:
         return 0;
         break;
     }
@@ -4156,7 +4156,7 @@ function str_strip_lh(str) {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x8e4ff53e, Offset: 0xb880
 // Size: 0x176
 function trackwallrunningdistance() {
@@ -4177,7 +4177,7 @@ function trackwallrunningdistance() {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x11ab97b6, Offset: 0xba00
 // Size: 0x176
 function tracksprintdistance() {
@@ -4198,7 +4198,7 @@ function tracksprintdistance() {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xd8777040, Offset: 0xbb80
 // Size: 0x176
 function trackdoublejumpdistance() {
@@ -4444,7 +4444,7 @@ function clearcooldown(name) {
 }
 
 // Namespace util/util_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x9811b67a, Offset: 0xc508
 // Size: 0x6c
 function addcooldowntime(name, time_seconds) {
@@ -4798,7 +4798,7 @@ function function_72cbea07(player, weapon) {
 }
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x2f0a2468, Offset: 0xd4f0
 // Size: 0x5c
 function ghost_wait_show(wait_time = 0.1) {
@@ -4929,7 +4929,7 @@ function make_sentient() {
 }
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x1f1ed49e, Offset: 0xdb40
 // Size: 0x3c
 function function_f9af3d43(time) {
@@ -5352,7 +5352,7 @@ function function_63320ea1(vector, var_942bd604, var_edfc4672) {
 }
 
 // Namespace util/util_shared
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0x11897c38, Offset: 0xeb80
 // Size: 0xda
 function function_2bf19e35(func, param1, param2, param3, param4, param5) {
@@ -5369,7 +5369,7 @@ function function_2bf19e35(func, param1, param2, param3, param4, param5) {
 }
 
 // Namespace util/util_shared
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x262e2be8, Offset: 0xec68
 // Size: 0x104
 function function_88e346a(timeout, func, param1, param2, param3, param4, param5) {
@@ -5389,7 +5389,7 @@ function function_88e346a(timeout, func, param1, param2, param3, param4, param5)
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x144d4cd7, Offset: 0xed78
 // Size: 0x96
 function function_f78e220a() {
@@ -5660,7 +5660,7 @@ function teleport(pos, v_ang) {
 }
 
 // Namespace util/util_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xb6ad1b54, Offset: 0xf900
 // Size: 0xc4
 function function_1690fd42(player, persistent) {
@@ -5678,7 +5678,7 @@ function function_1690fd42(player, persistent) {
 }
 
 // Namespace util/util_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x2e231cff, Offset: 0xf9d0
 // Size: 0x6c
 function function_cd98604b(player) {
@@ -5713,7 +5713,7 @@ function function_7f7a77ab() {
 }
 
 // Namespace util/util_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x85923bf3, Offset: 0xfb58
 // Size: 0x4c
 function function_5355d311() {

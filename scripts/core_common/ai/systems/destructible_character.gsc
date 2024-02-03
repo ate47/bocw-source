@@ -108,7 +108,7 @@ function private _setdestructed(entity, destructflag) {
 }
 
 // Namespace destructserverutils/destructible_character
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x907ab7f0, Offset: 0x9b8
 // Size: 0x64
 function copydestructstate(originalentity, newentity) {
@@ -289,7 +289,7 @@ function getpiececount(entity) {
 }
 
 // Namespace destructserverutils/destructible_character
-// Params 13, eflags: 0x0
+// Params 13, eflags: 0x2 linked
 // Checksum 0x2de127e8, Offset: 0x12f8
 // Size: 0x138
 function handledamage(*einflictor, *eattacker, idamage, *idflags, *smeansofdeath, *weapon, *var_fd90b0bb, *vpoint, *vdir, shitloc, *psoffsettime, var_a9e3f040, *modelindex) {

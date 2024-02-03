@@ -20,7 +20,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_ec0691f8/namespace_ec0691f8
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xaca864ab, Offset: 0x180
 // Size: 0x10c
 function private function_70a657d8() {
@@ -31,7 +31,7 @@ function private function_70a657d8() {
 }
 
 // Namespace namespace_ec0691f8/namespace_ec0691f8
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x9fe7a6c2, Offset: 0x298
 // Size: 0x24
 function function_3b0e8b8b(localclientnum) {
@@ -39,7 +39,7 @@ function function_3b0e8b8b(localclientnum) {
 }
 
 // Namespace namespace_ec0691f8/namespace_ec0691f8
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x716b543a, Offset: 0x2c8
 // Size: 0x1ac
 function dog_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -66,7 +66,7 @@ function dog_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *field
 }
 
 // Namespace namespace_ec0691f8/namespace_ec0691f8
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xedbce3b, Offset: 0x480
 // Size: 0x21c
 function function_30933ca1(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -90,7 +90,7 @@ function function_30933ca1(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace namespace_ec0691f8/namespace_ec0691f8
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x3e4651c7, Offset: 0x6a8
 // Size: 0x1d4
 function dog_spawn_fx(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {

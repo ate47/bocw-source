@@ -126,7 +126,7 @@ function vehiclespawncontext() {
 }
 
 // Namespace audio/audio_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x23964683, Offset: 0xa10
 // Size: 0x84
 function sndupdatevehiclecontext(added) {

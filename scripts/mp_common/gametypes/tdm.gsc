@@ -167,7 +167,7 @@ function function_e596b745(var_c1e98979) {
         break;
     case 9:
     case 10:
-    case #"hash_defdefdefdefdef0":
+    default:
         gamemodedata.wintype = "NA";
         break;
     }

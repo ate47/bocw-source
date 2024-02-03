@@ -615,7 +615,7 @@ function aircraft_crash_move(*point, dir) {
     if (isdefined(self) && isdefined(self.vehicletype)) {
         b_custom_deathmodel_setup = 1;
         switch (self.vehicletype) {
-        case #"hash_defdefdefdefdef0":
+        default:
             b_custom_deathmodel_setup = 0;
             break;
         }
@@ -1404,7 +1404,7 @@ function vehicle_damage_filter_exit_watcher(*driver) {
 }
 
 // Namespace vehicle_death/vehicle_death_shared
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xb6dbcc94, Offset: 0x50c0
 // Size: 0x182
 function vehicle_damage_filter(vision_set, heavy_damage_threshold, *filterid, b_use_player_damage = 0) {
@@ -1434,7 +1434,7 @@ LOC_000000b4:
 }
 
 // Namespace vehicle_death/vehicle_death_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x3032e679, Offset: 0x5250
 // Size: 0x1a4
 function flipping_shooting_death(attacker, hitdir) {
@@ -1608,7 +1608,7 @@ function flipping_shooting_crash_movement(*attacker, hitdir) {
     case 1:
         plane_crash();
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         random_crash(hitdir);
         break;
     }

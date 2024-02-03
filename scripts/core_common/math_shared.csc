@@ -112,7 +112,7 @@ function sign(x) {
 }
 
 // Namespace math/math_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x7682f2d, Offset: 0x4d8
 // Size: 0x2e
 function randomsign() {

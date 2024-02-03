@@ -20,7 +20,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace killstreak_detect/killstreak_detect
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x43f8f517, Offset: 0x1f8
 // Size: 0x29c
 function init_shared() {
@@ -50,7 +50,7 @@ function init_shared() {
 }
 
 // Namespace killstreak_detect/killstreak_detect
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xa69067ba, Offset: 0x4a0
 // Size: 0xf2
 function function_95f96f3e(local_client_num, *bundle, *param) {
@@ -74,7 +74,7 @@ function function_95f96f3e(local_client_num, *bundle, *param) {
 }
 
 // Namespace killstreak_detect/killstreak_detect
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x42e64ef7, Offset: 0x5a0
 // Size: 0x114
 function function_7181329a(entity) {
@@ -94,7 +94,7 @@ function function_7181329a(entity) {
 }
 
 // Namespace killstreak_detect/killstreak_detect
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x92f5c381, Offset: 0x6c0
 // Size: 0x116
 function function_d63aa49b(local_client_num, *bundle) {
@@ -123,7 +123,7 @@ function function_d63aa49b(local_client_num, *bundle) {
 }
 
 // Namespace killstreak_detect/killstreak_detect
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xa60aff0d, Offset: 0x7e0
 // Size: 0xf8
 function function_903bbed3(local_client_num, *bundle) {
@@ -146,7 +146,7 @@ function function_903bbed3(local_client_num, *bundle) {
 }
 
 // Namespace killstreak_detect/killstreak_detect
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x9139cbe5, Offset: 0x8e0
 // Size: 0x224
 function function_d859c344(local_client_num, *newval) {
@@ -176,7 +176,7 @@ function function_d859c344(local_client_num, *newval) {
 }
 
 // Namespace killstreak_detect/killstreak_detect
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xd3349cce, Offset: 0xb10
 // Size: 0x84
 function vehicle_transition(local_client_num, oldval, newval, bnewent, binitialsnap, fieldname, bwastimejump) {
@@ -187,7 +187,7 @@ function vehicle_transition(local_client_num, oldval, newval, bnewent, binitials
 }
 
 // Namespace killstreak_detect/killstreak_detect
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xb7a4b712, Offset: 0xba0
 // Size: 0x44
 function should_set_compass_icon(local_client_num) {
@@ -195,7 +195,7 @@ function should_set_compass_icon(local_client_num) {
 }
 
 // Namespace killstreak_detect/killstreak_detect
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xa971f51, Offset: 0xbf0
 // Size: 0xd4
 function enemyscriptmovervehicle_changed(local_client_num, oldval, newval, bnewent, binitialsnap, fieldname, bwastimejump) {
@@ -210,7 +210,7 @@ function enemyscriptmovervehicle_changed(local_client_num, oldval, newval, bnewe
 }
 
 // Namespace killstreak_detect/killstreak_detect
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xf7151cb7, Offset: 0xcd0
 // Size: 0xd4
 function enemymissilevehicle_changed(local_client_num, oldval, newval, bnewent, binitialsnap, fieldname, bwastimejump) {
@@ -225,7 +225,7 @@ function enemymissilevehicle_changed(local_client_num, oldval, newval, bnewent, 
 }
 
 // Namespace killstreak_detect/killstreak_detect
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x30c9a078, Offset: 0xdb0
 // Size: 0x74
 function enemymissile_changed(local_client_num, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -234,7 +234,7 @@ function enemymissile_changed(local_client_num, *oldval, newval, *bnewent, *bini
 }
 
 // Namespace killstreak_detect/killstreak_detect
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x6122c093, Offset: 0xe30
 // Size: 0x1a4
 function enemyvehicle_changed(local_client_num, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -256,7 +256,7 @@ function enemyvehicle_changed(local_client_num, *oldval, newval, *bnewent, *bini
 }
 
 // Namespace killstreak_detect/killstreak_detect
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x69da88b9, Offset: 0xfe0
 // Size: 0xd4
 function function_430c370a(local_client_num, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -269,7 +269,7 @@ function function_430c370a(local_client_num, *oldval, newval, *bnewent, *binitia
 }
 
 // Namespace killstreak_detect/killstreak_detect
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x4a16a5a0, Offset: 0x10c0
 // Size: 0x2c
 function updateteamvehicles(local_client_num, *newval) {
@@ -277,7 +277,7 @@ function updateteamvehicles(local_client_num, *newval) {
 }
 
 // Namespace killstreak_detect/killstreak_detect
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xb62ea5d0, Offset: 0x10f8
 // Size: 0x2c
 function updateteammissiles(local_client_num, *newval) {
@@ -285,7 +285,7 @@ function updateteammissiles(local_client_num, *newval) {
 }
 
 // Namespace killstreak_detect/killstreak_detect
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x76c7d632, Offset: 0x1130
 // Size: 0x34
 function function_f884010a(local_client_num, newval) {
@@ -296,7 +296,7 @@ function function_f884010a(local_client_num, newval) {
 }
 
 // Namespace killstreak_detect/killstreak_detect
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xf3711e50, Offset: 0x1170
 // Size: 0x34
 function updateenemyvehicles(local_client_num, newval) {
@@ -307,7 +307,7 @@ function updateenemyvehicles(local_client_num, newval) {
 }
 
 // Namespace killstreak_detect/killstreak_detect
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x2a7475e6, Offset: 0x11b0
 // Size: 0x34
 function updateenemymissiles(local_client_num, newval) {
@@ -318,7 +318,7 @@ function updateenemymissiles(local_client_num, newval) {
 }
 
 // Namespace killstreak_detect/killstreak_detect
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x8c3302f5, Offset: 0x11f0
 // Size: 0x176
 function watch_killstreak_detect_perks_changed(local_client_num) {
@@ -342,7 +342,7 @@ function watch_killstreak_detect_perks_changed(local_client_num) {
 }
 
 // Namespace killstreak_detect/killstreak_detect
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x5621b82a, Offset: 0x1370
 // Size: 0x13e
 function checkteamvehicles(localclientnum) {
@@ -368,7 +368,7 @@ function checkteamvehicles(localclientnum) {
 }
 
 // Namespace killstreak_detect/killstreak_detect
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x6507c99a, Offset: 0x14b8
 // Size: 0x13e
 function checkteammissiles(localclientnum) {
@@ -394,7 +394,7 @@ function checkteammissiles(localclientnum) {
 }
 
 // Namespace killstreak_detect/killstreak_detect
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x84e0738d, Offset: 0x1600
 // Size: 0x12c
 function function_8ac48939(bundle) {
@@ -410,7 +410,7 @@ function function_8ac48939(bundle) {
 }
 
 // Namespace killstreak_detect/killstreak_detect
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0x982c6085, Offset: 0x1738
 // Size: 0x12a
 function private function_d05902d9(local_client_num, newval) {
@@ -454,7 +454,7 @@ function function_32c8b999(local_client_num) {
 }
 
 // Namespace killstreak_detect/killstreak_detect
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0x95a68646, Offset: 0x19c0
 // Size: 0x12a
 function private function_f27ffe49(local_client_num, newval) {

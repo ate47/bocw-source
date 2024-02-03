@@ -15,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_f0a1fe5c/namespace_f0a1fe5c
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xeb99893f, Offset: 0x1f0
 // Size: 0xf4
 function private function_70a657d8() {
@@ -29,7 +29,7 @@ function private function_70a657d8() {
 }
 
 // Namespace namespace_f0a1fe5c/namespace_f0a1fe5c
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xd731d261, Offset: 0x2f0
 // Size: 0x1c2
 function function_feb491ef(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -50,7 +50,7 @@ function function_feb491ef(localclientnum, *oldval, newval, *bnewent, *binitials
         case 4:
             self.var_4cf2e329 = playfx(fieldname, "maps/ltm/fx9_winter_powerup_naughty_final", self.origin);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             if (isdefined(self.var_4cf2e329)) {
                 stopfx(fieldname, self.var_4cf2e329);
             }

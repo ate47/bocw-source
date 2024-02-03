@@ -14,7 +14,7 @@ function ispistol(weapon, var_d3511cd9 = 0) {
 }
 
 // Namespace weapons/weapon_utils
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd1abd740, Offset: 0x1d8
 // Size: 0x20
 function islauncher(weapon) {
@@ -30,7 +30,7 @@ function isflashorstunweapon(weapon) {
 }
 
 // Namespace weapons/weapon_utils
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x5429ba7f, Offset: 0x230
 // Size: 0x50
 function isflashorstundamage(weapon, meansofdeath) {
@@ -71,7 +71,7 @@ function ispunch(weapon) {
 }
 
 // Namespace weapons/weapon_utils
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x25cac6a, Offset: 0x398
 // Size: 0x70
 function isknife(weapon) {

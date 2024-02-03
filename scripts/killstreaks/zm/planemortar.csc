@@ -17,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace planemortar/planemortar
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x2eb8c8c1, Offset: 0x1d8
 // Size: 0xfc
 function private function_70a657d8() {
@@ -28,7 +28,7 @@ function private function_70a657d8() {
 }
 
 // Namespace planemortar/planemortar
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x378e806c, Offset: 0x2e0
 // Size: 0xf2
 function planemortar_contrail(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -42,7 +42,7 @@ function planemortar_contrail(localclientnum, *oldval, newval, *bnewent, *biniti
 }
 
 // Namespace planemortar/planemortar
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x3604837a, Offset: 0x3e0
 // Size: 0x31c
 function planemortar_marker_on(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -84,7 +84,7 @@ function planemortar_marker_on(localclientnum, *oldval, newval, *bnewent, *binit
 }
 
 // Namespace planemortar/planemortar
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd38bfecc, Offset: 0x708
 // Size: 0x84
 function function_85f3e359(localclientnum) {
@@ -95,7 +95,7 @@ function function_85f3e359(localclientnum) {
 }
 
 // Namespace planemortar/planemortar
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x17d8f187, Offset: 0x798
 // Size: 0x84
 function function_e72f1d06(localclientnum) {
@@ -106,7 +106,7 @@ function function_e72f1d06(localclientnum) {
 }
 
 // Namespace planemortar/planemortar
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x7fcab474, Offset: 0x828
 // Size: 0xdc
 function show_marker(localclientnum, marker) {
@@ -119,7 +119,7 @@ function show_marker(localclientnum, marker) {
 }
 
 // Namespace planemortar/planemortar
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x8b499f88, Offset: 0x910
 // Size: 0x9c
 function function_4362abef(localclientnum, marker) {
@@ -131,7 +131,7 @@ function function_4362abef(localclientnum, marker) {
 }
 
 // Namespace planemortar/planemortar
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x9e7ddf0, Offset: 0x9b8
 // Size: 0x84
 function private function_f43fb0d3(marker) {
@@ -142,7 +142,7 @@ function private function_f43fb0d3(marker) {
 }
 
 // Namespace planemortar/planemortar
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xafa2e860, Offset: 0xa48
 // Size: 0xc6
 function function_6a08eb03(localclientnum, marker) {

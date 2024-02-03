@@ -88,7 +88,7 @@ function countdown_timer(var_753cb060, var_3b192471 = "mission_fail_timer", str_
             }
             clientfield::set_world_uimodel("hudItems.cpObjective.axis.progressType", var_edf9778a);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             if (is_true(var_72f304a8)) {
                 clientfield::set_world_uimodel("hudItems.cpObjective.allies.hardpoint.progress", 0);
                 clientfield::set_world_uimodel("hudItems.cpObjective.axis.hardpoint.progress", 0);
@@ -127,7 +127,7 @@ function countdown_timer(var_753cb060, var_3b192471 = "mission_fail_timer", str_
             case #"axis":
                 clientfield::set_world_uimodel("hudItems.cpObjective.axis.hardpoint.progress", var_d7b76468);
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 clientfield::set_world_uimodel("hudItems.cpObjective.allies.hardpoint.progress", var_d7b76468);
                 clientfield::set_world_uimodel("hudItems.cpObjective.axis.hardpoint.progress", var_d7b76468);
                 break;
@@ -191,7 +191,7 @@ function private function_c01d14b6(var_3b192471, n_time_left) {
     case #"axis":
         setbombtimer("B", var_1c0820a1);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         setbombtimer("A", var_1c0820a1);
         setbombtimer("B", var_1c0820a1);
         break;
@@ -214,7 +214,7 @@ function private function_ba6cfb59(var_3b192471, b_enable = 1, var_96dc7504 = 1)
     case #"axis":
         setmatchflag("bomb_timer_b", is_true(b_enable && var_96dc7504));
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         setmatchflag("bomb_timer_a", is_true(b_enable && var_96dc7504));
         setmatchflag("bomb_timer_b", is_true(b_enable && var_96dc7504));
         break;
@@ -227,7 +227,7 @@ function private function_ba6cfb59(var_3b192471, b_enable = 1, var_96dc7504 = 1)
         case #"axis":
             clientfield::set_world_uimodel("hudItems.cpObjective.axis.progressType", 0);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             clientfield::set_world_uimodel("hudItems.cpObjective.allies.progressType", 0);
             clientfield::set_world_uimodel("hudItems.cpObjective.axis.progressType", 0);
             break;

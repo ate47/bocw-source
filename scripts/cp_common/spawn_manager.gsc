@@ -897,7 +897,7 @@ function function_2886c4a9(var_368d405d, process, ent, var1, var_2c1ca37f, var_7
 }
 
 // Namespace spawn_manager/spawn_manager
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x5012ef08, Offset: 0x3120
 // Size: 0x12c
 function enable(var_368d405d, var_6ea96389) {
@@ -935,7 +935,7 @@ function disable(var_368d405d, var_6ea96389) {
 }
 
 // Namespace spawn_manager/spawn_manager
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xab1fcdc1, Offset: 0x3390
 // Size: 0x154
 function kill(var_368d405d, var_6ea96389) {

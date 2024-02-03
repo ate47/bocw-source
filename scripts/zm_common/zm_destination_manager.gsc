@@ -28,7 +28,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x4350b4b3, Offset: 0x1b0
 // Size: 0x46
 function private function_70a657d8() {
@@ -38,7 +38,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x257420ce, Offset: 0x200
 // Size: 0x2c
 function private function_5700f119() {
@@ -48,7 +48,7 @@ function private function_5700f119() {
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x2c4024c5, Offset: 0x238
 // Size: 0x7a
 function function_123b048f(var_8a952bed) {
@@ -62,7 +62,7 @@ function function_123b048f(var_8a952bed) {
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xbed0a082, Offset: 0x2c0
 // Size: 0x16
 function function_2e165386() {
@@ -70,7 +70,7 @@ function function_2e165386() {
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x70fc6c9f, Offset: 0x2e0
 // Size: 0x242
 function function_f3be07d7(destination) {
@@ -104,7 +104,7 @@ function function_f3be07d7(destination) {
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x60e7d8a7, Offset: 0x530
 // Size: 0x1fc
 function function_e4254bac(destination, var_f281f968) {
@@ -126,7 +126,7 @@ function function_e4254bac(destination, var_f281f968) {
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x2563c6a8, Offset: 0x738
 // Size: 0x114
 function private function_6f9efb66() {
@@ -149,7 +149,7 @@ function private function_6f9efb66() {
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x9589f4b6, Offset: 0x858
 // Size: 0x3cc
 function private function_1975f7db() {
@@ -211,7 +211,7 @@ function private function_1975f7db() {
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xb5fa4d2f, Offset: 0xc30
 // Size: 0x38e
 function function_786a9f4d(destinations) {
@@ -254,7 +254,7 @@ function function_786a9f4d(destinations) {
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x4145abbc, Offset: 0xfc8
 // Size: 0x614
 function function_dafa6af4(*destination) {
@@ -302,7 +302,7 @@ function function_dafa6af4(*destination) {
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xfaa0f127, Offset: 0x15e8
 // Size: 0xa6
 function private function_c62829da(destination) {
@@ -321,7 +321,7 @@ function private function_c62829da(destination) {
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x1742f074, Offset: 0x1698
 // Size: 0x114
 function function_ab94c270(destination) {
@@ -346,7 +346,7 @@ function function_ab94c270(destination) {
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x6ad5d0d0, Offset: 0x17b8
 // Size: 0x2f4
 function activate(destination) {
@@ -382,7 +382,7 @@ function activate(destination) {
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xfbdad941, Offset: 0x1ab8
 // Size: 0x68
 function deactivate(destination) {
@@ -392,7 +392,7 @@ function deactivate(destination) {
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x60e0b701, Offset: 0x1b28
 // Size: 0x21e
 function function_506afb9e(destination, var_2371bf) {
@@ -415,7 +415,7 @@ function function_506afb9e(destination, var_2371bf) {
 }
 
 // Namespace zm_destination_manager/zm_destination_manager
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xcfa83dc, Offset: 0x1d50
 // Size: 0x156
 function function_66ec9032(var_51d0492) {

@@ -494,7 +494,7 @@ function function_7569c0fb() {
         self stats::function_81f5c0fe(#"stat1", self.ekia);
         self stats::function_81f5c0fe(#"stat2", self.deaths);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
 }

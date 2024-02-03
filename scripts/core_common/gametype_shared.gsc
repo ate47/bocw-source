@@ -2,7 +2,7 @@
 #namespace gametype;
 
 // Namespace gametype/gametype_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xbaa5e267, Offset: 0xc0
 // Size: 0x9c
 function init() {
@@ -15,7 +15,7 @@ function init() {
 }
 
 // Namespace gametype/gametype_shared
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x36d4fa0f, Offset: 0x168
 // Size: 0x20
 function private function_788fb510(value) {
@@ -26,7 +26,7 @@ function private function_788fb510(value) {
 }
 
 // Namespace gametype/gametype_shared
-// Params a, eflags: 0x0
+// Params a, eflags: 0x2 linked
 // Checksum 0x16c876f3, Offset: 0x190
 // Size: 0x1c4
 function setvisiblescoreboardcolumns(col1, col2, col3, col4, col5, col6, col7, col8, col9, col10) {

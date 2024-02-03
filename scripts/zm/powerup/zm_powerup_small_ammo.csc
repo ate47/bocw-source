@@ -14,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_powerup_small_ammo/zm_powerup_small_ammo
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x1006a1be, Offset: 0xf0
 // Size: 0x44
 function __init__() {

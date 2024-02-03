@@ -23,7 +23,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x2e4ad78d, Offset: 0x430
 // Size: 0x1f4
 function private function_70a657d8() {
@@ -39,7 +39,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x1fbfbd25, Offset: 0x630
 // Size: 0xdc
 function private on_begin(var_a29299fb) {
@@ -60,7 +60,7 @@ function private on_begin(var_a29299fb) {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xf4083439, Offset: 0x718
 // Size: 0xc4
 function private on_end(round_reset) {
@@ -80,7 +80,7 @@ function private on_end(round_reset) {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xa6c8ff5a, Offset: 0x7e8
 // Size: 0x32
 function is_active() {
@@ -89,7 +89,7 @@ function is_active() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x51455034, Offset: 0x828
 // Size: 0x176
 function function_8327d26e() {
@@ -121,7 +121,7 @@ function function_8327d26e() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x856bda7f, Offset: 0x9a8
 // Size: 0x2d8
 function private function_6fd56055() {
@@ -157,7 +157,7 @@ function private function_6fd56055() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x38d9f447, Offset: 0xc88
 // Size: 0x2b8
 function private function_fa70c8c4() {
@@ -193,7 +193,7 @@ function private function_fa70c8c4() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x5b3711ad, Offset: 0xf48
 // Size: 0x58
 function private _open_arcs(blocker) {
@@ -204,7 +204,7 @@ function private _open_arcs(blocker) {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0x50775721, Offset: 0xfa8
 // Size: 0x26a
 function private function_fcf197fa(targetname, show) {
@@ -229,7 +229,7 @@ function private function_fcf197fa(targetname, show) {
                                     var_1d6a70e8 ghost();
                                 }
                                 break;
-                            case #"hash_defdefdefdefdef0":
+                            default:
                                 break;
                             }
                         }
@@ -241,7 +241,7 @@ function private function_fcf197fa(targetname, show) {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x6a70d1e5, Offset: 0x1220
 // Size: 0x34
 function private function_a4284cb4() {
@@ -250,7 +250,7 @@ function private function_a4284cb4() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x51fcfc47, Offset: 0x1260
 // Size: 0x44
 function private function_c606ef4b() {
@@ -259,7 +259,7 @@ function private function_c606ef4b() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x58f73e03, Offset: 0x12b0
 // Size: 0x40
 function private function_4516d298() {
@@ -270,7 +270,7 @@ function private function_4516d298() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x532c074c, Offset: 0x12f8
 // Size: 0x40
 function private function_610df6d() {
@@ -281,7 +281,7 @@ function private function_610df6d() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xb02c1071, Offset: 0x1340
 // Size: 0x74
 function private function_47c81160() {
@@ -294,7 +294,7 @@ function private function_47c81160() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xf2b64c9b, Offset: 0x13c0
 // Size: 0x5c
 function private function_d7ee2133() {
@@ -306,7 +306,7 @@ function private function_d7ee2133() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xefa36d4c, Offset: 0x1428
 // Size: 0x5c
 function private function_d5e17413() {
@@ -317,7 +317,7 @@ function private function_d5e17413() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xab5fcba7, Offset: 0x1490
 // Size: 0x7c
 function private function_c348adcc() {
@@ -330,7 +330,7 @@ function private function_c348adcc() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x1ad12f31, Offset: 0x1518
 // Size: 0xe0
 function private hide_traps() {
@@ -343,7 +343,7 @@ function private hide_traps() {
 }
 
 // Namespace zm_trial_disable_buys/zm_trial_disable_buys
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xcbb2be6, Offset: 0x1600
 // Size: 0xe8
 function private show_traps() {

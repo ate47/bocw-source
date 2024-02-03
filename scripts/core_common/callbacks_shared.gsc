@@ -33,7 +33,7 @@ function function_bea20a96(event, params) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xfdebbb73, Offset: 0x250
 // Size: 0xd8
 function function_daed27e8(event, params) {
@@ -256,7 +256,7 @@ function on_disconnect(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xdce42b9d, Offset: 0xcc0
 // Size: 0x3c
 function remove_on_disconnect(func, obj) {
@@ -296,7 +296,7 @@ function function_2d538029(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x8e07ed90, Offset: 0xe28
 // Size: 0x3c
 function remove_on_revived(func, obj) {
@@ -304,7 +304,7 @@ function remove_on_revived(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x88c980d9, Offset: 0xe70
 // Size: 0x3c
 function on_deleted(func, obj) {
@@ -336,7 +336,7 @@ function remove_on_loadout(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe802da91, Offset: 0xf90
 // Size: 0x3c
 function function_adff8850(func, obj) {
@@ -360,7 +360,7 @@ function on_player_damage(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x99de0736, Offset: 0x1068
 // Size: 0x3c
 function remove_on_player_damage(func, obj) {
@@ -392,7 +392,7 @@ function function_5fb139ea(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x66e15e3e, Offset: 0x1188
 // Size: 0x3c
 function function_14dae612(func, obj) {
@@ -440,7 +440,7 @@ function on_player_killed(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x3360fb50, Offset: 0x1338
 // Size: 0x3c
 function function_c046382d(func, obj) {
@@ -456,7 +456,7 @@ function on_player_corpse(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xbd172380, Offset: 0x13c8
 // Size: 0x3c
 function remove_on_player_killed(func, obj) {
@@ -512,7 +512,7 @@ function on_actor_killed(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x52682aa1, Offset: 0x15c0
 // Size: 0x3c
 function remove_on_actor_killed(func, obj) {
@@ -520,7 +520,7 @@ function remove_on_actor_killed(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xf89c1362, Offset: 0x1608
 // Size: 0x3c
 function function_30c3f95d(func, obj) {
@@ -584,7 +584,7 @@ function on_ai_damage(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xaee6bcac, Offset: 0x1848
 // Size: 0x3c
 function remove_on_ai_damage(func, obj) {
@@ -696,7 +696,7 @@ function on_laststand(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6f654bbc, Offset: 0x1c38
 // Size: 0x3c
 function remove_on_laststand(func, obj) {
@@ -704,7 +704,7 @@ function remove_on_laststand(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf63fd018, Offset: 0x1c80
 // Size: 0x3c
 function function_716834ed(func, obj) {
@@ -736,7 +736,7 @@ function on_revived(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xd9db20a6, Offset: 0x1da0
 // Size: 0x3c
 function on_mission_failed(func, obj) {
@@ -744,7 +744,7 @@ function on_mission_failed(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xbf3d6f58, Offset: 0x1de8
 // Size: 0x3c
 function on_challenge_complete(func, obj) {
@@ -760,7 +760,7 @@ function on_weapon_change(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x4d1b5b62, Offset: 0x1e78
 // Size: 0x3c
 function remove_on_weapon_change(func, obj) {
@@ -776,7 +776,7 @@ function on_weapon_fired(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe1d07b35, Offset: 0x1f08
 // Size: 0x3c
 function remove_on_weapon_fired(func, obj) {
@@ -792,7 +792,7 @@ function on_grenade_fired(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x17659f3f, Offset: 0x1f98
 // Size: 0x3c
 function remove_on_grenade_fired(func, obj) {
@@ -912,7 +912,7 @@ function on_trigger(func, obj, ...) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xdd60e999, Offset: 0x23d8
 // Size: 0x3c
 function remove_on_trigger(func, obj) {
@@ -944,7 +944,7 @@ function function_33f0ddd3(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xb56010d1, Offset: 0x2500
 // Size: 0x3c
 function function_824d206(func, obj) {
@@ -1008,7 +1008,7 @@ function function_96bbd5dc(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xfbed6dc7, Offset: 0x2740
 // Size: 0x3c
 function on_item_pickup(func, obj) {
@@ -1016,7 +1016,7 @@ function on_item_pickup(func, obj) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf8fcc4d6, Offset: 0x2788
 // Size: 0x3c
 function on_item_drop(func, obj) {
@@ -1192,7 +1192,7 @@ function event_handler[level_finalizeinit] codecallback_finalizeinitialization(*
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xe5b4af73, Offset: 0x2dc8
 // Size: 0x40
 function add_weapon_damage(weapontype, callback) {
@@ -1203,7 +1203,7 @@ function add_weapon_damage(weapontype, callback) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x1f2943eb, Offset: 0x2e10
 // Size: 0xca
 function callback_weapon_damage(eattacker, einflictor, weapon, meansofdeath, damage) {
@@ -1220,7 +1220,7 @@ function callback_weapon_damage(eattacker, einflictor, weapon, meansofdeath, dam
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x2d39de42, Offset: 0x2ee8
 // Size: 0x40
 function add_weapon_fired(weapon, callback) {
@@ -1876,7 +1876,7 @@ function event_handler[event_195cc461] function_52d32e5b(eventstruct) {
             actor aimatentityik(player, eventstruct.blend, eventstruct.weight);
             break;
         case #"hash_3da13f2589a059c6":
-        case #"hash_defdefdefdefdef0":
+        default:
             actor lookatentity(player, 1, 0, 0, eventstruct.blend, eventstruct.weight);
             break;
         }

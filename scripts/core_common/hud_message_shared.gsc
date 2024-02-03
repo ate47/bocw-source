@@ -45,7 +45,7 @@ function playnotifyloop(duration) {
 }
 
 // Namespace hud_message/hud_message_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xb70c82dd, Offset: 0x1d8
 // Size: 0xa4
 function setlowermessage(text, time) {

@@ -348,7 +348,7 @@ function create_grenade_influencers(parent_team, weapon, grenade) {
 }
 
 // Namespace influencers/influencers_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xe90401e6, Offset: 0x10b8
 // Size: 0x94
 function create_map_placed_influencers() {

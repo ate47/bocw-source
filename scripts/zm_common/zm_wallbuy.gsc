@@ -42,7 +42,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xd8a2d3e5, Offset: 0x550
 // Size: 0x1bc
 function private function_70a657d8() {
@@ -62,7 +62,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xa3fae14c, Offset: 0x718
 // Size: 0xdc
 function private postinit() {
@@ -78,7 +78,7 @@ function private postinit() {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x65399d42, Offset: 0x800
 // Size: 0x7fa
 function on_round_end() {
@@ -157,7 +157,7 @@ function on_round_end() {
                             }
                             break;
                         case 40:
-                        case #"hash_defdefdefdefdef0":
+                        default:
                             if (var_727813d6.trigger.rarity == "green") {
                                 n_chance = 100;
                             } else if (var_727813d6.trigger.rarity == "blue") {
@@ -176,7 +176,7 @@ function on_round_end() {
                                 var_3d2cce9 = "purple";
                                 break;
                             case #"purple":
-                            case #"hash_defdefdefdefdef0":
+                            default:
                                 var_3d2cce9 = "orange";
                                 break;
                             }
@@ -191,7 +191,7 @@ function on_round_end() {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x4d7c304, Offset: 0x1008
 // Size: 0x27c
 function function_26b21477(var_727813d6, var_3d2cce9) {
@@ -217,7 +217,7 @@ function function_26b21477(var_727813d6, var_3d2cce9) {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xab8efb70, Offset: 0x1290
 // Size: 0x394
 function function_8183be86() {
@@ -280,7 +280,7 @@ function function_8183be86() {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xec57d5d, Offset: 0x1630
 // Size: 0x174
 function function_6e93c5b2(var_13f9dee7) {
@@ -316,7 +316,7 @@ function function_6e93c5b2(var_13f9dee7) {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 8, eflags: 0x0
+// Params 8, eflags: 0x2 linked
 // Checksum 0xb2609e23, Offset: 0x17b0
 // Size: 0x464
 function function_a1a1d2(weapon_name, var_e9040287, item_name, chalk_model, index, var_492e21a0, var_58bd64f1, var_13f9dee7) {
@@ -342,7 +342,7 @@ function function_a1a1d2(weapon_name, var_e9040287, item_name, chalk_model, inde
             var_7f9f4eb = 65;
         }
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_7f9f4eb = 45;
         break;
     }
@@ -375,7 +375,7 @@ function function_a1a1d2(weapon_name, var_e9040287, item_name, chalk_model, inde
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xb79ca411, Offset: 0x1c20
 // Size: 0x1a4
 function function_7a2524b3() {
@@ -404,7 +404,7 @@ function function_7a2524b3() {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x58842f51, Offset: 0x1dd0
 // Size: 0xc
 function function_ab0340bb(*var_71f7928d) {
@@ -412,7 +412,7 @@ function function_ab0340bb(*var_71f7928d) {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x263c0d04, Offset: 0x1de8
 // Size: 0xb9c
 function function_d77fb9ee(s_instance) {
@@ -603,7 +603,7 @@ function function_d77fb9ee(s_instance) {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xe2ceecf3, Offset: 0x2990
 // Size: 0x64
 function function_669a830(s_destination) {
@@ -639,7 +639,7 @@ function init_weapon_upgrade() {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xbb1e8dd6, Offset: 0x2bc8
 // Size: 0xdac
 function init_spawnable_weapon_upgrade(s_destination) {
@@ -777,7 +777,7 @@ function init_spawnable_weapon_upgrade(s_destination) {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x93f1f500, Offset: 0x3980
 // Size: 0x94
 function function_44840c02(str_targetname) {
@@ -814,7 +814,7 @@ function function_c970de50(trigger, parent) {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x45d30ae, Offset: 0x3c50
 // Size: 0x74
 function function_753c491c(trigger) {
@@ -923,7 +923,7 @@ function add_dynamic_wallbuy(weapon, wallbuy, pristine) {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x6eb40da0, Offset: 0x42f0
 // Size: 0x470
 function wall_weapon_update_prompt(player) {
@@ -992,7 +992,7 @@ function wall_weapon_update_prompt(player) {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x8a644d93, Offset: 0x4768
 // Size: 0xbc
 function reset_wallbuy_internal(set_hint_string) {
@@ -1051,7 +1051,7 @@ function reset_wallbuys() {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x8df693f6, Offset: 0x4ba0
 // Size: 0x12
 function get_weapon_hint_ammo() {
@@ -1067,7 +1067,7 @@ function weapon_set_first_time_hint(*cost, *ammo_cost) {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xcf0a234d, Offset: 0x4c08
 // Size: 0x3a
 function placeable_mine_can_buy_weapon_extra_check_func(w_weapon) {
@@ -1078,7 +1078,7 @@ function placeable_mine_can_buy_weapon_extra_check_func(w_weapon) {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x5eed4701, Offset: 0x4c50
 // Size: 0xd40
 function weapon_spawn_think() {
@@ -1250,7 +1250,7 @@ function weapon_spawn_think() {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x6e1d84ef, Offset: 0x5998
 // Size: 0x56
 function should_upgrade_weapon(player) {
@@ -1264,7 +1264,7 @@ function should_upgrade_weapon(player) {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x43b87a71, Offset: 0x59f8
 // Size: 0x42a
 function show_all_weapon_buys(player, *cost, *ammo_cost, *is_grenade, var_4ee4441d = 0) {
@@ -1320,7 +1320,7 @@ function show_all_weapon_buys(player, *cost, *ammo_cost, *is_grenade, var_4ee444
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xe0e73d85, Offset: 0x5e30
 // Size: 0x294
 function weapon_show(player, var_4ee4441d = 0) {
@@ -1362,7 +1362,7 @@ function weapon_show(player, var_4ee4441d = 0) {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x82d2dba, Offset: 0x60d0
 // Size: 0xb8
 function is_wallbuy(w_to_check) {
@@ -1396,7 +1396,7 @@ function function_b5992fb1(var_13f9dee7 = #"none") {
     case #"gold":
         self clientfield::set("wallbuy_ambient_fx", 7);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         self clientfield::set("wallbuy_ambient_fx", 0);
         break;
     }
@@ -1423,7 +1423,7 @@ function function_36eb0acc(var_13f9dee7 = #"none") {
     case #"gold":
         self clientfield::set("model_rarity_rob", 7);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         self clientfield::set("model_rarity_rob", 0);
         break;
     }
@@ -1508,7 +1508,7 @@ function function_782e8955(func_override) {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xd5715753, Offset: 0x6740
 // Size: 0x69e
 function function_d26435e4(wallbuy, rarity = undefined, weapon_name = undefined) {
@@ -1600,7 +1600,7 @@ function function_d26435e4(wallbuy, rarity = undefined, weapon_name = undefined)
     case #"sniper_quickscope_t9":
         str_model = #"hash_3cf732953f907c47" + function_db435e40(rarity);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         str_model = #"hash_34775ab64087e586" + function_db435e40(rarity);
         break;
     }
@@ -1608,7 +1608,7 @@ function function_d26435e4(wallbuy, rarity = undefined, weapon_name = undefined)
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xd4da25ae, Offset: 0x6de8
 // Size: 0xda
 function private function_db435e40(var_13f9dee7 = "white") {
@@ -1628,7 +1628,7 @@ function private function_db435e40(var_13f9dee7 = "white") {
     case #"gold":
         return "_ultra";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         return "";
         break;
     }

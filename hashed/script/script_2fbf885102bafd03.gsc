@@ -742,7 +742,7 @@ function function_778aa85f(localclientnum, *oldval, newval, *bnewent, *binitials
         var_e8f666ac.delay = 4;
         var_e8f666ac.scale = 0.6;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
     if (isdefined(var_936d31f7)) {

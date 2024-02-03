@@ -13,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace player_atv/player_atv
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x13453780, Offset: 0x108
 // Size: 0x2c
 function private function_70a657d8() {
@@ -21,7 +21,7 @@ function private function_70a657d8() {
 }
 
 // Namespace player_atv/player_atv
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xca60385, Offset: 0x140
 // Size: 0x32
 function private function_500291c4() {

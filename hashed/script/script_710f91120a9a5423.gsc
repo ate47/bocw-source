@@ -13,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_5e75c551/namespace_5e75c551
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xa3ad9dc3, Offset: 0x108
 // Size: 0x44
 function function_70a657d8() {

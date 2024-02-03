@@ -369,7 +369,7 @@ function function_8cf627fd(params) {
                 line(spawn.origin, var_8a3f16c6.origin, (0, 0, 1), 1, 0, 1200);
             }
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
         if (isdefined(level.var_c7b02cfe)) {

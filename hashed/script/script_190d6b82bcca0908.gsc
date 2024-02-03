@@ -9,7 +9,7 @@
 class czm_game_over : cluielem {
 
     // Namespace czm_game_over/zm_game_over
-    // Params 0, eflags: 0x8
+    // Params 0, eflags: 0xa linked
     // Checksum 0x1ffdef9e, Offset: 0x218
     // Size: 0x14
     __constructor() {
@@ -17,7 +17,7 @@ class czm_game_over : cluielem {
     }
 
     // Namespace czm_game_over/zm_game_over
-    // Params 0, eflags: 0x90 class_linked
+    // Params 0, eflags: 0x92 linked class_linked
     // Checksum 0xafb307a7, Offset: 0x4e0
     // Size: 0x14
     __destructor() {
@@ -25,7 +25,7 @@ class czm_game_over : cluielem {
     }
 
     // Namespace czm_game_over/zm_game_over
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x59173f80, Offset: 0x2b0
     // Size: 0x3c
     function open(player, flags = 0) {
@@ -33,7 +33,7 @@ class czm_game_over : cluielem {
     }
 
     // Namespace czm_game_over/zm_game_over
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0xeff2f2ba, Offset: 0x2f8
     // Size: 0x24
     function close(player) {
@@ -41,7 +41,7 @@ class czm_game_over : cluielem {
     }
 
     // Namespace czm_game_over/zm_game_over
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0x8fea55d2, Offset: 0x238
     // Size: 0x6c
     function setup_clientfields() {
@@ -51,7 +51,7 @@ class czm_game_over : cluielem {
     }
 
     // Namespace czm_game_over/zm_game_over
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0xbc8d2565, Offset: 0x490
     // Size: 0x44
     function set_rounds(player, value) {
@@ -59,7 +59,7 @@ class czm_game_over : cluielem {
     }
 
     // Namespace czm_game_over/zm_game_over
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x7bce2467, Offset: 0x328
     // Size: 0x15c
     function set_state(player, state_name) {
@@ -83,7 +83,7 @@ class czm_game_over : cluielem {
 }
 
 // Namespace zm_game_over/zm_game_over
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xe4ca50c9, Offset: 0xe8
 // Size: 0x34
 function register() {
@@ -93,7 +93,7 @@ function register() {
 }
 
 // Namespace zm_game_over/zm_game_over
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x584b4b43, Offset: 0x128
 // Size: 0x38
 function open(player, flags = 0) {
@@ -101,7 +101,7 @@ function open(player, flags = 0) {
 }
 
 // Namespace zm_game_over/zm_game_over
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x5189623b, Offset: 0x168
 // Size: 0x1c
 function close(player) {
@@ -109,7 +109,7 @@ function close(player) {
 }
 
 // Namespace zm_game_over/zm_game_over
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xc3d6ea8d, Offset: 0x190
 // Size: 0x1a
 function is_open(player) {
@@ -117,7 +117,7 @@ function is_open(player) {
 }
 
 // Namespace zm_game_over/zm_game_over
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x9478374c, Offset: 0x1b8
 // Size: 0x28
 function set_state(player, state_name) {
@@ -125,7 +125,7 @@ function set_state(player, state_name) {
 }
 
 // Namespace zm_game_over/zm_game_over
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xa960e340, Offset: 0x1e8
 // Size: 0x28
 function set_rounds(player, value) {

@@ -123,7 +123,7 @@ function setpoint(point, relativepoint, xoffset, yoffset, movetime) {
             self.aligny = "<unknown string>";
             self.alignx = "<unknown string>";
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             println("<unknown string>" + point);
             break;
         }
@@ -172,7 +172,7 @@ function setpoint(point, relativepoint, xoffset, yoffset, movetime) {
             relativey = "<unknown string>";
             relativex = "<unknown string>";
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             println("<unknown string>" + relativepoint);
             break;
         }

@@ -70,7 +70,7 @@ function function_2ce5cb7e() {
                 case #"damagedone":
                 case #"highestmultikill":
                 case #"objectiveekia":
-                case #"hash_defdefdefdefdef0":
+                default:
                     self.pers[#"hvo"][#"base"][stat.stattype] = 0;
                     self.pers[#"hvo"][#"current"][stat.stattype] = 0;
                     break;
@@ -217,7 +217,7 @@ function function_323c6715() {
                 case #"highestmultikill":
                     score = isdefined(player.pers[stat.stattype]) ? player.pers[stat.stattype] : 0;
                     break;
-                case #"hash_defdefdefdefdef0":
+                default:
                     score = 0;
                     break;
                 }

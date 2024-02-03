@@ -289,7 +289,7 @@ function function_3874b272(type, var_2c5f6748) {
         self thread namespace_61052b71::function_8bd713b2();
     case #"platform":
         self thread namespace_98036e8c::function_1ba8281d();
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assert(0, "<unknown string>");
         #/

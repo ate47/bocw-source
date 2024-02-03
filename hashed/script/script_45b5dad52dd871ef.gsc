@@ -17,7 +17,7 @@
 #namespace ammomod_shatterblast;
 
 // Namespace ammomod_shatterblast/ammomod_shatterblast
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xbb5042f2, Offset: 0x390
 // Size: 0x304
 function function_4e14a881() {
@@ -37,13 +37,13 @@ function function_4e14a881() {
 }
 
 // Namespace ammomod_shatterblast/ammomod_shatterblast
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xdd2fa336, Offset: 0x6a0
 // Size: 0xdc
 function private function_93e5316a(aat_name = "ammomod_shatterblast") {
     switch (aat_name) {
     case #"ammomod_shatterblast":
-    case #"hash_defdefdefdefdef0":
+    default:
         return 0;
         break;
     case #"ammomod_shatterblast_1":
@@ -66,7 +66,7 @@ function private function_93e5316a(aat_name = "ammomod_shatterblast") {
 }
 
 // Namespace ammomod_shatterblast/ammomod_shatterblast
-// Params 8, eflags: 0x0
+// Params 8, eflags: 0x2 linked
 // Checksum 0xf86f489, Offset: 0x788
 // Size: 0x1dc
 function result(*death, attacker, *mod, weapon, *var_fd90b0bb, vpoint, shitloc = self.origin, *boneindex) {
@@ -95,7 +95,7 @@ function result(*death, attacker, *mod, weapon, *var_fd90b0bb, vpoint, shitloc =
 }
 
 // Namespace ammomod_shatterblast/ammomod_shatterblast
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xbdaae7de, Offset: 0x970
 // Size: 0xea
 function function_2f3ba0ef(center) {
@@ -108,7 +108,7 @@ function function_2f3ba0ef(center) {
 }
 
 // Namespace ammomod_shatterblast/ammomod_shatterblast
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xfb1e637e, Offset: 0xa68
 // Size: 0x322
 function function_eb81be7e(attacker, weapon, shitloc, vpoint) {
@@ -141,7 +141,7 @@ function function_eb81be7e(attacker, weapon, shitloc, vpoint) {
 }
 
 // Namespace ammomod_shatterblast/ammomod_shatterblast
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xc09e8103, Offset: 0xd98
 // Size: 0xb4
 function function_a97aaed0(attacker, weapon, shitloc, point) {
@@ -153,7 +153,7 @@ function function_a97aaed0(attacker, weapon, shitloc, point) {
 }
 
 // Namespace ammomod_shatterblast/ammomod_shatterblast
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x442dc629, Offset: 0xe58
 // Size: 0xe0
 function function_cbd0f7ea(attacker, damage, weapon) {
@@ -166,7 +166,7 @@ function function_cbd0f7ea(attacker, damage, weapon) {
 }
 
 // Namespace ammomod_shatterblast/ammomod_shatterblast
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x6107cf69, Offset: 0xf40
 // Size: 0x27c
 function function_945cac2d(damage, attacker, weapon, shitloc, var_84ed9a13) {
@@ -194,7 +194,7 @@ function function_945cac2d(damage, attacker, weapon, shitloc, var_84ed9a13) {
 }
 
 // Namespace ammomod_shatterblast/ammomod_shatterblast
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0xf2223598, Offset: 0x11c8
 // Size: 0x458
 function function_aa443b97(attacker, weapon, *shitloc, vpoint, tier, extra = 0) {
@@ -251,7 +251,7 @@ function function_aa443b97(attacker, weapon, *shitloc, vpoint, tier, extra = 0) 
 }
 
 // Namespace ammomod_shatterblast/ammomod_shatterblast
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x487bce9e, Offset: 0x1628
 // Size: 0x144
 function function_ddd30474(attacker, weapon, vpoint, shitloc, tier) {
@@ -276,7 +276,7 @@ function function_ddd30474(attacker, weapon, vpoint, shitloc, tier) {
 }
 
 // Namespace ammomod_shatterblast/ammomod_shatterblast
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x6168e75, Offset: 0x1778
 // Size: 0xc2
 function private function_9465e5f8(attacker) {

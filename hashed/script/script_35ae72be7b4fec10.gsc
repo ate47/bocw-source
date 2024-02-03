@@ -161,7 +161,7 @@ function function_9c365c3b() {
 }
 
 // Namespace namespace_61e6d095/namespace_61e6d095
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x2109000e, Offset: 0xc80
 // Size: 0x32
 function function_6cbc939b() {
@@ -455,7 +455,7 @@ function function_e544f756(uid, block = 1) {
 }
 
 // Namespace namespace_61e6d095/namespace_61e6d095
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xba27937, Offset: 0x1c28
 // Size: 0x74
 function function_29703592(uid, block = 1) {
@@ -989,7 +989,7 @@ function private function_c6d1cf1f(uid) {
 }
 
 // Namespace namespace_61e6d095/namespace_61e6d095
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xba55b2e4, Offset: 0x3940
 // Size: 0x4c
 function set_count(uid, count, var_80d5359e = 0) {
@@ -1013,7 +1013,7 @@ function set_state(uid, state) {
 }
 
 // Namespace namespace_61e6d095/namespace_61e6d095
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x5166529e, Offset: 0x3a40
 // Size: 0x34
 function function_f942c3ed(uid, clip) {
@@ -1127,7 +1127,7 @@ function function_f2a9266(uid, index, name, value, var_29459a31 = "list", force)
 }
 
 // Namespace namespace_61e6d095/namespace_61e6d095
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x65e5f149, Offset: 0x4160
 // Size: 0x6a
 function function_ce8141d4(uid, index, name, var_29459a31 = "list") {

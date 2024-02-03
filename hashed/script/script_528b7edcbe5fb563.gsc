@@ -231,7 +231,7 @@ function private function_5d3cc643(var_87ee1a5d, var_3b0cd6f4) {
         self function_fccfb0af(var_87ee1a5d, var_27cdd91, var_1084a9e2, var_bc1ac364, &function_29b482e0, &function_9d5e1230);
         self function_fccfb0af(var_87ee1a5d, var_27cdd91, var_1084a9e2, 5, &function_7db40dda, &function_25ac8c68);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         self function_fccfb0af(var_87ee1a5d, primaryweapons, var_6c866ac3, var_bc1ac364, &function_29b482e0, &function_9d5e1230);
         self function_fccfb0af(var_87ee1a5d, var_27cdd91, var_1084a9e2, 5, &function_7db40dda, &function_25ac8c68);
         break;

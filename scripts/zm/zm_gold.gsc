@@ -610,7 +610,7 @@ function function_9f46dbde() {
         var_fdb8ea91 = 2;
         var_99963ba3 = 4;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_fdb8ea91 = 2;
         var_99963ba3 = 4;
         break;
@@ -626,7 +626,7 @@ function function_9f46dbde() {
         case 3:
             var_99963ba3 = 3;
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             var_99963ba3 = 3;
             break;
         }
@@ -1381,7 +1381,7 @@ function cmd(cmd) {
         case #"hash_363948df64c05e49":
             function_d349e956();
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     #/

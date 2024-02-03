@@ -5,7 +5,7 @@
 #namespace namespace_14ee8104;
 
 // Namespace namespace_14ee8104/namespace_14ee8104
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xc017a4d, Offset: 0x230
 // Size: 0x2d4
 function function_54d0d2d1(localclientnum) {
@@ -34,7 +34,7 @@ function function_54d0d2d1(localclientnum) {
 }
 
 // Namespace namespace_14ee8104/namespace_14ee8104
-// Params 4, eflags: 0x4
+// Params 4, eflags: 0x6 linked
 // Checksum 0xac51966f, Offset: 0x510
 // Size: 0xf8
 function private function_b439ef43(localclientnum, model, tag, animname) {
@@ -48,7 +48,7 @@ function private function_b439ef43(localclientnum, model, tag, animname) {
 }
 
 // Namespace namespace_14ee8104/namespace_14ee8104
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xd3a6267c, Offset: 0x610
 // Size: 0xe2
 function private function_65300f49() {

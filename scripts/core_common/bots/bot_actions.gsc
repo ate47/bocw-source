@@ -14,7 +14,7 @@ function function_70a657d8() {
         return;
     }
     switch (level.gametype) {
-    case #"hash_defdefdefdefdef0":
+    default:
         function_9cefb01();
         break;
     }
@@ -44,7 +44,7 @@ function private function_9cefb01() {
 function private function_bebdaa6b(actionparams) {
     weapon = self getcurrentweapon();
     /#
-        actionparams.debug[actionparams.debug.size] = function_a16a090d(weapon);
+        actionparams.debug[actionparams.debug.size] = getweaponname(weapon);
     #/
     if (weapon.clipsize <= 0) {
         /#
@@ -282,7 +282,7 @@ function private revive(actionparams) {
 function private function_97bc2873(actionparams) {
     weapon = self getcurrentweapon();
     /#
-        actionparams.debug[actionparams.debug.size] = function_a16a090d(weapon);
+        actionparams.debug[actionparams.debug.size] = getweaponname(weapon);
     #/
     if (self ismeleeing()) {
         /#

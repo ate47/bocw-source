@@ -571,7 +571,7 @@ function function_568f6426(targets, killstreak_id) {
     case 3:
         dialogkey = "kill3";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         dialogkey = "killMultiple";
         break;
     }

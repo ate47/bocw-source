@@ -206,7 +206,7 @@ function private function_10b50848() {
                         case #"resource":
                             type = "<unknown string>";
                             break;
-                        case #"hash_defdefdefdefdef0":
+                        default:
                             type = "<unknown string>";
                             break;
                         }
@@ -291,7 +291,7 @@ function private function_b6ea080() {
                         case #"resource":
                             type = "<unknown string>";
                             break;
-                        case #"hash_defdefdefdefdef0":
+                        default:
                             type = "<unknown string>";
                             break;
                         }
@@ -945,7 +945,7 @@ function private function_cdd9b388() {
                             case #"epic":
                                 color = (1, 0, 1);
                                 break;
-                            case #"hash_defdefdefdefdef0":
+                            default:
                                 color = vectorscale((1, 1, 1), 0.75);
                                 break;
                             }
@@ -1130,7 +1130,7 @@ function private function_cdd9b388() {
                             case #"epic":
                                 color = (1, 0, 1);
                                 break;
-                            case #"hash_defdefdefdefdef0":
+                            default:
                                 color = vectorscale((1, 1, 1), 0.75);
                                 break;
                             }
@@ -1466,7 +1466,7 @@ function function_9cc59537() {
                             case #"hash_102715229ce64598":
                                 color = (1, 0, 1);
                                 break;
-                            case #"hash_defdefdefdefdef0":
+                            default:
                                 color = (0, 1, 0);
                                 break;
                             }

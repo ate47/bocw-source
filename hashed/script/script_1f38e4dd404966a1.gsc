@@ -10,7 +10,7 @@
 #namespace ammomod_deadwire;
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x93607567, Offset: 0x2d0
 // Size: 0x2ac
 function function_af1f180() {
@@ -31,7 +31,7 @@ function function_af1f180() {
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xca45f0d2, Offset: 0x588
 // Size: 0x64
 function function_9e014d56(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -39,7 +39,7 @@ function function_9e014d56(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x21d5646c, Offset: 0x5f8
 // Size: 0x246
 function zm_ammomod_deadwire_zap(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -72,7 +72,7 @@ function zm_ammomod_deadwire_zap(localclientnum, *oldval, newval, *bnewent, *bin
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xf02786a3, Offset: 0x848
 // Size: 0xac
 function function_4e26277b(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -83,7 +83,7 @@ function function_4e26277b(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x965537ed, Offset: 0x900
 // Size: 0x2e
 function function_a4b3da97(trace) {
@@ -94,7 +94,7 @@ function function_a4b3da97(trace) {
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xc81a707f, Offset: 0x938
 // Size: 0x2a8
 function function_d84b2bab(localclientnum) {
@@ -118,7 +118,7 @@ function function_d84b2bab(localclientnum) {
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xb27c6f4c, Offset: 0xbe8
 // Size: 0x54
 function function_149bbdd9(localclientnum, waittime, beam_id) {

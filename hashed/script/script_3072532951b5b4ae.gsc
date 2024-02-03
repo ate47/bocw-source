@@ -792,7 +792,7 @@ function function_73d5430d(var_f25d7cda) {
         case #"hidden":
             var_839ed558 = var_f25d7cda != "idle" && var_f25d7cda != "unaware" && var_f25d7cda != "hidden";
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             var_839ed558 = self.stealth.var_68585806 != var_f25d7cda;
             break;
         }
@@ -1301,7 +1301,7 @@ function function_98fb391c(behaviortreeentity) {
         style = self.awarenesslevelcurrent == "unaware" ? "patrol" : "alert";
         self namespace_979752dc::set_patrol_style(style);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         self namespace_979752dc::set_patrol_style("alert");
         break;
     }

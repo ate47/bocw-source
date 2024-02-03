@@ -81,7 +81,7 @@ function function_8b014c60(trap, var_7c56394 = 0) {
         trap.var_88eccffa = (float(args[1]), float(args[2]), float(args[3]));
         trap.type = 0;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assert(0);
         #/

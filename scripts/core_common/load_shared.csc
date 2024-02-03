@@ -17,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace load/load_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x291e7f35, Offset: 0x120
 // Size: 0x34
 function main() {
@@ -72,7 +72,7 @@ function apply_mature_filter() {
 }
 
 // Namespace load/load_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x3a6dec54, Offset: 0x2f8
 // Size: 0x3c
 function art_review() {

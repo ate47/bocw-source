@@ -431,7 +431,7 @@ function function_f5866497(localclientnum, *oldval, newval, *bnewent, *binitials
     case 4:
         level notify(#"hash_7d7ad8f95ddcdcbd");
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
 }

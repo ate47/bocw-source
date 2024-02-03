@@ -396,7 +396,7 @@ function function_3e8267cc(msg) {
 // Checksum 0xe22557b3, Offset: 0x1be8
 // Size: 0x2ae
 function function_e3b9f1f5(var_e348e0c6) {
-    var_f75285e6 = "";
+    op = "";
     ret = [];
     var_cd1c0801 = 0;
     ret[var_cd1c0801] = "";
@@ -410,21 +410,21 @@ function function_e3b9f1f5(var_e348e0c6) {
             var_b47752c3--;
             ret[var_cd1c0801] = ret[var_cd1c0801] + c;
         } else if (var_b47752c3 == 0 && c == "&") {
-            if (var_f75285e6 == "|") {
+            if (op == "|") {
                 /#
                     function_3e8267cc("<unknown string>" + var_e348e0c6);
                 #/
             }
-            var_f75285e6 = "&";
+            op = "&";
             var_cd1c0801++;
             ret[var_cd1c0801] = "";
         } else if (var_b47752c3 == 0 && c == "|") {
-            if (var_f75285e6 == "&") {
+            if (op == "&") {
                 /#
                     function_3e8267cc("<unknown string>" + var_e348e0c6);
                 #/
             }
-            var_f75285e6 = "|";
+            op = "|";
             var_cd1c0801++;
             ret[var_cd1c0801] = "";
         } else {
@@ -442,7 +442,7 @@ function function_e3b9f1f5(var_e348e0c6) {
     if (var_cd1c0801 == 0) {
         return ret[var_cd1c0801];
     } else {
-        ret[#"hash_8b05607b556600a"] = var_f75285e6;
+        ret[#"op"] = op;
         return ret;
     }
 }
@@ -494,7 +494,7 @@ function function_4350c864(var_164352d3, var_78c4654) {
             return 0;
         }
         return 1;
-    } else if (var_164352d3[#"hash_8b05607b556600a"] == "|") {
+    } else if (var_164352d3[#"op"] == "|") {
         for (i = 0; i < var_164352d3.size - 1; i++) {
             if (function_4350c864(var_164352d3[i], var_78c4654)) {
                 return 1;
@@ -711,7 +711,7 @@ function function_547ca7d2(safehouse, var_fc9732a9 = 1) {
     /#
         assert(isdefined(var_65792f8b) && isdefined(var_65792f8b.issafehouse));
     #/
-    if (safehouse == #"hash_15a4ef8668396552" || safehouse == #"cp_ger_hub8") {
+    if (safehouse == #"cp_ger_hub_post_cuba" || safehouse == #"cp_ger_hub8") {
         var_fc9732a9 = 0;
     }
     if (isdefined(var_65792f8b) && is_true(var_65792f8b.issafehouse)) {
@@ -729,7 +729,7 @@ function function_547ca7d2(safehouse, var_fc9732a9 = 1) {
 }
 
 // Namespace skipto/skipto
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x23f5dcad, Offset: 0x3070
 // Size: 0x3e
 function function_3a4ee594(var_a009ebde) {
@@ -958,7 +958,7 @@ function function_f52ec735(func) {
 }
 
 // Namespace skipto/skipto
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x88f8191c, Offset: 0x3be0
 // Size: 0x1c
 function function_46d8992a(skipto) {
@@ -1713,7 +1713,7 @@ function function_6914f647() {
             missionname = getmapatindex(i);
             var_65792f8b = function_2717b55f(missionname);
             var_8670e6a3 = savegame::function_6440b06b(#"persistent", missionname);
-            if (isdefined(var_65792f8b) && is_true(var_65792f8b.issafehouse) && is_true(var_8670e6a3.unlocked) && missionname != #"hash_15a4ef8668396552" && missionname != #"cp_ger_hub8") {
+            if (isdefined(var_65792f8b) && is_true(var_65792f8b.issafehouse) && is_true(var_8670e6a3.unlocked) && missionname != #"cp_ger_hub_post_cuba" && missionname != #"cp_ger_hub8") {
                 return missionname;
             }
         }
@@ -1727,13 +1727,13 @@ function function_6914f647() {
 // Size: 0xa8
 function function_99ddd76d() {
     safehouse = function_6914f647();
-    if (safehouse == #"hash_5c0f0a9b8e93f817") {
+    if (safehouse == #"cp_ger_hub_post_yamantau") {
         return 1;
-    } else if (safehouse == #"hash_6bf60a860d13260d") {
+    } else if (safehouse == #"cp_ger_hub_post_kgb") {
         return 2;
     } else {
         /#
-            assert(safehouse != #"hash_15a4ef8668396552" && safehouse != #"cp_ger_hub8");
+            assert(safehouse != #"cp_ger_hub_post_cuba" && safehouse != #"cp_ger_hub8");
         #/
         return 0;
     }
@@ -1843,7 +1843,7 @@ function function_1c2dfc20(var_83104433 = function_60ca00f5(), var_585e39fb = fu
         var_9ba5cef7 = savegame::function_2ee66e93("previous_mission", "");
         if (var_9ba5cef7 != "") {
             var_43758eae = function_2717b55f(var_9ba5cef7);
-            var_5e7454e = is_true(var_43758eae.issafehouse) && var_9ba5cef7 != #"hash_15a4ef8668396552" && var_9ba5cef7 != #"cp_ger_hub8";
+            var_5e7454e = is_true(var_43758eae.issafehouse) && var_9ba5cef7 != #"cp_ger_hub_post_cuba" && var_9ba5cef7 != #"cp_ger_hub8";
         }
         if (!var_8e962e56) {
             if (is_safehouse) {

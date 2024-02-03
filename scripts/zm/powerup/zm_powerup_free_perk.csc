@@ -14,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_powerup_free_perk/zm_powerup_free_perk
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x8b338208, Offset: 0xf0
 // Size: 0x34
 function private function_70a657d8() {

@@ -95,7 +95,7 @@ function autoexec registerbehaviorscriptfunctions() {
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x55dcb8df, Offset: 0xa10
 // Size: 0x14c
 function function_fa6d93ea(entity) {
@@ -122,7 +122,7 @@ function function_fa6d93ea(entity) {
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x66737bc3, Offset: 0xb68
 // Size: 0x72
 function private exposedupdateservice(entity) {
@@ -136,7 +136,7 @@ function private exposedupdateservice(entity) {
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x3249f855, Offset: 0xbe8
 // Size: 0x3e
 function private exposedshootstart(entity) {
@@ -146,7 +146,7 @@ function private exposedshootstart(entity) {
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x33e92d24, Offset: 0xc30
 // Size: 0xde
 function private exposedshootupdate(entity) {
@@ -169,7 +169,7 @@ function private exposedshootupdate(entity) {
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x3ae1e110, Offset: 0xd18
 // Size: 0x22
 function private exposedshootterminate(entity) {
@@ -178,7 +178,7 @@ function private exposedshootterminate(entity) {
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x6f8ce3df, Offset: 0xd48
 // Size: 0x3c
 function private exposedreloadinitialize(entity) {
@@ -187,7 +187,7 @@ function private exposedreloadinitialize(entity) {
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x15ea273, Offset: 0xd90
 // Size: 0x54
 function private exposedreloadterminate(entity) {
@@ -198,7 +198,7 @@ function private exposedreloadterminate(entity) {
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xef81c98d, Offset: 0xdf0
 // Size: 0x44
 function private preparetoreacttoenemy(behaviortreeentity) {
@@ -208,7 +208,7 @@ function private preparetoreacttoenemy(behaviortreeentity) {
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x9f0af29a, Offset: 0xe40
 // Size: 0x22
 function private resetreactiontoenemy(behaviortreeentity) {
@@ -217,7 +217,7 @@ function private resetreactiontoenemy(behaviortreeentity) {
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xf40aa7be, Offset: 0xe70
 // Size: 0x54
 function private nocloseenemyservice(behaviortreeentity) {
@@ -229,7 +229,7 @@ function private nocloseenemyservice(behaviortreeentity) {
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x82a70972, Offset: 0xed0
 // Size: 0x5a
 function private hascloseenemy(behaviortreeentity) {
@@ -243,7 +243,7 @@ function private hascloseenemy(behaviortreeentity) {
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x7c7decd4, Offset: 0xf38
 // Size: 0x2a
 function private function_56512b87(entity) {
@@ -252,7 +252,7 @@ function private function_56512b87(entity) {
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x1da5f859, Offset: 0xf70
 // Size: 0x36
 function private function_52dfff39(entity) {
@@ -264,7 +264,7 @@ function private function_52dfff39(entity) {
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x2cbc1442, Offset: 0xfb0
 // Size: 0x10
 function private function_bb575b62(*entity) {
@@ -272,7 +272,7 @@ function private function_bb575b62(*entity) {
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xcf54783f, Offset: 0xfc8
 // Size: 0x20
 function private function_3a4e776(entity) {
@@ -280,7 +280,7 @@ function private function_3a4e776(entity) {
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x8370e0ec, Offset: 0xff0
 // Size: 0x34
 function private function_ec3ea122(entity) {
@@ -288,7 +288,7 @@ function private function_ec3ea122(entity) {
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0x2648cb13, Offset: 0x1030
 // Size: 0x386
 function private shouldusesidearmpistol(entity, checkdistance = function_a3f6cdac(300)) {
@@ -321,7 +321,7 @@ function private shouldusesidearmpistol(entity, checkdistance = function_a3f6cda
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0xcc6835cd, Offset: 0x13c0
 // Size: 0x4c
 function private setpathmovedelayedrandom(behaviortreeentity, *asmstatename) {
@@ -329,7 +329,7 @@ function private setpathmovedelayedrandom(behaviortreeentity, *asmstatename) {
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0x9b1aeeeb, Offset: 0x1418
 // Size: 0x7c
 function private exposedsetdesiredstancetostand(behaviortreeentity, *asmstatename) {
@@ -339,7 +339,7 @@ function private exposedsetdesiredstancetostand(behaviortreeentity, *asmstatenam
 }
 
 // Namespace archetype_human_exposed/archetype_human_exposed
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xad6abb5e, Offset: 0x14a0
 // Size: 0x3c6
 function private tryreacquireservice(behaviortreeentity) {
@@ -396,7 +396,7 @@ function private tryreacquireservice(behaviortreeentity) {
             behaviortreeentity flagenemyunattackable();
         }
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         if (behaviortreeentity.reacquire_state > 15) {
             behaviortreeentity.reacquire_state = 0;
             return 0;

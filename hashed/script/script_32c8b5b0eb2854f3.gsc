@@ -10,7 +10,7 @@ function is_state(state) {
 }
 
 // Namespace gamestate/namespace_fa941a1
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x9a6b5c35, Offset: 0xa8
 // Size: 0x3e
 function is_game_over() {

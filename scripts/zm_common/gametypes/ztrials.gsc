@@ -277,7 +277,7 @@ function private function_1201b5da(medal) {
         case #"bronze":
             round = 10;
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             /#
                 assert(0);
             #/

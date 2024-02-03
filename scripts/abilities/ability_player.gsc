@@ -484,7 +484,7 @@ function register_gadget_primed_callbacks(type, primed_func) {
 }
 
 // Namespace ability_player/ability_player
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x6f88b9c9, Offset: 0x1b00
 // Size: 0x4e
 function register_gadget_is_inuse_callbacks(type, inuse_func) {
@@ -495,7 +495,7 @@ function register_gadget_is_inuse_callbacks(type, inuse_func) {
 }
 
 // Namespace ability_player/ability_player
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x3b22e524, Offset: 0x1b58
 // Size: 0x4e
 function register_gadget_is_flickering_callbacks(type, flickering_func) {
@@ -1353,7 +1353,7 @@ function function_174037fe(root, pid, a_weapons, weapon_type, *menu_index) {
         if (isdefined(weapon_type)) {
             player_devgui_root = pid + menu_index + "<unknown string>";
             for (i = 0; i < weapon_type.size; i++) {
-                function_b04fbf27(player_devgui_root, a_weapons, function_a16a090d(weapon_type[i]), i + 1);
+                function_b04fbf27(player_devgui_root, a_weapons, getweaponname(weapon_type[i]), i + 1);
             }
         }
     #/
@@ -1368,7 +1368,7 @@ function function_76032a31(root, pid, a_weapons, weapon_type, *menu_index) {
         if (isdefined(weapon_type)) {
             player_devgui_root = pid + menu_index + "<unknown string>";
             for (i = 0; i < weapon_type.size; i++) {
-                function_50543efb(player_devgui_root, a_weapons, function_a16a090d(weapon_type[i]), i + 1);
+                function_50543efb(player_devgui_root, a_weapons, getweaponname(weapon_type[i]), i + 1);
             }
         }
     #/
@@ -1383,7 +1383,7 @@ function function_a40d04ca(root, pid, a_weapons, weapon_type, *menu_index) {
         if (isdefined(weapon_type)) {
             player_devgui_root = pid + menu_index + "<unknown string>";
             for (i = 0; i < weapon_type.size; i++) {
-                function_90502d72(player_devgui_root, a_weapons, function_a16a090d(weapon_type[i]), i + 1);
+                function_90502d72(player_devgui_root, a_weapons, getweaponname(weapon_type[i]), i + 1);
             }
         }
     #/
@@ -1477,7 +1477,7 @@ function abilities_devgui_think() {
                     break;
                 case 0:
                     break;
-                case #"hash_defdefdefdefdef0":
+                default:
                     break;
                 }
                 setdvar(#"hash_67d528f29bfc7c97", "<unknown string>");
@@ -1502,7 +1502,7 @@ function function_c94ba490(weapon) {
         self gadgetpowerreset(slot, 1);
         self gadgetpowerset(slot, 100);
         self gadgetcharging(slot, 0);
-        self iprintlnbold(function_a16a090d(weapon));
+        self iprintlnbold(getweaponname(weapon));
     #/
 }
 

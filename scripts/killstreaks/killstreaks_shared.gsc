@@ -32,7 +32,7 @@
 #namespace killstreaks;
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xa048c03, Offset: 0x538
 // Size: 0x384
 function init_shared() {
@@ -69,7 +69,7 @@ function init_shared() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x48d7a2ab, Offset: 0x8c8
 // Size: 0x9c
 function function_447e6858() {
@@ -217,7 +217,7 @@ function private function_e48aca4d(type, bundle, weapon, vehicle, killstreak_use
         level.killstreaks[type].teamkillpenaltyscale = level.teamkillreducedpenalty;
         break;
     case #"default":
-    case #"hash_defdefdefdefdef0":
+    default:
         level.killstreaks[type].teamkillpenaltyscale = 1;
         break;
     }
@@ -241,7 +241,7 @@ function register_bundle(bundle, killstreak_use_function) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x7adbc2db, Offset: 0x1298
 // Size: 0x4c
 function register_killstreak(bundlename, use_function) {
@@ -896,7 +896,7 @@ function give_weapon(killstreaktype, usestoredammo) {
             case #"one":
                 delta = 1;
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 delta = 0;
                 break;
             }
@@ -1686,7 +1686,7 @@ function play_killstreak_ready_sfx(killstreaktype) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x60b56eac, Offset: 0x6418
 // Size: 0x36e
 function player_killstreak_threat_tracking(killstreaktype, var_bdb26ff0) {
@@ -1929,7 +1929,7 @@ function killstreak_data_dump() {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xa32f6ef2, Offset: 0x7290
 // Size: 0x94
 function function_2b6aa9e8(killstreak_ref, destroyed_callback, low_health_callback, emp_callback) {
@@ -2147,7 +2147,7 @@ function function_73566ec7(attacker, weapon, owner) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 15, eflags: 0x0
+// Params 15, eflags: 0x2 linked
 // Checksum 0x5de1b37f, Offset: 0x8138
 // Size: 0x3c4
 function ondamageperweapon(killstreak_ref, attacker, damage, flags, type, weapon, max_health, destroyed_callback, low_health, *low_health_callback, emp_damage, emp_callback, allow_bullet_damage, chargelevel, var_488beb6d) {
@@ -2248,7 +2248,7 @@ function get_old_damage(attacker, weapon, type, damage, allow_bullet_damage, bul
             damage = self.rocketdamage;
         }
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
     return damage;
@@ -2701,7 +2701,7 @@ function processscoreevent(event, player, victim, weapon) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xf1888fc, Offset: 0x9b00
 // Size: 0x256
 function update_player_threat(player) {
@@ -2744,7 +2744,7 @@ function update_player_threat(player) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x5d1367b, Offset: 0x9d60
 // Size: 0xc2
 function update_non_player_threat(non_player) {
@@ -2759,7 +2759,7 @@ function update_non_player_threat(non_player) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x404fe10b, Offset: 0x9e30
 // Size: 0x1be
 function update_actor_threat(actor) {
@@ -2788,7 +2788,7 @@ function update_actor_threat(actor) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x5867683, Offset: 0x9ff8
 // Size: 0xa6
 function update_dog_threat(dog) {
@@ -2815,7 +2815,7 @@ function missile_valid_target_check(missiletarget) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x7e8de244, Offset: 0xa168
 // Size: 0x14e
 function update_missile_player_threat(player) {
@@ -2841,7 +2841,7 @@ function update_missile_player_threat(player) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x57d9e50e, Offset: 0xa2c0
 // Size: 0x1a
 function update_missile_dog_threat(dog) {
@@ -2849,7 +2849,7 @@ function update_missile_dog_threat(dog) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xee7bff7e, Offset: 0xa2e8
 // Size: 0x1a
 function function_6d23c51c(dog) {
@@ -3219,7 +3219,7 @@ function function_257a5f13(killstreaktype, var_ba5a6782) {
 }
 
 // Namespace killstreaks/killstreaks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x79cd6c68, Offset: 0xb260
 // Size: 0x184
 function function_b182645e(player, hardpointtype) {

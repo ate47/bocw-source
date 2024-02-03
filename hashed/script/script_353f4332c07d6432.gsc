@@ -421,7 +421,7 @@ function function_ef40fc60() {
     n_players = zm_utility::get_number_of_valid_players();
     switch (n_players) {
     case 1:
-    case #"hash_defdefdefdefdef0":
+    default:
         n_zombie_count = 30;
         var_262fa864 = 3;
         var_61453888 = 1;
@@ -1148,7 +1148,7 @@ function function_ea45ba4c(n_time_remaining = 10) {
 function function_bbc799ae(str_state) {
     switch (str_state) {
     case #"off":
-    case #"hash_defdefdefdefdef0":
+    default:
         var_6a25fa7 = 0;
         var_d0b16504 = 0;
         break;

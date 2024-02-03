@@ -24,7 +24,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace ultimate_turret/ultimate_turret
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xdadf6f7a, Offset: 0x168
 // Size: 0x16c
 function private function_70a657d8() {
@@ -41,7 +41,7 @@ function private function_70a657d8() {
 }
 
 // Namespace ultimate_turret/ultimate_turret
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x398c238, Offset: 0x2e0
 // Size: 0x54
 function function_634677dd() {
@@ -52,7 +52,7 @@ function function_634677dd() {
 }
 
 // Namespace ultimate_turret/ultimate_turret
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xa1091999, Offset: 0x340
 // Size: 0x9c
 function function_bf97d10(*params) {
@@ -65,7 +65,7 @@ function function_bf97d10(*params) {
 }
 
 // Namespace ultimate_turret/ultimate_turret
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xf9d12146, Offset: 0x3e8
 // Size: 0x2c
 function function_4b645b3f(killstreaktype) {
@@ -73,7 +73,7 @@ function function_4b645b3f(killstreaktype) {
 }
 
 // Namespace ultimate_turret/ultimate_turret
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x869e3056, Offset: 0x420
 // Size: 0x66
 function turret_destroyed(attacker, weapon) {
@@ -86,7 +86,7 @@ function turret_destroyed(attacker, weapon) {
 }
 
 // Namespace ultimate_turret/ultimate_turret
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x9595cda, Offset: 0x490
 // Size: 0xa8
 function function_53028023(v_origin, *v_angles, *player) {
@@ -97,7 +97,7 @@ function function_53028023(v_origin, *v_angles, *player) {
 }
 
 // Namespace ultimate_turret/ultimate_turret
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x97428d76, Offset: 0x540
 // Size: 0x220
 function turretscanning() {
@@ -128,7 +128,7 @@ function turretscanning() {
 }
 
 // Namespace ultimate_turret/ultimate_turret
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x4afc0448, Offset: 0x768
 // Size: 0x1c
 function function_a76ab7f7() {

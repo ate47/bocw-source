@@ -8,7 +8,7 @@
 class csr_beacon_menu : cluielem {
 
     // Namespace csr_beacon_menu/sr_beacon_menu
-    // Params 0, eflags: 0x8
+    // Params 0, eflags: 0xa linked
     // Checksum 0x999020d4, Offset: 0x350
     // Size: 0x14
     __constructor() {
@@ -16,7 +16,7 @@ class csr_beacon_menu : cluielem {
     }
 
     // Namespace csr_beacon_menu/sr_beacon_menu
-    // Params 0, eflags: 0x90 class_linked
+    // Params 0, eflags: 0x92 linked class_linked
     // Checksum 0x339de60f, Offset: 0x4a0
     // Size: 0x14
     __destructor() {
@@ -24,7 +24,7 @@ class csr_beacon_menu : cluielem {
     }
 
     // Namespace csr_beacon_menu/sr_beacon_menu
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x22ccd385, Offset: 0x468
     // Size: 0x30
     function function_666779d(localclientnum, value) {
@@ -32,7 +32,7 @@ class csr_beacon_menu : cluielem {
     }
 
     // Namespace csr_beacon_menu/sr_beacon_menu
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x417f4cce, Offset: 0x438
     // Size: 0x24
     function open(localclientnum) {
@@ -40,7 +40,7 @@ class csr_beacon_menu : cluielem {
     }
 
     // Namespace csr_beacon_menu/sr_beacon_menu
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0x148641e6, Offset: 0x3c8
     // Size: 0x1c
     function register_clientside() {
@@ -48,7 +48,7 @@ class csr_beacon_menu : cluielem {
     }
 
     // Namespace csr_beacon_menu/sr_beacon_menu
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x89f855af, Offset: 0x370
     // Size: 0x4c
     function setup_clientfields(var_d37c6da9) {
@@ -57,7 +57,7 @@ class csr_beacon_menu : cluielem {
     }
 
     // Namespace csr_beacon_menu/sr_beacon_menu
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0xd2580397, Offset: 0x3f0
     // Size: 0x40
     function function_fa582112(localclientnum) {
@@ -68,7 +68,7 @@ class csr_beacon_menu : cluielem {
 }
 
 // Namespace sr_beacon_menu/sr_beacon_menu
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x82695396, Offset: 0xe8
 // Size: 0x176
 function register(var_d37c6da9) {

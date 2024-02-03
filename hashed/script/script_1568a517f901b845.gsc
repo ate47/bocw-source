@@ -8,7 +8,7 @@
 #namespace napalm_strike;
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xc490d44a, Offset: 0x120
 // Size: 0x150
 function init_shared(bundlename) {
@@ -21,7 +21,7 @@ function init_shared(bundlename) {
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x3a690cc6, Offset: 0x278
 // Size: 0x28c
 function function_e0221c63(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -47,7 +47,7 @@ function function_e0221c63(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xb81857eb, Offset: 0x510
 // Size: 0xc4
 function function_818e69da(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -61,7 +61,7 @@ function function_818e69da(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace napalm_strike/namespace_b00a727a
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xcfd5513d, Offset: 0x5e0
 // Size: 0xa4
 function function_344bba9b(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

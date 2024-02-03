@@ -154,7 +154,7 @@ function on_menu_response() {
                 case #"spectator":
                     self [[ level.spectator ]]();
                     break;
-                case #"hash_defdefdefdefdef0":
+                default:
                     self [[ level.teammenu ]](response);
                     break;
                 }

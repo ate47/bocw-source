@@ -294,7 +294,7 @@ function private on_begin(var_e097dc07, var_f5300808) {
         level.var_4400c4f7 = 1;
         level.var_869ea5a = 1;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assert(0, "<unknown string>" + var_e097dc07);
         #/

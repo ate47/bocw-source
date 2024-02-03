@@ -154,7 +154,7 @@ function hit_alert_sfx_mp(mod, inflictor, perkfeedback, weapon, victim, *psoffse
             case #"vehicle":
                 hitalias = #"hash_2ce81d103e923201";
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 hitalias = #"mpl_hit_alert";
                 break;
             }
@@ -233,7 +233,7 @@ function hit_alert_sfx_mp(mod, inflictor, perkfeedback, weapon, victim, *psoffse
             case #"default_loud":
                 hitalias = #"mpl_hit_heli_gunner";
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 hitalias = #"mpl_hit_alert";
                 break;
             }
@@ -321,7 +321,7 @@ function hit_alert_sfx_zm(mod, inflictor, *perkfeedback, weapon, victim, *psoffs
                 }
             LOC_00000324:
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 hitalias = #"mpl_hit_alert";
                 break;
             }

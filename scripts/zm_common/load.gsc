@@ -54,7 +54,7 @@
 #namespace load;
 
 // Namespace load/createstruct
-// Params 1, eflags: 0x24
+// Params 1, eflags: 0x26 linked
 // Checksum 0xf0614eb2, Offset: 0x2b8
 // Size: 0x25c
 function private event_handler[createstruct] function_e0a8e4ba(struct) {
@@ -91,7 +91,7 @@ function autoexec function_aeb1baea() {
 }
 
 // Namespace load/load
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x3a059c06, Offset: 0x568
 // Size: 0xfc
 function function_5e443ed1() {
@@ -112,7 +112,7 @@ function function_5e443ed1() {
 }
 
 // Namespace load/load
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xb82c9c75, Offset: 0x670
 // Size: 0x92
 function start_intro_screen_zm() {
@@ -125,7 +125,7 @@ function start_intro_screen_zm() {
 }
 
 // Namespace load/load
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xc773604c, Offset: 0x710
 // Size: 0x34
 function register_clientfields() {

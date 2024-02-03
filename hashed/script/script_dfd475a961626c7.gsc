@@ -94,7 +94,7 @@ function private function_887ac605(objective) {
     case #"no_game":
     case #"hash_6e531fb9475df744":
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             function_81fac19d(function_d78e3644(), "<unknown string>" + objective + "<unknown string>");
         #/
@@ -161,7 +161,7 @@ function private function_32ab045(ent, name) {
     case #"cargo_debris":
         level thread cargo_debris(ent);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             function_81fac19d(function_d78e3644(), "<unknown string>" + function_783b69(name, "<unknown string>"));
         #/
@@ -198,7 +198,7 @@ function private _trigger(*player, trigger, *var_ec80d14b) {
         break;
     case #"hash_d19cd1aa24166b3":
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             function_81fac19d(function_d78e3644(), "<unknown string>" + trigger_name + "<unknown string>");
         #/
@@ -321,7 +321,7 @@ function private function_f2a2832d(*player, msg) {
         function_2cca7b47(0, #"musictrack_cp_takedown_6");
         function_2cca7b47(0, #"musictrack_cp_takedown_7");
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             function_81fac19d(function_d78e3644(), "<unknown string>" + function_783b69(msg, "<unknown string>"));
         #/

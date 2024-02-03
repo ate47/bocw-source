@@ -1314,7 +1314,7 @@ function function_3f664506(e_catalyst, player, v_loc) {
     case #"boss":
         var_103da188 = 2700;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_103da188 = self.health;
         break;
     }

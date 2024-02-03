@@ -75,7 +75,7 @@ function function_c52e8ba(player, var_8d5d092c) {
         case #"firebase":
             self.hint_string[n_player_index] = #"zombie/fasttravel_locked";
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
         b_result = 1;

@@ -269,7 +269,7 @@ function function_ec609754(n_difficulty) {
                     }
                     break;
                 case 6:
-                case #"hash_defdefdefdefdef0":
+                default:
                     if (var_727813d6.trigger.rarity == "green") {
                         n_chance = 100;
                     } else if (var_727813d6.trigger.rarity == "blue") {
@@ -288,7 +288,7 @@ function function_ec609754(n_difficulty) {
                         var_3d2cce9 = "purple";
                         break;
                     case #"purple":
-                    case #"hash_defdefdefdefdef0":
+                    default:
                         var_3d2cce9 = "orange";
                         break;
                     }

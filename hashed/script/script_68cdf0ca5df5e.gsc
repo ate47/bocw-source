@@ -1401,7 +1401,7 @@ function function_6d6bfe1f(var_e1dd1170, rounds = 4) {
         case 3:
             level thread function_7655afe();
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             /#
                 assert(0, "<unknown string>");
             #/

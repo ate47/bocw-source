@@ -183,7 +183,7 @@ function function_4ec353f8(var_a5cecef6, idx) {
     case 3:
         self thread function_14456228(var_a5cecef6);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assert(0);
         #/

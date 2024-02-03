@@ -117,21 +117,21 @@ function function_c52e8ba(player, var_8d5d092c) {
                 b_result = 1;
             }
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             self.hint_string[n_player_index] = #"zombie/fasttravel_locked";
             b_result = 1;
             break;
         }
     } else if (is_true(player.var_9c7b96ed[var_8d5d092c])) {
         switch (self.stub.script_string) {
-        case #"hash_defdefdefdefdef0":
+        default:
             self.hint_string[n_player_index] = #"hash_7667bd0f83307360";
             b_result = 1;
             break;
         }
     } else if (isdefined(self.stub.delay) && !self.stub flag::get("delayed")) {
         switch (self.stub.script_string) {
-        case #"hash_defdefdefdefdef0":
+        default:
             self.hint_string[n_player_index] = #"zombie/fasttravel_delay";
             b_result = 1;
             break;
@@ -164,7 +164,7 @@ function function_c52e8ba(player, var_8d5d092c) {
         case #"bunker_to_observation":
             self.hint_string[n_player_index] = #"hash_3b286335feef3751";
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             self.hint_string[n_player_index] = #"hash_2731cc5c1208e2e4";
             break;
         }

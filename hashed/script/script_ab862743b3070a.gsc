@@ -923,7 +923,7 @@ function function_71e3c90d() {
             return 20;
         }
         return 10;
-    case #"hash_defdefdefdefdef0":
+    default:
         if (zm_utility::is_trials()) {
             return 28;
         }

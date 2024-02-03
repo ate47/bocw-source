@@ -182,7 +182,7 @@ function function_70e3ac08(index) {
     case 3:
         return "zamr_env_nar_f";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
 }
@@ -342,7 +342,7 @@ function function_e1798a8e(n_count) {
     case 3:
         level zm_vo::function_7622cb70(#"hash_398076d3d3859f64");
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         level zm_vo::function_7622cb70(#"hash_398075d3d3859db1");
         break;
     }
@@ -491,7 +491,7 @@ function cmd(cmd) {
         case #"hash_50a665b85beac5a5":
             level thread function_7622cb70("<unknown string>");
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     #/

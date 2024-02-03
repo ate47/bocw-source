@@ -13,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace location/location
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xc351fbb0, Offset: 0x108
 // Size: 0x8c
 function private function_70a657d8() {
@@ -24,7 +24,7 @@ function private function_70a657d8() {
 }
 
 // Namespace location/location
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x956322d2, Offset: 0x1a0
 // Size: 0xc8
 function function_ab7f70b9(str_zone) {
@@ -39,7 +39,7 @@ function function_ab7f70b9(str_zone) {
 }
 
 // Namespace location/location
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x3dffe22b, Offset: 0x270
 // Size: 0xde
 function get_current_zone() {
@@ -56,7 +56,7 @@ function get_current_zone() {
 }
 
 // Namespace location/location
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x3404c303, Offset: 0x358
 // Size: 0xba
 function function_5f3b1735(point) {
@@ -69,7 +69,7 @@ function function_5f3b1735(point) {
 }
 
 // Namespace location/location
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x2b90e325, Offset: 0x420
 // Size: 0xe6
 function function_f6ad2be6(localclientnum) {
@@ -86,7 +86,7 @@ function function_f6ad2be6(localclientnum) {
 }
 
 // Namespace location/location
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x90ac7caa, Offset: 0x510
 // Size: 0x6c
 function on_player_spawned(localclientnum) {

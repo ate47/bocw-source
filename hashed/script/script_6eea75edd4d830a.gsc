@@ -6,7 +6,7 @@
 #namespace namespace_ca99987f;
 
 // Namespace namespace_ca99987f/namespace_ca99987f
-// Params 8, eflags: 0x0
+// Params 8, eflags: 0x2 linked
 // Checksum 0xedd3c79c, Offset: 0x120
 // Size: 0xa4
 function function_86ac55c5(dvar, var_c7ec7d60, value, time, var_4ca73085, ease_in, ease_out, var_33ce6852) {
@@ -14,7 +14,7 @@ function function_86ac55c5(dvar, var_c7ec7d60, value, time, var_4ca73085, ease_i
 }
 
 // Namespace namespace_ca99987f/namespace_ca99987f
-// Params 8, eflags: 0x0
+// Params 8, eflags: 0x2 linked
 // Checksum 0xd0722e04, Offset: 0x1d0
 // Size: 0x18c
 function ease_origin(target, time, var_4ca73085, axis, additive, ease_in, ease_out, var_33ce6852) {
@@ -68,7 +68,7 @@ function ease_angles(target, time, var_4ca73085, axis, additive, ease_in, ease_o
 }
 
 // Namespace namespace_ca99987f/namespace_ca99987f
-// Params 11, eflags: 0x40
+// Params 11, eflags: 0x42 linked
 // Checksum 0x9adf1b30, Offset: 0x500
 // Size: 0x4fe
 function function_d4a4a726(var_be4baa48, target_value, time, var_f71e2d8f, var_4ca73085 = #"linear", notifies, endons, ease_in, ease_out, var_33ce6852, ...) {
@@ -114,7 +114,7 @@ function function_d4a4a726(var_be4baa48, target_value, time, var_f71e2d8f, var_4
         case 1:
             var_b3160f0.var_872a88cd = [[ level.var_b649495c[var_4ca73085] ]](var_be4baa48, target_value, var_b3160f0.var_600ff81f, ease_in, ease_out, var_33ce6852[0]);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             var_b3160f0.var_872a88cd = [[ level.var_b649495c[var_4ca73085] ]](var_be4baa48, target_value, var_b3160f0.var_600ff81f, ease_in, ease_out);
             break;
         }

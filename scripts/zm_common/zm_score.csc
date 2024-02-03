@@ -15,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_score/zm_score
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x7b9d5bd7, Offset: 0x180
 // Size: 0x194
 function private function_70a657d8() {
@@ -30,7 +30,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_score/zm_score
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x1f0516f7, Offset: 0x320
 // Size: 0xfc
 function score_cf_register_info(name, version, max_count, func_callback) {

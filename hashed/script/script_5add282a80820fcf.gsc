@@ -18,7 +18,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace mechz/mechz
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x613d4f92, Offset: 0x600
 // Size: 0x328
 function init() {
@@ -41,7 +41,7 @@ function init() {
 }
 
 // Namespace mechz/mechz
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x8be5e065, Offset: 0x930
 // Size: 0x284
 function precache() {
@@ -70,7 +70,7 @@ function precache() {
 #namespace namespace_e0c51a8c;
 
 // Namespace namespace_e0c51a8c/mechz
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x1c358702, Offset: 0xbc0
 // Size: 0x94
 function private function_b8b1efcd(localclientnum) {
@@ -81,7 +81,7 @@ function private function_b8b1efcd(localclientnum) {
 }
 
 // Namespace namespace_e0c51a8c/mechz
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x13dc63f, Offset: 0xc60
 // Size: 0x26e
 function function_e7aefb0(localclientnum, pos, *surface, *notetrack, bone) {
@@ -117,7 +117,7 @@ function function_e7aefb0(localclientnum, pos, *surface, *notetrack, bone) {
 }
 
 // Namespace namespace_e0c51a8c/mechz
-// Params 7, eflags: 0x4
+// Params 7, eflags: 0x6 linked
 // Checksum 0x28304a95, Offset: 0xed8
 // Size: 0x16a
 function private function_3fb58860(localclientnum, *oldvalue, newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
@@ -139,7 +139,7 @@ function private function_3fb58860(localclientnum, *oldvalue, newvalue, *bnewent
 }
 
 // Namespace namespace_e0c51a8c/mechz
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x6425dd98, Offset: 0x1050
 // Size: 0x94
 function function_e7cbec57(localclientnum, *oldvalue, *newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
@@ -148,7 +148,7 @@ function function_e7cbec57(localclientnum, *oldvalue, *newvalue, *bnewent, *bini
 }
 
 // Namespace namespace_e0c51a8c/mechz
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x46702ba7, Offset: 0x10f0
 // Size: 0x112
 function function_e364c573(localclientnum, *oldvalue, *newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
@@ -159,7 +159,7 @@ function function_e364c573(localclientnum, *oldvalue, *newvalue, *bnewent, *bini
 }
 
 // Namespace namespace_e0c51a8c/mechz
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xae74f05, Offset: 0x1210
 // Size: 0x184
 function function_fbdc5222(localclientnum, oldvalue, newvalue, bnewent, binitialsnap, fieldname, wasdemojump) {
@@ -180,7 +180,7 @@ function function_fbdc5222(localclientnum, oldvalue, newvalue, bnewent, binitial
 }
 
 // Namespace namespace_e0c51a8c/mechz
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x948d9136, Offset: 0x13a0
 // Size: 0x74
 function function_b17ecff3(localclientnum, *oldvalue, *newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
@@ -188,7 +188,7 @@ function function_b17ecff3(localclientnum, *oldvalue, *newvalue, *bnewent, *bini
 }
 
 // Namespace namespace_e0c51a8c/mechz
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xf4752ac8, Offset: 0x1420
 // Size: 0x94
 function mechz_jetpack_explosion(localclientnum, *oldvalue, *newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
@@ -197,7 +197,7 @@ function mechz_jetpack_explosion(localclientnum, *oldvalue, *newvalue, *bnewent,
 }
 
 // Namespace namespace_e0c51a8c/mechz
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x99ebec67, Offset: 0x14c0
 // Size: 0xd4
 function mechz_headlamp_off(localclientnum, *oldvalue, newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
@@ -211,7 +211,7 @@ function mechz_headlamp_off(localclientnum, *oldvalue, newvalue, *bnewent, *bini
 }
 
 // Namespace namespace_e0c51a8c/mechz
-// Params 7, eflags: 0x4
+// Params 7, eflags: 0x6 linked
 // Checksum 0x21456f57, Offset: 0x15a0
 // Size: 0x74
 function private mechz_long_jump(localclientnum, *oldvalue, *newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
@@ -219,7 +219,7 @@ function private mechz_long_jump(localclientnum, *oldvalue, *newvalue, *bnewent,
 }
 
 // Namespace namespace_e0c51a8c/mechz
-// Params 7, eflags: 0x4
+// Params 7, eflags: 0x6 linked
 // Checksum 0xf9d404fe, Offset: 0x1620
 // Size: 0xfa
 function private function_624ec357(localclientnum, *oldvalue, newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {

@@ -478,12 +478,12 @@ function function_cd497743(notificationtype, player = getplayers()[0]) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0xce6632b7, Offset: 0x1ca8
 // Size: 0xdc
-function function_7977c093(scriptbundle, var_aa973631, player) {
+function function_7977c093(scriptbundle, selection, player) {
     if (!isplayer(player)) {
         return;
     }
     var_2084f739 = function_bb412e85();
-    var_2084f739.var_62950536 = var_aa973631;
+    var_2084f739.var_62950536 = selection;
     var_2084f739.scriptbundle = scriptbundle;
     var_2084f739.originx = player.origin[0];
     var_2084f739.originy = player.origin[1];

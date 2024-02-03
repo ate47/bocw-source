@@ -143,11 +143,11 @@ function function_2ce126c4() {
             if (level.var_8de4d059 === #"mp_raid_rm" && zone.script_index === 1) {
                 arrayremovevalue(level.var_d4c0ef1a, zone);
             }
-            if (level.var_8de4d059 === #"hash_5543f175d93fb94d" && zone.script_index === 2) {
+            if (level.var_8de4d059 === #"mp_village_rm" && zone.script_index === 2) {
                 arrayremovevalue(level.var_d4c0ef1a, zone);
             }
         }
-        if (level.var_8de4d059 === #"hash_2459f519d45e8534") {
+        if (level.var_8de4d059 === #"mp_drivein_rm") {
             var_2a924a32 = [3:(190, 1602, 138), 2:(741, -1534, 139), 1:(-623, -2237, 152), 0:(335, -2212, 150)];
             foreach (v_loc in var_2a924a32) {
                 var_478072ca = util::spawn_model("tag_origin", v_loc, (0, 0, 0));
@@ -162,7 +162,7 @@ function function_2ce126c4() {
                 }
             }
         }
-        if (level.var_8de4d059 === #"hash_7b6185cd75172582") {
+        if (level.var_8de4d059 === #"mp_paintball_rm") {
             var_111049c7 = getentarray("flag_primary", "targetname");
             foreach (zone in var_111049c7) {
                 if (zone.target === "flag_trigger_a" || zone.target === "flag_trigger_c") {
@@ -1166,7 +1166,7 @@ function function_cb711686() {
     case 6:
         str_powerup = "insta_kill";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         str_powerup = "full_ammo";
         break;
     }
@@ -2097,7 +2097,7 @@ function function_26667466() {
             wait(level.var_6bb0102e);
             level.var_df7b46d1.state = 3;
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
         waitframe(1);
@@ -2668,7 +2668,7 @@ function function_f19e31a2() {
         case #"spawner_bo5_mimic":
             wait(2);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             wait(4);
             break;
         }
@@ -2703,7 +2703,7 @@ function function_f19e31a2() {
             case #"spawner_bo5_mimic":
                 level.var_693d250e = 2;
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 level.var_693d250e = 1;
                 break;
             }
@@ -2848,7 +2848,7 @@ function function_310986be() {
     level function_582988d8(level.var_15c1545d);
     level.var_9cf0f18d = level.var_15c1545d.objectiveanchor.var_8ea4667d;
     level.var_75d496b5 = level.var_9cf0f18d.origin;
-    if (level.var_8de4d059 === #"hash_3be2e434853eda53" && level.var_15c1545d.script_index === 4) {
+    if (level.var_8de4d059 === #"mp_echelon" && level.var_15c1545d.script_index === 4) {
         var_aec0cd16 = 128;
         var_95273e9b = 100;
     } else {
@@ -3037,7 +3037,7 @@ function event_handler[bhtn_action_start] function_320145f7(eventstruct) {
         break;
     case #"attack_melee":
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         level thread zmbaivox_playvox(self, notify_string, 0, 2);
         break;
     }

@@ -275,7 +275,7 @@ function function_4d67771c(n_wave) {
     }
     switch (n_wave) {
     case 1:
-    case #"hash_defdefdefdefdef0":
+    default:
         n_ai_count = 4 + getplayers().size * 2;
         break;
     case 2:
@@ -294,7 +294,7 @@ function function_4d67771c(n_wave) {
         while (!isdefined(ai)) {
             switch (n_wave) {
             case 1:
-            case #"hash_defdefdefdefdef0":
+            default:
                 s_spawn_loc = array::random(var_9d375553);
                 ai = zombie_dog_util::function_62db7b1c(1, s_spawn_loc);
                 break;
@@ -409,7 +409,7 @@ function function_1c058bc5(weapon, means_of_death) {
     case #"hash_631a223758cd92a":
     case #"hash_1d9cb9dbd298acba":
         return 1;
-    case #"hash_defdefdefdefdef0":
+    default:
         return 0;
         break;
     }

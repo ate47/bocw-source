@@ -8,7 +8,7 @@
 class czm_build_progress : cluielem {
 
     // Namespace czm_build_progress/zm_build_progress
-    // Params 0, eflags: 0x8
+    // Params 0, eflags: 0xa linked
     // Checksum 0x4d8cce20, Offset: 0x348
     // Size: 0x14
     __constructor() {
@@ -16,7 +16,7 @@ class czm_build_progress : cluielem {
     }
 
     // Namespace czm_build_progress/zm_build_progress
-    // Params 0, eflags: 0x90 class_linked
+    // Params 0, eflags: 0x92 linked class_linked
     // Checksum 0xb408ece7, Offset: 0x4a0
     // Size: 0x14
     __destructor() {
@@ -24,7 +24,7 @@ class czm_build_progress : cluielem {
     }
 
     // Namespace czm_build_progress/zm_build_progress
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x3eb10922, Offset: 0x438
     // Size: 0x24
     function open(localclientnum) {
@@ -32,7 +32,7 @@ class czm_build_progress : cluielem {
     }
 
     // Namespace czm_build_progress/zm_build_progress
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0xb732f866, Offset: 0x3c0
     // Size: 0x1c
     function register_clientside() {
@@ -40,7 +40,7 @@ class czm_build_progress : cluielem {
     }
 
     // Namespace czm_build_progress/zm_build_progress
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0xf50dc720, Offset: 0x368
     // Size: 0x4c
     function setup_clientfields(progresscallback) {
@@ -49,7 +49,7 @@ class czm_build_progress : cluielem {
     }
 
     // Namespace czm_build_progress/zm_build_progress
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0xc2527994, Offset: 0x468
     // Size: 0x30
     function set_progress(localclientnum, value) {
@@ -57,7 +57,7 @@ class czm_build_progress : cluielem {
     }
 
     // Namespace czm_build_progress/zm_build_progress
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x6130205e, Offset: 0x3e8
     // Size: 0x48
     function function_fa582112(localclientnum) {
@@ -68,7 +68,7 @@ class czm_build_progress : cluielem {
 }
 
 // Namespace zm_build_progress/zm_build_progress
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd2173cf8, Offset: 0xe0
 // Size: 0x176
 function register(progresscallback) {

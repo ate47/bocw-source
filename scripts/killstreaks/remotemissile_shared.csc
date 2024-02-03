@@ -12,7 +12,7 @@
 #namespace remotemissile;
 
 // Namespace remotemissile/remotemissile_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x3fd7cc, Offset: 0x2e8
 // Size: 0x448
 function init_shared() {
@@ -48,7 +48,7 @@ function init_shared() {
 }
 
 // Namespace remotemissile/remotemissile_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xea26f073, Offset: 0x738
 // Size: 0x74
 function function_f7599440() {
@@ -59,7 +59,7 @@ function function_f7599440() {
 }
 
 // Namespace remotemissile/remotemissile_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x68874c7b, Offset: 0x7b8
 // Size: 0x4c
 function function_74f5faf8(eventparams) {
@@ -70,7 +70,7 @@ function function_74f5faf8(eventparams) {
 }
 
 // Namespace remotemissile/remotemissile_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x742443b6, Offset: 0x810
 // Size: 0xac
 function on_player_spawned(localclientnum) {
@@ -87,7 +87,7 @@ function on_player_spawned(localclientnum) {
 }
 
 // Namespace remotemissile/remotemissile_shared
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x59bfd54d, Offset: 0x8c8
 // Size: 0x64
 function function_fd0c759c(localclientnum, *oldval, newval, *bnewent, *binitialsnap, fieldname, *bwastimejump) {
@@ -97,7 +97,7 @@ function function_fd0c759c(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace remotemissile/remotemissile_shared
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x71687481, Offset: 0x938
 // Size: 0x64
 function function_1de73512(localclientnum, *oldval, newval, *bnewent, *binitialsnap, fieldname, *bwastimejump) {
@@ -107,7 +107,7 @@ function function_1de73512(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace remotemissile/remotemissile_shared
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x28b6cf4d, Offset: 0x9a8
 // Size: 0x196
 function hellstorm_deploy(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -134,7 +134,7 @@ function hellstorm_deploy(localclientnum, *oldval, newval, *bnewent, *binitialsn
 }
 
 // Namespace remotemissile/remotemissile_shared
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xb06198b1, Offset: 0xb48
 // Size: 0x54
 function function_6d66e75a(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -142,7 +142,7 @@ function function_6d66e75a(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace remotemissile/remotemissile_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xa3b374ea, Offset: 0xba8
 // Size: 0xde
 function function_90b75549(localclientnum) {
@@ -158,7 +158,7 @@ function function_90b75549(localclientnum) {
 }
 
 // Namespace remotemissile/remotemissile_shared
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xe6676eb0, Offset: 0xc90
 // Size: 0x84
 function function_3e76ad59(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -170,7 +170,7 @@ function function_3e76ad59(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace remotemissile/remotemissile_shared
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x3ea7213b, Offset: 0xd20
 // Size: 0x2d4
 function missile_fired(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -199,7 +199,7 @@ function missile_fired(localclientnum, *oldval, newval, *bnewent, *binitialsnap,
 }
 
 // Namespace remotemissile/remotemissile_shared
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x94eb0139, Offset: 0x1000
 // Size: 0x3c
 function private function_298565db() {
@@ -208,7 +208,7 @@ function private function_298565db() {
 }
 
 // Namespace remotemissile/remotemissile_shared
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xc67f7254, Offset: 0x1048
 // Size: 0xec
 function function_20fff7ed(var_70cc0d15, var_4dad59c0, starttime, duration) {
@@ -226,7 +226,7 @@ function function_20fff7ed(var_70cc0d15, var_4dad59c0, starttime, duration) {
 }
 
 // Namespace remotemissile/remotemissile_shared
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x520a1264, Offset: 0x1140
 // Size: 0x254
 function bomblets_deployed(localclientnum, oldval, newval, bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -255,7 +255,7 @@ function bomblets_deployed(localclientnum, oldval, newval, bnewent, *binitialsna
 }
 
 // Namespace remotemissile/remotemissile_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x2583ea9a, Offset: 0x13a0
 // Size: 0x2c
 function function_fd73ab50() {
@@ -265,7 +265,7 @@ function function_fd73ab50() {
 }
 
 // Namespace remotemissile/remotemissile_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd40d6f32, Offset: 0x13d8
 // Size: 0x2ae
 function hud_update(localclientnum) {
@@ -298,7 +298,7 @@ function hud_update(localclientnum) {
 }
 
 // Namespace remotemissile/remotemissile_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x2f721aa1, Offset: 0x1690
 // Size: 0x56
 function function_f9af4fc2(localclientnum) {
@@ -313,7 +313,7 @@ function function_f9af4fc2(localclientnum) {
 }
 
 // Namespace remotemissile/remotemissile_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x1bfd3a7b, Offset: 0x16f0
 // Size: 0x14c
 function function_d260edc9(localclientnum, enabled) {
@@ -332,7 +332,7 @@ function function_d260edc9(localclientnum, enabled) {
 }
 
 // Namespace remotemissile/remotemissile_shared
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x226dc77e, Offset: 0x1848
 // Size: 0x1fc
 function remote_missile_piloting(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -370,7 +370,7 @@ function remote_missile_piloting(localclientnum, *oldval, newval, *bnewent, *bin
 }
 
 // Namespace remotemissile/remotemissile_shared
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x607fa09e, Offset: 0x1a50
 // Size: 0x74
 function remote_missile_child_rocket_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

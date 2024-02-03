@@ -72,7 +72,7 @@ function function_ccdf77da(uid, ent, var_a9e3715c, max_dist = 500) {
 }
 
 // Namespace namespace_93648050/namespace_93648050
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0x6fe3d726, Offset: 0x580
 // Size: 0xe4
 function function_eb5d0a02(uid, trigger, var_a9e3715c, max_dist = 500, var_36247bfb, var_774d5d03 = 1) {

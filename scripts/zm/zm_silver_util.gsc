@@ -305,7 +305,7 @@ function function_72c803d3(cmd) {
         case #"hash_61aa28debb64fbee":
             function_df4b3116(#"hash_7ef7aab6a305d0b0", 2);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     #/

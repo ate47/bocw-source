@@ -203,7 +203,7 @@ function function_144f26b2(entnum) {
         return (1, 0, 0);
     case 3:
         return (1, 1, 0);
-    case #"hash_defdefdefdefdef0":
+    default:
         return (1, 1, 1);
         break;
     }
@@ -226,7 +226,7 @@ function function_7b9bc9ff(entnum) {
         return "red";
     case 3:
         return "yellow";
-    case #"hash_defdefdefdefdef0":
+    default:
         return "unk";
         break;
     }

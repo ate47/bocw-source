@@ -29,7 +29,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_e51c1e80/namespace_e51c1e80
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x8330e2ef, Offset: 0x4f0
 // Size: 0x104
 function private function_70a657d8() {
@@ -45,7 +45,7 @@ function private function_70a657d8() {
 }
 
 // Namespace namespace_e51c1e80/namespace_e51c1e80
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x80f724d1, Offset: 0x600
 // Size: 0x4
 function private function_5700f119() {
@@ -53,7 +53,7 @@ function private function_5700f119() {
 }
 
 // Namespace namespace_e51c1e80/namespace_e51c1e80
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xc4a9364, Offset: 0x610
 // Size: 0xc4
 function function_483f7f18(params) {
@@ -72,7 +72,7 @@ function function_483f7f18(params) {
 }
 
 // Namespace namespace_e51c1e80/namespace_e51c1e80
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xb9c8bec5, Offset: 0x6e0
 // Size: 0x3c2
 function function_76468d55(a_ai_zombies, v_org, eattacker) {
@@ -124,7 +124,7 @@ function function_76468d55(a_ai_zombies, v_org, eattacker) {
 }
 
 // Namespace namespace_e51c1e80/namespace_e51c1e80
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x7b542ba6, Offset: 0xab0
 // Size: 0x180
 function function_139ba789(zombie, eattacker) {
@@ -148,7 +148,7 @@ function function_139ba789(zombie, eattacker) {
 }
 
 // Namespace namespace_e51c1e80/namespace_e51c1e80
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x1761fb17, Offset: 0xc38
 // Size: 0x194
 function function_912eedf3(zombie, eattacker) {
@@ -169,7 +169,7 @@ function function_912eedf3(zombie, eattacker) {
 }
 
 // Namespace namespace_e51c1e80/namespace_e51c1e80
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xed829112, Offset: 0xdd8
 // Size: 0xf4
 function function_e1c4e1c2(v_org, eattacker, einflictor) {
@@ -185,7 +185,7 @@ function function_e1c4e1c2(v_org, eattacker, einflictor) {
 }
 
 // Namespace namespace_e51c1e80/namespace_e51c1e80
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x4f3d67f1, Offset: 0xed8
 // Size: 0x101c
 function function_c668a011(s_instance) {
@@ -347,7 +347,7 @@ function function_c668a011(s_instance) {
 }
 
 // Namespace namespace_e51c1e80/namespace_e51c1e80
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x5423bd26, Offset: 0x1f00
 // Size: 0xc0
 function function_91c07c5e(destination) {
@@ -360,7 +360,7 @@ function function_91c07c5e(destination) {
 }
 
 // Namespace namespace_e51c1e80/namespace_e51c1e80
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xdee439e2, Offset: 0x1fc8
 // Size: 0x10c
 function function_c772bd2c(destination) {
@@ -377,7 +377,7 @@ function function_c772bd2c(destination) {
 }
 
 // Namespace namespace_e51c1e80/namespace_e51c1e80
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x3ca2b868, Offset: 0x20e0
 // Size: 0x2dc
 function function_17a3dc2f(s_instance) {
@@ -439,7 +439,7 @@ function function_724dafb1(destination) {
         case #"mp_map_wide_uaz_spawn":
             var_22e1dc7 = "vehicle_t9_mil_ru_truck_light_player";
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             var_22e1dc7 = undefined;
             break;
         }
@@ -474,7 +474,7 @@ function function_724dafb1(destination) {
 }
 
 // Namespace namespace_e51c1e80/namespace_e51c1e80
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x866d9ea4, Offset: 0x2838
 // Size: 0x26a
 function function_6465d1fa(destination) {
@@ -506,7 +506,7 @@ function function_6465d1fa(destination) {
 }
 
 // Namespace namespace_e51c1e80/namespace_e51c1e80
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x41ce5c2f, Offset: 0x2ab0
 // Size: 0x116
 function private function_de75fe06() {
@@ -522,7 +522,7 @@ function private function_de75fe06() {
 }
 
 // Namespace namespace_e51c1e80/namespace_e51c1e80
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x2c883805, Offset: 0x2bd0
 // Size: 0x15c
 function function_cddedd63(var_1028910, v_angle_offset = (0, 0, 0), n_x_offset) {
@@ -565,7 +565,7 @@ function event_handler[enter_vehicle] codecallback_vehicleenter(eventstruct) {
 }
 
 // Namespace namespace_e51c1e80/namespace_e51c1e80
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x8903cd86, Offset: 0x2e38
 // Size: 0x754
 function on_vehicle_spawned() {
@@ -682,7 +682,7 @@ function on_vehicle_spawned() {
 }
 
 // Namespace namespace_e51c1e80/namespace_e51c1e80
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x1c05479e, Offset: 0x3598
 // Size: 0x282
 function function_a6b2f443(vehicle) {
@@ -720,7 +720,7 @@ function function_a6b2f443(vehicle) {
 }
 
 // Namespace namespace_e51c1e80/namespace_e51c1e80
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd08e28e8, Offset: 0x3828
 // Size: 0x20c
 function on_vehicle_damage(params) {

@@ -273,7 +273,7 @@ function private function_44a0fc4(var_af8e391e, var_48a9b1c9, var_a3fbfa71) {
             if (var_5cbd7bfa == 1) {
                 var_c8c21635 = !var_c8c21635;
                 switch (var_c8c21635) {
-                case #"hash_defdefdefdefdef0":
+                default:
                     break;
                 }
             }

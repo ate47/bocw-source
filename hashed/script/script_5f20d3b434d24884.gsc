@@ -1703,7 +1703,7 @@ function function_2ebebd0c() {
                 level thread namespace_9fc66ac::announce(25, 1 << player.entnum);
                 level thread namespace_6d0b8a1a::function_465aaf09(player, self.origin);
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 /#
                     assert(0, "<unknown string>");
                 #/

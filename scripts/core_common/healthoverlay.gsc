@@ -659,7 +659,7 @@ function player_heartbeat_sound(healthcap) {
 }
 
 // Namespace healthoverlay/healthoverlay
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0xc0ba7e82, Offset: 0x1ff8
 // Size: 0x56
 function function_d2880c8f() {

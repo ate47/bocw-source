@@ -9,7 +9,7 @@
 class czm_trial_timer : cluielem {
 
     // Namespace czm_trial_timer/zm_trial_timer
-    // Params 0, eflags: 0x8
+    // Params 0, eflags: 0xa linked
     // Checksum 0x3140f0bf, Offset: 0x238
     // Size: 0x14
     __constructor() {
@@ -17,7 +17,7 @@ class czm_trial_timer : cluielem {
     }
 
     // Namespace czm_trial_timer/zm_trial_timer
-    // Params 0, eflags: 0x90 class_linked
+    // Params 0, eflags: 0x92 linked class_linked
     // Checksum 0xb4cfef60, Offset: 0x3e8
     // Size: 0x14
     __destructor() {
@@ -25,7 +25,7 @@ class czm_trial_timer : cluielem {
     }
 
     // Namespace czm_trial_timer/zm_trial_timer
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x630e84ec, Offset: 0x2d0
     // Size: 0x3c
     function open(player, flags = 0) {
@@ -33,7 +33,7 @@ class czm_trial_timer : cluielem {
     }
 
     // Namespace czm_trial_timer/zm_trial_timer
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0xb64d9de9, Offset: 0x318
     // Size: 0x24
     function close(player) {
@@ -41,7 +41,7 @@ class czm_trial_timer : cluielem {
     }
 
     // Namespace czm_trial_timer/zm_trial_timer
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x650b3e34, Offset: 0x398
     // Size: 0x44
     function set_under_round_rules(player, value) {
@@ -49,7 +49,7 @@ class czm_trial_timer : cluielem {
     }
 
     // Namespace czm_trial_timer/zm_trial_timer
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x1d5c70f3, Offset: 0x348
     // Size: 0x44
     function set_timer_text(player, value) {
@@ -57,7 +57,7 @@ class czm_trial_timer : cluielem {
     }
 
     // Namespace czm_trial_timer/zm_trial_timer
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0x7a215df3, Offset: 0x258
     // Size: 0x6c
     function setup_clientfields() {
@@ -69,7 +69,7 @@ class czm_trial_timer : cluielem {
 }
 
 // Namespace zm_trial_timer/zm_trial_timer
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x3d926e4b, Offset: 0x108
 // Size: 0x34
 function register() {
@@ -79,7 +79,7 @@ function register() {
 }
 
 // Namespace zm_trial_timer/zm_trial_timer
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xaa4b8eb3, Offset: 0x148
 // Size: 0x38
 function open(player, flags = 0) {
@@ -87,7 +87,7 @@ function open(player, flags = 0) {
 }
 
 // Namespace zm_trial_timer/zm_trial_timer
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xf8a9ca82, Offset: 0x188
 // Size: 0x1c
 function close(player) {
@@ -95,7 +95,7 @@ function close(player) {
 }
 
 // Namespace zm_trial_timer/zm_trial_timer
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xa2c3bd60, Offset: 0x1b0
 // Size: 0x1a
 function is_open(player) {
@@ -103,7 +103,7 @@ function is_open(player) {
 }
 
 // Namespace zm_trial_timer/zm_trial_timer
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x64d923cf, Offset: 0x1d8
 // Size: 0x28
 function set_timer_text(player, value) {
@@ -111,7 +111,7 @@ function set_timer_text(player, value) {
 }
 
 // Namespace zm_trial_timer/zm_trial_timer
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xd5366668, Offset: 0x208
 // Size: 0x28
 function set_under_round_rules(player, value) {

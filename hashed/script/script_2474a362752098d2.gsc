@@ -397,7 +397,7 @@ function function_8328d4bc(item) {
                 self sethintstring(#"hash_2ae2e0909bc1c560");
                 self function_dae4ab9b(0.15);
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 self sethintstring(#"hash_49306fb46908df39");
                 break;
             }

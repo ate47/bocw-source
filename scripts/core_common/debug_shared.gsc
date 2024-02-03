@@ -46,7 +46,7 @@ function private function_ddca74dd() {
             split = strtok(weaponname, "<unknown string>");
             switch (split.size) {
             case 1:
-            case #"hash_defdefdefdefdef0":
+            default:
                 weapon = getweapon(split[0]);
                 break;
             case 2:

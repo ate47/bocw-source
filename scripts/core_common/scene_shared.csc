@@ -153,7 +153,7 @@ class cscene : cscriptbundlebase {
         case #"fakeplayer":
             return new csceneobject();
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             cscriptbundlebase::error(0, "Unsupported object type '" + str_type + "'.");
             break;
         }
@@ -447,7 +447,7 @@ class cscene : cscriptbundlebase {
                     case 0:
                         self._e_root thread [[ func ]](clientnum, a_ents);
                         break;
-                    case #"hash_defdefdefdefdef0":
+                    default:
                         /#
                             assertmsg("<unknown string>");
                         #/
@@ -567,7 +567,7 @@ class cscene : cscriptbundlebase {
             case #"scene":
                 thread [[ self ]]->play(var_1a15e649, self._testing, self._str_mode);
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 thread [[ self ]]->play(var_1a15e649, self._testing, self._str_mode);
                 break;
             }
@@ -1281,7 +1281,7 @@ class csceneobject : cscriptbundleobjectbase {
                     case #"blend":
                         self._n_blend = entry;
                         break;
-                    case #"hash_defdefdefdefdef0":
+                    default:
                         cscriptbundleobjectbase::error(1, "Bad timeline entry type '" + str_entry_type + "'.");
                         break;
                     }
@@ -1818,7 +1818,7 @@ function private function_70a657d8() {
     case 3:
         var_a093876d = 40;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_a093876d = 24;
         break;
     }

@@ -77,7 +77,7 @@ function function_c64b5405(newval) {
     case 11:
         self function_ccb26f79();
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
 }

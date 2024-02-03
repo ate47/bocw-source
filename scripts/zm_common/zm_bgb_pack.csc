@@ -17,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace bgb_pack/zm_bgb_pack
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xbe1c1edc, Offset: 0x108
 // Size: 0x20
 function private function_70a657d8() {
@@ -27,7 +27,7 @@ function private function_70a657d8() {
 }
 
 // Namespace bgb_pack/zm_bgb_pack
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xf92f5887, Offset: 0x130
 // Size: 0x20
 function private postinit() {

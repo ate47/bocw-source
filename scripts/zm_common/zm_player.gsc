@@ -71,7 +71,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xf9232718, Offset: 0x750
 // Size: 0x24
 function private function_70a657d8() {
@@ -79,7 +79,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x74e7a0fc, Offset: 0x780
 // Size: 0xda
 function private function_34c2aeb5() {
@@ -112,7 +112,7 @@ function getallotherplayers() {
 }
 
 // Namespace zm_player/zm_player
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xebe10559, Offset: 0x920
 // Size: 0xcc
 function updateplayernum(player) {
@@ -134,7 +134,7 @@ function updateplayernum(player) {
 }
 
 // Namespace zm_player/zm_player
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x26fa5a4a, Offset: 0x9f8
 // Size: 0x3da
 function getfreespawnpoint(spawnpoints, player) {
@@ -201,7 +201,7 @@ function getfreespawnpoint(spawnpoints, player) {
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x8caa28c, Offset: 0xde0
 // Size: 0x382
 function player_track_ammo_count() {
@@ -277,7 +277,7 @@ function spawn_vo() {
 }
 
 // Namespace zm_player/zm_player
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x96f466dc, Offset: 0x1210
 // Size: 0x7a
 function spawn_vo_player(index, num) {
@@ -287,7 +287,7 @@ function spawn_vo_player(index, num) {
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x225179c3, Offset: 0x1298
 // Size: 0x28
 function precache_models() {
@@ -297,7 +297,7 @@ function precache_models() {
 }
 
 // Namespace zm_player/zm_player
-// Params 10, eflags: 0x0
+// Params 10, eflags: 0x2 linked
 // Checksum 0xd4a5fda, Offset: 0x12c8
 // Size: 0xdc
 function callback_playerlaststand(einflictor, eattacker, idamage, smeansofdeath, weapon, var_fd90b0bb, vdir, shitloc, psoffsettime, deathanimduration) {
@@ -321,7 +321,7 @@ function breakafter(time, damage, *piece) {
 }
 
 // Namespace zm_player/zm_player
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xc370b61d, Offset: 0x1428
 // Size: 0x19c
 function function_7681dccc(einflictor, eattacker) {
@@ -353,7 +353,7 @@ function function_7681dccc(einflictor, eattacker) {
 }
 
 // Namespace zm_player/zm_player
-// Params 11, eflags: 0x0
+// Params 11, eflags: 0x2 linked
 // Checksum 0xb4ee2a4, Offset: 0x15d0
 // Size: 0x5e
 function function_68f58ba3(*einflictor, *eattacker, *idamage, *idflags, *smeansofdeath, *weapon, *var_fd90b0bb, *vpoint, *vdir, *shitloc, *psoffsettime) {
@@ -361,7 +361,7 @@ function function_68f58ba3(*einflictor, *eattacker, *idamage, *idflags, *smeanso
 }
 
 // Namespace zm_player/zm_player
-// Params 14, eflags: 0x0
+// Params 14, eflags: 0x2 linked
 // Checksum 0x22dda44a, Offset: 0x1638
 // Size: 0x9ac
 function callback_playerdamage(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, vdamageorigin, psoffsettime, boneindex, vsurfacenormal) {
@@ -477,7 +477,7 @@ function callback_playerdamage(einflictor, eattacker, idamage, idflags, smeansof
 }
 
 // Namespace zm_player/zm_player
-// Params 14, eflags: 0x0
+// Params 14, eflags: 0x2 linked
 // Checksum 0xcdd56296, Offset: 0x1ff0
 // Size: 0xa4
 function finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, vdamageorigin, psoffsettime, boneindex, vsurfacenormal) {
@@ -485,7 +485,7 @@ function finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smea
 }
 
 // Namespace zm_player/zm_player
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x8883ce75, Offset: 0x20a0
 // Size: 0x14a
 function function_182d09fd(eattacker, idamage) {
@@ -508,7 +508,7 @@ function function_182d09fd(eattacker, idamage) {
 }
 
 // Namespace zm_player/zm_player
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x2fb7a892, Offset: 0x21f8
 // Size: 0x44
 function function_a8846426(callback) {
@@ -519,7 +519,7 @@ function function_a8846426(callback) {
 }
 
 // Namespace zm_player/zm_player
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x3f2a106, Offset: 0x2248
 // Size: 0xa8
 function register_player_friendly_fire_callback(callback) {
@@ -535,7 +535,7 @@ function register_player_friendly_fire_callback(callback) {
 }
 
 // Namespace zm_player/zm_player
-// Params 11, eflags: 0x0
+// Params 11, eflags: 0x2 linked
 // Checksum 0xc8cbf77b, Offset: 0x22f8
 // Size: 0x108
 function process_friendly_fire_callbacks(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, vpoint, vdir, shitloc, psoffsettime, boneindex) {
@@ -548,7 +548,7 @@ function process_friendly_fire_callbacks(einflictor, eattacker, idamage, idflags
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x8007423c, Offset: 0x2408
 // Size: 0xcc
 function onplayerconnect_clientdvars() {
@@ -563,7 +563,7 @@ function onplayerconnect_clientdvars() {
 }
 
 // Namespace zm_player/zm_player
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x2a971c8e, Offset: 0x24e0
 // Size: 0x210
 function function_8ef51109(var_fb6fa3e1, var_bbbf9a69) {
@@ -593,7 +593,7 @@ function function_8ef51109(var_fb6fa3e1, var_bbbf9a69) {
 }
 
 // Namespace zm_player/zm_player
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x9c7c0b55, Offset: 0x26f8
 // Size: 0x29c
 function function_3799b373(var_fb6fa3e1, var_bbbf9a69 = 0) {
@@ -630,7 +630,7 @@ function function_3799b373(var_fb6fa3e1, var_bbbf9a69 = 0) {
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x89339307, Offset: 0x29a0
 // Size: 0x3c2
 function onplayerspawned() {
@@ -704,7 +704,7 @@ function spawn_life_brush(origin, radius, height) {
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x843955fa, Offset: 0x2de0
 // Size: 0x8e
 function in_life_brush() {
@@ -731,7 +731,7 @@ function spawn_kill_brush(origin, radius, height) {
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x2b6522c5, Offset: 0x2ee8
 // Size: 0x96
 function in_kill_brush() {
@@ -750,7 +750,7 @@ function in_kill_brush() {
 }
 
 // Namespace zm_player/zm_player
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x5c84cba5, Offset: 0x2f88
 // Size: 0x2a6
 function in_enabled_playable_area(var_22a4c702 = 500) {
@@ -784,7 +784,7 @@ function in_enabled_playable_area(var_22a4c702 = 500) {
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xfbc72648, Offset: 0x3238
 // Size: 0x50
 function get_player_out_of_playable_area_monitor_wait_time() {
@@ -800,7 +800,7 @@ function get_player_out_of_playable_area_monitor_wait_time() {
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xda5ac974, Offset: 0x3290
 // Size: 0x1a8
 function function_b01adf41() {
@@ -831,7 +831,7 @@ function function_b01adf41() {
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xaaf093c3, Offset: 0x3440
 // Size: 0x420
 function player_out_of_playable_area_monitor() {
@@ -929,7 +929,7 @@ function function_de3936f8(var_ffb1863c) {
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x3a551de1, Offset: 0x3b20
 // Size: 0x16e
 function player_monitor_travel_dist() {
@@ -952,7 +952,7 @@ function player_monitor_travel_dist() {
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x4102ea75, Offset: 0x3c98
 // Size: 0x78
 function player_monitor_time_played() {
@@ -966,7 +966,7 @@ function player_monitor_time_played() {
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xa6060703, Offset: 0x3d18
 // Size: 0xbe
 function zm_breadcrumbs() {
@@ -983,7 +983,7 @@ function zm_breadcrumbs() {
 }
 
 // Namespace zm_player/zm_player
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xed6a0d5c, Offset: 0x3de0
 // Size: 0x35a
 function player_grenade_multiattack_bookmark_watcher(grenade, weapon) {
@@ -1038,7 +1038,7 @@ function player_grenade_multiattack_bookmark_watcher(grenade, weapon) {
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xf6a2011a, Offset: 0x4148
 // Size: 0x120
 function player_grenade_watcher() {
@@ -1062,7 +1062,7 @@ function player_grenade_watcher() {
 }
 
 // Namespace zm_player/zm_player
-// Params 10, eflags: 0x0
+// Params 10, eflags: 0x2 linked
 // Checksum 0xff983c64, Offset: 0x4270
 // Size: 0x38c
 function player_prevent_damage(einflictor, eattacker, idamage, *idflags, smeansofdeath, *weapon, *vpoint, *vdir, *shitloc, *psoffsettime) {
@@ -1115,7 +1115,7 @@ function player_prevent_damage(einflictor, eattacker, idamage, *idflags, smeanso
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x48bb078d, Offset: 0x4608
 // Size: 0x300
 function player_revive_monitor() {
@@ -1160,7 +1160,7 @@ function player_revive_monitor() {
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xc153ac2d, Offset: 0x4910
 // Size: 0x256
 function spawnspectator() {
@@ -1207,7 +1207,7 @@ function spawnspectator() {
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x593f4117, Offset: 0x4b70
 // Size: 0x74
 function function_97f613de() {
@@ -1218,7 +1218,7 @@ function function_97f613de() {
 }
 
 // Namespace zm_player/zm_player
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xab726b46, Offset: 0x4bf0
 // Size: 0xcc
 function setspectatepermissions(ison) {
@@ -1238,7 +1238,7 @@ function spectator_toggle_3rd_person() {
 }
 
 // Namespace zm_player/zm_player
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x89f73130, Offset: 0x4d18
 // Size: 0x8c
 function set_third_person(value) {
@@ -1275,7 +1275,7 @@ function last_stand_revive() {
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x505cdb83, Offset: 0x4f10
 // Size: 0x10c
 function spectators_respawn() {
@@ -1297,7 +1297,7 @@ function spectators_respawn() {
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x405510d1, Offset: 0x5028
 // Size: 0xfc
 function spectator_respawn_player() {
@@ -1320,7 +1320,7 @@ function spectator_respawn_player() {
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x50982852, Offset: 0x5130
 // Size: 0x398
 function spectator_respawn() {
@@ -1384,7 +1384,7 @@ function spectator_respawn() {
 }
 
 // Namespace zm_player/zm_player
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xb1c278a3, Offset: 0x54d0
 // Size: 0x2b8
 function check_for_valid_spawn_near_team(revivee, return_struct) {
@@ -1442,7 +1442,7 @@ function check_for_valid_spawn_near_team(revivee, return_struct) {
 }
 
 // Namespace zm_player/zm_player
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x39ed0f1d, Offset: 0x5790
 // Size: 0x2c2
 function get_valid_spawn_location(revivee, spawn_points, closest_group, return_struct) {
@@ -1639,7 +1639,7 @@ function play_door_dialog() {
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xd1fc5f26, Offset: 0x60f8
 // Size: 0x6e
 function remove_ignore_attacker() {
@@ -1662,7 +1662,7 @@ function player_damage_override_cheat(einflictor, eattacker, idamage, idflags, s
 }
 
 // Namespace zm_player/zm_player
-// Params 11, eflags: 0x0
+// Params 11, eflags: 0x2 linked
 // Checksum 0x576ce207, Offset: 0x6200
 // Size: 0x1242
 function player_damage_override(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, psoffsettime) {
@@ -1912,7 +1912,7 @@ function player_damage_override(einflictor, eattacker, idamage, idflags, smeanso
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x4584b8b6, Offset: 0x7450
 // Size: 0xbe
 function clear_path_timers() {
@@ -1925,7 +1925,7 @@ function clear_path_timers() {
 }
 
 // Namespace zm_player/zm_player
-// Params 10, eflags: 0x0
+// Params 10, eflags: 0x2 linked
 // Checksum 0x55068f32, Offset: 0x7518
 // Size: 0x150
 function check_player_damage_callbacks(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, vpoint, vdir, shitloc, psoffsettime) {
@@ -1960,7 +1960,7 @@ function function_57301eaf(func) {
 }
 
 // Namespace zm_player/zm_player
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x758ecd70, Offset: 0x76c0
 // Size: 0x44
 function register_player_damage_callback(func) {
@@ -1971,7 +1971,7 @@ function register_player_damage_callback(func) {
 }
 
 // Namespace zm_player/zm_player
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xef9d2897, Offset: 0x7710
 // Size: 0x44
 function function_a827358a(func) {
@@ -1982,7 +1982,7 @@ function function_a827358a(func) {
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xf2d5dfb4, Offset: 0x7760
 // Size: 0x1ac
 function player_fake_death() {
@@ -2008,7 +2008,7 @@ function player_fake_death() {
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x7e5952ff, Offset: 0x7918
 // Size: 0x4c
 function player_exit_level() {
@@ -2018,7 +2018,7 @@ function player_exit_level() {
 }
 
 // Namespace zm_player/zm_player
-// Params 10, eflags: 0x0
+// Params 10, eflags: 0x2 linked
 // Checksum 0xa59f71ef, Offset: 0x7970
 // Size: 0x6c
 function player_killed_override(*einflictor, *attacker, *idamage, *smeansofdeath, *weapon, *var_fd90b0bb, *vdir, *shitloc, *psoffsettime, *deathanimduration) {
@@ -2026,7 +2026,7 @@ function player_killed_override(*einflictor, *attacker, *idamage, *smeansofdeath
 }
 
 // Namespace zm_player/zm_player
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x310c4da6, Offset: 0x79e8
 // Size: 0x62
 function screen_fade_in(n_time, v_color, str_menu_id, var_b675738a = 0) {
@@ -2035,7 +2035,7 @@ function screen_fade_in(n_time, v_color, str_menu_id, var_b675738a = 0) {
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xd14984ec, Offset: 0x7a58
 // Size: 0x42a
 function player_intermission() {
@@ -2102,7 +2102,7 @@ function player_intermission() {
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x45d2eae2, Offset: 0x7e90
 // Size: 0x6c
 function zm_on_player_connect() {
@@ -2113,7 +2113,7 @@ function zm_on_player_connect() {
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x4595349c, Offset: 0x7f08
 // Size: 0x1b4
 function zm_on_player_spawned() {
@@ -2136,7 +2136,7 @@ function zm_on_player_spawned() {
 }
 
 // Namespace zm_player/zm_player
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xac1952c0, Offset: 0x80c8
 // Size: 0x88
 function update_is_player_valid() {
@@ -2231,7 +2231,7 @@ function function_520f4da5() {
 }
 
 // Namespace zm_player/zm_player
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x39f1b3fe, Offset: 0x8590
 // Size: 0x2c
 function private function_fe7a7d5b(*str_notify) {
@@ -2239,7 +2239,7 @@ function private function_fe7a7d5b(*str_notify) {
 }
 
 // Namespace zm_player/zm_player
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0xc9f06601, Offset: 0x85c8
 // Size: 0x164
 function function_74b6d714(attacker, effectname, var_894859a2, var_ab5b905e, weapon) {

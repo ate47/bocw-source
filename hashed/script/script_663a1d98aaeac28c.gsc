@@ -14,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace hatchet/hatchet
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x721241c0, Offset: 0x118
 // Size: 0x3c
 function init_shared() {
@@ -22,7 +22,7 @@ function init_shared() {
 }
 
 // Namespace hatchet/hatchet
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xc670620a, Offset: 0x160
 // Size: 0xbc
 function function_1679806a(s_watcher) {
@@ -38,7 +38,7 @@ function function_1679806a(s_watcher) {
 }
 
 // Namespace hatchet/hatchet
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x2eae4e, Offset: 0x228
 // Size: 0x9c
 function function_27ae0902() {
@@ -50,7 +50,7 @@ function function_27ae0902() {
 }
 
 // Namespace hatchet/hatchet
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xc5cb4acd, Offset: 0x2d0
 // Size: 0x6c
 function function_16a186f(*s_watcher, player) {
@@ -63,7 +63,7 @@ function function_16a186f(*s_watcher, player) {
 }
 
 // Namespace hatchet/hatchet
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x580e7adb, Offset: 0x348
 // Size: 0x55a
 function function_e95b2776() {

@@ -16,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_957938f0/namespace_957938f0
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x35c01aa5, Offset: 0x238
 // Size: 0x1c4
 function function_70a657d8() {
@@ -34,7 +34,7 @@ function function_70a657d8() {
 }
 
 // Namespace namespace_957938f0/namespace_957938f0
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xf9bf56d1, Offset: 0x408
 // Size: 0x164
 function jump_pad_active(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -56,7 +56,7 @@ function jump_pad_active(localclientnum, *oldval, newval, *bnewent, *binitialsna
 }
 
 // Namespace namespace_957938f0/namespace_957938f0
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x4a1fcd5e, Offset: 0x578
 // Size: 0x12c
 function jump_pad_essence_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -73,7 +73,7 @@ function jump_pad_essence_fx(localclientnum, *oldval, newval, *bnewent, *binitia
 }
 
 // Namespace namespace_957938f0/namespace_957938f0
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x5143311d, Offset: 0x6b0
 // Size: 0x6e
 function function_6192b162() {
@@ -87,7 +87,7 @@ function function_6192b162() {
 }
 
 // Namespace namespace_957938f0/namespace_957938f0
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xd20c827b, Offset: 0x728
 // Size: 0x6a
 function jump_pad_amb_sound_lp(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -97,7 +97,7 @@ function jump_pad_amb_sound_lp(*localclientnum, *oldval, newval, *bnewent, *bini
 }
 
 // Namespace namespace_957938f0/namespace_957938f0
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xd9c66b56, Offset: 0x7a0
 // Size: 0xfe
 function jump_pad_wind_sound(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -116,7 +116,7 @@ function jump_pad_wind_sound(localclientnum, *oldval, newval, *bnewent, *binitia
 }
 
 // Namespace namespace_957938f0/namespace_957938f0
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x9aad237d, Offset: 0x8a8
 // Size: 0xc0
 function function_ca483953(localclientnum) {
@@ -130,7 +130,7 @@ function function_ca483953(localclientnum) {
 }
 
 // Namespace namespace_957938f0/namespace_957938f0
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x4969a8bf, Offset: 0x970
 // Size: 0xa0
 function function_6b3f6fa7(localclientnum) {
@@ -144,7 +144,7 @@ function function_6b3f6fa7(localclientnum) {
 }
 
 // Namespace namespace_957938f0/namespace_957938f0
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xe6bc9b83, Offset: 0xa18
 // Size: 0xd6
 function function_d80deb1d() {

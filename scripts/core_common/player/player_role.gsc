@@ -59,7 +59,7 @@ function get_category() {
 }
 
 // Namespace player_role/player_role
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x32b9a664, Offset: 0x290
 // Size: 0x24
 function function_c1f61ea2() {

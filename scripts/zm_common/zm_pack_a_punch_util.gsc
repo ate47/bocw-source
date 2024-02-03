@@ -27,7 +27,7 @@
 #namespace zm_pap_util;
 
 // Namespace zm_pap_util/zm_pack_a_punch_util
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x1ca11488, Offset: 0x1f8
 // Size: 0x24
 function function_a81f02e5() {
@@ -35,7 +35,7 @@ function function_a81f02e5() {
 }
 
 // Namespace zm_pap_util/zm_pack_a_punch_util
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x5951a106, Offset: 0x228
 // Size: 0x7e
 function init_parameters() {
@@ -58,7 +58,7 @@ function set_timeout(n_timeout_s) {
 }
 
 // Namespace zm_pap_util/zm_pack_a_punch_util
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x7b2ee00c, Offset: 0x2f0
 // Size: 0x32
 function set_interaction_height(n_height) {
@@ -67,7 +67,7 @@ function set_interaction_height(n_height) {
 }
 
 // Namespace zm_pap_util/zm_pack_a_punch_util
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x5e5aae70, Offset: 0x330
 // Size: 0x32
 function function_11f3a609(n_width) {
@@ -76,7 +76,7 @@ function function_11f3a609(n_width) {
 }
 
 // Namespace zm_pap_util/zm_pack_a_punch_util
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xeff4b847, Offset: 0x370
 // Size: 0x32
 function function_530eb959(n_length) {
@@ -85,7 +85,7 @@ function function_530eb959(n_length) {
 }
 
 // Namespace zm_pap_util/zm_pack_a_punch_util
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xe0ae1cea, Offset: 0x3b0
 // Size: 0x32
 function set_interaction_trigger_height(n_height) {
@@ -94,7 +94,7 @@ function set_interaction_trigger_height(n_height) {
 }
 
 // Namespace zm_pap_util/zm_pack_a_punch_util
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xe3878a8d, Offset: 0x3f0
 // Size: 0x32
 function function_11fdb083(n_offset) {
@@ -112,7 +112,7 @@ function set_grabbable_by_anyone() {
 }
 
 // Namespace zm_pap_util/zm_pack_a_punch_util
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x48bac45d, Offset: 0x468
 // Size: 0x748
 function update_hint_string(player) {
@@ -218,7 +218,7 @@ function update_hint_string(player) {
 }
 
 // Namespace zm_pap_util/zm_pack_a_punch_util
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xd3a4a6d6, Offset: 0xbb8
 // Size: 0x232
 function function_aaf2d8(player, weapon, b_weapon_supports_aat, var_a86430cb) {
@@ -282,7 +282,7 @@ function function_873e8824(inflictor, attacker, damage, flags, meansofdeath, wea
 }
 
 // Namespace zm_pap_util/zm_pack_a_punch_util
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0xab688670, Offset: 0xfb8
 // Size: 0xf6
 function private can_pack_weapon(weapon, pap_machine) {
@@ -308,7 +308,7 @@ function private can_pack_weapon(weapon, pap_machine) {
 }
 
 // Namespace zm_pap_util/zm_pack_a_punch_util
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x3243bfd9, Offset: 0x10b8
 // Size: 0x122
 function private player_use_can_pack_now(pap_machine) {
@@ -329,7 +329,7 @@ function private player_use_can_pack_now(pap_machine) {
 }
 
 // Namespace zm_pap_util/zm_pack_a_punch_util
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x554e3e12, Offset: 0x11e8
 // Size: 0x14c
 function repack_weapon(weapon, n_repacks) {
@@ -357,7 +357,7 @@ function repack_weapon(weapon, n_repacks) {
 }
 
 // Namespace zm_pap_util/zm_pack_a_punch_util
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd7cf4af, Offset: 0x1340
 // Size: 0x8c
 function function_c01d9f22(weapon) {
@@ -370,7 +370,7 @@ function function_c01d9f22(weapon) {
 }
 
 // Namespace zm_pap_util/zm_pack_a_punch_util
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xbfb41e03, Offset: 0x13d8
 // Size: 0x7a
 function function_b81da3fd(weapon) {
@@ -385,7 +385,7 @@ function function_b81da3fd(weapon) {
 }
 
 // Namespace zm_pap_util/zm_pack_a_punch_util
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xe43fe9f3, Offset: 0x1460
 // Size: 0x60
 function function_2a196eff(weapon) {
@@ -399,7 +399,7 @@ function function_2a196eff(weapon) {
 }
 
 // Namespace zm_pap_util/zm_pack_a_punch_util
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x43d26cb0, Offset: 0x14d0
 // Size: 0x5a
 function function_7352d8cc(weapon) {
@@ -411,7 +411,7 @@ function function_7352d8cc(weapon) {
 }
 
 // Namespace zm_pap_util/zm_pack_a_punch_util
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x89fe7629, Offset: 0x1538
 // Size: 0x58
 function function_83c29ddb(weapon) {
@@ -423,7 +423,7 @@ function function_83c29ddb(weapon) {
 }
 
 // Namespace zm_pap_util/zm_pack_a_punch_util
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xb3789ebc, Offset: 0x1598
 // Size: 0x8e
 function function_6d45375a(weapon) {
@@ -436,7 +436,7 @@ function function_6d45375a(weapon) {
 }
 
 // Namespace zm_pap_util/zm_pack_a_punch_util
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x76a5e3fe, Offset: 0x1630
 // Size: 0x54
 function private function_33f0ddd3(s_event) {

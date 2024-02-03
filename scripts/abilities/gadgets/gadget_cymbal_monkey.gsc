@@ -237,7 +237,7 @@ function function_4f90c4c2() {
 }
 
 // Namespace gadget_cymbal_monkey/gadget_cymbal_monkey
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x6bc4de8b, Offset: 0xdd8
 // Size: 0xaa
 function function_4a5dff80(zombie, var_d2b7321d = 1) {

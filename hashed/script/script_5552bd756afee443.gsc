@@ -411,7 +411,7 @@ function function_d6053a8f(var_e9082dc0, var_29a5aeda) {
         var_3993eddd = int(var_3993eddd * 10000);
         break;
     case 6:
-    case #"hash_defdefdefdefdef0":
+    default:
         var_3993eddd = int(var_3993eddd * 100000);
         break;
     }

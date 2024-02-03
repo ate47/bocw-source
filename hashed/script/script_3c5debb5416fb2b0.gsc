@@ -15,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xe2acc168, Offset: 0xe8
 // Size: 0xe4
 function function_70a657d8() {
@@ -32,7 +32,7 @@ function function_70a657d8() {
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x587661c2, Offset: 0x1d8
 // Size: 0x26c
 function function_214fe607(localclientnum, state, *oldstate) {

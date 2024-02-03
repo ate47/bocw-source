@@ -8,7 +8,7 @@
 class class_8ebbf51b : cluielem {
 
     // Namespace class_8ebbf51b/sr_armor_menu
-    // Params 0, eflags: 0x8
+    // Params 0, eflags: 0xa linked
     // Checksum 0x26ea4e8b, Offset: 0x198
     // Size: 0x14
     __constructor() {
@@ -16,7 +16,7 @@ class class_8ebbf51b : cluielem {
     }
 
     // Namespace class_8ebbf51b/sr_armor_menu
-    // Params 0, eflags: 0x90 class_linked
+    // Params 0, eflags: 0x92 linked class_linked
     // Checksum 0x95bbd3fc, Offset: 0x258
     // Size: 0x14
     __destructor() {
@@ -24,7 +24,7 @@ class class_8ebbf51b : cluielem {
     }
 
     // Namespace namespace_8ebbf51b/sr_armor_menu
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x8efc0dc, Offset: 0x1e0
     // Size: 0x3c
     function open(player, flags = 0) {
@@ -32,7 +32,7 @@ class class_8ebbf51b : cluielem {
     }
 
     // Namespace namespace_8ebbf51b/sr_armor_menu
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x335296bf, Offset: 0x228
     // Size: 0x24
     function close(player) {
@@ -40,7 +40,7 @@ class class_8ebbf51b : cluielem {
     }
 
     // Namespace namespace_8ebbf51b/sr_armor_menu
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0xc3c53a14, Offset: 0x1b8
     // Size: 0x1c
     function setup_clientfields() {
@@ -50,7 +50,7 @@ class class_8ebbf51b : cluielem {
 }
 
 // Namespace sr_armor_menu/sr_armor_menu
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xc8eb88c0, Offset: 0xc8
 // Size: 0x34
 function register() {
@@ -60,7 +60,7 @@ function register() {
 }
 
 // Namespace sr_armor_menu/sr_armor_menu
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x83b95f3f, Offset: 0x108
 // Size: 0x38
 function open(player, flags = 0) {
@@ -68,7 +68,7 @@ function open(player, flags = 0) {
 }
 
 // Namespace sr_armor_menu/sr_armor_menu
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xde74b2a0, Offset: 0x148
 // Size: 0x1c
 function close(player) {
@@ -76,7 +76,7 @@ function close(player) {
 }
 
 // Namespace sr_armor_menu/sr_armor_menu
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x686d9d85, Offset: 0x170
 // Size: 0x1a
 function is_open(player) {

@@ -1873,7 +1873,7 @@ function on_item_pickup(params) {
                 array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"zmintel_silver_darkaether_artifact_2");
                 level zm_ui_inventory::function_7df6bb60(#"hash_240dcac486ef946a", 2);
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 return;
             }
             level thread popups::function_87604884(#"hash_4cacf78219f8fca", self, self.team, item.var_a6762160.displayname);
@@ -1898,7 +1898,7 @@ function function_505c0acb(var_13167ed3) {
             return (self hasweapon(level.var_12b450dc, 1) || self hasweapon(level.var_6b41a8a1, 1));
         case #"ww_ieu_electric_t9":
             return (self hasweapon(level.var_e0be56c0, 1) || self hasweapon(level.var_e80744aa, 1));
-        case #"hash_defdefdefdefdef0":
+        default:
             return 0;
             break;
         }
@@ -1953,7 +1953,7 @@ function private function_98af2074(cmd) {
                 var_a0f325fa delete();
             }
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     #/

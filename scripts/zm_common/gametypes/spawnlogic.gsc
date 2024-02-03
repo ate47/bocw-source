@@ -15,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xa1f37cdd, Offset: 0x138
 // Size: 0x24
 function private function_70a657d8() {
@@ -23,7 +23,7 @@ function private function_70a657d8() {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xd1bf32dd, Offset: 0x168
 // Size: 0x2e4
 function main() {
@@ -82,7 +82,7 @@ function findboxcenter(mins, maxs) {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x8d7508bc, Offset: 0x4c8
 // Size: 0xa4
 function expandmins(mins, point) {
@@ -99,7 +99,7 @@ function expandmins(mins, point) {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xcd882589, Offset: 0x578
 // Size: 0xa4
 function expandmaxs(maxs, point) {
@@ -116,7 +116,7 @@ function expandmaxs(maxs, point) {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x86d78e5, Offset: 0x628
 // Size: 0x204
 function addspawnpointsinternal(team, spawnpointname) {
@@ -152,7 +152,7 @@ function addspawnpointsinternal(team, spawnpointname) {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x7cd0b82d, Offset: 0x838
 // Size: 0x9e
 function clearspawnpoints() {
@@ -164,7 +164,7 @@ function clearspawnpoints() {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xa317c593, Offset: 0x8e0
 // Size: 0x5c
 function addspawnpoints(team, spawnpointname) {
@@ -231,7 +231,7 @@ function dropspawnpoints(spawnpointname) {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x8eb08f4, Offset: 0xb90
 // Size: 0x44
 function addspawnpointclassname(spawnpointclassname) {
@@ -242,7 +242,7 @@ function addspawnpointclassname(spawnpointclassname) {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x469e2f18, Offset: 0xbe0
 // Size: 0x36
 function addspawnpointteamclassname(team, spawnpointclassname) {
@@ -250,7 +250,7 @@ function addspawnpointteamclassname(team, spawnpointclassname) {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd1e4eed4, Offset: 0xc20
 // Size: 0xae
 function getspawnpointarray(classname) {
@@ -265,7 +265,7 @@ function getspawnpointarray(classname) {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x5f3b399b, Offset: 0xcd8
 // Size: 0x116
 function spawnpointinit() {
@@ -286,7 +286,7 @@ function spawnpointinit() {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xbf0755cd, Offset: 0xdf8
 // Size: 0x1c
 function getteamspawnpoints(team) {
@@ -294,7 +294,7 @@ function getteamspawnpoints(team) {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xee14b100, Offset: 0xe20
 // Size: 0x1e8
 function getspawnpoint_final(spawnpoints, useweights) {
@@ -345,7 +345,7 @@ function getspawnpoint_final(spawnpoints, useweights) {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xa5e6515e, Offset: 0x1010
 // Size: 0x4a
 function finalizespawnpointchoice(spawnpoint) {
@@ -357,7 +357,7 @@ function finalizespawnpointchoice(spawnpoint) {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x2a348583, Offset: 0x1068
 // Size: 0x246
 function getbestweightedspawnpoint(spawnpoints) {
@@ -772,7 +772,7 @@ function strtovec(str) {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x48198ac6, Offset: 0x2b48
 // Size: 0x9a
 function getspawnpoint_random(spawnpoints) {
@@ -789,7 +789,7 @@ function getspawnpoint_random(spawnpoints) {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x91b8035d, Offset: 0x2bf0
 // Size: 0xd2
 function getallotherplayers() {
@@ -813,7 +813,7 @@ function getallotherplayers() {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xf0548ef, Offset: 0x2cd0
 // Size: 0x17a
 function getallalliedandenemyplayers(obj) {
@@ -846,7 +846,7 @@ function getallalliedandenemyplayers(obj) {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xe99b1a5c, Offset: 0x2e58
 // Size: 0x96
 function initweights(spawnpoints) {
@@ -864,7 +864,7 @@ function initweights(spawnpoints) {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd4dbae71, Offset: 0x2ef8
 // Size: 0x268
 function spawnpointupdate_zm(spawnpoint) {
@@ -897,7 +897,7 @@ function spawnpointupdate_zm(spawnpoint) {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x3de920d6, Offset: 0x3168
 // Size: 0x480
 function getspawnpoint_nearteam(spawnpoints, favoredspawnpoints, forceallydistanceweight, forceenemydistanceweight) {
@@ -974,7 +974,7 @@ function getspawnpoint_nearteam(spawnpoints, favoredspawnpoints, forceallydistan
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xf520dea5, Offset: 0x35f0
 // Size: 0x23a
 function getspawnpoint_dm(spawnpoints) {
@@ -1067,7 +1067,7 @@ function getspawnpoint_turned(spawnpoints, idealdist, baddist, idealdistteam, ba
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xb78895c5, Offset: 0x3b30
 // Size: 0x60
 function spawnlogic_begin() {
@@ -1426,7 +1426,7 @@ function updatedeathinfodebug() {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x2e89cbb0, Offset: 0x4fa0
 // Size: 0x2a0
 function spawnweightdebug(spawnpoints) {
@@ -1542,7 +1542,7 @@ function checkforsimilardeaths(deathinfo) {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x390c1bb2, Offset: 0x5530
 // Size: 0x1b4
 function updatedeathinfo() {
@@ -1567,7 +1567,7 @@ function updatedeathinfo() {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xdd2f15a0, Offset: 0x56f0
 // Size: 0x18c
 function avoidweapondamage(spawnpoints) {
@@ -1611,7 +1611,7 @@ function spawnperframeupdate() {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xc9d1ed52, Offset: 0x5910
 // Size: 0xb2
 function getnonteamsum(skip_team, sums) {
@@ -1626,7 +1626,7 @@ function getnonteamsum(skip_team, sums) {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x5baaeda9, Offset: 0x59d0
 // Size: 0xbe
 function getnonteammindist(skip_team, mindists) {
@@ -1643,7 +1643,7 @@ function getnonteammindist(skip_team, mindists) {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xc653d769, Offset: 0x5a98
 // Size: 0x5ec
 function spawnpointupdate(spawnpoint) {
@@ -1729,7 +1729,7 @@ function spawnpointupdate(spawnpoint) {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x27d940d2, Offset: 0x6090
 // Size: 0x7a
 function getlospenalty() {
@@ -1740,7 +1740,7 @@ function getlospenalty() {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x8c9ea89, Offset: 0x6118
 // Size: 0x27e
 function lastminutesighttraces(spawnpoint) {
@@ -1792,7 +1792,7 @@ function lastminutesighttraces(spawnpoint) {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xf1f67503, Offset: 0x63a0
 // Size: 0x49c
 function avoidvisibleenemies(spawnpoints, teambased) {
@@ -1868,7 +1868,7 @@ function avoidvisibleenemies(spawnpoints, teambased) {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xf7d12c39, Offset: 0x6848
 // Size: 0x22a
 function avoidspawnreuse(spawnpoints, teambased) {
@@ -1910,7 +1910,7 @@ function avoidspawnreuse(spawnpoints, teambased) {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x16324c10, Offset: 0x6a80
 // Size: 0xd8
 function avoidsamespawn(spawnpoints) {
@@ -1934,7 +1934,7 @@ function avoidsamespawn(spawnpoints) {
 }
 
 // Namespace spawnlogic/spawnlogic
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x4c411b4b, Offset: 0x6b60
 // Size: 0xa2
 function getrandomintermissionpoint() {

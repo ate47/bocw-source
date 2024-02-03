@@ -20,7 +20,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_blockers/zm_blockers
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x80f724d1, Offset: 0x110
 // Size: 0x4
 function private function_70a657d8() {

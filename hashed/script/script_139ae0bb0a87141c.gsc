@@ -1015,7 +1015,7 @@ function function_7b7042da() {
                 case 3:
                     hunter = hunters[randomint(hunters.size)];
                     break;
-                case #"hash_defdefdefdefdef0":
+                default:
                     hunter = hunters[randomint(3)];
                     break;
                 }

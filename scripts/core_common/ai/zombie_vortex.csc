@@ -15,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zombie_vortex/zombie_vortex
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x59e5afb4, Offset: 0x1c0
 // Size: 0x114
 function private function_70a657d8() {
@@ -26,7 +26,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zombie_vortex/zombie_vortex
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x136e778b, Offset: 0x2e0
 // Size: 0x28c
 function start_vortex(localclientnum, oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -66,7 +66,7 @@ function start_vortex(localclientnum, oldval, newval, *bnewent, *binitialsnap, *
 }
 
 // Namespace zombie_vortex/zombie_vortex
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x48d53e31, Offset: 0x578
 // Size: 0x60
 function vortex_shake_and_rumble(localclientnum, *v_vortex_origin) {
@@ -78,7 +78,7 @@ function vortex_shake_and_rumble(localclientnum, *v_vortex_origin) {
 }
 
 // Namespace zombie_vortex/zombie_vortex
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x3bcac1d2, Offset: 0x5e0
 // Size: 0x8c
 function vision_blur(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -90,7 +90,7 @@ function vision_blur(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *
 }
 
 // Namespace zombie_vortex/zombie_vortex
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0xe4613d84, Offset: 0x678
 // Size: 0x24c
 function function_2dd3c5bc(localclientnum, vortex_fx_handle, vposition, fx_vortex_explosion, n_vortex_time, var_c385f09c) {

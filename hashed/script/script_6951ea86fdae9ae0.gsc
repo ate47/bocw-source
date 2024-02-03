@@ -20,7 +20,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_fcd611c3/namespace_fcd611c3
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x5717e838, Offset: 0x140
 // Size: 0x5c
 function private function_70a657d8() {
@@ -31,7 +31,7 @@ function private function_70a657d8() {
 }
 
 // Namespace namespace_fcd611c3/namespace_fcd611c3
-// Params 5, eflags: 0x4
+// Params 5, eflags: 0x6 linked
 // Checksum 0xa6fa784c, Offset: 0x1a8
 // Size: 0x168
 function private on_begin(var_c8a36f90, var_a9dd1993, var_2953986a, var_3790b4e4, var_edc5a14f) {
@@ -47,7 +47,7 @@ function private on_begin(var_c8a36f90, var_a9dd1993, var_2953986a, var_3790b4e4
 }
 
 // Namespace namespace_fcd611c3/namespace_fcd611c3
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xadb57e5a, Offset: 0x318
 // Size: 0x9e
 function private on_end(*round_reset) {
@@ -69,7 +69,7 @@ function is_active() {
 }
 
 // Namespace namespace_fcd611c3/namespace_fcd611c3
-// Params 4, eflags: 0x4
+// Params 4, eflags: 0x6 linked
 // Checksum 0x67a7877f, Offset: 0x400
 // Size: 0x266
 function private function_1633056a(var_a9dd1993, var_2953986a, var_3790b4e4, var_edc5a14f) {
@@ -122,7 +122,7 @@ function private function_1633056a(var_a9dd1993, var_2953986a, var_3790b4e4, var
 }
 
 // Namespace namespace_fcd611c3/namespace_fcd611c3
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xfae13287, Offset: 0x670
 // Size: 0x118
 function function_936adaa1(weapon) {
@@ -139,7 +139,7 @@ function function_936adaa1(weapon) {
 }
 
 // Namespace namespace_fcd611c3/namespace_fcd611c3
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x8c52c855, Offset: 0x790
 // Size: 0x20c
 function function_26f124d8() {
@@ -179,7 +179,7 @@ function function_26f124d8() {
         }
         return 0;
     case #"movement":
-    case #"hash_defdefdefdefdef0":
+    default:
         v_velocity = self getvelocity();
         if (length(v_velocity) != 0) {
             return 1;
@@ -191,7 +191,7 @@ function function_26f124d8() {
 }
 
 // Namespace namespace_fcd611c3/namespace_fcd611c3
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x886a2d56, Offset: 0x9a8
 // Size: 0x12c
 function private function_33f0ddd3(s_event) {

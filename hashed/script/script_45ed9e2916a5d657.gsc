@@ -16,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_cd6bd9f/namespace_cd6bd9f
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x2b639635, Offset: 0x120
 // Size: 0x34
 function function_70a657d8() {
@@ -24,7 +24,7 @@ function function_70a657d8() {
 }
 
 // Namespace namespace_cd6bd9f/namespace_cd6bd9f
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x549299f0, Offset: 0x160
 // Size: 0x5c
 function private function_7ec99c76(localclientnum) {

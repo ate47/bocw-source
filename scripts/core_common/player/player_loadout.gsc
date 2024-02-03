@@ -12,7 +12,7 @@ function function_87bcb1b() {
 }
 
 // Namespace loadout/player_loadout
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xb5fd512b, Offset: 0x118
 // Size: 0x12c
 function function_c67222df() {

@@ -200,7 +200,7 @@ function function_9db3514d(localclientnum, *oldval, newval, *bnewent, *binitials
             case #"zombie_dog":
             case #"zombie":
             case #"avogadro":
-            case #"hash_defdefdefdefdef0":
+            default:
                 var_9879245b = #"hash_1b7434074de37b57";
                 break;
             }

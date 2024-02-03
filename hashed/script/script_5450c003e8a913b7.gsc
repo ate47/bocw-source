@@ -850,7 +850,7 @@ function function_63ac72da(event) {
         case #"footstep_run":
             self thread namespace_979752dc::function_f5f4416f("stealth", "announce", "investigate", delaytime);
             return 1;
-        case #"hash_defdefdefdefdef0":
+        default:
             /#
                 println("<unknown string>" + event.var_dd29a83a + "<unknown string>");
             #/

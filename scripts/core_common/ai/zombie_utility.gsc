@@ -1617,7 +1617,7 @@ function default_max_zombie_func(max_num, n_round) {
     case 5:
         max = var_979708f[n_players - 1];
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         max = max_num;
         break;
     }
@@ -1840,7 +1840,7 @@ function function_9e46a191(speed) {
     case #"sprint":
         return "super_sprint";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         return "super_sprint";
         break;
     }
@@ -2036,7 +2036,7 @@ function zombie_gib(amount, attacker, *direction_vec, point, type, *tagname, *mo
             }
             self function_df5afb5e(1);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             if (self.damagelocation == "none") {
                 if (partname === "MOD_CRUSH" && type >= self.health) {
                     self gib_random_parts();
@@ -2533,7 +2533,7 @@ function gib_random_part() {
     case 4:
         gibserverutils::gibleftarm(self, 0);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
 }

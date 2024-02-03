@@ -392,7 +392,7 @@ function force_stowed_weapon_update() {
 }
 
 // Namespace weapons/weapons_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x774540bf, Offset: 0x16d0
 // Size: 0x94
 function detach_carry_object_model() {

@@ -296,7 +296,7 @@ function private _planpushvalidparent(planner, childnodeentry, result) {
             }
             _planstackpopnode(planner);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             _planstackpopnode(planner);
             break;
         }
@@ -334,7 +334,7 @@ LOC_00000058:
         case #"planner":
             _planstackpushnode(planner, nodeentry.node.children[0], 0);
             continue;
-        case #"hash_defdefdefdefdef0":
+        default:
             /#
                 assert(0, "<unknown string>" + nodeentry.node.type + "<unknown string>");
             #/

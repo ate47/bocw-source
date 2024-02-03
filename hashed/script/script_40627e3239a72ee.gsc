@@ -971,7 +971,7 @@ function function_ed04cf0f(var_ff27a24 = 0) {
         str_flag = #"hash_2bd741137c515a48";
         var_dc7e53b6 = #"hash_1f8bb9e3c0e5ac10";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
     if (var_ff27a24) {
@@ -1111,7 +1111,7 @@ function function_9d903a8e(index) {
         var_6c7ad44a = zm_vo::function_f577c17d(var_5fca83f);
         wait(var_6c7ad44a);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
     if (isdefined(level.var_56e22cfa)) {
@@ -1195,7 +1195,7 @@ function function_e243a545() {
             level.var_56e22cfa clientfield::increment("" + #"hash_3d52751d686c4865", 1);
             level.var_56e22cfa.var_553d761a = 1;
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
         level.var_56e22cfa zodcompanionutility::function_633d6f7b();

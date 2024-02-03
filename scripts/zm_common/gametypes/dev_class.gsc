@@ -525,7 +525,7 @@ function dev_cac_gdt_update_think() {
             case #"sprinttimecooldown":
                 key = "<unknown string>";
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 key = undefined;
                 break;
             }

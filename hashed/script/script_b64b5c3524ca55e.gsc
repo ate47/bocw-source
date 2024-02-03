@@ -2293,7 +2293,7 @@ function function_b2871ce6(var_75a7d6) {
     b_teleporting = function_14a35d6f(var_75a7d6, str_loc);
     zm_sq::function_53d0d99(#"teleport");
     switch (str_loc) {
-    case #"hash_defdefdefdefdef0":
+    default:
         var_75a7d6 flag::clear(#"hash_1bd28fc130c9aad2");
         var_75a7d6 flag::set(#"hash_88667c18a4cff07");
         break;
@@ -3337,7 +3337,7 @@ function cmd(cmd) {
             level notify(#"hash_38f29f9cb03586ea");
             level notify(#"hash_3807e7b1086e4aa0");
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     #/

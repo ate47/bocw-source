@@ -15,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace nightingale/nightingale
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x1151853b, Offset: 0x110
 // Size: 0x154
 function private function_70a657d8() {
@@ -30,7 +30,7 @@ function private function_70a657d8() {
 }
 
 // Namespace nightingale/nightingale
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xab468955, Offset: 0x270
 // Size: 0x4c
 function private function_85f37224(*localclientnum) {
@@ -39,7 +39,7 @@ function private function_85f37224(*localclientnum) {
 }
 
 // Namespace nightingale/nightingale
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x80aff95c, Offset: 0x2c8
 // Size: 0xe4
 function function_17982c67(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -56,7 +56,7 @@ function function_17982c67(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace nightingale/nightingale
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x3baecd99, Offset: 0x3b8
 // Size: 0x106
 function function_52240d18(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

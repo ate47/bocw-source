@@ -8,7 +8,7 @@
 class csr_objective_secure_hud : cluielem {
 
     // Namespace csr_objective_secure_hud/sr_objective_secure_hud
-    // Params 0, eflags: 0x8
+    // Params 0, eflags: 0xa linked
     // Checksum 0x7de0b810, Offset: 0x428
     // Size: 0x14
     __constructor() {
@@ -16,7 +16,7 @@ class csr_objective_secure_hud : cluielem {
     }
 
     // Namespace csr_objective_secure_hud/sr_objective_secure_hud
-    // Params 0, eflags: 0x90 class_linked
+    // Params 0, eflags: 0x92 linked class_linked
     // Checksum 0x6cfcadaa, Offset: 0x678
     // Size: 0x14
     __destructor() {
@@ -24,7 +24,7 @@ class csr_objective_secure_hud : cluielem {
     }
 
     // Namespace csr_objective_secure_hud/sr_objective_secure_hud
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x40220c7f, Offset: 0x568
     // Size: 0x24
     function open(localclientnum) {
@@ -32,7 +32,7 @@ class csr_objective_secure_hud : cluielem {
     }
 
     // Namespace csr_objective_secure_hud/sr_objective_secure_hud
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x4ccc11ed, Offset: 0x598
     // Size: 0x30
     function function_3b1f1b69(localclientnum, value) {
@@ -40,7 +40,7 @@ class csr_objective_secure_hud : cluielem {
     }
 
     // Namespace csr_objective_secure_hud/sr_objective_secure_hud
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0xdbd45bbf, Offset: 0x490
     // Size: 0x1c
     function register_clientside() {
@@ -48,7 +48,7 @@ class csr_objective_secure_hud : cluielem {
     }
 
     // Namespace csr_objective_secure_hud/sr_objective_secure_hud
-    // Params 4, eflags: 0x0
+    // Params 4, eflags: 0x2 linked
     // Checksum 0x76c915ff, Offset: 0x448
     // Size: 0x3c
     function setup_clientfields(*var_62534560, *var_de4b1193, *var_b661e7d8, *var_2c613188) {
@@ -56,7 +56,7 @@ class csr_objective_secure_hud : cluielem {
     }
 
     // Namespace csr_objective_secure_hud/sr_objective_secure_hud
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0xe59c0345, Offset: 0x5d0
     // Size: 0x30
     function function_a1cd68d0(localclientnum, value) {
@@ -64,7 +64,7 @@ class csr_objective_secure_hud : cluielem {
     }
 
     // Namespace csr_objective_secure_hud/sr_objective_secure_hud
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x9306c77a, Offset: 0x608
     // Size: 0x30
     function function_d2f341fe(localclientnum, value) {
@@ -72,7 +72,7 @@ class csr_objective_secure_hud : cluielem {
     }
 
     // Namespace csr_objective_secure_hud/sr_objective_secure_hud
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x3fa1af64, Offset: 0x640
     // Size: 0x30
     function function_e4a4e561(localclientnum, value) {
@@ -80,7 +80,7 @@ class csr_objective_secure_hud : cluielem {
     }
 
     // Namespace csr_objective_secure_hud/sr_objective_secure_hud
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x8bf7c11f, Offset: 0x4b8
     // Size: 0xa4
     function function_fa582112(localclientnum) {
@@ -94,7 +94,7 @@ class csr_objective_secure_hud : cluielem {
 }
 
 // Namespace sr_objective_secure_hud/sr_objective_secure_hud
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x5bfe41bc, Offset: 0x110
 // Size: 0x196
 function register(var_62534560, var_de4b1193, var_b661e7d8, var_2c613188) {

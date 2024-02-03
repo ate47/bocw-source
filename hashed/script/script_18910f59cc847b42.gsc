@@ -446,7 +446,7 @@ function function_ccf8a968(var_545466e8) {
         return 1200;
     case 8:
         return 800;
-    case #"hash_defdefdefdefdef0":
+    default:
         return 650;
         break;
     }

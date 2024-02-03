@@ -30,7 +30,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x80f724d1, Offset: 0x3b0
 // Size: 0x4
 function function_70a657d8() {
@@ -38,7 +38,7 @@ function function_70a657d8() {
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xf91a50ba, Offset: 0x3c0
 // Size: 0x1c
 function function_5700f119() {
@@ -48,13 +48,13 @@ function function_5700f119() {
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xece3f4e5, Offset: 0x3e8
 // Size: 0x44e
 function function_a92a93e9(var_c860e2f, v_angles, var_75b5cef0 = 0, n_delay = 1) {
     foreach (player in getplayers()) {
         switch (level.var_b48509f9) {
-        case #"hash_defdefdefdefdef0":
+        default:
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_1", #attacker:player});
             break;
         case 2:
@@ -89,7 +89,7 @@ function function_a92a93e9(var_c860e2f, v_angles, var_75b5cef0 = 0, n_delay = 1)
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x2e01c121, Offset: 0xa80
 // Size: 0x38c
 function function_bdd95292(struct) {
@@ -133,7 +133,7 @@ function function_bdd95292(struct) {
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x1e0d047f, Offset: 0xe18
 // Size: 0x180
 function function_9086861a() {
@@ -160,7 +160,7 @@ function function_9086861a() {
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x2eafb3a3, Offset: 0xfa0
 // Size: 0xb4
 function function_b4f2a34e(eventstruct) {
@@ -174,7 +174,7 @@ function function_b4f2a34e(eventstruct) {
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x20daa86a, Offset: 0x1060
 // Size: 0x34c
 function function_39340834(struct, trigger) {
@@ -225,7 +225,7 @@ function function_39340834(struct, trigger) {
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x6af2ee81, Offset: 0x13b8
 // Size: 0x1c0
 function function_621d45bc(list, struct) {
@@ -246,7 +246,7 @@ function function_621d45bc(list, struct) {
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
-// Params 3, eflags: 0x4
+// Params 3, eflags: 0x6 linked
 // Checksum 0x776fb59e, Offset: 0x1580
 // Size: 0x6dc
 function private function_410c380(list, var_523adf97, var_5fe37ae8) {
@@ -351,7 +351,7 @@ function private function_410c380(list, var_523adf97, var_5fe37ae8) {
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xb014b1f0, Offset: 0x1c68
 // Size: 0x27a
 function private function_219cb8bb(var_a6762160) {
@@ -413,7 +413,7 @@ function private function_219cb8bb(var_a6762160) {
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0x34aa3592, Offset: 0x1ef0
 // Size: 0x9a
 function private function_76d51213(struct, var_6ca170e7) {
@@ -426,7 +426,7 @@ function private function_76d51213(struct, var_6ca170e7) {
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x6ed85faf, Offset: 0x1f98
 // Size: 0x8c
 function function_6c71e778() {
@@ -437,7 +437,7 @@ function function_6c71e778() {
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x2a2e9939, Offset: 0x2030
 // Size: 0x92
 function function_39d87af7(currentselection) {
@@ -451,14 +451,14 @@ function function_39d87af7(currentselection) {
     case 2:
         return "Gun3Selected";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         return "Gun1Selected";
         break;
     }
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x8aab0679, Offset: 0x20d0
 // Size: 0x680
 function function_80bbb50b(chest, trigger) {

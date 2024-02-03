@@ -1215,7 +1215,7 @@ function spawnitem(item) {
             assert(isdefined(item.parameters), "<unknown string>");
         #/
         def = namespace_dfc652ee::function_6265bde4(item.parameters[randomint(item.parameters.size)]);
-    case #"hash_defdefdefdefdef0":
+    default:
         if (!isdefined(def)) {
             def = namespace_dfc652ee::function_6265bde4(item.script_noteworthy);
         }
@@ -1339,7 +1339,7 @@ function function_e5488243(npc) {
     case #"patrol":
         break;
     case #"guard":
-    case #"hash_defdefdefdefdef0":
+    default:
         self thread namespace_250e9486::function_e1f7a9a0(npc.radius);
         break;
     }

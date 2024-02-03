@@ -234,7 +234,7 @@ function function_af722d1c() {
                 zm_sq::function_266d66eb(#"hash_52a7a8068eacfe", level.var_f2484ed9, undefined, #"hash_570634faa6508f0d", undefined, 96);
             }
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             if (s_waitresult._notify === level.var_f070b39a.var_2490cffb) {
                 zm_sq::function_3029d343(#"hash_75e465cf3c494bdd", var_4bcd7eea);
             } else {
@@ -1094,7 +1094,7 @@ function function_647c7f() {
     case 2:
         var_bdd70f6a thread scene::play(#"p9_fxanim_zm_monkey_idle_bundle", "idle_03", var_bdd70f6a);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
     level waittill(#"dark_side_timeout", #"pap_quest_completed", #"hash_61e8a39b3a4bee6a");
@@ -1370,7 +1370,7 @@ function private function_bde52114(cmd) {
         case #"hash_407a1d2b33b93f95":
             level thread function_feecd74();
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     #/

@@ -38,7 +38,7 @@ function init() {
 }
 
 // Namespace zm_turned/zm_turned
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x52fb756c, Offset: 0x400
 // Size: 0x82
 function setup_zombie_exerts() {
@@ -49,7 +49,7 @@ function setup_zombie_exerts() {
 }
 
 // Namespace zm_turned/zm_turned
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x661f4ee0, Offset: 0x490
 // Size: 0x64
 function delay_turning_on_eyes() {
@@ -239,7 +239,7 @@ function deletezombiesinradius(origin) {
 }
 
 // Namespace zm_turned/zm_turned
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x1e477df9, Offset: 0x12d8
 // Size: 0x16c
 function turned_give_melee_weapon() {
@@ -262,7 +262,7 @@ function turned_give_melee_weapon() {
 }
 
 // Namespace zm_turned/zm_turned
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x7a48e8d6, Offset: 0x1450
 // Size: 0x25a
 function turned_player_buttons() {
@@ -297,7 +297,7 @@ function turned_player_buttons() {
 }
 
 // Namespace zm_turned/zm_turned
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xdf989365, Offset: 0x16b8
 // Size: 0xdc
 function turned_disable_player_weapons() {
@@ -319,7 +319,7 @@ function turned_disable_player_weapons() {
 }
 
 // Namespace zm_turned/zm_turned
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x2cfc1a7f, Offset: 0x17a0
 // Size: 0x2b4
 function turned_enable_player_weapons() {
@@ -388,7 +388,7 @@ function get_available_human() {
 }
 
 // Namespace zm_turned/zm_turned
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x4afe416a, Offset: 0x1c80
 // Size: 0x74
 function silentlyremovezombie() {

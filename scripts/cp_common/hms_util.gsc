@@ -23,7 +23,7 @@
 #namespace hms_util;
 
 // Namespace hms_util/hms_util
-// Params 4, eflags: 0x2 linked
+// Params 4, eflags: 0x0
 // Checksum 0x50c5e88d, Offset: 0x5f0
 // Size: 0xfc
 function function_2e7c81f6(var_6ec87b1c, var_1bf8e54c, var_67e93cde, var_16081583) {
@@ -432,7 +432,7 @@ function function_36e9db45(var_5207b7a8) {
     case #"cqb":
         self ai::set_behavior_attribute("_human_demeanor", var_5207b7a8);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assertmsg("<unknown string>" + var_5207b7a8 + "<unknown string>");
         #/
@@ -1071,7 +1071,7 @@ function function_a7607f(var_b6423927, str_key) {
 }
 
 // Namespace hms_util/hms_util
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x46437e64, Offset: 0x3ea0
 // Size: 0x15c
 function function_ad6fd59c(var_a81df2cc = 1) {
@@ -1141,7 +1141,7 @@ function function_2f50100e(var_ce6e52bd, var_c412903e, var_b7925ab5 = "shutoff_a
         var_889e45c = 650;
         var_e5ba320e = 250;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assert(1, "<unknown string>");
         #/
@@ -1326,7 +1326,7 @@ function function_b064d2a4(var_6bb4ec43, var_c412903e, var_b7925ab5 = "shutoff_p
         var_3ebb2225 = 310;
         var_d67a7d0a = 365;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assert(1, "<unknown string>");
         #/
@@ -1597,7 +1597,7 @@ function function_c21ef1d8(var_a5a6c25b = "shoot_player", target = undefined) {
         self turret::function_14223170(0);
         break;
     case #"shoot_player":
-    case #"hash_defdefdefdefdef0":
+    default:
         self turret::set_target(level.player, vectorscale((0, 0, 1), 5), 0, 1);
         self turret::function_49c3b892(level.player, 0);
         self turret::function_41c79ce4(0, 0);
@@ -1740,7 +1740,7 @@ function function_cef95010(v_pos, var_53edfe53) {
             var_2b13e443 = "fx9_bul_impact_default_50cal_xlrg";
             var_2f4dfc87 = "exp_facade_debris_mannequin";
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             var_2b13e443 = "fx9_bul_impact_default_50cal_xlrg";
             var_2f4dfc87 = "exp_facade_debris_concrete";
             break;

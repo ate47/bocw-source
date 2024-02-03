@@ -67,7 +67,7 @@ function setstructblackboardattribute(struct, attributename, attributevalue) {
 }
 
 // Namespace blackboard/blackboard
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x2582d08, Offset: 0x370
 // Size: 0x7c
 function createblackboardforentity(entity) {

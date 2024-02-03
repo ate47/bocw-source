@@ -475,7 +475,7 @@ function function_27028b8e(str_zone) {
     case #"zone_control_room":
         var_601fee0 = #"hash_3e9e52ed3360a871";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_601fee0 = undefined;
         break;
     }

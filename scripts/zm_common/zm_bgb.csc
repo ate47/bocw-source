@@ -18,7 +18,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace bgb/zm_bgb
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x603c0162, Offset: 0x248
 // Size: 0x2dc
 function private function_70a657d8() {
@@ -40,7 +40,7 @@ function private function_70a657d8() {
 }
 
 // Namespace bgb/zm_bgb
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xc344172, Offset: 0x530
 // Size: 0x44
 function private postinit() {
@@ -52,7 +52,7 @@ function private postinit() {
 }
 
 // Namespace bgb/zm_bgb
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x8d0b7c23, Offset: 0x580
 // Size: 0x1a0
 function force_stream() {
@@ -64,7 +64,7 @@ function force_stream() {
 }
 
 // Namespace bgb/zm_bgb
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xf1aa9189, Offset: 0x728
 // Size: 0x3c
 function private on_player_connect(localclientnum) {
@@ -75,7 +75,7 @@ function private on_player_connect(localclientnum) {
 }
 
 // Namespace bgb/zm_bgb
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x825baaa7, Offset: 0x770
 // Size: 0x48
 function private bgb_player_init(localclientnum) {
@@ -86,7 +86,7 @@ function private bgb_player_init(localclientnum) {
 }
 
 // Namespace bgb/zm_bgb
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x15436ac0, Offset: 0x7c0
 // Size: 0x2c8
 function private bgb_finalize() {
@@ -148,7 +148,7 @@ function register(name, limit_type) {
 }
 
 // Namespace bgb/zm_bgb
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0x47f6903c, Offset: 0xbe0
 // Size: 0x19c
 function private function_5e7b3f16(localclientnum, time) {
@@ -172,7 +172,7 @@ function private function_5e7b3f16(localclientnum, time) {
     case #"time":
         color = (19, 244, 20) / 255;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         return;
     }
     self setcontrollerlightbarcolor(localclientnum, color);
@@ -183,7 +183,7 @@ function private function_5e7b3f16(localclientnum, time) {
 }
 
 // Namespace bgb/zm_bgb
-// Params 7, eflags: 0x4
+// Params 7, eflags: 0x6 linked
 // Checksum 0x9d03c8b8, Offset: 0xd88
 // Size: 0x74
 function private function_d9afd5ee(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -192,7 +192,7 @@ function private function_d9afd5ee(localclientnum, *oldval, newval, *bnewent, *b
 }
 
 // Namespace bgb/zm_bgb
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0x6e62a5c, Offset: 0xe08
 // Size: 0x6a
 function private function_f4763ffe(localclientnum, fx) {
@@ -205,7 +205,7 @@ function private function_f4763ffe(localclientnum, fx) {
 }
 
 // Namespace bgb/zm_bgb
-// Params 7, eflags: 0x4
+// Params 7, eflags: 0x6 linked
 // Checksum 0x7f855f6c, Offset: 0xe80
 // Size: 0x8c
 function private bgb_blow_bubble(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

@@ -14,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_58949729/namespace_58949729
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x48bcc164, Offset: 0x178
 // Size: 0x4c
 function function_70a657d8() {
@@ -22,7 +22,7 @@ function function_70a657d8() {
 }
 
 // Namespace namespace_58949729/namespace_58949729
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xfb058cfa, Offset: 0x1d0
 // Size: 0x242
 function reward_chest_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

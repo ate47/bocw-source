@@ -241,7 +241,7 @@ function private function_daafd48c(&paramslist) {
             actionparams = {#weapon:weapon, #action:action};
         }
         /#
-            actionparams.name = function_a16a090d(weapon);
+            actionparams.name = getweaponname(weapon);
             actionparams.debug = [];
         #/
         paramslist[paramslist.size] = actionparams;
@@ -377,7 +377,7 @@ function function_d6318084(weapon) {
         return;
     }
     /#
-        name = function_a16a090d(weapon);
+        name = getweaponname(weapon);
     #/
     self function_2a2a2cd2(name, action, weapon);
     self.bot.var_ceffa180 = undefined;

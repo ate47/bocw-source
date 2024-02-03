@@ -555,7 +555,7 @@ function function_f40d64cc(attacker, vehicle, weapon) {
     case #"ultimate_turret":
         event = "automated_turret_vehicle_destruction";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         return;
     }
     victim = isdefined(vehicle) ? vehicle.owner : undefined;

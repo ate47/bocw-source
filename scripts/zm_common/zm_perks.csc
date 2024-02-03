@@ -11,7 +11,7 @@
 #namespace zm_perks;
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x2c700fec, Offset: 0x310
 // Size: 0x7c
 function init() {
@@ -25,7 +25,7 @@ function init() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xcd24d84f, Offset: 0x398
 // Size: 0xb4
 function function_f3c80d73(var_d7e9261c, var_136e2645) {
@@ -39,7 +39,7 @@ function function_f3c80d73(var_d7e9261c, var_136e2645) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x910ca595, Offset: 0x458
 // Size: 0x100
 function perks_register_clientfield() {
@@ -95,7 +95,7 @@ function function_89e748a7() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x836a6ba0, Offset: 0x1108
 // Size: 0xa8
 function perk_init_code_callbacks() {
@@ -111,7 +111,7 @@ function perk_init_code_callbacks() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xe540ee04, Offset: 0x11b8
 // Size: 0x20
 function init_custom_perks() {
@@ -121,7 +121,7 @@ function init_custom_perks() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xdbd65af5, Offset: 0x11e0
 // Size: 0x66
 function register_perk_clientfields(str_perk, func_clientfield_register, func_code_callback) {
@@ -131,7 +131,7 @@ function register_perk_clientfields(str_perk, func_clientfield_register, func_co
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x63fa2740, Offset: 0x1250
 // Size: 0x46
 function register_perk_effects(str_perk, str_light_effect) {
@@ -140,7 +140,7 @@ function register_perk_effects(str_perk, str_light_effect) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xd773999a, Offset: 0x12a0
 // Size: 0x46
 function register_perk_init_thread(str_perk, func_init_thread) {
@@ -149,7 +149,7 @@ function register_perk_init_thread(str_perk, func_init_thread) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x50137bde, Offset: 0x12f0
 // Size: 0x8e
 function function_b60f4a9f(str_perk, var_4fbc4ea9, var_347c72d2, var_51f1a532) {
@@ -162,7 +162,7 @@ function function_b60f4a9f(str_perk, var_4fbc4ea9, var_347c72d2, var_51f1a532) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x921a702d, Offset: 0x1388
 // Size: 0xa0
 function init_perk_custom_threads() {
@@ -177,7 +177,7 @@ function init_perk_custom_threads() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x12b16380, Offset: 0x1430
 // Size: 0x60
 function _register_undefined_perk(str_perk) {
@@ -190,7 +190,7 @@ function _register_undefined_perk(str_perk) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x20eb5385, Offset: 0x1498
 // Size: 0xb4
 function perk_meteor_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -202,7 +202,7 @@ function perk_meteor_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x462d5ef5, Offset: 0x1558
 // Size: 0x6c
 function init_perk_machines_fx(*localclientnum) {
@@ -215,7 +215,7 @@ function init_perk_machines_fx(*localclientnum) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x9f35e02a, Offset: 0x15d0
 // Size: 0x154
 function perk_start_up() {
@@ -246,7 +246,7 @@ function perk_start_up() {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xcb171301, Offset: 0x1730
 // Size: 0x64
 function vending_machine_flicker_light(fx_light, duration) {
@@ -257,7 +257,7 @@ function vending_machine_flicker_light(fx_light, duration) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x78ee920c, Offset: 0x17a0
 // Size: 0xc4
 function play_perk_fx_on_client(client_num, fx_light, duration) {
@@ -269,7 +269,7 @@ function play_perk_fx_on_client(client_num, fx_light, duration) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x4d70bd76, Offset: 0x1870
 // Size: 0x6c
 function function_ccbdf992(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -337,7 +337,7 @@ function private function_be3ae9c5(n_value, var_51e3f61d = 0) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xc917de6f, Offset: 0x1be8
 // Size: 0x104
 function function_9b4bc8e7(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -353,7 +353,7 @@ function function_9b4bc8e7(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x2c230885, Offset: 0x1cf8
 // Size: 0x88
 function function_6a0a572d(localclientnum) {
@@ -366,7 +366,7 @@ function function_6a0a572d(localclientnum) {
 }
 
 // Namespace zm_perks/zm_perks
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x8bcd43d1, Offset: 0x1d88
 // Size: 0xc2
 function function_52c149b2(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -379,7 +379,7 @@ function function_52c149b2(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_perks/zm_perks
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xc63834ec, Offset: 0x1e58
 // Size: 0x2a4
 function function_ab7cd429(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -413,7 +413,7 @@ function function_ab7cd429(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_perks/zm_perks
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x537af84f, Offset: 0x2108
 // Size: 0x160
 function function_1625e105(e_player) {

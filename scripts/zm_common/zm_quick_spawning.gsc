@@ -17,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_quick_spawning/zm_quick_spawning
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xd8afe7e5, Offset: 0x160
 // Size: 0x84
 function private postinit() {
@@ -32,7 +32,7 @@ function private postinit() {
 }
 
 // Namespace zm_quick_spawning/zm_quick_spawning
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x9e638426, Offset: 0x1f0
 // Size: 0x16
 function private function_6a51df96(*notifyhash) {
@@ -40,7 +40,7 @@ function private function_6a51df96(*notifyhash) {
 }
 
 // Namespace zm_quick_spawning/zm_quick_spawning
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xb0cbc902, Offset: 0x210
 // Size: 0xfa
 function private function_920e8738() {
@@ -65,7 +65,7 @@ function private function_920e8738() {
 }
 
 // Namespace zm_quick_spawning/zm_quick_spawning
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x369c08c0, Offset: 0x318
 // Size: 0xd0
 function function_c5ea0b0() {
@@ -81,7 +81,7 @@ function function_c5ea0b0() {
 }
 
 // Namespace zm_quick_spawning/zm_quick_spawning
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x76f28623, Offset: 0x3f0
 // Size: 0x34
 function function_15e9bcbb() {
@@ -89,7 +89,7 @@ function function_15e9bcbb() {
 }
 
 // Namespace zm_quick_spawning/zm_quick_spawning
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xf3be0373, Offset: 0x430
 // Size: 0x102
 function function_15b283ea() {
@@ -108,7 +108,7 @@ function function_15b283ea() {
 }
 
 // Namespace zm_quick_spawning/zm_quick_spawning
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xb069e0d9, Offset: 0x540
 // Size: 0x110
 function function_6b19043d() {
@@ -131,7 +131,7 @@ function function_6b19043d() {
 }
 
 // Namespace zm_quick_spawning/zm_quick_spawning
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x6e86d4c9, Offset: 0x658
 // Size: 0x394
 function function_367e3573(force = 0) {
@@ -201,7 +201,7 @@ function function_367e3573(force = 0) {
 }
 
 // Namespace zm_quick_spawning/zm_quick_spawning
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xd53dd6bc, Offset: 0x9f8
 // Size: 0x54
 function function_4b35e9ac() {
@@ -213,7 +213,7 @@ function function_4b35e9ac() {
 }
 
 // Namespace zm_quick_spawning/zm_quick_spawning
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x28bb7d40, Offset: 0xa58
 // Size: 0x3a
 function function_5d642307() {
@@ -224,7 +224,7 @@ function function_5d642307() {
 }
 
 // Namespace zm_quick_spawning/zm_quick_spawning
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x1759776c, Offset: 0xaa0
 // Size: 0x48e
 function function_765cb1de(var_f4d3512f, player) {
@@ -306,7 +306,7 @@ function function_765cb1de(var_f4d3512f, player) {
 }
 
 // Namespace zm_quick_spawning/zm_quick_spawning
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xd1e07c83, Offset: 0xf38
 // Size: 0x2f6
 function function_3b2d308f(player, zone) {
@@ -328,7 +328,7 @@ function function_3b2d308f(player, zone) {
     case 3:
         var_e50a845c = tacticalquery(var_87d682f9, zone.nodes[0], player, var_a83960b5[0], var_a83960b5[1], var_a83960b5[2]);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_e50a845c = tacticalquery("zombie_spawn_tacquery_1player", zone.nodes[0], player);
         break;
     }
@@ -346,7 +346,7 @@ function function_3b2d308f(player, zone) {
 }
 
 // Namespace zm_quick_spawning/zm_quick_spawning
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x1c655f12, Offset: 0x1238
 // Size: 0x292
 function function_f1ec5df(player, direction, var_ef0ae03b) {
@@ -388,7 +388,7 @@ function function_f1ec5df(player, direction, var_ef0ae03b) {
 }
 
 // Namespace zm_quick_spawning/zm_quick_spawning
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xb900bb2d, Offset: 0x14d8
 // Size: 0xf2
 function private function_dad4891b(player_in) {

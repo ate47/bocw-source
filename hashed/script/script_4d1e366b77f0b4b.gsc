@@ -602,7 +602,7 @@ function private function_15677aa0(cmd) {
         case #"hash_77e4b4a0f4904933":
             function_32af84be(level.players[0]);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     #/
@@ -808,7 +808,7 @@ function function_f4788553(*var_dbce0c44) {
             var_2506688 = 1;
             var_1797c23a = 1;
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             var_2506688 = 1;
             var_1797c23a = 2;
             break;
@@ -825,7 +825,7 @@ function function_f4788553(*var_dbce0c44) {
             var_2506688 = 2;
             var_1797c23a = 2;
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             var_2506688 = 3;
             var_1797c23a = 3;
             break;

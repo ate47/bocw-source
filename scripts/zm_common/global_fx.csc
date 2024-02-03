@@ -13,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace global_fx/global_fx
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x80f724d1, Offset: 0xe8
 // Size: 0x4
 function private function_70a657d8() {
@@ -21,7 +21,7 @@ function private function_70a657d8() {
 }
 
 // Namespace global_fx/global_fx
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x480dcd99, Offset: 0xf8
 // Size: 0x24
 function main() {
@@ -30,7 +30,7 @@ function main() {
 }
 
 // Namespace global_fx/global_fx
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x699acf7d, Offset: 0x128
 // Size: 0x2c
 function function_41acd565() {
@@ -38,7 +38,7 @@ function function_41acd565() {
 }
 
 // Namespace global_fx/global_fx
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x43d1d9ea, Offset: 0x160
 // Size: 0x28
 function check_for_wind_override() {

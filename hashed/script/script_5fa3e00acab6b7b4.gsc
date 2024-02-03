@@ -631,7 +631,7 @@ function function_6d57b52a(player, var_6165a2d8, var_cc4bc1dd) {
         var_2153b0fe.perks = [];
         switch (var_cc4bc1dd.size) {
         case 6:
-        case #"hash_defdefdefdefdef0":
+        default:
             var_2153b0fe.perks[5] = var_cc4bc1dd[5].namehash;
         case 5:
             var_2153b0fe.perks[4] = var_cc4bc1dd[4].namehash;
@@ -652,7 +652,7 @@ function function_6d57b52a(player, var_6165a2d8, var_cc4bc1dd) {
         var_2153b0fe.wildcards = [];
         switch (wildcards.size) {
         case 3:
-        case #"hash_defdefdefdefdef0":
+        default:
             var_2153b0fe.wildcards[2] = wildcards[2];
         case 2:
             var_2153b0fe.wildcards[1] = wildcards[1];
@@ -667,7 +667,7 @@ function function_6d57b52a(player, var_6165a2d8, var_cc4bc1dd) {
         var_2153b0fe.killstreaks = [];
         switch (killstreaks.size) {
         case 3:
-        case #"hash_defdefdefdefdef0":
+        default:
             var_2153b0fe.killstreaks[2] = killstreaks[2];
         case 2:
             var_2153b0fe.killstreaks[1] = killstreaks[1];

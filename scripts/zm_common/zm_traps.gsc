@@ -90,7 +90,7 @@ function trap_init() {
             case #"flipper":
                 self._trap_activate_func = &trap_activate_flipper;
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 self._trap_activate_func = &trap_activate_fire;
                 break;
             }
@@ -554,7 +554,7 @@ function trap_damage() {
                 case #"werewolfer":
                     ent thread zombie_trap_death(self, 100);
                     break;
-                case #"hash_defdefdefdefdef0":
+                default:
                     ent thread zombie_trap_death(self, randomint(100));
                     break;
                 }
@@ -925,7 +925,7 @@ function trap_model_type_init() {
         self._trap_switch_model = "zombie_trap_switch_handle";
         break;
     case #"default":
-    case #"hash_defdefdefdefdef0":
+    default:
         self._trap_light_model_off = "zombie_zapper_cagelight";
         self._trap_light_model_green = "zombie_zapper_cagelight";
         self._trap_light_model_red = "zombie_zapper_cagelight";

@@ -8,7 +8,7 @@
 class class_a19c3039 : cluielem {
 
     // Namespace class_a19c3039/sr_perk_machine_choice
-    // Params 0, eflags: 0x8
+    // Params 0, eflags: 0xa linked
     // Checksum 0x6847223e, Offset: 0x300
     // Size: 0x14
     __constructor() {
@@ -16,7 +16,7 @@ class class_a19c3039 : cluielem {
     }
 
     // Namespace class_a19c3039/sr_perk_machine_choice
-    // Params 0, eflags: 0x90 class_linked
+    // Params 0, eflags: 0x92 linked class_linked
     // Checksum 0xd1288e34, Offset: 0x3d0
     // Size: 0x14
     __destructor() {
@@ -24,7 +24,7 @@ class class_a19c3039 : cluielem {
     }
 
     // Namespace namespace_a19c3039/sr_perk_machine_choice
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x6f7d0d69, Offset: 0x3a0
     // Size: 0x24
     function open(localclientnum) {
@@ -32,7 +32,7 @@ class class_a19c3039 : cluielem {
     }
 
     // Namespace namespace_a19c3039/sr_perk_machine_choice
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0xf9c8f613, Offset: 0x348
     // Size: 0x1c
     function register_clientside() {
@@ -40,7 +40,7 @@ class class_a19c3039 : cluielem {
     }
 
     // Namespace namespace_a19c3039/sr_perk_machine_choice
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0x23de0498, Offset: 0x320
     // Size: 0x1c
     function setup_clientfields() {
@@ -48,7 +48,7 @@ class class_a19c3039 : cluielem {
     }
 
     // Namespace namespace_a19c3039/sr_perk_machine_choice
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0xbf81c59, Offset: 0x370
     // Size: 0x24
     function function_fa582112(localclientnum) {
@@ -58,7 +58,7 @@ class class_a19c3039 : cluielem {
 }
 
 // Namespace sr_perk_machine_choice/sr_perk_machine_choice
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x770955a1, Offset: 0xd0
 // Size: 0x16e
 function register() {

@@ -211,7 +211,7 @@ class csceneobject {
                 return 1;
             }
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             if (is_true(s_shot.var_b3dddfd3)) {
                 return 1;
             }
@@ -1878,7 +1878,7 @@ class csceneobject {
                             var_aa49b05f = 1;
                             play_anim(entry, 0, is_true(self.var_55b4f21e.interactiveshot), n_start_time);
                             break;
-                        case #"hash_defdefdefdefdef0":
+                        default:
                             /#
                                 error(1, "<unknown string>" + str_entry_type + "<unknown string>");
                             #/
@@ -2553,7 +2553,7 @@ class cscene {
         case #"fakeplayer":
             return new cscenefakeplayer();
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             error(0, "Unsupported object type '" + str_type + "'.");
             break;
         }
@@ -3217,7 +3217,7 @@ class cscene {
                 case #"init":
                     n_val = 4;
                     break;
-                case #"hash_defdefdefdefdef0":
+                default:
                     n_val = 5;
                     break;
                 }
@@ -3229,7 +3229,7 @@ class cscene {
                 case #"init":
                     n_val = 1;
                     break;
-                case #"hash_defdefdefdefdef0":
+                default:
                     n_val = 2;
                     break;
                 }
@@ -3724,7 +3724,7 @@ class cscene {
                     case #"scene":
                         thread [[ self ]]->play(var_1a15e649, undefined, self._b_testing, self._str_mode);
                         break;
-                    case #"hash_defdefdefdefdef0":
+                    default:
                         thread [[ self ]]->play(var_1a15e649, undefined, self._b_testing, self._str_mode);
                         break;
                     }

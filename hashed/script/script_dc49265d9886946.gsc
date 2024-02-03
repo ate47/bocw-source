@@ -380,7 +380,7 @@ function function_f2eab818() {
         return #"blue";
     case 3:
         return #"purple";
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
 }

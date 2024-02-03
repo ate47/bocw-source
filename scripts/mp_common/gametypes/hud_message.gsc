@@ -79,7 +79,7 @@ function function_82f36142(var_c1e98979) {
     case 9:
     case 10:
         return 1;
-    case #"hash_defdefdefdefdef0":
+    default:
         return 0;
         break;
     }

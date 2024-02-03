@@ -15,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_12a6a726/namespace_12a6a726
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x95e11e94, Offset: 0x128
 // Size: 0xfc
 function function_70a657d8() {
@@ -32,7 +32,7 @@ function function_70a657d8() {
 }
 
 // Namespace namespace_12a6a726/namespace_12a6a726
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xd7958dfc, Offset: 0x230
 // Size: 0x2d4
 function sr_supply_drop_chest_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

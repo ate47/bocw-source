@@ -16,7 +16,7 @@ function autoexec function_ceb1991() {
 }
 
 // Namespace namespace_5f402033/namespace_5f402033
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x24548dfc, Offset: 0xd0
 // Size: 0x10dc
 function function_c2e022a9() {

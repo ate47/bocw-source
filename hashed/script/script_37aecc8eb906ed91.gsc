@@ -27,7 +27,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace nightingale/nightingale
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x9a3e12b6, Offset: 0x1c0
 // Size: 0x21c
 function private function_70a657d8() {
@@ -49,7 +49,7 @@ function private function_70a657d8() {
 }
 
 // Namespace nightingale/nightingale
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x1f3a3501, Offset: 0x3e8
 // Size: 0x6e
 function private function_713a08b(watcher) {
@@ -61,7 +61,7 @@ function private function_713a08b(watcher) {
 }
 
 // Namespace nightingale/nightingale
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0x5ea23496, Offset: 0x460
 // Size: 0x5c
 function private function_81619d12(attacker, *data) {
@@ -72,7 +72,7 @@ function private function_81619d12(attacker, *data) {
 }
 
 // Namespace nightingale/nightingale
-// Params 3, eflags: 0x4
+// Params 3, eflags: 0x6 linked
 // Checksum 0x86fd9bbc, Offset: 0x4c8
 // Size: 0x34
 function private function_c4afd8d1(attacker, weapon, *target) {
@@ -80,7 +80,7 @@ function private function_c4afd8d1(attacker, weapon, *target) {
 }
 
 // Namespace nightingale/nightingale
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0x14b76391, Offset: 0x508
 // Size: 0xdc
 function private function_1bda2316(attacker, weapon) {
@@ -94,7 +94,7 @@ function private function_1bda2316(attacker, weapon) {
 }
 
 // Namespace nightingale/nightingale
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x300f2dff, Offset: 0x5f0
 // Size: 0x464
 function private function_acc36c55(watcher) {
@@ -159,7 +159,7 @@ function private function_acc36c55(watcher) {
 }
 
 // Namespace nightingale/nightingale
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xcf39f7e6, Offset: 0xa60
 // Size: 0xc4
 function private function_6ab1797f(decoygrenade) {
@@ -175,7 +175,7 @@ function private function_6ab1797f(decoygrenade) {
 }
 
 // Namespace nightingale/nightingale
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x6e898a16, Offset: 0xb30
 // Size: 0xe4
 function private function_7dfb4daa(decoygrenade) {
@@ -227,7 +227,7 @@ function private event_handler[grenade_fire] function_4776caf4(eventstruct) {
 }
 
 // Namespace nightingale/nightingale
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xd0325fa7, Offset: 0xe78
 // Size: 0x2b4
 function function_db24f032() {
@@ -264,7 +264,7 @@ function function_db24f032() {
 }
 
 // Namespace nightingale/nightingale
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xa63f545b, Offset: 0x1138
 // Size: 0x92
 function function_29fbe24f(zombie) {
@@ -278,7 +278,7 @@ function function_29fbe24f(zombie) {
 }
 
 // Namespace nightingale/nightingale
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xb7642d6, Offset: 0x11d8
 // Size: 0x76
 function private function_400826e(*zombie) {
@@ -290,7 +290,7 @@ function private function_400826e(*zombie) {
 }
 
 // Namespace nightingale/nightingale
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x68bc832c, Offset: 0x1258
 // Size: 0x2aa
 function private function_65ee50ba() {
@@ -332,7 +332,7 @@ function private function_65ee50ba() {
 }
 
 // Namespace nightingale/nightingale
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xba273551, Offset: 0x1510
 // Size: 0x1cc
 function function_30a3d1d2(params) {
@@ -353,7 +353,7 @@ function function_30a3d1d2(params) {
 }
 
 // Namespace nightingale/nightingale
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x5c4ab218, Offset: 0x16e8
 // Size: 0x14e
 function function_dedc78a9(attacker, victim, *weapon, *attackerweapon, *meansofdeath) {
@@ -373,7 +373,7 @@ function function_dedc78a9(attacker, victim, *weapon, *attackerweapon, *meansofd
 }
 
 // Namespace nightingale/nightingale
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x30ffc28d, Offset: 0x1840
 // Size: 0x30
 function function_24e13681(params) {

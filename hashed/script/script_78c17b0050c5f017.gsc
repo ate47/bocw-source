@@ -16,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xb521cfc8, Offset: 0x1a0
 // Size: 0x144
 function function_70a657d8() {
@@ -34,7 +34,7 @@ function function_70a657d8() {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x671ead85, Offset: 0x2f0
 // Size: 0x144
 function sr_horde_hunt_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -54,7 +54,7 @@ function sr_horde_hunt_fx(localclientnum, *oldval, newval, *bnewent, *binitialsn
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x4382902a, Offset: 0x440
 // Size: 0x128
 function sr_horde_hunt_decals(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

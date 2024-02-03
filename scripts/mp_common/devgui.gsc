@@ -385,7 +385,7 @@ function devgui_add_player_weapons(root, a_weapons, weapon_type, mindex) {
         if (isdefined(a_weapons)) {
             foreach (weapon in a_weapons) {
                 attachments = weapon.supportedattachments;
-                name = function_a16a090d(weapon);
+                name = getweaponname(weapon);
                 displayname = weapon.displayname;
                 if (displayname == #"") {
                     displayname = "<unknown string>";
@@ -469,7 +469,7 @@ function devgui_weapon_asset_name_display_think() {
                 continue;
             }
             if (!printlnbold_counter) {
-                iprintlnbold(function_a16a090d(level.players[0] getcurrentweapon()));
+                iprintlnbold(getweaponname(level.players[0] getcurrentweapon()));
             }
             printlnbold_counter++;
             if (printlnbold_counter >= printlnbold_update) {
@@ -486,7 +486,7 @@ function devgui_weapon_asset_name_display_think() {
                 if (!isdefined(var_9643e38d)) {
                     continue;
                 }
-                print3d(var_9643e38d, function_a16a090d(weapon), colors[color_index], 1, 0.15, print_duration);
+                print3d(var_9643e38d, getweaponname(weapon), colors[color_index], 1, 0.15, print_duration);
                 color_index++;
                 if (color_index >= colors.size) {
                     color_index = 0;
@@ -508,7 +508,7 @@ function devgui_weapon_asset_name_display_think() {
                 if (!isdefined(var_9643e38d)) {
                     continue;
                 }
-                print3d(var_9643e38d, function_a16a090d(weapon), colors[color_index], 1, 0.15, print_duration);
+                print3d(var_9643e38d, getweaponname(weapon), colors[color_index], 1, 0.15, print_duration);
                 color_index++;
                 if (color_index >= colors.size) {
                     color_index = 0;
@@ -687,7 +687,7 @@ function devgui_give_weapon(weapon_name) {
             split = strtok(weapon_name, "<unknown string>");
             switch (split.size) {
             case 1:
-            case #"hash_defdefdefdefdef0":
+            default:
                 weapon = getweapon(split[0]);
                 break;
             case 2:

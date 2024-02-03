@@ -138,7 +138,7 @@ function event_callback(destructible_event, attacker, weapon, piece_index, point
             self.destroyingweapon = weapon;
         }
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
     if (isdefined(level.destructible_callbacks[destructible_event])) {

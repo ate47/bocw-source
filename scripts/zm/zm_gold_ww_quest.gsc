@@ -1001,7 +1001,7 @@ function private function_cf884a61() {
     case #"grey":
         var_d0767760 = #"hash_3ed649c697ae119f";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
     level thread zm_vo::function_7622cb70(var_d0767760, 0.5, 0);
@@ -1048,7 +1048,7 @@ function cmd(cmd) {
         case #"hash_48623dc89693d85a":
             function_c6769eb8();
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     #/

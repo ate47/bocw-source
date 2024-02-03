@@ -2564,7 +2564,7 @@ function cmd(cmd) {
             level set(#"hash_5a39afab1926d30d");
             function_eed94aa6(3);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     #/

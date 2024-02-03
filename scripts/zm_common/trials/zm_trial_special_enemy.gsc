@@ -18,7 +18,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_trial_special_enemy/zm_trial_special_enemy
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xcec6ab1e, Offset: 0x100
 // Size: 0x5c
 function private function_70a657d8() {
@@ -29,7 +29,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_trial_special_enemy/zm_trial_special_enemy
-// Params 5, eflags: 0x4
+// Params 5, eflags: 0x6 linked
 // Checksum 0xfd75b85e, Offset: 0x168
 // Size: 0x1ac
 function private on_begin(enemy_type, var_6b96eb7b, var_46cce0c5, var_6ad4e7c6, var_44445188) {
@@ -58,7 +58,7 @@ function private on_begin(enemy_type, var_6b96eb7b, var_46cce0c5, var_6ad4e7c6, 
 }
 
 // Namespace zm_trial_special_enemy/zm_trial_special_enemy
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x3b5ebf4f, Offset: 0x320
 // Size: 0x9c
 function private on_end(*round_reset) {
@@ -73,7 +73,7 @@ function private on_end(*round_reset) {
 }
 
 // Namespace zm_trial_special_enemy/zm_trial_special_enemy
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xaaf6aa0b, Offset: 0x3c8
 // Size: 0x17c
 function private on_ai_killed(params) {
@@ -98,7 +98,7 @@ function private on_ai_killed(params) {
 }
 
 // Namespace zm_trial_special_enemy/zm_trial_special_enemy
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0x15c2980, Offset: 0x550
 // Size: 0x1e
 function private get_zombie_count_for_round(*round_number, *player_count) {
@@ -106,7 +106,7 @@ function private get_zombie_count_for_round(*round_number, *player_count) {
 }
 
 // Namespace zm_trial_special_enemy/zm_trial_special_enemy
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x910c4a3d, Offset: 0x578
 // Size: 0x22c
 function private spawn_enemy() {
@@ -144,7 +144,7 @@ function private spawn_enemy() {
 }
 
 // Namespace zm_trial_special_enemy/zm_trial_special_enemy
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xf74cbe77, Offset: 0x7b0
 // Size: 0x8c
 function function_95c1dd81(name, spawn_callback) {

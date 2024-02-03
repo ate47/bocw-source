@@ -14,7 +14,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace art/art
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x6e4732a6, Offset: 0xf0
 // Size: 0x124
 function private function_70a657d8() {
@@ -49,7 +49,7 @@ function artfxprintln(file, string) {
 }
 
 // Namespace art/art
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x2d598902, Offset: 0x270
 // Size: 0xaa
 function strtok_loc(string, *par1) {

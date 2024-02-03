@@ -68,13 +68,13 @@ function function_d275f769(player, origin) {
     if (isdefined(player.doa.vehicle)) {
         target = namespace_ec06fe4a::function_65ee50ba(player.origin);
     }
-    var_403e6f0 = target + vectorscale((0, 0, 1), 12);
-    sprinkler moveto(var_403e6f0, 0.5);
+    mark = target + vectorscale((0, 0, 1), 12);
+    sprinkler moveto(mark, 0.5);
     sprinkler waittilltimeout(1, #"movedone");
     sprinkler namespace_e32bb68::function_3a59ec34("evt_doa_pickup_sprinkler_land");
     sprinkler namespace_83eb6304::function_3ecfde67("sprinkler_land");
-    physicsexplosionsphere(var_403e6f0, 200, 128, 2);
-    playrumbleonposition("grenade_rumble", var_403e6f0);
+    physicsexplosionsphere(mark, 200, 128, 2);
+    playrumbleonposition("grenade_rumble", mark);
     wait(1);
     if (isdefined(player)) {
         sprinkler namespace_83eb6304::function_3ecfde67("sprinkler_active");

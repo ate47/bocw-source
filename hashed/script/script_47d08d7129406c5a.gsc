@@ -12,7 +12,7 @@
 #namespace namespace_c8fb02a7;
 
 // Namespace namespace_c8fb02a7/namespace_c8fb02a7
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x892813b2, Offset: 0x238
 // Size: 0x204
 function function_a01726dd() {

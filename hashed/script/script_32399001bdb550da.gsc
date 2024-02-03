@@ -109,7 +109,7 @@ function function_ac15668a(missionname) {
 }
 
 // Namespace savegame/save
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x6dcfc77c, Offset: 0x880
 // Size: 0x52
 function function_1b212e67(missionname) {
@@ -224,7 +224,7 @@ function function_9797184c() {
 }
 
 // Namespace savegame/save
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xdf6e64c4, Offset: 0xe20
 // Size: 0x4de
 function function_379f84b3() {
@@ -258,7 +258,7 @@ function function_379f84b3() {
 }
 
 // Namespace savegame/save
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x8f5515d1, Offset: 0x1308
 // Size: 0x29c
 function function_7396472d() {

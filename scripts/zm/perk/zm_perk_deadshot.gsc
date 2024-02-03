@@ -26,7 +26,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_perk_deadshot/zm_perk_deadshot
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x5601e3c1, Offset: 0x260
 // Size: 0x44
 function private function_70a657d8() {
@@ -35,7 +35,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_perk_deadshot/zm_perk_deadshot
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x371030f9, Offset: 0x2b0
 // Size: 0x17c
 function enable_deadshot_perk_for_level() {
@@ -48,7 +48,7 @@ function enable_deadshot_perk_for_level() {
 }
 
 // Namespace zm_perk_deadshot/zm_perk_deadshot
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x6cea674e, Offset: 0x438
 // Size: 0xf6
 function deadshot_precache() {
@@ -64,7 +64,7 @@ function deadshot_precache() {
 }
 
 // Namespace zm_perk_deadshot/zm_perk_deadshot
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x23a3bcf8, Offset: 0x538
 // Size: 0x34
 function deadshot_register_clientfield() {
@@ -72,7 +72,7 @@ function deadshot_register_clientfield() {
 }
 
 // Namespace zm_perk_deadshot/zm_perk_deadshot
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x3e07d264, Offset: 0x578
 // Size: 0xc
 function deadshot_set_clientfield(*state) {
@@ -80,7 +80,7 @@ function deadshot_set_clientfield(*state) {
 }
 
 // Namespace zm_perk_deadshot/zm_perk_deadshot
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xf8fbf0b, Offset: 0x590
 // Size: 0x9a
 function deadshot_perk_machine_setup(use_trigger, perk_machine, bump_trigger, *collision) {
@@ -96,7 +96,7 @@ function deadshot_perk_machine_setup(use_trigger, perk_machine, bump_trigger, *c
 }
 
 // Namespace zm_perk_deadshot/zm_perk_deadshot
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xf5e41239, Offset: 0x638
 // Size: 0x24
 function give_deadshot_perk() {
@@ -104,7 +104,7 @@ function give_deadshot_perk() {
 }
 
 // Namespace zm_perk_deadshot/zm_perk_deadshot
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x792422c1, Offset: 0x668
 // Size: 0x44
 function take_deadshot_perk(*b_pause, *str_perk, *str_result, *n_slot) {
@@ -112,7 +112,7 @@ function take_deadshot_perk(*b_pause, *str_perk, *str_result, *n_slot) {
 }
 
 // Namespace zm_perk_deadshot/zm_perk_deadshot
-// Params 13, eflags: 0x0
+// Params 13, eflags: 0x2 linked
 // Checksum 0xc744e96d, Offset: 0x6b8
 // Size: 0x2a6
 function function_4d088c19(*inflictor, attacker, damage, *flags, meansofdeath, *weapon, *var_fd90b0bb, vpoint, *vdir, shitloc, *psoffsettime, boneindex, *surfacetype) {

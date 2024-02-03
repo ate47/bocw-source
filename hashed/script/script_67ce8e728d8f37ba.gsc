@@ -442,7 +442,7 @@ function function_b906539e() {
         case #"spectator":
             player [[ level.spectator ]]();
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             player [[ level.teammenu ]](player.var_77d6602a);
             break;
         }

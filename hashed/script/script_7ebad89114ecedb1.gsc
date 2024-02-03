@@ -231,7 +231,7 @@ function private function_ec3bfba7(localclientnum, radiationlevel, *var_50cd907d
     case 3:
         var_ef12093e = #"hash_62105b9a2192156";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_ef12093e = undefined;
         break;
     }

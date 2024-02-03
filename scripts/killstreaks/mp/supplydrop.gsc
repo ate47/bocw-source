@@ -503,7 +503,7 @@ function givespecializedcrateweapon(weapon) {
         level thread popups::displayteammessagetoall(#"killstreak_mp40_inbound", self);
         level weapons::add_limited_weapon(weapon, self, 3);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
 }
@@ -1235,7 +1235,7 @@ function cratespawn(killstreak, killstreakid, owner, team, drop_origin, drop_ang
     case #"inventory_m32_drop":
         crate.cratetype = level.cratetypes[killstreak][#"m32"];
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         crate.cratetype = crate getrandomcratetype("supplydrop");
         break;
     }

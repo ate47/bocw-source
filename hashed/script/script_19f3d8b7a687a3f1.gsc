@@ -4,7 +4,7 @@
 #namespace namespace_52c8f34d;
 
 // Namespace namespace_52c8f34d/namespace_52c8f34d
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x907fc036, Offset: 0xb8
 // Size: 0x6c
 function function_70a657d8() {
@@ -16,7 +16,7 @@ function function_70a657d8() {
 }
 
 // Namespace namespace_52c8f34d/namespace_52c8f34d
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x444723f0, Offset: 0x130
 // Size: 0x9c
 function function_c30c297c(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

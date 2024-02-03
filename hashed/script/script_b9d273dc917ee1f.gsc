@@ -1079,7 +1079,7 @@ function private function_bd78aea0(var_19a3087c, e_player) {
             var_27c5b5a9 = #"hash_5c60481ce158163d";
             var_42e4e060 = #"hash_274981480733b7d0";
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             var_27c5b5a9 = #"hash_23e6a36fce4ab6ef";
             var_42e4e060 = #"hash_6e621d4031bf8c5a";
             break;
@@ -1109,7 +1109,7 @@ function private function_8f6791a4(var_19a3087c, e_player) {
         case #"radio":
             var_37b08e30 = #"hash_203997b7ca5c0dd4";
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             var_37b08e30 = #"hash_6071229013cd6a96";
             break;
         }
@@ -1148,7 +1148,7 @@ function function_2bcfd899(var_f84ece9f, player) {
         case #"hash_28fec49f37a535b9":
             var_bf0df48d = level.var_b131552c;
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             /#
                 assertmsg("<unknown string>");
             #/
@@ -1204,7 +1204,7 @@ function function_a3e4f9a1(var_f84ece9f) {
         case #"hash_28fec49f37a535b9":
             var_bf0df48d = level.var_b131552c;
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             /#
                 assertmsg("<unknown string>");
             #/
@@ -1456,7 +1456,7 @@ function function_2ced1cf7(params) {
                 level.var_fa1d4366 = params.value;
             }
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
         setdvar(#"hash_82bcb0445b8db9", "<unknown string>");

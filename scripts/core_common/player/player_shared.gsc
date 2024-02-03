@@ -47,7 +47,7 @@ function on_player_connect() {
 }
 
 // Namespace player/player_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x46903243, Offset: 0x3c8
 // Size: 0x394
 function spawn_player() {
@@ -329,7 +329,7 @@ function take_weapons() {
 }
 
 // Namespace player/player_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x8a2f8344, Offset: 0x1548
 // Size: 0x21c
 function generate_weapon_data() {
@@ -669,7 +669,7 @@ function function_d1768e8e() {
 }
 
 // Namespace player/player_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x2db550ba, Offset: 0x29a0
 // Size: 0x34
 function function_c6fe9951() {
@@ -748,7 +748,7 @@ function function_74598aba(var_96a9fbf4) {
 }
 
 // Namespace player/player_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x3d8ace48, Offset: 0x2c98
 // Size: 0x94
 function function_466d8a4b(var_b66879ad, team) {
@@ -829,7 +829,7 @@ function function_38de2d5a(notification) {
 }
 
 // Namespace player/player_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x5f076cf7, Offset: 0x3198
 // Size: 0xc6
 function init_heal(var_cd7b9255, var_e9c4ebeb) {

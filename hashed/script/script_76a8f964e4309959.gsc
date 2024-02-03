@@ -141,7 +141,7 @@ function function_4b283bfa() {
     n_player_count = zm_utility::function_a2541519(getplayers().size);
     switch (n_player_count) {
     case 1:
-    case #"hash_defdefdefdefdef0":
+    default:
         return 3;
     case 2:
         return 5;

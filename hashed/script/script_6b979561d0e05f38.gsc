@@ -582,7 +582,7 @@ function private function_fcbbe789(key, value) {
             return;
         }
         switch (key) {
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         case #"hash_7bf92664f192f2a2":
         case #"hash_7bf92664f192f2a2":

@@ -324,7 +324,7 @@ function get_round_switch_dialog(switchtype) {
         return "roundHalftime";
     case 4:
         return "roundOvertime";
-    case #"hash_defdefdefdefdef0":
+    default:
         return "roundSwitchSides";
         break;
     }

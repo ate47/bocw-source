@@ -158,7 +158,7 @@ function private _shouldplayfx(localclientnum, entity, fxstruct) {
 }
 
 // Namespace fxclientutils/fx_character
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xf645719f, Offset: 0x908
 // Size: 0x144
 function playfxbundle(localclientnum, entity, fxscriptbundle) {
@@ -220,7 +220,7 @@ function stopfxbundle(localclientnum, entity, fxscriptbundle) {
 }
 
 // Namespace fxclientutils/fx_character
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0xd723db4d, Offset: 0xcc0
 // Size: 0x124
 function function_ae92446(localclientnum, entity, fxscriptbundle) {

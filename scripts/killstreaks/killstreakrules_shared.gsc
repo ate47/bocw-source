@@ -9,7 +9,7 @@
 #namespace killstreakrules;
 
 // Namespace killstreakrules/killstreakrules_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x93fd3d04, Offset: 0xd8
 // Size: 0xb8
 function init_shared() {
@@ -36,7 +36,7 @@ function function_4a433a3f(value) {
 }
 
 // Namespace killstreakrules/killstreakrules_shared
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0x28fd198c, Offset: 0x1c8
 // Size: 0x132
 function createrule(rule, maxallowable, maxallowableperteam, var_11c5ecfd, var_5b7d134, var_cc6f8ade) {
@@ -75,7 +75,7 @@ function addkillstreaktorule(killstreak, rule, counttowards, checkagainst, inven
 }
 
 // Namespace killstreakrules/killstreakrules_shared
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xa7175d26, Offset: 0x440
 // Size: 0x468
 function killstreakstart(hardpointtype, team, hacked, displayteammessage) {
@@ -145,7 +145,7 @@ function killstreakstart(hardpointtype, team, hacked, displayteammessage) {
 }
 
 // Namespace killstreakrules/killstreakrules_shared
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xdbe2e11b, Offset: 0x8b0
 // Size: 0x158
 function function_2e6ff61a(hardpointtype, killstreak_id, var_8c2bb724) {
@@ -231,7 +231,7 @@ function recordkillstreakend(recordstreakindex, totalkills) {
 }
 
 // Namespace killstreakrules/killstreakrules_shared
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x6950973e, Offset: 0xcd0
 // Size: 0x6f4
 function killstreakstop(hardpointtype, team, id, var_2921b547 = 1) {

@@ -7,7 +7,7 @@
 #namespace zm_powerups;
 
 // Namespace zm_powerups/zm_powerups
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x27b1f7e7, Offset: 0x248
 // Size: 0x224
 function init() {
@@ -29,7 +29,7 @@ function init() {
 }
 
 // Namespace zm_powerups/zm_powerups
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x4da970a, Offset: 0x478
 // Size: 0x3b6
 function add_zombie_powerup(powerup_name, client_field_name, clientfield_version = 1) {
@@ -69,7 +69,7 @@ function add_zombie_powerup(powerup_name, client_field_name, clientfield_version
     case #"cranked_pause":
         var_f530d747 = "zmPowerupCrankedPause";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_f530d747 = "";
         break;
     }
@@ -90,7 +90,7 @@ function add_zombie_powerup(powerup_name, client_field_name, clientfield_version
 }
 
 // Namespace zm_powerups/zm_powerups
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xb1c864bf, Offset: 0x838
 // Size: 0x3c
 function include_zombie_powerup(powerup_name) {
@@ -101,7 +101,7 @@ function include_zombie_powerup(powerup_name) {
 }
 
 // Namespace zm_powerups/zm_powerups
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x92d47d1a, Offset: 0x880
 // Size: 0x76
 function powerup_state_callback(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, fieldname, *bwastimejump) {
@@ -109,7 +109,7 @@ function powerup_state_callback(*localclientnum, *oldval, newval, *bnewent, *bin
 }
 
 // Namespace zm_powerups/zm_powerups
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x5609e723, Offset: 0x900
 // Size: 0x14c
 function powerup_fx_callback(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -127,14 +127,14 @@ function powerup_fx_callback(localclientnum, *oldval, newval, *bnewent, *binitia
     case 4:
         str_fx = level._effect[#"powerup_on_caution"];
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         return;
     }
     self play_powerup_fx(fieldname, str_fx);
 }
 
 // Namespace zm_powerups/zm_powerups
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xa0458dd2, Offset: 0xa58
 // Size: 0x144
 function function_618b5680(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -151,14 +151,14 @@ function function_618b5680(localclientnum, *oldval, newval, *bnewent, *binitials
         break;
     case 4:
         str_fx = level._effect[#"hash_216d76ce6f19d51c"];
-    case #"hash_defdefdefdefdef0":
+    default:
         return;
     }
     self play_powerup_fx(fieldname, str_fx, 1);
 }
 
 // Namespace zm_powerups/zm_powerups
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x56f096ec, Offset: 0xba8
 // Size: 0x14c
 function function_9f7265fd(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -175,7 +175,7 @@ function function_9f7265fd(localclientnum, *oldval, newval, *bnewent, *binitials
     case 4:
         str_fx = level._effect[#"powerup_grabbed_caution"];
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         return;
     }
     playfx(fieldname, str_fx, self.origin);
@@ -183,7 +183,7 @@ function function_9f7265fd(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_powerups/zm_powerups
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x99bfcfb4, Offset: 0xd00
 // Size: 0x8c
 function private function_d6070ac5(localclientnum) {
@@ -199,7 +199,7 @@ function private function_d6070ac5(localclientnum) {
 }
 
 // Namespace zm_powerups/zm_powerups
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x8661fd23, Offset: 0xd98
 // Size: 0xb4
 function function_64c47bbc(localclientnum) {
@@ -211,7 +211,7 @@ function function_64c47bbc(localclientnum) {
 }
 
 // Namespace zm_powerups/zm_powerups
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x468254b2, Offset: 0xe58
 // Size: 0x34
 function private function_3c61c865(*localclientnum) {
@@ -221,7 +221,7 @@ function private function_3c61c865(*localclientnum) {
 }
 
 // Namespace zm_powerups/zm_powerups
-// Params 3, eflags: 0x4
+// Params 3, eflags: 0x6 linked
 // Checksum 0x6db2a92f, Offset: 0xe98
 // Size: 0x162
 function private play_powerup_fx(localclientnum, str_fx, var_6df65756 = 0) {
@@ -242,7 +242,7 @@ function private play_powerup_fx(localclientnum, str_fx, var_6df65756 = 0) {
 }
 
 // Namespace zm_powerups/zm_powerups
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x2a7c681, Offset: 0x1008
 // Size: 0x1c
 function function_cc33adc8() {

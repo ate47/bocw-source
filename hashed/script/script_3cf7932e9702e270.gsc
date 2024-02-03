@@ -1025,7 +1025,7 @@ function private function_c5b386e2(cmd) {
         case #"hash_6608e2e55937727e":
             level function_d6f8bbd9(#"hash_fe61de910d51e7", undefined, function_a1ef346b(), undefined);
             level function_d6f8bbd9(#"hash_6d907d6921a5eb66", undefined, function_a1ef346b(), undefined);
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     #/

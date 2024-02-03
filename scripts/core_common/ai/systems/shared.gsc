@@ -175,7 +175,7 @@ function gettagforpos(position) {
         return "tag_weapon_right";
     case #"hand":
         return "tag_inhand";
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assertmsg("<unknown string>" + position);
         #/

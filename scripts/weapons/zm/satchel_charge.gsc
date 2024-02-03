@@ -20,7 +20,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xb78d7a9c, Offset: 0x110
 // Size: 0x94
 function private function_70a657d8() {
@@ -31,7 +31,7 @@ function private function_70a657d8() {
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params f, eflags: 0x0
+// Params f, eflags: 0x2 linked
 // Checksum 0x7d23899e, Offset: 0x1b0
 // Size: 0xda
 function function_558ac85a(inflictor, attacker, *damage, *flags, *meansofdeath, *weapon, *vpoint, *vdir, *shitloc, *vdamageorigin, *psoffsettime, *boneindex, *modelindex, *surfacetype, *vsurfacenormal) {
@@ -41,7 +41,7 @@ function function_558ac85a(inflictor, attacker, *damage, *flags, *meansofdeath, 
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x272c6bfd, Offset: 0x298
 // Size: 0xc4
 function function_7c8d1738(params) {
@@ -52,7 +52,7 @@ function function_7c8d1738(params) {
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xc4755ead, Offset: 0x368
 // Size: 0x34
 function function_3fb4ce3b() {

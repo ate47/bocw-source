@@ -17,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_perk_death_perception/zm_perk_death_perception
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x52f7932e, Offset: 0x308
 // Size: 0x4c
 function private function_70a657d8() {
@@ -28,7 +28,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_perk_death_perception/zm_perk_death_perception
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x80f724d1, Offset: 0x360
 // Size: 0x4
 function private postinit() {
@@ -36,7 +36,7 @@ function private postinit() {
 }
 
 // Namespace zm_perk_death_perception/zm_perk_death_perception
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x14430300, Offset: 0x370
 // Size: 0x1ac
 function enable_death_perception_perk_for_level() {
@@ -50,7 +50,7 @@ function enable_death_perception_perk_for_level() {
 }
 
 // Namespace zm_perk_death_perception/zm_perk_death_perception
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x4ce4afe9, Offset: 0x528
 // Size: 0x274
 function on_item_pickup(s_params) {
@@ -86,7 +86,7 @@ function on_item_pickup(s_params) {
 }
 
 // Namespace zm_perk_death_perception/zm_perk_death_perception
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x80f724d1, Offset: 0x7a8
 // Size: 0x4
 function function_9b484511() {
@@ -94,7 +94,7 @@ function function_9b484511() {
 }
 
 // Namespace zm_perk_death_perception/zm_perk_death_perception
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x3d592b97, Offset: 0x7b8
 // Size: 0xd6
 function function_f9d745da() {
@@ -106,7 +106,7 @@ function function_f9d745da() {
 }
 
 // Namespace zm_perk_death_perception/zm_perk_death_perception
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x2da397e5, Offset: 0x898
 // Size: 0xf4
 function function_14ab8b5c() {
@@ -118,7 +118,7 @@ function function_14ab8b5c() {
 }
 
 // Namespace zm_perk_death_perception/zm_perk_death_perception
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd95046c3, Offset: 0x998
 // Size: 0xc
 function function_a19424cd(*state) {
@@ -126,7 +126,7 @@ function function_a19424cd(*state) {
 }
 
 // Namespace zm_perk_death_perception/zm_perk_death_perception
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xf097a862, Offset: 0x9b0
 // Size: 0x9a
 function function_6bdb193c(use_trigger, perk_machine, bump_trigger, *collision) {
@@ -142,7 +142,7 @@ function function_6bdb193c(use_trigger, perk_machine, bump_trigger, *collision) 
 }
 
 // Namespace zm_perk_death_perception/zm_perk_death_perception
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xdb0b6f13, Offset: 0xa58
 // Size: 0x94
 function function_79d54e51() {
@@ -156,7 +156,7 @@ function function_79d54e51() {
 }
 
 // Namespace zm_perk_death_perception/zm_perk_death_perception
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x37308137, Offset: 0xaf8
 // Size: 0x84
 function function_86a6368e(*b_pause, *str_perk, *str_result, *n_slot) {

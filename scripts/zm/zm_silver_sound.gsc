@@ -78,7 +78,7 @@ function function_30d9d43(str_msg, *n_delay) {
     case #"hash_7dbdd64b1b1e6310":
         level util::clientnotify("term2");
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             iprintlnbold("<unknown string>" + n_delay + "<unknown string>");
         #/

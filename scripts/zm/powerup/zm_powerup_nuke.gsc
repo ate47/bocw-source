@@ -22,7 +22,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_powerup_nuke/zm_powerup_nuke
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xd371e36a, Offset: 0x1d8
 // Size: 0xfc
 function private function_70a657d8() {
@@ -34,7 +34,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_powerup_nuke/zm_powerup_nuke
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xf3a53e5e, Offset: 0x2e0
 // Size: 0x188
 function grab_nuke(player) {
@@ -52,7 +52,7 @@ function grab_nuke(player) {
 }
 
 // Namespace zm_powerup_nuke/zm_powerup_nuke
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x7a157d0, Offset: 0x470
 // Size: 0xea
 function function_8d3a47ed() {
@@ -70,7 +70,7 @@ function function_8d3a47ed() {
 }
 
 // Namespace zm_powerup_nuke/zm_powerup_nuke
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x7e663ac, Offset: 0x568
 // Size: 0x6f0
 function nuke_powerup(drop_item, player_team, var_264cf1f9) {
@@ -158,7 +158,7 @@ function nuke_powerup(drop_item, player_team, var_264cf1f9) {
 }
 
 // Namespace zm_powerup_nuke/zm_powerup_nuke
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xbc951a1e, Offset: 0xc60
 // Size: 0x1f4
 function nuke_flash(team, location) {
@@ -178,7 +178,7 @@ function nuke_flash(team, location) {
 }
 
 // Namespace zm_powerup_nuke/zm_powerup_nuke
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd4313b55, Offset: 0xe60
 // Size: 0x16c
 function nuke_delay_spawning(n_spawn_delay) {
@@ -202,7 +202,7 @@ function nuke_delay_spawning(n_spawn_delay) {
 }
 
 // Namespace zm_powerup_nuke/zm_powerup_nuke
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x51de6cb, Offset: 0xfd8
 // Size: 0x2c
 function function_406d206b(*var_c34665fc) {
@@ -210,7 +210,7 @@ function function_406d206b(*var_c34665fc) {
 }
 
 // Namespace zm_powerup_nuke/zm_powerup_nuke
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x4a60d3a2, Offset: 0x1010
 // Size: 0x2e
 function function_9a79647b(var_8de6cf73) {
@@ -219,7 +219,7 @@ function function_9a79647b(var_8de6cf73) {
 }
 
 // Namespace zm_powerup_nuke/zm_powerup_nuke
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x7b71f61d, Offset: 0x1048
 // Size: 0xa4
 function nuke_damage_func() {

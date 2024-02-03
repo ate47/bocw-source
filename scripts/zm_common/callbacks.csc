@@ -19,7 +19,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace callback/callbacks
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x15eee93f, Offset: 0x158
 // Size: 0x1c
 function private function_70a657d8() {
@@ -27,7 +27,7 @@ function private function_70a657d8() {
 }
 
 // Namespace callback/callbacks
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x8b6941bf, Offset: 0x180
 // Size: 0xc4
 function set_default_callbacks() {
@@ -42,7 +42,7 @@ function set_default_callbacks() {
 }
 
 // Namespace callback/callbacks
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xc181a2b7, Offset: 0x250
 // Size: 0x78
 function localclientconnect(localclientnum) {
@@ -56,7 +56,7 @@ function localclientconnect(localclientnum) {
 }
 
 // Namespace callback/callbacks
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xad1e4cf3, Offset: 0x2d0
 // Size: 0x44
 function playerlaststand(localclientnum) {
@@ -65,7 +65,7 @@ function playerlaststand(localclientnum) {
 }
 
 // Namespace callback/callbacks
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xce11655, Offset: 0x320
 // Size: 0xec
 function playerspawned(localclientnum) {
@@ -86,7 +86,7 @@ function playerspawned(localclientnum) {
 }
 
 // Namespace callback/callbacks
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xa31cfe31, Offset: 0x418
 // Size: 0x34c
 function entityspawned(localclientnum) {
@@ -150,7 +150,7 @@ function entityspawned(localclientnum) {
 }
 
 // Namespace callback/callbacks
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xde9e1b7c, Offset: 0x770
 // Size: 0x24
 function host_migration(*localclientnum) {
@@ -158,7 +158,7 @@ function host_migration(*localclientnum) {
 }
 
 // Namespace callback/callbacks
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x5e40fae3, Offset: 0x7a0
 // Size: 0xa
 function prevent_round_switch_animation() {

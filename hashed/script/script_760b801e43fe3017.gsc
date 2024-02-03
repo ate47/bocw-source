@@ -50,7 +50,7 @@ function private on_begin(var_faecf84e, var_142bab9f, var_2b2cdb01, var_85e291cf
     case 4:
         n_kill_count = var_85e291cf;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         n_kill_count = var_faecf84e;
         break;
     }

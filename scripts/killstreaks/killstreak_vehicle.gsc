@@ -25,7 +25,7 @@
 #namespace killstreak_vehicle;
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xbc404562, Offset: 0x270
 // Size: 0x194
 function init_killstreak(bundle) {
@@ -42,7 +42,7 @@ function init_killstreak(bundle) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x18e48469, Offset: 0x410
 // Size: 0x134
 function init_vehicle(var_19e1140) {
@@ -64,7 +64,7 @@ function init_vehicle(var_19e1140) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xc460546c, Offset: 0x550
 // Size: 0xda
 function function_3c6cec8b() {
@@ -83,7 +83,7 @@ function function_3c6cec8b() {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x94fc9819, Offset: 0x638
 // Size: 0xa4
 function function_aba709c3(*hacker) {
@@ -96,7 +96,7 @@ function function_aba709c3(*hacker) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xb9b81be2, Offset: 0x6e8
 // Size: 0xdc
 function function_2df6e3bf(hacker) {
@@ -111,7 +111,7 @@ function function_2df6e3bf(hacker) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x899a9480, Offset: 0x7d0
 // Size: 0x4c
 function function_fff56140(owner) {
@@ -120,7 +120,7 @@ function function_fff56140(owner) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xb7f7364f, Offset: 0x828
 // Size: 0x2c
 function function_5e2ea3ef(owner, *ishacked) {
@@ -151,7 +151,7 @@ function can_activate(placement) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x62d6fd34, Offset: 0x8e8
 // Size: 0x508
 function activate_vehicle(type) {
@@ -223,7 +223,7 @@ function activate_vehicle(type) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xba42784e, Offset: 0xdf8
 // Size: 0x62
 function function_11fa7e00(killstreak_type, original_team, killstreak_id, start_cooldown) {
@@ -234,7 +234,7 @@ function function_11fa7e00(killstreak_type, original_team, killstreak_id, start_
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x644c6e86, Offset: 0xe68
 // Size: 0x3e
 function function_f07460c5(*hacker) {
@@ -245,7 +245,7 @@ function function_f07460c5(*hacker) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x60468e1d, Offset: 0xeb0
 // Size: 0x1cc
 function function_c9aa9ee5(vehicle) {
@@ -269,7 +269,7 @@ function function_c9aa9ee5(vehicle) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xdebbe792, Offset: 0x1088
 // Size: 0x66
 function function_88d23aaa(vehicle) {
@@ -280,7 +280,7 @@ function function_88d23aaa(vehicle) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xba7a8575, Offset: 0x10f8
 // Size: 0xe4
 function function_8cb72281(vehicle, exitrequestedbyowner) {
@@ -298,7 +298,7 @@ function function_8cb72281(vehicle, exitrequestedbyowner) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xf13fa633, Offset: 0x11e8
 // Size: 0x12c
 function function_2cee4434() {
@@ -356,7 +356,7 @@ function function_e99d09a3() {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xb472f1b7, Offset: 0x14e8
 // Size: 0x11c
 function watch_water() {
@@ -375,7 +375,7 @@ function watch_water() {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x4fb1e98c, Offset: 0x1610
 // Size: 0x5c
 function watch_timeout() {
@@ -385,7 +385,7 @@ function watch_timeout() {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xe074956b, Offset: 0x1678
 // Size: 0x34
 function function_822e1f64() {
@@ -395,7 +395,7 @@ function function_822e1f64() {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xf2d71917, Offset: 0x16b8
 // Size: 0x28
 function function_1f46c433() {
@@ -404,7 +404,7 @@ function function_1f46c433() {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x41fcbaa4, Offset: 0x16e8
 // Size: 0x44
 function function_68a07849(weapon, driver) {
@@ -415,7 +415,7 @@ function function_68a07849(weapon, driver) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x7a2d033b, Offset: 0x1738
 // Size: 0x204
 function watch_shutdown(driver, *killstreaktype) {
@@ -448,7 +448,7 @@ function watch_shutdown(driver, *killstreaktype) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x1fa80eb, Offset: 0x1948
 // Size: 0xec
 function function_584fb7a3() {
@@ -462,7 +462,7 @@ function function_584fb7a3() {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x5190abfd, Offset: 0x1a40
 // Size: 0xd8
 function function_22528515() {
@@ -479,7 +479,7 @@ function function_22528515() {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 15, eflags: 0x0
+// Params 15, eflags: 0x2 linked
 // Checksum 0x3eabcd15, Offset: 0x1b20
 // Size: 0x1ac
 function on_damage(*einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, *vpoint, *vdir, *shitloc, *vdamageorigin, *psoffsettime, *damagefromunderneath, *modelindex, *partname, *vsurfacenormal) {
@@ -501,7 +501,7 @@ function on_damage(*einflictor, eattacker, idamage, idflags, smeansofdeath, weap
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 8, eflags: 0x0
+// Params 8, eflags: 0x2 linked
 // Checksum 0x289f2ead, Offset: 0x1cd8
 // Size: 0x2cc
 function on_death(*einflictor, eattacker, *idamage, *smeansofdeath, weapon, *vdir, *shitloc, *psoffsettime) {
@@ -541,7 +541,7 @@ function on_death(*einflictor, eattacker, *idamage, *smeansofdeath, weapon, *vdi
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x97921e16, Offset: 0x1fb0
 // Size: 0x64
 function watch_game_ended() {
@@ -553,7 +553,7 @@ function watch_game_ended() {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xbc153eaa, Offset: 0x2020
 // Size: 0x4a
 function function_de865657(waittime) {
@@ -564,7 +564,7 @@ function function_de865657(waittime) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x35c25662, Offset: 0x2078
 // Size: 0xbc
 function vehicle_death() {
@@ -578,7 +578,7 @@ function vehicle_death() {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xe9fa6f3f, Offset: 0x2140
 // Size: 0x3b0
 function explode(attacker, weapon) {
@@ -623,7 +623,7 @@ function explode(attacker, weapon) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x5cdd92f8, Offset: 0x24f8
 // Size: 0x70
 function function_e9da8b7d(einflictor, eattacker, *smeansofdeath, *weapon) {
@@ -637,7 +637,7 @@ function function_e9da8b7d(einflictor, eattacker, *smeansofdeath, *weapon) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x1759254a, Offset: 0x2570
 // Size: 0x76
 function function_e94c2667() {
@@ -721,7 +721,7 @@ function function_d75fbe15(origin, angles) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xee88a2e2, Offset: 0x2a08
 // Size: 0x1ce
 function function_c82e14d2(origin, angles, heightoffset) {
@@ -749,7 +749,7 @@ function function_c82e14d2(origin, angles, heightoffset) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x2828e4f7, Offset: 0x2be0
 // Size: 0x1f6
 function function_b4682bd6(origin, *angles) {
@@ -781,7 +781,7 @@ function function_b4682bd6(origin, *angles) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xabf5a172, Offset: 0x2de0
 // Size: 0xfa
 function function_d4896942(bundle, killstreakname, var_9be50a25) {
@@ -799,7 +799,7 @@ function function_d4896942(bundle, killstreakname, var_9be50a25) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x339ed086, Offset: 0x2ee8
 // Size: 0xd0
 function function_31f9c728(bundle, killstreakname, var_61bbac7a, var_2f984f68, var_9be50a25) {
@@ -815,7 +815,7 @@ function function_31f9c728(bundle, killstreakname, var_61bbac7a, var_2f984f68, v
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xc119d5a, Offset: 0x2fc0
 // Size: 0x1dc
 function function_849819e9(missile, bundle, killstreakname, var_61bbac7a) {
@@ -849,7 +849,7 @@ function function_849819e9(missile, bundle, killstreakname, var_61bbac7a) {
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x12c72749, Offset: 0x31a8
 // Size: 0x2e0
 function function_6650cc9c(missile, bundle, killstreakname, var_2f984f68) {

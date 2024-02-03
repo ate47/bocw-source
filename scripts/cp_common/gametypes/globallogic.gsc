@@ -292,7 +292,7 @@ function precache_mp_leaderboards() {
     case #"shrp":
     case #"gun":
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         careerleaderboard = " LB_MP_GB_SCOREPERMINUTE";
         break;
     }

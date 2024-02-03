@@ -104,7 +104,7 @@ function private function_dbd63244() {
             return (self.origin + vectorscale((0, 0, 1), 40));
         case #"stand":
             return (self.origin + vectorscale((0, 0, 1), 60));
-        case #"hash_defdefdefdefdef0":
+        default:
             return (self.origin + vectorscale((0, 0, 1), 60));
             break;
         }

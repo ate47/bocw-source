@@ -21,7 +21,7 @@ function autoexec precache() {
 }
 
 // Namespace archetype_catalyst/archetype_catalyst
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x3c8c2d06, Offset: 0x100
 // Size: 0x34
 function private function_70a657d8() {
@@ -29,7 +29,7 @@ function private function_70a657d8() {
 }
 
 // Namespace archetype_catalyst/archetype_catalyst
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x7e568149, Offset: 0x140
 // Size: 0x3c
 function private function_5608540a(localclientnum) {

@@ -534,7 +534,7 @@ function function_6d705b1a() {
 }
 
 // Namespace friendlyfire/friendlyfire
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x1c8f202b, Offset: 0x27b8
 // Size: 0x10
 function function_1b32e23() {
@@ -542,7 +542,7 @@ function function_1b32e23() {
 }
 
 // Namespace friendlyfire/friendlyfire
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xebf830c9, Offset: 0x27d0
 // Size: 0x14
 function turnoff() {

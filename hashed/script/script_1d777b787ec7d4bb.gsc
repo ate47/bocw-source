@@ -327,7 +327,7 @@ function function_7df47abd() {
     }
     switch (n_players) {
     case 1:
-    case #"hash_defdefdefdefdef0":
+    default:
         var_4f886dd2 = 10;
         var_b90dca7b = 12;
         break;
@@ -1190,7 +1190,7 @@ function cmd(cmd) {
         case #"hash_3cc8f8a1ca5d7c9b":
             function_353c005c();
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     #/

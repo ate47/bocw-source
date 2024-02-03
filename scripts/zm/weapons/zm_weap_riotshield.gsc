@@ -121,7 +121,7 @@ function player_init_shield_health(weapon, var_cd9d17e0 = 0) {
         level.var_7bcfc873 = 0.5;
         break;
     case 1:
-    case #"hash_defdefdefdefdef0":
+    default:
         level.var_7bcfc873 = 1;
         break;
     }
@@ -543,7 +543,7 @@ function riotshield_get_enemies_in_range(riotshield_knockdown_range, riotshield_
                 e_target dodamage(3000, self.origin, self, self, "", "MOD_IMPACT");
             }
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             if (!isdefined(level.var_21ffc192)) {
                 level.var_21ffc192 = [];
             } else if (!isarray(level.var_21ffc192)) {
@@ -596,7 +596,7 @@ function riotshield_melee(*weapon, riotshield_knockdown_range, riotshield_gib_ra
         case #"hash_72d4f2ad2e333eb4":
             var_d3f92d4d = zombie_utility::function_d2dfacfd(#"hash_bfdf728041b626a");
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             var_d3f92d4d = zombie_utility::function_d2dfacfd(#"hash_6835f7c5524585f3");
             break;
         }

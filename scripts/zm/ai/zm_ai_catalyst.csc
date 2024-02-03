@@ -18,7 +18,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_ai_catalyst/zm_ai_catalyst
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x9bc4c7c9, Offset: 0x490
 // Size: 0x184
 function private function_70a657d8() {
@@ -39,7 +39,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_ai_catalyst/zm_ai_catalyst
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x6623bec4, Offset: 0x620
 // Size: 0x1fc
 function function_b6fd8c68() {
@@ -53,7 +53,7 @@ function function_b6fd8c68() {
 }
 
 // Namespace zm_ai_catalyst/zm_ai_catalyst
-// Params 7, eflags: 0x4
+// Params 7, eflags: 0x6 linked
 // Checksum 0x56f2d20, Offset: 0x828
 // Size: 0x14c
 function private function_213aaacc(localclientnum, *oldvalue, newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
@@ -71,7 +71,7 @@ function private function_213aaacc(localclientnum, *oldvalue, newvalue, *bnewent
     case 2:
         spawn_sfx = "zmb_ai_catalyst_plasma_spawn";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         fxclientutils::function_ae92446(fieldname, self, self.fxdef);
         return;
     }
@@ -81,7 +81,7 @@ function private function_213aaacc(localclientnum, *oldvalue, newvalue, *bnewent
 }
 
 // Namespace zm_ai_catalyst/zm_ai_catalyst
-// Params 7, eflags: 0x4
+// Params 7, eflags: 0x6 linked
 // Checksum 0xff911a10, Offset: 0x980
 // Size: 0x9c
 function private function_b3c2dc1c(localclientnum, *oldvalue, *newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
@@ -90,7 +90,7 @@ function private function_b3c2dc1c(localclientnum, *oldvalue, *newvalue, *bnewen
 }
 
 // Namespace zm_ai_catalyst/zm_ai_catalyst
-// Params 7, eflags: 0x4
+// Params 7, eflags: 0x6 linked
 // Checksum 0x233084ee, Offset: 0xa28
 // Size: 0x194
 function private function_8cc5be3b(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
@@ -116,7 +116,7 @@ function private function_8cc5be3b(localclientnum, *oldval, newval, *bnewent, *b
 }
 
 // Namespace zm_ai_catalyst/zm_ai_catalyst
-// Params 7, eflags: 0x4
+// Params 7, eflags: 0x6 linked
 // Checksum 0x583dcfa8, Offset: 0xbc8
 // Size: 0x186
 function private function_72d9d9e7(localclientnum, *oldvalue, newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
@@ -140,7 +140,7 @@ function private function_72d9d9e7(localclientnum, *oldvalue, newvalue, *bnewent
 }
 
 // Namespace zm_ai_catalyst/zm_ai_catalyst
-// Params 7, eflags: 0x4
+// Params 7, eflags: 0x6 linked
 // Checksum 0x603603e6, Offset: 0xd58
 // Size: 0xd6
 function private function_dce55f49(localclientnum, *oldvalue, newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
@@ -155,7 +155,7 @@ function private function_dce55f49(localclientnum, *oldvalue, newvalue, *bnewent
 }
 
 // Namespace zm_ai_catalyst/zm_ai_catalyst
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xeba2bcd, Offset: 0xe38
 // Size: 0x13c
 function private function_8c78e227(localclientnum) {
@@ -173,7 +173,7 @@ function private function_8c78e227(localclientnum) {
 }
 
 // Namespace zm_ai_catalyst/zm_ai_catalyst
-// Params 7, eflags: 0x4
+// Params 7, eflags: 0x6 linked
 // Checksum 0x84882bd5, Offset: 0xf80
 // Size: 0xc4
 function private function_1578a764(localclientnum, *oldvalue, *newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
@@ -183,7 +183,7 @@ function private function_1578a764(localclientnum, *oldvalue, *newvalue, *bnewen
 }
 
 // Namespace zm_ai_catalyst/zm_ai_catalyst
-// Params 7, eflags: 0x4
+// Params 7, eflags: 0x6 linked
 // Checksum 0x8b1f3f9a, Offset: 0x1050
 // Size: 0x15c
 function private function_5c22755(localclientnum, *oldvalue, newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
@@ -202,7 +202,7 @@ function private function_5c22755(localclientnum, *oldvalue, newvalue, *bnewent,
 }
 
 // Namespace zm_ai_catalyst/zm_ai_catalyst
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xdecdfd91, Offset: 0x11b8
 // Size: 0x124
 function private function_ce9e3dc7(animname) {
@@ -226,7 +226,7 @@ function private function_ce9e3dc7(animname) {
 }
 
 // Namespace zm_ai_catalyst/zm_ai_catalyst
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x99e10bda, Offset: 0x12e8
 // Size: 0x22
 function private function_5608540a(*localclientnum) {

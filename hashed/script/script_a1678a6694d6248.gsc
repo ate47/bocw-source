@@ -550,7 +550,7 @@ function function_413411e1() {
             self function_2f16cef6(#"hash_224204b4ff32ed94");
             self function_2f16cef6(#"hash_7aaef7109d7bff11");
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             return;
         }
     }

@@ -19,7 +19,7 @@ function event_handler[level_init] main(*eventstruct) {
 }
 
 // Namespace objective_retrieval/objective_retrieval
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x3144da86, Offset: 0x4a0
 // Size: 0x246
 function function_5ce76614(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -56,7 +56,7 @@ function function_5ce76614(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace objective_retrieval/objective_retrieval
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x2c2a6154, Offset: 0x6f0
 // Size: 0x11e
 function function_6b90cf3a(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -76,7 +76,7 @@ function function_6b90cf3a(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace objective_retrieval/objective_retrieval
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x95726a97, Offset: 0x818
 // Size: 0x166
 function function_1eb1d4d6(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -102,7 +102,7 @@ function function_1eb1d4d6(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace objective_retrieval/objective_retrieval
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x32df1eda, Offset: 0x988
 // Size: 0xf4
 function function_704685e1(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -117,7 +117,7 @@ function function_704685e1(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace objective_retrieval/objective_retrieval
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xc62f95ca, Offset: 0xa88
 // Size: 0x386
 function function_d3af9ddb(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

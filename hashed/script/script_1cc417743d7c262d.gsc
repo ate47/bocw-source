@@ -154,7 +154,7 @@ function function_6e084fd3(var_37ecca7, taacombundle) {
     case #"inventory_nuke":
         bundlename = taacombundle.var_6e8d651b;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
     if (!isdefined(bundlename)) {

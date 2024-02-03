@@ -10,7 +10,7 @@
 #namespace weaponobjects;
 
 // Namespace weaponobjects/weaponobjects
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x2c0add0c, Offset: 0x178
 // Size: 0x44c
 function init_shared(friendly_rob, var_4885f19e) {

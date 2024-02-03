@@ -130,7 +130,7 @@ function function_830c306e(localclientnum, *oldval, newval, *bnewent, *binitials
         self notify(#"hash_52be29763bc2391e");
         util::playfxontag(fieldname, #"hash_7e225ece0c91121", self, "tag_animate");
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
 }

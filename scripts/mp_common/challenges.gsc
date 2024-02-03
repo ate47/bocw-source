@@ -532,7 +532,7 @@ function function_a79ea08b(*einflictor, victim, *idamage, weapon) {
         case #"ar_standard_t9":
             self stats::function_42277145(#"hash_777767b99c350232", 1);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
         switch (weapon.statname) {
@@ -549,7 +549,7 @@ function function_a79ea08b(*einflictor, victim, *idamage, weapon) {
         case #"smg_standard_t9":
             self stats::function_42277145(#"hash_3a26c6202d86ed8d", 1);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
         switch (weapon.statname) {
@@ -558,7 +558,7 @@ function function_a79ea08b(*einflictor, victim, *idamage, weapon) {
         case #"smg_handling_t9":
             self stats::function_42277145(#"hash_7208e21496453ace", 1);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     }
@@ -583,7 +583,7 @@ function function_a79ea08b(*einflictor, victim, *idamage, weapon) {
         case #"inventory_hoverjet":
             var_7ca8dd34 = 1;
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     }
@@ -684,7 +684,7 @@ function function_a79ea08b(*einflictor, victim, *idamage, weapon) {
                             case #"gadget_radiation_field":
                                 award = 1;
                                 break;
-                            case #"hash_defdefdefdefdef0":
+                            default:
                                 break;
                             }
                             if (award === 1) {
@@ -774,7 +774,7 @@ function function_a79ea08b(*einflictor, victim, *idamage, weapon) {
                     }
                     break;
                 case #"weapon_null":
-                case #"hash_defdefdefdefdef0":
+                default:
                     break;
                 }
             }
@@ -807,7 +807,7 @@ function function_a79ea08b(*einflictor, victim, *idamage, weapon) {
                     var_b77ad7ec = 1;
                 }
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 break;
             }
             if (var_b77ad7ec === 1) {
@@ -824,7 +824,7 @@ function function_a79ea08b(*einflictor, victim, *idamage, weapon) {
                 self stats::function_dad108fa(#"hash_41d7899e04e68759", 1);
             }
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
         if (isdefined(weapon.attachments) && weapon.attachments.size > 0) {
@@ -886,7 +886,7 @@ function function_a79ea08b(*einflictor, victim, *idamage, weapon) {
                     switch (weapon.name) {
                     case #"shotgun_pump_t9":
                         break;
-                    case #"hash_defdefdefdefdef0":
+                    default:
                         self stats::function_dad108fa(#"hash_71804c7bbbaad1f6", 1);
                         break;
                     }
@@ -909,7 +909,7 @@ function function_a79ea08b(*einflictor, victim, *idamage, weapon) {
                 case #"ar_standard_t9":
                 case #"smg_handling_t9":
                     break;
-                case #"hash_defdefdefdefdef0":
+                default:
                     self contracts::increment_contract(#"hash_73b57ed83e48a782");
                     if (weaponclass === #"weapon_smg") {
                         self stats::function_dad108fa(#"hash_62c4816f8e75e33", 1);
@@ -1124,7 +1124,7 @@ function function_a79ea08b(*einflictor, victim, *idamage, weapon) {
                 case #"gadget_radiation_field":
                     award = 1;
                     break;
-                case #"hash_defdefdefdefdef0":
+                default:
                     break;
                 }
                 if (award === 1) {
@@ -1218,7 +1218,7 @@ function function_a79ea08b(*einflictor, victim, *idamage, weapon) {
                 case #"elo2":
                     self stats::function_dad108fa(#"hash_39d29f9c4fe7e54e", 1);
                     break;
-                case #"hash_defdefdefdefdef0":
+                default:
                     break;
                 }
                 break;
@@ -1248,7 +1248,7 @@ function function_a79ea08b(*einflictor, victim, *idamage, weapon) {
                     self stats::function_d0de7686(#"hash_6c9ea22e0bd57fc1", 1, #"hash_4edbfffde3c9a22e");
                 }
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 break;
             }
         }
@@ -1799,7 +1799,7 @@ function challengekills(data) {
                 case #"satchel_charge":
                     var_a6957800 = 1440000;
                     break;
-                case #"hash_defdefdefdefdef0":
+                default:
                     var_a6957800 = 3240000;
                     break;
                 }
@@ -3261,7 +3261,7 @@ function challengegameendmp(data) {
             player stats::function_dad108fa(#"hash_5072c55850678079", 1);
         }
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
 }

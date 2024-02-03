@@ -488,7 +488,7 @@ function function_a8d8b1ab(var_603479c6) {
         return 180;
     case 3:
         return 270;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assertmsg("<unknown string>");
         #/

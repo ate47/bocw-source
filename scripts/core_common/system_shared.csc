@@ -180,7 +180,7 @@ function function_b1553822() {
 }
 
 // Namespace system/system_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x5f70539d, Offset: 0xb88
 // Size: 0x24
 function function_c11b0642() {

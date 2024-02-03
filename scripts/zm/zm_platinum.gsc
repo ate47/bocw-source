@@ -1756,7 +1756,7 @@ function function_2fea91a2() {
     }
     switch (level.var_19a4a8bb) {
     case 1:
-    case #"hash_defdefdefdefdef0":
+    default:
         return #"avogadro";
         break;
     case 2:
@@ -1853,7 +1853,7 @@ function function_8d2936b1() {
         return 7;
     case 4:
         return 10;
-    case #"hash_defdefdefdefdef0":
+    default:
         return 14;
         break;
     }
@@ -1903,7 +1903,7 @@ function function_d30fa080() {
     case 4:
         level.var_57f3dce4 = 15;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         level.var_57f3dce4 = 6;
         break;
     }
@@ -1936,7 +1936,7 @@ function function_dd0b40e0() {
         var_115de5b6 = 0.5;
         var_d9dcedb1 = 1;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_115de5b6 = 2;
         var_d9dcedb1 = 3;
         break;
@@ -2665,7 +2665,7 @@ function function_dd3953d3() {
         level zombie_devgui_goto_round(8);
         switch (getdvarint(#"hash_7f4e76de02a19b25", 0)) {
         case 1:
-        case #"hash_defdefdefdefdef0":
+        default:
             step_name = #"hash_587e74fe327f43fb";
             break;
         case 2:

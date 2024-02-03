@@ -188,7 +188,7 @@ function function_65bb0ccd(text, x, y, scale, var_6c897a55, color, alpha, var_44
         case 0:
         case #"left":
         case #"l":
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         case 1:
         case #"c":
@@ -272,7 +272,7 @@ function function_ac033c46(text, origin, scale, var_6c897a55, color, alpha, var_
         case 0:
         case #"left":
         case #"l":
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         case 1:
         case #"c":

@@ -16,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_4aff7b6b/namespace_4aff7b6b
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x29931df4, Offset: 0x198
 // Size: 0xb4
 function private function_70a657d8() {
@@ -28,7 +28,7 @@ function private function_70a657d8() {
 }
 
 // Namespace namespace_4aff7b6b/namespace_4aff7b6b
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x80f724d1, Offset: 0x258
 // Size: 0x4
 function private postinit() {
@@ -36,7 +36,7 @@ function private postinit() {
 }
 
 // Namespace namespace_4aff7b6b/namespace_4aff7b6b
-// Params 7, eflags: 0x4
+// Params 7, eflags: 0x6 linked
 // Checksum 0x57f0902, Offset: 0x268
 // Size: 0x2e4
 function private function_62708cfa(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -66,7 +66,7 @@ function private function_62708cfa(localclientnum, *oldval, newval, *bnewent, *b
     case 7:
         rob = #"hash_b7a62ed4703e9e4";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
     var_a194b407 = 1;
@@ -88,7 +88,7 @@ function private function_62708cfa(localclientnum, *oldval, newval, *bnewent, *b
 }
 
 // Namespace namespace_4aff7b6b/namespace_4aff7b6b
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x7d3d3d2f, Offset: 0x558
 // Size: 0x100
 function function_81c73263(localclientnum, rob) {
@@ -106,7 +106,7 @@ function function_81c73263(localclientnum, rob) {
 }
 
 // Namespace namespace_4aff7b6b/namespace_4aff7b6b
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x42f794a, Offset: 0x660
 // Size: 0xfc
 function function_f0e03255(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

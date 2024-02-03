@@ -4,7 +4,7 @@
 #namespace namespace_52c8f34d;
 
 // Namespace namespace_52c8f34d/namespace_52c8f34d
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x6e23a5ea, Offset: 0xb8
 // Size: 0x5c
 function function_70a657d8() {

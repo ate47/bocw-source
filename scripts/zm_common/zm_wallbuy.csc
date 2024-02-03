@@ -19,7 +19,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xd57cf030, Offset: 0x518
 // Size: 0x184
 function private function_70a657d8() {
@@ -38,7 +38,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xc98c64b2, Offset: 0x6a8
 // Size: 0x28
 function private postinit() {
@@ -48,7 +48,7 @@ function private postinit() {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xa323821f, Offset: 0x6d8
 // Size: 0x7f4
 function init() {
@@ -117,7 +117,7 @@ function init() {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x88ccdd42, Offset: 0xed8
 // Size: 0xfe
 function is_wallbuy(w_to_check) {
@@ -139,7 +139,7 @@ function is_wallbuy(w_to_check) {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd46a1227, Offset: 0xfe0
 // Size: 0x2b8
 function wallbuy_player_connect(localclientnum) {
@@ -177,7 +177,7 @@ function wallbuy_player_connect(localclientnum) {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xfcc78aab, Offset: 0x12a0
 // Size: 0xb4e
 function private function_86b59fcc(chalk_model) {
@@ -385,7 +385,7 @@ function private function_86b59fcc(chalk_model) {
     case #"hash_76deb48b5a725fd":
         type = "lmg_slowfire_t9";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             println("<unknown string>" + chalk_model);
         #/
@@ -396,7 +396,7 @@ function private function_86b59fcc(chalk_model) {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x2e4abcd9, Offset: 0x1df8
 // Size: 0x7c2
 function function_8f12abec(localclientnum) {
@@ -529,7 +529,7 @@ function function_8f12abec(localclientnum) {
         var_254469d1 = #"hash_7c2e5b18f3e46c4";
         name_hash = #"hash_7eb1b81fdce9b908";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_254469d1 = #"hash_51976978ad5a7a0a";
         name_hash = #"hash_151d1b68c65d9d05";
         var_9ac76ba3 = 0;
@@ -545,7 +545,7 @@ function function_8f12abec(localclientnum) {
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xe92c344d, Offset: 0x25c8
 // Size: 0x42a
 function wallbuy_callback(localclientnum, *oldval, newval, *bnewent, binitialsnap, fieldname, *bwastimejump) {
@@ -607,7 +607,7 @@ function wallbuy_callback(localclientnum, *oldval, newval, *bnewent, binitialsna
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x6f77c3f2, Offset: 0x2a00
 // Size: 0x430
 function wallbuy_callback_idx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, fieldname, *bwastimejump) {
@@ -662,7 +662,7 @@ function wallbuy_callback_idx(localclientnum, *oldval, newval, *bnewent, *biniti
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x6ba4dd40, Offset: 0x2e38
 // Size: 0x18a
 function function_51f5fb94(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -695,7 +695,7 @@ function function_51f5fb94(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xbf21f6ad, Offset: 0x2fd0
 // Size: 0x7c
 function function_5ed44212(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

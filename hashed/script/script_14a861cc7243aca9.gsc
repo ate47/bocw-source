@@ -37,7 +37,7 @@ function function_409efbe2(localclientnum, *oldval, newval, *bnewent, *binitials
         var_1bb0b8aa = 1;
         level.var_d38af2b = var_5b93750e;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         setsoundcontext("dark_aether", "inactive");
         var_5b93750e = undefined;
         var_1bb0b8aa = 0;

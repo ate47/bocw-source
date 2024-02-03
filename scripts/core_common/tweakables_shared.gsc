@@ -83,7 +83,7 @@ function gettweakabledvarvalue(category, name) {
     case #"hud":
         dvar = level.hudtweaks[name].dvar;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         dvar = undefined;
         break;
     }
@@ -124,7 +124,7 @@ function gettweakabledvar(category, name) {
     case #"hud":
         value = level.hudtweaks[name].dvar;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         value = undefined;
         break;
     }
@@ -135,7 +135,7 @@ function gettweakabledvar(category, name) {
 }
 
 // Namespace tweakables/tweakables_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xfdd9cdf2, Offset: 0xb38
 // Size: 0x240
 function gettweakablevalue(category, name) {
@@ -164,7 +164,7 @@ function gettweakablevalue(category, name) {
     case #"hud":
         value = level.hudtweaks[name].value;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         value = undefined;
         break;
     }
@@ -208,7 +208,7 @@ function gettweakablelastvalue(category, name) {
     case #"hud":
         value = level.hudtweaks[name].lastvalue;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         value = undefined;
         break;
     }
@@ -248,7 +248,7 @@ function settweakablevalue(category, name, value) {
     case #"hud":
         dvar = level.hudtweaks[name].dvar;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         dvar = undefined;
         break;
     }
@@ -285,7 +285,7 @@ function settweakablelastvalue(category, name, value) {
     case #"hud":
         level.hudtweaks[name].lastvalue = value;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
 }

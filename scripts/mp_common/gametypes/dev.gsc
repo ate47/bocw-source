@@ -1885,7 +1885,7 @@ function print_weapon_name() {
             }
             printweaponname = getdvarint(#"scr_print_weapon_name", 1);
             if (printweaponname) {
-                iprintlnbold(function_a16a090d(weapon));
+                iprintlnbold(getweaponname(weapon));
             }
         #/
     #/
@@ -1974,7 +1974,7 @@ function equipment_dev_gui() {
             if (devgui_int != 0) {
                 for (i = 0; i < level.players.size; i++) {
                     take_all_grenades_and_equipment(level.players[i]);
-                    level.players[i] devgui_give_weapon(function_a16a090d(level.dev_equipment[devgui_int]));
+                    level.players[i] devgui_give_weapon(getweaponname(level.dev_equipment[devgui_int]));
                 }
                 setdvar(#"scr_give_equipment", 0);
             }
@@ -1997,7 +1997,7 @@ function grenade_dev_gui() {
             if (devgui_int != 0) {
                 for (i = 0; i < level.players.size; i++) {
                     take_all_grenades_and_equipment(level.players[i]);
-                    level.players[i] devgui_give_weapon(function_a16a090d(level.dev_grenade[devgui_int]));
+                    level.players[i] devgui_give_weapon(getweaponname(level.dev_grenade[devgui_int]));
                 }
                 setdvar(#"scr_give_grenade", 0);
             }

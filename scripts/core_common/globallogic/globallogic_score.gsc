@@ -126,7 +126,7 @@ function function_5aa55c0a(weapon) {
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xaba9a227, Offset: 0x5f0
 // Size: 0x4c
 function inctotalkills(team) {
@@ -137,7 +137,7 @@ function inctotalkills(team) {
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x8d045d80, Offset: 0x648
 // Size: 0x44
 function givekillstats(smeansofdeath, weapon, evictim) {
@@ -162,7 +162,7 @@ function function_969ea48d(var_ba01256c, weapon) {
 }
 
 // Namespace globallogic_score/globallogic_score
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0xa0ea8250, Offset: 0x718
 // Size: 0x1d8
 function processassist(killedplayer, damagedone, weapon, assist_level = undefined, time = gettime(), meansofdeath = "MOD_UNKNOWN") {
@@ -600,7 +600,7 @@ function private function_d68ae402(inflictor, *meansofdeath, victim, attacker, s
                 scoreevents::processscoreevent(scoreevents.var_1b8b6771, attacker, victim, weapon);
             }
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             if (attacker.multikills[var_ac4c1].kills > 5 && isdefined(scoreevents.var_67b4a761)) {
                 scoreevents::processscoreevent(scoreevents.var_67b4a761, attacker, victim, weapon);
             }
@@ -613,7 +613,7 @@ function private function_d68ae402(inflictor, *meansofdeath, victim, attacker, s
     case 1:
     case 2:
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         if (attacker.multikills[var_ac4c1].objectivekills > 2) {
             if (isdefined(scoreevents.var_3655354)) {
                 scoreevents::processscoreevent(scoreevents.var_3655354, attacker, undefined, weapon);
@@ -762,7 +762,7 @@ function function_84088ec3(var_f801f37e) {
             case #"special_grenadelauncher_t9":
                 self stats::function_561716e6(var_f801f37e.name, #"hash_66ab89e31cfd2a9c", 1);
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 break;
             }
         }

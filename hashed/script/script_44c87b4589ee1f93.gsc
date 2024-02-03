@@ -20,7 +20,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xe947366b, Offset: 0x1a8
 // Size: 0x154
 function private function_70a657d8() {
@@ -31,7 +31,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x80f724d1, Offset: 0x308
 // Size: 0x4
 function private postinit() {
@@ -39,7 +39,7 @@ function private postinit() {
 }
 
 // Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x20b1e319, Offset: 0x318
 // Size: 0x142
 function function_d89c5699(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -63,7 +63,7 @@ function function_d89c5699(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xa3501e41, Offset: 0x468
 // Size: 0x18c
 function function_29b682f8(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
@@ -89,7 +89,7 @@ function function_29b682f8(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x212ef316, Offset: 0x600
 // Size: 0xfa
 function function_bdc0d799(localclientnum) {
@@ -113,7 +113,7 @@ function function_bdc0d799(localclientnum) {
 }
 
 // Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x55b44045, Offset: 0x708
 // Size: 0xa6
 function function_3c2a50f4(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -131,7 +131,7 @@ function function_3c2a50f4(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x1793515e, Offset: 0x7b8
 // Size: 0x11c
 function function_87a4de18(localclientnum) {
@@ -148,7 +148,7 @@ function function_87a4de18(localclientnum) {
 }
 
 // Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x2da538c, Offset: 0x8e0
 // Size: 0xbc
 function function_a17af3df(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -165,7 +165,7 @@ function function_a17af3df(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x23cdbdf1, Offset: 0x9a8
 // Size: 0x2c
 function function_c88acbea(*params) {

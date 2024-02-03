@@ -128,7 +128,7 @@ function function_c52e8ba(player, var_8d5d092c) {
         case #"fasttravel_loc_pond_down":
             hint_string = #"hash_5de92cc1bf44a38a";
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
         if (isdefined(hint_string)) {

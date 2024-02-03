@@ -14,7 +14,7 @@ function autoexec function_d776b402() {
 }
 
 // Namespace zm_custom/zm_customgame
-// Params 3, eflags: 0x4
+// Params 3, eflags: 0x6 linked
 // Checksum 0xa81cfaec, Offset: 0x248
 // Size: 0x44
 function private function_ecc5a0b9(*local_client_num, *player, damage) {
@@ -25,7 +25,7 @@ function private function_ecc5a0b9(*local_client_num, *player, damage) {
 }
 
 // Namespace zm_custom/zm_customgame
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xe889370c, Offset: 0x298
 // Size: 0x70
 function function_901b751c(var_c9db62d5) {

@@ -8,7 +8,7 @@
 #namespace satchel_charge;
 
 // Namespace satchel_charge/satchel_charge
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xf3b6ed5f, Offset: 0xe8
 // Size: 0x84
 function init_shared(*localclientnum) {
@@ -17,7 +17,7 @@ function init_shared(*localclientnum) {
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd72351d0, Offset: 0x178
 // Size: 0x11c
 function function_34e248b6(localclientnum) {
@@ -39,7 +39,7 @@ function function_34e248b6(localclientnum) {
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xf9217981, Offset: 0x2a0
 // Size: 0x5c
 function private function_fab88840(localclientnum) {
@@ -49,7 +49,7 @@ function private function_fab88840(localclientnum) {
 }
 
 // Namespace satchel_charge/satchel_charge
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x864f2d30, Offset: 0x308
 // Size: 0x14e
 function function_e402bf2c(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

@@ -275,7 +275,7 @@ function function_27028b8e(str_zone) {
     case #"zone_power_tunnel":
         var_601fee0 = #"hash_75f7127232f283bb";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_601fee0 = undefined;
         break;
     }

@@ -694,7 +694,7 @@ function unload(seat) {
     case #"crew":
         self thread function_2ca26543(self);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         self thread function_114d7bd3(self);
         self thread function_b56639f2(self);
         self thread function_2ca26543(self);
@@ -942,7 +942,7 @@ function get_out(vehicle, ai, seat, var_b67230a6 = 0) {
     case #"variable":
         exit_variable(ai, var_b67230a6);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assertmsg("<unknown string>");
         #/
@@ -1384,7 +1384,7 @@ function get_in(ai, vehicle, seat, var_7c3e4d44 = 1) {
         }
         init_rider(ai, vehicle, "gunner2");
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_b11e7fca = function_e1008fbd(vehicle);
         if (var_b11e7fca == "none") {
             /#
@@ -1647,7 +1647,7 @@ function delete_rider_asap(entity) {
 }
 
 // Namespace vehicle/vehicleriders_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x24965c5d, Offset: 0x67b0
 // Size: 0x4b0
 function function_86c7bebb(seat = "all") {

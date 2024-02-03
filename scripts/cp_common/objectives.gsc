@@ -112,7 +112,7 @@ function follow(var_4cfa0710, var_b3177bd9, var_690561dc, var_87dc4de8, show_way
 }
 
 // Namespace objectives/objectives
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xed2b57a0, Offset: 0x740
 // Size: 0x7c
 function kill(var_4cfa0710, var_3829dccf, var_690561dc, var_87dc4de8, show_waypoint, var_bfcac307, var_c3056ba3 = #"hash_5c90265e62b1f975") {
@@ -433,7 +433,7 @@ function function_c00bea3b(str_objective, a_targets, var_9922f839, n_value) {
 }
 
 // Namespace objectives/objectives
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xaf178af0, Offset: 0x1a60
 // Size: 0xb8
 function function_6a43edf3(str_objective, a_targets) {
@@ -455,7 +455,7 @@ function function_572778b9(str_objective) {
 }
 
 // Namespace objectives/objectives
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0xb6503b77, Offset: 0x1b78
 // Size: 0x108
 function function_6a5ca7ac(str_objective, var_ca55a7ed, var_f4089be9, var_52710aa4, var_834e72f6 = 1) {

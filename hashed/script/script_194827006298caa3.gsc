@@ -32,7 +32,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x67337126, Offset: 0x2c0
 // Size: 0x174
 function function_70a657d8() {
@@ -51,7 +51,7 @@ function function_70a657d8() {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x6ed013d1, Offset: 0x440
 // Size: 0x392
 function private function_8ebf52b6(instance) {
@@ -88,7 +88,7 @@ function private function_8ebf52b6(instance) {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xa9522011, Offset: 0x7e0
 // Size: 0x18c
 function private function_dbeb7b0f(*eventstruct) {
@@ -113,7 +113,7 @@ function private function_dbeb7b0f(*eventstruct) {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x6b8f4dd0, Offset: 0x978
 // Size: 0x74
 function function_6400a64d(instance) {
@@ -123,7 +123,7 @@ function function_6400a64d(instance) {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xdf234b25, Offset: 0x9f8
 // Size: 0x414
 function private function_deefa538(instance) {
@@ -169,7 +169,7 @@ function private function_deefa538(instance) {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xbb260656, Offset: 0xe18
 // Size: 0x5c
 function function_963ac9d8(var_347a4920) {
@@ -180,7 +180,7 @@ function function_963ac9d8(var_347a4920) {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 4, eflags: 0x4
+// Params 4, eflags: 0x6 linked
 // Checksum 0xcca09679, Offset: 0xe80
 // Size: 0x3c6
 function private function_8a9ecf71(instance, var_842cdacd, var_aa19ae, spawn_func) {
@@ -234,7 +234,7 @@ function private function_8a9ecf71(instance, var_842cdacd, var_aa19ae, spawn_fun
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x5f3a27f, Offset: 0x1250
 // Size: 0x180
 function private function_283f2fb3(&a_spawns) {
@@ -256,7 +256,7 @@ function private function_283f2fb3(&a_spawns) {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x8baf867b, Offset: 0x13d8
 // Size: 0x42
 function private function_c7db899f() {
@@ -269,7 +269,7 @@ function private function_c7db899f() {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xee731932, Offset: 0x1428
 // Size: 0x484
 function private function_1b8f27ec() {
@@ -324,7 +324,7 @@ function private function_1b8f27ec() {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0x1fdf70e3, Offset: 0x18b8
 // Size: 0x324
 function private function_57a97c81(instance, spawn) {
@@ -367,7 +367,7 @@ function private function_57a97c81(instance, spawn) {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0x6b5738f, Offset: 0x1be8
 // Size: 0x11c
 function private function_c292b3fe(v_loc, instance) {
@@ -388,7 +388,7 @@ function private function_c292b3fe(v_loc, instance) {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0x39a679b4, Offset: 0x1d10
 // Size: 0x458
 function private function_ca46226a(instance, *spawn) {
@@ -447,7 +447,7 @@ function private function_ca46226a(instance, *spawn) {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x8a2f19cd, Offset: 0x2170
 // Size: 0x200
 function private function_b55fe25b() {
@@ -475,7 +475,7 @@ function private function_b55fe25b() {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xba040012, Offset: 0x2378
 // Size: 0x110
 function private function_2660ef47() {
@@ -498,7 +498,7 @@ function private function_2660ef47() {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xb72ee43f, Offset: 0x2490
 // Size: 0x86
 function private function_e2f41f69(var_74714668) {
@@ -515,7 +515,7 @@ function private function_e2f41f69(var_74714668) {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xd2cc2a5b, Offset: 0x2520
 // Size: 0x2b4
 function private function_92184323(*eventstruct) {
@@ -544,7 +544,7 @@ function private function_92184323(*eventstruct) {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0x4b4de7ee, Offset: 0x27e0
 // Size: 0xba
 function private function_7d9c6082(instance, ai) {
@@ -563,7 +563,7 @@ function private function_7d9c6082(instance, ai) {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xe10b48bc, Offset: 0x28a8
 // Size: 0x2ec
 function private function_9974f649(*eventstruct) {
@@ -599,7 +599,7 @@ function private function_9974f649(*eventstruct) {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xf9c2db7, Offset: 0x2ba0
 // Size: 0x2f4
 function private function_ca912561(instance) {
@@ -633,7 +633,7 @@ function private function_ca912561(instance) {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xe2abeda1, Offset: 0x2ea0
 // Size: 0x2ec
 function private function_d3d7a798(ai) {
@@ -674,7 +674,7 @@ function private function_d3d7a798(ai) {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xe2192319, Offset: 0x3198
 // Size: 0x2a4
 function private function_f0abbc8b() {
@@ -706,7 +706,7 @@ function private function_f0abbc8b() {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x4d682448, Offset: 0x3448
 // Size: 0xc2
 function private function_4cb6cdb8() {
@@ -730,7 +730,7 @@ function private function_4cb6cdb8() {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xb3751359, Offset: 0x3518
 // Size: 0x12e
 function private function_22e55954(instance) {
@@ -750,7 +750,7 @@ function private function_22e55954(instance) {
 }
 
 // Namespace world_event_horde_hunt/world_event_horde_hunt
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x3fe888a, Offset: 0x3650
 // Size: 0x74
 function private function_1226f6af(*var_273eefec) {

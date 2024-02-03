@@ -5,7 +5,7 @@
 #namespace zm_inventory;
 
 // Namespace zm_inventory/zm_inventory
-// Params 5, eflags: 0x4
+// Params 5, eflags: 0x6 linked
 // Checksum 0x61f2c212, Offset: 0x1b8
 // Size: 0x13a
 function private function_cb96f01d(mappingname, internalname, var_2972a1c0, numbits, var_7f12f171) {
@@ -28,7 +28,7 @@ function private function_cb96f01d(mappingname, internalname, var_2972a1c0, numb
 }
 
 // Namespace zm_inventory/zm_inventory
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xbd55c256, Offset: 0x300
 // Size: 0xc80
 function function_c7c05a13() {

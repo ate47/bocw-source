@@ -19,7 +19,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_bf2d4e77/namespace_bf2d4e77
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xa96fb2a8, Offset: 0x150
 // Size: 0xc0
 function private function_70a657d8() {
@@ -29,7 +29,7 @@ function private function_70a657d8() {
 }
 
 // Namespace namespace_bf2d4e77/namespace_bf2d4e77
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x8a8fec2e, Offset: 0x218
 // Size: 0x134
 function function_77972a15(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -48,7 +48,7 @@ function function_77972a15(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace namespace_bf2d4e77/namespace_bf2d4e77
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xcfdc5c4, Offset: 0x358
 // Size: 0x454
 function function_7431f6cc(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -80,7 +80,7 @@ function function_7431f6cc(localclientnum, *oldval, newval, *bnewent, *binitials
                 case #"avogadro":
                     str_fx = #"hash_1f8f75941d481d68";
                     break;
-                case #"hash_defdefdefdefdef0":
+                default:
                     str_fx = #"hash_1f8f75941d481d68";
                     break;
                 }
@@ -117,7 +117,7 @@ function function_7431f6cc(localclientnum, *oldval, newval, *bnewent, *binitials
             case #"avogadro":
                 var_37cec89a = #"hash_787176da22ad853a";
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 var_37cec89a = #"hash_787176da22ad853a";
                 break;
             }

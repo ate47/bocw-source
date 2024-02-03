@@ -52,7 +52,7 @@ function private on_begin(timer_label, var_1215371f, grace_period, var_29cadcde,
     case 4:
         timer_value = zm_trial::function_5769f26a(var_6b594c52);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assert(0, "<unknown string>");
         #/

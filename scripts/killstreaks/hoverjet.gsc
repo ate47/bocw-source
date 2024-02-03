@@ -73,7 +73,7 @@ function function_747544ed(var_6ecb961c, var_46cd15af, var_f3828812, var_2a587e8
         height = killstreaks::function_43f4782d() + 3000;
     }
     if (var_f3828812 > 0) {
-        var_a8adc1bd = height / function_4ed01f1b(90 - var_f3828812);
+        var_a8adc1bd = height / tan(90 - var_f3828812);
     } else {
         var_a8adc1bd = -14000;
     }

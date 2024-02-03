@@ -77,7 +77,7 @@ function private function_abad20c4(difficulty = 0) {
     case 3:
         return getscriptbundle(#"hash_4e151fcf3acee254");
     case 0:
-    case #"hash_defdefdefdefdef0":
+    default:
         return getscriptbundle(#"hash_e8255beefa53aa1");
         break;
     }

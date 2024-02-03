@@ -175,7 +175,7 @@ function clear(str_flag) {
 }
 
 // Namespace flag/flag_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x534db7f7, Offset: 0x690
 // Size: 0x48
 function function_c58ecb49(str_flag) {
@@ -186,7 +186,7 @@ function function_c58ecb49(str_flag) {
 }
 
 // Namespace flag/flag_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x67c8a41d, Offset: 0x6e0
 // Size: 0x3c
 function toggle(str_flag) {

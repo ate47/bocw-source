@@ -8,7 +8,7 @@
 class class_90c2e4ec : cluielem {
 
     // Namespace class_90c2e4ec/sr_orda_health_bar
-    // Params 0, eflags: 0x8
+    // Params 0, eflags: 0xa linked
     // Checksum 0xca423627, Offset: 0x398
     // Size: 0x14
     __constructor() {
@@ -16,7 +16,7 @@ class class_90c2e4ec : cluielem {
     }
 
     // Namespace class_90c2e4ec/sr_orda_health_bar
-    // Params 0, eflags: 0x90 class_linked
+    // Params 0, eflags: 0x92 linked class_linked
     // Checksum 0x7e4fe106, Offset: 0x578
     // Size: 0x14
     __destructor() {
@@ -24,7 +24,7 @@ class class_90c2e4ec : cluielem {
     }
 
     // Namespace namespace_90c2e4ec/sr_orda_health_bar
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0xd9aa372b, Offset: 0x4d8
     // Size: 0x24
     function open(localclientnum) {
@@ -32,7 +32,7 @@ class class_90c2e4ec : cluielem {
     }
 
     // Namespace namespace_90c2e4ec/sr_orda_health_bar
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0xad2ba357, Offset: 0x440
     // Size: 0x1c
     function register_clientside() {
@@ -40,7 +40,7 @@ class class_90c2e4ec : cluielem {
     }
 
     // Namespace namespace_90c2e4ec/sr_orda_health_bar
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0xd72bfc53, Offset: 0x3b8
     // Size: 0x7c
     function setup_clientfields(healthcallback, var_d79cca54) {
@@ -50,7 +50,7 @@ class class_90c2e4ec : cluielem {
     }
 
     // Namespace namespace_90c2e4ec/sr_orda_health_bar
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x7ffd40de, Offset: 0x540
     // Size: 0x30
     function function_dff51e54(localclientnum, value) {
@@ -58,7 +58,7 @@ class class_90c2e4ec : cluielem {
     }
 
     // Namespace namespace_90c2e4ec/sr_orda_health_bar
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x70d100b4, Offset: 0x508
     // Size: 0x30
     function set_health(localclientnum, value) {
@@ -66,7 +66,7 @@ class class_90c2e4ec : cluielem {
     }
 
     // Namespace namespace_90c2e4ec/sr_orda_health_bar
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0xd972aba1, Offset: 0x468
     // Size: 0x64
     function function_fa582112(localclientnum) {
@@ -78,7 +78,7 @@ class class_90c2e4ec : cluielem {
 }
 
 // Namespace sr_orda_health_bar/sr_orda_health_bar
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x45795d4d, Offset: 0xf8
 // Size: 0x17e
 function register(healthcallback, var_d79cca54) {

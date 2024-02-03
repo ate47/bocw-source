@@ -93,7 +93,7 @@ function event_handler[gametype_init] main(*eventstruct) {
 }
 
 // Namespace zsurvival/zsurvival
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x83532d5, Offset: 0xed8
 // Size: 0x9c
 function on_player_connect(localclientnum) {
@@ -108,7 +108,7 @@ function on_player_connect(localclientnum) {
 }
 
 // Namespace zsurvival/zsurvival
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x6cb70b23, Offset: 0xf80
 // Size: 0x1b4
 function set_objective_fog(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
@@ -139,7 +139,7 @@ function set_objective_fog(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zsurvival/zsurvival
-// Params 5, eflags: 0x4
+// Params 5, eflags: 0x6 linked
 // Checksum 0x9ed85023, Offset: 0x1140
 // Size: 0x188
 function private function_33593a44(localclientnum, var_312d65d1, var_68f7ce2e, n_time = 3, var_92d85419 = 1) {
@@ -175,7 +175,7 @@ function private _on_localplayer_spawned(localclientnum) {
 }
 
 // Namespace zsurvival/zsurvival
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x10e00e3e, Offset: 0x1318
 // Size: 0x8a
 function private function_491c852e(item) {
@@ -196,7 +196,7 @@ function private function_491c852e(item) {
 }
 
 // Namespace zsurvival/zsurvival
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xe69daa80, Offset: 0x13b0
 // Size: 0x120
 function private function_13a420b1(localclientnum) {

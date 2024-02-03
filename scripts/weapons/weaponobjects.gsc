@@ -185,7 +185,7 @@ function createwatcher(weaponname, createfunc, var_7b2908f = 2) {
     case 1:
         watcher = self createuseweaponobjectwatcher(weaponname, self.team);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         watcher = self createweaponobjectwatcher(weaponname, self.team);
         break;
     }
@@ -1072,7 +1072,7 @@ function proximityalarmactivate(active, watcher, *var_af12fba0) {
             case 5:
                 state = curstate;
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 state = 2;
                 break;
             }
@@ -2932,7 +2932,7 @@ function watch_supplemental_object_death() {
 }
 
 // Namespace weaponobjects/weaponobjects
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xae8fa1e7, Offset: 0x9780
 // Size: 0x8c
 function function_d9c08e94(var_2f190eaf, var_46f3f2d3) {
@@ -2967,7 +2967,7 @@ function proximitydetonate(attacker, weapon, *target) {
 }
 
 // Namespace weaponobjects/weaponobjects
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x1bc02816, Offset: 0x9930
 // Size: 0xf2
 function onspawnproximitygrenadeweaponobject(watcher, owner) {

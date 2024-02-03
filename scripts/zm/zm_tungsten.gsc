@@ -325,7 +325,7 @@ function function_88a42ff9() {
         case #"hash_6a534c1571dbef87":
             s_magic_box function_b4abc0a1("map_box_loc_tower");
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     }
@@ -1059,7 +1059,7 @@ function function_1bbe93bc(var_64501ea4, var_148cc603) {
             var_2506688 = 1;
             var_1797c23a = 1;
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             var_2506688 = 1;
             var_1797c23a = 2;
             break;
@@ -1076,7 +1076,7 @@ function function_1bbe93bc(var_64501ea4, var_148cc603) {
             var_2506688 = 2;
             var_1797c23a = 2;
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             var_2506688 = 3;
             var_1797c23a = 3;
             break;
@@ -1373,7 +1373,7 @@ function function_9f46dbde() {
         var_fdb8ea91 = 2;
         var_99963ba3 = 4;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_fdb8ea91 = 2;
         var_99963ba3 = 4;
         break;
@@ -1389,7 +1389,7 @@ function function_9f46dbde() {
         case 3:
             var_99963ba3 = 3;
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             var_99963ba3 = 3;
             break;
         }
@@ -2150,7 +2150,7 @@ function function_dd3953d3() {
         level thread function_81acf2cf();
         switch (getdvarint(#"hash_3e6a88037f209b4d", 0)) {
         case 1:
-        case #"hash_defdefdefdefdef0":
+        default:
             step_name = #"hash_2cec5bd1113224f4";
             break;
         case 2:
@@ -2961,7 +2961,7 @@ function cmd(cmd) {
             function_71a6c3ea();
             level thread function_2f0a2ce2();
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     #/

@@ -213,7 +213,7 @@ function function_92157e49(goal, move_speed = "walk") {
             self setblackboardattribute("_locomotion_speed", "locomotion_speed_run");
             break;
         case #"walk":
-        case #"hash_defdefdefdefdef0":
+        default:
             self ai::set_behavior_attribute("sprint", 0);
             self setblackboardattribute("_locomotion_speed", "locomotion_speed_walk");
             break;
@@ -293,7 +293,7 @@ function private function_18227767(cmd) {
         case #"hash_22d1be7a17698c91":
             function_e3e858b1(250, "<unknown string>");
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     #/

@@ -15,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace world_event_orb_follow/world_event_orb_follow
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x80f724d1, Offset: 0xe8
 // Size: 0x4
 function function_70a657d8() {

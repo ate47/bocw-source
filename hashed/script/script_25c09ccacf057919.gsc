@@ -756,7 +756,7 @@ function function_765ece13(s_instance, var_b9701a73, var_2ceba174) {
             s_instance.var_906f7138 play(var_9eb2d2aa, v_pos, v_ang, undefined, 1, isdefined(s_instance.var_e3cf25b2[s_instance.var_d6cb6df6].str_fx_tag) ? s_instance.var_e3cf25b2[s_instance.var_d6cb6df6].str_fx_tag : "<unknown string>", 1);
             s_instance.var_906f7138.var_769f97fc = 1;
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             /#
                 iprintlnbold("<unknown string>");
             #/

@@ -123,7 +123,7 @@ function autoexec precache() {
 #namespace namespace_fe3871d9;
 
 // Namespace namespace_fe3871d9/raz
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x2463546f, Offset: 0xed0
 // Size: 0x7c
 function private function_e94574ae(localclientnum) {
@@ -134,7 +134,7 @@ function private function_e94574ae(localclientnum) {
 }
 
 // Namespace namespace_fe3871d9/raz
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x3448f740, Offset: 0xf58
 // Size: 0xa8
 function private function_3f40a429(localclientnum) {
@@ -174,7 +174,7 @@ function function_d0d17a03(localclientnum) {
 }
 
 // Namespace namespace_fe3871d9/raz
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0xaa9eb63c, Offset: 0x1138
 // Size: 0x20e
 function function_525f8122(localclientnum, pos, *surface, *notetrack, bone) {
@@ -207,7 +207,7 @@ function function_525f8122(localclientnum, pos, *surface, *notetrack, bone) {
 }
 
 // Namespace namespace_fe3871d9/raz
-// Params 7, eflags: 0x4
+// Params 7, eflags: 0x6 linked
 // Checksum 0x27f84d8b, Offset: 0x1350
 // Size: 0x7e
 function private function_e7290ec2(localclientnum, *oldvalue, *newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
@@ -215,7 +215,7 @@ function private function_e7290ec2(localclientnum, *oldvalue, *newvalue, *bnewen
 }
 
 // Namespace namespace_fe3871d9/raz
-// Params 7, eflags: 0x4
+// Params 7, eflags: 0x6 linked
 // Checksum 0x300bd494, Offset: 0x13d8
 // Size: 0x7e
 function private function_868b328b(localclientnum, *oldvalue, *newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
@@ -223,7 +223,7 @@ function private function_868b328b(localclientnum, *oldvalue, *newvalue, *bnewen
 }
 
 // Namespace namespace_fe3871d9/raz
-// Params 7, eflags: 0x4
+// Params 7, eflags: 0x6 linked
 // Checksum 0x462b4e58, Offset: 0x1460
 // Size: 0xda
 function private function_dc17c6d6(localclientnum, *oldvalue, newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
@@ -237,7 +237,7 @@ function private function_dc17c6d6(localclientnum, *oldvalue, newvalue, *bnewent
 }
 
 // Namespace namespace_fe3871d9/raz
-// Params 7, eflags: 0x4
+// Params 7, eflags: 0x6 linked
 // Checksum 0xcc90549c, Offset: 0x1548
 // Size: 0x1a4
 function private function_16686fd4(localclientnum, model, pos, angles, *hitpos, var_243511ab = 1, direction) {
@@ -276,7 +276,7 @@ function private function_27830d87(localclientnum, *oldvalue, *newvalue, *bnewen
 }
 
 // Namespace namespace_fe3871d9/raz
-// Params 7, eflags: 0x4
+// Params 7, eflags: 0x6 linked
 // Checksum 0x28a9c468, Offset: 0x18a0
 // Size: 0x7e
 function private function_250b46c7(localclientnum, *oldvalue, *newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {

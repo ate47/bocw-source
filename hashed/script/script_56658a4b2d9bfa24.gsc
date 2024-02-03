@@ -661,7 +661,7 @@ function private devgui_set_target(botarg, cmdarg) {
         break;
     case #"clear":
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         return;
     }
     bots = function_9a819607(self, botarg);
@@ -1066,7 +1066,7 @@ function private function_263ca697() {
     weaponoptions = self function_ade49959(weapon);
     var_e91aba42 = self function_8cbd254d(weapon);
     /#
-        setdvar(#"bot_spawn_weapon", function_a16a090d(weapon.rootweapon));
+        setdvar(#"bot_spawn_weapon", getweaponname(weapon.rootweapon));
         setdvar(#"hash_c6e51858c88a5ee", function_2146bd83(weapon));
     #/
     bots = get_bots();

@@ -803,7 +803,7 @@ function is_objective_game(game_type) {
     case #"clean":
         return 0;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         return 1;
         break;
     }
@@ -879,7 +879,7 @@ function function_a3f7de13(var_e0dd85aa, s_team, n_clientnum, extradata = 0) {
     case #"allies":
         var_dfc4aab4 = 1;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_dfc4aab4 = 0;
         break;
     }

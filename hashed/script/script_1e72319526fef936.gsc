@@ -27,7 +27,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_7ec6ae9f/namespace_9c181b10
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xc6e72392, Offset: 0x228
 // Size: 0x14c
 function private function_70a657d8() {
@@ -44,7 +44,7 @@ function private function_70a657d8() {
 }
 
 // Namespace namespace_7ec6ae9f/namespace_9c181b10
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x94d8b2b4, Offset: 0x380
 // Size: 0x324
 function function_ea2db6a9(instance) {
@@ -75,7 +75,7 @@ function function_ea2db6a9(instance) {
 }
 
 // Namespace namespace_7ec6ae9f/namespace_9c181b10
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xfc26c8b8, Offset: 0x6b0
 // Size: 0xf6
 function function_16ee428c(*params) {
@@ -89,7 +89,7 @@ function function_16ee428c(*params) {
 }
 
 // Namespace namespace_7ec6ae9f/namespace_9c181b10
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xa3de1fc8, Offset: 0x7b0
 // Size: 0x540
 function function_1c5803d9(eventstruct) {
@@ -162,7 +162,7 @@ function function_1c5803d9(eventstruct) {
 }
 
 // Namespace namespace_7ec6ae9f/namespace_9c181b10
-// Params 3, eflags: 0x4
+// Params 3, eflags: 0x6 linked
 // Checksum 0x43320b5e, Offset: 0xcf8
 // Size: 0x624
 function private function_dda69211(player, vehicle, var_2b357ce9) {
@@ -242,7 +242,7 @@ function private function_dda69211(player, vehicle, var_2b357ce9) {
 }
 
 // Namespace namespace_7ec6ae9f/namespace_9c181b10
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x711b143f, Offset: 0x1328
 // Size: 0x2ec
 function function_a41c43bd(var_2b357ce9, mdl_portal, *vehicle) {
@@ -276,7 +276,7 @@ function function_a41c43bd(var_2b357ce9, mdl_portal, *vehicle) {
 }
 
 // Namespace namespace_7ec6ae9f/namespace_9c181b10
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd12d0725, Offset: 0x1620
 // Size: 0xd4
 function function_d3d632c3(mdl_portal) {
@@ -302,7 +302,7 @@ function function_d3d632c3(mdl_portal) {
 }
 
 // Namespace namespace_7ec6ae9f/namespace_9c181b10
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x14776e5d, Offset: 0x1700
 // Size: 0xfc
 function function_8ebdf278(*eventstruct) {

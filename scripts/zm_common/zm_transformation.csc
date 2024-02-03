@@ -17,7 +17,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_transform/zm_transformation
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xde49f858, Offset: 0x190
 // Size: 0x74
 function function_201c2cb7(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -25,7 +25,7 @@ function function_201c2cb7(*localclientnum, *oldval, *newval, *bnewent, *binitia
 }
 
 // Namespace zm_transform/zm_transformation
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x7b299446, Offset: 0x210
 // Size: 0x15e
 function function_341e5a97(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -46,7 +46,7 @@ function function_341e5a97(*localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace zm_transform/zm_transformation
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x167d3eb1, Offset: 0x378
 // Size: 0x4c
 function function_8a817bd6(model) {

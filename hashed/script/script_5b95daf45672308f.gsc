@@ -9,7 +9,7 @@
 class class_90c2e4ec : cluielem {
 
     // Namespace class_90c2e4ec/sr_orda_health_bar
-    // Params 0, eflags: 0x8
+    // Params 0, eflags: 0xa linked
     // Checksum 0x65b0f98c, Offset: 0x230
     // Size: 0x14
     __constructor() {
@@ -17,7 +17,7 @@ class class_90c2e4ec : cluielem {
     }
 
     // Namespace class_90c2e4ec/sr_orda_health_bar
-    // Params 0, eflags: 0x90 class_linked
+    // Params 0, eflags: 0x92 linked class_linked
     // Checksum 0xab499cbf, Offset: 0x3e0
     // Size: 0x14
     __destructor() {
@@ -25,7 +25,7 @@ class class_90c2e4ec : cluielem {
     }
 
     // Namespace namespace_90c2e4ec/sr_orda_health_bar
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0xfe96c772, Offset: 0x2c8
     // Size: 0x3c
     function open(player, flags = 0) {
@@ -33,7 +33,7 @@ class class_90c2e4ec : cluielem {
     }
 
     // Namespace namespace_90c2e4ec/sr_orda_health_bar
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x2b55242d, Offset: 0x310
     // Size: 0x24
     function close(player) {
@@ -41,7 +41,7 @@ class class_90c2e4ec : cluielem {
     }
 
     // Namespace namespace_90c2e4ec/sr_orda_health_bar
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0x2023c517, Offset: 0x250
     // Size: 0x6c
     function setup_clientfields() {
@@ -51,7 +51,7 @@ class class_90c2e4ec : cluielem {
     }
 
     // Namespace namespace_90c2e4ec/sr_orda_health_bar
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0xb230ff97, Offset: 0x390
     // Size: 0x44
     function function_dff51e54(player, value) {
@@ -59,7 +59,7 @@ class class_90c2e4ec : cluielem {
     }
 
     // Namespace namespace_90c2e4ec/sr_orda_health_bar
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x6ce0eb4c, Offset: 0x340
     // Size: 0x44
     function set_health(player, value) {
@@ -69,7 +69,7 @@ class class_90c2e4ec : cluielem {
 }
 
 // Namespace sr_orda_health_bar/sr_orda_health_bar
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xc6b82780, Offset: 0x100
 // Size: 0x34
 function register() {
@@ -79,7 +79,7 @@ function register() {
 }
 
 // Namespace sr_orda_health_bar/sr_orda_health_bar
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x22b7d0a0, Offset: 0x140
 // Size: 0x38
 function open(player, flags = 0) {
@@ -87,7 +87,7 @@ function open(player, flags = 0) {
 }
 
 // Namespace sr_orda_health_bar/sr_orda_health_bar
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xbeec1ac2, Offset: 0x180
 // Size: 0x1c
 function close(player) {
@@ -95,7 +95,7 @@ function close(player) {
 }
 
 // Namespace sr_orda_health_bar/sr_orda_health_bar
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd0ca6291, Offset: 0x1a8
 // Size: 0x1a
 function is_open(player) {
@@ -103,7 +103,7 @@ function is_open(player) {
 }
 
 // Namespace sr_orda_health_bar/sr_orda_health_bar
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x8b533391, Offset: 0x1d0
 // Size: 0x28
 function set_health(player, value) {
@@ -111,7 +111,7 @@ function set_health(player, value) {
 }
 
 // Namespace sr_orda_health_bar/sr_orda_health_bar
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xb6f369c1, Offset: 0x200
 // Size: 0x28
 function function_dff51e54(player, value) {

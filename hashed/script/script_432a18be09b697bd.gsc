@@ -219,7 +219,7 @@ function function_a8dc8da3() {
     var_2c8ebaf = struct::get("hh_button_5", "targetname");
     if (!level flag::get(#"hash_46113ff0abdbbbb8")) {
         level flag::set(#"hash_46113ff0abdbbbb8");
-        var_82a319ce = util::spawn_model(#"hash_1636f6a97cc8efbf", var_2c8ebaf.origin, var_2c8ebaf.angles);
+        var_82a319ce = util::spawn_model(#"p8_zm_ori_button_alarm", var_2c8ebaf.origin, var_2c8ebaf.angles);
         var_82a319ce moveto(var_82a319ce.origin + vectorscale((1, 0, 0), 15), 2);
         var_82a319ce waittill(#"movedone");
     }
@@ -1935,7 +1935,7 @@ function private function_dfe8c2c1(cmd) {
         case #"hash_618a6bfc726419ff":
             level thread function_735d02f6();
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     #/
@@ -2006,7 +2006,7 @@ function function_735d02f6() {
         level set("<unknown string>");
         level set(#"hash_46113ff0abdbbbb8");
         var_2c8ebaf = get("<unknown string>", "<unknown string>");
-        var_82a319ce = spawn_model(#"hash_1636f6a97cc8efbf", var_2c8ebaf.origin, var_2c8ebaf.angles);
+        var_82a319ce = spawn_model(#"p8_zm_ori_button_alarm", var_2c8ebaf.origin, var_2c8ebaf.angles);
         var_82a319ce moveto(var_82a319ce.origin + vectorscale((1, 0, 0), 15), 2);
         var_82a319ce waittill(#"movedone");
     #/

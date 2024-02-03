@@ -192,7 +192,7 @@ function play_killstreak_hacked_dialog(killstreaktype, killstreakid, hacker) {
 }
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x907658de, Offset: 0x800
 // Size: 0x44
 function play_killstreak_start_dialog(hardpointtype, team, killstreak_id) {
@@ -222,7 +222,7 @@ function play_pilot_dialog_on_owner(dialogkey, killstreaktype, killstreakid) {
 }
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xed639306, Offset: 0x8f8
 // Size: 0x3c
 function play_destroyed_dialog_on_owner(killstreaktype, killstreakid) {
@@ -287,7 +287,7 @@ function get_mpdialog_tacom_bundle(name) {
 }
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x45cce7e6, Offset: 0xbb0
 // Size: 0x4c
 function function_d2219b7d(type) {

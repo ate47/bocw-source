@@ -122,7 +122,7 @@ function do_gib() {
         break;
     case #"guts":
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assertmsg("<unknown string>" + self.a.gib_ref + "<unknown string>");
         #/

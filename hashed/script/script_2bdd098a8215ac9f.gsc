@@ -17,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_1cc7b406/namespace_1cc7b406
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x4f6fd33c, Offset: 0x170
 // Size: 0x74
 function function_70a657d8() {
@@ -27,7 +27,7 @@ function function_70a657d8() {
 }
 
 // Namespace namespace_1cc7b406/namespace_1cc7b406
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x80f724d1, Offset: 0x1f0
 // Size: 0x4
 function postinit() {
@@ -35,7 +35,7 @@ function postinit() {
 }
 
 // Namespace namespace_1cc7b406/namespace_1cc7b406
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xa4018a6e, Offset: 0x200
 // Size: 0x6c
 function crafting_table_spawn_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

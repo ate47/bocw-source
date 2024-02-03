@@ -207,7 +207,7 @@ function function_a65863ce() {
                     case 6:
                         menu = "<unknown string>";
                         break;
-                    case #"hash_defdefdefdefdef0":
+                    default:
                         menu = undefined;
                         break;
                     }
@@ -370,7 +370,7 @@ function notif_devgui_gun_rank() {
             case #"weapon_knife":
                 arrayinsert(a_weapons[#"knife"], gun, 0);
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 break;
             }
         }

@@ -3020,7 +3020,7 @@ function function_91403f47() {
 }
 
 // Namespace zm_utility/zm_utility
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x708530b6, Offset: 0xa630
 // Size: 0x2c
 function function_3e549e65() {
@@ -5349,7 +5349,7 @@ function function_36eb0acc(var_13f9dee7 = #"none") {
     case #"gold":
         self clientfield::set("model_rarity_rob", 7);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         self clientfield::set("model_rarity_rob", 0);
         break;
     }
@@ -5736,7 +5736,7 @@ function function_ebd87099(player) {
 }
 
 // Namespace zm_utility/zm_utility
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x4588048c, Offset: 0x130d8
 // Size: 0x180
 function function_89dbd679(origin, radius, height, var_2d8730f7, var_b9e9cdf3) {
@@ -5752,7 +5752,7 @@ function function_89dbd679(origin, radius, height, var_2d8730f7, var_b9e9cdf3) {
 }
 
 // Namespace zm_utility/zm_utility
-// Params 3, eflags: 0x2 linked
+// Params 3, eflags: 0x0
 // Checksum 0x95f24f3e, Offset: 0x13260
 // Size: 0x26a
 function function_cce73165(var_947b45e7, var_82706add, str_zone_name) {
@@ -6075,7 +6075,7 @@ function function_d34f6296(v_origin, n_radius) {
 }
 
 // Namespace zm_utility/zm_utility
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x10749b20, Offset: 0x148d8
 // Size: 0x40
 function function_da0eb3e4(itemname, func) {

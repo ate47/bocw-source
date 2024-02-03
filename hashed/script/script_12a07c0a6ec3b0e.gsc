@@ -470,7 +470,7 @@ function function_1bac5158(localclientnum, *oldval, newval, *bnewent, *binitials
         var_e15e9f2a = 3;
         var_801f8ece = 0.3;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
     if (isdefined(var_6e938f0b) && isdefined(var_e15e9f2a) && isdefined(var_801f8ece)) {
@@ -504,7 +504,7 @@ function function_bd4d69e3(localclientnum, var_6e938f0b, var_e15e9f2a, var_801f8
             case 3:
                 e_item = util::spawn_model(localclientnum, #"hash_1f82e1c70fdc8f38", v_point);
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 e_item = util::spawn_model(localclientnum, #"hash_62b204735601bbc9", v_point);
                 break;
             }

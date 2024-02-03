@@ -105,24 +105,24 @@ function selectplanemortarlocation(hardpointtype) {
     } else if (!isarray(self.pers[#"hash_1aaccfe69e328d6e"])) {
         self.pers[#"hash_1aaccfe69e328d6e"] = array(self.pers[#"hash_1aaccfe69e328d6e"]);
     }
-    var_65ca83ef = isdefined(self.pers[#"hash_1aaccfe69e328d6e"][slot]) ? self.pers[#"hash_1aaccfe69e328d6e"][slot] : 3;
-    self.pers[#"hash_1aaccfe69e328d6e"][slot] = var_65ca83ef;
-    clientfield::set_player_uimodel("hudItems.planeMortarShotsRemaining", var_65ca83ef);
+    selections = isdefined(self.pers[#"hash_1aaccfe69e328d6e"][slot]) ? self.pers[#"hash_1aaccfe69e328d6e"][slot] : 3;
+    self.pers[#"hash_1aaccfe69e328d6e"][slot] = selections;
+    clientfield::set_player_uimodel("hudItems.planeMortarShotsRemaining", selections);
     yaw = randomintrange(0, 360);
-    for (i = 0; i < var_65ca83ef; i++) {
+    for (i = 0; i < selections; i++) {
         location = self airsupport::waitforlocationselection();
         if (!isdefined(location.origin) || i == 0 && self killstreakrules::iskillstreakallowed(hardpointtype, self.team) == 0) {
             if (isdefined(killstreakid)) {
                 self thread function_16f87e96(6);
             }
-            self.pers[#"hash_1aaccfe69e328d6e"][slot] = var_65ca83ef - i;
+            self.pers[#"hash_1aaccfe69e328d6e"][slot] = selections - i;
             self.pers[#"mortarradarused"] = 1;
             self notify(#"cancel_selection");
             return 0;
         }
         if (!isdefined(killstreakid)) {
             killstreakid = self killstreakrules::killstreakstart("planemortar", self.team, 0, 1);
-            if (i == 0 && var_65ca83ef == 3) {
+            if (i == 0 && selections == 3) {
                 killstreaks::function_e24443d0(hardpointtype);
                 self stats::function_dad108fa(#"hash_4cb341530c521448", 1);
                 self stats::function_dad108fa(#"hash_4a20ff7cceff217c", 1);
@@ -136,8 +136,8 @@ function selectplanemortarlocation(hardpointtype) {
             }
             self thread function_5f89ffc2(hardpointtype, self.usingkillstreakfrominventory, slot);
         }
-        clientfield::set_player_uimodel("hudItems.planeMortarShotsRemaining", var_65ca83ef - i - 1);
-        self thread function_c47dc560(location.origin, killstreakid, params, i + 1, var_65ca83ef, yaw, self.usingkillstreakfrominventory, slot);
+        clientfield::set_player_uimodel("hudItems.planeMortarShotsRemaining", selections - i - 1);
+        self thread function_c47dc560(location.origin, killstreakid, params, i + 1, selections, yaw, self.usingkillstreakfrominventory, slot);
         self playsoundtoplayer(#"hash_40ab546591b2ecfa", self);
         wait(0.2);
     }

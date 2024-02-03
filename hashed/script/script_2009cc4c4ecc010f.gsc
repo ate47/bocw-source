@@ -191,7 +191,7 @@ function private function_1e8ff2f7(settings, seat_index) {
         return settings.var_d4412f1b;
     case 4:
         return settings.var_544baf32;
-    case #"hash_defdefdefdefdef0":
+    default:
         return undefined;
         break;
     }
@@ -213,7 +213,7 @@ function private function_356e1073(seat_index) {
         return "tag_gunner_flash3";
     case 4:
         return "tag_gunner_flash4";
-    case #"hash_defdefdefdefdef0":
+    default:
         return undefined;
         break;
     }

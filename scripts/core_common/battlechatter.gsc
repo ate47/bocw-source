@@ -943,7 +943,7 @@ function function_1d4b0ec0(dogstate, *dog) {
     case 1:
         dialogkey = playerbundle.var_38ab9818;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         return;
     }
     self.script_owner thread function_a48c33ff(dialogkey);
@@ -1247,7 +1247,7 @@ function function_72b65730() {
 }
 
 // Namespace battlechatter/battlechatter
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x67cd0170, Offset: 0x54d8
 // Size: 0xc4
 function heavyweaponkilllogic(attacker, weapon, victim) {

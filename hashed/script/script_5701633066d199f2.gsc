@@ -2009,7 +2009,7 @@ function function_9b31d191(einflictor, eattacker, idamage, smeansofdeath, weapon
         case 1:
             self namespace_83eb6304::function_3ecfde67("headshot_nochunks");
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             self namespace_83eb6304::function_3ecfde67("bloodspurt");
             break;
         }

@@ -17,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_perk_deadshot/zm_perk_deadshot
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xc1c52156, Offset: 0x170
 // Size: 0x14
 function private function_70a657d8() {
@@ -25,7 +25,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_perk_deadshot/zm_perk_deadshot
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xd6c4d441, Offset: 0x190
 // Size: 0xb4
 function enable_deadshot_perk_for_level() {
@@ -36,7 +36,7 @@ function enable_deadshot_perk_for_level() {
 }
 
 // Namespace zm_perk_deadshot/zm_perk_deadshot
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x6f83cef9, Offset: 0x250
 // Size: 0x3c
 function init_deadshot() {
@@ -46,7 +46,7 @@ function init_deadshot() {
 }
 
 // Namespace zm_perk_deadshot/zm_perk_deadshot
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x2b887075, Offset: 0x298
 // Size: 0x4c
 function deadshot_client_field_func() {
@@ -54,7 +54,7 @@ function deadshot_client_field_func() {
 }
 
 // Namespace zm_perk_deadshot/zm_perk_deadshot
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x80f724d1, Offset: 0x2f0
 // Size: 0x4
 function deadshot_code_callback_func() {
@@ -62,7 +62,7 @@ function deadshot_code_callback_func() {
 }
 
 // Namespace zm_perk_deadshot/zm_perk_deadshot
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xc9d2f1b3, Offset: 0x300
 // Size: 0xcc
 function player_deadshot_perk_handler(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -82,7 +82,7 @@ function player_deadshot_perk_handler(localclientnum, *oldval, newval, *bnewent,
 }
 
 // Namespace zm_perk_deadshot/zm_perk_deadshot
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x728bf44e, Offset: 0x3d8
 // Size: 0x6a
 function private is_local_player(player) {

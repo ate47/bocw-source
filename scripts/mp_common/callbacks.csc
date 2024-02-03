@@ -211,7 +211,7 @@ function airsupport(*localclientnum, x, y, z, type, yaw, team, teamfaction, owne
     case #"r":
         owner = #"russian";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             println("<unknown string>");
         #/
@@ -231,7 +231,7 @@ function airsupport(*localclientnum, x, y, z, type, yaw, team, teamfaction, owne
     case #"r":
         teamfaction = #"none";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             println("<unknown string>" + teamfaction + "<unknown string>");
         #/

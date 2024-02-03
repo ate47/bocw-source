@@ -127,7 +127,7 @@ function function_78c16252() {
 }
 
 // Namespace battlechatter/namespace_ad2a73d6
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x45f62e7d, Offset: 0x6c8
 // Size: 0x19c
 function play_death_vox(body, *attacker, weapon, meansofdeath) {

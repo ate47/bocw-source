@@ -3465,7 +3465,7 @@ function function_8b256066(str_scene) {
     case #"done_echo_scene_valentinaandpeck":
         stat_name = #"hash_2be6eda2d188e1fa";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         return;
     }
     players = getplayers();
@@ -3821,7 +3821,7 @@ function on_item_pickup(params) {
                 level thread function_7acfbb3a(self);
                 self clientfield::increment_to_player("" + #"hash_6696d96a08b9701d");
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 return;
             }
             level thread popups::function_87604884(#"hash_4cacf78219f8fca", self, self.team, item.var_a6762160.displayname);

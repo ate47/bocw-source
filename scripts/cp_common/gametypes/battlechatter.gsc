@@ -129,7 +129,7 @@ function function_4a19b47a() {
         case #"hash_6d6e10c538f37ef3":
             self.var_3d0026c9 = randomintrange(1, 5);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             self.var_3d0026c9 = randomintrange(1, 4);
             break;
         }

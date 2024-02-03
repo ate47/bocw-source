@@ -223,7 +223,7 @@ function function_1cd1374d(var_1d35315f, var_d4c489c0 = #"primary", var_e81ceea 
     v_ang_offset = s_info.angles;
     switch (var_d4c489c0) {
     case #"primary":
-    case #"hash_defdefdefdefdef0":
+    default:
         if (function_cc770c92(var_1d35315f)) {
             if (function_4dcbc16b(localclientnum, var_d4c489c0, var_1d35315f)) {
                 s_location = level.weapon_position[#"primary"];
@@ -586,7 +586,7 @@ function function_4aa0a8f6(var_ccf52c44) {
         break;
     case #"specialty":
         var_d8ebd573 = 3;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_d8ebd573 = 0;
         break;
     }
@@ -969,7 +969,7 @@ function private function_eeb5c6a3(localclientnum, var_73cd9b6e, var_8a4ba442) {
         var_95970e62 = 1;
         weapon = level.weaponnone;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         model_name = #"";
         var_95970e62 = 1;
         weapon = level.weaponnone;
@@ -1068,7 +1068,7 @@ function function_f1216c02(localclientnum, var_8a4ba442, var_13f9dee7) {
             case #"ultra":
                 level.var_5caba701 setmodel(#"hash_6e1193289746f2cc");
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 level.var_5caba701 setmodel(#"hash_26cca5441781d97");
                 break;
             }
@@ -1571,7 +1571,7 @@ function function_d39cd2b5(var_8a4ba442 = "", str_weapon, var_cc6c0ec0 = 0, var_
                 switch (var_e79e336c) {
                 case 0:
                 case 1:
-                case #"hash_defdefdefdefdef0":
+                default:
                     var_23f6420e = "perk1";
                     break;
                 case 2:
@@ -1594,7 +1594,7 @@ function function_d39cd2b5(var_8a4ba442 = "", str_weapon, var_cc6c0ec0 = 0, var_
                 switch (var_e79e336c) {
                 case 0:
                 case 1:
-                case #"hash_defdefdefdefdef0":
+                default:
                     var_23f6420e = "perk2";
                     break;
                 case 2:
@@ -1617,7 +1617,7 @@ function function_d39cd2b5(var_8a4ba442 = "", str_weapon, var_cc6c0ec0 = 0, var_
                 switch (var_e79e336c) {
                 case 0:
                 case 1:
-                case #"hash_defdefdefdefdef0":
+                default:
                     var_23f6420e = "perk3";
                     break;
                 case 2:
@@ -1639,7 +1639,7 @@ function function_d39cd2b5(var_8a4ba442 = "", str_weapon, var_cc6c0ec0 = 0, var_
         case #"hash_c70e59dba98cf81":
             var_23f6420e = "wrist_accessories";
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             /#
                 /#
                     assertmsg("perk2" + function_9e72a96(var_c6abe208) + "specialty" + var_8a4ba442);
@@ -1730,7 +1730,7 @@ function function_f87ec9a8(var_e81ceea = "", str_weapon, var_f2af4049 = 0, var_2
         case #"handle":
             var_7dae7df8 = "handle";
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             var_7dae7df8 = "overview";
             break;
         }
@@ -2346,14 +2346,14 @@ function function_7a6db01f(localclientnum, var_353b5fbf) {
     case #"hash_3dabd96b7684e947":
         n_tier = stats::get_stat(localclientnum, #"cacloadouts", #"hash_1b24e5b336f5ae8d", #"hash_38f1aae51e2d5f58");
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         n_tier = 1;
         break;
     }
     switch (n_tier) {
     case 0:
     case 1:
-    case #"hash_defdefdefdefdef0":
+    default:
         return #"rob_ammo_mod_level_1";
     case 2:
         return #"rob_ammo_mod_level_2";
@@ -2801,7 +2801,7 @@ function function_ae73f57f(localclientnum, var_8a4ba442, var_e81ceea) {
         case #"stickers":
             s_info = function_82f74dec(level.current_weapon[localclientnum]);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             s_info = function_3bff05ba(level.current_weapon[localclientnum], var_8a4ba442, localclientnum);
             break;
         }

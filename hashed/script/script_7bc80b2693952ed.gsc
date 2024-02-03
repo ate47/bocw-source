@@ -732,7 +732,7 @@ function private update_lightbar(localclientnum, new_blood_stage, prior_blood_st
         case 4:
             setcontrollerlightbarcolorpulsing(localclientnum, (1, 0, 0), 600);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             setcontrollerlightbarcolor(localclientnum);
             break;
         }

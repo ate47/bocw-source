@@ -362,7 +362,7 @@ function body_customization_process_command(character_index) {
             #/
             function_f413b4d5(bodytype, outfitindex, var_c1154821, index);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     #/

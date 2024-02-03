@@ -52,7 +52,7 @@ function zombie_eye_glow(localclientnum, *oldval, newval, *bnewent, *binitialsna
             case 5:
                 self.var_12b59dee = "rob_zm_eyes_red";
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 self.var_12b59dee = "rob_zm_eyes_orange";
                 break;
             }
@@ -73,7 +73,7 @@ function zombie_eye_glow(localclientnum, *oldval, newval, *bnewent, *binitialsna
             case 5:
                 var_d40cd873 = "zm_ai/fx8_zombie_eye_glow_red";
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 var_d40cd873 = "zm_ai/fx8_zombie_eye_glow_orange";
                 break;
             }

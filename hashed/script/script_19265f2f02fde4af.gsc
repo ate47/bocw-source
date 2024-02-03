@@ -303,7 +303,7 @@ function private function_2138c62(local_client_num, var_1e5d913d, var_5479bede, 
             data.var_33c88c75[data.var_33c88c75.size] = var_5479bede.var_7c5043e3;
             forward = var_5479bede.direction;
             if ((isdefined(var_2cc6e886.var_f9ac1f46) ? var_2cc6e886.var_f9ac1f46 : 0) > 0) {
-                offset = forward + perpendicularvector(forward) * function_4ed01f1b(var_2cc6e886.var_f9ac1f46) * randomfloat(1);
+                offset = forward + perpendicularvector(forward) * tan(var_2cc6e886.var_f9ac1f46) * randomfloat(1);
                 offset = rotatepointaroundaxis(offset, forward, randomfloatrange(0, 360));
                 forward = vectornormalize(offset);
                 /#

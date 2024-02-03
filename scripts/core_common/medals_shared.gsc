@@ -42,7 +42,7 @@ function on_player_connect() {
 }
 
 // Namespace medals/medals_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x74f117ad, Offset: 0x190
 // Size: 0x2e
 function setlastkilledby(attacker, inflictor) {

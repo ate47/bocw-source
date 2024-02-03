@@ -48,7 +48,7 @@ function register_player_contract_event(event_name, event_func, max_param_count 
 }
 
 // Namespace contracts/contracts_shared
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xc3d2bf4f, Offset: 0x258
 // Size: 0x35a
 function player_contract_event(event_name, param1 = undefined, param2 = undefined, param3 = undefined) {
@@ -58,7 +58,7 @@ function player_contract_event(event_name, param1 = undefined, param2 = undefine
     param_count = isdefined(level.player_contract_events[event_name].param_count) ? level.player_contract_events[event_name].param_count : 0;
     switch (param_count) {
     case 0:
-    case #"hash_defdefdefdefdef0":
+    default:
         foreach (event_func in level.player_contract_events[event_name].events) {
             if (isdefined(event_func)) {
                 self [[ event_func ]]();
@@ -98,7 +98,7 @@ function get_contract_stat(slot, stat_name) {
 }
 
 // Namespace contracts/contracts_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xebfcc7ba, Offset: 0x608
 // Size: 0x1ec
 function function_d17bcd3c(slot) {
@@ -122,7 +122,7 @@ function function_d17bcd3c(slot) {
 }
 
 // Namespace contracts/contracts_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x92002231, Offset: 0x800
 // Size: 0xf0
 function function_de4ff5a(slot) {
@@ -175,7 +175,7 @@ function setup_player_contracts(max_contract_slots, var_1b3f5772) {
 }
 
 // Namespace contracts/contracts_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x66dbb451, Offset: 0xb38
 // Size: 0x34
 function is_contract_active(var_38280f2f) {
@@ -186,7 +186,7 @@ function is_contract_active(var_38280f2f) {
 }
 
 // Namespace contracts/contracts_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x7402b098, Offset: 0xb78
 // Size: 0x58
 function increment_contract(var_38280f2f, delta = 1) {
@@ -356,7 +356,7 @@ function function_d3fba20e() {
 }
 
 // Namespace contracts/contracts_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xfe4c97e3, Offset: 0x15a8
 // Size: 0x56a
 function function_78083139() {
@@ -447,7 +447,7 @@ function function_78083139() {
 }
 
 // Namespace contracts/contracts_shared
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0xbcec9c98, Offset: 0x1b20
 // Size: 0xcc
 function function_d8c98325(var_38280f2f, delta, flags, var_4b67585c, var_2de8a050) {
@@ -461,7 +461,7 @@ function function_d8c98325(var_38280f2f, delta, flags, var_4b67585c, var_2de8a05
 }
 
 // Namespace contracts/contracts_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xab862af1, Offset: 0x1bf8
 // Size: 0x16c
 function function_507247e8(var_9224acc) {

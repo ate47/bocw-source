@@ -15,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_a2a34bbc/namespace_a2a34bbc
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xdc87d4f7, Offset: 0xe8
 // Size: 0x94
 function function_70a657d8() {

@@ -163,7 +163,7 @@ function toggle_scene_menu() {
                     case 2:
                         level thread display_scene_menu("<unknown string>");
                         break;
-                    case #"hash_defdefdefdefdef0":
+                    default:
                         function_1f93be7b();
                         level clear(#"menu_open");
                         level clear(#"menu_open");

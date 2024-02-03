@@ -28,7 +28,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x6c761a45, Offset: 0x240
 // Size: 0x154
 function init_shared() {
@@ -41,7 +41,7 @@ function init_shared() {
 }
 
 // Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x53839c06, Offset: 0x3a0
 // Size: 0x7c
 function function_4f3cd1f0() {
@@ -53,7 +53,7 @@ function function_4f3cd1f0() {
 }
 
 // Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x2aff0397, Offset: 0x428
 // Size: 0x1a4
 function function_a6c93300(*params) {
@@ -79,7 +79,7 @@ function function_a6c93300(*params) {
 }
 
 // Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x94dd92da, Offset: 0x5d8
 // Size: 0x684
 function function_659d1778(attacker) {
@@ -152,7 +152,7 @@ function function_659d1778(attacker) {
 }
 
 // Namespace zombie_dog_toxic_cloud/zombie_dog_toxic_cloud
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x4a2a9268, Offset: 0xc68
 // Size: 0x2c
 function function_5b8201e0(*params) {

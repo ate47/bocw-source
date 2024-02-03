@@ -501,7 +501,7 @@ function private function_770d7902() {
         jumpcmp(players.size < 0) LOC_0000007e;
         return players;
     case 4:
-    case #"hash_defdefdefdefdef0":
+    default:
     LOC_0000007e:
         return function_a1ef346b(self.team);
         break;

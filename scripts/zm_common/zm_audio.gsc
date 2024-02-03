@@ -37,7 +37,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xc73d7bd0, Offset: 0x5a8
 // Size: 0x16c
 function private function_70a657d8() {
@@ -60,7 +60,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd6e2b7c4, Offset: 0x720
 // Size: 0x24
 function ai_killed(s_params) {
@@ -68,7 +68,7 @@ function ai_killed(s_params) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x47ad9498, Offset: 0x750
 // Size: 0xbc
 function function_198818fe() {
@@ -88,7 +88,7 @@ function function_198818fe() {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xeacbc8de, Offset: 0x818
 // Size: 0x3c
 function setexertvoice(exert_id) {
@@ -97,7 +97,7 @@ function setexertvoice(exert_id) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xd6483617, Offset: 0x860
 // Size: 0x20c
 function playerexert(exert, notifywait = 0) {
@@ -135,7 +135,7 @@ function playerexert(exert, notifywait = 0) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xf9a90d50, Offset: 0xa78
 // Size: 0x3e
 function exert_timer() {
@@ -145,7 +145,7 @@ function exert_timer() {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x390b3ae9, Offset: 0xac0
 // Size: 0x160
 function zmbvox() {
@@ -168,7 +168,7 @@ function zmbvox() {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x1f5179cd, Offset: 0xc28
 // Size: 0xac
 function init_audio_functions() {
@@ -185,7 +185,7 @@ function init_audio_functions() {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x21536a7f, Offset: 0xce0
 // Size: 0x2be
 function oh_shit_vox() {
@@ -225,7 +225,7 @@ function oh_shit_vox() {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xed024ad8, Offset: 0xfa8
 // Size: 0xa6
 function function_2c31a0a6() {
@@ -241,7 +241,7 @@ function function_2c31a0a6() {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x82a73ef6, Offset: 0x1058
 // Size: 0x138
 function function_aa7d1d97() {
@@ -265,7 +265,7 @@ function function_aa7d1d97() {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xba02d12f, Offset: 0x1198
 // Size: 0x258
 function player_killstreak_timer() {
@@ -307,7 +307,7 @@ function player_killstreak_timer() {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x507f4877, Offset: 0x13f8
 // Size: 0x19e
 function player_zombie_kill_vox(params) {
@@ -336,7 +336,7 @@ function player_zombie_kill_vox(params) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x5419ad38, Offset: 0x15a0
 // Size: 0x314
 function function_d412c3a8(impact, mod, weapon, zombie, instakill, dist, player) {
@@ -394,7 +394,7 @@ function function_d412c3a8(impact, mod, weapon, zombie, instakill, dist, player)
 }
 
 // Namespace zm_audio/zm_audio
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xa26bc040, Offset: 0x18c0
 // Size: 0x84
 function is_explosive_weapon(weapon) {
@@ -402,7 +402,7 @@ function is_explosive_weapon(weapon) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x1fbb6016, Offset: 0x1950
 // Size: 0x94
 function function_bb6bf99c(ai) {
@@ -414,7 +414,7 @@ function function_bb6bf99c(ai) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xb4e839b9, Offset: 0x19f0
 // Size: 0x804
 function function_350fc8cc(weapon, zombie, mod, player) {
@@ -519,7 +519,7 @@ function function_350fc8cc(weapon, zombie, mod, player) {
                 case #"ww_freezegun_t8":
                     jumpiffalse(zombie.archetype === #"zombie_dog") LOC_00000572;
                     break;
-                case #"hash_defdefdefdefdef0":
+                default:
                 LOC_00000572:
                     str_weapon = #"wonder";
                     break;
@@ -603,7 +603,7 @@ function function_2d93d659(w_weapon) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x7fb3381b, Offset: 0x2330
 // Size: 0x222
 function function_fa4dfde0(w_weapon) {
@@ -645,7 +645,7 @@ function function_fa4dfde0(w_weapon) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x67232045, Offset: 0x2560
 // Size: 0x6a
 function function_6049efce(weapon, n_kill_count = 10, var_b0f9afde = 6) {
@@ -654,7 +654,7 @@ function function_6049efce(weapon, n_kill_count = 10, var_b0f9afde = 6) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xae8e5920, Offset: 0x25d8
 // Size: 0xf8
 function function_7ea301dd(weapon, var_b0f9afde = 6) {
@@ -674,7 +674,7 @@ function function_7ea301dd(weapon, var_b0f9afde = 6) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x43459054, Offset: 0x26d8
 // Size: 0x64
 function function_f9928a31(weapon, n_kill_count = 6) {
@@ -687,7 +687,7 @@ function function_f9928a31(weapon, n_kill_count = 6) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x3e3074a9, Offset: 0x2748
 // Size: 0x7e
 function function_d2429d4f(str_weapon) {
@@ -704,7 +704,7 @@ function function_d2429d4f(str_weapon) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x8095f627, Offset: 0x27d0
 // Size: 0x232
 function timer_actual(kills, time) {
@@ -737,7 +737,7 @@ function timer_actual(kills, time) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xaab10425, Offset: 0x2a10
 // Size: 0x2e
 function zmbvoxcreate() {
@@ -747,7 +747,7 @@ function zmbvoxcreate() {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xf4d2d3c6, Offset: 0x2a48
 // Size: 0xaa
 function zmbvoxinitspeaker(speaker, prefix, ent) {
@@ -799,7 +799,7 @@ function loadplayervoicecategories(table) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x67dcd9cf, Offset: 0x2d28
 // Size: 0x24
 function checkstringvalid(str) {
@@ -826,7 +826,7 @@ function checkstringtrue(str) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x1161b30, Offset: 0x2db0
 // Size: 0x5a
 function checkintvalid(value, defaultvalue = 0) {
@@ -840,7 +840,7 @@ function checkintvalid(value, defaultvalue = 0) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 9, eflags: 0x0
+// Params 9, eflags: 0x2 linked
 // Checksum 0xe9ef9f29, Offset: 0x2e18
 // Size: 0x1e8
 function zmbvoxadd(category, subcategory, suffix, percentage = 100, cooldown = 0, var_50219c90 = 0, var_7aadcbd7 = 0, toself = 0, var_884fa3fe = 0) {
@@ -867,7 +867,7 @@ function zmbvoxadd(category, subcategory, suffix, percentage = 100, cooldown = 0
 }
 
 // Namespace zm_audio/zm_audio
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0x49ca4cc7, Offset: 0x3008
 // Size: 0x9a
 function function_ef9ba49c(category, delay = 2, var_ba54b77d, n_range = 800, endons, var_618a04 = 0) {
@@ -875,7 +875,7 @@ function function_ef9ba49c(category, delay = 2, var_ba54b77d, n_range = 800, end
 }
 
 // Namespace zm_audio/zm_audio
-// Params 3, eflags: 0x4
+// Params 3, eflags: 0x6 linked
 // Checksum 0x413ecf2e, Offset: 0x3218
 // Size: 0x25a
 function private function_bf1b121a(timeout, n_range, var_618a04) {
@@ -903,7 +903,7 @@ function private function_bf1b121a(timeout, n_range, var_618a04) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x12c8c354, Offset: 0x3480
 // Size: 0x88
 function function_bca32e49(category, subcategory, force_variant, b_wait_if_busy = 0) {
@@ -915,7 +915,7 @@ function function_bca32e49(category, subcategory, force_variant, b_wait_if_busy 
 }
 
 // Namespace zm_audio/zm_audio
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x4d2073a1, Offset: 0x3510
 // Size: 0x72
 function create_and_play_dialog(category, subcategory, force_variant, b_wait_if_busy = 0, var_d0acc84f) {
@@ -923,7 +923,7 @@ function create_and_play_dialog(category, subcategory, force_variant, b_wait_if_
 }
 
 // Namespace zm_audio/zm_audio
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x4aafc2c1, Offset: 0x3a70
 // Size: 0x54
 function sndvoxoverride(b_toggle) {
@@ -936,7 +936,7 @@ function sndvoxoverride(b_toggle) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xd3c819bd, Offset: 0x3ad0
 // Size: 0x54
 function private _sndvoxoverride(b_toggle) {
@@ -966,7 +966,7 @@ function display_override() {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x5c2b3f5, Offset: 0x3be0
 // Size: 0x154
 function function_43f17c2(category, subcategory) {
@@ -989,7 +989,7 @@ function function_43f17c2(category, subcategory) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x5f723598, Offset: 0x3d40
 // Size: 0x10a
 function function_250becf4(category, subcategory) {
@@ -1007,7 +1007,7 @@ function function_250becf4(category, subcategory) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x73da62d1, Offset: 0x3e58
 // Size: 0x5c
 function attempt(category, subcategory) {
@@ -1017,7 +1017,7 @@ function attempt(category, subcategory) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xf5fed581, Offset: 0x3ec0
 // Size: 0x3c
 function success(category, subcategory) {
@@ -1026,7 +1026,7 @@ function success(category, subcategory) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x4e94cd42, Offset: 0x3f08
 // Size: 0x1c8
 function function_9c83876e(category, subcategory) {
@@ -1115,7 +1115,7 @@ function function_e1666976(str_category, var_39acfdda) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0x6ee760b8, Offset: 0x4388
 // Size: 0xae
 function private function_a3932430(str_category, var_39acfdda) {
@@ -1136,7 +1136,7 @@ function private function_a3932430(str_category, var_39acfdda) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x99f24cf0, Offset: 0x4440
 // Size: 0xce
 function can_speak(var_7faa9b94 = 0, var_7d84f04b = 0) {
@@ -1153,7 +1153,7 @@ function can_speak(var_7faa9b94 = 0, var_7d84f04b = 0) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x517b26dd, Offset: 0x4518
 // Size: 0x174
 function do_player_or_npc_playvox(sound_to_play, toself = 0, category, subcategory) {
@@ -1177,7 +1177,7 @@ function do_player_or_npc_playvox(sound_to_play, toself = 0, category, subcatego
 }
 
 // Namespace zm_audio/zm_audio
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xe9640fc6, Offset: 0x4698
 // Size: 0x224
 function play_vo_internal(str_sound, e_to_player) {
@@ -1207,7 +1207,7 @@ function play_vo_internal(str_sound, e_to_player) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xaa7c9af3, Offset: 0x48c8
 // Size: 0x5a
 function function_631a26f0(str_category, var_39acfdda) {
@@ -1219,7 +1219,7 @@ function function_631a26f0(str_category, var_39acfdda) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x58de7254, Offset: 0x4930
 // Size: 0x80
 function function_31230d39(str_category, var_39acfdda) {
@@ -1244,7 +1244,7 @@ function function_87714659(func, str_category, var_39acfdda) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xdc0c5ed0, Offset: 0x4a08
 // Size: 0x21c
 function shouldplayerspeak(player, category, subcategory, vox) {
@@ -1288,7 +1288,7 @@ function shouldplayerspeak(player, category, subcategory, vox) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x5e079bd7, Offset: 0x4c30
 // Size: 0x1a0
 function isvoxoncooldown(player, category, subcategory) {
@@ -1315,7 +1315,7 @@ function isvoxoncooldown(player, category, subcategory) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xaa7a9797, Offset: 0x4dd8
 // Size: 0x5a
 function function_1b438b7b() {
@@ -1326,7 +1326,7 @@ function function_1b438b7b() {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xf6566080, Offset: 0x4e40
 // Size: 0x72
 function function_63f85f39(category, subcategory) {
@@ -1347,7 +1347,7 @@ function function_63f85f39(category, subcategory) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xb9efe501, Offset: 0x4ec0
 // Size: 0x1f2
 function function_654ec86b() {
@@ -1371,7 +1371,7 @@ function function_654ec86b() {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xdca42f1f, Offset: 0x50c0
 // Size: 0x22a
 function function_e2bd90b5(category, subcategory, variant) {
@@ -1413,7 +1413,7 @@ function function_e2bd90b5(category, subcategory, variant) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x4187df2f, Offset: 0x52f8
 // Size: 0x1fe
 function zmbvoxgetlinevariant(prefix, suffix, var_651f2941, force_variant) {
@@ -1448,7 +1448,7 @@ function zmbvoxgetlinevariant(prefix, suffix, var_651f2941, force_variant) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xb31f3ddc, Offset: 0x5500
 // Size: 0x142
 function function_c028678a(var_7faa9b94 = 0) {
@@ -1472,7 +1472,7 @@ function function_c028678a(var_7faa9b94 = 0) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 8, eflags: 0x0
+// Params 8, eflags: 0x2 linked
 // Checksum 0xe5dd82e5, Offset: 0x5650
 // Size: 0x294
 function musicstate_create(statename, playtype = 1, musname1, musname2, musname3, musname4, musname5, musname6) {
@@ -1507,7 +1507,7 @@ function musicstate_create(statename, playtype = 1, musname1, musname2, musname3
 }
 
 // Namespace zm_audio/zm_audio
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x419bb845, Offset: 0x58f0
 // Size: 0x52
 function function_e441162b(statename) {
@@ -1518,7 +1518,7 @@ function function_e441162b(statename) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xc5c15f61, Offset: 0x5950
 // Size: 0x23c
 function sndmusicsystem_playstate(state, var_ceca37b = 0) {
@@ -1560,7 +1560,7 @@ LOC_0000023a:
 }
 
 // Namespace zm_audio/zm_audio
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x4291afea, Offset: 0x5b98
 // Size: 0x20e
 function playstate(state) {
@@ -1596,7 +1596,7 @@ function playstate(state) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x74fed0c, Offset: 0x5db0
 // Size: 0xce
 function sndmusicsystem_queuestate(state) {
@@ -1621,7 +1621,7 @@ function sndmusicsystem_queuestate(state) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x1a14750, Offset: 0x5e88
 // Size: 0x62
 function sndmusicsystem_stopandflush() {
@@ -1680,7 +1680,7 @@ function function_3442c81a(str_location, var_f9761829, b_repeat = 0, var_57b726a
 }
 
 // Namespace zm_audio/zm_audio
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xa9b37d58, Offset: 0x6108
 // Size: 0x54
 function function_6c53ab30(str_location) {
@@ -1693,7 +1693,7 @@ function function_6c53ab30(str_location) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd26c7a38, Offset: 0x6168
 // Size: 0x1b4
 function function_b9d832a0(var_790f33a7) {
@@ -1731,7 +1731,7 @@ function function_b9d832a0(var_790f33a7) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x645d4465, Offset: 0x6328
 // Size: 0x66
 function function_85c0295a() {
@@ -1817,7 +1817,7 @@ function sndmusicsystem_eesetup(state, origin1, origin2, origin3, origin4, origi
 }
 
 // Namespace zm_audio/zm_audio
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xf9f773d7, Offset: 0x66b8
 // Size: 0x16c
 function sndmusicsystem_eewait(origin, state) {
@@ -1837,7 +1837,7 @@ function sndmusicsystem_eewait(origin, state) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x771ee1da, Offset: 0x6830
 // Size: 0x52
 function sndmusicsystem_eeoverride(*arg1, *arg2) {
@@ -1848,7 +1848,7 @@ function sndmusicsystem_eeoverride(*arg1, *arg2) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0xd08fafdc, Offset: 0x6890
 // Size: 0x19c
 function secretuse(notify_string, color, qualifier_func, arg1, arg2) {
@@ -1880,7 +1880,7 @@ function secretuse(notify_string, color, qualifier_func, arg1, arg2) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xf97b3756, Offset: 0x6a38
 // Size: 0x20c
 function function_4138a262() {
@@ -1917,7 +1917,7 @@ function function_4138a262() {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x5a801a6c, Offset: 0x6c50
 // Size: 0xf4
 function function_d0f5602a() {
@@ -1937,7 +1937,7 @@ function function_d0f5602a() {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xbb8c395b, Offset: 0x6d50
 // Size: 0x24
 function function_b36aeaf6(var_ece1b65) {
@@ -1945,7 +1945,7 @@ function function_b36aeaf6(var_ece1b65) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xd3f96c52, Offset: 0x6d80
 // Size: 0xcc
 function function_2354b945(var_ece1b65, n_delay = 0) {
@@ -1966,7 +1966,7 @@ function function_2354b945(var_ece1b65, n_delay = 0) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x9409c9b8, Offset: 0x6e58
 // Size: 0x1474
 function sndannouncer_init() {
@@ -2086,7 +2086,7 @@ function sndannouncer_init() {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x4646f062, Offset: 0x82d8
 // Size: 0x4c
 function sndannouncervoxadd(type, suffix) {
@@ -2097,7 +2097,7 @@ function sndannouncervoxadd(type, suffix) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0xc277b437, Offset: 0x8330
 // Size: 0x4e6
 function sndannouncerplayvox(type, player, str_sound, var_e08a84d6, b_wait_if_busy = 0, var_92885147 = 0) {
@@ -2186,7 +2186,7 @@ function sndperksjingles_timer() {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x1f9d296, Offset: 0x88d8
 // Size: 0x1a6
 function sndperksjingles_player(type) {
@@ -2216,7 +2216,7 @@ function sndperksjingles_player(type) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x26555ba9, Offset: 0x8a88
 // Size: 0x5a
 function sndperksjingles_cooldown() {
@@ -2231,7 +2231,7 @@ function sndperksjingles_cooldown() {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x5dc6c60f, Offset: 0x8af0
 // Size: 0x190
 function water_vox() {
@@ -2273,7 +2273,7 @@ function water_vox() {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x471f73d6, Offset: 0x8c88
 // Size: 0x9c
 function vo_clear_underwater() {
@@ -2291,7 +2291,7 @@ function vo_clear_underwater() {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0x8153ab2a, Offset: 0x8d30
 // Size: 0x17c
 function sndplayerhitalert(e_victim, str_meansofdeath, e_inflictor, weapon, shitloc, damage) {
@@ -2324,7 +2324,7 @@ function sndplayerhitalert(e_victim, str_meansofdeath, e_inflictor, weapon, shit
 }
 
 // Namespace zm_audio/zm_audio
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xdd54d2c1, Offset: 0x8eb8
 // Size: 0x82
 function sndplayerhitalert_playsound(str_alias) {
@@ -2341,7 +2341,7 @@ function sndplayerhitalert_playsound(str_alias) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xc4bdbb04, Offset: 0x8f48
 // Size: 0x96
 function checkforvalidmod(str_meansofdeath) {
@@ -2362,7 +2362,7 @@ function checkforvalidmod(str_meansofdeath) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x1d216e5f, Offset: 0x8fe8
 // Size: 0x12e
 function checkforvalidweapon(weapon) {
@@ -2391,7 +2391,7 @@ function checkforvalidweapon(weapon) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd3684ef2, Offset: 0x9120
 // Size: 0x10
 function checkforvalidaitype(*e_victim) {
@@ -2399,7 +2399,7 @@ function checkforvalidaitype(*e_victim) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x924b08da, Offset: 0x9138
 // Size: 0x36
 function isfatal(e_victim, damage) {
@@ -2454,14 +2454,14 @@ function event_handler[bhtn_action_start] function_320145f7(eventstruct) {
         break;
     case #"attack_melee":
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         level thread zmbaivox_playvox(self, notify_string, 0, 2);
         break;
     }
 }
 
 // Namespace zm_audio/zm_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x1d80bcaf, Offset: 0x9478
 // Size: 0x64
 function zmbaivox_notifyconvert() {
@@ -2472,7 +2472,7 @@ function zmbaivox_notifyconvert() {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0xd97e4e49, Offset: 0x94e8
 // Size: 0x442
 function zmbaivox_playvox(zombie, type, override, priority, delayambientvox = 0) {
@@ -2549,7 +2549,7 @@ function zmbaivox_playvox(zombie, type, override, priority, delayambientvox = 0)
 }
 
 // Namespace zm_audio/zm_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xfc2afedf, Offset: 0x9938
 // Size: 0xe4
 function zmbaivox_playdeath() {
@@ -2567,7 +2567,7 @@ function zmbaivox_playdeath() {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xc817c45b, Offset: 0x9a28
 // Size: 0x11a
 function zmbaivox_playelectrocution() {
@@ -2587,7 +2587,7 @@ function zmbaivox_playelectrocution() {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xe65f2306, Offset: 0x9b50
 // Size: 0x5a
 function zmbaivox_ambientdelay() {
@@ -2598,7 +2598,7 @@ function zmbaivox_ambientdelay() {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x59dc6c86, Offset: 0x9bb8
 // Size: 0x30
 function networksafereset() {
@@ -2609,7 +2609,7 @@ function networksafereset() {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x8134cdba, Offset: 0x9bf0
 // Size: 0x54
 function sndisnetworksafe() {
@@ -2635,7 +2635,7 @@ function is_last_zombie() {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x1972ec59, Offset: 0x9c80
 // Size: 0x3ac
 function zombie_behind_vox() {
@@ -2699,7 +2699,7 @@ function zombie_behind_vox() {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x1ec29b06, Offset: 0xa038
 // Size: 0x1c8
 function play_ambient_zombie_vocals() {
@@ -2759,7 +2759,7 @@ function function_713192b1(str_location, var_39acfdda) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x3fc0fc1b, Offset: 0xa2a8
 // Size: 0x120
 function location_vox(str_location) {
@@ -2786,7 +2786,7 @@ function location_vox(str_location) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x88742d26, Offset: 0xa3d0
 // Size: 0x7c
 function get_number_variants(aliasprefix) {
@@ -2803,7 +2803,7 @@ function get_number_variants(aliasprefix) {
 }
 
 // Namespace zm_audio/zm_audio
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd116548f, Offset: 0xa458
 // Size: 0x196
 function get_valid_lines(aliasprefix) {

@@ -42,7 +42,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xc486cbd2, Offset: 0x368
 // Size: 0x64
 function private function_70a657d8() {
@@ -54,7 +54,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x17d8056a, Offset: 0x3d8
 // Size: 0x17c
 function function_27473e44() {
@@ -67,7 +67,7 @@ function function_27473e44() {
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x619e21d1, Offset: 0x560
 // Size: 0x106
 function precache() {
@@ -80,7 +80,7 @@ function precache() {
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x47b60c98, Offset: 0x670
 // Size: 0x74
 function register_clientfield() {
@@ -91,7 +91,7 @@ function register_clientfield() {
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x6708c267, Offset: 0x6f0
 // Size: 0xc
 function set_clientfield(*state) {
@@ -99,7 +99,7 @@ function set_clientfield(*state) {
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xe39e6b05, Offset: 0x708
 // Size: 0x7c
 function function_5fd3f2ba(player) {
@@ -110,7 +110,7 @@ function function_5fd3f2ba(player) {
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x6626a55f, Offset: 0x790
 // Size: 0x312
 function function_aee99628(player) {
@@ -143,7 +143,7 @@ function function_aee99628(player) {
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x53302391, Offset: 0xab0
 // Size: 0x3c
 function function_c60d9d72() {
@@ -152,7 +152,7 @@ function function_c60d9d72() {
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x6170dc4a, Offset: 0xaf8
 // Size: 0x9a
 function perk_machine_setup(use_trigger, perk_machine, bump_trigger, *collision) {
@@ -168,7 +168,7 @@ function perk_machine_setup(use_trigger, perk_machine, bump_trigger, *collision)
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xd8caefb6, Offset: 0xba0
 // Size: 0x6c
 function perk_give() {
@@ -180,7 +180,7 @@ function perk_give() {
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xba765f55, Offset: 0xc18
 // Size: 0x13c
 function function_6a6169b2(var_2c2030) {
@@ -201,7 +201,7 @@ function function_6a6169b2(var_2c2030) {
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xe56bfcbb, Offset: 0xd60
 // Size: 0xdc
 function function_6df7ba74(*b_pause, *str_perk, *str_result, *n_slot) {
@@ -218,7 +218,7 @@ function function_6df7ba74(*b_pause, *str_perk, *str_result, *n_slot) {
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xaa1f49e7, Offset: 0xe48
 // Size: 0x2ac
 function function_9335851() {
@@ -256,7 +256,7 @@ function function_9335851() {
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x6aeacb42, Offset: 0x1100
 // Size: 0x3e
 function function_9ae34cb7() {

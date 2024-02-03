@@ -19,7 +19,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace remotemissile/remotemissile
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xa6fae1e1, Offset: 0x1b0
 // Size: 0x164
 function private function_70a657d8() {
@@ -35,7 +35,7 @@ function private function_70a657d8() {
 }
 
 // Namespace remotemissile/remotemissile
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xbc182d8f, Offset: 0x320
 // Size: 0xca
 function function_ea3ce28b(killstreaktype) {
@@ -50,7 +50,7 @@ function function_ea3ce28b(killstreaktype) {
 }
 
 // Namespace remotemissile/remotemissile
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x4092d0eb, Offset: 0x3f8
 // Size: 0xbc
 function function_903cf6aa() {
@@ -62,7 +62,7 @@ function function_903cf6aa() {
 }
 
 // Namespace remotemissile/remotemissile
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xa4b30b8, Offset: 0x4c0
 // Size: 0xb4
 function function_3e6a41b7() {
@@ -76,7 +76,7 @@ function function_3e6a41b7() {
 }
 
 // Namespace remotemissile/remotemissile
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xbbcb5377, Offset: 0x580
 // Size: 0xbe
 function function_f7599440(on) {

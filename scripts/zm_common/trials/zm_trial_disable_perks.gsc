@@ -21,7 +21,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_trial_disable_perks/zm_trial_disable_perks
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x13d5c902, Offset: 0x118
 // Size: 0x5c
 function private function_70a657d8() {
@@ -32,7 +32,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_trial_disable_perks/zm_trial_disable_perks
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x778f07d4, Offset: 0x180
 // Size: 0x15c
 function private on_begin() {
@@ -53,7 +53,7 @@ function private on_begin() {
 }
 
 // Namespace zm_trial_disable_perks/zm_trial_disable_perks
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xa70ef71e, Offset: 0x2e8
 // Size: 0x15c
 function private on_end(round_reset) {
@@ -74,7 +74,7 @@ function private on_end(round_reset) {
 }
 
 // Namespace zm_trial_disable_perks/zm_trial_disable_perks
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x26265f5d, Offset: 0x450
 // Size: 0x7a
 function is_active(var_34f09024 = 0) {
@@ -109,7 +109,7 @@ function lose_perk(perk) {
 }
 
 // Namespace zm_trial_disable_perks/zm_trial_disable_perks
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x67162470, Offset: 0x668
 // Size: 0x11e
 function function_776fbeaf(*s_params) {
@@ -122,7 +122,7 @@ function function_776fbeaf(*s_params) {
 }
 
 // Namespace zm_trial_disable_perks/zm_trial_disable_perks
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x4fa96d11, Offset: 0x790
 // Size: 0x3e
 function function_551412f6() {
@@ -134,7 +134,7 @@ function function_551412f6() {
 }
 
 // Namespace zm_trial_disable_perks/zm_trial_disable_perks
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x4308438b, Offset: 0x7d8
 // Size: 0x3a
 function private function_f0b698a7() {
@@ -145,7 +145,7 @@ function private function_f0b698a7() {
 }
 
 // Namespace zm_trial_disable_perks/zm_trial_disable_perks
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xce15efa2, Offset: 0x820
 // Size: 0xd4
 function private function_85611c27() {
@@ -161,7 +161,7 @@ function private function_85611c27() {
 }
 
 // Namespace zm_trial_disable_perks/zm_trial_disable_perks
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x9a90aec4, Offset: 0x900
 // Size: 0x15e
 function private function_2c0ae6d1() {

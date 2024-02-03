@@ -17,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_weap_bowie/zm_weap_bowie
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x13231bf0, Offset: 0x1a8
 // Size: 0x24
 function private function_70a657d8() {
@@ -25,7 +25,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_weap_bowie/zm_weap_bowie
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x40a7711f, Offset: 0x1d8
 // Size: 0x15c
 function private postinit() {

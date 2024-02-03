@@ -8,7 +8,7 @@
 class czm_trial_weapon_locked : cluielem {
 
     // Namespace czm_trial_weapon_locked/zm_trial_weapon_locked
-    // Params 0, eflags: 0x8
+    // Params 0, eflags: 0xa linked
     // Checksum 0x50d4a747, Offset: 0x348
     // Size: 0x14
     __constructor() {
@@ -16,7 +16,7 @@ class czm_trial_weapon_locked : cluielem {
     }
 
     // Namespace czm_trial_weapon_locked/zm_trial_weapon_locked
-    // Params 0, eflags: 0x90 class_linked
+    // Params 0, eflags: 0x92 linked class_linked
     // Checksum 0x7059fdb2, Offset: 0x4d8
     // Size: 0x14
     __destructor() {
@@ -24,7 +24,7 @@ class czm_trial_weapon_locked : cluielem {
     }
 
     // Namespace czm_trial_weapon_locked/zm_trial_weapon_locked
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x73c8bdb9, Offset: 0x460
     // Size: 0x6c
     function function_1e74977(localclientnum) {
@@ -34,7 +34,7 @@ class czm_trial_weapon_locked : cluielem {
     }
 
     // Namespace czm_trial_weapon_locked/zm_trial_weapon_locked
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0xab2f901b, Offset: 0x430
     // Size: 0x24
     function open(localclientnum) {
@@ -42,7 +42,7 @@ class czm_trial_weapon_locked : cluielem {
     }
 
     // Namespace czm_trial_weapon_locked/zm_trial_weapon_locked
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0x231aa368, Offset: 0x3c0
     // Size: 0x1c
     function register_clientside() {
@@ -50,7 +50,7 @@ class czm_trial_weapon_locked : cluielem {
     }
 
     // Namespace czm_trial_weapon_locked/zm_trial_weapon_locked
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0xb753c22d, Offset: 0x368
     // Size: 0x4c
     function setup_clientfields(var_18c795d0) {
@@ -59,7 +59,7 @@ class czm_trial_weapon_locked : cluielem {
     }
 
     // Namespace czm_trial_weapon_locked/zm_trial_weapon_locked
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0xb983646f, Offset: 0x3e8
     // Size: 0x40
     function function_fa582112(localclientnum) {
@@ -91,7 +91,7 @@ function register(var_18c795d0) {
 }
 
 // Namespace zm_trial_weapon_locked/zm_trial_weapon_locked
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xf312c59b, Offset: 0x268
 // Size: 0x34
 function register_clientside() {
@@ -101,7 +101,7 @@ function register_clientside() {
 }
 
 // Namespace zm_trial_weapon_locked/zm_trial_weapon_locked
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xab7c1abf, Offset: 0x2a8
 // Size: 0x1c
 function open(player) {
@@ -117,7 +117,7 @@ function close(player) {
 }
 
 // Namespace zm_trial_weapon_locked/zm_trial_weapon_locked
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x71b19878, Offset: 0x2f8
 // Size: 0x1a
 function is_open(localclientnum) {
@@ -125,7 +125,7 @@ function is_open(localclientnum) {
 }
 
 // Namespace zm_trial_weapon_locked/zm_trial_weapon_locked
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xcb27c72a, Offset: 0x320
 // Size: 0x1c
 function function_1e74977(localclientnum) {

@@ -47,7 +47,7 @@ function handlenotetrack(note, *flagname, customfunction, var1) {
             self.hatmodel = undefined;
         }
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         if (isdefined(customfunction)) {
             if (!isdefined(var1)) {
                 return [[ customfunction ]](flagname);

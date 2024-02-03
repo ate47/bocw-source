@@ -19,7 +19,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace archetype_mimic/archetype_mimic
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x5aaae274, Offset: 0x2f0
 // Size: 0x2ec
 function function_70a657d8() {
@@ -39,7 +39,7 @@ function function_70a657d8() {
 }
 
 // Namespace archetype_mimic/archetype_mimic
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x111eabb9, Offset: 0x5e8
 // Size: 0x2c
 function function_c50aa4b2(localclientnum) {
@@ -47,7 +47,7 @@ function function_c50aa4b2(localclientnum) {
 }
 
 // Namespace archetype_mimic/archetype_mimic
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x23c13294, Offset: 0x620
 // Size: 0x180
 function function_ef33ecb7(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -64,7 +64,7 @@ function function_ef33ecb7(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace archetype_mimic/archetype_mimic
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x869c328b, Offset: 0x7a8
 // Size: 0x8c
 function mimic_force_stream(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -76,7 +76,7 @@ function mimic_force_stream(*localclientnum, *oldval, newval, *bnewent, *binitia
 }
 
 // Namespace archetype_mimic/archetype_mimic
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xaaa0cefd, Offset: 0x840
 // Size: 0xe4
 function function_807a046(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -88,7 +88,7 @@ function function_807a046(localclientnum, *oldval, *newval, *bnewent, *binitials
 }
 
 // Namespace archetype_mimic/archetype_mimic
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x787c77bf, Offset: 0x930
 // Size: 0x74
 function mimic_attack_hit(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -98,7 +98,7 @@ function mimic_attack_hit(localclientnum, *oldval, newval, *bnewent, *binitialsn
 }
 
 // Namespace archetype_mimic/archetype_mimic
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x2b8d5980, Offset: 0x9b0
 // Size: 0xe6
 function mimic_grab_hit(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -115,7 +115,7 @@ function mimic_grab_hit(localclientnum, *oldval, newval, *bnewent, *binitialsnap
 }
 
 // Namespace archetype_mimic/archetype_mimic
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xf8f3aeb7, Offset: 0xaa0
 // Size: 0xd4
 function mimic_weakpoint_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -130,7 +130,7 @@ function mimic_weakpoint_fx(localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace archetype_mimic/archetype_mimic
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xa58474e8, Offset: 0xb80
 // Size: 0xf4
 function mimic_prop_lure_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -150,7 +150,7 @@ function mimic_prop_lure_fx(localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace archetype_mimic/archetype_mimic
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xfc42e82, Offset: 0xc80
 // Size: 0x46
 function mimic_death_gib_fx(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -160,7 +160,7 @@ function mimic_death_gib_fx(*localclientnum, *oldval, *newval, *bnewent, *biniti
 }
 
 // Namespace archetype_mimic/archetype_mimic
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x9a865a45, Offset: 0xcd0
 // Size: 0xcc
 function function_90fb7f1f(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

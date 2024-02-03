@@ -323,7 +323,7 @@ function function_b1db8691() {
     var_509132fd = array::filter(var_509132fd, 0, &function_e01b301e);
     switch (n_players) {
     case 1:
-    case #"hash_defdefdefdefdef0":
+    default:
         n_max_active_ai = 5;
         var_a77909d4 = 20;
         break;
@@ -432,7 +432,7 @@ function function_f8cbb582() {
     var_84a3b2fc = 0;
     switch (getplayers().size) {
     case 1:
-    case #"hash_defdefdefdefdef0":
+    default:
         n_max_active_ai = 2;
         var_37cdfca9 = 1;
         break;
@@ -677,7 +677,7 @@ function cmd(cmd) {
                 waitframe(1);
             }
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     #/

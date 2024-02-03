@@ -110,7 +110,7 @@ function vector_compare(vec1, vec2) {
 }
 
 // Namespace math/math_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x2728f2fb, Offset: 0x5a0
 // Size: 0x6c
 function random_vector(max_length) {
@@ -221,7 +221,7 @@ function get_dot_direction(v_point, b_ignore_z, b_normalize, str_direction, b_us
     case #"down":
         v_direction = anglestoup(v_angles) * -1;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assertmsg(str_direction + "<unknown string>");
         #/
@@ -237,7 +237,7 @@ function get_dot_direction(v_point, b_ignore_z, b_normalize, str_direction, b_us
 }
 
 // Namespace math/math_shared
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xfb40a90, Offset: 0xb28
 // Size: 0x6a
 function get_dot_right(v_point, b_ignore_z, b_normalize) {
@@ -261,7 +261,7 @@ function get_dot_up(v_point, b_ignore_z, b_normalize) {
 }
 
 // Namespace math/math_shared
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x836e8b27, Offset: 0xc18
 // Size: 0x6a
 function get_dot_forward(v_point, b_ignore_z, b_normalize) {
@@ -368,7 +368,7 @@ function point_on_sphere_even_distribution(pitchrange, index, numberofpoints) {
 }
 
 // Namespace math/math_shared
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x8dbf051e, Offset: 0x11d0
 // Size: 0x18a
 function closest_point_on_line(point, linestart, lineend) {
@@ -458,7 +458,7 @@ function function_f16fbd66(var_17a1aca9, var_9522f5ec, var_e5dbc91e, var_815dce6
 }
 
 // Namespace math/math_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x65a194db, Offset: 0x1838
 // Size: 0x5a
 function get_2d_yaw(start, end) {

@@ -16,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace sticky_grenade/spike_charge
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xebcf4b9a, Offset: 0x110
 // Size: 0xbc
 function private function_70a657d8() {
@@ -27,7 +27,7 @@ function private function_70a657d8() {
 }
 
 // Namespace sticky_grenade/spike_charge
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x25f5ade5, Offset: 0x1d8
 // Size: 0x24
 function spawned(localclientnum) {
@@ -35,7 +35,7 @@ function spawned(localclientnum) {
 }
 
 // Namespace sticky_grenade/spike_charge
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xed83b1f8, Offset: 0x208
 // Size: 0x3c
 function spawned_spike_charge(localclientnum) {
@@ -44,7 +44,7 @@ function spawned_spike_charge(localclientnum) {
 }
 
 // Namespace sticky_grenade/spike_charge
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x38841168, Offset: 0x250
 // Size: 0x10a
 function fx_think(localclientnum) {
@@ -63,7 +63,7 @@ function fx_think(localclientnum) {
 }
 
 // Namespace sticky_grenade/spike_charge
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x721a4620, Offset: 0x368
 // Size: 0x4a
 function start_light_fx(localclientnum) {
@@ -71,7 +71,7 @@ function start_light_fx(localclientnum) {
 }
 
 // Namespace sticky_grenade/spike_charge
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xcddc0c7f, Offset: 0x3c0
 // Size: 0x4e
 function stop_light_fx(localclientnum) {
@@ -82,7 +82,7 @@ function stop_light_fx(localclientnum) {
 }
 
 // Namespace sticky_grenade/spike_charge
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xc9a1e5aa, Offset: 0x418
 // Size: 0x114
 function spike_detonation(localclientnum) {

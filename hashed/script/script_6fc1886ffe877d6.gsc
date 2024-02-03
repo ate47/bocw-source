@@ -219,7 +219,7 @@ function function_98da33e1() {
         case 2:
             self thread scene::play(#"p9_fxanim_zm_monkey_idle_bundle", "idle_03", self);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             self thread scene::play(#"p9_fxanim_zm_monkey_idle_bundle", "idle_01", self);
             break;
         }
@@ -1812,7 +1812,7 @@ function spawn_zombies() {
         var_102fe58c = 15;
         var_3b743c0c = 18;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_fd6a4001 = 15;
         var_102fe58c = 17;
         var_3b743c0c = 22;
@@ -2055,7 +2055,7 @@ function function_2631fff1(*instance, var_661691aa) {
     case 7:
         var_6017f33e = namespace_679a22ba::function_ca209564(#"objective_holdout_wave_7");
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_6017f33e = namespace_679a22ba::function_ca209564(#"objective_holdout_wave_8");
         break;
     }

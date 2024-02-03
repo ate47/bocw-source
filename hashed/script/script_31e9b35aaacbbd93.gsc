@@ -92,7 +92,7 @@ function private function_887ac605(objective) {
     case #"no_game":
     case #"hash_6e531fb9475df744":
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             function_81fac19d(function_d78e3644(), "<unknown string>" + objective + "<unknown string>");
         #/

@@ -340,13 +340,13 @@ function function_d14c9339(var_317c7400) {
     case 1:
     case #"hash_26f47d82e3ac7591":
     case #"c":
-    case #"hash_59920290fd6b234f":
+    case #"cent":
         var_db943b21 = #"hash_26f47d82e3ac7591";
         break;
     case #"hash_193a10998478444d":
         var_db943b21 = #"hash_193a10998478444d";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_db943b21 = undefined;
         break;
     }
@@ -368,7 +368,7 @@ function private function_aaee1de3(var_db943b21, var_4769f013, item) {
         assert(isdefined(level._snd.var_3cc765a3), "<unknown string>");
     #/
     switch (var_db943b21) {
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assert(0, "<unknown string>");
         #/
@@ -392,7 +392,7 @@ function private function_7e9752b7(var_db943b21, var_4769f013, item) {
         assert(isdefined(level._snd.var_3cc765a3), "<unknown string>");
     #/
     switch (var_db943b21) {
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assert(0, "<unknown string>");
         #/
@@ -614,7 +614,7 @@ function private function_2639b80c(var_317c7400, soundalias, var_9ab0e73a) {
         }
     LOC_00000704:
         switch (var_317c7400) {
-        case #"hash_defdefdefdefdef0":
+        default:
             /#
                 assert(0, "<unknown string>");
             #/
@@ -639,7 +639,7 @@ function private function_2639b80c(var_317c7400, soundalias, var_9ab0e73a) {
         if (isdefined(var_afe43979) && function_a6779cbd(var_afe43979)) {
             switch (var_317c7400) {
             case #"hash_72d0c119f969b755":
-            case #"hash_defdefdefdefdef0":
+            default:
                 var_afe43979 thread namespace_afa8e18b::function_2dde45d9(var_afe43979, soundalias, var_99e65ecf, delaytime);
                 break;
             case #"hash_26f47d82e3ac7591":
@@ -709,7 +709,7 @@ function private function_f937a6f7(var_afe43979, var_24ea4e17) {
     }
     switch (var_317c7400) {
     case #"hash_72d0c119f969b755":
-    case #"hash_defdefdefdefdef0":
+    default:
         namespace_afa8e18b::function_9f156b27(var_afe43979, var_24ea4e17);
         break;
     case #"hash_26f47d82e3ac7591":
@@ -1121,7 +1121,7 @@ function function_13b51154(curve, size) {
         x = i * step;
         y = 0;
         switch (curve) {
-        case #"hash_defdefdefdefdef0":
+        default:
             /#
                 assert(0);
             #/

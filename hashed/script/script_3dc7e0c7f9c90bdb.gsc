@@ -15,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_63c7213c/namespace_63c7213c
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xe59b330c, Offset: 0x1d0
 // Size: 0x1d0
 function function_70a657d8() {
@@ -35,7 +35,7 @@ function function_70a657d8() {
 }
 
 // Namespace namespace_63c7213c/namespace_63c7213c
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x5c54fa81, Offset: 0x3a8
 // Size: 0xbe
 function soul_capture_zombie_fire(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -50,7 +50,7 @@ function soul_capture_zombie_fire(localclientnum, *oldval, newval, *bnewent, *bi
 }
 
 // Namespace namespace_63c7213c/namespace_63c7213c
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x29bdbb1d, Offset: 0x470
 // Size: 0x1e4
 function soul_capture_leave(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -80,7 +80,7 @@ function soul_capture_leave(localclientnum, *oldval, newval, *bnewent, *binitial
 }
 
 // Namespace namespace_63c7213c/namespace_63c7213c
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x488c60d5, Offset: 0x660
 // Size: 0x1cc
 function function_86bba240(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -101,7 +101,7 @@ function function_86bba240(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace namespace_63c7213c/namespace_63c7213c
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xd2a8bb30, Offset: 0x838
 // Size: 0xd4
 function private function_d0b587e2(*localclientnum) {

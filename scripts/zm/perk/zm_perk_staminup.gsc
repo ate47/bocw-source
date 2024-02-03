@@ -23,7 +23,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_perk_staminup/zm_perk_staminup
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x7fda37cc, Offset: 0x228
 // Size: 0x14
 function private function_70a657d8() {
@@ -31,7 +31,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_perk_staminup/zm_perk_staminup
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x58116169, Offset: 0x248
 // Size: 0x15c
 function enable_staminup_perk_for_level() {
@@ -44,7 +44,7 @@ function enable_staminup_perk_for_level() {
 }
 
 // Namespace zm_perk_staminup/zm_perk_staminup
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x9b355245, Offset: 0x3b0
 // Size: 0xf6
 function staminup_precache() {
@@ -60,7 +60,7 @@ function staminup_precache() {
 }
 
 // Namespace zm_perk_staminup/zm_perk_staminup
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x80f724d1, Offset: 0x4b0
 // Size: 0x4
 function staminup_register_clientfield() {
@@ -68,7 +68,7 @@ function staminup_register_clientfield() {
 }
 
 // Namespace zm_perk_staminup/zm_perk_staminup
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xbda216d3, Offset: 0x4c0
 // Size: 0xc
 function staminup_set_clientfield(*state) {
@@ -76,7 +76,7 @@ function staminup_set_clientfield(*state) {
 }
 
 // Namespace zm_perk_staminup/zm_perk_staminup
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x80f254c4, Offset: 0x4d8
 // Size: 0x9a
 function staminup_perk_machine_setup(use_trigger, perk_machine, bump_trigger, *collision) {
@@ -92,7 +92,7 @@ function staminup_perk_machine_setup(use_trigger, perk_machine, bump_trigger, *c
 }
 
 // Namespace zm_perk_staminup/zm_perk_staminup
-// Params a, eflags: 0x0
+// Params a, eflags: 0x2 linked
 // Checksum 0xaa67c31a, Offset: 0x580
 // Size: 0x84
 function function_dae4e0ad(*einflictor, *eattacker, *idamage, *idflags, smeansofdeath, *weapon, *vpoint, *vdir, *shitloc, *psoffsettime) {

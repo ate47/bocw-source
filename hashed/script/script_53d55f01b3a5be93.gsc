@@ -16,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_45b55437/namespace_45b55437
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x8778dd60, Offset: 0x120
 // Size: 0x7c
 function function_70a657d8() {
@@ -25,7 +25,7 @@ function function_70a657d8() {
 }
 
 // Namespace namespace_45b55437/namespace_45b55437
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xe120fc3e, Offset: 0x1a8
 // Size: 0xc
 function private function_6f88ed29(*localclientnum) {
@@ -33,7 +33,7 @@ function private function_6f88ed29(*localclientnum) {
 }
 
 // Namespace namespace_45b55437/namespace_45b55437
-// Params 7, eflags: 0x4
+// Params 7, eflags: 0x6 linked
 // Checksum 0x47a2e33f, Offset: 0x1c0
 // Size: 0x11c
 function private function_41cca91a(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

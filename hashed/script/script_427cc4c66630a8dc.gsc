@@ -8,7 +8,7 @@
 class cprototype_self_revive : cluielem {
 
     // Namespace cprototype_self_revive/prototype_self_revive
-    // Params 0, eflags: 0x8
+    // Params 0, eflags: 0xa linked
     // Checksum 0xf58476ea, Offset: 0x300
     // Size: 0x14
     __constructor() {
@@ -16,7 +16,7 @@ class cprototype_self_revive : cluielem {
     }
 
     // Namespace cprototype_self_revive/prototype_self_revive
-    // Params 0, eflags: 0x90 class_linked
+    // Params 0, eflags: 0x92 linked class_linked
     // Checksum 0x9604ee4a, Offset: 0x3d0
     // Size: 0x14
     __destructor() {
@@ -24,7 +24,7 @@ class cprototype_self_revive : cluielem {
     }
 
     // Namespace cprototype_self_revive/prototype_self_revive
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0xe9672f07, Offset: 0x3a0
     // Size: 0x24
     function open(localclientnum) {
@@ -32,7 +32,7 @@ class cprototype_self_revive : cluielem {
     }
 
     // Namespace cprototype_self_revive/prototype_self_revive
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0x343720c7, Offset: 0x348
     // Size: 0x1c
     function register_clientside() {
@@ -40,7 +40,7 @@ class cprototype_self_revive : cluielem {
     }
 
     // Namespace cprototype_self_revive/prototype_self_revive
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0xa460a7ea, Offset: 0x320
     // Size: 0x1c
     function setup_clientfields() {
@@ -48,7 +48,7 @@ class cprototype_self_revive : cluielem {
     }
 
     // Namespace cprototype_self_revive/prototype_self_revive
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0xbb37dd6e, Offset: 0x370
     // Size: 0x24
     function function_fa582112(localclientnum) {
@@ -58,7 +58,7 @@ class cprototype_self_revive : cluielem {
 }
 
 // Namespace prototype_self_revive/prototype_self_revive
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xab61b76b, Offset: 0xd0
 // Size: 0x16e
 function register() {

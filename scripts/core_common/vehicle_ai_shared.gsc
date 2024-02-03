@@ -1026,7 +1026,7 @@ function add_utility_connection(from_state_name, to_state_name, checkfunc, defau
 }
 
 // Namespace vehicle_ai/vehicle_ai_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xf7cdbde1, Offset: 0x3640
 // Size: 0x3c
 function function_b94a7666(from_state_name, on_notify) {
@@ -1320,7 +1320,7 @@ function defaultstate_death_update(params) {
         case #"gibbed":
             gibbed_death(params);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             default_death(params);
             break;
         }
@@ -1967,7 +1967,7 @@ function private function_e057db25(var_2d1cbdd9, goalpos, vararg) {
         return tacticalquery(var_2d1cbdd9, goalpos, vararg[0]);
     case 0:
         return tacticalquery(var_2d1cbdd9, goalpos);
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assertmsg("<unknown string>");
         #/

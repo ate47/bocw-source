@@ -16,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace world_event_black_chest/world_event_black_chest
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x5ac45588, Offset: 0x148
 // Size: 0x144
 function function_70a657d8() {
@@ -34,7 +34,7 @@ function function_70a657d8() {
 }
 
 // Namespace world_event_black_chest/world_event_black_chest
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x6210d0b, Offset: 0x298
 // Size: 0x43c
 function function_f1dc3a2c(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -89,7 +89,7 @@ function function_f1dc3a2c(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace world_event_black_chest/world_event_black_chest
-// Params 7, eflags: 0x4
+// Params 7, eflags: 0x6 linked
 // Checksum 0x4f232fb6, Offset: 0x6e0
 // Size: 0x1da
 function private function_372485e9(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -129,7 +129,7 @@ function private function_372485e9(localclientnum, *oldval, newval, *bnewent, *b
 }
 
 // Namespace world_event_black_chest/world_event_black_chest
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x900946b9, Offset: 0x8c8
 // Size: 0xa4
 function private function_5dbf2fbf(localclientnum) {

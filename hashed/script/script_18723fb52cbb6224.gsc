@@ -28,7 +28,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x3a76dd71, Offset: 0x328
 // Size: 0x11c
 function function_70a657d8() {
@@ -47,7 +47,7 @@ function function_70a657d8() {
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xde051df4, Offset: 0x450
 // Size: 0x444
 function function_602f1c7e(instance) {
@@ -84,7 +84,7 @@ function function_602f1c7e(instance) {
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x58159b26, Offset: 0x8a0
 // Size: 0x3e
 function function_f128aae9(*v_origin_or_ent, *params) {
@@ -95,7 +95,7 @@ function function_f128aae9(*v_origin_or_ent, *params) {
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xc1e33901, Offset: 0x8e8
 // Size: 0x144
 function private function_1d6f6f32(*eventstruct) {
@@ -121,7 +121,7 @@ function private function_1d6f6f32(*eventstruct) {
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xe76ede33, Offset: 0xa38
 // Size: 0x150
 function function_556eed55(trigger) {
@@ -141,7 +141,7 @@ function function_556eed55(trigger) {
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x408fc436, Offset: 0xb90
 // Size: 0x6d4
 function function_ba971eed(instance) {
@@ -199,7 +199,7 @@ function function_ba971eed(instance) {
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x481c0db6, Offset: 0x1270
 // Size: 0x588
 function function_42d1d544(instance) {
@@ -267,7 +267,7 @@ function function_42d1d544(instance) {
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x56bfca2f, Offset: 0x1800
 // Size: 0xd6
 function function_35bafcde(instance, str_suffix, str_type = "amplifier") {
@@ -283,7 +283,7 @@ function function_35bafcde(instance, str_suffix, str_type = "amplifier") {
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x2ccaf639, Offset: 0x18e0
 // Size: 0xfc
 function function_2c1d994f(instance) {
@@ -308,7 +308,7 @@ function function_2c1d994f(instance) {
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x26dac0df, Offset: 0x19e8
 // Size: 0xa0
 function function_d3b57053(instance) {
@@ -327,7 +327,7 @@ function function_d3b57053(instance) {
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x919ac21e, Offset: 0x1a90
 // Size: 0x1ac
 function function_a3780cd3() {
@@ -354,7 +354,7 @@ function function_a3780cd3() {
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x1fad9e4e, Offset: 0x1c48
 // Size: 0x274
 function function_b1aee549(instance, var_976623c6) {
@@ -410,7 +410,7 @@ function function_b1aee549(instance, var_976623c6) {
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x291a6e0f, Offset: 0x1ec8
 // Size: 0x264
 function function_97d03d85(s_params) {
@@ -463,7 +463,7 @@ function function_97d03d85(s_params) {
     case #"item_zmquest_sr_cassette_tape_13":
         str_notify = "unlockSRmus_13";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         return;
     }
     if (isdefined(str_notify)) {
@@ -472,7 +472,7 @@ function function_97d03d85(s_params) {
 }
 
 // Namespace world_event_radio_tuning/world_event_radio_tuning
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x800bea64, Offset: 0x2138
 // Size: 0x4a
 function function_334316f8(var_cefe6e34, n_time) {

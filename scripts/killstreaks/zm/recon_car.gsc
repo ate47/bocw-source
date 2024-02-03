@@ -26,7 +26,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x8c05ce8, Offset: 0x230
 // Size: 0xf4
 function private function_70a657d8() {
@@ -42,7 +42,7 @@ function private function_70a657d8() {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xe31c5858, Offset: 0x330
 // Size: 0xd4
 function init_killstreak() {
@@ -54,7 +54,7 @@ function init_killstreak() {
 }
 
 // Namespace recon_car/recon_car
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x2da16b5e, Offset: 0x410
 // Size: 0xac
 function private function_93426c92(params) {
@@ -68,7 +68,7 @@ function private function_93426c92(params) {
 }
 
 // Namespace recon_car/recon_car
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xb46c8bdf, Offset: 0x4c8
 // Size: 0x9e
 function function_b5006cfa(v_origin, *v_angles, *player) {
@@ -83,7 +83,7 @@ function function_b5006cfa(v_origin, *v_angles, *player) {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x4d9a6416, Offset: 0x570
 // Size: 0x30c
 function function_d1661ada() {
@@ -132,7 +132,7 @@ function function_d1661ada() {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x1081a2ba, Offset: 0x888
 // Size: 0x1f6
 function function_fdcfd41d() {
@@ -155,7 +155,7 @@ function function_fdcfd41d() {
 }
 
 // Namespace recon_car/recon_car
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x4408bb50, Offset: 0xa88
 // Size: 0x1ac
 function function_48170f5e(vehicle) {
@@ -177,7 +177,7 @@ function function_48170f5e(vehicle) {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xae0b5636, Offset: 0xc40
 // Size: 0xd4
 function function_3f390797() {
@@ -192,7 +192,7 @@ function function_3f390797() {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xb6a14f0a, Offset: 0xd20
 // Size: 0x60
 function function_5d0ef633() {
@@ -206,7 +206,7 @@ function function_5d0ef633() {
 }
 
 // Namespace recon_car/recon_car
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x445797fb, Offset: 0xd88
 // Size: 0x28c
 function function_86e8d9af(n_radius = 200) {
@@ -232,7 +232,7 @@ function function_86e8d9af(n_radius = 200) {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x1f433665, Offset: 0x1020
 // Size: 0x104
 function private function_584fb7a3() {
@@ -248,7 +248,7 @@ function private function_584fb7a3() {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x56fb861c, Offset: 0x1130
 // Size: 0x12
 function function_d4789bf5() {
@@ -256,7 +256,7 @@ function function_d4789bf5() {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x824e28b5, Offset: 0x1150
 // Size: 0x128
 function function_819fff9d() {
@@ -274,7 +274,7 @@ function function_819fff9d() {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x4640668e, Offset: 0x1280
 // Size: 0x128
 function function_f3170551() {
@@ -292,7 +292,7 @@ function function_f3170551() {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x4506fc9f, Offset: 0x13b0
 // Size: 0x164
 function function_2087b17f() {
@@ -311,7 +311,7 @@ function function_2087b17f() {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x457cacb0, Offset: 0x1520
 // Size: 0x64
 function function_76817ccc() {
@@ -321,7 +321,7 @@ function function_76817ccc() {
 }
 
 // Namespace recon_car/recon_car
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd38fac98, Offset: 0x1590
 // Size: 0x72
 function function_8030f1bd(zombie) {

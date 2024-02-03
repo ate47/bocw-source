@@ -12,7 +12,7 @@ function event_handler[level_init] main(*eventstruct) {
 }
 
 // Namespace vehicle/vehicle_drivable_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xc62043e8, Offset: 0xd8
 // Size: 0xfe
 function weapon_switch_watcher(driver) {
@@ -36,7 +36,7 @@ function weapon_switch_watcher(driver) {
 }
 
 // Namespace vehicle/vehicle_drivable_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x3f146c0a, Offset: 0x1e0
 // Size: 0x90
 function air_vehicle1_initialize() {

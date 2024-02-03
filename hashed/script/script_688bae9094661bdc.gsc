@@ -137,7 +137,7 @@ function function_3c3f1684(statename) {
         self.threatsightratemin = 1 * var_8c0a9bbb;
         self.threatsightratemax = 0.8 * var_8c0a9bbb;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         self.threatsightratemin = 0.6 * var_8c0a9bbb;
         self.threatsightratemax = 0.4 * var_8c0a9bbb;
         break;

@@ -5,7 +5,7 @@
 #namespace compass;
 
 // Namespace compass/compass
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xa6a93201, Offset: 0x100
 // Size: 0x14c
 function setupminimap(material, *zone = "") {

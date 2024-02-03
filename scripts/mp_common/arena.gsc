@@ -252,7 +252,7 @@ function update_arena_challenge_seasons() {
     case 4:
         eventstate = #"hash_4986c748eb81d3c5";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         return;
     }
     perseasonwins = self stats::get_stat(#"arenaperseasonstats", eventstate, #"matchesstats", #"wins");

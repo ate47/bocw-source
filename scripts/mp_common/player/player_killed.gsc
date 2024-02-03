@@ -112,7 +112,7 @@ function function_df36a02d(attacker, weapon, mod) {
             var_f2c36eba = #"hash_67536f932f6aeb36";
             var_22938e87 = #"hash_497df827743010c3";
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             var_f2c36eba = #"hash_14b7133a39a0456e";
             var_22938e87 = #"ekia";
             break;

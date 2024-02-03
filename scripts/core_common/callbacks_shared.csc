@@ -1042,7 +1042,7 @@ function event_handler[collectibles_changed] codecallback_collectibleschanged(ev
 }
 
 // Namespace callback/callbacks_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xc25d1dd6, Offset: 0x28b0
 // Size: 0x54
 function add_weapon_type(weapontype, callback) {
@@ -1054,7 +1054,7 @@ function add_weapon_type(weapontype, callback) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x2a1ca556, Offset: 0x2910
 // Size: 0x66
 function spawned_weapon_type(localclientnum) {
@@ -1065,7 +1065,7 @@ function spawned_weapon_type(localclientnum) {
 }
 
 // Namespace callback/callbacks_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x803bb103, Offset: 0x2980
 // Size: 0x24
 function function_cbfd8fd6(localclientnum) {

@@ -27,7 +27,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_powerup_full_ammo/zm_powerup_full_ammo
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x2ec1ee35, Offset: 0x168
 // Size: 0x8c
 function private function_70a657d8() {
@@ -38,7 +38,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_powerup_full_ammo/zm_powerup_full_ammo
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x4787895a, Offset: 0x200
 // Size: 0x8c
 function grab_full_ammo(player) {
@@ -51,7 +51,7 @@ function grab_full_ammo(player) {
 }
 
 // Namespace zm_powerup_full_ammo/zm_powerup_full_ammo
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xdb989ee2, Offset: 0x298
 // Size: 0x1c4
 function function_dae1df4d(e_powerup, player) {
@@ -73,7 +73,7 @@ function function_dae1df4d(e_powerup, player) {
 }
 
 // Namespace zm_powerup_full_ammo/zm_powerup_full_ammo
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x67bbeefd, Offset: 0x468
 // Size: 0x29c
 function full_ammo_powerup(drop_item, player) {
@@ -123,7 +123,7 @@ function function_3ecbd9d(w_weapon) {
 }
 
 // Namespace zm_powerup_full_ammo/zm_powerup_full_ammo
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xb8079f6, Offset: 0x828
 // Size: 0x5c
 function full_ammo_on_hud(*drop_item, player_team) {

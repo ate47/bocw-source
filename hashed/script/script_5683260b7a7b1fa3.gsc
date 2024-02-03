@@ -212,7 +212,7 @@ function function_e3871553(var_4d2ad93e) {
         var_80c3ca2 = array::random([4:"ammomod_shatterblast", 3:"ammomod_napalmburst", 2:"ammomod_deadwire", 1:"ammomod_cryofreeze", 0:"ammomod_brainrot"]);
         break;
     case 8:
-    case #"hash_defdefdefdefdef0":
+    default:
         str_item_name = isdefined(level.var_29d88fe5[str_weapon_name][#"orange"]) ? level.var_29d88fe5[str_weapon_name][#"orange"] : level.var_ec04a8a4[str_weapon_name][#"orange"];
         n_rarity = 3;
         var_27751b99 = 3;
@@ -322,7 +322,7 @@ function function_4bac897(var_4d2ad93e) {
         n_rarity = 2;
         break;
     case 8:
-    case #"hash_defdefdefdefdef0":
+    default:
         n_rarity = 3;
         break;
     }

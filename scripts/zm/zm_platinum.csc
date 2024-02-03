@@ -670,9 +670,9 @@ function function_20daf01(localclientnum, state, *oldstate) {
 function function_1b724bbd(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (isdefined(self)) {
         if (bwasdemojump) {
-            forcestreamxmodel(#"hash_730f001fed4de2b6");
+            forcestreamxmodel(#"p7_zm_der_pswitch_handle");
         } else {
-            stopforcestreamingxmodel(#"hash_730f001fed4de2b6");
+            stopforcestreamingxmodel(#"p7_zm_der_pswitch_handle");
         }
     }
 }

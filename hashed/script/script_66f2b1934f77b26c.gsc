@@ -943,7 +943,7 @@ function function_db5c2d6a(var_8b93416f, var_ea14a37) {
             self.var_63c8edf4 setmodel(#"hash_5c1474042a8ce47c");
             break;
         case 270:
-        case #"hash_defdefdefdefdef0":
+        default:
             self.var_63c8edf4 setmodel(#"hash_f057eb0c68cb8d2");
             break;
         }

@@ -379,7 +379,7 @@ function function_8294e9b3() {
 }
 
 // Namespace killstreaks/killstreaks_util
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xbb651112, Offset: 0x1418
 // Size: 0xc4
 function function_5a7ecb6b(var_56422be = 0.01) {
@@ -398,7 +398,7 @@ function function_5a7ecb6b(var_56422be = 0.01) {
 }
 
 // Namespace killstreaks/killstreaks_util
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x6bdb51a2, Offset: 0x14e8
 // Size: 0x11c
 function function_3696d106(var_56422be = 0.001) {
@@ -583,7 +583,7 @@ function function_cb0594d5() {
 }
 
 // Namespace killstreaks/killstreaks_util
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x377b8c55, Offset: 0x1f78
 // Size: 0x112
 function function_e9873ef7(killstreaktype, killstreak_id, var_e72137e8) {

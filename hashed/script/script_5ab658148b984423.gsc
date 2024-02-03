@@ -9,7 +9,7 @@
 class czm_build_progress : cluielem {
 
     // Namespace czm_build_progress/zm_build_progress
-    // Params 0, eflags: 0x8
+    // Params 0, eflags: 0xa linked
     // Checksum 0x7db406ec, Offset: 0x1e8
     // Size: 0x14
     __constructor() {
@@ -17,7 +17,7 @@ class czm_build_progress : cluielem {
     }
 
     // Namespace czm_build_progress/zm_build_progress
-    // Params 0, eflags: 0x90 class_linked
+    // Params 0, eflags: 0x92 linked class_linked
     // Checksum 0x1f0182c7, Offset: 0x320
     // Size: 0x14
     __destructor() {
@@ -25,7 +25,7 @@ class czm_build_progress : cluielem {
     }
 
     // Namespace czm_build_progress/zm_build_progress
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x1fc523a, Offset: 0x258
     // Size: 0x3c
     function open(player, flags = 0) {
@@ -33,7 +33,7 @@ class czm_build_progress : cluielem {
     }
 
     // Namespace czm_build_progress/zm_build_progress
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0xd5a16f45, Offset: 0x2a0
     // Size: 0x24
     function close(player) {
@@ -41,7 +41,7 @@ class czm_build_progress : cluielem {
     }
 
     // Namespace czm_build_progress/zm_build_progress
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0x8c81ef04, Offset: 0x208
     // Size: 0x44
     function setup_clientfields() {
@@ -50,7 +50,7 @@ class czm_build_progress : cluielem {
     }
 
     // Namespace czm_build_progress/zm_build_progress
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0xa64c23eb, Offset: 0x2d0
     // Size: 0x44
     function set_progress(player, value) {
@@ -60,7 +60,7 @@ class czm_build_progress : cluielem {
 }
 
 // Namespace zm_build_progress/zm_build_progress
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xc59579a1, Offset: 0xe8
 // Size: 0x34
 function register() {
@@ -70,7 +70,7 @@ function register() {
 }
 
 // Namespace zm_build_progress/zm_build_progress
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x40d59cb0, Offset: 0x128
 // Size: 0x38
 function open(player, flags = 0) {
@@ -78,7 +78,7 @@ function open(player, flags = 0) {
 }
 
 // Namespace zm_build_progress/zm_build_progress
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x6221b1b7, Offset: 0x168
 // Size: 0x1c
 function close(player) {
@@ -86,7 +86,7 @@ function close(player) {
 }
 
 // Namespace zm_build_progress/zm_build_progress
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd7920db2, Offset: 0x190
 // Size: 0x1a
 function is_open(player) {
@@ -94,7 +94,7 @@ function is_open(player) {
 }
 
 // Namespace zm_build_progress/zm_build_progress
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xc30483af, Offset: 0x1b8
 // Size: 0x28
 function set_progress(player, value) {

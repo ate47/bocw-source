@@ -119,7 +119,7 @@ function settod(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *field
         level.doa.var_7c19cda1 = "night";
         setworldfogactivebank(fieldname, 8);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         level.doa.var_7c19cda1 = "morning";
         setworldfogactivebank(fieldname, 1);
         break;

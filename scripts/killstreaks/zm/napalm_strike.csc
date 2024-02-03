@@ -16,7 +16,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace napalm_strike/napalm_strike
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x30382f07, Offset: 0x1d0
 // Size: 0xcc
 function private function_70a657d8() {
@@ -26,7 +26,7 @@ function private function_70a657d8() {
 }
 
 // Namespace napalm_strike/napalm_strike
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x27ea7ea9, Offset: 0x2a8
 // Size: 0x31c
 function napalm_strike_marker_on(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -68,7 +68,7 @@ function napalm_strike_marker_on(localclientnum, *oldval, newval, *bnewent, *bin
 }
 
 // Namespace napalm_strike/napalm_strike
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xf5831531, Offset: 0x5d0
 // Size: 0x84
 function function_85f3e359(localclientnum) {
@@ -79,7 +79,7 @@ function function_85f3e359(localclientnum) {
 }
 
 // Namespace napalm_strike/napalm_strike
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xa7aa3105, Offset: 0x660
 // Size: 0x84
 function function_e72f1d06(localclientnum) {
@@ -90,7 +90,7 @@ function function_e72f1d06(localclientnum) {
 }
 
 // Namespace napalm_strike/napalm_strike
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x7cab6253, Offset: 0x6f0
 // Size: 0xdc
 function show_marker(localclientnum, marker) {
@@ -103,7 +103,7 @@ function show_marker(localclientnum, marker) {
 }
 
 // Namespace napalm_strike/napalm_strike
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x842d6ac6, Offset: 0x7d8
 // Size: 0x9c
 function function_4362abef(localclientnum, marker) {
@@ -115,7 +115,7 @@ function function_4362abef(localclientnum, marker) {
 }
 
 // Namespace napalm_strike/napalm_strike
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x9ff13672, Offset: 0x880
 // Size: 0x114
 function private function_f43fb0d3(marker) {
@@ -129,7 +129,7 @@ function private function_f43fb0d3(marker) {
 }
 
 // Namespace napalm_strike/napalm_strike
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xdf8838bf, Offset: 0x9a0
 // Size: 0xc6
 function function_6a08eb03(localclientnum, marker) {

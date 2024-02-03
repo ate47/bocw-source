@@ -379,7 +379,7 @@ function function_417ec8b9(var_a6762160) {
         return 15;
     case #"perk_tier_3":
         return 16;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assert(0);
         #/

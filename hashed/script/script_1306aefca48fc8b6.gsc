@@ -93,7 +93,7 @@ function function_1648f5a1(name = "") {
         function_4f9f7687("hall_dirt_3_exit_ver1_1024x1024", "doa_hud_icon_dungeon_hall_inverse_t");
         function_4f9f7687("hall_dirt_4_exit_ver1_1024x1024", "doa_hud_icon_dungeon_hall_plus");
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         function_4f9f7687("room_1_exit_1024x1024", "doa_hud_icon_dungeon_room_square");
         function_4f9f7687("room_1b_exit_1024x1024", "doa_hud_icon_dungeon_room_1b");
         function_4f9f7687("room_2b_exit_1024x1024", "doa_hud_icon_dungeon_room_octagon");
@@ -235,7 +235,7 @@ function function_a4c07e18(name) {
         setdvar(#"hash_788fb3bfb03132f", var_46082893);
         function_1a3f9fe1();
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         setdvar(#"hash_4c2ff1f11662c879", var_5d3143fb);
         setdvar(#"hash_788fb3bfb03132f", var_46082893);
         function_9df20e11();
@@ -260,7 +260,7 @@ function function_18276de3(name = "") {
     level.doa.var_3d1f118d[#"hash_5e76c2f62c1e1615"] = [];
     level.doa.var_3d1f118d[#"floor"] = [];
     switch (name) {
-    case #"hash_defdefdefdefdef0":
+    default:
         level.doa.var_3d1f118d[#"hash_5e76c2f62c1e1615"][#"hash_6373f07d73160f61"][0] = {#fx:"fx_fire_torch_wall_lit_castle", #weight:1, #scale:1, #yaw_offset:0, #model:#"hash_4806b879eea49e81"};
         level.doa.var_3d1f118d[#"hash_5e76c2f62c1e1615"][#"hash_2ec1ad0b894eb316"][0] = {#weight:1, #scale:1, #yaw_offset:-90, #model:#"hash_291984c5c2b4716d"};
         level.doa.var_3d1f118d[#"hash_5e76c2f62c1e1615"][#"hash_2ec1ad0b894eb316"][1] = {#weight:1, #scale:1, #yaw_offset:180, #model:#"hash_291981c5c2b46c54"};
@@ -291,7 +291,7 @@ function function_ed9ae881(name) {
     case #"cellar":
         level.var_84c76431 = &function_9a834e27;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         level.var_84c76431 = &function_d5a0313a;
         break;
     }

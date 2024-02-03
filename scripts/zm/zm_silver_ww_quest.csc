@@ -435,7 +435,7 @@ function private function_7532a0ff(weapon_name) {
         case #"ww_ieu_gas_t9":
         case #"ww_ieu_plasma_t9":
             return 1;
-        case #"hash_defdefdefdefdef0":
+        default:
             return 0;
             break;
         }

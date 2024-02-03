@@ -15,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_df7b10e3/namespace_df7b10e3
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xfd22b645, Offset: 0x188
 // Size: 0x5c
 function private function_70a657d8() {
@@ -23,7 +23,7 @@ function private function_70a657d8() {
 }
 
 // Namespace namespace_df7b10e3/namespace_df7b10e3
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xdb9f7699, Offset: 0x1f0
 // Size: 0x1f2
 function function_f4515ba8(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -53,7 +53,7 @@ function function_f4515ba8(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace namespace_df7b10e3/namespace_df7b10e3
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xfc0a1bc4, Offset: 0x3f0
 // Size: 0x1f8
 function private function_8847b8aa(localclientnum) {

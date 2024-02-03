@@ -199,7 +199,7 @@ function status_effects_devgui_think() {
                     break;
                 case #"clear_all":
                     function_64ba1c7e(pid);
-                case #"hash_defdefdefdefdef0":
+                default:
                     break;
                 }
                 setdvar(#"scr_status_effects_devgui_cmd", "<unknown string>");

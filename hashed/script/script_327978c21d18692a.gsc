@@ -19,7 +19,7 @@ function event_handler[level_init] main(*eventstruct) {
 }
 
 // Namespace namespace_4914de7c/namespace_4914de7c
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x1aac2ccc, Offset: 0x168
 // Size: 0x54
 function function_386821d6(*eventstruct) {
@@ -29,7 +29,7 @@ function function_386821d6(*eventstruct) {
 }
 
 // Namespace namespace_4914de7c/namespace_4914de7c
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x5f3152, Offset: 0x1c8
 // Size: 0x24
 function function_b1eb7f05(*eventstruct) {

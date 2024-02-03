@@ -1882,7 +1882,7 @@ function dialog_faction_vo(var_d9823b39, var_be096d26, var_7f1981e0, var_500f33b
 }
 
 // Namespace util/util
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x7044620b, Offset: 0x63d8
 // Size: 0xfa
 function function_c76fa9e1(var_42ff3045, var_d47e50e, var_97085828) {
@@ -2000,7 +2000,7 @@ function function_3ac6fa36(var_fb68995e, var_75afe953, var_7c7241a) {
 }
 
 // Namespace util/util
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x83e1edb7, Offset: 0x68d0
 // Size: 0xc6
 function function_875955a() {
@@ -2013,7 +2013,7 @@ function function_875955a() {
         var_ea95c1e7 = "lazar";
         break;
     case 2:
-    case #"hash_defdefdefdefdef0":
+    default:
         var_ea95c1e7 = "sims";
         break;
     }
@@ -2021,7 +2021,7 @@ function function_875955a() {
 }
 
 // Namespace util/util
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xf5315b2e, Offset: 0x69a0
 // Size: 0x344
 function function_a5318821(var_79a934ad = 1, var_6fa12df4 = 0, var_64b54706 = undefined, var_20900fd = 0) {

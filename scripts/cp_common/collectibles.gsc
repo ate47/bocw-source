@@ -253,7 +253,7 @@ function function_ee216b9e(var_d13a0347, var_28c9f917) {
 }
 
 // Namespace collectibles/collectibles
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xe2a32421, Offset: 0xf78
 // Size: 0xfc
 function function_55fb73ea(var_d13a0347, var_28c9f917) {
@@ -421,7 +421,7 @@ function function_5b42ccea() {
 }
 
 // Namespace collectibles/collectibles
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xb62e6b61, Offset: 0x1788
 // Size: 0x24
 function add_callback(collectible, callback) {
@@ -429,7 +429,7 @@ function add_callback(collectible, callback) {
 }
 
 // Namespace collectibles/collectibles
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x725acc5b, Offset: 0x17b8
 // Size: 0x1e
 function function_606a97af(collectible) {
@@ -437,7 +437,7 @@ function function_606a97af(collectible) {
 }
 
 // Namespace collectibles/collectibles
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x1b49b42e, Offset: 0x17e0
 // Size: 0x4a
 function function_f539a1fa(collectible, params) {

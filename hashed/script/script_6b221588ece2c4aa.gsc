@@ -145,7 +145,7 @@ function spikesdetonating(watcher) {
 }
 
 // Namespace weaponobjects/namespace_4c668920
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x4e5c4b2a, Offset: 0x6e8
 // Size: 0x11a
 function createspikelauncherwatcher(watcher) {
@@ -176,7 +176,7 @@ function createplayerhelicopterwatcher(watcher) {
 }
 
 // Namespace weaponobjects/namespace_4c668920
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x86bf94a6, Offset: 0x840
 // Size: 0x42
 function function_50d4198b(watcher) {

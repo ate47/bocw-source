@@ -18,7 +18,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_crafting/zm_crafting
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xe2d800ee, Offset: 0x140
 // Size: 0x1c
 function private function_70a657d8() {
@@ -27,7 +27,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_crafting/zm_crafting
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xf00a149e, Offset: 0x168
 // Size: 0x14
 function private postinit() {
@@ -35,7 +35,7 @@ function private postinit() {
 }
 
 // Namespace zm_crafting/zm_crafting
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xcc2587fd, Offset: 0x188
 // Size: 0xa8
 function function_60a6c623() {
@@ -46,7 +46,7 @@ function function_60a6c623() {
 }
 
 // Namespace zm_crafting/zm_crafting
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x3e0a32a8, Offset: 0x238
 // Size: 0x222
 function setup_craftfoundry(craftfoundry) {
@@ -78,7 +78,7 @@ function setup_craftfoundry(craftfoundry) {
 }
 
 // Namespace zm_crafting/zm_crafting
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xaf13d4fe, Offset: 0x468
 // Size: 0x2c8
 function function_b18074d0(name) {
@@ -122,7 +122,7 @@ function function_b18074d0(name) {
 }
 
 // Namespace zm_crafting/zm_crafting
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd9504d1c, Offset: 0x738
 // Size: 0x50
 function get_component(component) {

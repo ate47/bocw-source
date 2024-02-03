@@ -7,7 +7,7 @@
 #namespace ammomod_electriccherry;
 
 // Namespace ammomod_electriccherry/ammomod_electriccherry
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xed25e85e, Offset: 0x130
 // Size: 0xec
 function function_4b66248d() {
@@ -22,7 +22,7 @@ function function_4b66248d() {
 }
 
 // Namespace ammomod_electriccherry/ammomod_electriccherry
-// Params 8, eflags: 0x0
+// Params 8, eflags: 0x2 linked
 // Checksum 0x6cb62f74, Offset: 0x228
 // Size: 0x60
 function result(*death, *attacker, *mod, *weapon, *var_fd90b0bb, *vpoint, *shitloc, *boneindex) {
@@ -47,7 +47,7 @@ function event_handler[reload] function_b4174270(*eventstruct) {
 }
 
 // Namespace ammomod_electriccherry/ammomod_electriccherry
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x58b2531c, Offset: 0x338
 // Size: 0x14c
 function function_aa4171b9() {

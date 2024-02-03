@@ -12,6 +12,7 @@
 #using scripts\core_common\activecamo_shared.gsc;
 #using script_25c09ccacf057919;
 #using scripts\core_common\delete.gsc;
+#using scripts\core_common\clientids_shared.gsc;
 
 #namespace load;
 

@@ -24,7 +24,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x5d60afa2, Offset: 0x358
 // Size: 0xec
 function private function_70a657d8() {
@@ -48,7 +48,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x9d5f9c53, Offset: 0x450
 // Size: 0x32
 function zone_is_enabled(zone_name) {
@@ -56,7 +56,7 @@ function zone_is_enabled(zone_name) {
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xaa8d286a, Offset: 0x490
 // Size: 0x34
 function zone_wait_till_enabled(zone_name) {
@@ -103,7 +103,7 @@ function function_28cabfbf(a_str_zone_names) {
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x623661b4, Offset: 0x678
 // Size: 0x12
 function get_player_zone() {
@@ -111,7 +111,7 @@ function get_player_zone() {
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x5021b89a, Offset: 0x698
 // Size: 0xe6
 function get_zone_from_position(v_pos, ignore_enabled_check = 0, registerchaos_round_end_vo_done_wait_ = 0) {
@@ -130,7 +130,7 @@ function get_zone_from_position(v_pos, ignore_enabled_check = 0, registerchaos_r
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xa24a98a5, Offset: 0x788
 // Size: 0x98
 function function_49d8d29f(v_pos, ignore_enabled_check) {
@@ -146,7 +146,7 @@ function function_49d8d29f(v_pos, ignore_enabled_check) {
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x2308b940, Offset: 0x828
 // Size: 0x7e
 function function_66bf6a43(v_pos, ignore_enabled_check) {
@@ -190,7 +190,7 @@ function get_zone_zbarriers(zone_name) {
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x48fdba, Offset: 0x9b0
 // Size: 0x38a
 function get_players_in_zone(zone_name, return_players) {
@@ -244,7 +244,7 @@ function get_players_in_zone(zone_name, return_players) {
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xf5164093, Offset: 0xd48
 // Size: 0x2a6
 function any_player_in_zone(zone_name) {
@@ -311,7 +311,7 @@ function function_74a82172(location, zone_name, ignore_enabled_check = 0) {
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x1b503454, Offset: 0x1198
 // Size: 0xbe
 function function_adc70eee(location, zone_name, ignore_enabled_check = 0) {
@@ -329,7 +329,7 @@ function function_adc70eee(location, zone_name, ignore_enabled_check = 0) {
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x4be59879, Offset: 0x1260
 // Size: 0x1be
 function entity_in_zone(zone_name, ignore_enabled_check = 0) {
@@ -358,7 +358,7 @@ function entity_in_zone(zone_name, ignore_enabled_check = 0) {
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xafdbe094, Offset: 0x1428
 // Size: 0xfa
 function entity_in_active_zone(ignore_enabled_check = 0) {
@@ -377,7 +377,7 @@ function entity_in_active_zone(ignore_enabled_check = 0) {
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xb5c0291c, Offset: 0x1530
 // Size: 0x8c
 function deactivate_initial_barrier_goals() {
@@ -391,7 +391,7 @@ function deactivate_initial_barrier_goals() {
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x4e2d101f, Offset: 0x15c8
 // Size: 0xd1c
 function zone_init(zone_name, zone_tag) {
@@ -496,7 +496,7 @@ function zone_init(zone_name, zone_tag) {
                     }
                     zone.a_loc_types[#"zombie_location"][zone.a_loc_types[#"zombie_location"].size] = spot;
                     break;
-                case #"hash_defdefdefdefdef0":
+                default:
                     if (!isdefined(zone.a_loc_types[token])) {
                         zone.a_loc_types[token] = [];
                     }
@@ -541,7 +541,7 @@ function zone_init(zone_name, zone_tag) {
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xcf7f5046, Offset: 0x22f0
 // Size: 0x140
 function function_4ad63e8(s_zone) {
@@ -597,7 +597,7 @@ function reinit_zone_spawners() {
                         }
                         zone.a_loc_types[#"zombie_location"][zone.a_loc_types[#"zombie_location"].size] = spot;
                         break;
-                    case #"hash_defdefdefdefdef0":
+                    default:
                         if (!isdefined(zone.a_loc_types[token])) {
                             zone.a_loc_types[token] = [];
                         } else if (!isarray(zone.a_loc_types[token])) {
@@ -618,7 +618,7 @@ function reinit_zone_spawners() {
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x20bbe8e8, Offset: 0x2948
 // Size: 0x2ec
 function enable_zone(zone_name) {
@@ -656,7 +656,7 @@ function enable_zone(zone_name) {
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xe83a527c, Offset: 0x2c40
 // Size: 0x148
 function make_zone_adjacent(main_zone_name, adj_zone_name, flag_name) {
@@ -719,7 +719,7 @@ function add_adjacent_zone(zone_name_a, zone_name_b, flag_name, one_way = 1, zon
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x776b122f, Offset: 0x2f80
 // Size: 0x1c4
 function setup_zone_flag_waits() {
@@ -748,7 +748,7 @@ function setup_zone_flag_waits() {
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xe58c2f57, Offset: 0x3150
 // Size: 0x3a
 function wait_zone_flags_updating() {
@@ -761,7 +761,7 @@ function wait_zone_flags_updating() {
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xb1bca875, Offset: 0x3198
 // Size: 0x52
 function zone_flag_wait_throttle() {
@@ -776,7 +776,7 @@ function zone_flag_wait_throttle() {
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x8bf9ecb1, Offset: 0x31f8
 // Size: 0x524
 function zone_flag_wait(flag_name) {
@@ -858,7 +858,7 @@ function zone_flag_wait(flag_name) {
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x82e02f14, Offset: 0x3728
 // Size: 0x54
 function door_close_disconnect(flag_name) {
@@ -870,7 +870,7 @@ function door_close_disconnect(flag_name) {
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x2f345779, Offset: 0x3788
 // Size: 0x536
 function function_8a130a46(door, player) {
@@ -1134,7 +1134,7 @@ function debug_show_spawn_locations() {
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xebf0b177, Offset: 0x4940
 // Size: 0x4f6
 function create_spawner_list(zkeys) {
@@ -1167,7 +1167,7 @@ function create_spawner_list(zkeys) {
                                 level.zm_loc_types[#"zombie_location"][level.zm_loc_types[#"zombie_location"].size] = loc;
                             }
                             break;
-                        case #"hash_defdefdefdefdef0":
+                        default:
                             if (!isdefined(level.zm_loc_types[token])) {
                                 level.zm_loc_types[token] = [];
                             }
@@ -1189,7 +1189,7 @@ function create_spawner_list(zkeys) {
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x73822292, Offset: 0x4e40
 // Size: 0xa8
 function get_active_zone_names() {
@@ -1209,7 +1209,7 @@ function get_active_zone_names() {
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x6c34ce02, Offset: 0x4ef0
 // Size: 0xc0
 function get_active_zones_entities() {
@@ -1384,7 +1384,7 @@ function private function_8a9003ae() {
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x5fcc6a48, Offset: 0x5a38
 // Size: 0x194
 function function_54fc7938(player_ent, var_5d02daa5) {
@@ -1410,7 +1410,7 @@ function function_54fc7938(player_ent, var_5d02daa5) {
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xa68f139e, Offset: 0x5bd8
 // Size: 0x58
 function function_228ae7e() {
@@ -1422,7 +1422,7 @@ function function_228ae7e() {
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xc1970715, Offset: 0x5c38
 // Size: 0x3ec
 function function_d4cf2b9b(force_update = 0) {
@@ -1527,7 +1527,7 @@ function function_e5eceb89(zone_name) {
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x23225a08, Offset: 0x6228
 // Size: 0x12c
 function is_player_in_zone(a_str_zones, var_d309b38f = 1) {

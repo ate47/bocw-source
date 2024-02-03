@@ -2358,7 +2358,7 @@ function function_1a222bee(params) {
         case #"hash_12f078ddc9b913c3":
             self stats::function_622feb0d(#"nightingale", #"hash_7d6781e4032b4aa5", 1);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             self stats::function_622feb0d(params.item.var_a6762160.weapon.statname, #"hash_7d6781e4032b4aa5", 1);
             break;
         }

@@ -8,7 +8,7 @@
 class clui_napalm_strike : cluielem {
 
     // Namespace clui_napalm_strike/lui_napalm_strike
-    // Params 0, eflags: 0x8
+    // Params 0, eflags: 0xa linked
     // Checksum 0x3bcec622, Offset: 0x300
     // Size: 0x14
     __constructor() {
@@ -16,7 +16,7 @@ class clui_napalm_strike : cluielem {
     }
 
     // Namespace clui_napalm_strike/lui_napalm_strike
-    // Params 0, eflags: 0x90 class_linked
+    // Params 0, eflags: 0x92 linked class_linked
     // Checksum 0x6256c5c1, Offset: 0x3d0
     // Size: 0x14
     __destructor() {
@@ -24,7 +24,7 @@ class clui_napalm_strike : cluielem {
     }
 
     // Namespace clui_napalm_strike/lui_napalm_strike
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x4545cb00, Offset: 0x3a0
     // Size: 0x24
     function open(localclientnum) {
@@ -32,7 +32,7 @@ class clui_napalm_strike : cluielem {
     }
 
     // Namespace clui_napalm_strike/lui_napalm_strike
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0x3f64661c, Offset: 0x348
     // Size: 0x1c
     function register_clientside() {
@@ -40,7 +40,7 @@ class clui_napalm_strike : cluielem {
     }
 
     // Namespace clui_napalm_strike/lui_napalm_strike
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0xa644f64e, Offset: 0x320
     // Size: 0x1c
     function setup_clientfields() {
@@ -48,7 +48,7 @@ class clui_napalm_strike : cluielem {
     }
 
     // Namespace clui_napalm_strike/lui_napalm_strike
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x1bd22c71, Offset: 0x370
     // Size: 0x24
     function function_fa582112(localclientnum) {

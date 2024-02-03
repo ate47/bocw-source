@@ -90,7 +90,7 @@ function function_ff3d341d() {
     }
     array::thread_all(self.var_e0b939d3, &function_855c1e52);
     self.var_d6b3b6e0 = util::spawn_model(#"p8_zm_off_trap_switch_light", self gettagorigin("tag_top"), self.angles);
-    self.var_fdec2822 = util::spawn_model(#"hash_6f7dd26aa6690f61", self gettagorigin("tag_up"), self.angles);
+    self.var_fdec2822 = util::spawn_model(#"p8_zm_off_trap_switch_handle", self gettagorigin("tag_up"), self.angles);
     self function_7265ebeb(undefined);
     self.var_37db5cf = 0;
     self.var_c1b23abb = 2000;
@@ -832,7 +832,7 @@ function cmd(cmd) {
         case #"hash_52e9b6c047dfc7":
             function_d5c28d2b();
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     #/

@@ -532,7 +532,7 @@ function get_goal() {
 }
 
 // Namespace smart_object/smart_object
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xdb97aeaa, Offset: 0x1f08
 // Size: 0x1c8
 function function_ab981ed(var_cee92a66, volume, var_ce60cc2e, var_2889f642 = 0) {
@@ -621,7 +621,7 @@ function function_b03cc199(obj) {
 }
 
 // Namespace smart_object/smart_object
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x3e8f3220, Offset: 0x2368
 // Size: 0xd8c
 function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_aea7aa5b, var_a3a26744) {
@@ -812,7 +812,7 @@ function function_b5ba6914(obj, var_86fc8c6, volume, *var_2889f642) {
 }
 
 // Namespace smart_object/smart_object
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xdd067aa, Offset: 0x3218
 // Size: 0x8c
 function set(obj) {

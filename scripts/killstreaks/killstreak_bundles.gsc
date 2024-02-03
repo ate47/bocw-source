@@ -5,7 +5,7 @@
 #namespace killstreak_bundles;
 
 // Namespace killstreak_bundles/killstreak_bundles
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xbc569176, Offset: 0x1b8
 // Size: 0x1a
 function spawned(bundle) {

@@ -49,7 +49,7 @@ function function_d83b47c4(localclientnum, *oldval, newval, *bnewent, *binitials
             var_e5404960 = var_8faf8279.var_fd89f5fb;
             var_9c464736 = var_8faf8279.var_6e38d21c;
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             var_e5404960 = var_8faf8279.var_1510a94a;
             var_9c464736 = var_8faf8279.var_4ec57c29;
             break;
@@ -95,7 +95,7 @@ function function_3b0ca643(var_c56101e0) {
             }
             v_offset = (20, 0, 30);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             return undefined;
             break;
         }

@@ -17,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_magicbox/zm_magicbox
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x509e41b6, Offset: 0x238
 // Size: 0x4b4
 function private function_70a657d8() {
@@ -46,7 +46,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_magicbox/zm_magicbox
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xda12fb86, Offset: 0x6f8
 // Size: 0x158
 function stream_magicbox_guns(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -62,7 +62,7 @@ function stream_magicbox_guns(*localclientnum, *oldval, newval, *bnewent, *binit
 }
 
 // Namespace zm_magicbox/zm_magicbox
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x97532151, Offset: 0x858
 // Size: 0xa4
 function force_stream_magicbox(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -75,7 +75,7 @@ function force_stream_magicbox(*localclientnum, *oldval, newval, *bnewent, *bini
 }
 
 // Namespace zm_magicbox/zm_magicbox
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x21b0f254, Offset: 0x908
 // Size: 0xa4
 function force_stream_magicbox_leave(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -88,7 +88,7 @@ function force_stream_magicbox_leave(*localclientnum, *oldval, newval, *bnewent,
 }
 
 // Namespace zm_magicbox/zm_magicbox
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x8531541a, Offset: 0x9b8
 // Size: 0x64
 function magicbox_show_sounds_callback(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -96,7 +96,7 @@ function magicbox_show_sounds_callback(localclientnum, *oldval, *newval, *bnewen
 }
 
 // Namespace zm_magicbox/zm_magicbox
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x49825e1a, Offset: 0xa28
 // Size: 0x64
 function magicbox_leave_sounds_callback(*localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -104,7 +104,7 @@ function magicbox_leave_sounds_callback(*localclientnum, *oldval, *newval, *bnew
 }
 
 // Namespace zm_magicbox/zm_magicbox
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x95643e4d, Offset: 0xa98
 // Size: 0x5c
 function function_8f69e904(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -112,7 +112,7 @@ function function_8f69e904(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_magicbox/zm_magicbox
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x95d853c4, Offset: 0xb00
 // Size: 0x5c
 function function_9253a233(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -120,7 +120,7 @@ function function_9253a233(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_magicbox/zm_magicbox
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xc04a2c7, Offset: 0xb68
 // Size: 0x64
 function function_68f67f85(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -128,7 +128,7 @@ function function_68f67f85(localclientnum, *oldval, *newval, *bnewent, *binitial
 }
 
 // Namespace zm_magicbox/zm_magicbox
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x21632c00, Offset: 0xbd8
 // Size: 0x5b8
 function function_b4b9937(localclientnum, newval, str_state) {
@@ -212,7 +212,7 @@ function function_b4b9937(localclientnum, newval, str_state) {
 }
 
 // Namespace zm_magicbox/zm_magicbox
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x76b61909, Offset: 0x1198
 // Size: 0x5c
 function function_be97e893(localclientnum) {
@@ -224,7 +224,7 @@ function function_be97e893(localclientnum) {
 }
 
 // Namespace zm_magicbox/zm_magicbox
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x8ddb7633, Offset: 0x1200
 // Size: 0xa6
 function function_d7e80953(localclientnum, newval, str_state) {
@@ -238,7 +238,7 @@ function function_d7e80953(localclientnum, newval, str_state) {
 }
 
 // Namespace zm_magicbox/zm_magicbox
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x73dd9d06, Offset: 0x12b0
 // Size: 0x104
 function function_b5807489(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -254,7 +254,7 @@ function function_b5807489(localclientnum, *oldval, newval, *bnewent, *binitials
 }
 
 // Namespace zm_magicbox/zm_magicbox
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x45d743c7, Offset: 0x13c0
 // Size: 0x41a
 function function_abe84c14(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -287,7 +287,7 @@ function function_abe84c14(localclientnum, *oldval, newval, *bnewent, *binitials
         playsound(fieldname, #"hash_30dce35bee22371a", self.origin);
         break;
     case 0:
-    case #"hash_defdefdefdefdef0":
+    default:
         if (isdefined(self.var_5ad9ac45)) {
             stopfx(fieldname, self.var_5ad9ac45);
             self.var_5ad9ac45 = undefined;

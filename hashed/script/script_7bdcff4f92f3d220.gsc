@@ -20,7 +20,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace killstreaks/killstreaks
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x40cdd9e5, Offset: 0x1a8
 // Size: 0xac
 function private function_70a657d8() {
@@ -35,7 +35,7 @@ function private function_70a657d8() {
 }
 
 // Namespace killstreaks/killstreaks
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x5ee9c02a, Offset: 0x260
 // Size: 0x14c
 function init() {
@@ -59,7 +59,7 @@ function init() {
 }
 
 // Namespace killstreaks/killstreaks
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xba82f0ce, Offset: 0x3b8
 // Size: 0x134
 function private function_f1707039() {
@@ -77,7 +77,7 @@ function private function_f1707039() {
 }
 
 // Namespace killstreaks/killstreaks
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x3666ad91, Offset: 0x4f8
 // Size: 0x58
 function private function_1f7e617a() {
@@ -89,7 +89,7 @@ function private function_1f7e617a() {
 }
 
 // Namespace killstreaks/killstreaks
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x4a067d7e, Offset: 0x558
 // Size: 0x2dc
 function private on_menu_response(eventstruct) {
@@ -130,7 +130,7 @@ function private on_menu_response(eventstruct) {
 }
 
 // Namespace killstreaks/killstreaks
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xe97996ce, Offset: 0x840
 // Size: 0x18
 function function_3b4959c6() {
@@ -138,7 +138,7 @@ function function_3b4959c6() {
 }
 
 // Namespace killstreaks/killstreaks
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd740665b, Offset: 0x860
 // Size: 0x20
 function function_7b6102ed(killstreaktype) {
@@ -146,7 +146,7 @@ function function_7b6102ed(killstreaktype) {
 }
 
 // Namespace killstreaks/killstreaks
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xaa50feac, Offset: 0x888
 // Size: 0x24
 function function_353a9ccd(killstreaktype, func) {
@@ -154,7 +154,7 @@ function function_353a9ccd(killstreaktype, func) {
 }
 
 // Namespace killstreaks/killstreaks
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x36b5d3cb, Offset: 0x8b8
 // Size: 0x24
 function function_39c0c22a(killstreaktype, func) {
@@ -162,7 +162,7 @@ function function_39c0c22a(killstreaktype, func) {
 }
 
 // Namespace killstreaks/killstreaks
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x4f719177, Offset: 0x8e8
 // Size: 0xc
 function private function_395f82d0(*killstreaktype) {
@@ -170,7 +170,7 @@ function private function_395f82d0(*killstreaktype) {
 }
 
 // Namespace killstreaks/killstreaks
-// Params 4, eflags: 0x4
+// Params 4, eflags: 0x6 linked
 // Checksum 0xf6c86639, Offset: 0x900
 // Size: 0x24
 function private function_daabc818(*event, *player, *victim, *weapon) {
@@ -178,7 +178,7 @@ function private function_daabc818(*event, *player, *victim, *weapon) {
 }
 
 // Namespace killstreaks/killstreaks
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x11bf82ef, Offset: 0x930
 // Size: 0x40c
 function private function_d3106952() {

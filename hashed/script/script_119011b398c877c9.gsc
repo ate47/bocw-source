@@ -13,7 +13,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_db2eee11/namespace_db2eee11
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xd1529033, Offset: 0x108
 // Size: 0x44
 function function_70a657d8() {

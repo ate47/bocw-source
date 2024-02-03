@@ -21,7 +21,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace napalm_strike/napalm_strike
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x1f0fb56b, Offset: 0x248
 // Size: 0x94
 function private function_70a657d8() {
@@ -32,7 +32,7 @@ function private function_70a657d8() {
 }
 
 // Namespace napalm_strike/napalm_strike
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x73759b97, Offset: 0x2e8
 // Size: 0x34
 function private function_3675de8b() {
@@ -41,7 +41,7 @@ function private function_3675de8b() {
 }
 
 // Namespace napalm_strike/napalm_strike
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x5ef43ecf, Offset: 0x328
 // Size: 0x102
 function function_a865cea6(*killstreaktype) {
@@ -81,7 +81,7 @@ function function_58189f7d(*killstreaktype) {
 }
 
 // Namespace napalm_strike/napalm_strike
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xf9a9c396, Offset: 0x4f8
 // Size: 0x304
 function function_53a0e7ce(var_b004174a) {
@@ -171,7 +171,7 @@ function private event_handler[grenade_fire] function_4776caf4(eventstruct) {
 }
 
 // Namespace napalm_strike/napalm_strike
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x6160a999, Offset: 0xb08
 // Size: 0x34
 function function_5673c107() {
@@ -181,7 +181,7 @@ function function_5673c107() {
 }
 
 // Namespace napalm_strike/napalm_strike
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xfeda755a, Offset: 0xb48
 // Size: 0x24
 function private function_ce23d48a() {
@@ -189,7 +189,7 @@ function private function_ce23d48a() {
 }
 
 // Namespace napalm_strike/napalm_strike
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x547ca88e, Offset: 0xb78
 // Size: 0x24
 function private function_fc2f1ec6() {
@@ -197,7 +197,7 @@ function private function_fc2f1ec6() {
 }
 
 // Namespace napalm_strike/napalm_strike
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xd243db69, Offset: 0xba8
 // Size: 0x24
 function private function_ffa80fa4() {
@@ -205,7 +205,7 @@ function private function_ffa80fa4() {
 }
 
 // Namespace napalm_strike/napalm_strike
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x5ebdc383, Offset: 0xbd8
 // Size: 0x4c
 function private function_88a015af(b_valid) {
@@ -213,7 +213,7 @@ function private function_88a015af(b_valid) {
 }
 
 // Namespace napalm_strike/napalm_strike
-// Params 3, eflags: 0x4
+// Params 3, eflags: 0x6 linked
 // Checksum 0xeca9dc06, Offset: 0xc30
 // Size: 0x58
 function private function_9aa2535(var_b004174a, location, killstreakid) {
@@ -222,7 +222,7 @@ function private function_9aa2535(var_b004174a, location, killstreakid) {
 }
 
 // Namespace napalm_strike/napalm_strike
-// Params 10, eflags: 0x4
+// Params 10, eflags: 0x6 linked
 // Checksum 0x86a2e67e, Offset: 0xc90
 // Size: 0x8c
 function private function_f6ea413(*einflictor, eattacker, *idamage, *idflags, *smeansofdeath, weapon, *vpoint, *vdir, *shitloc, *psoffsettime) {

@@ -149,7 +149,7 @@ function add_contract_slot(localclientnum, slot) {
             root = root + "<unknown string>";
             add_weekly = 0;
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             root = root + "<unknown string>";
             break;
         }

@@ -97,7 +97,7 @@ function private function_70a657d8() {
     case 3:
         var_a093876d = 40;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_a093876d = 24;
         break;
     }
@@ -562,7 +562,7 @@ function add_scene_func(str_scenedef, func, var_e21c4c4c = "play", ...) {
 }
 
 // Namespace scene/scene_shared
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xbacc6b46, Offset: 0x29d0
 // Size: 0xc0
 function function_d0d7d9f7(str_scenedef, func) {
@@ -601,7 +601,7 @@ function function_d8a83a50(str_scenedef, func, var_e21c4c4c = "play", ...) {
 }
 
 // Namespace scene/scene_shared
-// Params 5, eflags: 0x2 linked
+// Params 5, eflags: 0x0
 // Checksum 0x5d7ea69, Offset: 0x2c78
 // Size: 0x6c
 function function_497689f6(str_scenedef, var_4ebc26aa, var_822d3bf5, var_7e21e745, var_e21c4c4c = "play") {
@@ -1629,7 +1629,7 @@ function private _play_instance(s_tracker, str_scenedef = self.scriptbundlename,
 }
 
 // Namespace scene/scene_shared
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0x3ac04597, Offset: 0x72b8
 // Size: 0x23c
 function delete_scene_spawned_ents(arg1) {
@@ -1719,7 +1719,7 @@ function _get_scene_instances(str_value, str_key = "targetname", str_scenedef, b
 }
 
 // Namespace scene/scene_shared
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0xa0873b78, Offset: 0x7830
 // Size: 0x74
 function skipto_end(arg1, arg2, arg3, n_time, b_include_players = 1) {
@@ -2053,7 +2053,7 @@ function function_128f0294(var_37fa9b04) {
 }
 
 // Namespace scene/scene_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x5b5ae0c, Offset: 0x8b00
 // Size: 0x4e
 function is_active(str_scenedef) {
@@ -2079,7 +2079,7 @@ function is_playing(str_scenedef = self.scriptbundlename, str_shot = "play") {
 }
 
 // Namespace scene/scene_shared
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xfdaf9a96, Offset: 0x8bf0
 // Size: 0x96
 function is_ready(str_scenedef) {
@@ -2296,7 +2296,7 @@ function is_igc_active() {
 }
 
 // Namespace scene/scene_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x519dceb3, Offset: 0x9738
 // Size: 0x1a
 function function_871087b6() {
@@ -2330,7 +2330,7 @@ function is_capture_mode(str_mode = getdvarstring(#"scene_menu_mode", "default")
 }
 
 // Namespace scene/scene_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x6b039c44, Offset: 0x98b8
 // Size: 0x1a
 function should_spectate_on_join() {
@@ -2338,7 +2338,7 @@ function should_spectate_on_join() {
 }
 
 // Namespace scene/scene_shared
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xb7a00c9c, Offset: 0x98e0
 // Size: 0x28
 function wait_until_spectate_on_join_completes() {

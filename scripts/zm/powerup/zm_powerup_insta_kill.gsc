@@ -21,7 +21,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_powerup_insta_kill/zm_powerup_insta_kill
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x5613ebf0, Offset: 0x1b8
 // Size: 0x9c
 function private function_70a657d8() {
@@ -32,7 +32,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_powerup_insta_kill/zm_powerup_insta_kill
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd2b39949, Offset: 0x260
 // Size: 0x8c
 function grab_insta_kill(player) {
@@ -45,7 +45,7 @@ function grab_insta_kill(player) {
 }
 
 // Namespace zm_powerup_insta_kill/zm_powerup_insta_kill
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x8b65eec6, Offset: 0x2f8
 // Size: 0x180
 function function_d7a1e6a8(e_powerup, player) {
@@ -67,7 +67,7 @@ function function_d7a1e6a8(e_powerup, player) {
 }
 
 // Namespace zm_powerup_insta_kill/zm_powerup_insta_kill
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x11344271, Offset: 0x480
 // Size: 0x28a
 function insta_kill_powerup(drop_item, player) {

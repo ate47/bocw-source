@@ -38,7 +38,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x2a6fa0af, Offset: 0x400
 // Size: 0x10c
 function private function_70a657d8() {
@@ -53,7 +53,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xeafa0c24, Offset: 0x518
 // Size: 0xbc
 function private postinit() {
@@ -69,7 +69,7 @@ function private postinit() {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xe532e9ca, Offset: 0x5e0
 // Size: 0xcac
 function function_5837bf72() {
@@ -214,7 +214,7 @@ function function_5837bf72() {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xebd5657b, Offset: 0x1298
 // Size: 0x204
 function function_367f9f86(var_6f531d9b) {
@@ -240,7 +240,7 @@ function function_367f9f86(var_6f531d9b) {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x75ccd960, Offset: 0x14a8
 // Size: 0x7c
 function private function_54188cef() {
@@ -254,7 +254,7 @@ function private function_54188cef() {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x978dbb93, Offset: 0x1530
 // Size: 0x122
 function function_3ba5772b() {
@@ -280,7 +280,7 @@ function function_3ba5772b() {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 13, eflags: 0x4
+// Params 13, eflags: 0x6 linked
 // Checksum 0xb78c97a2, Offset: 0x1660
 // Size: 0x1ee
 function private function_cb059f82(inflictor, attacker, damage, flags, meansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, psoffsettime, boneindex, surfacetype) {
@@ -301,7 +301,7 @@ function private function_cb059f82(inflictor, attacker, damage, flags, meansofde
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 13, eflags: 0x0
+// Params 13, eflags: 0x2 linked
 // Checksum 0xb61ab19, Offset: 0x1858
 // Size: 0xbc
 function function_9f5a8125(inflictor, attacker, damage, flags, meansofdeath, weapon, *var_fd90b0bb, vpoint, *vdir, shitloc, *psoffsettime, *boneindex, *surfacetype) {
@@ -311,7 +311,7 @@ function function_9f5a8125(inflictor, attacker, damage, flags, meansofdeath, wea
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x76fd6068, Offset: 0x1920
 // Size: 0x194
 function private function_7d47c6f7(params) {
@@ -339,7 +339,7 @@ function private function_7d47c6f7(params) {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x1c4a22b5, Offset: 0x1ac0
 // Size: 0x18a
 function private function_5da12481(params) {
@@ -366,7 +366,7 @@ function private function_5da12481(params) {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x71b81bce, Offset: 0x1c58
 // Size: 0xb4
 function private function_933708f2() {
@@ -381,7 +381,7 @@ function private function_933708f2() {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xf504cb46, Offset: 0x1d18
 // Size: 0x34
 function private function_fb4c0780(player) {
@@ -390,7 +390,7 @@ function private function_fb4c0780(player) {
 }
 
 // Namespace zm_holiday_event/zm_holiday_event
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xa09996c0, Offset: 0x1d58
 // Size: 0xc4
 function function_cf4230c2() {

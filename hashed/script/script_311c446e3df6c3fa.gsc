@@ -17,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_f3a74bbc/namespace_f3a74bbc
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xb1a99ace, Offset: 0x1e0
 // Size: 0x264
 function private function_70a657d8() {
@@ -33,7 +33,7 @@ function private function_70a657d8() {
 }
 
 // Namespace namespace_f3a74bbc/namespace_f3a74bbc
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0xa446ac1e, Offset: 0x450
 // Size: 0xde
 function function_63e45e6(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -46,7 +46,7 @@ function function_63e45e6(localclientnum, *oldval, newval, *bnewent, *binitialsn
 }
 
 // Namespace namespace_f3a74bbc/namespace_f3a74bbc
-// Params 7, eflags: 0x4
+// Params 7, eflags: 0x6 linked
 // Checksum 0x17709ee8, Offset: 0x538
 // Size: 0xf4
 function private function_b8c3e9f4(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -60,7 +60,7 @@ function private function_b8c3e9f4(*localclientnum, *oldval, newval, *bnewent, *
 }
 
 // Namespace namespace_f3a74bbc/namespace_f3a74bbc
-// Params 2, eflags: 0x44
+// Params 2, eflags: 0x46 linked
 // Checksum 0xf0eb058b, Offset: 0x638
 // Size: 0xf0
 function private function_dd2493cc(var_c5dfdae0, ...) {
@@ -75,7 +75,7 @@ function private function_dd2493cc(var_c5dfdae0, ...) {
 }
 
 // Namespace namespace_f3a74bbc/namespace_f3a74bbc
-// Params 7, eflags: 0x4
+// Params 7, eflags: 0x6 linked
 // Checksum 0xabf04611, Offset: 0x730
 // Size: 0xc4
 function private function_bb753058(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
@@ -87,7 +87,7 @@ function private function_bb753058(localclientnum, *oldval, newval, *bnewent, *b
 }
 
 // Namespace namespace_f3a74bbc/namespace_f3a74bbc
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x2b209f3a, Offset: 0x800
 // Size: 0x44
 function private on_localplayer_connect(localclientnum) {
@@ -96,7 +96,7 @@ function private on_localplayer_connect(localclientnum) {
 }
 
 // Namespace namespace_f3a74bbc/namespace_f3a74bbc
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0xf194b1a5, Offset: 0x850
 // Size: 0x52
 function private function_c8b7588d(*localclientnum) {

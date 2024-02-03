@@ -9,7 +9,7 @@
 class class_ec90ce81 : cluielem {
 
     // Namespace class_ec90ce81/sr_weapon_upgrade_menu
-    // Params 0, eflags: 0x8
+    // Params 0, eflags: 0xa linked
     // Checksum 0x7db406ec, Offset: 0x1f0
     // Size: 0x14
     __constructor() {
@@ -17,7 +17,7 @@ class class_ec90ce81 : cluielem {
     }
 
     // Namespace class_ec90ce81/sr_weapon_upgrade_menu
-    // Params 0, eflags: 0x90 class_linked
+    // Params 0, eflags: 0x92 linked class_linked
     // Checksum 0xfd685574, Offset: 0x328
     // Size: 0x14
     __destructor() {
@@ -25,7 +25,7 @@ class class_ec90ce81 : cluielem {
     }
 
     // Namespace namespace_ec90ce81/sr_weapon_upgrade_menu
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0xb22913ec, Offset: 0x260
     // Size: 0x3c
     function open(player, flags = 0) {
@@ -33,7 +33,7 @@ class class_ec90ce81 : cluielem {
     }
 
     // Namespace namespace_ec90ce81/sr_weapon_upgrade_menu
-    // Params 1, eflags: 0x0
+    // Params 1, eflags: 0x2 linked
     // Checksum 0x40cec21a, Offset: 0x2a8
     // Size: 0x24
     function close(player) {
@@ -41,7 +41,7 @@ class class_ec90ce81 : cluielem {
     }
 
     // Namespace namespace_ec90ce81/sr_weapon_upgrade_menu
-    // Params 2, eflags: 0x0
+    // Params 2, eflags: 0x2 linked
     // Checksum 0x8a14e737, Offset: 0x2d8
     // Size: 0x44
     function function_83d182e9(player, value) {
@@ -49,7 +49,7 @@ class class_ec90ce81 : cluielem {
     }
 
     // Namespace namespace_ec90ce81/sr_weapon_upgrade_menu
-    // Params 0, eflags: 0x0
+    // Params 0, eflags: 0x2 linked
     // Checksum 0x1e00a198, Offset: 0x210
     // Size: 0x44
     function setup_clientfields() {
@@ -60,7 +60,7 @@ class class_ec90ce81 : cluielem {
 }
 
 // Namespace sr_weapon_upgrade_menu/sr_weapon_upgrade_menu
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0xb438b474, Offset: 0xf0
 // Size: 0x34
 function register() {
@@ -70,7 +70,7 @@ function register() {
 }
 
 // Namespace sr_weapon_upgrade_menu/sr_weapon_upgrade_menu
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x40d59cb0, Offset: 0x130
 // Size: 0x38
 function open(player, flags = 0) {
@@ -78,7 +78,7 @@ function open(player, flags = 0) {
 }
 
 // Namespace sr_weapon_upgrade_menu/sr_weapon_upgrade_menu
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x6221b1b7, Offset: 0x170
 // Size: 0x1c
 function close(player) {
@@ -86,7 +86,7 @@ function close(player) {
 }
 
 // Namespace sr_weapon_upgrade_menu/sr_weapon_upgrade_menu
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xd7920db2, Offset: 0x198
 // Size: 0x1a
 function is_open(player) {
@@ -94,7 +94,7 @@ function is_open(player) {
 }
 
 // Namespace sr_weapon_upgrade_menu/sr_weapon_upgrade_menu
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xd0c609e6, Offset: 0x1c0
 // Size: 0x28
 function function_83d182e9(player, value) {

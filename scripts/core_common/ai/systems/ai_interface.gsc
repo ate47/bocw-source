@@ -44,7 +44,7 @@ function private _checkvalue(archetype, attributename, value) {
                 #/
             }
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             /#
                 assert("<unknown string>" + attribute[#"type"] + "<unknown string>" + attributename + "<unknown string>");
             #/
@@ -122,7 +122,7 @@ function private _initializelevelinterface(archetype) {
 #namespace ai;
 
 // Namespace ai/ai_interface
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x9a3fddf3, Offset: 0x880
 // Size: 0x26
 function createinterfaceforentity(entity) {
@@ -154,7 +154,7 @@ function hasaiattribute(entity, attribute) {
 }
 
 // Namespace ai/ai_interface
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x364f2d6e, Offset: 0x9c0
 // Size: 0x154
 function registerentityinterface(archetype, attribute, defaultvalue, callbackfunction) {
@@ -177,7 +177,7 @@ function registerentityinterface(archetype, attribute, defaultvalue, callbackfun
 }
 
 // Namespace ai/ai_interface
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0x9c3b4fdd, Offset: 0xb20
 // Size: 0x1bc
 function registermatchedinterface(archetype, attribute, defaultvalue, possiblevalues, callbackfunction) {

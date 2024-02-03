@@ -18,7 +18,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace weaponobjects/weaponobjects
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x98b8c2b9, Offset: 0x100
 // Size: 0x14
 function private function_70a657d8() {

@@ -131,7 +131,7 @@ function state_death_update(params) {
         case 1:
             vehicle_death::plane_crash();
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             vehicle_death::random_crash(params.vdir);
             break;
         }

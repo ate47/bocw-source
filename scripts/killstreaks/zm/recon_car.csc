@@ -17,7 +17,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace recon_car/recon_car
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x8f550722, Offset: 0x158
 // Size: 0x104
 function private function_70a657d8() {
@@ -32,7 +32,7 @@ function private function_70a657d8() {
 }
 
 // Namespace recon_car/recon_car
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x5bab9760, Offset: 0x268
 // Size: 0x1e
 function spawned(*localclientnum) {
@@ -40,7 +40,7 @@ function spawned(*localclientnum) {
 }
 
 // Namespace recon_car/recon_car
-// Params 7, eflags: 0x0
+// Params 7, eflags: 0x2 linked
 // Checksum 0x8a50b6b9, Offset: 0x290
 // Size: 0xe4
 function function_86e8d9af(localclientnum, *oldval, *newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {

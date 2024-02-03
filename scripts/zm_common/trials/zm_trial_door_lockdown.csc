@@ -64,7 +64,7 @@ function private zm_trial_door_lockdown(localclientnum, *oldval, newval, *bnewen
         case #"collision_player_wall_256x256x10":
             var_b1e1a2db = level._effect[#"hash_3ea271ae7eb7fdce"];
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             var_b1e1a2db = level._effect[#"hash_257bf4ae70b5a852"];
             break;
         }

@@ -692,7 +692,7 @@ function function_27028b8e(str_zone) {
     case #"zone_xxx_club_roof":
         var_601fee0 = #"hash_3399f0fdbae86fc9";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_601fee0 = undefined;
         break;
     }

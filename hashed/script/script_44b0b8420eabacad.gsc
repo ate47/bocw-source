@@ -371,7 +371,7 @@ function function_82ca1565(spawnpoint, gametype) {
     case #"spy":
         return is_true(spawnpoint.spy);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         /#
             assertmsg("<unknown string>" + gametype + "<unknown string>" + spawnpoint.origin[0] + "<unknown string>" + spawnpoint.origin[1] + "<unknown string>" + spawnpoint.origin[2]);
         #/
@@ -408,7 +408,7 @@ function function_e1a7c3d9(spawn_origin, spawn_angles) {
 }
 
 // Namespace spawning/namespace_48f955ce
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x163f8a74, Offset: 0x1608
 // Size: 0x44
 function function_754c78a6(func_callback) {
@@ -472,7 +472,7 @@ function function_7a87efaa() {
 }
 
 // Namespace spawning/namespace_48f955ce
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x941c0af3, Offset: 0x1880
 // Size: 0x14
 function function_6325a7c5() {

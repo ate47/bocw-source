@@ -1319,7 +1319,7 @@ function function_dc71582(var_f0412557) {
         var_6e938f0b = 10;
         self clientfield::set("" + #"hash_6324044c00c5672d", 4);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         var_6e938f0b = 10;
         self clientfield::set("" + #"hash_6324044c00c5672d", 4);
         break;
@@ -1352,7 +1352,7 @@ function function_89c363a(var_e3a675a4) {
     case 3:
         var_1d1fc2ce = 1;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
     wait(0.8);
@@ -1533,7 +1533,7 @@ function function_ed4a5d52(var_f0de9b92) {
     case #"nuke":
         var_9c0bf2db = #"p7_zm_power_up_nuke";
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
     return var_9c0bf2db;
@@ -2520,7 +2520,7 @@ function function_f905bbc1(n_num) {
     case 2:
         var_3709608a = 9;
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
     for (i = 1; i <= var_3709608a; i++) {
@@ -2932,7 +2932,7 @@ function cmd(cmd) {
         case #"hash_60d9b2ec2a80c5ae":
             thread_all(level.var_3ab17de8, &function_7e0ee279);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     #/

@@ -92,7 +92,7 @@ function function_fccba5d0(localclientnum, *oldval, newval, *bnewent, *binitials
         self.var_510ae6c9 = util::playfxontag(fieldname, #"hash_2fa753029cdd63bd", self, "tag_light_right_fx");
         self.var_4b81d3a7 = util::playfxontag(fieldname, #"hash_2fa753029cdd63bd", self, "tag_light_left_fx");
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         break;
     }
 }

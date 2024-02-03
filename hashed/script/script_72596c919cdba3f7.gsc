@@ -261,7 +261,7 @@ function function_2499fe1b(cmd) {
             function_9e3de60();
             level notify(#"hash_7e539f4178c9c27c");
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     #/

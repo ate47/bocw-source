@@ -26,7 +26,7 @@ function event_handler[level_init] main(*eventstruct) {
 }
 
 // Namespace zm_progress/zm_progress
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0x58f97391, Offset: 0x170
 // Size: 0x132
 function function_53a680b8(var_deac51dd, var_5301f4f1, var_13c55557, var_4737bddd, var_ac28bd17, var_3e17832) {
@@ -47,7 +47,7 @@ function function_53a680b8(var_deac51dd, var_5301f4f1, var_13c55557, var_4737bdd
 }
 
 // Namespace zm_progress/zm_progress
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0x23e18af, Offset: 0x2b0
 // Size: 0x22
 function function_163442cb(params, w_weapon) {
@@ -55,7 +55,7 @@ function function_163442cb(params, w_weapon) {
 }
 
 // Namespace zm_progress/zm_progress
-// Params 4, eflags: 0x4
+// Params 4, eflags: 0x6 linked
 // Checksum 0x712ffd3d, Offset: 0x2e0
 // Size: 0x26a
 function private function_89769800(params, unitrigger, b_start, var_c060d2c8) {
@@ -99,7 +99,7 @@ function private function_89769800(params, unitrigger, b_start, var_c060d2c8) {
 }
 
 // Namespace zm_progress/zm_progress
-// Params 3, eflags: 0x4
+// Params 3, eflags: 0x6 linked
 // Checksum 0x919a07e0, Offset: 0x558
 // Size: 0x3a
 function private function_1b125050(params, unitrigger, var_c060d2c8) {
@@ -107,7 +107,7 @@ function private function_1b125050(params, unitrigger, var_c060d2c8) {
 }
 
 // Namespace zm_progress/zm_progress
-// Params 3, eflags: 0x4
+// Params 3, eflags: 0x6 linked
 // Checksum 0xef5a14c8, Offset: 0x5a0
 // Size: 0x32
 function private function_a82534d(params, unitrigger, var_c060d2c8) {
@@ -115,7 +115,7 @@ function private function_a82534d(params, unitrigger, var_c060d2c8) {
 }
 
 // Namespace zm_progress/zm_progress
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0xb529e8fa, Offset: 0x5e0
 // Size: 0xce
 function private player_progress_bar_update(start_time, use_time) {
@@ -134,7 +134,7 @@ function private player_progress_bar_update(start_time, use_time) {
 }
 
 // Namespace zm_progress/zm_progress
-// Params 2, eflags: 0x4
+// Params 2, eflags: 0x6 linked
 // Checksum 0x683485a2, Offset: 0x6b8
 // Size: 0xa4
 function private player_progress_bar(start_time, use_time) {
@@ -147,7 +147,7 @@ function private player_progress_bar(start_time, use_time) {
 }
 
 // Namespace zm_progress/zm_progress
-// Params 2, eflags: 0x0
+// Params 2, eflags: 0x2 linked
 // Checksum 0xabb3ad1b, Offset: 0x768
 // Size: 0xf2
 function function_48098d30(player, params) {
@@ -165,7 +165,7 @@ function function_48098d30(player, params) {
 }
 
 // Namespace zm_progress/zm_progress
-// Params 3, eflags: 0x4
+// Params 3, eflags: 0x6 linked
 // Checksum 0x46d9a8cf, Offset: 0x868
 // Size: 0x476
 function private function_f8b39299(player, params, var_c060d2c8) {
@@ -259,7 +259,7 @@ function private function_f8b39299(player, params, var_c060d2c8) {
 }
 
 // Namespace zm_progress/zm_progress
-// Params 3, eflags: 0x4
+// Params 3, eflags: 0x6 linked
 // Checksum 0x6186cfce, Offset: 0xce8
 // Size: 0xa4
 function private function_4335011a(player, params, var_c060d2c8) {
@@ -274,7 +274,7 @@ function private function_4335011a(player, params, var_c060d2c8) {
 }
 
 // Namespace zm_progress/zm_progress
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0xeeaf845c, Offset: 0xd98
 // Size: 0xb4
 function progress_think(player, params, var_c060d2c8) {

@@ -10,7 +10,7 @@
 #namespace namespace_42457a0;
 
 // Namespace namespace_42457a0/namespace_42457a0
-// Params 6, eflags: 0x0
+// Params 6, eflags: 0x2 linked
 // Checksum 0x70d3bc53, Offset: 0xd0
 // Size: 0x386
 function function_d6863a3(inflictor, attacker, meansofdeath, weapon, aat, item) {
@@ -69,7 +69,7 @@ function function_d6863a3(inflictor, attacker, meansofdeath, weapon, aat, item) 
 }
 
 // Namespace namespace_42457a0/namespace_42457a0
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x8bb4eb24, Offset: 0x460
 // Size: 0xc4
 function function_1b3815a7(element) {
@@ -92,7 +92,7 @@ function function_1b3815a7(element) {
 }
 
 // Namespace namespace_42457a0/namespace_42457a0
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0xc19d5d0f, Offset: 0x530
 // Size: 0xdc
 function function_9caeb2f3(var_a4a310f7) {
@@ -109,7 +109,7 @@ function function_9caeb2f3(var_a4a310f7) {
 }
 
 // Namespace namespace_42457a0/namespace_42457a0
-// Params 13, eflags: 0x0
+// Params 13, eflags: 0x2 linked
 // Checksum 0x1f3465a9, Offset: 0x618
 // Size: 0x210
 function function_9fbcd067(element, inflictor, attacker, damage, *flags, *meansofdeath, *weapon, *vpoint, *vdir, *shitloc, *psoffsettime, *boneindex, *surfacetype) {
@@ -139,7 +139,7 @@ function function_9fbcd067(element, inflictor, attacker, damage, *flags, *meanso
 }
 
 // Namespace namespace_42457a0/namespace_42457a0
-// Params 11, eflags: 0x0
+// Params 11, eflags: 0x2 linked
 // Checksum 0x96d00a51, Offset: 0x830
 // Size: 0xde
 function function_601fabe9(element, amount, pos, attacker, inflictor, hitloc, mod, dflags, weapon, var_65c05877, var_9473a4eb) {

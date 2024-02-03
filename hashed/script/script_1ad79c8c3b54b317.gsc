@@ -15,7 +15,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace namespace_3bb7295f/namespace_3bb7295f
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0x841d7cf3, Offset: 0x100
 // Size: 0x6c
 function private function_70a657d8() {

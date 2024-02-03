@@ -404,7 +404,7 @@ function function_501ef65d(weapon) {
         snd::play("fly_bodyshield_reload_shotgun");
         wait(1);
         break;
-    case #"hash_defdefdefdefdef0":
+    default:
         snd::play("fly_bodyshield_reload_lmg");
         wait(2);
         break;

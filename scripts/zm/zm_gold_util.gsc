@@ -107,7 +107,7 @@ function function_72c803d3(cmd) {
         case #"hash_3a2f14069605556a":
             function_e76968e1(0);
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
     #/

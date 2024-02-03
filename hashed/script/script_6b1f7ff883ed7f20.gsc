@@ -11,7 +11,7 @@
 #namespace ammomod_cryofreeze;
 
 // Namespace ammomod_cryofreeze/ammomod_cryofreeze
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x1f09112b, Offset: 0x258
 // Size: 0x454
 function function_ab6c8a0b() {
@@ -38,13 +38,13 @@ function function_ab6c8a0b() {
 }
 
 // Namespace ammomod_cryofreeze/ammomod_cryofreeze
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x1aedefde, Offset: 0x6b8
 // Size: 0xdc
 function private function_a0c6cb5d(aat_name = "ammomod_cryofreeze") {
     switch (aat_name) {
     case #"ammomod_cryofreeze":
-    case #"hash_defdefdefdefdef0":
+    default:
         return 0;
         break;
     case #"ammomod_cryofreeze_1":
@@ -67,7 +67,7 @@ function private function_a0c6cb5d(aat_name = "ammomod_cryofreeze") {
 }
 
 // Namespace ammomod_cryofreeze/ammomod_cryofreeze
-// Params 8, eflags: 0x0
+// Params 8, eflags: 0x2 linked
 // Checksum 0x60014fe2, Offset: 0x7a0
 // Size: 0x324
 function result(death, attacker, mod, weapon, *var_fd90b0bb, vpoint, *shitloc, *boneindex = self.origin) {
@@ -109,7 +109,7 @@ function result(death, attacker, mod, weapon, *var_fd90b0bb, vpoint, *shitloc, *
 }
 
 // Namespace ammomod_cryofreeze/ammomod_cryofreeze
-// Params 1, eflags: 0x4
+// Params 1, eflags: 0x6 linked
 // Checksum 0x45207c50, Offset: 0xad0
 // Size: 0xc2
 function private function_3be79107(e_attacker) {
@@ -125,7 +125,7 @@ function private function_3be79107(e_attacker) {
 }
 
 // Namespace ammomod_cryofreeze/ammomod_cryofreeze
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0xced4c32b, Offset: 0xba0
 // Size: 0x35c
 function function_f00409f3(attacker, *mod, weapon, var_e1ec1eee = 0, tier = 0) {
@@ -177,7 +177,7 @@ function function_f00409f3(attacker, *mod, weapon, var_e1ec1eee = 0, tier = 0) {
 }
 
 // Namespace ammomod_cryofreeze/ammomod_cryofreeze
-// Params 3, eflags: 0x0
+// Params 3, eflags: 0x2 linked
 // Checksum 0x55d11c1d, Offset: 0xf08
 // Size: 0x21a
 function function_76d7d189(*e_attacker, *weapon, tier = 0) {
@@ -212,7 +212,7 @@ function function_76d7d189(*e_attacker, *weapon, tier = 0) {
 }
 
 // Namespace ammomod_cryofreeze/ammomod_cryofreeze
-// Params 0, eflags: 0x0
+// Params 0, eflags: 0x2 linked
 // Checksum 0x7964c9aa, Offset: 0x1130
 // Size: 0x7c
 function function_4279213e() {
@@ -228,7 +228,7 @@ function function_4279213e() {
 }
 
 // Namespace ammomod_cryofreeze/ammomod_cryofreeze
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0xbef72530, Offset: 0x11b8
 // Size: 0x114
 function function_6af83db3(attacker, mod, weapon, tier = 0) {
@@ -245,7 +245,7 @@ function function_6af83db3(attacker, mod, weapon, tier = 0) {
 }
 
 // Namespace ammomod_cryofreeze/ammomod_cryofreeze
-// Params 5, eflags: 0x0
+// Params 5, eflags: 0x2 linked
 // Checksum 0xd411edff, Offset: 0x12d8
 // Size: 0x238
 function function_9366890d(var_4589e270, var_23255fc5, attacker, mod, weapon) {

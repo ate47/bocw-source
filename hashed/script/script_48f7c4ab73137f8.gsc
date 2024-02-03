@@ -9,7 +9,7 @@
 class czm_laststand_client : cluielem {
 
     // Namespace czm_laststand_client/zm_laststand_client
-    // Params 0, eflags: 0xa linked
+    // Params 0, eflags: 0x8
     // Checksum 0x254d8a8c, Offset: 0x280
     // Size: 0x14
     __constructor() {
@@ -17,7 +17,7 @@ class czm_laststand_client : cluielem {
     }
 
     // Namespace czm_laststand_client/zm_laststand_client
-    // Params 0, eflags: 0x92 linked class_linked
+    // Params 0, eflags: 0x90 class_linked
     // Checksum 0x1be1d921, Offset: 0x4a8
     // Size: 0x14
     __destructor() {
@@ -25,7 +25,7 @@ class czm_laststand_client : cluielem {
     }
 
     // Namespace czm_laststand_client/zm_laststand_client
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x50ed0d85, Offset: 0x340
     // Size: 0x3c
     function open(player, flags = 0) {
@@ -33,7 +33,7 @@ class czm_laststand_client : cluielem {
     }
 
     // Namespace czm_laststand_client/zm_laststand_client
-    // Params 1, eflags: 0x2 linked
+    // Params 1, eflags: 0x0
     // Checksum 0xdb92b460, Offset: 0x388
     // Size: 0x24
     function close(player) {
@@ -41,7 +41,7 @@ class czm_laststand_client : cluielem {
     }
 
     // Namespace czm_laststand_client/zm_laststand_client
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x7f6c7503, Offset: 0x458
     // Size: 0x44
     function set_num_downs(player, value) {
@@ -49,7 +49,7 @@ class czm_laststand_client : cluielem {
     }
 
     // Namespace czm_laststand_client/zm_laststand_client
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0x7c3d1289, Offset: 0x3b8
     // Size: 0x44
     function set_bleedout_progress(player, value) {
@@ -57,7 +57,7 @@ class czm_laststand_client : cluielem {
     }
 
     // Namespace czm_laststand_client/zm_laststand_client
-    // Params 0, eflags: 0x2 linked
+    // Params 0, eflags: 0x0
     // Checksum 0xffaa57cc, Offset: 0x2a0
     // Size: 0x94
     function setup_clientfields() {
@@ -68,7 +68,7 @@ class czm_laststand_client : cluielem {
     }
 
     // Namespace czm_laststand_client/zm_laststand_client
-    // Params 2, eflags: 0x2 linked
+    // Params 2, eflags: 0x0
     // Checksum 0xd4222dc5, Offset: 0x408
     // Size: 0x44
     function set_revive_progress(player, value) {
@@ -78,7 +78,7 @@ class czm_laststand_client : cluielem {
 }
 
 // Namespace zm_laststand_client/zm_laststand_client
-// Params 0, eflags: 0x2 linked
+// Params 0, eflags: 0x0
 // Checksum 0x511d09ce, Offset: 0x120
 // Size: 0x34
 function register() {
@@ -88,7 +88,7 @@ function register() {
 }
 
 // Namespace zm_laststand_client/zm_laststand_client
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x22b7d0a0, Offset: 0x160
 // Size: 0x38
 function open(player, flags = 0) {
@@ -96,7 +96,7 @@ function open(player, flags = 0) {
 }
 
 // Namespace zm_laststand_client/zm_laststand_client
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xbeec1ac2, Offset: 0x1a0
 // Size: 0x1c
 function close(player) {
@@ -104,7 +104,7 @@ function close(player) {
 }
 
 // Namespace zm_laststand_client/zm_laststand_client
-// Params 1, eflags: 0x2 linked
+// Params 1, eflags: 0x0
 // Checksum 0xd0ca6291, Offset: 0x1c8
 // Size: 0x1a
 function is_open(player) {
@@ -112,7 +112,7 @@ function is_open(player) {
 }
 
 // Namespace zm_laststand_client/zm_laststand_client
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x672c06a3, Offset: 0x1f0
 // Size: 0x28
 function set_bleedout_progress(player, value) {
@@ -120,7 +120,7 @@ function set_bleedout_progress(player, value) {
 }
 
 // Namespace zm_laststand_client/zm_laststand_client
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0xf84c0d7f, Offset: 0x220
 // Size: 0x28
 function set_revive_progress(player, value) {
@@ -128,7 +128,7 @@ function set_revive_progress(player, value) {
 }
 
 // Namespace zm_laststand_client/zm_laststand_client
-// Params 2, eflags: 0x2 linked
+// Params 2, eflags: 0x0
 // Checksum 0x49ddf8f5, Offset: 0x250
 // Size: 0x28
 function set_num_downs(player, value) {

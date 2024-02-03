@@ -20,7 +20,7 @@ function private autoexec __init__system__() {
 }
 
 // Namespace zm_weap_molotov/zm_weap_molotov
-// Params 0, eflags: 0x4
+// Params 0, eflags: 0x6 linked
 // Checksum 0xf306998c, Offset: 0x158
 // Size: 0xdc
 function private function_70a657d8() {
@@ -32,7 +32,7 @@ function private function_70a657d8() {
 }
 
 // Namespace zm_weap_molotov/zm_weap_molotov
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x4e28e0c2, Offset: 0x240
 // Size: 0x13c
 function function_b107b600(position, var_efa24ea4, damageendtime, var_ac892ba9) {
@@ -50,7 +50,7 @@ function function_b107b600(position, var_efa24ea4, damageendtime, var_ac892ba9) 
 }
 
 // Namespace zm_weap_molotov/zm_weap_molotov
-// Params 8, eflags: 0x0
+// Params 8, eflags: 0x2 linked
 // Checksum 0x51e5e035, Offset: 0x388
 // Size: 0x41e
 function function_16a57018(damageendtime, owner, position, fireeffectarea, var_289a74bc, killcament, weapon, customsettings) {
@@ -98,7 +98,7 @@ function function_16a57018(damageendtime, owner, position, fireeffectarea, var_2
 }
 
 // Namespace zm_weap_molotov/zm_weap_molotov
-// Params 9, eflags: 0x0
+// Params 9, eflags: 0x2 linked
 // Checksum 0x5af7ada4, Offset: 0x7b0
 // Size: 0x248
 function trytoapplyfiredamage(target, owner, position, fireeffectarea, var_289a74bc, killcament, weapon, customsettings, start_time) {
@@ -133,7 +133,7 @@ function trytoapplyfiredamage(target, owner, position, fireeffectarea, var_289a7
 }
 
 // Namespace zm_weap_molotov/zm_weap_molotov
-// Params 8, eflags: 0x0
+// Params 8, eflags: 0x2 linked
 // Checksum 0x5dbf8de9, Offset: 0xa00
 // Size: 0x15a
 function function_8422dabd(*origin, killcament, *trace, *position, weapon, customsettings, owner, start_time) {
@@ -152,7 +152,7 @@ function function_8422dabd(*origin, killcament, *trace, *position, weapon, custo
 }
 
 // Namespace zm_weap_molotov/zm_weap_molotov
-// Params 4, eflags: 0x0
+// Params 4, eflags: 0x2 linked
 // Checksum 0x30029216, Offset: 0xb68
 // Size: 0x1fc
 function function_f0bbc1f4(attacker, var_b1b43d4c, var_fec8031e, var_900ddd04) {
@@ -174,7 +174,7 @@ function function_f0bbc1f4(attacker, var_b1b43d4c, var_fec8031e, var_900ddd04) {
 }
 
 // Namespace zm_weap_molotov/zm_weap_molotov
-// Params 1, eflags: 0x0
+// Params 1, eflags: 0x2 linked
 // Checksum 0x34152e0a, Offset: 0xd70
 // Size: 0x34
 function function_177886db(*notifyhash) {

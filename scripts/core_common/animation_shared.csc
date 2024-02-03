@@ -252,7 +252,7 @@ function call_notetrack_handler(str_note) {
             case 0:
                 self [[ func ]]();
                 break;
-            case #"hash_defdefdefdefdef0":
+            default:
                 /#
                     assertmsg("<unknown string>");
                 #/

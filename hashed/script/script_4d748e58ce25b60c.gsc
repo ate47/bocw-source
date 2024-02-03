@@ -1035,7 +1035,7 @@ function private function_6dc6e670(var_182c1d00, origin, player, *updir) {
         case 2:
             self namespace_83eb6304::function_3ecfde67("saw_explode");
             break;
-        case #"hash_defdefdefdefdef0":
+        default:
             break;
         }
         util::wait_network_frame();

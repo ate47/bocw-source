@@ -4,7 +4,7 @@
 #namespace globallogic_scriptmover;
 
 // Namespace globallogic_scriptmover/globallogic_scriptmover
-// Params 17, eflags: 0x0
+// Params 17, eflags: 0x2 linked
 // Checksum 0x65c1a878, Offset: 0x88
 // Size: 0x24c
 function function_8c7ec52f(einflictor, eattacker, idamage, idflags, smeansofdeath, weapon, var_fd90b0bb, vpoint, vdir, shitloc, vdamageorigin, psoffsettime, iboneindex, imodelindex, var_934bdd11, isurfacetype, vsurfacenormal) {
