@@ -55,7 +55,9 @@ function function_140c21d6(localclientnum, *oldval, newval, *bnewent, *binitials
         self.fx_tag = util::spawn_model(fieldname, "tag_origin", self.origin + var_d263d14a, self.angles + var_9e6bf193);
         self.fx_tag linkto(self);
         self.fx_tag.var_c6cd7dce = util::playfxontag(fieldname, #"hash_1863acf2e22ff6ba", self.fx_tag, "tag_origin");
-    } else if (isdefined(self.fx_tag.var_c6cd7dce)) {
+        return;
+    }
+    if (isdefined(self.fx_tag.var_c6cd7dce)) {
         killfx(fieldname, self.fx_tag.var_c6cd7dce);
         self.fx_tag.var_c6cd7dce = undefined;
         self.fx_tag delete();

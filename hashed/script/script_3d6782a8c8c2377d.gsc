@@ -103,9 +103,13 @@ function function_409612d9(event, param1, *param2, *param3, *param4) {
         message = param4;
         if (message == "left_arm_broken") {
             self.var_bb240734 = 1;
-        } else if (message == "right_arm_broken") {
+            return;
+        }
+        if (message == "right_arm_broken") {
             self.var_a13db918 = 1;
-        } else if (message == "javelin_broken") {
+            return;
+        }
+        if (message == "javelin_broken") {
             self.var_2950a6c6 = 1;
         }
     }
@@ -243,9 +247,9 @@ function function_a5d3ca57() {
                 self fireweapon(2);
                 wait(firetime);
             }
-        } else {
-            waitframe(1);
+            continue;
         }
+        waitframe(1);
     }
 }
 
@@ -751,13 +755,13 @@ function function_e3489f4e() {
             } else {
                 wait(randomfloatrange(0.2, 0.3) * self.var_dfc92f99);
             }
-        } else {
-            spinning = 0;
-            self setturretspinning(0);
-            self turretcleartarget(1);
-            self turretcleartarget(2);
-            wait(0.4);
+            continue;
         }
+        spinning = 0;
+        self setturretspinning(0);
+        self turretcleartarget(1);
+        self turretcleartarget(2);
+        wait(0.4);
     }
 }
 
@@ -826,11 +830,11 @@ function function_20b4a129() {
             } else {
                 self thread function_7815c554(0);
             }
-        } else {
-            self turretcleartarget(1);
-            self turretcleartarget(2);
-            wait(0.4);
+            continue;
         }
+        self turretcleartarget(1);
+        self turretcleartarget(2);
+        wait(0.4);
     }
 }
 
@@ -861,20 +865,23 @@ function function_73fc60dc() {
                 enemy = self.enemy;
                 if (i == 1 && isdefined(self.gunner3enemy)) {
                     enemy = self.gunner3enemy;
-                    jumpiffalse(enemy == self.enemy) LOC_00000112;
-                } else if (i == 2 && isdefined(self.gunner2enemy)) {
-                    enemy = self.gunner2enemy;
-                    jumpiffalse(enemy == self.enemy) LOC_00000152;
-                } else {
-                LOC_00000152:
-                    if (distance2dsquared(self.origin, enemy.origin) < function_a3f6cdac(300)) {
+                    if (enemy == self.enemy) {
                         continue;
                     }
-                    self thread vehicle_ai::javelin_losetargetatrighttime(enemy, 2);
-                    self fireweapon(3, enemy);
-                    fired = 1;
-                    wait(0.8);
                 }
+                if (i == 2 && isdefined(self.gunner2enemy)) {
+                    enemy = self.gunner2enemy;
+                    if (enemy == self.enemy) {
+                        continue;
+                    }
+                }
+                if (distance2dsquared(self.origin, enemy.origin) < function_a3f6cdac(300)) {
+                    continue;
+                }
+                self thread vehicle_ai::javelin_losetargetatrighttime(enemy, 2);
+                self fireweapon(3, enemy);
+                fired = 1;
+                wait(0.8);
             }
             if (fired) {
                 cooldown = 15;

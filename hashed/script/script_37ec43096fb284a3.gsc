@@ -68,9 +68,9 @@ function function_a380fe5(*localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwastimejump) {
         self playrenderoverridebundle(var_ee6bcd51);
         self function_78233d29(var_ee6bcd51, "", "Scale", 1);
-    } else {
-        self stoprenderoverridebundle(var_ee6bcd51);
+        return;
     }
+    self stoprenderoverridebundle(var_ee6bcd51);
 }
 
 // Namespace namespace_d0ab5955/namespace_d0ab5955
@@ -84,9 +84,9 @@ function function_ec0b7087(localclientnum, *oldval, newval, *bnewent, *binitials
         if (isdefined(var_f6b2bc6f)) {
             if (var_ea0ed69c.id == bwastimejump) {
                 var_f6b2bc6f function_704c070e(fieldname);
-            } else {
-                var_f6b2bc6f function_53a26ea0(fieldname);
+                continue;
             }
+            var_f6b2bc6f function_53a26ea0(fieldname);
         }
     }
 }
@@ -133,9 +133,9 @@ function private function_947e99a9(localclientnum, *oldval, newval, *bnewent, *b
     oobmodel = getuimodel(function_1df4c3b0(fieldname, #"hash_6f4b11a0bee9b73d"), "outOfBoundsEndTime");
     if (bwastimejump > 0) {
         setuimodelvalue(oobmodel, getservertime(0, 1) + level.oob_timelimit_ms);
-    } else {
-        setuimodelvalue(oobmodel, 0);
+        return;
     }
+    setuimodelvalue(oobmodel, 0);
 }
 
 // Namespace namespace_d0ab5955/namespace_d0ab5955

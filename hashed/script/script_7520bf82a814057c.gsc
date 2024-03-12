@@ -64,19 +64,25 @@ class czm_game_over : cluielem {
     function set_state(localclientnum, state_name) {
         if (#"defaultstate" == state_name) {
             [[ self ]]->set_data(localclientnum, "_state", 0);
-        } else if (#"hash_4677c7e6d02d1a65" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 1);
-        } else if (#"hash_5f1b73095bbb3a7a" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 2);
-        } else if (#"hash_6893db9b6c7b5a58" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 3);
-        } else {
-            /#
-                /#
-                    assertmsg("<unknown string>");
-                #/
-            #/
+            return;
         }
+        if (#"hash_4677c7e6d02d1a65" == state_name) {
+            [[ self ]]->set_data(localclientnum, "_state", 1);
+            return;
+        }
+        if (#"hash_5f1b73095bbb3a7a" == state_name) {
+            [[ self ]]->set_data(localclientnum, "_state", 2);
+            return;
+        }
+        if (#"hash_6893db9b6c7b5a58" == state_name) {
+            [[ self ]]->set_data(localclientnum, "_state", 3);
+            return;
+        }
+        /#
+            /#
+                assertmsg("<unknown string>");
+            #/
+        #/
     }
 
     // Namespace czm_game_over/zm_game_over

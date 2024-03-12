@@ -258,14 +258,14 @@ function function_a59cd1c9() {
                             }
                             level.var_c55064fd[var_672c77b1].next[level.var_c55064fd[var_672c77b1].next.size] = struct.name;
                         }
-                    } else {
-                        if (!isdefined(level.var_c55064fd[#"_default"].next)) {
-                            level.var_c55064fd[#"_default"].next = [];
-                        } else if (!isarray(level.var_c55064fd[#"_default"].next)) {
-                            level.var_c55064fd[#"_default"].next = array(level.var_c55064fd[#"_default"].next);
-                        }
-                        level.var_c55064fd[#"_default"].next[level.var_c55064fd[#"_default"].next.size] = struct.name;
+                        continue;
                     }
+                    if (!isdefined(level.var_c55064fd[#"_default"].next)) {
+                        level.var_c55064fd[#"_default"].next = [];
+                    } else if (!isarray(level.var_c55064fd[#"_default"].next)) {
+                        level.var_c55064fd[#"_default"].next = array(level.var_c55064fd[#"_default"].next);
+                    }
+                    level.var_c55064fd[#"_default"].next[level.var_c55064fd[#"_default"].next.size] = struct.name;
                 }
             } else {
                 if (!isdefined(level.var_c55064fd[#"_default"].next)) {
@@ -410,8 +410,7 @@ function function_abaeef51(str, var_d5779ab5, var_54e5e046) {
 // Size: 0x152
 function function_16ad9e86(table, levelname, var_4469951e = "") {
     index = 0;
-    row = tablelookuprow(table, index);
-    while (isdefined(row)) {
+    for (row = tablelookuprow(table, index); isdefined(row); row = tablelookuprow(table, index)) {
         if (row[0] == levelname && row[1] == var_4469951e) {
             skipto = row[2];
             var_672c77b1 = row[3];
@@ -421,7 +420,6 @@ function function_16ad9e86(table, levelname, var_4469951e = "") {
             function_9c003a50(skipto, &function_9e68c55e, locstr, undefined, var_672c77b1, var_89f09f8d);
         }
         index++;
-        row = tablelookuprow(table, index);
     }
 }
 
@@ -514,7 +512,9 @@ function function_d037bbec(name, starting) {
         foreach (element in name) {
             function_d037bbec(element, starting);
         }
-    } else if (isdefined(level.var_c55064fd[name])) {
+        return;
+    }
+    if (isdefined(level.var_c55064fd[name])) {
         if (!is_true(level.var_c55064fd[name].var_9dd617f2)) {
             if (!isinarray(level.var_28c22d88, name)) {
                 if (!isdefined(level.var_28c22d88)) {
@@ -566,7 +566,9 @@ function function_60288de7(name, starting) {
         foreach (element in name) {
             function_60288de7(element, starting);
         }
-    } else if (isdefined(level.var_c55064fd[name])) {
+        return;
+    }
+    if (isdefined(level.var_c55064fd[name])) {
         var_7d62f656 = 0;
         if (is_true(level.var_c55064fd[name].var_9dd617f2)) {
             var_7d62f656 = 1;

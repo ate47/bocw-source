@@ -66,15 +66,17 @@ class class_ba33e0c1 : cluielem {
     function set_state(player, state_name) {
         if (#"defaultstate" == state_name) {
             player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 0);
-        } else if (#"hash_5fba3d476e0b33f8" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 1);
-        } else {
-            /#
-                /#
-                    assertmsg("<unknown string>");
-                #/
-            #/
+            return;
         }
+        if (#"hash_5fba3d476e0b33f8" == state_name) {
+            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 1);
+            return;
+        }
+        /#
+            /#
+                assertmsg("<unknown string>");
+            #/
+        #/
     }
 
     // Namespace namespace_ba33e0c1/encodedradio_usebar

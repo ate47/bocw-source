@@ -118,7 +118,9 @@ function private function_73773e63() {
                     struct.var_22043f8e = target.origin;
                     struct.var_163558df = target.var_ffd3022f;
                     function_91d135a3(struct.origin, target.origin, "rappel", struct);
-                } else if (isdefined(struct.var_b4a3c7c5) && isdefined(target.var_b4a3c7c5)) {
+                    continue;
+                }
+                if (isdefined(struct.var_b4a3c7c5) && isdefined(target.var_b4a3c7c5)) {
                     struct.var_22043f8e = target.origin;
                     struct.var_163558df = target.var_b4a3c7c5;
                     function_91d135a3(struct.origin, target.origin, "zipline", struct);
@@ -747,25 +749,25 @@ function private function_b3069b6c(target) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xa5eff28d, Offset: 0x3448
 // Size: 0x19c
-function function_fe23c655(var_8787728e, var_5f3b05e8) {
-    if (!(isdefined(var_8787728e) && isdefined(var_5f3b05e8))) {
+function function_fe23c655(var_8787728e, str_target_zone) {
+    if (!(isdefined(var_8787728e) && isdefined(str_target_zone))) {
         return;
     }
     if (self function_72371f2a() || aishouldleap(self) || aiisleaping(self)) {
         /#
             if (getdvarint(#"hash_6a18a97ccb2ee1d8", 0)) {
-                println("<unknown string>" + "<unknown string>" + self getentitynumber() + "<unknown string>" + var_8787728e + "<unknown string>" + var_5f3b05e8 + "<unknown string>");
+                println("<unknown string>" + "<unknown string>" + self getentitynumber() + "<unknown string>" + var_8787728e + "<unknown string>" + str_target_zone + "<unknown string>");
             }
         #/
-        self.var_7df7df47 = var_5f3b05e8;
-    } else {
-        /#
-            if (getdvarint(#"hash_6a18a97ccb2ee1d8", 0)) {
-                println("<unknown string>" + "<unknown string>" + self getentitynumber() + "<unknown string>" + var_8787728e + "<unknown string>" + var_5f3b05e8);
-            }
-        #/
-        self function_a6b0387d(var_8787728e, var_5f3b05e8);
+        self.var_7df7df47 = str_target_zone;
+        return;
     }
+    /#
+        if (getdvarint(#"hash_6a18a97ccb2ee1d8", 0)) {
+            println("<unknown string>" + "<unknown string>" + self getentitynumber() + "<unknown string>" + var_8787728e + "<unknown string>" + str_target_zone);
+        }
+    #/
+    self function_a6b0387d(var_8787728e, str_target_zone);
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
@@ -792,7 +794,9 @@ function function_3113dfa4() {
         if (!self function_951ed389()) {
             self function_236cda12();
         }
-    } else if (var_182df905.type == "ladder") {
+        return;
+    }
+    if (var_182df905.type == "ladder") {
         self function_d21249bf();
     }
 }
@@ -1004,8 +1008,7 @@ function private function_18867744(navmeshpoint, var_7d6b86d8) {
 function private function_550876f3(start_node) {
     path = [];
     path[path.size] = start_node;
-    target = start_node;
-    while (isdefined(target.target)) {
+    for (target = start_node; isdefined(target.target); target = var_a44bbc63) {
         var_a44bbc63 = struct::get(target.target, "targetname");
         if (!isdefined(var_a44bbc63)) {
             break;
@@ -1018,7 +1021,6 @@ function private function_550876f3(start_node) {
             return undefined;
         }
         path[path.size] = var_a44bbc63;
-        target = var_a44bbc63;
     }
     if (path.size > 1) {
         return path[path.size - 1];
@@ -1146,19 +1148,19 @@ function private function_d21249bf() {
 // Size: 0x116
 function private function_91d135a3(start_pos, end_pos, type, var_7d6b86d8) {
     str_zone = zm_zonemgr::get_zone_from_position(start_pos, 1);
-    var_5f3b05e8 = zm_zonemgr::get_zone_from_position(end_pos, 1);
-    if (!isdefined(str_zone) || !isdefined(var_5f3b05e8)) {
+    str_target_zone = zm_zonemgr::get_zone_from_position(end_pos, 1);
+    if (!isdefined(str_zone) || !isdefined(str_target_zone)) {
         return;
     }
     if (!isdefined(level.var_87660cfd)) {
         level.var_87660cfd = [];
     }
-    if (!isdefined(level.var_87660cfd[var_5f3b05e8])) {
-        level.var_87660cfd[var_5f3b05e8] = [];
+    if (!isdefined(level.var_87660cfd[str_target_zone])) {
+        level.var_87660cfd[str_target_zone] = [];
     }
     var_7d6b86d8.str_zone = str_zone;
-    var_7d6b86d8.var_5f3b05e8 = var_5f3b05e8;
-    level.var_87660cfd[var_5f3b05e8][str_zone] = {#var_7d6b86d8:var_7d6b86d8, #type:type};
+    var_7d6b86d8.str_target_zone = str_target_zone;
+    level.var_87660cfd[str_target_zone][str_zone] = {#var_7d6b86d8:var_7d6b86d8, #type:type};
 }
 
 // Namespace namespace_47c5b560/namespace_47c5b560
@@ -1173,9 +1175,9 @@ function function_fcfdadcd() {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x92cb569d, Offset: 0x4898
 // Size: 0x30
-function private function_512cbdfa(var_5f3b05e8) {
+function private function_512cbdfa(str_target_zone) {
     if (isdefined(level.var_87660cfd)) {
-        return level.var_87660cfd[var_5f3b05e8];
+        return level.var_87660cfd[str_target_zone];
     }
     return undefined;
 }

@@ -253,9 +253,9 @@ function function_12b45f48(var_7acab93a, team) {
                 if (var_7acab93a != trigger) {
                     return trigger;
                 }
-            } else {
-                return trigger;
+                continue;
             }
+            return trigger;
         }
     }
     return undefined;
@@ -303,7 +303,9 @@ function function_516794d8(grenadeent, var_7e6e7f9f) {
                         player thread function_78d7002(var_7e6e7f9f, owner, grenadeent);
                     }
                 }
-            } else if (isdefined(player.var_1b05dcde)) {
+                continue;
+            }
+            if (isdefined(player.var_1b05dcde)) {
                 player function_9eda41cd(var_160d2855, var_7e6e7f9f, owner);
             }
         }

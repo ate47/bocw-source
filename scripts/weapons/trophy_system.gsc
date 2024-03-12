@@ -246,60 +246,60 @@ function trophyactive(owner) {
                 continue;
             }
             if (grenade.weapon == self.weapon) {
-                jumpiffalse(is_false(self.trophysystemstationary) && is_true(grenade.trophysystemstationary)) LOC_0000022a;
-            } else {
-            LOC_0000022a:
-                if (!isdefined(grenade.owner)) {
-                    grenade.owner = getmissileowner(grenade);
-                }
-                if (!isdefined(grenade.owner)) {
+                if (is_false(self.trophysystemstationary) && is_true(grenade.trophysystemstationary)) {
                     continue;
-                }
-                if (level.teambased) {
-                    if (!grenade.owner util::isenemyteam(owner.team)) {
-                        continue;
-                    }
-                } else if (grenade.owner == owner) {
-                    continue;
-                }
-                var_a3e00632 = bullettracepassed(grenade.origin, traceposition, 0, self, grenade, 0, 1);
-                if (!var_a3e00632) {
-                    waitframe(1);
-                } else {
-                    fwd = vectornormalize(grenade.origin - self.origin);
-                    if (fwd == (0, 0, 0)) {
-                        fwd = (1, 0, 0);
-                    }
-                    angles = vectortoangles(fwd);
-                    up = anglestoup(angles);
-                    distance = distance(grenade.origin, traceposition);
-                    if (distance > 425) {
-                        fx = #"hash_477d0da44d77c340";
-                    } else if (distance > 325) {
-                        fx = #"hash_509348a452bc270b";
-                    } else if (distance > 225) {
-                        fx = #"hash_7be30fa46b44c382";
-                    } else if (distance > 125) {
-                        fx = #"hash_4f94aa47089274d";
-                    } else {
-                        fx = #"hash_6a2339a461182aac";
-                    }
-                    playfx(fx, traceposition, fwd, up);
-                    self playsound(#"hash_59af500c63ca80ac");
-                    if (getdvarint(#"player_sustainammo", 0) == 0) {
-                        if (!isdefined(self.ammo)) {
-                            self.ammo = 0;
-                        }
-                        self.ammo--;
-                    }
-                    if (isdefined(level.var_ccfcde75)) {
-                        owner thread [[ level.var_ccfcde75 ]](self, grenade);
-                    }
-                    owner projectileexplode(grenade, self, fwd, up);
-                    self.var_bf03cf85++;
-                    break;
                 }
             }
+            if (!isdefined(grenade.owner)) {
+                grenade.owner = getmissileowner(grenade);
+            }
+            if (!isdefined(grenade.owner)) {
+                continue;
+            }
+            if (level.teambased) {
+                if (!grenade.owner util::isenemyteam(owner.team)) {
+                    continue;
+                }
+            } else if (grenade.owner == owner) {
+                continue;
+            }
+            var_a3e00632 = bullettracepassed(grenade.origin, traceposition, 0, self, grenade, 0, 1);
+            if (!var_a3e00632) {
+                waitframe(1);
+                continue;
+            }
+            fwd = vectornormalize(grenade.origin - self.origin);
+            if (fwd == (0, 0, 0)) {
+                fwd = (1, 0, 0);
+            }
+            angles = vectortoangles(fwd);
+            up = anglestoup(angles);
+            distance = distance(grenade.origin, traceposition);
+            if (distance > 425) {
+                fx = #"hash_477d0da44d77c340";
+            } else if (distance > 325) {
+                fx = #"hash_509348a452bc270b";
+            } else if (distance > 225) {
+                fx = #"hash_7be30fa46b44c382";
+            } else if (distance > 125) {
+                fx = #"hash_4f94aa47089274d";
+            } else {
+                fx = #"hash_6a2339a461182aac";
+            }
+            playfx(fx, traceposition, fwd, up);
+            self playsound(#"hash_59af500c63ca80ac");
+            if (getdvarint(#"player_sustainammo", 0) == 0) {
+                if (!isdefined(self.ammo)) {
+                    self.ammo = 0;
+                }
+                self.ammo--;
+            }
+            if (isdefined(level.var_ccfcde75)) {
+                owner thread [[ level.var_ccfcde75 ]](self, grenade);
+            }
+            owner projectileexplode(grenade, self, fwd, up);
+            self.var_bf03cf85++;
+            break;
         }
         if (self.ammo <= 0) {
             if (self.var_bf03cf85 > 1) {
@@ -567,9 +567,9 @@ function ammo_weapon_pickup(ammo) {
         if (isdefined(self._trophy_system_ammo1)) {
             self._trophy_system_ammo2 = self._trophy_system_ammo1;
             self._trophy_system_ammo1 = ammo;
-        } else {
-            self._trophy_system_ammo1 = ammo;
+            return;
         }
+        self._trophy_system_ammo1 = ammo;
     }
 }
 

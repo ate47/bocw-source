@@ -40,11 +40,15 @@ function function_1fad5dd0(localclientnum, *oldval, newval, *bnewent, *binitials
         self.fx = util::playfxontag(fieldname, #"hash_76a47d3490330bb6", self, "tag_origin");
         self.sfx = self playloopsound("zmb_darkaether_portal_lp", undefined, vectorscale((1, 0, 0), 25));
         self function_bc183609(fieldname);
-    } else if (bwastimejump == 2) {
+        return;
+    }
+    if (bwastimejump == 2) {
         self.fx = util::playfxontag(fieldname, #"hash_11996c3130b523ff", self, "tag_origin");
         self.sfx = self playloopsound("zmb_darkaether_portal_lp", undefined, vectorscale((1, 0, 0), 25));
         self function_bc183609(fieldname);
-    } else if (bwastimejump == 0) {
+        return;
+    }
+    if (bwastimejump == 0) {
         if (isdefined(self.fx)) {
             stopfx(fieldname, self.fx);
             self.fx = undefined;

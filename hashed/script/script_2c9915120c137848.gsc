@@ -200,7 +200,7 @@ function function_9592df27() {
                     }
                     self.var_152b081b[self.var_152b081b.size] = pickupitem;
                 }
-                break;
+                continue;
             }
         }
     }
@@ -264,7 +264,7 @@ function function_92bae57c() {
                     }
                     self.var_152b081b[self.var_152b081b.size] = pickupitem;
                 }
-                break;
+                continue;
             }
         }
     }

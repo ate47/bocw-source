@@ -18,9 +18,9 @@ function cpower_print(slot, str) {
         }
         if (getdvarint(#"scr_cpower_debug_prints", 0) > 0) {
             self iprintlnbold(toprint);
-        } else {
-            println(self.playername + "<unknown string>" + weaponname + "<unknown string>" + toprint);
+            return;
         }
+        println(self.playername + "<unknown string>" + weaponname + "<unknown string>" + toprint);
     #/
 }
 
@@ -199,11 +199,11 @@ function power_loss_event_took_damage(eattacker, *einflictor, *weapon, *smeansof
                 if (self._gadgets_player[slot].gadget_flickerondamage > 0) {
                     self ability_gadgets::setflickering(slot, self._gadgets_player[slot].gadget_flickerondamage);
                 }
-            } else {
-                powerloss = baseloss * self._gadgets_player[slot].gadget_powerofflossondamage;
-                if (powerloss > 0) {
-                    self power_loss_event(slot, smeansofdeath, powerloss, "took damage");
-                }
+                continue;
+            }
+            powerloss = baseloss * self._gadgets_player[slot].gadget_powerofflossondamage;
+            if (powerloss > 0) {
+                self power_loss_event(slot, smeansofdeath, powerloss, "took damage");
             }
         }
     }

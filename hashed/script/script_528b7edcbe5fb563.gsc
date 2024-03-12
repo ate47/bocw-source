@@ -310,7 +310,9 @@ function private function_fccfb0af(loadoutclass, &var_19546df5, var_38e0e278, co
             var_b8a59e38++;
             var_41a600fd = var_41a600fd | groupname == #"optic";
             arrayremoveindex(groupnames, groupindex, 0);
-        } else if (attachments.size <= 0) {
+            continue;
+        }
+        if (attachments.size <= 0) {
             arrayremoveindex(groupnames, groupindex, 0);
         }
     }
@@ -366,17 +368,17 @@ function private function_13aa0d3(bonuscard, bonuses) {
     switch (bonuscard) {
     case #"hash_44e17bf715d7ac82":
         bonuses.var_1c89585f = 1;
-        break;
+        return;
     case #"hash_639ebbcda56447e7":
         bonuses.var_c38351d8 = 1;
         bonuses.var_3f5d0ded = 1;
-        break;
+        return;
     case #"bonuscard_primary_gunfighter":
         bonuses.var_e22b188d = 1;
-        break;
+        return;
     case #"hash_4c417275f7523978":
         bonuses.extraperks = 1;
-        break;
+        return;
     }
 }
 
@@ -404,7 +406,9 @@ function private function_20d254c4(var_543fda24, statindexoffset, overridedvar =
     foreach (item in var_543fda24) {
         if (!isdefined(item.name)) {
             names[names.size] = #"none";
-        } else if (function_f83425a6(item.name) && !isitemrestricted(item.name)) {
+            continue;
+        }
+        if (function_f83425a6(item.name) && !isitemrestricted(item.name)) {
             itemindex = getitemindexfromref(item.name);
             if (itemindex > 0) {
                 iteminfo = getunlockableiteminfofromindex(itemindex, statindexoffset);
@@ -501,13 +505,13 @@ function private function_3dd3f3b6() {
                         }
                         slotcount[var_bed036f1][itemname]++;
                     }
-                } else {
-                    itemname = bot function_b958b70d(0, slot);
-                    if (!isdefined(slotcount[slot][itemname])) {
-                        slotcount[slot][itemname] = 0;
-                    }
-                    slotcount[slot][itemname]++;
+                    continue;
                 }
+                itemname = bot function_b958b70d(0, slot);
+                if (!isdefined(slotcount[slot][itemname])) {
+                    slotcount[slot][itemname] = 0;
+                }
+                slotcount[slot][itemname]++;
             }
             x = 30;
             foreach (team, slotcount in var_3342d7a5) {

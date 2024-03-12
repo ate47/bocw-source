@@ -41,10 +41,10 @@ function function_18135b72(callback, data) {
         for (i = 0; i < level.var_1bebdc8e[callback].size; i++) {
             thread [[ level.var_1bebdc8e[callback][i] ]](data);
         }
-    } else {
-        for (i = 0; i < level.var_1bebdc8e[callback].size; i++) {
-            thread [[ level.var_1bebdc8e[callback][i] ]]();
-        }
+        return;
+    }
+    for (i = 0; i < level.var_1bebdc8e[callback].size; i++) {
+        thread [[ level.var_1bebdc8e[callback][i] ]]();
     }
 }
 

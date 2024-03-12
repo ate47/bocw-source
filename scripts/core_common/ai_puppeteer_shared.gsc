@@ -410,15 +410,15 @@ function ai_puppeteer_create_hud() {
             level.puppeteer_hud_shoot settext("<unknown string>");
             level.puppeteer_hud_teleport settext("<unknown string>");
             level.var_33b22db3 settext("<unknown string>");
-        } else {
-            level.puppeteer_hud_select settext("<unknown string>");
-            level.puppeteer_hud_goto settext("<unknown string>");
-            level.var_d87fff95 settext("<unknown string>");
-            level.var_b6a95fbe settext("<unknown string>");
-            level.puppeteer_hud_shoot settext("<unknown string>");
-            level.puppeteer_hud_teleport settext("<unknown string>");
-            level.var_33b22db3 settext("<unknown string>");
+            return;
         }
+        level.puppeteer_hud_select settext("<unknown string>");
+        level.puppeteer_hud_goto settext("<unknown string>");
+        level.var_d87fff95 settext("<unknown string>");
+        level.var_b6a95fbe settext("<unknown string>");
+        level.puppeteer_hud_shoot settext("<unknown string>");
+        level.puppeteer_hud_teleport settext("<unknown string>");
+        level.var_33b22db3 settext("<unknown string>");
     #/
 }
 

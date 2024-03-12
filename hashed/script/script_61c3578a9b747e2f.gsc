@@ -105,11 +105,15 @@ function function_1e0fa475(weapon, var_2b003a39, var_5baceff5, n_duration) {
             }
             if (self function_6c7755f9(player)) {
                 player thread function_5bcee875(self, weapon, var_5baceff5, var_2b003a39);
-            } else if (self function_6c7755f9(player, 1) && !isdefined(player.var_65a13a0f)) {
+                continue;
+            }
+            if (self function_6c7755f9(player, 1) && !isdefined(player.var_65a13a0f)) {
                 player.var_23fa23a9 = 1;
                 player.var_65a13a0f = self;
                 player clientfield::set("" + #"hash_1668fcf85f7c231", 3);
-            } else if (!self function_6c7755f9(player, 1, 0) && is_true(player.var_60b31640) && is_true(player.var_23fa23a9) && player.var_65a13a0f === self) {
+                continue;
+            }
+            if (!self function_6c7755f9(player, 1, 0) && is_true(player.var_60b31640) && is_true(player.var_23fa23a9) && player.var_65a13a0f === self) {
                 n_current_time = gettime();
                 player clientfield::set("" + #"hash_1668fcf85f7c231", 1);
                 player.var_23fa23a9 = undefined;
@@ -234,7 +238,6 @@ function function_165a06f0(player_source, var_2b003a39, var_5baceff5, weapon) {
             case #"hash_3d62bbc92bbcabf9":
             case #"hash_3d62bcc92bbcadac":
                 return 0;
-                break;
             }
         } else if (self.var_6f84b820 === #"special") {
             switch (weapon.name) {
@@ -242,7 +245,6 @@ function function_165a06f0(player_source, var_2b003a39, var_5baceff5, weapon) {
             case #"hash_3d62b9c92bbca893":
             case #"hash_3d62bac92bbcaa46":
                 return 0;
-                break;
             }
         }
         if (distance(self.origin, player_source.origin) < var_2b003a39) {

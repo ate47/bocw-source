@@ -36,9 +36,9 @@ function function_dcf22669() {
     namespace_cf4aa5f0::function_470d684a("default");
     if (level clientfield::get("zombie_power_on")) {
         namespace_cf4aa5f0::function_470d684a("power_on_immediate");
-    } else {
-        namespace_cf4aa5f0::function_470d684a("power_on");
+        return;
     }
+    namespace_cf4aa5f0::function_470d684a("power_on");
 }
 
 // Namespace namespace_297ae820/namespace_297ae820
@@ -69,9 +69,9 @@ function function_c5a7e457(*localclientnum, *oldval, newval, *bnewent, *binitial
 function function_bdf1c128(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         namespace_cf4aa5f0::function_470d684a("sq_rcxd_challenge_light_on");
-    } else {
-        namespace_cf4aa5f0::function_470d684a("sq_rcxd_challenge_light_off");
+        return;
     }
+    namespace_cf4aa5f0::function_470d684a("sq_rcxd_challenge_light_off");
 }
 
 // Namespace namespace_297ae820/namespace_297ae820
@@ -81,9 +81,9 @@ function function_bdf1c128(*localclientnum, *oldval, newval, *bnewent, *binitial
 function pistol_light_on(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         namespace_cf4aa5f0::function_470d684a("pistol_light_on");
-    } else {
-        namespace_cf4aa5f0::function_470d684a("pistol_light_off");
+        return;
     }
+    namespace_cf4aa5f0::function_470d684a("pistol_light_off");
 }
 
 // Namespace namespace_297ae820/namespace_297ae820

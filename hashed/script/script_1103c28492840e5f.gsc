@@ -40,16 +40,16 @@ function safehouse_claim_fx(localclientnum, *oldval, newval, *bnewent, *binitial
         if (!isdefined(self.var_94ebeb0a)) {
             self.var_94ebeb0a = self playloopsound(#"hash_53c30ccf24ec3701");
         }
-    } else {
-        if (isdefined(self.fxid)) {
-            killfx(fieldname, self.fxid);
-        }
-        if (isdefined(self.var_94ebeb0a)) {
-            self stoploopsound(self.var_94ebeb0a);
-            self.var_94ebeb0a = undefined;
-        }
-        playfx(fieldname, "sr/fx9_safehouse_orb_activate", self.origin);
-        playsound(fieldname, #"hash_71e3b0dd2c4a7490", self.origin);
+        return;
     }
+    if (isdefined(self.fxid)) {
+        killfx(fieldname, self.fxid);
+    }
+    if (isdefined(self.var_94ebeb0a)) {
+        self stoploopsound(self.var_94ebeb0a);
+        self.var_94ebeb0a = undefined;
+    }
+    playfx(fieldname, "sr/fx9_safehouse_orb_activate", self.origin);
+    playsound(fieldname, #"hash_71e3b0dd2c4a7490", self.origin);
 }
 

@@ -263,7 +263,7 @@ function function_440337c2(entity) {
             namespace_19c99142::function_ff6a04bc(entity);
         }
         awareness::function_5c40e824(entity);
-        break;
+        return;
     case #"hash_6192d8af630c6c07":
         /#
             /#
@@ -272,18 +272,18 @@ function function_440337c2(entity) {
         #/
         namespace_19c99142::function_ff6a04bc(entity);
         entity.favoriteenemy = var_cc7597dc;
-        break;
+        return;
     case #"hash_685254f9ed0ce346":
         awareness::function_5c40e824(entity);
-        break;
+        return;
     case #"hash_4ec3ec4f06b9498f":
         awareness::function_5c40e824(entity);
-        break;
+        return;
     case #"hash_110ee879f18b605f":
         awareness::function_5c40e824(entity);
-        break;
+        return;
     case #"circle":
-        break;
+        return;
     }
 }
 
@@ -342,7 +342,9 @@ function private function_1ea26b11(entity) {
     if (var_4d21f369 === #"hash_1f50e1df5bdfdcf8") {
         goal = namespace_19c99142::function_dd116fa9(entity);
         entity namespace_e292b080::zombieupdategoal(goal);
-    } else if (var_4d21f369 === #"attacking") {
+        return;
+    }
+    if (var_4d21f369 === #"attacking") {
         awareness::function_39da6c3c(entity);
     }
 }

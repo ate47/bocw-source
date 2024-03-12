@@ -81,7 +81,7 @@ function function_7eabbc02(params) {
         if (isdefined(getplayers())) {
             for (i = 0; i < getplayers().size; i++) {
                 if (getplayers().size <= remaining) {
-                    break;
+                    return;
                 }
                 if (!isdefined(getplayers()[i].bot) || getplayers()[i].team == hostteam || getplayers()[i].team == "<unknown string>") {
                     continue;
@@ -157,8 +157,11 @@ function function_31980089(params) {
                 continue;
             }
             if (isdefined(params.handler)) {
-                jumpiffalse(params.handler != item.var_a6762160.handler && params.handler != "<unknown string>") LOC_000001d4;
-            } else if (name == "<unknown string>" || item.var_a6762160.name == name) {
+                if (params.handler != item.var_a6762160.handler && params.handler != "<unknown string>") {
+                    continue;
+                }
+            }
+            if (name == "<unknown string>" || item.var_a6762160.name == name) {
                 function_55e20e75(params._id, item.origin);
             }
         }
@@ -359,11 +362,10 @@ function function_a93cbd41(params) {
         }
         instance = level.var_7d45d0d4.activeobjective;
         if (var_4f7fa3d1) {
-            goto LOC_000000d2;
+        } else {
+            level notify(#"hash_681a588173f0b1d7");
+            stop_timer();
         }
-        level notify(#"hash_681a588173f0b1d7");
-        stop_timer();
-    LOC_000000d2:
         return instance.success;
     #/
 }

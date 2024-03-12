@@ -442,7 +442,7 @@ function add_to_player_score(points, b_add_to_total = 1, str_awarded_by = "", va
     #/
     points = zm_utility::round_up_score(points);
     if (is_true(level.var_894a83d8) || var_e6e61503 || function_e31cf9d5(str_awarded_by)) {
-        goto LOC_000004bc;
+        return;
     }
     n_points_to_add_to_currency = bgb::add_to_player_score_override(points, str_awarded_by);
     self.score = self.score + n_points_to_add_to_currency;
@@ -487,7 +487,6 @@ function add_to_player_score(points, b_add_to_total = 1, str_awarded_by = "", va
         self zm_stats::function_fbce465a(#"hash_3a26c1202d86e50e");
     }
     self notify(#"earned_points", {#str_awarded_by:str_awarded_by, #n_points:points});
-LOC_000004bc:
 }
 
 // Namespace zm_score/zm_score
@@ -599,14 +598,14 @@ function on_item_pickup(s_params) {
         switch (var_a6762160.name) {
         case #"resource_item_medium_harvesting_sr":
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"essence_pickup_medium", #attacker:e_player});
-            break;
+            return;
         case #"resource_item_harvesting_sr":
         case #"hash_69a628368f8263f":
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"essence_pickup_large", #attacker:e_player});
-            break;
+            return;
         default:
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"essence_pickup_small", #attacker:e_player});
-            break;
+            return;
         }
     }
 }
@@ -742,7 +741,6 @@ function function_bc9de425(b_lowest_first = 0) {
             if (player.score == var_f0c1d3c2) {
                 player.var_a8da9faf = player.var_9fc3ee66;
                 player.var_9fc3ee66 = var_51639;
-            } else {
                 continue;
             }
         }

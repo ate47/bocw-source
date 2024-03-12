@@ -240,20 +240,23 @@ function private function_b4c86753(entity) {
                     } else if (player function_6337506a(var_bfed4d02, 0.2, 0)) {
                         var_858b478a = 1;
                     }
-                    jumpiffalse(var_858b478a) LOC_00000246;
-                    self clientfield::increment("margwa_smash");
-                    shield_damage = level.weaponriotshield.weaponstarthitpoints;
-                    if (isdefined(player.weaponriotshield)) {
-                        shield_damage = player.weaponriotshield.weaponstarthitpoints;
+                    if (var_858b478a) {
+                        self clientfield::increment("margwa_smash");
+                        shield_damage = level.weaponriotshield.weaponstarthitpoints;
+                        if (isdefined(player.weaponriotshield)) {
+                            shield_damage = player.weaponriotshield.weaponstarthitpoints;
+                        }
+                        player [[ player.player_shield_apply_damage ]](shield_damage, 0);
+                        continue;
                     }
-                    player [[ player.player_shield_apply_damage ]](shield_damage, 0);
-                } else if (isdefined(level.var_abc9fecd) && isfunctionptr(level.var_abc9fecd)) {
-                    jumpiffalse(player [[ level.var_abc9fecd ]](self)) LOC_00000294;
-                } else {
-                LOC_00000294:
-                    self clientfield::increment("margwa_smash");
-                    player dodamage(166, self.origin, self);
                 }
+                if (isdefined(level.var_abc9fecd) && isfunctionptr(level.var_abc9fecd)) {
+                    if (player [[ level.var_abc9fecd ]](self)) {
+                        continue;
+                    }
+                }
+                self clientfield::increment("margwa_smash");
+                player dodamage(166, self.origin, self);
             }
         }
     }
@@ -453,9 +456,9 @@ function private margwamovestart(entity) {
     if (entity function_b92d6daa()) {
         if (entity.zombie_move_speed == "run") {
             entity clientfield::set("margwa_jaw", 13);
-        } else {
-            entity clientfield::set("margwa_jaw", 7);
+            return;
         }
+        entity clientfield::set("margwa_jaw", 7);
     }
 }
 
@@ -478,16 +481,16 @@ function private margwatraverseactionstart(entity) {
             switch (entity.traversestartnode.animscript) {
             case #"hash_7df721eeb4b2a2e2":
                 entity clientfield::set("margwa_jaw", 21);
-                break;
+                return;
             case #"hash_7e1931eeb4cfa478":
                 entity clientfield::set("margwa_jaw", 22);
-                break;
+                return;
             case #"hash_539fe33dffe5b4f1":
                 entity clientfield::set("margwa_jaw", 24);
-                break;
+                return;
             case #"hash_537de33dffc8ce8b":
                 entity clientfield::set("margwa_jaw", 25);
-                break;
+                return;
             }
         }
     }
@@ -813,10 +816,9 @@ function private function_81b6b294(headinfo) {
                 self.var_a5d387bf--;
                 headinfo.opentime = undefined;
                 break;
-            } else {
-                util::wait_network_frame();
-                continue;
             }
+            util::wait_network_frame();
+            continue;
         }
         self function_efe04de1(headinfo, 0);
         self clientfield::set(headinfo.var_2b9b7c0f, headinfo.closed);
@@ -852,9 +854,9 @@ function private function_59b4caf4() {
             head.candamage = 1;
             self clientfield::set(head.var_2b9b7c0f, head.var_e08e3957);
             open = 1;
-        } else {
-            self function_c6899c2b(head);
+            continue;
         }
+        self function_c6899c2b(head);
     }
 }
 
@@ -997,7 +999,6 @@ function private function_102d7140(*entity, partname) {
     case #"j_chunk_head_bone_ri":
     case #"hash_6b7a648b3191c50a":
         return self.var_a285d7da;
-        break;
     }
     return undefined;
 }
@@ -1010,7 +1011,9 @@ function private function_e140363d() {
     if (self.zombie_move_speed == "walk") {
         self.zombie_move_speed = "run";
         self setblackboardattribute("_locomotion_speed", "locomotion_speed_run");
-    } else if (self.zombie_move_speed == "run") {
+        return;
+    }
+    if (self.zombie_move_speed == "run") {
         self.zombie_move_speed = "sprint";
         self setblackboardattribute("_locomotion_speed", "locomotion_speed_sprint");
     }

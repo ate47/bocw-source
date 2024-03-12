@@ -27,9 +27,9 @@ function function_77051d2b(var_e3087505 = 1) {
         for (i = 1; i <= 20; i++) {
             if (var_e3087505) {
                 level.var_59cd6d34.var_2844be06["district_" + i] = i - 1;
-            } else {
-                level.var_59cd6d34.var_2844be06[i - 1] = "district_" + i;
+                continue;
             }
+            level.var_59cd6d34.var_2844be06[i - 1] = "district_" + i;
         }
     }
 }
@@ -46,9 +46,9 @@ function function_715de8e5(var_e3087505) {
             for (i = 0; i < var_e5f80f4e.var_42200354.size; i++) {
                 level.var_59cd6d34.var_2844be06[var_e5f80f4e.var_42200354[i]] = i;
             }
-        } else {
-            level.var_59cd6d34.var_2844be06 = arraycopy(var_e5f80f4e.var_42200354);
+            return;
         }
+        level.var_59cd6d34.var_2844be06 = arraycopy(var_e5f80f4e.var_42200354);
     }
 }
 

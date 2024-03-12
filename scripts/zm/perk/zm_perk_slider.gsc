@@ -358,9 +358,9 @@ function function_3fb4ce3b() {
             } else {
                 self zombie_utility::gib_random_parts();
             }
-        } else {
-            self zombie_utility::gib_random_parts();
+            return;
         }
+        self zombie_utility::gib_random_parts();
     }
 }
 
@@ -426,9 +426,8 @@ function function_815172d1() {
                     onground = 0;
                 }
             } else if (!isdefined(self getgroundent())) {
-                onground = 0;
             }
-            while (isplayer(self) && !onground && !self function_49b3360c()) {
+            for (onground = 0; isplayer(self) && !onground && !self function_49b3360c(); onground = 0) {
                 if (!var_be3643e6) {
                     var_be3643e6 = 1;
                     self.var_af850774 = 0;
@@ -442,8 +441,9 @@ function function_815172d1() {
                     if (is_true(self.var_6d563065)) {
                         onground = 0;
                     }
-                } else if (!isdefined(self getgroundent())) {
-                    onground = 0;
+                    continue;
+                }
+                if (!isdefined(self getgroundent())) {
                 }
             }
             if (self function_49b3360c()) {
@@ -481,16 +481,16 @@ function function_780bf8d3(dvar) {
                 player.var_fd7683a7 = player.origin;
             }
         }
-    } else {
-        util::wait_network_frame(2);
-        foreach (player in getplayers()) {
-            if (isdefined(player.var_fd7683a7)) {
-                var_201425ca = bullettracepassed(player.var_fd7683a7, player.origin, 0, player, undefined, 0, 1, 1);
-                if (!var_201425ca) {
-                    player setorigin(player.var_fd7683a7);
-                }
-                player.var_fd7683a7 = undefined;
+        return;
+    }
+    util::wait_network_frame(2);
+    foreach (player in getplayers()) {
+        if (isdefined(player.var_fd7683a7)) {
+            var_201425ca = bullettracepassed(player.var_fd7683a7, player.origin, 0, player, undefined, 0, 1, 1);
+            if (!var_201425ca) {
+                player setorigin(player.var_fd7683a7);
             }
+            player.var_fd7683a7 = undefined;
         }
     }
 }

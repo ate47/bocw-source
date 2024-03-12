@@ -131,19 +131,19 @@ class class_744b99c {
                     }
                 }
             }
-        } else {
-            self triggerenable(1);
-            self thread function_226986c2();
-            var_d2820900 = struct::get(self.target, "targetname");
-            while (1) {
-                result = undefined;
-                result = self waittill(#"trigger");
-                if (isdefined(result.activator) && is_true(result.activator.laststand)) {
-                    result.activator setorigin(var_d2820900.origin);
-                    waitframe(1);
-                    result.activator namespace_83eb6304::function_3ecfde67("lightningStrike");
-                    result.activator namespace_e32bb68::function_3a59ec34("evt_doa_lightning_bolt");
-                }
+            return;
+        }
+        self triggerenable(1);
+        self thread function_226986c2();
+        var_d2820900 = struct::get(self.target, "targetname");
+        while (1) {
+            result = undefined;
+            result = self waittill(#"trigger");
+            if (isdefined(result.activator) && is_true(result.activator.laststand)) {
+                result.activator setorigin(var_d2820900.origin);
+                waitframe(1);
+                result.activator namespace_83eb6304::function_3ecfde67("lightningStrike");
+                result.activator namespace_e32bb68::function_3a59ec34("evt_doa_lightning_bolt");
             }
         }
     }
@@ -558,15 +558,14 @@ class class_744b99c {
     function function_87f950c1(type) {
         if (!isdefined(type)) {
             return self.var_a1fa7529;
-        } else {
-            var_f9c9c0 = [];
-            foreach (hazard in self.var_a1fa7529) {
-                if (hazard.script_noteworthy === type) {
-                    var_f9c9c0[var_f9c9c0.size] = hazard;
-                }
-            }
-            return var_f9c9c0;
         }
+        var_f9c9c0 = [];
+        foreach (hazard in self.var_a1fa7529) {
+            if (hazard.script_noteworthy === type) {
+                var_f9c9c0[var_f9c9c0.size] = hazard;
+            }
+        }
+        return var_f9c9c0;
     }
 
     // Namespace namespace_744b99c/doa_wild
@@ -982,10 +981,10 @@ function init() {
                 cmdline = "scr_wild_activate " + [[ var_3d2cc936 ]]->getname() + "@" + i + "; zombie_devgui wild";
                 util::add_devgui(var_663588d + [[ var_3d2cc936 ]]->getname() + "    Section " + i + 1 + ":" + [[ var_3d2cc936 ]]->getid(), cmdline);
             }
-        } else {
-            cmdline = "scr_wild_activate " + [[ var_3d2cc936 ]]->getname() + "; zombie_devgui wild";
-            util::add_devgui(var_663588d + [[ var_3d2cc936 ]]->getname() + ":" + [[ var_3d2cc936 ]]->getid(), cmdline);
+            continue;
         }
+        cmdline = "scr_wild_activate " + [[ var_3d2cc936 ]]->getname() + "; zombie_devgui wild";
+        util::add_devgui(var_663588d + [[ var_3d2cc936 ]]->getname() + ":" + [[ var_3d2cc936 ]]->getid(), cmdline);
     }
 }
 
@@ -1335,13 +1334,13 @@ function function_e5488243(npc) {
     }
     switch (mode) {
     case #"none":
-        
+        return;
     case #"patrol":
-        break;
+        return;
     case #"guard":
     default:
         self thread namespace_250e9486::function_e1f7a9a0(npc.radius);
-        break;
+        return;
     }
 }
 
@@ -1440,9 +1439,9 @@ function function_7d406bae(npc, distance = 2400) {
     foreach (guy in npc.enemylist) {
         if (is_true(guy.boss)) {
             guy thread namespace_ec06fe4a::function_52afe5df();
-        } else {
-            guy thread namespace_ec06fe4a::function_570729f0(0.1);
+            continue;
         }
+        guy thread namespace_ec06fe4a::function_570729f0(0.1);
     }
     npc.enemylist = [];
     if (npc.count <= 0) {

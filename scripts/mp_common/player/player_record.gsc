@@ -268,9 +268,9 @@ function record_special_move_data_for_life(killer) {
             return;
         }
         matchrecordlogspecialmovedataforlife(self, isdefined(self.lastswimmingstarttime) ? self.lastswimmingstarttime : 0, self.lastwallrunstarttime, self.lastslidestarttime, self.lastdoublejumpstarttime, isdefined(self.timespentswimminginlife) ? self.timespentswimminginlife : 0, self.timespentwallrunninginlife, self.numberofdoublejumpsinlife, self.numberofslidesinlife, killer, killer.lastswimmingstarttime, killer.lastwallrunstarttime, isdefined(killer.lastslidestarttime) ? killer.lastslidestarttime : 0, killer.lastdoublejumpstarttime);
-    } else {
-        matchrecordlogspecialmovedataforlife(self, isdefined(self.lastswimmingstarttime) ? self.lastswimmingstarttime : 0, self.lastwallrunstarttime, isdefined(self.lastslidestarttime) ? self.lastslidestarttime : 0, self.lastdoublejumpstarttime, isdefined(self.timespentswimminginlife) ? self.timespentswimminginlife : 0, self.timespentwallrunninginlife, self.numberofdoublejumpsinlife, self.numberofslidesinlife);
+        return;
     }
+    matchrecordlogspecialmovedataforlife(self, isdefined(self.lastswimmingstarttime) ? self.lastswimmingstarttime : 0, self.lastwallrunstarttime, isdefined(self.lastslidestarttime) ? self.lastslidestarttime : 0, self.lastdoublejumpstarttime, isdefined(self.timespentswimminginlife) ? self.timespentswimminginlife : 0, self.timespentwallrunninginlife, self.numberofdoublejumpsinlife, self.numberofslidesinlife);
 }
 
 // Namespace player_record/player_record
@@ -458,7 +458,7 @@ function function_7569c0fb() {
     case #"ctf_bb":
         self stats::function_81f5c0fe(#"stat1", self.pers[#"objectivescore"]);
         self stats::function_81f5c0fe(#"stat2", self.ekia);
-        break;
+        return;
     case #"koth10v10":
     case #"koth":
     case #"hash_156594d96f8a6568":
@@ -469,7 +469,7 @@ function function_7569c0fb() {
     case #"dropkick":
         self stats::function_81f5c0fe(#"stat1", self.pers[#"objectivetime"]);
         self stats::function_81f5c0fe(#"stat2", self.ekia);
-        break;
+        return;
     case #"hash_5a89fd80877a0eaa":
     case #"tdm_snipe_bb":
     case #"tdm_bb":
@@ -493,9 +493,9 @@ function function_7569c0fb() {
     case #"infect":
         self stats::function_81f5c0fe(#"stat1", self.ekia);
         self stats::function_81f5c0fe(#"stat2", self.deaths);
-        break;
+        return;
     default:
-        break;
+        return;
     }
 }
 

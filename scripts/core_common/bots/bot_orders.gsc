@@ -489,7 +489,9 @@ function private function_17d77980(objective) {
     self update_threat(objective);
     if (!isdefined(self.bot.var_f0015c1)) {
         self.bot.var_f0015c1 = gettime() + int(randomintrange(20, 60) * 1000);
-    } else if (!isdefined(self.bot.var_f0015c1) || self.bot.var_f0015c1 <= gettime()) {
+        return;
+    }
+    if (!isdefined(self.bot.var_f0015c1) || self.bot.var_f0015c1 <= gettime()) {
         self clear();
     }
 }

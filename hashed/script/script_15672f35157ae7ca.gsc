@@ -102,21 +102,29 @@ class class_276088fe : cluielem {
     function set_state(localclientnum, state_name) {
         if (#"defaultstate" == state_name) {
             [[ self ]]->set_data(localclientnum, "_state", 0);
-        } else if (#"friendlyblue" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 1);
-        } else if (#"green" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 2);
-        } else if (#"yellow" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 3);
-        } else if (#"red" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 4);
-        } else {
-            /#
-                /#
-                    assertmsg("<unknown string>");
-                #/
-            #/
+            return;
         }
+        if (#"friendlyblue" == state_name) {
+            [[ self ]]->set_data(localclientnum, "_state", 1);
+            return;
+        }
+        if (#"green" == state_name) {
+            [[ self ]]->set_data(localclientnum, "_state", 2);
+            return;
+        }
+        if (#"yellow" == state_name) {
+            [[ self ]]->set_data(localclientnum, "_state", 3);
+            return;
+        }
+        if (#"red" == state_name) {
+            [[ self ]]->set_data(localclientnum, "_state", 4);
+            return;
+        }
+        /#
+            /#
+                assertmsg("<unknown string>");
+            #/
+        #/
     }
 
     // Namespace namespace_276088fe/luielem_entity_bar

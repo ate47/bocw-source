@@ -219,9 +219,9 @@ function function_3846f71f() {
     if (!getdvarint(#"hash_55c78475b1ebf3de", 1)) {
         waitframe(1);
         level notify(#"hash_47a9ddfa0138bc29");
-    } else {
-        return level.var_1c96bbc;
+        return;
     }
+    return level.var_1c96bbc;
 }
 
 // Namespace namespace_21dd166c/namespace_21dd166c
@@ -326,23 +326,23 @@ function private function_f27dcbdb(var_ac850bbc) {
                 var_ac850bbc.var_95a93b6[var_ac850bbc.var_95a93b6.size] = var_adda5a0[var_6337f20[i] + 2][var_e7bee289[i]];
                 var_ac850bbc.var_8363ebc0++;
             }
-        } else {
-            var_adda5a0[var_6337f20[i] + 1][var_e7bee289[i]].var_dfb0558b = var_adda5a0[var_6337f20[i] + 1][var_e7bee289[i]].var_dfb0558b | 8;
-            if (isdefined(var_adda5a0[var_6337f20[i]][var_e7bee289[i]].var_dfb0558b)) {
-                var_adda5a0[var_6337f20[i]][var_e7bee289[i]].var_dfb0558b = var_adda5a0[var_6337f20[i]][var_e7bee289[i]].var_dfb0558b | 2;
-            } else {
-                var_adda5a0[var_6337f20[i]][var_e7bee289[i]].var_dfb0558b = 2;
-                var_adda5a0[var_6337f20[i]][var_e7bee289[i]].var_4e8e65e4 = 1;
-                var_adda5a0[var_6337f20[i]][var_e7bee289[i]].height = var_adda5a0[var_6337f20[i] + 1][var_e7bee289[i]].height + 1;
-                if (!isdefined(var_ac850bbc.var_95a93b6)) {
-                    var_ac850bbc.var_95a93b6 = [];
-                } else if (!isarray(var_ac850bbc.var_95a93b6)) {
-                    var_ac850bbc.var_95a93b6 = array(var_ac850bbc.var_95a93b6);
-                }
-                var_ac850bbc.var_95a93b6[var_ac850bbc.var_95a93b6.size] = var_adda5a0[var_6337f20[i]][var_e7bee289[i]];
-                var_ac850bbc.var_8363ebc0++;
-            }
+            continue;
         }
+        var_adda5a0[var_6337f20[i] + 1][var_e7bee289[i]].var_dfb0558b = var_adda5a0[var_6337f20[i] + 1][var_e7bee289[i]].var_dfb0558b | 8;
+        if (isdefined(var_adda5a0[var_6337f20[i]][var_e7bee289[i]].var_dfb0558b)) {
+            var_adda5a0[var_6337f20[i]][var_e7bee289[i]].var_dfb0558b = var_adda5a0[var_6337f20[i]][var_e7bee289[i]].var_dfb0558b | 2;
+            continue;
+        }
+        var_adda5a0[var_6337f20[i]][var_e7bee289[i]].var_dfb0558b = 2;
+        var_adda5a0[var_6337f20[i]][var_e7bee289[i]].var_4e8e65e4 = 1;
+        var_adda5a0[var_6337f20[i]][var_e7bee289[i]].height = var_adda5a0[var_6337f20[i] + 1][var_e7bee289[i]].height + 1;
+        if (!isdefined(var_ac850bbc.var_95a93b6)) {
+            var_ac850bbc.var_95a93b6 = [];
+        } else if (!isarray(var_ac850bbc.var_95a93b6)) {
+            var_ac850bbc.var_95a93b6 = array(var_ac850bbc.var_95a93b6);
+        }
+        var_ac850bbc.var_95a93b6[var_ac850bbc.var_95a93b6.size] = var_adda5a0[var_6337f20[i]][var_e7bee289[i]];
+        var_ac850bbc.var_8363ebc0++;
     }
     /#
         if (var_6337f20.size > 0) {
@@ -566,9 +566,8 @@ function private function_a91abf58(var_ac850bbc) {
         level thread function_6673d10c(var_ac850bbc);
         level waittill(#"hash_40227511a548bc20");
         return level.var_1c96bbc;
-    } else {
-        return function_6673d10c(var_ac850bbc);
     }
+    return function_6673d10c(var_ac850bbc);
 }
 
 // Namespace namespace_21dd166c/namespace_21dd166c
@@ -630,9 +629,9 @@ function private function_6673d10c(var_ac850bbc) {
     if (!getdvarint(#"hash_55c78475b1ebf3de", 1)) {
         waitframe(1);
         level notify(#"hash_40227511a548bc20");
-    } else {
-        return level.var_1c96bbc;
+        return;
     }
+    return level.var_1c96bbc;
 }
 
 // Namespace namespace_21dd166c/namespace_21dd166c
@@ -810,9 +809,9 @@ function private function_50a302e0(var_adda5a0, mins, maxs) {
                     } else {
                         print("<unknown string>");
                     }
-                } else {
-                    print("<unknown string>");
+                    continue;
                 }
+                print("<unknown string>");
             }
             println("<unknown string>");
             print("<unknown string>");
@@ -823,9 +822,9 @@ function private function_50a302e0(var_adda5a0, mins, maxs) {
                     print(var_9b9b1d8c);
                     print(var_adda5a0[i][j].var_dfb0558b & 4 ? var_9b9b1d8c : "<unknown string>");
                     print("<unknown string>");
-                } else {
-                    print("<unknown string>");
+                    continue;
                 }
+                print("<unknown string>");
             }
             println("<unknown string>");
             print("<unknown string>");
@@ -837,9 +836,9 @@ function private function_50a302e0(var_adda5a0, mins, maxs) {
                     } else {
                         print("<unknown string>");
                     }
-                } else {
-                    print("<unknown string>");
+                    continue;
                 }
+                print("<unknown string>");
             }
             println("<unknown string>");
             print("<unknown string>");

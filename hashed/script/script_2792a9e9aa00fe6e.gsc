@@ -42,7 +42,9 @@ function function_1eabdf8e(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwastimejump == 1) {
         var_f5c1bd65 = struct::get("fuse_box_loc", "targetname");
         level.var_bb84f715 = playfx(fieldname, #"hash_3b9fd592c82308fa", var_f5c1bd65.origin, anglestoforward(var_f5c1bd65.angles), (0, 0, 1));
-    } else if (isdefined(level.var_bb84f715)) {
+        return;
+    }
+    if (isdefined(level.var_bb84f715)) {
         stopfx(fieldname, level.var_bb84f715);
         level.var_bb84f715 = undefined;
     }
@@ -57,7 +59,9 @@ function function_3bb686a9(localclientnum, *oldval, newval, *bnewent, *binitials
         var_c2e428e = struct::get("switch_spark_loc", "targetname");
         level.var_c76e5c41 = playfx(fieldname, #"hash_179a76b8d709e8bb", var_c2e428e.origin, anglestoforward(var_c2e428e.angles), (0, 0, 1));
         playsound(fieldname, #"hash_487cbd8d6e939533", var_c2e428e.origin);
-    } else if (isdefined(level.var_c76e5c41)) {
+        return;
+    }
+    if (isdefined(level.var_c76e5c41)) {
         stopfx(fieldname, level.var_c76e5c41);
         level.var_c76e5c41 = undefined;
     }

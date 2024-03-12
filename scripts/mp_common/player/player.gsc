@@ -53,32 +53,31 @@ function spectate_player_watcher() {
                 self val::reset(#"spectate", "disablegadgets");
             }
             self.watchingactiveclient = 0;
-            break;
-        } else {
-            count = 0;
-            for (i = 0; i < level.players.size; i++) {
-                if (level.players[i].team != #"spectator") {
-                    count++;
-                    break;
-                }
-            }
-            if (count > 0) {
-                if (!self.watchingactiveclient) {
-                    self val::reset(#"spectate", "freezecontrols");
-                    self val::reset(#"spectate", "disablegadgets");
-                    self luinotifyevent(#"player_spawned", 0);
-                }
-                self.watchingactiveclient = 1;
-            } else {
-                if (self.watchingactiveclient) {
-                    [[ level.onspawnspectator ]]();
-                    self val::set(#"spectate", "freezecontrols", 1);
-                    self val::set(#"spectate", "disablegadgets", 1);
-                }
-                self.watchingactiveclient = 0;
-            }
-            wait(0.5);
+            return;
         }
+        count = 0;
+        for (i = 0; i < level.players.size; i++) {
+            if (level.players[i].team != #"spectator") {
+                count++;
+                break;
+            }
+        }
+        if (count > 0) {
+            if (!self.watchingactiveclient) {
+                self val::reset(#"spectate", "freezecontrols");
+                self val::reset(#"spectate", "disablegadgets");
+                self luinotifyevent(#"player_spawned", 0);
+            }
+            self.watchingactiveclient = 1;
+        } else {
+            if (self.watchingactiveclient) {
+                [[ level.onspawnspectator ]]();
+                self val::set(#"spectate", "freezecontrols", 1);
+                self val::set(#"spectate", "disablegadgets", 1);
+            }
+            self.watchingactiveclient = 0;
+        }
+        wait(0.5);
     }
 }
 

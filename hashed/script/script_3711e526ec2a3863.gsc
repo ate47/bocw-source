@@ -231,7 +231,7 @@ function function_7edafa59(str_msg, n_delay, var_37a6c96) {
             flag::wait_till(var_37a6c96);
         }
         music::setmusicstate(str_msg, undefined, n_delay);
-        break;
+        return;
     case #"hash_15d512eeb8abc51e":
         if (isdefined(var_37a6c96)) {
             flag::wait_till(var_37a6c96);
@@ -239,32 +239,32 @@ function function_7edafa59(str_msg, n_delay, var_37a6c96) {
         music::setmusicstate(str_msg, undefined, n_delay);
         wait(1);
         music::setmusicstate("12.0_turret");
-        break;
+        return;
     case #"hash_2375b08205562389":
         if (isdefined(var_37a6c96)) {
             flag::wait_till(var_37a6c96);
         }
         music::setmusicstate(str_msg, undefined, n_delay);
-        break;
+        return;
     case #"hash_3c930a111db30f46":
         music::setmusicstate(str_msg, undefined, n_delay);
         wait(5);
         music::setmusicstate("5.0_village_combat");
-        break;
+        return;
     case #"hash_7a72528b9f2c2f90":
         music::function_edda155f(str_msg, n_delay);
-        break;
+        return;
     case #"hash_2193c42e21ea2e63":
         music::function_2af5f0ec(str_msg);
-        break;
+        return;
     case #"hash_4c4e6fe764aec250":
         music::setmusicstate("explo_stinger", undefined, n_delay);
-        break;
+        return;
     default:
         /#
             iprintlnbold("<unknown string>" + str_msg + "<unknown string>");
         #/
-        break;
+        return;
     }
 }
 
@@ -278,17 +278,17 @@ function function_e80c0ccf(str_msg) {
         snd::function_7db65a93(#"musictrack_cp_armada_1");
         waitframe(1);
         snd::function_7db65a93(#"musictrack_cp_armada_2");
-        break;
+        return;
     case #"hash_3c930a111db30f46":
     case #"hash_5bfefcb798fc6c8a":
         snd::function_7db65a93(#"musictrack_cp_armada_3");
-        break;
+        return;
     case #"hash_6d6826a83750847":
         snd::function_7db65a93(#"musictrack_cp_armada_4");
-        break;
+        return;
     case #"hash_4c5ac549022188d4":
         snd::function_7db65a93(#"musictrack_cp_armada_5");
-        break;
+        return;
     }
 }
 

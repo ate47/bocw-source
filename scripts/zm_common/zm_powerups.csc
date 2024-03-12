@@ -38,42 +38,42 @@ function add_zombie_powerup(powerup_name, client_field_name, clientfield_version
     }
     switch (powerup_name) {
     case #"full_ammo":
-        var_f530d747 = "zmPowerupMaxAmmo";
+        str_rule = "zmPowerupMaxAmmo";
         break;
     case #"fire_sale":
-        var_f530d747 = "zmPowerupFireSale";
+        str_rule = "zmPowerupFireSale";
         break;
     case #"bonus_points_player_shared":
     case #"bonus_points_player":
     case #"bonus_points_team":
-        var_f530d747 = "zmPowerupChaosPoints";
+        str_rule = "zmPowerupChaosPoints";
         break;
     case #"free_perk":
-        var_f530d747 = "zmPowerupFreePerk";
+        str_rule = "zmPowerupFreePerk";
         break;
     case #"nuke":
-        var_f530d747 = "zmPowerupNuke";
+        str_rule = "zmPowerupNuke";
         break;
     case #"hero_weapon_power":
-        var_f530d747 = "zmPowerupSpecialWeapon";
+        str_rule = "zmPowerupSpecialWeapon";
         break;
     case #"insta_kill":
-        var_f530d747 = "zmPowerupInstakill";
+        str_rule = "zmPowerupInstakill";
         break;
     case #"double_points":
-        var_f530d747 = "zmPowerupDouble";
+        str_rule = "zmPowerupDouble";
         break;
     case #"carpenter":
-        var_f530d747 = "zmPowerupCarpenter";
+        str_rule = "zmPowerupCarpenter";
         break;
     case #"cranked_pause":
-        var_f530d747 = "zmPowerupCrankedPause";
+        str_rule = "zmPowerupCrankedPause";
         break;
     default:
-        var_f530d747 = "";
+        str_rule = "";
         break;
     }
-    if (var_f530d747 != "" && !is_true(getgametypesetting(var_f530d747))) {
+    if (str_rule != "" && !is_true(getgametypesetting(str_rule))) {
         return;
     }
     struct = spawnstruct();

@@ -45,7 +45,9 @@ function function_870656e3(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwastimejump) {
         self.death_fx = function_239993de(fieldname, "zm_ai/fx9_hound_hell_dth_aoe", self, "j_spine4");
         self playsound(fieldname, #"hash_6a76932cce379c66");
-    } else if (isdefined(self.death_fx)) {
+        return;
+    }
+    if (isdefined(self.death_fx)) {
         stopfx(fieldname, self.death_fx);
         self.death_fx = undefined;
     }

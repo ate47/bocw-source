@@ -73,9 +73,8 @@ function private function_8ba92985(s_instance) {
         if (level flag::get(#"objective_locked")) {
             level flag::wait_till_clear(#"objective_locked");
             continue;
-        } else {
-            break;
         }
+        break;
     }
     var_8e27c3fd delete();
     var_69b86a0a delete();
@@ -158,22 +157,22 @@ function function_9212e29c(s_instance, s_chest) {
     wait(1);
     s_chest.scriptmodel = namespace_8b6a9d79::function_f3d93ee9(struct, #"hash_401a47741ffd646f", 1);
     s_chest.var_422ae63e = #"p9_fxanim_zm_gp_chest_01_lrg_bundle";
-    var_31919730 = s_chest.scriptmodel;
-    var_31919730 notsolid();
-    var_31919730 function_619a5c20();
-    var_31919730 moveto(s_chest.origin, 9.5);
-    var_31919730 rotatevelocity((0, 1080 / 9.5, 0), 9.5);
+    mdl_chest = s_chest.scriptmodel;
+    mdl_chest notsolid();
+    mdl_chest function_619a5c20();
+    mdl_chest moveto(s_chest.origin, 9.5);
+    mdl_chest rotatevelocity((0, 1080 / 9.5, 0), 9.5);
     wait(9.5);
-    level thread function_8fa44fea(var_31919730);
-    var_31919730 clientfield::set("sr_supply_drop_chest_fx", 1);
-    glassradiusdamage(var_31919730.origin, 600, 800, 400);
+    level thread function_8fa44fea(mdl_chest);
+    mdl_chest clientfield::set("sr_supply_drop_chest_fx", 1);
+    glassradiusdamage(mdl_chest.origin, 600, 800, 400);
     mdl_fx stoploopsound();
     mdl_fx playsound(#"hash_6eca5f5eaa236ce3");
     mdl_fx util::deleteaftertime(3);
     trigger = namespace_8b6a9d79::function_214737c7(s_chest, &function_19490940, #"hash_409a53f32f7cae42", undefined, 96, undefined, undefined, vectorscale((0, 0, 1), 16));
     trigger.struct = s_chest;
     trigger.var_cc1fb2d0 = namespace_58949729::function_fd5e77fa(#"gold");
-    var_31919730.trigger = trigger;
+    mdl_chest.trigger = trigger;
     if (!isdefined(s_instance.var_f46ace2)) {
         s_instance.var_f46ace2 = [];
     } else if (!isarray(s_instance.var_f46ace2)) {
@@ -188,17 +187,17 @@ function function_9212e29c(s_instance, s_chest) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x6a678068, Offset: 0xd78
 // Size: 0x124
-function private function_8fa44fea(var_31919730) {
-    var_31919730 endon(#"death");
-    v_loc = var_31919730.origin;
+function private function_8fa44fea(mdl_chest) {
+    mdl_chest endon(#"death");
+    v_loc = mdl_chest.origin;
     a_vehicles = getentitiesinradius(v_loc, 512, 12);
     foreach (vehicle in a_vehicles) {
-        if (vehicle istouching(var_31919730)) {
+        if (vehicle istouching(mdl_chest)) {
             vehicle launchvehicle(vectorscale((0, 0, 1), 50), v_loc);
             waitframe(1);
         }
     }
-    var_31919730 solid();
+    mdl_chest solid();
 }
 
 // Namespace namespace_12a6a726/namespace_12a6a726
@@ -211,25 +210,25 @@ function function_19490940(*eventstruct) {
     }
     self endon(#"death");
     instance = self.struct.parent;
-    var_31919730 = self.struct.scriptmodel;
-    var_31919730 endon(#"death");
+    mdl_chest = self.struct.scriptmodel;
+    mdl_chest endon(#"death");
     self callback::remove_on_trigger(&function_19490940);
-    array::thread_all(function_a1ef346b(undefined, var_31919730.origin, 2048), &function_b05e27da, 0.5, 1);
+    array::thread_all(function_a1ef346b(undefined, mdl_chest.origin, 2048), &function_b05e27da, 0.5, 1);
     var_571f5454 = self.origin;
     self.b_started = 1;
     self setinvisibletoall();
-    var_31919730 clientfield::set("sr_supply_drop_chest_fx", 2);
+    mdl_chest clientfield::set("sr_supply_drop_chest_fx", 2);
     wait(2);
     namespace_2c949ef8::function_8b6ae460(var_571f5454, function_873ab308(), 500, 1500, undefined, undefined, undefined, undefined, undefined, 1);
     self sethintstring(#"survival/supply_drop_open");
     self setvisibletoall();
-    var_31919730 clientfield::set("sr_supply_drop_chest_fx", 3);
-    var_31919730 clientfield::set("reward_chest_fx", 3);
+    mdl_chest clientfield::set("sr_supply_drop_chest_fx", 3);
+    mdl_chest clientfield::set("reward_chest_fx", 3);
     s_result = undefined;
     s_result = self waittill(#"trigger");
     self thread namespace_58949729::function_8665f666(s_result);
-    level thread namespace_4abf1500::function_20c3dbfd(function_a1ef346b(), var_31919730.origin, 120, 3);
-    var_31919730 thread namespace_58949729::function_1e2500f();
+    level thread namespace_4abf1500::function_20c3dbfd(function_a1ef346b(), mdl_chest.origin, 120, 3);
+    mdl_chest thread namespace_58949729::function_1e2500f();
     namespace_58949729::function_a5d57202(instance);
     level scoreevents::doscoreeventcallback("scoreEventSR", {#location:self.origin, #var_b0a57f8c:5000, #nearbyplayers:1, #scoreevent:"event_complete"});
     players = getplayers();

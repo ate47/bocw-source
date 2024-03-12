@@ -25,8 +25,8 @@ function function_3cc5163a(localclientnum, *oldval, newval, *bnewent, *binitials
     var_498c6118 = getent(fieldname, "black_light_mdl", "targetname");
     if (bwasdemojump == 0) {
         var_498c6118 show();
-    } else {
-        var_498c6118 hide();
+        return;
     }
+    var_498c6118 hide();
 }
 

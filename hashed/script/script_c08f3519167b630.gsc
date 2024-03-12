@@ -157,10 +157,10 @@ function function_f5b265ac() {
             if (var_a26574af == "zone_proto_start" || var_a26574af == "zone_proto_start2") {
                 if (level.round_number >= var_84d02e05) {
                     self zm_utility::function_659819fa(#"zm_silver_start");
-                    break;
+                    return;
                 }
             } else {
-                break;
+                return;
             }
         }
         wait(1);

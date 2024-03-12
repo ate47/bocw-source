@@ -38,9 +38,9 @@ function private function_70a657d8() {
 function on_prematch_end(func, obj) {
     if (self == level) {
         add_callback(#"prematch_end", func, obj);
-    } else {
-        function_d8abfc3d(#"prematch_end", func, obj);
+        return;
     }
+    function_d8abfc3d(#"prematch_end", func, obj);
 }
 
 // Namespace callback/callbacks
@@ -50,9 +50,9 @@ function on_prematch_end(func, obj) {
 function function_c11071a8(func, obj) {
     if (self == level) {
         add_callback(#"hash_61d33e99084dd46c", func, obj);
-    } else {
-        function_d8abfc3d(#"hash_61d33e99084dd46c", func, obj);
+        return;
     }
+    function_d8abfc3d(#"hash_61d33e99084dd46c", func, obj);
 }
 
 // Namespace callback/callbacks

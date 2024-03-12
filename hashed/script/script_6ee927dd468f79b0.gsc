@@ -147,9 +147,9 @@ function function_7a2f725d(trap, page = 0) {
             level.doa.var_a8a43931 = array(level.doa.var_a8a43931);
         }
         level.doa.var_a8a43931[level.doa.var_a8a43931.size] = trap;
-    } else {
-        function_b9c75c0(trap);
+        return;
     }
+    function_b9c75c0(trap);
 }
 
 // Namespace namespace_2a2a39d4/namespace_2a2a39d4
@@ -192,12 +192,12 @@ function function_d4a86caf() {
                     trap.var_eb9d64bb = trap.var_eb9d64bb + 5000;
                     namespace_1e25ad94::function_f5f0c0f8("Paging IN fireball trap at:" + trap.origin);
                 }
-            } else {
-                trap.var_f8660931 = namespace_ec06fe4a::function_f3eab80e(trap.origin, 3600);
-                if (!isdefined(trap.var_f8660931)) {
-                    trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
-                    namespace_1e25ad94::function_f5f0c0f8("Paging out fireball trap at:" + trap.origin);
-                }
+                continue;
+            }
+            trap.var_f8660931 = namespace_ec06fe4a::function_f3eab80e(trap.origin, 3600);
+            if (!isdefined(trap.var_f8660931)) {
+                trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
+                namespace_1e25ad94::function_f5f0c0f8("Paging out fireball trap at:" + trap.origin);
             }
         }
     }

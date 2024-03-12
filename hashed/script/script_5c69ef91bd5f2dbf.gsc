@@ -116,21 +116,21 @@ function function_a53f1f75(localclientnum, *oldval, newval, *bnewent, *binitials
             }
             e_player thread abom_beam_rumble(fieldname);
         }
-    } else {
-        for (head_index = 0; head_index < 3; head_index++) {
-            if (isdefined(self.var_dd5aa0f5[head_index]) && self.var_dd5aa0f5[head_index] > 0) {
-                beam::function_47deed80(fieldname, self.var_dd5aa0f5[head_index], self);
-                self.var_dd5aa0f5[head_index] = -1;
-            }
+        return;
+    }
+    for (head_index = 0; head_index < 3; head_index++) {
+        if (isdefined(self.var_dd5aa0f5[head_index]) && self.var_dd5aa0f5[head_index] > 0) {
+            beam::function_47deed80(fieldname, self.var_dd5aa0f5[head_index], self);
+            self.var_dd5aa0f5[head_index] = -1;
         }
-        function_1eaaceab(e_player.var_2788ca7e);
-        ai = undefined;
-        if (isdefined(self.var_5bbbb527)) {
-            ai = self.var_5bbbb527;
-        }
-        if (isdefined(ai) && isinarray(e_player.var_2788ca7e, ai)) {
-            arrayremovevalue(e_player.var_2788ca7e, ai);
-        }
+    }
+    function_1eaaceab(e_player.var_2788ca7e);
+    ai = undefined;
+    if (isdefined(self.var_5bbbb527)) {
+        ai = self.var_5bbbb527;
+    }
+    if (isdefined(ai) && isinarray(e_player.var_2788ca7e, ai)) {
+        arrayremovevalue(e_player.var_2788ca7e, ai);
     }
 }
 
@@ -258,7 +258,9 @@ function function_9dd3c047(localclientnum, *oldval, newval, *bnewent, *binitials
         }
         self thread function_27767c7e(fieldname, #"hash_2f938e7f87c1971");
         function_187b10a5(fieldname, 1);
-    } else if (bwastimejump == 2) {
+        return;
+    }
+    if (bwastimejump == 2) {
         if (isdefined(self.var_678bc6e2)) {
             self stoprenderoverridebundle(self.var_678bc6e2);
         }
@@ -267,15 +269,15 @@ function function_9dd3c047(localclientnum, *oldval, newval, *bnewent, *binitials
         self thread function_27767c7e(fieldname, #"hash_14a734dce3c8f778");
         function_187b10a5(fieldname, 0);
         self thread function_bfde165(fieldname, self);
-    } else {
-        self fxclientutils::playfxbundle(fieldname, self, self.fxdef);
-        for (head_index = 0; head_index < 3; head_index++) {
-            if (is_true(self.var_97748a3c[head_index]) && (!isdefined(self.var_c60ed8ce[head_index]) || self.var_c60ed8ce[head_index] < 0)) {
-                self.var_c60ed8ce[head_index] = util::playfxontag(fieldname, #"hash_385c7bfa3c9896a1", self, self.var_bdde582a[head_index]);
-            }
-        }
-        function_c9eb529a(fieldname);
+        return;
     }
+    self fxclientutils::playfxbundle(fieldname, self, self.fxdef);
+    for (head_index = 0; head_index < 3; head_index++) {
+        if (is_true(self.var_97748a3c[head_index]) && (!isdefined(self.var_c60ed8ce[head_index]) || self.var_c60ed8ce[head_index] < 0)) {
+            self.var_c60ed8ce[head_index] = util::playfxontag(fieldname, #"hash_385c7bfa3c9896a1", self, self.var_bdde582a[head_index]);
+        }
+    }
+    function_c9eb529a(fieldname);
 }
 
 // Namespace namespace_361e505d/namespace_361e505d
@@ -418,9 +420,9 @@ function function_92095d05(localclientnum, *oldval, newval, *bnewent, *binitials
         }
         self postfx::playpostfxbundle("pstfx_slowed");
         self postfx::function_c8b5f318("pstfx_slowed", "Blur", 0.02);
-    } else {
-        self postfx::exitpostfxbundle("pstfx_slowed");
+        return;
     }
+    self postfx::exitpostfxbundle("pstfx_slowed");
 }
 
 // Namespace namespace_361e505d/namespace_361e505d
@@ -487,19 +489,19 @@ function private function_8cddfdf6(localclientnum, enable, head, tag, anim, var_
             }
             self.var_294b91b9[head] = anim;
         }
-    } else {
-        if (isdefined(self.var_4b1a9504[head])) {
-            stopfx(localclientnum, self.var_4b1a9504[head]);
-            self.var_4b1a9504[head] = undefined;
-        }
-        self.var_3cb6f7b8[head] = 0;
-        function_799e56b5(self, head);
-        self setanim(var_b8377082, 1, 0.2, 1);
-        if (!isdefined(self.var_294b91b9)) {
-            self.var_294b91b9 = [];
-        }
-        self.var_294b91b9[head] = var_b8377082;
+        return;
     }
+    if (isdefined(self.var_4b1a9504[head])) {
+        stopfx(localclientnum, self.var_4b1a9504[head]);
+        self.var_4b1a9504[head] = undefined;
+    }
+    self.var_3cb6f7b8[head] = 0;
+    function_799e56b5(self, head);
+    self setanim(var_b8377082, 1, 0.2, 1);
+    if (!isdefined(self.var_294b91b9)) {
+        self.var_294b91b9 = [];
+    }
+    self.var_294b91b9[head] = var_b8377082;
 }
 
 // Namespace namespace_361e505d/namespace_361e505d
@@ -528,12 +530,12 @@ function function_3a01e8d7(localclientnum, *oldval, newval, *bnewent, *binitials
             e_player.var_10eeb170[e_player.var_10eeb170.size] = self;
         }
         e_player thread abom_roar_rumble(fieldname);
-    } else {
-        self flag::clear(#"hash_2cde7566171da1e9");
-        function_1eaaceab(e_player.var_10eeb170);
-        if (isinarray(e_player.var_10eeb170, self)) {
-            arrayremovevalue(e_player.var_10eeb170, self);
-        }
+        return;
+    }
+    self flag::clear(#"hash_2cde7566171da1e9");
+    function_1eaaceab(e_player.var_10eeb170);
+    if (isinarray(e_player.var_10eeb170, self)) {
+        arrayremovevalue(e_player.var_10eeb170, self);
     }
 }
 
@@ -547,12 +549,12 @@ function function_d96bc835(localclientnum, *oldval, newval, *bnewent, *binitials
         function_757801a6(fieldname, undefined, is_true(self.var_3cb6f7b8[0]));
         function_9b9a5f77(fieldname, undefined, is_true(self.var_3cb6f7b8[1]));
         function_94de7e4(fieldname, undefined, is_true(self.var_3cb6f7b8[2]));
-    } else {
-        self flag::clear(#"hash_42f4206825b6195");
-        function_799e56b5(self, 0);
-        function_799e56b5(self, 1);
-        function_799e56b5(self, 2);
+        return;
     }
+    self flag::clear(#"hash_42f4206825b6195");
+    function_799e56b5(self, 0);
+    function_799e56b5(self, 1);
+    function_799e56b5(self, 2);
 }
 
 // Namespace namespace_361e505d/namespace_361e505d
@@ -666,7 +668,6 @@ function private function_b13b14f5(tier) {
         return #"hash_31397fe5e7837982";
     case 3:
         return #"hash_6256853949b1bfba";
-        break;
     }
     return undefined;
 }

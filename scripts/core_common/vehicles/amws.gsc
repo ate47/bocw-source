@@ -154,9 +154,9 @@ function state_driving_update(*params) {
             driver util::waittill_vehicle_move_up_button_pressed();
             if (self.cobra === 0) {
                 self cobra_raise();
-            } else {
-                self cobra_retract();
+                continue;
             }
+            self cobra_retract();
         }
     }
 }
@@ -373,9 +373,9 @@ function turretfireupdate() {
             } else {
                 wait(0.5);
             }
-        } else {
-            wait(0.4);
+            continue;
         }
+        wait(0.4);
     }
 }
 
@@ -392,41 +392,82 @@ function state_combat_update(*params) {
     heatseekingmissile::initlockfield(self);
     self.lock_evading = 0;
     for (;;) {
-        for (;;) {
-            if (self.lock_evading == 0) {
-                self setspeed(self.settings.defaultmovespeed);
-                self setacceleration(isdefined(self.settings.default_move_acceleration) ? self.settings.default_move_acceleration : 10);
+        if (self.lock_evading == 0) {
+            self setspeed(self.settings.defaultmovespeed);
+            self setacceleration(isdefined(self.settings.default_move_acceleration) ? self.settings.default_move_acceleration : 10);
+        }
+        if (isdefined(self.enemy) && util::iscooldownready("cobra_up") && self.lock_evading == 0) {
+            var_7e7717c8 = distancesquared(self.enemy.origin, self.origin);
+            if (var_7e7717c8 > function_a3f6cdac(200) && var_7e7717c8 < function_a3f6cdac(self.settings.engagementdistmax * 2)) {
+                if (function_64609aab(self, self.enemy) === 1) {
+                    self vehicle_ai::evaluate_connections();
+                }
             }
-            if (isdefined(self.enemy) && util::iscooldownready("cobra_up") && self.lock_evading == 0) {
-                var_7e7717c8 = distancesquared(self.enemy.origin, self.origin);
-                if (var_7e7717c8 > function_a3f6cdac(200) && var_7e7717c8 < function_a3f6cdac(self.settings.engagementdistmax * 2)) {
-                    if (function_64609aab(self, self.enemy) === 1) {
-                        self vehicle_ai::evaluate_connections();
+        }
+        if (is_true(self.settings.engage_enemies_locked_on_me) && self.locked_on) {
+            self.shouldgotonewposition = 1;
+        } else if (is_true(self.settings.engage_enemies_locking_on_me) && self.locking_on) {
+            self.shouldgotonewposition = 1;
+        }
+        self.lock_evading = 0;
+        if (is_true(self.settings.evade_enemies_locked_on_me)) {
+            self.lock_evading = self.lock_evading | self.locked_on;
+        }
+        if (is_true(self.settings.evade_enemies_locking_on_me)) {
+            self.lock_evading = self.lock_evading | self.locking_on;
+            self.lock_evading = self.lock_evading | self.locking_on_hacking;
+        }
+        if (is_true(self.inpain)) {
+            wait(0.1);
+        } else if (!isdefined(self.enemy)) {
+            should_slow_down_at_goal = 1;
+            if (self.lock_evading) {
+                self.current_pathto_pos = getnextmoveposition_evasive(self.lock_evading);
+                should_slow_down_at_goal = 0;
+            } else {
+                self.current_pathto_pos = getnextmoveposition_wander();
+            }
+            if (isdefined(self.current_pathto_pos)) {
+                if (self function_a57c34b7(self.current_pathto_pos, should_slow_down_at_goal, 1)) {
+                    self thread path_update_interrupt_by_attacker();
+                    self thread path_update_interrupt();
+                    self vehicle_ai::waittill_pathing_done();
+                    self notify(#"amws_end_interrupt_watch");
+                }
+            }
+            if (is_true(self.var_23eff037)) {
+                self playsound(#"hash_7698127d41537782");
+                self.var_23eff037 = 0;
+            }
+        } else if (isalive(self)) {
+            self turretsettarget(0, self.enemy);
+            self vehlookat(self.enemy);
+            if (self cansee(self.enemy)) {
+                self.lasttimetargetinsight = gettime();
+                if (!is_true(self.var_23eff037)) {
+                    self playsound(#"hash_7c4742a949425295");
+                    self.var_23eff037 = 1;
+                    wait(0.5);
+                }
+            }
+            if (self.shouldgotonewposition == 0) {
+                if (gettime() > lasttimechangeposition + 1000) {
+                    self.shouldgotonewposition = 1;
+                } else if (gettime() > self.lasttimetargetinsight + 500) {
+                    self.shouldgotonewposition = 1;
+                    if (is_true(self.var_23eff037)) {
+                        self playsound(#"hash_7698127d41537782");
+                        self.var_23eff037 = 0;
                     }
                 }
             }
-            if (is_true(self.settings.engage_enemies_locked_on_me) && self.locked_on) {
-                self.shouldgotonewposition = 1;
-            } else if (is_true(self.settings.engage_enemies_locking_on_me) && self.locking_on) {
-                self.shouldgotonewposition = 1;
-            }
-            self.lock_evading = 0;
-            if (is_true(self.settings.evade_enemies_locked_on_me)) {
-                self.lock_evading = self.lock_evading | self.locked_on;
-            }
-            if (is_true(self.settings.evade_enemies_locking_on_me)) {
-                self.lock_evading = self.lock_evading | self.locking_on;
-                self.lock_evading = self.lock_evading | self.locking_on_hacking;
-            }
-            if (is_true(self.inpain)) {
-                wait(0.1);
-            } else if (!isdefined(self.enemy)) {
+            if (self.shouldgotonewposition) {
                 should_slow_down_at_goal = 1;
                 if (self.lock_evading) {
                     self.current_pathto_pos = getnextmoveposition_evasive(self.lock_evading);
                     should_slow_down_at_goal = 0;
                 } else {
-                    self.current_pathto_pos = getnextmoveposition_wander();
+                    self.current_pathto_pos = getnextmoveposition_tactical(self.enemy);
                 }
                 if (isdefined(self.current_pathto_pos)) {
                     if (self function_a57c34b7(self.current_pathto_pos, should_slow_down_at_goal, 1)) {
@@ -435,57 +476,15 @@ function state_combat_update(*params) {
                         self vehicle_ai::waittill_pathing_done();
                         self notify(#"amws_end_interrupt_watch");
                     }
-                }
-                if (is_true(self.var_23eff037)) {
-                    self playsound(#"hash_7698127d41537782");
-                    self.var_23eff037 = 0;
-                }
-            } else if (isalive(self)) {
-                self turretsettarget(0, self.enemy);
-                self vehlookat(self.enemy);
-                if (self cansee(self.enemy)) {
-                    self.lasttimetargetinsight = gettime();
-                    if (!is_true(self.var_23eff037)) {
-                        self playsound(#"hash_7c4742a949425295");
-                        self.var_23eff037 = 1;
-                        wait(0.5);
+                    if (isdefined(self.enemy) && util::iscooldownready("rocket", 0.5) && self cansee(self.enemy) && self.gib_rocket !== 1) {
+                        self thread aim_and_fire_rocket_launcher(0.4);
                     }
-                }
-                if (self.shouldgotonewposition == 0) {
-                    if (gettime() > lasttimechangeposition + 1000) {
-                        self.shouldgotonewposition = 1;
-                    } else if (gettime() > self.lasttimetargetinsight + 500) {
-                        self.shouldgotonewposition = 1;
-                        if (is_true(self.var_23eff037)) {
-                            self playsound(#"hash_7698127d41537782");
-                            self.var_23eff037 = 0;
-                        }
-                    }
-                }
-                if (self.shouldgotonewposition) {
-                    should_slow_down_at_goal = 1;
-                    if (self.lock_evading) {
-                        self.current_pathto_pos = getnextmoveposition_evasive(self.lock_evading);
-                        should_slow_down_at_goal = 0;
-                    } else {
-                        self.current_pathto_pos = getnextmoveposition_tactical(self.enemy);
-                    }
-                    if (isdefined(self.current_pathto_pos)) {
-                        if (self function_a57c34b7(self.current_pathto_pos, should_slow_down_at_goal, 1)) {
-                            self thread path_update_interrupt_by_attacker();
-                            self thread path_update_interrupt();
-                            self vehicle_ai::waittill_pathing_done();
-                            self notify(#"amws_end_interrupt_watch");
-                        }
-                        if (isdefined(self.enemy) && util::iscooldownready("rocket", 0.5) && self cansee(self.enemy) && self.gib_rocket !== 1) {
-                            self thread aim_and_fire_rocket_launcher(0.4);
-                        }
-                        lasttimechangeposition = gettime();
-                        self.shouldgotonewposition = 0;
-                    }
+                    lasttimechangeposition = gettime();
+                    self.shouldgotonewposition = 0;
                 }
             }
         }
+        self state_combat_update_wait(0.5);
     }
 }
 
@@ -587,9 +586,9 @@ function firerocketlauncher(enemy) {
         wait(1.2);
         if (self.variant == "armored") {
             vehicle_ai::fire_for_rounds(1, 0, enemy);
-        } else {
-            vehicle_ai::fire_for_rounds(2, 0, enemy);
+            return;
         }
+        vehicle_ai::fire_for_rounds(2, 0, enemy);
     }
 }
 
@@ -693,7 +692,9 @@ function getnextmoveposition_evasive(client_flags) {
                             point._scoredebug[#"evading_directness"].scorename = "<unknown string>";
                         #/
                         point.score = point.score + 200;
-                    } else if (abs_directness > (isdefined(self.settings.lock_evade_enemy_line_of_sight_directness) ? self.settings.lock_evade_enemy_line_of_sight_directness : 0.9)) {
+                        continue;
+                    }
+                    if (abs_directness > (isdefined(self.settings.lock_evade_enemy_line_of_sight_directness) ? self.settings.lock_evade_enemy_line_of_sight_directness : 0.9)) {
                         /#
                             if (!isdefined(point._scoredebug)) {
                                 point._scoredebug = [];

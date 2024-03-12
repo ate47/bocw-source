@@ -66,24 +66,30 @@ function sr_demented_echo_fx(localclientnum, *oldval, newval, *bnewent, *binitia
             }
             self.var_255d9872 = 1;
         }
-    } else if (bwastimejump == 2) {
+        return;
+    }
+    if (bwastimejump == 2) {
         if (self.model === #"hash_2641cfb5c2cdcc85") {
             function_239993de(fieldname, #"hash_2d19b2d474adee02", self, "tag_origin");
             self stoprenderoverridebundle(#"hash_611d3f9c34b1cbd1");
         } else {
             self.var_4b6f13c8 = function_239993de(fieldname, #"hash_7a8b6775d3a2329d", self, "j_spine4");
         }
-    } else if (bwastimejump == 3) {
+        return;
+    }
+    if (bwastimejump == 3) {
         self.var_4b6f13c8 = function_239993de(fieldname, #"hash_2b2859b61c0b8a31", self, "j_spine4");
-    } else if (self.model === #"hash_2641cfb5c2cdcc85") {
+        return;
+    }
+    if (self.model === #"hash_2641cfb5c2cdcc85") {
         function_239993de(fieldname, #"hash_3a4d83f77eba6968", self, "tag_origin");
         self stoprenderoverridebundle(#"hash_611d3f9c34b1cbd1");
-    } else {
-        v_tag = self gettagorigin("j_spine4");
-        if (!isdefined(v_tag)) {
-            v_tag = self.origin + vectorscale((0, 0, 1), 48);
-        }
-        playfx(fieldname, #"hash_5bbf453f2140d55f", v_tag);
+        return;
     }
+    v_tag = self gettagorigin("j_spine4");
+    if (!isdefined(v_tag)) {
+        v_tag = self.origin + vectorscale((0, 0, 1), 48);
+    }
+    playfx(fieldname, #"hash_5bbf453f2140d55f", v_tag);
 }
 

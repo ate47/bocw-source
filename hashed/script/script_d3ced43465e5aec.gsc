@@ -61,10 +61,10 @@ function function_7ea4075e(localclientnum, *oldval, newval, *bnewent, *binitials
     }
     if (bwastimejump) {
         self thread namespace_57627cf3::function_67d3eb46(fieldname);
-    } else {
-        self notify(#"hash_43636cae68b91404");
-        self mapshaderconstant(fieldname, 0, "scriptVector3", 1, 0, 0, 1);
+        return;
     }
+    self notify(#"hash_43636cae68b91404");
+    self mapshaderconstant(fieldname, 0, "scriptVector3", 1, 0, 0, 1);
 }
 
 // Namespace namespace_5d515bd5/namespace_515a5054
@@ -97,8 +97,8 @@ function function_d8a90cf2() {
 function clone_damaged(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self thread function_56d6762(fieldname);
-    } else {
-        self thread function_d8a90cf2();
+        return;
     }
+    self thread function_d8a90cf2();
 }
 

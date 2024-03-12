@@ -42,8 +42,8 @@ function setvisiblescoreboardcolumns(col1, col2, col3, col4, col5, col6, col7, c
     col10 = function_788fb510(col10);
     if (!level.rankedmatch) {
         setscoreboardcolumns(col1, col2, col3, col4, col5, col6, col7, col8, col9, col10, "sbtimeplayed", "shotshit", "shotsmissed", "victory");
-    } else {
-        setscoreboardcolumns(col1, col2, col3, col4, col5, col6, col7, col8, col9, col10);
+        return;
     }
+    setscoreboardcolumns(col1, col2, col3, col4, col5, col6, col7, col8, col9, col10);
 }
 

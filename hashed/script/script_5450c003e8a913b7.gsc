@@ -285,14 +285,14 @@ function set_blind(blind, force) {
     if (blind && (!var_da41c771 || is_true(force))) {
         self.stealth.blind = 1;
         function_7e1ad4d4("blind");
-    } else {
-        self.stealth.blind = undefined;
-        if (var_da41c771) {
-            function_7e1ad4d4("spotted");
-        } else {
-            function_7e1ad4d4("hidden");
-        }
+        return;
     }
+    self.stealth.blind = undefined;
+    if (var_da41c771) {
+        function_7e1ad4d4("spotted");
+        return;
+    }
+    function_7e1ad4d4("hidden");
 }
 
 // Namespace namespace_f1f700ac/enemy
@@ -480,9 +480,9 @@ function function_cf839c4b(var_b2a2de70, var_a3dc7b53) {
     }
     if (isalive(self) && self.health > 0) {
         self namespace_cf88f507::function_51e96563("ally_damaged", "ally_hurt_peripheral", other, var_b2a2de70, var_a3dc7b53);
-    } else {
-        self namespace_cf88f507::function_51e96563("ally_killed", "ally_hurt_peripheral", other, var_b2a2de70, var_a3dc7b53);
+        return;
     }
+    self namespace_cf88f507::function_51e96563("ally_killed", "ally_hurt_peripheral", other, var_b2a2de70, var_a3dc7b53);
 }
 
 // Namespace namespace_f1f700ac/enemy
@@ -521,7 +521,9 @@ function function_32ea77f3(bool) {
             self.stealth.var_820f1207 = getplayers()[0];
         }
         self lookatentity(getplayers()[0]);
-    } else if (isdefined(self.stealth.var_820f1207)) {
+        return;
+    }
+    if (isdefined(self.stealth.var_820f1207)) {
         self.stealth.var_820f1207 = undefined;
         self lookatentity();
     }
@@ -658,7 +660,6 @@ function function_d08280d7(event) {
         case #"proximity":
             self thread namespace_6c0cd084::function_ac3ca2d7(event.entity, 1);
             return 1;
-            break;
         }
     }
     return 0;
@@ -714,29 +715,29 @@ function function_ee9a5ec9(event) {
                 }
             }
         }
-        break;
+        return;
     case #"grenade danger":
         if (function_46dfd025(event.origin, 128)) {
             event.type = "combat";
         }
-        break;
+        return;
     case #"explode":
         if (function_46dfd025(event.origin, 192)) {
             event.type = "combat";
         } else if (distancesquared(event.origin, self.origin) <= 1048576) {
             event.type = "combat";
         }
-        break;
+        return;
     case #"gunshot":
         if (distancesquared(event.origin, self.origin) < 640000) {
             event.type = "combat";
         }
-        break;
+        return;
     case #"glass_destroyed":
         if (self util::function_748809fc(event.origin, 0) && distance2dsquared(event.origin, self.origin) < 36864) {
             event.type = "combat";
         }
-        break;
+        return;
     }
 }
 
@@ -788,7 +789,6 @@ function function_af982b1e(event) {
             function_65b21ab8(self, "<unknown string>");
         #/
         return 1;
-        break;
     }
     return 0;
 }
@@ -874,10 +874,10 @@ function function_2ce66982() {
         var_ff42b0fb = namespace_979752dc::function_f66c4255() === "patrol" && var_a0f0f6ed;
         var_ff42b0fb = 0;
         self namespace_979752dc::set_patrol_style("alert", var_ff42b0fb, undefined, "small");
-    } else {
-        delay = self getblackboardattribute("_human_demeanor") === "ALERT" ? 0.05 : 0;
-        self thread function_6935155f("patrol", delay);
+        return;
     }
+    delay = self getblackboardattribute("_human_demeanor") === "ALERT" ? 0.05 : 0;
+    self thread function_6935155f("patrol", delay);
 }
 
 // Namespace namespace_f1f700ac/enemy
@@ -990,9 +990,9 @@ function function_669161(event) {
                 self namespace_979752dc::function_2b21025e(event.var_ce3a18c7);
                 self namespace_979752dc::function_4c1d52fd(event.var_ce3a18c7, "small");
             }
-        } else {
-            self function_52839330("investigate", event);
+            return;
         }
+        self function_52839330("investigate", event);
     }
 }
 

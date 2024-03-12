@@ -114,29 +114,29 @@ function function_5ae4a10c(modelname, targetname, displayname, var_7382ea8b, ico
         foreach (item in modelname) {
             function_5ae4a10c(item, targetname, displayname, var_7382ea8b, icon);
         }
-    } else {
-        if (isdefined(modelname)) {
-            level.var_a0b1f787[modelname] = targetname;
-        }
-        /#
-            if (isdefined(level.var_2d1b0ac[targetname]) && isdefined(displayname)) {
-                /#
-                    assert(level.var_2d1b0ac[targetname] == displayname, "world_event_monster_house");
-                #/
-            }
-        #/
-        if (isdefined(displayname)) {
-            level.var_2d1b0ac[targetname] = displayname;
-        }
-        if (isdefined(var_7382ea8b)) {
-            level.var_3cbb97[targetname] = var_7382ea8b;
-        }
-        if (isdefined(icon)) {
-            level.var_f8c1279b[targetname] = icon;
-        }
-        level.var_d459a1cf[targetname] = var_b5a47119;
-        level.var_3fc6a555[targetname] = zoffset;
+        return;
     }
+    if (isdefined(modelname)) {
+        level.var_a0b1f787[modelname] = targetname;
+    }
+    /#
+        if (isdefined(level.var_2d1b0ac[targetname]) && isdefined(displayname)) {
+            /#
+                assert(level.var_2d1b0ac[targetname] == displayname, "world_event_monster_house");
+            #/
+        }
+    #/
+    if (isdefined(displayname)) {
+        level.var_2d1b0ac[targetname] = displayname;
+    }
+    if (isdefined(var_7382ea8b)) {
+        level.var_3cbb97[targetname] = var_7382ea8b;
+    }
+    if (isdefined(icon)) {
+        level.var_f8c1279b[targetname] = icon;
+    }
+    level.var_d459a1cf[targetname] = var_b5a47119;
+    level.var_3fc6a555[targetname] = zoffset;
 }
 
 // Namespace namespace_5b1144e/namespace_5b1144e

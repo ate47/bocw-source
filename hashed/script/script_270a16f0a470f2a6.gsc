@@ -590,12 +590,12 @@ function cmd(var_acfb518f) {
             foreach (var_f271f008 in var_329d95fb) {
                 var_f271f008 thread function_b7549e2f(1);
             }
-            break;
+            return;
         case #"hash_37bd682457b237c8":
             foreach (var_f271f008 in var_329d95fb) {
                 var_f271f008 thread function_b7549e2f(0);
             }
-            break;
+            return;
         }
     #/
 }

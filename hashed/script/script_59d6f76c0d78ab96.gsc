@@ -42,9 +42,9 @@ function function_a880899e(eventparams) {
     if (!codcaster::function_b8fe9b52(localclientnum)) {
         if (eventparams.enabled) {
             self codeplaypostfxbundle("pstfx_spawn_cam");
-        } else {
-            self codestoppostfxbundle("pstfx_spawn_cam");
+            return;
         }
+        self codestoppostfxbundle("pstfx_spawn_cam");
     }
 }
 

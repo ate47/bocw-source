@@ -89,9 +89,9 @@ function function_a880899e(eventparams) {
     }
     if (eventparams.enabled) {
         function_d36db451(eventparams.localclientnum);
-    } else {
-        function_52b5ffe3(eventparams.localclientnum);
+        return;
     }
+    function_52b5ffe3(eventparams.localclientnum);
 }
 
 // Namespace oob/oob
@@ -101,9 +101,9 @@ function function_a880899e(eventparams) {
 function function_95c61f07(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump > 0) {
         self.nonplayeroobusage = 1;
-    } else {
-        self.nonplayeroobusage = undefined;
+        return;
     }
+    self.nonplayeroobusage = undefined;
 }
 
 // Namespace oob/oob
@@ -129,19 +129,19 @@ function onoutofboundschange(localclientnum, oldval, newval, *bnewent, *binitial
         if (!isdefined(localplayer.oob_effect_enabled)) {
             function_da2afac6(binitialsnap, localplayer);
         }
-    } else {
-        if (isdefined(level.oob_timekeep_ms) && isdefined(self.oob_start_time)) {
-            self.oob_end_time = getservertime(0, 1);
-            if (!isdefined(self.oob_active_duration)) {
-                self.oob_active_duration = 0;
-            }
-            self.oob_active_duration = self.oob_active_duration + self.oob_end_time - self.oob_start_time;
-        }
-        if (is_true(self.nonplayeroobusage)) {
-            self.oob_active_duration = undefined;
-        }
-        stopoutofboundseffects(binitialsnap, localplayer);
+        return;
     }
+    if (isdefined(level.oob_timekeep_ms) && isdefined(self.oob_start_time)) {
+        self.oob_end_time = getservertime(0, 1);
+        if (!isdefined(self.oob_active_duration)) {
+            self.oob_active_duration = 0;
+        }
+        self.oob_active_duration = self.oob_active_duration + self.oob_end_time - self.oob_start_time;
+    }
+    if (is_true(self.nonplayeroobusage)) {
+        self.oob_active_duration = undefined;
+    }
+    stopoutofboundseffects(binitialsnap, localplayer);
 }
 
 // Namespace oob/oob
@@ -157,9 +157,9 @@ function function_52b5ffe3(localclientnum) {
     }
     if (util::get_game_type() === #"zstandard") {
         level.var_5b8ec4d[localclientnum] = function_604c9983(localclientnum, #"hash_6da7ae12f538ef5e", 0.5);
-    } else {
-        level.var_5b8ec4d[localclientnum] = function_604c9983(localclientnum, #"uin_out_of_bounds_loop", 0.5);
+        return;
     }
+    level.var_5b8ec4d[localclientnum] = function_604c9983(localclientnum, #"uin_out_of_bounds_loop", 0.5);
 }
 
 // Namespace oob/oob

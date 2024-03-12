@@ -44,7 +44,9 @@ function private function_70a657d8() {
 function function_a25e8ff(localclientnum, var_27121fbd) {
     if (!var_27121fbd && codcaster::function_b8fe9b52(localclientnum)) {
         codcaster::function_12acfa84();
-    } else if (!self function_21c0fa55()) {
+        return;
+    }
+    if (!self function_21c0fa55()) {
         self function_bcc9c79c(localclientnum);
     }
 }
@@ -107,9 +109,9 @@ function on_player_corpse(localclientnum, params) {
             self renderoverridebundle::start_bundle(#"hash_7e51b929877df918", rob);
             level thread function_74ce4ee8(localclientnum, params.playernum, self, rob);
             codcaster::function_12acfa84();
-        } else {
-            self codcaster::function_6d9b84d9(rob);
+            return;
         }
+        self codcaster::function_6d9b84d9(rob);
     }
 }
 

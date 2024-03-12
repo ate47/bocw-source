@@ -22,9 +22,9 @@ function function_669c57bc(posx, posy, text, color, alpha, scale, duration) {
         duration = function_ea2f17d1(duration, 1);
         if (isscriptfunctionptr(level.var_44a79f1b) == 1) {
             [[ level.var_44a79f1b ]](posx, posy, text, color, alpha, scale, duration);
-        } else {
-            debug2dtext((posx, posy, 0), text, color, alpha, (0, 0, 0), 0, scale, duration);
+            return;
         }
+        debug2dtext((posx, posy, 0), text, color, alpha, (0, 0, 0), 0, scale, duration);
     #/
 }
 
@@ -93,9 +93,9 @@ function private function_ac3c5285(posx, posy, text, color, scale, var_24ea4e17,
             foreach (row in level.var_89c4a5f0) {
                 if (isinarray(level.var_89c4a5f0, posy) == 1) {
                     posy = posy + var_d6f54187;
-                } else {
-                    break;
+                    continue;
                 }
+                break;
             }
         }
         level.var_89c4a5f0[level.var_89c4a5f0.size] = posy;

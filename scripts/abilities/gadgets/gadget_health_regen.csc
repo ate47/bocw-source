@@ -35,7 +35,9 @@ function function_31f57700(*localclientnum, *oldval, newval, *bnewent, *binitial
             if (!is_true(self.var_b072e263)) {
                 self.var_b072e263 = 1;
             }
-        } else if (is_true(self.var_b072e263)) {
+            return;
+        }
+        if (is_true(self.var_b072e263)) {
             self.var_b072e263 = undefined;
         }
     }

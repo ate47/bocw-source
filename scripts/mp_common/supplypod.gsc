@@ -839,9 +839,9 @@ function private function_a1434496(*team, player, result, var_d862c76d) {
             supplypod.var_8d834202 = 1;
             supplypod thread function_827486aa(0);
         }
-    } else {
-        thread function_a143899c(player, 0);
+        return;
     }
+    thread function_a143899c(player, 0);
 }
 
 // Namespace supplypod/supplypod
@@ -1026,10 +1026,8 @@ function function_b8a25634(owner) {
 // Size: 0x204
 function function_de737a35() {
     player = self;
-    weapon = player getcurrentweapon();
-    while (weapon == level.weaponnone) {
+    for (weapon = player getcurrentweapon(); weapon == level.weaponnone; weapon = player getcurrentweapon()) {
         waitframe(1);
-        weapon = player getcurrentweapon();
     }
     slot = player gadgetgetslot(weapon);
     if (slot == 2 || weapon == getweapon(#"sig_buckler_turret")) {
@@ -1040,10 +1038,10 @@ function function_de737a35() {
             if (weapon == getweapon(#"sig_buckler_turret") || weapon == getweapon(#"sig_buckler_dw")) {
                 stockammo = player getweaponammoclip(weapon);
                 player setweaponammoclip(weapon, stockammo + int(weapon.var_60563796));
-            } else {
-                stockammo = player getweaponammostock(weapon);
-                player setweaponammostock(weapon, stockammo + int(weapon.var_60563796));
+                return;
             }
+            stockammo = player getweaponammostock(weapon);
+            player setweaponammostock(weapon, stockammo + int(weapon.var_60563796));
         }
     }
 }

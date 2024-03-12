@@ -220,7 +220,7 @@ function function_732dcb56(killstreaktype) {
     var_e4467d10 clientfield::set("recon_plane_reveal", 1);
     recon_plane.var_23cd2a2f = var_e4467d10;
     weapon = getweapon("recon_plane");
-    recon_plane setmodel(bundle.var_c6eab8b5);
+    recon_plane setmodel(bundle.ksmodel);
     recon_plane setenemymodel(bundle.var_aa0b97e1);
     recon_plane function_619a5c20();
     recon_plane setweapon(weapon);
@@ -556,10 +556,10 @@ function function_bde85071() {
                 function_e72ac8f4(team, var_eb10c6a7 > 0);
                 util::set_team_radar(team, var_a06a125 > 0);
             }
-        } else {
-            for (i = 0; i < level.players.size; i++) {
-                function_65f48f1a(level.players[i]);
-            }
+            continue;
+        }
+        for (i = 0; i < level.players.size; i++) {
+            function_65f48f1a(level.players[i]);
         }
     }
 }

@@ -252,12 +252,10 @@ function function_1110a5de(killstreaktype) {
             bundle.pilotbundles[killstreaktype] = [];
             i = 0;
             field = pilotdialogarraykey + i;
-            fieldvalue = bundle.(field);
-            while (isdefined(fieldvalue)) {
+            for (fieldvalue = bundle.(field); isdefined(fieldvalue); fieldvalue = bundle.(field)) {
                 bundle.pilotbundles[killstreaktype][i] = fieldvalue;
                 i++;
                 field = pilotdialogarraykey + i;
-                fieldvalue = bundle.(field);
             }
         }
         level.tacombundles = taacombundles;

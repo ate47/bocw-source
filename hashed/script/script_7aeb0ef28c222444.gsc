@@ -72,9 +72,9 @@ function function_90cdf7ba(type, origin) {
                         foreach (note in killnote) {
                             ai thread namespace_ec06fe4a::function_d55f042c(var_4d5cf4b2, note);
                         }
-                    } else {
-                        ai thread namespace_ec06fe4a::function_d55f042c(var_4d5cf4b2, killnote);
+                        continue;
                     }
+                    ai thread namespace_ec06fe4a::function_d55f042c(var_4d5cf4b2, killnote);
                 }
             }
         }

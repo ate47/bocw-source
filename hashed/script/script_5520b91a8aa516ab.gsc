@@ -75,7 +75,7 @@ class cremote_missile_target_lockon : cluielem {
     // Params 5, eflags: 0x0
     // Checksum 0xb8ad493d, Offset: 0x488
     // Size: 0x44
-    function setup_clientfields(*var_c05c67e2, *var_486334bd, *var_683d075d, *var_a334a5eb, *var_f1a86fa1) {
+    function setup_clientfields(*var_c05c67e2, *var_486334bd, *var_683d075d, *killedcallback, *var_f1a86fa1) {
         cluielem::setup_clientfields("remote_missile_target_lockon");
     }
 
@@ -106,9 +106,9 @@ class cremote_missile_target_lockon : cluielem {
 // Params 5, eflags: 0x0
 // Checksum 0x21e6d9a0, Offset: 0x118
 // Size: 0x19e
-function register(var_c05c67e2, var_486334bd, var_683d075d, var_a334a5eb, var_f1a86fa1) {
+function register(var_c05c67e2, var_486334bd, var_683d075d, killedcallback, var_f1a86fa1) {
     elem = new cremote_missile_target_lockon();
-    [[ elem ]]->setup_clientfields(var_c05c67e2, var_486334bd, var_683d075d, var_a334a5eb, var_f1a86fa1);
+    [[ elem ]]->setup_clientfields(var_c05c67e2, var_486334bd, var_683d075d, killedcallback, var_f1a86fa1);
     if (!isdefined(level.var_ae746e8f)) {
         level.var_ae746e8f = associativearray();
     }

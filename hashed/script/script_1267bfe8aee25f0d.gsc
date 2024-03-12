@@ -248,27 +248,41 @@ class class_f57714e4 : cluielem {
     function set_state(player, state_name) {
         if (#"defaultstate" == state_name) {
             player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 0);
-        } else if (#"hash_7d11e1c1b565495" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 1);
-        } else if (#"combathud" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 2);
-        } else if (#"hash_6724d4bba3d5bf31" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 3);
-        } else if (#"hash_37663a3349e1e83c" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 4);
-        } else if (#"wantedordermenu" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 5);
-        } else if (#"hash_75ae26cee1b43762" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 6);
-        } else if (#"friendlyfire" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 7);
-        } else {
-            /#
-                /#
-                    assertmsg("<unknown string>");
-                #/
-            #/
+            return;
         }
+        if (#"hash_7d11e1c1b565495" == state_name) {
+            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 1);
+            return;
+        }
+        if (#"combathud" == state_name) {
+            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 2);
+            return;
+        }
+        if (#"hash_6724d4bba3d5bf31" == state_name) {
+            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 3);
+            return;
+        }
+        if (#"hash_37663a3349e1e83c" == state_name) {
+            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 4);
+            return;
+        }
+        if (#"wantedordermenu" == state_name) {
+            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 5);
+            return;
+        }
+        if (#"hash_75ae26cee1b43762" == state_name) {
+            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 6);
+            return;
+        }
+        if (#"friendlyfire" == state_name) {
+            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 7);
+            return;
+        }
+        /#
+            /#
+                assertmsg("<unknown string>");
+            #/
+        #/
     }
 
     // Namespace namespace_f57714e4/hud_spy

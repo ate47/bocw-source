@@ -41,9 +41,9 @@ function private function_83c9fd20(params) {
     if (var_21a143e > 0) {
         level notify(#"hash_722cff0020f34cd4");
         set(var_21a143e * 0.001);
-    } else {
-        level thread close();
+        return;
     }
+    level thread close();
 }
 
 // Namespace namespace_4ea0b0e1/namespace_4ea0b0e1

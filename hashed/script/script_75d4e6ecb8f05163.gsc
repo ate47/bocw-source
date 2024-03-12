@@ -20,8 +20,7 @@ function init() {
 function function_26ecdeeb() {
     self notify("19ba4246a0d44eb1");
     self endon("19ba4246a0d44eb1");
-    count = 0;
-    while (1) {
+    for (count = 0; 1; count = 0) {
         wait(randomfloatrange(5, 35));
         if (function_feb0a774() > 1.1) {
             count++;
@@ -29,8 +28,7 @@ function function_26ecdeeb() {
                 function_17cf7de1(1);
                 return;
             }
-        } else {
-            count = 0;
+            continue;
         }
     }
 }

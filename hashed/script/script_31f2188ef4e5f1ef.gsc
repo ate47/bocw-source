@@ -147,21 +147,20 @@ function function_bffbd256() {
 // Size: 0x1a4
 function function_a9a0debb(params) {
     if (isarray(params)) {
-        goto LOC_0000016c;
-    }
-    args = strtok(params, ",");
-    foreach (arg in args) {
-        var_102cf4ae = strtok(arg, "=");
-        switch (var_102cf4ae[0]) {
-        case #"hash_a67f20a6e605d14":
-            var_486f31cd = float(var_102cf4ae[1]);
-            break;
-        case #"hash_48ac5ace9c46cec8":
-            var_e9f7aace = float(var_102cf4ae[1]);
-            break;
+    } else {
+        args = strtok(params, ",");
+        foreach (arg in args) {
+            var_102cf4ae = strtok(arg, "=");
+            switch (var_102cf4ae[0]) {
+            case #"hash_a67f20a6e605d14":
+                var_486f31cd = float(var_102cf4ae[1]);
+                continue;
+            case #"hash_48ac5ace9c46cec8":
+                var_e9f7aace = float(var_102cf4ae[1]);
+                continue;
+            }
         }
     }
-LOC_0000016c:
     if (!isdefined(var_486f31cd)) {
         var_486f31cd = 108;
     }
@@ -178,10 +177,10 @@ LOC_0000016c:
 function function_d48e9844(var_486f31cd, var_e9f7aace) {
     if (isdefined(level.player)) {
         level.player thread fx::function_82104e32(var_486f31cd, var_e9f7aace);
-    } else {
-        wait(1);
-        level.player thread fx::function_82104e32(var_486f31cd, var_e9f7aace);
+        return;
     }
+    wait(1);
+    level.player thread fx::function_82104e32(var_486f31cd, var_e9f7aace);
 }
 
 // Namespace namespace_9a981837/namespace_81e6fa1d

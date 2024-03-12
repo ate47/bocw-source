@@ -529,13 +529,13 @@ function private update_duration(var_756fda07, var_b0144580, var_ab5b905e, appli
             }
             self.endtime = time + self.duration;
         }
-    } else {
-        self.duration = var_7a1fa72a;
-        if (maxduration && self.duration > maxduration) {
-            self.duration = maxduration;
-        }
-        self.endtime = time + self.duration;
+        return;
     }
+    self.duration = var_7a1fa72a;
+    if (maxduration && self.duration > maxduration) {
+        self.duration = maxduration;
+    }
+    self.endtime = time + self.duration;
 }
 
 // Namespace status_effect/status_effect_util
@@ -578,13 +578,13 @@ function private function_57f33b96(var_756fda07, var_b0144580, var_ab5b905e, app
             }
             self.endtime = time + var_7a1fa72a;
         }
-    } else {
-        self.duration = var_7a1fa72a;
-        if (maxduration && self.duration > maxduration) {
-            self.duration = maxduration;
-        }
-        self.endtime = time + var_7a1fa72a;
+        return;
     }
+    self.duration = var_7a1fa72a;
+    if (maxduration && self.duration > maxduration) {
+        self.duration = maxduration;
+    }
+    self.endtime = time + var_7a1fa72a;
 }
 
 // Namespace status_effect/status_effect_util

@@ -22,7 +22,8 @@ function init() {
 function function_3e0d8ba2() {
     if (isdefined(level.var_ba243d66)) {
         return level.var_ba243d66;
-    } else if (level.var_70e5d775 === 1) {
+    }
+    if (level.var_70e5d775 === 1) {
         var_c2ad857a = [3:#"hash_214a1f87c6212231", 2:#"hash_214a2087c62123e4", 1:#"hash_214a2187c6212597", 0:#"hash_214a2287c621274a"];
         return var_c2ad857a[randomint(var_c2ad857a.size)];
     }
@@ -70,7 +71,9 @@ function function_319c73b1(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwastimejump == 1) {
         self.var_47b256ef.origin = self.origin;
         self.var_47b256ef linkto(self);
-    } else if (bwastimejump == 2 || bwastimejump == 3) {
+        return;
+    }
+    if (bwastimejump == 2 || bwastimejump == 3) {
         self thread function_2eee13af();
     }
 }

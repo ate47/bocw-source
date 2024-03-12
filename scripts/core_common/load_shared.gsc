@@ -259,13 +259,13 @@ function badplace_think(badplace) {
     level.badplaces++;
     if (isdefined(badplace.radius)) {
         badplace_box("badplace" + level.badplaces, -1, badplace.origin, badplace.radius, "all");
-    } else {
-        aabb_max = badplace getpointinbounds(1, 1, 1);
-        aabb_min = badplace getpointinbounds(-1, -1, -1);
-        var_9a490e0c = badplace getpointinbounds(0, 0, 0);
-        var_856c0347 = (aabb_max - aabb_min) * 0.5;
-        badplace_box("badplace" + level.badplaces, -1, var_9a490e0c, var_856c0347, "all");
+        return;
     }
+    aabb_max = badplace getpointinbounds(1, 1, 1);
+    aabb_min = badplace getpointinbounds(-1, -1, -1);
+    var_9a490e0c = badplace getpointinbounds(0, 0, 0);
+    var_856c0347 = (aabb_max - aabb_min) * 0.5;
+    badplace_box("badplace" + level.badplaces, -1, var_9a490e0c, var_856c0347, "all");
 }
 
 // Namespace load/load_shared
@@ -380,7 +380,9 @@ function water_think() {
                     } else {
                         players[i] allowprone(1);
                     }
-                } else if (players[i].inwater) {
+                    continue;
+                }
+                if (players[i].inwater) {
                     players[i].inwater = 0;
                 }
             }
@@ -507,9 +509,12 @@ function shock_onpain() {
         }
         if (mod === "MOD_PROJECTILE") {
             continue;
-        } else if (mod === "MOD_GRENADE_SPLASH" || mod === "MOD_GRENADE" || mod === "MOD_EXPLOSIVE" || mod === "MOD_PROJECTILE_SPLASH") {
+        }
+        if (mod === "MOD_GRENADE_SPLASH" || mod === "MOD_GRENADE" || mod === "MOD_EXPLOSIVE" || mod === "MOD_PROJECTILE_SPLASH") {
             self shock_onexplosion(damage);
-        } else if (getdvarstring(#"blurpain") == "on") {
+            continue;
+        }
+        if (getdvarstring(#"blurpain") == "on") {
             self shellshock(#"pain", 0.5);
         }
     }
@@ -634,7 +639,7 @@ function art_review() {
         }
         level.prematchperiod = 0;
         level waittill(#"forever");
-        break;
+        return;
     }
 }
 

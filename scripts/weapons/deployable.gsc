@@ -131,7 +131,7 @@ function function_b20df196(var_a4879492) {
     for (index = 0; index < level.var_160dcfef.var_1b8ab31d.size; index++) {
         if (level.var_160dcfef.var_1b8ab31d[index]._id == var_a4879492) {
             level.var_160dcfef.var_1b8ab31d = array::remove_index(level.var_160dcfef.var_1b8ab31d, index, 0);
-            break;
+            return;
         }
     }
 }
@@ -422,7 +422,9 @@ function private function_f0adf9c() {
                 player sethintstring(level._deployable_weapons[deployable_weapon.statindex].placehintstr);
                 player.var_c702a701 = 1;
             }
-        } else if (isdefined(level._deployable_weapons[deployable_weapon.statindex].var_a39cb3db)) {
+            continue;
+        }
+        if (isdefined(level._deployable_weapons[deployable_weapon.statindex].var_a39cb3db)) {
             player sethintstring(level._deployable_weapons[deployable_weapon.statindex].var_a39cb3db);
             player.var_c702a701 = 1;
         }

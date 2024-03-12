@@ -43,7 +43,9 @@ function soul_capture_zombie_fire(localclientnum, *oldval, newval, *bnewent, *bi
         if (!isdefined(self.var_f6a6e73d)) {
             self.var_f6a6e73d = util::playfxontag(fieldname, #"hash_5a09c40118c2df6e", self, "j_spine4");
         }
-    } else if (isdefined(self.var_f6a6e73d)) {
+        return;
+    }
+    if (isdefined(self.var_f6a6e73d)) {
         stopfx(fieldname, self.var_f6a6e73d);
         self.var_f6a6e73d = undefined;
     }
@@ -66,17 +68,17 @@ function soul_capture_leave(localclientnum, *oldval, newval, *bnewent, *binitial
             playsound(fieldname, #"hash_46461ba72b8ab7a2", self.soundorigin);
             soundloopemitter("evt_sur_we_portal_common_lp", self.soundorigin);
         }
-    } else {
-        if (isdefined(self.var_c2310a57)) {
-            stopfx(fieldname, self.var_c2310a57);
-        }
-        if (isdefined(self.soundorigin)) {
-            playsound(fieldname, #"hash_3c03699766f040c7", self.soundorigin);
-            soundstoploopemitter("evt_sur_we_portal_common_lp", self.soundorigin);
-            self.soundorigin = undefined;
-        }
-        self stoprumble(fieldname, "sr_world_event_soul_capture_crystal_leave_rumble");
+        return;
     }
+    if (isdefined(self.var_c2310a57)) {
+        stopfx(fieldname, self.var_c2310a57);
+    }
+    if (isdefined(self.soundorigin)) {
+        playsound(fieldname, #"hash_3c03699766f040c7", self.soundorigin);
+        soundstoploopemitter("evt_sur_we_portal_common_lp", self.soundorigin);
+        self.soundorigin = undefined;
+    }
+    self stoprumble(fieldname, "sr_world_event_soul_capture_crystal_leave_rumble");
 }
 
 // Namespace namespace_63c7213c/namespace_63c7213c
@@ -92,9 +94,13 @@ function function_86bba240(localclientnum, *oldval, newval, *bnewent, *binitials
         } else {
             self thread function_d0b587e2(fieldname);
         }
-    } else if (bwastimejump) {
+        return;
+    }
+    if (bwastimejump) {
         self.var_59419da4[fieldname] = playfx(fieldname, #"hash_37652ead88a2ed5e", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
-    } else if (isdefined(self.var_59419da4[fieldname])) {
+        return;
+    }
+    if (isdefined(self.var_59419da4[fieldname])) {
         stopfx(fieldname, self.var_59419da4[fieldname]);
         self.var_59419da4[fieldname] = undefined;
     }

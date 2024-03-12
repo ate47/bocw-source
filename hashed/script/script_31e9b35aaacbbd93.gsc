@@ -46,57 +46,57 @@ function private function_887ac605(objective) {
     case #"tkdn_raid_bar":
         snd::function_7db65a93("triton_on");
         level thread function_a20133bd();
-        break;
+        return;
     case #"tkdn_raid_gearup":
         snd::function_7db65a93("triton_on");
-        break;
+        return;
     case #"tkdn_raid_apt":
         snd::function_7db65a93("triton_on");
         level notify(#"hash_7ad75056b30c451a");
         level notify(#"hash_63850bb43dbc38de");
-        break;
+        return;
     case #"tkdn_raid_rooftops":
         snd::function_7db65a93("triton_on");
-        break;
+        return;
     case #"tkdn_raid_slide":
         snd::function_7db65a93("triton_on");
-        break;
+        return;
     case #"tkdn_raid_capture":
         snd::function_7db65a93("triton_on");
-        break;
+        return;
     case #"hash_7db5c2bb92c102ae":
         snd::function_7db65a93("triton_on");
-        break;
+        return;
     case #"tkdn_af_intro":
         snd::function_7db65a93("triton_off");
-        break;
+        return;
     case #"tkdn_af_hill":
         snd::function_7db65a93("triton_off");
-        break;
+        return;
     case #"tkdn_af_tarmac":
         snd::function_7db65a93("triton_off");
-        break;
+        return;
     case #"tkdn_af_chase":
         snd::function_7db65a93("triton_off");
         snd::function_7db65a93(#"hash_55e0585ab6221a00");
-        break;
+        return;
     case #"tkdn_af_rc_chase":
         snd::function_7db65a93("triton_off");
-        break;
+        return;
     case #"tkdn_af_skid":
         snd::function_7db65a93("triton_off");
-        break;
+        return;
     case #"tkdn_af_wreck":
         snd::function_7db65a93("triton_off");
-        break;
+        return;
     case #"no_game":
     case #"hash_6e531fb9475df744":
-        break;
+        return;
     default:
         /#
             function_81fac19d(function_d78e3644(), "<unknown string>" + objective + "<unknown string>");
         #/
-        break;
+        return;
     }
 }
 

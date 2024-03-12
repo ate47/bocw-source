@@ -91,38 +91,38 @@ function function_7431f6cc(localclientnum, *oldval, newval, *bnewent, *binitials
             self playsound(fieldname, #"hash_45c4b084d38f5afe");
             self.var_9dc86d3e = self playloopsound(#"hash_5b2010d2b4f171ba", undefined, vectorscale((0, 0, 1), 35));
         }
-    } else {
-        if (isdefined(self.var_47d4e598)) {
-            stopfx(fieldname, self.var_47d4e598);
-            self.var_47d4e598 = undefined;
-        }
-        if (isdefined(self.var_9dc86d3e)) {
-            self stoploopsound(self.var_9dc86d3e);
-            self.var_9dc86d3e = undefined;
-        }
-        var_37cec89a = #"hash_1f8f75941d481d68";
-        if (isdefined(self.archetype)) {
-            switch (self.archetype) {
-            case #"mechz":
-            case #"hash_7c0d83ac1e845ac2":
-                var_37cec89a = #"hash_d17ba387ed58333";
-                break;
-            case #"raz":
-            case #"mimic":
-            case #"zombie_dog":
-                var_37cec89a = #"hash_704b1e9eda987ea3";
-                break;
-            case #"soa":
-            case #"zombie":
-            case #"avogadro":
-                var_37cec89a = #"hash_787176da22ad853a";
-                break;
-            default:
-                var_37cec89a = #"hash_787176da22ad853a";
-                break;
-            }
-        }
-        util::playfxontag(fieldname, var_37cec89a, self, str_tag);
+        return;
     }
+    if (isdefined(self.var_47d4e598)) {
+        stopfx(fieldname, self.var_47d4e598);
+        self.var_47d4e598 = undefined;
+    }
+    if (isdefined(self.var_9dc86d3e)) {
+        self stoploopsound(self.var_9dc86d3e);
+        self.var_9dc86d3e = undefined;
+    }
+    var_37cec89a = #"hash_1f8f75941d481d68";
+    if (isdefined(self.archetype)) {
+        switch (self.archetype) {
+        case #"mechz":
+        case #"hash_7c0d83ac1e845ac2":
+            var_37cec89a = #"hash_d17ba387ed58333";
+            break;
+        case #"raz":
+        case #"mimic":
+        case #"zombie_dog":
+            var_37cec89a = #"hash_704b1e9eda987ea3";
+            break;
+        case #"soa":
+        case #"zombie":
+        case #"avogadro":
+            var_37cec89a = #"hash_787176da22ad853a";
+            break;
+        default:
+            var_37cec89a = #"hash_787176da22ad853a";
+            break;
+        }
+    }
+    util::playfxontag(fieldname, var_37cec89a, self, str_tag);
 }
 

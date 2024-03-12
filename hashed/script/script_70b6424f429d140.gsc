@@ -384,11 +384,11 @@ function function_3cebcd1b() {
         if (isdefined(var_4cd99adc)) {
             self thread function_cbe25a41(var_4cd99adc, "tag_glass_front_left_lower_d0", 1);
             level.var_7c11765c = gettime() + 2000;
-        } else {
-            /#
-                iprintlnbold("hit1_truck_front" + var_87c48267);
-            #/
+            continue;
         }
+        /#
+            iprintlnbold("hit1_truck_front" + var_87c48267);
+        #/
     }
 }
 

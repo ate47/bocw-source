@@ -40,9 +40,9 @@ function function_341e5a97(*localclientnum, *oldval, newval, *bnewent, *binitial
                 }
             }
         }
-    } else {
-        self notify(#"unlock_model");
+        return;
     }
+    self notify(#"unlock_model");
 }
 
 // Namespace zm_transform/zm_transformation

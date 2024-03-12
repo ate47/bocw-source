@@ -74,9 +74,9 @@ function private function_4a75f4b6(localclientnum, oldval, newval, bnewent, bini
     #/
     if (newval) {
         function_27d5cafd(#"hash_6596d53586d3ef06", #"hash_6596d53586d3ef06");
-    } else {
-        function_27d5cafd();
+        return;
     }
+    function_27d5cafd();
 }
 
 // Namespace namespace_db2381c4/namespace_db2381c4
@@ -102,9 +102,9 @@ function private function_786ac693(localclientnum, oldval, newval, bnewent, bini
     #/
     if (newval) {
         self function_7ab521db(localclientnum);
-    } else {
-        self notify(#"hash_50cc63ed1ff3cc9a");
+        return;
     }
+    self notify(#"hash_50cc63ed1ff3cc9a");
 }
 
 // Namespace namespace_db2381c4/namespace_db2381c4
@@ -149,9 +149,9 @@ function private function_5caef633(localclientnum, oldval, newval, bnewent, bini
     #/
     if (newval) {
         self function_9a0e9c31(localclientnum);
-    } else {
-        self notify(#"hash_10d9c330299e2a6d");
+        return;
     }
+    self notify(#"hash_10d9c330299e2a6d");
 }
 
 // Namespace namespace_db2381c4/namespace_db2381c4
@@ -187,9 +187,9 @@ function private function_c4178945(localclientnum, oldval, newval, bnewent, bini
     #/
     if (newval) {
         self function_54105299(localclientnum);
-    } else {
-        self notify(#"hash_5bd6457a6c206a17");
+        return;
     }
+    self notify(#"hash_5bd6457a6c206a17");
 }
 
 // Namespace namespace_db2381c4/namespace_db2381c4
@@ -225,9 +225,9 @@ function private function_49365e3b(localclientnum, oldval, newval, bnewent, bini
     #/
     if (newval) {
         self function_ad43fc89(localclientnum);
-    } else {
-        self notify(#"hash_3d54cb0fcf6b56fa");
+        return;
     }
+    self notify(#"hash_3d54cb0fcf6b56fa");
 }
 
 // Namespace namespace_db2381c4/namespace_db2381c4
@@ -323,12 +323,10 @@ function private function_b68c2eb9(localclientnum, oldval, newval, *bnewent, *bi
     /#
         println("<unknown string>");
     #/
-    var_67e99fbd = 1;
-    while (changed >= var_67e99fbd) {
+    for (var_67e99fbd = 1; changed >= var_67e99fbd; var_67e99fbd = var_67e99fbd << 1) {
         if (changed & var_67e99fbd) {
             self thread [[ level._fx.rc_car.var_7351c5a[var_67e99fbd] ]](binitialsnap, bwastimejump);
         }
-        var_67e99fbd = var_67e99fbd << 1;
     }
     /#
         println("<unknown string>");
@@ -360,11 +358,11 @@ function private function_5c750f8f(*localclientnum, state) {
         /#
             println("<unknown string>");
         #/
-    } else {
-        /#
-            println("<unknown string>");
-        #/
+        return;
     }
+    /#
+        println("<unknown string>");
+    #/
 }
 
 // Namespace namespace_db2381c4/namespace_db2381c4
@@ -381,12 +379,12 @@ function private function_a718a890(localclientnum, state) {
         #/
         fxid = util::playfxontag(localclientnum, "maps/cp_takedown/fx9_td_rc_flashlight", self, "tag_fx_flashlight");
         self thread function_d4cb569b(localclientnum, fxid, "stop_flashlight_fx");
-    } else {
-        /#
-            println("<unknown string>");
-        #/
-        self notify(#"stop_flashlight_fx");
+        return;
     }
+    /#
+        println("<unknown string>");
+    #/
+    self notify(#"stop_flashlight_fx");
 }
 
 // Namespace namespace_db2381c4/namespace_db2381c4
@@ -402,13 +400,13 @@ function private function_2550ab3e(localclientnum, state) {
             println("<unknown string>");
         #/
         self thread function_7dc13ec9(localclientnum);
-    } else {
-        /#
-            println("<unknown string>");
-        #/
-        self notify(#"hash_28344e38d8947eea");
-        self notify(#"stop_blink_fx");
+        return;
     }
+    /#
+        println("<unknown string>");
+    #/
+    self notify(#"hash_28344e38d8947eea");
+    self notify(#"stop_blink_fx");
 }
 
 // Namespace namespace_db2381c4/namespace_db2381c4
@@ -452,12 +450,12 @@ function private function_3383f5e2(localclientnum, state) {
         fxid = util::playfxontag(localclientnum, "maps/cp_takedown/fx9_td_rc_light_green", self, "tag_fx_light_rear");
         self thread function_d4cb569b(localclientnum, fxid, "stop_proximity_fx");
         self.var_2aa68449 = snd::play("wpn_tkd_rcxd_detonate_timer_ready", [1:"tag_fx_light_rear", 0:self]);
-    } else {
-        /#
-            println("<unknown string>");
-        #/
-        self notify(#"stop_proximity_fx");
+        return;
     }
+    /#
+        println("<unknown string>");
+    #/
+    self notify(#"stop_proximity_fx");
 }
 
 // Namespace namespace_db2381c4/namespace_db2381c4
@@ -501,12 +499,12 @@ function private function_4cfdb901(localclientnum, state) {
         snd::play("wpn_tkd_rcxd_impact_hv");
         fxid = util::playfxontag(localclientnum, "maps/cp_takedown/fx9_td_rc_damage_heavy", self, "tag_origin");
         self thread function_d4cb569b(localclientnum, fxid, "stop_damage_heavy_fx");
-    } else {
-        /#
-            println("<unknown string>");
-        #/
-        self notify(#"stop_damage_heavy_fx");
+        return;
     }
+    /#
+        println("<unknown string>");
+    #/
+    self notify(#"stop_damage_heavy_fx");
 }
 
 // Namespace namespace_db2381c4/namespace_db2381c4
@@ -522,12 +520,12 @@ function private function_51de3dc2(localclientnum, state) {
         #/
         fxid = util::playfxontag(localclientnum, "maps/cp_takedown/fx9_td_rc_exp_c4", self, "tag_origin");
         self thread function_d4cb569b(localclientnum, fxid, "stop_death_fx");
-    } else {
-        /#
-            println("<unknown string>");
-        #/
-        self notify(#"stop_death_fx");
+        return;
     }
+    /#
+        println("<unknown string>");
+    #/
+    self notify(#"stop_death_fx");
 }
 
 // Namespace namespace_db2381c4/namespace_db2381c4
@@ -554,9 +552,9 @@ function private function_979cbf76(localclientnum, oldval, newval, bnewent, bini
     #/
     if (newval) {
         self function_bc597003(localclientnum);
-    } else {
-        self notify(#"hash_34ad886fbd5f4182");
+        return;
     }
+    self notify(#"hash_34ad886fbd5f4182");
 }
 
 // Namespace namespace_db2381c4/namespace_db2381c4
@@ -592,9 +590,9 @@ function private function_f6936758(localclientnum, oldval, newval, bnewent, bini
     #/
     if (newval) {
         self function_3ff9983b(localclientnum);
-    } else {
-        self notify(#"hash_22f3d135b4aea2a6");
+        return;
     }
+    self notify(#"hash_22f3d135b4aea2a6");
 }
 
 // Namespace namespace_db2381c4/namespace_db2381c4
@@ -630,9 +628,9 @@ function private function_a4c9adb9(localclientnum, oldval, newval, bnewent, bini
     self notify(#"hash_18d68ed133347a19");
     if (newval) {
         self thread function_40f427f7();
-    } else {
-        self thread function_fe60975();
+        return;
     }
+    self thread function_fe60975();
 }
 
 // Namespace namespace_db2381c4/namespace_db2381c4
@@ -717,9 +715,9 @@ function private function_92a58466(localclientnum, *oldval, newval, *bnewent, *b
     if (bwastimejump) {
         fxid = util::playfxontag(fieldname, "maps/cp_takedown/fx9_takedown_rc_view_wisp", self, "tag_origin");
         self thread function_86203754(fieldname, fxid);
-    } else {
-        self notify(#"hash_18ccf59470efbae9");
+        return;
     }
+    self notify(#"hash_18ccf59470efbae9");
 }
 
 // Namespace namespace_db2381c4/namespace_db2381c4
@@ -746,13 +744,13 @@ function private function_f14b954c(localclientnum, oldval, newval, bnewent, bini
         }
         self postfx::playpostfxbundle("pstfx_vehicle_rcxd_fade_in");
         namespace_a052577e::function_b233d29e(0.5, 0);
-    } else {
-        if (self postfx::function_556665f2("pstfx_vehicle_rcxd_fade_out")) {
-            self postfx::stoppostfxbundle("pstfx_vehicle_rcxd_fade_out");
-        }
-        self postfx::playpostfxbundle("pstfx_vehicle_rcxd_fade_out");
-        namespace_a052577e::function_b233d29e(0.5, 0);
+        return;
     }
+    if (self postfx::function_556665f2("pstfx_vehicle_rcxd_fade_out")) {
+        self postfx::stoppostfxbundle("pstfx_vehicle_rcxd_fade_out");
+    }
+    self postfx::playpostfxbundle("pstfx_vehicle_rcxd_fade_out");
+    namespace_a052577e::function_b233d29e(0.5, 0);
 }
 
 // Namespace namespace_db2381c4/namespace_db2381c4
@@ -779,16 +777,16 @@ function private function_d1374213(*localclientnum, *oldval, newval, *bnewent, *
     switch (bwastimejump) {
     case 0:
         self function_f6e99a8d("rob_p9_cp_takedown_snipercam_blood_henchman");
-        break;
+        return;
     case 1:
         self playrenderoverridebundle("rob_p9_cp_takedown_snipercam_blood_henchman");
-        break;
+        return;
     case 2:
         self function_f6e99a8d("rob_p9_cp_takedown_snipercam_blood_splatter");
-        break;
+        return;
     case 3:
         self playrenderoverridebundle("rob_p9_cp_takedown_snipercam_blood_splatter");
-        break;
+        return;
     }
 }
 

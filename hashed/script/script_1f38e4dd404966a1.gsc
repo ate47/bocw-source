@@ -55,19 +55,19 @@ function zm_ammomod_deadwire_zap(localclientnum, *oldval, newval, *bnewent, *bin
             self playsound(0, #"hash_20d0ecdd50323b09", self.origin + vectorscale((0, 0, 1), 50));
             self.var_8d3dbdcc = self playloopsound("zmb_ammomod_deadwire_stunned_lp");
         }
-    } else {
-        if (isdefined(self.var_43835d52)) {
-            stopfx(fieldname, self.var_43835d52);
-            self.var_43835d52 = undefined;
-        }
-        if (isdefined(self.var_5900d892)) {
-            stopfx(fieldname, self.var_5900d892);
-            self.var_5900d892 = undefined;
-        }
-        if (isdefined(self.var_8d3dbdcc)) {
-            self stoploopsound(self.var_8d3dbdcc);
-            self.var_8d3dbdcc = undefined;
-        }
+        return;
+    }
+    if (isdefined(self.var_43835d52)) {
+        stopfx(fieldname, self.var_43835d52);
+        self.var_43835d52 = undefined;
+    }
+    if (isdefined(self.var_5900d892)) {
+        stopfx(fieldname, self.var_5900d892);
+        self.var_5900d892 = undefined;
+    }
+    if (isdefined(self.var_8d3dbdcc)) {
+        self stoploopsound(self.var_8d3dbdcc);
+        self.var_8d3dbdcc = undefined;
     }
 }
 

@@ -468,9 +468,9 @@ function function_a39c3df6() {
                 thread [[ level.onforfeit ]](team);
                 return 1;
             }
-        } else {
-            var_64d2b1d6 = team;
+            continue;
         }
+        var_64d2b1d6 = team;
     }
     if (level.multiteam && var_f8765cbc == level.teams.size - 1) {
         thread [[ level.onforfeit ]](var_64d2b1d6);
@@ -661,9 +661,9 @@ function matchstarttimer() {
             wait(1);
         }
         self luinotifyevent(#"prematch_timer_ended", 1, 1);
-    } else {
-        visionsetnaked("default", 1);
+        return;
     }
+    visionsetnaked("default", 1);
 }
 
 // Namespace globallogic/globallogic
@@ -917,22 +917,22 @@ function function_ec721c76(winner, endreasontext) {
             }
             if (!isdefined(player.pers[#"team"])) {
                 player [[ level.spawnintermission ]](1);
-            } else {
-                if (level.teambased) {
-                    player thread [[ level.onteamoutcomenotify ]](winner, 1, endreasontext);
-                } else {
-                    player thread [[ level.onoutcomenotify ]](winner, 1, endreasontext);
-                }
-                self val::set(#"round_end", "show_hud", 0);
-                player setclientuivisibilityflag("g_compassShowEnemies", 0);
+                continue;
             }
+            if (level.teambased) {
+                player thread [[ level.onteamoutcomenotify ]](winner, 1, endreasontext);
+            } else {
+                player thread [[ level.onoutcomenotify ]](winner, 1, endreasontext);
+            }
+            self val::set(#"round_end", "show_hud", 0);
+            player setclientuivisibilityflag("g_compassShowEnemies", 0);
         }
     }
     if (util::waslastround()) {
         roundendwait(level.roundenddelay, 0);
-    } else {
-        roundendwait(level.roundenddelay, 1);
+        return;
     }
+    roundendwait(level.roundenddelay, 1);
 }
 
 // Namespace globallogic/globallogic
@@ -966,10 +966,10 @@ function function_63671731(*winner, *endreasontext) {
         player = players[index];
         if (!isdefined(player.pers[#"team"])) {
             player [[ level.spawnintermission ]](1);
-        } else {
-            player thread [[ level.onteamoutcomenotify ]](switchtype, 0, level.halftimesubcaption);
-            player val::set(#"round_switch", "show_hud", 0);
+            continue;
         }
+        player thread [[ level.onteamoutcomenotify ]](switchtype, 0, level.halftimesubcaption);
+        player val::set(#"round_switch", "show_hud", 0);
     }
     roundendwait(level.halftimeroundenddelay, 0);
 }
@@ -1537,11 +1537,11 @@ function function_2905c18e() {
                 } else {
                     level.deadplayers[team][level.deadplayers[team].size] = player;
                 }
-            } else {
-                level.deadplayers[team][level.deadplayers[team].size] = player;
-                if (player globallogic_spawn::mayspawn()) {
-                    level.playerlives[team]++;
-                }
+                continue;
+            }
+            level.deadplayers[team][level.deadplayers[team].size] = player;
+            if (player globallogic_spawn::mayspawn()) {
+                level.playerlives[team]++;
             }
         }
     }
@@ -1630,7 +1630,7 @@ function timelimitclock() {
             if (timeleftint <= 10 || timeleftint <= 30 && timeleftint % 2 == 0) {
                 level notify(#"match_ending_very_soon", "time");
                 if (timeleftint == 0) {
-                    break;
+                    return;
                 }
                 clockobject playsound(#"mpl_ui_timer_countdown");
             }

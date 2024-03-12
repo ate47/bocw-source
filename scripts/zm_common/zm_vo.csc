@@ -131,7 +131,6 @@ function private function_d1711916(var_332276f2, dialogkey) {
         return var_332276f2.var_dd1d58bf;
     case #"hash_73fd41d7b25c7854":
         return var_332276f2.var_861c8fa7;
-        break;
     }
 }
 

@@ -34,18 +34,18 @@ function function_54819cfd(localclientnum, *oldval, newval, *bnewent, *binitials
         self.var_1f3cb09a = util::playfxontag(fieldname, #"hash_6c8d478322adcc6a", self, "j_mainroot");
         self.var_eb074a88 = self playloopsound("evt_bunny_loop");
         self.var_27af60a = self playloopsound("amb_bunny_float_loop");
-    } else {
-        if (isdefined(self.var_1f3cb09a)) {
-            stopfx(fieldname, self.var_1f3cb09a);
-            self stoploopsound(self.var_eb074a88, 0.5);
-            self stoploopsound(self.var_27af60a, 0.25);
-            self.var_1f3cb09a = undefined;
-            self.var_eb074a88 = undefined;
-            self.var_27af60a = undefined;
-        }
-        self.var_a22abb6f = util::playfxontag(fieldname, #"hash_5cde32c15506b440", self, "j_mainroot");
-        self playsound(0, #"wpn_grenade_explode");
+        return;
     }
+    if (isdefined(self.var_1f3cb09a)) {
+        stopfx(fieldname, self.var_1f3cb09a);
+        self stoploopsound(self.var_eb074a88, 0.5);
+        self stoploopsound(self.var_27af60a, 0.25);
+        self.var_1f3cb09a = undefined;
+        self.var_eb074a88 = undefined;
+        self.var_27af60a = undefined;
+    }
+    self.var_a22abb6f = util::playfxontag(fieldname, #"hash_5cde32c15506b440", self, "j_mainroot");
+    self playsound(0, #"wpn_grenade_explode");
 }
 
 // Namespace namespace_36ebd7e4/namespace_36ebd7e4
@@ -77,7 +77,9 @@ function function_7d090e7e(localclientnum, *oldval, *newval, *bnewent, *binitial
 function function_30a63f3c(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self.var_76ac182f = util::playfxontag(fieldname, #"hash_151c82f0168fb3c4", self, "tag_light_blue_fx");
-    } else if (isdefined(self.var_76ac182f)) {
+        return;
+    }
+    if (isdefined(self.var_76ac182f)) {
         stopfx(fieldname, self.var_76ac182f);
         self.var_76ac182f = undefined;
     }
@@ -94,12 +96,12 @@ function function_efac1e5d(localclientnum, *oldval, newval, *bnewent, *binitials
             self.var_92e420b = undefined;
         }
         self.var_fe656876 = util::playfxontag(fieldname, #"hash_194a9dcd4ca41ca9", self, "tag_origin");
-    } else {
-        if (isdefined(self.var_fe656876)) {
-            stopfx(fieldname, self.var_fe656876);
-            self.var_fe656876 = undefined;
-        }
-        self.var_92e420b = util::playfxontag(fieldname, #"hash_210ef7d0a601f6d9", self, "tag_origin");
+        return;
     }
+    if (isdefined(self.var_fe656876)) {
+        stopfx(fieldname, self.var_fe656876);
+        self.var_fe656876 = undefined;
+    }
+    self.var_92e420b = util::playfxontag(fieldname, #"hash_210ef7d0a601f6d9", self, "tag_origin");
 }
 

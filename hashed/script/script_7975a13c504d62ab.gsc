@@ -77,9 +77,9 @@ function init() {
 function dark_aether_active(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         level notify(#"hash_22f24a373548473d");
-    } else {
-        level notify(#"hash_29e046cf89ba2659");
+        return;
     }
+    level notify(#"hash_29e046cf89ba2659");
 }
 
 // Namespace namespace_812a8849/namespace_812a8849
@@ -119,9 +119,9 @@ function private exfil_aether_trigger(*localclientnum, *oldval, newval, *bnewent
 function center_zone_lights_off(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         level notify(#"center_zone_lights_off");
-    } else {
-        level notify(#"hash_6a85393053fbdebb");
+        return;
     }
+    level notify(#"hash_6a85393053fbdebb");
 }
 
 // Namespace namespace_812a8849/namespace_812a8849
@@ -131,7 +131,9 @@ function center_zone_lights_off(*localclientnum, *oldval, newval, *bnewent, *bin
 function gold_container_receptacle(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         level notify(#"receptacle_off");
-    } else if (bwastimejump == 2) {
+        return;
+    }
+    if (bwastimejump == 2) {
         level notify(#"receptacle_on");
     }
 }
@@ -145,25 +147,25 @@ function helping_hand_room_light(*localclientnum, *oldval, newval, *bnewent, *bi
         switch (bwastimejump) {
         case 0:
             level notify(#"hh_turn_all_lights_off");
-            break;
+            return;
         case 1:
             level notify(#"hh_turn_room_1_light_on");
-            break;
+            return;
         case 2:
             level notify(#"hh_turn_room_2_light_on");
-            break;
+            return;
         case 3:
             level notify(#"hh_turn_room_3_light_on");
-            break;
+            return;
         case 4:
             level notify(#"hh_turn_room_4_light_on");
-            break;
+            return;
         case 5:
             level notify(#"hh_turn_room_5_light_on");
-            break;
+            return;
         case 6:
             level notify(#"hh_turn_room_5_light_off");
-            break;
+            return;
         }
     }
 }
@@ -175,9 +177,9 @@ function helping_hand_room_light(*localclientnum, *oldval, newval, *bnewent, *bi
 function dance_party_light(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         level notify(#"dance_party_light_on");
-    } else {
-        level notify(#"dance_party_light_off");
+        return;
     }
+    level notify(#"dance_party_light_off");
 }
 
 // Namespace namespace_812a8849/namespace_812a8849
@@ -189,25 +191,25 @@ function eye_corpse_light(*localclientnum, *oldval, newval, *bnewent, *binitials
         switch (bwastimejump) {
         case 0:
             level notify(#"eye_corpse_all_lights_off");
-            break;
+            return;
         case 1:
             level notify(#"eye_corpse_1_light_on");
-            break;
+            return;
         case 2:
             level notify(#"eye_corpse_2_light_on");
-            break;
+            return;
         case 3:
             level notify(#"eye_corpse_3_light_on");
-            break;
+            return;
         case 4:
             level notify(#"eye_corpse_4_light_on");
-            break;
+            return;
         case 5:
             level notify(#"eye_corpse_5_light_on");
-            break;
+            return;
         case 6:
             level notify(#"eye_corpse_final_light_on");
-            break;
+            return;
         }
     }
 }
@@ -292,7 +294,7 @@ function private function_41575406() {
     while (1) {
         level waittill(#"hash_29e046cf89ba2659");
         if (!level clientfield::get("center_zone_lights_off")) {
-            break;
+            return;
         }
     }
 }

@@ -315,21 +315,20 @@ function snd_set_snapshot(state) {
 // Size: 0xc4
 function snd_snapshot_think() {
     for (;;) {
-        for (;;) {
-            if (level._sndactivesnapshot == level._sndnextsnapshot) {
-                level waittill(#"new_bus");
-            }
-            if (level._sndactivesnapshot == level._sndnextsnapshot) {
-                continue;
-            }
-            /#
-                assert(isdefined(level._sndnextsnapshot));
-            #/
-            /#
-                assert(isdefined(level._sndactivesnapshot));
-            #/
-            setgroupsnapshot(level._sndnextsnapshot);
+        if (level._sndactivesnapshot == level._sndnextsnapshot) {
+            level waittill(#"new_bus");
         }
+        if (level._sndactivesnapshot == level._sndnextsnapshot) {
+            continue;
+        }
+        /#
+            assert(isdefined(level._sndnextsnapshot));
+        #/
+        /#
+            assert(isdefined(level._sndactivesnapshot));
+        #/
+        setgroupsnapshot(level._sndnextsnapshot);
+        level._sndactivesnapshot = level._sndnextsnapshot;
     }
 }
 
@@ -351,11 +350,11 @@ function soundrandom_thread(localclientnum, randsound) {
     if (!isdefined(notify_name)) {
         if (isdefined(randsound.script_sound)) {
             createsoundrandom(randsound.origin, randsound.script_sound, randsound.script_wait_min, randsound.script_wait_max);
-        } else {
-            /#
-                println("<unknown string>" + randsound.origin[0] + "<unknown string>" + randsound.origin[1] + "<unknown string>" + randsound.origin[2] + "<unknown string>");
-            #/
+            return;
         }
+        /#
+            println("<unknown string>" + randsound.origin[0] + "<unknown string>" + randsound.origin[1] + "<unknown string>" + randsound.origin[2] + "<unknown string>");
+        #/
         return;
     }
     randsound.playing = 1;
@@ -385,9 +384,9 @@ function soundrandom_notifywait(notify_name, randsound) {
         level waittill(notify_name);
         if (is_true(randsound.playing)) {
             randsound.playing = 0;
-        } else {
-            randsound.playing = 1;
+            continue;
         }
+        randsound.playing = 1;
     }
 }
 
@@ -531,13 +530,13 @@ function startsoundloops() {
                 waitframe(1);
             }
         }
-    } else {
-        /#
-            if (getdvarint(#"debug_audio", 0) > 0) {
-                println("<unknown string>");
-            }
-        #/
+        return;
     }
+    /#
+        if (getdvarint(#"debug_audio", 0) > 0) {
+            println("<unknown string>");
+        }
+    #/
 }
 
 // Namespace audio/audio_shared
@@ -562,13 +561,13 @@ function startlineemitters() {
                 waitframe(1);
             }
         }
-    } else {
-        /#
-            if (getdvarint(#"debug_audio", 0) > 0) {
-                println("<unknown string>");
-            }
-        #/
+        return;
     }
+    /#
+        if (getdvarint(#"debug_audio", 0) > 0) {
+            println("<unknown string>");
+        }
+    #/
 }
 
 // Namespace audio/audio_shared
@@ -860,9 +859,8 @@ function get_vol_from_speed(player) {
 function absolute_value(fowd) {
     if (fowd < 0) {
         return (fowd * -1);
-    } else {
-        return fowd;
     }
+    return fowd;
 }
 
 // Namespace audio/audio_shared
@@ -875,14 +873,16 @@ function closest_point_on_line_to_point(point, linestart, lineend) {
     t = ((point[0] - linestart[0]) * (lineend[0] - linestart[0]) + (point[1] - linestart[1]) * (lineend[1] - linestart[1]) + (point[2] - linestart[2]) * (lineend[2] - linestart[2])) / linemagsqrd;
     if (t < 0) {
         self.origin = linestart;
-    } else if (t > 1) {
-        self.origin = lineend;
-    } else {
-        start_x = linestart[0] + t * (lineend[0] - linestart[0]);
-        start_y = linestart[1] + t * (lineend[1] - linestart[1]);
-        start_z = linestart[2] + t * (lineend[2] - linestart[2]);
-        self.origin = (start_x, start_y, start_z);
+        return;
     }
+    if (t > 1) {
+        self.origin = lineend;
+        return;
+    }
+    start_x = linestart[0] + t * (lineend[0] - linestart[0]);
+    start_y = linestart[1] + t * (lineend[1] - linestart[1]);
+    start_z = linestart[2] + t * (lineend[2] - linestart[2]);
+    self.origin = (start_x, start_y, start_z);
 }
 
 // Namespace audio/audio_shared
@@ -940,11 +940,13 @@ function move_sound_along_line() {
         closest_dist = distancesquared(getlocalclientpos(0), self.origin);
         if (closest_dist > 1048576) {
             wait(2);
-        } else if (closest_dist > 262144) {
-            wait(0.2);
-        } else {
-            wait(0.05);
+            continue;
         }
+        if (closest_dist > 262144) {
+            wait(0.2);
+            continue;
+        }
+        wait(0.05);
     }
 }
 
@@ -1016,11 +1018,17 @@ function snd_underwater(localclientnum) {
         }
         if (underwaternotify._notify == "underwater_begin") {
             self underwaterbegin();
-        } else if (underwaternotify._notify == "underwater_end") {
+            continue;
+        }
+        if (underwaternotify._notify == "underwater_end") {
             self underwaterend();
-        } else if (underwaternotify._notify == "swimming_begin") {
+            continue;
+        }
+        if (underwaternotify._notify == "swimming_begin") {
             self swimbegin();
-        } else if (underwaternotify._notify == "swimming_end" && isplayer(self) && isalive(self)) {
+            continue;
+        }
+        if (underwaternotify._notify == "swimming_end" && isplayer(self) && isalive(self)) {
             self swimend(localclientnum);
         }
     }
@@ -1114,10 +1122,10 @@ function sndcriticalhealth(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwastimejump) {
         playsound(fieldname, #"chr_health_lowhealth_enter", (0, 0, 0));
         playloopat("chr_health_lowhealth_loop", self.var_2f6077ac);
-    } else {
-        stoploopat("chr_health_lowhealth_loop", self.var_2f6077ac);
-        self.var_2f6077ac = undefined;
+        return;
     }
+    stoploopat("chr_health_lowhealth_loop", self.var_2f6077ac);
+    self.var_2f6077ac = undefined;
 }
 
 // Namespace audio/audio_shared
@@ -1141,10 +1149,10 @@ function sndlaststand(localclientnum, *oldval, newval, *bnewent, *binitialsnap, 
     if (bwastimejump) {
         playsound(fieldname, #"chr_health_laststand_enter", (0, 0, 0));
         playloopat("chr_health_laststand_loop", self.sndlaststand);
-    } else {
-        stoploopat("chr_health_laststand_loop", self.sndlaststand);
-        self.sndlaststand = undefined;
+        return;
     }
+    stoploopat("chr_health_laststand_loop", self.sndlaststand);
+    self.sndlaststand = undefined;
 }
 
 // Namespace audio/audio_shared
@@ -1154,9 +1162,9 @@ function sndlaststand(localclientnum, *oldval, newval, *bnewent, *binitialsnap, 
 function sndtacrig(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self.sndtacrigemergencyreserve = 1;
-    } else {
-        self.sndtacrigemergencyreserve = 0;
+        return;
     }
+    self.sndtacrigemergencyreserve = 0;
 }
 
 // Namespace audio/audio_shared
@@ -1181,9 +1189,9 @@ function sndrattle_server(*localclientnum, *oldval, newval, *bnewent, *binitials
         if (isdefined(self.model) && self.model == #"wpn_t7_bouncing_betty_world") {
             betty = getweapon(#"bouncingbetty");
             level dorattle(self.origin, betty.soundrattlerangemin, betty.soundrattlerangemax);
-        } else {
-            level dorattle(self.origin, 25, 600);
+            return;
         }
+        level dorattle(self.origin, 25, 600);
     }
 }
 
@@ -1203,11 +1211,11 @@ function weapon_butt_sounds(localclientnum, *oldval, newval, *bnewent, *binitial
     if (bwastimejump) {
         self.meleed = 1;
         level.mysnd = playsound(fieldname, #"chr_melee_tinitus", (0, 0, 0));
-    } else {
-        self.meleed = 0;
-        if (isdefined(level.mysnd)) {
-            stopsound(level.mysnd);
-        }
+        return;
+    }
+    self.meleed = 0;
+    if (isdefined(level.mysnd)) {
+        stopsound(level.mysnd);
     }
 }
 
@@ -1231,9 +1239,9 @@ function sndmatchsnapshot(*localclientnum, *oldval, newval, *bnewent, *binitials
             snd_set_snapshot("mpl_endmatch");
             break;
         }
-    } else {
-        snd_set_snapshot("default");
+        return;
     }
+    snd_set_snapshot("default");
 }
 
 // Namespace audio/audio_shared
@@ -1308,9 +1316,9 @@ function sndswitchvehiclecontext(*localclientnum, *oldval, *newval, *bnewent, *b
     }
     if (self isvehicle() && self function_4add50a7()) {
         setsoundcontext("plr_impact", "vehicle");
-    } else {
-        setsoundcontext("plr_impact", "flesh");
+        return;
     }
+    setsoundcontext("plr_impact", "flesh");
 }
 
 // Namespace audio/audio_shared
@@ -1337,15 +1345,17 @@ function sndcchacking(*localclientnum, oldval, newval, *bnewent, *binitialsnap, 
             self.hsnd = self playloopsound(#"gdt_cybercore_prime_loop_plr", 0.5);
             break;
         }
-    } else {
-        if (isdefined(self.hsnd)) {
-            self stoploopsound(self.hsnd, 0.5);
-        }
-        if (fieldname == 1) {
-            playsound(0, #"gdt_cybercore_hack_success_plr", (0, 0, 0));
-        } else if (fieldname == 2) {
-            playsound(0, #"gdt_cybercore_activate_fail_plr", (0, 0, 0));
-        }
+        return;
+    }
+    if (isdefined(self.hsnd)) {
+        self stoploopsound(self.hsnd, 0.5);
+    }
+    if (fieldname == 1) {
+        playsound(0, #"gdt_cybercore_hack_success_plr", (0, 0, 0));
+        return;
+    }
+    if (fieldname == 2) {
+        playsound(0, #"gdt_cybercore_activate_fail_plr", (0, 0, 0));
     }
 }
 
@@ -1377,9 +1387,9 @@ function sndigcsnapshot(*localclientnum, *oldval, newval, *bnewent, *binitialsna
             level.sndigcsnapshotoverride = 0;
             break;
         }
-    } else {
-        level.sndigcsnapshotoverride = 0;
+        return;
     }
+    level.sndigcsnapshotoverride = 0;
 }
 
 // Namespace audio/audio_shared
@@ -1388,7 +1398,7 @@ function sndigcsnapshot(*localclientnum, *oldval, newval, *bnewent, *binitialsna
 // Size: 0x5e
 function sndlevelstartsnapoff(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
-        if (!is_true(level.sndigcsnapshotoverride)) {
+        if (is_true(level.sndigcsnapshotoverride)) {
         }
     }
 }
@@ -1413,7 +1423,9 @@ function sndchyronloop(*localclientnum, *oldval, newval, *bnewent, *binitialsnap
             level.chyronloop = spawn(0, (0, 0, 0), "script_origin");
             level.chyronloop playloopsound(#"uin_chyron_loop");
         }
-    } else if (isdefined(level.chyronloop)) {
+        return;
+    }
+    if (isdefined(level.chyronloop)) {
         level.chyronloop delete();
     }
 }
@@ -1670,7 +1682,9 @@ function event_handler[event_7a92af95] function_3fda4bf4(var_c75c63c) {
                 level.loopers[index].script_sound = soundloop.script_sound;
                 level.loopers[index].var_3868f387 = soundloop.var_3868f387;
                 function_f03b7c11(index, level.loopers[index].script_sound, level.loopers[index].origin);
-            } else if (index == -2) {
+                return;
+            }
+            if (index == -2) {
                 function_31468a30(var_c75c63c);
             }
         }
@@ -1758,7 +1772,9 @@ function event_handler[event_70cd2720] function_4910c05b(var_c75c63c) {
                 if (isdefined(target)) {
                     function_15b81494(index, level.lineemitters[index].script_sound, level.lineemitters[index].origin, target.origin);
                 }
-            } else if (index == -2) {
+                return;
+            }
+            if (index == -2) {
                 function_4fb7ec9c(var_c75c63c);
             }
         }
@@ -1822,13 +1838,9 @@ function event_handler[event_bfb86175] function_464598c8(var_c75c63c) {
                 function_dac8758d(level.randoms[index].origin);
                 level.randoms[index].origin = (0, 0, 0);
                 level.randoms[index].script_sound = undefined;
-                goto LOC_000000cc;
             }
-        LOC_000000cc:
         }
-    LOC_000000cc:
     #/
-LOC_000000cc:
 }
 
 // Namespace audio/event_43494658
@@ -1851,7 +1863,9 @@ function event_handler[event_43494658] function_12dface6(var_c75c63c) {
                 level.randoms[index].script_sound = soundrandom.script_sound;
                 function_12dface6(level.randoms[index].origin, neworigin, level.randoms[index].script_sound, level.randoms[index].script_wait_min, level.randoms[index].script_wait_max);
                 level.randoms[index].origin = neworigin;
-            } else if (index == -2) {
+                return;
+            }
+            if (index == -2) {
                 var_c75c63c.var_b6ce262a.origin = neworigin;
                 function_abd4ca1(var_c75c63c);
             }

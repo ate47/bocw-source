@@ -190,11 +190,11 @@ function function_d971ecbd(time) {
         self namespace_ec06fe4a::function_ecec1794();
         self namespace_83eb6304::function_3ecfde67("barrel_fire");
         self notsolid();
-    } else {
-        self notsolid();
-        self namespace_ec06fe4a::function_8c808737();
-        self thread namespace_ec06fe4a::function_52afe5df(0.5);
+        return;
     }
+    self notsolid();
+    self namespace_ec06fe4a::function_8c808737();
+    self thread namespace_ec06fe4a::function_52afe5df(0.5);
 }
 
 // Namespace namespace_fb2125f/namespace_fb2125f
@@ -226,9 +226,9 @@ function function_3dd2c543(trap, page = 0) {
             level.doa.var_d1534e45 = array(level.doa.var_d1534e45);
         }
         level.doa.var_d1534e45[level.doa.var_d1534e45.size] = trap;
-    } else {
-        function_647017bd(trap);
+        return;
     }
+    function_647017bd(trap);
 }
 
 // Namespace namespace_fb2125f/namespace_fb2125f
@@ -319,12 +319,12 @@ function function_2b60f30() {
                     trap.var_eb9d64bb = trap.var_eb9d64bb + 5000;
                     namespace_1e25ad94::function_f5f0c0f8("Paging IN barrel trap at:" + trap.origin);
                 }
-            } else {
-                trap.var_f8660931 = namespace_ec06fe4a::function_f3eab80e(trap.origin, 1800);
-                if (!isdefined(trap.var_f8660931)) {
-                    trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
-                    namespace_1e25ad94::function_f5f0c0f8("Paging out barrel trap at:" + trap.origin);
-                }
+                continue;
+            }
+            trap.var_f8660931 = namespace_ec06fe4a::function_f3eab80e(trap.origin, 1800);
+            if (!isdefined(trap.var_f8660931)) {
+                trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
+                namespace_1e25ad94::function_f5f0c0f8("Paging out barrel trap at:" + trap.origin);
             }
         }
     }

@@ -56,19 +56,25 @@ class cplayer_insertion_choice : cluielem {
     function set_state(player, state_name) {
         if (#"defaultstate" == state_name) {
             player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 0);
-        } else if (#"groundvehicle" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 1);
-        } else if (#"halojump" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 2);
-        } else if (#"heli" == state_name) {
-            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 3);
-        } else {
-            /#
-                /#
-                    assertmsg("<unknown string>");
-                #/
-            #/
+            return;
         }
+        if (#"groundvehicle" == state_name) {
+            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 1);
+            return;
+        }
+        if (#"halojump" == state_name) {
+            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 2);
+            return;
+        }
+        if (#"heli" == state_name) {
+            player clientfield::function_9bf78ef8(self.var_d5213cbb, self.var_bf9c8c95, "_state", 3);
+            return;
+        }
+        /#
+            /#
+                assertmsg("<unknown string>");
+            #/
+        #/
     }
 
 }

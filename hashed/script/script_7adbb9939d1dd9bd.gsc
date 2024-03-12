@@ -184,7 +184,9 @@ function function_57bf0556() {
             bot::remove_random_bot();
             level.botcount--;
             function_f5f0c0f8("Bot is being removed.   Count=" + level.botcount);
-        } else if (getdvarint(#"hash_4a501e2ed929dd5b", 1) && getplayers().size < 4 && randomint(100) < 30) {
+            continue;
+        }
+        if (getdvarint(#"hash_4a501e2ed929dd5b", 1) && getplayers().size < 4 && randomint(100) < 30) {
             bot = bot::add_bot(#"allies", function_a161addf(), "ZM");
             if (isdefined(bot)) {
                 plr = getplayers()[0];

@@ -89,8 +89,8 @@ function private function_f1707039() {
 function function_d79281c4(off) {
     if (off) {
         setdvar(#"hash_c4d58c161f407a2", 0);
-    } else {
-        setdvar(#"hash_c4d58c161f407a2", 1);
+        return;
     }
+    setdvar(#"hash_c4d58c161f407a2", 1);
 }
 

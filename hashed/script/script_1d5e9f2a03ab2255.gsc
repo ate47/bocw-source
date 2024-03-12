@@ -91,9 +91,9 @@ function function_78a5981a(player, ref) {
     var_445570c4 = [[ self ]]->function_cd2efd2d(player, ref);
     if (var_445570c4) {
         [[ self ]]->set_visible(player, 1);
-    } else {
-        [[ self ]]->close(player);
+        return;
     }
+    [[ self ]]->close(player);
 }
 
 // Namespace namespace_ee630e04/namespace_ee630e04

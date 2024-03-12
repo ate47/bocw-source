@@ -46,7 +46,9 @@ function private function_6e561a85(&var_c4d527a6, exploders) {
                 }
             }
         }
-    } else if (isstring(exploders) || ishash(exploders)) {
+        return;
+    }
+    if (isstring(exploders) || ishash(exploders)) {
         if (!isdefined(var_c4d527a6)) {
             var_c4d527a6 = [];
         } else if (!isarray(var_c4d527a6)) {

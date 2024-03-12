@@ -52,23 +52,23 @@ function function_84c254b5(localclientnum, *oldval, newval, *bnewent, *binitials
         forceambientroom("killstreak_hoverjet");
         self oob::function_93bd17f6("hoverjet", 10);
         level.var_b895ecc7 = self;
-    } else {
-        forceambientroom("");
-        self oob::function_e2d18c01("hoverjet");
-        if (isdefined(level.var_1c0f10a2.var_ee967929)) {
-            self stoprumble(fieldname, level.var_1c0f10a2.var_ee967929);
-        }
-        if (isdefined(level.var_1c0f10a2.var_6d078ad9)) {
-            self stoprumble(fieldname, level.var_1c0f10a2.var_6d078ad9);
-        }
-        if (isdefined(level.var_1c0f10a2.var_8af9fe2e)) {
-            self stoprumble(fieldname, level.var_1c0f10a2.var_8af9fe2e);
-        }
-        if (isdefined(level.var_1c0f10a2.var_936631a2)) {
-            self stoprumble(fieldname, level.var_1c0f10a2.var_936631a2);
-        }
-        level.var_b895ecc7 = undefined;
+        return;
     }
+    forceambientroom("");
+    self oob::function_e2d18c01("hoverjet");
+    if (isdefined(level.var_1c0f10a2.var_ee967929)) {
+        self stoprumble(fieldname, level.var_1c0f10a2.var_ee967929);
+    }
+    if (isdefined(level.var_1c0f10a2.var_6d078ad9)) {
+        self stoprumble(fieldname, level.var_1c0f10a2.var_6d078ad9);
+    }
+    if (isdefined(level.var_1c0f10a2.var_8af9fe2e)) {
+        self stoprumble(fieldname, level.var_1c0f10a2.var_8af9fe2e);
+    }
+    if (isdefined(level.var_1c0f10a2.var_936631a2)) {
+        self stoprumble(fieldname, level.var_1c0f10a2.var_936631a2);
+    }
+    level.var_b895ecc7 = undefined;
 }
 
 // Namespace hoverjet/hoverjet
@@ -80,7 +80,9 @@ function function_274341d(localclientnum, *oldval, newval, *bnewent, *binitialsn
         if (isdefined(level.var_1c0f10a2.var_936631a2)) {
             self playrumblelooponentity(fieldname, level.var_1c0f10a2.var_936631a2);
         }
-    } else if (isdefined(level.var_1c0f10a2.var_936631a2)) {
+        return;
+    }
+    if (isdefined(level.var_1c0f10a2.var_936631a2)) {
         self stoprumble(fieldname, level.var_1c0f10a2.var_936631a2);
     }
 }
@@ -113,7 +115,9 @@ function function_14ba47a8(localclientnum, *oldval, newval, *bnewent, *binitials
                 }
                 level.var_b895ecc7 playrumblelooponentity(fieldname, level.var_1c0f10a2.var_8af9fe2e);
             }
-        } else if (isdefined(level.var_1c0f10a2.var_2a77dc37)) {
+            return;
+        }
+        if (isdefined(level.var_1c0f10a2.var_2a77dc37)) {
             util::playfxontag(fieldname, level.var_1c0f10a2.var_2a77dc37, self, "tag_origin");
         }
     }
@@ -132,7 +136,9 @@ function function_bccb03b1(localclientnum, *oldval, newval, *bnewent, *binitials
                 level.var_b895ecc7 playrumblelooponentity(fieldname, level.var_1c0f10a2.var_ee967929);
             }
         }
-    } else if (bwastimejump == 2) {
+        return;
+    }
+    if (bwastimejump == 2) {
         if (isdefined(level.var_b895ecc7)) {
             util::playfxontag(fieldname, level.var_1c0f10a2.var_cd76f3e4, self, isdefined(level.var_1c0f10a2.var_f19af650) ? level.var_1c0f10a2.var_f19af650 : "tag_origin");
             util::playfxontag(fieldname, #"hash_14b9625120f46bea", self, "tag_fx_cockpit_light_red_01");
@@ -159,7 +165,9 @@ function function_ef49742c(localclientnum, *oldval, newval, *bnewent, *binitials
         if (!isdefined(self.var_673cf7c4)) {
             self.var_673cf7c4 = function_239993de(fieldname, #"hash_74f45a8f31432826", self, "tag_fx_cockpit_lockon_light");
         }
-    } else if (isdefined(self.var_673cf7c4)) {
+        return;
+    }
+    if (isdefined(self.var_673cf7c4)) {
         stopfx(fieldname, self.var_673cf7c4);
         self.var_673cf7c4 = undefined;
     }
@@ -178,7 +186,9 @@ function function_dd10e132(localclientnum, *oldval, newval, *bnewent, *binitials
         if (!isdefined(self.var_faf1dc90)) {
             self.var_faf1dc90 = function_239993de(fieldname, #"hash_1a0a27e117c4ccae", self, "tag_fx_cockpit_enemy_lock");
         }
-    } else if (isdefined(self.var_faf1dc90)) {
+        return;
+    }
+    if (isdefined(self.var_faf1dc90)) {
         stopfx(fieldname, self.var_faf1dc90);
         self.var_faf1dc90 = undefined;
     }

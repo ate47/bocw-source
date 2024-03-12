@@ -533,9 +533,9 @@ function private function_66d43d96() {
             var_436b8c8c = (var_436b8c8c[0], var_436b8c8c[1], self.origin[2]);
             if (distancesquared(var_436b8c8c, self.origin) < function_a3f6cdac(16)) {
                 self.var_11149e48.path.index = self.var_11149e48.path.index + 1;
-            } else {
-                break;
+                continue;
             }
+            break;
         }
         self.var_11149e48.moving = self.var_11149e48.path.pathpoints.size > self.var_11149e48.path.index;
         if (self.var_11149e48.moving) {

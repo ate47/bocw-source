@@ -65,7 +65,7 @@ function function_b9934c1d() {
             var_e5180c2e = 1;
             self namespace_83eb6304::function_3ecfde67("monkey_reveal");
         }
-    } while(time < var_de3026af);
+    } while (time < var_de3026af);
     self radiusdamage(self.origin, 256, 6000, 4000, self.owner, "MOD_EXPLOSIVE", getweapon(#"frag_grenade"));
     self namespace_83eb6304::function_3ecfde67("monkey_detonate");
     self namespace_e32bb68::function_3a59ec34("evt_doa_pickup_monkeybomb_explode");

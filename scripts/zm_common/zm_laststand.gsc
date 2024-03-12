@@ -126,9 +126,9 @@ function function_2806e8fd() {
             }
             if (isalive(player)) {
                 player.statusicon = "";
-            } else {
-                player.statusicon = "hud_status_dead";
+                continue;
             }
+            player.statusicon = "hud_status_dead";
         }
     }
 }
@@ -486,10 +486,11 @@ function laststand_disable_player_weapons() {
         if (self function_94cd8c0f()) {
             self zm_stats::increment_client_stat("failed_sacrifices");
             self zm_stats::increment_player_stat("failed_sacrifices");
-        } else if (weapon.isperkbottle) {
+            continue;
+        }
+        if (weapon.isperkbottle) {
             self takeweapon(weapon);
             self.lastactiveweapon = level.weaponnone;
-            continue;
         }
     }
     self notify(#"weapons_taken_for_last_stand");
@@ -530,7 +531,7 @@ function laststand_enable_player_weapons(b_bled_out) {
         do {
             s_waitresult = undefined;
             s_waitresult = self waittilltimeout(2.5, #"weapon_change_complete");
-        } while(self getcurrentweapon() === level.weaponnone);
+        } while (self getcurrentweapon() === level.weaponnone);
     }
     self.laststandpistol = undefined;
     self notify(#"hash_9b426cce825928d");
@@ -558,9 +559,8 @@ function laststand_has_players_weapons_returned() {
 function function_cbfcda16() {
     if (level.players.size > 1) {
         return level.default_laststandpistol;
-    } else {
-        return level.default_solo_laststandpistol;
     }
+    return level.default_solo_laststandpistol;
 }
 
 // Namespace zm_laststand/zm_laststand
@@ -615,7 +615,6 @@ function function_aac4b2c9(weapon) {
 function function_6155752d() {
     self endon(#"disconnect");
     self.var_d84718d1 = [];
-LOC_00000028:
     while (1) {
         s_result = undefined;
         s_result = self waittill(#"weapon_change_complete");
@@ -977,9 +976,9 @@ function bleed_out() {
     self.statusicon = "hud_status_dead";
     if (is_true(level.is_zombie_level)) {
         self thread [[ level.player_becomes_zombie ]]();
-    } else {
-        self val::reset(#"laststand", "ignoreme");
+        return;
     }
+    self val::reset(#"laststand", "ignoreme");
 }
 
 // Namespace zm_laststand/zm_laststand
@@ -1041,9 +1040,9 @@ function function_4d3cb10() {
                     if (!(e_player function_618fd37e() > 0)) {
                         e_player function_3d685b5f(int(max(0, e_player.var_d66589da - e_player.var_308dc243)));
                     }
-                } else {
-                    e_player function_3d685b5f(int(max(0, e_player.var_5d4c5daf - e_player.var_308dc243)));
+                    continue;
                 }
+                e_player function_3d685b5f(int(max(0, e_player.var_5d4c5daf - e_player.var_308dc243)));
             }
         }
     }
@@ -1124,9 +1123,9 @@ function function_b7c101fa() {
         self.var_d66589da = int(var_48f2f554);
         self.var_5d4c5daf = int(var_48f2f554);
         self function_3d685b5f(var_48f2f554);
-    } else {
-        self function_3d685b5f(self_revive_count);
+        return;
     }
+    self function_3d685b5f(self_revive_count);
 }
 
 // Namespace zm_laststand/zm_laststand
@@ -1280,7 +1279,7 @@ function revive_trigger_think(t_secondary) {
             t_revive = t_secondary;
         } else if (isdefined(self.revivetrigger)) {
             if (!isdefined(self.revivetrigger)) {
-                break;
+                return;
             }
             t_revive = self.revivetrigger;
         } else {
@@ -1297,7 +1296,9 @@ function revive_trigger_think(t_secondary) {
                     t_revive setrevivehintstring(#"hash_12272c5573321d90", self.team);
                     break;
                 }
-            } else if (e_player can_revive_via_override(self) || e_player can_revive(self) || n_depth > 20) {
+                continue;
+            }
+            if (e_player can_revive_via_override(self) || e_player can_revive(self) || n_depth > 20) {
                 t_revive setrevivehintstring(#"hash_12272c5573321d90", self.team);
                 break;
             }
@@ -1331,7 +1332,8 @@ function revive_trigger_think(t_secondary) {
                 self thread revive_success(e_reviver);
                 self notify(#"stop_revive_trigger");
                 return;
-            } else if (isdefined(e_reviver)) {
+            }
+            if (isdefined(e_reviver)) {
                 e_reviver zm_vo::vo_stop();
             }
         }
@@ -1850,16 +1852,19 @@ function revive_hud_think() {
                     continue;
                 }
                 if (util::get_game_type() == "vs") {
-                    jumpiffalse(players[i].team != playertorevive.team) LOC_00000176;
-                } else if (zm_utility::is_encounter()) {
+                    if (players[i].team != playertorevive.team) {
+                        continue;
+                    }
+                }
+                if (zm_utility::is_encounter()) {
                     if (players[i].sessionteam != playertorevive.sessionteam) {
                         continue;
                     }
-                    jumpiffalse(is_true(level.hide_revive_message)) LOC_000001c8;
-                } else {
-                LOC_000001c8:
-                    players[i] thread laststand::revive_hud_show_n_fade(#"hash_453f3038b87fbc77", 3, playertorevive);
+                    if (is_true(level.hide_revive_message)) {
+                        continue;
+                    }
                 }
+                players[i] thread laststand::revive_hud_show_n_fade(#"hash_453f3038b87fbc77", 3, playertorevive);
             }
             playertorevive.revivetrigger.createtime = undefined;
             wait(3.5);
@@ -1988,9 +1993,9 @@ function instakill_player() {
     if (self laststand::player_is_in_laststand()) {
         waitframe(4);
         bleed_out();
-    } else {
-        self dodamage(self.maxhealth + 666, self.origin);
+        return;
     }
+    self dodamage(self.maxhealth + 666, self.origin);
 }
 
 // Namespace zm_laststand/zm_laststand

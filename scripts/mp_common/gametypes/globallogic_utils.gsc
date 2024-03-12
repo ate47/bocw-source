@@ -111,11 +111,11 @@ function executepostroundevents() {
 function getvalueinrange(value, minvalue, maxvalue) {
     if (value > maxvalue) {
         return maxvalue;
-    } else if (value < minvalue) {
-        return minvalue;
-    } else {
-        return value;
     }
+    if (value < minvalue) {
+        return minvalue;
+    }
+    return value;
 }
 
 // Namespace globallogic_utils/globallogic_utils
@@ -139,19 +139,19 @@ function assertproperplacement() {
                     break;
                 }
             }
-        } else {
-            for (i = 0; i < numplayers - 1; i++) {
-                if (level.placement[#"all"][i].pointstowin < level.placement[#"all"][i + 1].pointstowin) {
-                    println("<unknown string>");
-                    for (j = 0; j < numplayers; j++) {
-                        player = level.placement[#"all"][j];
-                        println("<unknown string>" + j + "<unknown string>" + player.name + "<unknown string>" + player.pointstowin);
-                    }
-                    /#
-                        assertmsg("<unknown string>");
-                    #/
-                    break;
+            return;
+        }
+        for (i = 0; i < numplayers - 1; i++) {
+            if (level.placement[#"all"][i].pointstowin < level.placement[#"all"][i + 1].pointstowin) {
+                println("<unknown string>");
+                for (j = 0; j < numplayers; j++) {
+                    player = level.placement[#"all"][j];
+                    println("<unknown string>" + j + "<unknown string>" + player.name + "<unknown string>" + player.pointstowin);
                 }
+                /#
+                    assertmsg("<unknown string>");
+                #/
+                return;
             }
         }
     #/
@@ -278,9 +278,8 @@ function gettimepassed() {
     }
     if (level.timerstopped) {
         return (level.timerpausetime - level.starttime - level.discardtime);
-    } else {
-        return (gettime() - level.starttime - level.discardtime);
     }
+    return gettime() - level.starttime - level.discardtime;
 }
 
 // Namespace globallogic_utils/globallogic_utils
@@ -430,7 +429,6 @@ function gethitlocheight(shitloc) {
     case #"left_foot":
     case #"right_foot":
         return 5;
-        break;
     }
     return 48;
 }

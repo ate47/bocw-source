@@ -138,11 +138,11 @@ function function_f3906128(func, var_c9ec2dc3) {
 function function_70df4eb1(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *var_f2e0ac2e) {
     if (var_f2e0ac2e == 0) {
         stopforcingstreamer();
-    } else {
-        [[ level.var_4530c925 ]](var_f2e0ac2e);
-        level waittilltimeout(15, #"streamer_100");
-        streamernotify(var_f2e0ac2e);
+        return;
     }
+    [[ level.var_4530c925 ]](var_f2e0ac2e);
+    level waittilltimeout(15, #"streamer_100");
+    streamernotify(var_f2e0ac2e);
 }
 
 // Namespace util/util
@@ -199,9 +199,9 @@ function function_73d83dae(localclientnum, *oldval, newval, *bnewent, *binitials
         }
         level.var_dd9e1cd5[fieldname] = 1;
         self thread function_9340eb56(fieldname);
-    } else {
-        level.var_dd9e1cd5[fieldname] = 0;
+        return;
     }
+    level.var_dd9e1cd5[fieldname] = 0;
 }
 
 // Namespace util/util

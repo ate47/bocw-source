@@ -28,9 +28,9 @@ function queue(alias, timeout, var_bcc3bb15) {
         }
         if (!isdefined(timeout)) {
             self util::function_2bf19e35(&function_8026ba41, alias);
-        } else {
-            self util::function_88e346a(timeout, &function_8026ba41, alias);
+            return;
         }
+        self util::function_88e346a(timeout, &function_8026ba41, alias);
     }
 }
 
@@ -77,11 +77,13 @@ function radio(alias, timeout, var_1ccdc84c, var_bcc3bb15) {
     }
     if (is_true(var_1ccdc84c)) {
         var_ca328321 sound::play_on_tag(alias, undefined, 1, notifystring);
-    } else if (!isdefined(timeout)) {
-        var_ca328321 util::function_2bf19e35(&sound::play_on_tag, alias, undefined, 1, notifystring);
-    } else {
-        var_ca328321 util::function_88e346a(timeout, &sound::play_on_tag, alias, undefined, 1, notifystring);
+        return;
     }
+    if (!isdefined(timeout)) {
+        var_ca328321 util::function_2bf19e35(&sound::play_on_tag, alias, undefined, 1, notifystring);
+        return;
+    }
+    var_ca328321 util::function_88e346a(timeout, &sound::play_on_tag, alias, undefined, 1, notifystring);
 }
 
 // Namespace namespace_a635adb1/namespace_a635adb1
@@ -157,9 +159,9 @@ function function_3a8bd5a3(alias, var_9a8be594, gestures, var_e01a79b9, var_7130
     }
     if (!isdefined(timeout)) {
         var_9170250 util::function_2bf19e35(&function_47dab4a5, alias, var_9a8be594, gestures, var_e01a79b9, var_71302f50);
-    } else {
-        var_9170250 util::function_88e346a(timeout, &function_47dab4a5, alias, var_9a8be594, gestures, var_e01a79b9, var_71302f50);
+        return;
     }
+    var_9170250 util::function_88e346a(timeout, &function_47dab4a5, alias, var_9a8be594, gestures, var_e01a79b9, var_71302f50);
 }
 
 // Namespace namespace_a635adb1/namespace_a635adb1
@@ -226,9 +228,9 @@ function private function_47dab4a5(alias, var_9a8be594, gestures, var_e01a79b9, 
             for (i = 0; i < gestures.size; i++) {
                 if (isdefined(var_9e354358) && isdefined(var_9e354358[i])) {
                     player util::delay(var_e01a79b9[i], undefined, &function_ef63262c, gestures[i], var_9e354358[i]);
-                } else {
-                    player util::delay(var_e01a79b9[i], undefined, &function_ef63262c, gestures[i]);
+                    continue;
                 }
+                player util::delay(var_e01a79b9[i], undefined, &function_ef63262c, gestures[i]);
             }
         } else if (isdefined(var_9e354358)) {
             player util::delay(var_e01a79b9, undefined, &function_ef63262c, gestures, var_9e354358);

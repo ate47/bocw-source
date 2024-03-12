@@ -88,91 +88,133 @@ function on_menu_response() {
                     }
                 }
             }
-        } else {
-            if (response == "changeteam" && level.allow_teamchange) {
-                self closeingamemenu();
-                self openmenu(game.menu[#"menu_team"]);
-            }
-            if (response == "endgame") {
-                if (level.splitscreen) {
-                    level.skipvote = 1;
-                    if (!level.gameended) {
-                        level thread globallogic::forceend();
-                    }
-                }
-            } else if (response == "killserverpc") {
-                level thread globallogic::killserverpc();
-            } else if (response == "endround") {
+            continue;
+        }
+        if (response == "changeteam" && level.allow_teamchange) {
+            self closeingamemenu();
+            self openmenu(game.menu[#"menu_team"]);
+        }
+        if (response == "endgame") {
+            if (level.splitscreen) {
+                level.skipvote = 1;
                 if (!level.gameended) {
-                    self closeingamemenu();
-                    uploadstats();
                     level thread globallogic::forceend();
-                } else {
-                    self closeingamemenu();
-                    self iprintln(#"hash_6e4cedc56165f367");
                 }
-            } else if (response == #"first_snapshot") {
-                if (level flag::get(#"hash_321357f5b78401ef")) {
-                    /#
-                        function_3f278444();
-                    #/
-                }
-                level flag::set(#"hash_321357f5b78401ef");
-            } else if (response == #"hash_68e27bf0c0ce598a") {
-                level function_c35a1bfc();
-            } else if (response == #"restartcheckpoint") {
-                level function_d7c2965();
-            } else if (response == #"hash_30abbfec4597c191") {
-                skipto::function_cfb483b7();
-            } else if (response == "autocontrol") {
-                self [[ level.autocontrolplayer ]]();
-            } else if (response == "typing_complete") {
-                level notify(#"typing_complete", {#line:intpayload});
-            } else if (response == "personnel_profile_closed") {
-                level notify(#"personnel_profile_closed", {#var_ee99e999:intpayload});
-            } else if (response == "note_closed") {
-                level notify(#"note_closed");
-            } else if (response == "evidence_board_option_selected") {
-                level notify(#"evidence_board_option_selected", {#var_70b35161:intpayload});
-            } else if (response == "mission_option_selected") {
-                level notify(#"mission_option_selected", {#var_70b35161:intpayload});
-            } else if (response == "dialog_tree_option_selected") {
-                level notify(#"dialog_tree_option_selected", {#var_70b35161:intpayload});
-            } else if (response == "dialog_tree_kbm_key_selected") {
-                level notify(#"dialog_tree_kbm_key_selected", {#var_70b35161:intpayload});
-            } else if (response == "lui_unpause_game") {
-                level notify(#"lui_unpause_game", {#success:intpayload == 1});
-            } else if (response == "objective_splash" && intpayload === 0) {
-                level notify(#"hash_4df0c0f18673f6c3");
-            } else if (response == #"hash_4c6480245891f16a") {
-                level notify(#"hash_4c6480245891f16a", {#button:"" + intpayload});
-            } else if (menu == game.menu[#"menu_team"] && level.allow_teamchange) {
-                switch (response) {
-                case #"autoassign":
-                    self [[ level.autoassign ]](1);
-                    break;
-                case #"spectator":
-                    self [[ level.spectator ]]();
-                    break;
-                default:
-                    self [[ level.teammenu ]](response);
-                    break;
-                }
-            } else if (menu == game.menu[#"menu_draft"]) {
-                self [[ level.draftmenu ]](response, intpayload);
-            } else if (menu == game.menu[#"menu_changeclass"] || menu == game.menu[#"menu_changeclass_offline"]) {
-                if (response != "back" && response != "cancel" && (!isdefined(self.var_efc9bc54) || !self.var_efc9bc54)) {
-                    self closeingamemenu();
-                    self.selectedclass = 1;
-                    self [[ level.curclass ]](response);
-                } else {
-                    self [[ level.curclass ]](response);
-                }
-            } else if (menu == "spectate") {
-                player = util::getplayerfromclientnum(waitresult.intpayload);
-                if (isdefined(player)) {
-                    self setcurrentspectatorclient(player);
-                }
+            }
+            continue;
+        }
+        if (response == "killserverpc") {
+            level thread globallogic::killserverpc();
+            continue;
+        }
+        if (response == "endround") {
+            if (!level.gameended) {
+                self closeingamemenu();
+                uploadstats();
+                level thread globallogic::forceend();
+            } else {
+                self closeingamemenu();
+                self iprintln(#"hash_6e4cedc56165f367");
+            }
+            continue;
+        }
+        if (response == #"first_snapshot") {
+            if (level flag::get(#"hash_321357f5b78401ef")) {
+                /#
+                    function_3f278444();
+                #/
+            }
+            level flag::set(#"hash_321357f5b78401ef");
+            continue;
+        }
+        if (response == #"hash_68e27bf0c0ce598a") {
+            level function_c35a1bfc();
+            continue;
+        }
+        if (response == #"restartcheckpoint") {
+            level function_d7c2965();
+            continue;
+        }
+        if (response == #"hash_30abbfec4597c191") {
+            skipto::function_cfb483b7();
+            continue;
+        }
+        if (response == "autocontrol") {
+            self [[ level.autocontrolplayer ]]();
+            continue;
+        }
+        if (response == "typing_complete") {
+            level notify(#"typing_complete", {#line:intpayload});
+            continue;
+        }
+        if (response == "personnel_profile_closed") {
+            level notify(#"personnel_profile_closed", {#var_ee99e999:intpayload});
+            continue;
+        }
+        if (response == "note_closed") {
+            level notify(#"note_closed");
+            continue;
+        }
+        if (response == "evidence_board_option_selected") {
+            level notify(#"evidence_board_option_selected", {#var_70b35161:intpayload});
+            continue;
+        }
+        if (response == "mission_option_selected") {
+            level notify(#"mission_option_selected", {#var_70b35161:intpayload});
+            continue;
+        }
+        if (response == "dialog_tree_option_selected") {
+            level notify(#"dialog_tree_option_selected", {#var_70b35161:intpayload});
+            continue;
+        }
+        if (response == "dialog_tree_kbm_key_selected") {
+            level notify(#"dialog_tree_kbm_key_selected", {#var_70b35161:intpayload});
+            continue;
+        }
+        if (response == "lui_unpause_game") {
+            level notify(#"lui_unpause_game", {#success:intpayload == 1});
+            continue;
+        }
+        if (response == "objective_splash" && intpayload === 0) {
+            level notify(#"hash_4df0c0f18673f6c3");
+            continue;
+        }
+        if (response == #"hash_4c6480245891f16a") {
+            level notify(#"hash_4c6480245891f16a", {#button:"" + intpayload});
+            continue;
+        }
+        if (menu == game.menu[#"menu_team"] && level.allow_teamchange) {
+            switch (response) {
+            case #"autoassign":
+                self [[ level.autoassign ]](1);
+                break;
+            case #"spectator":
+                self [[ level.spectator ]]();
+                break;
+            default:
+                self [[ level.teammenu ]](response);
+                break;
+            }
+            continue;
+        }
+        if (menu == game.menu[#"menu_draft"]) {
+            self [[ level.draftmenu ]](response, intpayload);
+            continue;
+        }
+        if (menu == game.menu[#"menu_changeclass"] || menu == game.menu[#"menu_changeclass_offline"]) {
+            if (response != "back" && response != "cancel" && (!isdefined(self.var_efc9bc54) || !self.var_efc9bc54)) {
+                self closeingamemenu();
+                self.selectedclass = 1;
+                self [[ level.curclass ]](response);
+            } else {
+                self [[ level.curclass ]](response);
+            }
+            continue;
+        }
+        if (menu == "spectate") {
+            player = util::getplayerfromclientnum(waitresult.intpayload);
+            if (isdefined(player)) {
+                self setcurrentspectatorclient(player);
             }
         }
     }
@@ -220,9 +262,9 @@ function private function_c35a1bfc() {
             skipto::function_8722a51a(var_a04dfce6, 1);
             map_restart();
         }
-    } else {
-        missionrestart();
+        return;
     }
+    missionrestart();
 }
 
 // Namespace menus/menus

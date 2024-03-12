@@ -154,7 +154,9 @@ function private function_333a7b23(entity) {
                     var_bf3a521d = vectortoangles(entity.attackable.origin - entity.origin);
                     entity forceteleport(entity.origin, (0, var_bf3a521d[1], 0), 0);
                 }
-            } else if (entity isatgoal()) {
+                return;
+            }
+            if (entity isatgoal()) {
                 var_bf3a521d = entity.attackable.origin - entity.origin;
                 var_bf3a521d = vectornormalize(var_bf3a521d);
                 if (vectordot(var_bf3a521d, anglestoforward(entity.angles)) < 0.99) {
@@ -189,7 +191,9 @@ function private function_333a7b23(entity) {
                     dist = distance2d(target_point, entity.origin);
                     var_32171a69 = checknavmeshdirection(entity.origin, to_enemy * -1, randomfloat(max(750 - dist, 0)), entity getpathfindingradius() * 1.2);
                     entity setgoal(var_32171a69);
-                } else if (is_true(var_1f1f9cfa.isatgoal)) {
+                    return;
+                }
+                if (is_true(var_1f1f9cfa.isatgoal)) {
                     var_d799417b = vectortoangles(to_enemy);
                     entity forceteleport(entity.origin, (0, var_d799417b[1], 0), 0);
                 }

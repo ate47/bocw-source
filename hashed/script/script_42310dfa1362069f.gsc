@@ -39,7 +39,9 @@ function function_9ef595c3(enabled) {
             self addsentienteventlistener(eventname);
         }
         self.stealth.var_6b368eb9 = 1;
-    } else if (!enabled && is_true(self.stealth.var_6b368eb9)) {
+        return;
+    }
+    if (!enabled && is_true(self.stealth.var_6b368eb9)) {
         foreach (eventname in level.stealth.var_5b485aba) {
             self removesentienteventlistener(eventname);
         }
@@ -342,13 +344,17 @@ function function_51e96563(eventtype, var_fafdc97e, enemy, var_b2a2de70, var_a3d
             if (broadcast) {
                 ai getenemyinfo(enemy);
             }
-        } else if (broadcast) {
+            continue;
+        }
+        if (broadcast) {
             if (ai lastknowntime(enemy) == 0) {
                 ai function_a3fcf9e0(eventtype, enemy, self.origin);
             } else {
                 ai function_a3fcf9e0(eventtype, enemy, enemy.origin);
             }
-        } else if (ai function_683f03ef(self)) {
+            continue;
+        }
+        if (ai function_683f03ef(self)) {
             ai function_a3fcf9e0(var_fafdc97e, enemy, self.origin);
         }
     }
@@ -452,7 +458,9 @@ function function_557b6ee1(eventtype, enemy, var_ef1d27a1, eventradius, var_c510
         }
         if (isdefined(var_aae03dee) && distsq <= function_a3f6cdac(var_aae03dee)) {
             ai function_a3fcf9e0(eventtype, enemy, var_ef1d27a1);
-        } else if (!ai util::function_748809fc(var_a2b0f54d, var_c5108979)) {
+            continue;
+        }
+        if (!ai util::function_748809fc(var_a2b0f54d, var_c5108979)) {
             if (var_c5108979 && !ai function_f328659b(var_ef1d27a1)) {
                 continue;
             }
@@ -461,11 +469,11 @@ function function_557b6ee1(eventtype, enemy, var_ef1d27a1, eventradius, var_c510
                 waitframe(1);
                 var_1389681c = 0;
             }
-            jumpiftrue(sighttracepassed(ai geteye(), var_ef1d27a1, 0, enemy)) LOC_00000250;
-        } else {
-        LOC_00000250:
-            ai function_a3fcf9e0(eventtype, enemy, var_ef1d27a1);
+            if (!sighttracepassed(ai geteye(), var_ef1d27a1, 0, enemy)) {
+                continue;
+            }
         }
+        ai function_a3fcf9e0(eventtype, enemy, var_ef1d27a1);
     }
 }
 

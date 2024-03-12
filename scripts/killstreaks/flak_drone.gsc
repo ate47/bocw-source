@@ -274,9 +274,9 @@ function state_death_update(params) {
         if (isdefined(self)) {
             self delete();
         }
-    } else {
-        self vehicle_death::flipping_shooting_death();
+        return;
     }
+    self vehicle_death::flipping_shooting_death();
 }
 
 // Namespace flak_drone/flak_drone
@@ -451,9 +451,9 @@ function shutdown(explode) {
     if (isdefined(drone)) {
         if (explode) {
             drone dodamage(drone.health + 1000, drone.origin, drone, drone, "none", "MOD_EXPLOSIVE");
-        } else {
-            drone delete();
+            return;
         }
+        drone delete();
     }
 }
 

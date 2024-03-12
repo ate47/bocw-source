@@ -141,11 +141,11 @@ function on_player_score(new_score, delta_score) {
                 break;
             }
         }
-    } else {
-        var_2c74fba6 = level.var_9d6b3096[gametype].var_9a5a8dcf;
-        if (old_score < var_2c74fba6 && new_score >= var_2c74fba6) {
-            player function_ccf82192(#"hash_1075c38287814aa0");
-        }
+        return;
+    }
+    var_2c74fba6 = level.var_9d6b3096[gametype].var_9a5a8dcf;
+    if (old_score < var_2c74fba6 && new_score >= var_2c74fba6) {
+        player function_ccf82192(#"hash_1075c38287814aa0");
     }
 }
 
@@ -173,7 +173,9 @@ function on_ekia(*weapon, *victim) {
             player function_ccf82192(#"hash_2783d4c96f09717");
             break;
         }
-    } else if (var_350027d1 == level.var_9d6b3096[gametype].var_39027dc7) {
+        return;
+    }
+    if (var_350027d1 == level.var_9d6b3096[gametype].var_39027dc7) {
         player function_ccf82192(#"hash_63e1c91ddca36b58");
     }
 }
@@ -194,13 +196,13 @@ function on_objective_ekia() {
         switch (level.gametype) {
         case #"hash_35a6541d081acef5":
             player function_ccf82192(#"hash_2b23579cbf8999f4");
-            break;
+            return;
         case #"hash_594c4ab1d31aa150":
             player function_ccf82192(#"hash_7182bb77d8974488");
-            break;
+            return;
         case #"hash_5fd7317230bb0fac":
             player function_ccf82192(#"hash_501faf9b8da2fcc7");
-            break;
+            return;
         }
     }
 }
@@ -224,13 +226,13 @@ function on_damagedone(damagedone) {
             switch (level.gametype) {
             case #"hash_35a6541d081acef5":
                 player function_ccf82192(#"hash_41263195cd7fa7f");
-                break;
+                return;
             case #"hash_594c4ab1d31aa150":
                 player function_ccf82192(#"hash_5579ada75c110186");
-                break;
+                return;
             case #"hash_5fd7317230bb0fac":
                 player function_ccf82192(#"hash_693d0b4e9c956a4");
-                break;
+                return;
             }
         }
     }

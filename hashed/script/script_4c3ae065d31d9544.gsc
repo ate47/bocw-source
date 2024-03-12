@@ -36,14 +36,16 @@ function hide_scene_models(*localclientnum, *oldval, newval, *bnewent, *binitial
         foreach (n_index in var_ab243151) {
             hidestaticmodel(n_index);
         }
-    } else if (bwastimejump == 2) {
+        return;
+    }
+    if (bwastimejump == 2) {
         foreach (n_index in var_fc98dc98) {
             unhidestaticmodel(n_index);
         }
-    } else {
-        foreach (n_index in var_ab243151) {
-            unhidestaticmodel(n_index);
-        }
+        return;
+    }
+    foreach (n_index in var_ab243151) {
+        unhidestaticmodel(n_index);
     }
 }
 
@@ -56,7 +58,9 @@ function function_44dc8dc9(localclientnum, *oldval, newval, *bnewent, *binitials
         if (!function_148ccc79(fieldname, #"hash_5e358762e4678906")) {
             function_a837926b(fieldname, #"hash_5e358762e4678906");
         }
-    } else if (function_148ccc79(fieldname, #"hash_5e358762e4678906")) {
+        return;
+    }
+    if (function_148ccc79(fieldname, #"hash_5e358762e4678906")) {
         codestoppostfxbundlelocal(fieldname, #"hash_5e358762e4678906");
     }
 }

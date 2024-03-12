@@ -120,9 +120,9 @@ function function_d40d301c() {
     wait(randomfloatrange(0.5, 1.5));
     if (isdefined(self.script_noteworthy) && self.script_noteworthy == "boat_small") {
         self thread scene::play("scene_tkd_hit2_canal_ambience_boat_small", self);
-    } else {
-        self thread scene::play("scene_tkd_hit2_canal_ambience_boat_large", self);
+        return;
     }
+    self thread scene::play("scene_tkd_hit2_canal_ambience_boat_large", self);
 }
 
 // Namespace tkdn_raid_capture/namespace_9b20efbd
@@ -149,10 +149,8 @@ function main(var_d3440450, var_50cc0d4f) {
     level thread function_26e6230d();
     level thread function_ba74fe83();
     level waittill(#"hash_1971429b4a856253");
-    player = getplayers()[0];
-    while (!isplayer(player)) {
+    for (player = getplayers()[0]; !isplayer(player); player = getplayers()[0]) {
         waitframe(1);
-        player = getplayers()[0];
     }
     player thread util::delay(1, undefined, &disableweapons);
     level.adler thread function_e5aa773b("adler_leave_capture");
@@ -564,9 +562,9 @@ function function_c5881277(*inflictor, *attacker, damage, *idflags, *meansofdeat
 function function_dd99245(s_result) {
     if (s_result.mod === "MOD_HEAD_SHOT") {
         iprintlnbold("HEAD SHOT!");
-    } else {
-        iprintlnbold("NOT HEAD SHOT");
+        return;
     }
+    iprintlnbold("NOT HEAD SHOT");
 }
 
 // Namespace tkdn_raid_capture/namespace_9b20efbd

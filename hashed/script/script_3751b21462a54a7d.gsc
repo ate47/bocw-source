@@ -223,9 +223,9 @@ function function_a173ab53() {
             }
             if (self namespace_e86ffa8::function_33d837e4(5)) {
                 clientfield::set_player_uimodel("zm_perks_per_controller." + i + ".lost", 2);
-            } else {
-                clientfield::set_player_uimodel("zm_perks_per_controller." + i + ".lost", var_58257a54);
+                continue;
             }
+            clientfield::set_player_uimodel("zm_perks_per_controller." + i + ".lost", var_58257a54);
         }
     }
     clientfield::set_player_uimodel("zm_perks_per_controller.count", count);
@@ -474,47 +474,36 @@ function get_perk_weapon(str_perk) {
     case #"hash_7f98b3dd3cce95aa":
         weapon = getweapon(#"zombie_perk_bottle_revive");
         return weapon;
-        break;
     case #"hash_5930cf0eb070e35a":
         weapon = getweapon(#"zombie_perk_bottle_sleight");
         return weapon;
-        break;
     case #"hash_210097a75bb6c49a":
         weapon = getweapon(#"zombie_perk_bottle_deadshot");
         return weapon;
-        break;
     case #"hash_4110e6372aa77f7e":
         weapon = getweapon(#"hash_4cb1d055c485ebdc");
         return weapon;
-        break;
     case #"hash_47d7a8105237c88":
         weapon = getweapon(#"zombie_perk_bottle_jugg");
         return weapon;
-        break;
     case #"hash_602a1b6107105f07":
         weapon = getweapon(#"zombie_perk_bottle_marathon");
         return weapon;
-        break;
     case #"hash_51b6cc6dbafb7f31":
         weapon = getweapon(#"zombie_perk_bottle_elemental_pop");
         return weapon;
-        break;
     case #"hash_38c08136902fd553":
         weapon = getweapon(#"zombie_perk_bottle_tombstone");
         return weapon;
-        break;
     case #"hash_17e4ae593eaf4a47":
         weapon = getweapon(#"zombie_perk_bottle_mulekick");
         return weapon;
-        break;
     case #"hash_1ea1a9cfee998e89":
         weapon = getweapon(#"zombie_perk_bottle_death_perception");
         return weapon;
-        break;
     case #"hash_3417450e1347185":
         weapon = getweapon(#"zombie_perk_bottle_slider");
         return weapon;
-        break;
     }
 }
 
@@ -544,17 +533,17 @@ function function_4c1d0e25(perk, var_b2d43592 = 0, var_cd9efd85 = 0) {
             self.var_ff5d288f[self.var_ff5d288f.size] = perk;
         }
         self function_a173ab53();
-    } else {
-        arrayremovevalue(self.var_7341f980, perk);
-        self function_a173ab53();
-        self item_inventory::function_9f438f15();
-        var_3dab8681 = namespace_e86ffa8::function_cde018a9(perk);
-        if (isdefined(level._custom_perks[var_3dab8681]) && isdefined(level._custom_perks[var_3dab8681].clientfield_set)) {
-            self [[ level._custom_perks[var_3dab8681].clientfield_set ]](0);
-        }
-        if (isdefined(level._custom_perks[var_3dab8681]) && isdefined(level._custom_perks[var_3dab8681].player_thread_take)) {
-            self thread [[ level._custom_perks[var_3dab8681].player_thread_take ]](0, undefined, undefined, -1);
-        }
+        return;
+    }
+    arrayremovevalue(self.var_7341f980, perk);
+    self function_a173ab53();
+    self item_inventory::function_9f438f15();
+    var_3dab8681 = namespace_e86ffa8::function_cde018a9(perk);
+    if (isdefined(level._custom_perks[var_3dab8681]) && isdefined(level._custom_perks[var_3dab8681].clientfield_set)) {
+        self [[ level._custom_perks[var_3dab8681].clientfield_set ]](0);
+    }
+    if (isdefined(level._custom_perks[var_3dab8681]) && isdefined(level._custom_perks[var_3dab8681].player_thread_take)) {
+        self thread [[ level._custom_perks[var_3dab8681].player_thread_take ]](0, undefined, undefined, -1);
     }
 }
 
@@ -603,7 +592,9 @@ function on_item_pickup(params) {
                         }
                     }
                 }
-            } else if (item.var_a6762160.itemtype === #"armor") {
+                return;
+            }
+            if (item.var_a6762160.itemtype === #"armor") {
             }
         }
     }
@@ -877,7 +868,6 @@ function function_cc0055e9(talent) {
     case #"hash_4110e6372aa77f7e":
     case #"hash_4110e6372aa77f7e":
         return 0;
-        break;
     case #"hash_59dbe8f72baaa2a3":
     case #"hash_59dbecf72baaa96f":
     case #"hash_59dbedf72baaab22":
@@ -984,16 +974,20 @@ function function_1d36527d(params) {
                     level.var_6f4eb990 = "<unknown string>";
                     break;
                 }
-            } else if (tokens[0] === #"hash_24d26fc861b6ec66") {
+                continue;
+            }
+            if (tokens[0] === #"hash_24d26fc861b6ec66") {
                 player function_3fecad82(hash(tokens[1] + level.var_6f4eb990), 0);
-            } else if (tokens[0] === #"hash_2b274b2e4aa51e00") {
+                continue;
+            }
+            if (tokens[0] === #"hash_2b274b2e4aa51e00") {
                 if (player.var_7341f980.size > 0) {
                     player function_4c1d0e25(player.var_7341f980[player.var_7341f980.size - 1]);
                 }
-            } else {
-                foreach (talent in player.var_7341f980) {
-                    player function_4c1d0e25(talent);
-                }
+                continue;
+            }
+            foreach (talent in player.var_7341f980) {
+                player function_4c1d0e25(talent);
             }
         }
     #/

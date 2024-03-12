@@ -45,8 +45,8 @@ function on_gameplay_started(*localclientnum) {
     waitframe(1);
     if (util::get_game_type() === "zsurvival") {
         util::function_8eb5d4b0(3200, 4.25);
-    } else {
-        util::function_8eb5d4b0(500, 2.75);
+        return;
     }
+    util::function_8eb5d4b0(500, 2.75);
 }
 

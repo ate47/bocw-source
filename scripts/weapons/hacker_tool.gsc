@@ -239,7 +239,7 @@ function watchforgrenadefire(*weapon) {
             clip_ammo++;
         }
         self setweaponammoclip(grenade_weapon, clip_ammo);
-        break;
+        return;
     }
 }
 
@@ -464,12 +464,16 @@ function getbesthackertooltarget(weapon) {
                     }
                 }
             }
-        } else if (self iswithinhackertoolreticle(target_ent, weapon)) {
+            continue;
+        }
+        if (self iswithinhackertoolreticle(target_ent, weapon)) {
             if (isentityhackablecarepackage(target_ent)) {
                 if (self cantargetentity(target_ent, weapon)) {
                     targetsvalid[targetsvalid.size] = target_ent;
                 }
-            } else if (isdefined(target_ent.owner) && self != target_ent.owner) {
+                continue;
+            }
+            if (isdefined(target_ent.owner) && self != target_ent.owner) {
                 if (self cantargetentity(target_ent, weapon)) {
                     targetsvalid[targetsvalid.size] = target_ent;
                 }
@@ -638,9 +642,8 @@ function getweaponobjecthacktimems(entity) {
 function isentityhackablecarepackage(entity) {
     if (isdefined(entity.model)) {
         return (entity.model == #"wpn_t7_care_package_world");
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace hacker_tool/hacker_tool

@@ -68,21 +68,23 @@ function private function_a534560c() {
         supplydrop = dropitem getlinkedent();
         if (isdefined(supplydrop)) {
             var_da05d0b2 = supplydrop getlinkedent();
-            jumpiffalse(isdefined(var_da05d0b2) && is_true(var_da05d0b2.var_5d0810d7)) LOC_00000152;
-        } else {
-        LOC_00000152:
-            if (!isdefined(dropitem.droptime)) {
+            if (isdefined(var_da05d0b2) && is_true(var_da05d0b2.var_5d0810d7)) {
                 continue;
             }
-            if (isdefined(dropitem.var_a6762160.var_fa988b4b) && dropitem.var_a6762160.var_fa988b4b > 0) {
-                var_e12c37ee = float(time - dropitem.droptime) / 1000;
-                if (var_e12c37ee >= dropitem.var_a6762160.var_fa988b4b) {
-                    item_world::consume_item(dropitem, 1);
-                    waitframe(1);
-                    time = gettime();
-                } else if (isdefined(dropitem.var_a6762160.var_68c62574) && dropitem.var_a6762160.var_68c62574 > 0 && var_e12c37ee >= dropitem.var_a6762160.var_fa988b4b - dropitem.var_a6762160.var_68c62574) {
-                    dropitem clientfield::set("dynamic_item_timing_out", 1);
-                }
+        }
+        if (!isdefined(dropitem.droptime)) {
+            continue;
+        }
+        if (isdefined(dropitem.var_a6762160.var_fa988b4b) && dropitem.var_a6762160.var_fa988b4b > 0) {
+            var_e12c37ee = float(time - dropitem.droptime) / 1000;
+            if (var_e12c37ee >= dropitem.var_a6762160.var_fa988b4b) {
+                item_world::consume_item(dropitem, 1);
+                waitframe(1);
+                time = gettime();
+                continue;
+            }
+            if (isdefined(dropitem.var_a6762160.var_68c62574) && dropitem.var_a6762160.var_68c62574 > 0 && var_e12c37ee >= dropitem.var_a6762160.var_fa988b4b - dropitem.var_a6762160.var_68c62574) {
+                dropitem clientfield::set("dynamic_item_timing_out", 1);
             }
         }
     }
@@ -211,8 +213,11 @@ function private function_b7c5f376(*var_11f2ba1f, *var_c5a0bed8, previous_origin
         supplydrop = dropitem getlinkedent();
         if (isdefined(supplydrop)) {
             var_da05d0b2 = supplydrop getlinkedent();
-            jumpiffalse(isdefined(var_da05d0b2) && is_true(var_da05d0b2.var_5d0810d7)) LOC_0000015a;
-        } else if (function_3703bc36(dropitem, previous_origin, var_7c597200, 1)) {
+            if (isdefined(var_da05d0b2) && is_true(var_da05d0b2.var_5d0810d7)) {
+                continue;
+            }
+        }
+        if (function_3703bc36(dropitem, previous_origin, var_7c597200, 1)) {
             dropitem.hidetime = gettime();
             item_world::function_a54d07e6(dropitem, undefined);
             dropitem delete();
@@ -347,9 +352,9 @@ function private function_213a12e4() {
                 b_occupied = 1;
                 break;
             }
-        } else {
-            break;
+            continue;
         }
+        break;
     }
     return b_occupied;
 }

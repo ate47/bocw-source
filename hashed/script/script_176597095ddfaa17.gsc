@@ -272,7 +272,9 @@ function function_dc15ad60() {
             if (isplayer(entity) && (!isalive(entity) || entity scene::is_igc_active())) {
                 entity clientfield::set("outsidetile", 0);
                 entity hide_effects();
-            } else if (!entity function_3824d2dc() && !is_true(entity.b_ignore_fow_damage) && isdefined(entity.maxhealth)) {
+                continue;
+            }
+            if (!entity function_3824d2dc() && !is_true(entity.b_ignore_fow_damage) && isdefined(entity.maxhealth)) {
                 player = undefined;
                 vehicle = undefined;
                 if (!isdefined(entity.var_9a1624b5)) {
@@ -320,13 +322,13 @@ function function_dc15ad60() {
                         vehicle dodamage(var_9d778583, vehicle.origin, undefined, undefined, undefined, "MOD_EXPLOSIVE", 8192);
                     }
                 }
-            } else {
-                if (isplayer(entity)) {
-                    entity clientfield::set("outsidetile", 0);
-                    entity hide_effects();
-                }
-                entity.var_9a1624b5 = undefined;
+                continue;
             }
+            if (isplayer(entity)) {
+                entity clientfield::set("outsidetile", 0);
+                entity hide_effects();
+            }
+            entity.var_9a1624b5 = undefined;
         }
         if (dodamage) {
             var_f4d9a132 = gettime() + int(1 * 1000);

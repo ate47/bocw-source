@@ -133,7 +133,9 @@ function private event_handler[gadget_on] function_7d697841(eventstruct) {
         if (isplayer(player) && weapon.name == #"hash_364914e1708cb629") {
             player thread function_845e1139();
         }
-    } else if (isplayer(player) && player hasperk("specialty_equipmentrecharge") && weapon.name == #"hash_364914e1708cb629") {
+        return;
+    }
+    if (isplayer(player) && player hasperk("specialty_equipmentrecharge") && weapon.name == #"hash_364914e1708cb629") {
         var_e0ca50e9 = {#var_acddd81e:0, #weapon:weapon, #slot:weapon.offhandslot};
         if (!isdefined(player.var_7cedc725)) {
             player.var_7cedc725 = [];

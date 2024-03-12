@@ -116,9 +116,9 @@ function function_7fb58446(trap, page = 0) {
             level.doa.var_18f8e489 = array(level.doa.var_18f8e489);
         }
         level.doa.var_18f8e489[level.doa.var_18f8e489.size] = trap;
-    } else {
-        function_ecfc6c75(trap);
+        return;
     }
+    function_ecfc6c75(trap);
 }
 
 // Namespace namespace_85f9e33a/namespace_85f9e33a
@@ -167,12 +167,12 @@ function function_9d10940b() {
                     trap.var_eb9d64bb = trap.var_eb9d64bb + 5000;
                     namespace_1e25ad94::function_f5f0c0f8("Paging IN flogger trap at:" + trap.origin);
                 }
-            } else {
-                trap.var_f8660931 = namespace_ec06fe4a::function_f3eab80e(trap.origin, 3600);
-                if (!isdefined(trap.var_f8660931)) {
-                    namespace_1e25ad94::function_f5f0c0f8("Paging out flogger trap at:" + trap.origin);
-                    trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
-                }
+                continue;
+            }
+            trap.var_f8660931 = namespace_ec06fe4a::function_f3eab80e(trap.origin, 3600);
+            if (!isdefined(trap.var_f8660931)) {
+                namespace_1e25ad94::function_f5f0c0f8("Paging out flogger trap at:" + trap.origin);
+                trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
             }
         }
     }
@@ -266,11 +266,9 @@ function function_b98fe7eb() {
     self notify("7897d0aa40ce1f82");
     self endon("7897d0aa40ce1f82");
     self endon(#"death");
-    log = 0;
-    while (1) {
+    for (log = 0; 1; log = !log) {
         self waittill(#"hash_4460cb197033d052");
         self namespace_e32bb68::function_3a59ec34("evt_doa_hazard_flogger_whoosh_" + log);
-        log = !log;
     }
 }
 
@@ -305,15 +303,17 @@ function function_ab141bd8(model, trap) {
                 if (isdefined(trap.var_2e485cc) && guy.birthtime != gettime()) {
                     guy thread status_effect::status_effect_apply(trap.var_2e485cc, guy.currentweapon, self, 1);
                 }
-            } else if (!is_true(guy.var_e66cd6fb)) {
+                continue;
+            }
+            if (!is_true(guy.var_e66cd6fb)) {
                 v_centroid = guy getcentroid();
                 v_away_from_source = vectornormalize(self.origin - v_centroid);
                 v_away_from_source = v_away_from_source * 128;
                 v_away_from_source = (v_away_from_source[0], v_away_from_source[1], randomintrange(128, 200));
                 guy thread namespace_ec06fe4a::function_b4ff2191(v_away_from_source, fling_force);
-            } else {
-                guy thread namespace_ed80aead::function_586ef822();
+                continue;
             }
+            guy thread namespace_ed80aead::function_586ef822();
         }
     }
 }

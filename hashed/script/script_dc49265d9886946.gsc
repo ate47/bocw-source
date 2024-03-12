@@ -74,9 +74,9 @@ function function_a5ef96da(params) {
         foreach (mdl in var_12611deb) {
             mdl delete();
         }
-    } else {
-        level flag::set(#"hash_2621518d33e62ddb");
+        return;
     }
+    level flag::set(#"hash_2621518d33e62ddb");
 }
 
 // Namespace namespace_cdc318b3/namespace_cdc318b3
@@ -261,7 +261,7 @@ function function_b6b75a5c(params) {
             player.var_586fcf0e = undefined;
             do {
                 wait(0.5);
-            } while(player getcurrentweapon() === currentweapon);
+            } while (player getcurrentweapon() === currentweapon);
             if (isdefined(self.str_hint)) {
                 self sethintstring(self.str_hint);
             }
@@ -395,11 +395,17 @@ function function_5f80f13f() {
         b_complete = self stats::get_stat(#"playerstatsbymap", str_map, #"stats", #"main_quest_completed", #"statvalue");
         if (b_complete) {
             var_10e6d37f++;
-        } else if (str_map == #"wz_forest" && self zm_stats::get_global_stat(#"hash_172d82afa5eb40a8")) {
+            continue;
+        }
+        if (str_map == #"wz_forest" && self zm_stats::get_global_stat(#"hash_172d82afa5eb40a8")) {
             var_10e6d37f++;
-        } else if (str_map == #"wz_sanatorium" && self zm_stats::get_global_stat(#"hash_774b3a384fb5ad")) {
+            continue;
+        }
+        if (str_map == #"wz_sanatorium" && self zm_stats::get_global_stat(#"hash_774b3a384fb5ad")) {
             var_10e6d37f++;
-        } else if (str_map == #"zm_silver" && self zm_stats::get_global_stat(#"hash_45419091cdb5f154")) {
+            continue;
+        }
+        if (str_map == #"zm_silver" && self zm_stats::get_global_stat(#"hash_45419091cdb5f154")) {
             var_10e6d37f++;
         }
     }
@@ -438,19 +444,25 @@ function function_b8a3efea() {
                 if (n_progress) {
                     if (str_map == "<unknown string>") {
                         player set_global_stat(#"hash_172d82afa5eb40a8", 1);
-                    } else if (str_map == "<unknown string>") {
-                        player set_global_stat(#"hash_774b3a384fb5ad", 1);
-                    } else {
-                        player set_stat(#"playerstatsbymap", hash(str_map), #"stats", #"main_quest_completed", #"statvalue", 1);
+                        continue;
                     }
+                    if (str_map == "<unknown string>") {
+                        player set_global_stat(#"hash_774b3a384fb5ad", 1);
+                        continue;
+                    }
+                    player set_stat(#"playerstatsbymap", hash(str_map), #"stats", #"main_quest_completed", #"statvalue", 1);
                 }
             }
             n_rarity = getdvarint(#"hash_4a79e82c895372b1", 0);
             if (n_rarity > 5) {
                 player set_stat(#"hash_2dd2a2b3580dd409", #"hash_6b6f8a8633e916dd", 3);
-            } else if (n_rarity > 3) {
+                continue;
+            }
+            if (n_rarity > 3) {
                 player set_stat(#"hash_2dd2a2b3580dd409", #"hash_6b6f8a8633e916dd", 2);
-            } else if (n_rarity > 1) {
+                continue;
+            }
+            if (n_rarity > 1) {
                 player set_stat(#"hash_2dd2a2b3580dd409", #"hash_6b6f8a8633e916dd", 1);
             }
         }

@@ -200,7 +200,7 @@ function function_bb30710d() {
             if (isdefined(self.stub.var_52dbcd71)) {
                 player thread zm_vo::function_7622cb70(self.stub.var_52dbcd71);
             }
-            break;
+            return;
         }
     }
 }
@@ -244,9 +244,9 @@ function function_58b582cc() {
             dis = distance2dsquared(self.origin, player.origin);
             if (isdefined(dis) && dis <= function_a3f6cdac(100)) {
                 player.var_54ddcd0c = 1;
-            } else {
-                player.var_54ddcd0c = undefined;
+                continue;
             }
+            player.var_54ddcd0c = undefined;
         }
         wait(1);
     }
@@ -404,7 +404,7 @@ function function_b0952594(params) {
                 array::thread_all(getplayers(), &namespace_4abf1500::function_3ad8805e, #"zmintel_platinum_requiem_artifact_02");
                 level notify(#"ww_pickup", {#player:self});
                 callback::remove_callback(#"on_item_pickup", &function_b0952594);
-                break;
+                return;
             }
         }
     }

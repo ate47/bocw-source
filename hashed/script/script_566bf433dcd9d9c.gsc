@@ -41,9 +41,9 @@ function function_6249a416() {
 function private open_door(c_door, t) {
     if (t < 0.2) {
         c_door doors::function_b29052a(self);
-    } else {
-        c_door.m_e_door thread doors::open(undefined, undefined, self);
+        return;
     }
+    c_door.m_e_door thread doors::open(undefined, undefined, self);
 }
 
 // Namespace namespace_4f6b19b0/namespace_4f6b19b0
@@ -259,13 +259,9 @@ function private function_f1af5306(var_91fea62e) {
                         self.ai.var_e8cb3a15 = undefined;
                     }
                     self.ai.var_8df88381 = undefined;
-                    goto LOC_000004e0;
                 }
-            LOC_000004e0:
             }
-        LOC_000004e0:
         }
-    LOC_000004e0:
         waitframe(1);
     }
 }

@@ -42,9 +42,9 @@ function function_5b1f1713(localclientnum, *oldval, *newval, *bnewent, *binitial
         earthquake(bwasdemojump, n_scale, 0.1, self.origin, n_dist);
         if (n_scale >= 0.5) {
             function_36e4ebd4(bwasdemojump, "damage_heavy");
-        } else {
-            function_36e4ebd4(bwasdemojump, "damage_light");
+            return;
         }
+        function_36e4ebd4(bwasdemojump, "damage_light");
     }
 }
 

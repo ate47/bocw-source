@@ -110,12 +110,12 @@ function on_weapon_fired(eventstruct) {
                             self perks::perk_setperk(#"specialty_ammodrainsfromstockfirst");
                             self.var_d9fddbc5 = 0;
                         }
-                    } else {
-                        var_409524fd = 75;
-                        if (math::cointoss(var_409524fd)) {
-                            self.var_d9fddbc5 = 0;
-                            self perks::perk_unsetperk(#"specialty_ammodrainsfromstockfirst");
-                        }
+                        return;
+                    }
+                    var_409524fd = 75;
+                    if (math::cointoss(var_409524fd)) {
+                        self.var_d9fddbc5 = 0;
+                        self perks::perk_unsetperk(#"specialty_ammodrainsfromstockfirst");
                     }
                 }
             }
@@ -143,34 +143,24 @@ function function_998f8321(weapon) {
         switch (level.zombie_weapons[w_base].weapon_classname) {
         case #"ar":
             return self zm_stats::function_12b698fa(#"hash_e4ec67369bdd326");
-            break;
         case #"lmg":
             return self zm_stats::function_12b698fa(#"hash_5511ea176da6ac83");
-            break;
         case #"pistol":
             return self zm_stats::function_12b698fa(#"hash_47a2d98887910102");
-            break;
         case #"shotgun":
             return self zm_stats::function_12b698fa(#"hash_1f78483ef16f84d5");
-            break;
         case #"smg":
             return self zm_stats::function_12b698fa(#"hash_2c88d3bcf790ec34");
-            break;
         case #"sniper":
             return self zm_stats::function_12b698fa(#"hash_3d590f7af842ad92");
-            break;
         case #"tr":
             return self zm_stats::function_12b698fa(#"hash_707a5c5c35f50dec");
-            break;
         case #"melee":
             return self zm_stats::function_12b698fa(#"hash_265dfd25205ffba8");
-            break;
         case #"launcher":
             return self zm_stats::function_12b698fa(#"hash_604f7493136f8a3");
-            break;
         case #"special":
             return self zm_stats::function_12b698fa(#"hash_746a85760decf362");
-            break;
         }
     }
     return 0;
@@ -199,12 +189,10 @@ function function_b3496fde(*inflictor, attacker, damage, *flags, meansofdeath, w
             n_damage = function_1fd0807c(0.1, n_base_damage);
             shitloc function_8a6ccd14(surfacetype, n_tier, n_damage);
             return n_damage;
-            break;
         case 4:
             n_damage = function_1fd0807c(0.25, n_base_damage);
             shitloc function_8a6ccd14(surfacetype, n_tier, n_damage);
             return n_damage;
-            break;
         case 5:
             if (isplayer(shitloc) && shitloc.var_16cd8b35 < 1) {
                 var_9eaf0b7a = int(0.1 * shitloc.var_66cb03ad);
@@ -223,10 +211,8 @@ function function_b3496fde(*inflictor, attacker, damage, *flags, meansofdeath, w
             n_damage = function_1fd0807c(0.25, n_base_damage);
             shitloc function_8a6ccd14(surfacetype, n_tier, n_damage);
             return n_damage;
-            break;
         default:
             return 0;
-            break;
         }
     }
     n_tier = shitloc function_998f8321(surfacetype);
@@ -265,7 +251,6 @@ function function_b3496fde(*inflictor, attacker, damage, *flags, meansofdeath, w
                     shitloc function_8a6ccd14(surfacetype, n_tier, var_9b4953c);
                 }
                 return var_9b4953c;
-                break;
             case 4:
             case 5:
                 if (self function_1d2de48d(shitloc)) {
@@ -273,7 +258,6 @@ function function_b3496fde(*inflictor, attacker, damage, *flags, meansofdeath, w
                     shitloc function_8a6ccd14(surfacetype, n_tier, var_9b4953c);
                 }
                 return var_9b4953c;
-                break;
             }
             break;
         case #"shotgun":
@@ -287,7 +271,6 @@ function function_b3496fde(*inflictor, attacker, damage, *flags, meansofdeath, w
                     shitloc function_8a6ccd14(surfacetype, n_tier, var_9b4953c);
                 }
                 return var_9b4953c;
-                break;
             case 4:
             case 5:
                 if (self function_1d2de48d(shitloc)) {
@@ -295,7 +278,6 @@ function function_b3496fde(*inflictor, attacker, damage, *flags, meansofdeath, w
                     shitloc function_8a6ccd14(surfacetype, n_tier, var_9b4953c);
                 }
                 return var_9b4953c;
-                break;
             }
             break;
         case #"smg":
@@ -309,7 +291,6 @@ function function_b3496fde(*inflictor, attacker, damage, *flags, meansofdeath, w
                     shitloc function_8a6ccd14(surfacetype, n_tier, var_9b4953c);
                 }
                 return var_9b4953c;
-                break;
             case 4:
             case 5:
                 if (self function_1d2de48d(shitloc)) {
@@ -317,7 +298,6 @@ function function_b3496fde(*inflictor, attacker, damage, *flags, meansofdeath, w
                     shitloc function_8a6ccd14(surfacetype, n_tier, var_9b4953c);
                 }
                 return var_9b4953c;
-                break;
             }
             break;
         case #"tr":
@@ -424,12 +404,10 @@ function function_817f0439(damage, weapon, *vpoint, *shitloc) {
                 n_damage = function_1fd0807c(0.1, n_base_damage);
                 self function_8a6ccd14(shitloc, n_tier, n_damage);
                 return n_damage;
-                break;
             case 5:
                 n_damage = function_1fd0807c(0.25, n_base_damage);
                 self function_8a6ccd14(shitloc, n_tier, n_damage);
                 return n_damage;
-                break;
             }
             break;
         case #"smg":
@@ -440,12 +418,10 @@ function function_817f0439(damage, weapon, *vpoint, *shitloc) {
                 n_damage = function_1fd0807c(0.1, n_base_damage);
                 self function_8a6ccd14(shitloc, n_tier, n_damage);
                 return n_damage;
-                break;
             case 5:
                 n_damage = function_1fd0807c(0.25, n_base_damage);
                 self function_8a6ccd14(shitloc, n_tier, n_damage);
                 return n_damage;
-                break;
             }
             break;
         case #"lmg":
@@ -456,12 +432,10 @@ function function_817f0439(damage, weapon, *vpoint, *shitloc) {
                 n_damage = function_1fd0807c(0.1, n_base_damage);
                 self function_8a6ccd14(shitloc, n_tier, n_damage);
                 return n_damage;
-                break;
             case 5:
                 n_damage = function_1fd0807c(0.25, n_base_damage);
                 self function_8a6ccd14(shitloc, n_tier, n_damage);
                 return n_damage;
-                break;
             }
             break;
         case #"sniper":
@@ -472,12 +446,10 @@ function function_817f0439(damage, weapon, *vpoint, *shitloc) {
                 n_damage = function_1fd0807c(0.1, n_base_damage);
                 self function_8a6ccd14(shitloc, n_tier, n_damage);
                 return n_damage;
-                break;
             case 5:
                 n_damage = function_1fd0807c(0.25, n_base_damage);
                 self function_8a6ccd14(shitloc, n_tier, n_damage);
                 return n_damage;
-                break;
             }
             break;
         case #"shotgun":
@@ -488,12 +460,10 @@ function function_817f0439(damage, weapon, *vpoint, *shitloc) {
                 n_damage = function_1fd0807c(0.1, n_base_damage);
                 self function_8a6ccd14(shitloc, n_tier, n_damage);
                 return n_damage;
-                break;
             case 5:
                 n_damage = function_1fd0807c(0.25, n_base_damage);
                 self function_8a6ccd14(shitloc, n_tier, n_damage);
                 return n_damage;
-                break;
             }
             break;
         case #"tr":
@@ -504,12 +474,10 @@ function function_817f0439(damage, weapon, *vpoint, *shitloc) {
                 n_damage = function_1fd0807c(0.1, n_base_damage);
                 self function_8a6ccd14(shitloc, n_tier, n_damage);
                 return n_damage;
-                break;
             case 5:
                 n_damage = function_1fd0807c(0.25, n_base_damage);
                 self function_8a6ccd14(shitloc, n_tier, n_damage);
                 return n_damage;
-                break;
             }
             break;
         case #"pistol":
@@ -520,12 +488,10 @@ function function_817f0439(damage, weapon, *vpoint, *shitloc) {
                 n_damage = function_1fd0807c(0.1, n_base_damage);
                 self function_8a6ccd14(shitloc, n_tier, n_damage);
                 return n_damage;
-                break;
             case 5:
                 n_damage = function_1fd0807c(0.25, n_base_damage);
                 self function_8a6ccd14(shitloc, n_tier, n_damage);
                 return n_damage;
-                break;
             }
             break;
         }

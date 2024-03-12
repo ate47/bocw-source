@@ -257,36 +257,35 @@ function function_ae36dd9f(*params) {
     self asmrequestsubstate("locomotion@movement");
     self.dont_move = undefined;
     for (;;) {
-        for (;;) {
-            if (!isdefined(self.enemy)) {
-                self force_get_enemies();
+        if (!isdefined(self.enemy)) {
+            self force_get_enemies();
+            wait(0.1);
+            continue;
+        }
+        if (isdefined(self.enemy) && is_true(self.enemy.laststand)) {
+            self force_get_enemies();
+            wait(0.1);
+            continue;
+        } else if (self.dont_move === 1) {
+            wait(0.1);
+            continue;
+        }
+        if (isdefined(self.var_ebf5af53)) {
+            if (!self [[ self.var_ebf5af53 ]]()) {
                 wait(0.1);
                 continue;
-            }
-            if (isdefined(self.enemy) && is_true(self.enemy.laststand)) {
-                self force_get_enemies();
-                wait(0.1);
-                continue;
-            } else if (self.dont_move === 1) {
-                wait(0.1);
-                continue;
-            }
-            if (isdefined(self.var_ebf5af53)) {
-                if (!self [[ self.var_ebf5af53 ]]()) {
-                    wait(0.1);
-                    continue;
-                }
-            }
-            if (!self seerecently(self.enemy, 5)) {
-                self.current_pathto_pos = function_4417a164();
-            } else {
-                self.current_pathto_pos = function_be5ba736(self.enemy);
-            }
-            if (isdefined(self.current_pathto_pos)) {
-                self function_a57c34b7(self.current_pathto_pos, 0, 1);
-                self vehicle_ai::waittill_pathing_done();
             }
         }
+        if (!self seerecently(self.enemy, 5)) {
+            self.current_pathto_pos = function_4417a164();
+        } else {
+            self.current_pathto_pos = function_be5ba736(self.enemy);
+        }
+        if (isdefined(self.current_pathto_pos)) {
+            self function_a57c34b7(self.current_pathto_pos, 0, 1);
+            self vehicle_ai::waittill_pathing_done();
+        }
+        waitframe(1);
     }
 }
 
@@ -303,28 +302,28 @@ function function_aea2bda3() {
         self vehicle_ai::evaluate_connections(undefined, state_params);
         if (!isdefined(self.enemy)) {
             wait(0.1);
-        } else {
-            var_f5ad2338 = 1;
-            foreach (player in getplayers()) {
-                self getperfectinfo(player, 0);
-                if (player.b_is_designated_target === 1 && self.enemy.b_is_designated_target !== 1) {
-                    self getperfectinfo(player, 1);
-                    self setpersonalthreatbias(player, 100000, 2);
-                    var_f5ad2338 = 0;
-                }
-            }
-            if (var_f5ad2338) {
-                if (self cansee(self.enemy)) {
-                    self vehlookat(self.enemy);
-                    self turretsettarget(0, self.enemy);
-                }
-                if (distance2dsquared(self.origin, self.enemy.origin) < function_a3f6cdac(self.settings.engagementdistmax * 1.5) && util::iscooldownready("rocket") && self cansee(self.enemy)) {
-                    self function_c7208b7d(self.enemy);
-                    wait(0.5);
-                }
-            }
-            wait(0.1);
+            continue;
         }
+        var_f5ad2338 = 1;
+        foreach (player in getplayers()) {
+            self getperfectinfo(player, 0);
+            if (player.b_is_designated_target === 1 && self.enemy.b_is_designated_target !== 1) {
+                self getperfectinfo(player, 1);
+                self setpersonalthreatbias(player, 100000, 2);
+                var_f5ad2338 = 0;
+            }
+        }
+        if (var_f5ad2338) {
+            if (self cansee(self.enemy)) {
+                self vehlookat(self.enemy);
+                self turretsettarget(0, self.enemy);
+            }
+            if (distance2dsquared(self.origin, self.enemy.origin) < function_a3f6cdac(self.settings.engagementdistmax * 1.5) && util::iscooldownready("rocket") && self cansee(self.enemy)) {
+                self function_c7208b7d(self.enemy);
+                wait(0.5);
+            }
+        }
+        wait(0.1);
     }
 }
 
@@ -429,104 +428,104 @@ function function_aebf9e0f(*params) {
         if (!isdefined(self.enemy)) {
             self force_get_enemies();
             wait(0.1);
-        } else {
-            if (isdefined(self.enemy) && is_true(self.enemy.laststand)) {
-                self force_get_enemies();
+            continue;
+        }
+        if (isdefined(self.enemy) && is_true(self.enemy.laststand)) {
+            self force_get_enemies();
+            wait(0.1);
+            continue;
+        } else if (self.dont_move === 1) {
+            wait(0.1);
+            continue;
+        }
+        if (isdefined(self.var_ebf5af53)) {
+            if (!self [[ self.var_ebf5af53 ]]()) {
                 wait(0.1);
                 continue;
-            } else if (self.dont_move === 1) {
-                wait(0.1);
-                continue;
-            }
-            if (isdefined(self.var_ebf5af53)) {
-                jumpiftrue(self [[ self.var_ebf5af53 ]]()) LOC_000002fa;
-                wait(0.1);
-            } else {
-            LOC_000002fa:
-                self.foundpath = 0;
-                targetpos = function_4417a164();
-                if (isdefined(targetpos)) {
-                    if (distancesquared(self.origin, targetpos) > function_a3f6cdac(1300) && self isposinclaimedlocation(targetpos)) {
-                        queryresult = positionquery_source_navigation(targetpos, 0, self.settings.max_move_dist, self.settings.max_move_dist, self.radius, self);
-                        positionquery_filter_inclaimedlocation(queryresult, self.enemy);
-                        best_point = undefined;
-                        best_score = -999999;
-                        foreach (point in queryresult.data) {
-                            /#
-                                if (!isdefined(point._scoredebug)) {
-                                    point._scoredebug = [];
-                                }
-                                if (!isdefined(point._scoredebug[#"disttoorigin"])) {
-                                    point._scoredebug[#"disttoorigin"] = spawnstruct();
-                                }
-                                point._scoredebug[#"disttoorigin"].score = mapfloat(0, 200, 0, -200, distance(point.origin, queryresult.origin));
-                                point._scoredebug[#"disttoorigin"].scorename = "<unknown string>";
-                            #/
-                            point.score = point.score + mapfloat(0, 200, 0, -200, distance(point.origin, queryresult.origin));
-                            /#
-                                if (!isdefined(point._scoredebug)) {
-                                    point._scoredebug = [];
-                                }
-                                if (!isdefined(point._scoredebug[#"heighttoorigin"])) {
-                                    point._scoredebug[#"heighttoorigin"] = spawnstruct();
-                                }
-                                point._scoredebug[#"heighttoorigin"].score = mapfloat(50, 200, 0, -200, abs(point.origin[2] - queryresult.origin[2]));
-                                point._scoredebug[#"heighttoorigin"].scorename = "<unknown string>";
-                            #/
-                            point.score = point.score + mapfloat(50, 200, 0, -200, abs(point.origin[2] - queryresult.origin[2]));
-                            if (point.inclaimedlocation === 1) {
-                                /#
-                                    if (!isdefined(point._scoredebug)) {
-                                        point._scoredebug = [];
-                                    }
-                                    if (!isdefined(point._scoredebug[#"inclaimedlocation"])) {
-                                        point._scoredebug[#"inclaimedlocation"] = spawnstruct();
-                                    }
-                                    point._scoredebug[#"inclaimedlocation"].score = -500;
-                                    point._scoredebug[#"inclaimedlocation"].scorename = "<unknown string>";
-                                #/
-                                point.score = point.score + -500;
-                            }
-                            if (point.score > best_score) {
-                                best_score = point.score;
-                                best_point = point;
-                            }
-                        }
-                        self vehicle_ai::positionquery_debugscores(queryresult);
-                        if (isdefined(best_point)) {
-                            targetpos = best_point.origin;
-                        }
-                    }
-                    self function_a57c34b7(targetpos, 0, 1);
-                    self.foundpath = self vehicle_ai::waittill_pathresult();
-                    if (self.foundpath) {
-                        self.current_pathto_pos = targetpos;
-                        self thread function_b38859f();
-                        self.pathfailcount = 0;
-                        self vehicle_ai::waittill_pathing_done();
-                    }
-                }
-                if (!self.foundpath) {
-                    self.pathfailcount++;
-                    if (self.pathfailcount > 2) {
-                        if (isdefined(self.enemy) && issentient(self.enemy)) {
-                            self setpersonalthreatbias(self.enemy, -2000, 5);
-                        }
-                    }
-                    wait(0.1);
-                    queryresult = positionquery_source_navigation(self.origin, 0, self.settings.max_move_dist, self.settings.max_move_dist, self.radius, self);
-                    if (queryresult.data.size) {
-                        point = queryresult.data[randomint(queryresult.data.size)];
-                        self function_a57c34b7(point.origin, 0, 0);
-                        self.current_pathto_pos = undefined;
-                        self thread function_b38859f();
-                        wait(2);
-                        self notify(#"near_goal");
-                    }
-                }
-                wait(0.2);
             }
         }
+        self.foundpath = 0;
+        targetpos = function_4417a164();
+        if (isdefined(targetpos)) {
+            if (distancesquared(self.origin, targetpos) > function_a3f6cdac(1300) && self isposinclaimedlocation(targetpos)) {
+                queryresult = positionquery_source_navigation(targetpos, 0, self.settings.max_move_dist, self.settings.max_move_dist, self.radius, self);
+                positionquery_filter_inclaimedlocation(queryresult, self.enemy);
+                best_point = undefined;
+                best_score = -999999;
+                foreach (point in queryresult.data) {
+                    /#
+                        if (!isdefined(point._scoredebug)) {
+                            point._scoredebug = [];
+                        }
+                        if (!isdefined(point._scoredebug[#"disttoorigin"])) {
+                            point._scoredebug[#"disttoorigin"] = spawnstruct();
+                        }
+                        point._scoredebug[#"disttoorigin"].score = mapfloat(0, 200, 0, -200, distance(point.origin, queryresult.origin));
+                        point._scoredebug[#"disttoorigin"].scorename = "<unknown string>";
+                    #/
+                    point.score = point.score + mapfloat(0, 200, 0, -200, distance(point.origin, queryresult.origin));
+                    /#
+                        if (!isdefined(point._scoredebug)) {
+                            point._scoredebug = [];
+                        }
+                        if (!isdefined(point._scoredebug[#"heighttoorigin"])) {
+                            point._scoredebug[#"heighttoorigin"] = spawnstruct();
+                        }
+                        point._scoredebug[#"heighttoorigin"].score = mapfloat(50, 200, 0, -200, abs(point.origin[2] - queryresult.origin[2]));
+                        point._scoredebug[#"heighttoorigin"].scorename = "<unknown string>";
+                    #/
+                    point.score = point.score + mapfloat(50, 200, 0, -200, abs(point.origin[2] - queryresult.origin[2]));
+                    if (point.inclaimedlocation === 1) {
+                        /#
+                            if (!isdefined(point._scoredebug)) {
+                                point._scoredebug = [];
+                            }
+                            if (!isdefined(point._scoredebug[#"inclaimedlocation"])) {
+                                point._scoredebug[#"inclaimedlocation"] = spawnstruct();
+                            }
+                            point._scoredebug[#"inclaimedlocation"].score = -500;
+                            point._scoredebug[#"inclaimedlocation"].scorename = "<unknown string>";
+                        #/
+                        point.score = point.score + -500;
+                    }
+                    if (point.score > best_score) {
+                        best_score = point.score;
+                        best_point = point;
+                    }
+                }
+                self vehicle_ai::positionquery_debugscores(queryresult);
+                if (isdefined(best_point)) {
+                    targetpos = best_point.origin;
+                }
+            }
+            self function_a57c34b7(targetpos, 0, 1);
+            self.foundpath = self vehicle_ai::waittill_pathresult();
+            if (self.foundpath) {
+                self.current_pathto_pos = targetpos;
+                self thread function_b38859f();
+                self.pathfailcount = 0;
+                self vehicle_ai::waittill_pathing_done();
+            }
+        }
+        if (!self.foundpath) {
+            self.pathfailcount++;
+            if (self.pathfailcount > 2) {
+                if (isdefined(self.enemy) && issentient(self.enemy)) {
+                    self setpersonalthreatbias(self.enemy, -2000, 5);
+                }
+            }
+            wait(0.1);
+            queryresult = positionquery_source_navigation(self.origin, 0, self.settings.max_move_dist, self.settings.max_move_dist, self.radius, self);
+            if (queryresult.data.size) {
+                point = queryresult.data[randomint(queryresult.data.size)];
+                self function_a57c34b7(point.origin, 0, 0);
+                self.current_pathto_pos = undefined;
+                self thread function_b38859f();
+                wait(2);
+                self notify(#"near_goal");
+            }
+        }
+        wait(0.2);
     }
 }
 
@@ -543,20 +542,20 @@ function function_8a699cff() {
         if (!isdefined(self.enemy)) {
             wait(0.1);
             self vehicle_ai::evaluate_connections(undefined, state_params);
-        } else {
-            self vehicle_ai::evaluate_connections(undefined, state_params);
-            if (self cansee(self.enemy)) {
-                self vehlookat(self.enemy);
-                self turretsettarget(0, self.enemy);
-            }
-            if (distance2dsquared(self.origin, self.enemy.origin) < function_a3f6cdac(48) && self cansee(self.enemy)) {
-                if (bullettracepassed(self.origin + vectorscale((0, 0, 1), 10), self.enemy.origin + vectorscale((0, 0, 1), 20), 0, self, self.enemy, 0, 1)) {
-                    self function_f7dc8837(self.enemy);
-                    wait(0.5);
-                }
-            }
-            wait(0.1);
+            continue;
         }
+        self vehicle_ai::evaluate_connections(undefined, state_params);
+        if (self cansee(self.enemy)) {
+            self vehlookat(self.enemy);
+            self turretsettarget(0, self.enemy);
+        }
+        if (distance2dsquared(self.origin, self.enemy.origin) < function_a3f6cdac(48) && self cansee(self.enemy)) {
+            if (bullettracepassed(self.origin + vectorscale((0, 0, 1), 10), self.enemy.origin + vectorscale((0, 0, 1), 20), 0, self, self.enemy, 0, 1)) {
+                self function_f7dc8837(self.enemy);
+                wait(0.5);
+            }
+        }
+        wait(0.1);
     }
 }
 
@@ -725,9 +724,9 @@ function function_b38859f() {
                 self setspeed(speedtouse);
             }
             wait(0.2);
-        } else {
-            wait(0.4);
+            continue;
         }
+        wait(0.4);
     }
 }
 

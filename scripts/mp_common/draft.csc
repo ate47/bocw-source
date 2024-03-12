@@ -267,7 +267,9 @@ function function_799e0ac1(*localclientnum, draftcharacter, masked) {
     if (masked && !is_true([[ draftcharacter ]]->function_82e05d64().masked)) {
         [[ draftcharacter ]]->function_27945cb8(1);
         [[ draftcharacter ]]->function_82e05d64().masked = 1;
-    } else if (!masked && is_true([[ draftcharacter ]]->function_82e05d64().masked)) {
+        return;
+    }
+    if (!masked && is_true([[ draftcharacter ]]->function_82e05d64().masked)) {
         [[ draftcharacter ]]->function_27945cb8(0);
         [[ draftcharacter ]]->function_82e05d64().masked = 0;
     }
@@ -308,9 +310,9 @@ function function_b139ecfb(localclientnum) {
         var_2d0192e5 = [[ character ]]->function_82e05d64();
         if (var_2d0192e5.islocalclient && var_2d0192e5.showmodel) {
             [[ character ]]->show_model();
-        } else {
-            [[ character ]]->hide_model();
+            continue;
         }
+        [[ character ]]->hide_model();
     }
 }
 

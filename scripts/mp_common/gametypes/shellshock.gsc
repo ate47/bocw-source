@@ -51,9 +51,9 @@ function on_damage(eattacker, einflictor, weapon, smeansofdeath, idamage) {
             if (self util::mayapplyscreeneffect() && self hasperk(#"specialty_flakjacket") == 0) {
                 if (isdefined(einflictor.var_63be5750)) {
                     self [[ einflictor.var_63be5750 ]](eattacker, einflictor, weapon, smeansofdeath, idamage);
-                } else {
-                    self shellshock(#"frag_grenade_mp", 0.5);
+                    return;
                 }
+                self shellshock(#"frag_grenade_mp", 0.5);
             }
         }
     }

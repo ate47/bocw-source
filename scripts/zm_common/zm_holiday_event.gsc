@@ -129,7 +129,9 @@ function function_5837bf72() {
                 break;
             }
         }
-    } else if (zm_utility::is_classic()) {
+        return;
+    }
+    if (zm_utility::is_classic()) {
         if (!level.var_e0b4bcdf.size) {
             a_s_player_spawns = zm_gametype::get_player_spawns_for_gametype();
             foreach (var_6f531d9b in a_s_player_spawns) {
@@ -146,9 +148,9 @@ function function_5837bf72() {
                     if (level.script === "zm_tungsten" && var_49089e5b.str_zone === "zone_helipads_portal_room") {
                         var_49089e5b.angles = (var_49089e5b.angles[0], var_49089e5b.angles[1] + 180, var_49089e5b.angles[2]);
                     }
-                } else {
-                    var_49089e5b struct::delete();
+                    continue;
                 }
+                var_49089e5b struct::delete();
             }
         }
         if (!isdefined(level.var_165a2af4)) {
@@ -270,11 +272,11 @@ function function_3ba5772b() {
         case #"avogadro":
         case #"hash_7c0d83ac1e845ac2":
             self.var_4356b0bd = 1;
-            break;
+            return;
         case #"soa":
             wait(1.4 + float(function_60d95f53()) / 1000);
             self.var_4356b0bd = 1;
-            break;
+            return;
         }
     }
 }
@@ -359,7 +361,7 @@ function private function_5da12481(params) {
                 } else {
                     item function_933708f2();
                 }
-                break;
+                return;
             }
         }
     }
@@ -415,7 +417,7 @@ function private function_33572994(cmd) {
             } else {
                 iprintlnbold("<unknown string>");
             }
-            break;
+            return;
         case #"hash_68f2deafb75d0499":
             level toggle(#"hash_6ef5c2fd97dfb8ba");
             if (level get(#"hash_6ef5c2fd97dfb8ba")) {
@@ -423,7 +425,7 @@ function private function_33572994(cmd) {
             } else {
                 iprintlnbold("<unknown string>");
             }
-            break;
+            return;
         case #"hash_3d3ef40bc9791d4b":
             if (level get("<unknown string>")) {
                 level clear("<unknown string>");

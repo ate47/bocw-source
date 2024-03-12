@@ -29,7 +29,9 @@ function init_clientfields() {
 function function_f1c7d9e3(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self.var_ddd3b139 = util::playfxontag(fieldname, #"hash_67ab48748fb2d398", self, "j_eyeball_le");
-    } else if (isdefined(self.var_ddd3b139)) {
+        return;
+    }
+    if (isdefined(self.var_ddd3b139)) {
         stopfx(fieldname, self.var_ddd3b139);
         self.var_ddd3b139 = undefined;
     }

@@ -65,19 +65,23 @@ function player_hacking(localclientnum, *oldval, newval, *bnewent, *binitialsnap
     if (bwastimejump == 2) {
         player thread watchhackspeed(fieldname, 0);
         setuimodelvalue(createuimodel(function_1df4c3b0(fieldname, #"blackhat"), "status"), 2);
-    } else if (bwastimejump == 3) {
+        return;
+    }
+    if (bwastimejump == 3) {
         player thread watchhackspeed(fieldname, 1);
         setuimodelvalue(createuimodel(function_1df4c3b0(fieldname, #"blackhat"), "status"), 1);
-    } else if (bwastimejump == 1) {
+        return;
+    }
+    if (bwastimejump == 1) {
         setuimodelvalue(createuimodel(function_1df4c3b0(fieldname, #"blackhat"), "status"), 0);
         setuimodelvalue(createuimodel(function_1df4c3b0(fieldname, #"blackhat"), "perc"), 0);
         setuimodelvalue(createuimodel(function_1df4c3b0(fieldname, #"blackhat"), "offsetShaderValue"), "0 0 0 0");
         self thread watchforemp(fieldname);
-    } else {
-        setuimodelvalue(createuimodel(function_1df4c3b0(fieldname, #"blackhat"), "status"), 0);
-        setuimodelvalue(createuimodel(function_1df4c3b0(fieldname, #"blackhat"), "perc"), 0);
-        setuimodelvalue(createuimodel(function_1df4c3b0(fieldname, #"blackhat"), "offsetShaderValue"), "0 0 0 0");
+        return;
     }
+    setuimodelvalue(createuimodel(function_1df4c3b0(fieldname, #"blackhat"), "status"), 0);
+    setuimodelvalue(createuimodel(function_1df4c3b0(fieldname, #"blackhat"), "perc"), 0);
+    setuimodelvalue(createuimodel(function_1df4c3b0(fieldname, #"blackhat"), "offsetShaderValue"), "0 0 0 0");
 }
 
 // Namespace hacker_tool/hacker_tool

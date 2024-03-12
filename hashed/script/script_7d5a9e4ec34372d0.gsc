@@ -112,9 +112,9 @@ function function_7265ebeb(b_on) {
         } else {
             self.var_d6b3b6e0 setmodel(#"p8_zm_off_trap_switch_light_red_on");
         }
-    } else {
-        self.var_d6b3b6e0 setmodel(#"p8_zm_off_trap_switch_light");
+        return;
     }
+    self.var_d6b3b6e0 setmodel(#"p8_zm_off_trap_switch_light");
 }
 
 // Namespace namespace_178eb32b/namespace_178eb32b
@@ -351,12 +351,12 @@ function private function_d103a3d0(entity) {
         self notify(#"hash_3ddbfa242007e625");
         self.var_603547e4 = 0;
         self function_15cee126(self.var_2268588c.origin, entity.origin);
-    } else {
-        if (isplayer(self.target_enemy)) {
-            self.target_enemy clientfield::set_to_player("" + #"hash_32d35af47559b320", 0);
-        }
-        self.target_enemy = undefined;
+        return;
     }
+    if (isplayer(self.target_enemy)) {
+        self.target_enemy clientfield::set_to_player("" + #"hash_32d35af47559b320", 0);
+    }
+    self.target_enemy = undefined;
 }
 
 // Namespace namespace_178eb32b/namespace_178eb32b
@@ -372,13 +372,12 @@ function private is_valid_target(var_c0a2d9cb, var_81e5de51, var_9f0b8aed) {
     }
     if (is_true(var_81e5de51)) {
         return (!isplayer(var_c0a2d9cb) && istouching(var_c0a2d9cb.origin, self.var_fa9fda61));
-    } else {
-        var_666d5a82 = self function_1759c36a(var_c0a2d9cb);
-        if (var_666d5a82 && !istouching(var_c0a2d9cb.origin, var_9f0b8aed)) {
-            return (!isplayer(var_c0a2d9cb) || !var_c0a2d9cb laststand::player_is_in_laststand());
-        }
-        return 0;
     }
+    var_666d5a82 = self function_1759c36a(var_c0a2d9cb);
+    if (var_666d5a82 && !istouching(var_c0a2d9cb.origin, var_9f0b8aed)) {
+        return (!isplayer(var_c0a2d9cb) || !var_c0a2d9cb laststand::player_is_in_laststand());
+    }
+    return 0;
 }
 
 // Namespace namespace_178eb32b/namespace_178eb32b
@@ -420,9 +419,8 @@ function function_fef32ab1(var_74bebc57) {
                 }
                 if (var_81e5de51) {
                     continue;
-                } else {
-                    self function_a76ab7f7();
                 }
+                self function_a76ab7f7();
             }
             self function_d103a3d0(e_target);
         }
@@ -578,23 +576,23 @@ function function_e8fbb26a(var_1b26eb1c = 1) {
                 self.var_9dc0b96f = var_7a45ae3c;
             }
         }
-    } else {
-        while (1) {
-            var_b03a7aa3 = struct::get_array(self.target, "targetname");
-            if (!isdefined(self.var_9dc0b96f)) {
-                if (isdefined(var_b03a7aa3) && isarray(var_b03a7aa3)) {
-                    self.var_9dc0b96f = array::random(var_b03a7aa3);
-                    break;
-                }
-            } else {
-                var_7a45ae3c = array::random(var_b03a7aa3);
-                if (var_7a45ae3c != self.var_9dc0b96f) {
-                    self.var_9dc0b96f = var_7a45ae3c;
-                    break;
-                }
+        return;
+    }
+    while (1) {
+        var_b03a7aa3 = struct::get_array(self.target, "targetname");
+        if (!isdefined(self.var_9dc0b96f)) {
+            if (isdefined(var_b03a7aa3) && isarray(var_b03a7aa3)) {
+                self.var_9dc0b96f = array::random(var_b03a7aa3);
+                return;
             }
-            waitframe(5);
+        } else {
+            var_7a45ae3c = array::random(var_b03a7aa3);
+            if (var_7a45ae3c != self.var_9dc0b96f) {
+                self.var_9dc0b96f = var_7a45ae3c;
+                return;
+            }
         }
+        waitframe(5);
     }
 }
 
@@ -742,7 +740,7 @@ function function_ad3a71a3(var_e110fa82, e_target) {
     while (isalive(e_target)) {
         if (!is_true(var_e110fa82 function_1759c36a(e_target))) {
             self notify(#"fire_stop");
-            break;
+            return;
         }
         waitframe(1);
     }
@@ -822,18 +820,18 @@ function cmd(cmd) {
         switch (cmd) {
         case #"hash_72c32e4ea9754a5a":
             function_950cdfda();
-            break;
+            return;
         case #"hash_2b88edba72ea664":
             function_5167738a();
-            break;
+            return;
         case #"hash_17ddb3f9b9346fba":
             function_d0a8abf7();
-            break;
+            return;
         case #"hash_52e9b6c047dfc7":
             function_d5c28d2b();
-            break;
+            return;
         default:
-            break;
+            return;
         }
     #/
 }

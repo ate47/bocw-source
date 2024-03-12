@@ -30,10 +30,10 @@ function function_a2e43552(*localclientnum, *oldval, newval, *bnewent, *binitial
     if (bwastimejump == 1) {
         forcestreamxmodel(#"p9_sur_computer_console_hvt_01_screen_laser_in_act");
         forcestreamxmodel(#"p9_sur_computer_console_hvt_01_screen_laser_act");
-    } else {
-        stopforcestreamingxmodel(#"p9_sur_computer_console_hvt_01_screen_laser_in_act");
-        stopforcestreamingxmodel(#"p9_sur_computer_console_hvt_01_screen_laser_act");
+        return;
     }
+    stopforcestreamingxmodel(#"p9_sur_computer_console_hvt_01_screen_laser_in_act");
+    stopforcestreamingxmodel(#"p9_sur_computer_console_hvt_01_screen_laser_act");
 }
 
 // Namespace namespace_662ff671/namespace_662ff671
@@ -45,7 +45,9 @@ function function_dea39d5a(localclientnum, *oldval, newval, *bnewent, *binitials
     self util::waittill_dobj(fieldname);
     if (bwastimejump == 1) {
         self.var_3af8abd3 = util::playfxontag(fieldname, "sr/fx9_hvt_zombie_summon", self, "j_spine4");
-    } else if (isdefined(self.var_3af8abd3)) {
+        return;
+    }
+    if (isdefined(self.var_3af8abd3)) {
         stopfx(fieldname, self.var_3af8abd3);
         self.var_3af8abd3 = undefined;
     }
@@ -60,7 +62,9 @@ function function_f471577a(localclientnum, *oldval, newval, *bnewent, *binitials
     self util::waittill_dobj(fieldname);
     if (bwastimejump == 1) {
         self.var_27b51434 = util::playfxontag(fieldname, "sr/fx9_hvt_aether_beam_distant", self, "tag_origin");
-    } else if (isdefined(self.var_27b51434)) {
+        return;
+    }
+    if (isdefined(self.var_27b51434)) {
         stopfx(fieldname, self.var_27b51434);
         self.var_27b51434 = undefined;
     }
@@ -75,7 +79,9 @@ function function_691412b4(localclientnum, *oldval, newval, *bnewent, *binitials
     self util::waittill_dobj(fieldname);
     if (bwastimejump == 1) {
         self.var_942f8233 = util::playfxontag(fieldname, "sr/fx9_hvt_aether_move_trail", self, "tag_origin");
-    } else if (isdefined(self.var_942f8233)) {
+        return;
+    }
+    if (isdefined(self.var_942f8233)) {
         stopfx(fieldname, self.var_942f8233);
     }
 }
@@ -95,26 +101,26 @@ function function_60886116(localclientnum, *oldval, newval, *bnewent, *binitials
         }
         wait(2.5);
         self.var_ae8b25ed = playfx(fieldname, "sr/fx9_hvt_aether_portal_spawn", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
-    } else {
-        self.var_1c6eb712 = playfx(fieldname, "sr/fx9_hvt_aether_portal_close", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
-        if (isdefined(self.var_3e3964d7)) {
-            stopfx(fieldname, self.var_3e3964d7);
-            self.var_3e3964d7 = undefined;
-        }
-        if (isdefined(self.var_ae8b25ed)) {
-            stopfx(fieldname, self.var_ae8b25ed);
-            self.var_ae8b25ed = undefined;
-        }
-        if (isdefined(self.var_7f6cb624)) {
-            self playsound(fieldname, #"hash_7e2855c20a4abd8f");
-            self stoploopsound(self.var_7f6cb624);
-            self.var_7f6cb624 = undefined;
-        }
-        wait(2);
-        if (isdefined(self.var_1c6eb712)) {
-            stopfx(fieldname, self.var_1c6eb712);
-            self.var_1c6eb712 = undefined;
-        }
+        return;
+    }
+    self.var_1c6eb712 = playfx(fieldname, "sr/fx9_hvt_aether_portal_close", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
+    if (isdefined(self.var_3e3964d7)) {
+        stopfx(fieldname, self.var_3e3964d7);
+        self.var_3e3964d7 = undefined;
+    }
+    if (isdefined(self.var_ae8b25ed)) {
+        stopfx(fieldname, self.var_ae8b25ed);
+        self.var_ae8b25ed = undefined;
+    }
+    if (isdefined(self.var_7f6cb624)) {
+        self playsound(fieldname, #"hash_7e2855c20a4abd8f");
+        self stoploopsound(self.var_7f6cb624);
+        self.var_7f6cb624 = undefined;
+    }
+    wait(2);
+    if (isdefined(self.var_1c6eb712)) {
+        stopfx(fieldname, self.var_1c6eb712);
+        self.var_1c6eb712 = undefined;
     }
 }
 
@@ -167,14 +173,14 @@ function function_cdc867b2(localclientnum, *oldval, newval, *bnewent, *binitials
         if (!isdefined(self.var_bb6d69f0)) {
             self.var_bb6d69f0 = playfx(fieldname, "sr/fx9_hvt_aether_portal_spawn", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
         }
-    } else {
-        if (isdefined(self.var_bb6d69f0)) {
-            stopfx(fieldname, self.var_bb6d69f0);
-            self.var_bb6d69f0 = undefined;
-        }
-        var_4776f2b8 = playfx(fieldname, "sr/fx9_hvt_aether_portal_close", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
-        level thread function_2f3f5638(fieldname, var_4776f2b8);
+        return;
     }
+    if (isdefined(self.var_bb6d69f0)) {
+        stopfx(fieldname, self.var_bb6d69f0);
+        self.var_bb6d69f0 = undefined;
+    }
+    var_4776f2b8 = playfx(fieldname, "sr/fx9_hvt_aether_portal_close", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
+    level thread function_2f3f5638(fieldname, var_4776f2b8);
 }
 
 // Namespace namespace_662ff671/namespace_662ff671

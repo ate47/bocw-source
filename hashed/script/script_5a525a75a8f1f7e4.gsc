@@ -147,136 +147,75 @@ function function_5eeaa168() {
                     player.var_d30f56e4 = undefined;
                     player globallogic::function_d96c031e();
                 }
-            } else {
-                var_1c7e95e9 = 0;
-                player.var_d30f56e4 = self;
-                weapon1 = player namespace_a0d533d1::function_2b83d3ff(player item_inventory::function_2e711614(17 + 1));
-                weapon1 = zm_weapons::function_ec62a449(weapon1);
-                weapon2 = player namespace_a0d533d1::function_2b83d3ff(player item_inventory::function_2e711614(17 + 1 + 8 + 1));
-                weapon2 = zm_weapons::function_ec62a449(weapon2);
-                var_ae70df3a = player item_inventory::function_2e711614(17 + 1 + 8 + 1 + 8 + 1);
-                if (isdefined(var_ae70df3a)) {
-                    var_5df29481 = player namespace_a0d533d1::function_2b83d3ff(var_ae70df3a);
-                    var_5df29481 = zm_weapons::function_ec62a449(var_5df29481);
-                }
-                if (!isdefined(weapon1)) {
-                    weapon1 = var_f945fa92;
-                }
-                if (!isdefined(weapon2)) {
-                    weapon2 = var_f945fa92;
-                }
-                if (isdefined(var_5df29481)) {
-                    if (killstreaks::is_killstreak_weapon(currentweapon)) {
+                continue;
+            }
+            var_1c7e95e9 = 0;
+            player.var_d30f56e4 = self;
+            weapon1 = player namespace_a0d533d1::function_2b83d3ff(player item_inventory::function_2e711614(17 + 1));
+            weapon1 = zm_weapons::function_ec62a449(weapon1);
+            weapon2 = player namespace_a0d533d1::function_2b83d3ff(player item_inventory::function_2e711614(17 + 1 + 8 + 1));
+            weapon2 = zm_weapons::function_ec62a449(weapon2);
+            var_ae70df3a = player item_inventory::function_2e711614(17 + 1 + 8 + 1 + 8 + 1);
+            if (isdefined(var_ae70df3a)) {
+                var_5df29481 = player namespace_a0d533d1::function_2b83d3ff(var_ae70df3a);
+                var_5df29481 = zm_weapons::function_ec62a449(var_5df29481);
+            }
+            if (!isdefined(weapon1)) {
+                weapon1 = var_f945fa92;
+            }
+            if (!isdefined(weapon2)) {
+                weapon2 = var_f945fa92;
+            }
+            if (isdefined(var_5df29481)) {
+                if (killstreaks::is_killstreak_weapon(currentweapon)) {
+                    player.var_b8783de6 = 3;
+                    self sethintstringforplayer(player, #"hash_56425e74a921890d");
+                } else if (weapon1.weapclass == "melee" && weapon2.weapclass == "melee" && var_5df29481.weapclass == "melee") {
+                    player.var_b8783de6 = 3;
+                    self sethintstringforplayer(player, #"hash_56425e74a921890d");
+                } else if (var_5df29481.weapclass != "melee" && weapon1.weapclass == "melee" && weapon2.weapclass == "melee") {
+                    cost = function_adb75323(var_ae70df3a);
+                    if (player zm_score::can_player_purchase(cost) && !player function_f300168a(var_5df29481)) {
+                        player.var_b8783de6 = 4;
+                        self sethintstringforplayer(player, #"hash_47f37dccf2dfd164", cost, var_5df29481.displayname);
+                    } else if (player zm_score::can_player_purchase(cost) && player function_f300168a(var_5df29481)) {
                         player.var_b8783de6 = 3;
-                        self sethintstringforplayer(player, #"hash_56425e74a921890d");
-                    } else if (weapon1.weapclass == "melee" && weapon2.weapclass == "melee" && var_5df29481.weapclass == "melee") {
-                        player.var_b8783de6 = 3;
-                        self sethintstringforplayer(player, #"hash_56425e74a921890d");
-                    } else if (var_5df29481.weapclass != "melee" && weapon1.weapclass == "melee" && weapon2.weapclass == "melee") {
-                        cost = function_adb75323(var_ae70df3a);
-                        if (player zm_score::can_player_purchase(cost) && !player function_f300168a(var_5df29481)) {
-                            player.var_b8783de6 = 4;
-                            self sethintstringforplayer(player, #"hash_47f37dccf2dfd164", cost, var_5df29481.displayname);
-                        } else if (player zm_score::can_player_purchase(cost) && player function_f300168a(var_5df29481)) {
-                            player.var_b8783de6 = 3;
-                            self sethintstringforplayer(player, #"hash_36de8d628bb52fe9", var_5df29481.displayname);
-                        } else {
-                            player.var_b8783de6 = 3;
-                            var_1c7e95e9 = 1;
-                            self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, var_5df29481.displayname);
-                        }
-                    } else if (weapon1.weapclass != "melee" && weapon2.weapclass == "melee" && var_5df29481.weapclass == "melee") {
-                        item = player item_inventory::function_230ceec4(weapon1);
-                        cost = function_adb75323(item);
-                        if (player zm_score::can_player_purchase(cost) && !player function_f300168a(weapon1)) {
-                            player.var_b8783de6 = 1;
-                            self sethintstringforplayer(player, #"hash_47f37dccf2dfd164", cost, weapon1.displayname);
-                        } else if (player zm_score::can_player_purchase(cost) && player function_f300168a(weapon1)) {
-                            player.var_b8783de6 = 3;
-                            self sethintstringforplayer(player, #"hash_36de8d628bb52fe9", weapon1.displayname);
-                        } else {
-                            player.var_b8783de6 = 3;
-                            var_1c7e95e9 = 1;
-                            self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, var_5df29481.displayname);
-                        }
-                    } else if (weapon2.weapclass != "melee" && weapon1.weapclass == "melee" && var_5df29481.weapclass == "melee") {
-                        item = player item_inventory::function_230ceec4(weapon2);
-                        cost = function_adb75323(item);
-                        if (player zm_score::can_player_purchase(cost) && !player function_f300168a(weapon2)) {
-                            player.var_b8783de6 = 2;
-                            self sethintstringforplayer(player, #"hash_47f37dccf2dfd164", cost, weapon2.displayname);
-                        } else if (player zm_score::can_player_purchase(cost) && player function_f300168a(weapon2)) {
-                            player.var_b8783de6 = 3;
-                            self sethintstringforplayer(player, #"hash_36de8d628bb52fe9", weapon2.displayname);
-                        } else {
-                            player.var_b8783de6 = 3;
-                            var_1c7e95e9 = 1;
-                            self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, weapon2.displayname);
-                        }
-                    } else if ((weapon2.weapclass != "melee" || weapon1.weapclass != "melee") && var_5df29481.weapclass == "melee" && currentweapon == var_5df29481) {
-                        if (weapon1.weapclass != "melee" && !player function_f300168a(weapon1)) {
-                            item = player item_inventory::function_230ceec4(weapon1);
-                            cost = function_adb75323(item);
-                            if (player zm_score::can_player_purchase(cost) && !player function_f300168a(weapon1)) {
-                                player.var_b8783de6 = 1;
-                                self sethintstringforplayer(player, #"hash_47f37dccf2dfd164", cost, weapon1.displayname);
-                            } else if (player zm_score::can_player_purchase(cost) && player function_f300168a(weapon1)) {
-                                player.var_b8783de6 = 3;
-                                self sethintstringforplayer(player, #"hash_36de8d628bb52fe9", weapon1.displayname);
-                            } else {
-                                player.var_b8783de6 = 3;
-                                var_1c7e95e9 = 1;
-                                self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, weapon1.displayname);
-                            }
-                        } else if (weapon2.weapclass != "melee") {
-                            item = player item_inventory::function_230ceec4(weapon2);
-                            cost = function_adb75323(item);
-                            if (player zm_score::can_player_purchase(cost) && !player function_f300168a(weapon2)) {
-                                player.var_b8783de6 = 2;
-                                self sethintstringforplayer(player, #"hash_47f37dccf2dfd164", cost, weapon2.displayname);
-                            } else if (player zm_score::can_player_purchase(cost) && player function_f300168a(weapon2)) {
-                                player.var_b8783de6 = 3;
-                                self sethintstringforplayer(player, #"hash_36de8d628bb52fe9", weapon2.displayname);
-                            } else {
-                                player.var_b8783de6 = 3;
-                                var_1c7e95e9 = 1;
-                                self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, weapon2.displayname);
-                            }
-                        }
+                        self sethintstringforplayer(player, #"hash_36de8d628bb52fe9", var_5df29481.displayname);
                     } else {
-                        item = player item_inventory::function_230ceec4(currentweapon);
-                        cost = function_adb75323(item);
-                        if (player zm_score::can_player_purchase(cost) && !player function_f300168a(currentweapon)) {
-                            player.var_b8783de6 = 0;
-                            self sethintstringforplayer(player, #"hash_47f37dccf2dfd164", cost, currentweapon.displayname);
-                        } else if (player zm_score::can_player_purchase(cost) && player function_f300168a(currentweapon)) {
-                            player.var_b8783de6 = 3;
-                            self sethintstringforplayer(player, #"hash_36de8d628bb52fe9", currentweapon.displayname);
-                        } else {
-                            player.var_b8783de6 = 3;
-                            var_1c7e95e9 = 1;
-                            self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, currentweapon.displayname);
-                        }
-                    }
-                } else if ((weapon1 == var_f945fa92 || weapon1 == nullweapon || weapon1.weapclass == "melee") && weapon2 != var_f945fa92 && weapon2 != nullweapon && weapon2.weapclass != "melee" || (weapon2 == var_f945fa92 || weapon2 == nullweapon || weapon2.weapclass == "melee") && weapon1 != var_f945fa92 && weapon1 != nullweapon && weapon1.weapclass != "melee") {
-                    if (killstreaks::is_killstreak_weapon(currentweapon)) {
                         player.var_b8783de6 = 3;
-                        self sethintstringforplayer(player, #"hash_3f91b2cf51b00772");
-                    } else if ((weapon1 == var_f945fa92 || weapon1 == nullweapon || weapon1.weapclass == "melee") && weapon2 != var_f945fa92 && weapon2 != nullweapon && weapon2.weapclass != "melee") {
-                        item = player item_inventory::function_230ceec4(weapon2);
-                        cost = function_adb75323(item);
-                        if (player zm_score::can_player_purchase(cost) && !player function_f300168a(weapon2)) {
-                            player.var_b8783de6 = 2;
-                            self sethintstringforplayer(player, #"hash_47f37dccf2dfd164", cost, weapon2.displayname);
-                        } else if (player zm_score::can_player_purchase(cost) && player function_f300168a(weapon2)) {
-                            player.var_b8783de6 = 3;
-                            self sethintstringforplayer(player, #"hash_36de8d628bb52fe9", weapon2.displayname);
-                        } else {
-                            player.var_b8783de6 = 3;
-                            var_1c7e95e9 = 1;
-                            self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, weapon2.displayname);
-                        }
-                    } else if ((weapon2 == var_f945fa92 || weapon2 == nullweapon || weapon2.weapclass == "melee") && weapon1 != var_f945fa92 && weapon1 != nullweapon && weapon1.weapclass != "melee") {
+                        var_1c7e95e9 = 1;
+                        self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, var_5df29481.displayname);
+                    }
+                } else if (weapon1.weapclass != "melee" && weapon2.weapclass == "melee" && var_5df29481.weapclass == "melee") {
+                    item = player item_inventory::function_230ceec4(weapon1);
+                    cost = function_adb75323(item);
+                    if (player zm_score::can_player_purchase(cost) && !player function_f300168a(weapon1)) {
+                        player.var_b8783de6 = 1;
+                        self sethintstringforplayer(player, #"hash_47f37dccf2dfd164", cost, weapon1.displayname);
+                    } else if (player zm_score::can_player_purchase(cost) && player function_f300168a(weapon1)) {
+                        player.var_b8783de6 = 3;
+                        self sethintstringforplayer(player, #"hash_36de8d628bb52fe9", weapon1.displayname);
+                    } else {
+                        player.var_b8783de6 = 3;
+                        var_1c7e95e9 = 1;
+                        self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, var_5df29481.displayname);
+                    }
+                } else if (weapon2.weapclass != "melee" && weapon1.weapclass == "melee" && var_5df29481.weapclass == "melee") {
+                    item = player item_inventory::function_230ceec4(weapon2);
+                    cost = function_adb75323(item);
+                    if (player zm_score::can_player_purchase(cost) && !player function_f300168a(weapon2)) {
+                        player.var_b8783de6 = 2;
+                        self sethintstringforplayer(player, #"hash_47f37dccf2dfd164", cost, weapon2.displayname);
+                    } else if (player zm_score::can_player_purchase(cost) && player function_f300168a(weapon2)) {
+                        player.var_b8783de6 = 3;
+                        self sethintstringforplayer(player, #"hash_36de8d628bb52fe9", weapon2.displayname);
+                    } else {
+                        player.var_b8783de6 = 3;
+                        var_1c7e95e9 = 1;
+                        self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, weapon2.displayname);
+                    }
+                } else if ((weapon2.weapclass != "melee" || weapon1.weapclass != "melee") && var_5df29481.weapclass == "melee" && currentweapon == var_5df29481) {
+                    if (weapon1.weapclass != "melee" && !player function_f300168a(weapon1)) {
                         item = player item_inventory::function_230ceec4(weapon1);
                         cost = function_adb75323(item);
                         if (player zm_score::can_player_purchase(cost) && !player function_f300168a(weapon1)) {
@@ -290,40 +229,101 @@ function function_5eeaa168() {
                             var_1c7e95e9 = 1;
                             self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, weapon1.displayname);
                         }
-                    }
-                } else if (weapon1 != var_f945fa92 && weapon1 != nullweapon && weapon1.weapclass != "melee" && weapon2 != var_f945fa92 && weapon2 != nullweapon && weapon2.weapclass != "melee") {
-                    if (killstreaks::is_killstreak_weapon(currentweapon)) {
-                        player.var_b8783de6 = 3;
-                        self sethintstringforplayer(player, #"hash_56425e74a921890d");
-                    } else {
-                        item = player item_inventory::function_230ceec4(currentweapon);
+                    } else if (weapon2.weapclass != "melee") {
+                        item = player item_inventory::function_230ceec4(weapon2);
                         cost = function_adb75323(item);
-                        if (player zm_score::can_player_purchase(cost) && !player function_f300168a(currentweapon)) {
-                            player.var_b8783de6 = 0;
-                            self sethintstringforplayer(player, #"hash_47f37dccf2dfd164", cost, currentweapon.displayname);
-                        } else if (player zm_score::can_player_purchase(cost) && player function_f300168a(currentweapon)) {
+                        if (player zm_score::can_player_purchase(cost) && !player function_f300168a(weapon2)) {
+                            player.var_b8783de6 = 2;
+                            self sethintstringforplayer(player, #"hash_47f37dccf2dfd164", cost, weapon2.displayname);
+                        } else if (player zm_score::can_player_purchase(cost) && player function_f300168a(weapon2)) {
                             player.var_b8783de6 = 3;
-                            self sethintstringforplayer(player, #"hash_36de8d628bb52fe9", currentweapon.displayname);
+                            self sethintstringforplayer(player, #"hash_36de8d628bb52fe9", weapon2.displayname);
                         } else {
                             player.var_b8783de6 = 3;
                             var_1c7e95e9 = 1;
-                            self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, currentweapon.displayname);
+                            self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, weapon2.displayname);
                         }
                     }
                 } else {
+                    item = player item_inventory::function_230ceec4(currentweapon);
+                    cost = function_adb75323(item);
+                    if (player zm_score::can_player_purchase(cost) && !player function_f300168a(currentweapon)) {
+                        player.var_b8783de6 = 0;
+                        self sethintstringforplayer(player, #"hash_47f37dccf2dfd164", cost, currentweapon.displayname);
+                    } else if (player zm_score::can_player_purchase(cost) && player function_f300168a(currentweapon)) {
+                        player.var_b8783de6 = 3;
+                        self sethintstringforplayer(player, #"hash_36de8d628bb52fe9", currentweapon.displayname);
+                    } else {
+                        player.var_b8783de6 = 3;
+                        var_1c7e95e9 = 1;
+                        self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, currentweapon.displayname);
+                    }
+                }
+            } else if ((weapon1 == var_f945fa92 || weapon1 == nullweapon || weapon1.weapclass == "melee") && weapon2 != var_f945fa92 && weapon2 != nullweapon && weapon2.weapclass != "melee" || (weapon2 == var_f945fa92 || weapon2 == nullweapon || weapon2.weapclass == "melee") && weapon1 != var_f945fa92 && weapon1 != nullweapon && weapon1.weapclass != "melee") {
+                if (killstreaks::is_killstreak_weapon(currentweapon)) {
+                    player.var_b8783de6 = 3;
+                    self sethintstringforplayer(player, #"hash_3f91b2cf51b00772");
+                } else if ((weapon1 == var_f945fa92 || weapon1 == nullweapon || weapon1.weapclass == "melee") && weapon2 != var_f945fa92 && weapon2 != nullweapon && weapon2.weapclass != "melee") {
+                    item = player item_inventory::function_230ceec4(weapon2);
+                    cost = function_adb75323(item);
+                    if (player zm_score::can_player_purchase(cost) && !player function_f300168a(weapon2)) {
+                        player.var_b8783de6 = 2;
+                        self sethintstringforplayer(player, #"hash_47f37dccf2dfd164", cost, weapon2.displayname);
+                    } else if (player zm_score::can_player_purchase(cost) && player function_f300168a(weapon2)) {
+                        player.var_b8783de6 = 3;
+                        self sethintstringforplayer(player, #"hash_36de8d628bb52fe9", weapon2.displayname);
+                    } else {
+                        player.var_b8783de6 = 3;
+                        var_1c7e95e9 = 1;
+                        self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, weapon2.displayname);
+                    }
+                } else if ((weapon2 == var_f945fa92 || weapon2 == nullweapon || weapon2.weapclass == "melee") && weapon1 != var_f945fa92 && weapon1 != nullweapon && weapon1.weapclass != "melee") {
+                    item = player item_inventory::function_230ceec4(weapon1);
+                    cost = function_adb75323(item);
+                    if (player zm_score::can_player_purchase(cost) && !player function_f300168a(weapon1)) {
+                        player.var_b8783de6 = 1;
+                        self sethintstringforplayer(player, #"hash_47f37dccf2dfd164", cost, weapon1.displayname);
+                    } else if (player zm_score::can_player_purchase(cost) && player function_f300168a(weapon1)) {
+                        player.var_b8783de6 = 3;
+                        self sethintstringforplayer(player, #"hash_36de8d628bb52fe9", weapon1.displayname);
+                    } else {
+                        player.var_b8783de6 = 3;
+                        var_1c7e95e9 = 1;
+                        self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, weapon1.displayname);
+                    }
+                }
+            } else if (weapon1 != var_f945fa92 && weapon1 != nullweapon && weapon1.weapclass != "melee" && weapon2 != var_f945fa92 && weapon2 != nullweapon && weapon2.weapclass != "melee") {
+                if (killstreaks::is_killstreak_weapon(currentweapon)) {
                     player.var_b8783de6 = 3;
                     self sethintstringforplayer(player, #"hash_56425e74a921890d");
-                }
-                if (var_1c7e95e9) {
-                    if (self zm_utility::function_4f593819(player)) {
-                        player globallogic::function_d1924f29(#"hash_6e3ae7967dc5d414");
+                } else {
+                    item = player item_inventory::function_230ceec4(currentweapon);
+                    cost = function_adb75323(item);
+                    if (player zm_score::can_player_purchase(cost) && !player function_f300168a(currentweapon)) {
+                        player.var_b8783de6 = 0;
+                        self sethintstringforplayer(player, #"hash_47f37dccf2dfd164", cost, currentweapon.displayname);
+                    } else if (player zm_score::can_player_purchase(cost) && player function_f300168a(currentweapon)) {
+                        player.var_b8783de6 = 3;
+                        self sethintstringforplayer(player, #"hash_36de8d628bb52fe9", currentweapon.displayname);
                     } else {
-                        player globallogic::function_d96c031e();
+                        player.var_b8783de6 = 3;
+                        var_1c7e95e9 = 1;
+                        self sethintstringforplayer(player, #"hash_56d6b70cf6595b1a", cost, currentweapon.displayname);
                     }
+                }
+            } else {
+                player.var_b8783de6 = 3;
+                self sethintstringforplayer(player, #"hash_56425e74a921890d");
+            }
+            if (var_1c7e95e9) {
+                if (self zm_utility::function_4f593819(player)) {
+                    player globallogic::function_d1924f29(#"hash_6e3ae7967dc5d414");
                 } else {
                     player globallogic::function_d96c031e();
                 }
+                continue;
             }
+            player globallogic::function_d96c031e();
         }
         wait(1);
     }
@@ -348,7 +348,6 @@ function function_ef9d58d0(item) {
         case #"ww_ieu_electric_t9_upgraded_item_sr":
         case #"ww_ieu_plasma_t9_upgraded_item_sr":
             return 1;
-            break;
         }
     }
     return 0;

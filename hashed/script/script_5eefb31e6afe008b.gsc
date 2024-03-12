@@ -16,7 +16,6 @@ function function_fed6948(type) {
     case 2:
     case 10:
         return -2;
-        break;
     }
     return undefined;
 }

@@ -102,17 +102,17 @@ function private function_417045b(w_grenade, n_count) {
         for (i = 0; i < 4; i++) {
             if (i < n_count) {
                 self showpart("tag_" + var_9c0ef0ca + i + 1);
-            } else {
-                self hidepart("tag_" + var_9c0ef0ca + i + 1);
+                continue;
             }
+            self hidepart("tag_" + var_9c0ef0ca + i + 1);
         }
     }
     if (n_count < 1) {
         self util::function_dce0e9b9();
-    } else {
-        str_hint = isdefined(level.var_7b32679c[self.w_grenade].str_hint) ? level.var_7b32679c[self.w_grenade].str_hint : self.w_grenade.displayname;
-        self namespace_f48ab2e1::function_263320e2(#"use", str_hint);
+        return;
     }
+    str_hint = isdefined(level.var_7b32679c[self.w_grenade].str_hint) ? level.var_7b32679c[self.w_grenade].str_hint : self.w_grenade.displayname;
+    self namespace_f48ab2e1::function_263320e2(#"use", str_hint);
 }
 
 // Namespace namespace_c53a738b/namespace_c53a738b

@@ -105,10 +105,10 @@ class csceneplayer : csceneobject {
                 wait(0.1);
             }
             player stoprumble("damage_heavy");
-        } else {
-            player stoprumble("damage_heavy");
-            player notify(#"hash_1aa7e630a34bee50");
+            return;
         }
+        player stoprumble("damage_heavy");
+        player notify(#"hash_1aa7e630a34bee50");
     }
 
     // Namespace csceneplayer/scene_player_shared
@@ -251,7 +251,6 @@ class csceneplayer : csceneobject {
                         if (level.animation_played[i] == animation_played_name) {
                             arrayremovevalue(level.animation_played, animation_played_name);
                             i--;
-                            continue;
                         }
                     }
                 }
@@ -279,10 +278,10 @@ class csceneplayer : csceneobject {
                 wait(0.3);
             }
             player stoprumble("damage_light");
-        } else {
-            player stoprumble("damage_light");
-            player notify(#"hash_3fdc27904c7ef691");
+            return;
         }
+        player stoprumble("damage_light");
+        player notify(#"hash_3fdc27904c7ef691");
     }
 
     // Namespace csceneplayer/scene_player_shared
@@ -313,10 +312,10 @@ class csceneplayer : csceneobject {
                 n_current_time = player getanimtime(player.str_current_anim);
                 if (function_6c1c67c1()) {
                     thread csceneobject::play_anim(str_new_anim, 0, 0, n_current_time);
-                } else {
-                    player.str_current_anim = str_new_anim;
-                    thread csceneobject::play(self._str_shot, n_current_time);
+                    return;
                 }
+                player.str_current_anim = str_new_anim;
+                thread csceneobject::play(self._str_shot, n_current_time);
             }
         }
     }
@@ -446,10 +445,10 @@ class csceneplayer : csceneobject {
         self endon(#"skip_camera_anims", self._str_shot + "active");
         if (iscamanimlooping(str_cam)) {
             level waittill(#"forever");
-        } else {
-            var_d4594f1 = float(getcamanimtime(str_cam)) / 1000;
-            scene::wait_server_time(var_d4594f1, n_start_time);
+            return;
         }
+        var_d4594f1 = float(getcamanimtime(str_cam)) / 1000;
+        scene::wait_server_time(var_d4594f1, n_start_time);
     }
 
     // Namespace csceneplayer/scene_player_shared
@@ -574,9 +573,9 @@ class csceneplayer : csceneobject {
                     self._o_scene.var_9d90ef8b = function_12479eba(self._o_scene._str_name);
                 }
                 level.var_6e7be24a settext("<unknown string>" + self._o_scene.var_9d90ef8b + "<unknown string>");
-            } else {
-                destroy_dev_info();
+                return;
             }
+            destroy_dev_info();
         #/
     }
 
@@ -670,41 +669,29 @@ class csceneplayer : csceneobject {
             return v_movement[1];
         case #"jump":
             return (player actionbuttonpressed() ? 1 : 0);
-            break;
         case #"stance":
             return (player stancebuttonpressed() ? 1 : 0);
-            break;
         case #"use":
             return (player usebuttonpressed() ? 1 : 0);
-            break;
         case #"weapon_switch":
             return (player weaponswitchbuttonpressed() ? 1 : 0);
-            break;
         case #"sprint":
             return (player sprintbuttonpressed() ? 1 : 0);
-            break;
         case #"melee":
             return (player meleebuttonpressed() ? 1 : 0);
-            break;
         case #"attack":
             return (!player flag::get(#"hash_6ce14241f77af1e7") && var_966ea21d ? 1 : 0);
-            break;
         case #"dpad_up":
             return (player actionslotonebuttonpressed() ? 1 : 0);
-            break;
         case #"dpad_down":
             return (player actionslottwobuttonpressed() ? 1 : 0);
-            break;
         case #"dpad_left":
             return (player actionslotthreebuttonpressed() ? 1 : 0);
-            break;
         case #"dpad_right":
             return (player actionslotfourbuttonpressed() ? 1 : 0);
-            break;
         default:
             v_movement = player getnormalizedmovement();
             return v_movement[0];
-            break;
         }
     }
 
@@ -776,7 +763,7 @@ class csceneplayer : csceneobject {
                 var_7a496fd5 = isdefined(var_ec50a0d3.var_3ee70278) ? var_ec50a0d3.var_3ee70278 : var_4a92a676 / 2;
                 var_7a496fd5 = math::clamp(var_7a496fd5, 0, var_4a92a676);
                 var_33d5f97d = var_4a92a676;
-                var_1d3b9f6c = 0;
+                b_pressed_button = 0;
                 foreach (o_obj in self._o_scene._a_objects) {
                     thread [[ o_obj ]]->_play_anim(o_obj._str_current_anim, 1, 0.2, undefined, 0);
                 }
@@ -786,7 +773,7 @@ class csceneplayer : csceneobject {
                     var_33d5f97d = var_33d5f97d - float(function_60d95f53()) / 1000;
                     b_result = check_input(player, var_ec50a0d3, var_966ea21d);
                     if (b_result) {
-                        var_1d3b9f6c = 1;
+                        b_pressed_button = 1;
                         player notify(#"hash_feb654ece8faa3d");
                         while (var_7a496fd5 > 0) {
                             waitframe(1);
@@ -798,14 +785,14 @@ class csceneplayer : csceneobject {
                     }
                     waitframe(1);
                 }
-                if (!var_1d3b9f6c) {
+                if (!b_pressed_button) {
                     thread function_31a89cb0(player, 0);
                     thread function_d0cf938(player, 1);
                     while (var_33d5f97d > 0) {
                         var_33d5f97d = var_33d5f97d - float(function_60d95f53()) / 1000;
                         b_result = check_input(player, var_ec50a0d3, var_966ea21d);
                         if (b_result) {
-                            var_1d3b9f6c = 1;
+                            b_pressed_button = 1;
                             player notify(#"hash_feb654ece8faa3d");
                             while (var_33d5f97d > 0) {
                                 waitframe(1);
@@ -818,7 +805,7 @@ class csceneplayer : csceneobject {
                         waitframe(1);
                     }
                 }
-                if (!var_1d3b9f6c) {
+                if (!b_pressed_button) {
                     thread function_9a7dd9f2(player);
                     return;
                 }
@@ -887,7 +874,9 @@ class csceneplayer : csceneobject {
                     if (isanimlooping(o_obj.var_efc540b6) && !var_1c45c7f8) {
                         var_1c45c7f8 = 1;
                         thread [[ o_obj ]]->_play_anim(o_obj.var_efc540b6, 1, 0.2);
-                    } else if (!isanimlooping(o_obj.var_efc540b6)) {
+                        continue;
+                    }
+                    if (!isanimlooping(o_obj.var_efc540b6)) {
                         thread [[ o_obj ]]->_play_anim(o_obj.var_efc540b6, 1, 0, undefined, var_a3cc5416, undefined, 1);
                     }
                 }
@@ -997,15 +986,17 @@ class csceneplayer : csceneobject {
             player val::set("scene_system_stance", "allow_stand", 0);
             player val::set("scene_system_stance", "allow_crouch", 1);
             player val::set("scene_system_stance", "allow_prone", 0);
-        } else if (self._s.playerstance === "prone") {
+            return;
+        }
+        if (self._s.playerstance === "prone") {
             player val::set("scene_system_stance", "allow_stand", 0);
             player val::set("scene_system_stance", "allow_crouch", 0);
             player val::set("scene_system_stance", "allow_prone", 1);
-        } else {
-            player val::set("scene_system_stance", "allow_stand", 1);
-            player val::set("scene_system_stance", "allow_crouch", 0);
-            player val::set("scene_system_stance", "allow_prone", 0);
+            return;
         }
+        player val::set("scene_system_stance", "allow_stand", 1);
+        player val::set("scene_system_stance", "allow_crouch", 0);
+        player val::set("scene_system_stance", "allow_prone", 0);
     }
 
     // Namespace csceneplayer/scene_player_shared
@@ -1040,16 +1031,16 @@ class csceneplayer : csceneobject {
             switch (self.var_55b4f21e.var_6eb7f9a0) {
             case #"bank1":
                 player clientfield::set_to_player("player_pbg_bank_scene_system", 0);
-                break;
+                return;
             case #"bank2":
                 player clientfield::set_to_player("player_pbg_bank_scene_system", 1);
-                break;
+                return;
             case #"bank3":
                 player clientfield::set_to_player("player_pbg_bank_scene_system", 2);
-                break;
+                return;
             case #"bank4":
                 player clientfield::set_to_player("player_pbg_bank_scene_system", 3);
-                break;
+                return;
             }
         }
     }
@@ -1134,7 +1125,9 @@ class csceneplayer : csceneobject {
         }
         if (player.sessionstate === "spectator") {
             player thread [[ level.spawnplayer ]]();
-        } else if (player laststand::player_is_in_laststand()) {
+            return;
+        }
+        if (player laststand::player_is_in_laststand()) {
             player notify(#"auto_revive");
         }
     }
@@ -1398,10 +1391,10 @@ class csceneplayer : csceneobject {
                 player.var_313437ff = undefined;
                 player weapons::force_stowed_weapon_update();
             }
-        } else {
-            player.var_313437ff = 1;
-            player clearstowedweapon();
+            return;
         }
+        player.var_313437ff = 1;
+        player clearstowedweapon();
     }
 
     // Namespace csceneplayer/scene_player_shared
@@ -1463,14 +1456,14 @@ class csceneplayer : csceneobject {
     // Checksum 0xcc8677e0, Offset: 0x29f8
     // Size: 0xbc
     function function_c7246a4a(player, var_d4c489c0) {
-        var_29f79831 = player loadout::function_18a77b37(var_d4c489c0);
+        w_slot = player loadout::function_18a77b37(var_d4c489c0);
         var_e4b15461 = player getcurrentweapon();
-        if (var_29f79831 != var_e4b15461) {
-            if (!player hasweapon(var_29f79831, 1)) {
-                player giveweapon(var_29f79831);
-                player.var_777951c = var_29f79831;
+        if (w_slot != var_e4b15461) {
+            if (!player hasweapon(w_slot, 1)) {
+                player giveweapon(w_slot);
+                player.var_777951c = w_slot;
             }
-            player switchtoweaponimmediate(var_29f79831, 1);
+            player switchtoweaponimmediate(w_slot, 1);
         }
     }
 
@@ -1641,16 +1634,16 @@ class csceneplayer : csceneobject {
             switch (self.var_55b4f21e.var_143deeac) {
             case #"bank1":
                 player clientfield::set_to_player("player_pbg_bank_scene_system", 0);
-                break;
+                return;
             case #"bank2":
                 player clientfield::set_to_player("player_pbg_bank_scene_system", 1);
-                break;
+                return;
             case #"bank3":
                 player clientfield::set_to_player("player_pbg_bank_scene_system", 2);
-                break;
+                return;
             case #"bank4":
                 player clientfield::set_to_player("player_pbg_bank_scene_system", 3);
-                break;
+                return;
             }
         }
     }
@@ -1933,7 +1926,9 @@ class cscenesharedplayer : csceneplayer, csceneobject {
         foreach (player in a_players) {
             if (player flag::get(#"loadout_given") && player.sessionstate !== "spectator") {
                 self thread _play_shared_player_anim_for_player(player);
-            } else if (is_true(player.initialloadoutgiven)) {
+                continue;
+            }
+            if (is_true(player.initialloadoutgiven)) {
                 csceneplayer::revive_player(player);
             }
         }
@@ -1948,7 +1943,7 @@ class cscenesharedplayer : csceneplayer, csceneobject {
                     break;
                 }
             }
-        } while(b_playing);
+        } while (b_playing);
         /#
             if (getdvarint(#"debug_scene", 0) > 0) {
                 log(toupper(self._s.type) + "<unknown string>" + self._str_current_anim + "<unknown string>");

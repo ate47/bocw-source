@@ -44,19 +44,29 @@ function function_906e8496(einflictor, attacker, idamage, smeansofdeath, weapon,
     }
     if (vdir === "MOD_EXPLOSIVE" || vdir === "MOD_PROJECTILE" || vdir === "MOD_PROJECTILE_SPLASH" || vdir === "MOD_GRENADE" || vdir === "MOD_GRENADE_SPLASH") {
         self thread function_16679050(idamage, smeansofdeath, weapon, shitloc, psoffsettime, deathanimduration);
-    } else if (vdir === "MOD_BULLET" || vdir === "MOD_RIFLE_BULLET" || vdir === "MOD_PISTOL_BULLET") {
-        self thread function_feefffe4(idamage, smeansofdeath, weapon, shitloc, psoffsettime, deathanimduration);
-    } else if (vdir === "MOD_BURNED") {
-        self thread function_49f83e8a(idamage, smeansofdeath, weapon, shitloc, psoffsettime, deathanimduration);
-    } else if (vdir === "MOD_DROWN") {
-        self thread function_f4d74d85(idamage, smeansofdeath, weapon, shitloc, psoffsettime, deathanimduration);
-    } else if (isdefined(smeansofdeath) && smeansofdeath.classname == "trigger_hurt" && isdefined(smeansofdeath.script_noteworthy) && smeansofdeath.script_noteworthy == "fall_death") {
-        self thread function_3f6f166(idamage, smeansofdeath, weapon, shitloc, psoffsettime, deathanimduration);
-    } else if (vdir === "MOD_MELEE" || vdir === "MOD_MELEE_WEAPON_BUTT") {
-        self thread function_f8c107(idamage, smeansofdeath, weapon, shitloc, psoffsettime, deathanimduration);
-    } else {
-        self thread function_6b51f704(idamage, smeansofdeath, weapon, shitloc, undefined, deathanimduration);
+        return;
     }
+    if (vdir === "MOD_BULLET" || vdir === "MOD_RIFLE_BULLET" || vdir === "MOD_PISTOL_BULLET") {
+        self thread function_feefffe4(idamage, smeansofdeath, weapon, shitloc, psoffsettime, deathanimduration);
+        return;
+    }
+    if (vdir === "MOD_BURNED") {
+        self thread function_49f83e8a(idamage, smeansofdeath, weapon, shitloc, psoffsettime, deathanimduration);
+        return;
+    }
+    if (vdir === "MOD_DROWN") {
+        self thread function_f4d74d85(idamage, smeansofdeath, weapon, shitloc, psoffsettime, deathanimduration);
+        return;
+    }
+    if (isdefined(smeansofdeath) && smeansofdeath.classname == "trigger_hurt" && isdefined(smeansofdeath.script_noteworthy) && smeansofdeath.script_noteworthy == "fall_death") {
+        self thread function_3f6f166(idamage, smeansofdeath, weapon, shitloc, psoffsettime, deathanimduration);
+        return;
+    }
+    if (vdir === "MOD_MELEE" || vdir === "MOD_MELEE_WEAPON_BUTT") {
+        self thread function_f8c107(idamage, smeansofdeath, weapon, shitloc, psoffsettime, deathanimduration);
+        return;
+    }
+    self thread function_6b51f704(idamage, smeansofdeath, weapon, shitloc, undefined, deathanimduration);
 }
 
 // Namespace namespace_5443b356/namespace_88f6bc3c
@@ -201,9 +211,9 @@ function function_33141024(vdir, tweentime, var_c69fe125, var_eebc8ec0, var_3cbc
             var_d2ca9e9b = (position[0], position[1], position[2] - var_35187b11 - epsilon);
             if (function_b7f367ed(position, var_d2ca9e9b)) {
                 position = new_position;
-            } else {
-                var_39a26763 = 1;
+                continue;
             }
+            var_39a26763 = 1;
         }
     }
     if (!function_b7f367ed(var_5458e746, position)) {

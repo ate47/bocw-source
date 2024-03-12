@@ -79,9 +79,9 @@ function gadget_health_regen_on_give(slot, weapon) {
     weapon.ignore_grenade = 1;
     if (isdefined(weapon) && weapon.maxheal) {
         self player::function_9080887a(weapon.maxheal);
-    } else {
-        self player::function_9080887a();
+        return;
     }
+    self player::function_9080887a();
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
@@ -210,10 +210,10 @@ function function_34daf34a(slot, weapon) {
     }
     if (weapon === getweapon(#"gadget_health_regen_squad")) {
         self function_bc0ce7d5(slot, weapon);
-    } else {
-        self function_ddfdddb1();
-        self thread enable_healing_after_wait(slot, weapon, getdvarfloat(#"hash_57be38bf0a00809d", 0), 0.5, self);
+        return;
     }
+    self function_ddfdddb1();
+    self thread enable_healing_after_wait(slot, weapon, getdvarfloat(#"hash_57be38bf0a00809d", 0), 0.5, self);
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
@@ -266,9 +266,9 @@ function function_aa2c622b(weapon) {
 function gadget_health_regen_on(slot, weapon) {
     if (sessionmodeiswarzonegame() && !function_aa2c622b(weapon)) {
         self.var_eedfcc6e = gettime();
-    } else {
-        function_34daf34a(slot, weapon);
+        return;
     }
+    function_34daf34a(slot, weapon);
 }
 
 // Namespace gadget_health_regen/gadget_health_regen
@@ -277,7 +277,7 @@ function gadget_health_regen_on(slot, weapon) {
 // Size: 0x126
 function gadget_health_regen_off(slot, weapon) {
     if (!sessionmodeiswarzonegame() && !function_aa2c622b(weapon)) {
-        goto LOC_00000124;
+        return;
     }
     if (isdefined(self.var_eedfcc6e)) {
         var_d9dbb072 = 0;
@@ -291,9 +291,7 @@ function gadget_health_regen_off(slot, weapon) {
             self gadgetpowerset(slot, weapon.gadget_powermax);
         }
         self.var_eedfcc6e = undefined;
-    LOC_00000124:
     }
-LOC_00000124:
 }
 
 // Namespace gadget_health_regen/gadget_health_regen

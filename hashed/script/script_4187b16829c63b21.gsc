@@ -80,7 +80,9 @@ function function_5b0907b8() {
                 self.stub.var_98b970a9 thread function_bc566f03();
                 self.stub.var_98b970a9 thread function_2fbfe4fb(player);
             }
-        } else if (!is_true(self.stub.var_98b970a9.in_use) && is_true(self.stub.var_98b970a9.activate)) {
+            continue;
+        }
+        if (!is_true(self.stub.var_98b970a9.in_use) && is_true(self.stub.var_98b970a9.activate)) {
             self.stub.var_98b970a9 thread function_2fbfe4fb(player);
             self.stub.var_98b970a9.in_use = 1;
         }

@@ -136,9 +136,9 @@ function function_e8ad1d81(position, normal, velocity, team, customsettings, att
     var_e76400c0 = undefined;
     wallnormal = undefined;
     var_693f108f = undefined;
-    var_aecaaa11 = getweapon(#"molotov_fire");
-    var_5632b17 = getweapon("molotov_fire_wall");
-    var_7bf146f2 = getweapon("molotov_steam");
+    molotovfireweapon = getweapon(#"molotov_fire");
+    molotovfirewallweapon = getweapon("molotov_fire_wall");
+    molotovsteamweapon = getweapon("molotov_steam");
     if (normal[2] < -0.5) {
         var_36c22d1d = position + vectorscale(normal, 2);
         var_8ae62b02 = var_36c22d1d - vectorscale((0, 0, 1), 240);
@@ -196,17 +196,15 @@ function function_e8ad1d81(position, normal, velocity, team, customsettings, att
             x = originalposition[0];
             y = originalposition[1];
             lowestz = var_69d15ad0[#"position"][2];
-            z = originalposition[2];
-            while (z > lowestz) {
+            for (z = originalposition[2]; z > lowestz; z = z - randomintrange(20, 30)) {
                 newpos = (x, y, z);
                 water_depth = get_water_depth(newpos);
                 if (function_a66ba8cc(water_depth) || is_under_water(newpos)) {
                     newpos = newpos - (0, 0, water_depth);
-                    level thread function_42b9fdbe(var_7bf146f2, newpos, (0, 0, 1), int(5), team);
+                    level thread function_42b9fdbe(molotovsteamweapon, newpos, (0, 0, 1), int(5), team);
                     break;
                 }
-                level thread function_42b9fdbe(var_5632b17, newpos, wall_normal, int(5), team);
-                z = z - randomintrange(20, 30);
+                level thread function_42b9fdbe(molotovfirewallweapon, newpos, wall_normal, int(5), team);
             }
             var_bc9ec158 = 0.6 * var_69d15ad0[#"fraction"];
             if (var_bc9ec158 > 0) {
@@ -226,7 +224,7 @@ function function_e8ad1d81(position, normal, velocity, team, customsettings, att
         traceposition = trace[#"position"];
         if (trace[#"fraction"] < 0.9) {
             var_252a0dc7 = trace[#"normal"];
-            spawntimedfx(var_5632b17, traceposition, var_252a0dc7, int(5), team);
+            spawntimedfx(molotovfirewallweapon, traceposition, var_252a0dc7, int(5), team);
         }
     }
     var_1f254a06 = normal;
@@ -365,16 +363,16 @@ function function_8a03d3f3(impactpos, startpos, normal, multiplier, rotation, te
                     locations[#"normal"][locindex] = (0, 0, 1);
                     locations[#"steam"][locindex] = 1;
                     locations[#"loc"][locindex] = locations[#"loc"][locindex] - (0, 0, water_depth);
-                } else {
-                    locations[#"normal"][locindex] = var_9417df90[#"normal"];
+                    continue;
                 }
+                locations[#"normal"][locindex] = var_9417df90[#"normal"];
             }
         }
     }
-    var_aecaaa11 = getweapon(#"molotov_fire");
-    var_3cbce009 = getweapon("molotov_fire_tall");
-    var_4a1b9411 = getweapon("molotov_fire_small");
-    var_7bf146f2 = getweapon("molotov_steam");
+    molotovfireweapon = getweapon(#"molotov_fire");
+    molotovfiretallweapon = getweapon("molotov_fire_tall");
+    molotovfiresmallweapon = getweapon("molotov_fire_small");
+    molotovsteamweapon = getweapon("molotov_steam");
     var_6b23e1c9 = impactpos + normal * 1.5;
     forward = (1, 0, 0);
     if (abs(vectordot(forward, normal)) > 0.999) {
@@ -383,7 +381,7 @@ function function_8a03d3f3(impactpos, startpos, normal, multiplier, rotation, te
     if (!is_under_water(var_6b23e1c9)) {
         playfx(#"hash_789d7811f6a28f9a", var_6b23e1c9, forward, normal, 0, team);
         if (!isdefined(var_e76400c0)) {
-            spawntimedfx(var_aecaaa11, var_6b23e1c9, normal, int(5), team);
+            spawntimedfx(molotovfireweapon, var_6b23e1c9, normal, int(5), team);
         }
     }
     if (level.gameended) {
@@ -400,8 +398,8 @@ function function_8a03d3f3(impactpos, startpos, normal, multiplier, rotation, te
     var_4b424bc1 = level.var_a88ac760[var_bf264593];
     var_4b424bc1.var_46ee5246 = int(gettime() + 5000);
     var_4b424bc1.origin = startpos;
-    thread damageeffectarea(startpos, normal, var_aecaaa11, multiplier, var_e76400c0, wallnormal, var_693f108f, var_4b424bc1.var_46ee5246, customsettings, attacker, exploder);
-    thread function_9464e4ad(startpos, normal, var_aecaaa11, multiplier, var_e76400c0, wallnormal, var_693f108f, var_4b424bc1.var_46ee5246, customsettings, attacker, exploder);
+    thread damageeffectarea(startpos, normal, molotovfireweapon, multiplier, var_e76400c0, wallnormal, var_693f108f, var_4b424bc1.var_46ee5246, customsettings, attacker, exploder);
+    thread function_9464e4ad(startpos, normal, molotovfireweapon, multiplier, var_e76400c0, wallnormal, var_693f108f, var_4b424bc1.var_46ee5246, customsettings, attacker, exploder);
     var_b1dd2ca0 = getarraykeys(locations[#"loc"]);
     foreach (lockey in var_b1dd2ca0) {
         if (!isdefined(lockey)) {
@@ -411,11 +409,11 @@ function function_8a03d3f3(impactpos, startpos, normal, multiplier, rotation, te
             continue;
         }
         if (isdefined(locations[#"smallfire"][lockey])) {
-            fireweapon = var_4a1b9411;
+            fireweapon = molotovfiresmallweapon;
         } else if (isdefined(locations[#"steam"][lockey])) {
-            fireweapon = var_7bf146f2;
+            fireweapon = molotovsteamweapon;
         } else {
-            fireweapon = isdefined(locations[#"tallfire"][lockey]) ? var_3cbce009 : var_aecaaa11;
+            fireweapon = isdefined(locations[#"tallfire"][lockey]) ? molotovfiretallweapon : molotovfireweapon;
         }
         level thread function_42b9fdbe(fireweapon, locations[#"loc"][lockey], locations[#"normal"][lockey], int(5), team);
     }
@@ -609,7 +607,6 @@ function getpotentialtargets(origin) {
         potential_targets = [];
         foreach (team, _ in level.teams) {
             potential_targets = arraycombine(potential_targets, getplayers(team, origin, 65), 0, 0);
-            continue;
         }
     }
     var_739bcc52 = [];
@@ -687,9 +684,9 @@ function function_851843a5(target, position, fireeffectarea, var_289a74bc, *weap
             if (position.var_9fde8624 === #"hash_28e36e7b7d5421f") {
                 position thread function_c049196a();
             }
-        } else {
-            var_be45d685 = 1;
+            return;
         }
+        var_be45d685 = 1;
     }
 }
 
@@ -780,7 +777,9 @@ function damageinfirearea(origin, *trace, *position, weapon, fireeffectarea, var
                 self status_effect::status_effect_apply(params, fireeffectarea, var_289a74bc, 0, undefined, undefined, weapon);
                 self.var_ae639436 = var_289a74bc;
                 self thread sndfiredamage();
-            } else if (isdefined(customsettings)) {
+                return;
+            }
+            if (isdefined(customsettings)) {
                 self status_effect::status_effect_apply(params, fireeffectarea, customsettings, 0, undefined, undefined, weapon);
                 self.var_ae639436 = customsettings;
                 self thread sndfiredamage();

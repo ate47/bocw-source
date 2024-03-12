@@ -117,9 +117,9 @@ function function_45b62760() {
     for (i = 0; i < 3; i++) {
         if (level.loadoutkillstreaksenabled && isdefined(self.killstreak[i]) && isdefined(level.killstreakindices[self.killstreak[i]])) {
             killstreaks[i] = level.killstreakindices[self.killstreak[i]];
-        } else {
-            killstreaks[i] = 0;
+            continue;
         }
+        killstreaks[i] = 0;
     }
     self recordloadoutperksandkillstreaks(primaryweapon, secondaryweapon, grenadetypeprimary, grenadetypesecondary, killstreaks[0], killstreaks[1], killstreaks[2]);
 }
@@ -259,7 +259,9 @@ function onscoreclosemusic() {
             if (score > topscore) {
                 runnerupscore = topscore;
                 topscore = score;
-            } else if (score > runnerupscore) {
+                continue;
+            }
+            if (score > runnerupscore) {
                 runnerupscore = score;
             }
         }
@@ -311,7 +313,9 @@ function onplayerkilled(*einflictor, *attacker, *idamage, *smeansofdeath, *weapo
             self waittilltimeout(5, #"hash_eb0317ca3976bf9");
         }
         level thread function_34459363(var_f695d653, level.var_30eb363);
-    } else if (level.gameskill >= 2) {
+        return;
+    }
+    if (level.gameskill >= 2) {
         playsoundatposition(#"hash_7dcd120ea369ea68", (0, 0, 0));
         level thread function_34459363(var_f695d653, level.var_30eb363);
     }
@@ -581,17 +585,17 @@ function function_fd5dfc25() {
                         if (self.var_83f25fdb < 5) {
                             self util::show_hint_text(#"hash_3d4165067dc18a6b");
                         }
-                        break;
+                        return;
                     case #"spike_launcher":
                         if (self.var_83f25fdb < 10) {
                             self util::show_hint_text(#"hash_9b1201effcb0c57");
                         }
-                        break;
+                        return;
                     case #"hash_7549b2fcdf36145a":
                         if (self.var_83f25fdb < 10) {
                             self util::show_hint_text(#"hash_50d6975fce35fa60");
                         }
-                        break;
+                        return;
                     }
                 }
             }
@@ -606,8 +610,7 @@ function function_fd5dfc25() {
 function function_bb5fae75() {
     self notify(#"hash_1d6b9f8f1e2663d9");
     self endon(#"death", #"hash_1d6b9f8f1e2663d9");
-    var_543d6995 = 0;
-    while (1) {
+    for (var_543d6995 = 0; 1; var_543d6995 = 0) {
         waitresult = undefined;
         waitresult = self waittill(#"weapon_change");
         if (isdefined(waitresult.weapon)) {
@@ -617,13 +620,12 @@ function function_bb5fae75() {
                 }
                 self thread function_b296ed1c();
                 var_543d6995 = 1;
-            } else {
-                if (var_543d6995) {
-                    self.var_444b2634 = gettime();
-                }
-                self notify(#"hash_6afb6967ed216cca");
-                var_543d6995 = 0;
+                continue;
             }
+            if (var_543d6995) {
+                self.var_444b2634 = gettime();
+            }
+            self notify(#"hash_6afb6967ed216cca");
         }
     }
 }

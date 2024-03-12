@@ -233,10 +233,14 @@ function private function_3a739b35() {
         if (!self namespace_979752dc::function_b60a878a()) {
             self clientfield::set("threat_sight", 0);
             self clientfield::set("threat_state", 0);
-        } else if (level flag::get("stealth_spotted") && level flag::get("stealth_meter_combat_alerted")) {
+            continue;
+        }
+        if (level flag::get("stealth_spotted") && level flag::get("stealth_meter_combat_alerted")) {
             self clientfield::set("threat_sight", 0);
             self clientfield::set("threat_state", 0);
-        } else if (getplayers().size > 0) {
+            continue;
+        }
+        if (getplayers().size > 0) {
             player = getplayers()[0];
             threat_sight = self function_a884a736(player);
             var_97c4563c = 0;
@@ -514,9 +518,9 @@ function function_ca2b6f35() {
                         notified = 0;
                     }
                 }
-            } else {
-                remove[remove.size] = key;
+                continue;
             }
+            remove[remove.size] = key;
         }
         foreach (key in remove) {
             self.stealth.var_6232c5c[key] = undefined;

@@ -16,7 +16,7 @@ function function_70a657d8() {
     switch (level.gametype) {
     default:
         function_9cefb01();
-        break;
+        return;
     }
 }
 

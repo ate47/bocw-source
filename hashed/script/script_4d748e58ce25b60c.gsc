@@ -97,9 +97,9 @@ function function_5375ff3b(*oldval, newval) {
     }
     if (newval > 0) {
         self.doa.var_7f8d38c2++;
-    } else {
-        self.doa.var_7f8d38c2 = 0;
+        return;
     }
+    self.doa.var_7f8d38c2 = 0;
 }
 
 // Namespace doa_player/doa_player
@@ -115,9 +115,9 @@ function function_98958f23(*oldval, newval) {
     }
     if (newval > 0) {
         self.doa.var_43c43abc++;
-    } else {
-        self.doa.var_43c43abc = 0;
+        return;
     }
+    self.doa.var_43c43abc = 0;
 }
 
 // Namespace doa_player/doa_player
@@ -563,13 +563,13 @@ function function_23c07f29() {
     if (self actionslotthreebuttonpressed() || self buttonbitstate("BUTTON_BIT_FLASHLIGHT")) {
         self.doa.var_11cd9fd3 = 1;
         self.doa.var_56fdd2fe = 1;
-    } else {
-        if (is_true(self.doa.var_56fdd2fe)) {
-            self.doa.var_f583234e = !self.doa.var_f583234e;
-            self clientfield::set_to_player("toggleflashlight", self.doa.var_f583234e);
-        }
-        self.doa.var_56fdd2fe = 0;
+        return;
     }
+    if (is_true(self.doa.var_56fdd2fe)) {
+        self.doa.var_f583234e = !self.doa.var_f583234e;
+        self clientfield::set_to_player("toggleflashlight", self.doa.var_f583234e);
+    }
+    self.doa.var_56fdd2fe = 0;
 }
 
 // Namespace doa_player/doa_player
@@ -620,27 +620,27 @@ function function_902013ca() {
     if (self actionslotonebuttonpressed() || self buttonbitstate("BUTTON_BIT_DONATE_LIFE")) {
         self.doa.var_a8d9dfbe = 1;
         self.doa.var_f8fd8e97 = 1;
-    } else {
-        if (self.doa.score.lives >= 1 && (is_true(self.doa.var_f8fd8e97) || var_7ea80475)) {
-            players = arraysortclosest(level.doa.var_a4af7793, self.origin);
-            foreach (player in players) {
-                if (self === player) {
-                    continue;
-                }
-                if (is_true(player.doa.var_7731eb4f)) {
-                    continue;
-                }
-                if (var_7ea80475 && player.doa.var_22e62f63 - player.doa.var_ac8a92d4 < 1500) {
-                    continue;
-                }
-                self.doa.var_2c18f1d5 = time + 2 * 60000;
-                self.doa.var_99c6ee47 = gettime() + 2000;
-                self thread givealifetoplayer(player, var_7ea80475);
-                break;
-            }
-        }
-        self.doa.var_f8fd8e97 = 0;
+        return;
     }
+    if (self.doa.score.lives >= 1 && (is_true(self.doa.var_f8fd8e97) || var_7ea80475)) {
+        players = arraysortclosest(level.doa.var_a4af7793, self.origin);
+        foreach (player in players) {
+            if (self === player) {
+                continue;
+            }
+            if (is_true(player.doa.var_7731eb4f)) {
+                continue;
+            }
+            if (var_7ea80475 && player.doa.var_22e62f63 - player.doa.var_ac8a92d4 < 1500) {
+                continue;
+            }
+            self.doa.var_2c18f1d5 = time + 2 * 60000;
+            self.doa.var_99c6ee47 = gettime() + 2000;
+            self thread givealifetoplayer(player, var_7ea80475);
+            break;
+        }
+    }
+    self.doa.var_f8fd8e97 = 0;
 }
 
 // Namespace doa_player/doa_player
@@ -770,20 +770,20 @@ function function_cf940b05() {
             self notify(#"hash_444e9c51ba5bd99");
             self.doa.var_7a27ee1b = 1;
         }
-    } else {
-        if (is_true(self.doa.var_7a27ee1b)) {
-            if (self weaponswitchbuttonpressed() || self buttonbitstate("BUTTON_BIT_WEAPNEXT")) {
-                return;
-            }
-            self.doa.var_7a27ee1b = undefined;
-        }
+        return;
+    }
+    if (is_true(self.doa.var_7a27ee1b)) {
         if (self weaponswitchbuttonpressed() || self buttonbitstate("BUTTON_BIT_WEAPNEXT")) {
-            if (!is_true(self.doa.var_3e81d24c)) {
-                self clientfield::increment_to_player("changeCamera");
-            }
-            self notify(#"hash_444e9c51ba5bd99");
-            self.doa.var_7a27ee1b = 1;
+            return;
         }
+        self.doa.var_7a27ee1b = undefined;
+    }
+    if (self weaponswitchbuttonpressed() || self buttonbitstate("BUTTON_BIT_WEAPNEXT")) {
+        if (!is_true(self.doa.var_3e81d24c)) {
+            self clientfield::increment_to_player("changeCamera");
+        }
+        self notify(#"hash_444e9c51ba5bd99");
+        self.doa.var_7a27ee1b = 1;
     }
 }
 
@@ -971,17 +971,19 @@ function function_a34cf3fb() {
                 guy.nuked = gettime();
                 guy ai::stun(randomfloatrange(3, 7));
                 guy notify(#"nuked");
-            } else {
-                guy.var_6dc6e670 = 1;
-                if (isvehicle(guy)) {
-                    guy dodamage(guy.health + 1, var_cc2c9bdb, self, self, "none", "MOD_EXPLOSIVE", 0, getweapon("none"));
-                } else if (guy.team != "axis") {
-                    jumpiftrue(is_true(guy.guardian)) LOC_00000498;
-                } else {
-                LOC_00000498:
-                    guy thread function_6dc6e670(var_182c1d00, var_cc2c9bdb, self, updir);
+                continue;
+            }
+            guy.var_6dc6e670 = 1;
+            if (isvehicle(guy)) {
+                guy dodamage(guy.health + 1, var_cc2c9bdb, self, self, "none", "MOD_EXPLOSIVE", 0, getweapon("none"));
+                continue;
+            }
+            if (guy.team != "axis") {
+                if (!is_true(guy.guardian)) {
+                    continue;
                 }
             }
+            guy thread function_6dc6e670(var_182c1d00, var_cc2c9bdb, self, updir);
         }
     }
     util::wait_network_frame();
@@ -1294,9 +1296,9 @@ function function_51e87eda() {
             }
             if (self namespace_1c2a96f9::function_b01c3b20() && player namespace_1c2a96f9::function_b01c3b20()) {
                 self.doa.var_f64d2ac0 = self.doa.var_f64d2ac0 + 1;
-            } else {
-                self.doa.var_f64d2ac0 = self.doa.var_f64d2ac0 + player.doa.var_96ca2395;
+                continue;
             }
+            self.doa.var_f64d2ac0 = self.doa.var_f64d2ac0 + player.doa.var_96ca2395;
         }
         wait(1);
     }

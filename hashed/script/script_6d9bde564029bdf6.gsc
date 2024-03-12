@@ -186,7 +186,9 @@ function event_handler[event_bf57d5bb] function_4540ef25(*eventstruct) {
                     }
                 }
             }
-        } else if (traceresult[#"entity"].classname == "script_vehicle" && isdefined(traceresult[#"entity"].killstreaktype)) {
+            return;
+        }
+        if (traceresult[#"entity"].classname == "script_vehicle" && isdefined(traceresult[#"entity"].killstreaktype)) {
             if (!(traceresult[#"entity"].var_9ee835dc === 1)) {
                 self playkillstreakthreat(traceresult[#"entity"].killstreaktype);
                 traceresult[#"entity"].var_9ee835dc = 1;

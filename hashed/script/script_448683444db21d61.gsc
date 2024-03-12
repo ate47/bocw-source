@@ -66,9 +66,9 @@ function private postinit() {
 function on_player_spawned() {
     if (isdefined(level.var_33833303)) {
         self thread [[ level.var_33833303 ]]();
-    } else {
-        self thread function_23c31b4e();
+        return;
     }
+    self thread function_23c31b4e();
 }
 
 // Namespace namespace_207ea311/namespace_207ea311

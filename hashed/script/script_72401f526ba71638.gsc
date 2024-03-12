@@ -133,10 +133,9 @@ function function_460882e2(var_4e20aeca = 0) {
     var_874a73c4 = isdefined(self.inventory.items[12].count) ? self.inventory.items[12].count : 0;
     if (self.var_c9448182 > 1 && var_4e20aeca && var_874a73c4 != self.var_c9448182) {
         return;
-    } else {
-        self.var_8da24ed0 = 0;
-        self clientfield::set_player_uimodel("hud_items.ammoCooldowns.fieldUpgrade", 0);
     }
+    self.var_8da24ed0 = 0;
+    self clientfield::set_player_uimodel("hud_items.ammoCooldowns.fieldUpgrade", 0);
 }
 
 // Namespace namespace_1b527536/namespace_1b527536
@@ -147,28 +146,20 @@ function function_94d18799(var_40e28ba) {
     switch (var_40e28ba) {
     case #"hash_36db069df9152c5d":
         return #"frost_blast";
-        break;
     case #"hash_32f9b8f90f9905cc":
         return #"hash_7b5a77a85b0ffab7";
-        break;
     case #"hash_4c75d01fe7fd8ebe":
         return #"hash_41adc0ca9daf6e9d";
-        break;
     case #"hash_2bd7b571efbb68d":
         return #"hash_2d88b4c5217c7e7c";
-        break;
     case #"hash_5d9876c9f2034adf":
         return #"hash_1d9cb9dbd298acba";
-        break;
     case #"hash_1bb7d8d0caf94859":
         return #"hash_55569355da0f0f68";
-        break;
     case #"hash_18dff4c5330a5f6f":
         return #"hash_5d6f444e983b62ca";
-        break;
     case #"hash_259a36d064810654":
         return #"hash_148e5880a4f4d46f";
-        break;
     }
 }
 
@@ -237,7 +228,7 @@ function private function_3ef3cec3(var_c8a42ec) {
     for (i = 0; i < level.var_1b527536.size; i++) {
         if (level.var_1b527536[i] == var_d07d57b2) {
             self clientfield::set_to_player("field_upgrade_selected", i + 1);
-            break;
+            return;
         }
     }
 }
@@ -299,13 +290,13 @@ function function_1067f94c(var_c8a42ec) {
                 self.var_d7c2e1cf = level.var_bfc892f2[var_d07d57b2];
                 self.var_703fa168 = level.var_fee98522[var_d07d57b2];
                 self.var_58fb681e = level.var_5b46d961[var_d07d57b2];
-            } else {
-                if (item.networkid != 32767) {
-                    item_inventory::remove_inventory_item(item.networkid);
-                }
-                self function_3ef3cec3(var_c8a42ec);
-                self function_460882e2();
+                return;
             }
+            if (item.networkid != 32767) {
+                item_inventory::remove_inventory_item(item.networkid);
+            }
+            self function_3ef3cec3(var_c8a42ec);
+            self function_460882e2();
         }
     }
 }
@@ -491,7 +482,9 @@ function private function_f832427c(*s_params) {
                 e_player clientfield::set_player_uimodel("hud_items.ammoCooldowns.fieldUpgrade", progress);
             }
         }
-    } else if (isplayer(self.attacker) && self.damageweapon.name === #"hash_6a4dd5ed56f6e3f6") {
+        return;
+    }
+    if (isplayer(self.attacker) && self.damageweapon.name === #"hash_6a4dd5ed56f6e3f6") {
         e_player = self.attacker;
         e_player.var_8da24ed0 = e_player.var_8da24ed0 + 1;
         if ((is_true(e_player.var_28107825) || e_player flag::get(#"hash_35735a804a34da04")) && isdefined(e_player.var_67aa3392)) {
@@ -642,9 +635,9 @@ function function_6457e4cd(item_name, count = 1) {
             self item_world::function_de2018e3(item, self, var_fa3df96, 0);
             if (item_name === "field_upgrade_energy_mine_4_item_sr" || item_name === "field_upgrade_energy_mine_5_item_sr") {
                 self.var_d9f807a7 = 1;
-            } else {
-                self.var_d9f807a7 = undefined;
+                return;
             }
+            self.var_d9f807a7 = undefined;
         }
     }
 }
@@ -748,19 +741,26 @@ function function_53ca9662(item_name) {
         if (value == item_name) {
             if (isinarray(level.var_d98fc25e[#"hash_2d88b4c5217c7e7c"], i)) {
                 return #"hash_2d88b4c5217c7e7c";
-            } else if (isinarray(level.var_d98fc25e[#"frost_blast"], i)) {
+            }
+            if (isinarray(level.var_d98fc25e[#"frost_blast"], i)) {
                 return #"frost_blast";
-            } else if (isinarray(level.var_d98fc25e[#"hash_41adc0ca9daf6e9d"], i)) {
+            }
+            if (isinarray(level.var_d98fc25e[#"hash_41adc0ca9daf6e9d"], i)) {
                 return #"hash_41adc0ca9daf6e9d";
-            } else if (isinarray(level.var_d98fc25e[#"hash_7b5a77a85b0ffab7"], i)) {
+            }
+            if (isinarray(level.var_d98fc25e[#"hash_7b5a77a85b0ffab7"], i)) {
                 return #"hash_7b5a77a85b0ffab7";
-            } else if (isinarray(level.var_d98fc25e[#"hash_1d9cb9dbd298acba"], i)) {
+            }
+            if (isinarray(level.var_d98fc25e[#"hash_1d9cb9dbd298acba"], i)) {
                 return #"hash_1d9cb9dbd298acba";
-            } else if (isinarray(level.var_d98fc25e[#"hash_55569355da0f0f68"], i)) {
+            }
+            if (isinarray(level.var_d98fc25e[#"hash_55569355da0f0f68"], i)) {
                 return #"hash_55569355da0f0f68";
-            } else if (isinarray(level.var_d98fc25e[#"hash_5d6f444e983b62ca"], i)) {
+            }
+            if (isinarray(level.var_d98fc25e[#"hash_5d6f444e983b62ca"], i)) {
                 return #"hash_5d6f444e983b62ca";
-            } else if (isinarray(level.var_d98fc25e[#"hash_148e5880a4f4d46f"], i)) {
+            }
+            if (isinarray(level.var_d98fc25e[#"hash_148e5880a4f4d46f"], i)) {
                 return #"hash_148e5880a4f4d46f";
             }
         }
@@ -887,9 +887,9 @@ function function_35216077(params) {
             foreach (player in getplayers()) {
                 if (params.value == 1) {
                     player function_7a0afa38();
-                } else {
-                    player function_b168fc67();
+                    continue;
                 }
+                player function_b168fc67();
             }
             break;
         }

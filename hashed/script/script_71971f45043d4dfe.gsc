@@ -513,7 +513,9 @@ function private function_829cfcc8(entity) {
             entity.ai.var_b13e6817 = 1;
             entity.ai.var_5dc77566 = 1;
         }
-    } else if (is_true(entity.var_53bac70d) && entity.var_3ad8ef86 < gettime() && !function_2bde9dfa(entity)) {
+        return;
+    }
+    if (is_true(entity.var_53bac70d) && entity.var_3ad8ef86 < gettime() && !function_2bde9dfa(entity)) {
         if (var_eab3f54a <= 1000000 && entity function_4ee74b24() && entity can_see_enemy()) {
             entity.ai.var_a02f86e7 = 1;
         }
@@ -578,9 +580,9 @@ function private function_99608cba(entity) {
         entity.var_4d0d199c = 1;
         entity clientfield::set("steiner_radiation_bomb_prepare_fire_clientfield", 1);
         entity function_1da02b50(2);
-    } else {
-        entity.var_4d0d199c = 0;
+        return;
     }
+    entity.var_4d0d199c = 0;
 }
 
 // Namespace namespace_6479037a/namespace_6479037a
@@ -669,9 +671,8 @@ function private function_bf8080c1(entity) {
 function private function_2bde9dfa(entity) {
     if (entity.ai.var_5dc77566 || entity.ai.var_b13e6817) {
         return 1;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace namespace_6479037a/namespace_6479037a
@@ -881,9 +882,9 @@ function private function_b46c0796(entity) {
         } else {
             return 0;
         }
-    } else {
-        return 0;
+        return;
     }
+    return 0;
 }
 
 // Namespace namespace_6479037a/namespace_6479037a
@@ -909,9 +910,8 @@ function private function_380fc4a5(entity) {
 function private function_1dcf9f45(entity) {
     if (is_true(entity.ai.var_9d91cfcc)) {
         return 0;
-    } else {
-        return 1;
     }
+    return 1;
 }
 
 // Namespace namespace_6479037a/namespace_6479037a
@@ -937,9 +937,8 @@ function private function_d94a4d59(entity) {
 function private function_15c1e3df(entity) {
     if (entity.ai.var_fad877bf) {
         return 1;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace namespace_6479037a/namespace_6479037a
@@ -1020,9 +1019,8 @@ function private function_46e10c70(entity) {
         entity.ai.var_fad877bf = 1;
         entity.ai.var_76786d9c = 0;
         return 4;
-    } else {
-        return 5;
     }
+    return 5;
 }
 
 // Namespace namespace_6479037a/namespace_6479037a
@@ -1081,10 +1079,10 @@ function private function_21746f2d(var_eab3f54a) {
                 self.zombie_move_speed = "run";
                 self.ai.var_775c2bfe = undefined;
             }
-        } else {
-            self.ai.var_3dbed9a0 = gettime() + 2000;
-            self.zombie_move_speed = "walk";
+            return;
         }
+        self.ai.var_3dbed9a0 = gettime() + 2000;
+        self.zombie_move_speed = "walk";
     }
 }
 
@@ -1165,10 +1163,10 @@ function private function_42d0830a(entity) {
     if (isdefined(entity) && isdefined(entity.variant_type)) {
         if (entity.variant_type < 3) {
             entity.variant_type = entity.variant_type + 1;
-        } else {
-            entity.variant_type = 0;
-            entity.ai.var_a29f9a91 = 0;
+            return;
         }
+        entity.variant_type = 0;
+        entity.ai.var_a29f9a91 = 0;
     }
 }
 

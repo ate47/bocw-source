@@ -118,11 +118,11 @@ function function_95c09591(destination) {
                 }
             }
         }
-    } else {
-        instance = array::random(var_4a91da6d);
-        if (isdefined(instance)) {
-            namespace_8b6a9d79::function_20d7e9c7(instance);
-        }
+        return;
+    }
+    instance = array::random(var_4a91da6d);
+    if (isdefined(instance)) {
+        namespace_8b6a9d79::function_20d7e9c7(instance);
     }
 }
 
@@ -141,7 +141,7 @@ function function_685a8288(instance) {
     do {
         var_69406530 = vehicle::spawn(undefined, "helicopter_escape_heli", #"hash_669d01ea5db4e10c", nd_start.origin, nd_start.angles);
         waitframe(1);
-    } while(!isdefined(var_69406530));
+    } while (!isdefined(var_69406530));
     var_69406530 setteam(level.zombie_team);
     var_69406530.health = function_a0861762(2500, 150000);
     var_69406530.maxhealth = var_69406530.health;
@@ -284,7 +284,9 @@ function function_36564c7c(*params) {
         }
         level thread zm_vo::function_7622cb70(#"hash_447deedfb079840a", 2);
         self drop_crate(self.instance);
-    } else if (isdefined(self.e_crate)) {
+        return;
+    }
+    if (isdefined(self.e_crate)) {
         self.e_crate delete();
     }
 }
@@ -361,9 +363,9 @@ function function_71b5509(b_delete = 0) {
             self.e_crate delete();
         }
         self thread zm_utility::function_78e620d();
-    } else {
-        self thread util::delay(2.7, "death", &delete);
+        return;
     }
+    self thread util::delay(2.7, "death", &delete);
 }
 
 // Namespace namespace_dedc3cb9/namespace_2291eec4
@@ -374,9 +376,9 @@ function function_2a05a8c6(params) {
     if (isplayer(params.eattacker) && isdefined(params.vpoint) && isdefined(params.idamage)) {
         if (params.idamage > 0) {
             hud::function_c9800094(params.eattacker, params.vpoint, params.idamage, 1);
-        } else {
-            hud::function_c9800094(params.eattacker, params.vpoint, 0, 4);
+            return;
         }
+        hud::function_c9800094(params.eattacker, params.vpoint, 0, 4);
     }
 }
 
@@ -601,7 +603,7 @@ function function_71c8970c(interval) {
         wait(interval);
         interval = interval / 1.2;
         if (interval < 0.08) {
-            break;
+            return;
         }
     }
 }
@@ -731,7 +733,7 @@ function watchforcratekill(start_kill_watch_z_threshold) {
             numframesstationary = 0;
         }
         if (numframesstationary >= maxframestillstationary) {
-            break;
+            return;
         }
         waitframe(1);
     }

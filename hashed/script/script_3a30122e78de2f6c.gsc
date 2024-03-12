@@ -47,7 +47,9 @@ function function_9c4c4f14(localclientnum, *oldval, newval, *bnewent, *binitials
             stopfx(fieldname, self.var_e8d3ed49);
             self.var_e8d3ed49 = undefined;
         }
-    } else if (isdefined(self.var_f9e742c3)) {
+        return;
+    }
+    if (isdefined(self.var_f9e742c3)) {
         stopfx(fieldname, self.var_f9e742c3);
         self.var_f9e742c3 = undefined;
     }
@@ -60,7 +62,9 @@ function function_9c4c4f14(localclientnum, *oldval, newval, *bnewent, *binitials
 function function_10ea3e76(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self.var_f2e155e9 = util::playfxontag(fieldname, "sr/fx9_obj_secure_rocket_light_top", self, "spinning_light_jnt");
-    } else if (isdefined(self.var_f2e155e9)) {
+        return;
+    }
+    if (isdefined(self.var_f2e155e9)) {
         stopfx(fieldname, self.var_f2e155e9);
         self.var_f2e155e9 = undefined;
     }
@@ -104,7 +108,9 @@ function function_bb5d646a(localclientnum, *oldval, *newval, *bnewent, *binitial
 function function_fd381218(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self.var_3439fec0 = util::playfxontag(fieldname, "sr/fx9_obj_secure_soul_trail", self, "tag_origin");
-    } else if (isdefined(self.var_3439fec0)) {
+        return;
+    }
+    if (isdefined(self.var_3439fec0)) {
         stopfx(fieldname, self.var_3439fec0);
     }
 }
@@ -148,9 +154,9 @@ function function_a2e43552(*localclientnum, *oldval, newval, *bnewent, *binitial
     if (bwastimejump == 1) {
         forcestreamxmodel(#"p9_sur_computer_console_hvt_01_screen_missile_in_act");
         forcestreamxmodel(#"p9_sur_computer_console_hvt_01_screen_missile_act");
-    } else {
-        stopforcestreamingxmodel(#"p9_sur_computer_console_hvt_01_screen_missile_in_act");
-        stopforcestreamingxmodel(#"p9_sur_computer_console_hvt_01_screen_missile_act");
+        return;
     }
+    stopforcestreamingxmodel(#"p9_sur_computer_console_hvt_01_screen_missile_in_act");
+    stopforcestreamingxmodel(#"p9_sur_computer_console_hvt_01_screen_missile_act");
 }
 

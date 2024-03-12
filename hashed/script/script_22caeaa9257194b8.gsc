@@ -115,7 +115,6 @@ function private function_dad360dc(c_door) {
                 if (isdefined(guy.ai.var_f162ac3e)) {
                     guy function_cf324cb0();
                 }
-                continue;
             }
         }
         waitframe(1);

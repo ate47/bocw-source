@@ -146,12 +146,14 @@ function play_death_vox(body, *attacker, weapon, meansofdeath) {
             entitynumber = self getentitynumber();
             attacker function_661a6cc1(var_27e6026e, entitynumber);
         }
-    } else if (isdefined(var_c45d3b76)) {
+        return;
+    }
+    if (isdefined(var_c45d3b76)) {
         if (attacker hasdobj() && attacker haspart("J_Head")) {
             attacker playsoundontag(voiceprefix + var_c45d3b76, "J_Head");
-        } else {
-            attacker playsoundontag(voiceprefix + var_c45d3b76, "tag_origin");
+            return;
         }
+        attacker playsoundontag(voiceprefix + var_c45d3b76, "tag_origin");
     }
 }
 
@@ -291,7 +293,9 @@ function function_e9f06034(player, playbreath) {
     if (playbreath && isdefined(playerbundle.exertemergegasp)) {
         dialogalias = voiceprefix + playerbundle.exertemergegasp;
         self thread function_a48c33ff(dialogalias, 22, mpdialog_value("playerExertBuffer", 0));
-    } else if (!playbreath && isdefined(playerbundle.exertemergebreath)) {
+        return;
+    }
+    if (!playbreath && isdefined(playerbundle.exertemergebreath)) {
         dialogalias = voiceprefix + playerbundle.exertemergebreath;
         self thread function_a48c33ff(dialogalias, 22, mpdialog_value("playerExertBuffer", 0));
     }

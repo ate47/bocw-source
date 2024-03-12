@@ -166,9 +166,9 @@ function function_d9ea0e09(eventstruct) {
             }
             self delete();
         }
-    } else {
-        playsoundatposition(#"hash_331360fb3bc61a2e", scriptmodel.origin + vectorscale((0, 0, 1), 50));
+        return;
     }
+    playsoundatposition(#"hash_331360fb3bc61a2e", scriptmodel.origin + vectorscale((0, 0, 1), 50));
 }
 
 // Namespace namespace_73df937d/namespace_73df937d
@@ -221,10 +221,10 @@ function function_2ed0fa9b(instance, *v_center) {
         if (isdefined(s_machine.trigger)) {
             s_machine.trigger delete();
         }
-        if (!isarray(s_machine.parent.var_344a6a1a)) {
+        if (!isarray(s_machine.parent.a_models)) {
             continue;
         }
-        foreach (model in s_machine.parent.var_344a6a1a) {
+        foreach (model in s_machine.parent.a_models) {
             if (!isdefined(model)) {
                 continue;
             }
@@ -289,19 +289,19 @@ function function_ae44cb3d(instance, var_eece1f6a) {
             var_78a3e26a = #"hash_2b8015fa585f3b83";
         }
         namespace_82b4c2d1::function_999594fe(instance.var_fe2612fe[#"hash_6217ef2a3d7d895b"], #"hash_4af85251966549b8", var_78a3e26a, #"hash_3eac5ec7a888ddfb", 0);
-        break;
+        return;
     case #"hash_629e563c2ebf707a":
         namespace_dd7e54e3::function_1cbc3614(instance.var_fe2612fe[#"hash_629e563c2ebf707a"]);
-        break;
+        return;
     case #"crafting_table":
         namespace_1cc7b406::function_7dddb953(instance.var_fe2612fe[#"crafting_table"]);
-        break;
+        return;
     case #"hash_448adaf187bbb953":
         namespace_4b9fccd8::function_cb9d309b(instance.var_fe2612fe[#"hash_448adaf187bbb953"]);
-        break;
+        return;
     case #"beacon":
         namespace_dbb31ff3::function_67dce9cd(instance.var_fe2612fe[#"beacon"]);
-        break;
+        return;
     }
 }
 
@@ -315,20 +315,20 @@ function function_f1bc8a08(player) {
         switch (player.armortier) {
         case 0:
             self sethintstring(#"hash_5a07d4e777cd962a", "Armor Lv. 1", 500);
-            break;
+            return;
         case 1:
             self sethintstring(#"hash_5a07d4e777cd962a", "Armor Lv. 2", 1000);
-            break;
+            return;
         case 2:
             self sethintstring(#"hash_5a07d4e777cd962a", "Armor Lv. 3", 1500);
-            break;
+            return;
         case 3:
             if (player armor::at_peak_armor_bars()) {
                 self sethintstring(#"hash_7dfea1c8f4ee103");
             } else {
                 self sethintstring(#"hash_3ed2de51f2aea0ff", 1000);
             }
-            break;
+            return;
         }
     }
 }

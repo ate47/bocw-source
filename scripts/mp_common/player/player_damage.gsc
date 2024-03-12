@@ -1344,17 +1344,23 @@ function private function_a774b4ed(eattacker, einflictor, weapon, smeansofdeath,
                 self function_bc82f900("damage_death_circle");
                 self.var_2f5355a6 = gettime();
             }
-        } else if (sessionmodeiswarzonegame() && smeansofdeath == "MOD_BLED_OUT") {
+            return;
+        }
+        if (sessionmodeiswarzonegame() && smeansofdeath == "MOD_BLED_OUT") {
             if (!isdefined(self.var_2c725854) || gettime() > self.var_2c725854) {
                 self function_bc82f900("damage_bleed");
                 self.var_2c725854 = gettime();
             }
-        } else if (smeansofdeath != "MOD_DOT" && smeansofdeath != "MOD_DOT_SELF") {
+            return;
+        }
+        if (smeansofdeath != "MOD_DOT" && smeansofdeath != "MOD_DOT_SELF") {
             if (!isdefined(self.var_6d9f302e) || gettime() > self.var_6d9f302e) {
                 self function_bc82f900("damage_heavy");
                 self.var_6d9f302e = gettime();
             }
-        } else if (!isdefined(self.var_b82529f5) || gettime() > self.var_b82529f5) {
+            return;
+        }
+        if (!isdefined(self.var_b82529f5) || gettime() > self.var_b82529f5) {
             self function_bc82f900("damage_light");
             self.var_b82529f5 = gettime();
         }

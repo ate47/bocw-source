@@ -243,17 +243,19 @@ function function_672c739(localclientnum, shockrifle) {
         function_4238734d(localclientnum, #"hash_4a1db95d40ab50d", "Tint Color R", 4);
         function_4238734d(localclientnum, #"hash_4a1db95d40ab50d", "Tint Color G", 4);
         function_4238734d(localclientnum, #"hash_4a1db95d40ab50d", "Tint Color B", 4);
-    } else if (util::function_2c435484()) {
+        return;
+    }
+    if (util::function_2c435484()) {
         function_4238734d(localclientnum, #"hash_4a1db95d40ab50d", "Enable Tint", 1);
         function_4238734d(localclientnum, #"hash_4a1db95d40ab50d", "Tint Color R", 0.15);
         function_4238734d(localclientnum, #"hash_4a1db95d40ab50d", "Tint Color G", 0.13);
         function_4238734d(localclientnum, #"hash_4a1db95d40ab50d", "Tint Color B", 0.24);
-    } else {
-        function_4238734d(localclientnum, #"hash_4a1db95d40ab50d", "Enable Tint", 1);
-        function_4238734d(localclientnum, #"hash_4a1db95d40ab50d", "Tint Color R", 0.3);
-        function_4238734d(localclientnum, #"hash_4a1db95d40ab50d", "Tint Color G", 0.025);
-        function_4238734d(localclientnum, #"hash_4a1db95d40ab50d", "Tint Color B", 0);
+        return;
     }
+    function_4238734d(localclientnum, #"hash_4a1db95d40ab50d", "Enable Tint", 1);
+    function_4238734d(localclientnum, #"hash_4a1db95d40ab50d", "Tint Color R", 0.3);
+    function_4238734d(localclientnum, #"hash_4a1db95d40ab50d", "Tint Color G", 0.025);
+    function_4238734d(localclientnum, #"hash_4a1db95d40ab50d", "Tint Color B", 0);
 }
 
 // Namespace blood/namespace_5d18774f
@@ -485,13 +487,15 @@ function private function_55d01d42() {
     if (isdefined(fields) && (isdefined(fields.digitalblood) ? fields.digitalblood : 0)) {
         self.pstfx_blood = #"hash_21152915158b09dd";
         self.wound_rob = "rob_wound_blood_splatter_reaper";
-    } else if (util::is_mature()) {
+        return;
+    }
+    if (util::is_mature()) {
         self.pstfx_blood = #"hash_2fe01f2d9cd2c4c";
         self.wound_rob = "rob_wound_blood_splatter";
-    } else {
-        self.pstfx_blood = #"hash_44dcb6ac5e8787e0";
-        self.wound_rob = "rob_wound_blood_splatter";
+        return;
     }
+    self.pstfx_blood = #"hash_44dcb6ac5e8787e0";
+    self.wound_rob = "rob_wound_blood_splatter";
 }
 
 // Namespace blood/namespace_5d18774f
@@ -736,12 +740,14 @@ function private update_lightbar(localclientnum, new_blood_stage, prior_blood_st
             setcontrollerlightbarcolor(localclientnum);
             break;
         }
-    } else if (new_blood_stage != prior_blood_stage) {
+        return;
+    }
+    if (new_blood_stage != prior_blood_stage) {
         if (isdefined(level.controllercolor) && isdefined(level.controllercolor[localclientnum])) {
             setcontrollerlightbarcolor(localclientnum, level.controllercolor[localclientnum]);
-        } else {
-            setcontrollerlightbarcolor(localclientnum);
+            return;
         }
+        setcontrollerlightbarcolor(localclientnum);
     }
 }
 
@@ -798,8 +804,7 @@ function function_8fe966f4(localclientnum, var_bfd952c7, new_stage, ramptime, po
     var_e9d8aaf5 = level.blood.var_e9d8aaf5;
     var_5831bf35 = level.blood.var_5831bf35;
     currenttime = starttime;
-    elapsedtime = 0;
-    while (elapsedtime < ramptime) {
+    for (elapsedtime = 0; elapsedtime < ramptime; elapsedtime = currenttime - starttime) {
         var_a0b59ea2 = elapsedtime / ramptime;
         var_3198c720 = 1 - var_a0b59ea2;
         if (is_true(self.blood_enabled)) {
@@ -825,7 +830,6 @@ function function_8fe966f4(localclientnum, var_bfd952c7, new_stage, ramptime, po
         if (var_5710f35c < var_d183f050) {
             return;
         }
-        elapsedtime = currenttime - starttime;
     }
     if (is_true(self.blood_enabled)) {
         self function_116b95e5(postfx, #"fade", level.blood.fade[new_stage]);
@@ -858,8 +862,7 @@ function function_c0cdd1f2(localclientnum, stagefrom, stageto, ramptime, key, po
     starttime = localplayer getclienttime();
     var_d183f050 = getservertime(localclientnum);
     currenttime = starttime;
-    elapsedtime = 0;
-    while (elapsedtime < ramptime) {
+    for (elapsedtime = 0; elapsedtime < ramptime; elapsedtime = currenttime - starttime) {
         percent = elapsedtime / ramptime;
         amount = stageto * percent + stagefrom * (1 - percent);
         if (is_true(self.blood_enabled) || is_true(self.var_a3b3e5cc)) {
@@ -875,7 +878,6 @@ function function_c0cdd1f2(localclientnum, stagefrom, stageto, ramptime, key, po
         if (var_5710f35c < var_d183f050) {
             return;
         }
-        elapsedtime = currenttime - starttime;
     }
     if (is_true(self.blood_enabled) || is_true(self.var_a3b3e5cc)) {
         self function_116b95e5(postfx, key, stageto);
@@ -936,9 +938,9 @@ function private function_436ee4c2(localclientnum, pstfx_blood) {
     if (!isdefined(self)) {
         if (isdefined(level.controllercolor) && isdefined(level.controllercolor[localclientnum])) {
             setcontrollerlightbarcolor(localclientnum, level.controllercolor[localclientnum]);
-        } else {
-            setcontrollerlightbarcolor(localclientnum);
+            return;
         }
+        setcontrollerlightbarcolor(localclientnum);
     }
 }
 
@@ -1460,12 +1462,12 @@ function function_100ac98f(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwasdemojump) {
         function_dd830dee(#"injured_blood_settings");
         level.var_99aec053 = 1;
-    } else {
-        function_dd830dee();
-        level.var_99aec053 = undefined;
-        if (function_148ccc79(fieldname, "rob_wound_blood_splatter")) {
-            codestoppostfxbundlelocal(fieldname, "rob_wound_blood_splatter");
-        }
+        return;
+    }
+    function_dd830dee();
+    level.var_99aec053 = undefined;
+    if (function_148ccc79(fieldname, "rob_wound_blood_splatter")) {
+        codestoppostfxbundlelocal(fieldname, "rob_wound_blood_splatter");
     }
 }
 

@@ -76,20 +76,16 @@ function update_sound(local_client_num, *bnewent, newval, oldval) {
             self._proximity_alarm_snd_ent = spawn(bnewent, self.origin, "script_origin");
             self thread sndproxalert_entcleanup(bnewent, self._proximity_alarm_snd_ent);
         }
-    } else {
-        if (newval == 1) {
-            goto LOC_000000f2;
-        }
-        if (newval == 0 && isdefined(oldval) && oldval != newval) {
-            if (isdefined(self._proximity_alarm_snd_ent)) {
-                self._proximity_alarm_snd_ent stopallloopsounds(0.5);
-            LOC_000000f2:
-            }
-        LOC_000000f2:
-        }
-    LOC_000000f2:
+        return;
     }
-LOC_000000f2:
+    if (newval == 1) {
+        return;
+    }
+    if (newval == 0 && isdefined(oldval) && oldval != newval) {
+        if (isdefined(self._proximity_alarm_snd_ent)) {
+            self._proximity_alarm_snd_ent stopallloopsounds(0.5);
+        }
+    }
 }
 
 // Namespace weaponobjects/weaponobjects
@@ -123,9 +119,7 @@ function retrievable_changed(local_client_num, *oldval, newval, *bnewent, *binit
 // Size: 0x32
 function updateretrievable(*local_client_num, *newval) {
     if (self function_b9b8fbc7()) {
-        goto LOC_00000030;
     }
-LOC_00000030:
 }
 
 // Namespace weaponobjects/weaponobjects

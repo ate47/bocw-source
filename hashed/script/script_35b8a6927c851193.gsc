@@ -85,8 +85,8 @@ function private main() {
         if (isdefined(turretweapon) && !isinarray(level.var_7fc48a1a, turretweapon)) {
             level.var_7fc48a1a[level.var_7fc48a1a.size] = turretweapon;
         }
-        if (isdefined(level.smartcoversettings) && !isinarray(level.var_7fc48a1a, level.smartcoversettings.var_8d86ade8)) {
-            level.var_7fc48a1a[level.var_7fc48a1a.size] = level.smartcoversettings.var_8d86ade8;
+        if (isdefined(level.smartcoversettings) && !isinarray(level.var_7fc48a1a, level.smartcoversettings.smartcoverweapon)) {
+            level.var_7fc48a1a[level.var_7fc48a1a.size] = level.smartcoversettings.smartcoverweapon;
         }
     }
 }
@@ -429,9 +429,9 @@ function private setup_awareness(entity) {
         awareness::register_state(entity, #"investigate", &function_18cf0569, &function_a5b3ad4c, &function_60856c6d, undefined, &awareness::function_a360dd00);
         awareness::register_state(entity, #"chase", &function_88586098, &function_e85f22b3, &function_5b3d00f3, &awareness::function_5c40e824, &function_1ae9512e);
         awareness::set_state(entity, #"wander");
-    } else {
-        entity.has_awareness = 0;
+        return;
     }
+    entity.has_awareness = 0;
 }
 
 // Namespace namespace_98decc78/namespace_98decc78
@@ -499,9 +499,7 @@ function function_88586098(entity) {
     self.maxsightdistsqrd = function_a3f6cdac(3000);
     self.var_1267fdea = 0;
     if (isdefined(self.aat_turned)) {
-        goto LOC_00000122;
-    }
-    if (isdefined(self.var_9602c8b2)) {
+    } else if (isdefined(self.var_9602c8b2)) {
         [[ self.var_9602c8b2 ]]();
     } else if (isdefined(level.var_9602c8b2)) {
         [[ level.var_9602c8b2 ]]();
@@ -511,11 +509,8 @@ function function_88586098(entity) {
             entity namespace_85745671::function_9758722("sprint");
         } else {
             entity namespace_85745671::function_9758722("super_sprint");
-        LOC_00000122:
         }
-    LOC_00000122:
     }
-LOC_00000122:
     awareness::function_978025e4(entity);
 }
 

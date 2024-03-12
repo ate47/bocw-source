@@ -38,9 +38,8 @@ function private autoexec __init__system__() {
 function private function_6fe2ffad() {
     if (sessionmodeiswarzonegame()) {
         return "killstreak_uav_wz";
-    } else {
-        return "killstreak_uav";
     }
+    return "killstreak_uav";
 }
 
 // Namespace uav/uav
@@ -238,7 +237,7 @@ function activateuav(killstreaktype) {
     }
     level.spawneduavs[level.spawneduavs.size] = uav;
     bundle = killstreaks::get_script_bundle("uav");
-    uav setmodel(bundle.var_c6eab8b5);
+    uav setmodel(bundle.ksmodel);
     uav setenemymodel(bundle.var_aa0b97e1);
     uav.weapon = getweapon("uav");
     uav setweapon(uav.weapon);
@@ -596,16 +595,16 @@ function uavtracker() {
             setteamspyplane(team, int(min(activeuavs, 2)));
             util::set_team_radar(team, var_376f7f8c > 0);
         }
-    } else {
-        foreach (player in level.players) {
-            activeuavs = isdefined(level.activeuavs[player.team]) ? level.activeuavs[player.team] : 0;
-            var_376f7f8c = activeuavs + (isdefined(level.activesatellites[player.team]) ? level.activesatellites[player.team] : 0);
-            if (isdefined(player.entnum)) {
-                var_376f7f8c = var_376f7f8c + (isdefined(level.var_eb10c6a7[player.entnum]) ? level.var_eb10c6a7[player.entnum] : 0);
-            }
-            player setclientuivisibilityflag("radar_client", var_376f7f8c > 0);
-            player.hasspyplane = var_376f7f8c > 0;
+        return;
+    }
+    foreach (player in level.players) {
+        activeuavs = isdefined(level.activeuavs[player.team]) ? level.activeuavs[player.team] : 0;
+        var_376f7f8c = activeuavs + (isdefined(level.activesatellites[player.team]) ? level.activesatellites[player.team] : 0);
+        if (isdefined(player.entnum)) {
+            var_376f7f8c = var_376f7f8c + (isdefined(level.var_eb10c6a7[player.entnum]) ? level.var_eb10c6a7[player.entnum] : 0);
         }
+        player setclientuivisibilityflag("radar_client", var_376f7f8c > 0);
+        player.hasspyplane = var_376f7f8c > 0;
     }
 }
 

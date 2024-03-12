@@ -258,7 +258,7 @@ function function_bbe2694a(networkid) {
                 ping.player function_b56144ae(ping.player function_9c9adcf1(), ping.eventtype, 1, ping.location, ping.param, ping.id);
             }
             function_aa50d3e4(ping);
-            break;
+            return;
         }
     }
 }
@@ -285,7 +285,9 @@ function private function_aa50d3e4(ping) {
     #/
     if (var_2d64756e.size == 1) {
         level.ping.players[ping.playerentnum][ping.var_a1e081ad] = undefined;
-    } else if (isdefined(index)) {
+        return;
+    }
+    if (isdefined(index)) {
         array::pop(var_2d64756e, index, 0);
     }
 }
@@ -342,9 +344,9 @@ function private function_94eab4fb(params) {
         if (isdefined(id)) {
             player function_b56144ae(targets, eventtype, remove, location, param, id);
         }
-    } else {
-        player function_b56144ae(targets, eventtype, remove, location, param);
+        return;
     }
+    player function_b56144ae(targets, eventtype, remove, location, param);
 }
 
 // Namespace ping/ping

@@ -192,7 +192,7 @@ function function_64719f04(instance) {
             }
         }
         if (!var_d951c76b) {
-            break;
+            return;
         }
         var_d951c76b = 0;
         wait(0.1);
@@ -225,9 +225,9 @@ function vo_start(var_33e81c58, var_4469395e) {
 function play_vo(str_alias) {
     if (self === level) {
         level zm_vo::function_7622cb70(str_alias);
-    } else {
-        self zm_vo::function_d6f8bbd9(str_alias);
+        return;
     }
+    self zm_vo::function_d6f8bbd9(str_alias);
 }
 
 // Namespace namespace_7589cf5c/namespace_7589cf5c
@@ -391,22 +391,16 @@ function function_8ab565fc() {
     switch (level.var_b48509f9) {
     case 1:
         return 50;
-        break;
     case 2:
         return 60;
-        break;
     case 3:
         return 70;
-        break;
     case 4:
         return 85;
-        break;
     case 5:
         return 105;
-        break;
     default:
         return 115;
-        break;
     }
 }
 
@@ -418,22 +412,16 @@ function function_4bd02b61() {
     switch (level.var_b48509f9) {
     case 1:
         return 30;
-        break;
     case 2:
         return 40;
-        break;
     case 3:
         return 45;
-        break;
     case 4:
         return 55;
-        break;
     case 5:
         return 80;
-        break;
     default:
         return 95;
-        break;
     }
 }
 
@@ -477,14 +465,14 @@ function function_1e45b156(s_instance) {
                     var_f3433c5b = array(var_f3433c5b);
                 }
                 var_f3433c5b[var_f3433c5b.size] = var_cdce8e6f;
-            } else {
-                if (!isdefined(var_2bcc2765)) {
-                    var_2bcc2765 = [];
-                } else if (!isarray(var_2bcc2765)) {
-                    var_2bcc2765 = array(var_2bcc2765);
-                }
-                var_2bcc2765[var_2bcc2765.size] = var_cdce8e6f;
+                continue;
             }
+            if (!isdefined(var_2bcc2765)) {
+                var_2bcc2765 = [];
+            } else if (!isarray(var_2bcc2765)) {
+                var_2bcc2765 = array(var_2bcc2765);
+            }
+            var_2bcc2765[var_2bcc2765.size] = var_cdce8e6f;
         }
         var_f3433c5b = array::sort_by_script_int(var_f3433c5b, 0);
         foreach (var_d80c3f29 in var_f3433c5b) {

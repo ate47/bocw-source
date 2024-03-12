@@ -66,38 +66,38 @@ function function_f1d27638(var_f7f4481f) {
     switch (var_f7f4481f.eventid) {
     case 0:
         thread function_50e36ba7(var_f7f4481f.var_40209f44, var_f7f4481f.weapon, var_f7f4481f.var_3d136cd9, var_f7f4481f.var_7e98b410);
-        break;
+        return;
     case 2:
         thread function_ee8935da(var_f7f4481f.var_3d136cd9);
-        break;
+        return;
     case 3:
     case 4:
     case 5:
         thread function_bf569dab(var_f7f4481f.var_40209f44, var_f7f4481f.var_3d136cd9, var_f7f4481f.eventid, var_f7f4481f.weapon);
-        break;
+        return;
     case 6:
         thread function_6bed8fc0(var_f7f4481f.var_40209f44, var_f7f4481f.var_3d136cd9, var_f7f4481f.var_7e98b410);
-        break;
+        return;
     case 7:
         thread function_6afb2bd4(var_f7f4481f.var_40209f44, var_f7f4481f.weapon, var_f7f4481f.localclientnum, var_f7f4481f.var_7e98b410);
-        break;
+        return;
     case 8:
         thread function_22ea6c18(var_f7f4481f.var_40209f44, var_f7f4481f.weapon, var_f7f4481f.localclientnum, var_f7f4481f.var_7e98b410);
-        break;
+        return;
     case 9:
         thread function_7d29bb1e(var_f7f4481f.var_40209f44, var_f7f4481f.weapon, var_f7f4481f.localclientnum, var_f7f4481f.var_7e98b410);
-        break;
+        return;
     case 10:
         thread function_2ddd5b7d(var_f7f4481f.var_40209f44, var_f7f4481f.weapon, var_f7f4481f.localclientnum, var_f7f4481f.var_7e98b410);
-        break;
+        return;
     case 11:
         thread function_afa6ac4b(var_f7f4481f.var_40209f44, var_f7f4481f.weapon, var_f7f4481f.var_3d136cd9, var_f7f4481f.var_7e98b410);
-        break;
+        return;
     case 12:
     case 13:
     case 14:
         thread game_end_vox(var_f7f4481f.var_40209f44, var_f7f4481f.eventid);
-        break;
+        return;
     }
 }
 
@@ -113,11 +113,10 @@ function get_death_vox(playerbundle, meansofdeath) {
         case #"mod_burned":
             if (function_fc261b83()) {
                 return "";
-                goto LOC_0000005e;
+            } else {
+                return playerbundle.exertdeathburned;
             }
-            return playerbundle.exertdeathburned;
         case #"mod_melee_weapon_butt":
-        LOC_0000005e:
             return playerbundle.var_53f25688;
         case #"mod_head_shot":
             return playerbundle.var_207908de;
@@ -139,7 +138,6 @@ function get_death_vox(playerbundle, meansofdeath) {
             return playerbundle.exertdeathelectrocuted;
         case #"mod_crush":
             return playerbundle.var_35f92256;
-            break;
         }
     }
     return playerbundle.exertdeath;

@@ -59,16 +59,16 @@ function function_bb93a8cd(insertion) {
         foreach (player in activeplayers) {
             if (function_20cba65e(player) == insertion.index) {
                 var_2c34761b[var_2c34761b.size] = player;
-            } else {
-                otherplayers[otherplayers.size] = player;
+                continue;
             }
+            otherplayers[otherplayers.size] = player;
         }
         insertion.players = var_2c34761b;
         insertion.otherplayers = otherplayers;
-    } else {
-        insertion.players = function_a1ef346b();
-        insertion.otherplayers = [];
+        return;
     }
+    insertion.players = function_a1ef346b();
+    insertion.otherplayers = [];
 }
 
 // Namespace player_insertion/namespace_3088f362
@@ -122,9 +122,8 @@ function private function_fd3c1bcc(start, end, default_val) {
             assert(isvec(trace[#"position"]));
         #/
         return trace[#"position"];
-    } else {
-        return default_val;
     }
+    return default_val;
 }
 
 // Namespace player_insertion/namespace_3088f362
@@ -192,26 +191,22 @@ function private function_9ddb4115(var_1d83d08d) {
         initcircle = level.deathcircles[0];
         newstart = var_1d83d08d.start;
         toend = vectornormalize(var_1d83d08d.end - var_1d83d08d.start);
-        var_164fe5c9 = distance2dsquared(newstart, initcircle.origin);
-        while (var_164fe5c9 > function_a3f6cdac(initcircle.radius)) {
+        for (var_164fe5c9 = distance2dsquared(newstart, initcircle.origin); var_164fe5c9 > function_a3f6cdac(initcircle.radius); var_164fe5c9 = var_c820832) {
             newstart = newstart + toend * 1000;
             var_c820832 = distance2dsquared(newstart, initcircle.origin);
             if (var_c820832 > var_164fe5c9) {
                 break;
             }
-            var_164fe5c9 = var_c820832;
         }
         var_1d83d08d.start = newstart;
         var_1b8e09d2 = var_1d83d08d.end;
         var_6d773f9e = toend * -1;
-        var_164fe5c9 = distance2dsquared(var_1b8e09d2, initcircle.origin);
-        while (var_164fe5c9 > function_a3f6cdac(initcircle.radius)) {
+        for (var_164fe5c9 = distance2dsquared(var_1b8e09d2, initcircle.origin); var_164fe5c9 > function_a3f6cdac(initcircle.radius); var_164fe5c9 = var_c820832) {
             var_1b8e09d2 = var_1b8e09d2 + var_6d773f9e * 1000;
             var_c820832 = distance2dsquared(var_1b8e09d2, initcircle.origin);
             if (var_c820832 > var_164fe5c9) {
                 break;
             }
-            var_164fe5c9 = var_c820832;
         }
         var_1d83d08d.end = var_1b8e09d2;
     }

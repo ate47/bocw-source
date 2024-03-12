@@ -66,8 +66,7 @@ function function_c1e0cc87(name, *unused1, *var_5ddf2027, var_f80dfd0d = 0) {
 // Checksum 0x29a98e14, Offset: 0x500
 // Size: 0x150
 function function_593b9cbb(&queue, flag) {
-    var_f53e8844 = 20;
-    while (var_f53e8844 > 0) {
+    for (var_f53e8844 = 20; var_f53e8844 > 0; var_f53e8844--) {
         if (queue.size > 0) {
             var_8d3272cf = queue[0];
             self clientfield::set(flag, var_8d3272cf.id);
@@ -83,8 +82,7 @@ function function_593b9cbb(&queue, flag) {
         }
         if (queue.size > 0) {
             var_f53e8844 = 20;
-        } else {
-            var_f53e8844--;
+            continue;
         }
     }
     /#

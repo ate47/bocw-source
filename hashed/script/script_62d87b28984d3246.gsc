@@ -52,9 +52,9 @@ function function_b4af2e7(pulse) {
     if (namespace_61e6d095::exists(#"hash_71bae6f32cec8a8e")) {
         if (is_true(pulse)) {
             namespace_61e6d095::set_state(#"hash_71bae6f32cec8a8e", #"pulse");
-        } else {
-            namespace_61e6d095::set_state(#"hash_71bae6f32cec8a8e", #"defaultstate");
+            return;
         }
+        namespace_61e6d095::set_state(#"hash_71bae6f32cec8a8e", #"defaultstate");
     }
 }
 

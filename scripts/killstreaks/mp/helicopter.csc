@@ -370,7 +370,9 @@ function marker_state_changed(localclientnum, *oldval, newval, *bnewent, *biniti
             player thread updatemarkerthread(fieldname);
         }
         player.markerfxhandle = util::playfxontag(fieldname, player.markerfx, player.markerobj, "tag_origin");
-    } else if (isdefined(player.markerobj)) {
+        return;
+    }
+    if (isdefined(player.markerobj)) {
         player.markerobj delete();
     }
 }

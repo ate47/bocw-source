@@ -126,51 +126,50 @@ function function_fcfd6064(localclientnum, var_a6762160, clientdata, networkid) 
             }
         }
         return var_8ad7f92f;
-    } else {
-        var_8ad7f92f = #"hash_312ceb838675b80";
-        if (isdefined(var_a6762160)) {
-            switch (var_a6762160.rarity) {
-            case #"none":
-                break;
-            case #"resource":
-                var_8ad7f92f = #"hash_312ceb838675b80";
-                break;
-            case #"uncommon":
-                var_8ad7f92f = #"hash_70c807782a37573e";
-                break;
-            case #"rare":
-                var_8ad7f92f = #"hash_5b08235c0b55a003";
-                break;
-            case #"epic":
-                var_8ad7f92f = #"rob_sr_item_purple";
-                break;
-            case #"legendary":
-                var_8ad7f92f = #"hash_64261dabb4df88cd";
-                break;
-            case #"ultra":
-                var_8ad7f92f = #"rob_sr_item_gold";
-                break;
-            case #"loadout":
-                var_8ad7f92f = #"hash_3088f081654a720e";
-                break;
-            }
-            if (var_a6762160.itemtype == #"resource") {
-                var_8ad7f92f = #"hash_2f523d47697a9ce3";
-            }
-            if (is_true(var_a6762160.var_47f145b4)) {
-                var_8ad7f92f = #"hash_52f7937d76fafca0";
-            }
-            if (isdefined(var_a6762160.var_599225da)) {
-                var_8ad7f92f = var_a6762160.var_599225da;
-            }
-        }
-        if (isdefined(networkid) && isdefined(clientdata) && isdefined(clientdata.var_ffc1c0e1)) {
-            if (isdefined(clientdata.var_ffc1c0e1[networkid]) && clientdata.var_ffc1c0e1[networkid].servertime > getservertime(localclientnum, 1)) {
-                var_8ad7f92f = #"hash_3d6eb4b9bbc74fbd";
-            }
-        }
-        return var_8ad7f92f;
     }
+    var_8ad7f92f = #"hash_312ceb838675b80";
+    if (isdefined(var_a6762160)) {
+        switch (var_a6762160.rarity) {
+        case #"none":
+            break;
+        case #"resource":
+            var_8ad7f92f = #"hash_312ceb838675b80";
+            break;
+        case #"uncommon":
+            var_8ad7f92f = #"hash_70c807782a37573e";
+            break;
+        case #"rare":
+            var_8ad7f92f = #"hash_5b08235c0b55a003";
+            break;
+        case #"epic":
+            var_8ad7f92f = #"rob_sr_item_purple";
+            break;
+        case #"legendary":
+            var_8ad7f92f = #"hash_64261dabb4df88cd";
+            break;
+        case #"ultra":
+            var_8ad7f92f = #"rob_sr_item_gold";
+            break;
+        case #"loadout":
+            var_8ad7f92f = #"hash_3088f081654a720e";
+            break;
+        }
+        if (var_a6762160.itemtype == #"resource") {
+            var_8ad7f92f = #"hash_2f523d47697a9ce3";
+        }
+        if (is_true(var_a6762160.var_47f145b4)) {
+            var_8ad7f92f = #"hash_52f7937d76fafca0";
+        }
+        if (isdefined(var_a6762160.var_599225da)) {
+            var_8ad7f92f = var_a6762160.var_599225da;
+        }
+    }
+    if (isdefined(networkid) && isdefined(clientdata) && isdefined(clientdata.var_ffc1c0e1)) {
+        if (isdefined(clientdata.var_ffc1c0e1[networkid]) && clientdata.var_ffc1c0e1[networkid].servertime > getservertime(localclientnum, 1)) {
+            var_8ad7f92f = #"hash_3d6eb4b9bbc74fbd";
+        }
+    }
+    return var_8ad7f92f;
 }
 
 // Namespace zm_perk_death_perception/zm_perk_death_perception
@@ -185,10 +184,10 @@ function perk_death_perception_item_marked_for_rob(*localclientnum, *oldval, new
             level.var_5d9a0215 = array(level.var_5d9a0215);
         }
         level.var_5d9a0215[level.var_5d9a0215.size] = self;
-    } else {
-        arrayremovevalue(level.var_5d9a0215, self);
-        self stoprenderoverridebundle(#"hash_5826a243f40e004c");
+        return;
     }
+    arrayremovevalue(level.var_5d9a0215, self);
+    self stoprenderoverridebundle(#"hash_5826a243f40e004c");
 }
 
 // Namespace zm_perk_death_perception/zm_perk_death_perception
@@ -198,9 +197,9 @@ function perk_death_perception_item_marked_for_rob(*localclientnum, *oldval, new
 function perk_death_perception_hud_warning(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump && !is_true(level.var_dc60105c) && !isigcactive(fieldname)) {
         self thread function_fff5377e(fieldname);
-    } else {
-        self notify(#"hash_45ed6efeef67b773");
+        return;
     }
+    self notify(#"hash_45ed6efeef67b773");
 }
 
 // Namespace zm_perk_death_perception/zm_perk_death_perception
@@ -215,15 +214,15 @@ function perk_death_perception_visuals_items(localclientnum, *oldval, newval, *b
         self.var_fc689684 = 1;
         arrayremovevalue(level.var_5d9a0215, undefined);
         self thread function_1300c2fe();
-    } else {
-        self notify(#"hash_48d1d774df4a8016");
-        self.var_fc689684 = undefined;
-        foreach (var_98bbded7 in level.var_5d9a0215) {
-            if (!isentity(var_98bbded7)) {
-                continue;
-            }
-            var_98bbded7 stoprenderoverridebundle(#"hash_5826a243f40e004c");
+        return;
+    }
+    self notify(#"hash_48d1d774df4a8016");
+    self.var_fc689684 = undefined;
+    foreach (var_98bbded7 in level.var_5d9a0215) {
+        if (!isentity(var_98bbded7)) {
+            continue;
         }
+        var_98bbded7 stoprenderoverridebundle(#"hash_5826a243f40e004c");
     }
 }
 
@@ -240,9 +239,9 @@ function function_1300c2fe() {
                     if (!var_98bbded7 function_d2503806(#"hash_5826a243f40e004c")) {
                         var_98bbded7 playrenderoverridebundle(#"hash_5826a243f40e004c");
                     }
-                } else {
-                    var_98bbded7 stoprenderoverridebundle(#"hash_5826a243f40e004c");
+                    continue;
                 }
+                var_98bbded7 stoprenderoverridebundle(#"hash_5826a243f40e004c");
             }
         }
         waitframe(1);
@@ -260,14 +259,14 @@ function perk_death_perception_visuals(localclientnum, *oldval, newval, *bnewent
     if (bwastimejump && !is_true(level.var_dc60105c) && !isigcactive(fieldname)) {
         level.var_1c1febec[fieldname] = 1;
         self thread function_6c1f79e3(fieldname);
-    } else {
-        self notify(#"hash_324f3fd9a0081db0");
-        level.var_1c1febec[fieldname] = 0;
-        a_ai = function_793a9f3d(fieldname);
-        foreach (ai in a_ai) {
-            if (isdefined(ai)) {
-                ai stoprenderoverridebundle(#"hash_30651f363ef055e9");
-            }
+        return;
+    }
+    self notify(#"hash_324f3fd9a0081db0");
+    level.var_1c1febec[fieldname] = 0;
+    a_ai = function_793a9f3d(fieldname);
+    foreach (ai in a_ai) {
+        if (isdefined(ai)) {
+            ai stoprenderoverridebundle(#"hash_30651f363ef055e9");
         }
     }
 }
@@ -284,9 +283,9 @@ function function_6c1f79e3(localclientnum) {
             if (isdefined(ai)) {
                 if (distance2d(ai.origin, self.origin) <= 850 && !isdefined(ai.var_d59aa7bb)) {
                     ai function_731d83de(localclientnum);
-                } else {
-                    ai stoprenderoverridebundle(#"hash_30651f363ef055e9");
+                    continue;
                 }
+                ai stoprenderoverridebundle(#"hash_30651f363ef055e9");
             }
         }
         waitframe(1);
@@ -303,7 +302,9 @@ function function_731d83de(localclientnum) {
         if (isdefined(self)) {
             self playrenderoverridebundle(#"hash_30651f363ef055e9");
         }
-    } else if (isdefined(self)) {
+        return;
+    }
+    if (isdefined(self)) {
         self stoprenderoverridebundle(#"hash_30651f363ef055e9");
     }
 }

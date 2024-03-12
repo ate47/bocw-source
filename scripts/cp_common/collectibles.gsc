@@ -69,7 +69,9 @@ function function_5a395617() {
                     if (!isinarray(var_bdf7b99d[collectible.var_1d226975], collectible)) {
                         var_bdf7b99d[collectible.var_1d226975][var_bdf7b99d[collectible.var_1d226975].size] = collectible;
                     }
-                } else if (collectible.var_1d226975 == 1 || collectible.var_1d226975 == 2) {
+                    continue;
+                }
+                if (collectible.var_1d226975 == 1 || collectible.var_1d226975 == 2) {
                     /#
                         assert(isdefined(collectible.var_ed968ffd));
                     #/
@@ -81,7 +83,9 @@ function function_5a395617() {
                     if (!isinarray(var_bdf7b99d[collectible.var_1d226975][collectible.var_ed968ffd], collectible)) {
                         var_bdf7b99d[collectible.var_1d226975][collectible.var_ed968ffd][var_bdf7b99d[collectible.var_1d226975][collectible.var_ed968ffd].size] = collectible;
                     }
-                } else if (collectible.var_1d226975 === 3) {
+                    continue;
+                }
+                if (collectible.var_1d226975 === 3) {
                     /#
                         assert(isdefined(collectible.var_f3575c58));
                     #/
@@ -151,9 +155,8 @@ function function_293d81b4(var_1d226975 = 0, key) {
             level.var_997b5425[var_1d226975][key] = [];
         }
         return level.var_997b5425[var_1d226975][key];
-    } else {
-        return level.var_997b5425[var_1d226975];
     }
+    return level.var_997b5425[var_1d226975];
 }
 
 // Namespace collectibles/collectibles

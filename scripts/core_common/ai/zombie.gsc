@@ -316,9 +316,8 @@ function function_9668f61f() {
 function function_4a33fa36() {
     if (isdefined(self.health)) {
         return (0.15 * self.health);
-    } else {
-        return 30;
     }
+    return 30;
 }
 
 // Namespace zombiebehavior/zombie
@@ -328,9 +327,8 @@ function function_4a33fa36() {
 function function_9ec512e6() {
     if (isdefined(self.health)) {
         return (0.075 * self.health);
-    } else {
-        return 15;
     }
+    return 15;
 }
 
 // Namespace zombiebehavior/zombie
@@ -390,7 +388,9 @@ function function_f771a3f8(params) {
             } else if (self.var_4db55459 >= self.var_8198a38c && self.var_eabe8c08 < gettime()) {
                 function_da30b556(self);
             }
-        } else if (self.var_4db55459 >= self.var_8198a38c && self.var_eabe8c08 < gettime()) {
+            return;
+        }
+        if (self.var_4db55459 >= self.var_8198a38c && self.var_eabe8c08 < gettime()) {
             function_da30b556(self);
         }
     }
@@ -425,9 +425,8 @@ function function_da30b556(entity) {
 function private function_ce53cb2e(entity) {
     if (entity.stumble === 1 && is_false(entity.var_67f98db0)) {
         return 1;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace zombiebehavior/zombie
@@ -627,36 +626,36 @@ function zombienotetrackmeleefire(entity) {
             }
             entity callback::callback(#"on_ai_melee");
         }
-    } else {
-        if (isdefined(entity.enemy) && is_true(entity.enemy.ignoreme) && !isdefined(entity.attackable)) {
-            return;
-        }
-        if (isdefined(entity.ai.var_80045105)) {
-            /#
-                record3dtext("MOD_PROJECTILE_SPLASH" + gettime() - entity.ai.var_80045105, self.origin, (1, 0, 0), "<unknown string>", entity);
-            #/
-        }
-        if (isdefined(entity.custom_melee_fire)) {
-            entity [[ entity.custom_melee_fire ]]();
-        } else if (isdefined(level.custom_melee_fire)) {
-            entity [[ level.custom_melee_fire ]]();
-        } else {
-            entity melee();
-        }
-        /#
-            record3dtext("<unknown string>", entity.origin, (1, 0, 0), "<unknown string>", entity);
-            if (isdefined(entity.enemy)) {
-                eyepos = entity geteye();
-                record3dtext("<unknown string>" + distance2d(eyepos, entity.enemy.origin), entity.origin, (1, 0, 0), "<unknown string>", entity);
-            }
-        #/
-        if (zombieshouldattackobject(entity)) {
-            if (isdefined(level.attackablecallback)) {
-                entity.attackable [[ level.attackablecallback ]](entity);
-            }
-        }
-        entity callback::callback(#"on_ai_melee");
+        return;
     }
+    if (isdefined(entity.enemy) && is_true(entity.enemy.ignoreme) && !isdefined(entity.attackable)) {
+        return;
+    }
+    if (isdefined(entity.ai.var_80045105)) {
+        /#
+            record3dtext("MOD_PROJECTILE_SPLASH" + gettime() - entity.ai.var_80045105, self.origin, (1, 0, 0), "<unknown string>", entity);
+        #/
+    }
+    if (isdefined(entity.custom_melee_fire)) {
+        entity [[ entity.custom_melee_fire ]]();
+    } else if (isdefined(level.custom_melee_fire)) {
+        entity [[ level.custom_melee_fire ]]();
+    } else {
+        entity melee();
+    }
+    /#
+        record3dtext("<unknown string>", entity.origin, (1, 0, 0), "<unknown string>", entity);
+        if (isdefined(entity.enemy)) {
+            eyepos = entity geteye();
+            record3dtext("<unknown string>" + distance2d(eyepos, entity.enemy.origin), entity.origin, (1, 0, 0), "<unknown string>", entity);
+        }
+    #/
+    if (zombieshouldattackobject(entity)) {
+        if (isdefined(level.attackablecallback)) {
+            entity.attackable [[ level.attackablecallback ]](entity);
+        }
+    }
+    entity callback::callback(#"on_ai_melee");
 }
 
 // Namespace zombiebehavior/zombie
@@ -690,33 +689,33 @@ function zombietargetservice(entity) {
     }
     if (isdefined(specifictarget)) {
         entity setgoal(specifictarget.origin);
-    } else {
-        player = zombie_utility::get_closest_valid_player(self.origin, self.ignore_player);
-        if (!isdefined(player)) {
-            if (isdefined(self.ignore_player)) {
-                if (isdefined(level._should_skip_ignore_player_logic) && [[ level._should_skip_ignore_player_logic ]]()) {
-                    return 0;
-                }
-                self.ignore_player = [];
-            }
-            self setgoal(self.origin);
-            return 0;
-        } else if (isdefined(player.last_valid_position)) {
-            if (!is_true(self.zombie_do_not_update_goal)) {
-                if (is_true(level.zombie_use_zigzag_path)) {
-                    entity zombieupdatezigzaggoal();
-                } else {
-                    entity setgoal(player.last_valid_position);
-                }
-            }
-            return 1;
-        } else {
-            if (!is_true(self.zombie_do_not_update_goal)) {
-                entity setgoal(entity.origin);
-            }
-            return 0;
-        }
+        return;
     }
+    player = zombie_utility::get_closest_valid_player(self.origin, self.ignore_player);
+    if (!isdefined(player)) {
+        if (isdefined(self.ignore_player)) {
+            if (isdefined(level._should_skip_ignore_player_logic) && [[ level._should_skip_ignore_player_logic ]]()) {
+                return 0;
+            }
+            self.ignore_player = [];
+        }
+        self setgoal(self.origin);
+        return 0;
+    }
+    if (isdefined(player.last_valid_position)) {
+        if (!is_true(self.zombie_do_not_update_goal)) {
+            if (is_true(level.zombie_use_zigzag_path)) {
+                entity zombieupdatezigzaggoal();
+            } else {
+                entity setgoal(player.last_valid_position);
+            }
+        }
+        return 1;
+    }
+    if (!is_true(self.zombie_do_not_update_goal)) {
+        entity setgoal(entity.origin);
+    }
+    return 0;
 }
 
 // Namespace zombiebehavior/zombie
@@ -1403,16 +1402,16 @@ function zombieidgundeathupdate(entity, *mocompanim, *mocompanimblendouttime, *m
                 mocompduration thread function_1ad2970();
                 mocompduration.var_6581b296 = 1;
             }
-        } else {
-            if (mocompduration.hole_pull_speed < 12) {
-                mocompduration.hole_pull_speed = mocompduration.hole_pull_speed + 0.5;
-                if (mocompduration.hole_pull_speed > 12) {
-                    mocompduration.hole_pull_speed = 12;
-                }
-            }
-            flyingdir = vectornormalize(flyingdir);
-            mocompduration forceteleport(mocompduration.origin + flyingdir * mocompduration.hole_pull_speed);
+            return;
         }
+        if (mocompduration.hole_pull_speed < 12) {
+            mocompduration.hole_pull_speed = mocompduration.hole_pull_speed + 0.5;
+            if (mocompduration.hole_pull_speed > 12) {
+                mocompduration.hole_pull_speed = 12;
+            }
+        }
+        flyingdir = vectornormalize(flyingdir);
+        mocompduration forceteleport(mocompduration.origin + flyingdir * mocompduration.hole_pull_speed);
     }
 }
 
@@ -1433,9 +1432,9 @@ function function_1ad2970() {
     level notify(#"interdimensional_kill", {#entity:self});
     if (isdefined(self.interdimensional_gun_weapon) && isdefined(self.interdimensional_gun_attacker)) {
         self kill(self.origin, self.interdimensional_gun_attacker, self.interdimensional_gun_attacker, self.interdimensional_gun_weapon);
-    } else {
-        self kill(self.origin);
+        return;
     }
+    self kill(self.origin);
 }
 
 // Namespace zombiebehavior/zombie
@@ -1844,10 +1843,10 @@ function private zombiezombieidlemocompstart(entity, *mocompanim, *mocompanimble
     if (isdefined(mocompduration.enemy_override) && mocompduration != mocompduration.enemy_override) {
         mocompduration orientmode("face direction", mocompduration.enemy_override.origin - mocompduration.origin);
         mocompduration animmode("zonly_physics", 0);
-    } else {
-        mocompduration orientmode("face current");
-        mocompduration animmode("zonly_physics", 0);
+        return;
     }
+    mocompduration orientmode("face current");
+    mocompduration animmode("zonly_physics", 0);
 }
 
 // Namespace zombiebehavior/zombie
@@ -1858,10 +1857,10 @@ function private zombieattackobjectmocompstart(entity, *mocompanim, *mocompanimb
     if (isdefined(mocompduration.attackable_slot)) {
         mocompduration orientmode("face angle", mocompduration.attackable_slot.angles[1]);
         mocompduration animmode("zonly_physics", 0);
-    } else {
-        mocompduration orientmode("face current");
-        mocompduration animmode("zonly_physics", 0);
+        return;
     }
+    mocompduration orientmode("face current");
+    mocompduration animmode("zonly_physics", 0);
 }
 
 // Namespace zombiebehavior/zombie

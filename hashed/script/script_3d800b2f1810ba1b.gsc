@@ -130,12 +130,10 @@ function private function_8f050823() {
         data = self.var_8a1c2b55;
         maxs = self getmaxs();
         mins = self getmins();
-        bounds = maxs - mins;
-        while (bounds == (0, 0, 0)) {
+        for (bounds = maxs - mins; bounds == (0, 0, 0); bounds = maxs - mins) {
             waitframe(1);
             maxs = self getmaxs();
             mins = self getmins();
-            bounds = maxs - mins;
         }
         bounds = bounds * self.var_ac2c4043;
         data.var_141b25f = abs(bounds[0] * bounds[1] * bounds[2]) / 231;
@@ -209,9 +207,8 @@ function private function_e7eb6310(var_5479bede) {
     var_2cc6e886 = getscriptbundle(self.var_1e5d913d);
     if (var_2cc6e886.var_aa7874b1) {
         return (var_5479bede.var_7c5043e3 < data.var_78e64a1a);
-    } else {
-        return (data.var_78e64a1a > 0);
     }
+    return data.var_78e64a1a > 0;
 }
 
 // Namespace namespace_1e5d913d/namespace_54dfb21
@@ -232,9 +229,9 @@ function private function_2138c62(var_1e5d913d, var_5479bede, var_b33be77) {
             if (getdvarint(#"hash_312f96d76ca3d249", 0)) {
                 if (!isplayer(var_5479bede.attacker)) {
                     println("<unknown string>" + var_5479bede.attacker + "<unknown string>" + var_1e5d913d + "<unknown string>" + self.origin[0] + "<unknown string>" + self.origin[1] + "<unknown string>" + self.origin[2]);
-                } else {
-                    println("<unknown string>" + var_5479bede.mod + "<unknown string>" + var_1e5d913d + "<unknown string>" + self.origin[0] + "<unknown string>" + self.origin[1] + "<unknown string>" + self.origin[2]);
+                    return;
                 }
+                println("<unknown string>" + var_5479bede.mod + "<unknown string>" + var_1e5d913d + "<unknown string>" + self.origin[0] + "<unknown string>" + self.origin[1] + "<unknown string>" + self.origin[2]);
             }
         #/
         return;
@@ -400,14 +397,14 @@ function private function_2138c62(var_1e5d913d, var_5479bede, var_b33be77) {
                 wait(var_2cc6e886.var_5685d3ec);
             }
         }
-    } else {
-        /#
-            if (getdvarint(#"hash_312f96d76ca3d249", 0)) {
-                println("<unknown string>" + var_1e5d913d + "<unknown string>" + self.origin[0] + "<unknown string>" + self.origin[1] + "<unknown string>" + self.origin[2]);
-            }
-        #/
-        self function_2138c62(var_2cc6e886.var_fff670ab, var_5479bede, var_b33be77);
+        return;
     }
+    /#
+        if (getdvarint(#"hash_312f96d76ca3d249", 0)) {
+            println("<unknown string>" + var_1e5d913d + "<unknown string>" + self.origin[0] + "<unknown string>" + self.origin[1] + "<unknown string>" + self.origin[2]);
+        }
+    #/
+    self function_2138c62(var_2cc6e886.var_fff670ab, var_5479bede, var_b33be77);
 }
 
 // Namespace namespace_1e5d913d/namespace_54dfb21
@@ -463,7 +460,9 @@ function private function_479d351(var_4c1b2300, loop_sound, end_sound, position,
             sound_ent waittill(#"sound_end");
             waitframe(1);
             sound_ent delete();
-        } else if (isdefined(sound_ent)) {
+            return;
+        }
+        if (isdefined(sound_ent)) {
             waitframe(1);
             sound_ent delete();
         }
@@ -560,12 +559,10 @@ function private function_db7de647(var_917c5c76, settings, position, normal, var
     } else if (settings.lerp_time > float(function_60d95f53()) / 1000) {
         var_917c5c76 moveto(position + normal * settings.var_a20a7474 + (0, 0, settings.z_offset), settings.lerp_time);
         var_e91b68d1 = var_917c5c76.radius;
-        time = 0;
-        while (time <= settings.lerp_time) {
+        for (time = 0; time <= settings.lerp_time; time = time + float(function_60d95f53()) / 1000) {
             var_917c5c76.radius = lerpfloat(var_e91b68d1, settings.radius, time / settings.lerp_time);
             fxblocksight(var_917c5c76, var_917c5c76.radius);
             waitframe(1);
-            time = time + float(function_60d95f53()) / 1000;
         }
         var_917c5c76.radius = settings.radius;
         fxblocksight(var_917c5c76, var_917c5c76.radius);

@@ -803,7 +803,7 @@ function function_c1018360(var_49d95ac1, type, variant, rarity, modelscale, angl
     case 3:
         [[ var_4d842336 ]]->function_9a8ff4b1(5);
         [[ var_4d842336 ]]->function_43e11510(3 * 60000);
-        break;
+        return;
     case 17:
     case 24:
     case 19:
@@ -815,7 +815,7 @@ function function_c1018360(var_49d95ac1, type, variant, rarity, modelscale, angl
     case 42:
         [[ var_4d842336 ]]->function_9a8ff4b1(1);
         [[ var_4d842336 ]]->function_43e11510(3 * 60000);
-        break;
+        return;
     case 26:
     case 30:
     case 31:
@@ -827,7 +827,7 @@ function function_c1018360(var_49d95ac1, type, variant, rarity, modelscale, angl
     case 25:
         [[ var_4d842336 ]]->function_43e11510(15 * 60000);
         [[ var_4d842336 ]]->function_9a8ff4b1(7);
-        break;
+        return;
     case 4:
     case 5:
     case 8:
@@ -839,21 +839,21 @@ function function_c1018360(var_49d95ac1, type, variant, rarity, modelscale, angl
     case 23:
         [[ var_4d842336 ]]->function_43e11510(30 * 60000);
         [[ var_4d842336 ]]->function_9a8ff4b1(7);
-        break;
+        return;
     case 44:
         [[ var_4d842336 ]]->function_43e11510(60 * 60000);
         [[ var_4d842336 ]]->function_9a8ff4b1(20);
-        break;
+        return;
     case 33:
     case 16:
     case 46:
         [[ var_4d842336 ]]->function_43e11510(30 * 60000);
         [[ var_4d842336 ]]->function_9a8ff4b1(7);
-        break;
+        return;
     case 14:
         [[ var_4d842336 ]]->function_43e11510(30 * 60000);
         [[ var_4d842336 ]]->function_9a8ff4b1(9);
-        break;
+        return;
     case 12:
     case 36:
     case 37:
@@ -861,7 +861,7 @@ function function_c1018360(var_49d95ac1, type, variant, rarity, modelscale, angl
     case 39:
     case 41:
         [[ var_4d842336 ]]->function_9a8ff4b1(999999);
-        break;
+        return;
     }
 }
 
@@ -897,21 +897,23 @@ function function_51ab3213() {
                     level.doa.pickups.var_3031eb5c = array(level.doa.pickups.var_3031eb5c);
                 }
                 level.doa.pickups.var_3031eb5c[level.doa.pickups.var_3031eb5c.size] = item;
-            } else if ([[ item ]]->gettype() == 1 || [[ item ]]->gettype() == 13) {
+                continue;
+            }
+            if ([[ item ]]->gettype() == 1 || [[ item ]]->gettype() == 13) {
                 if (!isdefined(level.doa.pickups.var_2a93b19[[[ item ]]->function_e2564c16()])) {
                     level.doa.pickups.var_2a93b19[[[ item ]]->function_e2564c16()] = [];
                 } else if (!isarray(level.doa.pickups.var_2a93b19[[[ item ]]->function_e2564c16()])) {
                     level.doa.pickups.var_2a93b19[[[ item ]]->function_e2564c16()] = array(level.doa.pickups.var_2a93b19[[[ item ]]->function_e2564c16()]);
                 }
                 level.doa.pickups.var_2a93b19[[[ item ]]->function_e2564c16()][level.doa.pickups.var_2a93b19[[[ item ]]->function_e2564c16()].size] = item;
-            } else {
-                if (!isdefined(level.doa.pickups.var_8f94e67[[[ item ]]->function_e2564c16()])) {
-                    level.doa.pickups.var_8f94e67[[[ item ]]->function_e2564c16()] = [];
-                } else if (!isarray(level.doa.pickups.var_8f94e67[[[ item ]]->function_e2564c16()])) {
-                    level.doa.pickups.var_8f94e67[[[ item ]]->function_e2564c16()] = array(level.doa.pickups.var_8f94e67[[[ item ]]->function_e2564c16()]);
-                }
-                level.doa.pickups.var_8f94e67[[[ item ]]->function_e2564c16()][level.doa.pickups.var_8f94e67[[[ item ]]->function_e2564c16()].size] = item;
+                continue;
             }
+            if (!isdefined(level.doa.pickups.var_8f94e67[[[ item ]]->function_e2564c16()])) {
+                level.doa.pickups.var_8f94e67[[[ item ]]->function_e2564c16()] = [];
+            } else if (!isarray(level.doa.pickups.var_8f94e67[[[ item ]]->function_e2564c16()])) {
+                level.doa.pickups.var_8f94e67[[[ item ]]->function_e2564c16()] = array(level.doa.pickups.var_8f94e67[[[ item ]]->function_e2564c16()]);
+            }
+            level.doa.pickups.var_8f94e67[[[ item ]]->function_e2564c16()][level.doa.pickups.var_8f94e67[[[ item ]]->function_e2564c16()].size] = item;
         }
     }
 }
@@ -955,7 +957,6 @@ function function_f9ae7957() {
         case #"hash_42741ff16c0ed21b":
             self.var_4212fdee = "gem_trail_green";
             return "glow_green";
-            break;
         }
     }
     if ([[ self ]]->function_e2564c16() >= 2) {
@@ -972,7 +973,6 @@ function function_f9ae7957() {
             case 6:
             case 7:
                 return "glow_white";
-                break;
             }
         }
     }
@@ -1739,9 +1739,9 @@ function function_d936944a() {
     if (level.doa.var_cc831548.size) {
         arrayremovevalue(level.doa.var_cc831548, undefined, 0);
         self.doa.var_ad888d1f = arraysortclosest(level.doa.var_cc831548, self.origin, 16, 0, 1024);
-    } else {
-        self.doa.var_ad888d1f = [];
+        return;
     }
+    self.doa.var_ad888d1f = [];
 }
 
 // Namespace namespace_dfc652ee/namespace_dfc652ee
@@ -1829,16 +1829,16 @@ function pickuprotate() {
         util::wait_network_frame();
         self thread function_a12517b();
         self clientfield::set("pickuprotate", 1);
-    } else {
-        dir = 180;
-        if (randomint(100) > 50) {
-            dir = -180;
-        }
-        time = randomfloatrange(3, 7);
-        while (isdefined(self)) {
-            self rotateto(self.angles + (0, dir, 0), time);
-            wait(time);
-        }
+        return;
+    }
+    dir = 180;
+    if (randomint(100) > 50) {
+        dir = -180;
+    }
+    time = randomfloatrange(3, 7);
+    while (isdefined(self)) {
+        self rotateto(self.angles + (0, dir, 0), time);
+        wait(time);
     }
 }
 
@@ -1863,18 +1863,14 @@ function function_4ecd84a8(player, entnum = player.entnum, var_a3046af4, time = 
                 }
                 var_a3046af4 = player.origin;
                 if (entnum == 0 || entnum > 3) {
-                    goto LOC_000001ca;
-                }
-                if (entnum == 1) {
+                } else if (entnum == 1) {
                     y = 0 - y;
                 } else if (entnum == 2) {
                     x = 0 - x;
                 } else if (entnum == 3) {
                     y = 0 - y;
                     x = 0 - x;
-                LOC_000001ca:
                 }
-            LOC_000001ca:
                 var_a3046af4 = var_a3046af4 + (x, y, z);
             } else {
                 var_a3046af4 = self.origin + vectorscale((0, 0, 1), 3000);
@@ -1977,9 +1973,9 @@ function function_2c64b1c7() {
 function function_93de1cd5() {
     if (is_true(self.var_9ca559f5)) {
         self clientfield::set("pickupvisibility", 1);
-    } else {
-        self ghost();
+        return;
     }
+    self ghost();
 }
 
 // Namespace namespace_dfc652ee/namespace_dfc652ee
@@ -1989,9 +1985,9 @@ function function_93de1cd5() {
 function function_469baf4a() {
     if (is_true(self.var_9ca559f5)) {
         self clientfield::set("pickupvisibility", 0);
-    } else {
-        self namespace_ec06fe4a::function_4f72130c();
+        return;
     }
+    self namespace_ec06fe4a::function_4f72130c();
 }
 
 // Namespace namespace_dfc652ee/namespace_dfc652ee
@@ -2041,11 +2037,13 @@ function pickuptimeout(timetowait) {
         }
         if (i < 15) {
             wait(0.5);
-        } else if (i < 25) {
-            wait(0.25);
-        } else {
-            wait(0.1);
+            continue;
         }
+        if (i < 25) {
+            wait(0.25);
+            continue;
+        }
+        wait(0.1);
     }
     var_2b2c2c96 = [[ self.def ]]->function_c62ea2e6();
     if (isdefined(var_2b2c2c96)) {
@@ -2069,9 +2067,9 @@ function pickuptimeout(timetowait) {
 // Size: 0xe2
 function function_18372b20() {
     function_19fa261e();
-    foreach (orb in level.doa.var_537a3e29) {
-        if (isdefined(orb)) {
-            orb delete();
+    foreach (var_956de39f in level.doa.var_537a3e29) {
+        if (isdefined(var_956de39f)) {
+            var_956de39f delete();
         }
     }
     function_b950ecde();
@@ -2122,9 +2120,9 @@ function function_2735024b() {
             function_b8f6a8cd(undefined, spot, 1);
             amount--;
             wait(randomintrange(1, 3));
-        } else {
-            break;
+            continue;
         }
+        break;
     }
     if (isdefined(ent)) {
         ent namespace_e32bb68::function_ae271c0b("evt_doa_pickup_umbrella_storm_2d_lp");

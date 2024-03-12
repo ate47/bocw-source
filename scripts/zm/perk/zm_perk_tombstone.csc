@@ -108,9 +108,9 @@ function function_e32c696e(localclientnum, *oldval, newval, *bnewent, *binitials
             level.var_929ed5c3[var_47c85523].var_44c08b39 = self playloopsound(#"hash_239f90b280cde695", undefined, vectorscale((0, 0, 1), 75));
         }
         self.var_2642dd3d = 1;
-    } else {
-        self function_acf463c0(fieldname);
+        return;
     }
+    self function_acf463c0(fieldname);
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone

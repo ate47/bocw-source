@@ -168,16 +168,16 @@ function function_e78650d8() {
     wait(3);
     player = getplayers()[0];
     player endon(#"death");
-    slowed = 0;
-    while (!level flag::get("bustout_player_start")) {
+    for (slowed = 0; !level flag::get("bustout_player_start"); slowed = 1) {
         ret = undefined;
         ret = level waittill(#"bustout_player_start", #"bustout_player_entered_house");
         if (level flag::get("bustout_player_start") || !level flag::get("bustout_player_entered_house")) {
             player setmovespeedscale(1);
             slowed = 0;
-        } else if (!slowed && level flag::get("bustout_player_entered_house")) {
+            continue;
+        }
+        if (!slowed && level flag::get("bustout_player_entered_house")) {
             player setmovespeedscale(0.65);
-            slowed = 1;
         }
     }
 }
@@ -237,10 +237,8 @@ function function_c000638d() {
     door hide();
     door notsolid();
     level.var_97dd00f8 = vehicle::simple_spawn_and_drive("intro_garage_bustout");
-    bustout_driver = undefined;
-    while (!isdefined(bustout_driver)) {
+    for (bustout_driver = undefined; !isdefined(bustout_driver); bustout_driver = getent("bustout_driver", "targetname", 1)) {
         waitframe(1);
-        bustout_driver = getent("bustout_driver", "targetname", 1);
     }
     waitframe(2);
     level.var_97dd00f8[0] vehicle::lights_on();

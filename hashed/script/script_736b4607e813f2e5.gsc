@@ -197,9 +197,13 @@ function function_b78adc65(entity) {
     if (entity isragdoll()) {
         if (entity isattached("c_t8_zmb_blightfather_eggsack1_both_noreveal")) {
             entity detach("c_t8_zmb_blightfather_eggsack1_both_noreveal");
-        } else if (entity isattached("c_t8_zmb_blightfather_eggsack1_le_noreveal")) {
+            return;
+        }
+        if (entity isattached("c_t8_zmb_blightfather_eggsack1_le_noreveal")) {
             entity detach("c_t8_zmb_blightfather_eggsack1_le_noreveal");
-        } else if (entity isattached("c_t8_zmb_blightfather_eggsack1_ri_noreveal")) {
+            return;
+        }
+        if (entity isattached("c_t8_zmb_blightfather_eggsack1_ri_noreveal")) {
             entity detach("c_t8_zmb_blightfather_eggsack1_ri_noreveal");
         }
         return;
@@ -503,10 +507,10 @@ function private function_40034805(entity, *inflictor, *attacker, *damage, *flag
     modelindex clientfield::set("blight_father_weakpoint_l_maggot_sac_fx", 0);
     if (is_true(modelindex.var_7c54fb46)) {
         modelindex detach("c_t8_zmb_blightfather_eggsack1_le_noreveal");
-    } else {
-        modelindex detach("c_t8_zmb_blightfather_eggsack1_both_noreveal");
-        modelindex attach("c_t8_zmb_blightfather_eggsack1_ri_noreveal");
+        return;
     }
+    modelindex detach("c_t8_zmb_blightfather_eggsack1_both_noreveal");
+    modelindex attach("c_t8_zmb_blightfather_eggsack1_ri_noreveal");
 }
 
 // Namespace namespace_6e561646/namespace_33cf6d06
@@ -518,10 +522,10 @@ function private function_33b2c99e(entity, *inflictor, *attacker, *damage, *flag
     modelindex clientfield::set("blight_father_weakpoint_r_maggot_sac_fx", 0);
     if (is_true(modelindex.var_177b7a47)) {
         modelindex detach("c_t8_zmb_blightfather_eggsack1_ri_noreveal");
-    } else {
-        modelindex detach("c_t8_zmb_blightfather_eggsack1_both_noreveal");
-        modelindex attach("c_t8_zmb_blightfather_eggsack1_le_noreveal");
+        return;
     }
+    modelindex detach("c_t8_zmb_blightfather_eggsack1_both_noreveal");
+    modelindex attach("c_t8_zmb_blightfather_eggsack1_le_noreveal");
 }
 
 // Namespace namespace_6e561646/namespace_33cf6d06

@@ -314,9 +314,9 @@ function function_498e0b1d() {
     self clientfield::set_player_uimodel("hud_items_cranked.crankedMax", 30);
     if (isdefined(self.var_313fc9f2) && self.var_313fc9f2 > 0) {
         self clientfield::set_player_uimodel("hud_items_cranked.crankedPct", min(1, self.var_313fc9f2 / 30));
-    } else {
-        self clientfield::set_player_uimodel("hud_items_cranked.crankedPct", 0);
+        return;
     }
+    self clientfield::set_player_uimodel("hud_items_cranked.crankedPct", 0);
 }
 
 // Namespace namespace_8f42c328/namespace_8f42c328
@@ -424,9 +424,9 @@ function private function_b50524c8() {
             while (self.var_86596c20 === 1 || isdefined(self.usingremote)) {
                 if (self.var_86596c20 === 1) {
                     self waittill(#"hash_5b9b8c65f4533a35");
-                } else {
-                    wait(0.1);
+                    continue;
                 }
+                wait(0.1);
             }
             waittime = self.var_313fc9f2 - int(self.var_313fc9f2);
             if (waittime > 0) {

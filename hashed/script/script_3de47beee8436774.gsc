@@ -288,7 +288,7 @@ function function_8feeb0be() {
         var_53bb8ef2.var_cfa81957 = lerpfloat(var_c62824cc, var_be81a997, n_percent);
         self function_e7152de8();
         if (n_percent >= 1) {
-            break;
+            return;
         }
         waitframe(1);
     }
@@ -652,9 +652,9 @@ function function_d380c058() {
     if (isdefined(level.var_3ff4669d)) {
         level namespace_b7cfe907::function_3af72756(level.var_7466d419, level.var_3ff4669d, "crew");
         level.var_3ff4669d thread namespace_b7cfe907::function_1f7fdfdb();
-    } else {
-        namespace_b7cfe907::function_ed68628c(0, tele, 1);
+        return;
     }
+    namespace_b7cfe907::function_ed68628c(0, tele, 1);
 }
 
 // Namespace armada_mortar/namespace_e6855491
@@ -1056,25 +1056,25 @@ function function_ba67d417(s_anchor) {
     switch (s_anchor.script_int) {
     case 0:
         self thread function_f1b25856(s_anchor, 0);
-        break;
+        return;
     case 1:
-        break;
+        return;
     case 2:
         self thread function_f1b25856(s_anchor, 1);
-        break;
+        return;
     case 3:
         self thread function_f1b25856(s_anchor, 1);
-        break;
+        return;
     case 4:
-        break;
+        return;
     case 5:
         self thread function_f1b25856(s_anchor, 1);
-        break;
+        return;
     case 6:
         self thread function_f1b25856(s_anchor, 1);
-        break;
+        return;
     default:
-        break;
+        return;
     }
 }
 
@@ -1253,15 +1253,15 @@ function function_82ba400e(s_target) {
     a_ai_enemies = getaiteamarray(#"axis");
     foreach (e_enemy in a_ai_enemies) {
         if (is_true(e_enemy.var_99b46f13)) {
-            var_2c69cac3 = e_enemy;
+            e_target_1 = e_enemy;
             break;
         }
     }
-    if (!isdefined(var_2c69cac3)) {
-        var_2c69cac3 = function_67565f43(1);
+    if (!isdefined(e_target_1)) {
+        e_target_1 = function_67565f43(1);
     }
-    if (isdefined(var_2c69cac3)) {
-        self thread function_8060162f(var_2c69cac3.origin, 1);
+    if (isdefined(e_target_1)) {
+        self thread function_8060162f(e_target_1.origin, 1);
     }
 }
 
@@ -1887,14 +1887,14 @@ function function_7f4a10e5() {
     self thread function_119bac80(waitresult.attacker);
     if (waitresult._notify == "damage") {
         level thread scene::play(#"hash_2b1584529efce6e9", "death", self);
-    } else {
-        level thread scene::stop(#"hash_2b1584529efce6e9");
-        if (isalive(self)) {
-            util::stop_magic_bullet_shield(self);
-            self.allowdeath = 1;
-            self.a.nodeath = 0;
-            self.skipdeath = 0;
-        }
+        return;
+    }
+    level thread scene::stop(#"hash_2b1584529efce6e9");
+    if (isalive(self)) {
+        util::stop_magic_bullet_shield(self);
+        self.allowdeath = 1;
+        self.a.nodeath = 0;
+        self.skipdeath = 0;
     }
 }
 
@@ -2071,14 +2071,17 @@ function function_e12e064f() {
     self thread function_119bac80(waitresult.attacker);
     self scene::stop();
     if (isdefined(waitresult.weapon) && isdefined(waitresult.attacker)) {
-        jumpiffalse(waitresult.weapon.weapclass === "spread" && distance2dsquared(self.origin, waitresult.attacker.origin) < function_a3f6cdac(300) && !isdefined(self.var_724e738)) LOC_000001a6;
-        self.a.nodeath = 1;
-        self.skipdeath = 1;
-        self.var_b0587b14 = 1;
-        self thread scene::play(#"hash_28a87063776ee7d0", "death", self);
-        self waittill(#"hash_2491f09933c1ede5");
-        physicsexplosionsphere(self.origin, 300, 0, 0.5, 0, 0);
-    } else if (isalive(self)) {
+        if (waitresult.weapon.weapclass === "spread" && distance2dsquared(self.origin, waitresult.attacker.origin) < function_a3f6cdac(300) && !isdefined(self.var_724e738)) {
+            self.a.nodeath = 1;
+            self.skipdeath = 1;
+            self.var_b0587b14 = 1;
+            self thread scene::play(#"hash_28a87063776ee7d0", "death", self);
+            self waittill(#"hash_2491f09933c1ede5");
+            physicsexplosionsphere(self.origin, 300, 0, 0.5, 0, 0);
+            return;
+        }
+    }
+    if (isalive(self)) {
         self util::stop_magic_bullet_shield();
         self kill();
     }
@@ -2094,7 +2097,7 @@ function function_c1a89a46() {
     while (1) {
         ai_enemy = spawner::simple_spawn_single("vign_cust_arm_door_roll_entr_01_guy", &function_5e509636);
         if (isdefined(ai_enemy)) {
-            break;
+            return;
         }
         waitframe(1);
     }
@@ -2453,10 +2456,10 @@ function function_ad03d12c(b_used) {
     if (b_used) {
         level flag::wait_till("flag_mortar_mg_turret_in_use");
         level flag::clear("flag_mortar_mg_turret_not_in_use");
-    } else {
-        level flag::wait_till("flag_mortar_mg_turret_not_in_use");
-        level flag::clear("flag_mortar_mg_turret_in_use");
+        return;
     }
+    level flag::wait_till("flag_mortar_mg_turret_not_in_use");
+    level flag::clear("flag_mortar_mg_turret_in_use");
 }
 
 // Namespace armada_mortar/namespace_e6855491
@@ -2613,12 +2616,12 @@ function function_110866d(var_e37d454 = 0) {
     a_ents[#"hash_2d41ab02b7fbc2b8"] = getent("mortar_bunker_door", "targetname");
     if (var_e37d454) {
         level scene::init(#"hash_604c13090504ecb1", a_ents);
-    } else {
-        level thread scene::play(#"hash_604c13090504ecb1", "open_door", a_ents);
-        level waittill(#"hash_688abb2ff6189b0b");
-        level.player setmovespeedscale(0.43);
-        level.player util::function_749362d7(1);
+        return;
     }
+    level thread scene::play(#"hash_604c13090504ecb1", "open_door", a_ents);
+    level waittill(#"hash_688abb2ff6189b0b");
+    level.player setmovespeedscale(0.43);
+    level.player util::function_749362d7(1);
 }
 
 // Namespace armada_mortar/namespace_e6855491
@@ -2661,14 +2664,14 @@ function function_a1de7ea2(var_e37d454 = 0) {
     if (var_e37d454) {
         level scene::add_scene_func(#"hash_7d15d57d22684df", &function_cd1dcfed, "sims_exit");
         level scene::init(#"hash_7d15d57d22684df", a_ents);
-    } else {
-        level scene::stop(#"hash_5705e398ad93ac99");
-        level flag::set("flag_start_mv_intell_collect_scene");
-        level flag::set("flag_enable_mortar_exfil_color_chain");
-        level thread scene::play(#"hash_7d15d57d22684df", "sims_exit", a_ents);
-        level waittill(#"hash_75b0c983ee63db5");
-        level thread function_262e8906();
+        return;
     }
+    level scene::stop(#"hash_5705e398ad93ac99");
+    level flag::set("flag_start_mv_intell_collect_scene");
+    level flag::set("flag_enable_mortar_exfil_color_chain");
+    level thread scene::play(#"hash_7d15d57d22684df", "sims_exit", a_ents);
+    level waittill(#"hash_75b0c983ee63db5");
+    level thread function_262e8906();
 }
 
 // Namespace armada_mortar/namespace_e6855491
@@ -3282,47 +3285,47 @@ function function_1df2273d(*destructible_event, attacker, *weapon, *piece_index,
         level scene::play(#"hash_7d136efada0c9af0");
         showmiscmodels("p9_fxanim_cp_armada_town_bldg_06_01_static_mod");
         level function_97bcc0e9(#"hash_7d136efada0c9af0");
-        break;
+        return;
     case #"hash_ca1368592862468":
         level scene::play(#"hash_72f8f56116f32b17");
         showmiscmodels("p9_fxanim_cp_armada_town_bldg_06_02_static_mod");
         level function_97bcc0e9(#"hash_72f8f56116f32b17");
-        break;
+        return;
     case #"hash_ca137859286261b":
         level scene::play(#"hash_35db7f3d2c472306");
         showmiscmodels("p9_fxanim_cp_armada_town_bldg_06_03_static_mod");
         level function_97bcc0e9(#"hash_35db7f3d2c472306");
-        break;
+        return;
     case #"hash_65f4d60588e2b888":
         level scene::play(#"hash_5e055056aa386e1f");
         showmiscmodels("p9_fxanim_cp_armada_town_bldg_14_01_static_mod");
         level function_97bcc0e9(#"hash_5e055056aa386e1f");
-        break;
+        return;
     case #"hash_65f4d90588e2bda1":
         level scene::play(#"hash_6c7177a6718884b8");
         showmiscmodels("p9_fxanim_cp_armada_town_bldg_14_02_static_mod");
         level function_97bcc0e9(#"hash_6c7177a6718884b8");
-        break;
+        return;
     case #"hash_65f4d80588e2bbee":
         level scene::play(#"hash_1fb12697821542a1");
         showmiscmodels("p9_fxanim_cp_armada_town_bldg_14_03_static_mod");
         level function_97bcc0e9(#"hash_1fb12697821542a1");
-        break;
+        return;
     case #"hash_65f4db0588e2c107":
         level scene::play(#"hash_1464d638ee5e23aa");
         showmiscmodels("p9_fxanim_cp_armada_town_bldg_14_04_static_mod");
         level function_97bcc0e9(#"hash_1464d638ee5e23aa");
-        break;
+        return;
     case #"hash_27d72049793f0ba2":
         level scene::play(#"hash_1849fb3a90d16a1");
         showmiscmodels("p9_fxanim_cp_armada_town_court_01_static_mod");
         level function_97bcc0e9(#"hash_1849fb3a90d16a1");
-        break;
+        return;
     case #"hash_27d71f49793f09ef":
         level scene::play(#"hash_60671afc06cb038e");
         showmiscmodels("p9_fxanim_cp_armada_town_court_02_static_mod");
         level function_97bcc0e9(#"hash_60671afc06cb038e");
-        break;
+        return;
     }
 }
 

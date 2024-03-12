@@ -67,13 +67,13 @@ function function_5521aa1c(localclientnum) {
                 }
             }
             wait(0.1);
-        } else {
-            while (soundplaying(level.doa.var_57e2aa98)) {
-                wait(0.2);
-            }
-            level.doa.var_57e2aa98 = undefined;
-            wait(1.2);
+            continue;
         }
+        while (soundplaying(level.doa.var_57e2aa98)) {
+            wait(0.2);
+        }
+        level.doa.var_57e2aa98 = undefined;
+        wait(1.2);
     }
 }
 
@@ -126,18 +126,18 @@ function function_b9918ac7(localclientnum, *oldval, newval, *bnewent, *binitials
     }
     if (var_971e1071 == 15) {
         announce(fieldname, var_fa5e0d11);
-    } else {
-        players = getlocalplayers();
-        foreach (player in players) {
-            if (!isdefined(player.entnum)) {
-                continue;
-            }
-            var_a10d0ff1 = 1 << player.entnum;
-            if (var_a10d0ff1 & var_971e1071 == 0) {
-                continue;
-            }
-            announce(fieldname, var_fa5e0d11);
+        return;
+    }
+    players = getlocalplayers();
+    foreach (player in players) {
+        if (!isdefined(player.entnum)) {
+            continue;
         }
+        var_a10d0ff1 = 1 << player.entnum;
+        if (var_a10d0ff1 & var_971e1071 == 0) {
+            continue;
+        }
+        announce(fieldname, var_fa5e0d11);
     }
 }
 
@@ -166,9 +166,9 @@ function function_a77649db(onoff, str_name) {
     if (is_true(onoff)) {
         level.var_1d1399b = level.var_5d4c7696;
         function_30f7911(2, str_name);
-    } else {
-        function_f2198fe(level.var_1d1399b);
+        return;
     }
+    function_f2198fe(level.var_1d1399b);
 }
 
 // Namespace namespace_9fc66ac/namespace_9fc66ac
@@ -199,17 +199,17 @@ function function_65fcd877() {
     switch (level.doa.world_state) {
     case 0:
         var_9e5a6c0d = 1;
-        break;
+        return;
     case 4:
         function_30f7911(4);
         function_319e479e();
-        break;
+        return;
     case 5:
         function_30f7911(5);
-        break;
+        return;
     case 1:
         function_30f7911(1);
-        break;
+        return;
     }
 }
 

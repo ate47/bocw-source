@@ -29,9 +29,9 @@ function on_pulsed_change(localclientnum, oldval, newval, *bnewent, *binitialsna
     localplayer = function_5c10bd79(binitialsnap);
     if (bwastimejump == 1) {
         self start_pulse_effects(localplayer);
-    } else {
-        self stop_pulse_effects(localplayer, fieldname);
+        return;
     }
+    self stop_pulse_effects(localplayer, fieldname);
 }
 
 // Namespace status_effect_pulse/status_effect_pulse

@@ -175,8 +175,7 @@ function private function_1cbc22b0(weapon, n_radius) {
     /#
         level thread function_da2298bc();
     #/
-    n_timer = 0;
-    while (n_timer <= var_3889eb68.n_duration) {
+    for (n_timer = 0; n_timer <= var_3889eb68.n_duration; n_timer = n_timer + 1) {
         if (var_3889eb68.var_5e3cceb9) {
             if (isdefined(self)) {
                 a_ai = self getenemiesinradius(var_3889eb68.origin, n_radius);
@@ -197,7 +196,6 @@ function private function_1cbc22b0(weapon, n_radius) {
             }
         }
         wait(1);
-        n_timer = n_timer + 1;
     }
     if (isplayer(self)) {
         self flag::decrement("zm_field_upgrade_in_use");
@@ -227,7 +225,9 @@ function private function_64a3f9c6(var_dfbbc9a0 = 0, var_feefd408 = 0, var_cf53a
                 if (self.owner === player) {
                     player.var_a25e160d = 0;
                 }
-            } else if (isinarray(player.var_d93ab65, self) && !function_baaff75b(self, player)) {
+                continue;
+            }
+            if (isinarray(player.var_d93ab65, self) && !function_baaff75b(self, player)) {
                 arrayremovevalue(player.var_d93ab65, self);
                 if (self.owner === player) {
                     player.var_a25e160d = undefined;
@@ -245,7 +245,9 @@ function private function_64a3f9c6(var_dfbbc9a0 = 0, var_feefd408 = 0, var_cf53a
             if (!is_true(ai.var_25e2200c) && function_ca26e871(ai)) {
                 ai clientfield::increment("" + #"hash_717ed5a81b281ebd", 1);
                 ai.var_25e2200c = 1;
-            } else if (is_true(ai.var_25e2200c) && !function_ca26e871(ai)) {
+                continue;
+            }
+            if (is_true(ai.var_25e2200c) && !function_ca26e871(ai)) {
                 ai.var_25e2200c = undefined;
             }
         }
@@ -286,7 +288,9 @@ function private function_64a3f9c6(var_dfbbc9a0 = 0, var_feefd408 = 0, var_cf53a
                     if (!player perks::perk_hasperk(#"specialty_ammodrainsfromstockfirst")) {
                         player perks::perk_setperk(#"specialty_ammodrainsfromstockfirst");
                     }
-                } else if (player perks::perk_hasperk(#"specialty_ammodrainsfromstockfirst")) {
+                    continue;
+                }
+                if (player perks::perk_hasperk(#"specialty_ammodrainsfromstockfirst")) {
                     player perks::perk_unsetperk(#"specialty_ammodrainsfromstockfirst");
                 }
             }

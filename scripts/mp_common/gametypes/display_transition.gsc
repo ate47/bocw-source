@@ -163,7 +163,9 @@ function private function_91b514e8(menuname) {
             if (menu == menuname) {
                 return;
             }
-        } else if (menu == "GameEndScoreMenu") {
+            continue;
+        }
+        if (menu == "GameEndScoreMenu") {
             return;
         }
     }
@@ -183,14 +185,16 @@ function function_61d01718(transitions, lui_event) {
         player function_b797319e(lui_event, index + 1);
         if ((isdefined(transition.time) ? transition.time : 0) != 0) {
             round_end_wait(float(transition.time) / 1000);
-        } else if ((isdefined(transition.var_bda115b5) ? transition.var_bda115b5 : 0) != 0) {
+            continue;
+        }
+        if ((isdefined(transition.var_bda115b5) ? transition.var_bda115b5 : 0) != 0) {
             self function_a5ce91f1(1);
             self thread function_c6f81aa1(float(transition.var_f4df0630) / 1000);
             player function_91b514e8(transition.menuresponse);
             self function_a5ce91f1(0);
-        } else {
-            player function_91b514e8(transition.menuresponse);
+            continue;
         }
+        player function_91b514e8(transition.menuresponse);
     }
 }
 
@@ -468,9 +472,9 @@ function private function_4029edc0(*transition, outcome) {
     globallogic::function_452e18ad();
     if (outcome.var_c1e98979 == 6) {
         killcam::post_round_final_killcam();
-    } else {
-        potm::post_round_potm();
+        return;
     }
+    potm::post_round_potm();
 }
 
 // Namespace display_transition/display_transition
@@ -480,9 +484,8 @@ function private function_4029edc0(*transition, outcome) {
 function private function_7285f7e1(e1, e2, b_lowest_first = 0) {
     if (b_lowest_first) {
         return (e1.score <= e2.score);
-    } else {
-        return (e1.score > e2.score);
     }
+    return e1.score > e2.score;
 }
 
 // Namespace display_transition/display_transition
@@ -532,9 +535,9 @@ function private function_51bb7ed5(*transition, *outcome) {
     globallogic::function_452e18ad();
     if (sessionmodeiswarzonegame()) {
         namespace_98521e8b::function_d6b2318a();
-    } else {
-        namespace_98521e8b::function_f7961c39();
+        return;
     }
+    namespace_98521e8b::function_f7961c39();
 }
 
 // Namespace display_transition/display_transition

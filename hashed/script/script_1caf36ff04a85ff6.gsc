@@ -353,7 +353,9 @@ function function_ca5531a5(inventory, var_a6762160, item, itemtype, var_310b4dff
         }
         if (inventory.items[slotid].networkid == 32767 || inventory.items[slotid].count <= 0) {
             var_efc570b5 = slotid;
-        } else if (function_73593286(inventory.items[slotid].var_a6762160, var_a6762160)) {
+            continue;
+        }
+        if (function_73593286(inventory.items[slotid].var_a6762160, var_a6762160)) {
             var_efc570b5 = undefined;
             break;
         }

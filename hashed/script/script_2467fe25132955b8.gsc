@@ -161,35 +161,35 @@ function function_6736205c(var_638b775a = 0) {
                     var_2b1ad45b = 1;
                     zombie callback::callback(#"hash_7f690ab86160d4f6");
                     util::wait_network_frame();
-                    jumpiftrue(isalive(zombie)) LOC_000007c0;
-                } else {
-                LOC_000007c0:
-                    if (var_638b775a == 0) {
-                        zombie clientfield::set("fx_frost_blast_clientfield", 1);
-                    } else {
-                        zombie clientfield::set("fx_frost_blast_clientfield", var_638b775a);
+                    if (!isalive(zombie)) {
+                        continue;
                     }
-                    if (var_638b775a >= 3 && zombie.var_6f84b820 === #"special" || zombie.var_6f84b820 === #"normal" || zombie.archetype === #"zombie_dog") {
-                        self stats::function_622feb0d(#"frost_blast", #"hash_485f780a2a3da36a", 1);
-                        zombie thread namespace_9ff9f642::slowdown(slowdown);
-                        zombie.var_958cf9c5 = 1;
-                        zombie.var_991315b5 = self;
-                        if (var_638b775a == 5 && var_2b1ad45b) {
-                            if (zombie.var_6f84b820 === #"normal" || zombie.archetype === #"zombie_dog") {
-                                zombie damagemode("next_shot_kills");
-                            }
-                        }
-                        zombie thread function_e287f5c2(duration, var_638b775a);
-                    }
-                    waitframe(1);
                 }
+                if (var_638b775a == 0) {
+                    zombie clientfield::set("fx_frost_blast_clientfield", 1);
+                } else {
+                    zombie clientfield::set("fx_frost_blast_clientfield", var_638b775a);
+                }
+                if (var_638b775a >= 3 && zombie.var_6f84b820 === #"special" || zombie.var_6f84b820 === #"normal" || zombie.archetype === #"zombie_dog") {
+                    self stats::function_622feb0d(#"frost_blast", #"hash_485f780a2a3da36a", 1);
+                    zombie thread namespace_9ff9f642::slowdown(slowdown);
+                    zombie.var_958cf9c5 = 1;
+                    zombie.var_991315b5 = self;
+                    if (var_638b775a == 5 && var_2b1ad45b) {
+                        if (zombie.var_6f84b820 === #"normal" || zombie.archetype === #"zombie_dog") {
+                            zombie damagemode("next_shot_kills");
+                        }
+                    }
+                    zombie thread function_e287f5c2(duration, var_638b775a);
+                }
+                waitframe(1);
             }
         }
         if (var_638b775a >= 1) {
             wait(0.2);
-        } else {
-            return;
+            continue;
         }
+        return;
     }
 }
 
@@ -276,8 +276,8 @@ function function_e287f5c2(duration, var_638b775a) {
 function function_93765018(var_638b775a) {
     if (var_638b775a < 5) {
         self namespace_9ff9f642::function_520f4da5(#"frost_blast");
-    } else {
-        self namespace_9ff9f642::function_520f4da5(#"frost_blast_5");
+        return;
     }
+    self namespace_9ff9f642::function_520f4da5(#"frost_blast_5");
 }
 

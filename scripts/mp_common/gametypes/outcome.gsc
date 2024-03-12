@@ -151,9 +151,9 @@ function set_winner(outcome, team_or_player) {
     if (isplayer(team_or_player)) {
         outcome.players[outcome.players.size] = team_or_player;
         outcome.team = team_or_player.team;
-    } else {
-        outcome.team = team_or_player;
+        return;
     }
+    outcome.team = team_or_player;
 }
 
 // Namespace outcome/outcome
@@ -163,9 +163,9 @@ function set_winner(outcome, team_or_player) {
 function function_af2e264f(outcome, winner) {
     if (isdefined(winner)) {
         set_winner(outcome, winner);
-    } else {
-        set_flag(outcome, "tie");
+        return;
     }
+    set_flag(outcome, "tie");
 }
 
 // Namespace outcome/outcome

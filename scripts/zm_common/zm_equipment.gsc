@@ -93,8 +93,7 @@ function function_f1e8c2f7() {
     level.var_df2ed8a5 = [];
     var_4ef031c9 = #"hash_684fbceddd1aace2";
     index = 0;
-    row = tablelookuprow(var_4ef031c9, index);
-    while (isdefined(row)) {
+    for (row = tablelookuprow(var_4ef031c9, index); isdefined(row); row = tablelookuprow(var_4ef031c9, index)) {
         weapon_name = checkstringvalid(row[0]);
         var_68b4c58a = spawnstruct();
         var_68b4c58a.var_4321cafd = [];
@@ -131,7 +130,6 @@ function function_f1e8c2f7() {
         }
         level.var_df2ed8a5[weapon_name] = var_68b4c58a;
         index++;
-        row = tablelookuprow(var_4ef031c9, index);
     }
 }
 
@@ -150,11 +148,11 @@ function function_dfaf0bad() {
                 self.var_6489500a = gettime();
             }
         }
-    } else {
-        self show_hint_text(#"hash_46304d37db90bf5b");
-        if (isplayer(self)) {
-            self.var_6489500a = gettime();
-        }
+        return;
+    }
+    self show_hint_text(#"hash_46304d37db90bf5b");
+    if (isplayer(self)) {
+        self.var_6489500a = gettime();
     }
 }
 
@@ -179,53 +177,53 @@ function abilities_devgui_add_gadgets_custom(*root, pname, pid, menu_index) {
         arrayinsert(a_abilities, getweapon(#"tesla_coil"), 0);
         arrayinsert(a_abilities, getweapon(#"tomahawk_t8"), 0);
         function_174037fe(add_cmd_with_root, pid, a_abilities, "<unknown string>", menu_index);
-        var_ab290760 = [];
-        arrayinsert(var_ab290760, getweapon(#"hero_gravityspikes"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_lightninggun"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_minigun"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_pineapplegun"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_chemicalgelgun"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_bowlauncher"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_armblade"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_annihilator"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_flamethrower"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_chakram_lv1"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_chakram_lv2"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_chakram_lv3"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_hammer_lv1"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_hammer_lv2"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_hammer_lv3"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_scepter_lv1"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_scepter_lv2"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_scepter_lv3"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_sword_pistol_lv1"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_sword_pistol_lv2"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_sword_pistol_lv3"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_chakram_lv1"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_chakram_lv2"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_chakram_lv3"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_hammer_lv1"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_hammer_lv2"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_hammer_lv3"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_scepter_lv1"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_scepter_lv2"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_scepter_lv3"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_sword_pistol_lv1"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_sword_pistol_lv2"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_sword_pistol_lv3"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_flamethrower_t8_lv1"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_flamethrower_t8_lv2"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_flamethrower_t8_lv3"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_gravityspikes_t8_lv1"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_gravityspikes_t8_lv2"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_gravityspikes_t8_lv3"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_katana_t8_lv1"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_katana_t8_lv2"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_katana_t8_lv3"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_minigun_t8_lv1"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_minigun_t8_lv2"), 0);
-        arrayinsert(var_ab290760, getweapon(#"hero_minigun_t8_lv3"), 0);
-        function_a40d04ca(add_cmd_with_root, pid, var_ab290760, "<unknown string>", menu_index);
+        a_hero_weapons = [];
+        arrayinsert(a_hero_weapons, getweapon(#"hero_gravityspikes"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_lightninggun"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_minigun"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_pineapplegun"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_chemicalgelgun"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_bowlauncher"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_armblade"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_annihilator"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_flamethrower"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_chakram_lv1"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_chakram_lv2"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_chakram_lv3"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_hammer_lv1"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_hammer_lv2"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_hammer_lv3"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_scepter_lv1"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_scepter_lv2"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_scepter_lv3"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_sword_pistol_lv1"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_sword_pistol_lv2"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_sword_pistol_lv3"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_chakram_lv1"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_chakram_lv2"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_chakram_lv3"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_hammer_lv1"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_hammer_lv2"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_hammer_lv3"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_scepter_lv1"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_scepter_lv2"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_scepter_lv3"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_sword_pistol_lv1"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_sword_pistol_lv2"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_sword_pistol_lv3"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_flamethrower_t8_lv1"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_flamethrower_t8_lv2"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_flamethrower_t8_lv3"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_gravityspikes_t8_lv1"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_gravityspikes_t8_lv2"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_gravityspikes_t8_lv3"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_katana_t8_lv1"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_katana_t8_lv2"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_katana_t8_lv3"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_minigun_t8_lv1"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_minigun_t8_lv2"), 0);
+        arrayinsert(a_hero_weapons, getweapon(#"hero_minigun_t8_lv3"), 0);
+        function_a40d04ca(add_cmd_with_root, pid, a_hero_weapons, "<unknown string>", menu_index);
         menu_index++;
         menu_index = abilities_devgui_add_power(add_cmd_with_root, pid, menu_index);
         menu_index = function_2e0162e9(add_cmd_with_root, pid, menu_index);
@@ -331,9 +329,9 @@ function limit(equipment_name, limited) {
     }
     if (limited) {
         level._limited_equipment[level._limited_equipment.size] = getweapon(equipment_name);
-    } else {
-        arrayremovevalue(level._limited_equipment, getweapon(equipment_name), 0);
+        return;
     }
+    arrayremovevalue(level._limited_equipment, getweapon(equipment_name), 0);
 }
 
 // Namespace zm_equipment/zm_equipment
@@ -421,7 +419,9 @@ function equipment_spawn_think() {
         player = waitresult.activator;
         if (player zm_utility::in_revive_trigger() || player zm_utility::is_drinking()) {
             wait(0.1);
-        } else if (!is_limited(self.equipment) || !limited_in_use(self.equipment)) {
+            continue;
+        }
+        if (!is_limited(self.equipment) || !limited_in_use(self.equipment)) {
             if (is_limited(self.equipment)) {
                 player setup_limited(self.equipment);
                 if (isdefined(level.hacker_tool_positions)) {
@@ -433,9 +433,9 @@ function equipment_spawn_think() {
                 }
             }
             player give(self.equipment);
-        } else {
-            wait(0.1);
+            continue;
         }
+        wait(0.1);
     }
 }
 
@@ -583,10 +583,14 @@ function slot_watcher(equipment) {
         }
         if (isdefined(level.a_func_equipment_slot_watcher_override[equipment.name])) {
             self [[ level.a_func_equipment_slot_watcher_override[equipment.name] ]](equipment, curr_weapon, prev_weapon, notify_strings);
-        } else if (curr_weapon == equipment && !self.current_equipment_active[equipment]) {
+            continue;
+        }
+        if (curr_weapon == equipment && !self.current_equipment_active[equipment]) {
             self notify(notify_strings.activate);
             self.current_equipment_active[equipment] = 1;
-        } else if (curr_weapon != equipment && self.current_equipment_active[equipment]) {
+            continue;
+        }
+        if (curr_weapon != equipment && self.current_equipment_active[equipment]) {
             self notify(notify_strings.deactivate);
             self.current_equipment_active[equipment] = 0;
         }
@@ -716,9 +720,9 @@ function setup_client_hintelem(ypos, font_scale) {
             } else {
                 self.hintelem init_hint_hudelem(160, 90, "<unknown string>", "<unknown string>", font_scale, 1);
             }
-        } else {
-            self.hintelem init_hint_hudelem(320, ypos, "<unknown string>", "<unknown string>", font_scale, 1);
+            return;
         }
+        self.hintelem init_hint_hudelem(320, ypos, "<unknown string>", "<unknown string>", font_scale, 1);
     #/
 }
 
@@ -952,7 +956,6 @@ function function_7d948481(n_boss = 0.1, var_5765a72a = 0.25, var_d5866834 = 0.5
         return var_d5866834;
     default:
         return n_basic;
-        break;
     }
 }
 
@@ -1073,7 +1076,9 @@ function function_e418901e() {
                 foreach (player in getplayers()) {
                     if (equipment_id == "<unknown string>") {
                         player take();
-                    } else if (is_included(equipment_id)) {
+                        continue;
+                    }
+                    if (is_included(equipment_id)) {
                         player buy(equipment_id);
                     }
                 }

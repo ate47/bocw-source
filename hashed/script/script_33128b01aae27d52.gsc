@@ -20,7 +20,7 @@ function init() {
         for (var_36f009bd = 0; 1; var_36f009bd++) {
             shot = struct::get("podium_camera_shot" + var_36f009bd);
             if (!isdefined(shot)) {
-                break;
+                return;
             }
             args = strtok(shot.script_parameters, ";");
             /#

@@ -57,7 +57,9 @@ function private event_handler[change_seat] function_63d4043f(eventstruct) {
                 eventstruct.vehicle function_fe45d0ae();
                 self function_afb0648d(eventstruct.vehicle);
             }
-        } else if (eventstruct.old_seat_index == 0 || isdefined(eventstruct.vehicle.var_260e3593) && eventstruct.vehicle.var_260e3593 == eventstruct.old_seat_index) {
+            return;
+        }
+        if (eventstruct.old_seat_index == 0 || isdefined(eventstruct.vehicle.var_260e3593) && eventstruct.vehicle.var_260e3593 == eventstruct.old_seat_index) {
             if (!(eventstruct.seat_index == 0 || isdefined(eventstruct.vehicle.var_260e3593) && eventstruct.vehicle.var_260e3593 == eventstruct.seat_index)) {
                 eventstruct.vehicle function_982d5b1();
             }
@@ -81,9 +83,9 @@ function private event_handler[event_35559816] function_35559816(eventstruct) {
     if (isvehicle(eventstruct.vehicle)) {
         if (isdefined(eventstruct.vehicle.battletrack_active)) {
             eventstruct.vehicle function_fe45d0ae();
-        } else {
-            self function_afb0648d(eventstruct.vehicle);
+            return;
         }
+        self function_afb0648d(eventstruct.vehicle);
     }
 }
 

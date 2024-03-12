@@ -103,9 +103,8 @@ function private function_7f405e5e(entity) {
     e_enemy = entity.favoriteenemy;
     if (isplayer(e_enemy) && e_enemy flag::get_any([1:#"hash_1b361b950317ecb5", 0:#"hash_686d5709e1566aa6"])) {
         return;
-    } else {
-        entity zm_behavior::zombiefindflesh(entity);
     }
+    entity zm_behavior::zombiefindflesh(entity);
 }
 
 // Namespace namespace_6f90aa12/namespace_6f90aa12
@@ -269,16 +268,12 @@ function function_33485c02() {
     switch (n_player_count) {
     case 1:
         return 1;
-        break;
     case 2:
         return 2;
-        break;
     case 3:
         return 3;
-        break;
     case 4:
         return 4;
-        break;
     }
     return 1;
 }
@@ -357,9 +352,9 @@ function function_5e8a178a(*n_round_number) {
             n_player_count = zm_utility::function_a2541519(getplayers().size);
             if (n_player_count == 1) {
                 level.var_1db9948 = level.round_number + randomintrangeinclusive(3, 5);
-            } else {
-                level.var_1db9948 = level.round_number + randomintrangeinclusive(3, 4);
+                continue;
             }
+            level.var_1db9948 = level.round_number + randomintrangeinclusive(3, 4);
         }
     }
 }

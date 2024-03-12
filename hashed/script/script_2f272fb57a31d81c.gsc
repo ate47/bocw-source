@@ -67,7 +67,9 @@ function function_c1c49ac7(localclientnum, *oldval, newval, *bnewent, *binitials
     }
     if (bwastimejump == 1) {
         self.var_37e84ddb = playtagfxset(fieldname, self.weapon.var_96850284, self);
-    } else if (isdefined(self.var_37e84ddb)) {
+        return;
+    }
+    if (isdefined(self.var_37e84ddb)) {
         foreach (fx in self.var_37e84ddb) {
             stopfx(fieldname, fx);
         }

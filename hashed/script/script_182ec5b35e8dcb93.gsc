@@ -134,7 +134,9 @@ function function_911b2ccd(localclientnum, *oldval, newval, *bnewent, *binitials
             stopfx(fieldname, self.var_d85437d9);
         }
         function_4df8409a(fieldname, self);
-    } else if (bwastimejump == 2) {
+        return;
+    }
+    if (bwastimejump == 2) {
         self stoprenderoverridebundle(#"hash_7ea5a307c8e67de5");
     }
 }
@@ -167,17 +169,17 @@ function function_2f78a02(localclientnum, *oldval, newval, *bnewent, *binitialsn
                 }
             }
         }
-    } else {
-        if (isdefined(self.var_73ef2da4)) {
-            stopfx(fieldname, self.var_73ef2da4);
-            self stoprenderoverridebundle("rob_zm_eyes_red", "j_head");
-            self.var_73ef2da4 = undefined;
-            self stoploopsound(self.var_abab51d);
-        }
-        if (isdefined(self.var_2902afa2)) {
-            stopfx(fieldname, self.var_2902afa2);
-            self.var_2902afa2 = undefined;
-        }
+        return;
+    }
+    if (isdefined(self.var_73ef2da4)) {
+        stopfx(fieldname, self.var_73ef2da4);
+        self stoprenderoverridebundle("rob_zm_eyes_red", "j_head");
+        self.var_73ef2da4 = undefined;
+        self stoploopsound(self.var_abab51d);
+    }
+    if (isdefined(self.var_2902afa2)) {
+        stopfx(fieldname, self.var_2902afa2);
+        self.var_2902afa2 = undefined;
     }
 }
 
@@ -195,7 +197,9 @@ function function_5371f7c0(localclientnum, *oldval, newval, *bnewent, *binitials
                 }
             }
         }
-    } else if (isdefined(self.var_a4bce1b8)) {
+        return;
+    }
+    if (isdefined(self.var_a4bce1b8)) {
         stopfx(fieldname, self.var_a4bce1b8);
         self.var_a4bce1b8 = undefined;
     }
@@ -216,7 +220,9 @@ function function_5652dbd9(localclientnum, *oldval, newval, *bnewent, *binitials
         self.var_e54c053a = #"hash_5dcba3b7909e1875";
         self playrenderoverridebundle(self.var_e54c053a);
         self.var_d85437d9 = util::playfxontag(fieldname, #"hash_45f8a66512a7a19", self, "tag_fx_head_weakspot");
-    } else if (bwastimejump === 2) {
+        return;
+    }
+    if (bwastimejump === 2) {
         self.var_e54c053a = #"hash_38230a889a981e29";
         self.turned = 1;
         self playrenderoverridebundle(self.var_e54c053a);
@@ -235,7 +241,9 @@ function function_eb1701af(localclientnum, *oldval, newval, *bnewent, *binitials
         self.var_678bc6e2 = #"hash_7ea5a307c8e67de5";
         self playsound(0, #"hash_5e60a3bcdfbb4bfd");
         self playrenderoverridebundle(#"hash_1e377d2a6063925e");
-    } else if (bwastimejump == 2) {
+        return;
+    }
+    if (bwastimejump == 2) {
         if (isdefined(self.var_678bc6e2)) {
             self function_f6e99a8d(self.var_678bc6e2);
         }
@@ -265,14 +273,14 @@ function function_4d8337d3(*localclientnum, *oldval, newval, *bnewent, *binitial
         self postfx::playpostfxbundle(postfx);
         self playsound(0, #"hash_52762fd483a6e3fa");
         self.var_e950e4a8 = self playloopsound(#"hash_48762d210569c49");
-    } else {
-        self postfx::stoppostfxbundle(postfx);
-        if (isdefined(self.var_51dd9721) && !postfx::function_556665f2(self.var_51dd9721)) {
-            postfx::playpostfxbundle(self.var_51dd9721);
-        }
-        self playsound(0, #"hash_4a5adfe85c2cb7da");
-        self stoploopsound(self.var_e950e4a8);
+        return;
     }
+    self postfx::stoppostfxbundle(postfx);
+    if (isdefined(self.var_51dd9721) && !postfx::function_556665f2(self.var_51dd9721)) {
+        postfx::playpostfxbundle(self.var_51dd9721);
+    }
+    self playsound(0, #"hash_4a5adfe85c2cb7da");
+    self stoploopsound(self.var_e950e4a8);
 }
 
 // Namespace namespace_19c99142/namespace_19c99142
@@ -285,7 +293,9 @@ function function_537e9ae2(localclientnum, *oldval, newval, *bnewent, *binitials
         if (isdefined(soa)) {
             level.var_65331992 = soa;
         }
-    } else if (bwastimejump === 2) {
+        return;
+    }
+    if (bwastimejump === 2) {
         var_ae236771 = self getlinkedent();
         if (isdefined(var_ae236771) && isdefined(level.var_65331992)) {
             function_4df8409a(fieldname, level.var_65331992);

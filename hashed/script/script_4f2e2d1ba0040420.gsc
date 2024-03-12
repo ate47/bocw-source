@@ -319,13 +319,12 @@ function private function_31125f54() {
                 player zm_stats::increment_challenge_stat(#"hash_774b3a384fb5ad");
             }
             level notify(#"hash_383cbd169f8d0938", {#b_success:1});
-            break;
-        } else {
-            if (isdefined(level.var_72a3d8bc)) {
-                level thread scene::init_streamer(level.var_72a3d8bc, getplayers(), 0, 0);
-            }
-            break;
+            return;
         }
+        if (isdefined(level.var_72a3d8bc)) {
+            level thread scene::init_streamer(level.var_72a3d8bc, getplayers(), 0, 0);
+        }
+        return;
     }
 }
 
@@ -407,10 +406,10 @@ function function_29430f26(*a_ents, b_enable) {
     if (is_true(b_enable)) {
         showmiscmodels("end_of_level_exfil_outro_igc_props");
         level clientfield::set("" + #"end_of_level_exfil_outro_igc_props", 1);
-    } else {
-        hidemiscmodels("end_of_level_exfil_outro_igc_props");
-        level clientfield::set("" + #"end_of_level_exfil_outro_igc_props", 0);
+        return;
     }
+    hidemiscmodels("end_of_level_exfil_outro_igc_props");
+    level clientfield::set("" + #"end_of_level_exfil_outro_igc_props", 0);
 }
 
 // Namespace namespace_f865255e/namespace_f865255e
@@ -420,9 +419,9 @@ function function_29430f26(*a_ents, b_enable) {
 function function_dd0d40c4(*a_ents, b_enable) {
     if (b_enable) {
         level clientfield::set("" + #"hash_46265c2ce587e427", 1);
-    } else {
-        level clientfield::set("" + #"hash_46265c2ce587e427", 0);
+        return;
     }
+    level clientfield::set("" + #"hash_46265c2ce587e427", 0);
 }
 
 // Namespace namespace_f865255e/namespace_f865255e

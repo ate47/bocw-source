@@ -140,11 +140,13 @@ function zombie_move_speed_override() {
         } else {
             self.zombie_move_speed = "run";
         }
-    } else if (math::cointoss()) {
-        self.zombie_move_speed = "sprint";
-    } else {
-        self.zombie_move_speed = "walk";
+        return;
     }
+    if (math::cointoss()) {
+        self.zombie_move_speed = "sprint";
+        return;
+    }
+    self.zombie_move_speed = "walk";
 }
 
 // Namespace zcranked/zcranked
@@ -306,22 +308,16 @@ function function_ef580a0c(round) {
     switch (round) {
     case 5:
         return 1;
-        break;
     case 10:
         return 1;
-        break;
     case 15:
         return 2;
-        break;
     case 20:
         return 3;
-        break;
     case 25:
         return 4;
-        break;
     default:
         return 5;
-        break;
     }
 }
 
@@ -333,19 +329,14 @@ function function_b03d7dd0(round) {
     switch (round) {
     case 5:
         return 1;
-        break;
     case 10:
         return 2;
-        break;
     case 15:
         return 3;
-        break;
     case 20:
         return 4;
-        break;
     default:
         return 5;
-        break;
     }
 }
 
@@ -409,9 +400,9 @@ function function_74872db6() {
     if (var_e4eea632) {
         playsoundatposition(#"hash_32635012b4632180", (0, 0, 0));
         array::thread_all(getplayers(), &clientfield::set_player_uimodel, "ZMHud.zmCrankedRoundNotification", 1);
-    } else {
-        array::thread_all(getplayers(), &clientfield::set_player_uimodel, "ZMHud.zmCrankedRoundNotification", 0);
+        return;
     }
+    array::thread_all(getplayers(), &clientfield::set_player_uimodel, "ZMHud.zmCrankedRoundNotification", 0);
 }
 
 // Namespace zcranked/zcranked
@@ -479,9 +470,9 @@ function private function_b982cd4d() {
             if (level.round_number > 1 || var_9427911d <= 2) {
                 if (level.round_number == 1 || var_9427911d == 0) {
                     wait(1);
-                } else {
-                    wait(5);
+                    return;
                 }
+                wait(5);
                 return;
             }
         }
@@ -600,9 +591,9 @@ function private function_5d44c2ba(var_d02140db = 0) {
     }
     if (!player flag::get("become_cranked")) {
         player thread function_bbdbb1b6();
-    } else {
-        scoreevents::processscoreevent(#"hash_1655db4904ecaf05", player);
+        return;
     }
+    scoreevents::processscoreevent(#"hash_1655db4904ecaf05", player);
 }
 
 // Namespace zcranked/zcranked

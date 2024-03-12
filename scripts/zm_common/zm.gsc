@@ -762,7 +762,7 @@ function initialblack() {
     }
     do {
         waitframe(1);
-    } while(!self isclientuivisibilityflagset("hud_visible"));
+    } while (!self isclientuivisibilityflagset("hud_visible"));
     val::set(#"initial_black", "hide");
     val::set(#"initial_black", "takedamage", 0);
     val::set(#"initial_black", "ignoreme");
@@ -1560,9 +1560,9 @@ function register_actor_damage_callback(func, var_61bac8c = 0) {
     }
     if (var_61bac8c) {
         array::push_front(level.actor_damage_callbacks, func);
-    } else {
-        level.actor_damage_callbacks[level.actor_damage_callbacks.size] = func;
+        return;
     }
+    level.actor_damage_callbacks[level.actor_damage_callbacks.size] = func;
 }
 
 // Namespace zm/zm
@@ -2008,7 +2008,7 @@ function function_9dd8ba0b(weapon_name) {
     case #"energy_mine_3":
     case #"energy_mine_1":
         self zm_stats::increment_challenge_stat(#"hash_2c0504992b5785f2");
-        break;
+        return;
     }
 }
 
@@ -2038,7 +2038,9 @@ function function_51133aa1() {
         if (response == "restart_level_zm") {
             level thread zm_gametype::zm_map_restart();
             wait(666);
-        } else if (response == "resume_end_game") {
+            continue;
+        }
+        if (response == "resume_end_game") {
             level notify(#"resume_end_game");
         }
     }
@@ -2138,13 +2140,17 @@ function private function_529b6f7d(waitresult) {
 function function_1bcdea84() {
     if (zm_utility::is_survival()) {
         music::setmusicstate("SILENT");
-    } else if (zm_utility::is_tutorial()) {
-        music::setmusicstate("zodt8_death");
-    } else if (isdefined(level.var_f546b995)) {
-        level thread zm_audio::sndmusicsystem_playstate("game_over" + "_" + level.var_f546b995);
-    } else {
-        level thread zm_audio::sndmusicsystem_playstate("game_over");
+        return;
     }
+    if (zm_utility::is_tutorial()) {
+        music::setmusicstate("zodt8_death");
+        return;
+    }
+    if (isdefined(level.var_f546b995)) {
+        level thread zm_audio::sndmusicsystem_playstate("game_over" + "_" + level.var_f546b995);
+        return;
+    }
+    level thread zm_audio::sndmusicsystem_playstate("game_over");
 }
 
 // Namespace zm/zm
@@ -2311,9 +2317,9 @@ function end_game() {
         player zm_stats::function_ae547e45("boas_score", player.score);
         if (isdefined(level.var_211e3a53)) {
             player zm_stats::function_ae547e45("boas_gameType", level.var_211e3a53);
-        } else {
-            player zm_stats::function_ae547e45("boas_gameType", util::get_game_type());
+            continue;
         }
+        player zm_stats::function_ae547e45("boas_gameType", util::get_game_type());
     }
     zm_stats::function_ea5b4947(1, 1);
     if (!zm_utility::is_survival()) {
@@ -2404,7 +2410,7 @@ function check_end_game_intermission_delay() {
     if (isdefined(level.disable_intermission)) {
         while (1) {
             if (!isdefined(level.disable_intermission)) {
-                break;
+                return;
             }
             wait(0.01);
         }
@@ -2519,14 +2525,14 @@ function intermission() {
         level notify(#"play_potm");
         level waittill(#"potm_finished");
         wait(2.25);
-    } else {
-        wait(5.25);
-        players = getplayers();
-        for (i = 0; i < players.size; i++) {
-            players[i] clientfield::set("zmbLastStand", 0);
-        }
-        level thread zombie_game_over_death();
+        return;
     }
+    wait(5.25);
+    players = getplayers();
+    for (i = 0; i < players.size; i++) {
+        players[i] clientfield::set("zmbLastStand", 0);
+    }
+    level thread zombie_game_over_death();
 }
 
 // Namespace zm/zm
@@ -2582,11 +2588,13 @@ function default_exit_level() {
         }
         if (isdefined(zombies[i].find_exit_point)) {
             zombies[i] thread [[ zombies[i].find_exit_point ]]();
-        } else if (zombies[i].ignoreme) {
-            zombies[i] thread default_delayed_exit();
-        } else {
-            zombies[i] thread default_find_exit_point();
+            continue;
         }
+        if (zombies[i].ignoreme) {
+            zombies[i] thread default_delayed_exit();
+            continue;
+        }
+        zombies[i] thread default_find_exit_point();
     }
 }
 
@@ -2915,12 +2923,10 @@ function function_d3113f01(var_bfe774a8) {
         }
         var_ed316a9c = var_3882466d;
         /#
-            col = 1;
-            while (col < 17) {
+            for (col = 1; col < 17; col = col + 1) {
                 if (!isdefined(var_ed316a9c[col])) {
                     println("<unknown string>" + var_bfe774a8 + "<unknown string>" + var_931577c);
                 }
-                col = col + 1;
             }
         #/
         def = 0;
@@ -3130,7 +3136,6 @@ function private function_85ea1f60(item) {
             }
         }
         return 1;
-        break;
     case #"armor":
         if (item.var_a6762160.var_4a1a4613 === #"armor_heal") {
             return (!self function_d87329b7() || !self function_1072c231() || self.armortier < (isdefined(item.var_a6762160.armortier) ? item.var_a6762160.armortier : 1));
@@ -3141,19 +3146,14 @@ function private function_85ea1f60(item) {
     case #"weapon":
     case #"scorestreak":
         return (!self function_ad7bd142(item) && self zm_weapons::function_2bcaec6f(item.var_a6762160.weapon));
-        break;
     case #"survival_ammo":
         return !self function_be26a3f3(item);
-        break;
     case #"survival_armor_shard":
         return !self function_1072c231();
-        break;
     case #"survival_perk":
         return !self function_96184f63(item);
-        break;
     case #"survival_upgrade_item":
         return self zm_weapons::function_106ff01d(item);
-        break;
     case #"equipment":
         lethal = self.inventory.items[7];
         if (lethal.networkid != 32767) {
@@ -3180,7 +3180,6 @@ function private function_85ea1f60(item) {
         break;
     default:
         return 1;
-        break;
     }
     return 1;
 }

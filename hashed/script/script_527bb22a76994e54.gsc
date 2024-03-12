@@ -93,9 +93,9 @@ function function_3fc4da12(var_8ced85ea, var_1789c41) {
     foreach (e in a_ents) {
         if (e.classname == "trigger_multiple") {
             var_f587343a.a_triggers[var_f587343a.a_triggers.size] = e;
-        } else {
-            e show();
+            continue;
         }
+        e show();
     }
     level.player flag::wait_till(level.var_d7d201ba);
     if (isdefined(var_1789c41)) {
@@ -282,10 +282,9 @@ function function_be29d21d(var_f587343a) {
     level thread function_8ce19d62(e_parent, var_4c91fb99);
     if ((isdefined(level.var_f5552371) ? level.var_f5552371 : "") != "post_kgb" && level.var_8d26dee2 == "cp_nic_revolucion") {
         return;
-    } else {
-        var_eaea54da = (e_parent.origin[0], e_parent.origin[1] + n_offset, e_parent.origin[2]);
-        e_parent moveto((var_eaea54da[0], var_eaea54da[1], var_eaea54da[2]), 0.01);
     }
+    var_eaea54da = (e_parent.origin[0], e_parent.origin[1] + n_offset, e_parent.origin[2]);
+    e_parent moveto((var_eaea54da[0], var_eaea54da[1], var_eaea54da[2]), 0.01);
 }
 
 // Namespace namespace_cd80be1c/namespace_66604d58
@@ -446,16 +445,17 @@ function function_c38c0276() {
         option = level waittill(#"evidence_board_option_selected");
         if (option.var_70b35161 == 1) {
             level notify(#"hash_3ee5ee530fc0a790");
-            break;
-        } else if (option.var_70b35161 == 2) {
-            level notify(#"hash_3e8dc841ce47f8fd");
-        } else {
-            iscomplete = is_true(savegame::function_6440b06b(#"persistent", level.var_8d26dee2).complete);
-            if (iscomplete) {
-            }
-            savegame::function_81534803(#"transient", level.var_8d26dee2);
-            load::function_c9154eb7(level.var_8d26dee2);
+            return;
         }
+        if (option.var_70b35161 == 2) {
+            level notify(#"hash_3e8dc841ce47f8fd");
+            continue;
+        }
+        iscomplete = is_true(savegame::function_6440b06b(#"persistent", level.var_8d26dee2).complete);
+        if (iscomplete) {
+        }
+        savegame::function_81534803(#"transient", level.var_8d26dee2);
+        load::function_c9154eb7(level.var_8d26dee2);
     }
 }
 
@@ -506,9 +506,9 @@ function function_487cf276(var_f587343a) {
                     return;
                 }
             }
-        } else {
-            level notify(#"hash_3e8dc841ce47f8fd");
+            continue;
         }
+        level notify(#"hash_3e8dc841ce47f8fd");
     }
 }
 
@@ -536,9 +536,8 @@ function private function_f2dbcc31(index, var_f587343a) {
             var_f587343a.var_a83e0330 clientfield::set("eboard_review_handle_viewmodel", 1);
         }
         return var_f587343a;
-    } else {
-        return var_f587343a;
     }
+    return var_f587343a;
 }
 
 // Namespace namespace_cd80be1c/namespace_66604d58
@@ -565,7 +564,7 @@ function private function_72c0d712(var_75c8057d) {
     while (1) {
         if (self namespace_61e6d095::function_57fbd346()) {
             level notify(#"hash_57c28d19fe61af2f");
-            break;
+            return;
         }
         if (old_selected !== selected) {
             namespace_61e6d095::function_9ade1d9b(#"hash_afc09dfd34bcde0", "count", selected);
@@ -620,7 +619,7 @@ function private function_c3f8fae7(selected, var_834d338d) {
 // Size: 0x2e6
 function function_85303021(var_8ced85ea) {
     switch (var_8ced85ea) {
-    case #"post_takedown":
+    case #"hash_de0a71f1b8beaa7":
         a_ents = level function_f2f0bdcc("cp_nic_revolucion", 1, "cp_takedown", 1, "cp_nam_armada", 0);
         break;
     case #"post_armada":
@@ -724,10 +723,10 @@ function function_e0cf12d6(a_ents, var_bdf4b952, n_state) {
             e = getent("mdl_cp_takedown_item_09", "script_noteworthy");
             a_ents[a_ents.size] = e;
             break;
+        } else {
+            break;
         }
-        break;
     case #"cp_nam_armada":
-    LOC_0000032c:
         t = getent("cp_nam_armada", "script_noteworthy");
         a_ents[a_ents.size] = t;
         if (n_state == 0) {
@@ -767,10 +766,10 @@ function function_e0cf12d6(a_ents, var_bdf4b952, n_state) {
             e = getent("mdl_" + "cp_nam_armada" + "_bg", "script_noteworthy");
             a_ents[a_ents.size] = e;
             break;
+        } else {
+            break;
         }
-        break;
     case #"cp_ger_stakeout":
-    LOC_00000784:
         t = getent("cp_ger_stakeout", "script_noteworthy");
         a_ents[a_ents.size] = t;
         if (n_state == 0) {
@@ -814,10 +813,10 @@ function function_e0cf12d6(a_ents, var_bdf4b952, n_state) {
             e = getent("mdl_cp_ger_stakeout_item_08", "script_noteworthy");
             a_ents[a_ents.size] = e;
             break;
+        } else {
+            break;
         }
-        break;
     case #"cp_rus_amerika":
-    LOC_00000b5c:
         t = getent("cp_rus_amerika", "script_noteworthy");
         a_ents[a_ents.size] = t;
         if (n_state == 0) {
@@ -849,10 +848,10 @@ function function_e0cf12d6(a_ents, var_bdf4b952, n_state) {
             e = getent("mdl_cp_rus_amerika_item_11", "script_noteworthy");
             a_ents[a_ents.size] = e;
             break;
+        } else {
+            break;
         }
-        break;
     case #"cp_rus_yamantau":
-    LOC_00000e04:
         t = getent("cp_rus_yamantau", "script_noteworthy");
         a_ents[a_ents.size] = t;
         if (n_state == 0) {
@@ -883,10 +882,10 @@ function function_e0cf12d6(a_ents, var_bdf4b952, n_state) {
             e = getent("mdl_" + "cp_rus_yamantau" + "_nail_extra_02", "script_noteworthy");
             a_ents[a_ents.size] = e;
             break;
+        } else {
+            break;
         }
-        break;
     case #"cp_rus_kgb":
-    LOC_0000115c:
         t = getent("cp_rus_kgb", "script_noteworthy");
         a_ents[a_ents.size] = t;
         if (n_state == 0) {
@@ -919,10 +918,10 @@ function function_e0cf12d6(a_ents, var_bdf4b952, n_state) {
         }
         if (n_state != 0) {
             break;
+        } else {
+            break;
         }
-        break;
     case #"cp_nic_revolucion":
-    LOC_00001430:
         if ((isdefined(level.var_f5552371) ? level.var_f5552371 : "") == "post_kgb") {
             t = getent("cp_nic_revolucion", "script_noteworthy");
             a_ents[a_ents.size] = t;
@@ -949,10 +948,10 @@ function function_e0cf12d6(a_ents, var_bdf4b952, n_state) {
             e = getent("mdl_" + "cp_nic_revolucion" + "_bg", "script_noteworthy");
             a_ents[a_ents.size] = e;
             break;
+        } else {
+            break;
         }
-        break;
     case #"cp_nam_prisoner":
-    LOC_000016fc:
         t = getent("cp_nam_prisoner", "script_noteworthy");
         a_ents[a_ents.size] = t;
         if (n_state == 0) {
@@ -979,10 +978,10 @@ function function_e0cf12d6(a_ents, var_bdf4b952, n_state) {
             e = getent("mdl_" + "cp_nam_prisoner" + "_bg", "script_noteworthy");
             a_ents[a_ents.size] = e;
             break;
+        } else {
+            break;
         }
-        break;
     default:
-    LOC_000019d4:
         /#
             iprintlnbold("<unknown string>");
         #/
@@ -1099,7 +1098,7 @@ function function_cd10e6da(var_f587343a) {
 // Size: 0xae
 function function_9b006527(var_f587343a) {
     switch (isdefined(level.var_f5552371) ? level.var_f5552371 : "") {
-    case #"post_takedown":
+    case #"hash_de0a71f1b8beaa7":
         break;
     case #"post_armada":
         break;

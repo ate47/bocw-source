@@ -945,9 +945,9 @@ function function_fb814207(behaviortreeentity) {
     }
     if (isdefined(self.var_72411ccf)) {
         self [[ self.var_72411ccf ]](self);
-    } else {
-        self zombiefindflesh(self);
+        return;
     }
+    self zombiefindflesh(self);
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -1135,27 +1135,20 @@ function zombiefindflesh(behaviortreeentity) {
             } else {
                 behaviortreeentity zombieupdategoal();
             }
+        } else if (is_true(behaviortreeentity.is_rat_test)) {
+        } else if (zombieshouldmoveawaycondition(behaviortreeentity)) {
         } else {
-            if (is_true(behaviortreeentity.is_rat_test)) {
-                goto LOC_00000cf2;
-            }
-            if (zombieshouldmoveawaycondition(behaviortreeentity)) {
-                goto LOC_00000cf2;
-            }
             behaviortreeentity zombieupdategoal();
-        LOC_00000cf2:
         }
-    LOC_00000cf2:
     }
-LOC_00000cf2:
     if (players.size > 1) {
         for (i = 0; i < behaviortreeentity.ignore_player.size; i++) {
             if (isdefined(behaviortreeentity.ignore_player[i])) {
                 if (!isdefined(behaviortreeentity.ignore_player[i].ignore_counter)) {
                     behaviortreeentity.ignore_player[i].ignore_counter = 0;
-                } else {
-                    behaviortreeentity.ignore_player[i].ignore_counter = behaviortreeentity.ignore_player[i].ignore_counter + 1;
+                    continue;
                 }
+                behaviortreeentity.ignore_player[i].ignore_counter = behaviortreeentity.ignore_player[i].ignore_counter + 1;
             }
         }
     }
@@ -1173,7 +1166,9 @@ function function_483766be(entity) {
         if (isarray(entity.enemy.var_f904e440) && isinarray(entity.enemy.var_f904e440, entity)) {
             return;
         }
-    } else if (isarray(entity.enemy.var_f904e440)) {
+        return;
+    }
+    if (isarray(entity.enemy.var_f904e440)) {
         arrayremovevalue(entity.enemy.var_f904e440, entity);
     }
 }
@@ -1278,11 +1273,8 @@ function zombiefindfleshcode(behaviortreeentity) {
             }
         } else if (isdefined(behaviortreeentity.enemy.last_valid_position)) {
             behaviortreeentity zombieupdategoalcode();
-            goto LOC_00000486;
         }
-    LOC_00000486:
     }
-LOC_00000486:
     aiprofile_endentry();
 }
 
@@ -2286,9 +2278,13 @@ function zombieattackableobjectservice(behaviortreeentity) {
     }
     if (isdefined(behaviortreeentity.var_b238ef38) && !isdefined(behaviortreeentity.attackable)) {
         namespace_85745671::function_2b925fa5(behaviortreeentity);
-    } else if (!isdefined(behaviortreeentity.attackable)) {
+        return;
+    }
+    if (!isdefined(behaviortreeentity.attackable)) {
         behaviortreeentity.attackable = namespace_85745671::get_attackable(behaviortreeentity, 1);
-    } else if (!is_true(behaviortreeentity.attackable.is_active)) {
+        return;
+    }
+    if (!is_true(behaviortreeentity.attackable.is_active)) {
         behaviortreeentity.attackable = undefined;
     }
 }
@@ -2793,9 +2789,9 @@ function notetrackboardmelee(animationentity) {
                 }
             }
         }
-    } else {
-        animationentity melee();
+        return;
     }
+    animationentity melee();
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -2832,9 +2828,9 @@ function findzombieenemy() {
     self.favoriteenemy = zombie_enemy;
     if (isdefined(self.favoriteenemy)) {
         self setgoal(self.favoriteenemy.origin);
-    } else {
-        self setgoal(self.origin);
+        return;
     }
+    self setgoal(self.origin);
 }
 
 // Namespace zm_behavior/zm_behavior
@@ -2862,7 +2858,9 @@ function zombieupdateblackholebombpullstate(entity) {
     entity setblackboardattribute("_blackholebomb_pull_state", isdefined(entity.var_db490292) ? entity.var_db490292 : "blackholebomb_pull_slow");
     if (dist_to_bomb < (isdefined(entity.var_92b78660) ? entity.var_92b78660 : 16384)) {
         entity._black_hole_bomb_collapse_death = 1;
-    } else if (dist_to_bomb < 1048576) {
+        return;
+    }
+    if (dist_to_bomb < 1048576) {
         entity setblackboardattribute("_blackholebomb_pull_state", "blackholebomb_pull_fast");
     }
 }
@@ -3299,9 +3297,9 @@ function function_92dcde87(start_pos, end_pos, velocity, var_781a6f9a, enemy) {
                     } else {
                         recordline(points[i], points[i + 1], (0, 1, 0), "<unknown string>");
                     }
-                } else {
-                    recordline(points[i], points[i + 1], (1, 0, 0), "<unknown string>");
+                    continue;
                 }
+                recordline(points[i], points[i + 1], (1, 0, 0), "<unknown string>");
             }
         }
     #/
@@ -3312,7 +3310,8 @@ function function_92dcde87(start_pos, end_pos, velocity, var_781a6f9a, enemy) {
     for (i = 0; i < points.size - 1; i++) {
         if (isdefined(self.var_f7c8ccf5) && ![[ self.var_f7c8ccf5 ]](self, points[i], points[i + 1])) {
             return 0;
-        } else if (!bullettracepassed(points[i], points[i + 1], 0, self, player_vehicle)) {
+        }
+        if (!bullettracepassed(points[i], points[i + 1], 0, self, player_vehicle)) {
             return 0;
         }
     }

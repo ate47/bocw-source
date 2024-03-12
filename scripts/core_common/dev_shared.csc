@@ -131,9 +131,13 @@ function function_681e8519() {
         for (i = 0; i < a_weapons.size; i++) {
             if (strstartswith(getweaponname(a_weapons[i]), "<unknown string>")) {
                 arrayinsert(a_equipment, a_weapons[i], 0);
-            } else if (is_true(a_weapons[i].isprimary) && isdefined(a_weapons[i].worldmodel)) {
+                continue;
+            }
+            if (is_true(a_weapons[i].isprimary) && isdefined(a_weapons[i].worldmodel)) {
                 arrayinsert(var_cab50ba0, a_weapons[i], 0);
-            } else if (is_true(a_weapons[i].isgrenadeweapon)) {
+                continue;
+            }
+            if (is_true(a_weapons[i].isgrenadeweapon)) {
                 arrayinsert(a_grenades, a_weapons[i], 0);
             }
         }

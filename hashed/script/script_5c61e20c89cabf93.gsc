@@ -44,9 +44,9 @@ function function_d1df9410(waitresult) {
         if (stock < maxammo - clip * 3) {
             ammo = stock + clip * 3;
             player setweaponammostock(weapon, ammo);
-        } else {
-            player setweaponammostock(weapon, maxammo);
+            continue;
         }
+        player setweaponammostock(weapon, maxammo);
     }
 }
 

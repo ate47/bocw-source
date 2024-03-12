@@ -192,28 +192,28 @@ function function_eb8c5f46() {
             }
             var_db8d2405 = self.stealth.corpse.ent namespace_979752dc::function_5b776bd1();
             var_2a0fe92a = distancesquared(self.origin, var_db8d2405);
-            jumpiffalse(var_2a0fe92a <= distsq) LOC_0000061a;
-        } else {
-        LOC_0000061a:
-            if (distsq > var_1adb66c8) {
+            if (var_2a0fe92a <= distsq) {
                 continue;
             }
-            if (var_2501cbe2[2] - self.origin[2] > 128) {
-                continue;
+        }
+        if (distsq > var_1adb66c8) {
+            continue;
+        }
+        if (var_2501cbe2[2] - self.origin[2] > 128) {
+            continue;
+        }
+        if (distsq < var_3ff1021a) {
+            if (!isdefined(corpse.var_17022cd4) && self cansee(corpse)) {
+                saw_corpse = corpse;
+                break;
             }
-            if (distsq < var_3ff1021a) {
-                if (!isdefined(corpse.var_17022cd4) && self cansee(corpse)) {
-                    saw_corpse = corpse;
-                    break;
-                }
-            }
-            sight = anglestoforward(self gettagangles("tag_eye"));
-            var_b455e74a = vectornormalize(var_2501cbe2 + vectorscale((0, 0, 1), 30) - self geteye());
-            if (vectordot(sight, var_b455e74a) > 0.55) {
-                if (!isdefined(corpse.var_17022cd4) && self cansee(corpse)) {
-                    saw_corpse = corpse;
-                    break;
-                }
+        }
+        sight = anglestoforward(self gettagangles("tag_eye"));
+        var_b455e74a = vectornormalize(var_2501cbe2 + vectorscale((0, 0, 1), 30) - self geteye());
+        if (vectordot(sight, var_b455e74a) > 0.55) {
+            if (!isdefined(corpse.var_17022cd4) && self cansee(corpse)) {
+                saw_corpse = corpse;
+                break;
             }
         }
     }
@@ -223,7 +223,9 @@ function function_eb8c5f46() {
             self.stealth.var_e72a0096 = gettime();
         }
         self function_a3fcf9e0("found_corpse", found_corpse, found_corpse namespace_979752dc::function_5b776bd1());
-    } else if (isdefined(saw_corpse)) {
+        return;
+    }
+    if (isdefined(saw_corpse)) {
         self thread function_94ebd1f5(saw_corpse);
         self function_a3fcf9e0("saw_corpse", saw_corpse, saw_corpse namespace_979752dc::function_5b776bd1());
     }
@@ -347,28 +349,28 @@ function function_808b81d8() {
             }
             var_7e90842d = self.stealth.suspicious_door.ent.origin;
             var_2a0fe92a = distancesquared(self.origin, var_7e90842d);
-            jumpiffalse(var_2a0fe92a <= distsq) LOC_000003b2;
-        } else {
-        LOC_000003b2:
-            if (distsq > var_1adb66c8) {
+            if (var_2a0fe92a <= distsq) {
                 continue;
             }
-            if (var_715a5cbd[2] - self.origin[2] > 128) {
-                continue;
+        }
+        if (distsq > var_1adb66c8) {
+            continue;
+        }
+        if (var_715a5cbd[2] - self.origin[2] > 128) {
+            continue;
+        }
+        if (distsq < var_3ff1021a) {
+            if (!isdefined(door.var_17022cd4) && self cansee(door) && util::can_see_ai(door.origin, self, 250, getplayers()[0])) {
+                var_cc3596e8 = door;
+                break;
             }
-            if (distsq < var_3ff1021a) {
-                if (!isdefined(door.var_17022cd4) && self cansee(door) && util::can_see_ai(door.origin, self, 250, getplayers()[0])) {
-                    var_cc3596e8 = door;
-                    break;
-                }
-            }
-            sight = anglestoforward(self gettagangles("tag_eye"));
-            var_385f9620 = vectornormalize(var_715a5cbd + vectorscale((0, 0, 1), 30) - self geteye());
-            if (vectordot(sight, var_385f9620) > 0.55) {
-                if (!isdefined(door.var_17022cd4) && self cansee(door) && util::can_see_ai(door.origin, self, 250, getplayers()[0])) {
-                    var_cc3596e8 = door;
-                    break;
-                }
+        }
+        sight = anglestoforward(self gettagangles("tag_eye"));
+        var_385f9620 = vectornormalize(var_715a5cbd + vectorscale((0, 0, 1), 30) - self geteye());
+        if (vectordot(sight, var_385f9620) > 0.55) {
+            if (!isdefined(door.var_17022cd4) && self cansee(door) && util::can_see_ai(door.origin, self, 250, getplayers()[0])) {
+                var_cc3596e8 = door;
+                break;
             }
         }
     }

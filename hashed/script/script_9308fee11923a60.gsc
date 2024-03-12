@@ -27,15 +27,15 @@ function function_6020a772(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwastimejump === 1) {
         self.var_d6775c7 = util::playfxontag(fieldname, "sr/fx9_harvester_extraction_full_red", self, "tag_origin");
         self.var_eaf10c71 = self playloopsound(#"hash_62a04f01f0efe5c7");
-    } else {
-        if (isdefined(self.var_d6775c7)) {
-            stopfx(fieldname, self.var_d6775c7);
-            self.var_d6775c7 = undefined;
-        }
-        if (isdefined(self.var_eaf10c71)) {
-            self stoploopsound(self.var_eaf10c71);
-            self.var_eaf10c71 = undefined;
-        }
+        return;
+    }
+    if (isdefined(self.var_d6775c7)) {
+        stopfx(fieldname, self.var_d6775c7);
+        self.var_d6775c7 = undefined;
+    }
+    if (isdefined(self.var_eaf10c71)) {
+        self stoploopsound(self.var_eaf10c71);
+        self.var_eaf10c71 = undefined;
     }
 }
 
@@ -47,15 +47,15 @@ function function_a1fa260e(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwastimejump === 1) {
         self.var_ab01a657 = util::playfxontag(fieldname, "sr/fx9_harvester_extraction_full", self, "tag_origin");
         self.var_d7fa595b = self playloopsound(#"hash_1be8fbcbcd0a09e1");
-    } else {
-        if (isdefined(self.var_ab01a657)) {
-            stopfx(fieldname, self.var_ab01a657);
-            self.var_ab01a657 = undefined;
-        }
-        if (isdefined(self.var_d7fa595b)) {
-            self stoploopsound(self.var_d7fa595b);
-            self.var_d7fa595b = undefined;
-        }
+        return;
+    }
+    if (isdefined(self.var_ab01a657)) {
+        stopfx(fieldname, self.var_ab01a657);
+        self.var_ab01a657 = undefined;
+    }
+    if (isdefined(self.var_d7fa595b)) {
+        self stoploopsound(self.var_d7fa595b);
+        self.var_d7fa595b = undefined;
     }
 }
 
@@ -92,24 +92,24 @@ function function_8c61edee(localclientnum, *oldval, newval, *bnewent, *binitials
                 }
             }
         }
-    } else {
-        if (isdefined(self.var_40433812)) {
-            stopfx(fieldname, self.var_40433812);
-            self.var_40433812 = undefined;
-        }
-        if (isdefined(self.var_221b7b06)) {
-            stopfx(fieldname, self.var_221b7b06);
-            self.var_221b7b06 = undefined;
-        }
-        if (isdefined(self.var_b3f4d513)) {
-            self stoploopsound(self.var_b3f4d513);
-            self.var_b3f4d513 = undefined;
-        }
-        wait(0.1);
-        if (isdefined(self) && isdefined(self.var_660dd3dd)) {
-            stopfx(fieldname, self.var_660dd3dd);
-            self.var_660dd3dd = undefined;
-        }
+        return;
+    }
+    if (isdefined(self.var_40433812)) {
+        stopfx(fieldname, self.var_40433812);
+        self.var_40433812 = undefined;
+    }
+    if (isdefined(self.var_221b7b06)) {
+        stopfx(fieldname, self.var_221b7b06);
+        self.var_221b7b06 = undefined;
+    }
+    if (isdefined(self.var_b3f4d513)) {
+        self stoploopsound(self.var_b3f4d513);
+        self.var_b3f4d513 = undefined;
+    }
+    wait(0.1);
+    if (isdefined(self) && isdefined(self.var_660dd3dd)) {
+        stopfx(fieldname, self.var_660dd3dd);
+        self.var_660dd3dd = undefined;
     }
 }
 
@@ -124,15 +124,15 @@ function function_5bdf2437(localclientnum, *oldval, newval, *bnewent, *binitials
         if (isdefined(self gettagorigin("tag_body"))) {
             self.var_4ff7bf25 = util::playfxontag(fieldname, "vehicle/fx9_vdest_emp_ru_transport_truck", self, "tag_origin");
         }
-    } else {
-        if (isdefined(self.var_e794d6cd)) {
-            stopfx(fieldname, self.var_e794d6cd);
-            self.var_e794d6cd = undefined;
-        }
-        if (isdefined(self.var_4ff7bf25)) {
-            stopfx(fieldname, self.var_4ff7bf25);
-            self.var_4ff7bf25 = undefined;
-        }
+        return;
+    }
+    if (isdefined(self.var_e794d6cd)) {
+        stopfx(fieldname, self.var_e794d6cd);
+        self.var_e794d6cd = undefined;
+    }
+    if (isdefined(self.var_4ff7bf25)) {
+        stopfx(fieldname, self.var_4ff7bf25);
+        self.var_4ff7bf25 = undefined;
     }
 }
 
@@ -146,7 +146,9 @@ function function_3f561fa0(localclientnum, *oldval, newval, *bnewent, *binitials
         self.var_f2e155e9 = util::playfxontag(fieldname, "sr/fx9_obj_dark_aether_tornado_range", self, "tag_origin");
         playsound(fieldname, #"hash_1675f638be9b3ef2", self.origin + vectorscale((0, 0, 1), 25));
         self.var_6ca1bf85 = self playloopsound(#"hash_2bd7c24a8903f88d");
-    } else if (bwastimejump === 2) {
+        return;
+    }
+    if (bwastimejump === 2) {
         if (isdefined(self.var_3c825826)) {
             stopfx(fieldname, self.var_3c825826);
             self.var_3c825826 = undefined;
@@ -174,21 +176,21 @@ function function_3f561fa0(localclientnum, *oldval, newval, *bnewent, *binitials
             playsound(fieldname, #"hash_1675f638be9b3ef2", self.origin + vectorscale((0, 0, 1), 25));
             self.var_6ca1bf85 = self playloopsound(#"hash_2bd7c04a8903f527");
         }
-    } else {
-        if (isdefined(self.var_3c825826)) {
-            stopfx(fieldname, self.var_3c825826);
-            self.var_3c825826 = undefined;
-        }
-        if (isdefined(self.var_f2e155e9)) {
-            stopfx(fieldname, self.var_f2e155e9);
-            self.var_f2e155e9 = undefined;
-        }
-        if (isdefined(self.var_6ca1bf85)) {
-            self stoploopsound(self.var_6ca1bf85);
-            self.var_6ca1bf85 = undefined;
-        }
-        playsound(fieldname, #"hash_266828a54f3b3f36", self.origin + vectorscale((0, 0, 1), 25));
-        util::playfxontag(fieldname, "sr/fx9_obj_dark_aether_tornado_ending", self, "tag_origin");
+        return;
     }
+    if (isdefined(self.var_3c825826)) {
+        stopfx(fieldname, self.var_3c825826);
+        self.var_3c825826 = undefined;
+    }
+    if (isdefined(self.var_f2e155e9)) {
+        stopfx(fieldname, self.var_f2e155e9);
+        self.var_f2e155e9 = undefined;
+    }
+    if (isdefined(self.var_6ca1bf85)) {
+        self stoploopsound(self.var_6ca1bf85);
+        self.var_6ca1bf85 = undefined;
+    }
+    playsound(fieldname, #"hash_266828a54f3b3f36", self.origin + vectorscale((0, 0, 1), 25));
+    util::playfxontag(fieldname, "sr/fx9_obj_dark_aether_tornado_ending", self, "tag_origin");
 }
 

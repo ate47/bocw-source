@@ -69,16 +69,16 @@ function private function_8df2fc68(cmd) {
         switch (cmd) {
         case #"hash_21b5fc9db9accec7":
             level thread function_4e9f972a(1);
-            break;
+            return;
         case #"hash_35aacbfc1cc6d1b0":
             level thread function_4e9f972a(3);
-            break;
+            return;
         case #"hash_25a40277684d32ee":
             level thread function_4e9f972a(6);
-            break;
+            return;
         case #"hash_26a37be826de2ef6":
             level thread function_4e9f972a(10);
-            break;
+            return;
         }
     #/
 }
@@ -209,14 +209,14 @@ function function_e3871553(var_4d2ad93e) {
         str_item_name = isdefined(level.var_29d88fe5[str_weapon_name][#"purple"]) ? level.var_29d88fe5[str_weapon_name][#"purple"] : level.var_ec04a8a4[str_weapon_name][#"purple"];
         n_rarity = 2;
         var_27751b99 = 2;
-        var_80c3ca2 = array::random([4:"ammomod_shatterblast", 3:"ammomod_napalmburst", 2:"ammomod_deadwire", 1:"ammomod_cryofreeze", 0:"ammomod_brainrot"]);
+        str_aat = array::random([4:"ammomod_shatterblast", 3:"ammomod_napalmburst", 2:"ammomod_deadwire", 1:"ammomod_cryofreeze", 0:"ammomod_brainrot"]);
         break;
     case 8:
     default:
         str_item_name = isdefined(level.var_29d88fe5[str_weapon_name][#"orange"]) ? level.var_29d88fe5[str_weapon_name][#"orange"] : level.var_ec04a8a4[str_weapon_name][#"orange"];
         n_rarity = 3;
         var_27751b99 = 3;
-        var_80c3ca2 = array::random([4:"ammomod_shatterblast", 3:"ammomod_napalmburst", 2:"ammomod_deadwire", 1:"ammomod_cryofreeze", 0:"ammomod_brainrot"]);
+        str_aat = array::random([4:"ammomod_shatterblast", 3:"ammomod_napalmburst", 2:"ammomod_deadwire", 1:"ammomod_cryofreeze", 0:"ammomod_brainrot"]);
         break;
     }
     if (isdefined(str_item_name)) {
@@ -236,8 +236,8 @@ function function_e3871553(var_4d2ad93e) {
                 point.var_a6762160.var_3e805062 = var_3e805062;
             }
         }
-        if (isdefined(point) && isdefined(var_80c3ca2)) {
-            point.aat = var_80c3ca2;
+        if (isdefined(point) && isdefined(str_aat)) {
+            point.aat = str_aat;
         }
         if (isdefined(point.var_a6762160.var_a53e9db0)) {
             weapon = namespace_65181344::function_67456242(point.var_a6762160);
@@ -266,8 +266,8 @@ function function_e3871553(var_4d2ad93e) {
     wait(0.25);
     self val::reset(#"hash_20448189c8ad7c6f", "disable_weapons");
     self val::reset("#lotto_loadouts", "disable_offhand_weapons");
-    if (isdefined(var_80c3ca2)) {
-        self clientfield::set_player_uimodel("hudItems.onslaught.lottoloadouts_atttype", function_525c846d(var_80c3ca2));
+    if (isdefined(str_aat)) {
+        self clientfield::set_player_uimodel("hudItems.onslaught.lottoloadouts_atttype", function_525c846d(str_aat));
     } else {
         self clientfield::set_player_uimodel("hudItems.onslaught.lottoloadouts_atttype", 0);
     }
@@ -278,7 +278,7 @@ function function_e3871553(var_4d2ad93e) {
         if (var_27751b99 > 0) {
             var_a781b3e1.var_a8bccf69 = var_27751b99;
         }
-        var_a781b3e1.aat = var_80c3ca2;
+        var_a781b3e1.aat = str_aat;
         if (isdefined(var_a781b3e1.var_a8bccf69)) {
             self clientfield::set_player_uimodel("pap_current", var_a781b3e1.var_a8bccf69);
         } else {
@@ -345,7 +345,6 @@ function function_525c846d(ammomod) {
         return 3;
     case #"ammomod_shatterblast":
         return 7;
-        break;
     }
     return 0;
 }

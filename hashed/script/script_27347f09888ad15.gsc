@@ -48,9 +48,8 @@ function function_ca209564(var_e98de867, var_ddb02c2b) {
         #/
         if (isdefined(var_ddb02c2b)) {
             return function_15541865(var_3561dd4b.var_210a8489, var_ddb02c2b.var_7c88c117, 1, var_ddb02c2b.var_b0abb10e);
-        } else {
-            return function_15541865(var_3561dd4b.var_210a8489, [], 0);
         }
+        return function_15541865(var_3561dd4b.var_210a8489, [], 0);
     }
 }
 
@@ -80,7 +79,7 @@ function function_266ee075(var_8452bcb9, var_ddb02c2b) {
         var_cffbc08 = function_b9ea4226(entry.var_cffbc08, var_ddb02c2b.var_b0abb10e);
         if (entry.name === var_8452bcb9 && var_cffbc08 - entry.spawned > 0) {
             entry.spawned++;
-            break;
+            return;
         }
     }
 }
@@ -93,7 +92,7 @@ function function_898aced0(var_8452bcb9, var_ddb02c2b) {
     foreach (entry in var_ddb02c2b.var_7c88c117) {
         if (entry.name === var_8452bcb9 && entry.var_cffbc08 > 0) {
             entry.spawned--;
-            break;
+            return;
         }
     }
 }
@@ -141,16 +140,15 @@ function private function_15541865(&var_8def964, &var_fcfdb752, var_e1be5b85 = 0
             return_struct.list_name = var_8452bcb9;
         }
         return return_struct;
-    } else {
-        if (!isdefined(var_74142af1.var_210a8489) || var_74142af1.var_210a8489.size == 0) {
-            return undefined;
-        }
-        return_struct = function_15541865(var_74142af1.var_210a8489, var_fcfdb752, 0);
-        if (var_e1be5b85) {
-            return_struct.list_name = var_8452bcb9;
-        }
-        return return_struct;
     }
+    if (!isdefined(var_74142af1.var_210a8489) || var_74142af1.var_210a8489.size == 0) {
+        return undefined;
+    }
+    return_struct = function_15541865(var_74142af1.var_210a8489, var_fcfdb752, 0);
+    if (var_e1be5b85) {
+        return_struct.list_name = var_8452bcb9;
+    }
+    return return_struct;
 }
 
 // Namespace namespace_679a22ba/namespace_519b3aaf
@@ -173,12 +171,12 @@ function private function_cbafbbab(&var_8def964, &var_bcaf6518) {
                 name = aitype.var_1b48d0fc;
                 array::add(var_bcaf6518, name, 0);
             }
-        } else {
-            if (!isdefined(var_74142af1.var_210a8489) || var_74142af1.var_210a8489.size == 0) {
-                return undefined;
-            }
-            function_cbafbbab(var_74142af1.var_210a8489, var_bcaf6518);
+            continue;
         }
+        if (!isdefined(var_74142af1.var_210a8489) || var_74142af1.var_210a8489.size == 0) {
+            return undefined;
+        }
+        function_cbafbbab(var_74142af1.var_210a8489, var_bcaf6518);
     }
 }
 

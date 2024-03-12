@@ -212,12 +212,12 @@ function function_6931bc89() {
 // Params 6, eflags: 0x2 linked
 // Checksum 0x9cf570b8, Offset: 0x11b0
 // Size: 0xfa
-function function_d6046228(var_67441581, var_756ee4e5, var_bcb9de3e, var_299ea954, var_787a5e25, var_1e31f083) {
+function function_d6046228(var_67441581, var_756ee4e5, var_bcb9de3e, var_299ea954, str_trials, var_1e31f083) {
     if (is_trials()) {
         if (self function_8b1a219a() && isdefined(var_1e31f083)) {
             return var_1e31f083;
-        } else if (isdefined(var_787a5e25)) {
-            return var_787a5e25;
+        } else if (isdefined(str_trials)) {
+            return str_trials;
         }
     } else if (is_standard()) {
         if (self function_8b1a219a() && isdefined(var_299ea954)) {
@@ -255,9 +255,9 @@ function get_story() {
 function check_solo_status() {
     if (getnumexpectedplayers() == 1 && (!sessionmodeisonlinegame() || sessionmodeisprivate() || zm_trial::is_trial_mode() || getdvarint(#"com_maxclients", 0) == 1)) {
         level.is_forever_solo_game = 1;
-    } else {
-        level.is_forever_solo_game = 0;
+        return;
     }
+    level.is_forever_solo_game = 0;
 }
 
 // Namespace zm_utility/zm_utility
@@ -361,15 +361,23 @@ function move_zombie_spawn_location(spot) {
         }
         if (token == "custom_spawner_entry") {
             next_token = index + 1;
-            jumpiffalse(isdefined(tokens[next_token])) LOC_0000023c;
-            str_spawn_entry = tokens[next_token];
-            jumpiffalse(isdefined(level.custom_spawner_entry) && isdefined(level.custom_spawner_entry[str_spawn_entry])) LOC_0000023c;
-            self thread [[ level.custom_spawner_entry[str_spawn_entry] ]](spot);
-        } else if (token == "riser_location") {
+            if (isdefined(tokens[next_token])) {
+                str_spawn_entry = tokens[next_token];
+                if (isdefined(level.custom_spawner_entry) && isdefined(level.custom_spawner_entry[str_spawn_entry])) {
+                    self thread [[ level.custom_spawner_entry[str_spawn_entry] ]](spot);
+                    continue;
+                }
+            }
+        }
+        if (token == "riser_location") {
             self thread zm_spawner::do_zombie_rise(spot);
-        } else if (token == "faller_location") {
+            continue;
+        }
+        if (token == "faller_location") {
             self thread zm_ai_faller::do_zombie_fall(spot);
-        } else if (token == "spawn_location") {
+            continue;
+        }
+        if (token == "spawn_location") {
             if (isdefined(self.anchor)) {
                 return;
             }
@@ -682,11 +690,11 @@ function debug_draw_new_attractor_positions() {
                 /#
                     debugstar(attract[0], 6, (1, 1, 1));
                 #/
-            } else {
-                /#
-                    debugstar(attract[0], 6, (1, 0, 0));
-                #/
+                continue;
             }
+            /#
+                debugstar(attract[0], 6, (1, 0, 0));
+            #/
         }
         waitframe(1);
     }
@@ -722,37 +730,37 @@ function create_zombie_point_of_interest_attractor_positions(var_b09c2334 = 15, 
                     record3dtext("6d99fc4675da1628", queryresult.data[i].origin + vectorscale((0, 0, 1), 8), (1, 0, 0));
                 }
             #/
-        } else {
-            if (is_true(level.validate_poi_attractors)) {
-                passed = bullettracepassed(queryresult.data[i].origin + vectorscale((0, 0, 1), 24), self.origin + vectorscale((0, 0, 1), 24), 0, self);
-                if (passed) {
-                    self.attractor_positions[var_6b998daf] = queryresult.data[i].origin;
-                    var_6b998daf++;
-                } else {
-                    /#
-                        if (is_true(level.var_565d6ce0)) {
-                            recordstar(queryresult.data[i].origin, (1, 0, 0));
-                            record3dtext("<unknown string>", queryresult.data[i].origin + vectorscale((0, 0, 1), 8), (1, 0, 0));
-                        }
-                    #/
-                }
-            } else if (is_true(self.var_abfcb0d9)) {
-                if (check_point_in_enabled_zone(queryresult.data[i].origin) && check_point_in_playable_area(queryresult.data[i].origin)) {
-                    self.attractor_positions[var_6b998daf] = queryresult.data[i].origin;
-                    var_6b998daf++;
-                }
-            } else {
+            continue;
+        }
+        if (is_true(level.validate_poi_attractors)) {
+            passed = bullettracepassed(queryresult.data[i].origin + vectorscale((0, 0, 1), 24), self.origin + vectorscale((0, 0, 1), 24), 0, self);
+            if (passed) {
                 self.attractor_positions[var_6b998daf] = queryresult.data[i].origin;
                 var_6b998daf++;
+            } else {
                 /#
                     if (is_true(level.var_565d6ce0)) {
-                        recordstar(queryresult.data[i].origin, (0, 1, 0));
+                        recordstar(queryresult.data[i].origin, (1, 0, 0));
+                        record3dtext("<unknown string>", queryresult.data[i].origin + vectorscale((0, 0, 1), 8), (1, 0, 0));
                     }
                 #/
             }
-            if (self.num_poi_attracts == var_6b998daf) {
-                break;
+        } else if (is_true(self.var_abfcb0d9)) {
+            if (check_point_in_enabled_zone(queryresult.data[i].origin) && check_point_in_playable_area(queryresult.data[i].origin)) {
+                self.attractor_positions[var_6b998daf] = queryresult.data[i].origin;
+                var_6b998daf++;
             }
+        } else {
+            self.attractor_positions[var_6b998daf] = queryresult.data[i].origin;
+            var_6b998daf++;
+            /#
+                if (is_true(level.var_565d6ce0)) {
+                    recordstar(queryresult.data[i].origin, (0, 1, 0));
+                }
+            #/
+        }
+        if (self.num_poi_attracts == var_6b998daf) {
+            break;
         }
     }
     if (!isdefined(self.attractor_positions)) {
@@ -772,8 +780,7 @@ function generated_radius_attract_positions(forward, offset, num_positions, attr
     self endon(#"death");
     failed = 0;
     degs_per_pos = 360 / num_positions;
-    i = offset;
-    while (i < 360 + offset) {
+    for (i = offset; i < 360 + offset; i = i + degs_per_pos) {
         altforward = forward * attract_radius;
         rotated_forward = (cos(i) * altforward[0] - sin(i) * altforward[1], sin(i) * altforward[0] + cos(i) * altforward[1], altforward[2]);
         if (isdefined(level.poi_positioning_func)) {
@@ -785,7 +792,9 @@ function generated_radius_attract_positions(forward, offset, num_positions, attr
         }
         if (!isdefined(pos)) {
             failed++;
-        } else if (is_true(level.use_alternate_poi_positioning)) {
+            continue;
+        }
+        if (is_true(level.use_alternate_poi_positioning)) {
             if (isdefined(self) && isdefined(self.origin)) {
                 if (self.origin[2] >= pos[2] - 1 && self.origin[2] - pos[2] <= 150) {
                     pos_array = [];
@@ -801,7 +810,9 @@ function generated_radius_attract_positions(forward, offset, num_positions, attr
             } else {
                 failed++;
             }
-        } else if (abs(pos[2] - self.origin[2]) < 60) {
+            continue;
+        }
+        if (abs(pos[2] - self.origin[2]) < 60) {
             pos_array = [];
             pos_array[0] = pos;
             pos_array[1] = self;
@@ -811,10 +822,9 @@ function generated_radius_attract_positions(forward, offset, num_positions, attr
                 self.attractor_positions = array(self.attractor_positions);
             }
             self.attractor_positions[self.attractor_positions.size] = pos_array;
-        } else {
-            failed++;
+            continue;
         }
-        i = i + degs_per_pos;
+        failed++;
     }
     return failed;
 }
@@ -1362,28 +1372,28 @@ function function_c52e1749(origin, players) {
             player_pos = player.last_valid_position;
             if (!isdefined(player_pos)) {
                 player_pos = getclosestpointonnavmesh(player.origin, 100, var_88e86621.radius);
-                jumpiftrue(isdefined(player_pos)) LOC_00000368;
-            } else {
-            LOC_00000368:
-                if (var_88e86621.radius > player getpathfindingradius()) {
-                    player_pos = getclosestpointonnavmesh(player.origin, 100, var_88e86621.radius);
+                if (!isdefined(player_pos)) {
+                    continue;
                 }
-                pos = isdefined(player_pos) ? player_pos : player.origin;
-                if (!isdefined(playerpositions)) {
-                    playerpositions = [];
-                } else if (!isarray(playerpositions)) {
-                    playerpositions = array(playerpositions);
+            }
+            if (var_88e86621.radius > player getpathfindingradius()) {
+                player_pos = getclosestpointonnavmesh(player.origin, 100, var_88e86621.radius);
+            }
+            pos = isdefined(player_pos) ? player_pos : player.origin;
+            if (!isdefined(playerpositions)) {
+                playerpositions = [];
+            } else if (!isarray(playerpositions)) {
+                playerpositions = array(playerpositions);
+            }
+            playerpositions[playerpositions.size] = pos;
+            if (getdvarint(#"hash_4477ab37a00b1492", 1) == 1) {
+                position_info = {#origin:pos, #player:player};
+                if (!isdefined(var_448ee423)) {
+                    var_448ee423 = [];
+                } else if (!isarray(var_448ee423)) {
+                    var_448ee423 = array(var_448ee423);
                 }
-                playerpositions[playerpositions.size] = pos;
-                if (getdvarint(#"hash_4477ab37a00b1492", 1) == 1) {
-                    position_info = {#origin:pos, #player:player};
-                    if (!isdefined(var_448ee423)) {
-                        var_448ee423 = [];
-                    } else if (!isarray(var_448ee423)) {
-                        var_448ee423 = array(var_448ee423);
-                    }
-                    var_448ee423[var_448ee423.size] = position_info;
-                }
+                var_448ee423[var_448ee423.size] = position_info;
             }
         }
     }
@@ -1404,7 +1414,9 @@ function function_c52e1749(origin, players) {
                         if (distance2dsquared(position, goalpos) < function_a3f6cdac(16) && abs(position[2] - goalpos[2]) <= level.var_cd24b30) {
                             closestplayer = players[index];
                         }
-                    } else if (distancesquared(position, goalpos) < function_a3f6cdac(16)) {
+                        continue;
+                    }
+                    if (distancesquared(position, goalpos) < function_a3f6cdac(16)) {
                         closestplayer = players[index];
                         break;
                     }
@@ -1476,30 +1488,30 @@ function function_3d70ba7a(origin, players) {
             player_pos = player.last_valid_position;
             if (!isdefined(player_pos)) {
                 player_pos = getclosestpointonnavmesh(player.origin, 100, var_88e86621.radius);
-                jumpiftrue(isdefined(player_pos)) LOC_00000438;
-            } else {
-            LOC_00000438:
-                if (var_88e86621.radius > player getpathfindingradius()) {
-                    player_pos = getclosestpointonnavmesh(player_pos, 100, var_88e86621.radius);
+                if (!isdefined(player_pos)) {
+                    continue;
                 }
-                pos = isdefined(player_pos) ? player_pos : player.origin;
-                if (!isdefined(playerpositions)) {
-                    playerpositions = [];
-                } else if (!isarray(playerpositions)) {
-                    playerpositions = array(playerpositions);
-                }
-                playerpositions[playerpositions.size] = pos;
-                if (!isdefined(self.var_2d5cbb7[player getentitynumber()])) {
-                    self.var_2d5cbb7[player getentitynumber()] = {#dist:-1, #var_e29d2657:0};
-                }
-                position_info = {#origin:pos, #player:player};
-                if (!isdefined(var_448ee423)) {
-                    var_448ee423 = [];
-                } else if (!isarray(var_448ee423)) {
-                    var_448ee423 = array(var_448ee423);
-                }
-                var_448ee423[var_448ee423.size] = position_info;
             }
+            if (var_88e86621.radius > player getpathfindingradius()) {
+                player_pos = getclosestpointonnavmesh(player_pos, 100, var_88e86621.radius);
+            }
+            pos = isdefined(player_pos) ? player_pos : player.origin;
+            if (!isdefined(playerpositions)) {
+                playerpositions = [];
+            } else if (!isarray(playerpositions)) {
+                playerpositions = array(playerpositions);
+            }
+            playerpositions[playerpositions.size] = pos;
+            if (!isdefined(self.var_2d5cbb7[player getentitynumber()])) {
+                self.var_2d5cbb7[player getentitynumber()] = {#dist:-1, #var_e29d2657:0};
+            }
+            position_info = {#origin:pos, #player:player};
+            if (!isdefined(var_448ee423)) {
+                var_448ee423 = [];
+            } else if (!isarray(var_448ee423)) {
+                var_448ee423 = array(var_448ee423);
+            }
+            var_448ee423[var_448ee423.size] = position_info;
         }
     }
     closestplayer = undefined;
@@ -1527,10 +1539,10 @@ function function_3d70ba7a(origin, players) {
             target = var_448ee423[i].player;
             if (var_674755ca[i] == -2) {
                 var_674755ca[i] = self.var_2d5cbb7[target getentitynumber()].dist;
-            } else {
-                self.var_2d5cbb7[target getentitynumber()].dist = var_674755ca[i];
-                self.var_2d5cbb7[target getentitynumber()].var_e29d2657 = gettime();
+                continue;
             }
+            self.var_2d5cbb7[target getentitynumber()].dist = var_674755ca[i];
+            self.var_2d5cbb7[target getentitynumber()].var_e29d2657 = gettime();
         }
         var_e3958ef0 = arraycopy(var_674755ca);
         var_8aa6bded = -1;
@@ -1920,7 +1932,9 @@ function non_destroyed_bar_board_order(origin, chunks) {
             } else if (isdefined(chunks[i].script_team) && chunks[i].script_team == "bar_board_variant1" || chunks[i].script_team == "bar_board_variant2" || chunks[i].script_team == "bar_board_variant4" || chunks[i].script_team == "bar_board_variant5") {
                 return undefined;
             }
-        } else if (isdefined(chunks[i].script_team) && chunks[i].script_team == "new_barricade") {
+            continue;
+        }
+        if (isdefined(chunks[i].script_team) && chunks[i].script_team == "new_barricade") {
             if (isdefined(chunks[i].script_parameters) && (chunks[i].script_parameters == "repair_board" || chunks[i].script_parameters == "barricade_vents")) {
                 return get_closest_2d(origin, chunks);
             }
@@ -2005,25 +2019,29 @@ function non_destroyed_grate_order(*origin, chunks_grate) {
                         #/
                         grate_order3[i] thread show_grate_pull();
                         return grate_order2[i];
-                    } else if (grate_order3[i].state == "repaired") {
+                    }
+                    if (grate_order3[i].state == "repaired") {
                         /#
                             iprintlnbold("<unknown string>");
                         #/
                         grate_order4[i] thread show_grate_pull();
                         return grate_order3[i];
-                    } else if (grate_order4[i].state == "repaired") {
+                    }
+                    if (grate_order4[i].state == "repaired") {
                         /#
                             iprintlnbold("<unknown string>");
                         #/
                         grate_order5[i] thread show_grate_pull();
                         return grate_order4[i];
-                    } else if (grate_order5[i].state == "repaired") {
+                    }
+                    if (grate_order5[i].state == "repaired") {
                         /#
                             iprintlnbold("<unknown string>");
                         #/
                         grate_order6[i] thread show_grate_pull();
                         return grate_order5[i];
-                    } else if (grate_order6[i].state == "repaired") {
+                    }
+                    if (grate_order6[i].state == "repaired") {
                         return grate_order6[i];
                     }
                 }
@@ -2067,16 +2085,15 @@ function get_closest_2d(origin, ents) {
     if (temp_array.size > 0) {
         index = temp_array[randomintrange(0, temp_array.size)].index;
         return ents[index];
-    } else {
-        for (i = 1; i < ents.size; i++) {
-            temp_dist = distance2d(origin, ents[i].origin);
-            if (temp_dist < dist) {
-                dist = temp_dist;
-                index = i;
-            }
-        }
-        return ents[index];
     }
+    for (i = 1; i < ents.size; i++) {
+        temp_dist = distance2d(origin, ents[i].origin);
+        if (temp_dist < dist) {
+            dist = temp_dist;
+            index = i;
+        }
+    }
+    return ents[index];
 }
 
 // Namespace zm_utility/zm_utility
@@ -2149,17 +2166,16 @@ function get_random_destroyed_chunk(barrier, barrier_chunks) {
             ret = array::randomize(pieces)[0];
         }
         return ret;
-    } else {
-        chunks_repair_grate = undefined;
-        chunks = get_destroyed_chunks(barrier_chunks);
-        chunks_repair_grate = get_destroyed_repair_grates(barrier_chunks);
-        if (isdefined(chunks)) {
-            return chunks[randomint(chunks.size)];
-        } else if (isdefined(chunks_repair_grate)) {
-            return grate_order_destroyed(chunks_repair_grate);
-        }
-        return undefined;
     }
+    chunks_repair_grate = undefined;
+    chunks = get_destroyed_chunks(barrier_chunks);
+    chunks_repair_grate = get_destroyed_repair_grates(barrier_chunks);
+    if (isdefined(chunks)) {
+        return chunks[randomint(chunks.size)];
+    } else if (isdefined(chunks_repair_grate)) {
+        return grate_order_destroyed(chunks_repair_grate);
+    }
+    return undefined;
 }
 
 // Namespace zm_utility/zm_utility
@@ -2188,49 +2204,52 @@ function get_destroyed_repair_grates(barrier_chunks) {
 function get_non_destroyed_chunks(barrier, barrier_chunks) {
     if (isdefined(barrier.zbarrier)) {
         return barrier.zbarrier getzbarrierpieceindicesinstate("closed");
-    } else {
-        array = [];
-        for (i = 0; i < barrier_chunks.size; i++) {
-            if (isdefined(barrier_chunks[i].script_team) && barrier_chunks[i].script_team == "classic_boards") {
-                if (isdefined(barrier_chunks[i].script_parameters) && barrier_chunks[i].script_parameters == "board") {
-                    if (barrier_chunks[i] get_chunk_state() == "repaired") {
-                        if (barrier_chunks[i].origin == barrier_chunks[i].og_origin) {
-                            array[array.size] = barrier_chunks[i];
-                        }
-                    }
-                }
-            }
-            if (isdefined(barrier_chunks[i].script_team) && barrier_chunks[i].script_team == "new_barricade") {
-                if (isdefined(barrier_chunks[i].script_parameters) && (barrier_chunks[i].script_parameters == "repair_board" || barrier_chunks[i].script_parameters == "barricade_vents")) {
-                    if (barrier_chunks[i] get_chunk_state() == "repaired") {
-                        if (barrier_chunks[i].origin == barrier_chunks[i].og_origin) {
-                            array[array.size] = barrier_chunks[i];
-                        }
-                    }
-                }
-            } else if (isdefined(barrier_chunks[i].script_team) && barrier_chunks[i].script_team == "6_bars_bent") {
-                if (isdefined(barrier_chunks[i].script_parameters) && barrier_chunks[i].script_parameters == "bar") {
-                    if (barrier_chunks[i] get_chunk_state() == "repaired") {
-                        if (barrier_chunks[i].origin == barrier_chunks[i].og_origin) {
-                            array[array.size] = barrier_chunks[i];
-                        }
-                    }
-                }
-            } else if (isdefined(barrier_chunks[i].script_team) && barrier_chunks[i].script_team == "6_bars_prestine") {
-                if (isdefined(barrier_chunks[i].script_parameters) && barrier_chunks[i].script_parameters == "bar") {
-                    if (barrier_chunks[i] get_chunk_state() == "repaired") {
-                        if (barrier_chunks[i].origin == barrier_chunks[i].og_origin) {
-                            array[array.size] = barrier_chunks[i];
-                        }
-                    }
-                }
-            }
-        }
-        if (array.size == 0) {
-            return undefined;
-        }
-        return array;
     }
+    array = [];
+    for (i = 0; i < barrier_chunks.size; i++) {
+        if (isdefined(barrier_chunks[i].script_team) && barrier_chunks[i].script_team == "classic_boards") {
+            if (isdefined(barrier_chunks[i].script_parameters) && barrier_chunks[i].script_parameters == "board") {
+                if (barrier_chunks[i] get_chunk_state() == "repaired") {
+                    if (barrier_chunks[i].origin == barrier_chunks[i].og_origin) {
+                        array[array.size] = barrier_chunks[i];
+                    }
+                }
+            }
+        }
+        if (isdefined(barrier_chunks[i].script_team) && barrier_chunks[i].script_team == "new_barricade") {
+            if (isdefined(barrier_chunks[i].script_parameters) && (barrier_chunks[i].script_parameters == "repair_board" || barrier_chunks[i].script_parameters == "barricade_vents")) {
+                if (barrier_chunks[i] get_chunk_state() == "repaired") {
+                    if (barrier_chunks[i].origin == barrier_chunks[i].og_origin) {
+                        array[array.size] = barrier_chunks[i];
+                    }
+                }
+            }
+            continue;
+        }
+        if (isdefined(barrier_chunks[i].script_team) && barrier_chunks[i].script_team == "6_bars_bent") {
+            if (isdefined(barrier_chunks[i].script_parameters) && barrier_chunks[i].script_parameters == "bar") {
+                if (barrier_chunks[i] get_chunk_state() == "repaired") {
+                    if (barrier_chunks[i].origin == barrier_chunks[i].og_origin) {
+                        array[array.size] = barrier_chunks[i];
+                    }
+                }
+            }
+            continue;
+        }
+        if (isdefined(barrier_chunks[i].script_team) && barrier_chunks[i].script_team == "6_bars_prestine") {
+            if (isdefined(barrier_chunks[i].script_parameters) && barrier_chunks[i].script_parameters == "bar") {
+                if (barrier_chunks[i] get_chunk_state() == "repaired") {
+                    if (barrier_chunks[i].origin == barrier_chunks[i].og_origin) {
+                        array[array.size] = barrier_chunks[i];
+                    }
+                }
+            }
+        }
+    }
+    if (array.size == 0) {
+        return undefined;
+    }
+    return array;
 }
 
 // Namespace zm_utility/zm_utility
@@ -2240,20 +2259,19 @@ function get_non_destroyed_chunks(barrier, barrier_chunks) {
 function get_non_destroyed_chunks_grate(barrier, barrier_chunks) {
     if (isdefined(barrier.zbarrier)) {
         return barrier.zbarrier getzbarrierpieceindicesinstate("closed");
-    } else {
-        array = [];
-        for (i = 0; i < barrier_chunks.size; i++) {
-            if (isdefined(barrier_chunks[i].script_parameters) && barrier_chunks[i].script_parameters == "grate") {
-                if (isdefined(barrier_chunks[i])) {
-                    array[array.size] = barrier_chunks[i];
-                }
+    }
+    array = [];
+    for (i = 0; i < barrier_chunks.size; i++) {
+        if (isdefined(barrier_chunks[i].script_parameters) && barrier_chunks[i].script_parameters == "grate") {
+            if (isdefined(barrier_chunks[i])) {
+                array[array.size] = barrier_chunks[i];
             }
         }
-        if (array.size == 0) {
-            return undefined;
-        }
-        return array;
     }
+    if (array.size == 0) {
+        return undefined;
+    }
+    return array;
 }
 
 // Namespace zm_utility/zm_utility
@@ -2266,11 +2284,17 @@ function get_destroyed_chunks(barrier_chunks) {
         if (barrier_chunks[i] get_chunk_state() == "destroyed") {
             if (isdefined(barrier_chunks[i].script_parameters) && barrier_chunks[i].script_parameters == "board") {
                 array[array.size] = barrier_chunks[i];
-            } else if (isdefined(barrier_chunks[i].script_parameters) && barrier_chunks[i].script_parameters == "repair_board" || barrier_chunks[i].script_parameters == "barricade_vents") {
+                continue;
+            }
+            if (isdefined(barrier_chunks[i].script_parameters) && barrier_chunks[i].script_parameters == "repair_board" || barrier_chunks[i].script_parameters == "barricade_vents") {
                 array[array.size] = barrier_chunks[i];
-            } else if (isdefined(barrier_chunks[i].script_parameters) && barrier_chunks[i].script_parameters == "bar") {
+                continue;
+            }
+            if (isdefined(barrier_chunks[i].script_parameters) && barrier_chunks[i].script_parameters == "bar") {
                 array[array.size] = barrier_chunks[i];
-            } else if (isdefined(barrier_chunks[i].script_parameters) && barrier_chunks[i].script_parameters == "grate") {
+                continue;
+            }
+            if (isdefined(barrier_chunks[i].script_parameters) && barrier_chunks[i].script_parameters == "grate") {
                 return undefined;
             }
         }
@@ -2330,25 +2354,29 @@ function grate_order_destroyed(chunks_repair_grate) {
                     #/
                     grate_repair_order6[i] thread show_grate_repair();
                     return grate_repair_order5[i];
-                } else if (grate_repair_order4[i].state == "destroyed") {
+                }
+                if (grate_repair_order4[i].state == "destroyed") {
                     /#
                         iprintlnbold("<unknown string>");
                     #/
                     grate_repair_order5[i] thread show_grate_repair();
                     return grate_repair_order4[i];
-                } else if (grate_repair_order3[i].state == "destroyed") {
+                }
+                if (grate_repair_order3[i].state == "destroyed") {
                     /#
                         iprintlnbold("<unknown string>");
                     #/
                     grate_repair_order4[i] thread show_grate_repair();
                     return grate_repair_order3[i];
-                } else if (grate_repair_order2[i].state == "destroyed") {
+                }
+                if (grate_repair_order2[i].state == "destroyed") {
                     /#
                         iprintlnbold("<unknown string>");
                     #/
                     grate_repair_order3[i] thread show_grate_repair();
                     return grate_repair_order2[i];
-                } else if (grate_repair_order1[i].state == "destroyed") {
+                }
+                if (grate_repair_order1[i].state == "destroyed") {
                     /#
                         iprintlnbold("<unknown string>");
                     #/
@@ -2436,9 +2464,9 @@ function set_hint_string(ent, default_ref, cost) {
     hint = get_zombie_hint(ref);
     if (isdefined(cost)) {
         self sethintstring(hint, cost);
-    } else {
-        self sethintstring(hint);
+        return;
     }
+    self sethintstring(hint);
 }
 
 // Namespace zm_utility/zm_utility
@@ -2594,12 +2622,11 @@ function debug_blocker(pos, rad, height) {
         self notify(#"stop_debug_blocker");
         self endon(#"stop_debug_blocker");
         for (;;) {
-            for (;;) {
-                if (getdvarint(#"zombie_debug", 0) != 1) {
-                    return;
-                }
-                waitframe(1);
+            if (getdvarint(#"zombie_debug", 0) != 1) {
+                return;
             }
+            waitframe(1);
+            drawcylinder(pos, rad, height);
         }
     #/
 }
@@ -2641,9 +2668,9 @@ function debug_attack_spots_taken() {
                 if (self.attack_spots_taken[i]) {
                     count++;
                     circle(self.attack_spots[i], 12, (1, 0, 0), 0, 1, 1);
-                } else {
-                    circle(self.attack_spots[i], 12, (0, 1, 0), 0, 1, 1);
+                    continue;
                 }
+                circle(self.attack_spots[i], 12, (0, 1, 0), 0, 1, 1);
             }
             msg = "<unknown string>" + count + "<unknown string>" + self.attack_spots_taken.size;
             print3d(self.origin, msg);
@@ -2899,9 +2926,12 @@ function shock_onpain() {
         }
         if (isdefined(attacker) && isdefined(attacker.custom_player_shellshock)) {
             self [[ attacker.custom_player_shellshock ]](damage, attacker, direction_vec, point, mod);
-        } else if (mod == "MOD_PROJECTILE" || mod == "MOD_PROJECTILE_SPLASH") {
             continue;
-        } else if (mod == "MOD_GRENADE_SPLASH" || mod == "MOD_GRENADE" || mod == "MOD_EXPLOSIVE") {
+        }
+        if (mod == "MOD_PROJECTILE" || mod == "MOD_PROJECTILE_SPLASH") {
+            continue;
+        }
+        if (mod == "MOD_GRENADE_SPLASH" || mod == "MOD_GRENADE" || mod == "MOD_EXPLOSIVE") {
             shocktype = undefined;
             shocklight = undefined;
             if (is_true(self.is_burning)) {
@@ -2909,7 +2939,9 @@ function shock_onpain() {
                 shocklight = "lava_small";
             }
             self shock_onexplosion(damage, shocktype, shocklight);
-        } else if (getdvarstring(#"blurpain") == "on") {
+            continue;
+        }
+        if (getdvarstring(#"blurpain") == "on") {
             self shellshock(#"pain_zm", 0.5);
         }
     }
@@ -2936,7 +2968,9 @@ function shock_onexplosion(damage, shocktype, shocklight) {
             shocktype = "explosion_zm";
         }
         self shellshock(shocktype, time);
-    } else if (isdefined(shocklight)) {
+        return;
+    }
+    if (isdefined(shocklight)) {
         self shellshock(shocklight, time);
     }
 }
@@ -3192,15 +3226,15 @@ function function_659819fa(achievement, all_players = 0) {
         foreach (player in getplayers()) {
             player giveachievement(achievement);
         }
-    } else {
-        if (!isplayer(self)) {
-            /#
-                assertmsg("<unknown string>");
-            #/
-            return;
-        }
-        self giveachievement(achievement);
+        return;
     }
+    if (!isplayer(self)) {
+        /#
+            assertmsg("<unknown string>");
+        #/
+        return;
+    }
+    self giveachievement(achievement);
 }
 
 // Namespace zm_utility/zm_utility
@@ -3335,14 +3369,12 @@ function waittill_not_moving() {
     level endon(#"game_ended");
     if (self.classname == "grenade") {
         self waittill(#"stationary");
-    } else {
-        prevorigin = self.origin;
-        while (1) {
-            wait(0.15);
-            if (self.origin == prevorigin) {
-                break;
-            }
-            prevorigin = self.origin;
+        return;
+    }
+    for (prevorigin = self.origin; 1; prevorigin = self.origin) {
+        wait(0.15);
+        if (self.origin == prevorigin) {
+            return;
         }
     }
 }
@@ -3357,9 +3389,8 @@ function get_closest_player(org) {
     if (players.size) {
         if (players.size > 1 && isdefined(org)) {
             return arraygetclosest(org, players);
-        } else {
-            return players[0];
         }
+        return players[0];
     }
 }
 
@@ -3469,47 +3500,47 @@ function track_players_intersection_tracker() {
                     continue;
                 }
                 if (isdefined(level.player_intersection_tracker_override)) {
-                    jumpiffalse(players[i] [[ level.player_intersection_tracker_override ]](players[j])) LOC_00000440;
-                } else {
-                LOC_00000440:
-                    playeri_origin = players[i].origin;
-                    playerj_origin = players[j].origin;
-                    if (abs(playeri_origin[2] - playerj_origin[2]) > 60) {
+                    if (players[i] [[ level.player_intersection_tracker_override ]](players[j])) {
                         continue;
                     }
-                    distance_apart = distance2d(playeri_origin, playerj_origin);
-                    /#
-                        if (!isdefined(players[i].var_ab8c5e97[j])) {
-                            players[i].var_ab8c5e97[j] = 1000;
+                }
+                playeri_origin = players[i].origin;
+                playerj_origin = players[j].origin;
+                if (abs(playeri_origin[2] - playerj_origin[2]) > 60) {
+                    continue;
+                }
+                distance_apart = distance2d(playeri_origin, playerj_origin);
+                /#
+                    if (!isdefined(players[i].var_ab8c5e97[j])) {
+                        players[i].var_ab8c5e97[j] = 1000;
+                    }
+                    players[i].var_ab8c5e97[j] = min(players[i].var_ab8c5e97[j], distance_apart);
+                    players[i].var_d28c72e5 = min(players[i].var_d28c72e5, distance_apart);
+                    if (abs(distance_apart) > 30) {
+                        if (players[i].var_ab8c5e97[j] === players[i].var_d28c72e5) {
+                            players[i].var_d28c72e5 = 1000;
                         }
-                        players[i].var_ab8c5e97[j] = min(players[i].var_ab8c5e97[j], distance_apart);
-                        players[i].var_d28c72e5 = min(players[i].var_d28c72e5, distance_apart);
-                        if (abs(distance_apart) > 30) {
-                            if (players[i].var_ab8c5e97[j] === players[i].var_d28c72e5) {
-                                players[i].var_d28c72e5 = 1000;
-                            }
-                            players[i].var_ab8c5e97[j] = 1000;
-                        }
-                    #/
-                    if (abs(distance_apart) > 9) {
-                        continue;
+                        players[i].var_ab8c5e97[j] = 1000;
                     }
-                    if (!isdefined(var_93bba48c)) {
-                        var_93bba48c = [];
-                    } else if (!isarray(var_93bba48c)) {
-                        var_93bba48c = array(var_93bba48c);
-                    }
-                    if (!isinarray(var_93bba48c, players[i])) {
-                        var_93bba48c[var_93bba48c.size] = players[i];
-                    }
-                    if (!isdefined(var_93bba48c)) {
-                        var_93bba48c = [];
-                    } else if (!isarray(var_93bba48c)) {
-                        var_93bba48c = array(var_93bba48c);
-                    }
-                    if (!isinarray(var_93bba48c, players[j])) {
-                        var_93bba48c[var_93bba48c.size] = players[j];
-                    }
+                #/
+                if (abs(distance_apart) > 9) {
+                    continue;
+                }
+                if (!isdefined(var_93bba48c)) {
+                    var_93bba48c = [];
+                } else if (!isarray(var_93bba48c)) {
+                    var_93bba48c = array(var_93bba48c);
+                }
+                if (!isinarray(var_93bba48c, players[i])) {
+                    var_93bba48c[var_93bba48c.size] = players[i];
+                }
+                if (!isdefined(var_93bba48c)) {
+                    var_93bba48c = [];
+                } else if (!isarray(var_93bba48c)) {
+                    var_93bba48c = array(var_93bba48c);
+                }
+                if (!isinarray(var_93bba48c, players[j])) {
+                    var_93bba48c[var_93bba48c.size] = players[j];
                 }
             }
         }
@@ -3517,7 +3548,7 @@ function track_players_intersection_tracker() {
             /#
                 if (!level.var_9db63456) {
                     iprintlnbold("<unknown string>" + var_e42ab7b4.var_d28c72e5);
-                    goto LOC_000008e6;
+                    continue;
                 }
             #/
             if (isinarray(var_76013453, var_e42ab7b4)) {
@@ -3543,9 +3574,7 @@ function track_players_intersection_tracker() {
                     e_player playlocalsound(level.zmb_laugh_alias);
                 }
                 var_1a1f860b = 1;
-            LOC_000008e6:
             }
-        LOC_000008e6:
         }
         var_76013453 = var_93bba48c;
         wait(1);
@@ -3803,9 +3832,9 @@ function is_explosive_damage(mod) {
 function function_7a35b1d7(var_c857a96d) {
     if (isplayer(self)) {
         self luinotifyevent(#"zombie_notification", 2, var_c857a96d, self getentitynumber());
-    } else {
-        luinotifyevent(#"zombie_notification", 1, var_c857a96d);
+        return;
     }
+    luinotifyevent(#"zombie_notification", 1, var_c857a96d);
 }
 
 // Namespace zm_utility/zm_utility
@@ -3815,9 +3844,9 @@ function function_7a35b1d7(var_c857a96d) {
 function function_846eb7dd(type_id, var_c857a96d) {
     if (isplayer(self)) {
         self luinotifyevent(type_id, 2, var_c857a96d, self getentitynumber());
-    } else {
-        luinotifyevent(type_id, 1, var_c857a96d);
+        return;
     }
+    luinotifyevent(type_id, 1, var_c857a96d);
 }
 
 // Namespace zm_utility/zm_utility
@@ -3827,9 +3856,9 @@ function function_846eb7dd(type_id, var_c857a96d) {
 function function_e64ac3b6(type_id, var_c857a96d) {
     if (isplayer(self)) {
         self luinotifyevent(#"zombie_special_notification", 3, type_id, var_c857a96d, self getentitynumber());
-    } else {
-        luinotifyevent(#"zombie_special_notification", 2, type_id, var_c857a96d);
+        return;
     }
+    luinotifyevent(#"zombie_special_notification", 2, type_id, var_c857a96d);
 }
 
 // Namespace zm_utility/zm_utility
@@ -3842,7 +3871,7 @@ function sndswitchannouncervox(who) {
         game.var_85e678a1[#"prefix"] = "vox_zmba_sam";
         level.zmb_laugh_alias = "zmb_player_outofbounds";
         level.sndannouncerisrich = 0;
-        break;
+        return;
     }
 }
 
@@ -4578,8 +4607,8 @@ function function_372a1e12() {
 // Size: 0xb8
 function function_d7db256e(var_eaf129a0, var_6cc77d4e, var_888cf948 = 1, var_b96be97f = undefined) {
     if (isdefined(var_6cc77d4e)) {
-        var_1b808f25 = struct::get(var_eaf129a0);
-        n_obj_id = function_f5a222a8(var_6cc77d4e, var_1b808f25.origin, var_b96be97f);
+        s_objective_loc = struct::get(var_eaf129a0);
+        n_obj_id = function_f5a222a8(var_6cc77d4e, s_objective_loc.origin, var_b96be97f);
     }
     if (var_888cf948) {
         level thread function_75fd65f9(var_eaf129a0, 1);
@@ -4606,9 +4635,9 @@ function function_ba39d198(n_obj_id, b_show = 1) {
     if (isdefined(n_obj_id)) {
         if (b_show) {
             objective_setvisibletoplayer(n_obj_id, self);
-        } else {
-            objective_setinvisibletoplayer(n_obj_id, self);
+            return;
         }
+        objective_setinvisibletoplayer(n_obj_id, self);
     }
 }
 
@@ -4702,9 +4731,9 @@ function function_e8f4d47b(a_players, n_obj_id, b_disable = 1) {
             n_ent_num = player getentitynumber();
             if (b_disable) {
                 level.var_e63703cd[n_obj_id].var_d0d552ea[n_ent_num] = 1;
-            } else {
-                level.var_e63703cd[n_obj_id].var_d0d552ea[n_ent_num] = undefined;
+                continue;
             }
+            level.var_e63703cd[n_obj_id].var_d0d552ea[n_ent_num] = undefined;
         }
     }
 }
@@ -4815,10 +4844,10 @@ function function_75fd65f9(str_targetname, b_enable = 1) {
         if (b_enable) {
             var_86802380 show();
             var_86802380 notsolid();
-        } else {
-            var_86802380 hide();
-            var_86802380 notsolid();
+            continue;
         }
+        var_86802380 hide();
+        var_86802380 notsolid();
     }
 }
 
@@ -4827,22 +4856,22 @@ function function_75fd65f9(str_targetname, b_enable = 1) {
 // Checksum 0x9e16e705, Offset: 0xfa40
 // Size: 0x186
 function function_ebb2f490() {
-    var_400c259d = self getweaponslistprimaries();
+    a_w_list = self getweaponslistprimaries();
     var_dc69b88b = [];
-    foreach (var_5d22227d in var_400c259d) {
+    foreach (w_list_weapon in a_w_list) {
         if (!isdefined(var_dc69b88b)) {
             var_dc69b88b = [];
         } else if (!isarray(var_dc69b88b)) {
             var_dc69b88b = array(var_dc69b88b);
         }
-        var_dc69b88b[var_dc69b88b.size] = zm_weapons::function_93cd8e76(var_5d22227d);
-        if (var_5d22227d.splitweapon != level.weaponnone) {
+        var_dc69b88b[var_dc69b88b.size] = zm_weapons::function_93cd8e76(w_list_weapon);
+        if (w_list_weapon.splitweapon != level.weaponnone) {
             if (!isdefined(var_dc69b88b)) {
                 var_dc69b88b = [];
             } else if (!isarray(var_dc69b88b)) {
                 var_dc69b88b = array(var_dc69b88b);
             }
-            var_dc69b88b[var_dc69b88b.size] = zm_weapons::function_93cd8e76(var_5d22227d.splitweapon);
+            var_dc69b88b[var_dc69b88b.size] = zm_weapons::function_93cd8e76(w_list_weapon.splitweapon);
         }
     }
     return var_dc69b88b;
@@ -5323,32 +5352,32 @@ function function_36eb0acc(var_13f9dee7 = #"none") {
     switch (var_13f9dee7) {
     case #"none":
         self clientfield::set("model_rarity_rob", 1);
-        break;
+        return;
     case #"resource":
     case #"white":
         self clientfield::set("model_rarity_rob", 2);
-        break;
+        return;
     case #"green":
     case #"uncommon":
         self clientfield::set("model_rarity_rob", 3);
-        break;
+        return;
     case #"blue":
     case #"rare":
         self clientfield::set("model_rarity_rob", 4);
-        break;
+        return;
     case #"purple":
     case #"epic":
         self clientfield::set("model_rarity_rob", 5);
-        break;
+        return;
     case #"orange":
     case #"legendary":
         self clientfield::set("model_rarity_rob", 6);
-        break;
+        return;
     case #"yellow":
     case #"ultra":
     case #"gold":
         self clientfield::set("model_rarity_rob", 7);
-        break;
+        return;
     default:
         self clientfield::set("model_rarity_rob", 0);
         break;
@@ -5456,16 +5485,18 @@ function private function_e1a11b1(var_8861fa85, n_radius, trigger, var_ab426dbb 
                             objective_setvisibletoplayer(n_obj_id, player);
                         }
                     }
-                } else if (distancesquared(player.origin, self.origin) < n_radius_sq) {
+                    continue;
+                }
+                if (distancesquared(player.origin, self.origin) < n_radius_sq) {
                     objective_setplayerusing(n_obj_id, player);
                     if (var_ab426dbb && var_13dc7b2a) {
                         objective_setinvisibletoplayer(n_obj_id, player);
                     }
-                } else {
-                    objective_clearplayerusing(n_obj_id, player);
-                    if (var_ab426dbb && var_13dc7b2a) {
-                        objective_setvisibletoplayer(n_obj_id, player);
-                    }
+                    continue;
+                }
+                objective_clearplayerusing(n_obj_id, player);
+                if (var_ab426dbb && var_13dc7b2a) {
+                    objective_setvisibletoplayer(n_obj_id, player);
                 }
             }
         }
@@ -5559,14 +5590,14 @@ function function_60daf5f7(str_name, str_key = "targetname", b_hide = 1) {
             e_machine.trigger hide();
             e_machine hide();
             e_machine notsolid();
-        } else {
-            e_machine.trigger show();
-            e_machine show();
-            e_machine solid();
-            if (isdefined(e_machine.objectiveid)) {
-                objective_setvisibletoall(e_machine.objectiveid);
-                function_e8f4d47b(getplayers(), e_machine.objectiveid, 0);
-            }
+            return;
+        }
+        e_machine.trigger show();
+        e_machine show();
+        e_machine solid();
+        if (isdefined(e_machine.objectiveid)) {
+            objective_setvisibletoall(e_machine.objectiveid);
+            function_e8f4d47b(getplayers(), e_machine.objectiveid, 0);
         }
     }
 }
@@ -5809,17 +5840,17 @@ function function_d729de6a(b_enable = 1, a_str_zones) {
         callback::on_ai_damage(&function_9452d2ee);
         function_cf7a0b3d(0, a_str_zones);
         function_c2da57a7(0, a_str_zones);
-    } else {
-        callback::remove_on_ai_damage(&function_9452d2ee);
-        function_cf7a0b3d(1, a_str_zones);
-        function_c2da57a7(1, a_str_zones);
-        foreach (player in getplayers()) {
-            player flag::clear(#"hash_35db0208f90f5145");
-            player val::reset(#"hash_31f206367fcff836", "ignoreme");
-            player.var_8dbfa2f5 = undefined;
-        }
-        level notify(#"hash_674491fa3bd36b34");
+        return;
     }
+    callback::remove_on_ai_damage(&function_9452d2ee);
+    function_cf7a0b3d(1, a_str_zones);
+    function_c2da57a7(1, a_str_zones);
+    foreach (player in getplayers()) {
+        player flag::clear(#"hash_35db0208f90f5145");
+        player val::reset(#"hash_31f206367fcff836", "ignoreme");
+        player.var_8dbfa2f5 = undefined;
+    }
+    level notify(#"hash_674491fa3bd36b34");
 }
 
 // Namespace zm_utility/zm_utility
@@ -5901,10 +5932,10 @@ function function_c2da57a7(var_ac0be832 = 1, a_str_zones) {
                     level.zones[str_zone].var_d4940e8c[#"wait_location"] = undefined;
                     level.zones[str_zone].var_d4940e8c = undefined;
                 }
-            } else {
-                level.zones[str_zone].var_d4940e8c[#"wait_location"] = arraycopy(level.zones[str_zone].a_loc_types[#"wait_location"]);
-                level.zones[str_zone].a_loc_types[#"wait_location"] = [];
+                continue;
             }
+            level.zones[str_zone].var_d4940e8c[#"wait_location"] = arraycopy(level.zones[str_zone].a_loc_types[#"wait_location"]);
+            level.zones[str_zone].a_loc_types[#"wait_location"] = [];
         }
     }
 }
@@ -5929,7 +5960,9 @@ function function_2256923f(n_cost) {
                         player.var_e62ad24a = undefined;
                     }
                 }
-            } else if (player.var_e62ad24a === self) {
+                continue;
+            }
+            if (player.var_e62ad24a === self) {
                 player globallogic::function_d96c031e();
                 player.var_e62ad24a = undefined;
             }
@@ -5954,7 +5987,9 @@ function function_232a7f41(var_90de5) {
                 a_vehicles = array(a_vehicles);
             }
             a_vehicles[a_vehicles.size] = vehicle;
-        } else if (isdefined(var_90de5.trigger) && vehicle istouching(var_90de5.trigger)) {
+            continue;
+        }
+        if (isdefined(var_90de5.trigger) && vehicle istouching(var_90de5.trigger)) {
             if (!isdefined(a_vehicles)) {
                 a_vehicles = [];
             } else if (!isarray(a_vehicles)) {

@@ -91,31 +91,31 @@ function function_c2e022a9() {
         namespace_1c7b37c6::item_replacer(var_f8a4c541, #"loot_pod_level_4", #"loot_pod_level_4_food");
         namespace_1c7b37c6::item_replacer(var_f8a4c541, #"loot_pod_level_5", #"loot_pod_level_5_food");
         namespace_1c7b37c6::item_replacer(var_f8a4c541, #"loot_pod_level_6", #"loot_pod_level_6_food");
-    } else {
-        namespace_1c7b37c6::item_replacer(var_f8a4c541, #"armor_zombie_level1_drop_list", #"armor_zombie_level1_drop_list_sr");
-        namespace_1c7b37c6::item_replacer(var_f8a4c541, #"armor_zombie_level2_drop_list", #"armor_zombie_level2_drop_list_sr");
-        namespace_1c7b37c6::item_replacer(var_f8a4c541, #"armor_zombie_level3_drop_list", #"armor_zombie_level3_drop_list_sr");
-        namespace_1c7b37c6::item_replacer(var_f8a4c541, #"armor_zombie_level4_drop_list", #"armor_zombie_level4_drop_list_sr");
-        namespace_1c7b37c6::item_replacer(var_f8a4c541, #"armor_zombie_level5_drop_list", #"armor_zombie_level5_drop_list_sr");
-        namespace_1c7b37c6::item_replacer(var_f8a4c541, #"armor_zombie_level6_drop_list", #"armor_zombie_level6_drop_list_sr");
-        namespace_1c7b37c6::item_replacer(var_f8a4c541, #"normal_zombie_level1_drop_list", #"normal_zombie_level1_drop_list_sr");
-        namespace_1c7b37c6::item_replacer(var_f8a4c541, #"normal_zombie_level2_drop_list", #"normal_zombie_level2_drop_list_sr");
-        namespace_1c7b37c6::item_replacer(var_f8a4c541, #"normal_zombie_level3_drop_list", #"normal_zombie_level3_drop_list_sr");
-        namespace_1c7b37c6::item_replacer(var_f8a4c541, #"normal_zombie_level4_drop_list", #"normal_zombie_level4_drop_list_sr");
-        namespace_1c7b37c6::item_replacer(var_f8a4c541, #"normal_zombie_level5_drop_list", #"normal_zombie_level5_drop_list_sr");
-        namespace_1c7b37c6::item_replacer(var_f8a4c541, #"normal_zombie_level6_drop_list", #"normal_zombie_level6_drop_list_sr");
-        namespace_1c7b37c6::item_remover(var_87d0eef8, #"item_zmquest_sr_ltm_food_banana");
-        namespace_1c7b37c6::item_remover(var_87d0eef8, #"item_zmquest_sr_ltm_food_burger");
-        namespace_1c7b37c6::item_remover(var_87d0eef8, #"item_zmquest_sr_ltm_food_canned_corn");
-        namespace_1c7b37c6::item_remover(var_87d0eef8, #"item_zmquest_sr_ltm_food_cauliflower");
-        namespace_1c7b37c6::item_remover(var_87d0eef8, #"item_zmquest_sr_ltm_food_cheese");
-        namespace_1c7b37c6::item_remover(var_87d0eef8, #"item_zmquest_sr_ltm_food_chicken_soup");
-        namespace_1c7b37c6::item_remover(var_87d0eef8, #"item_zmquest_sr_ltm_food_chips");
-        namespace_1c7b37c6::item_remover(var_87d0eef8, #"item_zmquest_sr_ltm_food_cookie");
-        namespace_1c7b37c6::item_remover(var_87d0eef8, #"item_zmquest_sr_ltm_food_poutine");
-        namespace_1c7b37c6::item_remover(var_87d0eef8, #"item_zmquest_sr_ltm_food_croissant");
-        namespace_1c7b37c6::item_remover(var_87d0eef8, #"item_zmquest_sr_ltm_food_pizza_slice");
-        namespace_1c7b37c6::item_remover(var_87d0eef8, #"item_zmquest_sr_ltm_food_pizza_full");
+        return;
     }
+    namespace_1c7b37c6::item_replacer(var_f8a4c541, #"armor_zombie_level1_drop_list", #"armor_zombie_level1_drop_list_sr");
+    namespace_1c7b37c6::item_replacer(var_f8a4c541, #"armor_zombie_level2_drop_list", #"armor_zombie_level2_drop_list_sr");
+    namespace_1c7b37c6::item_replacer(var_f8a4c541, #"armor_zombie_level3_drop_list", #"armor_zombie_level3_drop_list_sr");
+    namespace_1c7b37c6::item_replacer(var_f8a4c541, #"armor_zombie_level4_drop_list", #"armor_zombie_level4_drop_list_sr");
+    namespace_1c7b37c6::item_replacer(var_f8a4c541, #"armor_zombie_level5_drop_list", #"armor_zombie_level5_drop_list_sr");
+    namespace_1c7b37c6::item_replacer(var_f8a4c541, #"armor_zombie_level6_drop_list", #"armor_zombie_level6_drop_list_sr");
+    namespace_1c7b37c6::item_replacer(var_f8a4c541, #"normal_zombie_level1_drop_list", #"normal_zombie_level1_drop_list_sr");
+    namespace_1c7b37c6::item_replacer(var_f8a4c541, #"normal_zombie_level2_drop_list", #"normal_zombie_level2_drop_list_sr");
+    namespace_1c7b37c6::item_replacer(var_f8a4c541, #"normal_zombie_level3_drop_list", #"normal_zombie_level3_drop_list_sr");
+    namespace_1c7b37c6::item_replacer(var_f8a4c541, #"normal_zombie_level4_drop_list", #"normal_zombie_level4_drop_list_sr");
+    namespace_1c7b37c6::item_replacer(var_f8a4c541, #"normal_zombie_level5_drop_list", #"normal_zombie_level5_drop_list_sr");
+    namespace_1c7b37c6::item_replacer(var_f8a4c541, #"normal_zombie_level6_drop_list", #"normal_zombie_level6_drop_list_sr");
+    namespace_1c7b37c6::item_remover(var_87d0eef8, #"item_zmquest_sr_ltm_food_banana");
+    namespace_1c7b37c6::item_remover(var_87d0eef8, #"item_zmquest_sr_ltm_food_burger");
+    namespace_1c7b37c6::item_remover(var_87d0eef8, #"item_zmquest_sr_ltm_food_canned_corn");
+    namespace_1c7b37c6::item_remover(var_87d0eef8, #"item_zmquest_sr_ltm_food_cauliflower");
+    namespace_1c7b37c6::item_remover(var_87d0eef8, #"item_zmquest_sr_ltm_food_cheese");
+    namespace_1c7b37c6::item_remover(var_87d0eef8, #"item_zmquest_sr_ltm_food_chicken_soup");
+    namespace_1c7b37c6::item_remover(var_87d0eef8, #"item_zmquest_sr_ltm_food_chips");
+    namespace_1c7b37c6::item_remover(var_87d0eef8, #"item_zmquest_sr_ltm_food_cookie");
+    namespace_1c7b37c6::item_remover(var_87d0eef8, #"item_zmquest_sr_ltm_food_poutine");
+    namespace_1c7b37c6::item_remover(var_87d0eef8, #"item_zmquest_sr_ltm_food_croissant");
+    namespace_1c7b37c6::item_remover(var_87d0eef8, #"item_zmquest_sr_ltm_food_pizza_slice");
+    namespace_1c7b37c6::item_remover(var_87d0eef8, #"item_zmquest_sr_ltm_food_pizza_full");
 }
 

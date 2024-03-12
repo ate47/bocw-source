@@ -194,11 +194,13 @@ function updateobjectivetext() {
         } else {
             self setclientcgobjectivetext("");
         }
-    } else if (isdefined(util::getobjectivetext(self.pers[#"team"]))) {
-        self setclientcgobjectivetext(util::getobjectivetext(self.pers[#"team"]));
-    } else {
-        self setclientcgobjectivetext("");
+        return;
     }
+    if (isdefined(util::getobjectivetext(self.pers[#"team"]))) {
+        self setclientcgobjectivetext(util::getobjectivetext(self.pers[#"team"]));
+        return;
+    }
+    self setclientcgobjectivetext("");
 }
 
 // Namespace globallogic_ui/globallogic_ui
@@ -228,9 +230,8 @@ function beginclasschoice(*comingfrommenu) {
         level thread globallogic::updateteamstatus();
         self thread spectating::set_permissions_for_machine();
         return;
-    } else {
-        self function_bc2eb1b8();
     }
+    self function_bc2eb1b8();
 }
 
 // Namespace globallogic_ui/globallogic_ui
@@ -430,7 +431,7 @@ function menuclass(response, forcedclass, *updatecharacterindex, var_632376a3) {
 // Checksum 0x21613487, Offset: 0x1c30
 // Size: 0x5c
 function function_4538a730(playerclass) {
-    loadoutindex = self loadout::function_6972fdbb(playerclass);
+    loadoutindex = self loadout::get_class_num(playerclass);
     self luinotifyevent(#"hash_6b67aa04e378d681", 2, 6, loadoutindex);
 }
 
@@ -454,7 +455,9 @@ function menupositiondraft(response, *intpayload) {
         if (self draft::function_904deeb2()) {
             self player_role::clear();
         }
-    } else if (intpayload == "randomcharacter") {
+        return;
+    }
+    if (intpayload == "randomcharacter") {
         self player_role::clear();
         draft::assign_remaining_players(self);
         if (!is_true(level.inprematchperiod)) {
@@ -463,11 +466,17 @@ function menupositiondraft(response, *intpayload) {
                 self closeingamemenu();
             }
         }
-    } else if (intpayload == "ready") {
+        return;
+    }
+    if (intpayload == "ready") {
         self draft::client_ready();
-    } else if (intpayload == "opendraft") {
+        return;
+    }
+    if (intpayload == "opendraft") {
         self draft::open();
-    } else if (intpayload == "closedraft") {
+        return;
+    }
+    if (intpayload == "closedraft") {
         self draft::close();
     }
 }

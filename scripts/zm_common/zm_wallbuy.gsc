@@ -72,7 +72,9 @@ function private postinit() {
     var_f5ae494f = struct::get_array(#"hash_313be7fccc870cdd", "variantname");
     if (!isdefined(var_f5ae494f) || var_f5ae494f.size <= 0) {
         thread init_spawnable_weapon_upgrade();
-    } else if (!zm_utility::is_survival() && isdefined(var_f5ae494f) && var_f5ae494f.size > 0) {
+        return;
+    }
+    if (!zm_utility::is_survival() && isdefined(var_f5ae494f) && var_f5ae494f.size > 0) {
         level thread function_669a830(var_f5ae494f[0]);
     }
 }
@@ -267,15 +269,17 @@ function function_8183be86() {
         }
         if (n_roll >= var_8ec9324e) {
             return #"orange";
-        } else if (n_roll >= var_7d403093) {
+        }
+        if (n_roll >= var_7d403093) {
             return #"purple";
-        } else if (n_roll >= var_83ed455f) {
+        }
+        if (n_roll >= var_83ed455f) {
             return #"blue";
-        } else if (n_roll >= var_31890740) {
-            return #"green";
-        } else {
+        }
+        if (n_roll >= var_31890740) {
             return #"green";
         }
+        return #"green";
     }
 }
 
@@ -290,19 +294,15 @@ function function_6e93c5b2(var_13f9dee7) {
     case #"white":
     case #"loadout":
         return #"hash_673212f5cf031080";
-        break;
     case #"green":
     case #"uncommon":
         return #"hash_478525848719f211";
-        break;
     case #"blue":
     case #"rare":
         return #"hash_1bf794b5f3fd1b53";
-        break;
     case #"purple":
     case #"epic":
         return #"hash_71b7197253e518d6";
-        break;
     case #"yellow":
     case #"ultra":
     case #"gold":
@@ -310,7 +310,6 @@ function function_6e93c5b2(var_13f9dee7) {
     case #"named":
     case #"legendary":
         return #"hash_6d88d5ee982a7896";
-        break;
     }
     return 0;
 }
@@ -388,16 +387,17 @@ function function_7a2524b3() {
                     player globallogic::function_d96c031e();
                 }
                 continue;
-            } else {
-                player.var_ff409c52 = self;
-                if (player zm_score::can_player_purchase(self.cost)) {
-                    player globallogic::function_d96c031e();
-                } else if (self zm_utility::function_4f593819(player)) {
-                    player globallogic::function_d1924f29(#"hash_6e3ae7967dc5d414");
-                } else {
-                    player globallogic::function_d96c031e();
-                }
             }
+            player.var_ff409c52 = self;
+            if (player zm_score::can_player_purchase(self.cost)) {
+                player globallogic::function_d96c031e();
+                continue;
+            }
+            if (self zm_utility::function_4f593819(player)) {
+                player globallogic::function_d1924f29(#"hash_6e3ae7967dc5d414");
+                continue;
+            }
+            player globallogic::function_d96c031e();
         }
         wait(1);
     }
@@ -653,126 +653,126 @@ function init_spawnable_weapon_upgrade(s_destination) {
                 namespace_8b6a9d79::function_20d7e9c7(wallbuy);
             }
         }
-    } else {
-        spawn_list = [];
-        spawnable_weapon_spawns = struct::get_array("weapon_upgrade", "targetname");
-        spawnable_weapon_spawns = arraycombine(spawnable_weapon_spawns, struct::get_array("bowie_upgrade", "targetname"), 1, 0);
-        spawnable_weapon_spawns = arraycombine(spawnable_weapon_spawns, struct::get_array("sickle_upgrade", "targetname"), 1, 0);
-        spawnable_weapon_spawns = arraycombine(spawnable_weapon_spawns, struct::get_array("tazer_upgrade", "targetname"), 1, 0);
-        spawnable_weapon_spawns = arraycombine(spawnable_weapon_spawns, struct::get_array("buildable_wallbuy", "targetname"), 1, 0);
-        if (is_true(level.use_autofill_wallbuy)) {
-            spawnable_weapon_spawns = arraycombine(spawnable_weapon_spawns, level.active_autofill_wallbuys, 1, 0);
+        return;
+    }
+    spawn_list = [];
+    spawnable_weapon_spawns = struct::get_array("weapon_upgrade", "targetname");
+    spawnable_weapon_spawns = arraycombine(spawnable_weapon_spawns, struct::get_array("bowie_upgrade", "targetname"), 1, 0);
+    spawnable_weapon_spawns = arraycombine(spawnable_weapon_spawns, struct::get_array("sickle_upgrade", "targetname"), 1, 0);
+    spawnable_weapon_spawns = arraycombine(spawnable_weapon_spawns, struct::get_array("tazer_upgrade", "targetname"), 1, 0);
+    spawnable_weapon_spawns = arraycombine(spawnable_weapon_spawns, struct::get_array("buildable_wallbuy", "targetname"), 1, 0);
+    if (is_true(level.use_autofill_wallbuy)) {
+        spawnable_weapon_spawns = arraycombine(spawnable_weapon_spawns, level.active_autofill_wallbuys, 1, 0);
+    }
+    if (!is_true(level.headshots_only)) {
+        spawnable_weapon_spawns = arraycombine(spawnable_weapon_spawns, struct::get_array("claymore_purchase", "targetname"), 1, 0);
+    }
+    location = level.scr_zm_map_start_location;
+    if ((location == "default" || location == "") && isdefined(level.default_start_location)) {
+        location = level.default_start_location;
+    }
+    match_string = level.scr_zm_ui_gametype;
+    if ("" != location) {
+        match_string = match_string + "_" + location;
+    }
+    match_string_plus_space = " " + match_string;
+    for (i = 0; i < spawnable_weapon_spawns.size; i++) {
+        spawnable_weapon = spawnable_weapon_spawns[i];
+        spawnable_weapon.weapon = getweapon(spawnable_weapon.zombie_weapon_upgrade);
+        weapon_group = util::getweaponclass(spawnable_weapon);
+        if (weapon_group == #"weapon_pistol" && !zm_custom::function_901b751c(#"zmweaponspistol") || weapon_group == #"weapon_cqb" && !zm_custom::function_901b751c(#"zmweaponsshotgun") || weapon_group == #"weapon_smg" && !zm_custom::function_901b751c(#"zmweaponssmg") || weapon_group == #"weapon_assault" && !zm_custom::function_901b751c(#"zmweaponsar") || weapon_group == #"weapon_tactical" && !zm_custom::function_901b751c(#"zmweaponstr") || weapon_group == #"weapon_lmg" && !zm_custom::function_901b751c(#"zmweaponslmg") || weapon_group == #"weapon_sniper" && !zm_custom::function_901b751c(#"zmweaponssniper") || weapon_group == #"weapon_knife" && !zm_custom::function_901b751c(#"zmweaponsknife")) {
+            continue;
         }
-        if (!is_true(level.headshots_only)) {
-            spawnable_weapon_spawns = arraycombine(spawnable_weapon_spawns, struct::get_array("claymore_purchase", "targetname"), 1, 0);
+        if (isdefined(spawnable_weapon.zombie_weapon_upgrade) && spawnable_weapon.weapon.isgrenadeweapon && is_true(level.headshots_only)) {
+            continue;
         }
-        location = level.scr_zm_map_start_location;
-        if ((location == "default" || location == "") && isdefined(level.default_start_location)) {
-            location = level.default_start_location;
+        if (!isdefined(spawnable_weapon.script_noteworthy) || spawnable_weapon.script_noteworthy == "") {
+            spawn_list[spawn_list.size] = spawnable_weapon;
+            continue;
         }
-        match_string = level.scr_zm_ui_gametype;
-        if ("" != location) {
-            match_string = match_string + "_" + location;
-        }
-        match_string_plus_space = " " + match_string;
-        for (i = 0; i < spawnable_weapon_spawns.size; i++) {
-            spawnable_weapon = spawnable_weapon_spawns[i];
-            spawnable_weapon.weapon = getweapon(spawnable_weapon.zombie_weapon_upgrade);
-            weapon_group = util::getweaponclass(spawnable_weapon);
-            if (weapon_group == #"weapon_pistol" && !zm_custom::function_901b751c(#"zmweaponspistol") || weapon_group == #"weapon_cqb" && !zm_custom::function_901b751c(#"zmweaponsshotgun") || weapon_group == #"weapon_smg" && !zm_custom::function_901b751c(#"zmweaponssmg") || weapon_group == #"weapon_assault" && !zm_custom::function_901b751c(#"zmweaponsar") || weapon_group == #"weapon_tactical" && !zm_custom::function_901b751c(#"zmweaponstr") || weapon_group == #"weapon_lmg" && !zm_custom::function_901b751c(#"zmweaponslmg") || weapon_group == #"weapon_sniper" && !zm_custom::function_901b751c(#"zmweaponssniper") || weapon_group == #"weapon_knife" && !zm_custom::function_901b751c(#"zmweaponsknife")) {
-                continue;
-            }
-            if (isdefined(spawnable_weapon.zombie_weapon_upgrade) && spawnable_weapon.weapon.isgrenadeweapon && is_true(level.headshots_only)) {
-                continue;
-            }
-            if (!isdefined(spawnable_weapon.script_noteworthy) || spawnable_weapon.script_noteworthy == "") {
+        matches = strtok(spawnable_weapon.script_noteworthy, ",");
+        for (j = 0; j < matches.size; j++) {
+            if (matches[j] == match_string || matches[j] == match_string_plus_space) {
                 spawn_list[spawn_list.size] = spawnable_weapon;
-            } else {
-                matches = strtok(spawnable_weapon.script_noteworthy, ",");
-                for (j = 0; j < matches.size; j++) {
-                    if (matches[j] == match_string || matches[j] == match_string_plus_space) {
-                        spawn_list[spawn_list.size] = spawnable_weapon;
-                    }
-                }
             }
         }
-        tempmodel = spawn("script_model", (0, 0, 0));
-        for (i = 0; i < spawn_list.size; i++) {
-            clientfieldname = spawn_list[i].zombie_weapon_upgrade + "_" + spawn_list[i].origin;
-            numbits = 2;
-            if (isdefined(level._wallbuy_override_num_bits)) {
-                numbits = level._wallbuy_override_num_bits;
+    }
+    tempmodel = spawn("script_model", (0, 0, 0));
+    for (i = 0; i < spawn_list.size; i++) {
+        clientfieldname = spawn_list[i].zombie_weapon_upgrade + "_" + spawn_list[i].origin;
+        numbits = 2;
+        if (isdefined(level._wallbuy_override_num_bits)) {
+            numbits = level._wallbuy_override_num_bits;
+        }
+        clientfield::register("world", clientfieldname, 1, numbits, "int");
+        target_struct = struct::get(spawn_list[i].target, "targetname");
+        if (spawn_list[i].targetname == "buildable_wallbuy") {
+            bits = 4;
+            if (isdefined(level.buildable_wallbuy_weapons)) {
+                bits = getminbitcountfornum(level.buildable_wallbuy_weapons.size + 1);
             }
-            clientfield::register("world", clientfieldname, 1, numbits, "int");
-            target_struct = struct::get(spawn_list[i].target, "targetname");
-            if (spawn_list[i].targetname == "buildable_wallbuy") {
-                bits = 4;
-                if (isdefined(level.buildable_wallbuy_weapons)) {
-                    bits = getminbitcountfornum(level.buildable_wallbuy_weapons.size + 1);
-                }
-                clientfield::register("world", clientfieldname + "_idx", 1, bits, "int");
-                spawn_list[i].clientfieldname = clientfieldname;
-            } else {
-                var_f8d30499 = 50;
-                var_887e6ebe = 32;
-                var_b0e9dcba = 120;
-                if (is_true(level.var_a8f3193b)) {
-                    tempmodel.origin = spawn_list[i].origin;
-                    tempmodel.angles = spawn_list[i].angles;
-                    mins = undefined;
-                    maxs = undefined;
-                    absmins = undefined;
-                    absmaxs = undefined;
-                    tempmodel setmodel(target_struct.model);
-                    tempmodel useweaponhidetags(spawn_list[i].weapon);
-                    mins = tempmodel getmins();
-                    maxs = tempmodel getmaxs();
-                    absmins = tempmodel getabsmins();
-                    absmaxs = tempmodel getabsmaxs();
-                    bounds = absmaxs - absmins;
-                    var_887e6ebe = bounds[0] * 0.25;
-                    var_f8d30499 = bounds[1];
-                    var_b0e9dcba = bounds[2];
-                }
-                unitrigger_stub = zm_unitrigger::function_9267812e(var_f8d30499, var_887e6ebe, var_b0e9dcba);
-                zm_unitrigger::function_47625e58(unitrigger_stub, spawn_list[i].origin - anglestoright(spawn_list[i].angles) * var_887e6ebe * 0.2, spawn_list[i].angles);
-                zm_unitrigger::function_c4a5fdf5(unitrigger_stub, 1);
-                if (is_true(spawn_list[i].require_look_from)) {
-                    unitrigger_stub.require_look_from = 1;
-                }
-                unitrigger_stub.target = spawn_list[i].target;
-                unitrigger_stub.targetname = spawn_list[i].targetname;
-                zm_unitrigger::function_c9e3607c(unitrigger_stub, "HINT_WEAPON", spawn_list[i].weapon);
-                zm_unitrigger::unitrigger_set_hint_string(unitrigger_stub, zm_weapons::get_weapon_hint(spawn_list[i].weapon), zm_weapons::get_weapon_cost(spawn_list[i].weapon));
-                if (is_true(spawn_list[i].require_look_from)) {
-                    unitrigger_stub.require_look_from = 1;
-                }
-                if (isdefined(spawn_list[i].script_string) && is_true(int(spawn_list[i].script_string))) {
-                    zm_unitrigger::function_89380dda(unitrigger_stub, 0);
-                } else {
-                    zm_unitrigger::function_89380dda(unitrigger_stub, 1);
-                }
-                unitrigger_stub.target = spawn_list[i].target;
-                unitrigger_stub.targetname = spawn_list[i].targetname;
-                unitrigger_stub.weapon = spawn_list[i].weapon;
-                unitrigger_stub.var_9d17fab9 = spawn_list[i].zombie_weapon_upgrade + "_item_sr";
-                unitrigger_stub.clientfieldname = clientfieldname;
-                if (unitrigger_stub.weapon.weapclass != "melee" && unitrigger_stub.weapon.weapclass != "grenade") {
-                    zm_unitrigger::function_2547d31f(unitrigger_stub, &wall_weapon_update_prompt);
-                }
-                zm_unitrigger::register_static_unitrigger(unitrigger_stub, &weapon_spawn_think);
-                spawn_list[i].trigger_stub = unitrigger_stub;
-                if (isdefined(target_struct.target) && !is_true(level.var_c1013f84)) {
-                    if (is_true(level.var_2e5167c9)) {
-                        spawn_list[i] thread function_44840c02(target_struct.target);
-                    }
-                }
+            clientfield::register("world", clientfieldname + "_idx", 1, bits, "int");
+            spawn_list[i].clientfieldname = clientfieldname;
+            continue;
+        }
+        var_f8d30499 = 50;
+        var_887e6ebe = 32;
+        var_b0e9dcba = 120;
+        if (is_true(level.var_a8f3193b)) {
+            tempmodel.origin = spawn_list[i].origin;
+            tempmodel.angles = spawn_list[i].angles;
+            mins = undefined;
+            maxs = undefined;
+            absmins = undefined;
+            absmaxs = undefined;
+            tempmodel setmodel(target_struct.model);
+            tempmodel useweaponhidetags(spawn_list[i].weapon);
+            mins = tempmodel getmins();
+            maxs = tempmodel getmaxs();
+            absmins = tempmodel getabsmins();
+            absmaxs = tempmodel getabsmaxs();
+            bounds = absmaxs - absmins;
+            var_887e6ebe = bounds[0] * 0.25;
+            var_f8d30499 = bounds[1];
+            var_b0e9dcba = bounds[2];
+        }
+        unitrigger_stub = zm_unitrigger::function_9267812e(var_f8d30499, var_887e6ebe, var_b0e9dcba);
+        zm_unitrigger::function_47625e58(unitrigger_stub, spawn_list[i].origin - anglestoright(spawn_list[i].angles) * var_887e6ebe * 0.2, spawn_list[i].angles);
+        zm_unitrigger::function_c4a5fdf5(unitrigger_stub, 1);
+        if (is_true(spawn_list[i].require_look_from)) {
+            unitrigger_stub.require_look_from = 1;
+        }
+        unitrigger_stub.target = spawn_list[i].target;
+        unitrigger_stub.targetname = spawn_list[i].targetname;
+        zm_unitrigger::function_c9e3607c(unitrigger_stub, "HINT_WEAPON", spawn_list[i].weapon);
+        zm_unitrigger::unitrigger_set_hint_string(unitrigger_stub, zm_weapons::get_weapon_hint(spawn_list[i].weapon), zm_weapons::get_weapon_cost(spawn_list[i].weapon));
+        if (is_true(spawn_list[i].require_look_from)) {
+            unitrigger_stub.require_look_from = 1;
+        }
+        if (isdefined(spawn_list[i].script_string) && is_true(int(spawn_list[i].script_string))) {
+            zm_unitrigger::function_89380dda(unitrigger_stub, 0);
+        } else {
+            zm_unitrigger::function_89380dda(unitrigger_stub, 1);
+        }
+        unitrigger_stub.target = spawn_list[i].target;
+        unitrigger_stub.targetname = spawn_list[i].targetname;
+        unitrigger_stub.weapon = spawn_list[i].weapon;
+        unitrigger_stub.var_9d17fab9 = spawn_list[i].zombie_weapon_upgrade + "_item_sr";
+        unitrigger_stub.clientfieldname = clientfieldname;
+        if (unitrigger_stub.weapon.weapclass != "melee" && unitrigger_stub.weapon.weapclass != "grenade") {
+            zm_unitrigger::function_2547d31f(unitrigger_stub, &wall_weapon_update_prompt);
+        }
+        zm_unitrigger::register_static_unitrigger(unitrigger_stub, &weapon_spawn_think);
+        spawn_list[i].trigger_stub = unitrigger_stub;
+        if (isdefined(target_struct.target) && !is_true(level.var_c1013f84)) {
+            if (is_true(level.var_2e5167c9)) {
+                spawn_list[i] thread function_44840c02(target_struct.target);
             }
         }
-        level._spawned_wallbuys = spawn_list;
-        if (isdefined(tempmodel)) {
-            tempmodel delete();
-        }
+    }
+    level._spawned_wallbuys = spawn_list;
+    if (isdefined(tempmodel)) {
+        tempmodel delete();
     }
 }
 
@@ -916,10 +916,10 @@ function add_dynamic_wallbuy(weapon, wallbuy, pristine) {
         if (!pristine) {
             level clientfield::set(clientfieldname, 1);
         }
-    } else {
-        level clientfield::set(clientfieldname, 1);
-        wallmodel show();
+        return;
     }
+    level clientfield::set(clientfieldname, 1);
+    wallmodel show();
 }
 
 // Namespace zm_wallbuy/zm_wallbuy
@@ -1134,116 +1134,125 @@ function weapon_spawn_think() {
         cost = self.cost;
         if (!zm_utility::is_player_valid(player)) {
             player thread zm_utility::ignore_triggers(0.5);
-        } else if (!player zm_magicbox::can_buy_weapon(0) || player ismeleeing()) {
+            continue;
+        }
+        if (!player zm_magicbox::can_buy_weapon(0) || player ismeleeing()) {
             wait(0.1);
-        } else if (isdefined(self.stub) && is_true(self.stub.require_look_from)) {
+            continue;
+        }
+        if (isdefined(self.stub) && is_true(self.stub.require_look_from)) {
             toplayer = player util::get_eye() - self.origin;
             forward = -1 * anglestoright(self.angles);
             dot = vectordot(toplayer, forward);
-            jumpcmp(dot > 0) LOC_000004ea;
-        } else if (player zm_loadout::has_powerup_weapon() || currentweapon.isheroweapon) {
+            if (dot < 0) {
+                continue;
+            }
+        }
+        if (player zm_loadout::has_powerup_weapon() || currentweapon.isheroweapon) {
             wait(0.1);
-        } else if (zm_trial_disable_buys::is_active()) {
+            continue;
+        }
+        if (zm_trial_disable_buys::is_active()) {
             wait(0.1);
-        } else {
-            if (isdefined(player.var_44b2ea64)) {
-                foreach (func_override in player.var_44b2ea64) {
-                    n_cost = player [[ func_override ]](self.weapon, self);
-                    if (isdefined(n_cost)) {
-                        if (n_cost < cost) {
-                            cost = n_cost;
-                        }
+            continue;
+        }
+        if (isdefined(player.var_44b2ea64)) {
+            foreach (func_override in player.var_44b2ea64) {
+                n_cost = player [[ func_override ]](self.weapon, self);
+                if (isdefined(n_cost)) {
+                    if (n_cost < cost) {
+                        cost = n_cost;
                     }
                 }
             }
-            if (isdefined(player.check_override_wallbuy_purchase)) {
-                jumpiffalse(player [[ player.check_override_wallbuy_purchase ]](self.weapon, self)) LOC_000005fc;
+        }
+        if (isdefined(player.check_override_wallbuy_purchase)) {
+            if (player [[ player.check_override_wallbuy_purchase ]](self.weapon, self)) {
+                continue;
+            }
+        }
+        if (zm_utility::function_e05ac4ad(player, cost)) {
+            rarity = isdefined(self.rarity) ? self.rarity : #"white";
+            if (self.first_time_triggered == 0) {
+                self show_all_weapon_buys(player, cost, ammo_cost, is_grenade, var_4ee4441d);
+            }
+            player zm_score::minus_to_player_score(cost);
+            if (isdefined(level.var_db463b5)) {
+                self [[ level.var_db463b5 ]](player);
+            }
+            level notify(#"weapon_bought", {#weapon:self.weapon, #player:player});
+            player zm_stats::increment_challenge_stat(#"survivalist_buy_wallbuy", undefined, 1);
+            player zm_stats::increment_challenge_stat(#"hash_385398b8acbf8b4a", undefined, 1);
+            player zm_stats::increment_challenge_stat(#"hash_702d98df99af63d5", undefined, 1);
+            player zm_stats::function_c0c6ab19(#"weapons_bought", 1, 1);
+            player zm_stats::function_c0c6ab19(#"wallbuys", 1, 1);
+            player contracts::increment_zm_contract(#"contract_zm_weapons_bought", 1, #"zstandard");
+            player contracts::increment_zm_contract(#"contract_zm_wallbuys", 1, #"zstandard");
+            if (self.weapon.isriotshield) {
+                player zm_equipment::give(self.weapon);
+                if (isdefined(player.player_shield_reset_health)) {
+                    player [[ player.player_shield_reset_health ]](self.weapon);
+                }
             } else {
-            LOC_000005fc:
-                if (zm_utility::function_e05ac4ad(player, cost)) {
-                    rarity = isdefined(self.rarity) ? self.rarity : #"white";
-                    if (self.first_time_triggered == 0) {
-                        self show_all_weapon_buys(player, cost, ammo_cost, is_grenade, var_4ee4441d);
+                if (zm_loadout::is_lethal_grenade(self.weapon)) {
+                    player zm_weapons::weapon_take(player zm_loadout::get_player_lethal_grenade());
+                    player zm_loadout::set_player_lethal_grenade(self.weapon);
+                }
+                weapon = self.weapon;
+                if (should_upgrade_weapon(player)) {
+                    if (player zm_weapons::can_upgrade_weapon(weapon)) {
+                        weapon = zm_weapons::get_upgrade_weapon(weapon);
+                        player notify(#"zm_bgb_wall_power_used");
                     }
-                    player zm_score::minus_to_player_score(cost);
-                    if (isdefined(level.var_db463b5)) {
-                        self [[ level.var_db463b5 ]](player);
-                    }
-                    level notify(#"weapon_bought", {#weapon:self.weapon, #player:player});
-                    player zm_stats::increment_challenge_stat(#"survivalist_buy_wallbuy", undefined, 1);
-                    player zm_stats::increment_challenge_stat(#"hash_385398b8acbf8b4a", undefined, 1);
-                    player zm_stats::increment_challenge_stat(#"hash_702d98df99af63d5", undefined, 1);
-                    player zm_stats::function_c0c6ab19(#"weapons_bought", 1, 1);
-                    player zm_stats::function_c0c6ab19(#"wallbuys", 1, 1);
-                    player contracts::increment_zm_contract(#"contract_zm_weapons_bought", 1, #"zstandard");
-                    player contracts::increment_zm_contract(#"contract_zm_wallbuys", 1, #"zstandard");
-                    if (self.weapon.isriotshield) {
-                        player zm_equipment::give(self.weapon);
-                        if (isdefined(player.player_shield_reset_health)) {
-                            player [[ player.player_shield_reset_health ]](self.weapon);
+                }
+                if (isdefined(self.item_name)) {
+                    item_name = self.item_name;
+                    if (self.weapon.weapclass === "pistol" && !is_true(self.weapon.isdualwield)) {
+                        if (math::cointoss(15)) {
+                            item_name = zm_weapons::function_c69910e2(self.weapon.name, rarity);
+                            if (!isdefined(item_name)) {
+                                item_name = self.item_name;
+                            }
                         }
+                    }
+                    point = function_4ba8fde(item_name);
+                    if (isdefined(point.var_a6762160.var_a53e9db0)) {
+                        weapon = namespace_65181344::function_67456242(point.var_a6762160);
+                        dropitem = item_drop::drop_item(0, weapon, 1, weapon.maxammo, point.id, self.origin, self.angles, 1);
+                        dropitem.wallbuy_weapon = 1;
+                        dropitem.hidetime = 1;
+                        dropitem hide();
+                        player zm_weapons::function_98776900(dropitem, 0, 0);
                     } else {
-                        if (zm_loadout::is_lethal_grenade(self.weapon)) {
-                            player zm_weapons::weapon_take(player zm_loadout::get_player_lethal_grenade());
-                            player zm_loadout::set_player_lethal_grenade(self.weapon);
-                        }
-                        weapon = self.weapon;
-                        if (should_upgrade_weapon(player)) {
-                            if (player zm_weapons::can_upgrade_weapon(weapon)) {
-                                weapon = zm_weapons::get_upgrade_weapon(weapon);
-                                player notify(#"zm_bgb_wall_power_used");
-                            }
-                        }
-                        if (isdefined(self.item_name)) {
-                            item_name = self.item_name;
-                            if (self.weapon.weapclass === "pistol" && !is_true(self.weapon.isdualwield)) {
-                                if (math::cointoss(15)) {
-                                    item_name = zm_weapons::function_c69910e2(self.weapon.name, rarity);
-                                    if (!isdefined(item_name)) {
-                                        item_name = self.item_name;
-                                    }
-                                }
-                            }
-                            point = function_4ba8fde(item_name);
-                            if (isdefined(point.var_a6762160.var_a53e9db0)) {
-                                weapon = namespace_65181344::function_67456242(point.var_a6762160);
-                                dropitem = item_drop::drop_item(0, weapon, 1, weapon.maxammo, point.id, self.origin, self.angles, 1);
-                                dropitem.wallbuy_weapon = 1;
-                                dropitem.hidetime = 1;
-                                dropitem hide();
-                                player zm_weapons::function_98776900(dropitem, 0, 0);
-                            } else {
-                                player zm_weapons::function_98776900(point, 0, 0);
-                            }
-                        } else {
-                            player zm_weapons::weapon_give(weapon, 0, 1, undefined, undefined, rarity);
-                        }
-                    }
-                    if (isdefined(weapon)) {
-                        level notify(#"hash_159f5d1e1b511031", {#weapon:self.weapon, #player:player});
-                        player zm_stats::increment_client_stat("wallbuy_weapons_purchased");
-                        player zm_stats::increment_player_stat("wallbuy_weapons_purchased");
-                        player zm_stats::function_8f10788e("boas_wallbuy_weapons_purchased");
-                        bb::logpurchaseevent(player, self, cost, weapon.name, player zm_weapons::has_upgrade(weapon), "_weapon", "_purchase");
-                        telemetry::function_18135b72(#"hash_44873692d238cf3b", {#purchaser:player, #rarity:rarity, #weapon:weapon});
-                        weaponindex = undefined;
-                        if (isdefined(weaponindex)) {
-                            weaponindex = matchrecordgetweaponindex(weapon);
-                        }
-                        if (isdefined(weaponindex)) {
-                            player recordmapevent(6, gettime(), player.origin, level.round_number, weaponindex, cost);
-                        }
+                        player zm_weapons::function_98776900(point, 0, 0);
                     }
                 } else {
-                    zm_utility::play_sound_on_ent("no_purchase");
-                    player zm_audio::create_and_play_dialog(#"general", #"outofmoney");
+                    player zm_weapons::weapon_give(weapon, 0, 1, undefined, undefined, rarity);
                 }
-                if (isdefined(player)) {
-                    player notify(#"wallbuy_done");
-                    if (isdefined(self.stub) && isdefined(self.stub.prompt_and_visibility_func)) {
-                        self [[ self.stub.prompt_and_visibility_func ]](player);
-                    }
+            }
+            if (isdefined(weapon)) {
+                level notify(#"hash_159f5d1e1b511031", {#weapon:self.weapon, #player:player});
+                player zm_stats::increment_client_stat("wallbuy_weapons_purchased");
+                player zm_stats::increment_player_stat("wallbuy_weapons_purchased");
+                player zm_stats::function_8f10788e("boas_wallbuy_weapons_purchased");
+                bb::logpurchaseevent(player, self, cost, weapon.name, player zm_weapons::has_upgrade(weapon), "_weapon", "_purchase");
+                telemetry::function_18135b72(#"hash_44873692d238cf3b", {#purchaser:player, #rarity:rarity, #weapon:weapon});
+                weaponindex = undefined;
+                if (isdefined(weaponindex)) {
+                    weaponindex = matchrecordgetweaponindex(weapon);
                 }
+                if (isdefined(weaponindex)) {
+                    player recordmapevent(6, gettime(), player.origin, level.round_number, weaponindex, cost);
+                }
+            }
+        } else {
+            zm_utility::play_sound_on_ent("no_purchase");
+            player zm_audio::create_and_play_dialog(#"general", #"outofmoney");
+        }
+        if (isdefined(player)) {
+            player notify(#"wallbuy_done");
+            if (isdefined(self.stub) && isdefined(self.stub.prompt_and_visibility_func)) {
+                self [[ self.stub.prompt_and_visibility_func ]](player);
             }
         }
     }
@@ -1312,7 +1321,6 @@ function show_all_weapon_buys(player, *cost, *ammo_cost, *is_grenade, var_4ee444
                     if (isdefined(wallbuy.trigger_stub.trigger)) {
                         wallbuy.trigger_stub.trigger.first_time_triggered = 1;
                     }
-                    continue;
                 }
             }
         }
@@ -1336,28 +1344,28 @@ function weapon_show(player, var_4ee4441d = 0) {
         if (!isdefined(self._linked_ent)) {
             self moveto(var_4487b2bf, time);
         }
+        return;
+    }
+    player_angles = vectortoangles(player.origin - self.origin);
+    player_yaw = player_angles[1];
+    weapon_yaw = self.angles[1];
+    if (isdefined(self.script_int)) {
+        weapon_yaw = weapon_yaw - self.script_int;
+    }
+    yaw_diff = angleclamp180(player_yaw - weapon_yaw);
+    if (yaw_diff > 0) {
+        yaw = weapon_yaw - 90;
     } else {
-        player_angles = vectortoangles(player.origin - self.origin);
-        player_yaw = player_angles[1];
-        weapon_yaw = self.angles[1];
-        if (isdefined(self.script_int)) {
-            weapon_yaw = weapon_yaw - self.script_int;
-        }
-        yaw_diff = angleclamp180(player_yaw - weapon_yaw);
-        if (yaw_diff > 0) {
-            yaw = weapon_yaw - 90;
-        } else {
-            yaw = weapon_yaw + 90;
-        }
-        self.og_origin = self.origin;
-        self.origin = self.origin + anglestoforward((0, yaw, 0)) * 8;
-        waitframe(1);
-        self show();
-        zm_utility::play_sound_at_pos("weapon_show", self.origin, self);
-        time = 1;
-        if (!isdefined(self._linked_ent)) {
-            self moveto(self.og_origin, time);
-        }
+        yaw = weapon_yaw + 90;
+    }
+    self.og_origin = self.origin;
+    self.origin = self.origin + anglestoforward((0, yaw, 0)) * 8;
+    waitframe(1);
+    self show();
+    zm_utility::play_sound_at_pos("weapon_show", self.origin, self);
+    time = 1;
+    if (!isdefined(self._linked_ent)) {
+        self moveto(self.og_origin, time);
     }
 }
 
@@ -1383,19 +1391,19 @@ function function_b5992fb1(var_13f9dee7 = #"none") {
     switch (var_13f9dee7) {
     case #"green":
         self clientfield::set("wallbuy_ambient_fx", 3);
-        break;
+        return;
     case #"blue":
         self clientfield::set("wallbuy_ambient_fx", 4);
-        break;
+        return;
     case #"purple":
         self clientfield::set("wallbuy_ambient_fx", 5);
-        break;
+        return;
     case #"orange":
         self clientfield::set("wallbuy_ambient_fx", 6);
-        break;
+        return;
     case #"gold":
         self clientfield::set("wallbuy_ambient_fx", 7);
-        break;
+        return;
     default:
         self clientfield::set("wallbuy_ambient_fx", 0);
         break;
@@ -1410,19 +1418,19 @@ function function_36eb0acc(var_13f9dee7 = #"none") {
     switch (var_13f9dee7) {
     case #"green":
         self clientfield::set("model_rarity_rob", 3);
-        break;
+        return;
     case #"blue":
         self clientfield::set("model_rarity_rob", 4);
-        break;
+        return;
     case #"purple":
         self clientfield::set("model_rarity_rob", 5);
-        break;
+        return;
     case #"orange":
         self clientfield::set("model_rarity_rob", 6);
-        break;
+        return;
     case #"gold":
         self clientfield::set("model_rarity_rob", 7);
-        break;
+        return;
     default:
         self clientfield::set("model_rarity_rob", 0);
         break;
@@ -1615,22 +1623,16 @@ function private function_db435e40(var_13f9dee7 = "white") {
     switch (var_13f9dee7) {
     case #"green":
         return "_uncommon";
-        break;
     case #"purple":
         return "_epic";
-        break;
     case #"orange":
         return "_legendary";
-        break;
     case #"blue":
         return "_rare";
-        break;
     case #"gold":
         return "_ultra";
-        break;
     default:
         return "";
-        break;
     }
 }
 

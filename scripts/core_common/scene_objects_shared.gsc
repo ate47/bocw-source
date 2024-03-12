@@ -233,7 +233,9 @@ class csceneobject {
         foreach (s_shot in self._s.shots) {
             if (s_shot.name === "init") {
                 self._e.var_5b7900ec[s_shot.name] = 1;
-            } else if (function_f12c5e67(s_shot)) {
+                continue;
+            }
+            if (function_f12c5e67(s_shot)) {
                 self._e.var_5b7900ec[s_shot.name] = 0;
             }
         }
@@ -475,7 +477,6 @@ class csceneobject {
                         if (level.animation_played[i] == animation_played_name) {
                             arrayremovevalue(level.animation_played, animation_played_name);
                             i--;
-                            continue;
                         }
                     }
                 }
@@ -494,7 +495,9 @@ class csceneobject {
         if (!isdefined(self._e.script_objective)) {
             if (isdefined(self._o_scene._e_root) && isdefined(self._o_scene._e_root.script_objective)) {
                 self._e.script_objective = self._o_scene._e_root.script_objective;
-            } else if (isdefined(self._o_scene._s.script_objective)) {
+                return;
+            }
+            if (isdefined(self._o_scene._s.script_objective)) {
                 self._e.script_objective = self._o_scene._s.script_objective;
             }
         }
@@ -586,14 +589,14 @@ class csceneobject {
                     #/
                     skip_anim_on_server(player, self.current_playing_anim[player getentitynumber()]);
                 }
-            } else {
-                /#
-                    if (getdvarint(#"debug_scene_skip", 0) > 0) {
-                        printtoprightln("<unknown string>" + self.current_playing_anim[self._n_ent_num] + "<unknown string>" + gettime(), vectorscale((1, 1, 1), 0.8));
-                    }
-                #/
-                skip_anim_on_server(self._e, self.current_playing_anim[self._n_ent_num]);
+                return;
             }
+            /#
+                if (getdvarint(#"debug_scene_skip", 0) > 0) {
+                    printtoprightln("<unknown string>" + self.current_playing_anim[self._n_ent_num] + "<unknown string>" + gettime(), vectorscale((1, 1, 1), 0.8));
+                }
+            #/
+            skip_anim_on_server(self._e, self.current_playing_anim[self._n_ent_num]);
         }
     }
 
@@ -761,7 +764,9 @@ class csceneobject {
         if (is_true(self.var_55b4f21e.preparehide)) {
             self._e notify(#"preparehide");
             self._e val::set(#"scene", "hide", 2);
-        } else if (is_true(self.var_55b4f21e.prepareshow) || is_true(self._o_scene._b_testing) && scene::function_6a0b0afe(self._o_scene._str_mode)) {
+            return;
+        }
+        if (is_true(self.var_55b4f21e.prepareshow) || is_true(self._o_scene._b_testing) && scene::function_6a0b0afe(self._o_scene._str_mode)) {
             thread function_8a75270e(self._e);
         }
     }
@@ -837,7 +842,9 @@ class csceneobject {
                     if (isdefined(var_de282754.camera) && weapon.name === var_de282754.weapon && (!isdefined(var_de282754.gender) || var_3b97696d === var_de282754.gender)) {
                         return var_de282754.camera;
                     }
-                } else if (isdefined(var_de282754.animation) && weapon.name === var_de282754.weapon && (!isdefined(var_de282754.gender) || var_3b97696d === var_de282754.gender)) {
+                    continue;
+                }
+                if (isdefined(var_de282754.animation) && weapon.name === var_de282754.weapon && (!isdefined(var_de282754.gender) || var_3b97696d === var_de282754.gender)) {
                     return var_de282754.animation;
                 }
             }
@@ -882,9 +889,9 @@ class csceneobject {
             }
             if (isdefined(s_current_struct.target)) {
                 s_current_struct = struct::get(s_current_struct.target);
-            } else {
-                s_current_struct = undefined;
+                continue;
             }
+            s_current_struct = undefined;
         }
         if (isdefined(self._e.var_acbd43ee)) {
             self._e.var_acbd43ee delete();
@@ -933,7 +940,9 @@ class csceneobject {
         if (isdefined(self._e) && !isplayer(self._e) && !is_true(self._e.isdying) && is_true(self._s.deletewhenfinished)) {
             if (str_shot != "init" && function_b260bdcc(str_shot) && !function_b52254e6() && !self._b_first_frame) {
                 self._e thread scene::synced_delete(self._o_scene._str_name);
-            } else if (str_shot != "init" && function_b52254e6() && is_true(self._o_scene.var_d84cc502)) {
+                return;
+            }
+            if (str_shot != "init" && function_b52254e6() && is_true(self._o_scene.var_d84cc502)) {
                 self._e thread scene::synced_delete(self._o_scene._str_name);
             }
         }
@@ -955,7 +964,9 @@ class csceneobject {
                 if (obj._e === ent) {
                     return 1;
                 }
-            } else if (obj._e === ent) {
+                continue;
+            }
+            if (obj._e === ent) {
                 return 1;
             }
         }
@@ -1343,9 +1354,9 @@ class csceneobject {
             } else if (is_true(self._s.nospawn)) {
                 flag::set(self._str_shot + "stopped");
             }
-        } else {
-            cleanup();
+            return;
         }
+        cleanup();
     }
 
     // Namespace csceneobject/scene_objects_shared
@@ -1367,7 +1378,9 @@ class csceneobject {
         if (self.m_align == level) {
             self.m_align = (0, 0, 0) + var_d3c21d73;
             self.m_tag = (0, 0, 0) + v_ang_offset;
-        } else if (!isentity(self.m_align) && (var_d3c21d73 != (0, 0, 0) || v_ang_offset != (0, 0, 0))) {
+            return;
+        }
+        if (!isentity(self.m_align) && (var_d3c21d73 != (0, 0, 0) || v_ang_offset != (0, 0, 0))) {
             v_pos = self.m_align.origin + var_d3c21d73;
             v_ang = self.m_align.angles + v_ang_offset;
             self.m_align = {#angles:v_ang, #origin:v_pos};
@@ -1544,9 +1557,9 @@ class csceneobject {
         if (isdefined(self._e) && (isbot(self._e) || isai(self._e))) {
             if (isbot(self._e)) {
                 self._e setgoal(self._e.origin, 1);
-            } else {
-                self._e setgoal(self._e.origin, 1);
+                return;
             }
+            self._e setgoal(self._e.origin, 1);
         }
     }
 
@@ -1618,9 +1631,8 @@ class csceneobject {
     function function_a808aac7() {
         if (isdefined(self.var_55b4f21e.var_33a3e73c) && self.var_efc540b6 === self.var_55b4f21e.var_33a3e73c) {
             return 1;
-        } else {
-            return 0;
         }
+        return 0;
     }
 
     // Namespace csceneobject/scene_objects_shared
@@ -1855,7 +1867,7 @@ class csceneobject {
                             #/
                             var_aa49b05f = 1;
                             play_anim(entry, 1, undefined, n_start_time);
-                            break;
+                            continue;
                         case #"anim":
                             /#
                                 if (is_true(self._s.issiege)) {
@@ -1877,12 +1889,12 @@ class csceneobject {
                             }
                             var_aa49b05f = 1;
                             play_anim(entry, 0, is_true(self.var_55b4f21e.interactiveshot), n_start_time);
-                            break;
+                            continue;
                         default:
                             /#
                                 error(1, "<unknown string>" + str_entry_type + "<unknown string>");
                             #/
-                            break;
+                            continue;
                         }
                     }
                 }
@@ -2007,9 +2019,9 @@ class csceneobject {
     function function_dd4f74e1() {
         if (is_true(self._s.firstframe) && self._o_scene._str_mode == "init" && isdefined(self._e) && !is_true(self._e.var_68ade67d)) {
             self._b_first_frame = 1;
-        } else {
-            self._b_first_frame = 0;
+            return;
         }
+        self._b_first_frame = 0;
     }
 
     // Namespace csceneobject/scene_objects_shared
@@ -2108,9 +2120,13 @@ class csceneobject {
                 if (!error(n_spacer_min >= n_spacer_max, "Spacer Min value must be less than Spacer Max value!")) {
                     run_wait(randomfloatrange(n_spacer_min, n_spacer_max));
                 }
-            } else if (isdefined(n_spacer_min)) {
+                return;
+            }
+            if (isdefined(n_spacer_min)) {
                 run_wait(n_spacer_min);
-            } else if (isdefined(n_spacer_max)) {
+                return;
+            }
+            if (isdefined(n_spacer_max)) {
                 run_wait(n_spacer_max);
             }
         }
@@ -2123,9 +2139,9 @@ class csceneobject {
     function _assign_unique_name() {
         if (isdefined(self._s.name)) {
             self._str_name = self._s.name;
-        } else {
-            self._str_name = self._o_scene._str_name + "_noname" + [[ self._o_scene ]]->get_object_id();
+            return;
         }
+        self._str_name = self._o_scene._str_name + "_noname" + [[ self._o_scene ]]->get_object_id();
     }
 
     // Namespace csceneobject/scene_objects_shared
@@ -2271,7 +2287,9 @@ class csceneobject {
         }
         if (is_true(self.var_55b4f21e.cleanuphide)) {
             thread function_9960f8f0(self._e);
-        } else if (is_true(self.var_55b4f21e.cleanupshow)) {
+            return;
+        }
+        if (is_true(self.var_55b4f21e.cleanupshow)) {
             self._e notify(#"cleanupshow");
             self._e val::reset(#"scene", "hide");
         }
@@ -2378,14 +2396,14 @@ class cscene {
             foreach (o_obj in self._a_objects) {
                 if (isdefined(o_obj._s.name)) {
                     a_ents[o_obj._s.name] = o_obj._e;
-                } else {
-                    if (!isdefined(a_ents)) {
-                        a_ents = [];
-                    } else if (!isarray(a_ents)) {
-                        a_ents = array(a_ents);
-                    }
-                    a_ents[a_ents.size] = o_obj._e;
+                    continue;
                 }
+                if (!isdefined(a_ents)) {
+                    a_ents = [];
+                } else if (!isarray(a_ents)) {
+                    a_ents = array(a_ents);
+                }
+                a_ents[a_ents.size] = o_obj._e;
             }
         }
         return a_ents;
@@ -2528,31 +2546,22 @@ class cscene {
         switch (str_type) {
         case #"prop":
             return new cscenemodel();
-            break;
         case #"model":
             return new cscenemodel();
-            break;
         case #"vehicle":
             return new cscenevehicle();
-            break;
         case #"actor":
             return new csceneactor();
-            break;
         case #"fakeactor":
             return new cscenefakeactor();
-            break;
         case #"playeroutfit":
             return new class_6572d7cd();
-            break;
         case #"player":
             return new csceneplayer();
-            break;
         case #"sharedplayer":
             return new cscenesharedplayer();
-            break;
         case #"fakeplayer":
             return new cscenefakeplayer();
-            break;
         default:
             error(0, "Unsupported object type '" + str_type + "'.");
             break;
@@ -2632,9 +2641,9 @@ class cscene {
                 foreach (str_shot_name in self._s.a_str_shot_names) {
                     if (str_shot_name != str_shot) {
                         var_82bbc872 = var_82bbc872 + ceil(function_8582657c(self._s, str_shot_name) * 30);
-                    } else {
-                        break;
+                        continue;
                     }
+                    break;
                 }
                 self.n_frame_counter = var_82bbc872;
                 while (1) {
@@ -2907,7 +2916,9 @@ class cscene {
                 _call_shot_funcs("done");
                 flag::set(#"scene_skip_completed");
             }
-        } else if (is_skipping_player_scene()) {
+            return;
+        }
+        if (is_skipping_player_scene()) {
             if (self._s scene::is_igc()) {
                 foreach (player in getplayers(self._str_team)) {
                     player stopsounds();
@@ -2966,9 +2977,9 @@ class cscene {
                                 assign_ent(obj, ent);
                                 var_aa70ce62[var_aa70ce62.size] = str_name;
                                 arrayremoveindex(a_objects, index, 1);
-                            } else {
-                                break;
+                                continue;
                             }
+                            break;
                         }
                     }
                     foreach (key in var_aa70ce62) {
@@ -3099,7 +3110,9 @@ class cscene {
                     if (isbot(obj._e)) {
                         obj._e clearforcedgoal();
                         obj._e bottakemanualcontrol();
-                    } else if (issentient(obj._e)) {
+                        continue;
+                    }
+                    if (issentient(obj._e)) {
                         obj._e clearforcedgoal();
                     }
                 }
@@ -3730,9 +3743,9 @@ class cscene {
                     }
                 }
             }
-        } else {
-            _call_shot_funcs("sequence_done");
+            return;
         }
+        _call_shot_funcs("sequence_done");
     }
 
     // Namespace cscene/scene_objects_shared

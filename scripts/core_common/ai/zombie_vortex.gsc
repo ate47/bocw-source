@@ -98,10 +98,8 @@ function get_active_vortex_count() {
 // Size: 0x64
 function private stop_vortex_fx_after_time(*vortex_fx_handle, *vortex_position, *vortex_explosion_fx, n_vortex_time) {
     n_starttime = gettime();
-    n_curtime = gettime() - n_starttime;
-    while (n_curtime < n_vortex_time) {
+    for (n_curtime = gettime() - n_starttime; n_curtime < n_vortex_time; n_curtime = gettime() - n_starttime) {
         waitframe(1);
-        n_curtime = gettime() - n_starttime;
     }
 }
 
@@ -167,22 +165,22 @@ function start_timed_vortex(effect_version, v_vortex_origin, n_vortex_radius, n_
                         params.weapon = weapon;
                         ai_zombie vehicle_ai::set_state("idgun_death", params);
                     }
-                } else {
-                    if (is_true(ai_zombie._black_hole_bomb_collapse_death)) {
-                        ai_zombie.skipautoragdoll = 1;
-                        ai_zombie dodamage(ai_zombie.health + 666, ai_zombie.origin + vectorscale((0, 0, 1), 50), ai_zombie.interdimensional_gun_attacker, undefined, undefined, "MOD_CRUSH");
-                        if (is_true(ai_zombie.allowdeath)) {
-                            gibserverutils::annihilate(ai_zombie);
-                        }
+                    continue;
+                }
+                if (is_true(ai_zombie._black_hole_bomb_collapse_death)) {
+                    ai_zombie.skipautoragdoll = 1;
+                    ai_zombie dodamage(ai_zombie.health + 666, ai_zombie.origin + vectorscale((0, 0, 1), 50), ai_zombie.interdimensional_gun_attacker, undefined, undefined, "MOD_CRUSH");
+                    if (is_true(ai_zombie.allowdeath)) {
+                        gibserverutils::annihilate(ai_zombie);
                     }
-                    if (!is_true(ai_zombie.interdimensional_gun_kill) && !ai_zombie.ignorevortices) {
-                        ai_zombie.var_ecd5b1b9 = svortex;
-                        ai_zombie.damageorigin = v_vortex_origin;
-                        ai_zombie.interdimensional_gun_kill = 1;
-                        ai_zombie.interdimensional_gun_attacker = eattacker;
-                        ai_zombie.interdimensional_gun_inflictor = eattacker;
-                        ai_zombie.interdimensional_gun_weapon = weapon;
-                    }
+                }
+                if (!is_true(ai_zombie.interdimensional_gun_kill) && !ai_zombie.ignorevortices) {
+                    ai_zombie.var_ecd5b1b9 = svortex;
+                    ai_zombie.damageorigin = v_vortex_origin;
+                    ai_zombie.interdimensional_gun_kill = 1;
+                    ai_zombie.interdimensional_gun_attacker = eattacker;
+                    ai_zombie.interdimensional_gun_inflictor = eattacker;
+                    ai_zombie.interdimensional_gun_weapon = weapon;
                 }
             }
             waitframe(1);
@@ -201,9 +199,9 @@ function start_timed_vortex(effect_version, v_vortex_origin, n_vortex_radius, n_
     arrayremovevalue(level.vortex_manager.a_active_vorticies, s_active_vortex);
     if (isdefined(var_f16a8ebd)) {
         [[ var_f16a8ebd ]](v_vortex_origin, eattacker, n_vortex_explosion_radius);
-    } else {
-        vortex_explosion(v_vortex_origin, eattacker, n_vortex_explosion_radius);
+        return;
     }
+    vortex_explosion(v_vortex_origin, eattacker, n_vortex_explosion_radius);
 }
 
 // Namespace zombie_vortex/zombie_vortex
@@ -217,9 +215,9 @@ function vortex_z_extension(a_ai_zombies, v_vortex_origin, n_vortex_radius) {
     while (i < a_ai_zombies_extended_filtered.size) {
         if (a_ai_zombies_extended_filtered[i].origin[2] < v_vortex_origin[2] && bullettracepassed(a_ai_zombies_extended_filtered[i].origin + vectorscale((0, 0, 1), 5), v_vortex_origin + vectorscale((0, 0, 1), 20), 0, self, undefined, 0, 0)) {
             i++;
-        } else {
-            arrayremovevalue(a_ai_zombies_extended_filtered, a_ai_zombies_extended_filtered[i]);
+            continue;
         }
+        arrayremovevalue(a_ai_zombies_extended_filtered, a_ai_zombies_extended_filtered[i]);
     }
     return a_ai_zombies_extended_filtered;
 }
@@ -281,9 +279,9 @@ function player_vortex_visionset(name) {
 function idgun_add_vehicle_death_state() {
     if (isairborne(self)) {
         self vehicle_ai::add_state("idgun_death", &state_idgun_flying_crush_enter, &state_idgun_flying_crush_update, undefined);
-    } else {
-        self vehicle_ai::add_state("idgun_death", &state_idgun_crush_enter, &state_idgun_crush_update, undefined);
+        return;
     }
+    self vehicle_ai::add_state("idgun_death", &state_idgun_crush_enter, &state_idgun_crush_update, undefined);
 }
 
 // Namespace zombie_vortex/zombie_vortex

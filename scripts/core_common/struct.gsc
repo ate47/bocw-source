@@ -201,20 +201,21 @@ function event_handler[findstruct] findstruct(param1, name, index) {
                 }
             }
         }
-    } else {
-        s = get(param1);
-        if (isdefined(s)) {
-            return s;
+        return;
+    }
+    s = get(param1);
+    if (isdefined(s)) {
+        return s;
+    }
+    s = getscriptbundle(name);
+    if (isdefined(s)) {
+        if (index < 0) {
+            level.var_875f0835 = s;
+            return;
         }
-        s = getscriptbundle(name);
-        if (isdefined(s)) {
-            if (index < 0) {
-                level.var_875f0835 = s;
-                return;
-            } else if (isdefined(s.objects)) {
-                level.var_875f0835 = s.objects[index];
-                return;
-            }
+        if (isdefined(s.objects)) {
+            level.var_875f0835 = s.objects[index];
+            return;
         }
     }
 }

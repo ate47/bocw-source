@@ -106,7 +106,9 @@ function watch_player_drowning() {
         underwater = underwater | var_790acff6;
         if (var_790acff6) {
             self dodamage(5000, self.origin, undefined, undefined, undefined, "MOD_DROWN", 6);
-        } else if (underwater && !is_true(self.var_f07d3654)) {
+            continue;
+        }
+        if (underwater && !is_true(self.var_f07d3654)) {
             if (!is_true(self.wasunderwater)) {
                 self.wasunderwater = 1;
                 self.var_cdefe788 = gettime();
@@ -135,22 +137,22 @@ function watch_player_drowning() {
                     self clientfield::set_to_player("drown_stage", self.drownstage);
                 }
             }
-        } else {
-            if (is_true(self.wasunderwater)) {
-                if (self.drownstage > 0) {
-                    thread battlechatter::function_e9f06034(self, 1);
-                } else if (gettime() > (isdefined(self.var_cdefe788) ? self.var_cdefe788 : 0) + underwaterbreathtime) {
-                    thread battlechatter::function_e9f06034(self, 0);
-                }
-            }
-            self.drownstage = 0;
-            self clientfield::set_to_player("drown_stage", 0);
-            self.lastwaterdamagetime = self getlastoutwatertime();
-            self deactivate_player_health_visionset();
-            var_c1e8fa5d = 4000;
-            self.wasunderwater = 0;
-            return;
+            continue;
         }
+        if (is_true(self.wasunderwater)) {
+            if (self.drownstage > 0) {
+                thread battlechatter::function_e9f06034(self, 1);
+            } else if (gettime() > (isdefined(self.var_cdefe788) ? self.var_cdefe788 : 0) + underwaterbreathtime) {
+                thread battlechatter::function_e9f06034(self, 0);
+            }
+        }
+        self.drownstage = 0;
+        self clientfield::set_to_player("drown_stage", 0);
+        self.lastwaterdamagetime = self getlastoutwatertime();
+        self deactivate_player_health_visionset();
+        var_c1e8fa5d = 4000;
+        self.wasunderwater = 0;
+        return;
     }
 }
 

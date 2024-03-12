@@ -105,9 +105,9 @@ function function_c808b1bb(trap, page = 0) {
             level.doa.var_dfb9e943 = array(level.doa.var_dfb9e943);
         }
         level.doa.var_dfb9e943[level.doa.var_dfb9e943.size] = trap;
-    } else {
-        function_54989f74(trap);
+        return;
     }
+    function_54989f74(trap);
 }
 
 // Namespace namespace_3c9cfcff/namespace_3c9cfcff
@@ -154,12 +154,12 @@ function function_d4a86caf() {
                     trap.var_eb9d64bb = trap.var_eb9d64bb + 5000;
                     namespace_1e25ad94::function_f5f0c0f8("Paging IN dragonhead trap at:" + trap.origin);
                 }
-            } else {
-                trap.var_f8660931 = namespace_ec06fe4a::function_f3eab80e(trap.origin, 3600);
-                if (!isdefined(trap.var_f8660931)) {
-                    trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
-                    namespace_1e25ad94::function_f5f0c0f8("Paging out dragonhead trap at:" + trap.origin);
-                }
+                continue;
+            }
+            trap.var_f8660931 = namespace_ec06fe4a::function_f3eab80e(trap.origin, 3600);
+            if (!isdefined(trap.var_f8660931)) {
+                trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
+                namespace_1e25ad94::function_f5f0c0f8("Paging out dragonhead trap at:" + trap.origin);
             }
         }
     }
@@ -261,12 +261,12 @@ function function_d1b295d7(trap) {
             if (isdefined(trap.var_2e485cc) && guy.birthtime != gettime()) {
                 guy thread status_effect::status_effect_apply(trap.var_2e485cc, guy.currentweapon, self, 1);
             }
-        } else {
-            if (!is_true(guy.var_1b41b0e8) && isactor(guy)) {
-                guy namespace_83eb6304::function_3ecfde67("burn_zombie");
-            }
-            guy thread namespace_ec06fe4a::function_570729f0(randomfloatrange(0.5, 2.2));
+            continue;
         }
+        if (!is_true(guy.var_1b41b0e8) && isactor(guy)) {
+            guy namespace_83eb6304::function_3ecfde67("burn_zombie");
+        }
+        guy thread namespace_ec06fe4a::function_570729f0(randomfloatrange(0.5, 2.2));
     }
 }
 

@@ -150,7 +150,9 @@ function function_fec92021(localclientnum, type, off) {
             }
             self.var_d1354b88 = self playloopsound(alias);
         }
-    } else if (looping && isdefined(self.var_d1354b88)) {
+        return;
+    }
+    if (looping && isdefined(self.var_d1354b88)) {
         self stoploopsound(self.var_d1354b88, function_90ddbde4(type));
         self.var_d1354b88 = undefined;
     }

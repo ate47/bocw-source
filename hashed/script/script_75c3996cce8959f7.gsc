@@ -133,10 +133,10 @@ function function_ce6420c(localclientnum) {
                 self serverfield::set("rstick_input_inc", latch);
                 latch = latch == 1 ? 2 : 1;
             }
-        } else {
-            var_183aaf3c = 0;
-            self serverfield::set("rstick_input_inc", 0);
+            continue;
         }
+        var_183aaf3c = 0;
+        self serverfield::set("rstick_input_inc", 0);
     }
 }
 
@@ -179,10 +179,10 @@ function function_4fa1ee4f(localclientnum) {
                 self serverfield::set("lstick_input_inc", latch);
                 latch = latch == 1 ? 2 : 1;
             }
-        } else {
-            var_183aaf3c = 0;
-            self serverfield::set("lstick_input_inc", 0);
+            continue;
         }
+        var_183aaf3c = 0;
+        self serverfield::set("lstick_input_inc", 0);
     }
 }
 
@@ -205,7 +205,6 @@ function function_144f26b2(entnum) {
         return (1, 1, 0);
     default:
         return (1, 1, 1);
-        break;
     }
 }
 
@@ -228,7 +227,6 @@ function function_7b9bc9ff(entnum) {
         return "yellow";
     default:
         return "unk";
-        break;
     }
 }
 
@@ -271,11 +269,11 @@ function function_4d692cc4(localclientnum, mapping = "zombietron") {
             function_f5f0c0f8("<unknown string>" + localclientnum);
         #/
         forcegamemodemappings(localclientnum, mapping);
-    } else {
-        /#
-            function_f5f0c0f8("<unknown string>");
-        #/
+        return;
     }
+    /#
+        function_f5f0c0f8("<unknown string>");
+    #/
 }
 
 // Namespace namespace_7f5aeb59/namespace_7f5aeb59

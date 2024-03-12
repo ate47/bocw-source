@@ -57,10 +57,10 @@ function function_d6cba2e9(material = "", var_56a8cb79, var_47612cea, var_49fcbf
     if (isplayer(self)) {
         self function_fbb89d0b(material, northwest[0], northwest[1], southeast[0], southeast[1]);
         self function_813fd4e7(northwest[0], northwest[1], southeast[0], southeast[1]);
-    } else {
-        setminimap(material, northwest[0], northwest[1], southeast[0], southeast[1]);
-        setminimapzone(northwest[0], northwest[1], southeast[0], southeast[1]);
+        return;
     }
+    setminimap(material, northwest[0], northwest[1], southeast[0], southeast[1]);
+    setminimapzone(northwest[0], northwest[1], southeast[0], southeast[1]);
 }
 
 // Namespace compass/compass

@@ -175,9 +175,9 @@ function function_ba7d9848(*localclientnum, *oldval, newval, *bnewent, *binitial
     if (1) {
         if (bwastimejump) {
             self function_d309e55a("tag_landing_gear_control_animate", 1);
-        } else {
-            self function_d309e55a("tag_landing_gear_control_animate", 0);
+            return;
         }
+        self function_d309e55a("tag_landing_gear_control_animate", 0);
     }
 }
 
@@ -244,12 +244,16 @@ function function_7bac6764(localclientnum, *oldval, newval, *bnewent, *binitials
     value = function_76a4b21e(bwastimejump);
     if (value == 0) {
         player camerasetupdatecallback();
-    } else if (value == 1) {
+        return;
+    }
+    if (value == 1) {
         level.var_88a92c26 = self;
         self camerasetupdatecallback(&function_cbe63de1);
         self thread function_8c515e6(player);
         player function_ec94346();
-    } else if (value == 2) {
+        return;
+    }
+    if (value == 2) {
         level.var_88a92c26 = self;
         self camerasetupdatecallback(&function_c8ea4bcc);
         self thread function_8c515e6(player);
@@ -465,11 +469,11 @@ function function_4da7bee9(localclientnum, oldval, newval, *bnewent, binitialsna
         }
         if (value) {
             level thread function_65cca2e1(bnewent, var_1e7db62f);
-        } else {
-            self notify(#"hash_503cb9224ca331c" + var_1e7db62f);
-            function_c8ae746a(bnewent, var_1e7db62f, 0);
-            function_71fec565(bnewent, var_1e7db62f);
+            continue;
         }
+        self notify(#"hash_503cb9224ca331c" + var_1e7db62f);
+        function_c8ae746a(bnewent, var_1e7db62f, 0);
+        function_71fec565(bnewent, var_1e7db62f);
     }
 }
 
@@ -483,14 +487,14 @@ function inside_infiltration_vehicle(localclientnum, *oldval, newval, *bnewent, 
         if (!is_true(level.var_a3c42585)) {
             self function_811196d1(1);
         }
-    } else {
-        self notify(#"hash_70483f3d5a2f87f0");
-        if (!is_true(level.var_a3c42585)) {
-            self function_811196d1(0);
-        }
-        self camerasetupdatecallback();
-        level notify(#"hash_413d64e47311dcf8");
+        return;
     }
+    self notify(#"hash_70483f3d5a2f87f0");
+    if (!is_true(level.var_a3c42585)) {
+        self function_811196d1(0);
+    }
+    self camerasetupdatecallback();
+    level notify(#"hash_413d64e47311dcf8");
 }
 
 // Namespace player_insertion/player_insertion
@@ -500,9 +504,9 @@ function inside_infiltration_vehicle(localclientnum, *oldval, newval, *bnewent, 
 function private function_c9851cb(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self codeplaypostfxbundle("pstfx_heat_distortion");
-    } else {
-        self codestoppostfxbundle("pstfx_heat_distortion");
+        return;
     }
+    self codestoppostfxbundle("pstfx_heat_distortion");
 }
 
 // Namespace player_insertion/player_insertion
@@ -525,11 +529,11 @@ function private function_c0c7c219(localclientnum, *oldval, newval, *bnewent, *b
             stopfx(fieldname, self.var_227361c6);
         }
         self.var_227361c6 = playfx(fieldname, #"hash_28b5c6ccaabb4afe", self.origin);
-    } else {
-        if (isdefined(self.var_227361c6)) {
-            stopfx(fieldname, self.var_227361c6);
-        }
-        self.var_227361c6 = playfx(fieldname, #"hash_45086f1ffcabbf47", self.origin);
+        return;
     }
+    if (isdefined(self.var_227361c6)) {
+        stopfx(fieldname, self.var_227361c6);
+    }
+    self.var_227361c6 = playfx(fieldname, #"hash_45086f1ffcabbf47", self.origin);
 }
 

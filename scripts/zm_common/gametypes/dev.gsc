@@ -101,15 +101,17 @@ function updatehardpoints() {
                 foreach (player in level.players) {
                     if (is_true(level.usingmomentum) && is_true(level.usingscorestreaks)) {
                         player give(key);
-                    } else if (isbot(player)) {
+                        continue;
+                    }
+                    if (isbot(player)) {
                         player.bot[#"killstreaks"] = [];
                         player.bot[#"killstreaks"][0] = get_menu_name(key);
                         killstreakweapon = get_killstreak_weapon(key);
                         player give_weapon(killstreakweapon, 1);
                         _setplayermomentum(player, 2000);
-                    } else {
-                        player give(key);
+                        continue;
                     }
+                    player give(key);
                 }
                 setdvar(dvar, 0);
             }
@@ -160,15 +162,20 @@ function warpalltoplayer(team, player) {
                     if (strstartswith(team, "<unknown string>") && target.team == players[i].team) {
                         continue;
                     }
-                    jumpiffalse(strstartswith(team, "<unknown string>") && target.team != players[i].team) LOC_00000254;
-                } else if (isdefined(spawn_origin)) {
+                    if (strstartswith(team, "<unknown string>") && target.team != players[i].team) {
+                        continue;
+                    }
+                }
+                if (isdefined(spawn_origin)) {
                     players[i] setorigin(spawn_origin);
-                } else if (nodes.size > 0) {
+                    continue;
+                }
+                if (nodes.size > 0) {
                     node = random(nodes);
                     players[i] setorigin(node.origin);
-                } else {
-                    players[i] setorigin(origin);
+                    continue;
                 }
+                players[i] setorigin(origin);
             }
         }
         setdvar(#"scr_playerwarp", "<unknown string>");
@@ -219,18 +226,18 @@ function updatedevsettingszm() {
                 if (numpoints == 0) {
                     setdvar(#"hash_6efff55aa118c517", 0);
                     level.streamdumpteamindex = -1;
-                } else {
-                    averageorigin = (0, 0, 0);
-                    averageangles = (0, 0, 0);
-                    foreach (spawnpoint in spawnpoints) {
-                        averageorigin = averageorigin + spawnpoint.origin / numpoints;
-                        averageangles = averageangles + spawnpoint.angles / numpoints;
-                    }
-                    level.players[0] setplayerangles(averageangles);
-                    level.players[0] setorigin(averageorigin);
-                    waitframe(1);
-                    setdvar(#"hash_6efff55aa118c517", 2);
+                    return;
                 }
+                averageorigin = (0, 0, 0);
+                averageangles = (0, 0, 0);
+                foreach (spawnpoint in spawnpoints) {
+                    averageorigin = averageorigin + spawnpoint.origin / numpoints;
+                    averageangles = averageangles + spawnpoint.angles / numpoints;
+                }
+                level.players[0] setplayerangles(averageangles);
+                level.players[0] setorigin(averageorigin);
+                waitframe(1);
+                setdvar(#"hash_6efff55aa118c517", 2);
             }
         }
     #/
@@ -291,9 +298,9 @@ function updatedevsettings() {
                 for (i = 0; i < players.size; i++) {
                     if (level.devgui_unlimited_ammo) {
                         players[i] thread devgui_unlimited_ammo();
-                    } else {
-                        players[i] notify(#"devgui_unlimited_ammo");
+                        continue;
                     }
+                    players[i] notify(#"devgui_unlimited_ammo");
                 }
                 setdvar(#"scr_player_ammo", "<unknown string>");
             } else if (getdvarstring(#"scr_player_momentum") != "<unknown string>") {
@@ -431,10 +438,10 @@ function updatedevsettings() {
                     if (player hasperk(specialty)) {
                         player unsetperk(specialty);
                         player.extraperks[specialty] = 0;
-                    } else {
-                        player setperk(specialty);
-                        player.extraperks[specialty] = 1;
+                        continue;
                     }
+                    player setperk(specialty);
+                    player.extraperks[specialty] = 1;
                 }
             }
             setdvar(#"scr_toggleperk", "<unknown string>");
@@ -672,7 +679,9 @@ function xkillsy(attackername, victimname) {
         for (index = 0; index < level.players.size; index++) {
             if (level.players[index].name == attackername) {
                 attacker = level.players[index];
-            } else if (level.players[index].name == victimname) {
+                continue;
+            }
+            if (level.players[index].name == victimname) {
                 victim = level.players[index];
             }
         }
@@ -727,11 +736,10 @@ function testscriptruntimeerror() {
     /#
         wait(5);
         for (;;) {
-            for (;;) {
-                if (getdvarstring(#"scr_testscriptruntimeerror") != "<unknown string>") {
-                    break;
-                }
+            if (getdvarstring(#"scr_testscriptruntimeerror") != "<unknown string>") {
+                break;
             }
+            wait(1);
         }
         myerror = getdvarstring(#"scr_testscriptruntimeerror");
         setdvar(#"scr_testscriptruntimeerror", "<unknown string>");
@@ -752,11 +760,10 @@ function testdvars() {
     /#
         wait(5);
         for (;;) {
-            for (;;) {
-                if (getdvarstring(#"scr_testdvar") != "<unknown string>") {
-                    break;
-                }
+            if (getdvarstring(#"scr_testdvar") != "<unknown string>") {
+                break;
             }
+            wait(1);
         }
         tokens = strtok(getdvarstring(#"scr_testdvar"), "<unknown string>");
         dvarname = tokens[0];
@@ -931,9 +938,8 @@ function dvar_turned_on(val) {
     /#
         if (val <= 0) {
             return 0;
-        } else {
-            return 1;
         }
+        return 1;
     #/
 }
 
@@ -1206,9 +1212,9 @@ function devstraferunpathdebugdraw() {
                     drawtime = maxdrawtime;
                 }
                 waitframe(1);
-            } else {
-                wait(1);
+                continue;
             }
+            wait(1);
         }
     #/
 }
@@ -1268,7 +1274,7 @@ function devhelipathdebugdraw() {
                             ent draworiginlines();
                             ent drawtargetnametext(textcolor, textalpha, textscale);
                             ent draworigintext(textcolor, textalpha, textscale, origintextoffset);
-                            break;
+                            continue;
                         }
                     }
                 }
@@ -1372,7 +1378,7 @@ function drawpath(linecolor, textcolor, textalpha, textscale, textoffset, drawti
             if (ent.targetname == "<unknown string>") {
                 entfirsttarget = ent.target;
             } else if (ent.target == entfirsttarget) {
-                break;
+                return;
             }
             ent = enttarget;
             waitframe(1);

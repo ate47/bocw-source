@@ -103,16 +103,16 @@ function on_menu_response(params) {
             if (!level.gameended) {
                 self globallogic::gamehistoryplayerquit();
                 level thread globallogic::forceend();
-            } else {
-                if (!self function_8b1a219a()) {
-                    self closeingamemenu();
-                }
-                if (sessionmodeiswarzonegame()) {
-                    level notify(#"hash_197c640e2f684a74");
-                } else {
-                    self iprintln(#"hash_6e4cedc56165f367");
-                }
+                return;
             }
+            if (!self function_8b1a219a()) {
+                self closeingamemenu();
+            }
+            if (sessionmodeiswarzonegame()) {
+                level notify(#"hash_197c640e2f684a74");
+                return;
+            }
+            self iprintln(#"hash_6e4cedc56165f367");
             return;
         }
     }
@@ -149,7 +149,9 @@ function on_menu_response(params) {
                 break;
             }
         }
-    } else if (menu == game.menu[#"menu_changeclass"] || menu == game.menu[#"menu_changeclass_offline"] || menu == game.menu[#"hash_1e441031ee146364"]) {
+        return;
+    }
+    if (menu == game.menu[#"menu_changeclass"] || menu == game.menu[#"menu_changeclass_offline"] || menu == game.menu[#"hash_1e441031ee146364"]) {
         if (response == "changecharacter" || response == "randomcharacter" || response == "ready" || response == "opendraft" || response == "closedraft") {
             self [[ level.draftmenu ]](response, intpayload);
         } else if (response == "weapon_updated") {
@@ -164,16 +166,22 @@ function on_menu_response(params) {
             }
             self [[ level.curclass ]](response, undefined, 1, menu == game.menu[#"hash_1e441031ee146364"]);
         }
-    } else if (menu == "spectate") {
+        return;
+    }
+    if (menu == "spectate") {
         player = util::getplayerfromclientnum(intpayload);
         if (isdefined(player)) {
             self setcurrentspectatorclient(player);
         }
-    } else if (menu == "sprays_and_gestures") {
+        return;
+    }
+    if (menu == "sprays_and_gestures") {
         /#
             iprintlnbold("<unknown string>" + intpayload);
         #/
-    } else if (menu == "callout_items") {
+        return;
+    }
+    if (menu == "callout_items") {
         function_2d1eb0ec(intpayload);
     }
 }

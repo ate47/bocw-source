@@ -99,13 +99,13 @@ function function_3ba6ee5d(weapon, amount) {
     }
     if (weapon.iscliponly) {
         self setweaponammoclip(weapon, amount);
-    } else {
-        self setweaponammoclip(weapon, amount);
-        diff = amount - self getweaponammoclip(weapon);
-        /#
-            assert(diff >= 0);
-        #/
-        self setweaponammostock(weapon, diff);
+        return;
     }
+    self setweaponammoclip(weapon, amount);
+    diff = amount - self getweaponammoclip(weapon);
+    /#
+        assert(diff >= 0);
+    #/
+    self setweaponammostock(weapon, diff);
 }
 

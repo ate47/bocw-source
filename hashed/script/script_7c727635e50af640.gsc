@@ -68,9 +68,9 @@ function function_3d1947be(localclientnum, *oldval, newval, *bnewent, *binitials
             self playsound(fieldname, #"hash_6f1e98cba03ff12a", self.origin + vectorscale((0, 0, 1), 75));
             level.var_119220bf[fieldname][var_47c85523].var_631ff0ad = self playloopsound(#"hash_493bcaf7ad0973e", undefined, vectorscale((0, 0, 1), 75));
         }
-    } else {
-        self function_c8e90b89(fieldname);
+        return;
     }
+    self function_c8e90b89(fieldname);
 }
 
 // Namespace namespace_1fd59e39/namespace_1fd59e39

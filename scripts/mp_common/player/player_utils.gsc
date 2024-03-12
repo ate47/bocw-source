@@ -65,12 +65,14 @@ function function_a074b96f(enabled) {
                 self val::set(#"spawn_player", "disablegadgets");
             }
         }
-    } else if (is_true(getgametypesetting(#"hash_1b85ace023e616a1"))) {
-        self val::function_4671dfff(#"spawn_player", 0);
-    } else {
-        self val::reset(#"spawn_player", "freezecontrols");
-        self val::reset(#"spawn_player", "disablegadgets");
+        return;
     }
+    if (is_true(getgametypesetting(#"hash_1b85ace023e616a1"))) {
+        self val::function_4671dfff(#"spawn_player", 0);
+        return;
+    }
+    self val::reset(#"spawn_player", "freezecontrols");
+    self val::reset(#"spawn_player", "disablegadgets");
 }
 
 // Namespace player/player_utils
@@ -85,12 +87,14 @@ function function_7be72477(enabled) {
             self val::set(#"freeze_player_for_round_end", "freezecontrols");
             self val::set(#"freeze_player_for_round_end", "disablegadgets");
         }
-    } else if (is_true(getgametypesetting(#"hash_16e0649caf2f76b5"))) {
-        self val::function_5276aede(#"freeze_player_for_round_end", 0);
-    } else {
-        self val::reset(#"freeze_player_for_round_end", "freezecontrols");
-        self val::reset(#"freeze_player_for_round_end", "disablegadgets");
+        return;
     }
+    if (is_true(getgametypesetting(#"hash_16e0649caf2f76b5"))) {
+        self val::function_5276aede(#"freeze_player_for_round_end", 0);
+        return;
+    }
+    self val::reset(#"freeze_player_for_round_end", "freezecontrols");
+    self val::reset(#"freeze_player_for_round_end", "disablegadgets");
 }
 
 // Namespace player/player_utils
@@ -108,12 +112,12 @@ function function_c49fc862(team) {
                 return;
             }
             clientfield::set_world_uimodel("hudItems." + teamid + ".livesCount", level.playerlives[team]);
-        } else {
-            if (!isdefined(game.lives[team])) {
-                return;
-            }
-            clientfield::set_world_uimodel("hudItems." + teamid + ".livesCount", game.lives[team]);
+            return;
         }
+        if (!isdefined(game.lives[team])) {
+            return;
+        }
+        clientfield::set_world_uimodel("hudItems." + teamid + ".livesCount", game.lives[team]);
     }
 }
 

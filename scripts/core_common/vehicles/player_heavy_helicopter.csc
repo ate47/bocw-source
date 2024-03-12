@@ -42,7 +42,9 @@ function function_44ad5e3e(*localclientnum, *oldval, newval, *bnewent, *binitial
         if (!self postfx::function_556665f2(#"hash_4a4dfccbf3585bcc")) {
             self postfx::playpostfxbundle(#"hash_4a4dfccbf3585bcc");
         }
-    } else if (self postfx::function_556665f2(#"hash_4a4dfccbf3585bcc")) {
+        return;
+    }
+    if (self postfx::function_556665f2(#"hash_4a4dfccbf3585bcc")) {
         self postfx::stoppostfxbundle(#"hash_4a4dfccbf3585bcc");
     }
 }
@@ -58,13 +60,13 @@ function hind_compass_icon(*localclientnum, *oldval, newval, *bnewent, *binitial
     switch (bwastimejump) {
     case 0:
         self setcompassicon(#"hash_238039183607226d");
-        break;
+        return;
     case 1:
         self setcompassicon(#"hash_a6a2a558ed7bec6");
-        break;
+        return;
     case 2:
         self setcompassicon("");
-        break;
+        return;
     }
 }
 

@@ -27,10 +27,10 @@ function private function_70a657d8() {
         if (!isdefined(game.telemetry.life_count)) {
             game.telemetry.life_count = 0;
         }
-    } else {
-        /#
-            println("<unknown string>");
-        #/
+        return;
     }
+    /#
+        println("<unknown string>");
+    #/
 }
 

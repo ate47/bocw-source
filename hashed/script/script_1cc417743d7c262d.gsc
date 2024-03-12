@@ -268,7 +268,7 @@ function flush_objective_dialog_on_player(objectivekey) {
     for (i = self.leaderdialogqueue.size - 1; i >= 0; i--) {
         if (objectivekey === self.leaderdialogqueue[i].objectivekey) {
             arrayremoveindex(self.leaderdialogqueue, i);
-            break;
+            return;
         }
     }
 }
@@ -347,9 +347,9 @@ function killstreak_dialog_on_player(dialogkey, killstreaktype, killstreakid, pi
     }
     if (self.playingdialog === 1 && dialogkey == "arrive") {
         self thread wait_for_player_dialog();
-    } else {
-        self thread play_next_killstreak_dialog();
+        return;
     }
+    self thread play_next_killstreak_dialog();
 }
 
 // Namespace globallogic_audio/globallogic_audio
@@ -388,8 +388,7 @@ function play_next_killstreak_dialog() {
         self.currentkillstreakdialog = undefined;
         return;
     }
-    dialogalias = undefined;
-    while (!isdefined(dialogalias) && self.killstreakdialogqueue.size > 0) {
+    for (dialogalias = undefined; !isdefined(dialogalias) && self.killstreakdialogqueue.size > 0; dialogalias = self get_dialog_bundle_alias(taacombundle, nextdialog.dialogkey)) {
         nextdialog = self.killstreakdialogqueue[0];
         arrayremoveindex(self.killstreakdialogqueue, 0);
         if (isdefined(nextdialog.killstreaktype)) {
@@ -407,8 +406,7 @@ function play_next_killstreak_dialog() {
                     dialogalias = self get_dialog_bundle_alias(killstreakbundle, nextdialog.dialogkey);
                 }
             }
-        } else {
-            dialogalias = self get_dialog_bundle_alias(taacombundle, nextdialog.dialogkey);
+            continue;
         }
     }
     if (!isdefined(dialogalias)) {
@@ -791,7 +789,6 @@ function dialogkey_priority(dialogkey) {
     case #"domfriendlysecuringc":
     case #"domfriendlysecuringa":
         return 1;
-        break;
     }
     return undefined;
 }
@@ -990,7 +987,9 @@ function set_music_on_team(state, team = "both", wait_time = 0, save_state = 0, 
     foreach (player in level.players) {
         if (team == "both") {
             player thread set_music_on_player(state, wait_time, save_state, return_state);
-        } else if (isdefined(player.pers[#"team"]) && player.pers[#"team"] == team) {
+            continue;
+        }
+        if (isdefined(player.pers[#"team"]) && player.pers[#"team"] == team) {
             player thread set_music_on_player(state, wait_time, save_state, return_state);
         }
     }
@@ -1316,18 +1315,18 @@ function function_4fb91bc7(weapon, var_df17fa82, var_53c10ed8) {
     }
     if ((isdefined(self.var_d6422943) ? self.var_d6422943 : 0) > gettime()) {
         self thread play_taacom_dialog(taacomdialog);
-    } else {
-        if (var_b3fe42a9 === 1) {
-            if (var_53c10ed8 === 1) {
-                self thread play_taacom_dialog(taacomdialog, undefined, undefined, 5, var_df17fa82, weapon);
-            } else {
-                self thread play_taacom_dialog(taacomdialog, undefined, undefined, 3, var_df17fa82, weapon);
-            }
-        } else {
-            self thread play_taacom_dialog(taacomdialog, undefined, undefined, 4, var_df17fa82);
-        }
-        self.var_d6422943 = gettime() + int(battlechatter::mpdialog_value("taacomHackedReplyCooldownSec", 0) * 1000);
+        return;
     }
+    if (var_b3fe42a9 === 1) {
+        if (var_53c10ed8 === 1) {
+            self thread play_taacom_dialog(taacomdialog, undefined, undefined, 5, var_df17fa82, weapon);
+        } else {
+            self thread play_taacom_dialog(taacomdialog, undefined, undefined, 3, var_df17fa82, weapon);
+        }
+    } else {
+        self thread play_taacom_dialog(taacomdialog, undefined, undefined, 4, var_df17fa82);
+    }
+    self.var_d6422943 = gettime() + int(battlechatter::mpdialog_value("taacomHackedReplyCooldownSec", 0) * 1000);
 }
 
 // Namespace globallogic_audio/globallogic_audio

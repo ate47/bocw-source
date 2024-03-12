@@ -128,10 +128,10 @@ function function_b81255af() {
         level.sims namespace_a635adb1::queue("vox_cp_sh2_02200_sims_whatyouthinkeve_b9");
         wait(1);
         level.sims lookatentity();
-    } else {
-        level flag::clear("post_armada_busted_evesdropping");
-        level flag::set("post_armada_not_busted_evesdropping");
+        return;
     }
+    level flag::clear("post_armada_busted_evesdropping");
+    level flag::set("post_armada_not_busted_evesdropping");
 }
 
 // Namespace hub_post_armada/cp_ger_hub_post_armada

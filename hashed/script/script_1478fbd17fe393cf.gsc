@@ -142,9 +142,9 @@ function private function_feebc7c2(data, line_num) {
         var_6d381b22 = self flag::get(data.var_cb93cf14);
         if (var_6d381b22) {
             namespace_61e6d095::function_f2a9266(#"hint_tutorial", line_num, "button_text", data.var_88c2ece);
-        } else {
-            namespace_61e6d095::function_f2a9266(#"hint_tutorial", line_num, "button_text", data.options);
+            continue;
         }
+        namespace_61e6d095::function_f2a9266(#"hint_tutorial", line_num, "button_text", data.options);
     }
 }
 
@@ -265,9 +265,9 @@ function function_57a24ab5(visible) {
     if (namespace_61e6d095::exists(#"hint_tutorial")) {
         if (is_true(visible)) {
             namespace_61e6d095::function_f96376c5(#"hash_4672994c342b7571");
-        } else {
-            namespace_61e6d095::function_df0d7a85(#"hash_4672994c342b7571", #"hint_tutorial");
+            return;
         }
+        namespace_61e6d095::function_df0d7a85(#"hash_4672994c342b7571", #"hint_tutorial");
     }
 }
 

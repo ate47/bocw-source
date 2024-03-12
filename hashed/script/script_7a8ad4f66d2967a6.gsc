@@ -181,7 +181,9 @@ function function_2cadff8e() {
                 self.gunners = array(self.gunners);
             }
             self.gunners[self.gunners.size] = rider;
-        } else if (rider.var_5574287b === "gunner2") {
+            continue;
+        }
+        if (rider.var_5574287b === "gunner2") {
             self.var_e8b1fa34 = rider;
             if (!isdefined(self.gunners)) {
                 self.gunners = [];
@@ -189,9 +191,9 @@ function function_2cadff8e() {
                 self.gunners = array(self.gunners);
             }
             self.gunners[self.gunners.size] = rider;
-        } else {
-            rider.ignoreall = 1;
+            continue;
         }
+        rider.ignoreall = 1;
     }
     self notify(#"hash_4a0f9f1570680e05");
 }
@@ -809,9 +811,8 @@ function function_e943de0c(guy) {
     }
     if (self.var_c2634283 === 1) {
         return var_40784873;
-    } else {
-        return var_545a1f9b;
     }
+    return var_545a1f9b;
 }
 
 // Namespace namespace_486c0593/namespace_486c0593
@@ -858,8 +859,7 @@ function function_79c4d29d() {
     self.var_cb55c804 = 512;
     self setneargoalnotifydist(self.var_cb55c804);
     pos = self.origin;
-    currentnode = undefined;
-    while (1) {
+    for (currentnode = undefined; 1; currentnode = nextnode) {
         var_b202465d = self function_5dcf6173();
         loop = level.var_462eb982[var_b202465d].var_5943fcff;
         if (isdefined(currentnode) && var_b202465d == int(currentnode.script_noteworthy)) {
@@ -898,7 +898,6 @@ function function_79c4d29d() {
         self function_7c23816d(pos, 0);
         self waittill(#"near_goal");
         self notify(#"path start");
-        currentnode = nextnode;
     }
 }
 
@@ -958,32 +957,31 @@ function function_c4b00a04(*startnode) {
     idx = idx + var_ef413b39;
     self thread function_8d430af1();
     for (;;) {
-        for (;;) {
-            if (idx == var_99ec1a2c.size) {
-                idx = 0;
-            } else if (idx == -1) {
-                idx = var_99ec1a2c.size - 1;
-            }
-            if (idx == var_60a69279[0]) {
-                self.loopcount++;
-                if (self.loopcount == 3) {
-                    break;
-                }
-            }
-            if (idx == var_60a69279[0] - var_ef413b39) {
-                var_99ec1a2c[idx] = (var_99ec1a2c[idx][0], var_99ec1a2c[idx][1], self.var_94e122a8[2] + 1200);
-            } else {
-                var_99ec1a2c[idx] = (var_99ec1a2c[idx][0], var_99ec1a2c[idx][1], self.var_94e122a8[2] + 1000);
-            }
-            var_99ec1a2c[idx] = getclosestpointonnavvolume(var_99ec1a2c[idx], "navvolume_big", 10000);
-            /#
-                if (level.var_6158b82e) {
-                    debug_sphere(var_99ec1a2c[idx], 100, (1, 1, 1), 1, 500);
-                }
-            #/
-            self function_7c23816d(var_99ec1a2c[idx], 0);
-            self waittill(#"near_goal");
+        if (idx == var_99ec1a2c.size) {
+            idx = 0;
+        } else if (idx == -1) {
+            idx = var_99ec1a2c.size - 1;
         }
+        if (idx == var_60a69279[0]) {
+            self.loopcount++;
+            if (self.loopcount == 3) {
+                return;
+            }
+        }
+        if (idx == var_60a69279[0] - var_ef413b39) {
+            var_99ec1a2c[idx] = (var_99ec1a2c[idx][0], var_99ec1a2c[idx][1], self.var_94e122a8[2] + 1200);
+        } else {
+            var_99ec1a2c[idx] = (var_99ec1a2c[idx][0], var_99ec1a2c[idx][1], self.var_94e122a8[2] + 1000);
+        }
+        var_99ec1a2c[idx] = getclosestpointonnavvolume(var_99ec1a2c[idx], "navvolume_big", 10000);
+        /#
+            if (level.var_6158b82e) {
+                debug_sphere(var_99ec1a2c[idx], 100, (1, 1, 1), 1, 500);
+            }
+        #/
+        self function_7c23816d(var_99ec1a2c[idx], 0);
+        self waittill(#"near_goal");
+        idx = idx + var_ef413b39;
     }
 }
 
@@ -1113,15 +1111,15 @@ function private function_79dbd1f7(centroid, var_4f48f05, var_95e06609, frames, 
                 debug_spherical_cone(centroid, dome_apex, var_95e06609, 16, color, 0.3, 1, frames);
                 waitframe(1);
             }
-        } else {
-            for (i = 0; i < frames; i++) {
-                if (!isdefined(self)) {
-                    break;
-                }
-                dome_apex = centroid + vectorscale(var_4f48f05, level.heli_visual_range);
-                debug_spherical_cone(centroid, dome_apex, var_95e06609, 16, color, 0.3, 1, frames);
-                waitframe(1);
+            return;
+        }
+        for (i = 0; i < frames; i++) {
+            if (!isdefined(self)) {
+                return;
             }
+            dome_apex = centroid + vectorscale(var_4f48f05, level.heli_visual_range);
+            debug_spherical_cone(centroid, dome_apex, var_95e06609, 16, color, 0.3, 1, frames);
+            waitframe(1);
         }
     #/
 }
@@ -1179,14 +1177,14 @@ function private function_a9c8d69a(msg, color, ent, offset, frames, scale, alpha
                 print3d(ent.origin + offset, msg, color, alpha, scale);
                 waitframe(1);
             }
-        } else {
-            for (i = 0; i < frames; i++) {
-                if (!isdefined(ent)) {
-                    break;
-                }
-                print3d(ent.origin + offset, msg, color, alpha, scale);
-                waitframe(1);
+            return;
+        }
+        for (i = 0; i < frames; i++) {
+            if (!isdefined(ent)) {
+                return;
             }
+            print3d(ent.origin + offset, msg, color, alpha, scale);
+            waitframe(1);
         }
     #/
 }

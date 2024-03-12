@@ -109,7 +109,9 @@ function function_1fab9ee0(eventstruct) {
     if (isplayer(player) && !level flag::get(#"hash_23350b678001fece")) {
         if (is_true(getgametypesetting(#"hash_5cc58dfc6675a68e")) && level.var_b48509f9 >= 3) {
             player function_3f2f87c1(machine);
-        } else if (!level.var_8bef1f53 sr_beacon_menu::is_open(player) && !player clientfield::get_player_uimodel("hudItems.srOverlayOpen")) {
+            return;
+        }
+        if (!level.var_8bef1f53 sr_beacon_menu::is_open(player) && !player clientfield::get_player_uimodel("hudItems.srOverlayOpen")) {
             player notify(#"hash_5f178db4550eeae9");
             level.var_8bef1f53 sr_beacon_menu::open(player, 0);
             player thread function_21ba74a1(machine, self);
@@ -378,13 +380,16 @@ function function_21ba74a1(machine, trigger) {
                 self notify(#"hash_11ed79645f6768e1");
                 self function_6c71e778(machine, trigger, 1);
                 self thread warp(machine);
+                return;
             case #"hash_a1f795a11ddf7be":
                 self notify(#"hash_11ed79645f6768e1");
                 self function_6c71e778(machine, trigger, 1);
                 self thread function_3f2f87c1(machine);
+                return;
             case #"hash_383c519d3bdac984":
                 self notify(#"hash_11ed79645f6768e1");
                 self function_6c71e778(machine, trigger);
+                return;
             default:
                 var_3f5e47c5 = level.var_47926ab6[response];
                 if (isfunctionptr(var_3f5e47c5)) {
@@ -500,7 +505,7 @@ function function_22aada64() {
             }
             level waittill(#"hash_345e9169ebba28fb");
             namespace_553954de::function_7c97e961(level.var_b48509f9 + 1);
-            break;
+            return;
         }
     }
 }

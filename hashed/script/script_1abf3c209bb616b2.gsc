@@ -47,11 +47,11 @@ function function_a8f7fa5b() {
         case #"hash_4512f0aa849ffe50":
             self.trigs[#"hack"] = ent;
             self thread function_2dc6261d();
-            break;
+            continue;
         case #"trigger_damage":
             self.trigs[#"dmg"] = ent;
             self thread function_47de2d14();
-            break;
+            continue;
         case #"light":
             self.lights[self.lights.size] = ent;
             self.var_bb4a3b9 = ent.model;
@@ -60,9 +60,9 @@ function function_a8f7fa5b() {
             if (isdefined(ent.var_66bf406)) {
                 self.var_c0effb5a = ent.var_66bf406;
             }
-            break;
+            continue;
         default:
-            break;
+            continue;
         }
     }
     self thread function_7e4779a4();

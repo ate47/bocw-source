@@ -211,18 +211,18 @@ function private event_handler[grenade_fire] function_4776caf4(eventstruct) {
         if (isdefined(level.var_1b5a1f0d) && ![[ level.var_1b5a1f0d ]](grenade.origin)) {
             weaponobjects::function_f2a06099(grenade, eventstruct.weapon);
             grenade function_cb48cddd();
-        } else {
-            grenade thread function_db24f032();
-            if (sessionmodeiszombiesgame()) {
-                grenade.var_acdc8d71 = grenade function_65ee50ba();
-            }
-            if (!isdefined(level.var_432fa05c.var_402a4207)) {
-                level.var_432fa05c.var_402a4207 = [];
-            } else if (!isarray(level.var_432fa05c.var_402a4207)) {
-                level.var_432fa05c.var_402a4207 = array(level.var_432fa05c.var_402a4207);
-            }
-            level.var_432fa05c.var_402a4207[level.var_432fa05c.var_402a4207.size] = grenade;
+            return;
         }
+        grenade thread function_db24f032();
+        if (sessionmodeiszombiesgame()) {
+            grenade.var_acdc8d71 = grenade function_65ee50ba();
+        }
+        if (!isdefined(level.var_432fa05c.var_402a4207)) {
+            level.var_432fa05c.var_402a4207 = [];
+        } else if (!isarray(level.var_432fa05c.var_402a4207)) {
+            level.var_432fa05c.var_402a4207 = array(level.var_432fa05c.var_402a4207);
+        }
+        level.var_432fa05c.var_402a4207[level.var_432fa05c.var_402a4207.size] = grenade;
     }
 }
 
@@ -284,9 +284,8 @@ function function_29fbe24f(zombie) {
 function private function_400826e(*zombie) {
     if (isdefined(self.var_acdc8d71)) {
         return self.var_acdc8d71;
-    } else {
-        return groundtrace(self.origin + vectorscale((0, 0, 1), 8), self.origin + vectorscale((0, 0, -1), 100000), 0, self)[#"position"];
     }
+    return groundtrace(self.origin + vectorscale((0, 0, 1), 8), self.origin + vectorscale((0, 0, -1), 100000), 0, self)[#"position"];
 }
 
 // Namespace nightingale/nightingale
@@ -304,10 +303,8 @@ function private function_65ee50ba() {
         var_1a055edd = array(var_1a055edd);
     }
     var_1a055edd[var_1a055edd.size] = var_2eefd050;
-    xoffset = -1;
-    while (xoffset <= 1) {
-        yoffset = -1;
-        while (yoffset <= 1) {
+    for (xoffset = -1; xoffset <= 1; xoffset = xoffset + 2) {
+        for (yoffset = -1; yoffset <= 1; yoffset = yoffset + 2) {
             checkpos = basepos + (xoffset * check_dist, yoffset * check_dist, 0);
             groundpos = groundtrace(checkpos + vectorscale((0, 0, 1), 8), checkpos + vectorscale((0, 0, -1), 100000), 0, self)[#"position"];
             if (!isdefined(var_1a055edd)) {
@@ -316,9 +313,7 @@ function private function_65ee50ba() {
                 var_1a055edd = array(var_1a055edd);
             }
             var_1a055edd[var_1a055edd.size] = groundpos;
-            yoffset = yoffset + 2;
         }
-        xoffset = xoffset + 2;
     }
     var_9c637566 = arraygetfarthest(basepos, var_1a055edd);
     if (abs(var_9c637566[2] - var_2eefd050[2]) <= check_dist) {

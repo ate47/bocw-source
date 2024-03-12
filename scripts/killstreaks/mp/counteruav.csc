@@ -32,9 +32,8 @@ function private function_70a657d8() {
 function private function_df836293() {
     if (sessionmodeiswarzonegame()) {
         return "killstreak_counteruav_wz";
-    } else {
-        return "killstreak_counteruav";
     }
+    return "killstreak_counteruav";
 }
 
 // Namespace counteruav/counteruav
@@ -47,9 +46,9 @@ function enabled(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fiel
         function_e5a9ae33(fieldname, self getentitynumber(), level.var_a03cd507.var_c23de6e6);
         self thread function_c2aa1607(fieldname);
         self.killstreakbundle = level.var_a03cd507;
-    } else {
-        self notify(#"hash_367b9a7b1a2d9523");
+        return;
     }
+    self notify(#"hash_367b9a7b1a2d9523");
 }
 
 // Namespace counteruav/counteruav

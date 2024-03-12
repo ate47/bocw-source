@@ -51,39 +51,39 @@ function finalize() {
 // Params 4, eflags: 0x2 linked
 // Checksum 0xece3f4e5, Offset: 0x3e8
 // Size: 0x44e
-function function_a92a93e9(var_c860e2f, v_angles, var_75b5cef0 = 0, n_delay = 1) {
+function function_a92a93e9(v_location, v_angles, var_75b5cef0 = 0, n_delay = 1) {
     foreach (player in getplayers()) {
         switch (level.var_b48509f9) {
         default:
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_1", #attacker:player});
-            break;
+            continue;
         case 2:
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_2", #attacker:player});
-            break;
+            continue;
         case 3:
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_3", #attacker:player});
-            break;
+            continue;
         case 4:
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_4", #attacker:player});
-            break;
+            continue;
         case 5:
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_5", #attacker:player});
-            break;
+            continue;
         case 6:
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_6", #attacker:player});
-            break;
+            continue;
         case 7:
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_7", #attacker:player});
-            break;
+            continue;
         case 8:
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_8", #attacker:player});
-            break;
+            continue;
         case 9:
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_9", #attacker:player});
-            break;
+            continue;
         case 10:
             level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"objective_complete_capsule_10", #attacker:player});
-            break;
+            continue;
         }
     }
 }
@@ -285,7 +285,9 @@ function private function_410c380(list, var_523adf97, var_5fe37ae8) {
                         var_f00ca053[var_f00ca053.size] = i;
                     }
                 }
-            } else if (isdefined(var_523adf97)) {
+                continue;
+            }
+            if (isdefined(var_523adf97)) {
                 if (list[i].var_a6762160 != var_523adf97) {
                     if (!isdefined(var_f00ca053)) {
                         var_f00ca053 = [];
@@ -296,15 +298,15 @@ function private function_410c380(list, var_523adf97, var_5fe37ae8) {
                         var_f00ca053[var_f00ca053.size] = i;
                     }
                 }
-            } else {
-                if (!isdefined(var_f00ca053)) {
-                    var_f00ca053 = [];
-                } else if (!isarray(var_f00ca053)) {
-                    var_f00ca053 = array(var_f00ca053);
-                }
-                if (!isinarray(var_f00ca053, i)) {
-                    var_f00ca053[var_f00ca053.size] = i;
-                }
+                continue;
+            }
+            if (!isdefined(var_f00ca053)) {
+                var_f00ca053 = [];
+            } else if (!isarray(var_f00ca053)) {
+                var_f00ca053 = array(var_f00ca053);
+            }
+            if (!isinarray(var_f00ca053, i)) {
+                var_f00ca053[var_f00ca053.size] = i;
             }
         }
     }
@@ -312,7 +314,8 @@ function private function_410c380(list, var_523adf97, var_5fe37ae8) {
         random_index = randomint(var_f00ca053.size);
         item_index = var_f00ca053[random_index];
         return list[item_index].var_a6762160;
-    } else if (isdefined(var_523adf97) && isdefined(var_5fe37ae8)) {
+    }
+    if (isdefined(var_523adf97) && isdefined(var_5fe37ae8)) {
         new_list = [];
         foreach (item in list) {
             if (item.var_a6762160 != var_523adf97 && item.var_a6762160 != var_5fe37ae8) {
@@ -328,7 +331,8 @@ function private function_410c380(list, var_523adf97, var_5fe37ae8) {
         }
         random_index = randomint(new_list.size);
         return new_list[random_index];
-    } else if (isdefined(var_523adf97)) {
+    }
+    if (isdefined(var_523adf97)) {
         new_list = [];
         foreach (item in list) {
             if (item.var_a6762160 != var_523adf97) {
@@ -344,10 +348,9 @@ function private function_410c380(list, var_523adf97, var_5fe37ae8) {
         }
         random_index = randomint(new_list.size);
         return new_list[random_index];
-    } else {
-        random_index = randomint(list.size);
-        return list[random_index].var_a6762160;
     }
+    random_index = randomint(list.size);
+    return list[random_index].var_a6762160;
 }
 
 // Namespace namespace_cda50904/namespace_cda50904
@@ -360,55 +363,44 @@ function private function_219cb8bb(var_a6762160) {
     case #"ar_accurate_t9_item_sr":
     case #"hash_5b2d331d596e0292":
         return 0;
-        break;
     case #"hash_5b1db5e03f5e110":
     case #"ar_slowhandling_t9_item_sr":
     case #"ar_slowhandling_t9_orange_item_sr":
         return 1;
-        break;
     case #"launcher_standard_t9_item_sr":
         return 2;
-        break;
     case #"lmg_fastfire_t9_item_sr":
     case #"hash_591cbfbc064e6c05":
     case #"lmg_fastfire_t9_orange_item_sr":
         return 3;
-        break;
     case #"lmg_slowfire_t9_orange_item_sr":
     case #"hash_19e050fa878481ae":
     case #"lmg_slowfire_t9_item_sr":
         return 4;
-        break;
     case #"smg_spray_t9_item_sr":
     case #"smg_spray_t9_orange_item_sr":
     case #"hash_2116e38be200ebf7":
         return 5;
-        break;
     case #"smg_standard_t9_orange_item_sr":
     case #"smg_standard_t9_item_sr":
     case #"hash_551ca3818f740355":
         return 6;
-        break;
     case #"tr_longburst_t9_orange_item_sr":
     case #"tr_longburst_t9_item_sr":
     case #"hash_7b49122756d14edb":
         return 7;
-        break;
     case #"hash_304d190e0d3d0fcb":
     case #"tr_fastburst_t9_item_sr":
     case #"tr_fastburst_t9_orange_item_sr":
         return 8;
-        break;
     case #"hash_39cfa9ec04309821":
     case #"sniper_cannon_t9_orange_item_sr":
     case #"sniper_cannon_t9_item_sr":
         return 9;
-        break;
     case #"sniper_quickscope_t9_orange_item_sr":
     case #"sniper_quickscope_t9_item_sr":
     case #"hash_4cf361d49f792fed":
         return 10;
-        break;
     }
 }
 
@@ -444,16 +436,12 @@ function function_39d87af7(currentselection) {
     switch (currentselection) {
     case 0:
         return "Gun1Selected";
-        break;
     case 1:
         return "Gun2Selected";
-        break;
     case 2:
         return "Gun3Selected";
-        break;
     default:
         return "Gun1Selected";
-        break;
     }
 }
 

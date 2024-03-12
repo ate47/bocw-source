@@ -676,9 +676,9 @@ function cmd(cmd) {
                 level set("<unknown string>" + #"hash_3fb8ca8c017ba7ac", i);
                 waitframe(1);
             }
-            break;
+            return;
         default:
-            break;
+            return;
         }
     #/
 }

@@ -78,12 +78,12 @@ function function_100e84f() {
         switch (spawnentitytype.spawntype) {
         case 0:
             function_361ca7c0(spawnentitytype);
-            break;
+            continue;
         case 1:
             function_ce9f81ee(spawnentitytype);
-            break;
+            continue;
         default:
-            break;
+            continue;
         }
     }
 }

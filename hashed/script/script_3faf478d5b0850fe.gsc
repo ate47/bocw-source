@@ -71,9 +71,9 @@ function function_a77649db(name, onoff) {
         } else {
             function_5e3127a5(#"bonusroom");
         }
-    } else {
-        function_5e3127a5(undefined, level.var_7704256);
+        return;
     }
+    function_5e3127a5(undefined, level.var_7704256);
 }
 
 // Namespace namespace_9fc66ac/namespace_9fc66ac
@@ -88,9 +88,9 @@ function function_5beeba99() {
     var_8576a4b1 = level.doa.roundnumber;
     if (name === "boss") {
         function_5e3127a5(#"bossfight");
-    } else {
-        function_5e3127a5(#"arena");
+        return;
     }
+    function_5e3127a5(#"arena");
 }
 
 // Namespace namespace_9fc66ac/namespace_9fc66ac
@@ -112,16 +112,16 @@ function function_2fc07d61() {
 function function_65fcd877() {
     switch (level.doa.world_state) {
     case 0:
-        break;
+        return;
     case 4:
         function_5e3127a5(#"overworld");
-        break;
+        return;
     case 5:
         function_5e3127a5(#"dungeon");
-        break;
+        return;
     case 1:
         function_5e3127a5(undefined, "winners_circle");
-        break;
+        return;
     }
 }
 

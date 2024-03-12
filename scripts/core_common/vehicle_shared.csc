@@ -278,11 +278,11 @@ function function_a87e7c22(subtarget) {
             wait(0.1);
             self stoprenderoverridebundle(#"hash_20bdbaa0db5eb57d", bone);
         }
-    } else {
-        self playrenderoverridebundle(#"hash_20bdbaa0db5eb57d");
-        wait(0.15);
-        self stoprenderoverridebundle(#"hash_20bdbaa0db5eb57d");
+        return;
     }
+    self playrenderoverridebundle(#"hash_20bdbaa0db5eb57d");
+    wait(0.15);
+    self stoprenderoverridebundle(#"hash_20bdbaa0db5eb57d");
 }
 
 // Namespace vehicle/vehicle_shared
@@ -441,10 +441,9 @@ function function_5ce3e74e(localclientnum, var_1ca9b241, var_dc0238cc, player) {
             if (isdefined(var_dc0238cc)) {
                 player stoprumble(localclientnum, var_dc0238cc);
             }
-            break;
-        } else {
-            waitframe(1);
+            return;
         }
+        waitframe(1);
     }
 }
 
@@ -493,10 +492,10 @@ function aircraft_dustkick() {
             speed = length(velocity);
             waittime = mapfloat(10, 100, 1, 0.2, speed);
             wait(waittime);
-        } else {
-            wait(1);
             continue;
         }
+        wait(1);
+        continue;
     }
 }
 
@@ -538,14 +537,14 @@ function addanimtolist(animitem, &liston, &listoff, playwhenoff, id, maxid) {
                 listoff = array(listoff);
             }
             listoff[listoff.size] = animitem;
-        } else {
-            if (!isdefined(liston)) {
-                liston = [];
-            } else if (!isarray(liston)) {
-                liston = array(liston);
-            }
-            liston[liston.size] = animitem;
+            return;
         }
+        if (!isdefined(liston)) {
+            liston = [];
+        } else if (!isarray(liston)) {
+            liston = array(liston);
+        }
+        liston[liston.size] = animitem;
     }
 }
 
@@ -652,7 +651,6 @@ function function_7927d9b1(settings, groupid) {
         return settings.var_98404a23;
     case 4:
         return settings.var_8e9936d5;
-        break;
     }
 }
 
@@ -900,9 +898,9 @@ function field_toggle_lights_group_handler4(localclientnum, *oldval, newval, *bn
 function function_7baff7f6(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self function_e1a2a256(1);
-    } else {
-        self function_e1a2a256(0);
+        return;
     }
+    self function_e1a2a256(0);
 }
 
 // Namespace vehicle/vehicle_shared
@@ -982,7 +980,9 @@ function lights_flicker(localclientnum, duration = 8, var_5db078ba = 1) {
                 self lights_group_toggle(localclientnum, i, 0);
             }
         }
-    } else if (!state) {
+        return;
+    }
+    if (!state) {
         self lights_on(localclientnum);
         if (isdefined(settings) && isdefined(settings.lightgroups_numgroups)) {
             for (i = 0; i < settings.lightgroups_numgroups; i++) {
@@ -1016,11 +1016,17 @@ function flicker_lights(localclientnum, *oldval, newval, *bnewent, *binitialsnap
     if (bwastimejump == 0) {
         self notify(#"cancel_flicker");
         self lights_off(fieldname);
-    } else if (bwastimejump == 1) {
+        return;
+    }
+    if (bwastimejump == 1) {
         self thread lights_flicker(fieldname);
-    } else if (bwastimejump == 2) {
+        return;
+    }
+    if (bwastimejump == 2) {
         self thread lights_flicker(fieldname, 20);
-    } else if (bwastimejump == 3) {
+        return;
+    }
+    if (bwastimejump == 3) {
         self notify(#"cancel_flicker");
     }
 }
@@ -1063,9 +1069,9 @@ function function_e5f88559(localclientnum, name) {
                 foreach (handleelement in handle) {
                     stopfx(localclientnum, handleelement);
                 }
-            } else {
-                stopfx(localclientnum, handle);
+                return;
             }
+            stopfx(localclientnum, handle);
         }
     }
 }
@@ -1141,11 +1147,11 @@ function field_toggle_sounds(localclientnum, *oldval, newval, *bnewent, *binitia
         if (is_true(self.settings.var_4221c285) && isdefined(self.settings.var_681129b2)) {
             self stoprumble(fieldname, self.settings.var_681129b2);
         }
-    } else {
-        self enablevehiclesounds();
-        if (is_true(self.settings.var_4221c285) && isdefined(self.settings.var_681129b2)) {
-            self playrumblelooponentity(fieldname, self.settings.var_681129b2);
-        }
+        return;
+    }
+    self enablevehiclesounds();
+    if (is_true(self.settings.var_4221c285) && isdefined(self.settings.var_681129b2)) {
+        self playrumblelooponentity(fieldname, self.settings.var_681129b2);
     }
 }
 
@@ -1187,12 +1193,16 @@ function toggle_flir_postfxbundle(localclientnum, oldval, newval, *bnewent, *bin
             player thread postfx::stoppostfxbundle("pstfx_flir");
         }
         update_ui_fullscreen_filter_model(binitialsnap, 0);
-    } else if (bwastimejump == 1) {
+        return;
+    }
+    if (bwastimejump == 1) {
         if (player shouldchangescreenpostfx(binitialsnap)) {
             player thread postfx::playpostfxbundle(#"pstfx_infrared");
             update_ui_fullscreen_filter_model(binitialsnap, 2);
         }
-    } else if (bwastimejump == 2) {
+        return;
+    }
+    if (bwastimejump == 2) {
         should_change = 1;
         if (player shouldchangescreenpostfx(binitialsnap)) {
             player thread postfx::playpostfxbundle(#"pstfx_flir");
@@ -1238,7 +1248,9 @@ function set_static_postfxbundle(*localclientnum, oldval, newval, *bnewent, *bin
         if (player postfx::function_556665f2(#"hash_15d46f4ad6539103")) {
             player thread postfx::stoppostfxbundle(#"hash_15d46f4ad6539103");
         }
-    } else if (bwastimejump == 1) {
+        return;
+    }
+    if (bwastimejump == 1) {
         var_8efa62c3 = 1;
         vehicle = getplayervehicle(player);
         if (isdefined(vehicle)) {
@@ -1286,7 +1298,9 @@ function field_toggle_treadfx(*localclientnum, *oldval, newval, bnewent, *biniti
         } else {
             self kill_treads_forever();
         }
-    } else if (fieldname) {
+        return;
+    }
+    if (fieldname) {
         /#
             println("<unknown string>");
         #/
@@ -1301,15 +1315,15 @@ function field_toggle_treadfx(*localclientnum, *oldval, newval, bnewent, *biniti
             #/
             self kill_treads_forever();
         }
-    } else {
-        /#
-            println("<unknown string>");
-        #/
-        if (isdefined(self.csf_no_tread)) {
-            self.csf_no_tread = 0;
-        }
-        self kill_treads_forever();
+        return;
     }
+    /#
+        println("<unknown string>");
+    #/
+    if (isdefined(self.csf_no_tread)) {
+        self.csf_no_tread = 0;
+    }
+    self kill_treads_forever();
 }
 
 // Namespace vehicle/vehicle_shared
@@ -1322,15 +1336,15 @@ function field_use_engine_damage_sounds(*localclientnum, *oldval, newval, *bnewe
         case 0:
             self.engine_damage_low = 0;
             self.engine_damage_high = 0;
-            break;
+            return;
         case 1:
             self.engine_damage_low = 1;
             self.engine_damage_high = 0;
-            break;
+            return;
         case 1:
             self.engine_damage_low = 0;
             self.engine_damage_high = 1;
-            break;
+            return;
         }
     }
 }
@@ -1343,9 +1357,9 @@ function private function_cc6f861b(localclientnum) {
     self function_3aa94f97();
     if (is_true(self.var_6aedef46)) {
         self.var_5a428a07 = self playsound(localclientnum, self.hornsound);
-    } else {
-        self.var_76660b3a = self playloopsound(self.hornsound);
+        return;
     }
+    self.var_76660b3a = self playloopsound(self.hornsound);
 }
 
 // Namespace vehicle/vehicle_shared
@@ -1403,9 +1417,9 @@ function private function_2d24296(localclientnum, *oldval, newval, *bnewent, *bi
     }
     if (bwastimejump) {
         self function_cc6f861b(fieldname);
-    } else {
-        self function_f753359a();
+        return;
     }
+    self function_f753359a();
 }
 
 // Namespace vehicle/vehicle_shared
@@ -1438,7 +1452,7 @@ function function_7d1d0e65(localclientnum, oldval, newval, *bnewent, *binitialsn
             }
             switch (bwastimejump) {
             case 0:
-                break;
+                continue;
             case 1:
                 if (isdefined(var_b5ddf091.warning) && isdefined(var_b5ddf091.tag_warning)) {
                     handle = util::playfxontag(binitialsnap, var_b5ddf091.warning, self, var_b5ddf091.tag_warning);
@@ -1449,7 +1463,7 @@ function function_7d1d0e65(localclientnum, oldval, newval, *bnewent, *binitialsn
                     }
                     self.fx_handles[#"malfunction"][self.fx_handles[#"malfunction"].size] = handle;
                 }
-                break;
+                continue;
             case 2:
                 if (isdefined(var_b5ddf091.active) && isdefined(var_b5ddf091.var_2f451e59)) {
                     handle = util::playfxontag(binitialsnap, var_b5ddf091.active, self, var_b5ddf091.var_2f451e59);
@@ -1460,7 +1474,7 @@ function function_7d1d0e65(localclientnum, oldval, newval, *bnewent, *binitialsn
                     }
                     self.fx_handles[#"malfunction"][self.fx_handles[#"malfunction"].size] = handle;
                 }
-                break;
+                continue;
             case 3:
                 if (isdefined(var_b5ddf091.fatal) && isdefined(var_b5ddf091.var_ceeccc7a)) {
                     handle = util::playfxontag(binitialsnap, var_b5ddf091.fatal, self, var_b5ddf091.var_ceeccc7a);
@@ -1471,7 +1485,7 @@ function function_7d1d0e65(localclientnum, oldval, newval, *bnewent, *binitialsn
                     }
                     self.fx_handles[#"malfunction"][self.fx_handles[#"malfunction"].size] = handle;
                 }
-                break;
+                continue;
             }
         }
     }
@@ -1496,16 +1510,16 @@ function function_7d1d0e65(localclientnum, oldval, newval, *bnewent, *binitialsn
         }
         switch (bwastimejump) {
         case 0:
-            break;
+            return;
         case 1:
             self.var_30141f5c = self playloopsound(var_ca456b21);
-            break;
+            return;
         case 2:
         case 3:
             if (fieldname != 2 && fieldname != 3) {
                 self.var_30141f5c = self playloopsound(var_b10574a9);
             }
-            break;
+            return;
         }
     }
 }
@@ -1615,7 +1629,9 @@ function function_18758bfa(localclientnum, *oldval, newval, *bnewent, binitialsn
                 arrayremovevalue(self.fx_handles[#"smolder"], handle, 0);
             }
         }
-    } else if (isdefined(self.fx_handles) && isdefined(self.fx_handles[#"smolder"])) {
+        return;
+    }
+    if (isdefined(self.fx_handles) && isdefined(self.fx_handles[#"smolder"])) {
         foreach (handle in self.fx_handles[#"smolder"]) {
             stopfx(binitialsnap, handle);
         }
@@ -1771,11 +1787,11 @@ function private function_245fd53b(localclientnum) {
         currenttime = self getclienttime();
         var_5710f35c = getservertime(localclientnum);
         if (var_5710f35c < var_d183f050) {
-            break;
+            return;
         }
         elapsedtime = currenttime - starttime;
         if (elapsedtime >= 5000) {
-            break;
+            return;
         }
     }
 }
@@ -1803,22 +1819,22 @@ function field_update_alert_level(localclientnum, *oldval, newval, *bnewent, *bi
     settings = getscriptbundle(self.scriptbundlesettings);
     switch (bwastimejump) {
     case 0:
-        break;
+        return;
     case 1:
         if (isdefined(settings.unawarelightfx1)) {
             self.alert_light_fx_handles[0] = util::playfxontag(fieldname, settings.unawarelightfx1, self, settings.lighttag1);
         }
-        break;
+        return;
     case 2:
         if (isdefined(settings.alertlightfx1)) {
             self.alert_light_fx_handles[0] = util::playfxontag(fieldname, settings.alertlightfx1, self, settings.lighttag1);
         }
-        break;
+        return;
     case 3:
         if (isdefined(settings.combatlightfx1)) {
             self.alert_light_fx_handles[0] = util::playfxontag(fieldname, settings.combatlightfx1, self, settings.lighttag1);
         }
-        break;
+        return;
     }
 }
 
@@ -1833,13 +1849,13 @@ function field_toggle_exhaustfx_handler(localclientnum, *oldval, newval, bnewent
         } else {
             self stop_exhaust(binitialsnap);
         }
-    } else {
-        if (isdefined(self.csf_no_exhaust)) {
-            self.csf_no_exhaust = 0;
-        }
-        self stop_exhaust(binitialsnap);
-        self play_exhaust(binitialsnap);
+        return;
     }
+    if (isdefined(self.csf_no_exhaust)) {
+        self.csf_no_exhaust = 0;
+    }
+    self stop_exhaust(binitialsnap);
+    self play_exhaust(binitialsnap);
 }
 
 // Namespace vehicle/vehicle_shared
@@ -1849,13 +1865,17 @@ function field_toggle_exhaustfx_handler(localclientnum, *oldval, newval, bnewent
 function field_toggle_lights_handler(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self lights_off(fieldname);
-    } else if (bwastimejump == 2) {
-        self lights_on(fieldname, #"allies");
-    } else if (bwastimejump == 3) {
-        self lights_on(fieldname, #"axis");
-    } else {
-        self lights_on(fieldname);
+        return;
     }
+    if (bwastimejump == 2) {
+        self lights_on(fieldname, #"allies");
+        return;
+    }
+    if (bwastimejump == 3) {
+        self lights_on(fieldname, #"axis");
+        return;
+    }
+    self lights_on(fieldname);
 }
 
 // Namespace vehicle/vehicle_shared
@@ -1909,9 +1929,9 @@ function function_d7a2c2f(localclientnum, *oldval, newval, *bnewent, *binitialsn
         self notify(#"light_disable");
         self stop_stun_fx(fieldname);
         self start_stun_fx(fieldname);
-    } else {
-        self stop_stun_fx(fieldname);
+        return;
     }
+    self stop_stun_fx(fieldname);
 }
 
 // Namespace vehicle/vehicle_shared
@@ -2026,11 +2046,13 @@ function field_death_spawn_dynents(localclientnum, *oldval, newval, *bnewent, *b
             hitoffset = rotatepoint(hitoffset, self.angles);
             if (bwastimejump > 1 && isdefined(fx)) {
                 dynent = createdynentandlaunch(fieldname, model, self.origin + offset, self.angles, self.origin + hitoffset, force, fx);
-            } else if (bwastimejump == 1 && isdefined(fx)) {
-                dynent = createdynentandlaunch(fieldname, model, self.origin + offset, self.angles, self.origin + hitoffset, force, fx);
-            } else {
-                dynent = createdynentandlaunch(fieldname, model, self.origin + offset, self.angles, self.origin + hitoffset, force);
+                continue;
             }
+            if (bwastimejump == 1 && isdefined(fx)) {
+                dynent = createdynentandlaunch(fieldname, model, self.origin + offset, self.angles, self.origin + hitoffset, force, fx);
+                continue;
+            }
+            dynent = createdynentandlaunch(fieldname, model, self.origin + offset, self.angles, self.origin + hitoffset, force);
         }
     }
 }

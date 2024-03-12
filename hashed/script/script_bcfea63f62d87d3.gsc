@@ -19,17 +19,23 @@ function autoexec main() {
 function function_72955447(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self.fx = util::playfxontag(fieldname, "maps/zm_towers/fx8_boss_attack_slam_trail_lg", self, "tag_origin");
-    } else if (bwastimejump == 2) {
+        return;
+    }
+    if (bwastimejump == 2) {
         if (isdefined(self.fx)) {
             stopfx(fieldname, self.fx);
         }
         self.fx = util::playfxontag(fieldname, "maps/zm_towers/fx8_boss_attack_slam_trail", self, "tag_origin");
-    } else if (bwastimejump == 3) {
+        return;
+    }
+    if (bwastimejump == 3) {
         if (isdefined(self.fx)) {
             stopfx(fieldname, self.fx);
         }
         self.fx = util::playfxontag(fieldname, "maps/zm_towers/fx8_boss_death_soul_trail", self, "tag_origin");
-    } else if (isdefined(self.fx)) {
+        return;
+    }
+    if (isdefined(self.fx)) {
         self.fx = util::playfxontag(fieldname, "maps/zm_towers/fx8_boss_attack_slam_trail_end", self, "tag_origin");
         stopfx(fieldname, self.fx);
     }

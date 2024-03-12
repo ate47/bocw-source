@@ -368,9 +368,9 @@ function private function_28cdb1db(depth) {
         if (isdefined(var_6a0a1cc4.owner)) {
             if (isdefined(var_6a0a1cc4.door)) {
                 var_6a0a1cc4.owner function_28cdb1db(depth + 1);
-            } else {
-                var_6a0a1cc4.owner function_28cdb1db(depth);
+                continue;
             }
+            var_6a0a1cc4.owner function_28cdb1db(depth);
         }
     }
 }

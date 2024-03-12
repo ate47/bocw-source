@@ -187,14 +187,14 @@ function private function_c01d14b6(var_3b192471, n_time_left) {
     switch (level.var_ef4974d7[var_3b192471].str_team) {
     case #"allies":
         setbombtimer("A", var_1c0820a1);
-        break;
+        return;
     case #"axis":
         setbombtimer("B", var_1c0820a1);
-        break;
+        return;
     default:
         setbombtimer("A", var_1c0820a1);
         setbombtimer("B", var_1c0820a1);
-        break;
+        return;
     }
 }
 
@@ -223,14 +223,14 @@ function private function_ba6cfb59(var_3b192471, b_enable = 1, var_96dc7504 = 1)
         switch (str_team) {
         case #"allies":
             clientfield::set_world_uimodel("hudItems.cpObjective.allies.progressType", 0);
-            break;
+            return;
         case #"axis":
             clientfield::set_world_uimodel("hudItems.cpObjective.axis.progressType", 0);
-            break;
+            return;
         default:
             clientfield::set_world_uimodel("hudItems.cpObjective.allies.progressType", 0);
             clientfield::set_world_uimodel("hudItems.cpObjective.axis.progressType", 0);
-            break;
+            return;
         }
     }
 }
@@ -250,9 +250,9 @@ function function_b4e596c2(var_3b192471, n_time, str_notify) {
     }
     if (isdefined(str_notify)) {
         self notify(str_notify);
-    } else {
-        self notify("timer_" + var_3b192471 + "_reached_" + n_time);
+        return;
     }
+    self notify("timer_" + var_3b192471 + "_reached_" + n_time);
 }
 
 // Namespace ui/ui
@@ -390,9 +390,9 @@ function private function_97f309cb(portraitid, var_e9f94d47) {
             } else {
                 self luinotifyevent(#"offsite_comms_message", 1, portraitid);
             }
-        } else {
-            self luinotifyevent(#"offsite_comms_complete");
+            return;
         }
+        self luinotifyevent(#"offsite_comms_complete");
     #/
 }
 

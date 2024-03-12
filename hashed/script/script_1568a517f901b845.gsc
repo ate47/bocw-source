@@ -55,9 +55,9 @@ function function_818e69da(localclientnum, *oldval, newval, *bnewent, *binitials
     util::waittill_dobj(fieldname);
     if (bwastimejump) {
         self playrumbleonentity(fieldname, level.var_30e551f4.var_12c482a2);
-    } else {
-        self stoprumble(fieldname, level.var_30e551f4.var_12c482a2);
+        return;
     }
+    self stoprumble(fieldname, level.var_30e551f4.var_12c482a2);
 }
 
 // Namespace napalm_strike/namespace_b00a727a

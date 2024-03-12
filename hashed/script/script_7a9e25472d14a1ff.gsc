@@ -78,11 +78,11 @@ function private function_b8c581fb(*inflictor, *attacker, damage, *flags, *means
         self.takedamage = 0;
         self namespace_ec06fe4a::function_8c808737();
         self notsolid();
-        orb = namespace_ec06fe4a::spawnmodel(self.origin + vectorscale((0, 0, 1), 40));
-        if (isdefined(orb)) {
-            orb thread namespace_ec06fe4a::function_52afe5df(1);
-            orb namespace_83eb6304::function_3ecfde67("electrical_explo");
-            orb namespace_e32bb68::function_3a59ec34("zmb_doa_ai_ghost_explo");
+        var_956de39f = namespace_ec06fe4a::spawnmodel(self.origin + vectorscale((0, 0, 1), 40));
+        if (isdefined(var_956de39f)) {
+            var_956de39f thread namespace_ec06fe4a::function_52afe5df(1);
+            var_956de39f namespace_83eb6304::function_3ecfde67("electrical_explo");
+            var_956de39f namespace_e32bb68::function_3a59ec34("zmb_doa_ai_ghost_explo");
         }
     }
     return modelindex;

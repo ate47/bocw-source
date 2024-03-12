@@ -73,7 +73,9 @@ function private function_12d038ac(localclientnum, *oldval, newval, *bnewent, *b
             self.var_e29b96d2 delete();
         }
         self thread function_54e9d3c4(fieldname);
-    } else if (isdefined(self.var_e29b96d2)) {
+        return;
+    }
+    if (isdefined(self.var_e29b96d2)) {
         self.var_e29b96d2 delete();
     }
 }
@@ -193,7 +195,6 @@ function private function_1e8ff2f7(settings, seat_index) {
         return settings.var_544baf32;
     default:
         return undefined;
-        break;
     }
 }
 
@@ -215,7 +216,6 @@ function private function_356e1073(seat_index) {
         return "tag_gunner_flash4";
     default:
         return undefined;
-        break;
     }
 }
 

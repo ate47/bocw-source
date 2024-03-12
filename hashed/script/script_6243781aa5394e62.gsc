@@ -55,14 +55,14 @@ function dog_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *field
             fxclientutils::playfxbundle(fieldname, self, self.fxdef);
         }
         self mapshaderconstant(fieldname, 0, "scriptVector2", 0, 1, 1);
-    } else {
-        if (isdefined(self.var_93471229)) {
-            foreach (fxhandle in self.var_93471229) {
-                deletefx(fieldname, fxhandle);
-            }
-        }
-        util::playfxontag(fieldname, #"hash_529c1a5672216926", self, "j_spine2");
+        return;
     }
+    if (isdefined(self.var_93471229)) {
+        foreach (fxhandle in self.var_93471229) {
+            deletefx(fieldname, fxhandle);
+        }
+    }
+    util::playfxontag(fieldname, #"hash_529c1a5672216926", self, "j_spine2");
 }
 
 // Namespace namespace_ec0691f8/namespace_ec0691f8

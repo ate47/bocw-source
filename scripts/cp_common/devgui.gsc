@@ -222,98 +222,96 @@ function devgui_think() {
             cmd = getdvarstring(#"hash_3171105f4e51bc2f");
             if (cmd == "<unknown string>") {
                 waitframe(1);
-            } else {
-                switch (cmd) {
-                case #"health":
-                    devgui_handle_player_command(cmd, &function_9cd052c5);
-                    break;
-                case #"ammo":
-                    devgui_handle_player_command(cmd, &devgui_toggle_ammo);
-                    break;
-                case #"ignore":
-                    devgui_handle_player_command(cmd, &function_651c7865);
-                    break;
-                case #"invul_on":
-                    devgui_handle_player_command(cmd, &devgui_invulnerable, 1);
-                    break;
-                case #"invul_off":
-                    devgui_handle_player_command(cmd, &devgui_invulnerable, 0);
-                    break;
-                case #"hash_40eb49b3498f2d5a":
-                    devgui_handle_player_command(cmd, &function_c60fba82, #"axis");
-                    break;
-                case #"hash_546db01572b08d35":
-                    devgui_handle_player_command(cmd, &function_c60fba82, #"allies");
-                    break;
-                case #"kill":
-                    devgui_handle_player_command(cmd, &devgui_kill);
-                    break;
-                case #"revive":
-                    devgui_handle_player_command(cmd, &function_541ccb87);
-                    break;
-                case #"hash_52845e239e497665":
-                    devgui_handle_player_command(cmd, &function_fa6a74c3, 100);
-                    break;
-                case #"hash_43a9fbb800953127":
-                    devgui_handle_player_command(cmd, &function_fa6a74c3, 1000);
-                    break;
-                case #"hash_8219fc726384517":
-                    devgui_handle_player_command(cmd, &function_c11f6cfe, 100);
-                    break;
-                case #"hash_4afdee64ba81c711":
-                    devgui_handle_player_command(cmd, &function_c11f6cfe, 1000);
-                    break;
-                case #"hash_42b246496512ccba":
-                    devgui_handle_player_command(cmd, &function_a66b8474);
-                    break;
-                case #"hash_777573ed749058d3":
-                    devgui_handle_player_command(cmd, &function_4e4a7021);
-                    break;
-                case #"hash_62c2f3a35c11cebf":
-                    devgui_handle_player_command(cmd, &function_8c36f50);
-                    break;
-                case #"hash_3e24fbcff4d4b1eb":
-                    devgui_handle_player_command(cmd, &function_895ead7c);
-                    break;
-                case #"hash_7d67399c1e80c90f":
-                    devgui_handle_player_command(cmd, &function_38ea35b);
-                    break;
-                case #"hash_67a420615cfa783d":
-                    devgui_handle_player_command(cmd, &function_d1f1f7b0);
-                    break;
-                case #"hash_22e23b36dec9f72e":
-                    devgui_handle_player_command(cmd, &function_b729c951);
-                    break;
-                case #"hash_27b8b67661308678":
-                    devgui_handle_player_command(cmd, &function_fa6a74c3, 1000000);
-                    break;
-                case #"hash_17ae6e19e0c5fdd2":
-                    devgui_handle_player_command(cmd, &function_f96938ce);
-                    break;
-                case #"hash_171c599dfd8645fb":
-                    devgui_handle_player_command(cmd, &function_de31914a, "<unknown string>");
-                    break;
-                case 0:
-                    break;
-                default:
-                    if (isdefined(level.custom_devgui)) {
-                        if (isarray(level.custom_devgui)) {
-                            foreach (devgui in level.custom_devgui) {
-                                if (is_true([[ devgui ]](cmd))) {
-                                    break;
-                                }
-                            }
-                        } else {
-                            [[ level.custom_devgui ]](cmd);
-                        }
-                        goto LOC_000004fe;
-                    }
-                LOC_000004fe:
-                    break;
-                }
-                setdvar(#"hash_3171105f4e51bc2f", "<unknown string>");
-                wait(0.5);
+                continue;
             }
+            switch (cmd) {
+            case #"health":
+                devgui_handle_player_command(cmd, &function_9cd052c5);
+                break;
+            case #"ammo":
+                devgui_handle_player_command(cmd, &devgui_toggle_ammo);
+                break;
+            case #"ignore":
+                devgui_handle_player_command(cmd, &function_651c7865);
+                break;
+            case #"invul_on":
+                devgui_handle_player_command(cmd, &devgui_invulnerable, 1);
+                break;
+            case #"invul_off":
+                devgui_handle_player_command(cmd, &devgui_invulnerable, 0);
+                break;
+            case #"hash_40eb49b3498f2d5a":
+                devgui_handle_player_command(cmd, &function_c60fba82, #"axis");
+                break;
+            case #"hash_546db01572b08d35":
+                devgui_handle_player_command(cmd, &function_c60fba82, #"allies");
+                break;
+            case #"kill":
+                devgui_handle_player_command(cmd, &devgui_kill);
+                break;
+            case #"revive":
+                devgui_handle_player_command(cmd, &function_541ccb87);
+                break;
+            case #"hash_52845e239e497665":
+                devgui_handle_player_command(cmd, &function_fa6a74c3, 100);
+                break;
+            case #"hash_43a9fbb800953127":
+                devgui_handle_player_command(cmd, &function_fa6a74c3, 1000);
+                break;
+            case #"hash_8219fc726384517":
+                devgui_handle_player_command(cmd, &function_c11f6cfe, 100);
+                break;
+            case #"hash_4afdee64ba81c711":
+                devgui_handle_player_command(cmd, &function_c11f6cfe, 1000);
+                break;
+            case #"hash_42b246496512ccba":
+                devgui_handle_player_command(cmd, &function_a66b8474);
+                break;
+            case #"hash_777573ed749058d3":
+                devgui_handle_player_command(cmd, &function_4e4a7021);
+                break;
+            case #"hash_62c2f3a35c11cebf":
+                devgui_handle_player_command(cmd, &function_8c36f50);
+                break;
+            case #"hash_3e24fbcff4d4b1eb":
+                devgui_handle_player_command(cmd, &function_895ead7c);
+                break;
+            case #"hash_7d67399c1e80c90f":
+                devgui_handle_player_command(cmd, &function_38ea35b);
+                break;
+            case #"hash_67a420615cfa783d":
+                devgui_handle_player_command(cmd, &function_d1f1f7b0);
+                break;
+            case #"hash_22e23b36dec9f72e":
+                devgui_handle_player_command(cmd, &function_b729c951);
+                break;
+            case #"hash_27b8b67661308678":
+                devgui_handle_player_command(cmd, &function_fa6a74c3, 1000000);
+                break;
+            case #"hash_17ae6e19e0c5fdd2":
+                devgui_handle_player_command(cmd, &function_f96938ce);
+                break;
+            case #"hash_171c599dfd8645fb":
+                devgui_handle_player_command(cmd, &function_de31914a, "<unknown string>");
+                break;
+            case 0:
+                break;
+            default:
+                if (isdefined(level.custom_devgui)) {
+                    if (isarray(level.custom_devgui)) {
+                        foreach (devgui in level.custom_devgui) {
+                            if (is_true([[ devgui ]](cmd))) {
+                                break;
+                            }
+                        }
+                    } else {
+                        [[ level.custom_devgui ]](cmd);
+                    }
+                }
+                break;
+            }
+            setdvar(#"hash_3171105f4e51bc2f", "<unknown string>");
+            wait(0.5);
         }
     #/
 }
@@ -393,12 +391,10 @@ function function_895ead7c() {
         waitresult = undefined;
         waitresult = self waittill(#"menuresponse");
         menu = waitresult.menu;
-        response = waitresult.response;
-        while (response != "<unknown string>") {
+        for (response = waitresult.response; response != "<unknown string>"; response = waitresult.response) {
             waitresult = undefined;
             waitresult = self waittill(#"menuresponse");
             menu = waitresult.menu;
-            response = waitresult.response;
         }
         self closeluimenu(self.var_f031ddbc);
     #/
@@ -460,9 +456,9 @@ function devgui_invulnerable(onoff) {
     /#
         if (onoff) {
             self set(#"devgui", "<unknown string>", 0);
-        } else {
-            self reset(#"devgui", "<unknown string>");
+            return;
         }
+        self reset(#"devgui", "<unknown string>");
     #/
 }
 
@@ -645,11 +641,13 @@ function devgui_player_weapons() {
         for (i = 0; i < a_weapons.size; i++) {
             if (is_primary_weapon(a_weapons[i]) || is_side_arm(a_weapons[i])) {
                 arrayinsert(var_8a678090, a_weapons[i], 0);
-            } else if (is_grenade(a_weapons[i])) {
-                arrayinsert(var_d766eebd, a_weapons[i], 0);
-            } else {
-                arrayinsert(var_b972bcd9, a_weapons[i], 0);
+                continue;
             }
+            if (is_grenade(a_weapons[i])) {
+                arrayinsert(var_d766eebd, a_weapons[i], 0);
+                continue;
+            }
+            arrayinsert(var_b972bcd9, a_weapons[i], 0);
         }
         var_92724e9c = "<unknown string>";
         adddebugcommand(var_92724e9c + "<unknown string>" + "<unknown string>" + "<unknown string>" + "<unknown string>");
@@ -723,9 +721,9 @@ function devgui_add_player_weapons(root, pname, index, a_weapons, weapon_type) {
                             devgui_add_player_weap_command(player_devgui_root + name + "<unknown string>", pid, name + "<unknown string>" + att, i + 1);
                         }
                     }
-                } else {
-                    devgui_add_player_weap_command(player_devgui_root, pid, name, i + 1);
+                    continue;
                 }
+                devgui_add_player_weap_command(player_devgui_root, pid, name, i + 1);
             }
         }
     #/
@@ -956,24 +954,23 @@ function init_debug_center_screen() {
     /#
         zero_idle_movement = 0;
         for (;;) {
-            for (;;) {
-                if (getdvarint(#"debug_center_screen", 0)) {
-                    if (!isdefined(level.center_screen_debug_hudelem_active) || level.center_screen_debug_hudelem_active == 0) {
-                        thread debug_center_screen();
-                        zero_idle_movement = getdvarint(#"zero_idle_movement", 0);
-                        if (zero_idle_movement == 0) {
-                            setdvar(#"zero_idle_movement", 1);
-                            zero_idle_movement = 1;
-                        }
-                    }
-                } else {
-                    level notify(#"stop center screen debug");
-                    if (zero_idle_movement == 1) {
-                        setdvar(#"zero_idle_movement", 0);
-                        zero_idle_movement = 0;
+            if (getdvarint(#"debug_center_screen", 0)) {
+                if (!isdefined(level.center_screen_debug_hudelem_active) || level.center_screen_debug_hudelem_active == 0) {
+                    thread debug_center_screen();
+                    zero_idle_movement = getdvarint(#"zero_idle_movement", 0);
+                    if (zero_idle_movement == 0) {
+                        setdvar(#"zero_idle_movement", 1);
+                        zero_idle_movement = 1;
                     }
                 }
+            } else {
+                level notify(#"stop center screen debug");
+                if (zero_idle_movement == 1) {
+                    setdvar(#"zero_idle_movement", 0);
+                    zero_idle_movement = 0;
+                }
             }
+            waitframe(1);
         }
     #/
 }

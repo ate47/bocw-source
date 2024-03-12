@@ -64,14 +64,14 @@ class cscene : cscriptbundlebase {
                     ent = [[ o_obj ]]->get_ent(clientnum);
                     if (isdefined(o_obj._s.name)) {
                         a_ents[clientnum][o_obj._s.name] = ent;
-                    } else {
-                        if (!isdefined(a_ents)) {
-                            a_ents = [];
-                        } else if (!isarray(a_ents)) {
-                            a_ents = array(a_ents);
-                        }
-                        a_ents[a_ents.size] = ent;
+                        continue;
                     }
+                    if (!isdefined(a_ents)) {
+                        a_ents = [];
+                    } else if (!isarray(a_ents)) {
+                        a_ents = array(a_ents);
+                    }
+                    a_ents[a_ents.size] = ent;
                 }
             }
         }
@@ -131,28 +131,20 @@ class cscene : cscriptbundlebase {
         switch (str_type) {
         case #"prop":
             return new csceneobject();
-            break;
         case #"model":
             return new csceneobject();
-            break;
         case #"vehicle":
             return new csceneobject();
-            break;
         case #"actor":
             return new csceneobject();
-            break;
         case #"fakeactor":
             return new csceneobject();
-            break;
         case #"player":
             return new csceneplayer();
-            break;
         case #"sharedplayer":
             return new csceneplayer();
-            break;
         case #"fakeplayer":
             return new csceneobject();
-            break;
         default:
             cscriptbundlebase::error(0, "Unsupported object type '" + str_type + "'.");
             break;
@@ -428,30 +420,30 @@ class cscene : cscriptbundlebase {
                     switch (args.size) {
                     case 6:
                         self._e_root thread [[ func ]](clientnum, a_ents, args[0], args[1], args[2], args[3], args[4], args[5]);
-                        break;
+                        continue;
                     case 5:
                         self._e_root thread [[ func ]](clientnum, a_ents, args[0], args[1], args[2], args[3], args[4]);
-                        break;
+                        continue;
                     case 4:
                         self._e_root thread [[ func ]](clientnum, a_ents, args[0], args[1], args[2], args[3]);
-                        break;
+                        continue;
                     case 3:
                         self._e_root thread [[ func ]](clientnum, a_ents, args[0], args[1], args[2]);
-                        break;
+                        continue;
                     case 2:
                         self._e_root thread [[ func ]](clientnum, a_ents, args[0], args[1]);
-                        break;
+                        continue;
                     case 1:
                         self._e_root thread [[ func ]](clientnum, a_ents, args[0]);
-                        break;
+                        continue;
                     case 0:
                         self._e_root thread [[ func ]](clientnum, a_ents);
-                        break;
+                        continue;
                     default:
                         /#
                             assertmsg("<unknown string>");
                         #/
-                        break;
+                        continue;
                     }
                 }
             }
@@ -491,7 +483,9 @@ class cscene : cscriptbundlebase {
                     return a_shots[i + 1];
                 }
             }
-        } else if (self._s.scenetype === "fxanim") {
+            return;
+        }
+        if (self._s.scenetype === "fxanim") {
         }
     }
 
@@ -571,9 +565,9 @@ class cscene : cscriptbundlebase {
                 thread [[ self ]]->play(var_1a15e649, self._testing, self._str_mode);
                 break;
             }
-        } else {
-            thread stop(0, 1);
+            return;
         }
+        thread stop(0, 1);
     }
 
     // Namespace cscene/scene_shared
@@ -984,7 +978,8 @@ class csceneobject : cscriptbundleobjectbase {
                 if (isdefined(var_77ff2a12.attachment) && weaponhasattachment(weapon, var_77ff2a12.attachment)) {
                     if (b_camera && isdefined(var_77ff2a12.camera)) {
                         return var_77ff2a12.camera;
-                    } else if (!b_camera && isdefined(var_77ff2a12.animation)) {
+                    }
+                    if (!b_camera && isdefined(var_77ff2a12.animation)) {
                         return var_77ff2a12.animation;
                     }
                 }
@@ -993,7 +988,8 @@ class csceneobject : cscriptbundleobjectbase {
                 if (isdefined(var_77ff2a12.var_4e660eee) && function_cd84dead(weapon, var_77ff2a12.var_4e660eee)) {
                     if (b_camera && isdefined(var_77ff2a12.camera)) {
                         return var_77ff2a12.camera;
-                    } else if (!b_camera && isdefined(var_77ff2a12.animation)) {
+                    }
+                    if (!b_camera && isdefined(var_77ff2a12.animation)) {
                         return var_77ff2a12.animation;
                     }
                 }
@@ -1001,7 +997,8 @@ class csceneobject : cscriptbundleobjectbase {
         }
         if (b_camera && isdefined(var_de282754.camera)) {
             return var_de282754.camera;
-        } else if (!b_camera && isdefined(var_de282754.animation)) {
+        }
+        if (!b_camera && isdefined(var_de282754.animation)) {
             return var_de282754.animation;
         }
     }
@@ -1067,14 +1064,14 @@ class csceneobject : cscriptbundleobjectbase {
         }
         if (isdefined(self._n_clientnum)) {
             thread initialize_per_client(self._n_clientnum);
-        } else {
-            for (clientnum = 1; clientnum < getmaxlocalclients(); clientnum++) {
-                if (isdefined(function_5c10bd79(clientnum))) {
-                    thread initialize_per_client(clientnum);
-                }
-            }
-            initialize_per_client(0);
+            return;
         }
+        for (clientnum = 1; clientnum < getmaxlocalclients(); clientnum++) {
+            if (isdefined(function_5c10bd79(clientnum))) {
+                thread initialize_per_client(clientnum);
+            }
+        }
+        initialize_per_client(0);
     }
 
     // Namespace csceneobject/scene_shared
@@ -1273,17 +1270,17 @@ class csceneobject : cscriptbundleobjectbase {
                     case #"cameraswitcher":
                         function_ebbbd00d(clientnum);
                         thread [[ self ]]->_play_camera_anim(clientnum, entry, n_start_time, params);
-                        break;
+                        continue;
                     case #"anim":
                         function_ebbbd00d(clientnum, entry);
                         _play_anim(clientnum, entry, 1, self._n_blend, self.var_84ca3312, self._s.mainshot, b_looping, n_start_time, params);
-                        break;
+                        continue;
                     case #"blend":
                         self._n_blend = entry;
-                        break;
+                        continue;
                     default:
                         cscriptbundleobjectbase::error(1, "Bad timeline entry type '" + str_entry_type + "'.");
-                        break;
+                        continue;
                     }
                 }
             }
@@ -1381,11 +1378,12 @@ class csceneobject : cscriptbundleobjectbase {
                     if (self._b_first_frame) {
                         _play_anim(clientnum, var_ad4f5efa, 0, undefined, self._s.mainshot);
                         break;
-                    } else if (isanimlooping(clientnum, var_ad4f5efa)) {
-                        thread _play_anim(clientnum, var_ad4f5efa, 1, undefined, self._s.mainshot);
-                    } else {
-                        _play_anim(clientnum, var_ad4f5efa, 1, undefined, self._s.mainshot);
                     }
+                    if (isanimlooping(clientnum, var_ad4f5efa)) {
+                        thread _play_anim(clientnum, var_ad4f5efa, 1, undefined, self._s.mainshot);
+                        continue;
+                    }
+                    _play_anim(clientnum, var_ad4f5efa, 1, undefined, self._s.mainshot);
                 }
             }
         }
@@ -1424,7 +1422,9 @@ class csceneobject : cscriptbundleobjectbase {
         if (self.m_align == level) {
             self.m_align = (0, 0, 0) + var_d3c21d73;
             self.m_tag = (0, 0, 0) + v_ang_offset;
-        } else if (var_d3c21d73 != (0, 0, 0) || v_ang_offset != (0, 0, 0)) {
+            return;
+        }
+        if (var_d3c21d73 != (0, 0, 0) || v_ang_offset != (0, 0, 0)) {
             v_pos = self.m_align.origin + var_d3c21d73;
             if (var_cd4673f4) {
                 v_ang = self._e_array[clientnum].angles;
@@ -1432,7 +1432,9 @@ class csceneobject : cscriptbundleobjectbase {
                 v_ang = self.m_align.angles + v_ang_offset;
             }
             self.m_align = {#angles:v_ang, #origin:v_pos};
-        } else if (var_cd4673f4) {
+            return;
+        }
+        if (var_cd4673f4) {
             v_pos = self.m_align.origin;
             v_ang = self._e_array[clientnum].angles;
             self.m_align = {#angles:v_ang, #origin:v_pos};
@@ -1540,14 +1542,14 @@ class csceneobject : cscriptbundleobjectbase {
         cscriptbundleobjectbase::error(!isdefined(self.var_55b4f21e), "Shot struct is not defined for this object. Check and make sure that "" + self._str_shot + "" is a valid shot name for this scene bundle");
         if (isdefined(self._n_clientnum)) {
             play_per_client(self._n_clientnum, n_start_time, b_looping, params);
-        } else {
-            for (clientnum = 1; clientnum < getmaxlocalclients(); clientnum++) {
-                if (isdefined(function_5c10bd79(clientnum))) {
-                    thread play_per_client(clientnum, n_start_time, b_looping, params);
-                }
-            }
-            play_per_client(0, n_start_time, b_looping, params);
+            return;
         }
+        for (clientnum = 1; clientnum < getmaxlocalclients(); clientnum++) {
+            if (isdefined(function_5c10bd79(clientnum))) {
+                thread play_per_client(clientnum, n_start_time, b_looping, params);
+            }
+        }
+        play_per_client(0, n_start_time, b_looping, params);
     }
 
     // Namespace csceneobject/scene_shared
@@ -1558,14 +1560,14 @@ class csceneobject : cscriptbundleobjectbase {
         self notify(#"new_state");
         if (isdefined(self._n_clientnum)) {
             finish_per_client(self._n_clientnum, b_clear, b_finished, var_cd6fa4e2);
-        } else {
-            for (clientnum = 1; clientnum < getmaxlocalclients(); clientnum++) {
-                if (isdefined(function_5c10bd79(clientnum))) {
-                    finish_per_client(clientnum, b_clear, b_finished, var_cd6fa4e2);
-                }
-            }
-            finish_per_client(0, b_clear, b_finished, var_cd6fa4e2);
+            return;
         }
+        for (clientnum = 1; clientnum < getmaxlocalclients(); clientnum++) {
+            if (isdefined(function_5c10bd79(clientnum))) {
+                finish_per_client(clientnum, b_clear, b_finished, var_cd6fa4e2);
+            }
+        }
+        finish_per_client(0, b_clear, b_finished, var_cd6fa4e2);
     }
 
     // Namespace csceneobject/scene_shared
@@ -1591,9 +1593,9 @@ class csceneobject : cscriptbundleobjectbase {
     function function_dd4f74e1(clientnum) {
         if (is_true(self._s.firstframe) && self._o_scene._str_mode == "init" && isdefined(self._e_array[clientnum])) {
             self._b_first_frame = 1;
-        } else {
-            self._b_first_frame = 0;
+            return;
         }
+        self._b_first_frame = 0;
     }
 
     // Namespace csceneobject/scene_shared
@@ -1649,9 +1651,13 @@ class csceneobject : cscriptbundleobjectbase {
                 if (!cscriptbundleobjectbase::error(n_spacer_min >= n_spacer_max, "Spacer Min value must be less than Spacer Max value!")) {
                     run_wait(randomfloatrange(n_spacer_min, n_spacer_max), clientnum, animation);
                 }
-            } else if (isdefined(n_spacer_min)) {
+                return;
+            }
+            if (isdefined(n_spacer_min)) {
                 run_wait(n_spacer_min, clientnum, animation);
-            } else if (isdefined(n_spacer_max)) {
+                return;
+            }
+            if (isdefined(n_spacer_max)) {
                 run_wait(n_spacer_max, clientnum, animation);
             }
         }
@@ -1679,9 +1685,9 @@ class csceneobject : cscriptbundleobjectbase {
     function _assign_unique_name() {
         if (isdefined(self._s.name)) {
             self._str_name = self._s.name;
-        } else {
-            self._str_name = self._o_scene._str_name + "_noname" + [[ scene() ]]->get_object_id();
+            return;
         }
+        self._str_name = self._o_scene._str_name + "_noname" + [[ scene() ]]->get_object_id();
     }
 
     // Namespace csceneobject/scene_shared
@@ -1800,7 +1806,9 @@ function private function_70a657d8() {
         s_scenedef.newobject = undefined;
         if (s_scenedef is_igc()) {
             level.server_scenes[s_scenedef.name] = s_scenedef;
-        } else if (s_scenedef.vmtype === "both") {
+            continue;
+        }
+        if (s_scenedef.vmtype === "both") {
             n_clientbits = 3;
             clientfield::register("world", s_scenedef.name, 1, n_clientbits, "int", &cf_server_sync, 0, 0);
         }
@@ -1849,16 +1857,16 @@ function player_pbg_bank_scene_system(localclientnum, *oldval, newval, *bnewent,
     switch (bwastimejump) {
     case 0:
         setpbgactivebank(fieldname, 1);
-        break;
+        return;
     case 1:
         setpbgactivebank(fieldname, 2);
-        break;
+        return;
     case 2:
         setpbgactivebank(fieldname, 4);
-        break;
+        return;
     case 3:
         setpbgactivebank(fieldname, 8);
-        break;
+        return;
     }
 }
 
@@ -1926,7 +1934,9 @@ function function_f9036ea7(b_enable) {
             self.var_c7329df1 = 1;
             self postfx::playpostfxbundle("pstfx_catseye_cinematic");
         }
-    } else if (is_true(self.var_c7329df1)) {
+        return;
+    }
+    if (is_true(self.var_c7329df1)) {
         self.var_c7329df1 = undefined;
         self postfx::stoppostfxbundle("pstfx_catseye_cinematic");
     }
@@ -1941,9 +1951,9 @@ function postfx_cateye(localclientnum, *oldval, newval, *bnewent, *binitialsnap,
     level notify(#"sndlevelstartduck_shutoff");
     if (bwastimejump) {
         player function_f9036ea7(1);
-    } else {
-        player function_f9036ea7(0);
+        return;
     }
+    player function_f9036ea7(0);
 }
 
 // Namespace scene/scene_shared
@@ -1986,36 +1996,25 @@ function postfx_igc(localclientnum, oldval, newval, bnewent, binitialsnap, field
     captureframe(localclientnum, codeimagename);
     n_hex = 0;
     b_streamer_wait = 1;
-    i = 0;
-    while (i < 2000) {
+    for (i = 0; i < 2000; i = i + int(0.016 * 1000)) {
         st = float(i) / 1000;
         if (b_streamer_wait && st >= 0.65) {
-            n_streamer_time_total = 0;
-            while (!isstreamerready() && n_streamer_time_total < 5000) {
+            for (n_streamer_time_total = 0; !isstreamerready() && n_streamer_time_total < 5000; n_streamer_time_total = n_streamer_time_total + gettime() - n_streamer_time) {
                 n_streamer_time = gettime();
-                j = int(0.65 * 1000);
-                while (j < 1150) {
+                for (j = int(0.65 * 1000); j < 1150; j = j + int(0.016 * 1000)) {
                     jt = float(j) / 1000;
                     waitframe(1);
-                    j = j + int(0.016 * 1000);
                 }
-                j = int(1.15 * 1000);
-                while (j < 650) {
+                for (j = int(1.15 * 1000); j < 650; j = j - int(0.016 * 1000)) {
                     jt = float(j) / 1000;
                     waitframe(1);
-                    j = j - int(0.016 * 1000);
                 }
-                n_streamer_time_total = n_streamer_time_total + gettime() - n_streamer_time;
             }
             b_streamer_wait = 0;
         }
         if (st <= 0.5) {
-            goto LOC_00000378;
+        } else if (st > 0.5 && st <= 0.85) {
         }
-        if (st > 0.5 && st <= 0.85) {
-            goto LOC_00000378;
-        }
-    LOC_00000378:
         if (newval == 2) {
             if (st > 1 && !is_true(self.pstfx_world_construction)) {
                 self thread postfx::playpostfxbundle(#"pstfx_world_construction");
@@ -2027,33 +2026,17 @@ function postfx_igc(localclientnum, oldval, newval, bnewent, binitialsnap, field
             if (st >= 0.8) {
             }
         } else if (st > 1 && st < 1.5) {
-            goto LOC_00000470;
         }
-    LOC_00000470:
         if (st > 0.65 && st <= 1.15) {
-            goto LOC_000004c0;
+        } else if (st > 1.21 && st < 1.5) {
         }
-        if (st > 1.21 && st < 1.5) {
-            goto LOC_000004c0;
-        }
-    LOC_000004c0:
         if (st > 1.21 && st <= 1.5) {
-            goto LOC_000004f8;
+        } else if (st < 1.5) {
         }
-        if (st > 1.5) {
-        LOC_000004f8:
-        }
-    LOC_000004f8:
         if (st > 1 && st <= 1.45) {
-            goto LOC_0000055a;
+        } else if (st > 1.45 && st < 1.75) {
+        } else if (st >= 1.75) {
         }
-        if (st > 1.45 && st < 1.75) {
-            goto LOC_0000055a;
-        }
-        if (st >= 1.75) {
-        LOC_0000055a:
-        }
-    LOC_0000055a:
         if (st >= 1.75) {
             val = 1 - mapfloat(1.75, 2, 0, 1, st);
         }
@@ -2066,14 +2049,9 @@ function postfx_igc(localclientnum, oldval, newval, bnewent, binitialsnap, field
             outer_radii = mapfloat(1, 1.5, 0, 2000, st);
         }
         if (st > 1.15 && st < 1.85) {
-            goto LOC_00000676;
+        } else if (st >= 1.85) {
         }
-        if (st >= 1.85) {
-        LOC_00000676:
-        }
-    LOC_00000676:
         waitframe(1);
-        i = i + int(0.016 * 1000);
     }
     self.pstfx_world_construction = 0;
     freecodeimage(localclientnum, codeimagename);
@@ -2102,18 +2080,12 @@ function postfx_igc_short(localclientnum, *oldval, *newval, *bnewent, *binitials
     createscenecodeimage(bwastimejump, codeimagename);
     captureframe(bwastimejump, codeimagename);
     b_streamer_wait = 1;
-    i = 0;
-    while (i < 850) {
+    for (i = 0; i < 850; i = i + int(0.016 * 1000)) {
         st = float(i) / 1000;
         if (st <= 0.5) {
-            goto LOC_00000138;
+        } else if (st > 0.5 && st <= 0.85) {
         }
-        if (st > 0.5 && st <= 0.85) {
-            goto LOC_00000138;
-        }
-    LOC_00000138:
         waitframe(1);
-        i = i + int(0.016 * 1000);
     }
     freecodeimage(bwastimejump, codeimagename);
     self.postfx_igc_on = undefined;
@@ -2143,13 +2115,13 @@ function cf_server_sync(*localclientnum, *oldval, newval, *bnewent, *binitialsna
             if (is_active(bwastimejump)) {
                 level thread stop(bwastimejump, 1, undefined, undefined, 1);
             }
-            break;
+            return;
         case 4:
             level thread init(bwastimejump, undefined, undefined, 1);
-            break;
+            return;
         case 5:
             level thread play(bwastimejump, undefined, undefined, 1);
-            break;
+            return;
         }
     #/
 }
@@ -2286,7 +2258,9 @@ function private postinit() {
         if (s_scenedef.vmtype === "client") {
             if (isdefined(s_instance.spawnflags) && (s_instance.spawnflags & 2) == 2) {
                 s_instance thread play();
-            } else if (isdefined(s_instance.spawnflags) && (s_instance.spawnflags & 1) == 1) {
+                continue;
+            }
+            if (isdefined(s_instance.spawnflags) && (s_instance.spawnflags & 1) == 1) {
                 s_instance thread init();
             }
         }
@@ -2326,7 +2300,7 @@ function _trigger_play(trig) {
             }
         }
         self thread play(a_ents);
-    } while(is_true(get_scenedef(self.scriptbundlename).looping));
+    } while (is_true(get_scenedef(self.scriptbundlename).looping));
 }
 
 // Namespace scene/scene_shared
@@ -2479,12 +2453,12 @@ function function_8d8ec9b5(str_scenedef, a_str_shot_names, s_instance) {
     if (isdefined(s_instance)) {
         s_instance.a_str_shot_names = a_str_shot_names;
         s_instance.var_418c40ac = a_str_shot_names[a_str_shot_names.size - 1];
-    } else {
-        s_scenedef = get_scenedef(str_scenedef);
-        s_scenedef.a_str_shot_names = a_str_shot_names;
-        level.var_1e798f4c[str_scenedef] = a_str_shot_names;
-        s_scenedef.var_418c40ac = a_str_shot_names[a_str_shot_names.size - 1];
+        return;
     }
+    s_scenedef = get_scenedef(str_scenedef);
+    s_scenedef.a_str_shot_names = a_str_shot_names;
+    level.var_1e798f4c[str_scenedef] = a_str_shot_names;
+    s_scenedef.var_418c40ac = a_str_shot_names[a_str_shot_names.size - 1];
 }
 
 // Namespace scene/scene_shared
@@ -2726,7 +2700,9 @@ function function_1eab8670(obj, str_shot) {
                 foreach (s_entry in s_shot.entry) {
                     if (isdefined(s_entry.cameraswitcher)) {
                         var_5a162d58 = var_5a162d58 + float(getcamanimtime(s_entry.cameraswitcher)) / 1000;
-                    } else if (isdefined(s_entry.anim)) {
+                        continue;
+                    }
+                    if (isdefined(s_entry.anim)) {
                         n_anim_length = n_anim_length + getanimlength(s_entry.anim);
                     }
                 }
@@ -3072,11 +3048,13 @@ function stop(arg1, arg2, arg3, b_cancel, b_no_assert = 0, var_cd6fa4e2 = 0) {
                 }
             }
         }
-    } else if (isstring(arg1) || ishash(arg1)) {
-        _stop_instance(arg2, arg1, b_cancel, var_cd6fa4e2);
-    } else {
-        _stop_instance(arg1, arg2, b_cancel, var_cd6fa4e2);
+        return;
     }
+    if (isstring(arg1) || ishash(arg1)) {
+        _stop_instance(arg2, arg1, b_cancel, var_cd6fa4e2);
+        return;
+    }
+    _stop_instance(arg1, arg2, b_cancel, var_cd6fa4e2);
 }
 
 // Namespace scene/scene_shared
@@ -3128,12 +3106,12 @@ function delete_scene_spawned_ents(localclientnum, arg1) {
                 }
             }
         }
-    } else {
-        if (isstring(arg1) || ishash(arg1)) {
-            str_scenedef = arg1;
-        }
-        self _delete_scene_spawned_ents(localclientnum, str_scenedef);
+        return;
     }
+    if (isstring(arg1) || ishash(arg1)) {
+        str_scenedef = arg1;
+    }
+    self _delete_scene_spawned_ents(localclientnum, str_scenedef);
 }
 
 // Namespace scene/scene_shared
@@ -3239,9 +3217,8 @@ function _get_type_count(str_type, str_scenedef) {
 function is_active(str_scenedef) {
     if (self == level) {
         return (get_active_scenes(str_scenedef).size > 0);
-    } else {
-        return isdefined(get_active_scene(str_scenedef));
     }
+    return isdefined(get_active_scene(str_scenedef));
 }
 
 // Namespace scene/scene_shared
@@ -3280,13 +3257,12 @@ function get_active_scenes(str_scenedef) {
     }
     if (isdefined(str_scenedef)) {
         return (isdefined(level.active_scenes[str_scenedef]) ? level.active_scenes[str_scenedef] : []);
-    } else {
-        a_active_scenes = [];
-        foreach (str_scenedef, _ in level.active_scenes) {
-            a_active_scenes = arraycombine(a_active_scenes, level.active_scenes[str_scenedef], 0, 0);
-        }
-        return a_active_scenes;
     }
+    a_active_scenes = [];
+    foreach (str_scenedef, _ in level.active_scenes) {
+        a_active_scenes = arraycombine(a_active_scenes, level.active_scenes[str_scenedef], 0, 0);
+    }
+    return a_active_scenes;
 }
 
 // Namespace scene/scene_shared
@@ -3326,9 +3302,8 @@ function is_capture_mode() {
     str_mode = getdvarstring(#"scene_menu_mode", "default");
     if (issubstr(str_mode, "capture")) {
         return 1;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace scene/scene_shared
@@ -3368,13 +3343,12 @@ function get_inactive_scenes(str_scenedef) {
     }
     if (isdefined(str_scenedef)) {
         return (isdefined(level.inactive_scenes[str_scenedef]) ? level.inactive_scenes[str_scenedef] : []);
-    } else {
-        a_scenes = [];
-        foreach (str_scenedef, _ in level.inactive_scenes) {
-            a_scenes = arraycombine(a_scenes, level.inactive_scenes[str_scenedef], 0, 0);
-        }
-        return a_scenes;
     }
+    a_scenes = [];
+    foreach (str_scenedef, _ in level.inactive_scenes) {
+        a_scenes = arraycombine(a_scenes, level.inactive_scenes[str_scenedef], 0, 0);
+    }
+    return a_scenes;
 }
 
 // Namespace scene/scene_shared

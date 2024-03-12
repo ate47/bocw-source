@@ -604,14 +604,16 @@ function function_c85eb0a9() {
     }
     if (var_ea5d6a42.destroyed === 1) {
         var_ea5d6a42 function_8ae60573();
-    } else if (getdvarint(#"hash_108fd41145be7bb3", 1)) {
-        var_ea5d6a42 thread function_7725894b();
-    } else {
-        var_ea5d6a42.angles = (0, 0, 0);
-        var_ea5d6a42 setspeed(100, 200, 1);
-        var_ea5d6a42 thread helicopter::heli_leave(undefined, 1);
-        var_ea5d6a42 thread function_e441d7fa();
+        return;
     }
+    if (getdvarint(#"hash_108fd41145be7bb3", 1)) {
+        var_ea5d6a42 thread function_7725894b();
+        return;
+    }
+    var_ea5d6a42.angles = (0, 0, 0);
+    var_ea5d6a42 setspeed(100, 200, 1);
+    var_ea5d6a42 thread helicopter::heli_leave(undefined, 1);
+    var_ea5d6a42 thread function_e441d7fa();
 }
 
 // Namespace hoverjet/hoverjet

@@ -150,7 +150,9 @@ function private function_ef93e0f5(player) {
     if (1 && isdefined(seatnum) && seatnum == 0) {
         self setanim(#"hash_290085ad8119acd0");
         self setanim(#"hash_e020f4f0af0aef8");
-    } else if (0 && isdefined(seatnum) && seatnum != 0) {
+        return;
+    }
+    if (0 && isdefined(seatnum) && seatnum != 0) {
         self setanim(#"hash_290085ad8119acd0");
         self setanim(#"hash_e020f4f0af0aef8");
     }

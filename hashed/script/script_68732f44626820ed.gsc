@@ -94,13 +94,13 @@ function function_4fd00e1f(localclientnum, *oldval, newval, *bnewent, *binitials
         if (self == function_5c10bd79(fieldname) && !is_true(level.var_6663d08b)) {
             util::function_8eb5d4b0(isdefined(level.var_59815895) ? level.var_59815895 : 3500, isdefined(level.var_40753b66) ? level.var_40753b66 : 0);
         }
-    } else {
-        if (var_e534cbe9) {
-            self playsound(fieldname, #"hash_13715035b161a0c3");
-        }
-        if (self == function_5c10bd79(fieldname) && !is_true(level.var_6663d08b)) {
-            util::function_8eb5d4b0(isdefined(level.var_49ba13b2) ? level.var_49ba13b2 : 3500, isdefined(level.var_674a073f) ? level.var_674a073f : 2.5);
-        }
+        return;
+    }
+    if (var_e534cbe9) {
+        self playsound(fieldname, #"hash_13715035b161a0c3");
+    }
+    if (self == function_5c10bd79(fieldname) && !is_true(level.var_6663d08b)) {
+        util::function_8eb5d4b0(isdefined(level.var_49ba13b2) ? level.var_49ba13b2 : 3500, isdefined(level.var_674a073f) ? level.var_674a073f : 2.5);
     }
 }
 

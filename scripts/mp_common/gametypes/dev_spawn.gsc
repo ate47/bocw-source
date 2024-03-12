@@ -234,11 +234,11 @@ function showstartspawnpoints() {
                     showonespawnpoint(spawnpoint, color, "<unknown string>");
                 }
             }
-        } else {
-            color = (1, 0, 1);
-            foreach (spawnpoint in level.spawn_start) {
-                showonespawnpoint(spawnpoint, color, "<unknown string>");
-            }
+            return;
+        }
+        color = (1, 0, 1);
+        foreach (spawnpoint in level.spawn_start) {
+            showonespawnpoint(spawnpoint, color, "<unknown string>");
         }
         return;
     #/

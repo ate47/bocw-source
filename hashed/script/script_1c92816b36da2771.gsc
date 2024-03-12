@@ -91,11 +91,11 @@ function function_d47881a3() {
         goalinfo = self function_4794d6a3();
         switch (waitresult._notify) {
         case #"bad_path":
-            jumpiftrue(self function_dd070839()) LOC_000001dc;
-            counters[1]++;
-            var_686cf729 = goalinfo.goalpos;
+            if (!self function_dd070839()) {
+                counters[1]++;
+                var_686cf729 = goalinfo.goalpos;
+            }
         case #"goal":
-        LOC_000001dc:
             if (isdefined(var_686cf729) && goalinfo.goalpos === var_686cf729) {
                 break;
             }
@@ -263,7 +263,7 @@ function function_c8b7a7da() {
             var_169eb568 = item_drop::drop_item(0, undefined, 1, 0, point.id, waitresult.position, undefined, 2);
             var_169eb568.var_dd21aec2 = 1 | 16;
             var_169eb568.var_a6762160.var_4cd830a = 1;
-            break;
+            return;
         }
     }
 }
@@ -442,7 +442,7 @@ function function_5f47a7c2(var_9b0beac5) {
         } else {
             level.var_7030d9f zm_unitrigger::create(#"hash_21c91c10a92808e8", 70, &function_9ccbc60d);
         }
-        break;
+        return;
     case #"hash_1afef7d9c56952d":
         if (level flag::get(#"hash_392c756e6906b2a2")) {
             zm_unitrigger::unregister_unitrigger(level.var_7030d9f.s_unitrigger);
@@ -450,9 +450,9 @@ function function_5f47a7c2(var_9b0beac5) {
         } else {
             level.var_7030d9f zm_unitrigger::create(#"hash_31ddc51f017469cf", 70, &function_cd5cd91b);
         }
-        break;
+        return;
     case #"hash_20aee20bab8b4015":
-        break;
+        return;
     }
 }
 
@@ -622,9 +622,9 @@ function private function_e61f50db() {
     foreach (var_a9fd9d6d in var_3cf3aa06) {
         if (var_a9fd9d6d.script_noteworthy === "sh_kl_rd") {
             var_a9fd9d6d zm_unitrigger::create(&function_cd37638e, (36, 64, 64), &function_b88fcac5);
-        } else {
-            var_a9fd9d6d zm_unitrigger::create(&function_cd37638e, 64, &function_b88fcac5);
+            continue;
         }
+        var_a9fd9d6d zm_unitrigger::create(&function_cd37638e, 64, &function_b88fcac5);
     }
 }
 
@@ -637,15 +637,15 @@ function private function_b503a4ce(n_state) {
     switch (n_state) {
     case 0:
         foreach (struct in var_3cf3aa06) {
-            var_628c4a3a = util::spawn_model(#"hash_4b9d1649b1f0a9e", struct.origin, struct.angles);
+            mdl_radio = util::spawn_model(#"hash_4b9d1649b1f0a9e", struct.origin, struct.angles);
             if (!isdefined(level.var_8f2f30f5)) {
                 level.var_8f2f30f5 = [];
             } else if (!isarray(level.var_8f2f30f5)) {
                 level.var_8f2f30f5 = array(level.var_8f2f30f5);
             }
-            level.var_8f2f30f5[level.var_8f2f30f5.size] = var_628c4a3a;
+            level.var_8f2f30f5[level.var_8f2f30f5.size] = mdl_radio;
         }
-        break;
+        return;
     case 1:
         if (isarray(level.var_8f2f30f5)) {
             foreach (radio in level.var_8f2f30f5) {
@@ -658,7 +658,7 @@ function private function_b503a4ce(n_state) {
                 }
             }
         }
-        break;
+        return;
     case 2:
         foreach (radio in level.var_8f2f30f5) {
             radio setmodel(#"p9_zm_platinum_radio_call_boxes_off");
@@ -670,7 +670,7 @@ function private function_b503a4ce(n_state) {
                 radio.var_7ecc12d9 = undefined;
             }
         }
-        break;
+        return;
     }
 }
 
@@ -681,16 +681,17 @@ function private function_b503a4ce(n_state) {
 function function_cd37638e(*e_player) {
     if (level flag::get(#"hash_4b065039d7f1a611")) {
         return 0;
-    } else if (level flag::get(#"hash_6d16c284cbb301d1")) {
+    }
+    if (level flag::get(#"hash_6d16c284cbb301d1")) {
         self sethintstring(#"hash_699fa2bf0dc59d0a");
         return 1;
-    } else if (level flag::get(#"hash_57651acabc979ef4")) {
+    }
+    if (level flag::get(#"hash_57651acabc979ef4")) {
         self sethintstring(#"hash_5da96c5cd62c2b6b");
         return 1;
-    } else {
-        self sethintstring(#"hash_43ea7417941fd644", level.var_dd86d7a7);
-        return 1;
     }
+    self sethintstring(#"hash_43ea7417941fd644", level.var_dd86d7a7);
+    return 1;
 }
 
 // Namespace namespace_6fb22263/namespace_6fb22263
@@ -955,9 +956,8 @@ function private function_99383da0() {
     }
     if (isdefined(var_7b794373)) {
         return var_7b794373;
-    } else {
-        return self;
     }
+    return self;
 }
 
 // Namespace namespace_6fb22263/namespace_6fb22263
@@ -989,7 +989,7 @@ function on_item_pickup(params) {
                 /#
                     iprintlnbold("<unknown string>");
                 #/
-                break;
+                return;
             case #"item_zmquest_platinum_klaus_battery":
                 level zm_ui_inventory::function_7df6bb60(#"hash_4b03961693d6a43a", 1);
                 level flag::set(#"hash_20e3ef55ace43370");
@@ -998,7 +998,7 @@ function on_item_pickup(params) {
                 /#
                     iprintlnbold("<unknown string>");
                 #/
-                break;
+                return;
             }
         }
     }
@@ -1062,7 +1062,7 @@ function private function_e61b4631() {
     var_6927f3bb = 0;
     while (!var_6927f3bb) {
         if (level flag::get(#"hash_392c756e6906b2a2") && level flag::get(#"hash_20e3ef55ace43370")) {
-            break;
+            return;
         }
         a_players = function_a1ef346b();
         foreach (player in a_players) {
@@ -1113,7 +1113,7 @@ function private function_297e6185() {
     while (1) {
         if (isdefined(level.var_56e22cfa) && distance(self.origin, level.var_56e22cfa.origin) > 200 || level flag::get(#"hash_6d16c284cbb301d1") || level flag::get(#"hash_535517e75a9e59ca") || self scene::is_igc_active()) {
             self flag::clear(#"hash_2928b9ed24838b5a");
-            break;
+            return;
         }
         if (gettime() > var_702cfbbf) {
             if (math::cointoss(10)) {
@@ -1124,7 +1124,7 @@ function private function_297e6185() {
                 level thread function_6902c12b();
             }
             self flag::clear(#"hash_2928b9ed24838b5a");
-            break;
+            return;
         }
         waitframe(1);
     }
@@ -1202,36 +1202,36 @@ function cmd(cmd) {
         switch (cmd) {
         case #"hash_4ce575885ab4acea":
             level set(#"hash_75f07aed08b6bb5e");
-            break;
+            return;
         case #"hash_5cfab73d14bc7014":
             level set(#"hash_392c756e6906b2a2");
             level function_7df6bb60(#"hash_6a83f912cd01808c", 1);
             function_5f47a7c2(#"hash_48cf3273adcd9b0b");
-            break;
+            return;
         case #"hash_5fe826431d1f6b23":
             level set(#"hash_20e3ef55ace43370");
             level function_7df6bb60(#"hash_4b03961693d6a43a", 1);
             function_5f47a7c2(#"hash_1afef7d9c56952d");
-            break;
+            return;
         case #"hash_19a215e19189ffcb":
             level toggle(#"hash_66eb1b5632f46da8");
-            break;
+            return;
         case #"hash_46febba823b8b1fc":
             level set(#"hash_5f5899aa1acda8de");
-            break;
+            return;
         case #"hash_21562ac47b7b0515":
-            jumpiffalse(level get(#"hash_57651acabc979ef4")) LOC_000001e2;
-            level notify(#"hash_567b7d7322c5892b");
-            level clear(#"hash_57651acabc979ef4");
-            function_b503a4ce(1);
+            if (level get(#"hash_57651acabc979ef4")) {
+                level notify(#"hash_567b7d7322c5892b");
+                level clear(#"hash_57651acabc979ef4");
+                function_b503a4ce(1);
+            }
         case #"hash_54da172330d6643a":
-        LOC_000001e2:
             if (is_true(level.var_5f8aa169)) {
                 level notify(#"hash_212022a63900fb38");
             } else {
                 level thread function_953cbff5();
             }
-            break;
+            return;
         case #"hash_3a5dbf52c46ea8de":
             if (is_true(level.var_743318e1)) {
                 level.var_743318e1 = undefined;
@@ -1240,7 +1240,7 @@ function cmd(cmd) {
                 level.var_743318e1 = 1;
                 iprintlnbold("<unknown string>");
             }
-            break;
+            return;
         }
     #/
 }

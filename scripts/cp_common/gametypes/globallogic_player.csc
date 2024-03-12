@@ -31,9 +31,9 @@ function function_fbe3df5e(*localclientnum, *oldval, newval, *bnewent, *binitial
     if (bwastimejump) {
         self setdamagedirectionindicator(1);
         setsoundcontext("plr_impact", "flesh");
-    } else {
-        self setdamagedirectionindicator(0);
-        setsoundcontext("plr_impact", "flesh");
+        return;
     }
+    self setdamagedirectionindicator(0);
+    setsoundcontext("plr_impact", "flesh");
 }
 

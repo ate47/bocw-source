@@ -47,19 +47,19 @@ function function_d3a9eef4(localclientnum, *oldval, newval, *bnewent, *binitials
         } else if (!isdefined(level.var_bb4264e3)) {
             level.var_bb4264e3 = self;
         }
-    } else {
-        if (isdefined(level.var_f7dac9d2.var_fa6a1c8c)) {
-            postfxbundle = level.var_f7dac9d2.var_fa6a1c8c;
-            if (self function_d2cb869e(postfxbundle)) {
-                self codestoppostfxbundle(postfxbundle);
-            }
-        }
-        if (isdefined(level.var_f7dac9d2.var_917dc7d4)) {
-            self stoprumble(fieldname, level.var_f7dac9d2.var_917dc7d4);
-        }
-        level.var_bb4264e3 = undefined;
-        level.var_c7064907 = undefined;
+        return;
     }
+    if (isdefined(level.var_f7dac9d2.var_fa6a1c8c)) {
+        postfxbundle = level.var_f7dac9d2.var_fa6a1c8c;
+        if (self function_d2cb869e(postfxbundle)) {
+            self codestoppostfxbundle(postfxbundle);
+        }
+    }
+    if (isdefined(level.var_f7dac9d2.var_917dc7d4)) {
+        self stoprumble(fieldname, level.var_f7dac9d2.var_917dc7d4);
+    }
+    level.var_bb4264e3 = undefined;
+    level.var_c7064907 = undefined;
 }
 
 // Namespace namespace_e8c18978/namespace_e8c18978
@@ -119,7 +119,9 @@ function function_1da732e(localclientnum, *oldval, newval, *bnewent, *binitialsn
         } else {
             self playsound(fieldname, #"hash_2879bee00b0dbf87");
         }
-    } else if (bwastimejump == 2) {
+        return;
+    }
+    if (bwastimejump == 2) {
         var_b1c1e984 = self gettagorigin("TAG_PROBE_COCKPIT");
         util::playfxontag(fieldname, level.var_f7dac9d2.var_8334e8e, self, "tag_body");
         if (isdefined(level.var_bb4264e3)) {
@@ -131,9 +133,9 @@ function function_1da732e(localclientnum, *oldval, newval, *bnewent, *binitialsn
             if (isdefined(level.var_bb4264e3)) {
                 level.var_bb4264e3 playsound(fieldname, #"hash_733036c981df765d", var_b1c1e984);
             }
-        } else {
-            self playsound(fieldname, #"hash_331a5d0f62ba4e66");
+            return;
         }
+        self playsound(fieldname, #"hash_331a5d0f62ba4e66");
     }
 }
 
@@ -152,7 +154,9 @@ function function_d6f6757c(localclientnum, *oldval, newval, *bnewent, *binitials
             if (isdefined(level.var_f7dac9d2.var_917dc7d4)) {
                 level.var_bb4264e3 playrumblelooponentity(fieldname, level.var_f7dac9d2.var_917dc7d4);
             }
-        } else if (isdefined(level.var_f7dac9d2.var_2a77dc37)) {
+            return;
+        }
+        if (isdefined(level.var_f7dac9d2.var_2a77dc37)) {
             util::playfxontag(fieldname, level.var_f7dac9d2.var_2a77dc37, self, "tag_deathfx");
             playsound(fieldname, #"hash_331a5d0f62ba4e66");
         }

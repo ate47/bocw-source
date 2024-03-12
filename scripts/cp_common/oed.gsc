@@ -84,7 +84,9 @@ function event_handler[button_bit_actionslot_1_pressed] function_84d84898() {
 function function_9eccf6c1() {
     if (self.team == #"axis") {
         self enable_thermal();
-    } else if (self.team == #"allies") {
+        return;
+    }
+    if (self.team == #"allies") {
         self enable_thermal();
     }
 }
@@ -152,9 +154,9 @@ function function_4b06932(b_enabled = 1) {
     self.var_a12ca713 = b_enabled;
     if (self.var_a12ca713) {
         self notify(#"hash_4bf84da81ef07fa4");
-    } else {
-        self notify(#"hash_2e8449934db3fd9d");
+        return;
     }
+    self notify(#"hash_2e8449934db3fd9d");
 }
 
 // Namespace namespace_446fe428/namespace_446fe428

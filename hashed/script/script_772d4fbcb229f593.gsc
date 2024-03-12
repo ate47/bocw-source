@@ -172,18 +172,14 @@ function function_70e3ac08(index) {
     switch (index) {
     case 0:
         return "zamr_env_nar_r";
-        break;
     case 1:
         return "zamr_env_nar_j_g";
-        break;
     case 2:
         return "zamr_env_nar_k_p";
-        break;
     case 3:
         return "zamr_env_nar_f";
-        break;
     default:
-        break;
+        return;
     }
 }
 
@@ -322,9 +318,9 @@ function function_23e9435d() {
 function function_e3e7a6eb(var_bb037e88) {
     if (var_bb037e88) {
         level thread function_d137d6a0(#"hash_2346ba48c20accb", #"hash_2347ba48c20c7fb", #"hash_2347fa48c20cec7");
-    } else {
-        level thread function_d137d6a0(#"hash_4a9bc8ffbcca71d1", #"hash_4a9bd8ffbcca8d01", #"hash_4a9bdcffbcca93cd");
+        return;
     }
+    level thread function_d137d6a0(#"hash_4a9bc8ffbcca71d1", #"hash_4a9bd8ffbcca8d01", #"hash_4a9bdcffbcca93cd");
 }
 
 // Namespace namespace_9771a88f/namespace_9771a88f
@@ -335,16 +331,16 @@ function function_e1798a8e(n_count) {
     switch (n_count) {
     case 1:
         level zm_vo::function_7622cb70(#"hash_398078d3d385a2ca");
-        break;
+        return;
     case 2:
         level zm_vo::function_7622cb70(#"hash_398077d3d385a117");
-        break;
+        return;
     case 3:
         level zm_vo::function_7622cb70(#"hash_398076d3d3859f64");
-        break;
+        return;
     default:
         level zm_vo::function_7622cb70(#"hash_398075d3d3859db1");
-        break;
+        return;
     }
 }
 
@@ -408,13 +404,13 @@ function function_d137d6a0(var_e0c6386f, var_40feefce, var_c4ad7aa9) {
     switch (level.var_114b6e35) {
     case #"strauss":
         self zm_vo::function_7622cb70(var_e0c6386f);
-        break;
+        return;
     case #"carver":
         self zm_vo::function_7622cb70(var_40feefce);
-        break;
+        return;
     case #"grey":
         self zm_vo::function_7622cb70(var_c4ad7aa9);
-        break;
+        return;
     }
 }
 
@@ -490,9 +486,9 @@ function cmd(cmd) {
         switch (cmd) {
         case #"hash_50a665b85beac5a5":
             level thread function_7622cb70("<unknown string>");
-            break;
+            return;
         default:
-            break;
+            return;
         }
     #/
 }

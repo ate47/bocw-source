@@ -470,7 +470,7 @@ function function_a43d04ef(goalorigin) {
         distsq = distancesquared(self.origin, goalorigin);
         if (distsq <= distthresholdsq) {
             self notify(#"fallback_goal");
-            break;
+            return;
         }
         waitframe(1);
     }
@@ -490,7 +490,7 @@ function function_fabf8bc5(goalorigin) {
         distsq = distancesquared(self.origin, goalorigin);
         if (distsq <= distthresholdsq) {
             self notify(#"fallback_goal");
-            break;
+            return;
         }
         waitframe(1);
     }
@@ -513,7 +513,9 @@ function function_e0e908c3(var_dbd23dc, path, stopatgoal) {
         }
         self setgoal(path[0], 1, stopatgoal);
         self function_a57c34b7(path[0], stopatgoal, 1);
-    } else if (issentient(self)) {
+        return;
+    }
+    if (issentient(self)) {
         while (1) {
             var_baa92af9 = ispointinnavvolume(self.origin, "navvolume_big");
             if (!var_baa92af9) {
@@ -900,9 +902,9 @@ function leave(duration, var_384be02f = 0) {
                 }
             }
             tries--;
-        } else {
-            tries = 0;
+            continue;
         }
+        tries = 0;
     }
     self thread flattenyaw(self.angles[1] + yaw);
     if (self.angles[2] != 0) {
@@ -1026,9 +1028,9 @@ function debug_print3d_simple(message, ent, offset, frames) {
         if (isdefined(level.airsupport_debug) && level.airsupport_debug == 1) {
             if (isdefined(frames)) {
                 thread draw_text(message, vectorscale((1, 1, 1), 0.8), ent, offset, frames);
-            } else {
-                thread draw_text(message, vectorscale((1, 1, 1), 0.8), ent, offset, 0);
+                return;
             }
+            thread draw_text(message, vectorscale((1, 1, 1), 0.8), ent, offset, 0);
         }
     #/
 }
@@ -1044,14 +1046,14 @@ function draw_text(msg, color, ent, offset, frames) {
                 print3d(ent.origin + offset, msg, color, 0.5, 4);
                 waitframe(1);
             }
-        } else {
-            for (i = 0; i < frames; i++) {
-                if (!isdefined(ent)) {
-                    break;
-                }
-                print3d(ent.origin + offset, msg, color, 0.5, 4);
-                waitframe(1);
+            return;
+        }
+        for (i = 0; i < frames; i++) {
+            if (!isdefined(ent)) {
+                return;
             }
+            print3d(ent.origin + offset, msg, color, 0.5, 4);
+            waitframe(1);
         }
     #/
 }

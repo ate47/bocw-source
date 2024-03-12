@@ -343,7 +343,8 @@ function getentitypose() {
     #/
     if (isactor(self)) {
         return self getblackboardattribute("_stance");
-    } else if (isplayer(self)) {
+    }
+    if (isplayer(self)) {
         return self getstance();
     }
 }

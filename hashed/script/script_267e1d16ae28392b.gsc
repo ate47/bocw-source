@@ -176,9 +176,9 @@ function private function_467369b2(var_668b29af, evictim) {
         #/
         if (var_41db60bc >= 5) {
             var_668b29af function_659819fa(#"hash_5740a8698a4d0345");
-        } else {
-            var_668b29af stats::set_stat(#"achievements", #"hash_5740a8698a4d0345", var_41db60bc);
+            return;
         }
+        var_668b29af stats::set_stat(#"achievements", #"hash_5740a8698a4d0345", var_41db60bc);
     }
 }
 
@@ -235,9 +235,9 @@ function function_2240fcb8(eattacker, *evictim, *eweapon) {
     if (isdefined(eweapon.var_628ca13e) && isplayer(eweapon.var_628ca13e)) {
         if (isdefined(eweapon.killcount)) {
             eweapon.killcount++;
-        } else {
-            eweapon.killcount = 1;
+            return;
         }
+        eweapon.killcount = 1;
     }
 }
 
@@ -275,7 +275,9 @@ function on_ai_killed(s_params) {
         function_b25a404e(player, s_params.weapon);
         function_8b531812(player, self);
         player function_1d62fbfa(1, s_params.weapon.weapclass, s_params.weapon.firetype);
-    } else if (isai(s_params.eattacker)) {
+        return;
+    }
+    if (isai(s_params.eattacker)) {
         function_2240fcb8(s_params.eattacker, self, s_params.weapon);
     }
 }
@@ -291,7 +293,7 @@ function private function_fd51b8a8() {
         waitresult = self waittill(#"gun_level_complete");
         if (waitresult.is_last_rank && waitresult.item_index >= 1 && waitresult.item_index <= 60) {
             self function_659819fa(#"hash_30b6860e2869b596");
-            break;
+            return;
         }
     }
 }

@@ -29,7 +29,9 @@ function function_c3996268(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwastimejump == 1) {
         self.var_aa4114ee = function_239993de(fieldname, #"hash_328cb5a90073aa39", self, "tag_origin");
         self.var_4b0f392d = self playloopsound(#"hash_144c0f8c91a1dbbe");
-    } else if (bwastimejump == 2) {
+        return;
+    }
+    if (bwastimejump == 2) {
         if (isdefined(self.var_4b0f392d)) {
             self stoploopsound(self.var_4b0f392d);
             self.var_4b0f392d = undefined;
@@ -39,7 +41,9 @@ function function_c3996268(localclientnum, *oldval, newval, *bnewent, *binitials
         playfx(fieldname, #"hash_3cce6d727537b2d6", self gettagorigin("tag_origin") + vectorscale((0, 0, 1), 28), anglestoforward(self.angles), anglestoup(self.angles));
         wait(1);
         self.var_f7aa5696 = playfx(fieldname, #"hash_29bb1f45e23e48ac", self gettagorigin("tag_origin") + vectorscale((0, 0, 1), 28), anglestoforward(self.angles), anglestoup(self.angles));
-    } else if (bwastimejump == 3) {
+        return;
+    }
+    if (bwastimejump == 3) {
         if (isdefined(self.var_aa4114ee)) {
             stopfx(fieldname, self.var_aa4114ee);
         }
@@ -71,24 +75,24 @@ function function_cc365474(localclientnum, *oldval, newval, *bnewent, *binitials
         if (!isdefined(self.var_a863bc25)) {
             self.var_a863bc25 = self playloopsound(#"hash_612580e60d0a183f");
         }
-    } else {
-        if (isdefined(self.var_4e35f286)) {
-            deletefx(fieldname, self.var_4e35f286);
-            self.var_4e35f286 = undefined;
-        }
-        if (isdefined(self.var_a863bc25)) {
-            self stoploopsound(self.var_a863bc25);
-        }
-        if (isdefined(self.var_d1c055ab)) {
-            self playsound(fieldname, #"hash_10989803ee973a6e");
-            self stoploopsound(self.var_d1c055ab);
-        }
-        if (bwastimejump == 2) {
-            self.var_4e35f286 = util::playfxontag(fieldname, #"hash_1ece705913b0c51f", self, "j_spine4");
-            if (!isdefined(self.var_d1c055ab)) {
-                self playsound(fieldname, #"hash_77657e597a6c430c");
-                self.var_d1c055ab = self playloopsound(#"hash_15002353c0e436f5");
-            }
+        return;
+    }
+    if (isdefined(self.var_4e35f286)) {
+        deletefx(fieldname, self.var_4e35f286);
+        self.var_4e35f286 = undefined;
+    }
+    if (isdefined(self.var_a863bc25)) {
+        self stoploopsound(self.var_a863bc25);
+    }
+    if (isdefined(self.var_d1c055ab)) {
+        self playsound(fieldname, #"hash_10989803ee973a6e");
+        self stoploopsound(self.var_d1c055ab);
+    }
+    if (bwastimejump == 2) {
+        self.var_4e35f286 = util::playfxontag(fieldname, #"hash_1ece705913b0c51f", self, "j_spine4");
+        if (!isdefined(self.var_d1c055ab)) {
+            self playsound(fieldname, #"hash_77657e597a6c430c");
+            self.var_d1c055ab = self playloopsound(#"hash_15002353c0e436f5");
         }
     }
 }
@@ -105,14 +109,14 @@ function function_fb584243(localclientnum, *oldval, newval, *bnewent, *binitials
         }
         playsound(fieldname, #"hash_3a58ade572eb339e", s_portal.origin);
         soundloopemitter(#"hash_1b27cd2897a39322", s_portal.origin);
-    } else {
-        if (isdefined(s_portal.var_8eb4e749)) {
-            stopfx(fieldname, s_portal.var_8eb4e749);
-            s_portal.var_8eb4e749 = undefined;
-        }
-        playsound(fieldname, #"hash_147060f9d5a3cb8b", s_portal.origin);
-        soundstoploopemitter(#"hash_1b27cd2897a39322", s_portal.origin);
+        return;
     }
+    if (isdefined(s_portal.var_8eb4e749)) {
+        stopfx(fieldname, s_portal.var_8eb4e749);
+        s_portal.var_8eb4e749 = undefined;
+    }
+    playsound(fieldname, #"hash_147060f9d5a3cb8b", s_portal.origin);
+    soundstoploopemitter(#"hash_1b27cd2897a39322", s_portal.origin);
 }
 
 // Namespace namespace_bce659ef/namespace_bce659ef
@@ -127,14 +131,14 @@ function pap_quest_beam_start(localclientnum, *oldval, newval, *bnewent, *biniti
     n_index = bwastimejump - 1;
     s_start = a_s_start[n_index];
     s_end = var_c2f24bc[n_index];
-    if (isdefined(s_start) && isdefined(s_end) && !(isdefined(s_start.var_360148) && isdefined(s_end.var_b5d35012))) {
+    if (isdefined(s_start) && isdefined(s_end) && !(isdefined(s_start.mdl_start) && isdefined(s_end.var_b5d35012))) {
         v_start_origin = s_start.origin;
         var_e64db026 = s_end.origin;
         v_start_angles = vectortoangles(v_start_origin - var_e64db026);
         v_end_angles = vectortoangles(var_e64db026 - v_start_origin);
-        s_start.var_360148 = util::spawn_model(fieldname, #"tag_origin", v_start_origin, v_start_angles);
+        s_start.mdl_start = util::spawn_model(fieldname, #"tag_origin", v_start_origin, v_start_angles);
         s_end.var_b5d35012 = util::spawn_model(fieldname, #"tag_origin", var_e64db026, v_end_angles);
-        level beam::launch(s_start.var_360148, "tag_origin", s_end.var_b5d35012, "tag_origin", "beam9_zm_platinum_pap_beam", 1);
+        level beam::launch(s_start.mdl_start, "tag_origin", s_end.var_b5d35012, "tag_origin", "beam9_zm_platinum_pap_beam", 1);
     }
 }
 
@@ -150,9 +154,9 @@ function function_c6f8ff7b(*localclientnum, *oldval, newval, *bnewent, *binitial
     n_index = bwastimejump - 1;
     s_start = a_s_start[n_index];
     s_end = var_c2f24bc[n_index];
-    if (isdefined(s_start.var_360148) && isdefined(s_end) && isdefined(s_start) && isdefined(s_end.var_b5d35012)) {
-        level beam::kill(s_start.var_360148, "tag_origin", s_end.var_b5d35012, "tag_origin", "beam9_zm_platinum_pap_beam");
-        s_start.var_360148 delete();
+    if (isdefined(s_start.mdl_start) && isdefined(s_end) && isdefined(s_start) && isdefined(s_end.var_b5d35012)) {
+        level beam::kill(s_start.mdl_start, "tag_origin", s_end.var_b5d35012, "tag_origin", "beam9_zm_platinum_pap_beam");
+        s_start.mdl_start delete();
         s_end.var_b5d35012 delete();
     }
 }

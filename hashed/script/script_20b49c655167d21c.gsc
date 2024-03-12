@@ -69,10 +69,10 @@ function private function_520a5752(killstreaktype, killstreakid, hacker) {
     if (level.teambased) {
         globallogic_audio::function_b4319f8e(level.killstreaks[killstreaktype].script_bundle.var_335def6c, self.team, self);
         globallogic_audio::leader_dialog_for_other_teams(level.killstreaks[killstreaktype].script_bundle.var_7a502c34, self.team, undefined, killstreakid);
-    } else {
-        self globallogic_audio::leader_dialog_on_player(level.killstreaks[killstreaktype].script_bundle.var_335def6c);
-        hacker globallogic_audio::leader_dialog_on_player(level.killstreaks[killstreaktype].script_bundle.var_7a502c34);
+        return;
     }
+    self globallogic_audio::leader_dialog_on_player(level.killstreaks[killstreaktype].script_bundle.var_335def6c);
+    hacker globallogic_audio::leader_dialog_on_player(level.killstreaks[killstreaktype].script_bundle.var_7a502c34);
 }
 
 // Namespace namespace_f9b02f80/namespace_f9b02f80
@@ -104,12 +104,12 @@ function private function_7bed52a(killstreaktype, team, killstreakid) {
     }
     if (!isdefined(scriptbundle.var_e23aed46) || scriptbundle.var_e23aed46 <= 0) {
         globallogic_audio::leader_dialog_for_other_teams(dialogkey, team, undefined, killstreakid);
-    } else {
-        foreach (currentteam, _ in level.teams) {
-            if (currentteam != team) {
-                players = getplayers(currentteam, self.origin, scriptbundle.var_e23aed46);
-                globallogic_audio::function_61e17de0(dialogkey, players, undefined, killstreakid);
-            }
+        return;
+    }
+    foreach (currentteam, _ in level.teams) {
+        if (currentteam != team) {
+            players = getplayers(currentteam, self.origin, scriptbundle.var_e23aed46);
+            globallogic_audio::function_61e17de0(dialogkey, players, undefined, killstreakid);
         }
     }
 }

@@ -81,9 +81,7 @@ function setupanimtree() {
 function supplydrop_care_package_state(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     self endon(#"death");
     if (bwastimejump == 1) {
-        goto LOC_00000060;
     }
-LOC_00000060:
 }
 
 // Namespace supplydrop/supplydrop_shared
@@ -94,9 +92,7 @@ function supplydrop_ai_tank_state(*localclientnum, *oldval, newval, *bnewent, *b
     self endon(#"death");
     self setupanimtree();
     if (bwastimejump == 1) {
-        goto LOC_00000074;
     }
-LOC_00000074:
 }
 
 // Namespace supplydrop/supplydrop_shared
@@ -159,9 +155,9 @@ function cleanupthrustersthread(localclientnum) {
 function supply_drop_parachute(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self playrenderoverridebundle(#"hash_336cece53ae2342f");
-    } else {
-        self stoprenderoverridebundle(#"hash_336cece53ae2342f");
+        return;
     }
+    self stoprenderoverridebundle(#"hash_336cece53ae2342f");
 }
 
 // Namespace supplydrop/supplydrop_shared
@@ -195,7 +191,9 @@ function marker_state_changed(localclientnum, *oldval, newval, *bnewent, *biniti
             player thread updatemarkerthread(fieldname);
         }
         player.markerfxhandle = util::playfxontag(fieldname, player.markerfx, player.markerobj, "tag_origin");
-    } else if (isdefined(player.markerobj)) {
+        return;
+    }
+    if (isdefined(player.markerobj)) {
         player.markerobj delete();
     }
 }
@@ -207,7 +205,9 @@ function marker_state_changed(localclientnum, *oldval, newval, *bnewent, *biniti
 function function_feeeb71b(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self.var_7246dab7 = util::playfxontag(fieldname, #"hash_5677371ed9b935dd", self, "tag_body");
-    } else if (isdefined(self.var_7246dab7)) {
+        return;
+    }
+    if (isdefined(self.var_7246dab7)) {
         killfx(fieldname, self.var_7246dab7);
         self.var_7246dab7 = undefined;
     }

@@ -178,9 +178,8 @@ class class_3593c7e6 {
     function function_e3d90223() {
         if (isdefined(self.var_c23bfa1e)) {
             return [[ self.var_c23bfa1e ]]();
-        } else {
-            return 1;
         }
+        return 1;
     }
 
 }
@@ -278,11 +277,11 @@ function function_7495bd30() {
             if (level.doa.var_2ad97fac < 30) {
                 level.doa.var_2ad97fac++;
             }
-        } else {
-            level.doa.var_2ad97fac = level.doa.var_2ad97fac - 8;
-            if (level.doa.var_2ad97fac < 0) {
-                level.doa.var_2ad97fac = 0;
-            }
+            continue;
+        }
+        level.doa.var_2ad97fac = level.doa.var_2ad97fac - 8;
+        if (level.doa.var_2ad97fac < 0) {
+            level.doa.var_2ad97fac = 0;
         }
     }
 }
@@ -388,14 +387,14 @@ function function_924423d(ent) {
     foreach (item in level.doa.var_dcbded2) {
         if (item.var_2ddc895 === ent) {
             items[items.size] = ent;
-        } else {
-            if (!isdefined(var_72840479)) {
-                var_72840479 = [];
-            } else if (!isarray(var_72840479)) {
-                var_72840479 = array(var_72840479);
-            }
-            var_72840479[var_72840479.size] = item;
+            continue;
         }
+        if (!isdefined(var_72840479)) {
+            var_72840479 = [];
+        } else if (!isarray(var_72840479)) {
+            var_72840479 = array(var_72840479);
+        }
+        var_72840479[var_72840479.size] = item;
     }
     level.doa.var_dcbded2 = var_72840479;
     return items;
@@ -476,9 +475,9 @@ function function_a6b807ea(spawndef, count = 10, targetpoint, radius = 0, genera
     var_3046d90a = function_5982ca9d(spawndef, count, targetpoint, radius, generator, enemy, var_294cccb7, arena, groupid, expiresat);
     if (!var_1be0f060) {
         level.doa.var_dcbded2[level.doa.var_dcbded2.size] = var_3046d90a;
-    } else {
-        arrayinsert(level.doa.var_dcbded2, var_3046d90a, 0);
+        return;
     }
+    arrayinsert(level.doa.var_dcbded2, var_3046d90a, 0);
 }
 
 // Namespace doa_enemy/doa_enemy
@@ -553,9 +552,9 @@ function function_7292bc() {
                         sizeneeded = sizeneeded + level.doa.var_dcbded2[idx].count;
                         level.doa.var_dcbded2[idx].groupid = undefined;
                         idx++;
-                    } else {
-                        break;
+                        continue;
                     }
+                    break;
                 }
                 for (var_44f97d52 = 10; var_44f97d52; var_44f97d52--) {
                     var_68a09a83 = namespace_250e9486::function_17d3b57();
@@ -580,9 +579,9 @@ function function_7292bc() {
                     }
                 #/
             }
-        } else {
-            wait(0.25);
+            continue;
         }
+        wait(0.25);
     }
 }
 

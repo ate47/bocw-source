@@ -447,9 +447,9 @@ function private function_bb046570() {
                 self.ai.var_4183a6fc.var_ef0e5eed = var_ef0e5eed;
                 if (startpoint[2] < endpoint[2]) {
                     self.ai.var_4183a6fc.direction = "staircase_up";
-                } else {
-                    self.ai.var_4183a6fc.direction = "staircase_down";
+                    return;
                 }
+                self.ai.var_4183a6fc.direction = "staircase_down";
                 return;
             }
         }

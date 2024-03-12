@@ -245,34 +245,34 @@ function function_caa61267() {
     nearby_players = function_a1ef346b(undefined, self.origin, self.meleeweapon.aimeleerange);
     foreach (player in nearby_players) {
         if (isdefined(self.var_f6fd2062) && ![[ self.var_f6fd2062 ]](player)) {
-            jumpiftrue(is_true(player.var_b895a3ff)) LOC_00000160;
-        } else {
-        LOC_00000160:
-            in_vehicle = player isinvehicle();
-            var_7bbf287d = in_vehicle ? 80 : 45;
-            if (!isalive(player) || absangleclamp180(self.angles[1] - vectortoangles(player.origin - self.origin)[1]) > var_7bbf287d) {
+            if (!is_true(player.var_b895a3ff)) {
                 continue;
             }
-            if (in_vehicle) {
-                vehicle = player getvehicleoccupied();
-                if (!isinarray(var_9051190, vehicle)) {
-                    if (isdefined(level.var_34a02ce7)) {
-                        [[ level.var_34a02ce7 ]](vehicle, self.var_a0193213);
-                    }
-                    if (!isdefined(var_9051190)) {
-                        var_9051190 = [];
-                    } else if (!isarray(var_9051190)) {
-                        var_9051190 = array(var_9051190);
-                    }
-                    var_9051190[var_9051190.size] = vehicle;
+        }
+        in_vehicle = player isinvehicle();
+        var_7bbf287d = in_vehicle ? 80 : 45;
+        if (!isalive(player) || absangleclamp180(self.angles[1] - vectortoangles(player.origin - self.origin)[1]) > var_7bbf287d) {
+            continue;
+        }
+        if (in_vehicle) {
+            vehicle = player getvehicleoccupied();
+            if (!isinarray(var_9051190, vehicle)) {
+                if (isdefined(level.var_34a02ce7)) {
+                    [[ level.var_34a02ce7 ]](vehicle, self.var_a0193213);
                 }
-                if (!is_true(vehicle.var_9a6644f2)) {
-                    player dodamage(50, self.origin, self, self, 0, "MOD_MELEE", 0, self.weapon);
+                if (!isdefined(var_9051190)) {
+                    var_9051190 = [];
+                } else if (!isarray(var_9051190)) {
+                    var_9051190 = array(var_9051190);
                 }
-            } else {
+                var_9051190[var_9051190.size] = vehicle;
+            }
+            if (!is_true(vehicle.var_9a6644f2)) {
                 player dodamage(50, self.origin, self, self, 0, "MOD_MELEE", 0, self.weapon);
             }
+            continue;
         }
+        player dodamage(50, self.origin, self, self, 0, "MOD_MELEE", 0, self.weapon);
     }
     var_1ff1751 = 1.2;
     var_15978c43 = getentitiesinradius(self.origin, self.meleeweapon.aimeleerange * var_1ff1751, 12);
@@ -1264,8 +1264,7 @@ function private function_5ef9a937(point) {
             new_origin = groundtrace(point.origin + vectorscale((0, 0, 1), 15) + vectorscale((0, 0, 1), 8), point.origin + vectorscale((0, 0, 1), 15) + vectorscale((0, 0, -1), 100000), 0, undefined)[#"position"];
         }
         var_540ddeae = {#var_ed56107c:[], #var_60d91344:[], #angles:point.angles, #origin:new_origin};
-        i = -180;
-        while (i < 180) {
+        for (i = -180; i < 180; i = i + 15) {
             var_dece365 = getmovedelta(#"hash_414bef9b5dcae460");
             angle_delta = getangledelta(#"hash_414bef9b5dcae460");
             var_dece365 = rotatepoint(var_dece365, point.angles + (0, angle_delta + i, 0));
@@ -1282,7 +1281,6 @@ function private function_5ef9a937(point) {
             passed = !function_4f401255(var_feb3dda6.origin, var_feb3dda6.angles, #"hash_5cfca059cd6fdb4c", level.players[0] getmins(), level.players[0] getmaxs(), [0:level.players[0]]);
             var_ed56107c = {#var_20f2bd48:var_d26e393f, #var_dc11f544:var_f60dbcf6, #var_9f7d6d3b:var_feb3dda6.origin, #passed:passed};
             var_540ddeae.var_ed56107c[var_540ddeae.var_ed56107c.size] = var_ed56107c;
-            i = i + 15;
         }
         return var_540ddeae;
     #/

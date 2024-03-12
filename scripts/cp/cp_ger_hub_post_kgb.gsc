@@ -129,13 +129,13 @@ function function_22967a29() {
 function function_d762b8f7() {
     if (level flag::get("woods_sub_tree")) {
         level flag::clear("woods_sub_tree");
-    } else {
-        if (!level flag::get("alder_passing_by_woods")) {
-            level.adler ghost();
-            level.park ghost();
-        }
-        level.woods namespace_31c67f6d::function_282ccb63();
+        return;
     }
+    if (!level flag::get("alder_passing_by_woods")) {
+        level.adler ghost();
+        level.park ghost();
+    }
+    level.woods namespace_31c67f6d::function_282ccb63();
 }
 
 // Namespace hub_post_kgb/cp_ger_hub_post_kgb

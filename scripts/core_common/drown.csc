@@ -102,9 +102,8 @@ function function_1a9dc208() {
     #/
     if (isdefined(playerrole)) {
         return int(playerrole.var_f0886300 * 1000);
-    } else {
-        return 2000;
     }
+    return 2000;
 }
 
 // Namespace drown/drown
@@ -168,14 +167,12 @@ function player_fade_out_drown_fx(localclientnum) {
     self endon(#"player_fade_out_drown_fx");
     self player_init_drown_values();
     fadestarttime = getservertime(localclientnum);
-    currenttime = getservertime(localclientnum);
-    while (currenttime - fadestarttime < 250) {
+    for (currenttime = getservertime(localclientnum); currenttime - fadestarttime < 250; currenttime = getservertime(localclientnum)) {
         ratio = (currenttime - fadestarttime) / 250;
         outerradius = lerpfloat(self.drown_outerradius, 1.41421, ratio);
         innerradius = lerpfloat(self.drown_innerradius, 1.41421, ratio);
         opacity = lerpfloat(self.drown_opacity, 0, ratio);
         waitframe(1);
-        currenttime = getservertime(localclientnum);
     }
     self disable_drown(localclientnum);
 }
@@ -188,10 +185,12 @@ function drown_stage_callback(localclientnum, *oldval, newval, bnewent, *binitia
     if (fieldname > 0) {
         self enable_drown(binitialsnap, fieldname);
         self thread player_drown_fx(binitialsnap, fieldname);
-    } else if (!bwastimejump) {
-        self thread player_fade_out_drown_fx(binitialsnap);
-    } else {
-        self disable_drown(binitialsnap);
+        return;
     }
+    if (!bwastimejump) {
+        self thread player_fade_out_drown_fx(binitialsnap);
+        return;
+    }
+    self disable_drown(binitialsnap);
 }
 

@@ -56,12 +56,12 @@ function function_770151a9(*localclientnum, *oldval, newval, *bnewent, *binitial
         forcestreamxmodel(#"hash_4b2a32bf16b6481d");
         forcestreamxmodel(#"hash_2316d53ec18a5c74");
         forcestreamxmodel(#"hash_2316d63ec18a5e27");
-    } else {
-        stopforcestreamingxmodel(#"hash_2316d83ec18a618d");
-        stopforcestreamingxmodel(#"hash_4b2a32bf16b6481d");
-        stopforcestreamingxmodel(#"hash_2316d53ec18a5c74");
-        stopforcestreamingxmodel(#"hash_2316d63ec18a5e27");
+        return;
     }
+    stopforcestreamingxmodel(#"hash_2316d83ec18a618d");
+    stopforcestreamingxmodel(#"hash_4b2a32bf16b6481d");
+    stopforcestreamingxmodel(#"hash_2316d53ec18a5c74");
+    stopforcestreamingxmodel(#"hash_2316d63ec18a5e27");
 }
 
 // Namespace zm_gold_ww_quest/zm_gold_ww_quest
@@ -84,16 +84,16 @@ function function_9b54b294(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwasdemojump) {
         b_clockwise = (bwasdemojump & 32) == 0;
         var_14db7cdb thread function_5d7d4dd0(fieldname, bwasdemojump & 31, b_clockwise);
-    } else {
-        var_14db7cdb notify(#"turn_off");
-        level.var_4965c181[fieldname] = undefined;
-        playsound(fieldname, #"hash_30c83800bc972d7a", var_14db7cdb gettagorigin("tag_screen_fx"));
-        if (isdefined(level.var_838bf3b1[fieldname])) {
-            level.var_838bf3b1[fieldname] delete();
-        }
-        if (isdefined(level.var_3e560871[fieldname])) {
-            level.var_3e560871[fieldname] delete();
-        }
+        return;
+    }
+    var_14db7cdb notify(#"turn_off");
+    level.var_4965c181[fieldname] = undefined;
+    playsound(fieldname, #"hash_30c83800bc972d7a", var_14db7cdb gettagorigin("tag_screen_fx"));
+    if (isdefined(level.var_838bf3b1[fieldname])) {
+        level.var_838bf3b1[fieldname] delete();
+    }
+    if (isdefined(level.var_3e560871[fieldname])) {
+        level.var_3e560871[fieldname] delete();
     }
 }
 
@@ -129,7 +129,7 @@ function function_5824b6e(var_76f1881e, b_clockwise, localclientnum) {
     do {
         wait(0.5);
         level function_b2061f2f(b_clockwise, localclientnum);
-    } while(level.var_4965c181[localclientnum] != var_76f1881e);
+    } while (level.var_4965c181[localclientnum] != var_76f1881e);
     level.var_838bf3b1[localclientnum] playsound(localclientnum, #"hash_b1ecaea59103899");
 }
 
@@ -157,11 +157,11 @@ function function_b2061f2f(b_clockwise, localclientnum) {
         var_f6f1e92e.angles = (var_f6f1e92e.angles[0], var_f6f1e92e.angles[1], n_angle);
         var_f6f1e92e show();
         var_9085056e hide();
-    } else {
-        var_9085056e.angles = (var_9085056e.angles[0], var_9085056e.angles[1], n_angle);
-        var_9085056e show();
-        var_f6f1e92e hide();
+        return;
     }
+    var_9085056e.angles = (var_9085056e.angles[0], var_9085056e.angles[1], n_angle);
+    var_9085056e show();
+    var_f6f1e92e hide();
 }
 
 // Namespace zm_gold_ww_quest/zm_gold_ww_quest

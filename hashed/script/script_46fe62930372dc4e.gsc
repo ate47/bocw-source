@@ -34,9 +34,9 @@ function function_cb5a4b1a() {
 function function_613a7ccc(b_success = 0) {
     if (b_success) {
         music::setmusicstate("common_exfil_success");
-    } else {
-        music::setmusicstate("common_exfil_fail");
+        return;
     }
+    music::setmusicstate("common_exfil_fail");
 }
 
 // Namespace namespace_4ce4e65e/namespace_4ce4e65e

@@ -175,9 +175,13 @@ function function_33560b93(targets) {
     foreach (target in function_f218bff5(targets)) {
         if (!isdefined(target)) {
             var_d16005d8 = arraycombine(var_d16005d8, level._snd.var_3cc765a3);
-        } else if (target == level) {
+            continue;
+        }
+        if (target == level) {
             var_d16005d8 = arraycombine(var_d16005d8, level._snd.var_92f63ad0);
-        } else if (isdefined(target.var_a415b6d6)) {
+            continue;
+        }
+        if (isdefined(target.var_a415b6d6)) {
             var_d16005d8 = arraycombine(var_d16005d8, target.var_a415b6d6);
         }
     }
@@ -235,12 +239,12 @@ function function_880857eb(var_932dabe2) {
         level.var_f0386daf = &function_e94a63b7;
         level.var_11a13546 = &function_95d9f208;
         level.animation.callbacks[#"hash_73f041a2a6b96ce1"] = &function_e9b666c7;
-    } else {
-        level.var_2c3e0fc7 = level._snd.var_2c3e0fc7;
-        level.var_f0386daf = level._snd.var_f0386daf;
-        level.var_11a13546 = level._snd.var_11a13546;
-        level.animation.callbacks[#"hash_73f041a2a6b96ce1"] = level._snd.var_2861a322;
+        return;
     }
+    level.var_2c3e0fc7 = level._snd.var_2c3e0fc7;
+    level.var_f0386daf = level._snd.var_f0386daf;
+    level.var_11a13546 = level._snd.var_11a13546;
+    level.animation.callbacks[#"hash_73f041a2a6b96ce1"] = level._snd.var_2861a322;
 }
 
 // Namespace snd/namespace_b63b5857
@@ -372,11 +376,11 @@ function private function_aaee1de3(var_db943b21, var_4769f013, item) {
         /#
             assert(0, "<unknown string>");
         #/
-        break;
+        return;
     case #"centity":
     case #"gentity":
         level._snd.var_3cc765a3[var_4769f013] = item;
-        break;
+        return;
     }
 }
 
@@ -396,14 +400,14 @@ function private function_7e9752b7(var_db943b21, var_4769f013, item) {
         /#
             assert(0, "<unknown string>");
         #/
-        break;
+        return;
     case #"centity":
     case #"gentity":
         /#
             assert(isinarray(level._snd.var_3cc765a3, item), "<unknown string>");
         #/
         level._snd.var_3cc765a3[var_4769f013] = undefined;
-        break;
+        return;
     }
 }
 
@@ -461,9 +465,9 @@ function private function_75a3b79f(targ) {
             tagname = player function_bf7c949("j_head");
             if (player.model != "" && tagname != "") {
                 targets[targets.size] = [1:tagname, 0:player];
-            } else {
-                targets[targets.size] = player;
+                continue;
             }
+            targets[targets.size] = player;
         }
     } else if (isarray(targ)) {
         if (function_81fac19d(targ.size == 0, "snd: zero-sized array used for targ")) {
@@ -487,7 +491,9 @@ function private function_75a3b79f(targ) {
             foreach (key in targ) {
                 if (isentity(key) || isstruct(key) && isdefined(key.origin) || isvec(key) || isarray(key)) {
                     targets[targets.size] = key;
-                } else if (isstring(key)) {
+                    continue;
+                }
+                if (isstring(key)) {
                     var_f7a0383c = function_1114d717(key);
                     foreach (t in var_f7a0383c) {
                         targets[targets.size] = t;
@@ -591,28 +597,20 @@ function private function_2639b80c(soundtype, soundalias, var_9ab0e73a) {
             }
         } else if (isv) {
             var_1d25915 = t;
-        } else {
-            if (var_9d775bb8) {
-                goto LOC_00000704;
+        } else if (var_9d775bb8) {
+        } else if (isarray(t)) {
+            if (!isdefined(t[0]) || function_3132f113(t[0])) {
+                continue;
+            } else if (isentity(t[0]) && isstring(t[1])) {
+                var_605838f4 = t[0];
+                var_e330010e = t[1];
+                var_1d25915 = (0, 0, 0);
+            } else if (isentity(t[0]) && isvec(t[1])) {
+                var_605838f4 = t[0];
+                var_1d25915 = t[1];
+            } else if (function_81fac19d(1, "snd: unexpected target array combination")) {
             }
-            if (isarray(t)) {
-                if (!isdefined(t[0]) || function_3132f113(t[0])) {
-                    continue;
-                } else if (isentity(t[0]) && isstring(t[1])) {
-                    var_605838f4 = t[0];
-                    var_e330010e = t[1];
-                    var_1d25915 = (0, 0, 0);
-                } else if (isentity(t[0]) && isvec(t[1])) {
-                    var_605838f4 = t[0];
-                    var_1d25915 = t[1];
-                } else if (function_81fac19d(1, "snd: unexpected target array combination")) {
-                LOC_00000704:
-                }
-            LOC_00000704:
-            }
-        LOC_00000704:
         }
-    LOC_00000704:
         switch (soundtype) {
         default:
             /#
@@ -711,10 +709,10 @@ function private function_f937a6f7(var_afe43979, var_24ea4e17) {
     case #"gentity":
     default:
         namespace_afa8e18b::function_9f156b27(var_afe43979, var_24ea4e17);
-        break;
+        return;
     case #"centity":
         namespace_afa8e18b::function_273d939b(var_afe43979, var_24ea4e17);
-        break;
+        return;
     }
 }
 
@@ -932,7 +930,7 @@ function private function_dcc0344(soundalias, target, var_8fc5ff4a, var_6c6d0c21
         spawntime = function_84fc754d(var_8fc5ff4a, 0.05);
         wait(spawntime);
         if (!isdefined(target)) {
-            break;
+            return;
         }
         dist = function_84fc754d(function_ea2f17d1(var_6c6d0c21, 0));
         var_a7685aa3 = function_cdc85ae5(var_4be7fc38);
@@ -1008,9 +1006,9 @@ function emitter(soundalias, target, spawntime, var_6c6d0c21, rotation, var_cbf8
             }
             emitter thread function_dcc0344(soundalias, t, spawntime, var_6c6d0c21, rotation, var_cbf878e6);
             var_bf0efd8[var_bf0efd8.size] = emitter;
-        } else {
-            function_81fac19d(var_381a9100 == 0 && isv == 0, "snd_emitter target '" + t + "' was not an entity or vector.");
+            continue;
         }
+        function_81fac19d(var_381a9100 == 0 && isv == 0, "snd_emitter target '" + t + "' was not an entity or vector.");
     }
     function_81fac19d(var_bf0efd8.size == 0, "snd_emitter resulted in zero emitter targets");
     return function_31bcd153(var_bf0efd8);
@@ -1179,7 +1177,6 @@ function function_13b51154(curve, size) {
             lut[14] = 0.758835;
             lut[15] = 1;
             return lut;
-            break;
         }
         lut[lut.size] = y;
     }
@@ -1216,7 +1213,6 @@ function private function_d3f407d6(alias) {
     switch (alias) {
     case #"xfade":
         return "easeout";
-        break;
     }
     return alias;
 }
@@ -2046,14 +2042,10 @@ function private function_637f9a70(callback, var_7d665d77) {
     while (1) {
         skipto = function_bdd32fcc();
         if (skipto == "") {
-            goto LOC_00000176;
-        }
-        if (var_7d665d77 || !var_7d665d77 && !isdefined(objectives[skipto])) {
+        } else if (var_7d665d77 || !var_7d665d77 && !isdefined(objectives[skipto])) {
             level thread [[ callback ]](skipto);
             objectives[skipto] = 1;
-        LOC_00000176:
         }
-    LOC_00000176:
         level waittill(#"objective_changed", #"save_restore");
         waittillframeend();
     }
@@ -2181,10 +2173,10 @@ function private function_78013c7e(callback) {
                 if (isdefined(var_9cb85e33)) {
                     player.var_9a8a4923 = var_9cb85e33;
                     var_9cb85e33 thread [[ callback ]](player, var_9cb85e33, 0);
-                } else {
-                    player.var_9a8a4923 = undefined;
-                    level notify(#"trigger", {#activator:player});
+                    continue;
                 }
+                player.var_9a8a4923 = undefined;
+                level notify(#"trigger", {#activator:player});
             }
         }
     }

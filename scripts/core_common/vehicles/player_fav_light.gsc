@@ -48,7 +48,9 @@ function function_1d4618ca(params) {
     }
     if (eventstruct.seat_index == 0) {
         self vehicle::toggle_control_bone_group(1, 1);
-    } else if (eventstruct.seat_index == 1) {
+        return;
+    }
+    if (eventstruct.seat_index == 1) {
         self vehicle::toggle_control_bone_group(2, 0);
     }
 }
@@ -65,7 +67,9 @@ function function_79f2b4cf(params) {
     }
     if (eventstruct.seat_index == 1) {
         self vehicle::toggle_control_bone_group(2, 0);
-    } else if (eventstruct.seat_index == 0) {
+        return;
+    }
+    if (eventstruct.seat_index == 0) {
         self vehicle::toggle_control_bone_group(2, 1);
     }
 }

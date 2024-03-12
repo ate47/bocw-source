@@ -228,8 +228,8 @@ function callback_actorkilled(einflictor, eattacker, idamage, smeansofdeath, wea
     self callback::callback(#"on_actor_killed", params);
     if (isdefined(self.aioverridekilled)) {
         for (index = 0; index < self.aioverridekilled.size; index++) {
-            var_a334a5eb = self.aioverridekilled[index];
-            self [[ var_a334a5eb ]](einflictor, eattacker, idamage, smeansofdeath, weapon, var_fd90b0bb, vdir, shitloc, psoffsettime);
+            killedcallback = self.aioverridekilled[index];
+            self [[ killedcallback ]](einflictor, eattacker, idamage, smeansofdeath, weapon, var_fd90b0bb, vdir, shitloc, psoffsettime);
         }
     }
     player = undefined;

@@ -347,9 +347,9 @@ function function_11e05208() {
         deltasq = distancesquared(lastpos, self.origin);
         if (deltasq < function_a3f6cdac(12)) {
             var_a3750609--;
-        } else {
-            self thread function_11e05208();
+            continue;
         }
+        self thread function_11e05208();
     }
     var_4fb43dc5 = self.favoriteenemy;
     foreach (player in getplayers()) {
@@ -391,15 +391,9 @@ function function_add8c81a(rate = "run") {
         rate = "super_sprint";
     }
     if (rate == "walk") {
-        goto LOC_000000f2;
+    } else if (rate == "run") {
+    } else if (rate == "sprint") {
     }
-    if (rate == "run") {
-        goto LOC_000000f2;
-    }
-    if (rate == "sprint") {
-    LOC_000000f2:
-    }
-LOC_000000f2:
     self.var_993e6488 = self.zombie_move_speed;
     self.zombie_move_speed = rate;
 }
@@ -473,7 +467,9 @@ function function_f87ac23b(owner) {
         if (isdefined(result.activator)) {
             if (result.activator.team == #"allies") {
                 result.activator dodamage(result.activator.health, self.origin, owner, owner);
-            } else if (result.activator.team == #"axis") {
+                continue;
+            }
+            if (result.activator.team == #"axis") {
                 if (namespace_250e9486::function_3d752709(result.activator)) {
                     result.activator namespace_250e9486::setup_zombie_knockdown(owner);
                     result.activator.knockdown_type = "knockdown_shoved";
@@ -1210,9 +1206,9 @@ function function_36e94670(destination, timems, var_fbe64ccb) {
                 newspot = (newspot[0], newspot[1], destination[2]);
                 if (isai(self)) {
                     self forceteleport(newspot);
-                } else {
-                    self.origin = newspot;
+                    return;
                 }
+                self.origin = newspot;
                 return;
             }
             if (isai(self)) {
@@ -1222,15 +1218,15 @@ function function_36e94670(destination, timems, var_fbe64ccb) {
             }
             waitframe(1);
         }
-    } else {
-        while (gettime() < stoptime) {
-            if (isai(self)) {
-                self forceteleport(self.origin + delta);
-            } else {
-                self.origin = self.origin + delta;
-            }
-            waitframe(1);
+        return;
+    }
+    while (gettime() < stoptime) {
+        if (isai(self)) {
+            self forceteleport(self.origin + delta);
+        } else {
+            self.origin = self.origin + delta;
         }
+        waitframe(1);
     }
 }
 

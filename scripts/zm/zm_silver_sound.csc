@@ -53,13 +53,13 @@ function startzmbspawnersoundloops() {
                 waitframe(1);
             }
         }
-    } else {
-        /#
-            if (getdvarint(#"debug_audio", 0) > 0) {
-                println("<unknown string>");
-            }
-        #/
+        return;
     }
+    /#
+        if (getdvarint(#"debug_audio", 0) > 0) {
+            println("<unknown string>");
+        }
+    #/
 }
 
 // Namespace zm_silver_sound/zm_silver_sound
@@ -130,9 +130,9 @@ function function_91c6e82a() {
 function function_2f3017ad(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump) {
         function_21fee83f(bwasdemojump);
-    } else {
-        function_21fee83f(0);
+        return;
     }
+    function_21fee83f(0);
 }
 
 // Namespace zm_silver_sound/zm_silver_sound
@@ -168,10 +168,10 @@ function function_21fee83f(var_c4f44e2) {
         if (var_c4f44e2 === 0) {
             function_672403ca("mute_underscore_aboveground", 5, 0);
             function_672403ca("mute_underscore_belowground", 5, 1);
-        } else {
-            function_672403ca("mute_underscore_aboveground", 5, 1);
-            function_672403ca("mute_underscore_belowground", 5, 0);
+            return;
         }
+        function_672403ca("mute_underscore_aboveground", 5, 1);
+        function_672403ca("mute_underscore_belowground", 5, 0);
     }
 }
 

@@ -438,14 +438,14 @@ function get_player_spawns_for_gametype() {
                     a_s_player_spawns[a_s_player_spawns.size] = struct;
                 }
             }
-        } else {
-            if (!isdefined(a_s_player_spawns)) {
-                a_s_player_spawns = [];
-            } else if (!isarray(a_s_player_spawns)) {
-                a_s_player_spawns = array(a_s_player_spawns);
-            }
-            a_s_player_spawns[a_s_player_spawns.size] = struct;
+            continue;
         }
+        if (!isdefined(a_s_player_spawns)) {
+            a_s_player_spawns = [];
+        } else if (!isarray(a_s_player_spawns)) {
+            a_s_player_spawns = array(a_s_player_spawns);
+        }
+        a_s_player_spawns[a_s_player_spawns.size] = struct;
     }
     return a_s_player_spawns;
 }
@@ -540,89 +540,95 @@ function menu_onmenuresponse() {
                     }
                 }
             }
-        } else {
-            if (response == "changeteam" && level.allow_teamchange) {
-                self closeingamemenu();
-                self openmenu(game.menu[#"menu_team"]);
-            }
-            if (response == "changeclass_marines") {
-                self closeingamemenu();
-                self openmenu(game.menu[#"menu_changeclass_allies"]);
-            } else if (response == "changeclass_opfor") {
-                self closeingamemenu();
-                self openmenu(game.menu[#"menu_changeclass_axis"]);
-            } else if (response == "changeclass_custom") {
-                self closeingamemenu();
-                self openmenu(game.menu[#"menu_changeclass_custom"]);
-            } else {
-                if (response == "changeclass_marines_splitscreen") {
-                    self openmenu("changeclass_marines_splitscreen");
-                }
-                if (response == "changeclass_opfor_splitscreen") {
-                    self openmenu("changeclass_opfor_splitscreen");
-                }
-                if (!isdedicated() && self ishost()) {
-                    if (response == "endgame") {
-                        if (self issplitscreen()) {
-                            level.skipvote = 1;
-                            if (!is_true(level.gameended)) {
-                                self zm_laststand::add_weighted_down();
-                                self zm_stats::increment_client_stat("deaths");
-                                self zm_stats::increment_player_stat("deaths");
-                                level.host_ended_game = 1;
-                                foreach (player in getplayers()) {
-                                    player val::set(#"game_end", "freezecontrols");
-                                    player val::set(#"game_end", "disablegadgets");
-                                }
-                                level notify(#"end_game");
-                            }
-                        }
-                        continue;
-                    }
-                    jumpiffalse(response == "endround") LOC_000006de;
+            continue;
+        }
+        if (response == "changeteam" && level.allow_teamchange) {
+            self closeingamemenu();
+            self openmenu(game.menu[#"menu_team"]);
+        }
+        if (response == "changeclass_marines") {
+            self closeingamemenu();
+            self openmenu(game.menu[#"menu_changeclass_allies"]);
+            continue;
+        }
+        if (response == "changeclass_opfor") {
+            self closeingamemenu();
+            self openmenu(game.menu[#"menu_changeclass_axis"]);
+            continue;
+        }
+        if (response == "changeclass_custom") {
+            self closeingamemenu();
+            self openmenu(game.menu[#"menu_changeclass_custom"]);
+            continue;
+        }
+        if (response == "changeclass_marines_splitscreen") {
+            self openmenu("changeclass_marines_splitscreen");
+        }
+        if (response == "changeclass_opfor_splitscreen") {
+            self openmenu("changeclass_opfor_splitscreen");
+        }
+        if (!isdedicated() && self ishost()) {
+            if (response == "endgame") {
+                if (self issplitscreen()) {
+                    level.skipvote = 1;
                     if (!is_true(level.gameended)) {
-                        self globallogic::gamehistoryplayerquit();
                         self zm_laststand::add_weighted_down();
-                        self closeingamemenu();
+                        self zm_stats::increment_client_stat("deaths");
+                        self zm_stats::increment_player_stat("deaths");
                         level.host_ended_game = 1;
                         foreach (player in getplayers()) {
                             player val::set(#"game_end", "freezecontrols");
                             player val::set(#"game_end", "disablegadgets");
                         }
                         level notify(#"end_game");
-                    } else {
-                        self closeingamemenu();
-                        self iprintln(#"hash_6e4cedc56165f367");
-                    }
-                } else {
-                LOC_000006de:
-                    if (response == "hide_class_select_slideout") {
-                        self notify(#"hide_class_select_slideout");
-                    } else if (response == "show_class_select_slideout") {
-                        self notify(#"show_class_select_slideout");
-                    }
-                    if (menu == game.menu[#"menu_team"] && level.allow_teamchange) {
-                        switch (response) {
-                        case #"allies":
-                            self [[ level.allies ]]();
-                            break;
-                        case #"axis":
-                            self [[ level.teammenu ]](response);
-                            break;
-                        case #"autoassign":
-                            self [[ level.autoassign ]](1);
-                            break;
-                        case #"spectator":
-                            self [[ level.spectator ]]();
-                            break;
-                        }
-                    } else if (menu == game.menu[#"menu_changeclass"] || menu == game.menu[#"menu_changeclass_offline"] || menu == game.menu[#"menu_changeclass_custom"]) {
-                        self closeingamemenu();
-                        self.selectedclass = 1;
-                        self [[ level.curclass ]](response);
                     }
                 }
+                continue;
             }
+            if (response == "endround") {
+                if (!is_true(level.gameended)) {
+                    self globallogic::gamehistoryplayerquit();
+                    self zm_laststand::add_weighted_down();
+                    self closeingamemenu();
+                    level.host_ended_game = 1;
+                    foreach (player in getplayers()) {
+                        player val::set(#"game_end", "freezecontrols");
+                        player val::set(#"game_end", "disablegadgets");
+                    }
+                    level notify(#"end_game");
+                } else {
+                    self closeingamemenu();
+                    self iprintln(#"hash_6e4cedc56165f367");
+                }
+                continue;
+            }
+        }
+        if (response == "hide_class_select_slideout") {
+            self notify(#"hide_class_select_slideout");
+        } else if (response == "show_class_select_slideout") {
+            self notify(#"show_class_select_slideout");
+        }
+        if (menu == game.menu[#"menu_team"] && level.allow_teamchange) {
+            switch (response) {
+            case #"allies":
+                self [[ level.allies ]]();
+                break;
+            case #"axis":
+                self [[ level.teammenu ]](response);
+                break;
+            case #"autoassign":
+                self [[ level.autoassign ]](1);
+                break;
+            case #"spectator":
+                self [[ level.spectator ]]();
+                break;
+            }
+            continue;
+        }
+        if (menu == game.menu[#"menu_changeclass"] || menu == game.menu[#"menu_changeclass_offline"] || menu == game.menu[#"menu_changeclass_custom"]) {
+            self closeingamemenu();
+            self.selectedclass = 1;
+            self [[ level.curclass ]](response);
         }
     }
 }

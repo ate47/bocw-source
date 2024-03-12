@@ -44,7 +44,9 @@ function scoreeventsr(params) {
             level doscoreeventcallback("scoreEventZM", {#enemy:params.enemy, #scoreevent:params.scoreevent, #attacker:player});
             if (params.scoreevent === "defend_pristine_zm" || params.scoreevent === "escort_pristine_zm") {
                 player zm_stats::increment_challenge_stat(#"hash_66d504a1593b165");
-            } else if (params.scoreevent === "hvt_quick_kill_zm") {
+                continue;
+            }
+            if (params.scoreevent === "hvt_quick_kill_zm") {
                 player zm_stats::increment_challenge_stat(#"hash_44961f90979e3ba9");
             }
         }
@@ -58,19 +60,23 @@ function scoreeventsr(params) {
             if (params.scoreevent === "event_complete") {
                 player contracts::increment_zm_contract(#"hash_3bf466d0a98eebc2");
                 player function_b122e75f();
-            } else {
-                level doscoreeventcallback("scoreEventZM", {#enemy:params.enemy, #scoreevent:params.scoreevent, #attacker:player});
-                if (params.scoreevent === "secure_pristine_zm") {
-                    player zm_stats::increment_challenge_stat(#"hash_66d504a1593b165");
-                }
+                continue;
+            }
+            level doscoreeventcallback("scoreEventZM", {#enemy:params.enemy, #scoreevent:params.scoreevent, #attacker:player});
+            if (params.scoreevent === "secure_pristine_zm") {
+                player zm_stats::increment_challenge_stat(#"hash_66d504a1593b165");
             }
         }
-    } else if (isdefined(params.attacker)) {
+        return;
+    }
+    if (isdefined(params.attacker)) {
         level doscoreeventcallback("scoreEventZM", {#enemy:params.enemy, #scoreevent:params.scoreevent, #attacker:params.attacker});
         if (params.scoreevent === "demented_echo_kill_before_shriek_zm") {
             params.attacker zm_stats::increment_challenge_stat(#"hash_22485a4cae21822b");
         }
-    } else if (isarray(params.a_players)) {
+        return;
+    }
+    if (isarray(params.a_players)) {
         foreach (player in params.a_players) {
             if (params.scoreevent === "event_complete" && isalive(player)) {
                 player function_b122e75f();
@@ -117,7 +123,9 @@ function function_f8b76690(var_a0345f37, player, *weapon) {
         if (!isinarray(weapon.var_14c9514c.var_3f8123b0, player.archetype)) {
             weapon.var_14c9514c.var_3f8123b0[weapon.var_14c9514c.var_3f8123b0.size] = player.archetype;
         }
-    } else if ((player.var_6f84b820 === #"hash_72d4f2ad2e333eb4" || player.var_6f84b820 === #"special") && weapon.var_14c9514c.var_3f8123b0.size < 5) {
+        return;
+    }
+    if ((player.var_6f84b820 === #"hash_72d4f2ad2e333eb4" || player.var_6f84b820 === #"special") && weapon.var_14c9514c.var_3f8123b0.size < 5) {
         if (!isdefined(weapon.var_14c9514c.var_3f8123b0)) {
             weapon.var_14c9514c.var_3f8123b0 = [];
         } else if (!isarray(weapon.var_14c9514c.var_3f8123b0)) {
@@ -180,9 +188,9 @@ function function_88e6f8b7(params) {
                 } else if (params.eattacker.var_2a26f02[params.eattacker getentitynumber()].time < gettime()) {
                     params.eattacker.var_2a26f02[params.eattacker getentitynumber()] = {#var_ba244c35:0, #var_4480a428:1, #time:gettime(), #player:params.eattacker};
                 }
-            } else {
-                params.eattacker.var_2a26f02[params.eattacker getentitynumber()] = {#var_ba244c35:0, #var_4480a428:1, #time:gettime(), #player:params.eattacker};
+                return;
             }
+            params.eattacker.var_2a26f02[params.eattacker getentitynumber()] = {#var_ba244c35:0, #var_4480a428:1, #time:gettime(), #player:params.eattacker};
         }
     }
 }
@@ -228,7 +236,9 @@ function function_31553fb3() {
     if (!isdefined(self.var_ce436417)) {
         self.var_ce436417 = gettime();
         level doscoreeventcallback("scoreEventZM", {#scoreevent:"escort_payload_progress_zm", #attacker:self});
-    } else if (self.var_11b51fc0 - 5000 > self.var_ce436417) {
+        return;
+    }
+    if (self.var_11b51fc0 - 5000 > self.var_ce436417) {
         self.var_ce436417 = gettime();
         level doscoreeventcallback("scoreEventZM", {#scoreevent:"escort_payload_progress_zm", #attacker:self});
     }

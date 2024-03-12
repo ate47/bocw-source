@@ -930,7 +930,9 @@ function function_8b63ee0e(entity, mocompanim, *mocompanimblendouttime, *mocompa
             #/
             adjustedorigin = mocompanimflag.origin + mocompanimflag.meleeinfo.var_10b8b6d1 * mocompanimflag.meleeinfo.var_8b9a15a6;
             mocompanimflag forceteleport(adjustedorigin);
-        } else if (isdefined(mocompanimflag.enemy)) {
+            return;
+        }
+        if (isdefined(mocompanimflag.enemy)) {
             mocompanimflag orientmode("face enemy");
         }
     }

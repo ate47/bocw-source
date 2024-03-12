@@ -100,19 +100,25 @@ class class_51a06b68 : cluielem {
     function set_state(localclientnum, state_name) {
         if (#"defaultstate" == state_name) {
             [[ self ]]->set_data(localclientnum, "_state", 0);
-        } else if (#"gun1selected" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 1);
-        } else if (#"gun2selected" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 2);
-        } else if (#"gun3selected" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 3);
-        } else {
-            /#
-                /#
-                    assertmsg("<unknown string>");
-                #/
-            #/
+            return;
         }
+        if (#"gun1selected" == state_name) {
+            [[ self ]]->set_data(localclientnum, "_state", 1);
+            return;
+        }
+        if (#"gun2selected" == state_name) {
+            [[ self ]]->set_data(localclientnum, "_state", 2);
+            return;
+        }
+        if (#"gun3selected" == state_name) {
+            [[ self ]]->set_data(localclientnum, "_state", 3);
+            return;
+        }
+        /#
+            /#
+                assertmsg("<unknown string>");
+            #/
+        #/
     }
 
     // Namespace namespace_51a06b68/sr_objective_reward_menu

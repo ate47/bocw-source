@@ -148,11 +148,11 @@ function private function_5010aab6(localclientnum, *oldvalue, *newvalue, *bnewen
             self.threat_sight.elem stealth_meter_display::function_4d628707(wasdemojump, self.threat_sight.var_97c4563c);
             self.threat_sight.elem stealth_meter_display::function_7425637b(wasdemojump, self.threat_sight.sight);
             self.threat_sight.elem stealth_meter_display::function_fae2a569(wasdemojump, 1);
-        } else {
-            self.threat_sight.elem stealth_meter_display::function_4d628707(wasdemojump, 0);
-            self.threat_sight.elem stealth_meter_display::function_7425637b(wasdemojump, 0);
-            self.threat_sight.elem stealth_meter_display::function_fae2a569(wasdemojump, 0);
+            return;
         }
+        self.threat_sight.elem stealth_meter_display::function_4d628707(wasdemojump, 0);
+        self.threat_sight.elem stealth_meter_display::function_7425637b(wasdemojump, 0);
+        self.threat_sight.elem stealth_meter_display::function_fae2a569(wasdemojump, 0);
     }
 }
 

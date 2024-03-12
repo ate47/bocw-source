@@ -48,7 +48,9 @@ function function_555656fe(localclientnum, *oldval, newval, *bnewent, *binitials
         if (self postfx::function_556665f2(postfxbundle) == 0) {
             self codeplaypostfxbundle(postfxbundle);
         }
-    } else if (self postfx::function_556665f2(postfxbundle)) {
+        return;
+    }
+    if (self postfx::function_556665f2(postfxbundle)) {
         self codestoppostfxbundle(postfxbundle);
     }
 }

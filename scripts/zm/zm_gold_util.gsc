@@ -52,7 +52,9 @@ function function_b488623(b_show) {
         if (!level.zm_gold_align_satellite_hud zm_gold_align_satellite_hud::is_open(self)) {
             level.zm_gold_align_satellite_hud zm_gold_align_satellite_hud::open(self);
         }
-    } else if (level.zm_gold_align_satellite_hud zm_gold_align_satellite_hud::is_open(self)) {
+        return;
+    }
+    if (level.zm_gold_align_satellite_hud zm_gold_align_satellite_hud::is_open(self)) {
         level.zm_gold_align_satellite_hud zm_gold_align_satellite_hud::close(self);
     }
 }
@@ -103,12 +105,12 @@ function function_72c803d3(cmd) {
         switch (cmd) {
         case #"hash_2c0a3e57a006c81d":
             function_e76968e1(1);
-            break;
+            return;
         case #"hash_3a2f14069605556a":
             function_e76968e1(0);
-            break;
+            return;
         default:
-            break;
+            return;
         }
     #/
 }

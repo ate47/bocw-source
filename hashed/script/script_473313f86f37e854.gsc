@@ -85,9 +85,9 @@ function function_a7a5e842(localclientnum, *oldval, newval, *bnewent, *binitials
             self.var_f41344b = self playloopsound(#"hash_6274adb83dbbdbe");
         }
         self thread function_bfdbfcd(fieldname, 1);
-    } else {
-        self thread function_bfdbfcd(fieldname, 0);
+        return;
     }
+    self thread function_bfdbfcd(fieldname, 0);
 }
 
 // Namespace ammomod_cryofreeze/ammomod_cryofreeze
@@ -113,7 +113,7 @@ function function_bfdbfcd(localclientnum, b_freeze) {
             self.var_82fb67e7 = self.var_82fb67e7 - 0.05;
         }
         if (b_freeze && (self.var_82fb67e7 >= var_875c79c1 || self.var_82fb67e7 >= 1)) {
-            break;
+            return;
         } else if (self.var_82fb67e7 <= 0) {
             self.var_958cf9c5 = undefined;
             self stoprenderoverridebundle("rob_test_character_ice");
@@ -143,7 +143,7 @@ function function_bfdbfcd(localclientnum, b_freeze) {
                 self stoploopsound(self.var_f41344b);
                 self.var_f41344b = undefined;
             }
-            break;
+            return;
         }
         wait(0.1);
     }

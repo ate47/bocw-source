@@ -15,27 +15,27 @@ function handlenotetrack(note, *flagname, customfunction, var1) {
         return flagname;
     case #"hash_701bc5c059dfaa52":
         self thread sound::play_in_space("fly_gear_enemy", self gettagorigin("TAG_WEAPON_RIGHT"));
-        break;
+        return;
     case #"hash_5f5e275b9f3b93ee":
         self thread sound::play_in_space("fly_gear_enemy_large", self gettagorigin("TAG_WEAPON_RIGHT"));
-        break;
+        return;
     case #"no death":
         self.a.nodeath = 1;
-        break;
+        return;
     case #"no pain":
         self.allowpain = 0;
-        break;
+        return;
     case #"hash_50c6c08f5de3ec2a":
         self.allowpain = 1;
-        break;
+        return;
     case #"anim_melee = right":
     case #"hash_39ec7b0969bab796":
         self.a.meleestate = "right";
-        break;
+        return;
     case #"hash_1791db148d16d825":
     case #"hash_6b554a9080ec8b07":
         self.a.meleestate = "left";
-        break;
+        return;
     case #"swap taghelmet to tagleft":
         if (isdefined(self.hatmodel)) {
             if (isdefined(self.helmetsidemodel)) {
@@ -46,7 +46,7 @@ function handlenotetrack(note, *flagname, customfunction, var1) {
             self attach(self.hatmodel, "TAG_WEAPON_LEFT");
             self.hatmodel = undefined;
         }
-        break;
+        return;
     default:
         if (isdefined(customfunction)) {
             if (!isdefined(var1)) {
@@ -55,7 +55,7 @@ function handlenotetrack(note, *flagname, customfunction, var1) {
                 return [[ customfunction ]](flagname, var1);
             }
         }
-        break;
+        return;
     }
 }
 

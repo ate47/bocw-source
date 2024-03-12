@@ -197,10 +197,10 @@ function function_f852c52c(menu_name, state_name = undefined, var_a180b828 = 1, 
         #/
         level.client_menus[menu_name].states[state_name].var_b2ad82eb = var_a180b828;
         level.client_menus[menu_name].states[state_name].var_c9213d93 = var_a7c679da;
-    } else {
-        level.client_menus[menu_name].var_b2ad82eb = var_a180b828;
-        level.client_menus[menu_name].var_c9213d93 = var_a7c679da;
+        return;
     }
+    level.client_menus[menu_name].var_b2ad82eb = var_a180b828;
+    level.client_menus[menu_name].var_c9213d93 = var_a7c679da;
 }
 
 // Namespace namespace_d5a9ff55/namespace_d5a9ff55
@@ -217,9 +217,9 @@ function function_8950260c(menu_name, from_state = "__default__", to_state = "__
     menu = level.client_menus[menu_name];
     if (from_state != "__default__" && isdefined(menu.states[from_state])) {
         menu.states[from_state].var_b80d1ad4[to_state] = str_shot;
-    } else {
-        menu.states.var_b80d1ad4[to_state] = str_shot;
+        return;
     }
+    menu.states.var_b80d1ad4[to_state] = str_shot;
 }
 
 // Namespace namespace_d5a9ff55/namespace_d5a9ff55
@@ -286,9 +286,9 @@ function setup_menu(local_client_num, var_8de6b51a, var_e3315405) {
                 foreach (fn in var_a8080f41.var_2c679be0) {
                     if (is_true(var_a8080f41.var_ef0a4d1e)) {
                         level [[ fn ]](local_client_num, var_a8080f41);
-                    } else {
-                        level thread [[ fn ]](local_client_num, var_a8080f41);
+                        continue;
                     }
+                    level thread [[ fn ]](local_client_num, var_a8080f41);
                 }
             }
             if (!var_fdb39764 && isdefined(var_cd1475a5.str_scene) && var_d2bf9838) {
@@ -332,33 +332,33 @@ function setup_menu(local_client_num, var_8de6b51a, var_e3315405) {
             } else if (isdefined(new_menu.camera_function)) {
                 level thread [[ new_menu.camera_function ]](local_client_num, var_e3315405.menu_name, var_e3315405.state);
             }
-        } else {
-            if (isdefined(var_9168605c)) {
-                [[ var_9168605c ]]->show_model();
+            return;
+        }
+        if (isdefined(var_9168605c)) {
+            [[ var_9168605c ]]->show_model();
+        }
+        if (isdefined(var_f81682ee.lut_index)) {
+            setdvar(#"vc_lut", var_f81682ee.lut_index);
+        }
+        if (isdefined(var_f81682ee.camera_function)) {
+            if (var_f81682ee.has_state === 1) {
+                level thread [[ var_f81682ee.camera_function ]](local_client_num, var_e3315405.menu_name, var_e3315405.state);
+            } else {
+                level thread [[ var_f81682ee.camera_function ]](local_client_num, var_e3315405.menu_name);
             }
-            if (isdefined(var_f81682ee.lut_index)) {
-                setdvar(#"vc_lut", var_f81682ee.lut_index);
+        } else if (isdefined(var_f81682ee.xcam)) {
+            camera_data = isdefined(var_f81682ee.var_e57ed98b[currentsessionmode()]) ? var_f81682ee.var_e57ed98b[currentsessionmode()] : var_f81682ee;
+            camera_ent = struct::get(camera_data.target_name);
+            if (isdefined(camera_ent)) {
+                playmaincamxcam(local_client_num, camera_data.xcam, camera_data.lerp_time, camera_data.sub_xcam, "", camera_ent.origin, camera_ent.angles);
             }
-            if (isdefined(var_f81682ee.camera_function)) {
-                if (var_f81682ee.has_state === 1) {
-                    level thread [[ var_f81682ee.camera_function ]](local_client_num, var_e3315405.menu_name, var_e3315405.state);
-                } else {
-                    level thread [[ var_f81682ee.camera_function ]](local_client_num, var_e3315405.menu_name);
-                }
-            } else if (isdefined(var_f81682ee.xcam)) {
-                camera_data = isdefined(var_f81682ee.var_e57ed98b[currentsessionmode()]) ? var_f81682ee.var_e57ed98b[currentsessionmode()] : var_f81682ee;
-                camera_ent = struct::get(camera_data.target_name);
-                if (isdefined(camera_ent)) {
-                    playmaincamxcam(local_client_num, camera_data.xcam, camera_data.lerp_time, camera_data.sub_xcam, "", camera_ent.origin, camera_ent.angles);
-                }
-            }
-            if (isdefined(new_menu.str_scene) && (new_menu.var_559c5c3e !== var_cd1475a5.var_559c5c3e || new_menu.str_scene !== var_cd1475a5.str_scene)) {
-                level thread function_4aa3b942(new_menu, var_78594590);
-            }
-            if (isdefined(var_f81682ee.var_1f199068)) {
-                foreach (fn in var_f81682ee.var_1f199068) {
-                    level thread [[ fn ]](local_client_num, var_f81682ee, var_a8080f41);
-                }
+        }
+        if (isdefined(new_menu.str_scene) && (new_menu.var_559c5c3e !== var_cd1475a5.var_559c5c3e || new_menu.str_scene !== var_cd1475a5.str_scene)) {
+            level thread function_4aa3b942(new_menu, var_78594590);
+        }
+        if (isdefined(var_f81682ee.var_1f199068)) {
+            foreach (fn in var_f81682ee.var_1f199068) {
+                level thread [[ fn ]](local_client_num, var_f81682ee, var_a8080f41);
             }
         }
     }
@@ -448,7 +448,9 @@ function client_menus(local_client_num) {
         updateonly = statechange && menu_index !== 0;
         if (updateonly) {
             clientmenustack[i].state = state;
-        } else if (status === "closed" && isdefined(menu_index)) {
+            continue;
+        }
+        if (status === "closed" && isdefined(menu_index)) {
             /#
                 if (menu_index != 0) {
                     var_12fe97ab = function_2a35a5f(clientmenustack);
@@ -461,12 +463,16 @@ function client_menus(local_client_num) {
                 popped = array::pop(clientmenustack, 0, 0);
                 setup_menu(local_client_num, popped, clientmenustack[0]);
             }
-        } else if (status === "opened" && !isdefined(menu_index)) {
+            continue;
+        }
+        if (status === "opened" && !isdefined(menu_index)) {
             menu_data = {#charactermode:waitresult.mode, #state:state, #menu_name:menu_name};
             lastmenu = clientmenustack.size < 0 ? clientmenustack[0] : undefined;
             setup_menu(local_client_num, lastmenu, menu_data);
             array::push_front(clientmenustack, menu_data);
-        } else if (isdefined(menu_index) && statechange) {
+            continue;
+        }
+        if (isdefined(menu_index) && statechange) {
             /#
                 if (menu_index != 0) {
                     var_12fe97ab = function_2a35a5f(clientmenustack);
@@ -510,9 +516,9 @@ function function_befcd4f0(str_scene, var_f647c5b2, var_559c5c3e, var_472bee8f, 
     }
     if (isdefined(var_559c5c3e)) {
         level thread scene::play(str_scene, var_559c5c3e, undefined, undefined, undefined, undefined, var_b1e821c5);
-    } else {
-        level thread scene::play(str_scene, undefined, undefined, undefined, undefined, undefined, var_b1e821c5);
+        return;
     }
+    level thread scene::play(str_scene, undefined, undefined, undefined, undefined, undefined, var_b1e821c5);
 }
 
 // Namespace namespace_d5a9ff55/namespace_d5a9ff55
@@ -568,12 +574,12 @@ function function_4e55f369(var_8de6b51a, var_e3315405, var_b1e821c5) {
         level endon(#"hash_46855140938f532c");
         level endon(new_menu.menu_name + "_closed");
         level scene::play(new_menu.str_scene, var_ffb43fb8, undefined, undefined, undefined, undefined, var_b1e821c5);
-    } else {
-        var_cd1475a5 = function_6f3e10a2(var_8de6b51a);
-        if (var_cd1475a5.str_scene !== new_menu.str_scene || var_cd1475a5.var_559c5c3e !== new_menu.var_559c5c3e) {
-            new_menu = function_6f3e10a2(var_e3315405);
-            function_4aa3b942(new_menu, var_b1e821c5);
-        }
+        return;
+    }
+    var_cd1475a5 = function_6f3e10a2(var_8de6b51a);
+    if (var_cd1475a5.str_scene !== new_menu.str_scene || var_cd1475a5.var_559c5c3e !== new_menu.var_559c5c3e) {
+        new_menu = function_6f3e10a2(var_e3315405);
+        function_4aa3b942(new_menu, var_b1e821c5);
     }
 }
 

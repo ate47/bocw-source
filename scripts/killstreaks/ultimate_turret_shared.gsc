@@ -460,9 +460,9 @@ function private function_d2d0a813(var_24e0878b) {
     var_e5afa076 = (var_921c5821, var_921c5821, var_e5afa076[2]);
     if (var_24e0878b === 1) {
         badplace_cylinder(var_3b0688ef, 0, var_2c0980ab, var_921c5821, var_e5afa076[2] * 2, "all");
-    } else {
-        badplace_box(var_3b0688ef, 0, var_2c0980ab, var_e5afa076, "all");
+        return;
     }
+    badplace_box(var_3b0688ef, 0, var_2c0980ab, var_e5afa076, "all");
 }
 
 // Namespace ultimate_turret/ultimate_turret_shared
@@ -991,15 +991,13 @@ function turret_laser_watch() {
 function setup_death_watch_for_new_targets() {
     turretvehicle = self;
     turretvehicle endon(#"death");
-    old_target = undefined;
-    while (1) {
+    for (old_target = undefined; 1; old_target = waitresult.target) {
         waitresult = undefined;
         waitresult = turretvehicle waittill(#"has_new_target");
         if (isdefined(old_target)) {
             old_target notify(#"abort_death_watch");
         }
         waitresult.target thread target_death_watch(turretvehicle);
-        old_target = waitresult.target;
     }
 }
 
@@ -1185,9 +1183,8 @@ function function_9ba314a1(e_target) {
 function function_d3bda653(player) {
     if (sessionmodeiszombiesgame()) {
         return (isactor(player) && isalive(player) && !function_9ba314a1(player) && util::function_fbce7263(self.team, player.team) && self cansee(player));
-    } else {
-        return (isplayer(player) && isalive(player) && !function_9ba314a1(player) && util::function_fbce7263(self.team, player.team) && !player hasperk(#"hash_37f82f1d672c4870") && self cansee(player) && !player player::is_spawn_protected());
     }
+    return isplayer(player) && isalive(player) && !function_9ba314a1(player) && util::function_fbce7263(self.team, player.team) && !player hasperk(#"hash_37f82f1d672c4870") && self cansee(player) && !player player::is_spawn_protected();
 }
 
 // Namespace ultimate_turret/ultimate_turret_shared
@@ -1197,9 +1194,8 @@ function function_d3bda653(player) {
 function function_8e56c5e3(vehicle) {
     if (sessionmodeiszombiesgame()) {
         return (vehicle !== self && issentient(vehicle) && isalive(vehicle) && !function_9ba314a1(vehicle) && util::function_fbce7263(self.team, vehicle.team) && self cansee(vehicle));
-    } else {
-        return (vehicle !== self && is_true(vehicle.isplayervehicle) && isalive(vehicle) && !function_9ba314a1(vehicle) && util::function_fbce7263(self.team, vehicle.team) && !isairborne(vehicle) && vehicle getvehoccupants().size > 0 && self cansee(vehicle));
     }
+    return vehicle !== self && is_true(vehicle.isplayervehicle) && isalive(vehicle) && !function_9ba314a1(vehicle) && util::function_fbce7263(self.team, vehicle.team) && !isairborne(vehicle) && vehicle getvehoccupants().size > 0 && self cansee(vehicle);
 }
 
 // Namespace ultimate_turret/ultimate_turret_shared
@@ -1234,14 +1230,18 @@ function function_145804c6() {
             if (!isdefined(var_88fdfe96) || var_3c7e6e.distancesqrd < var_88fdfe96.distancesqrd) {
                 var_88fdfe96 = var_3c7e6e;
             }
-        } else if (!isdefined(var_88fdfe96) && function_8e56c5e3(entity)) {
+            continue;
+        }
+        if (!isdefined(var_88fdfe96) && function_8e56c5e3(entity)) {
             var_6c36b388 = spawnstruct();
             var_6c36b388.entity = entity;
             var_6c36b388.distancesqrd = distancesquared(entity.origin, self.origin);
             if (!isdefined(var_1c294f35) || var_6c36b388.distancesqrd < var_1c294f35.distancesqrd) {
                 var_1c294f35 = var_6c36b388;
             }
-        } else if (!isdefined(var_88fdfe96) && !isdefined(var_1c294f35) && function_4fc16792(entity)) {
+            continue;
+        }
+        if (!isdefined(var_88fdfe96) && !isdefined(var_1c294f35) && function_4fc16792(entity)) {
             var_14e2fce2 = spawnstruct();
             var_14e2fce2.entity = entity;
             var_14e2fce2.distancesqrd = distancesquared(entity.origin, self.origin);
@@ -1252,13 +1252,14 @@ function function_145804c6() {
     }
     if (isdefined(var_88fdfe96.entity)) {
         return var_88fdfe96.entity;
-    } else if (isdefined(var_1c294f35.entity)) {
-        return var_1c294f35.entity;
-    } else if (isdefined(var_ea64b4ce.entity)) {
-        return var_ea64b4ce.entity;
-    } else {
-        return undefined;
     }
+    if (isdefined(var_1c294f35.entity)) {
+        return var_1c294f35.entity;
+    }
+    if (isdefined(var_ea64b4ce.entity)) {
+        return var_ea64b4ce.entity;
+    }
+    return undefined;
 }
 
 // Namespace ultimate_turret/ultimate_turret_shared
@@ -1287,16 +1288,16 @@ function function_d103a3d0() {
             self.var_c27dadc8 = undefined;
             self.var_f1c3676 = undefined;
         }
-    } else {
-        self.var_c27dadc8 = function_145804c6();
-        if (isdefined(self.var_c27dadc8)) {
-            self.var_f1c3676 = gettime();
-            self notify(#"ultimate_turret_potential_target_acquired");
-            if (!isdefined(self.var_ec2f1ab4) || self.var_ec2f1ab4 + 5000 < gettime()) {
-                self playsoundtoteam("mpl_ultimate_turret_lockon", self.team);
-                self playsoundtoteam("mpl_ultimate_turret_lockon_enemy", util::getotherteam(self.team));
-                self.var_ec2f1ab4 = gettime();
-            }
+        return;
+    }
+    self.var_c27dadc8 = function_145804c6();
+    if (isdefined(self.var_c27dadc8)) {
+        self.var_f1c3676 = gettime();
+        self notify(#"ultimate_turret_potential_target_acquired");
+        if (!isdefined(self.var_ec2f1ab4) || self.var_ec2f1ab4 + 5000 < gettime()) {
+            self playsoundtoteam("mpl_ultimate_turret_lockon", self.team);
+            self playsoundtoteam("mpl_ultimate_turret_lockon_enemy", util::getotherteam(self.team));
+            self.var_ec2f1ab4 = gettime();
         }
     }
 }
@@ -1472,13 +1473,9 @@ function function_d6c5b32b(player, killstreakid, team, killstreaktype) {
 // Size: 0xfa
 function has_active_enemy(bundle) {
     if (self.var_aac73d6c === 1) {
-        goto LOC_0000002e;
-    }
-    if (!isdefined(self.enemylastseentime)) {
+    } else if (!isdefined(self.enemylastseentime)) {
         return 0;
-    LOC_0000002e:
     }
-LOC_0000002e:
     if (isdefined(self.favoriteenemy)) {
         if (!isalive(self.favoriteenemy)) {
             return 0;

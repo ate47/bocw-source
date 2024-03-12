@@ -97,18 +97,18 @@ function private function_d45dd62(localclientnum, var_9b8a5ad2, currentplayer) {
             function_a837926b(localclientnum, #"hash_2964f82e2c05c8b8");
             self.var_7bd7bdc8 = #"hash_2964f82e2c05c8b8";
         }
-    } else {
-        if (isdefined(currentplayer.var_103fdf58)) {
-            playsound(localclientnum, #"hash_37b1613c2cb4c8f3", (0, 0, 0));
-            currentplayer stoploopsound(currentplayer.var_103fdf58);
-            currentplayer.var_103fdf58 = undefined;
+        return;
+    }
+    if (isdefined(currentplayer.var_103fdf58)) {
+        playsound(localclientnum, #"hash_37b1613c2cb4c8f3", (0, 0, 0));
+        currentplayer stoploopsound(currentplayer.var_103fdf58);
+        currentplayer.var_103fdf58 = undefined;
+    }
+    if (isdefined(self.var_7bd7bdc8)) {
+        if (function_148ccc79(localclientnum, self.var_7bd7bdc8)) {
+            function_24cd4cfb(localclientnum, self.var_7bd7bdc8);
         }
-        if (isdefined(self.var_7bd7bdc8)) {
-            if (function_148ccc79(localclientnum, self.var_7bd7bdc8)) {
-                function_24cd4cfb(localclientnum, self.var_7bd7bdc8);
-            }
-            self.var_7bd7bdc8 = undefined;
-        }
+        self.var_7bd7bdc8 = undefined;
     }
 }
 
@@ -124,9 +124,9 @@ function function_9b05e2c0(*localclientnum, *oldval, newval, *bnewent, *binitial
     }
     if (bwastimejump) {
         self playrenderoverridebundle(var_ee6bcd51);
-    } else {
-        self stoprenderoverridebundle(var_ee6bcd51);
+        return;
     }
+    self stoprenderoverridebundle(var_ee6bcd51);
 }
 
 // Namespace zm_tungsten_main_quest/zm_tungsten_main_quest
@@ -144,21 +144,21 @@ function function_f9ecb065(localclientnum, *oldval, newval, *bnewent, *binitials
         self.var_67819d90 = util::playfxontag(fieldname, "maps/zm_tungsten/fx9_zm_tungsten_neutralizer_loop", self, "tag_origin");
         self playsound(fieldname, #"hash_1538fd1c5b0e4f80");
         self.var_eb1b20d = self playloopsound(#"hash_3d77ba3fcee6d3a5");
-    } else {
-        self notify(#"deactivate");
-        self clearanim("p9_fxanim_zm_tungsten_pn_full_ani", 1);
-        if (isdefined(self.var_67819d90)) {
-            stopfx(fieldname, self.var_67819d90);
-            self.var_67819d90 = undefined;
-        }
-        self playsound(fieldname, #"hash_3586b76b932a0795");
-        if (isdefined(self.var_eb1b20d)) {
-            self stoploopsound(self.var_eb1b20d);
-            self.var_eb1b20d = undefined;
-        }
-        if (isdefined(self.var_ee6bcd51) && isdefined(self)) {
-            self function_78233d29(self.var_ee6bcd51, "", "Alpha", 0);
-        }
+        return;
+    }
+    self notify(#"deactivate");
+    self clearanim("p9_fxanim_zm_tungsten_pn_full_ani", 1);
+    if (isdefined(self.var_67819d90)) {
+        stopfx(fieldname, self.var_67819d90);
+        self.var_67819d90 = undefined;
+    }
+    self playsound(fieldname, #"hash_3586b76b932a0795");
+    if (isdefined(self.var_eb1b20d)) {
+        self stoploopsound(self.var_eb1b20d);
+        self.var_eb1b20d = undefined;
+    }
+    if (isdefined(self.var_ee6bcd51) && isdefined(self)) {
+        self function_78233d29(self.var_ee6bcd51, "", "Alpha", 0);
     }
 }
 
@@ -200,15 +200,15 @@ function function_7c1ee869(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwastimejump == 1) {
         self.var_50573acf = util::playfxontag(fieldname, "maps/zm_tungsten/fx9_zm_crystal_grenade_ambient", self, "tag_origin");
         self.var_141a532a = self playloopsound(#"hash_1ef3679818a3b94");
-    } else {
-        if (isdefined(self.var_50573acf)) {
-            stopfx(fieldname, self.var_50573acf);
-            self.var_50573acf = undefined;
-        }
-        if (isdefined(self.var_141a532a)) {
-            self stoploopsound(self.var_141a532a);
-            self.var_141a532a = undefined;
-        }
+        return;
+    }
+    if (isdefined(self.var_50573acf)) {
+        stopfx(fieldname, self.var_50573acf);
+        self.var_50573acf = undefined;
+    }
+    if (isdefined(self.var_141a532a)) {
+        self stoploopsound(self.var_141a532a);
+        self.var_141a532a = undefined;
     }
 }
 
@@ -219,13 +219,13 @@ function function_7c1ee869(localclientnum, *oldval, newval, *bnewent, *binitials
 function function_e095cbef(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self.var_fac7e686 = util::playfxontag(fieldname, "maps/zm_tungsten/fx9_zm_crystal_grenade_ambient", self, "tag_origin");
-    } else {
-        if (isdefined(self.var_fac7e686)) {
-            stopfx(fieldname, self.var_fac7e686);
-            self.var_fac7e686 = undefined;
-        }
-        util::playfxontag(fieldname, "maps/zm_tungsten/fx9_zm_crystal_grenade_exp", self, "tag_origin");
+        return;
     }
+    if (isdefined(self.var_fac7e686)) {
+        stopfx(fieldname, self.var_fac7e686);
+        self.var_fac7e686 = undefined;
+    }
+    util::playfxontag(fieldname, "maps/zm_tungsten/fx9_zm_crystal_grenade_exp", self, "tag_origin");
 }
 
 // Namespace zm_tungsten_main_quest/zm_tungsten_main_quest
@@ -236,15 +236,15 @@ function function_bb8c1f5e(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwastimejump == 1) {
         self.var_a65735b6 = util::playfxontag(fieldname, "maps/zm_tungsten/fx9_zm_dark_crystals_ambient", self, "tag_origin");
         soundloopemitter(#"hash_1aebc516d61c565c", self.origin + vectorscale((0, 0, 1), 30));
-    } else {
-        if (isdefined(self.var_a65735b6)) {
-            stopfx(fieldname, self.var_a65735b6);
-            self.var_a65735b6 = undefined;
-        }
-        soundstoploopemitter(#"hash_1aebc516d61c565c", self.origin + vectorscale((0, 0, 1), 30));
-        playsound(fieldname, #"hash_10e0a1ad837bef3c", self.origin + vectorscale((0, 0, 1), 30));
-        util::playfxontag(fieldname, "maps/zm_tungsten/fx9_zm_dark_aether_crystals_exp", self, "tag_origin");
+        return;
     }
+    if (isdefined(self.var_a65735b6)) {
+        stopfx(fieldname, self.var_a65735b6);
+        self.var_a65735b6 = undefined;
+    }
+    soundstoploopemitter(#"hash_1aebc516d61c565c", self.origin + vectorscale((0, 0, 1), 30));
+    playsound(fieldname, #"hash_10e0a1ad837bef3c", self.origin + vectorscale((0, 0, 1), 30));
+    util::playfxontag(fieldname, "maps/zm_tungsten/fx9_zm_dark_aether_crystals_exp", self, "tag_origin");
 }
 
 // Namespace zm_tungsten_main_quest/zm_tungsten_main_quest
@@ -267,17 +267,17 @@ function crystal_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *f
     if (bwastimejump == 1) {
         self.var_a5ded638 = util::playfxontag(fieldname, "maps/zm_tungsten/fx9_zm_phase_catalyzed_crystal_ambient", self, "tag_origin");
         self.var_469b2e53 = self playloopsound(#"hash_1c52e7ca3cde1126");
-    } else {
-        if (isdefined(self.var_a5ded638)) {
-            stopfx(fieldname, self.var_a5ded638);
-            self.var_a5ded638 = undefined;
-        }
-        if (isdefined(self.var_469b2e53)) {
-            self stoploopsound(self.var_469b2e53);
-            self.var_469b2e53 = undefined;
-        }
-        util::playfxontag(fieldname, "maps/zm_tungsten/fx9_zm_phase_catalyzed_crystal_breaking", self, "tag_origin");
+        return;
     }
+    if (isdefined(self.var_a5ded638)) {
+        stopfx(fieldname, self.var_a5ded638);
+        self.var_a5ded638 = undefined;
+    }
+    if (isdefined(self.var_469b2e53)) {
+        self stoploopsound(self.var_469b2e53);
+        self.var_469b2e53 = undefined;
+    }
+    util::playfxontag(fieldname, "maps/zm_tungsten/fx9_zm_phase_catalyzed_crystal_breaking", self, "tag_origin");
 }
 
 // Namespace zm_tungsten_main_quest/zm_tungsten_main_quest
@@ -324,7 +324,7 @@ function function_a84c11f7(localclientnum, *oldval, *newval, *bnewent, *binitial
         self function_78233d29(self.var_ee6bcd51, "", "Alpha", var_1105889c);
         if (var_1105889c >= 1) {
             var_1105889c = 1;
-            break;
+            return;
         }
     }
 }
@@ -367,7 +367,9 @@ function function_5c05a55e(localclientnum, oldval, newval, *bnewent, *binitialsn
         if (fieldname == 2 || fieldname == 3) {
             self playsound(binitialsnap, #"hash_4bc133d528c81c3");
         }
-    } else if (bwastimejump == 2) {
+        return;
+    }
+    if (bwastimejump == 2) {
         self.var_b235555f = util::playfxontag(binitialsnap, "maps/zm_tungsten/fx9_zm_tungsten_phase_neutralizer_shield_large", self, "tag_origin");
         self.var_b880246b = self playloopsound(#"hash_6b0024b500e39996");
         if (fieldname == 1) {
@@ -375,21 +377,23 @@ function function_5c05a55e(localclientnum, oldval, newval, *bnewent, *binitialsn
         } else if (fieldname == 3) {
             self playsound(binitialsnap, #"hash_4bc133d528c81c3");
         }
-    } else if (bwastimejump == 3) {
+        return;
+    }
+    if (bwastimejump == 3) {
         self.var_b235555f = util::playfxontag(binitialsnap, "maps/zm_tungsten/fx9_zm_tungsten_phase_neutralizer_shield_big", self, "tag_origin");
         self.var_b880246b = self playloopsound(#"hash_40060e2917f3fb33");
         if (fieldname == 1 || fieldname == 2) {
             self playsound(binitialsnap, #"hash_37821c226fc8accc");
         }
-    } else {
-        if (isdefined(self.var_b235555f)) {
-            killfx(binitialsnap, self.var_b235555f);
-            self.var_b235555f = undefined;
-        }
-        if (isdefined(self.var_b880246b)) {
-            self stoploopsound(self.var_b880246b);
-            self.var_b880246b = undefined;
-        }
+        return;
+    }
+    if (isdefined(self.var_b235555f)) {
+        killfx(binitialsnap, self.var_b235555f);
+        self.var_b235555f = undefined;
+    }
+    if (isdefined(self.var_b880246b)) {
+        self stoploopsound(self.var_b880246b);
+        self.var_b880246b = undefined;
     }
 }
 
@@ -401,18 +405,18 @@ function function_f621928c(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwastimejump == 1) {
         self.var_1b7a4481 = util::playfxontag(fieldname, "maps/zm_tungsten/fx9_zm_crystals_orbs_trail", self, "tag_origin");
         self.var_7d2ad612 = self playloopsound(#"hash_227bf6d9c3bba85");
-    } else {
-        if (isdefined(self.var_1b7a4481)) {
-            stopfx(fieldname, self.var_1b7a4481);
-            self.var_1b7a4481 = undefined;
-        }
-        if (isdefined(self.var_7d2ad612)) {
-            self stoploopsound(self.var_7d2ad612);
-            self.var_7d2ad612 = undefined;
-        }
-        playsound(fieldname, #"hash_98b4462bc702629", self.origin);
-        util::playfxontag(fieldname, "maps/zm_tungsten/fx9_zm_crystals_orbs_exp", self, "tag_origin");
+        return;
     }
+    if (isdefined(self.var_1b7a4481)) {
+        stopfx(fieldname, self.var_1b7a4481);
+        self.var_1b7a4481 = undefined;
+    }
+    if (isdefined(self.var_7d2ad612)) {
+        self stoploopsound(self.var_7d2ad612);
+        self.var_7d2ad612 = undefined;
+    }
+    playsound(fieldname, #"hash_98b4462bc702629", self.origin);
+    util::playfxontag(fieldname, "maps/zm_tungsten/fx9_zm_crystals_orbs_exp", self, "tag_origin");
 }
 
 // Namespace zm_tungsten_main_quest/zm_tungsten_main_quest
@@ -459,7 +463,9 @@ function function_26e6cccc(localclientnum, *oldval, *newval, *bnewent, *binitial
 function function_e495fd3e(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump === 1) {
         self.var_52240bf2 = util::playfxontag(fieldname, "maps/zm_tungsten/fx9_zm_energy_barrier_area", self, "tag_origin");
-    } else if (isdefined(self.var_52240bf2)) {
+        return;
+    }
+    if (isdefined(self.var_52240bf2)) {
         stopfx(fieldname, self.var_52240bf2);
         self.var_52240bf2 = undefined;
     }
@@ -481,15 +487,15 @@ function function_b0f10fd9(localclientnum, *oldval, newval, *bnewent, *binitials
             self function_116b95e5(#"hash_155ea60c5e7f292e", #"outer mask", 0.8);
             self.var_a74ce90c = 1;
         }
-    } else {
-        if (function_65b9eb0f(fieldname)) {
-            return;
-        }
-        if (self isplayer()) {
-            self postfx::exitpostfxbundle(#"hash_155ea60c5e7f292e");
-            self postfx::exitpostfxbundle(#"hash_30968a1635fb3366");
-            self.var_a74ce90c = undefined;
-        }
+        return;
+    }
+    if (function_65b9eb0f(fieldname)) {
+        return;
+    }
+    if (self isplayer()) {
+        self postfx::exitpostfxbundle(#"hash_155ea60c5e7f292e");
+        self postfx::exitpostfxbundle(#"hash_30968a1635fb3366");
+        self.var_a74ce90c = undefined;
     }
 }
 
@@ -529,7 +535,9 @@ function function_18f73941(localclientnum, *oldval, newval, *bnewent, *binitials
             var_ea7f8dca.n_fx_id = util::playfxontag(fieldname, "maps/zm_tungsten/fx9_zm_arcade_cabinet_elec_spark", var_ea7f8dca, "tag_origin");
             var_ea7f8dca thread function_695e2e56(fieldname);
         }
-    } else if (isdefined(self.beam_id)) {
+        return;
+    }
+    if (isdefined(self.beam_id)) {
         beam::kill(self, str_fx_tag, var_23563ba5, "tag_origin", "beam9_zm_aat_dead_wire_arc");
     }
 }
@@ -582,9 +590,9 @@ function function_38b121cf(newval) {
     foreach (var_53edfe53 in var_f1f2f161) {
         if (newval) {
             forcestreammaterial(var_53edfe53);
-        } else {
-            stopforcestreamingmaterial(var_53edfe53);
+            continue;
         }
+        stopforcestreamingmaterial(var_53edfe53);
     }
 }
 
@@ -613,10 +621,10 @@ function function_aecabc8a(localclientnum, *oldval, newval, *bnewent, *binitials
             function_e2a06860(fieldname, var_aa3984f0, 2);
             function_75d53026(var_aa3984f0);
         }
-    } else {
-        foreach (var_aa3984f0 in level.var_3f41835d) {
-            function_e2a06860(fieldname, var_aa3984f0, 0);
-        }
+        return;
+    }
+    foreach (var_aa3984f0 in level.var_3f41835d) {
+        function_e2a06860(fieldname, var_aa3984f0, 0);
     }
 }
 
@@ -660,7 +668,9 @@ function function_6b85db33(*localclientnum, oldval, newval, *bnewent, *binitials
         forcestreamxmodel(#"hash_4d930f46137443f5");
         forcestreamxmodel(#"hash_7dde0d6fcb87c79a");
         forcestreamxmodel(#"hash_54e30f7b1638eb6f");
-    } else if (fieldname === 3) {
+        return;
+    }
+    if (fieldname === 3) {
         stopforcestreamingxmodel(#"hash_6ecb1d8b25490379");
         stopforcestreamingxmodel(#"hash_6ecb1b8b25490013");
         stopforcestreamingxmodel(#"hash_4f29ef57be52ff53");

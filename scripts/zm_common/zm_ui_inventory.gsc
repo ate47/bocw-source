@@ -28,9 +28,9 @@ function private function_70a657d8() {
             registeredfields[mapping.var_cd35dfb2] = 1;
             if (is_true(mapping.var_7f12f171)) {
                 clientfield::register_clientuimodel(mapping.var_cd35dfb2, 1, mapping.numbits, "int");
-            } else {
-                clientfield::function_5b7d846d(mapping.var_cd35dfb2, 1, mapping.numbits, "int");
+                continue;
             }
+            clientfield::function_5b7d846d(mapping.var_cd35dfb2, 1, mapping.numbits, "int");
         }
     }
 }
@@ -67,15 +67,15 @@ function function_7df6bb60(fieldname, value, player) {
     var_d5423fb8 = level.var_a16c38d9[fieldname];
     if (!(isdefined(var_d5423fb8) && is_true(var_d5423fb8.var_7f12f171))) {
         self clientfield::set_world_uimodel(var_d5423fb8.var_cd35dfb2, value);
-    } else {
-        /#
-            assert(isplayer(player));
-        #/
-        if (!isdefined(player)) {
-            return;
-        }
-        player clientfield::set_player_uimodel(var_d5423fb8.var_cd35dfb2, value);
+        return;
     }
+    /#
+        assert(isplayer(player));
+    #/
+    if (!isdefined(player)) {
+        return;
+    }
+    player clientfield::set_player_uimodel(var_d5423fb8.var_cd35dfb2, value);
 }
 
 // Namespace zm_ui_inventory/zm_ui_inventory

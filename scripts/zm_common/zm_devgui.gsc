@@ -287,9 +287,9 @@ function private function_2f5772bf(cmd) {
                 if (isvehicle(ai)) {
                     ai.origin = trace[#"position"];
                     ai function_a57c34b7(trace[#"position"]);
-                } else {
-                    ai forceteleport(trace[#"position"], player.angles + vectorscale((0, 1, 0), 180));
+                    return;
                 }
+                ai forceteleport(trace[#"position"], player.angles + vectorscale((0, 1, 0), 180));
             }
         }
     #/
@@ -670,9 +670,9 @@ function zombie_spawner_validation() {
             println("<unknown string>" + level.validation_errors_count);
             iprintlnbold("<unknown string>" + level.validation_errors_count);
             level.validation_errors_count = undefined;
-        } else {
-            level.toggle_spawner_validation = !level.toggle_spawner_validation;
+            return;
         }
+        level.toggle_spawner_validation = !level.toggle_spawner_validation;
     #/
 }
 
@@ -725,18 +725,17 @@ function validate_to_wait_point(zone, new_spawn_point_origin, spawn_point) {
                         ispath = self findpath(new_spawn_point_origin, new_wait_point);
                         if (ispath) {
                             return 1;
-                        } else {
-                            level.validation_errors_count++;
-                            thread drawvalidation(new_spawn_point_origin, undefined, new_wait_point, undefined, undefined, self.archetype);
-                            if (isdefined(self.archetype)) {
-                                println("<unknown string>" + function_9e72a96(self.archetype) + "<unknown string>" + new_spawn_point_origin + "<unknown string>" + spawn_point.targetname);
-                                iprintlnbold("<unknown string>" + function_9e72a96(self.archetype) + "<unknown string>" + new_spawn_point_origin + "<unknown string>" + spawn_point.targetname);
-                            } else {
-                                println("<unknown string>" + new_spawn_point_origin + "<unknown string>" + spawn_point.targetname);
-                                iprintlnbold("<unknown string>" + new_spawn_point_origin + "<unknown string>" + spawn_point.targetname);
-                            }
-                            return 0;
                         }
+                        level.validation_errors_count++;
+                        thread drawvalidation(new_spawn_point_origin, undefined, new_wait_point, undefined, undefined, self.archetype);
+                        if (isdefined(self.archetype)) {
+                            println("<unknown string>" + function_9e72a96(self.archetype) + "<unknown string>" + new_spawn_point_origin + "<unknown string>" + spawn_point.targetname);
+                            iprintlnbold("<unknown string>" + function_9e72a96(self.archetype) + "<unknown string>" + new_spawn_point_origin + "<unknown string>" + spawn_point.targetname);
+                        } else {
+                            println("<unknown string>" + new_spawn_point_origin + "<unknown string>" + spawn_point.targetname);
+                            iprintlnbold("<unknown string>" + new_spawn_point_origin + "<unknown string>" + spawn_point.targetname);
+                        }
+                        return 0;
                     }
                 }
             }
@@ -772,7 +771,7 @@ function drawvalidation(origin, zone_name, nav_mesh_wait_point, boards_point, zo
         while (1) {
             if (is_true(level.toggle_spawner_validation)) {
                 if (!isdefined(origin)) {
-                    break;
+                    return;
                 }
                 if (isdefined(zone_name)) {
                     circle(origin, 32, (1, 0, 0));
@@ -829,16 +828,18 @@ function zone_adjacencies_validation() {
                 foreach (key in keys) {
                     if (key === str_zone) {
                         draw_zone_adjacencies_validation(level.zones[key], 2, key);
-                    } else if (isdefined(level.zones[str_zone].adjacent_zones[key])) {
+                        continue;
+                    }
+                    if (isdefined(level.zones[str_zone].adjacent_zones[key])) {
                         if (level.zones[str_zone].adjacent_zones[key].is_connected) {
                             offset = offset + 10;
                             draw_zone_adjacencies_validation(level.zones[key], 1, key, level.zones[str_zone], offset);
                         } else {
                             draw_zone_adjacencies_validation(level.zones[key], 0, key);
                         }
-                    } else {
-                        draw_zone_adjacencies_validation(level.zones[key], 0, key);
+                        continue;
                     }
+                    draw_zone_adjacencies_validation(level.zones[key], 0, key);
                 }
                 foreach (zone in level.zones) {
                     function_f4669d7b(level.zones, zone);
@@ -873,7 +874,9 @@ function draw_zone_adjacencies_validation(zone, status, name, current_zone, offs
         if (status == 2) {
             circle(print_origin, 30, (0, 1, 0));
             print3d(print_origin, function_9e72a96(name), (0, 1, 0), 1, 0.5);
-        } else if (status == 1) {
+            return;
+        }
+        if (status == 1) {
             circle(print_origin, 30, (0, 0, 1));
             print3d(print_origin, function_9e72a96(name), (0, 0, 1), 1, 0.5);
             if (isdefined(current_zone.nodes[0])) {
@@ -883,10 +886,10 @@ function draw_zone_adjacencies_validation(zone, status, name, current_zone, offs
                 print_origin = current_zone.volumes[0].origin;
             }
             print3d(print_origin + (0, 20, offset * -1), function_9e72a96(name), (0, 0, 1), 1, 0.5);
-        } else {
-            circle(print_origin, 30, (1, 0, 0));
-            print3d(print_origin, function_9e72a96(name), (1, 0, 0), 1, 0.5);
+            return;
         }
+        circle(print_origin, 30, (1, 0, 0));
+        print3d(print_origin, function_9e72a96(name), (1, 0, 0), 1, 0.5);
     #/
 }
 
@@ -915,9 +918,9 @@ function function_f4669d7b(zones, zone) {
             }
             if (adjacent.is_connected) {
                 line(origin, var_16c82636, (0, 1, 0), 0, 0);
-            } else {
-                line(origin, var_16c82636, (1, 0, 0), 0, 0);
+                continue;
             }
+            line(origin, var_16c82636, (1, 0, 0), 0, 0);
         }
     #/
 }
@@ -981,7 +984,9 @@ function devgui_add_weapon_entry(weapon, root, n_order) {
         weapon_name = getweaponname(weapon);
         if (isdefined(root) && root.size) {
             adddebugcommand("<unknown string>" + root + "<unknown string>" + n_order + "<unknown string>" + weapon_name + "<unknown string>" + weapon_name + "<unknown string>");
-        } else if (getdvarint(#"zm_debug_attachments", 0)) {
+            return;
+        }
+        if (getdvarint(#"zm_debug_attachments", 0)) {
             var_876795bf = weapon.supportedattachments;
             weapon_root = "<unknown string>" + weapon_name + "<unknown string>";
             adddebugcommand(weapon_root + weapon_name + "<unknown string>" + weapon_name + "<unknown string>");
@@ -992,9 +997,9 @@ function devgui_add_weapon_entry(weapon, root, n_order) {
                     adddebugcommand(weapon_root + var_29c3a74d + "<unknown string>" + var_29c3a74d + "<unknown string>");
                 }
             }
-        } else {
-            adddebugcommand("<unknown string>" + weapon_name + "<unknown string>" + weapon_name + "<unknown string>");
+            return;
         }
+        adddebugcommand("<unknown string>" + weapon_name + "<unknown string>" + weapon_name + "<unknown string>");
     #/
 }
 
@@ -1011,13 +1016,17 @@ function devgui_add_weapon(weapon, *upgrade, in_box, *cost, *weaponvo, *weaponvo
         waittill_can_add_debug_command();
         if (is_offhand_weapon(weaponvoresp) && !is_melee_weapon(weaponvoresp)) {
             devgui_add_weapon_entry(weaponvoresp, "<unknown string>", 2);
-        } else if (is_melee_weapon(weaponvoresp)) {
-            devgui_add_weapon_entry(weaponvoresp, "<unknown string>", 3);
-        } else if (is_wonder_weapon(weaponvoresp)) {
-            devgui_add_weapon_entry(weaponvoresp, "<unknown string>", 5);
-        } else {
-            devgui_add_weapon_entry(weaponvoresp, "<unknown string>", 6);
+            return;
         }
+        if (is_melee_weapon(weaponvoresp)) {
+            devgui_add_weapon_entry(weaponvoresp, "<unknown string>", 3);
+            return;
+        }
+        if (is_wonder_weapon(weaponvoresp)) {
+            devgui_add_weapon_entry(weaponvoresp, "<unknown string>", 5);
+            return;
+        }
+        devgui_add_weapon_entry(weaponvoresp, "<unknown string>", 6);
     #/
 }
 
@@ -1119,9 +1128,9 @@ function zombie_devgui_weapon_give(weapon_name) {
         }
         if (is_melee_weapon(weapon) && isdefined(find_melee_weapon(weapon))) {
             self award_melee_weapon(weapon_name);
-        } else {
-            self function_2d4d7fd9(weapon);
+            return;
         }
+        self function_2d4d7fd9(weapon);
     #/
 }
 
@@ -1381,14 +1390,13 @@ function watch_debug_input(callback) {
         if (isdefined(callback)) {
             level.devgui_dpad_watch = 1;
             for (;;) {
-                for (;;) {
-                    if (self actionslottwobuttonpressed()) {
-                        self thread [[ callback ]]();
-                        while (self actionslottwobuttonpressed()) {
-                            waitframe(1);
-                        }
+                if (self actionslottwobuttonpressed()) {
+                    self thread [[ callback ]]();
+                    while (self actionslottwobuttonpressed()) {
+                        waitframe(1);
                     }
                 }
+                waitframe(1);
             }
         }
     #/
@@ -2127,9 +2135,7 @@ function zombie_devgui_think() {
                     } else {
                         [[ level.custom_devgui ]](cmd);
                     }
-                    goto LOC_0000211e;
                 }
-            LOC_0000211e:
                 break;
             }
             setdvar(#"zombie_devgui", "<unknown string>");
@@ -2190,9 +2196,9 @@ function devgui_toggle_show_spawn_locations() {
     /#
         if (!isdefined(level.toggle_show_spawn_locations)) {
             level.toggle_show_spawn_locations = 1;
-        } else {
-            level.toggle_show_spawn_locations = !level.toggle_show_spawn_locations;
+            return;
         }
+        level.toggle_show_spawn_locations = !level.toggle_show_spawn_locations;
     #/
 }
 
@@ -2204,9 +2210,9 @@ function devgui_toggle_show_exterior_goals() {
     /#
         if (!isdefined(level.toggle_show_exterior_goals)) {
             level.toggle_show_exterior_goals = 1;
-        } else {
-            level.toggle_show_exterior_goals = !level.toggle_show_exterior_goals;
+            return;
         }
+        level.toggle_show_exterior_goals = !level.toggle_show_exterior_goals;
     #/
 }
 
@@ -2224,13 +2230,13 @@ function function_567ee21f() {
             foreach (ai in getaiteamarray(#"axis")) {
                 ai pushplayer(1);
             }
-        } else {
-            foreach (player in level.players) {
-                player setclientplayerpushamount(0);
-            }
-            foreach (ai in getaiteamarray(#"axis")) {
-                ai pushplayer(0);
-            }
+            return;
+        }
+        foreach (player in level.players) {
+            player setclientplayerpushamount(0);
+        }
+        foreach (ai in getaiteamarray(#"axis")) {
+            ai pushplayer(0);
         }
     #/
 }
@@ -2456,9 +2462,9 @@ function zombie_devgui_allow_fog() {
             level.fog_disabled_in_noclip = 0;
             setdvar(#"scr_fog_disable", 0);
             setdvar(#"r_fog_disable", 0);
-        } else {
-            thread diable_fog_in_noclip();
+            return;
         }
+        thread diable_fog_in_noclip();
     #/
 }
 
@@ -2507,9 +2513,9 @@ function zombie_devgui_take_money() {
         #/
         if (self.score > 100) {
             self player_reduce_points("<unknown string>");
-        } else {
-            self player_reduce_points("<unknown string>");
+            return;
         }
+        self player_reduce_points("<unknown string>");
     #/
 }
 
@@ -2536,9 +2542,9 @@ function function_dc7312be() {
                 if (isdefined(max) && isdefined(ammo)) {
                     if (ammo > max / 10) {
                         self setweaponammostock(weapon, int(ammo / 2));
-                    } else {
-                        self setweaponammostock(weapon, 0);
+                        return;
                     }
+                    self setweaponammostock(weapon, 0);
                 }
             }
         }
@@ -2589,10 +2595,10 @@ function zombie_devgui_turn_player(index) {
         if (player hasperk(#"specialty_playeriszombie")) {
             println("<unknown string>");
             player turn_to_human();
-        } else {
-            println("<unknown string>");
-            player turn_to_zombie();
+            return;
         }
+        println("<unknown string>");
+        player turn_to_zombie();
     #/
 }
 
@@ -3052,12 +3058,14 @@ function zombie_devgui_invulnerable(playerindex, onoff) {
             for (i = 0; i < players.size; i++) {
                 zombie_devgui_invulnerable(i, onoff);
             }
-        } else if (players.size > playerindex) {
+            return;
+        }
+        if (players.size > playerindex) {
             if (onoff) {
                 players[playerindex] set(#"zombie_devgui", "<unknown string>", 0);
-            } else {
-                players[playerindex] reset(#"zombie_devgui", "<unknown string>");
+                return;
             }
+            players[playerindex] reset(#"zombie_devgui", "<unknown string>");
         }
     #/
 }
@@ -3399,9 +3407,9 @@ function zombie_devgui_give_powerup(powerup_name, now, origin) {
         }
         if (isdefined(origin)) {
             level thread specific_powerup_drop(powerup_name, origin, undefined, undefined, undefined, undefined, undefined, undefined, undefined, 1);
-        } else {
-            level thread specific_powerup_drop(powerup_name, trace[#"position"], undefined, undefined, undefined, undefined, undefined, undefined, undefined, 1);
+            return;
         }
+        level thread specific_powerup_drop(powerup_name, trace[#"position"], undefined, undefined, undefined, undefined, undefined, undefined, undefined, 1);
     #/
 }
 
@@ -3512,9 +3520,7 @@ function zombie_devgui_dog_round(num_dogs) {
         }
         if (!level get("<unknown string>")) {
             setdvar(#"force_dogs", num_dogs);
-            goto LOC_000000c6;
         }
-    LOC_000000c6:
         zombie_devgui_goto_round(level.round_number + 1);
     #/
 }
@@ -3569,7 +3575,9 @@ function zombie_devgui_pack_current_weapon() {
                 var_27751b99 = function_ee7e837d(item);
                 if (isdefined(item) && var_27751b99 == 0 && item.networkid != 32767) {
                     players[i] function_73ae3380(item, 1);
-                } else if (isdefined(item.var_a8bccf69) && item.var_a8bccf69 < 4) {
+                    continue;
+                }
+                if (isdefined(item.var_a8bccf69) && item.var_a8bccf69 < 4) {
                     var_9be8d39f = item.var_a8bccf69 + 1;
                     players[i] function_73ae3380(item, var_9be8d39f);
                 }
@@ -3614,17 +3622,17 @@ function zombie_devgui_unpack_current_weapon() {
                 if (isdefined(item.var_a8bccf69) && item.var_a8bccf69 > 1) {
                     var_9be8d39f = item.var_a8bccf69 - 1;
                     players[i] function_73ae3380(item, var_9be8d39f);
-                } else {
-                    if (isdefined(item.var_a6762160) && isdefined(item.var_a6762160.rarity)) {
-                        rarity = item.var_a6762160.rarity;
-                    }
-                    weapon = self function_251ec78c(weap, 1);
-                    players[i] weapon_take(weap);
-                    weapon = players[i] give_build_kit_weapon(weapon);
-                    players[i] function_7c5dd4bd(weapon);
-                    players[i] switchtoweapon(weapon);
-                    players[i] thread function_3594cd6d(rarity);
+                    continue;
                 }
+                if (isdefined(item.var_a6762160) && isdefined(item.var_a6762160.rarity)) {
+                    rarity = item.var_a6762160.rarity;
+                }
+                weapon = self function_251ec78c(weap, 1);
+                players[i] weapon_take(weap);
+                weapon = players[i] give_build_kit_weapon(weapon);
+                players[i] function_7c5dd4bd(weapon);
+                players[i] switchtoweapon(weapon);
+                players[i] thread function_3594cd6d(rarity);
             }
         }
     #/
@@ -3963,9 +3971,8 @@ function get_upgrade(weapon) {
     /#
         if (isdefined(level.zombie_weapons[weapon]) && isdefined(level.zombie_weapons[weapon].upgrade_name)) {
             return get_upgrade_weapon(weapon, 0);
-        } else {
-            return get_upgrade_weapon(weapon, 1);
         }
+        return get_upgrade_weapon(weapon, 1);
     #/
 }
 
@@ -4004,9 +4011,9 @@ function zombie_devgui_disable_kill_thread_toggle() {
     /#
         if (!is_true(level.disable_kill_thread)) {
             level.disable_kill_thread = 1;
-        } else {
-            level.disable_kill_thread = 0;
+            return;
         }
+        level.disable_kill_thread = 0;
     #/
 }
 
@@ -4018,9 +4025,9 @@ function zombie_devgui_check_kill_thread_every_frame_toggle() {
     /#
         if (!is_true(level.check_kill_thread_every_frame)) {
             level.check_kill_thread_every_frame = 1;
-        } else {
-            level.check_kill_thread_every_frame = 0;
+            return;
         }
+        level.check_kill_thread_every_frame = 0;
     #/
 }
 
@@ -4032,9 +4039,9 @@ function zombie_devgui_kill_thread_test_mode_toggle() {
     /#
         if (!is_true(level.kill_thread_test_mode)) {
             level.kill_thread_test_mode = 1;
-        } else {
-            level.kill_thread_test_mode = 0;
+            return;
         }
+        level.kill_thread_test_mode = 0;
     #/
 }
 
@@ -4173,9 +4180,9 @@ function zombie_devgui_draw_traversals() {
     /#
         if (!isdefined(level.toggle_draw_traversals)) {
             level.toggle_draw_traversals = 1;
-        } else {
-            level.toggle_draw_traversals = !level.toggle_draw_traversals;
+            return;
         }
+        level.toggle_draw_traversals = !level.toggle_draw_traversals;
     #/
 }
 
@@ -4187,9 +4194,9 @@ function zombie_devgui_keyline_always() {
     /#
         if (!isdefined(level.toggle_keyline_always)) {
             level.toggle_keyline_always = 1;
-        } else {
-            level.toggle_keyline_always = !level.toggle_keyline_always;
+            return;
         }
+        level.toggle_keyline_always = !level.toggle_keyline_always;
     #/
 }
 
@@ -4202,10 +4209,10 @@ function robotsupportsovercover_manager_() {
         if (level get("<unknown string>")) {
             level clear("<unknown string>");
             iprintln("<unknown string>");
-        } else {
-            level set("<unknown string>");
-            iprintln("<unknown string>");
+            return;
         }
+        level set("<unknown string>");
+        iprintln("<unknown string>");
     #/
 }
 
@@ -4217,9 +4224,9 @@ function function_92523b12() {
     /#
         if (!isdefined(level.var_5171ee4a)) {
             level.var_5171ee4a = 1;
-        } else {
-            level.var_5171ee4a = !level.var_5171ee4a;
+            return;
         }
+        level.var_5171ee4a = !level.var_5171ee4a;
     #/
 }
 
@@ -4253,13 +4260,15 @@ function wait_for_zombie(crawler) {
                                 } else {
                                     node.bad_traverse = 1;
                                 }
-                            } else if (anim_results[#"animation"] == "<unknown string>") {
+                                continue;
+                            }
+                            if (anim_results[#"animation"] == "<unknown string>") {
                                 teleport = 1;
                             }
                         }
                     }
                 }
-                break;
+                return;
             }
             wait(0.25);
         }
@@ -4357,9 +4366,9 @@ function function_e395a714() {
         foreach (player in level.players) {
             if (level.var_9a11ee76) {
                 player notify(#"hash_d592b5d81b7b3a7");
-            } else {
-                player thread function_fb482cad();
+                continue;
             }
+            player thread function_fb482cad();
         }
         level.var_9a11ee76 = !level.var_9a11ee76;
     #/
@@ -4424,11 +4433,11 @@ function function_5349e112() {
             foreach (area in level.var_b086a41a) {
                 showinfovolume(area getentitynumber(), (1, 1, 0), 0.5);
             }
-        } else {
-            setdvar(#"g_drawdebuginfovolumes", 0);
-            foreach (area in level.var_b086a41a) {
-                hideinfovolume(area getentitynumber());
-            }
+            return;
+        }
+        setdvar(#"g_drawdebuginfovolumes", 0);
+        foreach (area in level.var_b086a41a) {
+            hideinfovolume(area getentitynumber());
         }
     #/
 }
@@ -4511,11 +4520,10 @@ function testscriptruntimeerror() {
     /#
         wait(5);
         for (;;) {
-            for (;;) {
-                if (getdvarstring(#"scr_testscriptruntimeerror") != "<unknown string>") {
-                    break;
-                }
+            if (getdvarstring(#"scr_testscriptruntimeerror") != "<unknown string>") {
+                break;
             }
+            wait(1);
         }
         myerror = getdvarstring(#"scr_testscriptruntimeerror");
         setdvar(#"scr_testscriptruntimeerror", "<unknown string>");
@@ -4624,9 +4632,9 @@ function function_1762ff96() {
         level.var_afb69372 = !is_true(self.var_afb69372);
         if (is_true(level.var_afb69372)) {
             level thread function_b7e34647();
-        } else {
-            level notify(#"hash_2876f101dd7375df");
+            return;
         }
+        level notify(#"hash_2876f101dd7375df");
     #/
 }
 
@@ -4648,11 +4656,11 @@ function function_b7e34647() {
             foreach (zombie in zombies) {
                 if (is_true(zombie.need_closest_player)) {
                     record3dtext("<unknown string>", zombie.origin + vectorscale((0, 0, 1), 72), (1, 0, 0));
-                } else {
-                    record3dtext("<unknown string>", zombie.origin + vectorscale((0, 0, 1), 72), (0, 1, 0));
-                    if (isdefined(zombie.var_26f25576)) {
-                        record3dtext(gettime() - zombie.var_26f25576, zombie.origin + vectorscale((0, 0, 1), 54), (1, 1, 1));
-                    }
+                    continue;
+                }
+                record3dtext("<unknown string>", zombie.origin + vectorscale((0, 0, 1), 72), (0, 1, 0));
+                if (isdefined(zombie.var_26f25576)) {
+                    record3dtext(gettime() - zombie.var_26f25576, zombie.origin + vectorscale((0, 0, 1), 54), (1, 1, 1));
                 }
             }
             waitframe(1);
@@ -4802,15 +4810,15 @@ function function_8d799ebd() {
                 do {
                     s_waitresult = undefined;
                     s_waitresult = self waittill(#"weapon_change_complete");
-                } while(self function_a33744de(s_waitresult.weapon) == 32767);
+                } while (self function_a33744de(s_waitresult.weapon) == 32767);
                 item = self function_230ceec4(s_waitresult.weapon);
                 if (isdefined(item) && item.networkid != 32767) {
                     var_2a2c98f2 = self function_73ae3380(item, 1);
                     if (isstruct(var_2a2c98f2) && isdefined(var_2a2c98f2.networkid) && var_2a2c98f2.networkid != 32767) {
                         self function_73ae3380(var_2a2c98f2, 2);
                         if (is_true(level.aat_in_use) && !is_exempt_weapon(var_2a2c98f2.var_627c698b)) {
-                            var_80c3ca2 = random(array("<unknown string>", "<unknown string>"));
-                            self function_37e9e0cb(var_2a2c98f2, weapon, var_80c3ca2);
+                            str_aat = random(array("<unknown string>", "<unknown string>"));
+                            self function_37e9e0cb(var_2a2c98f2, weapon, str_aat);
                         }
                     }
                 }
@@ -4877,19 +4885,29 @@ function function_15ee6847() {
                 teststring = teststring + "<unknown string>" + player getentitynumber() + "<unknown string>";
                 if (player.sessionstate == "<unknown string>") {
                     teststring = teststring + "<unknown string>";
-                } else if (is_true(self.hostmigrationcontrolsfrozen)) {
-                    teststring = teststring + "<unknown string>";
-                } else if (player in_life_brush()) {
-                    teststring = teststring + "<unknown string>";
-                } else if (player in_kill_brush()) {
-                    teststring = teststring + "<unknown string>";
-                } else if (!player in_enabled_playable_area()) {
-                    teststring = teststring + "<unknown string>";
-                } else if (isdefined(level.player_out_of_playable_area_override) && !is_true(player [[ level.player_out_of_playable_area_override ]]())) {
-                    teststring = teststring + "<unknown string>";
-                } else {
-                    teststring = teststring + "<unknown string>";
+                    continue;
                 }
+                if (is_true(self.hostmigrationcontrolsfrozen)) {
+                    teststring = teststring + "<unknown string>";
+                    continue;
+                }
+                if (player in_life_brush()) {
+                    teststring = teststring + "<unknown string>";
+                    continue;
+                }
+                if (player in_kill_brush()) {
+                    teststring = teststring + "<unknown string>";
+                    continue;
+                }
+                if (!player in_enabled_playable_area()) {
+                    teststring = teststring + "<unknown string>";
+                    continue;
+                }
+                if (isdefined(level.player_out_of_playable_area_override) && !is_true(player [[ level.player_out_of_playable_area_override ]]())) {
+                    teststring = teststring + "<unknown string>";
+                    continue;
+                }
+                teststring = teststring + "<unknown string>";
             }
             debug2dtext((400, 100, 0), teststring, (1, 1, 0), undefined, (0, 0, 0), 0.75, 1, 1);
             waitframe(1);
@@ -4909,9 +4927,9 @@ function function_2f0c6f91() {
         level.var_df7f30f4 = level.var_df7f30f4 == 0 ? 1 : 0;
         if (!level.var_df7f30f4) {
             level notify(#"hash_21adc62fc2f5bc32");
-        } else {
-            level thread function_5ec967f7();
+            return;
         }
+        level thread function_5ec967f7();
     #/
 }
 
@@ -5005,24 +5023,23 @@ function init_debug_center_screen() {
         devgui_base = "<unknown string>";
         adddebugcommand(devgui_base + "<unknown string>" + "<unknown string>" + "<unknown string>");
         for (;;) {
-            for (;;) {
-                if (getdvarint(#"debug_center_screen", 0)) {
-                    if (!isdefined(level.center_screen_debug_hudelem_active) || level.center_screen_debug_hudelem_active == 0) {
-                        thread debug_center_screen();
-                        zero_idle_movement = getdvarint(#"zero_idle_movement", 0);
-                        if (zero_idle_movement == 0) {
-                            setdvar(#"zero_idle_movement", 1);
-                            zero_idle_movement = 1;
-                        }
-                    }
-                } else {
-                    level notify(#"stop center screen debug");
-                    if (zero_idle_movement == 1) {
-                        setdvar(#"zero_idle_movement", 0);
-                        zero_idle_movement = 0;
+            if (getdvarint(#"debug_center_screen", 0)) {
+                if (!isdefined(level.center_screen_debug_hudelem_active) || level.center_screen_debug_hudelem_active == 0) {
+                    thread debug_center_screen();
+                    zero_idle_movement = getdvarint(#"zero_idle_movement", 0);
+                    if (zero_idle_movement == 0) {
+                        setdvar(#"zero_idle_movement", 1);
+                        zero_idle_movement = 1;
                     }
                 }
+            } else {
+                level notify(#"stop center screen debug");
+                if (zero_idle_movement == 1) {
+                    setdvar(#"zero_idle_movement", 0);
+                    zero_idle_movement = 0;
+                }
             }
+            wait(0.5);
         }
     #/
 }
@@ -5183,9 +5200,9 @@ function function_1b531660() {
         level.var_77e1430c = !level.var_77e1430c;
         if (level.var_77e1430c) {
             on_ai_damage(&function_e7321799);
-        } else {
-            remove_on_ai_damage(&function_e7321799);
+            return;
         }
+        remove_on_ai_damage(&function_e7321799);
     #/
 }
 
@@ -5248,9 +5265,9 @@ function function_f1be4492(dvar) {
     /#
         if (dvar.value) {
             level thread function_62e3e0a();
-        } else {
-            level notify(#"hash_49dd681f2dd51383");
+            return;
         }
+        level notify(#"hash_49dd681f2dd51383");
     #/
 }
 

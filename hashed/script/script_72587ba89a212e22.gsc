@@ -65,25 +65,37 @@ class class_fbe341f : cluielem {
     function set_state(localclientnum, state_name) {
         if (#"defaultstate" == state_name) {
             [[ self ]]->set_data(localclientnum, "_state", 0);
-        } else if (#"detonating" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 1);
-        } else if (#"hash_1a2812055c330ee0" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 2);
-        } else if (#"hash_59e0e869fbae7705" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 3);
-        } else if (#"hash_b86ebfb5a93f57f" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 4);
-        } else if (#"hash_4ff55a42344e567e" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 5);
-        } else if (#"hash_288548f3fca8b603" == state_name) {
-            [[ self ]]->set_data(localclientnum, "_state", 6);
-        } else {
-            /#
-                /#
-                    assertmsg("<unknown string>");
-                #/
-            #/
+            return;
         }
+        if (#"detonating" == state_name) {
+            [[ self ]]->set_data(localclientnum, "_state", 1);
+            return;
+        }
+        if (#"hash_1a2812055c330ee0" == state_name) {
+            [[ self ]]->set_data(localclientnum, "_state", 2);
+            return;
+        }
+        if (#"hash_59e0e869fbae7705" == state_name) {
+            [[ self ]]->set_data(localclientnum, "_state", 3);
+            return;
+        }
+        if (#"hash_b86ebfb5a93f57f" == state_name) {
+            [[ self ]]->set_data(localclientnum, "_state", 4);
+            return;
+        }
+        if (#"hash_4ff55a42344e567e" == state_name) {
+            [[ self ]]->set_data(localclientnum, "_state", 5);
+            return;
+        }
+        if (#"hash_288548f3fca8b603" == state_name) {
+            [[ self ]]->set_data(localclientnum, "_state", 6);
+            return;
+        }
+        /#
+            /#
+                assertmsg("<unknown string>");
+            #/
+        #/
     }
 
     // Namespace namespace_fbe341f/dirtybomb_usebar

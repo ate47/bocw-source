@@ -188,9 +188,8 @@ function get_killstreak_for_weapon(weapon) {
     }
     if (isdefined(level.killstreakweapons[weapon])) {
         return level.killstreakweapons[weapon];
-    } else {
-        return level.killstreakweapons[weapon.rootweapon];
     }
+    return level.killstreakweapons[weapon.rootweapon];
 }
 
 // Namespace killstreaks/killstreaks_util
@@ -267,10 +266,10 @@ function function_fde227c6(weapon, var_1ee97554) {
 function function_fa6e0467(weapon) {
     if (weapon.iscliponly) {
         self setweaponammoclip(weapon, self.pers[#"held_killstreak_ammo_count"][weapon]);
-    } else {
-        self setweaponammoclip(weapon, self.pers[#"held_killstreak_clip_count"][weapon]);
-        self setweaponammostock(weapon, self.pers[#"held_killstreak_ammo_count"][weapon] - self.pers[#"held_killstreak_clip_count"][weapon]);
+        return;
     }
+    self setweaponammoclip(weapon, self.pers[#"held_killstreak_clip_count"][weapon]);
+    self setweaponammostock(weapon, self.pers[#"held_killstreak_ammo_count"][weapon] - self.pers[#"held_killstreak_clip_count"][weapon]);
 }
 
 // Namespace killstreaks/killstreaks_util
@@ -385,13 +384,11 @@ function function_8294e9b3() {
 function function_5a7ecb6b(var_56422be = 0.01) {
     self endon(#"death");
     scale = 0.1;
-    scalestep = 0.1;
-    while (scale < 1) {
+    for (scalestep = 0.1; scale < 1; scalestep = scalestep - var_56422be) {
         self setscale(scale);
         waitframe(1);
         scale = scale + scalestep;
         if (scalestep > var_56422be + 0.01) {
-            scalestep = scalestep - var_56422be;
         }
     }
     self setscale(1);
@@ -410,13 +407,11 @@ function function_3696d106(var_56422be = 0.001) {
         self function_60d50ea4();
     }
     scale = 0.99;
-    scalestep = 0.01;
-    while (scale > 0.01) {
+    for (scalestep = 0.01; scale > 0.01; scalestep = scalestep + var_56422be) {
         self setscale(scale);
         waitframe(1);
         scale = scale - scalestep;
         if (scalestep < 0.1) {
-            scalestep = scalestep + var_56422be;
         }
     }
     self hide();
@@ -448,9 +443,9 @@ function function_47b44bcc(attacker, weapon, aircraft) {
     if (isdefined(killstreaktype) && (killstreaktype == "planemortar" || killstreaktype == "remote_missile" || killstreaktype == "straferun")) {
         if (aircraft === 1) {
             attacker.(killstreaktype + "_killAircraft") = 1;
-        } else {
-            attacker.(killstreaktype + "_killGroundVehicle") = 1;
+            return;
         }
+        attacker.(killstreaktype + "_killGroundVehicle") = 1;
     }
 }
 
@@ -481,12 +476,12 @@ function function_eb52ba7(killstreaktype, team, killstreak_id) {
             self.var_63fa6458 = [];
         }
         self.var_63fa6458[var_88dc634d] = session;
-    } else {
-        if (!isdefined(self.var_9fa3bd36)) {
-            self.var_9fa3bd36 = [];
-        }
-        self.var_9fa3bd36[killstreak_id] = session;
+        return;
     }
+    if (!isdefined(self.var_9fa3bd36)) {
+        self.var_9fa3bd36 = [];
+    }
+    self.var_9fa3bd36[killstreak_id] = session;
 }
 
 // Namespace killstreaks/killstreaks_util
@@ -522,7 +517,9 @@ function function_79e49b15(params) {
             self function_678f57c8(var_8756d70f, self.var_63fa6458[var_88dc634d]);
             self.var_63fa6458[var_88dc634d] = undefined;
         }
-    } else if (isdefined(self.var_9fa3bd36[killstreak_id])) {
+        return;
+    }
+    if (isdefined(self.var_9fa3bd36[killstreak_id])) {
         self.var_9fa3bd36[killstreak_id].endtime = function_f8d53445();
         self.var_9fa3bd36[killstreak_id].var_e72137e8 = isdefined(var_e72137e8) ? var_e72137e8 : self.var_9fa3bd36[killstreak_id].var_e72137e8;
         var_8756d70f = function_16a1f9b6();
@@ -593,7 +590,9 @@ function function_e9873ef7(killstreaktype, killstreak_id, var_e72137e8) {
         if (isdefined(self.var_63fa6458[var_88dc634d])) {
             self.var_63fa6458[var_88dc634d].var_e72137e8 = isdefined(var_e72137e8) ? var_e72137e8 : self.var_63fa6458[var_88dc634d].var_e72137e8;
         }
-    } else if (isdefined(self.var_9fa3bd36[killstreak_id])) {
+        return;
+    }
+    if (isdefined(self.var_9fa3bd36[killstreak_id])) {
         self.var_9fa3bd36[killstreak_id].var_e72137e8 = isdefined(var_e72137e8) ? var_e72137e8 : self.var_9fa3bd36[killstreak_id].var_e72137e8;
     }
 }
@@ -612,7 +611,9 @@ function function_4aad9803(killstreaktype, killstreak_id, var_6e1d768e) {
         if (isdefined(self.var_63fa6458[var_88dc634d])) {
             self.var_63fa6458[var_88dc634d].var_6e1d768e = var_6e1d768e.name;
         }
-    } else if (isdefined(self.var_9fa3bd36[killstreak_id])) {
+        return;
+    }
+    if (isdefined(self.var_9fa3bd36[killstreak_id])) {
         self.var_9fa3bd36[killstreak_id].var_6e1d768e = var_6e1d768e.name;
     }
 }

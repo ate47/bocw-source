@@ -436,7 +436,9 @@ function watchforotherkillstreaks() {
                 attacker challenges::addflyswatterstat(killstreaktype, self);
                 return;
             }
-        } else if (killstreaktype == "missile_swarm") {
+            continue;
+        }
+        if (killstreaktype == "missile_swarm") {
             if (self.owner util::isenemyplayer(attacker)) {
                 self.leavenexttime = 1;
             }
@@ -454,7 +456,6 @@ function watchforkills() {
         waitresult = undefined;
         waitresult = self waittill(#"killed");
         if (isplayer(waitresult.victim)) {
-            continue;
         }
     }
 }
@@ -523,25 +524,33 @@ function dostraferuns(bundle, var_a6b1bda0, hardpointtype) {
             if (-1) {
                 self thread firerockets();
             }
-        } else if (noteworthy == "strafe_stop") {
+            continue;
+        }
+        if (noteworthy == "strafe_stop") {
             if (!(isdefined(bundle.var_d483e967) ? bundle.var_d483e967 : 0)) {
                 self stopstrafe();
             }
-        } else if (noteworthy == "strafe_leave") {
+            continue;
+        }
+        if (noteworthy == "strafe_leave") {
             if (self shouldleavemap()) {
                 self thread leavemap(hardpointtype);
             }
-        } else if (noteworthy == "fire_rockets") {
+            continue;
+        }
+        if (noteworthy == "fire_rockets") {
             if (1) {
                 self thread firerockets();
             }
-        } else if (noteworthy == "wave_start") {
+            continue;
+        }
+        if (noteworthy == "wave_start") {
             if (isdefined(self) && self.var_14494df9 === 1 && !is_true(self.leavenexttime)) {
                 if (self.numstrafes == level.straferunmaxstrafes - 1) {
                     self namespace_f9b02f80::play_pilot_dialog_on_owner("waveStartFinal", "straferun", self.killstreakid);
-                } else {
-                    self namespace_f9b02f80::play_pilot_dialog_on_owner("waveStart", "straferun", self.killstreakid);
+                    continue;
                 }
+                self namespace_f9b02f80::play_pilot_dialog_on_owner("waveStart", "straferun", self.killstreakid);
             }
         }
     }

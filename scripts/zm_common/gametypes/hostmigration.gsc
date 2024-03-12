@@ -77,7 +77,9 @@ function updatetimerpausedness() {
     if (!level.timerstopped && shouldbestopped) {
         level.timerstopped = 1;
         level.timerpausetime = gettime();
-    } else if (level.timerstopped && !shouldbestopped) {
+        return;
+    }
+    if (level.timerstopped && !shouldbestopped) {
         level.timerstopped = 0;
         level.discardtime = level.discardtime + gettime() - level.timerpausetime;
     }
@@ -434,12 +436,10 @@ function waitlongdurationwithhostmigrationpause(duration) {
         assert(duration > 0);
     #/
     starttime = gettime();
-    endtime = gettime() + duration * 1000;
-    while (gettime() < endtime) {
+    for (endtime = gettime() + duration * 1000; gettime() < endtime; endtime = endtime + timepassed) {
         waittillhostmigrationstarts((endtime - gettime()) / 1000);
         if (isdefined(level.hostmigrationtimer)) {
             timepassed = waittillhostmigrationdone();
-            endtime = endtime + timepassed;
         }
     }
     if (gettime() != endtime) {
@@ -498,8 +498,11 @@ function find_alternate_player_place(v_origin, min_radius, max_radius, max_heigh
         for (i = index; i >= 0; i--) {
             n_node = a_nodes[i];
             if (ignore_targetted_nodes == 1) {
-                jumpiffalse(isdefined(n_node.target)) LOC_0000012a;
-            } else if (!positionwouldtelefrag(n_node.origin)) {
+                if (isdefined(n_node.target)) {
+                    continue;
+                }
+            }
+            if (!positionwouldtelefrag(n_node.origin)) {
                 if (zm_utility::check_point_in_enabled_zone(n_node.origin, 1, a_player_volumes)) {
                     v_start = (n_node.origin[0], n_node.origin[1], n_node.origin[2] + 30);
                     v_end = (n_node.origin[0], n_node.origin[1], n_node.origin[2] - 30);

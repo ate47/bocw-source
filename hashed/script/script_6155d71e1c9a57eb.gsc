@@ -70,9 +70,9 @@ function on_player_connect() {
     if (flag::get(#"intro_scene_done")) {
         if (isdefined(level.var_d1b0ffd) && level.var_d1b0ffd != "") {
             self set_to_player(level.var_d1b0ffd);
-        } else {
-            self set_to_player("");
+            return;
         }
+        self set_to_player("");
     }
 }
 

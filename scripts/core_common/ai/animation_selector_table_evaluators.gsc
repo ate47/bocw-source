@@ -150,9 +150,8 @@ function private function_91a832bb(entity, animation) {
 function private function_3c7d2020(entity, animation) {
     if (animhasnotetrack(animation, "corner")) {
         return 1;
-    } else {
-        return evaluator_checkanimationforovershootinggoal(entity, animation);
     }
+    return evaluator_checkanimationforovershootinggoal(entity, animation);
 }
 
 // Namespace animation_selector_table_evaluators/animation_selector_table_evaluators

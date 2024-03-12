@@ -190,9 +190,8 @@ function function_6f65e552() {
 function function_767a6a84(spawner, *target_name, *spawn_point, *round_number) {
     if (isdefined(level.var_8f576c00[round_number.aitype])) {
         return spawnactor(level.var_8f576c00[round_number.aitype], round_number.origin, round_number.angles, 0, 1, 0, round_number);
-    } else {
-        return round_number spawnfromspawner(0, 1);
     }
+    return round_number spawnfromspawner(0, 1);
 }
 
 // Namespace namespace_3bb7295f/namespace_3bb7295f
@@ -521,9 +520,9 @@ function function_36043197() {
                         self.var_bd710417[player getentitynumber()] = gettime();
                     }
                 }
-            } else {
-                self.var_bd710417[player getentitynumber()] = 0;
+                continue;
             }
+            self.var_bd710417[player getentitynumber()] = 0;
         }
         wait(0.25);
     }
@@ -687,9 +686,9 @@ function on_ai_damaged(params) {
         }
         if (params.eattacker zm_powerups::is_insta_kill_active()) {
             self.var_958cf9c5 = 1;
-        } else {
-            self thread ammomod_cryofreeze::function_f00409f3(params.eattacker, undefined, params.weapon, 0, 3);
+            return;
         }
+        self thread ammomod_cryofreeze::function_f00409f3(params.eattacker, undefined, params.weapon, 0, 3);
     }
 }
 

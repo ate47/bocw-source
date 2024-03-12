@@ -78,10 +78,12 @@ function private on_player_spawned() {
 // Size: 0x1a4
 function private on_player_loadout() {
     self giveweapon(level.var_8ef8b9e8);
-    self function_28602a03(level.var_8ef8b9e8, 1, 1);
+    self lockweapon(level.var_8ef8b9e8, 1, 1);
     if (is_true(getgametypesetting(#"hash_5700fdc9d17186f7"))) {
         self armor::set_armor(225, 225, 3, 0.4, 1, 0.5, 0, 1, 1, 1);
-    } else if ((isdefined(getgametypesetting(#"hash_64f2892e3a0fd0b")) ? getgametypesetting(#"hash_64f2892e3a0fd0b") : 0) > 0) {
+        return;
+    }
+    if ((isdefined(getgametypesetting(#"hash_64f2892e3a0fd0b")) ? getgametypesetting(#"hash_64f2892e3a0fd0b") : 0) > 0) {
         self armor::set_armor(getgametypesetting(#"hash_64f2892e3a0fd0b") * 75, 225, 3, 0.4, 1, 0.5, 0, 1, 1, 1);
     }
 }
@@ -173,23 +175,21 @@ function private function_a7879258(lastweapon) {
             self thread function_c81e4a7c();
         }
         for (;;) {
-            for (;;) {
-                if (!function_86b9a404() || self.var_32b4a72a === 1 && self.var_6a0f2dd7) {
-                    self weapons::function_d571ac59(lastweapon, 0, 0, var_b2cde03b);
-                    return;
-                }
-                waitresult = undefined;
-                waitresult = self waittilltimeout(1.1, #"death", #"enter_vehicle", #"exit_vehicle");
-                if (waitresult._notify !== #"timeout") {
-                    self weapons::function_d571ac59(lastweapon, 0, 0, var_b2cde03b);
-                    return;
-                }
-                if (self getcurrentweapon() !== level.var_8ef8b9e8 || self isdroppingweapon()) {
-                    break;
-                }
-                if (function_d66636df()) {
-                    continue;
-                };
+            if (!function_86b9a404() || self.var_32b4a72a === 1 && self.var_6a0f2dd7) {
+                self weapons::function_d571ac59(lastweapon, 0, 0, var_b2cde03b);
+                return;
+            }
+            waitresult = undefined;
+            waitresult = self waittilltimeout(1.1, #"death", #"enter_vehicle", #"exit_vehicle");
+            if (waitresult._notify !== #"timeout") {
+                self weapons::function_d571ac59(lastweapon, 0, 0, var_b2cde03b);
+                return;
+            }
+            if (self getcurrentweapon() !== level.var_8ef8b9e8 || self isdroppingweapon()) {
+                break;
+            }
+            if (function_d66636df()) {
+                self.var_6a0f2dd7 = 1;
             }
         }
     } else {

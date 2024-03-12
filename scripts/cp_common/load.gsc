@@ -157,7 +157,7 @@ function function_2dd7fc9e() {
     if (isloadingcinematicplaying()) {
         do {
             waitframe(1);
-        } while(isloadingcinematicplaying());
+        } while (isloadingcinematicplaying());
     } else {
         wait(1);
     }
@@ -246,11 +246,11 @@ function init_traverse() {
     if (isdefined(point)) {
         self.traverse_height = point.origin[2];
         point delete();
-    } else {
-        point = struct::get(self.target, "targetname");
-        if (isdefined(point)) {
-            self.traverse_height = point.origin[2];
-        }
+        return;
+    }
+    point = struct::get(self.target, "targetname");
+    if (isdefined(point)) {
+        self.traverse_height = point.origin[2];
     }
 }
 
@@ -289,9 +289,9 @@ function function_c9154eb7(var_83104433, var_585e39fb) {
             var_585e39fb = skipto::function_455cb6c5(var_83104433);
         }
         function_cc51116c(var_83104433, var_585e39fb);
-    } else {
-        globallogic::function_7b994f00();
+        return;
     }
+    globallogic::function_7b994f00();
 }
 
 // Namespace load/load
@@ -336,13 +336,13 @@ function function_cc51116c(var_83104433, var_585e39fb = "") {
         level flag::wait_till_timeout(25, "switchmap_preload_finished");
         level.var_d89799d7 = undefined;
         switchmap_switch();
-    } else {
-        level.var_d89799d7 = undefined;
-        var_7c9eb9c6 = getrootmapname(var_83104433);
-        switchmap_load(var_7c9eb9c6, level.gametype);
-        util::wait_network_frame(1);
-        switchmap_switch();
+        return;
     }
+    level.var_d89799d7 = undefined;
+    var_7c9eb9c6 = getrootmapname(var_83104433);
+    switchmap_load(var_7c9eb9c6, level.gametype);
+    util::wait_network_frame(1);
+    switchmap_switch();
 }
 
 // Namespace load/load
@@ -406,9 +406,9 @@ function player_intermission(var_1ed3b46b = 1) {
                 org moveto(target_point.origin, time, var_91c3f3c4, var_91c3f3c4);
                 org rotateto(target_point.angles, time, var_91c3f3c4, var_91c3f3c4);
                 wait(time);
-            } else {
-                wait(5);
+                continue;
             }
+            wait(5);
         }
     }
 }
@@ -440,7 +440,7 @@ function onallplayersready() {
             }
             var_f884532++;
         #/
-    } while(var_72e2b734 < var_73f084c || player_count_actual < var_73f084c);
+    } while (var_72e2b734 < var_73f084c || player_count_actual < var_73f084c);
     setinitialplayersconnected();
     /#
         printtoprightln("<unknown string>", (1, 1, 1));

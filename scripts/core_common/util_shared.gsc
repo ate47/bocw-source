@@ -166,9 +166,9 @@ function wait_network_frame(n_count = 1) {
                 acked = snapshotacknowledged(snapshot_ids);
             }
         }
-    } else {
-        wait(0.1 * n_count);
+        return;
     }
+    wait(0.1 * n_count);
 }
 
 // Namespace util/util_shared
@@ -193,7 +193,9 @@ function clear_streamer_hint(var_9e124d58) {
                     var_b0b08518 delete();
                     break;
                 }
-            } else if (!is_true(var_b0b08518.var_d54e170d)) {
+                continue;
+            }
+            if (!is_true(var_b0b08518.var_d54e170d)) {
                 if (isdefined(var_b0b08518)) {
                     var_b0b08518 delete();
                 }
@@ -300,9 +302,8 @@ function function_20120d2a(n_stream_request_id, str_scenedef) {
     /#
         if (isdefined(str_scenedef)) {
             return ("<unknown string>" + function_9e72a96(str_scenedef) + "<unknown string>");
-        } else {
-            return ("<unknown string>" + (isdefined(isdefined(n_stream_request_id) ? n_stream_request_id : self.var_ecd30af1) ? isdefined(n_stream_request_id) ? n_stream_request_id : self.var_ecd30af1 : -1) + "<unknown string>");
         }
+        return "<unknown string>" + (isdefined(isdefined(n_stream_request_id) ? n_stream_request_id : self.var_ecd30af1) ? isdefined(n_stream_request_id) ? n_stream_request_id : self.var_ecd30af1 : -1) + "<unknown string>";
     #/
 }
 
@@ -371,9 +372,9 @@ function streamer_wait(n_stream_request_id, n_wait_frames = 3, n_timeout = 15, s
                     /#
                         request = "<unknown string>" + player function_20120d2a(n_stream_request_id, str_scenedef);
                     #/
-                } else {
-                    n_num_streamers_ready++;
+                    continue;
                 }
+                n_num_streamers_ready++;
             }
             if (n_timeout > 0 && gettime() > timeout) {
                 /#
@@ -392,7 +393,7 @@ function streamer_wait(n_stream_request_id, n_wait_frames = 3, n_timeout = 15, s
                     var_e1f110d9 = gettime() + 5000;
                 }
             #/
-        } while(var_b737eb14);
+        } while (var_b737eb14);
         /#
             if (!var_b737eb14) {
                 reason = request + "<unknown string>" + float(gettime() - start) / 1000;
@@ -421,7 +422,7 @@ function streamer_wait(n_stream_request_id, n_wait_frames = 3, n_timeout = 15, s
                     var_e1f110d9 = gettime() + 5000;
                 }
             #/
-        } while(var_b737eb14);
+        } while (var_b737eb14);
         /#
             if (!var_b737eb14) {
                 reason = request + "<unknown string>" + float(gettime() - start) / 1000;
@@ -793,14 +794,14 @@ function waittill_multiple_ents(...) {
                 a_notifies = array(a_notifies);
             }
             a_notifies[a_notifies.size] = vararg[i];
-        } else {
-            if (!isdefined(a_ents)) {
-                a_ents = [];
-            } else if (!isarray(a_ents)) {
-                a_ents = array(a_ents);
-            }
-            a_ents[a_ents.size] = vararg[i];
+            continue;
         }
+        if (!isdefined(a_ents)) {
+            a_ents = [];
+        } else if (!isarray(a_ents)) {
+            a_ents = array(a_ents);
+        }
+        a_ents[a_ents.size] = vararg[i];
     }
     s_tracker = spawnstruct();
     s_tracker._wait_count = 0;
@@ -976,63 +977,63 @@ function _single_func(entity, func, a_vars) {
         } else {
             return [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5], a_vars[6], a_vars[7]);
         }
-        break;
+        return;
     case 7:
         if (isdefined(entity)) {
             return entity [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5], a_vars[6]);
         } else {
             return [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5], a_vars[6]);
         }
-        break;
+        return;
     case 6:
         if (isdefined(entity)) {
             return entity [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5]);
         } else {
             return [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5]);
         }
-        break;
+        return;
     case 5:
         if (isdefined(entity)) {
             return entity [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4]);
         } else {
             return [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4]);
         }
-        break;
+        return;
     case 4:
         if (isdefined(entity)) {
             return entity [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3]);
         } else {
             return [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3]);
         }
-        break;
+        return;
     case 3:
         if (isdefined(entity)) {
             return entity [[ func ]](a_vars[0], a_vars[1], a_vars[2]);
         } else {
             return [[ func ]](a_vars[0], a_vars[1], a_vars[2]);
         }
-        break;
+        return;
     case 2:
         if (isdefined(entity)) {
             return entity [[ func ]](a_vars[0], a_vars[1]);
         } else {
             return [[ func ]](a_vars[0], a_vars[1]);
         }
-        break;
+        return;
     case 1:
         if (isdefined(entity)) {
             return entity [[ func ]](a_vars[0]);
         } else {
             return [[ func ]](a_vars[0]);
         }
-        break;
+        return;
     case 0:
         if (isdefined(entity)) {
             return entity [[ func ]]();
         } else {
             return [[ func ]]();
         }
-        break;
+        return;
     default:
         /#
             assertmsg("<unknown string>");
@@ -1049,9 +1050,9 @@ function _clean_up_arg_array(&a_vars) {
     for (i = a_vars.size - 1; i >= 0; i--) {
         if (a_vars[i] === undefined) {
             arrayremoveindex(a_vars, i, 0);
-        } else {
-            break;
+            continue;
         }
+        return;
     }
 }
 
@@ -1160,7 +1161,9 @@ function _single_thread(entity, func, arg1, arg2, &a_vars) {
             #/
             break;
         }
-    } else if (isdefined(arg1)) {
+        return;
+    }
+    if (isdefined(arg1)) {
         switch (a_vars.size) {
         case 8:
             entity thread [[ func ]](arg1, a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5], a_vars[6], a_vars[7]);
@@ -1195,41 +1198,41 @@ function _single_thread(entity, func, arg1, arg2, &a_vars) {
             #/
             break;
         }
-    } else {
-        switch (a_vars.size) {
-        case 8:
-            entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5], a_vars[6], a_vars[7]);
-            break;
-        case 7:
-            entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5], a_vars[6]);
-            break;
-        case 6:
-            entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5]);
-            break;
-        case 5:
-            entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4]);
-            break;
-        case 4:
-            entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3]);
-            break;
-        case 3:
-            entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2]);
-            break;
-        case 2:
-            entity thread [[ func ]](a_vars[0], a_vars[1]);
-            break;
-        case 1:
-            entity thread [[ func ]](a_vars[0]);
-            break;
-        case 0:
-            entity thread [[ func ]]();
-            break;
-        default:
-            /#
-                assertmsg("<unknown string>");
-            #/
-            break;
-        }
+        return;
+    }
+    switch (a_vars.size) {
+    case 8:
+        entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5], a_vars[6], a_vars[7]);
+        return;
+    case 7:
+        entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5], a_vars[6]);
+        return;
+    case 6:
+        entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5]);
+        return;
+    case 5:
+        entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4]);
+        return;
+    case 4:
+        entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3]);
+        return;
+    case 3:
+        entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2]);
+        return;
+    case 2:
+        entity thread [[ func ]](a_vars[0], a_vars[1]);
+        return;
+    case 1:
+        entity thread [[ func ]](a_vars[0]);
+        return;
+    case 0:
+        entity thread [[ func ]]();
+        return;
+    default:
+        /#
+            assertmsg("<unknown string>");
+        #/
+        break;
     }
 }
 
@@ -1599,9 +1602,9 @@ function _delay(time_or_notify, str_endon, func, arg1, arg2, arg3, arg4, arg5, a
     }
     if (iscodefunctionptr(func)) {
         single_func(self, func, arg1, arg2, arg3, arg4, arg5, arg6);
-    } else {
-        single_thread(self, func, arg1, arg2, arg3, arg4, arg5, arg6);
+        return;
     }
+    single_thread(self, func, arg1, arg2, arg3, arg4, arg5, arg6);
 }
 
 // Namespace util/util_shared
@@ -1683,10 +1686,9 @@ function registerclientsys(ssysname) {
             #/
         #/
         return;
-    } else {
-        level._clientsys[ssysname] = spawnstruct();
-        level._clientsys[ssysname].sysid = clientsysregister(ssysname);
     }
+    level._clientsys[ssysname] = spawnstruct();
+    level._clientsys[ssysname].sysid = clientsysregister(ssysname);
 }
 
 // Namespace util/util_shared
@@ -1712,10 +1714,10 @@ function setclientsysstate(ssysname, ssysstate, player) {
     }
     if (isdefined(player)) {
         player clientsyssetstate(level._clientsys[ssysname].sysid, ssysstate);
-    } else {
-        clientsyssetstate(level._clientsys[ssysname].sysid, ssysstate);
-        level._clientsys[ssysname].sysstate = ssysstate;
+        return;
     }
+    clientsyssetstate(level._clientsys[ssysname].sysid, ssysstate);
+    level._clientsys[ssysname].sysstate = ssysstate;
 }
 
 // Namespace util/util_shared
@@ -1753,9 +1755,9 @@ function clientnotify(event) {
     if (level.clientscripts) {
         if (isplayer(self)) {
             setclientsysstate("levelNotify", event, self);
-        } else {
-            setclientsysstate("levelNotify", event);
+            return;
         }
+        setclientsysstate("levelNotify", event);
     }
 }
 
@@ -1803,9 +1805,8 @@ function is_looking_at(ent_or_org, n_dot_range = 0.9, do_trace = 0, v_offset) {
 function get_eye() {
     if (isplayer(self)) {
         return self getplayercamerapos();
-    } else {
-        return self geteye();
     }
+    return self geteye();
 }
 
 // Namespace util/util_shared
@@ -2124,11 +2125,11 @@ function set_console_status() {
     }
     if (!isdefined(level.xenon)) {
         level.xenon = getdvarstring(#"xenongame") == "true";
-    } else {
-        /#
-            assert(level.xenon == getdvarstring(#"xenongame") == "<unknown string>", "<unknown string>");
-        #/
+        return;
     }
+    /#
+        assert(level.xenon == getdvarstring(#"xenongame") == "<unknown string>", "<unknown string>");
+    #/
 }
 
 // Namespace util/util_shared
@@ -2213,9 +2214,9 @@ function script_wait() {
 function function_90dafe5(msg, var_3ef206a8) {
     if (isdefined(var_3ef206a8)) {
         self notify(msg, var_3ef206a8);
-    } else {
-        self notify(msg);
+        return;
     }
+    self notify(msg);
 }
 
 // Namespace util/util_shared
@@ -2978,14 +2979,12 @@ function waittillnotmoving() {
     }
     if (self.classname == "grenade") {
         self waittill(#"stationary");
-    } else {
-        prevorigin = self.origin;
-        while (1) {
-            wait(0.15);
-            if (self.origin == prevorigin) {
-                break;
-            }
-            prevorigin = self.origin;
+        return;
+    }
+    for (prevorigin = self.origin; 1; prevorigin = self.origin) {
+        wait(0.15);
+        if (self.origin == prevorigin) {
+            return;
         }
     }
 }
@@ -3208,18 +3207,17 @@ function drawcylinder_think(pos, rad, height, seconds, stop_notify, color, alpha
             alpha = 1;
         }
         for (;;) {
-            for (;;) {
-                if (seconds > 0 && stop_time <= gettime()) {
-                    return;
-                }
-                for (r = 0; r < 20; r++) {
-                    theta = r / 20 * 360;
-                    theta2 = (r + 1) / 20 * 360;
-                    line(pos + (cos(theta) * currad, sin(theta) * currad, 0), pos + (cos(theta2) * currad, sin(theta2) * currad, 0), color, alpha);
-                    line(pos + (cos(theta) * currad, sin(theta) * currad, curheight), pos + (cos(theta2) * currad, sin(theta2) * currad, curheight), color, alpha);
-                    line(pos + (cos(theta) * currad, sin(theta) * currad, 0), pos + (cos(theta) * currad, sin(theta) * currad, curheight), color, alpha);
-                }
+            if (seconds > 0 && stop_time <= gettime()) {
+                return;
             }
+            for (r = 0; r < 20; r++) {
+                theta = r / 20 * 360;
+                theta2 = (r + 1) / 20 * 360;
+                line(pos + (cos(theta) * currad, sin(theta) * currad, 0), pos + (cos(theta2) * currad, sin(theta2) * currad, 0), color, alpha);
+                line(pos + (cos(theta) * currad, sin(theta) * currad, curheight), pos + (cos(theta2) * currad, sin(theta2) * currad, curheight), color, alpha);
+                line(pos + (cos(theta) * currad, sin(theta) * currad, 0), pos + (cos(theta) * currad, sin(theta) * currad, curheight), color, alpha);
+            }
+            waitframe(1);
         }
     #/
 }
@@ -3334,13 +3332,15 @@ function set_lighting_state(n_state, var_2f177f67 = 1) {
             foreach (player in players) {
                 player set_lighting_state(level.lighting_state);
             }
-        } else if (isplayer(self)) {
-            self setlightingstate(self.lighting_state);
-        } else {
-            /#
-                assertmsg("<unknown string>");
-            #/
+            return;
         }
+        if (isplayer(self)) {
+            self setlightingstate(self.lighting_state);
+            return;
+        }
+        /#
+            assertmsg("<unknown string>");
+        #/
     }
 }
 
@@ -3359,13 +3359,15 @@ function set_sun_shadow_split_distance(f_distance) {
             foreach (player in function_a1ef346b()) {
                 player set_sun_shadow_split_distance(level.sun_shadow_split_distance);
             }
-        } else if (isplayer(self)) {
-            self setsunshadowsplitdistance(self.sun_shadow_split_distance);
-        } else {
-            /#
-                assertmsg("<unknown string>");
-            #/
+            return;
         }
+        if (isplayer(self)) {
+            self setsunshadowsplitdistance(self.sun_shadow_split_distance);
+            return;
+        }
+        /#
+            assertmsg("<unknown string>");
+        #/
     }
 }
 
@@ -3387,13 +3389,15 @@ function function_7f49ffb7(var_bf01552a) {
             foreach (player in function_a1ef346b()) {
                 player function_7f49ffb7(level.var_bf01552a);
             }
-        } else if (isplayer(self)) {
-            self function_61471b4a(self.var_bf01552a);
-        } else {
-            /#
-                assertmsg("<unknown string>");
-            #/
+            return;
         }
+        if (isplayer(self)) {
+            self function_61471b4a(self.var_bf01552a);
+            return;
+        }
+        /#
+            assertmsg("<unknown string>");
+        #/
     }
 }
 
@@ -3432,34 +3436,38 @@ function auto_delete(n_mode = 1, n_min_time_alive = 0, n_dist_horizontal = 0, n_
     while (1) {
         do {
             wait(randomfloatrange(n_think_time - n_think_time / 3, n_think_time + n_think_time / 3));
-        } while(isdefined(self.birthtime) && float(gettime() - self.birthtime) / 1000 < n_min_time_alive);
+        } while (isdefined(self.birthtime) && float(gettime() - self.birthtime) / 1000 < n_min_time_alive);
         n_tests_passed = 0;
         playerlist = getplayers();
         foreach (player in playerlist) {
             if (isbot(player)) {
                 n_tests_passed++;
-            } else {
-                if (n_dist_horizontal && distance2dsquared(self.origin, player.origin) < n_dist_horizontal_sq) {
-                    continue;
-                }
-                if (n_dist_vertical && abs(self.origin[2] - player.origin[2]) < n_dist_vertical) {
-                    continue;
-                }
-                v_eye = player getplayercamerapos();
-                b_behind = 0;
-                if (n_mode & 2) {
-                    v_facing = anglestoforward(player getplayerangles());
-                    v_to_ent = vectornormalize(self.origin - v_eye);
-                    n_dot = vectordot(v_facing, v_to_ent);
-                    jumpcmp(n_dot > n_dot_check) LOC_0000046a;
+                continue;
+            }
+            if (n_dist_horizontal && distance2dsquared(self.origin, player.origin) < n_dist_horizontal_sq) {
+                continue;
+            }
+            if (n_dist_vertical && abs(self.origin[2] - player.origin[2]) < n_dist_vertical) {
+                continue;
+            }
+            v_eye = player getplayercamerapos();
+            b_behind = 0;
+            if (n_mode & 2) {
+                v_facing = anglestoforward(player getplayerangles());
+                v_to_ent = vectornormalize(self.origin - v_eye);
+                n_dot = vectordot(v_facing, v_to_ent);
+                if (n_dot < n_dot_check) {
                     b_behind = 1;
-                    jumpiftrue(n_mode & 1) LOC_0000046a;
-                    n_tests_passed++;
-                } else if (n_mode & 4) {
-                    if (!self sightconetrace(v_eye, isdefined(player getvehicleoccupied()) ? player getvehicleoccupied() : player)) {
-                        if (b_behind || !(n_mode & 1)) {
-                            n_tests_passed++;
-                        }
+                    if (!(n_mode & 1)) {
+                        n_tests_passed++;
+                        continue;
+                    }
+                }
+            }
+            if (n_mode & 4) {
+                if (!self sightconetrace(v_eye, isdefined(player getvehicleoccupied()) ? player getvehicleoccupied() : player)) {
+                    if (b_behind || !(n_mode & 1)) {
+                        n_tests_passed++;
                     }
                 }
             }
@@ -3471,9 +3479,9 @@ function auto_delete(n_mode = 1, n_min_time_alive = 0, n_dist_horizontal = 0, n_
             }
             self notify(#"_disable_reinforcement");
             self delete();
-        } else {
-            n_test_count = 0;
+            continue;
         }
+        n_test_count = 0;
     }
 }
 
@@ -3516,9 +3524,8 @@ function function_2146bd83(weapon) {
 function function_4c1656d5() {
     if (sessionmodeiswarzonegame()) {
         return getdvarfloat(#"hash_4e7a02edee964bf9", 250);
-    } else {
-        return getdvarfloat(#"hash_4ec50cedeed64871", 250);
     }
+    return getdvarfloat(#"hash_4ec50cedeed64871", 250);
 }
 
 // Namespace util/util_shared
@@ -3532,11 +3539,12 @@ function function_16fb0a3b() {
         } else {
             return getdvarfloat(#"hash_4e7a02edee964bf9", 250);
         }
-    } else if (getdvarint(#"hash_23fac9a913e70c03", 0) > 0) {
-        return getdvarfloat(#"hash_606c79b0e9348eb8", 250);
-    } else {
-        return getdvarfloat(#"hash_4ec50cedeed64871", 250);
+        return;
     }
+    if (getdvarint(#"hash_23fac9a913e70c03", 0) > 0) {
+        return getdvarfloat(#"hash_606c79b0e9348eb8", 250);
+    }
+    return getdvarfloat(#"hash_4ec50cedeed64871", 250);
 }
 
 // Namespace util/util_shared
@@ -3697,7 +3705,9 @@ function function_385658da() {
         wins = getroundswon(team);
         if (!isdefined(count)) {
             count = wins;
-        } else if (wins != count) {
+            continue;
+        }
+        if (wins != count) {
             return 0;
         }
     }
@@ -3879,9 +3889,8 @@ function function_97cf7eb0(v_start, n_max_dist = 5000, n_ground_offset = 0, e_ig
     a_trace = groundtrace(v_trace_start, v_trace_end, 0, e_ignore, b_ignore_water, b_ignore_glass);
     if (a_trace[#"surfacetype"] != "none") {
         return {#entity:a_trace[#"entity"], #position:a_trace[#"position"] + (0, 0, n_ground_offset)};
-    } else {
-        return {#entity:a_trace[#"entity"], #position:v_start};
     }
+    return {#entity:a_trace[#"entity"], #position:v_start};
 }
 
 // Namespace util/util_shared
@@ -3935,7 +3944,6 @@ function is_new_cp_map() {
     switch (mapname) {
     default:
         return 0;
-        break;
     }
 }
 
@@ -3974,13 +3982,11 @@ function queued_debug_commands() {
             trickle = 0;
             if (isdefined(level.players) && level.players.size > 1) {
                 trickle = 1;
-                var_1085858 = 12;
             }
-            while ((!trickle || var_1085858 > 0) && canadddebugcommand() && level.dbg_cmd_queue.size > 0) {
+            for (var_1085858 = 12; (!trickle || var_1085858 > 0) && canadddebugcommand() && level.dbg_cmd_queue.size > 0; var_1085858--) {
                 cmd = pop_front(level.dbg_cmd_queue, 0);
                 adddebugcommand(cmd);
                 if (trickle) {
-                    var_1085858--;
                 }
             }
         }
@@ -4027,9 +4033,8 @@ function function_43b91cd0(specialty, talent) {
 function has_purchased_perk_equipped_with_specific_stat(single_perk_ref, stats_table_ref) {
     if (isplayer(self)) {
         return (self hasperk(single_perk_ref) && self is_item_purchased(stats_table_ref));
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace util/util_shared
@@ -4488,9 +4493,9 @@ function private function_3cb7a62d() {
     #/
     if (get_team_mapping("sidea") == #"allies" && get_team_mapping("sideb") == #"axis") {
         level clientfield::set("cf_team_mapping", 1);
-    } else {
-        level clientfield::set("cf_team_mapping", 0);
+        return;
     }
+    level clientfield::set("cf_team_mapping", 0);
 }
 
 // Namespace util/util_shared
@@ -4881,7 +4886,9 @@ function show_hit_marker(var_554cb812 = 0, var_1ed250ec = 0) {
                     self.hud_damagefeedback.time = currenttime;
                 }
             #/
-        } else if (isdefined(self) && !isdefined(self.hud_damagefeedback)) {
+            return;
+        }
+        if (isdefined(self) && !isdefined(self.hud_damagefeedback)) {
             self thread _show_hit_marker(var_554cb812, var_1ed250ec);
         }
     }
@@ -4912,9 +4919,9 @@ function function_5d36c37a(str_tag = "tag_aim_target") {
     if (!issentient(self) && !function_ffa5b184(self)) {
         if (isdefined(self gettagorigin(str_tag))) {
             self function_2baad8fc(str_tag);
-        } else {
-            self function_2baad8fc();
+            return;
         }
+        self function_2baad8fc();
     }
 }
 
@@ -4949,7 +4956,6 @@ function is_party_gamemode() {
     case #"shrp":
     case #"gun":
         return 1;
-        break;
     }
     return 0;
 }
@@ -5382,10 +5388,9 @@ function function_88e346a(timeout, func, param1, param2, param3, param4, param5)
     }
     if (result._notify !== "timeout") {
         return self function_6a97560f(var_8fcb7549);
-    } else {
-        var_8fcb7549 notify(#"death");
-        return 0;
     }
+    var_8fcb7549 notify(#"death");
+    return 0;
 }
 
 // Namespace util/util_shared
@@ -5650,13 +5655,15 @@ function teleport(pos, v_ang) {
     }
     if (isactor(self)) {
         self forceteleport(v_pos, v_ang);
-    } else if (isplayer(self)) {
+        return;
+    }
+    if (isplayer(self)) {
         self setorigin(v_pos);
         self setplayerangles(v_ang);
-    } else {
-        self.origin = v_pos;
-        self.angles = v_ang;
+        return;
     }
+    self.origin = v_pos;
+    self.angles = v_ang;
 }
 
 // Namespace util/util_shared
@@ -5669,11 +5676,11 @@ function function_1690fd42(player, persistent) {
     #/
     if (is_true(persistent)) {
         thread function_d532c33b(player);
-    } else {
-        initial_black = lui::get_luimenu("InitialBlack");
-        if (!initial_black initial_black::is_open(player)) {
-            initial_black initial_black::open(player);
-        }
+        return;
+    }
+    initial_black = lui::get_luimenu("InitialBlack");
+    if (!initial_black initial_black::is_open(player)) {
+        initial_black initial_black::open(player);
     }
 }
 
@@ -5773,9 +5780,9 @@ function function_1c8873f6(pause) {
         if (player.team != #"spectator") {
             if (pause) {
                 player function_256dd160(player);
-            } else {
-                player function_49be6dce(player);
+                continue;
             }
+            player function_49be6dce(player);
         }
     }
 }
@@ -5885,11 +5892,13 @@ function function_d608a743() {
         s_callback = self.var_c18fbf49[hash(s_result._notify)];
         if (isdefined(s_callback.params)) {
             util::single_thread_argarray(self, s_callback.func, s_callback.params);
-        } else if (isdefined(s_result.params)) {
-            util::single_thread_argarray(self, s_callback.func, s_result.params);
-        } else {
-            util::single_thread_argarray(self, s_callback.func);
+            continue;
         }
+        if (isdefined(s_result.params)) {
+            util::single_thread_argarray(self, s_callback.func, s_result.params);
+            continue;
+        }
+        util::single_thread_argarray(self, s_callback.func);
     }
 }
 

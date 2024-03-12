@@ -74,7 +74,9 @@ function slide_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fie
     if (isplayer(self) && self hasdobj(fieldname)) {
         if (bwastimejump) {
             self.var_b4099c13 = function_239993de(fieldname, #"hash_129046e1c36bd447", self, "j_ankle_ri");
-        } else if (isdefined(self.var_b4099c13)) {
+            return;
+        }
+        if (isdefined(self.var_b4099c13)) {
             stopfx(fieldname, self.var_b4099c13);
         }
     }

@@ -48,11 +48,15 @@ function sr_supply_drop_chest_fx(localclientnum, *oldval, newval, *bnewent, *bin
         self.var_4b0f392d = self playloopsound(#"hash_52036cf3cfe2b967");
         playsound(fieldname, #"hash_1f3fbd4b941aceed", self.origin + vectorscale((0, 0, 1), 35));
         function_239993de(fieldname, #"hash_64f736260391468a", self, "tag_origin");
-    } else if (bwastimejump == 2) {
+        return;
+    }
+    if (bwastimejump == 2) {
         self.n_fx = function_239993de(fieldname, #"hash_755eec380d6c4e4a", self, "tag_origin");
         self playsound(fieldname, #"hash_259adbb44db3fea8");
         self.var_3dec4e8f = self playloopsound(#"hash_5a60a8ef6b7d6df1");
-    } else if (bwastimejump == 3) {
+        return;
+    }
+    if (bwastimejump == 3) {
         if (isdefined(self.n_fx)) {
             stopfx(fieldname, self.n_fx);
         }

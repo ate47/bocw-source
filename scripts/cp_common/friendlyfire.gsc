@@ -309,9 +309,7 @@ function function_1ad87afd(entity, damage, attacker, method, weapon, einflictor)
             attacker.participation = attacker.participation + level.var_911cdf6e[#"hash_15f7f611338f7f22"];
             attacker function_73396e9f();
             function_b943ac72("Enemy killed: +" + level.var_911cdf6e[#"hash_15f7f611338f7f22"]);
-            goto LOC_0000043e;
         }
-    LOC_0000043e:
         return;
     }
     if (isdefined(entity.var_2609b537)) {
@@ -357,101 +355,100 @@ function function_2ef0e170(entity) {
         entity.team = #"allies";
     }
     for (;;) {
-        for (;;) {
-            if (!isdefined(entity)) {
-                return;
-            }
-            waitresult = undefined;
-            waitresult = entity waittill(#"damage");
-            attacker = waitresult.attacker;
-            damage = waitresult.amount;
-            method = waitresult.mod;
-            if (level.var_d3f8fb7) {
-                continue;
-            }
-            if (!isdefined(entity)) {
-                return;
-            }
-            if (is_true(entity.nofriendlyfire)) {
-                continue;
-            }
-            if (!isdefined(attacker)) {
-                continue;
-            }
-            var_f6cca883 = 0;
-            if (isplayer(attacker)) {
-                var_f6cca883 = 1;
-            } else if (isdefined(attacker.classname) && attacker.classname == "script_vehicle") {
-                owner = attacker getvehicleowner();
-                if (isdefined(owner)) {
-                    if (isplayer(owner)) {
-                        if (!isdefined(owner.var_a4dee4fd)) {
-                            var_f6cca883 = 1;
-                            attacker = owner;
-                        }
+        if (!isdefined(entity)) {
+            return;
+        }
+        waitresult = undefined;
+        waitresult = entity waittill(#"damage");
+        attacker = waitresult.attacker;
+        damage = waitresult.amount;
+        method = waitresult.mod;
+        if (level.var_d3f8fb7) {
+            continue;
+        }
+        if (!isdefined(entity)) {
+            return;
+        }
+        if (is_true(entity.nofriendlyfire)) {
+            continue;
+        }
+        if (!isdefined(attacker)) {
+            continue;
+        }
+        var_f6cca883 = 0;
+        if (isplayer(attacker)) {
+            var_f6cca883 = 1;
+        } else if (isdefined(attacker.classname) && attacker.classname == "script_vehicle") {
+            owner = attacker getvehicleowner();
+            if (isdefined(owner)) {
+                if (isplayer(owner)) {
+                    if (!isdefined(owner.var_a4dee4fd)) {
+                        var_f6cca883 = 1;
+                        attacker = owner;
                     }
                 }
-            }
-            if (!var_f6cca883) {
-                continue;
-            }
-            var_d3e9a2bd = entity.team == attacker.team;
-            if (attacker.team == #"allies") {
-                if (entity.team == #"neutral" && !is_true(level.var_cd2635a5)) {
-                    var_d3e9a2bd = 1;
-                }
-            }
-            var_d3e9a2bd = var_d3e9a2bd | util::function_9b7092ef(entity.team, attacker.team);
-            if (entity.team != #"neutral" || entity.team == #"neutral" && !is_true(level.var_cd2635a5)) {
-                attacker.var_97a2e324 = entity.team;
-            }
-            killed = damage >= entity.health;
-            if (!entity.allowdeath && !function_57dc318d(entity, method)) {
-                killed = 0;
-            }
-            if (!var_d3e9a2bd) {
-                if (killed) {
-                    attacker.participation = attacker.participation + level.var_911cdf6e[#"hash_15f7f611338f7f22"];
-                    attacker function_73396e9f();
-                    function_b943ac72("Enemy killed: +" + level.var_911cdf6e[#"hash_15f7f611338f7f22"]);
-                }
-                return;
-            }
-            if (isdefined(entity.var_2609b537)) {
-                continue;
-            }
-            if ((isdefined(attacker.participation) ? attacker.participation : 0) > 0) {
-                attacker.participation = 0;
-            }
-            if (killed) {
-                if (entity.archetype === #"civilian" || entity.team == #"neutral") {
-                    level notify(#"hash_3f3c07e5660a9695");
-                    if (attacker.participation <= 0) {
-                        attacker.participation = attacker.participation + level.var_911cdf6e[#"hash_59886fac445f4c71"];
-                        function_b943ac72("Civilian killed with negative score, autofail!");
-                    } else {
-                        attacker.participation = attacker.participation + level.var_911cdf6e[#"hash_308b6e99638b7c04"];
-                        function_b943ac72("Civilian killed: -" + 0 - level.var_911cdf6e[#"hash_308b6e99638b7c04"]);
-                    }
-                } else if (isdefined(entity) && isdefined(entity.var_f9a443f6)) {
-                    attacker.participation = attacker.participation + entity.var_f9a443f6;
-                    function_b943ac72("Friendly killed with custom penalty: -" + 0 - entity.var_f9a443f6);
-                } else {
-                    attacker.participation = attacker.participation + level.var_911cdf6e[#"hash_c52352989bad12c"];
-                    function_b943ac72("Friendly killed: -" + 0 - level.var_911cdf6e[#"hash_c52352989bad12c"]);
-                }
-            } else {
-                attacker.participation = attacker.participation - 1;
-                function_b943ac72("Friendly hurt: -" + damage);
-            }
-            attacker function_73396e9f();
-            if (function_57dc318d(entity, method) && function_b893c9c0()) {
-                if (killed) {
-                    return;
-                }
-                continue;
             }
         }
+        if (!var_f6cca883) {
+            continue;
+        }
+        var_d3e9a2bd = entity.team == attacker.team;
+        if (attacker.team == #"allies") {
+            if (entity.team == #"neutral" && !is_true(level.var_cd2635a5)) {
+                var_d3e9a2bd = 1;
+            }
+        }
+        var_d3e9a2bd = var_d3e9a2bd | util::function_9b7092ef(entity.team, attacker.team);
+        if (entity.team != #"neutral" || entity.team == #"neutral" && !is_true(level.var_cd2635a5)) {
+            attacker.var_97a2e324 = entity.team;
+        }
+        killed = damage >= entity.health;
+        if (!entity.allowdeath && !function_57dc318d(entity, method)) {
+            killed = 0;
+        }
+        if (!var_d3e9a2bd) {
+            if (killed) {
+                attacker.participation = attacker.participation + level.var_911cdf6e[#"hash_15f7f611338f7f22"];
+                attacker function_73396e9f();
+                function_b943ac72("Enemy killed: +" + level.var_911cdf6e[#"hash_15f7f611338f7f22"]);
+            }
+            return;
+        }
+        if (isdefined(entity.var_2609b537)) {
+            continue;
+        }
+        if ((isdefined(attacker.participation) ? attacker.participation : 0) > 0) {
+            attacker.participation = 0;
+        }
+        if (killed) {
+            if (entity.archetype === #"civilian" || entity.team == #"neutral") {
+                level notify(#"hash_3f3c07e5660a9695");
+                if (attacker.participation <= 0) {
+                    attacker.participation = attacker.participation + level.var_911cdf6e[#"hash_59886fac445f4c71"];
+                    function_b943ac72("Civilian killed with negative score, autofail!");
+                } else {
+                    attacker.participation = attacker.participation + level.var_911cdf6e[#"hash_308b6e99638b7c04"];
+                    function_b943ac72("Civilian killed: -" + 0 - level.var_911cdf6e[#"hash_308b6e99638b7c04"]);
+                }
+            } else if (isdefined(entity) && isdefined(entity.var_f9a443f6)) {
+                attacker.participation = attacker.participation + entity.var_f9a443f6;
+                function_b943ac72("Friendly killed with custom penalty: -" + 0 - entity.var_f9a443f6);
+            } else {
+                attacker.participation = attacker.participation + level.var_911cdf6e[#"hash_c52352989bad12c"];
+                function_b943ac72("Friendly killed: -" + 0 - level.var_911cdf6e[#"hash_c52352989bad12c"]);
+            }
+        } else {
+            attacker.participation = attacker.participation - 1;
+            function_b943ac72("Friendly hurt: -" + damage);
+        }
+        attacker function_73396e9f();
+        if (function_57dc318d(entity, method) && function_b893c9c0()) {
+            if (killed) {
+                return;
+            }
+            continue;
+        }
+        attacker function_6ba634c3();
     }
 }
 
@@ -525,11 +522,10 @@ function function_6d705b1a() {
     level endon(#"hash_7d1398df3ecfd3bf");
     self endon(#"disconnect");
     for (;;) {
-        for (;;) {
-            if (self.participation > 0) {
-                self.participation--;
-            }
+        if (self.participation > 0) {
+            self.participation--;
         }
+        wait(level.var_911cdf6e[#"hash_69a22a048631e673"]);
     }
 }
 
@@ -560,9 +556,9 @@ function function_800b98d9() {
     self.lives = 0;
     if (self.var_97a2e324 === #"neutral") {
         util::function_2a8f4806(#"hash_293687c2ffb1b911", #"hash_7d45646726cd7f74");
-    } else {
-        util::function_2a8f4806(#"hash_23aab5a843404b78", #"hash_7d45646726cd7f74");
+        return;
     }
+    util::function_2a8f4806(#"hash_23aab5a843404b78", #"hash_7d45646726cd7f74");
 }
 
 // Namespace friendlyfire/friendlyfire

@@ -567,8 +567,8 @@ function function_218c4ce8() {
         location = var_f5ae494f[0].locations[#"loot_pods"];
         if (isdefined(location.instances[#"loot_pods"])) {
             instance = location.instances[#"loot_pods"];
-            if (isdefined(instance.var_344a6a1a) && isarray(instance.var_344a6a1a)) {
-                foreach (var_37180a9f in instance.var_344a6a1a) {
+            if (isdefined(instance.a_models) && isarray(instance.a_models)) {
+                foreach (var_37180a9f in instance.a_models) {
                     var_926eb7ac = {#origin:var_37180a9f.origin, #angles:var_37180a9f.angles, #prop:var_37180a9f, #lure_prop_type:2};
                     level.var_6e175eb[level.var_6e175eb.size] = var_926eb7ac;
                 }

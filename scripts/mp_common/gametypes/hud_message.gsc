@@ -81,7 +81,6 @@ function function_82f36142(var_c1e98979) {
         return 1;
     default:
         return 0;
-        break;
     }
     return 0;
 }
@@ -93,9 +92,8 @@ function function_82f36142(var_c1e98979) {
 function private function_460b0309(game_end) {
     if (game_end) {
         return game.strings[#"draw"];
-    } else {
-        return game.strings[#"round_draw"];
     }
+    return game.strings[#"round_draw"];
 }
 
 // Namespace hud_message/hud_message
@@ -233,7 +231,9 @@ function teamoutcomenotify(outcome) {
             var_277c7d47 = 0;
         }
         self luinotifyevent(#"show_outcome", 7, var_14f94126, outcometext, int(matchbonus), winnerenum, var_277c7d47, int(float(winningtime) / 1000), int(float(losingtime) / 1000));
-    } else if (level.gametype == "ball" && !outcome::get_flag(outcome, "tie") && game.roundsplayed < level.roundlimit && isdefined(game.round_time_to_beat) && !overtime::is_overtime_round()) {
+        return;
+    }
+    if (level.gametype == "ball" && !outcome::get_flag(outcome, "tie") && game.roundsplayed < level.roundlimit && isdefined(game.round_time_to_beat) && !overtime::is_overtime_round()) {
         winningtime = game.round_time_to_beat;
         if (!isdefined(losingtime)) {
             losingtime = 0;
@@ -243,19 +243,19 @@ function teamoutcomenotify(outcome) {
             var_277c7d47 = 0;
         }
         self luinotifyevent(#"show_outcome", 7, var_14f94126, outcometext, int(matchbonus), winnerenum, var_277c7d47, int(float(winningtime) / 1000), int(float(losingtime) / 1000));
-    } else {
-        if (team == #"spectator" && outcome.var_7d5c2c5f) {
-            if (outcome.var_c1e98979 == 6) {
-                var_14f94126 = game.strings[#"cod_caster_team_eliminated"];
-            }
-            var_14f94126 = game.strings[#"cod_caster_team_wins"];
-            var_277c7d47 = 0;
+        return;
+    }
+    if (team == #"spectator" && outcome.var_7d5c2c5f) {
+        if (outcome.var_c1e98979 == 6) {
+            var_14f94126 = game.strings[#"cod_caster_team_eliminated"];
         }
-        self luinotifyevent(#"show_outcome", 5, var_14f94126, outcometext, int(matchbonus), winnerenum, var_277c7d47);
-        if (var_277c7d47 && game.roundsplayed < level.roundlimit) {
-            self luinotifyevent(#"hash_84895967cf4425c");
-            wait(1);
-        }
+        var_14f94126 = game.strings[#"cod_caster_team_wins"];
+        var_277c7d47 = 0;
+    }
+    self luinotifyevent(#"show_outcome", 5, var_14f94126, outcometext, int(matchbonus), winnerenum, var_277c7d47);
+    if (var_277c7d47 && game.roundsplayed < level.roundlimit) {
+        self luinotifyevent(#"hash_84895967cf4425c");
+        wait(1);
     }
 }
 
@@ -275,9 +275,9 @@ function outcomenotify(outcome) {
     if (isdefined(team) && team == #"spectator" && outcome.var_7d5c2c5f) {
         outcometext = game.strings[#"cod_caster_team_wins"];
         self luinotifyevent(#"show_outcome", 5, outcome.var_14f94126, outcometext, matchbonus, outcome::get_winner(outcome), 0);
-    } else {
-        self luinotifyevent(#"show_outcome", 4, outcome.var_14f94126, outcometext, matchbonus, numclients);
+        return;
     }
+    self luinotifyevent(#"show_outcome", 4, outcome.var_14f94126, outcometext, matchbonus, numclients);
 }
 
 // Namespace hud_message/hud_message

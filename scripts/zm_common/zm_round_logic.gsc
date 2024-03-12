@@ -161,15 +161,13 @@ function function_e6937bfa() {
     while (level.zombie_total > 3) {
         wait(3);
     }
-    a_ai_zombies = zombie_utility::get_round_enemy_array();
-    while (a_ai_zombies.size > 0 || level.zombie_total > 0) {
+    for (a_ai_zombies = zombie_utility::get_round_enemy_array(); a_ai_zombies.size > 0 || level.zombie_total > 0; a_ai_zombies = zombie_utility::get_round_enemy_array()) {
         if (a_ai_zombies.size <= 3) {
             foreach (ai_zombie in a_ai_zombies) {
                 ai_zombie thread registercentrifuge_zip_doormember();
             }
         }
         wait(1);
-        a_ai_zombies = zombie_utility::get_round_enemy_array();
     }
 }
 
@@ -191,7 +189,9 @@ function private registercentrifuge_zip_doormember() {
                 }
                 self zombie_utility::set_zombie_run_cycle("sprint");
             }
-        } else if (self.archetype == #"tiger") {
+            return;
+        }
+        if (self.archetype == #"tiger") {
             self.var_eceaa835 = 1;
             self ai::set_behavior_attribute("sprint", 1);
         }
@@ -310,9 +310,9 @@ function round_spawning() {
         }
         if (var_3cafeff5) {
             wait(isdefined(zombie_utility::function_d2dfacfd(#"zombie_spawn_delay")) ? zombie_utility::function_d2dfacfd(#"zombie_spawn_delay") : zombie_utility::function_d2dfacfd(#"hash_7d5a25e2463f7fc5"));
-        } else {
-            util::wait_network_frame();
+            continue;
         }
+        util::wait_network_frame();
     }
 }
 
@@ -462,23 +462,23 @@ function run_custom_ai_spawn_checks() {
                 a_locations = [[ s.func_get_locations ]]();
                 level.zm_loc_types[#"zombie_location"] = arraycombine(level.zm_loc_types[#"zombie_location"], a_locations, 0, 0);
             }
-        } else {
-            a_spawners = [[ s.func_get_spawners ]]();
+            continue;
+        }
+        a_spawners = [[ s.func_get_spawners ]]();
+        foreach (sp in a_spawners) {
+            arrayremovevalue(level.zombie_spawners, sp);
+        }
+        if (is_true(level.use_multiple_spawns)) {
             foreach (sp in a_spawners) {
-                arrayremovevalue(level.zombie_spawners, sp);
-            }
-            if (is_true(level.use_multiple_spawns)) {
-                foreach (sp in a_spawners) {
-                    if (isdefined(sp.script_int) && isdefined(level.zombie_spawn[sp.script_int])) {
-                        arrayremovevalue(level.zombie_spawn[sp.script_int], sp);
-                    }
+                if (isdefined(sp.script_int) && isdefined(level.zombie_spawn[sp.script_int])) {
+                    arrayremovevalue(level.zombie_spawn[sp.script_int], sp);
                 }
             }
-            if (isdefined(s.func_get_locations)) {
-                a_locations = [[ s.func_get_locations ]]();
-                foreach (s_loc in a_locations) {
-                    arrayremovevalue(level.zm_loc_types[#"zombie_location"], s_loc);
-                }
+        }
+        if (isdefined(s.func_get_locations)) {
+            a_locations = [[ s.func_get_locations ]]();
+            foreach (s_loc in a_locations) {
+                arrayremovevalue(level.zm_loc_types[#"zombie_location"], s_loc);
             }
         }
     }
@@ -651,7 +651,7 @@ function round_over() {
     foreach (player in getplayers()) {
         if (is_true(player.var_6696e200)) {
             wait(level.var_54d9d726);
-            break;
+            return;
         }
     }
 }
@@ -727,9 +727,9 @@ function private function_89888d49() {
     foreach (player in level.players) {
         if (!player gamepadusedlast()) {
             player util::delay(5, "end_game", &zm_equipment::show_hint_text, #"hash_372a154dca05d6ba");
-        } else {
-            player util::delay(5, "end_game", &zm_equipment::show_hint_text, #"hash_7ad0fd9b634f581a");
+            continue;
         }
+        player util::delay(5, "end_game", &zm_equipment::show_hint_text, #"hash_7ad0fd9b634f581a");
     }
 }
 
@@ -829,17 +829,17 @@ function round_think(restart = 0) {
                 foreach (player in level.players) {
                     if (!isplayer(player)) {
                         var_f2f19afd[var_f2f19afd.size] = "<unknown string>";
-                    } else {
-                        var_f2f19afd[var_f2f19afd.size] = player.sessionstate;
+                        continue;
                     }
+                    var_f2f19afd[var_f2f19afd.size] = player.sessionstate;
                 }
                 var_9114f285 = [];
                 foreach (player in getplayers()) {
                     if (!isplayer(player)) {
                         var_9114f285[var_9114f285.size] = "<unknown string>";
-                    } else {
-                        var_9114f285[var_9114f285.size] = player.sessionstate;
+                        continue;
                     }
+                    var_9114f285[var_9114f285.size] = player.sessionstate;
                 }
                 message = "<unknown string>" + level.players.size + "<unknown string>" + getplayers().size + "<unknown string>";
                 foreach (state in var_f2f19afd) {

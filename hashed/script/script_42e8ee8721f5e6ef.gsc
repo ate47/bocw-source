@@ -14,9 +14,9 @@ function function_c5dda35e(category, ...) {
             foreach (file in filename) {
                 function_b8e1addf(category, file);
             }
-        } else {
-            function_b8e1addf(category, filename);
+            continue;
         }
+        function_b8e1addf(category, filename);
     }
 }
 
@@ -43,7 +43,7 @@ function function_b8e1addf(category, filename) {
             var_c605de16[var_c605de16.size] = tolower(alias);
         }
         if (var_be812f0a == "" && var_7e8c6c7c == "" && var_c605de16.size == 0) {
-            break;
+            return;
         }
         if (var_be812f0a == "") {
             var_be812f0a = "all";
@@ -117,8 +117,7 @@ function exists(category, type, modifier) {
 function private categorykey(category, type = "all", modifier = "all") {
     if (category == "combat") {
         return modifier;
-    } else {
-        return (tolower("" + type) + "_" + tolower("" + modifier));
     }
+    return tolower("" + type) + "_" + tolower("" + modifier);
 }
 

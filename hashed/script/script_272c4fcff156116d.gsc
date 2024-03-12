@@ -39,8 +39,8 @@ function function_59e67711(objective) {
     if (isdefined(level.var_643f86fe.levelname)) {
         clientsyssetstate(level.var_643f86fe.var_7e507488, "0," + objective + "," + level.gameskill + "," + level.var_1c5d2bf4 + "," + level.var_643f86fe.levelname);
         level.var_643f86fe.levelname = undefined;
-    } else {
-        clientsyssetstate(level.var_643f86fe.var_7e507488, "1," + objective + "," + level.gameskill + "," + level.var_1c5d2bf4);
+        return;
     }
+    clientsyssetstate(level.var_643f86fe.var_7e507488, "1," + objective + "," + level.gameskill + "," + level.var_1c5d2bf4);
 }
 

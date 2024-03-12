@@ -149,13 +149,19 @@ function function_6a3e8a89() {
                     }
                 }
             }
-        } else if (!isdefined(self.parent_struct.door)) {
+            continue;
+        }
+        if (!isdefined(self.parent_struct.door)) {
             self.parent_struct.trigger sethintstring(#"hash_3d9e6b6b1984617d");
-        } else if (self.parent_struct.door.var_27a45076 === -1 || self.parent_struct.door.var_27a45076 === 1) {
+            continue;
+        }
+        if (self.parent_struct.door.var_27a45076 === -1 || self.parent_struct.door.var_27a45076 === 1) {
             if (!is_true(self.parent_struct.door.var_9420d4b4)) {
                 self.parent_struct.trigger sethintstring(#"hash_3197c6dc91249ca2");
             }
-        } else if (!is_true(self.parent_struct.door.var_9420d4b4)) {
+            continue;
+        }
+        if (!is_true(self.parent_struct.door.var_9420d4b4)) {
             self.parent_struct.trigger sethintstring(#"hash_e0e56e669b6a886");
         }
     }
@@ -171,7 +177,9 @@ function private door_think(eventstruct) {
     door = self.parent_struct.door;
     if (isdefined(door) && is_true(door.var_9420d4b4)) {
         self thread function_48a16d8d(player, &door_think);
-    } else if (isdefined(door)) {
+        return;
+    }
+    if (isdefined(door)) {
         var_cbd0719e = door.angles;
         var_f6f828b2 = vectorscale((0, 1, 0), 90) + var_cbd0719e;
         var_bc7389e4 = vectorscale((0, -1, 0), 90) + var_cbd0719e;
@@ -215,10 +223,10 @@ function private door_think(eventstruct) {
             door namespace_85745671::function_a63a9610();
         }
         self thread function_be463e75(0.5, &door_think);
-    } else {
-        self sethintstring(#"hash_3d9e6b6b1984617d");
-        self thread function_48a16d8d(player, &door_think);
+        return;
     }
+    self sethintstring(#"hash_3d9e6b6b1984617d");
+    self thread function_48a16d8d(player, &door_think);
 }
 
 // Namespace namespace_4faef43b/event_1524de24
@@ -232,7 +240,9 @@ function event_handler[event_1524de24] function_9d78f548(eventstruct) {
     }
     if (parent_struct.targetname == "survival_door") {
         self function_ae47792b(eventstruct);
-    } else if (parent_struct.targetname == "survival_window") {
+        return;
+    }
+    if (parent_struct.targetname == "survival_window") {
         self function_994e81b7(eventstruct);
     }
 }
@@ -274,7 +284,9 @@ function function_ae47792b(eventstruct) {
         self.parent_struct.trigger sethintstring(#"hash_3d9e6b6b1984617d");
         waittillframeend();
         self delete();
-    } else if (self.var_9420d4b4) {
+        return;
+    }
+    if (self.var_9420d4b4) {
         if (self.model != parent_struct.var_a7417bea[self.damage_level]) {
             self.parent_struct.fx_org clientfield::increment("" + #"hash_322ed89801938bb9");
         }
@@ -409,9 +421,13 @@ function private function_51095a3d() {
                     }
                 }
             }
-        } else if (!isdefined(self.parent_struct.window)) {
+            continue;
+        }
+        if (!isdefined(self.parent_struct.window)) {
             self sethintstring(#"hash_3766e0d30f6782ad");
-        } else if (isdefined(self.parent_struct.window.damage_level) && self.parent_struct.window.damage_level > 0) {
+            continue;
+        }
+        if (isdefined(self.parent_struct.window.damage_level) && self.parent_struct.window.damage_level > 0) {
             self sethintstring(#"hash_7b18ee0053fc3a7b");
         }
     }
@@ -441,7 +457,9 @@ function private function_994e81b7(eventstruct) {
         self.parent_struct.trigger sethintstring(#"hash_3766e0d30f6782ad");
         waittillframeend();
         self delete();
-    } else if (self.damage_level > 0) {
+        return;
+    }
+    if (self.damage_level > 0) {
         if (self.model != self.parent_struct.var_811c2d3a[self.damage_level]) {
             self.parent_struct.fx_org clientfield::increment("" + #"hash_1f232116f775fa91");
         }

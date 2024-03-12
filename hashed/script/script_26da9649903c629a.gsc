@@ -251,7 +251,9 @@ function function_f4567c7c(distance, level_notify) {
     if (distance < 1000) {
         level.players[0] playrumbleonentity("damage_heavy");
         screenshake(source, pitch[1], yaw[1], roll[1], duration[1], 0, 0, 0, freqpitch, freqyaw);
-    } else if (distance < 1500) {
+        return;
+    }
+    if (distance < 1500) {
         level.players[0] playrumbleonentity("damage_light");
         screenshake(source, pitch[0], yaw[0], roll[0], duration[0], 0, 0, 0, freqpitch, freqyaw);
     }

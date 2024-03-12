@@ -57,9 +57,9 @@ function on_player_spawn() {
                     if (s_waitresult._notify !== #"hash_360ecb13f668ae0f") {
                         break;
                     }
-                } else {
-                    break;
+                    continue;
                 }
+                break;
             }
             self.var_9c1a4644 = undefined;
         }

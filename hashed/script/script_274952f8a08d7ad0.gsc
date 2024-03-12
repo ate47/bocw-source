@@ -43,42 +43,42 @@ function function_c64b5405(newval) {
     switch (newval) {
     case 0:
         self function_eadd0084();
-        break;
+        return;
     case 1:
         self function_7aa6104();
-        break;
+        return;
     case 2:
         self function_19690481();
-        break;
+        return;
     case 3:
         self function_7f56196();
-        break;
+        return;
     case 4:
         self function_19a404f3();
-        break;
+        return;
     case 5:
         self function_f27b36a2();
-        break;
+        return;
     case 6:
         self function_4887c796();
-        break;
+        return;
     case 7:
         self function_22441ab3();
-        break;
+        return;
     case 8:
         self function_5a740afe();
-        break;
+        return;
     case 9:
         self function_681e2652();
-        break;
+        return;
     case 10:
         self function_bd015017();
-        break;
+        return;
     case 11:
         self function_ccb26f79();
-        break;
+        return;
     default:
-        break;
+        return;
     }
 }
 
@@ -92,9 +92,9 @@ function function_8152b11(param) {
     }
     if (param != "") {
         self function_5953bec0(param);
-    } else {
-        self function_5953bec0();
+        return;
     }
+    self function_5953bec0();
 }
 
 // Namespace cinematicmotion/namespace_345fff71
@@ -121,9 +121,9 @@ function function_bd8097ae(duration, endval) {
     if (var_48f70e07 > 0) {
         var_6f465937 = self function_d40e85f();
         self function_6757d9a1(var_6f465937, var_9a52780d, var_48f70e07);
-    } else {
-        self function_97c2dab8(var_9a52780d);
+        return;
     }
+    self function_97c2dab8(var_9a52780d);
 }
 
 // Namespace cinematicmotion/namespace_345fff71
@@ -144,7 +144,7 @@ function function_6757d9a1(startval, endval, duration) {
         frac = lerpfloat(startval, endval, t);
         self function_97c2dab8(frac);
         if (t == 1) {
-            break;
+            return;
         }
         waitframe(1);
     }

@@ -29,7 +29,9 @@ function autoexec main() {
 function facialdialoguehandler(*localclientnum, *oldvalue, newvalue, *bnewent, *binitialsnap, *fieldname, *wasdemojump) {
     if (wasdemojump) {
         self.facialdialogueactive = 1;
-    } else if (is_true(self.facialdialogueactive)) {
+        return;
+    }
+    if (is_true(self.facialdialogueactive)) {
         self clearanim(#"faces", 0);
     }
 }

@@ -113,7 +113,9 @@ function private on_menu_response(eventstruct) {
                 self switchtoweapon(killstreakweapon);
             }
         }
-    } else if (eventstruct.response === "scorestreak_pool_purchase_and_use" && level.var_5b544215 === 1) {
+        return;
+    }
+    if (eventstruct.response === "scorestreak_pool_purchase_and_use" && level.var_5b544215 === 1) {
         eventstruct = eventstruct;
         var_180d3406 = getscriptbundlelist(level.var_d1455682.var_a45c9c63);
         var_b133a8aa = getscriptbundle(var_180d3406[eventstruct.intpayload]);

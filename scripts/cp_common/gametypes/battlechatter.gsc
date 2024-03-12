@@ -121,18 +121,18 @@ function function_4a19b47a() {
     #/
     if (is_hero(self)) {
         self.var_3d0026c9 = "";
-    } else {
-        switch (self.voiceprefix) {
-        case #"hash_6600f5c535189183":
-            self.var_3d0026c9 = randomintrange(1, 3);
-            break;
-        case #"hash_6d6e10c538f37ef3":
-            self.var_3d0026c9 = randomintrange(1, 5);
-            break;
-        default:
-            self.var_3d0026c9 = randomintrange(1, 4);
-            break;
-        }
+        return;
+    }
+    switch (self.voiceprefix) {
+    case #"hash_6600f5c535189183":
+        self.var_3d0026c9 = randomintrange(1, 3);
+        return;
+    case #"hash_6d6e10c538f37ef3":
+        self.var_3d0026c9 = randomintrange(1, 5);
+        return;
+    default:
+        self.var_3d0026c9 = randomintrange(1, 4);
+        return;
     }
 }
 
@@ -207,7 +207,6 @@ function function_7b3f38c6(mod) {
     case #"mod_impact":
     case #"mod_melee":
         return 0;
-        break;
     }
     return 1;
 }
@@ -239,7 +238,9 @@ function event_handler[actor_killed] function_a94f4749(eventstruct) {
                 attacker thread function_bd51deb1("enemyKill");
             }
         }
-    } else if (isdefined(self)) {
+        return;
+    }
+    if (isdefined(self)) {
         meleeassassinate = isdefined(meansofdeath) && meansofdeath == "MOD_MELEE_ASSASSINATE";
         if (isdefined(self.archetype) && self.archetype == "warlord") {
             self playsound(#"hash_2083f6ebc94b5bc7");
@@ -270,9 +271,9 @@ function event_handler[actor_killed] function_a94f4749(eventstruct) {
                 if (sniper) {
                     attacker.var_e598a03f = 1;
                     close_ai thread function_bd51deb1("sniperthreat");
-                } else {
-                    close_ai thread function_bd51deb1("friendlydown");
+                    return;
                 }
+                close_ai thread function_bd51deb1("friendlydown");
             }
         }
     }
@@ -365,7 +366,9 @@ function event_handler[grenade_fire] function_edd0c161(eventstruct) {
     if (weapon.name == #"eq_frag_grenade" || weapon.name == #"frag_grenade" || weapon.name == #"hash_15ed0347f1459a04") {
         self thread function_bd51deb1("grenadetoss");
         level thread function_8be08180(self, grenade, "grenadeincoming");
-    } else if (weapon.name == #"hash_5453c9b880261bcb" || weapon.name == #"flash_grenade" || weapon.name == #"hash_ae7d40bb12f5ab6") {
+        return;
+    }
+    if (weapon.name == #"hash_5453c9b880261bcb" || weapon.name == #"flash_grenade" || weapon.name == #"hash_ae7d40bb12f5ab6") {
         self thread function_bd51deb1("flashtoss");
         level thread function_8be08180(self, grenade, "flashincoming");
     }
@@ -423,9 +426,9 @@ function function_e0d850d2() {
     if (isdefined(attacker) && !isplayer(attacker)) {
         if (meansofdeath == "MOD_MELEE") {
             attacker thread function_bd51deb1("meleeKill");
-        } else {
-            attacker thread function_bd51deb1("enemyKill");
+            return;
         }
+        attacker thread function_bd51deb1("enemyKill");
     }
 }
 
@@ -439,9 +442,9 @@ function function_413ce774(object, type) {
     if (isdefined(ai)) {
         if (type == "car") {
             level thread function_9cb2c120(ai, "destructiblecar");
-        } else {
-            level thread function_9cb2c120(ai, "destructiblebarrel");
+            return;
         }
+        level thread function_9cb2c120(ai, "destructiblebarrel");
     }
 }
 
@@ -626,13 +629,13 @@ function function_7e56a9a1(soundalias, var_954826ad, var_a8bd89dd, category, var
                     self stopsound(soundalias);
                 }
             }
-        } else {
-            /#
-                if (getdvarint(#"hash_2abde9f4bcb01a86")) {
-                    print3d(self.origin + vectorscale((0, 0, 1), 60), soundalias, (1, 0, 0), 1, 1, 100);
-                }
-            #/
+            return;
         }
+        /#
+            if (getdvarint(#"hash_2abde9f4bcb01a86")) {
+                print3d(self.origin + vectorscale((0, 0, 1), 60), soundalias, (1, 0, 0), 1, 1, 100);
+            }
+        #/
     }
 }
 
@@ -718,9 +721,7 @@ function pain_vox() {
                     if (self.var_2503219f) {
                         self thread function_5ef33d49();
                     }
-                    goto LOC_000000e6;
                 }
-            LOC_000000e6:
                 soundalias = "vox_plyr_exert_pain";
                 self thread function_7e56a9a1(soundalias, 1);
             }
@@ -794,14 +795,14 @@ function function_c17c8a8e(var_928cff8, maxdist) {
                 continue;
             }
             if (!is_hero(var_710a1e51) && !is_hero(var_928cff8)) {
-                jumpiffalse(var_710a1e51.var_3d0026c9 == var_928cff8.var_3d0026c9) LOC_000001c2;
-            } else {
-            LOC_000001c2:
-                if (distance(var_928cff8.origin, var_710a1e51.origin) > maxdist) {
+                if (var_710a1e51.var_3d0026c9 == var_928cff8.var_3d0026c9) {
                     continue;
                 }
-                return var_710a1e51;
             }
+            if (distance(var_928cff8.origin, var_710a1e51.origin) > maxdist) {
+                continue;
+            }
+            return var_710a1e51;
         }
     }
     return undefined;

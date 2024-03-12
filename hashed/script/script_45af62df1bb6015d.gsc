@@ -49,9 +49,9 @@ function private function_ef87790b(localclientnum, oldval, newval, *bnewent, *bi
     start = bwastimejump & 1;
     if (start) {
         self function_3653370a(binitialsnap);
-    } else {
-        self function_9b9eaf7e();
+        return;
     }
+    self function_9b9eaf7e();
 }
 
 // Namespace lockpick/lockpick
@@ -183,25 +183,25 @@ function private function_a0aa5f5f(init) {
         self.var_e10de4ad.scratch.var_5d92bcc8 = randomfloatrange(self.var_e10de4ad.var_be8b922e.var_84bfe4cb * self.var_e10de4ad.var_be8b922e.var_9be11610, 90) * math::randomsign();
         self.var_e10de4ad.scratch.var_9fa74a7c = math::sign(self.var_e10de4ad.scratch.var_5d92bcc8);
         self.var_e10de4ad.scratch.var_66a8f3b7 = randomfloatrange(self.var_e10de4ad.var_be8b922e.var_84bfe4cb * 2, abs(-60)) * math::randomsign();
-    } else {
-        var_4cbec6df = self function_17e7b461();
-        var_17ecda5a = 0;
-        var_76514cc5 = var_4cbec6df * self.var_e10de4ad.var_be8b922e.var_9be11610;
-        if (self.var_e10de4ad.var_be8b922e.var_71de0627 == "random") {
-            var_17ecda5a = randomfloatrange(var_76514cc5, 90) * math::randomsign();
-            if (abs(self.var_e10de4ad.scratch.var_5d92bcc8 + var_17ecda5a) > 90) {
-                var_17ecda5a = var_17ecda5a * -1;
-            }
-        } else if (self.var_e10de4ad.var_be8b922e.var_71de0627 == "alternating sides") {
-            var_17ecda5a = randomfloatrange(var_76514cc5, 90 + abs(self.var_e10de4ad.scratch.var_5d92bcc8)) * math::sign(self.var_e10de4ad.scratch.var_5d92bcc8) * -1;
-        } else if (self.var_e10de4ad.var_be8b922e.var_71de0627 == "alternating directions") {
-            self.var_e10de4ad.scratch.var_9fa74a7c = self.var_e10de4ad.scratch.var_9fa74a7c * -1;
-            var_7f321bad = var_4cbec6df * self.var_e10de4ad.var_be8b922e.var_59079673;
-            var_17ecda5a = randomfloatrange(var_76514cc5, var_7f321bad) * self.var_e10de4ad.scratch.var_9fa74a7c;
-        }
-        self.var_e10de4ad.scratch.var_5d92bcc8 = self.var_e10de4ad.scratch.var_5d92bcc8 + var_17ecda5a;
-        self.var_e10de4ad.scratch.var_66a8f3b7 = randomfloatrange(self.var_e10de4ad.var_be8b922e.var_84bfe4cb * 2, abs(-60)) * math::sign(self.var_e10de4ad.scratch.var_66a8f3b7) * -1;
+        return;
     }
+    var_4cbec6df = self function_17e7b461();
+    var_17ecda5a = 0;
+    var_76514cc5 = var_4cbec6df * self.var_e10de4ad.var_be8b922e.var_9be11610;
+    if (self.var_e10de4ad.var_be8b922e.var_71de0627 == "random") {
+        var_17ecda5a = randomfloatrange(var_76514cc5, 90) * math::randomsign();
+        if (abs(self.var_e10de4ad.scratch.var_5d92bcc8 + var_17ecda5a) > 90) {
+            var_17ecda5a = var_17ecda5a * -1;
+        }
+    } else if (self.var_e10de4ad.var_be8b922e.var_71de0627 == "alternating sides") {
+        var_17ecda5a = randomfloatrange(var_76514cc5, 90 + abs(self.var_e10de4ad.scratch.var_5d92bcc8)) * math::sign(self.var_e10de4ad.scratch.var_5d92bcc8) * -1;
+    } else if (self.var_e10de4ad.var_be8b922e.var_71de0627 == "alternating directions") {
+        self.var_e10de4ad.scratch.var_9fa74a7c = self.var_e10de4ad.scratch.var_9fa74a7c * -1;
+        var_7f321bad = var_4cbec6df * self.var_e10de4ad.var_be8b922e.var_59079673;
+        var_17ecda5a = randomfloatrange(var_76514cc5, var_7f321bad) * self.var_e10de4ad.scratch.var_9fa74a7c;
+    }
+    self.var_e10de4ad.scratch.var_5d92bcc8 = self.var_e10de4ad.scratch.var_5d92bcc8 + var_17ecda5a;
+    self.var_e10de4ad.scratch.var_66a8f3b7 = randomfloatrange(self.var_e10de4ad.var_be8b922e.var_84bfe4cb * 2, abs(-60)) * math::sign(self.var_e10de4ad.scratch.var_66a8f3b7) * -1;
 }
 
 // Namespace lockpick/lockpick
@@ -267,9 +267,9 @@ function private function_8b0dc9ba(localclientnum) {
         self.var_e10de4ad.scratch.input[#"look"] = util::function_63320ea1(self.var_e10de4ad.scratch.input[#"look"], 0.2, var_859fc98);
         var_bef152 = self.var_e10de4ad.var_be8b922e.var_4436bd13 == "move" && self.var_e10de4ad.var_be8b922e.var_f1206d0d == "left-right" || self.var_e10de4ad.var_be8b922e.var_4436bd13 != "move" && self.var_e10de4ad.var_be8b922e.var_d74b78fc == "tension";
         self.var_e10de4ad.scratch.input[#"move"] = util::function_63320ea1(self.var_e10de4ad.scratch.input[#"move"], 0.2, var_bef152);
-    } else {
-        self.var_e10de4ad.scratch.input[#"look"] = self.var_e10de4ad.scratch.input[#"look"] * 10;
+        return;
     }
+    self.var_e10de4ad.scratch.input[#"look"] = self.var_e10de4ad.scratch.input[#"look"] * 10;
 }
 
 // Namespace lockpick/lockpick
@@ -299,9 +299,7 @@ function private function_395ef29b(input) {
 // Size: 0x32c
 function private function_fcaeb0c3(input) {
     if (self.var_e10de4ad.var_be8b922e.var_d74b78fc == "auto") {
-        goto LOC_000002f8;
-    }
-    if (self.var_e10de4ad.var_be8b922e.var_d74b78fc == "tension" || !self.var_e10de4ad.scratch.var_8e926fa1) {
+    } else if (self.var_e10de4ad.var_be8b922e.var_d74b78fc == "tension" || !self.var_e10de4ad.scratch.var_8e926fa1) {
         if (input[0] < 0) {
             if (input[0] < -0.75) {
                 self.var_e10de4ad.scratch.var_7c5c4577 = anglelerp(self.var_e10de4ad.scratch.var_7c5c4577, -60, 0.25);
@@ -319,11 +317,8 @@ function private function_fcaeb0c3(input) {
             }
         } else {
             self.var_e10de4ad.scratch.var_7c5c4577 = anglelerp(self.var_e10de4ad.scratch.var_7c5c4577, 0, 0.25);
-        LOC_000002f8:
         }
-    LOC_000002f8:
     }
-LOC_000002f8:
     function_59f6b71c(self.localclientnum, self.var_e10de4ad.scratch.var_7c5c4577);
 }
 
@@ -415,14 +410,16 @@ function private function_74dbcf3e(var_999c568b) {
         } else {
             self function_efaef15b(self.localclientnum, 0);
         }
-    } else if (var_999c568b) {
-        self function_efaef15b(self.localclientnum, 1);
-    } else {
-        if (self.var_e10de4ad.var_be8b922e.var_d74b78fc == "tension" || !self.var_e10de4ad.scratch.var_8e926fa1) {
-            var_60088c20 = 360;
-        }
-        self function_efaef15b(self.localclientnum, 0);
+        return;
     }
+    if (var_999c568b) {
+        self function_efaef15b(self.localclientnum, 1);
+        return;
+    }
+    if (self.var_e10de4ad.var_be8b922e.var_d74b78fc == "tension" || !self.var_e10de4ad.scratch.var_8e926fa1) {
+        var_60088c20 = 360;
+    }
+    self function_efaef15b(self.localclientnum, 0);
 }
 
 // Namespace lockpick/lockpick

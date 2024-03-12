@@ -99,9 +99,9 @@ function function_c25b3c76(launchvector, attacker) {
     self namespace_83eb6304::function_3ecfde67("gut_explode");
     if (isdefined(launchvector)) {
         self thread namespace_ec06fe4a::function_b4ff2191(launchvector, 100, undefined, attacker);
-    } else {
-        self dodamage(self.health + 101, self.origin, attacker, attacker);
+        return;
     }
+    self dodamage(self.health + 101, self.origin, attacker, attacker);
 }
 
 // Namespace namespace_ed80aead/namespace_ed80aead
@@ -115,9 +115,13 @@ function trygibbinghead(entity, damage, weapon, var_fd90b0bb, hitloc = "head", i
     }
     if (forced || isexplosive && randomfloatrange(0, 1) <= 0.5) {
         gibserverutils::gibhead(entity, var_c3317960);
-    } else if (isinarray(array("head", "neck", "helmet"), hitloc) && randomfloatrange(0, 1) <= 1) {
+        return;
+    }
+    if (isinarray(array("head", "neck", "helmet"), hitloc) && randomfloatrange(0, 1) <= 1) {
         gibserverutils::gibhead(entity, var_c3317960);
-    } else if (entity.health - damage <= 0 && randomfloatrange(0, 1) <= 0.25) {
+        return;
+    }
+    if (entity.health - damage <= 0 && randomfloatrange(0, 1) <= 0.25) {
         gibserverutils::gibhead(entity, var_c3317960);
     }
 }
@@ -139,18 +143,26 @@ function trygibbinglimb(entity, damage, weapon, var_fd90b0bb, hitloc, isexplosiv
         } else if (!gibserverutils::isgibbed(entity, 32)) {
             gibserverutils::gibleftarm(entity, var_c3317960);
         }
-    } else if (isinarray(array("left_hand", "left_arm_lower", "left_arm_upper"), hitloc)) {
+        return;
+    }
+    if (isinarray(array("left_hand", "left_arm_lower", "left_arm_upper"), hitloc)) {
         if (!gibserverutils::isgibbed(entity, 32)) {
             gibserverutils::gibleftarm(entity, var_c3317960);
         }
-    } else if (entity.health - damage <= 0 && entity.allowdeath && isinarray(array("right_hand", "right_arm_lower", "right_arm_upper"), hitloc)) {
+        return;
+    }
+    if (entity.health - damage <= 0 && entity.allowdeath && isinarray(array("right_hand", "right_arm_lower", "right_arm_upper"), hitloc)) {
         gibserverutils::gibrightarm(entity, var_c3317960);
-    } else if (entity.health - damage <= 0 && entity.allowdeath && randomfloatrange(0, 1) <= 0.45) {
+        return;
+    }
+    if (entity.health - damage <= 0 && entity.allowdeath && randomfloatrange(0, 1) <= 0.45) {
         if (math::cointoss()) {
             if (!gibserverutils::isgibbed(entity, 32)) {
                 gibserverutils::gibleftarm(entity, var_c3317960);
             }
-        } else if (!gibserverutils::isgibbed(entity, 16)) {
+            return;
+        }
+        if (!gibserverutils::isgibbed(entity, 16)) {
             gibserverutils::gibrightarm(entity, var_c3317960);
         }
     }

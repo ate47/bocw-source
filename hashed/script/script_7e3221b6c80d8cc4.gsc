@@ -452,14 +452,12 @@ function function_314b7255(text, color, alpha, scale, offset, life) {
         self.stealth.var_7555e1a1++;
         var_bd61e087 = self.stealth.var_7555e1a1;
         self.stealth.var_81c53854[var_bd61e087] = offset;
-        previd = var_bd61e087 - 1;
-        while (isdefined(self.stealth.var_81c53854[previd])) {
+        for (previd = var_bd61e087 - 1; isdefined(self.stealth.var_81c53854[previd]); previd = previd - 1) {
             delta = self.stealth.var_81c53854[previd][2] - self.stealth.var_81c53854[previd + 1][2];
             if (delta >= spacing) {
                 break;
             }
             self.stealth.var_81c53854[previd] = (self.stealth.var_81c53854[previd][0], self.stealth.var_81c53854[previd][1], self.stealth.var_81c53854[previd + 1][2] + spacing + delta);
-            previd = previd - 1;
         }
         draworigin = self.stealth.var_81c53854[var_bd61e087];
         while (gettime() - start < life * 1000) {
@@ -614,9 +612,11 @@ function function_3e6e06ae(baseangles, angle, var_875fcd86) {
     /#
         if (var_875fcd86 == 0) {
             return anglestoforward(baseangles + (angle, 0, 0));
-        } else if (var_875fcd86 == 1) {
+        }
+        if (var_875fcd86 == 1) {
             return anglestoforward(baseangles + (0, angle, 0));
-        } else if (var_875fcd86 == 2) {
+        }
+        if (var_875fcd86 == 2) {
             return anglestoforward(baseangles + (0, 0, angle));
         }
     #/

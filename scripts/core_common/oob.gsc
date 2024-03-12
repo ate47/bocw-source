@@ -129,7 +129,7 @@ function function_802adb65(var_f90fc07b) {
             }
             /#
                 if (player isinmovemode("<unknown string>", "<unknown string>")) {
-                    goto LOC_00000182;
+                    continue;
                 }
             #/
             if (player isoutofbounds()) {
@@ -137,9 +137,7 @@ function function_802adb65(var_f90fc07b) {
             }
             if (!player function_323d32db()) {
                 player enter_oob(player);
-            LOC_00000182:
             }
-        LOC_00000182:
         }
         waitframe(1);
     }
@@ -172,7 +170,7 @@ function private function_c1e8a50a(origin, radius) {
             }
             /#
                 if (player isinmovemode("<unknown string>", "<unknown string>")) {
-                    goto LOC_0000017a;
+                    continue;
                 }
             #/
             if (player isoutofbounds()) {
@@ -180,9 +178,7 @@ function private function_c1e8a50a(origin, radius) {
             }
             if (!player function_b347269d()) {
                 player enter_oob(player);
-            LOC_0000017a:
             }
-        LOC_0000017a:
         }
         waitframe(1);
     }
@@ -246,16 +242,14 @@ function function_d298702c(var_f90fc07b) {
                 }
                 /#
                     if (player isinmovemode("<unknown string>", "<unknown string>")) {
-                        goto LOC_00000274;
+                        continue;
                     }
                 #/
                 if (!vehicle function_7aac4469()) {
                     profilestart();
                     player enter_oob(vehicle);
                     profilestop();
-                LOC_00000274:
                 }
-            LOC_00000274:
             }
         }
         waitframe(1);
@@ -694,9 +688,9 @@ function private disableplayeroob(disabled) {
     if (disabled) {
         self resetoobtimer();
         self.oobdisabled = 1;
-    } else {
-        self.oobdisabled = 0;
+        return;
     }
+    self.oobdisabled = 0;
 }
 
 // Namespace oob/oob
@@ -712,7 +706,9 @@ function private function_20431d45(var_952a24b5) {
         player.var_fe73e6f8 = 1;
         timeremaining = player function_f896a102();
         callback::callback(#"hash_75edd53ff899cd30", {#var_7a3dfae:timeremaining});
-    } else if (is_true(player.var_fe73e6f8) && !var_952a24b5) {
+        return;
+    }
+    if (is_true(player.var_fe73e6f8) && !var_952a24b5) {
         player.var_fe73e6f8 = undefined;
         callback::callback(#"hash_75edd53ff899cd30", {#var_7a3dfae:0});
     }

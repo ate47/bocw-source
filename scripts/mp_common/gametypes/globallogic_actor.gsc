@@ -205,13 +205,13 @@ function callback_actordamage(einflictor, eattacker, idamage, idflags, smeansofd
             lpattackguid = eattacker getguid();
             lpattackname = eattacker.name;
             lpattackerteam = eattacker.pers[#"team"];
-        } else {
-            lpattacknum = -1;
-            var_c8fa9c41 = 0;
-            lpattackguid = "";
-            lpattackname = "";
-            lpattackerteam = "world";
+            return;
         }
+        lpattacknum = -1;
+        var_c8fa9c41 = 0;
+        lpattackguid = "";
+        lpattackname = "";
+        lpattackerteam = "world";
     }
 }
 

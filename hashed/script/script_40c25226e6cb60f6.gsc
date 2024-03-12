@@ -112,9 +112,9 @@ function function_bb1d1cf9(trap, page = 0) {
             level.doa.var_17228d33 = array(level.doa.var_17228d33);
         }
         level.doa.var_17228d33[level.doa.var_17228d33.size] = trap;
-    } else {
-        function_8b014c60(trap);
+        return;
     }
+    function_8b014c60(trap);
 }
 
 // Namespace namespace_61052b71/namespace_c228bbfa
@@ -156,12 +156,12 @@ function function_e74a3df6() {
                     trap.var_eb9d64bb = trap.var_eb9d64bb + 5000;
                     namespace_1e25ad94::function_f5f0c0f8("Paging IN physics box trap at:" + trap.origin);
                 }
-            } else {
-                trap.var_f8660931 = namespace_ec06fe4a::function_6eacecf5(trap.origin, 3600);
-                if (!isdefined(trap.var_f8660931)) {
-                    trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
-                    namespace_1e25ad94::function_f5f0c0f8("Paging out physics box trap at:" + trap.origin);
-                }
+                continue;
+            }
+            trap.var_f8660931 = namespace_ec06fe4a::function_6eacecf5(trap.origin, 3600);
+            if (!isdefined(trap.var_f8660931)) {
+                trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
+                namespace_1e25ad94::function_f5f0c0f8("Paging out physics box trap at:" + trap.origin);
             }
         }
     }
@@ -200,62 +200,61 @@ function function_d74e40c3() {
     }
     var_d71f280f = self.origin;
     var_2aedafcb = var_d71f280f + vectorscale((0, 0, 1), 15);
-LOC_000000c8:
     while (isdefined(self)) {
         waitframe(1);
         if (!isdefined(self.trigger)) {
             self.trigger = self namespace_268747c0::function_678eaf60("physicsbox", self.origin, 256, 1, 128);
             self.trigger.origin = self.trigger.origin + (0, 0, self.var_b7a27a3a);
             self.trigger triggerenable(1);
-        } else {
-            result = undefined;
-            result = self.trigger waittill(#"trigger", #"hash_5dc5b7f198cd1bec");
-            if (result._notify === #"hash_5dc5b7f198cd1bec") {
-                wait(0.25);
-                continue;
-            }
-            self.script_model moveto(var_2aedafcb, 0.1);
-            guy = result.activator;
-            switch (self.type) {
-            default:
-                if (isplayer(guy)) {
-                    self.script_model namespace_e32bb68::function_3a59ec34("zmb_physicsBoxVelocity");
-                    localvelocity = guy getvelocity() + self.var_88eccffa;
-                    guy setorigin(guy.origin + vectorscale((0, 0, 1), 30));
-                    waitframe(1);
-                    if (isdefined(guy)) {
-                        guy setvelocity(localvelocity);
-                        if (namespace_4dae815d::function_59a9cf1d() != 0) {
-                            guy thread namespace_7f5aeb59::function_a74228bc();
-                        }
-                        guy namespace_e32bb68::function_3a59ec34("evt_doa_springboard");
-                    }
-                } else if (isactor(guy)) {
-                    if (isdefined(guy.var_f055aa9b)) {
-                        continue;
-                    }
-                    if (!issentient(guy)) {
-                        continue;
-                    }
-                    if (!is_true(guy.takedamage)) {
-                        continue;
-                    }
-                    if (is_true(guy.var_47267079) || is_true(guy.boss)) {
-                        continue;
-                    }
-                    if (!is_true(guy.var_e66cd6fb)) {
-                        guy.var_f055aa9b = 1;
-                        guy thread namespace_ec06fe4a::function_b4ff2191(self.var_88eccffa, 180, 0.3);
-                        guy namespace_e32bb68::function_3a59ec34("zmb_ragdoll_launched");
-                        guy namespace_e32bb68::function_3a59ec34("evt_doa_springboard");
-                    }
-                }
-                break;
-            }
-            wait(5);
-            self.script_model moveto(var_d71f280f, 2);
-            wait(2);
+            continue;
         }
+        result = undefined;
+        result = self.trigger waittill(#"trigger", #"hash_5dc5b7f198cd1bec");
+        if (result._notify === #"hash_5dc5b7f198cd1bec") {
+            wait(0.25);
+            continue;
+        }
+        self.script_model moveto(var_2aedafcb, 0.1);
+        guy = result.activator;
+        switch (self.type) {
+        default:
+            if (isplayer(guy)) {
+                self.script_model namespace_e32bb68::function_3a59ec34("zmb_physicsBoxVelocity");
+                localvelocity = guy getvelocity() + self.var_88eccffa;
+                guy setorigin(guy.origin + vectorscale((0, 0, 1), 30));
+                waitframe(1);
+                if (isdefined(guy)) {
+                    guy setvelocity(localvelocity);
+                    if (namespace_4dae815d::function_59a9cf1d() != 0) {
+                        guy thread namespace_7f5aeb59::function_a74228bc();
+                    }
+                    guy namespace_e32bb68::function_3a59ec34("evt_doa_springboard");
+                }
+            } else if (isactor(guy)) {
+                if (isdefined(guy.var_f055aa9b)) {
+                    continue;
+                }
+                if (!issentient(guy)) {
+                    continue;
+                }
+                if (!is_true(guy.takedamage)) {
+                    continue;
+                }
+                if (is_true(guy.var_47267079) || is_true(guy.boss)) {
+                    continue;
+                }
+                if (!is_true(guy.var_e66cd6fb)) {
+                    guy.var_f055aa9b = 1;
+                    guy thread namespace_ec06fe4a::function_b4ff2191(self.var_88eccffa, 180, 0.3);
+                    guy namespace_e32bb68::function_3a59ec34("zmb_ragdoll_launched");
+                    guy namespace_e32bb68::function_3a59ec34("evt_doa_springboard");
+                }
+            }
+            break;
+        }
+        wait(5);
+        self.script_model moveto(var_d71f280f, 2);
+        wait(2);
     }
 }
 

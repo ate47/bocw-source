@@ -355,32 +355,30 @@ function mechztargetservice(entity) {
             }
         }
         return 0;
-    } else {
-        if (isdefined(level.enemy_location_override_func)) {
-            var_2c9acc81 = [[ level.enemy_location_override_func ]](entity, player);
-            if (isdefined(var_2c9acc81)) {
-                entity setgoal(var_2c9acc81);
-                if (isdefined(entity.var_9d92b55a)) {
-                    [[ entity.var_9d92b55a ]](entity);
-                }
-                return 1;
-            }
-        }
-        targetpos = getclosestpointonnavmesh(player.origin, 64, 30);
-        if (isdefined(targetpos)) {
-            entity setgoal(targetpos);
+    }
+    if (isdefined(level.enemy_location_override_func)) {
+        var_2c9acc81 = [[ level.enemy_location_override_func ]](entity, player);
+        if (isdefined(var_2c9acc81)) {
+            entity setgoal(var_2c9acc81);
             if (isdefined(entity.var_9d92b55a)) {
                 [[ entity.var_9d92b55a ]](entity);
             }
             return 1;
-        } else {
-            entity setgoal(entity.origin);
-            if (isdefined(entity.var_9d92b55a)) {
-                [[ entity.var_9d92b55a ]](entity);
-            }
-            return 0;
         }
     }
+    targetpos = getclosestpointonnavmesh(player.origin, 64, 30);
+    if (isdefined(targetpos)) {
+        entity setgoal(targetpos);
+        if (isdefined(entity.var_9d92b55a)) {
+            [[ entity.var_9d92b55a ]](entity);
+        }
+        return 1;
+    }
+    entity setgoal(entity.origin);
+    if (isdefined(entity.var_9d92b55a)) {
+        [[ entity.var_9d92b55a ]](entity);
+    }
+    return 0;
 }
 
 // Namespace namespace_3444cb7b/mechz
@@ -400,9 +398,9 @@ function private mechzgrenadeservice(entity) {
         arrayremovevalue(level.var_542ac835, undefined);
         var_a4615441 = array::filter(level.var_542ac835, 0, &function_424646a8, entity);
         entity.var_856a7b8a = var_a4615441.size;
-    } else {
-        entity.var_856a7b8a = 0;
+        return;
     }
+    entity.var_856a7b8a = 0;
 }
 
 // Namespace namespace_3444cb7b/mechz
@@ -443,7 +441,9 @@ function private mechzberserkknockdownservice(entity) {
                 if (dot >= 0.5) {
                     zombie.knockdown_direction = "front";
                     zombie.getup_direction = "getup_back";
-                } else if (dot < 0.5 && dot > -0.5) {
+                    continue;
+                }
+                if (dot < 0.5 && dot > -0.5) {
                     dot = vectordot(var_3355d62f, zombie_right_2d);
                     if (dot > 0) {
                         zombie.knockdown_direction = "right";
@@ -456,10 +456,10 @@ function private mechzberserkknockdownservice(entity) {
                         zombie.knockdown_direction = "left";
                         zombie.getup_direction = "getup_belly";
                     }
-                } else {
-                    zombie.knockdown_direction = "back";
-                    zombie.getup_direction = "getup_belly";
+                    continue;
                 }
+                zombie.knockdown_direction = "back";
+                zombie.getup_direction = "getup_belly";
             }
         }
     }
@@ -934,9 +934,9 @@ function private mechzupdateflame(entity) {
                 if (player istouching(entity.var_1df3d140)) {
                     if (isdefined(entity.var_13fbc6ec)) {
                         player thread [[ entity.var_13fbc6ec ]]();
-                    } else {
-                        player thread function_5afe5280(entity);
+                        continue;
                     }
+                    player thread function_5afe5280(entity);
                 }
             }
         }
@@ -998,11 +998,9 @@ function function_fd99ea48(mechz) {
     var_4004985c = 0.25;
     if (!is_true(self.is_burning)) {
         self.is_burning = 1;
-        percentage = 0;
-        while (percentage <= 1) {
+        for (percentage = 0; percentage <= 1; percentage = percentage + var_4004985c) {
             self dodamage(250 * var_4004985c, self.origin, mechz, undefined, undefined, "MOD_BURNED", 0);
             wait(1.5 * var_4004985c);
-            percentage = percentage + var_4004985c;
         }
         self.is_burning = 0;
     }
@@ -1523,9 +1521,9 @@ function function_923942a7(var_a460aef2, aim_tag, var_40f25562 = 0.5) {
 function function_ee30c07(var_832f96cf) {
     if (var_832f96cf !== 1) {
         self clientfield::set("mechz_headlamp_off", 1);
-    } else {
-        self clientfield::set("mechz_headlamp_off", 2);
+        return;
     }
+    self clientfield::set("mechz_headlamp_off", 2);
 }
 
 // Namespace namespace_8681f0e2/mechz

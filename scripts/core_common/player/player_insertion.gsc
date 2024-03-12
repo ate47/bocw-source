@@ -117,11 +117,11 @@ function private on_finalize_initialization() {
         var_df4f7099 = level.insertions[0];
         var_df4f7099 flag::wait_till(#"hash_4e5fc66b9144a5c8");
         function_d53a8c5b(insertion, var_df4f7099.fly_over_point, var_df4f7099.var_59526dd5 - 180, offsetdistance);
-    } else {
-        var_7ed8b321 = function_9ed051a4();
-        var_684dfce3 = function_da0c552e();
-        function_d53a8c5b(insertion, var_7ed8b321, var_684dfce3, offsetdistance);
+        return;
     }
+    var_7ed8b321 = function_9ed051a4();
+    var_684dfce3 = function_da0c552e();
+    function_d53a8c5b(insertion, var_7ed8b321, var_684dfce3, offsetdistance);
 }
 
 // Namespace player_insertion/player_insertion
@@ -633,9 +633,7 @@ function private function_7d880672(original_origin, var_9f8395cb, refly) {
             speed = 1000;
             velocity = direction * speed;
             self function_7705a7fc(2, velocity);
-            goto LOC_0000021e;
         }
-    LOC_0000021e:
         if (refly % 2 == 0) {
             while (1) {
                 waitframe(1);
@@ -667,10 +665,10 @@ function function_80c60f66(player) {
         var_18310f7e = level.insertions[index];
         if (insertion == var_18310f7e) {
             var_18310f7e.players[var_18310f7e.players.size] = player;
-        } else {
-            var_18310f7e.otherplayers[var_18310f7e.otherplayers.size] = player;
-            player function_c62b5591(var_18310f7e);
+            continue;
         }
+        var_18310f7e.otherplayers[var_18310f7e.otherplayers.size] = player;
+        player function_c62b5591(var_18310f7e);
     }
     player function_abd3bc1a(insertion, 0);
     plane = player function_c4f5c468(insertion);

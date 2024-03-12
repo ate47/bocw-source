@@ -133,12 +133,12 @@ function function_e6400478(name, func, var_8411d55d) {
                 struct.var_8411d55d = var_8411d55d;
                 level.watcherregisters[name] = struct;
             }
-        } else {
-            struct = spawnstruct();
-            struct.func = func;
-            struct.type = var_8411d55d;
-            level.watcherregisters[name] = struct;
+            return;
         }
+        struct = spawnstruct();
+        struct.func = func;
+        struct.type = var_8411d55d;
+        level.watcherregisters[name] = struct;
     }
 }
 
@@ -152,7 +152,7 @@ function event_handler[player_loadoutchanged] loadout_changed(eventstruct) {
     case #"give_weapon_dual":
         weapon = eventstruct.weapon;
         self snipinterfaceattributes(weapon);
-        break;
+        return;
     }
 }
 
@@ -236,9 +236,9 @@ function private setupretrievablewatcher(watcher) {
 function function_db70257(player, heldweapon) {
     if (heldweapon.var_7d4c12af == "Automatic") {
         function_d9219ce2(player, heldweapon);
-    } else {
-        function_a6616b9c(player, heldweapon);
+        return;
     }
+    function_a6616b9c(player, heldweapon);
 }
 
 // Namespace weaponobjects/weaponobjects
@@ -425,18 +425,22 @@ function detonateweaponobjectarray(forcedetonation, weapon) {
             if (isdefined(self.objectarray[i])) {
                 if (self.objectarray[i] isstunned() && forcedetonation == 0) {
                     undetonated[undetonated.size] = self.objectarray[i];
-                } else if (isdefined(weapon)) {
+                    continue;
+                }
+                if (isdefined(weapon)) {
                     if (weapon util::ishacked() && weapon.name != self.objectarray[i].weapon.name) {
                         undetonated[undetonated.size] = self.objectarray[i];
                         continue;
+                    } else if (self.objectarray[i] util::ishacked() && weapon.name != self.objectarray[i].weapon.name) {
+                        undetonated[undetonated.size] = self.objectarray[i];
+                        continue;
                     }
-                    jumpiffalse(self.objectarray[i] util::ishacked() && weapon.name != self.objectarray[i].weapon.name) LOC_00000186;
-                    undetonated[undetonated.size] = self.objectarray[i];
-                } else if (isdefined(self.detonatestationary) && self.detonatestationary && forcedetonation == 0) {
-                    self thread detonatewhenstationary(self.objectarray[i], 0, undefined, weapon);
-                } else {
-                    self thread waitanddetonate(self.objectarray[i], 0, undefined, weapon);
                 }
+                if (isdefined(self.detonatestationary) && self.detonatestationary && forcedetonation == 0) {
+                    self thread detonatewhenstationary(self.objectarray[i], 0, undefined, weapon);
+                    continue;
+                }
+                self thread waitanddetonate(self.objectarray[i], 0, undefined, weapon);
             }
         }
     }
@@ -581,9 +585,9 @@ function weapon_object_timeout(watcher, var_84e5ee08) {
     wait(var_754e514);
     if (isdefined(watcher) && isdefined(watcher.ontimeout)) {
         weapon_instance thread [[ watcher.ontimeout ]]();
-    } else {
-        weapon_instance delete();
+        return;
     }
+    weapon_instance delete();
 }
 
 // Namespace weaponobjects/weaponobjects
@@ -728,9 +732,9 @@ function watchobjectdamage(owner) {
         waitresult = self waittill(#"damage");
         if (isdefined(waitresult.attacker) && isplayer(waitresult.attacker) && waitresult.attacker != owner) {
             self.playdialog = 1;
-        } else {
-            self.playdialog = 0;
+            continue;
         }
+        self.playdialog = 0;
     }
 }
 
@@ -836,9 +840,9 @@ function function_f245df1e() {
 function function_127fb8f3(var_983dc34, attackingplayer) {
     if (isdefined(var_983dc34) && isdefined(var_983dc34.var_2d045452)) {
         var_983dc34.var_2d045452 thread waitanddetonate(var_983dc34, 0.05, attackingplayer, getweapon(#"eq_emp_grenade"));
-    } else {
-        var_983dc34 function_f245df1e();
+        return;
     }
+    var_983dc34 function_f245df1e();
 }
 
 // Namespace weaponobjects/weaponobjects
@@ -1062,7 +1066,9 @@ function proximityalarmactivate(active, watcher, *var_af12fba0) {
         self.owner.var_4cd6885 = self;
         state = var_9292c6b5 ? 3 : 2;
         self setstate(state);
-    } else if (!isdefined(self) || self wasproximityalarmactivatedbyself() || !var_9292c6b5 && self.owner clientfield::get_to_player("proximity_alarm") == 1) {
+        return;
+    }
+    if (!isdefined(self) || self wasproximityalarmactivatedbyself() || !var_9292c6b5 && self.owner clientfield::get_to_player("proximity_alarm") == 1) {
         self.owner.var_4cd6885 = undefined;
         state = 0;
         if (var_9292c6b5) {
@@ -1179,38 +1185,38 @@ function proximityalarmloop(watcher, owner) {
                 if (isdefined(self.owner) && owner == self.owner) {
                     continue;
                 }
-                jumpiftrue(damage::friendlyfirecheck(self.owner, owner, 0)) LOC_00000580;
-            } else {
-            LOC_00000580:
-                if (self isstunned()) {
+                if (!damage::friendlyfirecheck(self.owner, owner, 0)) {
                     continue;
                 }
-                if (!isalive(entity)) {
-                    continue;
-                }
-                if (isdefined(watcher.immunespecialty) && owner hasperk(watcher.immunespecialty)) {
-                    continue;
-                }
-                radius = self.weapon.proximityalarmouterradius;
-                distancesqr = distancesquared(self.origin, entity.origin);
-                if (radius * radius < distancesqr) {
-                    continue;
-                }
-                if (entity damageconetrace(self.origin, self) == 0) {
-                    continue;
-                }
-                if (alarmstatusold == "on") {
-                    alarmstatus = "on";
-                    break;
-                }
-                radius = self.weapon.proximityalarminnerradius;
-                if (radius * radius < distancesqr) {
-                    continue;
-                }
+            }
+            if (self isstunned()) {
+                continue;
+            }
+            if (!isalive(entity)) {
+                continue;
+            }
+            if (isdefined(watcher.immunespecialty) && owner hasperk(watcher.immunespecialty)) {
+                continue;
+            }
+            radius = self.weapon.proximityalarmouterradius;
+            distancesqr = distancesquared(self.origin, entity.origin);
+            if (radius * radius < distancesqr) {
+                continue;
+            }
+            if (entity damageconetrace(self.origin, self) == 0) {
+                continue;
+            }
+            if (alarmstatusold == "on") {
                 alarmstatus = "on";
-                var_af12fba0 = entity;
                 break;
             }
+            radius = self.weapon.proximityalarminnerradius;
+            if (radius * radius < distancesqr) {
+                continue;
+            }
+            alarmstatus = "on";
+            var_af12fba0 = entity;
+            break;
         }
     }
 }
@@ -1457,10 +1463,10 @@ function proximityweaponobjectdebug(watcher) {
         }
         if (isdefined(watcher.ignoredirection)) {
             self thread proximitysphere(self.origin, watcher.detonateradius, (1, 0.85, 0), self.weapon.explosionradius, (1, 0, 0));
-        } else {
-            self thread showcone(acos(watcher.detectiondot), watcher.detonateradius, (1, 0.85, 0));
-            self thread showcone(60, 256, (1, 0, 0));
+            return;
         }
+        self thread showcone(acos(watcher.detectiondot), watcher.detonateradius, (1, 0.85, 0));
+        self thread showcone(60, 256, (1, 0, 0));
     #/
 }
 
@@ -1555,18 +1561,17 @@ function hackertriggersetvisibility(owner) {
     #/
     ownerteam = owner.pers[#"team"];
     for (;;) {
-        for (;;) {
-            if (level.teambased) {
-                self setvisibletoallexceptteam(ownerteam);
-                self setexcludeteamfortrigger(ownerteam);
-            } else {
-                self setvisibletoall();
-                self setteamfortrigger(#"none");
-            }
-            if (isdefined(owner)) {
-                self setinvisibletoplayer(owner);
-            }
+        if (level.teambased) {
+            self setvisibletoallexceptteam(ownerteam);
+            self setexcludeteamfortrigger(ownerteam);
+        } else {
+            self setvisibletoall();
+            self setteamfortrigger(#"none");
         }
+        if (isdefined(owner)) {
+            self setinvisibletoplayer(owner);
+        }
+        level waittill(#"player_spawned", #"joined_team");
     }
 }
 
@@ -1587,9 +1592,9 @@ function hackernotmoving() {
 function private set_hint_string(hint_string, var_c1846261) {
     if (isdefined(hint_string) && hint_string != "") {
         self sethintstring(hint_string);
-    } else {
-        self sethintstring(var_c1846261);
+        return;
     }
+    self sethintstring(var_c1846261);
 }
 
 // Namespace weaponobjects/weaponobjects
@@ -1681,9 +1686,9 @@ function itemhacked(watcher, player) {
     waitframe(1);
     if (isdefined(player) && player.sessionstate == "playing") {
         player notify(#"grenade_fire", {#respawn_from_hack:1, #weapon:self.weapon, #projectile:self});
-    } else {
-        watcher thread waitanddetonate(self, 0, undefined, self.weapon);
+        return;
     }
+    watcher thread waitanddetonate(self, 0, undefined, self.weapon);
 }
 
 // Namespace weaponobjects/weaponobjects
@@ -1989,9 +1994,9 @@ function proximityweaponobject_dodetonation(watcher, ent, traceorigin) {
     }
     if (isdefined(self.owner) && isplayer(self.owner)) {
         self [[ watcher.ondetonatecallback ]](self.owner, undefined, ent);
-    } else {
-        self [[ watcher.ondetonatecallback ]](undefined, undefined, ent);
+        return;
     }
+    self [[ watcher.ondetonatecallback ]](undefined, undefined, ent);
 }
 
 // Namespace weaponobjects/weaponobjects
@@ -2067,7 +2072,9 @@ function function_f5b8ea19(s_watcher, *var_6e4025f7, triggertime) {
                 triggered = 1;
                 if (!isdefined(var_bccce0e1)) {
                     var_bccce0e1 = gettime();
-                } else if (var_8dc1cd0d >= triggertime) {
+                    continue;
+                }
+                if (var_8dc1cd0d >= triggertime) {
                     self thread proximityweaponobject_waittillframeendanddodetonation(var_6e4025f7, ent, self.origin);
                     detonating = 1;
                 }
@@ -2173,7 +2180,7 @@ function testkillbrushonstationary(a_killbrushes, player) {
                 continue;
             }
             if (self.origin[2] > player.origin[2]) {
-                break;
+                return;
             }
             if (isdefined(self)) {
                 self delete();
@@ -2227,9 +2234,9 @@ function on_double_tap_detonate() {
         if (watcher.altdetonate) {
             if (isdefined(watcher.var_e7ebbd38)) {
                 self thread [[ watcher.var_e7ebbd38 ]](watcher);
-            } else {
-                watcher detonateweaponobjectarray(0);
+                continue;
             }
+            watcher detonateweaponobjectarray(0);
         }
     }
 }

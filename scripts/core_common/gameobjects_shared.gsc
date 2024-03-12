@@ -288,8 +288,7 @@ class cinteractobj {
             return;
         }
         var_9c2f0815 = self.var_15547ed4 || isdefined(self.e_object.var_f66cebb1) ? self.m_str_team : #"hash_161f03feaadc9b8f";
-        var_fb20e730 = getplayers(self.m_str_team);
-        while (var_fb20e730.size) {
+        for (var_fb20e730 = getplayers(self.m_str_team); var_fb20e730.size; var_fb20e730 = getplayers(self.m_str_team)) {
             foreach (e_player in var_fb20e730) {
                 if (function_aa070e6f(e_player) && !isinarray(self.var_2854e7f7, e_player.team) && !e_player isinvehicle()) {
                     voiceparams = {#targetname:self.e_object.var_f66cebb1, #side:var_9c2f0815, #team:self.m_str_team};
@@ -298,7 +297,6 @@ class cinteractobj {
                 }
             }
             wait(1);
-            var_fb20e730 = getplayers(self.m_str_team);
         }
     }
 
@@ -316,7 +314,6 @@ class cinteractobj {
                 return 1;
             default:
                 return 0;
-                break;
             }
         } else {
             switch (t_override.classname) {
@@ -325,7 +322,6 @@ class cinteractobj {
                 return 1;
             default:
                 return 0;
-                break;
             }
         }
         return 0;
@@ -338,9 +334,8 @@ class cinteractobj {
     function function_aa070e6f(e_player) {
         if (isdefined(self.e_object) && isdefined(self.e_object.mdl_gameobject) && isdefined(e_player) && is_true(self.e_object.mdl_gameobject.b_enabled)) {
             return (distance2dsquared(self.e_object.origin, e_player.origin) < function_a3f6cdac(675) && e_player util::is_player_looking_at(self.e_object.origin));
-        } else {
-            return 0;
         }
+        return 0;
     }
 
 }
@@ -683,9 +678,9 @@ function private function_2f3ba1ad() {
             foreach (s_lock in s_key.a_s_locks) {
                 if (isdefined(s_lock.mdl_gameobject)) {
                     s_lock set_key_object(s_key);
-                } else {
-                    s_lock.var_4cd30731 = s_key;
+                    continue;
                 }
+                s_lock.var_4cd30731 = s_key;
             }
             if (is_true(s_key.script_toggle_lock_visibility) && isdefined(s_key.a_s_locks)) {
                 s_key thread function_2e028a0e();
@@ -706,7 +701,9 @@ function function_2e028a0e() {
         foreach (s_lock in self.a_s_locks) {
             if (isdefined(s_lock.mdl_gameobject)) {
                 s_lock function_924032a4();
-            } else if (isdefined(s_lock.var_4cd30731)) {
+                continue;
+            }
+            if (isdefined(s_lock.var_4cd30731)) {
                 s_lock notify(#"hash_58b8542ed702b2a5", {#player:self.mdl_gameobject.carrier, #var_36c9fd16:1});
                 s_lock.var_459e9174 = 1;
             }
@@ -716,7 +713,9 @@ function function_2e028a0e() {
         foreach (s_lock in self.a_s_locks) {
             if (isdefined(s_lock.mdl_gameobject)) {
                 s_lock function_9f42b8fd(s_lock function_167d3a40());
-            } else if (isdefined(s_lock.var_4cd30731)) {
+                continue;
+            }
+            if (isdefined(s_lock.var_4cd30731)) {
                 s_lock notify(#"hash_58b8542ed702b2a5", {#var_36c9fd16:0});
                 s_lock.var_459e9174 = undefined;
             }
@@ -735,7 +734,6 @@ function private function_71a1c90f() {
             var_6e793336 = array::random(a_s_structs);
             if (isdefined(var_6e793336.mdl_gameobject) && var_6e793336.mdl_gameobject.type === "carryObject") {
                 var_80ab0aea.mdl_gameobject thread function_d85d429b(var_6e793336.mdl_gameobject);
-                continue;
             }
         }
     }
@@ -849,9 +847,9 @@ function function_9e7fca5f() {
             if (isplayer(s_waitresult.player) && scene::get_player_count(s_scene.scriptbundlename) >= 1) {
                 s_waitresult.player animation::stop(0);
                 s_scene thread scene::play(s_waitresult.player);
-            } else {
-                s_scene thread scene::play();
+                continue;
             }
+            s_scene thread scene::play();
         }
         foreach (s_scene in self.var_abba8d92) {
             if (is_true(s_scene.script_play_multiple)) {
@@ -922,7 +920,6 @@ function defaultallowweaponscallback(object) {
             return is_true(object.bundle.objective_allow_weapons);
         case #"prc_mp_support":
             return is_true(object.bundle.support_allow_weapons);
-            break;
         }
     }
     return object.allowweapons;
@@ -1104,11 +1101,10 @@ function pickup_object_delay(origin) {
     self endon(#"death", #"disconnect");
     self.canpickupobject = 0;
     for (;;) {
-        for (;;) {
-            if (distancesquared(self.origin, origin) > 4096) {
-                break;
-            }
+        if (distancesquared(self.origin, origin) > 4096) {
+            break;
         }
+        wait(0.2);
     }
     self.canpickupobject = 1;
 }
@@ -1200,19 +1196,18 @@ function update_carry_object_objective_origin() {
     self.trigger endon(#"destroyed", #"death");
     objpingdelay = level.objectivepingdelay;
     for (;;) {
-        for (;;) {
-            if (isdefined(self.carrier)) {
-                self.curorigin = self.carrier.origin;
-                if (isdefined(self.objectiveid)) {
-                    objective_setposition(self.objectiveid, self.curorigin);
-                }
-                self util::wait_endon(objpingdelay, "dropped", "reset");
-                continue;
-            }
+        if (isdefined(self.carrier)) {
+            self.curorigin = self.carrier.origin;
             if (isdefined(self.objectiveid)) {
                 objective_setposition(self.objectiveid, self.curorigin);
             }
+            self util::wait_endon(objpingdelay, "dropped", "reset");
+            continue;
         }
+        if (isdefined(self.objectiveid)) {
+            objective_setposition(self.objectiveid, self.curorigin);
+        }
+        waitframe(1);
     }
 }
 
@@ -1559,7 +1554,9 @@ function is_touching_any_trigger(triggers, minz, maxz, var_943e96ce) {
                 if (istouching(self.origin, trigger)) {
                     return 1;
                 }
-            } else if (self istouchingswept(trigger, minz, maxz)) {
+                continue;
+            }
+            if (self istouchingswept(trigger, minz, maxz)) {
                 return 1;
             }
         }
@@ -1637,7 +1634,9 @@ function pickup_timeout(minz, maxz) {
     }
     if (isdefined(self.pickuptimeoutoverride)) {
         self thread [[ self.pickuptimeoutoverride ]]();
-    } else if (isdefined(self.autoresettime)) {
+        return;
+    }
+    if (isdefined(self.autoresettime)) {
         wait(self.autoresettime);
         if (!isdefined(self.carrier)) {
             self thread return_home();
@@ -1813,16 +1812,14 @@ function manual_drop_think() {
     level endon(#"game_ended");
     self endon(#"disconnect", #"death", #"drop_object");
     for (;;) {
-        for (;;) {
-            while (self attackbuttonpressed() || self fragbuttonpressed() || self secondaryoffhandbuttonpressed() || self meleebuttonpressed()) {
-                waitframe(1);
-            }
-            while (!self attackbuttonpressed() && !self fragbuttonpressed() && !self secondaryoffhandbuttonpressed() && !self meleebuttonpressed()) {
-                waitframe(1);
-            }
-            if (isdefined(self.carryobject) && !self usebuttonpressed()) {
-                continue;
-            };
+        while (self attackbuttonpressed() || self fragbuttonpressed() || self secondaryoffhandbuttonpressed() || self meleebuttonpressed()) {
+            waitframe(1);
+        }
+        while (!self attackbuttonpressed() && !self fragbuttonpressed() && !self secondaryoffhandbuttonpressed() && !self meleebuttonpressed()) {
+            waitframe(1);
+        }
+        if (isdefined(self.carryobject) && !self usebuttonpressed()) {
+            self.carryobject thread set_dropped();
         }
     }
 }
@@ -2146,9 +2143,9 @@ function set_key_object(object) {
         foreach (obj in object) {
             mdl_gameobject.keyobject[mdl_gameobject.keyobject.size] = obj;
         }
-    } else {
-        mdl_gameobject.keyobject[mdl_gameobject.keyobject.size] = object;
+        return;
     }
+    mdl_gameobject.keyobject[mdl_gameobject.keyobject.size] = object;
 }
 
 // Namespace gameobjects/gameobjects_shared
@@ -2185,7 +2182,8 @@ function has_key_object(use) {
     for (x = 0; x < use.keyobject.size; x++) {
         if (isdefined(self.carryobject) && self.carryobject == use.keyobject[x]) {
             return 1;
-        } else if (isdefined(self.packobject)) {
+        }
+        if (isdefined(self.packobject)) {
             for (i = 0; i < self.packobject.size; i++) {
                 if (self.packobject[i] == use.keyobject[x]) {
                     return 1;
@@ -2319,9 +2317,9 @@ function use_object_onuse(player) {
     self.trigger endon(#"destroyed", #"death");
     if (isdefined(self.classobj)) {
         self.classobj [[ self.onuse ]](self, player);
-    } else {
-        self [[ self.onuse ]](player);
+        return;
     }
+    self [[ self.onuse ]](player);
 }
 
 // Namespace gameobjects/gameobjects_shared
@@ -2429,15 +2427,15 @@ function private function_72307b09(progress) {
         foreach (contributor in self.users[user].contributors) {
             contributor.contribution = math::clamp(contributor.contribution + progress, 0, self.usetime);
         }
-    } else {
-        keys = getarraykeys(self.users[user].touching.players);
-        for (i = 0; i < keys.size; i++) {
-            contributor = self.users[user].contributors[keys[i]];
-            /#
-                assert(isdefined(contributor));
-            #/
-            contributor.contribution = math::clamp(contributor.contribution + progress, 0, self.usetime);
-        }
+        return;
+    }
+    keys = getarraykeys(self.users[user].touching.players);
+    for (i = 0; i < keys.size; i++) {
+        contributor = self.users[user].contributors[keys[i]];
+        /#
+            assert(isdefined(contributor));
+        #/
+        contributor.contribution = math::clamp(contributor.contribution + progress, 0, self.usetime);
     }
 }
 
@@ -3354,17 +3352,23 @@ function update_trigger() {
     }
     if (self.interactteam == #"hash_161f03feaadc9b8f") {
         self.trigger triggerenable(0);
-    } else if (self.interactteam == #"hash_150a20fa4efc5c7a") {
+        return;
+    }
+    if (self.interactteam == #"hash_150a20fa4efc5c7a") {
         self.trigger triggerenable(1);
         if (isdefined(level.teams[self.ownerteam])) {
             self.trigger setteamfortrigger(self.ownerteam);
         } else {
             self.trigger triggerenable(0);
         }
-    } else if (self.interactteam == #"hash_33c49a99551acae7") {
+        return;
+    }
+    if (self.interactteam == #"hash_33c49a99551acae7") {
         self.trigger triggerenable(1);
         self.trigger setexcludeteamfortrigger(self.ownerteam);
-    } else if (self.interactteam == #"hash_5ccfd7bbbf07c770" || !level.teambased) {
+        return;
+    }
+    if (self.interactteam == #"hash_5ccfd7bbbf07c770" || !level.teambased) {
         self.trigger triggerenable(1);
         self.trigger setteamfortrigger(#"invalid");
     }
@@ -3406,13 +3410,17 @@ function update_objective() {
         if (isalive(self.carrier)) {
             objective_onentity(self.objectiveid, self.carrier);
             objective_setinvisibletoplayer(self.objectiveid, self.carrier);
-        } else if (isdefined(self.objectiveonvisuals) && self.objectiveonvisuals) {
-            objective_onentity(self.objectiveid, self.visuals[0]);
-        } else if (isdefined(self.objectiveonself) && self.objectiveonself) {
-            objective_onentity(self.objectiveid, self);
-        } else {
-            objective_clearentity(self.objectiveid);
+            return;
         }
+        if (isdefined(self.objectiveonvisuals) && self.objectiveonvisuals) {
+            objective_onentity(self.objectiveid, self.visuals[0]);
+            return;
+        }
+        if (isdefined(self.objectiveonself) && self.objectiveonself) {
+            objective_onentity(self.objectiveid, self);
+            return;
+        }
+        objective_clearentity(self.objectiveid);
     }
 }
 
@@ -3464,9 +3472,9 @@ function hide_waypoint(e_player) {
             return;
         }
         objective_setinvisibletoplayer(mdl_gameobject.objectiveid, e_player);
-    } else {
-        objective_setinvisibletoall(mdl_gameobject.objectiveid);
+        return;
     }
+    objective_setinvisibletoall(mdl_gameobject.objectiveid);
 }
 
 // Namespace gameobjects/gameobjects_shared
@@ -3486,9 +3494,9 @@ function show_waypoint(e_player) {
             return;
         }
         objective_setvisibletoplayer(mdl_gameobject.objectiveid, e_player);
-    } else {
-        objective_setvisibletoall(mdl_gameobject.objectiveid);
+        return;
     }
+    objective_setvisibletoall(mdl_gameobject.objectiveid);
 }
 
 // Namespace gameobjects/gameobjects_shared
@@ -3767,13 +3775,13 @@ function set_model_visibility(visibility, var_41e71541) {
                 self.visuals[index] thread make_solid();
             }
         }
-    } else {
-        for (index = 0; index < self.visuals.size; index++) {
-            self.visuals[index] ghost();
-            if (self.visuals[index].classname == "script_brushmodel" && !is_true(var_41e71541) || self.visuals[index].classname == "script_model") {
-                self.visuals[index] notify(#"changing_solidness");
-                self.visuals[index] notsolid();
-            }
+        return;
+    }
+    for (index = 0; index < self.visuals.size; index++) {
+        self.visuals[index] ghost();
+        if (self.visuals[index].classname == "script_brushmodel" && !is_true(var_41e71541) || self.visuals[index].classname == "script_model") {
+            self.visuals[index] notify(#"changing_solidness");
+            self.visuals[index] notsolid();
         }
     }
 }
@@ -3794,7 +3802,7 @@ function make_solid() {
         }
         if (i == level.players.size) {
             self solid();
-            break;
+            return;
         }
         waitframe(1);
     }
@@ -4218,27 +4226,22 @@ function can_interact_with(sentient) {
     case #"hash_150a20fa4efc5c7a":
         if (team == self.ownerteam) {
             return 1;
-            goto LOC_0000017c;
+        } else {
+            return 0;
         }
-        return 0;
     case #"hash_33c49a99551acae7":
-    LOC_0000017c:
         if (team != self.ownerteam) {
             return 1;
-            goto LOC_000001f8;
-        }
-        if (isdefined(self.decayprogress) && self.decayprogress && self.curprogress > 0 && (!isdefined(self.decayprogressmin) || self.curprogress > self.decayprogressmin)) {
+        } else if (isdefined(self.decayprogress) && self.decayprogress && self.curprogress > 0 && (!isdefined(self.decayprogressmin) || self.curprogress > self.decayprogressmin)) {
             return 1;
-            goto LOC_000001f8;
+        } else {
+            return 0;
         }
-        return 0;
     default:
-    LOC_000001f8:
         /#
             assert(0, "<unknown string>");
         #/
         return 0;
-        break;
     }
 }
 
@@ -4253,10 +4256,8 @@ function is_relative_team(relativeteam) {
     case #"hash_33c49a99551acae7":
     case #"hash_5ccfd7bbbf07c770":
         return 1;
-        break;
     default:
         return 0;
-        break;
     }
 }
 
@@ -4654,9 +4655,8 @@ function function_6362d6ea(func) {
 function private function_fd4a5f2f() {
     if (isdefined(self.mdl_gameobject)) {
         return self.mdl_gameobject;
-    } else {
-        return self;
     }
+    return self;
 }
 
 // Namespace gameobjects/gameobjects_shared
@@ -4704,7 +4704,9 @@ function play_interact_anim(e_player) {
                 self thread set_dropped(e_player);
             }
         }
-    } else if (isdefined(self.str_anim)) {
+        return;
+    }
+    if (isdefined(self.str_anim)) {
         mdl_anchor = util::spawn_model("tag_origin", e_player.origin, e_player.angles);
         self thread anchor_delete_watcher(mdl_anchor);
         str_anim = self.str_anim;

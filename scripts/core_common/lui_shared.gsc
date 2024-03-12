@@ -196,7 +196,7 @@ function function_1c4c4975() {
             }
             arrayremoveindex(level.var_b0d329df, 0, 0);
             waitframe(1);
-        } while(level.var_b0d329df.size > 0);
+        } while (level.var_b0d329df.size > 0);
     }
 }
 
@@ -319,13 +319,15 @@ function prime_movie(str_movie, b_looping = 0, str_key = "") {
         foreach (player in self) {
             player primemovie(str_movie, b_looping, str_key);
         }
-    } else if (self == level) {
+        return;
+    }
+    if (self == level) {
         foreach (player in level.players) {
             player primemovie(str_movie, b_looping, str_key);
         }
-    } else {
-        self primemovie(str_movie, b_looping, str_key);
+        return;
     }
+    self primemovie(str_movie, b_looping, str_key);
 }
 
 // Namespace lui/lui_shared
@@ -472,7 +474,7 @@ function private _play_movie_for_player(str_movie, str_type, show_black_screen, 
                 }
                 [[ lui_menu ]]->close(self);
                 self notify(#"movie_done");
-                break;
+                return;
             }
         }
     }
@@ -542,8 +544,9 @@ function private function_1bc580af() {
                 if (response === #"finished_movie_playback") {
                     [[ lui_menu ]]->close(self);
                     self notify(#"movie_done");
-                    break;
-                } else if (response === #"skippable" && isdefined(value)) {
+                    return;
+                }
+                if (response === #"skippable" && isdefined(value)) {
                     [[ lui_menu ]]->registerplayer_callout_traversal(self, value);
                 }
             }
@@ -560,15 +563,15 @@ function screen_flash(n_fadein_time, n_hold_time, n_fadeout_time, n_target_alpha
         foreach (player in level.players) {
             player thread screen_flash(n_fadein_time, n_hold_time, n_fadeout_time, n_target_alpha, v_color, b_force_close_menu, var_4db66001);
         }
-    } else {
-        self endon(#"disconnect");
-        if (var_4db66001 && self scene::is_igc_active()) {
-            return;
-        }
-        self _screen_fade(n_fadein_time, n_target_alpha, 0, v_color, b_force_close_menu);
-        wait(n_hold_time);
-        self _screen_fade(n_fadeout_time, 0, n_target_alpha, v_color, b_force_close_menu);
+        return;
     }
+    self endon(#"disconnect");
+    if (var_4db66001 && self scene::is_igc_active()) {
+        return;
+    }
+    self _screen_fade(n_fadein_time, n_target_alpha, 0, v_color, b_force_close_menu);
+    wait(n_hold_time);
+    self _screen_fade(n_fadeout_time, 0, n_target_alpha, v_color, b_force_close_menu);
 }
 
 // Namespace lui/lui_shared
@@ -580,9 +583,9 @@ function screen_fade(n_time, n_target_alpha = 1, n_start_alpha = 0, v_color, b_f
         foreach (player in level.players) {
             player thread _screen_fade(n_time, n_target_alpha, n_start_alpha, v_color, b_force_close_menu, str_menu_id, var_b675738a, b_force);
         }
-    } else {
-        self thread _screen_fade(n_time, n_target_alpha, n_start_alpha, v_color, b_force_close_menu, str_menu_id, var_b675738a, b_force);
+        return;
     }
+    self thread _screen_fade(n_time, n_target_alpha, n_start_alpha, v_color, b_force_close_menu, str_menu_id, var_b675738a, b_force);
 }
 
 // Namespace lui/lui_shared
@@ -624,9 +627,9 @@ function screen_close_menu() {
         foreach (player in level.players) {
             player thread _screen_close_menu();
         }
-    } else {
-        self thread _screen_close_menu();
+        return;
     }
+    self thread _screen_close_menu();
 }
 
 // Namespace lui/lui_shared
@@ -784,7 +787,7 @@ function open_generic_script_dialog(title, description) {
         waitresult = self waittill(#"menuresponse");
         menu = waitresult.menu;
         response = waitresult.response;
-    } while(menu != "ScriptMessageDialog_Compact" || response != "close");
+    } while (menu != "ScriptMessageDialog_Compact" || response != "close");
     self closeluimenu(dialog);
     self.var_520fb18c = undefined;
 }
@@ -821,7 +824,7 @@ function open_script_dialog(dialog_name) {
         waitresult = self waittill(#"menuresponse");
         menu = waitresult.menu;
         response = waitresult.response;
-    } while(menu != dialog_name || response != "close");
+    } while (menu != dialog_name || response != "close");
     self closeluimenu(dialog);
 }
 

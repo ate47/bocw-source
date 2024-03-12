@@ -761,7 +761,7 @@ function function_beb9b824() {
         if (!isdefined(level.var_8c229d8e)) {
             level flag::set("flag_bamboo_advance_6");
             level flag::set("flag_bamboo_second_turret_destroyed");
-            break;
+            return;
         }
         waitframe(1);
     }

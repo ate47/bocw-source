@@ -140,7 +140,9 @@ function function_e71841a() {
             if (isdefined(generator)) {
                 [[ generator ]]->function_75df0623(self);
             }
-        } else if (var_f6198c5b.script_noteworthy === "npc") {
+            continue;
+        }
+        if (var_f6198c5b.script_noteworthy === "npc") {
             if (!isdefined(var_f6198c5b.script_string)) {
                 continue;
             }
@@ -185,11 +187,13 @@ function function_e71841a() {
             if (add) {
                 level.doa.var_a8a563fc[level.doa.var_a8a563fc.size] = var_f6198c5b;
             }
-        } else if (var_f6198c5b.script_noteworthy === "teleporter") {
-            level.doa.var_c2648383[level.doa.var_c2648383.size] = var_f6198c5b;
-        } else {
-            self.floordecor[self.floordecor.size] = namespace_c004634e::function_6a09928b(var_f6198c5b, #"floor");
+            continue;
         }
+        if (var_f6198c5b.script_noteworthy === "teleporter") {
+            level.doa.var_c2648383[level.doa.var_c2648383.size] = var_f6198c5b;
+            continue;
+        }
+        self.floordecor[self.floordecor.size] = namespace_c004634e::function_6a09928b(var_f6198c5b, #"floor");
     }
     var_c9bdb63f = self namespace_f27a9d0d::function_cee62dac("type", "walldecor");
     foreach (var_f6198c5b in var_c9bdb63f) {

@@ -470,9 +470,9 @@ function function_36043197() {
                         self.var_bd710417[player getentitynumber()] = gettime();
                     }
                 }
-            } else {
-                self.var_bd710417[player getentitynumber()] = 0;
+                continue;
             }
+            self.var_bd710417[player getentitynumber()] = 0;
         }
         wait(0.25);
     }
@@ -659,9 +659,9 @@ function on_ai_damaged(params) {
         }
         if (params.eattacker zm_powerups::is_insta_kill_active()) {
             self.var_958cf9c5 = 1;
-        } else {
-            self thread ammomod_cryofreeze::function_f00409f3(params.eattacker, undefined, params.weapon, 0, 3);
+            return;
         }
+        self thread ammomod_cryofreeze::function_f00409f3(params.eattacker, undefined, params.weapon, 0, 3);
     }
 }
 

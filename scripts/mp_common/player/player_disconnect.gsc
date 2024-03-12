@@ -125,8 +125,8 @@ function private function_79915d44() {
                 break;
             }
         }
-    } else {
-        self.pers[#"nemesis_xuid"] = "";
+        return;
     }
+    self.pers[#"nemesis_xuid"] = "";
 }
 

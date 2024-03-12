@@ -69,9 +69,8 @@ function private function_9240114e(var_6176a8ab, default_value) {
     var_6c8b1954 = savegame::function_6440b06b(#"transient");
     if (isdefined(var_6c8b1954.var_6e64bcd[var_6176a8ab])) {
         return var_6c8b1954.var_6e64bcd[var_6176a8ab];
-    } else {
-        return savegame::function_2ee66e93(var_6176a8ab, default_value);
     }
+    return savegame::function_2ee66e93(var_6176a8ab, default_value);
 }
 
 // Namespace player_decision/player_decision
@@ -216,9 +215,9 @@ function function_5d2eb7fa(var_7c0d9a47) {
     function_4f0f89(#"hash_19be69882298b84a", var_7c0d9a47);
     if (!var_7c0d9a47) {
         getplayers()[0] stats::function_dad108fa(#"hash_a8df4bf1b167949", 1);
-    } else {
-        getplayers()[0] stats::function_dad108fa(#"hash_3449b16b901d6430", 1);
+        return;
     }
+    getplayers()[0] stats::function_dad108fa(#"hash_3449b16b901d6430", 1);
 }
 
 // Namespace player_decision/player_decision
@@ -397,9 +396,9 @@ function function_ef22e409() {
     for (var_2b7725a = 0; var_2b7725a < 10; var_2b7725a++) {
         if (isinarray(var_6c8b1954.var_f4d7790b, var_2b7725a)) {
             player stats::set_stat(#"mapdata", var_a268cecc, #"hash_43a738b893199779", var_2b7725a, 1);
-        } else {
-            player stats::set_stat(#"mapdata", var_a268cecc, #"hash_43a738b893199779", var_2b7725a, 0);
+            continue;
         }
+        player stats::set_stat(#"mapdata", var_a268cecc, #"hash_43a738b893199779", var_2b7725a, 0);
     }
     player function_d0c3d0ce();
     uploadstats(player);
@@ -417,7 +416,9 @@ function private function_d0c3d0ce() {
         if (!isinarray(var_6c8b1954.var_f4d7790b, 4)) {
             player stats::set_stat(#"mapdata", #"cp_rus_kgb", #"hash_43a738b893199779", 2, 0);
         }
-    } else if (var_a268cecc == #"cp_ger_hub8") {
+        return;
+    }
+    if (var_a268cecc == #"cp_ger_hub8") {
         if (isinarray(var_6c8b1954.var_f4d7790b, 0)) {
             player stats::set_stat(#"mapdata", #"cp_rus_duga", #"hash_43a738b893199779", 0, 0);
             player stats::set_stat(#"mapdata", #"cp_rus_duga", #"hash_43a738b893199779", 1, 0);
@@ -425,7 +426,9 @@ function private function_d0c3d0ce() {
         if (isinarray(var_6c8b1954.var_f4d7790b, 1)) {
             player stats::set_stat(#"mapdata", #"cp_rus_siege", #"hash_43a738b893199779", 0, 0);
         }
-    } else if (var_a268cecc == #"cp_rus_siege") {
+        return;
+    }
+    if (var_a268cecc == #"cp_rus_siege") {
         if (isinarray(var_6c8b1954.var_f4d7790b, 0)) {
             player stats::set_stat(#"mapdata", #"cp_rus_duga", #"hash_43a738b893199779", 0, 0);
             player stats::set_stat(#"mapdata", #"cp_rus_duga", #"hash_43a738b893199779", 1, 0);
@@ -433,7 +436,9 @@ function private function_d0c3d0ce() {
             player stats::set_stat(#"mapdata", #"cp_ger_hub8", #"hash_43a738b893199779", 1, 0);
             player stats::set_stat(#"mapdata", #"cp_ger_hub8", #"hash_43a738b893199779", 2, 0);
         }
-    } else if (var_a268cecc == #"cp_rus_duga") {
+        return;
+    }
+    if (var_a268cecc == #"cp_rus_duga") {
         if (isinarray(var_6c8b1954.var_f4d7790b, 0)) {
             player stats::set_stat(#"mapdata", #"cp_rus_siege", #"hash_43a738b893199779", 0, 0);
             player stats::set_stat(#"mapdata", #"cp_ger_hub8", #"hash_43a738b893199779", 0, 0);

@@ -68,14 +68,15 @@ function function_4013aee1(status_effect, var_3bc85d80) {
     }
     switch (status_effect.setype) {
     case 2:
-        jumpiffalse(var_3bc85d80 == "begin") LOC_00000124;
-        jumpiffalse(status_effect.var_3d1ed4bd == getweapon(#"concussion_grenade")) LOC_00000124;
-        processscoreevent(#"concussed_enemy", status_effect.var_4b22e697, status_effect.owner, status_effect.var_3d1ed4bd);
-        status_effect.var_4b22e697.var_9d19aa30 = (isdefined(status_effect.var_4b22e697.var_9d19aa30) ? status_effect.var_4b22e697.var_9d19aa30 : 0) + 1;
-        break;
+        if (var_3bc85d80 == "begin") {
+            if (status_effect.var_3d1ed4bd == getweapon(#"concussion_grenade")) {
+                processscoreevent(#"concussed_enemy", status_effect.var_4b22e697, status_effect.owner, status_effect.var_3d1ed4bd);
+                status_effect.var_4b22e697.var_9d19aa30 = (isdefined(status_effect.var_4b22e697.var_9d19aa30) ? status_effect.var_4b22e697.var_9d19aa30 : 0) + 1;
+                return;
+            }
+        }
     default:
-    LOC_00000124:
-        break;
+        return;
     }
 }
 
@@ -536,9 +537,9 @@ function scoreeventplayerkill(data, time) {
                         if (isdefined(scoregiven)) {
                             beingmicrowavedby challenges::earnedmicrowaveassistscore(scoregiven);
                         }
-                    } else {
-                        attackermicrowavedvictim = 1;
+                        continue;
                     }
+                    attackermicrowavedvictim = 1;
                 }
             }
             if (attackermicrowavedvictim === 1 && weapon.name != "microwave_turret") {
@@ -997,8 +998,8 @@ function specificweaponkill(attacker, victim, weapon, killstreak, inflictor) {
             attacker stats::function_42277145(#"hash_122768477016f4e5", 1);
             break;
         }
+        return;
     default:
-    LOC_000001dc:
         return;
     }
     if (isdefined(inflictor)) {
@@ -1579,19 +1580,16 @@ function get_distance_for_weapon(weapon, weaponclass) {
         baseweapon = challenges::getbaseweapon(weapon);
         if (weapon.isballisticknife || baseweapon == level.weaponspecialcrossbow && level.weaponspecialcrossbow != level.weaponnone) {
             return 2250000;
-            goto LOC_00000126;
-        }
-        if (baseweapon == level.var_91199825 && level.var_91199825 != level.weaponnone) {
+        } else if (baseweapon == level.var_91199825 && level.var_91199825 != level.weaponnone) {
             return 2560000;
-            goto LOC_00000126;
+        } else {
+            return 1960000;
         }
-        return 1960000;
     case #"weapon_grenade":
-    LOC_00000126:
-        jumpiffalse(weapon.rootweapon.name == "hatchet") LOC_0000014e;
-        return 2250000;
+        if (weapon.rootweapon.name == "hatchet") {
+            return 2250000;
+        }
     default:
-    LOC_0000014e:
         break;
     }
     return 0;
@@ -1736,10 +1734,10 @@ function function_43ee1b3d(attacker, victim, attackerweapon) {
     }
     if (isdefined(var_71eedb0b) && isdefined(var_a3aba5a9) && var_a3aba5a9) {
         if (smartcover.owner == attacker) {
-            processscoreevent(#"deployable_cover_kill", var_71eedb0b, victim, level.smartcoversettings.var_8d86ade8);
-        } else {
-            processscoreevent(#"deployable_cover_assist", var_71eedb0b, victim, level.smartcoversettings.var_8d86ade8);
+            processscoreevent(#"deployable_cover_kill", var_71eedb0b, victim, level.smartcoversettings.smartcoverweapon);
+            return;
         }
+        processscoreevent(#"deployable_cover_assist", var_71eedb0b, victim, level.smartcoversettings.smartcoverweapon);
     }
 }
 
@@ -1764,9 +1762,9 @@ function function_b8495e95(data, time) {
         if (var_c8757561) {
             processscoreevent(#"hash_429ae888806770a4", attacker, undefined, weapon);
             attacker stats::function_561716e6(weapon.name, #"hash_109b0615c82fd4af", 1);
-        } else {
-            processscoreevent(#"hash_53c101618247bd46", attacker, undefined, weapon);
+            return;
         }
+        processscoreevent(#"hash_53c101618247bd46", attacker, undefined, weapon);
     }
 }
 

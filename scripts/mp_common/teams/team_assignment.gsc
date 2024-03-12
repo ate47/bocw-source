@@ -372,7 +372,9 @@ function teamscoresequal() {
     foreach (team, _ in level.teams) {
         if (!isdefined(score)) {
             score = getteamscore(team);
-        } else if (score != getteamscore(team)) {
+            continue;
+        }
+        if (score != getteamscore(team)) {
             return 0;
         }
     }
@@ -440,7 +442,9 @@ function teamplayercountsequal(playercounts) {
     foreach (team, _ in level.teams) {
         if (!isdefined(count)) {
             count = playercounts[team];
-        } else if (count != playercounts[team]) {
+            continue;
+        }
+        if (count != playercounts[team]) {
             return 0;
         }
     }
@@ -670,8 +674,7 @@ function function_344e464d() {
                 if (squad == #"none") {
                     continue;
                 }
-                current_count = level.var_704bcca1 - var_a787dfe7;
-                while (current_count < level.var_704bcca1) {
+                for (current_count = level.var_704bcca1 - var_a787dfe7; current_count < level.var_704bcca1; current_count = current_count + function_8c162ba0(var_d28e4159, squad)) {
                     var_d28e4159 = function_569914e8(squad, level.var_704bcca1 - current_count, distribution[squad], var_f36ce5dd[team]);
                     if (!isdefined(var_d28e4159)) {
                         break;
@@ -694,7 +697,6 @@ function function_344e464d() {
                             }
                         }
                     }
-                    current_count = current_count + function_8c162ba0(var_d28e4159, squad);
                 }
                 var_2a80e9e0[index] = #"none";
             }

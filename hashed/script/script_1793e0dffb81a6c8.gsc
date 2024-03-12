@@ -79,14 +79,14 @@ function private function_b245db69(localclientnum, *oldval, newval, *bnewent, *b
             self.var_18f8b30b = util::spawn_model(fieldname, "tag_origin", self.origin, self.angles);
             self.var_3b071bba = util::playfxontag(fieldname, level._effect[#"hash_1d15a5dad558b1a5"], self.var_18f8b30b, "tag_origin");
         }
-    } else {
-        if (isdefined(self.var_3b071bba)) {
-            deletefx(fieldname, self.var_3b071bba);
-            self.var_3b071bba = undefined;
-        }
-        if (isdefined(self.var_18f8b30b)) {
-            self.var_18f8b30b delete();
-        }
+        return;
+    }
+    if (isdefined(self.var_3b071bba)) {
+        deletefx(fieldname, self.var_3b071bba);
+        self.var_3b071bba = undefined;
+    }
+    if (isdefined(self.var_18f8b30b)) {
+        self.var_18f8b30b delete();
     }
 }
 

@@ -73,11 +73,11 @@ function function_58189f7d(*killstreaktype) {
     waitresult = self waittill(#"weapon_fired", #"weapon_change");
     if (!self killstreakrules::function_71e94a3b() && waitresult._notify === "weapon_fired") {
         return 0;
-    } else if (waitresult._notify === "weapon_fired") {
-        return 1;
-    } else {
-        return 0;
     }
+    if (waitresult._notify === "weapon_fired") {
+        return 1;
+    }
+    return 0;
 }
 
 // Namespace napalm_strike/napalm_strike

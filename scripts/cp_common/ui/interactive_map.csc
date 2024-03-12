@@ -29,9 +29,9 @@ function private function_70a657d8() {
 function private toggle_interactive_map(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self thread function_f4804ac(fieldname);
-    } else {
-        self notify(#"close_interactive_map");
+        return;
     }
+    self notify(#"close_interactive_map");
 }
 
 // Namespace interactive_map/interactive_map

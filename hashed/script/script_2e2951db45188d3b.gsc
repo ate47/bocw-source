@@ -42,7 +42,9 @@ function private function_f343c90c(*localclientnum, *oldval, newval, *bnewent, *
             self postfx::stoppostfxbundle("pstfx_t9_cp_sepia");
         }
         self postfx::playpostfxbundle("pstfx_t9_cp_sepia");
-    } else if (self postfx::function_556665f2("pstfx_t9_cp_sepia")) {
+        return;
+    }
+    if (self postfx::function_556665f2("pstfx_t9_cp_sepia")) {
         self postfx::stoppostfxbundle("pstfx_t9_cp_sepia");
     }
 }

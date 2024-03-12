@@ -198,9 +198,9 @@ function function_834fd6bc(*team, player, success) {
     }
     if (is_true(success)) {
         self playsound(#"hash_6fefa7ed76b6836f");
-    } else {
-        self playsound(#"hash_454f385830b89f");
+        return;
     }
+    self playsound(#"hash_454f385830b89f");
 }
 
 // Namespace zm_silver_util/zm_silver_util
@@ -278,10 +278,10 @@ function function_df4b3116(status, n_time) {
             foreach (player in a_players) {
                 player thread set_for_time(n_time, status);
             }
-        } else {
-            foreach (player in a_players) {
-                player thread toggle(status);
-            }
+            return;
+        }
+        foreach (player in a_players) {
+            player thread toggle(status);
         }
     #/
 }
@@ -295,18 +295,18 @@ function function_72c803d3(cmd) {
         switch (cmd) {
         case #"hash_bfe1136366775c6":
             function_14a89247();
-            break;
+            return;
         case #"hash_385b6dd43dd64f63":
             function_701cd5cf();
-            break;
+            return;
         case #"hash_61aa29debb64fda1":
             function_df4b3116(#"hash_1154242c9b1e4518");
-            break;
+            return;
         case #"hash_61aa28debb64fbee":
             function_df4b3116(#"hash_7ef7aab6a305d0b0", 2);
-            break;
+            return;
         default:
-            break;
+            return;
         }
     #/
 }

@@ -123,9 +123,9 @@ function function_2ecf3fa7(var_5103505d, anim_name, var_17813638, phase) {
         key = function_4e61a046(action_name, phase);
         if (isdefined(anim_name)) {
             self.var_9d46265b[key] = [1:var_17813638, 0:anim_name];
-        } else {
-            self.var_9d46265b[key] = undefined;
+            continue;
         }
+        self.var_9d46265b[key] = undefined;
     }
 }
 
@@ -183,7 +183,9 @@ function function_df6077(action_name, enabled) {
     #/
     if (enabled && !is_true(self.var_f467e5b0.enabled[action_name])) {
         self.var_f467e5b0.enabled[action_name] = undefined;
-    } else if (!enabled) {
+        return;
+    }
+    if (!enabled) {
         if (!isdefined(self.var_f467e5b0)) {
             self.var_f467e5b0 = {};
         }
@@ -520,10 +522,10 @@ function function_2f22cd0b(action, command, type = "click", flag) {
             waitframe(1);
         }
         self flag::clear(flag);
-    } else {
-        self function_9cb5ca63(action, command);
-        self flag::set(flag);
+        return;
     }
+    self function_9cb5ca63(action, command);
+    self flag::set(flag);
 }
 
 // Namespace actions/actions
@@ -547,7 +549,6 @@ function function_ae44e21b(*action, command) {
         return self secondaryoffhandbuttonpressed();
     case #"stance":
         return (self stancebuttonpressed() || self buttonbitstate("BUTTON_BIT_ANY_DOWN"));
-        break;
     }
     return 0;
 }
@@ -596,7 +597,6 @@ function function_9cb5ca63(action, command) {
         break;
     default:
         return 0;
-        break;
     }
     self waittill(triggername);
     return 1;
@@ -696,16 +696,15 @@ function function_e3401e0e(name) {
                 function_42a5d542(action, var_2b8c0efb);
                 self thread function_e3401e0e(var_2b8c0efb.name);
                 return;
-            } else {
-                if (var_2b8c0efb.ender != action.ender) {
-                    self notify(var_2b8c0efb.ender);
-                }
-                if (action.name == "root") {
-                    self childthread function_2fc00159(name, var_2b8c0efb);
-                } else {
-                    arrayremovevalue(action.var_1eb98b2a, var_2b8c0efb);
-                }
             }
+            if (var_2b8c0efb.ender != action.ender) {
+                self notify(var_2b8c0efb.ender);
+            }
+            if (action.name == "root") {
+                self childthread function_2fc00159(name, var_2b8c0efb);
+                continue;
+            }
+            arrayremovevalue(action.var_1eb98b2a, var_2b8c0efb);
         }
     }
 }

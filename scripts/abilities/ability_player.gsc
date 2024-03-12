@@ -210,25 +210,25 @@ function function_f2250880(weapon, var_4dd90b81 = 0) {
     if (isalive(self)) {
         slot = self gadgetgetslot(weapon);
         self function_95218c27(slot, var_4dd90b81);
-    } else {
-        if (!isdefined(self.var_8912d8d9)) {
-            self.var_8912d8d9 = [];
-            self.var_41ea5be4 = [];
-        }
-        if (!isdefined(self.var_8912d8d9)) {
-            self.var_8912d8d9 = [];
-        } else if (!isarray(self.var_8912d8d9)) {
-            self.var_8912d8d9 = array(self.var_8912d8d9);
-        }
-        self.var_8912d8d9[self.var_8912d8d9.size] = weapon;
-        if (!isdefined(self.var_41ea5be4)) {
-            self.var_41ea5be4 = [];
-        } else if (!isarray(self.var_41ea5be4)) {
-            self.var_41ea5be4 = array(self.var_41ea5be4);
-        }
-        self.var_41ea5be4[self.var_41ea5be4.size] = var_4dd90b81;
-        callback::function_d8abfc3d(#"on_player_spawned", &function_9c46835d);
+        return;
     }
+    if (!isdefined(self.var_8912d8d9)) {
+        self.var_8912d8d9 = [];
+        self.var_41ea5be4 = [];
+    }
+    if (!isdefined(self.var_8912d8d9)) {
+        self.var_8912d8d9 = [];
+    } else if (!isarray(self.var_8912d8d9)) {
+        self.var_8912d8d9 = array(self.var_8912d8d9);
+    }
+    self.var_8912d8d9[self.var_8912d8d9.size] = weapon;
+    if (!isdefined(self.var_41ea5be4)) {
+        self.var_41ea5be4 = [];
+    } else if (!isarray(self.var_41ea5be4)) {
+        self.var_41ea5be4 = array(self.var_41ea5be4);
+    }
+    self.var_41ea5be4[self.var_41ea5be4.size] = var_4dd90b81;
+    callback::function_d8abfc3d(#"on_player_spawned", &function_9c46835d);
 }
 
 // Namespace ability_player/ability_player
@@ -782,24 +782,21 @@ function gadget_checkheroabilitykill(attacker) {
             }
             break;
         case #"gadget_vision_pulse":
-            jumpiffalse(isdefined(attacker.visionpulsespottedenemytime)) LOC_0000016c;
-            timecutoff = gettime();
-            jumpcmp(attacker.visionpulsespottedenemytime + 10000 < timecutoff) LOC_0000016c;
-            i = 0;
-            for (;;) {
-                for (;;) {
-                    jumpcmp(i > attacker.visionpulsespottedenemy.size) LOC_0000016c;
-                    spottedenemy = attacker.visionpulsespottedenemy[i];
-                    if (spottedenemy == self) {
-                        if (self.lastspawntime < attacker.visionpulsespottedenemytime) {
-                            heroabilitystat = 1;
-                            goto LOC_0000016c;
+            if (isdefined(attacker.visionpulsespottedenemytime)) {
+                timecutoff = gettime();
+                if (attacker.visionpulsespottedenemytime + 10000 > timecutoff) {
+                    for (i = 0; i < attacker.visionpulsespottedenemy.size; i++) {
+                        spottedenemy = attacker.visionpulsespottedenemy[i];
+                        if (spottedenemy == self) {
+                            if (self.lastspawntime < attacker.visionpulsespottedenemytime) {
+                                heroabilitystat = 1;
+                                break;
+                            }
                         }
                     }
                 }
             }
         case #"gadget_combat_efficiency":
-        LOC_0000016c:
             if (isdefined(attacker._gadget_combat_efficiency) && attacker._gadget_combat_efficiency == 1) {
                 heroabilitystat = 1;
                 break;
@@ -951,20 +948,20 @@ function tutorial_hints(slot, weapon, var_8430d11b, var_6c65cb8d, var_eadf8864, 
     self tutorial_init(weapon);
     while (1) {
         if (!self hasweapon(weapon)) {
-            break;
+            return;
         }
         currentslot = self gadgetgetslot(weapon);
         if (currentslot != slot) {
-            break;
+            return;
         }
         if (!self gadgetisready(slot)) {
-            break;
+            return;
         }
         if (self gadgetisprimed(slot)) {
-            break;
+            return;
         }
         if (self util::gadget_is_in_use(slot)) {
-            break;
+            return;
         }
         if (self isinvehicle() || self function_8bc54983() || self scene::is_igc_active() || self isplayinganimscripted()) {
             wait(5);
@@ -1096,14 +1093,14 @@ function abilities_devgui_add_player_commands(root, pname, index) {
         menu_index = 1;
         if (isdefined(level.abilities_devgui_add_gadgets_custom)) {
             menu_index = self [[ level.abilities_devgui_add_gadgets_custom ]](root, pname, pid, menu_index);
-        } else {
-            waittill_can_add_debug_command();
-            menu_index = abilities_devgui_add_gadgets(add_cmd_with_root, pid, menu_index);
-            waittill_can_add_debug_command();
-            menu_index = abilities_devgui_add_power(add_cmd_with_root, pid, menu_index);
-            waittill_can_add_debug_command();
-            menu_index = function_2e0162e9(add_cmd_with_root, pid, menu_index);
+            return;
         }
+        waittill_can_add_debug_command();
+        menu_index = abilities_devgui_add_gadgets(add_cmd_with_root, pid, menu_index);
+        waittill_can_add_debug_command();
+        menu_index = abilities_devgui_add_power(add_cmd_with_root, pid, menu_index);
+        waittill_can_add_debug_command();
+        menu_index = function_2e0162e9(add_cmd_with_root, pid, menu_index);
     #/
 }
 
@@ -1132,11 +1129,9 @@ function abilities_devgui_add_power(add_cmd_with_root, pid, menu_index) {
         root = add_cmd_with_root + "<unknown string>" + menu_index + "<unknown string>";
         abilities_devgui_add_player_command(root, pid, "<unknown string>", 1, "<unknown string>", "<unknown string>");
         abilities_devgui_add_player_command(root, pid, "<unknown string>", 2, "<unknown string>", "<unknown string>");
-        power = 0;
-        while (power <= 1) {
+        for (power = 0; power <= 1; power = power + 0.25) {
             abilities_devgui_add_player_command(root, pid, "<unknown string>" + power, 2, "<unknown string>", "<unknown string>" + power);
             abilities_devgui_add_player_command(root, pid, "<unknown string>" + power, 2, "<unknown string>", "<unknown string>" + power);
-            power = power + 0.25;
         }
         menu_index++;
         return menu_index;
@@ -1290,7 +1285,9 @@ function abilities_devgui_add_gadgets(add_cmd_with_root, pid, menu_index) {
                 if (!isinarray(var_ef060ee3, a_gadgetweapons[i])) {
                     var_ef060ee3[var_ef060ee3.size] = a_gadgetweapons[i];
                 }
-            } else if (a_gadgetweapons[i].gadget_type == 11) {
+                continue;
+            }
+            if (a_gadgetweapons[i].gadget_type == 11) {
                 if (!isdefined(var_cdbfed45)) {
                     var_cdbfed45 = [];
                 } else if (!isarray(var_cdbfed45)) {
@@ -1299,7 +1296,9 @@ function abilities_devgui_add_gadgets(add_cmd_with_root, pid, menu_index) {
                 if (!isinarray(var_cdbfed45, a_gadgetweapons[i])) {
                     var_cdbfed45[var_cdbfed45.size] = a_gadgetweapons[i];
                 }
-            } else if (a_gadgetweapons[i].isheavyweapon) {
+                continue;
+            }
+            if (a_gadgetweapons[i].isheavyweapon) {
                 if (!isdefined(var_7e367d09)) {
                     var_7e367d09 = [];
                 } else if (!isarray(var_7e367d09)) {
@@ -1308,7 +1307,9 @@ function abilities_devgui_add_gadgets(add_cmd_with_root, pid, menu_index) {
                 if (!isinarray(var_7e367d09, a_gadgetweapons[i])) {
                     var_7e367d09[var_7e367d09.size] = a_gadgetweapons[i];
                 }
-            } else if (a_gadgetweapons[i].gadget_type == 23) {
+                continue;
+            }
+            if (a_gadgetweapons[i].gadget_type == 23) {
                 if (!isdefined(a_heal)) {
                     a_heal = [];
                 } else if (!isarray(a_heal)) {
@@ -1317,15 +1318,15 @@ function abilities_devgui_add_gadgets(add_cmd_with_root, pid, menu_index) {
                 if (!isinarray(a_heal, a_gadgetweapons[i])) {
                     a_heal[a_heal.size] = a_gadgetweapons[i];
                 }
-            } else {
-                if (!isdefined(var_4557f227)) {
-                    var_4557f227 = [];
-                } else if (!isarray(var_4557f227)) {
-                    var_4557f227 = array(var_4557f227);
-                }
-                if (!isinarray(var_4557f227, a_gadgetweapons[i])) {
-                    var_4557f227[var_4557f227.size] = a_gadgetweapons[i];
-                }
+                continue;
+            }
+            if (!isdefined(var_4557f227)) {
+                var_4557f227 = [];
+            } else if (!isarray(var_4557f227)) {
+                var_4557f227 = array(var_4557f227);
+            }
+            if (!isinarray(var_4557f227, a_gadgetweapons[i])) {
+                var_4557f227[var_4557f227.size] = a_gadgetweapons[i];
             }
         }
         function_174037fe(add_cmd_with_root, pid, a_equipment, "<unknown string>", menu_index);
@@ -1449,42 +1450,42 @@ function abilities_devgui_think() {
             }
             if (cmd == "<unknown string>") {
                 waitframe(1);
-            } else {
-                switch (cmd) {
-                case #"power_f":
-                    abilities_devgui_handle_player_command(cmd, &abilities_devgui_power_fill);
-                    break;
-                case #"power_t_af":
-                    abilities_devgui_handle_player_command(cmd, &abilities_devgui_power_toggle_auto_fill);
-                    break;
-                case #"ability_power_f":
-                    abilities_devgui_handle_player_command(cmd, &function_3db3dc4f, arg);
-                    break;
-                case #"hash_5b8a32e219f9ae64":
-                    abilities_devgui_handle_player_command(cmd, &function_626f2cd1, arg);
-                    break;
-                case #"hash_2d2f6f2bb98a38b3":
-                    abilities_devgui_handle_player_command(cmd, &function_9a0f80b1, arg);
-                    break;
-                case #"hash_5ddbad8870b98e93":
-                    abilities_devgui_handle_player_command(cmd, &function_ce4e80a7, arg);
-                    break;
-                case #"hash_5515835378aa90c8":
-                    abilities_devgui_handle_player_command(cmd, &function_4f50aea3, arg);
-                    break;
-                case #"hash_67d528f29bfc7c97":
-                    abilities_devgui_handle_player_command(cmd, &function_b4f43681, arg);
-                    break;
-                case 0:
-                    break;
-                default:
-                    break;
-                }
-                setdvar(#"hash_67d528f29bfc7c97", "<unknown string>");
-                setdvar(#"scr_abilities_devgui_cmd", "<unknown string>");
-                setdvar(#"scr_abilities_devgui_player", "<unknown string>");
-                wait(0.5);
+                continue;
             }
+            switch (cmd) {
+            case #"power_f":
+                abilities_devgui_handle_player_command(cmd, &abilities_devgui_power_fill);
+                break;
+            case #"power_t_af":
+                abilities_devgui_handle_player_command(cmd, &abilities_devgui_power_toggle_auto_fill);
+                break;
+            case #"ability_power_f":
+                abilities_devgui_handle_player_command(cmd, &function_3db3dc4f, arg);
+                break;
+            case #"hash_5b8a32e219f9ae64":
+                abilities_devgui_handle_player_command(cmd, &function_626f2cd1, arg);
+                break;
+            case #"hash_2d2f6f2bb98a38b3":
+                abilities_devgui_handle_player_command(cmd, &function_9a0f80b1, arg);
+                break;
+            case #"hash_5ddbad8870b98e93":
+                abilities_devgui_handle_player_command(cmd, &function_ce4e80a7, arg);
+                break;
+            case #"hash_5515835378aa90c8":
+                abilities_devgui_handle_player_command(cmd, &function_4f50aea3, arg);
+                break;
+            case #"hash_67d528f29bfc7c97":
+                abilities_devgui_handle_player_command(cmd, &function_b4f43681, arg);
+                break;
+            case 0:
+                break;
+            default:
+                break;
+            }
+            setdvar(#"hash_67d528f29bfc7c97", "<unknown string>");
+            setdvar(#"scr_abilities_devgui_cmd", "<unknown string>");
+            setdvar(#"scr_abilities_devgui_player", "<unknown string>");
+            wait(0.5);
         }
     #/
 }
@@ -1531,11 +1532,13 @@ function function_4f50aea3(weapon_name) {
     /#
         if (isdefined(level.var_124446e) && isarray(level.var_124446e) && isdefined(level.var_124446e[weapon_name])) {
             self [[ level.var_124446e[weapon_name] ]](self, 2);
-        } else if (isdefined(level.var_124446e)) {
-            self [[ level.var_124446e ]](weapon_name, 2);
-        } else {
-            self abilities_devgui_give(weapon_name, 2);
+            return;
         }
+        if (isdefined(level.var_124446e)) {
+            self [[ level.var_124446e ]](weapon_name, 2);
+            return;
+        }
+        self abilities_devgui_give(weapon_name, 2);
     #/
 }
 
@@ -1547,9 +1550,9 @@ function function_ce4e80a7(weapon_name) {
     /#
         if (isdefined(level.var_c49b362f) && isdefined(level.var_c49b362f[weapon_name])) {
             self [[ level.var_c49b362f[weapon_name] ]](self, 1);
-        } else {
-            self abilities_devgui_give(weapon_name, 1);
+            return;
         }
+        self abilities_devgui_give(weapon_name, 1);
     #/
 }
 
@@ -1561,9 +1564,9 @@ function function_9a0f80b1(weapon_name) {
     /#
         if (isdefined(level.var_fdfc376e) && isdefined(level.var_fdfc376e[weapon_name])) {
             self [[ level.var_fdfc376e[weapon_name] ]](self, 0);
-        } else {
-            self abilities_devgui_give(weapon_name, 0);
+            return;
         }
+        self abilities_devgui_give(weapon_name, 0);
     #/
 }
 
@@ -1618,9 +1621,9 @@ function abilities_devgui_handle_player_command(*cmd, playercallback, pcb_param)
                     player thread [[ playercallback ]]();
                 }
             }
-        } else {
-            thread_all(getplayers(), playercallback, pcb_param);
+            return;
         }
+        thread_all(getplayers(), playercallback, pcb_param);
     #/
 }
 
@@ -1695,22 +1698,21 @@ function abilities_devgui_power_toggle_auto_fill_think() {
         self notify(#"auto_fill_think");
         self endon(#"auto_fill_think");
         for (;;) {
-            for (;;) {
-                if (!isdefined(self) || !isdefined(self._gadgets_player)) {
-                    return;
-                }
-                if (!is_true(self.abilities_devgui_power_toggle_auto_fill)) {
-                    return;
-                }
-                for (i = 0; i < 3; i++) {
-                    if (isdefined(self._gadgets_player[i]) && self hasweapon(self._gadgets_player[i])) {
-                        n_power = self gadgetpowerget(i);
-                        if (!self gadget_is_in_use(i) && !self function_36dfc05f(i) && n_power < self._gadgets_player[i].gadget_powermax) {
-                            self gadgetpowerset(i, self._gadgets_player[i].gadget_powermax);
-                        }
+            if (!isdefined(self) || !isdefined(self._gadgets_player)) {
+                return;
+            }
+            if (!is_true(self.abilities_devgui_power_toggle_auto_fill)) {
+                return;
+            }
+            for (i = 0; i < 3; i++) {
+                if (isdefined(self._gadgets_player[i]) && self hasweapon(self._gadgets_player[i])) {
+                    n_power = self gadgetpowerget(i);
+                    if (!self gadget_is_in_use(i) && !self function_36dfc05f(i) && n_power < self._gadgets_player[i].gadget_powermax) {
+                        self gadgetpowerset(i, self._gadgets_player[i].gadget_powermax);
                     }
                 }
             }
+            wait(1);
         }
     #/
 }
@@ -1743,7 +1745,7 @@ function function_b4f43681(var_a5c8eb94) {
                 if (index >= getplayerroletemplatecount(currentsessionmode())) {
                     index = 0;
                 }
-            } while(!self is_valid(index));
+            } while (!self is_valid(index));
         } else if (var_a5c8eb94 == "<unknown string>") {
             startindex = self get();
             index = startindex;
@@ -1755,7 +1757,7 @@ function function_b4f43681(var_a5c8eb94) {
                 if (index == 0) {
                     index = getplayerroletemplatecount(currentsessionmode());
                 }
-            } while(!self is_valid(index));
+            } while (!self is_valid(index));
         } else {
             index = int(var_a5c8eb94);
         }
@@ -1774,7 +1776,9 @@ function function_b4f43681(var_a5c8eb94) {
                 self luinotifyevent(#"hash_2dddf8559f5b304d", 1, 1);
             }
             level.spawnselectenabled = spawnselect;
-        } else if (sessionmodeiscampaigngame()) {
+            return;
+        }
+        if (sessionmodeiscampaigngame()) {
             if (isdefined(level.var_86734d48)) {
                 self thread [[ level.var_86734d48 ]](self.team, self.curclass);
             }

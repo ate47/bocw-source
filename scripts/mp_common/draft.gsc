@@ -503,9 +503,8 @@ function draft_run() {
             if (level.var_5be52892 && !var_97286e53 && all_players_connected()) {
                 level clientfield::set_world_uimodel("PositionDraft.timeRemaining", 0);
                 break;
-            } else {
-                wait(1);
             }
+            wait(1);
         }
         level clientfield::set_world_uimodel("PositionDraft.timeRemaining", 0);
     }
@@ -571,10 +570,12 @@ function assign_remaining_players(only_assign_player) {
             if (!isdefined(only_assign_player)) {
                 validcharacters = array::randomize(validcharacters);
                 player select_character(validcharacters[0].index, 1, 0);
-            } else if (only_assign_player == player) {
+                continue;
+            }
+            if (only_assign_player == player) {
                 validcharacters = array::randomize(validcharacters);
                 player select_character(validcharacters[0].index, 1, 0);
-                break;
+                return;
             }
         }
         return;
@@ -615,7 +616,9 @@ function assign_remaining_players(only_assign_player) {
             characterindex = player player_role::get();
             if (player_role::is_valid(characterindex)) {
                 characters[characterindex].available = 0;
-            } else if (!isdefined(only_assign_player)) {
+                continue;
+            }
+            if (!isdefined(only_assign_player)) {
                 player player_role::clear();
                 if (!isdefined(playersneedingassignment)) {
                     playersneedingassignment = [];
@@ -624,7 +627,9 @@ function assign_remaining_players(only_assign_player) {
                 }
                 playersneedingassignment[playersneedingassignment.size] = player;
                 player clientfield::set_player_uimodel("PositionDraft.autoSelected", 1);
-            } else if (only_assign_player == player) {
+                continue;
+            }
+            if (only_assign_player == player) {
                 player player_role::clear();
                 if (!isdefined(playersneedingassignment)) {
                     playersneedingassignment = [];
@@ -739,9 +744,9 @@ function game_start() {
             wait(0.75);
             luinotifyevent(#"quick_fade", 0);
             wait(0.25);
-        } else {
-            wait(1);
+            continue;
         }
+        wait(1);
     }
     level notify(#"hash_4c62fe02843b1a98");
 }
@@ -815,17 +820,29 @@ function set_draft_stage(draftstage) {
     #/
     if (draftstage == 1) {
         draft_initialize();
-    } else if (draftstage == 2) {
+        return;
+    }
+    if (draftstage == 2) {
         wait_for_players();
-    } else if (draftstage == 3) {
+        return;
+    }
+    if (draftstage == 3) {
         draft_run();
-    } else if (draftstage == 4) {
+        return;
+    }
+    if (draftstage == 4) {
         function_404f08f3();
-    } else if (draftstage == 5) {
+        return;
+    }
+    if (draftstage == 5) {
         assign_remaining_players();
-    } else if (draftstage == 6) {
+        return;
+    }
+    if (draftstage == 6) {
         game_start();
-    } else if (draftstage == 7) {
+        return;
+    }
+    if (draftstage == 7) {
         draft_finalize();
     }
 }

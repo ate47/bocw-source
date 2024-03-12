@@ -596,9 +596,9 @@ class class_c4926dee {
                     }
                 #/
                 wait(self.var_6d14cf9d);
-            } else {
-                wait(randomfloatrange(0.5, 2));
+                continue;
             }
+            wait(randomfloatrange(0.5, 2));
         }
     }
 

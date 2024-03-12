@@ -77,10 +77,8 @@ function private _cleanup(*eventstruct) {
 // Size: 0x2ec
 function private function_7d76b3ac() {
     level endoncallback(&_cleanup, #"level_restarting");
-    player = getplayers()[0];
-    while (!isdefined(player)) {
+    for (player = getplayers()[0]; !isdefined(player); player = getplayers()[0]) {
         waitframe(1);
-        player = getplayers()[0];
     }
     player endoncallback(&_cleanup, #"death");
     level.var_435c3a22 = [];

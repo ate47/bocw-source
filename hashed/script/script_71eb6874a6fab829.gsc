@@ -39,11 +39,11 @@ function private function_62443495(var_c93cfecf = "") {
         namespace_61e6d095::function_73c9a490(#"hash_541706109c2cadca", 1);
         namespace_61e6d095::function_9ade1d9b(#"hash_541706109c2cadca", "useGameSelect", 1);
         namespace_61e6d095::function_9ade1d9b(#"hash_541706109c2cadca", "gameRef", "");
-    } else {
-        function_633f25cf(var_c93cfecf);
-        namespace_61e6d095::function_9ade1d9b(#"hash_541706109c2cadca", "useGameSelect", 0);
-        namespace_61e6d095::function_9ade1d9b(#"hash_541706109c2cadca", "gameRef", var_c93cfecf);
+        return;
     }
+    function_633f25cf(var_c93cfecf);
+    namespace_61e6d095::function_9ade1d9b(#"hash_541706109c2cadca", "useGameSelect", 0);
+    namespace_61e6d095::function_9ade1d9b(#"hash_541706109c2cadca", "gameRef", var_c93cfecf);
 }
 
 // Namespace namespace_b27ebd77/namespace_b27ebd77
@@ -156,10 +156,10 @@ function private function_eee069b6(b_enable) {
         level.player val::set(#"hash_23eaaa0ed427f793", "disable_weapons", 1);
         level.player val::set(#"hash_23eaaa0ed427f793", "freezecontrols_allowlook", 1);
         namespace_82bfe441::fade(1, "FadeImmediate");
-    } else {
-        level.player val::function_e681e68e(#"hash_23eaaa0ed427f793");
-        namespace_82bfe441::fade(0, "FadeMedium");
+        return;
     }
+    level.player val::function_e681e68e(#"hash_23eaaa0ed427f793");
+    namespace_82bfe441::fade(0, "FadeMedium");
 }
 
 // Namespace namespace_b27ebd77/namespace_b27ebd77
@@ -210,7 +210,7 @@ function private function_939f5cad(machine) {
         if (response == "arcade_state") {
             function_e2a06860(machine, value);
         }
-    } while(self flag::get(#"hash_6b3b32a84fb4bd01"));
+    } while (self flag::get(#"hash_6b3b32a84fb4bd01"));
 }
 
 // Namespace namespace_b27ebd77/namespace_b27ebd77
@@ -268,7 +268,7 @@ function private function_d6faeb2b() {
         var_620beea5 = self gamepadusedlast();
         if (var_620beea5 && self namespace_61e6d095::function_70217795() || !var_620beea5 && self usebuttonpressed()) {
             self notify(#"request_menu_exit");
-            break;
+            return;
         }
         waitframe(1);
     }

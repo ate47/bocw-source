@@ -265,16 +265,22 @@ function private function_ccf8f659(aoe, forceend = 0) {
         aoe.entity clientfield::set("aoe_state", 1);
         aoe.state = 1;
         aoe.var_be1913ae = gettime() + 100;
-    } else if (aoe.state == 1) {
+        return;
+    }
+    if (aoe.state == 1) {
         aoe.entity clientfield::set("aoe_state", 2);
         aoe.state = 2;
         aoe.var_be1913ae = aoe.endtime;
         if (isdefined(aoe.var_fb4d789f)) {
             [[ aoe.var_fb4d789f ]](aoe);
         }
-    } else if (aoe.state == 2) {
+        return;
+    }
+    if (aoe.state == 2) {
         function_97d801ea(aoe, var_46f1b5eb, 0);
-    } else if (aoe.state == 3 || aoe.state == 4) {
+        return;
+    }
+    if (aoe.state == 3 || aoe.state == 4) {
         aoe.entity clientfield::set("aoe_state", 5);
         aoe.state = 5;
     }
@@ -290,11 +296,11 @@ function private function_97d801ea(aoe, var_46f1b5eb, *var_a0739fc1) {
         var_46f1b5eb.entity clientfield::set("aoe_state", 4);
         var_46f1b5eb.state = 4;
         var_46f1b5eb notify(#"hash_16055baf8d7c453a");
-    } else {
-        var_46f1b5eb.entity clientfield::set("aoe_state", 3);
-        var_46f1b5eb.state = 3;
-        var_46f1b5eb notify(#"hash_3913004963ca6fe4");
+        return;
     }
+    var_46f1b5eb.entity clientfield::set("aoe_state", 3);
+    var_46f1b5eb.state = 3;
+    var_46f1b5eb notify(#"hash_3913004963ca6fe4");
 }
 
 // Namespace zm_aoe/zm_aoe

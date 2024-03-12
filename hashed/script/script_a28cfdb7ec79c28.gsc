@@ -38,9 +38,9 @@ function init() {
 function function_a7e6c47e(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         namespace_cf4aa5f0::function_470d684a("peck_room_fire_on");
-    } else {
-        namespace_cf4aa5f0::function_470d684a("peck_room_fire_off");
+        return;
     }
+    namespace_cf4aa5f0::function_470d684a("peck_room_fire_off");
 }
 
 // Namespace namespace_8dac58da/namespace_8dac58da
@@ -50,9 +50,9 @@ function function_a7e6c47e(*localclientnum, *oldval, newval, *bnewent, *binitial
 function function_36d3a2ae(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         namespace_cf4aa5f0::function_470d684a("cp_defence_1_light_on");
-    } else {
-        namespace_cf4aa5f0::function_470d684a("cp_defence_1_light_off");
+        return;
     }
+    namespace_cf4aa5f0::function_470d684a("cp_defence_1_light_off");
 }
 
 // Namespace namespace_8dac58da/namespace_8dac58da
@@ -62,9 +62,9 @@ function function_36d3a2ae(*localclientnum, *oldval, newval, *bnewent, *binitial
 function function_7cc2cca5(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         namespace_cf4aa5f0::function_470d684a("cp_defence_2_light_on");
-    } else {
-        namespace_cf4aa5f0::function_470d684a("cp_defence_2_light_off");
+        return;
     }
+    namespace_cf4aa5f0::function_470d684a("cp_defence_2_light_off");
 }
 
 // Namespace namespace_8dac58da/namespace_8dac58da
@@ -74,9 +74,9 @@ function function_7cc2cca5(*localclientnum, *oldval, newval, *bnewent, *binitial
 function function_72aa9b9b(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         namespace_cf4aa5f0::function_470d684a("cp_defence_3_light_on");
-    } else {
-        namespace_cf4aa5f0::function_470d684a("cp_defence_3_light_off");
+        return;
     }
+    namespace_cf4aa5f0::function_470d684a("cp_defence_3_light_off");
 }
 
 // Namespace namespace_8dac58da/namespace_8dac58da
@@ -99,9 +99,9 @@ function function_dcf22669() {
 function function_a20b24ac(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         level flag::set("gold_power_on");
-    } else {
-        level flag::clear("gold_power_on");
+        return;
     }
+    level flag::clear("gold_power_on");
 }
 
 // Namespace namespace_8dac58da/namespace_8dac58da

@@ -245,7 +245,7 @@ function function_86edc85c(target_pos, maxwait = 2) {
     var_1dd010d6 = gettime();
     while (1) {
         if (self.origin[2] < target_pos[2] || float(gettime() - var_1dd010d6) / 1000 > maxwait) {
-            break;
+            return;
         }
         waitframe(1);
     }
@@ -378,7 +378,9 @@ function function_16e4e507(var_558f00ed, var_886a6495, trigger, var_da4747b7) {
             if (isdefined(var_1dfa9e6)) {
                 var_1dfa9e6 function_cb48cddd();
             }
-        } else if (isdefined(var_886a6495) && isdefined(var_558f00ed)) {
+            return;
+        }
+        if (isdefined(var_886a6495) && isdefined(var_558f00ed)) {
             wait(1.7);
             if (isdefined(var_886a6495) && isdefined(trigger) && isdefined(var_558f00ed)) {
                 trigger.isfishing = 0;
@@ -451,12 +453,12 @@ function function_e8c63c15(player, var_da4747b7, index = 0) {
             model = util::spawn_model(#"hash_6290596be2341e21", var_2858caa2.origin, var_2858caa2.angles);
             playfxontag(#"hash_20b3d352fb23155c", model, "tag_origin");
             model thread function_c5c1b1fe(self.origin, var_da4747b7, player, 1);
-        } else {
-            foreach (dropitem in dropitems) {
-                dropitem.var_864ea466 = 1;
-                dropitem.var_a5626281 = 1;
-                dropitem thread function_c5c1b1fe(self.origin, var_da4747b7, player);
-            }
+            return;
+        }
+        foreach (dropitem in dropitems) {
+            dropitem.var_864ea466 = 1;
+            dropitem.var_a5626281 = 1;
+            dropitem thread function_c5c1b1fe(self.origin, var_da4747b7, player);
         }
     }
 }
@@ -493,9 +495,9 @@ function function_c5c1b1fe(start_pos, end_pos, *player, var_ecf3bd81 = 0) {
     wait(time);
     if (var_ecf3bd81) {
         self thread function_eaa298d9();
-    } else {
-        self.var_864ea466 = undefined;
+        return;
     }
+    self.var_864ea466 = undefined;
 }
 
 // Namespace namespace_64b2e5a2/namespace_64b2e5a2

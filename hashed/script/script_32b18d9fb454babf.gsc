@@ -242,7 +242,7 @@ function private function_66855ea6(destination, str_type) {
                     continue;
                 }
             #/
-            break;
+            return;
         }
     }
 }
@@ -518,9 +518,9 @@ function function_bd104a73() {
         if (map.name !== level.script && (var_bb63d618 || var_d0972d81)) {
             if (is_true(map.var_858ea33d)) {
                 var_891aaa22[var_891aaa22.size] = map.name;
-            } else {
-                var_775479a4[var_775479a4.size] = map.name;
+                continue;
             }
+            var_775479a4[var_775479a4.size] = map.name;
         }
     }
     var_775479a4 = array::randomize(var_775479a4);
@@ -609,9 +609,9 @@ function function_369007bb() {
                 }
                 level.var_490ade6 = var_6d9b3bf9;
                 level.var_c73744cc = var_6da361da;
-            } else {
-                level.var_490ade6 = var_6d9b3bf9;
+                return;
             }
+            level.var_490ade6 = var_6d9b3bf9;
         }
     }
 }

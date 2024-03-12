@@ -66,10 +66,10 @@ function jump_pad_essence_fx(localclientnum, *oldval, newval, *bnewent, *binitia
         playfx(fieldname, #"hash_740a639c59126f59", self.origin);
         function_239993de(fieldname, #"hash_23f38f1190bb99d9", self, "tag_origin");
         self thread function_6192b162();
-    } else {
-        playfx(fieldname, #"hash_326df840230b71d6", self.origin);
-        playsound(fieldname, #"zmb_powerup_resource_large_pickup", self.origin);
+        return;
     }
+    playfx(fieldname, #"hash_326df840230b71d6", self.origin);
+    playsound(fieldname, #"zmb_powerup_resource_large_pickup", self.origin);
 }
 
 // Namespace namespace_957938f0/namespace_957938f0
@@ -106,13 +106,13 @@ function jump_pad_wind_sound(localclientnum, *oldval, newval, *bnewent, *binitia
         self thread function_ca483953(fieldname);
         self thread function_6b3f6fa7(fieldname);
         self thread function_d80deb1d();
-    } else {
-        if (isdefined(self.var_dbe88563)) {
-            self stoploopsound(self.var_dbe88563);
-            self.var_dbe88563 = undefined;
-        }
-        self notify(#"hash_7387c0ba13aefdd7");
+        return;
     }
+    if (isdefined(self.var_dbe88563)) {
+        self stoploopsound(self.var_dbe88563);
+        self.var_dbe88563 = undefined;
+    }
+    self notify(#"hash_7387c0ba13aefdd7");
 }
 
 // Namespace namespace_957938f0/namespace_957938f0

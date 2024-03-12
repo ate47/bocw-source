@@ -126,19 +126,14 @@ function function_62f1faf9() {
     case 1:
     default:
         return 1;
-        break;
     case 2:
         return 2;
-        break;
     case 3:
         return 2;
-        break;
     case 4:
         return 3;
-        break;
     case 5:
         return 3;
-        break;
     }
 }
 
@@ -192,9 +187,9 @@ function function_f1355240(*n_round_number) {
             n_player_count = zm_utility::function_a2541519(getplayers().size);
             if (n_player_count == 1) {
                 level.var_2f45d799 = level.round_number + randomintrangeinclusive(2, 4);
-            } else {
-                level.var_2f45d799 = level.round_number + randomintrangeinclusive(2, 3);
+                continue;
             }
+            level.var_2f45d799 = level.round_number + randomintrangeinclusive(2, 3);
         }
     }
 }
@@ -214,7 +209,7 @@ function function_54993e2() {
     }
     if (!isdefined(var_d7eff26a)) {
         /#
-            if (!any_player_in_noclip()) {
+            if (any_player_in_noclip()) {
             }
         #/
         return 0;

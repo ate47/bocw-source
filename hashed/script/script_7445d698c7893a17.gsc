@@ -46,22 +46,16 @@ function private function_76ade8b5(aat_name = "ammomod_brainrot") {
     case #"ammomod_brainrot":
     default:
         return 0;
-        break;
     case #"ammomod_brainrot_1":
         return 1;
-        break;
     case #"ammomod_brainrot_2":
         return 2;
-        break;
     case #"ammomod_brainrot_3":
         return 3;
-        break;
     case #"ammomod_brainrot_4":
         return 4;
-        break;
     case #"ammomod_brainrot_5":
         return 5;
-        break;
     }
     return 0;
 }
@@ -98,7 +92,9 @@ function result(*death, attacker, *mod, weapon, var_fd90b0bb, vpoint, *shitloc, 
         if (tier >= 3) {
             self thread function_c81ac3e5(var_fd90b0bb, vpoint, shitloc, tier);
         }
-    } else if (self.var_6f84b820 === #"normal") {
+        return;
+    }
+    if (self.var_6f84b820 === #"normal") {
         self thread function_c81ac3e5(var_fd90b0bb, vpoint, shitloc, tier);
     }
 }
@@ -201,7 +197,7 @@ function function_f7f8a2cc(attacker, weapon) {
         a_ai_zombies[i] function_eb8a62bc(var_fd6c12d9, 1, attacker, weapon);
         n_flung_zombies++;
         if (-1 && n_flung_zombies >= 3) {
-            break;
+            return;
         }
     }
 }
@@ -221,12 +217,12 @@ function private function_eb8a62bc(var_c5ad44f1, n_damage, e_attacker, weapon) {
     self namespace_42457a0::function_601fabe9(#"hash_16b5c37d8feae38c", n_damage, v_curr_zombie_origin, e_attacker, undefined, "none", "MOD_AAT", 0, weapon);
     if (isalive(self)) {
         self zombie_utility::setup_zombie_knockdown(var_c5ad44f1);
-    } else {
-        n_random_x = randomfloatrange(-3, 3);
-        n_random_y = randomfloatrange(-3, 3);
-        self zm_utility::start_ragdoll(1);
-        self launchragdoll(60 * vectornormalize(v_curr_zombie_origin - var_c5ad44f1 + (n_random_x, n_random_y, 10)), "torso_lower");
+        return;
     }
+    n_random_x = randomfloatrange(-3, 3);
+    n_random_y = randomfloatrange(-3, 3);
+    self zm_utility::start_ragdoll(1);
+    self launchragdoll(60 * vectornormalize(v_curr_zombie_origin - var_c5ad44f1 + (n_random_x, n_random_y, 10)), "torso_lower");
 }
 
 // Namespace ammomod_brainrot/ammomod_brainrot
@@ -359,10 +355,10 @@ function zombie_death_explosion(var_3a5b1930, e_attacker, weapon, var_fd90b0bb, 
                 a_ai_zombies[i] function_eb8a62bc(var_3a5b1930, var_3e23677c, e_attacker, weapon);
                 util::wait_network_frame(randomintrange(1, 3));
             }
-        } else {
-            a_ai_zombies[i] function_eb8a62bc(var_3a5b1930, var_3e23677c, e_attacker, weapon);
-            util::wait_network_frame(randomintrange(1, 3));
+            continue;
         }
+        a_ai_zombies[i] function_eb8a62bc(var_3a5b1930, var_3e23677c, e_attacker, weapon);
+        util::wait_network_frame(randomintrange(1, 3));
     }
 }
 
@@ -400,9 +396,9 @@ function zombie_death_gib(e_attacker, weapon, var_fd90b0bb) {
     self.var_f42aed2a = 1;
     if (is_true(level.headshots_only) || zm_trial_headshots_only::is_active()) {
         self kill();
-    } else {
-        self dodamage(self.health, self.origin, e_attacker, undefined, undefined, "MOD_AAT", 0, weapon);
+        return;
     }
+    self dodamage(self.health, self.origin, e_attacker, undefined, undefined, "MOD_AAT", 0, weapon);
 }
 
 // Namespace ammomod_brainrot/ammomod_brainrot

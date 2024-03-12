@@ -37,7 +37,9 @@ function function_9666c7b1(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwastimejump == 1) {
         self.fx = playfx(fieldname, #"hash_1a93b9b31b5d1d3b", self.origin + vectorscale((0, 0, 1), 18), anglestoup(self.angles));
         self playsound(fieldname, #"hash_6a76932cce379c66");
-    } else if (isdefined(self.fx)) {
+        return;
+    }
+    if (isdefined(self.fx)) {
         stopfx(fieldname, self.fx);
         self.fx = undefined;
     }
@@ -119,7 +121,9 @@ function private function_ea257a5f(localclientnum, *oldval, *newval, *bnewent, *
 function dog_projectile_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self.var_e65311fc = util::playfxontag(fieldname, #"hash_901b71115b1cd3f", self, "j_spine4");
-    } else if (isdefined(self.var_e65311fc)) {
+        return;
+    }
+    if (isdefined(self.var_e65311fc)) {
         stopfx(fieldname, self.var_e65311fc);
         self.var_e65311fc = undefined;
     }
@@ -142,11 +146,11 @@ function function_5565725d(localclientnum, dissolve, rob) {
                 zombie playrenderoverridebundle(rob);
             }
         }
-    } else {
-        foreach (zombie in self.var_553a42c) {
-            if (isdefined(zombie)) {
-                zombie stoprenderoverridebundle(rob);
-            }
+        return;
+    }
+    foreach (zombie in self.var_553a42c) {
+        if (isdefined(zombie)) {
+            zombie stoprenderoverridebundle(rob);
         }
     }
 }

@@ -43,9 +43,13 @@ function private function_f4d234f9(localclientnum, *oldval, newval, *bnewent, *b
         self function_a5edb367(#"neutral");
         self function_5e00861(level.var_60693fca * 2, 1);
         level thread function_81784679(self, fieldname);
-    } else if (bwastimejump == 4) {
+        return;
+    }
+    if (bwastimejump == 4) {
         self function_1cfa2520(fieldname);
-    } else if (bwastimejump > 0) {
+        return;
+    }
+    if (bwastimejump > 0) {
         self function_6856257d(fieldname);
         compassicon = "ui_icon_minimap_radiation_cloud";
         self setcompassicon(compassicon);
@@ -60,10 +64,10 @@ function private function_f4d234f9(localclientnum, *oldval, newval, *bnewent, *b
             self thread function_88008fc3();
         }
         level thread function_81784679(self, fieldname);
-    } else {
-        self function_811196d1(1);
-        self function_5f865d4b(fieldname, 0);
+        return;
     }
+    self function_811196d1(1);
+    self function_5f865d4b(fieldname, 0);
 }
 
 // Namespace namespace_b77e8eb1/namespace_b77e8eb1
@@ -76,9 +80,9 @@ function function_b315a5d2(localclientnum, *oldval, newval, *bnewent, *binitials
     }
     if (bwastimejump) {
         function_c8be8eb1(fieldname, 1);
-    } else {
-        function_c8be8eb1(fieldname, 0);
+        return;
     }
+    function_c8be8eb1(fieldname, 0);
 }
 
 // Namespace namespace_b77e8eb1/namespace_b77e8eb1
@@ -273,7 +277,9 @@ function function_5f865d4b(localclientnum, enable) {
         if (!isinarray(level.var_4f67e1b[localclientnum].var_7351c8e1, self)) {
             level.var_4f67e1b[localclientnum].var_7351c8e1[level.var_4f67e1b[localclientnum].var_7351c8e1.size] = self;
         }
-    } else if (isarray(level.var_4f67e1b[localclientnum].var_7351c8e1)) {
+        return;
+    }
+    if (isarray(level.var_4f67e1b[localclientnum].var_7351c8e1)) {
         arrayremovevalue(level.var_4f67e1b[localclientnum].var_7351c8e1, self);
     }
 }
@@ -294,8 +300,8 @@ function disable_compass_arrow(*localclientnum, *oldval, newval, *bnewent, *bini
     if (bwastimejump) {
         level notify(#"disable_compass_arrow");
         level.var_bae7602b = 0;
-    } else {
-        level.var_bae7602b = 1;
+        return;
     }
+    level.var_bae7602b = 1;
 }
 

@@ -205,9 +205,9 @@ function function_92c05efb(var_9da78756) {
         }
         self setscale(0.9);
         self show();
-    } else {
-        self hide();
+        return;
     }
+    self hide();
 }
 
 // Namespace namespace_2a67e53/namespace_2a67e53
@@ -501,9 +501,9 @@ function function_f3c47da1(var_3f94a5b6, e_trigger) {
             var_3f94a5b6.cursor = v_target;
             level function_d25d2a9(var_3f94a5b6.cursor, s_screen, var_3f94a5b6.control, n_active);
             wait(0.05);
-        } else {
-            waitframe(1);
+            continue;
         }
+        waitframe(1);
     }
     return s_result;
 }

@@ -173,14 +173,18 @@ function private function_dcc24343(localclientnum, *oldval, newval, *bnewent, *b
                 function_36e4ebd4(fieldname, var_46f1b5eb.startrumble);
             }
         }
-    } else if (bwastimejump == 2) {
+        return;
+    }
+    if (bwastimejump == 2) {
         if (isdefined(var_46f1b5eb.loopfx)) {
             self.aoefx = playfx(fieldname, var_46f1b5eb.loopfx, self.origin, (0, 0, 1));
         }
         if (isdefined(var_46f1b5eb.loopsound)) {
             self.var_e0952422 = self playloopsound(var_46f1b5eb.loopsound);
         }
-    } else if (bwastimejump == 3 || bwastimejump == 4) {
+        return;
+    }
+    if (bwastimejump == 3 || bwastimejump == 4) {
         if (isdefined(self.aoefx)) {
             stopfx(fieldname, self.aoefx);
         }

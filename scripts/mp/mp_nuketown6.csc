@@ -83,17 +83,19 @@ function function_a6101b7() {
         level thread scene::play(#"hash_41335bc1f4e7c7d9");
         level thread scene::play(#"hash_4b954439329ad046");
         level thread scene::play(#"hash_45834b6a02ccfc14");
-    } else if (getdvarint(#"hash_435b3a7c7c2f2c07", 0)) {
+        return;
+    }
+    if (getdvarint(#"hash_435b3a7c7c2f2c07", 0)) {
         setsoundcontext("ltm", "halloween");
-    } else {
-        indices = findvolumedecalindexarray("nt6_xmas_props");
-        foreach (index in indices) {
-            hidevolumedecal(index);
-        }
-        indices = findvolumedecalindexarray("nt6_halloween_props");
-        foreach (index in indices) {
-            hidevolumedecal(index);
-        }
+        return;
+    }
+    indices = findvolumedecalindexarray("nt6_xmas_props");
+    foreach (index in indices) {
+        hidevolumedecal(index);
+    }
+    indices = findvolumedecalindexarray("nt6_halloween_props");
+    foreach (index in indices) {
+        hidevolumedecal(index);
     }
 }
 
@@ -105,8 +107,8 @@ function function_6b8c4c36(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwastimejump) {
         self playrumbleonentity(fieldname, #"hash_431e56f34a345079");
         self postfx::playpostfxbundle(#"hash_1c01122f6d0510cf");
-    } else {
-        self postfx::stoppostfxbundle(#"hash_1c01122f6d0510cf");
+        return;
     }
+    self postfx::stoppostfxbundle(#"hash_1c01122f6d0510cf");
 }
 

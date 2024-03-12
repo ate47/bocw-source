@@ -113,9 +113,9 @@ function function_1e0fa475(localclientnum, oldval, newval, *bnewent, *binitialsn
                 }
             }
         }
-    } else {
-        self function_15de0a8a(binitialsnap);
+        return;
     }
+    self function_15de0a8a(binitialsnap);
 }
 
 // Namespace namespace_9111e6ab/namespace_9111e6ab
@@ -211,15 +211,15 @@ function function_9db3514d(localclientnum, *oldval, newval, *bnewent, *binitials
             self playsound(0, #"hash_20d0ecdd50323b09", self.origin + vectorscale((0, 0, 1), 50));
             self.var_7c085d47 = self playloopsound("zmb_ammomod_deadwire_stunned_lp");
         }
-    } else {
-        if (isdefined(self.var_d6f26e4)) {
-            stopfx(fieldname, self.var_d6f26e4);
-            self.var_d6f26e4 = undefined;
-        }
-        if (isdefined(self.var_7c085d47)) {
-            self stoploopsound(self.var_7c085d47);
-            self.var_7c085d47 = undefined;
-        }
+        return;
+    }
+    if (isdefined(self.var_d6f26e4)) {
+        stopfx(fieldname, self.var_d6f26e4);
+        self.var_d6f26e4 = undefined;
+    }
+    if (isdefined(self.var_7c085d47)) {
+        self stoploopsound(self.var_7c085d47);
+        self.var_7c085d47 = undefined;
     }
 }
 

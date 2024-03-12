@@ -312,9 +312,9 @@ function private function_99a2ecf5() {
 function private function_8481733a() {
     if (!isdefined(self.bot.difficulty) || is_true(self.bot.difficulty.var_ea800f8)) {
         self function_3ca49c4e(0.8);
-    } else {
-        self function_3ca49c4e(0.1);
+        return;
     }
+    self function_3ca49c4e(0.1);
 }
 
 // Namespace bot/bot
@@ -475,11 +475,13 @@ function private function_ce3dfcfc(enemy) {
 function private function_7d5bb412() {
     if (self.bot.enemyvisible) {
         self.bot.enemydist = distance(self.origin, self.enemy.origin);
-    } else if (self.bot.var_e8c84f98) {
-        self.bot.enemydist = distance(self.origin, self.enemylastseenpos);
-    } else {
-        self.bot.enemydist = 1000;
+        return;
     }
+    if (self.bot.var_e8c84f98) {
+        self.bot.enemydist = distance(self.origin, self.enemylastseenpos);
+        return;
+    }
+    self.bot.enemydist = 1000;
 }
 
 // Namespace bot/bot
@@ -515,9 +517,9 @@ function private function_ca477c1f() {
 function private function_1f098eb() {
     if (self.bot.var_e8c84f98) {
         self.bot.var_494658cd = getclosesttacpoint(self.enemy.origin);
-    } else {
-        self.bot.var_494658cd = undefined;
+        return;
     }
+    self.bot.var_494658cd = undefined;
 }
 
 // Namespace bot/bot
@@ -837,13 +839,19 @@ function private function_e4055765() {
     if (getdvarint(#"bot_forcestand", 0)) {
         self botreleasebutton(9);
         self botreleasebutton(8);
-    } else if (getdvarint(#"bot_forcecrouch", 0)) {
+        return;
+    }
+    if (getdvarint(#"bot_forcecrouch", 0)) {
         self bottapbutton(9);
         self botreleasebutton(8);
-    } else if (getdvarint(#"bot_forceprone", 0)) {
+        return;
+    }
+    if (getdvarint(#"bot_forceprone", 0)) {
         self botreleasebutton(9);
         self bottapbutton(8);
-    } else if (getdvarint(#"hash_3049c8687f66a426", 0)) {
+        return;
+    }
+    if (getdvarint(#"hash_3049c8687f66a426", 0)) {
         self botreleasebutton(9);
         self botreleasebutton(8);
         if (self isonground() && !self jumpbuttonpressed()) {
@@ -944,14 +952,14 @@ function private function_50c012c9() {
     }
     if (isint(seatindex) && !vehicle isvehicleseatoccupied(seatindex)) {
         vehicle usevehicle(self, seatindex);
-    } else {
-        for (i = 0; i < 11; i++) {
-            if (vehicle function_dcef0ba1(i)) {
-                var_3693c73b = vehicle function_defc91b2(i);
-                if (isdefined(var_3693c73b) && var_3693c73b >= 0 && !vehicle isvehicleseatoccupied(i)) {
-                    vehicle usevehicle(self, i);
-                    break;
-                }
+        return;
+    }
+    for (i = 0; i < 11; i++) {
+        if (vehicle function_dcef0ba1(i)) {
+            var_3693c73b = vehicle function_defc91b2(i);
+            if (isdefined(var_3693c73b) && var_3693c73b >= 0 && !vehicle isvehicleseatoccupied(i)) {
+                vehicle usevehicle(self, i);
+                return;
             }
         }
     }
@@ -1032,7 +1040,6 @@ function private function_5d55f3c9(combatstate) {
             return (1, 1, 0);
         case #"combat_state_idle":
             return (0, 1, 0);
-            break;
         }
         return (1, 1, 1);
     #/

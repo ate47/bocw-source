@@ -226,11 +226,8 @@ function deathcam(victim) {
         var_e1f8d08d = getentbynum(var_9a73aefe);
         if (isdefined(var_e1f8d08d)) {
             self setcurrentspectatorclient(var_e1f8d08d);
-            goto LOC_0000014e;
         }
-    LOC_0000014e:
     }
-LOC_0000014e:
     self.sessionstate = "dead";
     self.spectatorclient = -1;
     self.killcamentity = -1;
@@ -751,29 +748,28 @@ function cancel_on_use() {
 function cancel_on_use_specific_button(pressingbuttonfunc, finishedfunc) {
     self endon(#"death_delay_finished", #"disconnect", #"game_ended");
     for (;;) {
-        for (;;) {
-            if (!self [[ pressingbuttonfunc ]]()) {
-                waitframe(1);
-                continue;
-            }
-            buttontime = 0;
-            while (self [[ pressingbuttonfunc ]]()) {
-                buttontime = buttontime + 0.05;
-                waitframe(1);
-            }
-            if (buttontime >= 0.5) {
-                continue;
-            }
-            buttontime = 0;
-            while (!self [[ pressingbuttonfunc ]]() && buttontime < 0.5) {
-                buttontime = buttontime + 0.05;
-                waitframe(1);
-            }
-            if (buttontime >= 0.5) {
-                continue;
-            }
-            self [[ finishedfunc ]]();
+        if (!self [[ pressingbuttonfunc ]]()) {
+            waitframe(1);
+            continue;
         }
+        buttontime = 0;
+        while (self [[ pressingbuttonfunc ]]()) {
+            buttontime = buttontime + 0.05;
+            waitframe(1);
+        }
+        if (buttontime >= 0.5) {
+            continue;
+        }
+        buttontime = 0;
+        while (!self [[ pressingbuttonfunc ]]() && buttontime < 0.5) {
+            buttontime = buttontime + 0.05;
+            waitframe(1);
+        }
+        if (buttontime >= 0.5) {
+            continue;
+        }
+        self [[ finishedfunc ]]();
+        return;
     }
 }
 

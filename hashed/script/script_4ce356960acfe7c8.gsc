@@ -44,7 +44,7 @@ function function_9c1a4204(localclientnum, *oldval, newval, *bnewent, *binitials
     foreach (var_dd54fdb1 in self.var_5ace757d) {
         if (var_dd54fdb1.var_ee8794bf == bwastimejump) {
             function_6c64ebd3(binitialsnap, var_dd54fdb1, fieldname == 1 ? 1 : 2);
-            break;
+            return;
         }
     }
 }
@@ -64,7 +64,7 @@ function function_e5efcc39(localclientnum, *oldval, *newval, *bnewent, *binitial
     foreach (var_dd54fdb1 in self.var_5ace757d) {
         if (var_dd54fdb1.var_98634dc5 == bwastimejump) {
             function_239993de(fieldname, var_dd54fdb1.hitfx, self, var_dd54fdb1.var_6fb74226);
-            break;
+            return;
         }
     }
 }
@@ -119,10 +119,10 @@ function function_6c64ebd3(localclientnum, var_dd54fdb1, state) {
         foreach (tag in var_dd54fdb1.var_47b606f3) {
             self function_f1f85b1d(localclientnum, tag, 0);
         }
-    } else {
-        foreach (tag in var_dd54fdb1.var_47b606f3) {
-            self function_f1f85b1d(localclientnum, tag, 1);
-        }
+        return;
+    }
+    foreach (tag in var_dd54fdb1.var_47b606f3) {
+        self function_f1f85b1d(localclientnum, tag, 1);
     }
 }
 

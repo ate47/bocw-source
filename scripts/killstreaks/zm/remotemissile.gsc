@@ -86,12 +86,12 @@ function function_f7599440(on) {
     if (on) {
         clientfield::set("" + #"hash_59ec82b1a72deb72", 1);
         level.var_15ebb842++;
-    } else {
-        level.var_15ebb842--;
-        if (level.var_15ebb842 <= 0) {
-            clientfield::set("" + #"hash_59ec82b1a72deb72", 0);
-            level.var_15ebb842 = undefined;
-        }
+        return;
+    }
+    level.var_15ebb842--;
+    if (level.var_15ebb842 <= 0) {
+        clientfield::set("" + #"hash_59ec82b1a72deb72", 0);
+        level.var_15ebb842 = undefined;
     }
 }
 

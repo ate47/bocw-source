@@ -131,21 +131,21 @@ function function_6e8037ca(params) {
                 continue;
             }
             self luinotifyevent(#"character_unlock_update", 2, 1, itemindex);
-        } else {
-            item_name = var_9ba1646c.required_item;
-            if (var_a6762160.name === item_name) {
-                if (!isdefined(self.var_c53589da)) {
-                    self.var_c53589da = [];
-                }
-                if (!isdefined(self.var_c53589da[unlock_name])) {
-                    var_c5c8fd39 = {#var_e7e238a4:[]};
-                    foreach (condition in var_9ba1646c.var_3845495) {
-                        var_c5c8fd39.var_e7e238a4[condition] = 0;
-                    }
-                    self.var_c53589da[unlock_name] = var_c5c8fd39;
-                }
-                break;
+            continue;
+        }
+        item_name = var_9ba1646c.required_item;
+        if (var_a6762160.name === item_name) {
+            if (!isdefined(self.var_c53589da)) {
+                self.var_c53589da = [];
             }
+            if (!isdefined(self.var_c53589da[unlock_name])) {
+                var_c5c8fd39 = {#var_e7e238a4:[]};
+                foreach (condition in var_9ba1646c.var_3845495) {
+                    var_c5c8fd39.var_e7e238a4[condition] = 0;
+                }
+                self.var_c53589da[unlock_name] = var_c5c8fd39;
+            }
+            break;
         }
     }
     self callback::callback(#"hash_48bcdfea6f43fecb", params.item);
@@ -216,21 +216,21 @@ function function_20b0ca2e(unlock_name) {
     switch (var_9ba1646c.var_3845495.size) {
     case 1:
         self luinotifyevent(#"character_unlock_update", var_9ba1646c.var_3845495.size + 2, 0, itemindex, self.var_c53589da[unlock_name].var_e7e238a4[var_93e871fc[0]]);
-        break;
+        return;
     case 2:
         self luinotifyevent(#"character_unlock_update", var_9ba1646c.var_3845495.size + 2, 0, itemindex, self.var_c53589da[unlock_name].var_e7e238a4[var_93e871fc[0]], self.var_c53589da[unlock_name].var_e7e238a4[var_93e871fc[1]]);
-        break;
+        return;
     case 3:
         self luinotifyevent(#"character_unlock_update", var_9ba1646c.var_3845495.size + 2, 0, itemindex, self.var_c53589da[unlock_name].var_e7e238a4[var_93e871fc[0]], self.var_c53589da[unlock_name].var_e7e238a4[var_93e871fc[1]], self.var_c53589da[unlock_name].var_e7e238a4[var_93e871fc[2]]);
-        break;
+        return;
     case 4:
         self luinotifyevent(#"character_unlock_update", var_9ba1646c.var_3845495.size + 2, 0, itemindex, self.var_c53589da[unlock_name].var_e7e238a4[var_93e871fc[0]], self.var_c53589da[unlock_name].var_e7e238a4[var_93e871fc[1]], self.var_c53589da[unlock_name].var_e7e238a4[var_93e871fc[2]], self.var_c53589da[unlock_name].var_e7e238a4[var_93e871fc[3]]);
-        break;
+        return;
     case 5:
         self luinotifyevent(#"character_unlock_update", var_9ba1646c.var_3845495.size + 2, 0, itemindex, self.var_c53589da[unlock_name].var_e7e238a4[var_93e871fc[0]], self.var_c53589da[unlock_name].var_e7e238a4[var_93e871fc[1]], self.var_c53589da[unlock_name].var_e7e238a4[var_93e871fc[2]], self.var_c53589da[unlock_name].var_e7e238a4[var_93e871fc[3]], self.var_c53589da[unlock_name].var_e7e238a4[var_93e871fc[4]]);
-        break;
+        return;
     default:
-        break;
+        return;
     }
 }
 

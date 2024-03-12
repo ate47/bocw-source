@@ -306,10 +306,10 @@ function function_d9c75d31(source_enemy, player, arc_num) {
         }
         if (function_a34a58f4(arc_num + 1, player.tesla_enemies_hit)) {
             function_c6988f55(guy, 0);
-        } else {
-            player.tesla_enemies_hit++;
-            guy thread function_d9c75d31(self, player, arc_num + 1);
+            continue;
         }
+        player.tesla_enemies_hit++;
+        guy thread function_d9c75d31(self, player, arc_num + 1);
     }
 }
 
@@ -380,9 +380,9 @@ function function_c6988f55(enemy, hit) {
         for (i = 0; i < enemy.size; i++) {
             enemy[i].var_c17aa4a3 = hit;
         }
-    } else {
-        enemy.var_c17aa4a3 = hit;
+        return;
     }
+    enemy.var_c17aa4a3 = hit;
 }
 
 // Namespace namespace_9038b9d9/namespace_22bc97b1
@@ -414,11 +414,13 @@ function function_9a98038e(source_enemy, arc_num, player) {
     }
     if (self.archetype == "zombie") {
         self namespace_ed80aead::function_c25b3c76(undefined, player);
-    } else if (self.archetype == "robot") {
-        self namespace_ed80aead::function_586ef822();
-    } else {
-        self thread namespace_ec06fe4a::function_570729f0(0.1, player);
+        return;
     }
+    if (self.archetype == "robot") {
+        self namespace_ed80aead::function_586ef822();
+        return;
+    }
+    self thread namespace_ec06fe4a::function_570729f0(0.1, player);
 }
 
 // Namespace namespace_9038b9d9/namespace_22bc97b1

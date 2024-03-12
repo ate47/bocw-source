@@ -127,13 +127,13 @@ function function_77af9e81() {
         if (isdefined(self.var_d7e0da8b)) {
             self [[ self.var_d7e0da8b ]]();
         }
-        foreach (orb in level.doa.var_537a3e29) {
-            if (!isdefined(orb)) {
+        foreach (var_956de39f in level.doa.var_537a3e29) {
+            if (!isdefined(var_956de39f)) {
                 continue;
             }
-            distsq = distancesquared(orb.origin, self.origin);
+            distsq = distancesquared(var_956de39f.origin, self.origin);
             if (distsq < getdvarint(#"hash_5f8a3b48d8ebee04", function_a3f6cdac(400))) {
-                self.attractors[self.attractors.size] = orb;
+                self.attractors[self.attractors.size] = var_956de39f;
             }
         }
         waitframe(1);

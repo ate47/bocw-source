@@ -108,7 +108,9 @@ function private function_2573297e(localclientnum, flashlight_on) {
         if (!isdefined(self.var_3d84fa3e.fxid)) {
             self function_69fc092e(localclientnum);
         }
-    } else if (flashlight_on == 0 && isdefined(self.var_3d84fa3e.fxid)) {
+        return;
+    }
+    if (flashlight_on == 0 && isdefined(self.var_3d84fa3e.fxid)) {
         self function_24a560cf(localclientnum);
     }
 }
@@ -121,10 +123,14 @@ function private function_8cd382e7(localclientnum, *oldvalue, newvalue, *bnewent
     if (wasdemojump == 1) {
         self notify(#"hash_6f398d21a29fce31");
         self function_a530c545(fieldname, 1);
-    } else if (wasdemojump == 0) {
+        return;
+    }
+    if (wasdemojump == 0) {
         self notify(#"hash_6f398d21a29fce31");
         self function_a530c545(fieldname, 0);
-    } else if (wasdemojump == 2) {
+        return;
+    }
+    if (wasdemojump == 2) {
         self thread function_2b580006(fieldname);
     }
 }
@@ -139,7 +145,9 @@ function private function_a530c545(localclientnum, on) {
             fx = isdefined(level.var_3d84fa3e.fx) ? level.var_3d84fa3e.fx : "light/fx9_light_cp_flashlight";
             self.var_103f6c4c = util::playfxontag(localclientnum, fx, self, "tag_light");
         }
-    } else if (isdefined(self.var_103f6c4c)) {
+        return;
+    }
+    if (isdefined(self.var_103f6c4c)) {
         killfx(localclientnum, self.var_103f6c4c);
         self.var_103f6c4c = undefined;
     }

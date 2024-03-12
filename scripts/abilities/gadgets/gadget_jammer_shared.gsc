@@ -290,7 +290,9 @@ function function_9da52774() {
                             }
                         }
                     }
-                } else if (function_2fdf3111(entity, jammer.owner)) {
+                    continue;
+                }
+                if (function_2fdf3111(entity, jammer.owner)) {
                     entitynumber = entity getentitynumber();
                     if (!isdefined(level.var_578f7c6d.var_5c3f49c1[entitynumber])) {
                         level.var_578f7c6d.var_5c3f49c1[entitynumber] = 0;
@@ -336,9 +338,13 @@ function function_af165064() {
         }
         if (level.var_578f7c6d.var_14cb9b30[key] > 0 && !is_true(entity.isjammed)) {
             function_93491e83(entity);
-        } else if (level.var_578f7c6d.var_14cb9b30[key] > 0 && is_true(entity.isjammed)) {
+            continue;
+        }
+        if (level.var_578f7c6d.var_14cb9b30[key] > 0 && is_true(entity.isjammed)) {
             function_322a8fc6(entity);
-        } else if (level.var_578f7c6d.var_14cb9b30[key] == 0 && is_true(entity.isjammed)) {
+            continue;
+        }
+        if (level.var_578f7c6d.var_14cb9b30[key] == 0 && is_true(entity.isjammed)) {
             function_d88f3e48(entity);
             level.var_578f7c6d.var_14cb9b30[key] = undefined;
         }
@@ -451,9 +457,9 @@ function function_1c430dad(entity, isjammed) {
     entity.emped = isjammed;
     if (isjammed) {
         entity.var_77807b8a = gettime();
-    } else {
-        entity.var_77807b8a = undefined;
+        return;
     }
+    entity.var_77807b8a = undefined;
 }
 
 // Namespace jammer/gadget_jammer_shared

@@ -222,7 +222,9 @@ function event_handler[weapon_change] function_edc4ebe8(eventstruct) {
         if (isdefined(scoreevents) && scoreevents.var_fcd2ff3a === 1) {
             self.var_ea1458aa.var_59ac2f5 = 0;
         }
-    } else if (!isdefined(level.var_ca4ce464) || level.var_ca4ce464[var_f2b25a4e] !== 1) {
+        return;
+    }
+    if (!isdefined(level.var_ca4ce464) || level.var_ca4ce464[var_f2b25a4e] !== 1) {
         self.var_ea1458aa.var_96d50420 = undefined;
         if (var_f2b25a4e.issignatureweapon) {
             self.var_ea1458aa.var_96d50420 = 0;
@@ -789,15 +791,15 @@ function function_a79ea08b(*einflictor, victim, *idamage, weapon) {
         if (isdefined(weaponclass)) {
             switch (weaponclass) {
             case #"weapon_tactical":
-                jumpiffalse(weapon.name === #"tr_powerburst_t9") LOC_00001d82;
-                break;
+                if (weapon.name === #"tr_powerburst_t9") {
+                    break;
+                }
             case #"weapon_pistol":
             case #"weapon_shotgun":
             case #"weapon_lmg":
             case #"weapon_smg":
             case #"weapon_cqb":
             case #"weapon_assault":
-            LOC_00001d82:
                 if (!function_cd84dead(weapon, "optic")) {
                     var_b77ad7ec = 1;
                 }
@@ -1310,7 +1312,9 @@ function function_a79ea08b(*einflictor, victim, *idamage, weapon) {
         self stats::function_dad108fa(#"hash_15e9f992b5497ad7", 1);
         if (var_d7b43cfe) {
             self stats::function_dad108fa(#"hash_19b522874d71d0c2", 1);
-        } else if (var_c48b1869) {
+            return;
+        }
+        if (var_c48b1869) {
             self stats::function_dad108fa(#"hash_7d65f6cc85a27569", 1);
         }
     }
@@ -2207,7 +2211,7 @@ function challengekills(data) {
                     case #"sentinel":
                         player stats::function_dad108fa(#"kill_blindeye_ghost_aircraft", 1);
                         awarded_kill_blindeye_ghost_aircraft = 1;
-                        break;
+                        continue;
                     }
                 }
             }
@@ -2784,9 +2788,9 @@ function fix_tu6_weapon_for_diamond(stat_name) {
         secondary_mastery = player stats::get_stat_challenge("secondary_mastery");
         if (secondary_mastery == 3) {
             player force_challenge_stat(stat_name, 2);
-        } else {
-            player force_challenge_stat(stat_name, 0);
+            return;
         }
+        player force_challenge_stat(stat_name, 0);
     }
 }
 
@@ -2921,9 +2925,9 @@ function function_8e3fdb84(baseweapon, player, weaponclass) {
                 player stats::function_dad108fa(#"hash_4b735f945ca5d5b5", 1);
             }
         }
-    } else {
-        player.weaponkillsthisspawn[baseweapon] = 1;
+        return;
     }
+    player.weaponkillsthisspawn[baseweapon] = 1;
 }
 
 // Namespace challenges/challenges
@@ -3181,7 +3185,7 @@ function challengegameendmp(data) {
                 player stats::function_dad108fa(#"hash_38cf622aaf2ce3d7", 1);
             }
         }
-        break;
+        return;
     case #"dm":
         if (player == winner) {
             if (level.placement[#"all"].size >= 2) {
@@ -3193,14 +3197,14 @@ function challengegameendmp(data) {
                 player stats::function_dad108fa(#"hash_20b4a91c344d73ec", 1);
             }
         }
-        break;
+        return;
     case #"ctf":
         if (player.team == winner) {
             if (loserscore == 0) {
                 player stats::function_d40764f3(#"shut_out", 1);
             }
         }
-        break;
+        return;
     case #"dom":
         if (player.team == winner) {
             if (winnerscore >= loserscore + 70) {
@@ -3208,14 +3212,14 @@ function challengegameendmp(data) {
                 player stats::function_dad108fa(#"hash_1b0c06f37648493f", 1);
             }
         }
-        break;
+        return;
     case #"hq":
         if (player.team == winner && winnerscore > 0) {
             if (winnerscore >= loserscore + 70) {
                 player stats::function_d40764f3(#"crush", 1);
             }
         }
-        break;
+        return;
     case #"koth":
         if (player.team == winner && winnerscore > 0) {
             if (winnerscore >= loserscore + 70) {
@@ -3228,7 +3232,7 @@ function challengegameendmp(data) {
                 player stats::function_d40764f3(#"annihilation", 1);
             }
         }
-        break;
+        return;
     case #"dem":
         if (player.team == game.defenders && player.team == winner) {
             if (loserscore == 0) {
@@ -3238,7 +3242,7 @@ function challengegameendmp(data) {
         if (player.team == winner) {
             player stats::function_bcf9602(#"hash_5a96fe436e73343", 1, #"hash_6abe83944d701459");
         }
-        break;
+        return;
     case #"control":
     case #"sd":
     case #"bounty":
@@ -3248,21 +3252,21 @@ function challengegameendmp(data) {
                 player stats::function_dad108fa(#"hash_644326620d99cbbb", 1);
             }
         }
-        break;
+        return;
     case #"conf":
         if (player.team == winner) {
             if (winnerscore >= loserscore + 25) {
                 player stats::function_d40764f3(#"crush", 1);
             }
         }
-        break;
+        return;
     case #"gunfight":
         if (player.team == winner) {
             player stats::function_dad108fa(#"hash_5072c55850678079", 1);
         }
-        break;
+        return;
     default:
-        break;
+        return;
     }
 }
 
@@ -4128,7 +4132,9 @@ function private function_80327323(data) {
             player stats::function_dad108fa(#"hash_529cb0a2c0619c09", 1);
             player stats::function_dad108fa(#"hash_5f4b951cc4725fe2", 1);
             player stats::function_dad108fa(#"hash_5f4b941cc4725e2f", 1);
-        } else if (attackerstance == #"prone") {
+            return;
+        }
+        if (attackerstance == #"prone") {
             player stats::function_dad108fa(#"kill_enemy_while_prone", 1);
             player stats::function_dad108fa(#"hash_529cb0a2c0619c09", 1);
             player stats::function_dad108fa(#"hash_5f4b951cc4725fe2", 1);
@@ -4262,15 +4268,15 @@ function private function_f9478088() {
             var_1def3436 = player.var_fcfb50c6;
             if (!isdefined(var_1def3436)) {
                 player.var_fcfb50c6 = {#var_619db00b:now, #var_e30954e3:now, #var_de319bcb:player getorigin()};
-            } else {
-                player_velocity = player getvelocity();
-                if (lengthsquared(player_velocity) > 100 * 100) {
-                    var_1def3436.var_e30954e3 = now;
-                } else {
-                    var_1def3436.var_de319bcb = lerpvector(var_1def3436.var_de319bcb, player getorigin(), (now - var_1def3436.var_e30954e3) / 2250);
-                    var_1def3436.var_e30954e3 = now;
-                }
+                continue;
             }
+            player_velocity = player getvelocity();
+            if (lengthsquared(player_velocity) > 100 * 100) {
+                var_1def3436.var_e30954e3 = now;
+                continue;
+            }
+            var_1def3436.var_de319bcb = lerpvector(var_1def3436.var_de319bcb, player getorigin(), (now - var_1def3436.var_e30954e3) / 2250);
+            var_1def3436.var_e30954e3 = now;
         }
         if (!var_359bb79d) {
             waitframe(1);
@@ -4331,7 +4337,7 @@ function function_de80e959(data) {
         switch (level.basegametype) {
         case #"gunfight":
             player stats::function_dad108fa(#"hash_5d841dfc6114d2ae", 1);
-            break;
+            return;
         }
     }
 }

@@ -91,16 +91,16 @@ function function_14354831() {
             for (i = 0; i < self.zbarrier getnumzbarrierpieces(); i++) {
                 self.zbarrier.chunk_health[i] = 0;
             }
-        } else {
-            targets[j] zm_blockers::update_states("repaired");
-            targets[j].destroyed = 0;
-            targets[j] show();
-            targets[j].claimed = 0;
-            targets[j].anim_grate_index = 0;
-            targets[j].og_origin = targets[j].origin;
-            targets[j].og_angles = targets[j].angles;
-            self.barrier_chunks[self.barrier_chunks.size] = targets[j];
+            continue;
         }
+        targets[j] zm_blockers::update_states("repaired");
+        targets[j].destroyed = 0;
+        targets[j] show();
+        targets[j].claimed = 0;
+        targets[j].anim_grate_index = 0;
+        targets[j].og_origin = targets[j].origin;
+        targets[j].og_angles = targets[j].angles;
+        self.barrier_chunks[self.barrier_chunks.size] = targets[j];
     }
     target_nodes = getnodearray(str_target, "targetname");
     /#
@@ -184,7 +184,9 @@ function private function_55ce3493() {
         }
         if (var_6195506c == var_1b8b64ca) {
             setenablenode(self.neg_start, 0);
-        } else if (waitresult._notify === #"hash_45aa77702fef26f4" && var_6195506c == var_1b8b64ca - 1) {
+            continue;
+        }
+        if (waitresult._notify === #"hash_45aa77702fef26f4" && var_6195506c == var_1b8b64ca - 1) {
             setenablenode(self.neg_start, 1);
         }
     }

@@ -102,9 +102,9 @@ function onstartgametype() {
 function enemy_on_radar(*local_client_num, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self enableonradar();
-    } else {
-        self disableonradar();
+        return;
     }
+    self disableonradar();
 }
 
 // Namespace zonslaught/zonslaught
@@ -116,7 +116,9 @@ function function_bed6f88d(local_client_num, *oldval, newval, *bnewent, *binitia
         self setcompassicon("icon_minimap_onslaught_boss");
         self enableonradar();
         self function_811196d1(0);
-    } else if (bwastimejump == 2) {
+        return;
+    }
+    if (bwastimejump == 2) {
         if (is_true(level.var_612d6a21) || util::get_game_type() === #"hash_75aa82b3ae89f54e" || is_true(level.var_e35c191f) || util::get_game_type() === #"hash_125fc0c0065c7dea") {
             self.var_31a246b5 = util::playfxontag(fieldname, #"hash_60aef71494b594e5", self, "tag_origin");
             self playsound(fieldname, #"hash_5e9e10059b1e505c");
@@ -124,19 +126,21 @@ function function_bed6f88d(local_client_num, *oldval, newval, *bnewent, *binitia
             self.var_31a246b5 = playfx(fieldname, level._effect[#"hash_d7a655f41aa4b03"], self.origin - vectorscale((0, 0, 1), 68));
             self playsound(fieldname, #"hash_5e9e10059b1e505c", self.origin - vectorscale((0, 0, 1), 68));
         }
-    } else if (bwastimejump == 3) {
+        return;
+    }
+    if (bwastimejump == 3) {
         if (isdefined(self.var_31a246b5)) {
             stopfx(fieldname, self.var_31a246b5);
             self.var_31a246b5 = undefined;
         }
-    } else {
-        self setcompassicon("icon_minimap_onslaught_boss");
-        self disableonradar();
-        self function_811196d1(1);
-        if (isdefined(self.var_31a246b5)) {
-            stopfx(fieldname, self.var_31a246b5);
-            self.var_31a246b5 = undefined;
-        }
+        return;
+    }
+    self setcompassicon("icon_minimap_onslaught_boss");
+    self disableonradar();
+    self function_811196d1(1);
+    if (isdefined(self.var_31a246b5)) {
+        stopfx(fieldname, self.var_31a246b5);
+        self.var_31a246b5 = undefined;
     }
 }
 
@@ -169,22 +173,24 @@ function bot_claim_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, 
             self.var_94ebeb0a = self playloopsound(level.var_de8cc106);
         }
         self.var_58e905a8 = playfx(fieldname, level._effect[#"hash_55ab97f3dc5e7ba2"], self.origin);
-    } else if (bwastimejump == 2) {
-        self.var_58e905a8 = playfx(fieldname, level._effect[#"hash_55ab97f3dc5e7ba2"], self.origin);
-    } else {
-        if (isdefined(self.fxid)) {
-            killfx(fieldname, self.fxid);
-        }
-        if (isdefined(self.var_94ebeb0a)) {
-            self stoploopsound(self.var_94ebeb0a);
-            self.var_94ebeb0a = undefined;
-        }
-        if (isdefined(self.var_58e905a8)) {
-            killfx(fieldname, self.var_58e905a8);
-            self.var_58e905a8 = undefined;
-        }
-        playfx(fieldname, level._effect[#"hash_55ab97f3dc5e7ba2"], self.origin);
+        return;
     }
+    if (bwastimejump == 2) {
+        self.var_58e905a8 = playfx(fieldname, level._effect[#"hash_55ab97f3dc5e7ba2"], self.origin);
+        return;
+    }
+    if (isdefined(self.fxid)) {
+        killfx(fieldname, self.fxid);
+    }
+    if (isdefined(self.var_94ebeb0a)) {
+        self stoploopsound(self.var_94ebeb0a);
+        self.var_94ebeb0a = undefined;
+    }
+    if (isdefined(self.var_58e905a8)) {
+        killfx(fieldname, self.var_58e905a8);
+        self.var_58e905a8 = undefined;
+    }
+    playfx(fieldname, level._effect[#"hash_55ab97f3dc5e7ba2"], self.origin);
 }
 
 // Namespace zonslaught/zonslaught

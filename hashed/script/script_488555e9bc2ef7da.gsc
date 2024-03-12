@@ -189,7 +189,7 @@ function function_43b18d1c() {
         }
         wait(0.5);
         if (isdefined(level.var_3f856791)) {
-            break;
+            return;
         }
     }
 }
@@ -203,10 +203,10 @@ function function_e01f1b8b() {
     while (1) {
         if (level flag::get("connect_ghost_station_to_sewers_and_escape_tunnel")) {
             level flag::set(#"hash_453dee78e48aa120");
-            break;
+            return;
         } else if (level flag::get("connect_ghost_station_to_secret_spy_tunnel")) {
             level flag::set(#"hash_7cbfe0771046c209");
-            break;
+            return;
         }
         wait(1);
     }
@@ -220,7 +220,9 @@ function function_5a4491ab() {
     waitresult = level flag::wait_till_any([1:#"hash_7cbfe0771046c209", 0:#"hash_453dee78e48aa120"]);
     if (waitresult._notify == #"hash_453dee78e48aa120") {
         level thread function_9f0d2282("maintenance_room_fuse_hint_loc");
-    } else if (waitresult._notify == #"hash_7cbfe0771046c209") {
+        return;
+    }
+    if (waitresult._notify == #"hash_7cbfe0771046c209") {
         level thread function_9f0d2282("sewer_fuse_hint_loc");
     }
 }
@@ -250,7 +252,7 @@ function function_9f0d2282(var_23589c3d) {
         }
         wait(0.5);
         if (isdefined(level.var_b6309f5)) {
-            break;
+            return;
         }
     }
 }
@@ -280,9 +282,9 @@ function function_f73f4bc2() {
             level flag::set(#"hash_3877401081b5e296");
             var_abd93a24 thread function_6d277ee2();
             var_abd93a24.var_dd21aec2 = 1 | 16;
-        } else {
-            level thread function_f4f15fc();
+            continue;
         }
+        level thread function_f4f15fc();
     }
 }
 
@@ -298,7 +300,7 @@ function function_f4f15fc() {
         var_c155f005 = spawnactor("spawner_bo5_avogadro_sr", var_6df640be.origin, var_6df640be.angles, undefined, 1);
         if (isdefined(var_c155f005)) {
             var_c155f005.var_93057265 = 1;
-            break;
+            return;
         }
         wait(1);
     }
@@ -333,11 +335,8 @@ function function_3cd87dd2(params) {
                 #/
                 zm_ui_inventory::function_7df6bb60(#"hash_20cb7e63974cbe3c", 1);
             }
-            goto LOC_0000022e;
         }
-    LOC_0000022e:
     }
-LOC_0000022e:
 }
 
 // Namespace namespace_54685ebd/namespace_54685ebd
@@ -356,10 +355,14 @@ function function_ce636e() {
         level thread function_4e0c00e9();
         zm_unitrigger::unregister_unitrigger(level.var_a66279f7);
         level.var_a66279f7 = undefined;
-    } else if (isdefined(level.var_3dc80578) && level flag::get("player_has_both_fuse")) {
+        return;
+    }
+    if (isdefined(level.var_3dc80578) && level flag::get("player_has_both_fuse")) {
         level thread function_f021f2da();
         zm_unitrigger::unregister_unitrigger(level.var_a66279f7);
-    } else if (!isdefined(level.var_3dc80578) && level flag::get("player_has_both_fuse")) {
+        return;
+    }
+    if (!isdefined(level.var_3dc80578) && level flag::get("player_has_both_fuse")) {
         level thread function_4e0c00e9();
         level thread function_f021f2da();
         zm_unitrigger::unregister_unitrigger(level.var_a66279f7);
@@ -529,18 +532,17 @@ function cmd(cmd) {
         case #"hash_64b8a356ba686f7b":
             level set(#"hash_7d72f2dda7a4104e");
             level set("<unknown string>");
-            break;
+            return;
         case #"hash_4cbd866bd8931c8a":
             level thread function_ce636e();
             level set(#"player_has_both_fuse");
-            break;
+            return;
         case #"hash_72b6d8c2e2e976a3":
             var_dfe526e8 = function_a1ef346b();
             foreach (player in var_dfe526e8) {
                 player function_bc82f900(#"hash_19e74997cb877a27");
             }
         case #"hash_6f3ea2dbeb65d030":
-        LOC_0000016e:
             var_dfe526e8 = function_a1ef346b();
             foreach (player in var_dfe526e8) {
                 point = function_4ba8fde(#"item_zmquest_platinum_power_quest_fuse");

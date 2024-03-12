@@ -91,11 +91,11 @@ function executepostroundevents() {
 function getvalueinrange(value, minvalue, maxvalue) {
     if (value > maxvalue) {
         return maxvalue;
-    } else if (value < minvalue) {
-        return minvalue;
-    } else {
-        return value;
     }
+    if (value < minvalue) {
+        return minvalue;
+    }
+    return value;
 }
 
 // Namespace globallogic_utils/globallogic_utils
@@ -119,19 +119,19 @@ function assertproperplacement() {
                     break;
                 }
             }
-        } else {
-            for (i = 0; i < numplayers - 1; i++) {
-                if (level.placement[#"all"][i].pointstowin < level.placement[#"all"][i + 1].pointstowin) {
-                    println("<unknown string>");
-                    for (i = 0; i < numplayers; i++) {
-                        player = level.placement[#"all"][i];
-                        println("<unknown string>" + i + "<unknown string>" + player.name + "<unknown string>" + player.pointstowin);
-                    }
-                    /#
-                        assertmsg("<unknown string>");
-                    #/
-                    break;
+            return;
+        }
+        for (i = 0; i < numplayers - 1; i++) {
+            if (level.placement[#"all"][i].pointstowin < level.placement[#"all"][i + 1].pointstowin) {
+                println("<unknown string>");
+                for (i = 0; i < numplayers; i++) {
+                    player = level.placement[#"all"][i];
+                    println("<unknown string>" + i + "<unknown string>" + player.name + "<unknown string>" + player.pointstowin);
                 }
+                /#
+                    assertmsg("<unknown string>");
+                #/
+                return;
             }
         }
     #/
@@ -164,16 +164,20 @@ function playtickingsound(gametype_tick_sound) {
         if (time > 10) {
             time = time - 1;
             wait(1);
-        } else if (time > 4) {
+            continue;
+        }
+        if (time > 4) {
             time = time - 0.5;
             wait(0.5);
-        } else if (time > 1) {
+            continue;
+        }
+        if (time > 1) {
             time = time - 0.4;
             wait(0.4);
-        } else {
-            time = time - 0.3;
-            wait(0.3);
+            continue;
         }
+        time = time - 0.3;
+        wait(0.3);
     }
 }
 
@@ -218,9 +222,8 @@ function gettimepassed() {
     }
     if (level.timerstopped) {
         return (level.timerpausetime - level.starttime - level.discardtime);
-    } else {
-        return (gettime() - level.starttime - level.discardtime);
     }
+    return gettime() - level.starttime - level.discardtime;
 }
 
 // Namespace globallogic_utils/globallogic_utils
@@ -376,7 +379,6 @@ function gethitlocheight(shitloc) {
     case #"left_foot":
     case #"right_foot":
         return 5;
-        break;
     }
     return 48;
 }

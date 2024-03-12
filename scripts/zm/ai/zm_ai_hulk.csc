@@ -93,7 +93,9 @@ function dog_projectile_fx(localclientnum, *oldval, newval, *bnewent, *binitials
     }
     if (bwastimejump == 1) {
         self.var_e65311fc = util::playfxontag(fieldname, #"hash_901b71115b1cd3f", self, "j_spine4");
-    } else if (isdefined(self.var_e65311fc)) {
+        return;
+    }
+    if (isdefined(self.var_e65311fc)) {
         stopfx(fieldname, self.var_e65311fc);
         self.var_e65311fc = undefined;
     }
@@ -239,9 +241,9 @@ function private function_492b47af(localclientnum, *oldval, newval, *bnewent, *b
     }
     if (bwastimejump) {
         self playrenderoverridebundle("rob_zmb_orda_body_glow");
-    } else {
-        self stoprenderoverridebundle("rob_zmb_orda_body_glow");
+        return;
     }
+    self stoprenderoverridebundle("rob_zmb_orda_body_glow");
 }
 
 // Namespace zm_ai_hulk/zm_ai_hulk
@@ -255,9 +257,9 @@ function private function_fa6b2c4a(localclientnum, *oldval, newval, *bnewent, *b
     }
     if (bwastimejump) {
         self playrenderoverridebundle("rob_zmb_orda_hand_weapon_glow");
-    } else {
-        self stoprenderoverridebundle("rob_zmb_orda_hand_weapon_glow");
+        return;
     }
+    self stoprenderoverridebundle("rob_zmb_orda_hand_weapon_glow");
 }
 
 // Namespace zm_ai_hulk/zm_ai_hulk
@@ -330,7 +332,9 @@ function private function_e54f99c7(localclientnum, *oldval, newval, *bnewent, *b
     if (bwastimejump == 1) {
         self.fx_ent = util::spawn_model(fieldname, #"tag_origin", self.origin, vectorscale((-1, 0, 0), 90));
         self.fx_ent thread function_456a451e();
-    } else if (bwastimejump == 2) {
+        return;
+    }
+    if (bwastimejump == 2) {
         if (isdefined(self.fx_ent)) {
             self.fx_ent thread function_1b79e37c(fieldname, self.origin, self.fx_ent.origin);
         }

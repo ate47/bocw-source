@@ -70,9 +70,9 @@ function private function_fe8cf253(localclientnum) {
             #/
             if (minwait <= maxwait) {
                 wait(randomfloatrange(minwait, maxwait));
-            } else {
-                wait(min(minwait, maxwait));
+                continue;
             }
+            wait(min(minwait, maxwait));
         }
     }
 }

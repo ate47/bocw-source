@@ -99,9 +99,9 @@ class class_23a25920 : class_853435cd {
         wait(self.var_3698bb1c);
         if (isdefined(self.var_f4317779)) {
             [[ self.var_f4317779 ]]();
-        } else {
-            function_b0bb4753();
+            return;
         }
+        function_b0bb4753();
     }
 
     // Namespace namespace_23a25920/pickups
@@ -174,13 +174,11 @@ class class_23a25920 : class_853435cd {
     // Size: 0x28
     function function_eefaf48f() {
         if (self.var_e94e55c6 > 0) {
-            goto LOC_00000026;
+            return;
         }
         if (self.var_7fd12b33 > 0) {
             wait(self.var_7fd12b33);
-        LOC_00000026:
         }
-    LOC_00000026:
     }
 
     // Namespace namespace_23a25920/pickups
@@ -206,13 +204,11 @@ class class_23a25920 : class_853435cd {
     // Size: 0xa4
     function function_fbd26ca4() {
         self endon(#"hash_64239485ac219282");
-        n_time_remaining = self.var_3698bb1c;
-        while (n_time_remaining >= 0 && isdefined(self.var_f3eb8d5c)) {
+        for (n_time_remaining = self.var_3698bb1c; n_time_remaining >= 0 && isdefined(self.var_f3eb8d5c); n_time_remaining = n_time_remaining - 1) {
             /#
                 print3d(self.var_f3eb8d5c.origin + vectorscale((0, 0, 1), 15), n_time_remaining, (1, 0, 0), 1, 1, 20);
             #/
             wait(1);
-            n_time_remaining = n_time_remaining - 1;
         }
     }
 
@@ -621,15 +617,15 @@ class class_853435cd {
     function function_ee1219b7() {
         if (isdefined(self.var_3af41bf3)) {
             self thread [[ self.var_3af41bf3 ]]();
-        } else {
-            while (isdefined(self.var_41c57d21)) {
-                if (!self.var_1eebdf18) {
-                    self.var_41c57d21 sethintstring("Bring Toolbox to repair");
-                    waitframe(1);
-                    continue;
-                }
+            return;
+        }
+        while (isdefined(self.var_41c57d21)) {
+            if (!self.var_1eebdf18) {
+                self.var_41c57d21 sethintstring("Bring Toolbox to repair");
                 waitframe(1);
+                continue;
             }
+            waitframe(1);
         }
     }
 

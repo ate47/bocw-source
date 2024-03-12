@@ -212,9 +212,9 @@ function function_b5959278(ent, var_1d25915, var_605838f4, var_e330010e) {
             var_605838f4.var_a415b6d6 = [];
         }
         var_605838f4.var_a415b6d6[ent.soundkey] = ent;
-    } else {
-        level._snd.var_92f63ad0[ent.soundkey] = ent;
+        return;
     }
+    level._snd.var_92f63ad0[ent.soundkey] = ent;
 }
 
 // Namespace namespace_afa8e18b/snd
@@ -272,25 +272,25 @@ function function_6ac5b570(ent) {
                 debugbreak();
             }
         #/
-    } else {
-        if (isdefined(ent.var_90c86b97) && isarray(ent.var_90c86b97.var_a415b6d6)) {
-            var_605838f4 = ent.var_90c86b97;
-            var_5244aa9 = isdefined(var_605838f4.var_a415b6d6[ent.soundkey]);
-            if (var_5244aa9 == 1) {
-                var_605838f4.var_a415b6d6[ent.soundkey] = undefined;
-            } else {
-                /#
-                    if (function_f984063f()) {
-                        debugbreak();
-                    }
-                #/
-            }
-        } else {
-            level._snd.var_92f63ad0[ent.soundkey] = undefined;
-        }
-        waittillframeend();
-        ent delete();
+        return;
     }
+    if (isdefined(ent.var_90c86b97) && isarray(ent.var_90c86b97.var_a415b6d6)) {
+        var_605838f4 = ent.var_90c86b97;
+        var_5244aa9 = isdefined(var_605838f4.var_a415b6d6[ent.soundkey]);
+        if (var_5244aa9 == 1) {
+            var_605838f4.var_a415b6d6[ent.soundkey] = undefined;
+        } else {
+            /#
+                if (function_f984063f()) {
+                    debugbreak();
+                }
+            #/
+        }
+    } else {
+        level._snd.var_92f63ad0[ent.soundkey] = undefined;
+    }
+    waittillframeend();
+    ent delete();
 }
 
 // Namespace namespace_afa8e18b/snd
@@ -361,22 +361,22 @@ function function_9f156b27(var_afe43979, var_24ea4e17) {
                 debugbreak();
             }
         #/
-    } else {
-        soundalias = ent.soundalias;
-        var_24ea4e17 = snd::function_ea2f17d1(var_24ea4e17, 0);
-        if (isstring(soundalias)) {
-            if (is_true(function_d8f86d06(soundalias))) {
-                ent stoploopsound(var_24ea4e17);
-            } else {
-                ent stopsounds();
-                ent stopsound(ent.soundalias);
-            }
-            waitframe(1);
-            ent.soundalias = undefined;
-        }
-        ent.soundtype = undefined;
-        function_6ac5b570(ent);
+        return;
     }
+    soundalias = ent.soundalias;
+    var_24ea4e17 = snd::function_ea2f17d1(var_24ea4e17, 0);
+    if (isstring(soundalias)) {
+        if (is_true(function_d8f86d06(soundalias))) {
+            ent stoploopsound(var_24ea4e17);
+        } else {
+            ent stopsounds();
+            ent stopsound(ent.soundalias);
+        }
+        waitframe(1);
+        ent.soundalias = undefined;
+    }
+    ent.soundtype = undefined;
+    function_6ac5b570(ent);
 }
 
 // Namespace namespace_afa8e18b/snd

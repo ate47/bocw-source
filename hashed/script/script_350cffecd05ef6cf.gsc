@@ -172,9 +172,9 @@ function function_15a789ab(var_c8386627, delay = 0, banner = 1) {
         self thread namespace_6e90e490::function_47e11416(4);
         level thread function_86515c3b(self, function_e8822b3b(var_c8386627), banner);
         namespace_1e25ad94::function_f5f0c0f8("Player awarded fate:" + var_c8386627);
-    } else {
-        namespace_1e25ad94::function_f5f0c0f8("Player already fated with this fate:" + var_c8386627);
+        return;
     }
+    namespace_1e25ad94::function_f5f0c0f8("Player already fated with this fate:" + var_c8386627);
 }
 
 // Namespace namespace_1c2a96f9/namespace_1c2a96f9
@@ -195,10 +195,10 @@ function function_42b0778(var_4198fa33, player, roj) {
         if (roj == 0) {
             player.doa.rof = var_7f2666c4.var_c8386627;
             player.doa.var_e448d81 = undefined;
-        } else {
-            player.doa.roj = var_7f2666c4.var_c8386627;
-            player.doa.var_cb8b16a = undefined;
+            return;
         }
+        player.doa.roj = var_7f2666c4.var_c8386627;
+        player.doa.var_cb8b16a = undefined;
     }
 }
 
@@ -241,30 +241,30 @@ function function_86515c3b(player, var_191ca105, banner = 1) {
         player.doa.var_ed8fde10 = "zombietron_deathmachine";
         player.doa.var_d6b75dff = 1;
         player namespace_41cb996::function_8b7acf56();
-        break;
+        return;
     case 2:
         if (player.doa.score.var_194c59ae < 2) {
             player.doa.score.var_194c59ae = 2;
         }
-        break;
+        return;
     case 4:
         weaponlevel = player.doa.weaponlevel;
         player.doa.var_9c7d56c1 = [[ player.doa.weaponpack ]]->function_91c18b19(weaponlevel);
         weaponlevel = math::clamp(player.doa.weaponlevel + level.doa.var_6c58d51, player.doa.weaponlevel, 2);
         player.doa.var_4eda72ee = [[ player.doa.weaponpack ]]->function_91c18b19(weaponlevel);
         player.var_10948967 = player namespace_4ff32993::function_f69400ca("zombietron_fated_chicken", 1, 1.2);
-        break;
+        return;
     case 8:
         player.doa.var_e5805edb = 1.5;
         player setmovespeedscale(player.doa.var_e5805edb);
         player namespace_83eb6304::function_3ecfde67("fast_feet");
-        break;
+        return;
     case 32:
         player.doa.var_96ca2395 = 5;
         if (isdefined(level.doa.var_16a35e94)) {
             player thread [[ level.doa.var_16a35e94 ]]();
         }
-        break;
+        return;
     case 16:
         player.doa.score.bombs = int(max(player.doa.score.bombs, 2));
         roll = randomint(30);
@@ -276,7 +276,7 @@ function function_86515c3b(player, var_191ca105, banner = 1) {
             level namespace_dfc652ee::itemspawn(namespace_dfc652ee::function_6265bde4("zombietron_sawblade"), player.origin, undefined, undefined, 1, undefined, undefined, undefined, player);
         }
         player thread namespace_b754744b::function_b784c6bd(46);
-        break;
+        return;
     default:
         /#
             assert(0, "<unknown string>");
@@ -463,11 +463,11 @@ function function_11463552() {
     foreach (player in getplayers()) {
         if (isdefined(player.doa.vehicle)) {
             player notify(#"hash_279998c5df86c04d");
-        } else {
-            vehicle = player getvehicleoccupied();
-            if (isdefined(vehicle)) {
-                vehicle usevehicle(player, 0);
-            }
+            continue;
+        }
+        vehicle = player getvehicleoccupied();
+        if (isdefined(vehicle)) {
+            vehicle usevehicle(player, 0);
         }
     }
     util::wait_network_frame();
@@ -650,11 +650,11 @@ function function_e4867f1d(var_7f2666c4, roj = 0) {
         objective_setstate(self.objectiveid, "invisible");
         level thread function_42b0778(self, player, roj);
         player giveachievement(#"doa_achievement_fated");
-    } else {
-        /#
-            assert(0, "<unknown string>");
-        #/
+        return;
     }
+    /#
+        assert(0, "<unknown string>");
+    #/
 }
 
 // Namespace namespace_1c2a96f9/namespace_1c2a96f9

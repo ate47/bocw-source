@@ -63,10 +63,8 @@ function main(var_d3440450, *var_50cc0d4f) {
     level thread util::screen_fade_out(0);
     level thread namespace_29a279dd::set_display(3);
     level lui::play_movie(#"hash_1b87a73f3c672bf7", "fullscreen", 1, 0, 0, #"", 20);
-    player = getplayers()[0];
-    while (!isplayer(player)) {
+    for (player = getplayers()[0]; !isplayer(player); player = getplayers()[0]) {
         waitframe(1);
-        player = getplayers()[0];
     }
     player endon(#"death", #"disconnect");
     player setcharacteroutfit(7);

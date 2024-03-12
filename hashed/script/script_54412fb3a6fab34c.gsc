@@ -89,7 +89,9 @@ function private function_e2782c4a(*var_e9082dc0, userdata) {
                 waitframe(1);
             }
             level.player.var_404d1644[var_f828a846] = var_ab57c0be;
-        } else if (isdefined(level.player.var_404d1644[var_f828a846]) == 1) {
+            continue;
+        }
+        if (isdefined(level.player.var_404d1644[var_f828a846]) == 1) {
             level.player.var_404d1644[var_f828a846] = undefined;
         }
     }
@@ -853,9 +855,7 @@ function function_da704a02(alias, var_f828a846, scale, attack, release, radio) {
         }
     }
     if (ent == level.player || radio == 1) {
-        goto LOC_000003ba;
     }
-LOC_000003ba:
 }
 
 // Namespace snd/namespace_93606de4

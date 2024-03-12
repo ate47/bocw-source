@@ -104,7 +104,6 @@ function private function_6daf57e7(type) {
         return 2;
     case #"legendary":
         return 3;
-        break;
     }
 }
 
@@ -122,9 +121,9 @@ function function_7b6ac8d5(type, reason = undefined) {
     }
     if (isdefined(reason)) {
         self luinotifyevent(#"hash_79cee3d30d7eb785", 2, type, reason);
-    } else {
-        self luinotifyevent(#"hash_79cee3d30d7eb785", 1, type);
+        return;
     }
+    self luinotifyevent(#"hash_79cee3d30d7eb785", 1, type);
 }
 
 // Namespace namespace_d4ecbbf0/namespace_d4ecbbf0
@@ -285,7 +284,6 @@ function private function_3e6a3070(var_b48509f9) {
         return "exfil_sr_rank_10";
     default:
         return "exfil_sr_rank_10";
-        break;
     }
 }
 
@@ -333,7 +331,6 @@ function private function_75ecd524(var_14326bba) {
         return "exfil_rbz_round_95";
     case 100:
         return "exfil_rbz_round_100";
-        break;
     }
     if (var_14326bba > 100) {
         return "exfil_rbz_round_100";
@@ -351,19 +348,16 @@ function function_9ab33c13(var_b48509f9 = 1) {
     case 2:
     case 3:
         return 1;
-        break;
     case 4:
     case 5:
     case 6:
     case 7:
     case 8:
         return 2;
-        break;
     case 9:
     case 10:
     default:
         return 3;
-        break;
     }
     return 0;
 }
@@ -376,23 +370,19 @@ function function_1cda88b8(var_b48509f9 = 1) {
     switch (var_b48509f9) {
     case 1:
         return 0;
-        break;
     case 2:
     case 3:
     case 4:
         return 1;
-        break;
     case 5:
     case 6:
     case 7:
     case 8:
     case 9:
         return 2;
-        break;
     case 10:
     default:
         return 3;
-        break;
     }
     return 0;
 }
@@ -405,19 +395,16 @@ function function_b299bcd5(round = 10) {
     switch (round) {
     case 10:
         return 0;
-        break;
     case 15:
     case 20:
     case 25:
         return 1;
-        break;
     case 30:
     case 35:
     case 40:
     case 45:
     case 50:
         return 2;
-        break;
     case 55:
     case 60:
     case 65:
@@ -426,7 +413,6 @@ function function_b299bcd5(round = 10) {
     case 100:
     default:
         return 3;
-        break;
     }
     return 0;
 }
@@ -440,10 +426,8 @@ function function_15c36044(var_b48509f9 = 1) {
     case 1:
     case 2:
         return 0;
-        break;
     default:
         return 1;
-        break;
     }
     return 0;
 }
@@ -471,57 +455,57 @@ function function_e6a712db(var_8e592166 = 1) {
                 function_74f5b460(var_a1b51775, var_8e592166);
             }
         }
+        return;
+    }
+    round = level.round_number;
+    if (round <= 11) {
+        round = 10;
+    } else if (round <= 16) {
+        round = 15;
+    } else if (round <= 21) {
+        round = 20;
+    } else if (round <= 26) {
+        round = 25;
+    } else if (round <= 31) {
+        round = 30;
+    } else if (round <= 36) {
+        round = 35;
+    } else if (round <= 41) {
+        round = 40;
+    } else if (round <= 46) {
+        round = 45;
+    } else if (round <= 51) {
+        round = 50;
+    } else if (round <= 56) {
+        round = 55;
+    } else if (round <= 61) {
+        round = 60;
+    } else if (round <= 56) {
+        round = 65;
+    } else if (round <= 71) {
+        round = 70;
+    } else if (round <= 76) {
+        round = 75;
+    } else if (round <= 81) {
+        round = 80;
+    } else if (round <= 86) {
+        round = 85;
+    } else if (round <= 91) {
+        round = 90;
+    } else if (round <= 96) {
+        round = 95;
     } else {
-        round = level.round_number;
-        if (round <= 11) {
-            round = 10;
-        } else if (round <= 16) {
-            round = 15;
-        } else if (round <= 21) {
-            round = 20;
-        } else if (round <= 26) {
-            round = 25;
-        } else if (round <= 31) {
-            round = 30;
-        } else if (round <= 36) {
-            round = 35;
-        } else if (round <= 41) {
-            round = 40;
-        } else if (round <= 46) {
-            round = 45;
-        } else if (round <= 51) {
-            round = 50;
-        } else if (round <= 56) {
-            round = 55;
-        } else if (round <= 61) {
-            round = 60;
-        } else if (round <= 56) {
-            round = 65;
-        } else if (round <= 71) {
-            round = 70;
-        } else if (round <= 76) {
-            round = 75;
-        } else if (round <= 81) {
-            round = 80;
-        } else if (round <= 86) {
-            round = 85;
-        } else if (round <= 91) {
-            round = 90;
-        } else if (round <= 96) {
-            round = 95;
-        } else {
-            round = 100;
+        round = 100;
+    }
+    var_3bf72bdb = function_a5fde6a9(round);
+    function_d59d7b74(var_3bf72bdb, var_8e592166);
+    if (is_true(getgametypesetting(#"hash_534a70940dadf3e7"))) {
+        var_8f88887b = function_b299bcd5(round);
+        if (var_8f88887b > 0) {
+            function_89a45cd4(var_8f88887b, var_8e592166);
         }
-        var_3bf72bdb = function_a5fde6a9(round);
-        function_d59d7b74(var_3bf72bdb, var_8e592166);
-        if (is_true(getgametypesetting(#"hash_534a70940dadf3e7"))) {
-            var_8f88887b = function_b299bcd5(round);
-            if (var_8f88887b > 0) {
-                function_89a45cd4(var_8f88887b, var_8e592166);
-            }
-            if (round >= 20) {
-                function_74f5b460(1, var_8e592166);
-            }
+        if (round >= 20) {
+            function_74f5b460(1, var_8e592166);
         }
     }
 }
@@ -621,32 +605,32 @@ function function_3a2e46e0(var_8e592166 = 1) {
                 function_74f5b460(var_a1b51775, var_8e592166);
             }
         }
-    } else {
-        round = level.round_number;
-        var_1fb4cd01 = round - 1;
-        var_eeeff6bf = 100;
-        var_32ea0039 = function_a5fde6a9(var_1fb4cd01);
-        var_5937b8ee = function_75ecd524(var_1fb4cd01);
-        if (isdefined(var_5937b8ee)) {
-            self thread function_e439076f(var_5937b8ee);
+        return;
+    }
+    round = level.round_number;
+    var_1fb4cd01 = round - 1;
+    var_eeeff6bf = 100;
+    var_32ea0039 = function_a5fde6a9(var_1fb4cd01);
+    var_5937b8ee = function_75ecd524(var_1fb4cd01);
+    if (isdefined(var_5937b8ee)) {
+        self thread function_e439076f(var_5937b8ee);
+    }
+    if (!is_true(level.var_da7a41e7)) {
+        level.var_da7a41e7 = 1;
+        if (math::cointoss(var_eeeff6bf)) {
+            level.var_e5e795ee = 1;
         }
-        if (!is_true(level.var_da7a41e7)) {
-            level.var_da7a41e7 = 1;
-            if (math::cointoss(var_eeeff6bf)) {
-                level.var_e5e795ee = 1;
-            }
+    }
+    if (is_true(level.var_e5e795ee)) {
+        function_d59d7b74(var_32ea0039, var_8e592166);
+    }
+    if (is_true(getgametypesetting(#"hash_534a70940dadf3e7"))) {
+        var_8f88887b = function_b299bcd5(var_1fb4cd01);
+        if (var_8f88887b > 0) {
+            function_89a45cd4(var_8f88887b, var_8e592166);
         }
-        if (is_true(level.var_e5e795ee)) {
-            function_d59d7b74(var_32ea0039, var_8e592166);
-        }
-        if (is_true(getgametypesetting(#"hash_534a70940dadf3e7"))) {
-            var_8f88887b = function_b299bcd5(var_1fb4cd01);
-            if (var_8f88887b > 0) {
-                function_89a45cd4(var_8f88887b, var_8e592166);
-            }
-            if (var_1fb4cd01 >= 20) {
-                function_74f5b460(1, var_8e592166);
-            }
+        if (var_1fb4cd01 >= 20) {
+            function_74f5b460(1, var_8e592166);
         }
     }
 }
@@ -660,37 +644,27 @@ function function_ef580a0c(var_8f426cc8) {
         switch (var_8f426cc8) {
         case 1:
             return 1;
-            break;
         case 2:
             return 2;
-            break;
         case 3:
             return 3;
-            break;
         case 4:
             return 4;
-            break;
         default:
             return 5;
-            break;
         }
     } else {
         switch (var_8f426cc8) {
         case 10:
             return 1;
-            break;
         case 15:
             return 2;
-            break;
         case 20:
             return 3;
-            break;
         case 25:
             return 4;
-            break;
         default:
             return 5;
-            break;
         }
     }
     return 1;
@@ -707,28 +681,21 @@ function function_b03d7dd0(var_8f426cc8) {
             return 2;
         case 2:
             return 3;
-            break;
         case 3:
             return 4;
-            break;
         default:
             return 5;
-            break;
         }
     } else {
         switch (var_8f426cc8) {
         case 10:
             return 2;
-            break;
         case 15:
             return 3;
-            break;
         case 20:
             return 4;
-            break;
         default:
             return 5;
-            break;
         }
     }
     return 1;
@@ -744,133 +711,103 @@ function function_4f5dff62(starlevel = 1, type = #"rare") {
         switch (type) {
         case #"rare":
             return 1;
-            break;
         case #"epic":
             return 0;
-            break;
         case #"legendary":
             return 0;
-            break;
         }
-        break;
+        return;
     case 2:
         switch (type) {
         case #"rare":
             return 1;
-            break;
         case #"epic":
             return 1;
-            break;
         case #"legendary":
             return 0;
-            break;
         }
-        break;
+        return;
     case 3:
         switch (type) {
         case #"rare":
             return 1;
-            break;
         case #"epic":
             return 1;
-            break;
         case #"legendary":
             return 1;
-            break;
         }
-        break;
+        return;
     case 4:
         switch (type) {
         case #"rare":
             return 1;
-            break;
         case #"epic":
             return 1;
-            break;
         case #"legendary":
             return 1;
-            break;
         }
-        break;
+        return;
     case 5:
         switch (type) {
         case #"rare":
             return 2;
-            break;
         case #"epic":
             return 1;
-            break;
         case #"legendary":
             return 1;
-            break;
         }
-        break;
+        return;
     case 6:
         switch (type) {
         case #"rare":
             return 2;
-            break;
         case #"epic":
             return 2;
-            break;
         case #"legendary":
             return 1;
-            break;
         }
-        break;
+        return;
     case 7:
         switch (type) {
         case #"rare":
             return 3;
-            break;
         case #"epic":
             return 2;
-            break;
         case #"legendary":
             return 2;
-            break;
         }
-        break;
+        return;
     case 8:
         switch (type) {
         case #"rare":
             return 3;
-            break;
         case #"epic":
             return 2;
-            break;
         case #"legendary":
             return 2;
-            break;
         }
-        break;
+        return;
     case 9:
         switch (type) {
         case #"rare":
             return 4;
-            break;
         case #"epic":
             return 3;
-            break;
         case #"legendary":
             return 2;
-            break;
         }
-        break;
+        return;
     case 10:
     default:
         switch (type) {
         case #"rare":
             return 4;
-            break;
         case #"epic":
             return 3;
-            break;
         case #"legendary":
             return 2;
-            break;
         }
-        break;
+        return;
     }
 }
 
@@ -884,10 +821,8 @@ function function_1c7ac571(round = 20) {
     case 25:
     case 30:
         return 1;
-        break;
     default:
         return 2;
-        break;
     }
     return 0;
 }
@@ -964,60 +899,64 @@ function function_73cddc69(var_8e592166 = 1) {
                 self function_74f5b460(var_629196dd, var_8e592166);
             }
         }
+        return;
+    }
+    round = level.round_number;
+    if (round <= 5) {
+        return;
+    }
+    self thread function_7b6ac8d5(2, round);
+    var_ad186e6c = level.round_number / 5;
+    self function_88beee50(round);
+    if (round >= 10) {
+        amount = int(round / 10) - 1;
+        amount = math::clamp(amount, 1, 9);
+        self function_d59d7b74(amount, var_8e592166);
     } else {
-        round = level.round_number;
-        if (round <= 5) {
+        self function_d59d7b74(1, var_8e592166);
+    }
+    if (is_true(getgametypesetting(#"hash_534a70940dadf3e7"))) {
+        if (round == 15) {
+            if (!is_true(level.var_7d3f22bd)) {
+                level.var_7d3f22bd = 1;
+                if (math::cointoss()) {
+                    level.var_e578d0db = 1;
+                }
+            }
+            if (is_true(level.var_e578d0db)) {
+                function_89a45cd4(1, var_8e592166);
+            }
+        } else if (round > 15) {
+            var_8f88887b = function_1c7ac571(round);
+            function_89a45cd4(var_8f88887b, var_8e592166);
+        }
+        if (round == 20) {
+            if (!is_true(level.var_5ed8f6ba)) {
+                level.var_5ed8f6ba = 1;
+                if (math::cointoss()) {
+                    level.var_8a84008 = 1;
+                }
+            }
+            if (is_true(level.var_8a84008)) {
+                function_74f5b460(1, var_8e592166);
+            }
             return;
         }
-        self thread function_7b6ac8d5(2, round);
-        var_ad186e6c = level.round_number / 5;
-        self function_88beee50(round);
-        if (round >= 10) {
-            amount = int(round / 10) - 1;
-            amount = math::clamp(amount, 1, 9);
-            self function_d59d7b74(amount, var_8e592166);
-        } else {
-            self function_d59d7b74(1, var_8e592166);
+        if (round == 25) {
+            if (!is_true(level.var_97f56902)) {
+                level.var_97f56902 = 1;
+                if (math::cointoss()) {
+                    level.var_fb82a5bd = 1;
+                }
+            }
+            if (is_true(level.var_fb82a5bd)) {
+                function_74f5b460(1, var_8e592166);
+            }
+            return;
         }
-        if (is_true(getgametypesetting(#"hash_534a70940dadf3e7"))) {
-            if (round == 15) {
-                if (!is_true(level.var_7d3f22bd)) {
-                    level.var_7d3f22bd = 1;
-                    if (math::cointoss()) {
-                        level.var_e578d0db = 1;
-                    }
-                }
-                if (is_true(level.var_e578d0db)) {
-                    function_89a45cd4(1, var_8e592166);
-                }
-            } else if (round > 15) {
-                var_8f88887b = function_1c7ac571(round);
-                function_89a45cd4(var_8f88887b, var_8e592166);
-            }
-            if (round == 20) {
-                if (!is_true(level.var_5ed8f6ba)) {
-                    level.var_5ed8f6ba = 1;
-                    if (math::cointoss()) {
-                        level.var_8a84008 = 1;
-                    }
-                }
-                if (is_true(level.var_8a84008)) {
-                    function_74f5b460(1, var_8e592166);
-                }
-            } else if (round == 25) {
-                if (!is_true(level.var_97f56902)) {
-                    level.var_97f56902 = 1;
-                    if (math::cointoss()) {
-                        level.var_fb82a5bd = 1;
-                    }
-                }
-                if (is_true(level.var_fb82a5bd)) {
-                    function_74f5b460(1, var_8e592166);
-                }
-            } else if (round > 25) {
-                var_a1b51775 = function_70067981(round);
-                function_74f5b460(var_a1b51775, var_8e592166);
-            }
+        if (round > 25) {
+            var_a1b51775 = function_70067981(round);
+            function_74f5b460(var_a1b51775, var_8e592166);
         }
     }
 }
@@ -1030,13 +969,13 @@ function function_a2d61378(var_b48509f9, var_2993280f = 1) {
     if (var_b48509f9 <= 1) {
         var_b8bcc6d = 1000 * var_2993280f;
         self thread zm_score::add_to_player_score(var_b8bcc6d);
-    } else {
-        score = 2500 * (var_b48509f9 - 1) * var_2993280f;
-        if (var_2993280f <= 1) {
-            score = math::clamp(score, 0, 15000);
-        }
-        self thread zm_score::add_to_player_score(int(score));
+        return;
     }
+    score = 2500 * (var_b48509f9 - 1) * var_2993280f;
+    if (var_2993280f <= 1) {
+        score = math::clamp(score, 0, 15000);
+    }
+    self thread zm_score::add_to_player_score(int(score));
 }
 
 // Namespace namespace_d4ecbbf0/namespace_d4ecbbf0
@@ -1086,13 +1025,13 @@ function on_item_pickup(params) {
                     switch (item.var_a6762160.rarity) {
                     case #"rare":
                         self function_d59d7b74();
-                        break;
+                        return;
                     case #"epic":
                         self function_89a45cd4();
-                        break;
+                        return;
                     case #"legendary":
                         self function_74f5b460();
-                        break;
+                        return;
                     }
                 }
             }

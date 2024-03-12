@@ -34,7 +34,7 @@ function private function_70a657d8() {
     callback::on_localclient_connect(&on_player_connect);
     level.weaponnone = getweapon(#"none");
     level.weaponnull = getweapon(#"weapon_null");
-    level.var_78032351 = getweapon(#"defaultweapon");
+    level.weapondefault = getweapon(#"defaultweapon");
     level.weaponbasemelee = getweapon(#"knife");
     if (!isdefined(level.zombie_weapons_upgraded)) {
         level.zombie_weapons_upgraded = [];
@@ -162,7 +162,9 @@ function function_2bcaec6f(localclientnum, var_a6762160) {
                 } else {
                     var_7bdcb52a = 0;
                 }
-            } else if (current_weapon == var_6ae93843) {
+                continue;
+            }
+            if (current_weapon == var_6ae93843) {
                 var_7bdcb52a = 1;
             }
         }
@@ -354,7 +356,9 @@ function function_15827c82(var_904df15f) {
             var_89230090 = getscriptbundle(s_item.var_a6762160);
             if (var_89230090.type === "itemspawnlist") {
                 function_15827c82(var_89230090);
-            } else if (isdefined(var_89230090.weapon.name)) {
+                continue;
+            }
+            if (isdefined(var_89230090.weapon.name)) {
                 if (!isdefined(level.var_af500dbd)) {
                     level.var_af500dbd = [];
                 } else if (!isarray(level.var_af500dbd)) {
@@ -455,7 +459,9 @@ function private function_bd6fcf62(var_f8dfa2cf, var_3fbf56c8) {
         var_89230090 = getscriptbundle(var_a6762160);
         if (var_89230090.type === "itemspawnlist") {
             function_15827c82(var_89230090);
-        } else if (isdefined(var_89230090.weapon.name)) {
+            continue;
+        }
+        if (isdefined(var_89230090.weapon.name)) {
             if (!isdefined(level.var_af500dbd)) {
                 level.var_af500dbd = [];
             } else if (!isarray(level.var_af500dbd)) {
@@ -475,8 +481,7 @@ function private function_bd6fcf62(var_f8dfa2cf, var_3fbf56c8) {
 function load_weapon_spec_from_table(table, first_row) {
     gametype = util::get_game_type();
     index = first_row;
-    row = tablelookuprow(table, index);
-    while (isdefined(row)) {
+    for (row = tablelookuprow(table, index); isdefined(row); row = tablelookuprow(table, index)) {
         weapon_name = checkstringvalid(row[0]);
         if (isinarray(level.var_c60359dc, weapon_name)) {
             index++;
@@ -511,7 +516,6 @@ function load_weapon_spec_from_table(table, first_row) {
             include_upgraded_weapon(weapon_name, upgrade_name, upgrade_in_box, cost, 4500);
         }
         index++;
-        row = tablelookuprow(table, index);
     }
 }
 

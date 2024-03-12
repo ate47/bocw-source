@@ -8,9 +8,8 @@
 function ispistol(weapon, var_d3511cd9 = 0) {
     if (var_d3511cd9) {
         return (weapon.weapclass === #"pistol");
-    } else {
-        return isdefined(level.side_arm_array[weapon]);
     }
+    return isdefined(level.side_arm_array[weapon]);
 }
 
 // Namespace weapons/weapon_utils
@@ -57,7 +56,6 @@ function isexplosivedamage(meansofdeath) {
     case #"mod_grenade_splash":
     case #"mod_projectile_splash":
         return 1;
-        break;
     }
     return 0;
 }
@@ -114,7 +112,9 @@ function function_a9a8aed8(primaryoffhand) {
         if (!self hasweapon(level.var_34d27b26)) {
             self giveweapon(level.var_34d27b26);
         }
-    } else if (self hasweapon(level.var_34d27b26)) {
+        return;
+    }
+    if (self hasweapon(level.var_34d27b26)) {
         self takeweapon(level.var_34d27b26);
     }
 }

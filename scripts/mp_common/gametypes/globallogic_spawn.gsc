@@ -295,11 +295,13 @@ function playmatchstartaudio(team) {
     }
     if (isdefined(self.var_7c7626bc)) {
         self globallogic_audio::leader_dialog_on_player(self.var_7c7626bc, undefined, undefined, undefined, undefined, undefined, undefined, level.var_db91e97c);
-    } else if (team == game.attackers) {
-        self globallogic_audio::leader_dialog_on_player(level.leaderdialog.offenseorderdialog, undefined, undefined, undefined, undefined, undefined, undefined, level.var_db91e97c);
-    } else {
-        self globallogic_audio::leader_dialog_on_player(level.leaderdialog.defenseorderdialog, undefined, undefined, undefined, undefined, undefined, undefined, level.var_db91e97c);
+        return;
     }
+    if (team == game.attackers) {
+        self globallogic_audio::leader_dialog_on_player(level.leaderdialog.offenseorderdialog, undefined, undefined, undefined, undefined, undefined, undefined, level.var_db91e97c);
+        return;
+    }
+    self globallogic_audio::leader_dialog_on_player(level.leaderdialog.defenseorderdialog, undefined, undefined, undefined, undefined, undefined, undefined, level.var_db91e97c);
 }
 
 // Namespace globallogic_spawn/globallogic_spawn
@@ -475,12 +477,12 @@ function spawnplayer() {
         if (isdefined(specialist)) {
             self function_6c3348ac(specialist);
         }
-        var_be574bd8 = self function_b568258e();
+        var_be574bd8 = self getcharacterlootid();
         outfitindex = self getcharacteroutfit();
         gender = self getplayergendertype();
-        warpaintoutfitindex = self function_3d1a97c6();
-        var_8fa79650 = self function_564cfaeb();
-        decallootid = self function_e1c06cd0();
+        warpaintoutfitindex = self getcharacterwarpaintoutfit();
+        var_8fa79650 = self getcharacterwarpaintlootid();
+        decallootid = self getcharacterdecallootid();
         var_b3d9cfaa = self function_11d0e790();
         var_f8e6b703 = self match_record::get_player_stat(#"hash_ec4aea1a8bbd82");
         if (isdefined(var_f8e6b703)) {
@@ -981,11 +983,9 @@ function spawnclient(timealreadypassed) {
 // Size: 0x9e
 function function_1a12c7a1(timeuntilspawn) {
     self endon(#"force_spawn", #"hash_33713849648e651d");
-    var_9037cf6c = 0;
-    while (var_9037cf6c < timeuntilspawn) {
+    for (var_9037cf6c = 0; var_9037cf6c < timeuntilspawn; var_9037cf6c = var_9037cf6c + float(function_60d95f53()) / 1000) {
         util::function_9d5c26a();
         waitframe(1);
-        var_9037cf6c = var_9037cf6c + float(function_60d95f53()) / 1000;
     }
 }
 
@@ -1095,9 +1095,9 @@ function waitandspawnclient(timealreadypassed) {
                 } else {
                     hud_message::setlowermessage(game.strings[#"waiting_to_spawn"], timeuntilspawn);
                 }
-            } else {
-                hud_message::clearlowermessage();
+                continue;
             }
+            hud_message::clearlowermessage();
         }
         self notify(#"stop_wait_safe_spawn_button");
     } else {
@@ -1160,11 +1160,11 @@ function waitrespawnorsafespawnbutton() {
     while (1) {
         if (squad_spawn::function_d072f205()) {
             if (self squad_spawn::function_2ffd5f18()) {
-                break;
+                return;
             }
         } else if (!is_true(self.var_20250438)) {
             if (self usebuttonpressed()) {
-                break;
+                return;
             }
         }
         waitframe(1);

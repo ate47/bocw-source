@@ -192,9 +192,9 @@ function function_a0fe5f28() {
                     guy thread namespace_ec06fe4a::function_570729f0(0.1);
                 }
             }
-        } else {
-            wait(0.25);
+            continue;
         }
+        wait(0.25);
     }
     if (isdefined(self.trigger)) {
         self.trigger namespace_268747c0::function_54f185a();
@@ -217,9 +217,9 @@ function function_28826539(trap, page = 0, origin) {
             level.doa.var_7a2db350 = array(level.doa.var_7a2db350);
         }
         level.doa.var_7a2db350[level.doa.var_7a2db350.size] = trap;
-    } else {
-        return function_3bea16f1(trap, 0, origin);
+        return;
     }
+    return function_3bea16f1(trap, 0, origin);
 }
 
 // Namespace namespace_53f73cda/namespace_bd72f91f
@@ -277,10 +277,10 @@ function function_97d551b(var_2c5f6748) {
                 }
             }
         }
-    } else {
-        foreach (trap in var_71da84c) {
-            function_28826539(trap, 1);
-        }
+        return;
+    }
+    foreach (trap in var_71da84c) {
+        function_28826539(trap, 1);
     }
 }
 
@@ -328,12 +328,12 @@ function function_16abf3d3() {
                     trap.var_eb9d64bb = trap.var_eb9d64bb + 5000;
                     namespace_1e25ad94::function_f5f0c0f8("Paging IN pole trap at:" + trap.origin);
                 }
-            } else {
-                trap.var_f8660931 = namespace_ec06fe4a::function_f3eab80e(trap.origin, 1800);
-                if (!isdefined(trap.var_f8660931)) {
-                    trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
-                    namespace_1e25ad94::function_f5f0c0f8("Paging out pole trap at:" + trap.origin);
-                }
+                continue;
+            }
+            trap.var_f8660931 = namespace_ec06fe4a::function_f3eab80e(trap.origin, 1800);
+            if (!isdefined(trap.var_f8660931)) {
+                trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
+                namespace_1e25ad94::function_f5f0c0f8("Paging out pole trap at:" + trap.origin);
             }
         }
     }

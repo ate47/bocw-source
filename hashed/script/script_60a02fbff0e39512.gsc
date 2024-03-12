@@ -59,9 +59,9 @@ function private event_handler[event_9673dc9a] function_3981d015(eventstruct) {
         }
         if (object.weapon.name == #"hash_2b9efbad11308e02") {
             object namespace_6a37ec38::function_338f99f5();
-        } else {
-            object dodamage(object.health - 1, dynent.origin);
+            continue;
         }
+        object dodamage(object.health - 1, dynent.origin);
     }
 }
 
@@ -238,7 +238,9 @@ function function_c743094d(eventstruct) {
             playfx("debris/fx9_door_bash", dynent.origin, anglestoforward(dynent.angles), anglestoup(dynent.angles));
             dynent.var_a548ec11 = gettime() + var_a852a7dd * 1000;
         }
-    } else if (isplayer(activator) && dynent.health <= 0) {
+        return;
+    }
+    if (isplayer(activator) && dynent.health <= 0) {
         activator notify(#"hash_34928429a0070510", {#dynent:dynent});
     }
 }

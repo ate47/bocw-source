@@ -133,9 +133,9 @@ function function_93a99046(struct) {
     scriptmodel clientfield::set("item_machine_spawn_rob", 1);
     if (is_true(level.var_53bc31ad)) {
         scriptmodel fx::play("sr/fx9_safehouse_mchn_upgrades_spawn", struct.origin, undefined, #"hash_6088c0a8269c8f8b");
-    } else {
-        playfx("sr/fx9_safehouse_mchn_upgrades_spawn", struct.origin);
+        return;
     }
+    playfx("sr/fx9_safehouse_mchn_upgrades_spawn", struct.origin);
 }
 
 // Namespace namespace_dd7e54e3/namespace_dd7e54e3
@@ -347,7 +347,6 @@ function function_1490abe2(weapon) {
         case #"ww_ieu_electric_t9_upgraded_item_sr":
         case #"ww_ieu_plasma_t9_upgraded_item_sr":
             return 0;
-            break;
         }
     }
     switch (weapon.name) {
@@ -356,7 +355,6 @@ function function_1490abe2(weapon) {
     case #"ray_gun":
     case #"ray_gun_mk2_upgraded":
         return 0;
-        break;
     }
     return 1;
 }

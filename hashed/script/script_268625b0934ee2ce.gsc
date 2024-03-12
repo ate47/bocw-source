@@ -182,11 +182,13 @@ function private function_9ffb7e50() {
         var_a57f6402 = var_a57f6402 + var_7cc7f71e;
         if (var_a57f6402 > 1) {
             self thread function_bb5769fe("good_kill_impressive", victim, 1);
-        } else if (isbullet) {
-            self thread function_bb5769fe("good_kill_bullet", victim, 1);
-        } else {
-            self thread function_bb5769fe("good_kill", victim, 1);
+            continue;
         }
+        if (isbullet) {
+            self thread function_bb5769fe("good_kill_bullet", victim, 1);
+            continue;
+        }
+        self thread function_bb5769fe("good_kill", victim, 1);
     }
 }
 
@@ -299,7 +301,6 @@ function private function_6fc2f529(eventname) {
     case #"hash_5f71ade4df457495":
     case #"hash_66e5f6a038177fe8":
         return 10;
-        break;
     }
     return 0;
 }
@@ -319,9 +320,9 @@ function private function_1e099116() {
                 foreach (subject in var_e6eef508) {
                     if (isdefined(subject)) {
                         iprintln("<unknown string>" + eventname + "<unknown string>" + subject getentitynumber());
-                    } else {
-                        iprintln("<unknown string>" + eventname + "<unknown string>");
+                        continue;
                     }
+                    iprintln("<unknown string>" + eventname + "<unknown string>");
                 }
             }
         }
@@ -397,29 +398,29 @@ function function_3b54da5f(enabled) {
             }
             if (self function_1aaf5c2d(ent, var_b7f614b4)) {
                 ent.stealth.var_503e6ce5 = gettime() + level.stealth.noteworthy.var_4281ec08;
-            } else {
-                if (gettime() < level.stealth.noteworthy.var_503e6ce5) {
-                    continue;
-                }
-                type = self function_680e04ab(ent);
-                if (isdefined(type)) {
-                    entnum = ent getentitynumber();
-                    if (is_true(level.stealth.noteworthy.var_dc4f5164)) {
-                        foreach (var_edce0829 in var_6d949755.results[#"all"]) {
-                            if (var_edce0829.team != ent.team && var_edce0829.team == "neutral") {
-                                var_6d949755 = function_143c4599();
-                            }
-                            break;
+                continue;
+            }
+            if (gettime() < level.stealth.noteworthy.var_503e6ce5) {
+                continue;
+            }
+            type = self function_680e04ab(ent);
+            if (isdefined(type)) {
+                entnum = ent getentitynumber();
+                if (is_true(level.stealth.noteworthy.var_dc4f5164)) {
+                    foreach (var_edce0829 in var_6d949755.results[#"all"]) {
+                        if (var_edce0829.team != ent.team && var_edce0829.team == "neutral") {
+                            var_6d949755 = function_143c4599();
                         }
+                        break;
                     }
-                    var_6d949755.results[#"all"][entnum] = ent;
-                    dist_sq = distancesquared(self.origin, ent.origin);
-                    if (dist_sq < var_6d949755.var_62575984) {
-                        var_6d949755.var_62575984 = dist_sq;
-                        var_6d949755.var_281be7dc = type;
-                    }
-                    var_6d949755.results[type][entnum] = ent;
                 }
+                var_6d949755.results[#"all"][entnum] = ent;
+                dist_sq = distancesquared(self.origin, ent.origin);
+                if (dist_sq < var_6d949755.var_62575984) {
+                    var_6d949755.var_62575984 = dist_sq;
+                    var_6d949755.var_281be7dc = type;
+                }
+                var_6d949755.results[type][entnum] = ent;
             }
         }
         if (isdefined(var_6d949755.var_281be7dc)) {
@@ -635,11 +636,11 @@ function private function_561c2127(var_af882d4b, var_b5e49a23) {
             if (isdefined(enemy.stealth.var_d5484846) && gettime() - enemy.stealth.var_d5484846 < 10000) {
                 continue;
             }
-            jumpiffalse(isdefined(enemy.stealth.var_fc47e73b) && gettime() - enemy.stealth.var_fc47e73b < 10000) LOC_00000322;
-        } else {
-        LOC_00000322:
-            candidates[candidates.size] = enemy;
+            if (isdefined(enemy.stealth.var_fc47e73b) && gettime() - enemy.stealth.var_fc47e73b < 10000) {
+                continue;
+            }
         }
+        candidates[candidates.size] = enemy;
     }
     candidates = arraysortclosest(candidates, self.origin);
     return candidates;

@@ -28,11 +28,11 @@ function init() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0xcd24d84f, Offset: 0x398
 // Size: 0xb4
-function function_f3c80d73(var_d7e9261c, var_136e2645) {
-    if (zm_utility::get_story() == 1 || !isdefined(var_136e2645)) {
-        w_perk = getweapon(var_d7e9261c);
+function function_f3c80d73(str_bottle, str_totem) {
+    if (zm_utility::get_story() == 1 || !isdefined(str_totem)) {
+        w_perk = getweapon(str_bottle);
     } else {
-        w_perk = getweapon(var_136e2645);
+        w_perk = getweapon(str_totem);
     }
     forcestreamxmodel(w_perk.viewmodel, -1, -1);
     forcestreamxmodel(w_perk.worldmodel, 1, 1);
@@ -196,7 +196,9 @@ function _register_undefined_perk(str_perk) {
 function perk_meteor_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self.meteor_fx = util::playfxontag(fieldname, level._effect[#"perk_meteor"], self, "tag_origin");
-    } else if (isdefined(self.meteor_fx)) {
+        return;
+    }
+    if (isdefined(self.meteor_fx)) {
         stopfx(fieldname, self.meteor_fx);
     }
 }
@@ -221,11 +223,9 @@ function init_perk_machines_fx(*localclientnum) {
 function perk_start_up() {
     if (isdefined(self.script_int)) {
         power_zone = self.script_int;
-        int = undefined;
-        while (int != power_zone) {
+        for (int = undefined; int != power_zone; int = waitresult.is_on) {
             waitresult = undefined;
             waitresult = level waittill(#"power_on");
-            int = waitresult.is_on;
         }
     } else {
         level waittill(#"power_on");
@@ -239,7 +239,7 @@ function perk_start_up() {
         timer = timer + duration;
         duration = duration + 0.2;
         if (timer >= 3) {
-            break;
+            return;
         }
         wait(duration);
     }
@@ -317,9 +317,9 @@ function function_5b123b68(localclientnum, b_show, b_use_offset = 0) {
             v_origin = v_origin - anglestoforward(v_angles) * self.var_7ad76c54;
         }
         self.var_d67a4862 = playfx(localclientnum, self.var_be82764e, v_origin, anglestoforward(v_angles));
-    } else {
-        self.var_d67a4862 = undefined;
+        return;
     }
+    self.var_d67a4862 = undefined;
 }
 
 // Namespace zm_perks/zm_perks
@@ -405,11 +405,11 @@ function function_ab7cd429(localclientnum, *oldval, newval, *bnewent, *binitials
         var_aaf8da70 rotateto(level.var_245eb09f + var_6d877f48, 0.2);
         wait(0.8);
         var_aaf8da70 rotateto(level.var_245eb09f, 0.1);
-    } else {
-        var_165f12bb = array::random(array((17, 30, 25), (-10, -30, -25), (-10, 30, 25), (17, -30, -25)));
-        var_aaf8da70 rotateto(level.var_245eb09f + var_165f12bb, 0.15);
-        var_aaf8da70 thread function_1625e105(self);
+        return;
     }
+    var_165f12bb = array::random(array((17, 30, 25), (-10, -30, -25), (-10, 30, 25), (17, -30, -25)));
+    var_aaf8da70 rotateto(level.var_245eb09f + var_165f12bb, 0.15);
+    var_aaf8da70 thread function_1625e105(self);
 }
 
 // Namespace zm_perks/zm_perks

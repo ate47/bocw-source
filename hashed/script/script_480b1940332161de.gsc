@@ -57,33 +57,33 @@ function enable(var_dc8b0c0d, firstpoint, var_8fbcda45) {
             self.poi = undefined;
         }
         self notify(#"hash_540a2c03e6d27b24");
-    } else {
-        if (!isdefined(self.poi.var_1365068)) {
-            self.poi.var_1365068 = self function_359fd121();
-        }
-        var_67b78bf3 = function_f002dade("human", "fast");
-        var_47658db3 = function_15a5703b("human", min(self.poi.var_1365068, var_67b78bf3));
-        self setdesiredspeed(var_47658db3);
-        if (!isdefined(level.poi.var_5ee53e3)) {
-            level.poi.var_5ee53e3 = [];
-        }
-        if (!array::contains(level.poi.var_5ee53e3, self)) {
-            level.poi.var_5ee53e3[level.poi.var_5ee53e3.size] = self;
-        }
-        if (isdefined(level.poi.var_28bdae79)) {
-            level thread [[ level.poi.var_28bdae79 ]]();
-        }
-        /#
-            assert(!isdefined(firstpoint) || isstruct(firstpoint));
-        #/
-        self.poi.var_3cf5f944 = self.turnrate;
-        self.turnrate = 0.25;
-        self.poi.leftaimlimit = 90;
-        self.poi.rightaimlimit = -90;
-        self.poi.var_5fccb5cd = firstpoint;
-        self.var_6141b84e = "disable";
-        self notify(#"hash_66e66f69a86651cd");
+        return;
     }
+    if (!isdefined(self.poi.var_1365068)) {
+        self.poi.var_1365068 = self function_359fd121();
+    }
+    var_67b78bf3 = function_f002dade("human", "fast");
+    var_47658db3 = function_15a5703b("human", min(self.poi.var_1365068, var_67b78bf3));
+    self setdesiredspeed(var_47658db3);
+    if (!isdefined(level.poi.var_5ee53e3)) {
+        level.poi.var_5ee53e3 = [];
+    }
+    if (!array::contains(level.poi.var_5ee53e3, self)) {
+        level.poi.var_5ee53e3[level.poi.var_5ee53e3.size] = self;
+    }
+    if (isdefined(level.poi.var_28bdae79)) {
+        level thread [[ level.poi.var_28bdae79 ]]();
+    }
+    /#
+        assert(!isdefined(firstpoint) || isstruct(firstpoint));
+    #/
+    self.poi.var_3cf5f944 = self.turnrate;
+    self.turnrate = 0.25;
+    self.poi.leftaimlimit = 90;
+    self.poi.rightaimlimit = -90;
+    self.poi.var_5fccb5cd = firstpoint;
+    self.var_6141b84e = "disable";
+    self notify(#"hash_66e66f69a86651cd");
 }
 
 // Namespace poi/namespace_b1048555
@@ -96,7 +96,9 @@ function function_fc1d22bd(var_dc8b0c0d, var_411041d2, yawmax, pitchmin, pitchma
         self function_4d1af993(var_411041d2, yawmax, pitchmin, pitchmax, var_8fbcda45);
         self thread function_c6ff2ee5();
         self notify(#"hash_4f88221ad3977829");
-    } else if (!var_dc8b0c0d && isdefined(self.poi.auto)) {
+        return;
+    }
+    if (!var_dc8b0c0d && isdefined(self.poi.auto)) {
         self notify(#"hash_5ea869d8ad18e50b");
         self ai::look_at(self.poi.auto.angles, 3, 1, float(function_60d95f53()) / 1000, self.poi.auto.var_8fbcda45, 1);
         self.poi.auto = undefined;
@@ -172,9 +174,9 @@ function private function_b31aaef9() {
                 }
                 waitframe(1);
                 waited = 1;
-            } else {
-                var_6a9ced4[var_6a9ced4.size] = guy;
+                continue;
             }
+            var_6a9ced4[var_6a9ced4.size] = guy;
         }
         foreach (guy in var_6a9ced4) {
             arrayremovevalue(level.poi.var_5ee53e3, guy);
@@ -254,9 +256,9 @@ function private function_aabc1f4c() {
         } else {
             return undefined;
         }
-    } else {
-        return undefined;
+        return;
     }
+    return undefined;
 }
 
 // Namespace poi/namespace_b1048555
@@ -296,19 +298,19 @@ function private function_75334336(var_df7a9e25) {
     }
     if (var_df7a9e25 && gettime() < self.poi.var_a192c8da + min_time && function_a6d41d6e(self.poi.var_7dfe573d)) {
         return self.poi.var_7dfe573d;
-    } else if (!sighttracepassed(self geteye(), self.poi.var_6faefa54.origin, 0, undefined)) {
-        return undefined;
-    } else {
-        if (!function_a6d41d6e(self.poi.var_6faefa54)) {
-            if (isdefined(self.poi.var_6faefa54.target)) {
-                self.poi.var_6faefa54 = struct::get(self.poi.var_6faefa54.target, "targetname");
-            } else {
-                self enable(0);
-            }
-            return undefined;
-        }
-        return self.poi.var_6faefa54;
     }
+    if (!sighttracepassed(self geteye(), self.poi.var_6faefa54.origin, 0, undefined)) {
+        return undefined;
+    }
+    if (!function_a6d41d6e(self.poi.var_6faefa54)) {
+        if (isdefined(self.poi.var_6faefa54.target)) {
+            self.poi.var_6faefa54 = struct::get(self.poi.var_6faefa54.target, "targetname");
+        } else {
+            self enable(0);
+        }
+        return undefined;
+    }
+    return self.poi.var_6faefa54;
 }
 
 // Namespace poi/namespace_b1048555
@@ -568,9 +570,13 @@ function private debug() {
                 foreach (ai in level.poi.var_5ee53e3) {
                     if (isdefined(ai.poi.var_7dfe573d) && gettime() < (isdefined(ai.poi.var_7dfe573d.var_3b03815e) ? ai.poi.var_7dfe573d.var_3b03815e : gettime() + float(function_60d95f53()) / 1000)) {
                         line(ai geteye(), ai.poi.var_7dfe573d.origin, (0, 0, 1), 1, 0, 1);
-                    } else if (isdefined(ai.poi.var_6faefa54)) {
+                        continue;
+                    }
+                    if (isdefined(ai.poi.var_6faefa54)) {
                         line(ai geteye(), ai.poi.var_6faefa54.origin, (1, 0, 0), 1, 0, 1);
-                    } else if (isdefined(ai.poi.var_5fccb5cd)) {
+                        continue;
+                    }
+                    if (isdefined(ai.poi.var_5fccb5cd)) {
                         line(ai geteye(), ai.poi.var_5fccb5cd.origin, (1, 0, 0), 1, 0, 1);
                     }
                 }

@@ -147,9 +147,9 @@ function function_6aeb681d(start, end, var_600ff81f, ease_in, ease_out, bounces,
 function function_8ff186e5(var_b3160f0, dvar, var_c7ec7d60) {
     if (is_true(var_c7ec7d60)) {
         setsaveddvar(dvar, var_b3160f0.var_872a88cd);
-    } else {
-        setdvar(dvar, var_b3160f0.var_872a88cd);
+        return;
     }
+    setdvar(dvar, var_b3160f0.var_872a88cd);
 }
 
 // Namespace namespace_ca99987f/namespace_df0c90a5
@@ -160,16 +160,16 @@ function function_54354e4e(var_b3160f0, axis) {
     switch (axis) {
     case 0:
         self.origin = (var_b3160f0.var_872a88cd, self.origin[1], self.origin[2]);
-        break;
+        return;
     case 1:
         self.origin = (self.origin[0], var_b3160f0.var_872a88cd, self.origin[2]);
-        break;
+        return;
     case 2:
         self.origin = (self.origin[0], self.origin[1], var_b3160f0.var_872a88cd);
-        break;
+        return;
     default:
         self.origin = var_b3160f0.var_872a88cd;
-        break;
+        return;
     }
 }
 
@@ -181,16 +181,16 @@ function function_92b063ff(var_b3160f0, axis) {
     switch (axis) {
     case 0:
         self.origin = self.origin + (var_b3160f0.delta, 0, 0);
-        break;
+        return;
     case 1:
         self.origin = self.origin + (0, var_b3160f0.delta, 0);
-        break;
+        return;
     case 2:
         self.origin = self.origin + (0, 0, var_b3160f0.delta);
-        break;
+        return;
     default:
         self.origin = self.origin + var_b3160f0.delta;
-        break;
+        return;
     }
 }
 

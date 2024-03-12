@@ -70,9 +70,8 @@ function timeout_beep(localclientnum, *oldval, newval, *bnewent, *binitialsnap, 
     self endon(#"timeout_beep");
     interval = 1;
     if (bwastimejump == 2) {
-        interval = 0.133;
     }
-    while (1) {
+    for (interval = 0.133; 1; interval = math::clamp(interval / 1.17, 0.1, 1)) {
         if (isdefined(beepalias)) {
             var_91e09a3a = 1;
             if (var_4f5f9e46 === 1) {
@@ -94,7 +93,6 @@ function timeout_beep(localclientnum, *oldval, newval, *bnewent, *binitialsnap, 
             self.timeoutlightsoff = 1;
         }
         util::server_wait(fieldname, interval);
-        interval = math::clamp(interval / 1.17, 0.1, 1);
     }
 }
 
@@ -235,7 +233,9 @@ function function_74f5faf8(eventparams) {
                 player renderoverridebundle::function_f4eab437(localclientnum, 0, #"hash_2c6fce4151016478");
             }
         }
-    } else if (codcaster::function_b8fe9b52(localclientnum)) {
+        return;
+    }
+    if (codcaster::function_b8fe9b52(localclientnum)) {
         if (isdefined(var_dc39bd32.var_29806c31) && !var_dc39bd32 function_d2cb869e(var_dc39bd32.var_29806c31)) {
             var_dc39bd32 codeplaypostfxbundle(var_dc39bd32.var_29806c31);
         }

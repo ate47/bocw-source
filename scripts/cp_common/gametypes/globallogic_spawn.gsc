@@ -320,9 +320,9 @@ function function_e3b1cd54() {
         waitresult = self waittill(#"vehicle_death");
         if (waitresult.vehicle_died) {
             self.diedonvehicle = 1;
-        } else {
-            self.var_e961196c = 1;
+            continue;
         }
+        self.var_e961196c = 1;
     }
 }
 
@@ -821,7 +821,7 @@ function waitrespawnorsafespawnbutton() {
     self endon(#"disconnect", #"end_respawn");
     while (1) {
         if (self usebuttonpressed()) {
-            break;
+            return;
         }
         waitframe(1);
     }

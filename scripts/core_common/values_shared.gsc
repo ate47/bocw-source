@@ -349,9 +349,9 @@ function private _set_value(str_name, value) {
     if (isdefined(s_value) && isdefined(s_value.func)) {
         call_on = s_value.call_on === "$self" ? self : s_value.call_on;
         util::single_func_argarray(call_on, s_value.func, _replace_values(s_value.a_args, value));
-    } else {
-        self.(str_name) = value;
+        return;
     }
+    self.(str_name) = value;
 }
 
 // Namespace val/values_shared
@@ -392,9 +392,9 @@ function private set_takedamage(b_value = 1) {
         } else {
             self enableinvulnerability();
         }
-    } else {
-        self.takedamage = b_value;
+        return;
     }
+    self.takedamage = b_value;
 }
 
 // Namespace val/values_shared
@@ -466,9 +466,8 @@ function private function_25ef3fee(var_110b9b81) {
 function private validate_takedamage() {
     if (isplayer(self)) {
         return !self getinvulnerability();
-    } else {
-        return self.takedamage;
     }
+    return self.takedamage;
 }
 
 // Namespace val/values_shared
@@ -484,11 +483,13 @@ function private set_takeweapons(b_value = 1) {
                 self animation::detach_weapon();
             }
         }
-    } else if (isplayer(self)) {
-        self player::give_back_weapons();
-    } else {
-        self animation::attach_weapon();
+        return;
     }
+    if (isplayer(self)) {
+        self player::give_back_weapons();
+        return;
+    }
+    self animation::attach_weapon();
 }
 
 // Namespace val/values_shared
@@ -498,9 +499,9 @@ function private set_takeweapons(b_value = 1) {
 function private set_disableweapons(value = 1) {
     if (value != 0) {
         self disableweapons(value === 2 ? 1 : 0);
-    } else {
-        self enableweapons();
+        return;
     }
+    self enableweapons();
 }
 
 // Namespace val/values_shared
@@ -510,9 +511,9 @@ function private set_disableweapons(value = 1) {
 function private function_f609f22c(b_value = 1) {
     if (b_value) {
         self disableweaponcycling();
-    } else {
-        self enableweaponcycling();
+        return;
     }
+    self enableweaponcycling();
 }
 
 // Namespace val/values_shared
@@ -522,9 +523,9 @@ function private function_f609f22c(b_value = 1) {
 function private function_16f5ac8e(b_value = 1) {
     if (b_value) {
         self disableweaponfire();
-    } else {
-        self enableweaponfire();
+        return;
     }
+    self enableweaponfire();
 }
 
 // Namespace val/values_shared
@@ -534,9 +535,9 @@ function private function_16f5ac8e(b_value = 1) {
 function private function_debe5863(b_value = 1) {
     if (b_value) {
         self function_205350ab();
-    } else {
-        self function_6e1804bd();
+        return;
     }
+    self function_6e1804bd();
 }
 
 // Namespace val/values_shared
@@ -546,9 +547,9 @@ function private function_debe5863(b_value = 1) {
 function private function_15d061e0(b_value = 1) {
     if (b_value) {
         self function_8348edff();
-    } else {
-        self function_a42cc59();
+        return;
     }
+    self function_a42cc59();
 }
 
 // Namespace val/values_shared
@@ -558,9 +559,9 @@ function private function_15d061e0(b_value = 1) {
 function private set_disableoffhandweapons(b_value = 1) {
     if (b_value) {
         self disableoffhandweapons();
-    } else {
-        self enableoffhandweapons();
+        return;
     }
+    self enableoffhandweapons();
 }
 
 // Namespace val/values_shared
@@ -570,9 +571,9 @@ function private set_disableoffhandweapons(b_value = 1) {
 function private function_37c7ffcd(b_value = 1) {
     if (b_value) {
         self disableoffhandspecial();
-    } else {
-        self enableoffhandspecial();
+        return;
     }
+    self enableoffhandspecial();
 }
 
 // Namespace val/values_shared
@@ -593,9 +594,9 @@ function private function_ba94b5cd(b_value = 1) {
 function private function_737c794(b_value = 1) {
     if (b_value) {
         self disableusability();
-    } else {
-        self enableusability();
+        return;
     }
+    self enableusability();
 }
 
 // Namespace val/values_shared
@@ -605,9 +606,9 @@ function private function_737c794(b_value = 1) {
 function private set_ignoreme(b_value = 1) {
     if (function_ffa5b184(self)) {
         self.var_becd4d91 = b_value;
-    } else {
-        self.ignoreme = b_value;
+        return;
     }
+    self.ignoreme = b_value;
 }
 
 // Namespace val/values_shared
@@ -628,9 +629,9 @@ function private function_62318390(b_value = 1) {
     #/
     if (b_value) {
         self.nohitmarkers = undefined;
-    } else {
-        self.nohitmarkers = 1;
+        return;
     }
+    self.nohitmarkers = 1;
 }
 
 // Namespace val/values_shared
@@ -654,9 +655,9 @@ function private set_hide(b_value = 1) {
         } else {
             self ghost();
         }
-    } else {
-        self show();
+        return;
     }
+    self show();
 }
 
 // Namespace val/values_shared
@@ -666,9 +667,9 @@ function private set_hide(b_value = 1) {
 function private set_health_regen(b_value = 1) {
     if (b_value) {
         self.heal.enabled = 1;
-    } else {
-        self.heal.enabled = 0;
+        return;
     }
+    self.heal.enabled = 0;
 }
 
 // Namespace val/values_shared
@@ -678,9 +679,9 @@ function private set_health_regen(b_value = 1) {
 function private set_disable_health_regen_delay(b_value = 1) {
     if (b_value) {
         self.disable_health_regen_delay = 1;
-    } else {
-        self.disable_health_regen_delay = 0;
+        return;
     }
+    self.disable_health_regen_delay = 0;
 }
 
 // Namespace val/values_shared
@@ -690,9 +691,9 @@ function private set_disable_health_regen_delay(b_value = 1) {
 function private set_ignore_health_regen_delay(b_value = 1) {
     if (b_value) {
         self.ignore_health_regen_delay = 1;
-    } else {
-        self.ignore_health_regen_delay = 0;
+        return;
     }
+    self.ignore_health_regen_delay = 0;
 }
 
 // Namespace val/values_shared
@@ -702,13 +703,17 @@ function private set_ignore_health_regen_delay(b_value = 1) {
 function private function_adf02a98(val) {
     if (isdefined(val)) {
         self.goalradius = val;
-    } else if (isdefined(self.radius)) {
-        self.goalradius = float(self.radius);
-    } else if (isdefined(self.spawner.radius)) {
-        self.goalradius = float(self.spawner.radius);
-    } else {
-        self.goalradius = 2048;
+        return;
     }
+    if (isdefined(self.radius)) {
+        self.goalradius = float(self.radius);
+        return;
+    }
+    if (isdefined(self.spawner.radius)) {
+        self.goalradius = float(self.spawner.radius);
+        return;
+    }
+    self.goalradius = 2048;
 }
 
 // Namespace val/values_shared
@@ -749,16 +754,16 @@ function function_4671dfff(str_id, value) {
         set(str_id, "allow_melee", !value);
         set(str_id, "allow_sprint", !value);
         set(str_id, "allow_prone", !value);
-    } else {
-        reset(str_id, "disable_weapon_fire");
-        reset(str_id, "disable_offhand_weapons");
-        reset(str_id, "disablegadgets");
-        reset(str_id, "allow_movement");
-        reset(str_id, "allow_jump");
-        reset(str_id, "allow_melee");
-        reset(str_id, "allow_sprint");
-        reset(str_id, "allow_prone");
+        return;
     }
+    reset(str_id, "disable_weapon_fire");
+    reset(str_id, "disable_offhand_weapons");
+    reset(str_id, "disablegadgets");
+    reset(str_id, "allow_movement");
+    reset(str_id, "allow_jump");
+    reset(str_id, "allow_melee");
+    reset(str_id, "allow_sprint");
+    reset(str_id, "allow_prone");
 }
 
 // Namespace val/values_shared
@@ -773,14 +778,14 @@ function function_5276aede(str_id, value) {
         set(str_id, "allow_jump", !value);
         set(str_id, "allow_melee", !value);
         set(str_id, "allow_sprint", !value);
-    } else {
-        reset(str_id, "disable_offhand_weapons");
-        reset(str_id, "disablegadgets");
-        reset(str_id, "allow_movement");
-        reset(str_id, "allow_jump");
-        reset(str_id, "allow_melee");
-        reset(str_id, "allow_sprint");
+        return;
     }
+    reset(str_id, "disable_offhand_weapons");
+    reset(str_id, "disablegadgets");
+    reset(str_id, "allow_movement");
+    reset(str_id, "allow_jump");
+    reset(str_id, "allow_melee");
+    reset(str_id, "allow_sprint");
 }
 
 // Namespace val/values_shared

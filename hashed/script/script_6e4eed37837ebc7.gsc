@@ -55,7 +55,9 @@ function private event_handler[grenade_fire] function_4776caf4(eventstruct) {
     if (function_62c1bfaa(weapon)) {
         if (level.var_c8f28fd7 === 1) {
             self replaceweapon(weapon, 0, level.var_43a51921);
-        } else if (level.var_d89ef54a !== 1) {
+            return;
+        }
+        if (level.var_d89ef54a !== 1) {
             projectile = eventstruct.projectile;
             if (isdefined(projectile)) {
                 projectile clientfield::set("fieldUpgradeActive", 1);

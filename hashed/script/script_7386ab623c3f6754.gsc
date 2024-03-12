@@ -127,7 +127,6 @@ function private function_ef5cde9f(str_weapon_name) {
     case #"hash_7a071e09cf16ca47":
     case #"hash_7a071f09cf16cbfa":
         return 1;
-        break;
     }
     return 0;
 }
@@ -325,7 +324,9 @@ function function_ae618f2b(params) {
             var_86890135 = self.var_f968837d.weapon.name;
         }
         ai thread function_5276a443(self.var_f968837d.weapon.name, self.var_f968837d, undefined, var_86890135);
-    } else if (!isdefined(self.var_f968837d)) {
+        return;
+    }
+    if (!isdefined(self.var_f968837d)) {
         if (isdefined(self.var_deb3e8b1)) {
             self.var_deb3e8b1 delete();
         }

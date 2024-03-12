@@ -143,11 +143,10 @@ function start(supplydrops = 1, minwaittime = 20, var_fe6b2eab = 20) {
             while (var_b7d663a9 < var_64f52ca3.size && replacement.count > 0) {
                 var_efecc884 = var_64f52ca3[var_b7d663a9];
                 if (isdefined(var_7003bde7[var_efecc884])) {
-                    goto LOC_0000053e;
+                } else {
+                    var_7003bde7[var_efecc884] = replacement.replacement;
+                    replacement.count--;
                 }
-                var_7003bde7[var_efecc884] = replacement.replacement;
-                replacement.count--;
-            LOC_0000053e:
                 var_b7d663a9++;
             }
         }
@@ -369,7 +368,7 @@ function function_add63876(vehicletypes, var_4b43f3d = 1, var_e72444ee = 30, min
                     if (level.var_3f771530.size == 0) {
                         var_dedb993c = 1;
                     }
-                } while(var_d9c4a78c != currentindex && !var_dedb993c);
+                } while (var_d9c4a78c != currentindex && !var_dedb993c);
             } else {
                 droppoint = var_9fb224d1[var_d9c4a78c];
                 var_d9c4a78c = (var_d9c4a78c + 1) % var_9fb224d1.size;

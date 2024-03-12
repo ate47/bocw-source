@@ -100,13 +100,15 @@ function set_blops_dialog(teamindex) {
     }
     if (isdefined(level.var_e2f95698)) {
         self.pers[level.var_7ee6af9f] = level.var_e2f95698;
-    } else if (level.var_7ee6af9f === "mpcommander") {
+        return;
+    }
+    if (level.var_7ee6af9f === "mpcommander") {
         factionlist = map::function_596f8772();
         faction = getscriptbundle(isdefined(factionlist.faction[teamindex].var_d2446fa0) ? factionlist.faction[teamindex].var_d2446fa0 : #"");
         self.pers[level.var_7ee6af9f] = isdefined(faction.var_ccc3e5ba) ? faction.var_ccc3e5ba : "blops_commander";
-    } else {
-        self.pers[level.var_7ee6af9f] = "sr_commander";
+        return;
     }
+    self.pers[level.var_7ee6af9f] = "sr_commander";
 }
 
 // Namespace globallogic_audio/globallogic_audio
@@ -121,11 +123,11 @@ function set_cdp_dialog(teamindex) {
     }
     if (isdefined(level.var_e2f95698)) {
         self.pers[level.var_7ee6af9f] = level.var_e2f95698;
-    } else {
-        factionlist = map::function_596f8772();
-        faction = getscriptbundle(isdefined(factionlist.faction[teamindex].var_d2446fa0) ? factionlist.faction[teamindex].var_d2446fa0 : #"");
-        self.pers[level.var_7ee6af9f] = isdefined(faction.var_ccc3e5ba) ? faction.var_ccc3e5ba : "cdp_commander";
+        return;
     }
+    factionlist = map::function_596f8772();
+    faction = getscriptbundle(isdefined(factionlist.faction[teamindex].var_d2446fa0) ? factionlist.faction[teamindex].var_d2446fa0 : #"");
+    self.pers[level.var_7ee6af9f] = isdefined(faction.var_ccc3e5ba) ? faction.var_ccc3e5ba : "cdp_commander";
 }
 
 // Namespace globallogic_audio/globallogic_audio
@@ -179,11 +181,11 @@ function announcercontroller() {
                 leader_dialog("roundTimeWarning", team);
             }
         }
-    } else {
-        level waittill(#"match_ending_vox");
-        if (level.var_70cd9e95 !== 1) {
-            leader_dialog("roundTimeWarning");
-        }
+        return;
+    }
+    level waittill(#"match_ending_vox");
+    if (level.var_70cd9e95 !== 1) {
+        leader_dialog("roundTimeWarning");
     }
 }
 
@@ -217,7 +219,9 @@ function function_1f89b047() {
     }
     if (is_true(var_b66d2861)) {
         leader_dialog("announceStreakBreaker", var_d70a4dd2);
-    } else if (var_f743e210 >= 3 && var_f743e210 <= 8) {
+        return;
+    }
+    if (var_f743e210 >= 3 && var_f743e210 <= 8) {
         dialogkey = "announceStreak_" + (isdefined(var_f743e210) ? "" + var_f743e210 : "");
         leader_dialog(dialogkey, var_d70a4dd2);
     }
@@ -280,14 +284,14 @@ function announce_round_winner(delay) {
             leader_dialog("roundEncourageWon", winner, undefined, undefined, undefined, 1, level.var_db91e97c);
             leader_dialog_for_other_teams("roundEncourageLost", winner, undefined, undefined, undefined, 1, level.var_db91e97c);
         }
-    } else {
-        foreach (team, _ in level.teams) {
-            if (isdefined(level.teampostfix[team])) {
-                thread sound::play_on_players("mus_round_draw" + "_" + level.teampostfix[team]);
-            }
-        }
-        leader_dialog("roundDraw");
+        return;
     }
+    foreach (team, _ in level.teams) {
+        if (isdefined(level.teampostfix[team])) {
+            thread sound::play_on_players("mus_round_draw" + "_" + level.teampostfix[team]);
+        }
+    }
+    leader_dialog("roundDraw");
 }
 
 // Namespace globallogic_audio/globallogic_audio
@@ -299,10 +303,10 @@ function announce_game_winner(outcome) {
     if (level.teambased) {
         if (level.var_ba92f0a8 || outcome::get_flag(outcome, "tie") || !match::function_c10174e7()) {
             leader_dialog("gameDraw", undefined, undefined, undefined, undefined, 1);
-        } else {
-            leader_dialog("gameWon", outcome::get_winner(outcome), undefined, undefined, undefined, 1);
-            leader_dialog_for_other_teams("gameLost", outcome::get_winner(outcome), undefined, undefined, undefined, 1);
+            return;
         }
+        leader_dialog("gameWon", outcome::get_winner(outcome), undefined, undefined, undefined, 1);
+        leader_dialog_for_other_teams("gameLost", outcome::get_winner(outcome), undefined, undefined, undefined, 1);
     }
 }
 
@@ -326,7 +330,6 @@ function get_round_switch_dialog(switchtype) {
         return "roundOvertime";
     default:
         return "roundSwitchSides";
-        break;
     }
 }
 
@@ -406,9 +409,9 @@ function function_13bcae23() {
     level.var_2179a6bf = 1;
     if (var_ffe73385) {
         level thread set_music_on_team("timeout_loop_quiet");
-    } else {
-        level thread set_music_on_team("timeout_loop");
+        return;
     }
+    level thread set_music_on_team("timeout_loop");
 }
 
 // Namespace globallogic_audio/globallogic_audio
@@ -477,14 +480,14 @@ function function_91d557d3(outcome) {
     if (level.teambased) {
         level thread set_music_on_team("matchend_win", outcome::get_winner(outcome));
         level thread function_89fe8163("matchend_lose", outcome::get_winner(outcome));
-    } else {
-        foreach (player in level.players) {
-            if (player === match::function_b5f4c9d8()) {
-                player thread set_music_on_player("matchend_win");
-            } else {
-                player thread set_music_on_player("matchend_lose");
-            }
+        return;
+    }
+    foreach (player in level.players) {
+        if (player === match::function_b5f4c9d8()) {
+            player thread set_music_on_player("matchend_win");
+            continue;
         }
+        player thread set_music_on_player("matchend_lose");
     }
 }
 

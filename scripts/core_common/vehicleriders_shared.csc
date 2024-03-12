@@ -119,9 +119,9 @@ function play_vehicle_anim(*localclientnum, *oldval, *newval, *bnewent, *binitia
         if (is_true(var_73ba4ab0)) {
             self setanim(str_vh_anim, 1, 0, 1, undefined);
             self setanimtime(str_vh_anim, 1);
-        } else {
-            self setanimrestart(str_vh_anim);
+            return;
         }
+        self setanimrestart(str_vh_anim);
     }
 }
 

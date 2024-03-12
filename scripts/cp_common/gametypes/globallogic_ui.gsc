@@ -175,16 +175,16 @@ function private function_3e57e536(set) {
         setuimodelvalue(getuimodel(function_90d058e8(#"lockpick"), "active"), 0);
         setuimodelvalue(getuimodel(function_90d058e8(#"lockpick"), "stream"), 0);
         level flag::clear("restoring_ui_models");
-    } else {
-        function_52da41bb("hudItems.cpObjectiveUiData.compassMessage", #"", 1);
-        function_52da41bb("hudItems.cpObjectiveUiData.compassState", 0, 1);
-        function_52da41bb("hudItems.cpObjectiveUiData.showHideHint", 0, 1);
-        function_52da41bb("hudItems.cpObjectiveUiData.splash", 0, 1);
-        function_52da41bb("hudItems.cpObjectiveUiData.updateList", 0, 1);
-        function_52da41bb("hudItems.subtitles.noAutoHide", 0);
-        function_52da41bb("hudItems.cpHudFadeControl.doFadeOut", 0);
-        function_52da41bb("hudItems.hideWaypoints", 0);
+        return;
     }
+    function_52da41bb("hudItems.cpObjectiveUiData.compassMessage", #"", 1);
+    function_52da41bb("hudItems.cpObjectiveUiData.compassState", 0, 1);
+    function_52da41bb("hudItems.cpObjectiveUiData.showHideHint", 0, 1);
+    function_52da41bb("hudItems.cpObjectiveUiData.splash", 0, 1);
+    function_52da41bb("hudItems.cpObjectiveUiData.updateList", 0, 1);
+    function_52da41bb("hudItems.subtitles.noAutoHide", 0);
+    function_52da41bb("hudItems.cpHudFadeControl.doFadeOut", 0);
+    function_52da41bb("hudItems.hideWaypoints", 0);
 }
 
 // Namespace globallogic_ui/globallogic_ui
@@ -277,7 +277,7 @@ function function_4e49c51d(title = #"", description = #"", var_c7f36d1c = 0, var
             return 1;
         }
         waitframe(1);
-    } while(menu != "InGameConfirmOverlay" || response != "confirmresponse");
+    } while (menu != "InGameConfirmOverlay" || response != "confirmresponse");
     if (isdefined(cancel_callback)) {
         self [[ cancel_callback ]](var_21a58cc0);
     }
@@ -307,7 +307,8 @@ function function_8f0a7b3b(playerent) {
         if (issentient(ai)) {
             if (ai attackedrecently(playerent, 10)) {
                 return 1;
-            } else if (ai.enemy === playerent && isdefined(ai.weapon) && ai.weapon.name === "none" && distancesquared(ai.origin, playerent.origin) < function_a3f6cdac(240)) {
+            }
+            if (ai.enemy === playerent && isdefined(ai.weapon) && ai.weapon.name === "none" && distancesquared(ai.origin, playerent.origin) < function_a3f6cdac(240)) {
                 return 1;
             }
         }
@@ -431,7 +432,9 @@ function teamplayercountsequal(playercounts) {
     foreach (team, _ in level.teams) {
         if (!isdefined(count)) {
             count = playercounts[team];
-        } else if (count != playercounts[team]) {
+            continue;
+        }
+        if (count != playercounts[team]) {
             return 0;
         }
     }
@@ -515,7 +518,9 @@ function teamscoresequal() {
     foreach (team, _ in level.teams) {
         if (!isdefined(score)) {
             score = getteamscore(team);
-        } else if (score != getteamscore(team)) {
+            continue;
+        }
+        if (score != getteamscore(team)) {
             return 0;
         }
     }
@@ -585,9 +590,9 @@ function updateobjectivetext() {
     }
     if (level.scorelimit > 0) {
         self setclientcgobjectivetext(util::getobjectivescoretext(self.pers[#"team"]));
-    } else {
-        self setclientcgobjectivetext(util::getobjectivetext(self.pers[#"team"]));
+        return;
     }
+    self setclientcgobjectivetext(util::getobjectivetext(self.pers[#"team"]));
 }
 
 // Namespace globallogic_ui/globallogic_ui
@@ -702,9 +707,9 @@ function function_cdbb5c49(show, persistent) {
     player = getplayers()[0];
     if (is_true(show)) {
         util::function_1690fd42(player, persistent);
-    } else {
-        util::function_cd98604b(player);
+        return;
     }
+    util::function_cd98604b(player);
 }
 
 // Namespace globallogic_ui/globallogic_ui
@@ -744,7 +749,7 @@ function function_ac6e682a() {
     self flag::wait_till("loadout_given");
     do {
         waitframe(1);
-    } while(self flag::get(#"chyron_menu_open") || level flag::get(#"waitting_for_igc_ready"));
+    } while (self flag::get(#"chyron_menu_open") || level flag::get(#"waitting_for_igc_ready"));
     waitframe(1);
     level flag::wait_till_clear("streamer_waits");
     self flag::set(#"kill_initial_black");

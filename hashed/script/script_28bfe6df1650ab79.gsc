@@ -60,8 +60,7 @@ function is_active() {
 function private height_check(*inflictor, attacker, damage, *flags, *meansofdeath, *weapon, *var_fd90b0bb, *vpoint, *vdir, *shitloc, *psoffsettime, *boneindex, *surfacetype) {
     if (isdefined(boneindex.origin) && isdefined(self.origin) && boneindex.origin[2] > self.origin[2] + 40) {
         return surfacetype;
-    } else {
-        return 0;
     }
+    return 0;
 }
 

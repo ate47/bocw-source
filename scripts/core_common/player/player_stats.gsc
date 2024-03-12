@@ -412,17 +412,19 @@ function function_a431be09(weapon) {
         weaponname = function_3f64434(statweapon);
         self function_622feb0d(weaponname, #"destructions", 1);
         self function_6fb0b113(weaponname, #"hash_98b8582b08abfa5");
-    } else if (isdefined(level.iskillstreakweapon) && [[ level.iskillstreakweapon ]](statweapon) && isdefined(level.get_killstreak_for_weapon_for_stats)) {
+        return;
+    }
+    if (isdefined(level.iskillstreakweapon) && [[ level.iskillstreakweapon ]](statweapon) && isdefined(level.get_killstreak_for_weapon_for_stats)) {
         killstreak = [[ level.get_killstreak_for_weapon_for_stats ]](statweapon);
         if (killstreak === "jetfighter") {
             return;
         }
         self function_8fb23f94(killstreak, "destructions", 1);
         self function_b04e7184(killstreak, #"hash_98b8582b08abfa5");
-    } else {
-        self function_561716e6(statweapon.name, #"destroyed", 1);
-        self function_80099ca1(statweapon.name, #"hash_36be6b672cd9dda3");
+        return;
     }
+    self function_561716e6(statweapon.name, #"destroyed", 1);
+    self function_80099ca1(statweapon.name, #"hash_36be6b672cd9dda3");
 }
 
 // Namespace stats/player_stats
@@ -903,9 +905,9 @@ function function_d0de7686(statname, value, var_4261ca42) {
             self.pers[#"hash_58ebc906abf2fa00"][statname] = 0;
         }
         self.pers[#"hash_58ebc906abf2fa00"][statname]++;
-    } else {
-        return self function_dad108fa(statname, value);
+        return;
     }
+    return self function_dad108fa(statname, value);
 }
 
 // Namespace stats/player_stats
@@ -933,9 +935,9 @@ function function_841e4896(statname, value, var_4261ca42, weaponnamehash) {
             self.pers[#"hash_58ebc906abf2fa00"][statname] = 0;
         }
         self.pers[#"hash_58ebc906abf2fa00"][statname]++;
-    } else {
-        return self function_dad108fa(statname, value);
+        return;
     }
+    return self function_dad108fa(statname, value);
 }
 
 // Namespace stats/player_stats
@@ -974,12 +976,12 @@ function function_eec52333(weapon, statname, value, classnum, pickedup, forceads
     case #"shots":
     case #"used":
         self function_f95ea9b6(weapon);
-        break;
+        return;
     case #"kills":
         if (weapon.var_ff0b00ba) {
             self function_dad108fa(#"kills_equipment", 1);
         }
-        break;
+        return;
     }
 }
 

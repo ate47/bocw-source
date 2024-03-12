@@ -182,11 +182,11 @@ function function_acc500c4(watcher) {
             }
             self clientfield::set("satchelChargeWarning", 1);
             self playsound(var_1911997c);
-        } else {
-            wait(float(self.weapon.fusetime) / 1000);
-            if (isdefined(level.var_ac78d00e.var_a74161cc.var_28f86309)) {
-                self stoploopsound(0.1);
-            }
+            return;
+        }
+        wait(float(self.weapon.fusetime) / 1000);
+        if (isdefined(level.var_ac78d00e.var_a74161cc.var_28f86309)) {
+            self stoploopsound(0.1);
         }
     }
 }
@@ -197,17 +197,16 @@ function function_acc500c4(watcher) {
 // Size: 0xb4
 function function_6db0705() {
     for (;;) {
-        for (;;) {
-            if (isdefined(self.var_1e593689)) {
-                foreach (var_77a228b3 in self.var_1e593689) {
-                    if (var_77a228b3 flag::get("satchelIsArmed")) {
-                        return 1;
-                    }
+        if (isdefined(self.var_1e593689)) {
+            foreach (var_77a228b3 in self.var_1e593689) {
+                if (var_77a228b3 flag::get("satchelIsArmed")) {
+                    return 1;
                 }
-            } else {
-                return 0;
             }
+        } else {
+            return 0;
         }
+        waitframe(1);
     }
     return 0;
 }
@@ -218,21 +217,20 @@ function function_6db0705() {
 // Size: 0xd2
 function function_51108722() {
     for (;;) {
-        for (;;) {
-            if (isdefined(self.var_1e593689)) {
-                var_263fb98 = 1;
-                foreach (var_77a228b3 in self.var_1e593689) {
-                    if (!var_77a228b3 flag::get("satchelIsArmed")) {
-                        var_263fb98 = 0;
-                    }
+        if (isdefined(self.var_1e593689)) {
+            var_263fb98 = 1;
+            foreach (var_77a228b3 in self.var_1e593689) {
+                if (!var_77a228b3 flag::get("satchelIsArmed")) {
+                    var_263fb98 = 0;
                 }
-                if (var_263fb98) {
-                    return 1;
-                }
-            } else {
-                return 0;
             }
+            if (var_263fb98) {
+                return 1;
+            }
+        } else {
+            return 0;
         }
+        waitframe(1);
     }
     return 0;
 }
@@ -372,11 +370,13 @@ function function_9b8337c3(einflictor, eattacker, *idamage, *smeansofdeath, *wea
                 break;
             }
         }
-    } else if (isdefined(shitloc.var_3c0a7eef)) {
+        return;
+    }
+    if (isdefined(shitloc.var_3c0a7eef)) {
         foreach (var_71f7928d in shitloc.var_3c0a7eef) {
             if (self == var_71f7928d.vehicle && var_71f7928d.var_33c9fbd5 == gettime()) {
                 shitloc function_af9b1762(psoffsettime);
-                break;
+                return;
             }
         }
     }

@@ -692,6 +692,7 @@ function function_b4dfdc63(idx) {
         case 0:
         case 255:
             function_3116e435(var_72ff1564);
+            return;
         case 0:
         case 1:
         case 2:

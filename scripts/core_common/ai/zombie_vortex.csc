@@ -84,9 +84,9 @@ function vortex_shake_and_rumble(localclientnum, *v_vortex_origin) {
 function vision_blur(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         enablespeedblur(fieldname, 0.1, 0.5, 0.75);
-    } else {
-        disablespeedblur(fieldname);
+        return;
     }
+    disablespeedblur(fieldname);
 }
 
 // Namespace zombie_vortex/zombie_vortex

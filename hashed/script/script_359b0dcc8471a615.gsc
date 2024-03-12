@@ -53,17 +53,17 @@ function function_5089875d() {
             if (isdefined(var_4c9b75d1)) {
                 var_4c9b75d1 disconnectpaths();
             }
-        } else {
-            if (isdefined(var_4c9b75d1)) {
-                var_4c9b75d1 delete();
-            }
-            if (!isdefined(var_1c94845d)) {
-                var_1c94845d = [];
-            } else if (!isarray(var_1c94845d)) {
-                var_1c94845d = array(var_1c94845d);
-            }
-            var_1c94845d[var_1c94845d.size] = mannequin;
+            continue;
         }
+        if (isdefined(var_4c9b75d1)) {
+            var_4c9b75d1 delete();
+        }
+        if (!isdefined(var_1c94845d)) {
+            var_1c94845d = [];
+        } else if (!isarray(var_1c94845d)) {
+            var_1c94845d = array(var_1c94845d);
+        }
+        var_1c94845d[var_1c94845d.size] = mannequin;
     }
     array::delete_all(var_1c94845d);
     /#

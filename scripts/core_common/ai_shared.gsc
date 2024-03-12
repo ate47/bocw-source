@@ -103,9 +103,8 @@ function has_behavior_attribute(attribute) {
 function is_dead_sentient() {
     if (issentient(self) && !isalive(self)) {
         return 1;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace ai/ai_shared
@@ -608,7 +607,9 @@ function bloody_death(n_delay, hit_loc) {
     }
     if (is_true(self.var_4b5540a0)) {
         self delete();
-    } else if (!self flag::get("in_action")) {
+        return;
+    }
+    if (!self flag::get("in_action")) {
         util::stop_magic_bullet_shield(self);
         self dodamage(self.health + 100, self.origin, undefined, undefined, hit_loc);
         self kill();
@@ -874,7 +875,9 @@ function function_fc7bd6c7(var_80292228) {
         if (isfunctionptr(self.var_9a22ab2b)) {
             self thread [[ self.var_9a22ab2b ]]();
         }
-    } else if (isfunctionptr(self.var_54aff8ae)) {
+        return;
+    }
+    if (isfunctionptr(self.var_54aff8ae)) {
         self thread [[ self.var_54aff8ae ]]();
     }
 }

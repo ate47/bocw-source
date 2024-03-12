@@ -57,12 +57,12 @@ function function_5095b2c6(func) {
                 #/
                 thread exec_post_system(level.system_funcs[req]);
             }
-        } else {
-            /#
-                assert(isdefined(level.system_funcs[func.reqs]), "<unknown string>" + (ishash(func.reqs) ? function_9e72a96(func.reqs) : func.reqs) + "<unknown string>");
-            #/
-            thread exec_post_system(level.system_funcs[func.reqs]);
+            return;
         }
+        /#
+            assert(isdefined(level.system_funcs[func.reqs]), "<unknown string>" + (ishash(func.reqs) ? function_9e72a96(func.reqs) : func.reqs) + "<unknown string>");
+        #/
+        thread exec_post_system(level.system_funcs[func.reqs]);
     }
 }
 
@@ -108,12 +108,12 @@ function function_8dfa23e0(func) {
                 #/
                 thread exec_pre_system(level.system_funcs[req]);
             }
-        } else {
-            /#
-                assert(isdefined(level.system_funcs[func.reqs]), "<unknown string>" + (ishash(func.reqs) ? function_9e72a96(func.reqs) : func.reqs) + "<unknown string>");
-            #/
-            thread exec_pre_system(level.system_funcs[func.reqs]);
+            return;
         }
+        /#
+            assert(isdefined(level.system_funcs[func.reqs]), "<unknown string>" + (ishash(func.reqs) ? function_9e72a96(func.reqs) : func.reqs) + "<unknown string>");
+        #/
+        thread exec_pre_system(level.system_funcs[func.reqs]);
     }
 }
 
@@ -158,12 +158,12 @@ function function_3e3686fa(func) {
                 #/
                 thread function_6cc01f0(level.system_funcs[req]);
             }
-        } else {
-            /#
-                assert(isdefined(level.system_funcs[func.reqs]), "<unknown string>" + (ishash(func.reqs) ? function_9e72a96(func.reqs) : func.reqs) + "<unknown string>");
-            #/
-            thread function_6cc01f0(level.system_funcs[func.reqs]);
+            return;
         }
+        /#
+            assert(isdefined(level.system_funcs[func.reqs]), "<unknown string>" + (ishash(func.reqs) ? function_9e72a96(func.reqs) : func.reqs) + "<unknown string>");
+        #/
+        thread function_6cc01f0(level.system_funcs[func.reqs]);
     }
 }
 

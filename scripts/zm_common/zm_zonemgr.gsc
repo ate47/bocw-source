@@ -495,7 +495,7 @@ function zone_init(zone_name, zone_tag) {
                         zone.a_loc_types[#"zombie_location"] = array(zone.a_loc_types[#"zombie_location"]);
                     }
                     zone.a_loc_types[#"zombie_location"][zone.a_loc_types[#"zombie_location"].size] = spot;
-                    break;
+                    continue;
                 default:
                     if (!isdefined(zone.a_loc_types[token])) {
                         zone.a_loc_types[token] = [];
@@ -506,7 +506,7 @@ function zone_init(zone_name, zone_tag) {
                         zone.a_loc_types[token] = array(zone.a_loc_types[token]);
                     }
                     zone.a_loc_types[token][zone.a_loc_types[token].size] = spot;
-                    break;
+                    continue;
                 }
             }
             if (isdefined(spot.script_string)) {
@@ -596,7 +596,7 @@ function reinit_zone_spawners() {
                             zone.a_loc_types[#"zombie_location"] = array(zone.a_loc_types[#"zombie_location"]);
                         }
                         zone.a_loc_types[#"zombie_location"][zone.a_loc_types[#"zombie_location"].size] = spot;
-                        break;
+                        continue;
                     default:
                         if (!isdefined(zone.a_loc_types[token])) {
                             zone.a_loc_types[token] = [];
@@ -609,7 +609,7 @@ function reinit_zone_spawners() {
                             zone.a_loc_types[token] = array(zone.a_loc_types[token]);
                         }
                         zone.a_loc_types[token][zone.a_loc_types[token].size] = spot;
-                        break;
+                        continue;
                     }
                 }
             }
@@ -671,15 +671,15 @@ function make_zone_adjacent(main_zone_name, adj_zone_name, flag_name) {
         } else {
             adj_zone.flags[0] = flag_name;
         }
-    } else {
-        /#
-            assert(!isarray(flag_name), "<unknown string>");
-        #/
-        adj_zone = main_zone.adjacent_zones[adj_zone_name];
-        size = adj_zone.flags.size;
-        adj_zone.flags_do_or_check = 1;
-        adj_zone.flags[size] = flag_name;
+        return;
     }
+    /#
+        assert(!isarray(flag_name), "<unknown string>");
+    #/
+    adj_zone = main_zone.adjacent_zones[adj_zone_name];
+    size = adj_zone.flags.size;
+    adj_zone.flags_do_or_check = 1;
+    adj_zone.flags[size] = flag_name;
 }
 
 // Namespace zm_zonemgr/zm_zonemgr
@@ -915,7 +915,7 @@ function function_8a130a46(door, player) {
                     var_dead3909[var_dead3909.size] = var_c6bd50df;
                 }
             }
-        } while(isdefined(var_34eb3246) && var_4a122652 === var_35457dfd);
+        } while (isdefined(var_34eb3246) && var_4a122652 === var_35457dfd);
     } else {
         /#
             println("<unknown string>" + door.script_flag);
@@ -1166,7 +1166,7 @@ function create_spawner_list(zkeys) {
                             if (!isinarray(level.zm_loc_types[#"zombie_location"], loc)) {
                                 level.zm_loc_types[#"zombie_location"][level.zm_loc_types[#"zombie_location"].size] = loc;
                             }
-                            break;
+                            continue;
                         default:
                             if (!isdefined(level.zm_loc_types[token])) {
                                 level.zm_loc_types[token] = [];
@@ -1179,7 +1179,7 @@ function create_spawner_list(zkeys) {
                             if (!isinarray(level.zm_loc_types[token], loc)) {
                                 level.zm_loc_types[token][level.zm_loc_types[token].size] = loc;
                             }
-                            break;
+                            continue;
                         }
                     }
                 }
@@ -1234,9 +1234,9 @@ function _debug_show_zone(zone, color, alpha) {
         foreach (volume in zone.volumes) {
             if (!isdefined(color) || !isdefined(alpha)) {
                 showinfovolume(volume getentitynumber(), (0.2, 0.5, 0), 0.05);
-            } else {
-                showinfovolume(volume getentitynumber(), color, alpha);
+                continue;
             }
+            showinfovolume(volume getentitynumber(), color, alpha);
         }
     }
 }
@@ -1443,42 +1443,42 @@ function function_d4cf2b9b(force_update = 0) {
             }
             ent_number = player getentitynumber();
             if (isdefined(level.zone_paths[ent_number]) && isdefined(level.zone_paths[ent_number][var_c6bd50df])) {
-                jumpiffalse(level.zone_paths[ent_number][var_c6bd50df].cost == 0) LOC_0000020c;
-                zone_paths[ent_number] = level.zone_paths[ent_number];
-            } else {
-            LOC_0000020c:
-                zone = level.zones[var_c6bd50df];
-                var_23ca4e6e = [];
-                zone_info = spawnstruct();
-                zone_info.cost = 0;
-                var_23ca4e6e[zone.name] = zone_info;
-                var_51c813e9 = 0;
-                zone_queue = [];
-                zone_queue[zone_queue.size] = zone.name;
-                while (zone_queue.size > var_51c813e9) {
-                    zone = level.zones[zone_queue[var_51c813e9]];
-                    if (is_true(zone.var_d68ef0f9)) {
-                        var_51c813e9++;
+                if (level.zone_paths[ent_number][var_c6bd50df].cost == 0) {
+                    zone_paths[ent_number] = level.zone_paths[ent_number];
+                    continue;
+                }
+            }
+            zone = level.zones[var_c6bd50df];
+            var_23ca4e6e = [];
+            zone_info = spawnstruct();
+            zone_info.cost = 0;
+            var_23ca4e6e[zone.name] = zone_info;
+            var_51c813e9 = 0;
+            zone_queue = [];
+            zone_queue[zone_queue.size] = zone.name;
+            while (zone_queue.size > var_51c813e9) {
+                zone = level.zones[zone_queue[var_51c813e9]];
+                if (is_true(zone.var_d68ef0f9)) {
+                    var_51c813e9++;
+                    continue;
+                }
+                zone_info = var_23ca4e6e[zone.name];
+                foreach (var_4a52ff35, adjacent_zone in zone.adjacent_zones) {
+                    if (isdefined(var_23ca4e6e[var_4a52ff35]) || is_true(level.zones[var_4a52ff35].var_d68ef0f9)) {
                         continue;
                     }
-                    zone_info = var_23ca4e6e[zone.name];
-                    foreach (var_4a52ff35, adjacent_zone in zone.adjacent_zones) {
-                        if (isdefined(var_23ca4e6e[var_4a52ff35]) || is_true(level.zones[var_4a52ff35].var_d68ef0f9)) {
-                            continue;
-                        }
-                        if (adjacent_zone.is_connected) {
-                            var_658cf985 = spawnstruct();
-                            var_658cf985.to_zone = zone.name;
-                            var_658cf985.cost = zone_info.cost + 1;
-                            var_23ca4e6e[var_4a52ff35] = var_658cf985;
-                            zone_queue[zone_queue.size] = var_4a52ff35;
-                        }
+                    if (adjacent_zone.is_connected) {
+                        var_658cf985 = spawnstruct();
+                        var_658cf985.to_zone = zone.name;
+                        var_658cf985.cost = zone_info.cost + 1;
+                        var_23ca4e6e[var_4a52ff35] = var_658cf985;
+                        zone_queue[zone_queue.size] = var_4a52ff35;
                     }
-                    var_51c813e9++;
                 }
-                zone_paths[ent_number] = var_23ca4e6e;
-                waitframe(1);
+                var_51c813e9++;
             }
+            zone_paths[ent_number] = var_23ca4e6e;
+            waitframe(1);
         }
         level.zone_paths = zone_paths;
     }

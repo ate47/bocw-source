@@ -10,7 +10,7 @@
 function function_d92cb558(result, *vararg) {
     /#
         pathstr = "<unknown string>";
-        if (!isdefined(vararg)) {
+        if (isdefined(vararg)) {
         }
         return pathstr;
     #/

@@ -179,9 +179,9 @@ function function_c937e51f(var_f40cf449) {
             if (!is_true(level.var_efd3338c)) {
                 level clientfield::set_world_uimodel("DOA_GLOBALUIMODEL_COUNTDOWN", var_f40cf449);
             }
-        } else {
-            var_f40cf449 = 0;
+            continue;
         }
+        var_f40cf449 = 0;
     }
     function_fa6f7ba7();
 }
@@ -225,11 +225,11 @@ function function_7f7a069d() {
         level clientfield::set_world_uimodel(self.doa.score.var_85987bae, var_be72147f);
         self.health = int(var_2e0e9ad1 * self.maxhealth);
         level clientfield::set_world_uimodel(self.doa.score.var_ac6c4aee, self.doa.var_f64d2ac0);
-    } else {
-        level clientfield::set_world_uimodel(self.doa.score.var_5cb9ca20, 0);
-        level clientfield::set_world_uimodel(self.doa.score.var_85987bae, 0);
-        level clientfield::set_world_uimodel(self.doa.score.var_ac6c4aee, 0);
+        return;
     }
+    level clientfield::set_world_uimodel(self.doa.score.var_5cb9ca20, 0);
+    level clientfield::set_world_uimodel(self.doa.score.var_85987bae, 0);
+    level clientfield::set_world_uimodel(self.doa.score.var_ac6c4aee, 0);
 }
 
 // Namespace namespace_6e90e490/namespace_6e90e490

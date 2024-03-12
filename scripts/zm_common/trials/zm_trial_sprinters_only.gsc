@@ -33,7 +33,7 @@ function private on_begin() {
     level.var_102b1301 = "sprint";
     level.var_b38bb71 = 1;
     level.var_ef0aada0 = 1;
-    if (!namespace_c56530a8::is_active()) {
+    if (namespace_c56530a8::is_active()) {
     }
 }
 

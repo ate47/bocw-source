@@ -1091,18 +1091,18 @@ function private function_d0cdb00e(actionparams) {
         self waittill(#"hash_77f2882ff9140e86");
     }
     enemies = function_f6f34851(self.team);
-    var_4e2b3e3a = [];
+    targetlocations = [];
     foreach (enemy in enemies) {
         tpoint = getclosesttacpoint(enemy.origin);
         if (!isdefined(tpoint) || !isdefined(tpoint.ceilingheight) || tpoint.ceilingheight < 65534) {
             continue;
         }
-        var_4e2b3e3a[var_4e2b3e3a.size] = tpoint.origin;
+        targetlocations[targetlocations.size] = tpoint.origin;
     }
-    if (var_4e2b3e3a.size <= 0) {
-        var_4e2b3e3a[0] = (0, 0, 0);
+    if (targetlocations.size <= 0) {
+        targetlocations[0] = (0, 0, 0);
     }
-    location = var_4e2b3e3a[randomint(var_4e2b3e3a.size)];
+    location = targetlocations[randomint(targetlocations.size)];
     location = location + (randomfloatrange(500 * -1, 500), randomfloatrange(500 * -1, 500), 0);
     self notify(#"confirm_location", {#yaw:0, #position:location});
     while (!self function_a39f313c() || self getcurrentweapon() == level.weaponnone) {
@@ -2221,7 +2221,7 @@ function private function_6b01cd20() {
     self bot_action::clear();
     do {
         self waittill(#"hash_77f2882ff9140e86");
-    } while(!self.bot.var_e8c84f98);
+    } while (!self.bot.var_e8c84f98);
 }
 
 // Namespace namespace_d9f3dd47/namespace_d9f3dd47
@@ -2229,7 +2229,7 @@ function private function_6b01cd20() {
 // Checksum 0x22933ea3, Offset: 0x9700
 // Size: 0x2c
 function private function_84092214(actionparams) {
-    self function_90c011d5(actionparams, 14);
+    self throw_offhand(actionparams, 14);
 }
 
 // Namespace namespace_d9f3dd47/namespace_d9f3dd47
@@ -2237,14 +2237,14 @@ function private function_84092214(actionparams) {
 // Checksum 0x27954dd5, Offset: 0x9738
 // Size: 0x2c
 function private function_6bc8e929(actionparams) {
-    self function_90c011d5(actionparams, 15);
+    self throw_offhand(actionparams, 15);
 }
 
 // Namespace namespace_d9f3dd47/namespace_d9f3dd47
 // Params 2, eflags: 0x6 linked
 // Checksum 0x6f4caca0, Offset: 0x9770
 // Size: 0x246
-function private function_90c011d5(actionparams, var_dd95d559) {
+function private throw_offhand(actionparams, var_dd95d559) {
     self endoncallback(&function_39cec272, #"hash_1ae115949cd752c8");
     self endon(#"death", #"hash_3525e39d3694d0a9");
     self.bot.var_6bea1d82 = 1;

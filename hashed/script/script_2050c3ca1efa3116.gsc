@@ -90,9 +90,9 @@ function function_f42615a9(trap, page = 0) {
             level.doa.var_f9d893a7 = array(level.doa.var_f9d893a7);
         }
         level.doa.var_f9d893a7[level.doa.var_f9d893a7.size] = trap;
-    } else {
-        function_c5cbd3bf(trap);
+        return;
     }
+    function_c5cbd3bf(trap);
 }
 
 // Namespace namespace_d20e7d3b/namespace_d20e7d3b
@@ -139,12 +139,12 @@ function function_157f1b14() {
                     trap.var_eb9d64bb = trap.var_eb9d64bb + 5000;
                     namespace_1e25ad94::function_f5f0c0f8("Paging IN pungi trap at:" + trap.origin);
                 }
-            } else {
-                trap.var_f8660931 = namespace_ec06fe4a::function_f3eab80e(trap.origin, 3600);
-                if (!isdefined(trap.var_f8660931)) {
-                    trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
-                    namespace_1e25ad94::function_f5f0c0f8("Paging out pungi trap at:" + trap.origin);
-                }
+                continue;
+            }
+            trap.var_f8660931 = namespace_ec06fe4a::function_f3eab80e(trap.origin, 3600);
+            if (!isdefined(trap.var_f8660931)) {
+                trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
+                namespace_1e25ad94::function_f5f0c0f8("Paging out pungi trap at:" + trap.origin);
             }
         }
     }
@@ -265,9 +265,8 @@ function function_1e690b43(movetime, lifetime) {
                 }
             }
             continue;
-        } else {
-            wait(0.25);
         }
+        wait(0.25);
     }
     if (isdefined(self.trigger)) {
         self.trigger namespace_268747c0::function_54f185a();

@@ -94,9 +94,9 @@ function function_692bd0bc(player) {
         player setweaponammoclip(weapon, player function_b7f1fd2c(weapon));
         if (givemaxammo) {
             player givemaxammo(weapon);
-        } else {
-            player givestartammo(weapon);
+            continue;
         }
+        player givestartammo(weapon);
     }
     primaryoffhand = player function_826ed2dd();
     player setweaponammoclip(primaryoffhand, player function_b7f1fd2c(primaryoffhand));

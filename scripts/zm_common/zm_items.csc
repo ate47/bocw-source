@@ -43,8 +43,8 @@ function private function_f88c74e1() {
 function function_39e7c9dd(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self playrenderoverridebundle("rob_sonar_set_friendly");
-    } else {
-        self stoprenderoverridebundle("rob_sonar_set_friendly");
+        return;
     }
+    self stoprenderoverridebundle("rob_sonar_set_friendly");
 }
 

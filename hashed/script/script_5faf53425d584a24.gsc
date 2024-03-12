@@ -52,7 +52,7 @@ function private function_23b313bd(player, eventtype, eventdata, var_c5a66313) {
     }
     switch (eventtype) {
     case 1:
-        
+        return;
     case 2:
         var_c1ea9cae = is_true(eventdata);
         player.var_c1ea9cae = var_c1ea9cae;
@@ -68,13 +68,13 @@ function private function_23b313bd(player, eventtype, eventdata, var_c5a66313) {
         weaponid = eventtype == 11 ? 1 : 0;
         if (player inlaststand() || !isdefined(player.inventory) || !player item_inventory::equip_item(networkid, quickequip === 1, weaponid)) {
             function_a7b7d70b(player, networkid);
-        } else {
-            itemid = player item_inventory::function_c48cd17f(networkid);
-            if (itemid != 32767) {
-                item = function_b1702735(itemid);
-                if (isdefined(item) && isdefined(item.var_a6762160)) {
-                    item_world::function_1a46c8ae(player, undefined, undefined, item.var_a6762160, item.var_a6762160.amount);
-                }
+            return;
+        }
+        itemid = player item_inventory::function_c48cd17f(networkid);
+        if (itemid != 32767) {
+            item = function_b1702735(itemid);
+            if (isdefined(item) && isdefined(item.var_a6762160)) {
+                item_world::function_1a46c8ae(player, undefined, undefined, item.var_a6762160, item.var_a6762160.amount);
             }
         }
         return;
@@ -116,7 +116,7 @@ function private function_23b313bd(player, eventtype, eventdata, var_c5a66313) {
                 }
             }
         }
-        break;
+        return;
     case 5:
         networkid = eventdata;
         count = var_c5a66313;
@@ -139,7 +139,7 @@ function private function_23b313bd(player, eventtype, eventdata, var_c5a66313) {
             }
             inventory_item = player item_inventory::get_inventory_item(networkid);
             if (!isdefined(inventory_item)) {
-                break;
+                return;
             }
             var_104acafa = isdefined(inventory_item.endtime);
             if (!isdefined(count) || count === inventory_item.count || var_104acafa) {
@@ -151,7 +151,7 @@ function private function_23b313bd(player, eventtype, eventdata, var_c5a66313) {
             }
         }
         item_world::function_1a46c8ae(player, var_a1ca235e, var_3d1f9df4, undefined, undefined);
-        break;
+        return;
     case 6:
         networkid = eventdata;
         freeslot = player item_inventory::function_777cc133();
@@ -162,7 +162,7 @@ function private function_23b313bd(player, eventtype, eventdata, var_c5a66313) {
                 player item_inventory::function_26c87da8(attachmentslot, freeslot);
             }
         }
-        break;
+        return;
     case 7:
         networkid = eventdata;
         var_fc7876fd = var_c5a66313;
@@ -187,7 +187,7 @@ function private function_23b313bd(player, eventtype, eventdata, var_c5a66313) {
         } else {
             if (var_fc7876fd == 2) {
                 player item_inventory::function_fba40e6c(item);
-                break;
+                return;
             }
             var_641d3dc2 = item.var_a6762160.itemtype != #"attachment";
             var_a6762160 = item.var_a6762160;
@@ -218,30 +218,31 @@ function private function_23b313bd(player, eventtype, eventdata, var_c5a66313) {
                 }
             }
         }
-        break;
+        return;
     case 8:
         networkid = eventdata;
         player item_inventory::function_9ba10b94(networkid);
-        break;
+        return;
     case 10:
         player item_inventory::cycle_health_item();
-        break;
+        return;
     case 9:
         player item_inventory::cycle_equipment_item();
-        break;
+        return;
     case 13:
         item = eventdata;
         cost = var_c5a66313;
-        jumpiffalse(isdefined(item) && isdefined(cost)) LOC_00000b5e;
-        jumpiffalse(isdefined(level.var_df225c5e)) LOC_00000b5e;
-        [[ level.var_df225c5e ]](item, cost, player);
+        if (isdefined(item) && isdefined(cost)) {
+            if (isdefined(level.var_df225c5e)) {
+                [[ level.var_df225c5e ]](item, cost, player);
+            }
+        }
     case 14:
-    LOC_00000b5e:
         player item_inventory::function_fa4bb600();
-        break;
+        return;
     case 15:
         player item_inventory::function_a50547af();
-        break;
+        return;
     }
 }
 

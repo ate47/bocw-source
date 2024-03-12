@@ -140,9 +140,9 @@ function function_d16e71e6() {
 function function_958c2188() {
     if (level flag::get("adler_sub_tree")) {
         level flag::clear("adler_sub_tree");
-    } else {
-        level.adler namespace_31c67f6d::function_282ccb63();
+        return;
     }
+    level.adler namespace_31c67f6d::function_282ccb63();
 }
 
 // Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
@@ -226,9 +226,9 @@ function function_f09c19a() {
     }
     if (level flag::get("ask_about_parks_scar")) {
         level flag::clear("ask_about_parks_scar");
-    } else {
-        level.park namespace_31c67f6d::function_282ccb63();
+        return;
     }
+    level.park namespace_31c67f6d::function_282ccb63();
 }
 
 // Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
@@ -327,9 +327,9 @@ function function_db46f2d7() {
 function function_53d6abef() {
     if (is_true(level.var_cbf98853)) {
         level.var_cbf98853 = 0;
-    } else {
-        level.lazar namespace_31c67f6d::function_282ccb63();
+        return;
     }
+    level.lazar namespace_31c67f6d::function_282ccb63();
 }
 
 // Namespace hub_post_yamantau/cp_ger_hub_post_yamantau
@@ -464,13 +464,13 @@ function function_bbf2586d() {
 // Checksum 0x900749a0, Offset: 0x3570
 // Size: 0x154
 function function_fa0444c9() {
-    var_3608d414 = spawnstruct();
-    var_3608d414.sims = spawnstruct();
-    var_3608d414.sims.dialog[0] = [0:"vox_cp_sh5_05300_sims_whistling_2a"];
-    var_3608d414.sims.dialog[1] = [0:"vox_cp_sh5_05300_sims_goddammit_c4"];
-    var_3608d414.sims.dialog[2] = [0:"vox_cp_sh5_05300_sims_therewego_18"];
-    var_3608d414.sims.dialog[3] = [0:"vox_cp_sh5_05300_sims_whistling_2a_1"];
-    var_3608d414.sims.dialog[5] = [0:"vox_cp_sh5_05300_sims_singlewhistle_f3"];
-    level.sims thread namespace_31c67f6d::function_5bd9de0f(var_3608d414.sims.dialog, "notify_sims_speak", "flag_in_briefing", "flag_player_using_evidence_board");
+    a_str_vo = spawnstruct();
+    a_str_vo.sims = spawnstruct();
+    a_str_vo.sims.dialog[0] = [0:"vox_cp_sh5_05300_sims_whistling_2a"];
+    a_str_vo.sims.dialog[1] = [0:"vox_cp_sh5_05300_sims_goddammit_c4"];
+    a_str_vo.sims.dialog[2] = [0:"vox_cp_sh5_05300_sims_therewego_18"];
+    a_str_vo.sims.dialog[3] = [0:"vox_cp_sh5_05300_sims_whistling_2a_1"];
+    a_str_vo.sims.dialog[5] = [0:"vox_cp_sh5_05300_sims_singlewhistle_f3"];
+    level.sims thread namespace_31c67f6d::function_5bd9de0f(a_str_vo.sims.dialog, "notify_sims_speak", "flag_in_briefing", "flag_player_using_evidence_board");
 }
 

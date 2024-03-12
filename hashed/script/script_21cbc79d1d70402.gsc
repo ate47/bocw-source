@@ -145,8 +145,11 @@ function function_74d32108(enabled = 1) {
                 if (!isalive(enemy)) {
                     continue;
                 }
-                jumpiffalse(enemy.script === "pain") LOC_0000035a;
-            } else if (!isdefined(enemy.var_1e36e368) || enemy [[ enemy.var_1e36e368 ]]()) {
+                if (enemy.script === "pain") {
+                    continue;
+                }
+            }
+            if (!isdefined(enemy.var_1e36e368) || enemy [[ enemy.var_1e36e368 ]]()) {
                 if (isdefined(self.stealth.combatstate.var_df83ea38)) {
                     dist = self.stealth.combatstate.var_df83ea38;
                     if (distancesquared(self.origin, enemy.origin) > function_a3f6cdac(dist)) {
@@ -164,7 +167,9 @@ function function_74d32108(enabled = 1) {
                 if (enemy cansee(self)) {
                     var_a01740d6 = 1;
                 }
-            } else if (enemy [[ enemy.var_678afc31 ]]()) {
+                continue;
+            }
+            if (enemy [[ enemy.var_678afc31 ]]()) {
                 var_a1a15b6c[var_a1a15b6c.size] = enemy;
             }
         }

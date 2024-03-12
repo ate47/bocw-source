@@ -39,7 +39,9 @@ function private function_70a657d8() {
 function function_63e45e6(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self.var_40433812 = playfx(fieldname, "zm_ai/fx9_orda_spawn_portal_c", self.origin, anglestoforward(self.angles), anglestoup(self.angles));
-    } else if (isdefined(self.var_40433812)) {
+        return;
+    }
+    if (isdefined(self.var_40433812)) {
         stopfx(fieldname, self.var_40433812);
         self.var_40433812 = undefined;
     }
@@ -52,11 +54,13 @@ function function_63e45e6(localclientnum, *oldval, newval, *bnewent, *binitialsn
 function private function_b8c3e9f4(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self function_dd2493cc(#"hash_67ab6fd22ae1e4ac", #"rob_sonar_set_friendly_zm_ls");
-    } else if (bwastimejump == 2) {
-        self function_dd2493cc(#"rob_sonar_set_friendly_zm_ls", #"hash_67ab6fd22ae1e4ac");
-    } else {
-        self function_dd2493cc(undefined, #"hash_67ab6fd22ae1e4ac", #"rob_sonar_set_friendly_zm_ls");
+        return;
     }
+    if (bwastimejump == 2) {
+        self function_dd2493cc(#"rob_sonar_set_friendly_zm_ls", #"hash_67ab6fd22ae1e4ac");
+        return;
+    }
+    self function_dd2493cc(undefined, #"hash_67ab6fd22ae1e4ac", #"rob_sonar_set_friendly_zm_ls");
 }
 
 // Namespace namespace_f3a74bbc/namespace_f3a74bbc

@@ -71,10 +71,10 @@ function private function_5c6265b3() {
     /#
         if (clamped) {
             self function_b39b0b55(self.origin, (1, 1, 0), #"hash_759d0bab7057dad5");
-        } else {
-            self function_b39b0b55(self.origin, (1, 0, 0), #"hash_4470e824a8beb9f");
-            self function_8a8380d0();
+            return;
         }
+        self function_b39b0b55(self.origin, (1, 0, 0), #"hash_4470e824a8beb9f");
+        self function_8a8380d0();
     #/
 }
 
@@ -90,12 +90,12 @@ function private function_ea3bf04e() {
             self function_b39b0b55(self.origin, (1, 0, 0), #"hash_66a35a43ea2dfb1a");
             self function_8a8380d0(info.overridegoalpos);
         #/
-    } else {
-        /#
-            self function_b39b0b55(self.origin, (1, 0, 0), #"hash_3d76685a084ca723");
-            self function_8a8380d0(info.goalpos);
-        #/
+        return;
     }
+    /#
+        self function_b39b0b55(self.origin, (1, 0, 0), #"hash_3d76685a084ca723");
+        self function_8a8380d0(info.goalpos);
+    #/
 }
 
 // Namespace bot_position/bot_position
@@ -110,12 +110,12 @@ function private function_f894a675() {
             self function_b39b0b55(self.origin, (1, 0, 0), #"hash_65622b578ee28d25");
             self function_8a8380d0(info.overridegoalpos);
         #/
-    } else {
-        /#
-            self function_b39b0b55(self.origin, (1, 0, 0), #"hash_5ff132f70af932cc");
-            self function_8a8380d0(info.overridegoalpos);
-        #/
+        return;
     }
+    /#
+        self function_b39b0b55(self.origin, (1, 0, 0), #"hash_5ff132f70af932cc");
+        self function_8a8380d0(info.overridegoalpos);
+    #/
 }
 
 // Namespace bot_position/bot_position
@@ -486,10 +486,10 @@ function private function_7e6af638() {
                     angles = vectortoangles(failure.end - failure.start);
                     circle(failure.end, 15, (1, 0, 1), 0, 1);
                     line(failure.start, failure.end, (1, 0, 1));
-                } else {
-                    print3d(failure.start, function_9e72a96(#"failed"), (1, 0, 1), 1, 2.5, 1, 1);
-                    box(failure.start, vectorscale((-1, -1, 0), 15), (15, 15, 72), 0, (1, 0, 1));
+                    continue;
                 }
+                print3d(failure.start, function_9e72a96(#"failed"), (1, 0, 1), 1, 2.5, 1, 1);
+                box(failure.start, vectorscale((-1, -1, 0), 15), (15, 15, 72), 0, (1, 0, 1));
             }
             waitframe(1);
         }

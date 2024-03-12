@@ -53,14 +53,14 @@ function function_1ec447d3(localclientnum, *oldval, newval, *bnewent, *binitials
         array::add(self.var_93471229, util::playfxontag(fieldname, level._effect[#"hash_63f497890003547"], self, "j_neck"));
         array::add(self.var_93471229, util::playfxontag(fieldname, level._effect[#"hash_55d6ab2c7eecbad4"], self, "tag_eye"));
         self mapshaderconstant(fieldname, 0, "scriptVector2", 0, 1, 1);
-    } else {
-        if (isdefined(self.var_93471229)) {
-            foreach (fxhandle in self.var_93471229) {
-                deletefx(fieldname, fxhandle);
-            }
-        }
-        util::playfxontag(fieldname, level._effect[#"dog_gib"], self, "j_spine2");
+        return;
     }
+    if (isdefined(self.var_93471229)) {
+        foreach (fxhandle in self.var_93471229) {
+            deletefx(fieldname, fxhandle);
+        }
+    }
+    util::playfxontag(fieldname, level._effect[#"dog_gib"], self, "j_spine2");
 }
 
 // Namespace namespace_53a8fe5e/namespace_53a8fe5e

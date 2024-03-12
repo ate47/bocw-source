@@ -76,11 +76,13 @@ function private mpl_heatwave_fx(ent, event, params) {
                 } else {
                     util::function_50f54b6f(obj, callback, self, var_47e0b77b);
                 }
-            } else if (isdefined(params)) {
-                util::function_50f54b6f(self, callback, params, var_47e0b77b);
-            } else {
-                util::single_thread_argarray(self, callback, var_47e0b77b);
+                continue;
             }
+            if (isdefined(params)) {
+                util::function_50f54b6f(self, callback, params, var_47e0b77b);
+                continue;
+            }
+            util::single_thread_argarray(self, callback, var_47e0b77b);
         }
         arrayremovevalue(callbacks, 0, 0);
     }
@@ -201,7 +203,7 @@ function private function_3f5f097e(ent, event, func, obj, instant) {
                     obj notify(function_862146b3(event, func));
                 }
                 ent._callbacks[event][index] = 0;
-                break;
+                return;
             }
         }
     }
@@ -1070,9 +1072,9 @@ function on_contract_complete(func, obj) {
 function function_6700e8b5(func, obj) {
     if (self == level) {
         add_callback(#"hash_4428d68b23082312", func, obj);
-    } else {
-        function_d8abfc3d(#"hash_4428d68b23082312", func, obj);
+        return;
     }
+    function_d8abfc3d(#"hash_4428d68b23082312", func, obj);
 }
 
 // Namespace callback/callbacks_shared
@@ -1082,9 +1084,9 @@ function function_6700e8b5(func, obj) {
 function function_900862de(func, obj) {
     if (self == level) {
         add_callback(#"hash_4b4c187e584b34ac", func, obj);
-    } else {
-        function_d8abfc3d(#"hash_4b4c187e584b34ac", func, obj);
+        return;
     }
+    function_d8abfc3d(#"hash_4b4c187e584b34ac", func, obj);
 }
 
 // Namespace callback/callbacks_shared
@@ -1094,9 +1096,9 @@ function function_900862de(func, obj) {
 function function_be4cb7fe(func, obj) {
     if (self == level) {
         add_callback(#"hash_255b4626805810f5", func, obj);
-    } else {
-        function_d8abfc3d(#"hash_255b4626805810f5", func, obj);
+        return;
     }
+    function_d8abfc3d(#"hash_255b4626805810f5", func, obj);
 }
 
 // Namespace callback/callbacks_shared
@@ -1796,7 +1798,7 @@ function menu_response_queue_pump() {
             }
             arrayremoveindex(level.menuresponsequeue, 0, 0);
             waitframe(1);
-        } while(level.menuresponsequeue.size > 0);
+        } while (level.menuresponsequeue.size > 0);
     }
 }
 
@@ -1811,9 +1813,9 @@ function event_handler[notetrack_callserverscript] codecallback_callserverscript
     if (isdefined(level._animnotifyfuncs[eventstruct.label])) {
         if (isdefined(eventstruct.param3) && eventstruct.param3 != "") {
             eventstruct.entity [[ level._animnotifyfuncs[eventstruct.label] ]](eventstruct.param, eventstruct.param3);
-        } else {
-            eventstruct.entity [[ level._animnotifyfuncs[eventstruct.label] ]](eventstruct.param);
+            return;
         }
+        eventstruct.entity [[ level._animnotifyfuncs[eventstruct.label] ]](eventstruct.param);
     }
 }
 
@@ -1828,9 +1830,9 @@ function event_handler[notetrack_callserverscriptonlevel] codecallback_callserve
     if (isdefined(level._animnotifyfuncs[eventstruct.label])) {
         if (isdefined(eventstruct.param3) && eventstruct.param3 != "") {
             level [[ level._animnotifyfuncs[eventstruct.label] ]](eventstruct.param, eventstruct.param3);
-        } else {
-            level [[ level._animnotifyfuncs[eventstruct.label] ]](eventstruct.param);
+            return;
         }
+        level [[ level._animnotifyfuncs[eventstruct.label] ]](eventstruct.param);
     }
 }
 
@@ -1880,9 +1882,9 @@ function event_handler[event_195cc461] function_52d32e5b(eventstruct) {
             actor lookatentity(player, 1, 0, 0, eventstruct.blend, eventstruct.weight);
             break;
         }
-    } else {
-        actor lookatentity();
+        return;
     }
+    actor lookatentity();
 }
 
 // Namespace callback/event_5d98e413

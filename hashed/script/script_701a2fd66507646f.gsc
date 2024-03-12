@@ -149,15 +149,15 @@ function private function_d444c39c(reset) {
         player clientfield::set_to_player("get_anagram_solution", 1);
         player flag::wait_till("anagram_solution_set");
         player clientfield::set_to_player("get_anagram_solution", 0);
-    } else {
-        player globallogic_ui::function_9ed5232e("OperationChaos.passphraseIndex", savegame::function_2ee66e93(#"hash_5dd320f3ff491aed"));
-        player globallogic_ui::function_9ed5232e("OperationChaos.code", savegame::function_2ee66e93(#"hash_6ac9f93e38b74633"));
-        player globallogic_ui::function_9ed5232e("OperationChaos.anagramIndex", savegame::function_2ee66e93(#"hash_1cec68d3f5bf55f8"));
-        player globallogic_ui::function_9ed5232e("OperationChaos.number_sequence", savegame::function_2ee66e93(#"hash_35b29e7e753dc631"));
-        player globallogic_ui::function_9ed5232e("OperationChaos.seed", savegame::function_2ee66e93(#"hash_100ec76505ac8673"));
-        player globallogic_ui::function_9ed5232e("OperationChaos.passphraseRequiresList", 0);
-        player globallogic_ui::function_9ed5232e("OperationChaos.floppyEntry.selectedPassphraseIndex", -1);
+        return;
     }
+    player globallogic_ui::function_9ed5232e("OperationChaos.passphraseIndex", savegame::function_2ee66e93(#"hash_5dd320f3ff491aed"));
+    player globallogic_ui::function_9ed5232e("OperationChaos.code", savegame::function_2ee66e93(#"hash_6ac9f93e38b74633"));
+    player globallogic_ui::function_9ed5232e("OperationChaos.anagramIndex", savegame::function_2ee66e93(#"hash_1cec68d3f5bf55f8"));
+    player globallogic_ui::function_9ed5232e("OperationChaos.number_sequence", savegame::function_2ee66e93(#"hash_35b29e7e753dc631"));
+    player globallogic_ui::function_9ed5232e("OperationChaos.seed", savegame::function_2ee66e93(#"hash_100ec76505ac8673"));
+    player globallogic_ui::function_9ed5232e("OperationChaos.passphraseRequiresList", 0);
+    player globallogic_ui::function_9ed5232e("OperationChaos.floppyEntry.selectedPassphraseIndex", -1);
 }
 
 // Namespace namespace_2b049a09/namespace_2b049a09
@@ -169,9 +169,7 @@ function private function_5ecf5ec2(*oldval, newval) {
         var_9487875 = getscriptbundle("operation_chaos_anagrams");
         seed = int((function_b6db3f71() + randomint(2147483647)) % 2147483647);
         code = randomint(10000);
-        var_2d96435a = randomint(10000);
-        while (function_7655bab6(code, var_2d96435a)) {
-            var_2d96435a = randomint(10000);
+        for (var_2d96435a = randomint(10000); function_7655bab6(code, var_2d96435a); var_2d96435a = randomint(10000)) {
         }
         player = getplayers()[0];
         if (!isplayer(player)) {
@@ -183,9 +181,7 @@ function private function_5ecf5ec2(*oldval, newval) {
         } else {
             newval--;
         }
-        var_e9ef7dab = randomint(var_9487875.var_a417e28e.size);
-        while (var_e9ef7dab == newval) {
-            var_e9ef7dab = randomint(var_9487875.var_a417e28e.size);
+        for (var_e9ef7dab = randomint(var_9487875.var_a417e28e.size); var_e9ef7dab == newval; var_e9ef7dab = randomint(var_9487875.var_a417e28e.size)) {
         }
         savegame::function_6d003cb9(#"hash_182064942fb1b0ac", getdvarint(#"loc_language"));
         savegame::function_6d003cb9(#"hash_5dd320f3ff491aed", var_e9ef7dab);
@@ -309,11 +305,11 @@ function function_53df1610(params, num_entries = 10) {
                 var_fd52eb0e = int(var_fd52eb0e);
                 if (rand.rand) {
                     code = code + var_fd52eb0e * 100;
-                } else {
-                    code = code * 100 + var_fd52eb0e;
+                    continue;
                 }
+                code = code * 100 + var_fd52eb0e;
             }
-        } while(function_7655bab6(var_28ddca2c, code));
+        } while (function_7655bab6(var_28ddca2c, code));
         rand = function_c9e9e505(seed, var_721f874b.size);
         seed = rand.seed;
         var_a34b4160 = var_9487875.var_a417e28e[var_721f874b[rand.rand]].var_d0354c50;
@@ -365,8 +361,7 @@ function function_53df1610(params, num_entries = 10) {
 // Size: 0x4f0
 function private function_a3fafde(uid, var_28ddca2c) {
     self endon(#"death", #"hash_56811b455b9b0e25");
-    var_57431990 = 0;
-    while (1) {
+    for (var_57431990 = 0; 1; var_57431990 = 1) {
         var_674fe008 = [9:"vox_cp_chao_02000_fbro_nine_8a", 8:"vox_cp_chao_02000_fbro_eight_f1", 7:"vox_cp_chao_02000_fbro_seven_01", 6:"vox_cp_chao_02000_fbro_six_34", 5:"vox_cp_chao_02000_fbro_five_8a", 4:"vox_cp_chao_02000_fbro_four_9c", 3:"vox_cp_chao_02000_fbro_three_f8", 2:"vox_cp_chao_02000_fbro_two_3a", 1:"vox_cp_chao_02000_fbro_one_22", 0:"vox_cp_sh0_02000_fbro_zero_a0"];
         snd::play("uin_evidence_broadcast_start");
         level.var_751ee7b2 = snd::play("uin_evidence_broadcast_static_loop");
@@ -403,7 +398,6 @@ function private function_a3fafde(uid, var_28ddca2c) {
         self waittill(#"hash_278b9a3955f6e5a");
         namespace_c8e236da::function_c27f93d5();
         namespace_c8e236da::function_ebf737f8(#"hash_70ea6473ebf66053");
-        var_57431990 = 1;
     }
 }
 
@@ -519,7 +513,8 @@ function function_af235cd2() {
                         player globallogic_ui::function_9ed5232e("OperationChaos.floppyEntry.code", entry);
                         var_3d79eff5 = 1;
                         break;
-                    } else if (!ispc()) {
+                    }
+                    if (!ispc()) {
                         ret = undefined;
                         ret = player waittill(#"ui_confirm", #"hash_3c27402259e4c18e");
                         if (ret._notify === #"ui_confirm") {
@@ -527,9 +522,9 @@ function function_af235cd2() {
                         } else {
                             break;
                         }
-                    } else {
-                        break;
+                        continue;
                     }
+                    break;
                 }
             }
             if (is_true(var_3d79eff5)) {
@@ -558,7 +553,8 @@ function function_af235cd2() {
                                 player globallogic_ui::function_9ed5232e("OperationChaos.floppyEntry.passphrase", entry);
                                 authenticate = 1;
                                 break;
-                            } else if (!ispc()) {
+                            }
+                            if (!ispc()) {
                                 ret = undefined;
                                 ret = player waittill(#"ui_confirm", #"hash_3c27402259e4c18e");
                                 if (ret._notify === #"ui_confirm") {
@@ -566,9 +562,9 @@ function function_af235cd2() {
                                 } else {
                                     break;
                                 }
-                            } else {
-                                break;
+                                continue;
                             }
+                            break;
                         }
                     }
                 }
@@ -611,9 +607,9 @@ function function_af235cd2() {
                         player flag::wait_till_clear_all([1:#"hash_3c27402259e4c18e", 0:#"ui_confirm"]);
                     }
                 }
-            } else {
-                break;
+                continue;
             }
+            break;
         }
         if (!var_795ae76c) {
             wait(2);

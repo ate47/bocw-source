@@ -67,15 +67,17 @@ function private function_d00809d8(localclientnum, pos, *surface, notetrack, *bo
         } else {
             function_36e4ebd4(surface, "anim_med");
         }
-    } else if (n_scale <= 0.2 && n_scale > 0.1) {
+        return;
+    }
+    if (n_scale <= 0.2 && n_scale > 0.1) {
         if (is_large) {
             function_36e4ebd4(surface, "anim_med");
         } else {
             function_36e4ebd4(surface, "damage_light");
         }
-    } else {
-        function_36e4ebd4(surface, "damage_light");
+        return;
     }
+    function_36e4ebd4(surface, "damage_light");
 }
 
 // Namespace namespace_514c8ebc/namespace_514c8ebc
@@ -94,7 +96,9 @@ function private function_8745f9df(localclientnum, *oldval, *newval, *bnewent, *
 function private function_ae96bf9a(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self.var_7c984f = util::playfxontag(fieldname, level._effect[#"fx8_gegenees_shield_guard"], self, "tag_shield_fx");
-    } else if (isdefined(self.var_7c984f)) {
+        return;
+    }
+    if (isdefined(self.var_7c984f)) {
         stopfx(fieldname, self.var_7c984f);
         self.var_7c984f = undefined;
     }
@@ -107,7 +111,9 @@ function private function_ae96bf9a(localclientnum, *oldval, newval, *bnewent, *b
 function private function_33dedae1(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self.var_645626ad = util::playfxontag(fieldname, level._effect[#"fx8_gegenees_spear_tip_flame"], self, "tag_spear_tip_fx");
-    } else if (isdefined(self.var_645626ad)) {
+        return;
+    }
+    if (isdefined(self.var_645626ad)) {
         killfx(fieldname, self.var_645626ad);
         self.var_645626ad = undefined;
     }
@@ -120,7 +126,9 @@ function private function_33dedae1(localclientnum, *oldval, newval, *bnewent, *b
 function private function_421757ab(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self.var_55203ff4 = util::playfxontag(fieldname, level._effect[#"fx8_gegenees_spear_tip_tell"], self, "tag_spear_tip_fx");
-    } else if (isdefined(self.var_55203ff4)) {
+        return;
+    }
+    if (isdefined(self.var_55203ff4)) {
         stopfx(fieldname, self.var_55203ff4);
         self.var_55203ff4 = undefined;
     }
@@ -161,11 +169,13 @@ function private function_ce49549a(localclientnum, *oldval, *newval, *bnewent, *
     earthquake(bwastimejump, n_scale, 0.1, self.origin, n_dist);
     if (n_scale <= 0.25 && n_scale > 0.2) {
         function_36e4ebd4(bwastimejump, "anim_med");
-    } else if (n_scale <= 0.2 && n_scale > 0.1) {
-        function_36e4ebd4(bwastimejump, "damage_light");
-    } else {
-        function_36e4ebd4(bwastimejump, "damage_light");
+        return;
     }
+    if (n_scale <= 0.2 && n_scale > 0.1) {
+        function_36e4ebd4(bwastimejump, "damage_light");
+        return;
+    }
+    function_36e4ebd4(bwastimejump, "damage_light");
 }
 
 // Namespace namespace_514c8ebc/namespace_514c8ebc

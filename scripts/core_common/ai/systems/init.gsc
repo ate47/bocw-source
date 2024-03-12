@@ -14,9 +14,9 @@ function initweapon(weapon) {
     self.weaponinfo[weapon.name].hasclip = 1;
     if (isdefined(weapon.clipmodel)) {
         self.weaponinfo[weapon.name].useclip = 1;
-    } else {
-        self.weaponinfo[weapon.name].useclip = 0;
+        return;
     }
+    self.weaponinfo[weapon.name].useclip = 0;
 }
 
 // Namespace init/init

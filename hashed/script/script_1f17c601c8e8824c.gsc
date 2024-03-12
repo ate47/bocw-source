@@ -166,7 +166,6 @@ function response_key() {
             return "<unknown string>";
         case #"nomad":
             return "<unknown string>";
-            break;
         }
         return "<unknown string>";
     #/
@@ -185,7 +184,7 @@ function play_conv_self_other() {
         foreach (player in players) {
             if (player != self && isalive(player)) {
                 player play_test_dialog("<unknown string>" + self response_key() + num);
-                break;
+                return;
             }
         }
     #/
@@ -229,7 +228,7 @@ function play_conv_other_other() {
         foreach (player in players) {
             if (player != self && player !== firstplayer && isalive(player)) {
                 player play_test_dialog("<unknown string>" + firstplayer response_key() + num);
-                break;
+                return;
             }
         }
     #/

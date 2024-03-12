@@ -33,9 +33,9 @@ function private on_player_spawned(localclientnum) {
         if (function_5020f5d1(localclientnum) < function_5ada7356()) {
             spawned_player function_2bbc8349(localclientnum, 1);
         }
-    } else {
-        spawned_player function_2bbc8349(localclientnum, 0);
+        return;
     }
+    spawned_player function_2bbc8349(localclientnum, 0);
 }
 
 // Namespace paintshop/paintshop

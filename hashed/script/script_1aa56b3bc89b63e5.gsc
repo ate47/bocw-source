@@ -31,9 +31,9 @@ function set_enabled(enabled, on_damage = 0, var_895878e1 = 3) {
         self.var_ca3bd64e = var_895878e1;
         self.var_fa99a047 = on_damage;
         self thread function_b5597fc3();
-    } else {
-        aiutility::removeaioverridedamagecallback(self, &function_4ad903f4);
+        return;
     }
+    aiutility::removeaioverridedamagecallback(self, &function_4ad903f4);
 }
 
 // Namespace snipercam/snipercam

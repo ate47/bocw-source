@@ -25,9 +25,9 @@ function init() {
 function function_a7e6c47e(state) {
     if (state) {
         level clientfield::set("" + #"hash_21e00c65edc6594c", 1);
-    } else {
-        level clientfield::set("" + #"hash_21e00c65edc6594c", 0);
+        return;
     }
+    level clientfield::set("" + #"hash_21e00c65edc6594c", 0);
 }
 
 // Namespace namespace_8dac58da/namespace_8dac58da
@@ -39,22 +39,22 @@ function function_1a3aacac(state) {
     switch (state) {
     case 1:
         level clientfield::set("" + #"hash_5a41b1632428880c", 1);
-        break;
+        return;
     case 2:
         level clientfield::set("" + #"hash_22f0944e4bd4dea9", 1);
-        break;
+        return;
     case 3:
         level clientfield::set("" + #"hash_c9774e0d25f882a", 1);
-        break;
+        return;
     case 4:
         level clientfield::set("" + #"hash_5a41b1632428880c", 0);
-        break;
+        return;
     case 5:
         level clientfield::set("" + #"hash_22f0944e4bd4dea9", 0);
-        break;
+        return;
     case 6:
         level clientfield::set("" + #"hash_c9774e0d25f882a", 0);
-        break;
+        return;
     }
 }
 

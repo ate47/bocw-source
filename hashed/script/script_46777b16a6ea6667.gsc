@@ -458,40 +458,39 @@ function state_combat_update(*params) {
     self endon(#"change_state", #"death");
     self asmrequestsubstate(#"locomotion@movement");
     for (;;) {
-        for (;;) {
-            if (is_true(self.ignoreall)) {
-                wait(1);
-                continue;
-            }
-            if (is_true(self.stationary)) {
-                self function_a57c34b7(self.origin, 1, 1);
-                wait(1);
-                continue;
-            }
-            if (isdefined(level.hostmigrationtimer)) {
-                wait(1);
-                continue;
-            }
-            if (!ispointinnavvolume(self.origin, "navvolume_small")) {
-                var_f524eafc = getclosestpointonnavvolume(self.origin, "navvolume_small", 2000);
-                if (isdefined(var_f524eafc)) {
-                    self.origin = var_f524eafc;
-                }
-            }
-            if (!isdefined(self.var_c4e19d3)) {
-                self function_a57c34b7(self.origin, 1, 1);
-            }
-            protectdest = function_8550e9be(self.var_c4e19d3);
-            if (isdefined(protectdest)) {
-                path = function_ae7a8634(self.origin, protectdest, self);
-                if (isdefined(path) && path.status === "succeeded") {
-                    self.ai.var_e7d26c0f = 0;
-                    self function_a57c34b7(protectdest, 1, 1);
-                } else {
-                    self.ai.var_e7d26c0f++;
-                }
+        if (is_true(self.ignoreall)) {
+            wait(1);
+            continue;
+        }
+        if (is_true(self.stationary)) {
+            self function_a57c34b7(self.origin, 1, 1);
+            wait(1);
+            continue;
+        }
+        if (isdefined(level.hostmigrationtimer)) {
+            wait(1);
+            continue;
+        }
+        if (!ispointinnavvolume(self.origin, "navvolume_small")) {
+            var_f524eafc = getclosestpointonnavvolume(self.origin, "navvolume_small", 2000);
+            if (isdefined(var_f524eafc)) {
+                self.origin = var_f524eafc;
             }
         }
+        if (!isdefined(self.var_c4e19d3)) {
+            self function_a57c34b7(self.origin, 1, 1);
+        }
+        protectdest = function_8550e9be(self.var_c4e19d3);
+        if (isdefined(protectdest)) {
+            path = function_ae7a8634(self.origin, protectdest, self);
+            if (isdefined(path) && path.status === "succeeded") {
+                self.ai.var_e7d26c0f = 0;
+                self function_a57c34b7(protectdest, 1, 1);
+            } else {
+                self.ai.var_e7d26c0f++;
+            }
+        }
+        wait(randomintrange(3, 5));
     }
 }
 

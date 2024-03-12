@@ -92,11 +92,8 @@ function function_4d5e1035(attacker, weapon, type, weapon_damage, event, playerc
             if (hardpointtype == "helicopter_player_gunner") {
                 attacker stats::function_e24eec31(weapon, #"destroyed_controlled_killstreak", 1);
             }
-            goto LOC_00000146;
         }
-    LOC_00000146:
     }
-LOC_00000146:
 }
 
 // Namespace helicopter/helicopter
@@ -123,7 +120,9 @@ function on_vehicle_killed(params) {
     if (einflictor.killstreaktype === "helicopter_comlink" || einflictor.killstreaktype === "inventory_helicopter_comlink") {
         if (vehicle.vehicleclass === "plane" || vehicle.vehicleclass === "helicopter") {
             einflictor namespace_f9b02f80::play_pilot_dialog_on_owner("killAircraft", einflictor.killstreaktype, einflictor.killstreak_id);
-        } else if (!(vehicle.vehicleclass === "boat")) {
+            return;
+        }
+        if (!(vehicle.vehicleclass === "boat")) {
             einflictor namespace_f9b02f80::play_pilot_dialog_on_owner("killGroundVehicle", einflictor.killstreaktype, einflictor.killstreak_id);
         }
     }

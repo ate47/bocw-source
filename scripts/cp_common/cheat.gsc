@@ -106,9 +106,9 @@ function function_ae608e1a() {
 function function_b68f06ea(var_d8568d2f) {
     if (var_d8568d2f) {
         setsaveddvar(#"player_sustainammo", 1);
-    } else {
-        setsaveddvar(#"player_sustainammo", 0);
+        return;
     }
+    setsaveddvar(#"player_sustainammo", 0);
 }
 
 // Namespace cheat/cheat

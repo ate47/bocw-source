@@ -38,10 +38,10 @@ function function_117e5e22(*localclientnum, *oldval, newval, *bnewent, *binitial
             self postfx::function_c8b5f318("pstfx_script_vignette", "Opacity", level.var_9d53a8fc);
             waitframe(1);
         }
-    } else {
-        level.var_9d53a8fc = 0;
-        self postfx::exitpostfxbundle("pstfx_script_vignette");
-        self postfx::function_c8b5f318("pstfx_script_vignette", "Opacity", 0);
+        return;
     }
+    level.var_9d53a8fc = 0;
+    self postfx::exitpostfxbundle("pstfx_script_vignette");
+    self postfx::function_c8b5f318("pstfx_script_vignette", "Opacity", 0);
 }
 

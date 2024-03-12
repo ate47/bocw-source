@@ -26,9 +26,9 @@ function autoexec main() {
 function player_cam_blur(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1 && !function_1cbf351b(fieldname)) {
         self thread function_3c4a545b(fieldname);
-    } else {
-        self notify(#"hash_31875ebd426b00c1");
+        return;
     }
+    self notify(#"hash_31875ebd426b00c1");
 }
 
 // Namespace namespace_5443b356/namespace_88f6bc3c
@@ -56,7 +56,9 @@ function player_cam_bubbles(localclientnum, *oldval, newval, *bnewent, *binitial
         }
         self.n_fx_id = playfxoncamera(fieldname, "player/fx_plyr_swim_bubbles_body", (0, 0, 0), (1, 0, 0), (0, 0, 1));
         self playrumbleonentity(fieldname, "damage_heavy");
-    } else if (isdefined(self.n_fx_id)) {
+        return;
+    }
+    if (isdefined(self.n_fx_id)) {
         deletefx(fieldname, self.n_fx_id, 1);
     }
 }
@@ -68,9 +70,9 @@ function player_cam_bubbles(localclientnum, *oldval, newval, *bnewent, *binitial
 function player_cam_fire(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1 && !function_1cbf351b(fieldname)) {
         burn_on_postfx();
-    } else {
-        function_97a0dd0a();
+        return;
     }
+    function_97a0dd0a();
 }
 
 // Namespace namespace_5443b356/namespace_88f6bc3c

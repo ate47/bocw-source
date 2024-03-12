@@ -33,11 +33,13 @@ function private function_7ec99c76(localclientnum) {
     util::playfxontag(localclientnum, "zm_ai/fx9_steiner_eyes_glow", self, "J_EyeBall_RI");
     if (self.var_9fde8624 === #"hash_5653bbc44a034094") {
         self thread function_59ee055f(localclientnum);
-    } else if (self.var_9fde8624 === #"hash_70162f4bc795092") {
-        self thread function_59ee055f(localclientnum);
-    } else {
-        self thread function_8d607c5a(localclientnum);
+        return;
     }
+    if (self.var_9fde8624 === #"hash_70162f4bc795092") {
+        self thread function_59ee055f(localclientnum);
+        return;
+    }
+    self thread function_8d607c5a(localclientnum);
 }
 
 // Namespace namespace_6479037a/namespace_6479037a
@@ -160,9 +162,9 @@ function function_ce1bd3f2(localclientnum) {
             } else {
                 var_b240b48 = "inhale";
             }
-        } else {
-            wait(0.1);
+            continue;
         }
+        wait(0.1);
     }
 }
 
@@ -205,9 +207,9 @@ function function_b53ee6c9(localclientnum) {
             } else {
                 var_b240b48 = "inhale";
             }
-        } else {
-            wait(0.1);
+            continue;
         }
+        wait(0.1);
     }
 }
 

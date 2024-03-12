@@ -36,19 +36,19 @@ function function_63175268(*localclientnum, *oldval, newval, *bnewent, *binitial
     switch (bwastimejump) {
     case 1:
         self function_9298adaf(1);
-        break;
+        return;
     case 2:
         self namespace_ca99987f::function_f95cb457(undefined, 17, n_time, #"linear");
-        break;
+        return;
     case 3:
         self namespace_ca99987f::function_f95cb457(undefined, 20, n_time, #"linear");
-        break;
+        return;
     case 4:
         self namespace_ca99987f::function_f95cb457(undefined, 25, n_time, #"linear");
-        break;
+        return;
     case 5:
         self namespace_ca99987f::function_f95cb457(undefined, 30, n_time, #"linear");
-        break;
+        return;
     }
 }
 
@@ -75,17 +75,17 @@ function function_3564ce29(*localclientnum, *oldval, newval, *bnewent, *binitial
         self function_9e574055(0);
         self function_3c54e2b8(n_time);
         self function_9ea7b4eb(n_time);
-        break;
+        return;
     case 2:
         self function_9e574055(2);
         self function_1816c600(1.5, n_time);
         self function_d7be9a9f(50, n_time);
-        break;
+        return;
     case 3:
         self function_9e574055(2);
         self function_1816c600(1.5, n_time);
         self function_d7be9a9f(90, n_time);
-        break;
+        return;
     }
 }
 

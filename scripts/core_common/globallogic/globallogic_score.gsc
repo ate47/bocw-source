@@ -702,15 +702,17 @@ function function_1f664cea(scoreevents, weapon, victim) {
             weaponname = stats::function_3f64434(statweapon);
             self stats::function_622feb0d(weaponname, var_ccec6846, 1);
             self stats::function_6fb0b113(weaponname, #"hash_37c6a5ea231ad08" + var_ccec6846);
-        } else if (isdefined(level.iskillstreakweapon) && [[ level.iskillstreakweapon ]](statweapon) && isdefined(level.get_killstreak_for_weapon_for_stats)) {
+            return;
+        }
+        if (isdefined(level.iskillstreakweapon) && [[ level.iskillstreakweapon ]](statweapon) && isdefined(level.get_killstreak_for_weapon_for_stats)) {
             killstreak = [[ level.get_killstreak_for_weapon_for_stats ]](statweapon);
             self stats::function_8fb23f94(killstreak, var_ccec6846, 1);
             self stats::function_b04e7184(killstreak, #"hash_37c6a5ea231ad08" + var_ccec6846);
             victim stats::function_8fb23f94(killstreak, #"deaths", 1);
-        } else {
-            self stats::function_561716e6(statweapon.name, var_ccec6846, 1);
-            self stats::function_80099ca1(statweapon.name, #"hash_37c6a5ea231ad08" + var_ccec6846);
+            return;
         }
+        self stats::function_561716e6(statweapon.name, var_ccec6846, 1);
+        self stats::function_80099ca1(statweapon.name, #"hash_37c6a5ea231ad08" + var_ccec6846);
     }
 }
 
@@ -727,14 +729,16 @@ function function_bac4b0de(scoreevents, weapon) {
             weaponname = stats::function_3f64434(statweapon);
             self stats::function_622feb0d(weaponname, var_601e335c, 1);
             self stats::function_6fb0b113(weaponname, #"hash_37c6a5ea231ad08" + var_601e335c);
-        } else if (isdefined(level.iskillstreakweapon) && [[ level.iskillstreakweapon ]](statweapon) && isdefined(level.get_killstreak_for_weapon_for_stats)) {
+            return;
+        }
+        if (isdefined(level.iskillstreakweapon) && [[ level.iskillstreakweapon ]](statweapon) && isdefined(level.get_killstreak_for_weapon_for_stats)) {
             killstreak = [[ level.get_killstreak_for_weapon_for_stats ]](statweapon);
             self stats::function_8fb23f94(killstreak, var_601e335c, 1);
             self stats::function_b04e7184(killstreak, #"hash_37c6a5ea231ad08" + var_601e335c);
-        } else {
-            self stats::function_561716e6(statweapon.name, var_601e335c, 1);
-            self stats::function_80099ca1(statweapon.name, #"hash_37c6a5ea231ad08" + var_601e335c);
+            return;
         }
+        self stats::function_561716e6(statweapon.name, var_601e335c, 1);
+        self stats::function_80099ca1(statweapon.name, #"hash_37c6a5ea231ad08" + var_601e335c);
     }
 }
 
@@ -747,24 +751,24 @@ function function_84088ec3(var_f801f37e) {
         if (isweapon(var_f801f37e) && isdefined(level.iskillstreakweapon) && [[ level.iskillstreakweapon ]](var_f801f37e) && isdefined(level.get_killstreak_for_weapon_for_stats)) {
             killstreak = [[ level.get_killstreak_for_weapon_for_stats ]](var_f801f37e);
             self stats::function_8fb23f94(killstreak, #"hash_7bf29fa438d54aad", 1);
-        } else {
-            switch (var_f801f37e.name) {
-            case #"gadget_supplypod":
-            case #"nightingale":
-            case #"frag_grenade":
-            case #"hash_2b9efbad11308e02":
-            case #"gadget_jammer":
-            case #"tear_gas":
-            case #"eq_molotov":
-            case #"satchel_charge":
-                self stats::function_622feb0d(var_f801f37e.name, #"hash_7bf29fa438d54aad", 1);
-                break;
-            case #"special_grenadelauncher_t9":
-                self stats::function_561716e6(var_f801f37e.name, #"hash_66ab89e31cfd2a9c", 1);
-                break;
-            default:
-                break;
-            }
+            return;
+        }
+        switch (var_f801f37e.name) {
+        case #"gadget_supplypod":
+        case #"nightingale":
+        case #"frag_grenade":
+        case #"hash_2b9efbad11308e02":
+        case #"gadget_jammer":
+        case #"tear_gas":
+        case #"eq_molotov":
+        case #"satchel_charge":
+            self stats::function_622feb0d(var_f801f37e.name, #"hash_7bf29fa438d54aad", 1);
+            return;
+        case #"special_grenadelauncher_t9":
+            self stats::function_561716e6(var_f801f37e.name, #"hash_66ab89e31cfd2a9c", 1);
+            return;
+        default:
+            return;
         }
     }
 }

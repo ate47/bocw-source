@@ -61,7 +61,9 @@ function private on_menu_response(eventstruct) {
         if (isdefined(level.var_850ff7e2) && isdefined(level.var_850ff7e2[eventstruct.intpayload]) && ishash(level.var_850ff7e2[eventstruct.intpayload])) {
             self giveachievement(level.var_850ff7e2[eventstruct.intpayload]);
         }
-    } else if (eventstruct.response === #"hash_5d0de86d96808d71") {
+        return;
+    }
+    if (eventstruct.response === #"hash_5d0de86d96808d71") {
         if (eventstruct.intpayload === 1) {
             machine_array = getdynentarray(#"hash_69b47fecbecb8b0", 1);
             /#
@@ -71,7 +73,9 @@ function private on_menu_response(eventstruct) {
         } else {
             level.var_d0e9b96 = undefined;
         }
-    } else if (eventstruct.response === #"hash_3525d782f82ab70f") {
+        return;
+    }
+    if (eventstruct.response === #"hash_3525d782f82ab70f") {
         if (isdefined(level.var_d0e9b96)) {
             function_e2a06860(level.var_d0e9b96, eventstruct.intpayload);
         }
@@ -166,39 +170,39 @@ function event_handler[ui_menuresponse] codecallback_menuresponse(eventstruct) {
                     origin = (player.origin[0], player.origin[1], player.origin[2] + 60);
                 }
                 player spawn(origin, player.angles);
-            } else {
-                if (player isinmovemode("<unknown string>")) {
-                    adddebugcommand("<unknown string>");
-                    wait(0.1);
-                }
-                if (player isinmovemode("<unknown string>")) {
-                    adddebugcommand("<unknown string>");
-                    wait(0.1);
-                }
-                var_175d3c32 = function_9e72a96(response);
-                tokens = strtok(var_175d3c32, "<unknown string>");
-                spawn = spawnstruct();
-                spawn.origin = (int(tokens[0]), int(tokens[1]), int(tokens[2]) - 60);
-                spawn.angles = (int(tokens[3]), int(tokens[4]), int(tokens[5]));
-                player.sessionstate = "<unknown string>";
-                player.health = 100;
-                player.maxhealth = player.health;
-                player spawn(spawn.origin, spawn.angles);
-                wait(0.1);
-                if (player isinmovemode("<unknown string>")) {
-                    adddebugcommand("<unknown string>");
-                    wait(0.1);
-                }
-                if (!isgodmode(player)) {
-                    adddebugcommand("<unknown string>");
-                    wait(0.1);
-                }
-                if (!player isinmovemode("<unknown string>")) {
-                    adddebugcommand("<unknown string>");
-                    wait(0.1);
-                }
-                player setorigin(spawn.origin);
+                return;
             }
+            if (player isinmovemode("<unknown string>")) {
+                adddebugcommand("<unknown string>");
+                wait(0.1);
+            }
+            if (player isinmovemode("<unknown string>")) {
+                adddebugcommand("<unknown string>");
+                wait(0.1);
+            }
+            var_175d3c32 = function_9e72a96(response);
+            tokens = strtok(var_175d3c32, "<unknown string>");
+            spawn = spawnstruct();
+            spawn.origin = (int(tokens[0]), int(tokens[1]), int(tokens[2]) - 60);
+            spawn.angles = (int(tokens[3]), int(tokens[4]), int(tokens[5]));
+            player.sessionstate = "<unknown string>";
+            player.health = 100;
+            player.maxhealth = player.health;
+            player spawn(spawn.origin, spawn.angles);
+            wait(0.1);
+            if (player isinmovemode("<unknown string>")) {
+                adddebugcommand("<unknown string>");
+                wait(0.1);
+            }
+            if (!isgodmode(player)) {
+                adddebugcommand("<unknown string>");
+                wait(0.1);
+            }
+            if (!player isinmovemode("<unknown string>")) {
+                adddebugcommand("<unknown string>");
+                wait(0.1);
+            }
+            player setorigin(spawn.origin);
         }
     #/
 }

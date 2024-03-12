@@ -34,10 +34,10 @@ function function_c668b489(*localclientnum, *oldval, newval, *bnewent, *binitial
     if (bwastimejump) {
         function_3385d776(#"hash_320dd60f8482919f");
         function_3385d776(#"hash_55c5552fc2e0f419");
-    } else {
-        function_c22a1ca2(#"hash_320dd60f8482919f");
-        function_c22a1ca2(#"hash_55c5552fc2e0f419");
+        return;
     }
+    function_c22a1ca2(#"hash_320dd60f8482919f");
+    function_c22a1ca2(#"hash_55c5552fc2e0f419");
 }
 
 // Namespace remotemissile/remotemissile
@@ -88,8 +88,8 @@ function private function_4fe8eba6(newval) {
         if (isdefined(var_a0a59056)) {
             self function_49cdf043(var_a0a59056, 0);
         }
-    } else {
-        self function_9298adaf(0);
+        return;
     }
+    self function_9298adaf(0);
 }
 

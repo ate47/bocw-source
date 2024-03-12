@@ -88,7 +88,9 @@ function private function_ce75a340(localclientnum, *oldval, newval, *bnewent, *b
                 objective_setstate(fieldname, weapon_cache.var_1563bf09, "active");
             }
             weapon_cache thread function_366dfc57(fieldname, weapon_cache.var_1563bf09, 60);
-        } else if (isdefined(weapon_cache.var_1563bf09)) {
+            continue;
+        }
+        if (isdefined(weapon_cache.var_1563bf09)) {
             weapon_cache notify(#"hash_21d2c3e2020a95a3");
             objective_setprogress(fieldname, weapon_cache.var_1563bf09, 1);
             objective_setstate(fieldname, weapon_cache.var_1563bf09, "invisible");
@@ -104,12 +106,10 @@ function function_366dfc57(localclientnum, obj_id, cooldowntime) {
     self endon(#"hash_21d2c3e2020a95a3");
     level endon(#"disconnect", #"game_ended");
     endtime = cooldowntime - 4;
-    progress = 0;
-    while (progress < endtime) {
+    for (progress = 0; progress < endtime; progress = progress + 0.15) {
         percent = min(1, progress / endtime);
         objective_setprogress(localclientnum, obj_id, percent);
         wait(0.15);
-        progress = progress + 0.15;
     }
     if (!isdefined(self)) {
         objective_delete(localclientnum, obj_id);
@@ -140,7 +140,9 @@ function private weapon_cache_cac_cooldown(localclientnum, *oldval, newval, *bne
                 objective_setstate(fieldname, weapon_cache.var_decd4745, "active");
             }
             weapon_cache thread function_366dfc57(fieldname, weapon_cache.var_decd4745, 120);
-        } else if (isdefined(weapon_cache.var_decd4745)) {
+            continue;
+        }
+        if (isdefined(weapon_cache.var_decd4745)) {
             weapon_cache notify(#"hash_21d2c3e2020a95a3");
             objective_setprogress(fieldname, weapon_cache.var_decd4745, 1);
             objective_setstate(fieldname, weapon_cache.var_decd4745, "invisible");
@@ -220,12 +222,16 @@ function private function_f3b7c879(localclientnum) {
     var_1d992cd3 = is_true(level.var_745f6ccb[localclientnum]);
     if (var_559f3f0d && var_1d992cd3) {
         setuimodelvalue(var_56436909, 0);
-    } else if (var_559f3f0d) {
-        setuimodelvalue(var_56436909, 1);
-    } else if (var_1d992cd3) {
-        setuimodelvalue(var_56436909, 1);
-    } else {
-        setuimodelvalue(var_56436909, 1);
+        return;
     }
+    if (var_559f3f0d) {
+        setuimodelvalue(var_56436909, 1);
+        return;
+    }
+    if (var_1d992cd3) {
+        setuimodelvalue(var_56436909, 1);
+        return;
+    }
+    setuimodelvalue(var_56436909, 1);
 }
 

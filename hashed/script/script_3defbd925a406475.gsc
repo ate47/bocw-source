@@ -55,12 +55,12 @@ function function_a1b3a24d(localclientnum, *oldval, newval, *bnewent, *binitials
             level.var_32616828 namespace_20a120d7::open(fieldname);
         }
         wait(5);
-    } else {
-        if (!iskeyboardconnected() && level.var_32616828 namespace_20a120d7::is_open(fieldname)) {
-            level.var_32616828 namespace_20a120d7::close(fieldname);
-        }
-        function_f80646f3(fieldname);
+        return;
     }
+    if (!iskeyboardconnected() && level.var_32616828 namespace_20a120d7::is_open(fieldname)) {
+        level.var_32616828 namespace_20a120d7::close(fieldname);
+    }
+    function_f80646f3(fieldname);
 }
 
 // Namespace namespace_fa9f53a2/namespace_89829bca
@@ -73,25 +73,25 @@ function function_bda720e2(*localclientnum, *oldval, newval, *bnewent, *binitial
     switch (bwastimejump) {
     case 1:
         self function_9298adaf(n_time);
-        break;
+        return;
     case 2:
         self namespace_ca99987f::function_f95cb457(undefined, 22, var_31f0ff13, #"linear");
-        break;
+        return;
     case 3:
         self namespace_ca99987f::function_f95cb457(undefined, 22, 0, #"linear");
-        break;
+        return;
     case 4:
         self namespace_ca99987f::function_f95cb457(undefined, 20, n_time, #"linear");
-        break;
+        return;
     case 5:
         self namespace_ca99987f::function_f95cb457(undefined, 25, n_time, #"linear");
-        break;
+        return;
     case 6:
         self namespace_ca99987f::function_f95cb457(undefined, 30, n_time, #"linear");
-        break;
+        return;
     case 7:
         self namespace_ca99987f::function_f95cb457(undefined, 17.2, 0, #"linear");
-        break;
+        return;
     }
 }
 
@@ -109,31 +109,31 @@ function function_2b8377ef(*localclientnum, *oldval, newval, *bnewent, *binitial
         self function_3c54e2b8(var_31f0ff13);
         self function_9ea7b4eb(var_31f0ff13);
         self function_576abd46(0);
-        break;
+        return;
     case 2:
         self function_9e574055(2);
         self function_1816c600(1.5, n_time);
         self function_d7be9a9f(60, n_time);
         self function_576abd46(1);
-        break;
+        return;
     case 3:
         self function_9e574055(2);
         self function_1816c600(1.5, n_time);
         self function_d7be9a9f(90, n_time);
         self function_576abd46(1);
-        break;
+        return;
     case 4:
         self function_9e574055(2);
         self function_1816c600(1.5, var_1ea96e5d);
         self function_d7be9a9f(32, var_1ea96e5d);
         self function_576abd46(1);
-        break;
+        return;
     case 5:
         self function_9e574055(2);
         self function_1816c600(1.5, var_1ea96e5d);
         self function_d7be9a9f(14, var_1ea96e5d);
         self function_576abd46(1);
-        break;
+        return;
     }
 }
 
@@ -145,10 +145,10 @@ function function_d7690f9(*localclientnum, *oldval, newval, *bnewent, *binitials
     switch (bwastimejump) {
     case 1:
         level notify(#"hash_7ce217c53edc8162");
-        break;
+        return;
     case 2:
         level notify(#"hash_3e8dc841ce47f8fd");
-        break;
+        return;
     }
 }
 
@@ -161,13 +161,15 @@ function function_8c705fab(localclientnum, *oldval, newval, *bnewent, *binitials
         var_4ce74bd9 = (15, -3, 0);
         var_40779d0d = (0, 0, 0);
         namespace_a9076ee3::function_98095ab5(fieldname, var_4ce74bd9, var_40779d0d, 1, 1);
-    } else if (bwastimejump == 2) {
+        return;
+    }
+    if (bwastimejump == 2) {
         var_4ce74bd9 = (15, -3, 0.5);
         var_40779d0d = (0, 0, 0);
         namespace_a9076ee3::function_98095ab5(fieldname, var_4ce74bd9, var_40779d0d, 1, 1);
-    } else {
-        namespace_a9076ee3::function_fdff8886();
+        return;
     }
+    namespace_a9076ee3::function_fdff8886();
 }
 
 // Namespace namespace_fa9f53a2/namespace_89829bca
@@ -183,16 +185,16 @@ function function_75789681(*localclientnum, *oldval, newval, *bnewent, *binitial
     var_a0497201 = 0.75;
     switch (bwastimejump) {
     case 28:
-        break;
+        return;
     case 1:
         self namespace_ca99987f::function_b6f1c993(undefined, 5000, var_a0497201, #"linear");
         self namespace_ca99987f::function_136edb11(undefined, 50, var_a0497201, #"linear");
-        break;
+        return;
     case 2:
         var_d298ff03 = self getcamangles();
         self namespace_ca99987f::ease_camera_position(level.var_420bb8d1, var_67367725, var_a0497201, #"hash_2080bcb1cad7945c");
         self namespace_ca99987f::ease_camera_angles((angleclamp180(var_d298ff03[0]), angleclamp180(var_d298ff03[1]), angleclamp180(var_d298ff03[2])), var_8939da60, var_a0497201, #"hash_2080bcb1cad7945c");
-        break;
+        return;
     }
 }
 
@@ -203,7 +205,9 @@ function function_75789681(*localclientnum, *oldval, newval, *bnewent, *binitial
 function function_70550aed(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self postfx::playpostfxbundle("pstfx_t9_cp_hub_eboard_vignette");
-    } else if (self postfx::function_556665f2("pstfx_t9_cp_hub_eboard_vignette")) {
+        return;
+    }
+    if (self postfx::function_556665f2("pstfx_t9_cp_hub_eboard_vignette")) {
         self postfx::exitpostfxbundle("pstfx_t9_cp_hub_eboard_vignette");
     }
 }
@@ -215,7 +219,9 @@ function function_70550aed(*localclientnum, *oldval, newval, *bnewent, *binitial
 function function_de4bd542(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self postfx::playpostfxbundle("pstfx_t9_cp_hub_eboard_overview");
-    } else if (self postfx::function_556665f2("pstfx_t9_cp_hub_eboard_overview")) {
+        return;
+    }
+    if (self postfx::function_556665f2("pstfx_t9_cp_hub_eboard_overview")) {
         self postfx::exitpostfxbundle("pstfx_t9_cp_hub_eboard_overview");
     }
 }
@@ -285,14 +291,14 @@ function function_b79ec6c8(*localclientnum, *oldval, newval, *bnewent, *binitial
         foreach (n_decal in a_n_decals) {
             hidevolumedecal(n_decal);
         }
-        break;
+        return;
     case 1:
         foreach (n_decal in a_n_decals) {
             unhidevolumedecal(n_decal);
         }
-        break;
+        return;
     default:
-        break;
+        return;
     }
 }
 
@@ -303,9 +309,9 @@ function function_b79ec6c8(*localclientnum, *oldval, newval, *bnewent, *binitial
 function set_player_pbg_bank(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump == 1) {
         setpbgactivebank(fieldname, 2);
-    } else {
-        setpbgactivebank(fieldname, 1);
+        return;
     }
+    setpbgactivebank(fieldname, 1);
 }
 
 // Namespace namespace_fa9f53a2/namespace_89829bca
@@ -316,12 +322,12 @@ function function_5863b8d0(*localclientnum, *oldval, newval, *bnewent, *binitial
     switch (bwastimejump) {
     case 0:
         function_e7647ecd("hub_garage_door", 1);
-        break;
+        return;
     case 1:
         function_e7647ecd("hub_garage_door", 0);
-        break;
+        return;
     default:
-        break;
+        return;
     }
 }
 

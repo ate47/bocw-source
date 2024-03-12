@@ -56,6 +56,7 @@ function function_76f6cec6(*localclientnum, *oldval, newval, *bnewent, *binitial
     switch (bwastimejump) {
     case 0:
         self function_811196d1(1);
+        return;
     case 2:
         icon = "doa_hud_icon_ai_" + "zombie";
         break;

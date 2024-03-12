@@ -95,15 +95,15 @@ function function_d5f0ecba(bool) {
         self.var_86a2020d++;
         self function_8b8a321a(1);
         self function_8a945c0e(1);
-    } else {
-        self.var_86a2020d--;
-        if (self.var_86a2020d < 0) {
-            self.var_86a2020d = 0;
-        }
-        if (!self.var_86a2020d) {
-            self function_8b8a321a(0);
-            self function_8a945c0e(0);
-        }
+        return;
+    }
+    self.var_86a2020d--;
+    if (self.var_86a2020d < 0) {
+        self.var_86a2020d = 0;
+    }
+    if (!self.var_86a2020d) {
+        self function_8b8a321a(0);
+        self function_8a945c0e(0);
     }
 }
 
@@ -268,7 +268,9 @@ function function_27f21242(freefall) {
         if (!self isattached(model)) {
             self attach(model);
         }
-    } else if (self isattached(model)) {
+        return;
+    }
+    if (self isattached(model)) {
         self detach(model);
     }
 }
@@ -290,18 +292,18 @@ function private function_6a663396(eventstruct) {
                 self thread function_b6e83203(0.5);
             }
         }
-    } else {
-        if (!self function_9a0edd92()) {
-            parachute = self namespace_eb06e24d::get_parachute();
-            parachute_weapon = parachute.("parachute");
-            if (isdefined(parachute_weapon)) {
-                if (self hasweapon(parachute_weapon)) {
-                    self takeweapon(parachute_weapon);
-                }
+        return;
+    }
+    if (!self function_9a0edd92()) {
+        parachute = self namespace_eb06e24d::get_parachute();
+        parachute_weapon = parachute.("parachute");
+        if (isdefined(parachute_weapon)) {
+            if (self hasweapon(parachute_weapon)) {
+                self takeweapon(parachute_weapon);
             }
         }
-        self setclientuivisibilityflag("weapon_hud_visible", 1);
     }
+    self setclientuivisibilityflag("weapon_hud_visible", 1);
 }
 
 // Namespace player_free_fall/player_free_fall
@@ -334,17 +336,17 @@ function private function_b6e83203(delay) {
 function private function_bd421742(eventstruct) {
     if (eventstruct.parachute) {
         self function_b6e83203();
-    } else {
-        parachute = self namespace_eb06e24d::get_parachute();
-        parachute_weapon = parachute.("parachute");
-        var_dbb94a = parachute.("parachuteLit");
-        if (isdefined(parachute_weapon)) {
-            self takeweapon(parachute_weapon);
-        }
-        if (isdefined(var_dbb94a)) {
-        }
-        self setclientuivisibilityflag("weapon_hud_visible", 1);
+        return;
     }
+    parachute = self namespace_eb06e24d::get_parachute();
+    parachute_weapon = parachute.("parachute");
+    var_dbb94a = parachute.("parachuteLit");
+    if (isdefined(parachute_weapon)) {
+        self takeweapon(parachute_weapon);
+    }
+    if (isdefined(var_dbb94a)) {
+    }
+    self setclientuivisibilityflag("weapon_hud_visible", 1);
 }
 
 // Namespace player_free_fall/player_free_fall

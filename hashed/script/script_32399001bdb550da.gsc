@@ -178,10 +178,10 @@ function function_81534803(dataname, missionname = function_8136eb5a()) {
             if (isdefined(world.mapdata[missionname][dataname])) {
                 world.mapdata[missionname][dataname] = spawnstruct();
             }
-        } else {
-            foreach (dataname, value in world.mapdata[missionname]) {
-                world.mapdata[missionname][dataname] = spawnstruct();
-            }
+            return;
+        }
+        foreach (dataname, value in world.mapdata[missionname]) {
+            world.mapdata[missionname][dataname] = spawnstruct();
         }
     }
 }

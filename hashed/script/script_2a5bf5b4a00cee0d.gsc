@@ -203,10 +203,10 @@ function function_b6b79fd1(timeout = 5) {
         while (function_9788bacc() > 0 && gettime() < timeout) {
             waitframe(1);
         }
-    } else {
-        while (function_9788bacc() > 0) {
-            waitframe(1);
-        }
+        return;
+    }
+    while (function_9788bacc() > 0) {
+        waitframe(1);
     }
 }
 
@@ -347,9 +347,9 @@ function function_aef7e3f6(minwait = 10, var_6ee47b60 = 30) {
         distsq = distancesquared(newpos, pos);
         if (distsq < function_a3f6cdac(12)) {
             var_6ee47b60--;
-        } else {
-            var_6ee47b60 = reset;
+            continue;
         }
+        var_6ee47b60 = reset;
     }
     self.takedamage = 1;
     self.allowdeath = 1;
@@ -927,11 +927,11 @@ function function_ecec1794() {
         var_4d6917c7 = distancesquared(lastorigin, self.origin);
         if (var_4d6917c7 < function_a3f6cdac(4) && var_bcb6ea2 < 0.1) {
             sticks++;
-        } else {
-            lastorigin = self.origin;
-            lastangles = self.angles;
-            sticks = 0;
+            continue;
         }
+        lastorigin = self.origin;
+        lastangles = self.angles;
+        sticks = 0;
     }
 }
 

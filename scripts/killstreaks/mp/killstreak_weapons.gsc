@@ -251,7 +251,7 @@ function watchkillstreakweaponswitch(killstreakweapon, killstreak_id, isfrominve
             self killstreaks::remove_used_killstreak(killstreaks::get_killstreak_for_weapon(killstreakweapon), killstreak_id);
             self killstreaks::activate_next();
         }
-        break;
+        return;
     }
 }
 
@@ -308,7 +308,9 @@ function watchkillstreakweapondeath(killstreakweapon, killstreak_id, isfrominven
         self takeweapon(killstreakweapon);
         self killstreaks::remove_used_killstreak(killstreaktype, killstreak_id);
         self killstreaks::activate_next();
-    } else if (isfrominventory) {
+        return;
+    }
+    if (isfrominventory) {
         killstreakindex = self killstreaks::get_killstreak_index_by_id(killstreak_id);
         if (isdefined(killstreakindex)) {
             self.pers[#"killstreak_ammo_count"][killstreakindex] = self.pers[#"held_killstreak_ammo_count"][killstreakweapon];
@@ -344,10 +346,10 @@ function watchkillstreakremoval(killstreaktype, killstreak_id) {
         if (removedkillstreakweapon.name == "inventory_minigun") {
             self.minigunstart = 0;
             self.minigunactive = 0;
-        } else {
-            self.m32start = 0;
-            self.m32active = 0;
+            return;
         }
+        self.m32start = 0;
+        self.m32active = 0;
     }
 }
 
@@ -370,10 +372,10 @@ function watchkillstreakroundchange(isfrominventory, killstreak_id) {
             self.pers[#"killstreak_ammo_count"][killstreakindex] = currentammo;
             self.pers[#"held_killstreak_clip_count"][currentweapon] = maxclipsize <= currentammo ? maxclipsize : currentammo;
         }
-    } else {
-        self.pers[#"held_killstreak_ammo_count"][currentweapon] = currentammo;
-        self.pers[#"held_killstreak_clip_count"][currentweapon] = maxclipsize <= currentammo ? maxclipsize : currentammo;
+        return;
     }
+    self.pers[#"held_killstreak_ammo_count"][currentweapon] = currentammo;
+    self.pers[#"held_killstreak_clip_count"][currentweapon] = maxclipsize <= currentammo ? maxclipsize : currentammo;
 }
 
 // Namespace killstreak_weapons/killstreak_weapons

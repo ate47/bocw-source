@@ -296,9 +296,9 @@ function function_f880882d() {
                 namespace_5cd4acd8::function_4ec3af07(group, var_462028a0);
                 wait(0.2);
             }
-        } else {
-            wait(0.5);
+            continue;
         }
+        wait(0.5);
     }
 }
 
@@ -322,9 +322,9 @@ function function_ee37d644(name) {
     level.stealth.var_33b5cf8f.state = name;
     if (name == "spotted") {
         loadsentienteventparameters("sentientevents");
-    } else {
-        loadsentienteventparameters(level.stealth.sentientevents);
+        return;
     }
+    loadsentienteventparameters(level.stealth.sentientevents);
 }
 
 // Namespace namespace_393f6012/manager

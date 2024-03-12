@@ -54,19 +54,19 @@ function private function_c83057f0() {
             }
             if (gettime() >= homunculus.despawn_time) {
                 homunculus function_7bfc867f();
-            } else {
-                if (homunculus.attacking === 1) {
-                    continue;
-                }
-                if (function_9ce07f7c(homunculus)) {
-                    homunculus thread function_bb17ec5a();
-                } else {
-                    if (homunculus.dancing !== 1) {
-                        homunculus thread function_b053b486();
-                    }
-                    waitframe(1);
-                }
+                continue;
             }
+            if (homunculus.attacking === 1) {
+                continue;
+            }
+            if (function_9ce07f7c(homunculus)) {
+                homunculus thread function_bb17ec5a();
+                continue;
+            }
+            if (homunculus.dancing !== 1) {
+                homunculus thread function_b053b486();
+            }
+            waitframe(1);
         }
         arrayremovevalue(level.var_2da60c10, undefined);
         waitframe(1);
@@ -174,7 +174,9 @@ function private event_handler[grenade_fire] function_4776caf4(eventstruct) {
                 homunculus.mover scene::play(#"aib_t8_zm_zod_homunculus_deploy_01", homunculus);
                 homunculus.spawning = undefined;
             }
-        } else if (isdefined(homunculus)) {
+            return;
+        }
+        if (isdefined(homunculus)) {
             homunculus delete();
         }
     }
@@ -247,7 +249,9 @@ function private drop_to_ground(b_immediate = 0) {
     if (b_immediate) {
         self.mover moveto(var_a75fe4be, 0.01);
         self.mover waittill(#"movedone");
-    } else if (abs(self.origin[2] - var_a75fe4be[2]) > 1) {
+        return;
+    }
+    if (abs(self.origin[2] - var_a75fe4be[2]) > 1) {
         n_time = 0.25;
         self.mover scene::stop();
         self.mover moveto(var_a75fe4be, 0.25);

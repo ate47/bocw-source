@@ -50,7 +50,9 @@ function function_41bc60b6(localclientnum, *oldval, newval, *bnewent, *binitials
         if (isdefined(self gettagorigin("tag_body_animate"))) {
             self.var_ced8ba73 = function_239993de(fieldname, "sr/fx9_obj_payload_aether_portal_veh_interact_lg", self, "tag_body_animate");
         }
-    } else if (isdefined(self.var_ced8ba73)) {
+        return;
+    }
+    if (isdefined(self.var_ced8ba73)) {
         stopfx(fieldname, self.var_ced8ba73);
         self.var_ced8ba73 = undefined;
     }
@@ -85,21 +87,21 @@ function function_89fa474d(localclientnum, *oldval, newval, *bnewent, *binitials
             stopfx(fieldname, self.var_e818b36c);
             self.var_e818b36c = undefined;
         }
-    } else {
-        if (isdefined(self.var_bd74ce24)) {
-            killfx(fieldname, self.var_bd74ce24);
-            self.var_bd74ce24 = undefined;
-        }
-        if (isdefined(self gettagorigin("tag_body_animate"))) {
-            self.var_956e61df = function_239993de(fieldname, "sr/fx9_veh_payload_light_brake_side", self, "tag_body_animate");
-        }
-        if (isdefined(self.var_d811dda6)) {
-            killfx(fieldname, self.var_d811dda6);
-            self.var_d811dda6 = undefined;
-        }
-        if (isdefined(self gettagorigin("tag_fx_headlight_left"))) {
-            self.var_cba3a992 = function_239993de(fieldname, "sr/fx9_veh_payload_light_top_red", self, "tag_fx_headlight_left");
-        }
+        return;
+    }
+    if (isdefined(self.var_bd74ce24)) {
+        killfx(fieldname, self.var_bd74ce24);
+        self.var_bd74ce24 = undefined;
+    }
+    if (isdefined(self gettagorigin("tag_body_animate"))) {
+        self.var_956e61df = function_239993de(fieldname, "sr/fx9_veh_payload_light_brake_side", self, "tag_body_animate");
+    }
+    if (isdefined(self.var_d811dda6)) {
+        killfx(fieldname, self.var_d811dda6);
+        self.var_d811dda6 = undefined;
+    }
+    if (isdefined(self gettagorigin("tag_fx_headlight_left"))) {
+        self.var_cba3a992 = function_239993de(fieldname, "sr/fx9_veh_payload_light_top_red", self, "tag_fx_headlight_left");
     }
 }
 
@@ -194,9 +196,13 @@ function function_5884461e(localclientnum, *oldval, newval, *bnewent, *binitials
     self util::waittill_dobj(fieldname);
     if (bwastimejump == 1) {
         function_239993de(fieldname, "sr/fx9_obj_payload_teleport_depart", self, "tag_origin");
-    } else if (bwastimejump == 2) {
+        return;
+    }
+    if (bwastimejump == 2) {
         self.var_c25fe395 = util::playfxontag(fieldname, "sr/fx9_obj_payload_aether_portal_pillar", self, "tag_origin");
-    } else if (isdefined(self.var_c25fe395)) {
+        return;
+    }
+    if (isdefined(self.var_c25fe395)) {
         stopfx(fieldname, self.var_c25fe395);
         self.var_c25fe395 = undefined;
     }
@@ -224,15 +230,15 @@ function function_fa7a206b(localclientnum, *oldval, newval, *bnewent, *binitials
         self function_116b95e5(#"pstfx_speedblur", #"inner mask", 0.3);
         self function_116b95e5(#"pstfx_speedblur", #"outer mask", 0.8);
         self thread function_d233fb1f();
-    } else {
-        if (function_65b9eb0f(fieldname)) {
-            return;
-        }
-        self notify(#"hash_639f680ae2bb2ff");
-        wait(0.5);
-        self function_116b95e5(#"pstfx_speedblur", #"blur", 0);
-        self postfx::exitpostfxbundle(#"pstfx_speedblur");
+        return;
     }
+    if (function_65b9eb0f(fieldname)) {
+        return;
+    }
+    self notify(#"hash_639f680ae2bb2ff");
+    wait(0.5);
+    self function_116b95e5(#"pstfx_speedblur", #"blur", 0);
+    self postfx::exitpostfxbundle(#"pstfx_speedblur");
 }
 
 // Namespace namespace_fa1c4f0a/namespace_fa1c4f0a
@@ -241,12 +247,10 @@ function function_fa7a206b(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0xc0
 function function_d233fb1f() {
     self endon(#"death", #"disconnect", #"hash_639f680ae2bb2ff");
-    var_9b8a1091 = 0.01;
-    while (1) {
+    for (var_9b8a1091 = 0.01; 1; var_9b8a1091 = var_9b8a1091 + 0.01) {
         self function_116b95e5(#"pstfx_speedblur", #"blur", var_9b8a1091);
         wait(0.08);
         if (var_9b8a1091 < 0.3) {
-            var_9b8a1091 = var_9b8a1091 + 0.01;
         }
     }
 }
@@ -258,7 +262,9 @@ function function_d233fb1f() {
 function portal_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self.var_ae8b25ed = util::playfxontag(fieldname, "sr/fx9_obj_payload_aether_portal", self, "tag_origin");
-    } else if (isdefined(self.var_ae8b25ed)) {
+        return;
+    }
+    if (isdefined(self.var_ae8b25ed)) {
         stopfx(fieldname, self.var_ae8b25ed);
     }
 }
@@ -270,12 +276,12 @@ function portal_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fi
 function function_36ab0d37(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self.var_2d3c8170 = util::playfxontag(fieldname, "sr/fx9_obj_payload_aether_rift", self, "tag_origin");
-    } else {
-        if (isdefined(self.var_2d3c8170)) {
-            stopfx(fieldname, self.var_2d3c8170);
-        }
-        function_239993de(fieldname, "sr/fx9_obj_payload_aether_rift_close", self, "tag_origin");
+        return;
     }
+    if (isdefined(self.var_2d3c8170)) {
+        stopfx(fieldname, self.var_2d3c8170);
+    }
+    function_239993de(fieldname, "sr/fx9_obj_payload_aether_rift_close", self, "tag_origin");
 }
 
 // Namespace namespace_fa1c4f0a/namespace_fa1c4f0a
@@ -288,13 +294,13 @@ function function_691412b4(localclientnum, *oldval, newval, *bnewent, *binitials
         if (isdefined(self gettagorigin("tag_body_animate"))) {
             self.var_942f8233 = util::playfxontag(fieldname, "sr/fx9_obj_payload_aether_portal_veh_trail", self, "tag_origin");
         }
-    } else {
-        if (isdefined(self.var_942f8233)) {
-            stopfx(fieldname, self.var_942f8233);
-        }
-        if (isdefined(self gettagorigin("tag_body_animate"))) {
-            self.var_e818b36c = util::playfxontag(fieldname, "sr/fx9_obj_payload_aether_portal_veh_trail_impact", self, "tag_origin");
-        }
+        return;
+    }
+    if (isdefined(self.var_942f8233)) {
+        stopfx(fieldname, self.var_942f8233);
+    }
+    if (isdefined(self gettagorigin("tag_body_animate"))) {
+        self.var_e818b36c = util::playfxontag(fieldname, "sr/fx9_obj_payload_aether_portal_veh_trail_impact", self, "tag_origin");
     }
 }
 

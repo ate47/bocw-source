@@ -55,9 +55,8 @@ function private function_7415d2e2() {
         n_current_time = gettime() / 1000;
         n_delta_time = level.n_cleanup_manager_restart_time - n_current_time;
         return (n_delta_time <= 0);
-    } else {
-        return 1;
     }
+    return 1;
 }
 
 // Namespace zm_cleanup/zm_cleanup_mgr
@@ -388,13 +387,13 @@ function private get_wait_locations_in_zones(a_zones) {
     foreach (zone in a_zones) {
         if (isdefined(level.zones[zone].a_loc_types) && isdefined(level.zones[zone].a_loc_types[#"wait_location"])) {
             a_wait_locations = arraycombine(a_wait_locations, level.zones[zone].a_loc_types[#"wait_location"], 0, 0);
-        } else {
-            /#
-                str_zone = function_9e72a96(zone);
-                println("<unknown string>" + str_zone + "<unknown string>");
-                iprintln("<unknown string>" + str_zone + "<unknown string>");
-            #/
+            continue;
         }
+        /#
+            str_zone = function_9e72a96(zone);
+            println("<unknown string>" + str_zone + "<unknown string>");
+            iprintln("<unknown string>" + str_zone + "<unknown string>");
+        #/
     }
     return a_wait_locations;
 }
@@ -460,9 +459,9 @@ function no_target_override(ai_zombie) {
     }
     if (isdefined(ai_zombie.var_cc1c538e)) {
         self setgoal(ai_zombie.var_cc1c538e.origin, 0, 32);
-    } else {
-        self setgoal(ai_zombie.origin, 0, 32);
+        return;
     }
+    self setgoal(ai_zombie.origin, 0, 32);
 }
 
 // Namespace zm_cleanup/zm_cleanup_mgr

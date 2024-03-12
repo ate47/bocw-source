@@ -61,9 +61,13 @@ function private function_70a657d8() {
         level.var_4e5449b1 = [];
         if (level.script === #"mp_dune") {
             function_549c8ed1((-1977, -973, 936), 225, 128, 45);
-        } else if (level.script === #"wz_duga") {
+            return;
+        }
+        if (level.script === #"wz_duga") {
             function_549c8ed1((2294.5, 2921, 2816), 200, 128, 30);
-        } else if (level.script === #"wz_golova") {
+            return;
+        }
+        if (level.script === #"wz_golova") {
             function_549c8ed1((-19440, 4163, 1848), 24, 65, 30);
         }
     }
@@ -326,13 +330,13 @@ function function_877c8d9c(var_b2825a6f, var_bee6a2c9, var_eb773ad6, n_delay) {
     switch (level.var_20c6962b) {
     case #"strauss":
         level zm_vo::function_7622cb70(var_b2825a6f, n_delay);
-        break;
+        return;
     case #"grey":
         level zm_vo::function_7622cb70(var_bee6a2c9, n_delay);
-        break;
+        return;
     case #"carver":
         level zm_vo::function_7622cb70(var_eb773ad6, n_delay);
-        break;
+        return;
     }
 }
 
@@ -488,8 +492,8 @@ function function_1f01cc3b() {
 // Params 4, eflags: 0x2 linked
 // Checksum 0xe0c4528b, Offset: 0x2660
 // Size: 0x18c
-function function_549c8ed1(var_c860e2f, n_radius, n_height, n_time) {
-    var_8bfc79f8 = spawn("trigger_radius", var_c860e2f, 0, n_radius, n_height);
+function function_549c8ed1(v_location, n_radius, n_height, n_time) {
+    var_8bfc79f8 = spawn("trigger_radius", v_location, 0, n_radius, n_height);
     var_8bfc79f8.n_radius = n_radius;
     var_8bfc79f8.n_height = n_height;
     var_8bfc79f8.n_max_time = n_time;
@@ -521,7 +525,7 @@ function function_5cdaa521(params) {
         foreach (var_c3ad43e6 in level.var_4e5449b1) {
             if (var_c3ad43e6.trigger === self) {
                 player thread function_e01cf436(var_c3ad43e6.trigger, var_c3ad43e6.n_time);
-                break;
+                return;
             }
         }
     }
@@ -635,10 +639,10 @@ function function_3ff09157(var_36b79a75, n_current_time, var_e6ad4793) {
                     debug2dtext((300, 600, 0), "<unknown string>" + (isdefined(n_current_time) ? n_current_time : 0) + "<unknown string>" + n_max_time, (1, 0, 0));
                     print3d(var_5c77052c + vectorscale((0, 0, 1), 40), "<unknown string>" + (isdefined(n_current_time) ? n_current_time : 0) + "<unknown string>" + n_max_time, (1, 0, 0), undefined, 0.1, 1, 1);
                     cylinder(var_5c77052c, var_9d01657b, n_radius, (1, 0, 0), undefined, 1);
-                } else {
-                    print3d(var_5c77052c + vectorscale((0, 0, 1), 40), "<unknown string>" + (isdefined(n_current_time) ? n_current_time : 0) + "<unknown string>" + n_max_time, (0, 1, 0), undefined, 0.25, 1, 1);
-                    cylinder(var_5c77052c, var_9d01657b, n_radius, (0, 1, 0), undefined, 1);
+                    return;
                 }
+                print3d(var_5c77052c + vectorscale((0, 0, 1), 40), "<unknown string>" + (isdefined(n_current_time) ? n_current_time : 0) + "<unknown string>" + n_max_time, (0, 1, 0), undefined, 0.25, 1, 1);
+                cylinder(var_5c77052c, var_9d01657b, n_radius, (0, 1, 0), undefined, 1);
             }
         }
     #/

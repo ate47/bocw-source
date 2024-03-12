@@ -79,12 +79,16 @@ function event_handler[level_finalizeinit] codecallback_finalizeinitialization(*
         level.var_43701269 = &function_b58be5d;
         level.var_b961672f = 0;
         level.killstreakdeathpenaltyindividualearn = undefined;
-    } else if (level.var_5b544215 === 1) {
+        return;
+    }
+    if (level.var_5b544215 === 1) {
         level.var_43723615 = &function_5dda25b9;
         level.var_43701269 = &function_fdbd4189;
         level.var_b961672f = (isdefined(getgametypesetting(#"hash_56a31bddd92a64dc")) ? getgametypesetting(#"hash_56a31bddd92a64dc") : 0) / 100;
         level.killstreakdeathpenaltyindividualearn = undefined;
-    } else if (level.var_5b544215 === 2) {
+        return;
+    }
+    if (level.var_5b544215 === 2) {
         level.var_43723615 = &function_94765bca;
         level.var_43701269 = &function_4301d2e0;
         level.var_b961672f = (isdefined(getgametypesetting(#"killstreakdeathpenaltyindividualearn")) ? getgametypesetting(#"killstreakdeathpenaltyindividualearn") : 0) / 100;
@@ -192,31 +196,31 @@ function function_f7e4fb88(outcome) {
     foreach (player in players) {
         if (player.timeplayed[#"total"] < 1 || player.pers[#"participation"] < 1) {
             player thread rank::endgameupdate();
-        } else {
-            if (level.hostforcedend && player ishost()) {
-                continue;
-            }
-            if (player.pers[#"score"] < 0) {
-                continue;
-            }
-            if (isdefined(player.pers[#"team"]) && player.pers[#"team"] == #"spectator") {
-                continue;
-            }
-            if (level.teambased) {
-                if (tie) {
-                    player function_78e7b549(winnerscale, "tie");
-                } else if (isdefined(player.pers[#"team"]) && player.pers[#"team"] == winning_team) {
-                    player function_78e7b549(winnerscale, "win");
-                } else {
-                    player function_78e7b549(loserscale, "loss");
-                }
-            } else if (function_984a57ca(player)) {
+            continue;
+        }
+        if (level.hostforcedend && player ishost()) {
+            continue;
+        }
+        if (player.pers[#"score"] < 0) {
+            continue;
+        }
+        if (isdefined(player.pers[#"team"]) && player.pers[#"team"] == #"spectator") {
+            continue;
+        }
+        if (level.teambased) {
+            if (tie) {
+                player function_78e7b549(winnerscale, "tie");
+            } else if (isdefined(player.pers[#"team"]) && player.pers[#"team"] == winning_team) {
                 player function_78e7b549(winnerscale, "win");
             } else {
                 player function_78e7b549(loserscale, "loss");
             }
-            player.pers[#"totalmatchbonus"] = player.pers[#"totalmatchbonus"] + player.matchbonus;
+        } else if (function_984a57ca(player)) {
+            player function_78e7b549(winnerscale, "win");
+        } else {
+            player function_78e7b549(loserscale, "loss");
         }
+        player.pers[#"totalmatchbonus"] = player.pers[#"totalmatchbonus"] + player.matchbonus;
     }
 }
 
@@ -315,15 +319,16 @@ function gethighestscoringplayer() {
         if (!isdefined(winner) || players[i].pointstowin > winner.pointstowin) {
             winner = players[i];
             tie = 0;
-        } else if (players[i].pointstowin == winner.pointstowin) {
+            continue;
+        }
+        if (players[i].pointstowin == winner.pointstowin) {
             tie = 1;
         }
     }
     if (tie || !isdefined(winner)) {
         return undefined;
-    } else {
-        return winner;
     }
+    return winner;
 }
 
 // Namespace globallogic_score/globallogic_score
@@ -345,15 +350,16 @@ function function_15683f39() {
         if (!isdefined(highestscoringplayer) || player.score > highestscoringplayer.score) {
             highestscoringplayer = player;
             tie = 0;
-        } else if (player.score == highestscoringplayer.score) {
+            continue;
+        }
+        if (player.score == highestscoringplayer.score) {
             tie = 1;
         }
     }
     if (tie || !isdefined(highestscoringplayer)) {
         return undefined;
-    } else {
-        return highestscoringplayer;
     }
+    return highestscoringplayer;
 }
 
 // Namespace globallogic_score/globallogic_score
@@ -394,9 +400,8 @@ function roundtonearestfive(score) {
     rounding = score % 5;
     if (rounding <= 2) {
         return (score - rounding);
-    } else {
-        return (score + 5 - rounding);
     }
+    return score + 5 - rounding;
 }
 
 // Namespace globallogic_score/globallogic_score
@@ -694,9 +699,8 @@ function function_3172cf59(player, newscore, weapon, mpplayerscore) {
 function function_a85339ff(event) {
     if (event == #"golden_kill_bonus" || event == #"hash_7b62ccbe655dc08a" || event == #"hash_131b23d720fc82c3") {
         return 1;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace globallogic_score/globallogic_score
@@ -1163,9 +1167,9 @@ function function_1d5c913f(player, killstreaktype) {
                     if (!player killstreaks::function_55e3fed6(killstreaktype)) {
                         return 0;
                     }
-                } else {
-                    return 0;
+                    continue;
                 }
+                return 0;
             }
         }
     }
@@ -1666,8 +1670,11 @@ function function_e3a10376(winning_teams) {
         level.laststatustime = gettime();
         foreach (team in winning_teams) {
             if (isdefined(level.waswinning[team])) {
-                jumpiffalse(level.waswinning.size == 1) LOC_00000120;
-            } else if (isdefined(level.var_e7b05b51) ? level.var_e7b05b51 : 1) {
+                if (level.waswinning.size == 1) {
+                    continue;
+                }
+            }
+            if (isdefined(level.var_e7b05b51) ? level.var_e7b05b51 : 1) {
                 globallogic_audio::leader_dialog("gameLeadTaken", team, "status");
             }
         }
@@ -1680,8 +1687,11 @@ function function_e3a10376(winning_teams) {
                 if (winning_teams.size == 1) {
                     continue;
                 }
-                jumpcmp(level.waswinning.size < 1) LOC_00000202;
-            } else if (isdefined(level.var_e7b05b51) ? level.var_e7b05b51 : 1) {
+                if (level.waswinning.size > 1) {
+                    continue;
+                }
+            }
+            if (isdefined(level.var_e7b05b51) ? level.var_e7b05b51 : 1) {
                 globallogic_audio::leader_dialog("gameLeadLost", team, "status");
             }
         }
@@ -2045,7 +2055,9 @@ function updatewinlossstats() {
                 }
             }
         }
-    } else if (function_d68cdc5d() > 1) {
+        return;
+    }
+    if (function_d68cdc5d() > 1) {
         var_96974d12 = min(function_d68cdc5d(), level.var_eed7c027.size);
         foreach (team, ranking in level.var_eed7c027) {
             if (ranking <= var_96974d12) {
@@ -2055,7 +2067,9 @@ function updatewinlossstats() {
                 }
             }
         }
-    } else if (match::get_flag("tie")) {
+        return;
+    }
+    if (match::get_flag("tie")) {
         foreach (player in players) {
             if (!isdefined(player.pers[#"team"])) {
                 continue;
@@ -2065,32 +2079,34 @@ function updatewinlossstats() {
             }
             updatetiestats(player);
         }
-    } else {
-        foreach (player in players) {
-            if (!isdefined(player.pers[#"team"])) {
-                continue;
-            }
-            if (level.hostforcedend && player ishost()) {
-                continue;
-            }
-            if (match::get_flag("tie")) {
-                updatetiestats(player);
-            } else if (match::function_a2b53e17(player)) {
-                updatewinstats(player);
+        return;
+    }
+    foreach (player in players) {
+        if (!isdefined(player.pers[#"team"])) {
+            continue;
+        }
+        if (level.hostforcedend && player ishost()) {
+            continue;
+        }
+        if (match::get_flag("tie")) {
+            updatetiestats(player);
+            continue;
+        }
+        if (match::function_a2b53e17(player)) {
+            updatewinstats(player);
+            continue;
+        }
+        if (level.rankedmatch && !level.leaguematch && player.pers[#"latejoin"] === 1) {
+            updatelosslatejoinstats(player);
+        }
+        if (!level.disablestattracking) {
+            if (level.hardcoremode === 1) {
+                player stats::set_stat_global(#"hash_4a226bdcff995085", 0);
             } else {
-                if (level.rankedmatch && !level.leaguematch && player.pers[#"latejoin"] === 1) {
-                    updatelosslatejoinstats(player);
-                }
-                if (!level.disablestattracking) {
-                    if (level.hardcoremode === 1) {
-                        player stats::set_stat_global(#"hash_4a226bdcff995085", 0);
-                    } else {
-                        player stats::set_stat_global(#"cur_win_streak", 0);
-                    }
-                    if (level.var_73e51905 === 1) {
-                        player stats::set_stat_global(#"hash_56a0e77eea02664d", 0);
-                    }
-                }
+                player stats::set_stat_global(#"cur_win_streak", 0);
+            }
+            if (level.var_73e51905 === 1) {
+                player stats::set_stat_global(#"hash_56a0e77eea02664d", 0);
             }
         }
     }
@@ -2481,9 +2497,9 @@ function function_b1a3b359(killedplayer, damagedone, weapon, assist_level) {
         }
         self challenges::assisted();
         scoreevents::processscoreevent(assist_level, self, killedplayer, weapon);
-    } else {
-        self challenges::function_57ca42c6(weapon);
+        return;
     }
+    self challenges::function_57ca42c6(weapon);
 }
 
 // Namespace globallogic_score/globallogic_score
@@ -2563,7 +2579,9 @@ function function_e7b4c25c(nemesis_name, value, nemesis_rank, var_15574043, neme
         self.pers[#"nemesis_rankicon"] = var_15574043;
         self.pers[#"nemesis_xp"] = nemesis_xp;
         self.pers[#"nemesis_xuid"] = nemesis_xuid;
-    } else if (isdefined(self.pers[#"nemesis_name"]) && self.pers[#"nemesis_name"] == nemesis_name) {
+        return;
+    }
+    if (isdefined(self.pers[#"nemesis_name"]) && self.pers[#"nemesis_name"] == nemesis_name) {
         self.pers[#"nemesis_rank"] = nemesis_rank;
         self.pers[#"nemesis_xp"] = nemesis_xp;
     }

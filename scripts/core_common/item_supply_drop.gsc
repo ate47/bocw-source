@@ -370,11 +370,11 @@ function private function_500a6615(itemspawnlist = #"t9_supply_drop_stash_parent
                 supplydrop.var_d5552131 thread function_9ae8f99e();
             }
             supplydrop delete();
-        } else {
-            supplydrop physicslaunch();
-            supplydrop thread function_924a11ff(itemspawnlist, var_93fe96a6, s_instance);
-            supplydrop thread function_e21ceb1b();
+            return;
         }
+        supplydrop physicslaunch();
+        supplydrop thread function_924a11ff(itemspawnlist, var_93fe96a6, s_instance);
+        supplydrop thread function_e21ceb1b();
     }
 }
 
@@ -640,10 +640,10 @@ function private function_6eb3f7bb() {
             maxy = max(var_6024133d[0].origin[1], var_6024133d[1].origin[1]);
             maxz = 10;
             level.supplydropmax = (maxx, maxy, maxz);
-        } else {
-            level.supplydropmin = level.mapcenter - (1000, 1000, 10);
-            level.supplydropmax = level.mapcenter + (1000, 1000, 10);
+            return;
         }
+        level.supplydropmin = level.mapcenter - (1000, 1000, 10);
+        level.supplydropmax = level.mapcenter + (1000, 1000, 10);
     }
 }
 
@@ -825,16 +825,16 @@ function private function_924a11ff(itemspawnlist, var_93fe96a6 = 0, s_instance) 
     self waittill(#"stationary");
     if (isdefined(level.var_a16ff74d)) {
         self thread [[ level.var_a16ff74d ]](var_93fe96a6, s_instance);
-    } else {
-        var_e68facee = isdefined(self getlinkedent());
-        self clientfield::set("supply_drop_fx", 1);
-        self setmodel("wpn_t9_streak_care_package_friendly_world_nosight");
-        self.anglesoffset = vectorscale((0, 1, 0), 90);
-        items = self namespace_65181344::function_5eada592(itemspawnlist, 1);
-        wait(60);
-        if (isdefined(self)) {
-            self clientfield::set("supply_drop_fx", 0);
-        }
+        return;
+    }
+    var_e68facee = isdefined(self getlinkedent());
+    self clientfield::set("supply_drop_fx", 1);
+    self setmodel("wpn_t9_streak_care_package_friendly_world_nosight");
+    self.anglesoffset = vectorscale((0, 1, 0), 90);
+    items = self namespace_65181344::function_5eada592(itemspawnlist, 1);
+    wait(60);
+    if (isdefined(self)) {
+        self clientfield::set("supply_drop_fx", 0);
     }
 }
 
@@ -1221,9 +1221,9 @@ function drop_supply_drop(droppoint, helicopter = 0, var_d6388d1 = 0, vehicletyp
     }
     if (helicopter) {
         var_57e06aea = function_47ec98c4(spawnpoint, endpoint, droppoint, var_d6388d1, vehicletype, undefined, undefined, var_2118f785, dropangles);
-    } else {
-        var_57e06aea = function_b8dd1978(spawnpoint, endpoint, droppoint, var_2118f785);
+        return;
     }
+    var_57e06aea = function_b8dd1978(spawnpoint, endpoint, droppoint, var_2118f785);
 }
 
 // Namespace item_supply_drop/item_supply_drop

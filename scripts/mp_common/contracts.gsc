@@ -84,11 +84,11 @@ function function_2065738f(killstreaktype) {
     case #"counteruav":
     case #"inventory_counteruav":
         self increment_contract(#"hash_55d5fc464b179a45");
-        break;
+        return;
     case #"uav":
     case #"inventory_uav":
         self increment_contract(#"hash_5faef94f35522583");
-        break;
+        return;
     }
 }
 
@@ -102,49 +102,49 @@ function function_a7a24a36(weaponname) {
     case #"frag_grenade":
         attacker increment_contract(#"hash_2414160d464f90ae");
         attacker increment_contract(#"hash_255d9fb4f18be3d4");
-        break;
+        return;
     case #"eq_molotov":
         attacker increment_contract(#"hash_28eee88b752d363a");
         attacker increment_contract(#"hash_255d9fb4f18be3d4");
-        break;
+        return;
     case #"satchel_charge":
         attacker increment_contract(#"hash_296479e90e353da1");
         attacker increment_contract(#"hash_255d9fb4f18be3d4");
-        break;
+        return;
     case #"eq_sticky_grenade":
         attacker increment_contract(#"hash_46ab1787f07dba5a");
         attacker increment_contract(#"hash_255d9fb4f18be3d4");
-        break;
+        return;
     case #"remote_missile":
         attacker increment_contract(#"hash_772e19fad283c8cf");
-        break;
+        return;
     case #"sig_bow_flame":
         attacker increment_contract(#"hash_6e992792aaf0dc10");
-        break;
+        return;
     case #"hero_pineapplegun":
         attacker increment_contract(#"hash_2977fecb56dd9b59");
-        break;
+        return;
     case #"recon_car":
         attacker increment_contract(#"hash_3d11e20647031a01");
-        break;
+        return;
     case #"blind_swat_grenade":
         attacker increment_contract(#"hash_42bc58cf2628c9ea");
-        break;
+        return;
     case #"hash_1527a22d8a6fdc21":
         attacker increment_contract(#"hash_48b83e73148056f6");
-        break;
+        return;
     case #"gadget_supplypod":
         attacker increment_contract(#"hash_2c52346554f155a5");
-        break;
+        return;
     case #"gadget_jammer":
         attacker increment_contract(#"hash_85cce48722a5003");
-        break;
+        return;
     case #"hash_2b9efbad11308e02":
         attacker increment_contract(#"hash_40b0132274ac999");
-        break;
+        return;
     case #"tear_gas":
         attacker increment_contract(#"hash_4c13df5a3ef481e");
-        break;
+        return;
     }
 }
 
@@ -229,7 +229,6 @@ function contract_kills(data) {
             break;
         }
     case #"weapon_sniper":
-    LOC_00000348:
         if (data.var_b0985dfc === 1) {
             attacker function_fd9fb79b(#"hash_51b6e9ab0fafc1d3");
         }
@@ -502,7 +501,9 @@ function function_fb608f0a(weapon) {
     self increment_contract(#"hash_186da11489a29d82");
     if (weapon.statname == #"hash_2b9efbad11308e02") {
         increment_contract(#"hash_4ef18c4603d407ad");
-    } else if (util::getweaponclass(weapon) === #"weapon_grenade") {
+        return;
+    }
+    if (util::getweaponclass(weapon) === #"weapon_grenade") {
         increment_contract(#"hash_58b984c08b43c46a");
         if (weapon.statname == #"satchel_charge") {
             increment_contract(#"hash_16feef44241889e5");
@@ -628,10 +629,10 @@ function function_3b024dd1(data) {
         switch (level.basegametype) {
         case #"gunfight":
             player function_fd9fb79b(#"hash_244fe1eba6e2cbd", 1);
-            break;
+            return;
         case #"sd":
             player function_fd9fb79b(#"hash_11977b122e8c8671", 1);
-            break;
+            return;
         }
     }
 }

@@ -40,9 +40,9 @@ function function_70a657d8() {
 function supply_drop_parachute(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self playrenderoverridebundle(#"hash_336cece53ae2342f");
-    } else {
-        self stoprenderoverridebundle(#"hash_336cece53ae2342f");
+        return;
     }
+    self stoprenderoverridebundle(#"hash_336cece53ae2342f");
 }
 
 // Namespace namespace_dedc3cb9/namespace_2291eec4

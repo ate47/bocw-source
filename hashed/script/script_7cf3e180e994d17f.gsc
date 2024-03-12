@@ -294,11 +294,17 @@ function function_6bd3950d(var_7737e6aa) {
     self.var_e32d3cab = self.var_e32d3cab - var_7737e6aa;
     if (self.var_e32d3cab <= 0) {
         self function_fe8be1e0();
-    } else if (self.var_e32d3cab <= 25 && !(var_9ce32949 & 64)) {
+        return;
+    }
+    if (self.var_e32d3cab <= 25 && !(var_9ce32949 & 64)) {
         self clientfield::set("clf_rccar_fxstate", var_9ce32949 | 64);
-    } else if (self.var_e32d3cab <= 50 && !(var_9ce32949 & 32)) {
+        return;
+    }
+    if (self.var_e32d3cab <= 50 && !(var_9ce32949 & 32)) {
         self clientfield::set("clf_rccar_fxstate", var_9ce32949 | 32);
-    } else if (self.var_e32d3cab <= 75 && !(var_9ce32949 & 16)) {
+        return;
+    }
+    if (self.var_e32d3cab <= 75 && !(var_9ce32949 & 16)) {
         self clientfield::set("clf_rccar_fxstate", var_9ce32949 | 16);
     }
 }
@@ -534,8 +540,8 @@ function function_f60520a9(waittime = 0, var_b47dc8ef = 0, end = 0) {
     }
     if (is_false(end)) {
         self clientfield::set("clf_rob_snipercam_blood", 1 + var_37dc93e2);
-    } else {
-        self clientfield::set("clf_rob_snipercam_blood", 0 + var_37dc93e2);
+        return;
     }
+    self clientfield::set("clf_rob_snipercam_blood", 0 + var_37dc93e2);
 }
 

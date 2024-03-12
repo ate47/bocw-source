@@ -111,7 +111,6 @@ function private function_26f124d8() {
             return 1;
         }
         return 0;
-        break;
     }
     return 0;
 }

@@ -70,7 +70,9 @@ function private function_70a657d8() {
         level.var_1a4cc228[#"hash_6904f5c7bef64405"] = [0:#"hash_5eafd160d077670d"];
         level.var_1a4cc228[#"hash_7f957e36b4f6160f"] = [0:#"hash_61df3be05096e9e2"];
         level.var_1a4cc228[#"hash_729b116cf9d044"] = [0:#"hash_78238b400ae08c28"];
-    } else if (util::get_map_name() == "zm_gold") {
+        return;
+    }
+    if (util::get_map_name() == "zm_gold") {
         level.var_1a4cc228[#"spawner_bo5_zombie_zm_gold"] = [7:#"hash_63d74789d0b11dbc", 6:#"hash_15e17500f1c8d0e9", 5:#"hash_1b6585308f85be40", 4:#"hash_e3b20622eb68c2b", 3:#"hash_735b3e8785d43fdb", 2:#"hash_3b5927d61466dc58", 1:#"hash_36991df55c87dbcb", 0:#"hash_a80d8840eaa4e7e"];
         level.var_1a4cc228[#"spawner_bo5_zombie_zm_gold_armor_heavy"] = [0:#"hash_4729aed4cfa43476"];
         level.var_1a4cc228[#"spawner_bo5_zombie_zm_gold_armor_medium"] = [0:#"hash_59e40ffcdcfbffa6"];
@@ -112,9 +114,9 @@ function function_48d53ca0() {
         if (self getweaponammoclip(current_weapon) >= 10) {
             self function_d4759f13(1, function_4ba529a7(current_weapon), 1);
         }
-    } else {
-        self function_d4759f13(1, function_4ba529a7(current_weapon), 0);
+        return;
     }
+    self function_d4759f13(1, function_4ba529a7(current_weapon), 0);
 }
 
 // Namespace namespace_a5ef5769/namespace_a5ef5769
@@ -150,7 +152,6 @@ function function_4ba529a7(weapon) {
             return 1;
         default:
             return 0;
-            break;
         }
     }
     return 0;
@@ -191,7 +192,6 @@ function function_cbd0f11(weapon) {
             return 1;
         default:
             return 0;
-            break;
         }
     }
     return 0;
@@ -210,7 +210,6 @@ function function_4f6da2be(weapon) {
             return 1;
         default:
             return 0;
-            break;
         }
     }
     return 0;
@@ -277,7 +276,9 @@ function function_54e9969b(params) {
         } else {
             self function_d4759f13(0);
         }
-    } else if (!function_2715ee2d(params.weapon) && function_2715ee2d(params.last_weapon)) {
+        return;
+    }
+    if (!function_2715ee2d(params.weapon) && function_2715ee2d(params.last_weapon)) {
         self setactionslot(1, "");
         self notify(#"hash_5240d2339d9ab0cd");
         self notify(#"hash_9f58c5008141d94");
@@ -318,7 +319,9 @@ function function_121b803f(watcher, player) {
             if (self.var_6ccc858c.size > 0) {
                 self thread function_bb80aad0();
             }
-        } else if (function_4f6da2be(var_deaac196)) {
+            return;
+        }
+        if (function_4f6da2be(var_deaac196)) {
             var_23130969 = player function_4a074587(var_deaac196);
             self thread function_8376de9c(player, var_23130969);
             self thread watch_for_death(player, var_23130969);
@@ -484,7 +487,7 @@ function function_646f5566() {
         self.var_669f67cf++;
         if (self.var_669f67cf >= 8) {
             self function_a0ef7452();
-            break;
+            return;
         }
         waitframe(1);
     }
@@ -525,7 +528,9 @@ function function_a0ef7452() {
         foreach (target in targets) {
             if (isactor(target) && isalive(target) && target getteam() == level.zombie_team) {
                 target dodamage(var_d2e616e1, self.origin, self.owner, self, "none", "MOD_UNKNOWN", 0, damage_weapon);
-            } else if (isdefined(target.var_e0412177)) {
+                continue;
+            }
+            if (isdefined(target.var_e0412177)) {
                 target notify(#"damage", {#amount:var_d2e616e1, #weapon:damage_weapon, #attacker:self.owner});
             }
         }
@@ -620,9 +625,9 @@ function function_70240b1b() {
                 ai dodamage(var_c790ea95, self.origin, self.owner, self, "none", "MOD_DOT", 0, damage_weapon);
                 if (self.var_bc60b6e0 > 1) {
                     ai thread namespace_9ff9f642::slowdown(#"hash_21cb91304fde349a");
-                } else {
-                    ai thread namespace_9ff9f642::slowdown(#"hash_5c37161904f4bcc9");
+                    continue;
                 }
+                ai thread namespace_9ff9f642::slowdown(#"hash_5c37161904f4bcc9");
             }
         }
         wait(0.5);
@@ -694,11 +699,10 @@ function private function_4a074587(weapon) {
             return 6;
         default:
             return 1;
-            break;
         }
-    } else {
-        return 1;
+        return;
     }
+    return 1;
 }
 
 // Namespace namespace_a5ef5769/namespace_a5ef5769
@@ -729,7 +733,9 @@ function function_5a2447b1(time) {
     waittillframeend();
     if (isdefined(result.corpse)) {
         result.corpse delete();
-    } else if (isdefined(self)) {
+        return;
+    }
+    if (isdefined(self)) {
         self function_cb48cddd();
     }
 }

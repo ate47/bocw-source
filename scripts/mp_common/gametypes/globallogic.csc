@@ -257,9 +257,9 @@ function function_e1af467(local_client_num, *oldval, newval, *bnewent, *binitial
     }
     if (bwastimejump && !self function_6c32d092(fieldname, #"talent_resistance")) {
         self function_36b630a3(0);
-    } else {
-        self function_36b630a3(1);
+        return;
     }
+    self function_36b630a3(1);
 }
 
 // Namespace globallogic/globallogic
@@ -271,10 +271,10 @@ function function_194072a7(local_client_num, *oldval, newval, *bnewent, *binitia
         if (bwastimejump) {
             self stoprenderoverridebundle(#"rob_sonar_set_enemy");
             self playrenderoverridebundle(#"rob_sonar_set_enemy_cold");
-        } else {
-            self stoprenderoverridebundle(#"rob_sonar_set_enemy_cold");
-            self playrenderoverridebundle(#"rob_sonar_set_enemy");
+            return;
         }
+        self stoprenderoverridebundle(#"rob_sonar_set_enemy_cold");
+        self playrenderoverridebundle(#"rob_sonar_set_enemy");
     }
 }
 

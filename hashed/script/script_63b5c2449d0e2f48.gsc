@@ -43,9 +43,9 @@ function function_cb5a4b1a() {
 function function_613a7ccc(b_success = 0) {
     if (b_success) {
         music::setmusicstate("common_exfil_success");
-    } else {
-        music::setmusicstate("common_exfil_fail");
+        return;
     }
+    music::setmusicstate("common_exfil_fail");
 }
 
 // Namespace namespace_99d0d95e/namespace_99d0d95e
@@ -102,7 +102,9 @@ function function_acd83a15() {
             foreach (player in getplayers()) {
                 player clientfield::set_to_player("" + #"hash_4be33f9c734f0cb9", 2);
             }
-        } else if (function_e840d5a5()) {
+            continue;
+        }
+        if (function_e840d5a5()) {
             foreach (player in getplayers()) {
                 player clientfield::set_to_player("" + #"hash_4be33f9c734f0cb9", 3);
             }
@@ -153,11 +155,11 @@ function function_8f85d169(var_dbd74b22 = 1) {
         foreach (player in getplayers()) {
             player clientfield::set_to_player("" + #"hash_4be33f9c734f0cb9", 2);
         }
-    } else {
-        level.musicsystemoverride = 0;
-        foreach (player in getplayers()) {
-            player clientfield::set_to_player("" + #"hash_4be33f9c734f0cb9", 3);
-        }
+        return;
+    }
+    level.musicsystemoverride = 0;
+    foreach (player in getplayers()) {
+        player clientfield::set_to_player("" + #"hash_4be33f9c734f0cb9", 3);
     }
 }
 

@@ -225,7 +225,7 @@ function private function_cf57c2cb(grenade) {
                     grenade notify(#"projectile_impact_explode");
                 }
                 self function_cb48cddd();
-                break;
+                return;
             }
             waitframe(1);
         }
@@ -252,18 +252,18 @@ function function_23e153fb(var_bb13ffb2) {
                 zombie kill();
             }
         }
-    } else {
-        foreach (player in a_players) {
-            if (distancesquared(player.origin, self gettagorigin("j_ball_le")) <= 72900) {
-                function_6b6fce46(player);
-                player dodamage(player.health + 999, self gettagorigin("j_ball_le"));
-            }
+        return;
+    }
+    foreach (player in a_players) {
+        if (distancesquared(player.origin, self gettagorigin("j_ball_le")) <= 72900) {
+            function_6b6fce46(player);
+            player dodamage(player.health + 999, self gettagorigin("j_ball_le"));
         }
-        foreach (zombie in a_zombies) {
-            if (distancesquared(zombie.origin, self gettagorigin("j_ball_le")) <= 72900) {
-                zombie.allowdeath = 1;
-                zombie kill();
-            }
+    }
+    foreach (zombie in a_zombies) {
+        if (distancesquared(zombie.origin, self gettagorigin("j_ball_le")) <= 72900) {
+            zombie.allowdeath = 1;
+            zombie kill();
         }
     }
 }
@@ -482,16 +482,16 @@ function private function_953cead6() {
                         break;
                     }
                 }
-                jumpiffalse(var_ebfb164) LOC_00000204;
-            } else {
-            LOC_00000204:
-                if (!isdefined(self.var_9cf16573)) {
-                    self.var_9cf16573 = [];
-                } else if (!isarray(self.var_9cf16573)) {
-                    self.var_9cf16573 = array(self.var_9cf16573);
+                if (var_ebfb164) {
+                    continue;
                 }
-                self.var_9cf16573[self.var_9cf16573.size] = player;
             }
+            if (!isdefined(self.var_9cf16573)) {
+                self.var_9cf16573 = [];
+            } else if (!isarray(self.var_9cf16573)) {
+                self.var_9cf16573 = array(self.var_9cf16573);
+            }
+            self.var_9cf16573[self.var_9cf16573.size] = player;
         }
     }
 }

@@ -64,7 +64,9 @@ function private function_67189b6b(localclientnum, newval) {
             arrayremoveindex(level.item_spawn_drops, self.networkid, 1);
             arrayremoveindex(level.var_2b5a36e1, self.networkid, 1);
         }
-    } else if (newval == 1) {
+        return;
+    }
+    if (newval == 1) {
         /#
             assert(self.id < 2048);
         #/
@@ -95,7 +97,9 @@ function private function_67189b6b(localclientnum, newval) {
             }
         }
         item_inventory::function_b1136fc8(localclientnum, self);
-    } else if (newval == 2 || newval == 3) {
+        return;
+    }
+    if (newval == 2 || newval == 3) {
         self.hidetime = gettime();
         self.networkid = item_world_util::function_1f0def85(self);
         if (newval == 2) {
@@ -214,9 +218,13 @@ function function_63226f88(*localclientnum, *oldval, newval, *bnewent, *binitial
     item_world::function_1b11e73c();
     if (bwastimejump == 0) {
         self.stash_type = 0;
-    } else if (bwastimejump == 1) {
+        return;
+    }
+    if (bwastimejump == 1) {
         self.stash_type = 1;
-    } else if (bwastimejump == 2) {
+        return;
+    }
+    if (bwastimejump == 2) {
         self.stash_type = 2;
     }
 }

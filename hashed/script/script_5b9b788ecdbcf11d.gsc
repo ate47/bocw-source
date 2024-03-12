@@ -66,7 +66,9 @@ function function_52240d18(localclientnum, *oldval, newval, *bnewent, *binitials
             tag = isdefined(level.nightingale_custom_settings.var_8751c5bd) ? level.nightingale_custom_settings.var_8751c5bd : "tag_origin";
             self.activefx = util::playfxontag(fieldname, fx, self, tag);
         }
-    } else if (isdefined(self.activefx)) {
+        return;
+    }
+    if (isdefined(self.activefx)) {
         stopfx(fieldname, self.activefx);
         self.activefx = undefined;
     }

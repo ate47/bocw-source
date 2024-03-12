@@ -112,22 +112,16 @@ function private function_832f84f6(aat_name = "ammomod_deadwire") {
     switch (aat_name) {
     case #"ammomod_deadwire":
         return 0;
-        break;
     case #"ammomod_deadwire_1":
         return 1;
-        break;
     case #"ammomod_deadwire_2":
         return 2;
-        break;
     case #"ammomod_deadwire_3":
         return 3;
-        break;
     case #"ammomod_deadwire_4":
         return 4;
-        break;
     case #"ammomod_deadwire_5":
         return 5;
-        break;
     }
     return 0;
 }
@@ -195,7 +189,9 @@ function result(*death, attacker, *mod, weapon, *var_fd90b0bb, vpoint, *shitloc,
         if (tier >= 4) {
             self thread function_e0e02bed(vpoint, s_params, tier);
         }
-    } else if (self.var_6f84b820 === #"normal") {
+        return;
+    }
+    if (self.var_6f84b820 === #"normal") {
         self thread function_e0e02bed(vpoint, s_params, tier);
     }
 }
@@ -230,9 +226,9 @@ function function_e0e02bed(attacker, s_params, tier) {
     }
     if (tier >= 5 && function_b686c867(attacker)) {
         function_5e4b580b(attacker, s_params, tier);
-    } else {
-        self function_de99f2ad(attacker, self, s_params, tier);
+        return;
     }
+    self function_de99f2ad(attacker, self, s_params, tier);
 }
 
 // Namespace ammomod_deadwire/ammomod_deadwire

@@ -43,7 +43,9 @@ function onplayerspawned() {
             self clientfield::set("high_value_target", 0);
             self.var_366e280d = 0;
         }
-    } else if (self.var_366e280d !== 1) {
+        return;
+    }
+    if (self.var_366e280d !== 1) {
         self clientfield::set("high_value_target", 1);
         self.var_366e280d = 1;
     }

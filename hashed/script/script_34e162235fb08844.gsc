@@ -84,7 +84,9 @@ function private function_301f229d(team) {
             if (!is_true(player.revivetrigger.beingrevived)) {
                 var_9e7013f[var_9e7013f.size] = player;
             }
-        } else if (isbot(player)) {
+            continue;
+        }
+        if (isbot(player)) {
             if (!player.ignoreall && !player isplayinganimscripted() && !player arecontrolsfrozen() && !player function_5972c3cf() && !player isinvehicle()) {
                 if (!isdefined(player.bot.revivetarget) || !isdefined(player.bot.revivetarget.revivetrigger) || !is_true(player.is_reviving_any)) {
                     var_52e61055[var_52e61055.size] = player;
@@ -100,34 +102,34 @@ function private function_301f229d(team) {
             if (bot istouching(player.revivetrigger)) {
                 distance = distance(bot.origin, player.origin);
                 arrayinsert(assignments, {#distance:distance, #target:player, #bot:bot}, 0);
-            } else {
-                navmeshpoint = bot_position::function_13796beb(player.origin);
-                if (!isdefined(navmeshpoint)) {
-                    continue;
-                }
-                if (tracepassedonnavmesh(bot.origin, navmeshpoint, 15)) {
-                    distance = distance2d(bot.origin, navmeshpoint);
-                } else {
-                    var_65c8979b = bot_position::function_13796beb(bot.origin);
-                    if (!isdefined(var_65c8979b)) {
-                        continue;
-                    }
-                    path = generatenavmeshpath(var_65c8979b, navmeshpoint, bot);
-                    if (!isdefined(path) || !isdefined(path.pathpoints) || path.pathpoints.size == 0) {
-                        continue;
-                    }
-                    distance = path.pathdistance;
-                }
-                if (distance > 2000) {
-                    continue;
-                }
-                for (i = 0; i < assignments.size; i++) {
-                    if (distance < assignments[i].distance) {
-                        break;
-                    }
-                }
-                arrayinsert(assignments, {#distance:distance, #target:player, #bot:bot}, i);
+                continue;
             }
+            navmeshpoint = bot_position::function_13796beb(player.origin);
+            if (!isdefined(navmeshpoint)) {
+                continue;
+            }
+            if (tracepassedonnavmesh(bot.origin, navmeshpoint, 15)) {
+                distance = distance2d(bot.origin, navmeshpoint);
+            } else {
+                var_65c8979b = bot_position::function_13796beb(bot.origin);
+                if (!isdefined(var_65c8979b)) {
+                    continue;
+                }
+                path = generatenavmeshpath(var_65c8979b, navmeshpoint, bot);
+                if (!isdefined(path) || !isdefined(path.pathpoints) || path.pathpoints.size == 0) {
+                    continue;
+                }
+                distance = path.pathdistance;
+            }
+            if (distance > 2000) {
+                continue;
+            }
+            for (i = 0; i < assignments.size; i++) {
+                if (distance < assignments[i].distance) {
+                    break;
+                }
+            }
+            arrayinsert(assignments, {#distance:distance, #target:player, #bot:bot}, i);
         }
     }
     for (i = 0; i < assignments.size; i++) {

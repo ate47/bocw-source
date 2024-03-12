@@ -116,7 +116,6 @@ function private _gibpartnametogibflag(gibpartname) {
             return 128;
         case #"left leg":
             return 256;
-            break;
         }
     }
 }

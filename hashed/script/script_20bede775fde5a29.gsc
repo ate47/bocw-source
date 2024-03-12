@@ -40,7 +40,9 @@ function function_c73ec9a(*local_client_num, *oldval, newval, *bnewent, *binitia
         if (!isplaying) {
             self codeplaypostfxbundle(#"hash_1e4c3120a3e08628");
         }
-    } else if (bwastimejump == 0) {
+        return;
+    }
+    if (bwastimejump == 0) {
         if (isplaying) {
             self postfx::stoppostfxbundle(#"hash_1e4c3120a3e08628");
         }
@@ -106,10 +108,8 @@ function private function_707c958c(local_client_num, var_23904c1d, target_name) 
 function private function_c4ede3a8(local_client_num, target_name, session_mode) {
     var_a2865de6 = getplayerroletemplatecount(session_mode);
     character_index = randomint(var_a2865de6);
-    var_f8bfe003 = function_d4f9edc8(character_index, session_mode);
-    while (!var_f8bfe003) {
+    for (var_f8bfe003 = function_d4f9edc8(character_index, session_mode); !var_f8bfe003; var_f8bfe003 = function_d4f9edc8(character_index, session_mode)) {
         character_index = randomint(var_a2865de6);
-        var_f8bfe003 = function_d4f9edc8(character_index, session_mode);
     }
     var_23904c1d = character_customization::function_3f5625f1(session_mode, character_index);
     custom_character = function_707c958c(local_client_num, var_23904c1d, target_name);
@@ -148,15 +148,17 @@ function function_7adce590(local_client_num, *oldval, *newval, *bnewent, *biniti
             if (xuid != 0) {
                 custom_character = function_1b0611e0(bwastimejump, xuid, "top_squad_" + key);
                 array::add(var_ec067cd3, [[ custom_character ]]->function_217b10ed());
-            } else if (getdvarint(#"hash_6d98441d0465c104", 0)) {
+                continue;
+            }
+            if (getdvarint(#"hash_6d98441d0465c104", 0)) {
                 /#
                     custom_character = function_c4ede3a8(bwastimejump, "<unknown string>" + key, 1);
                     add(var_ec067cd3, [[ custom_character ]]->function_217b10ed());
                 #/
-            } else {
-                var_74f68a1 = function_4259f9f8(bwastimejump, "top_squad_ " + key);
-                array::add(var_ec067cd3, var_74f68a1);
+                continue;
             }
+            var_74f68a1 = function_4259f9f8(bwastimejump, "top_squad_ " + key);
+            array::add(var_ec067cd3, var_74f68a1);
         }
         var_5acf682c = function_4259f9f8(bwastimejump, "top_squad_cam");
         array::add(var_ec067cd3, var_5acf682c);

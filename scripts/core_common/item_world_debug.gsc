@@ -475,25 +475,25 @@ function function_78931318(str_button) {
     /#
         switch (str_button) {
         case #"down":
-            var_a1798265 = "<unknown string>";
+            str_btn = "<unknown string>";
             var_7a00db94 = "<unknown string>";
             break;
         case #"left":
-            var_a1798265 = "<unknown string>";
+            str_btn = "<unknown string>";
             var_7a00db94 = "<unknown string>";
             break;
         case #"right":
-            var_a1798265 = "<unknown string>";
+            str_btn = "<unknown string>";
             var_7a00db94 = "<unknown string>";
             break;
         case #"up":
-            var_a1798265 = "<unknown string>";
+            str_btn = "<unknown string>";
             var_7a00db94 = "<unknown string>";
             break;
         }
-        if (isdefined(var_a1798265)) {
-            if (self buttonpressed(var_a1798265) || self buttonpressed(var_7a00db94)) {
-                while (self buttonpressed(var_a1798265) || self buttonpressed(var_7a00db94)) {
+        if (isdefined(str_btn)) {
+            if (self buttonpressed(str_btn) || self buttonpressed(var_7a00db94)) {
+                while (self buttonpressed(str_btn) || self buttonpressed(var_7a00db94)) {
                     waitframe(1);
                 }
                 return 1;
@@ -964,26 +964,27 @@ function private function_cdd9b388() {
                             if (isdefined(item.targetname)) {
                                 print3d(item.origin + vectorscale((0, 0, 1), 32), function_9e72a96(item.targetname), color, 1, 0.3, 20);
                             }
-                            break;
+                            continue;
                         case 2:
-                            jumpiffalse(isdefined(item.var_a6762160)) LOC_0000175a;
-                            sphere(item.origin, radius, color, 1, 0, 10, 20);
-                            jumpiffalse(isdefined(item.targetname)) LOC_0000175a;
-                            print3d(item.origin + vectorscale((0, 0, 1), 32), function_9e72a96(item.targetname), color, 1, 0.3, 20);
+                            if (isdefined(item.var_a6762160)) {
+                                sphere(item.origin, radius, color, 1, 0, 10, 20);
+                                if (isdefined(item.targetname)) {
+                                    print3d(item.origin + vectorscale((0, 0, 1), 32), function_9e72a96(item.targetname), color, 1, 0.3, 20);
+                                }
+                            }
                         case 3:
-                        LOC_0000175a:
                             if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"survival_ammo") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                                 if (isdefined(item.targetname)) {
                                     print3d(item.origin + vectorscale((0, 0, 1), 32), function_9e72a96(item.targetname), color, 1, 0.3, 20);
                                 }
                             }
-                            break;
+                            continue;
                         case 4:
                             if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"weapon") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
-                            break;
+                            continue;
                         case 5:
                             if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"armor") {
                                 if (item.var_a6762160.name == "<unknown string>") {
@@ -999,22 +1000,22 @@ function private function_cdd9b388() {
                                     sphere(item.origin, radius, color, 1, 0, 10, 20);
                                 }
                             }
-                            break;
+                            continue;
                         case 6:
                             if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"equipment") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
-                            break;
+                            continue;
                         case 7:
                             if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"attachment") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
-                            break;
+                            continue;
                         case 8:
                             if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"survival_armor_shard") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
-                            break;
+                            continue;
                         case 9:
                             if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"survival_essence") {
                                 if (item.var_a6762160.amount === 1) {
@@ -1024,7 +1025,7 @@ function private function_cdd9b388() {
                                 }
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
-                            break;
+                            continue;
                         case 10:
                             if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"survival_scrap") {
                                 if (item.var_a6762160.amount === 1) {
@@ -1034,37 +1035,37 @@ function private function_cdd9b388() {
                                 }
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
-                            break;
+                            continue;
                         case 11:
                             if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"survival_perk") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
-                            break;
+                            continue;
                         case 12:
                             if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"hash_fc797c2a8f4d208") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
-                            break;
+                            continue;
                         case 13:
                             if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"generic") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
-                            break;
+                            continue;
                         case 14:
                             if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"resource") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
-                            break;
+                            continue;
                         case 16:
                             if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"field_upgrade") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
-                            break;
+                            continue;
                         case 17:
                             if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"tactical") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
-                            break;
+                            continue;
                         }
                     }
                 }
@@ -1107,10 +1108,10 @@ function private function_cdd9b388() {
                                     break;
                                 }
                                 sphere(point.origin, radius, color, 1, 0, 10, 20);
-                            } else {
-                                color = vectorscale((1, 1, 1), 0.75);
-                                sphere(point.origin, radius, color, 1, 0, 10, 20);
+                                continue;
                             }
+                            color = vectorscale((1, 1, 1), 0.75);
+                            sphere(point.origin, radius, color, 1, 0, 10, 20);
                         }
                     }
                 } else {
@@ -1149,21 +1150,21 @@ function private function_cdd9b388() {
                             if (isdefined(item.targetname)) {
                                 print3d(item.origin + vectorscale((0, 0, 1), 32), function_9e72a96(item.targetname), color, 1, 0.3, 20);
                             }
-                            break;
+                            continue;
                         case 2:
-                            jumpiffalse(isdefined(item.var_a6762160)) LOC_000026e2;
-                            sphere(item.origin, radius, color, 1, 0, 10, 20);
+                            if (isdefined(item.var_a6762160)) {
+                                sphere(item.origin, radius, color, 1, 0, 10, 20);
+                            }
                         case 3:
-                        LOC_000026e2:
                             if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"ammo") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
-                            break;
+                            continue;
                         case 4:
                             if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"weapon") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
-                            break;
+                            continue;
                         case 5:
                             if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"health") {
                                 if (item.var_a6762160.name == "<unknown string>") {
@@ -1176,7 +1177,7 @@ function private function_cdd9b388() {
                                     sphere(item.origin, radius, color, 1, 0, 10, 20);
                                 }
                             }
-                            break;
+                            continue;
                         case 6:
                             if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"armor") {
                                 if (item.var_a6762160.name == "<unknown string>") {
@@ -1189,57 +1190,57 @@ function private function_cdd9b388() {
                                     sphere(item.origin, radius, color, 1, 0, 10, 20);
                                 }
                             }
-                            break;
+                            continue;
                         case 7:
                             if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"equipment") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
-                            break;
+                            continue;
                         case 8:
                             if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"backpack") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
-                            break;
+                            continue;
                         case 9:
                             if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"attachment") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
-                            break;
+                            continue;
                         case 10:
                             if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"generic") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
-                            break;
+                            continue;
                         case 11:
                             if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"killstreak") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
-                            break;
+                            continue;
                         case 12:
                             if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"quest") {
                                 sphere(item.origin, radius, (1, 0.5, 0), 1, 0, 10, 20);
                             }
-                            break;
+                            continue;
                         case 13:
                             if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"cash") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
-                            break;
+                            continue;
                         case 14:
                             if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"resource") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
-                            break;
+                            continue;
                         case 15:
                             if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"field_upgrade") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
-                            break;
+                            continue;
                         case 16:
                             if (isdefined(item.var_a6762160) && item.var_a6762160.itemtype === #"tactical") {
                                 sphere(item.origin, radius, color, 1, 0, 10, 20);
                             }
-                            break;
+                            continue;
                         }
                     }
                 }
@@ -1471,7 +1472,9 @@ function function_9cc59537() {
                                 break;
                             }
                             sphere(point.origin, n_radius, color, 1, 0, 16, 8);
-                        } else if (level.players[0] is_player_looking_at(point.origin, 0.6, 0)) {
+                            continue;
+                        }
+                        if (level.players[0] is_player_looking_at(point.origin, 0.6, 0)) {
                             b_failed = 0;
                             var_47748885 = 28;
                             var_c5330f11 = 32;
@@ -1621,13 +1624,13 @@ function function_9cc59537() {
                                         }
                                     }
                                 }
-                            } else {
-                                sphere(point.origin, n_radius, v_color, 1, 0, 8, 8);
+                                continue;
                             }
+                            sphere(point.origin, n_radius, v_color, 1, 0, 8, 8);
                         }
                     }
                 }
-            } while(getdvarint(#"hash_68dcd0d52e11b957", 0));
+            } while (getdvarint(#"hash_68dcd0d52e11b957", 0));
         }
     #/
 }

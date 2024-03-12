@@ -1095,9 +1095,9 @@ function function_51c1448(stat_name, amount = 1, var_4261ca42, str_weapon_name) 
         var_ba1fb8c1 = self get_stat_global(stat_name);
         if (isdefined(self.entity_num)) {
             println("killed_by_crimson_nosferatu" + self.entity_num + "boas_gladiators_killed" + function_9e72a96(stat_name) + "catalysts_killed" + var_ba1fb8c1);
-        } else {
-            println("killed_by_crimson_nosferatu" + function_9e72a96(stat_name) + "catalysts_killed" + var_ba1fb8c1);
+            return;
         }
+        println("killed_by_crimson_nosferatu" + function_9e72a96(stat_name) + "catalysts_killed" + var_ba1fb8c1);
     #/
 }
 
@@ -1123,9 +1123,9 @@ function increment_challenge_stat(stat_name, amount = 1, var_b68b08b1 = 0) {
         var_ba1fb8c1 = self get_stat_global(stat_name);
         if (isdefined(self.entity_num)) {
             println("killed_by_crimson_nosferatu" + self.entity_num + "boas_gladiators_killed" + function_9e72a96(stat_name) + "catalysts_killed" + var_ba1fb8c1);
-        } else {
-            println("killed_by_crimson_nosferatu" + function_9e72a96(stat_name) + "catalysts_killed" + var_ba1fb8c1);
+            return;
         }
+        println("killed_by_crimson_nosferatu" + function_9e72a96(stat_name) + "catalysts_killed" + var_ba1fb8c1);
     #/
 }
 
@@ -1151,9 +1151,9 @@ function function_fbce465a(stat_name, amount = 1, var_b68b08b1 = 0) {
         var_ba1fb8c1 = self function_e3eb9a8b(stat_name);
         if (isdefined(self.entity_num)) {
             println("killed_by_crimson_nosferatu" + self.entity_num + "boas_gladiators_killed" + function_9e72a96(stat_name) + "catalysts_killed" + var_ba1fb8c1);
-        } else {
-            println("killed_by_crimson_nosferatu" + function_9e72a96(stat_name) + "catalysts_killed" + var_ba1fb8c1);
+            return;
         }
+        println("killed_by_crimson_nosferatu" + function_9e72a96(stat_name) + "catalysts_killed" + var_ba1fb8c1);
     #/
 }
 
@@ -1182,9 +1182,9 @@ function function_17ee4529(stat_name, amount = 1, var_4261ca42, var_b68b08b1 = 0
         var_ba1fb8c1 = self function_e3eb9a8b(stat_name);
         if (isdefined(self.entity_num)) {
             println("killed_by_crimson_nosferatu" + self.entity_num + "boas_gladiators_killed" + function_9e72a96(stat_name) + "catalysts_killed" + var_ba1fb8c1);
-        } else {
-            println("killed_by_crimson_nosferatu" + function_9e72a96(stat_name) + "catalysts_killed" + var_ba1fb8c1);
+            return;
         }
+        println("killed_by_crimson_nosferatu" + function_9e72a96(stat_name) + "catalysts_killed" + var_ba1fb8c1);
     #/
 }
 
@@ -1523,7 +1523,9 @@ function handle_death(einflictor, eattacker, weapon, *smeansofdeath) {
             entity function_8f10788e("boas_killed_by_werewolf");
             break;
         }
-    } else if (isplayer(weapon)) {
+        return;
+    }
+    if (isplayer(weapon)) {
         if (isdefined(entity.archetype)) {
             switch (entity.archetype) {
             case #"blight_father":
@@ -2016,12 +2018,12 @@ function function_c5f9ea85() {
                         player.var_f2922211 = 0;
                     }
                     player.var_f2922211++;
-                } else {
-                    if (!isdefined(player.var_a160c21d)) {
-                        player.var_a160c21d = 0;
-                    }
-                    player.var_a160c21d++;
+                    continue;
                 }
+                if (!isdefined(player.var_a160c21d)) {
+                    player.var_a160c21d = 0;
+                }
+                player.var_a160c21d++;
             }
         }
     }
@@ -2202,14 +2204,14 @@ function function_7f377150(s_event_calling_task, n_value = 1) {
             /#
                 println(function_9e72a96(level.var_6ad5a223) + "<unknown string>" + self get_stat(#"hash_3b52e51401f0229c", level.var_6ad5a223, "<unknown string>") + "<unknown string>" + function_9e72a96(s_event_calling_task.var_ad971622));
             #/
-        } else {
-            /#
-                progress = var_e4edaaf0 + n_value;
-                target = s_event_calling_task.var_e226ec4f;
-                iprintln(self.name + "<unknown string>" + function_9e72a96(s_event_calling_task.var_ad971622) + "<unknown string>" + progress + "<unknown string>" + target);
-            #/
-            self stats::inc_stat(#"hash_3b52e51401f0229c", level.var_6ad5a223, #"progress", n_value);
+            return;
         }
+        /#
+            progress = var_e4edaaf0 + n_value;
+            target = s_event_calling_task.var_e226ec4f;
+            iprintln(self.name + "<unknown string>" + function_9e72a96(s_event_calling_task.var_ad971622) + "<unknown string>" + progress + "<unknown string>" + target);
+        #/
+        self stats::inc_stat(#"hash_3b52e51401f0229c", level.var_6ad5a223, #"progress", n_value);
     }
 }
 
@@ -2258,14 +2260,14 @@ function function_55109709(s_daily_calling_task, n_value = 1) {
             /#
                 iprintln(self.name + "<unknown string>" + function_9e72a96(s_daily_calling_task.var_ad971622) + "<unknown string>" + s_daily_calling_task.n_xp + "<unknown string>");
             #/
-        } else {
-            /#
-                progress = var_e4edaaf0 + n_value;
-                target = s_daily_calling_task.var_e226ec4f;
-                iprintln(self.name + "<unknown string>" + function_9e72a96(s_daily_calling_task.var_ad971622) + "<unknown string>" + progress + "<unknown string>" + target);
-            #/
-            self stats::inc_stat(#"hash_18e3320ccf4091e5", #"progress", n_value);
+            return;
         }
+        /#
+            progress = var_e4edaaf0 + n_value;
+            target = s_daily_calling_task.var_e226ec4f;
+            iprintln(self.name + "<unknown string>" + function_9e72a96(s_daily_calling_task.var_ad971622) + "<unknown string>" + progress + "<unknown string>" + target);
+        #/
+        self stats::inc_stat(#"hash_18e3320ccf4091e5", #"progress", n_value);
     }
 }
 
@@ -2295,7 +2297,7 @@ function function_1a222bee(params) {
         case #"energy_mine_3":
         case #"energy_mine_1":
             self stats::function_622feb0d(#"hash_41adc0ca9daf6e9d", #"hash_7d6781e4032b4aa5", 1);
-            break;
+            return;
         case #"frost_blast_4":
         case #"frost_blast_5":
         case #"frost_blast":
@@ -2303,7 +2305,7 @@ function function_1a222bee(params) {
         case #"frost_blast_3":
         case #"frost_blast_2":
             self stats::function_622feb0d(#"frost_blast", #"hash_7d6781e4032b4aa5", 1);
-            break;
+            return;
         case #"hash_379869d5b6da974b":
         case #"hash_37986ad5b6da98fe":
         case #"hash_37986bd5b6da9ab1":
@@ -2311,7 +2313,7 @@ function function_1a222bee(params) {
         case #"hash_37986cd5b6da9c64":
         case #"hash_7b5a77a85b0ffab7":
             self stats::function_622feb0d(#"hash_7b5a77a85b0ffab7", #"hash_7d6781e4032b4aa5", 1);
-            break;
+            return;
         case #"hash_6319f23758cd411":
         case #"hash_6319e23758cd25e":
         case #"hash_631a023758cd5c4":
@@ -2319,7 +2321,7 @@ function function_1a222bee(params) {
         case #"hash_631a223758cd92a":
         case #"hash_1d9cb9dbd298acba":
             self stats::function_622feb0d(#"hash_1d9cb9dbd298acba", #"hash_7d6781e4032b4aa5", 1);
-            break;
+            return;
         case #"hash_2d88b4c5217c7e7c":
         case #"hash_164c43cbd0ee958":
         case #"hash_164c63cbd0eecbe":
@@ -2327,7 +2329,7 @@ function function_1a222bee(params) {
         case #"hash_164c83cbd0ef024":
         case #"hash_164c93cbd0ef1d7":
             self stats::function_622feb0d(#"hash_2d88b4c5217c7e7c", #"hash_7d6781e4032b4aa5", 1);
-            break;
+            return;
         case #"hash_43e322396554dac0":
         case #"hash_43e323396554dc73":
         case #"hash_43e326396554e18c":
@@ -2335,7 +2337,7 @@ function function_1a222bee(params) {
         case #"hash_43e329396554e6a5":
         case #"hash_55569355da0f0f68":
             self stats::function_622feb0d(#"hash_55569355da0f0f68", #"hash_7d6781e4032b4aa5", 1);
-            break;
+            return;
         case #"hash_5d6f444e983b62ca":
         case #"hash_7a071b09cf16c52e":
         case #"hash_7a071c09cf16c6e1":
@@ -2343,7 +2345,7 @@ function function_1a222bee(params) {
         case #"hash_7a071e09cf16ca47":
         case #"hash_7a071f09cf16cbfa":
             self stats::function_622feb0d(#"hash_5d6f444e983b62ca", #"hash_7d6781e4032b4aa5", 1);
-            break;
+            return;
         case #"hash_3d62bdc92bbcaf5f":
         case #"hash_148e5880a4f4d46f":
         case #"hash_3d62b9c92bbca893":
@@ -2351,16 +2353,16 @@ function function_1a222bee(params) {
         case #"hash_3d62bbc92bbcabf9":
         case #"hash_3d62bcc92bbcadac":
             self stats::function_622feb0d(#"hash_148e5880a4f4d46f", #"hash_7d6781e4032b4aa5", 1);
-            break;
+            return;
         case #"frag_grenade":
             self stats::function_622feb0d(#"eq_frag_grenade", #"hash_7d6781e4032b4aa5", 1);
-            break;
+            return;
         case #"hash_12f078ddc9b913c3":
             self stats::function_622feb0d(#"nightingale", #"hash_7d6781e4032b4aa5", 1);
-            break;
+            return;
         default:
             self stats::function_622feb0d(params.item.var_a6762160.weapon.statname, #"hash_7d6781e4032b4aa5", 1);
-            break;
+            return;
         }
     }
 }

@@ -111,11 +111,11 @@ function function_1079747f(localclientnum, *oldval, newval, *bnewent, *binitials
             if (viewmodelhastag(fieldname, "tag_fx_05")) {
                 self.var_75fbe496 = playviewmodelfx(fieldname, var_5f8075ff, "tag_fx_05");
             }
-        } else {
-            self util::waittill_dobj(fieldname);
-            if (self haspart(fieldname, "tag_fx_05")) {
-                self.var_410de60b = util::playfxontag(fieldname, var_c785352b, self, "tag_fx_05");
-            }
+            return;
+        }
+        self util::waittill_dobj(fieldname);
+        if (self haspart(fieldname, "tag_fx_05")) {
+            self.var_410de60b = util::playfxontag(fieldname, var_c785352b, self, "tag_fx_05");
         }
     }
 }

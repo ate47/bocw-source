@@ -73,10 +73,10 @@ function default_ondeadevent(team) {
     if (isdefined(level.teams[team])) {
         round::set_winner(getwinningteamfromloser(team));
         thread globallogic::end_round(6);
-    } else {
-        round::set_flag("tie");
-        thread globallogic::end_round(6);
+        return;
     }
+    round::set_flag("tie");
+    thread globallogic::end_round(6);
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
@@ -139,16 +139,16 @@ function default_ononeleftevent(team) {
     if (!level.teambased) {
         round::set_winner(globallogic_score::gethighestscoringplayer());
         thread globallogic::end_round(6);
-    } else {
-        foreach (player in level.players) {
-            if (!isalive(player)) {
-                continue;
-            }
-            if (!isdefined(player.pers[#"team"]) || player.pers[#"team"] != team) {
-                continue;
-            }
-            player globallogic_audio::leader_dialog_on_player("sudden_death");
+        return;
+    }
+    foreach (player in level.players) {
+        if (!isalive(player)) {
+            continue;
         }
+        if (!isdefined(player.pers[#"team"]) || player.pers[#"team"] != team) {
+            continue;
+        }
+        player globallogic_audio::leader_dialog_on_player("sudden_death");
     }
 }
 

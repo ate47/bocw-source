@@ -136,10 +136,10 @@ function state_death_update(params) {
             break;
         }
         self vehicle_death::deletewhensafe();
-    } else {
-        params.death_type = death_type;
-        vehicle_ai::defaultstate_death_update(params);
+        return;
     }
+    params.death_type = death_type;
+    vehicle_ai::defaultstate_death_update(params);
 }
 
 // Namespace namespace_71e6f25/namespace_71e6f25
@@ -219,7 +219,7 @@ function function_4e26188c() {
         if (friend !== self && !vehicle_ai::entityisarchetype(friend, #"hash_1052c2bf3e49b03") && isalive(friend)) {
             if (self cansee(friend)) {
                 guard(friend);
-                break;
+                return;
             }
             if (!isalive(self.host)) {
                 guard(friend);
@@ -252,7 +252,8 @@ function test_get_back_queryresult(queryresult) {
         testresult = test_get_back_point(point.origin);
         if (testresult == 1) {
             return point.origin;
-        } else if (testresult == 0) {
+        }
+        if (testresult == 0) {
             waitframe(1);
         }
     }
@@ -369,9 +370,9 @@ function state_guard_update(*params) {
             } else {
                 wait(0.5);
             }
-        } else {
-            wait(0.5);
+            continue;
         }
+        wait(0.5);
     }
 }
 

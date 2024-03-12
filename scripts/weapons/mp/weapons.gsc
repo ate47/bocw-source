@@ -90,7 +90,9 @@ function bestweapon_get() {
                 best_key = key;
                 most_kills = kill_count;
                 most_spawns = spawned_with;
-            } else if (kill_count == most_kills && spawned_with > most_spawns) {
+                continue;
+            }
+            if (kill_count == most_kills && spawned_with > most_spawns) {
                 best_index = index;
                 best_key = key;
                 most_kills = kill_count;

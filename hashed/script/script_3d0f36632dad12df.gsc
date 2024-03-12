@@ -70,15 +70,15 @@ function function_cc03b772(localclientnum, *oldval, newval, *bnewent, *binitials
         if (isdefined(level.squadspawnactive)) {
             [[ level.squadspawnactive ]](fieldname);
         }
-    } else {
-        level thread function_c97b609d(fieldname);
-        level thread function_48811bf4(fieldname);
-        setsoundcontext("spawn_select_screen", "");
-        function_ed62c9c2("uin_overhead_map", 2);
-        soundstoploopemitter(#"hash_5ef60d86d79dc9a1", (0, 0, 0));
-        if (isdefined(level.var_6ed4a19b)) {
-            [[ level.var_6ed4a19b ]](fieldname);
-        }
+        return;
+    }
+    level thread function_c97b609d(fieldname);
+    level thread function_48811bf4(fieldname);
+    setsoundcontext("spawn_select_screen", "");
+    function_ed62c9c2("uin_overhead_map", 2);
+    soundstoploopemitter(#"hash_5ef60d86d79dc9a1", (0, 0, 0));
+    if (isdefined(level.var_6ed4a19b)) {
+        [[ level.var_6ed4a19b ]](fieldname);
     }
 }
 

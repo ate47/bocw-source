@@ -154,12 +154,12 @@ function function_a4b27d0e() {
     self.zombie_move_speed = isdefined(level.doa.var_13e8f9c9) ? level.doa.var_13e8f9c9 : "run";
     if (isdefined(level.doa.var_a598a835)) {
         self.spawnloc = [[ level.doa.var_a598a835 ]]();
-    } else {
-        /#
-            assert(isdefined(level.doa.var_39e3fa99));
-        #/
-        self.spawnloc = [[ level.doa.var_39e3fa99 ]]->function_59fc184c();
+        return;
     }
+    /#
+        assert(isdefined(level.doa.var_39e3fa99));
+    #/
+    self.spawnloc = [[ level.doa.var_39e3fa99 ]]->function_59fc184c();
 }
 
 // Namespace namespace_b5ca279a/namespace_b5ca279a
@@ -403,11 +403,11 @@ function function_a86c6bf8(*einflictor, *eattacker, idamage, *idflags, *smeansof
         self namespace_ec06fe4a::function_4f72130c();
         self.takedamage = 0;
         self.aioverridedamage = undefined;
-        orb = namespace_ec06fe4a::spawnmodel(self.origin);
-        if (isdefined(orb)) {
-            orb thread namespace_ec06fe4a::function_52afe5df(0.4);
-            orb namespace_83eb6304::function_3ecfde67("shadow_die");
-            orb namespace_e32bb68::function_3a59ec34("zmb_doa_ai_smokeman_death");
+        var_956de39f = namespace_ec06fe4a::spawnmodel(self.origin);
+        if (isdefined(var_956de39f)) {
+            var_956de39f thread namespace_ec06fe4a::function_52afe5df(0.4);
+            var_956de39f namespace_83eb6304::function_3ecfde67("shadow_die");
+            var_956de39f namespace_e32bb68::function_3a59ec34("zmb_doa_ai_smokeman_death");
         }
     }
     return surfacenormal;

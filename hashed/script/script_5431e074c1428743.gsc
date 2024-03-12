@@ -177,11 +177,11 @@ function private function_8528a766(var_fc96f513) {
         var_1d5a6fd3.var_a1aba651 = is_true(takedown.var_a1aba651) ? 1 : undefined;
         level.var_c8b4a78a.var_c8b4a78a[takedown.name] = var_1d5a6fd3;
         level.var_c8b4a78a.maxrange = max(isdefined(level.var_c8b4a78a.maxrange) ? level.var_c8b4a78a.maxrange : 0, isdefined(takedown.maxrange) ? takedown.maxrange : 0);
-    } else {
-        /#
-            assertmsg("<unknown string>" + takedown.name + "<unknown string>");
-        #/
+        return;
     }
+    /#
+        assertmsg("<unknown string>" + takedown.name + "<unknown string>");
+    #/
 }
 
 // Namespace namespace_9c83b58d/namespace_9c83b58d
@@ -557,8 +557,11 @@ function function_5ca78f5a(action) {
             }
             var_2dcf841c = function_3c43bd2a(action, enemy, self);
             if (isdefined(enemy.var_7b026ceb)) {
-                jumpcmp(distance2dsquared(enemy.origin, self.origin) < function_a3f6cdac(enemy.var_7b026ceb)) LOC_00000320;
-            } else if (isdefined(var_2dcf841c.scene)) {
+                if (distance2dsquared(enemy.origin, self.origin) > function_a3f6cdac(enemy.var_7b026ceb)) {
+                    continue;
+                }
+            }
+            if (isdefined(var_2dcf841c.scene)) {
                 dir = self function_146a3d56(enemy);
                 dot = vectordot(fwd, dir);
                 if (dot > best_dot) {
@@ -721,7 +724,6 @@ function function_c943b729(*action, takedown, player) {
         break;
     default:
         return 0;
-        break;
     }
     if (isdefined(takedown.var_ad61bf60) && isdefined(takedown.var_8f4fda5a)) {
         var_d96cb66d = anglestoright(self gettagangles("j_head")) * -1;
@@ -1301,7 +1303,9 @@ function private function_ac7d52ad(show) {
                         dist = distancesquared(var_2501cbe2, guy.origin);
                         if (dist < function_a3f6cdac(level.stealth.corpse.dists[#"hash_17048ea9eae820a7"])) {
                             line(guy.origin, var_2501cbe2, var_36abd3);
-                        } else if (dist < function_a3f6cdac(level.stealth.corpse.dists[#"hash_256cce7120ab0043"])) {
+                            continue;
+                        }
+                        if (dist < function_a3f6cdac(level.stealth.corpse.dists[#"hash_256cce7120ab0043"])) {
                             line(guy.origin, var_2501cbe2, color);
                         }
                     }

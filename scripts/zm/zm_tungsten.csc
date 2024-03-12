@@ -139,9 +139,9 @@ function setup_personality_character_exerts() {
 function function_c2858d41(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump) {
         function_f58e42ae(fieldname, 1);
-    } else {
-        function_f58e42ae(fieldname, 0);
+        return;
     }
+    function_f58e42ae(fieldname, 0);
 }
 
 // Namespace zm_tungsten/zm_tungsten
@@ -214,11 +214,11 @@ function function_6b66a9a3(*localclientnum, *oldval, newval, *bnewent, *binitial
         forcestreamxmodel(#"p9_fxp_zm_teleport_tunnel");
         forcestreamxmodel(#"p9_fxp_zm_teleport_tunnel_edge");
         function_3385d776(#"zombie/fx9_aether_tear_portal_tunnel_1p");
-    } else {
-        stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel");
-        stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel_edge");
-        function_c22a1ca2(#"zombie/fx9_aether_tear_portal_tunnel_1p");
+        return;
     }
+    stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel");
+    stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel_edge");
+    function_c22a1ca2(#"zombie/fx9_aether_tear_portal_tunnel_1p");
 }
 
 // Namespace zm_tungsten/zm_tungsten
@@ -238,7 +238,7 @@ function function_fd7a1df2(*localclientnum, *oldval, newval, *bnewent, *binitial
         stopforcestreamingxmodel(#"p9_fxp_zm_portal_aether_modular_dest_amerika_to_observation_from_under");
         stopforcestreamingxmodel(#"hash_1d67a5d0f60e1ea");
         stopforcestreamingxmodel(#"hash_697445b9607e9d53");
-        break;
+        return;
     case 1:
         forcestreamxmodel(#"hash_76dd4f827daef371");
         forcestreamxmodel(#"hash_72d2ae42e9973cad");
@@ -246,7 +246,7 @@ function function_fd7a1df2(*localclientnum, *oldval, newval, *bnewent, *binitial
         stopforcestreamingxmodel(#"hash_2f9ea46c29003241");
         stopforcestreamingxmodel(#"hash_1d67a5d0f60e1ea");
         stopforcestreamingxmodel(#"hash_697445b9607e9d53");
-        break;
+        return;
     case 2:
         forcestreamxmodel(#"hash_5c35207bb157a661");
         forcestreamxmodel(#"hash_2f9ea46c29003241");
@@ -254,7 +254,7 @@ function function_fd7a1df2(*localclientnum, *oldval, newval, *bnewent, *binitial
         stopforcestreamingxmodel(#"hash_72d2ae42e9973cad");
         stopforcestreamingxmodel(#"hash_5d6f46eb355ec1cb");
         stopforcestreamingxmodel(#"hash_62e92c3479ce24e2");
-        break;
+        return;
     case 3:
         forcestreamxmodel(#"hash_5d6f46eb355ec1cb");
         forcestreamxmodel(#"hash_62e92c3479ce24e2");
@@ -262,7 +262,7 @@ function function_fd7a1df2(*localclientnum, *oldval, newval, *bnewent, *binitial
         stopforcestreamingxmodel(#"hash_2f9ea46c29003241");
         stopforcestreamingxmodel(#"hash_7689d161576092c2");
         stopforcestreamingxmodel(#"p9_fxp_zm_portal_aether_modular_dest_amerika_to_observation_from_under");
-        break;
+        return;
     case 4:
         forcestreamxmodel(#"hash_7689d161576092c2");
         forcestreamxmodel(#"p9_fxp_zm_portal_aether_modular_dest_amerika_to_observation_from_under");
@@ -270,7 +270,7 @@ function function_fd7a1df2(*localclientnum, *oldval, newval, *bnewent, *binitial
         stopforcestreamingxmodel(#"hash_62e92c3479ce24e2");
         stopforcestreamingxmodel(#"hash_1d67a5d0f60e1ea");
         stopforcestreamingxmodel(#"hash_697445b9607e9d53");
-        break;
+        return;
     case 5:
         forcestreamxmodel(#"hash_1d67a5d0f60e1ea");
         forcestreamxmodel(#"hash_697445b9607e9d53");
@@ -278,7 +278,7 @@ function function_fd7a1df2(*localclientnum, *oldval, newval, *bnewent, *binitial
         stopforcestreamingxmodel(#"p9_fxp_zm_portal_aether_modular_dest_amerika_to_observation_from_under");
         stopforcestreamingxmodel(#"hash_76dd4f827daef371");
         stopforcestreamingxmodel(#"hash_72d2ae42e9973cad");
-        break;
+        return;
     }
 }
 
@@ -309,13 +309,15 @@ function function_949d138a(localclientnum, *oldval, newval, *bnewent, *binitials
         self postfx::playpostfxbundle(#"hash_7c5d3ac35353f95c");
         var_3f79908d = playtagfxset(fieldname, "fx9_stakeout_screen_drop_distort", self);
         self thread function_f524c7a5(fieldname, var_3f79908d);
-    } else if (bwasdemojump == 2) {
+        return;
+    }
+    if (bwasdemojump == 2) {
         self postfx::stoppostfxbundle(#"hash_7c5d3ac35353f95c");
         self notify(#"hash_31ca7d9fa1b055e0");
-    } else {
-        self postfx::exitpostfxbundle(#"hash_7c5d3ac35353f95c");
-        self notify(#"hash_31ca7d9fa1b055e0");
+        return;
     }
+    self postfx::exitpostfxbundle(#"hash_7c5d3ac35353f95c");
+    self notify(#"hash_31ca7d9fa1b055e0");
 }
 
 // Namespace zm_tungsten/zm_tungsten
@@ -348,17 +350,17 @@ function function_996f5d0f(localclientnum, *oldval, newval, *bnewent, *binitials
         if (!isdefined(self.var_79abcb8a)) {
             self.var_79abcb8a = playfxoncamera(fieldname, #"hash_4c2a73ebbc177abd");
         }
-    } else {
-        if (isdefined(self.var_ca8b5a42)) {
-            foreach (n_fx in self.var_ca8b5a42) {
-                stopfx(fieldname, n_fx);
-            }
-            self.var_ca8b5a42 = undefined;
+        return;
+    }
+    if (isdefined(self.var_ca8b5a42)) {
+        foreach (n_fx in self.var_ca8b5a42) {
+            stopfx(fieldname, n_fx);
         }
-        if (isdefined(self.var_79abcb8a)) {
-            stopfx(fieldname, self.var_79abcb8a);
-            self.var_79abcb8a = undefined;
-        }
+        self.var_ca8b5a42 = undefined;
+    }
+    if (isdefined(self.var_79abcb8a)) {
+        stopfx(fieldname, self.var_79abcb8a);
+        self.var_79abcb8a = undefined;
     }
 }
 
@@ -378,12 +380,16 @@ function function_10537d85(localclientnum, *oldval, newval, *bnewent, *binitials
     }
     if (bwasdemojump == 1) {
         self thread function_40ef083a();
-    } else if (bwasdemojump == 2) {
+        return;
+    }
+    if (bwasdemojump == 2) {
         if (!isdefined(self.var_38a54dff)) {
             self playsound(fieldname, #"hash_41c806945939eed6");
             self.var_38a54dff = self playloopsound(#"hash_518f551268d347fa");
         }
-    } else if (isdefined(self.var_38a54dff)) {
+        return;
+    }
+    if (isdefined(self.var_38a54dff)) {
         self playsound(fieldname, #"hash_2f82db47fea25953");
         self stoploopsound(self.var_38a54dff);
         self.var_38a54dff = undefined;
@@ -420,7 +426,9 @@ function function_44dc8dc9(localclientnum, *oldval, newval, *bnewent, *binitials
         if (!function_148ccc79(fieldname, #"hash_5e358762e4678906")) {
             function_a837926b(fieldname, #"hash_5e358762e4678906");
         }
-    } else if (function_148ccc79(fieldname, #"hash_5e358762e4678906")) {
+        return;
+    }
+    if (function_148ccc79(fieldname, #"hash_5e358762e4678906")) {
         codestoppostfxbundlelocal(fieldname, #"hash_5e358762e4678906");
     }
 }
@@ -434,11 +442,11 @@ function function_167fc35(*localclientnum, *oldval, newval, *bnewent, *binitials
         forcestreamxmodel(#"p9_fxp_zm_teleport_tunnel");
         forcestreamxmodel(#"p9_fxp_zm_teleport_tunnel_edge");
         function_3385d776(#"zombie/fx9_aether_tear_portal_tunnel_1p");
-    } else {
-        stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel");
-        stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel_edge");
-        function_c22a1ca2(#"zombie/fx9_aether_tear_portal_tunnel_1p");
+        return;
     }
+    stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel");
+    stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel_edge");
+    function_c22a1ca2(#"zombie/fx9_aether_tear_portal_tunnel_1p");
 }
 
 // Namespace zm_tungsten/zm_tungsten
@@ -450,11 +458,11 @@ function function_182ea9e4(*localclientnum, *oldval, newval, *bnewent, *binitial
         forcestreamxmodel(#"hash_69c0563efeddad47");
         forcestreamxmodel(#"hash_2cc98ec29f9d2d1d");
         forcestreamxmodel(#"hash_26730916f0bb7003");
-    } else {
-        stopforcestreamingxmodel(#"hash_69c0563efeddad47");
-        stopforcestreamingxmodel(#"hash_2cc98ec29f9d2d1d");
-        stopforcestreamingxmodel(#"hash_26730916f0bb7003");
+        return;
     }
+    stopforcestreamingxmodel(#"hash_69c0563efeddad47");
+    stopforcestreamingxmodel(#"hash_2cc98ec29f9d2d1d");
+    stopforcestreamingxmodel(#"hash_26730916f0bb7003");
 }
 
 // Namespace zm_tungsten/zm_tungsten
@@ -492,28 +500,28 @@ function function_a146ac0f(localclientnum, *oldval, newval, *bnewent, *binitials
                 s_portal.var_82f9314e[fieldname] = var_c39b3c14;
             }
         }
-    } else {
-        foreach (s_portal in var_328baab5) {
-            if (!isdefined(s_portal.var_82f9314e)) {
-                s_portal.var_82f9314e = [];
-            }
-            var_c39b3c14 = s_portal.var_82f9314e[fieldname];
-            if (isdefined(var_c39b3c14.var_68cf83c)) {
-                var_c39b3c14 playsound(fieldname, #"hash_10ab48d5915334e");
-                var_c39b3c14 stoploopsound(var_c39b3c14.var_68cf83c);
-                var_c39b3c14.var_68cf83c = undefined;
-            }
-            if (isdefined(var_c39b3c14.var_fa63b371)) {
-                var_c39b3c14 playsound(fieldname, #"hash_10ab48d5915334e");
-                playfx(fieldname, #"hash_2786498a222adb04", var_c39b3c14.origin, anglestoforward(var_c39b3c14.angles), anglestoup(var_c39b3c14.angles));
-                killfx(fieldname, var_c39b3c14.var_fa63b371);
-                var_c39b3c14.var_fa63b371 = undefined;
-            }
-            if (isdefined(var_c39b3c14)) {
-                var_c39b3c14 delete();
-            }
-            s_portal.var_82f9314e[fieldname] = undefined;
+        return;
+    }
+    foreach (s_portal in var_328baab5) {
+        if (!isdefined(s_portal.var_82f9314e)) {
+            s_portal.var_82f9314e = [];
         }
+        var_c39b3c14 = s_portal.var_82f9314e[fieldname];
+        if (isdefined(var_c39b3c14.var_68cf83c)) {
+            var_c39b3c14 playsound(fieldname, #"hash_10ab48d5915334e");
+            var_c39b3c14 stoploopsound(var_c39b3c14.var_68cf83c);
+            var_c39b3c14.var_68cf83c = undefined;
+        }
+        if (isdefined(var_c39b3c14.var_fa63b371)) {
+            var_c39b3c14 playsound(fieldname, #"hash_10ab48d5915334e");
+            playfx(fieldname, #"hash_2786498a222adb04", var_c39b3c14.origin, anglestoforward(var_c39b3c14.angles), anglestoup(var_c39b3c14.angles));
+            killfx(fieldname, var_c39b3c14.var_fa63b371);
+            var_c39b3c14.var_fa63b371 = undefined;
+        }
+        if (isdefined(var_c39b3c14)) {
+            var_c39b3c14 delete();
+        }
+        s_portal.var_82f9314e[fieldname] = undefined;
     }
 }
 
@@ -524,7 +532,9 @@ function function_a146ac0f(localclientnum, *oldval, newval, *bnewent, *binitials
 function function_1d123acd(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump == 1) {
         level.var_d58a6548 = 45;
-    } else if (bwasdemojump == 2) {
+        return;
+    }
+    if (bwasdemojump == 2) {
         level.var_d58a6548 = 30;
     }
 }
@@ -536,13 +546,13 @@ function function_1d123acd(*localclientnum, *oldval, newval, *bnewent, *binitial
 function function_5bc9772e(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump) {
         self.var_cdd8bedf = playfx(fieldname, #"hash_240b951190d035ec", self.origin);
-    } else {
-        self playsound(fieldname, #"zmb_powerup_resource_small_pickup");
-        if (isdefined(self.var_cdd8bedf)) {
-            killfx(fieldname, self.var_cdd8bedf);
-        }
-        playfx(fieldname, #"hash_ea17935f6555b31", self.origin);
+        return;
     }
+    self playsound(fieldname, #"zmb_powerup_resource_small_pickup");
+    if (isdefined(self.var_cdd8bedf)) {
+        killfx(fieldname, self.var_cdd8bedf);
+    }
+    playfx(fieldname, #"hash_ea17935f6555b31", self.origin);
 }
 
 // Namespace zm_tungsten/zm_tungsten
@@ -552,9 +562,9 @@ function function_5bc9772e(localclientnum, *oldval, newval, *bnewent, *binitials
 function function_51ee271b(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump) {
         util::function_8eb5d4b0(3500, 0);
-    } else {
-        util::function_8eb5d4b0(3500, 2.5);
+        return;
     }
+    util::function_8eb5d4b0(3500, 2.5);
 }
 
 // Namespace zm_tungsten/zm_tungsten
@@ -564,9 +574,9 @@ function function_51ee271b(*localclientnum, *oldval, newval, *bnewent, *binitial
 function function_5414ee31(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump) {
         function_3385d776(#"hash_122a51c7a09dab6b");
-    } else {
-        function_c22a1ca2(#"hash_122a51c7a09dab6b");
+        return;
     }
+    function_c22a1ca2(#"hash_122a51c7a09dab6b");
 }
 
 // Namespace zm_tungsten/zm_tungsten
@@ -576,9 +586,9 @@ function function_5414ee31(*localclientnum, *oldval, newval, *bnewent, *binitial
 function function_eff937db(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self function_c2e69953(1);
-    } else {
-        self function_c2e69953(0);
+        return;
     }
+    self function_c2e69953(0);
 }
 
 // Namespace zm_tungsten/zm_tungsten
@@ -628,16 +638,16 @@ function function_1a91c8d3(localclientnum, oldval, newval, *bnewent, *binitialsn
         function_12f0cc0d("xanim_mm_brawler_" + gender + "_stand_idle");
         function_12f0cc0d("xanim_mm_brawler_" + gender + "_standjump_fall_loop_idle");
         function_12f0cc0d("xanim_mm_brawler_" + gender + "_standjump_land_2f_up");
-    } else {
-        gender = "male";
-        if (fieldname == 2) {
-            gender = "fem";
-            function_4b51b406("xanim_mm_brawler_" + gender + "_standjump_fall_loop");
-        }
-        function_4b51b406("xanim_mm_brawler_" + gender + "_stand_idle");
-        function_4b51b406("xanim_mm_brawler_" + gender + "_standjump_fall_loop_idle");
-        function_4b51b406("xanim_mm_brawler_" + gender + "_standjump_land_2f_up");
+        return;
     }
+    gender = "male";
+    if (fieldname == 2) {
+        gender = "fem";
+        function_4b51b406("xanim_mm_brawler_" + gender + "_standjump_fall_loop");
+    }
+    function_4b51b406("xanim_mm_brawler_" + gender + "_stand_idle");
+    function_4b51b406("xanim_mm_brawler_" + gender + "_standjump_fall_loop_idle");
+    function_4b51b406("xanim_mm_brawler_" + gender + "_standjump_land_2f_up");
 }
 
 // Namespace zm_tungsten/zm_tungsten
@@ -658,23 +668,23 @@ function function_9163efd4(localclientnum, *oldval, newval, *bnewent, *binitials
         if (!isdefined(self.var_d78780c8)) {
             self.var_d78780c8 = function_239993de(fieldname, #"hash_64928348a5830b81", self, "tag_ground");
         }
-    } else {
-        if (isdefined(self.var_ba396b8a)) {
-            deletefx(fieldname, self.var_ba396b8a);
-            self.var_ba396b8a = undefined;
-        }
-        if (isdefined(self.var_522dfce9)) {
-            deletefx(fieldname, self.var_522dfce9);
-            self.var_522dfce9 = undefined;
-        }
-        if (isdefined(self.var_ddbb1a2b)) {
-            deletefx(fieldname, self.var_ddbb1a2b);
-            self.var_ddbb1a2b = undefined;
-        }
-        if (isdefined(self.var_d78780c8)) {
-            deletefx(fieldname, self.var_d78780c8);
-            self.var_d78780c8 = undefined;
-        }
+        return;
+    }
+    if (isdefined(self.var_ba396b8a)) {
+        deletefx(fieldname, self.var_ba396b8a);
+        self.var_ba396b8a = undefined;
+    }
+    if (isdefined(self.var_522dfce9)) {
+        deletefx(fieldname, self.var_522dfce9);
+        self.var_522dfce9 = undefined;
+    }
+    if (isdefined(self.var_ddbb1a2b)) {
+        deletefx(fieldname, self.var_ddbb1a2b);
+        self.var_ddbb1a2b = undefined;
+    }
+    if (isdefined(self.var_d78780c8)) {
+        deletefx(fieldname, self.var_d78780c8);
+        self.var_d78780c8 = undefined;
     }
 }
 
@@ -688,8 +698,8 @@ function function_61d33efe(localclientnum, *oldval, newval, *bnewent, *binitials
     }
     if (bwastimejump) {
         forcestreamxmodel("veh_t9_zm_arc_xd");
-    } else {
-        stopforcestreamingxmodel("veh_t9_zm_arc_xd");
+        return;
     }
+    stopforcestreamingxmodel("veh_t9_zm_arc_xd");
 }
 

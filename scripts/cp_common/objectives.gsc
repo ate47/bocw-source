@@ -140,9 +140,9 @@ function area(var_4cfa0710, var_8343acf6, radius, var_690561dc, var_87dc4de8, sh
 function goto(var_4cfa0710, position, var_690561dc, var_87dc4de8, show_waypoint, var_c3056ba3 = #"hash_7057d3992f70bf08") {
     if (isdefined(mission.var_c68f10d0[var_4cfa0710])) {
         function_60645c02(var_4cfa0710, position);
-    } else {
-        set(var_c3056ba3, position, 0, var_4cfa0710, var_690561dc, var_87dc4de8, show_waypoint);
+        return;
     }
+    set(var_c3056ba3, position, 0, var_4cfa0710, var_690561dc, var_87dc4de8, show_waypoint);
 }
 
 // Namespace objectives/objectives
@@ -191,7 +191,9 @@ function remove(str_objective, a_targets) {
                 gameobjects::release_obj_id(n_obj_id);
             }
         }
-    } else if (isdefined(mission.var_c68f10d0[str_objective])) {
+        return;
+    }
+    if (isdefined(mission.var_c68f10d0[str_objective])) {
         n_obj_id = mission.var_c68f10d0[str_objective];
         mission.var_c68f10d0[str_objective] = undefined;
         namespace_96850e69::function_80af6d(n_obj_id);
@@ -238,13 +240,15 @@ function function_64eaa790(str_objective, var_8343acf6, radius, var_4003470b = 1
             } else {
                 thread function_634c16ef(str_objective, var_8343acf6, radius, var_4003470b);
             }
-        } else if (isdefined(radius)) {
-            thread function_37cf9b17(str_objective, var_8343acf6, radius, var_4003470b);
-        } else {
-            /#
-                assertmsg("<unknown string>");
-            #/
+            return;
         }
+        if (isdefined(radius)) {
+            thread function_37cf9b17(str_objective, var_8343acf6, radius, var_4003470b);
+            return;
+        }
+        /#
+            assertmsg("<unknown string>");
+        #/
     }
 }
 
@@ -279,7 +283,9 @@ function complete(str_objective, a_targets, var_834e72f6 = 0) {
                 target notify("complete_objective_" + str_objective);
             }
         }
-    } else if (isdefined(mission.var_c68f10d0[str_objective])) {
+        return;
+    }
+    if (isdefined(mission.var_c68f10d0[str_objective])) {
         n_obj_id = mission.var_c68f10d0[str_objective];
         objective_setstate(n_obj_id, "done");
         if (namespace_96850e69::function_1fe5876a(n_obj_id)) {
@@ -287,10 +293,10 @@ function complete(str_objective, a_targets, var_834e72f6 = 0) {
             if (var_834e72f6) {
                 namespace_96850e69::function_79ed6d2(var_834e72f6);
             }
-        } else {
-            gameobjects::release_obj_id(n_obj_id);
-            mission.var_c68f10d0[str_objective] = undefined;
+            return;
         }
+        gameobjects::release_obj_id(n_obj_id);
+        mission.var_c68f10d0[str_objective] = undefined;
     }
 }
 
@@ -313,9 +319,9 @@ function show(str_objective, a_targets, e_player) {
     foreach (n_objective_id in a_n_objective_ids) {
         if (isdefined(e_player)) {
             objective_setvisibletoplayer(n_objective_id, e_player);
-        } else {
-            objective_setvisibletoall(n_objective_id);
+            continue;
         }
+        objective_setvisibletoall(n_objective_id);
     }
 }
 
@@ -328,9 +334,9 @@ function hide(str_objective, a_targets, e_player) {
     foreach (n_objective_id in a_n_objective_ids) {
         if (isdefined(e_player)) {
             objective_setinvisibletoplayer(n_objective_id, e_player);
-        } else {
-            objective_setinvisibletoall(n_objective_id);
+            continue;
         }
+        objective_setinvisibletoall(n_objective_id);
     }
 }
 
@@ -504,9 +510,9 @@ function function_67f87f80(str_objective, a_targets, text) {
         foreach (target in a_targets) {
             thread namespace_96850e69::function_49dec5b(str_objective, target, text);
         }
-    } else {
-        thread namespace_96850e69::function_49dec5b(str_objective, undefined, text);
+        return;
     }
+    thread namespace_96850e69::function_49dec5b(str_objective, undefined, text);
 }
 
 // Namespace objectives/objectives
@@ -523,9 +529,9 @@ function function_fb65245c(str_objective, a_targets, icon) {
         foreach (target in a_targets) {
             thread namespace_96850e69::function_fdeb5e85(str_objective, target, icon);
         }
-    } else {
-        thread namespace_96850e69::function_fdeb5e85(str_objective, undefined, icon);
+        return;
     }
+    thread namespace_96850e69::function_fdeb5e85(str_objective, undefined, icon);
 }
 
 // Namespace objectives/objectives
@@ -615,9 +621,9 @@ function private function_5f2c6084(var_75de6891, str_objective, var_4003470b) {
     if (var_4003470b) {
         if (var_75de6891) {
             namespace_96850e69::function_b6d41b41(#"hash_55ff57573b3951ef", 1);
-        } else {
-            namespace_96850e69::function_be5b472b();
+            return;
         }
+        namespace_96850e69::function_be5b472b();
     }
 }
 

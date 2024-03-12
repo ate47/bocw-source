@@ -139,9 +139,8 @@ function private function_2205f6bf(*player) {
     state = self vehicle_ai::get_current_state();
     if (state === "landed" || state === "off" || state === "scripted") {
         return;
-    } else {
-        self function_d929b41();
     }
+    self function_d929b41();
 }
 
 // Namespace namespace_f36ad2eb/namespace_f36ad2eb
@@ -157,7 +156,9 @@ function private function_1b957284(params) {
     }
     if (eventstruct.seat_index === 1 || eventstruct.seat_index === 2) {
         player thread function_5bce3f3a(self, eventstruct.seat_index);
-    } else if (eventstruct.seat_index === 0) {
+        return;
+    }
+    if (eventstruct.seat_index === 0) {
         /#
             player thread function_cbc5f534(self);
         #/
@@ -195,7 +196,9 @@ function private function_e2d16bde(params) {
     }
     if (eventstruct.seat_index === 1 || eventstruct.seat_index === 2) {
         player thread function_5bce3f3a(self, eventstruct.seat_index);
-    } else if (eventstruct.seat_index === 0) {
+        return;
+    }
+    if (eventstruct.seat_index === 0) {
         /#
             player thread function_cbc5f534(self);
         #/
@@ -219,9 +222,7 @@ function private function_c0745670(params) {
         self cancelaimove();
         self returnplayercontrol();
         self function_803e9bf3(1);
-        goto LOC_000000f6;
     }
-LOC_000000f6:
 }
 
 // Namespace namespace_f36ad2eb/namespace_f36ad2eb
@@ -464,7 +465,7 @@ function function_b705c816(params) {
         if (is_true(self.jammed)) {
             params.var_c1273f91 = 1;
             self vehicle_ai::set_state("off", params);
-            break;
+            return;
         }
         if (is_true(self.var_b3e4af16)) {
             waitframe(1);
@@ -475,12 +476,12 @@ function function_b705c816(params) {
             params.no_falling = 1;
             params.var_c1273f91 = 1;
             self vehicle_ai::set_state("off", params);
-            break;
+            return;
         }
         move = player getnormalizedmovement();
         if (player vehiclemoveupbuttonpressed() || isdefined(move) && (abs(move[0]) > 0.2 || abs(move[1]) > 0.2)) {
             self vehicle_ai::set_state("driving");
-            break;
+            return;
         }
         waitframe(1);
     }
@@ -544,7 +545,9 @@ function private function_479389f3() {
     foreach (tag, trace in var_df47b913) {
         if (isdefined(trace[#"entity"])) {
             var_d643c4fc = 1;
-        } else if (trace[#"fraction"] < 1) {
+            continue;
+        }
+        if (trace[#"fraction"] < 1) {
             var_b0e8278f = var_b0e8278f + var_33a206d0[tag];
             var_4c962569 = var_4c962569 + trace[#"position"][2] - var_33a206d0[tag][2];
             avgnormal = avgnormal + trace[#"normal"];
@@ -555,7 +558,9 @@ function private function_479389f3() {
     foreach (tag, trace in var_dc8469e2) {
         if (isdefined(trace[#"entity"])) {
             var_d643c4fc = 1;
-        } else if (trace[#"fraction"] < 1) {
+            continue;
+        }
+        if (trace[#"fraction"] < 1) {
             var_b0e8278f = var_b0e8278f + var_8fc02d3b[tag];
             var_4c962569 = var_4c962569 + trace[#"position"][2] - var_8fc02d3b[tag][2];
             avgnormal = avgnormal + trace[#"normal"];
@@ -645,11 +650,15 @@ function private function_4885ce1(params) {
         } else {
             player clientfield::set_player_uimodel("vehicle.invalidLanding", 1);
         }
-    } else if (state === "landing") {
+        return;
+    }
+    if (state === "landing") {
         self function_479389f3();
         if (isdefined(self.var_67136cb0)) {
             self vehicle_ai::set_state("landed");
-        } else if (isdefined(self.var_eb4e4182)) {
+            return;
+        }
+        if (isdefined(self.var_eb4e4182)) {
             self function_9dd58750();
         }
     }
@@ -800,9 +809,13 @@ function private function_cbc5f534(chopper) {
             if (isdefined(asset.name)) {
                 if (asset.name == "<unknown string>") {
                     add(var_c3de1760, "<unknown string>");
-                } else if (asset.name == "<unknown string>") {
+                    continue;
+                }
+                if (asset.name == "<unknown string>") {
                     add(var_c3de1760, "<unknown string>");
-                } else if (asset.name == "<unknown string>") {
+                    continue;
+                }
+                if (asset.name == "<unknown string>") {
                     add(var_c3de1760, "<unknown string>");
                 }
             }

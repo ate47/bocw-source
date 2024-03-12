@@ -44,8 +44,7 @@ function private drawtraversal(traversal, entity, animation, *mocompanimblendout
     currentposition = mocompanimblendouttime.startposition;
     nextposition = currentposition;
     segments = 0;
-    segmenttime = 0;
-    while (segmenttime <= animlength) {
+    for (segmenttime = 0; segmenttime <= animlength; segmenttime = segmenttime + float(function_60d95f53()) / 1000) {
         nexttime = segmenttime + float(function_60d95f53()) / 1000;
         if (nexttime > animlength) {
             nexttime = animlength;
@@ -56,7 +55,6 @@ function private drawtraversal(traversal, entity, animation, *mocompanimblendout
             recordline(currentposition, nextposition, (1, 0.5, 0), "<unknown string>", mocompanimflag);
         #/
         currentposition = nextposition;
-        segmenttime = segmenttime + float(function_60d95f53()) / 1000;
     }
     /#
         recordsphere(nextposition, 2, (1, 0, 0), "<unknown string>", mocompanimflag);
@@ -104,8 +102,7 @@ function private drawtraversalsection(section, entity, animation, *mocompanimble
     nextposition = currentposition;
     segments = 0;
     deltatoendtotal = (0, 0, 0);
-    segmenttime = mocompanimblendouttime.starttime;
-    while (segmenttime <= mocompanimblendouttime.endtime) {
+    for (segmenttime = mocompanimblendouttime.starttime; segmenttime <= mocompanimblendouttime.endtime; segmenttime = segmenttime + float(function_60d95f53()) / 1000) {
         nexttime = segmenttime + float(function_60d95f53()) / 1000;
         if (nexttime > mocompanimblendouttime.endtime) {
             nexttime = mocompanimblendouttime.endtime;
@@ -128,7 +125,6 @@ function private drawtraversalsection(section, entity, animation, *mocompanimble
             #/
         }
         currentposition = nextposition;
-        segmenttime = segmenttime + float(function_60d95f53()) / 1000;
     }
 }
 
@@ -627,7 +623,9 @@ function mocomptraversalproceduralpivotupdate(entity, mocompanim, mocompanimblen
             var_563d78bb = (var_563d78bb[0], new_yaw, var_563d78bb[2]);
         }
         entity forceteleport(newentityorigin, var_563d78bb, 0, 0);
-    } else if (isplayer(entity)) {
+        return;
+    }
+    if (isplayer(entity)) {
         entity lerporigin(newentityorigin);
         entity setplayerangles(traversal.startangles);
     }
@@ -1364,9 +1362,9 @@ function private mocompignorepainfaceenemyinit(entity, *mocompanim, *mocompanimb
 function private mocompignorepainfaceenemyupdate(entity, mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
     if (isdefined(mocompanimflag.enemy) && mocompanimflag getanimtime(mocompduration) < 0.5) {
         mocompanimflag orientmode("face enemy");
-    } else {
-        mocompanimflag orientmode("face current");
+        return;
     }
+    mocompanimflag orientmode("face current");
 }
 
 // Namespace archetype_mocomps_utility/archetype_mocomps_utility

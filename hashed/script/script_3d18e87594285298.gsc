@@ -211,7 +211,6 @@ function function_5ebe8eba(action_name) {
             return self namespace_594b67e::function_fdff1cf3();
         case #"body_shield_grenade":
             return (self namespace_594b67e::function_fdff1cf3() && self function_a02c0e4f(self.var_edbc8698));
-            break;
         }
     }
     return 0;
@@ -531,7 +530,9 @@ function function_6794cd13(params) {
 function function_a3d6cc6(*params) {
     if (isplayer(self) && isdefined(self.takedown.body_shield.actor)) {
         self.takedown.body_shield.actor namespace_594b67e::function_b82cae8f(0, 0);
-    } else if (isactor(self)) {
+        return;
+    }
+    if (isactor(self)) {
         self namespace_594b67e::function_b82cae8f(0, 0);
     }
 }
@@ -703,7 +704,9 @@ function function_306feb88(*guy) {
                     interact.var_475b4bbe = vectortoangles(dir)[1] + 180;
                     interact animcustom(&function_adf3cfb0, &function_9e4f9044);
                 }
-            } else if (isdefined(interact.c_door)) {
+                continue;
+            }
+            if (isdefined(interact.c_door)) {
                 if (interact.c_door flag::get("locked")) {
                     continue;
                 }
@@ -714,7 +717,9 @@ function function_306feb88(*guy) {
                     continue;
                 }
                 interact.c_door thread doors::function_b29052a(player, 1, self.origin);
-            } else if (interact.classname === "script_model" && is_true(interact.allowdeath) && !isdefined(destroyed[interact getentitynumber()])) {
+                continue;
+            }
+            if (interact.classname === "script_model" && is_true(interact.allowdeath) && !isdefined(destroyed[interact getentitynumber()])) {
                 if (dot > cos(45)) {
                     var_6bd2eb91 = rotatepoint(var_c3467a5d, (0, 0, 0) - interact.angles) * -1;
                     test_point = interact getpointinbounds(var_6bd2eb91[0], var_6bd2eb91[1], var_6bd2eb91[2]);

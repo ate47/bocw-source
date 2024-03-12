@@ -108,54 +108,53 @@ function onuse(player) {
         }
         if (!var_8e862768) {
             return;
-        } else {
-            level.var_b03d5c95.var_51c14c0b stoploopsound();
-            playfxontag(#"hash_37d5882942ea39fb", level.var_b03d5c95.var_51c14c0b, "tag_origin");
-            if (level.var_41eb9e50) {
-                level.var_b03d5c95.var_51c14c0b playsound(#"hash_38547afc990cb84a");
-                level.var_b03d5c95.var_51c14c0b playloopsound(#"hash_350fcc9c7101d9b5");
-                level.var_deb2145c = undefined;
-                if (is_true(level.var_c50b705e)) {
-                    level.var_c50b705e = undefined;
+        }
+        level.var_b03d5c95.var_51c14c0b stoploopsound();
+        playfxontag(#"hash_37d5882942ea39fb", level.var_b03d5c95.var_51c14c0b, "tag_origin");
+        if (level.var_41eb9e50) {
+            level.var_b03d5c95.var_51c14c0b playsound(#"hash_38547afc990cb84a");
+            level.var_b03d5c95.var_51c14c0b playloopsound(#"hash_350fcc9c7101d9b5");
+            level.var_deb2145c = undefined;
+            if (is_true(level.var_c50b705e)) {
+                level.var_c50b705e = undefined;
+            }
+            level.var_41eb9e50 = 0;
+            level.var_b03d5c95.var_51c14c0b clientfield::set("zm_round_accelerant_fx", 1);
+            var_bbec6b17 = getentarraybytype(15);
+            foreach (zombie in var_bbec6b17) {
+                if (zombie.var_6f84b820 === #"normal" && isalive(zombie) && zombie.archetype !== #"tormentor") {
+                    zombie zombie_utility::set_zombie_run_cycle_restore_from_override();
                 }
-                level.var_41eb9e50 = 0;
-                level.var_b03d5c95.var_51c14c0b clientfield::set("zm_round_accelerant_fx", 1);
-                var_bbec6b17 = getentarraybytype(15);
-                foreach (zombie in var_bbec6b17) {
-                    if (zombie.var_6f84b820 === #"normal" && isalive(zombie) && zombie.archetype !== #"tormentor") {
-                        zombie zombie_utility::set_zombie_run_cycle_restore_from_override();
-                    }
+            }
+            level.func_get_zombie_spawn_delay = &zm_round_logic::get_zombie_spawn_delay;
+            level.func_get_delay_between_rounds = &zm_round_logic::get_delay_between_rounds;
+            activated = 0;
+            luinotifyevent(#"hash_1b98c5956f94d5c7", 1, activated);
+            clientfield::set_world_uimodel("hud_items_rampage_inducer.rampage_state", 2);
+            level.var_b03d5c95 thread function_2da3ba2e();
+            return;
+        }
+        level.var_b03d5c95.var_51c14c0b clientfield::set("zm_round_accelerant_fx", 2);
+        level.var_41eb9e50 = 1;
+        level.var_b03d5c95.var_51c14c0b playsound(#"hash_33ae1ec69258cf05");
+        level.var_b03d5c95.var_51c14c0b playloopsound(#"hash_3c36c72309bdbde8");
+        var_bbec6b17 = getentarraybytype(15);
+        foreach (zombie in var_bbec6b17) {
+            if (zombie.var_6f84b820 === #"normal" && isalive(zombie) && zombie.archetype !== #"tormentor") {
+                if (math::cointoss(level.var_44064cc6)) {
+                    zombie zombie_utility::set_zombie_run_cycle_override_value("super_sprint");
+                    continue;
                 }
-                level.func_get_zombie_spawn_delay = &zm_round_logic::get_zombie_spawn_delay;
-                level.func_get_delay_between_rounds = &zm_round_logic::get_delay_between_rounds;
-                activated = 0;
-                luinotifyevent(#"hash_1b98c5956f94d5c7", 1, activated);
-                clientfield::set_world_uimodel("hud_items_rampage_inducer.rampage_state", 2);
-                level.var_b03d5c95 thread function_2da3ba2e();
-            } else {
-                level.var_b03d5c95.var_51c14c0b clientfield::set("zm_round_accelerant_fx", 2);
-                level.var_41eb9e50 = 1;
-                level.var_b03d5c95.var_51c14c0b playsound(#"hash_33ae1ec69258cf05");
-                level.var_b03d5c95.var_51c14c0b playloopsound(#"hash_3c36c72309bdbde8");
-                var_bbec6b17 = getentarraybytype(15);
-                foreach (zombie in var_bbec6b17) {
-                    if (zombie.var_6f84b820 === #"normal" && isalive(zombie) && zombie.archetype !== #"tormentor") {
-                        if (math::cointoss(level.var_44064cc6)) {
-                            zombie zombie_utility::set_zombie_run_cycle_override_value("super_sprint");
-                        } else {
-                            zombie zombie_utility::set_zombie_run_cycle_override_value("run");
-                        }
-                    }
-                }
-                level.var_deb2145c = &zombie_move_speed_override;
-                level.func_get_zombie_spawn_delay = &function_4790457b;
-                level.func_get_delay_between_rounds = &function_ff133c1e;
-                activated = 1;
-                luinotifyevent(#"hash_1b98c5956f94d5c7", 1, activated);
-                clientfield::set_world_uimodel("hud_items_rampage_inducer.rampage_state", 1);
-                level.var_b03d5c95 thread function_2da3ba2e();
+                zombie zombie_utility::set_zombie_run_cycle_override_value("run");
             }
         }
+        level.var_deb2145c = &zombie_move_speed_override;
+        level.func_get_zombie_spawn_delay = &function_4790457b;
+        level.func_get_delay_between_rounds = &function_ff133c1e;
+        activated = 1;
+        luinotifyevent(#"hash_1b98c5956f94d5c7", 1, activated);
+        clientfield::set_world_uimodel("hud_items_rampage_inducer.rampage_state", 1);
+        level.var_b03d5c95 thread function_2da3ba2e();
     }
 }
 
@@ -208,9 +207,9 @@ function function_c540ab84(*team, player, success) {
     }
     if (is_true(success)) {
         self playsound(#"hash_3e4526a396c82250");
-    } else {
-        self playsound(#"hash_1cd12f0f1ae7b46a");
+        return;
     }
+    self playsound(#"hash_1cd12f0f1ae7b46a");
 }
 
 // Namespace namespace_d592c983/namespace_d592c983
@@ -222,13 +221,15 @@ function zombie_move_speed_override() {
     if (is_true(self.var_4439c2d9)) {
         self.zombie_move_speed_override = "walk";
         self.zombie_move_speed = "walk";
-    } else if (math::cointoss()) {
+        return;
+    }
+    if (math::cointoss()) {
         self.zombie_move_speed_override = "super_sprint";
         self.zombie_move_speed = "super_sprint";
-    } else {
-        self.zombie_move_speed_override = "run";
-        self.zombie_move_speed = "run";
+        return;
     }
+    self.zombie_move_speed_override = "run";
+    self.zombie_move_speed = "run";
 }
 
 // Namespace namespace_d592c983/namespace_d592c983

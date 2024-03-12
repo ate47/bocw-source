@@ -221,35 +221,27 @@ function _get_debug_color(str_color) {
         case #"red":
         case #"r":
             return (1, 0, 0);
-            break;
         case #"green":
         case #"g":
             return (0, 1, 0);
-            break;
         case #"b":
         case #"blue":
             return (0, 0, 1);
-            break;
         case #"yellow":
         case #"y":
             return (1, 1, 0);
-            break;
         case #"orange":
         case #"o":
             return (1, 0.5, 0);
-            break;
         case #"c":
         case #"cyan":
             return (0, 1, 1);
-            break;
         case #"purple":
         case #"p":
             return (1, 0, 1);
-            break;
         default:
             println("<unknown string>" + str_color + "<unknown string>");
             return (0, 0, 0);
-            break;
         }
     #/
 }
@@ -299,9 +291,9 @@ function draw_colornodes(array, team) {
                     if (getdvar(#"debug_colornodes", 0) == 2 && isdefined(a_team_nodes[p].script_color_allies_old)) {
                         if (isdefined(a_team_nodes[p].color_user) && isalive(a_team_nodes[p].color_user) && isdefined(a_team_nodes[p].color_user.script_forcecolor)) {
                             print3d(a_team_nodes[p].origin + vectorscale((0, 0, -1), 5), "<unknown string>" + a_team_nodes[p].script_color_allies_old, _get_debug_color(a_team_nodes[p].color_user.script_forcecolor), 0.5, 0.4);
-                        } else {
-                            print3d(a_team_nodes[p].origin + vectorscale((0, 0, -1), 5), "<unknown string>" + a_team_nodes[p].script_color_allies_old, color, 0.5, 0.4);
+                            continue;
                         }
+                        print3d(a_team_nodes[p].origin + vectorscale((0, 0, -1), 5), "<unknown string>" + a_team_nodes[p].script_color_allies_old, color, 0.5, 0.4);
                     }
                 }
             }
@@ -477,9 +469,9 @@ function goto_current_colorindex() {
     /#
         if (isbot(self)) {
             println("<unknown string>" + self.name + "<unknown string>");
-        } else {
-            println("<unknown string>" + self.export + "<unknown string>");
+            return;
         }
+        println("<unknown string>" + self.export + "<unknown string>");
     #/
 }
 
@@ -578,13 +570,13 @@ function trigger_issues_orders(color_team, team) {
         self waittill(#"trigger");
         if (isdefined(self.activated_color_trigger)) {
             self.activated_color_trigger = undefined;
-        } else {
-            if (!isdefined(self.color_enabled) || isdefined(self.color_enabled) && self.color_enabled) {
-                activate_color_trigger_internal(colorcodes, colors, team, colorcodesbycolorindex);
-            }
-            waittillframeend();
-            trigger_auto_disable();
+            continue;
         }
+        if (!isdefined(self.color_enabled) || isdefined(self.color_enabled) && self.color_enabled) {
+            activate_color_trigger_internal(colorcodes, colors, team, colorcodesbycolorindex);
+        }
+        waittillframeend();
+        trigger_auto_disable();
     }
 }
 
@@ -599,9 +591,9 @@ function trigger_auto_disable() {
     if (!isdefined(self.color_enabled)) {
         if (is_true(self.script_color_stay_on)) {
             self.color_enabled = 1;
-        } else {
-            self.color_enabled = 0;
+            return;
         }
+        self.color_enabled = 0;
     }
 }
 
@@ -719,9 +711,9 @@ function function_f06ea88(node, var_f9350db6, var_cc966c56) {
     }
     if (issubstr(str_color, var_f9350db6)) {
         self.cover_nodes_last[self.cover_nodes_last.size] = node;
-    } else {
-        self.cover_nodes_first[self.cover_nodes_first.size] = node;
+        return;
     }
+    self.cover_nodes_first[self.cover_nodes_first.size] = node;
 }
 
 // Namespace colors/colors_shared
@@ -878,23 +870,22 @@ function player_color_node() {
         playernode = undefined;
         if (!isdefined(self.node)) {
             waitframe(1);
-        } else {
-            olduser = self.node.color_user;
-            playernode = self.node;
-            playernode.color_user = self;
-            for (;;) {
-                for (;;) {
-                    if (!isdefined(self.node)) {
-                        break;
-                    }
-                    if (self.node != playernode) {
-                        break;
-                    }
-                }
-            }
-            playernode.color_user = undefined;
-            playernode color_node_finds_a_user();
+            continue;
         }
+        olduser = self.node.color_user;
+        playernode = self.node;
+        playernode.color_user = self;
+        for (;;) {
+            if (!isdefined(self.node)) {
+                break;
+            }
+            if (self.node != playernode) {
+                break;
+            }
+            waitframe(1);
+        }
+        playernode.color_user = undefined;
+        playernode color_node_finds_a_user();
     }
 }
 
@@ -1017,11 +1008,13 @@ function set_goal_and_volume(node) {
     }
     if (isdefined(node.fixednodesaferadius)) {
         self.fixednodesaferadius = node.fixednodesaferadius;
-    } else if (isdefined(level.var_4b03c2b4)) {
-        self.fixednodesaferadius = level.var_4b03c2b4;
-    } else {
-        self.fixednodesaferadius = 64;
+        return;
     }
+    if (isdefined(level.var_4b03c2b4)) {
+        self.fixednodesaferadius = level.var_4b03c2b4;
+        return;
+    }
+    self.fixednodesaferadius = 64;
 }
 
 // Namespace colors/colors_shared
@@ -1170,14 +1163,16 @@ function get_best_available_new_colored_node() {
             if (aiutility::function_f557fb8b(self, nodes[i].origin)) {
                 node = nodes[i];
                 break;
-            } else if (!isdefined(backupnode)) {
+            }
+            if (!isdefined(backupnode)) {
                 backupnode = nodes[i];
             }
         }
     }
     if (isdefined(node)) {
         return node;
-    } else if (isdefined(backupnode)) {
+    }
+    if (isdefined(backupnode)) {
         return backupnode;
     }
 }
@@ -1298,11 +1293,11 @@ function add_node_to_global_arrays(colorcode, team) {
                 level.arrays_of_colorcoded_nodes[team][colors[p]] = array(level.arrays_of_colorcoded_nodes[team][colors[p]]);
             }
             level.arrays_of_colorcoded_nodes[team][colors[p]][level.arrays_of_colorcoded_nodes[team][colors[p]].size] = self;
-        } else {
-            level.arrays_of_colorcoded_nodes[team][colors[p]][0] = self;
-            level.arrays_of_colorcoded_ai[team][colors[p]] = [];
-            level.arrays_of_colorcoded_spawners[team][colors[p]] = [];
+            continue;
         }
+        level.arrays_of_colorcoded_nodes[team][colors[p]][0] = self;
+        level.arrays_of_colorcoded_ai[team][colors[p]] = [];
+        level.arrays_of_colorcoded_spawners[team][colors[p]] = [];
     }
 }
 
@@ -1379,45 +1374,40 @@ function colornode_spawn_reinforcement(classname, fromcolor) {
     while (level.friendly_spawners_types[friendly_spawners_type] > 0) {
         spawn = undefined;
         for (;;) {
-            for (;;) {
-                if (!level flag::get("respawn_friendlies")) {
-                    if (!isdefined(level.friendly_respawn_vision_checker_thread)) {
-                        thread friendly_spawner_vision_checker();
-                    }
-                    for (;;) {
-                        level flag::wait_till_any(array("player_looks_away_from_spawner", "respawn_friendlies"));
-                        level flag::wait_till_clear("friendly_spawner_locked");
-                        if (level flag::get("player_looks_away_from_spawner") || level flag::get("respawn_friendlies")) {
-                            break;
-                        }
-                    }
-                    level flag::set("friendly_spawner_locked");
+            if (!level flag::get("respawn_friendlies")) {
+                if (!isdefined(level.friendly_respawn_vision_checker_thread)) {
+                    thread friendly_spawner_vision_checker();
                 }
-                spawner = get_color_spawner(classname, fromcolor);
-                spawner.count = 1;
-                level.friendly_spawners_types[friendly_spawners_type] = level.friendly_spawners_types[friendly_spawners_type] - 1;
-                spawner util::script_wait();
-                spawn = spawner spawner::spawn();
-                if (spawner::spawn_failed(spawn)) {
-                    thread lock_spawner_for_awhile();
-                    wait(1);
-                    continue;
+                for (;;) {
+                    level flag::wait_till_any(array("player_looks_away_from_spawner", "respawn_friendlies"));
+                    level flag::wait_till_clear("friendly_spawner_locked");
+                    if (level flag::get("player_looks_away_from_spawner") || level flag::get("respawn_friendlies")) {
+                        break;
+                    }
                 }
-                level notify(#"reinforcement_spawned", {#entity:spawn});
+                level flag::set("friendly_spawner_locked");
             }
+            spawner = get_color_spawner(classname, fromcolor);
+            spawner.count = 1;
+            level.friendly_spawners_types[friendly_spawners_type] = level.friendly_spawners_types[friendly_spawners_type] - 1;
+            spawner util::script_wait();
+            spawn = spawner spawner::spawn();
+            if (spawner::spawn_failed(spawn)) {
+                thread lock_spawner_for_awhile();
+                wait(1);
+                continue;
+            }
+            level notify(#"reinforcement_spawned", {#entity:spawn});
+            break;
         }
-    LOC_0000024e:
         for (;;) {
-        LOC_0000024e:
-            for (;;) {
-            LOC_0000024e:
-                if (!isdefined(fromcolor)) {
-                    break;
-                }
-                if (get_color_from_order(fromcolor, level.current_color_order) == "none") {
-                    break;
-                }
+            if (!isdefined(fromcolor)) {
+                break;
             }
+            if (get_color_from_order(fromcolor, level.current_color_order) == "none") {
+                break;
+            }
+            fromcolor = level.current_color_order[fromcolor];
         }
         if (isdefined(fromcolor)) {
             spawn set_force_color(fromcolor);
@@ -1474,30 +1464,29 @@ function colornode_replace_on_death() {
         origin = self.origin;
     }
     for (;;) {
-        for (;;) {
-            if (get_color_from_order(color, color_order) == "none") {
-                return;
-            }
-            correct_colored_friendlies = get_force_color_guys(#"allies", color_order[color]);
-            correct_colored_friendlies = array::filter_classname(correct_colored_friendlies, 1, classname);
-            if (!correct_colored_friendlies.size) {
-                wait(2);
-                continue;
-            }
-            players = getplayers();
-            correct_colored_guy = arraysort(correct_colored_friendlies, players[0].origin, 1)[0];
-            /#
-                assert(correct_colored_guy.script_forcecolor != color, "<unknown string>" + color + "<unknown string>");
-            #/
-            waittillframeend();
-            if (!isalive(correct_colored_guy)) {
-                continue;
-            }
-            correct_colored_guy set_force_color(color);
-            if (isdefined(level.friendly_promotion_thread)) {
-                correct_colored_guy [[ level.friendly_promotion_thread ]](color);
-            }
+        if (get_color_from_order(color, color_order) == "none") {
+            return;
         }
+        correct_colored_friendlies = get_force_color_guys(#"allies", color_order[color]);
+        correct_colored_friendlies = array::filter_classname(correct_colored_friendlies, 1, classname);
+        if (!correct_colored_friendlies.size) {
+            wait(2);
+            continue;
+        }
+        players = getplayers();
+        correct_colored_guy = arraysort(correct_colored_friendlies, players[0].origin, 1)[0];
+        /#
+            assert(correct_colored_guy.script_forcecolor != color, "<unknown string>" + color + "<unknown string>");
+        #/
+        waittillframeend();
+        if (!isalive(correct_colored_guy)) {
+            continue;
+        }
+        correct_colored_guy set_force_color(color);
+        if (isdefined(level.friendly_promotion_thread)) {
+            correct_colored_guy [[ level.friendly_promotion_thread ]](color);
+        }
+        color = color_order[color];
     }
 }
 
@@ -1551,7 +1540,6 @@ function friendly_spawner_vision_checker() {
             }
             successes++;
             if (successes < 3) {
-                continue;
             }
         }
         if (player_sees_spawner) {
@@ -1942,11 +1930,10 @@ function private function_7960438b(*node, *volume) {
 // Size: 0x3a
 function private function_7759aedb(node, volume) {
     for (;;) {
-        for (;;) {
-            if (function_c73b2e00(node, volume)) {
-                return;
-            }
+        if (function_c73b2e00(node, volume)) {
+            return;
         }
+        wait(1);
     }
 }
 
@@ -1956,11 +1943,10 @@ function private function_7759aedb(node, volume) {
 // Size: 0x3a
 function private function_39d66928(node, volume) {
     for (;;) {
-        for (;;) {
-            if (!function_c73b2e00(node, volume)) {
-                return;
-            }
+        if (!function_c73b2e00(node, volume)) {
+            return;
         }
+        wait(1);
     }
 }
 

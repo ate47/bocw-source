@@ -134,9 +134,9 @@ function pickuprotate(*localclientnum, *oldval, newval, *bnewent, *binitialsnap,
     self.var_f3b82c6d.angles = self.angles;
     if (bwastimejump) {
         self.var_f3b82c6d thread function_3c872f01();
-    } else {
-        self.var_f3b82c6d notify(#"hash_326008b133edf46a");
+        return;
     }
+    self.var_f3b82c6d notify(#"hash_326008b133edf46a");
 }
 
 // Namespace namespace_dfc652ee/namespace_dfc652ee
@@ -149,7 +149,9 @@ function function_d04f663(*localclientnum, *oldval, newval, *bnewent, *binitials
     }
     if (bwastimejump == 0) {
         self.var_f3b82c6d show();
-    } else if (bwastimejump == 1) {
+        return;
+    }
+    if (bwastimejump == 1) {
         self.var_f3b82c6d hide();
     }
 }
@@ -164,9 +166,9 @@ function function_727ce85b(*localclientnum, *oldval, newval, *bnewent, *binitial
     }
     if (bwastimejump) {
         self.var_f3b82c6d thread pickuptimeout(10);
-    } else {
-        self.var_f3b82c6d notify(#"hash_2a866f50cc161ca8");
+        return;
     }
+    self.var_f3b82c6d notify(#"hash_2a866f50cc161ca8");
 }
 
 // Namespace namespace_dfc652ee/namespace_dfc652ee
@@ -181,7 +183,7 @@ function pickuptimeout(timetowait) {
     wait(timetowait);
     for (i = 0; i < 40; i++) {
         if (!isdefined(self)) {
-            break;
+            return;
         }
         if (i % 2) {
             self hide();
@@ -190,11 +192,13 @@ function pickuptimeout(timetowait) {
         }
         if (i < 15) {
             wait(0.5);
-        } else if (i < 25) {
-            wait(0.25);
-        } else {
-            wait(0.1);
+            continue;
         }
+        if (i < 25) {
+            wait(0.25);
+            continue;
+        }
+        wait(0.1);
     }
 }
 

@@ -79,7 +79,9 @@ function function_3a7e8f1f(*params) {
 function function_6c47410d(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump == 1 && !self postfx::function_556665f2(#"hash_6f19f661d99b2da9")) {
         self postfx::playpostfxbundle(#"hash_6f19f661d99b2da9");
-    } else if (self postfx::function_556665f2(#"hash_6f19f661d99b2da9")) {
+        return;
+    }
+    if (self postfx::function_556665f2(#"hash_6f19f661d99b2da9")) {
         self postfx::exitpostfxbundle(#"hash_6f19f661d99b2da9");
     }
 }

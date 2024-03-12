@@ -491,12 +491,12 @@ function get_debug_spawnpoint(player) {
             }
             count = count + size;
         }
-    } else {
-        if (level.test_spawn_point_index >= level.unified_spawn_points[team].a.size) {
-            level.test_spawn_point_index = 0;
-        }
-        return level.unified_spawn_points[team].a[level.test_spawn_point_index];
+        return;
     }
+    if (level.test_spawn_point_index >= level.unified_spawn_points[team].a.size) {
+        level.test_spawn_point_index = 0;
+    }
+    return level.unified_spawn_points[team].a[level.test_spawn_point_index];
 }
 
 // Namespace spawning/spawning
@@ -629,7 +629,9 @@ function initialspawnprotection(specialtyname, *spawnmonitorspeed) {
         self.specialty_nottargetedbyairsupport = 1;
         wait(level.spawnprotectiontime);
         self.specialty_nottargetedbyairsupport = undefined;
-    } else if (!self hasperk(spawnmonitorspeed)) {
+        return;
+    }
+    if (!self hasperk(spawnmonitorspeed)) {
         self setperk(spawnmonitorspeed);
         wait(level.spawnprotectiontime);
         self unsetperk(spawnmonitorspeed);

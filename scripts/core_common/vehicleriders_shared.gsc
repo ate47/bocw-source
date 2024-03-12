@@ -237,10 +237,10 @@ function private function_faad1dd1(vehicle, position) {
         switch (vehicle.var_761c973.var_d11f76ab[position]) {
         case 1:
             vehicle clientfield::increment(position + "_exit_restore", 1);
-            break;
+            return;
         case 2:
             vehicle clientfield::increment(position + "_exit_combat_restore", 1);
-            break;
+            return;
         }
     }
 }
@@ -326,20 +326,16 @@ function private on_vehicle_spawned() {
                                 seat = "driver";
                             } else if (seat == "gunner") {
                                 seat = "gunner1";
+                            } else if (issubstr(seat, "gunner")) {
                             } else {
-                                if (issubstr(seat, "gunner")) {
-                                    goto LOC_000004a6;
-                                }
                                 seat = undefined;
-                            LOC_000004a6:
                             }
-                        LOC_000004a6:
                             if (isdefined(seat)) {
                                 ai_rider get_in(ai_rider, self, seat, 1);
                             }
-                        } else {
-                            ai_rider get_in(ai_rider, self, undefined, 1);
+                            continue;
                         }
+                        ai_rider get_in(ai_rider, self, undefined, 1);
                     }
                 }
             }
@@ -1265,9 +1261,9 @@ function exit_high_loop_anim(e_parent, var_b67230a6) {
     while (1) {
         if (var_b67230a6 && isdefined(self.var_ec30f5da.var_50d2110f)) {
             animation::play(self.var_ec30f5da.var_50d2110f, e_parent, "tag_origin");
-        } else {
-            animation::play(self.var_ec30f5da.exithighloopanim, e_parent, "tag_origin");
+            continue;
         }
+        animation::play(self.var_ec30f5da.exithighloopanim, e_parent, "tag_origin");
     }
 }
 
@@ -1451,7 +1447,9 @@ function private function_88042c5b(ai, animname) {
     self endon("4ac6b60a379116d8");
     if (ai scene::function_c935c42()) {
         ai.vehicle thread function_bcc6902b(ai);
-    } else if (isdefined(animname)) {
+        return;
+    }
+    if (isdefined(animname)) {
         ai animation::play(animname, ai.vehicle, ai.var_ec30f5da.aligntag, 1, 0.2, 0.2, 0, 0, 0, 0);
     }
 }
@@ -1483,7 +1481,9 @@ function private function_8a1b8aa0(ai, vehicle) {
         result = vehicle waittill(#"vehicle_starting", #"vehicle_stopping");
         if (result._notify == "vehicle_starting" && isdefined(ai.var_ec30f5da.startanim)) {
             self childthread function_1585495a(ai, ai.var_ec30f5da.startanim);
-        } else if (result._notify == "vehicle_stopping" && isdefined(ai.var_ec30f5da.var_95e10146)) {
+            continue;
+        }
+        if (result._notify == "vehicle_stopping" && isdefined(ai.var_ec30f5da.var_95e10146)) {
             self childthread function_1585495a(ai, ai.var_ec30f5da.var_95e10146);
         }
     }

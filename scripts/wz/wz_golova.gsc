@@ -228,7 +228,6 @@ function function_b2775b52() {
             return (1, 0, 1);
         default:
             return (0, 0, 0);
-            break;
         }
     #/
 }

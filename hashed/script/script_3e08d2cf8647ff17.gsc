@@ -24,7 +24,9 @@ function init() {
 function private function_87acfe6f(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self.var_b8cc5182 = util::playfxontag(fieldname, "zm_ai/fx8_nosferatu_dash_eyes", self, "tag_eye");
-    } else if (isdefined(self.var_b8cc5182)) {
+        return;
+    }
+    if (isdefined(self.var_b8cc5182)) {
         stopfx(fieldname, self.var_b8cc5182);
     }
 }

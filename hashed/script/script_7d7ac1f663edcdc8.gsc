@@ -48,13 +48,13 @@ function function_bde08b58(b_success = 1, var_131cc614 = 1) {
         level thread function_8e066676();
         wait(1);
         level globallogic::endgame(#"allies");
-    } else {
-        level.var_1726e2c7 = 1;
-        if (var_131cc614) {
-            wait(4);
-        }
-        level thread globallogic::endgame(#"axis");
+        return;
     }
+    level.var_1726e2c7 = 1;
+    if (var_131cc614) {
+        wait(4);
+    }
+    level thread globallogic::endgame(#"axis");
 }
 
 // Namespace namespace_553954de/namespace_553954de

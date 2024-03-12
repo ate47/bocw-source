@@ -105,9 +105,9 @@ function private update_loop() {
                 }
                 if (player.sessionstate != "playing" || !isalive(player) || player isinvehicle() || isdefined(level.var_3dfbaf65) && player [[ level.var_3dfbaf65 ]]()) {
                     player.var_8a022726 triggerenable(0);
-                } else {
-                    player function_2f394f36();
+                    continue;
                 }
+                player function_2f394f36();
             }
         }
         var_1a1c0d86 = (var_1a1c0d86 + 1) % 5;
@@ -156,28 +156,28 @@ function private function_2f394f36() {
                     print3d(dynent.origin, "<unknown string>", (1, 1, 1), 1, 0.5, 5);
                 }
             #/
-        } else {
-            stateindex = function_ffdbe8c2(dynent);
-            bundle = function_489009c1(dynent);
-            if (isdefined(bundle) && isdefined(bundle.dynentstates) && isdefined(bundle.dynentstates[stateindex]) && (is_true(bundle.dynentstates[stateindex].var_efabe801) || level.inprematchperiod && !is_true(bundle.dynentstates[stateindex].var_4a78f198))) {
-                /#
-                    if (debug) {
-                        print3d(dynent.origin, "<unknown string>", (1, 1, 1), 1, 0.5, 5);
-                    }
-                #/
-            } else {
-                if (isdefined(dynent.canuse) && !dynent [[ dynent.canuse ]](self)) {
-                    continue;
+            continue;
+        }
+        stateindex = function_ffdbe8c2(dynent);
+        bundle = function_489009c1(dynent);
+        if (isdefined(bundle) && isdefined(bundle.dynentstates) && isdefined(bundle.dynentstates[stateindex]) && (is_true(bundle.dynentstates[stateindex].var_efabe801) || level.inprematchperiod && !is_true(bundle.dynentstates[stateindex].var_4a78f198))) {
+            /#
+                if (debug) {
+                    print3d(dynent.origin, "<unknown string>", (1, 1, 1), 1, 0.5, 5);
                 }
-                if (self function_662eb91e(dynent, vieworigin, viewforward, 5)) {
-                    var_c61b7280 = undefined;
-                    break;
-                }
-                if (var_755fcbbd > bestdot) {
-                    bestdot = var_755fcbbd;
-                    var_c61b7280 = dynent;
-                }
-            }
+            #/
+            continue;
+        }
+        if (isdefined(dynent.canuse) && !dynent [[ dynent.canuse ]](self)) {
+            continue;
+        }
+        if (self function_662eb91e(dynent, vieworigin, viewforward, 5)) {
+            var_c61b7280 = undefined;
+            break;
+        }
+        if (var_755fcbbd > bestdot) {
+            bestdot = var_755fcbbd;
+            var_c61b7280 = dynent;
         }
     }
     if (!isdefined(var_c61b7280)) {
@@ -260,13 +260,11 @@ function private function_46502841(trigger_struct) {
     }
     activator = trigger_struct.activator;
     dynent = self.var_a9309589;
-    success = activator function_2b9e2224(self);
-    while (success && isdefined(dynent) && self.var_a9309589 === dynent && is_true(dynent.var_e7823894)) {
+    for (success = activator function_2b9e2224(self); success && isdefined(dynent) && self.var_a9309589 === dynent && is_true(dynent.var_e7823894); success = activator function_2b9e2224(self)) {
         if (isdefined(dynent.canuse) && !dynent [[ dynent.canuse ]](activator)) {
-            break;
+            return;
         }
         self triggerenable(1);
-        success = activator function_2b9e2224(self);
     }
 }
 

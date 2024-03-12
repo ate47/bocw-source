@@ -202,7 +202,9 @@ function function_7957254c() {
             if (disconnect) {
                 self disconnectpaths(0, 0);
             }
-        } else if (result._notify === #"enter_vehicle") {
+            continue;
+        }
+        if (result._notify === #"enter_vehicle") {
             self connectpaths();
         }
     }
@@ -257,9 +259,9 @@ function function_4b556c52() {
             player setplayerangles(var_876d2ae2[i].angles);
             i++;
         }
-    } else {
-        self thread function_4b556c52();
+        return;
     }
+    self thread function_4b556c52();
 }
 
 // Namespace wz_doa/wz_doa
@@ -1150,21 +1152,21 @@ function function_a80babc3() {
             trigger = namespace_ec06fe4a::function_b5731057("trigger_box", (0, 0, 0), 1 | 2 | 4 | 4096 | 512, 82, 50, 60);
             if (!isdefined(trigger)) {
                 var_30f23074.var_92595434 delete();
-            } else {
-                trigger.var_f83032a3 = "frontyard_lawnMowerTrigger";
-                trigger.angles = var_30f23074.angles;
-                trigger.origin = var_30f23074.origin;
-                trigger.owner = var_30f23074.var_92595434;
-                var_30f23074.trigger = trigger;
-                var_30f23074.var_92595434.target = var_30f23074.target;
-                var_30f23074.var_92595434.speed = speed;
-                var_30f23074.var_92595434.trigger = trigger;
-                var_30f23074.type = #"hash_1af42a1c565c45de";
-                trigger thread namespace_ec06fe4a::function_73d79e7d(var_30f23074.var_92595434);
-                trigger thread function_577f978a();
-                var_30f23074.var_92595434 setscale(scale);
-                var_30f23074.var_92595434 thread function_2d612a87();
+                continue;
             }
+            trigger.var_f83032a3 = "frontyard_lawnMowerTrigger";
+            trigger.angles = var_30f23074.angles;
+            trigger.origin = var_30f23074.origin;
+            trigger.owner = var_30f23074.var_92595434;
+            var_30f23074.trigger = trigger;
+            var_30f23074.var_92595434.target = var_30f23074.target;
+            var_30f23074.var_92595434.speed = speed;
+            var_30f23074.var_92595434.trigger = trigger;
+            var_30f23074.type = #"hash_1af42a1c565c45de";
+            trigger thread namespace_ec06fe4a::function_73d79e7d(var_30f23074.var_92595434);
+            trigger thread function_577f978a();
+            var_30f23074.var_92595434 setscale(scale);
+            var_30f23074.var_92595434 thread function_2d612a87();
         }
     }
 }
@@ -1205,13 +1207,15 @@ function function_577f978a() {
         if (isplayer(guy)) {
             guy dodamage(guy.health + 100, guy.origin);
             guy playrumbleonentity("damage_light");
-        } else if (!is_true(guy.var_e66cd6fb)) {
+            continue;
+        }
+        if (!is_true(guy.var_e66cd6fb)) {
             guy.var_f055aa9b = 1;
             guy thread namespace_ec06fe4a::function_b4ff2191(vectorscale((0, 0, 1), 220), 180);
             guy namespace_e32bb68::function_3a59ec34("zmb_ragdoll_launched");
-        } else {
-            guy thread namespace_ed80aead::function_586ef822();
+            continue;
         }
+        guy thread namespace_ed80aead::function_586ef822();
     }
 }
 
@@ -1319,17 +1323,21 @@ function function_86431fee(var_2c7cecea) {
 function function_657374c9(player) {
     if (player.doa.score.bombs <= player.doa.score.boosts && player.doa.score.bombs != player namespace_eccff4fb::function_4091beb5()) {
         level thread namespace_dfc652ee::itemspawn(namespace_dfc652ee::function_6265bde4("zombietron_nuke"), player.origin, undefined, undefined, 1, undefined, undefined, undefined, player, 224);
-    } else if (player.doa.score.boosts <= player.doa.score.bombs && player.doa.score.boosts != player namespace_eccff4fb::function_fd3d9ee0()) {
-        level thread namespace_dfc652ee::itemspawn(namespace_dfc652ee::function_6265bde4("zombietron_boost"), player.origin, undefined, undefined, 1, undefined, undefined, undefined, player, 224);
-    } else if (player.doa.score.lives < player namespace_eccff4fb::function_77cbfb85()) {
-        level thread namespace_dfc652ee::itemspawn(namespace_dfc652ee::function_6265bde4("zombietron_extra_life"), player.origin, undefined, undefined, 1, undefined, undefined, undefined, player, 224);
-    } else {
-        level thread namespace_dfc652ee::itemspawn(namespace_dfc652ee::function_6265bde4("zombietron_chicken"), player.origin, undefined, undefined, 1, undefined, undefined, undefined, player);
-        wait(0.5);
-        level thread namespace_dfc652ee::itemspawn(namespace_dfc652ee::function_6265bde4("zombietron_chicken"), player.origin, undefined, undefined, 1, undefined, undefined, undefined, player);
-        wait(0.5);
-        level thread namespace_dfc652ee::itemspawn(namespace_dfc652ee::function_6265bde4("zombietron_chicken"), player.origin, undefined, undefined, 1, undefined, undefined, undefined, player);
+        return;
     }
+    if (player.doa.score.boosts <= player.doa.score.bombs && player.doa.score.boosts != player namespace_eccff4fb::function_fd3d9ee0()) {
+        level thread namespace_dfc652ee::itemspawn(namespace_dfc652ee::function_6265bde4("zombietron_boost"), player.origin, undefined, undefined, 1, undefined, undefined, undefined, player, 224);
+        return;
+    }
+    if (player.doa.score.lives < player namespace_eccff4fb::function_77cbfb85()) {
+        level thread namespace_dfc652ee::itemspawn(namespace_dfc652ee::function_6265bde4("zombietron_extra_life"), player.origin, undefined, undefined, 1, undefined, undefined, undefined, player, 224);
+        return;
+    }
+    level thread namespace_dfc652ee::itemspawn(namespace_dfc652ee::function_6265bde4("zombietron_chicken"), player.origin, undefined, undefined, 1, undefined, undefined, undefined, player);
+    wait(0.5);
+    level thread namespace_dfc652ee::itemspawn(namespace_dfc652ee::function_6265bde4("zombietron_chicken"), player.origin, undefined, undefined, 1, undefined, undefined, undefined, player);
+    wait(0.5);
+    level thread namespace_dfc652ee::itemspawn(namespace_dfc652ee::function_6265bde4("zombietron_chicken"), player.origin, undefined, undefined, 1, undefined, undefined, undefined, player);
 }
 
 // Namespace wz_doa/wz_doa
@@ -2392,11 +2400,9 @@ function function_ae378de8() {
 function function_dbe90b58() {
     self endon(#"death");
     dir = 180;
-    time = 0.4;
-    while (1) {
+    for (time = 0.4; 1; time = math::clamp(time * 0.78, 0.05, 1)) {
         self rotateto(self.angles + (0, dir, 0), time);
         wait(time);
-        time = math::clamp(time * 0.78, 0.05, 1);
     }
 }
 
@@ -2418,9 +2424,9 @@ function function_2a6cdb09() {
         hasplayed = player stats::get_stat(#"hash_64fd75a9ce18b89f", #"hash_37fcc31e34bbeb9e");
         if (!isdefined(hasplayed) || hasplayed > 0) {
             player.doa.var_57b93c27 = 0;
-        } else {
-            uploadstats(player);
+            continue;
         }
+        uploadstats(player);
     }
 }
 

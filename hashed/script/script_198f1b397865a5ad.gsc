@@ -189,9 +189,9 @@ function private function_ef6f1667() {
                         hud.alpha = 0;
                         hud settext("<unknown string>");
                     }
-                } else {
-                    hud destroy();
+                    continue;
                 }
+                hud destroy();
             }
             level.var_9c2f3e27 = var_4359175b;
             waitframe(1);
@@ -275,8 +275,8 @@ function private function_2f282ca2(posx, posy, text, color, alpha, scale, durati
 function function_1f59f703(var_eb7d70a5) {
     if (isdefined(var_eb7d70a5) == 1 && var_eb7d70a5 != 0) {
         level.var_44a79f1b = &function_2f282ca2;
-    } else {
-        level.var_44a79f1b = undefined;
+        return;
     }
+    level.var_44a79f1b = undefined;
 }
 

@@ -53,19 +53,14 @@ function function_74b823de(tier = 1) {
     case 1:
     case 2:
         return "rob_ammo_mod_level_1";
-        break;
     case 3:
         return "rob_ammo_mod_level_2";
-        break;
     case 4:
         return "rob_ammo_mod_level_3";
-        break;
     case 5:
         return "rob_ammo_mod_level_4";
-        break;
     case 6:
         return "rob_ammo_mod_level_5";
-        break;
     }
     return "rob_ammo_mod_level_1";
 }
@@ -118,12 +113,12 @@ function function_c62bfdf2(localclientnum, *oldval, newval, *bnewent, *binitials
             killfx(fieldname, self.var_8502e221);
         }
         self function_c059fde4(fieldname, "zm_weapons/fx9_aat_cryofreeze_attachment_amb_1p");
-    } else {
-        if (isdefined(self.var_8502e221)) {
-            killfx(fieldname, self.var_8502e221);
-        }
-        self function_ac9a87aa();
+        return;
     }
+    if (isdefined(self.var_8502e221)) {
+        killfx(fieldname, self.var_8502e221);
+    }
+    self function_ac9a87aa();
 }
 
 // Namespace zm_aat/zm_aat
@@ -138,12 +133,12 @@ function function_f745370f(localclientnum, *oldval, newval, *bnewent, *binitials
             killfx(fieldname, self.var_8502e221);
         }
         self function_c059fde4(fieldname, "zm_weapons/fx9_aat_burnination_attachment_amb_1p");
-    } else {
-        if (isdefined(self.var_8502e221)) {
-            killfx(fieldname, self.var_8502e221);
-        }
-        self function_ac9a87aa();
+        return;
     }
+    if (isdefined(self.var_8502e221)) {
+        killfx(fieldname, self.var_8502e221);
+    }
+    self function_ac9a87aa();
 }
 
 // Namespace zm_aat/zm_aat
@@ -158,12 +153,12 @@ function function_7c325bd9(localclientnum, *oldval, newval, *bnewent, *binitials
             killfx(fieldname, self.var_8502e221);
         }
         self function_c059fde4(fieldname, "zm_weapons/fx9_aat_brain_rot_attachment_amb_1p");
-    } else {
-        if (isdefined(self.var_8502e221)) {
-            killfx(fieldname, self.var_8502e221);
-        }
-        self function_ac9a87aa();
+        return;
     }
+    if (isdefined(self.var_8502e221)) {
+        killfx(fieldname, self.var_8502e221);
+    }
+    self function_ac9a87aa();
 }
 
 // Namespace zm_aat/zm_aat
@@ -178,12 +173,12 @@ function function_5cc517e6(localclientnum, *oldval, newval, *bnewent, *binitials
             killfx(fieldname, self.var_8502e221);
         }
         self function_c059fde4(fieldname, "zm_weapons/fx9_aat_dead_wire_attachment_amb_1p");
-    } else {
-        if (isdefined(self.var_8502e221)) {
-            killfx(fieldname, self.var_8502e221);
-        }
-        self function_ac9a87aa();
+        return;
     }
+    if (isdefined(self.var_8502e221)) {
+        killfx(fieldname, self.var_8502e221);
+    }
+    self function_ac9a87aa();
 }
 
 // Namespace zm_aat/zm_aat
@@ -198,11 +193,11 @@ function function_6ab142a9(localclientnum, *oldval, newval, *bnewent, *binitials
             killfx(fieldname, self.var_8502e221);
         }
         self function_c059fde4(fieldname, "zm_weapons/fx9_aat_shatterblast_attachment_amb_1p");
-    } else {
-        if (isdefined(self.var_8502e221)) {
-            killfx(fieldname, self.var_8502e221);
-        }
-        self function_ac9a87aa();
+        return;
     }
+    if (isdefined(self.var_8502e221)) {
+        killfx(fieldname, self.var_8502e221);
+    }
+    self function_ac9a87aa();
 }
 

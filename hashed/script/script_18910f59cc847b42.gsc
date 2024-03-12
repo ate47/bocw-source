@@ -448,7 +448,6 @@ function function_ccf8a968(var_545466e8) {
         return 800;
     default:
         return 650;
-        break;
     }
 }
 

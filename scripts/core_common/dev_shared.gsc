@@ -190,9 +190,9 @@ function updateminimapsetting() {
                     } else {
                         println("<unknown string>");
                     }
-                } else {
-                    setdvar(#"scr_minimap_height", 0);
+                    return;
                 }
+                setdvar(#"scr_minimap_height", 0);
             }
         }
     #/
@@ -309,13 +309,13 @@ function function_f413b4d5(bodytype, outfitindex, var_c1154821, index) {
                     }
                 }
             }
-        } else {
-            foreach (player in players) {
-                if (var_c1154821 == "<unknown string>") {
-                    player setcharacterwarpaintoutfit(outfitindex);
-                }
-                player function_ab96a9b5(var_c1154821, index);
+            return;
+        }
+        foreach (player in players) {
+            if (var_c1154821 == "<unknown string>") {
+                player setcharacterwarpaintoutfit(outfitindex);
             }
+            player function_ab96a9b5(var_c1154821, index);
         }
     #/
 }
@@ -338,7 +338,7 @@ function body_customization_process_command(character_index) {
                 println("<unknown string>" + bodytype + "<unknown string>");
             #/
             function_5639909a(bodytype, 0);
-            break;
+            return;
         case 2:
             command0 = strtok(split[0], "<unknown string>");
             bodytype = int(command0[1]);
@@ -348,7 +348,7 @@ function body_customization_process_command(character_index) {
                 println("<unknown string>" + bodytype + "<unknown string>" + outfitindex + "<unknown string>");
             #/
             function_5639909a(bodytype, outfitindex);
-            break;
+            return;
         case 3:
             command0 = strtok(split[0], "<unknown string>");
             bodytype = int(command0[1]);
@@ -361,9 +361,9 @@ function body_customization_process_command(character_index) {
                 println("<unknown string>" + bodytype + "<unknown string>" + outfitindex + "<unknown string>" + var_c1154821 + "<unknown string>" + index + "<unknown string>");
             #/
             function_f413b4d5(bodytype, outfitindex, var_c1154821, index);
-            break;
+            return;
         default:
-            break;
+            return;
         }
     #/
 }
@@ -752,9 +752,9 @@ function node_get(player) {
             }
             if (node.type == #"path") {
                 draw_pathnode(node, (1, 0, 1));
-            } else {
-                draw_pathnode(node, (0.85, 0.85, 0.1));
+                continue;
             }
+            draw_pathnode(node, (0.85, 0.85, 0.1));
         }
     #/
 }

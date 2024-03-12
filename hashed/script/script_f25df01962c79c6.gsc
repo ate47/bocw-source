@@ -173,21 +173,21 @@ function function_4ec353f8(var_a5cecef6, idx) {
     switch (idx) {
     case 0:
         self thread function_eb32ec24(var_a5cecef6);
-        break;
+        return;
     case 1:
         self thread function_ae2b7e13(var_a5cecef6);
-        break;
+        return;
     case 2:
         self thread function_2a2af1eb(var_a5cecef6);
-        break;
+        return;
     case 3:
         self thread function_14456228(var_a5cecef6);
-        break;
+        return;
     default:
         /#
             assert(0);
         #/
-        break;
+        return;
     }
 }
 
@@ -290,11 +290,11 @@ function function_1e962dea() {
     while (1) {
         if (!isdefined(level.doa.var_e3c3fa5a)) {
             wait(randomfloatrange(0.1, 2));
-        } else {
-            anim_ang = vectortoangles(level.doa.var_e3c3fa5a.origin - self.origin);
-            self rotateto((0, anim_ang[1], 0), randomfloatrange(0.5, 2));
-            self waittill(#"rotatedone");
+            continue;
         }
+        anim_ang = vectortoangles(level.doa.var_e3c3fa5a.origin - self.origin);
+        self rotateto((0, anim_ang[1], 0), randomfloatrange(0.5, 2));
+        self waittill(#"rotatedone");
     }
 }
 

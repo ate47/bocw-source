@@ -27,15 +27,21 @@ function private function_45ed4ebd(eventstruct) {
     }
     if (function_5186819c(eventstruct)) {
         self thread function_342c7f77(eventstruct);
-    } else if (function_51cbae24(eventstruct)) {
-        self thread function_e48afac9(eventstruct);
-    } else if (isdefined(eventstruct.var_a8cc518d)) {
-        self thread function_9bd9969f(eventstruct);
-    } else if (eventstruct.deltaz > 0 || eventstruct.var_d9db209e > 30) {
-        self thread function_adeef583(eventstruct);
-    } else {
-        self thread function_b2ff3887(eventstruct);
+        return;
     }
+    if (function_51cbae24(eventstruct)) {
+        self thread function_e48afac9(eventstruct);
+        return;
+    }
+    if (isdefined(eventstruct.var_a8cc518d)) {
+        self thread function_9bd9969f(eventstruct);
+        return;
+    }
+    if (eventstruct.deltaz > 0 || eventstruct.var_d9db209e > 30) {
+        self thread function_adeef583(eventstruct);
+        return;
+    }
+    self thread function_b2ff3887(eventstruct);
 }
 
 // Namespace bot_traversals/bot_traversals
@@ -178,22 +184,20 @@ function private function_9bd9969f(eventstruct) {
     do {
         waitframe(1);
         var_3566f0b1 = vectordot(self.origin - var_75f5c2cb, normal);
-    } while(var_3566f0b1 > 8);
+    } while (var_3566f0b1 > 8);
     var_2166cb2 = eventstruct.var_a8cc518d;
     do {
         self bottapbutton(10);
         self bottapbutton(64);
         waitframe(1);
         var_2aab82d7 = vectordot(self.origin - var_2166cb2, normal);
-    } while(!self ismantling() && !self isonground() && var_2aab82d7 >= 0);
+    } while (!self ismantling() && !self isonground() && var_2aab82d7 >= 0);
     while (self ismantling()) {
         waitframe(1);
     }
     endpos = eventstruct.end_position;
-    enddist = vectordot(self.origin - endpos, normal);
-    while (var_2166cb2[2] - self.origin[2] < 18 && enddist > 15) {
+    for (enddist = vectordot(self.origin - endpos, normal); var_2166cb2[2] - self.origin[2] < 18 && enddist > 15; enddist = vectordot(self.origin - endpos, normal)) {
         waitframe(1);
-        enddist = vectordot(self.origin - endpos, normal);
     }
     if (!self isonground() && !self isplayerswimming()) {
         self botsetmovemagnitude(0);
@@ -222,17 +226,15 @@ function private function_adeef583(eventstruct) {
     do {
         waitframe(1);
         var_3566f0b1 = vectordot(self.origin - var_75f5c2cb, normal);
-    } while(var_3566f0b1 > 8);
+    } while (var_3566f0b1 > 8);
     do {
         self bottapbutton(10);
         self bottapbutton(64);
         waitframe(1);
         enddist = vectordot(self.origin - endpos, normal);
-    } while(!self ismantling() && enddist > 0);
-    landed = self isplayerswimming() || self isonground();
-    while (self ismantling() || !landed) {
+    } while (!self ismantling() && enddist > 0);
+    for (landed = self isplayerswimming() || self isonground(); self ismantling() || !landed; landed = self isplayerswimming() || self isonground()) {
         waitframe(1);
-        landed = self isplayerswimming() || self isonground();
     }
     self function_1aaef814();
 }
@@ -332,7 +334,7 @@ function private function_c20f7b00(eventstruct, str) {
                 }
             }
             waitframe(1);
-        } while(isbot(self) && self botundermanualcontrol() && isdefined(self.bot) && isdefined(self.bot.traversal));
+        } while (isbot(self) && self botundermanualcontrol() && isdefined(self.bot) && isdefined(self.bot.traversal));
     #/
 }
 
@@ -346,9 +348,9 @@ function private function_3e781451(node, color) {
             mins = (0, 0, 0) - node.aabb_extents;
             maxs = node.aabb_extents;
             function_af72dbc5(node.origin, mins, maxs, node.angles[1], color, "<unknown string>", self);
-        } else {
-            function_af72dbc5(node.origin, vectorscale((-1, -1, 0), 15), vectorscale((1, 1, 1), 15), node.angles[1], color, "<unknown string>", self);
+            return;
         }
+        function_af72dbc5(node.origin, vectorscale((-1, -1, 0), 15), vectorscale((1, 1, 1), 15), node.angles[1], color, "<unknown string>", self);
     #/
 }
 

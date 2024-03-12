@@ -95,12 +95,12 @@ function function_28f9f58c(localclientnum, *oldval, newval, *bnewent, *binitials
             player postfx::function_c8b5f318("pstfx_klaus_command_bundle", #"hash_2717824cd4f6fc90", 4);
             break;
         }
-    } else {
-        self notify(#"stop_update");
-        if (player function_d2cb869e("pstfx_klaus_command_bundle")) {
-            player postfx::function_c8b5f318("pstfx_klaus_command_bundle", #"hash_2717824cd4f6fc90", 0);
-            player codestoppostfxbundle("pstfx_klaus_command_bundle");
-        }
+        return;
+    }
+    self notify(#"stop_update");
+    if (player function_d2cb869e("pstfx_klaus_command_bundle")) {
+        player postfx::function_c8b5f318("pstfx_klaus_command_bundle", #"hash_2717824cd4f6fc90", 0);
+        player codestoppostfxbundle("pstfx_klaus_command_bundle");
     }
 }
 

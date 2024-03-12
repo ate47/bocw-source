@@ -34,9 +34,9 @@ function private function_205a8326(msg, var_9fb99f62) {
     /#
         if (isdefined(var_9fb99f62)) {
             println("<unknown string>" + msg + "<unknown string>" + var_9fb99f62);
-        } else {
-            println("<unknown string>" + msg);
+            return;
         }
+        println("<unknown string>" + msg);
     #/
 }
 

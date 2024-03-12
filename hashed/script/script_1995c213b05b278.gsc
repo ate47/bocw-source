@@ -42,12 +42,12 @@ function private function_b58b73b6(oldval, newval) {
             }
             player val::set(#"hash_2460cc5fa8f85fe7", "disable_usability", 1);
         }
-    } else {
-        if (level.var_5f632232 === #"hash_5b4b0dc5da9b211d" || level.var_5f632232 === #"hash_5b44c3504ac0a01e") {
-            hint_tutorial::function_9f427d88(0);
-        }
-        player val::function_e681e68e(#"hash_2460cc5fa8f85fe7");
+        return;
     }
+    if (level.var_5f632232 === #"hash_5b4b0dc5da9b211d" || level.var_5f632232 === #"hash_5b44c3504ac0a01e") {
+        hint_tutorial::function_9f427d88(0);
+    }
+    player val::function_e681e68e(#"hash_2460cc5fa8f85fe7");
 }
 
 // Namespace namespace_9b5aa273/checkpoint_restore

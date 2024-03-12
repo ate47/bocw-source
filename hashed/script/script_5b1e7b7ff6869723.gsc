@@ -253,9 +253,8 @@ function private function_a1ce8017(var_85c920d0) {
             waitframe(1);
             var_85c920d0 delete();
             return;
-        } else {
-            var_85c920d0 thread function_6f4653fd(s_result.attacker);
         }
+        var_85c920d0 thread function_6f4653fd(s_result.attacker);
     }
 }
 

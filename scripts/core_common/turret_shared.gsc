@@ -142,11 +142,11 @@ function enable_laser(b_enable, n_index) {
         _get_turret_data(n_index).has_laser = 1;
         self laseron();
         self thread laser_death_watcher();
-    } else {
-        _get_turret_data(n_index).has_laser = undefined;
-        self laseroff();
-        self notify(#"laser_death_thread_stop");
+        return;
     }
+    _get_turret_data(n_index).has_laser = undefined;
+    self laseroff();
+    self notify(#"laser_death_thread_stop");
 }
 
 // Namespace turret/turret_shared
@@ -185,10 +185,10 @@ function enable_emp(b_enable, n_index) {
     if (b_enable) {
         _get_turret_data(n_index).can_emp = 1;
         self thread emp_watcher(n_index);
-    } else {
-        _get_turret_data(n_index).can_emp = undefined;
-        self notify(#"emp_thread_stop");
+        return;
     }
+    _get_turret_data(n_index).can_emp = undefined;
+    self notify(#"emp_thread_stop");
 }
 
 // Namespace turret/turret_shared
@@ -837,7 +837,7 @@ function function_259e1449(n_index) {
 function function_38841344(e_target, n_index) {
     do {
         function_259e1449(n_index);
-    } while(isdefined(e_target) && !can_hit_target(e_target, n_index));
+    } while (isdefined(e_target) && !can_hit_target(e_target, n_index));
 }
 
 // Namespace turret/turret_shared
@@ -897,11 +897,11 @@ function pause(time, n_index) {
     }
     if (isdefined(s_turret.pause)) {
         s_turret.pause_time = s_turret.pause_time + time;
-    } else {
-        s_turret.pause = 1;
-        s_turret.pause_time = time;
-        stop(n_index);
+        return;
     }
+    s_turret.pause = 1;
+    s_turret.pause_time = time;
+    stop(n_index);
 }
 
 // Namespace turret/turret_shared
@@ -1154,9 +1154,9 @@ function _drop_turret(n_index, bexitifautomatedonly) {
     if (isalive(ai_user) && !isbot(ai_user) && !isplayer(ai_user) && (is_true(ai_user.turret_auto_use) || !is_true(bexitifautomatedonly))) {
         if (!isdefined(ai_user.vehicle) && ai_user islinkedto(self)) {
             self get_out(ai_user, n_index);
-        } else {
-            vehicle::get_out(self, ai_user, "gunner1");
+            return;
         }
+        vehicle::get_out(self, ai_user, "gunner1");
     }
 }
 
@@ -1177,9 +1177,8 @@ function _user_check(n_index) {
     if (does_need_user(n_index)) {
         b_has_user = does_have_user(n_index);
         return b_has_user;
-    } else {
-        return 1;
     }
+    return 1;
 }
 
 // Namespace turret/turret_shared
@@ -1206,7 +1205,9 @@ function function_2a4a311(n_index) {
                     waitframe(1);
                 }
                 get_in(var_34b21e8e, n_index);
-            } else if (distance2dsquared(var_34b21e8e.origin, s_turret.node.origin) <= var_f449d788) {
+                continue;
+            }
+            if (distance2dsquared(var_34b21e8e.origin, s_turret.node.origin) <= var_f449d788) {
                 if (isdefined(var_34b21e8e.var_41adb97) && gettime() < var_34b21e8e.var_41adb97) {
                     continue;
                 }
@@ -1706,11 +1707,8 @@ function track_lens_flare() {
                     e_target util::waittill_player_not_looking_at(self gettagorigin("TAG_LASER"));
                 }
                 self toggle_lensflare(0);
-                goto LOC_0000014e;
             }
-        LOC_0000014e:
         }
-    LOC_0000014e:
         wait(0.5);
     }
 }

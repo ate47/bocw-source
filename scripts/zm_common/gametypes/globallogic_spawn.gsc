@@ -139,9 +139,9 @@ function spawnplayerprediction() {
         wait(0.5);
         if (isdefined(level.onspawnplayerunified) && getdvarint(#"scr_disableunifiedspawning", 0) == 0) {
             spawning::onspawnplayer_unified(1);
-        } else {
-            self [[ level.onspawnplayer ]](1);
+            continue;
         }
+        self [[ level.onspawnplayer ]](1);
     }
 }
 
@@ -641,7 +641,7 @@ function waitrespawnorsafespawnbutton() {
     self endon(#"disconnect", #"end_respawn");
     while (1) {
         if (self usebuttonpressed()) {
-            break;
+            return;
         }
         waitframe(1);
     }

@@ -222,7 +222,7 @@ function private function_cc4bf5ee(player, cmd, args) {
                     }
                 }
             }
-            break;
+            return;
         }
         framecount++;
         if (function_81fac19d(framecount % 60 == 0, "snd: client voice entity not found '" + soundalias + "' (" + entitynumber + ")")) {
@@ -351,9 +351,9 @@ function function_2761fc04(ent, var_1d25915, var_605838f4, var_e330010e) {
             var_605838f4.var_a415b6d6 = [];
         }
         var_605838f4.var_a415b6d6[ent.soundkey] = ent;
-    } else {
-        level._snd.var_92f63ad0[ent.soundkey] = ent;
+        return;
     }
+    level._snd.var_92f63ad0[ent.soundkey] = ent;
 }
 
 // Namespace namespace_afa8e18b/snd
@@ -410,25 +410,25 @@ function function_bdc44456(ent) {
                 debugbreak();
             }
         #/
-    } else {
-        if (isdefined(ent.var_90c86b97) && isarray(ent.var_90c86b97.var_a415b6d6)) {
-            var_605838f4 = ent.var_90c86b97;
-            var_5244aa9 = isdefined(var_605838f4.var_a415b6d6[ent.soundkey]);
-            if (var_5244aa9 == 1) {
-                var_605838f4.var_a415b6d6[ent.soundkey] = undefined;
-            } else {
-                /#
-                    if (function_f984063f()) {
-                        debugbreak();
-                    }
-                #/
-            }
-        } else {
-            level._snd.var_92f63ad0[ent.soundkey] = undefined;
-        }
-        waittillframeend();
-        ent delete();
+        return;
     }
+    if (isdefined(ent.var_90c86b97) && isarray(ent.var_90c86b97.var_a415b6d6)) {
+        var_605838f4 = ent.var_90c86b97;
+        var_5244aa9 = isdefined(var_605838f4.var_a415b6d6[ent.soundkey]);
+        if (var_5244aa9 == 1) {
+            var_605838f4.var_a415b6d6[ent.soundkey] = undefined;
+        } else {
+            /#
+                if (function_f984063f()) {
+                    debugbreak();
+                }
+            #/
+        }
+    } else {
+        level._snd.var_92f63ad0[ent.soundkey] = undefined;
+    }
+    waittillframeend();
+    ent delete();
 }
 
 // Namespace namespace_afa8e18b/snd
@@ -487,22 +487,22 @@ function function_273d939b(var_afe43979, var_24ea4e17) {
                 debugbreak();
             }
         #/
-    } else {
-        soundalias = ent.soundalias;
-        if (isstring(soundalias)) {
-            if (is_true(function_d8f86d06(soundalias))) {
-                ent stoploopsound(ent.soundhandle, var_24ea4e17);
-            } else {
-                ent stopsounds();
-                stopsound(ent.soundhandle);
-            }
-            waitframe(1);
-            ent.soundalias = undefined;
-            ent.soundhandle = undefined;
-        }
-        ent.soundtype = undefined;
-        function_bdc44456(ent);
+        return;
     }
+    soundalias = ent.soundalias;
+    if (isstring(soundalias)) {
+        if (is_true(function_d8f86d06(soundalias))) {
+            ent stoploopsound(ent.soundhandle, var_24ea4e17);
+        } else {
+            ent stopsounds();
+            stopsound(ent.soundhandle);
+        }
+        waitframe(1);
+        ent.soundalias = undefined;
+        ent.soundhandle = undefined;
+    }
+    ent.soundtype = undefined;
+    function_bdc44456(ent);
 }
 
 // Namespace namespace_afa8e18b/snd
@@ -656,7 +656,9 @@ function private function_d72fc2b9(var_afe43979, value, var_9cecf99a) {
     if (isdefined(var_9cecf99a) == 1) {
         if (var_9cecf99a == &function_5803da43) {
             var_afe43979.var_aceb47b0.volume = value;
-        } else if (var_9cecf99a == &function_d7b79aea) {
+            return;
+        }
+        if (var_9cecf99a == &function_d7b79aea) {
             var_afe43979.var_aceb47b0.pitch = value;
         }
     }

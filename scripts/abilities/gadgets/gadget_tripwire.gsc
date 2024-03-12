@@ -224,14 +224,14 @@ function function_d77f9442() {
         }
         if (tripwire.var_c2f0f6da) {
             tripwire thread function_6c66b650();
-        } else {
-            if (!isdefined(tripwire.var_886bd8dc)) {
-                tripwire function_b9549a9();
-            } else {
-                tripwire function_684adc9();
-            }
-            tripwire.var_886bd8dc clientfield::set("tripwire_solo_beam_fx", 1);
+            continue;
         }
+        if (!isdefined(tripwire.var_886bd8dc)) {
+            tripwire function_b9549a9();
+        } else {
+            tripwire function_684adc9();
+        }
+        tripwire.var_886bd8dc clientfield::set("tripwire_solo_beam_fx", 1);
     }
 }
 
@@ -243,9 +243,9 @@ function function_684adc9() {
     if (isdefined(self.owner)) {
         self.var_886bd8dc setowner(self.owner);
         self.var_886bd8dc setteam(self.owner.team);
-    } else {
-        self.var_886bd8dc setteam(self.team);
+        return;
     }
+    self.var_886bd8dc setteam(self.team);
 }
 
 // Namespace gadget_tripwire/gadget_tripwire
@@ -419,19 +419,19 @@ function function_d334c3fa(endpoint) {
         }
         if (!function_5b8dea90(player)) {
             player.prev_origin = player.origin;
-        } else {
-            points = math::function_f16fbd66(self.var_db7f2def, endpoint, player.origin, player.prev_origin, 1);
-            if (!isdefined(points)) {
-                return 0;
-            }
-            mins = player getmins() + points.pointb;
-            maxs = player getmaxs() + points.pointb;
-            result = function_fc3f770b(mins, maxs, points.pointa);
-            if (result) {
-                return result;
-            }
-            player.prev_origin = player.origin;
+            continue;
         }
+        points = math::function_f16fbd66(self.var_db7f2def, endpoint, player.origin, player.prev_origin, 1);
+        if (!isdefined(points)) {
+            return 0;
+        }
+        mins = player getmins() + points.pointb;
+        maxs = player getmaxs() + points.pointb;
+        result = function_fc3f770b(mins, maxs, points.pointa);
+        if (result) {
+            return result;
+        }
+        player.prev_origin = player.origin;
     }
     return result;
 }
@@ -487,7 +487,7 @@ function function_15de8daf() {
             if (function_d334c3fa(endpos)) {
                 self thread function_9e546fb3(undefined, self.weapon, undefined, undefined);
                 dotrace = 0;
-                break;
+                return;
             }
             if (dotrace) {
                 trace = beamtrace(self.var_db7f2def - self.hitnormal * 5, endpos, 1, self);

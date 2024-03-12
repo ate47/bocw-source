@@ -57,7 +57,9 @@ function private on_entity_spawn(localclientnum) {
     if (self function_8d8e91af()) {
         self secondaryanimationsinit(localclientnum);
         self thread function_3673906(localclientnum);
-    } else if (isdefined(self.archetype) && (self.archetype == #"human" || self.archetype == #"zombie" || self.archetype == #"civilian")) {
+        return;
+    }
+    if (isdefined(self.archetype) && (self.archetype == #"human" || self.archetype == #"zombie" || self.archetype == #"civilian")) {
         self secondaryanimationsinit(localclientnum);
         self thread function_909a3089(localclientnum);
     }
@@ -144,7 +146,8 @@ function buildandvalidatefacialanimationlist(localclientnum) {
 function private function_77fa627c() {
     if (self function_8d8e91af()) {
         return self getcurrentanimscriptedname();
-    } else if (isentity(self) && self isai()) {
+    }
+    if (isentity(self) && self isai()) {
         return self getprimarydeltaanim();
     }
 }
@@ -221,7 +224,9 @@ function private function_9d9508f(localclientnum) {
         waitresult = self waittill(#"hash_f88532a558ad684", #"vox");
         if (waitresult._notify == #"vox") {
             self.var_74a451af++;
-        } else if (waitresult.start) {
+            continue;
+        }
+        if (waitresult.start) {
             var_8d8e91af = self function_8d8e91af();
             if (self.var_74a451af == 0 && (var_8d8e91af || !self asmisterminating(localclientnum))) {
                 if (var_8d8e91af) {
@@ -233,15 +238,17 @@ function private function_9d9508f(localclientnum) {
                 self applynewfaceanim(localclientnum, animtoplay, 0);
                 self.var_a5cdf0bd++;
             }
-        } else if (self.var_74a451af == 0) {
+            continue;
+        }
+        if (self.var_74a451af == 0) {
             self.var_a5cdf0bd--;
             if (self.var_a5cdf0bd <= 0) {
                 self clearcurrentfacialanim(localclientnum);
                 self.var_a5cdf0bd = 0;
             }
-        } else {
-            self.var_74a451af--;
+            continue;
         }
+        self.var_74a451af--;
     }
 }
 
@@ -294,7 +301,6 @@ function private function_909a3089(localclientnum) {
     self thread function_9d9508f(localclientnum);
     self endon(#"death");
     self endon(#"stopfacialthread");
-LOC_000000c6:
     while (isdefined(self.archetype)) {
         self waittill(#"hash_570b7fe3dfbdf155");
         if (self.archetype == #"human" && self clientfield::get("facial_dial")) {
@@ -307,7 +313,7 @@ LOC_000000c6:
         forcenewanim = 0;
         switch (asmstatus) {
         case #"asm_status_terminated":
-            
+            return;
         case #"asm_status_inactive":
             if (isdefined(animoverride)) {
                 scriptedanim = self getprimarydeltaanim();
@@ -369,7 +375,7 @@ LOC_000000c6:
             self._currentfacestate = nextfacestate;
         }
         if (self._currentfacestate == "death") {
-            break;
+            return;
         }
     }
 }

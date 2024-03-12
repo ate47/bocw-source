@@ -235,10 +235,9 @@ function private get_favorite_enemy(dog) {
     }
     if (!is_target_valid(dog, least_hunted)) {
         return undefined;
-    } else {
-        least_hunted.hunted_by = least_hunted.hunted_by + 1;
-        return least_hunted;
     }
+    least_hunted.hunted_by = least_hunted.hunted_by + 1;
+    return least_hunted;
 }
 
 // Namespace namespace_2be98cb7/namespace_a57914e0

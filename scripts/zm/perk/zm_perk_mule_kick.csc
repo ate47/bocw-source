@@ -77,10 +77,10 @@ function mule_kick_machine_rob(*localclientnum, *oldval, newval, *bnewent, *bini
         wait(1);
         self function_f6e99a8d(#"hash_7cb1e2c4664b70f9");
         self playrenderoverridebundle(#"hash_58b55b59b9a623b0");
-    } else {
-        self function_f6e99a8d(#"hash_7cb1e2c4664b70f9");
-        self function_f6e99a8d(#"hash_58b55b59b9a623b0");
+        return;
     }
+    self function_f6e99a8d(#"hash_7cb1e2c4664b70f9");
+    self function_f6e99a8d(#"hash_58b55b59b9a623b0");
 }
 
 // Namespace zm_perk_mule_kick/zm_perk_mule_kick

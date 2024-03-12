@@ -253,7 +253,6 @@ function function_b704c906() {
         return "warning";
     case 3:
         return "attack";
-        break;
     }
 }
 
@@ -377,13 +376,13 @@ function do_stealth() {
     case #"axis":
     case #"team3":
         self thread namespace_f1f700ac::main();
-        break;
+        return;
     case #"allies":
         self thread namespace_32a4062b::main();
-        break;
+        return;
     case #"neutral":
         self thread namespace_578db516::main();
-        break;
+        return;
     }
 }
 
@@ -452,7 +451,6 @@ function function_f762f4e8(style) {
         return 2;
     case #"large":
         return 3;
-        break;
     }
     /#
         assertmsg("<unknown string>");
@@ -624,9 +622,9 @@ function set_goal(goal, faceangles, goalradius = 16) {
 function function_adf02a98(newradius) {
     if (isdefined(newradius)) {
         self val::set(#"stealth", "goalradius", newradius);
-    } else {
-        self val::reset(#"stealth", "goalradius");
+        return;
     }
+    self val::reset(#"stealth", "goalradius");
 }
 
 // Namespace namespace_979752dc/utility
@@ -817,10 +815,10 @@ function function_e0ab7074(var_901d9fb2, var_4a9f6f96) {
             foreach (player in getplayers()) {
                 player thread function_40a98466(var_4a9f6f96);
             }
-        } else {
-            foreach (player in getplayers()) {
-                player thread function_40a98466(var_901d9fb2);
-            }
+            continue;
+        }
+        foreach (player in getplayers()) {
+            player thread function_40a98466(var_901d9fb2);
         }
     }
 }
@@ -918,7 +916,9 @@ function stealth_override_goal(override) {
         if (!isdefined(self.stealth.var_29020f90)) {
             self.stealth.var_29020f90 = var_29020f90;
         }
-    } else if (isdefined(self.stealth.var_29020f90)) {
+        return;
+    }
+    if (isdefined(self.stealth.var_29020f90)) {
         self thread spawner::go_to_node(self.stealth.var_29020f90);
         self.stealth.var_29020f90 = undefined;
     }
@@ -1011,9 +1011,9 @@ function function_18290695(enabled, var_6f52290c = 0) {
     if (self flag::exists("stealth_enabled")) {
         if (enabled) {
             self flag::set("stealth_enabled");
-        } else {
-            self flag::clear("stealth_enabled");
+            return;
         }
+        self flag::clear("stealth_enabled");
     }
 }
 
@@ -1099,7 +1099,7 @@ function function_60528ebd(origin, radius) {
     while (1) {
         self waittill(#"goal");
         if (distance(self.origin, origin) < radius + 10) {
-            break;
+            return;
         }
     }
 }
@@ -1175,9 +1175,9 @@ function function_569a126(enabled, distance = 2000) {
     #/
     if (enabled) {
         level.stealth.var_6fd6463b = distance * distance;
-    } else {
-        level.stealth.var_6fd6463b = undefined;
+        return;
     }
+    level.stealth.var_6fd6463b = undefined;
 }
 
 // Namespace namespace_979752dc/utility

@@ -105,7 +105,9 @@ function entityspawned(localclientnum) {
             self thread explosive_bolt::spawned(localclientnum);
             break;
         }
-    } else if (self.type == "vehicle" || self.type == "helicopter" || self.type == "plane") {
+        return;
+    }
+    if (self.type == "vehicle" || self.type == "helicopter" || self.type == "plane") {
         if (isdefined(level._customvehiclecbfunc)) {
             self thread [[ level._customvehiclecbfunc ]](localclientnum);
         }
@@ -114,19 +116,25 @@ function entityspawned(localclientnum) {
         if (self.vehicleclass == "plane" || self.vehicleclass == "helicopter") {
             self thread vehicle::aircraft_dustkick();
         }
-    } else if (self.type == "actor") {
+        return;
+    }
+    if (self.type == "actor") {
         self enableonradar();
         if (isdefined(level._customactorcbfunc)) {
             self thread [[ level._customactorcbfunc ]](localclientnum);
         }
         self callback(#"hash_1fc6e31d0d02aa3", localclientnum);
-    } else if (self.type == "NA") {
+        return;
+    }
+    if (self.type == "NA") {
         if (isdefined(self.weapon)) {
             if (isdefined(level.var_6b11d5f6)) {
                 self thread [[ level.var_6b11d5f6 ]](localclientnum);
             }
         }
-    } else if (self function_8d8e91af()) {
+        return;
+    }
+    if (self function_8d8e91af()) {
         if (isdefined(level.var_9d3b5cf9)) {
             self thread [[ level.var_9d3b5cf9 ]](localclientnum);
         }
@@ -152,9 +160,9 @@ function callback_stunned(*localclientnum, *oldval, newval, *bnewent, *binitials
     #/
     if (bwastimejump) {
         self notify(#"stunned");
-    } else {
-        self notify(#"not_stunned");
+        return;
     }
+    self notify(#"not_stunned");
 }
 
 // Namespace callback/callbacks
@@ -168,9 +176,9 @@ function callback_emp(*localclientnum, *oldval, newval, *bnewent, *binitialsnap,
     #/
     if (bwastimejump) {
         self notify(#"emp");
-    } else {
-        self notify(#"not_emp");
+        return;
     }
+    self notify(#"not_emp");
 }
 
 // Namespace callback/callbacks

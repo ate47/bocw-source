@@ -32,9 +32,9 @@ function private function_70a657d8() {
 function function_78505cdf(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump) {
         self function_811196d1(1);
-    } else {
-        self function_811196d1(0);
+        return;
     }
+    self function_811196d1(0);
 }
 
 // Namespace zm_ai_mimic/zm_ai_mimic

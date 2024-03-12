@@ -230,7 +230,9 @@ function event_handler[exit_vehicle] codecallback_vehicleexit(eventstruct) {
     }
     if (self inlaststand()) {
         self.var_156bf46e = eventstruct.vehicle;
-    } else if (isairborne(eventstruct.vehicle)) {
+        return;
+    }
+    if (isairborne(eventstruct.vehicle)) {
         self.var_156bf46e = eventstruct.vehicle;
         waitframe(1);
         if (isalive(self) && !self inlaststand()) {
@@ -345,7 +347,7 @@ function function_5de626dc(var_a1258c6b) {
             [[ prompt ]]->set_clientnum(self, var_a1258c6b getentitynumber());
             self thread function_263a2944(prompt, var_a1258c6b);
             self thread function_c025efba(prompt, var_a1258c6b);
-            break;
+            return;
         }
     }
 }
@@ -436,13 +438,13 @@ function function_c0ec19cd() {
             if (player clientfield::get_player_uimodel("hud_items.selfReviveAvailable")) {
                 return 1;
             }
-        } else {
-            if (!isalive(player)) {
-                continue;
-            }
-            if (!player laststand::player_is_in_laststand() || player clientfield::get_player_uimodel("hud_items.selfReviveAvailable")) {
-                return 1;
-            }
+            continue;
+        }
+        if (!isalive(player)) {
+            continue;
+        }
+        if (!player laststand::player_is_in_laststand() || player clientfield::get_player_uimodel("hud_items.selfReviveAvailable")) {
+            return 1;
         }
     }
     return 0;
@@ -1115,8 +1117,11 @@ function revive_trigger_think() {
         players = getplayers();
         for (i = 0; i < players.size; i++) {
             if (!is_true(getgametypesetting("enableSpyModeLaststandTeamOverride"))) {
-                jumpiffalse(players[i].team != self.team) LOC_0000014a;
-            } else if (players[i] can_revive(self)) {
+                if (players[i].team != self.team) {
+                    continue;
+                }
+            }
+            if (players[i] can_revive(self)) {
                 if (!is_true(getgametypesetting("enableSpyModeLaststandTeamOverride"))) {
                     self.revivetrigger setrevivehintstring(#"hash_51a0f083a5566a3", self.team);
                 } else {
@@ -1131,34 +1136,34 @@ function revive_trigger_think() {
                 continue;
             }
             if (!is_true(getgametypesetting("enableSpyModeLaststandTeamOverride"))) {
-                jumpiffalse(reviver.team != self.team) LOC_0000026e;
-            } else {
-            LOC_0000026e:
-                if (self == reviver || !reviver is_reviving(self)) {
+                if (reviver.team != self.team) {
                     continue;
                 }
-                if (isdefined(reviver.is_reviving_any) && reviver.is_reviving_any > 0) {
-                    continue;
-                }
-                var_6525e39a = reviver gestures::function_c77349d4("gestable_t9_stimshot_last_stand");
-                if (reviver function_495bdc7b(var_6525e39a)) {
-                    reviver stopgestureviewmodel(var_6525e39a, 0, 1);
-                }
-                reviver gestures::function_56e00fbf("gestable_t9_stimshot_last_stand");
-                reviver val::set(#"laststand_revive", "disable_weapon_cycling", 1);
-                reviver val::set(#"laststand_revive", "disable_offhand_weapons", 1);
-                reviver val::set(#"laststand_revive", "disable_usability", 1);
-                reviver val::set(#"laststand_revive", "disable_offhand_special", 1);
-                reviver val::set("laststand_revive", "allow_movement", 0);
-                revive_success = reviver revive_do_revive(self);
-                if (isdefined(reviver)) {
-                    reviver function_92bfddb4();
-                }
-                if (revive_success === 1) {
-                    self thread revive_success(reviver);
-                    self function_2907ce7a();
-                    return;
-                }
+            }
+            if (self == reviver || !reviver is_reviving(self)) {
+                continue;
+            }
+            if (isdefined(reviver.is_reviving_any) && reviver.is_reviving_any > 0) {
+                continue;
+            }
+            var_6525e39a = reviver gestures::function_c77349d4("gestable_t9_stimshot_last_stand");
+            if (reviver function_495bdc7b(var_6525e39a)) {
+                reviver stopgestureviewmodel(var_6525e39a, 0, 1);
+            }
+            reviver gestures::function_56e00fbf("gestable_t9_stimshot_last_stand");
+            reviver val::set(#"laststand_revive", "disable_weapon_cycling", 1);
+            reviver val::set(#"laststand_revive", "disable_offhand_weapons", 1);
+            reviver val::set(#"laststand_revive", "disable_usability", 1);
+            reviver val::set(#"laststand_revive", "disable_offhand_special", 1);
+            reviver val::set("laststand_revive", "allow_movement", 0);
+            revive_success = reviver revive_do_revive(self);
+            if (isdefined(reviver)) {
+                reviver function_92bfddb4();
+            }
+            if (revive_success === 1) {
+                self thread revive_success(reviver);
+                self function_2907ce7a();
+                return;
             }
         }
         if (function_feb3e91d()) {
@@ -1273,7 +1278,9 @@ function function_b16f016a() {
     self.var_5c574004--;
     if (self.var_5c574004 < 0) {
         self.var_5c574004 = 0;
-    } else if (self.var_5c574004 > 99999) {
+        return;
+    }
+    if (self.var_5c574004 > 99999) {
         self.var_5c574004 = 99999;
     }
 }
@@ -1846,21 +1853,21 @@ function function_1e8018b0() {
             level.var_dea23a93[player.team]--;
         }
         var_9b6c9b51 = level.var_dea23a93[self.team];
-    } else {
-        level.var_dea23a93[self.team]--;
-        var_9b6c9b51 = level.var_dea23a93[self.team];
-        foreach (player in getplayers(self.team)) {
-            player clientfield::set_player_uimodel("PlayerTeamLastLivesData.numPlayersDowned", var_9b6c9b51);
+        return;
+    }
+    level.var_dea23a93[self.team]--;
+    var_9b6c9b51 = level.var_dea23a93[self.team];
+    foreach (player in getplayers(self.team)) {
+        player clientfield::set_player_uimodel("PlayerTeamLastLivesData.numPlayersDowned", var_9b6c9b51);
+    }
+    foreach (team, count in level.var_ead46974) {
+        if (!util::function_fbce7263(team, self.team)) {
+            continue;
         }
-        foreach (team, count in level.var_ead46974) {
-            if (!util::function_fbce7263(team, self.team)) {
-                continue;
-            }
-            count--;
-            level.var_ead46974[team] = count;
-            foreach (player in getplayers(team)) {
-                player clientfield::set_player_uimodel("EnemyTeamLastLivesData.numPlayersDowned", count);
-            }
+        count--;
+        level.var_ead46974[team] = count;
+        foreach (player in getplayers(team)) {
+            player clientfield::set_player_uimodel("EnemyTeamLastLivesData.numPlayersDowned", count);
         }
     }
 }

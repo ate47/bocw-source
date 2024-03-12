@@ -561,8 +561,7 @@ function function_4b33561d(pod, groupname, origin) {
     var_f5ea0eba = getnodearray("seek_patrol", "targetname");
     var_7e3b3cbc = struct::get_array("seek_patrol", "targetname");
     var_f5ea0eba = arraycombine(var_f5ea0eba, var_7e3b3cbc);
-    var_e10e2e46 = 0;
-    while (var_e10e2e46 < var_f5ea0eba.size) {
+    for (var_e10e2e46 = 0; var_e10e2e46 < var_f5ea0eba.size; var_e10e2e46++) {
         var_594c1bc9 = 0;
         point = var_f5ea0eba[var_e10e2e46];
         if (distancesquared(point.origin, origin) > var_804461ee) {
@@ -577,8 +576,7 @@ function function_4b33561d(pod, groupname, origin) {
             lastpoint = var_f5ea0eba.size - 1;
             var_f5ea0eba[var_e10e2e46] = var_f5ea0eba[lastpoint];
             var_f5ea0eba[lastpoint] = undefined;
-        } else {
-            var_e10e2e46++;
+            continue;
         }
     }
     var_c491acad = arraysortclosest(var_c491acad, origin);
@@ -626,13 +624,11 @@ function function_7c90914c(pod) {
         pod.usedpoints = [];
     }
     curtime = gettime();
-    var_e10e2e46 = 0;
-    while (var_e10e2e46 < pod.usedpoints.size) {
+    for (var_e10e2e46 = 0; var_e10e2e46 < pod.usedpoints.size; var_e10e2e46++) {
         if (isdefined(pod.usedpoints[var_e10e2e46].expire) && curtime >= pod.usedpoints[var_e10e2e46].expire) {
             pod.usedpoints[var_e10e2e46] = pod.usedpoints[pod.usedpoints.size - 1];
             pod.usedpoints[pod.usedpoints.size - 1] = undefined;
-        } else {
-            var_e10e2e46++;
+            continue;
         }
     }
 }
@@ -906,9 +902,9 @@ function function_d474dfcd() {
         endtime = level.stealth.var_714182[self.var_d6319e36];
         wait(endtime);
         self thread function_887c0ace();
-    } else {
         return;
     }
+    return;
 }
 
 // Namespace namespace_3fc78cb6/group
@@ -1315,7 +1311,9 @@ function function_b728365a() {
             if (isdefined(self.var_eb8e0fdd)) {
                 return 0;
             }
-        } else if (!isdefined(guy.enemy) && guy flag::exists("in_the_dark") && guy flag::get("in_the_dark") && curtime - guy.lastenemysighttime < var_31e68066) {
+            continue;
+        }
+        if (!isdefined(guy.enemy) && guy flag::exists("in_the_dark") && guy flag::get("in_the_dark") && curtime - guy.lastenemysighttime < var_31e68066) {
             return 0;
         }
     }
@@ -1398,10 +1396,10 @@ function private function_b921795f() {
         }
         if (!var_d6fd5eab) {
             guy namespace_f1f700ac::function_52839330("idle", undefined);
-        } else {
-            guy namespace_f1f700ac::function_52839330("hunt", undefined);
-            wait(randomfloatrange(0.5, 1));
+            continue;
         }
+        guy namespace_f1f700ac::function_52839330("hunt", undefined);
+        wait(randomfloatrange(0.5, 1));
     }
 }
 
@@ -1470,7 +1468,7 @@ function function_72b42550() {
             var_542fc63d = var_9bd7a27.pods.size - 1;
             var_9bd7a27.pods[var_87ea7ba7] = var_9bd7a27.pods[var_542fc63d];
             var_9bd7a27.pods[var_542fc63d] = undefined;
-            break;
+            return;
         }
     }
 }

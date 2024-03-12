@@ -174,7 +174,7 @@ function function_d67bafb5(stub, category) {
             }
             level.var_f17bdf53[level.var_f17bdf53.size] = stub;
         }
-        break;
+        return;
     case #"lockdown_stub_type_pap":
         if (!isdefined(level.pap_lockdown_stubs)) {
             level.pap_lockdown_stubs = [];
@@ -187,7 +187,7 @@ function function_d67bafb5(stub, category) {
             }
             level.pap_lockdown_stubs[level.pap_lockdown_stubs.size] = stub;
         }
-        break;
+        return;
     case #"lockdown_stub_type_perks":
         if (!isdefined(level.var_9235b607)) {
             level.var_9235b607 = [];
@@ -200,7 +200,7 @@ function function_d67bafb5(stub, category) {
             }
             level.var_9235b607[level.var_9235b607.size] = stub;
         }
-        break;
+        return;
     case #"lockdown_stub_type_crafting_tables":
         if (!isdefined(level.var_16cfe3ef)) {
             level.var_16cfe3ef = [];
@@ -213,7 +213,7 @@ function function_d67bafb5(stub, category) {
             }
             level.var_16cfe3ef[level.var_16cfe3ef.size] = stub;
         }
-        break;
+        return;
     }
 }
 
@@ -521,23 +521,25 @@ function private function_9c7d5271(entity, &registerlotus_right, range) {
             /#
                 function_78eae22a(entity, stub, 0);
             #/
-        } else if (function_55d2ad24(stub, entity)) {
+            continue;
+        }
+        if (function_55d2ad24(stub, entity)) {
             /#
                 function_78eae22a(entity, stub, 1);
             #/
-        } else {
-            if (!function_d3fbb5ec(entity, stub, current_zone)) {
-                continue;
-            }
-            stub.lockdowntype = "lockdown_stub_type_wallbuys";
-            if (!isdefined(registerlotus_right)) {
-                registerlotus_right = [];
-            } else if (!isarray(registerlotus_right)) {
-                registerlotus_right = array(registerlotus_right);
-            }
-            if (!isinarray(registerlotus_right, stub)) {
-                registerlotus_right[registerlotus_right.size] = stub;
-            }
+            continue;
+        }
+        if (!function_d3fbb5ec(entity, stub, current_zone)) {
+            continue;
+        }
+        stub.lockdowntype = "lockdown_stub_type_wallbuys";
+        if (!isdefined(registerlotus_right)) {
+            registerlotus_right = [];
+        } else if (!isarray(registerlotus_right)) {
+            registerlotus_right = array(registerlotus_right);
+        }
+        if (!isinarray(registerlotus_right, stub)) {
+            registerlotus_right[registerlotus_right.size] = stub;
         }
     }
 }
@@ -574,23 +576,25 @@ function private function_db989a2a(entity, &registerlotus_right, range) {
             /#
                 function_78eae22a(entity, stub, 0);
             #/
-        } else if (function_55d2ad24(stub, entity)) {
+            continue;
+        }
+        if (function_55d2ad24(stub, entity)) {
             /#
                 function_78eae22a(entity, stub, 1);
             #/
-        } else {
-            if (!function_fea6f0c0(entity, stub, current_zone)) {
-                continue;
-            }
-            stub.lockdowntype = "lockdown_stub_type_perks";
-            if (!isdefined(registerlotus_right)) {
-                registerlotus_right = [];
-            } else if (!isarray(registerlotus_right)) {
-                registerlotus_right = array(registerlotus_right);
-            }
-            if (!isinarray(registerlotus_right, stub)) {
-                registerlotus_right[registerlotus_right.size] = stub;
-            }
+            continue;
+        }
+        if (!function_fea6f0c0(entity, stub, current_zone)) {
+            continue;
+        }
+        stub.lockdowntype = "lockdown_stub_type_perks";
+        if (!isdefined(registerlotus_right)) {
+            registerlotus_right = [];
+        } else if (!isarray(registerlotus_right)) {
+            registerlotus_right = array(registerlotus_right);
+        }
+        if (!isinarray(registerlotus_right, stub)) {
+            registerlotus_right[registerlotus_right.size] = stub;
         }
     }
 }
@@ -621,23 +625,25 @@ function private function_d0e1d38c(entity, &registerlotus_right, range) {
             /#
                 function_78eae22a(entity, stub, 0);
             #/
-        } else if (function_55d2ad24(stub, entity)) {
+            continue;
+        }
+        if (function_55d2ad24(stub, entity)) {
             /#
                 function_78eae22a(entity, stub, 1);
             #/
-        } else {
-            if (!function_ea677a9a(entity, stub, current_zone)) {
-                continue;
-            }
-            stub.lockdowntype = "lockdown_stub_type_crafting_tables";
-            if (!isdefined(registerlotus_right)) {
-                registerlotus_right = [];
-            } else if (!isarray(registerlotus_right)) {
-                registerlotus_right = array(registerlotus_right);
-            }
-            if (!isinarray(registerlotus_right, stub)) {
-                registerlotus_right[registerlotus_right.size] = stub;
-            }
+            continue;
+        }
+        if (!function_ea677a9a(entity, stub, current_zone)) {
+            continue;
+        }
+        stub.lockdowntype = "lockdown_stub_type_crafting_tables";
+        if (!isdefined(registerlotus_right)) {
+            registerlotus_right = [];
+        } else if (!isarray(registerlotus_right)) {
+            registerlotus_right = array(registerlotus_right);
+        }
+        if (!isinarray(registerlotus_right, stub)) {
+            registerlotus_right[registerlotus_right.size] = stub;
         }
     }
 }
@@ -688,20 +694,22 @@ function private function_e6761711(entity, &registerlotus_right, range) {
             /#
                 function_78eae22a(entity, chest, 0);
             #/
-        } else if (function_55d2ad24(chest.unitrigger_stub, entity)) {
+            continue;
+        }
+        if (function_55d2ad24(chest.unitrigger_stub, entity)) {
             /#
                 function_78eae22a(entity, chest, 1);
             #/
-        } else {
-            chest.unitrigger_stub.lockdowntype = "lockdown_stub_type_magic_box";
-            if (!isdefined(registerlotus_right)) {
-                registerlotus_right = [];
-            } else if (!isarray(registerlotus_right)) {
-                registerlotus_right = array(registerlotus_right);
-            }
-            if (!isinarray(registerlotus_right, chest.unitrigger_stub)) {
-                registerlotus_right[registerlotus_right.size] = chest.unitrigger_stub;
-            }
+            continue;
+        }
+        chest.unitrigger_stub.lockdowntype = "lockdown_stub_type_magic_box";
+        if (!isdefined(registerlotus_right)) {
+            registerlotus_right = [];
+        } else if (!isarray(registerlotus_right)) {
+            registerlotus_right = array(registerlotus_right);
+        }
+        if (!isinarray(registerlotus_right, chest.unitrigger_stub)) {
+            registerlotus_right[registerlotus_right.size] = chest.unitrigger_stub;
         }
     }
 }
@@ -739,25 +747,25 @@ function private function_165e2bd6(entity, &registerlotus_right, *range) {
             /#
                 function_78eae22a(registerlotus_right, stub, 1);
             #/
-        } else {
-            if (!function_790e3eb0(registerlotus_right, stub)) {
-                continue;
-            }
-            if (function_e1f6d06a(stub)) {
-                /#
-                    function_78eae22a(registerlotus_right, stub, 0);
-                #/
-            } else {
-                stub.lockdowntype = "lockdown_stub_type_pap";
-                if (!isdefined(range)) {
-                    range = [];
-                } else if (!isarray(range)) {
-                    range = array(range);
-                }
-                if (!isinarray(range, stub)) {
-                    range[range.size] = stub;
-                }
-            }
+            continue;
+        }
+        if (!function_790e3eb0(registerlotus_right, stub)) {
+            continue;
+        }
+        if (function_e1f6d06a(stub)) {
+            /#
+                function_78eae22a(registerlotus_right, stub, 0);
+            #/
+            continue;
+        }
+        stub.lockdowntype = "lockdown_stub_type_pap";
+        if (!isdefined(range)) {
+            range = [];
+        } else if (!isarray(range)) {
+            range = array(range);
+        }
+        if (!isinarray(range, stub)) {
+            range[range.size] = stub;
         }
     }
 }
@@ -787,24 +795,28 @@ function private function_8850974b(entity, &registerlotus_right, range) {
             /#
                 function_78eae22a(entity, blocker, 1);
             #/
-        } else if (function_e1f6d06a(blocker)) {
+            continue;
+        }
+        if (function_e1f6d06a(blocker)) {
             /#
                 function_78eae22a(entity, blocker, 0);
             #/
-        } else if (!function_809ae5cb(entity, blocker)) {
+            continue;
+        }
+        if (!function_809ae5cb(entity, blocker)) {
             /#
                 function_78eae22a(entity, blocker, 12);
             #/
-        } else {
-            blocker.lockdowntype = "lockdown_stub_type_boards";
-            if (!isdefined(registerlotus_right)) {
-                registerlotus_right = [];
-            } else if (!isarray(registerlotus_right)) {
-                registerlotus_right = array(registerlotus_right);
-            }
-            if (!isinarray(registerlotus_right, blocker)) {
-                registerlotus_right[registerlotus_right.size] = blocker;
-            }
+            continue;
+        }
+        blocker.lockdowntype = "lockdown_stub_type_boards";
+        if (!isdefined(registerlotus_right)) {
+            registerlotus_right = [];
+        } else if (!isarray(registerlotus_right)) {
+            registerlotus_right = array(registerlotus_right);
+        }
+        if (!isinarray(registerlotus_right, blocker)) {
+            registerlotus_right[registerlotus_right.size] = blocker;
         }
     }
 }
@@ -834,19 +846,19 @@ function private function_d2ce5ac1(entity, &registerlotus_right, range) {
             /#
                 function_78eae22a(entity, trap_trig, 1);
             #/
-        } else {
-            if (!function_387fd27e(entity, trap_trig)) {
-                continue;
-            }
-            trap_trig.lockdowntype = "lockdown_stub_type_traps";
-            if (!isdefined(registerlotus_right)) {
-                registerlotus_right = [];
-            } else if (!isarray(registerlotus_right)) {
-                registerlotus_right = array(registerlotus_right);
-            }
-            if (!isinarray(registerlotus_right, trap_trig)) {
-                registerlotus_right[registerlotus_right.size] = trap_trig;
-            }
+            continue;
+        }
+        if (!function_387fd27e(entity, trap_trig)) {
+            continue;
+        }
+        trap_trig.lockdowntype = "lockdown_stub_type_traps";
+        if (!isdefined(registerlotus_right)) {
+            registerlotus_right = [];
+        } else if (!isarray(registerlotus_right)) {
+            registerlotus_right = array(registerlotus_right);
+        }
+        if (!isinarray(registerlotus_right, trap_trig)) {
+            registerlotus_right[registerlotus_right.size] = trap_trig;
         }
     }
 }
@@ -871,7 +883,6 @@ function function_22aeb4e9(lockdowntype) {
         return "PERK";
     case #"lockdown_stub_type_traps":
         return "TRAP";
-        break;
     }
     return "INVALID";
 }
@@ -1036,7 +1047,6 @@ function function_c9105448(entity, stub) {
         return function_387fd27e(entity, stub);
     default:
         return 1;
-        break;
     }
 }
 
@@ -1241,7 +1251,7 @@ function private function_2765c63(cmd) {
             } else {
                 level notify(#"hash_52b90374b27fcb8a");
             }
-            break;
+            return;
         }
     #/
 }
@@ -1281,9 +1291,9 @@ function private function_6e1690d5() {
                 if (isdefined(var_754b10b4)) {
                     box(var_754b10b4.origin, var_3bd3c0c1, var_cbe5413e, var_754b10b4.angles[1], (0, 1, 0), 1, 0, 10);
                     line(var_754b10b4.origin, var_754b10b4.origin + anglestoforward(var_754b10b4.angles) * 32, (0, 1, 0), 1, 0, 10);
-                } else {
-                    circle(stub.origin, 16, (1, 0, 0), 0, 0, 10);
+                    continue;
                 }
+                circle(stub.origin, 16, (1, 0, 0), 0, 0, 10);
             }
         }
     #/

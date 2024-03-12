@@ -412,9 +412,9 @@ function function_263320e2(prompt, var_4d98c3ce) {
     if (isdefined(uid) && namespace_61e6d095::function_cd59371c(uid, self.var_3e95b88f.var_294a441e[prompt], self.var_3e95b88f.var_db58523e) && !is_true(self.var_3e95b88f.var_f48ab2e1[prompt].var_f945ce95)) {
         if (isdefined(var_4d98c3ce)) {
             namespace_61e6d095::function_f2a9266(self.var_3e95b88f.uid, self.var_3e95b88f.var_294a441e[prompt], "text", var_4d98c3ce, self.var_3e95b88f.var_db58523e);
-        } else {
-            namespace_61e6d095::function_f2a9266(self.var_3e95b88f.uid, self.var_3e95b88f.var_294a441e[prompt], "text", #"", self.var_3e95b88f.var_db58523e);
+            return;
         }
+        namespace_61e6d095::function_f2a9266(self.var_3e95b88f.uid, self.var_3e95b88f.var_294a441e[prompt], "text", #"", self.var_3e95b88f.var_db58523e);
     }
 }
 
@@ -1104,7 +1104,6 @@ function private function_99bb5bbe(var_248cbbcf) {
         return var_248cbbcf.player adsbuttonpressed();
     case #"hash_400c7c122bc26dec":
         return var_248cbbcf.player vehicleattackbuttonpressed();
-        break;
     }
     return 0;
 }
@@ -1153,7 +1152,6 @@ function private function_eee54dd8(var_248cbbcf) {
             #/
         }
         return (getuimodelvalue(model) > 0);
-        break;
     }
     return 0;
 }
@@ -1180,10 +1178,8 @@ function private function_cd5cbae1(player) {
 function private function_7d76b3ac() {
     self endon(#"death", #"all_prompts_removed");
     level endon(#"level_restarting");
-    player = getplayers()[0];
-    while (!isdefined(player)) {
+    for (player = getplayers()[0]; !isdefined(player); player = getplayers()[0]) {
         waitframe(1);
-        player = getplayers()[0];
     }
     if (self != player) {
         player endon(#"death");
@@ -1216,9 +1212,9 @@ function private function_7d76b3ac() {
                     }
                 }
             }
-        } else {
-            player waittilltimeout(max(float(function_60d95f53()) / 1000, dist / 528), #"teleported");
+            continue;
         }
+        player waittilltimeout(max(float(function_60d95f53()) / 1000, dist / 528), #"teleported");
     }
 }
 
@@ -1314,7 +1310,7 @@ function private function_e8006b47() {
         } else if (self.var_3e95b88f.var_98fa5077) {
             state = 1;
         } else {
-            break;
+            return;
         }
         var_4ca73085 = #"hash_2de1684e2167ada4";
         ease_in = 1;
@@ -1427,26 +1423,28 @@ function private function_fcef5f5b(prompt, var_62bce5b6, player) {
         if (isdefined(var_62bce5b6.var_c570a6f9)) {
             var_62bce5b6.var_c570a6f9 = var_62bce5b6.var_c570a6f9 + float(function_60d95f53()) / 1000;
         }
-    } else {
-        var_62bce5b6.var_5a8a10f2 = undefined;
-        if (!isdefined(var_62bce5b6.var_c570a6f9)) {
-            var_62bce5b6.var_c570a6f9 = gettime();
+        return;
+    }
+    var_62bce5b6.var_5a8a10f2 = undefined;
+    if (!isdefined(var_62bce5b6.var_c570a6f9)) {
+        var_62bce5b6.var_c570a6f9 = gettime();
+    }
+    var_de6f0004 = int((isdefined(var_62bce5b6.var_de6f0004) ? var_62bce5b6.var_de6f0004 : 0.25) * 1000);
+    var_4ac77177 = int((isdefined(var_62bce5b6.var_4ac77177) ? var_62bce5b6.var_4ac77177 : 0.1) * 1000);
+    if (function_2af9819b(prompt, var_62bce5b6, player)) {
+        var_62bce5b6.state = 2;
+        self function_efb98d80(prompt, var_62bce5b6, player);
+        return;
+    }
+    if (gettime() - var_62bce5b6.var_c570a6f9 >= var_4ac77177) {
+        var_62bce5b6.state = 2;
+        var_600ff81f = var_de6f0004 < 0 ? 0 : -1;
+        if (var_600ff81f < 1 && var_600ff81f >= 0) {
+            var_600ff81f = math::clamp((gettime() - var_62bce5b6.var_c570a6f9 - var_4ac77177) / var_de6f0004, 0, 1);
         }
-        var_de6f0004 = int((isdefined(var_62bce5b6.var_de6f0004) ? var_62bce5b6.var_de6f0004 : 0.25) * 1000);
-        var_4ac77177 = int((isdefined(var_62bce5b6.var_4ac77177) ? var_62bce5b6.var_4ac77177 : 0.1) * 1000);
-        if (function_2af9819b(prompt, var_62bce5b6, player)) {
-            var_62bce5b6.state = 2;
+        namespace_61e6d095::function_f2a9266(self.var_3e95b88f.uid, self.var_3e95b88f.var_294a441e[prompt], "fraction", var_600ff81f, self.var_3e95b88f.var_db58523e);
+        if (var_600ff81f >= 1 || var_600ff81f == -1) {
             self function_efb98d80(prompt, var_62bce5b6, player);
-        } else if (gettime() - var_62bce5b6.var_c570a6f9 >= var_4ac77177) {
-            var_62bce5b6.state = 2;
-            var_600ff81f = var_de6f0004 < 0 ? 0 : -1;
-            if (var_600ff81f < 1 && var_600ff81f >= 0) {
-                var_600ff81f = math::clamp((gettime() - var_62bce5b6.var_c570a6f9 - var_4ac77177) / var_de6f0004, 0, 1);
-            }
-            namespace_61e6d095::function_f2a9266(self.var_3e95b88f.uid, self.var_3e95b88f.var_294a441e[prompt], "fraction", var_600ff81f, self.var_3e95b88f.var_db58523e);
-            if (var_600ff81f >= 1 || var_600ff81f == -1) {
-                self function_efb98d80(prompt, var_62bce5b6, player);
-            }
         }
     }
 }
@@ -1488,15 +1486,15 @@ function private function_efb98d80(prompt, var_62bce5b6, player) {
         endons = [1:"death", 0:"all_prompts_removed"];
         if (isdefined(var_62bce5b6.var_be77841a) ? var_62bce5b6.var_be77841a : 1) {
             self thread util::delay(0.35, endons, &remove, prompt);
-        } else {
-            var_62bce5b6.var_5a8a10f2 = 1;
-            endons[endons.size] = "prompt_removed_" + prompt;
-            if (var_62bce5b6.flags & 4) {
-                self thread util::delay(0.2, endons, &function_f4bf235a, self.var_3e95b88f.uid, prompt, 1);
-            } else {
-                self thread util::delay(0.35, endons, &function_f4bf235a, self.var_3e95b88f.uid, prompt, 0);
-            }
+            return;
         }
+        var_62bce5b6.var_5a8a10f2 = 1;
+        endons[endons.size] = "prompt_removed_" + prompt;
+        if (var_62bce5b6.flags & 4) {
+            self thread util::delay(0.2, endons, &function_f4bf235a, self.var_3e95b88f.uid, prompt, 1);
+            return;
+        }
+        self thread util::delay(0.35, endons, &function_f4bf235a, self.var_3e95b88f.uid, prompt, 0);
     }
 }
 
@@ -1612,14 +1610,14 @@ function private function_f619081c(prompt, var_62bce5b6) {
             player val::set(var_62bce5b6.uid, "disable_weapon_reload", 1);
             self thread function_6d9e6b7d(player, prompt, var_62bce5b6.uid);
         }
-        break;
+        return;
     case #"hash_3c5c65155dfb1731":
     case #"melee":
         player val::set(var_62bce5b6.uid, "allow_melee", 0);
-        break;
+        return;
     case #"attack":
         player val::set(var_62bce5b6.uid, "disable_weapon_fire", 1);
-        break;
+        return;
     case #"reload":
         player val::set(var_62bce5b6.uid, "disable_weapon_reload", 1);
         self thread function_6d9e6b7d(player, prompt, var_62bce5b6.uid);
@@ -1627,10 +1625,10 @@ function private function_f619081c(prompt, var_62bce5b6) {
             player val::set(var_62bce5b6.uid, "disable_usability", 1);
             player val::set(var_62bce5b6.uid, "disable_weapon_pickup", 1);
         }
-        break;
+        return;
     case #"frag":
         player val::set(var_62bce5b6.uid, "disable_offhand_weapons", 1);
-        break;
+        return;
     case #"stance":
         stance = player getstance();
         if (stance == "stand") {
@@ -1646,13 +1644,13 @@ function private function_f619081c(prompt, var_62bce5b6) {
             player val::set(var_62bce5b6.uid, "allow_crouch", 0);
             player val::set(var_62bce5b6.uid, "allow_prone", 1);
         }
-        break;
+        return;
     case #"weapnext":
         player val::set(var_62bce5b6.uid, "disable_weapon_cycling", 1);
-        break;
+        return;
     case #"ads":
         player val::set(var_62bce5b6.uid, "allow_ads", 0);
-        break;
+        return;
     }
 }
 
@@ -1666,58 +1664,58 @@ function private function_17578ab7(prompt, var_62bce5b6, uid = var_62bce5b6.uid)
         if (!isdefined(prompt)) {
             player val::function_e681e68e(uid);
             self notify(#"hash_1316225507a4f1bb");
-        } else {
-            switch (prompt) {
-            case #"use":
-            case #"hash_794885d9482cb75e":
+            return;
+        }
+        switch (prompt) {
+        case #"use":
+        case #"hash_794885d9482cb75e":
+            player val::reset(uid, "disable_usability");
+            player val::reset(uid, "disable_weapon_pickup");
+            if (player gamepadusedlast()) {
+                player val::reset(uid, "disable_weapon_reload");
+            }
+            break;
+        case #"hash_3c5c65155dfb1731":
+        case #"melee":
+            player val::reset(uid, "allow_melee");
+            break;
+        case #"attack":
+            player val::reset(uid, "disable_weapon_fire");
+            break;
+        case #"reload":
+            player val::reset(uid, "disable_weapon_reload");
+            if (player gamepadusedlast()) {
                 player val::reset(uid, "disable_usability");
                 player val::reset(uid, "disable_weapon_pickup");
-                if (player gamepadusedlast()) {
-                    player val::reset(uid, "disable_weapon_reload");
-                }
-                break;
-            case #"hash_3c5c65155dfb1731":
-            case #"melee":
-                player val::reset(uid, "allow_melee");
-                break;
-            case #"attack":
-                player val::reset(uid, "disable_weapon_fire");
-                break;
-            case #"reload":
-                player val::reset(uid, "disable_weapon_reload");
-                if (player gamepadusedlast()) {
-                    player val::reset(uid, "disable_usability");
-                    player val::reset(uid, "disable_weapon_pickup");
-                }
-                break;
-            case #"frag":
-                player val::reset(uid, "disable_offhand_weapons");
-                break;
-            case #"stance":
-                stance = player getstance();
-                if (stance == "stand") {
-                    player val::reset(uid, "allow_stand");
-                    player val::reset(uid, "allow_crouch");
-                    player val::reset(uid, "allow_prone");
-                } else if (stance == "crouch") {
-                    player val::reset(uid, "allow_stand");
-                    player val::reset(uid, "allow_crouch");
-                    player val::reset(uid, "allow_prone");
-                } else if (stance == "prone") {
-                    player val::reset(uid, "allow_stand");
-                    player val::reset(uid, "allow_crouch");
-                    player val::reset(uid, "allow_prone");
-                }
-                break;
-            case #"weapnext":
-                player val::reset(uid, "disable_weapon_cycling");
-                break;
-            case #"ads":
-                player val::reset(uid, "allow_ads");
-                break;
             }
-            self notify("reset_button_inputs_" + prompt);
+            break;
+        case #"frag":
+            player val::reset(uid, "disable_offhand_weapons");
+            break;
+        case #"stance":
+            stance = player getstance();
+            if (stance == "stand") {
+                player val::reset(uid, "allow_stand");
+                player val::reset(uid, "allow_crouch");
+                player val::reset(uid, "allow_prone");
+            } else if (stance == "crouch") {
+                player val::reset(uid, "allow_stand");
+                player val::reset(uid, "allow_crouch");
+                player val::reset(uid, "allow_prone");
+            } else if (stance == "prone") {
+                player val::reset(uid, "allow_stand");
+                player val::reset(uid, "allow_crouch");
+                player val::reset(uid, "allow_prone");
+            }
+            break;
+        case #"weapnext":
+            player val::reset(uid, "disable_weapon_cycling");
+            break;
+        case #"ads":
+            player val::reset(uid, "allow_ads");
+            break;
         }
+        self notify("reset_button_inputs_" + prompt);
     }
 }
 
@@ -1919,11 +1917,15 @@ function private function_17533001(uid) {
             } else if (isdefined(actor_name)) {
                 self globallogic_ui::function_ec25f500(actor_name, var_2d3f59fc);
             }
-        } else if (isdefined(self.var_3e95b88f.namespace_image)) {
+            continue;
+        }
+        if (isdefined(self.var_3e95b88f.namespace_image)) {
             namespace_61e6d095::function_9ade1d9b(uid, "namespace_image", #"");
             namespace_61e6d095::function_b1e6d7a8(uid, 0);
             self globallogic_ui::function_109202c3();
-        } else if (isdefined(actor_name)) {
+            continue;
+        }
+        if (isdefined(actor_name)) {
             self globallogic_ui::function_109202c3();
         }
     }

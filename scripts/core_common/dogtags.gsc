@@ -103,9 +103,9 @@ function private function_329adc0f(dogtag) {
         dogtag gameobjects::destroy_object(1);
         if (!is_true(getgametypesetting("dogTagPooling"))) {
             arrayremovevalue(level.dogtags, undefined, 1);
-        } else {
-            arrayremovevalue(level.dogtags, undefined, 0);
+            return;
         }
+        arrayremovevalue(level.dogtags, undefined, 0);
     }
 }
 
@@ -220,9 +220,9 @@ function function_78a745d7(var_561c6e7c, var_5bb2a7e9) {
 function function_b2a61c9d() {
     if (self clientfield::get("dogtag_flag") == 2) {
         self clientfield::set("dogtag_flag", 3);
-    } else {
-        self clientfield::set("dogtag_flag", 2);
+        return;
     }
+    self clientfield::set("dogtag_flag", 2);
 }
 
 // Namespace dogtags/dogtags
@@ -518,7 +518,9 @@ function onusedogtag(player) {
                 self.victim thread dt_respawn();
             }
         }
-    } else if (is_true(level.var_d0252074) && isdefined(self.victim)) {
+        return;
+    }
+    if (is_true(level.var_d0252074) && isdefined(self.victim)) {
         self.victim squad_spawn::function_44c6679();
     }
 }
@@ -532,9 +534,9 @@ function dt_respawn() {
         self.pers[#"lives"] = 1;
         self squad_spawn::function_6a7e8977();
         self squad_spawn::function_250e04e5();
-    } else {
-        self thread waittillcanspawnclient();
+        return;
     }
+    self thread waittillcanspawnclient();
 }
 
 // Namespace dogtags/dogtags
@@ -547,9 +549,9 @@ function waittillcanspawnclient() {
         if (isdefined(self) && (self.sessionstate == "spectator" || !isalive(self))) {
             self.pers[#"lives"] = 1;
             self thread [[ level.spawnclient ]]();
-        } else {
-            return;
+            continue;
         }
+        return;
     }
 }
 

@@ -97,10 +97,10 @@ function private player_enter(params) {
         switch (eventstruct.seat_index) {
         case 0:
             self function_135c137c(player);
-            break;
+            return;
         case 1:
             self function_e2ade94b();
-            break;
+            return;
         }
     }
 }
@@ -116,10 +116,10 @@ function private function_b9fc945f(params) {
         switch (eventstruct.seat_index) {
         case 0:
             self function_3a991b11();
-            break;
+            return;
         case 1:
             self function_86c4506d();
-            break;
+            return;
         }
     }
 }
@@ -148,10 +148,10 @@ function private function_379a71bd(params) {
         switch (eventstruct.old_seat_index) {
         case 0:
             self function_3a991b11();
-            break;
+            return;
         case 1:
             self function_86c4506d();
-            break;
+            return;
         }
     }
 }

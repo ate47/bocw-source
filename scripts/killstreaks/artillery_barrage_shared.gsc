@@ -371,9 +371,9 @@ function function_8c164ce0(path) {
             if (!var_11f31e2c) {
                 var_11f31e2c = 1;
                 debug_sphere(point, radius, (0, 1, 0), alpha, var_342eb58c);
-            } else {
-                debug_sphere(point, radius, (0, 0, 1), alpha, var_342eb58c);
+                continue;
             }
+            debug_sphere(point, radius, (0, 0, 1), alpha, var_342eb58c);
         }
     #/
 }

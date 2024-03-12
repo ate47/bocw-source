@@ -152,10 +152,10 @@ function state_death_update(params) {
             break;
         }
         self vehicle_death::deletewhensafe();
-    } else {
-        params.death_type = death_type;
-        vehicle_ai::defaultstate_death_update(params);
+        return;
     }
+    params.death_type = death_type;
+    vehicle_ai::defaultstate_death_update(params);
 }
 
 // Namespace wasp/wasp
@@ -200,13 +200,11 @@ function state_emped_update(params) {
     self.abnormal_status.emped = 0;
     self vehicle::toggle_emp_fx(0);
     self vehicle_ai::emp_startup_fx();
-    bootup_timer = 1.6;
-    while (bootup_timer > 0) {
+    for (bootup_timer = 1.6; bootup_timer > 0; bootup_timer = bootup_timer - 0.8) {
         self vehicle::lights_on();
         wait(0.4);
         self vehicle::lights_off();
         wait(0.4);
-        bootup_timer = bootup_timer - 0.8;
     }
     self vehicle::lights_on();
     if (isdefined(self.position_before_fall)) {
@@ -491,7 +489,8 @@ function test_get_back_queryresult(queryresult) {
         testresult = test_get_back_point(point.origin);
         if (testresult == 1) {
             return point.origin;
-        } else if (testresult == 0) {
+        }
+        if (testresult == 0) {
             waitframe(1);
         }
     }
@@ -512,120 +511,120 @@ function state_guard_update(*params) {
         if (isdefined(self.enemy) && distancesquared(self.owner.origin, self.enemy.origin) < function_a3f6cdac(1000) && self seerecently(self.enemy, 1) && ispointinnavvolume(self.origin, "navvolume_small")) {
             self vehicle_ai::evaluate_connections();
             wait(1);
-        } else {
-            owner = self.owner;
-            if (!isdefined(owner)) {
-                wait(1);
-                continue;
+            continue;
+        }
+        owner = self.owner;
+        if (!isdefined(owner)) {
+            wait(1);
+            continue;
+        }
+        usepathfinding = 1;
+        onnavvolume = ispointinnavvolume(self.origin, "navvolume_small");
+        if (!onnavvolume) {
+            getbackpoint = undefined;
+            pointonnavvolume = self getclosestpointonnavvolume(self.origin, 500);
+            if (isdefined(pointonnavvolume)) {
+                if (test_get_back_point(pointonnavvolume) == 1) {
+                    getbackpoint = pointonnavvolume;
+                }
             }
-            usepathfinding = 1;
-            onnavvolume = ispointinnavvolume(self.origin, "navvolume_small");
-            if (!onnavvolume) {
-                getbackpoint = undefined;
-                pointonnavvolume = self getclosestpointonnavvolume(self.origin, 500);
-                if (isdefined(pointonnavvolume)) {
-                    if (test_get_back_point(pointonnavvolume) == 1) {
-                        getbackpoint = pointonnavvolume;
-                    }
-                }
-                if (!isdefined(getbackpoint)) {
-                    queryresult = positionquery_source_navigation(self.origin, 0, 1500, 200, 80, self);
-                    getbackpoint = test_get_back_queryresult(queryresult);
-                }
-                if (!isdefined(getbackpoint)) {
-                    queryresult = positionquery_source_navigation(self.origin, 0, 300, 700, 30, self);
-                    getbackpoint = test_get_back_queryresult(queryresult);
-                }
-                if (isdefined(getbackpoint)) {
-                    if (distancesquared(getbackpoint, self.origin) > function_a3f6cdac(20)) {
-                        self.current_pathto_pos = getbackpoint;
-                        usepathfinding = 0;
-                        self.vehaircraftcollisionenabled = 0;
-                    } else {
-                        onnavvolume = 1;
-                    }
+            if (!isdefined(getbackpoint)) {
+                queryresult = positionquery_source_navigation(self.origin, 0, 1500, 200, 80, self);
+                getbackpoint = test_get_back_queryresult(queryresult);
+            }
+            if (!isdefined(getbackpoint)) {
+                queryresult = positionquery_source_navigation(self.origin, 0, 300, 700, 30, self);
+                getbackpoint = test_get_back_queryresult(queryresult);
+            }
+            if (isdefined(getbackpoint)) {
+                if (distancesquared(getbackpoint, self.origin) > function_a3f6cdac(20)) {
+                    self.current_pathto_pos = getbackpoint;
+                    usepathfinding = 0;
+                    self.vehaircraftcollisionenabled = 0;
                 } else {
-                    stuckcount++;
-                    if (stuckcount == 1) {
-                        stucklocation = self.origin;
-                    } else if (stuckcount > 10) {
+                    onnavvolume = 1;
+                }
+            } else {
+                stuckcount++;
+                if (stuckcount == 1) {
+                    stucklocation = self.origin;
+                } else if (stuckcount > 10) {
+                    /#
                         /#
-                            /#
-                                assert(0, "<unknown string>" + self.origin);
-                            #/
-                            v_box_min = (self.radius * -1, self.radius * -1, self.radius * -1);
-                            v_box_max = (self.radius, self.radius, self.radius);
-                            box(self.origin, v_box_min, v_box_max, self.angles[1], (1, 0, 0), 1, 0, 1000000);
-                            if (isdefined(stucklocation)) {
-                                line(stucklocation, self.origin, (1, 0, 0), 1, 1, 1000000);
-                            }
+                            assert(0, "<unknown string>" + self.origin);
                         #/
-                        self kill();
-                    }
-                }
-            }
-            if (onnavvolume) {
-                self update_main_guard();
-                if (owner.main_guard === self) {
-                    guardpoints = get_guard_points(owner);
-                    if (guardpoints.size < 1) {
-                        wait(1);
-                        continue;
-                    }
-                    stuckcount = 0;
-                    self.vehaircraftcollisionenabled = 1;
-                    if (guardpoints.size <= pointindex) {
-                        pointindex = randomint(int(min(self._guard_points.size, guardpoints.size)));
-                        timenotatgoal = gettime();
-                    }
-                    self.current_pathto_pos = guardpoints[pointindex];
-                } else {
-                    main_guard = owner.main_guard;
-                    if (isalive(main_guard) && isdefined(main_guard.current_pathto_pos)) {
-                        query_position = main_guard.current_pathto_pos;
-                        queryresult = positionquery_source_navigation(query_position, 20, 140, 100, 20, self, 15);
-                        if (queryresult.data.size > 0) {
-                            self.current_pathto_pos = queryresult.data[queryresult.data.size - 1].origin;
+                        v_box_min = (self.radius * -1, self.radius * -1, self.radius * -1);
+                        v_box_max = (self.radius, self.radius, self.radius);
+                        box(self.origin, v_box_min, v_box_max, self.angles[1], (1, 0, 0), 1, 0, 1000000);
+                        if (isdefined(stucklocation)) {
+                            line(stucklocation, self.origin, (1, 0, 0), 1, 1, 1000000);
                         }
-                    }
+                    #/
+                    self kill();
                 }
             }
-            if (isdefined(self.current_pathto_pos)) {
-                distancetogoalsq = distancesquared(self.current_pathto_pos, self.origin);
-                if (!onnavvolume || distancetogoalsq > function_a3f6cdac(60)) {
-                    if (distancetogoalsq > function_a3f6cdac(600)) {
-                        self setspeed(self.settings.defaultmovespeed * 2);
-                    } else if (distancetogoalsq < function_a3f6cdac(100)) {
-                        self setspeed(self.settings.defaultmovespeed * 0.3);
-                    } else {
-                        self setspeed(self.settings.defaultmovespeed);
-                    }
-                    timenotatgoal = gettime();
-                } else {
-                    if (util::timesince(timenotatgoal) > 4) {
-                        pointindex = randomint(self._guard_points.size);
-                        timenotatgoal = gettime();
-                    }
-                    wait(0.2);
+        }
+        if (onnavvolume) {
+            self update_main_guard();
+            if (owner.main_guard === self) {
+                guardpoints = get_guard_points(owner);
+                if (guardpoints.size < 1) {
+                    wait(1);
                     continue;
                 }
-                if (self function_a57c34b7(self.current_pathto_pos, 1, usepathfinding)) {
-                    self playsound(#"veh_wasp_direction");
-                    self vehclearlookat();
-                    self notify(#"fire_stop");
-                    self thread path_update_interrupt();
-                    if (onnavvolume) {
-                        self vehicle_ai::waittill_pathing_done(1);
-                    } else {
-                        self vehicle_ai::waittill_pathing_done();
+                stuckcount = 0;
+                self.vehaircraftcollisionenabled = 1;
+                if (guardpoints.size <= pointindex) {
+                    pointindex = randomint(int(min(self._guard_points.size, guardpoints.size)));
+                    timenotatgoal = gettime();
+                }
+                self.current_pathto_pos = guardpoints[pointindex];
+            } else {
+                main_guard = owner.main_guard;
+                if (isalive(main_guard) && isdefined(main_guard.current_pathto_pos)) {
+                    query_position = main_guard.current_pathto_pos;
+                    queryresult = positionquery_source_navigation(query_position, 20, 140, 100, 20, self, 15);
+                    if (queryresult.data.size > 0) {
+                        self.current_pathto_pos = queryresult.data[queryresult.data.size - 1].origin;
                     }
+                }
+            }
+        }
+        if (isdefined(self.current_pathto_pos)) {
+            distancetogoalsq = distancesquared(self.current_pathto_pos, self.origin);
+            if (!onnavvolume || distancetogoalsq > function_a3f6cdac(60)) {
+                if (distancetogoalsq > function_a3f6cdac(600)) {
+                    self setspeed(self.settings.defaultmovespeed * 2);
+                } else if (distancetogoalsq < function_a3f6cdac(100)) {
+                    self setspeed(self.settings.defaultmovespeed * 0.3);
                 } else {
-                    wait(0.5);
+                    self setspeed(self.settings.defaultmovespeed);
+                }
+                timenotatgoal = gettime();
+            } else {
+                if (util::timesince(timenotatgoal) > 4) {
+                    pointindex = randomint(self._guard_points.size);
+                    timenotatgoal = gettime();
+                }
+                wait(0.2);
+                continue;
+            }
+            if (self function_a57c34b7(self.current_pathto_pos, 1, usepathfinding)) {
+                self playsound(#"veh_wasp_direction");
+                self vehclearlookat();
+                self notify(#"fire_stop");
+                self thread path_update_interrupt();
+                if (onnavvolume) {
+                    self vehicle_ai::waittill_pathing_done(1);
+                } else {
+                    self vehicle_ai::waittill_pathing_done();
                 }
             } else {
                 wait(0.5);
             }
+            continue;
         }
+        wait(0.5);
     }
 }
 
@@ -700,9 +699,9 @@ function turretfireupdate() {
             } else {
                 wait(randomfloatrange(0.5, 1.5));
             }
-        } else {
-            wait(0.4);
+            continue;
         }
+        wait(0.4);
     }
 }
 
@@ -753,37 +752,37 @@ function wait_till_something_happens(timeout) {
     while (time > 0) {
         if (isdefined(self.current_pathto_pos)) {
             if (distancesquared(self.current_pathto_pos, self.goalpos) > function_a3f6cdac(self.goalradius)) {
-                break;
+                return;
             }
         }
         if (isdefined(self.enemy)) {
             if (!self cansee(self.enemy)) {
                 cant_see_count++;
                 if (cant_see_count >= 3) {
-                    break;
+                    return;
                 }
             } else {
                 cant_see_count = 0;
             }
             if (distance2dsquared(self.origin, self.enemy.origin) < function_a3f6cdac(250)) {
-                break;
+                return;
             }
             goalheight = self.enemy.origin[2] + 0.5 * (self.settings.engagementheightmin + self.settings.engagementheightmax);
             distfrompreferredheight = abs(self.origin[2] - goalheight);
             if (distfrompreferredheight > 100) {
-                break;
+                return;
             }
             if (isplayer(self.enemy) && self.enemy islookingat(self)) {
                 if (math::cointoss()) {
                     wait(randomfloatrange(0.1, 0.5));
                 }
                 self drop_leader();
-                break;
+                return;
             }
         }
         if (isdefined(self.leader) && isdefined(self.leader.current_pathto_pos)) {
             if (distancesquared(self.origin, self.leader.current_pathto_pos) > function_a3f6cdac(165)) {
-                break;
+                return;
             }
         }
         wait(0.3);
@@ -839,7 +838,7 @@ function update_leader() {
             }
             guy.followers[guy.followers.size] = self;
             self.leader = guy;
-            break;
+            return;
         }
     }
 }
@@ -904,110 +903,110 @@ function state_combat_update(*params) {
         self update_leader();
         if (is_true(self.inpain) || is_true(self.isstunned)) {
             wait(0.1);
-        } else {
-            if (self.enable_guard === 1) {
+            continue;
+        }
+        if (self.enable_guard === 1) {
+            self vehicle_ai::evaluate_connections();
+        }
+        if (isdefined(self.enemy) && isalive(self)) {
+            self turretsettarget(0, self.enemy);
+            self vehlookat(self.enemy);
+            self wait_till_something_happens(randomfloatrange(2, 5));
+        }
+        if (!isdefined(self.enemy)) {
+            self vehclearlookat();
+            aiarray = getaiteamarray("all");
+            foreach (ai in aiarray) {
+                self getperfectinfo(ai);
+            }
+            players = getplayers("all");
+            foreach (player in players) {
+                self getperfectinfo(player);
+            }
+            wait(1);
+        }
+        usepathfinding = 1;
+        onnavvolume = ispointinnavvolume(self.origin, "navvolume_small");
+        if (!onnavvolume) {
+            getbackpoint = undefined;
+            if (self.aggresive_navvolume_recover === 1) {
                 self vehicle_ai::evaluate_connections();
             }
-            if (isdefined(self.enemy) && isalive(self)) {
-                self turretsettarget(0, self.enemy);
-                self vehlookat(self.enemy);
-                self wait_till_something_happens(randomfloatrange(2, 5));
-            }
-            if (!isdefined(self.enemy)) {
-                self vehclearlookat();
-                aiarray = getaiteamarray("all");
-                foreach (ai in aiarray) {
-                    self getperfectinfo(ai);
+            pointonnavvolume = self getclosestpointonnavvolume(self.origin, 100);
+            if (isdefined(pointonnavvolume)) {
+                if (sighttracepassed(self.origin, pointonnavvolume, 0, self)) {
+                    getbackpoint = pointonnavvolume;
                 }
-                players = getplayers("all");
-                foreach (player in players) {
-                    self getperfectinfo(player);
-                }
-                wait(1);
             }
-            usepathfinding = 1;
-            onnavvolume = ispointinnavvolume(self.origin, "navvolume_small");
-            if (!onnavvolume) {
+            if (!isdefined(getbackpoint)) {
+                queryresult = positionquery_source_navigation(self.origin, 0, 200, 100, 2 * self.radius, self);
+                positionquery_filter_sight(queryresult, self.origin, (0, 0, 0), self, 1);
                 getbackpoint = undefined;
-                if (self.aggresive_navvolume_recover === 1) {
-                    self vehicle_ai::evaluate_connections();
-                }
-                pointonnavvolume = self getclosestpointonnavvolume(self.origin, 100);
-                if (isdefined(pointonnavvolume)) {
-                    if (sighttracepassed(self.origin, pointonnavvolume, 0, self)) {
-                        getbackpoint = pointonnavvolume;
+                foreach (point in queryresult.data) {
+                    if (point.visibility === 1) {
+                        getbackpoint = point.origin;
+                        break;
                     }
-                }
-                if (!isdefined(getbackpoint)) {
-                    queryresult = positionquery_source_navigation(self.origin, 0, 200, 100, 2 * self.radius, self);
-                    positionquery_filter_sight(queryresult, self.origin, (0, 0, 0), self, 1);
-                    getbackpoint = undefined;
-                    foreach (point in queryresult.data) {
-                        if (point.visibility === 1) {
-                            getbackpoint = point.origin;
-                            break;
-                        }
-                    }
-                }
-                if (isdefined(getbackpoint)) {
-                    self.current_pathto_pos = getbackpoint;
-                    usepathfinding = 0;
-                } else {
-                    stuckcount++;
-                    if (stuckcount == 1) {
-                        stucklocation = self.origin;
-                    } else if (stuckcount > 10) {
-                        /#
-                            v_box_min = (self.radius * -1, self.radius * -1, self.radius * -1);
-                            v_box_max = (self.radius, self.radius, self.radius);
-                            box(self.origin, v_box_min, v_box_max, self.angles[1], (1, 0, 0), 1, 0, 1000000);
-                            if (isdefined(stucklocation)) {
-                                line(stucklocation, self.origin, (1, 0, 0), 1, 1, 1000000);
-                            }
-                        #/
-                        self kill();
-                    }
-                }
-            } else {
-                stuckcount = 0;
-                if (self.goalforced) {
-                    goalpos = self getclosestpointonnavvolume(self.goalpos, 100);
-                    if (isdefined(goalpos)) {
-                        self.current_pathto_pos = goalpos;
-                        usepathfinding = 1;
-                    } else {
-                        self.current_pathto_pos = self.goalpos;
-                        usepathfinding = 0;
-                    }
-                } else if (isdefined(self.enemy)) {
-                    self.current_pathto_pos = getnextmoveposition_tactical();
-                    usepathfinding = 1;
-                } else {
-                    self.current_pathto_pos = getnextmoveposition_wander();
-                    usepathfinding = 1;
                 }
             }
-            if (isdefined(self.current_pathto_pos)) {
-                distancetogoalsq = distancesquared(self.current_pathto_pos, self.origin);
-                if (!onnavvolume || distancetogoalsq > function_a3f6cdac(75)) {
-                    if (distancetogoalsq > function_a3f6cdac(2000)) {
-                        self setspeed(self.settings.defaultmovespeed * 2);
-                    }
-                    if (self function_a57c34b7(self.current_pathto_pos, 1, usepathfinding)) {
-                        if (isdefined(self.enemy)) {
-                            self playsound(#"veh_wasp_direction");
-                        } else {
-                            self playsound(#"veh_wasp_vox");
+            if (isdefined(getbackpoint)) {
+                self.current_pathto_pos = getbackpoint;
+                usepathfinding = 0;
+            } else {
+                stuckcount++;
+                if (stuckcount == 1) {
+                    stucklocation = self.origin;
+                } else if (stuckcount > 10) {
+                    /#
+                        v_box_min = (self.radius * -1, self.radius * -1, self.radius * -1);
+                        v_box_max = (self.radius, self.radius, self.radius);
+                        box(self.origin, v_box_min, v_box_max, self.angles[1], (1, 0, 0), 1, 0, 1000000);
+                        if (isdefined(stucklocation)) {
+                            line(stucklocation, self.origin, (1, 0, 0), 1, 1, 1000000);
                         }
-                        if (should_fly_forward(distancetogoalsq)) {
-                            self vehclearlookat();
-                            self notify(#"fire_stop");
-                            self.noshoot = 1;
-                        }
-                        self thread path_update_interrupt();
-                        self vehicle_ai::waittill_pathing_done();
-                        self.noshoot = undefined;
+                    #/
+                    self kill();
+                }
+            }
+        } else {
+            stuckcount = 0;
+            if (self.goalforced) {
+                goalpos = self getclosestpointonnavvolume(self.goalpos, 100);
+                if (isdefined(goalpos)) {
+                    self.current_pathto_pos = goalpos;
+                    usepathfinding = 1;
+                } else {
+                    self.current_pathto_pos = self.goalpos;
+                    usepathfinding = 0;
+                }
+            } else if (isdefined(self.enemy)) {
+                self.current_pathto_pos = getnextmoveposition_tactical();
+                usepathfinding = 1;
+            } else {
+                self.current_pathto_pos = getnextmoveposition_wander();
+                usepathfinding = 1;
+            }
+        }
+        if (isdefined(self.current_pathto_pos)) {
+            distancetogoalsq = distancesquared(self.current_pathto_pos, self.origin);
+            if (!onnavvolume || distancetogoalsq > function_a3f6cdac(75)) {
+                if (distancetogoalsq > function_a3f6cdac(2000)) {
+                    self setspeed(self.settings.defaultmovespeed * 2);
+                }
+                if (self function_a57c34b7(self.current_pathto_pos, 1, usepathfinding)) {
+                    if (isdefined(self.enemy)) {
+                        self playsound(#"veh_wasp_direction");
+                    } else {
+                        self playsound(#"veh_wasp_vox");
                     }
+                    if (should_fly_forward(distancetogoalsq)) {
+                        self vehclearlookat();
+                        self notify(#"fire_stop");
+                        self.noshoot = 1;
+                    }
+                    self thread path_update_interrupt();
+                    self vehicle_ai::waittill_pathing_done();
+                    self.noshoot = undefined;
                 }
             }
         }

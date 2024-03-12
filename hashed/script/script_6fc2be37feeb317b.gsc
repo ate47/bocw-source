@@ -249,8 +249,7 @@ function private function_90017e84(params) {
 function function_e3af0084() {
     level endon(#"game_ended");
     self endon(#"disconnect");
-    weapon = self getcurrentweapon();
-    while (1) {
+    for (weapon = self getcurrentweapon(); 1; weapon = isdefined(waitresult.weapon) ? waitresult.weapon : self getcurrentweapon()) {
         networkid = item_inventory::function_ec087745();
         if (networkid != 32767) {
             var_d2648452 = item_inventory::get_inventory_item(networkid);
@@ -274,7 +273,6 @@ function function_e3af0084() {
         self zm_aat::function_ec7953fa();
         waitresult = undefined;
         waitresult = self waittill(#"weapon_change", #"hash_4de2d5115dc310e2", #"hash_75ec9942d2d5fd0f", #"hash_5cd57762f792396b", #"hash_3713641b67661d30");
-        weapon = isdefined(waitresult.weapon) ? waitresult.weapon : self getcurrentweapon();
     }
 }
 
@@ -338,9 +336,8 @@ function refill_ammo() {
 function function_ee7e837d(item) {
     if (isdefined(item.var_a8bccf69)) {
         return item.var_a8bccf69;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace namespace_4b9fccd8/namespace_4b9fccd8
@@ -403,7 +400,6 @@ function function_ef9d58d0(item, weapon) {
         case #"ww_ieu_plasma_t9_upgraded_item_sr":
         case #"ww_mega_barrel_fullauto_diffusion_beam_t9_upgraded_item_sr":
             return 1;
-            break;
         }
     }
     return 0;

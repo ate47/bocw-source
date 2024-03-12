@@ -64,9 +64,9 @@ function function_bd054816(params) {
     }
     if (params.using_offhand) {
         function_17d973ec(params.localclientnum);
-    } else {
-        self notify(#"hash_726805ec8cfae188");
+        return;
     }
+    self notify(#"hash_726805ec8cfae188");
 }
 
 // Namespace gadget_tripwire/gadget_tripwire
@@ -96,7 +96,7 @@ function function_6868fab3(localclientnum, *oldval, newval, *bnewent, *binitials
         arrayinsert(level.tripwire.wires, self, level.tripwire.wires.size);
         self callback::on_shutdown(&function_6230a8a5);
         self thread function_55c50f15();
-        break;
+        return;
     case 2:
     case 3:
         foreach (beam_id in level.tripwire.localclients[binitialsnap].beams) {
@@ -106,7 +106,7 @@ function function_6868fab3(localclientnum, *oldval, newval, *bnewent, *binitials
         }
         level.tripwire.localclients[binitialsnap].beams = [];
         self thread function_55c50f15();
-        break;
+        return;
     }
 }
 
@@ -186,7 +186,9 @@ function function_9233eb94(localclientnum, *oldval, newval, *bnewent, *binitials
         self endon(#"death");
         self util::waittill_dobj(fieldname);
         self.beam_fx = util::playfxontag(fieldname, #"hash_253c31a9114d6029", self, "tag_origin");
-    } else if (isdefined(self.beam_fx)) {
+        return;
+    }
+    if (isdefined(self.beam_fx)) {
         killfx(fieldname, self.beam_fx);
     }
 }
@@ -397,7 +399,9 @@ function function_adb3eb2c(localclientnum) {
                 killfx(localclientnum, self.var_2045ae5c);
                 self.var_2045ae5c = undefined;
             }
-        } else if (isdefined(var_1eb381e1)) {
+            continue;
+        }
+        if (isdefined(var_1eb381e1)) {
             var_1eb381e1.shoulddraw = 0;
         }
     }
@@ -415,7 +419,9 @@ function function_dc76d0d0(localclientnum) {
         beam = level.var_77cae643[i];
         if (beam.shoulddraw && !isdefined(beam.beam_id) && isdefined(beam.ent1) && isdefined(beam.ent2)) {
             level.var_77cae643[i].beam_id = level beam::function_cfb2f62a(localclientnum, beam.ent1, "tag_fx", beam.ent2, "tag_fx", "beam8_plyr_equip_ied_previs");
-        } else if (beam.shoulddraw == 0 && isdefined(beam.beam_id)) {
+            continue;
+        }
+        if (beam.shoulddraw == 0 && isdefined(beam.beam_id)) {
             beam::function_47deed80(localclientnum, beam.beam_id);
             level.var_77cae643[i].beam_id = undefined;
         }

@@ -370,24 +370,24 @@ function private razstartdeath(entity) {
             switch (weakpoint.var_f371ebb0) {
             case #"helmet":
                 self namespace_eb2895::function_2eb802f5(undefined);
-                break;
+                continue;
             case #"body_armor":
                 self namespace_eb2895::function_50c2a59e(undefined);
-                break;
+                continue;
             case #"left_arm_armor":
                 self namespace_eb2895::function_597f31c9(undefined);
-                break;
+                continue;
             case #"right_leg_armor":
                 self namespace_eb2895::function_578362e9(undefined);
-                break;
+                continue;
             case #"left_leg_armor":
                 self namespace_eb2895::function_50f53d3b(undefined);
-                break;
+                continue;
             case #"right_arm_armor":
                 self namespace_eb2895::function_afcd63e1(undefined, undefined, undefined);
-                break;
+                continue;
             default:
-                break;
+                continue;
             }
         }
     }
@@ -1125,9 +1125,8 @@ function function_5e4c45ae(str_type) {
     var_f7458ee2 = array("vox_obj_hvt_mglr_threat_mglr_0", "vox_obj_hvt_mglr_threat_mglr_1", "vox_obj_hvt_mglr_threat_mglr_2", "vox_obj_hvt_mglr_threat_mglr_3", "vox_obj_hvt_mglr_threat_mglr_4", "vox_obj_hvt_mglr_threat_mglr_5", "vox_obj_hvt_mglr_threat_mglr_6", "vox_obj_hvt_mglr_threat_mglr_7", "vox_obj_hvt_mglr_threat_mglr_8", "vox_obj_hvt_mglr_threat_mglr_9");
     if (str_type === "summon") {
         return var_e31ec7b0[randomintrange(0, var_e31ec7b0.size)];
-    } else {
-        return var_f7458ee2[randomintrange(0, var_f7458ee2.size)];
     }
+    return var_f7458ee2[randomintrange(0, var_f7458ee2.size)];
 }
 
 // Namespace namespace_eb2895/raz
@@ -1256,7 +1255,9 @@ function private function_37c7f369() {
             if (!is_true(b_gibbed)) {
                 if (!gibserverutils::isgibbed(zombie, 32)) {
                     gibserverutils::gibrightarm(zombie, 0);
-                } else if (!gibserverutils::isgibbed(zombie, 16)) {
+                    continue;
+                }
+                if (!gibserverutils::isgibbed(zombie, 16)) {
                     gibserverutils::gibleftarm(zombie, 0);
                 }
             }
@@ -1397,7 +1398,9 @@ function function_1bdbe36c() {
 function function_4c13b4e7(entity, weakpoint, attacker, damage, var_a70572a9, weapon, point, mod, inflictor) {
     if (weakpoint.type === #"weakpoint") {
         level scoreevents::doscoreeventcallback("scoreEventZM", {#scoreevent:"hit_weak_point_zm", #attacker:attacker});
-    } else if (weakpoint.type === #"armor") {
+        return;
+    }
+    if (weakpoint.type === #"armor") {
         self.var_426947c4 = undefined;
         if (namespace_81245006::function_f29756fe(weakpoint) === 1 && isdefined(weakpoint.var_f371ebb0)) {
             if (isdefined(level.var_56f626bc)) {

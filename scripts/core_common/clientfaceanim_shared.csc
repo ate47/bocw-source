@@ -145,21 +145,21 @@ function private function_26ff990a(local_client_num) {
                 player clearallfacialanims(local_client_num);
                 player._currentfacestate = "inactive";
             }
-        } else {
-            if (player.team == #"spectator") {
-                continue;
-            }
-            distance_sq = distancesquared(camera_origin, player.origin);
-            if (distance_sq > var_62cc2a1a) {
-                return;
-            }
-            if ((isdefined(player.var_a0161fed) ? player.var_a0161fed : 0) < time) {
-                updatefacialanimforplayer(local_client_num, player);
-            }
-            count++;
-            if (count == max_players) {
-                return;
-            }
+            continue;
+        }
+        if (player.team == #"spectator") {
+            continue;
+        }
+        distance_sq = distancesquared(camera_origin, player.origin);
+        if (distance_sq > var_62cc2a1a) {
+            return;
+        }
+        if ((isdefined(player.var_a0161fed) ? player.var_a0161fed : 0) < time) {
+            updatefacialanimforplayer(local_client_num, player);
+        }
+        count++;
+        if (count == max_players) {
+            return;
         }
     }
 }
@@ -173,9 +173,9 @@ function private update_players(local_client_num) {
         function_26ff990a(local_client_num);
         if (isdemoplaying()) {
             waitframe(1);
-        } else {
-            wait(1);
+            continue;
         }
+        wait(1);
     }
 }
 

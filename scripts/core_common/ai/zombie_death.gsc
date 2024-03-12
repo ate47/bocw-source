@@ -83,11 +83,11 @@ function flame_death_fx() {
             self fx::play(fire_death_sm_fx, (0, 0, 0), (0, 0, 0), "stop_flame_damage", 1, tagarray[1]);
             self.weapon_specific_fire_death_sm_fx = undefined;
         }
-    } else {
-        /#
-            println("<unknown string>");
-        #/
+        return;
     }
+    /#
+        println("<unknown string>");
+    #/
 }
 
 // Namespace zombie_death/zombie_death
@@ -104,29 +104,29 @@ function do_gib() {
     switch (self.a.gib_ref) {
     case #"right_arm":
         gibserverutils::gibrightarm(self, 0);
-        break;
+        return;
     case #"left_arm":
         gibserverutils::gibleftarm(self, 0);
-        break;
+        return;
     case #"right_leg":
         gibserverutils::gibrightleg(self, 0);
-        break;
+        return;
     case #"left_leg":
         gibserverutils::gibleftleg(self, 0);
-        break;
+        return;
     case #"no_legs":
         gibserverutils::giblegs(self, 0);
-        break;
+        return;
     case #"head":
         gibserverutils::gibhead(self, 0);
-        break;
+        return;
     case #"guts":
-        break;
+        return;
     default:
         /#
             assertmsg("<unknown string>" + self.a.gib_ref + "<unknown string>");
         #/
-        break;
+        return;
     }
 }
 

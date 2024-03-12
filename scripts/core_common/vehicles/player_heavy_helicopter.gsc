@@ -114,7 +114,9 @@ function function_6ffe1aa7(player, var_92eb9b7d, var_6d872cea) {
     wait(tweentime);
     if (var_6d872cea === 1) {
         player clientfield::set_to_player("hind_gunner_postfx_active", 1);
-    } else if (var_92eb9b7d === 1) {
+        return;
+    }
+    if (var_92eb9b7d === 1) {
         player clientfield::set_to_player("hind_gunner_postfx_active", 0);
     }
 }

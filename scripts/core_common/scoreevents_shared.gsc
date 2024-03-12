@@ -307,9 +307,8 @@ function function_c046c773(waitduration, event, player, victim, weapon) {
 function isregisteredevent(type) {
     if (isdefined(level.scoreinfo[type])) {
         return 1;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace scoreevents/scoreevents_shared
@@ -422,7 +421,9 @@ function givecratecapturemedal(crate, capturer) {
                     processscoreevent(#"share_care_package", crate.owner, undefined, undefined);
                 }
             }
-        } else if (capturer != crate.owner) {
+            return;
+        }
+        if (capturer != crate.owner) {
             crate.owner playlocalsound(#"mpl_crate_enemy_steals");
             if (!isdefined(crate.hacker)) {
                 processscoreevent(#"capture_enemy_crate", capturer, undefined, undefined);
@@ -604,8 +605,8 @@ function function_31eb1b07(player, statname, var_26568428, timetoplay, weapon, i
         if (var_26568428 >= var_30ffb0d9) {
             level.var_648e79b7[attackerentnum] = {#einflictor:inflictor, #weapon:weapon, #timestamp:gettime() + timetoplay, #statname:statname};
         }
-    } else {
-        level.var_648e79b7[attackerentnum] = {#einflictor:inflictor, #weapon:weapon, #timestamp:gettime() + timetoplay, #statname:statname};
+        return;
     }
+    level.var_648e79b7[attackerentnum] = {#einflictor:inflictor, #weapon:weapon, #timestamp:gettime() + timetoplay, #statname:statname};
 }
 

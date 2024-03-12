@@ -362,10 +362,8 @@ function function_b7e924cf() {
 function function_695ec0(var_b338b8ed) {
     if (isplayer(self)) {
         var_14ddabc6 = var_b338b8ed function_a5df8834(self);
-        var_15316677 = var_14ddabc6.origin;
-        while (positionwouldtelefrag(var_15316677)) {
+        for (var_15316677 = var_14ddabc6.origin; positionwouldtelefrag(var_15316677); var_15316677 = var_14ddabc6.origin + (randomfloatrange(-24, 24), randomfloatrange(-24, 24), 0)) {
             waitframe(1);
-            var_15316677 = var_14ddabc6.origin + (randomfloatrange(-24, 24), randomfloatrange(-24, 24), 0);
         }
         if (isplayer(self)) {
             self unlink();
@@ -402,9 +400,8 @@ function function_a5df8834(player) {
 function function_6f03042(*einflictor, *eattacker, *idamage, *idflags, *smeansofdeath, *weapon, *vpoint, *vdir, *shitloc, *psoffsettime, *boneindex) {
     if (is_true(self.is_flung)) {
         return 0;
-    } else {
-        return -1;
     }
+    return -1;
 }
 
 // Namespace namespace_47809ab2/namespace_47809ab2
@@ -477,7 +474,7 @@ function function_b858693f(index) {
     foreach (var_90ddceac in var_1c9a65cd) {
         if (var_90ddceac.var_b555f02e == index) {
             if (!isdefined(var_90ddceac.var_43032f5e) || !isdefined(var_90ddceac.var_63c8edf4) || !isdefined(var_90ddceac.var_6f3293fb)) {
-                break;
+                return;
             }
             switch (var_90ddceac.script_int) {
             case 1:
@@ -542,24 +539,24 @@ function function_df6e6fce() {
     switch (self.script_int) {
     case 1:
         self.var_43032f5e setmodel(#"hash_1730e3d42048d1b5");
-        break;
+        return;
     case 2:
         self.var_43032f5e setmodel(#"hash_1730e0d42048cc9c");
-        break;
+        return;
     case 3:
         self.var_43032f5e setmodel(#"hash_1730e1d42048ce4f");
-        break;
+        return;
     case 4:
         self.var_43032f5e setmodel(#"hash_1730ded42048c936");
-        break;
+        return;
     case 5:
         self.var_43032f5e setmodel(#"hash_1730dfd42048cae9");
-        break;
+        return;
     case 6:
         self.var_43032f5e setmodel(#"hash_1730dcd42048c5d0");
-        break;
+        return;
     default:
-        break;
+        return;
     }
 }
 
@@ -605,12 +602,12 @@ function cmd(cmd) {
         switch (cmd) {
         case #"hash_3785a966b663fa40":
             function_de5992a1();
-            break;
+            return;
         case #"hash_627810dd51e05760":
             function_f4d4dc3b();
-            break;
+            return;
         default:
-            break;
+            return;
         }
     #/
 }

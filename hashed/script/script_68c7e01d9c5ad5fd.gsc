@@ -48,11 +48,13 @@ function private function_918ce680(localclientnum, pos, *surface, *notetrack, *b
     earthquake(notetrack, n_scale, 0.1, bone, n_dist);
     if (n_scale <= 0.25 && n_scale > 0.2) {
         function_36e4ebd4(notetrack, "anim_med");
-    } else if (n_scale <= 0.2 && n_scale > 0.1) {
-        function_36e4ebd4(notetrack, "damage_light");
-    } else {
-        function_36e4ebd4(notetrack, "damage_light");
+        return;
     }
+    if (n_scale <= 0.2 && n_scale > 0.1) {
+        function_36e4ebd4(notetrack, "damage_light");
+        return;
+    }
+    function_36e4ebd4(notetrack, "damage_light");
 }
 
 // Namespace namespace_146875e/namespace_146875e
@@ -71,7 +73,9 @@ function private function_5dae94f(localclientnum, *oldval, *newval, *bnewent, *b
 function private function_f5a07d57(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         util::playfxontag(fieldname, level._effect[#"fx8_destroyer_arm_spurt"], self, "j_shouldertwist_le");
-    } else if (bwastimejump == 2) {
+        return;
+    }
+    if (bwastimejump == 2) {
         util::playfxontag(fieldname, level._effect[#"fx8_destroyer_arm_spurt"], self, "tag_shoulder_ri_fx");
     }
 }

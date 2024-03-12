@@ -109,9 +109,9 @@ function private function_fe127aaf(localclientnum, var_ee6bcd51, str_fx) {
     if (isdefined(str_fx)) {
         if (isdefined(self.var_f87f8fa0)) {
             self.var_3231a850 = util::playfxontag(localclientnum, str_fx, self, self.var_f87f8fa0);
-        } else {
-            self.var_3231a850 = util::playfxontag(localclientnum, str_fx, self, "j_eyeball_le");
+            return;
         }
+        self.var_3231a850 = util::playfxontag(localclientnum, str_fx, self, "j_eyeball_le");
     }
 }
 

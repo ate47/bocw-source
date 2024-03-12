@@ -211,12 +211,12 @@ function function_1782c6ad() {
         var_7e9d4f5b = lengthsquared(var_f0202cc8);
         if (var_7e9d4f5b > thresh) {
             self.doa.var_e940d370 = 0;
-        } else {
-            var_85723ac6 = self getnormalizedcameramovement();
-            var_7e9d4f5b = lengthsquared(var_85723ac6);
-            if (var_7e9d4f5b > thresh) {
-                self.doa.var_e940d370 = 0;
-            }
+            continue;
+        }
+        var_85723ac6 = self getnormalizedcameramovement();
+        var_7e9d4f5b = lengthsquared(var_85723ac6);
+        if (var_7e9d4f5b > thresh) {
+            self.doa.var_e940d370 = 0;
         }
     }
 }
@@ -939,9 +939,9 @@ function function_19f387a(player, var_ca85cba1, thresh, boosting = 0) {
             } else {
                 guy dodamage(guy.health, player.origin, player, player, "none", "MOD_EXPLOSIVE", 0, level.doa.default_weapon);
             }
-        } else {
-            guy dodamage(guy.health, player.origin, player, player, "none", "MOD_EXPLOSIVE", 0, level.doa.default_weapon);
+            continue;
         }
+        guy dodamage(guy.health, player.origin, player, player, "none", "MOD_EXPLOSIVE", 0, level.doa.default_weapon);
     }
     self delete();
 }
@@ -985,19 +985,17 @@ function function_a8b57c52(var_2784b779, angles, ignore, var_b498e4b0) {
                 if (isinarray(ignore, player)) {
                     continue;
                 }
-                goto LOC_000001ca;
-            }
-            jumpiffalse(player === ignore) LOC_000001ca;
-        } else {
-        LOC_000001ca:
-            if (isdefined(var_b498e4b0) && player istouching(var_b498e4b0)) {
+            } else if (player === ignore) {
                 continue;
             }
-            player setorigin(var_2784b779);
-            player setplayerangles(angles);
-            var_2784b779 = var_2784b779 + offset;
-            offset = offset * -1;
         }
+        if (isdefined(var_b498e4b0) && player istouching(var_b498e4b0)) {
+            continue;
+        }
+        player setorigin(var_2784b779);
+        player setplayerangles(angles);
+        var_2784b779 = var_2784b779 + offset;
+        offset = offset * -1;
     }
 }
 
@@ -1256,7 +1254,6 @@ function function_5934bbc8() {
         return (1, 1, 0);
     default:
         return (1, 1, 1);
-        break;
     }
 }
 
@@ -1523,15 +1520,15 @@ function function_52392bd1(long = 0) {
     level endon(#"game_over");
     if (!long) {
         self thread namespace_6e90e490::function_47e11416(2, undefined, 1);
-    } else {
-        while (is_true(self.laststand)) {
-            wait(randomint(15));
-            if (level flag::get("doa_round_paused")) {
-                continue;
-            }
-            if (is_true(self.laststand)) {
-                self thread namespace_6e90e490::function_47e11416(3);
-            }
+        return;
+    }
+    while (is_true(self.laststand)) {
+        wait(randomint(15));
+        if (level flag::get("doa_round_paused")) {
+            continue;
+        }
+        if (is_true(self.laststand)) {
+            self thread namespace_6e90e490::function_47e11416(3);
         }
     }
 }
@@ -1717,15 +1714,18 @@ function function_8fef418b() {
             self.last_valid_position = position;
             self.var_5d991645 = origin;
         }
-    } else if (ispointonnavmesh(origin, self.playerradius)) {
-        self.last_valid_position = origin;
-    } else if (ispointonnavmesh(self.last_valid_position, self.playerradius) && distance2dsquared(origin, self.last_valid_position) < self.var_f09063b2 && function_a3f6cdac(origin[2] - self.last_valid_position[2]) < self.var_f09063b2) {
         return;
-    } else {
-        position = getclosestpointonnavmesh(origin, 100, self.playerradius);
-        if (isdefined(position)) {
-            self.last_valid_position = position;
-        }
+    }
+    if (ispointonnavmesh(origin, self.playerradius)) {
+        self.last_valid_position = origin;
+        return;
+    }
+    if (ispointonnavmesh(self.last_valid_position, self.playerradius) && distance2dsquared(origin, self.last_valid_position) < self.var_f09063b2 && function_a3f6cdac(origin[2] - self.last_valid_position[2]) < self.var_f09063b2) {
+        return;
+    }
+    position = getclosestpointonnavmesh(origin, 100, self.playerradius);
+    if (isdefined(position)) {
+        self.last_valid_position = position;
     }
 }
 

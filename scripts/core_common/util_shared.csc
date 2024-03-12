@@ -183,14 +183,14 @@ function waittill_multiple_ents(...) {
                 a_notifies = array(a_notifies);
             }
             a_notifies[a_notifies.size] = vararg[i];
-        } else {
-            if (!isdefined(a_ents)) {
-                a_ents = [];
-            } else if (!isarray(a_ents)) {
-                a_ents = array(a_ents);
-            }
-            a_ents[a_ents.size] = vararg[i];
+            continue;
         }
+        if (!isdefined(a_ents)) {
+            a_ents = [];
+        } else if (!isarray(a_ents)) {
+            a_ents = array(a_ents);
+        }
+        a_ents[a_ents.size] = vararg[i];
     }
     s_tracker = spawnstruct();
     s_tracker._wait_count = 0;
@@ -331,63 +331,63 @@ function _single_func(entity, func, a_vars) {
         } else {
             return [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5], a_vars[6], a_vars[7]);
         }
-        break;
+        return;
     case 7:
         if (isdefined(entity)) {
             return entity [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5], a_vars[6]);
         } else {
             return [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5], a_vars[6]);
         }
-        break;
+        return;
     case 6:
         if (isdefined(entity)) {
             return entity [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5]);
         } else {
             return [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5]);
         }
-        break;
+        return;
     case 5:
         if (isdefined(entity)) {
             return entity [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4]);
         } else {
             return [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4]);
         }
-        break;
+        return;
     case 4:
         if (isdefined(entity)) {
             return entity [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3]);
         } else {
             return [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3]);
         }
-        break;
+        return;
     case 3:
         if (isdefined(entity)) {
             return entity [[ func ]](a_vars[0], a_vars[1], a_vars[2]);
         } else {
             return [[ func ]](a_vars[0], a_vars[1], a_vars[2]);
         }
-        break;
+        return;
     case 2:
         if (isdefined(entity)) {
             return entity [[ func ]](a_vars[0], a_vars[1]);
         } else {
             return [[ func ]](a_vars[0], a_vars[1]);
         }
-        break;
+        return;
     case 1:
         if (isdefined(entity)) {
             return entity [[ func ]](a_vars[0]);
         } else {
             return [[ func ]](a_vars[0]);
         }
-        break;
+        return;
     case 0:
         if (isdefined(entity)) {
             return entity [[ func ]]();
         } else {
             return [[ func ]]();
         }
-        break;
+        return;
     default:
         /#
             assertmsg("<unknown string>");
@@ -404,9 +404,9 @@ function _clean_up_arg_array(&a_vars) {
     for (i = a_vars.size - 1; i >= 0; i--) {
         if (a_vars[i] === undefined) {
             arrayremoveindex(a_vars, i, 0);
-        } else {
-            break;
+            continue;
         }
+        return;
     }
 }
 
@@ -451,9 +451,9 @@ function array_ent_thread(entities, func, arg1, arg2, arg3, arg4, arg5) {
                 single_thread(self, func, entity, arg1, arg2, arg3, arg4, arg5);
             }
         }
-    } else {
-        single_thread(self, func, entities, arg1, arg2, arg3, arg4, arg5);
+        return;
     }
+    single_thread(self, func, entities, arg1, arg2, arg3, arg4, arg5);
 }
 
 // Namespace util/util_shared
@@ -537,7 +537,9 @@ function _single_thread(entity, func, arg1, arg2, &a_vars) {
             #/
             break;
         }
-    } else if (isdefined(arg1)) {
+        return;
+    }
+    if (isdefined(arg1)) {
         switch (a_vars.size) {
         case 8:
             entity thread [[ func ]](arg1, a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5], a_vars[6], a_vars[7]);
@@ -572,41 +574,41 @@ function _single_thread(entity, func, arg1, arg2, &a_vars) {
             #/
             break;
         }
-    } else {
-        switch (a_vars.size) {
-        case 8:
-            entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5], a_vars[6], a_vars[7]);
-            break;
-        case 7:
-            entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5], a_vars[6]);
-            break;
-        case 6:
-            entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5]);
-            break;
-        case 5:
-            entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4]);
-            break;
-        case 4:
-            entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3]);
-            break;
-        case 3:
-            entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2]);
-            break;
-        case 2:
-            entity thread [[ func ]](a_vars[0], a_vars[1]);
-            break;
-        case 1:
-            entity thread [[ func ]](a_vars[0]);
-            break;
-        case 0:
-            entity thread [[ func ]]();
-            break;
-        default:
-            /#
-                assertmsg("<unknown string>");
-            #/
-            break;
-        }
+        return;
+    }
+    switch (a_vars.size) {
+    case 8:
+        entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5], a_vars[6], a_vars[7]);
+        return;
+    case 7:
+        entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5], a_vars[6]);
+        return;
+    case 6:
+        entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4], a_vars[5]);
+        return;
+    case 5:
+        entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3], a_vars[4]);
+        return;
+    case 4:
+        entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2], a_vars[3]);
+        return;
+    case 3:
+        entity thread [[ func ]](a_vars[0], a_vars[1], a_vars[2]);
+        return;
+    case 2:
+        entity thread [[ func ]](a_vars[0], a_vars[1]);
+        return;
+    case 1:
+        entity thread [[ func ]](a_vars[0]);
+        return;
+    case 0:
+        entity thread [[ func ]]();
+        return;
+    default:
+        /#
+            assertmsg("<unknown string>");
+        #/
+        break;
     }
 }
 
@@ -779,9 +781,9 @@ function add_remove_list(&a = [], on_off) {
         if (!isinarray(a, self)) {
             arrayinsert(a, self, a.size);
         }
-    } else {
-        arrayremovevalue(a, self, 0);
+        return;
     }
+    arrayremovevalue(a, self, 0);
 }
 
 // Namespace util/util_shared
@@ -837,10 +839,10 @@ function lerp_dvar(str_dvar, n_start_val, n_end_val, n_lerp_time = getdvarfloat(
         n_curr_val = lerpfloat(n_lerp_time, b_saved_dvar, n_time_delta / b_client_dvar);
         if (is_true(n_client)) {
             setsaveddvar(n_end_val, n_curr_val);
-        } else {
-            setdvar(n_end_val, n_curr_val);
+            continue;
         }
-    } while(n_time_delta < b_client_dvar);
+        setdvar(n_end_val, n_curr_val);
+    } while (n_time_delta < b_client_dvar);
 }
 
 // Namespace util/util_shared
@@ -863,7 +865,6 @@ function is_valid_type_for_callback(type) {
         return 1;
     default:
         return 0;
-        break;
     }
 }
 
@@ -915,10 +916,9 @@ function register_system(ssysname, cbfunc) {
             error("<unknown string>" + ssysname);
         #/
         return;
-    } else {
-        level._systemstates[ssysname] = spawnstruct();
-        level._systemstates[ssysname].callback = cbfunc;
     }
+    level._systemstates[ssysname] = spawnstruct();
+    level._systemstates[ssysname].callback = cbfunc;
 }
 
 // Namespace util/event_42f3ada8
@@ -1361,10 +1361,9 @@ function registersystem(ssysname, cbfunc) {
             error("<unknown string>" + ssysname);
         #/
         return;
-    } else {
-        level._systemstates[ssysname] = spawnstruct();
-        level._systemstates[ssysname].callback = cbfunc;
     }
+    level._systemstates[ssysname] = spawnstruct();
+    level._systemstates[ssysname].callback = cbfunc;
 }
 
 // Namespace util/util_shared
@@ -1689,9 +1688,8 @@ function waittill_down_button_pressed() {
 function function_4c1656d5() {
     if (sessionmodeiswarzonegame()) {
         return getdvarfloat(#"hash_4e7a02edee964bf9", 250);
-    } else {
-        return getdvarfloat(#"hash_4ec50cedeed64871", 250);
     }
+    return getdvarfloat(#"hash_4ec50cedeed64871", 250);
 }
 
 // Namespace util/util_shared
@@ -1705,11 +1703,12 @@ function function_16fb0a3b() {
         } else {
             return getdvarfloat(#"hash_4e7a02edee964bf9", 250);
         }
-    } else if (getdvarint(#"hash_23fac9a913e70c03", 0) > 0) {
-        return getdvarfloat(#"hash_606c79b0e9348eb8", 250);
-    } else {
-        return getdvarfloat(#"hash_4ec50cedeed64871", 250);
+        return;
     }
+    if (getdvarint(#"hash_23fac9a913e70c03", 0) > 0) {
+        return getdvarfloat(#"hash_606c79b0e9348eb8", 250);
+    }
+    return getdvarfloat(#"hash_4ec50cedeed64871", 250);
 }
 
 // Namespace util/util_shared
@@ -1786,13 +1785,13 @@ function cf_team_mapping(*localclientnum, *oldval, newval, *bnewent, *binitialsn
     switch (bwastimejump) {
     case 0:
         set_team_mapping(#"axis", #"allies");
-        break;
+        return;
     case 1:
         set_team_mapping(#"allies", #"axis");
-        break;
+        return;
     default:
         set_team_mapping(#"allies", #"axis");
-        break;
+        return;
     }
 }
 
@@ -2069,7 +2068,9 @@ function function_48e57e36(var_1f1d12d8) {
         if (var_1f1d12d8[i] >= "0" && var_1f1d12d8[i] <= "9") {
             decimal = decimal + int(var_1f1d12d8[i]) * base;
             base = base * 16;
-        } else if (var_1f1d12d8[i] >= "a" && var_1f1d12d8[i] <= "f") {
+            continue;
+        }
+        if (var_1f1d12d8[i] >= "a" && var_1f1d12d8[i] <= "f") {
             if (var_1f1d12d8[i] == "a") {
                 number = 10;
             } else if (var_1f1d12d8[i] == "b") {

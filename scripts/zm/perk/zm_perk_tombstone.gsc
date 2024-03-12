@@ -159,9 +159,9 @@ function function_7c589e7(slot, item_name) {
 function on_player_laststand() {
     if (self namespace_e86ffa8::function_33d837e4() && !is_true(level.var_a69fc817)) {
         self thread function_dfd10619();
-    } else {
-        self clientfield::set_player_uimodel("hud_items.tombstonePerkAvailable", 0);
+        return;
     }
+    self clientfield::set_player_uimodel("hud_items.tombstonePerkAvailable", 0);
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
@@ -219,9 +219,9 @@ function function_716834ed() {
                 self.var_7d3caa9[self.var_7d3caa9.size] = var_42045b62;
             }
         }
-    } else {
-        self.var_2f2bf1ea = undefined;
+        return;
     }
+    self.var_2f2bf1ea = undefined;
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
@@ -240,7 +240,7 @@ function function_314e7dbf(stash) {
                         stash.tactical = undefined;
                     }
                 }
-                break;
+                continue;
             case #"lethal":
                 var_60d9ce9d = stash.lethal;
                 if (isdefined(var_60d9ce9d.var_a6762160)) {
@@ -249,7 +249,7 @@ function function_314e7dbf(stash) {
                         stash.lethal = undefined;
                     }
                 }
-                break;
+                continue;
             case #"weapon":
                 var_9f785cff = stash.weapon1;
                 if (isdefined(var_9f785cff.var_a6762160)) {
@@ -265,9 +265,9 @@ function function_314e7dbf(stash) {
                         stash.weapon2 = undefined;
                     }
                 }
-                break;
+                continue;
             default:
-                break;
+                continue;
             }
         }
     }
@@ -327,10 +327,10 @@ function function_dfd10619() {
     }
     if (is_true(self.var_45ef153) || is_true(level.var_45ef153)) {
         self zm_laststand::auto_revive();
-    } else {
-        self thread function_fe8b87d5();
-        self notify(#"tombstone_shadow");
+        return;
     }
+    self thread function_fe8b87d5();
+    self notify(#"tombstone_shadow");
 }
 
 // Namespace zm_perk_tombstone/zm_perk_tombstone
@@ -508,7 +508,8 @@ function revive_trigger_think(t_secondary) {
                 self.owner thread function_b3b8c37d(e_reviver);
                 self thread zm_laststand::auto_revive(e_reviver, 0, 0);
                 return;
-            } else if (isdefined(e_reviver)) {
+            }
+            if (isdefined(e_reviver)) {
                 e_reviver zm_vo::vo_stop();
             }
         }
@@ -947,16 +948,16 @@ function function_8bc73ff9() {
             switch (var_12a9e30a.var_6032cf15) {
             case 1:
             default:
-                var_65b6e624 = #"armor_item_lv1_t9_sr";
+                str_level = #"armor_item_lv1_t9_sr";
                 break;
             case 2:
-                var_65b6e624 = #"armor_item_lv2_t9_sr";
+                str_level = #"armor_item_lv2_t9_sr";
                 break;
             case 3:
-                var_65b6e624 = #"armor_item_lv2_t9_sr";
+                str_level = #"armor_item_lv2_t9_sr";
                 break;
             }
-            self namespace_dd7e54e3::give_armor(var_65b6e624);
+            self namespace_dd7e54e3::give_armor(str_level);
             if (self.armor < var_12a9e30a.armor) {
                 self.armor = var_12a9e30a.armor;
             }

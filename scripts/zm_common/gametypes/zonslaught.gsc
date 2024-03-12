@@ -236,7 +236,7 @@ function function_8f3357bd() {
                 var_babbd92e = util::spawn_model("p8_usa_ventilation_duct_hatch_01", struct.origin, struct.angles);
                 var_babbd92e solid();
             }
-            break;
+            return;
         default:
             return;
         }
@@ -347,23 +347,22 @@ function function_6398c8cb() {
         self.resurrect_origin = var_8c27fbb7;
         var_e2f41b0a = {#angles:self.resurrect_angles, #origin:var_8c27fbb7};
         return var_e2f41b0a;
+    }
+    players = function_a1ef346b();
+    if (players.size === 1) {
+        return var_e2f41b0a;
     } else {
-        players = function_a1ef346b();
-        if (players.size === 1) {
-            return var_e2f41b0a;
-        } else {
-            foreach (player in players) {
-                var_8c27fbb7 = getclosestpointonnavmesh(player.origin, 64, 32);
-                if (isdefined(var_8c27fbb7)) {
-                    self.resurrect_origin = var_8c27fbb7;
-                    self.resurrect_angles = player.angles;
-                    var_e2f41b0a = {#angles:player.angles, #origin:var_8c27fbb7};
-                    return var_e2f41b0a;
-                }
+        foreach (player in players) {
+            var_8c27fbb7 = getclosestpointonnavmesh(player.origin, 64, 32);
+            if (isdefined(var_8c27fbb7)) {
+                self.resurrect_origin = var_8c27fbb7;
+                self.resurrect_angles = player.angles;
+                var_e2f41b0a = {#angles:player.angles, #origin:var_8c27fbb7};
+                return var_e2f41b0a;
             }
         }
-        return var_e2f41b0a;
     }
+    return var_e2f41b0a;
 }
 
 // Namespace zonslaught/zonslaught
@@ -587,9 +586,9 @@ function function_6878d990(ai_zombie) {
         var_2a576940 = getclosestpointonnavmesh(level.var_df7b46d1.origin, 64, 64);
         if (isdefined(var_2a576940)) {
             ai_zombie setgoal(var_2a576940, 0, 32);
-        } else {
-            ai_zombie setgoal(ai_zombie.origin, 0, 32);
+            return;
         }
+        ai_zombie setgoal(ai_zombie.origin, 0, 32);
     }
 }
 
@@ -816,7 +815,9 @@ function function_e88957df(var_a0168ed5 = 0) {
                 return;
             }
         }
-    } else if (var_9b7bd0e8 === 5 && !is_true(self.var_ba29dd0)) {
+        return;
+    }
+    if (var_9b7bd0e8 === 5 && !is_true(self.var_ba29dd0)) {
         self.var_ba29dd0 = 1;
         if (function_26bd1471()) {
             function_6e4a862f(2, 5);
@@ -905,7 +906,9 @@ function function_e88957df(var_a0168ed5 = 0) {
                 return;
             }
         }
-    } else if (var_9b7bd0e8 === 8 && !is_true(self.var_b9cbff40)) {
+        return;
+    }
+    if (var_9b7bd0e8 === 8 && !is_true(self.var_b9cbff40)) {
         self.var_b9cbff40 = 1;
         if (function_26bd1471()) {
             function_6e4a862f(3, 8);
@@ -925,73 +928,73 @@ function function_e88957df(var_a0168ed5 = 0) {
             switch (level.var_8de4d059) {
             case #"mp_cartel":
                 self zm_stats::increment_challenge_stat(#"hash_43c2b3a0dfc9bab3", undefined, 1);
-                break;
+                return;
             case #"mp_kgb":
                 self zm_stats::increment_challenge_stat(#"hash_5014636a724f5c14", undefined, 1);
-                break;
+                return;
             case #"mp_miami":
                 self zm_stats::increment_challenge_stat(#"hash_15a7d102d2edb893", undefined, 1);
-                break;
+                return;
             case #"mp_moscow":
                 self zm_stats::increment_challenge_stat(#"hash_567e99c4a5fb9fc8", undefined, 1);
-                break;
+                return;
             case #"mp_satellite":
                 self zm_stats::increment_challenge_stat(#"hash_40199f1bfb79141d", undefined, 1);
-                break;
+                return;
             case #"mp_tank":
                 self zm_stats::increment_challenge_stat(#"hash_525fc5df1c43afe4", undefined, 1);
-                break;
+                return;
             case #"mp_tundra":
                 self zm_stats::increment_challenge_stat(#"hash_4fb345ddd49a654c", undefined, 1);
-                break;
+                return;
             case #"mp_nuketown6":
                 self zm_stats::increment_challenge_stat(#"hash_17c6d5faa49457e1", undefined, 1);
-                break;
+                return;
             case #"mp_mall":
                 self zm_stats::increment_challenge_stat(#"hash_80f17b0b548e17e", undefined, 1);
-                break;
+                return;
             case #"mp_raid_rm":
                 self zm_stats::increment_challenge_stat(#"hash_65ed7b0fe5ddfe4c", undefined, 1);
-                break;
+                return;
             case #"mp_express_rm":
                 self zm_stats::increment_challenge_stat(#"hash_54df583b05e784c0", undefined, 1);
-                break;
+                return;
             case #"mp_apocalypse":
                 self zm_stats::increment_challenge_stat(#"hash_1ada6297a317cb2f", undefined, 1);
-                break;
+                return;
             case #"hash_418ef9f1f49298e6":
                 self zm_stats::increment_challenge_stat(#"hash_690bf214175428d", undefined, 1);
-                break;
+                return;
             case #"mp_village_rm":
                 self zm_stats::increment_challenge_stat(#"hash_138e156dd57f9824", undefined, 1);
-                break;
+                return;
             case #"mp_dune":
                 self zm_stats::increment_challenge_stat(#"hash_3cdbf06308503032", undefined, 1);
-                break;
+                return;
             case #"mp_paintball_rm":
                 self zm_stats::increment_challenge_stat(#"hash_203003e51c5621d", undefined, 1);
-                break;
+                return;
             case #"mp_echelon":
                 self zm_stats::increment_challenge_stat(#"hash_43ea4e7159b99b9c", undefined, 1);
-                break;
+                return;
             case #"mp_drivein_rm":
                 self zm_stats::increment_challenge_stat(#"hash_5af7140c7463d733", undefined, 1);
-                break;
+                return;
             case #"mp_firebase":
                 self zm_stats::increment_challenge_stat(#"hash_6f05f4cee5d4d81d", undefined, 1);
-                break;
+                return;
             case #"mp_sm_finance":
                 self zm_stats::increment_challenge_stat(#"hash_72b597c540b86d8d", undefined, 1);
-                break;
+                return;
             case #"mp_sm_central":
                 self zm_stats::increment_challenge_stat(#"hash_7b4e9ebeabbe183a", undefined, 1);
-                break;
+                return;
             case #"mp_sm_berlin_tunnel":
                 self zm_stats::increment_challenge_stat(#"hash_4b9152a0994640e4", undefined, 1);
-                break;
+                return;
             case #"mp_sm_game_show":
                 self zm_stats::increment_challenge_stat(#"hash_41333e39d398c7e1", undefined, 1);
-                break;
+                return;
             default:
                 /#
                     assertmsg("<unknown string>");
@@ -1040,37 +1043,26 @@ function function_82ca1565(spawnpoint, gametype) {
     switch (gametype) {
     case #"ctf":
         return (isdefined(spawnpoint.ctf) && spawnpoint.ctf);
-        break;
     case #"tdm":
         return (isdefined(spawnpoint.tdm) && spawnpoint.tdm);
-        break;
     case #"war":
         return is_true(spawnpoint.war);
-        break;
     case #"war_zone_0":
         return is_true(spawnpoint.war_zone_0);
-        break;
     case #"war_zone_1":
         return is_true(spawnpoint.war_zone_1);
-        break;
     case #"war_zone_2":
         return is_true(spawnpoint.war_zone_2);
-        break;
     case #"war_zone_3":
         return is_true(spawnpoint.war_zone_3);
-        break;
     case #"war_zone_4":
         return is_true(spawnpoint.war_zone_4);
-        break;
     case #"hash_35b3b60f0a291417":
         return is_true(spawnpoint.var_3cb82e5e);
-        break;
     case #"hash_450dd6aacc69e524":
         return is_true(spawnpoint.var_d8e690f8);
-        break;
     case #"hash_42f07692f7d48364":
         return is_true(spawnpoint.var_3d72e6da);
-        break;
     default:
         /#
             assertmsg("<unknown string>" + gametype + "<unknown string>" + spawnpoint.origin[0] + "<unknown string>" + spawnpoint.origin[1] + "<unknown string>" + spawnpoint.origin[2]);

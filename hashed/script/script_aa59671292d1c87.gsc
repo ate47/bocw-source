@@ -82,11 +82,8 @@ function function_e71841a() {
             self.var_cd42b9c0 setcompassicon(iconname);
             self.var_cd42b9c0 function_811196d1(0);
             self.var_cd42b9c0 function_5e00861(1024, 1);
-            goto LOC_000001de;
         }
-    LOC_000001de:
     }
-LOC_000001de:
     var_c9bdb63f = self namespace_f27a9d0d::function_cee62dac("type", "wallbuy");
     foreach (var_f6198c5b in var_c9bdb63f) {
     }

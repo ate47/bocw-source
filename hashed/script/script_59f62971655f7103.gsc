@@ -50,9 +50,8 @@ function function_b79dc4e7(player) {
     }
     if (teamindex % 2) {
         return "blops_taacom";
-    } else {
-        return "cdp_taacom";
     }
+    return "cdp_taacom";
 }
 
 // Namespace battlechatter/namespace_7819da81

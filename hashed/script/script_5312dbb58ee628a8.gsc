@@ -92,11 +92,11 @@ function function_c1a68e7a(killstreakbundle) {
                 level.var_6964d56c.var_e321cb16[killstreakbundle.var_d3413870][level.var_6964d56c.var_e321cb16[killstreakbundle.var_d3413870].size] = self;
             }
             level function_d464ecf7();
-        } else {
-            /#
-                function_600ab97b("<unknown string>" + killstreakbundle.var_d3413870 + "<unknown string>" + self getentitynumber());
-            #/
+            return;
         }
+        /#
+            function_600ab97b("<unknown string>" + killstreakbundle.var_d3413870 + "<unknown string>" + self getentitynumber());
+        #/
     }
 }
 
@@ -340,9 +340,9 @@ function private function_3e06504d(var_49bc4623) {
     var_f5b4945e = (var_c4d3c810, var_c4d3c810, var_f5b4945e[2]);
     if (var_49bc4623 === 1) {
         badplace_cylinder(var_5eb5286, 0, var_b67c282e, var_c4d3c810, var_f5b4945e[2] * 2, "all");
-    } else {
-        badplace_box(var_5eb5286, 0, var_b67c282e, var_f5b4945e, "all");
+        return;
     }
+    badplace_box(var_5eb5286, 0, var_b67c282e, var_f5b4945e, "all");
 }
 
 // Namespace missile_turret/namespace_1b611bca
@@ -739,7 +739,8 @@ function function_3276039d(e_target) {
             level.var_6964d56c.var_d689d9f8[e_target.vehicletype] = e_target.maxhealth / (isdefined(self.turretweapon.maxdamage) ? self.turretweapon.maxdamage : 1);
         }
         return level.var_6964d56c.var_d689d9f8[e_target.vehicletype];
-    } else if (isdefined(e_target.killstreaktype)) {
+    }
+    if (isdefined(e_target.killstreaktype)) {
         if (!isdefined(level.var_6964d56c.var_d689d9f8)) {
             level.var_6964d56c.var_d689d9f8 = [];
         }
@@ -748,9 +749,8 @@ function function_3276039d(e_target) {
             level.var_6964d56c.var_d689d9f8[e_target.killstreaktype] = isdefined(var_918c7f60.ksrocketstokill) ? var_918c7f60.ksrocketstokill : 1;
         }
         return (level.var_6964d56c.var_d689d9f8[e_target.killstreaktype] * 2);
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace missile_turret/namespace_1b611bca
@@ -977,11 +977,11 @@ function function_d103a3d0() {
         } else {
             function_846f866d();
         }
-    } else {
-        self.var_c27dadc8 = function_145804c6();
-        if (isdefined(self.var_c27dadc8)) {
-            function_42bacd5b();
-        }
+        return;
+    }
+    self.var_c27dadc8 = function_145804c6();
+    if (isdefined(self.var_c27dadc8)) {
+        function_42bacd5b();
     }
 }
 
@@ -1104,29 +1104,27 @@ function aim_at_target(e_target) {
 function function_9d831b2f() {
     self endon(#"death", #"end_turret_scanning");
     for (;;) {
-        for (;;) {
-            if (function_71eb999()) {
-                waitframe(1);
-                continue;
-            }
-            if (self.var_942bf052 === "left") {
-                self turretsettargetangles(0, (-10, 180, 0));
-                self.var_942bf052 = "left2";
-            } else if (self.var_942bf052 === "left2") {
-                self turretsettargetangles(0, (-10, 360, 0));
-                self.var_942bf052 = "right";
-            } else if (self.var_942bf052 === "right") {
-                self turretsettargetangles(0, (-10, -180, 0));
-                self.var_942bf052 = "right2";
-            } else {
-                self turretsettargetangles(0, (-10, -360, 0));
-                self.var_942bf052 = "left";
-            }
-            waitresult = undefined;
-            waitresult = self waittilltimeout(3.5, #"missile_turret_potential_target_acquired");
-            if (waitresult._notify == "missile_turret_potential_target_acquired") {
-                continue;
-            };
+        if (function_71eb999()) {
+            waitframe(1);
+            continue;
+        }
+        if (self.var_942bf052 === "left") {
+            self turretsettargetangles(0, (-10, 180, 0));
+            self.var_942bf052 = "left2";
+        } else if (self.var_942bf052 === "left2") {
+            self turretsettargetangles(0, (-10, 360, 0));
+            self.var_942bf052 = "right";
+        } else if (self.var_942bf052 === "right") {
+            self turretsettargetangles(0, (-10, -180, 0));
+            self.var_942bf052 = "right2";
+        } else {
+            self turretsettargetangles(0, (-10, -360, 0));
+            self.var_942bf052 = "left";
+        }
+        waitresult = undefined;
+        waitresult = self waittilltimeout(3.5, #"missile_turret_potential_target_acquired");
+        if (waitresult._notify == "missile_turret_potential_target_acquired") {
+            self waittill(#"hash_1f6056bfa3098e59");
         }
     }
 }
@@ -1149,14 +1147,14 @@ function turretscanning() {
         [[ level.var_c61fd5a9 ]]->waitinqueue(self);
         if (function_71eb999()) {
             waitframe(1);
-        } else {
-            if (is_valid_target(self.e_current_target)) {
-                function_16ccb771();
-            } else {
-                function_d103a3d0();
-            }
-            waitframe(1);
+            continue;
         }
+        if (is_valid_target(self.e_current_target)) {
+            function_16ccb771();
+        } else {
+            function_d103a3d0();
+        }
+        waitframe(1);
     }
 }
 
@@ -1383,20 +1381,17 @@ function function_bc71337c() {
         self endon(#"death", #"end_turret_scanning");
         if (getdvarint(#"hash_7a06f4366ad184cb", 0) >= 1) {
             var_4c7bb5d2 = 20;
-            var_d6f7b785 = 0;
-            for (;;) {
-                for (;;) {
-                    if (var_d6f7b785 % var_4c7bb5d2 == 0) {
-                        drawcylinder(self.origin, sqrt(self.turret.var_ddf7efa7), 100000, float(function_60d95f53()) / 1000 * var_4c7bb5d2, undefined, (1, 0.85, 0));
-                    }
-                    if (isdefined(self.var_c27dadc8)) {
-                        line(self.origin, function_b098be17(self.var_c27dadc8), (1, 0, 0));
-                    }
-                    if (isdefined(self.e_current_target)) {
-                        line(self.origin, function_b098be17(self.e_current_target), (0, 1, 0));
-                    }
-                    waitframe(1);
+            for (var_d6f7b785 = 0; ; var_d6f7b785++) {
+                if (var_d6f7b785 % var_4c7bb5d2 == 0) {
+                    drawcylinder(self.origin, sqrt(self.turret.var_ddf7efa7), 100000, float(function_60d95f53()) / 1000 * var_4c7bb5d2, undefined, (1, 0.85, 0));
                 }
+                if (isdefined(self.var_c27dadc8)) {
+                    line(self.origin, function_b098be17(self.var_c27dadc8), (1, 0, 0));
+                }
+                if (isdefined(self.e_current_target)) {
+                    line(self.origin, function_b098be17(self.e_current_target), (0, 1, 0));
+                }
+                waitframe(1);
             }
         }
     #/

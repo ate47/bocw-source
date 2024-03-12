@@ -140,15 +140,15 @@ function function_f9e445ee(localclientnum, *oldval, newval, *bnewent, *binitials
     switch (bwastimejump) {
     case 0:
         setdepthoffield(fieldname, 0, 0, 512, 512, 4, 0);
-        break;
+        return;
     case 1:
         setdepthoffield(fieldname, 0, 0, 512, 4000, 4, 0);
-        break;
+        return;
     case 2:
         setdepthoffield(fieldname, 0, 128, 512, 4000, 6, 1.8);
-        break;
+        return;
     default:
-        break;
+        return;
     }
 }
 
@@ -168,7 +168,9 @@ function private function_f22aa227(localclientnum) {
         if (!self function_d2503806(#"rob_sonar_set_enemy")) {
             self playrenderoverridebundle(#"rob_sonar_set_enemy");
         }
-    } else if (self function_d2503806(#"rob_sonar_set_enemy")) {
+        return;
+    }
+    if (self function_d2503806(#"rob_sonar_set_enemy")) {
         self stoprenderoverridebundle(#"rob_sonar_set_enemy");
     }
 }

@@ -225,9 +225,9 @@ function recordkillstreakend(recordstreakindex, totalkills) {
     eventindex = player.killstreakevents[recordstreakindex];
     if (isdefined(eventindex)) {
         player recordkillstreakenddirect(eventindex, recordstreakindex, totalkills);
-    } else {
-        player.killstreakevents[recordstreakindex] = totalkills;
+        return;
     }
+    player.killstreakevents[recordstreakindex] = totalkills;
 }
 
 // Namespace killstreakrules/killstreakrules_shared
@@ -394,7 +394,9 @@ function function_9f635a5(cooldowntime = 0, killstreaktype) {
         } else if (self.pers[#"hash_b05d8e95066f3ce"][killstreaktype] === 1) {
             self.pers[#"hash_b05d8e95066f3ce"][killstreaktype] = 0;
         }
-    } else if (level.var_5b544215 === 2) {
+        return;
+    }
+    if (level.var_5b544215 === 2) {
         weapon = killstreaks::get_killstreak_weapon(killstreaktype);
         if ((isdefined(self.pers[#"killstreak_quantity"][weapon]) ? self.pers[#"killstreak_quantity"][weapon] : 0) >= level.scorestreaksmaxstacking) {
             self killstreaks::add_to_notification_queue(level.killstreaks[killstreaktype].menuname, undefined, killstreaktype, 0, 0);
@@ -586,7 +588,9 @@ function killstreak_debug_text(text) {
         if (isdefined(level.killstreak_rule_debug)) {
             if (level.killstreak_rule_debug == 1) {
                 iprintln("<unknown string>" + text + "<unknown string>");
-            } else if (level.killstreak_rule_debug == 2) {
+                return;
+            }
+            if (level.killstreak_rule_debug == 2) {
                 iprintlnbold("<unknown string>" + text);
             }
         }

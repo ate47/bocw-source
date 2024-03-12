@@ -204,9 +204,9 @@ function function_46f25b65(var_e728c53 = self.options.size - 1, var_a5bdf9c0 = 0
             }
             if (var_a5bdf9c0) {
                 self.options[var_e728c53].var_e05c8121 = randomint(self.options[var_e728c53].var_25b61283.size);
-            } else {
-                self.options[var_e728c53].var_e05c8121 = 0;
+                return;
             }
+            self.options[var_e728c53].var_e05c8121 = 0;
         }
     }
 }
@@ -421,9 +421,8 @@ function function_b8031554(var_34b21e8e, *struct, scene, shot) {
         var_5939f953.var_38d4ed7 = var_96866f7f gettagorigin("j_head");
         var_96866f7f delete();
         return var_5939f953;
-    } else {
-        return undefined;
     }
+    return undefined;
 }
 
 // Namespace dialog_tree/dialog_tree
@@ -504,10 +503,9 @@ function function_cfa96cee(dialog_tree, var_6a8278e5, timer, var_b98e33f = "dial
     msg = self waittill(#"trigger", #"death", #"hash_15ec42f1846ef9d0", #"deleted", var_b98e33f);
     if (msg._notify == "trigger") {
         return dialog_tree run(self, var_6a8278e5, timer, msg.activator, var_5bab29d8);
-    } else {
-        self util::function_dce0e9b9();
-        return;
     }
+    self util::function_dce0e9b9();
+    return;
 }
 
 // Namespace dialog_tree/dialog_tree
@@ -849,25 +847,25 @@ function private function_58881e72(var_7af0d1dc, str_shot, var_6a8278e5) {
                 /#
                     iprintln("<unknown string>" + abs(curr_time - var_4fd94186.var_bd15dadd));
                 #/
-            } else {
-                notetracks = getnotetracksindelta(ent._scene_object._str_current_anim, 0, 999);
-                if (notetracks.size) {
-                    foreach (notetrack in notetracks) {
-                        if (notetrack[5] == #"vox") {
-                            ent.stop_sound = 1;
-                            if (notetrack[3] > curr_time && notetrack[3] * var_45bbb227 < var_4fd94186.skipt) {
-                                var_4304083 = notetrack[3] * var_45bbb227 - 0.1;
-                                if (var_4304083 < curr_time * var_45bbb227) {
-                                    continue;
-                                }
-                                var_4fd94186.ent = ent;
-                                var_4fd94186.skipt = var_4304083;
-                                var_4fd94186.var_30468601 = var_4304083 / var_45bbb227;
-                                var_4fd94186.var_4fc15872 = notetrack[3] * var_45bbb227;
-                                /#
-                                    var_4fd94186.vox = function_9e72a96(notetrack[6]);
-                                #/
+                continue;
+            }
+            notetracks = getnotetracksindelta(ent._scene_object._str_current_anim, 0, 999);
+            if (notetracks.size) {
+                foreach (notetrack in notetracks) {
+                    if (notetrack[5] == #"vox") {
+                        ent.stop_sound = 1;
+                        if (notetrack[3] > curr_time && notetrack[3] * var_45bbb227 < var_4fd94186.skipt) {
+                            var_4304083 = notetrack[3] * var_45bbb227 - 0.1;
+                            if (var_4304083 < curr_time * var_45bbb227) {
+                                continue;
                             }
+                            var_4fd94186.ent = ent;
+                            var_4fd94186.skipt = var_4304083;
+                            var_4fd94186.var_30468601 = var_4304083 / var_45bbb227;
+                            var_4fd94186.var_4fc15872 = notetrack[3] * var_45bbb227;
+                            /#
+                                var_4fd94186.vox = function_9e72a96(notetrack[6]);
+                            #/
                         }
                     }
                 }
@@ -909,12 +907,12 @@ function private function_62d48ab(var_34b21e8e, var_2f04fa05) {
                 var_34b21e8e.var_e744d1aa = snd::play(vo_line, [1:"j_head", 0:var_34b21e8e]);
                 snd::function_2fdc4fb(var_34b21e8e.var_e744d1aa);
             }
-        } else {
-            /#
-                iprintlnbold(vo_line);
-                self.activator waittilltimeout(1.5, #"hash_71ceced1590e6571");
-            #/
+            continue;
         }
+        /#
+            iprintlnbold(vo_line);
+            self.activator waittilltimeout(1.5, #"hash_71ceced1590e6571");
+        #/
     }
     var_34b21e8e notify(#"hash_48ace2900075b6e8");
     var_34b21e8e.var_e744d1aa = undefined;
@@ -977,9 +975,9 @@ function private function_b85d5a3a(var_d9d52a9d, var_cf6d95c9 = 4) {
             option = self.options[var_d9d52a9d[i]];
             var_2ebd3f57 = isdefined(option.var_9ddc06f5) && option.var_5741b81f && !level flag::get(option.var_9ddc06f5);
             var_df0608f8[i] = {#locked:var_2ebd3f57, #string:option.var_8fece7d7, #important:option.important};
-        } else {
-            var_df0608f8[i] = {#locked:0, #string:undefined, #important:0};
+            continue;
         }
+        var_df0608f8[i] = {#locked:0, #string:undefined, #important:0};
     }
     return var_df0608f8;
 }
@@ -1069,9 +1067,9 @@ function private function_a5440f84(flagname) {
     if (!self flag::exists(flagname)) {
         self flag::init(flagname);
         self flag::clear(flagname);
-    } else {
-        self flag::wait_till_clear(flagname);
+        return;
     }
+    self flag::wait_till_clear(flagname);
 }
 
 // Namespace dialog_tree/dialog_tree
@@ -1168,10 +1166,9 @@ function private function_8b61aa4c(var_d9d52a9d, var_34b21e8e, var_cf6d95c9 = 4)
     if (selected.var_70b35161 < 0) {
         level thread function_310d2602(var_8447108b, var_34b21e8e, 1);
         return selected.var_70b35161;
-    } else {
-        level thread function_310d2602(var_8447108b, var_34b21e8e);
-        return var_d9d52a9d[selected.var_70b35161];
     }
+    level thread function_310d2602(var_8447108b, var_34b21e8e);
+    return var_d9d52a9d[selected.var_70b35161];
 }
 
 // Namespace dialog_tree/dialog_tree

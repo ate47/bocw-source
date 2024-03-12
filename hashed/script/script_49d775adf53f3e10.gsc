@@ -34,10 +34,10 @@ function init_clientfields() {
 function function_9199e921(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self thread postfx::playpostfxbundle("pstfx_jump_pad_launch");
-    } else {
-        self thread postfx::exitpostfxbundle("pstfx_jump_pad_launch");
-        self playrumbleonentity(fieldname, #"hash_17a7c0691c65e722");
+        return;
     }
+    self thread postfx::exitpostfxbundle("pstfx_jump_pad_launch");
+    self playrumbleonentity(fieldname, #"hash_17a7c0691c65e722");
 }
 
 // Namespace namespace_47809ab2/namespace_47809ab2
@@ -47,7 +47,9 @@ function function_9199e921(localclientnum, *oldval, newval, *bnewent, *binitials
 function function_4a0e5efb(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self.var_1749c2a9 = self playloopsound(#"hash_64c2dcc38c5547e2");
-    } else if (isdefined(self.var_1749c2a9)) {
+        return;
+    }
+    if (isdefined(self.var_1749c2a9)) {
         self stoploopsound(self.var_1749c2a9);
         self.var_1749c2a9 = undefined;
     }
@@ -62,7 +64,9 @@ function function_2c087855(*localclientnum, *oldval, newval, *bnewent, *binitial
         if (!isdefined(self.var_c9480534)) {
             self.var_c9480534 = self playloopsound(#"hash_67d068901551222c");
         }
-    } else if (isdefined(self.var_c9480534)) {
+        return;
+    }
+    if (isdefined(self.var_c9480534)) {
         self stoploopsound(self.var_c9480534);
         self.var_c9480534 = undefined;
     }
@@ -83,17 +87,17 @@ function function_fccba5d0(localclientnum, *oldval, newval, *bnewent, *binitials
     }
     switch (bwastimejump) {
     case 0:
-        break;
+        return;
     case 1:
         self.var_510ae6c9 = util::playfxontag(fieldname, #"hash_425a20b3838488b9", self, "tag_light_right_fx");
         self.var_4b81d3a7 = util::playfxontag(fieldname, #"hash_425a20b3838488b9", self, "tag_light_left_fx");
-        break;
+        return;
     case 2:
         self.var_510ae6c9 = util::playfxontag(fieldname, #"hash_2fa753029cdd63bd", self, "tag_light_right_fx");
         self.var_4b81d3a7 = util::playfxontag(fieldname, #"hash_2fa753029cdd63bd", self, "tag_light_left_fx");
-        break;
+        return;
     default:
-        break;
+        return;
     }
 }
 

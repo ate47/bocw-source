@@ -281,14 +281,14 @@ function function_696b3380() {
             self pathvariableoffset(vectorscale((0, 0, 1), 90), offsettime);
             wait(offsettime - 0.1);
             var_c6ac5940 = 1;
-        } else {
-            offsettime = randomfloatrange(1, 3);
-            var_fbe7ba4a = randomintrange(0, 30);
-            var_24962759 = randomintrange(0, 50);
-            self pathvariableoffset((0, var_fbe7ba4a, var_24962759), offsettime);
-            var_c6ac5940 = 0;
-            wait(offsettime * 2);
+            continue;
         }
+        offsettime = randomfloatrange(1, 3);
+        var_fbe7ba4a = randomintrange(0, 30);
+        var_24962759 = randomintrange(0, 50);
+        self pathvariableoffset((0, var_fbe7ba4a, var_24962759), offsettime);
+        var_c6ac5940 = 0;
+        wait(offsettime * 2);
     }
 }
 

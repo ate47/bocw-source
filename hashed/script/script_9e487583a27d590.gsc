@@ -188,9 +188,9 @@ function function_12e71d53() {
     self waittill(#"hash_12324459eb2bc76d");
     if (level.lazar flag::get("flag_in_scene")) {
         level.lazar thread namespace_a635adb1::queue("vox_cp_sh1a_00500_lazr_311393DEBB08452B");
-    } else {
-        level.lazar thread namespace_a635adb1::queue("vox_cp_sh1a_00500_lazr_E3DA29536D02434E");
+        return;
     }
+    level.lazar thread namespace_a635adb1::queue("vox_cp_sh1a_00500_lazr_E3DA29536D02434E");
 }
 
 // Namespace hub_post_takedown/namespace_3e22901a
@@ -400,7 +400,7 @@ function function_c151a47e() {
             level.lazar notify(#"kill_dialog");
             thread function_6ad219dd();
             level util::delay(3, undefined, &flag::clear, "flag_player_in_dialog");
-            break;
+            return;
         }
     }
 }
@@ -465,45 +465,45 @@ function function_89f6dfa8() {
 // Checksum 0xe14fd48b, Offset: 0x3660
 // Size: 0x60c
 function function_7040e7b1() {
-    var_3608d414 = spawnstruct();
-    var_3608d414.lazar = spawnstruct();
-    var_3608d414.lazar.dialog[0] = [0:"vox_cp_sh1_00101_lazr_ineedtomovealit_3c"];
-    var_3608d414.lazar.dialog[1] = [0:"vox_cp_sh1_00101_lazr_bag_38"];
-    var_3608d414.lazar.dialog[2] = [0:"vox_cp_sh1_00101_lazr_motherfucker_1d"];
-    var_3608d414.lazar.dialog[3] = [0:"vox_cp_sh1_00101_lazr_allgood_21"];
-    var_3608d414.lazar.dialog[4] = [0:"vox_cp_sh1_00101_lazr_afewmore_b5"];
-    var_3608d414.lazar.dialog[5] = [0:"vox_cp_sh1_00101_lazr_mindgrabbinit_b4"];
-    var_3608d414.lazar.dialog[6] = [0:"vox_cp_sh1_00101_lazr_youmind_44"];
-    level.lazar thread namespace_31c67f6d::function_5bd9de0f(var_3608d414.lazar.dialog, "notify_lazar_speak", "forever");
-    var_3608d414.lazar.var_53b7e0ad[0] = [0:"vox_cp_sh1_00101_lazr_oomph_31"];
-    var_3608d414.lazar.var_53b7e0ad[1] = [0:"vox_cp_sh1_00101_lazr_nmph_b4"];
-    var_3608d414.lazar.var_53b7e0ad[2] = [0:"vox_cp_sh1_00101_lazr_uhhuhgood_27"];
-    var_3608d414.lazar.var_53b7e0ad[3] = [0:"vox_cp_sh1_00101_lazr_ungh_c0"];
-    var_3608d414.lazar.var_53b7e0ad[4] = [0:"vox_cp_sh1_00101_lazr_another_ff"];
-    var_3608d414.lazar.var_53b7e0ad[5] = [0:"vox_cp_sh1_00101_lazr_again_0e"];
-    var_3608d414.lazar.var_53b7e0ad[6] = [0:"vox_cp_sh1_00101_lazr_takeit_a3"];
-    var_3608d414.lazar.var_53b7e0ad[7] = [0:"vox_cp_sh1_00101_lazr_exertionsound_08"];
-    var_3608d414.lazar.var_53b7e0ad[8] = [0:"vox_cp_sh1_00101_lazr_exertionsound_08_1"];
-    var_3608d414.lazar.var_53b7e0ad[9] = [0:"vox_cp_sh1_00101_lazr_exertionsound_08_2"];
-    var_3608d414.lazar.var_53b7e0ad[10] = [0:"vox_cp_sh1_00101_lazr_exertionsound_08_3"];
-    level.lazar thread namespace_31c67f6d::function_5bd9de0f(var_3608d414.lazar.var_53b7e0ad, "notify_lazar_grunt", "forever");
-    var_3608d414.sims = [];
-    var_3608d414.sims[0] = [0:"vox_cp_sh1_00101_sims_pretendlikeitsw_08"];
-    var_3608d414.sims[1] = [0:"vox_cp_sh1_00101_sims_comeonbaby_99"];
-    var_3608d414.sims[2] = [0:"vox_cp_sh1_00101_sims_howstheshoulder_c2"];
-    var_3608d414.sims[3] = [0:"vox_cp_sh1_00101_sims_allyou_c4"];
-    var_3608d414.sims[4] = [0:"vox_cp_sh1_00101_sims_howmuchyougot_21"];
-    var_3608d414.sims[5] = [0:"vox_cp_sh1_00101_sims_hipshipsgetting_4d"];
-    var_3608d414.sims[6] = [0:"vox_cp_sh1_00101_sims_pushthroughit_ec"];
-    var_3608d414.sims[7] = [0:"vox_cp_sh1_00101_sims_keepthepace_57"];
-    var_3608d414.sims[8] = [0:"vox_cp_sh1_00101_sims_push_ce"];
-    var_3608d414.sims[9] = [0:"vox_cp_sh1_00101_sims_thereyougo_99"];
-    var_3608d414.sims[10] = [0:"vox_cp_sh1_00101_sims_yeah_b5"];
-    var_3608d414.sims[11] = [0:"vox_cp_sh1_00101_sims_notbad_a6"];
-    var_3608d414.sims[12] = [0:"vox_cp_sh1_00101_sims_good_b7"];
-    var_3608d414.sims[13] = [0:"vox_cp_sh1_00101_sims_holdup_ba"];
-    var_3608d414.sims[14] = [0:"vox_cp_sh1_00101_sims_yougotthis_ad"];
-    level.sims thread namespace_31c67f6d::function_5bd9de0f(var_3608d414.sims, "notify_sims_speak", "forever");
+    a_str_vo = spawnstruct();
+    a_str_vo.lazar = spawnstruct();
+    a_str_vo.lazar.dialog[0] = [0:"vox_cp_sh1_00101_lazr_ineedtomovealit_3c"];
+    a_str_vo.lazar.dialog[1] = [0:"vox_cp_sh1_00101_lazr_bag_38"];
+    a_str_vo.lazar.dialog[2] = [0:"vox_cp_sh1_00101_lazr_motherfucker_1d"];
+    a_str_vo.lazar.dialog[3] = [0:"vox_cp_sh1_00101_lazr_allgood_21"];
+    a_str_vo.lazar.dialog[4] = [0:"vox_cp_sh1_00101_lazr_afewmore_b5"];
+    a_str_vo.lazar.dialog[5] = [0:"vox_cp_sh1_00101_lazr_mindgrabbinit_b4"];
+    a_str_vo.lazar.dialog[6] = [0:"vox_cp_sh1_00101_lazr_youmind_44"];
+    level.lazar thread namespace_31c67f6d::function_5bd9de0f(a_str_vo.lazar.dialog, "notify_lazar_speak", "forever");
+    a_str_vo.lazar.var_53b7e0ad[0] = [0:"vox_cp_sh1_00101_lazr_oomph_31"];
+    a_str_vo.lazar.var_53b7e0ad[1] = [0:"vox_cp_sh1_00101_lazr_nmph_b4"];
+    a_str_vo.lazar.var_53b7e0ad[2] = [0:"vox_cp_sh1_00101_lazr_uhhuhgood_27"];
+    a_str_vo.lazar.var_53b7e0ad[3] = [0:"vox_cp_sh1_00101_lazr_ungh_c0"];
+    a_str_vo.lazar.var_53b7e0ad[4] = [0:"vox_cp_sh1_00101_lazr_another_ff"];
+    a_str_vo.lazar.var_53b7e0ad[5] = [0:"vox_cp_sh1_00101_lazr_again_0e"];
+    a_str_vo.lazar.var_53b7e0ad[6] = [0:"vox_cp_sh1_00101_lazr_takeit_a3"];
+    a_str_vo.lazar.var_53b7e0ad[7] = [0:"vox_cp_sh1_00101_lazr_exertionsound_08"];
+    a_str_vo.lazar.var_53b7e0ad[8] = [0:"vox_cp_sh1_00101_lazr_exertionsound_08_1"];
+    a_str_vo.lazar.var_53b7e0ad[9] = [0:"vox_cp_sh1_00101_lazr_exertionsound_08_2"];
+    a_str_vo.lazar.var_53b7e0ad[10] = [0:"vox_cp_sh1_00101_lazr_exertionsound_08_3"];
+    level.lazar thread namespace_31c67f6d::function_5bd9de0f(a_str_vo.lazar.var_53b7e0ad, "notify_lazar_grunt", "forever");
+    a_str_vo.sims = [];
+    a_str_vo.sims[0] = [0:"vox_cp_sh1_00101_sims_pretendlikeitsw_08"];
+    a_str_vo.sims[1] = [0:"vox_cp_sh1_00101_sims_comeonbaby_99"];
+    a_str_vo.sims[2] = [0:"vox_cp_sh1_00101_sims_howstheshoulder_c2"];
+    a_str_vo.sims[3] = [0:"vox_cp_sh1_00101_sims_allyou_c4"];
+    a_str_vo.sims[4] = [0:"vox_cp_sh1_00101_sims_howmuchyougot_21"];
+    a_str_vo.sims[5] = [0:"vox_cp_sh1_00101_sims_hipshipsgetting_4d"];
+    a_str_vo.sims[6] = [0:"vox_cp_sh1_00101_sims_pushthroughit_ec"];
+    a_str_vo.sims[7] = [0:"vox_cp_sh1_00101_sims_keepthepace_57"];
+    a_str_vo.sims[8] = [0:"vox_cp_sh1_00101_sims_push_ce"];
+    a_str_vo.sims[9] = [0:"vox_cp_sh1_00101_sims_thereyougo_99"];
+    a_str_vo.sims[10] = [0:"vox_cp_sh1_00101_sims_yeah_b5"];
+    a_str_vo.sims[11] = [0:"vox_cp_sh1_00101_sims_notbad_a6"];
+    a_str_vo.sims[12] = [0:"vox_cp_sh1_00101_sims_good_b7"];
+    a_str_vo.sims[13] = [0:"vox_cp_sh1_00101_sims_holdup_ba"];
+    a_str_vo.sims[14] = [0:"vox_cp_sh1_00101_sims_yougotthis_ad"];
+    level.sims thread namespace_31c67f6d::function_5bd9de0f(a_str_vo.sims, "notify_sims_speak", "forever");
 }
 
 // Namespace hub_post_takedown/namespace_3e22901a

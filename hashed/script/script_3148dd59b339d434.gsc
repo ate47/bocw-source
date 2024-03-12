@@ -129,10 +129,14 @@ function private think() {
             if (!var_71890760) {
                 var_31f1a7be function_e20d964f();
                 i--;
-            } else if (isdefined(var_31f1a7be.path)) {
+                continue;
+            }
+            if (isdefined(var_31f1a7be.path)) {
                 var_31f1a7be function_3e88b567();
                 var_31f1a7be function_18ca9034();
-            } else if (var_31f1a7be.at_goal == 1) {
+                continue;
+            }
+            if (var_31f1a7be.at_goal == 1) {
                 var_31f1a7be function_684b4879();
             }
         }
@@ -182,9 +186,9 @@ function private function_18ca9034() {
         distancetogoalsq = distance2dsquared(var_812bc6e0.origin, zombie.origin);
         if (distancetogoalsq > 40000 || zombie.zombie_move_speed == "sprint" && distancetogoalsq > 6400) {
             zombie function_9758722("sprint");
-        } else {
-            zombie function_9758722("walk");
+            continue;
         }
+        zombie function_9758722("walk");
     }
 }
 
@@ -256,9 +260,9 @@ function function_e20d964f() {
 function private function_d1e55248(id, value) {
     if (is_true(value)) {
         self val::set(id, "allowoffnavmesh", 1);
-    } else {
-        self val::reset(id, "allowoffnavmesh");
+        return;
     }
+    self val::reset(id, "allowoffnavmesh");
 }
 
 // Namespace namespace_ac0c0ba8/namespace_ac0c0ba8

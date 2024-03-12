@@ -85,12 +85,12 @@ function init() {
         }
         if (!isdefined(spawnable_weapon.script_noteworthy) || spawnable_weapon.script_noteworthy == "") {
             spawn_list[spawn_list.size] = spawnable_weapon;
-        } else {
-            matches = strtok(spawnable_weapon.script_noteworthy, ",");
-            for (j = 0; j < matches.size; j++) {
-                if (matches[j] == match_string || matches[j] == match_string_plus_space) {
-                    spawn_list[spawn_list.size] = spawnable_weapon;
-                }
+            continue;
+        }
+        matches = strtok(spawnable_weapon.script_noteworthy, ",");
+        for (j = 0; j < matches.size; j++) {
+            if (matches[j] == match_string || matches[j] == match_string_plus_space) {
+                spawn_list[spawn_list.size] = spawnable_weapon;
             }
         }
     }
@@ -155,18 +155,18 @@ function wallbuy_player_connect(localclientnum) {
                     assertmsg("<unknown string>" + wallbuy.zombie_weapon_upgrade);
                 #/
             #/
-        } else {
-            fx = level._effect[#"870mcs_zm_fx"];
-            if (isdefined(level._effect[wallbuy.zombie_weapon_upgrade + "_fx"])) {
-                fx = level._effect[wallbuy.zombie_weapon_upgrade + "_fx"];
-            }
-            target_struct = struct::get(wallbuy.target, "targetname");
-            target_model = zm_utility::spawn_buildkit_weapon_model(localclientnum, wallbuy.weapon, undefined, target_struct.origin, target_struct.angles);
-            target_model hide();
-            target_model.parent_struct = target_struct;
-            wallbuy.models[localclientnum] = target_model;
-            wallbuy function_8f12abec(localclientnum);
+            continue;
         }
+        fx = level._effect[#"870mcs_zm_fx"];
+        if (isdefined(level._effect[wallbuy.zombie_weapon_upgrade + "_fx"])) {
+            fx = level._effect[wallbuy.zombie_weapon_upgrade + "_fx"];
+        }
+        target_struct = struct::get(wallbuy.target, "targetname");
+        target_model = zm_utility::spawn_buildkit_weapon_model(localclientnum, wallbuy.weapon, undefined, target_struct.origin, target_struct.angles);
+        target_model hide();
+        target_model.parent_struct = target_struct;
+        wallbuy.models[localclientnum] = target_model;
+        wallbuy function_8f12abec(localclientnum);
     }
     var_63734e5 = struct::get_array("wallbuy_chalk", "content_key");
     foreach (wallbuy in var_63734e5) {
@@ -571,7 +571,7 @@ function wallbuy_callback(localclientnum, *oldval, newval, *bnewent, binitialsna
         struct.models[bnewent].origin = struct.models[bnewent].parent_struct.origin;
         struct.models[bnewent].angles = struct.models[bnewent].parent_struct.angles;
         struct.models[bnewent] hide();
-        break;
+        return;
     case 1:
         if (fieldname) {
             if (!isdefined(struct.models)) {
@@ -597,12 +597,12 @@ function wallbuy_callback(localclientnum, *oldval, newval, *bnewent, binitialsna
             struct.models[bnewent] show();
             struct.models[bnewent] moveto(struct.models[bnewent].parent_struct.origin, 1);
         }
-        break;
+        return;
     case 2:
         if (isdefined(level.var_680d143d)) {
             struct.models[bnewent] [[ level.var_680d143d ]]();
         }
-        break;
+        return;
     }
 }
 
@@ -617,7 +617,9 @@ function wallbuy_callback_idx(localclientnum, *oldval, newval, *bnewent, *biniti
         if (isdefined(struct.models[binitialsnap])) {
             struct.models[binitialsnap] hide();
         }
-    } else if (fieldname > 0) {
+        return;
+    }
+    if (fieldname > 0) {
         weaponname = level.buildable_wallbuy_weapons[fieldname - 1];
         weapon = getweapon(weaponname);
         if (!isdefined(struct.models)) {

@@ -306,7 +306,7 @@ function function_a26b7152() {
                     }
                     wait(0.1);
                     if (isdefined(a_zombies[i]) && isalive(a_zombies[i])) {
-                        a_zombies[i] dodamage(perk_dmg, self.origin, self, self, "none", "MOD_UNKNOWN", 0, level.var_78032351);
+                        a_zombies[i] dodamage(perk_dmg, self.origin, self, self, "none", "MOD_UNKNOWN", 0, level.weapondefault);
                     }
                 }
             }
@@ -345,7 +345,7 @@ function check_for_reload_complete(weapon) {
         if (current_weapon == weapon) {
             arrayremovevalue(self.wait_on_reload, weapon);
             self notify("weapon_reload_complete_" + weapon.name);
-            break;
+            return;
         }
     }
 }
@@ -362,7 +362,7 @@ function weapon_replaced_monitor(weapon) {
         if (!isinarray(primaryweapons, weapon)) {
             arrayremovevalue(self.wait_on_reload, weapon);
             self notify("player_lost_weapon_" + weapon.name);
-            break;
+            return;
         }
     }
 }
@@ -427,9 +427,9 @@ function function_99e4dfef() {
     self waittill(#"stun_fx_end");
     if (isvehicle(self)) {
         self clientfield::set("tesla_shock_eyes_fx", 0);
-    } else {
-        self clientfield::set("tesla_shock_eyes_fx", 0);
+        return;
     }
+    self clientfield::set("tesla_shock_eyes_fx", 0);
 }
 
 // Namespace zm_perk_elemental_pop/zm_perk_elemental_pop
@@ -484,7 +484,7 @@ function function_70c2d1b6() {
                     if (a_zombies[i].health - n_damage <= 0) {
                         a_zombies[i].var_4f3445ab = 1;
                     }
-                    a_zombies[i] dodamage(n_damage, self.origin, self, self, "none", "MOD_UNKNOWN", 0, level.var_78032351);
+                    a_zombies[i] dodamage(n_damage, self.origin, self, self, "none", "MOD_UNKNOWN", 0, level.weapondefault);
                 }
             }
         }

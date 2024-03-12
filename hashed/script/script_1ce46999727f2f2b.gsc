@@ -384,10 +384,10 @@ function function_41ce2473(parms) {
             parms.eattacker.doa.var_e45f072b = time;
             if (parms.eattacker.doa.var_b8232cd0 === level.doa.roundnumber) {
                 parms.eattacker.doa.var_c739e4eb = parms.eattacker.doa.var_c739e4eb + 1;
-            } else {
-                parms.eattacker.doa.var_b8232cd0 = level.doa.roundnumber;
-                parms.eattacker.doa.var_c739e4eb = 1;
+                return;
             }
+            parms.eattacker.doa.var_b8232cd0 = level.doa.roundnumber;
+            parms.eattacker.doa.var_c739e4eb = 1;
         }
     }
 }

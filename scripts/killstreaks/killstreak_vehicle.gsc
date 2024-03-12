@@ -77,9 +77,9 @@ function function_3c6cec8b() {
         } else {
             self waittill(#"remote_weapon_end");
         }
-    } else {
-        self waittill(#"shutdown");
+        return;
     }
+    self waittill(#"shutdown");
 }
 
 // Namespace killstreak_vehicle/killstreak_vehicle
@@ -346,11 +346,9 @@ function watch_exit() {
 // Size: 0xd4
 function function_e99d09a3() {
     self endon(#"shutdown");
-    inwater = 0;
-    while (!inwater) {
+    for (inwater = 0; !inwater; inwater = trace[#"fraction"] < 1) {
         wait(0.5);
         trace = physicstrace(self.origin + vectorscale((0, 0, 1), 10), self.origin + vectorscale((0, 0, 1), 6), vectorscale((-1, -1, -1), 2), vectorscale((1, 1, 1), 2), self, 4);
-        inwater = trace[#"fraction"] < 1;
     }
     self function_822e1f64();
 }
@@ -362,11 +360,9 @@ function function_e99d09a3() {
 function watch_water() {
     self endon(#"shutdown");
     var_8a7edebd = isdefined(self.var_f3c54d1d) ? self.var_f3c54d1d : 10;
-    inwater = 0;
-    while (!inwater) {
+    for (inwater = 0; !inwater; inwater = depth > var_8a7edebd) {
         wait(0.5);
         depth = getwaterheight(self.origin) - self.origin[2];
-        inwater = depth > var_8a7edebd;
     }
     if (isdefined(self.owner) && isdefined(self.var_22a05c26.var_d3413870)) {
         self.owner killstreaks::function_e9873ef7(self.var_22a05c26.var_d3413870, self.killstreak_id, #"hash_614e3e677f840d98");
@@ -684,24 +680,24 @@ function function_d75fbe15(origin, angles) {
         trace = physicstrace(startpoint, endpoint, mins, maxs, self, mask);
         if (isdefined(trace[#"entity"]) && isplayer(trace[#"entity"])) {
             wheelcounts[i] = 0;
-        } else {
-            startpoints[i] = trace[#"position"] + (0, 0, heightoffset);
-            wheelcounts[i] = function_c82e14d2(startpoints[i], startangles[i], heightoffset);
-            if (positionwouldtelefrag(startpoints[i])) {
-                continue;
-            }
-            if (largestcount < wheelcounts[i]) {
-                largestcount = wheelcounts[i];
-                largestcountindex = i;
-            }
-            if (wheelcounts[i] >= 3) {
-                testcheck[i] = 1;
-                if (function_b4682bd6(startpoints[i], startangles[i])) {
-                    placement = spawnstruct();
-                    placement.origin = startpoints[i];
-                    placement.angles = startangles[i];
-                    return placement;
-                }
+            continue;
+        }
+        startpoints[i] = trace[#"position"] + (0, 0, heightoffset);
+        wheelcounts[i] = function_c82e14d2(startpoints[i], startangles[i], heightoffset);
+        if (positionwouldtelefrag(startpoints[i])) {
+            continue;
+        }
+        if (largestcount < wheelcounts[i]) {
+            largestcount = wheelcounts[i];
+            largestcountindex = i;
+        }
+        if (wheelcounts[i] >= 3) {
+            testcheck[i] = 1;
+            if (function_b4682bd6(startpoints[i], startangles[i])) {
+                placement = spawnstruct();
+                placement.origin = startpoints[i];
+                placement.angles = startangles[i];
+                return placement;
             }
         }
     }

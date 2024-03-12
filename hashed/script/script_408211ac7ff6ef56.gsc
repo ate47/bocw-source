@@ -49,15 +49,16 @@ function function_350c0e2b(index, origin, angles, var_98c867cd) {
         yaw = yaw + randomfloatrange(-10, 10);
         dist = 35 + index / 2 * 25 + randomfloatrange(-5, 5);
         return function_9345a4f7(var_98c867cd, index, origin, angles, undefined, yaw, dist, 1);
-    } else if (var_98c867cd == 2) {
-        return function_9345a4f7(var_98c867cd, index, origin, angles, ignore_entity, undefined, undefined, 1);
-    } else if (var_98c867cd == 5 || var_98c867cd == 6) {
-        return function_fb72164f(var_98c867cd, index, origin, angles, ignore_entity, 1);
-    } else {
-        /#
-            assert(0);
-        #/
     }
+    if (var_98c867cd == 2) {
+        return function_9345a4f7(var_98c867cd, index, origin, angles, ignore_entity, undefined, undefined, 1);
+    }
+    if (var_98c867cd == 5 || var_98c867cd == 6) {
+        return function_fb72164f(var_98c867cd, index, origin, angles, ignore_entity, 1);
+    }
+    /#
+        assert(0);
+    #/
 }
 
 // Namespace namespace_b637a3ed/namespace_b637a3ed
@@ -255,9 +256,9 @@ function function_7289b47(index, name, start, end, traceresults) {
             } else {
                 println("<unknown string>" + index + "<unknown string>" + name + "<unknown string>" + traceresults[#"fraction"]);
             }
-        } else {
-            line(start, end, (1, 1, 1), 1, 0, var_e011538a);
+            return;
         }
+        line(start, end, (1, 1, 1), 1, 0, var_e011538a);
     #/
 }
 

@@ -130,7 +130,7 @@ function trig_enter_waterfall_mist(localplayer) {
             localclientnum = localplayer getlocalclientnumber();
         }
         if (isunderwater(localclientnum)) {
-            break;
+            return;
         }
         localplayer.rainopacity = localplayer.rainopacity + 0.003;
         if (localplayer.rainopacity > 1) {

@@ -58,9 +58,9 @@ function register_clientfields() {
 function function_dcd27601(state, player) {
     if (isdefined(player)) {
         util::setclientsysstate("duckCmd", state, player);
-    } else {
-        util::setclientsysstate("duckCmd", state);
+        return;
     }
+    util::setclientsysstate("duckCmd", state);
 }
 
 // Namespace audio/audio_shared
@@ -87,9 +87,9 @@ function sndresetsoundsettings() {
     self util::clientnotify("sndDEDe");
     if (!self flag::exists("playing_stinger_fired_at_me")) {
         self flag::init("playing_stinger_fired_at_me", 0);
-    } else {
-        self flag::clear("playing_stinger_fired_at_me");
+        return;
     }
+    self flag::clear("playing_stinger_fired_at_me");
 }
 
 // Namespace audio/audio_shared
@@ -157,7 +157,7 @@ function playtargetmissilesound(alias, looping) {
             do {
                 self playlocalsound(alias);
                 wait(time);
-            } while(looping);
+            } while (looping);
         }
     }
 }
@@ -246,16 +246,16 @@ function function_bd53fa92(*attacker, mod, weapon) {
         if (mod === "MOD_BULLET" || mod === "MOD_RIFLE_BULLET" || mod === "MOD_PISTOL_BULLET" || mod === "MOD_HEAD_SHOT") {
             return #"bullet";
         }
-        jumpiffalse(mod === "MOD_SUICIDE") LOC_00000116;
-    } else {
-    LOC_00000116:
-        if (isdefined(weapon)) {
-            if (weapon.name === "tear_gas") {
-                return #"gas";
-            }
+        if (mod === "MOD_SUICIDE") {
+            return;
         }
-        return undefined;
     }
+    if (isdefined(weapon)) {
+        if (weapon.name === "tear_gas") {
+            return #"gas";
+        }
+    }
+    return undefined;
 }
 
 // Namespace audio/audio_shared

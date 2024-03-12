@@ -58,21 +58,21 @@ function function_f95cb457(start, target, time, var_4ca73085, ease_in, ease_out,
     #/
     if (!isdefined(start) && var_4ca73085 == #"linear") {
         self function_49cdf043(math::clamp(target, isdefined(min) ? min : 1e-05, isdefined(max) ? max : 2147483647), time);
-    } else {
-        var_aca17b66 = self function_82f1cbd2();
-        if (!isdefined(start)) {
-            start = var_aca17b66;
-        }
-        if (getdvarint(#"hash_32f02866d46e6e7b", 0)) {
-            var_18b7d7a4 = self function_838f0a04();
-            delta = var_18b7d7a4 - getdvarfloat(#"cg_focallength", var_18b7d7a4);
-            if (abs(delta) > 0.001) {
-                start = start - delta;
-            }
-        }
-        localclientnum = self getlocalclientnumber();
-        self thread function_d4a4a726(localclientnum, start, target, time, &function_c426caa9, var_4ca73085, "ease_camera_lens_focal_length", [1:"deactivate_camera_lens_overrides", 0:"ease_camera_lens_focal_length"], ease_in, ease_out, var_33ce6852, min, max);
+        return;
     }
+    var_aca17b66 = self function_82f1cbd2();
+    if (!isdefined(start)) {
+        start = var_aca17b66;
+    }
+    if (getdvarint(#"hash_32f02866d46e6e7b", 0)) {
+        var_18b7d7a4 = self function_838f0a04();
+        delta = var_18b7d7a4 - getdvarfloat(#"cg_focallength", var_18b7d7a4);
+        if (abs(delta) > 0.001) {
+            start = start - delta;
+        }
+    }
+    localclientnum = self getlocalclientnumber();
+    self thread function_d4a4a726(localclientnum, start, target, time, &function_c426caa9, var_4ca73085, "ease_camera_lens_focal_length", [1:"deactivate_camera_lens_overrides", 0:"ease_camera_lens_focal_length"], ease_in, ease_out, var_33ce6852, min, max);
 }
 
 // Namespace namespace_ca99987f/namespace_ca99987f

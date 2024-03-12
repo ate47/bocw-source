@@ -76,16 +76,16 @@ function private function_733c3cbb(b_hide = 1) {
                 self.var_6d2b99d1[self.var_6d2b99d1.size] = self.var_7bc01517.clip;
             }
         }
-    } else {
-        self solid();
-        if (isarray(self.var_6d2b99d1)) {
-            foreach (clip in self.var_6d2b99d1) {
-                if (isentity(clip)) {
-                    clip showtoplayer(self);
-                }
+        return;
+    }
+    self solid();
+    if (isarray(self.var_6d2b99d1)) {
+        foreach (clip in self.var_6d2b99d1) {
+            if (isentity(clip)) {
+                clip showtoplayer(self);
             }
-            self.var_6d2b99d1 = undefined;
         }
+        self.var_6d2b99d1 = undefined;
     }
 }
 

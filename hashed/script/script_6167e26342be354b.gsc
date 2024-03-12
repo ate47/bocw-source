@@ -62,17 +62,25 @@ function event_handler[ui_menuresponse] codecallback_menuresponse(eventstruct) {
             if (isalive(var_26c5324a)) {
                 var_53227942 spectating::function_26c5324a(var_26c5324a);
             }
-        } else if (response == "spectateObjective") {
+            return;
+        }
+        if (response == "spectateObjective") {
             var_53227942 namespace_99c84a33::function_99c84a33(targetclientnum);
-        } else if (response == "spawnOnPlayer") {
+            return;
+        }
+        if (response == "spawnOnPlayer") {
             var_53227942.spawn.var_e8f87696 = 0;
             var_53227942.spawn.response = "spawnOnPlayer";
             var_53227942.var_d690fc0b = getentbynum(targetclientnum);
-        } else if (response == "spawnOnObjective") {
+            return;
+        }
+        if (response == "spawnOnObjective") {
             var_53227942.spawn.var_e8f87696 = 0;
             var_53227942.spawn.response = "spawnOnObjective";
             var_53227942.var_612ad92b = targetclientnum;
-        } else if (response == "autoSpawn") {
+            return;
+        }
+        if (response == "autoSpawn") {
             var_53227942.spawn.var_e8f87696 = 0;
             var_53227942.spawn.response = "autoSpawn";
         }
@@ -181,9 +189,7 @@ function function_941bd62f() {
         }
     #/
     if (!isdefined(self.spawn.response)) {
-        goto LOC_00000284;
-    }
-    if (self.spawn.response === "spawnOnPlayer") {
+    } else if (self.spawn.response === "spawnOnPlayer") {
         spawn = function_154cf7ca(self);
     } else if (self.spawn.response === "spawnOnObjective") {
         spawn = function_9de15087(self);
@@ -202,11 +208,8 @@ function function_941bd62f() {
         var_58d1e914 = function_c65231e2(self.squad);
         if (var_58d1e914.size <= 1) {
             spawn = getspawnpoint(self);
-        LOC_00000284:
         }
-    LOC_00000284:
     }
-LOC_00000284:
     return spawn;
 }
 
@@ -324,9 +327,9 @@ function function_a0bd2fd6(enabled) {
     }
     if (enabled) {
         self clientfield::set_player_uimodel("hudItems.squadSpawnViewType", 1);
-    } else {
-        self clientfield::set_player_uimodel("hudItems.squadSpawnViewType", 0);
+        return;
     }
+    self clientfield::set_player_uimodel("hudItems.squadSpawnViewType", 0);
 }
 
 // Namespace squad_spawn/namespace_cd4d78f1
@@ -406,9 +409,9 @@ function function_5f24fd47(player, *userespawntime) {
     userespawntime function_5f976259();
     if (userespawntime namespace_8a203916::function_500047aa(1)) {
         userespawntime namespace_8a203916::function_86df9236();
-    } else {
-        userespawntime namespace_8a203916::function_888901cb();
+        return;
     }
+    userespawntime namespace_8a203916::function_888901cb();
 }
 
 // Namespace squad_spawn/namespace_cd4d78f1
@@ -535,12 +538,12 @@ function private function_6d9e5aa2() {
         if (isdefined(player.var_a271f211)) {
             if (level.numlives && !player.pers[#"lives"]) {
                 player clientfield::set_player_uimodel("hudItems.squadSpawnOnStatus", 6);
-            } else {
-                var_70be3582 = getentbynum(player.var_a271f211);
-                if (isdefined(var_70be3582) && var_70be3582.squad === player.squad) {
-                    player clientfield::set_player_uimodel("hudItems.squadSpawnOnStatus", player.var_83de62a2);
-                    player predictspawnpoint(var_70be3582.origin);
-                }
+                continue;
+            }
+            var_70be3582 = getentbynum(player.var_a271f211);
+            if (isdefined(var_70be3582) && var_70be3582.squad === player.squad) {
+                player clientfield::set_player_uimodel("hudItems.squadSpawnOnStatus", player.var_83de62a2);
+                player predictspawnpoint(var_70be3582.origin);
             }
         }
     }
@@ -754,9 +757,9 @@ function private function_32843fc9(startpoint, endpoint) {
             } else {
                 endpoint = endpoint + vectorscale((0, 0, 1), 64);
             }
-        } else {
-            break;
+            continue;
         }
+        break;
     }
     return groundtrace;
 }
@@ -1021,7 +1024,6 @@ function function_fd0f3019(player) {
         return (isdefined(getgametypesetting(#"hash_129fca5e3a00477f")) ? getgametypesetting(#"hash_129fca5e3a00477f") : 0);
     case 4:
         return (isdefined(getgametypesetting(#"hash_527f80b77f20b8c8")) ? getgametypesetting(#"hash_527f80b77f20b8c8") : 0);
-        break;
     }
     return 0;
 }
@@ -1221,9 +1223,9 @@ function function_9e0c4479() {
 function on_player_connect() {
     if (level.var_d2f7a339 && self.team != #"spectator") {
         self namespace_8a203916::function_86df9236();
-    } else {
-        self namespace_8a203916::function_888901cb();
+        return;
     }
+    self namespace_8a203916::function_888901cb();
 }
 
 // Namespace squad_spawn/namespace_cd4d78f1

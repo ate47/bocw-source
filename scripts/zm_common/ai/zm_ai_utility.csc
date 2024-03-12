@@ -37,8 +37,8 @@ function private function_f3a051c6(*localclientnum) {
 function private function_4a09edeb(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         self enableonradar();
-    } else {
-        self disableonradar();
+        return;
     }
+    self disableonradar();
 }
 

@@ -177,11 +177,11 @@ function get_ent_type() {
     /#
         if (isactor(self)) {
             return "<unknown string>";
-        } else if (isvehicle(self)) {
-            return "<unknown string>";
-        } else {
-            return ("<unknown string>" + self.classname + "<unknown string>");
         }
+        if (isvehicle(self)) {
+            return "<unknown string>";
+        }
+        return "<unknown string>" + self.classname + "<unknown string>";
     #/
 }
 

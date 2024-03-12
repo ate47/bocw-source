@@ -172,7 +172,7 @@ function function_ebb262ad() {
     while (1) {
         level flag::wait_till(#"dark_aether_active");
         if (level flag::get(#"hash_268c943ffdd74fa")) {
-            break;
+            return;
         }
         level thread function_1fad5dd0();
         level flag::wait_till_clear(#"dark_aether_active");
@@ -308,7 +308,7 @@ function function_1fad5dd0() {
             }
         }
         if (var_7f26d025 === a_s_fasttravel.size) {
-            break;
+            return;
         }
         waitframe(1);
     }

@@ -40,9 +40,9 @@ function function_cb5a4b1a() {
 function function_613a7ccc(b_success = 0) {
     if (b_success) {
         music::setmusicstate("common_exfil_success");
-    } else {
-        music::setmusicstate("common_exfil_fail");
+        return;
     }
+    music::setmusicstate("common_exfil_fail");
 }
 
 // Namespace namespace_c097de49/namespace_c097de49
@@ -56,9 +56,9 @@ function function_acd83a15() {
         waitresult = level waittill(#"musroundend", #"hash_350a3e373494a400");
         if (waitresult._notify === "musRoundEnd") {
             level thread function_e2901362();
-        } else {
-            level thread function_26113358();
+            continue;
         }
+        level thread function_26113358();
     }
 }
 
@@ -103,10 +103,10 @@ function function_8f85d169(var_dbd74b22 = 1) {
         level thread zm_audio::sndmusicsystem_stopandflush();
         level.musicsystemoverride = 1;
         level thread function_e2901362();
-    } else {
-        level.musicsystemoverride = 0;
-        level thread function_26113358();
+        return;
     }
+    level.musicsystemoverride = 0;
+    level thread function_26113358();
 }
 
 // Namespace namespace_c097de49/namespace_c097de49
@@ -144,9 +144,9 @@ function function_d0f24e17() {
 function function_2c40648c(b_active = 1) {
     if (b_active) {
         level thread function_26113358();
-    } else {
-        level thread function_e2901362();
+        return;
     }
+    level thread function_e2901362();
 }
 
 // Namespace namespace_c097de49/namespace_c097de49

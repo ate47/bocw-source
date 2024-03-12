@@ -74,11 +74,8 @@ function on_player_spawned() {
             return;
         }
         if (isdefined(self)) {
-            goto LOC_00000064;
         }
-    LOC_00000064:
     }
-LOC_00000064:
 }
 
 // Namespace music/music_shared
@@ -106,17 +103,17 @@ function function_edda155f(str_alias, n_delay) {
 function function_2af5f0ec(str_alias, var_e08a84d6, n_delay) {
     if (isdefined(var_e08a84d6)) {
         level thread function_2b18b6d6(#"mus_" + str_alias + "_loop_" + var_e08a84d6, n_delay);
-    } else {
-        var_d49193ec = "mus_" + str_alias + "_loop_";
-        n_max = 0;
-        for (i = 0; i < 9; i++) {
-            if (!soundexists(var_d49193ec + i)) {
-                n_max = i;
-            }
+        return;
+    }
+    var_d49193ec = "mus_" + str_alias + "_loop_";
+    n_max = 0;
+    for (i = 0; i < 9; i++) {
+        if (!soundexists(var_d49193ec + i)) {
+            n_max = i;
         }
-        if (n_max > 0) {
-            level thread function_2b18b6d6(#"mus_" + str_alias + "_loop_" + randomintrange(0, n_max), n_delay);
-        }
+    }
+    if (n_max > 0) {
+        level thread function_2b18b6d6(#"mus_" + str_alias + "_loop_" + randomintrange(0, n_max), n_delay);
     }
 }
 

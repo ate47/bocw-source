@@ -153,7 +153,6 @@ function function_d63819fe() {
                 if (isdefined(ent) && self function_cc876e01(ent)) {
                     n_damage = function_32b2e015(ent);
                     self do_damage(str_name, n_damage, ent, 0);
-                    continue;
                 }
             }
         }
@@ -213,11 +212,11 @@ function function_c370832e() {
         }
         self allowjump(1);
         self thread function_ec94d4eb();
-    } else {
-        self allowsprint(1);
-        self allowslide(1);
-        self allowjump(1);
+        return;
     }
+    self allowsprint(1);
+    self allowslide(1);
+    self allowjump(1);
 }
 
 // Namespace hazard/hazard
@@ -497,7 +496,7 @@ function private function_7a5f3e98(str_name, e_ent, disable_ui) {
         }
     }
     if (var_cf8dfdc != "") {
-        if (!disable_ui) {
+        if (disable_ui) {
         }
         self.var_afb10e8b[var_cf8dfdc] = var_4db43f60.n_type;
     }
@@ -512,15 +511,15 @@ function private function_7a5f3e98(str_name, e_ent, disable_ui) {
         if (self.var_faa7fdee[str_name] == 1) {
             self.var_e3ab1888[str_name] = self.var_e3ab1888[str_name] - var_4db43f60.n_regen_rate * float(function_60d95f53()) / 1000;
         }
-    } while(self.var_e3ab1888[str_name] >= 0);
+    } while (self.var_e3ab1888[str_name] >= 0);
     self function_b9699173();
     if (var_cf8dfdc != "") {
-        if (!disable_ui) {
+        if (disable_ui) {
         }
         self.var_afb10e8b[var_cf8dfdc] = 0;
-    } else {
-        util::warning("Invalid UI model while running _fill_hazard_protection() in hazard.gsc");
+        return;
     }
+    util::warning("Invalid UI model while running _fill_hazard_protection() in hazard.gsc");
 }
 
 // Namespace hazard/hazard
@@ -544,9 +543,9 @@ function function_6c8414c8(*var_57d16334, e_ent) {
         self.var_d3021168 = undefined;
         if (is_true(self.var_59d09950)) {
             self clientfield::set_to_player("hazard_gas_with_mask", 0);
-        } else {
-            self clientfield::set_to_player("hazard_gas", 0);
+            return;
         }
+        self clientfield::set_to_player("hazard_gas", 0);
         return;
     }
     if (!is_true(self.var_d3021168) && self function_cc876e01(e_ent)) {
@@ -559,15 +558,17 @@ function function_6c8414c8(*var_57d16334, e_ent) {
             self thread function_706c6374(e_ent);
             self thread function_ec916448(e_ent);
         }
-    } else if (is_true(self.var_d3021168) && !self function_cc876e01(e_ent)) {
+        return;
+    }
+    if (is_true(self.var_d3021168) && !self function_cc876e01(e_ent)) {
         self notify(#"hash_146502ffd81b5e00");
         self notify(#"hash_3f0b3437172b9a8");
         self.var_d3021168 = undefined;
         if (is_true(self.var_59d09950)) {
             self clientfield::set_to_player("hazard_gas_with_mask", 0);
-        } else {
-            self clientfield::set_to_player("hazard_gas", 0);
+            return;
         }
+        self clientfield::set_to_player("hazard_gas", 0);
     }
 }
 
@@ -681,10 +682,10 @@ function function_34e51510(*var_57d16334, e_ent) {
     }
     if (!is_true(self.var_fa3bf1f) && self istouching(e_ent)) {
         self clientfield::set("burn", 1);
-    } else {
-        self.var_fa3bf1f = undefined;
-        self clientfield::set("burn", 0);
+        return;
     }
+    self.var_fa3bf1f = undefined;
+    self clientfield::set("burn", 0);
 }
 
 // Namespace hazard/hazard
@@ -774,15 +775,13 @@ function function_54b9a44e(var_c1735d11, var_25dc3e31, n_time, var_a64e984c) {
         var_8a801a72 = var_a64e984c * var_bb7cc5e4;
         var_235cc8af = var_8a801a72 - var_c946aac;
         if (var_235cc8af > 0) {
-            n_damage = var_235cc8af / n_time;
         }
     }
-    while (1) {
+    for (n_damage = var_235cc8af / n_time; 1; n_damage = var_25dc3e31) {
         wait(1);
         var_9ec8f5ba = self do_damage(var_c1735d11, n_damage);
         var_6afe1e1a = self function_838a3ba4(var_c1735d11);
         if (n_damage > var_25dc3e31 && var_6afe1e1a >= var_a64e984c) {
-            n_damage = var_25dc3e31;
         }
     }
 }

@@ -618,10 +618,10 @@ function function_e1f7a9a0(radius = 1024, baseorigin) {
             self function_41354e51(var_71110327, 1, 1);
             self waittilltimeout(15, #"goal", #"enemy");
             self.var_101082d1 = randomint(20);
-        } else {
-            self.var_860a34b9 = undefined;
-            self.var_2dc9f085 = time;
+            continue;
         }
+        self.var_860a34b9 = undefined;
+        self.var_2dc9f085 = time;
     }
 }
 
@@ -1069,9 +1069,9 @@ function function_1bbf4511(origin, *var_f1479aab, context) {
     if (!self haspath() && (!isactor(self) || !self isatgoal())) {
         self.var_f95bc76f = math::clamp(self.var_f95bc76f + 1, 0, 10);
         self.var_72283e28 = self.var_72283e28 + randomintrange(200 * self.var_f95bc76f, 500 * self.var_f95bc76f);
-    } else {
-        self.var_f95bc76f = 0;
+        return;
     }
+    self.var_f95bc76f = 0;
 }
 
 // Namespace namespace_250e9486/namespace_250e9486
@@ -1114,9 +1114,9 @@ function function_41354e51(origin, force = 0, context = 0) {
         if (distsq > var_2773df6d) {
             self.var_72283e28 = self.var_72283e28 - 150;
         }
-    } else {
-        self function_1bbf4511(origin, self haspath(), context);
+        return;
     }
+    self function_1bbf4511(origin, self haspath(), context);
 }
 
 // Namespace namespace_250e9486/namespace_250e9486
@@ -1451,14 +1451,14 @@ function updatespeed() {
     }
     if (level.doa.roundnumber == 1) {
         self.zombie_move_speed = "walk";
-    } else {
-        rand = randomintrange(level.doa.var_f4cf4e3 - 24, level.doa.var_f4cf4e3 + 24);
-        if (rand <= 60) {
-            self.zombie_move_speed = "run";
-        } else {
-            self.zombie_move_speed = "sprint";
-        }
+        return;
     }
+    rand = randomintrange(level.doa.var_f4cf4e3 - 24, level.doa.var_f4cf4e3 + 24);
+    if (rand <= 60) {
+        self.zombie_move_speed = "run";
+        return;
+    }
+    self.zombie_move_speed = "sprint";
 }
 
 // Namespace namespace_250e9486/namespace_250e9486
@@ -2273,7 +2273,9 @@ function setup_zombie_knockdown(var_5f02306b, var_43b3242) {
     if (dot >= 0.5) {
         self.knockdown_direction = "front";
         self.getup_direction = "getup_back";
-    } else if (dot < 0.5 && dot > -0.5) {
+        return;
+    }
+    if (dot < 0.5 && dot > -0.5) {
         dot = vectordot(zombie_to_entity_2d, zombie_right_2d);
         if (dot > 0) {
             self.knockdown_direction = "right";
@@ -2286,10 +2288,10 @@ function setup_zombie_knockdown(var_5f02306b, var_43b3242) {
             self.knockdown_direction = "left";
             self.getup_direction = "getup_belly";
         }
-    } else {
-        self.knockdown_direction = "back";
-        self.getup_direction = "getup_belly";
+        return;
     }
+    self.knockdown_direction = "back";
+    self.getup_direction = "getup_belly";
 }
 
 // Namespace namespace_250e9486/namespace_250e9486

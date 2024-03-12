@@ -76,9 +76,8 @@ function private function_3be17ddc(var_dfb0558b, var_4e8e65e4, north) {
     var_4e8e65e4 = isdefined(var_4e8e65e4) ? var_4e8e65e4 : 2;
     if (var_4e8e65e4 == 2) {
         return namespace_21dd166c::function_b5f93b3b(level.var_86fb599e[var_dfb0558b]);
-    } else {
-        return namespace_21dd166c::function_b5f93b3b(level.var_e1daf6fe[var_dfb0558b]);
     }
+    return namespace_21dd166c::function_b5f93b3b(level.var_e1daf6fe[var_dfb0558b]);
 }
 
 // Namespace namespace_95fdc800/namespace_95fdc800

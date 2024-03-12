@@ -209,7 +209,9 @@ function on_player_spawn() {
             }
         #/
         self.is_hotjoin = undefined;
-    } else if (isdefined(level.var_dfee7fc2) && !level flag::get("initial_blackscreen_passed") && !getdvarint(#"hash_39af51993585a73e", 0)) {
+        return;
+    }
+    if (isdefined(level.var_dfee7fc2) && !level flag::get("initial_blackscreen_passed") && !getdvarint(#"hash_39af51993585a73e", 0)) {
         self thread scene::init_streamer(level.var_dfee7fc2, array(self), 0, 0);
     }
 }
@@ -309,7 +311,9 @@ function on_round_end() {
             if (!level flag::get(#"hash_23d445a634bedeae")) {
                 level.var_9fcead52 = 1;
             }
-        } else if (getgametypesetting("zmExfilRound") !== 20) {
+            return;
+        }
+        if (getgametypesetting("zmExfilRound") !== 20) {
             level thread zm_vo::function_7622cb70(#"hash_684b542bf103e4fe", undefined, 1, #"hash_23d445a634bedeae");
         }
     }
@@ -452,14 +456,14 @@ function function_1c2ce6a() {
                         if (isdefined(level.zmb_laugh_alias)) {
                             player playlocalsound(level.zmb_laugh_alias);
                         }
-                    } else {
-                        spawn_point = player function_452e5ad6();
-                        if (isdefined(spawn_point.origin)) {
-                            player dontinterpolate();
-                            player setorigin(spawn_point.origin);
-                            if (isdefined(level.zmb_laugh_alias)) {
-                                player playlocalsound(level.zmb_laugh_alias);
-                            }
+                        continue;
+                    }
+                    spawn_point = player function_452e5ad6();
+                    if (isdefined(spawn_point.origin)) {
+                        player dontinterpolate();
+                        player setorigin(spawn_point.origin);
+                        if (isdefined(level.zmb_laugh_alias)) {
+                            player playlocalsound(level.zmb_laugh_alias);
                         }
                     }
                 }

@@ -1802,7 +1802,9 @@ function function_b3862180() {
             if (self.var_55f98899.size === level.zones.size) {
                 self zm_stats::increment_challenge_stat(#"hash_ec057f8bdec38d9");
             }
-        } else if (is_true(level.var_ce7af4fa)) {
+            continue;
+        }
+        if (is_true(level.var_ce7af4fa)) {
             if (waitresult.zone_name === "zone_bunny_room_1" || waitresult.zone_name === "zone_bunny_room_2") {
                 level.var_d7ca0fe[#"hash_d002a29a2fe6e72"] = 1;
             } else {
@@ -1815,7 +1817,9 @@ function function_b3862180() {
             if (is_true(var_6e157233)) {
                 return;
             }
-        } else if (is_true(level.var_775a83a7)) {
+            continue;
+        }
+        if (is_true(level.var_775a83a7)) {
             zone_name = [[ level.var_27028b8e ]](self zm_zonemgr::get_player_zone());
             if (isdefined(zone_name)) {
                 level.var_d7ca0fe[zone_name] = 1;
@@ -1824,7 +1828,9 @@ function function_b3862180() {
             if (is_true(var_6e157233)) {
                 return;
             }
-        } else if (is_true(level.var_f937a06e)) {
+            continue;
+        }
+        if (is_true(level.var_f937a06e)) {
             zone_name = [[ level.var_27028b8e ]](self zm_zonemgr::get_player_zone());
             if (isdefined(zone_name)) {
                 level.var_d7ca0fe[zone_name] = 1;
@@ -1880,11 +1886,11 @@ function function_5bce3615() {
         if (isdefined(level.var_27028b8e)) {
             if (zone.name === "zone_bunny_room_1" || zone.name === "zone_bunny_room_2") {
                 level.var_d7ca0fe[#"hash_d002a29a2fe6e72"] = 0;
-            } else {
-                zone_name = [[ level.var_27028b8e ]](zone.name);
-                if (isdefined(zone_name)) {
-                    level.var_d7ca0fe[zone_name] = 0;
-                }
+                continue;
+            }
+            zone_name = [[ level.var_27028b8e ]](zone.name);
+            if (isdefined(zone_name)) {
+                level.var_d7ca0fe[zone_name] = 0;
             }
         }
     }
@@ -2092,7 +2098,9 @@ function function_a9f6b8ef() {
         foreach (player in getplayers()) {
             player zm_stats::increment_challenge_stat(#"hash_63e962bd4021d604");
         }
-    } else if (is_true(level.var_f937a06e)) {
+        return;
+    }
+    if (is_true(level.var_f937a06e)) {
         level flag::wait_till(#"hash_3814c5c6793e2b2d");
         foreach (player in getplayers()) {
             player zm_stats::increment_challenge_stat(#"hash_73bcca6cdadc5ddc");
@@ -2416,11 +2424,17 @@ function on_game_playing(*params) {
         player thread function_a51a383b();
         if (is_true(level.var_775a83a7)) {
             player thread namespace_4abf1500::function_a2579c2d(#"zm_platinum");
-        } else if (is_true(level.var_ce7af4fa)) {
+            continue;
+        }
+        if (is_true(level.var_ce7af4fa)) {
             player thread namespace_4abf1500::function_a2579c2d(#"zm_gold");
-        } else if (is_true(level.var_92c52eed)) {
+            continue;
+        }
+        if (is_true(level.var_92c52eed)) {
             player thread namespace_4abf1500::function_a2579c2d(#"zm_silver");
-        } else if (is_true(level.var_f937a06e)) {
+            continue;
+        }
+        if (is_true(level.var_f937a06e)) {
             player thread namespace_4abf1500::function_a2579c2d(#"zm_tungsten");
         }
     }

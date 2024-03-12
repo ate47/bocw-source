@@ -162,11 +162,15 @@ function registerscoreinfo(type, row, lp, xp, sp, hs, res, dp, is_obj, label, me
         if (is_true(var_65181181)) {
             level.scoreinfo[type][#"hash_691aeaca4a1866e3"] = var_65181181;
         }
-    } else if (sessionmodeiscampaigngame()) {
+        return;
+    }
+    if (sessionmodeiscampaigngame()) {
         if (is_true(res)) {
             level.scoreinfo[type][#"res"] = res;
         }
-    } else if (sessionmodeiszombiesgame()) {
+        return;
+    }
+    if (sessionmodeiszombiesgame()) {
         if (is_true(res)) {
             level.scoreinfo[type][#"res"] = res;
         }
@@ -509,11 +513,11 @@ function event_handler[player_rankup] codecallback_rankup(eventstruct) {
     if (sessionmodeiswarzonegame()) {
         self stats::function_62b271d8(#"rank", self.pers[#"rank"]);
         self stats::function_62b271d8(#"plevel", self.pers[#"plevel"]);
-    } else {
-        self luinotifyevent(#"rank_up", 3, eventstruct.rank, eventstruct.prestige, eventstruct.unlock_tokens_added);
-        self function_8ba40d2f(#"rank_up", 3, eventstruct.rank, eventstruct.prestige, eventstruct.unlock_tokens_added);
-        self thread battlechatter::function_f5b398b6();
+        return;
     }
+    self luinotifyevent(#"rank_up", 3, eventstruct.rank, eventstruct.prestige, eventstruct.unlock_tokens_added);
+    self function_8ba40d2f(#"rank_up", 3, eventstruct.rank, eventstruct.prestige, eventstruct.unlock_tokens_added);
+    self thread battlechatter::function_f5b398b6();
 }
 
 // Namespace rank/rank_shared

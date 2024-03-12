@@ -1008,10 +1008,9 @@ function function_7ba867a8(entity) {
     var_422d3ed4 = entity function_fe54a83e();
     if (var_422d3ed4 >= 45 && var_422d3ed4 <= 315) {
         return 1;
-    } else {
-        entity.var_3b77553e = -1;
-        return 0;
     }
+    entity.var_3b77553e = -1;
+    return 0;
 }
 
 // Namespace namespace_2dd2c4d8/archetype_human_locomotion

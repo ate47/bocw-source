@@ -60,11 +60,13 @@ function function_76433e31() {
 function function_820e5ac3() {
     if (!is_true(self.var_2ca2d270) && isdefined(self.favoriteenemy)) {
         awareness::set_state(self, #"chase");
-    } else if (!isdefined(self.var_43c4bc66) && (!isdefined(self.var_3be4a3b0) || gettime() - self.var_3be4a3b0 > function_60d95f53())) {
-        awareness::set_state(self, #"hidden");
-    } else {
-        awareness::set_state(self, #"wander");
+        return;
     }
+    if (!isdefined(self.var_43c4bc66) && (!isdefined(self.var_3be4a3b0) || gettime() - self.var_3be4a3b0 > function_60d95f53())) {
+        awareness::set_state(self, #"hidden");
+        return;
+    }
+    awareness::set_state(self, #"wander");
 }
 
 // Namespace namespace_3d98def3/namespace_3d98def3

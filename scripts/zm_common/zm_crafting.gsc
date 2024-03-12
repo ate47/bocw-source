@@ -86,21 +86,21 @@ function setup_craftfoundry(craftfoundry) {
             craftfoundry.blueprints = [];
             switch (craftfoundry.var_2a2adea3) {
             case 8:
-                craftfoundry.blueprints[7] = function_b18074d0(craftfoundry.var_b81b4995);
+                craftfoundry.blueprints[7] = function_b18074d0(craftfoundry.blueprint08);
             case 7:
-                craftfoundry.blueprints[6] = function_b18074d0(craftfoundry.var_5e039567);
+                craftfoundry.blueprints[6] = function_b18074d0(craftfoundry.blueprint07);
             case 6:
-                craftfoundry.blueprints[5] = function_b18074d0(craftfoundry.var_b84049db);
+                craftfoundry.blueprints[5] = function_b18074d0(craftfoundry.blueprint06);
             case 5:
-                craftfoundry.blueprints[4] = function_b18074d0(craftfoundry.var_5dee9539);
+                craftfoundry.blueprints[4] = function_b18074d0(craftfoundry.blueprint05);
             case 4:
-                craftfoundry.blueprints[3] = function_b18074d0(craftfoundry.var_93b280c0);
+                craftfoundry.blueprints[3] = function_b18074d0(craftfoundry.blueprint04);
             case 3:
-                craftfoundry.blueprints[2] = function_b18074d0(craftfoundry.var_a980ac5c);
+                craftfoundry.blueprints[2] = function_b18074d0(craftfoundry.blueprint03);
             case 2:
-                craftfoundry.blueprints[1] = function_b18074d0(craftfoundry.var_339dfcd);
+                craftfoundry.blueprints[1] = function_b18074d0(craftfoundry.blueprint02);
             case 1:
-                craftfoundry.blueprints[0] = function_b18074d0(craftfoundry.var_110b7b70);
+                craftfoundry.blueprints[0] = function_b18074d0(craftfoundry.blueprint01);
                 break;
             }
             /#
@@ -613,7 +613,8 @@ function function_f665fde0(trig) {
                     if (param == "starts_visible") {
                         b_start_visible = 1;
                         continue;
-                    } else if (param == "starts_empty") {
+                    }
+                    if (param == "starts_empty") {
                         b_start_empty = 1;
                     }
                 }
@@ -629,9 +630,9 @@ function function_f665fde0(trig) {
             if (isdefined(unitrigger_stub.craftablespawn.a_piecespawns[i].tag_name)) {
                 if (unitrigger_stub.craftablespawn.a_piecespawns[i].crafted !== 1) {
                     unitrigger_stub.model hidepart(unitrigger_stub.craftablespawn.a_piecespawns[i].tag_name);
-                } else {
-                    unitrigger_stub.model showpart(unitrigger_stub.craftablespawn.a_piecespawns[i].tag_name);
+                    continue;
                 }
+                unitrigger_stub.model showpart(unitrigger_stub.craftablespawn.a_piecespawns[i].tag_name);
             }
         }
     }
@@ -674,10 +675,10 @@ function function_987a472(modelname, blueprint) {
                 assertmsg("<unknown string>");
             #/
         }
-    } else {
-        s_crafting.model notsolid();
-        s_crafting.model show();
+        return;
     }
+    s_crafting.model notsolid();
+    s_crafting.model show();
 }
 
 // Namespace zm_crafting/button_bit_melee_pressed
@@ -763,11 +764,13 @@ function function_d56724a6(*e_holder, w_item) {
     }
     if (isdefined(w_item.gadgetreadysoundplayer)) {
         self thread zm_audio::create_and_play_dialog(#"component_pickup", w_item.gadgetreadysoundplayer);
-    } else if (isdefined(w_item.var_62a98b13)) {
-        self thread zm_audio::create_and_play_dialog(#"component_pickup", w_item.var_62a98b13);
-    } else {
-        self thread zm_audio::create_and_play_dialog(#"component_pickup", #"generic");
+        return;
     }
+    if (isdefined(w_item.var_62a98b13)) {
+        self thread zm_audio::create_and_play_dialog(#"component_pickup", w_item.var_62a98b13);
+        return;
+    }
+    self thread zm_audio::create_and_play_dialog(#"component_pickup", #"generic");
 }
 
 // Namespace zm_crafting/zm_crafting
@@ -939,9 +942,9 @@ function private function_8109ae21(player) {
         self.hint_string = self.blueprint.var_4dbc4aee;
     }
     if (zm_utility::get_story() == 1 && isdefined(self.var_c2f40a58)) {
-        if (isdefined(self.blueprint.var_db27a7f7)) {
-            if (self.blueprint.var_db27a7f7 !== self.var_c2f40a58) {
-                self.var_c2f40a58 setmodel(self.blueprint.var_db27a7f7);
+        if (isdefined(self.blueprint.mdlblueprint)) {
+            if (self.blueprint.mdlblueprint !== self.var_c2f40a58) {
+                self.var_c2f40a58 setmodel(self.blueprint.mdlblueprint);
                 self.var_c2f40a58 show();
                 self.var_c2f40a58.is_visible = 1;
             } else if (!is_true(self.var_c2f40a58.is_visible)) {
@@ -1342,65 +1345,65 @@ function private function_df8ce6e2(player) {
     if (player function_7bffa1ac(self.stub.blueprint.var_54a97edd)) {
         self.stub.hint_string = "";
         self sethintstring(self.stub.hint_string);
+        return;
+    }
+    if (is_true(var_d97673ff)) {
+        var_f66d1847 = self.stub function_ceac3bf9(player, 1);
     } else {
+        var_f66d1847 = self.stub function_ceac3bf9(player);
+    }
+    if (isdefined(var_f66d1847) && var_f66d1847 > 0) {
+        if (is_true(self.stub.blueprint.var_c028dcfe) && !player function_48ce9379(self.stub.blueprint.var_54a97edd)) {
+            if (!isdefined(player.var_4e90ce0c)) {
+                player.var_4e90ce0c = [];
+            }
+            array::add(player.var_4e90ce0c, self.stub.blueprint.var_54a97edd, 0);
+            player thread function_fccf9f0d();
+        } else if (zm_trial_disable_buys::is_active()) {
+            return;
+        } else if (player zm_score::can_player_purchase(var_f66d1847)) {
+            player thread function_fccf9f0d();
+            player zm_score::minus_to_player_score(var_f66d1847);
+            player zm_utility::play_sound_on_ent("purchase");
+        } else {
+            zm_utility::play_sound_on_ent("no_purchase");
+            player zm_audio::create_and_play_dialog(#"general", #"outofmoney");
+            return;
+        }
+    }
+    if (isdefined(self.stub.blueprint.var_fe8a5e39)) {
+        if (!isdefined(player.var_2f3339f0)) {
+            player.var_2f3339f0 = [];
+        }
+        if (!is_true(player.var_2f3339f0[self.stub.blueprint.var_54a97edd])) {
+            player thread zm_equipment::show_hint_text(self.stub.blueprint.var_fe8a5e39);
+            player.var_2f3339f0[self.stub.blueprint.var_54a97edd] = 1;
+        }
+    }
+    if (is_true(self.stub.blueprint.var_54a97edd.isriotshield)) {
         if (is_true(var_d97673ff)) {
-            var_f66d1847 = self.stub function_ceac3bf9(player, 1);
-        } else {
-            var_f66d1847 = self.stub function_ceac3bf9(player);
+            player [[ player.player_shield_reset_health ]](undefined, 1);
+        } else if (is_true(player.hasriotshield) && isdefined(player.weaponriotshield)) {
+            player zm_weapons::weapon_take(player.weaponriotshield);
         }
-        if (isdefined(var_f66d1847) && var_f66d1847 > 0) {
-            if (is_true(self.stub.blueprint.var_c028dcfe) && !player function_48ce9379(self.stub.blueprint.var_54a97edd)) {
-                if (!isdefined(player.var_4e90ce0c)) {
-                    player.var_4e90ce0c = [];
-                }
-                array::add(player.var_4e90ce0c, self.stub.blueprint.var_54a97edd, 0);
-                player thread function_fccf9f0d();
-            } else if (zm_trial_disable_buys::is_active()) {
-                return;
-            } else if (player zm_score::can_player_purchase(var_f66d1847)) {
-                player thread function_fccf9f0d();
-                player zm_score::minus_to_player_score(var_f66d1847);
-                player zm_utility::play_sound_on_ent("purchase");
-            } else {
-                zm_utility::play_sound_on_ent("no_purchase");
-                player zm_audio::create_and_play_dialog(#"general", #"outofmoney");
-                return;
-            }
-        }
-        if (isdefined(self.stub.blueprint.var_fe8a5e39)) {
-            if (!isdefined(player.var_2f3339f0)) {
-                player.var_2f3339f0 = [];
-            }
-            if (!is_true(player.var_2f3339f0[self.stub.blueprint.var_54a97edd])) {
-                player thread zm_equipment::show_hint_text(self.stub.blueprint.var_fe8a5e39);
-                player.var_2f3339f0[self.stub.blueprint.var_54a97edd] = 1;
-            }
-        }
-        if (is_true(self.stub.blueprint.var_54a97edd.isriotshield)) {
-            if (is_true(var_d97673ff)) {
-                player [[ player.player_shield_reset_health ]](undefined, 1);
-            } else if (is_true(player.hasriotshield) && isdefined(player.weaponriotshield)) {
-                player zm_weapons::weapon_take(player.weaponriotshield);
-            }
-        }
-        if (!is_true(var_d97673ff)) {
-            player zm_weapons::weapon_give(self.stub.blueprint.var_54a97edd);
-        } else {
-            player playsound(#"hash_230737b2535a3374");
-        }
-        player notify(#"hash_77d44943fb143b18", {#weapon:self.stub.blueprint.var_54a97edd});
-        player zm_stats::function_c0c6ab19(#"weapons_bought", 1, 1);
-        player contracts::increment_zm_contract(#"contract_zm_weapons_bought", 1, #"zstandard");
-        self.stub.bought = 1;
-        self.stub.hint_string = "";
-        self.stub.cost = undefined;
-        self sethintstring(self.stub.hint_string);
-        self.stub.var_ad7ae074 = 1;
-        self.stub thread function_d94efa98();
-        player zm_stats::track_craftables_pickedup(self.stub.blueprint.var_54a97edd);
-        if (isdefined(level.var_8c978b55)) {
-            self [[ level.var_8c978b55 ]](player);
-        }
+    }
+    if (!is_true(var_d97673ff)) {
+        player zm_weapons::weapon_give(self.stub.blueprint.var_54a97edd);
+    } else {
+        player playsound(#"hash_230737b2535a3374");
+    }
+    player notify(#"hash_77d44943fb143b18", {#weapon:self.stub.blueprint.var_54a97edd});
+    player zm_stats::function_c0c6ab19(#"weapons_bought", 1, 1);
+    player contracts::increment_zm_contract(#"contract_zm_weapons_bought", 1, #"zstandard");
+    self.stub.bought = 1;
+    self.stub.hint_string = "";
+    self.stub.cost = undefined;
+    self sethintstring(self.stub.hint_string);
+    self.stub.var_ad7ae074 = 1;
+    self.stub thread function_d94efa98();
+    player zm_stats::track_craftables_pickedup(self.stub.blueprint.var_54a97edd);
+    if (isdefined(level.var_8c978b55)) {
+        self [[ level.var_8c978b55 ]](player);
     }
 }
 

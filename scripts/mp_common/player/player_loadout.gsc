@@ -270,19 +270,27 @@ function private load_default_loadout(weaponclass, classnum) {
 function private weapon_class_register(weaponname, weapon_type) {
     if (issubstr("weapon_smg weapon_cqb weapon_assault weapon_tactical weapon_lmg weapon_sniper weapon_shotgun weapon_launcher weapon_knife weapon_special", weapon_type)) {
         level.primary_weapon_array[getweapon(weaponname)] = 1;
-    } else if (issubstr("weapon_pistol", weapon_type)) {
-        level.side_arm_array[getweapon(weaponname)] = 1;
-    } else if (issubstr("weapon_grenade hero", weapon_type)) {
-        level.grenade_array[getweapon(weaponname)] = 1;
-    } else if (weapon_type == "weapon_explosive") {
-        level.inventory_array[getweapon(weaponname)] = 1;
-    } else if (weapon_type == "weapon_rifle") {
-        level.inventory_array[getweapon(weaponname)] = 1;
-    } else {
-        /#
-            assert(0, "ping_callouts" + weapon_type + "<unknown string>" + weaponname);
-        #/
+        return;
     }
+    if (issubstr("weapon_pistol", weapon_type)) {
+        level.side_arm_array[getweapon(weaponname)] = 1;
+        return;
+    }
+    if (issubstr("weapon_grenade hero", weapon_type)) {
+        level.grenade_array[getweapon(weaponname)] = 1;
+        return;
+    }
+    if (weapon_type == "weapon_explosive") {
+        level.inventory_array[getweapon(weaponname)] = 1;
+        return;
+    }
+    if (weapon_type == "weapon_rifle") {
+        level.inventory_array[getweapon(weaponname)] = 1;
+        return;
+    }
+    /#
+        assert(0, "ping_callouts" + weapon_type + "<unknown string>" + weaponname);
+    #/
 }
 
 // Namespace loadout/player_loadout
@@ -322,9 +330,13 @@ function private function_6bc4927f() {
                 if (group_s != "" && var_da0b29d2 != "") {
                     weapon_class_register(var_da0b29d2, group_s);
                 }
-            } else if (group_s == "specialty") {
+                continue;
+            }
+            if (group_s == "specialty") {
                 level.perkspecialties[display_name_s] = reference_s;
-            } else if (group_s == "killstreak") {
+                continue;
+            }
+            if (group_s == "killstreak") {
                 level.tbl_killstreakdata[i] = var_da0b29d2;
                 level.killstreakindices[var_da0b29d2] = i;
                 if (isdefined(iteminfo.killstreakdeathpenaltyindividualearn)) {
@@ -370,13 +382,15 @@ function private function_8624b793() {
             display_name_s = iteminfo.displayname;
             if (group_s == "<unknown string>") {
                 add_perk_devgui(display_name_s, reference_s);
-            } else if (group_s == "<unknown string>") {
+                continue;
+            }
+            if (group_s == "<unknown string>") {
                 if (strstartswith(iteminfo.name, "<unknown string>")) {
                     function_8263c0d5(reference_s, "<unknown string>");
-                } else {
-                    postfix = "<unknown string>" + sessionmodeabbreviation();
-                    function_373068ca(reference_s, postfix);
+                    continue;
                 }
+                postfix = "<unknown string>" + sessionmodeabbreviation();
+                function_373068ca(reference_s, postfix);
             }
         }
     #/
@@ -410,11 +424,11 @@ function private function_f8157311(weaponclass, killstreaknum) {
     #/
     if (getdvarint(#"custom_killstreak_mode", 0) == 2) {
         return getdvarint("custom_" + killstreakstring, 0);
-    } else if (isdefined(level.scorestreaksbarebones) && isdefined(level.scorestreaksbarebones[killstreaknum - 1])) {
-        return level.scorestreaksbarebones[killstreaknum - 1];
-    } else {
-        return self getloadoutitem(weaponclass, killstreakstring);
     }
+    if (isdefined(level.scorestreaksbarebones) && isdefined(level.scorestreaksbarebones[killstreaknum - 1])) {
+        return level.scorestreaksbarebones[killstreaknum - 1];
+    }
+    return self getloadoutitem(weaponclass, killstreakstring);
 }
 
 // Namespace loadout/player_loadout
@@ -487,15 +501,15 @@ function function_6573eeeb() {
     var_71575725 = self function_7683b07();
     if (var_71575725 != "") {
         self function_49dc736a(var_71575725);
-    } else {
-        /#
-            if (getdvarstring(#"hash_13d12c0b5b9b9738") != "<unknown string>") {
-                self function_49dc736a(hash(getdvarstring(#"hash_13d12c0b5b9b9738")));
-                return;
-            }
-        #/
-        self function_225eab37();
+        return;
     }
+    /#
+        if (getdvarstring(#"hash_13d12c0b5b9b9738") != "<unknown string>") {
+            self function_49dc736a(hash(getdvarstring(#"hash_13d12c0b5b9b9738")));
+            return;
+        }
+    #/
+    self function_225eab37();
 }
 
 // Namespace loadout/player_loadout
@@ -708,7 +722,7 @@ function give_perks() {
 // Checksum 0xe480db8a, Offset: 0x2ff0
 // Size: 0xec
 function function_f436358b(weaponclass) {
-    self.class_num = function_6972fdbb(weaponclass);
+    self.class_num = get_class_num(weaponclass);
     if (issubstr(weaponclass, "CLASS_CUSTOM")) {
         profileNamedStart(#"");
         self.class_num_for_global_weapons = self.class_num;
@@ -729,7 +743,7 @@ function function_f436358b(weaponclass) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x1ff5d429, Offset: 0x30e8
 // Size: 0x228
-function function_6972fdbb(weaponclass) {
+function get_class_num(weaponclass) {
     /#
         assert(isdefined(weaponclass));
     #/
@@ -1513,7 +1527,7 @@ function function_53b62db1(newclass) {
 // Checksum 0x5b066a20, Offset: 0x6268
 // Size: 0x1bc
 function function_d7c205b9(newclass, var_eead10f0 = #"unspecified") {
-    loadoutindex = isdefined(newclass) ? function_6972fdbb(newclass) : undefined;
+    loadoutindex = isdefined(newclass) ? get_class_num(newclass) : undefined;
     self.pers[#"loadoutindex"] = loadoutindex;
     var_45843e9a = var_eead10f0 == #"give_loadout";
     var_7f8c24df = 0;

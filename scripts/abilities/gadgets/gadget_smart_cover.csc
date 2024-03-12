@@ -56,7 +56,9 @@ function setupdvars() {
 function smartcover_start_microwave(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (is_true(level.smartcoversettings.bundle.var_f4e0e7d7) && bwastimejump == 1) {
         self thread startmicrowavefx(fieldname);
-    } else if (bwastimejump == 0) {
+        return;
+    }
+    if (bwastimejump == 0) {
         self notify(#"beam_stop");
     }
 }
@@ -77,7 +79,9 @@ function smartcover_placed(localclientnum, *oldval, newval, *bnewent, *binitials
     self useanimtree("generic");
     if (fieldname == 1) {
         self setanimrestart(level.smartcoversettings.bundle.deployanim, 1, 0, 1);
-    } else if (bwastimejump) {
+        return;
+    }
+    if (bwastimejump) {
         currentanimtime = self getanimtime(level.smartcoversettings.bundle.deployanim);
         var_f56117a2 = 1 - fieldname;
         if (var_f56117a2 < currentanimtime) {
@@ -125,9 +129,9 @@ function function_1c2930c7(localclientnum) {
         waitframe(1);
         player = function_5c10bd79(localclientnum);
         if (!isdefined(player)) {
-            break;
+            return;
         }
-        var_b43e8dc2 = player function_287dcf4b(level.smartcoversettings.bundle.var_63aab046, level.smartcoversettings.bundle.maxwidth, 1, 1, level.smartcoversettings.var_8d86ade8);
+        var_b43e8dc2 = player function_287dcf4b(level.smartcoversettings.bundle.var_63aab046, level.smartcoversettings.bundle.maxwidth, 1, 1, level.smartcoversettings.smartcoverweapon);
         if (!isdefined(var_b43e8dc2) && !var_ccfe777) {
             var_ccfe777 = 1;
             player function_112e3e89(localclientnum);
@@ -142,11 +146,11 @@ function function_1c2930c7(localclientnum) {
         if (isdefined(level.smartcoversettings.bundle.var_8fa9aac4) ? level.smartcoversettings.bundle.var_8fa9aac4 : 0) {
             if (var_b43e8dc2.var_bf9ca9b0) {
                 previewmodel = player function_8fb44aff(localclientnum, var_b43e8dc2.origin, var_b43e8dc2.angles, var_b43e8dc2.isvalid, 0, 1);
-            } else {
-                previewmodel = player function_8fb44aff(localclientnum, var_b43e8dc2.origin, var_b43e8dc2.angles, var_b43e8dc2.isvalid, 2, 3);
-                previewmodel function_dbaf4647(localclientnum);
-                previewmodel function_5a8becdc(localclientnum, player, var_b43e8dc2, 1);
+                continue;
             }
+            previewmodel = player function_8fb44aff(localclientnum, var_b43e8dc2.origin, var_b43e8dc2.angles, var_b43e8dc2.isvalid, 2, 3);
+            previewmodel function_dbaf4647(localclientnum);
+            previewmodel function_5a8becdc(localclientnum, player, var_b43e8dc2, 1);
         }
     }
 }
@@ -485,12 +489,12 @@ function stop_or_start_fx(localclientnum, fxname, tag, start, team) {
                 render_debug_sphere(tag, (0, 1, 0), fxname);
             }
         #/
-    } else {
-        stop_fx_on_tag(localclientnum, fxname, tag);
-        /#
-            render_debug_sphere(tag, (1, 0, 0), fxname);
-        #/
+        return;
     }
+    stop_fx_on_tag(localclientnum, fxname, tag);
+    /#
+        render_debug_sphere(tag, (1, 0, 0), fxname);
+    #/
 }
 
 // Namespace smart_cover/gadget_smart_cover

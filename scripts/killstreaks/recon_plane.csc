@@ -116,10 +116,10 @@ function recon_plane_reveal(localclientnum, *oldval, newval, *bnewent, *binitial
             entnum = self getentitynumber();
             function_947d2fc2(fieldname, entnum, level.var_d9ef3e7c.var_e77ca4a1);
             self thread function_af19a98(fieldname, entnum);
-        } else {
-            level.var_d84f0c02[level.var_d84f0c02.size] = self;
-            self thread function_6f689c85(fieldname);
+            return;
         }
+        level.var_d84f0c02[level.var_d84f0c02.size] = self;
+        self thread function_6f689c85(fieldname);
     }
 }
 
@@ -177,7 +177,9 @@ function private function_af19a98(localclientnum, entnum) {
 function recon_plane_damage_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         util::playfxontag(fieldname, level.var_d9ef3e7c.fxlowhealth, self, "tag_fx_engine_exhaust_back");
-    } else if (bwastimejump == 2) {
+        return;
+    }
+    if (bwastimejump == 2) {
         util::playfxontag(fieldname, level.var_d9ef3e7c.var_277154f7, self, "tag_fx_engine_exhaust_back");
     }
 }

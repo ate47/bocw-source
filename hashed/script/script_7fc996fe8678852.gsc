@@ -426,13 +426,13 @@ function function_f3d93ee9(struct, modelname, var_bfbc537c = 0, var_619a5c20 = 1
     parent = struct;
     while (1) {
         if (parent.variantname === #"hash_60feba77d317eb4") {
-            if (!isdefined(parent.var_344a6a1a)) {
-                parent.var_344a6a1a = [];
-            } else if (!isarray(parent.var_344a6a1a)) {
-                parent.var_344a6a1a = array(parent.var_344a6a1a);
+            if (!isdefined(parent.a_models)) {
+                parent.a_models = [];
+            } else if (!isarray(parent.a_models)) {
+                parent.a_models = array(parent.a_models);
             }
-            if (!isinarray(parent.var_344a6a1a, model)) {
-                parent.var_344a6a1a[parent.var_344a6a1a.size] = model;
+            if (!isinarray(parent.a_models, model)) {
+                parent.a_models[parent.a_models.size] = model;
             }
             break;
         }
@@ -457,13 +457,13 @@ function function_94974eef(struct, var_145b9057, var_e546275c = 0) {
     parent = struct;
     while (1) {
         if (parent.variantname === #"hash_60feba77d317eb4") {
-            if (!isdefined(parent.var_344a6a1a)) {
-                parent.var_344a6a1a = [];
-            } else if (!isarray(parent.var_344a6a1a)) {
-                parent.var_344a6a1a = array(parent.var_344a6a1a);
+            if (!isdefined(parent.a_models)) {
+                parent.a_models = [];
+            } else if (!isarray(parent.a_models)) {
+                parent.a_models = array(parent.a_models);
             }
-            if (!isinarray(parent.var_344a6a1a, zbarrier)) {
-                parent.var_344a6a1a[parent.var_344a6a1a.size] = zbarrier;
+            if (!isinarray(parent.a_models, zbarrier)) {
+                parent.a_models[parent.a_models.size] = zbarrier;
             }
             break;
         }
@@ -484,8 +484,8 @@ function function_690c4abe() {
     var_ca537a1a = 0;
     foreach (group in level.var_7d45d0d4.var_5eba96b3) {
         foreach (instance in group) {
-            if (isdefined(instance.var_344a6a1a)) {
-                foreach (model in instance.var_344a6a1a) {
+            if (isdefined(instance.a_models)) {
+                foreach (model in instance.a_models) {
                     if (isdefined(model)) {
                         if (isdefined(model.trigger)) {
                             model.trigger delete();
@@ -514,7 +514,7 @@ function function_690c4abe() {
                         }
                     }
                 }
-                arrayremovevalue(instance.var_344a6a1a, undefined);
+                arrayremovevalue(instance.a_models, undefined);
             }
             arrayremovevalue(group, instance, 1);
             arrayremovevalue(instance.location.var_5eba96b3, instance, 1);

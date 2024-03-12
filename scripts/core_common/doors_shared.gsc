@@ -67,9 +67,9 @@ class cdoor {
             foreach (str_flag in a_flags) {
                 if (b_set) {
                     level flag::set(str_flag);
-                } else {
-                    level flag::clear(str_flag);
+                    continue;
                 }
+                level flag::clear(str_flag);
             }
         }
     }
@@ -121,7 +121,9 @@ class cdoor {
                 if (isdefined(self.m_e_door.mdl_gameobject.objectiveid)) {
                     self.m_e_door.mdl_gameobject gameobjects::disable_object(1);
                 }
-            } else if (!isdefined(self.m_e_door.mdl_gameobject.objectiveid)) {
+                return;
+            }
+            if (!isdefined(self.m_e_door.mdl_gameobject.objectiveid)) {
                 self.m_e_door.mdl_gameobject gameobjects::enable_object(1);
             }
             return;
@@ -544,13 +546,13 @@ class cdoor {
             foreach (node in self.var_e1a5a27e) {
                 setenablenode(node, 0);
             }
-        } else {
-            foreach (node in self.var_fb8a6fcc) {
-                setenablenode(node, 0);
-            }
-            foreach (node in self.var_e1a5a27e) {
-                setenablenode(node, 1);
-            }
+            return;
+        }
+        foreach (node in self.var_fb8a6fcc) {
+            setenablenode(node, 0);
+        }
+        foreach (node in self.var_e1a5a27e) {
+            setenablenode(node, 1);
         }
     }
 
@@ -604,9 +606,9 @@ class cdoor {
             } else {
                 return 0;
             }
-        } else {
-            return self.m_s_bundle.door_swing_angle;
+            return;
         }
+        return self.m_s_bundle.door_swing_angle;
     }
 
     // Namespace cdoor/doors_shared
@@ -862,13 +864,13 @@ class cdoor {
                 self.m_e_door util::delay(0.05, "door_not_fully_closed", &linkto, level.var_b4749b2e);
             }
             self flag::set("door_fully_closed");
-        } else {
-            self.m_e_door notify(#"door_not_fully_closed");
-            if (isdefined(level.var_b4749b2e) && is_true(self.m_e_door.var_9e238e15) && self.m_e_door islinkedto(level.var_b4749b2e)) {
-                self.m_e_door unlink();
-            }
-            self flag::clear("door_fully_closed");
+            return;
         }
+        self.m_e_door notify(#"door_not_fully_closed");
+        if (isdefined(level.var_b4749b2e) && is_true(self.m_e_door.var_9e238e15) && self.m_e_door islinkedto(level.var_b4749b2e)) {
+            self.m_e_door unlink();
+        }
+        self flag::clear("door_fully_closed");
     }
 
     // Namespace cdoor/doors_shared
@@ -1078,13 +1080,13 @@ class cdoor {
             self.m_v_open_pos = calculate_offset_position(self.m_v_close_pos, self.m_e_door.angles, v_offset);
             self.var_85f2454d.origin = self.m_e_door.origin;
             self.var_85f2454d.angles = self.m_e_door.angles;
-        } else {
-            self.m_v_open_pos = self.m_e_door.origin;
-            v_offset = function_e61944fa(undefined, self.m_s_bundle.door_slide_open_units * -1);
-            self.m_v_close_pos = calculate_offset_position(self.m_v_open_pos, self.m_e_door.angles, v_offset);
-            self.var_85f2454d.origin = self.m_v_close_pos;
-            self.var_85f2454d.angles = self.m_e_door.angles;
+            return;
         }
+        self.m_v_open_pos = self.m_e_door.origin;
+        v_offset = function_e61944fa(undefined, self.m_s_bundle.door_slide_open_units * -1);
+        self.m_v_close_pos = calculate_offset_position(self.m_v_open_pos, self.m_e_door.angles, v_offset);
+        self.var_85f2454d.origin = self.m_v_close_pos;
+        self.var_85f2454d.angles = self.m_e_door.angles;
     }
 
     // Namespace cdoor/doors_shared
@@ -1230,12 +1232,14 @@ class cdoor {
                 close_internal(b_enable);
                 level thread doors::door_update(self);
             }
-        } else if (self.m_s_bundle.door_open_method == "animated" && isdefined(self.m_s_bundle.var_6a0dae54)) {
+            return;
+        }
+        if (self.m_s_bundle.door_open_method == "animated" && isdefined(self.m_s_bundle.var_6a0dae54)) {
             if (b_enable) {
                 self.var_85f2454d thread scene::play(self.m_s_bundle.var_6a0dae54, self.m_e_door);
-            } else {
-                self.var_85f2454d thread scene::stop(self.m_s_bundle.var_6a0dae54);
+                return;
             }
+            self.var_85f2454d thread scene::stop(self.m_s_bundle.var_6a0dae54);
         }
     }
 
@@ -1249,9 +1253,7 @@ class cdoor {
         }
         if (is_true(var_297e1b79)) {
             if (isdefined(self.var_4882ff02) && self.var_4882ff02 == 2 && var_297e1b79 == 1) {
-                goto LOC_000000f8;
-            }
-            if (do_block) {
+            } else if (do_block) {
                 if (var_297e1b79 == 3) {
                     self.var_4882ff02 = 1;
                 } else {
@@ -1259,11 +1261,8 @@ class cdoor {
                 }
             } else {
                 self.var_4882ff02 = undefined;
-            LOC_000000f8:
             }
-        LOC_000000f8:
         }
-    LOC_000000f8:
         if (do_block || is_true(self.var_4882ff02)) {
             if (isdefined(self.m_e_door.var_4101ccab)) {
                 var_8d684abd = self.m_e_door.var_4101ccab;
@@ -1275,29 +1274,29 @@ class cdoor {
             self.m_e_door function_881077b4(4194303, 0);
             self.m_e_door function_881077b4(32, 1);
             self.m_e_door function_df3a1348(0, 0);
-        } else {
-            var_1ce7d3b0 = self.m_e_door getcontents();
-            if (var_1ce7d3b0 & (1 | 131072 | 16)) {
-                var_8d684abd = var_1ce7d3b0;
-                if (!isdefined(self.m_e_door.var_4101ccab)) {
-                    self.m_e_door.var_4101ccab = var_1ce7d3b0;
-                }
-                if (var_1ce7d3b0 & 1) {
-                    var_8d684abd = var_1ce7d3b0 & ~1;
-                    var_8d684abd = var_8d684abd | 64 | 128 | 512 | 1024 | 4096 | 8192 | 65536 | 1048576;
-                }
-                if (var_1ce7d3b0 & 16) {
-                    var_8d684abd = var_8d684abd & ~16;
-                }
-                if (var_1ce7d3b0 & 131072) {
-                    var_8d684abd = var_8d684abd & ~131072;
-                }
-                self.m_e_door setcontents(var_8d684abd);
-            }
-            self.m_e_door function_881077b4(4194303, 0);
-            self.m_e_door function_881077b4(4097, 1);
-            self.m_e_door function_df3a1348(0, 0);
+            return;
         }
+        var_1ce7d3b0 = self.m_e_door getcontents();
+        if (var_1ce7d3b0 & (1 | 131072 | 16)) {
+            var_8d684abd = var_1ce7d3b0;
+            if (!isdefined(self.m_e_door.var_4101ccab)) {
+                self.m_e_door.var_4101ccab = var_1ce7d3b0;
+            }
+            if (var_1ce7d3b0 & 1) {
+                var_8d684abd = var_1ce7d3b0 & ~1;
+                var_8d684abd = var_8d684abd | 64 | 128 | 512 | 1024 | 4096 | 8192 | 65536 | 1048576;
+            }
+            if (var_1ce7d3b0 & 16) {
+                var_8d684abd = var_8d684abd & ~16;
+            }
+            if (var_1ce7d3b0 & 131072) {
+                var_8d684abd = var_8d684abd & ~131072;
+            }
+            self.m_e_door setcontents(var_8d684abd);
+        }
+        self.m_e_door function_881077b4(4194303, 0);
+        self.m_e_door function_881077b4(4097, 1);
+        self.m_e_door function_df3a1348(0, 0);
     }
 
     // Namespace cdoor/doors_shared
@@ -1479,9 +1478,9 @@ function door_panel_interact(b_is_panel_reusable) {
                         if (!is_true(door.m_s_bundle.door_closes) && is_true(door.m_s_bundle.var_d37e8f3e)) {
                             door notify(#"set_destructible", {#player:e_player});
                         }
-                    } else {
-                        [[ door ]]->open(e_player);
+                        continue;
                     }
+                    [[ door ]]->open(e_player);
                 }
             }
             waitframe(1);
@@ -1503,9 +1502,9 @@ function door_panel_interact(b_is_panel_reusable) {
                     waitframe(1);
                 }
                 self.mdl_gameobject gameobjects::enable_object(1);
-            } else {
-                return;
+                continue;
             }
+            return;
         }
     }
 }
@@ -1594,7 +1593,9 @@ function setup_door_info(s_door_bundle, s_door_instance, c_door) {
                 } else {
                     ent delete();
                 }
-            } else if (ent trigger::is_trigger_of_type()) {
+                continue;
+            }
+            if (ent trigger::is_trigger_of_type()) {
                 c_door.m_s_bundle.door_trigger_at_target = 1;
             }
         }
@@ -2097,7 +2098,9 @@ function function_16136fe9(c_door, waitresult) {
                 [[ c_door ]]->function_830dc907(e_who);
             }
         }
-    } else if (b_manual_close) {
+        return;
+    }
+    if (b_manual_close) {
         [[ c_door ]]->close();
         [[ c_door ]]->function_d30d9f47(e_who);
     }
@@ -2175,9 +2178,7 @@ function function_426a2a1b(c_door) {
         if (is_true(c_door.m_s_bundle.var_d37e8f3e)) {
             c_door notify(#"set_destructible", {#player:c_door.var_9b9642be});
         }
-        goto LOC_000000d2;
     }
-LOC_000000d2:
 }
 
 // Namespace doors/doors_shared
@@ -2263,7 +2264,9 @@ function player_freeze_in_place(b_do_freeze) {
             self.freeze_origin delete();
             self.freeze_origin = undefined;
         }
-    } else if (!isdefined(self.freeze_origin)) {
+        return;
+    }
+    if (!isdefined(self.freeze_origin)) {
         self.freeze_origin = spawn("script_model", self.origin);
         self.freeze_origin setmodel(#"tag_origin");
         self.freeze_origin.angles = self getplayerangles();
@@ -2286,12 +2289,12 @@ function function_4fb146e4(c_door) {
         }
         if (iscorpse(entity) && is_true(level.var_a348230f)) {
             entity delete();
-        } else {
-            if (!isdefined(entity.weapon)) {
-                continue;
-            }
-            entcount++;
+            continue;
         }
+        if (!isdefined(entity.weapon)) {
+            continue;
+        }
+        entcount++;
     }
     return entcount == 0;
 }
@@ -2341,7 +2344,7 @@ function door_wait_until_user_release(c_door, e_triggerer, str_kill_on_door_noti
         waitframe(1);
         b_pressed = e_triggerer usebuttonpressed();
         n_dist = distancesquared(e_triggerer.origin, self.origin);
-    } while(b_pressed && n_dist < max_dist_sq);
+    } while (b_pressed && n_dist < max_dist_sq);
 }
 
 // Namespace doors/doors_shared
@@ -2395,14 +2398,14 @@ function unlock(str_value, str_key = "targetname", b_do_open = 1, e_player = und
         if (b_do_open) {
             [[ self.c_door ]]->open(e_player);
         }
-    } else {
-        a_e_doors = get_doors(str_value, str_key);
-        foreach (e_door in a_e_doors) {
-            if (isdefined(e_door.c_door)) {
-                [[ e_door.c_door ]]->unlock();
-                if (b_do_open) {
-                    [[ e_door.c_door ]]->open(e_player);
-                }
+        return;
+    }
+    a_e_doors = get_doors(str_value, str_key);
+    foreach (e_door in a_e_doors) {
+        if (isdefined(e_door.c_door)) {
+            [[ e_door.c_door ]]->unlock();
+            if (b_do_open) {
+                [[ e_door.c_door ]]->open(e_player);
             }
         }
     }
@@ -2426,15 +2429,15 @@ function lock(str_value, str_key = "targetname", b_do_close = 1) {
             [[ self.c_door ]]->close();
         }
         [[ self.c_door ]]->lock();
-    } else {
-        a_e_doors = get_doors(str_value, str_key);
-        foreach (e_door in a_e_doors) {
-            if (isdefined(e_door.c_door)) {
-                if (b_do_close) {
-                    [[ e_door.c_door ]]->close();
-                }
-                [[ e_door.c_door ]]->lock();
+        return;
+    }
+    a_e_doors = get_doors(str_value, str_key);
+    foreach (e_door in a_e_doors) {
+        if (isdefined(e_door.c_door)) {
+            if (b_do_close) {
+                [[ e_door.c_door ]]->close();
             }
+            [[ e_door.c_door ]]->lock();
         }
     }
 }
@@ -2454,12 +2457,12 @@ function lock_all(b_do_close = 1) {
 function open(str_value, str_key = "targetname", e_player = undefined) {
     if (isdefined(self.c_door)) {
         [[ self.c_door ]]->open(e_player);
-    } else {
-        a_e_doors = get_doors(str_value, str_key);
-        foreach (e_door in a_e_doors) {
-            if (isdefined(e_door.c_door)) {
-                [[ e_door.c_door ]]->open(e_player);
-            }
+        return;
+    }
+    a_e_doors = get_doors(str_value, str_key);
+    foreach (e_door in a_e_doors) {
+        if (isdefined(e_door.c_door)) {
+            [[ e_door.c_door ]]->open(e_player);
         }
     }
 }
@@ -2479,12 +2482,12 @@ function open_all() {
 function close(str_value, str_key = "targetname") {
     if (isdefined(self.c_door)) {
         [[ self.c_door ]]->close();
-    } else {
-        a_e_doors = get_doors(str_value, str_key);
-        foreach (e_door in a_e_doors) {
-            if (isdefined(e_door.c_door)) {
-                [[ e_door.c_door ]]->close();
-            }
+        return;
+    }
+    a_e_doors = get_doors(str_value, str_key);
+    foreach (e_door in a_e_doors) {
+        if (isdefined(e_door.c_door)) {
+            [[ e_door.c_door ]]->close();
         }
     }
 }
@@ -2512,21 +2515,21 @@ function is_open() {
 function waittill_door_opened(str_value, str_key = "targetname") {
     if (isdefined(self.c_door)) {
         self.c_door flag::wait_till("open");
-    } else {
-        a_e_doors = get_doors(str_value, str_key);
-        while (1) {
-            var_8c4538df = 1;
-            foreach (e_door in a_e_doors) {
-                if (!e_door.c_door flag::get("open")) {
-                    var_8c4538df = 0;
-                    break;
-                }
+        return;
+    }
+    a_e_doors = get_doors(str_value, str_key);
+    while (1) {
+        var_8c4538df = 1;
+        foreach (e_door in a_e_doors) {
+            if (!e_door.c_door flag::get("open")) {
+                var_8c4538df = 0;
+                break;
             }
-            if (var_8c4538df) {
-                return;
-            }
-            waitframe(1);
         }
+        if (var_8c4538df) {
+            return;
+        }
+        waitframe(1);
     }
 }
 
@@ -2538,21 +2541,21 @@ function waittill_door_closed(str_value, str_key = "targetname") {
     if (isdefined(self.c_door)) {
         self.c_door flag::wait_till_clear("open");
         self.c_door flag::wait_till_clear("animating");
-    } else {
-        a_e_doors = get_doors(str_value, str_key);
-        while (1) {
-            var_a644cd9e = 1;
-            foreach (e_door in a_e_doors) {
-                if (e_door.c_door flag::get("open") || e_door.c_door flag::get("animating")) {
-                    var_a644cd9e = 0;
-                    break;
-                }
+        return;
+    }
+    a_e_doors = get_doors(str_value, str_key);
+    while (1) {
+        var_a644cd9e = 1;
+        foreach (e_door in a_e_doors) {
+            if (e_door.c_door flag::get("open") || e_door.c_door flag::get("animating")) {
+                var_a644cd9e = 0;
+                break;
             }
-            if (var_a644cd9e) {
-                return;
-            }
-            waitframe(1);
         }
+        if (var_a644cd9e) {
+            return;
+        }
+        waitframe(1);
     }
 }
 
@@ -2566,14 +2569,14 @@ function function_e990dbc6(var_db99bbb, str_value, str_key = "targetname") {
         if (isdefined(self.c_door.var_d1c4f848)) {
             self.c_door.var_d1c4f848.var_f97eab64 = var_db99bbb;
         }
-    } else {
-        a_e_doors = get_doors(str_value, str_key);
-        foreach (e_door in a_e_doors) {
-            if (isdefined(e_door.c_door)) {
+        return;
+    }
+    a_e_doors = get_doors(str_value, str_key);
+    foreach (e_door in a_e_doors) {
+        if (isdefined(e_door.c_door)) {
+            e_door.c_door.var_f97eab64 = var_db99bbb;
+            if (isdefined(e_door.c_door.var_d1c4f848)) {
                 e_door.c_door.var_f97eab64 = var_db99bbb;
-                if (isdefined(e_door.c_door.var_d1c4f848)) {
-                    e_door.c_door.var_f97eab64 = var_db99bbb;
-                }
             }
         }
     }
@@ -2593,14 +2596,14 @@ function private function_1f15ea13(var_518664d2, str_value, str_key, var_28c9243
         if (isdefined(self.c_door.var_d1c4f848)) {
             [[ self.c_door.var_d1c4f848.c_door ]]->function_f584b243(var_518664d2, var_c7d32773);
         }
-    } else {
-        a_e_doors = get_doors(str_value, str_key);
-        foreach (e_door in a_e_doors) {
-            if (isdefined(e_door.c_door)) {
-                [[ e_door.c_door ]]->function_f584b243(var_518664d2, var_c7d32773);
-                if (isdefined(e_door.c_door.var_d1c4f848)) {
-                    [[ e_door.c_door.var_d1c4f848.c_door ]]->function_f584b243(var_518664d2, var_c7d32773);
-                }
+        return;
+    }
+    a_e_doors = get_doors(str_value, str_key);
+    foreach (e_door in a_e_doors) {
+        if (isdefined(e_door.c_door)) {
+            [[ e_door.c_door ]]->function_f584b243(var_518664d2, var_c7d32773);
+            if (isdefined(e_door.c_door.var_d1c4f848)) {
+                [[ e_door.c_door.var_d1c4f848.c_door ]]->function_f584b243(var_518664d2, var_c7d32773);
             }
         }
     }
@@ -2667,16 +2670,18 @@ function function_3353d645(str_value, str_key = "targetname") {
         } else {
             self delete();
         }
-    } else {
-        a_e_doors = get_doors(str_value, str_key);
-        foreach (e_door in a_e_doors) {
-            if (isdefined(e_door.c_door)) {
-                [[ e_door.c_door ]]->delete_door();
-                if (isstruct(e_door)) {
-                    e_door struct::delete();
-                } else if (isentity(e_door)) {
-                    e_door delete();
-                }
+        return;
+    }
+    a_e_doors = get_doors(str_value, str_key);
+    foreach (e_door in a_e_doors) {
+        if (isdefined(e_door.c_door)) {
+            [[ e_door.c_door ]]->delete_door();
+            if (isstruct(e_door)) {
+                e_door struct::delete();
+                continue;
+            }
+            if (isentity(e_door)) {
+                e_door delete();
             }
         }
     }
@@ -2689,14 +2694,16 @@ function function_3353d645(str_value, str_key = "targetname") {
 function function_83929c65(b_enable, str_value, str_key = "targetname") {
     if (isclass(self)) {
         self thread function_fcadd390(b_enable);
-    } else if (isdefined(self.c_door)) {
+        return;
+    }
+    if (isdefined(self.c_door)) {
         self.c_door thread function_fcadd390(b_enable);
-    } else {
-        a_e_doors = get_doors(str_value, str_key);
-        foreach (e_door in a_e_doors) {
-            if (isdefined(e_door.c_door)) {
-                e_door.c_door thread function_fcadd390(b_enable);
-            }
+        return;
+    }
+    a_e_doors = get_doors(str_value, str_key);
+    foreach (e_door in a_e_doors) {
+        if (isdefined(e_door.c_door)) {
+            e_door.c_door thread function_fcadd390(b_enable);
         }
     }
 }
@@ -2729,10 +2736,9 @@ function private function_fa74d5cd(c_door) {
 function function_73f09315(str_value, str_key = "targetname") {
     if (isdefined(self.c_door)) {
         return self.c_door.m_e_door;
-    } else {
-        a_e_doors = get_doors(str_value, str_key);
-        return a_e_doors[0].c_door.m_e_door;
     }
+    a_e_doors = get_doors(str_value, str_key);
+    return a_e_doors[0].c_door.m_e_door;
 }
 
 // Namespace doors/doors_shared
@@ -2745,14 +2751,14 @@ function function_f35467ac(str_value, str_key = "targetname", var_8372bfa0 = 0, 
         if (isdefined(self.c_door.var_d1c4f848)) {
             [[ self.c_door.var_d1c4f848.c_door ]]->function_e7be6e76(0, 0, var_8372bfa0, var_c4304c95);
         }
-    } else {
-        a_e_doors = get_doors(str_value, str_key);
-        foreach (e_door in a_e_doors) {
-            if (isdefined(e_door.c_door)) {
-                [[ e_door.c_door ]]->function_e7be6e76(0, 0, var_8372bfa0, var_c4304c95);
-                if (isdefined(e_door.c_door.var_d1c4f848)) {
-                    [[ e_door.c_door.var_d1c4f848.c_door ]]->function_e7be6e76(0, 0, var_8372bfa0, var_c4304c95);
-                }
+        return;
+    }
+    a_e_doors = get_doors(str_value, str_key);
+    foreach (e_door in a_e_doors) {
+        if (isdefined(e_door.c_door)) {
+            [[ e_door.c_door ]]->function_e7be6e76(0, 0, var_8372bfa0, var_c4304c95);
+            if (isdefined(e_door.c_door.var_d1c4f848)) {
+                [[ e_door.c_door.var_d1c4f848.c_door ]]->function_e7be6e76(0, 0, var_8372bfa0, var_c4304c95);
             }
         }
     }
@@ -2768,14 +2774,14 @@ function function_f5dd4f8f(str_value, str_key = "targetname", var_8372bfa0 = 0, 
         if (isdefined(self.c_door.var_d1c4f848)) {
             [[ self.c_door.var_d1c4f848.c_door ]]->function_e7be6e76(1, 1, var_8372bfa0, var_c4304c95);
         }
-    } else {
-        a_e_doors = get_doors(str_value, str_key);
-        foreach (e_door in a_e_doors) {
-            if (isdefined(e_door.c_door)) {
-                [[ e_door.c_door ]]->function_e7be6e76(1, 1, var_8372bfa0, var_c4304c95);
-                if (isdefined(e_door.c_door.var_d1c4f848)) {
-                    [[ e_door.c_door.var_d1c4f848.c_door ]]->function_e7be6e76(1, 1, var_8372bfa0, var_c4304c95);
-                }
+        return;
+    }
+    a_e_doors = get_doors(str_value, str_key);
+    foreach (e_door in a_e_doors) {
+        if (isdefined(e_door.c_door)) {
+            [[ e_door.c_door ]]->function_e7be6e76(1, 1, var_8372bfa0, var_c4304c95);
+            if (isdefined(e_door.c_door.var_d1c4f848)) {
+                [[ e_door.c_door.var_d1c4f848.c_door ]]->function_e7be6e76(1, 1, var_8372bfa0, var_c4304c95);
             }
         }
     }
@@ -2826,7 +2832,9 @@ function private function_d374e3dd(reset) {
     if (isdefined(self.var_a2f96f78.var_31d51062)) {
         if (self.var_a2f96f78.var_31d51062 == "FORCE_OFF") {
             self.var_f97eab64 = 0;
-        } else if (self.var_a2f96f78.var_31d51062 == "FORCE_ON") {
+            return;
+        }
+        if (self.var_a2f96f78.var_31d51062 == "FORCE_ON") {
             self.var_f97eab64 = 1;
         }
     }
@@ -2863,23 +2871,23 @@ function private function_7fe6d007(e_or_str_model) {
             }
         }
         self.var_e9da41b9 = abs(dimensions[0]);
+        return;
+    }
+    if (abs(extents.maxs[1]) > abs(extents.mins[1])) {
+        self.var_e73bf21e = "-x";
+        self.var_b25124c7 = "y";
     } else {
-        if (abs(extents.maxs[1]) > abs(extents.mins[1])) {
+        self.var_e73bf21e = "x";
+        self.var_b25124c7 = "-y";
+    }
+    if (isdefined(self.m_s_bundle) && self.m_s_bundle.door_open_method == "swing_away_from_player") {
+        if (self.m_s_bundle.door_swing_angle > 0 && self.var_b25124c7 == "y" || self.m_s_bundle.door_swing_angle < 0 && self.var_b25124c7 == "-y") {
             self.var_e73bf21e = "-x";
-            self.var_b25124c7 = "y";
         } else {
             self.var_e73bf21e = "x";
-            self.var_b25124c7 = "-y";
         }
-        if (isdefined(self.m_s_bundle) && self.m_s_bundle.door_open_method == "swing_away_from_player") {
-            if (self.m_s_bundle.door_swing_angle > 0 && self.var_b25124c7 == "y" || self.m_s_bundle.door_swing_angle < 0 && self.var_b25124c7 == "-y") {
-                self.var_e73bf21e = "-x";
-            } else {
-                self.var_e73bf21e = "x";
-            }
-        }
-        self.var_e9da41b9 = abs(dimensions[1]);
     }
+    self.var_e9da41b9 = abs(dimensions[1]);
 }
 
 // Namespace doors/doors_shared
@@ -2951,12 +2959,11 @@ function function_c2758350() {
 function function_810b782f(var_225a57cd = 0) {
     if (var_225a57cd && isdefined(self.var_48f481cb)) {
         return (self.var_48f481cb + vectorscale((0, 0, 1), 55));
-    } else {
-        angles = self function_d38f4479(var_225a57cd);
-        var_9ba2a2c = getxmodelcenteroffset(self.m_e_door.model, 1);
-        var_9998d3ec = rotatepoint(var_9ba2a2c, angles);
-        return (self.m_e_door.origin + (var_9998d3ec[0], var_9998d3ec[1], 55));
     }
+    angles = self function_d38f4479(var_225a57cd);
+    var_9ba2a2c = getxmodelcenteroffset(self.m_e_door.model, 1);
+    var_9998d3ec = rotatepoint(var_9ba2a2c, angles);
+    return self.m_e_door.origin + (var_9998d3ec[0], var_9998d3ec[1], 55);
 }
 
 // Namespace doors/doors_shared
@@ -2983,9 +2990,8 @@ function function_5869e01(var_225a57cd = 0) {
 function function_d38f4479(var_225a57cd = 0) {
     if (isdefined(self.m_e_door) && !var_225a57cd) {
         return self.m_e_door.angles;
-    } else {
-        return self.var_85f2454d.angles;
     }
+    return self.var_85f2454d.angles;
 }
 
 // Namespace doors/doors_shared

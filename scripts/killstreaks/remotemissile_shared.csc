@@ -127,7 +127,9 @@ function hellstorm_deploy(localclientnum, *oldval, newval, *bnewent, *binitialsn
         } else {
             self hide();
         }
-    } else if (isdefined(self.var_7e63022)) {
+        return;
+    }
+    if (isdefined(self.var_7e63022)) {
         stopfx(fieldname, self.var_7e63022);
         self.var_7e63022 = undefined;
     }
@@ -164,9 +166,9 @@ function function_90b75549(localclientnum) {
 function function_3e76ad59(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self function_d309e55a("tag_brake_control_animate", 1);
-    } else {
-        self function_d309e55a("tag_brake_control_animate", 0);
+        return;
     }
+    self function_d309e55a("tag_brake_control_animate", 0);
 }
 
 // Namespace remotemissile/remotemissile_shared
@@ -191,11 +193,13 @@ function missile_fired(localclientnum, *oldval, newval, *bnewent, *binitialsnap,
         }
         self thread hud_update(fieldname);
         self thread function_298565db();
-    } else if (bwastimejump == 2) {
-        self.var_7ec0e2d1 delete();
-    } else {
-        self function_fd73ab50();
+        return;
     }
+    if (bwastimejump == 2) {
+        self.var_7ec0e2d1 delete();
+        return;
+    }
+    self function_fd73ab50();
 }
 
 // Namespace remotemissile/remotemissile_shared
@@ -326,7 +330,9 @@ function function_d260edc9(localclientnum, enabled) {
         if (isdefined(self.weapon) && self.weapon.statname == #"remote_missile") {
             function_a837926b(localclientnum, postfxbundle);
         }
-    } else if (function_148ccc79(localclientnum, postfxbundle)) {
+        return;
+    }
+    if (function_148ccc79(localclientnum, postfxbundle)) {
         codestoppostfxbundlelocal(localclientnum, postfxbundle);
     }
 }
@@ -354,18 +360,18 @@ function remote_missile_piloting(localclientnum, *oldval, newval, *bnewent, *bin
         if (isdefined(rumble)) {
             self playrumblelooponentity(fieldname, rumble);
         }
-    } else {
-        if (isdefined(postfxbundle) && function_148ccc79(fieldname, postfxbundle)) {
-            if (isdefined(level.var_9ca75ca3[fieldname])) {
-                codestoppostfxbundlelocal(fieldname, postfxbundle);
-                level.var_9ca75ca3[fieldname] = undefined;
-            } else {
-                function_24cd4cfb(fieldname, postfxbundle);
-            }
+        return;
+    }
+    if (isdefined(postfxbundle) && function_148ccc79(fieldname, postfxbundle)) {
+        if (isdefined(level.var_9ca75ca3[fieldname])) {
+            codestoppostfxbundlelocal(fieldname, postfxbundle);
+            level.var_9ca75ca3[fieldname] = undefined;
+        } else {
+            function_24cd4cfb(fieldname, postfxbundle);
         }
-        if (isdefined(rumble)) {
-            self stoprumble(fieldname, rumble);
-        }
+    }
+    if (isdefined(rumble)) {
+        self stoprumble(fieldname, rumble);
     }
 }
 

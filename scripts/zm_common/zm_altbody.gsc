@@ -345,11 +345,11 @@ function private player_restore_loadout(name, *trigger) {
 function function_d709966a(washuman) {
     if (washuman) {
         playfx(level._effect[#"human_disappears"], self.origin);
-    } else {
-        playfx(level._effect[#"zombie_disappears"], self.origin);
-        playsoundatposition(#"zmb_player_disapparate", self.origin);
-        self playlocalsound(#"zmb_player_disapparate_2d");
+        return;
     }
+    playfx(level._effect[#"zombie_disappears"], self.origin);
+    playsoundatposition(#"zmb_player_disapparate", self.origin);
+    self playlocalsound(#"zmb_player_disapparate_2d");
 }
 
 // Namespace zm_altbody/zm_altbody
@@ -424,9 +424,9 @@ function kiosk_trigger_think() {
             name = self.stub.altbody_name;
             if (isdefined(player.custom_altbody_callback)) {
                 player thread [[ player.custom_altbody_callback ]](self, name);
-            } else {
-                player thread player_try_altbody(self, name);
+                continue;
             }
+            player thread player_try_altbody(self, name);
         }
     }
 }
@@ -464,9 +464,9 @@ function private trigger_watch_kiosk(name, *trigger_name, trigger_hint, whenvisi
             player = waitresult.activator;
             if (isdefined(player.custom_altbody_callback)) {
                 player thread [[ player.custom_altbody_callback ]](self, trigger_name);
-            } else {
-                player thread player_try_altbody(self, trigger_name);
+                continue;
             }
+            player thread player_try_altbody(self, trigger_name);
         }
     }
 }

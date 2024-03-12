@@ -84,21 +84,21 @@ function full_ammo_powerup(drop_item, player) {
     level notify(#"zmb_max_ammo_level");
     foreach (player in players) {
         if (isdefined(level.check_player_is_ready_for_ammo)) {
-            jumpiffalse([[ level.check_player_is_ready_for_ammo ]](player) == 0) LOC_0000011c;
-        } else {
-        LOC_0000011c:
-            if (player util::is_spectating()) {
+            if ([[ level.check_player_is_ready_for_ammo ]](player) == 0) {
                 continue;
             }
-            if (isdefined(player) && isplayer(player) && isdefined(drop_item.hint)) {
-                player zm_utility::function_846eb7dd(#"hash_1d757d99eb407952", drop_item.hint);
-            }
-            player.var_655c0753 = undefined;
-            player notify(#"zmb_max_ammo");
-            player zm_placeable_mine::disable_all_prompts_for_player();
-            foreach (slotid in array(17 + 1, 17 + 1 + 8 + 1, 17 + 1 + 8 + 1 + 8 + 1)) {
-                player zm_weapons::function_51aa5813(slotid);
-            }
+        }
+        if (player util::is_spectating()) {
+            continue;
+        }
+        if (isdefined(player) && isplayer(player) && isdefined(drop_item.hint)) {
+            player zm_utility::function_846eb7dd(#"hash_1d757d99eb407952", drop_item.hint);
+        }
+        player.var_655c0753 = undefined;
+        player notify(#"zmb_max_ammo");
+        player zm_placeable_mine::disable_all_prompts_for_player();
+        foreach (slotid in array(17 + 1, 17 + 1 + 8 + 1, 17 + 1 + 8 + 1 + 8 + 1)) {
+            player zm_weapons::function_51aa5813(slotid);
         }
     }
     level thread full_ammo_on_hud(drop_item, player.team);
@@ -117,9 +117,9 @@ function function_3ecbd9d(w_weapon) {
         }
         self notify(#"hash_3d73720d4588203c");
         self gadgetpowerset(n_slot, 100);
-    } else {
-        self gadgetpowerset(n_slot, 100);
+        return;
     }
+    self gadgetpowerset(n_slot, 100);
 }
 
 // Namespace zm_powerup_full_ammo/zm_powerup_full_ammo

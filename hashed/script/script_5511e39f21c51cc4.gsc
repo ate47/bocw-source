@@ -87,11 +87,8 @@ function function_4d5e1035(attacker, weapon, type, weapon_damage, event, playerc
             if (hardpointtype == "helicopter_player_gunner") {
                 attacker stats::function_e24eec31(weapon, #"destroyed_controlled_killstreak", 1);
             }
-            goto LOC_00000146;
         }
-    LOC_00000146:
     }
-LOC_00000146:
 }
 
 // Namespace helicopter/helicopter_guard

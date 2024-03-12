@@ -84,7 +84,7 @@ function function_1d787beb() {
     }
     if (!isdefined(var_d7eff26a)) {
         /#
-            if (!any_player_in_noclip()) {
+            if (any_player_in_noclip()) {
             }
         #/
         return 0;
@@ -307,16 +307,12 @@ function function_b68d818c() {
     switch (n_player_count) {
     case 1:
         return 1;
-        break;
     case 2:
         return 2;
-        break;
     case 3:
         return 3;
-        break;
     case 4:
         return 4;
-        break;
     }
     return 1;
 }
@@ -337,9 +333,9 @@ function function_9282dcac(*n_round_number) {
             n_player_count = zm_utility::function_a2541519(getplayers().size);
             if (n_player_count == 1) {
                 level.var_9135c56e = level.round_number + randomintrangeinclusive(3, 5);
-            } else {
-                level.var_9135c56e = level.round_number + randomintrangeinclusive(3, 4);
+                continue;
             }
+            level.var_9135c56e = level.round_number + randomintrangeinclusive(3, 4);
         }
     }
 }

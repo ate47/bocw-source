@@ -1160,9 +1160,8 @@ function bb_gethigheststance() {
     if (self isatcovernodestrict() && self shouldusecovernode()) {
         higheststance = self gethighestnodestance(self.node);
         return higheststance;
-    } else {
-        return self getblackboardattribute("_stance");
     }
+    return self getblackboardattribute("_stance");
 }
 
 // Namespace aiutility/archetype_utility
@@ -1183,7 +1182,6 @@ function bb_getlocomotionfaceenemyquadrantprevious() {
             return "locomotion_face_enemy_left";
         case 4:
             return "locomotion_face_enemy_back";
-            break;
         }
     }
     return "locomotion_face_enemy_none";
@@ -1403,9 +1401,8 @@ function function_b3f35a07() {
     }
     if (is_true(self.ai.door_opened)) {
         return "door_will_open_yes";
-    } else {
-        return "door_will_open_no";
     }
+    return "door_will_open_no";
 }
 
 // Namespace aiutility/archetype_utility
@@ -1415,9 +1412,8 @@ function function_b3f35a07() {
 function function_7970d18b() {
     if (is_true(self.ai.var_10150769)) {
         return "door_overlay_disabled";
-    } else {
-        return "door_overlay_enabled";
     }
+    return "door_overlay_enabled";
 }
 
 // Namespace aiutility/archetype_utility
@@ -1677,7 +1673,6 @@ function bb_getlocomotionfaceenemyquadrant() {
             return "<unknown string>";
         case #"back":
             return "<unknown string>";
-            break;
         }
     #/
     if (isdefined(self.relativedir)) {
@@ -1693,7 +1688,6 @@ function bb_getlocomotionfaceenemyquadrant() {
             return "locomotion_face_enemy_left";
         case 4:
             return "locomotion_face_enemy_back";
-            break;
         }
     }
     return "locomotion_face_enemy_front";
@@ -1832,7 +1826,6 @@ function bb_getweaponclass() {
         return "rocketlauncher";
     default:
         return "rifle";
-        break;
     }
 }
 
@@ -2151,13 +2144,13 @@ function trygoingtoclosestnodetoenemybehavior(entity) {
             foreach (node in nodes) {
                 if (node.spawnflags & 128) {
                     var_e416dc99[var_e416dc99.size] = node;
-                } else {
-                    var_c86d779 = anglestoforward(node.angles);
-                    dirtoenemy = vectornormalize((lastknownpositionofenemy - node.origin) * (1, 1, 0));
-                    dot = vectordot(var_c86d779, dirtoenemy);
-                    if (dot > 0.5) {
-                        var_e416dc99[var_e416dc99.size] = node;
-                    }
+                    continue;
+                }
+                var_c86d779 = anglestoforward(node.angles);
+                dirtoenemy = vectornormalize((lastknownpositionofenemy - node.origin) * (1, 1, 0));
+                dot = vectordot(var_c86d779, dirtoenemy);
+                if (dot > 0.5) {
+                    var_e416dc99[var_e416dc99.size] = node;
                 }
             }
             if (var_e416dc99.size > 0) {
@@ -2732,55 +2725,52 @@ function canseeenemywrapper() {
     }
     if (!isdefined(self.node)) {
         return self cansee(self.enemy);
-    } else {
-        node = self.node;
-        enemyeye = self.enemy geteye();
-        yawtoenemy = angleclamp180(node.angles[1] - vectortoangles(enemyeye - node.origin)[1]);
-        if (node.type == #"cover left" || node.type == #"cover right") {
-            if (yawtoenemy > 60 || yawtoenemy < -60) {
+    }
+    node = self.node;
+    enemyeye = self.enemy geteye();
+    yawtoenemy = angleclamp180(node.angles[1] - vectortoangles(enemyeye - node.origin)[1]);
+    if (node.type == #"cover left" || node.type == #"cover right") {
+        if (yawtoenemy > 60 || yawtoenemy < -60) {
+            return 0;
+        }
+        if (self function_c97b59f8("stand", node)) {
+            if (node.type == #"cover left" && yawtoenemy > 10) {
                 return 0;
             }
-            if (self function_c97b59f8("stand", node)) {
-                if (node.type == #"cover left" && yawtoenemy > 10) {
-                    return 0;
-                }
-                if (node.type == #"cover right" && yawtoenemy < -10) {
-                    return 0;
-                }
-            }
-        }
-        nodeoffset = (0, 0, 0);
-        if (node.type == #"cover pillar") {
-            /#
-                assert(!(isdefined(node.spawnflags) && (node.spawnflags & 2048) == 2048) || !(isdefined(node.spawnflags) && (node.spawnflags & 1024) == 1024));
-            #/
-            canseefromleft = 1;
-            canseefromright = 1;
-            nodeoffset = (-32, 3.7, 60);
-            lookfrompoint = calculatenodeoffsetposition(node, nodeoffset);
-            canseefromleft = sighttracepassed(lookfrompoint, enemyeye, 0, undefined);
-            nodeoffset = (32, 3.7, 60);
-            lookfrompoint = calculatenodeoffsetposition(node, nodeoffset);
-            canseefromright = sighttracepassed(lookfrompoint, enemyeye, 0, undefined);
-            return (canseefromright || canseefromleft);
-        } else {
-            if (node.type == #"cover left") {
-                nodeoffset = (-36, 7, 63);
-            } else if (node.type == #"cover right") {
-                nodeoffset = (36, 7, 63);
-            } else if (node.type == #"cover stand" || node.type == #"conceal stand") {
-                nodeoffset = (-3.7, -22, 63);
-            } else if (node.type == #"cover crouch" || node.type == #"cover crouch window" || node.type == #"conceal crouch") {
-                nodeoffset = (3.5, -12.5, 45);
-            }
-            lookfrompoint = calculatenodeoffsetposition(node, nodeoffset);
-            if (sighttracepassed(lookfrompoint, enemyeye, 0, undefined)) {
-                return 1;
-            } else {
+            if (node.type == #"cover right" && yawtoenemy < -10) {
                 return 0;
             }
         }
     }
+    nodeoffset = (0, 0, 0);
+    if (node.type == #"cover pillar") {
+        /#
+            assert(!(isdefined(node.spawnflags) && (node.spawnflags & 2048) == 2048) || !(isdefined(node.spawnflags) && (node.spawnflags & 1024) == 1024));
+        #/
+        canseefromleft = 1;
+        canseefromright = 1;
+        nodeoffset = (-32, 3.7, 60);
+        lookfrompoint = calculatenodeoffsetposition(node, nodeoffset);
+        canseefromleft = sighttracepassed(lookfrompoint, enemyeye, 0, undefined);
+        nodeoffset = (32, 3.7, 60);
+        lookfrompoint = calculatenodeoffsetposition(node, nodeoffset);
+        canseefromright = sighttracepassed(lookfrompoint, enemyeye, 0, undefined);
+        return (canseefromright || canseefromleft);
+    }
+    if (node.type == #"cover left") {
+        nodeoffset = (-36, 7, 63);
+    } else if (node.type == #"cover right") {
+        nodeoffset = (36, 7, 63);
+    } else if (node.type == #"cover stand" || node.type == #"conceal stand") {
+        nodeoffset = (-3.7, -22, 63);
+    } else if (node.type == #"cover crouch" || node.type == #"cover crouch window" || node.type == #"conceal crouch") {
+        nodeoffset = (3.5, -12.5, 45);
+    }
+    lookfrompoint = calculatenodeoffsetposition(node, nodeoffset);
+    if (sighttracepassed(lookfrompoint, enemyeye, 0, undefined)) {
+        return 1;
+    }
+    return 0;
 }
 
 // Namespace aiutility/archetype_utility
@@ -3186,9 +3176,9 @@ function cleanupchargemeleeattack(entity) {
     }
     if (isdefined(entity.ai.var_aba9dcfd) && isdefined(entity.ai.var_38ee3a42)) {
         entity pathmode("move delayed", 1, randomfloatrange(entity.ai.var_aba9dcfd, entity.ai.var_38ee3a42));
-    } else {
-        entity pathmode("move delayed", 1, randomfloatrange(0.5, 1));
+        return;
     }
+    entity pathmode("move delayed", 1, randomfloatrange(0.5, 1));
 }
 
 // Namespace aiutility/archetype_utility
@@ -3328,7 +3318,9 @@ function balconydeath(entity) {
     entity.clamptonavmesh = 0;
     if (is_true(entity.var_2f38dcc9) || entity.node.spawnflags & 1024) {
         entity setblackboardattribute("_special_death", "balcony");
-    } else if (is_true(entity.var_f13e4919) || entity.node.spawnflags & 2048) {
+        return;
+    }
+    if (is_true(entity.var_f13e4919) || entity.node.spawnflags & 2048) {
         entity setblackboardattribute("_special_death", "balcony_norail");
     }
 }
@@ -3408,7 +3400,6 @@ function private isinphalanxstance(entity) {
         return (currentstance == "stand");
     case #"crouch":
         return (currentstance == "crouch");
-        break;
     }
     return 1;
 }
@@ -3422,10 +3413,10 @@ function private togglephalanxstance(entity) {
     switch (phalanxstance) {
     case #"stand":
         entity setblackboardattribute("_desired_stance", "stand");
-        break;
+        return;
     case #"crouch":
         entity setblackboardattribute("_desired_stance", "crouch");
-        break;
+        return;
     }
 }
 
@@ -3477,14 +3468,14 @@ function meleeattributescallback(entity, attribute, *oldvalue, value) {
         } else {
             attribute.canmelee = 0;
         }
-        break;
+        return;
     case #"can_be_meleed":
         if (value) {
             attribute.canbemeleed = 1;
         } else {
             attribute.canbemeleed = 0;
         }
-        break;
+        return;
     }
 }
 
@@ -3500,7 +3491,7 @@ function arrivalattributescallback(entity, attribute, *oldvalue, value) {
         } else {
             attribute.ai.disablearrivals = 0;
         }
-        break;
+        return;
     }
 }
 
@@ -3516,7 +3507,7 @@ function function_eef4346c(entity, attribute, *oldvalue, value) {
         } else {
             attribute.ai.disablepeek = 0;
         }
-        break;
+        return;
     }
 }
 
@@ -3532,7 +3523,7 @@ function function_1cd75f29(entity, attribute, *oldvalue, value) {
         } else {
             attribute.ai.disablelean = 0;
         }
-        break;
+        return;
     }
 }
 
@@ -3548,7 +3539,7 @@ function function_a626b1a9(entity, attribute, *oldvalue, value) {
         } else {
             attribute.ai.disablereload = 0;
         }
-        break;
+        return;
     }
 }
 
@@ -3559,9 +3550,9 @@ function function_a626b1a9(entity, attribute, *oldvalue, value) {
 function phalanxattributecallback(entity, *attribute, *oldvalue, value) {
     if (value) {
         oldvalue.ai.phalanx = 1;
-    } else {
-        oldvalue.ai.phalanx = 0;
+        return;
     }
+    oldvalue.ai.phalanx = 0;
 }
 
 // Namespace aiutility/archetype_utility
@@ -3733,9 +3724,8 @@ function function_e2278a4b(weapon, smeansofdeath) {
     }
     if (isdefined(smeansofdeath) && level.var_feba6a94[weapon.name] === smeansofdeath) {
         return 1;
-    } else {
-        return function_69c2d36f(weapon, smeansofdeath);
     }
+    return function_69c2d36f(weapon, smeansofdeath);
 }
 
 // Namespace aiutility/archetype_utility

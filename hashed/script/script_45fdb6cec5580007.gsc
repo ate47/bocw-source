@@ -303,9 +303,9 @@ function function_ff3321ee(var_bdb3f6a6) {
         if (!isdefined(squad.voip) || status != squad.voip && status == #"game") {
             if (status == #"game") {
                 squad.voip = #"game";
-            } else {
-                squad.voip = #"none";
+                return;
             }
+            squad.voip = #"none";
         }
     }
 }

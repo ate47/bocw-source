@@ -84,7 +84,9 @@ function event_handler[event_b19fdc1e] function_928600de(eventstruct) {
         }
         if (var_1006dafa >= 0.5) {
             local_player thread function_9a82b890(eventstruct.localclientnum, var_73eeec22.duration, var_73eeec22.var_3db06635, var_73eeec22.var_5dddb8e8, var_73eeec22.var_edcc1468);
-        } else if (var_1006dafa <= -0.5) {
+            return;
+        }
+        if (var_1006dafa <= -0.5) {
             local_player thread function_9a82b890(eventstruct.localclientnum, var_73eeec22.duration, var_73eeec22.var_90c3ef0c, var_73eeec22.var_60e944e1, var_73eeec22.var_94f03120);
         }
     }

@@ -219,26 +219,26 @@ function function_84c43da8(params) {
     switch (weapon.name) {
     case #"hash_2d88b4c5217c7e7c":
         self thread function_ff022837(5, weapon);
-        break;
+        return;
     case #"hash_164c43cbd0ee958":
         self thread function_ff022837(5, weapon);
         if (function_4473f9bb(currentweapon)) {
             self player::fill_current_clip(1);
         }
-        break;
+        return;
     case #"hash_164c73cbd0eee71":
         self thread function_ff022837(8, weapon);
         if (function_4473f9bb(currentweapon)) {
             self player::fill_current_clip(1);
         }
-        break;
+        return;
     case #"hash_164c63cbd0eecbe":
         self thread function_ff022837(8, weapon);
         if (function_4473f9bb(currentweapon)) {
             self player::fill_current_clip(1);
         }
         self thread function_c5e5e928(500);
-        break;
+        return;
     case #"hash_164c83cbd0ef024":
     case #"hash_164c93cbd0ef1d7":
         self thread function_ff022837(8, weapon);
@@ -247,7 +247,7 @@ function function_84c43da8(params) {
         }
         self thread function_c5e5e928(500);
         self thread function_df6782a4(1.5, 8);
-        break;
+        return;
     }
 }
 

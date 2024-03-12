@@ -363,11 +363,11 @@ function function_101f996f() {
             } else {
                 wait(0.4);
             }
-        } else {
-            self turretcleartarget(0);
-            self vehclearlookat();
-            wait(0.4);
+            continue;
         }
+        self turretcleartarget(0);
+        self vehclearlookat();
+        wait(0.4);
     }
 }
 
@@ -851,9 +851,7 @@ function function_b1bd875a() {
                 point = function_1e0d693b(goalinfo, enemy);
             } else if (isdefined(enemy)) {
                 point = function_1e0d693b(goalinfo, enemy);
-                goto LOC_00000400;
             }
-        LOC_00000400:
             if (isdefined(point)) {
                 newpos = point.origin;
             }

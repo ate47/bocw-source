@@ -72,9 +72,8 @@ function function_b63c5dfe(var_b693fec6, uniqueid, menu_name, var_483e93f7, path
 function get(field_name) {
     if (self == level) {
         return codegetworldclientfield(field_name);
-    } else {
-        return codegetclientfield(self, field_name);
     }
+    return codegetclientfield(self, field_name);
 }
 
 // Namespace clientfield/clientfield_shared

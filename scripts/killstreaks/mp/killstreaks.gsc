@@ -131,7 +131,9 @@ function private on_menu_response(eventstruct) {
                 }
             }
         }
-    } else if (eventstruct.response === "scorestreak_pool_purchase_and_use" && level.var_5b544215 === 1) {
+        return;
+    }
+    if (eventstruct.response === "scorestreak_pool_purchase_and_use" && level.var_5b544215 === 1) {
         eventstruct = eventstruct;
         var_180d3406 = getscriptbundlelist(level.var_d1455682.var_a45c9c63);
         var_b133a8aa = getscriptbundle(var_180d3406[eventstruct.intpayload]);
@@ -145,7 +147,9 @@ function private on_menu_response(eventstruct) {
                 self switchtoweapon(killstreakbundle.ksweapon);
             }
         }
-    } else if (eventstruct.response === "scorestreak_use_failed") {
+        return;
+    }
+    if (eventstruct.response === "scorestreak_use_failed") {
         if (eventstruct.intpayload === 0) {
             if ((isdefined(self.var_8700840) ? self.var_8700840 : 0) < gettime()) {
                 self namespace_f9b02f80::play_taacom_dialog("airspaceFull");
@@ -215,13 +219,13 @@ function private function_d3106952() {
                     continue;
                 }
                 if (isdefined(level.var_dcc3befb[hardpointtype])) {
-                    jumpiftrue(player [[ level.var_dcc3befb[hardpointtype] ]](key)) LOC_00000246;
-                    player clientfield::set_player_uimodel(level.var_46b33f90[key], 0);
-                } else {
-                LOC_00000246:
-                    var_63fd3e67 = player killstreakrules::iskillstreakallowed(hardpointtype, player.team, 1, 1);
-                    player clientfield::set_player_uimodel(level.var_46b33f90[key], !var_63fd3e67);
+                    if (!player [[ level.var_dcc3befb[hardpointtype] ]](key)) {
+                        player clientfield::set_player_uimodel(level.var_46b33f90[key], 0);
+                        continue;
+                    }
                 }
+                var_63fd3e67 = player killstreakrules::iskillstreakallowed(hardpointtype, player.team, 1, 1);
+                player clientfield::set_player_uimodel(level.var_46b33f90[key], !var_63fd3e67);
             }
             if (isdefined(player.pers[#"killstreaks"]) && player.pers[#"killstreaks"].size > 0) {
                 player clientfield::set_player_uimodel(level.var_ce69c3cb[3], 0);

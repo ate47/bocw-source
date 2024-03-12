@@ -236,10 +236,10 @@ function function_f5b1f2e0(localclientnum, *oldval, newval, *bnewent, *binitials
                 self function_c53f825c(fieldname);
             }
         }
-    } else {
-        function_60e526c9(fieldname, self getentitynumber());
-        self.var_e4f0114d = undefined;
+        return;
     }
+    function_60e526c9(fieldname, self getentitynumber());
+    self.var_e4f0114d = undefined;
 }
 
 // Namespace namespace_6e90e490/namespace_6e90e490
@@ -277,9 +277,9 @@ function function_36e44202(localclientnum, *oldval, newval, *bnewent, *binitials
     if (self.health_percent == 0) {
         function_60e526c9(fieldname, self getentitynumber());
         self.var_e4f0114d = undefined;
-    } else {
-        self function_c53f825c(fieldname);
+        return;
     }
+    self function_c53f825c(fieldname);
 }
 
 // Namespace namespace_6e90e490/namespace_6e90e490
@@ -469,75 +469,75 @@ function function_fd71fef3(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwastimejump == 0) {
         function_5f71ab96(fieldname, self.entnum);
         self.var_de98eb73 = undefined;
+        return;
+    }
+    if (function_75bbb0b9(fieldname) == 0 && level.doa.world_state != 3) {
+        return;
+    }
+    if (level.var_46a66896 doa_overworld::is_open(fieldname)) {
+        return;
+    }
+    if (self isplayer()) {
+        if (is_true(self.doa.var_3e81d24c) || is_true(level.doa.var_318aa67a)) {
+            if (isdefined(self.var_de98eb73)) {
+                function_5f71ab96(fieldname, self.entnum);
+                self.var_de98eb73 = undefined;
+            }
+            return;
+        }
+    } else if (is_true(self.var_fb30ba57) && !function_f682116f(fieldname)) {
+        return;
+    }
+    if (!isdefined(self.var_de98eb73)) {
+        if (self function_15158f84(fieldname) == 0) {
+            return;
+        }
+    }
+    var_a793c1e1 = function_aae7840a(bwastimejump);
+    if (is_true(var_a793c1e1)) {
+        max = function_38e2f5a0(bwastimejump);
+        if (!isdefined(self.var_e2a1a19e)) {
+            self.var_e2a1a19e = [];
+        }
+        if (!isdefined(self.var_e2a1a19e[bwastimejump])) {
+            self.var_e2a1a19e[bwastimejump] = 0;
+        }
+        var_a6e8b35b = self.var_e2a1a19e[bwastimejump];
+        self.var_e2a1a19e[bwastimejump]++;
+        if (self.var_e2a1a19e[bwastimejump] >= max) {
+            self.var_e2a1a19e[bwastimejump] = max - 1;
+        }
+    }
+    val = self function_d47b1ac(bwastimejump, var_a793c1e1, var_a6e8b35b);
+    if (isdefined(val.msg)) {
+        self.var_de98eb73 doa_textbubble::set_text(fieldname, val.msg);
     } else {
-        if (function_75bbb0b9(fieldname) == 0 && level.doa.world_state != 3) {
-            return;
+        function_5f71ab96(fieldname, self.entnum);
+        self.var_de98eb73 = undefined;
+    }
+    if (isdefined(val.audio)) {
+        if (isdefined(val.cooldown)) {
+            time = gettime();
+            if (!isdefined(self.var_17e527d8)) {
+                self.var_17e527d8 = [];
+            }
+            if (isdefined(self.var_17e527d8[bwastimejump]) && time < self.var_17e527d8[bwastimejump]) {
+                skip = 1;
+            } else {
+                self.var_17e527d8[bwastimejump] = time + val.cooldown;
+            }
         }
-        if (level.var_46a66896 doa_overworld::is_open(fieldname)) {
-            return;
-        }
-        if (self isplayer()) {
-            if (is_true(self.doa.var_3e81d24c) || is_true(level.doa.var_318aa67a)) {
-                if (isdefined(self.var_de98eb73)) {
-                    function_5f71ab96(fieldname, self.entnum);
-                    self.var_de98eb73 = undefined;
-                }
+        if (!is_true(skip)) {
+            if (isarray(val.audio)) {
+                alias = val.audio[randomint(val.audio.size)];
+            } else {
+                alias = val.audio;
+            }
+            if (is_true(val.q)) {
+                namespace_9fc66ac::function_9a237f2f(fieldname, alias, self);
                 return;
             }
-        } else if (is_true(self.var_fb30ba57) && !function_f682116f(fieldname)) {
-            return;
-        }
-        if (!isdefined(self.var_de98eb73)) {
-            if (self function_15158f84(fieldname) == 0) {
-                return;
-            }
-        }
-        var_a793c1e1 = function_aae7840a(bwastimejump);
-        if (is_true(var_a793c1e1)) {
-            max = function_38e2f5a0(bwastimejump);
-            if (!isdefined(self.var_e2a1a19e)) {
-                self.var_e2a1a19e = [];
-            }
-            if (!isdefined(self.var_e2a1a19e[bwastimejump])) {
-                self.var_e2a1a19e[bwastimejump] = 0;
-            }
-            var_a6e8b35b = self.var_e2a1a19e[bwastimejump];
-            self.var_e2a1a19e[bwastimejump]++;
-            if (self.var_e2a1a19e[bwastimejump] >= max) {
-                self.var_e2a1a19e[bwastimejump] = max - 1;
-            }
-        }
-        val = self function_d47b1ac(bwastimejump, var_a793c1e1, var_a6e8b35b);
-        if (isdefined(val.msg)) {
-            self.var_de98eb73 doa_textbubble::set_text(fieldname, val.msg);
-        } else {
-            function_5f71ab96(fieldname, self.entnum);
-            self.var_de98eb73 = undefined;
-        }
-        if (isdefined(val.audio)) {
-            if (isdefined(val.cooldown)) {
-                time = gettime();
-                if (!isdefined(self.var_17e527d8)) {
-                    self.var_17e527d8 = [];
-                }
-                if (isdefined(self.var_17e527d8[bwastimejump]) && time < self.var_17e527d8[bwastimejump]) {
-                    skip = 1;
-                } else {
-                    self.var_17e527d8[bwastimejump] = time + val.cooldown;
-                }
-            }
-            if (!is_true(skip)) {
-                if (isarray(val.audio)) {
-                    alias = val.audio[randomint(val.audio.size)];
-                } else {
-                    alias = val.audio;
-                }
-                if (is_true(val.q)) {
-                    namespace_9fc66ac::function_9a237f2f(fieldname, alias, self);
-                } else {
-                    self playsound(fieldname, alias);
-                }
-            }
+            self playsound(fieldname, alias);
         }
     }
 }
@@ -654,14 +654,14 @@ function function_f01e3809(localclientnum, *oldval, newval, *bnewent, *binitials
     if (bwastimejump == 0) {
         function_651f262d(fieldname, self.entnum);
         self.var_7488bfe4 = undefined;
-    } else {
-        if (level.var_46a66896 doa_overworld::is_open(fieldname)) {
+        return;
+    }
+    if (level.var_46a66896 doa_overworld::is_open(fieldname)) {
+        return;
+    }
+    if (!isdefined(self.var_7488bfe4)) {
+        if (self function_8394bc71(fieldname) == 0) {
             return;
-        }
-        if (!isdefined(self.var_7488bfe4)) {
-            if (self function_8394bc71(fieldname) == 0) {
-                return;
-            }
         }
     }
 }

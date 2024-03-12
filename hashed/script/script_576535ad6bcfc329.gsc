@@ -71,9 +71,9 @@ function private function_d83c0144(localclientnum, *oldval, newval, *bnewent, *b
     }
     if (bwastimejump == 1) {
         self.fx = function_239993de(fieldname, "zm_ai/fx8_spartoi_reassemble_displace_trail", self, "tag_origin");
-    } else {
-        stopfx(fieldname, self.fx);
+        return;
     }
+    stopfx(fieldname, self.fx);
 }
 
 // Namespace namespace_d1abdcb5/namespace_d1abdcb5

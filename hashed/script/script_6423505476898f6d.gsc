@@ -53,9 +53,9 @@ function function_868158() {
     self function_3df1c526(1);
     if (self.m_s_bundle.door_open_method == "swing_away_from_player") {
         self function_3df1c526(0);
-    } else {
-        i = 0;
+        return;
     }
+    i = 0;
 }
 
 // Namespace namespace_64f6ea7a/namespace_64f6ea7a
@@ -87,9 +87,9 @@ function private function_3df1c526(var_b6cc4c20) {
     var_c3277087 = function_a35f798(var_f58bf66c, var_2a162980, var_b6cc4c20);
     if (var_b6cc4c20) {
         self.var_15695d13 = var_c3277087 * var_533884d6;
-    } else {
-        self.var_ca91d615 = var_c3277087 * var_533884d6 * -1;
+        return;
     }
+    self.var_ca91d615 = var_c3277087 * var_533884d6 * -1;
 }
 
 // Namespace namespace_64f6ea7a/namespace_64f6ea7a
@@ -523,9 +523,9 @@ function function_ecae2d5a(var_ffd1df9a) {
     }
     if (var_ffd1df9a) {
         level.stealth.suspicious_door.doors[level.stealth.suspicious_door.doors.size] = self;
-    } else {
-        arrayremovevalue(level.stealth.suspicious_door.doors, self);
+        return;
     }
+    arrayremovevalue(level.stealth.suspicious_door.doors, self);
 }
 
 // Namespace namespace_64f6ea7a/namespace_64f6ea7a

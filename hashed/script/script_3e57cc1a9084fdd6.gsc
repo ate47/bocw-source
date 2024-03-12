@@ -332,9 +332,9 @@ function private function_6f24d732(*params) {
     self clientfield::set("sndAwarenessChange", 0);
     if (self.var_9fde8624 === #"hash_2a5479b83161cb35") {
         self playsound(#"hash_6e603d5f1970365b");
-    } else {
-        self playsound(#"hash_120ccc6f833fa6dc");
+        return;
     }
+    self playsound(#"hash_120ccc6f833fa6dc");
 }
 
 // Namespace namespace_ec0691f8/namespace_ec0691f8
@@ -593,13 +593,15 @@ function function_d005c417(entity) {
                 entity namespace_e292b080::zombieupdategoal(goal);
             }
         }
-    } else if (isvec(entity.origin)) {
+        return;
+    }
+    if (isvec(entity.origin)) {
         goal = getclosestpointonnavmesh(entity.origin, 200, entity getpathfindingradius() * 1.2);
         if (isdefined(goal)) {
             entity namespace_e292b080::zombieupdategoal(goal);
-        } else {
-            entity setgoal(self.origin);
+            return;
         }
+        entity setgoal(self.origin);
     }
 }
 

@@ -38,16 +38,16 @@ function function_64e04297(localclientnum, *oldval, newval, *bnewent, *binitials
         self.var_1f3cb09a = util::playfxontag(fieldname, #"hash_6c8d478322adcc6a", self, "j_mainroot");
         playsound(fieldname, #"hash_765e6e49f551f97c", self.origin);
         self.var_eb074a88 = self playloopsound("zmb_bunnyquest_stp2_bunny_lp");
-    } else {
-        if (isdefined(self.var_1f3cb09a)) {
-            stopfx(fieldname, self.var_1f3cb09a);
-            self stoploopsound(self.var_eb074a88, 0.5);
-            self.var_1f3cb09a = undefined;
-            self.var_eb074a88 = undefined;
-        }
-        self.var_a22abb6f = util::playfxontag(fieldname, #"hash_5cde32c15506b440", self, "j_mainroot");
-        playsound(fieldname, #"hash_7534e74a4fd1c56d", self.origin);
+        return;
     }
+    if (isdefined(self.var_1f3cb09a)) {
+        stopfx(fieldname, self.var_1f3cb09a);
+        self stoploopsound(self.var_eb074a88, 0.5);
+        self.var_1f3cb09a = undefined;
+        self.var_eb074a88 = undefined;
+    }
+    self.var_a22abb6f = util::playfxontag(fieldname, #"hash_5cde32c15506b440", self, "j_mainroot");
+    playsound(fieldname, #"hash_7534e74a4fd1c56d", self.origin);
 }
 
 // Namespace namespace_958b287a/namespace_958b287a
@@ -57,12 +57,14 @@ function function_64e04297(localclientnum, *oldval, newval, *bnewent, *binitials
 function function_f3b46741(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump == 1) {
         function_5ea2c6e3("zmb_sr_dropallaudioby4", 1, 1);
-    } else if (bwastimejump == 2) {
-        soundloopemitter(#"hash_5c8e172b662df768", (3239, 10251, -770));
-    } else {
-        function_ed62c9c2("zmb_sr_dropallaudioby4", 1);
-        soundstoploopemitter(#"hash_5c8e172b662df768", (3239, 10251, -770));
+        return;
     }
+    if (bwastimejump == 2) {
+        soundloopemitter(#"hash_5c8e172b662df768", (3239, 10251, -770));
+        return;
+    }
+    function_ed62c9c2("zmb_sr_dropallaudioby4", 1);
+    soundstoploopemitter(#"hash_5c8e172b662df768", (3239, 10251, -770));
 }
 
 // Namespace namespace_958b287a/namespace_958b287a
@@ -93,9 +95,9 @@ function function_95190421(localclientnum, *oldval, *newval, *bnewent, *binitial
 function function_eebdf718(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self setenemyglobalscrambler(1);
-    } else {
-        self setenemyglobalscrambler(0);
+        return;
     }
+    self setenemyglobalscrambler(0);
 }
 
 // Namespace namespace_958b287a/namespace_958b287a
@@ -108,7 +110,9 @@ function function_ee0c0073(localclientnum, *oldval, newval, *bnewent, *binitials
         if (!isdefined(var_fcec724a.var_f01d5034)) {
             var_fcec724a.var_f01d5034 = playfx(fieldname, #"hash_ae69a5490ab1a42", var_fcec724a.origin, anglestoforward(var_fcec724a.angles), anglestoup(var_fcec724a.angles));
         }
-    } else if (isdefined(var_fcec724a.var_f01d5034)) {
+        return;
+    }
+    if (isdefined(var_fcec724a.var_f01d5034)) {
         stopfx(fieldname, var_fcec724a.var_f01d5034);
         var_fcec724a.var_f01d5034 = undefined;
     }
@@ -126,12 +130,12 @@ function function_411aa7f8(localclientnum, *oldval, newval, *bnewent, *binitials
                 s_blocker.mdl_fx = playfx(fieldname, #"hash_1209e5f15b93f9af", s_blocker.origin, anglestoforward(s_blocker.angles), anglestoup(s_blocker.angles));
             }
         }
-    } else {
-        foreach (s_blocker in a_s_blockers) {
-            if (isdefined(s_blocker.mdl_fx)) {
-                stopfx(fieldname, s_blocker.mdl_fx);
-                s_blocker.mdl_fx = undefined;
-            }
+        return;
+    }
+    foreach (s_blocker in a_s_blockers) {
+        if (isdefined(s_blocker.mdl_fx)) {
+            stopfx(fieldname, s_blocker.mdl_fx);
+            s_blocker.mdl_fx = undefined;
         }
     }
 }

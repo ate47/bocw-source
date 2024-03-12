@@ -36,7 +36,6 @@ function spawnpoint_debug() {
         adddebugcommand("<unknown string>" + "<unknown string>" + "<unknown string>");
         adddebugcommand("<unknown string>");
         adddebugcommand("<unknown string>");
-    LOC_0000019a:
         while (1) {
             spawnsystem_debug_command = getdvarstring(#"spawnsystem_debug_command");
             switch (spawnsystem_debug_command) {

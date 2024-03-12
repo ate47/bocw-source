@@ -29,7 +29,9 @@ function private function_70a657d8() {
         if (getsubstr(destructibles[i].destructibledef, 0, 4) == "veh_") {
             destructibles[i] thread car_death_think();
             destructibles[i] thread car_grenade_stuck_think();
-        } else if (destructibles[i].destructibledef == "fxdest_upl_metal_tank_01") {
+            continue;
+        }
+        if (destructibles[i].destructibledef == "fxdest_upl_metal_tank_01") {
             destructibles[i] thread tank_grenade_stuck_think();
         }
     }
@@ -160,9 +162,9 @@ function simple_explosion(attacker) {
     physics_explosion_and_rumble(self.origin, 255, 1);
     if (isdefined(attacker)) {
         self dodamage(self.health + 10000, self.origin + offset, attacker);
-    } else {
-        self dodamage(self.health + 10000, self.origin + offset);
+        return;
     }
+    self dodamage(self.health + 10000, self.origin + offset);
 }
 
 // Namespace destructible/destructible
@@ -183,11 +185,9 @@ function simple_timed_explosion(destructible_event, attacker) {
     }
     time_interval = randomintrange(wait_times[0], wait_times[1]);
     if (util::function_7f7a77ab()) {
-        var_9037cf6c = 0;
-        while (var_9037cf6c < time_interval) {
+        for (var_9037cf6c = 0; var_9037cf6c < time_interval; var_9037cf6c = var_9037cf6c + float(function_60d95f53()) / 1000) {
             util::function_9d5c26a();
             waitframe(1);
-            var_9037cf6c = var_9037cf6c + float(function_60d95f53()) / 1000;
         }
     } else {
         wait(time_interval);
@@ -209,9 +209,9 @@ function complex_explosion(attacker, max_radius) {
     physics_explosion_and_rumble(self.origin, max_radius, 1);
     if (isdefined(attacker)) {
         self dodamage(20000, self.origin + offset, attacker);
-    } else {
-        self dodamage(20000, self.origin + offset);
+        return;
     }
+    self dodamage(20000, self.origin + offset);
 }
 
 // Namespace destructible/destructible
@@ -283,9 +283,9 @@ function tank_grenade_stuck_explode(missile) {
     missile waittill(#"explode");
     if (isdefined(owner)) {
         self dodamage(self.health + 10000, self.origin + (0, 0, 1), owner);
-    } else {
-        self dodamage(self.health + 10000, self.origin + (0, 0, 1));
+        return;
     }
+    self dodamage(self.health + 10000, self.origin + (0, 0, 1));
 }
 
 // Namespace destructible/destructible
@@ -349,9 +349,9 @@ function car_grenade_stuck_explode(missile) {
     missile waittill(#"explode");
     if (isdefined(owner)) {
         self dodamage(self.health + 10000, self.origin + (0, 0, 1), owner);
-    } else {
-        self dodamage(self.health + 10000, self.origin + (0, 0, 1));
+        return;
     }
+    self dodamage(self.health + 10000, self.origin + (0, 0, 1));
 }
 
 // Namespace destructible/destructible
@@ -387,11 +387,9 @@ function car_fire_think(attacker) {
     }
     time_interval = randomintrange(7, 10);
     if (util::function_7f7a77ab()) {
-        var_9037cf6c = 0;
-        while (var_9037cf6c < time_interval) {
+        for (var_9037cf6c = 0; var_9037cf6c < time_interval; var_9037cf6c = var_9037cf6c + float(function_60d95f53()) / 1000) {
             util::function_9d5c26a();
             waitframe(1);
-            var_9037cf6c = var_9037cf6c + float(function_60d95f53()) / 1000;
         }
     } else {
         wait(time_interval);
@@ -407,9 +405,13 @@ function event_handler[destructible] codecallback_destructibleevent(eventstruct)
     if (eventstruct.event == "broken") {
         event_callback(eventstruct.notify_type, eventstruct.attacker, eventstruct.weapon, eventstruct.piece, eventstruct.point, eventstruct.dir, eventstruct.mod);
         self notify(eventstruct.event, {#attacker:eventstruct.attacker, #type:eventstruct.notify_type});
-    } else if (eventstruct.event == "breakafter") {
+        return;
+    }
+    if (eventstruct.event == "breakafter") {
         self thread breakafter(eventstruct.time, eventstruct.amount, eventstruct.piece);
-    } else if (eventstruct.event == "damage entity over time") {
+        return;
+    }
+    if (eventstruct.event == "damage entity over time") {
         self thread function_93f99ad9(eventstruct.damage, eventstruct.time_interval);
     }
 }
@@ -424,19 +426,17 @@ function function_93f99ad9(damage, time_interval) {
     self endon("9da33c91d7da95b");
     if (util::function_7f7a77ab()) {
         while (1) {
-            var_9037cf6c = 0;
-            while (var_9037cf6c < time_interval) {
+            for (var_9037cf6c = 0; var_9037cf6c < time_interval; var_9037cf6c = var_9037cf6c + float(function_60d95f53()) / 1000) {
                 util::function_9d5c26a();
                 waitframe(1);
-                var_9037cf6c = var_9037cf6c + float(function_60d95f53()) / 1000;
             }
             self dodamage(damage, self.origin);
         }
-    } else {
-        while (1) {
-            wait(time_interval);
-            self dodamage(damage, self.origin);
-        }
+        return;
+    }
+    while (1) {
+        wait(time_interval);
+        self dodamage(damage, self.origin);
     }
 }
 
@@ -448,11 +448,9 @@ function breakafter(time, damage, *piece) {
     self notify(#"breakafter");
     self endon(#"breakafter");
     if (util::function_7f7a77ab()) {
-        var_9037cf6c = 0;
-        while (var_9037cf6c < damage) {
+        for (var_9037cf6c = 0; var_9037cf6c < damage; var_9037cf6c = var_9037cf6c + float(function_60d95f53()) / 1000) {
             util::function_9d5c26a();
             waitframe(1);
-            var_9037cf6c = var_9037cf6c + float(function_60d95f53()) / 1000;
         }
     } else {
         wait(damage);

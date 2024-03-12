@@ -266,14 +266,10 @@ function function_31bcd153(arr) {
 function function_f218bff5(v) {
     if (!isdefined(v)) {
         return array();
+    } else if (isdefined(v) == 1 && function_3132f113(v) == 0 && isarray(v) == 1) {
     } else {
-        if (isdefined(v) == 1 && function_3132f113(v) == 0 && isarray(v) == 1) {
-            goto LOC_0000008a;
-        }
         return array(v);
-    LOC_0000008a:
     }
-LOC_0000008a:
     /#
         /#
             assert(isarray(v) == 1);
@@ -394,7 +390,6 @@ function function_d6053a8f(var_e9082dc0, var_29a5aeda) {
     switch (var_29a5aeda) {
     case 0:
         return ("" + intvalue);
-        break;
     case 1:
         fractional = int(fractional * 10);
         break;
@@ -691,7 +686,7 @@ function waitforplayers() {
         function_294cb4fa();
         players = function_2b2b83dc();
         if (isarray(players) && players.size > 0) {
-            break;
+            return;
         }
         waitframe(1);
     }
@@ -961,9 +956,7 @@ function function_827811b5() {
             var_38c41a5e = getdvarint(#"hash_799d70a49cc79c0f", 1920);
             var_c13d121d = getdvarint(#"hash_526c340ae912bbd0", 1080);
         }
-        goto LOC_00000188;
     }
-LOC_00000188:
     resolution = array(var_38c41a5e, var_c13d121d);
     return resolution;
 }
@@ -1089,15 +1082,15 @@ function function_9bf57bf0(pitch) {
 function function_e75e9ba1(animname, animtree, notifyname, rate) {
     if (isdefined(level.var_31efd858) == 0) {
         function_81fac19d(isdefined(level.var_31efd858) == 0, "rvPlayAnimation was not initialized!");
-    } else {
-        if (isdefined(notifyname) == 0) {
-            notifyname = "animnotetrack";
-        }
-        if (isdefined(rate) == 0) {
-            rate = 1;
-        }
-        self thread [[ level.var_31efd858 ]](animname, animtree, notifyname, rate);
+        return;
     }
+    if (isdefined(notifyname) == 0) {
+        notifyname = "animnotetrack";
+    }
+    if (isdefined(rate) == 0) {
+        rate = 1;
+    }
+    self thread [[ level.var_31efd858 ]](animname, animtree, notifyname, rate);
 }
 
 // Namespace snd/namespace_830c8cc
@@ -1126,9 +1119,9 @@ function private function_225d1cb8() {
                 if (isdefined(returnvalue)) {
                     setdvar(key, returnvalue);
                     dvar.value = returnvalue;
-                } else {
-                    dvar.value = value;
+                    continue;
                 }
+                dvar.value = value;
             }
         }
         waitframe(1);
@@ -1226,13 +1219,17 @@ function private function_98a0f33(callbackfunc, arg1, arg2, arg3, arg4, arg5, ar
     }
     if (isdefined(arg3)) {
         self [[ callbackfunc ]](arg1, arg2, arg3);
-    } else if (isdefined(arg2)) {
-        self [[ callbackfunc ]](arg1, arg2);
-    } else if (isdefined(arg1)) {
-        self [[ callbackfunc ]](arg1);
-    } else {
-        self [[ callbackfunc ]]();
+        return;
     }
+    if (isdefined(arg2)) {
+        self [[ callbackfunc ]](arg1, arg2);
+        return;
+    }
+    if (isdefined(arg1)) {
+        self [[ callbackfunc ]](arg1);
+        return;
+    }
+    self [[ callbackfunc ]]();
 }
 
 // Namespace snd/namespace_830c8cc
@@ -1269,13 +1266,17 @@ function private function_8a64a4ec(callbackfunc, arg1, arg2, arg3, arg4, arg5, a
     }
     if (isdefined(arg3)) {
         self [[ callbackfunc ]](arg1, arg2, arg3);
-    } else if (isdefined(arg2)) {
-        self [[ callbackfunc ]](arg1, arg2);
-    } else if (isdefined(arg1)) {
-        self [[ callbackfunc ]](arg1);
-    } else {
-        self [[ callbackfunc ]]();
+        return;
     }
+    if (isdefined(arg2)) {
+        self [[ callbackfunc ]](arg1, arg2);
+        return;
+    }
+    if (isdefined(arg1)) {
+        self [[ callbackfunc ]](arg1);
+        return;
+    }
+    self [[ callbackfunc ]]();
 }
 
 // Namespace snd/namespace_830c8cc
@@ -1291,7 +1292,9 @@ function function_df40860c(callbackfunc, arg1, arg2, arg3, arg4, arg5, arg6, arg
     #/
     if (isscriptfunctionptr(callbackfunc) == 1) {
         self function_98a0f33(callbackfunc, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-    } else if (iscodefunctionptr(callbackfunc) == 1) {
+        return;
+    }
+    if (iscodefunctionptr(callbackfunc) == 1) {
         self function_8a64a4ec(callbackfunc, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
     }
 }
@@ -1318,16 +1321,16 @@ function private function_9cae113f(soundalias, column, var_46195ad8) {
             return undefined;
         }
         var_434eefbd = float(var_7cfa497b);
-        secondaryalias = function_9119c373(soundalias, "<unknown string>");
-        while (isdefined(secondaryalias) == 1 && secondaryalias != "<unknown string>") {
+        for (secondaryalias = function_9119c373(soundalias, "<unknown string>"); isdefined(secondaryalias) == 1 && secondaryalias != "<unknown string>"; secondaryalias = function_9119c373(secondaryalias, "<unknown string>")) {
             var_7cfa497b = function_9119c373(soundalias, column);
             var_7cfa497b = float(var_7cfa497b);
             if (var_46195ad8 == "<unknown string>") {
                 var_434eefbd = min(var_434eefbd, var_7cfa497b);
-            } else if (var_46195ad8 == "<unknown string>") {
+                continue;
+            }
+            if (var_46195ad8 == "<unknown string>") {
                 var_434eefbd = max(var_434eefbd, var_7cfa497b);
             }
-            secondaryalias = function_9119c373(secondaryalias, "<unknown string>");
         }
         return var_434eefbd;
     #/

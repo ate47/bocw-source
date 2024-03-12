@@ -146,9 +146,9 @@ function function_934f56ec(vehicle, params) {
 function private function_7ae07b7() {
     if (self vehicle_ai::has_state("off")) {
         vehicle_ai::startinitialstate("off");
-    } else {
-        self function_ed173e0b();
+        return;
     }
+    self function_ed173e0b();
 }
 
 // Namespace player_vehicle/player_vehicle
@@ -288,9 +288,9 @@ function is_staircase_up(attackingplayer = undefined, jammer = undefined) {
     }
     if (isdefined(self.is_staircase_up)) {
         self [[ self.is_staircase_up ]](params);
-    } else {
-        self function_c9620f20(params);
+        return;
     }
+    self function_c9620f20(params);
 }
 
 // Namespace player_vehicle/player_vehicle
@@ -335,11 +335,11 @@ function on_vehicle_damage(params) {
                 switch (params.smeansofdeath) {
                 case #"mod_projectile":
                     self playsoundtoplayer(#"hash_4cf0470b5276e61a", occupant);
-                    break;
+                    continue;
                 case #"mod_rifle_bullet":
                 case #"mod_pistol_bullet":
                     self playsoundtoplayer(#"hash_6dd3a55ee3658ca", occupant);
-                    break;
+                    continue;
                 }
             }
         }
@@ -369,7 +369,9 @@ function on_vehicle_killed(params) {
     }
     if (vehicle.vehicleclass === "helicopter") {
         killstreaks::function_47b44bcc(params.eattacker, params.weapon, 1);
-    } else if (!(vehicle.vehicleclass === "boat")) {
+        return;
+    }
+    if (!(vehicle.vehicleclass === "boat")) {
         killstreaks::function_47b44bcc(params.eattacker, params.weapon, 0);
     }
 }
@@ -410,15 +412,19 @@ function on_player_damage(params) {
                 if (isdefined(vehicle.session)) {
                     if (params.smeansofdeath === "MOD_CRUSH") {
                         vehicle.session.var_33f48e5a = vehicle.session.var_33f48e5a + damagedone;
-                    } else {
-                        seatindex = vehicle getoccupantseat(attacker);
-                        if (seatindex == 0) {
-                            vehicle.session.var_c1b985ee = vehicle.session.var_c1b985ee + damagedone;
-                        } else if (seatindex >= 1 && seatindex <= 4) {
-                            vehicle.session.var_f07350a4 = vehicle.session.var_f07350a4 + damagedone;
-                        } else if (seatindex >= 5 && seatindex <= 9) {
-                            vehicle.session.var_45bf3627 = vehicle.session.var_45bf3627 + damagedone;
-                        }
+                        return;
+                    }
+                    seatindex = vehicle getoccupantseat(attacker);
+                    if (seatindex == 0) {
+                        vehicle.session.var_c1b985ee = vehicle.session.var_c1b985ee + damagedone;
+                        return;
+                    }
+                    if (seatindex >= 1 && seatindex <= 4) {
+                        vehicle.session.var_f07350a4 = vehicle.session.var_f07350a4 + damagedone;
+                        return;
+                    }
+                    if (seatindex >= 5 && seatindex <= 9) {
+                        vehicle.session.var_45bf3627 = vehicle.session.var_45bf3627 + damagedone;
                     }
                 }
             }
@@ -452,15 +458,19 @@ function on_player_killed(params) {
             if (isdefined(vehicle.session)) {
                 if (params.smeansofdeath == "MOD_CRUSH") {
                     vehicle.session.vehicle_kills++;
-                } else {
-                    seatindex = vehicle getoccupantseat(attacker);
-                    if (seatindex == 0) {
-                        vehicle.session.driver_kills++;
-                    } else if (seatindex >= 1 && seatindex <= 4) {
-                        vehicle.session.var_7c3e6a02++;
-                    } else if (seatindex >= 5 && seatindex <= 9) {
-                        vehicle.session.passenger_kills++;
-                    }
+                    return;
+                }
+                seatindex = vehicle getoccupantseat(attacker);
+                if (seatindex == 0) {
+                    vehicle.session.driver_kills++;
+                    return;
+                }
+                if (seatindex >= 1 && seatindex <= 4) {
+                    vehicle.session.var_7c3e6a02++;
+                    return;
+                }
+                if (seatindex >= 5 && seatindex <= 9) {
+                    vehicle.session.passenger_kills++;
                 }
             }
         }
@@ -688,14 +698,16 @@ function private function_b3caeebc(player) {
             player clientfield::set_player_uimodel("vehicle.missileLock", 2);
             self playsoundtoplayer(#"hash_445c9fb1793c4259", player);
             wait(0.25);
-        } else if (self function_df786031()) {
+            continue;
+        }
+        if (self function_df786031()) {
             player clientfield::set_player_uimodel("vehicle.missileLock", 1);
             self playsoundtoplayer(#"hash_107b6827696673cb", player);
             wait(0.25);
-        } else {
-            player clientfield::set_player_uimodel("vehicle.missileLock", 0);
-            self waittill(#"locking on");
+            continue;
         }
+        player clientfield::set_player_uimodel("vehicle.missileLock", 0);
+        self waittill(#"locking on");
     }
 }
 
@@ -957,9 +969,9 @@ function event_handler[enter_vehicle] codecallback_vehicleenter(eventstruct) {
     }
     if (!isdefined(vehicle.session)) {
         vehicle function_3054737a(self);
-    } else {
-        vehicle.session.var_efe98761 = int(max(vehicle.session.var_efe98761, occupants.size));
+        return;
     }
+    vehicle.session.var_efe98761 = int(max(vehicle.session.var_efe98761, occupants.size));
 }
 
 // Namespace player_vehicle/exit_vehicle
@@ -1117,9 +1129,9 @@ function event_handler[event_44d3f985] function_2d7f6e48(eventstruct) {
     if (isdefined(eventstruct.seat_index) && eventstruct.seat_index >= 5 && eventstruct.seat_index <= 9) {
         if (eventstruct.var_e3e139f === 1) {
             self clientfield::set_player_uimodel("vehicle.vehicleAttackMode", 1);
-        } else {
-            self clientfield::set_player_uimodel("vehicle.vehicleAttackMode", 0);
+            return;
         }
+        self clientfield::set_player_uimodel("vehicle.vehicleAttackMode", 0);
     }
 }
 
@@ -1158,9 +1170,9 @@ function event_handler[event_99100cb2] function_22d9386e(*eventstruct) {
     waterheight = getwaterheight(self.origin, 100, -10000);
     if (waterheight != -131072 && self.origin[2] < waterheight) {
         self.health = 5;
-    } else {
-        self dodamage(self.health - 5, self.origin);
+        return;
     }
+    self dodamage(self.health - 5, self.origin);
 }
 
 // Namespace player_vehicle/player_vehicle
@@ -1183,9 +1195,9 @@ function function_ef44d420(params) {
             }
             if (params.var_d8ceeba3) {
                 occupant clientfield::set_to_player("toggle_vehicle_sensor", 1);
-            } else {
-                occupant clientfield::set_to_player("toggle_vehicle_sensor", 0);
+                continue;
             }
+            occupant clientfield::set_to_player("toggle_vehicle_sensor", 0);
         }
     }
 }
@@ -1224,7 +1236,6 @@ function private function_85aaed19(seat_index) {
         return "overheat_fx4";
     default:
         return undefined;
-        break;
     }
 }
 
@@ -1264,7 +1275,6 @@ function private function_41cb03eb(seat_index) {
         return "tag_gunner_turret4";
     default:
         return undefined;
-        break;
     }
 }
 
@@ -1300,7 +1310,7 @@ function update_turret_fire(vehicle, seat_index, var_c269692d) {
             }
             if (vehicle.var_96c0f900[seat_index] == 0) {
                 vehicle disablegunnerfiring(seat_index - 1, 1);
-                break;
+                return;
             }
         }
     }
@@ -1410,7 +1420,9 @@ function private function_17949e01() {
                     self launchvehicle(force, self.origin);
                     var_80831eb5 = time + 1500;
                 }
-            } else if (!self function_7548ecb2()) {
+                continue;
+            }
+            if (!self function_7548ecb2()) {
                 break;
             }
         }
@@ -1709,18 +1721,18 @@ function function_53f7a11f(player) {
                     distsqr = distance2dsquared(self.origin, vehicle.origin);
                     if (distsqr >= 64000) {
                         arrayremovevalue(self.var_9be5a571, vehicle);
-                    } else {
-                        z_dist = self.origin[2] - vehicle.origin[2];
-                        if (z_dist > 0 && distsqr <= 9000) {
-                            if (isalive(vehicle)) {
-                                self.overridevehicledamage = &function_4b3faa36;
-                                vehicle.var_369c83bd = 1;
-                                vehicle.var_475b9991 = 1;
-                                vehicle.var_c0381a15 = 1;
-                                vehicle dodamage(vehicle.health, self.origin, player, self);
-                            }
-                            arrayremovevalue(self.var_9be5a571, vehicle);
+                        continue;
+                    }
+                    z_dist = self.origin[2] - vehicle.origin[2];
+                    if (z_dist > 0 && distsqr <= 9000) {
+                        if (isalive(vehicle)) {
+                            self.overridevehicledamage = &function_4b3faa36;
+                            vehicle.var_369c83bd = 1;
+                            vehicle.var_475b9991 = 1;
+                            vehicle.var_c0381a15 = 1;
+                            vehicle dodamage(vehicle.health, self.origin, player, self);
                         }
+                        arrayremovevalue(self.var_9be5a571, vehicle);
                     }
                 }
             }

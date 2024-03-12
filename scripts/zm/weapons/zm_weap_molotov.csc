@@ -30,7 +30,9 @@ function molotov_zm_fire_fx(localclientnum, *oldval, newval, *bnewent, *binitial
     self util::waittill_dobj(fieldname);
     if (bwastimejump) {
         self.var_e9d782a8 = playtagfxset(fieldname, "weapon_hero_molotov_fire_3p", self);
-    } else if (isdefined(self.var_e9d782a8)) {
+        return;
+    }
+    if (isdefined(self.var_e9d782a8)) {
         foreach (fx_id in self.var_e9d782a8) {
             stopfx(fieldname, fx_id);
         }

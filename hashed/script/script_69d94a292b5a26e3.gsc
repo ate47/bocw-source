@@ -242,7 +242,9 @@ function private function_9ffae104(entity) {
                     var_bf3a521d = vectortoangles(entity.attackable.origin - entity.origin);
                     entity forceteleport(entity.origin, (0, var_bf3a521d[1], 0), 0);
                 }
-            } else if (entity isatgoal()) {
+                return;
+            }
+            if (entity isatgoal()) {
                 var_bf3a521d = entity.attackable.origin - entity.origin;
                 var_bf3a521d = vectornormalize(var_bf3a521d);
                 if (vectordot(var_bf3a521d, anglestoforward(entity.angles)) < 0.99) {

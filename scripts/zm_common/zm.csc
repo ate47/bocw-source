@@ -509,9 +509,9 @@ function zpo_listener() {
         level waittill(#"zpo", int);
         if (isdefined(int)) {
             level notify(#"power_on", {#is_on:int});
-        } else {
-            level notify(#"power_on");
+            continue;
         }
+        level notify(#"power_on");
     }
 }
 
@@ -525,9 +525,9 @@ function zpoff_listener() {
         level waittill(#"zpoff", int);
         if (isdefined(int)) {
             level notify(#"power_off", int);
-        } else {
-            level notify(#"power_off");
+            continue;
         }
+        level notify(#"power_off");
     }
 }
 
@@ -621,12 +621,12 @@ function rob_zm_prop_fade(*localclientnum, *oldval, newval, *bnewent, *binitials
         if (!isdefined(self.sndlooper)) {
             self.sndlooper = self playloopsound(#"hash_66df9cab2c64f968");
         }
-    } else {
-        self stoprenderoverridebundle(#"rob_zm_prop_fade");
-        if (isdefined(self.sndlooper)) {
-            self stoploopsound(self.sndlooper);
-            self.sndlooper = undefined;
-        }
+        return;
+    }
+    self stoprenderoverridebundle(#"rob_zm_prop_fade");
+    if (isdefined(self.sndlooper)) {
+        self stoploopsound(self.sndlooper);
+        self.sndlooper = undefined;
     }
 }
 
@@ -687,11 +687,8 @@ function zombie_zombie_keyline_render_clientfield_cb(*localclientnum, *oldval, n
     }
     if (is_true(level.debug_keyline_zombies)) {
         if (bwastimejump) {
-            goto LOC_00000070;
         }
-    LOC_00000070:
     }
-LOC_00000070:
 }
 
 // Namespace zm/zm
@@ -879,9 +876,9 @@ function do_gib(model, tag) {
     createdynentandlaunch(0, model, end_pos, angles, start_pos, forward, level._effect[#"animscript_gibtrail_fx"], 1);
     if (isdefined(self)) {
         self do_gib_fx(tag);
-    } else {
-        playsound(0, #"zmb_death_gibs", end_pos);
+        return;
     }
+    playsound(0, #"zmb_death_gibs", end_pos);
 }
 
 // Namespace zm/zm
@@ -977,9 +974,9 @@ function on_gib_event(localclientnum, type, locations) {
             if (isdefined(self._gib_def.gibspawn1) && isdefined(self._gib_def.gibspawntag1)) {
                 self thread do_gib(self._gib_def.gibspawn1, self._gib_def.gibspawntag1);
             } else {
-                if (!isdefined(self._gib_def.gibspawn1)) {
+                if (isdefined(self._gib_def.gibspawn1)) {
                 }
-                if (!isdefined(self._gib_def.gibspawntag1)) {
+                if (isdefined(self._gib_def.gibspawntag1)) {
                 }
             }
             mark_piece_gibbed(level._zombie_gib_piece_index_right_arm);
@@ -988,9 +985,9 @@ function on_gib_event(localclientnum, type, locations) {
             if (isdefined(self._gib_def.gibspawn2) && isdefined(self._gib_def.gibspawntag2)) {
                 self thread do_gib(self._gib_def.gibspawn2, self._gib_def.gibspawntag2);
             } else {
-                if (!isdefined(self._gib_def.gibspawn2)) {
+                if (isdefined(self._gib_def.gibspawn2)) {
                 }
-                if (!isdefined(self._gib_def.gibspawntag2)) {
+                if (isdefined(self._gib_def.gibspawntag2)) {
                 }
             }
             mark_piece_gibbed(level._zombie_gib_piece_index_left_arm);
@@ -1070,9 +1067,9 @@ function zombie_vision_set_apply(str_visionset, int_priority, flt_transition_tim
     vision_to_set = self zombie_highest_vision_set_apply();
     if (isdefined(vision_to_set)) {
         visionsetnaked(int_clientnum, vision_to_set, flt_transition_time);
-    } else {
-        visionsetnaked(int_clientnum, "undefined", flt_transition_time);
+        return;
     }
+    visionsetnaked(int_clientnum, "undefined", flt_transition_time);
 }
 
 // Namespace zm/zm
@@ -1111,9 +1108,9 @@ function zombie_vision_set_remove(str_visionset, flt_transition_time, int_client
     vision_to_set = self zombie_highest_vision_set_apply();
     if (isdefined(vision_to_set)) {
         visionsetnaked(int_clientnum, vision_to_set, flt_transition_time);
-    } else {
-        visionsetnaked(int_clientnum, "default", flt_transition_time);
+        return;
     }
+    visionsetnaked(int_clientnum, "default", flt_transition_time);
 }
 
 // Namespace zm/zm
@@ -1268,14 +1265,12 @@ function rise_dust_fx(clientnum, type, billow_fx, burst_fx) {
     } else if (type == "none") {
         return;
     }
-    t = 0;
-    while (t < dust_time) {
+    for (t = 0; t < dust_time; t = t + dust_interval) {
         if (!isdefined(self)) {
             return;
         }
         util::playfxontag(clientnum, effect, self, dust_tag);
         wait(dust_interval);
-        t = t + dust_interval;
     }
 }
 
@@ -1316,8 +1311,7 @@ function last_stand_thread(clientnum) {
         println("<unknown string>" + clientnum);
     #/
     pause = 0.5;
-    vol = 0.5;
-    while (1) {
+    for (vol = 0.5; 1; vol = 1) {
         id = playsound(clientnum, #"chr_heart_beat");
         setsoundvolume(id, vol);
         wait(pause);
@@ -1330,7 +1324,6 @@ function last_stand_thread(clientnum) {
         if (vol < 1) {
             vol = vol * 1.05;
             if (vol > 1) {
-                vol = 1;
             }
         }
     }
@@ -1357,7 +1350,9 @@ function last_stand_monitor(clientnum, state, *oldstate) {
             }
             level._laststand[state] = 1;
         }
-    } else if (level._laststand[state]) {
+        return;
+    }
+    if (level._laststand[state]) {
         if (isdefined(level.lslooper)) {
             level.lslooper stopallloopsounds(0.7);
             playsound(0, #"evt_laststand_in", (0, 0, 0));

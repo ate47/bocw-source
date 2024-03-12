@@ -266,9 +266,9 @@ function function_79f3460b(localclientnum, cmd) {
 function function_d0edb8b6(localclientnum, name, tag, unique) {
     if (isdefined(self.fxorigin)) {
         self.fxorigin thread function_f58618d7(localclientnum, name, tag, unique);
-    } else {
-        self thread function_f58618d7(localclientnum, name, tag, unique);
+        return;
     }
+    self thread function_f58618d7(localclientnum, name, tag, unique);
 }
 
 // Namespace namespace_83eb6304/namespace_83eb6304
@@ -320,9 +320,9 @@ function function_368dc9eb(localclientnum, *oldval, newval, *bnewent, *binitials
 function function_a28211cd(localclientnum, name) {
     if (isdefined(self.fxorigin)) {
         self.fxorigin function_8b1a4e9c(localclientnum, name);
-    } else {
-        self function_8b1a4e9c(localclientnum, name);
+        return;
     }
+    self function_8b1a4e9c(localclientnum, name);
 }
 
 // Namespace namespace_83eb6304/namespace_83eb6304
@@ -463,7 +463,9 @@ function function_f58618d7(localclientnum, name, tag, var_fc8ee72b = 0) {
     }
     if (tag == "special") {
         self thread function_d8c789b8(localclientnum, name);
-    } else if (tag == "fakelink") {
+        return;
+    }
+    if (tag == "fakelink") {
         org = namespace_ec06fe4a::spawnmodel(localclientnum, self.origin, "tag_origin", self.angles, "fx fakelink");
         if (!isdefined(org)) {
             return;
@@ -481,24 +483,26 @@ function function_f58618d7(localclientnum, name, tag, var_fc8ee72b = 0) {
         self.var_10b0846b[name] = org.fx;
         self.var_15b0b40[name] = org;
         org thread namespace_ec06fe4a::function_73d79e7d(self);
-    } else if (tag == "none") {
+        return;
+    }
+    if (tag == "none") {
         if (var_fc8ee72b && isdefined(self.var_10b0846b[name]) && isfxplaying(localclientnum, self.var_10b0846b[name])) {
             killfx(localclientnum, self.var_10b0846b[name]);
         }
         self.var_10b0846b[name] = playfx(localclientnum, level._effect[name], self.origin, anglestoforward(self.angles), anglestoup(self.angles));
-    } else {
-        if (isdefined(tag) && tag != "tag_origin") {
-            tagorigin = self gettagorigin(tag);
-            if (!isdefined(tagorigin)) {
-                tag = "tag_origin";
-            }
-        }
-        var_91bd4506 = isdefined(self.var_f3b82c6d) ? self.var_f3b82c6d : self;
-        if (var_fc8ee72b && isdefined(self.var_10b0846b[name]) && isfxplaying(localclientnum, self.var_10b0846b[name])) {
-            killfx(localclientnum, self.var_10b0846b[name]);
-        }
-        self.var_10b0846b[name] = util::playfxontag(localclientnum, level._effect[name], var_91bd4506, tag);
+        return;
     }
+    if (isdefined(tag) && tag != "tag_origin") {
+        tagorigin = self gettagorigin(tag);
+        if (!isdefined(tagorigin)) {
+            tag = "tag_origin";
+        }
+    }
+    var_91bd4506 = isdefined(self.var_f3b82c6d) ? self.var_f3b82c6d : self;
+    if (var_fc8ee72b && isdefined(self.var_10b0846b[name]) && isfxplaying(localclientnum, self.var_10b0846b[name])) {
+        killfx(localclientnum, self.var_10b0846b[name]);
+    }
+    self.var_10b0846b[name] = util::playfxontag(localclientnum, level._effect[name], var_91bd4506, tag);
 }
 
 // Namespace namespace_83eb6304/namespace_83eb6304
@@ -529,40 +533,40 @@ function function_d8c789b8(localclientnum, name, *tag) {
     switch (tag) {
     case #"annhilate":
         self annihilate(name);
-        break;
+        return;
     case #"gut_explode":
         self zombie_gut_explosion(name);
-        break;
+        return;
     case #"saw_explode":
         self function_e5d3c2b4(name);
-        break;
+        return;
     case #"boost_explode":
         self function_96d7f2e2(name);
-        break;
+        return;
     case #"delay_explode":
         self zombie_wait_explode(name);
-        break;
+        return;
     case #"burn_zombie":
         self function_8fd3b08d(name, undefined);
-        break;
+        return;
     case #"zombie_chunk":
         self zombie_chunk(name);
-        break;
+        return;
     case #"ai_blood_riser":
         playfx(name, level._effect[#"hash_2ba7079a15be757c"], self.origin);
         wait(0.25);
         playfx(name, level._effect[#"hash_7207b019e119bc7d"], self.origin);
-        break;
+        return;
     case #"ai_zombie_riser":
         playfx(name, level._effect[#"hash_4dd7773ae2a48977"], self.origin);
         wait(0.25);
         playfx(name, level._effect[#"hash_4f9dc73a09ccac6c"], self.origin);
-        break;
+        return;
     case #"pole_zombie_elecburst":
         currentangle = randomint(360);
         var_5ccd914d = rotatepointaroundaxis((1, 0, 0), (0, 0, 1), currentangle);
         playfx(name, level._effect[#"pole_zombie_elecburst"], self.origin, var_5ccd914d, (0, 0, 1));
-        break;
+        return;
     case #"hash_2488c7de86684bbd":
         if (isdefined(self.var_a7bcf699[tag])) {
             foreach (fx in self.var_a7bcf699[tag]) {
@@ -575,17 +579,17 @@ function function_d8c789b8(localclientnum, name, *tag) {
         self.var_a7bcf699[tag][self.var_a7bcf699[tag].size] = util::playfxontag(name, level._effect[#"hash_2fbce616d1238481"], self, "j_ankle_ri");
         self.var_a7bcf699[tag][self.var_a7bcf699[tag].size] = util::playfxontag(name, level._effect[#"hash_2fbce616d1238481"], self, "j_wrist_le");
         self.var_a7bcf699[tag][self.var_a7bcf699[tag].size] = util::playfxontag(name, level._effect[#"hash_2fbce616d1238481"], self, "j_wrist_ri");
-        break;
+        return;
     case #"shadow_appear":
         playfx(name, level._effect[#"shadow_appear"], self.origin);
         playfx(name, level._effect[#"shadow_rez_in"], self.origin);
         playfx(name, level._effect[#"hash_1ba28014cdeb28f"], self.origin);
-        break;
+        return;
     case #"shadow_die":
         playfx(name, level._effect[#"shadow_fade"], self.origin);
         playfx(name, level._effect[#"hash_2e65d5696e71b8e9"], self.origin);
         playfx(name, level._effect[#"hash_7fb19df63df2dd4c"], self.origin);
-        break;
+        return;
     case #"hazard_electric_trap_active":
         if (isdefined(self.var_a7bcf699[tag])) {
             foreach (fx in self.var_a7bcf699[tag]) {
@@ -595,7 +599,7 @@ function function_d8c789b8(localclientnum, name, *tag) {
         self.var_a7bcf699[tag] = [];
         self.var_a7bcf699[tag][self.var_a7bcf699[tag].size] = playfx(name, level._effect[tag], self.origin + vectorscale((0, 0, 1), 100));
         self.var_a7bcf699[tag][self.var_a7bcf699[tag].size] = playfx(name, level._effect[#"hash_4c83639bb82942d8"], self.origin + vectorscale((0, 0, 1), 124));
-        break;
+        return;
     case #"hazard_electric_trap_red":
     case #"hazard_electric_trap_green":
         if (isdefined(self.var_a7bcf699[tag])) {
@@ -605,7 +609,7 @@ function function_d8c789b8(localclientnum, name, *tag) {
         }
         self.var_a7bcf699[tag] = [];
         self.var_a7bcf699[tag][self.var_a7bcf699[tag].size] = playfx(name, level._effect[tag], self.origin + vectorscale((0, 0, 1), 124));
-        break;
+        return;
     case #"skel_stomp_impact":
         if (isdefined(self.var_a7bcf699[tag])) {
             foreach (fx in self.var_a7bcf699[tag]) {
@@ -614,7 +618,7 @@ function function_d8c789b8(localclientnum, name, *tag) {
         }
         self.var_a7bcf699[tag] = [];
         self.var_a7bcf699[tag][self.var_a7bcf699[tag].size] = playfx(name, level._effect[tag], self gettagorigin("j_ball_ri"));
-        break;
+        return;
     case #"crab_bubbles":
         if (isdefined(self.var_a7bcf699[tag])) {
             foreach (fx in self.var_a7bcf699[tag]) {
@@ -627,7 +631,7 @@ function function_d8c789b8(localclientnum, name, *tag) {
             self.var_f5ec511d = anglestoforward(self.angles + vectorscale((0, -1, 0), 135));
         }
         self.var_a7bcf699[tag][self.var_a7bcf699[tag].size] = playfx(name, level._effect[tag], self.var_8d26e38d, self.var_f5ec511d);
-        break;
+        return;
     }
 }
 

@@ -29,11 +29,11 @@ function zm_round_accelerant_fx(localclientnum, *oldval, newval, *bnewent, *bini
             stopfx(fieldname, self.fxid);
         }
         self.fxid = function_239993de(fieldname, #"hash_e53abb78895dec6", self, "tag_origin");
-    } else {
-        if (isdefined(self.fxid)) {
-            stopfx(fieldname, self.fxid);
-        }
-        self.fxid = function_239993de(fieldname, #"hash_72817177ffeaeafd", self, "tag_origin");
+        return;
     }
+    if (isdefined(self.fxid)) {
+        stopfx(fieldname, self.fxid);
+    }
+    self.fxid = function_239993de(fieldname, #"hash_72817177ffeaeafd", self, "tag_origin");
 }
 

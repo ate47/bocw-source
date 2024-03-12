@@ -176,9 +176,7 @@ function function_ec0b503f(var_499e2f80) {
     level.doa.var_5b55ba1f = namespace_4dae815d::function_21cd3890(5);
     if (isdefined(var_8f13e4c5)) {
         namespace_7f5aeb59::function_a8b57c52(var_8f13e4c5.origin, var_8f13e4c5.angles, result.activator, var_8f13e4c5);
-        goto LOC_000004e6;
     }
-LOC_000004e6:
     if (is_true(level.doa.var_c93506fb)) {
         self thread function_ec0b503f(var_499e2f80);
     }

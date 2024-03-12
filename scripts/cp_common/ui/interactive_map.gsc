@@ -93,11 +93,11 @@ function open(var_738a6265, top_left, bottom_right, var_879505e1 = 1, var_ff0f97
         if (is_true(var_879505e1)) {
             player function_879505e1(var_ff0f9714);
         }
-    } else {
-        /#
-            assertmsg("<unknown string>");
-        #/
+        return;
     }
+    /#
+        assertmsg("<unknown string>");
+    #/
 }
 
 // Namespace interactive_map/interactive_map
@@ -461,9 +461,9 @@ function function_9af7280f(objects) {
     foreach (uid, object in objects) {
         if (ishash(uid)) {
             object add_object(uid);
-        } else {
-            object add_object();
+            continue;
         }
+        object add_object();
     }
 }
 
@@ -533,9 +533,9 @@ function function_4692570b(event, value) {
         if (namespace_61e6d095::exists(#"interactive_map")) {
             if (isdefined(self.interactive_map.uid)) {
                 function_d0243e5b(self.interactive_map.uid, self.var_62d718e2[event].name, self.var_62d718e2[event].var_872a88cd);
-            } else {
-                function_e0cc3b71(self.var_62d718e2[event].name, self.var_62d718e2[event].var_872a88cd);
+                return;
             }
+            function_e0cc3b71(self.var_62d718e2[event].name, self.var_62d718e2[event].var_872a88cd);
         }
     }
 }
@@ -641,22 +641,22 @@ function function_fabe437a(var_248cbbcf) {
     objectives::remove(#"hash_748279bcfd49d4cd");
     if (level.interactive_map.objects[#"hash_748279bcfd49d4cd"] === waypoint) {
         remove_object(#"hash_748279bcfd49d4cd");
-    } else {
-        objectives::goto(#"hash_748279bcfd49d4cd", waypoint.origin, undefined, 0, 0);
-        if (isdefined(self.var_d9b5c896)) {
-            thread namespace_96850e69::function_49dec5b(#"hash_748279bcfd49d4cd", undefined, self.var_d9b5c896);
-        }
-        if (isdefined(level.interactive_map.objects[#"hash_748279bcfd49d4cd"])) {
-            level.interactive_map.objects[#"hash_748279bcfd49d4cd"] notify(#"hash_7c1f9e1214f47b4e");
-            level.interactive_map.objects[#"hash_748279bcfd49d4cd"] = waypoint;
-            waypoint thread function_9dfe141f(#"hash_748279bcfd49d4cd");
-            function_d0243e5b(#"hash_748279bcfd49d4cd", "image", isdefined(waypoint.interactive_map.image) ? waypoint.interactive_map.image : #"hash_215b9409f9d7cc36");
-        } else {
-            waypoint add_object(#"hash_748279bcfd49d4cd", isdefined(waypoint.interactive_map.image) ? waypoint.interactive_map.image : #"hash_215b9409f9d7cc36", 0);
-        }
-        thread function_5cab7397();
-        var_248cbbcf.player thread namespace_96850e69::show_objectives();
+        return;
     }
+    objectives::goto(#"hash_748279bcfd49d4cd", waypoint.origin, undefined, 0, 0);
+    if (isdefined(self.var_d9b5c896)) {
+        thread namespace_96850e69::function_49dec5b(#"hash_748279bcfd49d4cd", undefined, self.var_d9b5c896);
+    }
+    if (isdefined(level.interactive_map.objects[#"hash_748279bcfd49d4cd"])) {
+        level.interactive_map.objects[#"hash_748279bcfd49d4cd"] notify(#"hash_7c1f9e1214f47b4e");
+        level.interactive_map.objects[#"hash_748279bcfd49d4cd"] = waypoint;
+        waypoint thread function_9dfe141f(#"hash_748279bcfd49d4cd");
+        function_d0243e5b(#"hash_748279bcfd49d4cd", "image", isdefined(waypoint.interactive_map.image) ? waypoint.interactive_map.image : #"hash_215b9409f9d7cc36");
+    } else {
+        waypoint add_object(#"hash_748279bcfd49d4cd", isdefined(waypoint.interactive_map.image) ? waypoint.interactive_map.image : #"hash_215b9409f9d7cc36", 0);
+    }
+    thread function_5cab7397();
+    var_248cbbcf.player thread namespace_96850e69::show_objectives();
 }
 
 // Namespace interactive_map/interactive_map
@@ -773,7 +773,7 @@ function private function_c9099483() {
             if (function_3fe61dc2(object)) {
                 thread function_7560d352(object);
                 level.interactive_map.var_eb166cf5 = object;
-                break;
+                return;
             }
         }
     }
@@ -808,7 +808,7 @@ function private function_393ad031() {
         if (var_7188b3ba !== level.interactive_map.var_1896103a && function_4c186262(var_7188b3ba)) {
             thread function_7560d352(var_7188b3ba);
             level.interactive_map.var_1896103a = var_7188b3ba;
-            break;
+            return;
         }
     }
 }
@@ -872,7 +872,9 @@ function private function_11396e33(object) {
         if (function_a246a802(object) && !function_a246a802(var_6d991c4e)) {
             function_e4d34e68(0);
             function_8b43da33();
-        } else if (function_a246a802(object) && function_a246a802(var_6d991c4e)) {
+            return;
+        }
+        if (function_a246a802(object) && function_a246a802(var_6d991c4e)) {
             function_9e8d4999(var_6d991c4e.var_d9b5c896, var_6d991c4e.var_94ca2a30, var_6d991c4e.var_174e0272, var_6d991c4e);
         }
     }

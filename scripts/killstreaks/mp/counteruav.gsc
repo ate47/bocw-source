@@ -40,9 +40,8 @@ function private autoexec __init__system__() {
 function private function_1f11d560() {
     if (sessionmodeiswarzonegame()) {
         return "killstreak_counteruav_wz";
-    } else {
-        return "killstreak_counteruav";
     }
+    return "killstreak_counteruav";
 }
 
 // Namespace counteruav/counteruav
@@ -368,7 +367,7 @@ function hackedprefunction(*hacker) {
 function spawncounteruav(owner, killstreak_id, bundle, killstreaktype) {
     minflyheight = killstreaks::function_43f4782d();
     cuav = spawn("script_model", owner.origin + (0, 0, minflyheight + (isdefined(level.counter_uav_position_z_offset) ? level.counter_uav_position_z_offset : 1000)));
-    cuav setmodel(bundle.var_c6eab8b5);
+    cuav setmodel(bundle.ksmodel);
     cuav setenemymodel(bundle.var_aa0b97e1);
     cuav assignfirstavailableoffsetindex();
     cuav killstreaks::configure_team(killstreaktype, killstreak_id, owner, undefined, undefined, &configureteampost);

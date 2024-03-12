@@ -24,9 +24,9 @@ function private function_70a657d8() {
     if (zm_powerups::function_cc33adc8()) {
         if (zm_utility::function_c200446c()) {
             zm_powerups::add_zombie_powerup("hero_weapon_power", "p8_zm_powerup_full_power", #"hash_50af8943ead42bcc", &function_7e51ac0f, 0, 0, 0);
-        } else {
-            zm_powerups::add_zombie_powerup("hero_weapon_power", "p8_zm_powerup_full_power", #"hash_50af8943ead42bcc", &zm_powerups::func_should_never_drop, 0, 0, 0);
+            return;
         }
+        zm_powerups::add_zombie_powerup("hero_weapon_power", "p8_zm_powerup_full_power", #"hash_50af8943ead42bcc", &zm_powerups::func_should_never_drop, 0, 0, 0);
     }
 }
 

@@ -75,11 +75,17 @@ function function_d9bd950c(params) {
         }
         if (var_443e3ea5 == 1) {
             player function_f8bd1258();
-        } else if (var_443e3ea5 == 2) {
+            return;
+        }
+        if (var_443e3ea5 == 2) {
             player function_5a4cb86d(0, 1);
-        } else if (var_443e3ea5 == 3) {
+            return;
+        }
+        if (var_443e3ea5 == 3) {
             player function_5a4cb86d(1);
-        } else if (var_443e3ea5 == 4) {
+            return;
+        }
+        if (var_443e3ea5 == 4) {
             player function_e6558603("<unknown string>");
         }
     #/
@@ -125,10 +131,10 @@ function private function_5db7f789(params) {
         if (params.value) {
             setdvar(#"hash_2832abd8d28063d5", 1);
             player thread function_64892fd7();
-        } else {
-            setdvar(#"hash_2832abd8d28063d5", 0);
-            player notify(#"hash_2988c621f7fe6406");
+            return;
         }
+        setdvar(#"hash_2832abd8d28063d5", 0);
+        player notify(#"hash_2988c621f7fe6406");
     #/
 }
 
@@ -516,32 +522,32 @@ function private function_c7410540(var_8f977acb, profilesubject) {
             namespace_61e6d095::function_f2a9266(#"hash_7f07ebed7e062c01", listindex, "displayIcon", traits[i].var_55c1d6d9);
             namespace_61e6d095::function_f2a9266(#"hash_7f07ebed7e062c01", listindex, "displayIconBorder", traits[i].var_af4176bc);
         }
-    } else {
-        var_1659d59a = 0;
-        var_1856af9d = getscriptbundle(#"hash_7dc9096275da99d4");
-        foreach (var_fdf21313 in var_1856af9d.profiles) {
-            if (var_fdf21313.var_9c480844 == profilesubject) {
-                var_1659d59a = 1;
-                namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "firstName", var_fdf21313.var_34d094eb);
-                namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "lastName", var_fdf21313.var_705af76d);
-                namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "alias", var_fdf21313.alias);
-                namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "placeOfBirth", var_fdf21313.var_d4beb13);
-                namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "occupation", var_fdf21313.occupation);
-                namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "gender", var_fdf21313.gender);
-                namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "skinTone", var_fdf21313.var_ff3aefaf);
-                namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "militaryBackground", var_fdf21313.var_bc8da67d);
-                namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "militaryBackgroundDesc", var_fdf21313.var_bf761850);
-                namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "psychProfile1", var_fdf21313.var_755218ae);
-                namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "psychProfile1Desc", var_fdf21313.var_e47799ef);
-                namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "psychProfile2", var_fdf21313.var_a06feee9);
-                namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "psychProfile2Desc", var_fdf21313.var_9c7eba22);
-                break;
-            }
-        }
-        /#
-            assert(var_1659d59a, "<unknown string>" + profilesubject + "<unknown string>");
-        #/
+        return;
     }
+    var_1659d59a = 0;
+    var_1856af9d = getscriptbundle(#"hash_7dc9096275da99d4");
+    foreach (var_fdf21313 in var_1856af9d.profiles) {
+        if (var_fdf21313.var_9c480844 == profilesubject) {
+            var_1659d59a = 1;
+            namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "firstName", var_fdf21313.var_34d094eb);
+            namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "lastName", var_fdf21313.var_705af76d);
+            namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "alias", var_fdf21313.alias);
+            namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "placeOfBirth", var_fdf21313.var_d4beb13);
+            namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "occupation", var_fdf21313.occupation);
+            namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "gender", var_fdf21313.gender);
+            namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "skinTone", var_fdf21313.var_ff3aefaf);
+            namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "militaryBackground", var_fdf21313.var_bc8da67d);
+            namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "militaryBackgroundDesc", var_fdf21313.var_bf761850);
+            namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "psychProfile1", var_fdf21313.var_755218ae);
+            namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "psychProfile1Desc", var_fdf21313.var_e47799ef);
+            namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "psychProfile2", var_fdf21313.var_a06feee9);
+            namespace_61e6d095::function_9ade1d9b(#"hash_7f07ebed7e062c01", "psychProfile2Desc", var_fdf21313.var_9c7eba22);
+            break;
+        }
+    }
+    /#
+        assert(var_1659d59a, "<unknown string>" + profilesubject + "<unknown string>");
+    #/
 }
 
 // Namespace namespace_70eba6e6/namespace_70eba6e6
@@ -694,11 +700,13 @@ function function_5a4cb86d(editable, allowusercancel) {
     player = self;
     if (is_true(editable)) {
         player function_cd5334d6(2);
-    } else if (is_true(allowusercancel)) {
-        player function_cd5334d6(1);
-    } else {
-        player function_cd5334d6(4);
+        return;
     }
+    if (is_true(allowusercancel)) {
+        player function_cd5334d6(1);
+        return;
+    }
+    player function_cd5334d6(4);
 }
 
 // Namespace namespace_70eba6e6/namespace_70eba6e6

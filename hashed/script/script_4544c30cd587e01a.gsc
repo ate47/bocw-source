@@ -50,7 +50,9 @@ function function_8b7a2341(localclientnum, *oldval, newval, *bnewent, *binitials
         if (!level.var_d43d228 cp_killcam::is_open(fieldname)) {
             level.var_d43d228 cp_killcam::open(fieldname);
         }
-    } else if (level.var_d43d228 cp_killcam::is_open(fieldname)) {
+        return;
+    }
+    if (level.var_d43d228 cp_killcam::is_open(fieldname)) {
         level.var_d43d228 cp_killcam::close(fieldname);
     }
 }
@@ -62,8 +64,8 @@ function function_8b7a2341(localclientnum, *oldval, newval, *bnewent, *binitials
 function function_961f3093(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump && !function_1cbf351b(fieldname)) {
         self hide();
-    } else {
-        self show();
+        return;
     }
+    self show();
 }
 

@@ -33,9 +33,9 @@ function spawned(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fiel
         function_1877b7a1(fieldname, self getentitynumber(), level.var_da44d61b.var_dd0e1146, level.var_da44d61b.var_dd0e1146);
         self thread function_86392832(fieldname);
         self renderoverridebundle::function_f4eab437(fieldname, 1, #"rob_sonar_set_enemy");
-    } else {
-        self notify(#"hash_6ff151958b7d1075");
+        return;
     }
+    self notify(#"hash_6ff151958b7d1075");
 }
 
 // Namespace uav/uav
@@ -45,9 +45,8 @@ function spawned(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fiel
 function private function_6fe2ffad() {
     if (sessionmodeiswarzonegame()) {
         return "killstreak_uav_wz";
-    } else {
-        return "killstreak_uav";
     }
+    return "killstreak_uav";
 }
 
 // Namespace uav/uav
@@ -93,9 +92,9 @@ function function_5a528883(localclientnum, *oldval, newval, *bnewent, *binitials
             self function_27351ff6();
             level notify(#"hash_1b7241563645e156");
             self thread function_9784b3bf();
-        } else {
-            self notify(#"hash_780b1fb5c050cdc0");
+            return;
         }
+        self notify(#"hash_780b1fb5c050cdc0");
     }
 }
 

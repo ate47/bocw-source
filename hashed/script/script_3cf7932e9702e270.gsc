@@ -126,7 +126,9 @@ function function_df33ea46() {
             n_delay = randomintrange(60, 80);
             wait(n_delay);
         }
-    } else if (level flag::get(#"hash_2406ec20430ec032") && level flag::get(#"hash_6d5f0babef82cff6")) {
+        return;
+    }
+    if (level flag::get(#"hash_2406ec20430ec032") && level flag::get(#"hash_6d5f0babef82cff6")) {
         n_delay = randomintrange(4, 7);
         wait(n_delay);
         while (1) {
@@ -183,13 +185,13 @@ function private function_40466d11() {
             switch (level.var_4d16d15f) {
             case #"strauss":
                 level thread function_14a92dc6(#"hash_26e569fb2e7fabe");
-                break;
+                return;
             case #"carver":
                 level thread function_14a92dc6(#"hash_477a4a51045495a0");
-                break;
+                return;
             case #"grey":
                 level thread function_14a92dc6(#"hash_1f327a042fd14498");
-                break;
+                return;
             }
         }
     }
@@ -295,13 +297,13 @@ function function_3633608() {
     switch (level.var_4d16d15f) {
     case #"strauss":
         level function_14a92dc6(#"hash_3581d9e7960a0f9e");
-        break;
+        return;
     case #"carver":
         level function_14a92dc6(#"hash_79da06b07a856000");
-        break;
+        return;
     case #"grey":
         level function_14a92dc6(#"hash_3484dc620f0683f8");
-        break;
+        return;
     }
 }
 
@@ -351,13 +353,13 @@ function function_ab2c7273() {
         switch (level.var_4d16d15f) {
         case #"strauss":
             level.var_c3accf46 function_14a92dc6(#"hash_5155cb66536ec31d");
-            break;
+            return;
         case #"carver":
             level.var_c3accf46 function_14a92dc6(#"hash_366dc4f7e2e3e96d");
-            break;
+            return;
         case #"grey":
             level.var_c3accf46 function_14a92dc6(#"hash_545ec2c7298a79f1");
-            break;
+            return;
         }
     }
 }
@@ -385,13 +387,13 @@ function function_4a3710bf() {
         switch (level.var_4d16d15f) {
         case #"strauss":
             level.var_ae002b60 function_14a92dc6(#"hash_668d7bbc9af9b6d9");
-            break;
+            return;
         case #"carver":
             level.var_ae002b60 function_14a92dc6(#"hash_197f35de323a80d1");
-            break;
+            return;
         case #"grey":
             level.var_ae002b60 function_14a92dc6(#"hash_c25813223ef09a5");
-            break;
+            return;
         }
     }
 }
@@ -407,13 +409,13 @@ function function_5510bf92() {
         switch (level.var_4d16d15f) {
         case #"strauss":
             level.var_42000fd0 function_14a92dc6(#"hash_7a5f631bfc8662ea");
-            break;
+            return;
         case #"carver":
             level.var_42000fd0 function_14a92dc6(#"hash_4916ddf4dc7ba3f4");
-            break;
+            return;
         case #"grey":
             level.var_42000fd0 function_14a92dc6(#"hash_20b604aa921aab9c");
-            break;
+            return;
         }
     }
 }
@@ -429,13 +431,13 @@ function function_835805bb() {
         switch (level.var_4d16d15f) {
         case #"strauss":
             level.var_c8a2dc28 function_14a92dc6(#"hash_17c189767812d048");
-            break;
+            return;
         case #"carver":
             level.var_c8a2dc28 function_14a92dc6(#"hash_71429496494273ce");
-            break;
+            return;
         case #"grey":
             level.var_c8a2dc28 function_14a92dc6(#"hash_1f115d16a77d1e3e");
-            break;
+            return;
         }
     }
 }
@@ -551,13 +553,13 @@ function function_c45ee789() {
     switch (level.var_4d16d15f) {
     case #"strauss":
         level function_14a92dc6(#"hash_f86b89d90bc0baa");
-        break;
+        return;
     case #"carver":
         level function_14a92dc6(#"hash_14bbd9fbebb9bcb4");
-        break;
+        return;
     case #"grey":
         level function_14a92dc6(#"hash_4cdd7e2fd505c45c");
-        break;
+        return;
     }
 }
 
@@ -572,13 +574,13 @@ function function_73b2378f() {
     switch (level.var_4d16d15f) {
     case #"strauss":
         level function_14a92dc6(#"hash_1f2fad952b916ca0");
-        break;
+        return;
     case #"carver":
         level function_14a92dc6(#"hash_64b8440b42394056");
-        break;
+        return;
     case #"grey":
         level function_14a92dc6(#"hash_7d69a94c65638236");
-        break;
+        return;
     }
 }
 
@@ -595,13 +597,13 @@ function function_61e91466() {
     switch (level.var_4d16d15f) {
     case #"strauss":
         level function_14a92dc6(#"hash_59c256f38f192498");
-        break;
+        return;
     case #"carver":
         level function_14a92dc6(#"hash_14c7d373837bb55e");
-        break;
+        return;
     case #"grey":
         level function_14a92dc6(#"hash_4df2d7824c79c7ae");
-        break;
+        return;
     }
 }
 
@@ -629,13 +631,13 @@ function function_afe33aa6() {
     switch (level.var_4d16d15f) {
     case #"strauss":
         level function_14a92dc6(#"hash_7b3b9b567d3354a4");
-        break;
+        return;
     case #"carver":
         level function_14a92dc6(#"hash_379a717bbd4bbbb2");
-        break;
+        return;
     case #"grey":
         level function_14a92dc6(#"hash_3c62e74c8b3c7a32");
-        break;
+        return;
     }
 }
 
@@ -651,13 +653,13 @@ function function_56ba2988() {
         switch (level.var_4d16d15f) {
         case #"strauss":
             level function_14a92dc6(#"hash_7e2b798c1a94936c");
-            break;
+            return;
         case #"carver":
             level function_14a92dc6(#"hash_18330842160ffa4a");
-            break;
+            return;
         case #"grey":
             level function_14a92dc6(#"hash_86ddf1b1d72cefa");
-            break;
+            return;
         }
     }
 }
@@ -884,13 +886,13 @@ function function_71299b6e() {
     switch (level.var_4d16d15f) {
     case #"strauss":
         level function_14a92dc6(#"hash_2df687a8d81dd712");
-        break;
+        return;
     case #"carver":
         level function_14a92dc6(#"hash_b7ed89957bef24c");
-        break;
+        return;
     case #"grey":
         level function_14a92dc6(#"hash_70f79c3338502a64");
-        break;
+        return;
     }
 }
 
@@ -1018,15 +1020,15 @@ function private function_c5b386e2(cmd) {
         switch (cmd) {
         case #"hash_4d542c9d3f4bb89b":
             level thread_all(getplayers(), &function_d342796e, "<unknown string>", 1, 0, 0, 1);
-            break;
+            return;
         case #"hash_5eb39a0fff2ee528":
             level thread function_14a92dc6(#"hash_28272cdbefb5f54d");
-            break;
+            return;
         case #"hash_6608e2e55937727e":
             level function_d6f8bbd9(#"hash_fe61de910d51e7", undefined, function_a1ef346b(), undefined);
             level function_d6f8bbd9(#"hash_6d907d6921a5eb66", undefined, function_a1ef346b(), undefined);
         default:
-            break;
+            return;
         }
     #/
 }

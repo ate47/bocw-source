@@ -56,7 +56,9 @@ function private function_e1f72671(params) {
             self vehicle::toggle_control_bone_group(1, 1);
         }
         self notify(#"hash_579b16a6f8cc0305");
-    } else if (isdefined(occupants) && occupants.size >= 0 && params.eventstruct.seat_index === 0) {
+        return;
+    }
+    if (isdefined(occupants) && occupants.size >= 0 && params.eventstruct.seat_index === 0) {
         function_164c8246();
     }
 }
@@ -86,9 +88,9 @@ function function_177abcbb(params) {
         }
         if (eventstruct.seat_index === 0) {
             function_8892a46e();
-        } else {
-            function_164c8246();
+            return;
         }
+        function_164c8246();
     }
 }
 
@@ -109,9 +111,9 @@ function private function_8892a46e() {
 function private function_164c8246() {
     if (lengthsquared(self.velocity) > function_a3f6cdac(200)) {
         self thread function_45cb4291();
-    } else {
-        self vehicle::toggle_control_bone_group(1, 1);
+        return;
     }
+    self vehicle::toggle_control_bone_group(1, 1);
 }
 
 // Namespace player_motorcycle_2wd/player_motorcycle_2wd
@@ -129,9 +131,9 @@ function private function_45cb4291() {
                 self vehicle::toggle_control_bone_group(1, 1);
                 return;
             }
-        } else {
-            return;
+            continue;
         }
+        return;
     }
 }
 

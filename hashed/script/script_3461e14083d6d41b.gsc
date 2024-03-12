@@ -94,12 +94,12 @@ function function_84decde0(localclientnum, *oldval, newval, *bnewent, *binitials
         if (isdefined(level.var_1a3fe1eb) && level.var_1a3fe1eb.size != 0) {
             array::thread_all(level.var_1a3fe1eb, &function_1d9bbc33, fieldname, player);
         }
-    } else {
-        player flag::clear(#"hash_7e1acfc3111d6980");
-        array::thread_all(level.var_455f7b8c, &function_d04b4b2c);
-        if (isdefined(level.var_1a3fe1eb) && level.var_1a3fe1eb.size != 0) {
-            array::thread_all(level.var_1a3fe1eb, &function_d04b4b2c);
-        }
+        return;
+    }
+    player flag::clear(#"hash_7e1acfc3111d6980");
+    array::thread_all(level.var_455f7b8c, &function_d04b4b2c);
+    if (isdefined(level.var_1a3fe1eb) && level.var_1a3fe1eb.size != 0) {
+        array::thread_all(level.var_1a3fe1eb, &function_d04b4b2c);
     }
 }
 

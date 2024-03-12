@@ -102,21 +102,21 @@ function private function_38ebb2a1(localclientnum, oldval, newval, *bnewent, *bi
                 setuimodelvalue(createuimodel(function_1df4c3b0(binitialsnap, #"hash_159966ba825013a2"), "canUseQuickInventory"), 0);
             }
         }
-    } else {
-        if (bwastimejump == 0) {
-            clientdata.groupitems = [];
-            player = function_27673a7(binitialsnap);
-            if (isplayer(player) && isalive(player)) {
-                player function_9116bb0e(binitialsnap, 1);
-            }
+        return;
+    }
+    if (bwastimejump == 0) {
+        clientdata.groupitems = [];
+        player = function_27673a7(binitialsnap);
+        if (isplayer(player) && isalive(player)) {
+            player function_9116bb0e(binitialsnap, 1);
         }
-        if (is_true(level.tabbedmultiitempickup) && fieldname == 2) {
-            for (i = 0; i < clientdata.inventory.var_c212de25; i++) {
-                if (clientdata.inventory.items[i].networkid != 32767) {
-                    if (clientdata.inventory.items[i].availableaction == 1 || clientdata.inventory.items[i].availableaction == 4 || clientdata.inventory.items[i].availableaction == 2 || clientdata.inventory.items[i].availableaction == 6) {
-                        setuimodelvalue(createuimodel(function_1df4c3b0(binitialsnap, #"hash_159966ba825013a2"), "canUseQuickInventory"), 1);
-                        break;
-                    }
+    }
+    if (is_true(level.tabbedmultiitempickup) && fieldname == 2) {
+        for (i = 0; i < clientdata.inventory.var_c212de25; i++) {
+            if (clientdata.inventory.items[i].networkid != 32767) {
+                if (clientdata.inventory.items[i].availableaction == 1 || clientdata.inventory.items[i].availableaction == 4 || clientdata.inventory.items[i].availableaction == 2 || clientdata.inventory.items[i].availableaction == 6) {
+                    setuimodelvalue(createuimodel(function_1df4c3b0(binitialsnap, #"hash_159966ba825013a2"), "canUseQuickInventory"), 1);
+                    return;
                 }
             }
         }
@@ -153,56 +153,56 @@ function function_9116bb0e(localclientnum, closed = 0) {
                 setuimodelvalue(createuimodel(itemmodel, "itemtype"), "none");
                 setuimodelvalue(createuimodel(itemmodel, "specialItem"), 0);
                 setuimodelvalue(createuimodel(itemmodel, "description"), #"");
+                continue;
+            }
+            setuimodelvalue(createuimodel(itemmodel, "itemtype"), itemdef.var_a6762160.itemtype);
+            if (itemdef.var_a6762160.itemtype === #"ammo") {
+                canpickup = self function_c199bcc6(localclientnum, itemdef);
+                setuimodelvalue(createuimodel(itemmodel, "inventoryFull"), !canpickup);
+            } else if (itemdef.var_a6762160.itemtype === #"armor_shard") {
+                canpickup = self function_87e71bc0(localclientnum, itemdef.var_a6762160);
+                setuimodelvalue(createuimodel(itemmodel, "inventoryFull"), !canpickup);
             } else {
-                setuimodelvalue(createuimodel(itemmodel, "itemtype"), itemdef.var_a6762160.itemtype);
-                if (itemdef.var_a6762160.itemtype === #"ammo") {
-                    canpickup = self function_c199bcc6(localclientnum, itemdef);
-                    setuimodelvalue(createuimodel(itemmodel, "inventoryFull"), !canpickup);
-                } else if (itemdef.var_a6762160.itemtype === #"armor_shard") {
-                    canpickup = self function_87e71bc0(localclientnum, itemdef.var_a6762160);
-                    setuimodelvalue(createuimodel(itemmodel, "inventoryFull"), !canpickup);
+                setuimodelvalue(createuimodel(itemmodel, "inventoryFull"), 0);
+            }
+            description = isdefined(itemdef.var_a6762160.description) ? itemdef.var_a6762160.description : #"";
+            if (description == #"" && isdefined(itemdef.var_a6762160.weapon)) {
+                itemindex = getitemindexfromref(itemdef.var_a6762160.weapon.name);
+                var_97dcd0a5 = getunlockableiteminfofromindex(itemindex);
+                if (isdefined(var_97dcd0a5) && isdefined(var_97dcd0a5.description)) {
+                    description = var_97dcd0a5.description;
+                }
+            }
+            setuimodelvalue(createuimodel(itemmodel, "description"), isdefined(description) ? description : #"");
+            pickupicon = isdefined(itemdef.var_a6762160.pickupicon) ? itemdef.var_a6762160.pickupicon : itemdef.var_a6762160.icon;
+            stashicon = isdefined(itemdef.var_a6762160.stashicon) ? itemdef.var_a6762160.stashicon : pickupicon;
+            setuimodelvalue(createuimodel(itemmodel, "icon"), isdefined(stashicon) ? stashicon : #"blacktransparent");
+            setuimodelvalue(createuimodel(itemmodel, "rarity"), itemdef.var_a6762160.rarity);
+            setuimodelvalue(createuimodel(itemmodel, "name"), get_item_name(itemdef.var_a6762160));
+            claimsinventoryslot = item_inventory::is_inventory_item(localclientnum, itemdef.var_a6762160) && !item_inventory::function_a303c8ef(localclientnum, itemdef.var_a6762160);
+            setuimodelvalue(createuimodel(itemmodel, "claimsInventorySlot"), claimsinventoryslot);
+            setuimodelvalue(createuimodel(itemmodel, "stackCount"), 0);
+            setuimodelvalue(createuimodel(itemmodel, "stashStackSize"), 0);
+            if (itemdef.var_a6762160.itemtype === #"armor") {
+                setuimodelvalue(createuimodel(itemmodel, "armorTier"), itemdef.var_a6762160.armortier);
+                setuimodelvalue(createuimodel(itemmodel, "armor"), isdefined(isdefined(itemdef.amount) ? itemdef.amount : itemdef.var_a6762160.amount) ? isdefined(itemdef.amount) ? itemdef.amount : itemdef.var_a6762160.amount : 0);
+                setuimodelvalue(createuimodel(itemmodel, "armorMax"), isdefined(itemdef.var_a6762160.amount) ? itemdef.var_a6762160.amount : 1);
+            } else {
+                setuimodelvalue(createuimodel(itemmodel, "armorTier"), 1);
+                setuimodelvalue(createuimodel(itemmodel, "armor"), 0);
+                setuimodelvalue(createuimodel(itemmodel, "armorMax"), 1);
+            }
+            if (is_true(itemdef.var_a6762160.stackable) || itemdef.var_a6762160.itemtype === #"ammo") {
+                if ((itemdef.var_a6762160.itemtype === #"ammo" || isstruct(itemdef)) && !isdefined(itemdef.amount)) {
+                    setuimodelvalue(createuimodel(itemmodel, "stackCount"), isdefined(itemdef.var_a6762160.amount) ? itemdef.var_a6762160.amount : 1);
                 } else {
-                    setuimodelvalue(createuimodel(itemmodel, "inventoryFull"), 0);
+                    setuimodelvalue(createuimodel(itemmodel, "stackCount"), int(max(isdefined(itemdef.amount) ? itemdef.amount : 1, isdefined(itemdef.count) ? itemdef.count : 1)));
                 }
-                description = isdefined(itemdef.var_a6762160.description) ? itemdef.var_a6762160.description : #"";
-                if (description == #"" && isdefined(itemdef.var_a6762160.weapon)) {
-                    itemindex = getitemindexfromref(itemdef.var_a6762160.weapon.name);
-                    var_97dcd0a5 = getunlockableiteminfofromindex(itemindex);
-                    if (isdefined(var_97dcd0a5) && isdefined(var_97dcd0a5.description)) {
-                        description = var_97dcd0a5.description;
-                    }
-                }
-                setuimodelvalue(createuimodel(itemmodel, "description"), isdefined(description) ? description : #"");
-                pickupicon = isdefined(itemdef.var_a6762160.pickupicon) ? itemdef.var_a6762160.pickupicon : itemdef.var_a6762160.icon;
-                var_9507cf45 = isdefined(itemdef.var_a6762160.var_9507cf45) ? itemdef.var_a6762160.var_9507cf45 : pickupicon;
-                setuimodelvalue(createuimodel(itemmodel, "icon"), isdefined(var_9507cf45) ? var_9507cf45 : #"blacktransparent");
-                setuimodelvalue(createuimodel(itemmodel, "rarity"), itemdef.var_a6762160.rarity);
-                setuimodelvalue(createuimodel(itemmodel, "name"), get_item_name(itemdef.var_a6762160));
-                claimsinventoryslot = item_inventory::is_inventory_item(localclientnum, itemdef.var_a6762160) && !item_inventory::function_a303c8ef(localclientnum, itemdef.var_a6762160);
-                setuimodelvalue(createuimodel(itemmodel, "claimsInventorySlot"), claimsinventoryslot);
-                setuimodelvalue(createuimodel(itemmodel, "stackCount"), 0);
-                setuimodelvalue(createuimodel(itemmodel, "stashStackSize"), 0);
-                if (itemdef.var_a6762160.itemtype === #"armor") {
-                    setuimodelvalue(createuimodel(itemmodel, "armorTier"), itemdef.var_a6762160.armortier);
-                    setuimodelvalue(createuimodel(itemmodel, "armor"), isdefined(isdefined(itemdef.amount) ? itemdef.amount : itemdef.var_a6762160.amount) ? isdefined(itemdef.amount) ? itemdef.amount : itemdef.var_a6762160.amount : 0);
-                    setuimodelvalue(createuimodel(itemmodel, "armorMax"), isdefined(itemdef.var_a6762160.amount) ? itemdef.var_a6762160.amount : 1);
-                } else {
-                    setuimodelvalue(createuimodel(itemmodel, "armorTier"), 1);
-                    setuimodelvalue(createuimodel(itemmodel, "armor"), 0);
-                    setuimodelvalue(createuimodel(itemmodel, "armorMax"), 1);
-                }
-                if (is_true(itemdef.var_a6762160.stackable) || itemdef.var_a6762160.itemtype === #"ammo") {
-                    if ((itemdef.var_a6762160.itemtype === #"ammo" || isstruct(itemdef)) && !isdefined(itemdef.amount)) {
-                        setuimodelvalue(createuimodel(itemmodel, "stackCount"), isdefined(itemdef.var_a6762160.amount) ? itemdef.var_a6762160.amount : 1);
-                    } else {
-                        setuimodelvalue(createuimodel(itemmodel, "stackCount"), int(max(isdefined(itemdef.amount) ? itemdef.amount : 1, isdefined(itemdef.count) ? itemdef.count : 1)));
-                    }
-                } else {
-                    setuimodelvalue(createuimodel(itemmodel, "stashStackSize"), isdefined(itemdef.count) ? itemdef.count : 1);
-                }
-                if (is_true(itemdef.var_41f13734)) {
-                    setuimodelvalue(createuimodel(itemmodel, "specialItem"), 1);
-                }
+            } else {
+                setuimodelvalue(createuimodel(itemmodel, "stashStackSize"), isdefined(itemdef.count) ? itemdef.count : 1);
+            }
+            if (is_true(itemdef.var_41f13734)) {
+                setuimodelvalue(createuimodel(itemmodel, "specialItem"), 1);
             }
         }
         currentcount = getuimodelvalue(var_cc67e8b);
@@ -211,9 +211,9 @@ function function_9116bb0e(localclientnum, closed = 0) {
         }
         var_aaa1adcb = createuimodel(var_6e2c91d0, "forceNotifyAmmoList");
         forcenotifyuimodel(var_aaa1adcb);
-    } else {
-        setuimodelvalue(var_cc67e8b, 0);
+        return;
     }
+    setuimodelvalue(var_cc67e8b, 0);
 }
 
 // Namespace item_world/item_world
@@ -372,16 +372,14 @@ function private function_48b8fc19(localclientnum) {
             waitframe(1);
         }
     }
-    player = function_5c10bd79(localclientnum);
-    while (!isdefined(player) || !isplayer(player) || !isdefined(player.type) || player.type != #"player" || player ishidden() || player isinfreefall() || player function_9a0edd92()) {
+    for (player = function_5c10bd79(localclientnum); !isdefined(player) || !isplayer(player) || !isdefined(player.type) || player.type != #"player" || player ishidden() || player isinfreefall() || player function_9a0edd92(); player = function_5c10bd79(localclientnum)) {
         waitframe(1);
-        player = function_5c10bd79(localclientnum);
     }
     wait(15);
     for (index = 0; index < var_7d8899cd; index++) {
         point = function_b1702735(index);
         if (!isdefined(point) || !isdefined(point.var_a6762160)) {
-            break;
+            return;
         }
         xmodel = function_78a9fd5f(point);
         if (isdefined(xmodel)) {
@@ -558,16 +556,16 @@ function function_84964a9e(localclientnum, var_a6762160, model, networkid) {
                 foreach (var_a6f47d78 in var_a6762160.worldfx) {
                     model.modelfx[model.modelfx.size] = util::playfxontag(localclientnum, var_a6f47d78.worldfx, model, "tag_origin");
                 }
-            } else {
-                originoffset = (isdefined(var_a6762160.var_5dc4470b) ? var_a6762160.var_5dc4470b : 0, isdefined(var_a6762160.var_54a3b4ca) ? var_a6762160.var_54a3b4ca : 0, isdefined(var_a6762160.var_3e688854) ? var_a6762160.var_3e688854 : 0);
-                originoffset = rotatepoint(originoffset * -1, model.angles);
-                originoffset = originoffset + rotatepoint((isdefined(var_a6762160.var_22d128f2) ? var_a6762160.var_22d128f2 : 0, isdefined(var_a6762160.var_48907470) ? var_a6762160.var_48907470 : 0, isdefined(var_a6762160.var_702943a1) ? var_a6762160.var_702943a1 : 0), model.angles);
-                angles = combineangles(model.angles, (isdefined(var_a6762160.var_15b88fde) ? var_a6762160.var_15b88fde : 0, isdefined(var_a6762160.var_8c9a7dc8) ? var_a6762160.var_8c9a7dc8 : 0, isdefined(var_a6762160.var_7a51d937) ? var_a6762160.var_7a51d937 : 0));
-                forward = anglestoforward(angles);
-                up = anglestoup(angles);
-                foreach (var_a6f47d78 in var_a6762160.worldfx) {
-                    model.modelfx[model.modelfx.size] = playfx(localclientnum, var_a6f47d78.worldfx, model.origin + originoffset, forward, up);
-                }
+                return;
+            }
+            originoffset = (isdefined(var_a6762160.var_5dc4470b) ? var_a6762160.var_5dc4470b : 0, isdefined(var_a6762160.var_54a3b4ca) ? var_a6762160.var_54a3b4ca : 0, isdefined(var_a6762160.var_3e688854) ? var_a6762160.var_3e688854 : 0);
+            originoffset = rotatepoint(originoffset * -1, model.angles);
+            originoffset = originoffset + rotatepoint((isdefined(var_a6762160.var_22d128f2) ? var_a6762160.var_22d128f2 : 0, isdefined(var_a6762160.var_48907470) ? var_a6762160.var_48907470 : 0, isdefined(var_a6762160.var_702943a1) ? var_a6762160.var_702943a1 : 0), model.angles);
+            angles = combineangles(model.angles, (isdefined(var_a6762160.var_15b88fde) ? var_a6762160.var_15b88fde : 0, isdefined(var_a6762160.var_8c9a7dc8) ? var_a6762160.var_8c9a7dc8 : 0, isdefined(var_a6762160.var_7a51d937) ? var_a6762160.var_7a51d937 : 0));
+            forward = anglestoforward(angles);
+            up = anglestoup(angles);
+            foreach (var_a6f47d78 in var_a6762160.worldfx) {
+                model.modelfx[model.modelfx.size] = playfx(localclientnum, var_a6f47d78.worldfx, model.origin + originoffset, forward, up);
             }
         }
     }
@@ -646,9 +644,9 @@ function private function_e2c19e6b(localclientnum) {
         shouldhide = int(floor(timeoutlength / 400)) % 2 == 0;
         if (shouldhide) {
             model show();
-        } else {
-            model hide();
+            continue;
         }
+        model hide();
     }
     clientdata.var_d7bd75b5 = 0;
 }
@@ -936,7 +934,7 @@ function private function_9160538(localclientnum, eventtype, eventdata, var_c5a6
         item = function_b1702735(networkid);
         item_inventory::function_31868137(localclientnum, item);
         play_pickup_fx(localclientnum, item);
-        break;
+        return;
     case 3:
         networkid = eventdata;
         showitem = is_true(var_c5a66313);
@@ -950,7 +948,7 @@ function private function_9160538(localclientnum, eventtype, eventdata, var_c5a6
             function_a4886b1e(localclientnum, networkid, model);
         }
         play_spawn_fx(localclientnum, networkid);
-        break;
+        return;
     case 4:
         itemid = eventdata;
         count = var_c5a66313;
@@ -960,21 +958,21 @@ function private function_9160538(localclientnum, eventtype, eventdata, var_c5a6
         }
         item_inventory::function_9c4460e0(localclientnum, itemid, count, slotid);
         function_b78a9820(localclientnum);
-        break;
+        return;
     case 11:
         networkid = eventdata;
         if (!isalive) {
             return;
         }
         item_inventory::consume_item(localclientnum, networkid);
-        break;
+        return;
     case 15:
         networkid = eventdata;
         if (!isalive) {
             return;
         }
         item_inventory::function_52e537be(localclientnum, networkid);
-        break;
+        return;
     case 5:
         networkid = eventdata;
         if (!isalive) {
@@ -982,7 +980,7 @@ function private function_9160538(localclientnum, eventtype, eventdata, var_c5a6
         }
         item_inventory::function_c6ff0aa2(localclientnum, networkid);
         function_b78a9820(localclientnum);
-        break;
+        return;
     case 6:
         networkid = eventdata;
         if (!isalive) {
@@ -990,7 +988,7 @@ function private function_9160538(localclientnum, eventtype, eventdata, var_c5a6
         }
         item_inventory::function_3bd1836f(localclientnum, networkid);
         function_b78a9820(localclientnum);
-        break;
+        return;
     case 12:
         var_c9293a27 = eventdata;
         var_8f194e5a = var_c5a66313;
@@ -998,18 +996,18 @@ function private function_9160538(localclientnum, eventtype, eventdata, var_c5a6
             return;
         }
         item_inventory::function_26c87da8(localclientnum, var_c9293a27, var_8f194e5a);
-        break;
+        return;
     case 7:
         networkid = eventdata;
         if (!isalive) {
             return;
         }
         item_inventory::function_fa372100(localclientnum, networkid);
-        break;
+        return;
     case 8:
         networkid = eventdata;
         function_b78a9820(localclientnum);
-        break;
+        return;
     case 9:
         networkid = eventdata;
         count = var_c5a66313;
@@ -1018,25 +1016,25 @@ function private function_9160538(localclientnum, eventtype, eventdata, var_c5a6
         }
         item_inventory::update_inventory_item(localclientnum, networkid, count);
         function_b78a9820(localclientnum);
-        break;
+        return;
     case 10:
         item_inventory::inventory_init(localclientnum);
-        break;
+        return;
     case 13:
         networkid = eventdata;
         var_2ccf7a1c = var_c5a66313;
         function_347698a5(localclientnum, networkid, var_2ccf7a1c);
-        break;
+        return;
     case 14:
         vehicleentnum = eventdata;
         var_2ccf7a1c = var_c5a66313;
         function_d2f95c1a(localclientnum, vehicleentnum, var_2ccf7a1c);
-        break;
+        return;
     default:
         /#
             assertmsg("<unknown string>" + eventtype);
         #/
-        break;
+        return;
     }
 }
 
@@ -1195,11 +1193,10 @@ function private _set_weapon(localclientnum, item) {
             self activecamo::function_6efb762c(localclientnum, camoweapon, var_57fe74e5);
         }
         return 1;
-    } else {
-        self detachall();
-        self useweaponmodel(level.weaponnone, "tag_origin");
-        return 0;
     }
+    self detachall();
+    self useweaponmodel(level.weaponnone, "tag_origin");
+    return 0;
 }
 
 // Namespace item_world/item_world
@@ -1537,10 +1534,10 @@ function private function_c3f5f99b(localclientnum, objid, obj) {
     if (isdefined(obj)) {
         if (obj.type === "scriptmover" || obj.type === "missile") {
             objective_onentity(localclientnum, objid, obj, 0, 0, 0);
-        } else {
-            objective_clearentity(localclientnum, objid);
-            objective_setposition(localclientnum, objid, obj.origin);
+            return;
         }
+        objective_clearentity(localclientnum, objid);
+        objective_setposition(localclientnum, objid, obj.origin);
     }
 }
 
@@ -1652,14 +1649,16 @@ function private function_802915bc(localclientnum) {
             }
         }
         setuimodelvalue(level.var_62c91473[localclientnum], hinttext);
-    } else if (!isdefined(self.var_9b882d22) || distance2dsquared(self.var_9b882d22.origin, eyepos) > function_a3f6cdac(128)) {
+        return;
+    }
+    if (!isdefined(self.var_9b882d22) || distance2dsquared(self.var_9b882d22.origin, eyepos) > function_a3f6cdac(128)) {
         angles = getlocalclientangles(localclientnum);
         vehicle = item_world_util::function_6af455de(localclientnum, eyepos, angles);
         hintstring = item_world_util::function_c62ad9a7(vehicle);
         setuimodelvalue(level.var_62c91473[localclientnum], hintstring);
-    } else {
-        setuimodelvalue(level.var_62c91473[localclientnum], #"");
+        return;
     }
+    setuimodelvalue(level.var_62c91473[localclientnum], #"");
 }
 
 // Namespace item_world/item_world
@@ -1696,7 +1695,9 @@ function private function_c46425e0(localclientnum) {
                         function_d780f794(localclientnum, streamweapon, var_57fe74e5, var_fd90b0bb);
                         var_1988b305[streamweapon] = var_57fe74e5;
                     }
-                } else if (item.var_a6762160.itemtype == #"attachment") {
+                    continue;
+                }
+                if (item.var_a6762160.itemtype == #"attachment") {
                     if (isdefined(item.var_a6762160.attachments)) {
                         foreach (attachment in item.var_a6762160.attachments) {
                             if (isdefined(attachment.var_6be1bec7)) {
@@ -1767,9 +1768,9 @@ function private function_48ec057f(localclientnum) {
         if (isdefined(vehicle) && serverinfo.servertime >= var_f1530a67 && !function_97980fde(localclientnum, vehicle)) {
             var_bf2d48f6[vehicleentnum] = serverinfo;
             function_3bd99d2f(localclientnum, clientdata, vehicle);
-        } else {
-            function_3bd99d2f(localclientnum, clientdata, vehicle, 1);
+            continue;
         }
+        function_3bd99d2f(localclientnum, clientdata, vehicle, 1);
     }
     clientdata.var_baf65690 = var_bf2d48f6;
 }
@@ -1783,10 +1784,8 @@ function private _update_loop(localclientnum) {
     self notify("3627dbfd2bfd53e6");
     self endon("3627dbfd2bfd53e6");
     waitframe(1);
-    clientdata = function_a7e98a1a(localclientnum);
-    while (!isdefined(clientdata)) {
+    for (clientdata = function_a7e98a1a(localclientnum); !isdefined(clientdata); clientdata = function_a7e98a1a(localclientnum)) {
         waitframe(1);
-        clientdata = function_a7e98a1a(localclientnum);
     }
     clientdata.var_a4ad122e = 0;
     clientdata.var_d7bd75b5 = 0;
@@ -1909,7 +1908,6 @@ function private function_3574b1fa(weaponname) {
     case #"ray_gun_upgraded":
     case #"ray_gun":
         return 1;
-        break;
     }
     return 0;
 }
@@ -2381,12 +2379,12 @@ function private function_83e328e1(var_78ddf4e2, newitems) {
         if (!isdefined(var_f59eabca) || !self item_world_util::can_pick_up(var_f59eabca)) {
             emptycount++;
             items[items.size] = function_c5b6693a();
-        } else {
-            foreach (newitem in var_21198c86) {
-                if (newitem.networkid == var_f59eabca.networkid) {
-                    newcount++;
-                    items[items.size] = newitem;
-                }
+            continue;
+        }
+        foreach (newitem in var_21198c86) {
+            if (newitem.networkid == var_f59eabca.networkid) {
+                newcount++;
+                items[items.size] = newitem;
             }
         }
     }
@@ -2531,7 +2529,9 @@ function function_a4886b1e(localclientnum, networkid, model) {
     if (is_true(model.var_5d97fed1) || item_world_util::function_83c20f83(model)) {
         stash = function_c17fe536(localclientnum, clientdata, networkid);
         function_78bf134c(localclientnum, clientdata, networkid, stash);
-    } else if (distancesquared(draworigin, model.origin) <= function_a3f6cdac(maxdist)) {
+        return;
+    }
+    if (distancesquared(draworigin, model.origin) <= function_a3f6cdac(maxdist)) {
         var_a6762160 = undefined;
         if (isdefined(networkid)) {
             if (item_world_util::function_2c7fc531(networkid)) {
@@ -2732,7 +2732,7 @@ function hide_item(localclientnum, networkid) {
                     if (isstruct(item)) {
                         item.hidetime = gettime();
                     }
-                    break;
+                    return;
                 }
             }
         }

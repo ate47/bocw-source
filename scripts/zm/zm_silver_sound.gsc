@@ -45,7 +45,9 @@ function function_acd83a15() {
             foreach (player in getplayers()) {
                 player clientfield::set_to_player("" + #"hash_4be33f9c734f0cb9", 2);
             }
-        } else if (function_e840d5a5()) {
+            continue;
+        }
+        if (function_e840d5a5()) {
             foreach (player in getplayers()) {
                 player clientfield::set_to_player("" + #"hash_4be33f9c734f0cb9", 3);
             }
@@ -70,19 +72,19 @@ function function_30d9d43(str_msg, *n_delay) {
     case #"hash_5bad1025f0cf747e":
         level util::clientnotify("term1");
         level util::clientnotify("term2");
-        break;
+        return;
     case #"hash_7dbdd94b1b1e6829":
         playsoundatposition(#"hash_191f00f5f707e4ca", (1616, 741, -270));
         level util::clientnotify("term1");
-        break;
+        return;
     case #"hash_7dbdd64b1b1e6310":
         level util::clientnotify("term2");
-        break;
+        return;
     default:
         /#
             iprintlnbold("<unknown string>" + n_delay + "<unknown string>");
         #/
-        break;
+        return;
     }
 }
 
@@ -113,9 +115,9 @@ function function_cb5a4b1a() {
 function function_613a7ccc(b_success = 0) {
     if (b_success) {
         music::setmusicstate("silver_exfil_success");
-    } else {
-        music::setmusicstate("silver_exfil_fail");
+        return;
     }
+    music::setmusicstate("silver_exfil_fail");
 }
 
 // Namespace zm_silver_sound/zm_silver_sound

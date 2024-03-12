@@ -51,8 +51,8 @@ function function_160c9d99(localclientnum, *oldval, newval, *bnewent, *binitials
         }
         objective_setstate(fieldname, objid, "active");
         objective_setgamemodeflags(fieldname, objid, 0);
-    } else {
-        objective_setstate(fieldname, objid, "invisible");
+        return;
     }
+    objective_setstate(fieldname, objid, "invisible");
 }
 

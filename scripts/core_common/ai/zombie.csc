@@ -50,13 +50,13 @@ function private _gibcallback(*localclientnum, *entity, gibflag) {
     switch (gibflag) {
     case 8:
         playsound(0, #"zmb_zombie_head_gib", self.origin + vectorscale((0, 0, 1), 60));
-        break;
+        return;
     case 16:
     case 32:
     case 128:
     case 256:
         playsound(0, #"zmb_death_gibs", self.origin + vectorscale((0, 0, 1), 30));
-        break;
+        return;
     }
 }
 
@@ -179,11 +179,13 @@ function function_fd2b858e(localclientnum) {
                 self.var_e22ea2fc = 1;
                 function_a846c43c(self);
             }
-        } else if (self.var_e22ea2fc) {
+            continue;
+        }
+        if (self.var_e22ea2fc) {
             self.var_e22ea2fc = 0;
             function_55aaf3b(self);
             if (!gibclientutils::isundamaged(localclientnum, self)) {
-                break;
+                return;
             }
         }
     }
@@ -227,13 +229,15 @@ function function_a17af3df(localclientnum, *oldval, newval, *bnewent, *binitials
             self playrenderoverridebundle(#"hash_5597c38c16f1dbe9");
             self callback::on_shutdown(&function_c88acbea);
         }
-    } else if (bwastimejump === 2) {
+        return;
+    }
+    if (bwastimejump === 2) {
         function_c88acbea(fieldname);
         self playrenderoverridebundle(#"hash_61ce0b7cea532e77");
-    } else {
-        function_c88acbea(fieldname);
-        self stoprenderoverridebundle(#"hash_61ce0b7cea532e77");
+        return;
     }
+    function_c88acbea(fieldname);
+    self stoprenderoverridebundle(#"hash_61ce0b7cea532e77");
 }
 
 // Namespace zombieclientutils/zombie
@@ -246,7 +250,9 @@ function function_c88acbea(localclientnum) {
     }
     if (self.model === #"hash_6aa75847e285712b") {
         self stoprenderoverridebundle(#"hash_882e5d8c59f40a3");
-    } else if (self.model === #"hash_48eda005db2cbdcd" || self.model === #"hash_16837b6c9b7a1881") {
+        return;
+    }
+    if (self.model === #"hash_48eda005db2cbdcd" || self.model === #"hash_16837b6c9b7a1881") {
         self stoprenderoverridebundle(#"hash_5597c38c16f1dbe9");
     }
 }
@@ -262,7 +268,9 @@ function function_d2f27d26(localclientnum, *oldval, newval, *bnewent, *binitials
     }
     if (bwastimejump && self haspart(fieldname, "j_head")) {
         self.stunned_head_fx = function_239993de(fieldname, #"hash_24c6a9d87972dbc5", self, "j_head");
-    } else if (isdefined(self.stunned_head_fx)) {
+        return;
+    }
+    if (isdefined(self.stunned_head_fx)) {
         stopfx(fieldname, self.stunned_head_fx);
         self.stunned_head_fx = undefined;
     }

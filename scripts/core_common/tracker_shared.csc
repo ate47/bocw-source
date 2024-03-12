@@ -222,7 +222,9 @@ function function_bcc73387(localclientnum, var_540abea5 = 0) {
         var_db7bdbeb = isdefined(level.var_8fda87cb[entnum]) ? level.var_8fda87cb[entnum] : 0;
         if (val != var_db7bdbeb) {
             player function_308cd741(localclientnum, var_db7bdbeb, val);
-        } else if (val) {
+            continue;
+        }
+        if (val) {
             player function_308cd741(localclientnum, 0, val);
         }
     }

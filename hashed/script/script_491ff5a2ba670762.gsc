@@ -99,18 +99,18 @@ function function_9b36f6dc(spawnfilter, team) {
         if (isdefined(spawnfilter.var_c9150907)) {
             enableinfluencer(spawnfilter.var_c9150907, 1);
         }
-    } else {
-        if (isdefined(spawnfilter.friendlyinfluencer)) {
-            enableinfluencer(spawnfilter.friendlyinfluencer, 1);
-            function_a32c3352(spawnfilter.friendlyinfluencer, team, 0);
-        }
-        if (isdefined(spawnfilter.enemyinfluencer)) {
-            enableinfluencer(spawnfilter.enemyinfluencer, 1);
-            function_a32c3352(spawnfilter.enemyinfluencer, team, 1);
-        }
-        if (isdefined(spawnfilter.var_c9150907)) {
-            enableinfluencer(spawnfilter.var_c9150907, 0);
-        }
+        return;
+    }
+    if (isdefined(spawnfilter.friendlyinfluencer)) {
+        enableinfluencer(spawnfilter.friendlyinfluencer, 1);
+        function_a32c3352(spawnfilter.friendlyinfluencer, team, 0);
+    }
+    if (isdefined(spawnfilter.enemyinfluencer)) {
+        enableinfluencer(spawnfilter.enemyinfluencer, 1);
+        function_a32c3352(spawnfilter.enemyinfluencer, team, 1);
+    }
+    if (isdefined(spawnfilter.var_c9150907)) {
+        enableinfluencer(spawnfilter.var_c9150907, 0);
     }
 }
 

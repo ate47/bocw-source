@@ -49,9 +49,9 @@ function function_2b3bcce0() {
 function rob_ammo_mod_ready(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self playrenderoverridebundle("rob_ammo_mod_ready_light");
-    } else {
-        self stoprenderoverridebundle("rob_ammo_mod_ready_light");
+        return;
     }
+    self stoprenderoverridebundle("rob_ammo_mod_ready_light");
 }
 
 // Namespace aat/aat_shared
@@ -106,9 +106,9 @@ function register(name, localized_string, icon) {
 function aat_hud_manager(localclientnum, oldval, newval, bnewent, binitialsnap, fieldname, bwastimejump) {
     if (isdefined(level.update_aat_hud)) {
         [[ level.update_aat_hud ]](localclientnum, oldval, newval, bnewent, binitialsnap, fieldname, bwastimejump);
-    } else {
-        update_aat_hud(localclientnum, oldval, newval, bnewent, binitialsnap, fieldname, bwastimejump);
+        return;
     }
+    update_aat_hud(localclientnum, oldval, newval, bnewent, binitialsnap, fieldname, bwastimejump);
 }
 
 // Namespace aat/aat_shared

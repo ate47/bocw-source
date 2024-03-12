@@ -102,8 +102,10 @@ function function_41109d42(localclientnum, *oldval, newval, *bnewent, *binitials
     switch (var_eb6dbadd) {
     case 0:
         function_56821d13(fieldname);
+        return;
     case 63:
         function_56821d13(fieldname);
+        return;
     case 2:
         text = #"hash_29f2d2688d79b468";
         break;
@@ -292,11 +294,10 @@ function function_778aa85f(localclientnum, *oldval, newval, *bnewent, *binitials
         if (var_aa7fba18 == 1) {
             var_4e2d590d = #"hash_20cec1153efec555";
             var_aa7fba18 = undefined;
-            goto LOC_0000086c;
+        } else {
+            var_4e2d590d = #"hash_6547ed675c5dca52";
         }
-        var_4e2d590d = #"hash_6547ed675c5dca52";
     case 11:
-    LOC_0000086c:
         if (!isdefined(level.doa.roundnumber)) {
             wait(2);
         }
@@ -800,7 +801,6 @@ function function_4d2e3eaa(roomtype) {
         return #"hash_7f3ef33a21a4f457";
     case 28:
         return #"hash_5eb6f5fa54080cbe";
-        break;
     }
 }
 
@@ -832,7 +832,6 @@ function function_59dbb042(roomtype) {
         return 17;
     case 28:
         return 22;
-        break;
     }
 }
 
@@ -870,7 +869,6 @@ function function_b6e2bc81(roomtype) {
         return #"hash_59f4c2a2c01c4b98";
     case 43:
         return #"hash_6bbf84b01f5e560c";
-        break;
     }
 }
 

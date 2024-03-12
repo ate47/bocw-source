@@ -28,9 +28,9 @@ function private function_70a657d8() {
             registeredfields[mapping.var_cd35dfb2] = 1;
             if (is_true(mapping.var_7f12f171)) {
                 clientfield::register_clientuimodel(mapping.var_cd35dfb2, mapping.var_a88efd0b, mapping.var_2972a1c0, 1, mapping.numbits, "int", undefined, 0, 0);
-            } else {
-                clientfield::function_5b7d846d(mapping.var_cd35dfb2, mapping.var_a88efd0b, mapping.var_2972a1c0, 1, mapping.numbits, "int", undefined, 0, 0);
+                continue;
             }
+            clientfield::function_5b7d846d(mapping.var_cd35dfb2, mapping.var_a88efd0b, mapping.var_2972a1c0, 1, mapping.numbits, "int", undefined, 0, 0);
         }
     }
 }

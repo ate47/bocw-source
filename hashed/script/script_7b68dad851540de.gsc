@@ -57,40 +57,40 @@ function private function_b3ec7529() {
                 level.var_49430738[level.var_49430738.size] = obj;
             #/
             obj.var_fbb20a79 = 1;
-        } else {
-            var_5d693a1e = obj util::function_7e8ee521();
-            foreach (var_a86822e8 in var_5d693a1e) {
-                if (var_a86822e8 == obj) {
-                    continue;
-                }
-                if (!function_b69b2de4(var_a86822e8)) {
-                    continue;
-                }
-                if (!isdefined(obj.var_eb17b2be)) {
-                    obj.var_eb17b2be = [];
-                }
-                obj.var_eb17b2be[obj.var_eb17b2be.size] = var_a86822e8;
-            }
-            if (is_true(obj.script_auto_use)) {
-                if (!isdefined(obj.var_7087ad5d)) {
-                    obj.var_7087ad5d = 0;
-                }
-                obj.var_2edb5d76 = function_a3f6cdac(obj.var_7087ad5d);
-            } else {
-                obj.script_auto_use = undefined;
-                obj.var_7087ad5d = undefined;
-                obj.var_2edb5d76 = undefined;
-            }
-            if (!isdefined(obj.var_dd0284ce)) {
-                obj.var_dd0284ce = "patrol";
-            }
-            if (!isdefined(obj.var_a15f12c2)) {
-                obj.var_a15f12c2 = 0;
-            }
-            obj thread scene::init();
-            obj thread function_6e730e66();
-            level.var_1ccc840f[level.var_1ccc840f.size] = obj;
+            continue;
         }
+        var_5d693a1e = obj util::function_7e8ee521();
+        foreach (var_a86822e8 in var_5d693a1e) {
+            if (var_a86822e8 == obj) {
+                continue;
+            }
+            if (!function_b69b2de4(var_a86822e8)) {
+                continue;
+            }
+            if (!isdefined(obj.var_eb17b2be)) {
+                obj.var_eb17b2be = [];
+            }
+            obj.var_eb17b2be[obj.var_eb17b2be.size] = var_a86822e8;
+        }
+        if (is_true(obj.script_auto_use)) {
+            if (!isdefined(obj.var_7087ad5d)) {
+                obj.var_7087ad5d = 0;
+            }
+            obj.var_2edb5d76 = function_a3f6cdac(obj.var_7087ad5d);
+        } else {
+            obj.script_auto_use = undefined;
+            obj.var_7087ad5d = undefined;
+            obj.var_2edb5d76 = undefined;
+        }
+        if (!isdefined(obj.var_dd0284ce)) {
+            obj.var_dd0284ce = "patrol";
+        }
+        if (!isdefined(obj.var_a15f12c2)) {
+            obj.var_a15f12c2 = 0;
+        }
+        obj thread scene::init();
+        obj thread function_6e730e66();
+        level.var_1ccc840f[level.var_1ccc840f.size] = obj;
     }
 }
 
@@ -110,14 +110,14 @@ function private function_6e730e66() {
             if (isdefined(intro.origin)) {
                 self.var_db740c43[self.var_db740c43.size] = intro;
                 self.goalradius = max(self.goalradius, distance(self.origin, intro.origin) + 60);
-            } else {
-                /#
-                    if (!isdefined(self.var_175b0e60)) {
-                        self.var_175b0e60 = [];
-                    }
-                    self.var_175b0e60[self.var_175b0e60.size] = intro;
-                #/
+                continue;
             }
+            /#
+                if (!isdefined(self.var_175b0e60)) {
+                    self.var_175b0e60 = [];
+                }
+                self.var_175b0e60[self.var_175b0e60.size] = intro;
+            #/
         }
     }
     self.var_b4c01efd = function_5ff18583(self.shots, "death");
@@ -126,14 +126,14 @@ function private function_6e730e66() {
         if (isdefined(intro.origin)) {
             self.var_db740c43[self.var_db740c43.size] = intro;
             self.goalradius = max(self.goalradius, distance(self.origin, intro.origin));
-        } else {
-            /#
-                if (!isdefined(self.var_175b0e60)) {
-                    self.var_175b0e60 = [];
-                }
-                self.var_175b0e60[self.var_175b0e60.size] = intro;
-            #/
+            return;
         }
+        /#
+            if (!isdefined(self.var_175b0e60)) {
+                self.var_175b0e60 = [];
+            }
+            self.var_175b0e60[self.var_175b0e60.size] = intro;
+        #/
     }
 }
 
@@ -177,9 +177,9 @@ function private function_27844fc(var_5685d3ec) {
         foreach (obj in self.var_eb17b2be) {
             if (isdefined(obj.var_cd9d7cb)) {
                 obj.var_cd9d7cb = max(obj.var_cd9d7cb, self.var_cd9d7cb);
-            } else {
-                obj.var_cd9d7cb = self.var_cd9d7cb;
+                continue;
             }
+            obj.var_cd9d7cb = self.var_cd9d7cb;
         }
     }
 }
@@ -361,7 +361,9 @@ function private function_ca2d3925(&shots, ai, var_ee9cbc26, result) {
                     result.attacker damagefeedback::update(result.mod, result.inflictor, undefined, result.weapon, ai);
                 }
                 self notify(#"hash_334d02928f88cfaa");
-            } else if (!isdefined(ai.var_a965704f) && isdefined(react) && react !== ai.var_a965704f) {
+                return;
+            }
+            if (!isdefined(ai.var_a965704f) && isdefined(react) && react !== ai.var_a965704f) {
                 ai.var_a965704f = react;
                 self thread function_1ec70779(react, ai, isdeath);
                 if (is_true(isdeath)) {
@@ -671,116 +673,126 @@ function function_a49ba261(startpos, endpos, region, volume, var_9da4df29, var_a
                     print3d(obj.origin + vectorscale((0, 0, 1), 24), "<unknown string>", vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
                 }
             #/
-        } else if (!self can_claim(obj)) {
+            continue;
+        }
+        if (!self can_claim(obj)) {
             /#
                 if (var_1d23c510) {
                     box(obj.origin + vectorscale((0, 0, 1), 32), vectorscale((1, 1, 1), 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
                     print3d(obj.origin + vectorscale((0, 0, 1), 24), "<unknown string>", vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
                 }
             #/
-        } else if (!is_true(var_a3a26744) && !self can_use(obj)) {
+            continue;
+        }
+        if (!is_true(var_a3a26744) && !self can_use(obj)) {
             /#
                 if (var_1d23c510) {
                     box(obj.origin + vectorscale((0, 0, 1), 32), vectorscale((1, 1, 1), 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
                     print3d(obj.origin + vectorscale((0, 0, 1), 24), "<unknown string>", vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
                 }
             #/
-        } else if (!is_true(obj.script_auto_use)) {
+            continue;
+        }
+        if (!is_true(obj.script_auto_use)) {
             /#
                 if (var_1d23c510) {
                     box(obj.origin + vectorscale((0, 0, 1), 32), vectorscale((1, 1, 1), 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
                     print3d(obj.origin + vectorscale((0, 0, 1), 24), "<unknown string>", vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
                 }
             #/
+            continue;
+        }
+        var_5c084b53 = obj.origin - startpos;
+        var_98883cf9 = vectordot(var_8afe96be, var_5c084b53);
+        if (var_98883cf9 < var_9da4df29) {
+            /#
+                if (var_1d23c510) {
+                    box(obj.origin + vectorscale((0, 0, 1), 32), vectorscale((1, 1, 1), 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
+                    print3d(obj.origin + vectorscale((0, 0, 1), 24), "<unknown string>", vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
+                }
+            #/
+            continue;
+        }
+        if (var_98883cf9 > linelen + var_d01a742) {
+            /#
+                if (var_1d23c510) {
+                    box(obj.origin + vectorscale((0, 0, 1), 32), vectorscale((1, 1, 1), 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
+                    print3d(obj.origin + vectorscale((0, 0, 1), 24), "<unknown string>", vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
+                }
+            #/
+            continue;
+        }
+        var_c79274d2 = abs(vectordot(var_38bbcdf7, var_5c084b53));
+        if (var_c79274d2 * var_c79274d2 > obj.var_2edb5d76) {
+            /#
+                if (var_1d23c510) {
+                    box(obj.origin + vectorscale((0, 0, 1), 32), vectorscale((1, 1, 1), 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
+                    print3d(obj.origin + vectorscale((0, 0, 1), 24), "<unknown string>", vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
+                }
+            #/
+            continue;
+        }
+        var_fbf46d73 = var_3f5ef53e;
+        if (linelen - var_c79274d2 < 60) {
+            var_fbf46d73 = var_fbf46d73 * 0.5;
+        }
+        if (var_c79274d2 > var_fbf46d73) {
+            /#
+                if (var_1d23c510) {
+                    box(obj.origin + vectorscale((0, 0, 1), 32), vectorscale((1, 1, 1), 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
+                    print3d(obj.origin + vectorscale((0, 0, 1), 24), "<unknown string>", vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
+                }
+            #/
+            continue;
+        }
+        if (isdefined(volume) && !volume istouching(obj.origin)) {
+            /#
+                if (var_1d23c510) {
+                    box(obj.origin + vectorscale((0, 0, 1), 32), vectorscale((1, 1, 1), 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
+                    print3d(obj.origin + vectorscale((0, 0, 1), 24), "<unknown string>", vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
+                }
+            #/
+            continue;
+        }
+        var_fff54d0b = linelen - var_9da4df29;
+        var_1f6e7bb3 = var_98883cf9 - var_9da4df29;
+        var_429175fd = var_aea7aa5b - var_9da4df29;
+        if (var_1f6e7bb3 < var_429175fd) {
+            score = var_fafda79b + var_c7d9d665 * (1 - (var_429175fd - var_1f6e7bb3) / var_429175fd);
         } else {
-            var_5c084b53 = obj.origin - startpos;
-            var_98883cf9 = vectordot(var_8afe96be, var_5c084b53);
-            if (var_98883cf9 < var_9da4df29) {
-                /#
-                    if (var_1d23c510) {
-                        box(obj.origin + vectorscale((0, 0, 1), 32), vectorscale((1, 1, 1), 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                        print3d(obj.origin + vectorscale((0, 0, 1), 24), "<unknown string>", vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
-                    }
-                #/
-            } else if (var_98883cf9 > linelen + var_d01a742) {
-                /#
-                    if (var_1d23c510) {
-                        box(obj.origin + vectorscale((0, 0, 1), 32), vectorscale((1, 1, 1), 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                        print3d(obj.origin + vectorscale((0, 0, 1), 24), "<unknown string>", vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
-                    }
-                #/
-            } else {
-                var_c79274d2 = abs(vectordot(var_38bbcdf7, var_5c084b53));
-                if (var_c79274d2 * var_c79274d2 > obj.var_2edb5d76) {
-                    /#
-                        if (var_1d23c510) {
-                            box(obj.origin + vectorscale((0, 0, 1), 32), vectorscale((1, 1, 1), 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                            print3d(obj.origin + vectorscale((0, 0, 1), 24), "<unknown string>", vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
-                        }
-                    #/
-                } else {
-                    var_fbf46d73 = var_3f5ef53e;
-                    if (linelen - var_c79274d2 < 60) {
-                        var_fbf46d73 = var_fbf46d73 * 0.5;
-                    }
-                    if (var_c79274d2 > var_fbf46d73) {
-                        /#
-                            if (var_1d23c510) {
-                                box(obj.origin + vectorscale((0, 0, 1), 32), vectorscale((1, 1, 1), 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                                print3d(obj.origin + vectorscale((0, 0, 1), 24), "<unknown string>", vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
-                            }
-                        #/
-                    } else if (isdefined(volume) && !volume istouching(obj.origin)) {
-                        /#
-                            if (var_1d23c510) {
-                                box(obj.origin + vectorscale((0, 0, 1), 32), vectorscale((1, 1, 1), 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                                print3d(obj.origin + vectorscale((0, 0, 1), 24), "<unknown string>", vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
-                            }
-                        #/
-                    } else {
-                        var_fff54d0b = linelen - var_9da4df29;
-                        var_1f6e7bb3 = var_98883cf9 - var_9da4df29;
-                        var_429175fd = var_aea7aa5b - var_9da4df29;
-                        if (var_1f6e7bb3 < var_429175fd) {
-                            score = var_fafda79b + var_c7d9d665 * (1 - (var_429175fd - var_1f6e7bb3) / var_429175fd);
-                        } else {
-                            var_fff54d0b = linelen - var_aea7aa5b + var_d01a742;
-                            var_1f6e7bb3 = var_98883cf9 - var_aea7aa5b;
-                            score = var_fafda79b + var_c7d9d665 * (var_fff54d0b - var_1f6e7bb3) / var_fff54d0b;
-                        }
-                        if (var_c79274d2 > var_26653e4b) {
-                            var_7324080 = var_c79274d2 - var_26653e4b;
-                            score = score * (var_b11744c0 + (1 - var_7324080 / (var_fbf46d73 - var_26653e4b)) * (1 - var_b11744c0));
-                        }
-                        if (function_b03cc199(obj)) {
-                            score = score * var_d5260937;
-                            /#
-                                if (var_1d23c510) {
-                                    print3d(obj.origin + vectorscale((0, 0, 1), 20), "<unknown string>", vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
-                                }
-                            #/
-                        }
-                        if (isdefined(obj.lastusetime)) {
-                            if (gettime() - obj.lastusetime < var_c9b0ff8d) {
-                                score = score * var_fda73bba;
-                            } else {
-                                obj.lastusetime = undefined;
-                            }
-                        }
-                        if (score > var_ef1e44f4) {
-                            var_ef1e44f4 = score;
-                            var_2f882d08 = obj;
-                        }
-                        /#
-                            if (var_1d23c510) {
-                                box(obj.origin + vectorscale((0, 0, 1), 32), vectorscale((1, 1, 1), 12), obj.angles, vectorscale((1, 1, 0), 0.8), 0, drawtime);
-                                print3d(obj.origin + vectorscale((0, 0, 1), 24), "<unknown string>" + score, vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
-                            }
-                        #/
-                    }
+            var_fff54d0b = linelen - var_aea7aa5b + var_d01a742;
+            var_1f6e7bb3 = var_98883cf9 - var_aea7aa5b;
+            score = var_fafda79b + var_c7d9d665 * (var_fff54d0b - var_1f6e7bb3) / var_fff54d0b;
+        }
+        if (var_c79274d2 > var_26653e4b) {
+            var_7324080 = var_c79274d2 - var_26653e4b;
+            score = score * (var_b11744c0 + (1 - var_7324080 / (var_fbf46d73 - var_26653e4b)) * (1 - var_b11744c0));
+        }
+        if (function_b03cc199(obj)) {
+            score = score * var_d5260937;
+            /#
+                if (var_1d23c510) {
+                    print3d(obj.origin + vectorscale((0, 0, 1), 20), "<unknown string>", vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
                 }
+            #/
+        }
+        if (isdefined(obj.lastusetime)) {
+            if (gettime() - obj.lastusetime < var_c9b0ff8d) {
+                score = score * var_fda73bba;
+            } else {
+                obj.lastusetime = undefined;
             }
         }
+        if (score > var_ef1e44f4) {
+            var_ef1e44f4 = score;
+            var_2f882d08 = obj;
+        }
+        /#
+            if (var_1d23c510) {
+                box(obj.origin + vectorscale((0, 0, 1), 32), vectorscale((1, 1, 1), 12), obj.angles, vectorscale((1, 1, 0), 0.8), 0, drawtime);
+                print3d(obj.origin + vectorscale((0, 0, 1), 24), "<unknown string>" + score, vectorscale((1, 1, 1), 0.5), 1, 0.2, drawtime);
+            }
+        #/
     }
     return var_2f882d08;
 }
@@ -953,9 +965,9 @@ function private function_5bfb6b3(dvar) {
         level.var_929178b5 = int(dvar.value);
         if (level.var_929178b5 != 0) {
             level thread function_23eef632();
-        } else {
-            level notify(#"hash_6f64ca444d328bd0");
+            return;
         }
+        level notify(#"hash_6f64ca444d328bd0");
     #/
 }
 
@@ -1019,7 +1031,7 @@ function private function_ed7733c7() {
                 draw_arrow(obj.origin + (0, 0, 1), obj.origin + (0, 0, 1) + anglestoforward(obj.angles) * 16, vectorscale((1, 0, 0), 0.5));
             }
             if (level.var_49430738.size == 0) {
-                break;
+                return;
             }
             waitframe(1);
         }

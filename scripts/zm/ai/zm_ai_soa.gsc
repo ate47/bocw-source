@@ -258,7 +258,9 @@ function private function_7d1d7f3f(entity) {
     if (var_4d21f369 === #"hash_1f50e1df5bdfdcf8") {
         goal = namespace_19c99142::function_dd116fa9(entity);
         entity setgoal(goal);
-    } else if (var_4d21f369 === #"attacking") {
+        return;
+    }
+    if (var_4d21f369 === #"attacking") {
         if (isplayer(soa.favoriteenemy) && is_true(entity.var_ff3cbd9e) && !getdvarint(#"hash_6f7afa24d5871b86", 0) > 0) {
             var_ce42b625 = zm_utility::function_d89330e6(soa.favoriteenemy);
             if (var_ce42b625 >= 0) {
@@ -527,11 +529,11 @@ function function_41a4961d(get_all = 0) {
                 if (!isdefined(var_b0becd1e)) {
                     return undefined;
                 }
-                var_5f3b05e8 = var_b0becd1e zm_zonemgr::get_player_zone();
-                if (!isdefined(var_5f3b05e8)) {
+                str_target_zone = var_b0becd1e zm_zonemgr::get_player_zone();
+                if (!isdefined(str_target_zone)) {
                     return undefined;
                 }
-                target_zone = level.zones[var_5f3b05e8];
+                target_zone = level.zones[str_target_zone];
                 var_24f5d9f8 = array(target_zone.name);
                 a_str_adj_zones = getarraykeys(target_zone.adjacent_zones);
                 foreach (str_zone in a_str_adj_zones) {
@@ -602,16 +604,12 @@ function function_d7a21807() {
     switch (getplayers().size) {
     case 1:
         return 2;
-        break;
     case 2:
         return 3;
-        break;
     case 3:
         return 4;
-        break;
     case 4:
         return 5;
-        break;
     }
 }
 

@@ -76,16 +76,16 @@ function private function_7cbd94d5(b_hide = 1) {
                 self.var_6c49a5bb[self.var_6c49a5bb.size] = self.var_3eb5bddd.clip;
             }
         }
-    } else {
-        self solid();
-        if (isarray(self.var_6c49a5bb)) {
-            foreach (clip in self.var_6c49a5bb) {
-                if (isentity(clip)) {
-                    clip showtoplayer(self);
-                }
+        return;
+    }
+    self solid();
+    if (isarray(self.var_6c49a5bb)) {
+        foreach (clip in self.var_6c49a5bb) {
+            if (isentity(clip)) {
+                clip showtoplayer(self);
             }
-            self.var_6c49a5bb = undefined;
         }
+        self.var_6c49a5bb = undefined;
     }
 }
 
@@ -173,10 +173,10 @@ function on_player_killed(*params) {
 function function_1fd398d8() {
     if (sessionmodeiszombiesgame()) {
         self function_2e714695();
-    } else {
-        function_752582be(self.ascender);
-        self.ascender = undefined;
+        return;
     }
+    function_752582be(self.ascender);
+    self.ascender = undefined;
 }
 
 // Namespace rappel/rappel

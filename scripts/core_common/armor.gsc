@@ -45,10 +45,10 @@ function setlightarmorhp(newvalue) {
         if (isplayer(self) && self.lightarmor.max > 0) {
             lightarmorpercent = math::clamp(self.lightarmor.amount / self.lightarmor.max, 0, 1);
         }
-    } else {
-        self.lightarmor.amount = 0;
-        self.lightarmor.max = 0;
+        return;
     }
+    self.lightarmor.amount = 0;
+    self.lightarmor.max = 0;
 }
 
 // Namespace armor/armor

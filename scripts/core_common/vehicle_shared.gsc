@@ -302,24 +302,23 @@ function path_detour(node) {
         if (isdefined(self.script_crashtypeoverride) && self.script_crashtypeoverride === "ground_vehicle_on_spline") {
             self.nd_crash_path = detourpath;
             self thread vehicle_death::ground_vehicle_crash();
-        } else {
-            self notify(#"crashpath", detourpath);
-            detourpath.derailed = 1;
-            self notify(#"newpath");
-            self setswitchnode(node, detourpath);
-        }
-        return;
-    } else {
-        if (crash_derailed_check(detourpath)) {
             return;
         }
-        if (isdefined(detourpath.script_vehicledetourgroup)) {
-            if (!isdefined(self.script_vehicledetourgroup)) {
-                return;
-            }
-            if (detourpath.script_vehicledetourgroup != self.script_vehicledetourgroup) {
-                return;
-            }
+        self notify(#"crashpath", detourpath);
+        detourpath.derailed = 1;
+        self notify(#"newpath");
+        self setswitchnode(node, detourpath);
+        return;
+    }
+    if (crash_derailed_check(detourpath)) {
+        return;
+    }
+    if (isdefined(detourpath.script_vehicledetourgroup)) {
+        if (!isdefined(self.script_vehicledetourgroup)) {
+            return;
+        }
+        if (detourpath.script_vehicledetourgroup != self.script_vehicledetourgroup) {
+            return;
         }
     }
 }
@@ -394,9 +393,9 @@ function sort_by_startingpos(guysarray) {
     for (i = 0; i < guysarray.size; i++) {
         if (isdefined(guysarray[i].script_startingposition)) {
             firstarray[firstarray.size] = guysarray[i];
-        } else {
-            secondarray[secondarray.size] = guysarray[i];
+            continue;
         }
+        secondarray[secondarray.size] = guysarray[i];
     }
     return arraycombine(firstarray, secondarray, 1, 0);
 }
@@ -728,11 +727,11 @@ function get_on_path(path_start, str_key = "targetname", distance = 0) {
             /#
                 assertmsg("<unknown string>" + self.targetname);
             #/
-        } else {
-            /#
-                assertmsg("<unknown string>");
-            #/
+            return;
         }
+        /#
+            assertmsg("<unknown string>");
+        #/
         return;
     }
     if (isdefined(self.hasstarted)) {
@@ -1570,16 +1569,17 @@ function setup_spawners(a_veh_spawners) {
 function _vehicle_life() {
     if (isdefined(self.destructibledef)) {
         self.health = 99999;
-    } else {
-        type = self.vehicletype;
-        if (isdefined(self.script_startinghealth)) {
-            self.health = self.script_startinghealth;
-        } else if (!self.var_dd74f4a9) {
-            return;
-        } else {
-            self.health = self.healthdefault;
-        }
+        return;
     }
+    type = self.vehicletype;
+    if (isdefined(self.script_startinghealth)) {
+        self.health = self.script_startinghealth;
+        return;
+    }
+    if (!self.var_dd74f4a9) {
+        return;
+    }
+    self.health = self.healthdefault;
 }
 
 // Namespace vehicle/vehicle_shared
@@ -1732,9 +1732,8 @@ function setup_level_vars() {
 function attacker_is_on_my_team(attacker) {
     if (isdefined(attacker) && isdefined(attacker.team) && isdefined(self.team) && !util::function_fbce7263(attacker.team, self.team)) {
         return 1;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace vehicle/vehicle_shared
@@ -1751,9 +1750,8 @@ function bullet_shielded(type) {
     }
     if (self.script_bulletshield) {
         return 1;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace vehicle/vehicle_shared
@@ -1897,7 +1895,7 @@ function wait_till_stable() {
             timer = gettime() + 400;
         }
         if (gettime() > timer) {
-            break;
+            return;
         }
         waitframe(1);
     }
@@ -2304,60 +2302,60 @@ function should_update_damage_fx_level(currenthealth, damage, maxhealth) {
     afterdamagelevel = undefined;
     switch (isdefined(settings.damagestate_numstates) ? settings.damagestate_numstates : 0) {
     case 6:
-        jumpiffalse(settings.damagestate_lv6_ratio >= afterdamageratio) LOC_0000017c;
-        afterdamagelevel = 6;
-        currentlevel = 6;
-        if (settings.damagestate_lv6_ratio < currentratio) {
-            currentlevel = 5;
+        if (settings.damagestate_lv6_ratio >= afterdamageratio) {
+            afterdamagelevel = 6;
+            currentlevel = 6;
+            if (settings.damagestate_lv6_ratio < currentratio) {
+                currentlevel = 5;
+            }
+            break;
         }
-        break;
     case 5:
-    LOC_0000017c:
-        jumpiffalse(settings.damagestate_lv5_ratio >= afterdamageratio) LOC_000001bc;
-        afterdamagelevel = 5;
-        currentlevel = 5;
-        if (settings.damagestate_lv5_ratio < currentratio) {
-            currentlevel = 4;
+        if (settings.damagestate_lv5_ratio >= afterdamageratio) {
+            afterdamagelevel = 5;
+            currentlevel = 5;
+            if (settings.damagestate_lv5_ratio < currentratio) {
+                currentlevel = 4;
+            }
+            break;
         }
-        break;
     case 4:
-    LOC_000001bc:
-        jumpiffalse(settings.damagestate_lv4_ratio >= afterdamageratio) LOC_000001fc;
-        afterdamagelevel = 4;
-        currentlevel = 4;
-        if (settings.damagestate_lv4_ratio < currentratio) {
-            currentlevel = 3;
+        if (settings.damagestate_lv4_ratio >= afterdamageratio) {
+            afterdamagelevel = 4;
+            currentlevel = 4;
+            if (settings.damagestate_lv4_ratio < currentratio) {
+                currentlevel = 3;
+            }
+            break;
         }
-        break;
     case 3:
-    LOC_000001fc:
-        jumpiffalse(settings.damagestate_lv3_ratio >= afterdamageratio) LOC_0000023c;
-        afterdamagelevel = 3;
-        currentlevel = 3;
-        if (settings.damagestate_lv3_ratio < currentratio) {
-            currentlevel = 2;
+        if (settings.damagestate_lv3_ratio >= afterdamageratio) {
+            afterdamagelevel = 3;
+            currentlevel = 3;
+            if (settings.damagestate_lv3_ratio < currentratio) {
+                currentlevel = 2;
+            }
+            break;
         }
-        break;
     case 2:
-    LOC_0000023c:
-        jumpiffalse(settings.damagestate_lv2_ratio >= afterdamageratio) LOC_0000027c;
-        afterdamagelevel = 2;
-        currentlevel = 2;
-        if (settings.damagestate_lv2_ratio < currentratio) {
-            currentlevel = 1;
+        if (settings.damagestate_lv2_ratio >= afterdamageratio) {
+            afterdamagelevel = 2;
+            currentlevel = 2;
+            if (settings.damagestate_lv2_ratio < currentratio) {
+                currentlevel = 1;
+            }
+            break;
         }
-        break;
     case 1:
-    LOC_0000027c:
-        jumpiffalse(settings.damagestate_lv1_ratio >= afterdamageratio) LOC_000002ba;
-        afterdamagelevel = 1;
-        currentlevel = 1;
-        if (settings.damagestate_lv1_ratio < currentratio) {
-            currentlevel = 0;
+        if (settings.damagestate_lv1_ratio >= afterdamageratio) {
+            afterdamagelevel = 1;
+            currentlevel = 1;
+            if (settings.damagestate_lv1_ratio < currentratio) {
+                currentlevel = 0;
+            }
+            break;
         }
-        break;
     default:
-    LOC_000002ba:
         break;
     }
     if (!isdefined(currentlevel) || !isdefined(afterdamagelevel)) {
@@ -2413,9 +2411,9 @@ function function_ea56e00e(vehicle) {
     target = get_target(vehicle);
     if (!isdefined(target)) {
         vehicle setgoal(vehicle.origin, 0, vehicle.goalradius, vehicle.goalheight);
-    } else {
-        vehicle setgoal(target.origin, 1);
+        return;
     }
+    vehicle setgoal(target.origin, 1);
 }
 
 // Namespace vehicle/vehicle_shared
@@ -2505,30 +2503,29 @@ function attack_group_think() {
         }
         if (valid_targets.size == 0) {
             wait(0.5);
-        } else {
-            for (;;) {
-                current_target = undefined;
-                if (valid_targets.size != 0) {
-                    current_target = self get_nearest_target(valid_targets);
-                } else {
-                    self notify(#"killed all targets");
-                }
-                if (current_target.health <= 0) {
-                    arrayremovevalue(valid_targets, current_target);
-                    continue;
-                } else {
-                    self turretsettarget(0, current_target, vectorscale((0, 0, 1), 50));
-                    if (isdefined(self.fire_delay_min) && isdefined(self.fire_delay_max)) {
-                        if (self.fire_delay_max < self.fire_delay_min) {
-                            self.fire_delay_max = self.fire_delay_min;
-                        }
-                        wait(randomintrange(self.fire_delay_min, self.fire_delay_max));
-                    } else {
-                        wait(randomintrange(4, 6));
-                    }
-                    self fireweapon();
-                }
+            continue;
+        }
+        for (;;) {
+            current_target = undefined;
+            if (valid_targets.size != 0) {
+                current_target = self get_nearest_target(valid_targets);
+            } else {
+                self notify(#"killed all targets");
             }
+            if (current_target.health <= 0) {
+                arrayremovevalue(valid_targets, current_target);
+                continue;
+            }
+            self turretsettarget(0, current_target, vectorscale((0, 0, 1), 50));
+            if (isdefined(self.fire_delay_min) && isdefined(self.fire_delay_max)) {
+                if (self.fire_delay_max < self.fire_delay_min) {
+                    self.fire_delay_max = self.fire_delay_min;
+                }
+                wait(randomintrange(self.fire_delay_min, self.fire_delay_max));
+            } else {
+                wait(randomintrange(4, 6));
+            }
+            self fireweapon();
         }
     }
 }
@@ -2579,8 +2576,7 @@ function debug_vehicle() {
 function debug_vehicle_paths() {
     /#
         self endon(#"death", #"newpath", #"endpath", #"reached_dynamic_path_end");
-        nextnode = self.currentnode;
-        while (1) {
+        for (nextnode = self.currentnode; 1; nextnode = self.nextnode) {
             if (getdvarint(#"debug_vehicle_paths", 0) > 0) {
                 recordline(self.origin, self.currentnode.origin, (1, 0, 0), "<unknown string>", self);
                 recordline(self.origin, nextnode.origin, (0, 1, 0), "<unknown string>", self);
@@ -2588,7 +2584,6 @@ function debug_vehicle_paths() {
             }
             waitframe(1);
             if (isdefined(self.nextnode) && self.nextnode != nextnode) {
-                nextnode = self.nextnode;
             }
         }
     #/
@@ -2645,9 +2640,9 @@ function vehicle_get_occupant_team() {
 function toggle_exhaust_fx(on) {
     if (!on) {
         self clientfield::set("toggle_exhaustfx", 1);
-    } else {
-        self clientfield::set("toggle_exhaustfx", 0);
+        return;
     }
+    self clientfield::set("toggle_exhaustfx", 0);
 }
 
 // Namespace vehicle/vehicle_shared
@@ -2657,9 +2652,9 @@ function toggle_exhaust_fx(on) {
 function toggle_tread_fx(on) {
     if (on) {
         self clientfield::set("toggle_treadfx", 1);
-    } else {
-        self clientfield::set("toggle_treadfx", 0);
+        return;
     }
+    self clientfield::set("toggle_treadfx", 0);
 }
 
 // Namespace vehicle/vehicle_shared
@@ -2669,9 +2664,9 @@ function toggle_tread_fx(on) {
 function toggle_sounds(on) {
     if (!on) {
         self clientfield::set("toggle_sounds", 1);
-    } else {
-        self clientfield::set("toggle_sounds", 0);
+        return;
     }
+    self clientfield::set("toggle_sounds", 0);
 }
 
 // Namespace vehicle/vehicle_shared
@@ -2703,9 +2698,9 @@ function event_handler[event_9430cf9f] function_c8effed1(eventstruct) {
                 } else {
                     eventstruct.vehicle function_bbc1d940(1);
                 }
-            } else {
-                eventstruct.vehicle function_bbc1d940(1);
+                return;
             }
+            eventstruct.vehicle function_bbc1d940(1);
         }
     }
 }
@@ -2962,25 +2957,24 @@ function function_ea0f8324() {
                     print3d(node.origin, "<unknown string>", (1, 1, 1), 1, 0.5, 200, 1);
                 }
             #/
-        } else {
-            dropnodetofloor(node, 32);
-            if (!isnodeenabled(node)) {
-                /#
-                    if (getdvarint(#"hash_1acfe6b9af5f939b", 0)) {
-                        print3d(node.origin, "<unknown string>", (1, 1, 1), 1, 0.5, 200, 1);
-                    }
-                #/
-            } else {
-                function_76a8df57(node);
-                if (!isnodeenabled(node)) {
-                    /#
-                        if (getdvarint(#"hash_1acfe6b9af5f939b", 0)) {
-                            print3d(node.origin, "<unknown string>", (1, 1, 1), 1, 0.5, 200, 1);
-                        }
-                    #/
-                    continue;
+            continue;
+        }
+        dropnodetofloor(node, 32);
+        if (!isnodeenabled(node)) {
+            /#
+                if (getdvarint(#"hash_1acfe6b9af5f939b", 0)) {
+                    print3d(node.origin, "<unknown string>", (1, 1, 1), 1, 0.5, 200, 1);
                 }
-            }
+            #/
+            continue;
+        }
+        function_76a8df57(node);
+        if (!isnodeenabled(node)) {
+            /#
+                if (getdvarint(#"hash_1acfe6b9af5f939b", 0)) {
+                    print3d(node.origin, "<unknown string>", (1, 1, 1), 1, 0.5, 200, 1);
+                }
+            #/
         }
     }
 }
@@ -3016,9 +3010,9 @@ function function_7f62bf84() {
 function function_776053b8(allow) {
     if (allow) {
         self.var_affda994 = 0;
-    } else {
-        self.var_affda994 = 1;
+        return;
     }
+    self.var_affda994 = 1;
 }
 
 // Namespace vehicle/vehicle_shared
@@ -3028,9 +3022,9 @@ function function_776053b8(allow) {
 function function_5f30fcdb(node, allow) {
     if (allow) {
         node.var_6964df75 = undefined;
-    } else {
-        node.var_6964df75 = 1;
+        return;
     }
+    node.var_6964df75 = 1;
 }
 
 // Namespace vehicle/vehicle_shared
@@ -3040,9 +3034,9 @@ function function_5f30fcdb(node, allow) {
 function function_f597b732(enable) {
     if (enable) {
         self.var_e57269bc = 1;
-    } else {
-        self.var_e57269bc = 0;
+        return;
     }
+    self.var_e57269bc = 0;
 }
 
 // Namespace vehicle/vehicle_shared
@@ -3300,10 +3294,10 @@ function enable_laser(b_enable, *n_index) {
     if (n_index) {
         self laseron();
         self thread laser_death_watcher();
-    } else {
-        self laseroff();
-        self notify(#"laser_death_thread_stop");
+        return;
     }
+    self laseroff();
+    self notify(#"laser_death_thread_stop");
 }
 
 // Namespace vehicle/vehicle_shared
@@ -3340,7 +3334,6 @@ function private function_3624d1c8() {
                         foreach (asset in var_31caf8f0) {
                             if (asset.name == hash(var_d4862d39)) {
                                 foundvehicle = 1;
-                                continue;
                             }
                         }
                         if (is_true(foundvehicle)) {
@@ -3366,10 +3359,10 @@ function private function_ef1192d(params) {
         if (is_true(params.value)) {
             player = level.players[0];
             player thread function_3624d1c8();
-        } else {
-            player = level.players[0];
-            player notify(#"hash_71971051d63a4545");
+            return;
         }
+        player = level.players[0];
+        player notify(#"hash_71971051d63a4545");
     #/
 }
 
@@ -3402,7 +3395,9 @@ function function_1f05ebe8(vehicleassets) {
                         var_58388e8c.variant = 1;
                     }
                 }
-            } else if (asset.var_5a25c2fb != #"") {
+                continue;
+            }
+            if (asset.var_5a25c2fb != #"") {
                 foreach (var_3913f550 in vehicleassets) {
                     if (var_3913f550.name == asset.var_5a25c2fb) {
                         var_3913f550.variant = 1;
@@ -3446,18 +3441,18 @@ function devgui_vehicle_spawn_think() {
             case 1:
             case 2:
                 arrayinsert(var_b668ad34, vehicle.name, 0);
-                break;
+                continue;
             case 3:
             case 6:
                 arrayinsert(var_1883f5da, vehicle.name, 0);
-                break;
+                continue;
             case 4:
                 arrayinsert(var_1cdd56e5, vehicle.name, 0);
-                break;
+                continue;
             case 5:
             default:
                 arrayinsert(var_b668ad34, vehicle.name, 0);
-                break;
+                continue;
             }
         }
         var_d3634e5d = "<unknown string>";
@@ -3528,9 +3523,9 @@ function private function_d53cf714(params) {
                 level.var_5e062769.dynamic_spawn_hud.fontscale = 1;
                 level.var_5e062769.dynamic_spawn_dummy_model = spawn("<unknown string>", (0, 0, 0));
                 level.var_5e062769 thread function_8b412f99(params.value);
-            } else {
-                level.var_5e062769 notify(#"hash_4e305005b552fa4e");
+                return;
             }
+            level.var_5e062769 notify(#"hash_4e305005b552fa4e");
         }
     #/
 }
@@ -3673,12 +3668,10 @@ function private function_bbd487c2() {
     self endon(#"death", #"enter_vehicle");
     e_player endon(#"disconnect");
     level endon(#"game_ended");
-    b_do_delete = 0;
-    while (!b_do_delete) {
+    for (b_do_delete = 0; !b_do_delete; b_do_delete = 1) {
         wait(5);
         dist = distance2d(self.origin, e_player.origin);
         if (isalive(e_player) && dist > 3000) {
-            b_do_delete = 1;
         }
     }
     self thread util::auto_delete();
@@ -3912,9 +3905,8 @@ function function_700512f1(vehicle) {
     rightvecdot = vectordot(anglestoright(angles), vectornormalize(self.origin - var_2dd1b16a));
     if (rightvecdot > 0) {
         return "right";
-    } else {
-        return "left";
     }
+    return "left";
 }
 
 // Namespace vehicle/vehicle_shared
@@ -4002,18 +3994,18 @@ function event_handler[enter_vehicle] codecallback_vehicleenter(eventstruct) {
             if (isdefined(vehicleanim)) {
                 if (var_de5ed888 == "straight") {
                     eventstruct.vehicle setanimknobrestart(vehicleanim, 1, 0, isdefined(eventstruct.vehicle.var_7d3d0f72) ? eventstruct.vehicle.var_7d3d0f72 : 1);
-                } else {
-                    angles = (eventstruct.vehicle.angles[0], eventstruct.vehicle.angles[1], 0);
-                    startorigin = eventstruct.vehicle.origin + (0, 0, 10);
-                    endorigin = eventstruct.vehicle.origin - (0, 0, 60);
-                    trace = groundtrace(startorigin, endorigin, 0, eventstruct.vehicle);
-                    if (trace[#"fraction"] == 1) {
-                        var_4e1ed731 = eventstruct.vehicle.origin;
-                    } else {
-                        var_4e1ed731 = trace[#"position"];
-                    }
-                    eventstruct.vehicle animscripted("vehicle_enter_anim_vehicle", var_4e1ed731, angles, vehicleanim, "normal", undefined, isdefined(eventstruct.vehicle.var_7d3d0f72) ? eventstruct.vehicle.var_7d3d0f72 : 1, undefined, undefined, undefined, 1);
+                    return;
                 }
+                angles = (eventstruct.vehicle.angles[0], eventstruct.vehicle.angles[1], 0);
+                startorigin = eventstruct.vehicle.origin + (0, 0, 10);
+                endorigin = eventstruct.vehicle.origin - (0, 0, 60);
+                trace = groundtrace(startorigin, endorigin, 0, eventstruct.vehicle);
+                if (trace[#"fraction"] == 1) {
+                    var_4e1ed731 = eventstruct.vehicle.origin;
+                } else {
+                    var_4e1ed731 = trace[#"position"];
+                }
+                eventstruct.vehicle animscripted("vehicle_enter_anim_vehicle", var_4e1ed731, angles, vehicleanim, "normal", undefined, isdefined(eventstruct.vehicle.var_7d3d0f72) ? eventstruct.vehicle.var_7d3d0f72 : 1, undefined, undefined, undefined, 1);
             }
         }
     }
@@ -4413,9 +4405,9 @@ function function_78cfd053() {
     for (n = 0; n < var_c96543ab; n++) {
         if (n == 0) {
             var_8ac0fa8[n] = var_c56865cf;
-        } else {
-            var_8ac0fa8[n] = var_c56865cf - var_70fdf0cb * n;
+            continue;
         }
+        var_8ac0fa8[n] = var_c56865cf - var_70fdf0cb * n;
     }
     var_8ac0fa8[var_8ac0fa8.size] = 0;
     while (1) {

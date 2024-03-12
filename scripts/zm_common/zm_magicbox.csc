@@ -54,10 +54,10 @@ function stream_magicbox_guns(*localclientnum, *oldval, newval, *bnewent, *binit
         foreach (modelname in level.var_1d1c6c28) {
             forcestreamxmodel(modelname, 8, 1);
         }
-    } else {
-        foreach (modelname in level.var_1d1c6c28) {
-            stopforcestreamingxmodel(modelname);
-        }
+        return;
+    }
+    foreach (modelname in level.var_1d1c6c28) {
+        stopforcestreamingxmodel(modelname);
     }
 }
 
@@ -69,9 +69,9 @@ function force_stream_magicbox(*localclientnum, *oldval, newval, *bnewent, *bini
     var_d80c44f = self zbarriergetpiece(2);
     if (bwastimejump) {
         forcestreamxmodel(var_d80c44f.model);
-    } else {
-        stopforcestreamingxmodel(var_d80c44f.model);
+        return;
     }
+    stopforcestreamingxmodel(var_d80c44f.model);
 }
 
 // Namespace zm_magicbox/zm_magicbox
@@ -82,9 +82,9 @@ function force_stream_magicbox_leave(*localclientnum, *oldval, newval, *bnewent,
     var_e6289732 = self zbarriergetpiece(1);
     if (bwastimejump) {
         forcestreamxmodel(var_e6289732.model);
-    } else {
-        stopforcestreamingxmodel(var_e6289732.model);
+        return;
     }
+    stopforcestreamingxmodel(var_e6289732.model);
 }
 
 // Namespace zm_magicbox/zm_magicbox
@@ -201,7 +201,9 @@ function function_b4b9937(localclientnum, newval, str_state) {
                     self function_be97e893(localclientnum);
                 }
             }
-        } else if (isdefined(self) && str_state == "leave") {
+            return;
+        }
+        if (isdefined(self) && str_state == "leave") {
             audio::stoploopat(#"hash_1b59c1bfb1aa5d37", self.origin);
             var_e5fdeba3 = [2:self zbarriergetpiece(2), 1:self zbarriergetpiece(1), 0:self zbarriergetpiece(0)];
             foreach (piece in var_e5fdeba3) {
@@ -247,7 +249,9 @@ function function_b5807489(localclientnum, *oldval, newval, *bnewent, *binitials
             mdl_piece = self zbarriergetpiece(1);
             mdl_piece.tag_origin = mdl_piece gettagorigin("tag_origin");
             self.var_788272f2 = util::playfxontag(fieldname, level._effect[#"fire_runner"], mdl_piece, "tag_origin");
-        } else if (isdefined(self.var_788272f2)) {
+            return;
+        }
+        if (isdefined(self.var_788272f2)) {
             stopfx(fieldname, self.var_788272f2);
         }
     }
@@ -262,30 +266,30 @@ function function_abe84c14(localclientnum, *oldval, newval, *bnewent, *binitials
     switch (bwastimejump) {
     case 1:
         self.var_5ad9ac45 = util::playfxontag(fieldname, level._effect[#"hash_6778cbcf34bfebef"], mdl_piece, "tag_origin");
-        break;
+        return;
     case 2:
         self.var_5ad9ac45 = util::playfxontag(fieldname, level._effect[#"hash_5f2da0ff081c1699"], mdl_piece, "tag_origin");
-        break;
+        return;
     case 3:
         self.var_5ad9ac45 = util::playfxontag(fieldname, level._effect[#"hash_63697be07cc11490"], mdl_piece, "tag_origin");
         playsound(fieldname, #"hash_604498b9077301d9", self.origin);
-        break;
+        return;
     case 4:
         self.var_5ad9ac45 = util::playfxontag(fieldname, level._effect[#"hash_360e9275d6096589"], mdl_piece, "tag_origin");
         playsound(fieldname, #"hash_6c870d0f85573f60", self.origin);
-        break;
+        return;
     case 5:
         self.var_5ad9ac45 = util::playfxontag(fieldname, level._effect[#"hash_66be32f919d8b4a4"], mdl_piece, "tag_origin");
         playsound(fieldname, #"hash_65ae6ba40cb558cd", self.origin);
-        break;
+        return;
     case 6:
         self.var_5ad9ac45 = util::playfxontag(fieldname, level._effect[#"hash_638a4ec653717ef6"], mdl_piece, "tag_origin");
         playsound(fieldname, #"hash_66f3cff29be77acd", self.origin);
-        break;
+        return;
     case 7:
         self.var_5ad9ac45 = util::playfxontag(fieldname, level._effect[#"hash_1fa861cbe30adda9"], mdl_piece, "tag_origin");
         playsound(fieldname, #"hash_30dce35bee22371a", self.origin);
-        break;
+        return;
     case 0:
     default:
         if (isdefined(self.var_5ad9ac45)) {

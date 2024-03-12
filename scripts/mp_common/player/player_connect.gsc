@@ -289,16 +289,16 @@ function function_b7c4c231() {
     if (isdefined(spawn)) {
         var_50747a19 = spawn.origin + vectorscale((0, 0, 1), 60);
         self [[ var_f18c60b3 ]](var_50747a19, spawn.angles);
-    } else {
-        spawnpoint = spawning::get_random_intermission_point();
-        if (isdefined(spawnpoint)) {
-            self [[ var_f18c60b3 ]](spawnpoint.origin, spawnpoint.angles);
-        } else {
-            /#
-                error("<unknown string>");
-            #/
-        }
+        return;
     }
+    spawnpoint = spawning::get_random_intermission_point();
+    if (isdefined(spawnpoint)) {
+        self [[ var_f18c60b3 ]](spawnpoint.origin, spawnpoint.angles);
+        return;
+    }
+    /#
+        error("<unknown string>");
+    #/
 }
 
 // Namespace player/player_connect
@@ -331,9 +331,9 @@ function private force_radar() {
     }
     if (level.forceradar == 2) {
         self setclientuivisibilityflag("g_compassShowEnemies", level.forceradar);
-    } else {
-        self setclientuivisibilityflag("g_compassShowEnemies", 0);
+        return;
     }
+    self setclientuivisibilityflag("g_compassShowEnemies", 0);
 }
 
 // Namespace player/player_connect
@@ -497,8 +497,11 @@ function private init_character_index() {
                 }
                 if (isdefined(teamfaction) && isdefined(teamfaction.var_306f8f14)) {
                     var_2b9b7c0f = getcharacterfields(i, currentsessionmode());
-                    jumpiffalse(!isdefined(var_2b9b7c0f.var_306f8f14) || var_2b9b7c0f.var_306f8f14 != teamfaction.var_306f8f14) LOC_00000380;
-                } else if (isbot(self)) {
+                    if (!isdefined(var_2b9b7c0f.var_306f8f14) || var_2b9b7c0f.var_306f8f14 != teamfaction.var_306f8f14) {
+                        continue;
+                    }
+                }
+                if (isbot(self)) {
                     /#
                         if (sessionmodeiswarzonegame()) {
                             if (!isdefined(var_53b30724)) {
@@ -518,7 +521,9 @@ function private init_character_index() {
                         }
                         var_53b30724[var_53b30724.size] = i;
                     }
-                } else if (is_true(rf.isdefaultcharacter)) {
+                    continue;
+                }
+                if (is_true(rf.isdefaultcharacter)) {
                     if (!isdefined(var_53b30724)) {
                         var_53b30724 = [];
                     } else if (!isarray(var_53b30724)) {

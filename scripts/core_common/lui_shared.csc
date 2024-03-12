@@ -124,11 +124,11 @@ class cluielem {
                             function_bcc2134a(local_client_num, hash(self.var_d5213cbb), self.var_bf9c8c95, kvp.field, kvp.value);
                         }
                     }
-                } else {
-                    foreach (local_client_num in data) {
-                        foreach (kvp in data[local_client_num]) {
-                            function_bcc2134a(local_client_num, hash(self.var_d5213cbb), self.var_bf9c8c95, kvp.field, kvp.value);
-                        }
+                    return;
+                }
+                foreach (local_client_num in data) {
+                    foreach (kvp in data[local_client_num]) {
+                        function_bcc2134a(local_client_num, hash(self.var_d5213cbb), self.var_bf9c8c95, kvp.field, kvp.value);
                     }
                 }
             }

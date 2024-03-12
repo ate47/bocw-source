@@ -46,10 +46,10 @@ function function_487b4340(var_e1ab1198, var_5130c92a = 1, var_907c1dab) {
         }
         namespace_61e6d095::set_count(#"hash_15363747d8cbf71f", -1, 1);
         namespace_61e6d095::set_state(#"hash_15363747d8cbf71f", var_907c1dab);
-    } else {
-        level.var_deff0f73 = var_deff0f73.var_df2d0a90;
-        namespace_61e6d095::function_330981ed(#"hash_15363747d8cbf71f");
+        return;
     }
+    level.var_deff0f73 = var_deff0f73.var_df2d0a90;
+    namespace_61e6d095::function_330981ed(#"hash_15363747d8cbf71f");
 }
 
 // Namespace namespace_6f1d35e1/namespace_6f1d35e1

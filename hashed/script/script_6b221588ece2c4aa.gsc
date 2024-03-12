@@ -31,11 +31,11 @@ function createspecialcrossbowwatchertypes(watcher) {
         watcher.onspawn = &onspawncrossbowboltimpact;
         watcher.onspawnretrievetriggers = &util::void;
         watcher.pickup = &util::void;
-    } else {
-        watcher.onspawn = &onspawncrossbowbolt;
-        watcher.onspawnretrievetriggers = &function_23b0aea9;
-        watcher.pickup = &function_d9219ce2;
+        return;
     }
+    watcher.onspawn = &onspawncrossbowbolt;
+    watcher.onspawnretrievetriggers = &function_23b0aea9;
+    watcher.pickup = &function_d9219ce2;
 }
 
 // Namespace weaponobjects/namespace_4c668920
@@ -121,14 +121,12 @@ function watchspikelauncheritemcountchanged(watcher) {
     while (1) {
         waitresult = undefined;
         waitresult = self waittill(#"weapon_change");
-        weapon = waitresult.weapon;
-        while (weapon.name == #"spike_launcher") {
+        for (weapon = waitresult.weapon; weapon.name == #"spike_launcher"; weapon = self getcurrentweapon()) {
             currentitemcount = getspikelauncheractivespikecount(watcher);
             if (currentitemcount !== lastitemcount) {
                 lastitemcount = currentitemcount;
             }
             wait(0.1);
-            weapon = self getcurrentweapon();
         }
     }
 }
@@ -354,11 +352,11 @@ function onspawncrossbowbolt_internal(*watcher, player) {
     linkedent = self getlinkedent();
     if (!isdefined(linkedent) || !isvehicle(linkedent)) {
         self.takedamage = 0;
-    } else {
-        self.takedamage = 1;
-        if (isvehicle(linkedent)) {
-            self thread dieonentitydeath(linkedent, player);
-        }
+        return;
+    }
+    self.takedamage = 1;
+    if (isvehicle(linkedent)) {
+        self thread dieonentitydeath(linkedent, player);
     }
 }
 

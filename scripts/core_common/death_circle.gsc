@@ -508,9 +508,9 @@ function function_55bf22ef() {
 function function_b57e3cde(enabled) {
     if (enabled) {
         self flag::set(#"hash_3bd867e0639cb28e");
-    } else {
-        self flag::clear(#"hash_3bd867e0639cb28e");
+        return;
     }
+    self flag::clear(#"hash_3bd867e0639cb28e");
 }
 
 // Namespace death_circle/death_circle
@@ -708,10 +708,10 @@ function function_55ffaf7(circle, radius) {
         circle show();
         circle.radius = radius;
         circle setscale(radius / 15000);
-    } else {
-        circle hide();
-        circle.radius = 0;
+        return;
     }
+    circle hide();
+    circle.radius = 0;
 }
 
 // Namespace death_circle/death_circle
@@ -836,13 +836,13 @@ function function_2b2fc512(waitsec, var_b96c8a8f) {
             n_time++;
             level flag::wait_till_clear(#"hash_18141f1491e42a85");
         }
-    } else {
-        n_time = 0;
-        while (n_time < waitsec) {
-            wait(1);
-            n_time++;
-            level flag::wait_till_clear(#"hash_18141f1491e42a85");
-        }
+        return;
+    }
+    n_time = 0;
+    while (n_time < waitsec) {
+        wait(1);
+        n_time++;
+        level flag::wait_till_clear(#"hash_18141f1491e42a85");
     }
 }
 
@@ -956,58 +956,58 @@ function function_dc15ad60(deathcircle) {
                 player clientfield::set("outsidedeathcircle", 0);
                 player hide_effects();
                 player function_ce0f27e0();
-            } else {
-                distsq = distance2dsquared(player.origin, origin);
-                if (distsq >= radiussq && !player function_dca12a73()) {
-                    level.deathcircle.players[level.deathcircle.players.size] = player;
-                    if (!isdefined(player.var_b8328141)) {
-                        player.var_b8328141 = time + deathcircle.var_55ad5e4;
-                    }
-                    damage = deathcircle.damage;
-                    if (!isdefined(player.var_6cd69660)) {
-                        player.var_6cd69660 = 0;
-                    }
-                    if (player.var_6cd69660 == 0 && time + deathcircle.var_55ad5e4 < player.var_b8328141) {
-                        player.var_b8328141 = time + deathcircle.var_55ad5e4;
-                    } else if (player.var_6cd69660 != 0 && time + deathcircle.var_c3bf31b < player.var_b8328141) {
-                        player.var_b8328141 = time + deathcircle.var_c3bf31b;
-                    }
-                    if (time >= player.var_b8328141) {
-                        player.var_6cd69660 = player.var_6cd69660 + deathcircle.var_18fa918d;
-                        player.var_b8328141 = time + deathcircle.var_c3bf31b;
-                    }
-                    player.deathcircledamage = damage + player.var_6cd69660;
-                    if (isdefined(level.deathcircle.var_5c54ab33.intensity)) {
-                        intensity = level.deathcircle.var_5c54ab33.intensity;
-                    } else if (isdefined(level.var_ab9cd581) && player.deathcircledamage >= level.var_ab9cd581) {
-                        intensity = 3;
-                    } else if (isdefined(level.var_6c870a00) && player.deathcircledamage >= level.var_6c870a00) {
-                        intensity = 2;
-                    } else {
-                        intensity = 1;
-                    }
-                    player function_60d14da8(1);
-                    player clientfield::set("outsidedeathcircle", 1);
-                    player show_effects(intensity);
-                    player function_8bd303cc();
-                    if (dodamage) {
-                        damage = player.deathcircledamage;
-                        if (player hasperk(#"specialty_outlander")) {
-                            damage = int(ceil(damage * 0.5));
-                        }
-                        player dodamage(damage, origin, deathcircle, undefined, undefined, "MOD_DEATH_CIRCLE");
-                        player stats::function_d40764f3(#"hash_3498c2a577aa328e", int(damage));
-                        player match_record::function_34800eec(#"hash_3498c2a577aa328e", int(damage));
-                    }
-                } else {
-                    player function_60d14da8(0);
-                    player clientfield::set("outsidedeathcircle", 0);
-                    player hide_effects();
-                    player function_ce0f27e0();
-                    player.var_6cd69660 = 0;
+                continue;
+            }
+            distsq = distance2dsquared(player.origin, origin);
+            if (distsq >= radiussq && !player function_dca12a73()) {
+                level.deathcircle.players[level.deathcircle.players.size] = player;
+                if (!isdefined(player.var_b8328141)) {
                     player.var_b8328141 = time + deathcircle.var_55ad5e4;
                 }
+                damage = deathcircle.damage;
+                if (!isdefined(player.var_6cd69660)) {
+                    player.var_6cd69660 = 0;
+                }
+                if (player.var_6cd69660 == 0 && time + deathcircle.var_55ad5e4 < player.var_b8328141) {
+                    player.var_b8328141 = time + deathcircle.var_55ad5e4;
+                } else if (player.var_6cd69660 != 0 && time + deathcircle.var_c3bf31b < player.var_b8328141) {
+                    player.var_b8328141 = time + deathcircle.var_c3bf31b;
+                }
+                if (time >= player.var_b8328141) {
+                    player.var_6cd69660 = player.var_6cd69660 + deathcircle.var_18fa918d;
+                    player.var_b8328141 = time + deathcircle.var_c3bf31b;
+                }
+                player.deathcircledamage = damage + player.var_6cd69660;
+                if (isdefined(level.deathcircle.var_5c54ab33.intensity)) {
+                    intensity = level.deathcircle.var_5c54ab33.intensity;
+                } else if (isdefined(level.var_ab9cd581) && player.deathcircledamage >= level.var_ab9cd581) {
+                    intensity = 3;
+                } else if (isdefined(level.var_6c870a00) && player.deathcircledamage >= level.var_6c870a00) {
+                    intensity = 2;
+                } else {
+                    intensity = 1;
+                }
+                player function_60d14da8(1);
+                player clientfield::set("outsidedeathcircle", 1);
+                player show_effects(intensity);
+                player function_8bd303cc();
+                if (dodamage) {
+                    damage = player.deathcircledamage;
+                    if (player hasperk(#"specialty_outlander")) {
+                        damage = int(ceil(damage * 0.5));
+                    }
+                    player dodamage(damage, origin, deathcircle, undefined, undefined, "MOD_DEATH_CIRCLE");
+                    player stats::function_d40764f3(#"hash_3498c2a577aa328e", int(damage));
+                    player match_record::function_34800eec(#"hash_3498c2a577aa328e", int(damage));
+                }
+                continue;
             }
+            player function_60d14da8(0);
+            player clientfield::set("outsidedeathcircle", 0);
+            player hide_effects();
+            player function_ce0f27e0();
+            player.var_6cd69660 = 0;
+            player.var_b8328141 = time + deathcircle.var_55ad5e4;
         }
         if (dodamage) {
             var_f4d9a132 = gettime() + int(deathcircle.damageinterval * 1000);
@@ -1144,7 +1144,7 @@ function function_27d5d349() {
             match_record::set_stat(#"death_circle", i, #"wait_sec", circle.waitsec);
             match_record::set_stat(#"death_circle", i, #"scale_sec", circle.scalesec);
             match_record::set_stat(#"death_circle", i, #"final", 1);
-            break;
+            return;
         }
     }
 }
@@ -1287,14 +1287,14 @@ function private debug_loop() {
                 continue;
             }
             if (getdvarint(#"deathcircle_debug", 0)) {
-                var_9f6ad7bb = getdvarint(#"hash_31a5138991bbbf63", -1);
+                debugindex = getdvarint(#"hash_31a5138991bbbf63", -1);
                 var_a15ea324 = getdvarint(#"hash_118a6d37e5aa4589", 0);
                 maxindex = level.deathcircles.size - 1;
-                if (var_9f6ad7bb >= 0) {
-                    circle = level.deathcircles[var_9f6ad7bb];
+                if (debugindex >= 0) {
+                    circle = level.deathcircles[debugindex];
                     if (isdefined(circle)) {
-                        color = circle_color(var_9f6ad7bb, maxindex);
-                        draw_circle(circle, var_9f6ad7bb, color, var_a15ea324);
+                        color = circle_color(debugindex, maxindex);
+                        draw_circle(circle, debugindex, color, var_a15ea324);
                     }
                 } else {
                     index = 0;
@@ -1441,10 +1441,10 @@ function private devgui_shuffle(count) {
                 shuffle_circles();
                 waitframe(1);
             }
-        } else {
-            shuffle_circles();
-            level.var_47947565[0] = level.deathcircles[level.deathcircles.size - 1].tracepos;
+            return;
         }
+        shuffle_circles();
+        level.var_47947565[0] = level.deathcircles[level.deathcircles.size - 1].tracepos;
     #/
 }
 

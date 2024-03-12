@@ -66,7 +66,7 @@ function private function_b61c27bb(einflictor, eattacker, idamage, *idflags, sme
                     }
                 }
                 occupant addtodamageindicator(damagepct, var_17308f26);
-                break;
+                return;
             }
         }
     }
@@ -145,9 +145,9 @@ function function_b8458486(params) {
     if (eventstruct.seat_index === 0) {
         self function_11397df9(player);
         self thread function_2014e301(player);
-    } else {
-        self function_eba4498a(player);
+        return;
     }
+    self function_eba4498a(player);
 }
 
 // Namespace player_tank/player_tank

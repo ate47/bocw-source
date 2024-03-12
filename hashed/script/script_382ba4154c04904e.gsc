@@ -29,14 +29,14 @@ function function_7d467651(localclientnum, *oldval, newval, *bnewent, *binitials
         function_833e4b72(fieldname, getent(fieldname, "portal_fx_bunker_to_anytown_usa", "targetname"));
         function_833e4b72(fieldname, getent(fieldname, "portal_fx_observation_to_bunker", "targetname"));
         function_833e4b72(fieldname, getent(fieldname, "portal_fx_helipads_to_observation", "targetname"));
-    } else {
-        function_60381056(fieldname, getent(fieldname, "portal_fx_main_street_to_helipads", "targetname"));
-        function_60381056(fieldname, getent(fieldname, "portal_fx_main_street_to_anytown_usa", "targetname"));
-        function_60381056(fieldname, getent(fieldname, "portal_fx_anytown_usa_to_main_street", "targetname"));
-        function_60381056(fieldname, getent(fieldname, "portal_fx_bunker_to_anytown_usa", "targetname"));
-        function_60381056(fieldname, getent(fieldname, "portal_fx_observation_to_bunker", "targetname"));
-        function_60381056(fieldname, getent(fieldname, "portal_fx_helipads_to_observation", "targetname"));
+        return;
     }
+    function_60381056(fieldname, getent(fieldname, "portal_fx_main_street_to_helipads", "targetname"));
+    function_60381056(fieldname, getent(fieldname, "portal_fx_main_street_to_anytown_usa", "targetname"));
+    function_60381056(fieldname, getent(fieldname, "portal_fx_anytown_usa_to_main_street", "targetname"));
+    function_60381056(fieldname, getent(fieldname, "portal_fx_bunker_to_anytown_usa", "targetname"));
+    function_60381056(fieldname, getent(fieldname, "portal_fx_observation_to_bunker", "targetname"));
+    function_60381056(fieldname, getent(fieldname, "portal_fx_helipads_to_observation", "targetname"));
 }
 
 // Namespace namespace_ff7e490/namespace_ff7e490

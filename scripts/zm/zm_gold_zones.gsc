@@ -476,100 +476,100 @@ function function_27028b8e(str_zone) {
     case #"zone_village3":
     case #"zone_village2":
     case #"zone_village":
-        var_601fee0 = #"hash_1a784c62f3f40a7c";
+        str_display = #"hash_1a784c62f3f40a7c";
         break;
     case #"zone_village_house":
-        var_601fee0 = #"hash_712a00f5a89f306c";
+        str_display = #"hash_712a00f5a89f306c";
         break;
     case #"zone_portal_transfer":
-        var_601fee0 = #"hash_435a0098fb8df5e4";
+        str_display = #"hash_435a0098fb8df5e4";
         break;
     case #"zone_atrium":
-        var_601fee0 = #"hash_7f333ea55aeef7fe";
+        str_display = #"hash_7f333ea55aeef7fe";
         break;
     case #"zone_scientist":
-        var_601fee0 = #"hash_6e2fe33d2742e702";
+        str_display = #"hash_6e2fe33d2742e702";
         break;
     case #"zone_peck_quarters":
-        var_601fee0 = #"hash_475dca43d660d1cb";
+        str_display = #"hash_475dca43d660d1cb";
         break;
     case #"zone_firebase":
     case #"zone_firebase3":
     case #"zone_firebase2":
-        var_601fee0 = #"hash_5c666bba11ef5ae5";
+        str_display = #"hash_5c666bba11ef5ae5";
         break;
     case #"zone_lot":
-        var_601fee0 = #"hash_4e1d8a30f4ea2f2b";
+        str_display = #"hash_4e1d8a30f4ea2f2b";
         break;
     case #"zone_armory2":
     case #"zone_armory":
-        var_601fee0 = #"hash_3cc28115aef8d6f6";
+        str_display = #"hash_3cc28115aef8d6f6";
         break;
     case #"zone_chopper_gunner":
-        var_601fee0 = #"hash_3a39c1a8fe2b4634";
+        str_display = #"hash_3a39c1a8fe2b4634";
         break;
     case #"zone_chopper_gunner2":
-        var_601fee0 = #"hash_6a4e6de3fc04ec43";
+        str_display = #"hash_6a4e6de3fc04ec43";
         break;
     case #"zone_chopper_gunner3":
-        var_601fee0 = #"hash_11c2394ea2e2d131";
+        str_display = #"hash_11c2394ea2e2d131";
         break;
     case #"zone_trenches":
-        var_601fee0 = #"hash_5194b7f4cbf03b5e";
+        str_display = #"hash_5194b7f4cbf03b5e";
         break;
     case #"zone_trenches_office":
-        var_601fee0 = #"hash_2b4cf31f8f6bf7e6";
+        str_display = #"hash_2b4cf31f8f6bf7e6";
         break;
     case #"zone_trenches_garage":
-        var_601fee0 = #"hash_452e2000b54dc76f";
+        str_display = #"hash_452e2000b54dc76f";
         break;
     case #"zone_tents2":
     case #"zone_tents":
-        var_601fee0 = #"hash_7c1689ac620afc8a";
+        str_display = #"hash_7c1689ac620afc8a";
         break;
     case #"zone_tents_a":
-        var_601fee0 = #"hash_481096036403fa63";
+        str_display = #"hash_481096036403fa63";
         break;
     case #"zone_tents_b":
-        var_601fee0 = #"hash_481097036403fc16";
+        str_display = #"hash_481097036403fc16";
         break;
     case #"zone_artillery_strike2":
     case #"zone_artillery_strike":
-        var_601fee0 = #"hash_6412a219d050bd95";
+        str_display = #"hash_6412a219d050bd95";
         break;
     case #"zone_rocky_slope_defend":
-        var_601fee0 = #"hash_6b7c9e9fcdc2d4f5";
+        str_display = #"hash_6b7c9e9fcdc2d4f5";
         break;
     case #"zone_napalm_strike":
     case #"zone_napalm_strike2":
-        var_601fee0 = #"hash_2c0516d13ededf0c";
+        str_display = #"hash_2c0516d13ededf0c";
         break;
     case #"hash_3dcad3b850818581":
-        var_601fee0 = #"hash_3020c93a3f65deed";
+        str_display = #"hash_3020c93a3f65deed";
         break;
     case #"zone_burnt_forest_defend":
-        var_601fee0 = #"hash_49e45240b857b096";
+        str_display = #"hash_49e45240b857b096";
         break;
     case #"zone_hillside_road_defend":
-        var_601fee0 = #"hash_1159d5e7f96b57cc";
+        str_display = #"hash_1159d5e7f96b57cc";
         break;
     case #"zone_opc":
     case #"zone_opc_room":
-        var_601fee0 = #"hash_67b0f231034932d8";
+        str_display = #"hash_67b0f231034932d8";
         break;
     case #"zone_field_hospital":
-        var_601fee0 = #"hash_5387a0350fe7780b";
+        str_display = #"hash_5387a0350fe7780b";
         break;
     case #"zone_walkway":
-        var_601fee0 = #"hash_2aa69d05c4cff89c";
+        str_display = #"hash_2aa69d05c4cff89c";
         break;
     case #"zone_weapon_lab":
-        var_601fee0 = #"hash_42192a6d158c852c";
+        str_display = #"hash_42192a6d158c852c";
         break;
     default:
-        var_601fee0 = undefined;
+        str_display = undefined;
         break;
     }
-    return var_601fee0;
+    return str_display;
 }
 

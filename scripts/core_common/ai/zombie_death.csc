@@ -88,11 +88,11 @@ function flame_death_fx(localclientnum) {
             self.firefx[self.firefx.size] = util::playfxontag(localclientnum, level._effect[#"character_fire_death_sm"], self, tagarray[0]);
             self.firefx[self.firefx.size] = util::playfxontag(localclientnum, level._effect[#"character_fire_death_sm"], self, tagarray[1]);
         }
-    } else {
-        /#
-            println("<unknown string>");
-        #/
+        return;
     }
+    /#
+        println("<unknown string>");
+    #/
 }
 
 // Namespace zombie_death/zombie_death

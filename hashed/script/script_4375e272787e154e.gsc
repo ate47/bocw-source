@@ -73,7 +73,9 @@ function function_e7722af4(localclientnum, *oldval, newval, *bnewent, *binitials
             #/
             function_a837926b(binitialsnap, postfxbundle.var_aaf5aae7);
         }
-    } else if (function_148ccc79(binitialsnap, postfxbundle.var_aaf5aae7)) {
+        return;
+    }
+    if (function_148ccc79(binitialsnap, postfxbundle.var_aaf5aae7)) {
         /#
             println("<unknown string>" + postfxbundle.var_aaf5aae7);
         #/
@@ -112,14 +114,14 @@ function hide_intro_models(localclientnum, *oldval, newval, *bnewent, *binitials
         foreach (n_index in var_6d963dbf) {
             hidestaticmodel(n_index);
         }
-    } else {
-        foreach (n_index in var_6d963dbf) {
-            unhidestaticmodel(n_index);
-        }
-        if (sessionmodeismultiplayergame()) {
-            setpbgactivebank(fieldname, 1);
-            setexposureactivebank(fieldname, 1);
-        }
+        return;
+    }
+    foreach (n_index in var_6d963dbf) {
+        unhidestaticmodel(n_index);
+    }
+    if (sessionmodeismultiplayergame()) {
+        setpbgactivebank(fieldname, 1);
+        setexposureactivebank(fieldname, 1);
     }
 }
 

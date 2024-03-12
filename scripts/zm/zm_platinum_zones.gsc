@@ -387,99 +387,99 @@ function function_27028b8e(str_zone) {
     }
     switch (str_zone) {
     case #"zone_rooftops_start":
-        var_601fee0 = #"hash_2c209ce1cd9bd3ce";
+        str_display = #"hash_2c209ce1cd9bd3ce";
         break;
     case #"zone_rooftops_interior":
-        var_601fee0 = #"hash_5e96e2ef2c8950d2";
+        str_display = #"hash_5e96e2ef2c8950d2";
         break;
     case #"zone_destroyed_upper_floors":
-        var_601fee0 = #"hash_1a8c74e3aeacbefc";
+        str_display = #"hash_1a8c74e3aeacbefc";
         break;
     case #"zone_east_berlin_hotel_1":
     case #"zone_east_berlin_hotel_2":
-        var_601fee0 = #"hash_3b15d4ce09e80704";
+        str_display = #"hash_3b15d4ce09e80704";
         break;
     case #"zone_east_berlin_hotel_4":
     case #"zone_east_berlin_hotel_3":
-        var_601fee0 = #"hash_5b0cd266588cd410";
+        str_display = #"hash_5b0cd266588cd410";
         break;
     case #"zone_korber_roof2":
     case #"zone_korber_roof":
-        var_601fee0 = #"hash_40f2768ae57e622a";
+        str_display = #"hash_40f2768ae57e622a";
         break;
     case #"zone_korber_stairs":
-        var_601fee0 = #"hash_1218344774c0d52d";
+        str_display = #"hash_1218344774c0d52d";
         break;
     case #"zone_korber_sewing_room":
-        var_601fee0 = #"hash_31277f2032fd4275";
+        str_display = #"hash_31277f2032fd4275";
         break;
     case #"zone_east_berlin_street_alley":
-        var_601fee0 = #"hash_663a898d9c4368d2";
+        str_display = #"hash_663a898d9c4368d2";
         break;
     case #"zone_east_berlin_street_4":
     case #"zone_east_berlin_street_2":
     case #"zone_east_berlin_street_3":
     case #"zone_east_berlin_street_1":
-        var_601fee0 = #"hash_366de72e1c7f10e3";
+        str_display = #"hash_366de72e1c7f10e3";
         break;
     case #"zone_bar":
-        var_601fee0 = #"hash_5f70123180ddedbf";
+        str_display = #"hash_5f70123180ddedbf";
         break;
     case #"zone_market":
-        var_601fee0 = #"hash_6bbc9c396cab4166";
+        str_display = #"hash_6bbc9c396cab4166";
         break;
     case #"zone_electronics_store":
-        var_601fee0 = #"hash_c517c13dd73a87f";
+        str_display = #"hash_c517c13dd73a87f";
         break;
     case #"zone_ghost_station":
     case #"zone_ghost_station_3":
     case #"zone_ghost_station_2":
     case #"zone_ghost_station_4":
-        var_601fee0 = #"hash_3354615b6b73090a";
+        str_display = #"hash_3354615b6b73090a";
         break;
     case #"zone_basement_1":
     case #"zone_basement_2":
-        var_601fee0 = #"hash_10f6d2cdd4e18f44";
+        str_display = #"hash_10f6d2cdd4e18f44";
         break;
     case #"zone_safe_house":
-        var_601fee0 = #"hash_5e16c141529c6a38";
+        str_display = #"hash_5e16c141529c6a38";
         break;
     case #"zone_sewers_and_escape_tunnel2":
     case #"zone_sewers_and_escape_tunnel":
     case #"zone_sewers_stairs":
-        var_601fee0 = #"hash_1ed5ed99b953f70f";
+        str_display = #"hash_1ed5ed99b953f70f";
         break;
     case #"zone_power_substation":
     case #"zone_power_substation2":
-        var_601fee0 = #"hash_503c96cc7237c4f";
+        str_display = #"hash_503c96cc7237c4f";
         break;
     case #"zone_hidden_lab":
-        var_601fee0 = #"hash_128f08319d9463fd";
+        str_display = #"hash_128f08319d9463fd";
         break;
     case #"zone_american_sector_street":
-        var_601fee0 = #"hash_7d30c2e28970d40f";
+        str_display = #"hash_7d30c2e28970d40f";
         break;
     case #"zone_american_sector_right_building":
-        var_601fee0 = #"hash_1d8344d97c9165a";
+        str_display = #"hash_1d8344d97c9165a";
         break;
     case #"zone_american_sector_left_building":
-        var_601fee0 = #"hash_383b8711d6edd6bd";
+        str_display = #"hash_383b8711d6edd6bd";
         break;
     case #"zone_no_mans_land_1":
-        var_601fee0 = #"hash_6f4cc791adc72201";
+        str_display = #"hash_6f4cc791adc72201";
         break;
     case #"zone_no_mans_land_3":
     case #"zone_no_mans_land_2":
-        var_601fee0 = #"hash_75adba86a5dd13c1";
+        str_display = #"hash_75adba86a5dd13c1";
         break;
     case #"zone_control_room":
-        var_601fee0 = #"hash_3e9e52ed3360a871";
+        str_display = #"hash_3e9e52ed3360a871";
         break;
     default:
-        var_601fee0 = undefined;
+        str_display = undefined;
         break;
     }
-    return var_601fee0;
+    return str_display;
 }
 
 // Namespace namespace_3d14a28e/namespace_3d14a28e

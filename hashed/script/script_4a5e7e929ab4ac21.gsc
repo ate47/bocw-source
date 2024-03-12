@@ -104,21 +104,21 @@ function function_60933945(*var_23b6164f, var_e883a73e) {
         level.players[0] util::show_hint_text(#"hash_3a6e13fcecf344c9", 0, undefined, -1);
         level.players[0] waittill(#"hash_7a8828759fd65505", #"hash_7110d2bbe7758535");
         level.players[0] util::hide_hint_text();
-    } else {
-        while (!level.var_7228ded) {
-            var_b3463e05 = struct::get_array("orbit_lz", "script_noteworthy");
-            var_af6511a5 = arraygetclosest(level.var_7466d419.origin, var_b3463e05);
-            if (isdefined(var_af6511a5) && distance2dsquared(level.var_7466d419.origin, var_af6511a5.origin) <= level.var_bce2f77 * level.var_bce2f77) {
-                if (!level.var_883c5961) {
-                    level.players[0] util::show_hint_text(#"hash_3a6e13fcecf344c9", 0, undefined, -1);
-                    level.var_883c5961 = 1;
-                }
-            } else {
-                level.players[0] util::hide_hint_text(0);
-                level.var_883c5961 = 0;
+        return;
+    }
+    while (!level.var_7228ded) {
+        var_b3463e05 = struct::get_array("orbit_lz", "script_noteworthy");
+        var_af6511a5 = arraygetclosest(level.var_7466d419.origin, var_b3463e05);
+        if (isdefined(var_af6511a5) && distance2dsquared(level.var_7466d419.origin, var_af6511a5.origin) <= level.var_bce2f77 * level.var_bce2f77) {
+            if (!level.var_883c5961) {
+                level.players[0] util::show_hint_text(#"hash_3a6e13fcecf344c9", 0, undefined, -1);
+                level.var_883c5961 = 1;
             }
-            waitframe(1);
+        } else {
+            level.players[0] util::hide_hint_text(0);
+            level.var_883c5961 = 0;
         }
+        waitframe(1);
     }
 }
 
@@ -216,9 +216,9 @@ function function_76a96530(start_node) {
             }
             current_node = target;
             index++;
-        } else {
-            break;
+            continue;
         }
+        break;
     }
     if (!var_3540205d) {
         var_970a11fa = undefined;
@@ -243,9 +243,9 @@ function function_76a96530(start_node) {
                     if (!isdefined(next_node)) {
                         break;
                     }
-                } else {
-                    break;
+                    continue;
                 }
+                break;
             }
         }
     }

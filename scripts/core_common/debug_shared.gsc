@@ -110,9 +110,9 @@ function devgui_debug_key_value() {
                     if (n_dist_sq <= n_draw_dist_sq) {
                         n_scale = mapfloat(0, 6250000, 0.5, 5, n_dist_sq);
                         ent thread debug_key_value(string(debug_key_value), undefined, n_scale);
-                    } else {
-                        ent notify(#"debug_key_value");
+                        continue;
                     }
+                    ent notify(#"debug_key_value");
                 }
             } else {
                 level notify(#"debug_key_value");
@@ -280,12 +280,12 @@ function function_c0767f67() {
             on_actor_damage(&function_e7321799);
             on_vehicle_damage(&function_e7321799);
             function_9d78f548(&function_e7321799);
-        } else {
-            remove_on_player_damage(&function_e7321799);
-            remove_on_actor_damage(&function_e7321799);
-            remove_on_vehicle_damage(&function_e7321799);
-            function_f125b93a(&function_e7321799);
+            return;
         }
+        remove_on_player_damage(&function_e7321799);
+        remove_on_actor_damage(&function_e7321799);
+        remove_on_vehicle_damage(&function_e7321799);
+        function_f125b93a(&function_e7321799);
     #/
 }
 

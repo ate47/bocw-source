@@ -67,9 +67,9 @@ function function_8c4799(weapon) {
     waitresult = self waittill(#"gadget_forced_off");
     if (weapon == waitresult.weapon) {
         self function_6af99b2e(weapon);
-    } else {
-        self thread function_8c4799(weapon);
+        return;
     }
+    self thread function_8c4799(weapon);
 }
 
 // Namespace namespace_8a67e6b6/namespace_8a67e6b6
@@ -562,9 +562,9 @@ function function_92c4b561() {
             target notify(#"ccom_lost_lock", {#owner:self});
             level notify(#"ccom_lost_lock", {#owner:self, #target:target});
             self function_bb2cd3c1(target);
-        } else {
-            var_1ce9ea0e[var_1ce9ea0e.size] = target;
+            continue;
         }
+        var_1ce9ea0e[var_1ce9ea0e.size] = target;
     }
     self.var_25fa785.lockon.var_1ce9ea0e = var_1ce9ea0e;
 }
@@ -614,22 +614,21 @@ function function_d2bc8bb1(enemies, weapon, var_efb1ea62, earlyout = 0) {
         pos = enemy getshootatpos();
         if (isdefined(pos)) {
             passed = bullettracepassed(eyepos, pos, 0, enemy, undefined, 1, 1);
-            jumpiffalse(passed) LOC_000002b0;
-            var_5c118373[var_5c118373.size] = enemy;
-            if (earlyout) {
-                break;
+            if (passed) {
+                var_5c118373[var_5c118373.size] = enemy;
+                if (earlyout) {
+                    break;
+                }
+                continue;
             }
-        } else {
-        LOC_000002b0:
-            pos = enemy getcentroid();
-            if (isdefined(pos)) {
-                passed = bullettracepassed(eyepos, pos, 0, enemy, undefined, 1, 1);
-                if (passed) {
-                    var_5c118373[var_5c118373.size] = enemy;
-                    if (earlyout) {
-                        break;
-                    }
-                    continue;
+        }
+        pos = enemy getcentroid();
+        if (isdefined(pos)) {
+            passed = bullettracepassed(eyepos, pos, 0, enemy, undefined, 1, 1);
+            if (passed) {
+                var_5c118373[var_5c118373.size] = enemy;
+                if (earlyout) {
+                    break;
                 }
             }
         }
@@ -827,9 +826,9 @@ function function_a1dd4489(var_bf4fab3f, var_4e8096b0, var_d217d303 = 1, priorit
             self.var_25fa785.lockon.var_4e8096b0 = var_4e8096b0;
             self.var_25fa785.lockon.var_bf4fab3f = var_bf4fab3f;
         }
-    } else {
-        self.var_25fa785.lockon.var_4e8096b0 = var_4e8096b0;
-        self.var_25fa785.lockon.var_bf4fab3f = var_bf4fab3f;
+        return;
     }
+    self.var_25fa785.lockon.var_4e8096b0 = var_4e8096b0;
+    self.var_25fa785.lockon.var_bf4fab3f = var_bf4fab3f;
 }
 

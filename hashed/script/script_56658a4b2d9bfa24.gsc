@@ -671,9 +671,9 @@ function private devgui_set_target(botarg, cmdarg) {
                 bot setentitytarget(target);
                 bot getperfectinfo(target, 1);
             }
-        } else {
-            bot clearentitytarget();
+            continue;
         }
+        bot clearentitytarget();
     }
 }
 
@@ -685,14 +685,19 @@ function private devgui_goal(botarg, cmdarg) {
     switch (cmdarg) {
     case #"set":
         self set_goal(botarg, 0);
+        return;
     case #"set_region":
         self function_417ef9e7(botarg);
+        return;
     case #"force":
         self set_goal(botarg, 1);
+        return;
     case #"add_forced":
         self function_93996ae6(botarg);
+        return;
     case #"me":
         self function_6fdb87c7(botarg, self);
+        return;
     case #"clear":
         self function_be8f790e(botarg);
         return;
@@ -730,7 +735,9 @@ function private set_goal(botarg, force = 0) {
                 var_c3eee21b = currentvehicle getoccupantseat(bot);
                 currentvehicle usevehicle(bot, var_c3eee21b);
             }
-        } else if (isdefined(vehicle)) {
+            continue;
+        }
+        if (isdefined(vehicle)) {
             seatindex = vehicle function_eee09f16(pos);
             if (isdefined(seatindex)) {
                 vehicle usevehicle(bot, seatindex);
@@ -806,16 +813,16 @@ function private function_93996ae6(botarg) {
         goals = bot.bot.var_bdb21e1f;
         if (isdefined(goals)) {
             goals[goals.size] = pos;
-        } else {
-            goals = [];
-            bot.bot.var_bdb21e1f = goals;
-            info = bot function_4794d6a3();
-            if (info.goalforced) {
-                goals[goals.size] = info.goalpos;
-            }
-            goals[goals.size] = pos;
-            bot function_cc8c642a(goals);
+            continue;
         }
+        goals = [];
+        bot.bot.var_bdb21e1f = goals;
+        info = bot function_4794d6a3();
+        if (info.goalforced) {
+            goals[goals.size] = info.goalpos;
+        }
+        goals[goals.size] = pos;
+        bot function_cc8c642a(goals);
     }
 }
 
@@ -825,14 +832,12 @@ function private function_93996ae6(botarg) {
 // Size: 0xbc
 function private function_cc8c642a(&goals) {
     self endoncallback(&function_bc3bbe26, #"death", #"hash_7597caa242064632");
-    i = 0;
-    while (1) {
+    for (i = 0; 1; i = (i + 1) % goals.size) {
         self setgoal(goals[i], 1);
         while (goals.size <= 1) {
             waitframe(1);
         }
         self waittill(#"goal");
-        i = (i + 1) % goals.size;
     }
 }
 
@@ -857,9 +862,9 @@ function private function_6a4a272b(host, botarg, cmdarg, toggle) {
         forcebits = bot.bot.var_458ddbc0;
         if (toggle) {
             forcebits[cmdarg] = is_true(forcebits[cmdarg]) ? undefined : 1;
-        } else {
-            forcebits[cmdarg] = 2;
+            continue;
         }
+        forcebits[cmdarg] = 2;
     }
 }
 
@@ -931,7 +936,6 @@ function private function_ef14f060() {
         }
         foreach (name in self.killstreak) {
             if (weapon.name == name) {
-                continue;
             }
         }
         foreach (killstreak in level.killstreaks) {
@@ -1035,9 +1039,9 @@ function private devgui_invulnerable(host, botarg, cmdarg) {
     foreach (bot in bots) {
         if (cmdarg == "on") {
             bot val::set(#"devgui", "takedamage", 0);
-        } else {
-            bot val::reset(#"devgui", "takedamage");
+            continue;
         }
+        bot val::reset(#"devgui", "takedamage");
     }
 }
 

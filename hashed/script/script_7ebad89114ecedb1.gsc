@@ -250,16 +250,16 @@ function private function_ec3bfba7(localclientnum, radiationlevel, *var_50cd907d
         switch (var_50cd907d) {
         case 0:
             function_f80b3e83(radiationlevel);
-            break;
+            return;
         case 1:
             function_f80b3e83(radiationlevel, "evt_radiation_dmg_1");
-            break;
+            return;
         case 2:
             function_f80b3e83(radiationlevel, "evt_radiation_dmg_2");
-            break;
+            return;
         case 3:
             function_f80b3e83(radiationlevel, "evt_radiation_dmg_3");
-            break;
+            return;
         }
     }
 }

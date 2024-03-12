@@ -80,7 +80,9 @@ function private function_c76638c(localclientnum, *oldval, newval, *bnewent, *bi
         if (!isarray(level.var_e7fd1b8f[fieldname])) {
             level.var_e7fd1b8f[fieldname] = playtagfxset(fieldname, "tagfx9_camfx_gametype_dirtybomb_ash", self);
         }
-    } else if (isarray(level.var_e7fd1b8f[fieldname])) {
+        return;
+    }
+    if (isarray(level.var_e7fd1b8f[fieldname])) {
         foreach (fx in level.var_e7fd1b8f[fieldname]) {
             stopfx(fieldname, fx);
         }

@@ -89,10 +89,10 @@ function useremoteweapon(weapon, weaponname, immediate, allowmanualdeactivation 
     weapon thread watchremoveremotecontrolledweapon();
     if (!immediate) {
         weapon createremoteweapontrigger();
-    } else {
-        weapon thread watchownerdisconnect();
-        weapon useremotecontrolweapon(allowmanualdeactivation, always_allow_ride);
+        return;
     }
+    weapon thread watchownerdisconnect();
+    weapon useremotecontrolweapon(allowmanualdeactivation, always_allow_ride);
 }
 
 // Namespace remote_weapons/remote_weapons
@@ -221,9 +221,8 @@ function allowremotestart(var_59d2c24b) {
     player = self;
     if ((is_true(var_59d2c24b) || player usebuttonpressed()) && !player.throwinggrenade && !player meleebuttonpressed() && !player util::isusingremote() && !(isdefined(player.carryobject) && is_true(player.carryobject.disallowremotecontrol)) && player killstreaks::function_59e2c378()) {
         return 1;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace remote_weapons/remote_weapons
@@ -479,10 +478,8 @@ function fadetoblackandbackin() {
 function stunstaticfx(duration) {
     self endon(#"remove_remote_weapon");
     wait(duration - 0.5);
-    time = duration - 0.5;
-    while (time < duration) {
+    for (time = duration - 0.5; time < duration; time = time + 0.05) {
         waitframe(1);
-        time = time + 0.05;
     }
 }
 
@@ -519,7 +516,9 @@ function set_static(val) {
         if (isdefined(owner) && owner.usingvehicle && isdefined(owner.viewlockedentity) && owner.viewlockedentity == self) {
             owner clientfield::set_to_player("static_postfx", 1);
         }
-    } else if (isdefined(owner)) {
+        return;
+    }
+    if (isdefined(owner)) {
         owner function_3c9e877a();
     }
 }

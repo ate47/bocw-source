@@ -101,7 +101,9 @@ function function_8f059827(radius) {
                     self.var_ec8703d1[self.var_ec8703d1.size] = player;
                     self thread function_3037364a(player);
                 }
-            } else if (isinarray(self.var_ec8703d1, player) && player laststand::player_is_in_laststand()) {
+                continue;
+            }
+            if (isinarray(self.var_ec8703d1, player) && player laststand::player_is_in_laststand()) {
                 if (is_true(player.var_d1e03242)) {
                     revivetime = 3;
                     player.var_d1e03242 = undefined;
@@ -113,7 +115,9 @@ function function_8f059827(radius) {
                         player zm_laststand::auto_revive(self);
                     }
                 }
-            } else if (isinarray(self.var_ec8703d1, player) && !player laststand::player_is_in_laststand()) {
+                continue;
+            }
+            if (isinarray(self.var_ec8703d1, player) && !player laststand::player_is_in_laststand()) {
                 arrayremovevalue(self.var_ec8703d1, player);
             }
         }
@@ -144,7 +148,7 @@ function function_3037364a(e_revivee) {
             }
             if (e_revivee.var_6fc48a11 >= revivetime) {
                 e_revivee zm_laststand::auto_revive(self);
-                break;
+                return;
             }
         }
     }
@@ -239,22 +243,22 @@ function turn_revive_on() {
             if (isdefined(machine[i].classname) && machine[i].classname == "script_model") {
                 if (isdefined(machine[i].script_noteworthy) && machine[i].script_noteworthy == "clip") {
                     machine_clip = machine[i];
-                } else {
-                    machine[i] setmodel(level.machine_assets[#"hash_7f98b3dd3cce95aa"].on_model);
-                    machine[i] vibrate(vectorscale((0, -1, 0), 100), 0.3, 0.4, 3);
-                    if (!isdefined(machine[i].n_obj_id)) {
-                        machine[i].n_obj_id = zm_utility::function_4a4cf79a(#"hash_366d84a7a7556fa4", machine[i]);
-                    }
-                    machine_model = machine[i];
-                    machine[i] thread zm_perks::perk_fx("revive_light");
-                    exploder::exploder("quick_revive_lgts");
-                    machine[i] thread zm_perks::play_loop_on_machine();
-                    if (isdefined(machine_triggers[i])) {
-                        machine_clip = machine_triggers[i].clip;
-                    }
-                    if (isdefined(machine_triggers[i])) {
-                        blocker_model = machine_triggers[i].blocker_model;
-                    }
+                    continue;
+                }
+                machine[i] setmodel(level.machine_assets[#"hash_7f98b3dd3cce95aa"].on_model);
+                machine[i] vibrate(vectorscale((0, -1, 0), 100), 0.3, 0.4, 3);
+                if (!isdefined(machine[i].n_obj_id)) {
+                    machine[i].n_obj_id = zm_utility::function_4a4cf79a(#"hash_366d84a7a7556fa4", machine[i]);
+                }
+                machine_model = machine[i];
+                machine[i] thread zm_perks::perk_fx("revive_light");
+                exploder::exploder("quick_revive_lgts");
+                machine[i] thread zm_perks::play_loop_on_machine();
+                if (isdefined(machine_triggers[i])) {
+                    machine_clip = machine_triggers[i].clip;
+                }
+                if (isdefined(machine_triggers[i])) {
+                    blocker_model = machine_triggers[i].blocker_model;
                 }
             }
         }

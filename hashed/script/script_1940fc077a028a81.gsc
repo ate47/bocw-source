@@ -996,9 +996,9 @@ function private damagedoor(*entity) {
             if (!isdefined(self.var_597f08bf) || self.var_597f08bf.health <= 0) {
                 self.var_597f08bf = undefined;
             }
-        } else {
-            self.var_597f08bf notify(#"hash_5cfbbb6ee8378665");
+            return;
         }
+        self.var_597f08bf notify(#"hash_5cfbbb6ee8378665");
     }
 }
 
@@ -1043,14 +1043,14 @@ function function_8aa7d53(entity, *mocompanim, *mocompanimblendouttime, *mocompa
 function function_933af241(entity, *mocompanim, *mocompanimblendouttime, *mocompanimflag, *mocompduration) {
     if (isdefined(mocompduration.attackable)) {
         self orientmode("face point", self.attackable.origin);
-    } else {
-        enemy = isdefined(self.enemy) ? self.enemy : self.favoriteenemy;
-        if (isdefined(enemy)) {
-            self orientmode("face point", enemy.origin);
-        } else {
-            self orientmode("face enemy");
-        }
+        return;
     }
+    enemy = isdefined(self.enemy) ? self.enemy : self.favoriteenemy;
+    if (isdefined(enemy)) {
+        self orientmode("face point", enemy.origin);
+        return;
+    }
+    self orientmode("face enemy");
 }
 
 // Namespace namespace_e292b080/namespace_e292b080

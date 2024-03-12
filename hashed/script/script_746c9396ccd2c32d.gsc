@@ -44,22 +44,16 @@ function private function_e8018847(aat_name = "ammomod_napalmburst") {
     case #"ammomod_napalmburst":
     default:
         return 0;
-        break;
     case #"ammomod_napalmburst_1":
         return 1;
-        break;
     case #"ammomod_napalmburst_2":
         return 2;
-        break;
     case #"ammomod_napalmburst_3":
         return 3;
-        break;
     case #"ammomod_napalmburst_4":
         return 4;
-        break;
     case #"ammomod_napalmburst_5":
         return 5;
-        break;
     }
     return 0;
 }
@@ -95,12 +89,16 @@ function result(death, attacker, mod, weapon, var_fd90b0bb, vpoint, *shitloc, *b
     weapon zm_utility::function_5d356609(aat_name, tier);
     if (is_true(mod) && function_4f7f29ab(weapon) && tier >= 5) {
         level thread function_c8e3a0dc(self, self.origin, weapon, var_fd90b0bb, vpoint, shitloc);
-    } else if (self.var_6f84b820 === #"special") {
+        return;
+    }
+    if (self.var_6f84b820 === #"special") {
         if (tier >= 4) {
             self thread function_80b0dbe5(weapon, vpoint, tier);
             self thread function_be5234be(weapon, var_fd90b0bb, vpoint, shitloc, tier);
         }
-    } else if (self.var_6f84b820 === #"normal") {
+        return;
+    }
+    if (self.var_6f84b820 === #"normal") {
         self thread function_80b0dbe5(weapon, vpoint, tier);
         self thread function_be5234be(weapon, var_fd90b0bb, vpoint, shitloc, tier);
     }

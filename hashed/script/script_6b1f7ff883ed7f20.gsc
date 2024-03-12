@@ -46,22 +46,16 @@ function private function_a0c6cb5d(aat_name = "ammomod_cryofreeze") {
     case #"ammomod_cryofreeze":
     default:
         return 0;
-        break;
     case #"ammomod_cryofreeze_1":
         return 1;
-        break;
     case #"ammomod_cryofreeze_2":
         return 2;
-        break;
     case #"ammomod_cryofreeze_3":
         return 3;
-        break;
     case #"ammomod_cryofreeze_4":
         return 4;
-        break;
     case #"ammomod_cryofreeze_5":
         return 5;
-        break;
     }
     return 0;
 }
@@ -99,11 +93,15 @@ function result(death, attacker, mod, weapon, *var_fd90b0bb, vpoint, *shitloc, *
     var_fd90b0bb zm_utility::function_5d356609(aat_name, tier);
     if (is_true(weapon) && function_3be79107(var_fd90b0bb) && tier >= 5 && (self.var_6f84b820 === #"normal" || self.var_6f84b820 === #"special")) {
         level thread function_9366890d(self, self.origin, var_fd90b0bb, vpoint, shitloc);
-    } else if (self.var_6f84b820 === #"special") {
+        return;
+    }
+    if (self.var_6f84b820 === #"special") {
         if (tier >= 4) {
             self thread function_f00409f3(var_fd90b0bb, vpoint, shitloc, 0, tier);
         }
-    } else if (self.var_6f84b820 === #"normal") {
+        return;
+    }
+    if (self.var_6f84b820 === #"normal") {
         self thread function_f00409f3(var_fd90b0bb, vpoint, shitloc, 0, tier);
     }
 }
@@ -191,22 +189,21 @@ function function_76d7d189(*e_attacker, *weapon, tier = 0) {
         wait(var_b543d2cf / 8);
         self.var_d70e35fb = self.var_d70e35fb + 0.125;
         if (self.var_d70e35fb >= 1) {
-            break;
-        } else {
-            switch (tier) {
-            case 0:
-            case 1:
-                self thread namespace_df7b10e3::slowdown(#"hash_11428bfe58012e24", self.var_d70e35fb, &function_4279213e);
-                continue;
-            case 2:
-                self thread namespace_df7b10e3::slowdown(#"hash_61bdd7c7815dd7a9", self.var_d70e35fb, &function_4279213e);
-                continue;
-            case 3:
-            case 4:
-            case 5:
-                self thread namespace_df7b10e3::slowdown(#"hash_61bdd6c7815dd5f6", self.var_d70e35fb, &function_4279213e);
-                continue;
-            }
+            return;
+        }
+        switch (tier) {
+        case 0:
+        case 1:
+            self thread namespace_df7b10e3::slowdown(#"hash_11428bfe58012e24", self.var_d70e35fb, &function_4279213e);
+            continue;
+        case 2:
+            self thread namespace_df7b10e3::slowdown(#"hash_61bdd7c7815dd7a9", self.var_d70e35fb, &function_4279213e);
+            continue;
+        case 3:
+        case 4:
+        case 5:
+            self thread namespace_df7b10e3::slowdown(#"hash_61bdd6c7815dd5f6", self.var_d70e35fb, &function_4279213e);
+            continue;
         }
     }
 }
@@ -238,9 +235,9 @@ function function_6af83db3(attacker, mod, weapon, tier = 0) {
     if (isdefined(self)) {
         if (is_true(self.var_958cf9c5) && function_3be79107(attacker) && tier == 5) {
             level thread function_9366890d(self, self.origin, attacker, mod, weapon);
-        } else {
-            self namespace_df7b10e3::function_520f4da5(#"hash_11428bfe58012e24");
+            return;
         }
+        self namespace_df7b10e3::function_520f4da5(#"hash_11428bfe58012e24");
     }
 }
 

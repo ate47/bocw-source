@@ -34,9 +34,9 @@ function function_807e8ee9(localclientnum) {
     if (timelimit > 0) {
         var_296d73cb rotatepitch(360, timelimit * 60);
         var_30bcd607 rotatepitch(360 * timelimit, timelimit * 60);
-    } else {
-        var_30bcd607 thread function_da8da832();
+        return;
     }
+    var_30bcd607 thread function_da8da832();
 }
 
 // Namespace namespace_a376209a/namespace_a376209a

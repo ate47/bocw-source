@@ -112,9 +112,9 @@ class class_d5e68311 {
         if (isdefined(self.var_884ed4f)) {
             if (var_56838591) {
                 self.var_884ed4f playrenderoverridebundle(#"hash_1d4878635b5ea5a3");
-            } else {
-                self.var_884ed4f stoprenderoverridebundle(#"hash_1d4878635b5ea5a3");
+                return;
             }
+            self.var_884ed4f stoprenderoverridebundle(#"hash_1d4878635b5ea5a3");
         }
     }
 

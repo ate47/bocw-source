@@ -76,7 +76,7 @@ function function_9e3ff948() {
         level waittill(#"hash_5f146847260b1b46");
         var_2ab51a2c++;
         if (var_2ab51a2c >= var_97671ac1) {
-            break;
+            return;
         }
     }
 }

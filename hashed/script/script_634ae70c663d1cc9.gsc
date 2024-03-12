@@ -267,28 +267,40 @@ function function_3874b272(type, var_2c5f6748) {
     switch (type) {
     case #"explo_barrel":
         self thread namespace_fb2125f::function_6e3c8a46();
+        return;
     case #"killbox":
         self thread namespace_6624770a::function_813ad4cb();
+        return;
     case #"killzone":
         self thread namespace_538252ab::function_90e65586();
+        return;
     case #"elec_pole":
         self thread namespace_53f73cda::function_97d551b(var_2c5f6748);
+        return;
     case #"pungi":
         self thread namespace_d20e7d3b::function_433b5718();
+        return;
     case #"pressureplate":
         self thread namespace_9529b92d::function_b2a0e8d2();
+        return;
     case #"flogger":
         self thread namespace_85f9e33a::function_a76494d5();
+        return;
     case #"logdrop":
         self thread namespace_a7c12078::function_237de89e();
+        return;
     case #"dragonhead":
         self thread namespace_3c9cfcff::function_19903280();
+        return;
     case #"fireball":
         self thread namespace_2a2a39d4::function_3a25f62f();
+        return;
     case #"physicsbox":
         self thread namespace_61052b71::function_8bd713b2();
+        return;
     case #"platform":
         self thread namespace_98036e8c::function_1ba8281d();
+        return;
     default:
         /#
             assert(0, "<unknown string>");
@@ -442,25 +454,45 @@ function function_96e2f261(traps, page) {
     foreach (trap in traps) {
         if (trap.script_noteworthy === #"pungi") {
             namespace_d20e7d3b::function_f42615a9(trap, page);
-        } else if (trap.script_noteworthy === #"pressureplate") {
+            continue;
+        }
+        if (trap.script_noteworthy === #"pressureplate") {
             namespace_9529b92d::function_b3e13787(trap, page);
-        } else if (trap.script_noteworthy === #"pole") {
+            continue;
+        }
+        if (trap.script_noteworthy === #"pole") {
             namespace_53f73cda::function_28826539(trap, page);
-        } else if (trap.script_noteworthy === #"barrel") {
+            continue;
+        }
+        if (trap.script_noteworthy === #"barrel") {
             namespace_fb2125f::function_3dd2c543(trap, page);
-        } else if (trap.script_noteworthy === #"dragonhead") {
+            continue;
+        }
+        if (trap.script_noteworthy === #"dragonhead") {
             namespace_3c9cfcff::function_c808b1bb(trap, page);
-        } else if (trap.script_noteworthy === #"killbox") {
+            continue;
+        }
+        if (trap.script_noteworthy === #"killbox") {
             namespace_6624770a::function_bbdbcaa5(trap, page);
-        } else if (trap.script_noteworthy === #"killzone") {
+            continue;
+        }
+        if (trap.script_noteworthy === #"killzone") {
             namespace_538252ab::function_7ae8d74a(trap, page);
-        } else if (trap.script_noteworthy === #"flogger") {
+            continue;
+        }
+        if (trap.script_noteworthy === #"flogger") {
             namespace_85f9e33a::function_7fb58446(trap, page);
-        } else if (trap.script_noteworthy === #"logdrop") {
+            continue;
+        }
+        if (trap.script_noteworthy === #"logdrop") {
             namespace_a7c12078::function_7f3d5e5d(trap, page);
-        } else if (trap.script_noteworthy === #"fireball") {
+            continue;
+        }
+        if (trap.script_noteworthy === #"fireball") {
             namespace_2a2a39d4::function_7a2f725d(trap, page);
-        } else if (trap.script_noteworthy === #"physicsbox") {
+            continue;
+        }
+        if (trap.script_noteworthy === #"physicsbox") {
             namespace_61052b71::function_bb1d1cf9(trap, page);
         }
     }

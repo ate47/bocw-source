@@ -364,9 +364,9 @@ function function_306807e5() {
     self.health = 1;
     if (level flag::get("flag_player_told_shoot")) {
         self util::delay(randomfloatrange(1.3, 2), undefined, &function_629b5919);
-    } else {
-        self util::delay(randomfloatrange(5, 6.5), undefined, &function_629b5919);
+        return;
     }
+    self util::delay(randomfloatrange(5, 6.5), undefined, &function_629b5919);
 }
 
 // Namespace tkdn_raid_apt/namespace_8c930e93

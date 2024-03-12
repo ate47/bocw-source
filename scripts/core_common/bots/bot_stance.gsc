@@ -19,11 +19,17 @@ function think() {
     }
     if (is_true(self.bot.var_9cf66413)) {
         self bottapbutton(8);
-    } else if (is_true(self.bot.var_ce28855b)) {
+        return;
+    }
+    if (is_true(self.bot.var_ce28855b)) {
         self bottapbutton(9);
-    } else if (self function_29975d32()) {
+        return;
+    }
+    if (self function_29975d32()) {
         self bottapbutton(39);
-    } else if (self function_a4a505a9()) {
+        return;
+    }
+    if (self function_a4a505a9()) {
         self bottapbutton(1);
     }
 }

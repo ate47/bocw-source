@@ -45,22 +45,16 @@ function private function_93e5316a(aat_name = "ammomod_shatterblast") {
     case #"ammomod_shatterblast":
     default:
         return 0;
-        break;
     case #"ammomod_shatterblast_1":
         return 1;
-        break;
     case #"ammomod_shatterblast_2":
         return 2;
-        break;
     case #"ammomod_shatterblast_3":
         return 3;
-        break;
     case #"ammomod_shatterblast_4":
         return 4;
-        break;
     case #"ammomod_shatterblast_5":
         return 5;
-        break;
     }
     return 0;
 }

@@ -179,7 +179,7 @@ function gettagforpos(position) {
         /#
             assertmsg("<unknown string>" + position);
         #/
-        break;
+        return;
     }
 }
 
@@ -231,9 +231,9 @@ function throwweapon(weapon, positiontag, scavenger, deleteweaponafterdropping) 
         }
         if (deleteweaponafterdropping) {
             throwweapon delete();
-        } else {
-            return throwweapon;
+            return;
         }
+        return throwweapon;
     }
 }
 
@@ -313,19 +313,21 @@ function dropallaiweapons() {
                     /#
                         println("<unknown string>" + weapon.name + "<unknown string>");
                     #/
-                } else if (is_true(self.script_nodropsidearm) && weapon == self.sidearm) {
+                    continue;
+                }
+                if (is_true(self.script_nodropsidearm) && weapon == self.sidearm) {
                     /#
                         println("<unknown string>" + weapon.name + "<unknown string>");
                     #/
-                } else {
-                    velocity = self getvelocity();
-                    speed = length(velocity) * 0.5;
-                    weapon = player_weapon_drop(weapon);
-                    droppedweapon = self dropweapon(weapon, self.weapon_positions[index], speed);
-                    if (self.sidearm != level.weaponnone) {
-                        if (weapon == self.sidearm) {
-                            droppedsidearm = 1;
-                        }
+                    continue;
+                }
+                velocity = self getvelocity();
+                speed = length(velocity) * 0.5;
+                weapon = player_weapon_drop(weapon);
+                droppedweapon = self dropweapon(weapon, self.weapon_positions[index], speed);
+                if (self.sidearm != level.weaponnone) {
+                    if (weapon == self.sidearm) {
+                        droppedsidearm = 1;
                     }
                 }
             }

@@ -62,10 +62,10 @@ function burning_callback(localclientnum, *oldval, newval, *bnewent, *binitialsn
     if (bwastimejump) {
         self function_a6cb96f(fieldname);
         self function_adae7d84(fieldname);
-    } else {
-        self function_8227cec3(fieldname);
-        self function_68a11df6(fieldname);
+        return;
     }
+    self function_8227cec3(fieldname);
+    self function_68a11df6(fieldname);
 }
 
 // Namespace burnplayer/burnplayer
@@ -75,9 +75,9 @@ function burning_callback(localclientnum, *oldval, newval, *bnewent, *binitialsn
 function function_3caf53f1(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self function_adae7d84(fieldname, 1);
-    } else {
-        self function_68a11df6(fieldname);
+        return;
     }
+    self function_68a11df6(fieldname);
 }
 
 // Namespace burnplayer/burnplayer
@@ -87,10 +87,10 @@ function function_3caf53f1(localclientnum, *oldval, newval, *bnewent, *binitials
 function burning_corpse_callback(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self set_corpse_burning(fieldname);
-    } else {
-        self function_8227cec3(fieldname);
-        self function_68a11df6(fieldname);
+        return;
     }
+    self function_8227cec3(fieldname);
+    self function_68a11df6(fieldname);
 }
 
 // Namespace burnplayer/burnplayer

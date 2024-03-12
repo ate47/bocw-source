@@ -29,11 +29,13 @@ function callback(event, localclientnum, params) {
                 } else {
                     obj thread [[ callback ]](localclientnum, self);
                 }
-            } else if (isdefined(params)) {
-                self thread [[ callback ]](localclientnum, params);
-            } else {
-                self thread [[ callback ]](localclientnum);
+                continue;
             }
+            if (isdefined(params)) {
+                self thread [[ callback ]](localclientnum, params);
+                continue;
+            }
+            self thread [[ callback ]](localclientnum);
         }
     }
 }
@@ -56,11 +58,13 @@ function entity_callback(event, localclientnum, params) {
                 } else {
                     obj thread [[ callback ]](localclientnum, self);
                 }
-            } else if (isdefined(params)) {
-                self thread [[ callback ]](localclientnum, params);
-            } else {
-                self thread [[ callback ]](localclientnum);
+                continue;
             }
+            if (isdefined(params)) {
+                self thread [[ callback ]](localclientnum, params);
+                continue;
+            }
+            self thread [[ callback ]](localclientnum);
         }
     }
 }
@@ -134,7 +138,7 @@ function function_52ac9652(event, func, obj) {
         if (func_group[0] == func) {
             if (func_group[1] === obj) {
                 arrayremoveindex(self._callbacks[event], index, 0);
-                break;
+                return;
             }
         }
     }
@@ -155,7 +159,7 @@ function remove_callback(event, func, obj) {
         if (func_group[0] == func) {
             if (func_group[1] === obj) {
                 arrayremoveindex(level._callbacks[event], index, 0);
-                break;
+                return;
             }
         }
     }
@@ -552,11 +556,11 @@ function event_handler[systemstatechange] codecallback_statechange(eventstruct) 
     level._systemstates[eventstruct.system].state = eventstruct.state;
     if (isdefined(level._systemstates[eventstruct.system].callback)) {
         [[ level._systemstates[eventstruct.system].callback ]](eventstruct.localclientnum, eventstruct.state);
-    } else {
-        /#
-            println("<unknown string>" + eventstruct.system + "<unknown string>");
-        #/
+        return;
     }
+    /#
+        println("<unknown string>" + eventstruct.system + "<unknown string>");
+    #/
 }
 
 // Namespace callback/event_6ba27c50
@@ -765,7 +769,9 @@ function event_handler[enter_vehicle] codecallback_entervehicle(eventstruct) {
         if (isdefined(level.var_69b47c50)) {
             self [[ level.var_69b47c50 ]](eventstruct.localclientnum, eventstruct.vehicle);
         }
-    } else if (self isvehicle()) {
+        return;
+    }
+    if (self isvehicle()) {
         if (isdefined(level.var_93b40f07)) {
             self [[ level.var_93b40f07 ]](eventstruct.localclientnum, eventstruct.player);
         }
@@ -781,7 +787,9 @@ function event_handler[exit_vehicle] codecallback_exitvehicle(eventstruct) {
         if (isdefined(level.var_db2ec524)) {
             self [[ level.var_db2ec524 ]](eventstruct.localclientnum, eventstruct.vehicle);
         }
-    } else if (self isvehicle()) {
+        return;
+    }
+    if (self isvehicle()) {
         if (isdefined(level.var_d4d60480)) {
             self [[ level.var_d4d60480 ]](eventstruct.localclientnum, eventstruct.player);
         }
@@ -798,7 +806,7 @@ function event_handler[sound_notify] codecallback_soundnotify(eventstruct) {
         if (getgametypesetting(#"silentplant") == 0) {
             self playsound(eventstruct.localclientnum, #"");
         }
-        break;
+        return;
     }
 }
 
@@ -1083,9 +1091,9 @@ function event_handler[notetrack_callclientscript] codecallback_callclientscript
     if (isdefined(level._animnotifyfuncs[eventstruct.label])) {
         if (isdefined(eventstruct.param3) && eventstruct.param3 != "") {
             self [[ level._animnotifyfuncs[eventstruct.label] ]](eventstruct.param, eventstruct.param3);
-        } else {
-            self [[ level._animnotifyfuncs[eventstruct.label] ]](eventstruct.param);
+            return;
         }
+        self [[ level._animnotifyfuncs[eventstruct.label] ]](eventstruct.param);
     }
 }
 
@@ -1100,9 +1108,9 @@ function event_handler[notetrack_callclientscriptonlevel] codecallback_callclien
     if (isdefined(level._animnotifyfuncs[eventstruct.label])) {
         if (isdefined(eventstruct.param3) && eventstruct.param3 != "") {
             level [[ level._animnotifyfuncs[eventstruct.label] ]](eventstruct.param, eventstruct.param3);
-        } else {
-            level [[ level._animnotifyfuncs[eventstruct.label] ]](eventstruct.param);
+            return;
         }
+        level [[ level._animnotifyfuncs[eventstruct.label] ]](eventstruct.param);
     }
 }
 

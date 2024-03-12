@@ -12,30 +12,29 @@
 function function_50a58f3() {
     /#
         for (;;) {
-            for (;;) {
-                if (!getdvarint(#"hash_7668446d7f371f9", 0)) {
-                    wait(0.1);
-                    continue;
-                }
-                var_85d363a5 = function_aaa872c1();
-                var_6788a4c8 = 0;
-                var_f1535cf1 = 0;
-                level.var_2db12862 = [];
-                for (i = 0; i < var_85d363a5.size; i++) {
-                    if (isdefined(var_85d363a5[i]) && isdefined(var_85d363a5[i].enable)) {
-                        if (var_85d363a5[i].enable || !var_85d363a5[i].enable && isdefined(var_85d363a5[i].spawners)) {
-                            if (var_85d363a5[i].count < 0 || var_85d363a5[i].count > var_85d363a5[i].spawncount) {
-                                if (var_85d363a5[i].enable && isdefined(var_85d363a5[i].var_7600cd86)) {
-                                    var_6788a4c8 = var_6788a4c8 + 1;
-                                    var_f1535cf1 = var_f1535cf1 + var_85d363a5[i].var_7600cd86;
-                                }
-                                level.var_2db12862[level.var_2db12862.size] = var_85d363a5[i];
+            if (!getdvarint(#"hash_7668446d7f371f9", 0)) {
+                wait(0.1);
+                continue;
+            }
+            var_85d363a5 = function_aaa872c1();
+            var_6788a4c8 = 0;
+            var_f1535cf1 = 0;
+            level.var_2db12862 = [];
+            for (i = 0; i < var_85d363a5.size; i++) {
+                if (isdefined(var_85d363a5[i]) && isdefined(var_85d363a5[i].enable)) {
+                    if (var_85d363a5[i].enable || !var_85d363a5[i].enable && isdefined(var_85d363a5[i].spawners)) {
+                        if (var_85d363a5[i].count < 0 || var_85d363a5[i].count > var_85d363a5[i].spawncount) {
+                            if (var_85d363a5[i].enable && isdefined(var_85d363a5[i].var_7600cd86)) {
+                                var_6788a4c8 = var_6788a4c8 + 1;
+                                var_f1535cf1 = var_f1535cf1 + var_85d363a5[i].var_7600cd86;
                             }
+                            level.var_2db12862[level.var_2db12862.size] = var_85d363a5[i];
                         }
                     }
                 }
-                function_58bee038(level.var_e4fdd7dd, level.var_7c90ec19, level.var_539b11be, var_6788a4c8, var_f1535cf1);
             }
+            function_58bee038(level.var_e4fdd7dd, level.var_7c90ec19, level.var_539b11be, var_6788a4c8, var_f1535cf1);
+            waitframe(1);
         }
     #/
 }
@@ -462,7 +461,7 @@ function function_cfed27e3() {
             level.var_92f8da9a.color = (1, 1, 1);
             level.var_254556d9.color = (1, 1, 1);
             level.var_6c6a96f9.color = (1, 1, 1);
-            break;
+            return;
         case 1:
             level.var_efdd94a4.color = (1, 1, 1);
             level.var_3ad36502.color = (0, 1, 0);
@@ -472,7 +471,7 @@ function function_cfed27e3() {
             level.var_92f8da9a.color = (1, 1, 1);
             level.var_254556d9.color = (1, 1, 1);
             level.var_6c6a96f9.color = (1, 1, 1);
-            break;
+            return;
         case 2:
             level.var_efdd94a4.color = (1, 1, 1);
             level.var_3ad36502.color = (1, 1, 1);
@@ -482,7 +481,7 @@ function function_cfed27e3() {
             level.var_92f8da9a.color = (1, 1, 1);
             level.var_254556d9.color = (1, 1, 1);
             level.var_6c6a96f9.color = (1, 1, 1);
-            break;
+            return;
         case 3:
             level.var_efdd94a4.color = (1, 1, 1);
             level.var_3ad36502.color = (1, 1, 1);
@@ -492,7 +491,7 @@ function function_cfed27e3() {
             level.var_92f8da9a.color = (1, 1, 1);
             level.var_254556d9.color = (1, 1, 1);
             level.var_6c6a96f9.color = (1, 1, 1);
-            break;
+            return;
         case 4:
             level.var_efdd94a4.color = (1, 1, 1);
             level.var_3ad36502.color = (1, 1, 1);
@@ -502,7 +501,7 @@ function function_cfed27e3() {
             level.var_92f8da9a.color = (1, 1, 1);
             level.var_254556d9.color = (1, 1, 1);
             level.var_6c6a96f9.color = (1, 1, 1);
-            break;
+            return;
         case 5:
             level.var_efdd94a4.color = (1, 1, 1);
             level.var_3ad36502.color = (1, 1, 1);
@@ -512,7 +511,7 @@ function function_cfed27e3() {
             level.var_92f8da9a.color = (0, 1, 0);
             level.var_254556d9.color = (1, 1, 1);
             level.var_6c6a96f9.color = (1, 1, 1);
-            break;
+            return;
         case 6:
             level.var_efdd94a4.color = (1, 1, 1);
             level.var_3ad36502.color = (1, 1, 1);
@@ -522,7 +521,7 @@ function function_cfed27e3() {
             level.var_92f8da9a.color = (1, 1, 1);
             level.var_254556d9.color = (0, 1, 0);
             level.var_6c6a96f9.color = (1, 1, 1);
-            break;
+            return;
         case 7:
             level.var_efdd94a4.color = (1, 1, 1);
             level.var_3ad36502.color = (1, 1, 1);
@@ -532,7 +531,7 @@ function function_cfed27e3() {
             level.var_92f8da9a.color = (1, 1, 1);
             level.var_254556d9.color = (1, 1, 1);
             level.var_6c6a96f9.color = (0, 1, 0);
-            break;
+            return;
         }
     #/
 }

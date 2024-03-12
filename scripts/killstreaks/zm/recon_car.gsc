@@ -61,7 +61,9 @@ function private function_93426c92(params) {
     if (params.weapon === level.var_85baa7a3) {
         self val::set(#"recon_car", "disable_weapon_cycling", 1);
         self.var_7388509e = 1;
-    } else if (is_true(self.var_7388509e)) {
+        return;
+    }
+    if (is_true(self.var_7388509e)) {
         self.var_7388509e = undefined;
         self val::reset(#"recon_car", "disable_weapon_cycling");
     }
@@ -222,9 +224,9 @@ function function_86e8d9af(n_radius = 200) {
                 v_dir = vectornormalize(ai_zombie.origin - self.origin);
                 v_launch = v_dir * randomintrange(80, 100) + vectorscale((0, 0, 1), 150);
                 ai_zombie zm_utility::function_ffc279(v_launch, self.owner, ai_zombie.health, self.weapon);
-            } else {
-                ai_zombie thread ai::stun();
+                continue;
             }
+            ai_zombie thread ai::stun();
         }
     }
     self radiusdamage(self.origin, n_radius, self.radiusdamagemax, self.radiusdamagemin, self.owner, "MOD_UNKNOWN", self.weapon);

@@ -131,10 +131,8 @@ function private function_600a82c(player) {
             if (!item_world_util::function_db35e94f(item.networkid)) {
                 item.networkid = item_world_util::function_970b8d86(var_fa3df96);
             }
-            var_ddeb881e = item_inventory::function_2e711614(var_fa3df96);
-            while (var_ddeb881e.var_a6762160 === item.var_a6762160) {
+            for (var_ddeb881e = item_inventory::function_2e711614(var_fa3df96); var_ddeb881e.var_a6762160 === item.var_a6762160; var_ddeb881e = item_inventory::function_2e711614(var_fa3df96)) {
                 waitframe(1);
-                var_ddeb881e = item_inventory::function_2e711614(var_fa3df96);
             }
             if (var_ddeb881e.networkid === 32767) {
                 player item_world::function_de2018e3(item, player, var_fa3df96, 0);
@@ -377,8 +375,7 @@ function function_f7e9dfd7() {
 // Size: 0x814
 function function_9c0c8ac3(v_vortex_origin, n_vortex_radius, n_start_time, n_vortex_time, svortex, eattacker, weapon) {
     team = isdefined(level.zombie_team) ? level.zombie_team : #"axis";
-    n_currtime = 0;
-    while (n_currtime <= n_vortex_time) {
+    for (n_currtime = 0; n_currtime <= n_vortex_time; n_currtime = gettime() - n_start_time) {
         a_ai_zombies = function_72d3bca6(getaiteamarray(team), v_vortex_origin, undefined, undefined, n_vortex_radius);
         a_ai_zombies = arraycombine(a_ai_zombies, zombie_vortex::vortex_z_extension(a_ai_zombies, v_vortex_origin, n_vortex_radius), 0, 0);
         svortex.zombies = a_ai_zombies;
@@ -395,83 +392,82 @@ function function_9c0c8ac3(v_vortex_origin, n_vortex_radius, n_start_time, n_vor
                     params.weapon = weapon;
                     ai_zombie vehicle_ai::set_state("idgun_death", params);
                 }
-            } else {
-                ai_zombie clientfield::set("" + #"hash_399ab6541d717dc7", 1);
-                ai_zombie.blockingpain = 1;
-                ai_zombie thread function_fb7c4f41();
-                switch (ai_zombie.var_6f84b820) {
-                case #"normal":
-                    if (ai_zombie.archetype === #"zombie_dog") {
-                        ai_zombie thread namespace_9ff9f642::slowdown(#"hash_54dc5d9bfaadb765");
-                        if (!isdefined(ai_zombie.var_56912e22) || time >= ai_zombie.var_56912e22) {
-                            var_34e3b3f7 = ai_zombie.maxhealth * 0.4;
-                            ai_zombie dodamage(var_34e3b3f7, v_vortex_origin, eattacker, svortex, undefined, "MOD_DOT", 0, weapon);
-                            ai_zombie.var_56912e22 = gettime() + 1000;
-                        }
-                        break;
-                    }
-                    ai_zombie.var_db490292 = "blackholebomb_pull_fast";
-                    ai_zombie.var_92b78660 = 1024;
-                    if (is_true(ai_zombie._black_hole_bomb_collapse_death) && !zm_utility::is_magic_bullet_shield_enabled(ai_zombie)) {
-                        ai_zombie.skipautoragdoll = 1;
-                        ai_zombie kill(ai_zombie.origin + vectorscale((0, 0, 1), 50), ai_zombie.interdimensional_gun_attacker, undefined, weapon, 0, 1);
-                        level thread hud::function_c9800094(eattacker, ai_zombie.origin + vectorscale((0, 0, 1), 50), ai_zombie.maxhealth, 1);
-                        if (is_true(ai_zombie.allowdeath)) {
-                            gibserverutils::annihilate(ai_zombie);
-                        }
-                    }
-                    if (!is_true(ai_zombie.interdimensional_gun_kill) && !ai_zombie.ignorevortices) {
-                        ai_zombie.var_ecd5b1b9 = svortex;
-                        ai_zombie.damageorigin = v_vortex_origin;
-                        ai_zombie.interdimensional_gun_kill = 1;
-                        ai_zombie.interdimensional_gun_attacker = eattacker;
-                        ai_zombie.interdimensional_gun_inflictor = eattacker;
-                        ai_zombie.interdimensional_gun_weapon = weapon;
-                    }
-                    break;
-                case #"special":
-                    ai_zombie thread namespace_9ff9f642::slowdown(#"hash_2c88ef7895dccf65");
+                continue;
+            }
+            ai_zombie clientfield::set("" + #"hash_399ab6541d717dc7", 1);
+            ai_zombie.blockingpain = 1;
+            ai_zombie thread function_fb7c4f41();
+            switch (ai_zombie.var_6f84b820) {
+            case #"normal":
+                if (ai_zombie.archetype === #"zombie_dog") {
+                    ai_zombie thread namespace_9ff9f642::slowdown(#"hash_54dc5d9bfaadb765");
                     if (!isdefined(ai_zombie.var_56912e22) || time >= ai_zombie.var_56912e22) {
-                        var_34e3b3f7 = ai_zombie.maxhealth * 0.05;
+                        var_34e3b3f7 = ai_zombie.maxhealth * 0.4;
                         ai_zombie dodamage(var_34e3b3f7, v_vortex_origin, eattacker, svortex, undefined, "MOD_DOT", 0, weapon);
                         ai_zombie.var_56912e22 = gettime() + 1000;
                     }
-                    if (!is_true(ai_zombie.interdimensional_gun_kill) && !ai_zombie.ignorevortices) {
-                        ai_zombie.var_ecd5b1b9 = svortex;
-                        ai_zombie.damageorigin = v_vortex_origin;
-                        ai_zombie.interdimensional_gun_kill = 1;
-                        ai_zombie.interdimensional_gun_attacker = eattacker;
-                        ai_zombie.interdimensional_gun_inflictor = eattacker;
-                        ai_zombie.interdimensional_gun_weapon = weapon;
-                    }
-                    break;
-                case #"hash_72d4f2ad2e333eb4":
-                    if (is_true(ai_zombie.var_8576e0be)) {
-                        ai_zombie namespace_9ff9f642::function_520f4da5(#"hash_2c88ef7895dccf65");
-                    } else {
-                        ai_zombie thread namespace_9ff9f642::slowdown(#"hash_2c88ef7895dccf65");
-                    }
-                    if (!isdefined(ai_zombie.var_56912e22) || time >= ai_zombie.var_56912e22) {
-                        var_34e3b3f7 = ai_zombie.maxhealth * 0.02;
-                        ai_zombie dodamage(var_34e3b3f7, v_vortex_origin, eattacker, svortex, undefined, "MOD_DOT", 0, weapon);
-                        ai_zombie.var_56912e22 = gettime() + 1000;
-                    }
-                    if (!is_true(ai_zombie.interdimensional_gun_kill) && !ai_zombie.ignorevortices) {
-                        ai_zombie.var_ecd5b1b9 = svortex;
-                        ai_zombie.damageorigin = v_vortex_origin;
-                        ai_zombie.interdimensional_gun_kill = 1;
-                        ai_zombie.interdimensional_gun_attacker = eattacker;
-                        ai_zombie.interdimensional_gun_inflictor = eattacker;
-                        ai_zombie.interdimensional_gun_weapon = weapon;
-                    }
-                    break;
-                default:
-                    break;
+                    continue;
                 }
+                ai_zombie.var_db490292 = "blackholebomb_pull_fast";
+                ai_zombie.var_92b78660 = 1024;
+                if (is_true(ai_zombie._black_hole_bomb_collapse_death) && !zm_utility::is_magic_bullet_shield_enabled(ai_zombie)) {
+                    ai_zombie.skipautoragdoll = 1;
+                    ai_zombie kill(ai_zombie.origin + vectorscale((0, 0, 1), 50), ai_zombie.interdimensional_gun_attacker, undefined, weapon, 0, 1);
+                    level thread hud::function_c9800094(eattacker, ai_zombie.origin + vectorscale((0, 0, 1), 50), ai_zombie.maxhealth, 1);
+                    if (is_true(ai_zombie.allowdeath)) {
+                        gibserverutils::annihilate(ai_zombie);
+                    }
+                }
+                if (!is_true(ai_zombie.interdimensional_gun_kill) && !ai_zombie.ignorevortices) {
+                    ai_zombie.var_ecd5b1b9 = svortex;
+                    ai_zombie.damageorigin = v_vortex_origin;
+                    ai_zombie.interdimensional_gun_kill = 1;
+                    ai_zombie.interdimensional_gun_attacker = eattacker;
+                    ai_zombie.interdimensional_gun_inflictor = eattacker;
+                    ai_zombie.interdimensional_gun_weapon = weapon;
+                }
+                continue;
+            case #"special":
+                ai_zombie thread namespace_9ff9f642::slowdown(#"hash_2c88ef7895dccf65");
+                if (!isdefined(ai_zombie.var_56912e22) || time >= ai_zombie.var_56912e22) {
+                    var_34e3b3f7 = ai_zombie.maxhealth * 0.05;
+                    ai_zombie dodamage(var_34e3b3f7, v_vortex_origin, eattacker, svortex, undefined, "MOD_DOT", 0, weapon);
+                    ai_zombie.var_56912e22 = gettime() + 1000;
+                }
+                if (!is_true(ai_zombie.interdimensional_gun_kill) && !ai_zombie.ignorevortices) {
+                    ai_zombie.var_ecd5b1b9 = svortex;
+                    ai_zombie.damageorigin = v_vortex_origin;
+                    ai_zombie.interdimensional_gun_kill = 1;
+                    ai_zombie.interdimensional_gun_attacker = eattacker;
+                    ai_zombie.interdimensional_gun_inflictor = eattacker;
+                    ai_zombie.interdimensional_gun_weapon = weapon;
+                }
+                continue;
+            case #"hash_72d4f2ad2e333eb4":
+                if (is_true(ai_zombie.var_8576e0be)) {
+                    ai_zombie namespace_9ff9f642::function_520f4da5(#"hash_2c88ef7895dccf65");
+                } else {
+                    ai_zombie thread namespace_9ff9f642::slowdown(#"hash_2c88ef7895dccf65");
+                }
+                if (!isdefined(ai_zombie.var_56912e22) || time >= ai_zombie.var_56912e22) {
+                    var_34e3b3f7 = ai_zombie.maxhealth * 0.02;
+                    ai_zombie dodamage(var_34e3b3f7, v_vortex_origin, eattacker, svortex, undefined, "MOD_DOT", 0, weapon);
+                    ai_zombie.var_56912e22 = gettime() + 1000;
+                }
+                if (!is_true(ai_zombie.interdimensional_gun_kill) && !ai_zombie.ignorevortices) {
+                    ai_zombie.var_ecd5b1b9 = svortex;
+                    ai_zombie.damageorigin = v_vortex_origin;
+                    ai_zombie.interdimensional_gun_kill = 1;
+                    ai_zombie.interdimensional_gun_attacker = eattacker;
+                    ai_zombie.interdimensional_gun_inflictor = eattacker;
+                    ai_zombie.interdimensional_gun_weapon = weapon;
+                }
+                continue;
+            default:
+                continue;
             }
         }
         waitframe(1);
-        n_currtime = gettime() - n_start_time;
     }
 }
 

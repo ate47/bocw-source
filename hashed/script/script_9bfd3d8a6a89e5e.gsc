@@ -167,9 +167,9 @@ function function_ead8fde7(active) {
 function function_fc288808(*quick) {
     if (self flag::get("body_shield_gun_up")) {
         self namespace_594b67e::function_6cd69890(1, 1, self namespace_594b67e::function_98f117ad("ges_body_shield"));
-    } else {
-        self namespace_594b67e::function_6cd69890(1, 1);
+        return;
     }
+    self namespace_594b67e::function_6cd69890(1, 1);
 }
 
 // Namespace namespace_6cecf2d8/namespace_6cecf2d8
@@ -638,7 +638,7 @@ function function_c6059aa(action) {
             if (isdefined(self.var_3e95b88f)) {
                 self namespace_f48ab2e1::function_82cf95d9(#"hash_61bd6e94a9b1f44e");
             }
-            break;
+            return;
         }
         self waittill(#"hash_3cc22522d66c35f8");
     }

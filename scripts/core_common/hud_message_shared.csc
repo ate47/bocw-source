@@ -41,9 +41,9 @@ function function_65299180(localclientnum, var_e69b15f0, arglist) {
 function setlowermessage(localclientnum, text, time) {
     if (isdefined(time) && time > 0) {
         function_65299180(localclientnum, #"hash_424b9c54c8bf7a82", [1:int(time), 0:text]);
-    } else {
-        function_65299180(localclientnum, #"hash_424b9c54c8bf7a82", [0:text]);
+        return;
     }
+    function_65299180(localclientnum, #"hash_424b9c54c8bf7a82", [0:text]);
 }
 
 // Namespace hud_message/hud_message_shared

@@ -106,10 +106,10 @@ function handleplayerfasttravel(player, var_12230d08) {
         }
         if (isdefined(level.var_3c84697b)) {
             player thread [[ level.var_3c84697b ]](var_12230d08);
-        } else {
-            player setorigin(currentorigin);
-            player dontinterpolate();
+            continue;
         }
+        player setorigin(currentorigin);
+        player dontinterpolate();
     }
 }
 

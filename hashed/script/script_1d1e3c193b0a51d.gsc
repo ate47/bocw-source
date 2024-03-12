@@ -105,7 +105,6 @@ function private function_c81cdba2() {
             return 1;
         }
         return 0;
-        break;
     }
     return 0;
 }

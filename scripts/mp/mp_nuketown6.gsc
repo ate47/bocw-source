@@ -38,10 +38,10 @@ function event_handler[level_init] main(*eventstruct) {
         game.musicset = "_nth";
         level.var_ccf67f32 = &function_161cff4d;
         function_96baa49();
-    } else {
-        e_clip = getent("jack_in_box_1_clip", "targetname");
-        e_clip delete();
+        return;
     }
+    e_clip = getent("jack_in_box_1_clip", "targetname");
+    e_clip delete();
 }
 
 // Namespace mp_nuketown6/mp_nuketown6

@@ -64,28 +64,28 @@ function player_contract_event(event_name, param1 = undefined, param2 = undefine
                 self [[ event_func ]]();
             }
         }
-        break;
+        return;
     case 1:
         foreach (event_func in level.player_contract_events[event_name].events) {
             if (isdefined(event_func)) {
                 self [[ event_func ]](param1);
             }
         }
-        break;
+        return;
     case 2:
         foreach (event_func in level.player_contract_events[event_name].events) {
             if (isdefined(event_func)) {
                 self [[ event_func ]](param1, param2);
             }
         }
-        break;
+        return;
     case 3:
         foreach (event_func in level.player_contract_events[event_name].events) {
             if (isdefined(event_func)) {
                 self [[ event_func ]](param1, param2, param3);
             }
         }
-        break;
+        return;
     }
 }
 

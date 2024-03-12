@@ -69,9 +69,9 @@ function function_c484a9be(...) {
             foreach (path in vararg) {
                 if (ishash(path)) {
                     var_7e5020cb = var_7e5020cb + "<unknown string>" + function_9e72a96(path);
-                } else {
-                    var_7e5020cb = var_7e5020cb + "<unknown string>" + path;
+                    continue;
                 }
+                var_7e5020cb = var_7e5020cb + "<unknown string>" + path;
             }
             println("<unknown string>" + "<unknown string>" + "<unknown string>" + var_7e5020cb + "<unknown string>" + (isdefined(value) ? value : ishash(value) ? function_9e72a96(value) : "<unknown string>"));
         }
@@ -98,7 +98,8 @@ function function_53721fc4(player, ...) {
         if (int(player_xuid) === value) {
             player_index = i;
             break;
-        } else if (!isdefined(player_index) && value == 0) {
+        }
+        if (!isdefined(player_index) && value == 0) {
             player_index = i;
         }
     }
@@ -118,9 +119,9 @@ function function_53721fc4(player, ...) {
             foreach (path in var_f7a50e76) {
                 if (ishash(path)) {
                     var_7e5020cb = var_7e5020cb + "<unknown string>" + function_9e72a96(path);
-                } else {
-                    var_7e5020cb = var_7e5020cb + "<unknown string>" + path;
+                    continue;
                 }
+                var_7e5020cb = var_7e5020cb + "<unknown string>" + path;
             }
             println("<unknown string>" + "<unknown string>" + "<unknown string>" + var_7e5020cb + "<unknown string>" + (isdefined(value) ? value : ishash(value) ? function_9e72a96(value) : "<unknown string>"));
         }
@@ -455,9 +456,9 @@ function function_21d402f4(...) {
             foreach (path in vararg) {
                 if (ishash(path)) {
                     var_7e5020cb = var_7e5020cb + "<unknown string>" + function_9e72a96(path);
-                } else {
-                    var_7e5020cb = var_7e5020cb + "<unknown string>" + path;
+                    continue;
                 }
+                var_7e5020cb = var_7e5020cb + "<unknown string>" + path;
             }
             println("<unknown string>" + "<unknown string>" + "<unknown string>" + var_7e5020cb + "<unknown string>" + (isdefined(value) ? value : ishash(value) ? function_9e72a96(value) : "<unknown string>"));
         }
@@ -501,9 +502,9 @@ function function_48b5c403(player, ...) {
             foreach (path in var_f7a50e76) {
                 if (ishash(path)) {
                     var_7e5020cb = var_7e5020cb + "<unknown string>" + function_9e72a96(path);
-                } else {
-                    var_7e5020cb = var_7e5020cb + "<unknown string>" + path;
+                    continue;
                 }
+                var_7e5020cb = var_7e5020cb + "<unknown string>" + path;
             }
             println("<unknown string>" + "<unknown string>" + "<unknown string>" + var_7e5020cb + "<unknown string>" + (isdefined(value) ? value : ishash(value) ? function_9e72a96(value) : "<unknown string>"));
         }

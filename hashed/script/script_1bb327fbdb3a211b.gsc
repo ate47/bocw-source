@@ -210,9 +210,9 @@ function function_cdea4abe(v_origin, n_radius) {
                 v_dir = vectornormalize(ai_zombie.origin - v_origin);
                 v_launch = v_dir * randomintrange(80, 100) + vectorscale((0, 0, 1), 150);
                 ai_zombie zm_utility::function_ffc279(v_launch, undefined, ai_zombie.health, undefined);
-            } else {
-                ai_zombie thread ai::stun();
+                continue;
             }
+            ai_zombie thread ai::stun();
         }
     }
     glassradiusdamage(v_origin, n_radius, 250, 100);
@@ -411,7 +411,6 @@ function function_1c058bc5(weapon, means_of_death) {
         return 1;
     default:
         return 0;
-        break;
     }
 }
 
@@ -467,23 +466,23 @@ function on_item_pickup(params) {
         level thread function_f9447d48(self);
         level clientfield::set("" + #"hash_45b04d88564a1cd", 0);
         array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"zmintel_tungsten_darkaether_artifact_1");
-        break;
+        return;
     case #"item_zmquest_tungsten_ww_quest_part_b":
         level flag::set(#"hash_377409bcba0102a7");
         level zm_ui_inventory::function_7df6bb60(#"hash_2d5a3eb1a97e70e5", 1);
         level thread function_75bec488(self);
         array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"zmintel_tungsten_darkaether_artifact_2");
-        break;
+        return;
     case #"item_zmquest_tungsten_ww_quest_part_c":
         level flag::set(#"hash_6eaa2d1db393bd70");
         level zm_ui_inventory::function_7df6bb60(#"hash_2d5a3db1a97e6f32", 1);
         level thread function_da57dd7c(self);
         array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"zmintel_tungsten_darkaether_artifact_3");
-        break;
+        return;
     case #"ww_axe_gun_melee_t9_item_sr":
         level thread ww_pickup_vo(params.item, self);
         array::thread_all(function_a1ef346b(), &namespace_4abf1500::function_3ad8805e, #"zmintel_tungsten_requiem_artifact_1");
-        break;
+        return;
     }
 }
 
@@ -604,13 +603,13 @@ function function_69f39621() {
     s_interact = struct::get("ww_pool_interact");
     var_d56fdb6 = struct::get_array(s_interact.target);
     foreach (var_d2ee34ea in var_d56fdb6) {
-        var_3128fb28 = util::spawn_model(var_d2ee34ea.model, var_d2ee34ea.origin, var_d2ee34ea.angles);
+        mdl_crystal = util::spawn_model(var_d2ee34ea.model, var_d2ee34ea.origin, var_d2ee34ea.angles);
         if (!isdefined(level.var_d52e24c5)) {
             level.var_d52e24c5 = [];
         } else if (!isarray(level.var_d52e24c5)) {
             level.var_d52e24c5 = array(level.var_d52e24c5);
         }
-        level.var_d52e24c5[level.var_d52e24c5.size] = var_3128fb28;
+        level.var_d52e24c5[level.var_d52e24c5.size] = mdl_crystal;
     }
     level.var_d52e24c5[1] playsound(#"hash_16ed1f8ba3be3b37");
     level.var_d52e24c5[1] playloopsound(#"hash_7b219cc350a3dd43");
@@ -908,17 +907,17 @@ function cmd(cmd) {
             if (isdefined(var_1f3c6d19.var_f863218)) {
                 var_1f3c6d19.var_f863218 delete();
             }
-            break;
+            return;
         case #"hash_649638ef22bf3bf1":
             level set(#"hash_377409bcba0102a7");
             level function_7df6bb60(#"hash_2d5a3eb1a97e70e5", 1);
             level thread function_75bec488(self);
-            break;
+            return;
         case #"hash_649637ef22bf3a3e":
             level set(#"hash_6eaa2d1db393bd70");
             level function_7df6bb60(#"hash_2d5a3db1a97e6f32", 1);
             level thread function_da57dd7c(self);
-            break;
+            return;
         }
     #/
 }

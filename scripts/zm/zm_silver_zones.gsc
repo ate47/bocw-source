@@ -155,12 +155,11 @@ function function_f62d4e38() {
 function function_a74dcd0a(player) {
     if (!isdefined(level.var_fdcaf3a6)) {
         return player zm_zonemgr::get_player_zone();
-    } else {
-        if (player.cached_zone.name === #"zone_proto_exterior_rear2" || player.cached_zone.name === #"zone_proto_exterior_rear") {
-            return #"zone_proto_exterior_rear";
-        }
-        return player zm_zonemgr::get_player_zone();
     }
+    if (player.cached_zone.name === #"zone_proto_exterior_rear2" || player.cached_zone.name === #"zone_proto_exterior_rear") {
+        return #"zone_proto_exterior_rear";
+    }
+    return player zm_zonemgr::get_player_zone();
 }
 
 // Namespace zm_silver_zones/zm_silver_zones
@@ -175,7 +174,9 @@ function function_64c67df3(zone_path) {
                     if (is_true(level.flag[#"connect_proto_exterior_rear_to_tunnel"])) {
                         return level.zones[#"zone_proto_exterior_rear2"];
                     }
-                } else if (self.favoriteenemy.cached_zone.name === #"zone_proto_exterior_rear") {
+                    return;
+                }
+                if (self.favoriteenemy.cached_zone.name === #"zone_proto_exterior_rear") {
                     if (is_true(level.flag[#"connect_proto_exterior_rear_to_tunnel"])) {
                         return level.zones[#"zone_proto_exterior_rear2"];
                     }
@@ -222,63 +223,63 @@ function function_27028b8e(str_zone) {
     switch (str_zone) {
     case #"zone_proto_start2":
     case #"zone_proto_start":
-        var_601fee0 = #"hash_5dec24fd79fe88e4";
+        str_display = #"hash_5dec24fd79fe88e4";
         break;
     case #"zone_proto_upstairs":
-        var_601fee0 = #"hash_1883157e3a8c1bcf";
+        str_display = #"hash_1883157e3a8c1bcf";
         break;
     case #"zone_proto_interior_cave":
-        var_601fee0 = #"hash_3b12520037a181";
+        str_display = #"hash_3b12520037a181";
         break;
     case #"zone_proto_interior_lower":
-        var_601fee0 = #"hash_48fcaccdc583f88a";
+        str_display = #"hash_48fcaccdc583f88a";
         break;
     case #"zone_proto_upstairs_2":
-        var_601fee0 = #"hash_58e5493c26a40efd";
+        str_display = #"hash_58e5493c26a40efd";
         break;
     case #"zone_proto_roof_plane":
     case #"zone_proto_roof_center":
-        var_601fee0 = #"hash_29459d2873e524e";
+        str_display = #"hash_29459d2873e524e";
         break;
     case #"zone_proto_plane_exterior":
     case #"zone_proto_plane_exterior2":
-        var_601fee0 = #"hash_621ea24bd69a239";
+        str_display = #"hash_621ea24bd69a239";
         break;
     case #"zone_proto_exterior_rear":
     case #"zone_proto_exterior_rear2":
-        var_601fee0 = #"hash_3b327c1463ec9f8d";
+        str_display = #"hash_3b327c1463ec9f8d";
         break;
     case #"zone_tunnel_interior":
-        var_601fee0 = #"hash_32b5142fe11acb26";
+        str_display = #"hash_32b5142fe11acb26";
         break;
     case #"zone_power_room":
     case #"zone_power_room_outside":
     case #"zone_power_trans_north":
     case #"zone_power_trans_south":
-        var_601fee0 = #"hash_3f356cdd2bb6e576";
+        str_display = #"hash_3f356cdd2bb6e576";
         break;
     case #"zone_trans_north_pap_room":
     case #"zone_trans_north":
-        var_601fee0 = #"hash_3e51b8ba7a93fbe";
+        str_display = #"hash_3e51b8ba7a93fbe";
         break;
     case #"zone_trans_south_pap_room":
     case #"zone_trans_south":
     case #"zone_trans_south_tunnel":
-        var_601fee0 = #"hash_7988e17f66389e69";
+        str_display = #"hash_7988e17f66389e69";
         break;
     case #"zone_center_upper_west":
     case #"zone_center_lower":
     case #"zone_center_upper_north":
     case #"zone_center_upper":
-        var_601fee0 = #"hash_57edcb7278524c75";
+        str_display = #"hash_57edcb7278524c75";
         break;
     case #"zone_power_tunnel":
-        var_601fee0 = #"hash_75f7127232f283bb";
+        str_display = #"hash_75f7127232f283bb";
         break;
     default:
-        var_601fee0 = undefined;
+        str_display = undefined;
         break;
     }
-    return var_601fee0;
+    return str_display;
 }
 

@@ -104,9 +104,9 @@ function private event_handler[systemstatechange] function_406f0371(eventstruct)
         }
         if (task == "_exit") {
             function_10de102b("completed");
-        } else {
-            function_1c01a227(task);
+            return;
         }
+        function_1c01a227(task);
     }
 }
 

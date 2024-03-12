@@ -65,7 +65,9 @@ function private function_a2eec6c2(killstreaktype, killstreakweapon) {
         if (currentweapon === killstreakweapon && killstreakweapon.iscarriedkillstreak) {
             self killstreaks::switch_to_last_non_killstreak_weapon();
         }
-    } else if (waitresult._notify === "weapon_fired" && waitresult.weapon === killstreakweapon) {
+        return;
+    }
+    if (waitresult._notify === "weapon_fired" && waitresult.weapon === killstreakweapon) {
         if (function_469dabd0(killstreaktype)) {
             self notify(#"lockin_selection");
         } else {
@@ -73,19 +75,21 @@ function private function_a2eec6c2(killstreaktype, killstreakweapon) {
             self setweaponammoclip(w_weapon, w_weapon.clipsize);
             self notify(#"cancel_selection");
         }
-    } else if (waitresult._notify === "weapon_change" && waitresult.last_weapon === killstreakweapon) {
-        self notify(#"cancel_selection");
-    } else {
-        /#
-            str_notify = function_9e72a96(waitresult._notify);
-            str_weapon = function_9e72a96(waitresult.weapon.name);
-            var_d8d53d01 = isdefined(waitresult.last_weapon) ? function_9e72a96(waitresult.last_weapon.name) : "<unknown string>";
-            /#
-                assertmsg("<unknown string>" + str_notify + "<unknown string>" + str_weapon + "<unknown string>" + var_d8d53d01);
-            #/
-        #/
-        self notify(#"cancel_selection");
+        return;
     }
+    if (waitresult._notify === "weapon_change" && waitresult.last_weapon === killstreakweapon) {
+        self notify(#"cancel_selection");
+        return;
+    }
+    /#
+        str_notify = function_9e72a96(waitresult._notify);
+        str_weapon = function_9e72a96(waitresult.weapon.name);
+        var_d8d53d01 = isdefined(waitresult.last_weapon) ? function_9e72a96(waitresult.last_weapon.name) : "<unknown string>";
+        /#
+            assertmsg("<unknown string>" + str_notify + "<unknown string>" + str_weapon + "<unknown string>" + var_d8d53d01);
+        #/
+    #/
+    self notify(#"cancel_selection");
 }
 
 // Namespace namespace_bf7415ae/airsupport

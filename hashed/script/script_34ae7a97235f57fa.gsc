@@ -96,7 +96,9 @@ function function_4814ed2e(*params) {
             }
             playsoundatposition(#"hash_24560114c2498b4d", killer.origin);
         }
-    } else if (isdefined(drop.var_d8b51b9f) && randomfloat(1) < drop.var_d8b51b9f) {
+        return;
+    }
+    if (isdefined(drop.var_d8b51b9f) && randomfloat(1) < drop.var_d8b51b9f) {
         origin = self.origin + vectorscale((0, 0, 1), 30);
         var_20b210c2 = function_cdd56b7c(drop, origin);
         var_20b210c2.multiplier = self function_fbd43d2f();

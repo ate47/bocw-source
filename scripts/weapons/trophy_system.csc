@@ -21,10 +21,10 @@ function function_a485f3cf(localclientnum, *oldval, newval, *bnewent, *binitials
     switch (bwastimejump) {
     case 1:
         self thread function_82dd67c1(fieldname);
-        break;
+        return;
     case 0:
         self thread function_ce24311a(fieldname);
-        break;
+        return;
     }
 }
 

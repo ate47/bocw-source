@@ -125,9 +125,8 @@ function function_f863c07e(vehicletype, spawnpos, spawnangles, var_946ffae7, par
         var_1957bf22.spawncount++;
         function_f7bb1527(var_1957bf22, var_1957bf22.vehicle);
         return var_1957bf22.vehicle;
-    } else {
-        return function_76e9830e(vehicletype, spawnpos, spawnangles, undefined, var_946ffae7, params);
     }
+    return function_76e9830e(vehicletype, spawnpos, spawnangles, undefined, var_946ffae7, params);
 }
 
 // Namespace namespace_d0eacb0d/namespace_d0eacb0d

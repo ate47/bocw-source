@@ -184,9 +184,9 @@ function function_e8ad1d81(position, owner, normal, velocity, killcament, team, 
     var_e76400c0 = undefined;
     wallnormal = undefined;
     var_693f108f = undefined;
-    var_aecaaa11 = getweapon(#"molotov_fire");
-    var_5632b17 = getweapon("molotov_fire_wall");
-    var_7bf146f2 = getweapon("molotov_steam");
+    molotovfireweapon = getweapon(#"molotov_fire");
+    molotovfirewallweapon = getweapon("molotov_fire_wall");
+    molotovsteamweapon = getweapon("molotov_steam");
     if (normal[2] < -0.5) {
         var_36c22d1d = position + vectorscale(normal, 2);
         var_8ae62b02 = var_36c22d1d - vectorscale((0, 0, 1), 240);
@@ -249,17 +249,15 @@ function function_e8ad1d81(position, owner, normal, velocity, killcament, team, 
             x = originalposition[0];
             y = originalposition[1];
             lowestz = var_69d15ad0[#"position"][2];
-            z = originalposition[2];
-            while (z > lowestz) {
+            for (z = originalposition[2]; z > lowestz; z = z - randomintrange(20, 30)) {
                 newpos = (x, y, z);
                 water_depth = get_water_depth(newpos);
                 if (function_a66ba8cc(water_depth) || is_under_water(newpos)) {
                     newpos = newpos - (0, 0, water_depth);
-                    level thread function_42b9fdbe(var_7bf146f2, newpos, (0, 0, 1), int(customsettings.var_b79d64a9), team);
+                    level thread function_42b9fdbe(molotovsteamweapon, newpos, (0, 0, 1), int(customsettings.var_b79d64a9), team);
                     break;
                 }
-                level thread function_42b9fdbe(var_5632b17, newpos, wall_normal, int(customsettings.var_b79d64a9), team);
-                z = z - randomintrange(20, 30);
+                level thread function_42b9fdbe(molotovfirewallweapon, newpos, wall_normal, int(customsettings.var_b79d64a9), team);
             }
             var_bc9ec158 = 0.6 * var_69d15ad0[#"fraction"];
             if (var_bc9ec158 > 0) {
@@ -282,7 +280,7 @@ function function_e8ad1d81(position, owner, normal, velocity, killcament, team, 
         traceposition = trace[#"position"];
         if (trace[#"fraction"] < 0.9) {
             var_252a0dc7 = trace[#"normal"];
-            spawntimedfx(var_5632b17, traceposition, var_252a0dc7, int(customsettings.var_b79d64a9), team);
+            spawntimedfx(molotovfirewallweapon, traceposition, var_252a0dc7, int(customsettings.var_b79d64a9), team);
         }
     }
     var_1f254a06 = normal;
@@ -421,16 +419,16 @@ function function_8a03d3f3(owner, impactpos, startpos, normal, multiplier, rotat
                     locations[#"normal"][locindex] = (0, 0, 1);
                     locations[#"steam"][locindex] = 1;
                     locations[#"loc"][locindex] = locations[#"loc"][locindex] - (0, 0, water_depth);
-                } else {
-                    locations[#"normal"][locindex] = var_9417df90[#"normal"];
+                    continue;
                 }
+                locations[#"normal"][locindex] = var_9417df90[#"normal"];
             }
         }
     }
-    var_aecaaa11 = getweapon(#"molotov_fire");
-    var_3cbce009 = getweapon("molotov_fire_tall");
-    var_4a1b9411 = getweapon("molotov_fire_small");
-    var_7bf146f2 = getweapon("molotov_steam");
+    molotovfireweapon = getweapon(#"molotov_fire");
+    molotovfiretallweapon = getweapon("molotov_fire_tall");
+    molotovfiresmallweapon = getweapon("molotov_fire_small");
+    molotovsteamweapon = getweapon("molotov_steam");
     if (var_cb4f434e) {
         var_6b23e1c9 = hitpos(impactpos, impactpos - (0, 0, defaultdropdistance), (1, 0, 0))[#"position"];
     } else {
@@ -443,7 +441,7 @@ function function_8a03d3f3(owner, impactpos, startpos, normal, multiplier, rotat
     if (!is_under_water(var_6b23e1c9)) {
         playfx(level._effect[#"hash_31b6cc906e6d0ae0"], var_6b23e1c9, forward, normal, 0, team);
         if (!isdefined(var_e76400c0)) {
-            spawntimedfx(var_aecaaa11, var_6b23e1c9, normal, int(customsettings.var_b79d64a9), team);
+            spawntimedfx(molotovfireweapon, var_6b23e1c9, normal, int(customsettings.var_b79d64a9), team);
         }
     }
     if (level.gameended) {
@@ -461,8 +459,8 @@ function function_8a03d3f3(owner, impactpos, startpos, normal, multiplier, rotat
     var_4b424bc1.var_46ee5246 = int(gettime() + customsettings.var_b79d64a9 * 1000);
     var_4b424bc1.origin = startpos;
     var_d58f4be = {};
-    thread damageeffectarea(owner, startpos, killcament, normal, var_aecaaa11, customsettings, multiplier, var_e76400c0, wallnormal, var_693f108f, var_4b424bc1.var_46ee5246, var_d58f4be);
-    thread function_9464e4ad(owner, startpos, killcament, var_aecaaa11, customsettings, multiplier, var_4b424bc1.var_46ee5246, var_d58f4be);
+    thread damageeffectarea(owner, startpos, killcament, normal, molotovfireweapon, customsettings, multiplier, var_e76400c0, wallnormal, var_693f108f, var_4b424bc1.var_46ee5246, var_d58f4be);
+    thread function_9464e4ad(owner, startpos, killcament, molotovfireweapon, customsettings, multiplier, var_4b424bc1.var_46ee5246, var_d58f4be);
     var_b1dd2ca0 = getarraykeys(locations[#"loc"]);
     foreach (lockey in var_b1dd2ca0) {
         if (!isdefined(lockey)) {
@@ -472,11 +470,11 @@ function function_8a03d3f3(owner, impactpos, startpos, normal, multiplier, rotat
             continue;
         }
         if (isdefined(locations[#"smallfire"][lockey])) {
-            fireweapon = var_4a1b9411;
+            fireweapon = molotovfiresmallweapon;
         } else if (isdefined(locations[#"steam"][lockey])) {
-            fireweapon = var_7bf146f2;
+            fireweapon = molotovsteamweapon;
         } else {
-            fireweapon = isdefined(locations[#"tallfire"][lockey]) ? var_3cbce009 : var_aecaaa11;
+            fireweapon = isdefined(locations[#"tallfire"][lockey]) ? molotovfiretallweapon : molotovfireweapon;
         }
         level thread function_42b9fdbe(fireweapon, locations[#"loc"][lockey], locations[#"normal"][lockey], int(customsettings.var_b79d64a9), team);
     }
@@ -683,7 +681,6 @@ function getpotentialtargets(owner, customsettings) {
         foreach (team, _ in level.teams) {
             if (customsettings.var_14e16318 === 1 || util::function_fbce7263(team, owner_team)) {
                 potential_targets = arraycombine(potential_targets, getplayers(team), 0, 0);
-                continue;
             }
         }
         if (is_true(customsettings.var_4e1d1f97)) {

@@ -109,15 +109,15 @@ function private function_70a657d8() {
                 assert(!isdefined(level.var_ee4d094a[#"hash_3a5790d783810d4a"]));
             #/
             level.var_ee4d094a[#"hash_3a5790d783810d4a"] = var_4546d401;
-        } else {
-            /#
-                assert(isdefined(collection.weapon));
-            #/
-            /#
-                assert(!isdefined(level.var_ee4d094a[collection.weapon]));
-            #/
-            level.var_ee4d094a[collection.weapon] = var_4546d401;
+            continue;
         }
+        /#
+            assert(isdefined(collection.weapon));
+        #/
+        /#
+            assert(!isdefined(level.var_ee4d094a[collection.weapon]));
+        #/
+        level.var_ee4d094a[collection.weapon] = var_4546d401;
     }
     clientfield::register("toplayer", "player_damage_type", 1, 1, "int");
     clientfield::register("toplayer", "player_death_shield", 1, 1, "int");
@@ -138,9 +138,13 @@ function private function_a215b825(params) {
     /#
         if (params.name == "ai_tank_drone_rocket") {
             level.var_841888e0 = int(params.value);
-        } else if (params.name == "takedamage") {
+            return;
+        }
+        if (params.name == "takedamage") {
             level.var_16f6fb10 = int(params.value);
-        } else if (params.name == "team") {
+            return;
+        }
+        if (params.name == "team") {
             level.var_b63e01a9 = params.value;
         }
     #/
@@ -1304,9 +1308,8 @@ function function_6f08b381(idamage, smeansofdeath) {
     }
     if (player getstance() == "prone") {
         return 1;
-    } else {
-        return player function_39ab832f();
     }
+    return player function_39ab832f();
 }
 
 // Namespace globallogic_player/globallogic_player
@@ -1558,12 +1561,12 @@ function function_387cd7fb(attacker, einflictor, weapon, smeansofdeath) {
             obituary(self, self, weapon, smeansofdeath);
         }
         demo::kill_bookmark(self, self, einflictor);
-    } else {
-        if (isplayer(attacker) && level.gametype === "pvp") {
-            obituary(self, attacker, weapon, smeansofdeath);
-        }
-        demo::kill_bookmark(self, attacker, einflictor);
+        return;
     }
+    if (isplayer(attacker) && level.gametype === "pvp") {
+        obituary(self, attacker, weapon, smeansofdeath);
+    }
+    demo::kill_bookmark(self, attacker, einflictor);
 }
 
 // Namespace globallogic_player/globallogic_player
@@ -1633,24 +1636,17 @@ function function_2a11f244(einflictor, attacker, smeansofdeath, weapon, *shitloc
         smeansofdeath.gametype_kill_streak = smeansofdeath.pers[#"cur_kill_streak"];
     }
     if (weapon == "MOD_HEAD_SHOT") {
-        goto LOC_00000422;
-    }
-    if (weapon == "MOD_MELEE" || weapon == "MOD_MELEE_ASSASSINATE") {
+    } else if (weapon == "MOD_MELEE" || weapon == "MOD_MELEE_ASSASSINATE") {
         if (shitloc.isriotshield) {
             if (isdefined(smeansofdeath.class_num)) {
                 var_6fa230fd = smeansofdeath getloadoutitem(smeansofdeath.class_num, "primary");
                 var_1997cb6f = smeansofdeath getloadoutitem(smeansofdeath.class_num, "secondary");
                 if (var_6fa230fd && level.tbl_weaponids[var_6fa230fd][#"reference"] == "riotshield" && !var_1997cb6f || var_1997cb6f && level.tbl_weaponids[var_1997cb6f][#"reference"] == "riotshield" && !var_6fa230fd) {
                     smeansofdeath stats::function_e24eec31(shitloc, #"hash_63e17b42eb7cb8f5", 1);
-                LOC_00000422:
                 }
-            LOC_00000422:
             }
-        LOC_00000422:
         }
-    LOC_00000422:
     }
-LOC_00000422:
     attackername = smeansofdeath.name;
     self thread medals::setlastkilledby(smeansofdeath, attacker);
 }
@@ -1777,7 +1773,9 @@ function callback_playerkilled(einflictor, attacker, idamage, smeansofdeath, wea
                     bestplayer = player;
                     bestplayermeansofdeath = self.attackerdamage[player.clientid].meansofdeath;
                     bestplayerweapon = self.attackerdamage[player.clientid].weapon;
-                } else if (isdefined(bestplayer) && self.attackerdamage[player.clientid].damage > self.attackerdamage[bestplayer.clientid].damage) {
+                    continue;
+                }
+                if (isdefined(bestplayer) && self.attackerdamage[player.clientid].damage > self.attackerdamage[bestplayer.clientid].damage) {
                     bestplayer = player;
                     bestplayermeansofdeath = self.attackerdamage[player.clientid].meansofdeath;
                     bestplayerweapon = self.attackerdamage[player.clientid].weapon;
@@ -1852,10 +1850,9 @@ function callback_playerkilled(einflictor, attacker, idamage, smeansofdeath, wea
             var_c8fa9c41 = attacker getxuid();
             dokillcam = 1;
             if (level.teambased && self.team == attacker.team && smeansofdeath == "MOD_GRENADE" && level.friendlyfire == 0) {
-                goto LOC_00000df2;
+            } else {
+                self function_2a11f244(einflictor, attacker, smeansofdeath, weapon, shitloc);
             }
-            self function_2a11f244(einflictor, attacker, smeansofdeath, weapon, shitloc);
-        LOC_00000df2:
             profileNamedStop();
         }
     } else if (isdefined(attacker) && (attacker.classname == "trigger_hurt" || attacker.classname == "worldspawn")) {
@@ -2187,7 +2184,7 @@ function function_da080186() {
             self.pers[#"teamkills_nostats"] = self.pers[#"teamkills_nostats"] - reductionpersecond;
             if (self.pers[#"teamkills_nostats"] < level.minimumallowedteamkills) {
                 self.pers[#"teamkills_nostats"] = level.minimumallowedteamkills;
-                break;
+                return;
             }
         }
         wait(1);
@@ -2470,12 +2467,14 @@ function function_4d3e38fb() {
         foreach (player in level.players) {
             player function_4d3e38fb();
         }
-    } else if (isplayer(self)) {
+        return;
+    }
+    if (isplayer(self)) {
         a_w_weapons = self getweaponslist();
         foreach (weapon in a_w_weapons) {
             if (is_true(weapon.isheavyweapon)) {
                 self savegame::function_6d003cb9(savegame::function_8136eb5a() + "heavy_weapon", weapon.name);
-                break;
+                return;
             }
         }
     }

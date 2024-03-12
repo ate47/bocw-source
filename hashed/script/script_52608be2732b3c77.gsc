@@ -382,7 +382,9 @@ function private function_7d162bd0(projectile, entity) {
             wait(0.25);
             var_b12a43cc.in_use = 0;
         }
-    } else if (isdefined(result.player) && result.player.birthtime < gettime()) {
+        return;
+    }
+    if (isdefined(result.player) && result.player.birthtime < gettime()) {
         result.player clientfield::increment_to_player("gegenees_damage_cf");
     }
 }
@@ -535,7 +537,7 @@ function private function_60164697() {
     time = gettime() + 2000;
     while (1) {
         if (gettime() > time) {
-            break;
+            return;
         }
         self playrumbleonentity("damage_heavy");
         waitframe(1);
@@ -645,9 +647,9 @@ function private function_d5d3aa77(entity) {
                 entity setblackboardattribute("_locomotion_speed", "locomotion_speed_walk");
             }
         }
-    } else {
-        entity setblackboardattribute("_locomotion_speed", "locomotion_speed_walk");
+        return;
     }
+    entity setblackboardattribute("_locomotion_speed", "locomotion_speed_walk");
 }
 
 // Namespace namespace_514c8ebc/namespace_514c8ebc
@@ -661,9 +663,9 @@ function private function_4334cc3b(*entity) {
         }
         if (self.var_c63e2811 > gettime()) {
             self setblackboardattribute("_gegenees_shield", "shield_up");
-        } else {
-            self setblackboardattribute("_gegenees_shield", "shield_down");
+            return;
         }
+        self setblackboardattribute("_gegenees_shield", "shield_down");
     }
 }
 
@@ -716,9 +718,9 @@ function function_d645d2ec(entity, *mocompanim, *mocompanimblendouttime, *mocomp
         to_enemy = mocompduration.locked_enemy.origin - mocompduration.origin;
         angles_to_enemy = vectortoangles(to_enemy);
         mocompduration orientmode("face angle", angles_to_enemy);
-    } else {
-        mocompduration orientmode("face current");
+        return;
     }
+    mocompduration orientmode("face current");
 }
 
 // Namespace namespace_514c8ebc/namespace_514c8ebc
@@ -758,7 +760,9 @@ function private function_c3c86ec1(entity) {
         if (isplayer(hitent) && hitent.birthtime < gettime()) {
             entity function_376a5549(hitent);
             hitent clientfield::increment_to_player("gegenees_damage_cf");
-        } else if (!is_true(hitent.boss)) {
+            return;
+        }
+        if (!is_true(hitent.boss)) {
             hitent dodamage(1000, hitent.origin);
         }
     }

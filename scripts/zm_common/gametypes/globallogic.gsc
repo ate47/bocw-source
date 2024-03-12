@@ -1206,11 +1206,11 @@ function updateteamstatus(var_bdfe75a7) {
                 if (!isalive(player)) {
                     level.deadplayers[team][level.deadplayers[team].size] = player;
                 }
-            } else {
-                level.deadplayers[team][level.deadplayers[team].size] = player;
-                if (player globallogic_spawn::mayspawn()) {
-                    level.playerlives[team]++;
-                }
+                continue;
+            }
+            level.deadplayers[team][level.deadplayers[team].size] = player;
+            if (player globallogic_spawn::mayspawn()) {
+                level.playerlives[team]++;
             }
         }
     }

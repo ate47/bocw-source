@@ -187,9 +187,8 @@ function private function_1975f7db() {
                 if (!isdefined(var_c0335359.var_e859e591) || !var_c0335359.var_e859e591.size || isinarray(var_a3c51b07, var_c0335359)) {
                     arrayremovevalue(var_918869fb, var_c0335359);
                     continue;
-                } else {
-                    break;
                 }
+                break;
             }
             if (!destinations.size) {
                 break;

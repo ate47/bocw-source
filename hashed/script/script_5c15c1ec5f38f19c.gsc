@@ -71,14 +71,14 @@ function private function_5dc2c463(reset) {
                 var_687f51a8 = array(var_687f51a8);
             }
             var_687f51a8[var_687f51a8.size] = i;
-        } else {
-            if (!isdefined(var_df0623ff)) {
-                var_df0623ff = [];
-            } else if (!isarray(var_df0623ff)) {
-                var_df0623ff = array(var_df0623ff);
-            }
-            var_df0623ff[var_df0623ff.size] = i;
+            continue;
         }
+        if (!isdefined(var_df0623ff)) {
+            var_df0623ff = [];
+        } else if (!isarray(var_df0623ff)) {
+            var_df0623ff = array(var_df0623ff);
+        }
+        var_df0623ff[var_df0623ff.size] = i;
     }
     var_4abd20f4 = [];
     for (i = 0; i < var_687f51a8.size; i++) {
@@ -126,10 +126,10 @@ function private function_5dc2c463(reset) {
             function_3029b4d5(var_37526c30, var_3bc2777f);
             var_7df2d0a6 = function_67e3f98e(var_e380d76b, var_3bc2777f);
             arrayremovevalue(var_4abd20f4, var_7df2d0a6);
-        } else {
-            function_3029b4d5(var_37526c30, var_e380d76b);
-            function_3029b4d5(var_37526c30, var_1edddb3d);
+            continue;
         }
+        function_3029b4d5(var_37526c30, var_e380d76b);
+        function_3029b4d5(var_37526c30, var_1edddb3d);
     }
     var_e7868f06 = 6;
     for (i = var_e7868f06; i < var_74a258da.size; i++) {
@@ -204,23 +204,23 @@ function private function_cd12badd(seed, array) {
 function private function_3029b4d5(var_9af06a57, var_b9f2e015) {
     if (!isdefined(var_9af06a57.var_19c811ef)) {
         var_9af06a57.var_19c811ef = [0:var_b9f2e015];
-    } else {
-        var_64a9c026 = 0;
-        for (i = 0; i < var_9af06a57.var_19c811ef.size; i++) {
-            if (var_b9f2e015 < var_9af06a57.var_19c811ef[i]) {
-                arrayinsert(var_9af06a57.var_19c811ef, var_b9f2e015, i);
-                var_64a9c026 = 1;
-                break;
-            }
+        return;
+    }
+    var_64a9c026 = 0;
+    for (i = 0; i < var_9af06a57.var_19c811ef.size; i++) {
+        if (var_b9f2e015 < var_9af06a57.var_19c811ef[i]) {
+            arrayinsert(var_9af06a57.var_19c811ef, var_b9f2e015, i);
+            var_64a9c026 = 1;
+            break;
         }
-        if (!var_64a9c026) {
-            if (!isdefined(var_9af06a57.var_19c811ef)) {
-                var_9af06a57.var_19c811ef = [];
-            } else if (!isarray(var_9af06a57.var_19c811ef)) {
-                var_9af06a57.var_19c811ef = array(var_9af06a57.var_19c811ef);
-            }
-            var_9af06a57.var_19c811ef[var_9af06a57.var_19c811ef.size] = var_b9f2e015;
+    }
+    if (!var_64a9c026) {
+        if (!isdefined(var_9af06a57.var_19c811ef)) {
+            var_9af06a57.var_19c811ef = [];
+        } else if (!isarray(var_9af06a57.var_19c811ef)) {
+            var_9af06a57.var_19c811ef = array(var_9af06a57.var_19c811ef);
         }
+        var_9af06a57.var_19c811ef[var_9af06a57.var_19c811ef.size] = var_b9f2e015;
     }
 }
 
@@ -231,9 +231,8 @@ function private function_3029b4d5(var_9af06a57, var_b9f2e015) {
 function private function_67e3f98e(var_bf78d6e8, var_7a1b4c82) {
     if (var_bf78d6e8 < var_7a1b4c82) {
         return ((var_bf78d6e8 << 5) + var_7a1b4c82);
-    } else {
-        return ((var_7a1b4c82 << 5) + var_bf78d6e8);
     }
+    return (var_7a1b4c82 << 5) + var_bf78d6e8;
 }
 
 // Namespace namespace_46c3c08e/namespace_46c3c08e
@@ -506,12 +505,12 @@ function private function_c83dffcf() {
             if (is_true(var_b7a77c7e.var_59a4d624)) {
                 if (!isdefined(keyinfo.var_45f26a8c)) {
                     keyinfo.var_45f26a8c = var_b7a77c7e.var_2f94fe81;
-                } else {
-                    /#
-                        assert(!isdefined(keyinfo.var_ae185984));
-                    #/
-                    keyinfo.var_ae185984 = var_b7a77c7e.var_2f94fe81;
+                    continue;
                 }
+                /#
+                    assert(!isdefined(keyinfo.var_ae185984));
+                #/
+                keyinfo.var_ae185984 = var_b7a77c7e.var_2f94fe81;
             }
         }
         /#

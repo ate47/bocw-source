@@ -32,10 +32,10 @@ function private link_to_camera(localclientnum, oldval, newval, *bnewent, *binit
     player = function_5c10bd79(binitialsnap);
     if (bwastimejump) {
         self thread function_bd9c7275(fieldname, bwastimejump);
-    } else {
-        self notify(#"hash_97425a408a077df");
-        self function_a052b638();
+        return;
     }
+    self notify(#"hash_97425a408a077df");
+    self function_a052b638();
 }
 
 // Namespace namespace_594b67e/namespace_594b67e
@@ -47,14 +47,16 @@ function private fake_ads(localclientnum, oldval, newval, *bnewent, *binitialsna
     self endon("2e682ee9f9b29c84");
     if (bwastimejump && bwastimejump != fieldname) {
         self namespace_ca99987f::function_f95cb457(undefined, 20.64, 0.2, #"sine");
-    } else if (!bwastimejump && bwastimejump != fieldname) {
+        return;
+    }
+    if (!bwastimejump && bwastimejump != fieldname) {
         self namespace_ca99987f::function_f95cb457(undefined, 14.64, 0.2, #"sine");
         while (1) {
             result = undefined;
             result = self waittill(#"hash_133229f708f5d10");
             if (result.target_value === 14.64) {
                 self function_9298adaf(binitialsnap);
-                break;
+                return;
             }
         }
     }

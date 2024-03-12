@@ -120,15 +120,15 @@ function function_1c5803d9(eventstruct) {
                     if (!isdefined(player)) {
                         player = passenger;
                     }
-                } else {
-                    if (!isdefined(var_85e930e6)) {
-                        var_85e930e6 = [];
-                    } else if (!isarray(var_85e930e6)) {
-                        var_85e930e6 = array(var_85e930e6);
-                    }
-                    if (!isinarray(var_85e930e6, passenger)) {
-                        var_85e930e6[var_85e930e6.size] = passenger;
-                    }
+                    continue;
+                }
+                if (!isdefined(var_85e930e6)) {
+                    var_85e930e6 = [];
+                } else if (!isarray(var_85e930e6)) {
+                    var_85e930e6 = array(var_85e930e6);
+                }
+                if (!isinarray(var_85e930e6, passenger)) {
+                    var_85e930e6[var_85e930e6.size] = passenger;
                 }
             }
         }

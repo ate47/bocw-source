@@ -33,13 +33,13 @@ function private function_70a657d8() {
 function hazard_gas(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         setblurbylocalclientnum(fieldname, 16, 1);
-    } else {
-        if (isdefined(self.var_bca8cc88)) {
-            stopfx(fieldname, self.var_bca8cc88);
-            self.var_bca8cc88 = undefined;
-        }
-        setblurbylocalclientnum(fieldname, 0, 3);
+        return;
     }
+    if (isdefined(self.var_bca8cc88)) {
+        stopfx(fieldname, self.var_bca8cc88);
+        self.var_bca8cc88 = undefined;
+    }
+    setblurbylocalclientnum(fieldname, 0, 3);
 }
 
 // Namespace hazard/hazard
@@ -51,11 +51,11 @@ function hazard_gas_with_mask(localclientnum, oldval, newval, *bnewent, *binitia
         if (bwastimejump) {
             setblurbylocalclientnum(binitialsnap, 2, 3);
             self thread function_f5b6d619();
-        } else {
-            setblurbylocalclientnum(binitialsnap, 0, 1);
-            self notify(#"hash_452ba9cb2df33d3f");
-            self postfx::exitpostfxbundle("pstfx_water_t_out");
+            return;
         }
+        setblurbylocalclientnum(binitialsnap, 0, 1);
+        self notify(#"hash_452ba9cb2df33d3f");
+        self postfx::exitpostfxbundle("pstfx_water_t_out");
     }
 }
 

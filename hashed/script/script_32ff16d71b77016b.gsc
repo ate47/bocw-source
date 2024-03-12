@@ -78,9 +78,9 @@ function private function_8069a99d() {
         } else {
             self thread function_54f05251();
         }
-    } else {
-        self thread function_12413bc5();
+        return;
     }
+    self thread function_12413bc5();
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
@@ -109,9 +109,9 @@ function private function_8adcfb4f(aitype) {
         self.drone.weaponfx = "weapon/fx8_muz_ar_acc_3p";
         if (isdefined(self.weapon.firesound) && self.weapon.firesound != "") {
             self.drone.var_74dc5052 = self.weapon.firesound;
-        } else {
-            self.drone.var_74dc5052 = self.weapon.firesounddistant;
+            return;
         }
+        self.drone.var_74dc5052 = self.weapon.firesounddistant;
     }
 }
 
@@ -401,14 +401,14 @@ function private function_eaea34d2(lastnode) {
         if (!self function_9f942d9a(lastnode[#"script_noteworthy"])) {
             self thread function_f16e0d57(lastnode[#"script_noteworthy"]);
         }
-    } else {
-        if (isdefined(lastnode) && isdefined(lastnode[#"script_noteworthy"]) && lastnode[#"script_noteworthy"] != "idle") {
-            stance = function_4e864a71("", lastnode[#"script_noteworthy"]);
-        } else {
-            stance = function_4e864a71();
-        }
-        self thread function_12413bc5(stance);
+        return;
     }
+    if (isdefined(lastnode) && isdefined(lastnode[#"script_noteworthy"]) && lastnode[#"script_noteworthy"] != "idle") {
+        stance = function_4e864a71("", lastnode[#"script_noteworthy"]);
+    } else {
+        stance = function_4e864a71();
+    }
+    self thread function_12413bc5(stance);
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
@@ -468,9 +468,9 @@ function function_f16e0d57(stance) {
                 wait(waittime);
             }
             wait(1);
-        } else {
-            wait(1);
+            continue;
         }
+        wait(1);
     }
 }
 
@@ -500,16 +500,16 @@ function private function_5d1012fd() {
         if (math::cointoss()) {
             wait(randomfloatrange(1, 2));
         }
-    } else {
-        self function_f7f52451();
-        wait(randomfloatrange(0.25, 0.75));
-        self function_f7f52451();
-        wait(randomfloatrange(0.15, 0.75));
-        self function_f7f52451();
-        wait(randomfloatrange(0.15, 0.75));
-        self function_f7f52451();
-        wait(randomfloatrange(0.15, 0.75));
+        return;
     }
+    self function_f7f52451();
+    wait(randomfloatrange(0.25, 0.75));
+    self function_f7f52451();
+    wait(randomfloatrange(0.15, 0.75));
+    self function_f7f52451();
+    wait(randomfloatrange(0.15, 0.75));
+    self function_f7f52451();
+    wait(randomfloatrange(0.15, 0.75));
 }
 
 // Namespace namespace_4e75a347/namespace_4e75a347
@@ -637,8 +637,7 @@ function private function_54f05251() {
         destination = path[path_index][#"origin"];
         if (self.drone.var_6f219852 > 0) {
             var_792c52e4 = self.origin;
-            var_946a08d6 = self.drone.var_6f219852;
-            while (var_946a08d6 > 0 && path_index < path.size) {
+            for (var_946a08d6 = self.drone.var_6f219852; var_946a08d6 > 0 && path_index < path.size; var_946a08d6 = 0) {
                 destination = path[path_index][#"origin"];
                 distance = distance2d(destination, var_792c52e4);
                 if (distance <= var_946a08d6) {
@@ -652,11 +651,10 @@ function private function_54f05251() {
                             var_23273fef = 1;
                         }
                     }
-                } else {
-                    direction = vectornormalize(destination - var_792c52e4);
-                    destination = var_792c52e4 + direction * var_946a08d6;
-                    var_946a08d6 = 0;
+                    continue;
                 }
+                direction = vectornormalize(destination - var_792c52e4);
+                destination = var_792c52e4 + direction * var_946a08d6;
             }
             distance = distance2d(destination, self.origin);
         } else {
@@ -748,9 +746,9 @@ function private function_7bce6b25(var_3d70749c, var_a3375299) {
                     index++;
                 }
             }
-        } else {
-            nodes[index][#"script_noteworthy"] = function_4e864a71(currentnode.type, currentnode.script_noteworthy);
+            continue;
         }
+        nodes[index][#"script_noteworthy"] = function_4e864a71(currentnode.type, currentnode.script_noteworthy);
     }
     return nodes;
 }

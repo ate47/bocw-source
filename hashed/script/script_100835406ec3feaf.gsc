@@ -225,12 +225,12 @@ function function_7d0eaace() {
         /#
             iprintlnbold("<unknown string>");
         #/
-    } else {
-        level.var_ea51eeb9.locks[1] playsound(#"hash_437516da741e5140");
-        /#
-            iprintlnbold("<unknown string>");
-        #/
+        return;
     }
+    level.var_ea51eeb9.locks[1] playsound(#"hash_437516da741e5140");
+    /#
+        iprintlnbold("<unknown string>");
+    #/
 }
 
 // Namespace namespace_47f97e84/namespace_719bbd07
@@ -254,12 +254,12 @@ function cmd(cmd) {
         switch (cmd) {
         case #"hash_4121f85b9490b08c":
             function_9fa3d0d(0);
-            break;
+            return;
         case #"hash_4121f95b9490b23f":
             function_9fa3d0d(1);
-            break;
+            return;
         default:
-            break;
+            return;
         }
     #/
 }
@@ -281,10 +281,10 @@ function function_9fa3d0d(index) {
         if (player.var_fceebed) {
             player.var_19f4406e = 2;
             player set(#"hash_2d6980738132f263");
-        } else {
-            player.var_19f4406e = 0;
-            player set(#"hash_2d6980738132f263");
+            return;
         }
+        player.var_19f4406e = 0;
+        player set(#"hash_2d6980738132f263");
     #/
 }
 

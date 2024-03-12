@@ -152,7 +152,6 @@ function function_f9f3607b(name) {
         return 3600;
     case #"roj":
         return 9999999;
-        break;
     }
     return 1800;
 }
@@ -254,7 +253,6 @@ function function_19e7d0fc(name) {
         return &function_b2706226;
     case #"eggxit_1":
         return &function_2ee246a7;
-        break;
     }
     return undefined;
 }
@@ -405,41 +403,41 @@ function function_3db4a0b1(roundnumber = level.doa.roundnumber) {
             if (is_true(level.doa.hardcoremode)) {
                 continue;
             }
-            jumpiftrue(is_true(room.var_df9ba7a9)) LOC_00000148;
-        } else {
-        LOC_00000148:
-            if (room.var_3914cffe != 999 && room.var_3914cffe <= 0) {
+            if (!is_true(room.var_df9ba7a9)) {
                 continue;
             }
-            if (room.var_a702483f > 0) {
+        }
+        if (room.var_3914cffe != 999 && room.var_3914cffe <= 0) {
+            continue;
+        }
+        if (room.var_a702483f > 0) {
+            continue;
+        }
+        if (room.name === #"cellar" && isdefined(level.doa.var_98764e02)) {
+            delta = gettime() - level.doa.var_98764e02;
+            if (delta < 15 * 60000) {
                 continue;
             }
-            if (room.name === #"cellar" && isdefined(level.doa.var_98764e02)) {
-                delta = gettime() - level.doa.var_98764e02;
-                jumpcmp(delta > 15 * 60000) LOC_000001f0;
-            } else {
-            LOC_000001f0:
-                if (isdefined(room.maxlevel) && roundnumber >= room.maxlevel) {
-                    continue;
-                }
-                if (roundnumber >= room.var_8028986b) {
-                    if (!isdefined(room.var_6959a8a9)) {
-                        room.var_6959a8a9 = 0;
-                    }
-                    array::add_sorted(var_851aa222, room, 0, &function_f17be536);
-                }
+        }
+        if (isdefined(room.maxlevel) && roundnumber >= room.maxlevel) {
+            continue;
+        }
+        if (roundnumber >= room.var_8028986b) {
+            if (!isdefined(room.var_6959a8a9)) {
+                room.var_6959a8a9 = 0;
             }
+            array::add_sorted(var_851aa222, room, 0, &function_f17be536);
         }
     }
     if (var_851aa222.size > 0) {
-        selection = [];
+        var_aa973631 = [];
         var_ea838841 = var_851aa222[0].var_6959a8a9;
         foreach (room in var_851aa222) {
             if (room.var_6959a8a9 == var_ea838841) {
-                selection[selection.size] = room;
+                var_aa973631[var_aa973631.size] = room;
             }
         }
-        return selection[randomint(selection.size)];
+        return var_aa973631[randomint(var_aa973631.size)];
     }
 }
 
@@ -598,15 +596,15 @@ function function_898ca25f(room) {
     foreach (item in room.items) {
         if (isdefined(item.script_int)) {
             roll = int(item.script_int);
-            jumpcmp(randomint(100) < roll) LOC_00000a14;
-        } else {
-        LOC_00000a14:
-            room.var_a043a6d4[room.var_a043a6d4.size] = function_edc2fabf(item);
-            var_28a17b1b--;
-            if (var_28a17b1b <= 0) {
-                util::wait_network_frame();
-                var_28a17b1b = 20;
+            if (randomint(100) > roll) {
+                continue;
             }
+        }
+        room.var_a043a6d4[room.var_a043a6d4.size] = function_edc2fabf(item);
+        var_28a17b1b--;
+        if (var_28a17b1b <= 0) {
+            util::wait_network_frame();
+            var_28a17b1b = 20;
         }
     }
     level thread function_b49532ed(room);
@@ -682,11 +680,11 @@ function function_898ca25f(room) {
                 result = room.var_1406397f waittilltimeout(1, #"trigger", #"abort");
                 if (result._notify == #"timeout") {
                     timeout--;
-                } else {
-                    win = result._notify === #"abort" ? 0 : 1;
-                    level notify(#"hash_26543e77189e41db", {#success:win});
-                    break;
+                    continue;
                 }
+                win = result._notify === #"abort" ? 0 : 1;
+                level notify(#"hash_26543e77189e41db", {#success:win});
+                break;
             }
             namespace_6e90e490::function_fa6f7ba7();
         }
@@ -782,16 +780,16 @@ function function_b49532ed(room) {
                 ai.var_227e7c79 = !is_true(self.var_d55f22cb);
                 ai.script_noteworthy = npc.script_noteworthy;
                 level notify(#"hash_3f4be37646a2a9cb", {#ai:ai});
-            } else {
-                npc.retryattempts--;
-                if (npc.retryattempts > 0) {
-                    if (!isdefined(var_dc16035f)) {
-                        var_dc16035f = [];
-                    } else if (!isarray(var_dc16035f)) {
-                        var_dc16035f = array(var_dc16035f);
-                    }
-                    var_dc16035f[var_dc16035f.size] = npc;
+                continue;
+            }
+            npc.retryattempts--;
+            if (npc.retryattempts > 0) {
+                if (!isdefined(var_dc16035f)) {
+                    var_dc16035f = [];
+                } else if (!isarray(var_dc16035f)) {
+                    var_dc16035f = array(var_dc16035f);
                 }
+                var_dc16035f[var_dc16035f.size] = npc;
             }
         }
     }
@@ -1000,11 +998,11 @@ function function_92f612b2(def, pickup) {
     case 32:
     case 33:
         pickup namespace_3a8e4a3::function_22c4e231(1);
-        break;
+        return;
     case 6:
-        break;
+        return;
     default:
-        break;
+        return;
     }
 }
 
@@ -1484,9 +1482,7 @@ function function_96bd659(*inflictor, eattacker, damage, *idflags, *meansofdeath
                 modelindex = int(lerpfloat(0, modelindex, lerp));
             }
         }
-        goto LOC_00000180;
     }
-LOC_00000180:
     return modelindex;
 }
 
@@ -1813,10 +1809,10 @@ function function_c0dff79(room) {
                 result.activator namespace_e32bb68::function_3a59ec34("evt_doa_pickup_sentry_land");
                 result.activator notify(#"hash_25e83871b7d15b33");
                 org delete();
-            } else {
-                result.activator setorigin(target.origin);
-                result.activator setplayerangles(target.angles);
+                continue;
             }
+            result.activator setorigin(target.origin);
+            result.activator setplayerangles(target.angles);
         }
     }
     self triggerenable(0);
@@ -1900,49 +1896,49 @@ function function_af1f8cd5(color) {
         level thread namespace_dfc652ee::itemspawn(namespace_dfc652ee::function_6265bde4("zombietron_chicken"), self.origin, undefined, undefined, 1, undefined, undefined, undefined, self);
         wait(0.5);
         level thread namespace_dfc652ee::itemspawn(namespace_dfc652ee::function_6265bde4("zombietron_chicken"), self.origin, undefined, undefined, 1, undefined, undefined, undefined, self);
-    } else {
-        self namespace_e32bb68::function_3a59ec34("zmb_doom_door_bad");
-        self namespace_83eb6304::function_3ecfde67("lightningStrike");
-        self namespace_e32bb68::function_3a59ec34("evt_doa_lightning_bolt");
-        var_6b186658 = 9 + (self.entnum << 4);
-        level clientfield::set("banner_eventplayer", var_6b186658);
-        if (self.doa.score.bombs > 0) {
-            for (take = 7; self.doa.score.bombs > 0 && take > 0; take--) {
-                model = namespace_ec06fe4a::spawnmodel(self.origin + vectorscale((0, 0, 1), 70), "zombietron_nuke", undefined, "doom door bomb");
-                if (isdefined(model)) {
-                    self.doa.score.bombs--;
-                    model moveto(model.origin + vectorscale((0, 0, 1), 2000), 3);
-                    model thread namespace_ec06fe4a::function_52afe5df(3);
-                    wait(0.25);
-                }
-            }
-        }
-        if (self.doa.score.boosts > 0) {
-            for (take = 4; self.doa.score.boosts > 0 && take > 0; take--) {
-                model = namespace_ec06fe4a::spawnmodel(self.origin + vectorscale((0, 0, 1), 70), "zombietron_boost", undefined, "doom door boost");
-                if (isdefined(model)) {
-                    model setscale(1.5);
-                    self.doa.score.boosts--;
-                    model moveto(model.origin + vectorscale((0, 0, 1), 2000), 3);
-                    model thread namespace_ec06fe4a::function_52afe5df(3);
-                    wait(0.25);
-                }
-            }
-        }
-        if (self.doa.score.keys > 0) {
-            model = namespace_ec06fe4a::spawnmodel(self.origin + vectorscale((0, 0, 1), 70), "zombietron_skeleton_key", undefined, "doom door key");
+        return;
+    }
+    self namespace_e32bb68::function_3a59ec34("zmb_doom_door_bad");
+    self namespace_83eb6304::function_3ecfde67("lightningStrike");
+    self namespace_e32bb68::function_3a59ec34("evt_doa_lightning_bolt");
+    var_6b186658 = 9 + (self.entnum << 4);
+    level clientfield::set("banner_eventplayer", var_6b186658);
+    if (self.doa.score.bombs > 0) {
+        for (take = 7; self.doa.score.bombs > 0 && take > 0; take--) {
+            model = namespace_ec06fe4a::spawnmodel(self.origin + vectorscale((0, 0, 1), 70), "zombietron_nuke", undefined, "doom door bomb");
             if (isdefined(model)) {
-                model setscale(3);
-                self.doa.score.keys--;
+                self.doa.score.bombs--;
                 model moveto(model.origin + vectorscale((0, 0, 1), 2000), 3);
                 model thread namespace_ec06fe4a::function_52afe5df(3);
                 wait(0.25);
             }
         }
-        self namespace_41cb996::function_8b7acf56();
-        self thread namespace_eccff4fb::function_1dd66aa1();
-        self thread namespace_7f5aeb59::function_ec9a307f(60, undefined, 20);
     }
+    if (self.doa.score.boosts > 0) {
+        for (take = 4; self.doa.score.boosts > 0 && take > 0; take--) {
+            model = namespace_ec06fe4a::spawnmodel(self.origin + vectorscale((0, 0, 1), 70), "zombietron_boost", undefined, "doom door boost");
+            if (isdefined(model)) {
+                model setscale(1.5);
+                self.doa.score.boosts--;
+                model moveto(model.origin + vectorscale((0, 0, 1), 2000), 3);
+                model thread namespace_ec06fe4a::function_52afe5df(3);
+                wait(0.25);
+            }
+        }
+    }
+    if (self.doa.score.keys > 0) {
+        model = namespace_ec06fe4a::spawnmodel(self.origin + vectorscale((0, 0, 1), 70), "zombietron_skeleton_key", undefined, "doom door key");
+        if (isdefined(model)) {
+            model setscale(3);
+            self.doa.score.keys--;
+            model moveto(model.origin + vectorscale((0, 0, 1), 2000), 3);
+            model thread namespace_ec06fe4a::function_52afe5df(3);
+            wait(0.25);
+        }
+    }
+    self namespace_41cb996::function_8b7acf56();
+    self thread namespace_eccff4fb::function_1dd66aa1();
+    self thread namespace_7f5aeb59::function_ec9a307f(60, undefined, 20);
 }
 
 // Namespace namespace_5a917022/namespace_5a917022

@@ -58,13 +58,21 @@ function function_d35f877a(player, *weapon, statname, value = 0) {
     if (isdefined(weapon.var_3dc66299)) {
         if (statname == #"shots") {
             weapon.var_3dc66299.shots = weapon.var_3dc66299.shots + value;
-        } else if (statname == #"hits") {
+            return;
+        }
+        if (statname == #"hits") {
             weapon.var_3dc66299.hits = weapon.var_3dc66299.hits + value;
-        } else if (statname == #"kills") {
+            return;
+        }
+        if (statname == #"kills") {
             weapon.var_3dc66299.kills = weapon.var_3dc66299.kills + value;
-        } else if (statname == #"deathsduringuse") {
+            return;
+        }
+        if (statname == #"deathsduringuse") {
             weapon.var_3dc66299.deathsduringuse = weapon.var_3dc66299.deathsduringuse + value;
-        } else if (statname == #"headshots") {
+            return;
+        }
+        if (statname == #"headshots") {
             weapon.var_3dc66299.headshots = weapon.var_3dc66299.headshots + value;
         }
     }

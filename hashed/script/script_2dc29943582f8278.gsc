@@ -188,7 +188,7 @@ function function_34038097(clone) {
             /#
                 function_f5f0c0f8("<unknown string>" + i + "<unknown string>" + level.doa.clones.size);
             #/
-            break;
+            return;
         }
     }
 }
@@ -206,7 +206,9 @@ function function_56d29b42() {
         if (!isdefined(var_c81221ac) && isdefined(level.doa.clones[i])) {
             var_c81221ac = level.doa.clones[i];
             oldestindex = i;
-        } else if (isdefined(level.doa.clones[i]) && level.doa.clones[i].spawntime < var_c81221ac.spawntime) {
+            continue;
+        }
+        if (isdefined(level.doa.clones[i]) && level.doa.clones[i].spawntime < var_c81221ac.spawntime) {
             var_c81221ac = level.doa.clones[i];
             oldestindex = i;
         }

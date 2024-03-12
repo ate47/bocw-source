@@ -109,7 +109,6 @@ function private function_204b5b9c() {
     if (isdefined(normal)) {
         dir = self.origin - self.enemylastseenpos;
         return (vectordot(dir, normal) > 0);
-        return 0;
     }
     return 1;
 }
@@ -298,9 +297,9 @@ function private function_eb94f73e() {
         eye = self.origin + (0, 0, self getplayerviewheight());
         var_d9100e0 = eye + vectornormalize(movedir) * 128;
         self function_b5460039(var_d9100e0, #"forward", (0, 1, 1));
-    } else {
-        self botsetlookangles(self.angles);
+        return;
     }
+    self botsetlookangles(self.angles);
 }
 
 // Namespace namespace_87549638/namespace_87549638
@@ -313,10 +312,10 @@ function private function_23401de9() {
     if (enddist > 15) {
         endpoint = traversal.end_position + (0, 0, self getplayerviewheight());
         self function_b5460039(endpoint, #"hash_7d35f3d861b9ec10", (1, 1, 0));
-    } else {
-        dir = (0, 0, 0) - traversal.normal;
-        self botsetlookdir(dir);
+        return;
     }
+    dir = (0, 0, 0) - traversal.normal;
+    self botsetlookdir(dir);
 }
 
 // Namespace namespace_87549638/namespace_87549638
@@ -349,8 +348,8 @@ function private function_b5460039(point, var_e125ba43, debugcolor) {
         } else {
             self botsetlookcurrent();
         }
-    } else {
-        self botsetlookpoint(point);
+        return;
     }
+    self botsetlookpoint(point);
 }
 

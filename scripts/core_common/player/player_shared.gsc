@@ -225,30 +225,35 @@ function function_8fef418b() {
             self.last_valid_position = position;
             self.var_5d991645 = self.origin;
         }
-    } else if (ispointonnavmesh(self.origin, self)) {
-        self.last_valid_position = self.origin;
-    } else if (!ispointonnavmesh(self.origin, self) && ispointonnavmesh(self.last_valid_position, self) && distance2dsquared(self.origin, self.last_valid_position) < function_a3f6cdac(32) && function_a3f6cdac(self.origin[2] - self.last_valid_position[2]) < function_a3f6cdac(32)) {
         return;
-    } else {
-        var_946a4954 = isdefined(level.var_946a4954) ? level.var_946a4954 : playerradius;
-        position = getclosestpointonnavmesh(self.origin, 100, var_946a4954);
-        if (isdefined(position)) {
-            if (is_true(level.var_2386648b) || function_352d316e(self)) {
-                player_position = self.origin + vectorscale((0, 0, 1), 20);
-                var_f5df51f2 = position + vectorscale((0, 0, 1), 20);
-                ignore_ent = undefined;
-                if (self isinvehicle()) {
-                    ignore_ent = self getvehicleoccupied();
-                }
-                if (bullettracepassed(player_position, var_f5df51f2, 0, self, ignore_ent)) {
-                    self.last_valid_position = position;
-                }
-            } else {
+    }
+    if (ispointonnavmesh(self.origin, self)) {
+        self.last_valid_position = self.origin;
+        return;
+    }
+    if (!ispointonnavmesh(self.origin, self) && ispointonnavmesh(self.last_valid_position, self) && distance2dsquared(self.origin, self.last_valid_position) < function_a3f6cdac(32) && function_a3f6cdac(self.origin[2] - self.last_valid_position[2]) < function_a3f6cdac(32)) {
+        return;
+    }
+    var_946a4954 = isdefined(level.var_946a4954) ? level.var_946a4954 : playerradius;
+    position = getclosestpointonnavmesh(self.origin, 100, var_946a4954);
+    if (isdefined(position)) {
+        if (is_true(level.var_2386648b) || function_352d316e(self)) {
+            player_position = self.origin + vectorscale((0, 0, 1), 20);
+            var_f5df51f2 = position + vectorscale((0, 0, 1), 20);
+            ignore_ent = undefined;
+            if (self isinvehicle()) {
+                ignore_ent = self getvehicleoccupied();
+            }
+            if (bullettracepassed(player_position, var_f5df51f2, 0, self, ignore_ent)) {
                 self.last_valid_position = position;
             }
-        } else if (isdefined(level.var_a6a84389)) {
-            self.last_valid_position = self [[ level.var_a6a84389 ]](playerradius);
+        } else {
+            self.last_valid_position = position;
         }
+        return;
+    }
+    if (isdefined(level.var_a6a84389)) {
+        self.last_valid_position = self [[ level.var_a6a84389 ]](playerradius);
     }
 }
 
@@ -340,28 +345,28 @@ function generate_weapon_data() {
     if (is_true(self.gun_removed) && isdefined(self._weapons)) {
         self._generated_weapons = arraycopy(self._weapons);
         self._generated_current_weapon = self._current_weapon;
-    } else {
-        w_current = self getcurrentweapon();
-        if (w_current != level.weaponnone) {
-            self._generated_current_weapon = w_current;
+        return;
+    }
+    w_current = self getcurrentweapon();
+    if (w_current != level.weaponnone) {
+        self._generated_current_weapon = w_current;
+    }
+    a_weapon_list = self getweaponslist();
+    if (self._generated_current_weapon == level.weaponnone) {
+        if (isdefined(a_weapon_list[0])) {
+            self._generated_current_weapon = a_weapon_list[0];
         }
-        a_weapon_list = self getweaponslist();
-        if (self._generated_current_weapon == level.weaponnone) {
-            if (isdefined(a_weapon_list[0])) {
-                self._generated_current_weapon = a_weapon_list[0];
-            }
+    }
+    foreach (weapon in a_weapon_list) {
+        if (is_true(weapon.dniweapon)) {
+            continue;
         }
-        foreach (weapon in a_weapon_list) {
-            if (is_true(weapon.dniweapon)) {
-                continue;
-            }
-            if (!isdefined(self._generated_weapons)) {
-                self._generated_weapons = [];
-            } else if (!isarray(self._generated_weapons)) {
-                self._generated_weapons = array(self._generated_weapons);
-            }
-            self._generated_weapons[self._generated_weapons.size] = get_weapondata(weapon);
+        if (!isdefined(self._generated_weapons)) {
+            self._generated_weapons = [];
+        } else if (!isarray(self._generated_weapons)) {
+            self._generated_weapons = array(self._generated_weapons);
         }
+        self._generated_weapons[self._generated_weapons.size] = get_weapondata(weapon);
     }
 }
 
@@ -480,9 +485,9 @@ function switch_to_primary_weapon(b_immediate = 0, var_61bb3b76 = 0) {
     if (is_valid_weapon(weapon)) {
         if (b_immediate) {
             self switchtoweaponimmediate(weapon, var_61bb3b76);
-        } else {
-            self switchtoweapon(weapon, var_61bb3b76);
+            return;
         }
+        self switchtoweapon(weapon, var_61bb3b76);
     }
 }
 
@@ -495,9 +500,9 @@ function function_1bff13a1(b_immediate = 0, var_61bb3b76 = 0) {
     if (is_valid_weapon(weapon)) {
         if (b_immediate) {
             self switchtoweaponimmediate(weapon, var_61bb3b76);
-        } else {
-            self switchtoweapon(weapon, var_61bb3b76);
+            return;
         }
+        self switchtoweapon(weapon, var_61bb3b76);
     }
 }
 
@@ -530,11 +535,11 @@ function fill_current_clip(var_aa12242d = 0) {
                     self setweaponammostock(w_current.altweapon, var_a398bb57 - var_c95287ff);
                 }
             }
-        } else {
-            self setweaponammoclip(w_current, w_current.clipsize);
-            if (isdefined(w_current.altweapon)) {
-                self setweaponammoclip(w_current.altweapon, w_current.altweapon.clipsize);
-            }
+            return;
+        }
+        self setweaponammoclip(w_current, w_current.clipsize);
+        if (isdefined(w_current.altweapon)) {
+            self setweaponammoclip(w_current.altweapon, w_current.altweapon.clipsize);
         }
     }
 }
@@ -597,25 +602,25 @@ function allow_stance_change(b_allow = 1) {
         self allowprone(1);
         self allowcrouch(1);
         self allowstand(1);
-    } else {
-        str_stance = self getstance();
-        switch (str_stance) {
-        case #"prone":
-            self allowprone(1);
-            self allowcrouch(0);
-            self allowstand(0);
-            break;
-        case #"crouch":
-            self allowprone(0);
-            self allowcrouch(1);
-            self allowstand(0);
-            break;
-        case #"stand":
-            self allowprone(0);
-            self allowcrouch(0);
-            self allowstand(1);
-            break;
-        }
+        return;
+    }
+    str_stance = self getstance();
+    switch (str_stance) {
+    case #"prone":
+        self allowprone(1);
+        self allowcrouch(0);
+        self allowstand(0);
+        return;
+    case #"crouch":
+        self allowprone(0);
+        self allowcrouch(1);
+        self allowstand(0);
+        return;
+    case #"stand":
+        self allowprone(0);
+        self allowcrouch(0);
+        self allowstand(1);
+        return;
     }
 }
 
@@ -920,9 +925,8 @@ function function_2abc116(string, defaultval) {
     #/
     if (isdefined(self) && isdefined(self.pers) && isdefined(self.pers[string])) {
         return self.pers[string];
-    } else {
-        return defaultval;
     }
+    return defaultval;
 }
 
 // Namespace player/player_shared

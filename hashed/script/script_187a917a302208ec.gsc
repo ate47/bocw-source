@@ -18,8 +18,8 @@ function event_handler[level_init] function_9347830c(*eventstruct) {
 function function_e3b277ad(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         forcestreamxmodel(#"hash_38220889b8aac3f6");
-    } else {
-        stopforcestreamingxmodel(#"hash_38220889b8aac3f6");
+        return;
     }
+    stopforcestreamingxmodel(#"hash_38220889b8aac3f6");
 }
 

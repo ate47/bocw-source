@@ -200,10 +200,10 @@ function function_366ba7f6() {
     if (!self.var_496b54df) {
         self.var_496b54df = 1;
         playsoundatposition(#"hash_12cfa31c1fb4a04", self.origin + vectorscale((0, 0, 1), 50));
-    } else {
-        wait(30);
-        self.var_496b54df = 0;
+        return;
     }
+    wait(30);
+    self.var_496b54df = 0;
 }
 
 // Namespace namespace_1cc7b406/namespace_1cc7b406
@@ -568,9 +568,9 @@ function give_item(itemname, amount = 1, var_75766173 = 0, var_d2468501 = 0) {
             } else {
                 item_world::function_de2018e3(item, self, var_fa3df96);
             }
-        } else {
-            item_world::function_de2018e3(item, self);
+            return;
         }
+        item_world::function_de2018e3(item, self);
     }
 }
 
@@ -594,9 +594,9 @@ function give_equipment(itemname, var_738dfc81) {
                     if (isdefined(inventoryitem)) {
                         self item_inventory::equip_equipment(inventoryitem);
                     }
-                } else {
-                    self item_inventory::function_fba40e6c(dropitem);
+                    continue;
                 }
+                self item_inventory::function_fba40e6c(dropitem);
             }
         }
     }

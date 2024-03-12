@@ -251,7 +251,9 @@ function function_a7e7bda0() {
                     player clientfield::set_player_uimodel("huditems.isExposedOnMinimap", 1);
                     player.var_99811216 = gettime() + 100;
                 }
-            } else if (isdefined(player.var_99811216) && gettime() > player.var_99811216 && player clientfield::get_player_uimodel("huditems.isExposedOnMinimap")) {
+                continue;
+            }
+            if (isdefined(player.var_99811216) && gettime() > player.var_99811216 && player clientfield::get_player_uimodel("huditems.isExposedOnMinimap")) {
                 player clientfield::set_player_uimodel("huditems.isExposedOnMinimap", 0);
                 player.var_7241f6e3 = undefined;
             }

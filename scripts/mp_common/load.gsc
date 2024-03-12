@@ -68,11 +68,11 @@ function init_traverse() {
     if (isdefined(point)) {
         self.traverse_height = point.origin[2];
         point delete();
-    } else {
-        point = struct::get(self.target, "targetname");
-        if (isdefined(point)) {
-            self.traverse_height = point.origin[2];
-        }
+        return;
+    }
+    point = struct::get(self.target, "targetname");
+    if (isdefined(point)) {
+        self.traverse_height = point.origin[2];
     }
 }
 

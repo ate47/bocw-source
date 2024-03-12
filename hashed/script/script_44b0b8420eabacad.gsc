@@ -232,145 +232,98 @@ function function_82ca1565(spawnpoint, gametype) {
     switch (gametype) {
     case #"base":
         return (isdefined(spawnpoint.base) && spawnpoint.base);
-        break;
     case #"ffa":
         return (isdefined(spawnpoint.ffa) && spawnpoint.ffa);
-        break;
     case #"sd":
         return (isdefined(spawnpoint.sd) && spawnpoint.sd);
-        break;
     case #"ctf":
         return (isdefined(spawnpoint.ctf) && spawnpoint.ctf);
-        break;
     case #"dom":
         return (isdefined(spawnpoint.domination) && spawnpoint.domination);
-        break;
     case #"dem":
         return (isdefined(spawnpoint.demolition) && spawnpoint.demolition);
-        break;
     case #"gg":
         return (isdefined(spawnpoint.gg) && spawnpoint.gg);
-        break;
     case #"tdm":
         return (isdefined(spawnpoint.tdm) && spawnpoint.tdm);
-        break;
     case #"infil":
         return (isdefined(spawnpoint.infiltration) && spawnpoint.infiltration);
-        break;
     case #"control":
         return (isdefined(spawnpoint.control) && spawnpoint.control);
-        break;
     case #"uplink":
         return (isdefined(spawnpoint.uplink) && spawnpoint.uplink);
-        break;
     case #"kc":
         return (isdefined(spawnpoint.kc) && spawnpoint.kc);
-        break;
     case #"koth":
         return (isdefined(spawnpoint.hardpoint) && spawnpoint.hardpoint);
-        break;
     case #"frontline":
         return (isdefined(spawnpoint.frontline) && spawnpoint.frontline);
-        break;
     case #"dom_flag_a":
         return (isdefined(spawnpoint.domination_flag_a) && spawnpoint.domination_flag_a);
-        break;
     case #"dom_flag_b":
         return (isdefined(spawnpoint.domination_flag_b) && spawnpoint.domination_flag_b);
-        break;
     case #"dom_flag_c":
         return (isdefined(spawnpoint.domination_flag_c) && spawnpoint.domination_flag_c);
-        break;
     case #"hash_6da017d055932bbd":
         return (isdefined(spawnpoint.var_99227e72) && spawnpoint.var_99227e72);
-        break;
     case #"hash_6da016d055932a0a":
         return (isdefined(spawnpoint.var_6cd325d0) && spawnpoint.var_6cd325d0);
-        break;
     case #"hash_6da015d055932857":
         return (isdefined(spawnpoint.var_991d7e64) && spawnpoint.var_991d7e64);
-        break;
     case #"hash_6056c310624d5afd":
         return (isdefined(spawnpoint.demolition_attacker_a) && spawnpoint.demolition_attacker_a);
-        break;
     case #"hash_6056c010624d55e4":
         return (isdefined(spawnpoint.demolition_attacker_b) && spawnpoint.demolition_attacker_b);
-        break;
     case #"hash_6ef2d89ce8ee9a32":
         return (isdefined(spawnpoint.demolition_remove_a) && spawnpoint.demolition_remove_a);
-        break;
     case #"hash_6ef2d79ce8ee987f":
         return (isdefined(spawnpoint.demolition_remove_b) && spawnpoint.demolition_remove_b);
-        break;
     case #"dem_overtime":
         return (isdefined(spawnpoint.demolition_overtime) && spawnpoint.demolition_overtime);
-        break;
     case #"hash_7cb9d0a58715cebe":
         return (isdefined(spawnpoint.demolition_start_spawn) && spawnpoint.demolition_start_spawn);
-        break;
     case #"hash_6d83e5f1bdefa7dd":
         return (isdefined(spawnpoint.demolition_defender_a) && spawnpoint.demolition_defender_a);
-        break;
     case #"hash_6d83e2f1bdefa2c4":
         return (isdefined(spawnpoint.demolition_defender_b) && spawnpoint.demolition_defender_b);
-        break;
     case #"control_attack_add_0":
         return (isdefined(spawnpoint.control_attack_add_a) && spawnpoint.control_attack_add_a);
-        break;
     case #"control_attack_add_1":
         return (isdefined(spawnpoint.control_attack_add_b) && spawnpoint.control_attack_add_b);
-        break;
     case #"control_attack_remove_0":
         return (isdefined(spawnpoint.control_attack_remove_a) && spawnpoint.control_attack_remove_a);
-        break;
     case #"control_attack_remove_1":
         return (isdefined(spawnpoint.control_attack_remove_b) && spawnpoint.control_attack_remove_b);
-        break;
     case #"control_defend_add_0":
         return (isdefined(spawnpoint.registerlast_mapshouldstun) && spawnpoint.registerlast_mapshouldstun);
-        break;
     case #"control_defend_add_1":
         return (isdefined(spawnpoint.control_defend_add_b) && spawnpoint.control_defend_add_b);
-        break;
     case #"control_defend_remove_0":
         return (isdefined(spawnpoint.control_defend_remove_a) && spawnpoint.control_defend_remove_a);
-        break;
     case #"control_defend_remove_1":
         return (isdefined(spawnpoint.control_defend_remove_b) && spawnpoint.control_defend_remove_b);
-        break;
     case #"ct":
         return (isdefined(spawnpoint.ct) && spawnpoint.ct);
-        break;
     case #"escort":
         return (isdefined(spawnpoint.escort) && spawnpoint.escort);
-        break;
     case #"bounty":
         return (isdefined(spawnpoint.bounty) && spawnpoint.bounty);
-        break;
     case #"hash_317e5380181c9168":
         return is_true(spawnpoint.var_50bf3e3b);
-        break;
     case #"vip":
         return is_true(spawnpoint.vip);
-        break;
     case #"war":
         return is_true(spawnpoint.war);
-        break;
     case #"dropkick":
         return is_true(spawnpoint.dropkick);
-        break;
     case #"hash_35b3b60f0a291417":
         return is_true(spawnpoint.var_3cb82e5e);
-        break;
     case #"hash_450dd6aacc69e524":
         return is_true(spawnpoint.var_d8e690f8);
-        break;
     case #"hash_42f07692f7d48364":
         return is_true(spawnpoint.var_3d72e6da);
-        break;
     case #"spy":
         return is_true(spawnpoint.spy);
-        break;
     default:
         /#
             assertmsg("<unknown string>" + gametype + "<unknown string>" + spawnpoint.origin[0] + "<unknown string>" + spawnpoint.origin[1] + "<unknown string>" + spawnpoint.origin[2]);

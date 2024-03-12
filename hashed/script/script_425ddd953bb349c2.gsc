@@ -46,12 +46,16 @@ function phase_rift_player_fx(localclientnum, *oldval, newval, *bnewent, *biniti
         if (isdefined(v_loc) && isdefined(v_forward)) {
             self.var_c9e8cfb3 = playfx(fieldname, #"hash_2563ac540861f176", v_loc, v_forward);
         }
-    } else if (bwastimejump == 2) {
+        return;
+    }
+    if (bwastimejump == 2) {
         if (isdefined(self.var_c9e8cfb3)) {
             stopfx(fieldname, self.var_c9e8cfb3);
         }
         self.var_c9e8cfb3 = util::playfxontag(fieldname, #"hash_486b7f0cb02282b4", self, "j_spine4");
-    } else if (isdefined(self.var_c9e8cfb3)) {
+        return;
+    }
+    if (isdefined(self.var_c9e8cfb3)) {
         stopfx(fieldname, self.var_c9e8cfb3);
     }
 }
@@ -66,7 +70,9 @@ function private function_1f107cad(localclientnum, *oldval, newval, *bnewent, *b
             self playsound(fieldname, #"hash_704c327b669dff9e");
             self.var_b1f90780 = self playloopsound(#"hash_4cc35edd344bf722");
         }
-    } else if (isdefined(self.var_b1f90780)) {
+        return;
+    }
+    if (isdefined(self.var_b1f90780)) {
         self stoploopsound(self.var_b1f90780);
         self.var_b1f90780 = undefined;
         self playsound(fieldname, #"hash_55d8e246e77e9026");

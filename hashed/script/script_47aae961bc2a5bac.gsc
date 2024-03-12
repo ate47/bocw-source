@@ -281,9 +281,9 @@ function private function_bf58f58b() {
         function_81183b3(origin, radius * 2, angles, (1, 1, 1), var_63d57cb2);
         if (var_e3eb0c85 == 1 || var_6d59b8a9 == 1) {
             function_27e52823(origin, angles, radius, color, var_63d57cb2, 0, 1);
-        } else {
-            function_b95b9a60(origin, radius, color, var_63d57cb2, 0, 1);
+            return;
         }
+        function_b95b9a60(origin, radius, color, var_63d57cb2, 0, 1);
     #/
 }
 
@@ -583,74 +583,70 @@ function private function_fcbbe789(key, value) {
         }
         switch (key) {
         default:
-            break;
+            return;
         case #"hash_7bf92664f192f2a2":
         case #"hash_7bf92664f192f2a2":
             level._snd.var_88612b20.var_628ff174 = int(value);
-            break;
+            return;
         case #"hash_7f77282fd4f2f35c":
         case #"hash_7f77282fd4f2f35c":
             level._snd.var_88612b20.filter = "<unknown string>" + value;
-            break;
+            return;
         case #"hash_52bc4ee11d186c55":
         case #"hash_52bc4ee11d186c55":
             level._snd.var_88612b20.var_2a7875e1 = int(value);
-            break;
+            return;
         case #"hash_52bc4de11d186aa2":
         case #"hash_52bc4de11d186aa2":
             level._snd.var_88612b20.var_8ef03ed3 = int(value);
-            break;
+            return;
         case #"hash_4b427a4d65f4f4b0":
         case #"hash_4b427a4d65f4f4b0":
             level._snd.var_88612b20.var_2e1c6bb5 = int(value);
-            break;
+            return;
         case #"hash_182296346d138cf8":
         case #"hash_182296346d138cf8":
             level._snd.var_88612b20.var_29cb2b81 = float(value);
-            break;
+            return;
         case #"hash_3b9f89c8082a9915":
         case #"hash_3b9f89c8082a9915":
             if (isstring(value)) {
-                goto LOC_00000220;
-            }
-            if (isvec(value)) {
+            } else if (isvec(value)) {
                 level._snd.var_88612b20.var_87b166bf = value;
-            LOC_00000220:
             }
-        LOC_00000220:
-            break;
+            return;
         case #"hash_3944b771315157c1":
         case #"hash_3944b771315157c1":
             level._snd.var_88612b20.var_2d81109e = float(value);
-            break;
+            return;
         case #"hash_28da12ba1bad355a":
         case #"hash_28da12ba1bad355a":
             level._snd.var_88612b20.var_2751db2e = int(value);
-            break;
+            return;
         case #"hash_7fb5d688966509c9":
         case #"hash_7fb5d688966509c9":
             level._snd.var_88612b20.var_f0f0e7f7 = int(value);
-            break;
+            return;
         case #"hash_4a9b448151bd0fa9":
         case #"hash_4a9b448151bd0fa9":
             level._snd.var_88612b20.dot = float(value);
-            break;
+            return;
         case #"hash_579325eaa87b4d2f":
         case #"hash_579325eaa87b4d2f":
             level._snd.var_88612b20.var_797d43c2 = int(value);
-            break;
+            return;
         case #"hash_35a6f662245752fa":
         case #"hash_35a6f662245752fa":
             level._snd.var_88612b20.var_77da0ec2 = int(value);
-            break;
+            return;
         case #"hash_5ba24ffba2d85322":
         case #"hash_5ba24ffba2d85322":
             level._snd.var_88612b20.var_4c5d0455 = float(value);
-            break;
+            return;
         case #"hash_3d649e7c9abdc358":
         case #"hash_3d649e7c9abdc358":
             level._snd.var_88612b20.var_4b824b64 = int(value);
-            break;
+            return;
         }
     #/
 }
@@ -813,9 +809,9 @@ function private function_53489ad(*key, value) {
             foreach (player in players) {
                 if (intvalue > 0) {
                     player thread function_fa2bfbd1();
-                } else {
-                    player notify(#"hash_1c8039ff7519235");
+                    continue;
                 }
+                player notify(#"hash_1c8039ff7519235");
             }
         }
         return value;
@@ -913,9 +909,9 @@ function private function_3261cc72(*key, value) {
         foreach (player in players) {
             if (intvalue > 0) {
                 player thread function_27e49109(intvalue);
-            } else {
-                player notify(#"hash_4d6bc2c72c2fe097");
+                continue;
             }
+            player notify(#"hash_4d6bc2c72c2fe097");
         }
         return value;
     #/

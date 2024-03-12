@@ -32,9 +32,9 @@ function function_68bbfe(localclientnum, *oldval, newval, *bnewent, *binitialsna
             function_1f88d6(fieldname, e_portal);
             function_7e3966f(fieldname, e_portal);
         }
-    } else {
-        function_1f88d6(fieldname, e_portal);
+        return;
     }
+    function_1f88d6(fieldname, e_portal);
 }
 
 // Namespace zm_tungsten_pap_quest/zm_tungsten_pap_quest
@@ -44,9 +44,9 @@ function function_68bbfe(localclientnum, *oldval, newval, *bnewent, *binitialsna
 function function_1446ef30(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump) {
         forcestreamxmodel(#"p9_zm_gold_teleporter_b");
-    } else {
-        stopforcestreamingxmodel(#"p9_zm_gold_teleporter_b");
+        return;
     }
+    stopforcestreamingxmodel(#"p9_zm_gold_teleporter_b");
 }
 
 // Namespace zm_tungsten_pap_quest/zm_tungsten_pap_quest
@@ -69,9 +69,9 @@ function function_34eb3249(localclientnum, *oldval, newval, *bnewent, *binitials
             namespace_ff7e490::function_60381056(fieldname, e_portal);
             function_7e3966f(fieldname, e_portal);
         }
-    } else {
-        function_1f88d6(fieldname, e_portal);
+        return;
     }
+    function_1f88d6(fieldname, e_portal);
 }
 
 // Namespace zm_tungsten_pap_quest/zm_tungsten_pap_quest
@@ -84,7 +84,9 @@ function function_8c88a649(localclientnum, *oldval, newval, *bnewent, *binitials
         if (!isdefined(e_portal.var_b875cdb1)) {
             e_portal.var_b875cdb1 = playfx(fieldname, #"hash_532aade47be565ff", e_portal.origin, anglestoforward(e_portal.angles), anglestoup(e_portal.angles));
         }
-    } else if (isdefined(e_portal.var_b875cdb1)) {
+        return;
+    }
+    if (isdefined(e_portal.var_b875cdb1)) {
         stopfx(fieldname, e_portal.var_b875cdb1);
         e_portal.var_b875cdb1 = undefined;
     }
@@ -107,9 +109,9 @@ function function_2d49baf(localclientnum, *oldval, newval, *bnewent, *binitialsn
             e_portal.var_a3b04735 = e_portal playloopsound(#"hash_83b5ecd7e3f8f29");
             e_portal playsound(fieldname, #"hash_740416d5474f1ce7");
         }
-    } else {
-        namespace_ff7e490::function_60381056(fieldname, e_portal);
+        return;
     }
+    namespace_ff7e490::function_60381056(fieldname, e_portal);
 }
 
 // Namespace zm_tungsten_pap_quest/zm_tungsten_pap_quest
@@ -128,9 +130,9 @@ function function_794730f(localclientnum, *oldval, newval, *bnewent, *binitialsn
             namespace_ff7e490::function_60381056(fieldname, e_portal);
             function_7e3966f(fieldname, e_portal);
         }
-    } else {
-        function_1f88d6(fieldname, e_portal);
+        return;
     }
+    function_1f88d6(fieldname, e_portal);
 }
 
 // Namespace zm_tungsten_pap_quest/zm_tungsten_pap_quest

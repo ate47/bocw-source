@@ -170,7 +170,9 @@ function gamerepplayerconnected() {
         game.gamerep[#"players"][name][#"xpstart"] = self rank::getrankxp();
         game.gamerep[#"playernames"][game.gamerep[#"playercount"]] = name;
         game.gamerep[#"playercount"]++;
-    } else if (!game.gamerep[#"players"][name][#"connected"]) {
+        return;
+    }
+    if (!game.gamerep[#"players"][name][#"connected"]) {
         game.gamerep[#"players"][name][#"joinattempts"]++;
         game.gamerep[#"players"][name][#"connected"] = 1;
         game.gamerep[#"players"][name][#"xpstart"] = self rank::getrankxp();

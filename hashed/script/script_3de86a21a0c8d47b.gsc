@@ -244,14 +244,14 @@ function function_de6d9b74(var_f48ab2e1) {
     level.var_af143f1d = [];
     if (isarray(var_f48ab2e1)) {
         level.var_af143f1d = var_f48ab2e1;
-    } else {
-        if (!isdefined(level.var_af143f1d)) {
-            level.var_af143f1d = [];
-        } else if (!isarray(level.var_af143f1d)) {
-            level.var_af143f1d = array(level.var_af143f1d);
-        }
-        level.var_af143f1d[level.var_af143f1d.size] = var_f48ab2e1;
+        return;
     }
+    if (!isdefined(level.var_af143f1d)) {
+        level.var_af143f1d = [];
+    } else if (!isarray(level.var_af143f1d)) {
+        level.var_af143f1d = array(level.var_af143f1d);
+    }
+    level.var_af143f1d[level.var_af143f1d.size] = var_f48ab2e1;
 }
 
 // Namespace spy_camera/spy_camera

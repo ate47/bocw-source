@@ -142,13 +142,13 @@ function function_270a48e0() {
     switch (var_ea95c1e7) {
     case #"park":
         level.str_scene_name = "scene_hub_post_prisoner_dialog_park_survived";
-        break;
+        return;
     case #"lazar":
         level.str_scene_name = "scene_hub_post_prisoner_dialog_lazar_survived";
-        break;
+        return;
     case #"sims":
         level.str_scene_name = "scene_hub_post_prisoner_dialog_no_survivor";
-        break;
+        return;
     }
 }
 
@@ -819,12 +819,12 @@ function function_f2c15144(str_state) {
         playsoundatposition("vox_cp_sh8_00010_adlr_simsgetwashingt_5a_1", level.adler gettagorigin("j_neck"));
         level waittill(#"hash_2c4c87e30305fbaa");
         playsoundatposition("vox_cp_sh8_00010_adlr_youmadetheright_ea_1", level.adler gettagorigin("j_neck"));
-    } else {
-        level waittill(#"hash_4d17a18e02811363");
-        playsoundatposition("vox_cp_sh8_00010_adlr_simsgetwashingt_5a", level.adler gettagorigin("j_neck"));
-        level waittill(#"hash_2c4c87e30305fbaa");
-        playsoundatposition("vox_cp_sh8_00010_adlr_youmadetheright_ea", level.adler gettagorigin("j_neck"));
+        return;
     }
+    level waittill(#"hash_4d17a18e02811363");
+    playsoundatposition("vox_cp_sh8_00010_adlr_simsgetwashingt_5a", level.adler gettagorigin("j_neck"));
+    level waittill(#"hash_2c4c87e30305fbaa");
+    playsoundatposition("vox_cp_sh8_00010_adlr_youmadetheright_ea", level.adler gettagorigin("j_neck"));
 }
 
 // Namespace namespace_fdde5f3d/namespace_db1ba63f
@@ -919,7 +919,9 @@ function function_d6d3bd92() {
     if (level flag::get("flag_post_prisoner_truth")) {
         wait(5);
         skipto::function_1c2dfc20("cp_rus_siege");
-    } else if (level flag::get("flag_post_prisoner_lie")) {
+        return;
+    }
+    if (level flag::get("flag_post_prisoner_lie")) {
         level thread savegame::function_7790f03();
         level thread namespace_4ed3ce47::function_e25181b5();
         level.player enableweapons();

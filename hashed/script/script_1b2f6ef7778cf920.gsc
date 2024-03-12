@@ -214,7 +214,9 @@ function function_e1887b0f(val) {
                 if (!isdefined(player.doa.cameramode) || player.doa.cameramode == 4) {
                     player.doa.cameramode = 1;
                 }
-            } else if (val == 1) {
+                continue;
+            }
+            if (val == 1) {
                 if (!isdefined(player.doa.cameramode) || player.doa.cameramode < 4) {
                     player.doa.cameramode = 4;
                 }

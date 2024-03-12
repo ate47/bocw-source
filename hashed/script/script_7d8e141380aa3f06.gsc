@@ -41,10 +41,10 @@ function function_6b66a9a3(*localclientnum, *oldval, newval, *bnewent, *binitial
         forcestreamxmodel(#"p9_fxp_zm_teleport_tunnel");
         forcestreamxmodel(#"p9_fxp_zm_teleport_tunnel_edge");
         function_3385d776(#"zombie/fx9_aether_tear_portal_tunnel_1p");
-    } else {
-        stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel");
-        stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel_edge");
-        function_c22a1ca2(#"zombie/fx9_aether_tear_portal_tunnel_1p");
+        return;
     }
+    stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel");
+    stopforcestreamingxmodel(#"p9_fxp_zm_teleport_tunnel_edge");
+    function_c22a1ca2(#"zombie/fx9_aether_tear_portal_tunnel_1p");
 }
 

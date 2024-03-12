@@ -39,9 +39,13 @@ function event_handler[ui_menuresponse] codecallback_menuresponse(eventstruct) {
         }
         if (response == "set_spawn_view_overhead" && !level.var_1c15a724) {
             self function_86df9236();
-        } else if (response == "set_spawn_view_squad" && level.var_1ba484ad == 2 && !level.var_1c15a724) {
+            return;
+        }
+        if (response == "set_spawn_view_squad" && level.var_1ba484ad == 2 && !level.var_1c15a724) {
             self function_86df9236();
-        } else if (response == "set_spawn_view_squad" && !level.var_8bace951) {
+            return;
+        }
+        if (response == "set_spawn_view_squad" && !level.var_8bace951) {
             self function_888901cb();
         }
     }

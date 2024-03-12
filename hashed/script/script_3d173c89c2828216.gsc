@@ -77,9 +77,9 @@ function private function_79cb4037() {
     self namespace_250e9486::function_4b49bf0d();
     if (isdefined(self.favoriteenemy)) {
         self namespace_250e9486::function_41354e51(self namespace_250e9486::function_bd5a9fa6());
-    } else {
-        self thread namespace_ec06fe4a::function_570729f0(1);
+        return;
     }
+    self thread namespace_ec06fe4a::function_570729f0(1);
 }
 
 // Namespace namespace_5f74ac47/namespace_5bb43837

@@ -124,9 +124,9 @@ function private function_7daf5356(player, var_58be1fc5) {
             } else {
                 guy dodamage(guy.health + 1, guy.origin, player, player, "none", "MOD_UNKNOWN");
             }
-        } else {
-            guy dodamage(guy.health + 1, guy.origin, player, player, "none", "MOD_UNKNOWN");
+            continue;
         }
+        guy dodamage(guy.health + 1, guy.origin, player, player, "none", "MOD_UNKNOWN");
     }
 }
 

@@ -107,9 +107,9 @@ function setup_personality_character_exerts() {
 function function_c2858d41(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump) {
         function_f58e42ae(fieldname, 1);
-    } else {
-        function_f58e42ae(fieldname, 0);
+        return;
     }
+    function_f58e42ae(fieldname, 0);
 }
 
 // Namespace zm_silver/zm_silver
@@ -138,7 +138,7 @@ function function_ce2c0029(localclientnum, *oldval, newval, *bnewent, *binitials
         var_2d090e03 = 0.5;
         e_player thread function_65490f35(fieldname, var_2de789b, var_2d090e03);
         function_5ea2c6e3("mute_blizzard", 30, 1);
-        break;
+        return;
     case 1:
         var_92d85419 = 1;
         var_312d65d1 = 1;
@@ -150,7 +150,7 @@ function function_ce2c0029(localclientnum, *oldval, newval, *bnewent, *binitials
         var_2d090e03 = 0.1;
         e_player thread function_65490f35(fieldname, var_2de789b, var_2d090e03);
         function_ed62c9c2("mute_blizzard", 30);
-        break;
+        return;
     case 2:
         level notify(#"dog_round_start");
         level notify(#"hash_1f7ec9fe70a9f7a6");
@@ -159,7 +159,7 @@ function function_ce2c0029(localclientnum, *oldval, newval, *bnewent, *binitials
         var_2d090e03 = 0.5;
         e_player thread function_65490f35(fieldname, var_2de789b, var_2d090e03);
         function_5ea2c6e3("mute_blizzard", 8, 1);
-        break;
+        return;
     case 3:
         function_be93487f(fieldname, 9, 0, 0, 0, 1);
         level notify(#"hash_2c882601b007c0f6");
@@ -171,13 +171,13 @@ function function_ce2c0029(localclientnum, *oldval, newval, *bnewent, *binitials
         function_ed62c9c2("mute_blizzard", 8);
         level.var_25fd57f3 = 0;
         level.var_653fb8f8 = 1;
-        break;
+        return;
     case 5:
         e_player = getlocalplayers()[fieldname];
         var_2de789b = 0.5;
         var_2d090e03 = 0.5;
         e_player thread function_65490f35(fieldname, var_2de789b, var_2d090e03);
-        break;
+        return;
     }
 }
 
@@ -187,8 +187,7 @@ function function_ce2c0029(localclientnum, *oldval, newval, *bnewent, *binitials
 // Size: 0xd0
 function private function_65490f35(localclientnum, var_2de789b, var_2d090e03, n_time = 30) {
     level endon(#"hash_1f7ec9fe70a9f7a6");
-    n_blend = n_time;
-    while (1) {
+    for (n_blend = n_time; 1; n_blend = n_blend - var_2de789b) {
         if (var_2de789b > var_2d090e03) {
             var_2de789b = var_2d090e03 + (var_2de789b - var_2d090e03) * n_blend / n_time;
         } else {
@@ -196,7 +195,6 @@ function private function_65490f35(localclientnum, var_2de789b, var_2d090e03, n_
         }
         playfxoncamera(localclientnum, #"hash_23d6b62d29256be");
         wait(var_2de789b);
-        n_blend = n_blend - var_2de789b;
     }
 }
 
@@ -218,7 +216,9 @@ function private function_33593a44(localclientnum, var_312d65d1, var_68f7ce2e, n
             level.var_653fb8f8 = n_blend;
             wait(0.016);
         }
-    } else if (var_312d65d1 == 8 && var_68f7ce2e == 1) {
+        return;
+    }
+    if (var_312d65d1 == 8 && var_68f7ce2e == 1) {
         while (n_blend < 1) {
             function_be93487f(localclientnum, var_312d65d1 | var_68f7ce2e, n_blend, 0, 0, 1 - n_blend);
             n_blend = n_blend + n_increment;
@@ -238,9 +238,9 @@ function private function_33593a44(localclientnum, var_312d65d1, var_68f7ce2e, n
 function function_49d2af47(*localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwasdemojump) {
     if (bwasdemojump == 1) {
         forcestreamxmodel(#"hash_397d38a359aae4e6");
-    } else {
-        stopforcestreamingxmodel(#"hash_397d38a359aae4e6");
+        return;
     }
+    stopforcestreamingxmodel(#"hash_397d38a359aae4e6");
 }
 
 // Namespace zm_silver/zm_silver

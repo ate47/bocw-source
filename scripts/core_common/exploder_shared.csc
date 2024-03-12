@@ -145,9 +145,9 @@ function player_init(*clientnum) {
         }
         if (isdefined(exploder.targetname) && isdefined(acceptabletargetnames[exploder.targetname])) {
             ent.v[#"exploder_type"] = exploder.targetname;
-        } else {
-            ent.v[#"exploder_type"] = "normal";
+            continue;
         }
+        ent.v[#"exploder_type"] = "normal";
     }
     level.createfxexploders = [];
     for (i = 0; i < level.createfxent.size; i++) {
@@ -195,9 +195,9 @@ function reportexploderids() {
 function exploder(exploder_id) {
     if (isint(exploder_id)) {
         activate_exploder(exploder_id);
-    } else {
-        activate_radiant_exploder(exploder_id);
+        return;
     }
+    activate_radiant_exploder(exploder_id);
 }
 
 // Namespace exploder/exploder_shared
@@ -262,10 +262,10 @@ function activate_radiant_exploder(string, immediate) {
         for (localclientnum = 0; localclientnum < var_2639b9f6.size; localclientnum++) {
             function_87ed546d(localclientnum, string);
         }
-    } else {
-        for (localclientnum = 0; localclientnum < var_2639b9f6.size; localclientnum++) {
-            playradiantexploder(localclientnum, string);
-        }
+        return;
+    }
+    for (localclientnum = 0; localclientnum < var_2639b9f6.size; localclientnum++) {
+        playradiantexploder(localclientnum, string);
     }
 }
 

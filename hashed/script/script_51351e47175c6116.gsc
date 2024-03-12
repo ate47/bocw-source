@@ -63,23 +63,31 @@ function function_32160152(player, modelname, origin, angles, scale = 1) {
                 }
             }
             doa_enemy::function_a6b807ea(doa_enemy::function_d7c5adee("spider"), randomint(4) + 1, model.origin);
-        } else {
-            model namespace_83eb6304::function_3ecfde67("fireworks");
-            model namespace_e32bb68::function_3a59ec34("evt_doa_pickup_giftbox_fireworks");
-            if (roll == 99) {
-                namespace_dfc652ee::function_ad7ac41b(origin, 1, 32, 14, 1);
-            } else if (roll > 92) {
-                namespace_dfc652ee::function_ad7ac41b(origin, 1, 32, 16, 1);
-            } else if (roll > 85) {
-                namespace_dfc652ee::function_ad7ac41b(origin, 1, 32, 46, 1);
-            } else if (roll > 80) {
-                namespace_dfc652ee::function_ad7ac41b(origin, 1, 32, 8, 1);
-            } else if (roll > 65) {
-                namespace_dfc652ee::function_ad7ac41b(origin, 1, 32, 9, 1);
-            } else {
-                namespace_dfc652ee::function_ad7ac41b(origin, 1, 32, 32, 1);
-            }
+            return;
         }
+        model namespace_83eb6304::function_3ecfde67("fireworks");
+        model namespace_e32bb68::function_3a59ec34("evt_doa_pickup_giftbox_fireworks");
+        if (roll == 99) {
+            namespace_dfc652ee::function_ad7ac41b(origin, 1, 32, 14, 1);
+            return;
+        }
+        if (roll > 92) {
+            namespace_dfc652ee::function_ad7ac41b(origin, 1, 32, 16, 1);
+            return;
+        }
+        if (roll > 85) {
+            namespace_dfc652ee::function_ad7ac41b(origin, 1, 32, 46, 1);
+            return;
+        }
+        if (roll > 80) {
+            namespace_dfc652ee::function_ad7ac41b(origin, 1, 32, 8, 1);
+            return;
+        }
+        if (roll > 65) {
+            namespace_dfc652ee::function_ad7ac41b(origin, 1, 32, 9, 1);
+            return;
+        }
+        namespace_dfc652ee::function_ad7ac41b(origin, 1, 32, 32, 1);
     }
 }
 

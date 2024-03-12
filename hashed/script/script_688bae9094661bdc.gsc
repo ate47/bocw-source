@@ -92,10 +92,10 @@ function function_ce6c37c0(enabled, *var_901d9fb2, *var_4a9f6f96) {
         foreach (player in getplayers()) {
             player thread namespace_7a865494::function_3e0fb8b7();
         }
-    } else {
-        foreach (player in getplayers()) {
-            player thread namespace_7a865494::function_1a351a0c();
-        }
+        return;
+    }
+    foreach (player in getplayers()) {
+        player thread namespace_7a865494::function_1a351a0c();
     }
 }
 

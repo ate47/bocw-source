@@ -203,7 +203,9 @@ function function_f59c1777(params) {
         }
         if (isplayer(entity)) {
             entity status_effect::status_effect_apply(level.var_2ea60515, undefined, self, 0);
-        } else if (isalive(entity) && isactor(entity)) {
+            continue;
+        }
+        if (isalive(entity) && isactor(entity)) {
             entity.isjammed = 1;
             entity.emped = 1;
         }
@@ -340,16 +342,12 @@ function function_a8880196() {
     switch (n_player_count) {
     case 1:
         return 1;
-        break;
     case 2:
         return 2;
-        break;
     case 3:
         return 3;
-        break;
     case 4:
         return 4;
-        break;
     }
     return 1;
 }
@@ -423,9 +421,9 @@ function function_f53b79b4(*n_round_number) {
             n_player_count = zm_utility::function_a2541519(getplayers().size);
             if (n_player_count == 1) {
                 level.var_69f2520a = level.round_number + randomintrangeinclusive(2, 4);
-            } else {
-                level.var_69f2520a = level.round_number + randomintrangeinclusive(2, 3);
+                continue;
             }
+            level.var_69f2520a = level.round_number + randomintrangeinclusive(2, 3);
         }
     }
 }

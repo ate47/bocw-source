@@ -89,13 +89,13 @@ function function_7a20f9a3(*watcher, *owner) {
             var_9af5cd8d = (var_9af5cd8d + 1) % var_cd04f695.size;
             level notify(#"hash_2386c39d37af74e3", {#ai:ai});
             wait(1);
-        } else {
-            arrayremoveindex(var_cd04f695, var_9af5cd8d);
-            if (var_9af5cd8d >= var_cd04f695.size) {
-                var_9af5cd8d = 0;
-            }
-            wait(0.25);
+            continue;
         }
+        arrayremoveindex(var_cd04f695, var_9af5cd8d);
+        if (var_9af5cd8d >= var_cd04f695.size) {
+            var_9af5cd8d = 0;
+        }
+        wait(0.25);
     }
     /#
         if (var_a244d61b > 0) {

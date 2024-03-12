@@ -333,15 +333,15 @@ function private weight_actions(&paramslist) {
             foreach (actionparams in paramslist) {
                 if (!isdefined(actionparams.weight)) {
                     sortedlist[sortedlist.size] = actionparams;
-                } else {
-                    for (i = 0; i < sortedlist.size; i++) {
-                        var_fd5e06c8 = sortedlist[i].weight;
-                        if (!isdefined(var_fd5e06c8) || var_fd5e06c8 < actionparams.weight) {
-                            break;
-                        }
-                    }
-                    arrayinsert(sortedlist, actionparams, i);
+                    continue;
                 }
+                for (i = 0; i < sortedlist.size; i++) {
+                    var_fd5e06c8 = sortedlist[i].weight;
+                    if (!isdefined(var_fd5e06c8) || var_fd5e06c8 < actionparams.weight) {
+                        break;
+                    }
+                }
+                arrayinsert(sortedlist, actionparams, i);
             }
             foreach (actionparams in sortedlist) {
                 color = vectorscale((1, 1, 1), 0.75);

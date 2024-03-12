@@ -50,11 +50,11 @@ function init() {
         wait(0.15);
         level thread update_player_times();
         level thread function_badbaae6();
-    } else {
-        callback::on_connect(&on_free_player_connect);
-        wait(0.15);
-        level thread update_player_times();
+        return;
     }
+    callback::on_connect(&on_free_player_connect);
+    wait(0.15);
+    level thread update_player_times();
 }
 
 // Namespace teams/teams
@@ -128,11 +128,10 @@ function function_badbaae6() {
         waitframe(1);
     }
     for (;;) {
-        for (;;) {
-            if (game.state == #"playing") {
-                function_351a57a9();
-            }
+        if (game.state == #"playing") {
+            function_351a57a9();
         }
+        wait(1);
     }
 }
 
@@ -283,23 +282,22 @@ function track_free_played_time() {
     self.timeplayed[#"total"] = 0;
     self.timeplayed[#"alive"] = 0;
     for (;;) {
-        for (;;) {
-            if (game.state == #"playing") {
-                team = self.pers[#"team"];
-                if (isdefined(team) && isdefined(level.teams[team]) && self.sessionteam != #"spectator") {
-                    if (!isdefined(self.timeplayed[team])) {
-                        self.timeplayed[team] = 0;
-                    }
-                    self.timeplayed[team]++;
-                    self.timeplayed[#"total"]++;
-                    if (isalive(self)) {
-                        self.timeplayed[#"alive"]++;
-                    }
-                } else {
-                    self.timeplayed[#"other"]++;
+        if (game.state == #"playing") {
+            team = self.pers[#"team"];
+            if (isdefined(team) && isdefined(level.teams[team]) && self.sessionteam != #"spectator") {
+                if (!isdefined(self.timeplayed[team])) {
+                    self.timeplayed[team] = 0;
                 }
+                self.timeplayed[team]++;
+                self.timeplayed[#"total"]++;
+                if (isalive(self)) {
+                    self.timeplayed[#"alive"]++;
+                }
+            } else {
+                self.timeplayed[#"other"]++;
             }
         }
+        wait(1);
     }
 }
 
@@ -433,11 +431,11 @@ function hidetosameteam() {
     if (isdefined(self)) {
         if (level.teambased) {
             self setvisibletoallexceptteam(self.team);
-        } else {
-            self setvisibletoall();
-            if (isdefined(self.owner)) {
-                self setinvisibletoplayer(self.owner);
-            }
+            return;
+        }
+        self setvisibletoall();
+        if (isdefined(self.owner)) {
+            self setinvisibletoplayer(self.owner);
         }
     }
 }

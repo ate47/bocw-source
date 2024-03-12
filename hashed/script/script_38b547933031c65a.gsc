@@ -49,7 +49,9 @@ function function_b2067aca(localclientnum) {
         if (isdefined(level.var_e1dcc9e7) || isdefined(level.var_8bb199d1)) {
             self function_43cfe793(localclientnum, 0, var_82a0a786);
         }
-    } else if (!isdefined(level.var_e1dcc9e7) && !isdefined(level.var_8bb199d1)) {
+        return;
+    }
+    if (!isdefined(level.var_e1dcc9e7) && !isdefined(level.var_8bb199d1)) {
         self function_43cfe793(localclientnum, 0, var_82a0a786);
     }
 }
@@ -65,7 +67,9 @@ function function_fd98ff7f(localclientnum, *oldval, newval, *bnewent, *binitials
             up = anglestoup(self.angles);
             level.var_667ac9a6 = playfx(fieldname, level.var_bdab9ccd.var_cef97854, self.origin, forward, up);
         }
-    } else if (isdefined(level.var_667ac9a6)) {
+        return;
+    }
+    if (isdefined(level.var_667ac9a6)) {
         deletefx(fieldname, level.var_667ac9a6);
         level.var_667ac9a6 = undefined;
     }
@@ -81,9 +85,9 @@ function function_977aa020(localclientnum, *oldval, newval, *bnewent, *binitials
     }
     if (bwastimejump) {
         function_a837926b(fieldname, level.var_bdab9ccd.var_8e78250d);
-    } else {
-        codestoppostfxbundlelocal(fieldname, level.var_bdab9ccd.var_8e78250d);
+        return;
     }
+    codestoppostfxbundlelocal(fieldname, level.var_bdab9ccd.var_8e78250d);
 }
 
 // Namespace nuke/nuke
@@ -96,9 +100,9 @@ function function_b5fd20b3(localclientnum, *oldval, newval, *bnewent, *binitials
     }
     if (bwastimejump) {
         function_a837926b(fieldname, level.var_bdab9ccd.var_5e5fbb8b);
-    } else {
-        function_24cd4cfb(fieldname, level.var_bdab9ccd.var_5e5fbb8b);
+        return;
     }
+    function_24cd4cfb(fieldname, level.var_bdab9ccd.var_5e5fbb8b);
 }
 
 // Namespace nuke/nuke
@@ -116,7 +120,9 @@ function function_43cfe793(localclientnum, *oldval, newval, *bnewent, *binitials
         if (isdefined(level.var_bdab9ccd.var_b263d69f)) {
             level.var_e1dcc9e7 = playtagfxset(fieldname, level.var_bdab9ccd.var_b263d69f, player);
         }
-    } else if (bwastimejump == 2) {
+        return;
+    }
+    if (bwastimejump == 2) {
         if (isdefined(level.var_bdab9ccd.var_7daf63f0)) {
             level.var_8bb199d1 = playtagfxset(fieldname, level.var_bdab9ccd.var_7daf63f0, player);
         }

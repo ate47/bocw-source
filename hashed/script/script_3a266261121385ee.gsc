@@ -50,9 +50,9 @@ function function_dcf22669() {
     namespace_cf4aa5f0::function_470d684a("default");
     if (level clientfield::get("zombie_power_on")) {
         namespace_cf4aa5f0::function_470d684a("power_on_immediate");
-    } else {
-        namespace_cf4aa5f0::function_470d684a("power_on");
+        return;
     }
+    namespace_cf4aa5f0::function_470d684a("power_on");
 }
 
 // Namespace namespace_b574e135/namespace_b574e135
@@ -74,22 +74,22 @@ function function_95a3fa7e(*localclientnum, *oldval, newval, *bnewent, *binitial
     switch (bwastimejump) {
     case 1:
         namespace_cf4aa5f0::function_470d684a("bunny_club_window_light_on_1");
-        break;
+        return;
     case 2:
         namespace_cf4aa5f0::function_470d684a("bunny_club_window_light_on_2");
-        break;
+        return;
     case 3:
         namespace_cf4aa5f0::function_470d684a("bunny_club_window_light_on_3");
-        break;
+        return;
     case 4:
         namespace_cf4aa5f0::function_470d684a("bunny_club_window_light_on_4");
-        break;
+        return;
     case 5:
         namespace_cf4aa5f0::function_470d684a("bunny_club_window_light_on_5");
-        break;
+        return;
     case 6:
         namespace_cf4aa5f0::function_470d684a("bunny_club_window_light_on_6");
-        break;
+        return;
     }
 }
 
@@ -101,10 +101,10 @@ function function_7573534c(*localclientnum, *oldval, newval, *bnewent, *binitial
     switch (bwastimejump) {
     case 0:
         namespace_cf4aa5f0::function_470d684a("train_warning_light_south_off");
-        break;
+        return;
     case 1:
         namespace_cf4aa5f0::function_470d684a("train_warning_light_south_on");
-        break;
+        return;
     }
 }
 
@@ -116,10 +116,10 @@ function function_96d7a08a(*localclientnum, *oldval, newval, *bnewent, *binitial
     switch (bwastimejump) {
     case 0:
         namespace_cf4aa5f0::function_470d684a("train_warning_light_north_off");
-        break;
+        return;
     case 1:
         namespace_cf4aa5f0::function_470d684a("train_warning_light_north_on");
-        break;
+        return;
     }
 }
 
@@ -131,16 +131,16 @@ function function_3cbd013d(*localclientnum, *oldval, newval, *bnewent, *binitial
     switch (bwastimejump) {
     case 0:
         namespace_cf4aa5f0::function_470d684a("bunny_battle_light_off");
-        break;
+        return;
     case 1:
         namespace_cf4aa5f0::function_470d684a("bunny_battle_light_booth");
-        break;
+        return;
     case 2:
         namespace_cf4aa5f0::function_470d684a("bunny_battle_light_ball");
-        break;
+        return;
     case 3:
         namespace_cf4aa5f0::function_470d684a("bunny_battle_light_stage");
-        break;
+        return;
     }
 }
 
@@ -152,10 +152,10 @@ function function_9a13661b(*localclientnum, *oldval, newval, *bnewent, *binitial
     switch (bwastimejump) {
     case 0:
         namespace_cf4aa5f0::function_470d684a("failed_open_power_light_off");
-        break;
+        return;
     case 1:
         namespace_cf4aa5f0::function_470d684a("failed_open_power_light_on");
-        break;
+        return;
     }
 }
 

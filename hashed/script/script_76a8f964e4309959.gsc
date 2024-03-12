@@ -149,7 +149,6 @@ function function_4b283bfa() {
         return 7;
     case 4:
         return 10;
-        break;
     }
 }
 

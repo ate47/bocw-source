@@ -66,7 +66,6 @@ function private function_72b9b674() {
     case #"tdm_hc":
     case #"tdm":
         return &function_13821498;
-        break;
     }
     return undefined;
 }
@@ -106,11 +105,11 @@ function private control_start() {
             object = info.target;
             if (!object.trigger istriggerenabled()) {
                 var_23c361c9[var_23c361c9.size] = info;
-            } else {
-                objectives = level function_574923ee(info);
-                foreach (objective in objectives) {
-                    objective.secure = function_84750938(object, objective.team);
-                }
+                continue;
+            }
+            objectives = level function_574923ee(info);
+            foreach (objective in objectives) {
+                objective.secure = function_84750938(object, objective.team);
             }
         }
         foreach (info in var_23c361c9) {
@@ -233,9 +232,9 @@ function private function_35d61d4() {
         foreach (team in level.teams) {
             if (team == var_8cc3a02f) {
                 level function_8f96464(team, var_9c4aa862, #"chase_enemy", #"patrol", &function_a4ce3b72);
-            } else {
-                level function_8f96464(team, var_9c4aa862, #"chase_enemy", #"patrol", undefined);
+                continue;
             }
+            level function_8f96464(team, var_9c4aa862, #"chase_enemy", #"patrol", undefined);
         }
         waitframe(1);
         while (isdefined(var_b84a8f51.target.carrier)) {

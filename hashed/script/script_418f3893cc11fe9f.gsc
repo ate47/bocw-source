@@ -124,13 +124,13 @@ function private function_7f774ede(localclientnum, *oldvalue, newvalue, *bnewent
         } else {
             self.var_fd694760 = util::playfxontag(fieldname, var_60a180bc, self, "tag_head_left");
         }
-        break;
+        return;
     case 2:
         self.heads[1].var_90d98881 = #"hash_60bac319c9abb540";
         self setanim(#"hash_60bac319c9abb540", 1, 0.1, 1);
         self clearanim(#"hash_521e8e871b9a68b0", 0.1);
         self clearanim(#"hash_51cfcc94518cf8d5", 0.1);
-        break;
+        return;
     case 3:
         self.heads[1].var_90d98881 = #"hash_51cfcc94518cf8d5";
         self clearanim(#"hash_521e8e871b9a68b0", 0.1);
@@ -146,7 +146,7 @@ function private function_7f774ede(localclientnum, *oldvalue, newvalue, *bnewent
             self.var_fd694760 = util::playfxontag(fieldname, var_60a180bc, self, "tag_head_left");
         }
         self thread function_bb0ffabc(fieldname);
-        break;
+        return;
     }
 }
 
@@ -175,12 +175,12 @@ function private function_a99ba434(localclientnum, *oldvalue, newvalue, *bnewent
         } else {
             self.var_694b6f = util::playfxontag(fieldname, var_60a180bc, self, "tag_head_mid");
         }
-        break;
+        return;
     case 2:
         self setanim(#"hash_3a0441f1951d769d", 1, 0.1, 1);
         self clearanim(#"hash_3c80dfc4cad4bea9", 0.1);
         self clearanim(#"hash_1423c2827943ae20", 0.1);
-        break;
+        return;
     case 3:
         self clearanim(#"hash_3c80dfc4cad4bea9", 0.1);
         self clearanim(#"hash_3a0441f1951d769d", 0.1);
@@ -195,7 +195,7 @@ function private function_a99ba434(localclientnum, *oldvalue, newvalue, *bnewent
             self.var_694b6f = util::playfxontag(fieldname, var_60a180bc, self, "tag_head_mid");
         }
         self thread function_bb0ffabc(fieldname);
-        break;
+        return;
     }
 }
 
@@ -224,12 +224,12 @@ function private function_e579d5d9(localclientnum, *oldvalue, newvalue, *bnewent
         } else {
             self.var_f254784b = util::playfxontag(fieldname, var_60a180bc, self, "tag_head_right");
         }
-        break;
+        return;
     case 2:
         self setanim(#"hash_14a02ee57f9109ba", 1, 0.1, 1);
         self clearanim(#"hash_26f33adf13df5f66", 0.1);
         self clearanim(#"hash_4f91289daeb5378f", 0.1);
-        break;
+        return;
     case 3:
         self clearanim(#"hash_26f33adf13df5f66", 0.1);
         self clearanim(#"hash_14a02ee57f9109ba", 0.1);
@@ -244,7 +244,7 @@ function private function_e579d5d9(localclientnum, *oldvalue, newvalue, *bnewent
             self.var_f254784b = util::playfxontag(fieldname, var_60a180bc, self, "tag_head_right");
         }
         self thread function_bb0ffabc(fieldname);
-        break;
+        return;
     }
 }
 
@@ -295,10 +295,10 @@ function private function_1b421769(localclientnum, *oldvalue, newvalue, *bnewent
     switch (wasdemojump) {
     case 0:
         deletefx(fieldname, self.var_3e71124a);
-        break;
+        return;
     case 1:
         self.var_3e71124a = util::playfxontag(fieldname, level._effect[#"hash_5bb584a2ff8acafa"], self, "tag_origin");
-        break;
+        return;
     }
 }
 
@@ -311,11 +311,11 @@ function private function_4a696f55(localclientnum, *oldvalue, newvalue, *bnewent
     case 0:
         deletefx(fieldname, self.var_598f22c4);
         self notify(#"hash_3ad013815bda7968");
-        break;
+        return;
     case 1:
         self.var_598f22c4 = util::playfxontag(fieldname, level._effect[#"hash_361a04ec39dfdd45"], self, "tag_origin");
         self thread function_bc09ffc1(fieldname);
-        break;
+        return;
     }
 }
 
@@ -387,11 +387,13 @@ function function_d96c49e7(localclientnum, pos, *surface, *notetrack, *bone) {
     earthquake(notetrack, n_scale, 0.1, bone, n_dist);
     if (n_scale <= 0.25 && n_scale > 0.2) {
         function_36e4ebd4(notetrack, "shotgun_fire");
-    } else if (n_scale <= 0.2 && n_scale > 0.1) {
-        function_36e4ebd4(notetrack, "damage_heavy");
-    } else {
-        function_36e4ebd4(notetrack, "reload_small");
+        return;
     }
+    if (n_scale <= 0.2 && n_scale > 0.1) {
+        function_36e4ebd4(notetrack, "damage_heavy");
+        return;
+    }
+    function_36e4ebd4(notetrack, "reload_small");
 }
 
 // Namespace namespace_a204c0f4/namespace_a204c0f4
@@ -406,7 +408,9 @@ function private function_a3a09c93(localclientnum, *oldvalue, newvalue, *bnewent
         if (distsq < 20736) {
             earthquake(fieldname, 0.7, 0.25, e_player.origin, 3000);
             function_36e4ebd4(fieldname, "shotgun_fire");
-        } else if (distsq < 36864) {
+            return;
+        }
+        if (distsq < 36864) {
             earthquake(fieldname, 0.7, 0.25, e_player.origin, 1500);
             function_36e4ebd4(fieldname, "damage_heavy");
         }

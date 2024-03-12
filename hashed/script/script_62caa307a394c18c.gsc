@@ -85,7 +85,6 @@ function function_1b3815a7(element) {
             return 4;
         case #"hash_bd108911963a54f":
             return 5;
-            break;
         }
     }
     return 0;

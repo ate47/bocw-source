@@ -305,29 +305,29 @@ function function_ec39f01c(amount, attacker, *direction_vec, point, type, *tagna
         case #"right_leg_lower":
         case #"right_foot":
             if (gibserverutils::isgibbed(self, 16) || gibserverutils::isgibbed(self, 32)) {
-                break;
+                return;
             }
             gibserverutils::gibrightleg(self, var_c3317960);
             if (randomint(100) > 75) {
                 gibserverutils::gibleftleg(self, var_c3317960);
             }
-            break;
+            return;
         case #"left_leg_lower":
         case #"left_foot":
         case #"left_leg_upper":
             if (gibserverutils::isgibbed(self, 16) || gibserverutils::isgibbed(self, 32)) {
-                break;
+                return;
             }
             gibserverutils::gibleftleg(self, var_c3317960);
             if (randomint(100) > 75) {
                 gibserverutils::gibrightleg(self, var_c3317960);
             }
-            break;
+            return;
         default:
             if (self.damagelocation == "none") {
                 if (partname == "MOD_GRENADE" || partname == "MOD_GRENADE_SPLASH" || partname == "MOD_PROJECTILE" || partname == "MOD_PROJECTILE_SPLASH") {
                     self function_fe84424f(weapon, var_fd90b0bb, modelname);
-                    break;
+                    return;
                 }
             }
             break;
@@ -371,7 +371,9 @@ function function_fe84424f(weapon, var_fd90b0bb, point, var_87a07ff5 = 1) {
                 gibserverutils::gibrightleg(self, var_c3317960);
             }
         }
-    } else if (closesttag == "J_Hip_RI" || closesttag == "J_Knee_RI" || closesttag == "J_Ankle_RI") {
+        return;
+    }
+    if (closesttag == "J_Hip_RI" || closesttag == "J_Knee_RI" || closesttag == "J_Ankle_RI") {
         if (gibserverutils::isgibbed(self, 16) || gibserverutils::isgibbed(self, 32)) {
             return;
         }
@@ -439,9 +441,8 @@ function function_29c1ba76(*einflictor, eattacker, idamage, *idflags, smeansofde
 function function_bd4a79a(entity) {
     if (isdefined(entity.attackable)) {
         return entity.attackable;
-    } else {
-        return zm_ai_utility::function_825317c(entity);
     }
+    return zm_ai_utility::function_825317c(entity);
 }
 
 // Namespace archetype_avogadro/archetype_avogadro
@@ -1182,11 +1183,13 @@ function function_bc2f2686(entity, *mocompanim, *mocompanimblendouttime, *mocomp
     target = function_bd4a79a(mocompduration);
     if (isdefined(mocompduration.attackable) && mocompduration.attackable === target) {
         mocompduration orientmode("face point", mocompduration.attackable getcentroid());
-    } else if (isdefined(target)) {
-        mocompduration orientmode("face point", target.origin);
-    } else {
-        mocompduration orientmode("face default");
+        return;
     }
+    if (isdefined(target)) {
+        mocompduration orientmode("face point", target.origin);
+        return;
+    }
+    mocompduration orientmode("face default");
 }
 
 // Namespace archetype_avogadro/archetype_avogadro

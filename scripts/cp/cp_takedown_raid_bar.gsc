@@ -656,11 +656,11 @@ function function_a6d1922d() {
         if (player adsbuttonpressed()) {
             player enableweapons();
             wait(0.25);
-        } else {
-            wait(0.5);
-            player disableweapons();
-            wait(0.05);
+            continue;
         }
+        wait(0.5);
+        player disableweapons();
+        wait(0.05);
     }
 }
 

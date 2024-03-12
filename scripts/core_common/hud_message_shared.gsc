@@ -52,9 +52,9 @@ function setlowermessage(text, time) {
     self notify(#"hash_6ceeeb477ece797b");
     if (isdefined(time) && time > 0) {
         self luinotifyevent(#"hash_424b9c54c8bf7a82", 2, text, int(time));
-    } else {
-        self luinotifyevent(#"hash_424b9c54c8bf7a82", 1, text);
+        return;
     }
+    self luinotifyevent(#"hash_424b9c54c8bf7a82", 1, text);
 }
 
 // Namespace hud_message/hud_message_shared

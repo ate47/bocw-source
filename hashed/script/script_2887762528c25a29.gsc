@@ -109,9 +109,9 @@ function function_b3e13787(trap, page = 0) {
             level.doa.var_6733605b = array(level.doa.var_6733605b);
         }
         level.doa.var_6733605b[level.doa.var_6733605b.size] = trap;
-    } else {
-        function_a2e3342e(trap);
+        return;
     }
+    function_a2e3342e(trap);
 }
 
 // Namespace namespace_9529b92d/namespace_9529b92d
@@ -153,12 +153,12 @@ function function_865e002e() {
                     trap.var_eb9d64bb = trap.var_eb9d64bb + 5000;
                     namespace_1e25ad94::function_f5f0c0f8("Paging IN pressure plate trap at:" + trap.origin);
                 }
-            } else {
-                trap.var_f8660931 = namespace_ec06fe4a::function_6eacecf5(trap.origin, 1200);
-                if (!isdefined(trap.var_f8660931)) {
-                    trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
-                    namespace_1e25ad94::function_f5f0c0f8("Paging out pressure plate trap at:" + trap.origin);
-                }
+                continue;
+            }
+            trap.var_f8660931 = namespace_ec06fe4a::function_6eacecf5(trap.origin, 1200);
+            if (!isdefined(trap.var_f8660931)) {
+                trap notify(#"hash_3e251384a5400dce", {#var_760a0807:0});
+                namespace_1e25ad94::function_f5f0c0f8("Paging out pressure plate trap at:" + trap.origin);
             }
         }
     }
@@ -206,19 +206,19 @@ function function_3864f6a5() {
                 self.trigger.origin = self.origin + vectorscale((0, 0, 1), 36);
                 self.trigger.angles = self.angles;
             }
-        } else {
-            result = undefined;
-            result = self.trigger waittill(#"trigger");
-            self.script_model namespace_e32bb68::function_3a59ec34("zmb_press_pad_down");
-            self.script_model moveto(var_d71f280f, 0.5);
-            array::notify_all(self.var_84a0207b, "plate_activated");
-            while (isdefined(result.activator) && result.activator istouching(self.trigger)) {
-                waitframe(1);
-            }
-            self.script_model namespace_e32bb68::function_3a59ec34("zmb_press_pad_up");
-            self.script_model moveto(var_2aedafcb, 0.5);
-            array::notify_all(self.var_84a0207b, "plate_deactivated");
+            continue;
         }
+        result = undefined;
+        result = self.trigger waittill(#"trigger");
+        self.script_model namespace_e32bb68::function_3a59ec34("zmb_press_pad_down");
+        self.script_model moveto(var_d71f280f, 0.5);
+        array::notify_all(self.var_84a0207b, "plate_activated");
+        while (isdefined(result.activator) && result.activator istouching(self.trigger)) {
+            waitframe(1);
+        }
+        self.script_model namespace_e32bb68::function_3a59ec34("zmb_press_pad_up");
+        self.script_model moveto(var_2aedafcb, 0.5);
+        array::notify_all(self.var_84a0207b, "plate_deactivated");
     }
 }
 

@@ -120,9 +120,9 @@ function function_c8e3a0dc(localclientnum, *oldval, *newval, *bnewent, *binitial
 function function_f3b43353(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self function_a681160a(fieldname);
-    } else {
-        self function_725a593f(fieldname);
+        return;
     }
+    self function_725a593f(fieldname);
 }
 
 // Namespace ammomod_napalmburst/ammomod_napalmburst
@@ -132,9 +132,9 @@ function function_f3b43353(localclientnum, *oldval, newval, *bnewent, *binitials
 function function_2d64f265(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self function_a681160a(fieldname, 1);
-    } else {
-        self function_725a593f(fieldname);
+        return;
     }
+    self function_725a593f(fieldname);
 }
 
 // Namespace ammomod_napalmburst/ammomod_napalmburst
@@ -163,7 +163,9 @@ function function_a681160a(localclientnum, is_vehicle = 0) {
                             }
                             self.var_9bdf44ae[self.var_9bdf44ae.size] = fxid;
                         }
-                    } else if (isdefined(self gettagorigin(fx.joint))) {
+                        continue;
+                    }
+                    if (isdefined(self gettagorigin(fx.joint))) {
                         fxid = util::playfxontag(localclientnum, i, self, fx.joint);
                         if (!isdefined(self.var_9bdf44ae)) {
                             self.var_9bdf44ae = [];

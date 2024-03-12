@@ -199,7 +199,9 @@ function private trygibbinghead(entity, *damage, weapon, var_fd90b0bb, hitloc, i
     var_c3317960 = gibserverutils::function_de4d9d(weapon, var_fd90b0bb);
     if (isexplosive) {
         gibserverutils::gibhead(damage, var_c3317960);
-    } else if (isinarray(array("head", "neck", "helmet"), hitloc)) {
+        return;
+    }
+    if (isinarray(array("head", "neck", "helmet"), hitloc)) {
         gibserverutils::gibhead(damage, var_c3317960);
     }
 }
@@ -217,16 +219,22 @@ function private trygibbinglimb(entity, *damage, weapon, var_fd90b0bb, hitloc, i
         } else {
             gibserverutils::gibleftarm(damage, var_c3317960);
         }
-    } else if (isinarray(array("left_hand", "left_arm_lower", "left_arm_upper"), hitloc)) {
+        return;
+    }
+    if (isinarray(array("left_hand", "left_arm_lower", "left_arm_upper"), hitloc)) {
         gibserverutils::gibleftarm(damage, var_c3317960);
-    } else if (isinarray(array("right_hand", "right_arm_lower", "right_arm_upper"), hitloc)) {
+        return;
+    }
+    if (isinarray(array("right_hand", "right_arm_lower", "right_arm_upper"), hitloc)) {
         gibserverutils::gibrightarm(damage, var_c3317960);
-    } else if (isinarray(array("torso_upper"), hitloc) && math::cointoss()) {
+        return;
+    }
+    if (isinarray(array("torso_upper"), hitloc) && math::cointoss()) {
         if (math::cointoss()) {
             gibserverutils::gibleftarm(damage, var_c3317960);
-        } else {
-            gibserverutils::gibrightarm(damage, var_c3317960);
+            return;
         }
+        gibserverutils::gibrightarm(damage, var_c3317960);
     }
 }
 
@@ -245,16 +253,22 @@ function private trygibbinglegs(entity, *damage, weapon, var_fd90b0bb, hitloc, i
         } else {
             gibserverutils::giblegs(weapon, var_c3317960);
         }
-    } else if (isinarray(array("left_leg_upper", "left_leg_lower", "left_foot"), isexplosive)) {
+        return;
+    }
+    if (isinarray(array("left_leg_upper", "left_leg_lower", "left_foot"), isexplosive)) {
         gibserverutils::gibleftleg(weapon, var_c3317960);
-    } else if (isinarray(array("right_leg_upper", "right_leg_lower", "right_foot"), isexplosive)) {
+        return;
+    }
+    if (isinarray(array("right_leg_upper", "right_leg_lower", "right_foot"), isexplosive)) {
         gibserverutils::gibrightleg(weapon, var_c3317960);
-    } else if (isinarray(array("torso_lower"), isexplosive) && math::cointoss()) {
+        return;
+    }
+    if (isinarray(array("torso_lower"), isexplosive) && math::cointoss()) {
         if (math::cointoss()) {
             gibserverutils::gibleftleg(weapon, var_c3317960);
-        } else {
-            gibserverutils::gibrightleg(weapon, var_c3317960);
+            return;
         }
+        gibserverutils::gibrightleg(weapon, var_c3317960);
     }
 }
 
@@ -684,9 +698,9 @@ function function_9b60b3a4() {
 function private function_ee4915e0() {
     if (isfunctionptr(self.var_c017b6d)) {
         self thread [[ self.var_c017b6d ]]();
-    } else {
-        self thread function_88dcd11f();
+        return;
     }
+    self thread function_88dcd11f();
 }
 
 // Namespace namespace_ae9b2918/archetype_human
@@ -696,9 +710,9 @@ function private function_ee4915e0() {
 function private function_fbc6c789() {
     if (isfunctionptr(self.var_3f246c60)) {
         self thread [[ self.var_3f246c60 ]]();
-    } else {
-        self function_9b60b3a4();
+        return;
     }
+    self function_9b60b3a4();
 }
 
 // Namespace namespace_ae9b2918/archetype_human

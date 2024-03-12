@@ -68,19 +68,19 @@ function function_9ed71eeb(localclientnum, *oldval, newval, *bnewent, *binitials
     }
     switch (bwastimejump) {
     case 0:
-        break;
+        return;
     case 1:
         self.var_9c32107c = playfx(fieldname, #"hash_6872157c3765f00c", self.v_pos, self.v_up, self.v_forward);
-        break;
+        return;
     case 2:
         self.var_9c32107c = playfx(fieldname, #"hash_31e1237ef42f8fd", self.v_pos, self.v_up, self.v_forward);
-        break;
+        return;
     case 3:
         self.var_9c32107c = playfx(fieldname, #"hash_67b599a0909158ef", self.v_pos, self.v_up, self.v_forward);
-        break;
+        return;
     case 4:
         self.var_9c32107c = playfx(fieldname, #"hash_6df17892ee107cdb", self.v_pos, self.v_up, self.v_forward);
-        break;
+        return;
     }
 }
 
@@ -147,7 +147,9 @@ function function_dd279aeb(localclientnum, *oldval, newval, *bnewent, *binitials
             level.var_e915a27 = util::spawn_model(fieldname, "tag_origin", self.origin, self.angles);
             level.var_e915a27.targetname = "trial_terminal_screen";
         }
-    } else if (isdefined(level.var_e915a27)) {
+        return;
+    }
+    if (isdefined(level.var_e915a27)) {
         level.var_e915a27 delete();
     }
 }

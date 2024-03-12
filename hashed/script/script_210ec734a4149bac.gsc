@@ -95,9 +95,9 @@ function private function_c96b0450() {
                             self.nextfindbestcovertime = gettime();
                         }
                     }
-                } else {
-                    self.var_ce60d915 = 0;
+                    continue;
                 }
+                self.var_ce60d915 = 0;
             }
         }
     }
@@ -179,12 +179,12 @@ function private function_ddb1fd83(var_d5020108, tacpoints, pickedpoint) {
                 /#
                     line(goalinfo.goalpos, tacpoint.origin, color, 1, 0, 1);
                 #/
-            } else {
-                /#
-                    print3d(tacpoint.origin, "<unknown string>", (0, 1, 0), 1, 1, 1);
-                    line(goalinfo.goalpos, tacpoint.origin, (0, 1, 0), 1, 0, 1);
-                #/
+                continue;
             }
+            /#
+                print3d(tacpoint.origin, "<unknown string>", (0, 1, 0), 1, 1, 1);
+                line(goalinfo.goalpos, tacpoint.origin, (0, 1, 0), 1, 0, 1);
+            #/
         }
     }
 }
@@ -397,20 +397,20 @@ function function_b0876f77(value) {
     switch (value) {
     case #"briefcase_left":
         function_5c56272f("z_briefcase_01_closed", "tag_accessory_left", "BRIEFCASE_LEFT");
-        break;
+        return;
     case #"umbrella_left":
         function_5c56272f("par_umbrella_open_01", "tag_accessory_left", "UMBRELLA_LEFT");
-        break;
+        return;
     case #"hash_4ac48798a0be234b":
         function_5c56272f("par_umbrella_open_01_anim", "tag_accessory_left", "UMBRELLA_LEFT");
         function_5c56272f("z_briefcase_01_closed", "tag_accessory_right", "BRIEFCASE_RIGHT");
-        break;
+        return;
     case #"umbrella_right":
         function_5c56272f("par_umbrella_open_01", "tag_accessory_right", "UMBRELLA_RIGHT");
-        break;
+        return;
     case #"none":
     default:
-        break;
+        return;
     }
 }
 

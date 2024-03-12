@@ -118,11 +118,11 @@ function function_f5f0c0f8(var_4e2d590d, var_88421d4b = 0) {
     /#
         if (var_88421d4b == 0) {
             println("<unknown string>" + var_4e2d590d);
-        } else {
-            text = "<unknown string>" + gettime() + "<unknown string>" + var_4e2d590d;
-            println("<unknown string>" + text);
-            level.doa.var_62f60f27[level.doa.var_62f60f27.size] = text;
+            return;
         }
+        text = "<unknown string>" + gettime() + "<unknown string>" + var_4e2d590d;
+        println("<unknown string>" + text);
+        level.doa.var_62f60f27[level.doa.var_62f60f27.size] = text;
     #/
 }
 

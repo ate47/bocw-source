@@ -41,7 +41,9 @@ function postinit() {
 function weapon_machine_fx(localclientnum, *oldval, newval, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self.weapon_machine_fx = function_239993de(fieldname, #"hash_6864f1ec3b2c7d2e", self, "sphere_jnt");
-    } else if (isdefined(self.weapon_machine_fx)) {
+        return;
+    }
+    if (isdefined(self.weapon_machine_fx)) {
         stopfx(fieldname, self.weapon_machine_fx);
         self.weapon_machine_fx = undefined;
     }

@@ -39,7 +39,9 @@ function napalm_strike_marker_on(localclientnum, *oldval, newval, *bnewent, *bin
         if (isplayer(player) && isdefined(self.var_595cc3a1)) {
             player postfx::function_c8b5f318("pstfx_napalm_strike_bundle", #"hash_1dc8a3cb360b2900" + self.var_595cc3a1, 4);
         }
-    } else if (bwastimejump == 2) {
+        return;
+    }
+    if (bwastimejump == 2) {
         player = function_27673a7(fieldname);
         if (isplayer(player) && isdefined(self.var_595cc3a1)) {
             self notify(#"hash_6cb3344e363fe563");
@@ -50,7 +52,9 @@ function napalm_strike_marker_on(localclientnum, *oldval, newval, *bnewent, *bin
             player function_f43fb0d3(self);
             self.markerfx = function_239993de(fieldname, "sr/fx9_kill_streak_marker_activate", self, "tag_origin");
         }
-    } else if (bwastimejump == 3) {
+        return;
+    }
+    if (bwastimejump == 3) {
         player = function_27673a7(fieldname);
         if (!is_true(self.allocated)) {
             namespace_bf7415ae::function_9cb260fd(fieldname, "napalm_strike", self);
@@ -59,11 +63,11 @@ function napalm_strike_marker_on(localclientnum, *oldval, newval, *bnewent, *bin
         if (isplayer(player) && isdefined(self.var_595cc3a1)) {
             player postfx::function_c8b5f318("pstfx_napalm_strike_bundle", #"hash_1dc8a3cb360b2900" + self.var_595cc3a1, 3);
         }
-    } else {
-        namespace_bf7415ae::function_f06fadf2(fieldname, "napalm_strike", self);
-        if (isdefined(self.markerfx)) {
-            stopfx(fieldname, self.markerfx);
-        }
+        return;
+    }
+    namespace_bf7415ae::function_f06fadf2(fieldname, "napalm_strike", self);
+    if (isdefined(self.markerfx)) {
+        stopfx(fieldname, self.markerfx);
     }
 }
 

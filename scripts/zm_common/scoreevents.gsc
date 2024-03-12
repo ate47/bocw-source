@@ -195,9 +195,9 @@ function function_a1f450c2(event, attacker, enemy, weapon) {
             } else if (attacker.var_40cd3e93[event].time < gettime()) {
                 attacker.var_40cd3e93[event] = {#var_ba244c35:0, #multikills:1, #weapon:undefined, #time:gettime(), #player:attacker};
             }
-        } else {
-            attacker.var_40cd3e93[event] = {#var_ba244c35:0, #multikills:1, #weapon:undefined, #time:gettime(), #player:attacker};
+            return;
         }
+        attacker.var_40cd3e93[event] = {#var_ba244c35:0, #multikills:1, #weapon:undefined, #time:gettime(), #player:attacker};
     }
 }
 
@@ -468,12 +468,8 @@ function function_970a97b2(params) {
             if (var_a0345f37.var_3f87fe17.var_f05cc9a3 > gettime() - 2.5 * 1000) {
                 if (var_a0345f37.var_3f87fe17.player === params.eattacker) {
                     if (var_a0345f37.var_6f84b820 === #"hash_72d4f2ad2e333eb4") {
-                        goto LOC_00001d0e;
+                    } else if (var_a0345f37.var_6f84b820 === #"special") {
                     }
-                    if (var_a0345f37.var_6f84b820 === #"special") {
-                    LOC_00001d0e:
-                    }
-                LOC_00001d0e:
                 } else if (var_a0345f37.var_6f84b820 === #"hash_72d4f2ad2e333eb4" && var_a0345f37.var_6f84b820 === #"special") {
                     processscoreevent("healing_aura_stun_assist_zm", params.eattacker, var_a0345f37, params.weapon, undefined, params);
                 }
@@ -609,9 +605,9 @@ function function_970a97b2(params) {
                         params.eattacker contracts::increment_zm_contract(#"hash_1d79330297e3f68b");
                         params.eattacker zm_stats::increment_challenge_stat(#"hash_2c0504992b5785f2");
                     }
-                } else {
-                    processscoreevent("ring_of_fire_assist_zm", var_23662c1b.owner, var_a0345f37, params.weapon, undefined, params);
+                    continue;
                 }
+                processscoreevent("ring_of_fire_assist_zm", var_23662c1b.owner, var_a0345f37, params.weapon, undefined, params);
             }
         }
     }
@@ -1042,9 +1038,13 @@ function function_4ffff5df(attacker, weapon, var_9c448324, enemy) {
         }
         if (weapon.name === #"molotov_fire") {
             processscoreevent("molotov_assist_zm", attacker, enemy);
-        } else if (weapon.name === #"eq_slow_grenade") {
+            return;
+        }
+        if (weapon.name === #"eq_slow_grenade") {
             processscoreevent("concussion_grenade_assist_zm", attacker, enemy);
-        } else if (weapon.name === #"hash_6a4dd5ed56f6e3f6") {
+            return;
+        }
+        if (weapon.name === #"hash_6a4dd5ed56f6e3f6") {
             processscoreevent("lt53_kazimir_assist_zm", attacker, enemy);
         }
     }
@@ -1068,10 +1068,8 @@ function is_equipment(weapon) {
     case #"satchel_charge":
     case #"cymbal_monkey":
         return 1;
-        break;
     default:
         return 0;
-        break;
     }
     return 0;
 }
@@ -1863,9 +1861,7 @@ function updatemultikill(params) {
                 if (params.enemy.var_6f84b820 === #"hash_72d4f2ad2e333eb4" || params.enemy.var_6f84b820 === #"special") {
                     processscoreevent("vehicle_impact_kill_special_elite_zm", params.eattacker, params.enemy, params.weapon);
                 }
-                goto LOC_00006d56;
             }
-        LOC_00006d56:
             break;
         case 1:
         case 2:
@@ -1910,9 +1906,9 @@ function updatemultikill(params) {
             if (params.enemy.var_e293f8ac.size === 0) {
                 params.eattacker zm_stats::increment_challenge_stat(#"hash_45814ac55657fc62");
             }
-        } else {
-            params.eattacker zm_stats::increment_challenge_stat(#"hash_45814ac55657fc62");
+            return;
         }
+        params.eattacker zm_stats::increment_challenge_stat(#"hash_45814ac55657fc62");
     }
 }
 

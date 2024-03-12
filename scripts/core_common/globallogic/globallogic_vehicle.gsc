@@ -425,36 +425,36 @@ function callback_vehiclekilled(einflictor, eattacker, idamage, smeansofdeath, w
                 eattacker thread damagefeedback::update(smeansofdeath, einflictor, undefined, weapon, self, psoffsettime, shitloc, 0);
             }
         }
-    } else {
-        if (isdefined(level.challenges_callback_vehiclekilled)) {
-            self thread [[ level.challenges_callback_vehiclekilled ]](einflictor, player, idamage, smeansofdeath, weapon, shitloc);
-        }
-        if (sessionmodeismultiplayergame() || sessionmodeiswarzonegame()) {
-            if (isplayer(player)) {
-                var_9abb347b = undefined;
-                if (isdefined(self.team)) {
-                    if (self.team != #"neutral") {
-                        var_9abb347b = self.team;
-                    } else if (isdefined(self.var_37f0c900)) {
-                        if (self.var_37f0c900.time == gettime()) {
-                            var_9abb347b = self.var_37f0c900.team;
-                        }
-                        self.var_37f0c900 = undefined;
+        return;
+    }
+    if (isdefined(level.challenges_callback_vehiclekilled)) {
+        self thread [[ level.challenges_callback_vehiclekilled ]](einflictor, player, idamage, smeansofdeath, weapon, shitloc);
+    }
+    if (sessionmodeismultiplayergame() || sessionmodeiswarzonegame()) {
+        if (isplayer(player)) {
+            var_9abb347b = undefined;
+            if (isdefined(self.team)) {
+                if (self.team != #"neutral") {
+                    var_9abb347b = self.team;
+                } else if (isdefined(self.var_37f0c900)) {
+                    if (self.var_37f0c900.time == gettime()) {
+                        var_9abb347b = self.var_37f0c900.team;
                     }
+                    self.var_37f0c900 = undefined;
                 }
-                if (isdefined(var_9abb347b) && util::function_fbce7263(var_9abb347b, player.pers[#"team"])) {
-                    if (self.weapon.var_62c1bfaa !== 1) {
-                        player stats::function_a431be09(weapon);
-                        if (player isinvehicle()) {
-                            var_284da85d = player getvehicleoccupied();
-                            if (isdefined(var_284da85d.scriptvehicletype)) {
-                                player stats::function_7fd36562(var_284da85d.scriptvehicletype, #"destructions", 1);
-                            }
+            }
+            if (isdefined(var_9abb347b) && util::function_fbce7263(var_9abb347b, player.pers[#"team"])) {
+                if (self.weapon.var_62c1bfaa !== 1) {
+                    player stats::function_a431be09(weapon);
+                    if (player isinvehicle()) {
+                        var_284da85d = player getvehicleoccupied();
+                        if (isdefined(var_284da85d.scriptvehicletype)) {
+                            player stats::function_7fd36562(var_284da85d.scriptvehicletype, #"destructions", 1);
                         }
-                        if (player function_6c32d092(#"talent_engineer")) {
-                            scoreevents::processscoreevent(#"hash_78f6e45d08abe0db", player);
-                            player contracts::increment_contract(#"hash_448a34bf383a87a6", 1);
-                        }
+                    }
+                    if (player function_6c32d092(#"talent_engineer")) {
+                        scoreevents::processscoreevent(#"hash_78f6e45d08abe0db", player);
+                        player contracts::increment_contract(#"hash_448a34bf383a87a6", 1);
                     }
                 }
             }

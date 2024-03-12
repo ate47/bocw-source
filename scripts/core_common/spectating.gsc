@@ -125,11 +125,11 @@ function set_permissions() {
         break;
     case 3:
         self.spectatorteam = #"invalid";
-        jumpiffalse(self issplitscreen() && self other_local_player_still_alive()) LOC_00000266;
-        self allowspectateteam(#"none", 0);
-        break;
+        if (self issplitscreen() && self other_local_player_still_alive()) {
+            self allowspectateteam(#"none", 0);
+            break;
+        }
     case 1:
-    LOC_00000266:
         self.spectatorteam = #"invalid";
         if (!level.teambased) {
             self allowspectateallteams(1);
@@ -162,24 +162,26 @@ function set_permissions() {
         if (spawning::function_29b859d1() || function_a1ef346b(team).size > 0) {
             self allowspectateteam(#"none", 0);
             self allowspectateteam(team, 1);
-        } else {
-            self allowspectateallteams(1);
+            return;
         }
+        self allowspectateallteams(1);
         return;
     }
     if (isdefined(level.var_799cca7d)) {
         self [[ level.var_799cca7d ]]();
-    } else if (isdefined(team) && isdefined(level.teams[team])) {
+        return;
+    }
+    if (isdefined(team) && isdefined(level.teams[team])) {
         if (isdefined(level.spectateoverride[team].allowfreespectate)) {
             self allowspectateteam("freelook", 1);
         }
         if (isdefined(level.spectateoverride[team].allowenemyspectate)) {
             if (level.spectateoverride[team].allowenemyspectate == #"all") {
                 self allowspectateallteams(1);
-            } else {
-                self allowspectateallteams(0);
-                self allowspectateteam(level.spectateoverride[team].allowenemyspectate, 1);
+                return;
             }
+            self allowspectateallteams(0);
+            self allowspectateteam(level.spectateoverride[team].allowenemyspectate, 1);
         }
     }
 }
@@ -276,21 +278,20 @@ function function_460b3788(players, var_22b78352, var_89bd5332, var_c9fe8766) {
     var_156b3879 = self function_18b8b7e4(players, self.origin);
     if (isdefined(var_156b3879) && isplayer(var_156b3879)) {
         return var_156b3879;
-    } else {
-        target = function_9c5853f5(players, var_22b78352, var_89bd5332);
-        if (isdefined(target)) {
-            return target;
-        }
-        if (var_c9fe8766) {
-            teammates = function_a1ef346b(self.team);
-            return self function_460b3788(teammates, &spectator_team, #"invalid", 0);
-        }
-        target = array::random(function_a1ef346b());
-        if (isdefined(target)) {
-            return target;
-        }
-        return undefined;
     }
+    target = function_9c5853f5(players, var_22b78352, var_89bd5332);
+    if (isdefined(target)) {
+        return target;
+    }
+    if (var_c9fe8766) {
+        teammates = function_a1ef346b(self.team);
+        return self function_460b3788(teammates, &spectator_team, #"invalid", 0);
+    }
+    target = array::random(function_a1ef346b());
+    if (isdefined(target)) {
+        return target;
+    }
+    return undefined;
 }
 
 // Namespace spectating/spectating
@@ -498,13 +499,12 @@ function private function_770d7902() {
     switch (level.spectatetype) {
     case 5:
         players = function_a1cff525(self.squad);
-        jumpcmp(players.size < 0) LOC_0000007e;
-        return players;
+        if (players.size > 0) {
+            return players;
+        }
     case 4:
     default:
-    LOC_0000007e:
         return function_a1ef346b(self.team);
-        break;
     }
 }
 
@@ -548,30 +548,28 @@ function function_836ee9ed(var_156b3879) {
     if (isdefined(var_156b3879) && isplayer(var_156b3879) && isalive(var_156b3879)) {
         function_26c5324a(var_156b3879);
         return var_156b3879;
-    } else {
-        players = function_a1ef346b(self.team);
+    }
+    players = function_a1ef346b(self.team);
+    if (players.size > 0) {
+        self.spectatorteam = self.team;
+        return self;
+    }
+    players = getplayers(self.team);
+    foreach (player in players) {
+        var_156b3879 = follow_chain(player);
+        if (isdefined(var_156b3879) && isplayer(var_156b3879) && isalive(var_156b3879)) {
+            function_26c5324a(var_156b3879);
+            return var_156b3879;
+        }
+    }
+    foreach (team in level.teams) {
+        if (team == self.team) {
+            continue;
+        }
+        players = function_a1ef346b(team);
         if (players.size > 0) {
-            self.spectatorteam = self.team;
-            return self;
-        } else {
-            players = getplayers(self.team);
-            foreach (player in players) {
-                var_156b3879 = follow_chain(player);
-                if (isdefined(var_156b3879) && isplayer(var_156b3879) && isalive(var_156b3879)) {
-                    function_26c5324a(var_156b3879);
-                    return var_156b3879;
-                }
-            }
-            foreach (team in level.teams) {
-                if (team == self.team) {
-                    continue;
-                }
-                players = function_a1ef346b(team);
-                if (players.size > 0) {
-                    function_26c5324a(players[0]);
-                    return players[0];
-                }
-            }
+            function_26c5324a(players[0]);
+            return players[0];
         }
     }
 }
@@ -603,9 +601,9 @@ function on_player_killed(params) {
         self thread function_2b728d67(params.eattacker);
         if (level.var_1ba484ad == 2 || self namespace_8a203916::function_500047aa(1)) {
             self namespace_8a203916::function_86df9236();
-        } else {
-            self namespace_8a203916::function_888901cb();
+            return;
         }
+        self namespace_8a203916::function_888901cb();
     }
 }
 

@@ -129,7 +129,7 @@ function function_9a8ab40f() {
                 var_183929a8++;
             }
         }
-    } while(a_players.size > var_183929a8);
+    } while (a_players.size > var_183929a8);
 }
 
 // Namespace doa/doa

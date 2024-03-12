@@ -369,9 +369,9 @@ function private function_a04ffd9d(target, var_196fbc4d, owner) {
         }
         if (var_6a709ea1) {
             wait(randomfloatrange(0.5, 2.5));
-        } else {
-            waitframe(1);
+            continue;
         }
+        waitframe(1);
     }
     wait(4);
     target dodamage(9999, target.origin, owner, undefined, undefined, "MOD_PROJECTILE", 0, weapon);

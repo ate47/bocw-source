@@ -49,8 +49,7 @@ function sessionadvertisementcheck() {
         return;
     }
     level endon(#"game_end");
-    currentadvertisedstatus = undefined;
-    while (1) {
+    for (currentadvertisedstatus = undefined; 1; currentadvertisedstatus = advertise) {
         sessionadvertcheckwait = getdvarint(#"sessionadvertcheckwait", 1);
         wait(sessionadvertcheckwait);
         advertise = [[ level.var_a962eeb6 ]]();
@@ -60,7 +59,6 @@ function sessionadvertisementcheck() {
             #/
             setadvertisedstatus(advertise);
         }
-        currentadvertisedstatus = advertise;
     }
 }
 
@@ -312,29 +310,29 @@ function sessionadvertismentupdatedebughud() {
                     sessionadverthud_3b = undefined;
                     sessionadverthud_4a = undefined;
                     sessionadverthud_4b = undefined;
+                    continue;
+                }
+                if (level.sessionadvertstatus == 1) {
+                    sessionadverthud_0.color = (1, 1, 1);
                 } else {
-                    if (level.sessionadvertstatus == 1) {
-                        sessionadverthud_0.color = (1, 1, 1);
-                    } else {
-                        sessionadverthud_0.color = vectorscale((1, 0, 0), 0.9);
-                    }
-                    sessionadverthud_0 settext(level.sessionadverthud_0_text);
-                    if (level.sessionadverthud_1a_text != "<unknown string>") {
-                        sessionadverthud_1a settext(level.sessionadverthud_1a_text);
-                        sessionadverthud_1b setvalue(level.sessionadverthud_1b_text);
-                    }
-                    if (level.sessionadverthud_2a_text != "<unknown string>") {
-                        sessionadverthud_2a settext(level.sessionadverthud_2a_text);
-                        sessionadverthud_2b setvalue(level.sessionadverthud_2b_text);
-                    }
-                    if (level.sessionadverthud_3a_text != "<unknown string>") {
-                        sessionadverthud_3a settext(level.sessionadverthud_3a_text);
-                        sessionadverthud_3b setvalue(level.sessionadverthud_3b_text);
-                    }
-                    if (level.sessionadverthud_4a_text != "<unknown string>") {
-                        sessionadverthud_4a settext(level.sessionadverthud_4a_text);
-                        sessionadverthud_4b setvalue(level.sessionadverthud_4b_text);
-                    }
+                    sessionadverthud_0.color = vectorscale((1, 0, 0), 0.9);
+                }
+                sessionadverthud_0 settext(level.sessionadverthud_0_text);
+                if (level.sessionadverthud_1a_text != "<unknown string>") {
+                    sessionadverthud_1a settext(level.sessionadverthud_1a_text);
+                    sessionadverthud_1b setvalue(level.sessionadverthud_1b_text);
+                }
+                if (level.sessionadverthud_2a_text != "<unknown string>") {
+                    sessionadverthud_2a settext(level.sessionadverthud_2a_text);
+                    sessionadverthud_2b setvalue(level.sessionadverthud_2b_text);
+                }
+                if (level.sessionadverthud_3a_text != "<unknown string>") {
+                    sessionadverthud_3a settext(level.sessionadverthud_3a_text);
+                    sessionadverthud_3b setvalue(level.sessionadverthud_3b_text);
+                }
+                if (level.sessionadverthud_4a_text != "<unknown string>") {
+                    sessionadverthud_4a settext(level.sessionadverthud_4a_text);
+                    sessionadverthud_4b setvalue(level.sessionadverthud_4b_text);
                 }
             }
         }

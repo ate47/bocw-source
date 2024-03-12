@@ -48,15 +48,11 @@ function private function_7ec99c76(localclientnum) {
     } else if (self.var_9fde8624 === #"hash_70162f4bc795092" || self.var_9fde8624 === #"hash_3498fb1fbfcd0cf") {
         util::playfxontag(localclientnum, "zm_ai/fx9_steiner_eyes_glow_sm", self, "J_EyeBall_LE");
         self thread function_59ee055f(localclientnum);
+    } else if (self.team === #"allies") {
     } else {
-        if (self.team === #"allies") {
-            goto LOC_00000152;
-        }
         self.eyefx = util::playfxontag(localclientnum, "zm_ai/fx9_steiner_eyes_glow", self, "J_EyeBall_LE");
         self thread function_8d607c5a(localclientnum);
-    LOC_00000152:
     }
-LOC_00000152:
     if (isdefined(self.fxdef)) {
         fxclientutils::playfxbundle(localclientnum, self, self.fxdef);
     }
@@ -135,9 +131,9 @@ function function_ce1bd3f2(localclientnum) {
             } else {
                 var_b240b48 = "inhale";
             }
-        } else {
-            wait(0.1);
+            continue;
         }
+        wait(0.1);
     }
 }
 
@@ -180,9 +176,9 @@ function function_b53ee6c9(localclientnum) {
             } else {
                 var_b240b48 = "inhale";
             }
-        } else {
-            wait(0.1);
+            continue;
         }
+        wait(0.1);
     }
 }
 
@@ -336,22 +332,19 @@ function function_8a3fc4ac(localclientnum, *oldvalue, newvalue, *bnewent, *binit
             }
             self.var_c84b9ae1[self.var_c84b9ae1.size] = playfx(fieldname, loc.fx, loc.position, forward, loc.normal);
         }
-    } else {
-        if (bwastimejump == 2) {
-            goto LOC_00000422;
-        }
-        normal = vectornormalize(self.angles);
-        forward = (1, 0, 0);
-        if (abs(vectordot(forward, normal)) > 0.999) {
-            forward = (0, 0, 1);
-        }
-        if (normal !== (0, 0, 0)) {
-            playfx(fieldname, #"hash_f384e23fbf73002", self.origin, forward, normal);
-        LOC_00000422:
-        }
-    LOC_00000422:
+        return;
     }
-LOC_00000422:
+    if (bwastimejump == 2) {
+        return;
+    }
+    normal = vectornormalize(self.angles);
+    forward = (1, 0, 0);
+    if (abs(vectordot(forward, normal)) > 0.999) {
+        forward = (0, 0, 1);
+    }
+    if (normal !== (0, 0, 0)) {
+        playfx(fieldname, #"hash_f384e23fbf73002", self.origin, forward, normal);
+    }
 }
 
 // Namespace namespace_88795f45/namespace_88795f45
@@ -361,7 +354,9 @@ LOC_00000422:
 function function_fc88234b(localclientnum, *oldvalue, newvalue, *bnewent, *binitialsnap, *fieldname, *bwastimejump) {
     if (bwastimejump) {
         self.trailfx = util::playfxontag(fieldname, #"zm_ai/fx9_steiner_rad_bomb_ai", self, "tag_origin");
-    } else if (isdefined(self.trailfx)) {
+        return;
+    }
+    if (isdefined(self.trailfx)) {
         level thread function_e5799b09(fieldname, self.trailfx);
         self.trailfx = undefined;
     }

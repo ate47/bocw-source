@@ -465,7 +465,9 @@ function function_af29fe57(remotemissilespawnpoints) {
             }
             if (spawnpoint.spawnscore > bestspawn.spawnscore) {
                 bestspawn = spawnpoint;
-            } else if (spawnpoint.spawnscore == bestspawn.spawnscore) {
+                continue;
+            }
+            if (spawnpoint.spawnscore == bestspawn.spawnscore) {
                 if (math::cointoss()) {
                     bestspawn = spawnpoint;
                 }
@@ -827,12 +829,11 @@ function missile_sound_impact(player, distance) {
     self endon(#"death", #"stop_impact_sound");
     player endon(#"disconnect", #"remotemissile_done", #"joined_team", #"joined_spectators");
     for (;;) {
-        for (;;) {
-            if (self.origin[2] - player.origin[2] < distance / 0.525) {
-                self playsound(#"wpn_remote_missile_inc");
-                return;
-            }
+        if (self.origin[2] - player.origin[2] < distance / 0.525) {
+            self playsound(#"wpn_remote_missile_inc");
+            return;
         }
+        waitframe(1);
     }
 }
 
@@ -884,31 +885,31 @@ function getvalidtargets(rocket, trace, max_targets) {
             if (enemy hasperk(#"specialty_nokillstreakreticle")) {
                 continue;
             }
-            jumpiffalse(enemy.ignoreme === 1) LOC_0000028e;
-        } else {
-        LOC_0000028e:
-            if (isdefined(enemy.var_f85f9b4d[team])) {
+            if (enemy.ignoreme === 1) {
                 continue;
             }
-            dir = enemy.origin - campos;
-            dot = vectordot(dir, forward);
-            proj = campos + vectorscale(forward, dot);
-            dist2 = distancesquared(enemy.origin, proj);
-            if (dist2 < var_9b9a5c94) {
-                entnum = enemy getentitynumber();
-                if (trace) {
-                    tracedistance = min(distance(enemy.origin, campos), 2000);
-                    traceend = enemy.origin - vectorscale(vectornormalize(dir), tracedistance);
-                    if (bullettracepassed(enemy.origin + vectorscale((0, 0, 1), 60), traceend, 0, enemy, rocket)) {
-                        targets[entnum] = enemy;
-                    }
-                } else {
+        }
+        if (isdefined(enemy.var_f85f9b4d[team])) {
+            continue;
+        }
+        dir = enemy.origin - campos;
+        dot = vectordot(dir, forward);
+        proj = campos + vectorscale(forward, dot);
+        dist2 = distancesquared(enemy.origin, proj);
+        if (dist2 < var_9b9a5c94) {
+            entnum = enemy getentitynumber();
+            if (trace) {
+                tracedistance = min(distance(enemy.origin, campos), 2000);
+                traceend = enemy.origin - vectorscale(vectornormalize(dir), tracedistance);
+                if (bullettracepassed(enemy.origin + vectorscale((0, 0, 1), 60), traceend, 0, enemy, rocket)) {
                     targets[entnum] = enemy;
                 }
-                if (targets.size >= max_targets) {
-                    profileNamedStop();
-                    return targets;
-                }
+            } else {
+                targets[entnum] = enemy;
+            }
+            if (targets.size >= max_targets) {
+                profileNamedStop();
+                return targets;
             }
         }
     }
@@ -936,30 +937,30 @@ function gettarget(rocket, trace) {
             if (!isplayer(target)) {
                 continue;
             }
-            jumpiffalse(target hasperk(#"specialty_nokillstreakreticle")) LOC_00000230;
-        } else {
-        LOC_00000230:
-            if (isdefined(target.var_f85f9b4d[team])) {
+            if (target hasperk(#"specialty_nokillstreakreticle")) {
                 continue;
             }
-            var_4ef4e267 = target getentitynumber();
-            lockonindex = self.var_ebf52bbc[var_4ef4e267];
-            if (!(isdefined(lockonindex) && self.var_bbe80eed[lockonindex].state === 1)) {
+        }
+        if (isdefined(target.var_f85f9b4d[team])) {
+            continue;
+        }
+        var_4ef4e267 = target getentitynumber();
+        lockonindex = self.var_ebf52bbc[var_4ef4e267];
+        if (!(isdefined(lockonindex) && self.var_bbe80eed[lockonindex].state === 1)) {
+            continue;
+        }
+        dir = target.origin - campos;
+        dot = vectordot(dir, forward);
+        proj = campos + vectorscale(forward, dot);
+        dist2 = distancesquared(target.origin, proj);
+        if (dist2 < best_dist2) {
+            tracedistance = min(distance(target.origin, campos), 2000);
+            traceend = target.origin - vectorscale(vectornormalize(dir), tracedistance);
+            if (trace && !bullettracepassed(target.origin + vectorscale((0, 0, 1), 60), traceend, 0, target, rocket)) {
                 continue;
             }
-            dir = target.origin - campos;
-            dot = vectordot(dir, forward);
-            proj = campos + vectorscale(forward, dot);
-            dist2 = distancesquared(target.origin, proj);
-            if (dist2 < best_dist2) {
-                tracedistance = min(distance(target.origin, campos), 2000);
-                traceend = target.origin - vectorscale(vectornormalize(dir), tracedistance);
-                if (trace && !bullettracepassed(target.origin + vectorscale((0, 0, 1), 60), traceend, 0, target, rocket)) {
-                    continue;
-                }
-                best_target = target;
-                best_dist2 = dist2;
-            }
+            best_target = target;
+            best_dist2 = dist2;
         }
     }
     return best_target;
@@ -1039,7 +1040,7 @@ function function_8fba4483(rocket) {
                 self.missiles_fired++;
                 self clientfield::set_player_uimodel("vehicle.rocketAmmo", 2 - self.missiles_fired);
                 if (self.missiles_fired >= 2) {
-                    break;
+                    return;
                 }
             }
             framessincetargetscan = 0;
@@ -1081,24 +1082,28 @@ function targeting_hud_think(rocket) {
                     if (isalive(target)) {
                         player function_758dc2c8(targets, target, entnum);
                     }
-                } else {
-                    if (!isdefined(target.missileiconindex)) {
-                        target.missileiconindex = rocket.iconindexother;
-                        rocket.iconindexother = (rocket.iconindexother + 1) % 3;
-                    }
-                    index = target.missileiconindex;
-                    if (index == 0) {
-                        level.remote_missile_targets remote_missile_targets::set_extra_target_1(self, target getentitynumber());
-                    } else if (index == 1) {
-                        level.remote_missile_targets remote_missile_targets::set_extra_target_2(self, target getentitynumber());
-                    } else if (index == 2) {
-                        level.remote_missile_targets remote_missile_targets::set_extra_target_2(self, target getentitynumber());
-                    } else {
-                        /#
-                            assertmsg("<unknown string>");
-                        #/
-                    }
+                    continue;
                 }
+                if (!isdefined(target.missileiconindex)) {
+                    target.missileiconindex = rocket.iconindexother;
+                    rocket.iconindexother = (rocket.iconindexother + 1) % 3;
+                }
+                index = target.missileiconindex;
+                if (index == 0) {
+                    level.remote_missile_targets remote_missile_targets::set_extra_target_1(self, target getentitynumber());
+                    continue;
+                }
+                if (index == 1) {
+                    level.remote_missile_targets remote_missile_targets::set_extra_target_2(self, target getentitynumber());
+                    continue;
+                }
+                if (index == 2) {
+                    level.remote_missile_targets remote_missile_targets::set_extra_target_2(self, target getentitynumber());
+                    continue;
+                }
+                /#
+                    assertmsg("<unknown string>");
+                #/
             }
         }
         foreach (lockonindex, var_8712c5b8 in player.var_bbe80eed) {
@@ -1157,9 +1162,9 @@ function missile_deploy_watch(rocket) {
     while (1) {
         if (self attackbuttonpressed() || rocket.origin[2] < var_dc54c0bd || !self killstreaks::function_59e2c378()) {
             self thread missile_deploy(rocket, 0);
-        } else {
-            waitframe(1);
+            continue;
         }
+        waitframe(1);
     }
 }
 
@@ -1263,12 +1268,12 @@ function function_5cdeb64a(player, target, team) {
     }
     if (isalive(target)) {
         target.var_f85f9b4d[team] = undefined;
-    } else {
-        var_4ef4e267 = target getentitynumber();
-        lockonindex = player.var_ebf52bbc[var_4ef4e267];
-        if (isdefined(lockonindex) && isdefined(player.var_bbe80eed[lockonindex])) {
-            level.var_aac98621[lockonindex] remote_missile_target_lockon::set_killed(player, 1);
-        }
+        return;
+    }
+    var_4ef4e267 = target getentitynumber();
+    lockonindex = player.var_ebf52bbc[var_4ef4e267];
+    if (isdefined(lockonindex) && isdefined(player.var_bbe80eed[lockonindex])) {
+        level.var_aac98621[lockonindex] remote_missile_target_lockon::set_killed(player, 1);
     }
 }
 

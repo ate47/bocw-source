@@ -295,9 +295,9 @@ function setsharedinventoryuimodels(localclientnum, *oldval, newval, *bnewent, *
 function zm_ui_infotext(localclientnum, *oldval, newval, *bnewent, *binitialsnap, fieldname, *bwastimejump) {
     if (fieldname) {
         setuimodelvalue(createuimodel(function_1df4c3b0(binitialsnap, #"zm_inventory"), "infoText"), bwastimejump);
-    } else {
-        setuimodelvalue(createuimodel(function_1df4c3b0(binitialsnap, #"zm_inventory"), "infoText"), "");
+        return;
     }
+    setuimodelvalue(createuimodel(function_1df4c3b0(binitialsnap, #"zm_inventory"), "infoText"), "");
 }
 
 // Namespace zm_utility/zm_utility
@@ -431,10 +431,10 @@ function zm_zone_out_of_bounds(localclientnum, *oldval, newval, *bnewent, *binit
     if (bwastimejump) {
         level.var_20861007[fieldname] playloopsound(#"hash_6da7ae12f538ef5e", 0.5);
         self postfx::playpostfxbundle(#"hash_798237aa1bad3d7d");
-    } else {
-        level.var_20861007[fieldname] stopallloopsounds(0.5);
-        self postfx::exitpostfxbundle(#"hash_798237aa1bad3d7d");
+        return;
     }
+    level.var_20861007[fieldname] stopallloopsounds(0.5);
+    self postfx::exitpostfxbundle(#"hash_798237aa1bad3d7d");
 }
 
 // Namespace zm_utility/zm_utility
@@ -453,7 +453,9 @@ function flame_corpse_fx(localclientnum, *oldval, newval, *bnewent, *binitialsna
         if (isdefined(level._effect) && isdefined(level._effect[#"character_fire_death_torso"])) {
             self.var_71a7fc1c = util::playfxontag(fieldname, level._effect[#"character_fire_death_torso"], self, str_tag);
         }
-    } else if (isdefined(self.var_71a7fc1c)) {
+        return;
+    }
+    if (isdefined(self.var_71a7fc1c)) {
         stopfx(fieldname, self.var_71a7fc1c);
         self.var_71a7fc1c = undefined;
     }
@@ -542,9 +544,9 @@ function set_compass_icon(localclientnum, *oldval, newval, *bnewent, *binitialsn
             break;
         }
         self thread function_a1290dca(fieldname, str_objective);
-    } else {
-        self notify(#"hash_1c25e0d8228a5516");
+        return;
     }
+    self notify(#"hash_1c25e0d8228a5516");
 }
 
 // Namespace zm_utility/zm_utility
@@ -652,12 +654,12 @@ function force_stream_changed(localclientnum, *oldval, newval, *bnewent, *biniti
             }
         }
         self callback::add_entity_callback(#"on_entity_shutdown", &function_1b43e8f6);
-    } else {
-        arrayremovevalue(level.var_c427e93b, self);
-        if (isdefined(self.model) && self.model != "") {
-            util::unlock_model(self.model);
-            self callback::function_52ac9652(#"on_entity_shutdown", &function_1b43e8f6);
-        }
+        return;
+    }
+    arrayremovevalue(level.var_c427e93b, self);
+    if (isdefined(self.model) && self.model != "") {
+        util::unlock_model(self.model);
+        self callback::function_52ac9652(#"on_entity_shutdown", &function_1b43e8f6);
     }
 }
 
@@ -788,9 +790,9 @@ function function_3a919d3f(params) {
     /#
         if (int(params.value)) {
             level thread function_538799c4();
-        } else {
-            level notify(#"hash_a8ed1dd0750e229");
+            return;
         }
+        level notify(#"hash_a8ed1dd0750e229");
     #/
 }
 
@@ -813,10 +815,10 @@ function private function_538799c4() {
                         if (is_true(e_machine.var_c02c4d66)) {
                             debug2dtext((325, 200, 0) + vectorscale((0, 1, 0), 20) * (i + 1), function_9e72a96(e_machine.model), (0, 1, 0));
                             circle(var_2cdb84bb, 64, (0, 1, 0));
-                        } else {
-                            debug2dtext((325, 200, 0) + vectorscale((0, 1, 0), 20) * (i + 1), function_9e72a96(e_machine.model), (1, 0, 0));
-                            circle(var_2cdb84bb, 64, (1, 0, 0));
+                            continue;
                         }
+                        debug2dtext((325, 200, 0) + vectorscale((0, 1, 0), 20) * (i + 1), function_9e72a96(e_machine.model), (1, 0, 0));
+                        circle(var_2cdb84bb, 64, (1, 0, 0));
                     }
                 }
             }

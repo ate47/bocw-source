@@ -110,9 +110,9 @@ function set_val(str_flag, b_val) {
     #/
     if (b_val) {
         set(str_flag);
-    } else {
-        clear(str_flag);
+        return;
     }
+    clear(str_flag);
 }
 
 // Namespace flag/flag_shared

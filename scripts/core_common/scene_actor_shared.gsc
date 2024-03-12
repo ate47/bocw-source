@@ -172,7 +172,9 @@ class csceneactor : csceneobject {
                     if (isdefined(self._e.scenegoal)) {
                         self._e setgoal(self._e.scenegoal);
                         self._e.scenegoal = undefined;
-                    } else if (is_true(self._s.var_37ccbf49)) {
+                        return;
+                    }
+                    if (is_true(self._s.var_37ccbf49)) {
                         self._e setgoal(self._e.origin);
                     }
                 }
@@ -234,9 +236,9 @@ class cscenefakeactor : csceneobject, csceneactor {
             if (!is_true(self._s.removeweapon) && !is_true(self._s.hideweapon)) {
                 if (isdefined(weapon)) {
                     self._e animation::attach_weapon(weapon);
-                } else {
-                    self._e animation::attach_weapon(getweapon(#"ar_accurate_t9"));
+                    return;
                 }
+                self._e animation::attach_weapon(getweapon(#"ar_accurate_t9"));
             }
         }
     }

@@ -66,7 +66,8 @@ function function_483f7f18(params) {
     }
     if (!isdefined(a_ai_zombies) || !isdefined(v_org)) {
         return;
-    } else if (a_ai_zombies.size > 0) {
+    }
+    if (a_ai_zombies.size > 0) {
         self thread function_76468d55(a_ai_zombies, v_org, eattacker);
     }
 }
@@ -178,7 +179,9 @@ function function_e1c4e1c2(v_org, eattacker, einflictor) {
         self dodamage(500, v_org, eattacker, einflictor, "none", "MOD_EXPLOSIVE");
         if (self.var_6f84b820 === #"normal") {
             self zombie_utility::setup_zombie_knockdown(v_org);
-        } else if (self.var_6f84b820 === #"special" || self.var_6f84b820 === #"hash_72d4f2ad2e333eb4") {
+            return;
+        }
+        if (self.var_6f84b820 === #"special" || self.var_6f84b820 === #"hash_72d4f2ad2e333eb4") {
             self ai::stun(2);
         }
     }
@@ -285,57 +288,57 @@ function function_c668a011(s_instance) {
                 }
             }
         }
-    } else {
-        foreach (var_50b7449f in var_f6b6b97e) {
-            if (s_instance.var_2bb61e5b < 4) {
-                if (isdefined(var_50b7449f.var_128ef0fc) && getdvarint(#"hash_5b75dfae822b95aa", 0)) {
-                    if (isdefined(level.var_7d45d0d4.nextspawn) && level.var_7d45d0d4.nextspawn.script_int === var_50b7449f.var_128ef0fc) {
-                        vehicle = spawnvehicle(var_50b7449f.vehicletype, var_50b7449f.origin, var_50b7449f.angles, "sr_vehicle");
-                    }
-                } else if (!isdefined(var_50b7449f.var_128ef0fc)) {
+        return;
+    }
+    foreach (var_50b7449f in var_f6b6b97e) {
+        if (s_instance.var_2bb61e5b < 4) {
+            if (isdefined(var_50b7449f.var_128ef0fc) && getdvarint(#"hash_5b75dfae822b95aa", 0)) {
+                if (isdefined(level.var_7d45d0d4.nextspawn) && level.var_7d45d0d4.nextspawn.script_int === var_50b7449f.var_128ef0fc) {
                     vehicle = spawnvehicle(var_50b7449f.vehicletype, var_50b7449f.origin, var_50b7449f.angles, "sr_vehicle");
                 }
-                if (isdefined(vehicle)) {
-                    if (isdefined(var_50b7449f.var_df2f9ba4)) {
-                        vehicle.var_df2f9ba4 = var_50b7449f.var_df2f9ba4;
-                        vehicle.s_start = var_50b7449f;
-                    }
-                    if (!isdefined(s_instance.location.destination.a_vehicles)) {
-                        s_instance.location.destination.a_vehicles = [];
-                    } else if (!isarray(s_instance.location.destination.a_vehicles)) {
-                        s_instance.location.destination.a_vehicles = array(s_instance.location.destination.a_vehicles);
-                    }
-                    if (!isinarray(s_instance.location.destination.a_vehicles, vehicle)) {
-                        s_instance.location.destination.a_vehicles[s_instance.location.destination.a_vehicles.size] = vehicle;
-                    }
-                    vehicle.v_org = vehicle.origin;
-                    vehicle.v_ang = vehicle.angles;
-                    s_instance.var_2bb61e5b = s_instance.var_2bb61e5b + var_50b7449f.seats;
-                    vehicle thread function_17a3dc2f(s_instance);
-                    if (vehicle.vehicletype === "vehicle_motorcycle_mil_us_offroad" || vehicle.vehicletype === "vehicle_t9_mil_fav_light") {
-                        foreach (var_f8d6002f in var_f6b6b97e) {
-                            if (var_f8d6002f != var_50b7449f && var_f8d6002f.script_int === var_50b7449f.script_int && (var_f8d6002f.vehicletype === var_50b7449f.vehicletype || var_f8d6002f.vehicletype === "vehicle_motorcycle_mil_us_offroad")) {
-                                vehicle = spawnvehicle(var_f8d6002f.vehicletype, var_f8d6002f.origin, var_f8d6002f.angles, "sr_vehicle");
-                                if (isdefined(vehicle)) {
-                                    if (isdefined(var_50b7449f.var_df2f9ba4)) {
-                                        vehicle.var_df2f9ba4 = var_50b7449f.var_df2f9ba4;
-                                        vehicle.s_start = var_50b7449f;
-                                    }
-                                    if (!isdefined(s_instance.location.destination.a_vehicles)) {
-                                        s_instance.location.destination.a_vehicles = [];
-                                    } else if (!isarray(s_instance.location.destination.a_vehicles)) {
-                                        s_instance.location.destination.a_vehicles = array(s_instance.location.destination.a_vehicles);
-                                    }
-                                    if (!isinarray(s_instance.location.destination.a_vehicles, vehicle)) {
-                                        s_instance.location.destination.a_vehicles[s_instance.location.destination.a_vehicles.size] = vehicle;
-                                    }
-                                    vehicle.v_org = vehicle.origin;
-                                    vehicle.v_ang = vehicle.angles;
-                                    s_instance.var_2bb61e5b = s_instance.var_2bb61e5b + var_50b7449f.seats;
-                                    vehicle thread function_17a3dc2f(s_instance);
-                                    if (s_instance.var_2bb61e5b >= 4) {
-                                        break;
-                                    }
+            } else if (!isdefined(var_50b7449f.var_128ef0fc)) {
+                vehicle = spawnvehicle(var_50b7449f.vehicletype, var_50b7449f.origin, var_50b7449f.angles, "sr_vehicle");
+            }
+            if (isdefined(vehicle)) {
+                if (isdefined(var_50b7449f.var_df2f9ba4)) {
+                    vehicle.var_df2f9ba4 = var_50b7449f.var_df2f9ba4;
+                    vehicle.s_start = var_50b7449f;
+                }
+                if (!isdefined(s_instance.location.destination.a_vehicles)) {
+                    s_instance.location.destination.a_vehicles = [];
+                } else if (!isarray(s_instance.location.destination.a_vehicles)) {
+                    s_instance.location.destination.a_vehicles = array(s_instance.location.destination.a_vehicles);
+                }
+                if (!isinarray(s_instance.location.destination.a_vehicles, vehicle)) {
+                    s_instance.location.destination.a_vehicles[s_instance.location.destination.a_vehicles.size] = vehicle;
+                }
+                vehicle.v_org = vehicle.origin;
+                vehicle.v_ang = vehicle.angles;
+                s_instance.var_2bb61e5b = s_instance.var_2bb61e5b + var_50b7449f.seats;
+                vehicle thread function_17a3dc2f(s_instance);
+                if (vehicle.vehicletype === "vehicle_motorcycle_mil_us_offroad" || vehicle.vehicletype === "vehicle_t9_mil_fav_light") {
+                    foreach (var_f8d6002f in var_f6b6b97e) {
+                        if (var_f8d6002f != var_50b7449f && var_f8d6002f.script_int === var_50b7449f.script_int && (var_f8d6002f.vehicletype === var_50b7449f.vehicletype || var_f8d6002f.vehicletype === "vehicle_motorcycle_mil_us_offroad")) {
+                            vehicle = spawnvehicle(var_f8d6002f.vehicletype, var_f8d6002f.origin, var_f8d6002f.angles, "sr_vehicle");
+                            if (isdefined(vehicle)) {
+                                if (isdefined(var_50b7449f.var_df2f9ba4)) {
+                                    vehicle.var_df2f9ba4 = var_50b7449f.var_df2f9ba4;
+                                    vehicle.s_start = var_50b7449f;
+                                }
+                                if (!isdefined(s_instance.location.destination.a_vehicles)) {
+                                    s_instance.location.destination.a_vehicles = [];
+                                } else if (!isarray(s_instance.location.destination.a_vehicles)) {
+                                    s_instance.location.destination.a_vehicles = array(s_instance.location.destination.a_vehicles);
+                                }
+                                if (!isinarray(s_instance.location.destination.a_vehicles, vehicle)) {
+                                    s_instance.location.destination.a_vehicles[s_instance.location.destination.a_vehicles.size] = vehicle;
+                                }
+                                vehicle.v_org = vehicle.origin;
+                                vehicle.v_ang = vehicle.angles;
+                                s_instance.var_2bb61e5b = s_instance.var_2bb61e5b + var_50b7449f.seats;
+                                vehicle thread function_17a3dc2f(s_instance);
+                                if (s_instance.var_2bb61e5b >= 4) {
+                                    break;
                                 }
                             }
                         }
@@ -390,7 +393,9 @@ function function_17a3dc2f(s_instance) {
     s_instance.a_vehicles[s_instance.a_vehicles.size] = self;
     if (self.vehicletype === "vehicle_t9_mil_ru_truck_light_player" && (getdvarint(#"hash_11ff4ccbba6b40f6", 0) === 1 || math::cointoss(66))) {
         self thread function_cddedd63(#"hash_1fb3bec008c18436");
-    } else if (self.vehicletype === "vehicle_t9_mil_fav_light" && (getdvarint(#"hash_11ff4ccbba6b40f6", 0) === 1 || math::cointoss(50))) {
+        return;
+    }
+    if (self.vehicletype === "vehicle_t9_mil_fav_light" && (getdvarint(#"hash_11ff4ccbba6b40f6", 0) === 1 || math::cointoss(50))) {
         if (math::cointoss(50)) {
             v_rotate = vectorscale((0, -1, 0), 90);
             n_x_offset = 40;
@@ -399,7 +404,9 @@ function function_17a3dc2f(s_instance) {
             n_x_offset = -40;
         }
         self thread function_cddedd63(#"hash_43b6b22949e57424", v_rotate, n_x_offset);
-    } else if (self.vehicletype === "vehicle_t9_civ_ru_sedan_80s_player" && (getdvarint(#"hash_11ff4ccbba6b40f6", 0) === 1 || math::cointoss(50))) {
+        return;
+    }
+    if (self.vehicletype === "vehicle_t9_civ_ru_sedan_80s_player" && (getdvarint(#"hash_11ff4ccbba6b40f6", 0) === 1 || math::cointoss(50))) {
         if (math::cointoss(50)) {
             v_rotate = vectorscale((0, -1, 0), 90);
             n_x_offset = 40;
@@ -739,7 +746,9 @@ function on_vehicle_damage(params) {
                 }
             }
         }
-    } else if (params.weapon === getweapon("molotov_fire")) {
+        return;
+    }
+    if (params.weapon === getweapon("molotov_fire")) {
         vehicle dodamage(100, vehicle.origin);
     }
 }

@@ -194,7 +194,6 @@ function function_1a010742(name) {
         return 11;
     case #"boss":
         return 12;
-        break;
     }
     return 0;
 }
@@ -602,7 +601,7 @@ function function_c6834d32() {
     while (1) {
         function_1eaaceab(var_f89c12f1);
         if (var_f89c12f1.size == 0) {
-            break;
+            return;
         }
         wait(2);
     }

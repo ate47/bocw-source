@@ -882,15 +882,11 @@ function function_82c4beb0(*einflictor, eattacker, idamage, *idflags, smeansofde
     }
     shotstokill = killstreak_bundles::get_shots_to_kill(imodelindex, iboneindex, level.var_87226c31.bundle);
     if (shotstokill == 0) {
-        goto LOC_000003b6;
-    }
-    if (shotstokill > 0) {
+    } else if (shotstokill > 0) {
         psoffsettime = self.startinghealth / shotstokill + 1;
     } else {
         psoffsettime = 0;
-    LOC_000003b6:
     }
-LOC_000003b6:
     return int(psoffsettime);
 }
 
@@ -921,13 +917,13 @@ function function_34d706ae(watcher, var_db52b808, origin, angles, *var_796be15d,
     var_db52b808.objectarray[var_db52b808.objectarray.size] = var_bf8e4260;
     var_bf8e4260.var_2ee191cc = [];
     var_bf8e4260.var_2dd485d4 = [];
-    var_2358ae9 = anglestoright(var_796be15d);
-    var_8a455f75 = angles - width * 0.5 * var_2358ae9;
+    rightangles = anglestoright(var_796be15d);
+    var_8a455f75 = angles - width * 0.5 * rightangles;
     var_2d71f8ca = int(width / 32);
     for (index = 0; index < var_2d71f8ca; index++) {
         var_a4879492 = deployable::function_d60e5a06(var_8a455f75, 32);
         array::add(var_bf8e4260.var_2ee191cc, var_a4879492);
-        var_8a455f75 = var_8a455f75 + var_2358ae9 * 64;
+        var_8a455f75 = var_8a455f75 + rightangles * 64;
     }
     var_bf8e4260.var_86a21346 = &function_82c4beb0;
     var_bf8e4260.angles = var_796be15d;

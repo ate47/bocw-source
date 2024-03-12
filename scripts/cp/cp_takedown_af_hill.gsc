@@ -344,7 +344,7 @@ function function_7a77e3be(player) {
         if (player weaponswitchbuttonpressed() || player buttonbitstate("BUTTON_BIT_ANY_WEAP_CHANGE")) {
             level flag::set("end_binocs");
             player notify(#"end_binocs");
-            break;
+            return;
         }
         waitframe(1);
     }
@@ -646,11 +646,11 @@ function function_b12fabe5(player) {
         result = player waittill(#"weapon_fired");
         if (level flag::get("end_binocs")) {
             level flag::set("player_fired_at_arash");
-            break;
+            return;
         }
         if (result.weapon !== level.var_42db149f) {
             level flag::set("player_break_stealth_fired");
-            break;
+            return;
         }
     }
 }

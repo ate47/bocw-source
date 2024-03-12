@@ -123,18 +123,18 @@ function function_50d4c00a(localclientnum, *oldval, newval, *bnewent, *binitials
             var_d2c301e0 = level.var_16af4504[var_32c41440];
             self thread function_be34e28f(fieldname, var_d2c301e0);
         }
-    } else {
-        if (self == function_5c10bd79(fieldname)) {
-            self notify(#"hash_2f1dc2ea83ba9e2");
-            self postfx::exitpostfxbundle("pstfx_zm_last_stand");
-            function_ed62c9c2("zmb_laststand_riser", 0.25);
-            if (isdefined(self.var_e781ace2)) {
-                self stoploopsound(self.var_e781ace2);
-                self.var_e781ace2 = undefined;
-            }
-        }
-        level.var_16af4504[self getentitynumber()] = undefined;
+        return;
     }
+    if (self == function_5c10bd79(fieldname)) {
+        self notify(#"hash_2f1dc2ea83ba9e2");
+        self postfx::exitpostfxbundle("pstfx_zm_last_stand");
+        function_ed62c9c2("zmb_laststand_riser", 0.25);
+        if (isdefined(self.var_e781ace2)) {
+            self stoploopsound(self.var_e781ace2);
+            self.var_e781ace2 = undefined;
+        }
+    }
+    level.var_16af4504[self getentitynumber()] = undefined;
 }
 
 // Namespace zm_laststand/zm_laststand
@@ -201,7 +201,9 @@ function function_e1479c(localclientnum) {
         level lui::screen_fade_out(localclientnum, 0, (1, 1, 1));
         level thread lui::screen_fade_in(localclientnum, 0.75, (1, 1, 1));
         level.var_4678ce7c[localclientnum] = 1;
-    } else if (!function_65b9eb0f(localclientnum)) {
+        return;
+    }
+    if (!function_65b9eb0f(localclientnum)) {
         level.var_4678ce7c[localclientnum] = undefined;
     }
 }

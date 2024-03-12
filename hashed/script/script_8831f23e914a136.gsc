@@ -25,7 +25,7 @@ function function_5b164bbc() {
                 dynent.start_origin = dynent.origin;
                 dynent.start_angles = dynent.angles;
                 dynent thread function_733e5314();
-                break;
+                continue;
             }
         }
     }
@@ -116,8 +116,7 @@ function function_733e5314() {
     bundle = undefined;
     self.var_621ee87d = 1;
     state = 0;
-    waitresult = undefined;
-    while (self.health > 0) {
+    for (waitresult = undefined; self.health > 0; waitresult = self waittilltimeout(randomfloatrange(3, 5), #"hash_2b397aad1337c105", #"wall_detected")) {
         angles = undefined;
         var_5430ce52 = var_25dac1e7;
         if (!isdefined(waitresult) || waitresult._notify !== "wall_detected") {
@@ -193,7 +192,6 @@ function function_733e5314() {
             wait(1);
         }
         waitresult = undefined;
-        waitresult = self waittilltimeout(randomfloatrange(3, 5), #"hash_2b397aad1337c105", #"wall_detected");
     }
 }
 

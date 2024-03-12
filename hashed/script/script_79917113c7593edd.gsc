@@ -52,15 +52,15 @@ function function_db40057d(localclientnum, oldval, newval, *bnewent, *binitialsn
     case 1:
         playsound(0, #"hash_731251c4b03b5b09", (0, 0, 0));
         self playrumbleonentity(binitialsnap, "ac130_weap_switch");
-        break;
+        return;
     case 2:
         playsound(0, #"hash_731251c4b03b5b09", (0, 0, 0));
         self playrumbleonentity(binitialsnap, "ac130_weap_switch");
-        break;
+        return;
     case 3:
         playsound(0, #"hash_731251c4b03b5b09", (0, 0, 0));
         self playrumbleonentity(binitialsnap, "ac130_weap_switch");
-        break;
+        return;
     }
 }
 

@@ -89,7 +89,9 @@ function function_a4f516ef() {
         if (waitresult._notify != #"hash_224cb97b8f682317") {
             self flag::wait_till_timeout(function_8ed212d(), #"hash_224cb97b8f682317");
         }
-    } else if (isdefined(self.var_33a2e995)) {
+        return;
+    }
+    if (isdefined(self.var_33a2e995)) {
         self flag::wait_till_timeout(self.var_33a2e995, #"hash_224cb97b8f682317");
     }
 }
@@ -283,9 +285,9 @@ function function_c9a18304(params) {
             }
             waitframe(1);
         }
-    } else {
-        self botsetmovemagnitude(0);
+        return;
     }
+    self botsetmovemagnitude(0);
 }
 
 // Namespace bot_insertion/bot_insertion

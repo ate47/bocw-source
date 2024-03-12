@@ -221,9 +221,9 @@ function match_end() {
                     if (isdefined(matchresult)) {
                         if (var_74386ffc != -1) {
                             player function_cce105c8(#"hash_4e13b2889185a48d", 1, player.pers[#"hash_1b5251cc167039c8"], 2, matchresult, 3, var_74386ffc, 4, level.var_ba92f0a8, 5, getdvarint(#"hash_6e07431d7a79d00f", 0));
-                        } else {
-                            player function_cce105c8(#"hash_4e13b2889185a48d", 1, player.pers[#"hash_1b5251cc167039c8"], 2, matchresult, 4, level.var_ba92f0a8, 5, getdvarint(#"hash_6e07431d7a79d00f", 0));
+                            continue;
                         }
+                        player function_cce105c8(#"hash_4e13b2889185a48d", 1, player.pers[#"hash_1b5251cc167039c8"], 2, matchresult, 4, level.var_ba92f0a8, 5, getdvarint(#"hash_6e07431d7a79d00f", 0));
                     }
                 }
             }
@@ -267,7 +267,7 @@ function update_arena_challenge_seasons() {
             }
             if (challengeseason == 0) {
                 self stats::set_stat(#"arenachallengeseasons", i, currentseason);
-                break;
+                return;
             }
         }
     }

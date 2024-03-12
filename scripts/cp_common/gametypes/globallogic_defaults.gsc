@@ -77,11 +77,11 @@ function default_ondeadevent(team) {
         winner = level.var_c20ad7aa;
         globallogic_utils::logteamwinstring("team eliminated", winner);
         thread globallogic::endgame();
-    } else {
-        winner = getwinningteamfromloser(team);
-        globallogic_utils::logteamwinstring("team eliminated", winner);
-        thread globallogic::endgame();
+        return;
     }
+    winner = getwinningteamfromloser(team);
+    globallogic_utils::logteamwinstring("team eliminated", winner);
+    thread globallogic::endgame();
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
@@ -96,15 +96,15 @@ function function_9fd1cc80(team) {
         winner = globallogic::determineteamwinnerbygamestat("teamScores");
         globallogic_utils::logteamwinstring("team eliminated", winner);
         thread globallogic::endgame();
-    } else {
-        setdvar(#"ui_text_endreason", game.strings[#"tie"]);
-        globallogic_utils::logteamwinstring("tie");
-        if (level.teambased) {
-            thread globallogic::endgame();
-        } else {
-            thread globallogic::endgame();
-        }
+        return;
     }
+    setdvar(#"ui_text_endreason", game.strings[#"tie"]);
+    globallogic_utils::logteamwinstring("tie");
+    if (level.teambased) {
+        thread globallogic::endgame();
+        return;
+    }
+    thread globallogic::endgame();
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
@@ -144,9 +144,9 @@ function function_b322d0f3(team) {
     }
     if (team == "all") {
         thread globallogic::endgame();
-    } else {
-        thread globallogic::endgame();
+        return;
     }
+    thread globallogic::endgame();
 }
 
 // Namespace globallogic_defaults/globallogic_defaults
@@ -255,11 +255,11 @@ function default_onspawnintermission() {
     spawnpoint = spawnpoints[0];
     if (isdefined(spawnpoint)) {
         self spawn(spawnpoint.origin, spawnpoint.angles);
-    } else {
-        /#
-            error("<unknown string>" + spawnpointname + "<unknown string>");
-        #/
+        return;
     }
+    /#
+        error("<unknown string>" + spawnpointname + "<unknown string>");
+    #/
 }
 
 // Namespace globallogic_defaults/globallogic_defaults

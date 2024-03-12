@@ -37,7 +37,9 @@ function function_9ab6532(localclientnum, *oldval, newval, *bnewent, *binitialsn
         if (!isdefined(self.var_2d4a2068)) {
             self.var_2d4a2068 = util::playfxontag(fieldname, #"hash_612c96cf772b0fff", self, "tag_origin");
         }
-    } else if (isdefined(self.var_2d4a2068)) {
+        return;
+    }
+    if (isdefined(self.var_2d4a2068)) {
         stopfx(fieldname, self.var_2d4a2068);
         self.var_2d4a2068 = undefined;
     }
@@ -66,7 +68,9 @@ function function_1408657d(*localclientnum, *oldval, newval, *bnewent, *binitial
             self postfx::stoppostfxbundle(var_f7698b89);
         }
         self postfx::playpostfxbundle(var_f7698b89);
-    } else if (self postfx::function_556665f2(var_f7698b89)) {
+        return;
+    }
+    if (self postfx::function_556665f2(var_f7698b89)) {
         self postfx::exitpostfxbundle(var_f7698b89);
     }
 }
@@ -83,18 +87,18 @@ function function_c284174e(localclientnum, *oldval, newval, *bnewent, *binitials
         }
         self.var_72ef3ede = util::playfxontag(fieldname, #"hash_396881a795d7d4c8", self, str_tag);
         self thread function_3d9b3a(fieldname);
-    } else {
-        self notify(#"hash_75cc1f791bba6c66");
-        if (isdefined(self.var_72ef3ede)) {
-            stopfx(fieldname, self.var_72ef3ede);
-            self.var_72ef3ede = undefined;
+        return;
+    }
+    self notify(#"hash_75cc1f791bba6c66");
+    if (isdefined(self.var_72ef3ede)) {
+        stopfx(fieldname, self.var_72ef3ede);
+        self.var_72ef3ede = undefined;
+    }
+    if (isarray(self.var_19741e6c)) {
+        foreach (n_fx_id in self.var_19741e6c) {
+            stopfx(fieldname, n_fx_id);
         }
-        if (isarray(self.var_19741e6c)) {
-            foreach (n_fx_id in self.var_19741e6c) {
-                stopfx(fieldname, n_fx_id);
-            }
-            self.var_19741e6c = undefined;
-        }
+        self.var_19741e6c = undefined;
     }
 }
 
@@ -138,7 +142,9 @@ function function_4d8be86(localclientnum, *oldval, newval, *bnewent, *binitialsn
             str_tag = "tag_origin";
         }
         self.var_53e69fc6 = util::playfxontag(fieldname, #"hash_396881a795d7d4c8", self, str_tag);
-    } else if (isdefined(self.var_53e69fc6)) {
+        return;
+    }
+    if (isdefined(self.var_53e69fc6)) {
         stopfx(fieldname, self.var_53e69fc6);
         self.var_53e69fc6 = undefined;
     }

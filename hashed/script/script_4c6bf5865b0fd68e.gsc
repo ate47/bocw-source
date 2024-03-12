@@ -44,9 +44,9 @@ function private postinit() {
     }
     if (is_true(level.legacy_cymbal_monkey)) {
         level.cymbal_monkey_model = "weapon_zombie_monkey_bomb";
-    } else {
-        level.cymbal_monkey_model = "wpn_t7_zmb_monkey_bomb_world";
+        return;
     }
+    level.cymbal_monkey_model = "wpn_t7_zmb_monkey_bomb_world";
 }
 
 // Namespace namespace_5a359049/namespace_5a359049

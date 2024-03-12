@@ -61,7 +61,9 @@ function private function_a228d7a3(localclientnum, *oldval, newval, *bnewent, *b
             function_d48752e(fieldname, level.var_7f1612a0[fieldname]);
         }
         level.var_7f1612a0[fieldname] = function_604c9983(fieldname, #"hash_390aa7d4252c46b5");
-    } else if (isdefined(level.var_7f1612a0[fieldname])) {
+        return;
+    }
+    if (isdefined(level.var_7f1612a0[fieldname])) {
         function_d48752e(fieldname, level.var_7f1612a0[fieldname]);
         level.var_7f1612a0[fieldname] = undefined;
     }
@@ -88,7 +90,9 @@ function laststand_postfx(localclientnum, oldval, newval, *bnewent, *binitialsna
             }
             player thread function_8960f852(fieldname, bwastimejump);
         }
-    } else if (self postfx::function_556665f2("pstfx_drowning")) {
+        return;
+    }
+    if (self postfx::function_556665f2("pstfx_drowning")) {
         postfx::stoppostfxbundle("pstfx_drowning");
     }
 }
@@ -121,7 +125,9 @@ function function_766ed49(localclientnum, var_20e2bb05) {
             function_d48752e(localclientnum, level.var_4103bf85[localclientnum]);
         }
         level.var_4103bf85[localclientnum] = function_604c9983(localclientnum, #"hash_390aa7d4252c46b5");
-    } else if (isdefined(level.var_4103bf85[localclientnum])) {
+        return;
+    }
+    if (isdefined(level.var_4103bf85[localclientnum])) {
         function_d48752e(localclientnum, level.var_4103bf85[localclientnum]);
         level.var_4103bf85[localclientnum] = undefined;
     }
@@ -136,12 +142,12 @@ function laststand_bleed(localclientnum, oldval, newval, *bnewent, *binitialsnap
     if (bwastimejump != fieldname && bwastimejump) {
         self util::waittill_dobj(binitialsnap);
         self.var_63796ff0 = function_239993de(binitialsnap, "player/fx8_plyr_blood_drip_last_stand", self, "j_spine4");
-    } else {
-        if (isdefined(self.var_63796ff0)) {
-            stopfx(binitialsnap, self.var_63796ff0);
-        }
-        self notify(#"hash_7698972484f247e8");
+        return;
     }
+    if (isdefined(self.var_63796ff0)) {
+        stopfx(binitialsnap, self.var_63796ff0);
+    }
+    self notify(#"hash_7698972484f247e8");
 }
 
 // Namespace laststand/laststand

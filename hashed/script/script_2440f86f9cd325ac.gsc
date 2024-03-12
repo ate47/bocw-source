@@ -77,15 +77,17 @@ function function_137dd3d5(type) {
     roll = randomint(100);
     if (roll < 2) {
         return 16;
-    } else if (roll < 6) {
-        return 8;
-    } else if (roll < 16) {
-        return 9;
-    } else if (roll <= 40) {
-        return 15;
-    } else {
-        return 13;
     }
+    if (roll < 6) {
+        return 8;
+    }
+    if (roll < 16) {
+        return 9;
+    }
+    if (roll <= 40) {
+        return 15;
+    }
+    return 13;
 }
 
 // Namespace namespace_3a8e4a3/namespace_3ddea5d0

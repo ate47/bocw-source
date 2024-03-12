@@ -319,7 +319,9 @@ function private notetrackdropshield(animationentity) {
 function private notetrackgrenadethrow(animationentity) {
     if (archetype_human_cover::function_9d8b22d8(animationentity, 1, 0)) {
         archetype_human_cover::function_ce446f2e(animationentity);
-    } else if (isdefined(animationentity.grenadethrowposition)) {
+        return;
+    }
+    if (isdefined(animationentity.grenadethrowposition)) {
         arm_offset = undefined;
         if (isdefined(self.var_ce7a311e)) {
             arm_offset = [[ self.var_ce7a311e ]](animationentity, animationentity.grenadethrowposition);
@@ -332,9 +334,9 @@ function private notetrackgrenadethrow(animationentity) {
         } else {
             archetype_human_cover::function_83c0b7e1(animationentity);
         }
-    } else {
-        archetype_human_cover::function_83c0b7e1(animationentity);
+        return;
     }
+    archetype_human_cover::function_83c0b7e1(animationentity);
 }
 
 // Namespace animationstatenetwork/archetype_notetracks
@@ -391,10 +393,10 @@ function private function_dab83a5a(animationentity, clip, visible) {
         if (!is_true(visible)) {
             animationentity hidepart(clip.var_98bd9c20);
             animationentity.var_af41987d = clip.var_98bd9c20;
-        } else {
-            animationentity showpart(clip.var_98bd9c20);
-            animationentity.var_af41987d = undefined;
+            return;
         }
+        animationentity showpart(clip.var_98bd9c20);
+        animationentity.var_af41987d = undefined;
     }
 }
 
@@ -458,7 +460,9 @@ function private function_727744ff(animationentity) {
         function_a5af97c9(animationentity, clip, animationentity.var_bd5efde2);
         function_c83ca932(animationentity);
         function_dab83a5a(animationentity, clip, 0);
-    } else if (isdefined(clip.model) && isdefined(clip.var_98bd9c20) && animationentity haspart(clip.var_98bd9c20)) {
+        return;
+    }
+    if (isdefined(clip.model) && isdefined(clip.var_98bd9c20) && animationentity haspart(clip.var_98bd9c20)) {
         function_a5af97c9(animationentity, clip, clip.var_98bd9c20);
         function_dab83a5a(animationentity, clip, 0);
     }

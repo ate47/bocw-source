@@ -45,8 +45,8 @@ function on_player_connect() {
     }
     if (isdefined(level.var_e2f95698)) {
         self.pers[level.var_7ee6af9f] = level.var_e2f95698;
-    } else {
-        self.pers[level.var_7ee6af9f] = level.var_7ee6af9f === "srcommander" ? "sr_commander" : "zm_commander";
+        return;
     }
+    self.pers[level.var_7ee6af9f] = level.var_7ee6af9f === "srcommander" ? "sr_commander" : "zm_commander";
 }
 

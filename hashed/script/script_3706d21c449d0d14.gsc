@@ -427,9 +427,9 @@ function function_57ba1474(var_648a2ef0) {
                 var_ae0703af = player getnoncheckpointdata("DeathsDoorWarnings");
                 if (!isdefined(var_ae0703af) || var_d92990c1 == -1) {
                     player setnoncheckpointdata("DeathsDoorWarnings", 4 - level.gameskill);
-                } else {
-                    player setnoncheckpointdata("DeathsDoorWarnings", int(max(0, 4 - level.gameskill - 4 - var_d92990c1 - var_ae0703af)));
+                    continue;
                 }
+                player setnoncheckpointdata("DeathsDoorWarnings", int(max(0, 4 - level.gameskill - 4 - var_d92990c1 - var_ae0703af)));
             }
             var_d92990c1 = level.gameskill;
         }
@@ -461,9 +461,8 @@ function function_1cfd1920() {
     var_b0210d64 = level.var_21347b32[level.gameskill].threatbias;
     if (isdefined(var_b0210d64)) {
         return var_b0210d64;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace gamedifficulty/gamedifficulty
@@ -475,9 +474,8 @@ function function_8ffb61a(*event) {
     var_2b9b388d = level.var_21347b32[level.gameskill].var_148c047d;
     if (isdefined(var_2b9b388d)) {
         return var_2b9b388d;
-    } else {
-        return 1;
     }
+    return 1;
 }
 
 // Namespace gamedifficulty/gamedifficulty
@@ -489,9 +487,8 @@ function function_4a1bd46e() {
     var_b0210d64 = level.var_21347b32[level.gameskill].healthoverlaycutoff;
     if (isdefined(var_b0210d64)) {
         return var_b0210d64;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace gamedifficulty/gamedifficulty
@@ -506,9 +503,8 @@ function function_f6f41f76() {
     }
     if (isdefined(var_b0210d64)) {
         return var_b0210d64;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace gamedifficulty/gamedifficulty
@@ -520,9 +516,8 @@ function function_ad49ef5b() {
     var_b0210d64 = level.var_21347b32[level.gameskill].player_deathinvulnerabletime;
     if (isdefined(var_b0210d64)) {
         return var_b0210d64;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace gamedifficulty/gamedifficulty
@@ -544,9 +539,8 @@ function function_e4046aa6() {
     var_b0210d64 = level.var_21347b32[level.gameskill].var_da7e542b;
     if (isdefined(var_b0210d64)) {
         return var_b0210d64;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace gamedifficulty/gamedifficulty
@@ -558,9 +552,8 @@ function function_eb59c79() {
     var_b0210d64 = level.var_21347b32[level.gameskill].var_9ffb574;
     if (isdefined(var_b0210d64)) {
         return var_b0210d64;
-    } else {
-        return 100;
     }
+    return 100;
 }
 
 // Namespace gamedifficulty/gamedifficulty
@@ -572,9 +565,8 @@ function function_5ae527c5() {
     var_b0210d64 = level.var_21347b32[level.gameskill].misstimeconstant;
     if (isdefined(var_b0210d64)) {
         return var_b0210d64;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace gamedifficulty/gamedifficulty
@@ -586,9 +578,8 @@ function function_22fc6679() {
     var_b0210d64 = level.var_21347b32[level.gameskill].misstimeresetdelay;
     if (isdefined(var_b0210d64)) {
         return var_b0210d64;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace gamedifficulty/gamedifficulty
@@ -600,9 +591,8 @@ function function_f2ec5636() {
     var_b0210d64 = level.var_21347b32[level.gameskill].misstimedistancefactor;
     if (isdefined(var_b0210d64)) {
         return var_b0210d64;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace gamedifficulty/gamedifficulty
@@ -614,9 +604,8 @@ function function_f754b1bc() {
     var_b0210d64 = level.var_21347b32[level.gameskill].dog_health;
     if (isdefined(var_b0210d64)) {
         return var_b0210d64;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace gamedifficulty/gamedifficulty
@@ -628,9 +617,8 @@ function function_ad6fb6da() {
     var_b0210d64 = level.var_21347b32[level.gameskill].var_f84eb1d6;
     if (isdefined(var_b0210d64)) {
         return var_b0210d64;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace gamedifficulty/gamedifficulty
@@ -642,9 +630,8 @@ function function_8bf0a382() {
     var_b0210d64 = level.var_21347b32[level.gameskill].var_bd3beebd;
     if (isdefined(var_b0210d64)) {
         return var_b0210d64;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace gamedifficulty/gamedifficulty
@@ -656,9 +643,8 @@ function function_faea9c9e() {
     var_b0210d64 = level.var_21347b32[level.gameskill].var_3fa5e959;
     if (isdefined(var_b0210d64)) {
         return var_b0210d64;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace gamedifficulty/gamedifficulty
@@ -670,9 +656,8 @@ function function_a34942a0() {
     var_b0210d64 = level.var_21347b32[level.gameskill].playerhealth_regularregendelay;
     if (isdefined(var_b0210d64)) {
         return var_b0210d64;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace gamedifficulty/gamedifficulty
@@ -684,9 +669,8 @@ function function_f4052850() {
     var_b0210d64 = level.var_21347b32[level.gameskill].var_27a0f922;
     if (isdefined(var_b0210d64)) {
         return var_b0210d64;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace gamedifficulty/gamedifficulty
@@ -698,9 +682,8 @@ function function_b5b7d60e() {
     var_b0210d64 = level.var_21347b32[level.gameskill].var_b768020b;
     if (isdefined(var_b0210d64)) {
         return var_b0210d64;
-    } else {
-        return 2;
     }
+    return 2;
 }
 
 // Namespace gamedifficulty/gamedifficulty
@@ -712,9 +695,8 @@ function function_5151f9d0() {
     var_b0210d64 = level.var_21347b32[level.gameskill].var_5657206f;
     if (isdefined(var_b0210d64)) {
         return var_b0210d64;
-    } else {
-        return 4.5;
     }
+    return 4.5;
 }
 
 // Namespace gamedifficulty/gamedifficulty

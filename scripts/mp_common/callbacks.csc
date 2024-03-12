@@ -123,7 +123,9 @@ function entityspawned(localclientnum) {
         if (isdefined(level._custom_weapon_cb_func)) {
             self thread [[ level._custom_weapon_cb_func ]](localclientnum);
         }
-    } else if (self.type == "vehicle" || self.type == "helicopter" || self.type == "plane") {
+        return;
+    }
+    if (self.type == "vehicle" || self.type == "helicopter" || self.type == "plane") {
         if (isdefined(level._customvehiclecbfunc)) {
             self thread [[ level._customvehiclecbfunc ]](localclientnum);
         }
@@ -132,7 +134,9 @@ function entityspawned(localclientnum) {
         if (self.type == "plane" || self.type == "helicopter") {
             self thread vehicle::aircraft_dustkick();
         }
-    } else if (self.type == "scriptmover") {
+        return;
+    }
+    if (self.type == "scriptmover") {
         if (isdefined(level.var_83485e06)) {
             self thread [[ level.var_83485e06 ]](localclientnum);
         }
@@ -141,18 +145,24 @@ function entityspawned(localclientnum) {
                 self thread [[ level.var_6b11d5f6 ]](localclientnum);
             }
         }
-    } else if (self.type == "script_model") {
+        return;
+    }
+    if (self.type == "script_model") {
         if (isdefined(self.weapon)) {
             if (isdefined(level.var_6b11d5f6)) {
                 self thread [[ level.var_6b11d5f6 ]](localclientnum);
             }
         }
-    } else if (self.type == "actor") {
+        return;
+    }
+    if (self.type == "actor") {
         if (isdefined(level._customactorcbfunc)) {
             self thread [[ level._customactorcbfunc ]](localclientnum);
         }
         self callback(#"hash_1fc6e31d0d02aa3", localclientnum);
-    } else if (self.type == "NA") {
+        return;
+    }
+    if (self.type == "NA") {
         if (isdefined(self.weapon)) {
             if (isdefined(level.var_6b11d5f6)) {
                 self thread [[ level.var_6b11d5f6 ]](localclientnum);
@@ -259,7 +269,9 @@ function airsupport(*localclientnum, x, y, z, type, yaw, team, teamfaction, owne
         data.flyspeed = 2000;
         data.flytime = planehalfdistance * 2 / data.flyspeed;
         planetype = "airstrike";
-    } else if (yaw == "n") {
+        return;
+    }
+    if (yaw == "n") {
         planehalfdistance = 24000;
         data.planehalfdistance = planehalfdistance;
         data.startpoint = pos + vectorscale(anglestoforward(direction), -1 * planehalfdistance);
@@ -272,15 +284,15 @@ function airsupport(*localclientnum, x, y, z, type, yaw, team, teamfaction, owne
         data.flyspeed = 7000;
         data.flytime = planehalfdistance * 2 / data.flyspeed;
         planetype = "napalm";
-    } else {
-        /#
-            println("<unknown string>");
-            println("<unknown string>");
-            println(yaw);
-            println("<unknown string>");
-        #/
         return;
     }
+    /#
+        println("<unknown string>");
+        println("<unknown string>");
+        println(yaw);
+        println("<unknown string>");
+    #/
+    return;
 }
 
 // Namespace callback/callbacks
@@ -308,9 +320,9 @@ function callback_emp(*localclientnum, *oldval, newval, *bnewent, *binitialsnap,
     #/
     if (bwastimejump) {
         self notify(#"emp");
-    } else {
-        self notify(#"not_emp");
+        return;
     }
+    self notify(#"not_emp");
 }
 
 // Namespace callback/callbacks

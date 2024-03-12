@@ -218,7 +218,9 @@ function function_16139ef4(params) {
             self.var_c926b4fc = 5;
         }
         self clientfield::set_to_player("" + #"hash_13f32f06b0e858dd", self.var_c926b4fc + 1);
-    } else if (!function_58d581b6(params.weapon) && function_58d581b6(params.last_weapon)) {
+        return;
+    }
+    if (!function_58d581b6(params.weapon) && function_58d581b6(params.last_weapon)) {
         self setactionslot(1, "");
         self clientfield::set("" + #"hash_5d6139b1ce0e7c82", 0);
     }
@@ -245,7 +247,6 @@ function function_565c848a(weapon) {
             return 1;
         default:
             return 0;
-            break;
         }
     }
     return 0;
@@ -264,7 +265,6 @@ function function_1b662278(weapon) {
             return 1;
         default:
             return 0;
-            break;
         }
     }
     return 0;
@@ -309,11 +309,11 @@ function function_e339e720(s_params) {
                 player.var_2501c648 = 0;
                 var_d4d3b41a = function_4ba8fde(#"axe_gun_volatile_crystal_item_t9");
                 self thread item_drop::drop_item(0, undefined, 1, 0, var_d4d3b41a.id, self.origin);
-            } else {
-                player.var_f7e829c0++;
-                if (player.var_f7e829c0 >= 20) {
-                    player.var_2501c648 = player.var_2501c648 + 5;
-                }
+                return;
+            }
+            player.var_f7e829c0++;
+            if (player.var_f7e829c0 >= 20) {
+                player.var_2501c648 = player.var_2501c648 + 5;
             }
         }
     }
@@ -340,19 +340,17 @@ function function_7862c208() {
             state = function_ffdbe8c2(var_b1af7735);
             if (is_true(var_b1af7735.dynentstates[state].var_b7401b42)) {
                 continue;
-            } else {
-                if (!isdefined(var_13ef9467)) {
-                    var_13ef9467 = [];
-                } else if (!isarray(var_13ef9467)) {
-                    var_13ef9467 = array(var_13ef9467);
-                }
-                var_13ef9467[var_13ef9467.size] = var_b1af7735;
             }
+            if (!isdefined(var_13ef9467)) {
+                var_13ef9467 = [];
+            } else if (!isarray(var_13ef9467)) {
+                var_13ef9467 = array(var_13ef9467);
+            }
+            var_13ef9467[var_13ef9467.size] = var_b1af7735;
         }
         return var_13ef9467;
-    } else {
-        return [];
     }
+    return [];
 }
 
 // Namespace namespace_6fc19861/namespace_6fc19861
@@ -365,19 +363,17 @@ function function_6c14b72a() {
         foreach (var_5d028bf5 in level.var_99018b7a) {
             if (!isdefined(var_5d028bf5.health) || var_5d028bf5.health <= 0) {
                 continue;
-            } else {
-                if (!isdefined(var_13ef9467)) {
-                    var_13ef9467 = [];
-                } else if (!isarray(var_13ef9467)) {
-                    var_13ef9467 = array(var_13ef9467);
-                }
-                var_13ef9467[var_13ef9467.size] = var_5d028bf5;
             }
+            if (!isdefined(var_13ef9467)) {
+                var_13ef9467 = [];
+            } else if (!isarray(var_13ef9467)) {
+                var_13ef9467 = array(var_13ef9467);
+            }
+            var_13ef9467[var_13ef9467.size] = var_5d028bf5;
         }
         return var_13ef9467;
-    } else {
-        return [];
     }
+    return [];
 }
 
 // Namespace namespace_6fc19861/namespace_6fc19861
@@ -526,11 +522,11 @@ function private function_219565f5(weapon) {
             self.var_92188e6b = 1;
             self thread function_2d708b10();
             self thread axe_throw_start(weapon, var_9040b50d);
-        } else {
-            /#
-                iprintlnbold("<unknown string>");
-            #/
+            continue;
         }
+        /#
+            iprintlnbold("<unknown string>");
+        #/
     }
 }
 
@@ -643,11 +639,9 @@ function private axe_throw_start(weapon, start_origin) {
     if (is_true(self.var_92188e6b) && isdefined(var_c5165568)) {
         var_c5165568 moveto(var_c5165568.origin, float(function_60d95f53()) / 1000);
         var_2f1545ed = gettime();
-        var_946e6de7 = 0;
-        while (var_946e6de7 < 10 && is_true(self.var_92188e6b) && isdefined(var_c5165568)) {
+        for (var_946e6de7 = 0; var_946e6de7 < 10 && is_true(self.var_92188e6b) && isdefined(var_c5165568); var_946e6de7 = var_946e6de7 + 0.2) {
             wait(0.2);
             self function_28a475cb(var_c5165568.origin, var_c5165568.origin, 50, weapon, var_fca97989, var_d97e2ed7);
-            var_946e6de7 = var_946e6de7 + 0.2;
         }
     }
     var_c5165568 playsound(#"hash_24b690e088ad3b0b");
@@ -726,14 +720,13 @@ function function_28a475cb(start_pos, end_pos, var_e7b59cda, var_50ebbc23, var_5
             target dodamage(var_55b935c, end_pos, self, undefined, undefined, "MOD_RIFLE_BULLET", 0, var_50ebbc23);
             if (var_d97e2ed7) {
                 target clientfield::increment("" + #"hash_5c2324e6d994b886", 1);
-            } else {
-                target clientfield::increment("" + #"hash_4189b622ab06c2d5", 1);
+                continue;
             }
+            target clientfield::increment("" + #"hash_4189b622ab06c2d5", 1);
         }
         return 1;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace namespace_6fc19861/namespace_6fc19861
@@ -809,7 +802,9 @@ function function_709843c2(params) {
         if (is_true(var_43cad97a)) {
             self.health = params.idamage + 1;
         }
-    } else if (function_1b662278(params.weapon)) {
+        return;
+    }
+    if (function_1b662278(params.weapon)) {
         var_7656a4ec = self function_d1534cde(params);
         if (is_true(var_7656a4ec)) {
             if (is_true(var_43cad97a)) {
@@ -887,7 +882,8 @@ function function_b9e23a1e(attacker, weapon) {
     foreach (ai in a_targets) {
         if (!isdefined(ai) || ai getteam() !== level.zombie_team) {
             continue;
-        } else if (isentity(ai) && isalive(ai)) {
+        }
+        if (isentity(ai) && isalive(ai)) {
             n_damage = zm_equipment::function_379f6b5d(200, getweapon(#"eq_sticky_grenade"), ai.var_6f84b820, ai.maxhealth);
             ai dodamage(n_damage, ai.origin, attacker, undefined, undefined, "MOD_EXPLOSIVE", 0, level.var_948e5165);
         }
@@ -908,13 +904,12 @@ function function_b9e23a1e(attacker, weapon) {
 function function_adc762ac(*einflictor, eattacker, idamage, *flags, meansofdeath, weapon, *var_fd90b0bb, *vpoint, *vdir, *shitloc, *psoffsettime, *boneindex, *surfacetype) {
     if (!isalive(self)) {
         return 0;
-    } else {
-        var_d3c8f6cd = 1;
-        if (isplayer(shitloc) && boneindex !== "MOD_EXPLOSIVE") {
-            var_d3c8f6cd = shitloc function_e5469f27(surfacetype, 0);
-        }
-        return (psoffsettime * var_d3c8f6cd);
     }
+    var_d3c8f6cd = 1;
+    if (isplayer(shitloc) && boneindex !== "MOD_EXPLOSIVE") {
+        var_d3c8f6cd = shitloc function_e5469f27(surfacetype, 0);
+    }
+    return psoffsettime * var_d3c8f6cd;
 }
 
 // Namespace namespace_6fc19861/namespace_6fc19861
@@ -924,9 +919,8 @@ function function_adc762ac(*einflictor, eattacker, idamage, *flags, meansofdeath
 function function_d243e3bc(*item) {
     if (isdefined(self function_49fa2899()) && isdefined(self.var_c926b4fc) && self.var_c926b4fc < 5) {
         return 1;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
 // Namespace namespace_6fc19861/namespace_6fc19861
@@ -973,7 +967,9 @@ function on_item_pickup(params) {
     if (isplayer(self)) {
         if (isdefined(item.var_a6762160.weapon) && function_58d581b6(item.var_a6762160.weapon)) {
             self.var_c926b4fc = isdefined(item.var_c926b4fc) ? item.var_c926b4fc : 5;
-        } else if (item.var_a6762160.name === #"axe_gun_energetic_shard_item_t9") {
+            return;
+        }
+        if (item.var_a6762160.name === #"axe_gun_energetic_shard_item_t9") {
             self.var_c926b4fc++;
             if (self.var_c926b4fc > 5) {
                 self.var_c926b4fc = 5;
@@ -982,7 +978,9 @@ function on_item_pickup(params) {
             /#
                 iprintlnbold("<unknown string>" + self.var_c926b4fc);
             #/
-        } else if (item.var_a6762160.name === #"axe_gun_volatile_crystal_item_t9") {
+            return;
+        }
+        if (item.var_a6762160.name === #"axe_gun_volatile_crystal_item_t9") {
             var_3c4fcfcf = self function_49fa2899();
             if (!isdefined(var_3c4fcfcf)) {
                 return;
@@ -1030,7 +1028,6 @@ function function_e5469f27(weapon, var_131779dd) {
                 return 6;
             default:
                 return 1;
-                break;
             }
         } else {
             switch (var_55687712.var_a8bccf69) {
@@ -1042,7 +1039,6 @@ function function_e5469f27(weapon, var_131779dd) {
                 return 2.5;
             default:
                 return 1;
-                break;
             }
         }
     }
@@ -1074,15 +1070,15 @@ function cmd(cmd) {
         switch (cmd) {
         case #"hash_4fd39fa505917bb8":
             function_4e036cff(#"axe_gun_volatile_crystal_item_t9");
-            break;
+            return;
         case #"hash_3282d077fe3c9d0c":
             function_4e036cff(#"axe_gun_energetic_shard_item_t9");
-            break;
+            return;
         case #"hash_2bbefdbbe0dcca8":
             function_c1fdd154();
-            break;
+            return;
         default:
-            break;
+            return;
         }
     #/
 }

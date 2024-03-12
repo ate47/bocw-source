@@ -159,7 +159,9 @@ function init() {
 function event_handler[missile_fire] function_55af2576(eventstruct) {
     if (isdefined(eventstruct.weapon.var_a8e39382) && isdefined(eventstruct.projectile)) {
         level thread namespace_ec06fe4a::function_bd89b452(eventstruct.weapon.var_a8e39382, eventstruct.projectile);
-    } else if (isdefined(eventstruct.projectile)) {
+        return;
+    }
+    if (isdefined(eventstruct.projectile)) {
         eventstruct.projectile thread namespace_ec06fe4a::function_70b34352(9.8);
         level thread namespace_ec06fe4a::function_bd89b452(10, eventstruct.projectile);
     }
@@ -454,11 +456,11 @@ function function_bcd45061(ai, idamage, eattacker, vdir, *smeansofdeath, *weapon
     eattacker namespace_e32bb68::function_3a59ec34("wpn_doa_buzzsaw_impact_zombie");
     if (!is_true(eattacker.boss) && randomint(100) < 20) {
         eattacker namespace_ed80aead::function_586ef822();
-    } else {
-        namespace_ed80aead::trygibbinghead(eattacker, vdir, undefined, undefined, "head", 0, 1);
-        namespace_ed80aead::trygibbinglimb(eattacker, vdir, undefined, undefined, math::cointoss() ? "right_arm_upper" : "left_arm_upper");
-        eattacker namespace_ed80aead::function_1f275794(weapon, smeansofdeath);
+        return;
     }
+    namespace_ed80aead::trygibbinghead(eattacker, vdir, undefined, undefined, "head", 0, 1);
+    namespace_ed80aead::trygibbinglimb(eattacker, vdir, undefined, undefined, math::cointoss() ? "right_arm_upper" : "left_arm_upper");
+    eattacker namespace_ed80aead::function_1f275794(weapon, smeansofdeath);
 }
 
 // Namespace namespace_41cb996/namespace_41cb996

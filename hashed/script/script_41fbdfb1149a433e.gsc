@@ -105,18 +105,18 @@ function function_417fd9b() {
                     }
                     loot.var_eb9d64bb = loot.var_eb9d64bb + 5000;
                 }
-            } else {
-                loot.var_f8660931 = namespace_ec06fe4a::function_6eacecf5(loot.origin, 1800);
-                if (!isdefined(loot.var_f8660931)) {
-                    if (!isdefined(loot.script_string)) {
-                        loot.script_string = loot.item.var_8cbdb71;
-                    }
-                    if (isdefined(loot.item.var_c8386627)) {
-                        namespace_1c2a96f9::function_85da1646(loot.item.var_c8386627);
-                    }
-                    loot.item delete();
-                    namespace_1e25ad94::function_f5f0c0f8("Paging OUT loot at:" + loot.origin);
+                continue;
+            }
+            loot.var_f8660931 = namespace_ec06fe4a::function_6eacecf5(loot.origin, 1800);
+            if (!isdefined(loot.var_f8660931)) {
+                if (!isdefined(loot.script_string)) {
+                    loot.script_string = loot.item.var_8cbdb71;
                 }
+                if (isdefined(loot.item.var_c8386627)) {
+                    namespace_1c2a96f9::function_85da1646(loot.item.var_c8386627);
+                }
+                loot.item delete();
+                namespace_1e25ad94::function_f5f0c0f8("Paging OUT loot at:" + loot.origin);
             }
         }
     }

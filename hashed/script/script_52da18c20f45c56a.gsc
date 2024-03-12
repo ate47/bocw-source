@@ -260,26 +260,26 @@ function function_2795d678(encumbered, var_165b239b, var_37e68004, allow_ads, va
             self namespace_f48ab2e1::function_e79f51ec([2:#"body_carry", 1:#"doors", 0:#"actions"]);
             self flag::set("encumbered");
         }
-    } else {
-        if (isdefined(player.var_74c52b3d)) {
-            self function_9123bbf0();
-            player setmovespeedscale(player.var_74c52b3d.movespeedscale);
-            player thread function_854fc491();
-            if (isdefined(player.var_74c52b3d.var_e191cfdc)) {
-                foreach (weap in player.var_74c52b3d.var_e191cfdc) {
-                    if (isdefined(pistol) && weap != pistol) {
-                        player giveweapon(weap);
-                    }
+        return;
+    }
+    if (isdefined(player.var_74c52b3d)) {
+        self function_9123bbf0();
+        player setmovespeedscale(player.var_74c52b3d.movespeedscale);
+        player thread function_854fc491();
+        if (isdefined(player.var_74c52b3d.var_e191cfdc)) {
+            foreach (weap in player.var_74c52b3d.var_e191cfdc) {
+                if (isdefined(pistol) && weap != pistol) {
+                    player giveweapon(weap);
                 }
             }
-            if (isdefined(player.var_74c52b3d.var_6535f2e6)) {
-                player switchtoweapon(player.var_74c52b3d.var_6535f2e6);
-            }
-            self namespace_f48ab2e1::function_398ab9eb();
-            self flag::clear("encumbered");
         }
-        player.var_74c52b3d = undefined;
+        if (isdefined(player.var_74c52b3d.var_6535f2e6)) {
+            player switchtoweapon(player.var_74c52b3d.var_6535f2e6);
+        }
+        self namespace_f48ab2e1::function_398ab9eb();
+        self flag::clear("encumbered");
     }
+    player.var_74c52b3d = undefined;
 }
 
 // Namespace namespace_594b67e/namespace_594b67e
@@ -316,9 +316,9 @@ function function_854fc491(var_6a87e928) {
             lastmode = newmode;
             waitframe(1);
         }
-    } else {
-        player util::function_5f1df718(undefined);
+        return;
     }
+    player util::function_5f1df718(undefined);
 }
 
 // Namespace namespace_594b67e/namespace_594b67e
@@ -379,7 +379,9 @@ function function_b82cae8f(linktype, var_5596253c = 1) {
     if (is_true(linktype) && self.var_47f0a724 !== linktype) {
         self clientfield::set("link_to_camera", linktype);
         self.var_47f0a724 = linktype;
-    } else if (!is_true(linktype) && is_true(self.var_47f0a724)) {
+        return;
+    }
+    if (!is_true(linktype) && is_true(self.var_47f0a724)) {
         self clientfield::set("link_to_camera", 0);
         if (is_true(var_5596253c)) {
             origin = player getplayercamerapos();
@@ -445,7 +447,9 @@ function function_6cd69890(allowed, forced, gesture, var_dfce6e2d) {
                 self thread function_3ceda691(self.var_621f8539);
             }
         }
-    } else if (isdefined(self.var_15c4009c)) {
+        return;
+    }
+    if (isdefined(self.var_15c4009c)) {
         self.var_15c4009c = self.var_15c4009c - 1;
         if (is_true(forced) || self.var_15c4009c <= 0) {
             self val::function_e681e68e(#"hash_1759513a118d68fd");
@@ -704,7 +708,9 @@ function function_1c2992ed(enabled) {
         self clientfield::set_to_player("fake_ads", 1);
         self namespace_ca99987f::function_86ac55c5("bg_aimSpreadScale", 1, 0.2, 0.2, #"sine");
         self function_800493d4(45, 90);
-    } else if (!var_4f735d6e && var_49b6c927) {
+        return;
+    }
+    if (!var_4f735d6e && var_49b6c927) {
         self clientfield::set_to_player("fake_ads", 0);
         self namespace_ca99987f::function_86ac55c5("bg_aimSpreadScale", 1, 1, 0.2, #"sine");
         self function_800493d4(90, 260);
@@ -779,17 +785,17 @@ function function_35d0bd11(var_4b5540a0) {
         self thread function_91639a4c(1);
         self animcustom(&function_e9aef609);
         self.var_4b5540a0 = 1;
-    } else {
-        self.ignoreme = 0;
-        self battlechatter::function_2ab9360b(1);
-        self util::delay(float(function_60d95f53()) / 1000, undefined, &solid);
-        self setgoal(self.origin);
-        self thread function_91639a4c(0);
-        if (isdefined(self.magic_bullet_shield)) {
-            self util::stop_magic_bullet_shield();
-        }
-        self.var_4b5540a0 = undefined;
+        return;
     }
+    self.ignoreme = 0;
+    self battlechatter::function_2ab9360b(1);
+    self util::delay(float(function_60d95f53()) / 1000, undefined, &solid);
+    self setgoal(self.origin);
+    self thread function_91639a4c(0);
+    if (isdefined(self.magic_bullet_shield)) {
+        self util::stop_magic_bullet_shield();
+    }
+    self.var_4b5540a0 = undefined;
 }
 
 // Namespace namespace_594b67e/namespace_594b67e
@@ -947,11 +953,11 @@ function function_44a46209(var_d8ba335a) {
 function function_3ceda691(gesture = "", target, var_584fcd3e, blendtime, starttime, var_8021ec1b, stopall) {
     if (function_b72088f(gesture)) {
         self thread function_6f3e9127(gesture, target, var_584fcd3e, blendtime, starttime, var_8021ec1b, stopall);
-    } else {
-        /#
-            iprintln("39ccfd1ac8ddccb" + gesture + "<unknown string>");
-        #/
+        return;
     }
+    /#
+        iprintln("39ccfd1ac8ddccb" + gesture + "<unknown string>");
+    #/
 }
 
 // Namespace namespace_594b67e/namespace_594b67e
@@ -999,7 +1005,9 @@ function function_e4d5a38c(gesture, *outtime, var_8021ec1b) {
     if (isdefined(outtime) && function_b72088f(outtime)) {
         self notify(outtime + "_stop");
         self stopgestureviewmodel(outtime, 0, var_8021ec1b);
-    } else if (isdefined(outtime)) {
+        return;
+    }
+    if (isdefined(outtime)) {
         /#
             iprintln("39ccfd1ac8ddccb" + outtime + "<unknown string>");
         #/
@@ -1043,9 +1051,9 @@ function function_91639a4c(var_ee1fe147) {
         self endon(#"death");
         self waittill(#"hash_7884feb21ff33557");
         self.var_d5bd339b = 1;
-    } else {
-        self.var_d5bd339b = undefined;
+        return;
     }
+    self.var_d5bd339b = undefined;
 }
 
 // Namespace namespace_594b67e/namespace_594b67e
@@ -1091,7 +1099,9 @@ function function_71180c30(isolated) {
         victim notsolid();
         victim setforcenocull();
         victim.var_e9c62827 = 1;
-    } else if (isdefined(victim.var_419b4b2)) {
+        return;
+    }
+    if (isdefined(victim.var_419b4b2)) {
         victim thread function_91639a4c(0);
         victim.ignoreall = victim.var_419b4b2.ignoreall;
         victim.ignoreme = victim.var_419b4b2.ignoreme;

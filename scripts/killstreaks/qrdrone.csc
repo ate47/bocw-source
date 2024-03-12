@@ -90,9 +90,7 @@ function watchrestartfx(localclientnum) {
 // Size: 0x2a
 function spawn_solid_fx(*localclientnum) {
     if (self function_4add50a7()) {
-        goto LOC_00000028;
     }
-LOC_00000028:
 }
 
 // Namespace qrdrone/qrdrone
@@ -228,11 +226,13 @@ function blink_light(localclientnum) {
     }
     if (self function_4add50a7()) {
         self thread loop_local_sound(localclientnum, "wpn_qr_alert", 1, level._effect[#"qrdrone_viewmodel_light"]);
-    } else if (self function_ca024039()) {
-        self thread loop_local_sound(localclientnum, "wpn_qr_alert", 1, level._effect[#"qrdrone_friendly_light"]);
-    } else {
-        self thread loop_local_sound(localclientnum, "wpn_qr_alert", 1, level._effect[#"qrdrone_enemy_light"]);
+        return;
     }
+    if (self function_ca024039()) {
+        self thread loop_local_sound(localclientnum, "wpn_qr_alert", 1, level._effect[#"qrdrone_friendly_light"]);
+        return;
+    }
+    self thread loop_local_sound(localclientnum, "wpn_qr_alert", 1, level._effect[#"qrdrone_enemy_light"]);
 }
 
 // Namespace qrdrone/qrdrone
@@ -253,9 +253,9 @@ function collisionhandler(*localclientnum) {
             if (isdefined(player)) {
                 if (hit_intensity > 15) {
                     player playrumbleonentity(driver_local_client, "damage_heavy");
-                } else {
-                    player playrumbleonentity(driver_local_client, "damage_light");
+                    continue;
                 }
+                player playrumbleonentity(driver_local_client, "damage_light");
             }
         }
     }
@@ -367,7 +367,7 @@ function qrdrone_staticfade(staticalpha, sndent, sid) {
         if (staticalpha <= 0) {
             sndent stopallloopsounds(0.5);
             self vehicle::set_static_amount(0);
-            break;
+            return;
         }
         setsoundvolumerate(sid, 0.6);
         setsoundvolume(sid, staticalpha);

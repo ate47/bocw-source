@@ -209,7 +209,9 @@ function toggle_postfx(*localclientnum, enabled, var_c8b06dda) {
         if (self function_556665f2(var_c8b06dda)) {
             self stoppostfxbundle(var_c8b06dda);
         }
-    } else if (!self function_556665f2(var_c8b06dda)) {
+        return;
+    }
+    if (!self function_556665f2(var_c8b06dda)) {
         self playpostfxbundle(var_c8b06dda);
     }
 }

@@ -45,18 +45,24 @@ function on_item_pickup(s_params) {
         if (var_a6762160.name === #"scrap_legendary_item_sr") {
             var_595a11bc = 25 * var_a6762160.amount;
             e_player function_a6d4221f(var_595a11bc);
-        } else if (var_a6762160.name === #"scrap_epic_item_sr") {
+            return;
+        }
+        if (var_a6762160.name === #"scrap_epic_item_sr") {
             var_595a11bc = 300 * var_a6762160.amount;
             e_player function_afab250a(var_595a11bc);
-        } else if (rarity === #"rare") {
+            return;
+        }
+        if (rarity === #"rare") {
             var_595a11bc = 10 * var_a6762160.amount;
             e_player function_a6d4221f(var_595a11bc);
-        } else if (var_a6762160.name === #"scrap_item_harvesting_sr") {
-            e_player function_afab250a(200);
-        } else {
-            var_595a11bc = 50 * var_a6762160.amount;
-            e_player function_afab250a(var_595a11bc);
+            return;
         }
+        if (var_a6762160.name === #"scrap_item_harvesting_sr") {
+            e_player function_afab250a(200);
+            return;
+        }
+        var_595a11bc = 50 * var_a6762160.amount;
+        e_player function_afab250a(var_595a11bc);
     }
 }
 
@@ -199,9 +205,9 @@ function function_b802c7fc(var_af05f9a2 = 0, take = 0, var_60460256 = 0) {
     if (!take && !var_60460256) {
         if (var_af05f9a2) {
             self hud::function_32de5fc7();
-        } else {
-            self hud::function_8577b83e();
+            return;
         }
+        self hud::function_8577b83e();
     }
 }
 
